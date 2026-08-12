@@ -42,6 +42,13 @@ contexts:
     why: >-
       Marcas da escala de um instrumento: os números do eixo são a régua, não a
       medição. O valor medido em cima da régua vem sempre do livro-razão.
+  - id: limiar-do-quadro
+    why: >-
+      Limiar publicado num quadro institucional — o valor de referência do
+      Procedimento relativo aos Desequilíbrios Macroeconómicos, fixado no
+      Regulamento (UE) n.º 1176/2011 e revisto pela Comissão. É a regra contra a
+      qual a medição é lida, não uma medição de Portugal: mesma natureza que a
+      escala de um instrumento. A medição vem sempre do livro-razão, ao lado.
   - id: data-de-referencia
     why: >-
       Ano ou período a que os dados se referem, quando aparece no meio de uma

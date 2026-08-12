@@ -1,0 +1,34 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# Gerado por ResearchHub/indicators/generate_claims.py a partir da verificação
+# de disponibilidade. Escolha do indicador: indicators/convergence.md.
+
+id: "criancas-em-creche-2025"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "57,9"
+unit: "%"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Eurostat"
+document:
+  title: "Children aged less than 3 years in formal childcare"
+  edition: "tepsr_sp210"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tepsr_sp210?format=JSON&lang=EN&geo=PT"
+access_date: "2026-08-12"
+reference_date: "2025"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Children aged less than 3 years in formal childcare — Percentage — Portugal — 2025: 57.9"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "quadro-institucional"
+note: "Valor confirmado contra a Comissão Europeia, SWD(2026) 222 (Relatório por País 2026 — Portugal): 57.9. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

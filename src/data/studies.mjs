@@ -202,6 +202,17 @@ export const INTERNAL_SOURCES = [
     id: 'o-estado-do-pais',
     label: { pt: 'O Estado do País — apuramento próprio', en: 'O Estado do País — own count' },
   },
+  {
+    // Não é um apuramento próprio: os números são dos organismos que os publicam.
+    // É a linha de base — os indicadores que as instituições usam para avaliar um
+    // país, lidos directamente na fonte. A proveniência de cada linha diz qual.
+    // Escolha do conjunto: indicators/convergence.md no ResearchHub.
+    id: 'quadro-institucional',
+    label: {
+      pt: 'Quadro institucional de indicadores — leitura directa da fonte',
+      en: 'Institutional indicator framework — read directly from source',
+    },
+  },
 ];
 
 /** Todas as edições, em lista plana — é isto que o arquivo mostra. */
