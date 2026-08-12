@@ -347,6 +347,25 @@ Não há aqui nada a corrigir: é o efeito pretendido de amarrar as contagens ao
 registo. Quem acrescenta um estudo é obrigado, pelo build, a reconciliar tudo o
 que o conta.
 
+### 1.15 «Three Seats, One Ledger» fica de fora do arquivo
+
+No mesmo dia foi produzido um artefacto com esse título. **Foi avaliado e
+deliberadamente excluído do arquivo.**
+
+Razão: não é um estudo sobre Portugal. É um registo de método e de processo
+sobre a infraestrutura de investigação com IA do próprio dono — escrita sobre
+como se trabalha, não medição do país. O arquivo é o que este observatório
+publica **sobre Portugal**; misturar registos internos de processo com estudos
+faria o arquivo deixar de responder à pergunta a que responde.
+
+A decisão está registada em `EXCLUIDOS`, em `src/data/studies.mjs` — ao lado do
+arquivo, e não só aqui, porque é ali que quem fizer a migração vai olhar. Um
+artefacto nessa lista já foi ponderado; não se volta a ponderar por se ter
+esquecido a decisão. **Não é um juízo sobre o valor do documento** — é uma questão de o
+arquivo ter um objecto e este documento não ser dele. Se algum dia houver um
+sítio para escrita sobre método (a página `/metodo` é sobre o método deste
+sítio, não um arquivo), é aí que pertence, não em `/estudos`.
+
 ### 1.16 Uma ligação para fora do domínio
 
 Até aqui nenhuma página apontava para fora. «Os Pelouros» está publicado fora
