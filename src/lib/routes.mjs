@@ -8,6 +8,12 @@
  * Nunca duas edições mantidas à mão: um caminho PT tem sempre um par EN.
  */
 
+/**
+ * @typedef {'pt'|'en'} Lingua
+ * @typedef {{ lang: string, hreflang: string, path: string }} Alternativa
+ * @typedef {{ key: string, lang: string, params: { slug?: string } }} Rota
+ */
+
 export const LANGS = /** @type {const} */ (['pt', 'en']);
 
 /** Valores usados no atributo hreflang. */
@@ -27,7 +33,11 @@ export const ROUTES = {
   estudo: { pt: '/estudos/:slug', en: '/en/studies/:slug' },
 };
 
-/** Normaliza um caminho: sem barra final, excepto a raiz. */
+/**
+ * Normaliza um caminho: sem barra final, excepto a raiz.
+ * @param {string|undefined|null} path
+ * @returns {string}
+ */
 export function normalizePath(path) {
   if (!path) return '/';
   const p = path.split('?')[0].split('#')[0];
@@ -35,7 +45,11 @@ export function normalizePath(path) {
   return stripped === '' ? '/' : stripped;
 }
 
-/** Extrai o caminho normalizado de um URL absoluto (usado pelo sitemap). */
+/**
+ * Extrai o caminho normalizado de um URL absoluto (usado pelo sitemap).
+ * @param {string} url
+ * @returns {string}
+ */
 export function pathFromUrl(url) {
   try {
     return normalizePath(new URL(url).pathname);
@@ -44,7 +58,13 @@ export function pathFromUrl(url) {
   }
 }
 
-/** Caminho de uma rota, numa língua. `params.slug` quando a rota o pede. */
+/**
+ * Caminho de uma rota, numa língua. `params.slug` quando a rota o pede.
+ * @param {string} key
+ * @param {string} lang
+ * @param {{ slug?: string }} [params]
+ * @returns {string}
+ */
 export function routePath(key, lang, params = {}) {
   const entry = ROUTES[key];
   if (!entry) throw new Error(`routes: rota desconhecida "${key}"`);
@@ -59,7 +79,8 @@ export function routePath(key, lang, params = {}) {
 
 /**
  * Descobre a que rota lógica pertence um caminho.
- * Devolve { key, lang, params } ou null.
+ * @param {string} path
+ * @returns {Rota|null}
  */
 export function matchPath(path) {
   const target = normalizePath(path);
@@ -91,6 +112,8 @@ export function matchPath(path) {
  * Alternativas de língua de um caminho, prontas para <link rel="alternate">
  * e para o sitemap. Inclui x-default a apontar para a língua primária.
  * Devolve null para caminhos fora da tabela (ex.: /404).
+ * @param {string} path
+ * @returns {Alternativa[]|null}
  */
 export function alternatesFor(path) {
   const hit = matchPath(path);
@@ -105,7 +128,12 @@ export function alternatesFor(path) {
   return list;
 }
 
-/** O caminho equivalente na outra língua (para o botão PT/EN). */
+/**
+ * O caminho equivalente na outra língua (para o botão PT/EN).
+ * @param {string} path
+ * @param {string} currentLang
+ * @returns {string}
+ */
 export function otherLanguagePath(path, currentLang) {
   const hit = matchPath(path);
   if (!hit) return currentLang === 'pt' ? ROUTES.home.en : ROUTES.home.pt;

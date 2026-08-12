@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "astro.config.mjs",
+    "site.config.mjs",
+    "src/lib/**/*.mjs",
+    "src/data/**/*.mjs",
+    "src/i18n/**/*.mjs",
+    "scripts/**/*.mjs"
+  ],
+  "compilerOptions": {
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": false
+  }
+}
