@@ -26,6 +26,7 @@ import { loadClaims, digitsOf, parsePtNumber } from '../src/lib/ledger.mjs';
 import { VERBATIM, normalizeWhitespace } from '../src/data/verbatim.mjs';
 import { EDITIONS } from '../src/data/studies.mjs';
 import { matchPath } from '../src/lib/routes.mjs';
+import { renderizacoesAceites } from '../src/data/correcoes.mjs';
 import { SITE_HOST, SITE_NAME, AUTHORSHIP_LINE, EDITION } from '../site.config.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -354,6 +355,7 @@ for (const file of ficheirosHtml(DIST)) {
    */
   const CAMPOS_CORRECAO = {
     date: 'exacto',
+    kind: 'natureza',
     old_value: 'algarismos',
     new_value: 'algarismos',
     reason: 'exacto',
@@ -394,6 +396,23 @@ for (const file of ficheirosHtml(DIST)) {
       continue;
     }
     const esperado = String(corr[campo]);
+
+    /* A natureza da entrada pode aparecer como identificador ou como um dos
+       seus rótulos traduzidos — e mais nada. Uma entrada rotulada
+       «atualização» com kind "correcao" no livro-razão não passa: era assim
+       que se reclassificava uma confissão em silêncio. */
+    if (modo === 'natureza') {
+      const aceites = renderizacoesAceites(esperado).map(normalizeWhitespace);
+      if (!aceites.includes(normalizeWhitespace(renderizado))) {
+        err(
+          `no registo, a natureza da correção #${n + 1} de "${id}" foi renderizada como ` +
+            `"${renderizado.trim()}", mas no livro-razão é "${esperado}" ` +
+            `(aceite: ${aceites.join(', ')}).`,
+        );
+      }
+      continue;
+    }
+
     const bate =
       modo === 'algarismos'
         ? digitsOf(renderizado) === digitsOf(esperado)

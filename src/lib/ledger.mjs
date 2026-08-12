@@ -17,6 +17,7 @@ import { fileURLToPath } from 'node:url';
 import { load } from 'js-yaml';
 
 import { STUDY_IDS, COUNTS } from '../data/studies.mjs';
+import { KINDS } from '../data/correcoes.mjs';
 
 /**
  * Onde está o livro-razão.
@@ -238,6 +239,38 @@ export function evaluateCheck(expr, { claims, env = COUNTS, selfId = null } = {}
   return resultado;
 }
 
+/**
+ * Contagens do próprio registo de correções, para as expressões `check`.
+ * Só as correções contam para `correcoes_publicadas`: uma actualização não é
+ * um erro admitido, e o número que a página anuncia é o das confissões.
+ */
+export function contagensDoRegisto(claims = loadClaims()) {
+  let correcoes = 0;
+  let actualizacoes = 0;
+  for (const c of claims.values()) {
+    for (const corr of c.corrections ?? []) {
+      if (corr.kind === 'correcao') correcoes++;
+      else if (corr.kind === 'actualizacao') actualizacoes++;
+    }
+  }
+  return { correcoes_publicadas: correcoes, actualizacoes_publicadas: actualizacoes };
+}
+
+/**
+ * Todas as entradas do registo, de todas as afirmações, da mais recente à
+ * primeira. É daqui que a página do método lê — nunca de texto escrito à mão.
+ */
+export function entradasDoRegisto(kind = null) {
+  const out = [];
+  for (const claim of allClaims()) {
+    (claim.corrections ?? []).forEach((corr, n) => {
+      if (kind && corr.kind !== kind) return;
+      out.push({ claimId: claim.id, n, ...corr });
+    });
+  }
+  return out.sort((a, b) => String(b.date).localeCompare(String(a.date)));
+}
+
 /* -------------------------------------------------------------- validação */
 
 function ausente(v) {
@@ -250,6 +283,8 @@ function ausente(v) {
  */
 export function validateLedger() {
   const claims = loadClaims();
+  // As expressões `check` também podem contar o próprio registo de correções.
+  const env = { ...COUNTS, ...contagensDoRegisto(claims) };
   const errors = [];
   const warnings = [];
   let porVerificar = 0;
@@ -340,8 +375,14 @@ export function validateLedger() {
           errors.push(`${rot}: tem de ser um mapa com date, old_value, new_value e reason.`);
           return;
         }
-        for (const campo of ['date', 'old_value', 'new_value', 'reason']) {
+        for (const campo of ['date', 'kind', 'old_value', 'new_value', 'reason']) {
           if (ausente(corr[campo])) errors.push(`${rot}: falta "${campo}".`);
+        }
+        if (!ausente(corr.kind) && !KINDS.includes(corr.kind)) {
+          errors.push(
+            `${rot}: "kind" é "${corr.kind}". Só pode ser ${KINDS.map((k) => `"${k}"`).join(' ou ')}.\n` +
+              `    "correcao" = o valor publicado estava errado. "actualizacao" = estava certo e o que mede mudou.`,
+          );
         }
         if (corr.date && !/^\d{4}-\d{2}-\d{2}$/.test(String(corr.date))) {
           errors.push(`${rot}: "date" tem de ser AAAA-MM-DD.`);
@@ -365,7 +406,7 @@ export function validateLedger() {
         errors.push(`${onde} tem "check" mas "value" ("${c.value}") não é um número simples.`);
       } else {
         try {
-          const calculado = evaluateCheck(c.check, { claims, selfId: id });
+          const calculado = evaluateCheck(c.check, { claims, env, selfId: id });
           if (Math.abs(calculado - publicado) > 1e-9) {
             errors.push(
               `${onde} a aritmética não bate certo.\n` +

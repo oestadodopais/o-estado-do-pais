@@ -101,10 +101,30 @@ Um valor errado não se apaga. Corrige-se o `value` e acrescenta-se a linha:
 value: "27,1%"
 corrections:
   - date: "2026-09-01"
+    kind: "correcao"
     old_value: "26,5%"
     new_value: "27,1%"
     reason: "O RASARP 2025 foi revisto; a versão de Setembro corrige o valor nacional."
 ```
+
+### `kind`: as duas naturezas
+
+Campo obrigatório. Só dois valores, e a diferença não é cosmética:
+
+| `kind` | o que aconteceu | onde aparece |
+| --- | --- | --- |
+| `correcao` | o valor publicado estava **errado** | grupo «Correções», com peso, e conta para «N correções publicadas» |
+| `actualizacao` | o valor estava **certo** e deixou de estar, porque o que mede mudou | grupo «Atualizações», em surdina, e não conta |
+
+Misturar as duas faz do registo um diário de alterações, e uma confissão
+diluída vale menos. **Na dúvida, pergunte: o valor antigo estava errado quando
+foi publicado?** Se sim, é `correcao`. Se não, é `actualizacao`.
+
+**Uma actualização regista-se quando muda o valor de uma afirmação por razões
+que não são erro.** As recontagens derivadas que se seguem — as contagens do
+arquivo que mudam por arrastamento — não se registam em separado: já são
+reavaliadas pelo build a cada corrida, e enchê-las no registo abafaria as
+correções, que é o que o registo existe para mostrar.
 
 O registo de correções em `/metodo` está montado e vazio, à espera destas
 entradas.

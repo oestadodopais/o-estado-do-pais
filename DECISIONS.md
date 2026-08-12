@@ -221,10 +221,45 @@ erro; é o número a acompanhar a realidade. Com as duas coisas no mesmo registo
 com o mesmo aspecto, o registo deixa de ser uma confissão e passa a ser um
 diário de alterações — e uma confissão diluída vale menos.
 
-Não mexi no esquema por minha conta: seria mudar uma estrutura que a direção
-fixou. **Proposta, se a direção quiser:** um campo `kind: correcao |
-actualizacao` em cada entrada, com as actualizações a aparecerem separadas ou em
-surdina. Enquanto não houver decisão, ficam as duas juntas, como foi pedido.
+**Aceite pela direção, e feito.** O campo `kind` passou a existir, obrigatório,
+com dois valores: `correcao` (o valor publicado estava errado) e `actualizacao`
+(estava certo e o que mede mudou). As duas entradas existentes foram
+classificadas: `4 → 3` é correção, `3 → 4` é actualização.
+
+**A regra de quando se regista o quê:** uma actualização regista-se quando muda
+o **valor de uma afirmação** por razões que não são erro. As recontagens
+derivadas que se seguem por arrastamento — as contagens do arquivo, que mudaram
+de 9 → 10 e 12 → 13 quando entrou o décimo trabalho — **não** se registam em
+separado. Já são reavaliadas pelo build a cada corrida, e enchê-las no registo
+abafaria as correções, que é o que o registo existe para mostrar.
+
+**Como se mostram**, em `/metodo`: dois grupos, não uma lista.
+
+- **Correções** vêm primeiro, com peso: barra lateral, título e etiqueta na
+  única cor que o sistema tem além do amarelo. O amarelo marca medição; esta
+  marca um erro admitido. A contagem — «N correções publicadas» — conta **só**
+  as correções, e é ela própria uma afirmação do livro-razão
+  (`correcoes-publicadas`, com `check: correcoes_publicadas`): se entrar uma
+  correção nova e o número não mudar, o build falha.
+- **Atualizações** vêm depois, em surdina: sem cor, sem caixa, uma linha cada.
+
+**A cor.** Foi preciso acrescentar um token — `--oxblood` — a uma identidade que
+tinha duas cores e uma regra sobre elas. Fica reservado ao registo de correções
+e a mais nada, nos três estados do tema, e o contraste foi medido, não estimado:
+**9,45:1** no tema claro (`#7C2333` sobre `--paper`) e **7,22:1** no escuro
+(`#D98A95`) — os dois acima de AAA, e na mesma banda do `--muted` que já existia.
+
+**A etiqueta da natureza é redundante de propósito.** Cada entrada mostra
+«correção» ou «atualização» ao lado do id, mesmo estando já debaixo do título do
+grupo. O título do grupo é texto do gabarito; a etiqueta vem do livro-razão e é
+conferida contra ele. Sem ela, reclassificar uma confissão em actualização seria
+uma alteração de gabarito que nada apanhava.
+
+**Um buraco que fica, e que não fechei por minha conta:** o `reason` de cada
+entrada está no livro-razão numa língua só — português. Na edição inglesa, o
+motivo aparece por traduzir. Fechá-lo é um campo `reason_en` (ou um mapa por
+língua) mais uma regra no portão a conferir as duas versões. É a mesma classe de
+decisão que o `kind`, e por isso fica proposta, não feita.
 
 Foi por isto que as contagens de estudos (9 → 10) e de edições (12 → 13) **não**
 levaram entrada de correção: são recontagens da mesma natureza da segunda, já
@@ -408,9 +443,11 @@ clicar. A verificação passou a distinguir as duas: **recursos externos: nenhum
 4. Um token em `ledger/allowlist.yml` — nomes próprios com algarismos
    (`UE-27`, `PT2030`).
 
-5. `data-correcao-*` — uma entrada do registo de correções. Data, valor antigo,
-   valor novo, motivo e id são **todos** conferidos contra o campo `corrections`
-   da afirmação. O motivo é prosa livre e pode citar números («o valor 4 vinha
+5. `data-correcao-*` — uma entrada do registo de correções. Data, **natureza**,
+   valor antigo, valor novo, motivo e id são **todos** conferidos contra o campo
+   `corrections` da afirmação. A natureza aceita o identificador ou um dos seus
+   rótulos traduzidos, e mais nada: uma entrada rotulada «atualização» com
+   `kind: correcao` no livro-razão falha o build. O motivo é prosa livre e pode citar números («o valor 4 vinha
    do colofão…»), por isso é comparado por igualdade de texto, não dispensado:
    reescrever a história de uma correção falha o build.
 
@@ -450,7 +487,11 @@ fácil, não para tornar o desonesto impossível.
 
 ## 3. Verificado nesta construção
 
-- `npm run build` termina com código 0: 27 páginas, 29/29 afirmações citadas.
+- `npm run build` termina com código 0: 27 páginas, 30/30 afirmações citadas.
+- A disciplina de correções foi posta à prova em quatro pontos, cada um a
+  falhar como devia: entrada sem `kind`; `kind` inventado; contagem de
+  correções fora do registo; e um gabarito a rotular uma correção como
+  actualização — este último apanhado nas duas línguas.
 - A amarra entre arquivo e livro-razão foi posta à prova nos dois sentidos:
   pôr o décimo trabalho sem mexer nas contagens dá três falhas; repor a
   contagem de Évora em `3` com o estudo já publicado dá `calculado: 4,

@@ -2,97 +2,188 @@
 /**
  * O registo de correções.
  *
- * Não é escrito à mão: é lido do próprio livro-razão. Cada linha de afirmação
- * guarda as suas correções, e este componente junta-as todas, da mais recente
- * à primeira. Uma correção só existe aqui se existir no ficheiro da afirmação —
- * e nenhuma pode ser retirada de um sítio sem sair do outro.
+ * Dois grupos, não uma lista. A distinção é o ponto:
  *
- * Os valores antigo e novo vão marcados com data-correcao-*, e o portão de HTML
- * confere-os contra o campo corrections da própria afirmação. Um valor antigo
- * reescrito é apanhado no build, tal como um valor corrente.
+ *   Correções    — o valor publicado estava errado. É a confissão, e é a razão
+ *                  de o registo existir. Vem primeiro, com peso, e é o que a
+ *                  contagem conta.
+ *   Atualizações — o valor estava certo e deixou de estar. Vem depois, em
+ *                  surdina, uma linha cada.
+ *
+ * Nada aqui é escrito à mão: as entradas vêm do campo corrections das próprias
+ * afirmações, e cada pedaço renderizado — data, natureza, valor antigo, valor
+ * novo, motivo e id — é conferido pelo portão contra o livro-razão. Nem o
+ * conteúdo nem a classificação podem ser reescritos em silêncio.
  */
-import { allClaims } from '../lib/ledger.mjs';
+import { entradasDoRegisto } from '../lib/ledger.mjs';
+import { KIND_LABELS } from '../data/correcoes.mjs';
+import Claim from './Claim.astro';
 import { t } from '../i18n/strings.mjs';
 
 const { lang = 'pt' } = Astro.props;
 const s = t(lang);
 
-const entradas = [];
-for (const claim of allClaims()) {
-  (claim.corrections ?? []).forEach((corr, n) => {
-    entradas.push({ claimId: claim.id, n, ...corr });
-  });
-}
-// Da mais recente à primeira.
-entradas.sort((a, b) => String(b.date).localeCompare(String(a.date)));
+const correcoes = entradasDoRegisto('correcao');
+const actualizacoes = entradasDoRegisto('actualizacao');
+
+const rotulo = (kind) => KIND_LABELS[kind]?.[lang] ?? kind;
+
+// Concordância: «1 correção publicada», «2 correções publicadas». O número em
+// si vem do livro-razão; só a palavra que o acompanha é escolhida aqui.
+const palavraConta = correcoes.length === 1 ? s.metodo.registoContaSing : s.metodo.registoConta;
 ---
 
-<div class="log-vazio">
-  <div class="log-vazio-k">{s.metodo.correcoesVazioK}</div>
+<div class="registo">
+  <!-- ============================ CORREÇÕES -->
+  <section class="registo-grupo registo-grupo-correcoes" aria-labelledby="registo-correcoes">
+    <div class="registo-cabeca">
+      <h3 class="registo-titulo" id="registo-correcoes">{s.metodo.registoCorrecoesK}</h3>
+      <p class="registo-conta">
+        <Claim id="correcoes-publicadas" lang={lang} /> {palavraConta}
+      </p>
+    </div>
+    <p class="registo-nota">{s.metodo.registoCorrecoesNota}</p>
 
-  {
-    entradas.length === 0 ? (
-      <>
+    {
+      correcoes.length === 0 ? (
         <p class="log-vazio-v">{s.metodo.correcoesVazioV}</p>
-        <p class="placeholder-nota">{s.metodo.correcoesVazioNota}</p>
-      </>
-    ) : (
-      <>
-        <div class="log-cabecalho">
-          <span>{s.metodo.colunaData}</span>
-          <span>{s.metodo.colunaAntigo}</span>
-          <span>{s.metodo.colunaNovo}</span>
-          <span>{s.metodo.colunaMotivo}</span>
+      ) : (
+        <div class="registo-lista">
+          <div class="log-cabecalho">
+            <span>{s.metodo.colunaData}</span>
+            <span>{s.metodo.colunaAntigo}</span>
+            <span>{s.metodo.colunaNovo}</span>
+            <span>{s.metodo.colunaMotivo}</span>
+          </div>
+          {correcoes.map((e) => (
+            <div class="log-linha">
+              <span
+                class="log-data"
+                data-correcao-claim={e.claimId}
+                data-correcao-n={String(e.n)}
+                data-correcao-campo="date"
+              >
+                {e.date}
+              </span>
+              <span
+                class="log-valor log-valor-antigo"
+                data-correcao-claim={e.claimId}
+                data-correcao-n={String(e.n)}
+                data-correcao-campo="old_value"
+              >
+                {e.old_value}
+              </span>
+              <span
+                class="log-valor"
+                data-correcao-claim={e.claimId}
+                data-correcao-n={String(e.n)}
+                data-correcao-campo="new_value"
+              >
+                {e.new_value}
+              </span>
+              <div>
+                <p
+                  class="log-motivo"
+                  data-correcao-claim={e.claimId}
+                  data-correcao-n={String(e.n)}
+                  data-correcao-campo="reason"
+                >
+                  {e.reason}
+                </p>
+                <p class="log-afirmacao">
+                  <span
+                    class="etiqueta-kind etiqueta-correcao"
+                    data-correcao-claim={e.claimId}
+                    data-correcao-n={String(e.n)}
+                    data-correcao-campo="kind"
+                  >
+                    {rotulo(e.kind)}
+                  </span>
+                  {' '}
+                  {s.metodo.colunaAfirmacao}:{' '}
+                  <code
+                    data-correcao-claim={e.claimId}
+                    data-correcao-n={String(e.n)}
+                    data-correcao-campo="id"
+                  >
+                    {e.claimId}
+                  </code>
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
-        {entradas.map((e) => (
-          <div class="log-linha">
-            <span
-              class="log-data"
-              data-correcao-claim={e.claimId}
-              data-correcao-n={String(e.n)}
-              data-correcao-campo="date"
-            >
-              {e.date}
-            </span>
-            <span
-              class="log-valor log-valor-antigo"
-              data-correcao-claim={e.claimId}
-              data-correcao-n={String(e.n)}
-              data-correcao-campo="old_value"
-            >
-              {e.old_value}
-            </span>
-            <span
-              class="log-valor"
-              data-correcao-claim={e.claimId}
-              data-correcao-n={String(e.n)}
-              data-correcao-campo="new_value"
-            >
-              {e.new_value}
-            </span>
-            <div>
-              <p
-                class="log-motivo"
+      )
+    }
+  </section>
+
+  <!-- ============================ ATUALIZAÇÕES -->
+  {
+    actualizacoes.length > 0 && (
+      <section class="registo-grupo registo-grupo-actualizacoes" aria-labelledby="registo-actualizacoes">
+        <h3 class="registo-titulo registo-titulo-quieto" id="registo-actualizacoes">
+          {s.metodo.registoActualizacoesK}
+        </h3>
+        <p class="registo-nota registo-nota-quieta">{s.metodo.registoActualizacoesNota}</p>
+
+        <ul class="registo-linhas">
+          {actualizacoes.map((e) => (
+            <li class="registo-linha">
+              <span
+                class="log-data"
+                data-correcao-claim={e.claimId}
+                data-correcao-n={String(e.n)}
+                data-correcao-campo="date"
+              >
+                {e.date}
+              </span>
+              <span class="registo-salto">
+                <span
+                  class="log-valor-antigo"
+                  data-correcao-claim={e.claimId}
+                  data-correcao-n={String(e.n)}
+                  data-correcao-campo="old_value"
+                >
+                  {e.old_value}
+                </span>
+                <span aria-hidden="true"> → </span>
+                <span
+                  class="log-valor"
+                  data-correcao-claim={e.claimId}
+                  data-correcao-n={String(e.n)}
+                  data-correcao-campo="new_value"
+                >
+                  {e.new_value}
+                </span>
+              </span>
+              <span
+                class="registo-motivo-curto"
                 data-correcao-claim={e.claimId}
                 data-correcao-n={String(e.n)}
                 data-correcao-campo="reason"
               >
                 {e.reason}
-              </p>
-              <p class="log-afirmacao">
-                {s.metodo.colunaAfirmacao}:{' '}
-                <code
-                  data-correcao-claim={e.claimId}
-                  data-correcao-n={String(e.n)}
-                  data-correcao-campo="id"
-                >
-                  {e.claimId}
-                </code>
-              </p>
-            </div>
-          </div>
-        ))}
-      </>
+              </span>
+              <code
+                class="registo-id"
+                data-correcao-claim={e.claimId}
+                data-correcao-n={String(e.n)}
+                data-correcao-campo="id"
+              >
+                {e.claimId}
+              </code>
+              <span
+                class="vh"
+                data-correcao-claim={e.claimId}
+                data-correcao-n={String(e.n)}
+                data-correcao-campo="kind"
+              >
+                {rotulo(e.kind)}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
     )
   }
 </div>

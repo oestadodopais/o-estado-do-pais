@@ -31,10 +31,12 @@ note: "Não há excerto textual: o valor sai de uma contagem do próprio arquivo
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections:
   - date: "2026-08-12"
+    kind: "correcao"
     old_value: "4"
     new_value: "3"
     reason: "O valor 4 vinha do colofão do estudo de identidade e contava a edição inglesa de «Évora — Orçamentado, Pago, Devido 2025» como estudo autónomo. Pela distinção entre trabalho e edição que o arquivo usa, são três estudos, um deles com edição em inglês."
   - date: "2026-08-12"
+    kind: "actualizacao"
     old_value: "3"
     new_value: "4"
     reason: "Novo estudo publicado a 2026-08-12: Os Pelouros, Quem Os Teve, O Que Fizeram"

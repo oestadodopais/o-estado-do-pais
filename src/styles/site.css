@@ -1311,3 +1311,127 @@ section {
 .ligacao-externa:hover {
   text-decoration-color: currentColor;
 }
+
+/* ------------------------------------------------------------ registo: dois grupos */
+
+.registo {
+  display: grid;
+  gap: 26px;
+  max-width: 68ch;
+}
+.registo-grupo {
+  display: grid;
+  gap: 10px;
+}
+
+/* Correções: a confissão. Leva o peso, e a única cor do sistema que não é o
+   amarelo — o amarelo marca medição, este marca um erro admitido. */
+.registo-grupo-correcoes {
+  border-left: 3px solid var(--oxblood);
+  padding: 4px 0 4px 18px;
+}
+.registo-cabeca {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.registo-titulo {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  color: var(--oxblood);
+}
+.registo-conta {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--oxblood);
+}
+.registo-conta .claim-value {
+  color: inherit;
+}
+.registo-nota {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: 58ch;
+}
+.registo-lista {
+  margin-top: 6px;
+}
+
+/* Atualizações: em surdina. Sem cor, sem caixa, uma linha cada. */
+.registo-grupo-actualizacoes {
+  border-top: 1px solid var(--rule);
+  padding-top: 18px;
+}
+.registo-titulo-quieto {
+  color: var(--muted);
+  font-size: 13px;
+  font-family: var(--f-mono);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.registo-nota-quieta {
+  font-size: 13.5px;
+  color: var(--muted);
+}
+.registo-linhas {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 7px;
+}
+.registo-linha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--muted);
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--rule);
+}
+.registo-linha:last-child {
+  border-bottom: 0;
+}
+.registo-salto {
+  font-family: var(--f-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 12.5px;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.registo-motivo-curto {
+  flex: 1 1 22ch;
+  min-width: 0;
+}
+.registo-id {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+/* Etiqueta da natureza da entrada. Redundante com o grupo, de propósito: o
+   título do grupo é texto do gabarito, esta etiqueta vem do livro-razão e é
+   conferida contra ele. */
+.etiqueta-kind {
+  font-family: var(--f-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 1px 6px;
+  border: 1px solid currentColor;
+}
+.etiqueta-correcao {
+  color: var(--oxblood);
+}

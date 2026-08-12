@@ -135,6 +135,14 @@ export const STRINGS = {
       h1: 'Método',
       avisoTraducao: 'Tradução por rever.',
       correcoesVazioK: 'Registo de correções',
+      registoCorrecoesK: 'Correções',
+      registoCorrecoesNota:
+        'Valores que estavam errados. Cada um fica com o valor anterior à vista, datado, e nenhum é removido.',
+      registoConta: 'correções publicadas',
+      registoContaSing: 'correção publicada',
+      registoActualizacoesK: 'Atualizações',
+      registoActualizacoesNota:
+        'Valores que estavam certos e deixaram de estar, porque aquilo que medem mudou. Não são erros, e não contam para o número acima.',
       correcoesVazioV: 'Nenhuma correção publicada até hoje.',
       correcoesVazioNota:
         'Quando um valor for corrigido, a entrada aparece aqui e na própria linha do livro-razão: data, valor antigo, valor novo, motivo. Nada é apagado.',
@@ -301,6 +309,14 @@ export const STRINGS = {
       h1: 'Method',
       avisoTraducao: 'This is a translation of the Portuguese text and is awaiting the director’s review. The markers in square brackets are kept in Portuguese, as in the original, with an English gloss.',
       correcoesVazioK: 'Corrections log',
+      registoCorrecoesK: 'Corrections',
+      registoCorrecoesNota:
+        'Values that were wrong. Each keeps its previous value in plain sight, dated, and none is removed.',
+      registoConta: 'corrections published',
+      registoContaSing: 'correction published',
+      registoActualizacoesK: 'Updates',
+      registoActualizacoesNota:
+        'Values that were right and stopped being so, because what they measure changed. They are not errors, and they do not count towards the number above.',
       correcoesVazioV: 'No corrections published to date.',
       correcoesVazioNota:
         'When a value is corrected, the entry appears here and in the ledger row itself: date, old value, new value, reason. Nothing is deleted.',
