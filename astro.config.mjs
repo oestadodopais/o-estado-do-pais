@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 import { SITE_URL } from './site.config.mjs';
-import { alternatesFor, pathFromUrl } from './src/lib/routes.mjs';
+import { alternatesFor, pathFromUrl, matchPath } from './src/lib/routes.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,6 +23,15 @@ export default defineConfig({
 
   integrations: [
     sitemap({
+      /**
+       * As páginas de destino de estudo estão fora do sitemap enquanto não
+       * tiverem conteúdo. Não se convida um motor de busca a indexar dezoito
+       * páginas que dizem, elas próprias, que ainda não têm nada.
+       * O índice do arquivo (/estudos, /en/studies) continua no sitemap.
+       * Levantar isto na migração: apagar este filter e o noindex do stub.
+       */
+      filter: (page) => matchPath(pathFromUrl(page))?.key !== 'estudo',
+
       namespaces: { xhtml: true },
       serialize(item) {
         const path = pathFromUrl(item.url);

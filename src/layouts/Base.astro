@@ -23,6 +23,7 @@ const {
   path: pathProp,
   jsonld = null,
   mastheadCompact = true,
+  noindex = false,
 } = Astro.props;
 
 const s = t(lang);
@@ -48,6 +49,11 @@ const estudosPath = routePath('estudos', lang);
     <title>{title}</title>
     <meta name="description" content={description} />
 
+    {
+      /* Páginas sem conteúdo não se oferecem para indexação. O canónico fica:
+         o endereço continua a ser o mesmo, só não é convidado ao índice. */
+      noindex && <meta name="robots" content="noindex, follow" />
+    }
     <link rel="canonical" href={canonical} />
     {
       alternates?.map((a) => (

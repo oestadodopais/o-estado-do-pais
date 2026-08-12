@@ -111,17 +111,29 @@ números. Onde o título não determina o objecto — «Onde está a água?» �
 O arquivo abre com um aviso visível a dizer que datas e descrições não estão
 confirmadas e que as descrições não são resumos.
 
-### 1.8 As páginas de estudo ficam no sitemap, sem `noindex`
+### 1.8 As páginas de estudo estão fora do índice até à migração
 
-Foi seguido o que estava fixado: `Article` JSON-LD marcado como rascunho, e as
-páginas no sitemap.
+Dezoito páginas de destino sem conteúdo (nove trabalhos × duas línguas),
+indexadas, seriam um passivo: o sítio passaria a ser, aos olhos de um motor de
+busca, maioritariamente páginas vazias. **Recomendação aceite pela direção.**
 
-**Recomendação contrária, para o director decidir:** dezoito páginas de
-destino sem conteúdo (nove trabalhos × duas línguas), indexadas, são um passivo de SEO — o sítio passa a ser
-maioritariamente páginas vazias aos olhos de um motor de busca. O mais seguro
-seria `noindex` nas páginas de estudo e excluí-las do sitemap até à migração,
-mantendo o endereço a funcionar. É uma linha em `EstudoStubView.astro` e um
-`filter` no `astro.config.mjs`.
+Feito:
+
+- `<meta name="robots" content="noindex, follow">` nas páginas de destino de
+  estudo. O `follow` fica, para que as ligações continuem a contar;
+- as mesmas páginas saem do sitemap, por `filter` em `astro.config.mjs`;
+- os índices do arquivo — `/estudos` e `/en/studies` — continuam indexados e no
+  sitemap;
+- o canónico mantém-se em todas: o endereço não muda, só deixa de ser convidado
+  ao índice;
+- o `Article` JSON-LD continua marcado `creativeWorkStatus: "Draft"`.
+
+O portão de HTML passou a impor as duas metades desta decisão: falha se uma
+página de destino de estudo perder o `noindex`, e falha se uma página que é para
+ser indexada o ganhar por descuido.
+
+**Levantar na migração:** apagar o `filter` no `astro.config.mjs` e o
+`noindex={true}` em `EstudoStubView.astro`. São duas linhas.
 
 ### 1.9 Não há botão de tema
 
@@ -259,6 +271,4 @@ fácil, não para tornar o desonesto impossível.
    confirmada; as descrições são reformulações do título.
 5. **A contagem de Évora** (§1.11).
 6. **Ligar o deploy** e o 301 de `oestadodopais.pt` para o domínio acentuado.
-7. **Decidir** sobre: `noindex` nas páginas de estudo (§1.8) · formatação dos
-   números na edição inglesa (§1.6) · tradução da linha de autoria (§1.5) ·
-   botão de tema (§1.9).
+7. **Decidir** sobre: tradução da linha de autoria (§1.5) · botão de tema (§1.9).
