@@ -1,0 +1,72 @@
+# =============================================================================
+# A lista de excepções do portão de HTML.
+#
+# Regra da casa: todo o texto com algarismos numa página construída tem de vir
+# do livro-razão. Esta lista é a única maneira de haver excepções, e cada uma
+# tem de dizer porquê. Uma excepção sem motivo é um erro de build.
+#
+# Três mecanismos, por ordem de preferência:
+#   1. <Claim id="..."/>            — o número vem do livro-razão. Não é excepção.
+#   2. data-verbatim="<chave>"      — citação transcrita. O portão exige que o
+#                                     texto renderizado seja IGUAL, carácter a
+#                                     carácter, ao registado em src/data/verbatim.mjs.
+#   3. data-nonledger="<motivo>"    — contexto estrutural, com o motivo abaixo.
+#   4. tokens/patterns aqui         — último recurso, para palavras que por acaso
+#                                     têm algarismos (nomes próprios, códigos).
+#
+# NUNCA acrescentar aqui um número que seja uma medição. Se é uma medição,
+# é uma linha do livro-razão.
+# =============================================================================
+
+# Motivos aceites em data-nonledger="<motivo>".
+contexts:
+  - id: data-de-edicao
+    why: >-
+      Data da edição no cabeçalho e no rodapé. É uma data de publicação, não uma
+      medição do país.
+  - id: data-de-publicacao
+    why: >-
+      Data de publicação de um estudo, no arquivo. Enquanto não estiver
+      confirmada aparece como "[a verificar]".
+  - id: titulo-de-estudo
+    why: >-
+      Título literal de um estudo publicado. Vários trazem o ano no próprio
+      nome ("Orçamentado, Pago, Devido 2025"). O título é uma citação, não um dado.
+  - id: escala-de-instrumento
+    why: >-
+      Marcas da escala de um instrumento: os números do eixo são a régua, não a
+      medição. O valor medido em cima da régua vem sempre do livro-razão.
+  - id: data-de-referencia
+    why: >-
+      Ano ou período a que os dados se referem, quando aparece no meio de uma
+      frase ("em 2000 estava a…"). É a data da leitura, não a leitura.
+  - id: numeracao
+    why: >-
+      Numeração de secções e de instrumentos ("Instrumento n.º 1").
+  - id: proveniencia
+    why: >-
+      Etiqueta de proveniência gerada a partir do próprio livro-razão (nome do
+      estudo, edição do documento, data de acesso). Não é texto escrito à mão.
+  - id: identificador-tecnico
+    why: >-
+      Identificadores técnicos: códigos de cor, códigos de língua, versões,
+      nomes de ficheiros.
+
+# Palavras que contêm algarismos mas não são medições. Correspondência exacta.
+# scope: any | body | head
+tokens:
+  - token: 'UE-27'
+    scope: any
+    why: Nome do agregado de referência da União Europeia. É um nome, não um valor.
+  - token: 'EU-27'
+    scope: any
+    why: O mesmo nome, na edição inglesa.
+  - token: 'PT2030'
+    scope: any
+    why: Nome do programa de financiamento público. É um nome próprio.
+  - token: 'CAOP'
+    scope: any
+    why: Carta Administrativa Oficial de Portugal — sigla sem algarismos, listada por clareza.
+
+# Padrões, para quando a correspondência exacta não chega. Usar com parcimónia.
+patterns: []
