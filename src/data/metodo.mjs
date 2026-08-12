@@ -24,10 +24,6 @@
 
 /** Os marcadores por resolver, num sítio só, para se poderem contar. */
 export const MARCADORES = {
-  nome: {
-    marcador: 'a confirmar: forma pública do nome',
-    gloss: 'to confirm: public form of the name',
-  },
   // Menção à convenção da casa, dentro da descrição do método — não é um
   // item por resolver. Fica com o mesmo aspecto porque é literalmente o
   // mesmo marcador, e a frase à volta diz o que ele é.
@@ -42,10 +38,6 @@ export const MARCADORES = {
   autarquicas: {
     marcador: 'a verificar: número exato antes de publicar',
     gloss: 'to verify: exact number before publishing',
-  },
-  financiamento: {
-    marcador: 'a confirmar: modelo de financiamento a declarar quando definido',
-    gloss: 'to confirm: funding model to be declared once defined',
   },
 };
 
@@ -62,9 +54,7 @@ export const SECOES = [
           tipo: 'p',
           partes: [
             'A direção é de ',
-            { forte: 'Nuno Santos' },
-            ' ',
-            M.nome,
+            { forte: 'Nuno dos Santos' },
             ', que escolhe os temas, define as regras deste método e responde, em última instância, pelo que aqui se publica. A escrita, a investigação e a verificação são feitas por modelos de inteligência artificial (Claude, da Anthropic), sob essa direção.',
           ],
         },
@@ -87,9 +77,7 @@ export const SECOES = [
           tipo: 'p',
           partes: [
             'It is directed by ',
-            { forte: 'Nuno Santos' },
-            ' ',
-            M.nome,
+            { forte: 'Nuno dos Santos' },
             ', who chooses the subjects, sets the rules of this method and answers, ultimately, for what is published here. The writing, the research and the verification are done by artificial intelligence models (Claude, by Anthropic), under that direction.',
           ],
         },
@@ -370,8 +358,7 @@ export const SECOES = [
               'Os dados oficiais chegam com atraso e são revistos. A data de acesso em cada selo diz quando lemos; se a fonte mudou depois, a discrepância trata-se como correção, não como argumento.',
             ],
             [
-              'Independência: este site não recebe financiamento de partidos, governos ou câmaras municipais. ',
-              M.financiamento,
+              'Independência: este site não recebe financiamento de partidos, governos ou câmaras municipais. É financiado pessoalmente pelo diretor, e não tem publicidade nem financiamento externo.',
             ],
           ],
         },
@@ -390,8 +377,7 @@ export const SECOES = [
               'Official data arrives late and is revised. The access date on each seal says when we read it; if the source changed afterwards, the discrepancy is treated as a correction, not as an argument.',
             ],
             [
-              'Independence: this site receives no funding from parties, governments or municipal councils. ',
-              M.financiamento,
+              'Independence: this site receives no funding from parties, governments or municipal councils. It is funded personally by the director, and has no advertising and no external funding.',
             ],
           ],
         },
