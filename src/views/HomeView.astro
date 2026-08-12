@@ -11,12 +11,26 @@ import InstrumentoConvergencia from '../components/InstrumentoConvergencia.astro
 import InstrumentoMapa from '../components/InstrumentoMapa.astro';
 import { FIGURAS } from '../data/figuras.mjs';
 import { VERBATIM } from '../data/verbatim.mjs';
+import { VERIFICACAO } from '../data/verificacao.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 
 const { lang = 'pt' } = Astro.props;
 const s = t(lang);
 const path = routePath('home', lang);
+
+/**
+ * Há quantos dias a linha de base foi reconferida contra a fonte.
+ *
+ * O número aparece na página. Se a verificação atrasar, a página di-lo por
+ * palavras em vez de deixar um número parecer fresco — mesma regra da dívida
+ * de proveniência: o leitor vê o que nós vemos.
+ */
+const diasDesdeVerificacao = Math.floor(
+  (Date.parse(`${new Date().toISOString().slice(0, 10)}T00:00:00Z`) -
+    Date.parse(`${VERIFICACAO.verificadoEm}T00:00:00Z`)) / 86400000,
+);
+const verificacaoVencida = diasDesdeVerificacao > VERIFICACAO.validadeDias;
 ---
 
 <Base
@@ -53,6 +67,11 @@ const path = routePath('home', lang);
     </div>
 
     <p class="sec-sub" style="margin-top:20px">{s.home.numeros.nota}</p>
+
+    <p class="sec-sub verificacao" data-vencida={verificacaoVencida ? 'sim' : null}>
+      {verificacaoVencida ? s.home.numeros.verificacaoVencida : s.home.numeros.verificacaoEm}{' '}
+      <span data-nonledger="data-de-actualizacao">{VERIFICACAO.verificadoEm}</span>.
+    </p>
   </section>
 
   <!-- ============================ Instrumento n.º 1 -->

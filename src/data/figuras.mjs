@@ -3,90 +3,159 @@
  *
  * Cada cartão é uma afirmação do livro-razão, mais as palavras que a rodeiam
  * nas duas línguas. As palavras não trazem números: onde é preciso um número,
- * há um { claim: … }; onde é preciso uma data, há um { ref: … }.
+ * há um { claim: … }; onde é preciso uma data, há um { ref: … }; onde é preciso
+ * um limiar publicado, há um { nl: …, motivo: 'limiar-do-quadro' }.
  *
  * As frases dizem o que a medida é, não o que ela significa. A interpretação
  * é trabalho do director, e vai nos estudos.
+ *
+ * ESCOLHA DOS INDICADORES — 2026-08-12.
+ * Estes não são indicadores escolhidos por nós. São os do painel do
+ * Procedimento relativo aos Desequilíbrios Macroeconómicos e do Painel Social
+ * Europeu: o conjunto que as instituições europeias usam para avaliar um
+ * Estado-Membro, com os limiares que elas próprias publicam. O critério de
+ * selecção, e a comparação entre os quadros do FMI, da OCDE, do Banco Mundial e
+ * da ONU, estão em ResearchHub/indicators/convergence.md.
+ *
+ * Cada valor foi confirmado contra a Comissão Europeia, SWD(2026) 222, por
+ * caminho independente da API do Eurostat. Ver a nota de cada afirmação.
  */
 
 export const FIGURAS = [
+  // ——— Os quatro limiares ultrapassados ———
   {
-    claim: 'pib-pc-portugal-2024',
-    nome: { pt: 'Portugal na UE-27', en: 'Portugal in the EU-27' },
+    claim: 'divida-publica-2025',
+    nome: { pt: 'Dívida pública', en: 'Government debt' },
     medida: {
-      pt: ['PIB per capita · PPS · UE-27 = ', { nl: '100', motivo: 'escala-de-instrumento' }, ' · ', { ref: '2024' }],
-      en: ['GDP per capita · PPS · EU-27 = ', { nl: '100', motivo: 'escala-de-instrumento' }, ' · ', { ref: '2024' }],
+      pt: ['Percentagem do PIB · limiar ', { nl: '60', motivo: 'limiar-do-quadro' }, '% · ', { ref: '2025' }],
+      en: ['Percentage of GDP · threshold ', { nl: '60', motivo: 'limiar-do-quadro' }, '% · ', { ref: '2025' }],
     },
     frase: {
       pt: [
-        'Portugal está ',
-        { claim: 'distancia-portugal-ue27-2024' },
-        ' pontos abaixo da média da UE-27. O valor de ',
-        { ref: '2024' },
-        ' é provisório.',
+        'Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu, e a descer.',
       ],
       en: [
-        'Portugal is ',
-        { claim: 'distancia-portugal-ue27-2024' },
-        ' points below the EU-27 average. The ',
-        { ref: '2024' },
-        ' value is provisional.',
+        'General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold, and falling.',
       ],
     },
   },
   {
-    claim: 'agua-nao-faturada-portugal-2024',
-    nome: { pt: 'Água não faturada', en: 'Non-revenue water' },
+    claim: 'posicao-de-investimento-internacional-2025',
+    nome: { pt: 'Posição de investimento internacional', en: 'Net international investment position' },
     medida: {
-      pt: ['Percentagem · dados de ', { ref: '2024' }],
-      en: ['Percentage · data for ', { ref: '2024' }],
-    },
-    frase: {
-      pt: ['Água não faturada nos sistemas de abastecimento em Portugal, em ', { ref: '2024' }, '.'],
-      en: ['Non-revenue water in Portugal’s public supply systems, in ', { ref: '2024' }, '.'],
-    },
-  },
-  {
-    claim: 'saldo-natural-portugal-2025',
-    nome: { pt: 'Saldo natural', en: 'Natural change' },
-    medida: {
-      pt: ['Pessoas · ', { ref: '2025' }],
-      en: ['People · ', { ref: '2025' }],
-    },
-    frase: {
-      pt: ['Diferença entre nascimentos e óbitos em Portugal, em ', { ref: '2025' }, '.'],
-      en: ['The difference between births and deaths in Portugal, in ', { ref: '2025' }, '.'],
-    },
-  },
-  {
-    claim: 'ciclo-substituicao-condutas',
-    nome: { pt: 'Ciclo de substituição de condutas', en: 'Pipe replacement cycle' },
-    medida: {
-      pt: ['Anos'],
-      en: ['Years'],
-    },
-    frase: {
-      pt: ['O ciclo de substituição de condutas publicado no estudo. A base de cálculo está por confirmar.'],
-      en: ['The pipe replacement cycle as published in the study. The basis of the calculation is still to be confirmed.'],
-    },
-  },
-  {
-    claim: 'avisos-pt2030-pessoas-singulares',
-    nome: { pt: 'Avisos abertos a pessoas singulares', en: 'Calls open to individuals' },
-    medida: {
-      pt: ['Avisos do PT2030 · ', { ref: '8 de Agosto de 2026' }],
-      en: ['PT2030 calls · ', { ref: '8 August 2026' }],
+      pt: ['Percentagem do PIB · limiar −', { nl: '35', motivo: 'limiar-do-quadro' }, '% · ', { ref: '2025' }],
+      en: ['Percentage of GDP · threshold −', { nl: '35', motivo: 'limiar-do-quadro' }, '% · ', { ref: '2025' }],
     },
     frase: {
       pt: [
-        'De ',
-        { claim: 'avisos-pt2030-abertos' },
-        ' avisos abertos nessa data, este é o número dos que aceitam candidaturas de pessoas singulares.',
+        'O que o país deve ao exterior menos o que tem a haver dele. É a medida com a maior distância ao limiar, e a que mais tem melhorado.',
       ],
       en: [
-        'Of the ',
-        { claim: 'avisos-pt2030-abertos' },
-        ' calls open on that date, this is how many accept applications from individuals.',
+        'What the country owes the rest of the world, less what it is owed. It sits furthest from its threshold, and has improved most.',
+      ],
+    },
+  },
+  {
+    claim: 'custo-unitario-do-trabalho-2025',
+    nome: { pt: 'Custo unitário do trabalho', en: 'Unit labour cost' },
+    medida: {
+      pt: ['Variação em três anos · limiar ', { nl: '9', motivo: 'limiar-do-quadro' }, '% · ', { ref: '2025' }],
+      en: ['Three-year change · threshold ', { nl: '9', motivo: 'limiar-do-quadro' }, '% · ', { ref: '2025' }],
+    },
+    frase: {
+      pt: [
+        'Custo do trabalho por unidade produzida, por hora trabalhada. A definição por hora é de ',
+        { ref: '2024' },
+        ': antes media-se por pessoa empregada.',
+      ],
+      en: [
+        'Labour cost per unit of output, per hour worked. The per-hour definition dates from ',
+        { ref: '2024' },
+        '; before that it was measured per person employed.',
+      ],
+    },
+  },
+  {
+    claim: 'precos-da-habitacao-2025',
+    nome: { pt: 'Preços da habitação', en: 'House prices' },
+    medida: {
+      pt: ['Variação anual · limiar ', { nl: '9', motivo: 'limiar-do-quadro' }, '% · ', { ref: '2025' }],
+      en: ['Annual change · threshold ', { nl: '9', motivo: 'limiar-do-quadro' }, '% · ', { ref: '2025' }],
+    },
+    frase: {
+      pt: [
+        'Índice nominal de preços da habitação. O limiar foi ultrapassado em ',
+        { ref: '2024' },
+        ' e o excesso quase duplicou no ano seguinte.',
+      ],
+      en: [
+        'Nominal house price index. The threshold was breached in ',
+        { ref: '2024' },
+        ', and the overshoot nearly doubled the following year.',
+      ],
+    },
+  },
+
+  // ——— O mesmo quadro regista também onde o país está à frente ———
+  {
+    claim: 'taxa-de-emprego-2025',
+    nome: { pt: 'Taxa de emprego', en: 'Employment rate' },
+    medida: {
+      pt: ['Percentagem da população dos ', { nl: '20', motivo: 'escala-de-instrumento' }, ' aos ', { nl: '64', motivo: 'escala-de-instrumento' }, ' anos · ', { ref: '2025' }],
+      en: ['Percentage of the population aged ', { nl: '20', motivo: 'escala-de-instrumento' }, ' to ', { nl: '64', motivo: 'escala-de-instrumento' }, ' · ', { ref: '2025' }],
+    },
+    frase: {
+      pt: [
+        'Indicador principal do Painel Social Europeu. Está acima da média da União — que é uma posição relativa, não um limiar: muda quando os outros mudam.',
+      ],
+      en: [
+        'A headline indicator of the European Social Scoreboard. It sits above the Union average — a relative position, not a threshold: it moves when other countries move.',
+      ],
+    },
+  },
+  {
+    claim: 'criancas-em-creche-2025',
+    nome: { pt: 'Crianças em creche', en: 'Children in formal childcare' },
+    medida: {
+      pt: ['Percentagem das crianças com menos de ', { nl: '3', motivo: 'escala-de-instrumento' }, ' anos · ', { ref: '2025' }],
+      en: ['Percentage of children under ', { nl: '3', motivo: 'escala-de-instrumento' }, ' · ', { ref: '2025' }],
+    },
+    frase: {
+      pt: ['Crianças com menos de três anos em cuidados formais. É das medidas em que Portugal mais se destaca no painel social.'],
+      en: ['Children under three in formal childcare. It is one of the measures where Portugal stands out most on the social scoreboard.'],
+    },
+  },
+  {
+    claim: 'abandono-escolar-precoce-2025',
+    nome: { pt: 'Abandono escolar precoce', en: 'Early school leaving' },
+    medida: {
+      pt: ['Percentagem dos ', { nl: '18', motivo: 'escala-de-instrumento' }, ' aos ', { nl: '24', motivo: 'escala-de-instrumento' }, ' anos · ', { ref: '2025' }],
+      en: ['Percentage of those aged ', { nl: '18', motivo: 'escala-de-instrumento' }, ' to ', { nl: '24', motivo: 'escala-de-instrumento' }, ' · ', { ref: '2025' }],
+    },
+    frase: {
+      pt: ['Jovens que deixaram a escola com o secundário incompleto e não estão em formação. Era mais de um terço no início do século.'],
+      en: ['Young people who left school without completing secondary education and are not in training. It was over a third at the turn of the century.'],
+    },
+  },
+
+  // ——— O cartão que não se lê sozinho ———
+  {
+    claim: 'sobrecarga-do-custo-da-habitacao-2025',
+    nome: { pt: 'Sobrecarga do custo da habitação', en: 'Housing cost overburden' },
+    medida: {
+      pt: ['Percentagem da população · ', { ref: '2025' }],
+      en: ['Percentage of the population · ', { ref: '2025' }],
+    },
+    frase: {
+      pt: [
+        'Proporção que gasta mais de ',
+        { nl: '40', motivo: 'escala-de-instrumento' },
+        '% do rendimento disponível em habitação. Está abaixo da média europeia — e a própria Comissão adverte que só se lê ao lado do regime de propriedade. Onde a taxa de proprietários é alta, esta medida não vê quem não conseguiu comprar.',
+      ],
+      en: [
+        'The share spending more than ',
+        { nl: '40', motivo: 'escala-de-instrumento' },
+        '% of disposable income on housing. It is below the European average — and the Commission itself warns it must be read alongside the tenure structure. Where owner-occupation is high, this measure does not see those who never bought.',
       ],
     },
   },
