@@ -181,6 +181,33 @@ export const STRINGS = {
       stubForaK: 'Publicado fora deste sítio',
       stubForaV: 'Enquanto a migração não chega, este estudo está publicado noutro sítio. A ligação sai deste domínio.',
       stubForaLink: 'Abrir o estudo',
+
+      /* Estudo com o documento já alojado aqui, mas com a página do
+         observatório ainda por escrever. É um estado a sério, e diz-se. */
+      migradoEstado: 'Documento alojado — página por escrever',
+      migradoLede: 'O documento deste estudo já está alojado aqui. A página do observatório à volta dele ainda não foi escrita.',
+      migradoExplicacao:
+        'O que se lê no documento é o estudo tal como foi publicado: não foi reescrito, resumido nem actualizado para caber aqui. O que falta é a página do observatório — a leitura curta, os números do estudo ligados ao livro-razão e a proveniência de cada um. Fingir esse conteúdo seria pior do que não ter nenhum.',
+
+      documentoK: 'O documento original',
+      documentoV:
+        'Alojado aqui na forma exacta em que foi publicado. A única coisa que lhe foi acrescentada é uma faixa no topo, com a marca do observatório e o caminho de volta a esta página; os estilos, os gráficos e o texto do documento não foram tocados.',
+      documentoVazio: 'O documento deste estudo ainda não foi alojado aqui.',
+      documentoLink: 'Ler o documento',
+      /* Vai dentro da faixa, no topo do documento. Sem algarismos: é regra do
+         portão, e a razão dela está em src/lib/documentos.mjs. */
+      documentoFaixa: 'Documento do estudo, tal como foi publicado',
+      documentoVoltar: 'Voltar à página do estudo',
+
+      edicaoIrma: 'Ver esta edição',
+      actualizadoLabel: 'Última actualização',
+      temaK: 'Tema',
+      temaNenhum: 'Sem tema atribuído',
+      descricoesK: 'Descrições',
+      descricoesNota: 'As descrições são reformulações do título, não resumos do conteúdo, e aguardam o director.',
+      descarregarK: 'Descarregar',
+      descarregarVazio:
+        'Este estudo ainda não tem ficheiros para descarregar. Quando tiver, aparecem aqui — com a mesma disciplina dos dados dos instrumentos: gerados da origem, com a proveniência no próprio ficheiro.',
     },
 
     erro404: {
@@ -363,6 +390,29 @@ export const STRINGS = {
       stubForaK: 'Published outside this site',
       stubForaV: 'Until the migration happens, this study is published elsewhere. The link leaves this domain.',
       stubForaLink: 'Open the study',
+
+      migradoEstado: 'Document hosted — page not yet written',
+      migradoLede: 'The document for this study is already hosted here. The observatory page around it has not been written yet.',
+      migradoExplicacao:
+        'What you read in the document is the study exactly as it was published: it has not been rewritten, shortened or updated to fit here. What is missing is the observatory page — the short reading, the study’s figures tied to the ledger and the provenance of each one. Faking that content would be worse than having none.',
+
+      documentoK: 'The original document',
+      documentoV:
+        'Hosted here in the exact form in which it was published. The only thing added to it is a slim banner at the top, with the observatory’s wordmark and the way back to this page; the document’s styles, graphics and text were not touched.',
+      documentoVazio: 'The document for this study has not been hosted here yet.',
+      documentoLink: 'Read the document',
+      documentoFaixa: 'Study document, exactly as published',
+      documentoVoltar: 'Back to the study page',
+
+      edicaoIrma: 'See this edition',
+      actualizadoLabel: 'Last updated',
+      temaK: 'Subject',
+      temaNenhum: 'No subject assigned',
+      descricoesK: 'Descriptions',
+      descricoesNota: 'The descriptions restate the title; they are not summaries of the content, and they await the director.',
+      descarregarK: 'Downloads',
+      descarregarVazio:
+        'This study has no files to download yet. When it does, they appear here — under the same discipline as the instrument data: generated from the source, with the provenance inside the file itself.',
     },
 
     erro404: {

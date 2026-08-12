@@ -28,6 +28,12 @@ contexts:
     why: >-
       Data de publicação de um estudo, no arquivo. Enquanto não estiver
       confirmada aparece como "[a verificar]".
+  - id: data-de-actualizacao
+    why: >-
+      Data da última revisão de uma edição de um estudo, na página do estudo. É
+      uma data editorial, como a de publicação, e é uma afirmação diferente
+      dela: enquanto não se souber, aparece como "[a verificar]" e não se
+      preenche com a data de publicação.
   - id: titulo-de-estudo
     why: >-
       Título literal de um estudo publicado. Vários trazem o ano no próprio

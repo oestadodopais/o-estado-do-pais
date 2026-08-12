@@ -152,7 +152,14 @@ página de destino de estudo perder o `noindex`, e falha se uma página que é p
 ser indexada o ganhar por descuido.
 
 **Levantar na migração:** apagar o `filter` no `astro.config.mjs` e o
-`noindex={true}` em `EstudoStubView.astro`. São duas linhas.
+`noindex={true}` em `EstudoView.astro`. São duas linhas.
+
+**Actualização (§1.19):** a página de destino deixou de ser um esboço, mas o
+`noindex` fica — não por a página estar vazia, mas por ainda não ter a leitura
+do observatório sobre o estudo. Levanta-se quando essa for escrita, não quando o
+documento for alojado. Os documentos originais também não entram no índice pela
+via do sitemap; a decisão sobre a indexação deles é da direção, e faz-se ao
+nível do alojamento.
 
 ### 1.9 Não há botão de tema
 
@@ -498,6 +505,106 @@ só vê páginas. A garantia de que os números do ficheiro são os do livro-raz
 vem inteira de `check:dados` — e essa verificação existe porque, sem ela, este
 seria exactamente o sítio por onde um número sem proveniência entrava.
 
+### 1.19 Os estudos migram para dois sítios, não um
+
+A página de destino de um estudo deixou de ser um esboço e passou a ser uma
+página do observatório: título, descrições nas duas línguas, tema, edições com
+data de publicação e de última actualização, ligações às edições irmãs, o estado
+da migração dito por palavras, o documento original quando existe, e uma secção
+de descargas — hoje vazia, e a dizê-lo.
+
+**O que continua a não estar lá, e é decisão e não falta de tempo:** não há
+resumo, não há versão curta, não há um único número do estudo. Um resumo escrito
+sem ler o estudo é conteúdo inventado; e um número do estudo só entra quando
+tiver linha no livro-razão, nunca copiado do documento a olho. Enquanto assim
+for, a página mantém-se fora do índice (§1.8).
+
+**A separação que estrutura tudo:**
+
+| | o que é | quem escreveu | algarismos |
+| --- | --- | --- | --- |
+| `/estudos/<slug>` | a página do observatório **sobre** o trabalho | nós, hoje | livro-razão, como qualquer página |
+| `/estudos/<slug>/documento` | o **trabalho**, tal como foi publicado | o documento, no dia em que saiu | dispensados: obra citada |
+
+#### Como um documento entra
+
+Pousar `studies-src/<slug>/pt.html` e construir. **A pasta é a declaração** — não
+há registo para actualizar nem rota para escrever. Preferiu-se isto a um campo
+em `studies.mjs` por uma razão: um registo que diz que há documento e um disco
+que não o tem são duas verdades diferentes sobre a mesma coisa, e mais cedo ou
+mais tarde divergem. O disco é a única verdade, e o build recusa-se a aceitar
+um documento que o arquivo não conheça — pasta com slug desconhecido, ficheiro
+que não é `pt.html` nem `en.html`, ou edição que o trabalho não tem.
+
+**Servido por endpoint, não por gabarito.** Um documento não pode passar por um
+gabarito Astro sem risco de lhe ser tocado no `<!doctype>` ou no invólucro. O
+endpoint devolve a cadeia exacta, e o que sai é o que se escreveu.
+
+**A faixa é a única alteração.** Entra logo a seguir ao `<body>`: acima dela o
+`<head>` do documento fica intacto, abaixo dela o documento fica byte a byte.
+Leva a marca do observatório ligada de volta à página do estudo, a nota do que o
+leitor está a ver, a linha de autoria da casa e o caminho de volta.
+
+**Porque é escura em qualquer tema.** A faixa não segue o `prefers-color-scheme`
+do leitor, ao contrário de todo o resto do sítio. O documento por baixo tem o
+fundo que tiver, e uma moldura que muda de cor com o tema podia desaparecer
+contra ele. Esta lê-se sempre, e diz sempre a mesma coisa: daqui para baixo, o
+que está escrito não é meu. O amarelo da casa não aparece na faixa — o amarelo
+marca medição, e a faixa é mobília.
+
+**Nada é injectado no `<head>`.** Nem canónico, nem hreflang, nem `noindex`.
+Foi uma escolha: «uma só alteração» significa uma, e o `<head>` de um documento
+é dele. **A consequência, que fica assinalada:** os documentos não têm canónico
+nem par hreflang, e não estão no sitemap. Se a direção quiser governar a
+indexação destes endereços, faz-se ao nível do alojamento (`X-Robots-Tag`) e não
+dentro do ficheiro — que é, aliás, como o escudo de pré-lançamento já é feito.
+
+#### A dispensa do portão, e porque é estreita
+
+Os algarismos do corpo de um documento **não** são varridos. A razão não é
+conveniência: é que são de uma obra já publicada, que trouxe a sua própria
+proveniência consigo. Varrê-los seria exigir que um documento citado se
+reescrevesse para caber nas regras de quem o cita.
+
+Em troca, esse ficheiro é conferido de uma maneira mais apertada do que qualquer
+página. A dispensa só se aplica se **tudo** isto for verdade:
+
+1. o endereço é o de um documento de estudo, pela tabela de rotas;
+2. o slug é o de um trabalho do arquivo;
+3. existe o ficheiro de origem em `studies-src/<slug>/<lingua>.html`;
+4. **o ficheiro construído é, carácter a carácter, «origem + faixa»** — é isto
+   que prova que o documento foi alojado intacto e que nada nosso entrou por
+   baixo da faixa;
+5. a faixa existe **uma só vez**, liga para a página deste estudo, diz o nome do
+   sítio, e **não tem um único algarismo no texto**.
+
+A regra 5 é a que fecha a porta. Sem ela, a dispensa do corpo seria um sítio
+onde um número da casa podia entrar sem proveniência — bastava escrevê-lo na
+faixa. Os algarismos do CSS da faixa não contam, porque são estilo e não texto,
+e o portão distingue-os (o `<style>` é saltado no varrimento da faixa).
+
+Continua a ser conferido que o documento é **auto-contido**: um `src`, um
+`<link>`, um `url(...)` ou um `@import` para fora do domínio falha o build. A
+promessa de «nenhum pedido de rede» não abre excepção para documentos. Âncoras
+para fora continuam legítimas — um estudo cita as suas fontes.
+
+**As páginas de estudo continuam varridas por inteiro.** Foi verificado a
+falhar: dois números metidos na página de estudo dão quarenta erros (dois por
+página, vinte páginas), com o documento alojado ao lado a passar.
+
+**O que a dispensa não é.** Não é uma afirmação de que os números do documento
+estão certos. Não estão no livro-razão e não vão estar: a sua proveniência é a
+do próprio documento, no dia em que foi publicado. Quem quiser um número de um
+estudo **na voz do observatório** tem de lhe dar uma linha no livro-razão — e aí
+volta a valer a regra da casa inteira.
+
+**Limite conhecido:** a faixa entra na primeira ocorrência de `<body`. Um
+documento que trouxesse essa cadeia dentro de um comentário no `<head>`
+receberia a faixa no sítio errado. Não foi resolvido porque a saída seria pior
+do que o problema (analisar o documento em vez de o tocar minimamente), e
+porque o portão apanha o resultado: o ficheiro deixaria de ser «origem + faixa»
+na forma esperada e o build pararia.
+
 ---
 
 ## 2. Como funciona o portão, e o que ele não vê
@@ -612,6 +719,21 @@ fácil, não para tornar o desonesto impossível.
 - O motivo de uma correção foi posto à prova nas duas línguas: entrada sem
   `reason_en` e chave `reason-en` mal escrita param o `ledger:check`; a edição
   inglesa a renderizar o motivo português fecha o portão de HTML (§1.17).
+- **O mecanismo dos documentos de estudo foi verificado com um documento
+  sintético, nas duas línguas, e o documento foi removido no fim.** Construiu
+  em `/estudos/<slug>/documento` e `/en/studies/<slug>/document`; a única
+  diferença entre o ficheiro de origem e o construído é uma linha — a faixa,
+  logo a seguir ao `<body>`. Os dois endereços devolvem `200 text/html` no
+  servidor de pré-visualização, e os dois CSV devolvem `200 text/csv`.
+- O mecanismo foi posto à prova a falhar, um caso de cada vez: documento
+  adulterado depois de construído · algarismo no texto da faixa · pasta com um
+  slug que não é de nenhum trabalho · edição inglesa num trabalho que não a tem
+  · nome de ficheiro que não é uma edição · documento a carregar recursos de
+  fora do domínio · documento construído sem ficheiro de origem. Nos sete casos,
+  o build pára.
+- **A dispensa não afrouxou o varrimento das páginas:** com o documento
+  sintético alojado, dois números metidos na página de estudo deram quarenta
+  erros — dois por página, nas vinte páginas de estudo.
 
 ---
 
@@ -622,16 +744,20 @@ fácil, não para tornar o desonesto impossível.
    financiamento, número exato das autárquicas) e rever a tradução inglesa. A
    frase «os dados por trás de cada gráfico são descarregáveis» deixou de estar
    por cumprir (§1.18).
-2. **Migrar os estudos.** Dez trabalhos, vinte páginas de destino (uma por
-   língua), cada uma a dizer por palavras que o estudo ainda não foi mudado
-   para ali.
+2. **Migrar os estudos.** A máquina está feita (§1.19): pousar
+   `studies-src/<slug>/pt.html` e construir aloja o documento original em
+   `/estudos/<slug>/documento`, intacto. Falta a outra metade, que é escrita e
+   não mecânica: a página do observatório sobre cada trabalho — a leitura curta,
+   os números do estudo com linha no livro-razão, a proveniência de cada um. É
+   essa que levanta o `noindex`.
 3. **Fechar a proveniência.** Vinte afirmações têm campos `[a verificar]`:
    sobretudo o organismo, o documento, o URL e o excerto das séries do PIB per
    capita, e a base de cálculo do ciclo de substituição de condutas.
 4. **Datas e descrições do arquivo.** Só «Os Pelouros» tem data de publicação
    confirmada (2026-08-12) e descrição escrita pela direção. Nas outras doze
    entradas a data continua `[a verificar]` e a descrição é reformulação do
-   título (§1.7).
+   título (§1.7). A data de **última actualização** (`updated`) está por
+   confirmar nas treze — pousar o documento de um estudo não a descobre.
 5. **Ligar o deploy** e o 301 de `oestadodopais.pt` para o domínio acentuado.
 6. **Em fila, já aceite:** localização de exibição dos números por edição
    (§1.6) — cadeia exacta preservada no livro-razão, renderização localizada.

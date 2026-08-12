@@ -37,10 +37,15 @@ export default defineConfig({
        * O índice do arquivo (/estudos, /en/studies) continua no sitemap.
        * Levantar isto na migração: apagar este filter e o noindex do stub.
        *
+       * Os documentos originais (/estudos/:slug/documento) também não entram:
+       * são obra já publicada, alojada aqui, e quem os encontra chega pela
+       * página do estudo. Estão fora por serem endpoints, e ficam fora por
+       * escrito — para não passarem a estar dentro sem ninguém decidir.
+       *
        * @param {string} page URL absoluto da página, como o sitemap o vê.
        * @returns {boolean} true se a página entra no sitemap.
        */
-      filter: (page) => matchPath(pathFromUrl(page))?.key !== 'estudo',
+      filter: (page) => !['estudo', 'documento'].includes(matchPath(pathFromUrl(page))?.key ?? ''),
 
       namespaces: { xhtml: true },
 

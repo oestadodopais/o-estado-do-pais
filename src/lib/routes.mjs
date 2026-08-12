@@ -25,12 +25,17 @@ export const PRIMARY_LANG = 'pt';
 /**
  * Cada chave é uma página lógica. `:slug` é o único parâmetro suportado.
  * Rotas futuras reservadas: municipio -> /municipios/:slug , /en/municipalities/:slug
+ *
+ * `documento` não é uma página deste sítio: é o estudo original, alojado tal
+ * como foi publicado, com uma faixa nossa no topo e mais nada. Vive debaixo do
+ * endereço do estudo porque é do estudo que ele é — ver src/lib/documentos.mjs.
  */
 export const ROUTES = {
   home: { pt: '/', en: '/en' },
   metodo: { pt: '/metodo', en: '/en/method' },
   estudos: { pt: '/estudos', en: '/en/studies' },
   estudo: { pt: '/estudos/:slug', en: '/en/studies/:slug' },
+  documento: { pt: '/estudos/:slug/documento', en: '/en/studies/:slug/document' },
 };
 
 /**
@@ -78,6 +83,23 @@ export function routePath(key, lang, params = {}) {
 }
 
 /**
+ * O padrão de um gabarito de rota, ancorado.
+ *
+ * `:slug` casa com um segmento e mais nada (`[^/]+`) — é o que faz
+ * `/estudos/x/documento` NÃO casar com `/estudos/:slug`, e casar só com a rota
+ * cujo gabarito tem o sufixo certo. Sem isto, uma rota com segmentos depois do
+ * parâmetro seria ambígua.
+ *
+ * @param {string} template
+ * @returns {RegExp}
+ */
+function padraoDe(template) {
+  const alvo = normalizePath(template);
+  const escapado = alvo.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return new RegExp('^' + escapado.replace(':slug', '([^/]+)') + '$');
+}
+
+/**
  * Descobre a que rota lógica pertence um caminho.
  * @param {string} path
  * @returns {Rota|null}
@@ -96,11 +118,8 @@ export function matchPath(path) {
         if (!hasParam) {
           if (normalizePath(template) === target) return { key, lang, params: {} };
         } else {
-          const prefix = template.replace(':slug', '');
-          if (target.startsWith(prefix)) {
-            const slug = target.slice(prefix.length);
-            if (slug && !slug.includes('/')) return { key, lang, params: { slug } };
-          }
+          const m = target.match(padraoDe(template));
+          if (m) return { key, lang, params: { slug: m[1] } };
         }
       }
     }
