@@ -802,6 +802,44 @@ dois resumos, e a possibilidade de descarregar outra vez e comparar. É por isso
 que a reconferência por descarga nova é a prova que conta, e não a confiança em
 qualquer registo — incluindo este.
 
+### 1.22 Uma ferramenta para quem vier de fora conferir
+
+`check:documentos` prova que o repositório é consistente consigo próprio. Não
+prova — e não pode — que o documento alojado é o documento do artefacto. Essa
+prova só existe descarregando outra vez, e só a pode fazer quem tiver acesso ao
+artefacto. [`scripts/verify-fetch.mjs`](scripts/verify-fetch.mjs) é a ferramenta
+dessa pessoa:
+
+```bash
+node scripts/verify-fetch.mjs <descarga.html> <slug> <lingua>
+```
+
+Normaliza a descarga com a **mesma** função que produziu o ficheiro alojado e
+compara o resumo em três sítios — a descarga nova, a linha do manifesto, e os
+bytes em disco. Imprime `MATCH` ou `MISMATCH`, com os resumos à vista, e sai com
+0 ou 1.
+
+**Porque compara três e não dois.** Duas comparações dizem que alguma coisa está
+mal; três dizem **o quê**. É a diferença entre um alarme e um diagnóstico:
+
+| O que concorda | O que se conclui |
+| --- | --- |
+| manifesto + disco, descarga não | o artefacto mudou a montante — o caso provável, e inocente — ou a normalização mudou |
+| manifesto + descarga, disco não | o ficheiro alojado foi alterado (é o que `check:documentos` apanha) |
+| disco + descarga, manifesto não | a linha do manifesto está desactualizada |
+
+E há uma coisa que a ferramenta **não** faz falhar: `sha256_raw` diferente. É
+impresso, marcado a amarelo, e explicado — o anfitrião muda o runtime que
+injecta sem o autor tocar no documento (§1.20), e um verificador que tratasse
+isso como adulteração estaria a acusar o inocente todas as semanas. Só o resumo
+normalizado decide.
+
+Posto à prova nos cinco caminhos: descarga igual · descarga com o runtime de
+outra geração (`MATCH`, com o bruto a divergir e a dizer porquê) · artefacto
+diferente · ficheiro alojado alterado · manifesto desactualizado. Nos três
+últimos sai `MISMATCH` com o diagnóstico certo, e num sexto caso — invólucro
+irreconhecível — pára antes de comparar seja o que for.
+
 ---
 
 ## 2. Como funciona o portão, e o que ele não vê
