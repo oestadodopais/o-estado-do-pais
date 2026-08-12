@@ -255,11 +255,10 @@ grupo. O título do grupo é texto do gabarito; a etiqueta vem do livro-razão e
 conferida contra ele. Sem ela, reclassificar uma confissão em actualização seria
 uma alteração de gabarito que nada apanhava.
 
-**Um buraco que fica, e que não fechei por minha conta:** o `reason` de cada
-entrada está no livro-razão numa língua só — português. Na edição inglesa, o
-motivo aparece por traduzir. Fechá-lo é um campo `reason_en` (ou um mapa por
-língua) mais uma regra no portão a conferir as duas versões. É a mesma classe de
-decisão que o `kind`, e por isso fica proposta, não feita.
+**Um buraco que ficou, e que a direção mandou fechar:** o `reason` de cada
+entrada estava no livro-razão numa língua só — português, também na edição
+inglesa. A proposta era um campo `reason_en` mais uma regra no portão a
+conferir as duas versões. **Aceite e feito — ver §1.17.**
 
 Foi por isto que as contagens de estudos (9 → 10) e de edições (12 → 13) **não**
 levaram entrada de correção: são recontagens da mesma natureza da segunda, já
@@ -418,6 +417,38 @@ tipos, nem scripts, nem imagens). Uma âncora não faz pedido nenhum até algué
 clicar. A verificação passou a distinguir as duas: **recursos externos: nenhum;
 âncoras externas: duas** (a página PT e a EN do mesmo estudo).
 
+### 1.17 O motivo de uma correção passou a existir nas duas línguas
+
+Proposto em §1.11, **aceite pela direção e feito**: cada entrada de
+`corrections[]` traz agora `reason` (português) e `reason_en` (inglês). Os dois
+são **obrigatórios** — `ledger:check` falha se faltar qualquer um.
+
+O que se decidiu, e porquê:
+
+- **Sem recurso à outra língua.** Uma edição inglesa que mostrasse o motivo
+  português por falta do inglês seria o defeito original com outra roupagem, e
+  seria invisível. Não há fallback: ou o motivo está escrito nas duas línguas,
+  ou o build pára antes de construir o que quer que seja.
+- **O portão confere a língua da edição, não a existência do texto.** Cada
+  página diz de que língua é (`<html lang>`, lido da própria página construída,
+  e mapeado pela tabela de rotas). O portão compara o motivo renderizado com o
+  motivo **daquela língua**. Uma página inglesa com o motivo português falha;
+  uma portuguesa com o inglês também. Testado nos dois sentidos.
+- **Só o motivo muda de língua.** Data, natureza, valor antigo e valor novo são
+  iguais nas duas edições, porque não são prosa — são o registo.
+- **As chaves de uma entrada passaram a ser uma lista fechada.** Um
+  `reason-en` em vez de `reason_en` seria aceite em silêncio pelo YAML e a
+  edição inglesa ficaria sem motivo; agora é campo desconhecido e falha. É a
+  mesma regra que o formato das afirmações já tinha, aplicada um nível abaixo.
+
+**As duas entradas existentes foram traduzidas**, não parafraseadas: o motivo
+inglês diz o mesmo que o português, incluindo os títulos citados, que ficam
+literais como em todo o lado.
+
+**Um limite honesto:** o portão confere que o motivo renderizado é o campo certo
+do livro-razão. Não confere — nem pode — que `reason_en` seja uma tradução fiel
+de `reason`. Isso é revisão humana, e é da direção.
+
 ---
 
 ## 2. Como funciona o portão, e o que ele não vê
@@ -449,7 +480,9 @@ clicar. A verificação passou a distinguir as duas: **recursos externos: nenhum
    rótulos traduzidos, e mais nada: uma entrada rotulada «atualização» com
    `kind: correcao` no livro-razão falha o build. O motivo é prosa livre e pode citar números («o valor 4 vinha
    do colofão…»), por isso é comparado por igualdade de texto, não dispensado:
-   reescrever a história de uma correção falha o build.
+   reescrever a história de uma correção falha o build. O motivo é conferido na
+   **língua da edição** — `reason` na página portuguesa, `reason_en` na inglesa
+   (§1.17).
 
 As ilhas de dados `<script type="application/json" data-ledger-json>` têm regra
 própria: cada número precisa de um irmão `<x>_claim`, e é conferido contra o

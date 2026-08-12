@@ -14,8 +14,12 @@
  * afirmações, e cada pedaço renderizado — data, natureza, valor antigo, valor
  * novo, motivo e id — é conferido pelo portão contra o livro-razão. Nem o
  * conteúdo nem a classificação podem ser reescritos em silêncio.
+ *
+ * O motivo é o único pedaço que muda de língua: `reason` na edição portuguesa,
+ * `reason_en` na inglesa. A escolha é feita em motivoDaEntrada(), e o portão
+ * confere, em cada edição, o motivo da língua daquela edição.
  */
-import { entradasDoRegisto } from '../lib/ledger.mjs';
+import { entradasDoRegisto, motivoDaEntrada } from '../lib/ledger.mjs';
 import { KIND_LABELS } from '../data/correcoes.mjs';
 import Claim from './Claim.astro';
 import { t } from '../i18n/strings.mjs';
@@ -88,7 +92,7 @@ const palavraConta = correcoes.length === 1 ? s.metodo.registoContaSing : s.meto
                   data-correcao-n={String(e.n)}
                   data-correcao-campo="reason"
                 >
-                  {e.reason}
+                  {motivoDaEntrada(e, lang)}
                 </p>
                 <p class="log-afirmacao">
                   <span
@@ -162,7 +166,7 @@ const palavraConta = correcoes.length === 1 ? s.metodo.registoContaSing : s.meto
                 data-correcao-n={String(e.n)}
                 data-correcao-campo="reason"
               >
-                {e.reason}
+                {motivoDaEntrada(e, lang)}
               </span>
               <code
                 class="registo-id"
