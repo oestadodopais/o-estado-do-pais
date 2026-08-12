@@ -166,6 +166,13 @@ console.log(
   ),
 );
 
+/* Uma edição que não veio pelo caminho normal diz-se em voz alta, a cada
+   construção. Um campo `via` enterrado no manifesto é uma nota de rodapé; dito
+   aqui, é uma coisa que quem constrói vê e pode ir conferir. */
+for (const [chave, e] of porChave) {
+  if (e.via) console.log(cinza(`    · "${chave}" entrou por «${e.via}» — ver DECISIONS §1.21`));
+}
+
 if (erros.length) {
   console.log('');
   console.error(vermelho(`  O PORTÃO DOS DOCUMENTOS FECHOU — ${erros.length} erro(s):`));

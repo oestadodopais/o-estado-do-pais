@@ -138,7 +138,8 @@ por palavras). **Não tem resumo nem números do estudo**: um resumo escrito sem
 ler o estudo seria conteúdo inventado, e os números do estudo só entram quando
 cada um tiver a sua linha no livro-razão.
 
-Hoje estão alojados **doze documentos**, em oito trabalhos.
+Hoje estão alojados **treze documentos**: todas as treze edições do arquivo, dos
+seus dez trabalhos. Não falta nenhuma.
 
 ### Pôr o documento de um estudo no sítio
 
