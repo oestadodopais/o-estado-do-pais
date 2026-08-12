@@ -167,6 +167,7 @@ export const STRINGS = {
       metaTitle: 'Estudos — O Estado do País',
       metaDescription: 'O arquivo de estudos publicados, com as suas edições em português e em inglês.',
       h1: 'Estudos',
+      lede: 'O arquivo do observatório: cada estudo publicado, com as suas edições, datas e estado de migração. O que ainda não vive aqui está ligado onde vive.',
       aviso:
         'Datas de publicação e descrições ainda não foram confirmadas pelo director. As descrições são reformulações do título, não resumos do conteúdo.',
       dataLabel: 'Publicação',
@@ -376,6 +377,7 @@ export const STRINGS = {
       metaTitle: 'Studies — O Estado do País',
       metaDescription: 'The archive of published studies, with their Portuguese and English editions.',
       h1: 'Studies',
+      lede: 'The observatory’s archive: every published study, with its editions, dates and migration state. What does not live here yet is linked where it lives.',
       aviso:
         'Publication dates and descriptions have not yet been confirmed by the director. The descriptions restate the title; they are not summaries of the content.',
       dataLabel: 'Published',
