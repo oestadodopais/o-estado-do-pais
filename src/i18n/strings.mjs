@@ -105,7 +105,7 @@ export const STRINGS = {
         total: 'Total',
         legendaA: 'Aceso: ',
         legendaB: ' — ',
-        legendaC: ' estudos aprofundados publicados. Os restantes ',
+        legendaC: ' estudos aprofundados publicados (um com edição em inglês). Os restantes ',
         legendaD: ' pontos marcam a posição do município; não representam cobertura.',
         readoutHint: 'Passe o cursor sobre um ponto para ler o município.',
         tecladoHint:
@@ -118,7 +118,6 @@ export const STRINGS = {
         coberturaK: 'O que o mapa não diz',
         coberturaV:
           'O ponto aceso marca cobertura editorial, não qualidade nem importância. Os restantes pontos marcam a posição do município e mais nada.',
-        estudosEvora: 'estudos aprofundados publicados',
       },
 
       estaPagina: {
@@ -159,6 +158,7 @@ export const STRINGS = {
       colunaAntigo: 'Valor antigo',
       colunaNovo: 'Valor novo',
       colunaMotivo: 'Motivo',
+      colunaAfirmacao: 'Afirmação',
       causalK: 'Atribuição causal',
       causalNota:
         'O que este observatório afirma e não afirma sobre causas. Escrita pelo director.',
@@ -288,7 +288,7 @@ export const STRINGS = {
         total: 'Total',
         legendaA: 'Lit: ',
         legendaB: ' — ',
-        legendaC: ' in-depth studies published. The remaining ',
+        legendaC: ' in-depth studies published (one with an English edition). The remaining ',
         legendaD: ' points mark the position of the municipality; they do not represent coverage.',
         readoutHint: 'Hover over a point to read the municipality.',
         tecladoHint:
@@ -301,7 +301,6 @@ export const STRINGS = {
         coberturaK: 'What the map does not say',
         coberturaV:
           'The lit point marks editorial coverage, not quality or importance. The remaining points mark the position of the municipality and nothing else.',
-        estudosEvora: 'in-depth studies published',
       },
 
       estaPagina: {
@@ -342,6 +341,7 @@ export const STRINGS = {
       colunaAntigo: 'Old value',
       colunaNovo: 'New value',
       colunaMotivo: 'Reason',
+      colunaAfirmacao: 'Claim',
       causalK: 'Causal attribution',
       causalNota:
         'What this observatory does and does not claim about causes. Written by the director.',

@@ -343,6 +343,70 @@ for (const file of ficheirosHtml(DIST)) {
     aRemover.push(el);
   }
 
+  /**
+   * O registo de correções.
+   *
+   * Nada aqui é excepção: cada pedaço — data, valor antigo, valor novo, motivo
+   * e id da afirmação — é conferido contra o campo corrections da própria
+   * afirmação. O motivo é prosa livre e pode citar números («o valor 4 vinha
+   * do colofão…»); por isso é comparado por igualdade de texto, não dispensado.
+   * Reescrever a história de uma correção falha o build.
+   */
+  const CAMPOS_CORRECAO = {
+    date: 'exacto',
+    old_value: 'algarismos',
+    new_value: 'algarismos',
+    reason: 'exacto',
+    id: 'exacto',
+  };
+  for (const el of body.querySelectorAll('[data-correcao-claim]')) {
+    const id = el.getAttribute('data-correcao-claim');
+    const n = Number(el.getAttribute('data-correcao-n'));
+    const campo = el.getAttribute('data-correcao-campo');
+    aRemover.push(el);
+
+    const modo = CAMPOS_CORRECAO[campo];
+    if (!modo) {
+      err(
+        `data-correcao-campo="${campo}" não existe. ` +
+          `Aceites: ${Object.keys(CAMPOS_CORRECAO).join(', ')}.`,
+      );
+      continue;
+    }
+    const claim = claims.get(id);
+    if (!claim) {
+      err(`o registo de correções cita a afirmação "${id}", que não existe no livro-razão.`);
+      continue;
+    }
+    idsUsados.add(id);
+
+    const renderizado = decodeEntities(textoDe(el));
+    if (campo === 'id') {
+      if (normalizeWhitespace(renderizado) !== String(claim.id)) {
+        err(`no registo de correções, o id foi renderizado como "${renderizado.trim()}" mas a afirmação é "${claim.id}".`);
+      }
+      continue;
+    }
+
+    const corr = (claim.corrections ?? [])[n];
+    if (!corr) {
+      err(`o registo de correções cita a correção #${n + 1} de "${id}", que não existe.`);
+      continue;
+    }
+    const esperado = String(corr[campo]);
+    const bate =
+      modo === 'algarismos'
+        ? digitsOf(renderizado) === digitsOf(esperado)
+        : normalizeWhitespace(renderizado) === normalizeWhitespace(esperado);
+    if (!bate) {
+      err(
+        `no registo de correções, "${campo}" de "${id}" foi renderizado como ` +
+          `"${renderizado.trim().slice(0, 120)}" mas o livro-razão diz ` +
+          `"${esperado.slice(0, 120)}".`,
+      );
+    }
+  }
+
   for (const el of body.querySelectorAll('[data-verbatim]')) {
     const chave = el.getAttribute('data-verbatim');
     const registado = VERBATIM[chave];
