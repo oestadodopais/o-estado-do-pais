@@ -1,0 +1,78 @@
+---
+/**
+ * Página de destino de um estudo, ainda sem o estudo.
+ *
+ * Existe para fixar o endereço. Não tem resumo, não tem versão curta, não tem
+ * números do estudo — porque o estudo ainda não foi mudado para aqui e fingir
+ * conteúdo seria pior do que não ter nenhum.
+ *
+ * O JSON-LD vai marcado como rascunho (creativeWorkStatus: Draft), para que o
+ * que a página diz ao leitor e o que diz às máquinas seja a mesma coisa.
+ */
+import Base from '../layouts/Base.astro';
+import { workById } from '../data/studies.mjs';
+import { POR_VERIFICAR } from '../data/studies.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { canonicalUrl, SITE_NAME, SITE_URL } from '../../site.config.mjs';
+import { t } from '../i18n/strings.mjs';
+
+const { lang = 'pt', slug } = Astro.props;
+const s = t(lang);
+const work = workById(slug);
+if (!work) throw new Error(`estudo desconhecido: "${slug}"`);
+
+const path = routePath('estudo', lang, { slug });
+const principal = work.editions.find((e) => e.lang === lang) ?? work.editions[0];
+
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: principal.title,
+  inLanguage: work.editions.map((e) => (e.lang === 'pt' ? 'pt-PT' : 'en')),
+  creativeWorkStatus: 'Draft',
+  url: canonicalUrl(path),
+  isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+  publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+};
+---
+
+<Base
+  lang={lang}
+  path={path}
+  title={`${principal.title} — ${SITE_NAME}`}
+  description={work.description[lang]}
+  jsonld={jsonld}
+>
+  <div style="padding-top:clamp(20px,3vw,34px)">
+    <span class="eyebrow">{s.estudos.stubEstado}</span>
+    <h1 style="margin-top:12px" data-nonledger="titulo-de-estudo">{principal.title}</h1>
+    <p class="lede" style="margin-top:16px">{work.description[lang]}</p>
+  </div>
+
+  <div style="margin-top:clamp(28px,4vw,42px);display:grid;gap:22px">
+    <div class="placeholder">
+      <span class="placeholder-tag">{s.estudos.stubEstado}</span>
+      <p class="lede" style="font-size:16px">{s.estudos.stubLede}</p>
+      <p class="placeholder-nota">{s.estudos.stubExplicacao}</p>
+    </div>
+
+    <div class="log-vazio">
+      <div class="log-vazio-k">{s.estudos.stubEdicoes}</div>
+      {
+        work.editions.map((e) => (
+          <div class="arquivo-meta" style="justify-content:flex-start">
+            <span class="badge">{e.lang.toUpperCase()}</span>
+            <span data-nonledger="titulo-de-estudo">{e.title}</span>
+            <span data-nonledger="data-de-publicacao">
+              {s.estudos.dataLabel}: {e.date ?? POR_VERIFICAR}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+
+    <p class="rodape-nav">
+      <a href={routePath('estudos', lang)}>{s.estudos.stubVoltar}</a>
+    </p>
+  </div>
+</Base>

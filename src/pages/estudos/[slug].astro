@@ -1,0 +1,11 @@
+---
+import EstudoStubView from '../../views/EstudoStubView.astro';
+import { WORKS } from '../../data/studies.mjs';
+
+export function getStaticPaths() {
+  return WORKS.map((w) => ({ params: { slug: w.slug } }));
+}
+
+const { slug } = Astro.params;
+---
+<EstudoStubView lang="pt" slug={slug} />

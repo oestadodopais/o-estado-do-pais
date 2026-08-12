@@ -1,0 +1,108 @@
+---
+/**
+ * A primeira página. Uma só fonte para as duas edições: recebe `lang` e nada mais.
+ */
+import Base from '../layouts/Base.astro';
+import Masthead from '../components/Masthead.astro';
+import Claim from '../components/Claim.astro';
+import Provenance from '../components/Provenance.astro';
+import Frase from '../components/Frase.astro';
+import InstrumentoConvergencia from '../components/InstrumentoConvergencia.astro';
+import InstrumentoMapa from '../components/InstrumentoMapa.astro';
+import { FIGURAS } from '../data/figuras.mjs';
+import { VERBATIM } from '../data/verbatim.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+const path = routePath('home', lang);
+---
+
+<Base
+  lang={lang}
+  path={path}
+  title={s.home.metaTitle}
+  description={s.home.metaDescription}
+>
+  <Masthead slot="masthead" lang={lang} path={path} compact={false} furniture={true} />
+
+  <p class="lede" style="margin-top:8px">{s.home.lede1}</p>
+  <p class="lede">{s.home.lede2}</p>
+
+  <!-- ============================ O país em números verificados -->
+  <section id="numeros">
+    <div class="sec-head">
+      <span class="eyebrow">{s.home.numeros.eyebrow}</span>
+      <h2>{s.home.numeros.h2}</h2>
+      <p class="sec-sub">{s.home.numeros.sub}</p>
+    </div>
+
+    <div class="figuras">
+      {
+        FIGURAS.map((f) => (
+          <article class="figura">
+            <Claim id={f.claim} class="figura-num" as="div" />
+            <h3 class="figura-nome">{f.nome[lang]}</h3>
+            <p class="figura-medida"><Frase partes={f.medida[lang]} lang={lang} /></p>
+            <p class="figura-frase"><Frase partes={f.frase[lang]} lang={lang} /></p>
+            <Provenance id={f.claim} lang={lang} />
+          </article>
+        ))
+      }
+    </div>
+
+    <p class="sec-sub" style="margin-top:20px">{s.home.numeros.nota}</p>
+  </section>
+
+  <!-- ============================ Instrumento n.º 1 -->
+  <section id="convergencia">
+    <div class="sec-head">
+      <span class="eyebrow">
+        {s.home.instr1.eyebrow} <span data-nonledger="numeracao">{lang === 'pt' ? 'n.º 1' : 'no. 1'}</span>
+      </span>
+      <h2>{s.home.instr1.h2}</h2>
+      <p class="sec-sub"><Frase partes={s.home.instr1.subPartes} lang={lang} /></p>
+    </div>
+    <InstrumentoConvergencia lang={lang} />
+  </section>
+
+  <!-- ============================ Instrumento n.º 2 -->
+  <section id="mapa">
+    <div class="sec-head">
+      <span class="eyebrow">
+        {s.home.instr2.eyebrow} <span data-nonledger="numeracao">{lang === 'pt' ? 'n.º 2' : 'no. 2'}</span>
+      </span>
+      <h2>
+        {s.home.instr2.h2} — <Claim id="municipios-portugal-caop-2025" />
+      </h2>
+      <p class="sec-sub">{s.home.instr2.sub}</p>
+    </div>
+    <InstrumentoMapa lang={lang} />
+  </section>
+
+  <!-- ============================ Esta página -->
+  <section id="esta-pagina">
+    <div class="sec-head">
+      <span class="eyebrow">{s.home.estaPagina.eyebrow}</span>
+    </div>
+    <div class="prov">
+      <div class="prov-row">
+        <span class="prov-study">{s.home.estaPagina.rede}</span>
+        <span class="prov-vals" data-verbatim="sem-pedidos-de-rede" lang="pt-PT">
+          {VERBATIM['sem-pedidos-de-rede'].text}
+        </span>
+      </div>
+      <div class="prov-row">
+        <span class="prov-study">{lang === 'pt' ? 'Tipos' : 'Typefaces'}</span>
+        <span class="prov-vals">{s.home.estaPagina.tipos}</span>
+      </div>
+      <div class="prov-row">
+        <span class="prov-study">{lang === 'pt' ? 'Amarelo' : 'Yellow'}</span>
+        <span class="prov-vals" data-verbatim="regra-do-amarelo" lang="pt-PT">
+          {VERBATIM['regra-do-amarelo'].text}
+        </span>
+      </div>
+    </div>
+  </section>
+</Base>
