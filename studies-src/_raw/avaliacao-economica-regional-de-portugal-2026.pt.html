@@ -1,0 +1,607 @@
+<!doctype html><html><head><!-- frame-runtime --><script>window.__FRAME_PREAMBLE={"capabilities":{"assets":"assets.hcOK0ALv.js","comments":"comments.BKZ3qutA.js","db":"db.C8ehi_0m.js","downloads":"downloads.BXsoAvg9.js","mcp":"mcp.D3B2EyQu.js","permissions":"permissions.DdITF2Mk.js","room":"room.BgXZkiYR.js","sample":"sample.DpdXn9di.js","self":"self.BN4be5De.js","user":"user.o5zdRedj.js"},"transforms":"_transforms.VaITkagF.js","comments":"_comments.CNSvmFji.js","translate":"_translate.BOzFH2D9.js"}</script><script>(function(){"use strict";var le=["light","dark","system"],ue=/^[A-Za-z0-9_-]{1,64}$/,H=/^[a-zA-Z_:][a-zA-Z0-9_:.-]{0,127}$/,fe=new Set(["class","hidden"]);function de(e){const t=e.toLowerCase();return t.startsWith("data-")||t.startsWith("aria-")||fe.has(t)}function me(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_patch;if(t===null||typeof t!="object")return!1;const{seq:n,elements:a}=t;if(typeof n!="number"||!Number.isSafeInteger(n)||!Array.isArray(a)||a.length===0||a.length>64)return!1;for(const s of a){if(s===null||typeof s!="object")return!1;const r=s;if(typeof r.target!="string"||!ue.test(r.target)||r.text!==void 0&&typeof r.text!="string")return!1;if(r.attrsSet!==void 0){if(r.attrsSet===null||typeof r.attrsSet!="object")return!1;for(const[o,i]of Object.entries(r.attrsSet))if(!H.test(o)||typeof i!="string")return!1}if(r.attrsRemoved!==void 0){if(!Array.isArray(r.attrsRemoved))return!1;for(const o of r.attrsRemoved)if(typeof o!="string"||!H.test(o))return!1}}return!0}function pe(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_init;return t!==null&&typeof t=="object"}function Y(e){return e!==null&&typeof e=="object"&&e.__frame_size_poke===!0}function ge(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_theme;if(t===null||typeof t!="object")return!1;const n=t.theme;return typeof n=="string"&&le.includes(n)}function he(e){try{typeof reportError=="function"?reportError(e):setTimeout(()=>{throw e},0)}catch{}}var K=["#62744c","#b04e72","#5b7596","#a3651f","#7a6ba8","#3f7a75"],J=e=>{let t=0;for(let n=0;n<e.length;n++)t=t*31+e.charCodeAt(n)>>>0;return K[t%K.length]??"#788c5d"},V="#c7c9d1",X=e=>"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2 2'%3E%3Ccircle cx='1' cy='1' r='1' fill='"+encodeURIComponent(e)+"'/%3E%3C/svg%3E",ve=Object.freeze({id:null,name:"",avatarUrl:X(V),color:V,email:null,isOwner:!1,canEdit:!1}),_e=(...e)=>{const t=e[0],n=typeof t=="string"?[t]:Array.isArray(t)?t.filter(s=>typeof s=="string"):[],a=Object.create(null);for(const s of n)a[s]={id:s,name:"",avatarUrl:X(J(s)),color:J(s),email:null,isMe:!1};return a},Z=Object.freeze(Object.assign(Object.create(null),{user:Object.freeze(Object.assign(Object.create(null),{id:null,isOwner:!1,canEdit:!1,me:ve,profiles:_e,name:"",avatarUrl:null,search:Object.freeze([]),email:null}))})),ye={sample:"sample"};function G(){const e=new Uint8Array(20);try{crypto.getRandomValues(e)}catch{for(let n=0;n<e.length;n++)e[n]=Math.floor(Math.random()*256)}let t="";for(const n of e)t+=(n%36).toString(36);return t}function be(e,t){const n=r=>{const o={path:r},i=r.split("/");return{id:i[i.length-1],path:r,get:()=>t("get",[o]),set:g=>t("set",[o,g]),update:g=>t("update",[o,g]),delete:()=>t("delete",[o]),acquire:g=>t("acquire",[o,g]),onSnapshot:(g,y)=>t("subscribe",[o,g,y]),collection:g=>s(r+"/"+String(g))}},a=r=>({where:(o,i,g)=>a({...r,where:[...r.where??[],{f:String(o),op:String(i),v:g}]}),orderBy:(o,i)=>a({...r,orderBy:{f:String(o),dir:i===void 0?"asc":String(i)}}),limit:o=>a({...r,limit:Number(o)}),get:()=>t("query",[r]),onSnapshot:(o,i)=>t("subscribe",[r,o,i])}),s=r=>({...a({collection:r}),path:r,doc:o=>n(r+"/"+(o===void 0?G():String(o))),add:o=>{const i=n(r+"/"+G());return Promise.resolve(i.set(o)).then(()=>i)}});e.doc=r=>n(String(r)),e.collection=r=>s(String(r))}function Q(e){if(window===top||e.type==="auxclick"&&e.button!==1)return;const t=e.composedPath?e.composedPath():[e.target];let n=null;for(let o=0;o<t.length;o++){const i=t[o];if(i&&i.matches&&i.matches("a[href],area[href]")){n=i;break}}if(!n&&e.target&&e.target.closest&&(n=e.target.closest("a[href],area[href]")),!n)return;const a=n.getAttribute("href");if(!a)return;let s,r;try{s=new URL(a,document.baseURI),r=new URL(document.baseURI).origin}catch{return}if((s.protocol==="http:"||s.protocol==="https:")&&s.origin!==r){e.preventDefault();const o=(n.getAttribute("target")??document.querySelector("base[target]")?.getAttribute("target")??"").toLowerCase(),i=e.type==="auxclick"||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||!["","_self","_top","_parent"].includes(o);parent.postMessage({__frame_nav:!0,url:s.href,newTab:i},"*")}}var ee={};function I(e){if(window===top)return;const t=Date.now();t-(ee[e]||0)<500||(ee[e]=t,parent.postMessage({__frame_engaged:!0,kind:e},"*"))}var Ee=2e3,te=["wheel","touchstart","touchmove","keydown","pointerdown"],re=0;function we(e){e.isTrusted&&(re=Date.now())}function Ae(){addEventListener("click",Q,!0),addEventListener("auxclick",Q,!0)}function Se(){for(let e=0;e<te.length;e++)addEventListener(te[e],we,{capture:!0,passive:!0});addEventListener("scroll",e=>{e.isTrusted&&Date.now()-re<Ee&&I("scroll")},{capture:!0,passive:!0}),addEventListener("pointermove",e=>{e.isTrusted&&I("pointer")},{capture:!0,passive:!0}),addEventListener("click",e=>{e.isTrusted&&I("click")},{capture:!0,passive:!0})}var je=Object.freeze([]);function Oe(e,t){let n=null,a=null;const s=()=>e.__settled;e.peers=()=>je,e.connected=()=>!1,e.emit=()=>s()?.()??Promise.resolve(),e.presence=r=>{const o=s();if(o)return o();let i=null;if(r!==null&&typeof r=="object")try{Array.isArray(r)||(i={...r})}catch{}return i===null?Promise.reject({code:"invalid_argument",message:"presence takes an object"}):(n===null&&(n=Object.create(null),a=Promise.resolve(t("presence",[n]))),Object.assign(n,i),a)}}var U="__frame_scroll",Re=150,Pe=310,Me=160,Le=3e4;function Te(){let e=0,t=!1,n=!1,a=!1,s=0,r=null;const o=d=>{try{sessionStorage.setItem(U,JSON.stringify({y:d}))}catch{}},i=()=>{if(clearTimeout(e),r===null)return;const d=r;r=null,o(d)},g=()=>{if(t){t=!1;return}n=!0,r=scrollY,clearTimeout(e),e=setTimeout(i,Re)};try{addEventListener("scroll",g,{passive:!0}),addEventListener("pagehide",i)}catch{}const y=()=>{let d;try{d=sessionStorage.getItem(U)}catch{return null}if(d===null)return null;let u;try{u=JSON.parse(d)}catch{u=null}const p=u?.y;if(!(typeof p=="number"&&Number.isFinite(p)&&p>=0)){try{sessionStorage.removeItem(U)}catch{}return null}return p};let l=!1;const f=d=>{try{const u=scrollY;scrollTo({top:d,left:0,behavior:"instant"}),s=d,a=!0,clearTimeout(e),r=null,o(d);const p=scrollY;p!==u&&(t=!0),p!==d&&!l&&(l=!0,addEventListener("load",()=>{try{if(scrollY===p){const _=y();f(_!==null?_:s)}}catch{}},{once:!0}))}catch{}},m=()=>{try{return!!location.hash}catch{return!0}};let h=!1;const v=()=>{try{if(h||innerWidth>Pe||innerHeight>Me)return;h=!0;const d=Date.now(),u=()=>{try{removeEventListener("resize",u)}catch{}if(Date.now()-d>Le||n||m())return;const p=y();f(p!==null?p:s)};addEventListener("resize",u)}catch{}};let w=!1,A=!1;return{restore(){if(w||(w=!0,m()))return;const d=y();d!==null&&(f(d),v())},promoted(){if(A||(A=!0,m()))return;const d=y();d!==null?(f(d),v()):a&&f(s)}}}function Ce(e,t,n){const a=[...t.values()].filter(s=>s.targets.some(r=>r.startsWith(e+".")));return{wrap(s,r){const o=`${e}.${s}`,i=a.filter(g=>g.targets.includes(o));return i.length===0?(...g)=>{try{return r(...g)}catch(y){return Promise.reject(y)}}:(...g)=>{let y=g;for(const f of i){const m=f.module.parameters;if(m)try{y=m(y)}catch{return Promise.reject({code:"transform_error",id:f.id,scope:e,message:"parameters transform failed"})}}let l;try{l=r(...y)}catch(f){l=Promise.reject(f)}return l.then(f=>{for(let m=i.length-1;m>=0;m--){const h=i[m],v=h.module.returns;if(v)try{f=v(f)}catch{return n({id:h.id,scope:e,leg:"returns"}),f}}return f},f=>{for(let m=i.length-1;m>=0;m--){const h=i[m],v=h.module.throws;if(v)try{f=v(f)}catch{return n({id:h.id,scope:e,leg:"throws"}),Promise.reject(f)}}return Promise.reject(f)})}}}}function ke(e,t,n,a=()=>{}){const s=new Set(e.changes??[]),r=new Map;for(const o of s){const i=t[o];i&&r.set(o,i)}return{contract:e.contract,changes:s,flags:new Set(e.flags??[]),capabilities:e.capabilities??{},capBudgets:e.capBudgets??{},transforms:r,shellOrigin:n.shellOrigin,mount:n.mount,pipe:o=>Ce(o,r,a)}}var $e="modulepreload",Fe=function(e){return"/"+e},xe={},Ne=function(t,n,a){let s=Promise.resolve();function r(o){const i=new Event("vite:preloadError",{cancelable:!0});if(i.payload=o,window.dispatchEvent(i),!i.defaultPrevented)throw o}return s.then(o=>{for(const i of o||[])i.status==="rejected"&&r(i.reason);return t().catch(r)})};(function(){const e=Object.defineProperty,t=globalThis,n=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let a=0;for(let s=0;s<n.length;s++){const r=n[s];try{e(t,r,{value:void 0,writable:!1,configurable:!1})}catch{try{delete t[r]}catch{}try{e(t,r,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof t[r]=="function"&&a++}if(a&&window!==top)try{parent.postMessage({__frame_rtc_lockdown_failed:a},"*")}catch{}})();var qe=1e4,Ie=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function ne(e){for(const t of Ie)if(t.endsWith(":*"))try{const n=new URL(e);if(`${n.protocol}//${n.hostname}:*`===t)return!0}catch{}else if(e===t)return!0;return!1}var C=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),D=window.__FRAME_PREAMBLE?.transforms,z=window.__FRAME_PREAMBLE?.comments,B=window.__FRAME_PREAMBLE?.translate,k=/^[\w.-]+\.js$/,Ue=/^[a-z][a-z0-9_-]{0,63}$/,se=null,P=null;function $(e,t,n){try{Object.defineProperty(e,t,{value:n,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(e,t,{value:n,writable:!1,configurable:!0,enumerable:!0})}catch{}}}var F=!1;function De(e,t){const n=[];for(const a of e.elements){const s=document.querySelector(`[data-id="${a.target}"]`);if(!s){parent.postMessage({__frame_patch_miss:{seq:e.seq}},t);return}if([...Object.keys(a.attrsSet??{}),...a.attrsRemoved??[]].some(r=>!de(r))){parent.postMessage({__frame_patch_miss:{seq:e.seq}},t);return}for(const[r,o]of Object.entries(a.attrsSet??{}))if(r.toLowerCase()!=="data-id")try{s.setAttribute(r,o)}catch{}for(const r of a.attrsRemoved??[])r.toLowerCase()!=="data-id"&&s.removeAttribute(r);typeof a.text=="string"&&(s.textContent=a.text),n.push(a.target)}try{document.dispatchEvent(new CustomEvent("claude:edit",{detail:{seq:e.seq,targets:n}}))}catch{}}function oe(e){const t=document.documentElement;e==="light"||e==="dark"?(t.dataset.theme=e,t.style.colorScheme=e,F=!0):F&&(delete t.dataset.theme,t.style.colorScheme="",F=!1)}var ae=256,M=Object.assign(Object.create(null),{mcp:Object.assign(Object.create(null),{watchTool:{handlerArg:3}}),db:Object.assign(Object.create(null),{subscribe:{handlerArg:1,errArg:2}}),room:Object.assign(Object.create(null),{on:{handlerArg:1,errArg:2},onPeers:{handlerArg:0,errArg:1},onConnection:{handlerArg:0,errArg:1}})}),ze=Object.assign(Object.create(null),{db:(e,t)=>be(e,t),room:(e,t,n)=>Oe(e,n)}),L=new Map;function ie(e,t){const n=L.get(e);if(!n)return;const a=Object.assign(Object.create(null),t);Object.assign(n.impl,a),n.impl.__settled=()=>Promise.reject({code:"capability_removed",message:`${e}: method not in this runtime`});const s=n.queue;n.queue=[];for(const r of s){const o=a[r.method];if(o)if(M[e]?.[r.method])try{r.resolve(o(...r.args))}catch{T(r,M[e][r.method],{code:"transform_error",message:`${e}.${r.method} rejected its arguments`})}else o(...r.args).then(r.resolve,r.reject);else{const i={code:"capability_removed",message:`${e}.${r.method} is not in this runtime`},g=M[e]?.[r.method];if(g){T(r,g,i);continue}r.reject(i)}}}function Be(e,t){const n=L.get(e);if(!n)return;n.impl.__settled=()=>Promise.reject(t);const a=n.queue;n.queue=[];for(const s of a){const r=M[e]?.[s.method];if(r){T(s,r,t);continue}s.reject(t)}}function ce(e,t){if(typeof e=="function")try{return e(...t)}catch{return Object.create(null)}return Array.isArray(e)?[...e]:e!==null&&typeof e=="object"?{...e}:e}function N(e,t){const n=Z[e];if(!n){Be(e,t);return}ie(e,Object.fromEntries(Object.entries(n).map(([a,s])=>[a,(...r)=>Promise.resolve(ce(s,r))])))}function T(e,t,n){if(e.syncState?.dead)return;const a=t.errArg===void 0?void 0:e.args[t.errArg],s=t.errArg===void 0?e.args[t.handlerArg]:a;typeof s=="function"&&queueMicrotask(()=>{if(!e.syncState?.dead)try{s(t.errArg===void 0?{type:"error",error:n}:n)}catch(r){he(r)}})}var x=Object.getOwnPropertyDescriptor(window,"claude");if(window!==top&&!(x&&x.writable===!1)){Ae(),Se();let e=null;try{e=Te()}catch{}const t=x?.value??{};$(window,"claude",t);const n=l=>{const f={impl:Object.create(null),queue:[]};L.set(l,f);const m=f.impl,h=d=>({code:"queue_overflow",message:`${l}.${d}: pre-init call queue is full`}),v=(d,u)=>{if(f.queue.length>=ae){const p=Z[l];return p&&d in p?Promise.resolve(ce(p[d],u)):Promise.reject(h(d))}return new Promise((p,_)=>{f.queue.push({method:d,args:u,resolve:p,reject:_})})},w=ye[l],A=new Proxy(w===void 0?m:(()=>{}),{apply:(d,u,p)=>{const _=w,E=m[_]??m.__settled;return E?E(...p):v(_,p)},get:(d,u)=>{if(typeof u!="string"||u==="then"||u==="toJSON"||u==="valueOf")return;if(u==="toString")return Object.prototype.toString;if(w!==void 0&&(u==="call"||u==="apply"||u==="bind"))return Function.prototype[u];const p=M[l]?.[u];return p?(..._)=>{if(typeof _[p.handlerArg]!="function")throw new TypeError(`${l}.${u} requires a handler function`);const E=m[u];if(E)return E(..._);if(m.__settled){const b={dead:!1},q={args:[..._],syncState:b};return m.__settled().catch(c=>T(q,p,c)),()=>{b.dead=!0}}if(f.queue.length>=ae){const b={dead:!1};return T({args:[..._],syncState:b},p,h(u)),()=>{b.dead=!0}}let S=null;const O={dead:!1};return f.queue.push({method:u,args:_,resolve:b=>{S=typeof b=="function"?b:null,O.dead&&S?.()},reject:()=>{},syncState:O}),()=>{O.dead=!0,S?.()}}:(..._)=>{const E=m[u]??m.__settled;return E?E(..._):v(u,_)}},set:()=>!1});ze[l]?.(m,(d,u)=>A[d](...u),v),$(t,l,A)};for(const l of Object.keys(C)){if(t[l]!==void 0){$(t,l,t[l]);continue}n(l)}let a=null,s=null,r=0;const o=l=>{l.source!==parent||!ne(l.origin)||pe(l.data)&&(a=l.data.__frame_init,P=l.origin,removeEventListener("message",o),clearTimeout(r),s?.())};addEventListener("message",o),parent.postMessage({__frame_connect:!0},"*");const i=new Promise(l=>{s=l,r=setTimeout(()=>{removeEventListener("message",o),l()},qe)}),g=document.readyState==="loading"?new Promise(l=>document.addEventListener("DOMContentLoaded",()=>l(),{once:!0})):Promise.resolve();g.then(()=>{try{e?.restore()}catch{}});const y=l=>{if(!(l.source!==parent||!ne(l.origin))&&Y(l.data)){removeEventListener("message",y);try{e?.promoted()}catch{}}};addEventListener("message",y),i.then(async()=>{if(!a||!P){for(const c of L.keys())N(c,{code:"not_granted",message:"frame initialization did not arrive - capability unavailable"});return}oe(a.theme);const l=P;let f=!1,m=!1;addEventListener("message",c=>{if(c.source!==parent||c.origin!==l)return;ge(c.data)&&oe(c.data.__frame_theme.theme),me(c.data)&&De(c.data.__frame_patch,l);const j=c.data?.__fc_mode;j&&typeof j=="object"&&!f&&z&&k.test(z)&&(f=!0,h(z).then(W=>W.install?.(l,j.on===!0)).catch(()=>{}));const R=c.data?.__ft_cmd;R&&typeof R=="object"&&!m&&B&&k.test(B)&&(m=!0,h(B).then(W=>W.install?.(l,R)).catch(()=>{}))});const h=c=>Ne(()=>import("/_runtime/"+c),void 0),v=Object.keys(a.capabilities??{});for(const c of v)Object.hasOwn(C,c)||Ue.test(c)&&t[c]===void 0&&(n(c),N(c,{code:"capability_disabled",message:"capability not in this runtime generation"}));const w=v.filter(c=>Object.hasOwn(C,c)).map(c=>[c,C[c]]).filter(c=>typeof c[1]=="string"&&k.test(c[1])),[A,...d]=await Promise.allSettled([D&&k.test(D)?h(D):Promise.resolve({}),...w.map(([,c])=>h(c))]),u=P;se=ke(a,A.status==="fulfilled"&&A.value?.TRANSFORMS||{},{shellOrigin:u,mount:ie},c=>parent.postMessage({__frame_cap_telemetry:c},u));const p=c=>parent.postMessage({__frame_cap_telemetry:{kind:"cap-load-error",cap:c}},u),_=se;d.forEach((c,j)=>{const R=w[j][0];if(c.status!=="fulfilled"){p(R);return}try{c.value?.install?.(_)}catch{p(R)}});for(const[c,j]of L)if(j.impl.__settled===void 0){if(v.includes(c)){N(c,{code:"capability_disabled",message:"capability not available in this session"});continue}N(c,{code:"not_granted",message:"capability not available in this session"})}await g,parent.postMessage({__frame_ready:!0},P);let E=-1,S=0;const O=()=>{S=0;const c=Math.max(document.documentElement.scrollHeight,document.body?document.body.scrollHeight:0);c!==E&&(E=c,parent.postMessage({__frame_size:!0,h:c},u))},b=()=>{S||(S=setTimeout(O,200))},q=new ResizeObserver(b);q.observe(document.documentElement),document.body&&q.observe(document.body),document.addEventListener("load",b,!0),document.fonts?.ready.then(b,()=>{}),addEventListener("beforeprint",()=>{E=-1,O()}),b(),addEventListener("message",c=>{if(!(c.source!==parent||c.origin!==u)&&Y(c.data)){try{e?.promoted()}catch{}E=-1,b()}})})}})();</script><!-- /frame-runtime --><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}</style></head><body>
+<title>Avaliação Económica Regional de Portugal 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root {
+  --paper: #FAFBF9; --ink: #1B2126; --muted: #5A6B72;
+  --accent: #16556E; --rule: #D8DFDC; --panel: #F1F4F2; --code: #EDF1EF;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #12181B; --ink: #E6ECEA; --muted: #8FA1A8;
+          --accent: #6FB3CC; --rule: #243036; --panel: #182024; --code: #1C262B; }
+}
+:root[data-theme="dark"] { --paper: #12181B; --ink: #E6ECEA; --muted: #8FA1A8;
+  --accent: #6FB3CC; --rule: #243036; --panel: #182024; --code: #1C262B; }
+:root[data-theme="light"] { --paper: #FAFBF9; --ink: #1B2126; --muted: #5A6B72;
+  --accent: #16556E; --rule: #D8DFDC; --panel: #F1F4F2; --code: #EDF1EF; }
+html { background: var(--paper); }
+body {
+  margin: 0 auto; padding: 2.5rem 1.25rem 5rem; max-width: 46rem;
+  background: var(--paper); color: var(--ink);
+  font: 1.02rem/1.62 Charter, "Iowan Old Style", Georgia, "Times New Roman", serif;
+}
+h1, h2, h3 {
+  font-family: "Avenir Next", Seravek, "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.2; text-wrap: balance; color: var(--ink);
+}
+h1 { font-size: 1.9rem; font-weight: 700; margin: 0 0 1rem;
+     padding-bottom: .75rem; border-bottom: 3px solid var(--accent); }
+h2 { font-size: 1.28rem; font-weight: 700; margin: 2.6rem 0 .7rem; }
+h2::before {
+  content: ""; display: block; width: 2.2rem; height: 3px;
+  background: var(--accent); margin-bottom: .55rem;
+}
+h3 { font-size: 1.02rem; font-weight: 600; margin: 1.8rem 0 .5rem;
+     color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+p { margin: .8rem 0; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
+ul { padding-left: 1.2rem; margin: .8rem 0; display: flex; flex-direction: column; gap: .55rem; }
+li { margin: 0; }
+strong { font-variant-numeric: tabular-nums; }
+em { color: var(--muted); }
+code {
+  font: .88em ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  background: var(--code); padding: .08em .35em; border-radius: 4px;
+}
+.table-shell { overflow-x: auto; margin: 1.1rem 0 .35rem; border: 1px solid var(--rule); border-radius: 6px; }
+table { border-collapse: collapse; width: 100%; font-family: "Avenir Next", Seravek, "Segoe UI", ui-sans-serif, system-ui, sans-serif; font-size: .86rem; }
+th, td { padding: .5rem .65rem; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+th { background: var(--panel); font-weight: 600; text-align: left; color: var(--muted);
+     text-transform: none; letter-spacing: 0; }
+th.num, td.num { text-align: right; font-variant-numeric: tabular-nums; }
+tbody tr:last-child td { border-bottom: 0; }
+tr.agg td { border-top: 2px solid var(--accent); font-weight: 600; }
+.fonte {
+  font-family: "Avenir Next", Seravek, "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  font-size: .78rem; color: var(--muted); margin: .3rem 0 1.6rem;
+}
+.fonte .src-url, .src-url { color: var(--accent); word-break: break-all; text-decoration-thickness: 1px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+<h1>Portugal — Avaliação Económica Regional, Agosto de 2026</h1>
+<p><strong>Data:</strong> Agosto de 2026 (recolhas a 2026-08-03, carimbos temporais no registo). <strong>Regiões:</strong> NUTS2. <strong>Fontes:</strong> apenas INE (API JSON) e Eurostat. <strong>Registo de afirmações (claims ledger):</strong> <code>ledger.json</code> junto a este ficheiro; respostas brutas das API e scripts de construção em <code>Technical Source/</code>. <strong>Edição:</strong> pt-PT, gerada da edição inglesa por <code>Technical Source/make_pt_regional.py</code>; os números são transportados mecanicamente da edição inglesa e reformatados para convenções pt-PT por um passo determinista do mesmo script.</p>
+<hr>
+<h2>Limitações e estado de verificação — ler primeiro</h2>
+<ul><li><strong>Versões NUTS.</strong> Tanto o Eurostat como o INE servem Portugal na classificação <strong>NUTS 2024</strong> (9 regiões NUTS2). Cada tabela indica a sua versão. Uma tabela (a série longa de ganhos) existe apenas em <strong>NUTS 2013</strong> (7 regiões) e é mantida separada; as duas não podem ser comparadas região a região.</li><li><strong>Todos os valores de PIB de 2024 são provisórios</strong> — o Eurostat serve-os com o indicador de estado <code>p</code>.</li><li><strong>O que não existe ao nível NUTS2</strong> (ausências verificadas, não lacunas a preencher): as séries regionais do inquérito ao emprego do Eurostat <strong>não têm valores anteriores a 2019 para as cinco regiões cujos limites mudaram na NUTS 2024</strong> (Centro, Oeste e Vale do Tejo, Grande Lisboa, Península de Setúbal, Alentejo); o indicador de ganhos em NUTS-2024 começa em <strong>2021</strong> (os seus próprios metadados: primeiro período 2021); o indicador de poder de compra do INE em NUTS 2024 tem <strong>uma única edição, 2023</strong> (primeiro período = último período = 2023). Nenhuma estimativa é usada em parte alguma para preencher estas lacunas.</li><li><strong>O item adicional do PRR (aprovado vs pago por região) não foi executado</strong> — abandonado por força do prazo, segundo a ordem de prioridades da tarefa. Os totais de contratos do Portal BASE não foram usados em lado nenhum (não são somáveis).</li><li><strong>A qualificação do verificador contra <code>evals/agua-2026-07</code> correu mas estava incompleta no momento do congelamento</strong> — um dos três agentes examinadores não tinha regressado, e o classificador conta as suas linhas como falhas, pelo que o resultado formal é REPROVADO e o fluxo de verificação é tratado como <strong>não qualificado</strong> por esta execução (zero falsos alarmes, e cada afirmação sabidamente errada que foi tentada foi apanhada ou honestamente marcada como inverificável; detalhe em <code>Technical Source/VERIFICATION.md</code>). A verificação que ficou completa: re-derivação cega das seis afirmações principais (todas confirmadas contra recolhas frescas por agentes que nunca viram a análise), e uma auditoria com canários, formulada para refutar, que apanhou todos os defeitos plantados — resultados em <code>Technical Source/VERIFICATION.md</code>.</li><li>As frases de avaliação marcadas <em>(inferência)</em> são a leitura que o Claude faz dos números com fonte, não constatações com fonte em si mesmas.</li></ul>
+<hr>
+<h2>Síntese</h2>
+<ul><li>O PIB per capita de Portugal situou-se em <strong>82</strong> % da média da UE-27 em PPS em 2024 (provisório), face a <strong>77</strong> em 2013. A convergência é real mas lenta: <strong>+5</strong> pontos em onze anos.</li><li><strong>A Grande Lisboa é a única região acima da média da UE-27</strong> — <strong>129</strong> em 2024. A região mais fraca, a Península de Setúbal, está em <strong>55</strong>: um fosso de <strong>74</strong> pontos dentro do antigo limite de uma única área metropolitana. <em>(inferência: a divisão de 2024 da antiga região de Lisboa em Grande Lisboa e Península de Setúbal expõe um fosso que a classificação anterior diluía na média.)</em></li><li>A convergência mais rápida da década está nas regiões de turismo — Algarve <strong>+13</strong> pontos para <strong>89</strong>, Madeira <strong>+14</strong> para <strong>88</strong>. A mais lenta está no continente fora de Lisboa: Oeste e Vale do Tejo e Península de Setúbal ganharam <strong>+1</strong> ponto cada.</li><li>O trabalho é o ponto forte de Portugal: a taxa de emprego dos 20–64 anos (<strong>79,6</strong> % em 2025) está acima da média da UE-27 (<strong>76,1</strong> %) <strong>em todas as nove regiões</strong>, e o desemprego iguala a média da UE (<strong>6,0</strong> %). Há uma década, o desemprego era <strong>16,5</strong> % a nível nacional.</li><li>Os ganhos contam a história oposta à do emprego: o ganho bruto médio mensal foi <strong>1576,0</strong> € em 2024; só a Grande Lisboa (<strong>1935,7</strong> €) excede o valor nacional, com o Algarve no mínimo, a <strong>1320,2</strong> € — emprego alto, salários baixos, em todo o lado fora da capital. <em>(inferência)</em></li><li>O índice de poder de compra do INE (2023) diz que o fosso do lado do consumo é mais estreito do que o do lado da produção: Grande Lisboa <strong>127,58</strong> contra um mínimo dos Açores de <strong>87,62</strong> (Portugal = 100) — um fosso de cerca de <strong>40</strong> pontos, contra <strong>74</strong> no PIB. <em>(inferência: os movimentos pendulares e as transferências deslocam rendimento através do Tejo; a Península de Setúbal produz a 55 mas consome a 99,35.)</em></li></ul>
+<hr>
+<h2>PIB per capita — nível, distância à UE e uma década de movimento</h2>
+<p><strong>NUTS 2024.</strong> Valores de 2024 provisórios. PPS = Paridade de Poder de Compra Padrão («Purchasing Power Standard», na designação do Eurostat), UE-27 = 100.</p>
+<div class="table-shell"><table><thead><tr><th class="lab">Região</th>
+<th class="num">PIB/cap 2024 (€)</th>
+<th class="num">PIB/cap 2024 (PPS)</th>
+<th class="num">Índice 2024 (UE-27 = 100)</th>
+<th class="num">Índice 2013</th>
+<th class="num">Δ 2013–2024 (p.p.)</th></tr></thead><tbody><tr>
+<td class="lab">Norte</td>
+<td class="num">23 300</td>
+<td class="num">28 300</td>
+<td class="num">71</td>
+<td class="num">64</td>
+<td class="num">+7</td>
+</tr><tr>
+<td class="lab">Centro</td>
+<td class="num">23 200</td>
+<td class="num">28 200</td>
+<td class="num">71</td>
+<td class="num">66</td>
+<td class="num">+5</td>
+</tr><tr>
+<td class="lab">Oeste e Vale do Tejo</td>
+<td class="num">21 200</td>
+<td class="num">25 800</td>
+<td class="num">65</td>
+<td class="num">64</td>
+<td class="num">+1</td>
+</tr><tr>
+<td class="lab">Grande Lisboa</td>
+<td class="num">42 300</td>
+<td class="num">51 500</td>
+<td class="num">129</td>
+<td class="num">125</td>
+<td class="num">+4</td>
+</tr><tr>
+<td class="lab">Península de Setúbal</td>
+<td class="num">18 200</td>
+<td class="num">22 100</td>
+<td class="num">55</td>
+<td class="num">54</td>
+<td class="num">+1</td>
+</tr><tr>
+<td class="lab">Alentejo</td>
+<td class="num">25 300</td>
+<td class="num">30 800</td>
+<td class="num">77</td>
+<td class="num">71</td>
+<td class="num">+6</td>
+</tr><tr>
+<td class="lab">Algarve</td>
+<td class="num">29 300</td>
+<td class="num">35 600</td>
+<td class="num">89</td>
+<td class="num">76</td>
+<td class="num">+13</td>
+</tr><tr>
+<td class="lab">Açores</td>
+<td class="num">23 800</td>
+<td class="num">29 000</td>
+<td class="num">73</td>
+<td class="num">69</td>
+<td class="num">+4</td>
+</tr><tr>
+<td class="lab">Madeira</td>
+<td class="num">29 000</td>
+<td class="num">35 300</td>
+<td class="num">88</td>
+<td class="num">74</td>
+<td class="num">+14</td>
+</tr><tr class="agg">
+<td class="lab">Portugal</td>
+<td class="num">27 100</td>
+<td class="num">32 900</td>
+<td class="num">82</td>
+<td class="num">77</td>
+<td class="num">+5</td>
+</tr><tr class="agg">
+<td class="lab">UE-27</td>
+<td class="num">39 900</td>
+<td class="num">39 900</td>
+<td class="num">100</td>
+<td class="num">100</td>
+<td class="num">+0</td>
+</tr></tbody></table></div>
+<p class="fonte">Fonte: Eurostat (intergovernamental), conjunto de dados nama_10r_2gdp, obtido a 2026-08-03. <a class="src-url" href="https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10r_2gdp?format=JSON&amp;lang=EN&amp;unit=EUR_HAB&amp;unit=PPS_EU27_2020_HAB&amp;unit=PPS_HAB_EU27_2020&amp;geo=PT11&amp;geo=PT15&amp;geo=PT19&amp;geo=PT1A&amp;geo=PT1B&amp;geo=PT1C&amp;geo=PT1D&amp;geo=PT20&amp;geo=PT30&amp;geo=PT&amp;geo=EU27_2020&amp;sinceTimePeriod=2013" rel="noopener">https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10r_2gdp?format=JSON&amp;lang=EN&amp;unit=EUR_HAB&amp;unit=PPS_EU27_2020_HAB&amp;unit=PPS_HAB_EU27_2020&amp;geo=PT11&amp;geo=PT15&amp;geo=PT19&amp;geo=PT1A&amp;geo=PT1B&amp;geo=PT1C&amp;geo=PT1D&amp;geo=PT20&amp;geo=PT30&amp;geo=PT&amp;geo=EU27_2020&amp;sinceTimePeriod=2013</a></p>
+<p><strong>Nível e distância à UE.</strong> Portugal produz <strong>82</strong> % da média da UE-27 por habitante em PPS; em euros nominais a distância é maior (<strong>27 100</strong> € contra <strong>39 900</strong> €). Oito das nove regiões estão abaixo da média da UE.</p>
+<p><strong>Amplitude.</strong> <strong>74</strong> pontos de índice separam a Grande Lisboa (<strong>129</strong>) da Península de Setúbal (<strong>55</strong>). <em>(inferência: este é o fosso mais largo da tabela por construção da nova classificação — a antiga Área Metropolitana de Lisboa diluía as duas margens do Tejo num único valor; a NUTS 2024 mostra pela primeira vez, em separado, o prémio da capital e a fraqueza da sua coroa pendular. O 129 da Grande Lisboa não deve ser lido como «Lisboa ficou mais rica do que os antigos números da AML mostravam» — é a mesma economia medida num limite mais estreito.)</em></p>
+<p><strong>Direção.</strong> Todas as regiões convergiram ou mantiveram a posição em 2013–2024; nenhuma recuou. O movimento é desigual: as duas regiões dominadas pelo turismo ganharam dois dígitos (Algarve <strong>+13</strong>, Madeira <strong>+14</strong> — ambas tinham caído a fundo em 2020 e recuperaram para lá da posição pré-pandemia na mesma série <em>(inferência a partir dos anos intermédios do mesmo conjunto de dados)</em>), o continente norte e centro ganhou com solidez (Norte <strong>+7</strong>, Alentejo <strong>+6</strong>, Centro <strong>+5</strong>), e a coroa em torno de Lisboa mal se moveu (Oeste e Vale do Tejo <strong>+1</strong>, Península de Setúbal <strong>+1</strong>).</p>
+<h2>De que é feita cada economia regional — VAB por setor, 2023</h2>
+<p><strong>NUTS 2024.</strong> Quotas do valor acrescentado bruto a preços correntes, %; calculadas a partir dos valores em milhões de euros do Eurostat (derivações no registo de afirmações).</p>
+<div class="table-shell"><table><thead><tr><th class="lab">Região</th>
+<th class="num">Agricultura (A)</th>
+<th class="num">Indústria (B–E)</th>
+<th class="num">da qual transformadora (C)</th>
+<th class="num">Construção (F)</th>
+<th class="num">Comércio, transportes, turismo, TIC (G–J)</th>
+<th class="num">Financeiras, imobiliário, serviços às empresas (K–N)</th>
+<th class="num">Setor público e outros (O–U)</th>
+<th class="num">VAB total (mil M€)</th></tr></thead><tbody><tr>
+<td class="lab">Norte</td>
+<td class="num">1,6</td>
+<td class="num">24,1</td>
+<td class="num">20,6</td>
+<td class="num">6,1</td>
+<td class="num">24,5</td>
+<td class="num">24,1</td>
+<td class="num">19,7</td>
+<td class="num">69,7</td>
+</tr><tr>
+<td class="lab">Centro</td>
+<td class="num">3,3</td>
+<td class="num">27,0</td>
+<td class="num">23,5</td>
+<td class="num">5,4</td>
+<td class="num">22,4</td>
+<td class="num">19,8</td>
+<td class="num">22,1</td>
+<td class="num">32,4</td>
+</tr><tr>
+<td class="lab">Oeste e Vale do Tejo</td>
+<td class="num">7,3</td>
+<td class="num">20,8</td>
+<td class="num">17,1</td>
+<td class="num">5,0</td>
+<td class="num">27,7</td>
+<td class="num">20,1</td>
+<td class="num">19,1</td>
+<td class="num">14,9</td>
+</tr><tr>
+<td class="lab">Grande Lisboa</td>
+<td class="num">0,2</td>
+<td class="num">6,8</td>
+<td class="num">5,7</td>
+<td class="num">3,3</td>
+<td class="num">32,7</td>
+<td class="num">37,2</td>
+<td class="num">19,9</td>
+<td class="num">73,7</td>
+</tr><tr>
+<td class="lab">Península de Setúbal</td>
+<td class="num">1,8</td>
+<td class="num">16,8</td>
+<td class="num">14,5</td>
+<td class="num">5,4</td>
+<td class="num">24,6</td>
+<td class="num">27,0</td>
+<td class="num">24,4</td>
+<td class="num">12,4</td>
+</tr><tr>
+<td class="lab">Alentejo</td>
+<td class="num">13,7</td>
+<td class="num">21,0</td>
+<td class="num">14,6</td>
+<td class="num">4,4</td>
+<td class="num">19,9</td>
+<td class="num">17,6</td>
+<td class="num">23,4</td>
+<td class="num">10,0</td>
+</tr><tr>
+<td class="lab">Algarve</td>
+<td class="num">3,7</td>
+<td class="num">4,5</td>
+<td class="num">2,3</td>
+<td class="num">6,1</td>
+<td class="num">41,6</td>
+<td class="num">25,6</td>
+<td class="num">18,5</td>
+<td class="num">11,5</td>
+</tr><tr>
+<td class="lab">Açores</td>
+<td class="num">6,3</td>
+<td class="num">7,9</td>
+<td class="num">4,7</td>
+<td class="num">4,7</td>
+<td class="num">28,6</td>
+<td class="num">18,7</td>
+<td class="num">33,8</td>
+<td class="num">4,7</td>
+</tr><tr>
+<td class="lab">Madeira</td>
+<td class="num">1,5</td>
+<td class="num">5,7</td>
+<td class="num">2,5</td>
+<td class="num">6,1</td>
+<td class="num">38,1</td>
+<td class="num">21,2</td>
+<td class="num">27,3</td>
+<td class="num">6,1</td>
+</tr><tr class="agg">
+<td class="lab">Portugal</td>
+<td class="num">2,5</td>
+<td class="num">16,6</td>
+<td class="num">13,9</td>
+<td class="num">4,9</td>
+<td class="num">28,0</td>
+<td class="num">27,1</td>
+<td class="num">20,9</td>
+<td class="num">235,6</td>
+</tr><tr class="agg">
+<td class="lab">UE-27</td>
+<td class="num">1,8</td>
+<td class="num">20,2</td>
+<td class="num">16,5</td>
+<td class="num">5,5</td>
+<td class="num">24,2</td>
+<td class="num">27,0</td>
+<td class="num">21,3</td>
+<td class="num">15 595,2</td>
+</tr></tbody></table></div>
+<p class="fonte">Fonte: Eurostat (intergovernamental), conjunto de dados nama_10r_3gva, obtido a 2026-08-03. <a class="src-url" href="https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10r_3gva?format=JSON&amp;lang=EN&amp;unit=CP_MEUR&amp;geo=PT11&amp;geo=PT15&amp;geo=PT19&amp;geo=PT1A&amp;geo=PT1B&amp;geo=PT1C&amp;geo=PT1D&amp;geo=PT20&amp;geo=PT30&amp;geo=PT&amp;geo=EU27_2020&amp;time=2013&amp;time=2022&amp;time=2023" rel="noopener">https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10r_3gva?format=JSON&amp;lang=EN&amp;unit=CP_MEUR&amp;geo=PT11&amp;geo=PT15&amp;geo=PT19&amp;geo=PT1A&amp;geo=PT1B&amp;geo=PT1C&amp;geo=PT1D&amp;geo=PT20&amp;geo=PT30&amp;geo=PT&amp;geo=EU27_2020&amp;time=2013&amp;time=2022&amp;time=2023</a></p>
+<p>As nove regiões são quatro tipos diferentes de economia <em>(inferência)</em>:</p>
+<ul><li><strong>Norte e centro industriais.</strong> O Centro é a região mais industrial de Portugal (<strong>27,0</strong> % de indústria, da qual <strong>23,5</strong> de transformadora) e o Norte vem logo atrás (<strong>24,1</strong> / <strong>20,6</strong>) — ambos acima da quota industrial da UE-27 (<strong>20,2</strong> %), como também estão, por margem estreita, o Alentejo (<strong>21,0</strong> %) e o Oeste e Vale do Tejo (<strong>20,8</strong> %). Portugal no seu conjunto (<strong>16,6</strong> %) é marcadamente menos industrial do que a média da UE. <em>(Corrigido a 2026-08-03, em auditoria pós-publicação: o texto anterior dizia «mais nada no país está» — as próprias linhas do Alentejo e do Oeste e Vale do Tejo na tabela contradizem-no.)</em></li><li><strong>Uma capital de serviços.</strong> A Grande Lisboa é finanças, imobiliário e serviços às empresas (<strong>37,2</strong> %, o máximo nacional) mais comércio/transportes/TIC (<strong>32,7</strong> %), com a indústria em <strong>6,8</strong> % — o perfil de um polo metropolitano de serviços, e quase um terço do VAB nacional (<strong>73,7</strong> mil M€ de <strong>235,6</strong> mil M€).</li><li><strong>Costas e ilhas de turismo.</strong> O Algarve assenta <strong>41,6</strong> % em comércio, transportes, alojamento e TIC — a região mais dependente de um único setor em toda a tabela — e a Madeira <strong>38,1</strong> %. Os Açores apoiam-se antes no setor público (<strong>33,8</strong> %, o máximo nacional).</li><li><strong>Interior agrícola.</strong> A quota agrícola do Alentejo, <strong>13,7</strong> %, é sete vezes a média da UE (<strong>1,8</strong> %) e a mais alta do país; seguem-se o Oeste e Vale do Tejo (<strong>7,3</strong> %) e os Açores (<strong>6,3</strong> %).</li></ul>
+<h2>Mercado de trabalho — emprego e desemprego</h2>
+<p><strong>NUTS 2024.</strong> Taxa de emprego 20–64 anos (%), taxa de desemprego 15–74 anos (%). As séries regionais das cinco regiões com limites alterados começam em 2019 (ver Limitações); a visão da década existe apenas para as quatro regiões sem alteração e para os agregados nacional/UE.</p>
+<h3>Taxa de emprego, 2019 → 2025</h3>
+<div class="table-shell"><table><thead><tr><th class="lab">Região</th>
+<th class="num">2019</th>
+<th class="num">2025</th>
+<th class="num">Δ 2019–2025 (p.p.)</th></tr></thead><tbody><tr>
+<td class="lab">Norte</td>
+<td class="num">74,3</td>
+<td class="num">78,2</td>
+<td class="num">+3,9</td>
+</tr><tr>
+<td class="lab">Centro</td>
+<td class="num">77,1</td>
+<td class="num">80,5</td>
+<td class="num">+3,4</td>
+</tr><tr>
+<td class="lab">Oeste e Vale do Tejo</td>
+<td class="num">77,0</td>
+<td class="num">78,8</td>
+<td class="num">+1,8</td>
+</tr><tr>
+<td class="lab">Grande Lisboa</td>
+<td class="num">78,5</td>
+<td class="num">81,9</td>
+<td class="num">+3,4</td>
+</tr><tr>
+<td class="lab">Península de Setúbal</td>
+<td class="num">76,8</td>
+<td class="num">79,9</td>
+<td class="num">+3,1</td>
+</tr><tr>
+<td class="lab">Alentejo</td>
+<td class="num">74,8</td>
+<td class="num">80,2</td>
+<td class="num">+5,4</td>
+</tr><tr>
+<td class="lab">Algarve</td>
+<td class="num">77,9</td>
+<td class="num">80,6</td>
+<td class="num">+2,7</td>
+</tr><tr>
+<td class="lab">Açores</td>
+<td class="num">71,2</td>
+<td class="num">76,7</td>
+<td class="num">+5,5</td>
+</tr><tr>
+<td class="lab">Madeira</td>
+<td class="num">73,6</td>
+<td class="num">77,2</td>
+<td class="num">+3,6</td>
+</tr><tr class="agg">
+<td class="lab">Portugal</td>
+<td class="num">76,1</td>
+<td class="num">79,6</td>
+<td class="num">+3,5</td>
+</tr><tr class="agg">
+<td class="lab">UE-27</td>
+<td class="num">73,1</td>
+<td class="num">76,1</td>
+<td class="num">+3,0</td>
+</tr></tbody></table></div>
+<h3>Taxa de emprego, visão da década (apenas regiões sem alteração de limites)</h3>
+<div class="table-shell"><table><thead><tr><th class="lab">Região</th>
+<th class="num">2013</th>
+<th class="num">2025</th>
+<th class="num">Δ 2013–2025 (p.p.)</th></tr></thead><tbody><tr>
+<td class="lab">Norte</td>
+<td class="num">63,2</td>
+<td class="num">78,2</td>
+<td class="num">+15,0</td>
+</tr><tr>
+<td class="lab">Algarve</td>
+<td class="num">66,6</td>
+<td class="num">80,6</td>
+<td class="num">+14,0</td>
+</tr><tr>
+<td class="lab">Açores</td>
+<td class="num">61,0</td>
+<td class="num">76,7</td>
+<td class="num">+15,7</td>
+</tr><tr>
+<td class="lab">Madeira</td>
+<td class="num">62,0</td>
+<td class="num">77,2</td>
+<td class="num">+15,2</td>
+</tr><tr class="agg">
+<td class="lab">Portugal</td>
+<td class="num">65,3</td>
+<td class="num">79,6</td>
+<td class="num">+14,3</td>
+</tr><tr class="agg">
+<td class="lab">UE-27</td>
+<td class="num">67,4</td>
+<td class="num">76,1</td>
+<td class="num">+8,7</td>
+</tr></tbody></table></div>
+<p class="fonte">Fonte: Eurostat (intergovernamental), conjunto de dados lfst_r_lfe2emprt (sexo T, idades 20–64), obtido a 2026-08-03. <a class="src-url" href="https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfst_r_lfe2emprt?format=JSON&amp;lang=EN&amp;sex=T&amp;age=Y20-64&amp;unit=PC&amp;geo=PT11&amp;geo=PT15&amp;geo=PT19&amp;geo=PT1A&amp;geo=PT1B&amp;geo=PT1C&amp;geo=PT1D&amp;geo=PT20&amp;geo=PT30&amp;geo=PT&amp;geo=EU27_2020&amp;sinceTimePeriod=2013" rel="noopener">https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfst_r_lfe2emprt?format=JSON&amp;lang=EN&amp;sex=T&amp;age=Y20-64&amp;unit=PC&amp;geo=PT11&amp;geo=PT15&amp;geo=PT19&amp;geo=PT1A&amp;geo=PT1B&amp;geo=PT1C&amp;geo=PT1D&amp;geo=PT20&amp;geo=PT30&amp;geo=PT&amp;geo=EU27_2020&amp;sinceTimePeriod=2013</a></p>
+<h3>Taxa de desemprego, 2019 → 2025</h3>
+<div class="table-shell"><table><thead><tr><th class="lab">Região</th>
+<th class="num">2019</th>
+<th class="num">2025</th>
+<th class="num">Δ 2019–2025 (p.p.)</th></tr></thead><tbody><tr>
+<td class="lab">Norte</td>
+<td class="num">6,7</td>
+<td class="num">6,3</td>
+<td class="num">−0,4</td>
+</tr><tr>
+<td class="lab">Centro</td>
+<td class="num">4,9</td>
+<td class="num">5,0</td>
+<td class="num">+0,1</td>
+</tr><tr>
+<td class="lab">Oeste e Vale do Tejo</td>
+<td class="num">5,2</td>
+<td class="num">5,2</td>
+<td class="num">+0,0</td>
+</tr><tr>
+<td class="lab">Grande Lisboa</td>
+<td class="num">6,7</td>
+<td class="num">6,4</td>
+<td class="num">−0,3</td>
+</tr><tr>
+<td class="lab">Península de Setúbal</td>
+<td class="num">8,3</td>
+<td class="num">8,0</td>
+<td class="num">−0,3</td>
+</tr><tr>
+<td class="lab">Alentejo</td>
+<td class="num">7,2</td>
+<td class="num">5,5</td>
+<td class="num">−1,7</td>
+</tr><tr>
+<td class="lab">Algarve</td>
+<td class="num">7,0</td>
+<td class="num">5,7</td>
+<td class="num">−1,3</td>
+</tr><tr>
+<td class="lab">Açores</td>
+<td class="num">7,7</td>
+<td class="num">4,9</td>
+<td class="num">−2,8</td>
+</tr><tr>
+<td class="lab">Madeira</td>
+<td class="num">6,9</td>
+<td class="num">5,4</td>
+<td class="num">−1,5</td>
+</tr><tr class="agg">
+<td class="lab">Portugal</td>
+<td class="num">6,5</td>
+<td class="num">6,0</td>
+<td class="num">−0,5</td>
+</tr><tr class="agg">
+<td class="lab">UE-27</td>
+<td class="num">6,7</td>
+<td class="num">6,0</td>
+<td class="num">−0,7</td>
+</tr></tbody></table></div>
+<h3>Taxa de desemprego, visão da década (apenas regiões sem alteração de limites)</h3>
+<div class="table-shell"><table><thead><tr><th class="lab">Região</th>
+<th class="num">2013</th>
+<th class="num">2025</th>
+<th class="num">Δ 2013–2025 (p.p.)</th></tr></thead><tbody><tr>
+<td class="lab">Norte</td>
+<td class="num">17,5</td>
+<td class="num">6,3</td>
+<td class="num">−11,2</td>
+</tr><tr>
+<td class="lab">Algarve</td>
+<td class="num">17,1</td>
+<td class="num">5,7</td>
+<td class="num">−11,4</td>
+</tr><tr>
+<td class="lab">Açores</td>
+<td class="num">16,8</td>
+<td class="num">4,9</td>
+<td class="num">−11,9</td>
+</tr><tr>
+<td class="lab">Madeira</td>
+<td class="num">18,0</td>
+<td class="num">5,4</td>
+<td class="num">−12,6</td>
+</tr><tr class="agg">
+<td class="lab">Portugal</td>
+<td class="num">16,5</td>
+<td class="num">6,0</td>
+<td class="num">−10,5</td>
+</tr><tr class="agg">
+<td class="lab">UE-27</td>
+<td class="num">11,4</td>
+<td class="num">6,0</td>
+<td class="num">−5,4</td>
+</tr></tbody></table></div>
+<p class="fonte">Fonte: Eurostat (intergovernamental), conjunto de dados lfst_r_lfu3rt (sexo T, idades 15–74), obtido a 2026-08-03. <a class="src-url" href="https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfst_r_lfu3rt?format=JSON&amp;lang=EN&amp;sex=T&amp;age=Y15-74&amp;unit=PC&amp;isced11=TOTAL&amp;geo=PT11&amp;geo=PT15&amp;geo=PT19&amp;geo=PT1A&amp;geo=PT1B&amp;geo=PT1C&amp;geo=PT1D&amp;geo=PT20&amp;geo=PT30&amp;geo=PT&amp;geo=EU27_2020&amp;sinceTimePeriod=2013" rel="noopener">https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfst_r_lfu3rt?format=JSON&amp;lang=EN&amp;sex=T&amp;age=Y15-74&amp;unit=PC&amp;isced11=TOTAL&amp;geo=PT11&amp;geo=PT15&amp;geo=PT19&amp;geo=PT1A&amp;geo=PT1B&amp;geo=PT1C&amp;geo=PT1D&amp;geo=PT20&amp;geo=PT30&amp;geo=PT&amp;geo=EU27_2020&amp;sinceTimePeriod=2013</a></p>
+<p><strong>Nível e distância à UE.</strong> É aqui que Portugal se destaca: o emprego (<strong>79,6</strong> %) está acima da média da UE-27 (<strong>76,1</strong> %) em absolutamente todas as regiões — mesmo a mais fraca, os Açores com <strong>76,7</strong> %, fica acima. O desemprego (<strong>6,0</strong> %) iguala exatamente a média da UE.</p>
+<p><strong>Amplitude.</strong> A dispersão regional é pequena em comparação com o PIB: o emprego abrange cerca de cinco pontos (Açores <strong>76,7</strong> a Grande Lisboa <strong>81,9</strong>), o desemprego cerca de três (Açores <strong>4,9</strong> a Península de Setúbal <strong>8,0</strong> — Setúbal de novo a entrada continental mais fraca).</p>
+<p><strong>Direção.</strong> O movimento da década é dramático onde pode ser medido: o desemprego nacional caiu de <strong>16,5</strong> % para <strong>6,0</strong> % (−<strong>10,5</strong> pontos contra −<strong>5,4</strong> da UE), e o emprego subiu <strong>+14,3</strong> pontos contra <strong>+8,7</strong> da UE. <em>(inferência: o ano-base 2013 é o fundo da crise das dívidas soberanas, pelo que os números da década favorecem Portugal; o painel 2019→2025 é a leitura mais limpa, e continua a mostrar Portugal a melhorar ligeiramente mais depressa do que a UE.)</em></p>
+<h2>Ganho médio mensal</h2>
+<p><strong>NUTS 2024.</strong> Ganho médio mensal, €, trabalhadores por conta de outrem a tempo completo com remuneração completa declarada (Quadros de Pessoal, MTSSS/GEP, publicado pelo INE). Valores nominais. A série NUTS-2024 começa em 2021.</p>
+<div class="table-shell"><table><thead><tr><th class="lab">Região</th>
+<th class="num">2021 (€)</th>
+<th class="num">2024 (€)</th></tr></thead><tbody><tr>
+<td class="lab">Norte</td>
+<td class="num">1187,2</td>
+<td class="num">1474,7</td>
+</tr><tr>
+<td class="lab">Centro</td>
+<td class="num">1157,6</td>
+<td class="num">1410,9</td>
+</tr><tr>
+<td class="lab">Oeste e Vale do Tejo</td>
+<td class="num">1115,6</td>
+<td class="num">1346,6</td>
+</tr><tr>
+<td class="lab">Grande Lisboa</td>
+<td class="num">1609,1</td>
+<td class="num">1935,7</td>
+</tr><tr>
+<td class="lab">Península de Setúbal</td>
+<td class="num">1296,7</td>
+<td class="num">1545,4</td>
+</tr><tr>
+<td class="lab">Alentejo</td>
+<td class="num">1171,2</td>
+<td class="num">1409,5</td>
+</tr><tr>
+<td class="lab">Algarve</td>
+<td class="num">1106,3</td>
+<td class="num">1320,2</td>
+</tr><tr>
+<td class="lab">Açores</td>
+<td class="num">1126,1</td>
+<td class="num">1431,9</td>
+</tr><tr>
+<td class="lab">Madeira</td>
+<td class="num">1212,4</td>
+<td class="num">1406,8</td>
+</tr><tr class="agg">
+<td class="lab">Portugal</td>
+<td class="num">1289,5</td>
+<td class="num">1576,0</td>
+</tr></tbody></table></div>
+<p class="fonte">Fonte: INE (governo; dados do MTSSS/GEP, Quadros de Pessoal), indicador 0012656, obtido a 2026-08-03. <a class="src-url" href="https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&amp;varcd=0012656&amp;Dim1=S7A2021%2CS7A2024&amp;lang=PT" rel="noopener">https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&amp;varcd=0012656&amp;Dim1=S7A2021%2CS7A2024&amp;lang=PT</a></p>
+<h3>Contexto da década — limites NUTS 2013, tabela separada, não misturar</h3>
+<div class="table-shell"><table><thead><tr><th class="lab">Região (NUTS 2013)</th>
+<th class="num">2013 (€)</th>
+<th class="num">2022 (€)</th></tr></thead><tbody><tr>
+<td class="lab">Norte</td>
+<td class="num">963,4</td>
+<td class="num">1253,5</td>
+</tr><tr>
+<td class="lab">Centro</td>
+<td class="num">940,4</td>
+<td class="num">1204,2</td>
+</tr><tr>
+<td class="lab">Área Metropolitana de Lisboa</td>
+<td class="num">1383,6</td>
+<td class="num">1655,6</td>
+</tr><tr>
+<td class="lab">Alentejo</td>
+<td class="num">994,1</td>
+<td class="num">1209,2</td>
+</tr><tr>
+<td class="lab">Algarve</td>
+<td class="num">931,0</td>
+<td class="num">1150,8</td>
+</tr><tr>
+<td class="lab">Açores</td>
+<td class="num">979,2</td>
+<td class="num">1191,1</td>
+</tr><tr>
+<td class="lab">Madeira</td>
+<td class="num">1067,9</td>
+<td class="num">1244,1</td>
+</tr><tr class="agg">
+<td class="lab">Portugal</td>
+<td class="num">1091,3</td>
+<td class="num">1362,4</td>
+</tr></tbody></table></div>
+<p class="fonte">Fonte: INE (governo; dados do MTSSS/GEP, Quadros de Pessoal), indicador 0009047 (NUTS 2013), obtido a 2026-08-03. <a class="src-url" href="https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&amp;varcd=0009047&amp;Dim1=S7A2013%2CS7A2022&amp;lang=PT" rel="noopener">https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&amp;varcd=0009047&amp;Dim1=S7A2013%2CS7A2022&amp;lang=PT</a></p>
+<p><strong>Nível e amplitude.</strong> Só a Grande Lisboa (<strong>1935,7</strong> €) paga acima da média nacional (<strong>1576,0</strong> €). O piso é o Algarve, com <strong>1320,2</strong> € — a região com uma das taxas de emprego mais altas paga os salários mais baixos, que é a cara de uma economia de serviços sazonais <em>(inferência)</em>. O prémio de Lisboa vem de longe: já é o padrão na tabela de 2013 em NUTS-2013.</p>
+<p><strong>Direção.</strong> Os ganhos subiram fortemente em termos nominais em todas as regiões, em ambas as séries. São valores nominais: nenhum deflator é aplicado aqui, e a janela 2021–2024 contém o surto inflacionista, pelo que o crescimento real é materialmente inferior ao que o salto nominal sugere <em>(inferência; não existe deflator regional em nenhuma das fontes a este grão)</em>.</p>
+<h2>Poder de compra — o índice do lado do consumo do INE, 2023</h2>
+<p><strong>NUTS 2024.</strong> Poder de compra per capita, Portugal = 100. Bienal; 2023 é a única edição nesta classificação.</p>
+<div class="table-shell"><table><thead><tr><th class="lab">Região</th>
+<th class="num">Poder de compra per capita 2023 (Portugal = 100)</th></tr></thead><tbody><tr>
+<td class="lab">Norte</td>
+<td class="num">94,45</td>
+</tr><tr>
+<td class="lab">Centro</td>
+<td class="num">90,00</td>
+</tr><tr>
+<td class="lab">Oeste e Vale do Tejo</td>
+<td class="num">89,85</td>
+</tr><tr>
+<td class="lab">Grande Lisboa</td>
+<td class="num">127,58</td>
+</tr><tr>
+<td class="lab">Península de Setúbal</td>
+<td class="num">99,35</td>
+</tr><tr>
+<td class="lab">Alentejo</td>
+<td class="num">90,17</td>
+</tr><tr>
+<td class="lab">Algarve</td>
+<td class="num">97,07</td>
+</tr><tr>
+<td class="lab">Açores</td>
+<td class="num">87,62</td>
+</tr><tr>
+<td class="lab">Madeira</td>
+<td class="num">88,12</td>
+</tr><tr class="agg">
+<td class="lab">Portugal</td>
+<td class="num">100,00</td>
+</tr></tbody></table></div>
+<p class="fonte">Fonte: INE (governo), Estudo sobre o poder de compra concelhio, indicador 0014580, obtido a 2026-08-03. <a class="src-url" href="https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&amp;varcd=0014580&amp;Dim1=S7A2023&amp;lang=PT" rel="noopener">https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&amp;varcd=0014580&amp;Dim1=S7A2023&amp;lang=PT</a></p>
+<p><strong>Nível e amplitude.</strong> A Grande Lisboa (<strong>127,58</strong>) é de novo a única região acima da linha nacional, e as ilhas são o piso (Açores <strong>87,62</strong>, Madeira <strong>88,12</strong>). Mas a amplitude — cerca de <strong>40</strong> pontos — é muito mais estreita do que os <strong>74</strong> pontos do PIB, e a ordenação muda: a Península de Setúbal está quase na média nacional (<strong>99,35</strong>) apesar de produzir a <strong>55</strong> % da média da UE. <em>(inferência: o poder de compra segue onde as pessoas vivem e ganham, o PIB segue onde trabalham; a península de Setúbal é a cunha pendular mais nítida do país. A posição das ilhas também se inverte — meio da tabela em PIB por habitante, fundo em poder de compra.)</em></p>
+<h2>Lendo tudo em conjunto <em>(avaliação — inferência do princípio ao fim)</em></h2>
+<p>O problema regional de Portugal em 2026 não é o emprego — todas as regiões batem a média da UE — e é só em parte a clássica divisão litoral/interior. É que <strong>apenas uma região gera produto e salários ao nível da média europeia</strong>, e a mudança de classificação torna-o visível: a Grande Lisboa em <strong>129</strong> contra um país que, de resto, se estende entre <strong>55</strong>–<strong>89</strong>. A convergência com a UE está a acontecer (<strong>+5</strong> pontos nacionais em onze anos) mas está a ser desproporcionadamente puxada pelo ressalto das regiões de turismo, as mesmas regiões com os salários mais baixos — o Algarve combina um índice de PIB de <strong>89</strong> com uma taxa de emprego de <strong>80,6</strong> % e os ganhos mais baixos das nove regiões (<strong>1320,2</strong> €). O norte e o centro industriais convergem com constância mas de níveis baixos; a coroa em torno de Lisboa (Oeste e Vale do Tejo, Península de Setúbal) é a parte estagnada do mapa do lado da produção, ainda que o poder de compra do lado do consumo aí esteja perto da média nacional. Se a pergunta é «onde é que os fossos estão a fechar», a resposta honesta destes cinco indicadores é: com a UE, devagar; entre regiões portuguesas, quase nada no produto — a composição da amplitude muda, mas a sua largura não. <em>(Corrigido a 2026-08-03, por indicação do leitor: «os ganhos mais baixos do país» sobreavaliava o âmbito da afirmação — este relatório mede as nove regiões — e a sequência de vírgulas tornava a frase fácil de ler mal; reformulada.)</em></p>
+<hr>
+<p><em>Cada valor acima remete para uma linha de <code>ledger.json</code> (valor exato, URL da fonte, data e hora da recolha, excerto da fonte, derivação quando calculado). Documento reconciliado contra o registo por <code>core.reconcile</code> e <code>core.attributions</code> antes de publicar. Fontes não governamentais são rotuladas em cada tabela (Eurostat: intergovernamental). Registo de verificação: <code>Technical Source/VERIFICATION.md</code>.</em></p>
+
+</body></html>

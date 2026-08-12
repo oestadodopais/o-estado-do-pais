@@ -1,0 +1,516 @@
+<!doctype html><html><head><!-- frame-runtime --><script>window.__FRAME_PREAMBLE={"capabilities":{"assets":"assets.hcOK0ALv.js","comments":"comments.BKZ3qutA.js","db":"db.C8ehi_0m.js","downloads":"downloads.BXsoAvg9.js","mcp":"mcp.D3B2EyQu.js","permissions":"permissions.DdITF2Mk.js","room":"room.BgXZkiYR.js","sample":"sample.DpdXn9di.js","self":"self.BN4be5De.js","user":"user.o5zdRedj.js"},"transforms":"_transforms.VaITkagF.js","comments":"_comments.CNSvmFji.js","translate":"_translate.BOzFH2D9.js"}</script><script>(function(){"use strict";var le=["light","dark","system"],ue=/^[A-Za-z0-9_-]{1,64}$/,H=/^[a-zA-Z_:][a-zA-Z0-9_:.-]{0,127}$/,fe=new Set(["class","hidden"]);function de(e){const t=e.toLowerCase();return t.startsWith("data-")||t.startsWith("aria-")||fe.has(t)}function me(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_patch;if(t===null||typeof t!="object")return!1;const{seq:n,elements:a}=t;if(typeof n!="number"||!Number.isSafeInteger(n)||!Array.isArray(a)||a.length===0||a.length>64)return!1;for(const s of a){if(s===null||typeof s!="object")return!1;const r=s;if(typeof r.target!="string"||!ue.test(r.target)||r.text!==void 0&&typeof r.text!="string")return!1;if(r.attrsSet!==void 0){if(r.attrsSet===null||typeof r.attrsSet!="object")return!1;for(const[o,i]of Object.entries(r.attrsSet))if(!H.test(o)||typeof i!="string")return!1}if(r.attrsRemoved!==void 0){if(!Array.isArray(r.attrsRemoved))return!1;for(const o of r.attrsRemoved)if(typeof o!="string"||!H.test(o))return!1}}return!0}function pe(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_init;return t!==null&&typeof t=="object"}function Y(e){return e!==null&&typeof e=="object"&&e.__frame_size_poke===!0}function ge(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_theme;if(t===null||typeof t!="object")return!1;const n=t.theme;return typeof n=="string"&&le.includes(n)}function he(e){try{typeof reportError=="function"?reportError(e):setTimeout(()=>{throw e},0)}catch{}}var K=["#62744c","#b04e72","#5b7596","#a3651f","#7a6ba8","#3f7a75"],J=e=>{let t=0;for(let n=0;n<e.length;n++)t=t*31+e.charCodeAt(n)>>>0;return K[t%K.length]??"#788c5d"},V="#c7c9d1",X=e=>"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2 2'%3E%3Ccircle cx='1' cy='1' r='1' fill='"+encodeURIComponent(e)+"'/%3E%3C/svg%3E",ve=Object.freeze({id:null,name:"",avatarUrl:X(V),color:V,email:null,isOwner:!1,canEdit:!1}),_e=(...e)=>{const t=e[0],n=typeof t=="string"?[t]:Array.isArray(t)?t.filter(s=>typeof s=="string"):[],a=Object.create(null);for(const s of n)a[s]={id:s,name:"",avatarUrl:X(J(s)),color:J(s),email:null,isMe:!1};return a},Z=Object.freeze(Object.assign(Object.create(null),{user:Object.freeze(Object.assign(Object.create(null),{id:null,isOwner:!1,canEdit:!1,me:ve,profiles:_e,name:"",avatarUrl:null,search:Object.freeze([]),email:null}))})),ye={sample:"sample"};function G(){const e=new Uint8Array(20);try{crypto.getRandomValues(e)}catch{for(let n=0;n<e.length;n++)e[n]=Math.floor(Math.random()*256)}let t="";for(const n of e)t+=(n%36).toString(36);return t}function be(e,t){const n=r=>{const o={path:r},i=r.split("/");return{id:i[i.length-1],path:r,get:()=>t("get",[o]),set:g=>t("set",[o,g]),update:g=>t("update",[o,g]),delete:()=>t("delete",[o]),acquire:g=>t("acquire",[o,g]),onSnapshot:(g,y)=>t("subscribe",[o,g,y]),collection:g=>s(r+"/"+String(g))}},a=r=>({where:(o,i,g)=>a({...r,where:[...r.where??[],{f:String(o),op:String(i),v:g}]}),orderBy:(o,i)=>a({...r,orderBy:{f:String(o),dir:i===void 0?"asc":String(i)}}),limit:o=>a({...r,limit:Number(o)}),get:()=>t("query",[r]),onSnapshot:(o,i)=>t("subscribe",[r,o,i])}),s=r=>({...a({collection:r}),path:r,doc:o=>n(r+"/"+(o===void 0?G():String(o))),add:o=>{const i=n(r+"/"+G());return Promise.resolve(i.set(o)).then(()=>i)}});e.doc=r=>n(String(r)),e.collection=r=>s(String(r))}function Q(e){if(window===top||e.type==="auxclick"&&e.button!==1)return;const t=e.composedPath?e.composedPath():[e.target];let n=null;for(let o=0;o<t.length;o++){const i=t[o];if(i&&i.matches&&i.matches("a[href],area[href]")){n=i;break}}if(!n&&e.target&&e.target.closest&&(n=e.target.closest("a[href],area[href]")),!n)return;const a=n.getAttribute("href");if(!a)return;let s,r;try{s=new URL(a,document.baseURI),r=new URL(document.baseURI).origin}catch{return}if((s.protocol==="http:"||s.protocol==="https:")&&s.origin!==r){e.preventDefault();const o=(n.getAttribute("target")??document.querySelector("base[target]")?.getAttribute("target")??"").toLowerCase(),i=e.type==="auxclick"||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||!["","_self","_top","_parent"].includes(o);parent.postMessage({__frame_nav:!0,url:s.href,newTab:i},"*")}}var ee={};function I(e){if(window===top)return;const t=Date.now();t-(ee[e]||0)<500||(ee[e]=t,parent.postMessage({__frame_engaged:!0,kind:e},"*"))}var Ee=2e3,te=["wheel","touchstart","touchmove","keydown","pointerdown"],re=0;function we(e){e.isTrusted&&(re=Date.now())}function Ae(){addEventListener("click",Q,!0),addEventListener("auxclick",Q,!0)}function Se(){for(let e=0;e<te.length;e++)addEventListener(te[e],we,{capture:!0,passive:!0});addEventListener("scroll",e=>{e.isTrusted&&Date.now()-re<Ee&&I("scroll")},{capture:!0,passive:!0}),addEventListener("pointermove",e=>{e.isTrusted&&I("pointer")},{capture:!0,passive:!0}),addEventListener("click",e=>{e.isTrusted&&I("click")},{capture:!0,passive:!0})}var je=Object.freeze([]);function Oe(e,t){let n=null,a=null;const s=()=>e.__settled;e.peers=()=>je,e.connected=()=>!1,e.emit=()=>s()?.()??Promise.resolve(),e.presence=r=>{const o=s();if(o)return o();let i=null;if(r!==null&&typeof r=="object")try{Array.isArray(r)||(i={...r})}catch{}return i===null?Promise.reject({code:"invalid_argument",message:"presence takes an object"}):(n===null&&(n=Object.create(null),a=Promise.resolve(t("presence",[n]))),Object.assign(n,i),a)}}var U="__frame_scroll",Re=150,Pe=310,Me=160,Le=3e4;function Te(){let e=0,t=!1,n=!1,a=!1,s=0,r=null;const o=d=>{try{sessionStorage.setItem(U,JSON.stringify({y:d}))}catch{}},i=()=>{if(clearTimeout(e),r===null)return;const d=r;r=null,o(d)},g=()=>{if(t){t=!1;return}n=!0,r=scrollY,clearTimeout(e),e=setTimeout(i,Re)};try{addEventListener("scroll",g,{passive:!0}),addEventListener("pagehide",i)}catch{}const y=()=>{let d;try{d=sessionStorage.getItem(U)}catch{return null}if(d===null)return null;let u;try{u=JSON.parse(d)}catch{u=null}const p=u?.y;if(!(typeof p=="number"&&Number.isFinite(p)&&p>=0)){try{sessionStorage.removeItem(U)}catch{}return null}return p};let l=!1;const f=d=>{try{const u=scrollY;scrollTo({top:d,left:0,behavior:"instant"}),s=d,a=!0,clearTimeout(e),r=null,o(d);const p=scrollY;p!==u&&(t=!0),p!==d&&!l&&(l=!0,addEventListener("load",()=>{try{if(scrollY===p){const _=y();f(_!==null?_:s)}}catch{}},{once:!0}))}catch{}},m=()=>{try{return!!location.hash}catch{return!0}};let h=!1;const v=()=>{try{if(h||innerWidth>Pe||innerHeight>Me)return;h=!0;const d=Date.now(),u=()=>{try{removeEventListener("resize",u)}catch{}if(Date.now()-d>Le||n||m())return;const p=y();f(p!==null?p:s)};addEventListener("resize",u)}catch{}};let w=!1,A=!1;return{restore(){if(w||(w=!0,m()))return;const d=y();d!==null&&(f(d),v())},promoted(){if(A||(A=!0,m()))return;const d=y();d!==null?(f(d),v()):a&&f(s)}}}function Ce(e,t,n){const a=[...t.values()].filter(s=>s.targets.some(r=>r.startsWith(e+".")));return{wrap(s,r){const o=`${e}.${s}`,i=a.filter(g=>g.targets.includes(o));return i.length===0?(...g)=>{try{return r(...g)}catch(y){return Promise.reject(y)}}:(...g)=>{let y=g;for(const f of i){const m=f.module.parameters;if(m)try{y=m(y)}catch{return Promise.reject({code:"transform_error",id:f.id,scope:e,message:"parameters transform failed"})}}let l;try{l=r(...y)}catch(f){l=Promise.reject(f)}return l.then(f=>{for(let m=i.length-1;m>=0;m--){const h=i[m],v=h.module.returns;if(v)try{f=v(f)}catch{return n({id:h.id,scope:e,leg:"returns"}),f}}return f},f=>{for(let m=i.length-1;m>=0;m--){const h=i[m],v=h.module.throws;if(v)try{f=v(f)}catch{return n({id:h.id,scope:e,leg:"throws"}),Promise.reject(f)}}return Promise.reject(f)})}}}}function ke(e,t,n,a=()=>{}){const s=new Set(e.changes??[]),r=new Map;for(const o of s){const i=t[o];i&&r.set(o,i)}return{contract:e.contract,changes:s,flags:new Set(e.flags??[]),capabilities:e.capabilities??{},capBudgets:e.capBudgets??{},transforms:r,shellOrigin:n.shellOrigin,mount:n.mount,pipe:o=>Ce(o,r,a)}}var $e="modulepreload",Fe=function(e){return"/"+e},xe={},Ne=function(t,n,a){let s=Promise.resolve();function r(o){const i=new Event("vite:preloadError",{cancelable:!0});if(i.payload=o,window.dispatchEvent(i),!i.defaultPrevented)throw o}return s.then(o=>{for(const i of o||[])i.status==="rejected"&&r(i.reason);return t().catch(r)})};(function(){const e=Object.defineProperty,t=globalThis,n=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let a=0;for(let s=0;s<n.length;s++){const r=n[s];try{e(t,r,{value:void 0,writable:!1,configurable:!1})}catch{try{delete t[r]}catch{}try{e(t,r,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof t[r]=="function"&&a++}if(a&&window!==top)try{parent.postMessage({__frame_rtc_lockdown_failed:a},"*")}catch{}})();var qe=1e4,Ie=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function ne(e){for(const t of Ie)if(t.endsWith(":*"))try{const n=new URL(e);if(`${n.protocol}//${n.hostname}:*`===t)return!0}catch{}else if(e===t)return!0;return!1}var C=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),D=window.__FRAME_PREAMBLE?.transforms,z=window.__FRAME_PREAMBLE?.comments,B=window.__FRAME_PREAMBLE?.translate,k=/^[\w.-]+\.js$/,Ue=/^[a-z][a-z0-9_-]{0,63}$/,se=null,P=null;function $(e,t,n){try{Object.defineProperty(e,t,{value:n,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(e,t,{value:n,writable:!1,configurable:!0,enumerable:!0})}catch{}}}var F=!1;function De(e,t){const n=[];for(const a of e.elements){const s=document.querySelector(`[data-id="${a.target}"]`);if(!s){parent.postMessage({__frame_patch_miss:{seq:e.seq}},t);return}if([...Object.keys(a.attrsSet??{}),...a.attrsRemoved??[]].some(r=>!de(r))){parent.postMessage({__frame_patch_miss:{seq:e.seq}},t);return}for(const[r,o]of Object.entries(a.attrsSet??{}))if(r.toLowerCase()!=="data-id")try{s.setAttribute(r,o)}catch{}for(const r of a.attrsRemoved??[])r.toLowerCase()!=="data-id"&&s.removeAttribute(r);typeof a.text=="string"&&(s.textContent=a.text),n.push(a.target)}try{document.dispatchEvent(new CustomEvent("claude:edit",{detail:{seq:e.seq,targets:n}}))}catch{}}function oe(e){const t=document.documentElement;e==="light"||e==="dark"?(t.dataset.theme=e,t.style.colorScheme=e,F=!0):F&&(delete t.dataset.theme,t.style.colorScheme="",F=!1)}var ae=256,M=Object.assign(Object.create(null),{mcp:Object.assign(Object.create(null),{watchTool:{handlerArg:3}}),db:Object.assign(Object.create(null),{subscribe:{handlerArg:1,errArg:2}}),room:Object.assign(Object.create(null),{on:{handlerArg:1,errArg:2},onPeers:{handlerArg:0,errArg:1},onConnection:{handlerArg:0,errArg:1}})}),ze=Object.assign(Object.create(null),{db:(e,t)=>be(e,t),room:(e,t,n)=>Oe(e,n)}),L=new Map;function ie(e,t){const n=L.get(e);if(!n)return;const a=Object.assign(Object.create(null),t);Object.assign(n.impl,a),n.impl.__settled=()=>Promise.reject({code:"capability_removed",message:`${e}: method not in this runtime`});const s=n.queue;n.queue=[];for(const r of s){const o=a[r.method];if(o)if(M[e]?.[r.method])try{r.resolve(o(...r.args))}catch{T(r,M[e][r.method],{code:"transform_error",message:`${e}.${r.method} rejected its arguments`})}else o(...r.args).then(r.resolve,r.reject);else{const i={code:"capability_removed",message:`${e}.${r.method} is not in this runtime`},g=M[e]?.[r.method];if(g){T(r,g,i);continue}r.reject(i)}}}function Be(e,t){const n=L.get(e);if(!n)return;n.impl.__settled=()=>Promise.reject(t);const a=n.queue;n.queue=[];for(const s of a){const r=M[e]?.[s.method];if(r){T(s,r,t);continue}s.reject(t)}}function ce(e,t){if(typeof e=="function")try{return e(...t)}catch{return Object.create(null)}return Array.isArray(e)?[...e]:e!==null&&typeof e=="object"?{...e}:e}function N(e,t){const n=Z[e];if(!n){Be(e,t);return}ie(e,Object.fromEntries(Object.entries(n).map(([a,s])=>[a,(...r)=>Promise.resolve(ce(s,r))])))}function T(e,t,n){if(e.syncState?.dead)return;const a=t.errArg===void 0?void 0:e.args[t.errArg],s=t.errArg===void 0?e.args[t.handlerArg]:a;typeof s=="function"&&queueMicrotask(()=>{if(!e.syncState?.dead)try{s(t.errArg===void 0?{type:"error",error:n}:n)}catch(r){he(r)}})}var x=Object.getOwnPropertyDescriptor(window,"claude");if(window!==top&&!(x&&x.writable===!1)){Ae(),Se();let e=null;try{e=Te()}catch{}const t=x?.value??{};$(window,"claude",t);const n=l=>{const f={impl:Object.create(null),queue:[]};L.set(l,f);const m=f.impl,h=d=>({code:"queue_overflow",message:`${l}.${d}: pre-init call queue is full`}),v=(d,u)=>{if(f.queue.length>=ae){const p=Z[l];return p&&d in p?Promise.resolve(ce(p[d],u)):Promise.reject(h(d))}return new Promise((p,_)=>{f.queue.push({method:d,args:u,resolve:p,reject:_})})},w=ye[l],A=new Proxy(w===void 0?m:(()=>{}),{apply:(d,u,p)=>{const _=w,E=m[_]??m.__settled;return E?E(...p):v(_,p)},get:(d,u)=>{if(typeof u!="string"||u==="then"||u==="toJSON"||u==="valueOf")return;if(u==="toString")return Object.prototype.toString;if(w!==void 0&&(u==="call"||u==="apply"||u==="bind"))return Function.prototype[u];const p=M[l]?.[u];return p?(..._)=>{if(typeof _[p.handlerArg]!="function")throw new TypeError(`${l}.${u} requires a handler function`);const E=m[u];if(E)return E(..._);if(m.__settled){const b={dead:!1},q={args:[..._],syncState:b};return m.__settled().catch(c=>T(q,p,c)),()=>{b.dead=!0}}if(f.queue.length>=ae){const b={dead:!1};return T({args:[..._],syncState:b},p,h(u)),()=>{b.dead=!0}}let S=null;const O={dead:!1};return f.queue.push({method:u,args:_,resolve:b=>{S=typeof b=="function"?b:null,O.dead&&S?.()},reject:()=>{},syncState:O}),()=>{O.dead=!0,S?.()}}:(..._)=>{const E=m[u]??m.__settled;return E?E(..._):v(u,_)}},set:()=>!1});ze[l]?.(m,(d,u)=>A[d](...u),v),$(t,l,A)};for(const l of Object.keys(C)){if(t[l]!==void 0){$(t,l,t[l]);continue}n(l)}let a=null,s=null,r=0;const o=l=>{l.source!==parent||!ne(l.origin)||pe(l.data)&&(a=l.data.__frame_init,P=l.origin,removeEventListener("message",o),clearTimeout(r),s?.())};addEventListener("message",o),parent.postMessage({__frame_connect:!0},"*");const i=new Promise(l=>{s=l,r=setTimeout(()=>{removeEventListener("message",o),l()},qe)}),g=document.readyState==="loading"?new Promise(l=>document.addEventListener("DOMContentLoaded",()=>l(),{once:!0})):Promise.resolve();g.then(()=>{try{e?.restore()}catch{}});const y=l=>{if(!(l.source!==parent||!ne(l.origin))&&Y(l.data)){removeEventListener("message",y);try{e?.promoted()}catch{}}};addEventListener("message",y),i.then(async()=>{if(!a||!P){for(const c of L.keys())N(c,{code:"not_granted",message:"frame initialization did not arrive - capability unavailable"});return}oe(a.theme);const l=P;let f=!1,m=!1;addEventListener("message",c=>{if(c.source!==parent||c.origin!==l)return;ge(c.data)&&oe(c.data.__frame_theme.theme),me(c.data)&&De(c.data.__frame_patch,l);const j=c.data?.__fc_mode;j&&typeof j=="object"&&!f&&z&&k.test(z)&&(f=!0,h(z).then(W=>W.install?.(l,j.on===!0)).catch(()=>{}));const R=c.data?.__ft_cmd;R&&typeof R=="object"&&!m&&B&&k.test(B)&&(m=!0,h(B).then(W=>W.install?.(l,R)).catch(()=>{}))});const h=c=>Ne(()=>import("/_runtime/"+c),void 0),v=Object.keys(a.capabilities??{});for(const c of v)Object.hasOwn(C,c)||Ue.test(c)&&t[c]===void 0&&(n(c),N(c,{code:"capability_disabled",message:"capability not in this runtime generation"}));const w=v.filter(c=>Object.hasOwn(C,c)).map(c=>[c,C[c]]).filter(c=>typeof c[1]=="string"&&k.test(c[1])),[A,...d]=await Promise.allSettled([D&&k.test(D)?h(D):Promise.resolve({}),...w.map(([,c])=>h(c))]),u=P;se=ke(a,A.status==="fulfilled"&&A.value?.TRANSFORMS||{},{shellOrigin:u,mount:ie},c=>parent.postMessage({__frame_cap_telemetry:c},u));const p=c=>parent.postMessage({__frame_cap_telemetry:{kind:"cap-load-error",cap:c}},u),_=se;d.forEach((c,j)=>{const R=w[j][0];if(c.status!=="fulfilled"){p(R);return}try{c.value?.install?.(_)}catch{p(R)}});for(const[c,j]of L)if(j.impl.__settled===void 0){if(v.includes(c)){N(c,{code:"capability_disabled",message:"capability not available in this session"});continue}N(c,{code:"not_granted",message:"capability not available in this session"})}await g,parent.postMessage({__frame_ready:!0},P);let E=-1,S=0;const O=()=>{S=0;const c=Math.max(document.documentElement.scrollHeight,document.body?document.body.scrollHeight:0);c!==E&&(E=c,parent.postMessage({__frame_size:!0,h:c},u))},b=()=>{S||(S=setTimeout(O,200))},q=new ResizeObserver(b);q.observe(document.documentElement),document.body&&q.observe(document.body),document.addEventListener("load",b,!0),document.fonts?.ready.then(b,()=>{}),addEventListener("beforeprint",()=>{E=-1,O()}),b(),addEventListener("message",c=>{if(!(c.source!==parent||c.origin!==u)&&Y(c.data)){try{e?.promoted()}catch{}E=-1,b()}})})}})();</script><!-- /frame-runtime --><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}</style></head><body>
+<title>Which Door Is Yours — public funding in Portugal, August 2026</title>
+<style>
+:root{
+  --paper:#edefec; --surface:#f7f8f6; --surface-2:#e3e7e2;
+  --ink:#111d24; --ink-soft:#33474f; --muted:#5a6b70; --line:#c9d1cc;
+  --accent:#1a4fa0; --accent-soft:#dbe4f3;
+  --open:#1f6f4a; --soon:#9a6212; --shut:#8f3226;
+  --open-bg:#dcebe1; --soon-bg:#f6ebd4; --shut-bg:#f4dedb;
+  --shadow:0 1px 2px rgba(17,29,36,.06), 0 4px 16px rgba(17,29,36,.05);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0d1418; --surface:#141e23; --surface-2:#1c282e;
+    --ink:#e6eae7; --ink-soft:#bcc8cb; --muted:#93a4a8; --line:#2b3a41;
+    --accent:#7aa8f0; --accent-soft:#1b2b42;
+    --open:#6fc396; --soon:#e0ac5c; --shut:#e08d7f;
+    --open-bg:#163023; --soon-bg:#33270f; --shut-bg:#361d19;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 4px 16px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0d1418; --surface:#141e23; --surface-2:#1c282e;
+  --ink:#e6eae7; --ink-soft:#bcc8cb; --muted:#93a4a8; --line:#2b3a41;
+  --accent:#7aa8f0; --accent-soft:#1b2b42;
+  --open:#6fc396; --soon:#e0ac5c; --shut:#e08d7f;
+  --open-bg:#163023; --soon-bg:#33270f; --shut-bg:#361d19;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 4px 16px rgba(0,0,0,.3);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+.serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+
+.wrap{max-width:1020px; margin:0 auto; padding:0 24px}
+main{display:flex; flex-direction:column; gap:64px; padding-bottom:96px}
+
+/* ---------- masthead ---------- */
+header{border-bottom:2px solid var(--ink); padding:56px 0 28px; margin-bottom:56px}
+.eyebrow{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin:0 0 18px;
+}
+h1{
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  font-size:clamp(38px,6vw,62px); line-height:1.04; margin:0 0 20px;
+  font-weight:600; letter-spacing:-.015em; text-wrap:balance;
+}
+.standfirst{font-size:clamp(18px,2.2vw,21px); color:var(--ink-soft); max-width:60ch; margin:0}
+.standfirst strong{color:var(--ink); font-weight:600}
+
+h2{
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  font-size:clamp(26px,3.4vw,34px); line-height:1.15; margin:0 0 8px; font-weight:600;
+  letter-spacing:-.01em; text-wrap:balance;
+}
+.section-note{color:var(--muted); margin:0 0 28px; max-width:62ch; font-size:16px}
+
+/* ---------- thesis ---------- */
+.thesis{
+  background:var(--surface); border:1px solid var(--line); border-left:4px solid var(--accent);
+  padding:28px 30px; display:flex; flex-direction:column; gap:14px;
+}
+.thesis p{margin:0; max-width:64ch}
+.thesis .big{
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  font-size:clamp(20px,2.6vw,25px); line-height:1.35; color:var(--ink);
+}
+
+/* ---------- board ---------- */
+.board{border:1px solid var(--line); background:var(--surface); overflow-x:auto}
+table{border-collapse:collapse; width:100%; min-width:680px; font-size:15px}
+thead th{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--muted);
+  text-align:left; padding:14px 16px; border-bottom:1px solid var(--line); font-weight:500;
+  background:var(--surface-2);
+}
+tbody td{padding:14px 16px; border-bottom:1px solid var(--line); vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+td.date{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-variant-numeric:tabular-nums; white-space:nowrap; font-size:14px}
+td.who{color:var(--ink-soft)}
+.what{font-weight:600}
+.code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12px;
+  color:var(--muted); display:block; margin-top:3px;
+}
+
+.chip{
+  display:inline-block; font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:11px; letter-spacing:.08em; text-transform:uppercase;
+  padding:3px 8px; border-radius:2px; white-space:nowrap; font-weight:500;
+}
+.chip.soon{background:var(--soon-bg); color:var(--soon)}
+.chip.open{background:var(--open-bg); color:var(--open)}
+.chip.shut{background:var(--shut-bg); color:var(--shut)}
+
+/* ---------- routes ---------- */
+.routes{display:flex; flex-direction:column; gap:20px}
+.route{
+  background:var(--surface); border:1px solid var(--line); box-shadow:var(--shadow);
+  display:grid; grid-template-columns:minmax(0,210px) minmax(0,1fr);
+}
+@media (max-width:720px){.route{grid-template-columns:1fr}}
+.route .side{
+  padding:24px; border-right:1px solid var(--line); background:var(--surface-2);
+  display:flex; flex-direction:column; gap:10px;
+}
+@media (max-width:720px){.route .side{border-right:none; border-bottom:1px solid var(--line)}}
+.side h3{
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  font-size:20px; line-height:1.2; margin:0; font-weight:600;
+}
+.side .sys{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--muted);
+}
+.route .body{padding:24px; display:flex; flex-direction:column; gap:18px}
+.offer{display:flex; flex-direction:column; gap:6px}
+.offer + .offer{padding-top:16px; border-top:1px dashed var(--line)}
+.offer .name{font-weight:600; display:flex; flex-wrap:wrap; gap:10px; align-items:baseline}
+.offer p{margin:0; color:var(--ink-soft); font-size:16px}
+dl.facts{
+  display:grid; grid-template-columns:auto 1fr; gap:4px 14px; margin:6px 0 0; font-size:14.5px;
+}
+dl.facts dt{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px;
+  letter-spacing:.09em; text-transform:uppercase; color:var(--muted); padding-top:3px;
+}
+dl.facts dd{margin:0; color:var(--ink)}
+dl.facts dd .amt{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-variant-numeric:tabular-nums}
+
+.src{font-size:12.5px; color:var(--muted); font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.src a{color:var(--accent)}
+a{color:var(--accent); text-underline-offset:2px}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+
+/* ---------- evidence ---------- */
+.evidence{background:var(--surface); border:1px solid var(--line); padding:30px}
+.stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:2px; background:var(--line); border:1px solid var(--line); margin:24px 0 0}
+.stat{background:var(--surface); padding:20px}
+.stat .n{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-variant-numeric:tabular-nums;
+  font-size:32px; line-height:1; display:block; margin-bottom:8px; letter-spacing:-.02em;
+}
+.stat .n.hero{color:var(--accent)}
+.stat .n.zero{color:var(--shut)}
+.stat .l{font-size:13.5px; color:var(--muted); line-height:1.4}
+
+.bars{display:flex; flex-direction:column; gap:9px; margin-top:24px}
+.bar{display:grid; grid-template-columns:minmax(0,190px) minmax(0,1fr) 44px; gap:12px; align-items:center; font-size:14.5px}
+@media (max-width:600px){.bar{grid-template-columns:minmax(0,130px) minmax(0,1fr) 38px; font-size:13px}}
+.bar .track{height:16px; background:var(--surface-2); position:relative}
+.bar .fill{height:100%; background:var(--accent); opacity:.75}
+.bar.person .fill{background:var(--shut); opacity:1}
+.bar .v{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-variant-numeric:tabular-nums; text-align:right; color:var(--muted); font-size:13px}
+.bar .lbl{color:var(--ink-soft)}
+.bar.person .lbl{color:var(--ink); font-weight:600}
+
+/* ---------- limits ---------- */
+details{background:var(--surface); border:1px solid var(--line); padding:0}
+summary{
+  cursor:pointer; padding:18px 22px; font-weight:600;
+  font-family:"Iowan Old Style",Palatino,Georgia,serif; font-size:18px;
+}
+details[open] summary{border-bottom:1px solid var(--line)}
+details .inner{padding:20px 22px}
+details ol{margin:0; padding-left:20px; display:flex; flex-direction:column; gap:11px}
+details li{color:var(--ink-soft); font-size:15.5px}
+details li strong{color:var(--ink)}
+
+.flag{
+  background:var(--soon-bg); border:1px solid var(--soon); border-left-width:4px;
+  padding:16px 20px; font-size:15.5px; color:var(--ink);
+}
+.flag strong{font-weight:600}
+
+footer{border-top:1px solid var(--line); padding:26px 0 0; color:var(--muted); font-size:13.5px}
+footer p{margin:0 0 8px; max-width:70ch}
+</style>
+
+<div class="wrap">
+<header>
+  <p class="eyebrow">Public funding in Portugal &middot; verified 8 August 2026</p>
+  <h1>Which door is yours</h1>
+  <p class="standfirst">There is no single system for public money in Portugal. There are at least eight, each with its own counter, its own calendar, and its own idea of who counts as an applicant. <strong>The largest one is almost entirely shut to individuals.</strong> This is a map of the others.</p>
+</header>
+
+<main>
+
+<section>
+  <div class="thesis">
+    <p class="big serif">Of the 211 Portugal&nbsp;2030 calls open today &mdash; &euro;3.78&nbsp;billion &mdash; exactly <strong>one</strong> names natural persons as possible applicants. None names a landowner or a farmer.</p>
+    <p>That is not a gap in the data. It is the design. Portugal&nbsp;2030 is built for municipalities, associations and companies; a person who wants to start something is served by entirely different institutions, each with a separate portal and a separate deadline. Knowing which one is most of the problem.</p>
+    <p class="src">Measured from all 647 aviso PDFs behind those calls. Method and limits at the foot of this page.</p>
+  </div>
+</section>
+
+<section>
+  <h2>What closes when</h2>
+  <p class="section-note">Ordered by deadline, soonest first. Dates are the closing dates published by each programme; three of these are weeks away, and one is a fortnight.</p>
+  <div class="board">
+    <table>
+      <thead>
+        <tr><th scope="col">Closes</th><th scope="col">What</th><th scope="col">Open to</th><th scope="col">Status</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="date">25 Aug 2026</td>
+          <td><span class="what">StartUP Voucher Innovate</span><span class="code">Aviso 2026-01 &middot; IAPMEI</span></td>
+          <td class="who">A person, aged&nbsp;29 or under, in Norte, Centro or Alentejo</td>
+          <td><span class="chip soon">17 days</span></td>
+        </tr>
+        <tr>
+          <td class="date">31 Aug 2026</td>
+          <td><span class="what">Ciclo urbano da água em baixa</span><span class="code">ALT2030-2025-1 &middot; Alentejo 2030</span></td>
+          <td class="who">Companies, municipalities</td>
+          <td><span class="chip soon">3 weeks</span></td>
+        </tr>
+        <tr>
+          <td class="date">30 Sep 2026</td>
+          <td><span class="what">SICE &mdash; Inovação Produtiva</span><span class="code">MPr-2026-6 &middot; &euro;182.5m &middot; low-density territories</span></td>
+          <td class="who">SMEs</td>
+          <td><span class="chip open">Open</span></td>
+        </tr>
+        <tr>
+          <td class="date">2 Oct 2026</td>
+          <td><span class="what">ESA InCubed &mdash; Earth observation</span><span class="code">via Portugal Space &middot; ORBIT portal</span></td>
+          <td class="who">Portuguese companies</td>
+          <td><span class="chip open">Open</span></td>
+        </tr>
+        <tr>
+          <td class="date">29 Dec 2026</td>
+          <td><span class="what">SIID &mdash; business R&amp;D</span><span class="code">MPr-2026-7 and MPr-2026-4 &middot; Compete 2030</span></td>
+          <td class="who">Companies</td>
+          <td><span class="chip open">Open</span></td>
+        </tr>
+        <tr>
+          <td class="date">30 Dec 2026</td>
+          <td><span class="what">SITCE &mdash; energy efficiency</span><span class="code">MPr-2026-1 &middot; &euro;165m</span></td>
+          <td class="who">Companies</td>
+          <td><span class="chip open">Open</span></td>
+        </tr>
+        <tr>
+          <td class="date">31 Dec 2026</td>
+          <td><span class="what">Crescer com o Turismo</span><span class="code">Portaria 50/2025/1 &middot; or until funds run out</span></td>
+          <td class="who">Public bodies, non-profits; SMEs only for social innovation</td>
+          <td><span class="chip open">Rolling</span></td>
+        </tr>
+        <tr>
+          <td class="date">30 Dec 2027</td>
+          <td><span class="what">Fishing ports and landing sites</span><span class="code">MAR2030-2023-25 &middot; &euro;12.1m</span></td>
+          <td class="who"><strong>Natural persons</strong> and private legal persons</td>
+          <td><span class="chip open">Open</span></td>
+        </tr>
+        <tr>
+          <td class="date">31 Dec 2027</td>
+          <td><span class="what">Young fishers starting out</span><span class="code">MAR2030-2023-13 &middot; &euro;4.3m</span></td>
+          <td class="who"><strong>A person under 40</strong> qualified for professional fishing</td>
+          <td><span class="chip open">Open</span></td>
+        </tr>
+        <tr>
+          <td class="date">Continuous</td>
+          <td><span class="what">IEFP self-employment measures</span><span class="code">Own-employment, MICROINVEST, INVEST+, ATCP</span></td>
+          <td class="who">Registered unemployed; first-job seekers 18&ndash;35</td>
+          <td><span class="chip open">Always</span></td>
+        </tr>
+        <tr>
+          <td class="date">Closed</td>
+          <td><span class="what">Young farmer installation prize</span><span class="code">PEPAC C.2.2.1 &middot; closed 3 Jun 2025</span></td>
+          <td class="who">Individual farmers</td>
+          <td><span class="chip shut">Watch plan</span></td>
+        </tr>
+        <tr>
+          <td class="date">Closed</td>
+          <td><span class="what">FCT doctoral grants</span><span class="code">Closed 31 Mar 2026 &middot; results Nov 2026</span></td>
+          <td class="who">Individual researchers</td>
+          <td><span class="chip shut">Annual</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>The doors</h2>
+  <p class="section-note">Grouped by who you are, because that is the axis the state does not organise around. Each door is a different institution with a different portal &mdash; there is no shared front desk and no shared login.</p>
+
+  <div class="routes">
+
+    <article class="route">
+      <div class="side">
+        <p class="sys">Door 1 &middot; IAPMEI</p>
+        <h3>You have an idea and no company yet</h3>
+      </div>
+      <div class="body">
+        <div class="offer">
+          <p class="name">StartUP Voucher Innovate 2025&ndash;2026 <span class="chip soon">Closes 25 Aug</span></p>
+          <p>A nine-month structured programme for business ideas at idea stage, in technology-based areas. You apply as yourself &mdash; no company required.</p>
+          <dl class="facts">
+            <dt>Who</dt><dd>Up to 29 years old, with a degree, not studying, not in training, not working, and with no other source of income. Tax domicile in Norte, Centro or Alentejo.</dd>
+            <dt>You get</dt><dd><span class="amt">&euro;900</span>/month grant (maximum two grants per project), plus <span class="amt">&euro;1,500</span> at the start of phases 2 and 3, plus <span class="amt">&euro;2,000</span> once you have created your own job. Incubator and mentor network access.</dd>
+            <dt>Where</dt><dd>iapmei.pt &mdash; Aviso 2026-01</dd>
+          </dl>
+          <p class="src">Verified: iapmei.pt and dgeconomia.gov.pt (government)</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="route">
+      <div class="side">
+        <p class="sys">Door 2 &middot; IEFP</p>
+        <h3>You are unemployed and want to start</h3>
+      </div>
+      <div class="body">
+        <div class="offer">
+          <p class="name">Creation of your own employment</p>
+          <p>Your unemployment benefit paid to you as a single lump sum, to capitalise a business instead of drawing it monthly.</p>
+          <dl class="facts">
+            <dt>Who</dt><dd>Receiving unemployment benefit or initial social unemployment benefit, aged 18 or over, with a viable project creating at least your own full-time job.</dd>
+            <dt>You get</dt><dd>The full remaining value of your benefit, up front. Optionally combined with a credit line and technical support.</dd>
+            <dt>Timing</dt><dd>IEFP answers in 60&ndash;90 working days.</dd>
+          </dl>
+        </div>
+        <div class="offer">
+          <p class="name">MICROINVEST and INVEST+ credit lines</p>
+          <p>Guaranteed bank loans at reduced interest, for people the ordinary credit market will not serve.</p>
+          <dl class="facts">
+            <dt>Who</dt><dd>Registered unemployed, first-job seekers aged 18&ndash;35, or self-employed earning below the minimum wage. Project must not create more than 10 jobs.</dd>
+            <dt>You get</dt><dd>MICROINVEST up to <span class="amt">&euro;20,000</span>; INVEST+ from <span class="amt">&euro;20,000</span> to <span class="amt">&euro;100,000</span> of credit, on investment up to <span class="amt">&euro;200,000</span>.</dd>
+            <dt>Where</dt><dd>Through a participating bank: CGD, Millennium BCP, Novo Banco, Crédito Agrícola, Montepio, Banco BIC.</dd>
+          </dl>
+        </div>
+        <div class="offer">
+          <p class="name">National Microcredit Programme &middot; and free advice</p>
+          <p>MICROINVEST reached through CASES rather than IEFP, for people facing labour-market difficulty. Separately, <strong>ATCP</strong> gives free technical help writing the investment and business plan, before approval and for two years after &mdash; the one thing on this page that costs nothing and requires no competition.</p>
+          <p class="src">Verified: iefp.pt (government). The credit lines sit behind a Banco Português de Fomento facility of <span class="amt">&euro;253.3m</span> &mdash; bpfomento.pt.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="route">
+      <div class="side">
+        <p class="sys">Door 3 &middot; IFAP</p>
+        <h3>You want to farm</h3>
+      </div>
+      <div class="body">
+        <div class="offer">
+          <p class="name">PEPAC &mdash; a wholly separate system</p>
+          <p>Agriculture is not in Portugal&nbsp;2030 at all. It has its own counter, the <em>Balcão dos Fundos da Agricultura</em>, its own calendar and its own rules. This is why searching the main funds portal for farming support returns nothing.</p>
+          <dl class="facts">
+            <dt>Headline</dt><dd>Young farmer installation prize &mdash; a non-refundable fixed sum of <span class="amt">&euro;25,000</span>, plus <span class="amt">&euro;25,000</span> if you set up full-time, plus <span class="amt">&euro;5,000</span> if the holding is in a designated vulnerable territory. Maximum <span class="amt">&euro;55,000</span>.</dd>
+            <dt>Status</dt><dd>The last application period closed 3 June 2025 (aviso 01/C.2.2.1/2024, budget <span class="amt">&euro;43.6m</span>). Watch the <em>plano indicativo de abertura de candidaturas</em> for the next one.</dd>
+            <dt>Where</dt><dd>balcao.ifap.pt &mdash; calendar at pepacc.pt</dd>
+          </dl>
+          <p class="src">Verified: the aviso PDF itself, pepacc.pt (government)</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="route">
+      <div class="side">
+        <p class="sys">Door 4 &middot; MAR 2030</p>
+        <h3>You work at sea</h3>
+      </div>
+      <div class="body">
+        <div class="offer">
+          <p class="name">The only family that names people</p>
+          <p>Across all 211 open Portugal&nbsp;2030 calls, the only two that admit a natural person are both fisheries calls &mdash; and both run to the end of 2027.</p>
+          <dl class="facts">
+            <dt>Ports</dt><dd><span class="amt">MAR2030-2023-25</span> &mdash; investment in fishing ports and landing sites. Open to <em>&ldquo;pessoas singulares ou coletivas de direito privado&rdquo;</em>. <span class="amt">&euro;12.1m</span>, closes 30 Dec 2027.</dd>
+            <dt>Young fishers</dt><dd><span class="amt">MAR2030-2023-13</span> &mdash; starting out as a young fisher, defined as <em>&ldquo;pessoa com idade igual ou inferior a 40 anos&rdquo;</em> qualified for professional fishing. <span class="amt">&euro;4.3m</span>, closes 31 Dec 2027.</dd>
+          </dl>
+          <p class="src">Verified: quoted verbatim from the government aviso PDFs</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="route">
+      <div class="side">
+        <p class="sys">Door 5 &middot; FCT and DGARTES</p>
+        <h3>You research or you make work</h3>
+      </div>
+      <div class="body">
+        <div class="offer">
+          <p class="name">FCT doctoral grants</p>
+          <p>Individual applications, in your own name, through myfct.fct.pt. Annual cycle &mdash; the 2026 round closed on 31 March and results are due in November, so the next opening is the one to plan for.</p>
+          <dl class="facts">
+            <dt>Scale</dt><dd>1,600 grants, of which 600 in non-academic settings. Roughly <span class="amt">&euro;145m</span> in total.</dd>
+          </dl>
+        </div>
+        <div class="offer">
+          <p class="name">DGARTES support for projects</p>
+          <p>Artists may apply in their own name rather than through an institution &mdash; one of the few state programmes where that is explicit.</p>
+          <dl class="facts">
+            <dt>Scale</dt><dd><span class="amt">&euro;13.35m</span> across the project-support programme.</dd>
+          </dl>
+          <p class="src">Verified: fct.pt and dgartes.gov.pt (government)</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="route">
+      <div class="side">
+        <p class="sys">Door 6 &middot; PT 2030</p>
+        <h3>You have, or will form, a company</h3>
+      </div>
+      <div class="body">
+        <div class="offer">
+          <p class="name">This is where the money actually is</p>
+          <p>Forming a company &mdash; or registering as an <em>empresário em nome individual</em> &mdash; is the single act that opens the largest door. 49 of the 211 open calls name companies, together worth <span class="amt">&euro;1.13&nbsp;billion</span>.</p>
+          <dl class="facts">
+            <dt>Nearest</dt><dd><span class="amt">MPr-2026-6</span> SICE Inovação Produtiva, <span class="amt">&euro;182.5m</span>, explicitly targeted at low-density territories &mdash; which includes most of Alentejo. Closes 30 Sep 2026.</dd>
+            <dt>Also open</dt><dd><span class="amt">MPr-2026-1</span> energy efficiency and decarbonisation, <span class="amt">&euro;165m</span>, closes 30 Dec. Two SIID research calls close 29 Dec.</dd>
+            <dt>Note</dt><dd>Four open Compete 2030 calls in total &mdash; the national business programme has very little open at any one time, so the calendar matters more than the catalogue.</dd>
+          </dl>
+        </div>
+        <div class="offer">
+          <p class="name">Tourism &mdash; Crescer com o Turismo</p>
+          <p>Worth knowing what this is <em>not</em>: despite the name, companies qualify only for social-innovation projects. Public bodies and non-profits are the main beneficiaries.</p>
+          <dl class="facts">
+            <dt>Terms</dt><dd>Non-refundable up to <span class="amt">&euro;400,000</span> (public and non-profit) or <span class="amt">&euro;200,000</span> (companies), plus a refundable component up to <span class="amt">&euro;1m</span>. Seven-year repayment with two years' grace.</dd>
+            <dt>Budget</dt><dd><span class="amt">&euro;30m</span> &middot; rolling to 31 Dec 2026 or until exhausted</dd>
+          </dl>
+          <p class="src">Verified: business.turismodeportugal.pt (government). Portaria 50/2025/1, amended by 159/2026/1.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="route">
+      <div class="side">
+        <p class="sys">Door 7 &middot; ESA</p>
+        <h3>You build space or Earth-observation technology</h3>
+      </div>
+      <div class="body">
+        <div class="offer">
+          <p class="name">InCubed, through Portugal Space <span class="chip open">Closes 2 Oct</span></p>
+          <p>Co-funding for commercially viable products built on Earth-observation data, anywhere in the chain from satellite design to end-user application. Submission is continuous; the round cut-offs are what matter.</p>
+          <dl class="facts">
+            <dt>Budget</dt><dd><span class="amt">&euro;1.25m</span> indicative for 2026&ndash;2028</dd>
+            <dt>Rounds</dt><dd>2 Oct 2026, then 30 Apr 2027, then 28 Jan 2028 if budget allows</dd>
+            <dt>Watch for</dt><dd>Portugal Space weights <strong>national impact at 30%</strong> when deciding whether to issue the letter of support ESA requires. That letter, not the ESA form, is the real gate.</dd>
+            <dt>Where</dt><dd>ESA ORBIT portal &mdash; ideas.esa.int</dd>
+          </dl>
+          <p class="src">Verified: ptspace.pt (government agency)</p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <h2>The evidence behind the thesis</h2>
+  <p class="section-note">Every open Portugal 2030 call was read, and the applicant classes counted from the government's own words in each aviso's eligibility section. A call can name several classes, so these do not sum to 211.</p>
+
+  <div class="evidence">
+    <div class="stats">
+      <div class="stat"><span class="n">211</span><span class="l">open calls on 8 Aug 2026</span></div>
+      <div class="stat"><span class="n hero">&euro;3.78bn</span><span class="l">total allocation open</span></div>
+      <div class="stat"><span class="n">647</span><span class="l">aviso PDFs read</span></div>
+      <div class="stat"><span class="n zero">1</span><span class="l">calls naming a natural person</span></div>
+    </div>
+
+    <div class="bars">
+      <div class="bar"><span class="lbl">Municipality</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="v">118</span></div>
+      <div class="bar"><span class="lbl">Association / IPSS</span><span class="track"><span class="fill" style="width:75.4%"></span></span><span class="v">89</span></div>
+      <div class="bar"><span class="lbl">Public administration</span><span class="track"><span class="fill" style="width:72.0%"></span></span><span class="v">85</span></div>
+      <div class="bar"><span class="lbl">Company / SME</span><span class="track"><span class="fill" style="width:41.5%"></span></span><span class="v">49</span></div>
+      <div class="bar"><span class="lbl">University / school / R&amp;D</span><span class="track"><span class="fill" style="width:28.8%"></span></span><span class="v">34</span></div>
+      <div class="bar"><span class="lbl">Fisheries</span><span class="track"><span class="fill" style="width:11.9%"></span></span><span class="v">14</span></div>
+      <div class="bar"><span class="lbl">Vessel owner</span><span class="track"><span class="fill" style="width:5.1%"></span></span><span class="v">6</span></div>
+      <div class="bar"><span class="lbl">Sole trader (ENI)</span><span class="track"><span class="fill" style="width:3.4%"></span></span><span class="v">4</span></div>
+      <div class="bar person"><span class="lbl">Individual (pessoa singular)</span><span class="track"><span class="fill" style="width:0.85%"></span></span><span class="v">1</span></div>
+      <div class="bar person"><span class="lbl">Landowner</span><span class="track"><span class="fill" style="width:0"></span></span><span class="v">0</span></div>
+      <div class="bar person"><span class="lbl">Farmer</span><span class="track"><span class="fill" style="width:0"></span></span><span class="v">0</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Before you rely on any of this</h2>
+  <p class="section-note">Two things on this page behave differently from the rest, and one claim could not be verified at all.</p>
+
+  <div class="flag">
+    <p><strong>Not verified:</strong> the widely repeated claim that a new <em>trabalhador independente</em> is exempt from social security contributions for the first 12 months. It appears on many accountancy sites, but could not be confirmed on seg-social.pt during this work &mdash; the official guide would not load. What the official pages do describe is a minimum contribution base of &euro;20 and a rate of 21.4% on relevant income thereafter. <strong>Confirm with Segurança Social before counting on it.</strong></p>
+  </div>
+
+  <details>
+    <summary>Limits of the register behind this page</summary>
+    <div class="inner">
+      <ol>
+        <li><strong>A named class is not eligibility.</strong> &ldquo;This call names companies&rdquo; is the first filter, never the last &mdash; sector, size, location and maturity conditions live elsewhere in each aviso.</li>
+        <li><strong>Recipients are not applicants.</strong> The dominant template heading is <em>&ldquo;Entidades beneficiárias (incluindo destinatários, quando relevante)&rdquo;</em>, which puts the applicant and the people a service is <em>for</em> in the same section. Counting the second as the first inflated the individual figure from 1 to 11 before it was caught.</li>
+        <li><strong>Amendments matter.</strong> 123 of the 211 calls publish more than one document typed <em>Aviso</em> at an identical timestamp &mdash; republications and amendments &mdash; so the timestamp alone cannot tell you which text is in force. 39 calls have eligibility wording that an amendment changed.</li>
+        <li><strong>This is Portugal 2030 only.</strong> The other doors on this page were each verified individually against their own institution, but they are not part of the same measured corpus.</li>
+        <li><strong>It is a snapshot.</strong> Calls open and close continuously. Six of the 211 close within a fortnight of 8 August 2026.</li>
+      </ol>
+    </div>
+  </details>
+</section>
+
+<footer>
+  <p>Compiled 8 August 2026. Every figure traces to a government or intergovernmental source named beside it; where a claim rests on something weaker, it says so. Portugal 2030 figures come from reading all 647 aviso PDFs behind the 211 open calls &mdash; each eligibility quotation was checked character-for-character against its source document, and re-read from the cited page.</p>
+  <p>Deadlines change without notice. Confirm against the issuing body before acting on any date here.</p>
+</footer>
+
+</main>
+</div>
+
+</body></html>
