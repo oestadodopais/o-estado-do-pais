@@ -351,12 +351,12 @@ cinco marcadores — mantidos em português, como na origem, com glosa inglesa a
 lado. A página inglesa abre com um aviso a dizer que a tradução aguarda revisão
 da direção; a portuguesa não tem aviso nenhum.
 
-**Uma afirmação do texto que o sítio ainda não cumpre.** A secção «O livro-razão»
-diz: «Os dados por trás de cada gráfico são descarregáveis.» Hoje não são — não
-há um único ficheiro para descarregar em lado nenhum. Não toquei na frase, porque
-é cópia final; fica aqui assinalado que ou se constrói a descarga, ou a frase
-tem de mudar antes de publicar. **É a única promessa do Método que o código
-ainda não sustenta.**
+**Uma afirmação do texto que o sítio não cumpria.** A secção «O livro-razão»
+diz: «Os dados por trás de cada gráfico são descarregáveis.» Quando o texto foi
+integrado, não eram — não havia um único ficheiro para descarregar em lado
+nenhum. A frase não foi tocada, porque é cópia final, e ficou assinalado que ou
+se construía a descarga, ou a frase tinha de mudar antes de publicar.
+**Construiu-se a descarga — ver §1.18.**
 
 ### 1.14 O décimo trabalho entrou como uma só alteração
 
@@ -448,6 +448,55 @@ literais como em todo o lado.
 **Um limite honesto:** o portão confere que o motivo renderizado é o campo certo
 do livro-razão. Não confere — nem pode — que `reason_en` seja uma tradução fiel
 de `reason`. Isso é revisão humana, e é da direção.
+
+### 1.18 Os dados por trás dos gráficos passaram a ser descarregáveis
+
+A frase do Método era, até aqui, a única promessa do texto que o código não
+sustentava (§1.13). Passou a sustentar: `/dados/convergencia.csv` e
+`/dados/municipios-308.csv`, ligados na camada Fundo de cada instrumento, nas
+duas edições.
+
+**Gerados, nunca copiados.** Os dois ficheiros saem das mesmas origens que
+desenham os instrumentos — o livro-razão e o módulo das coordenadas — a cada
+construção. Uma cópia à mão parece igual no dia em que é feita e diverge na
+primeira correção; e um ficheiro de dados que discorda da página é pior do que
+não haver ficheiro nenhum.
+
+**A coluna a mais.** Foi pedida a colunagem região, valor, ano, unidade,
+estudo. O ficheiro leva mais uma: `afirmacao`, com o id da linha do livro-razão.
+Sem ela, quem descarrega fica com números sem porta de entrada para a
+proveniência; com ela, cada linha do CSV aponta para o ficheiro YAML que a
+justifica. É a mesma disciplina do selo de proveniência, em ficheiro.
+
+**Duas formatações no mesmo par de ficheiros, de propósito:**
+
+- o **valor de uma afirmação** vai exactamente como foi publicado, em
+  formatação portuguesa (`"77,2"`), entre aspas para não colidir com a vírgula
+  que separa colunas. É a prova documental, e a regra da casa é preservá-la
+  (§1.6). Um CSV não é razão para reescrever um valor publicado;
+- as **coordenadas** vão com ponto decimal (`396.5`), porque não são valores
+  publicados: são geometria, cuja proveniência é a citação transcrita.
+
+As duas convenções estão explicadas no cabeçalho de cada ficheiro, em
+comentários `#` — que trazem também a citação da CAOP e a data de acesso, e
+dizem onde está a linha do livro-razão de cada valor.
+
+**Um quarto passo no build, e porquê não é um quarto portão.** `check:dados`
+corre depois do portão de HTML. Não varre proveniência: confere que os dois
+ficheiros existem, que a contagem dos municípios bate certo com **as quatro
+afirmações que a publicam** (308 = 278 + 19 + 11, lido do livro-razão e não do
+módulo de onde o ficheiro foi gerado), que cada linha da convergência bate certo
+com a afirmação que ela própria nomeia, e que as duas edições ligam para os dois
+ficheiros. Os três portões não foram tocados.
+
+**O que esta verificação não é.** O ficheiro construído **não** é comparado com
+uma segunda chamada ao gerador — isso seria uma tautologia, e passaria com o
+gerador errado. É lido do `dist/` e confrontado com as origens.
+
+**Limite honesto:** um CSV servido de `dist/` não passa pelo portão de HTML, que
+só vê páginas. A garantia de que os números do ficheiro são os do livro-razão
+vem inteira de `check:dados` — e essa verificação existe porque, sem ela, este
+seria exactamente o sítio por onde um número sem proveniência entrava.
 
 ---
 
@@ -556,6 +605,13 @@ fácil, não para tornar o desonesto impossível.
 - A contagem 278/19/11/308 foi **reproduzida a partir das coordenadas**, não
   copiada: `contagens()` conta os 308 registos por região e dá o mesmo que o
   livro-razão.
+- Os dados descarregáveis foram postos à prova a falhar, um a um e depois
+  repostos: uma linha a menos no CSV construído · um valor trocado · uma edição
+  com a ligação apontada a um ficheiro que não existe · um ficheiro apagado.
+  Nos quatro casos, `check:dados` fecha com código 1.
+- O motivo de uma correção foi posto à prova nas duas línguas: entrada sem
+  `reason_en` e chave `reason-en` mal escrita param o `ledger:check`; a edição
+  inglesa a renderizar o motivo português fecha o portão de HTML (§1.17).
 
 ---
 
@@ -563,9 +619,9 @@ fácil, não para tornar o desonesto impossível.
 
 1. **Fechar o Método.** O texto português está publicado. Falta: resolver os
    quatro marcadores (forma pública do nome, endereço de contacto, modelo de
-   financiamento, número exato das autárquicas); rever a tradução inglesa; e
-   decidir sobre a frase «os dados por trás de cada gráfico são descarregáveis»,
-   que o sítio ainda não cumpre (§1.13).
+   financiamento, número exato das autárquicas) e rever a tradução inglesa. A
+   frase «os dados por trás de cada gráfico são descarregáveis» deixou de estar
+   por cumprir (§1.18).
 2. **Migrar os estudos.** Dez trabalhos, vinte páginas de destino (uma por
    língua), cada uma a dizer por palavras que o estudo ainda não foi mudado
    para ali.

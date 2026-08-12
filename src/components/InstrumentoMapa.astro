@@ -17,6 +17,7 @@
 import { MUNICIPIOS, DISTRITOS, FRAMES, FIELD_W, FIELD_H, INDICE_EVORA } from '../data/caop-centroids.mjs';
 import { VERBATIM } from '../data/verbatim.mjs';
 import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
+import { DADOS } from '../lib/dados.mjs';
 import { t } from '../i18n/strings.mjs';
 import Claim from './Claim.astro';
 
@@ -155,6 +156,11 @@ const molduras = [
       <div class="deep-item">
         <div class="deep-k">{s.home.instr2.fonteK}</div>
         <p class="deep-v verbatim" data-verbatim="caop-fonte" lang="pt-PT">{VERBATIM['caop-fonte'].text}</p>
+      </div>
+      <div class="deep-item">
+        <div class="deep-k">{s.home.instr2.dadosK}</div>
+        <p class="deep-v">{s.home.instr2.dadosV}</p>
+        <p><a class="ligacao-dados" href={DADOS.municipios} download>{s.home.dadosLink} ↓</a></p>
       </div>
       <div class="deep-item">
         <div class="deep-k">{s.home.instr2.processamentoK}</div>

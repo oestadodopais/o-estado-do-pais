@@ -1312,6 +1312,25 @@ section {
   text-decoration-color: currentColor;
 }
 
+/* Descarga dos dados de um instrumento. Fica na camada Fundo, ao lado da
+   proveniência: quem quer os números quer também saber de onde vieram. */
+.ligacao-dados {
+  display: inline-block;
+  margin-top: 4px;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--rule-strong);
+}
+.ligacao-dados:hover {
+  text-decoration-color: currentColor;
+}
+
 /* ------------------------------------------------------------ registo: dois grupos */
 
 .registo {

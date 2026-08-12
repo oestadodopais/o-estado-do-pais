@@ -14,6 +14,7 @@
  * uma medição, e vão marcados como tal.
  */
 import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
+import { DADOS } from '../lib/dados.mjs';
 import { REGIOES, ESCALA, GEOMETRIA } from '../data/regioes.mjs';
 import { studyLabel } from '../data/studies.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -235,6 +236,11 @@ for (const r of REGIOES) {
       <div class="deep-item">
         <div class="deep-k">{s.home.instr1.distanciasK}</div>
         <p class="deep-v">{s.home.instr1.distanciasV}</p>
+      </div>
+      <div class="deep-item">
+        <div class="deep-k">{s.home.instr1.dadosK}</div>
+        <p class="deep-v">{s.home.instr1.dadosV}</p>
+        <p><a class="ligacao-dados" href={DADOS.convergencia} download>{s.home.dadosLink} ↓</a></p>
       </div>
       <div class="deep-item">
         <div class="deep-k">{s.home.instr1.provenienciaK}</div>

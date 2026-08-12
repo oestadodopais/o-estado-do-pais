@@ -24,3 +24,4 @@ pnpm-debug.log*
 
 # ficheiros de teste do portão (criados e removidos durante a verificação)
 src/pages/_gate-test-*.astro
+.vercel
