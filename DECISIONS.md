@@ -607,8 +607,9 @@ na forma esperada e o build pararia.
 
 ### 1.20 Os documentos entraram, e trouxeram um contrato de determinismo
 
-Doze das treze edições pedidas estão alojadas. O que este ponto regista não é a
-entrada delas — é a máquina que a torna reconferível por quem não estava cá.
+As treze edições pedidas estão alojadas — doze por este caminho e a décima
+terceira pelo de §1.21. O que este ponto regista não é a entrada delas: é a
+máquina que a torna reconferível por quem não estava cá.
 
 #### O invólucro do anfitrião, derivado dos bytes
 
@@ -665,7 +666,7 @@ bruto igual e o normalizado diferente — é a normalização que está errada.
 #### `studies-src/_raw/` fica versionado
 
 Os bytes tal como foram descarregados ficam em `studies-src/_raw/<slug>.<lingua>.html`,
-**dentro do repositório** (8,5 MB, doze ficheiros). Não foram ignorados, e a
+**dentro do repositório** (8,5 MB, treze ficheiros). Não foram ignorados, e a
 razão é dupla: sem eles, `sha256_raw` seria uma afirmação sobre bytes que já não
 existem em lado nenhum — o artefacto a montante muda; e com eles a função de
 normalização pode ser **reexecutada sem rede**, o que é a única forma de o
@@ -690,19 +691,19 @@ Nos três casos o portão fecha com código 1. Confere ainda que a língua e o s
 são de uma edição que o arquivo conhece, e que o ficheiro bruto que sustenta
 `sha256_raw` existe.
 
-#### O que ficou de fora, e porquê
+#### O que ficou de fora nesta passagem, e porquê
 
-**«Évora — Economia, Investidores, Portas Abertas 2026» não foi instalado.** Não
-é uma falha do documento nem do mecanismo: a ferramenta de descarga devolveu
+**«Évora — Economia, Investidores, Portas Abertas 2026» não entrou aqui.** Não
+era uma falha do documento nem do mecanismo: a ferramenta de descarga devolveu
 este artefacto — o mais pequeno dos treze — **em linha, sem escrever os bytes em
 ficheiro**, ao contrário dos outros doze. Instalá-lo obrigaria a transcrever à
 mão cerca de 43 KB de HTML a partir do texto da resposta, e uma transcrição é
 texto escrito por nós: um carácter trocado seria uma alteração silenciosa de uma
 obra publicada, que é precisamente o defeito que todo este mecanismo existe para
-tornar impossível. Preferiu-se a lacuna declarada. **Fica por instalar, e
-instala-se sem trabalho nenhum** assim que a descarga escrever o ficheiro:
-pousar os bytes em `_raw/`, correr o normalizador, acrescentar a linha ao
-manifesto.
+tornar impossível. Preferiu-se a lacuna declarada.
+
+**Entrou a seguir, e não por transcrição** — por um caminho que também é
+determinista. Ver §1.21.
 
 #### Duas coisas para a direção decidir
 
@@ -721,7 +722,7 @@ quiser.
 
 **As páginas de estudo continuam fora do índice.** Alojar o documento não é a
 migração estar feita (§1.8, §1.19): falta a página do observatório sobre cada
-trabalho. Doze documentos alojados, doze páginas ainda por escrever.
+trabalho. Treze documentos alojados; vinte páginas do observatório por escrever.
 
 #### Limites conhecidos deste passo
 
@@ -735,6 +736,71 @@ trabalho. Doze documentos alojados, doze páginas ainda por escrever.
 - O documento de `onde-esta-a-agua` (PT) traz, dentro do corpo, um `<!doctype>` e
   um `<html>` próprios — o autor alojou um documento completo dentro do
   artefacto. Fica assim, byte a byte: é o que foi publicado.
+
+### 1.21 A décima terceira edição, e a diferença entre extrair e transcrever
+
+A descarga de «Évora — Economia, Investidores, Portas Abertas 2026» devolveu o
+artefacto **em linha, sem escrever ficheiro** (§1.20). Os bytes existiam — o
+arranês da sessão grava as respostas das ferramentas literalmente, em JSON — mas
+não existiam como ficheiro. Foram recuperados daí, por
+[`scripts/extract-from-transcript.mjs`](scripts/extract-from-transcript.mjs).
+
+**A distinção que autoriza isto, e que é a única coisa que interessa neste
+ponto:** transcrever é escrever; extrair não é. Uma transcrição passa 43 KB de
+HTML pela mão de quem a faz, e um carácter trocado no meio não deixa marca
+nenhuma. `JSON.parse` é uma **desserialização determinista** — o mesmo registo
+dá sempre os mesmos bytes, pela mesma razão que a normalização do invólucro dá
+sempre o mesmo documento. A cadeia de custódia é: o anfitrião serviu → o arranês
+gravou literalmente → um analisador puro devolveu. **Ninguém redigiu nada pelo
+caminho**, e é por isso que este caminho é aceitável e o outro não era.
+
+#### As cinco conferências, e a que fecha a porta
+
+1. a descarga respondeu **200**;
+2. o registo guarda a resposta **duas vezes** — no bloco `tool_result` e em
+   `toolUseResult.result` — e as duas cópias têm de ser idênticas: uma testemunha
+   a confirmar a outra dentro do mesmo registo (são, 43 133 caracteres cada);
+3. o cabeçalho que a ferramenta antepõe existe uma só vez e é retirado **por
+   posição**, não por adivinhação sobre onde acaba;
+4. o que sobra começa em `<!doctype html>`;
+5. **o comprimento bate certo com a contagem que o arranês registou da própria
+   resposta HTTP**: `bytes: 43765`, e o extraído tem exactamente 43 765 bytes em
+   UTF-8 (42 998 caracteres).
+
+A quinta é a que fecha a porta, e vale a pena dizer porquê: esse número **não é
+derivado do texto** — foi contado pela ferramenta no momento da descarga, e está
+guardado num campo à parte. Se o texto tivesse sido truncado, adulterado ou mal
+desescapado, não batia. Qualquer conferência que falhe é uma paragem; não há
+recuperação parcial.
+
+#### O registo, para quem quiser lá ir
+
+| | |
+| --- | --- |
+| artefacto | `7f725a61-beca-4b02-ac03-046ca4eb050a`, versão `1786370144-e1eb` |
+| resposta | HTTP 200, 43 765 bytes, 882 ms |
+| descarregado | 2026-08-12T13:50:30Z |
+| registo | linha 57 do JSONL da sessão, `tool_use_id` `toolu_01L6jFRgpRNBnSCzJwbzm5sr` |
+
+Depois disto o documento seguiu o caminho de toda a gente: normalizado pela mesma
+função (invólucro conferido, runtime de 17 141 bytes retirado — a mesma geração
+dos outros doze), título conferido contra o arquivo, instalado, e com linha no
+manifesto.
+
+#### O que fica dito em voz alta, e não em rodapé
+
+A linha do manifesto leva **`via: transcript-extraction`**, e `check:documentos`
+**nomeia-a a cada construção**. Um campo enterrado num ficheiro de dados é uma
+nota de rodapé; dito na saída do build, é uma coisa que quem constrói vê.
+
+**Limite honesto, e é real.** Esta linha tem uma cadeia de custódia diferente das
+outras doze. Nas outras, os bytes de `_raw/` são o ficheiro que a ferramenta
+escreveu; nesta, são o que um analisador tirou do registo da sessão — e o
+registo é local à máquina, não está no repositório, e não vai estar. O que
+sobrevive aqui é o mesmo que sobrevive para as outras: os bytes em `_raw/`, os
+dois resumos, e a possibilidade de descarregar outra vez e comparar. É por isso
+que a reconferência por descarga nova é a prova que conta, e não a confiança em
+qualquer registo — incluindo este.
 
 ---
 
@@ -869,12 +935,13 @@ fácil, não para tornar o desonesto impossível.
 - **A dispensa não afrouxou o varrimento das páginas:** com o documento
   sintético alojado, dois números metidos na página de estudo deram quarenta
   erros — dois por página, nas vinte páginas de estudo.
-- **Doze documentos reais alojados** (§1.20): o build fecha a 39 páginas, com o
-  portão de HTML a reconstruir os doze contra a origem e a encontrá-los iguais
-  carácter a carácter. A única diferença entre origem e construído é a faixa,
-  entre 1529 e 1593 bytes conforme a língua e o slug.
-- **Os doze endereços existem no `dist/`**, seis em `/estudos/<slug>/documento`
-  e seis em `/en/studies/<slug>/document`.
+- **Treze documentos reais alojados** (§1.20, §1.21): o build fecha a 40 páginas,
+  com o portão de HTML a reconstruir os treze contra a origem e a encontrá-los
+  iguais carácter a carácter. A única diferença entre origem e construído é a
+  faixa, entre 1529 e 1593 bytes conforme a língua e o slug.
+- **Os treze endereços existem no `dist/`** e devolvem `200 text/html` no
+  servidor de pré-visualização — sete em `/estudos/<slug>/documento` e seis em
+  `/en/studies/<slug>/document`; um endereço inexistente devolve 404.
 - **O título de cada documento foi conferido contra o trabalho a que foi
   atribuído**, lido do próprio ficheiro instalado, antes de qualquer instalação.
   Nenhuma correspondência ficou por confirmar.
@@ -896,8 +963,11 @@ fácil, não para tornar o desonesto impossível.
   adulterados — sem runtime · cabeça do anfitrião alterada num byte · sufixo
   alterado · runtime declarado duas vezes. Nos quatro sai com código 1 e não
   escreve nada.
-- **A normalização é determinista**, conferida nos doze ficheiros brutos: duas
+- **A normalização é determinista**, conferida nos treze ficheiros brutos: duas
   execuções seguidas dão o mesmo resumo em todos.
+- **A extracção do registo também é determinista** (§1.21): duas execuções dão
+  ficheiros idênticos byte a byte, e o comprimento bate certo com a contagem que
+  a própria ferramenta registou da resposta HTTP.
 
 ---
 
@@ -908,14 +978,12 @@ fácil, não para tornar o desonesto impossível.
    financiamento, número exato das autárquicas) e rever a tradução inglesa. A
    frase «os dados por trás de cada gráfico são descarregáveis» deixou de estar
    por cumprir (§1.18).
-2. **Migrar os estudos.** A metade mecânica está feita: **doze dos treze
-   documentos estão alojados**, com manifesto e portão próprio (§1.20). Falta a
-   outra metade, que é escrita e não mecânica: a página do observatório sobre
-   cada trabalho — a leitura curta, os números do estudo com linha no
-   livro-razão, a proveniência de cada um. É essa que levanta o `noindex`, e são
-   doze. Falta também a décima terceira edição, «Évora — Economia, Investidores,
-   Portas Abertas 2026», por uma limitação da descarga e não do mecanismo — o
-   porquê e o remédio estão em §1.20.
+2. **Migrar os estudos.** A metade mecânica está feita: **as treze edições estão
+   alojadas**, com manifesto e portão próprio (§1.20, §1.21). Falta a outra
+   metade, que é escrita e não mecânica: a página do observatório sobre cada
+   trabalho — a leitura curta, os números do estudo com linha no livro-razão, a
+   proveniência de cada um. É essa que levanta o `noindex`, e são vinte: dez
+   trabalhos em duas línguas.
 3. **Fechar a proveniência.** Vinte afirmações têm campos `[a verificar]`:
    sobretudo o organismo, o documento, o URL e o excerto das séries do PIB per
    capita, e a base de cálculo do ciclo de substituição de condutas.

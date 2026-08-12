@@ -28,6 +28,16 @@
 # de normalização deixaria de poder ser reexecutada sem rede.
 #
 # fetched_utc é o instante em que a ferramenta de descarga escreveu os bytes.
+#
+# via  — campo opcional, e só aparece quando os bytes NÃO vieram de um ficheiro
+#        escrito pela ferramenta de descarga. Hoje há um caso, e um só:
+#        `transcript-extraction`, em que a descarga devolveu o artefacto em
+#        linha, sem escrever ficheiro, e os bytes foram recuperados do registo
+#        da sessão por um analisador puro — com o comprimento conferido contra a
+#        contagem que o próprio arranês registou da resposta HTTP. O caminho, as
+#        cinco conferências e o porquê estão em DECISIONS §1.21 e em
+#        scripts/extract-from-transcript.mjs. O portão nomeia estas linhas em
+#        voz alta a cada construção.
 
 edicoes:
   - slug: evora-quinze-anos-cinco-mandatos
@@ -41,6 +51,18 @@ edicoes:
     bytes_normalized: 1868185
     sha256_raw: 76d18ed0136820b90c698ec180b528ea428d76af06af5eed3fdd7e7ca86cf3cc
     sha256_normalized: 7c545625b51c30d807a2eda316db66fa5a24ac8192943c4e667893f843de84d6
+  - slug: evora-economia-investidores-portas-abertas-2026
+    lang: pt
+    title: "Évora — Economia, Investidores, Portas Abertas 2026"
+    artifact_url: https://claude.ai/code/artifact/7f725a61-beca-4b02-ac03-046ca4eb050a
+    raw_file: _raw/evora-economia-investidores-portas-abertas-2026.pt.html
+    fetched_utc: 2026-08-12T13:50:30Z
+    via: transcript-extraction
+    bytes_raw: 43765
+    bytes_runtime_removed: 17141
+    bytes_normalized: 26624
+    sha256_raw: 0ef4c8364ea5d1fadc1329024280b36aecd14048232ae58592d04114ec285f16
+    sha256_normalized: 645432bc291f49c8793a6014c2ffeb18fcf252abf48b958643304df7f90c6c67
   - slug: evora-orcamentado-pago-devido-2025
     lang: pt
     title: "Évora — Orçamentado, Pago, Devido 2025"
