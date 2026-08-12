@@ -94,8 +94,15 @@ export function todosOsDocumentos() {
   const nomesValidos = new Set(Object.values(FICHEIRO_DA_EDICAO));
 
   for (const entrada of fs.readdirSync(STUDIES_SRC_DIR, { withFileTypes: true })) {
-    if (!entrada.isDirectory()) continue; // o README da pasta, e mais nada
+    if (!entrada.isDirectory()) continue; // o README e o manifesto, e mais nada
     const slug = entrada.name;
+    /* Pastas com `_` à cabeça não são trabalhos: são a oficina. Hoje há uma só,
+       `_raw/`, onde ficam os bytes tal como foram descarregados, que são a prova
+       de `sha256_raw` no manifesto — ver studies-src/manifest.yml. A regra é por
+       prefixo e não por nome porque um slug enganado nunca começa por `_`, e
+       assim continua a valer a severidade de baixo: uma pasta com um nome que
+       parece um slug e não é de nenhum trabalho continua a parar o build. */
+    if (slug.startsWith('_')) continue;
     const work = WORKS.find((w) => w.slug === slug);
     if (!work) {
       throw new Error(

@@ -1,0 +1,606 @@
+<!doctype html><html><head><!-- frame-runtime --><script>window.__FRAME_PREAMBLE={"capabilities":{"assets":"assets.hcOK0ALv.js","comments":"comments.BKZ3qutA.js","db":"db.C8ehi_0m.js","downloads":"downloads.BXsoAvg9.js","mcp":"mcp.D3B2EyQu.js","permissions":"permissions.DdITF2Mk.js","room":"room.BgXZkiYR.js","sample":"sample.DpdXn9di.js","self":"self.BN4be5De.js","user":"user.o5zdRedj.js"},"transforms":"_transforms.VaITkagF.js","comments":"_comments.CNSvmFji.js","translate":"_translate.BOzFH2D9.js"}</script><script>(function(){"use strict";var le=["light","dark","system"],ue=/^[A-Za-z0-9_-]{1,64}$/,H=/^[a-zA-Z_:][a-zA-Z0-9_:.-]{0,127}$/,fe=new Set(["class","hidden"]);function de(e){const t=e.toLowerCase();return t.startsWith("data-")||t.startsWith("aria-")||fe.has(t)}function me(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_patch;if(t===null||typeof t!="object")return!1;const{seq:n,elements:a}=t;if(typeof n!="number"||!Number.isSafeInteger(n)||!Array.isArray(a)||a.length===0||a.length>64)return!1;for(const s of a){if(s===null||typeof s!="object")return!1;const r=s;if(typeof r.target!="string"||!ue.test(r.target)||r.text!==void 0&&typeof r.text!="string")return!1;if(r.attrsSet!==void 0){if(r.attrsSet===null||typeof r.attrsSet!="object")return!1;for(const[o,i]of Object.entries(r.attrsSet))if(!H.test(o)||typeof i!="string")return!1}if(r.attrsRemoved!==void 0){if(!Array.isArray(r.attrsRemoved))return!1;for(const o of r.attrsRemoved)if(typeof o!="string"||!H.test(o))return!1}}return!0}function pe(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_init;return t!==null&&typeof t=="object"}function Y(e){return e!==null&&typeof e=="object"&&e.__frame_size_poke===!0}function ge(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_theme;if(t===null||typeof t!="object")return!1;const n=t.theme;return typeof n=="string"&&le.includes(n)}function he(e){try{typeof reportError=="function"?reportError(e):setTimeout(()=>{throw e},0)}catch{}}var K=["#62744c","#b04e72","#5b7596","#a3651f","#7a6ba8","#3f7a75"],J=e=>{let t=0;for(let n=0;n<e.length;n++)t=t*31+e.charCodeAt(n)>>>0;return K[t%K.length]??"#788c5d"},V="#c7c9d1",X=e=>"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2 2'%3E%3Ccircle cx='1' cy='1' r='1' fill='"+encodeURIComponent(e)+"'/%3E%3C/svg%3E",ve=Object.freeze({id:null,name:"",avatarUrl:X(V),color:V,email:null,isOwner:!1,canEdit:!1}),_e=(...e)=>{const t=e[0],n=typeof t=="string"?[t]:Array.isArray(t)?t.filter(s=>typeof s=="string"):[],a=Object.create(null);for(const s of n)a[s]={id:s,name:"",avatarUrl:X(J(s)),color:J(s),email:null,isMe:!1};return a},Z=Object.freeze(Object.assign(Object.create(null),{user:Object.freeze(Object.assign(Object.create(null),{id:null,isOwner:!1,canEdit:!1,me:ve,profiles:_e,name:"",avatarUrl:null,search:Object.freeze([]),email:null}))})),ye={sample:"sample"};function G(){const e=new Uint8Array(20);try{crypto.getRandomValues(e)}catch{for(let n=0;n<e.length;n++)e[n]=Math.floor(Math.random()*256)}let t="";for(const n of e)t+=(n%36).toString(36);return t}function be(e,t){const n=r=>{const o={path:r},i=r.split("/");return{id:i[i.length-1],path:r,get:()=>t("get",[o]),set:g=>t("set",[o,g]),update:g=>t("update",[o,g]),delete:()=>t("delete",[o]),acquire:g=>t("acquire",[o,g]),onSnapshot:(g,y)=>t("subscribe",[o,g,y]),collection:g=>s(r+"/"+String(g))}},a=r=>({where:(o,i,g)=>a({...r,where:[...r.where??[],{f:String(o),op:String(i),v:g}]}),orderBy:(o,i)=>a({...r,orderBy:{f:String(o),dir:i===void 0?"asc":String(i)}}),limit:o=>a({...r,limit:Number(o)}),get:()=>t("query",[r]),onSnapshot:(o,i)=>t("subscribe",[r,o,i])}),s=r=>({...a({collection:r}),path:r,doc:o=>n(r+"/"+(o===void 0?G():String(o))),add:o=>{const i=n(r+"/"+G());return Promise.resolve(i.set(o)).then(()=>i)}});e.doc=r=>n(String(r)),e.collection=r=>s(String(r))}function Q(e){if(window===top||e.type==="auxclick"&&e.button!==1)return;const t=e.composedPath?e.composedPath():[e.target];let n=null;for(let o=0;o<t.length;o++){const i=t[o];if(i&&i.matches&&i.matches("a[href],area[href]")){n=i;break}}if(!n&&e.target&&e.target.closest&&(n=e.target.closest("a[href],area[href]")),!n)return;const a=n.getAttribute("href");if(!a)return;let s,r;try{s=new URL(a,document.baseURI),r=new URL(document.baseURI).origin}catch{return}if((s.protocol==="http:"||s.protocol==="https:")&&s.origin!==r){e.preventDefault();const o=(n.getAttribute("target")??document.querySelector("base[target]")?.getAttribute("target")??"").toLowerCase(),i=e.type==="auxclick"||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||!["","_self","_top","_parent"].includes(o);parent.postMessage({__frame_nav:!0,url:s.href,newTab:i},"*")}}var ee={};function I(e){if(window===top)return;const t=Date.now();t-(ee[e]||0)<500||(ee[e]=t,parent.postMessage({__frame_engaged:!0,kind:e},"*"))}var Ee=2e3,te=["wheel","touchstart","touchmove","keydown","pointerdown"],re=0;function we(e){e.isTrusted&&(re=Date.now())}function Ae(){addEventListener("click",Q,!0),addEventListener("auxclick",Q,!0)}function Se(){for(let e=0;e<te.length;e++)addEventListener(te[e],we,{capture:!0,passive:!0});addEventListener("scroll",e=>{e.isTrusted&&Date.now()-re<Ee&&I("scroll")},{capture:!0,passive:!0}),addEventListener("pointermove",e=>{e.isTrusted&&I("pointer")},{capture:!0,passive:!0}),addEventListener("click",e=>{e.isTrusted&&I("click")},{capture:!0,passive:!0})}var je=Object.freeze([]);function Oe(e,t){let n=null,a=null;const s=()=>e.__settled;e.peers=()=>je,e.connected=()=>!1,e.emit=()=>s()?.()??Promise.resolve(),e.presence=r=>{const o=s();if(o)return o();let i=null;if(r!==null&&typeof r=="object")try{Array.isArray(r)||(i={...r})}catch{}return i===null?Promise.reject({code:"invalid_argument",message:"presence takes an object"}):(n===null&&(n=Object.create(null),a=Promise.resolve(t("presence",[n]))),Object.assign(n,i),a)}}var U="__frame_scroll",Re=150,Pe=310,Me=160,Le=3e4;function Te(){let e=0,t=!1,n=!1,a=!1,s=0,r=null;const o=d=>{try{sessionStorage.setItem(U,JSON.stringify({y:d}))}catch{}},i=()=>{if(clearTimeout(e),r===null)return;const d=r;r=null,o(d)},g=()=>{if(t){t=!1;return}n=!0,r=scrollY,clearTimeout(e),e=setTimeout(i,Re)};try{addEventListener("scroll",g,{passive:!0}),addEventListener("pagehide",i)}catch{}const y=()=>{let d;try{d=sessionStorage.getItem(U)}catch{return null}if(d===null)return null;let u;try{u=JSON.parse(d)}catch{u=null}const p=u?.y;if(!(typeof p=="number"&&Number.isFinite(p)&&p>=0)){try{sessionStorage.removeItem(U)}catch{}return null}return p};let l=!1;const f=d=>{try{const u=scrollY;scrollTo({top:d,left:0,behavior:"instant"}),s=d,a=!0,clearTimeout(e),r=null,o(d);const p=scrollY;p!==u&&(t=!0),p!==d&&!l&&(l=!0,addEventListener("load",()=>{try{if(scrollY===p){const _=y();f(_!==null?_:s)}}catch{}},{once:!0}))}catch{}},m=()=>{try{return!!location.hash}catch{return!0}};let h=!1;const v=()=>{try{if(h||innerWidth>Pe||innerHeight>Me)return;h=!0;const d=Date.now(),u=()=>{try{removeEventListener("resize",u)}catch{}if(Date.now()-d>Le||n||m())return;const p=y();f(p!==null?p:s)};addEventListener("resize",u)}catch{}};let w=!1,A=!1;return{restore(){if(w||(w=!0,m()))return;const d=y();d!==null&&(f(d),v())},promoted(){if(A||(A=!0,m()))return;const d=y();d!==null?(f(d),v()):a&&f(s)}}}function Ce(e,t,n){const a=[...t.values()].filter(s=>s.targets.some(r=>r.startsWith(e+".")));return{wrap(s,r){const o=`${e}.${s}`,i=a.filter(g=>g.targets.includes(o));return i.length===0?(...g)=>{try{return r(...g)}catch(y){return Promise.reject(y)}}:(...g)=>{let y=g;for(const f of i){const m=f.module.parameters;if(m)try{y=m(y)}catch{return Promise.reject({code:"transform_error",id:f.id,scope:e,message:"parameters transform failed"})}}let l;try{l=r(...y)}catch(f){l=Promise.reject(f)}return l.then(f=>{for(let m=i.length-1;m>=0;m--){const h=i[m],v=h.module.returns;if(v)try{f=v(f)}catch{return n({id:h.id,scope:e,leg:"returns"}),f}}return f},f=>{for(let m=i.length-1;m>=0;m--){const h=i[m],v=h.module.throws;if(v)try{f=v(f)}catch{return n({id:h.id,scope:e,leg:"throws"}),Promise.reject(f)}}return Promise.reject(f)})}}}}function ke(e,t,n,a=()=>{}){const s=new Set(e.changes??[]),r=new Map;for(const o of s){const i=t[o];i&&r.set(o,i)}return{contract:e.contract,changes:s,flags:new Set(e.flags??[]),capabilities:e.capabilities??{},capBudgets:e.capBudgets??{},transforms:r,shellOrigin:n.shellOrigin,mount:n.mount,pipe:o=>Ce(o,r,a)}}var $e="modulepreload",Fe=function(e){return"/"+e},xe={},Ne=function(t,n,a){let s=Promise.resolve();function r(o){const i=new Event("vite:preloadError",{cancelable:!0});if(i.payload=o,window.dispatchEvent(i),!i.defaultPrevented)throw o}return s.then(o=>{for(const i of o||[])i.status==="rejected"&&r(i.reason);return t().catch(r)})};(function(){const e=Object.defineProperty,t=globalThis,n=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let a=0;for(let s=0;s<n.length;s++){const r=n[s];try{e(t,r,{value:void 0,writable:!1,configurable:!1})}catch{try{delete t[r]}catch{}try{e(t,r,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof t[r]=="function"&&a++}if(a&&window!==top)try{parent.postMessage({__frame_rtc_lockdown_failed:a},"*")}catch{}})();var qe=1e4,Ie=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function ne(e){for(const t of Ie)if(t.endsWith(":*"))try{const n=new URL(e);if(`${n.protocol}//${n.hostname}:*`===t)return!0}catch{}else if(e===t)return!0;return!1}var C=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),D=window.__FRAME_PREAMBLE?.transforms,z=window.__FRAME_PREAMBLE?.comments,B=window.__FRAME_PREAMBLE?.translate,k=/^[\w.-]+\.js$/,Ue=/^[a-z][a-z0-9_-]{0,63}$/,se=null,P=null;function $(e,t,n){try{Object.defineProperty(e,t,{value:n,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(e,t,{value:n,writable:!1,configurable:!0,enumerable:!0})}catch{}}}var F=!1;function De(e,t){const n=[];for(const a of e.elements){const s=document.querySelector(`[data-id="${a.target}"]`);if(!s){parent.postMessage({__frame_patch_miss:{seq:e.seq}},t);return}if([...Object.keys(a.attrsSet??{}),...a.attrsRemoved??[]].some(r=>!de(r))){parent.postMessage({__frame_patch_miss:{seq:e.seq}},t);return}for(const[r,o]of Object.entries(a.attrsSet??{}))if(r.toLowerCase()!=="data-id")try{s.setAttribute(r,o)}catch{}for(const r of a.attrsRemoved??[])r.toLowerCase()!=="data-id"&&s.removeAttribute(r);typeof a.text=="string"&&(s.textContent=a.text),n.push(a.target)}try{document.dispatchEvent(new CustomEvent("claude:edit",{detail:{seq:e.seq,targets:n}}))}catch{}}function oe(e){const t=document.documentElement;e==="light"||e==="dark"?(t.dataset.theme=e,t.style.colorScheme=e,F=!0):F&&(delete t.dataset.theme,t.style.colorScheme="",F=!1)}var ae=256,M=Object.assign(Object.create(null),{mcp:Object.assign(Object.create(null),{watchTool:{handlerArg:3}}),db:Object.assign(Object.create(null),{subscribe:{handlerArg:1,errArg:2}}),room:Object.assign(Object.create(null),{on:{handlerArg:1,errArg:2},onPeers:{handlerArg:0,errArg:1},onConnection:{handlerArg:0,errArg:1}})}),ze=Object.assign(Object.create(null),{db:(e,t)=>be(e,t),room:(e,t,n)=>Oe(e,n)}),L=new Map;function ie(e,t){const n=L.get(e);if(!n)return;const a=Object.assign(Object.create(null),t);Object.assign(n.impl,a),n.impl.__settled=()=>Promise.reject({code:"capability_removed",message:`${e}: method not in this runtime`});const s=n.queue;n.queue=[];for(const r of s){const o=a[r.method];if(o)if(M[e]?.[r.method])try{r.resolve(o(...r.args))}catch{T(r,M[e][r.method],{code:"transform_error",message:`${e}.${r.method} rejected its arguments`})}else o(...r.args).then(r.resolve,r.reject);else{const i={code:"capability_removed",message:`${e}.${r.method} is not in this runtime`},g=M[e]?.[r.method];if(g){T(r,g,i);continue}r.reject(i)}}}function Be(e,t){const n=L.get(e);if(!n)return;n.impl.__settled=()=>Promise.reject(t);const a=n.queue;n.queue=[];for(const s of a){const r=M[e]?.[s.method];if(r){T(s,r,t);continue}s.reject(t)}}function ce(e,t){if(typeof e=="function")try{return e(...t)}catch{return Object.create(null)}return Array.isArray(e)?[...e]:e!==null&&typeof e=="object"?{...e}:e}function N(e,t){const n=Z[e];if(!n){Be(e,t);return}ie(e,Object.fromEntries(Object.entries(n).map(([a,s])=>[a,(...r)=>Promise.resolve(ce(s,r))])))}function T(e,t,n){if(e.syncState?.dead)return;const a=t.errArg===void 0?void 0:e.args[t.errArg],s=t.errArg===void 0?e.args[t.handlerArg]:a;typeof s=="function"&&queueMicrotask(()=>{if(!e.syncState?.dead)try{s(t.errArg===void 0?{type:"error",error:n}:n)}catch(r){he(r)}})}var x=Object.getOwnPropertyDescriptor(window,"claude");if(window!==top&&!(x&&x.writable===!1)){Ae(),Se();let e=null;try{e=Te()}catch{}const t=x?.value??{};$(window,"claude",t);const n=l=>{const f={impl:Object.create(null),queue:[]};L.set(l,f);const m=f.impl,h=d=>({code:"queue_overflow",message:`${l}.${d}: pre-init call queue is full`}),v=(d,u)=>{if(f.queue.length>=ae){const p=Z[l];return p&&d in p?Promise.resolve(ce(p[d],u)):Promise.reject(h(d))}return new Promise((p,_)=>{f.queue.push({method:d,args:u,resolve:p,reject:_})})},w=ye[l],A=new Proxy(w===void 0?m:(()=>{}),{apply:(d,u,p)=>{const _=w,E=m[_]??m.__settled;return E?E(...p):v(_,p)},get:(d,u)=>{if(typeof u!="string"||u==="then"||u==="toJSON"||u==="valueOf")return;if(u==="toString")return Object.prototype.toString;if(w!==void 0&&(u==="call"||u==="apply"||u==="bind"))return Function.prototype[u];const p=M[l]?.[u];return p?(..._)=>{if(typeof _[p.handlerArg]!="function")throw new TypeError(`${l}.${u} requires a handler function`);const E=m[u];if(E)return E(..._);if(m.__settled){const b={dead:!1},q={args:[..._],syncState:b};return m.__settled().catch(c=>T(q,p,c)),()=>{b.dead=!0}}if(f.queue.length>=ae){const b={dead:!1};return T({args:[..._],syncState:b},p,h(u)),()=>{b.dead=!0}}let S=null;const O={dead:!1};return f.queue.push({method:u,args:_,resolve:b=>{S=typeof b=="function"?b:null,O.dead&&S?.()},reject:()=>{},syncState:O}),()=>{O.dead=!0,S?.()}}:(..._)=>{const E=m[u]??m.__settled;return E?E(..._):v(u,_)}},set:()=>!1});ze[l]?.(m,(d,u)=>A[d](...u),v),$(t,l,A)};for(const l of Object.keys(C)){if(t[l]!==void 0){$(t,l,t[l]);continue}n(l)}let a=null,s=null,r=0;const o=l=>{l.source!==parent||!ne(l.origin)||pe(l.data)&&(a=l.data.__frame_init,P=l.origin,removeEventListener("message",o),clearTimeout(r),s?.())};addEventListener("message",o),parent.postMessage({__frame_connect:!0},"*");const i=new Promise(l=>{s=l,r=setTimeout(()=>{removeEventListener("message",o),l()},qe)}),g=document.readyState==="loading"?new Promise(l=>document.addEventListener("DOMContentLoaded",()=>l(),{once:!0})):Promise.resolve();g.then(()=>{try{e?.restore()}catch{}});const y=l=>{if(!(l.source!==parent||!ne(l.origin))&&Y(l.data)){removeEventListener("message",y);try{e?.promoted()}catch{}}};addEventListener("message",y),i.then(async()=>{if(!a||!P){for(const c of L.keys())N(c,{code:"not_granted",message:"frame initialization did not arrive - capability unavailable"});return}oe(a.theme);const l=P;let f=!1,m=!1;addEventListener("message",c=>{if(c.source!==parent||c.origin!==l)return;ge(c.data)&&oe(c.data.__frame_theme.theme),me(c.data)&&De(c.data.__frame_patch,l);const j=c.data?.__fc_mode;j&&typeof j=="object"&&!f&&z&&k.test(z)&&(f=!0,h(z).then(W=>W.install?.(l,j.on===!0)).catch(()=>{}));const R=c.data?.__ft_cmd;R&&typeof R=="object"&&!m&&B&&k.test(B)&&(m=!0,h(B).then(W=>W.install?.(l,R)).catch(()=>{}))});const h=c=>Ne(()=>import("/_runtime/"+c),void 0),v=Object.keys(a.capabilities??{});for(const c of v)Object.hasOwn(C,c)||Ue.test(c)&&t[c]===void 0&&(n(c),N(c,{code:"capability_disabled",message:"capability not in this runtime generation"}));const w=v.filter(c=>Object.hasOwn(C,c)).map(c=>[c,C[c]]).filter(c=>typeof c[1]=="string"&&k.test(c[1])),[A,...d]=await Promise.allSettled([D&&k.test(D)?h(D):Promise.resolve({}),...w.map(([,c])=>h(c))]),u=P;se=ke(a,A.status==="fulfilled"&&A.value?.TRANSFORMS||{},{shellOrigin:u,mount:ie},c=>parent.postMessage({__frame_cap_telemetry:c},u));const p=c=>parent.postMessage({__frame_cap_telemetry:{kind:"cap-load-error",cap:c}},u),_=se;d.forEach((c,j)=>{const R=w[j][0];if(c.status!=="fulfilled"){p(R);return}try{c.value?.install?.(_)}catch{p(R)}});for(const[c,j]of L)if(j.impl.__settled===void 0){if(v.includes(c)){N(c,{code:"capability_disabled",message:"capability not available in this session"});continue}N(c,{code:"not_granted",message:"capability not available in this session"})}await g,parent.postMessage({__frame_ready:!0},P);let E=-1,S=0;const O=()=>{S=0;const c=Math.max(document.documentElement.scrollHeight,document.body?document.body.scrollHeight:0);c!==E&&(E=c,parent.postMessage({__frame_size:!0,h:c},u))},b=()=>{S||(S=setTimeout(O,200))},q=new ResizeObserver(b);q.observe(document.documentElement),document.body&&q.observe(document.body),document.addEventListener("load",b,!0),document.fonts?.ready.then(b,()=>{}),addEventListener("beforeprint",()=>{E=-1,O()}),b(),addEventListener("message",c=>{if(!(c.source!==parent||c.origin!==u)&&Y(c.data)){try{e?.promoted()}catch{}E=-1,b()}})})}})();</script><!-- /frame-runtime --><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}</style></head><body>
+<title>Alentejo &amp; Algarve — Economy, Society, Strategy</title>
+<style>
+  :root{
+    --bg:#FCFCFB; --panel:#F5F4F1; --ink:#20201C; --ink-2:#55534C; --ink-3:#8A877E;
+    --line:#E4E2DC; --line-soft:#EEECE7;
+    --alentejo:#A9741A; --algarve:#0E7FA3;
+    --alentejo-soft:#F3E7D2; --algarve-soft:#DDEEF4;
+    --ref:#8A877E; --chip-bg:#EFEDE8;
+    --max:72rem;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#1A1A19; --panel:#232322; --ink:#EAE8E2; --ink-2:#B3B0A7; --ink-3:#807D74;
+      --line:#3A3936; --line-soft:#2C2B29;
+      --alentejo:#BC842A; --algarve:#2492B0;
+      --alentejo-soft:#3A2F1B; --algarve-soft:#16333D;
+      --ref:#807D74; --chip-bg:#2C2B29;
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#FCFCFB; --panel:#F5F4F1; --ink:#20201C; --ink-2:#55534C; --ink-3:#8A877E;
+    --line:#E4E2DC; --line-soft:#EEECE7;
+    --alentejo:#A9741A; --algarve:#0E7FA3;
+    --alentejo-soft:#F3E7D2; --algarve-soft:#DDEEF4;
+    --ref:#8A877E; --chip-bg:#EFEDE8;
+  }
+  :root[data-theme="dark"]{
+    --bg:#1A1A19; --panel:#232322; --ink:#EAE8E2; --ink-2:#B3B0A7; --ink-3:#807D74;
+    --line:#3A3936; --line-soft:#2C2B29;
+    --alentejo:#BC842A; --algarve:#2492B0;
+    --alentejo-soft:#3A2F1B; --algarve-soft:#16333D;
+    --ref:#807D74; --chip-bg:#2C2B29;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:"Seravek","Gill Sans Nova",Ubuntu,Calibri,"Segoe UI",system-ui,sans-serif;
+    line-height:1.62; margin:0; font-size:1.0rem;
+    -webkit-font-smoothing:antialiased;
+  }
+  .serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif}
+
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 1.25rem;
+        display:grid; grid-template-columns:minmax(0,1fr); gap:0 3rem}
+  @media(min-width:1100px){ .wrap{grid-template-columns:13rem minmax(0,1fr)} }
+
+  /* ── masthead ─────────────────────────────── */
+  header.mast{max-width:var(--max); margin:0 auto; padding:3.2rem 1.25rem 0}
+  .kicker{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-2); margin:0 0 .9rem}
+  .duo{height:4px; width:8.5rem; margin:0 0 1.4rem; display:flex}
+  .duo span:first-child{flex:1; background:var(--alentejo)}
+  .duo span:last-child{flex:1; background:var(--algarve)}
+  h1{font-size:clamp(1.9rem,4.4vw,3rem); line-height:1.12; margin:.1rem 0 .6rem; font-weight:600; text-wrap:balance; letter-spacing:-.01em}
+  .sub{font-size:1.12rem; color:var(--ink-2); max-width:46rem; margin:0 0 1.4rem; text-wrap:balance}
+  .meta{font-size:.82rem; color:var(--ink-3); display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; padding-bottom:2.2rem; border-bottom:1px solid var(--line)}
+
+  /* ── rail nav ─────────────────────────────── */
+  nav.rail{display:none}
+  @media(min-width:1100px){
+    nav.rail{display:block; position:sticky; top:1.5rem; align-self:start; padding-top:2.4rem; font-size:.82rem}
+    nav.rail a{display:block; color:var(--ink-3); text-decoration:none; padding:.28rem .7rem; border-left:2px solid var(--line); line-height:1.35}
+    nav.rail a:hover{color:var(--ink)}
+    nav.rail a.on{color:var(--ink); border-left-color:var(--ink)}
+  }
+  main{min-width:0; padding-top:2.4rem; padding-bottom:5rem}
+
+  /* ── typography ───────────────────────────── */
+  h2{font-size:1.55rem; margin:3.2rem 0 .9rem; font-weight:600; letter-spacing:-.008em; text-wrap:balance; scroll-margin-top:1.2rem}
+  h2 .no{color:var(--ink-3); font-weight:400; margin-right:.55rem}
+  h3{font-size:1.08rem; margin:2rem 0 .6rem; font-weight:650; text-wrap:balance}
+  p, li{max-width:68ch}
+  p{margin:.85rem 0}
+  ul,ol{padding-left:1.3rem; margin:.85rem 0}
+  li{margin:.42rem 0}
+  li::marker{color:var(--ink-3)}
+  strong{font-weight:650}
+  em{font-style:italic}
+  a{color:inherit; text-underline-offset:2px}
+  :focus-visible{outline:2px solid var(--algarve); outline-offset:2px; border-radius:2px}
+  .lede{font-size:1.09rem}
+  .num{font-variant-numeric:tabular-nums}
+
+  /* evidence chips */
+  .t{display:inline-block; font-size:.62rem; font-weight:650; letter-spacing:.06em; vertical-align:.14em;
+     padding:.08rem .34rem; border-radius:.22rem; line-height:1.25; white-space:nowrap}
+  .tv{background:var(--ink); color:var(--bg)}
+  .tq{background:none; color:var(--ink-2); box-shadow:inset 0 0 0 1px var(--ink-3)}
+  .ta{background:var(--chip-bg); color:var(--ink-2)}
+  .tx{background:none; color:var(--ink-3); box-shadow:inset 0 0 0 1px var(--line); border-style:none}
+  .legend-tiers{display:flex; flex-wrap:wrap; gap:.5rem 1.1rem; font-size:.8rem; color:var(--ink-2);
+     background:var(--panel); border:1px solid var(--line); border-radius:.5rem; padding:.7rem .9rem; margin:1.2rem 0}
+
+  /* region tag */
+  .rg{font-weight:650}
+  .rg.al{color:var(--alentejo)}
+  .rg.ag{color:var(--algarve)}
+
+  /* pull quote / verdict blocks */
+  .verdict{border-left:3px solid var(--ink); padding:.15rem 0 .15rem 1.1rem; margin:1.4rem 0; font-size:1.05rem}
+  .verdict .serif{font-size:1.18rem; line-height:1.5}
+  .flag{background:var(--panel); border:1px solid var(--line); border-radius:.55rem; padding:.9rem 1.1rem; margin:1.3rem 0}
+  .flag p{margin:.35rem 0}
+
+  /* ── figures ──────────────────────────────── */
+  figure{margin:1.9rem 0; background:var(--panel); border:1px solid var(--line); border-radius:.65rem; padding:1.1rem 1.2rem 1rem}
+  figure h4{margin:.1rem 0 .1rem; font-size:.98rem; font-weight:650}
+  figure .fsub{margin:0 0 .8rem; font-size:.8rem; color:var(--ink-3)}
+  figcaption{font-size:.78rem; color:var(--ink-3); margin-top:.65rem; line-height:1.5; max-width:none}
+  .chart{position:relative}
+  .chart svg{display:block; width:100%; height:auto}
+  .leg{display:flex; flex-wrap:wrap; gap:.4rem 1.2rem; font-size:.8rem; color:var(--ink-2); margin:.15rem 0 .6rem}
+  .leg i{display:inline-block; width:.85rem; height:.28rem; border-radius:2px; vertical-align:.18em; margin-right:.4rem}
+  .leg .ref i{height:0; border-top:2px dashed var(--ref); border-radius:0}
+  .tip{position:absolute; pointer-events:none; background:var(--ink); color:var(--bg); font-size:.75rem;
+       padding:.4rem .6rem; border-radius:.4rem; line-height:1.45; opacity:0; transform:translate(-50%,-108%);
+       transition:opacity .12s; white-space:nowrap; z-index:3}
+  @media (prefers-reduced-motion: reduce){ .tip{transition:none} }
+  .tip b{font-weight:650}
+
+  /* stat tiles */
+  .tiles{display:grid; gap:.8rem; grid-template-columns:repeat(auto-fit,minmax(10.5rem,1fr)); margin:1.6rem 0}
+  .tile{background:var(--panel); border:1px solid var(--line); border-radius:.6rem; padding:.95rem 1rem}
+  .tile .v{font-size:1.7rem; font-weight:650; letter-spacing:-.01em; line-height:1.1; font-variant-numeric:tabular-nums}
+  .tile .k{font-size:.78rem; color:var(--ink-2); margin-top:.35rem; line-height:1.4}
+  .tile.al .v{color:var(--alentejo)} .tile.ag .v{color:var(--algarve)}
+
+  /* tables */
+  .tw{overflow-x:auto; margin:1.4rem 0; border:1px solid var(--line); border-radius:.6rem}
+  table{border-collapse:collapse; width:100%; font-size:.88rem; min-width:38rem}
+  th,td{text-align:left; padding:.55rem .8rem; border-bottom:1px solid var(--line-soft); vertical-align:top}
+  th{font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3); font-weight:600; background:var(--panel)}
+  tr:last-child td{border-bottom:none}
+  td.n{font-variant-numeric:tabular-nums; white-space:nowrap}
+
+  .toc-inline{background:var(--panel); border:1px solid var(--line); border-radius:.6rem; padding:1rem 1.2rem; margin:1.6rem 0; font-size:.9rem; columns:2; column-gap:2rem}
+  .toc-inline a{display:block; padding:.18rem 0; color:var(--ink-2); text-decoration:none; break-inside:avoid}
+  .toc-inline a:hover{color:var(--ink)}
+  @media(max-width:640px){ .toc-inline{columns:1} }
+  @media(min-width:1100px){ .toc-inline{display:none} }
+
+  .foot{margin-top:4rem; padding-top:1.4rem; border-top:1px solid var(--line); font-size:.8rem; color:var(--ink-3)}
+  .foot p{max-width:none}
+</style>
+
+<header class="mast">
+  <p class="kicker">Research report · Deep-verification build · 7 July 2026</p>
+  <div class="duo"><span></span><span></span></div>
+  <h1 class="serif">Alentejo &amp; the Algarve: two economies, two traps, one strategy problem</h1>
+  <p class="sub">What these regional economies actually are, what they do to the people inside them, what twenty-five years of policy achieved — and how I would approach developing them.</p>
+  <p class="meta"><span>Prepared by Claude (claude-fable-5) for Nuno Santos</span><span>2 research passes · 52 sources fetched · 255 claims extracted · 50 adversarially verified (40 confirmed)</span><span>Geography: NUTS2024 — Alentejo excludes Lezíria do Tejo · 2024 values provisional</span></p>
+</header>
+
+<div class="wrap">
+<nav class="rail" aria-label="Sections">
+  <a href="#s1">1 · What kind of economies</a>
+  <a href="#s2">2 · The quality of them</a>
+  <a href="#s3">3 · Social floor</a>
+  <a href="#s4">4 · What was tried — and what evaluation says</a>
+  <a href="#s5">5 · Sines, the wildcard</a>
+  <a href="#s6">6 · The synthesis: two traps</a>
+  <a href="#s7">7 · My strategy</a>
+  <a href="#s8">8 · What I would not do</a>
+  <a href="#s9">9 · Constraints &amp; failure modes</a>
+  <a href="#s10">Sources</a>
+</nav>
+
+<main>
+  <div class="legend-tiers" role="note">
+    <span><span class="t tv">V</span>&nbsp; verified — survived 3-vote adversarial verification against primary sources</span>
+    <span><span class="t tq">Q</span>&nbsp; quote-backed — verbatim from a fetched source, not adversarially verified</span>
+    <span><span class="t ta">A</span>&nbsp; my analysis — judgment on the evidence, not a sourced fact</span>
+  </div>
+
+  <div class="toc-inline">
+    <a href="#s1">1 · What kind of economies</a><a href="#s2">2 · The quality of them</a>
+    <a href="#s3">3 · Social floor</a><a href="#s4">4 · What was tried</a>
+    <a href="#s5">5 · Sines, the wildcard</a><a href="#s6">6 · Two traps</a>
+    <a href="#s7">7 · My strategy</a><a href="#s8">8 · What I would not do</a>
+    <a href="#s9">9 · Constraints</a><a href="#s10">Sources</a>
+  </div>
+
+  <h2 id="s1"><span class="no">1</span>What kind of economies are they?</h2>
+  <p class="lede">The two regions fail in opposite ways. <span class="rg ag">The Algarve</span> is income-rich but structurally fragile; <span class="rg al">Alentejo</span> is asset-rich but income-poor and demographically hollowing. Neither has converged with the EU in a quarter of a century: over 2000–2024 the Algarve moved from 88.0% to 89.2% of EU27 GDP per head, and Alentejo <em>declined</em> from 78.3% to 77.2% — with both dipping much lower in between. <span class="t tv">V</span></p>
+
+  <figure>
+    <h4>A quarter-century of non-convergence</h4>
+    <p class="fsub">GDP per inhabitant, % of EU27 average, purchasing power standards · Eurostat nama_10r_2gdp, NUTS2024 back-cast</p>
+    <div class="leg">
+      <span><i style="background:var(--algarve)"></i>Algarve</span>
+      <span><i style="background:var(--alentejo)"></i>Alentejo</span>
+      <span class="ref"><i></i>EU27 = 100</span>
+    </div>
+    <div class="chart" id="c-conv"></div>
+    <figcaption>Verified series points only; the line between 2000 and 2019 spans years not individually verified here. Alentejo's 2022 value was not in the verified set and is omitted. 2024 provisional. The 2020 trough is the COVID shock — deepest in the Algarve of any Portuguese region. <span class="t tv">V</span></figcaption>
+  </figure>
+
+  <h3>The Algarve: a tourism monoculture with partly imported income</h3>
+  <ul>
+    <li><strong>Second-richest region in Portugal</strong> after Grande Lisboa: 33,400 PPS per head in 2023 (87.0% of EU27 vs national 81.0%); €25,267 in 2022 = 108.4% of the national average — up from 96.4% in 2021 on tourism recovery alone. <span class="t tv">V</span></li>
+    <li><strong>41% of regional GVA sits in one aggregated branch</strong> (trade &amp; vehicle repair; transport &amp; storage; accommodation &amp; food). With public administration/education/health (15%), two branches make ~56% of the €11.4bn regional GVA; accommodation/food alone ≈25%. <span class="t tv">V</span></li>
+    <li><strong>Doubly concentrated</strong>: foreign visitors were 76% of overnight stays pre-COVID; ~60% of accommodation/food GVA comes from three municipalities — Loulé, Faro, Albufeira. <span class="t tq">Q</span></li>
+    <li><strong>Top-of-table income, partly imported</strong>: highest household disposable income per head of any region (€19,086, index 123) — in INE's own words, "in large measure due to social benefits received from the rest of the world", i.e. foreign retirees' pensions. The 2021 Census raised measured population 7.6% (mostly over-65s), mechanically cutting GDP per head 8.7%. <span class="t tv">V</span></li>
+    <li><strong>The declared-income reality check</strong>: on 2023 tax data only <em>one</em> Algarve municipality — Faro — beats the national median declared income (€11,446); the regional median sits below it. High GDP, high prices, unremarkable resident incomes. <span class="t tv">V</span></li>
+    <li>Investment is real-estate-heavy: 46% of regional fixed investment is real-estate activities; the overall investment rate (19.2% of GDP) is <em>below</em> the national 20.6%. <span class="t tq">Q</span></li>
+  </ul>
+
+  <figure>
+    <h4>The most shock-exposed economy in Portugal</h4>
+    <p class="fsub">Real GDP growth, % · INE Contas Regionais (Base 2021); 2023 preliminary</p>
+    <div class="leg">
+      <span><i style="background:var(--algarve)"></i>Algarve</span>
+      <span><i style="background:var(--alentejo)"></i>Alentejo</span>
+      <span class="ref"><i></i>Portugal</span>
+    </div>
+    <div class="chart" id="c-vol"></div>
+    <figcaption>2020: deepest fall of any Portuguese region (−18.3% vs −8.3% national); 2022: strongest rebound of any region (+20.7%, tourism GVA +43.1% in volume). Alentejo 2020 not in the verified set. Employment loss in 2020 (−10%) was the largest recorded in any Portuguese region since 1996 <span class="t tq">Q</span>. Growth values <span class="t tv">V</span>.</figcaption>
+  </figure>
+
+  <h3>Alentejo: the EU's second-most agricultural economy, and Portugal's growth laggard</h3>
+  <ul>
+    <li><strong>Slowest-growing region three years running</strong>: +1.7% (2022, national +7.0%), +0.5% (2023), +1.1% (2024p) — and the only region where labour productivity <em>fell</em> in 2022 (−2.4%), with the largest unit-labour-cost rise (+5.7%). <span class="t tv">V</span></li>
+    <li><strong>Second-highest agriculture share of GVA among all EU NUTS&nbsp;2 regions</strong> (12.2–13.7% in 2023). The farm branch employs <strong>22% of regional workers vs 9% nationally</strong> — roughly doubled in a decade by the Alqueva/Mira irrigation build-out. <span class="t tv">V</span> Agriculture is Portugal's lowest-paid activity: €976/month average gross pay, ~61% of the €1,602 national mean. <span class="t tq">Q</span></li>
+    <li><strong>Bottom-tier innovation</strong>: R&amp;D at 0.56% of GDP (national 1.32%) with <em>zero</em> government-sector R&amp;D performed in the region; downgraded to "Emerging Innovator+" in 2025. <span class="t tv">V</span> High-tech export share fell 4.5% → 1.86% (2007–19), against the national trend. <span class="t tq">Q</span></li>
+    <li><strong>Widest internal gap in Portugal</strong>: 62.1 p.p. between Alentejo Litoral (index 135.8 in 2022 — Sines refining/energy in a freak margin year; ~121.9 in 2023) and Alto Alentejo (73.7, falling). <span class="t tv">V</span></li>
+    <li><strong>The productivity paradox</strong>: GVA per worker is the <em>second-highest</em> in Portugal (USD 59,408 PPP, behind Lisbon) — capital-intensive agriculture, energy, Sines — while GDP per head stays low: too few workers, and the value leaks out. Disposable income (index 101) sits above the GDP index (95): a net-transfer-receiving region. <span class="t tq">Q</span>/<span class="t tv">V</span></li>
+    <li>The OECD's 2025 diagnosis: Alentejo is at high risk of an <strong>"economic development trap"</strong> and is among the fastest-shrinking-and-ageing regions in the entire OECD. <span class="t tq">Q</span></li>
+  </ul>
+
+  <h2 id="s2"><span class="no">2</span>The quality of these economies</h2>
+
+  <h3>Algarve: volatile, seasonal, precarious — and priced against its own residents</h3>
+  <ul>
+    <li><strong>In-work poverty, not joblessness.</strong> The Algarve has the <em>lowest</em> share of quasi-jobless households of any region (3.3% vs 4.9%). People work; the work pays little and stops in winter. <span class="t tv">V</span></li>
+    <li><strong>Precarity is structural</strong>: in Portuguese tourism, fixed-term contracts nearly doubled 2012–22 (to ~43% of salaried staff); 39.3% of workers had under a year's tenure; the literature's verdict — "highly seasonal and precarious", wages depressed "especially post-COVID in hotspots like the Algarve". <span class="t tq">Q</span></li>
+    <li><strong>The skills trap</strong>: early school leaving 19.9% vs 10.6% national — seasonal work pulls teenagers out of school; youth unemployment 22.8% (2021) vs 8.2% overall. <span class="t tq">Q</span></li>
+    <li><strong>Worst housing affordability in the country</strong>: practically all Algarve municipalities need 40%+ of median net income for a standard home; <strong>Loulé's 60.1% effort rate is Portugal's highest — above Lisbon</strong>. Prices +122% in 2014–23 (joint-highest in the mainland; interior Alentejo: 38–43%). <span class="t tq">Q</span> Portugal-wide (OECD 2026): the OECD's highest share of homes not used as primary residences (12% vacant + 19% holiday homes, up to 38% in tourist regions); severe rental overburden for the poor; a "missing middle". <span class="t tv">V</span></li>
+    <li><strong>Foreign demand, with nuance</strong>: foreign buyers ≈10% of national transaction value 2019–24, skewed to expensive homes <span class="t tv">V</span>; golden visas raised prices ~10–15% at the €500k threshold (≈€38k premium) but were ~⅔ Lisbon-concentrated, with <em>no estimated Algarve-specific effect</em> <span class="t tv">V</span>. The sharper Algarve pressures are short-term rentals, holiday homes and retiree demand. A combined-policy simulation (2000s-pace building + foreign-demand curbs + STR caps binding in nine Algarve municipalities) cuts Algarve prices ~11% — and effort rates <em>still</em> sit near 40%. <span class="t tq">Q</span></li>
+    <li><strong>Inequality lives on the tourist coast</strong>: the only municipalities in either region with Gini above the national 35.5% are four Algarve ones (Aljezur, Loulé, Faro, Tavira). <span class="t tv">V</span> Domestic burglary runs 2.1× the national rate. <span class="t tq">Q</span></li>
+    <li><strong>Water is already rationed</strong>: reservoirs below 50% continuously since May 2022; drought alert declared December 2023; emergency restrictions February 2024, partially eased that May (+20 hm³: 13.1 agriculture, 4.2 tourism/golf, 2.7 urban). <span class="t tq">Q</span></li>
+  </ul>
+
+  <h3>Alentejo: the Alqueva paradox — sectoral triumph, territorial failure</h3>
+  <p>Alqueva is the largest single investment ever made in Portugal (~€2.5bn; Europe's largest artificial reservoir; ~130,000 ha irrigated, ~100% occupied, heading to ~160,000 ha by 2030). On its own terms it worked: olive-oil exports grew ×12 in volume and ×18 in value since 2002 (~€900M/yr); in the Alqueva zone, agri-food SME value-added grew +52.6% (2011–16) against +15.6% elsewhere, and firm R&amp;D rose while national firm R&amp;D fell. <span class="t tq">Q</span></p>
+  <p>And yet: <strong>every municipality receiving Alqueva water lost population</strong> — Alentejo lost 52,000+ residents in 2011–21, the country's largest decline. The promised agro-industrial value chain never formed (gains stayed in primary agriculture). ~80% of the water irrigates super-intensive olive/almond; ~70% of surrounding land was sold within two decades, prices rose ×5, ownership concentrated in corporate groups and funds "detached from the territory"; the labour is seasonal, poorly paid, largely migrant. Water is priced at ~8c/m³ against ~30c full cost — a public subsidy embedded in exported olive oil. The Beja aquifer shows significant salinization. <span class="t tq">Q</span></p>
+
+  <figure>
+    <h4>The water math does not close</h4>
+    <p class="fsub">Alqueva irrigation demand vs the licensed maximum, hm³/year · EDIA licence; Agrogés study (Olivum/Portugal Nuts), reported by Público, Jan 2025</p>
+    <div class="chart" id="c-water"></div>
+    <figcaption>The abstraction licence (590 hm³/yr) is unchanged since 2007. The sector's own study puts optimal current demand at 654 hm³ and demand at ~175,000 ha at 924–1,070 hm³/yr — while inflows are projected to fall 5–10% by 2050 and 15–30% by 2080, and new commitments (+120 hm³/yr to the Algarve and Spanish Huelva; EDP's 720 hm³ energy rights above 85% storage) queue up against the same reservoir. <span class="t tq">Q</span></figcaption>
+  </figure>
+
+  <h2 id="s3"><span class="no">3</span>The social floor — the human ledger <span class="t tv" style="vertical-align:.35em">V</span></h2>
+  <p>All 2024-income data, verified against INE's ICOR release and municipal tax-income statistics.</p>
+
+  <div class="tiles">
+    <div class="tile al"><div class="v num">17.9%</div><div class="k">Alentejo at-risk-of-poverty 2024 — the <strong>highest of any region</strong>, and rising (15.8% in 2023)</div></div>
+    <div class="tile ag"><div class="v num">15.1%</div><div class="k">Algarve poverty — <em>below</em> the national 15.4%, and falling. AROPE: Algarve 17.1% vs Alentejo 19.7%</div></div>
+    <div class="tile ag"><div class="v num">60.1%</div><div class="k">Loulé housing effort rate — the worst in Portugal, above Lisbon <span class="t tq">Q</span></div></div>
+    <div class="tile al"><div class="v num">−0.7%</div><div class="k">Odemira median income change 2023 — the <strong>only municipality in Portugal that fell</strong> (national: +7.2%)</div></div>
+    <div class="tile al"><div class="v num">714.9</div><div class="k">Ageing index, Alcoutim (Algarve interior); Gavião 535, Nisa 456, Mértola 431 — vs national 192, Albufeira 133</div></div>
+    <div class="tile al"><div class="v num">30.6%</div><div class="k">Alentejo Central Gini — the <strong>lowest inequality in the country</strong>, with above-national median income</div></div>
+  </div>
+
+  <ul>
+    <li><strong>Prices change the ranking.</strong> With region-specific poverty lines, Alentejo's poverty falls from 17.9% to 15.1% — the largest correction anywhere: its headline poverty partly reflects a lower cost of living. Median incomes are close (Alentejo €13,866; Algarve €14,353; national €14,465) — the Algarve's housing costs do their damage <em>after</em> this line is measured. <span class="t tv">V</span></li>
+    <li><strong>The interior is not uniformly poor — Évora is the counter-example.</strong> Alentejo Central holds an above-national median declared income, the country's highest 20th-percentile income (€7,728) and its lowest sub-regional Gini (30.6%); Évora (€13,003) is one of seven municipalities nationally above €13,000. Equal, moderately prosperous, and shrinking — that is the interior's real profile. <span class="t tv">V</span></li>
+    <li><strong>Demography is a coast–interior cliff</strong>: within Alentejo only Alentejo Litoral gained population in 2024 (+0.82%); Alto Alentejo posted the largest fall of any NUTS III in the country. <span class="t tv">V</span> Alentejo shrank 0.72%/yr in 2011–21 — 4× the national rate; projections imply ~−30% by 2080. <span class="t tq">Q</span></li>
+    <li><strong>Service deserts</strong>: the worst physical access to health in Portugal — 121 km to hospital cardiology, 171 km to maternity (national 58/75); 3.2 doctors per 1,000 vs 4.9; tertiary attainment 23.7% vs 27.4%. <span class="t tq">Q</span></li>
+    <li><strong>Odemira is the system's stress point</strong>: documented foreign residents +158% (2011–19) to <strong>33% of the municipal population</strong> (68 nationalities; national 5.7%) staffing greenhouse agribusiness <span class="t tv">V</span>; migrant housing marked by informal renting, overcrowding, on-farm containers — workers displaced each summer when owners switch to tourist lets <span class="t tv">V</span>. In the same sub-region, Sines posts above-national income <em>and</em> growth <span class="t tv">V</span>. One NUTS III now contains both extremes of the model.</li>
+  </ul>
+
+  <h2 id="s4"><span class="no">4</span>What has been tried — and what evaluation actually says</h2>
+
+  <h3>The live money (2021–27)</h3>
+  <div class="tw"><table>
+    <tr><th>Instrument</th><th>EU funds</th><th>Composition</th><th>Mid-term reprogramming (Dec 2025 / Jan 2026)</th></tr>
+    <tr><td><strong>Alentejo 2030</strong> <span class="t tv">V</span></td><td class="n">€1,104.3M</td><td>ERDF 875.5 · ESF+ 129.9 · Just Transition Fund 98.9 (Sines coal closure)</td><td>+€59.5M housing · +€25M defence · +€24M water · +€3.5M skills</td></tr>
+    <tr><td><strong>Algarve 2030</strong> <span class="t tv">V</span></td><td class="n">€780.3M</td><td>ERDF 668.3 · ESF+ 112</td><td>~€114M reallocated, incl. €60M affordable housing, €34M diversification</td></tr>
+    <tr><td><strong>PRR (relevant slices)</strong> <span class="t tq">Q</span>/<span class="t tv">V</span></td><td class="n">—</td><td>Housing €1.2bn national (~26,000 households) vs 125,000+ households in deprivation</td><td>Pisão dam (€222M), Algarve desalination (€108M), Pomarão intake (€101M) <strong>ejected from the PRR</strong> — undeliverable by the hard Dec 2026 deadline — and moved to cohesion money</td></tr>
+  </table></div>
+
+  <h3>The regions' own strategies</h3>
+  <div class="verdict"><p class="serif">"A strategy with the positioning of a <em>filter</em> on access to funding instruments, and not the positioning of a proactive <em>motor</em>."<br><span style="font-size:.85rem; color:var(--ink-2)">— CCDR Alentejo's own assessment of its 2014–20 smart-specialisation strategy <span class="t tv">V</span></span></p></div>
+  <ul>
+    <li><strong>EREI2020 failed by its author's admission</strong>: employment priorities with zero execution at cutoff; 31% of projects unlinked to any domain; two domains took 62% of investment; <strong>Évora alone ~50% of projects</strong>; only 24% above €1M. A statement against interest — the single most instructive datum in this evidence base. <span class="t tv">V</span></li>
+    <li><strong>EREI Alentejo 2030</strong> (2025 revision, primary PDF): 3 structural objectives; 2 transversal domains (Digitalisation, Circularity); 6 specialisation domains — Sustainable Bioeconomy; Sustainable Energy; <strong>Mobility, Defence &amp; Logistics</strong>; Tourism &amp; Hospitality; Cultural &amp; Creative Ecosystems; <strong>Health &amp; Social Innovation</strong> — health newly elevated around the planned Hospital Central do Alentejo, the University of Évora medicine course, and an emerging biomedical cluster. <span class="t tq">Q</span> <em>(a pass-1 verification killed this architecture; pass 2 confirmed it from the primary PDF — even verification has error bars)</em></li>
+    <li><strong>EREI Algarve 2030</strong>: names tourism the "main engine" while diagnosing deep tourism specialisation as a resilience risk; seven domains; seasonality mitigation among five tourism actions — and <strong>not one statistic in the entire document</strong>: no baseline, no evaluability. <span class="t tv">V</span></li>
+    <li><strong>OECD recommendations</strong> — Algarve (2023): diversify (maritime, cultural/creative, agribusiness); retain talent incl. inland; strengthen regional/municipal capacity. Alentejo (2025): university–business links; innovation/FDI; rebalance tourism inland and cross-border; consolidate governance (fix the sequential IAPMEI→CCDR review); connectivity — Madrid–Elvas–Évora–Lisbon high-speed and fibre (<strong>the mainland's worst broadband, 77%, and fibre, 48%, coverage</strong>); affordable housing in Évora and pressure spots. <span class="t tq">Q</span></li>
+  </ul>
+
+  <h3>What independent evaluation says about the record <span class="t tq" style="vertical-align:.35em">Q</span></h3>
+  <ul>
+    <li><strong>EU-wide ex-post (2014–20, Oct 2025)</strong>: cohesion policy left Portugal's GDP ~3.7% higher than a no-policy counterfactual — but the evaluation contains <em>no Alentejo- or Algarve-specific findings at all</em>. Effectiveness is "conditional on administrative capacity", especially in small municipalities and rural areas; large infrastructure suffered systematic delays; smart-specialisation potential "underexploited".</li>
+    <li><strong>The intervention mix matters enormously</strong>: in the EC's own modelling, R&amp;D interventions produced <strong>37% of the total GDP impact with 13% of the money (multiplier 5.6) versus 3.1 for transport</strong> — directly indicting the historic roads-heavy allocation in these regions.</li>
+    <li><strong>2007–13 (Portugal)</strong>: crisis reprogramming cut rail by two-thirds toward social spending; absorption hit 95% "at the cost of programme scale and long-term transport investment". COMPETE's €1.07bn of large-firm grants showed <strong>substantial deadweight — most projects would have proceeded anyway</strong> (€138k per job; SMEs €213k). Tourism/culture ERDF (~€1.1bn incl. hotel grants) directly created <strong>1,331 tourism jobs nationally</strong>. Regional disparities narrowed only because the crisis hit richer regions harder.</li>
+    <li><strong>REACT-EU confetti</strong>: 63% of Portugal's 145,524 operations were generic small SME grants of €3–10k.</li>
+    <li><strong>Algarve territorial impact assessment (1990–2010; &gt;€3bn of funds)</strong>: overall impact "moderately positive" (0.701 on a −4…+4 scale, below the national 0.789); <strong>intra-regional cohesion was NOT achieved</strong> — investment tracked the populated coast (Faro, Portimão, Loulé) while lagging municipalities stayed on a "territorial exclusion path"; roads dominated, rail was skipped as "not financially viable".</li>
+    <li><strong>Governance perception</strong>: 76% of surveyed Portuguese say EU funds matter for their region — and 53.4% believe there is corruption in their allocation. Municipalities chase EU-eligible projects over unfundable needs like housing, so funded investment follows eligibility maps, not need maps.</li>
+  </ul>
+
+  <h2 id="s5"><span class="no">5</span>Sines: the wildcard, quantified <span class="t tq" style="vertical-align:.35em">Q</span></h2>
+  <ul>
+    <li><strong>Port</strong>: 42.1 Mt in 2025 (−12%, partly a one-off refinery shutdown and 26 storm days); Terminal XXI 1.7M TEU (−10%; import/export +4%); the LNG terminal supplied 96% of Portugal's gas. <strong>The Vasco da Gama mega-terminal tender of 2019 attracted zero bids</strong>; a market study (due Apr 2026) precedes a possible new tender in late 2026/early 2027 with up to a 75-year concession.</li>
+    <li><strong>Data centres</strong>: Start Campus SIN01 operational and fully leased (31MW); SIN02 (180–200MW) ready to build; campus target ~1.2GW by 2031; <strong>Microsoft announced a $10bn AI data-centre investment</strong> (Nov 2025, with Start Campus and Nscale — up to 12,600 Nvidia GB300 GPUs); the grid connection is the binding bottleneck.</li>
+    <li><strong>Green hydrogen — announced ≠ built</strong>: GreenH2Atlantic (100MW at the former coal site, €92M EU funding) got environmental approval in May 2026 but has <strong>no final investment decision</strong>; the licence requires water exclusively from reuse or seawater — water scarcity now binds industrial licensing. MadoquaPower2X: announced €2.8bn, 59 ha reserved, projected 265 permanent jobs — no FID.</li>
+    <li><strong>The town</strong>: ~13,000 residents, near-full employment, critical housing shortage — growth already outpacing housing, mobility, services. Sines is simultaneously one of only 27 municipalities with above-national income <em>and</em> above-national growth <span class="t tv">V</span>, and the anchor of the widest internal disparity in the country.</li>
+  </ul>
+  <p><span class="t ta">A</span> Read across: the pipeline is real but optionality-heavy, and its permanent employment content is small relative to capital — data centres and electrolysers are the two most capital-intensive, job-light asset classes in the economy. Enclave is the default trajectory; linkage is a policy choice.</p>
+
+  <h2 id="s6"><span class="no">6</span>The synthesis: two development traps <span class="t ta" style="vertical-align:.35em">A</span></h2>
+  <p><span class="rg ag">The Algarve</span> is in a classic <strong>middle-income regional trap</strong>: rich enough that nothing forces change, specialised enough that change is hard — its distress signals (precarity, housing, school-leaving) hidden by GDP and income statistics inflated by pensions and tourism accounting. Its problem is not growth. It is <strong>quality and resilience</strong>.</p>
+  <p><span class="rg al">Alentejo</span> is in the OECD's <strong>development trap</strong> in the strict sense: productivity high but falling, employment concentrated in a low-wage primary sector, innovation capacity thin, people leaving. Its two engines — irrigated agribusiness and the Sines complex — are both <strong>capital-intensive enclaves whose default trajectory creates GVA without broad-based income</strong>, while the water behind the first is arithmetically over-committed.</p>
+  <p>And both share the meta-problem: <strong>a delivery system that cannot convert money into transformation</strong> — self-admitted ("filter, not motor"), EC-confirmed (capacity as precondition), and visible in outcomes (zero convergence, a no-bid mega-tender, ejected PRR projects, confetti grants).</p>
+
+  <h2 id="s7"><span class="no">7</span>My strategy <span class="t ta" style="vertical-align:.35em">A</span></h2>
+  <p class="lede">Three disciplining facts first. <strong>(1) More undifferentiated money will not work</strong> — 25 years of funds, zero convergence, deadweight-ridden subsidies, 1,331 jobs from €1.1bn of tourism grants, and R&amp;D beating transport 5.6 to 3.1 in the EC's own model. The constraint is design-and-delivery capacity, not capital. <strong>(2) Each region's flagship engine manufactures its own social failure</strong> — tourism produces volatility, precarity and unaffordable housing; Alqueva produces exports and depopulation. Doubling down without changing the terms deepens both. <strong>(3) Water and demography are the non-negotiable scenario variables.</strong> A strategy that doesn't price water honestly and doesn't do migration arithmetic is fiction.</p>
+
+  <h3>7.1 Redefine success — metrics before projects</h3>
+  <p>Drop GDP-per-head convergence as the headline (distorted in the Algarve by population revisions and pension imports; in Alentejo by refining margins). Track instead: <strong>resident median disposable income</strong> (level and within-year stability); <strong>employment seasonality ratio</strong> (trough/peak); <strong>housing effort rate for resident workers</strong>; <strong>net migration of 20–45s</strong>; <strong>water productivity</strong> (€ GVA per m³, by sector); <strong>share of tradable GVA outside the dominant branch</strong>. All measurable from INE/Eurostat today. A strategy document without a statistical baseline — as EREI Algarve 2030 literally is — should be inadmissible for funding.</p>
+
+  <h3>7.2 Governance first — the unglamorous keystone</h3>
+  <ul>
+    <li><strong>A professional delivery unit per region</strong> (project preparation, procurement, permitting, state-aid design), shared with municipalities. This is the direct answer to filter-not-motor, to Évora-takes-half, to the no-bid tender and the ejected PRR projects. Small municipalities cannot originate €10M projects; the system quietly pretends they can.</li>
+    <li><strong>Pre-committed project pipelines</strong> with published baselines and kill-criteria — prepared before funding windows open, not after.</li>
+    <li><strong>Transparency as economic policy</strong>: beneficiary-level open data tagged by strategy domain; independent mid-term evaluations with authority to kill or scale. A 53% corruption-perception rate is a real cost of capital.</li>
+    <li><strong>Fix the sequential-review bottleneck</strong> (IAPMEI→CCDR) and staff the CCDRs for their mandate. Argue regionalisation on the merits — but don't wait for it.</li>
+  </ul>
+
+  <h3>7.3 Algarve: from monoculture to a year-round residential-services economy</h3>
+  <p>Nothing replaces 41% of GVA. The play is to <strong>extend the tourism platform into adjacent, year-round, higher-wage tradables</strong> while fixing the housing and labour terms that strangle it.</p>
+  <ol>
+    <li><strong>Health, care and longevity as an export cluster.</strong> The region already imports the demand — the same retiree inflow that tops its income statistics. Build the supply side: international-grade health, rehabilitation and senior living on the EREI health/longevity domain and the University of the Algarve's medical school. This converts retiree inflow from pure housing pressure into a year-round skilled-employment engine — and serves Portugal's own ageing interior.</li>
+    <li><strong>Deseasonalisation with numbers</strong>: trough-month employment and occupancy targets attached to every euro of tourism support; publish the seasonality ratio annually. The record says grants to hotels create almost nothing — conditional instruments, not gifts.</li>
+    <li><strong>Housing as economic infrastructure.</strong> The evidence: supply alone −3–6%; the full sensible package (public supply + STR caps in the Loulé–Faro–Albufeira core + fiscal treatment of non-primary residences) ~−11% — and effort rates still ~40%. Do the package, say honestly what it won't fix, and add the lever simulations underprice: <strong>non-market rental stock at scale on public land</strong>, with the reprogrammed €60M as the start, not the end. Without this, every other Algarve policy leaks into rents.</li>
+    <li><strong>Water before growth</strong>: deliver the desalination plant (16→24 hm³/yr, ~⅓ of consumption; due end-2026 after the PRR ejection; litigation cleared; licence valid to 2029) — and treat its delivery date as the first credibility test of the regional state. Add reuse, losses, honest pricing for golf and agriculture; cap new consumptive commitments to the adaptation envelope.</li>
+    <li><strong>A skills ladder against the 19.9% early-leaving rate</strong>: dual vocational tracks (hospitality management, care and health professions, blue economy, construction) with off-season employment guarantees.</li>
+    <li><strong>Connectivity that changes markets, not prestige</strong>: the region's rail was historically skipped as "not financially viable" while roads absorbed the funds; the correction is an electrified, frequent Faro–Seville/Huelva and Faro–Lisbon service <em>[current electrification timeline: verify]</em>, not more airport volume.</li>
+  </ol>
+
+  <h3>7.4 Alentejo: change the terms of both engines, build the third</h3>
+  <ol>
+    <li><strong>Reprice and recondition Alqueva.</strong> The 8c-vs-30c gap is a measured subsidy embedded in exported olive oil, and the licence math (590 hm³ licensed vs 924–1,070 needed at full build-out) means rationing arrives either by design or by drought. A published path to cost-reflective pricing; allocation conditional on water productivity, local processing and labour standards; proceeds ring-fenced regionally. Physics is the enforcer; policy only chooses the distribution.</li>
+    <li><strong>Capture the value chain the RIS3 promised and didn't deliver</strong>: agro-industrial processing, packaging, cold logistics in the Beja–Évora–Sines triangle; an <strong>agri-water-tech cluster</strong> exporting the knowledge of running Europe's largest irrigation system (EDIA's operational data + University of Évora + the polytechnics). The EC's multiplier evidence (R&amp;D 5.6 vs transport 3.1) says this beats another road.</li>
+    <li><strong>Make Sines a linkage engine, not an enclave</strong>: local supplier development with content tracking; technical-vocational pipelines (electro-mechanics, process operations, data-centre ops) in Sines/Santiago/Beja; <strong>housing built ahead of construction peaks</strong>; the Sines–Grândola–Beja–Évora corridor planned as one labour market. Grid capacity and the Vasco da Gama tender are national calls — the region's job is readiness plus local-content terms in concessions. <strong>Kill-criterion</strong>: if local employment and supplier metrics haven't moved by year 5, redirect the complementary public investment to the Évora–Beja knowledge track.</li>
+    <li><strong>Évora as the knowledge anchor — fund the network, not only the hub.</strong> The EREI2020 lesson isn't "stop funding Évora"; it's that instruments must require consortia reaching interior municipalities. The 2025 EREI already points here (health domain around the new central hospital + medical school + biomedical cluster; aeronautics/defence, reinforced by the €25M defence line). Add the missing enabler: <strong>fibre</strong> — the mainland's worst coverage (77% broadband / 48% fibre) is a precondition for every telehealth, remote-work and Industry-4.0 ambition on the list.</li>
+    <li><strong>Interior honesty — manage, don't promise reversal.</strong> For Alto Alentejo-profile territories (ageing index 400–700+, the country's largest population fall): service-access guarantees first — 171 km to a maternity ward is a policy choice, not fate (mobile health, telehealth over that fibre, emergency networks, transport-on-demand); amenity and remote-work niches; renewables rents shared locally; consolidation around market towns. Évora proves the interior can hold above-average income with the country's lowest inequality — extend that model, don't mourn it.</li>
+    <li><strong>Demography = migration + retention arithmetic.</strong> Natural increase is dead as a lever until mid-century. The region already runs on migrants; the choice is between the <strong>Odemira model</strong> (33% foreign population, falling median income, container housing, summer evictions) and a <strong>settlement model</strong>: enforceable employer housing obligations, predictable legal pathways, schools and language provision, credential recognition. This is the highest-leverage social policy in the region — and the one every strategy document whispers.</li>
+  </ol>
+
+  <h3>7.5 The national and international layer</h3>
+  <ul>
+    <li><strong>National</strong>: triage PRR money now toward what can finish by December 2026 and move the rest deliberately (the water projects showed the template). Align CAP eco-schemes with water productivity. Use the defence turn (Alentejo's aeronautics/Beja axis) with industrial-participation strings. Face the housing gap at national scale — the OECD's "seven times the PRR effort" is the honest number.</li>
+    <li><strong>Iberian</strong>: both regions border dynamics richer than Lisbon's. Andalusia–Algarve: labour market, tourism products, and now water (the Bocachança transfer). Extremadura–Alentejo: the shared Guadiana basin, Madrid–Elvas–Évora high-speed, Sines–Badajoz freight. Joint basin governance stops being optional once one reservoir supplies two countries and two regions.</li>
+    <li><strong>EU</strong>: the post-2027 cohesion reform will reward administrative capacity and resilience framing; regions that show delivery units, baselines and kill-criteria will out-compete for discretionary instruments. Exploit the EC's own S3 critique: fewer domains, real governance, measurable transformation targets.</li>
+    <li><strong>Global exposures</strong>: Algarve — north-European discretionary income and airline economics; one season transmits a shock (2020 proved the mechanism). Alentejo — commodity olive-oil prices, data-centre siting competition, green-hydrogen cost curves (announced ≠ FID ≠ built), and the climate envelope itself: treat −15–30% inflows by 2080 as a central planning assumption, not a tail.</li>
+  </ul>
+
+  <h3>7.6 Sequencing</h3>
+  <ul>
+    <li><strong>Months 0–24 — capacity and terms</strong>: delivery units staffed; baselines published for every §7.1 metric; water-pricing path legislated; Algarve housing package (STR caps in the core three municipalities + public-land programme); technical-vocational programmes open in Sines and Faro; Sines worker housing under construction; transparency portal live; desalination delivered on time as the credibility test.</li>
+    <li><strong>Years 2–5 — build</strong>: Algarve health-cluster anchors; Beja–Évora agro-processing and water-tech; fibre white areas closed; migrant-settlement programme scaled; first independent evaluation with kill/scale decisions; any Vasco da Gama concession carries local-content terms.</li>
+    <li><strong>Years 5–10 — compound</strong>: deepen what evaluations validate; extend the interior service-guarantee model; deliver the Iberian corridors; re-base on the 2031 Census.</li>
+  </ul>
+
+  <h2 id="s8"><span class="no">8</span>What I would explicitly not do <span class="t ta" style="vertical-align:.35em">A</span></h2>
+  <ul>
+    <li>More undifferentiated firm subsidies or hotel grants — the deadweight and 1,331-jobs evidence is damning.</li>
+    <li>Chase tourism volume — every additional low-season-empty bed worsens water, housing and precarity at once.</li>
+    <li>A new mega-dam as the answer to Alqueva's arithmetic — efficiency, pricing and crop mix dominate storage on cost, and inflows, not storage, are the binding variable.</li>
+    <li>University satellite campuses as regional-policy theatre — fund research capacity and firm-linkage contracts in the existing four institutions instead.</li>
+    <li>Wait for administrative regionalisation — build capacity under current law while arguing for it.</li>
+    <li>Trust announced megaprojects — plan services around final investment decisions and occupancy, not press releases.</li>
+  </ul>
+
+  <h2 id="s9"><span class="no">9</span>Honest constraints and failure modes <span class="t ta" style="vertical-align:.35em">A</span></h2>
+  <ul>
+    <li><strong>Political economy</strong>: repricing water and capping short-term rentals attack incumbent rents (agri-corporates, landlords, golf). Expect organised resistance; the counterweights are transparency, EU conditionality, and keeping the fiscal proceeds regional.</li>
+    <li><strong>Demography may defeat retention anyway</strong> — the managed-adaptation track must be funded from day one, not adopted later as an admission of defeat.</li>
+    <li><strong>Sines may stay an enclave</strong> despite linkage policy — hence the explicit year-5 kill-criterion.</li>
+    <li><strong>Delivery capacity may not materialise</strong> (public-sector wages; talent competition). It is the keystone assumption: if the units can't be staffed, everything regresses to filter-not-motor.</li>
+    <li><strong>Verification limits of this report</strong>: Sines project statuses, Alqueva water figures, OECD recommendations and several housing findings are quote-backed but not adversarially verified <span class="t tq">Q</span>; claims that failed verification (Algarve 2024 population ranking, an Odemira population series) are deliberately absent; Algarve rail electrification status and Faro airport traffic were not established <em>[verify]</em>; and one architecture claim was killed in pass 1 then confirmed from the primary PDF in pass 2 — even the verification layer has error bars.</li>
+  </ul>
+
+  <h2 id="s10"><span class="no">§</span>Principal sources</h2>
+  <p style="font-size:.9rem"><strong>Verified statistical base</strong>: INE Contas Regionais (Base 2021; Dec 2024 &amp; Dec 2025 releases) · Eurostat regional GDP (nama_10r_2gdp, NUTS2024) · INE ICOR 2025 · INE municipal declared-income statistics (2023) · PORDATA World Population Day 2025 · CCDR Algarve Contas Regionais 2023.<br>
+  <strong>Strategies &amp; programmes</strong>: EREI Alentejo 2030 (2025 revision PDF) · EREI Algarve 2030 · alentejo/algarve.portugal2030.pt · EC Inforegio records · Diversificar Algarve 2030.<br>
+  <strong>Evaluations</strong>: EC ex-post ERDF/CF 2014–2020 (SWD(2025) 328) · EC ex-post 2007–2013 Portugal country report · Medeiros (2014) Algarve TIA, <em>Impact Assessment &amp; Project Appraisal</em> · OECD <em>Rethinking Regional Attractiveness</em>: Algarve (2023), Alentejo (2025) · OECD Economic Survey of Portugal 2026, housing chapter · <em>Regional Studies</em> (2025) Algarve resilience · MDPI <em>Sustainability</em> (Portugal 2020 governance survey; Alqueva–RIS3; tourism labour) · IZA DP 16857 (golden visa) · <em>Population, Space and Place</em> (2022) Odemira.<br>
+  <strong>Water, climate, projects</strong>: Público (Alqueva/Agrogés; EDIA; desalination RECAPE) · Sul Informação · APA drought pages (RCM 26-A/2024) · <em>Science of the Total Environment</em> (Beja aquifer) · <em>Environmental Science &amp; Policy</em> (Algarve adaptation pathways) · Geographical · Euronews Green · APS 2025 port results · Executive Digest (Vasco da Gama) · DataCenterDynamics (Microsoft) · NewProjectMedia (Start Campus) · Madoqua · FuelCellsWorks.</p>
+
+  <div class="foot">
+    <p>Method: two multi-agent deep-research passes (10 search angles, 52 sources fetched, 255 claims extracted; the top 50 claims adversarially verified by three independent votes each — 40 confirmed, 10 killed; killed claims excluded from this report). Figures marked V were cross-checked against at least one primary source. Sections marked A are Claude's analysis and carry no claim of external authority. Prepared with Claude Code · claude-fable-5 · 7 July 2026.</p>
+  </div>
+</main>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var css = getComputedStyle(document.documentElement);
+  function tok(n){ return css.getPropertyValue(n).trim(); }
+  var W = 720;
+
+  function svgEl(tag, attrs){
+    var e = document.createElementNS("http://www.w3.org/2000/svg", tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+  function txt(e, s){ e.textContent = s; return e; }
+  function makeTip(host){
+    var t = document.createElement("div"); t.className = "tip"; host.appendChild(t); return t;
+  }
+  function showTip(t, host, xPct, yPct, html){
+    t.innerHTML = html; t.style.left = xPct + "%"; t.style.top = yPct + "%"; t.style.opacity = 1;
+  }
+  function hideTip(t){ t.style.opacity = 0; }
+
+  /* ── Chart 1: convergence lines ─────────────────────────── */
+  (function(){
+    var host = document.getElementById("c-conv"); if(!host) return;
+    var H = 340, ml = 40, mr = 86, mt = 14, mb = 30;
+    var x0 = 2000, x1 = 2024, y0 = 60, y1 = 104;
+    function X(yr){ return ml + (yr - x0) / (x1 - x0) * (W - ml - mr); }
+    function Y(v){ return mt + (y1 - v) / (y1 - y0) * (H - mt - mb); }
+    var alg = [[2000,88.0],[2019,81.7],[2020,69.5],[2022,83.7],[2023,87.0],[2024,89.2]];
+    var ale = [[2000,78.3],[2019,71.3],[2020,66.9],[2023,77.1],[2024,77.2]];
+    var svg = svgEl("svg", {viewBox:"0 0 "+W+" "+H, role:"img",
+      "aria-label":"Line chart: Algarve and Alentejo GDP per head as percent of EU27, 2000 to 2024. Algarve 88.0 to 89.2, Alentejo 78.3 to 77.2, both dipping in 2020."});
+    // grid + y labels
+    [60,70,80,90,100].forEach(function(v){
+      svg.appendChild(svgEl("line",{x1:ml,x2:W-mr,y1:Y(v),y2:Y(v),stroke:tok("--line-soft"),"stroke-width":1}));
+      var l = svgEl("text",{x:ml-8,y:Y(v)+4,"text-anchor":"end","font-size":11,fill:tok("--ink-3")});
+      svg.appendChild(txt(l, v));
+    });
+    // EU reference at 100
+    svg.appendChild(svgEl("line",{x1:ml,x2:W-mr,y1:Y(100),y2:Y(100),stroke:tok("--ref"),"stroke-width":1.6,"stroke-dasharray":"5 4"}));
+    var eul = svgEl("text",{x:W-mr+8,y:Y(100)+4,"font-size":11,fill:tok("--ink-3")});
+    svg.appendChild(txt(eul,"EU27 = 100"));
+    // x labels
+    [2000,2019,2020,2022,2023,2024].forEach(function(yr){
+      var l = svgEl("text",{x:X(yr),y:H-8,"text-anchor":"middle","font-size":11,fill:tok("--ink-3")});
+      svg.appendChild(txt(l, yr === 2024 ? "2024p" : yr));
+    });
+    function line(pts, color, label){
+      var d = pts.map(function(p,i){ return (i?"L":"M") + X(p[0]).toFixed(1) + " " + Y(p[1]).toFixed(1); }).join(" ");
+      svg.appendChild(svgEl("path",{d:d,fill:"none",stroke:color,"stroke-width":2,"stroke-linejoin":"round","stroke-linecap":"round"}));
+      pts.forEach(function(p){
+        svg.appendChild(svgEl("circle",{cx:X(p[0]),cy:Y(p[1]),r:3.4,fill:color,stroke:tok("--panel"),"stroke-width":2}));
+      });
+      var last = pts[pts.length-1];
+      var l = svgEl("text",{x:X(last[0])+10,y:Y(last[1])+4,"font-size":12,"font-weight":650,fill:color});
+      svg.appendChild(txt(l,label+" "+last[1].toFixed(1)));
+    }
+    line(ale, tok("--alentejo"), "Alentejo");
+    line(alg, tok("--algarve"), "Algarve");
+    host.appendChild(svg);
+    // hover
+    var tip = makeTip(host);
+    var all = {};
+    alg.forEach(function(p){ (all[p[0]] = all[p[0]] || {}).alg = p[1]; });
+    ale.forEach(function(p){ (all[p[0]] = all[p[0]] || {}).ale = p[1]; });
+    var years = Object.keys(all).map(Number).sort(function(a,b){return a-b;});
+    svg.addEventListener("mousemove", function(ev){
+      var r = svg.getBoundingClientRect();
+      var mx = (ev.clientX - r.left) / r.width * W;
+      var best = years[0], bd = 1e9;
+      years.forEach(function(yr){ var d = Math.abs(X(yr)-mx); if(d<bd){bd=d;best=yr;} });
+      var v = all[best];
+      var html = "<b>" + (best===2024?"2024 (prov.)":best) + "</b><br>";
+      if (v.alg != null) html += "Algarve: <b>" + v.alg.toFixed(1) + "%</b><br>";
+      if (v.ale != null) html += "Alentejo: <b>" + v.ale.toFixed(1) + "%</b>";
+      showTip(tip, host, X(best)/W*100, (mt+10)/340*100, html);
+    });
+    svg.addEventListener("mouseleave", function(){ hideTip(tip); });
+  })();
+
+  /* ── Chart 2: volatility grouped bars ───────────────────── */
+  (function(){
+    var host = document.getElementById("c-vol"); if(!host) return;
+    var H = 320, ml = 44, mr = 16, mt = 16, mb = 30;
+    var y0 = -22, y1 = 24;
+    function Y(v){ return mt + (y1 - v) / (y1 - y0) * (H - mt - mb); }
+    var groups = [
+      {yr:"2020", alg:-18.3, ale:null, pt:-8.3},
+      {yr:"2022", alg:20.7, ale:1.7, pt:7.0},
+      {yr:"2023", alg:3.3, ale:0.4, pt:2.5}
+    ];
+    var svg = svgEl("svg",{viewBox:"0 0 "+W+" "+H, role:"img",
+      "aria-label":"Grouped bar chart of real GDP growth. 2020: Algarve minus 18.3 percent, Portugal minus 8.3. 2022: Algarve plus 20.7, Alentejo plus 1.7, Portugal plus 7.0. 2023: Algarve plus 3.3, Alentejo plus 0.4, Portugal plus 2.5."});
+    [-20,-10,0,10,20].forEach(function(v){
+      svg.appendChild(svgEl("line",{x1:ml,x2:W-mr,y1:Y(v),y2:Y(v),stroke:v===0?tok("--ink-3"):tok("--line-soft"),"stroke-width":v===0?1.2:1}));
+      var l = svgEl("text",{x:ml-8,y:Y(v)+4,"text-anchor":"end","font-size":11,fill:tok("--ink-3")});
+      svg.appendChild(txt(l, v + "%"));
+    });
+    var gw = (W - ml - mr) / groups.length;
+    var bw = 44, gap = 2;
+    groups.forEach(function(g, i){
+      var cx = ml + gw * i + gw / 2;
+      var xl = svgEl("text",{x:cx,y:H-8,"text-anchor":"middle","font-size":12,fill:tok("--ink-2")});
+      svg.appendChild(txt(xl, g.yr + (g.yr==="2023" ? "pe" : "")));
+      function bar(v, color, dx, name){
+        if (v == null){
+          var nd = svgEl("text",{x:cx+dx,y:Y(0)-6,"text-anchor":"middle","font-size":10,fill:tok("--ink-3")});
+          svg.appendChild(txt(nd,"n/d"));
+          return;
+        }
+        var yA = Y(Math.max(0,v)), yB = Y(Math.min(0,v));
+        var hgt = Math.max(2, yB - yA);
+        var rect = svgEl("rect",{x:cx+dx-bw/2, y:yA, width:bw, height:hgt, fill:color, rx:3});
+        rect.setAttribute("data-n", name); rect.setAttribute("data-v", v); rect.setAttribute("data-y", g.yr);
+        svg.appendChild(rect);
+        var vl = svgEl("text",{x:cx+dx, y:(v>=0?yA-5:yB+13), "text-anchor":"middle","font-size":10.5,"font-weight":650, fill:tok("--ink-2")});
+        svg.appendChild(txt(vl, (v>0?"+":"")+v.toFixed(1)));
+      }
+      bar(g.alg, tok("--algarve"), -(bw/2+gap), "Algarve");
+      bar(g.ale, tok("--alentejo"), (bw/2+gap), "Alentejo");
+      // Portugal reference dash across the group
+      var px1 = cx - bw - gap - 8, px2 = cx + bw + gap + 8;
+      svg.appendChild(svgEl("line",{x1:px1,x2:px2,y1:Y(g.pt),y2:Y(g.pt),stroke:tok("--ref"),"stroke-width":2,"stroke-dasharray":"5 4"}));
+      var pl = svgEl("text",{x:px2+4,y:Y(g.pt)+4,"font-size":10,fill:tok("--ink-3")});
+      svg.appendChild(txt(pl,"PT "+(g.pt>0?"+":"")+g.pt.toFixed(1)));
+    });
+    host.appendChild(svg);
+    var tip = makeTip(host);
+    svg.addEventListener("mousemove", function(ev){
+      var t = ev.target;
+      if (t.tagName === "rect" && t.getAttribute("data-n")){
+        var r = svg.getBoundingClientRect();
+        var bx = (parseFloat(t.getAttribute("x")) + parseFloat(t.getAttribute("width"))/2) / W * 100;
+        var by = parseFloat(t.getAttribute("y")) / 320 * 100;
+        var v = parseFloat(t.getAttribute("data-v"));
+        showTip(tip, host, bx, by, "<b>" + t.getAttribute("data-n") + " · " + t.getAttribute("data-y") + "</b><br>Real GDP " + (v>0?"+":"") + v.toFixed(1) + "%");
+      } else hideTip(tip);
+    });
+    svg.addEventListener("mouseleave", function(){ hideTip(tip); });
+  })();
+
+  /* ── Chart 3: water math horizontal bars ────────────────── */
+  (function(){
+    var host = document.getElementById("c-water"); if(!host) return;
+    var rows = [
+      {k:"Licensed maximum (since 2007)", v:590, ref:true},
+      {k:"Optimal demand, current ~115k ha", v:654},
+      {k:"Demand at ~175k ha — normal climate", v:924},
+      {k:"Demand at ~175k ha — worst climate scenario", v:1070}
+    ];
+    var H = 230, ml = 8, mr = 70, mt = 8, mb = 26, lh = 30, bh = 22, labelW = 300;
+    var vmax = 1100;
+    function X(v){ return ml + labelW + v / vmax * (W - ml - mr - labelW); }
+    var svg = svgEl("svg",{viewBox:"0 0 "+W+" "+H, role:"img",
+      "aria-label":"Bar chart of Alqueva water demand in cubic hectometres per year versus the licensed maximum of 590. Current optimal demand 654; at full expansion 924 normal climate, 1070 worst scenario."});
+    // licence reference line
+    var lx = X(590);
+    rows.forEach(function(r, i){
+      var y = mt + i * (lh + 14);
+      var kl = svgEl("text",{x:ml,y:y+bh/2+4,"font-size":11.5,fill:tok("--ink-2")});
+      svg.appendChild(txt(kl, r.k));
+      var col = r.ref ? tok("--ref") : tok("--alentejo");
+      var op = r.ref ? .55 : (0.55 + 0.15 * i);
+      var rect = svgEl("rect",{x:X(0), y:y, width:Math.max(2, X(r.v)-X(0)), height:bh, rx:3, fill:col, opacity:op});
+      rect.setAttribute("data-k", r.k); rect.setAttribute("data-v", r.v);
+      svg.appendChild(rect);
+      var vl = svgEl("text",{x:X(r.v)+6,y:y+bh/2+4,"font-size":11.5,"font-weight":650,fill:tok("--ink")});
+      svg.appendChild(txt(vl, r.v.toLocaleString("en") + " hm³"));
+    });
+    svg.appendChild(svgEl("line",{x1:lx,x2:lx,y1:mt-2,y2:H-mb+2,stroke:tok("--ink"),"stroke-width":1.4,"stroke-dasharray":"5 4"}));
+    var ll = svgEl("text",{x:lx,y:H-8,"text-anchor":"middle","font-size":10.5,fill:tok("--ink-2")});
+    svg.appendChild(txt(ll,"licence · 590"));
+    host.appendChild(svg);
+    var tip = makeTip(host);
+    svg.addEventListener("mousemove", function(ev){
+      var t = ev.target;
+      if (t.tagName === "rect" && t.getAttribute("data-k")){
+        var bx = (parseFloat(t.getAttribute("x")) + parseFloat(t.getAttribute("width"))) / W * 100;
+        var by = parseFloat(t.getAttribute("y")) / 230 * 100;
+        showTip(tip, host, Math.min(bx, 78), by, "<b>" + t.getAttribute("data-k") + "</b><br>" + (+t.getAttribute("data-v")).toLocaleString("en") + " hm³/year");
+      } else hideTip(tip);
+    });
+    svg.addEventListener("mouseleave", function(){ hideTip(tip); });
+  })();
+
+  /* ── rail nav active state ──────────────────────────────── */
+  var links = Array.prototype.slice.call(document.querySelectorAll("nav.rail a"));
+  if (links.length && "IntersectionObserver" in window){
+    var map = {};
+    links.forEach(function(a){ map[a.getAttribute("href").slice(1)] = a; });
+    var obs = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){
+          links.forEach(function(a){ a.classList.remove("on"); });
+          var a = map[e.target.id]; if (a) a.classList.add("on");
+        }
+      });
+    }, {rootMargin:"-10% 0px -70% 0px"});
+    ["s1","s2","s3","s4","s5","s6","s7","s8","s9","s10"].forEach(function(id){
+      var el = document.getElementById(id); if (el) obs.observe(el);
+    });
+  }
+})();
+</script>
+
+</body></html>

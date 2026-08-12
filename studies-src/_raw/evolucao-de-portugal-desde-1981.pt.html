@@ -1,0 +1,2079 @@
+<!doctype html><html><head><!-- frame-runtime --><script>window.__FRAME_PREAMBLE={"capabilities":{"assets":"assets.hcOK0ALv.js","comments":"comments.BKZ3qutA.js","db":"db.C8ehi_0m.js","downloads":"downloads.BXsoAvg9.js","mcp":"mcp.D3B2EyQu.js","permissions":"permissions.DdITF2Mk.js","room":"room.BgXZkiYR.js","sample":"sample.DpdXn9di.js","self":"self.BN4be5De.js","user":"user.o5zdRedj.js"},"transforms":"_transforms.VaITkagF.js","comments":"_comments.CNSvmFji.js","translate":"_translate.BOzFH2D9.js"}</script><script>(function(){"use strict";var le=["light","dark","system"],ue=/^[A-Za-z0-9_-]{1,64}$/,H=/^[a-zA-Z_:][a-zA-Z0-9_:.-]{0,127}$/,fe=new Set(["class","hidden"]);function de(e){const t=e.toLowerCase();return t.startsWith("data-")||t.startsWith("aria-")||fe.has(t)}function me(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_patch;if(t===null||typeof t!="object")return!1;const{seq:n,elements:a}=t;if(typeof n!="number"||!Number.isSafeInteger(n)||!Array.isArray(a)||a.length===0||a.length>64)return!1;for(const s of a){if(s===null||typeof s!="object")return!1;const r=s;if(typeof r.target!="string"||!ue.test(r.target)||r.text!==void 0&&typeof r.text!="string")return!1;if(r.attrsSet!==void 0){if(r.attrsSet===null||typeof r.attrsSet!="object")return!1;for(const[o,i]of Object.entries(r.attrsSet))if(!H.test(o)||typeof i!="string")return!1}if(r.attrsRemoved!==void 0){if(!Array.isArray(r.attrsRemoved))return!1;for(const o of r.attrsRemoved)if(typeof o!="string"||!H.test(o))return!1}}return!0}function pe(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_init;return t!==null&&typeof t=="object"}function Y(e){return e!==null&&typeof e=="object"&&e.__frame_size_poke===!0}function ge(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_theme;if(t===null||typeof t!="object")return!1;const n=t.theme;return typeof n=="string"&&le.includes(n)}function he(e){try{typeof reportError=="function"?reportError(e):setTimeout(()=>{throw e},0)}catch{}}var K=["#62744c","#b04e72","#5b7596","#a3651f","#7a6ba8","#3f7a75"],J=e=>{let t=0;for(let n=0;n<e.length;n++)t=t*31+e.charCodeAt(n)>>>0;return K[t%K.length]??"#788c5d"},V="#c7c9d1",X=e=>"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2 2'%3E%3Ccircle cx='1' cy='1' r='1' fill='"+encodeURIComponent(e)+"'/%3E%3C/svg%3E",ve=Object.freeze({id:null,name:"",avatarUrl:X(V),color:V,email:null,isOwner:!1,canEdit:!1}),_e=(...e)=>{const t=e[0],n=typeof t=="string"?[t]:Array.isArray(t)?t.filter(s=>typeof s=="string"):[],a=Object.create(null);for(const s of n)a[s]={id:s,name:"",avatarUrl:X(J(s)),color:J(s),email:null,isMe:!1};return a},Z=Object.freeze(Object.assign(Object.create(null),{user:Object.freeze(Object.assign(Object.create(null),{id:null,isOwner:!1,canEdit:!1,me:ve,profiles:_e,name:"",avatarUrl:null,search:Object.freeze([]),email:null}))})),ye={sample:"sample"};function G(){const e=new Uint8Array(20);try{crypto.getRandomValues(e)}catch{for(let n=0;n<e.length;n++)e[n]=Math.floor(Math.random()*256)}let t="";for(const n of e)t+=(n%36).toString(36);return t}function be(e,t){const n=r=>{const o={path:r},i=r.split("/");return{id:i[i.length-1],path:r,get:()=>t("get",[o]),set:g=>t("set",[o,g]),update:g=>t("update",[o,g]),delete:()=>t("delete",[o]),acquire:g=>t("acquire",[o,g]),onSnapshot:(g,y)=>t("subscribe",[o,g,y]),collection:g=>s(r+"/"+String(g))}},a=r=>({where:(o,i,g)=>a({...r,where:[...r.where??[],{f:String(o),op:String(i),v:g}]}),orderBy:(o,i)=>a({...r,orderBy:{f:String(o),dir:i===void 0?"asc":String(i)}}),limit:o=>a({...r,limit:Number(o)}),get:()=>t("query",[r]),onSnapshot:(o,i)=>t("subscribe",[r,o,i])}),s=r=>({...a({collection:r}),path:r,doc:o=>n(r+"/"+(o===void 0?G():String(o))),add:o=>{const i=n(r+"/"+G());return Promise.resolve(i.set(o)).then(()=>i)}});e.doc=r=>n(String(r)),e.collection=r=>s(String(r))}function Q(e){if(window===top||e.type==="auxclick"&&e.button!==1)return;const t=e.composedPath?e.composedPath():[e.target];let n=null;for(let o=0;o<t.length;o++){const i=t[o];if(i&&i.matches&&i.matches("a[href],area[href]")){n=i;break}}if(!n&&e.target&&e.target.closest&&(n=e.target.closest("a[href],area[href]")),!n)return;const a=n.getAttribute("href");if(!a)return;let s,r;try{s=new URL(a,document.baseURI),r=new URL(document.baseURI).origin}catch{return}if((s.protocol==="http:"||s.protocol==="https:")&&s.origin!==r){e.preventDefault();const o=(n.getAttribute("target")??document.querySelector("base[target]")?.getAttribute("target")??"").toLowerCase(),i=e.type==="auxclick"||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||!["","_self","_top","_parent"].includes(o);parent.postMessage({__frame_nav:!0,url:s.href,newTab:i},"*")}}var ee={};function I(e){if(window===top)return;const t=Date.now();t-(ee[e]||0)<500||(ee[e]=t,parent.postMessage({__frame_engaged:!0,kind:e},"*"))}var Ee=2e3,te=["wheel","touchstart","touchmove","keydown","pointerdown"],re=0;function we(e){e.isTrusted&&(re=Date.now())}function Ae(){addEventListener("click",Q,!0),addEventListener("auxclick",Q,!0)}function Se(){for(let e=0;e<te.length;e++)addEventListener(te[e],we,{capture:!0,passive:!0});addEventListener("scroll",e=>{e.isTrusted&&Date.now()-re<Ee&&I("scroll")},{capture:!0,passive:!0}),addEventListener("pointermove",e=>{e.isTrusted&&I("pointer")},{capture:!0,passive:!0}),addEventListener("click",e=>{e.isTrusted&&I("click")},{capture:!0,passive:!0})}var je=Object.freeze([]);function Oe(e,t){let n=null,a=null;const s=()=>e.__settled;e.peers=()=>je,e.connected=()=>!1,e.emit=()=>s()?.()??Promise.resolve(),e.presence=r=>{const o=s();if(o)return o();let i=null;if(r!==null&&typeof r=="object")try{Array.isArray(r)||(i={...r})}catch{}return i===null?Promise.reject({code:"invalid_argument",message:"presence takes an object"}):(n===null&&(n=Object.create(null),a=Promise.resolve(t("presence",[n]))),Object.assign(n,i),a)}}var U="__frame_scroll",Re=150,Pe=310,Me=160,Le=3e4;function Te(){let e=0,t=!1,n=!1,a=!1,s=0,r=null;const o=d=>{try{sessionStorage.setItem(U,JSON.stringify({y:d}))}catch{}},i=()=>{if(clearTimeout(e),r===null)return;const d=r;r=null,o(d)},g=()=>{if(t){t=!1;return}n=!0,r=scrollY,clearTimeout(e),e=setTimeout(i,Re)};try{addEventListener("scroll",g,{passive:!0}),addEventListener("pagehide",i)}catch{}const y=()=>{let d;try{d=sessionStorage.getItem(U)}catch{return null}if(d===null)return null;let u;try{u=JSON.parse(d)}catch{u=null}const p=u?.y;if(!(typeof p=="number"&&Number.isFinite(p)&&p>=0)){try{sessionStorage.removeItem(U)}catch{}return null}return p};let l=!1;const f=d=>{try{const u=scrollY;scrollTo({top:d,left:0,behavior:"instant"}),s=d,a=!0,clearTimeout(e),r=null,o(d);const p=scrollY;p!==u&&(t=!0),p!==d&&!l&&(l=!0,addEventListener("load",()=>{try{if(scrollY===p){const _=y();f(_!==null?_:s)}}catch{}},{once:!0}))}catch{}},m=()=>{try{return!!location.hash}catch{return!0}};let h=!1;const v=()=>{try{if(h||innerWidth>Pe||innerHeight>Me)return;h=!0;const d=Date.now(),u=()=>{try{removeEventListener("resize",u)}catch{}if(Date.now()-d>Le||n||m())return;const p=y();f(p!==null?p:s)};addEventListener("resize",u)}catch{}};let w=!1,A=!1;return{restore(){if(w||(w=!0,m()))return;const d=y();d!==null&&(f(d),v())},promoted(){if(A||(A=!0,m()))return;const d=y();d!==null?(f(d),v()):a&&f(s)}}}function Ce(e,t,n){const a=[...t.values()].filter(s=>s.targets.some(r=>r.startsWith(e+".")));return{wrap(s,r){const o=`${e}.${s}`,i=a.filter(g=>g.targets.includes(o));return i.length===0?(...g)=>{try{return r(...g)}catch(y){return Promise.reject(y)}}:(...g)=>{let y=g;for(const f of i){const m=f.module.parameters;if(m)try{y=m(y)}catch{return Promise.reject({code:"transform_error",id:f.id,scope:e,message:"parameters transform failed"})}}let l;try{l=r(...y)}catch(f){l=Promise.reject(f)}return l.then(f=>{for(let m=i.length-1;m>=0;m--){const h=i[m],v=h.module.returns;if(v)try{f=v(f)}catch{return n({id:h.id,scope:e,leg:"returns"}),f}}return f},f=>{for(let m=i.length-1;m>=0;m--){const h=i[m],v=h.module.throws;if(v)try{f=v(f)}catch{return n({id:h.id,scope:e,leg:"throws"}),Promise.reject(f)}}return Promise.reject(f)})}}}}function ke(e,t,n,a=()=>{}){const s=new Set(e.changes??[]),r=new Map;for(const o of s){const i=t[o];i&&r.set(o,i)}return{contract:e.contract,changes:s,flags:new Set(e.flags??[]),capabilities:e.capabilities??{},capBudgets:e.capBudgets??{},transforms:r,shellOrigin:n.shellOrigin,mount:n.mount,pipe:o=>Ce(o,r,a)}}var $e="modulepreload",Fe=function(e){return"/"+e},xe={},Ne=function(t,n,a){let s=Promise.resolve();function r(o){const i=new Event("vite:preloadError",{cancelable:!0});if(i.payload=o,window.dispatchEvent(i),!i.defaultPrevented)throw o}return s.then(o=>{for(const i of o||[])i.status==="rejected"&&r(i.reason);return t().catch(r)})};(function(){const e=Object.defineProperty,t=globalThis,n=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let a=0;for(let s=0;s<n.length;s++){const r=n[s];try{e(t,r,{value:void 0,writable:!1,configurable:!1})}catch{try{delete t[r]}catch{}try{e(t,r,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof t[r]=="function"&&a++}if(a&&window!==top)try{parent.postMessage({__frame_rtc_lockdown_failed:a},"*")}catch{}})();var qe=1e4,Ie=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function ne(e){for(const t of Ie)if(t.endsWith(":*"))try{const n=new URL(e);if(`${n.protocol}//${n.hostname}:*`===t)return!0}catch{}else if(e===t)return!0;return!1}var C=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),D=window.__FRAME_PREAMBLE?.transforms,z=window.__FRAME_PREAMBLE?.comments,B=window.__FRAME_PREAMBLE?.translate,k=/^[\w.-]+\.js$/,Ue=/^[a-z][a-z0-9_-]{0,63}$/,se=null,P=null;function $(e,t,n){try{Object.defineProperty(e,t,{value:n,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(e,t,{value:n,writable:!1,configurable:!0,enumerable:!0})}catch{}}}var F=!1;function De(e,t){const n=[];for(const a of e.elements){const s=document.querySelector(`[data-id="${a.target}"]`);if(!s){parent.postMessage({__frame_patch_miss:{seq:e.seq}},t);return}if([...Object.keys(a.attrsSet??{}),...a.attrsRemoved??[]].some(r=>!de(r))){parent.postMessage({__frame_patch_miss:{seq:e.seq}},t);return}for(const[r,o]of Object.entries(a.attrsSet??{}))if(r.toLowerCase()!=="data-id")try{s.setAttribute(r,o)}catch{}for(const r of a.attrsRemoved??[])r.toLowerCase()!=="data-id"&&s.removeAttribute(r);typeof a.text=="string"&&(s.textContent=a.text),n.push(a.target)}try{document.dispatchEvent(new CustomEvent("claude:edit",{detail:{seq:e.seq,targets:n}}))}catch{}}function oe(e){const t=document.documentElement;e==="light"||e==="dark"?(t.dataset.theme=e,t.style.colorScheme=e,F=!0):F&&(delete t.dataset.theme,t.style.colorScheme="",F=!1)}var ae=256,M=Object.assign(Object.create(null),{mcp:Object.assign(Object.create(null),{watchTool:{handlerArg:3}}),db:Object.assign(Object.create(null),{subscribe:{handlerArg:1,errArg:2}}),room:Object.assign(Object.create(null),{on:{handlerArg:1,errArg:2},onPeers:{handlerArg:0,errArg:1},onConnection:{handlerArg:0,errArg:1}})}),ze=Object.assign(Object.create(null),{db:(e,t)=>be(e,t),room:(e,t,n)=>Oe(e,n)}),L=new Map;function ie(e,t){const n=L.get(e);if(!n)return;const a=Object.assign(Object.create(null),t);Object.assign(n.impl,a),n.impl.__settled=()=>Promise.reject({code:"capability_removed",message:`${e}: method not in this runtime`});const s=n.queue;n.queue=[];for(const r of s){const o=a[r.method];if(o)if(M[e]?.[r.method])try{r.resolve(o(...r.args))}catch{T(r,M[e][r.method],{code:"transform_error",message:`${e}.${r.method} rejected its arguments`})}else o(...r.args).then(r.resolve,r.reject);else{const i={code:"capability_removed",message:`${e}.${r.method} is not in this runtime`},g=M[e]?.[r.method];if(g){T(r,g,i);continue}r.reject(i)}}}function Be(e,t){const n=L.get(e);if(!n)return;n.impl.__settled=()=>Promise.reject(t);const a=n.queue;n.queue=[];for(const s of a){const r=M[e]?.[s.method];if(r){T(s,r,t);continue}s.reject(t)}}function ce(e,t){if(typeof e=="function")try{return e(...t)}catch{return Object.create(null)}return Array.isArray(e)?[...e]:e!==null&&typeof e=="object"?{...e}:e}function N(e,t){const n=Z[e];if(!n){Be(e,t);return}ie(e,Object.fromEntries(Object.entries(n).map(([a,s])=>[a,(...r)=>Promise.resolve(ce(s,r))])))}function T(e,t,n){if(e.syncState?.dead)return;const a=t.errArg===void 0?void 0:e.args[t.errArg],s=t.errArg===void 0?e.args[t.handlerArg]:a;typeof s=="function"&&queueMicrotask(()=>{if(!e.syncState?.dead)try{s(t.errArg===void 0?{type:"error",error:n}:n)}catch(r){he(r)}})}var x=Object.getOwnPropertyDescriptor(window,"claude");if(window!==top&&!(x&&x.writable===!1)){Ae(),Se();let e=null;try{e=Te()}catch{}const t=x?.value??{};$(window,"claude",t);const n=l=>{const f={impl:Object.create(null),queue:[]};L.set(l,f);const m=f.impl,h=d=>({code:"queue_overflow",message:`${l}.${d}: pre-init call queue is full`}),v=(d,u)=>{if(f.queue.length>=ae){const p=Z[l];return p&&d in p?Promise.resolve(ce(p[d],u)):Promise.reject(h(d))}return new Promise((p,_)=>{f.queue.push({method:d,args:u,resolve:p,reject:_})})},w=ye[l],A=new Proxy(w===void 0?m:(()=>{}),{apply:(d,u,p)=>{const _=w,E=m[_]??m.__settled;return E?E(...p):v(_,p)},get:(d,u)=>{if(typeof u!="string"||u==="then"||u==="toJSON"||u==="valueOf")return;if(u==="toString")return Object.prototype.toString;if(w!==void 0&&(u==="call"||u==="apply"||u==="bind"))return Function.prototype[u];const p=M[l]?.[u];return p?(..._)=>{if(typeof _[p.handlerArg]!="function")throw new TypeError(`${l}.${u} requires a handler function`);const E=m[u];if(E)return E(..._);if(m.__settled){const b={dead:!1},q={args:[..._],syncState:b};return m.__settled().catch(c=>T(q,p,c)),()=>{b.dead=!0}}if(f.queue.length>=ae){const b={dead:!1};return T({args:[..._],syncState:b},p,h(u)),()=>{b.dead=!0}}let S=null;const O={dead:!1};return f.queue.push({method:u,args:_,resolve:b=>{S=typeof b=="function"?b:null,O.dead&&S?.()},reject:()=>{},syncState:O}),()=>{O.dead=!0,S?.()}}:(..._)=>{const E=m[u]??m.__settled;return E?E(..._):v(u,_)}},set:()=>!1});ze[l]?.(m,(d,u)=>A[d](...u),v),$(t,l,A)};for(const l of Object.keys(C)){if(t[l]!==void 0){$(t,l,t[l]);continue}n(l)}let a=null,s=null,r=0;const o=l=>{l.source!==parent||!ne(l.origin)||pe(l.data)&&(a=l.data.__frame_init,P=l.origin,removeEventListener("message",o),clearTimeout(r),s?.())};addEventListener("message",o),parent.postMessage({__frame_connect:!0},"*");const i=new Promise(l=>{s=l,r=setTimeout(()=>{removeEventListener("message",o),l()},qe)}),g=document.readyState==="loading"?new Promise(l=>document.addEventListener("DOMContentLoaded",()=>l(),{once:!0})):Promise.resolve();g.then(()=>{try{e?.restore()}catch{}});const y=l=>{if(!(l.source!==parent||!ne(l.origin))&&Y(l.data)){removeEventListener("message",y);try{e?.promoted()}catch{}}};addEventListener("message",y),i.then(async()=>{if(!a||!P){for(const c of L.keys())N(c,{code:"not_granted",message:"frame initialization did not arrive - capability unavailable"});return}oe(a.theme);const l=P;let f=!1,m=!1;addEventListener("message",c=>{if(c.source!==parent||c.origin!==l)return;ge(c.data)&&oe(c.data.__frame_theme.theme),me(c.data)&&De(c.data.__frame_patch,l);const j=c.data?.__fc_mode;j&&typeof j=="object"&&!f&&z&&k.test(z)&&(f=!0,h(z).then(W=>W.install?.(l,j.on===!0)).catch(()=>{}));const R=c.data?.__ft_cmd;R&&typeof R=="object"&&!m&&B&&k.test(B)&&(m=!0,h(B).then(W=>W.install?.(l,R)).catch(()=>{}))});const h=c=>Ne(()=>import("/_runtime/"+c),void 0),v=Object.keys(a.capabilities??{});for(const c of v)Object.hasOwn(C,c)||Ue.test(c)&&t[c]===void 0&&(n(c),N(c,{code:"capability_disabled",message:"capability not in this runtime generation"}));const w=v.filter(c=>Object.hasOwn(C,c)).map(c=>[c,C[c]]).filter(c=>typeof c[1]=="string"&&k.test(c[1])),[A,...d]=await Promise.allSettled([D&&k.test(D)?h(D):Promise.resolve({}),...w.map(([,c])=>h(c))]),u=P;se=ke(a,A.status==="fulfilled"&&A.value?.TRANSFORMS||{},{shellOrigin:u,mount:ie},c=>parent.postMessage({__frame_cap_telemetry:c},u));const p=c=>parent.postMessage({__frame_cap_telemetry:{kind:"cap-load-error",cap:c}},u),_=se;d.forEach((c,j)=>{const R=w[j][0];if(c.status!=="fulfilled"){p(R);return}try{c.value?.install?.(_)}catch{p(R)}});for(const[c,j]of L)if(j.impl.__settled===void 0){if(v.includes(c)){N(c,{code:"capability_disabled",message:"capability not available in this session"});continue}N(c,{code:"not_granted",message:"capability not available in this session"})}await g,parent.postMessage({__frame_ready:!0},P);let E=-1,S=0;const O=()=>{S=0;const c=Math.max(document.documentElement.scrollHeight,document.body?document.body.scrollHeight:0);c!==E&&(E=c,parent.postMessage({__frame_size:!0,h:c},u))},b=()=>{S||(S=setTimeout(O,200))},q=new ResizeObserver(b);q.observe(document.documentElement),document.body&&q.observe(document.body),document.addEventListener("load",b,!0),document.fonts?.ready.then(b,()=>{}),addEventListener("beforeprint",()=>{E=-1,O()}),b(),addEventListener("message",c=>{if(!(c.source!==parent||c.origin!==u)&&Y(c.data)){try{e?.promoted()}catch{}E=-1,b()}})})}})();</script><!-- /frame-runtime --><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}</style></head><body>
+<title>Evolução de Portugal desde 1981</title>
+
+<style>
+:root{
+  color-scheme: light;
+  --ground:#f2f4f7; --surface:#fdfdfe; --surface-2:#f7f9fb; --raise:#ffffff;
+  --ink:#101418; --ink-2:#4e555d; --ink-3:#828a93;
+  --rule:#e2e5e9; --rule-2:#eef0f3; --axis:#c6ccd3;
+  --s1:#2a78d6; --s2:#eb6834; --st-break:#eb6834; --st-prelim:#1baf7a;
+  --ok-fill:#dfe4ea; --warn-bg:#fdf3ec; --warn-ink:#8a4520;
+  --focus:#2a78d6;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:where(:not([data-theme="light"])){
+    color-scheme: dark;
+    --ground:#0b0d10; --surface:#171a1e; --surface-2:#1c2025; --raise:#20242a;
+    --ink:#f2f4f6; --ink-2:#b6bcc4; --ink-3:#8b939c;
+    --rule:#282d33; --rule-2:#22262b; --axis:#3a4147;
+    --s1:#3987e5; --s2:#d95926; --st-break:#d95926; --st-prelim:#199e70;
+    --ok-fill:#2b3138; --warn-bg:#2a1d16; --warn-ink:#e8a97f;
+    --focus:#3987e5;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --ground:#0b0d10; --surface:#171a1e; --surface-2:#1c2025; --raise:#20242a;
+  --ink:#f2f4f6; --ink-2:#b6bcc4; --ink-3:#8b939c;
+  --rule:#282d33; --rule-2:#22262b; --axis:#3a4147;
+  --s1:#3987e5; --s2:#d95926; --st-break:#d95926; --st-prelim:#199e70;
+  --ok-fill:#2b3138; --warn-bg:#2a1d16; --warn-ink:#e8a97f;
+  --focus:#3987e5;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px 72px}
+
+/* ---------- header ---------- */
+header.top{padding:36px 0 20px;border-bottom:1px solid var(--rule)}
+h1{margin:0;font-size:26px;line-height:1.15;letter-spacing:-.02em;font-weight:620;text-wrap:balance}
+.sub{margin:6px 0 0;color:var(--ink-2);max-width:66ch}
+.meta{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--mono);
+  font-size:11.5px;letter-spacing:.03em;color:var(--ink-3);text-transform:uppercase}
+.themebtn{position:absolute;top:36px;right:20px;background:var(--surface);color:var(--ink-2);
+  border:1px solid var(--rule);border-radius:6px;font:inherit;font-size:12px;padding:5px 10px;cursor:pointer}
+.hd{position:relative}
+
+/* ---------- tabs ---------- */
+nav.tabs{display:flex;gap:2px;border-bottom:1px solid var(--rule);margin-top:0;overflow-x:auto}
+nav.tabs button{appearance:none;background:none;border:0;border-bottom:2px solid transparent;
+  font:inherit;font-size:14px;font-weight:520;color:var(--ink-3);padding:13px 15px;cursor:pointer;white-space:nowrap}
+nav.tabs button:hover{color:var(--ink)}
+nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--s1)}
+nav.tabs button .cnt{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);margin-left:6px}
+
+/* ---------- controls ---------- */
+.ctrls{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:flex-end;padding:18px 0 4px}
+.fld{display:flex;flex-direction:column;gap:5px;min-width:0}
+.fld > span{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3)}
+select{font:inherit;font-size:13.5px;background:var(--surface);color:var(--ink);
+  border:1px solid var(--rule);border-radius:6px;padding:7px 9px;max-width:100%}
+.grow{flex:1 1 260px}
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:var(--surface)}
+.seg button{appearance:none;background:none;border:0;font:inherit;font-size:13px;color:var(--ink-2);
+  padding:7px 11px;cursor:pointer;border-right:1px solid var(--rule)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--s1);color:#fff}
+.seg button:disabled{opacity:.38;cursor:not-allowed}
+label.chk{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;color:var(--ink-2);cursor:pointer;
+  padding:7px 0}
+label.chk input{accent-color:var(--s1);width:15px;height:15px}
+button.ghost{appearance:none;background:var(--surface);border:1px solid var(--rule);border-radius:6px;
+  font:inherit;font-size:13px;color:var(--ink-2);padding:7px 11px;cursor:pointer}
+button.ghost:hover{color:var(--ink);border-color:var(--axis)}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+/* ---------- presets ---------- */
+.presets{display:flex;flex-wrap:wrap;gap:7px;padding:4px 0 12px}
+.presets button{appearance:none;background:var(--surface);border:1px solid var(--rule);
+  border-radius:999px;font:inherit;font-size:12.5px;color:var(--ink-2);padding:6px 13px;cursor:pointer}
+.presets button:hover{border-color:var(--s1);color:var(--ink)}
+.presets .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--ink-3);align-self:center;padding-right:3px}
+
+/* ---------- panels & cards ---------- */
+section[role="tabpanel"][hidden]{display:none}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:18px 18px 14px;margin-bottom:16px}
+.card > h3{margin:0 0 2px;font-size:16px;font-weight:600;letter-spacing:-.01em;text-wrap:balance}
+.card .cap{margin:0;color:var(--ink-3);font-size:13px}
+.chartbox{position:relative;margin-top:12px}
+.chartbox svg{display:block;width:100%;height:auto;overflow:visible}
+svg text{font-family:var(--sans)}
+svg text.m{font-family:var(--mono)}
+svg text.num{font-variant-numeric:tabular-nums}
+.axnote{margin:6px 0 0;font-size:12px;color:var(--ink-3)}
+
+/* ---------- stat tiles ---------- */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:1px;background:var(--rule);
+  border:1px solid var(--rule);border-radius:10px;overflow:hidden;margin-bottom:16px}
+.tile{background:var(--surface);padding:11px 13px}
+.tile .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--ink-3);min-height:2.5em}
+.tile .v{font-size:20px;font-weight:600;letter-spacing:-.02em;margin-top:3px}
+.tile .n{font-size:12px;color:var(--ink-2);margin-top:2px}
+
+/* ---------- banners ---------- */
+.banner{border:1px solid var(--rule);border-left:3px solid var(--st-break);background:var(--warn-bg);
+  color:var(--warn-ink);border-radius:7px;padding:11px 13px;font-size:13.5px;margin-bottom:14px}
+.banner strong{color:inherit}
+.banner ul{margin:6px 0 0;padding-left:18px}
+.banner li{margin:2px 0}
+.note{border:1px solid var(--rule);background:var(--surface-2);border-radius:7px;padding:11px 13px;
+  font-size:13px;color:var(--ink-2);margin-top:12px}
+.note b{color:var(--ink);font-weight:600}
+.fn{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-top:9px}
+.fn div{margin:3px 0}
+
+/* ---------- legend ---------- */
+.legend{display:flex;flex-wrap:wrap;gap:5px 16px;margin-top:11px;font-size:12.5px;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:11px;height:11px;border-radius:2px;flex:none}
+.gl{font-family:var(--mono);font-size:11px;color:var(--ink-3);border:1px solid var(--rule);
+  border-radius:3px;padding:0 4px;flex:none}
+
+/* ---------- table ---------- */
+.tblwrap{overflow-x:auto;margin-top:12px;border:1px solid var(--rule);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{text-align:right;padding:7px 11px;border-bottom:1px solid var(--rule-2);white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+th:first-child,td:first-child{text-align:left;white-space:normal;min-width:190px;font-variant-numeric:normal}
+thead th{background:var(--surface-2);font-family:var(--mono);font-size:11px;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--ink-3);font-weight:500;position:sticky;top:0}
+tbody tr:last-child td{border-bottom:0}
+td .g{font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-left:5px}
+td.na{color:var(--ink-3)}
+
+/* ---------- tooltip ---------- */
+.tip{position:absolute;pointer-events:none;opacity:0;transition:opacity .1s;background:var(--raise);
+  border:1px solid var(--rule);border-radius:7px;padding:8px 10px;font-size:12.5px;color:var(--ink);
+  box-shadow:0 4px 14px rgba(0,0,0,.13);z-index:5;max-width:250px;line-height:1.4}
+.tip .ty{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;color:var(--ink-3)}
+.tip .tv{font-weight:600;font-variant-numeric:tabular-nums}
+.tip .tn{color:var(--ink-2);font-size:11.5px;margin-top:3px}
+
+/* ---------- heatmap ---------- */
+.hmwrap{overflow:auto;max-height:70vh;border:1px solid var(--rule);border-radius:9px;background:var(--surface)}
+.hmwrap svg{display:block;width:100%;min-width:560px}
+.hint{font-size:12.5px;color:var(--ink-3);margin-top:9px}
+
+/* ---------- derived ---------- */
+.formula{font-family:var(--mono);font-size:12px;color:var(--ink-2);background:var(--surface-2);
+  border:1px solid var(--rule);border-radius:6px;padding:8px 10px;margin-top:11px;overflow-x:auto;white-space:pre}
+
+/* ---------- footer ---------- */
+footer.btm{border-top:1px solid var(--rule);margin-top:26px;padding-top:22px;color:var(--ink-3);font-size:12.5px}
+footer.btm h4{margin:0 0 7px;font-size:13px;color:var(--ink);font-weight:600}
+footer.btm .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:22px}
+footer.btm ul{margin:0;padding-left:17px}
+footer.btm li{margin:3px 0}
+footer.btm .src{margin-top:20px;padding-top:14px;border-top:1px solid var(--rule-2);line-height:1.6}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media (max-width:640px){
+  .wrap{padding:0 14px 56px} h1{font-size:21px} .themebtn{top:26px;right:14px}
+  header.top{padding-top:26px}
+}
+
+/* ---------- wall ---------- */
+.wallhead{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:flex-end;padding:12px 0 10px}
+.search{position:relative;flex:1 1 240px;min-width:0}
+.search input{width:100%;font:inherit;font-size:13.5px;background:var(--surface);color:var(--ink);
+  border:1px solid var(--rule);border-radius:6px;padding:8px 10px 8px 30px}
+.search svg{position:absolute;left:9px;top:50%;transform:translateY(-50%);width:13px;height:13px;
+  stroke:var(--ink-3);fill:none;stroke-width:2}
+.wcount{font-family:var(--mono);font-size:11px;color:var(--ink-3);white-space:nowrap;padding-bottom:9px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 0 14px}
+.chips button{appearance:none;background:var(--surface);border:1px solid var(--rule);border-radius:999px;
+  font:inherit;font-size:12px;color:var(--ink-3);padding:5px 11px;cursor:pointer}
+.chips button:hover{color:var(--ink)}
+.chips button[aria-pressed="true"]{background:var(--s1);border-color:var(--s1);color:#fff}
+
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:10px}
+.dgroup{grid-column:1/-1;display:flex;align-items:center;gap:10px;margin:12px 0 -2px}
+.dgroup:first-child{margin-top:0}
+.dgroup span{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--ink-3);white-space:nowrap}
+.dgroup i{flex:1;height:1px;background:var(--rule)}
+.sc{background:var(--surface);border:1px solid var(--rule);border-radius:9px;padding:9px 10px 7px;
+  cursor:pointer;text-align:left;font:inherit;color:inherit;display:flex;flex-direction:column;gap:4px;
+  transition:border-color .13s,transform .13s,opacity .2s}
+.sc:hover{border-color:var(--s1);transform:translateY(-2px)}
+.sc.in{animation:scin .26s ease both}
+@keyframes scin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.sc .nm{font-size:11.5px;line-height:1.24;color:var(--ink-2);height:2.48em;overflow:hidden}
+.sc svg.sp{display:block;width:100%;height:auto;margin:1px 0 0}
+.sc .row{display:flex;align-items:baseline;justify-content:space-between;gap:5px}
+.sc .val{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.sc .dlt{font-family:var(--mono);font-size:10px;color:var(--ink-3);white-space:nowrap}
+.sc .qa{display:flex;gap:4px;height:14px;align-items:center}
+.sc .qa i{font-family:var(--mono);font-size:9.5px;font-style:normal;border:1px solid var(--rule);
+  border-radius:3px;padding:0 3px;color:var(--ink-3);line-height:1.5}
+.sc.pick{border-color:var(--s1);box-shadow:inset 0 0 0 1px var(--s1)}
+.sc.pick .nm{color:var(--ink)}
+.cmpbar{position:sticky;bottom:12px;z-index:12;display:flex;flex-wrap:wrap;gap:9px;align-items:center;
+  background:var(--raise);border:1px solid var(--s1);border-radius:9px;padding:10px 12px;margin-top:14px;
+  box-shadow:0 6px 20px rgba(0,0,0,.16);font-size:13px}
+.cmpbar[hidden]{display:none}
+.cmpbar b{font-weight:600}
+.cmpbar .go{background:var(--s1);color:#fff;border:0;border-radius:6px;font:inherit;font-size:13px;
+  padding:7px 13px;cursor:pointer}
+.cmpbar .go:disabled{opacity:.4;cursor:not-allowed}
+
+/* ---------- drawer ---------- */
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.55);opacity:0;pointer-events:none;
+  transition:opacity .17s;z-index:40}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(760px,100%);background:var(--ground);
+  border-left:1px solid var(--rule);transform:translateX(101%);transition:transform .22s ease;
+  z-index:41;overflow-y:auto;padding:18px 22px 44px}
+.drawer.on{transform:none}
+.drtop{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:4px}
+.drtop h2{margin:0;font-size:19px;font-weight:620;letter-spacing:-.015em;text-wrap:balance}
+.xbtn{appearance:none;background:var(--surface);border:1px solid var(--rule);border-radius:6px;
+  font:inherit;font-size:16px;line-height:1;color:var(--ink-2);padding:6px 10px;cursor:pointer;flex:none}
+.xbtn:hover{color:var(--ink)}
+
+/* ---------- ranked change ---------- */
+.rankgrid{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:900px){.rankgrid{grid-template-columns:1fr 1fr}}
+.rank{display:flex;flex-direction:column;gap:2px;margin-top:10px}
+.rk{display:grid;grid-template-columns:minmax(0,1fr) 108px 82px;gap:8px;align-items:center;
+  background:none;border:0;font:inherit;color:inherit;cursor:pointer;padding:3px 4px;text-align:left;
+  border-radius:5px}
+.rk:hover{background:var(--surface-2)}
+.rk .nm{font-size:12px;color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rk:hover .nm{color:var(--ink)}
+.rk .bar{position:relative;height:13px}
+.rk .bar u{position:absolute;top:2px;height:9px;border-radius:2px;display:block}
+.rk .bar s{position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--axis);display:block}
+.rk .v{font-family:var(--mono);font-size:11px;text-align:right;font-variant-numeric:tabular-nums;
+  color:var(--ink);white-space:nowrap;overflow:hidden}
+.rk .w{font-family:var(--mono);font-size:9.5px;color:var(--st-break)}
+.rk .w2{font-family:var(--mono);font-size:10px;color:var(--ink-3)}
+@media (prefers-reduced-motion:reduce){
+  .sc.in{animation:none}.sc:hover{transform:none}
+  .drawer{transition:none}.scrim{transition:none}
+}
+
+/* ---------- learn ---------- */
+.tracks{display:grid;grid-template-columns:1fr;gap:14px;margin-top:16px;align-items:start}
+@media(min-width:820px){.tracks{grid-template-columns:1fr 1fr}}
+.track{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:16px 16px 10px}
+.track h3{margin:0 0 3px;font-size:16px;font-weight:620;letter-spacing:-.01em}
+.track .cap{margin:0 0 10px}
+.lsn{display:flex;align-items:flex-start;gap:10px;width:100%;background:none;border:0;font:inherit;
+  color:inherit;text-align:left;cursor:pointer;padding:9px 8px;border-radius:7px;border-top:1px solid var(--rule-2)}
+.lsn:hover{background:var(--surface-2)}
+.lsn .n{font-family:var(--mono);font-size:11px;color:var(--ink-3);flex:none;width:16px;padding-top:2px}
+.lsn.done .n{color:var(--st-prelim)}
+.lsn .tt{flex:1;min-width:0}
+.lsn .tt b{display:block;font-size:13.5px;font-weight:560;line-height:1.3}
+.lsn .tt span{display:block;font-size:12px;color:var(--ink-3);margin-top:2px}
+.lsn .go{font-size:14px;color:var(--ink-3);flex:none;padding-top:2px}
+.lsn:hover .go{color:var(--s1)}
+.prog{display:flex;align-items:center;gap:10px;margin-top:14px}
+.prog .bar{flex:1;height:5px;background:var(--rule);border-radius:3px;overflow:hidden}
+.prog .bar i{display:block;height:100%;background:var(--s1);border-radius:3px;transition:width .3s}
+.prog span{font-family:var(--mono);font-size:11px;color:var(--ink-3);white-space:nowrap}
+
+/* the dock keeps the lesson visible while you look at the real data */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:45;background:var(--raise);
+  border-top:1px solid var(--s1);box-shadow:0 -6px 24px rgba(0,0,0,.18);padding:12px 20px 13px}
+.dock[hidden]{display:none}
+.dockin{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:12px 18px;align-items:center}
+.dockhd{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:3px}
+.dockhd b{color:var(--s1);font-weight:500}
+.docktx{font-size:14px;line-height:1.45;margin:0;max-width:78ch}
+.docktx b{font-weight:620}
+.dockna{display:flex;gap:7px;align-items:center;flex:none}
+.dockna button{appearance:none;background:var(--surface);border:1px solid var(--rule);border-radius:6px;
+  font:inherit;font-size:13px;color:var(--ink-2);padding:7px 12px;cursor:pointer;white-space:nowrap}
+.dockna button:hover:not(:disabled){color:var(--ink);border-color:var(--axis)}
+.dockna button:disabled{opacity:.35;cursor:not-allowed}
+.dockna button.pri{background:var(--s1);border-color:var(--s1);color:#fff}
+.docksrc{grid-column:1/-1;font-size:11.5px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:4px 14px}
+.docksrc a{color:var(--ink-2);text-decoration:underline;text-underline-offset:2px}
+.docksrc a:hover{color:var(--s1)}
+.dockend{grid-column:1/-1;font-size:12.5px;color:var(--ink-2);background:var(--surface-2);
+  border:1px solid var(--rule);border-left:3px solid var(--ink-3);border-radius:6px;padding:9px 11px}
+.dockend b{color:var(--ink)}
+body.docked{padding-bottom:calc(var(--dockh,150px) + 26px)}
+/* while a lesson is docked, the drawer and scrim stop at the dock instead of covering it */
+body.docked .drawer{bottom:var(--dockh,150px)}
+body.docked .scrim{bottom:var(--dockh,150px)}
+@media(max-width:700px){
+  .dockin{grid-template-columns:1fr}
+  .dock{padding:10px 14px 12px;max-height:60vh;overflow-y:auto}
+}
+
+/* ---------- domain rail ---------- */
+.rail{display:flex;flex-wrap:wrap;gap:6px;padding:0 0 14px}
+.rail[hidden]{display:none}
+.rail button{appearance:none;background:none;border:1px solid var(--rule);border-radius:6px;font:inherit;
+  font-size:11.5px;color:var(--ink-3);padding:4px 9px;cursor:pointer;font-family:var(--mono)}
+.rail button:hover{color:var(--s1);border-color:var(--s1)}
+.rail button b{color:var(--ink-3);font-weight:400;margin-left:5px;opacity:.7}
+
+/* ---------- value table ---------- */
+.tabwrap{overflow:auto;max-height:78vh;border:1px solid var(--rule);border-radius:9px;background:var(--surface)}
+table.big{border-collapse:separate;border-spacing:0;width:100%;font-size:12.5px}
+table.big th,table.big td{padding:7px 10px;white-space:nowrap;font-variant-numeric:tabular-nums;
+  border-bottom:1px solid var(--rule-2);text-align:right}
+table.big thead th{position:sticky;top:0;z-index:3;background:var(--surface-2);font-family:var(--mono);
+  font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3);font-weight:500;
+  cursor:pointer;border-bottom:1px solid var(--rule)}
+table.big thead th:hover{color:var(--ink)}
+table.big thead th.on{color:var(--s1)}
+table.big th.hl,table.big td.hl{background:rgba(42,120,214,.13)}
+table.big tbody tr:hover td.hl{background:rgba(42,120,214,.2)}
+table.big .nmc{text-align:left;position:sticky;left:0;z-index:2;background:var(--surface);
+  white-space:normal;min-width:214px;max-width:280px}
+table.big thead .nmc{z-index:4;background:var(--surface-2)}
+table.big tbody tr:hover td{background:var(--surface-2)}
+table.big tbody tr:hover .nmc{background:var(--surface-2)}
+table.big .nmc button{background:none;border:0;font:inherit;color:var(--ink);cursor:pointer;padding:0;
+  text-align:left;line-height:1.3}
+table.big .nmc button:hover{color:var(--s1);text-decoration:underline}
+table.big .nmc i{display:block;font-style:normal;font-size:10.5px;color:var(--ink-3);font-family:var(--mono);
+  margin-top:2px}
+table.big td.na{color:var(--ink-3)}
+table.big td sup{font-family:var(--mono);font-size:8.5px;color:var(--ink-3);margin-left:3px;vertical-align:super}
+table.big tr.dom td{background:var(--surface-2);font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ink-3);text-align:left;position:sticky;left:0}
+
+/* ---------- command palette ---------- */
+.pal{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.5);display:flex;align-items:flex-start;
+  justify-content:center;padding:11vh 16px 16px}
+.pal[hidden]{display:none}
+.palbox{width:min(600px,100%);background:var(--raise);border:1px solid var(--rule);border-radius:11px;
+  box-shadow:0 18px 50px rgba(0,0,0,.34);overflow:hidden;display:flex;flex-direction:column;max-height:74vh}
+.palin{display:flex;align-items:center;gap:9px;padding:12px 14px;border-bottom:1px solid var(--rule)}
+.palin svg{width:15px;height:15px;stroke:var(--ink-3);fill:none;stroke-width:2;flex:none}
+.palin input{flex:1;min-width:0;background:none;border:0;font:inherit;font-size:15px;color:var(--ink);outline:none}
+.palin kbd{font-family:var(--mono);font-size:10px;color:var(--ink-3);border:1px solid var(--rule);
+  border-radius:4px;padding:2px 5px}
+.pallist{overflow-y:auto;padding:6px}
+.palr{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;width:100%;background:none;
+  border:0;font:inherit;color:inherit;text-align:left;cursor:pointer;padding:8px 10px;border-radius:7px}
+.palr > span:first-child{grid-column:1;min-width:0}
+.palr b{font-size:13.5px;font-weight:520;display:block}
+.palr span{font-size:11.5px;color:var(--ink-3);display:block;margin-top:1px}
+.palr em{font-family:var(--mono);font-size:11.5px;font-style:normal;color:var(--ink-2);
+  font-variant-numeric:tabular-nums;text-align:right;grid-column:2}
+.palr.sel{background:var(--s1)}
+.palr.sel b,.palr.sel span,.palr.sel em{color:#fff}
+.palfoot{border-top:1px solid var(--rule);padding:8px 14px;font-family:var(--mono);font-size:10.5px;
+  color:var(--ink-3);display:flex;gap:14px;flex-wrap:wrap}
+.palempty{padding:22px 14px;text-align:center;color:var(--ink-3);font-size:13px}
+.kbtn{position:absolute;top:36px;right:76px;background:var(--surface);color:var(--ink-2);
+  border:1px solid var(--rule);border-radius:6px;font:inherit;font-size:12px;padding:5px 10px;cursor:pointer;
+  display:flex;align-items:center;gap:7px}
+.kbtn kbd{font-family:var(--mono);font-size:10px;border:1px solid var(--rule);border-radius:3px;padding:1px 4px}
+@media(max-width:640px){.kbtn{display:none}}
+</style>
+
+<div class="wrap">
+<header class="top hd">
+  <h1>Evolução de Portugal desde 1981</h1>
+  <p class="sub">Os 81 indicadores do quadro-resumo da PORDATA, com a integridade dos dados sempre à
+  vista: onde há lacunas, onde a série quebrou, onde o valor é preliminar. Comece pelas <b>lições</b>, ou
+  vá directamente ao <b>painel</b> com todos os indicadores de uma vez.</p>
+  <div class="meta" id="meta"></div>
+  <button class="themebtn" id="theme" type="button">Tema</button>
+  <button class="kbtn" id="kbtn" type="button">Ir para… <kbd>⌘K</kbd></button>
+</header>
+
+<nav class="tabs" role="tablist" id="tabs">
+  <button role="tab" id="t-learn" aria-controls="p-learn" aria-selected="true">Aprender<span class="cnt" id="cnt-lsn"></span></button>
+  <button role="tab" id="t-wall" aria-controls="p-wall" aria-selected="false">Painel<span class="cnt" id="cnt-ind"></span></button>
+  <button role="tab" id="t-table" aria-controls="p-table" aria-selected="false">Tabela</button>
+  <button role="tab" id="t-change" aria-controls="p-change" aria-selected="false">Transformação</button>
+  <button role="tab" id="t-cross" aria-controls="p-cross" aria-selected="false">Cruzar</button>
+  <button role="tab" id="t-audit" aria-controls="p-audit" aria-selected="false">Auditar<span class="cnt" id="cnt-bad"></span></button>
+  <button role="tab" id="t-derived" aria-controls="p-derived" aria-selected="false">Derivados</button>
+</nav>
+
+<!-- ============ APRENDER ============ -->
+<section role="tabpanel" id="p-learn" aria-labelledby="t-learn">
+  <div class="note" style="margin:18px 0 4px">
+    Dez lições curtas. Cada passo abre a vista real deste painel no estado certo — aprende-se a ler os
+    dados usando-os, não vendo imagens deles. Cada lição termina no que os dados <b>não</b> conseguem
+    responder, porque isso também faz parte de saber lê-los. Os factos externos às lições trazem a fonte.
+  </div>
+  <div class="prog" id="l-prog"><div class="bar"><i></i></div><span></span>
+    <button class="ghost" id="l-reset" type="button">Reiniciar</button></div>
+  <div class="tracks" id="l-tracks"></div>
+</section>
+
+<!-- ============ PAINEL (wall) ============ -->
+<section role="tabpanel" id="p-wall" aria-labelledby="t-wall" hidden>
+  <div class="tiles" id="hero"></div>
+  <div class="presets" id="presets"><span class="lbl">Onde começar</span></div>
+
+  <div class="wallhead">
+    <label class="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
+      <input id="q" type="search" placeholder="Buscar indicador ou domínio…" autocomplete="off"
+             aria-label="Buscar indicador">
+    </label>
+    <label class="fld"><span>Ordenar</span>
+      <select id="sort">
+        <option value="dom">Por domínio</option>
+        <option value="change">Maior transformação</option>
+        <option value="gaps">Mais incompleto</option>
+        <option value="az">Alfabética</option>
+      </select>
+    </label>
+    <span class="wcount" id="wall-count"></span>
+  </div>
+  <div class="chips" id="chips">
+    <button type="button" data-f="miss" aria-pressed="false">com lacunas</button>
+    <button type="button" data-f="brk" aria-pressed="false">com quebras</button>
+    <button type="button" data-f="pre" aria-pressed="false">com preliminares</button>
+    <button type="button" data-f="ok" aria-pressed="false">completos</button>
+    <button type="button" data-f="cmp" aria-pressed="false">⇄ modo comparar</button>
+  </div>
+
+  <div class="rail" id="rail"></div>
+  <div class="wall" id="wall"></div>
+  <div class="cmpbar" id="cmpbar" hidden>
+    <b>Comparar:</b><span id="cmp-list">escolha dois indicadores</span>
+    <button class="go" id="cmp-go" type="button" disabled>Cruzar os dois</button>
+    <button class="ghost" id="cmp-clear" type="button">Limpar</button>
+  </div>
+  <p class="hint" id="wall-empty" hidden>Nenhum indicador corresponde a esses filtros.</p>
+</section>
+
+<!-- ============ TABELA ============ -->
+<section role="tabpanel" id="p-table" aria-labelledby="t-table" hidden>
+  <div class="wallhead">
+    <label class="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
+      <input id="tb-q" type="search" placeholder="Filtrar indicador ou domínio…" autocomplete="off"
+             aria-label="Filtrar a tabela">
+    </label>
+    <label class="chk"><input type="checkbox" id="tb-group" checked> Agrupar por domínio</label>
+    <button class="ghost" id="tb-copy" type="button">Copiar CSV</button>
+    <span class="wcount" id="tb-count"></span>
+  </div>
+  <p class="hint" id="tb-hint"></p>
+  <div class="tabwrap" id="tb-host"></div>
+  <p class="hint" style="margin-top:10px">Uma célula vazia é <b>ausência de valor</b>, nunca um zero —
+  ao contrário do ficheiro original, onde as 53 ausências estão gravadas como 0. Os símbolos
+  <span class="gl">┴</span> quebra de série, <span class="gl">Pre</span> preliminar e
+  <span class="gl">⚠</span> quebra não declarada acompanham cada célula. Clique no nome para abrir o
+  indicador; clique num ano para saber o que esse ano tem.</p>
+</section>
+
+<!-- ============ TRANSFORMAÇÃO ============ -->
+<section role="tabpanel" id="p-change" aria-labelledby="t-change" hidden>
+  <div class="note" style="margin:18px 0 14px">
+    <b>Do primeiro ao último ano com valor.</b> As grandezas contáveis medem-se em múltiplos (×), as taxas
+    e os índices em diferença absoluta — misturar as duas escalas num só gráfico seria mentira, por isso
+    são duas listas. Uma série com quebra pelo meio está marcada: parte da variação é definição, não
+    mudança real.
+  </div>
+  <div class="chips">
+    <button type="button" id="ch-nobrk" aria-pressed="false">excluir séries com quebra</button>
+  </div>
+  <div class="rankgrid">
+    <div class="card">
+      <h3>Múltiplos</h3>
+      <p class="cap">Contagens, valores monetários e volumes. Escala logarítmica: ×8 e ×⅛ afastam-se
+      igualmente do centro.</p>
+      <div class="legend" id="ch-leg1"></div>
+      <div class="rank" id="ch-mult"></div>
+    </div>
+    <div class="card">
+      <h3>Pontos percentuais</h3>
+      <p class="cap">Só as quotas e taxas medidas em % — todas na mesma unidade, logo as barras são
+      comparáveis entre si. Escala linear a partir de zero.</p>
+      <div class="legend" id="ch-leg2"></div>
+      <div class="rank" id="ch-diff"></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Outras unidades</h3>
+    <p class="cap">Estas cinco variações estão cada uma na sua própria unidade, por isso <b>não levam
+    barras</b>: o comprimento de uma barra de ‰ não significa nada ao lado de uma de milhares, e desenhá-las
+    na mesma escala sugeriria uma comparação que não existe. Só o número.</p>
+    <div class="rank" id="ch-other"></div>
+  </div>
+</section>
+
+<!-- ============ CRUZAR ============ -->
+<section role="tabpanel" id="p-cross" aria-labelledby="t-cross" hidden>
+  <div class="ctrls">
+    <label class="fld grow"><span>Indicador A</span><select id="c-a"></select></label>
+    <label class="fld grow"><span>Indicador B</span><select id="c-b"></select></label>
+  </div>
+  <div class="ctrls" style="padding-top:4px">
+    <div class="fld"><span>Modo</span>
+      <div class="seg" id="c-mode">
+        <button type="button" data-m="overlay" aria-pressed="false">Sobrepor</button>
+        <button type="button" data-m="index" aria-pressed="true">Indexar =100</button>
+        <button type="button" data-m="ratio" aria-pressed="false">Razão A/B</button>
+        <button type="button" data-m="traj" aria-pressed="false">Trajetória</button>
+      </div>
+    </div>
+    <label class="fld" id="c-basefld"><span>Base do índice</span><select id="c-base"></select></label>
+    <button class="ghost" id="c-tbl" type="button" aria-pressed="false">Tabela</button>
+  </div>
+  <div id="c-guard"></div>
+  <div class="card">
+    <h3 id="c-title"></h3>
+    <p class="cap" id="c-cap"></p>
+    <div class="chartbox" id="c-chart"></div>
+    <p class="axnote" id="c-axnote"></p>
+    <div class="legend" id="c-legend"></div>
+    <div class="fn" id="c-fn"></div>
+    <div id="c-tblbox" hidden></div>
+  </div>
+</section>
+
+<!-- ============ AUDITAR ============ -->
+<section role="tabpanel" id="p-audit" aria-labelledby="t-audit" hidden>
+  <div class="tiles" id="a-tiles"></div>
+  <div class="card">
+    <h3>Integridade célula a célula</h3>
+    <p class="cap">81 indicadores × 7 anos = 567 células. Clique numa célula para abrir o indicador.</p>
+    <div class="legend" id="a-legend"></div>
+    <div class="hmwrap" id="a-hm"></div>
+    <p class="hint">Os glifos são a simbologia da própria PORDATA. A cor reforça, nunca substitui, o glifo.</p>
+  </div>
+  <div class="card">
+    <h3>Os dois denominadores</h3>
+    <p class="cap">A nota (7) e a nota (8) dividem o ficheiro em dois universos populacionais que não se
+    podem misturar. É o problema mais consequente do ficheiro, porque não produz nenhum erro visível.</p>
+    <div id="a-den"></div>
+  </div>
+  <div class="card">
+    <h3>Quebras não declaradas</h3>
+    <p class="cap">Casos em que os valores saltam de forma que só uma mudança de definição explica, mas
+    onde a PORDATA não marcou quebra de série. Atribuições minhas, não do ficheiro.</p>
+    <div id="a-undecl"></div>
+  </div>
+</section>
+
+<!-- ============ DERIVADOS ============ -->
+<section role="tabpanel" id="p-derived" aria-labelledby="t-derived" hidden>
+  <div class="note" style="margin:18px 0 16px">
+    <b>Nada nesta página está no ficheiro.</b> Cada cartão mostra a fórmula, as células que usa e os
+    pressupostos que assume. Verifique a aritmética em vez de confiar nela. Quando um cálculo mistura
+    uma linha da nota (7) com uma linha sem nota, isso está dito no cartão.
+  </div>
+  <div id="d-cards"></div>
+</section>
+
+<footer class="btm">
+  <div class="cols">
+    <div>
+      <h4>O que este ficheiro não pode dizer</h4>
+      <ul>
+        <li><b>Crescimento real.</b> O PIB e o rendimento estão a preços correntes, com os valores
+        pré-1999 convertidos de escudos à taxa fixa. A inflação só existe para 7 anos dispersos, pelo
+        que o ficheiro não se consegue deflacionar a si próprio. As 27,8× do PIB per capita são
+        sobretudo moeda, não prosperidade.</li>
+        <li><b>Os anos intermédios.</b> De 1981 a 2011 é decenal, depois salta para 2021, 2024 e 2025.
+        A crise de 2008-2014 aparece só como a coluna de 2011. Anos extremos como 2003, 2005 ou 2017
+        não estão aqui — o que torna a série de área ardida especialmente enganadora.</li>
+        <li><b>Comparação internacional.</b> Não há colunas de referência. E o ficheiro não diz se
+        conta médicos inscritos ou médicos no exercício, pelo que a taxa por mil habitantes não é
+        diretamente comparável com a OCDE.</li>
+        <li><b>Correlações.</b> Com sete pontos, quaisquer duas séries monótonas correlacionam-se acima
+        de 0,9. É por isso que não existe aqui nenhum explorador de correlações: produziria disparates
+        convincentes a pedido.</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Simbologia da PORDATA</h4>
+      <ul>
+        <li><span class="gl">┴</span> quebra de série — o valor não é comparável com o ponto anterior</li>
+        <li><span class="gl">Pre</span> valor preliminar</li>
+        <li><span class="gl">–</span> ausência de valor — <b>gravado como 0 no ficheiro</b></li>
+        <li><span class="gl">Pro</span> provisório · <span class="gl">e</span> estimado ·
+        <span class="gl">§</span> coeficiente de variação elevado (não ocorrem neste quadro)</li>
+      </ul>
+      <h4 style="margin-top:16px">Como ler os gráficos</h4>
+      <ul>
+        <li>O eixo do tempo é proporcional: 1981→1991 são dez anos, 2024→2025 é um.</li>
+        <li>Uma linha interrompida é uma ausência de dados, nunca um zero.</li>
+        <li>Um segmento esbatido atravessa uma quebra de série: os dois pontos não são comparáveis.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="src" id="src"></div>
+</footer>
+</div>
+
+<div class="pal" id="pal" hidden>
+  <div class="palbox" role="dialog" aria-modal="true" aria-label="Ir para indicador">
+    <div class="palin">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
+      <input id="pal-q" type="text" placeholder="Ir para um dos 81 indicadores…" autocomplete="off"
+             role="combobox" aria-expanded="true" aria-controls="pal-list">
+      <kbd>esc</kbd>
+    </div>
+    <div class="pallist" id="pal-list" role="listbox" aria-label="Indicadores"></div>
+    <div class="palfoot"><span>↑↓ navegar</span><span>⏎ abrir</span><span>esc fechar</span>
+      <span id="pal-n"></span></div>
+  </div>
+</div>
+
+<div class="dock" id="dock" hidden>
+  <div class="dockin">
+    <div>
+      <div class="dockhd" id="dk-hd"></div>
+      <p class="docktx" id="dk-tx"></p>
+    </div>
+    <div class="dockna">
+      <button id="dk-prev" type="button">‹ Anterior</button>
+      <button id="dk-next" type="button" class="pri">Seguinte ›</button>
+      <button id="dk-quit" type="button" aria-label="Fechar lição">✕</button>
+    </div>
+    <div class="docksrc" id="dk-src"></div>
+    <div class="dockend" id="dk-end" hidden></div>
+  </div>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dt-title" hidden>
+  <div class="drtop">
+    <h2 id="dt-title"></h2>
+    <button class="xbtn" id="dt-close" type="button" aria-label="Fechar">✕</button>
+  </div>
+  <p class="cap" id="dt-cap"></p>
+  <div class="ctrls" style="padding:12px 0 2px">
+    <label class="chk"><input type="checkbox" id="dt-zero"> Eixo Y desde zero</label>
+    <label class="chk"><input type="checkbox" id="dt-naive"> Modo ingénuo</label>
+    <button class="ghost" id="dt-tbl" type="button" aria-pressed="false">Tabela</button>
+    <button class="ghost" id="dt-cross" type="button">Cruzar com…</button>
+  </div>
+  <div id="dt-banner"></div>
+  <div class="card">
+    <div class="chartbox" id="dt-chart"></div>
+    <p class="axnote" id="dt-axnote"></p>
+    <div class="legend" id="dt-legend"></div>
+    <div class="fn" id="dt-fn"></div>
+    <div id="dt-tblbox" hidden></div>
+  </div>
+  <div class="note" id="dt-read"></div>
+</aside>
+
+<script>
+const DATA = {"meta":{"years":[1981,1991,2001,2011,2021,2024,2025],"n":81,"sources":"INE, BdP, CGA/MTSSS-MF, DGEEC/MECI, DGEG/MAE, DGRM/MIH-ME-MAE-MAP, DGPJ/MJ, DGS/MS, ICA/MC, ICNF/MAE-MAP, DGT/MCT-MAE, IGFSS/MTSSS, II/MTSSS, ISS/MTSSS, SGMAI, SIBS S.A., PORDATA","retrieved":"2026-07-25","footnotes":{"1":"O ano apresentado corresponde ao último ano do par ano letivo.","2":"A partir de 2011, os valores consideram, para além das empresas e dos empresários em nome individual, os trabalhadores independentes.","3":"O ano apresentado corresponde ao primeiro ano do par ano letivo.","4":"Os valores excluem a Agricultura, Pesca e Administração Pública.","5":"Os valores referem-se aos casamentos entre pessoas do sexo oposto.","6":"Os valores apresentados referem-se a Portugal Continental.","7":"Os valores apresentados, entre 2021 e 2024, estão de acordo com a revisão das Estimativas da População Residente, divulgada pelo INE, a 22/06/2026.","8":"Os valores apresentados NÃO estão de acordo com a revisão das Estimativas da População Residente, divulgada pelo INE, a 22/06/2026. O INE prevê a revisão destes dados para o 1.º trimestre de 2027."},"domains":["Demografia","Família e sociedade","Educação","Cultura","Saúde","Justiça","Empresas","Trabalho","Proteção social","Economia","Território e ambiente","Turismo e transportes","Agricultura e pesca"]},"ind":[{"id":0,"label":"População residente","raw_label":"População residente (7)","note":"milhares","domain":"Demografia","footnotes":[7],"kind":"thousands","usym":"milhares","dec":0,"v":[9884,9950,10395,10559,10599,11387,11424],"s":["ok","ok","ok","ok","break","ok","ok"]},{"id":1,"label":"Eleitores","raw_label":"Eleitores","note":"","domain":"Demografia","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[null,8530026,8902001,9721406,10871313,10967369,11081421],"s":["missing","ok","ok","ok","ok","ok","ok"]},{"id":2,"label":"Jovens","raw_label":"Jovens (7)","note":"menos de 15 anos","domain":"Demografia","footnotes":[7],"kind":"count","usym":"n.º","dec":0,"v":[2493763,1959671,1679191,1588663,1378520,1434966,1424742],"s":["ok","ok","ok","ok","break","ok","ok"]},{"id":3,"label":"Jovens (%)","raw_label":"Jovens (%) (7)","note":"menos de 15 anos","domain":"Demografia","footnotes":[7],"kind":"pct","usym":"%","dec":1,"v":[25.3,19.7,16.2,15,13.1,12.7,12.5],"s":["ok","ok","ok","ok","break","ok","ok"]},{"id":4,"label":"População em idade ativa","raw_label":"População em idade ativa (7)","note":"15 aos 64 anos","domain":"Demografia","footnotes":[7],"kind":"count","usym":"n.º","dec":0,"v":[6224924,6628021,6978257,6976693,6678964,7264328,7336533],"s":["ok","ok","ok","ok","break","ok","ok"]},{"id":5,"label":"População em idade ativa (%)","raw_label":"População em idade ativa (%) (7)","note":"15 aos 64 anos","domain":"Demografia","footnotes":[7],"kind":"pct","usym":"%","dec":1,"v":[63.2,66.5,67.3,66,63.6,64.3,64.3],"s":["ok","ok","ok","ok","break","ok","ok"]},{"id":6,"label":"Idosos","raw_label":"Idosos (7)","note":"65 e mais anos","domain":"Demografia","footnotes":[7],"kind":"count","usym":"n.º","dec":0,"v":[1132638,1372543,1705274,2000480,2439224,2596491,2644353],"s":["ok","ok","ok","ok","break","ok","ok"]},{"id":7,"label":"Idosos (%)","raw_label":"Idosos (%) (7)","note":"65 e mais anos","domain":"Demografia","footnotes":[7],"kind":"pct","usym":"%","dec":1,"v":[11.5,13.8,16.5,18.9,23.2,23,23.2],"s":["ok","ok","ok","ok","break","ok","ok"]},{"id":8,"label":"Indivíduos em idade ativa por idoso","raw_label":"Indivíduos em idade ativa por idoso (7)","note":"","domain":"Demografia","footnotes":[7],"kind":"ratio","usym":"—","dec":1,"v":[5.5,4.8,4.1,3.4,2.7,2.8,2.8],"s":["ok","ok","ok","ok","break","ok","ok"]},{"id":9,"label":"Famílias","raw_label":"Famílias","note":"","domain":"Família e sociedade","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[null,null,3575544,4008871,3939898,4473326,4562089],"s":["missing","missing","ok","break","break","ok","ok"]},{"id":10,"label":"Famílias unipessoais (%)","raw_label":"Famílias unipessoais (%)","note":"","domain":"Família e sociedade","footnotes":[],"kind":"pct","usym":"%","dec":1,"v":[null,null,15.3,19.3,18.8,25.5,25.9],"s":["missing","missing","ok","break","break","ok","ok"]},{"id":11,"label":"Dimensão média das famílias","raw_label":"Dimensão média das famílias","note":"","domain":"Família e sociedade","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[null,3,3,3,3,2,2],"s":["missing","ok","ok","break","break","ok","ok"]},{"id":12,"label":"Casamentos não católicos (%)","raw_label":"Casamentos não católicos (%) (5)","note":"","domain":"Família e sociedade","footnotes":[5],"kind":"pct","usym":"%","dec":1,"v":[26,27.9,37.5,60.5,71.6,80.1,81.4],"s":["ok","ok","ok","ok","ok","ok","ok"]},{"id":13,"label":"Nascimentos","raw_label":"Nascimentos","note":"","domain":"Demografia","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[152071,116299,112774,96856,79582,84642,87764],"s":["ok","ok","ok","ok","ok","ok","ok"]},{"id":14,"label":"Nascimentos fora do casamento (%)","raw_label":"Nascimentos fora do casamento (%)","note":"","domain":"Família e sociedade","footnotes":[],"kind":"pct","usym":"%","dec":1,"v":[9.5,15.6,23.8,42.8,60,59.2,59.2],"s":["ok","ok","ok","ok","ok","ok","ok"]},{"id":15,"label":"Idade média da mãe ao nascimento do 1.º filho","raw_label":"Idade média da mãe ao nascimento do 1.º filho (7)","note":"","domain":"Família e sociedade","footnotes":[7],"kind":"count","usym":"n.º","dec":1,"v":[23.6,24.9,26.8,29.2,30.4,30.3,30.4],"s":["ok","ok","ok","ok","break","ok","ok"]},{"id":16,"label":"Índice sintético de fecundidade","raw_label":"Índice sintético de fecundidade (7)","note":"número médio de filhos por mulher em idade fértil","domain":"Demografia","footnotes":[7],"kind":"ratio","usym":"—","dec":2,"v":[2.13,1.56,1.45,1.35,1.3,1.27,1.3],"s":["ok","ok","ok","ok","break","ok","ok"]},{"id":17,"label":"Óbitos","raw_label":"Óbitos","note":"","domain":"Demografia","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[95728,103882,105092,102848,124841,118396,121817],"s":["ok","ok","ok","ok","ok","ok","ok"]},{"id":18,"label":"Taxa de mortalidade infantil (‰)","raw_label":"Taxa de mortalidade infantil (‰) (7)","note":"óbitos de crianças com menos de 1 ano de idade por cada 1000 nados-vivos","domain":"Saúde","footnotes":[7],"kind":"permille","usym":"‰","dec":1,"v":[21.8,10.8,5,3.1,2.4,3,2.8],"s":["ok","ok","ok","ok","break","ok","ok"]},{"id":19,"label":"Saldo natural (milhares)","raw_label":"Saldo natural (milhares) (7)","note":"diferença entre o total de nascimentos e o total de óbitos","domain":"Demografia","footnotes":[7],"kind":"thousands","usym":"milhares","dec":1,"v":[56.3,12.4,7.7,-6,-45.3,-33.8,-34.1],"s":["ok","ok","ok","ok","break","ok","ok"]},{"id":20,"label":"Fogos novos de habitação familiar","raw_label":"Fogos novos de habitação familiar","note":"","domain":"Território e ambiente","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[null,null,115154,26382,19754,25311,null],"s":["missing","missing","ok","ok","prelim","prelim","missing"]},{"id":21,"label":"Estabelecimentos do 1.º ciclo do ensino básico","raw_label":"Estabelecimentos do 1.º ciclo do ensino básico (1)","note":"1.º ao 4.º ano de escolaridade","domain":"Educação","footnotes":[1],"kind":"count","usym":"n.º","dec":0,"v":[10575,10405,9416,5221,4057,4005,3985],"s":["ok","ok","ok","ok","ok","ok","ok"]},{"id":22,"label":"Alunos matriculados no ensino básico","raw_label":"Alunos matriculados no ensino básico (1)","note":"1.º ao 9.º ano de escolaridade","domain":"Educação","footnotes":[1],"kind":"count","usym":"n.º","dec":0,"v":[1574568,1484256,1223151,1206716,926042,954792,959793],"s":["ok","ok","ok","ok","ok","ok","ok"]},{"id":23,"label":"Alunos matriculados no ensino secundário","raw_label":"Alunos matriculados no ensino secundário (1)","note":"10.º ao 12.º ano de escolaridade","domain":"Educação","footnotes":[1],"kind":"count","usym":"n.º","dec":0,"v":[176084,347911,413748,440895,393689,389537,386533],"s":["ok","ok","ok","ok","ok","ok","ok"]},{"id":24,"label":"Alunos matriculados no ensino superior","raw_label":"Alunos matriculados no ensino superior (1)","note":"","domain":"Educação","footnotes":[1],"kind":"count","usym":"n.º","dec":0,"v":[83754,186780,387703,396268,411995,448235,456032],"s":["ok","ok","ok","ok","ok","ok","ok"]},{"id":25,"label":"Docentes do ensino não superior","raw_label":"Docentes do ensino não superior (1)","note":"","domain":"Educação","footnotes":[1],"kind":"count","usym":"n.º","dec":0,"v":[113555,146149,176707,174953,150127,149124,149442],"s":["ok","ok","ok","ok","ok","ok","ok"]},{"id":26,"label":"Docentes do ensino superior","raw_label":"Docentes do ensino superior (3)","note":"","domain":"Educação","footnotes":[3],"kind":"count","usym":"n.º","dec":0,"v":[9097,null,35740,37078,38667,42395,null],"s":["ok","missing","ok","ok","ok","ok","missing"]},{"id":27,"label":"Museus, jardins zoológicos, botânicos e aquários","raw_label":"Museus, jardins zoológicos, botânicos e aquários","note":"","domain":"Cultura","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[121,320,234,397,453,511,null],"s":["ok","break","break","break","ok","ok","missing"]},{"id":28,"label":"Visitantes de museus, jardins zoológicos, botânicos e aquários","raw_label":"Visitantes de museus, jardins zoológicos, botânicos e aquários","note":"milhares","domain":"Cultura","footnotes":[],"kind":"thousands","usym":"milhares","dec":0,"v":[2980,6578,8556,13495,10119,24590,null],"s":["ok","break","break","break","ok","ok","missing"]},{"id":29,"label":"Sessões de espetáculos ao vivo","raw_label":"Sessões de espetáculos ao vivo","note":"","domain":"Cultura","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[4578,3390,13196,25871,24469,44941,null],"s":["ok","ok","break","break","ok","ok","missing"]},{"id":30,"label":"Espectadores de espetáculos ao vivo","raw_label":"Espectadores de espetáculos ao vivo","note":"milhares","domain":"Cultura","footnotes":[],"kind":"thousands","usym":"milhares","dec":0,"v":[1390,666,3836,8484,3568,18575,null],"s":["ok","ok","break","break","ok","ok","missing"]},{"id":31,"label":"Ecrãs de cinema","raw_label":"Ecrãs de cinema","note":"","domain":"Cultura","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[null,null,455,558,547,563,579],"s":["missing","missing","ok","break","ok","ok","ok"]},{"id":32,"label":"Espectadores de cinema","raw_label":"Espectadores de cinema","note":"milhares","domain":"Cultura","footnotes":[],"kind":"thousands","usym":"milhares","dec":0,"v":[30339,8234,19471,15702,5480,11864,10955],"s":["ok","ok","break","break","ok","ok","ok"]},{"id":33,"label":"Hospitais","raw_label":"Hospitais","note":"","domain":"Saúde","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[null,237,217,226,240,242,null],"s":["missing","ok","ok","break","ok","ok","missing"]},{"id":34,"label":"Farmácias","raw_label":"Farmácias","note":"","domain":"Saúde","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[null,2501,2556,2900,2921,2921,2921],"s":["missing","ok","ok","ok","ok","ok","ok"]},{"id":35,"label":"Médicos","raw_label":"Médicos","note":"","domain":"Saúde","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[null,28326,33233,42796,58735,63965,null],"s":["missing","ok","ok","ok","ok","ok","missing"]},{"id":36,"label":"Enfermeiros","raw_label":"Enfermeiros","note":"","domain":"Saúde","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[null,30094,39529,64478,80238,85499,null],"s":["missing","ok","ok","ok","ok","ok","missing"]},{"id":37,"label":"Tribunais judiciais","raw_label":"Tribunais judiciais","note":"","domain":"Justiça","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[218,308,337,327,38,38,38],"s":["ok","ok","ok","ok","ok","ok","ok"]},{"id":38,"label":"Magistrados judiciais","raw_label":"Magistrados judiciais","note":"","domain":"Justiça","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[688,1028,1440,1748,1735,1715,1749],"s":["ok","ok","ok","ok","ok","ok","ok"]},{"id":39,"label":"Advogados","raw_label":"Advogados","note":"","domain":"Justiça","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[4550,9526,18954,27869,33937,36652,36462],"s":["ok","ok","ok","ok","ok","ok","ok"]},{"id":40,"label":"Processos entrados nos tribunais judiciais","raw_label":"Processos entrados nos tribunais judiciais","note":"","domain":"Justiça","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[489658,723263,737000,802626,462603,527938,538184],"s":["ok","ok","ok","ok","ok","ok","ok"]},{"id":41,"label":"Processos findos nos tribunais judiciais","raw_label":"Processos findos nos tribunais judiciais","note":"","domain":"Justiça","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[471522,709781,669874,771651,527279,522551,514710],"s":["ok","ok","ok","ok","ok","ok","ok"]},{"id":42,"label":"Processos pendentes nos tribunais judiciais","raw_label":"Processos pendentes nos tribunais judiciais","note":"","domain":"Justiça","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[643465,641354,1284233,1690162,627713,589315,612789],"s":["ok","ok","ok","ok","ok","ok","ok"]},{"id":43,"label":"Taxa de congestão nos tribunais judiciais (%)","raw_label":"Taxa de congestão nos tribunais judiciais (%)","note":"processos pendentes por 100 findos","domain":"Justiça","footnotes":[],"kind":"pct","usym":"%","dec":1,"v":[132.6,88.5,181.7,215,131.3,111.7,114.5],"s":["ok","ok","ok","ok","ok","ok","ok"]},{"id":44,"label":"Ocupação efetiva das prisões (%)","raw_label":"Ocupação efetiva das prisões (%)","note":"(reclusos / lotação prisional )*100","domain":"Justiça","footnotes":[],"kind":"pct","usym":"%","dec":1,"v":[75.7,108.4,114.5,105,91.8,98,104.7],"s":["ok","ok","ok","ok","ok","ok","ok"]},{"id":45,"label":"Condenados por 100 arguidos","raw_label":"Condenados por 100 arguidos","note":"","domain":"Justiça","footnotes":[],"kind":"ratio","usym":"por 100","dec":1,"v":[29.7,31.9,58.4,64.6,66.9,66.7,null],"s":["ok","ok","ok","ok","ok","ok","missing"]},{"id":46,"label":"Empresas","raw_label":"Empresas (2)","note":"","domain":"Empresas","footnotes":[2],"kind":"count","usym":"n.º","dec":0,"v":[null,385565,593574,1136256,1359035,1593415,null],"s":["missing","ok","break","break","ok","ok","missing"]},{"id":47,"label":"Pessoal ao serviço nas empresas","raw_label":"Pessoal ao serviço nas empresas (2)","note":"","domain":"Empresas","footnotes":[2],"kind":"count","usym":"n.º","dec":0,"v":[null,2514261,3116351,3741633,4331044,5043373,null],"s":["missing","ok","break","break","ok","ok","missing"]},{"id":48,"label":"Sociedades constituídas","raw_label":"Sociedades constituídas (4)","note":"","domain":"Empresas","footnotes":[4],"kind":"count","usym":"n.º","dec":0,"v":[9878,17687,45290,31986,38764,47509,48531],"s":["ok","ok","break","break","ok","ok","ok"]},{"id":49,"label":"Sociedades dissolvidas","raw_label":"Sociedades dissolvidas (4)","note":"","domain":"Empresas","footnotes":[4],"kind":"count","usym":"n.º","dec":0,"v":[963,1003,6858,32473,21437,20726,13239],"s":["ok","ok","break","break","ok","ok","ok"]},{"id":50,"label":"População ativa (milhares)","raw_label":"População ativa (milhares) (8)","note":"população empregada + população desempregada","domain":"Trabalho","footnotes":[8],"kind":"thousands","usym":"milhares","dec":1,"v":[4367.2,5101.6,5342.4,5111.8,5127,5463.4,5612.4],"s":["ok","break","break","break","ok","ok","ok"]},{"id":51,"label":"Taxa de emprego (%)","raw_label":"Taxa de emprego (%) (8)","note":"população empregada por cada 100 indivíduos com 16 a 89 anos","domain":"Trabalho","footnotes":[8],"kind":"pct","usym":"%","dec":1,"v":[null,null,59,50.2,54.3,56.4,57.3],"s":["missing","missing","ok","break","ok","ok","ok"]},{"id":52,"label":"População empregada no setor primário (%)","raw_label":"População empregada no setor primário (%) (8)","note":"","domain":"Trabalho","footnotes":[8],"kind":"pct","usym":"%","dec":1,"v":[26.7,17.5,12.9,3.9,2.8,2.9,2.4],"s":["ok","break","break","break","ok","ok","ok"]},{"id":53,"label":"População empregada no setor secundário (%)","raw_label":"População empregada no setor secundário (%) (8)","note":"","domain":"Trabalho","footnotes":[8],"kind":"pct","usym":"%","dec":1,"v":[36.5,33.5,33.8,28.7,25.1,24.7,24.4],"s":["ok","break","break","break","ok","ok","ok"]},{"id":54,"label":"População empregada no setor terciário (%)","raw_label":"População empregada no setor terciário (%) (8)","note":"","domain":"Trabalho","footnotes":[8],"kind":"pct","usym":"%","dec":1,"v":[36.8,49,53.3,67.3,72.1,72.4,73.2],"s":["ok","break","break","break","ok","ok","ok"]},{"id":55,"label":"Trabalhadores por conta de outrem (%)","raw_label":"Trabalhadores por conta de outrem (%) (8)","note":"","domain":"Trabalho","footnotes":[8],"kind":"pct","usym":"%","dec":1,"v":[67.5,69.6,72.5,83.9,84.4,85.1,84.8],"s":["ok","break","break","break","ok","ok","ok"]},{"id":56,"label":"Taxa de desemprego (%)","raw_label":"Taxa de desemprego (%) (8)","note":"população desempregada por 100 activos","domain":"Trabalho","footnotes":[8],"kind":"pct","usym":"%","dec":1,"v":[null,null,4,13.5,6.7,6.4,6],"s":["missing","missing","ok","break","ok","ok","ok"]},{"id":57,"label":"Pensões da Segurança Social","raw_label":"Pensões da Segurança Social","note":"","domain":"Proteção social","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[1719685,2207145,2528929,2943654,2977307,3049678,null],"s":["ok","ok","ok","ok","ok","ok","missing"]},{"id":58,"label":"Reformados, aposentados e pensionistas da Caixa Geral de Aposentações","raw_label":"Reformados, aposentados e pensionistas da Caixa Geral de Aposentações","note":"","domain":"Proteção social","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[140051,268110,436176,591777,647483,662667,669351],"s":["ok","ok","ok","ok","ok","ok","ok"]},{"id":59,"label":"Pensões da Segurança Social e CGA em % da população residente","raw_label":"Pensões da Segurança Social e CGA em % da população residente (7)","note":"com 15 e mais anos","domain":"Proteção social","footnotes":[7],"kind":"pct","usym":"%","dec":1,"v":[25.1,30.8,34,39.4,39.3,37.3,37.3],"s":["ok","ok","ok","ok","break","ok","ok"]},{"id":60,"label":"Beneficiários de prestações de desemprego","raw_label":"Beneficiários de prestações de desemprego","note":"","domain":"Proteção social","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[58869,93830,155979,320387,212968,195245,188771],"s":["ok","break","break","ok","ok","ok","ok"]},{"id":61,"label":"Despesas das Administrações Públicas","raw_label":"Despesas das Administrações Públicas","note":"milhões €","domain":"Economia","footnotes":[],"kind":"meur","usym":"M€","dec":1,"v":[null,null,59914.8,88207.5,102495.1,122805.3,130941.4],"s":["missing","missing","ok","ok","ok","ok","prelim"]},{"id":62,"label":"PIB","raw_label":"PIB","note":"milhões €","domain":"Economia","footnotes":[],"kind":"meur","usym":"M€","dec":1,"v":[10058.2,65005.2,135775,176318,216493.7,289784.3,306765.5],"s":["ok","ok","ok","ok","ok","ok","prelim"]},{"id":63,"label":"PIB per capita","raw_label":"PIB per capita (8)","note":"€","domain":"Economia","footnotes":[8],"kind":"eur","usym":"€","dec":0,"v":[1021,6526,13102,16674,20801,27096,28393],"s":["ok","ok","ok","ok","ok","ok","prelim"]},{"id":64,"label":"Consumo Público em % PIB","raw_label":"Consumo Público em % PIB","note":"","domain":"Economia","footnotes":[],"kind":"pct","usym":"%","dec":1,"v":[14.3,16.7,19.2,19.7,18.5,16.8,17.1],"s":["ok","ok","ok","ok","ok","ok","prelim"]},{"id":65,"label":"Consumo Privado em % PIB","raw_label":"Consumo Privado em % PIB","note":"","domain":"Economia","footnotes":[],"kind":"pct","usym":"%","dec":1,"v":[62.6,63,61.2,63.9,61.7,59.2,null],"s":["ok","ok","ok","ok","ok","ok","missing"]},{"id":66,"label":"Investimento em % PIB","raw_label":"Investimento em % PIB","note":"","domain":"Economia","footnotes":[],"kind":"pct","usym":"%","dec":1,"v":[33.1,26.7,27.4,18.5,20.5,20.4,20.7],"s":["ok","ok","ok","ok","ok","ok","prelim"]},{"id":67,"label":"Taxa de inflação (%)","raw_label":"Taxa de inflação (%)","note":"","domain":"Economia","footnotes":[],"kind":"pct","usym":"%","dec":1,"v":[19.2,11.8,4.4,3.7,1.3,2.4,2.3],"s":["ok","ok","ok","ok","ok","ok","ok"]},{"id":68,"label":"Rendimento disponível bruto","raw_label":"Rendimento disponível bruto","note":"milhões €","domain":"Economia","footnotes":[],"kind":"meur","usym":"M€","dec":1,"v":[10651,68545.7,135941.5,174500.6,220494.8,289765.2,306997.5],"s":["ok","ok","ok","ok","ok","ok","prelim"]},{"id":69,"label":"Poupança bruta dos particulares em % rendimento disponível dos particulares","raw_label":"Poupança bruta dos particulares em % rendimento disponível dos particulares","note":"","domain":"Economia","footnotes":[],"kind":"pct","usym":"%","dec":1,"v":[24.9,18.2,13.1,8.9,10.9,12.5,null],"s":["ok","ok","ok","ok","ok","ok","missing"]},{"id":70,"label":"Consumo de energia elétrica por habitante (kWh)","raw_label":"Consumo de energia elétrica por habitante (kWh) (7)","note":"","domain":"Território e ambiente","footnotes":[7],"kind":"kwh","usym":"kWh","dec":1,"v":[null,null,3912.2,4652.1,4591,4549,null],"s":["missing","missing","ok","ok","ok","ok","missing"]},{"id":71,"label":"Área ardida","raw_label":"Área ardida (6)","note":"Hectare","domain":"Território e ambiente","footnotes":[6],"kind":"ha","usym":"ha","dec":0,"v":[89798,182486,117420,77104,28360,137651,270695],"s":["ok","ok","ok","ok","ok","ok","ok"]},{"id":72,"label":"Caixas Automática Multibanco","raw_label":"Caixas Automática Multibanco","note":"","domain":"Economia","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[null,1249,8547,13911,12486,12459,12369],"s":["missing","ok","ok","ok","ok","ok","ok"]},{"id":73,"label":"Viagens dentro do país em % das viagens de residentes","raw_label":"Viagens dentro do país em % das viagens de residentes","note":"turismo interno","domain":"Turismo e transportes","footnotes":[],"kind":"pct","usym":"%","dec":1,"v":[null,null,null,90.4,94.2,85,null],"s":["missing","missing","missing","ok","ok","ok","missing"]},{"id":74,"label":"Hóspedes estrangeiros nos estabelecimentos hoteleiros (%)","raw_label":"Hóspedes estrangeiros nos estabelecimentos hoteleiros (%)","note":"","domain":"Turismo e transportes","footnotes":[],"kind":"pct","usym":"%","dec":1,"v":[46.8,57.4,54.3,53,40.9,61.4,null],"s":["ok","ok","ok","break","ok","ok","missing"]},{"id":75,"label":"Balança de viagens e turismo em % do PIB","raw_label":"Balança de viagens e turismo em % do PIB","note":"saldo","domain":"Turismo e transportes","footnotes":[],"kind":"pct","usym":"%","dec":1,"v":[null,null,2.8,2.9,3,7.2,7.2],"s":["missing","missing","ok","ok","ok","ok","prelim"]},{"id":76,"label":"Tráfego de passageiros nos principais aeroportos","raw_label":"Tráfego de passageiros nos principais aeroportos","note":"","domain":"Turismo e transportes","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[6367372,11054871,20703095,30686190,25598844,70416494,null],"s":["ok","ok","ok","ok","ok","ok","missing"]},{"id":77,"label":"Mercadorias transportadas por via marítima","raw_label":"Mercadorias transportadas por via marítima","note":"","domain":"Turismo e transportes","footnotes":[],"kind":"count","usym":"n.º","dec":0,"v":[39819255,50645496,56164262,67506738,83079890,85669179,null],"s":["ok","ok","break","break","ok","ok","missing"]},{"id":78,"label":"Peixe capturado","raw_label":"Peixe capturado","note":"toneladas","domain":"Agricultura e pesca","footnotes":[],"kind":"ton","usym":"t","dec":0,"v":[264398,305431,146094,164236,140562,122039,119570],"s":["ok","ok","ok","ok","ok","ok","ok"]},{"id":79,"label":"Produção de vinho","raw_label":"Produção de vinho","note":"hectolitros","domain":"Agricultura e pesca","footnotes":[],"kind":"hl","usym":"hl","dec":0,"v":[null,null,7789427,5622363,7358539,6924132,5956164],"s":["missing","missing","ok","break","ok","ok","ok"]},{"id":80,"label":"Produção de azeite","raw_label":"Produção de azeite (6)","note":"hectolitros","domain":"Agricultura e pesca","footnotes":[6],"kind":"hl","usym":"hl","dec":0,"v":[251115,668711,349502,831914,2289549,1959949,1904574],"s":["ok","ok","ok","ok","ok","ok","ok"]}]};
+const Y = DATA.meta.years, NY = Y.length, IND = DATA.ind;
+const X0 = Y[0], X1 = Y[NY-1];
+const nf = (d)=>new Intl.NumberFormat('pt-PT',{minimumFractionDigits:d,maximumFractionDigits:d,useGrouping:true});
+const cf = new Intl.NumberFormat('pt-PT',{notation:'compact',maximumFractionDigits:1});
+const GLYPH = {ok:'', break:'┴', prelim:'Pre', missing:'–'};
+const $ = s=>document.querySelector(s);
+const el = (t,c,x)=>{const n=document.createElement(t); if(c)n.className=c; if(x!=null)n.textContent=x; return n;};
+const byLabel = L => IND.find(r=>r.label===L);
+
+/* ---------- formatting ---------- */
+function unitSuffix(r){
+  switch(r.kind){
+    case 'pct': return ' %'; case 'permille': return ' ‰'; case 'meur': return ' M€';
+    case 'eur': return ' €'; case 'thousands': return ' milhares'; case 'ha': return ' ha';
+    case 'ton': return ' t'; case 'hl': return ' hl'; case 'kwh': return ' kWh'; default: return '';
+  }
+}
+function fmt(v,r){ return v==null ? '–' : nf(r.dec).format(v)+unitSuffix(r); }
+function fmtBare(v,d){ return v==null ? '–' : nf(d==null?1:d).format(v); }
+function axTicker(r,ticks){
+  if(r.kind==='pct'||r.kind==='permille'||r.kind==='ratio'){
+    const st=ticks.length>1?Math.abs(ticks[1]-ticks[0]):1;      // decimals from the step, not the data
+    const d = st<0.05?3 : st<0.5?2 : st<5?1 : 0;
+    return v=>nf(d).format(v);
+  }
+  const big = Math.max(...ticks.map(t=>Math.abs(t)))>=10000;    // one format for the whole axis
+  return v=> big ? cf.format(v) : nf(0).format(v);
+}
+
+/* ---------- scale ---------- */
+function niceScale(lo,hi,fromZero){
+  const origLo = lo;
+  if(fromZero) lo = Math.min(0,lo);
+  if(lo===hi){ const p=Math.abs(lo)||1; lo-=p*0.1; hi+=p*0.1; }
+  else if(!fromZero){ const p=(hi-lo)*0.10; lo-=p; hi+=p; }
+  else { hi += (hi-lo)*0.06; }
+  const span=hi-lo, raw=span/4, mag=Math.pow(10,Math.floor(Math.log10(raw))), n=raw/mag;
+  const step=(n<=1?1:n<=2?2:n<=2.5?2.5:n<=5?5:10)*mag;
+  let a=Math.floor(lo/step)*step; const b=Math.ceil(hi/step)*step;
+  if(origLo>=0 && a<0) a=0;   // all-positive data never gets a negative axis
+  const ticks=[]; for(let t=a;t<=b+step*1e-9;t+=step) ticks.push(+t.toFixed(10));
+  return {lo:a,hi:b,ticks};
+}
+const SVGNS='http://www.w3.org/2000/svg';
+function svg(t,a){const n=document.createElementNS(SVGNS,t); for(const k in a) n.setAttribute(k,a[k]); return n;}
+
+/* ---------- the chart engine ---------- */
+const PAD={l:60,r:62,t:14,b:58};
+function renderLines(box, series, o){
+  o = o||{};
+  box.innerHTML='';
+  const W = Math.max(320, box.clientWidth||700), H = o.h||318;
+  const pw = W-PAD.l-PAD.r, ph = H-PAD.t-PAD.b;
+  const naive = !!o.naive;
+  // ---- collect finite values
+  let vals=[];
+  series.forEach(s=>s.v.forEach((v,i)=>{ const q = naive&&v==null?0:v; if(q!=null&&isFinite(q)) vals.push(q); }));
+  if(!vals.length){ box.appendChild(el('p','axnote','Sem valores para desenhar.')); return; }
+  const sc = niceScale(Math.min(...vals), Math.max(...vals), o.fromZero||o.forceZeroBase);
+  const yv = v => PAD.t + ph - (v-sc.lo)/(sc.hi-sc.lo)*ph;
+  const tf = o.tickFmt || axTicker(series[0], sc.ticks);
+  const xv = i => naive ? PAD.l + (NY===1?0:i/(NY-1)*pw)
+                        : PAD.l + (Y[i]-X0)/(X1-X0)*pw;
+  const g = svg('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':o.aria||'gráfico de linhas'});
+  g.setAttribute('tabindex','0');
+  // gridlines + y ticks
+  sc.ticks.forEach(t=>{
+    g.appendChild(svg('line',{x1:PAD.l,x2:PAD.l+pw,y1:yv(t),y2:yv(t),stroke:'var(--rule-2)','stroke-width':1}));
+    const tx=svg('text',{x:PAD.l-9,y:yv(t)+4,'text-anchor':'end',fill:'var(--ink-3)','font-size':11,
+      class:'num'});
+    tx.textContent = tf(t);
+    g.appendChild(tx);
+  });
+  // zero rule if crossing
+  if(sc.lo<0&&sc.hi>0) g.appendChild(svg('line',{x1:PAD.l,x2:PAD.l+pw,y1:yv(0),y2:yv(0),stroke:'var(--axis)','stroke-width':1}));
+  // x axis
+  g.appendChild(svg('line',{x1:PAD.l,x2:PAD.l+pw,y1:PAD.t+ph,y2:PAD.t+ph,stroke:'var(--axis)','stroke-width':1}));
+  const HW=15; let lastR=-1e9, staggered=false;   // 4-digit label half-width
+  Y.forEach((yr,i)=>{
+    const x=xv(i), second=(x-HW)<lastR+3;
+    if(second) staggered=true; else lastR=x+HW;
+    const t=svg('text',{x,y:PAD.t+ph+(second?31:17),'text-anchor':'middle',fill:'var(--ink-3)',
+      'font-size':11,class:'num'});
+    t.textContent=yr; g.appendChild(t);
+  });
+  // state glyph row (honest mode only)
+  if(!naive){
+    Y.forEach((yr,i)=>{
+      const st = series.map(s=>s.s[i]).find(x=>x==='missing'||x==='break'||x==='prelim');
+      if(!st) return;
+      const t=svg('text',{x:xv(i),y:PAD.t+ph+(staggered?46:33),'text-anchor':'middle',
+        fill:'var(--ink-3)','font-size':10,class:'m'});
+      t.textContent=GLYPH[st]; g.appendChild(t);
+    });
+  }
+  // series
+  const ends=[];
+  series.forEach(s=>{
+    const val = i => naive && s.v[i]==null ? 0 : s.v[i];
+    for(let i=1;i<NY;i++){
+      const a=val(i-1), b=val(i);
+      if(a==null||b==null) continue;
+      const brk = !naive && s.s[i]==='break';
+      g.appendChild(svg('line',{x1:xv(i-1),y1:yv(a),x2:xv(i),y2:yv(b),
+        stroke:s.color,'stroke-width':brk?1:2,'stroke-linecap':'round',opacity:brk?0.3:1}));
+    }
+    for(let i=0;i<NY;i++){
+      const v=val(i); if(v==null) continue;
+      const pre = !naive && s.s[i]==='prelim';
+      g.appendChild(svg('circle',{cx:xv(i),cy:yv(v),r:4.5,fill:pre?'var(--surface)':s.color,
+        stroke:pre?s.color:'var(--surface)','stroke-width':2}));
+    }
+    // endpoint direct label collected here, placed below once all are known
+    let last=-1; for(let i=NY-1;i>=0;i--) if(val(i)!=null){last=i;break;}
+    if(last>=0 && !o.noEnd) ends.push({x:xv(last)+9,y:yv(val(last))+4,
+      tx:(o.endFmt?o.endFmt(val(last)):fmtBare(val(last),s.dec))});
+  });
+  ends.sort((p,q)=>p.y-q.y);
+  for(let k=1;k<ends.length;k++) if(ends[k].y-ends[k-1].y<13) ends[k].y=ends[k-1].y+13;
+  ends.forEach(e=>{
+    const t=svg('text',{x:e.x,y:e.y,fill:'var(--ink)','font-size':11.5,'font-weight':600,class:'num'});
+    t.textContent=e.tx; g.appendChild(t);
+  });
+  // hover layer
+  const cross = svg('line',{x1:0,x2:0,y1:PAD.t,y2:PAD.t+ph,stroke:'var(--axis)','stroke-width':1,opacity:0});
+  g.appendChild(cross);
+  const dots = series.map(s=>{const c=svg('circle',{r:6.5,fill:s.color,stroke:'var(--surface)','stroke-width':2,opacity:0});g.appendChild(c);return c;});
+  box.appendChild(g);
+  const tip = el('div','tip'); box.appendChild(tip);
+  const show = i =>{
+    cross.setAttribute('x1',xv(i)); cross.setAttribute('x2',xv(i)); cross.setAttribute('opacity',1);
+    let html = `<div class="ty">${Y[i]}</div>`;
+    series.forEach((s,k)=>{
+      const v = naive && s.v[i]==null ? 0 : s.v[i];
+      if(v==null){ dots[k].setAttribute('opacity',0); }
+      else { dots[k].setAttribute('cx',xv(i)); dots[k].setAttribute('cy',yv(v)); dots[k].setAttribute('opacity',1); }
+      const st=s.s[i];
+      html += `<div><span class="tv">${o.tipFmt?o.tipFmt(v,s):fmt(v,s)}</span>`
+           + (series.length>1?` <span style="color:var(--ink-3);font-size:11px">${s.label}</span>`:'')+`</div>`;
+      if(!naive){
+        if(st==='missing') html += `<div class="tn">– ausência de valor (0 no ficheiro)</div>`;
+        if(st==='break') html += `<div class="tn">┴ quebra de série — não comparável com ${Y[i-1]}</div>`;
+        if(st==='prelim') html += `<div class="tn">Pre valor preliminar</div>`;
+      }
+    });
+    tip.innerHTML=html; tip.style.opacity=1;
+    const left = Math.min(Math.max(xv(i)/W*box.clientWidth-70,0), box.clientWidth-160);
+    tip.style.left=left+'px'; tip.style.top='4px';
+  };
+  const hide = ()=>{cross.setAttribute('opacity',0);dots.forEach(d=>d.setAttribute('opacity',0));tip.style.opacity=0;};
+  Y.forEach((yr,i)=>{
+    const lo = i===0?PAD.l:(xv(i-1)+xv(i))/2, hi = i===NY-1?PAD.l+pw:(xv(i)+xv(i+1))/2;
+    const r = svg('rect',{x:lo,y:PAD.t,width:Math.max(hi-lo,1),height:ph,fill:'transparent'});
+    r.addEventListener('mouseenter',()=>show(i)); r.addEventListener('mousemove',()=>show(i));
+    g.appendChild(r);
+  });
+  g.addEventListener('mouseleave',hide);
+  let ki=0;
+  g.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'){ki=Math.min(NY-1,ki+1);show(ki);e.preventDefault();}
+    else if(e.key==='ArrowLeft'){ki=Math.max(0,ki-1);show(ki);e.preventDefault();}
+    else if(e.key==='Escape')hide();
+  });
+  g.addEventListener('blur',hide);
+  return sc;
+}
+
+/* ---------- trajectory ---------- */
+function renderTraj(box, a, b){
+  box.innerHTML='';
+  const W=Math.max(320,box.clientWidth||700), H=390;
+  const P={l:66,r:26,t:20,b:56}, pw=W-P.l-P.r, ph=H-P.t-P.b;
+  const pts=[]; for(let i=0;i<NY;i++) if(a.v[i]!=null&&b.v[i]!=null) pts.push({i,x:a.v[i],y:b.v[i]});
+  if(pts.length<2){ box.appendChild(el('p','axnote','São precisos pelo menos dois anos com os dois indicadores presentes.')); return; }
+  const sx=niceScale(Math.min(...pts.map(p=>p.x)),Math.max(...pts.map(p=>p.x)),false);
+  const sy=niceScale(Math.min(...pts.map(p=>p.y)),Math.max(...pts.map(p=>p.y)),false);
+  const X=v=>P.l+(v-sx.lo)/(sx.hi-sx.lo)*pw, Yy=v=>P.t+ph-(v-sy.lo)/(sy.hi-sy.lo)*ph;
+  const g=svg('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':`trajetória de ${a.label} contra ${b.label}`});
+  const tfx=axTicker(a,sx.ticks), tfy=axTicker(b,sy.ticks);
+  sy.ticks.forEach(t=>{
+    g.appendChild(svg('line',{x1:P.l,x2:P.l+pw,y1:Yy(t),y2:Yy(t),stroke:'var(--rule-2)','stroke-width':1}));
+    const q=svg('text',{x:P.l-9,y:Yy(t)+4,'text-anchor':'end',fill:'var(--ink-3)','font-size':11});
+    q.textContent=tfy(t); g.appendChild(q);
+  });
+  sx.ticks.forEach(t=>{
+    const q=svg('text',{x:X(t),y:P.t+ph+18,'text-anchor':'middle',fill:'var(--ink-3)','font-size':11});
+    q.textContent=tfx(t); g.appendChild(q);
+  });
+  g.appendChild(svg('line',{x1:P.l,x2:P.l+pw,y1:P.t+ph,y2:P.t+ph,stroke:'var(--axis)','stroke-width':1}));
+  for(let k=1;k<pts.length;k++){
+    const brk = a.s[pts[k].i]==='break'||b.s[pts[k].i]==='break';
+    g.appendChild(svg('line',{x1:X(pts[k-1].x),y1:Yy(pts[k-1].y),x2:X(pts[k].x),y2:Yy(pts[k].y),
+      stroke:'var(--s1)','stroke-width':brk?1:2,opacity:brk?0.3:0.85,'stroke-linecap':'round'}));
+  }
+  // arrowhead on final segment
+  const p1=pts[pts.length-2], p2=pts[pts.length-1];
+  const ang=Math.atan2(Yy(p2.y)-Yy(p1.y),X(p2.x)-X(p1.x));
+  const ax=X(p2.x)-Math.cos(ang)*13, ay=Yy(p2.y)-Math.sin(ang)*13;
+  g.appendChild(svg('polygon',{points:`${X(p2.x)},${Yy(p2.y)} ${ax-Math.sin(ang)*5},${ay+Math.cos(ang)*5} ${ax+Math.sin(ang)*5},${ay-Math.cos(ang)*5}`,fill:'var(--s1)'}));
+  pts.forEach((p,k)=>{
+    const first=k===0, last=k===pts.length-1;
+    g.appendChild(svg('circle',{cx:X(p.x),cy:Yy(p.y),r:last?6:5,fill:first?'var(--surface)':'var(--s1)',
+      stroke:'var(--s1)','stroke-width':2}));
+  });
+  // year labels: greedy placement so clustered points don't overprint each other
+  const placed=[];
+  const CAND=[[0,-11],[0,17],[21,4],[-21,4],[19,-9],[-19,-9],[19,14],[-19,14]];
+  pts.forEach(p=>{
+    const cx=X(p.x), cy=Yy(p.y);
+    let pick=CAND[0];
+    for(const c of CAND){
+      const bx=cx+c[0]-15, by=cy+c[1]-10;
+      if(!placed.some(q=>Math.abs(q.x-bx)<30&&Math.abs(q.y-by)<13)){ pick=c; break; }
+    }
+    placed.push({x:cx+pick[0]-15,y:cy+pick[1]-10});
+    const t=svg('text',{x:cx+pick[0],y:cy+pick[1],'text-anchor':'middle',fill:'var(--ink-2)',
+      'font-size':11,class:'num'});
+    t.textContent=Y[p.i]; g.appendChild(t);
+  });
+  const xl=svg('text',{x:P.l+pw/2,y:H-13,'text-anchor':'middle',fill:'var(--ink-2)','font-size':12});
+  xl.textContent=a.label+(unitSuffix(a)?` (${unitSuffix(a).trim()})`:''); g.appendChild(xl);
+  const yl=svg('text',{x:15,y:P.t+ph/2,'text-anchor':'middle',fill:'var(--ink-2)','font-size':12,transform:`rotate(-90 15 ${P.t+ph/2})`});
+  yl.textContent=b.label+(unitSuffix(b)?` (${unitSuffix(b).trim()})`:''); g.appendChild(yl);
+  box.appendChild(g);
+}
+
+/* ---------- table builder ---------- */
+function tableFor(series, fmtF){
+  const w=el('div','tblwrap'), t=el('table'), h=el('thead'), hr=el('tr');
+  hr.appendChild(el('th','','Indicador')); Y.forEach(y=>hr.appendChild(el('th','',String(y))));
+  h.appendChild(hr); t.appendChild(h);
+  const b=el('tbody');
+  series.forEach(s=>{
+    const r=el('tr'); r.appendChild(el('th','',s.label));
+    for(let i=0;i<NY;i++){
+      const td=el('td');
+      const v=s.v[i];
+      if(v==null){ td.className='na'; td.textContent='–'; td.title='ausência de valor (0 no ficheiro)'; }
+      else{
+        td.textContent = fmtF?fmtF(v,s):fmt(v,s);
+        if(s.s&&GLYPH[s.s[i]]){ const g=el('span','g',GLYPH[s.s[i]]); td.appendChild(g);
+          td.title = s.s[i]==='break'?'quebra de série':'valor preliminar'; }
+      }
+      r.appendChild(td);
+    }
+    b.appendChild(r);
+  });
+  t.appendChild(b); w.appendChild(t); return w;
+}
+
+/* ---------- indicator selects ---------- */
+function fillSelect(sel, selectedId){
+  sel.innerHTML='';
+  DATA.meta.domains.forEach(d=>{
+    const gr=document.createElement('optgroup'); gr.label=d;
+    IND.filter(r=>r.domain===d).forEach(r=>{
+      const o=document.createElement('option'); o.value=r.id;
+      o.textContent=r.label+(r.footnotes.length?'  ('+r.footnotes.join(')(')+')':'');
+      gr.appendChild(o);
+    });
+    sel.appendChild(gr);
+  });
+  if(selectedId!=null) sel.value=selectedId;
+}
+function fnBlock(host, rs, skipUnits){
+  host.innerHTML='';
+  const seen=new Set();
+  rs.forEach(r=>{ if(r.note && !skipUnits) { const d=el('div','', 'Unidade: '+r.note); host.appendChild(d);}
+    r.footnotes.forEach(f=>{ if(seen.has(f))return; seen.add(f);
+      host.appendChild(el('div','', `(${f}) ${DATA.meta.footnotes[f]}`)); }); });
+}
+
+
+/* ================= APRENDER ================= */
+const SRC={
+ fire:{t:'PORDATA · Área ardida e incêndios rurais em Portugal Continental (ICNF/MAE-MAP)',
+       u:'https://www.pordata.pt/portugal/area+ardida+e+incendios+rurais+em+portugal+continental-1192'},
+ unemp:{t:'Observatório das Desigualdades · a evolução do desemprego em Portugal (dados do INE)',
+       u:'https://www.observatorio-das-desigualdades.com/2014/03/17/a-evolucao-do-desemprego-em-portugal-taxa-de-desemprego-em-2013-e-a-mais-alta-da-ultima-decada/'},
+ losj:{t:'Procuradoria-Geral Regional de Lisboa · nova organização judiciária (entrada em vigor a 1/9/2014)',
+       u:'https://pgreg-lisboa.ministeriopublico.pt/destaque/nova-organizacao-judiciaria-area-da-relacao-de-lisboa'},
+ oa:{t:'Ordem dos Advogados · Lei da Organização do Sistema Judiciário (Lei n.º 62/2013)',
+       u:'https://portal.oa.pt/publicacoes/informacao-juridica/direito-nacional/%C3%A1reas-de-referencia/justica/lei-da-organizacao-do-sistema-judiciario-losj/'},
+ ue:{t:'Eurocid / Ministério dos Negócios Estrangeiros · cronologia da adesão',
+       u:'https://eurocid.mne.gov.pt/portugal-na-europa/cronologia-da-adesao'},
+ troika:{t:'Parlamento Europeu · operações da troika em Portugal',
+       u:'https://www.europarl.europa.eu/news/pt/press-room/20140307IPR38407/operacoes-da-troika-em-portugal-pe-aprova-conclusoes-e-recomendacoes'},
+};
+const LESSONS=[
+{id:'A1',tr:0,t:'Zeros que não são zeros',sub:'A armadilha que estraga qualquer cálculo neste ficheiro',
+ steps:[
+  {x:'Segundo este ficheiro, em 1981 Portugal tinha <b>0 eleitores</b>. Tinha também 0 hospitais, 0 médicos, 0 farmácias e 0% de desemprego. Nada disto é verdade.',a:{v:'detail',ind:'Eleitores',naive:true}},
+  {x:'Não são zeros — são células vazias. A PORDATA mostra «–» no ecrã, mas o que está <b>gravado</b> na célula é o número 0, com um formato de apresentação que desenha um travessão. Qualquer programa que leia o ficheiro — Excel, pandas, R — lê zeros.',a:{v:'detail',ind:'Eleitores'}},
+  {x:'São 53 células assim, em 32 dos 81 indicadores. No mapa de integridade aparecem tracejadas e vazias, para que a ausência se pareça com uma ausência.',a:{v:'audit'}},
+  {x:'<b>A regra:</b> num ficheiro de estatística, verifique o formato da célula, não o que aparece no ecrã. Um zero e uma ausência têm consequências opostas — o zero puxa médias para baixo e inventa quedas que nunca existiram.',
+   e:'Isto não diz <b>porque</b> faltam os dados. Pode ser que a estatística não se recolhesse em 1981, que a definição fosse outra, ou que o valor exista mas não neste quadro. O ficheiro não distingue estes casos, e tratá-los todos como iguais seria outro erro.'}]},
+{id:'A2',tr:0,t:'A mentira do eixo do tempo',sub:'Porque é que o espaçamento dos anos não é um detalhe',
+ steps:[
+  {x:'O ficheiro tem sete anos: 1981, 1991, 2001, 2011, 2021, 2024 e 2025. Os intervalos entre eles são de 10, 10, 10, 10, 3 e 1 ano. Muito desiguais.',a:{v:'detail',ind:'PIB'}},
+  {x:'Agora ligue o <b>modo ingénuo</b>. É o que qualquer folha de cálculo faz por omissão: trata os sete anos como sete categorias igualmente espaçadas. Os últimos três anos passam a ocupar um terço do gráfico, e a inclinação de cada segmento fica falsa.',a:{v:'detail',ind:'PIB',naive:true}},
+  {x:'<b>A regra:</b> o eixo do tempo tem de ser proporcional ao tempo. Se as observações não estão igualmente espaçadas, um eixo de categorias distorce todas as inclinações — e a inclinação é precisamente aquilo que se lê num gráfico de linhas.',
+   e:'Um eixo proporcional corrige a distorção, mas não preenche o que falta. Continuam a ser sete pontos para 45 anos, e tudo o que aconteceu entre eles permanece invisível.'}]},
+{id:'A3',tr:0,t:'Dois denominadores no mesmo ficheiro',sub:'O problema mais grave, e o único que não dá erro nenhum',
+ steps:[
+  {x:'Divida o PIB de 2025 pela população residente de 2025 — as duas são linhas deste ficheiro. Dá 26 853 € por pessoa. Mas o ficheiro publica uma linha «PIB per capita» que diz <b>28 393 €</b>.',a:{v:'derived',n:2}},
+  {x:'As duas estão certas — para populações diferentes. As linhas com a nota <b>(7)</b> foram recalculadas com a revisão das Estimativas da População Residente que o INE divulgou a 22/06/2026. As linhas com a nota <b>(8)</b> não foram. O próprio ficheiro avisa que o INE só prevê alinhá-las no 1.º trimestre de 2027.',a:{v:'derived',n:2}},
+  {x:'A divergência chega a cerca de <b>620 mil pessoas</b> em 2025. Contamina o PIB per capita, a taxa de emprego, a de desemprego e as quotas setoriais — 8 indicadores com nota (8), contra 14 com nota (7).',a:{v:'audit'}},
+  {x:'A vista Cruzar recusa-se a misturá-las em silêncio: escolha uma linha (7) e uma (8) e aparece um aviso antes de desenhar qualquer coisa.',a:{v:'cross',a:'PIB per capita',b:'População residente',m:'ratio'}},
+  {x:'<b>A regra:</b> antes de dividir duas colunas, verifique se assentam na mesma base. As notas de rodapé de um quadro estatístico não são decoração — são a definição do que pode e não pode ser combinado.',
+   e:'Não se pode escolher qual delas está certa. São duas fotografias da mesma população tiradas em momentos diferentes, e a versão coerente só existirá em 2027. Até lá, qualquer razão que cruze os dois blocos é uma quantidade que não corresponde a nada.'}]},
+{id:'A4',tr:0,t:'Sete anos escondem os extremos',sub:'Quando uma amostra transforma um ano mau num recorde',
+ steps:[
+  {x:'Área ardida em 2025: <b>270 695 hectares</b>. É o valor mais alto dos sete anos do ficheiro, e o gráfico sobe a pique no fim. Recorde histórico?',a:{v:'detail',ind:'Área ardida'}},
+  {x:'Não. Segundo a mesma fonte — ICNF, publicada pela PORDATA — em <b>2017 arderam 539 921 hectares</b>, praticamente o dobro de 2025. Em 2003, 471 750. Em 2005, 346 718. Nenhum destes anos está neste ficheiro.',s:['fire']},
+  {x:'O mesmo com o desemprego: o máximo do ficheiro é 13,5% em 2011, mas o pico foi em <b>2013</b>. Repare que comparo apenas o ano e não os números: não consegui obter o valor de 2013 na mesma série que o ficheiro usa, e a taxa de 2013 varia entre cerca de 16% e mais de 18% conforme a série e a faixa de idades. Comparar números de séries diferentes seria repetir o erro da lição anterior.',a:{v:'detail',ind:'Taxa de desemprego (%)'},s:['unemp']},
+  {x:'<b>A regra:</b> sete observações não descrevem uma série volátil. Antes de chamar recorde a um valor, pergunte quais anos ficaram fora da amostra — e se os que faltam são precisamente os extremos.',
+   e:'Este ficheiro não se corrige a si próprio. Para incêndios ou desemprego é preciso ir à série anual completa da fonte original; o quadro-resumo não serve para máximos nem para volatilidade.'}]},
+
+{id:'B1',tr:1,t:'O país deixou de se reproduzir',sub:'A mudança mais profunda do ficheiro, em quatro números',
+ steps:[
+  {x:'Em 1981 cada mulher tinha em média <b>2,13 filhos</b>. Em 2025, <b>1,30</b>. É a única série do ficheiro que quase não se mexeu nos últimos quatro anos: 1,30 · 1,27 · 1,30.',a:{v:'detail',ind:'Índice sintético de fecundidade'}},
+  {x:'Ao mesmo tempo, a idade média da mãe no primeiro filho subiu de 23,6 para 30,4 anos. Nesta vista cada ponto é um ano e a seta aponta para o mais recente: a queda é acentuada até 2011 e depois <b>estagna</b> — os últimos três anos ficam agrupados no mesmo canto.',a:{v:'cross',a:'Índice sintético de fecundidade',b:'Idade média da mãe ao nascimento do 1.º filho',m:'traj'}},
+  {x:'A consequência mede-se no saldo natural, que é simplesmente nascimentos menos óbitos. Era <b>+56 300</b> em 1981 e é <b>−34 100</b> em 2025. Morre mais gente do que nasce, e o ficheiro mostra a passagem por zero entre 2001 e 2011.',a:{v:'detail',ind:'Saldo natural (milhares)'}},
+  {x:'Em números absolutos: 152 071 nascimentos em 1981, 87 764 em 2025. Pouco mais de metade, num país que entretanto tem mais 1,5 milhões de habitantes.',a:{v:'detail',ind:'Nascimentos'},
+   e:'O ficheiro mostra o quê e nunca o porquê. Não contém rendimento das famílias, preço da habitação, escolaridade das mulheres, vagas em creches nem idade de saída de casa dos pais — nada com que se possa explicar a queda. Quem a explicar a partir deste quadro está a inventar.'}]},
+{id:'B2',tr:1,t:'A migração que travou a queda',sub:'A única conclusão que o ficheiro impõe sem margem para dúvida',
+ steps:[
+  {x:'Entre 2021 e 2025 a população residente cresceu <b>825 mil pessoas</b>, +7,8%. É o crescimento mais rápido de todo o ficheiro — e vem imediatamente depois de duas décadas de estagnação.',a:{v:'detail',ind:'População residente'}},
+  {x:'Mas o saldo natural foi negativo em <b>todos</b> os anos que o ficheiro reporta. Se morre mais gente do que nasce e a população cresce, a diferença só pode ter vindo de fora. Não é uma interpretação: é aritmética.',a:{v:'derived',n:1}},
+  {x:'A população em idade ativa cresceu 658 mil, depois de vinte anos a cair. E a fecundidade não se mexeu. Não houve nenhum baby boom: a base ativa do país foi importada.',a:{v:'detail',ind:'População em idade ativa'}},
+  {x:'Um indício de quem chegou: o recenseamento eleitoral cresceu apenas <b>1,9%</b> enquanto a população cresceu 7,8%. Quem não tem cidadania portuguesa não entra nos cadernos eleitorais.',a:{v:'cross',a:'População residente',b:'Eleitores',m:'index',base:2021},
+   e:'O ficheiro não diz de onde vieram, com que idade, com que qualificações, em que trabalham, nem se ficam. E o recenseamento inclui portugueses residentes no estrangeiro, pelo que serve de indício e não de medida. Faltam ainda 2022 e 2023, o que obriga a estimar a migração em vez de a contar.'}]},
+{id:'B3',tr:1,t:'Do campo aos serviços',sub:'A economia inverteu-se numa geração',
+ steps:[
+  {x:'Em 1981, mais de um em cada quatro portugueses com emprego trabalhava no setor primário: agricultura, pesca e floresta. Em 2025 são <b>2,4%</b>.',a:{v:'cross',a:'População empregada no setor primário (%)',b:'População empregada no setor terciário (%)',m:'overlay'}},
+  {x:'O terciário — os serviços — passou de 36,8% para <b>73,2%</b>. As duas linhas estão na mesma unidade e no mesmo eixo, por isso pode ver exactamente onde se cruzam: entre 1981 e 1991.'},
+  {x:'Portugal aderiu às Comunidades Europeias a <b>1 de janeiro de 1986</b> — entre a coluna de 1981 e a de 1991, no mesmo intervalo em que as duas linhas se cruzam. Note o que isto <b>não</b> autoriza a dizer: o ficheiro mostra que a inversão ocorreu naquele intervalo, não que a adesão a tenha causado.',s:['ue'],
+   e:'Com apenas quatro pontos entre 1981 e 2011, não é possível datar a inversão melhor do que «durante os anos 80». E estas três linhas têm a nota (8): não estão alinhadas com a população revista, pelo que não devem ser cruzadas com as linhas demográficas.'}]},
+{id:'B4',tr:1,t:'O Estado cresceu e encolheu',sub:'E o ficheiro salta por cima do fundo do poço',
+ steps:[
+  {x:'A despesa pública em percentagem do PIB não está no ficheiro. Mas as duas parcelas estão, e dividir uma pela outra é legítimo aqui porque nenhuma das duas tem nota de rodapé — ao contrário do caso da lição 3.',a:{v:'derived',n:3}},
+  {x:'De 44,1% em 2001 para <b>50,0% em 2011</b>, e depois para 42,7% em 2025. O pico está na coluna de 2011.',a:{v:'derived',n:3}},
+  {x:'Essa coluna cai em cima do início do programa de assistência financeira: Portugal pediu ajuda a 7 de abril de 2011, o memorando foi assinado a 17 de maio de 2011 e o programa terminou a 17 de maio de 2014.',s:['troika']},
+  {x:'No mesmo período, o investimento caiu de 33,1% do PIB em 1981 para 20,7% em 2025, e a poupança das famílias de 24,9% para 12,5% do rendimento disponível. Portugal poupa e investe cerca de metade do que poupava e investia em 1981.',a:{v:'cross',a:'Investimento em % PIB',b:'Poupança bruta dos particulares em % rendimento disponível dos particulares',m:'overlay'},
+   e:'O ficheiro tem 2011 e depois salta para 2021: o fundo do ajustamento, em 2013 e 2014, não existe aqui. O valor de 2011 é o <b>início</b> do programa, não o seu ponto mais baixo — e quem ler este quadro como a história da crise vai datá-la mal.'}]},
+{id:'B5',tr:1,t:'O falso colapso dos tribunais',sub:'Uma mudança de definição que ninguém declarou',
+ steps:[
+  {x:'O ficheiro diz que Portugal tinha <b>327</b> tribunais judiciais em 2011 e <b>38</b> em 2021. Uma queda de 88% em dez anos. O que aconteceu?',a:{v:'detail',ind:'Tribunais judiciais'}},
+  {x:'Não fecharam 289 tribunais. Mudou a unidade de contagem: a <b>Lei n.º 62/2013, de 26 de agosto</b>, regulamentada pelo Decreto-Lei n.º 49/2014, entrou em vigor a <b>1 de setembro de 2014</b> e dividiu o território em 23 comarcas. Depois dessa data conta-se outra coisa.',s:['losj','oa']},
+  {x:'E aqui está o mais importante: <b>o ficheiro não marca nenhuma quebra de série nesta linha.</b> Marca 64 quebras noutros indicadores, com o símbolo ┴. Nesta, nada. Uma mudança de definição não declarada é visualmente indistinguível de um colapso real.',a:{v:'audit'}},
+  {x:'No mesmo salto, os processos pendentes caem de 1,69 milhões para 628 mil e a taxa de congestão de 215% para 131%. Parte disto é recuperação real de pendências, parte é a mesma mudança de cobertura — e o ficheiro não permite separar as duas coisas.',a:{v:'detail',ind:'Processos pendentes nos tribunais judiciais'}},
+  {x:'<b>A regra:</b> um salto grande e súbito numa contagem administrativa é, quase sempre, uma mudança de definição e não um acontecimento. Procure a lei antes de escrever a notícia.',
+   e:'Nada aqui diz se o acesso à justiça melhorou ou piorou, se as decisões ficaram mais rápidas para quem espera por elas, ou se os tribunais ficaram mais longe das pessoas. A atribuição à reforma de 2014 é minha leitura, sustentada na lei — não é uma nota da PORDATA.'}]},
+{id:'B6',tr:1,t:'O turismo virou macroeconomia',sub:'De atividade lateral a 7% do PIB',
+ steps:[
+  {x:'Em 2001, o saldo da balança de viagens e turismo valia <b>2,8%</b> do PIB. Em 2025 vale <b>7,2%</b>. Deixou de ser um setor e passou a ser uma variável macroeconómica.',a:{v:'detail',ind:'Balança de viagens e turismo em % do PIB'}},
+  {x:'Os passageiros nos principais aeroportos passaram de 6,4 milhões em 1981 para <b>70,4 milhões</b> em 2024 — mais de onze vezes, num país de 11 milhões de habitantes.',a:{v:'detail',ind:'Tráfego de passageiros nos principais aeroportos'}},
+  {x:'E 61,4% dos hóspedes em estabelecimentos hoteleiros eram estrangeiros em 2024, o valor mais alto do ficheiro. Repare na coluna de 2021: a pandemia derruba-a para 40,9%, e a de 2025 não existe para este indicador.',a:{v:'detail',ind:'Hóspedes estrangeiros nos estabelecimentos hoteleiros (%)'},
+   e:'Um saldo de 7,2% do PIB diz que entra dinheiro no país, não para onde vai. O ficheiro não tem preços da habitação, salários do setor, contratos precários nem distribuição geográfica — não há aqui nada com que avaliar quem ganha e quem perde com isto.'}]},
+];
+const TRACKS=[
+ {t:'Armadilhas dos dados',c:'Quatro lições sobre erros que este ficheiro comete ou permite. Servem para qualquer conjunto de dados, não só para este.'},
+ {t:'O que aconteceu a Portugal',c:'Seis lições sobre o país, construídas só com o que o ficheiro sustenta. Cada uma acaba no que fica sem resposta.'},
+];
+
+/* ---- progress ---- */
+const LKEY='pt81.lessons.done';
+function loadDone(){ try{ return new Set(JSON.parse(localStorage.getItem(LKEY)||'[]')); }catch(e){ return new Set(); } }
+function saveDone(set){ try{ localStorage.setItem(LKEY,JSON.stringify([...set])); }catch(e){} }
+let DONE=loadDone();
+
+function drawLearn(){
+  const host=$('#l-tracks'); host.innerHTML='';
+  TRACKS.forEach((tk,ti)=>{
+    const d=el('div','track');
+    d.appendChild(el('h3','',tk.t));
+    d.appendChild(el('p','cap',tk.c));
+    LESSONS.filter(l=>l.tr===ti).forEach((l,k)=>{
+      const b=document.createElement('button'); b.type='button';
+      b.className='lsn'+(DONE.has(l.id)?' done':'');
+      b.appendChild(el('span','n', DONE.has(l.id)?'✓':String(k+1)));
+      const tt=el('span','tt'); tt.appendChild(el('b','',l.t)); tt.appendChild(el('span','',l.sub));
+      b.appendChild(tt); b.appendChild(el('span','go','›'));
+      b.addEventListener('click',()=>startLesson(l.id));
+      d.appendChild(b);
+    });
+    host.appendChild(d);
+  });
+  const n=LESSONS.filter(l=>DONE.has(l.id)).length;
+  $('#l-prog').querySelector('i').style.width=(n/LESSONS.length*100)+'%';
+  $('#l-prog').querySelector('span').textContent=n+' de '+LESSONS.length+' concluídas';
+  $('#cnt-lsn').textContent=LESSONS.length;
+}
+
+/* ---- runner ---- */
+let Lz=null;
+function applyAct(a){
+  if(!a) return;
+  if(a.v==='detail'){ const r=byLabel(a.ind); if(r) openDetail(r.id,a); return; }
+  if($('#drawer').classList.contains('on')) closeDetail();
+  if(a.v==='cross'){
+    const A=byLabel(a.a), B=byLabel(a.b); if(!A||!B) return;
+    C.a=A.id; C.b=B.id; C.m=a.m||'index'; if(a.base) C.base=a.base;
+    $('#c-a').value=C.a; $('#c-b').value=C.b; $('#c-base').value=C.base;
+    go('cross');
+  } else if(a.v==='wall'){
+    if(a.sort){ Wl.sort=a.sort; $('#sort').value=a.sort; }
+    go('wall'); drawWall();
+  } else go(a.v);
+  if(a.n) setTimeout(()=>{ const c=document.querySelectorAll('#d-cards > .card')[a.n-1];
+    if(c) c.scrollIntoView({behavior:'smooth',block:'center'}); },160);
+  else window.scrollTo({top:0,behavior:'smooth'});
+}
+function startLesson(id){ Lz={id,i:0}; renderDock(); }
+function renderDock(){
+  const dk=$('#dock');
+  if(!Lz){ dk.hidden=true; document.body.classList.remove('docked');
+    document.documentElement.style.removeProperty('--dockh'); return; }
+  const l=LESSONS.find(x=>x.id===Lz.id), st=l.steps[Lz.i], last=Lz.i===l.steps.length-1;
+  dk.hidden=false; document.body.classList.add('docked');
+  $('#dk-hd').innerHTML=TRACKS[l.tr].t+' · <b>'+l.t+'</b> · passo '+(Lz.i+1)+' de '+l.steps.length;
+  $('#dk-tx').innerHTML=st.x;
+  const sh=$('#dk-src'); sh.innerHTML='';
+  (st.s||[]).forEach(k=>{
+    const o=SRC[k]; if(!o) return;
+    sh.appendChild(document.createTextNode('Fonte: '));
+    const a=document.createElement('a'); a.href=o.u; a.target='_blank'; a.rel='noopener';
+    a.textContent=o.t; sh.appendChild(a);
+  });
+  const eh=$('#dk-end');
+  if(last&&l.steps[Lz.i].e){ eh.hidden=false; eh.innerHTML='<b>O que isto não explica.</b> '+l.steps[Lz.i].e; }
+  else eh.hidden=true;
+  $('#dk-prev').disabled=Lz.i===0;
+  $('#dk-next').textContent=last?'Concluir ✓':'Seguinte ›';
+  applyAct(st.a);
+  requestAnimationFrame(()=>document.documentElement.style
+    .setProperty('--dockh', dk.offsetHeight+'px'));
+}
+function stepLesson(d){
+  if(!Lz) return;
+  const l=LESSONS.find(x=>x.id===Lz.id);
+  const ni=Lz.i+d;
+  if(ni<0) return;
+  if(ni>=l.steps.length){ DONE.add(l.id); saveDone(DONE); Lz=null; renderDock(); drawLearn(); go('learn');
+    window.scrollTo({top:0,behavior:'smooth'}); return; }
+  Lz.i=ni; renderDock();
+}
+
+/* ================= caveats carried over ================= */
+const SAMPLING={
+ 'Área ardida':'Sete anos de 45 não mostram os extremos. 270 695 ha é o valor mais alto <em>deste quadro</em>, '
+  +'não o mais alto da série real — anos de incêndios catastróficos como 2003, 2005 e 2017 simplesmente não '
+  +'estão aqui. Não leia este gráfico como um recorde.',
+ 'Taxa de desemprego (%)':'O pico real do desemprego (por volta de 2013) não está neste quadro. Os 13,5% de '
+  +'2011 não são o máximo da série, são apenas o máximo dos sete anos amostrados.',
+ 'Taxa de inflação (%)':'Sete anos dispersos não descrevem uma série de inflação, e o episódio inflacionista '
+  +'de 2022-2023 não aparece. Esta linha não serve para deflacionar nada — é por isto que o ficheiro não '
+  +'consegue converter o PIB para preços constantes.',
+ 'Espectadores de cinema':'Só sete anos: 2021 apanha o efeito da pandemia e os anos de pico entre snapshots '
+  +'não aparecem. A forma desta linha depende muito de quais anos foram amostrados.',
+};
+const UNDECLARED={
+ 'Tribunais judiciais':'A contagem cai de 327 (2011) para 38 (2021) sem qualquer marca de quebra. É uma '
+  +'mudança na unidade de contagem, compatível com a reorganização do mapa judiciário de 2014 — não um '
+  +'fecho de 88% dos tribunais. Atribuição minha, não da PORDATA.',
+ 'Processos entrados nos tribunais judiciais':'Salto não declarado em 2021, o mesmo em que a contagem de '
+  +'tribunais muda de definição. A cobertura pode ter mudado com ele.',
+ 'Processos findos nos tribunais judiciais':'Salto não declarado em 2021, o mesmo em que a contagem de '
+  +'tribunais muda de definição. A cobertura pode ter mudado com ele.',
+ 'Processos pendentes nos tribunais judiciais':'Queda não declarada de 1,69 M (2011) para 628 mil (2021). '
+  +'Parte é recuperação real de pendências, parte é a mesma mudança de cobertura dos tribunais. Não é '
+  +'seguro ler isto como desempenho puro.',
+ 'Taxa de congestão nos tribunais judiciais (%)':'De 215% para 131% no mesmo salto não declarado dos '
+  +'tribunais e dos processos. Numerador e denominador mudaram ao mesmo tempo.',
+ 'Famílias':'Entre 2021 e 2024 aparecem +533 mil famílias, sem marca de quebra, enquanto a população '
+  +'cresce 7,4%. Parece base censitária contra base de estimativa. A confirmar antes de usar.',
+ 'Famílias unipessoais (%)':'De 18,8% (2021) para 25,5% (2024) sem marca de quebra. Uma alteração de 6,7 '
+  +'pontos na composição dos agregados em três anos não é uma mudança social a essa velocidade.',
+ 'Dimensão média das famílias':'Linha inutilizável: vem gravada como inteiros (3, 3, 3, 3, 2, 2) com '
+  +'formato inteiro, pelo que as casas decimais foram destruídas na exportação.',
+};
+
+/* ================= change metric (shared by wall + ranking) ================= */
+const DIFF_KINDS=new Set(['pct','permille','ratio']);
+function change(r){
+  let f=-1,l=-1;
+  for(let i=0;i<NY;i++) if(r.v[i]!=null){f=i;break;}
+  for(let i=NY-1;i>=0;i--) if(r.v[i]!=null){l=i;break;}
+  if(f<0||l<=f) return null;
+  const brk=r.s.slice(f+1,l+1).includes('break') || !!UNDECLARED[r.label];
+  if(DIFF_KINDS.has(r.kind)) return {mode:'diff',val:r.v[l]-r.v[f],f,l,brk};
+  // a ratio across zero or a sign flip is not a multiple (Saldo natural: +56,3 -> -34,1)
+  if(!(r.v[f]>0)||!(r.v[l]>0)) return {mode:'diff',val:r.v[l]-r.v[f],f,l,brk};
+  return {mode:'mult',val:r.v[l]/r.v[f],f,l,brk};
+}
+function shortUnit(r){
+  switch(r.kind){
+    case 'pct':return '%'; case 'permille':return '‰'; case 'meur':return 'M€'; case 'eur':return '€';
+    case 'thousands':return 'mil'; case 'ha':return 'ha'; case 'ton':return 't'; case 'hl':return 'hl';
+    case 'kwh':return 'kWh'; default:return '';
+  }
+}
+function deltaText(r,c){
+  if(!c) return '';
+  if(c.mode==='mult') return '×'+nf(c.val>=10?1:2).format(c.val);
+  const sign=c.val>0?'+':'', su=shortUnit(r);
+  return sign+nf(r.dec||1).format(c.val)
+    +(r.kind==='pct'?' pp':r.kind==='permille'?' ‰':(su?' '+su:''));
+}
+
+/* ================= sparkline ================= */
+function renderSpark(r){
+  const W=150,H=48,P=4;
+  const g=svg('svg',{viewBox:'0 0 '+W+' '+H,class:'sp','aria-hidden':'true'});
+  const vals=r.v.filter(v=>v!=null);
+  if(!vals.length) return g;
+  let lo=Math.min(...vals), hi=Math.max(...vals);
+  if(lo===hi){ const q=Math.abs(lo)||1; lo-=q*0.1; hi+=q*0.1; }
+  const pad=(hi-lo)*0.14; lo-=pad; hi+=pad;
+  const X=i=>P+(Y[i]-X0)/(X1-X0)*(W-2*P);
+  const V=v=>H-P-(v-lo)/(hi-lo)*(H-2*P);
+  for(let i=1;i<NY;i++){
+    if(r.v[i-1]==null||r.v[i]==null) continue;          // a real gap, never a zero
+    const brk=r.s[i]==='break';
+    g.appendChild(svg('line',{x1:X(i-1),y1:V(r.v[i-1]),x2:X(i),y2:V(r.v[i]),stroke:'var(--s1)',
+      'stroke-width':brk?1:1.6,'stroke-linecap':'round',opacity:brk?0.3:0.92}));
+  }
+  let last=-1; for(let i=NY-1;i>=0;i--) if(r.v[i]!=null){last=i;break;}
+  if(last>=0) g.appendChild(svg('circle',{cx:X(last),cy:V(r.v[last]),r:2.6,fill:'var(--s1)'}));
+  let first=-1; for(let i=0;i<NY;i++) if(r.v[i]!=null){first=i;break;}
+  if(first>=0&&first!==last) g.appendChild(svg('circle',{cx:X(first),cy:V(r.v[first]),r:1.9,
+    fill:'var(--surface)',stroke:'var(--s1)','stroke-width':1.1}));
+  return g;
+}
+
+/* ================= the wall ================= */
+const Wl={q:'',sort:'dom',f:{miss:false,brk:false,pre:false,ok:false},cmp:false,sel:[]};
+const strip=t=>t.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+function counts(r){
+  return {miss:r.s.filter(x=>x==='missing').length, brk:r.s.filter(x=>x==='break').length,
+          pre:r.s.filter(x=>x==='prelim').length};
+}
+function wallList(){
+  const q=strip(Wl.q.trim());
+  let list=IND.filter(r=>{
+    if(q && !strip(r.label+' '+r.domain+' '+(r.note||'')).includes(q)) return false;
+    const c=counts(r);
+    if(Wl.f.miss && !c.miss) return false;
+    if(Wl.f.brk && !c.brk) return false;
+    if(Wl.f.pre && !c.pre) return false;
+    if(Wl.f.ok && (c.miss||c.brk||c.pre)) return false;
+    return true;
+  });
+  if(Wl.sort==='az') list.sort((a,b)=>a.label.localeCompare(b.label,'pt'));
+  else if(Wl.sort==='gaps') list.sort((a,b)=>{const x=counts(a),y=counts(b);
+    return (y.miss-x.miss)||(y.brk-x.brk)||a.label.localeCompare(b.label,'pt');});
+  else if(Wl.sort==='change') list.sort((a,b)=>{
+    const ca=change(a),cb=change(b);
+    const m=c=>!c?-1:(c.mode==='mult'?Math.abs(Math.log2(c.val)):Math.abs(c.val)/10);
+    return m(cb)-m(ca);});
+  return list;
+}
+function card(r){
+  const c=counts(r), ch=change(r);
+  const b=document.createElement('button'); b.type='button'; b.className='sc in'; b.dataset.id=r.id;
+  if(Wl.sel.includes(r.id)) b.classList.add('pick');
+  b.appendChild(el('div','nm',r.label));
+  b.appendChild(renderSpark(r));
+  const row=el('div','row');
+  let lastV=null; for(let i=NY-1;i>=0;i--) if(r.v[i]!=null){lastV=r.v[i];break;}
+  const su=shortUnit(r);
+  row.appendChild(el('span','val', lastV==null?'–':nf(r.dec).format(lastV)+(su?' '+su:'')));
+  row.appendChild(el('span','dlt', deltaText(r,ch)));
+  b.appendChild(row);
+  const qa=el('div','qa');
+  if(c.miss) qa.appendChild(el('i','', '– '+c.miss));
+  if(c.brk) qa.appendChild(el('i','', '┴ '+c.brk));
+  if(c.pre) qa.appendChild(el('i','', 'Pre '+c.pre));
+  if(ch&&ch.f>0) qa.appendChild(el('i','', 'desde '+String(Y[ch.f]).slice(2)));  // baseline isn't 1981
+  if(UNDECLARED[r.label]) qa.appendChild(el('i','', '⚠'));
+  b.appendChild(qa);
+  b.title = r.label + (r.note?' ('+r.note+')':'') + ' — ' + r.domain
+    + (ch?'\n'+Y[ch.f]+' → '+Y[ch.l]+': '+fmt(r.v[ch.f],r)+' para '+fmt(r.v[ch.l],r):'')
+    + (UNDECLARED[r.label]?'\n⚠ quebra não declarada':'');
+  b.addEventListener('click',()=>{
+    if(Wl.cmp){ toggleSel(r.id); return; }
+    openDetail(r.id);
+  });
+  return b;
+}
+function drawWall(){
+  const host=$('#wall'); host.innerHTML='';
+  const list=wallList();
+  $('#wall-count').textContent=list.length+' de '+DATA.meta.n;
+  $('#wall-empty').hidden=list.length>0;
+  if(Wl.sort==='dom'){
+    DATA.meta.domains.forEach(d=>{
+      const rs=list.filter(r=>r.domain===d); if(!rs.length) return;
+      const h=el('div','dgroup'); h.dataset.dom=d;
+      h.appendChild(el('span','',d)); h.appendChild(el('i'));
+      host.appendChild(h);
+      rs.forEach(r=>host.appendChild(card(r)));
+    });
+  } else list.forEach(r=>host.appendChild(card(r)));
+  // stagger the entry animation so a re-sort reads as movement, not a flash
+  [...host.querySelectorAll('.sc')].forEach((n,k)=>{ n.style.animationDelay=Math.min(k*8,420)+'ms'; });
+  $('#cmpbar').hidden=!Wl.cmp;
+  syncCmp(); drawRail();
+}
+function toggleSel(id){
+  const k=Wl.sel.indexOf(id);
+  if(k>=0) Wl.sel.splice(k,1);
+  else { if(Wl.sel.length>=2) Wl.sel.shift(); Wl.sel.push(id); }
+  [...$('#wall').querySelectorAll('.sc')].forEach(n=>
+    n.classList.toggle('pick', Wl.sel.includes(+n.dataset.id)));
+  syncCmp();
+}
+function syncCmp(){
+  const names=Wl.sel.map(i=>IND.find(x=>x.id===i).label);
+  $('#cmp-list').textContent = names.length? names.join('  ⇄  ') : 'escolha dois indicadores';
+  $('#cmp-go').disabled = names.length!==2;
+}
+
+/* ================= TABELA (all 81 x 7 as numbers) ================= */
+const Tb={q:'',group:true,sort:'dom',dir:1,year:null};
+function tbList(){
+  const q=strip(Tb.q.trim());
+  let list=IND.filter(r=>!q||strip(r.label+' '+r.domain+' '+(r.note||'')).includes(q));
+  if(Tb.sort==='az') list.sort((a,b)=>a.label.localeCompare(b.label,'pt')*Tb.dir);
+  return list;
+}
+// what can actually be used for a given year — independent of units, unlike a value ranking
+function yearStats(i){
+  let has=0,miss=0,brk=0,pre=0;
+  IND.forEach(r=>{ const st=r.s[i];
+    if(st==='missing') miss++; else { has++; if(st==='break') brk++; if(st==='prelim') pre++; } });
+  return {has,miss,brk,pre};
+}
+function tbCell(r,i){
+  const td=el('td'), v=r.v[i], st=r.s[i];
+  if(Tb.year===i) td.classList.add('hl');
+  if(v==null){ td.classList.add('na'); td.textContent='–';   // add, never overwrite: keeps .hl
+    td.title='ausência de valor — gravada como 0 no ficheiro'; return td; }
+  td.textContent=nf(r.dec).format(v);
+  if(st==='break'||st==='prelim'){
+    const sup=document.createElement('sup');
+    sup.textContent=st==='break'?'┴':'Pre';
+    td.appendChild(sup);
+    td.title=st==='break'?'quebra de série — não comparável com '+Y[i-1]:'valor preliminar';
+  }
+  return td;
+}
+function drawTable(){
+  const host=$('#tb-host'); host.innerHTML='';
+  const list=tbList(), grouped=Tb.group&&Tb.sort==='dom';
+  $('#tb-count').textContent=list.length+' de '+DATA.meta.n;
+  $('#tb-group').disabled=Tb.sort!=='dom';
+  const hint=$('#tb-hint');
+  if(Tb.year==null){
+    hint.innerHTML='Clique num ano para ver o que esse ano tem, ou em <b>Indicador</b> para ordenar '
+      +'alfabeticamente. Não há ordenação por valor: os 81 indicadores estão em euros, percentagens, '
+      +'hectares e contagens, e ordená-los pelo número daria uma lista sem significado.';
+  } else {
+    const st=yearStats(Tb.year);
+    hint.innerHTML='<b>'+Y[Tb.year]+':</b> '+st.has+' dos '+DATA.meta.n+' indicadores têm valor · '
+      +'<b>'+st.miss+' sem dados</b>'
+      +(st.brk?' · '+st.brk+' com quebra de série':'')
+      +(st.pre?' · '+st.pre+' preliminares':'')
+      +'. '+(st.miss? 'Os que faltam aparecem como «–» nesta coluna.' : 'Ano completo.')
+      +' <i>Clique outra vez em '+Y[Tb.year]+' para deixar de o destacar.</i>';
+  }
+  const t=el('table','big'), hd=el('thead'), hr=el('tr');
+  const th0=el('th','nmc','Indicador ⇅');
+  th0.title=Tb.sort==='az'?'voltar a agrupar por domínio':'ordenar alfabeticamente';
+  if(Tb.sort==='az') th0.classList.add('on');
+  th0.addEventListener('click',()=>{
+    if(Tb.sort!=='az'){ Tb.sort='az'; Tb.dir=1; }
+    else if(Tb.dir===1){ Tb.dir=-1; }
+    else { Tb.sort='dom'; Tb.dir=1; }
+    drawTable();
+  });
+  hr.appendChild(th0);
+  Y.forEach((y,i)=>{
+    const th=el('th','',String(y)); th.title='examinar o ano '+y;
+    if(Tb.year===i) th.classList.add('on','hl');
+    th.addEventListener('click',()=>{ Tb.year=(Tb.year===i?null:i); drawTable(); });
+    hr.appendChild(th);
+  });
+  hd.appendChild(hr); t.appendChild(hd);
+  const tb=el('tbody');
+  const addRow=r=>{
+    const tr=el('tr');
+    const nm=el('td','nmc');
+    const b=document.createElement('button'); b.type='button'; b.textContent=r.label;
+    b.addEventListener('click',()=>openDetail(r.id));
+    nm.appendChild(b);
+    const bits=[r.note||shortUnit(r)||null];
+    if(r.footnotes.length) bits.push('('+r.footnotes.join(')(')+')');
+    if(UNDECLARED[r.label]) bits.push('⚠');
+    const i2=el('i','',bits.filter(Boolean).join(' · '));
+    if(UNDECLARED[r.label]) i2.title='quebra não declarada neste indicador';
+    nm.appendChild(i2);
+    tr.appendChild(nm);
+    for(let i=0;i<NY;i++) tr.appendChild(tbCell(r,i));
+    tb.appendChild(tr);
+  };
+  if(grouped){
+    DATA.meta.domains.forEach(d=>{
+      const rs=list.filter(r=>r.domain===d); if(!rs.length) return;
+      const tr=el('tr','dom'), td=el('td','',d); td.colSpan=NY+1; tr.appendChild(td); tb.appendChild(tr);
+      rs.forEach(addRow);
+    });
+  } else list.forEach(addRow);
+  t.appendChild(tb); host.appendChild(t);
+  if(!list.length) host.appendChild(el('p','palempty','Nenhum indicador corresponde a esse filtro.'));
+}
+function tbCSV(){
+  const head=['Indicador','Unidade','Dominio','Notas',...Y.map(String),
+              'Anos com quebra de serie','Anos preliminares','Anos sem dados','Quebra nao declarada'];
+  const rows=tbList().map(r=>{
+    const pick=k=>Y.filter((y,i)=>r.s[i]===k).join(' ');
+    return [r.label, r.note||shortUnit(r), r.domain, r.footnotes.join(' '),
+            ...r.v.map(v=>v==null?'':String(v)),          // empty, never 0
+            pick('break'), pick('prelim'), pick('missing'), UNDECLARED[r.label]?'sim':''];
+  });
+  const esc=v=>{v=String(v); return /[";\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;};
+  return [head,...rows].map(r=>r.map(esc).join(';')).join('\n');
+}
+
+/* ================= command palette ================= */
+const Pal={open:false,i:0,list:[]};
+function palMatches(){
+  const q=strip($('#pal-q').value.trim());
+  return q?IND.filter(r=>strip(r.label+' '+r.domain+' '+(r.note||'')).includes(q)):IND.slice();
+}
+function palRender(){
+  Pal.list=palMatches();
+  if(Pal.i>=Pal.list.length) Pal.i=Math.max(0,Pal.list.length-1);
+  const host=$('#pal-list'); host.innerHTML='';
+  $('#pal-n').textContent=Pal.list.length+' de '+DATA.meta.n;
+  if(!Pal.list.length){ host.appendChild(el('div','palempty','Nenhum indicador com esse nome.')); return; }
+  Pal.list.forEach((r,k)=>{
+    const b=document.createElement('button'); b.type='button';
+    b.className='palr'+(k===Pal.i?' sel':''); b.setAttribute('role','option');
+    b.setAttribute('aria-selected',String(k===Pal.i));
+    const tx=document.createElement('span');
+    tx.appendChild(el('b','',r.label));
+    const su=shortUnit(r);
+    tx.appendChild(el('span','',[r.domain,r.note||(su?su:null)].filter(Boolean).join(' · ')));
+    b.appendChild(tx);
+    let last=null; for(let i=NY-1;i>=0;i--) if(r.v[i]!=null){last=r.v[i];break;}
+    b.appendChild(el('em','', last==null?'–':nf(r.dec).format(last)+(su?' '+su:'')));
+    b.addEventListener('click',()=>{Pal.i=k;palPick();});
+    b.addEventListener('mouseenter',()=>{Pal.i=k;
+      [...host.children].forEach((n,j)=>n.classList.toggle('sel',j===k));});
+    host.appendChild(b);
+  });
+  const sel=host.children[Pal.i];
+  if(sel&&sel.scrollIntoView) sel.scrollIntoView({block:'nearest'});
+}
+function palOpen(){
+  Pal.open=true; Pal.i=0;
+  $('#pal').hidden=false; $('#pal-q').value=''; palRender();
+  $('#pal-q').focus();
+}
+function palClose(){ Pal.open=false; $('#pal').hidden=true; }
+function palMove(d){
+  if(!Pal.list.length) return;
+  Pal.i=(Pal.i+d+Pal.list.length)%Pal.list.length; palRender();
+}
+function palPick(){
+  const r=Pal.list[Pal.i]; if(!r) return;
+  palClose(); openDetail(r.id);
+}
+
+/* ================= domain jump rail ================= */
+function drawRail(){
+  const h=$('#rail'); h.innerHTML='';
+  if(Wl.sort!=='dom'){ h.hidden=true; return; }
+  const list=wallList();
+  const shown=DATA.meta.domains.filter(d=>list.some(r=>r.domain===d));
+  if(shown.length<2){ h.hidden=true; return; }
+  h.hidden=false;
+  shown.forEach(d=>{
+    const n=list.filter(r=>r.domain===d).length;
+    const b=document.createElement('button'); b.type='button';
+    b.appendChild(document.createTextNode(d));
+    b.appendChild(el('b','',String(n)));
+    b.addEventListener('click',()=>{
+      const hd=[...$('#wall').querySelectorAll('.dgroup')].find(x=>x.dataset.dom===d);
+      if(hd) hd.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+    h.appendChild(b);
+  });
+}
+
+/* ================= detail drawer ================= */
+const E={ind:null,zero:false,naive:false,tbl:false};
+let lastFocus=null;
+function openDetail(id,o){
+  o=o||{};
+  E.ind=id; E.naive=!!o.naive; E.zero=!!o.zero; E.tbl=!!o.tbl;
+  $('#dt-naive').checked=E.naive; $('#dt-zero').checked=E.zero;
+  $('#dt-tbl').setAttribute('aria-pressed',String(E.tbl));
+  lastFocus=document.activeElement;
+  $('#drawer').hidden=false;
+  requestAnimationFrame(()=>{ $('#scrim').classList.add('on'); $('#drawer').classList.add('on');
+    drawDetail(); $('#dt-close').focus(); });
+  document.body.style.overflow='hidden';
+}
+function closeDetail(){
+  $('#scrim').classList.remove('on'); $('#drawer').classList.remove('on');
+  document.body.style.overflow='';
+  setTimeout(()=>{ $('#drawer').hidden=true; },220);
+  if(lastFocus&&lastFocus.focus) lastFocus.focus();
+}
+function drawDetail(){
+  const r=IND.find(x=>x.id===E.ind); if(!r) return;
+  $('#dt-title').textContent=r.label;
+  const _u=unitSuffix(r).trim();
+  $('#dt-cap').textContent=[r.domain,r.note,(_u&&_u!==r.note)?_u:null].filter(Boolean).join(' · ');
+  const nMiss=r.s.filter(x=>x==='missing').length, nBrk=r.s.filter(x=>x==='break').length;
+  const bh=$('#dt-banner'); bh.innerHTML='';
+  if(UNDECLARED[r.label]){
+    const u=el('div','banner');
+    u.innerHTML='<strong>Quebra não declarada neste indicador.</strong> '+UNDECLARED[r.label];
+    bh.appendChild(u);
+  }
+  if(SAMPLING[r.label]){
+    const n=el('div','note'); n.style.margin='0 0 14px';
+    n.innerHTML='<b>Cuidado com a amostragem.</b> '+SAMPLING[r.label];
+    bh.appendChild(n);
+  }
+  if(E.naive){
+    const b=el('div','banner');
+    b.innerHTML='<strong>Modo ingénuo — este gráfico está errado de propósito.</strong>'
+      +'<ul><li>'+(nMiss?nMiss+' ausência(s) desenhada(s) como zero':'nenhuma ausência neste indicador')+'</li>'
+      +'<li>'+(nBrk?nBrk+' quebra(s) de série ligada(s) como se fossem comparáveis'
+        :(UNDECLARED[r.label]?'nenhuma quebra <em>marcada</em> — mas há uma não declarada, ver acima'
+                             :'nenhuma quebra neste indicador'))+'</li>'
+      +'<li>eixo do tempo com espaçamento igual: 1981→1991 (dez anos) ocupa o mesmo que 2024→2025 (um ano)</li></ul>';
+    bh.appendChild(b);
+  }
+  const sc=renderLines($('#dt-chart'),[{...r,color:'var(--s1)'}],{fromZero:E.zero,naive:E.naive,aria:r.label});
+  $('#dt-axnote').textContent=(!E.zero&&sc&&sc.lo>0)?'O eixo Y não começa em zero.':'';
+  const lg=$('#dt-legend'); lg.innerHTML='';
+  const add=(gl,txt)=>{const sp=el('span');sp.appendChild(el('span','gl',gl));sp.appendChild(el('span','',txt));lg.appendChild(sp);};
+  if(nMiss&&!E.naive) add('–','ausência de valor ('+nMiss+')');
+  if(nBrk&&!E.naive) add('┴','quebra de série ('+nBrk+') — segmento esbatido');
+  if(r.s.includes('prelim')&&!E.naive) add('Pre','valor preliminar — marcador vazado');
+  fnBlock($('#dt-fn'),[r]);
+  const tb=$('#dt-tblbox'); tb.innerHTML=''; tb.hidden=!E.tbl;
+  if(E.tbl) tb.appendChild(tableFor([r]));
+  const c=change(r), rd=$('#dt-read');
+  if(c){
+    rd.innerHTML='<b>'+Y[c.f]+' → '+Y[c.l]+'.</b> '+fmt(r.v[c.f],r)+' para '+fmt(r.v[c.l],r)+' — '
+      +(c.mode==='mult'? nf(2).format(c.val)+'×' : deltaText(r,c))
+      +(nBrk?' <b>Atenção:</b> há '+nBrk+' quebra(s) de série pelo meio, pelo que os extremos podem não ser comparáveis.':'')
+      +(nMiss?' '+nMiss+' ano(s) sem dados.':'');
+  } else rd.innerHTML='<b>Série demasiado incompleta</b> para comparar extremos.';
+}
+
+/* ================= ranked transformation ================= */
+const Ch={nobrk:false};
+function drawChange(){
+  const rows=IND.map(r=>({r,c:change(r)})).filter(x=>x.c && !(Ch.nobrk&&x.c.brk));
+  const mk=(host,items,scale)=>{
+    host.innerHTML='';
+    if(!items.length){ host.appendChild(el('p','hint','Nada a mostrar com este filtro.')); return; }
+    const mags=scale?items.map(x=>Math.abs(scale(x.c.val))).filter(v=>isFinite(v)&&v>0):[];
+    const max=mags.length?Math.max(...mags):1;      // Math.max poisons on a single NaN
+    items.forEach(({r,c})=>{
+      const b=document.createElement('button'); b.type='button'; b.className='rk';
+      const up=(scale?scale(c.val):c.val)>=0;
+      const nm=el('span','nm', r.label + (c.f>0?' · desde '+Y[c.f]:''));
+      b.appendChild(nm);
+      const bar=el('span','bar');
+      if(scale){
+        bar.appendChild(document.createElement('s'));
+        const u=document.createElement('u');
+        const sv=scale(c.val);
+        const w=isFinite(sv)?Math.min(48,Math.abs(sv)/max*48):0;
+        u.style.background = up?'var(--s1)':'var(--s2)';
+        if(up){ u.style.left='50%'; u.style.width=w+'%'; }
+        else  { u.style.right='50%'; u.style.width=w+'%'; }
+        bar.appendChild(u);
+      } else {
+        bar.style.textAlign='right';
+        bar.appendChild(el('span','w2', shortUnit(r)||'índice'));
+      }
+      b.appendChild(bar);
+      const v=el('span','v', deltaText(r,c));
+      if(c.brk){ const wn=el('span','w',' ⚠'); v.appendChild(wn); }
+      b.appendChild(v);
+      b.title=r.label+'\n'+Y[c.f]+' → '+Y[c.l]+': '+fmt(r.v[c.f],r)+' para '+fmt(r.v[c.l],r)
+        +(c.brk?'\n⚠ quebra de série no intervalo — parte da variação é definição, não mudança real':'');
+      b.addEventListener('click',()=>openDetail(r.id));
+      host.appendChild(b);
+    });
+  };
+  const mult=rows.filter(x=>x.c.mode==='mult').sort((a,b)=>
+    Math.abs(Math.log2(b.c.val))-Math.abs(Math.log2(a.c.val)));
+  // only same-unit rows share a linear scale; everything else is listed without bars
+  const pp=rows.filter(x=>x.c.mode==='diff'&&x.r.kind==='pct').sort((a,b)=>Math.abs(b.c.val)-Math.abs(a.c.val));
+  const other=rows.filter(x=>x.c.mode==='diff'&&x.r.kind!=='pct').sort((a,b)=>Math.abs(b.c.val)-Math.abs(a.c.val));
+  mk($('#ch-mult'),mult,v=>Math.log2(v));
+  mk($('#ch-diff'),pp,v=>v);
+  mk($('#ch-other'),other,null);
+  [['#ch-leg1','×1'],['#ch-leg2','0']].forEach(([sel,mid])=>{
+    const lg=$(sel); lg.innerHTML='';
+    [['var(--s1)','aumentou'],['var(--s2)','diminuiu']].forEach(([col,txt])=>{
+      const sp=el('span'); const d=el('span','sw'); d.style.background=col;
+      sp.appendChild(d); sp.appendChild(el('span','',txt)); lg.appendChild(sp);});
+    const sp=el('span'); sp.appendChild(el('span','gl','⚠'));
+    sp.appendChild(el('span','','quebra no intervalo')); lg.appendChild(sp);
+    const m=el('span'); m.appendChild(el('span','gl',mid));
+    m.appendChild(el('span','','linha central')); lg.appendChild(m);
+  });
+}
+
+const PRESETS=[
+ {n:'A inversão migratória',t:'cross',a:'População residente',b:'Eleitores',m:'index',base:2021},
+ {n:'O falso colapso dos tribunais',t:'detail',a:'Tribunais judiciais'},
+ {n:'A fecundidade não mexeu',t:'cross',a:'Índice sintético de fecundidade',b:'Idade média da mãe ao nascimento do 1.º filho',m:'traj'},
+ {n:'Do campo aos serviços',t:'cross',a:'População empregada no setor primário (%)',b:'População empregada no setor terciário (%)',m:'overlay'},
+ {n:'Portugal poupa metade',t:'cross',a:'Investimento em % PIB',b:'Poupança bruta dos particulares em % rendimento disponível dos particulares',m:'overlay'},
+ {n:'O turismo virou macro',t:'detail',a:'Balança de viagens e turismo em % do PIB'},
+ {n:'Mais alunos, menos escolas',t:'cross',a:'Alunos matriculados no ensino básico',b:'Estabelecimentos do 1.º ciclo do ensino básico',m:'index',base:2021},
+ {n:'A área ardida de 2025',t:'detail',a:'Área ardida'},
+];
+
+/* ================= CRUZAR ================= */
+const C={a:byLabel('População residente').id,b:byLabel('Eleitores').id,m:'index',base:2021,tbl:false};
+function drawCross(){
+  const a=IND.find(x=>x.id==C.a), b=IND.find(x=>x.id==C.b);
+  const sameUnit = a.kind===b.kind;
+  $('#c-mode').querySelector('[data-m="overlay"]').disabled=!sameUnit;
+  if(!sameUnit && C.m==='overlay') C.m='index';
+  $('#c-mode').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.m===C.m)));
+  $('#c-basefld').style.display = C.m==='index'?'':'none';
+  // guard
+  const gh=$('#c-guard'); gh.innerHTML='';
+  const has=(r,n)=>r.footnotes.includes(n);
+  if((has(a,7)&&has(b,8))||(has(a,8)&&has(b,7))){
+    const w=el('div','banner');
+    w.innerHTML='<strong>Estes dois indicadores usam populações diferentes.</strong> Um está rebaseado na '
+     +'revisão do INE de 22/06/2026 (nota 7) e o outro não (nota 8). A divergência entre os dois '
+     +'denominadores chega a cerca de 620 mil pessoas em 2025. Uma razão ou um índice entre eles não é '
+     +'uma quantidade real — o INE só prevê alinhar isto no 1.º trimestre de 2027.';
+    gh.appendChild(w);
+  } else if(a.footnotes.length&&b.footnotes.length&&a.footnotes.join()!==b.footnotes.join()){
+    const w=el('div','note'); w.innerHTML='<b>Notas diferentes.</b> A tem ('+a.footnotes.join(')(')
+      +') e B tem ('+b.footnotes.join(')(')+'). Leia as notas abaixo antes de cruzar.';
+    gh.appendChild(w);
+  }
+  const box=$('#c-chart'); const lg=$('#c-legend'); lg.innerHTML=''; $('#c-axnote').textContent='';
+  const tb=$('#c-tblbox'); tb.innerHTML=''; tb.hidden=!C.tbl;
+  const swatch=(col,txt)=>{const s=el('span');const d=el('span','sw');d.style.background=col;s.appendChild(d);s.appendChild(el('span','',txt));lg.appendChild(s);};
+
+  if(C.m==='traj'){
+    $('#c-title').textContent=b.label+' contra '+a.label;
+    $('#c-cap').textContent='Trajetória: cada ponto é um ano, a seta aponta para o mais recente. O marcador vazado é o primeiro ano.';
+    renderTraj(box,a,b);
+    if(C.tbl) tb.appendChild(tableFor([a,b]));
+  }
+  else if(C.m==='ratio'){
+    const v=[],s=[];
+    for(let i=0;i<NY;i++){
+      const q=(a.v[i]!=null&&b.v[i]!=null&&b.v[i]!==0)?a.v[i]/b.v[i]:null;
+      v.push(q); s.push(q==null?'missing':(a.s[i]==='break'||b.s[i]==='break'?'break':(a.s[i]==='prelim'||b.s[i]==='prelim'?'prelim':'ok')));
+    }
+    const ser={label:'A / B',v,s,kind:'ratio',dec:3,color:'var(--s1)'};
+    $('#c-title').textContent='Razão — '+a.label+' ÷ '+b.label;
+    $('#c-cap').textContent='Só existe nos anos em que ambos os indicadores têm valor.';
+    const sc=renderLines(box,[ser],{tickFmt:t=>nf(3).format(t),endFmt:t=>nf(3).format(t),
+      tipFmt:(q)=>q==null?'–':nf(4).format(q),aria:'razão'});
+    $('#c-axnote').textContent=(sc&&sc.lo>0)?'O eixo Y não começa em zero.':'';
+    if(C.tbl) tb.appendChild(tableFor([{...ser,label:a.label+' ÷ '+b.label}],(q)=>nf(4).format(q)));
+  }
+  else if(C.m==='overlay'){
+    $('#c-title').textContent=a.label+' e '+b.label;
+    $('#c-cap').textContent='Mesma unidade, um só eixo. Nunca dois eixos Y: isso permitiria fabricar qualquer correlação.';
+    const sc=renderLines(box,[{...a,color:'var(--s1)'},{...b,color:'var(--s2)'}],{noEnd:false,aria:'sobreposição'});
+    $('#c-axnote').textContent=(sc&&sc.lo>0)?'O eixo Y não começa em zero.':'';
+    swatch('var(--s1)',a.label); swatch('var(--s2)',b.label);
+    if(C.tbl) tb.appendChild(tableFor([a,b]));
+  }
+  else { // index
+    const bi=Y.indexOf(+C.base);
+    const mk=(r,col)=>{
+      const base=r.v[bi];
+      const v=r.v.map(q=>(q==null||base==null||base===0)?null:q/base*100);
+      return {label:r.label,v,s:r.s,kind:'ratio',dec:1,color:col,usym:''};
+    };
+    const A=mk(a,'var(--s1)'), B=mk(b,'var(--s2)');
+    const bad = a.v[bi]==null||b.v[bi]==null;
+    $('#c-title').textContent='Indexado — '+Y[bi]+' = 100';
+    $('#c-cap').textContent = bad
+      ? 'Um dos indicadores não tem valor no ano base. Escolha outro ano base.'
+      : 'Ambas as séries rebaseadas a 100 no ano escolhido, num só eixo. Compara a forma, não o nível.';
+    if(!bad){
+      renderLines(box,[A,B],{tickFmt:t=>nf(0).format(t),endFmt:t=>nf(0).format(t),
+        tipFmt:(q)=>q==null?'–':nf(1).format(q),aria:'séries indexadas'});
+      $('#c-axnote').textContent='Cada série vale 100 no ano base. Compara a forma, não o nível.';
+      swatch('var(--s1)',a.label); swatch('var(--s2)',b.label);
+      if(C.tbl) tb.appendChild(tableFor([A,B],(q)=>nf(1).format(q)));
+    } else box.innerHTML='';
+  }
+  fnBlock($('#c-fn'),[a,b], C.m==='ratio'||C.m==='index');
+}
+
+/* ================= AUDITAR ================= */
+function drawAudit(){
+  const cnt={ok:0,break:0,prelim:0,missing:0};
+  IND.forEach(r=>r.s.forEach(s=>cnt[s]++));
+  const complete=IND.filter(r=>!r.s.includes('missing')).length;
+  const f7=IND.filter(r=>r.footnotes.includes(7)).length, f8=IND.filter(r=>r.footnotes.includes(8)).length;
+  const tiles=[
+    ['Células reais',nf(0).format(cnt.ok),'de 567 · '+nf(0).format(cnt.ok/567*100)+'%'],
+    ['Ausências gravadas como 0',nf(0).format(cnt.missing),'em '+IND.filter(r=>r.s.includes('missing')).length+' indicadores'],
+    ['Quebras de série',nf(0).format(cnt.break),'valor não comparável com o anterior'],
+    ['Valores preliminares',nf(0).format(cnt.prelim),'sujeitos a revisão'],
+    ['Indicadores completos',complete+' / 81','sem qualquer ausência'],
+    ['Populações incompatíveis',f7+' vs '+f8,'nota (7) rebaseada · nota (8) não'],
+  ];
+  const th=$('#a-tiles'); th.innerHTML='';
+  tiles.forEach(([k,v,n])=>{const d=el('div','tile');d.appendChild(el('div','k',k));d.appendChild(el('div','v',v));d.appendChild(el('div','n',n));th.appendChild(d);});
+  // legend
+  const lg=$('#a-legend'); lg.innerHTML='';
+  const L=[['var(--ok-fill)','','valor real'],['var(--st-break)','┴','quebra de série'],
+           ['var(--st-prelim)','Pre','valor preliminar'],['transparent','–','ausência (0 no ficheiro)']];
+  L.forEach(([c,g,t])=>{const s=el('span');const d=el('span','sw');d.style.background=c;
+    if(c==='transparent')d.style.border='1px dashed var(--axis)';
+    else if(c==='var(--ok-fill)')d.style.border='1px solid var(--axis)';s.appendChild(d);
+    if(g)s.appendChild(el('span','gl',g)); s.appendChild(el('span','',t)); lg.appendChild(s);});
+  // heatmap
+  const host=$('#a-hm'); host.innerHTML='';
+  const LW=248, RH=17, DH=25, CW=44, W=LW+NY*CW+14;
+  let rows=[]; DATA.meta.domains.forEach(d=>{rows.push({dom:d});IND.filter(r=>r.domain===d).forEach(r=>rows.push({r}));});
+  const H=rows.reduce((a,x)=>a+(x.dom?DH:RH),0)+26;
+  const g=svg('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':'mapa de integridade de 81 indicadores por 7 anos'});
+  Y.forEach((yr,i)=>{const t=svg('text',{x:LW+i*CW+CW/2,y:15,'text-anchor':'middle',fill:'var(--ink-3)',
+    'font-size':10.5,class:'m'});t.textContent=yr;g.appendChild(t);});
+  let cy=24;
+  const tip=el('div','tip'); host.style.position='relative'; host.appendChild(tip);
+  rows.forEach(row=>{
+    if(row.dom){
+      g.appendChild(svg('line',{x1:0,x2:W,y1:cy+3,y2:cy+3,stroke:'var(--rule)','stroke-width':1}));
+      const t=svg('text',{x:4,y:cy+18,fill:'var(--ink-2)','font-size':10.5,class:'m',
+        'letter-spacing':'.06em'}); t.textContent=row.dom.toUpperCase(); g.appendChild(t);
+      cy+=DH; return;
+    }
+    const r=row.r;
+    const lb=svg('text',{x:8,y:cy+12,fill:'var(--ink-2)','font-size':11});
+    let s=r.label; if(s.length>36) s=s.slice(0,35)+'…';
+    lb.textContent=s+(r.footnotes.length?' ('+r.footnotes.join(')(')+')':'');
+    const ti=svg('title'); ti.textContent=r.label; lb.appendChild(ti); g.appendChild(lb);
+    for(let i=0;i<NY;i++){
+      const st=r.s[i], x=LW+i*CW+2, w=CW-4;
+      const fill= st==='ok'?'var(--ok-fill)': st==='break'?'var(--st-break)': st==='prelim'?'var(--st-prelim)':'transparent';
+      const rc=svg('rect',{x,y:cy+2,width:w,height:RH-4,rx:2.5,fill});
+      if(st==='missing'){rc.setAttribute('stroke','var(--axis)');rc.setAttribute('stroke-dasharray','2 2');}
+      rc.style.cursor='pointer';
+      g.appendChild(rc);
+      if(GLYPH[st]){
+        const t=svg('text',{x:x+w/2,y:cy+RH/2+3.5,'text-anchor':'middle','font-size':9,class:'m',
+          fill: st==='missing'?'var(--ink-3)':'#fff','pointer-events':'none'});
+        t.textContent=GLYPH[st]; g.appendChild(t);
+      }
+      const yy=cy;
+      rc.addEventListener('mouseenter',(ev)=>{
+        tip.innerHTML=`<div class="ty">${r.label} · ${Y[i]}</div><div class="tv">${fmt(r.v[i],r)}</div>`
+          +(st!=='ok'?`<div class="tn">${GLYPH[st]} ${st==='missing'?'ausência de valor — gravado como 0':st==='break'?'quebra de série':'valor preliminar'}</div>`:'')
+          +(r.footnotes.length?`<div class="tn">nota (${r.footnotes.join(')(')})</div>`:'');
+        tip.style.opacity=1;
+        const hb=host.getBoundingClientRect();
+        const lx=ev.clientX-hb.left+host.scrollLeft, ly=ev.clientY-hb.top+host.scrollTop;
+        tip.style.left=Math.max(0,Math.min(lx+12,host.scrollLeft+host.clientWidth-236))+'px';
+        tip.style.top=Math.max(0,ly-6)+'px';
+      });
+      rc.addEventListener('click',()=>openDetail(r.id));
+    }
+    cy+=RH;
+  });
+  host.addEventListener('mouseleave',()=>tip.style.opacity=0);
+  host.appendChild(g);
+  // denominators
+  const pib=byLabel('PIB'), pc=byLabel('PIB per capita'), pop=byLabel('População residente');
+  const calc=pib.v.map((p,i)=>p!=null&&pop.v[i]?p*1e6/(pop.v[i]*1e3):null);
+  const impl=pib.v.map((p,i)=>p!=null&&pc.v[i]?p*1e6/pc.v[i]/1e3:null);
+  const dh=$('#a-den'); dh.innerHTML='';
+  dh.appendChild(tableFor([
+    {label:'PIB ÷ população (duas linhas do ficheiro)',v:calc,s:pib.s,kind:'eur',dec:0},
+    {label:'Linha «PIB per capita» do ficheiro (8)',v:pc.v,s:pc.s,kind:'eur',dec:0},
+    {label:'População implícita nessa linha',v:impl,s:pc.s,kind:'thousands',dec:0},
+    {label:'População residente do ficheiro (7)',v:pop.v,s:pop.s,kind:'thousands',dec:0},
+    {label:'Divergência de população',v:impl.map((q,i)=>q==null||pop.v[i]==null?null:q-pop.v[i]),s:pop.s,kind:'thousands',dec:0},
+  ]));
+  dh.appendChild(el('div','note')).innerHTML='Até 2011 reconcilia dentro do arredondamento. '
+    +'A partir de 2024 a linha do PIB per capita está calculada sobre uma população '
+    +'<b>cerca de 620 a 690 mil pessoas menor</b> do que a que o próprio ficheiro publica. '
+    +'O mesmo se aplica à taxa de emprego, à taxa de desemprego e às quotas setoriais — todas com nota (8).';
+  // undeclared breaks
+  const uh=$('#a-undecl'); uh.innerHTML='';
+  const trib=byLabel('Tribunais judiciais'), pend=byLabel('Processos pendentes nos tribunais judiciais'),
+        fam=byLabel('Famílias'), uni=byLabel('Famílias unipessoais (%)'), dim=byLabel('Dimensão média das famílias');
+  uh.appendChild(tableFor([trib,pend,fam,uni,dim]));
+  const u=el('div','note');
+  u.innerHTML='<b>Tribunais judiciais: 327 → 38.</b> Não é um fecho de 88% dos tribunais, é uma mudança '
+   +'na unidade de contagem, compatível com a reorganização do mapa judiciário de 2014. O ficheiro não '
+   +'declara nada. Atribuição minha, não da PORDATA.<br><br>'
+   +'<b>Processos pendentes caem 1,69 M → 628 mil no mesmo salto</b>, com a taxa de congestão a passar de '
+   +'215% para 131%. Parte é recuperação real de pendências, parte é a mesma mudança de cobertura. Não é '
+   +'seguro ler isto como desempenho puro.<br><br>'
+   +'<b>Bloco das famílias:</b> +533 mil famílias e as unipessoais de 18,8% para 25,5% em três anos '
+   +'(2021→2024), sem marca de quebra. Uma alteração de 6,7 pontos na composição dos agregados em três '
+   +'anos não é uma mudança social a essa velocidade; parece base censitária contra base de estimativa. '
+   +'A confirmar na página do indicador antes de usar.<br><br>'
+   +'<b>Dimensão média das famílias</b> vem gravada como inteiros (3, 3, 3, 3, 2, 2) com formato inteiro: '
+   +'as casas decimais foram destruídas na exportação. Essa linha é inutilizável.';
+  uh.appendChild(u);
+}
+
+/* ================= DERIVADOS ================= */
+function drawDerived(){
+  const host=$('#d-cards'); host.innerHTML='';
+  const pop=byLabel('População residente'), sn=byLabel('Saldo natural (milhares)'),
+        pib=byLabel('PIB'), pc=byLabel('PIB per capita'), desp=byLabel('Despesas das Administrações Públicas'),
+        rdb=byLabel('Rendimento disponível bruto'), idos=byLabel('Idosos'),
+        pss=byLabel('Pensões da Segurança Social'),
+        cga=byLabel('Reformados, aposentados e pensionistas da Caixa Geral de Aposentações'),
+        med=byLabel('Médicos'), enf=byLabel('Enfermeiros'),
+        ab=byLabel('Alunos matriculados no ensino básico'), as_=byLabel('Alunos matriculados no ensino secundário'),
+        doc=byLabel('Docentes do ensino não superior'), ele=byLabel('Eleitores');
+  const card=(title,cap,formula,body,assume)=>{
+    const c=el('div','card');
+    c.appendChild(el('h3','',title)); c.appendChild(el('p','cap',cap));
+    const f=el('div','formula',formula); c.appendChild(f);
+    if(body) c.appendChild(body);
+    if(assume){const n=el('div','note'); n.innerHTML=assume; c.appendChild(n);}
+    host.appendChild(c); return c;
+  };
+  const lineCard=(title,cap,formula,series,opts,assume)=>{
+    const c=card(title,cap,formula,null,assume);
+    const anchor=c.querySelector('.note');
+    const box=el('div','chartbox'); c.insertBefore(box,anchor);
+    if(series.length>1){                       // a legend is mandatory for 2+ series
+      const lg=el('div','legend');
+      series.forEach(x=>{const sp=el('span');const d=el('span','sw');d.style.background=x.color;
+        sp.appendChild(d);sp.appendChild(el('span','',x.label));lg.appendChild(sp);});
+      c.insertBefore(lg,anchor);
+    }
+    c.insertBefore(tableFor(opts.tableSeries||series,opts.tblFmt),anchor);
+    requestAnimationFrame(()=>renderLines(box,series,opts));
+    return c;
+  };
+
+  // 1 — net migration
+  const dpop=(pop.v[6]-pop.v[4])*1000, nat24=sn.v[5]*1000, nat25=sn.v[6]*1000;
+  const loNat=nat24+nat25+2*(-45300), hiNat=nat24+nat25+2*(-30000);
+  card('Migração líquida implícita, 2021 → 2025',
+    'A única conclusão inevitável do ficheiro: o crescimento da população é todo migração, e mais do que isso.',
+    'migração líquida = Δpopulação − saldo natural acumulado\n\n'
+    +'Δpopulação 2021→2025      = '+nf(0).format(dpop)+'\n'
+    +'saldo natural 2024        = '+nf(0).format(nat24)+'\n'
+    +'saldo natural 2025        = '+nf(0).format(nat25)+'\n'
+    +'saldo natural 2022, 2023  = NÃO ESTÁ NO FICHEIRO\n'
+    +'→ migração líquida        ≈ '+nf(0).format(dpop-hiNat)+' a '+nf(0).format(dpop-loNat),
+    null,
+    '<b>Pressuposto meu, não da PORDATA:</b> que 2022 e 2023 tiveram saldos naturais entre −30 000 e '
+    +'−45 300 (o intervalo dos anos que o ficheiro mostra). Sem esse pressuposto o ficheiro ainda garante '
+    +'o essencial: os nascimentos menos óbitos foram negativos em <b>todos</b> os anos reportados, logo a '
+    +'migração líquida explica <b>mais de 100%</b> do crescimento. A fecundidade não se mexeu (1,30 → '
+    +'1,27 → 1,30). Os eleitores cresceram só 1,9% contra 7,8% da população, o que aponta para residentes '
+    +'sem cidadania portuguesa — mas o recenseamento inclui emigrantes, pelo que é indício, não medida.');
+
+  // 2 — per capita divergence
+  const calc=pib.v.map((p,i)=>p!=null&&pop.v[i]?p*1e6/(pop.v[i]*1e3):null);
+  const impl=pib.v.map((p,i)=>p!=null&&pc.v[i]?p*1e6/pc.v[i]/1e3:null);
+  lineCard('As duas populações do ficheiro',
+    'A linha «PIB per capita» está calculada sobre uma população que o ficheiro nunca publica. '
+    +'Duas séries em milhares de pessoas, num só eixo: se as duas linhas usassem a mesma população, '
+    +'seriam a mesma linha.',
+    'população publicada  = linha «População residente» (7)\n'
+    +'população implícita  = PIB ÷ linha «PIB per capita» (8)',
+    [{label:'População publicada (7)',v:pop.v,s:pop.s,kind:'thousands',dec:0,color:'var(--s1)'},
+     {label:'População implícita no PIB per capita (8)',v:impl,s:pc.s,kind:'thousands',dec:0,color:'var(--s2)'}],
+    {aria:'população publicada contra população implícita',
+     tableSeries:[
+      {label:'PIB ÷ população (7)',v:calc,s:pib.s,kind:'eur',dec:0},
+      {label:'«PIB per capita» do ficheiro (8)',v:pc.v,s:pc.s,kind:'eur',dec:0},
+      {label:'Diferença por pessoa',v:pc.v.map((q,i)=>(q==null||calc[i]==null)?null:q-calc[i]),s:pc.s,kind:'eur',dec:0},
+      {label:'População implícita',v:impl,s:pc.s,kind:'thousands',dec:0},
+      {label:'População publicada',v:pop.v,s:pop.s,kind:'thousands',dec:0},
+      {label:'Divergência',v:impl.map((q,i)=>(q==null||pop.v[i]==null)?null:q-pop.v[i]),s:pop.s,kind:'thousands',dec:0},
+     ]},
+    'Até 2011 as duas linhas coincidem dentro do arredondamento. Depois separam-se: em 2025 a linha do '
+    +'ficheiro assume cerca de 10,80 milhões de residentes quando o próprio ficheiro publica 11,42 '
+    +'milhões — uma divergência de cerca de 620 mil pessoas, ou 1 540 € por pessoa no PIB per capita. '
+    +'Nenhuma das duas está errada isoladamente: pertencem a revisões diferentes do INE. '
+    +'<b>Errado é dividir uma pela outra.</b>');
+
+  // 3 — spending / GDP
+  const sp=desp.v.map((d,i)=>d!=null&&pib.v[i]?d/pib.v[i]*100:null);
+  lineCard('Despesa pública em % do PIB',
+    'Não está no ficheiro: o ficheiro dá a despesa em milhões e o PIB em milhões, mas não a razão.',
+    'despesa pública ÷ PIB × 100',
+    [{label:'Despesa/PIB',v:sp,s:desp.s,kind:'pct',dec:1,color:'var(--s1)'}],
+    {aria:'despesa pública em percentagem do PIB'},
+    'Pico de <b>50,0% em 2011</b>, no auge da crise; 42,7% em 2025. Sem valores antes de 2001. '
+    +'Numerador e denominador não têm nota, pelo que este é um dos cálculos limpos do ficheiro.');
+
+  // 4 — RDB / GDP
+  const rr=rdb.v.map((d,i)=>d!=null&&pib.v[i]?d/pib.v[i]*100:null);
+  lineCard('Rendimento disponível bruto em % do PIB',
+    'O fim da almofada das remessas, numa linha.',
+    'rendimento disponível bruto ÷ PIB × 100',
+    [{label:'RDB/PIB',v:rr,s:rdb.s,kind:'pct',dec:1,color:'var(--s1)'}],
+    {aria:'rendimento disponível bruto em percentagem do PIB'},
+    'Em 1981 o rendimento nacional disponível excedia o PIB em 5,9%: era a era das remessas dos '
+    +'emigrantes. Desde 2001 anda em torno de 100%. Portugal deixou de receber mais do que produz.');
+
+  // 5 — pensions per elderly
+  const pen=pss.v.map((p,i)=>p!=null&&cga.v[i]!=null&&idos.v[i]?(p+cga.v[i])/idos.v[i]:null);
+  lineCard('Pensões por pessoa com 65 e mais anos',
+    'Há mais pensões do que idosos, e a razão está a cair.',
+    '(pensões da Segurança Social + pensionistas da CGA) ÷ população com 65 e mais anos',
+    [{label:'Pensões por idoso',v:pen,s:idos.s,kind:'ratio',dec:2,color:'var(--s1)'}],
+    {tickFmt:t=>nf(2).format(t),endFmt:t=>nf(2).format(t),tipFmt:q=>q==null?'–':nf(3).format(q),aria:'pensões por idoso'},
+    '<b>Aviso de denominador:</b> o numerador (pensões) não tem nota; o denominador (65 e mais anos) tem '
+    +'nota (7) e foi rebaseado em 22/06/2026. Este cálculo mistura os dois universos — é indicativo, não '
+    +'exato. 1,43 pensões por idoso em 2024: o sistema paga sobrevivência e invalidez, e há reformas antes '
+    +'dos 65. A queda desde 2011 é o denominador a crescer mais depressa que o numerador. 2025 fica vazio '
+    +'porque as pensões da Segurança Social desse ano não estão no ficheiro.');
+
+  // 6 — health staff per 1000
+  const per=(r)=>r.v.map((q,i)=>q!=null&&pop.v[i]?q/pop.v[i]:null);
+  lineCard('Médicos e enfermeiros por mil habitantes',
+    'Mesma unidade, um só eixo.',
+    'médicos ÷ população residente (em milhares)\nenfermeiros ÷ população residente (em milhares)',
+    [{label:'Médicos',v:per(med),s:med.s,kind:'ratio',dec:2,color:'var(--s1)'},
+     {label:'Enfermeiros',v:per(enf),s:enf.s,kind:'ratio',dec:2,color:'var(--s2)'}],
+    {tickFmt:t=>nf(1).format(t),endFmt:t=>nf(2).format(t),tipFmt:q=>q==null?'–':nf(2).format(q),aria:'profissionais de saúde por mil habitantes'},
+    '<b>[verificar]</b> O ficheiro não diz se conta médicos inscritos na Ordem ou médicos no exercício. '
+    +'Se for inscritos — o mais comum nesta fonte — o valor não é comparável com as taxas da OCDE. '
+    +'A razão enfermeiros/médicos passou de 1,06 (1991) para 1,34 (2024): continua baixa. '
+    +'Aviso de denominador: numeradores sem nota, população com nota (7).');
+
+  // 7 — pupils per teacher
+  const ppt=ab.v.map((q,i)=>(q!=null&&as_.v[i]!=null&&doc.v[i])?(q+as_.v[i])/doc.v[i]:null);
+  lineCard('Alunos por docente, ensino não superior',
+    'Básico mais secundário, sobre os docentes que os ensinam.',
+    '(alunos do ensino básico + alunos do ensino secundário) ÷ docentes do ensino não superior',
+    [{label:'Alunos por docente',v:ppt,s:doc.s,kind:'ratio',dec:2,color:'var(--s1)'}],
+    {tickFmt:t=>nf(1).format(t),endFmt:t=>nf(2).format(t),tipFmt:q=>q==null?'–':nf(2).format(q),aria:'alunos por docente'},
+    'De 15,4 em 1981 para 8,8 em 2021, e a subir ligeiramente desde então (9,0 em 2025): os alunos '
+    +'voltaram a crescer, os docentes ficaram parados. Todas as linhas têm nota (1) — o ano é o segundo '
+    +'do par letivo — pelo que numerador e denominador são consistentes entre si.');
+
+  // 8 — electoral coverage
+  const cov=ele.v.map((q,i)=>q!=null&&pop.v[i]?q/(pop.v[i]*1000)*100:null);
+  lineCard('Eleitores em % da população residente',
+    'Passou de 102,6% em 2021 para 97,0% em 2025.',
+    'eleitores ÷ (população residente × 1000) × 100',
+    [{label:'Eleitores/população',v:cov,s:ele.s,kind:'pct',dec:1,color:'var(--s1)'}],
+    {aria:'eleitores em percentagem da população residente'},
+    'Passar dos 100% não é erro: o recenseamento inclui portugueses residentes no estrangeiro, que não '
+    +'entram na população residente. A queda desde 2021 mede sobretudo a chegada de residentes sem '
+    +'cidadania portuguesa. <b>Aviso de denominador:</b> eleitores sem nota, população com nota (7).');
+}
+
+/* ================= wiring ================= */
+const TABS=['learn','wall','table','change','cross','audit','derived'];
+function go(tab){
+  TABS.forEach(t=>{
+    const on=t===tab;
+    $('#t-'+t).setAttribute('aria-selected',String(on));
+    $('#p-'+t).hidden=!on;
+  });
+  if(tab==='learn') drawLearn();
+  if(tab==='table') drawTable();
+  if(tab==='change') drawChange();
+  if(tab==='audit') drawAudit();
+  if(tab==='derived') drawDerived();
+  if(tab==='cross') drawCross();
+}
+function boot(){
+  $('#meta').innerHTML='<span>'+DATA.meta.n+' indicadores</span><span>'+NY+' anos: '+Y.join(' · ')
+    +'</span><span>obtido em '+DATA.meta.retrieved+'</span>';
+  $('#cnt-ind').textContent=DATA.meta.n;
+  $('#cnt-bad').textContent=IND.reduce((a,r)=>a+r.s.filter(x=>x!=='ok').length,0);
+  $('#src').innerHTML='<b>Fonte:</b> PORDATA, quadro-resumo «Evolução de Portugal desde 1981», obtido em '
+    +DATA.meta.retrieved+'. <b>Entidades:</b> '+DATA.meta.sources+'. Os nomes dos indicadores estão em '
+    +'português tal como na fonte: traduzi-los introduziria desvio. Todos os valores são os do ficheiro; '
+    +'os cálculos da secção Derivados são meus e vêm com fórmula e pressupostos.';
+  [['População residente','+825 mil','2021 → 2025, isto é +7,8%'],
+   ['Saldo natural 2025','−34,1 mil','negativo em todos os anos reportados'],
+   ['Índice de fecundidade','1,30','o mesmo que em 2021 — não se mexeu'],
+   ['População em idade ativa','+658 mil','depois de 20 anos a cair']]
+   .forEach(([k,v,n])=>{const d=el('div','tile');d.appendChild(el('div','k',k));
+     d.appendChild(el('div','v',v));d.appendChild(el('div','n',n));$('#hero').appendChild(d);});
+
+  const ph=$('#presets');
+  PRESETS.forEach(pr=>{
+    const b=el('button','',pr.n); b.type='button';
+    b.addEventListener('click',()=>{
+      if(pr.t==='detail') openDetail(byLabel(pr.a).id);
+      else { C.a=byLabel(pr.a).id; C.b=byLabel(pr.b).id; C.m=pr.m; if(pr.base)C.base=pr.base;
+        $('#c-a').value=C.a; $('#c-b').value=C.b; $('#c-base').value=C.base; go('cross');
+        window.scrollTo({top:0,behavior:'smooth'}); }
+    });
+    ph.appendChild(b);
+  });
+
+  fillSelect($('#c-a'),C.a); fillSelect($('#c-b'),C.b);
+  Y.forEach(y=>{const o=document.createElement('option');o.value=y;o.textContent=y;$('#c-base').appendChild(o);});
+  $('#c-base').value=C.base;
+
+  // ---- wall controls (one row, scoping the whole wall)
+  let qt;
+  $('#q').addEventListener('input',e=>{ clearTimeout(qt);
+    qt=setTimeout(()=>{Wl.q=e.target.value;drawWall();},110); });
+  $('#sort').addEventListener('change',e=>{Wl.sort=e.target.value;drawWall();});
+  $('#chips').addEventListener('click',e=>{
+    const b=e.target.closest('button'); if(!b) return;
+    const f=b.dataset.f;
+    if(f==='cmp'){ Wl.cmp=!Wl.cmp; if(!Wl.cmp) Wl.sel=[]; b.setAttribute('aria-pressed',String(Wl.cmp)); }
+    else { Wl.f[f]=!Wl.f[f]; b.setAttribute('aria-pressed',String(Wl.f[f])); }
+    drawWall();
+  });
+  $('#cmp-clear').addEventListener('click',()=>{Wl.sel=[];drawWall();});
+  $('#cmp-go').addEventListener('click',()=>{
+    if(Wl.sel.length!==2) return;
+    C.a=Wl.sel[0]; C.b=Wl.sel[1];
+    const a=IND.find(x=>x.id===C.a), b=IND.find(x=>x.id===C.b);
+    C.m = a.kind===b.kind ? 'overlay' : 'index';       // same unit -> one honest axis
+    $('#c-a').value=C.a; $('#c-b').value=C.b;
+    go('cross'); window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  // ---- drawer controls
+  $('#dt-zero').addEventListener('change',e=>{E.zero=e.target.checked;drawDetail();});
+  $('#dt-naive').addEventListener('change',e=>{E.naive=e.target.checked;drawDetail();});
+  $('#dt-tbl').addEventListener('click',e=>{E.tbl=!E.tbl;
+    e.currentTarget.setAttribute('aria-pressed',String(E.tbl));drawDetail();});
+  $('#dt-cross').addEventListener('click',()=>{
+    C.a=E.ind; const b=IND.find(x=>x.id!==E.ind && x.kind===IND.find(y=>y.id===E.ind).kind);
+    if(b) C.b=b.id;
+    C.m = IND.find(x=>x.id===C.a).kind===IND.find(x=>x.id===C.b).kind ? 'overlay' : 'index';
+    $('#c-a').value=C.a; $('#c-b').value=C.b;
+    closeDetail(); go('cross'); window.scrollTo({top:0,behavior:'smooth'});
+  });
+  $('#dt-close').addEventListener('click',closeDetail);
+  $('#scrim').addEventListener('click',closeDetail);
+  document.addEventListener('keydown',e=>{
+    if((e.key==='k'||e.key==='K') && (e.metaKey||e.ctrlKey)){
+      e.preventDefault(); Pal.open?palClose():palOpen(); return;
+    }
+    if(Pal.open){
+      if(e.key==='Escape'){ e.preventDefault(); palClose(); }
+      else if(e.key==='ArrowDown'){ e.preventDefault(); palMove(1); }
+      else if(e.key==='ArrowUp'){ e.preventDefault(); palMove(-1); }
+      else if(e.key==='Enter'){ e.preventDefault(); palPick(); }
+      return;                                   // palette owns the keyboard while open
+    }
+    if(e.key==='Escape' && $('#drawer').classList.contains('on')) closeDetail();
+  });
+  $('#kbtn').addEventListener('click',palOpen);
+  $('#pal-q').addEventListener('input',()=>{Pal.i=0;palRender();});
+  $('#pal').addEventListener('click',e=>{ if(e.target===$('#pal')) palClose(); });
+
+  let tqt;
+  $('#tb-q').addEventListener('input',e=>{ clearTimeout(tqt);
+    tqt=setTimeout(()=>{Tb.q=e.target.value;drawTable();},110); });
+  $('#tb-group').addEventListener('change',e=>{Tb.group=e.target.checked;drawTable();});
+  $('#tb-copy').addEventListener('click',async e=>{
+    const btn=e.currentTarget, txt=tbCSV();
+    try{ await navigator.clipboard.writeText(txt); btn.textContent='Copiado ✓'; }
+    catch(err){ btn.textContent='Não foi possível copiar'; }
+    setTimeout(()=>{btn.textContent='Copiar CSV';},2200);
+  });
+
+  // ---- cross controls
+  $('#c-a').addEventListener('change',e=>{C.a=+e.target.value;drawCross();});
+  $('#c-b').addEventListener('change',e=>{C.b=+e.target.value;drawCross();});
+  $('#c-base').addEventListener('change',e=>{C.base=+e.target.value;drawCross();});
+  $('#c-tbl').addEventListener('click',e=>{C.tbl=!C.tbl;
+    e.currentTarget.setAttribute('aria-pressed',String(C.tbl));drawCross();});
+  $('#c-mode').addEventListener('click',e=>{const b=e.target.closest('button');
+    if(!b||b.disabled)return;C.m=b.dataset.m;drawCross();});
+
+  // ---- change controls
+  $('#ch-nobrk').addEventListener('click',e=>{Ch.nobrk=!Ch.nobrk;
+    e.currentTarget.setAttribute('aria-pressed',String(Ch.nobrk));drawChange();});
+
+  TABS.forEach(t=>$('#t-'+t).addEventListener('click',()=>go(t)));
+
+  let rt; const redraw=()=>{ clearTimeout(rt); rt=setTimeout(()=>{
+    if($('#drawer').classList.contains('on')) drawDetail();
+    if(!$('#p-change').hidden) drawChange();
+    if(!$('#p-cross').hidden) drawCross();
+    if(!$('#p-audit').hidden) drawAudit();
+    if(!$('#p-derived').hidden) drawDerived(); },140); };
+  $('#theme').addEventListener('click',()=>{
+    const cur=document.documentElement.getAttribute('data-theme')
+      || (window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+    document.documentElement.setAttribute('data-theme',cur==='dark'?'light':'dark');
+    redraw();
+  });
+  $('#dk-next').addEventListener('click',()=>stepLesson(1));
+  $('#dk-prev').addEventListener('click',()=>stepLesson(-1));
+  $('#dk-quit').addEventListener('click',()=>{Lz=null;renderDock();});
+  $('#l-reset').addEventListener('click',()=>{DONE=new Set();saveDone(DONE);drawLearn();});
+  window.addEventListener('resize',redraw);
+  window.__redraw=redraw;
+  drawWall(); drawLearn();
+}
+boot();
+</script>
+
+</body></html>
