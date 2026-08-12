@@ -163,6 +163,20 @@ reconfere a cada construção. O porquê de tudo isto — e porque é que o resu
 bytes brutos **não** é reproduzível e o do normalizado é — está em
 [`DECISIONS.md`](DECISIONS.md) §1.20.
 
+### Conferir de fora que um documento é mesmo o do artefacto
+
+O build prova que o repositório é consistente consigo próprio; não prova que o
+documento alojado é o do artefacto. Isso só se prova descarregando outra vez:
+
+```bash
+node scripts/verify-fetch.mjs <descarga.html> <slug> <lingua>
+```
+
+Compara o resumo normalizado em três sítios — a descarga nova, o manifesto e o
+ficheiro em disco — e diz **qual dos três** destoa, que é o que separa «o autor
+publicou uma versão nova» de «o ficheiro foi alterado». O resumo dos bytes
+brutos é impresso mas não decide nada: ver [`DECISIONS.md`](DECISIONS.md) §1.22.
+
 O build acrescenta ao documento **uma coisa e só uma**: uma faixa no topo do
 `<body>`, com a marca do observatório ligada de volta à página do estudo, CSS
 embebido e nenhum pedido de rede. Abaixo dela, o documento vai byte a byte como
@@ -215,6 +229,8 @@ scripts/
   check-ledger.mjs        antes do build: completude e aritmética
   check-documentos.mjs    antes do build: os documentos alojados contra o manifesto
   normalize-study.mjs     a função pura que separa o documento do invólucro do anfitrião
+  verify-fetch.mjs        para quem vem de fora: uma descarga nova contra o que está alojado
+  extract-from-transcript.mjs  recurso: os bytes de uma descarga que não escreveu ficheiro
   gate-html.mjs           depois do build: varre dist/ à procura de algarismos órfãos
   check-dados.mjs         depois do build: os CSV existem e batem certo com as origens
 
