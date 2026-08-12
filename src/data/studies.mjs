@@ -148,6 +148,23 @@ export const WORKS = [
 ];
 
 /**
+ * Artefactos avaliados e deliberadamente NÃO incluídos no arquivo.
+ *
+ * Isto não é uma lista de coisas por fazer: é uma lista de decisões tomadas.
+ * Existe aqui, ao lado do arquivo, e não só na documentação, porque é aqui que
+ * quem fizer a migração dos estudos vai olhar. Um artefacto nesta lista já foi
+ * ponderado — não se volta a ponderar por se ter esquecido a decisão.
+ */
+export const EXCLUIDOS = [
+  {
+    titulo: 'Three Seats, One Ledger',
+    data: '2026-08-12',
+    motivo:
+      'Registo de método e de processo sobre a infraestrutura de investigação com IA do próprio dono. Não é um estudo sobre Portugal, e o arquivo é o que este observatório publica sobre Portugal. A exclusão não é um juízo sobre o valor do documento: é o arquivo ter um objecto, e este documento não ser dele.',
+  },
+];
+
+/**
  * "Estudos" internos: não são publicações, são a origem de números que a
  * própria casa apura (contagens do arquivo, processamento da CAOP).
  * Existem para que o campo `study` do livro-razão nunca fique vazio nem mentiroso.
