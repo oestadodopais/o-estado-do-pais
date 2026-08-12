@@ -23,11 +23,17 @@ npm run verify     # só as verificações, sobre um dist/ já construído
 
 Requer Node ≥ 22.12 (exigência do Astro 7).
 
-`npm run build` são três passos encadeados, e qualquer um deles pára tudo:
+`npm run build` são quatro passos encadeados, e qualquer um deles pára tudo:
 
 1. `ledger:check` — o livro-razão está completo e a aritmética bate certo;
 2. `astro build` — se um gabarito citar uma afirmação que não existe, o build atira;
-3. `gate:html` — varre `dist/` à procura de algarismos sem proveniência.
+3. `gate:html` — varre `dist/` à procura de algarismos sem proveniência;
+4. `check:dados` — os ficheiros de dados descarregáveis existem e batem certo
+   com as suas origens.
+
+Os três primeiros são os portões da casa e não se afrouxam. O quarto é mais
+recente e existe para que uma promessa do Método não volte a ser falsa — ver
+[«Os dados por trás dos gráficos»](#os-dados-por-trás-dos-gráficos).
 
 ---
 
@@ -109,6 +115,26 @@ E nunca assim:
 
 ---
 
+## Os dados por trás dos gráficos
+
+O Método diz: «Os dados por trás de cada gráfico são descarregáveis.» São dois
+ficheiros, e os dois são **gerados na construção**, nunca escritos à mão:
+
+| Endereço | O que traz | Gerado de |
+| --- | --- | --- |
+| `/dados/convergencia.csv` | uma linha por região da régua: valor tal como publicado, ano, unidade, estudo e **o id da afirmação** | do livro-razão |
+| `/dados/municipios-308.csv` | uma linha por município: nome, distrito ou ilha, região e a posição normalizada | de `src/data/caop-centroids.mjs`, com a citação da CAOP e a data de acesso no cabeçalho |
+
+Cada instrumento da primeira página tem a ligação na sua camada Fundo, nas duas
+edições. Os dois ficheiros são gerados por [`src/lib/dados.mjs`](src/lib/dados.mjs)
+e servidos por endpoints em `src/pages/dados/`.
+
+`check:dados` volta a ler os ficheiros **do `dist/`** e confronta-os com as
+origens — a contagem dos municípios contra as quatro afirmações que a publicam,
+cada linha da convergência contra a afirmação que ela própria nomeia, e as
+ligações contra os ficheiros que existem. Não compara a saída com uma segunda
+chamada ao gerador: isso não provaria nada.
+
 ## Estrutura
 
 ```
@@ -123,10 +149,12 @@ ledger/
 scripts/
   check-ledger.mjs        antes do build: completude e aritmética
   gate-html.mjs           depois do build: varre dist/ à procura de algarismos órfãos
+  check-dados.mjs         depois do build: os CSV existem e batem certo com as origens
 
 src/
   lib/ledger.mjs          carrega, valida e serve o livro-razão
   lib/routes.mjs          a tabela de rotas (navegação, hreflang, sitemap)
+  lib/dados.mjs           gera os CSV descarregáveis a partir das mesmas origens
   i18n/strings.mjs        as palavras, nas duas línguas, com paridade imposta
   data/
     caop-centroids.mjs    as 308 posições, transcritas da CAOP 2025
@@ -138,6 +166,7 @@ src/
   layouts/Base.astro      <head> completo: canónico, hreflang, JSON-LD
   views/                  uma página lógica, as duas línguas
   pages/                  as rotas (duas linhas cada)
+  pages/dados/            os CSV descarregáveis, servidos como endpoints
   styles/                 tokens.css (tema de três estados) + site.css
 
 public/js/                enriquecimento progressivo, vanilla, sem empacotar

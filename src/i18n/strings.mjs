@@ -78,6 +78,9 @@ export const STRINGS = {
         svgDescricao:
           'Uma escala horizontal com a média da UE-27 marcada em 100. Cada região seleccionada aparece como um marcador na régua, com o seu valor.',
         deepTitulo: 'Método, ressalvas e proveniência',
+        dadosK: 'Os dados desta régua',
+        dadosV:
+          'Uma linha por região posta na régua: o valor tal como foi publicado, o ano a que se refere, a unidade, o estudo e o id da afirmação no livro-razão. O ficheiro é gerado do livro-razão a cada construção — não é uma cópia mantida à parte.',
         significadoK: 'O que o número quer dizer',
         significadoV:
           'O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27. Um valor abaixo da média significa menos poder de compra por pessoa; um valor acima, mais.',
@@ -113,12 +116,19 @@ export const STRINGS = {
         svgLabel:
           'Mapa de pontos dos municípios de Portugal. Use as setas para percorrer os municípios.',
         deepTitulo: 'Método, ressalvas e proveniência',
+        dadosK: 'Os dados deste mapa',
+        dadosV:
+          'Uma linha por município: nome, distrito ou ilha, região e a posição normalizada que o mapa desenha. O cabeçalho traz a citação da CAOP e a data de acesso, tal como aparecem aqui.',
         fonteK: 'Coordenadas · fonte',
         processamentoK: 'Coordenadas · processamento',
         coberturaK: 'O que o mapa não diz',
         coberturaV:
           'O ponto aceso marca cobertura editorial, não qualidade nem importância. Os restantes pontos marcam a posição do município e mais nada.',
       },
+
+      /* O rótulo é o mesmo nos dois instrumentos: a acção é a mesma, e um
+         rótulo por instrumento seria duas coisas para manter e nenhuma razão. */
+      dadosLink: 'descarregar os dados (CSV)',
 
       estaPagina: {
         eyebrow: 'Esta página',
@@ -252,6 +262,9 @@ export const STRINGS = {
         svgDescricao:
           'A horizontal scale with the EU-27 average marked at 100. Each selected region appears as a marker on the rule, with its value.',
         deepTitulo: 'Method, caveats and provenance',
+        dadosK: 'The data behind this rule',
+        dadosV:
+          'One row per region placed on the rule: the value exactly as published, the year it refers to, the unit, the study and the id of the ledger row. The file is generated from the ledger at every build — it is not a copy kept on the side.',
         significadoK: 'What the figure means',
         significadoV:
           'The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 average. A value below the average means less purchasing power per person; a value above it, more.',
@@ -287,12 +300,17 @@ export const STRINGS = {
         svgLabel:
           'Point map of the municipalities of Portugal. Use the arrow keys to move between municipalities.',
         deepTitulo: 'Method, caveats and provenance',
+        dadosK: 'The data behind this map',
+        dadosV:
+          'One row per municipality: name, district or island, region and the normalised position the map draws. The header carries the CAOP citation and the access date, exactly as they appear here.',
         fonteK: 'Coordinates · source',
         processamentoK: 'Coordinates · processing',
         coberturaK: 'What the map does not say',
         coberturaV:
           'The lit point marks editorial coverage, not quality or importance. The remaining points mark the position of the municipality and nothing else.',
       },
+
+      dadosLink: 'download the data (CSV)',
 
       estaPagina: {
         eyebrow: 'This page',
