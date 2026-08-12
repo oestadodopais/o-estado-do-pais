@@ -84,6 +84,13 @@ const CAMPOS = [
 /** Campos de proveniência que só podem ser null numa linha derivada. */
 const CAMPOS_PROVENIENCIA = ['source', 'document', 'source_url', 'access_date', 'excerpt'];
 
+/**
+ * Os campos de uma entrada do registo de correções. Todos obrigatórios.
+ * A lista fechada apanha erros de escrita nas chaves — um "reason-en" em vez
+ * de "reason_en" passaria despercebido e a edição inglesa ficaria sem motivo.
+ */
+const CAMPOS_CORRECAO = ['date', 'kind', 'old_value', 'new_value', 'reason', 'reason_en'];
+
 let _cache = null;
 
 /** Carrega e devolve Map<id, claim>. Lança se o YAML estiver partido. */
@@ -257,6 +264,22 @@ export function contagensDoRegisto(claims = loadClaims()) {
 }
 
 /**
+ * O motivo de uma entrada do registo, na língua de uma edição.
+ *
+ * O motivo é prosa da casa e existe nas duas línguas: português em `reason`,
+ * inglês em `reason_en`. **Não há recurso à outra língua.** Uma edição inglesa
+ * a mostrar o motivo português é exactamente o buraco que o campo `reason_en`
+ * veio fechar — e o validador exige os dois campos, por isso um `null` aqui
+ * significa que o livro-razão não passou.
+ */
+export function motivoDaEntrada(corr, lang) {
+  if (!corr) return null;
+  if (lang === 'en') return corr.reason_en ?? null;
+  if (lang === 'pt') return corr.reason ?? null;
+  return null;
+}
+
+/**
  * Todas as entradas do registo, de todas as afirmações, da mais recente à
  * primeira. É daqui que a página do método lê — nunca de texto escrito à mão.
  */
@@ -372,11 +395,28 @@ export function validateLedger() {
       c.corrections.forEach((corr, n) => {
         const rot = `${onde} correcção #${n + 1}`;
         if (!corr || typeof corr !== 'object') {
-          errors.push(`${rot}: tem de ser um mapa com date, old_value, new_value e reason.`);
+          errors.push(`${rot}: tem de ser um mapa com date, kind, old_value, new_value, reason e reason_en.`);
           return;
+        }
+        for (const k of Object.keys(corr)) {
+          if (!CAMPOS_CORRECAO.includes(k)) {
+            errors.push(
+              `${rot}: campo desconhecido "${k}". Aceites: ${CAMPOS_CORRECAO.join(', ')}.`,
+            );
+          }
         }
         for (const campo of ['date', 'kind', 'old_value', 'new_value', 'reason']) {
           if (ausente(corr[campo])) errors.push(`${rot}: falta "${campo}".`);
+        }
+        /* O motivo tem de existir nas duas línguas. A edição inglesa mostra
+           "reason_en"; sem ele, mostraria o motivo em português — que foi o
+           buraco que este campo veio fechar. Não há tradução automática nem
+           recurso à outra língua: ou está escrito, ou o build pára. */
+        if (ausente(corr.reason_en)) {
+          errors.push(
+            `${rot}: falta "reason_en". O motivo tem de estar escrito nas duas línguas — ` +
+              `"reason" em português, "reason_en" em inglês. A edição inglesa mostra o segundo.`,
+          );
         }
         if (!ausente(corr.kind) && !KINDS.includes(corr.kind)) {
           errors.push(

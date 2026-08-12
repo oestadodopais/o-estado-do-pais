@@ -22,10 +22,10 @@ import { fileURLToPath } from 'node:url';
 import { load } from 'js-yaml';
 import { parse, NodeType } from 'node-html-parser';
 
-import { loadClaims, digitsOf, parsePtNumber } from '../src/lib/ledger.mjs';
+import { loadClaims, digitsOf, parsePtNumber, motivoDaEntrada } from '../src/lib/ledger.mjs';
 import { VERBATIM, normalizeWhitespace } from '../src/data/verbatim.mjs';
 import { EDITIONS } from '../src/data/studies.mjs';
-import { matchPath } from '../src/lib/routes.mjs';
+import { matchPath, HREFLANG } from '../src/lib/routes.mjs';
 import { renderizacoesAceites } from '../src/data/correcoes.mjs';
 import { SITE_HOST, SITE_NAME, AUTHORSHIP_LINE, EDITION } from '../site.config.mjs';
 
@@ -67,6 +67,11 @@ const CADEIAS_HEAD = [
   EDITION.display,
   EDITION.iso,
 ].sort((a, b) => b.length - a.length);
+
+/** De <html lang="pt-PT"> para a língua da edição. Derivado da tabela de rotas. */
+const LINGUA_POR_HREFLANG = Object.fromEntries(
+  Object.entries(HREFLANG).map(([lang, hreflang]) => [hreflang, lang]),
+);
 
 const erros = [];
 const avisos = [];
@@ -178,6 +183,10 @@ for (const file of ficheirosHtml(DIST)) {
   });
 
   const err = (msg) => erros.push({ rel, msg });
+
+  /* A língua desta edição, lida da própria página. É ela que decide qual das
+     duas versões do motivo de uma correção tem de estar renderizada. */
+  const linguaPagina = LINGUA_POR_HREFLANG[root.querySelector('html')?.getAttribute('lang') ?? ''] ?? null;
 
   /* --- 1. ilhas de dados do livro-razão, antes de as remover --- */
   for (const el of root.querySelectorAll('script[data-ledger-json]')) {
@@ -352,13 +361,18 @@ for (const file of ficheirosHtml(DIST)) {
    * afirmação. O motivo é prosa livre e pode citar números («o valor 4 vinha
    * do colofão…»); por isso é comparado por igualdade de texto, não dispensado.
    * Reescrever a história de uma correção falha o build.
+   *
+   * O motivo é o único campo com duas versões: `reason` em português e
+   * `reason_en` em inglês. O portão confere o motivo **da língua daquela
+   * edição** — a edição inglesa a mostrar o motivo português falha o build,
+   * tal como falha a portuguesa a mostrar o inglês.
    */
   const CAMPOS_CORRECAO = {
     date: 'exacto',
     kind: 'natureza',
     old_value: 'algarismos',
     new_value: 'algarismos',
-    reason: 'exacto',
+    reason: 'motivo',
     id: 'exacto',
   };
   for (const el of body.querySelectorAll('[data-correcao-claim]')) {
@@ -395,6 +409,37 @@ for (const file of ficheirosHtml(DIST)) {
       err(`o registo de correções cita a correção #${n + 1} de "${id}", que não existe.`);
       continue;
     }
+    /* O motivo resolve-se pela língua da edição, e não há recurso à outra:
+       mostrar o motivo português numa página inglesa é o defeito que o campo
+       reason_en veio fechar. Sem língua legível na página, não se confere nada
+       — falha-se. */
+    if (modo === 'motivo') {
+      if (!linguaPagina) {
+        err(
+          `o registo de correções aparece numa página sem <html lang> reconhecido; ` +
+            `sem saber a língua da edição não é possível conferir o motivo.`,
+        );
+        continue;
+      }
+      const motivo = motivoDaEntrada(corr, linguaPagina);
+      if (motivo === null) {
+        err(
+          `a correção #${n + 1} de "${id}" não tem motivo escrito em "${linguaPagina}". ` +
+            `O motivo tem de existir nas duas línguas (reason e reason_en).`,
+        );
+        continue;
+      }
+      if (normalizeWhitespace(renderizado) !== normalizeWhitespace(motivo)) {
+        err(
+          `no registo, o motivo da correção #${n + 1} de "${id}" não é o da edição ` +
+            `"${linguaPagina}".\n` +
+            `      esperado:    ${normalizeWhitespace(motivo).slice(0, 120)}\n` +
+            `      renderizado: ${normalizeWhitespace(renderizado).slice(0, 120)}`,
+        );
+      }
+      continue;
+    }
+
     const esperado = String(corr[campo]);
 
     /* A natureza da entrada pode aparecer como identificador ou como um dos

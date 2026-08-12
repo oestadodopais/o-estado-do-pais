@@ -52,7 +52,9 @@ corrections: []
 6. `study` não constar de `src/data/studies.mjs`;
 7. `derived_from` apontar para uma afirmação que não existe;
 8. uma linha derivada não explicar a aritmética em `derivation`;
-9. uma correcção não trouxer `date` (AAAA-MM-DD), `old_value`, `new_value` e `reason`;
+9. uma correcção não trouxer `date` (AAAA-MM-DD), `kind`, `old_value`,
+   `new_value`, `reason` **e `reason_en`** — ou trouxer uma chave que não é
+   nenhuma destas;
 10. uma expressão `check` não der exactamente o valor publicado.
 
 ## `[a verificar]`
@@ -105,7 +107,19 @@ corrections:
     old_value: "26,5%"
     new_value: "27,1%"
     reason: "O RASARP 2025 foi revisto; a versão de Setembro corrige o valor nacional."
+    reason_en: "The 2025 RASARP was revised; the September version corrects the national value."
 ```
+
+### `reason` e `reason_en`: o motivo nas duas línguas
+
+O motivo é a única parte do registo que é prosa da casa, e o sítio publica-se
+em duas línguas. **Os dois campos são obrigatórios.** Não há tradução
+automática nem recurso à outra língua: a edição inglesa mostra `reason_en`, e o
+portão de HTML confere, em cada edição, o motivo daquela língua. Uma página
+inglesa a mostrar o motivo português falha o build.
+
+Tudo o resto de uma entrada — data, natureza, valor antigo, valor novo — é
+igual nas duas edições, porque não é prosa: é o registo.
 
 ### `kind`: as duas naturezas
 
