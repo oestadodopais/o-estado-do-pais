@@ -1,0 +1,23 @@
+---
+/**
+ * Uma frase feita de pedaços. Nenhum pedaço de texto pode trazer um número:
+ * se trouxer, o portão de HTML apanha-o.
+ *
+ *   'palavras'                    — texto corrido
+ *   { claim: 'id' }               — um número, citado do livro-razão
+ *   { ref: '2024' }               — ano ou período de referência dos dados
+ *   { nl: '100', motivo: '…' }    — outro contexto estrutural declarado
+ */
+import Claim from './Claim.astro';
+
+const { partes, lang = 'pt' } = Astro.props;
+---
+
+{
+  partes.map((parte) => {
+    if (typeof parte === 'string') return <Fragment set:text={parte} />;
+    if (parte.claim) return <Claim id={parte.claim} lang={lang} />;
+    if (parte.ref) return <span data-nonledger="data-de-referencia">{parte.ref}</span>;
+    return <span data-nonledger={parte.motivo}>{parte.nl}</span>;
+  })
+}

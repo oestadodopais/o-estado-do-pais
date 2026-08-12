@@ -1,0 +1,54 @@
+---
+/**
+ * Rodapé.
+ *
+ * A linha de autoria é obrigatória em todas as páginas e vai literal, em
+ * português, nas duas edições — é uma declaração de autoria, não uma frase
+ * de circunstância. Na edição inglesa leva uma tradução por baixo, em letra
+ * pequena, para que o leitor inglês perceba o que está a ler.
+ *
+ * O portão de HTML falha o build se esta linha desaparecer de uma página.
+ */
+import { SITE_NAME, AUTHORSHIP_LINE, EDITION, SITE_HOST_DISPLAY } from '../../site.config.mjs';
+import { routePath, otherLanguagePath, normalizePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+
+const { lang = 'pt', path } = Astro.props;
+const s = t(lang);
+const aqui = normalizePath(path ?? Astro.url.pathname);
+
+const home = routePath('home', lang);
+const estudos = routePath('estudos', lang);
+const metodo = routePath('metodo', lang);
+const outra = otherLanguagePath(aqui, lang);
+---
+
+<footer class="rodape">
+  <div class="rodape-linha">
+    <div>
+      <p class="autoria" lang="pt-PT">
+        {AUTHORSHIP_LINE} <a href={metodo}>{s.rodape.metodoTexto}</a>.
+      </p>
+      {
+        lang === 'en' && (
+          <p class="autoria-en" lang="en">
+            Written by AI, directed by a person.
+          </p>
+        )
+      }
+    </div>
+
+    <nav class="rodape-nav" aria-label={s.nav.inicio}>
+      <a href={home}>{s.nav.inicio}</a>
+      <a href={estudos}>{s.nav.estudos}</a>
+      <a href={metodo}>{s.nav.metodo}</a>
+      <a href={outra} hreflang={lang === 'pt' ? 'en' : 'pt-PT'}>{s.outraLingua}</a>
+    </nav>
+  </div>
+
+  <div class="rodape-meta">
+    <span>{SITE_NAME}</span>
+    <span data-nonledger="data-de-edicao">{s.rodape.edicao} {EDITION.display}</span>
+    <span>{s.rodape.dominioNota}: {SITE_HOST_DISPLAY}</span>
+  </div>
+</footer>

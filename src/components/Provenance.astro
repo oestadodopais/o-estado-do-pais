@@ -1,0 +1,36 @@
+---
+/**
+ * Etiqueta de proveniência.
+ *
+ * Diz de onde veio um número, sem sair do sítio onde o número está.
+ * O quadrado cheio: proveniência completa. O quadrado a tracejado: há campos
+ * por confirmar — e a etiqueta di-lo por palavras, não só por desenho.
+ *
+ * Vai marcada com data-nonledger="proveniencia" porque o seu texto é gerado a
+ * partir do próprio livro-razão (nomes de estudos com anos, datas de acesso).
+ */
+import { getClaim, POR_VERIFICAR } from '../lib/ledger.mjs';
+import { studyLabel } from '../data/studies.mjs';
+import { t } from '../i18n/strings.mjs';
+
+const { id, lang = 'pt' } = Astro.props;
+const s = t(lang);
+const claim = getClaim(id);
+
+const derivada = Array.isArray(claim.derived_from) && claim.derived_from.length > 0;
+
+const campos = [claim.source, claim.source_url, claim.access_date, claim.excerpt];
+if (claim.document && typeof claim.document === 'object') {
+  campos.push(claim.document.title, claim.document.edition);
+}
+const incompleta = !derivada && campos.some((c) => c === POR_VERIFICAR);
+
+const estudo = studyLabel(claim.study, lang);
+---
+
+<span
+  class:list={['src-chip', incompleta && 'is-unverified']}
+  data-nonledger="proveniencia"
+>
+  {derivada ? `${s.prov.calculado} · ` : ''}{estudo}{incompleta ? ` · ${s.prov.porConfirmar}` : ''}
+</span>

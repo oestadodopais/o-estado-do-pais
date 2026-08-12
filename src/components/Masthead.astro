@@ -1,0 +1,70 @@
+---
+/**
+ * O cabeçalho.
+ *
+ * O nome vai sempre acentuado, sempre na serifada, e a serifada não aparece
+ * em mais lado nenhum. A linha de método vem de site.config.mjs e não é
+ * traduzida: é identidade, como o nome.
+ *
+ * A mobília do cabeçalho (data de edição, contagens) é a única linha da
+ * página onde há algarismos que não são medições do país — daí o
+ * data-nonledger nas datas e os <Claim> nas contagens.
+ */
+import { SITE_NAME, METHOD_LINE, EDITION } from '../../site.config.mjs';
+import { routePath, otherLanguagePath, normalizePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+import Claim from './Claim.astro';
+
+const { lang = 'pt', path, compact = false, furniture = false } = Astro.props;
+const s = t(lang);
+const aqui = normalizePath(path ?? Astro.url.pathname);
+
+const home = routePath('home', lang);
+const estudos = routePath('estudos', lang);
+const metodo = routePath('metodo', lang);
+const outra = otherLanguagePath(aqui, lang);
+
+const atual = (p) => (normalizePath(p) === aqui ? 'page' : undefined);
+const NomeTag = compact ? 'p' : 'h1';
+---
+
+<header>
+  <div class="topbar">
+    <nav class="nav" aria-label={s.nav.inicio}>
+      <a href={home} aria-current={atual(home)}>{s.nav.inicio}</a>
+      <a href={estudos} aria-current={atual(estudos)}>{s.nav.estudos}</a>
+      <a href={metodo} aria-current={atual(metodo)}>{s.nav.metodo}</a>
+    </nav>
+    <nav class="nav" aria-label={s.outraLingua}>
+      <a class="lang" href={outra} hreflang={lang === 'pt' ? 'en' : 'pt-PT'} lang={lang === 'pt' ? 'en' : 'pt-PT'}>
+        {s.outraLingua}
+      </a>
+    </nav>
+  </div>
+
+  <div class:list={['masthead', compact && 'masthead-compact']}>
+    <NomeTag class="wordmark">
+      {compact ? <a href={home}>{SITE_NAME}</a> : SITE_NAME}
+    </NomeTag>
+    <p class="method-line" lang="pt-PT">{METHOD_LINE}</p>
+
+    {
+      furniture && (
+        <div class="masthead-furniture">
+          <span data-nonledger="data-de-edicao">
+            {s.rodape.edicao} {EDITION.display}
+          </span>
+          <span>
+            <Claim id="municipios-portugal-caop-2025" /> {s.rodape.municipios}
+          </span>
+          <span>
+            <Claim id="estudos-publicados" /> {s.rodape.estudos}
+          </span>
+          <span>
+            <Claim id="edicoes-publicadas" /> {s.rodape.edicoes}
+          </span>
+        </div>
+      )
+    }
+  </div>
+</header>
