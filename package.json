@@ -9,14 +9,15 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run ledger:check && astro build && npm run gate:html && npm run check:dados",
+    "build": "npm run ledger:check && npm run check:documentos && astro build && npm run gate:html && npm run check:dados",
     "preview": "astro preview",
     "astro": "astro",
     "ledger:check": "node scripts/check-ledger.mjs",
     "gate:html": "node scripts/gate-html.mjs",
     "check:dados": "node scripts/check-dados.mjs",
+    "check:documentos": "node scripts/check-documentos.mjs",
     "typecheck": "tsc -p tsconfig.check.json",
-    "verify": "npm run ledger:check && npm run gate:html && npm run check:dados"
+    "verify": "npm run ledger:check && npm run check:documentos && npm run gate:html && npm run check:dados"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",
