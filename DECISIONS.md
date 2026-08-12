@@ -233,6 +233,57 @@ pesquisa, não assumido. Ligar `checkJs` a todos os `.mjs` levantaria 96
 diagnósticos nos scripts do portão e nos módulos de dados, que hoje não são
 verificados; endurecê-los é trabalho à parte, e não foi feito.
 
+### 1.13 O texto do Método
+
+O português é **cópia final da direção**, transcrita do rascunho aprovado sem
+uma palavra mudada: não foi reescrito, apertado nem alargado. A nota de
+integração no topo do rascunho era instrução, não conteúdo, e não entrou.
+
+A fidelidade foi verificada por máquina, não por leitura: 54 frases do rascunho,
+54 encontradas no HTML construído, com os marcadores mascarados para a
+comparação. A secção «Limites», que o rascunho acrescenta, entrou como sexta
+secção.
+
+**A minha própria prosa saiu.** A página tinha um subtítulo que eu tinha escrito
+na primeira construção. Foi removido: não faz sentido texto meu ao lado de cópia
+final da direção, e o primeiro parágrafo do rascunho já é a abertura certa.
+
+**Os marcadores ficam à vista**, com o mesmo aspecto do marcador do livro-razão
+— quem lê uma página e quem lê uma linha do livro-razão vê o mesmo sinal. São
+cinco ocorrências, não quatro:
+
+| onde | marcador | o que é |
+| --- | --- | --- |
+| Quem faz isto | `[a confirmar: forma pública do nome]` | por resolver |
+| Correções | `[endereço a confirmar]` | por resolver |
+| Limites | `[a confirmar: modelo de financiamento…]` | por resolver |
+| Atribuição causal | `[a verificar: número exato antes de publicar]` | por resolver |
+| Como se escreve | `[a verificar]` | **menção**, não pendência |
+
+**Julgado por mim, e assinalado:** a quinta é uma menção — a frase «fica marcado
+[a verificar], ou é cortado» está a nomear a convenção da casa, não a pedir
+verificação. Ficou com o mesmo aspecto das outras porque é literalmente o mesmo
+marcador, e mudá-la seria reescrever cópia final. A frase à volta desfaz a
+ambiguidade. Se a direção preferir distingui-la, é uma linha.
+
+**O único número do texto** é o ano das autárquicas, e passa pela porta
+`data-nonledger="data-de-referencia"` — é a data da leitura, não a leitura. A
+contagem de câmaras dessa frase continua **por escrever**, como estava: «uma
+parte substancial». Verificado no HTML construído: não há nenhum algarismo
+junto a «câmaras».
+
+**Inglês: tradução fiel, à espera de revisão.** Mesmas seis secções, mesmos
+cinco marcadores — mantidos em português, como na origem, com glosa inglesa ao
+lado. A página inglesa abre com um aviso a dizer que a tradução aguarda revisão
+da direção; a portuguesa não tem aviso nenhum.
+
+**Uma afirmação do texto que o sítio ainda não cumpre.** A secção «O livro-razão»
+diz: «Os dados por trás de cada gráfico são descarregáveis.» Hoje não são — não
+há um único ficheiro para descarregar em lado nenhum. Não toquei na frase, porque
+é cópia final; fica aqui assinalado que ou se constrói a descarga, ou a frase
+tem de mudar antes de publicar. **É a única promessa do Método que o código
+ainda não sustenta.**
+
 ---
 
 ## 2. Como funciona o portão, e o que ele não vê
@@ -331,10 +382,11 @@ fácil, não para tornar o desonesto impossível.
 
 ## 4. O que fica para o director
 
-1. **O texto do método.** Cinco secções de pé e vazias, em `/metodo`, marcadas
-   `[texto em preparação]` sobre fundo tracejado: Quem faz isto · Como se
-   escreve · O livro-razão · Correções (com o registo montado e vazio) ·
-   Atribuição causal.
+1. **Fechar o Método.** O texto português está publicado. Falta: resolver os
+   quatro marcadores (forma pública do nome, endereço de contacto, modelo de
+   financiamento, número exato das autárquicas); rever a tradução inglesa; e
+   decidir sobre a frase «os dados por trás de cada gráfico são descarregáveis»,
+   que o sítio ainda não cumpre (§1.13).
 2. **Migrar os estudos.** Nove trabalhos, dezoito páginas de destino (uma por
    língua), cada uma a dizer por palavras que o estudo ainda não foi mudado
    para ali.

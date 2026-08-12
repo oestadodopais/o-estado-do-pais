@@ -1240,3 +1240,57 @@ section {
   font-family: inherit;
   overflow-wrap: anywhere;
 }
+
+/* ------------------------------------------------------------ método */
+
+.metodo-corpo {
+  display: grid;
+  gap: 16px;
+  max-width: 68ch;
+}
+.metodo-p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink);
+}
+.metodo-p strong,
+.metodo-lista strong {
+  font-weight: 600;
+}
+.metodo-lista {
+  margin: 0;
+  padding-left: 1.35em;
+  display: grid;
+  gap: 11px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+.metodo-lista li::marker {
+  color: var(--muted);
+  font-family: var(--f-mono);
+  font-size: 13px;
+}
+.metodo-lista-num {
+  list-style: decimal;
+}
+
+/* Marcador por resolver. Mesmo aspecto do marcador do livro-razão: quem lê
+   uma página e quem lê uma linha do livro-razão vê o mesmo sinal. */
+.marcador {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--paper-3);
+  padding: 1px 6px;
+  border: 1px solid var(--rule-strong);
+  white-space: normal;
+  letter-spacing: 0.02em;
+}
+.marcador-gloss {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}

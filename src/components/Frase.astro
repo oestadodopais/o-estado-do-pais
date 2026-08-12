@@ -7,6 +7,10 @@
  *   { claim: 'id' }               — um número, citado do livro-razão
  *   { ref: '2024' }               — ano ou período de referência dos dados
  *   { nl: '100', motivo: '…' }    — outro contexto estrutural declarado
+ *   { forte: '…' }                — negrito
+ *   { marcador: '…', gloss: '…' } — marcador por resolver, em chip visível.
+ *                                   O marcador fica sempre em português, como
+ *                                   na origem; na edição inglesa leva glosa.
  */
 import Claim from './Claim.astro';
 
@@ -18,6 +22,16 @@ const { partes, lang = 'pt' } = Astro.props;
     if (typeof parte === 'string') return <Fragment set:text={parte} />;
     if (parte.claim) return <Claim id={parte.claim} lang={lang} />;
     if (parte.ref) return <span data-nonledger="data-de-referencia">{parte.ref}</span>;
+    if (parte.forte) return <strong set:text={parte.forte} />;
+    if (parte.marcador)
+      return (
+        <>
+          <span class="marcador" lang="pt-PT">[{parte.marcador}]</span>
+          {lang !== 'pt' && parte.gloss && (
+            <span class="marcador-gloss"> ({parte.gloss})</span>
+          )}
+        </>
+      );
     return <span data-nonledger={parte.motivo}>{parte.nl}</span>;
   })
 }
