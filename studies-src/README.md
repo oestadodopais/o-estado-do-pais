@@ -9,6 +9,9 @@ studies-src/
   <slug>/
     pt.html      a edição portuguesa
     en.html      a edição inglesa
+  _raw/
+    <slug>.<lingua>.html   os bytes tal como foram descarregados
+  manifest.yml             uma linha por edição alojada
 ```
 
 ## Pôr um estudo no sítio
@@ -24,6 +27,39 @@ do estudo passa a ligar para ele e o portão passa a conferi-lo. **A pasta é a
 declaração**: não há registo para actualizar nem rota para escrever.
 
 Para a edição inglesa, `en.html`, servido em `/en/studies/<slug>/document`.
+
+## Se o documento vier de um artefacto claude.ai
+
+O anfitrião não serve o documento do autor: serve-o embrulhado num runtime seu.
+Há então dois passos antes do build, e nenhum é à mão:
+
+```bash
+# 1. guardar os bytes descarregados, tal e qual
+cp <descarga>.html studies-src/_raw/<slug>.<lingua>.html
+
+# 2. tirar o runtime — função pura, e que pára se o invólucro não for o esperado
+node scripts/normalize-study.mjs \
+     studies-src/_raw/<slug>.<lingua>.html \
+     studies-src/<slug>/<lingua>.html
+```
+
+O segundo comando imprime os dois resumos e as três medidas que a linha do
+`manifest.yml` precisa. **Acrescente-a**: sem ela o build pára, porque um
+documento alojado sem proveniência declarada não é um documento alojado.
+
+Se o normalizador atirar, **não contorne**. O molde do invólucro está escrito
+por extenso no cabeçalho de [`scripts/normalize-study.mjs`](../scripts/normalize-study.mjs);
+se o anfitrião o mudou, deriva-se outra vez dos bytes e reescreve-se ali.
+
+## O manifesto, e porque tem dois resumos
+
+| Campo | O que é |
+| --- | --- |
+| `sha256_normalized` | o resumo do ficheiro alojado. **É o invariante** — o mesmo documento dá sempre o mesmo valor. É o que `check:documentos` confere. |
+| `sha256_raw` | o resumo dos bytes descarregados. **Não é reproduzível**: o runtime do anfitrião muda sozinho, e os mesmos bytes de autor dão descargas diferentes em semanas diferentes. É registo, não verificação. |
+
+É por isso que `_raw/` está versionado: sem os bytes, `sha256_raw` seria uma
+afirmação sobre uma coisa que já não existe. Ver [`DECISIONS.md`](../DECISIONS.md) §1.20.
 
 ## O que o build faz ao ficheiro
 
@@ -47,6 +83,9 @@ e compara com o que foi construído. Se não for igual ao carácter, o build pá
 | `en.html` num trabalho que não tem edição inglesa no arquivo | o build pára |
 | ficheiro sem `<body>` nem `</head>` | o build pára — a faixa não saberia onde entrar |
 | documento construído diferente de «origem + faixa» | o portão fecha |
+| documento em disco sem linha no `manifest.yml` | o portão fecha |
+| linha no `manifest.yml` sem documento em disco | o portão fecha |
+| um byte trocado num documento alojado | o portão fecha |
 
 ## O que ainda é da sua conta
 

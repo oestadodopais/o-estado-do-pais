@@ -23,17 +23,22 @@ npm run verify     # só as verificações, sobre um dist/ já construído
 
 Requer Node ≥ 22.12 (exigência do Astro 7).
 
-`npm run build` são quatro passos encadeados, e qualquer um deles pára tudo:
+`npm run build` são cinco passos encadeados, e qualquer um deles pára tudo:
 
 1. `ledger:check` — o livro-razão está completo e a aritmética bate certo;
-2. `astro build` — se um gabarito citar uma afirmação que não existe, o build atira;
-3. `gate:html` — varre `dist/` à procura de algarismos sem proveniência;
-4. `check:dados` — os ficheiros de dados descarregáveis existem e batem certo
+2. `check:documentos` — cada documento de estudo alojado é, byte a byte, o que o
+   manifesto declara;
+3. `astro build` — se um gabarito citar uma afirmação que não existe, o build atira;
+4. `gate:html` — varre `dist/` à procura de algarismos sem proveniência;
+5. `check:dados` — os ficheiros de dados descarregáveis existem e batem certo
    com as suas origens.
 
-Os três primeiros são os portões da casa e não se afrouxam. O quarto é mais
-recente e existe para que uma promessa do Método não volte a ser falsa — ver
-[«Os dados por trás dos gráficos»](#os-dados-por-trás-dos-gráficos).
+O primeiro, o terceiro e o quarto são os portões da casa e não se afrouxam. Os
+outros dois são mais recentes: `check:dados` existe para que uma promessa do
+Método não volte a ser falsa — ver [«Os dados por trás dos
+gráficos»](#os-dados-por-trás-dos-gráficos) — e `check:documentos` existe para
+que «alojado intacto» seja uma verificação e não uma intenção — ver [«Os
+estudos: a página e o documento»](#os-estudos-a-página-e-o-documento).
 
 ---
 
@@ -133,6 +138,8 @@ por palavras). **Não tem resumo nem números do estudo**: um resumo escrito sem
 ler o estudo seria conteúdo inventado, e os números do estudo só entram quando
 cada um tiver a sua linha no livro-razão.
 
+Hoje estão alojados **doze documentos**, em oito trabalhos.
+
 ### Pôr o documento de um estudo no sítio
 
 ```
@@ -143,6 +150,17 @@ studies-src/<slug>/en.html      →  /en/studies/<slug>/document
 Pousar o ficheiro e `npm run build`. Mais nada: **a pasta é a declaração.** Não
 há registo para actualizar nem rota para escrever, e a página do estudo passa a
 ligar para o documento sozinha.
+
+Se o documento vier de um artefacto `claude.ai`, há um passo antes: os bytes
+servidos trazem um runtime injectado pelo anfitrião, e
+[`scripts/normalize-study.mjs`](scripts/normalize-study.mjs) tira-o — uma função
+pura, de bytes para bytes, que **pára** em vez de improvisar se o invólucro não
+for exactamente o que ela conhece. Os bytes descarregados ficam guardados em
+`studies-src/_raw/`, e cada edição instalada tem uma linha em
+[`studies-src/manifest.yml`](studies-src/manifest.yml) que `check:documentos`
+reconfere a cada construção. O porquê de tudo isto — e porque é que o resumo dos
+bytes brutos **não** é reproduzível e o do normalizado é — está em
+[`DECISIONS.md`](DECISIONS.md) §1.20.
 
 O build acrescenta ao documento **uma coisa e só uma**: uma faixa no topo do
 `<body>`, com a marca do observatório ligada de volta à página do estudo, CSS
@@ -188,10 +206,14 @@ ledger/
 studies-src/
   <slug>/pt.html          o documento original de um estudo, alojado intacto
   <slug>/en.html          a edição inglesa do mesmo
+  _raw/<slug>.<lg>.html   os bytes tal como foram descarregados — o rasto de auditoria
+  manifest.yml            uma linha por edição: origem, data, tamanhos e resumos
   README.md               o processo de dois passos, e o que o build impõe
 
 scripts/
   check-ledger.mjs        antes do build: completude e aritmética
+  check-documentos.mjs    antes do build: os documentos alojados contra o manifesto
+  normalize-study.mjs     a função pura que separa o documento do invólucro do anfitrião
   gate-html.mjs           depois do build: varre dist/ à procura de algarismos órfãos
   check-dados.mjs         depois do build: os CSV existem e batem certo com as origens
 

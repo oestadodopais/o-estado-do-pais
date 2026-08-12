@@ -605,6 +605,137 @@ do que o problema (analisar o documento em vez de o tocar minimamente), e
 porque o portão apanha o resultado: o ficheiro deixaria de ser «origem + faixa»
 na forma esperada e o build pararia.
 
+### 1.20 Os documentos entraram, e trouxeram um contrato de determinismo
+
+Doze das treze edições pedidas estão alojadas. O que este ponto regista não é a
+entrada delas — é a máquina que a torna reconferível por quem não estava cá.
+
+#### O invólucro do anfitrião, derivado dos bytes
+
+Um artefacto `claude.ai` não serve o documento do autor: serve-o embrulhado. O
+molde foi derivado por medição, não por leitura de documentação, sobre **19
+ficheiros descarregados, de 13 artefactos e de duas gerações do invólucro**, e
+encaixa em todos sem uma excepção:
+
+```
+<!doctype html><html><head>                      27 bytes, constante
+<!-- frame-runtime --> …script… <!-- /frame-runtime -->    VARIÁVEL
+<meta charset=utf8>…</style></head><body>       263 bytes, constante
+…o documento do autor…
+</body></html>                                   14 bytes, constante
+```
+
+`scripts/normalize-study.mjs` confere as três partes constantes por igualdade de
+bytes e apaga **um só intervalo contíguo**: do `<!-- frame-runtime -->` ao
+`<!-- /frame-runtime -->`, inclusive. Mais nada. Se algum ficheiro não encaixar,
+a função **atira** — não há corte a olho, não há caso por estudo.
+
+**Porque não se tira também o andaime.** Duas razões, e a primeira é decisiva:
+em 12 dos 13 documentos o texto do autor **não é um ficheiro HTML completo** —
+começa em `<title>` e nunca abre `<body>`. Sem o andaime não sobra um documento,
+sobra um fragmento: sem `<body>` onde a faixa entra, e o build pararia. A
+alternativa seria escrevermos nós um andaime — HTML nosso por baixo da faixa,
+que é exactamente o que §1.19 proíbe. A segunda razão é que o andaime é inerte
+(dois `<meta>` e um estilo-base que o documento sobrepõe) e o runtime não é: fala
+por `postMessage` com claude.ai e importa módulos de `/_runtime/…` que neste
+domínio não existem. A fronteira não é estética — é entre o que o anfitrião
+**injecta** e o que ele usa para **servir**.
+
+#### Os dois resumos não têm o mesmo estatuto
+
+Esta é a descoberta que justifica todo o resto, e foi medida, não suposta:
+
+> **O runtime injectado muda sozinho.** Os artefactos `ec1cdb39`, `bc6cb6de` e
+> `193481f2` não foram tocados pelo autor entre duas descargas — mesma versão do
+> artefacto — e mesmo assim os bytes descarregados cresceram **2570 bytes cada**,
+> porque o anfitrião passou de uma geração de runtime de 14 571 bytes para outra
+> de 17 141, entre 10 e 12 de Agosto de 2026.
+
+Daí a assimetria que o manifesto declara nas suas próprias palavras:
+
+| Campo | Estatuto |
+| --- | --- |
+| `sha256_raw` | **Não é reproduzível.** É o registo honesto dos bytes servidos naquele instante. Uma descarga nova deve fazê-lo divergir, e isso não é um defeito. |
+| `sha256_normalized` | **É o invariante.** O mesmo documento do autor dá sempre o mesmo resumo, atravesse o runtime as gerações que atravessar. É este que o portão confere. |
+
+Um verificador independente que reconfira por descarga nova vai encontrar
+`sha256_raw` diferente e `sha256_normalized` igual. Se encontrar o contrário — o
+bruto igual e o normalizado diferente — é a normalização que está errada.
+
+#### `studies-src/_raw/` fica versionado
+
+Os bytes tal como foram descarregados ficam em `studies-src/_raw/<slug>.<lingua>.html`,
+**dentro do repositório** (8,5 MB, doze ficheiros). Não foram ignorados, e a
+razão é dupla: sem eles, `sha256_raw` seria uma afirmação sobre bytes que já não
+existem em lado nenhum — o artefacto a montante muda; e com eles a função de
+normalização pode ser **reexecutada sem rede**, o que é a única forma de o
+determinismo ser conferível por quem não tem sessão em claude.ai. Uma pasta com
+`_` à cabeça não é um trabalho: `todosOsDocumentos()` salta-a, e a severidade de
+baixo mantém-se — uma pasta com nome de slug que não é de nenhum trabalho
+continua a parar o build.
+
+#### `check:documentos`, e as três coisas que ele apanha
+
+Novo passo do `npm run build`, **antes** do `astro build`, porque confere a
+origem e não a saída: se os bytes de `studies-src/` já não são os instalados,
+não vale a pena construir por cima deles.
+
+1. **resumo diferente** — o ficheiro em disco não é o que o manifesto declara;
+2. **ficheiro órfão** — está em disco e não tem linha no manifesto;
+3. **linha órfã** — está no manifesto e não está em disco.
+
+Posto à prova a falhar, um caso de cada vez, e reposto a seguir: um byte trocado
+num documento · uma linha apagada do manifesto · um ficheiro alojado sem linha.
+Nos três casos o portão fecha com código 1. Confere ainda que a língua e o slug
+são de uma edição que o arquivo conhece, e que o ficheiro bruto que sustenta
+`sha256_raw` existe.
+
+#### O que ficou de fora, e porquê
+
+**«Évora — Economia, Investidores, Portas Abertas 2026» não foi instalado.** Não
+é uma falha do documento nem do mecanismo: a ferramenta de descarga devolveu
+este artefacto — o mais pequeno dos treze — **em linha, sem escrever os bytes em
+ficheiro**, ao contrário dos outros doze. Instalá-lo obrigaria a transcrever à
+mão cerca de 43 KB de HTML a partir do texto da resposta, e uma transcrição é
+texto escrito por nós: um carácter trocado seria uma alteração silenciosa de uma
+obra publicada, que é precisamente o defeito que todo este mecanismo existe para
+tornar impossível. Preferiu-se a lacuna declarada. **Fica por instalar, e
+instala-se sem trabalho nenhum** assim que a descarga escrever o ficheiro:
+pousar os bytes em `_raw/`, correr o normalizador, acrescentar a linha ao
+manifesto.
+
+#### Duas coisas para a direção decidir
+
+**Os títulos ingleses de dois trabalhos deixaram de ser desconhecidos.** O
+arquivo tem `titleUnverified: true` em «Onde está a água?» (EN) e «Água Não
+Faturada» (EN), com o título português no lugar do inglês, porque inventá-lo
+seria inventar conteúdo (§1.7). Os documentos agora alojados trazem-nos:
+
+- `Onde está a água? — Portugal's water, where it comes from, and what autonomy would take`
+- `Água Não Faturada — Portugal's water, what leaks and what was never measured`
+
+Não foram escritos no arquivo. Um `<title>` de página não é necessariamente o
+título de um trabalho, e mexer no arquivo é decisão editorial, não mecânica —
+mas a prova está agora no repositório e a marca pode cair quando a direção
+quiser.
+
+**As páginas de estudo continuam fora do índice.** Alojar o documento não é a
+migração estar feita (§1.8, §1.19): falta a página do observatório sobre cada
+trabalho. Doze documentos alojados, doze páginas ainda por escrever.
+
+#### Limites conhecidos deste passo
+
+- O molde do invólucro está escrito por extenso no normalizador. Se o anfitrião
+  o mudar, **o normalizador pára** — de propósito. Terá de ser derivado outra
+  vez, dos bytes, e reescrito ali.
+- `check:documentos` não confere `sha256_raw` contra os ficheiros de `_raw/`.
+  Podia, e daria uma falsa sensação de solidez: o que provaria era que a cópia
+  não mudou em disco, não que veio do artefacto. A prova disso é a descarga
+  independente.
+- O documento de `onde-esta-a-agua` (PT) traz, dentro do corpo, um `<!doctype>` e
+  um `<html>` próprios — o autor alojou um documento completo dentro do
+  artefacto. Fica assim, byte a byte: é o que foi publicado.
+
 ---
 
 ## 2. Como funciona o portão, e o que ele não vê
@@ -616,6 +747,10 @@ na forma esperada e o build pararia.
 | `ledger:check` | antes do build | campos em falta, ids partidos, estudos desconhecidos, aritmética que não bate certo |
 | `astro build` | durante | `<Claim id="…">` com um id que não existe — `getClaim()` atira e o build pára |
 | `gate:html` | depois do build | algarismos, no HTML construído, sem proveniência declarada |
+
+São os três que governam os algarismos. O `npm run build` corre hoje mais dois,
+que não são sobre algarismos e por isso não estão na tabela: `check:documentos`
+antes do build (§1.20) e `check:dados` depois (§1.18).
 
 ### 2.2 As cinco origens legítimas de um algarismo numa página
 
@@ -734,6 +869,35 @@ fácil, não para tornar o desonesto impossível.
 - **A dispensa não afrouxou o varrimento das páginas:** com o documento
   sintético alojado, dois números metidos na página de estudo deram quarenta
   erros — dois por página, nas vinte páginas de estudo.
+- **Doze documentos reais alojados** (§1.20): o build fecha a 39 páginas, com o
+  portão de HTML a reconstruir os doze contra a origem e a encontrá-los iguais
+  carácter a carácter. A única diferença entre origem e construído é a faixa,
+  entre 1529 e 1593 bytes conforme a língua e o slug.
+- **Os doze endereços existem no `dist/`**, seis em `/estudos/<slug>/documento`
+  e seis em `/en/studies/<slug>/document`.
+- **O título de cada documento foi conferido contra o trabalho a que foi
+  atribuído**, lido do próprio ficheiro instalado, antes de qualquer instalação.
+  Nenhuma correspondência ficou por confirmar.
+- **O molde do invólucro do anfitrião encaixa em 19 ficheiros de 13 artefactos**,
+  incluindo dois de duas gerações diferentes do runtime — prefixo, cabeça e
+  sufixo iguais byte a byte em todos.
+- **`check:documentos` **falha** (código 1), testado um a um e depois reposto:
+  um byte trocado num documento alojado · uma linha apagada do manifesto · um
+  documento em disco sem linha no manifesto.
+- **O runtime injectado muda sem o documento mudar:** três artefactos intocados
+  cresceram 2570 bytes cada entre duas descargas. É a medição que separa
+  `sha256_raw` de `sha256_normalized` (§1.20).
+- **A invariância foi medida, não deduzida.** Montou-se o mesmo documento de
+  autor com as duas gerações do runtime — a de 14 571 bytes e a de 17 141 — e
+  normalizaram-se as duas. `sha256_raw` diverge (`6f610a89…` contra `38b1eea0…`);
+  `sha256_normalized` é o mesmo byte a byte (`e84c4047…`, 31 142 bytes nos dois
+  casos). É esta a experiência que sustenta a assimetria dos dois campos.
+- **O normalizador pára em vez de improvisar**, testado em quatro invólucros
+  adulterados — sem runtime · cabeça do anfitrião alterada num byte · sufixo
+  alterado · runtime declarado duas vezes. Nos quatro sai com código 1 e não
+  escreve nada.
+- **A normalização é determinista**, conferida nos doze ficheiros brutos: duas
+  execuções seguidas dão o mesmo resumo em todos.
 
 ---
 
@@ -744,12 +908,14 @@ fácil, não para tornar o desonesto impossível.
    financiamento, número exato das autárquicas) e rever a tradução inglesa. A
    frase «os dados por trás de cada gráfico são descarregáveis» deixou de estar
    por cumprir (§1.18).
-2. **Migrar os estudos.** A máquina está feita (§1.19): pousar
-   `studies-src/<slug>/pt.html` e construir aloja o documento original em
-   `/estudos/<slug>/documento`, intacto. Falta a outra metade, que é escrita e
-   não mecânica: a página do observatório sobre cada trabalho — a leitura curta,
-   os números do estudo com linha no livro-razão, a proveniência de cada um. É
-   essa que levanta o `noindex`.
+2. **Migrar os estudos.** A metade mecânica está feita: **doze dos treze
+   documentos estão alojados**, com manifesto e portão próprio (§1.20). Falta a
+   outra metade, que é escrita e não mecânica: a página do observatório sobre
+   cada trabalho — a leitura curta, os números do estudo com linha no
+   livro-razão, a proveniência de cada um. É essa que levanta o `noindex`, e são
+   doze. Falta também a décima terceira edição, «Évora — Economia, Investidores,
+   Portas Abertas 2026», por uma limitação da descarga e não do mecanismo — o
+   porquê e o remédio estão em §1.20.
 3. **Fechar a proveniência.** Vinte afirmações têm campos `[a verificar]`:
    sobretudo o organismo, o documento, o URL e o excerto das séries do PIB per
    capita, e a base de cálculo do ciclo de substituição de condutas.
