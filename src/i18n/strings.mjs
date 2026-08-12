@@ -57,9 +57,11 @@ export const STRINGS = {
 
       numeros: {
         eyebrow: 'O país em números verificados',
-        h2: 'Cinco medidas, cinco fontes',
-        sub: 'Cada valor abaixo está tal como foi publicado. A etiqueta diz de onde veio.',
+        h2: 'Medidas do painel europeu',
+        sub: 'Estes indicadores não são escolha nossa. São os do painel de desequilíbrios macroeconómicos e do painel social europeu — o conjunto com que as instituições avaliam um Estado-Membro, com os limiares que elas próprias publicam. Cada valor está tal como foi publicado, e a etiqueta diz de onde veio.',
         nota: 'Os campos por confirmar aparecem marcados. Nenhum foi preenchido com um valor plausível.',
+        verificacaoEm: 'Linha de base reconferida contra a fonte a',
+        verificacaoVencida: 'Verificação em atraso: estes valores não são reconferidos contra a fonte desde',
       },
 
       instr1: {
@@ -269,9 +271,11 @@ export const STRINGS = {
 
       numeros: {
         eyebrow: 'The country in verified figures',
-        h2: 'Five measurements, five sources',
-        sub: 'Every value below is exactly as published. The tag says where it came from.',
+        h2: 'Measures from the European scoreboard',
+        sub: 'These indicators are not our choice. They are the macroeconomic imbalance and social scoreboards — the set the European institutions use to assess a member state, with the thresholds those institutions publish themselves. Every value is exactly as published, and the tag says where it came from.',
         nota: 'Fields still to be confirmed are marked as such. None has been filled in with a plausible value.',
+        verificacaoEm: 'Baseline last re-checked against source on',
+        verificacaoVencida: 'Verification overdue: these values have not been re-checked against source since',
       },
 
       instr1: {
