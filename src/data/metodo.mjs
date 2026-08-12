@@ -151,7 +151,7 @@ export const SECOES = [
         {
           tipo: 'p',
           partes: [
-            'A study begins with a question — from the direction, or proposed by the AI itself and approved by the direction. From there:',
+            'A study begins with a question — from the director, or proposed by the AI itself and approved by the director. From there:',
           ],
         },
         {
@@ -171,7 +171,7 @@ export const SECOES = [
               { forte: 'Verification by someone who did not write it.' },
               ' Central claims are verified by agents that took no part in the writing, instructed to refute them. Headline claims go through blind re-derivation: another agent redoes the calculation without seeing the text.',
             ],
-            [{ forte: 'Review by the direction' }, ' before any publication.'],
+            [{ forte: 'Review by the director' }, ' before any publication.'],
           ],
         },
         {
@@ -212,7 +212,7 @@ export const SECOES = [
         {
           tipo: 'p',
           partes: [
-            'Every number on this site traces back to a row of a ledger of claims. Each row holds: the exact value as published by the source; the entity that produced it; the document and the edition; the address; the access date; a textual excerpt from the source; and, when the value is calculated by us, the full derivation.',
+            'Every number on this site traces back to a row of a ledger of claims. Each row holds: the exact value as published by the source; the entity that produced it; the document and the edition; the URL; the access date; a textual excerpt from the source; and, when the value is calculated by us, the full derivation.',
           ],
         },
         {
@@ -262,7 +262,7 @@ export const SECOES = [
         {
           tipo: 'p',
           partes: [
-            'Anyone who finds an error can write about it to ',
+            'Anyone who finds an error can report it to ',
             M.endereco,
             '. A confirmed error enters the log with credit to whoever found it, if they wish.',
           ],
@@ -323,7 +323,7 @@ export const SECOES = [
           tipo: 'ul',
           itens: [
             [
-              { forte: 'Inherited, decided, left behind.' },
+              { forte: 'Inherited, decided, left.' },
               ' Each term is read by what it inherited, by what it decided, and by the state in which it handed over — never by a single number of merit.',
             ],
             [
