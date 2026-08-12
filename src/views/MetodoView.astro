@@ -1,0 +1,90 @@
+---
+/**
+ * Método — ESTRUTURA, sem texto.
+ *
+ * As secções estão todas de pé e vazias. Os marcadores são deliberadamente
+ * feios: ninguém pode confundir isto com texto acabado. O director escreve.
+ *
+ * A única secção com conteúdo a sério é o registo de correções, porque é um
+ * componente e não um texto: está vazio e pronto a receber entradas datadas.
+ */
+import Base from '../layouts/Base.astro';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+const path = routePath('metodo', lang);
+
+const secoes = [
+  { id: 'quem', titulo: s.metodo.quemK, nota: s.metodo.quemNota },
+  { id: 'como', titulo: s.metodo.comoK, nota: s.metodo.comoNota },
+  { id: 'livro-razao', titulo: s.metodo.livroK, nota: s.metodo.livroNota, extra: s.metodo.livroFuncional },
+];
+---
+
+<Base lang={lang} path={path} title={s.metodo.metaTitle} description={s.metodo.metaDescription}>
+  <div style="padding-top:clamp(20px,3vw,34px)">
+    <h1>{s.metodo.h1}</h1>
+    <p class="lede" style="margin-top:16px">{s.metodo.lede}</p>
+  </div>
+
+  <div style="margin-top:clamp(34px,5vw,56px)">
+    {
+      secoes.map((sec) => (
+        <section class="metodo-secao" id={sec.id} style="padding-top:clamp(24px,3.2vw,34px)">
+          <div>
+            <h2>{sec.titulo}</h2>
+          </div>
+          <div>
+            <div class="placeholder">
+              <span class="placeholder-tag">{s.metodo.porEscrever}</span>
+              <p class="lede" style="font-size:16px">{s.metodo.emPreparacao}</p>
+              <p class="placeholder-nota">{sec.nota}</p>
+              {sec.extra && <p class="placeholder-nota"><b>{sec.extra}</b></p>}
+            </div>
+          </div>
+        </section>
+      ))
+    }
+
+    <!-- Correções: a estrutura já existe e está vazia. -->
+    <section class="metodo-secao" id="correcoes" style="padding-top:clamp(24px,3.2vw,34px)">
+      <div>
+        <h2>{s.metodo.correcoesK}</h2>
+      </div>
+      <div style="display:grid;gap:18px">
+        <div class="placeholder">
+          <span class="placeholder-tag">{s.metodo.porEscrever}</span>
+          <p class="lede" style="font-size:16px">{s.metodo.emPreparacao}</p>
+          <p class="placeholder-nota">{s.metodo.correcoesNota}</p>
+        </div>
+
+        <div class="log-vazio">
+          <div class="log-vazio-k">{s.metodo.correcoesVazioK}</div>
+          <div class="log-cabecalho">
+            <span>{s.metodo.colunaData}</span>
+            <span>{s.metodo.colunaAntigo}</span>
+            <span>{s.metodo.colunaNovo}</span>
+            <span>{s.metodo.colunaMotivo}</span>
+          </div>
+          <p class="log-vazio-v">{s.metodo.correcoesVazioV}</p>
+          <p class="placeholder-nota">{s.metodo.correcoesVazioNota}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="metodo-secao" id="atribuicao-causal" style="padding-top:clamp(24px,3.2vw,34px)">
+      <div>
+        <h2>{s.metodo.causalK}</h2>
+      </div>
+      <div>
+        <div class="placeholder">
+          <span class="placeholder-tag">{s.metodo.porEscrever}</span>
+          <p class="lede" style="font-size:16px">{s.metodo.emPreparacao}</p>
+          <p class="placeholder-nota">{s.metodo.causalNota}</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</Base>

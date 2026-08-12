@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+---
+
+<Base
+  lang={lang}
+  path={lang === 'pt' ? '/404' : '/en/404'}
+  title={s.erro404.metaTitle}
+  description={s.erro404.metaDescription}
+>
+  <div class="erro-404">
+    <div class="erro-codigo" data-nonledger="identificador-tecnico">404</div>
+    <h1>{s.erro404.h1}</h1>
+    <p class="lede">{s.erro404.corpo}</p>
+    <nav class="erro-links" aria-label={s.nav.inicio}>
+      <a href={routePath('home', lang)}>{s.erro404.inicio}</a>
+      <a href={routePath('estudos', lang)}>{s.erro404.estudos}</a>
+      <a href={routePath('metodo', lang)}>{s.erro404.metodo}</a>
+    </nav>
+  </div>
+</Base>

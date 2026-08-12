@@ -1,0 +1,53 @@
+---
+/**
+ * O arquivo. Lista as edições publicadas — as edições PT e EN do mesmo
+ * trabalho aparecem em separado, porque são documentos distintos e é assim
+ * que o leitor as procura. Cada uma leva à página do trabalho.
+ *
+ * Títulos: literais. Datas: nenhuma está confirmada. Descrições: reformulações
+ * do título, à espera do director. O aviso no topo di-lo por palavras.
+ */
+import Base from '../layouts/Base.astro';
+import { EDITIONS } from '../data/studies.mjs';
+import { POR_VERIFICAR } from '../data/studies.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+const path = routePath('estudos', lang);
+---
+
+<Base lang={lang} path={path} title={s.estudos.metaTitle} description={s.estudos.metaDescription}>
+  <div style="padding-top:clamp(20px,3vw,34px)">
+    <h1>{s.estudos.h1}</h1>
+    <p class="lede" style="margin-top:16px">{s.estudos.lede}</p>
+  </div>
+
+  <div style="margin-top:clamp(30px,4vw,44px)">
+    <p class="aviso-editorial">{s.estudos.aviso}</p>
+
+    <div class="arquivo">
+      {
+        EDITIONS.map((e) => (
+          <article class="arquivo-item">
+            <div>
+              <h2 class="arquivo-titulo">
+                <a href={routePath('estudo', lang, { slug: e.slug })} data-nonledger="titulo-de-estudo">
+                  {e.title}
+                </a>
+              </h2>
+              <p class="arquivo-desc">{e.description[lang]}</p>
+            </div>
+            <div class="arquivo-meta">
+              <span class="badge">{e.lang.toUpperCase()}</span>
+              <span data-nonledger="data-de-publicacao">
+                {s.estudos.dataLabel}: {e.date ?? POR_VERIFICAR}
+              </span>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</Base>
