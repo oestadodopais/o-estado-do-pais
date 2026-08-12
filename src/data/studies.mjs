@@ -1,0 +1,173 @@
+/**
+ * Registo de estudos publicados.
+ *
+ * Um "trabalho" (work) é um estudo. Um trabalho pode ter mais do que uma
+ * "edição" — a mesma investigação publicada em PT e em EN. O arquivo lista
+ * edições (é o que o leitor procura); as rotas /estudos/<slug> são por trabalho.
+ *
+ * OS TÍTULOS SÃO LITERAIS. Não normalizar, não traduzir, não corrigir.
+ * A edição EN de "Onde está a água?" e de "Água Não Faturada" existe, mas o
+ * seu título em inglês não é conhecido aqui — fica o título original, com o
+ * emblema EN. Inventar um título inglês seria inventar conteúdo.
+ *
+ * DATAS: nenhuma data de publicação está confirmada. Ficam todas por verificar.
+ * DESCRIÇÕES: são reformulações do próprio título, sem números e sem factos
+ * acrescentados. Carecem de aprovação do director. Ver DECISIONS.md.
+ */
+
+/** Marcador único para campos que não foram verificados. Nunca inventar um valor. */
+export const POR_VERIFICAR = '[a verificar]';
+
+export const WORKS = [
+  {
+    id: 'evora-quinze-anos-cinco-mandatos',
+    slug: 'evora-quinze-anos-cinco-mandatos',
+    editions: [{ lang: 'pt', title: 'Évora — Quinze Anos, Cinco Mandatos', date: null }],
+    description: {
+      pt: 'Quinze anos de governo municipal em Évora, ao longo de cinco mandatos.',
+      en: 'Fifteen years of municipal government in Évora, across five terms.',
+    },
+  },
+  {
+    id: 'evora-economia-investidores-portas-abertas-2026',
+    slug: 'evora-economia-investidores-portas-abertas-2026',
+    editions: [
+      { lang: 'pt', title: 'Évora — Economia, Investidores, Portas Abertas 2026', date: null },
+    ],
+    description: {
+      pt: 'Economia, investidores e portas abertas no município de Évora.',
+      en: 'Economy, investors and open doors in the municipality of Évora.',
+    },
+  },
+  {
+    id: 'evora-orcamentado-pago-devido-2025',
+    slug: 'evora-orcamentado-pago-devido-2025',
+    editions: [
+      { lang: 'pt', title: 'Évora — Orçamentado, Pago, Devido 2025', date: null },
+      { lang: 'en', title: 'Budgeted, Paid, Owed 2025', date: null },
+    ],
+    description: {
+      pt: 'O que foi orçamentado, o que foi pago e o que ficou em dívida no município de Évora.',
+      en: 'What was budgeted, what was paid and what was left owing in the municipality of Évora.',
+    },
+  },
+  {
+    id: 'onde-esta-a-agua',
+    slug: 'onde-esta-a-agua',
+    editions: [
+      { lang: 'pt', title: 'Onde está a água?', date: null },
+      { lang: 'en', title: 'Onde está a água?', date: null, titleUnverified: true },
+    ],
+    // O título não determina o objecto do estudo. Não se escreve uma descrição a partir de nada.
+    description: { pt: '[descrição em preparação]', en: '[description pending]' },
+  },
+  {
+    id: 'agua-nao-faturada',
+    slug: 'agua-nao-faturada',
+    editions: [
+      { lang: 'pt', title: 'Água Não Faturada', date: null },
+      { lang: 'en', title: 'Água Não Faturada', date: null, titleUnverified: true },
+    ],
+    description: {
+      pt: 'Água não faturada nos sistemas de abastecimento em Portugal.',
+      en: 'Non-revenue water in Portugal’s public supply systems.',
+    },
+  },
+  {
+    id: 'avaliacao-economica-regional-de-portugal-2026',
+    slug: 'avaliacao-economica-regional-de-portugal-2026',
+    editions: [
+      { lang: 'pt', title: 'Avaliação Económica Regional de Portugal 2026', date: null },
+    ],
+    description: {
+      pt: 'Avaliação económica das regiões de Portugal.',
+      en: 'Economic assessment of Portugal’s regions.',
+    },
+  },
+  {
+    id: 'which-door-is-yours',
+    slug: 'which-door-is-yours',
+    editions: [
+      {
+        lang: 'en',
+        title: 'Which Door Is Yours — public funding in Portugal, August 2026',
+        date: null,
+      },
+    ],
+    description: {
+      pt: 'Financiamento público em Portugal.',
+      en: 'Public funding in Portugal.',
+    },
+  },
+  {
+    id: 'alentejo-algarve',
+    slug: 'alentejo-algarve',
+    editions: [
+      { lang: 'en', title: 'Alentejo & Algarve — Economy, Society, Strategy', date: null },
+    ],
+    description: {
+      pt: 'Economia, sociedade e estratégia no Alentejo e no Algarve.',
+      en: 'Economy, society and strategy in the Alentejo and the Algarve.',
+    },
+  },
+  {
+    id: 'evolucao-de-portugal-desde-1981',
+    slug: 'evolucao-de-portugal-desde-1981',
+    editions: [{ lang: 'pt', title: 'Evolução de Portugal desde 1981', date: null }],
+    description: {
+      pt: 'Séries longas sobre a evolução do país.',
+      en: 'Long series on the country’s evolution.',
+    },
+  },
+];
+
+/**
+ * "Estudos" internos: não são publicações, são a origem de números que a
+ * própria casa apura (contagens do arquivo, processamento da CAOP).
+ * Existem para que o campo `study` do livro-razão nunca fique vazio nem mentiroso.
+ * Não aparecem no arquivo.
+ */
+export const INTERNAL_SOURCES = [
+  {
+    id: 'o-estado-do-pais',
+    label: { pt: 'O Estado do País — apuramento próprio', en: 'O Estado do País — own count' },
+  },
+];
+
+/** Todas as edições, em lista plana — é isto que o arquivo mostra. */
+export const EDITIONS = WORKS.flatMap((w) =>
+  w.editions.map((e) => ({
+    ...e,
+    workId: w.id,
+    slug: w.slug,
+    description: w.description,
+  })),
+);
+
+/** Ids aceites no campo `study` de uma linha do livro-razão. */
+export const STUDY_IDS = new Set([
+  ...WORKS.map((w) => w.id),
+  ...INTERNAL_SOURCES.map((s) => s.id),
+]);
+
+export function workById(id) {
+  return WORKS.find((w) => w.id === id) ?? null;
+}
+
+/** Nome legível de um estudo, para a etiqueta de proveniência. */
+export function studyLabel(id, lang = 'pt') {
+  const w = workById(id);
+  if (w) {
+    const preferred = w.editions.find((e) => e.lang === lang) ?? w.editions[0];
+    return preferred.title;
+  }
+  const internal = INTERNAL_SOURCES.find((s) => s.id === id);
+  if (internal) return internal.label[lang] ?? internal.label.pt;
+  return id;
+}
+
+/** Contagens usadas pelas expressões `check:` do livro-razão. */
+export const COUNTS = {
+  estudos_no_arquivo: WORKS.length,
+  edicoes_no_arquivo: EDITIONS.length,
+};

@@ -1,0 +1,32 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+
+id: "estudos-evora-publicados"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "4"
+unit: "estudos"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "O Estado do País"
+document:
+  title: "Estudo de identidade v2"
+  edition: "12.08.2026"
+source_url: "[a verificar]"
+access_date: "2026-08-12"
+reference_date: "2026-08-12"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Évora: 4 estudos aprofundados publicados."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "o-estado-do-pais"
+note: "Valor herdado do colofão do estudo de identidade. A base da contagem — que estudos contam como aprofundados sobre Évora — não está reconciliada com o arquivo, onde constam três títulos com Évora no título mais uma edição inglesa. Confirmar antes de qualquer republicação. Ver DECISIONS.md."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

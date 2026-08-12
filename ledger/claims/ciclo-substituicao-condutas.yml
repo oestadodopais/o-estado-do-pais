@@ -1,0 +1,32 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+
+id: "ciclo-substituicao-condutas"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "239"
+unit: "anos"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "[a verificar]"
+document:
+  title: "[a verificar]"
+  edition: "[a verificar]"
+source_url: "[a verificar]"
+access_date: "[a verificar]"
+reference_date: "[a verificar]"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "[a verificar]"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "agua-nao-faturada"
+note: "Ciclo de substituição de condutas. Se este valor for um cálculo (por exemplo, extensão da rede a dividir pela extensão substituída por ano), a aritmética tem de passar para o campo derivation. Está por confirmar."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

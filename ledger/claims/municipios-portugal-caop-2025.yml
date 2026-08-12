@@ -1,0 +1,35 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+
+id: "municipios-portugal-caop-2025"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "308"
+unit: "municípios"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Direção-Geral do Território (DGT)"
+document:
+  title: "Carta Administrativa Oficial de Portugal (CAOP)"
+  edition: "2025"
+source_url: "https://geo2.dgterritorio.gov.pt/caop/"
+access_date: "2026-08-12"
+reference_date: "2025"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "[a verificar]"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "278 + 19 + 11 = 308. Soma das contagens por região nos ficheiros oficiais da CAOP 2025."
+derived_from:
+  - "municipios-continente-caop-2025"
+  - "municipios-acores-caop-2025"
+  - "municipios-madeira-caop-2025"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "municipios-continente-caop-2025 + municipios-acores-caop-2025 + municipios-madeira-caop-2025"
+
+study: "o-estado-do-pais"
+note: "O total dos municípios de Portugal segundo a CAOP 2025."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []
