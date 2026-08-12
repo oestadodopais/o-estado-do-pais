@@ -1,0 +1,270 @@
+---
+/**
+ * Instrumento n.º 1 — a régua da convergência.
+ *
+ * Três camadas no mesmo gráfico: Relance, Leitura breve, Fundo. A profundidade
+ * abre-se dentro do instrumento, nunca noutra página.
+ *
+ * Sem JavaScript, a régua já está desenhada com Portugal em cima dela: o SVG
+ * é construído no servidor. O JavaScript só acrescenta a possibilidade de pôr
+ * mais regiões na mesma régua — é enriquecimento, não a condição de funcionar.
+ *
+ * Todos os números — o valor no relance, o valor no marcador, a distância
+ * anotada — são citações do livro-razão. Os números do eixo são a régua, não
+ * uma medição, e vão marcados como tal.
+ */
+import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
+import { REGIOES, ESCALA, GEOMETRIA } from '../data/regioes.mjs';
+import { studyLabel } from '../data/studies.mjs';
+import { t } from '../i18n/strings.mjs';
+import Claim from './Claim.astro';
+import Provenance from './Provenance.astro';
+import Frase from './Frase.astro';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+
+const { min, max, passo, rotuloAte, datum } = ESCALA;
+const { largura, altura, esquerda: RL, direita: RR, eixoY: RY, patamares } = GEOMETRIA;
+
+const X = (v) => RL + ((v - min) / (max - min)) * (RR - RL);
+
+/* --- valores, sempre a partir do livro-razão --- */
+const dados = REGIOES.map((r) => {
+  const valor = getClaim(r.valor);
+  const distancia = getClaim(r.distancia);
+  const linha = {
+    id: r.id,
+    nome: r.nome[lang],
+    sinal: r.sinal,
+    valor: parsePtNumber(valor.value),
+    valor_claim: r.valor,
+    valor_texto: valor.value,
+    distancia: parsePtNumber(distancia.value),
+    distancia_claim: r.distancia,
+    distancia_texto: distancia.value,
+  };
+  if (r.valorHistorico) {
+    const hist = getClaim(r.valorHistorico);
+    linha.historico = parsePtNumber(hist.value);
+    linha.historico_claim = r.valorHistorico;
+    linha.historico_texto = hist.value;
+    linha.historico_ref = hist.reference_date;
+  }
+  return linha;
+});
+
+const predefinida = REGIOES.find((r) => r.predefinida) ?? REGIOES[0];
+const inicial = dados.find((d) => d.id === predefinida.id);
+
+/* --- marcas do eixo --- */
+const ticks = [];
+for (let v = min; v <= max; v += passo) {
+  ticks.push({ v, maior: v % 10 === 0, x: X(v), rotulo: v % 10 === 0 && v <= rotuloAte });
+}
+
+/* --- a barra da distância entre o marcador e a linha da UE-27 --- */
+const x0 = Math.min(X(datum), X(inicial.valor));
+const x1 = Math.max(X(datum), X(inicial.valor));
+const yPatamar = patamares[0];
+const larguraRotulo = Math.max(inicial.nome.length * 6.8, 34) + 18;
+
+/* --- a ilha de dados que o cliente lê --- */
+const ilha = {
+  estrutura_motivo: 'escala-de-instrumento',
+  estrutura: { min, max, passo, rotuloAte, datum, largura, altura, RL, RR, RY, patamares },
+  // Palavras soltas de que o cliente precisa. Sem algarismos: os números
+  // chegam sempre pelas afirmações.
+  palavras: {
+    pontos: lang === 'pt' ? 'pontos' : 'points',
+    em: lang === 'pt' ? 'em' : 'in',
+  },
+  afirmacoes: dados,
+};
+const ilhaJson = JSON.stringify(ilha).replace(/</g, '\\u003c');
+
+/* --- proveniência agrupada por estudo, para a camada Fundo --- */
+const porEstudo = new Map();
+for (const r of REGIOES) {
+  const claim = getClaim(r.valor);
+  if (!porEstudo.has(claim.study)) porEstudo.set(claim.study, []);
+  porEstudo.get(claim.study).push({ nome: r.nome[lang], claimId: r.valor, historico: r.valorHistorico });
+}
+---
+
+<div class="instr" data-instrumento="convergencia">
+  <div class="instr-top">
+    <!-- CAMADA 1 — RELANCE -->
+    <p class="layer-tag">{lang === 'pt' ? 'Relance' : 'At a glance'}</p>
+    <div class="glance">
+      <Claim id={inicial.valor_claim} class="glance-num" as="div" data-glance-num />
+      <div class="glance-meta">
+        <div class="glance-name" data-glance-nome>{inicial.nome}</div>
+        <div class="glance-unit">
+          <span data-nonledger="escala-de-instrumento">{s.home.instr1.glanceUnidade}</span> ·
+          <span data-nonledger="data-de-referencia">2024</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMANDOS (só com JavaScript: sem ele não fariam nada) -->
+    <div class="controls" id="controls" role="group" aria-label={s.home.instr1.controlsLabel} hidden data-controls>
+      <span class="controls-label" aria-hidden="true">{s.home.instr1.controlsLabel}</span>
+      {
+        dados.map((d) => (
+          <button
+            type="button"
+            class:list={['chip', d.id === inicial.id && 'is-read']}
+            data-regiao-chip={d.id}
+            aria-pressed={d.id === inicial.id ? 'true' : 'false'}
+          >
+            {d.nome}
+          </button>
+        ))
+      }
+      <button type="button" class="chip chip-plain" data-accao="todas">{s.home.instr1.todas}</button>
+      <button type="button" class="chip chip-plain" data-accao="repor">{s.home.instr1.repor}</button>
+    </div>
+  </div>
+
+  <!-- A RÉGUA -->
+  <div class="svg-scroll">
+    <svg
+      class="rule-svg"
+      viewBox={`0 0 ${largura} ${altura}`}
+      role="img"
+      aria-labelledby="ruleTitle ruleDesc"
+      data-regua
+    >
+      <title id="ruleTitle" data-nonledger="escala-de-instrumento">{s.home.instr1.svgTitulo}</title>
+      <desc id="ruleDesc" data-nonledger="escala-de-instrumento">{s.home.instr1.svgDescricao}</desc>
+
+      <g data-nonledger="escala-de-instrumento">
+        <line x1={RL} y1={RY} x2={RR} y2={RY} stroke="var(--axis)" stroke-width="1" />
+        {
+          ticks.map((tk) => (
+            <line
+              x1={tk.x}
+              y1={RY}
+              x2={tk.x}
+              y2={RY + (tk.maior ? 8 : 4)}
+              stroke="var(--axis)"
+              stroke-width="1"
+            />
+          ))
+        }
+        {
+          ticks
+            .filter((tk) => tk.rotulo)
+            .map((tk) => (
+              <text
+                x={tk.x}
+                y={RY + 24}
+                text-anchor="middle"
+                class:list={['tk', tk.v === datum && 'tk-datum']}
+              >
+                {tk.v}
+              </text>
+            ))
+        }
+        <line x1={X(datum)} y1="42" x2={X(datum)} y2={RY + 8} stroke="var(--ink)" stroke-width="1.5" />
+        <text x={X(datum)} y="30" text-anchor="middle" class="datum-label">
+          {lang === 'pt' ? 'UE-27 = 100' : 'EU-27 = 100'}
+        </text>
+      </g>
+
+      <g data-gap>
+        <rect x={x0} y={RY - 4.5} width={Math.max(x1 - x0, 1)} height="9" fill="var(--yellow)" />
+        <text x={(x0 + x1) / 2} y={RY + 42} text-anchor="middle" class="gap-label">
+          {inicial.sinal}<Claim id={inicial.distancia_claim} as="tspan" /> {lang === 'pt' ? 'pontos' : 'points'}
+        </text>
+      </g>
+
+      <g data-stems>
+        <line x1={X(inicial.valor)} y1={RY - 6} x2={X(inicial.valor)} y2={yPatamar + 4} stroke="var(--ink)" stroke-width="1.5" />
+      </g>
+
+      <g data-marks>
+        <g class="mk is-on" data-mk={inicial.id}>
+          <rect x={X(inicial.valor) - larguraRotulo / 2} y={yPatamar - 32} width={larguraRotulo} height="36" fill="var(--paper-2)" />
+          <text x={X(inicial.valor)} y={yPatamar - 18} text-anchor="middle" class="mk-name">{inicial.nome}</text>
+          <Claim id={inicial.valor_claim} as="text" class="mk-val" x={X(inicial.valor)} y={yPatamar - 1} text-anchor="middle" />
+          <circle cx={X(inicial.valor)} cy={RY} r="5.5" fill="var(--ink)" stroke="var(--paper-2)" stroke-width="1.5" />
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <!-- CAMADA 2 — LEITURA BREVE -->
+  <div class="brief">
+    <p class="layer-tag">{lang === 'pt' ? 'Leitura breve' : 'Brief reading'}</p>
+    {
+      REGIOES.map((r) => (
+        <p
+          class="brief-text"
+          data-brief={r.id}
+          hidden={r.id !== inicial.id}
+          aria-live={r.id === inicial.id ? 'polite' : undefined}
+        >
+          <Frase partes={r.frase[lang]} lang={lang} />
+        </p>
+      ))
+    }
+    {
+      REGIOES.map((r) => (
+        <span data-brief-chip={r.id} hidden={r.id !== inicial.id}>
+          <Provenance id={r.valor} lang={lang} />
+        </span>
+      ))
+    }
+    <p class="map-hint" data-sem-js>{s.home.instr1.semJs}</p>
+  </div>
+
+  <!-- CAMADA 3 — FUNDO -->
+  <details class="deep">
+    <summary>{s.home.instr1.deepTitulo}</summary>
+    <div class="deep-body">
+      <div class="deep-item">
+        <div class="deep-k">{s.home.instr1.significadoK}</div>
+        <p class="deep-v">{s.home.instr1.significadoV}</p>
+      </div>
+      <div class="deep-item">
+        <div class="deep-k">{s.home.instr1.ressalvaK}</div>
+        <p class="deep-v"><Frase partes={s.home.instr1.ressalvaPartes} lang={lang} /></p>
+      </div>
+      <div class="deep-item">
+        <div class="deep-k">{s.home.instr1.distanciasK}</div>
+        <p class="deep-v">{s.home.instr1.distanciasV}</p>
+      </div>
+      <div class="deep-item">
+        <div class="deep-k">{s.home.instr1.provenienciaK}</div>
+        <div class="prov">
+          {
+            [...porEstudo.entries()].map(([estudo, linhas]) => (
+              <div class="prov-row">
+                <span class="prov-study" data-nonledger="proveniencia">{studyLabel(estudo, lang)}</span>
+                <span class="prov-vals">
+                  {linhas.map((l, i) => (
+                    <>
+                      {i > 0 ? ' · ' : ''}
+                      {l.nome} <Claim id={l.claimId} />
+                      {l.historico ? <> (<span data-nonledger="data-de-referencia">2000</span>: <Claim id={l.historico} />)</> : null}
+                    </>
+                  ))}
+                  {' — '}
+                  {lang === 'pt' ? 'PIB per capita vs UE-27, PPS, dados de ' : 'GDP per capita vs EU-27, PPS, data for '}
+                  <span data-nonledger="data-de-referencia">2024</span>
+                  {lang === 'pt' ? ', provisório' : ', provisional'}
+                </span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <script type="application/json" data-ledger-json data-dados="convergencia" set:html={ilhaJson} />
+</div>
+
+<script src="/js/convergencia.js" defer is:inline></script>
