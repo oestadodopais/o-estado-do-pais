@@ -25,6 +25,7 @@ import { parse, NodeType } from 'node-html-parser';
 import { loadClaims, digitsOf, parsePtNumber } from '../src/lib/ledger.mjs';
 import { VERBATIM, normalizeWhitespace } from '../src/data/verbatim.mjs';
 import { EDITIONS } from '../src/data/studies.mjs';
+import { matchPath } from '../src/lib/routes.mjs';
 import { SITE_HOST, SITE_NAME, AUTHORSHIP_LINE, EDITION } from '../site.config.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -299,6 +300,19 @@ for (const file of ficheirosHtml(DIST)) {
   }
   if (!html.includes(AUTHORSHIP_LINE)) {
     err(`falta a linha de autoria no rodapé: "${AUTHORSHIP_LINE}".`);
+  }
+
+  /* Páginas de destino de estudo não se oferecem à indexação enquanto não
+     tiverem conteúdo; as outras não podem ganhar noindex por descuido. */
+  const caminho = '/' + rel.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
+  const rota = matchPath(caminho);
+  const robots = root.querySelector('head meta[name="robots"]');
+  const temNoindex = (robots?.getAttribute('content') ?? '').includes('noindex');
+  if (rota?.key === 'estudo' && !temNoindex) {
+    err('página de destino de estudo sem <meta name="robots" content="noindex">.');
+  }
+  if (rota && rota.key !== 'estudo' && temNoindex) {
+    err(`esta página tem noindex e não devia: a rota "${rota.key}" é para ser indexada.`);
   }
 
   /* --- 4. corpo: retirar o que é legítimo, e ver o que sobra --- */
