@@ -1,0 +1,189 @@
+---
+/**
+ * A página de um estudo.
+ *
+ * É a página do OBSERVATÓRIO sobre o trabalho — não o trabalho. O trabalho, se
+ * já cá estiver, vive em /estudos/<slug>/documento, alojado tal como foi
+ * publicado (ver src/lib/documentos.mjs).
+ *
+ * Esta página diz o que se sabe e nada mais: título, descrições nas duas
+ * línguas, tema, edições com as suas datas, o estado da migração, o documento
+ * quando existe, e o que há para descarregar — hoje, nada, e di-lo por palavras.
+ *
+ * O QUE NÃO ESTÁ AQUI, E PORQUÊ: não há resumo, não há versão curta, não há um
+ * único número do estudo. Um resumo escrito sem ler o estudo seria conteúdo
+ * inventado, que é exactamente aquilo que este sítio existe para não fazer. E
+ * os números do estudo só entram quando cada um tiver a sua linha no
+ * livro-razão — não antes, e nunca copiados do documento a olho.
+ *
+ * Enquanto a página do observatório não estiver escrita, a página fica fora do
+ * índice (noindex) e o JSON-LD vai marcado como rascunho: o que se diz ao
+ * leitor e o que se diz às máquinas é a mesma coisa. Ver DECISIONS §1.8.
+ */
+import Base from '../layouts/Base.astro';
+import { workById, POR_VERIFICAR, subjectLabel } from '../data/studies.mjs';
+import { documentosDoEstudo } from '../lib/documentos.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { canonicalUrl, SITE_NAME, SITE_URL } from '../../site.config.mjs';
+import { t } from '../i18n/strings.mjs';
+
+const { lang = 'pt', slug } = Astro.props;
+const s = t(lang);
+const work = workById(slug);
+if (!work) throw new Error(`estudo desconhecido: "${slug}"`);
+
+const path = routePath('estudo', lang, { slug });
+const principal = work.editions.find((e) => e.lang === lang) ?? work.editions[0];
+
+/* O documento existe ou não existe. Não há meio-termo, e a página não finge. */
+const documentos = documentosDoEstudo(slug);
+const documentoDaqui = documentos.find((d) => d.lang === lang) ?? null;
+const migrado = documentos.length > 0;
+
+/** A ficha de uma edição: a sua página, o seu documento, as suas datas. */
+const edicoes = work.editions.map((e) => ({
+  ...e,
+  paginaDaEdicao: routePath('estudo', e.lang, { slug }),
+  documento: documentos.find((d) => d.lang === e.lang) ?? null,
+}));
+
+const tema = subjectLabel(work.subject, lang);
+
+/* Fica "Draft" enquanto a PÁGINA não tiver conteúdo — mesmo com o documento já
+   alojado. O que está por escrever é esta página, e é dela que o JSON-LD fala. */
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: principal.title,
+  inLanguage: work.editions.map((e) => (e.lang === 'pt' ? 'pt-PT' : 'en')),
+  creativeWorkStatus: 'Draft',
+  url: canonicalUrl(path),
+  isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+  publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+};
+---
+
+<Base
+  lang={lang}
+  path={path}
+  title={`${principal.title} — ${SITE_NAME}`}
+  description={work.description[lang]}
+  jsonld={jsonld}
+  noindex={true}
+>
+  <div style="padding-top:clamp(20px,3vw,34px)">
+    <span class="eyebrow">{migrado ? s.estudos.migradoEstado : s.estudos.stubEstado}</span>
+    <h1 style="margin-top:12px" data-nonledger="titulo-de-estudo">{principal.title}</h1>
+    <p class="lede" style="margin-top:16px">{work.description[lang]}</p>
+  </div>
+
+  <div class="estudo-blocos">
+    <!-- ======================================= o estado da migração -->
+    <div class="placeholder">
+      <span class="placeholder-tag">{migrado ? s.estudos.migradoEstado : s.estudos.stubEstado}</span>
+      <p class="lede" style="font-size:16px">{migrado ? s.estudos.migradoLede : s.estudos.stubLede}</p>
+      <p class="placeholder-nota">{migrado ? s.estudos.migradoExplicacao : s.estudos.stubExplicacao}</p>
+    </div>
+
+    <!-- ======================================= o documento original -->
+    <div class="log-vazio">
+      <div class="log-vazio-k">{s.estudos.documentoK}</div>
+      {
+        migrado ? (
+          <>
+            <p class="log-vazio-v">{s.estudos.documentoV}</p>
+            <p class="estudo-accoes">
+              {documentoDaqui && (
+                <a class="ligacao-dados" href={documentoDaqui.rota}>
+                  {s.estudos.documentoLink} →
+                </a>
+              )}
+              {documentos
+                .filter((d) => d.lang !== lang)
+                .map((d) => (
+                  <a class="ligacao-dados" href={d.rota} hreflang={d.lang === 'pt' ? 'pt-PT' : 'en'}>
+                    {s.estudos.documentoLink} · <span data-nonledger="identificador-tecnico">{d.lang.toUpperCase()}</span> →
+                  </a>
+                ))}
+            </p>
+          </>
+        ) : (
+          <p class="log-vazio-v">{s.estudos.documentoVazio}</p>
+        )
+      }
+    </div>
+
+    <!-- ======================================= publicado fora daqui -->
+    {
+      work.artifactUrl && (
+        <div class="log-vazio">
+          <div class="log-vazio-k">{s.estudos.stubForaK}</div>
+          <p class="log-vazio-v">{s.estudos.stubForaV}</p>
+          <p>
+            <a class="ligacao-externa" href={work.artifactUrl} rel="noopener noreferrer external">
+              {s.estudos.stubForaLink} ↗
+            </a>
+          </p>
+        </div>
+      )
+    }
+
+    <!-- ======================================= as edições -->
+    <div class="log-vazio">
+      <div class="log-vazio-k">{s.estudos.stubEdicoes}</div>
+      {
+        edicoes.map((e) => (
+          <div class="edicao">
+            <div class="edicao-cabeca">
+              <span class="badge">{e.lang.toUpperCase()}</span>
+              <span class="edicao-titulo" data-nonledger="titulo-de-estudo">{e.title}</span>
+            </div>
+            <div class="edicao-meta">
+              <span data-nonledger="data-de-publicacao">
+                {s.estudos.dataLabel}: {e.date ?? POR_VERIFICAR}
+              </span>
+              <span data-nonledger="data-de-actualizacao">
+                {s.estudos.actualizadoLabel}: {e.updated ?? POR_VERIFICAR}
+              </span>
+              {e.lang !== lang && (
+                <a href={e.paginaDaEdicao} hreflang={e.lang === 'pt' ? 'pt-PT' : 'en'}>
+                  {s.estudos.edicaoIrma} →
+                </a>
+              )}
+              {e.documento && (
+                <a href={e.documento.rota} hreflang={e.lang === 'pt' ? 'pt-PT' : 'en'}>
+                  {s.estudos.documentoLink} →
+                </a>
+              )}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- ======================================= tema e descrições -->
+    <div class="log-vazio">
+      <div class="log-vazio-k">{s.estudos.temaK}</div>
+      <p class="log-vazio-v">{tema ?? s.estudos.temaNenhum}</p>
+
+      <div class="log-vazio-k" style="margin-top:6px">{s.estudos.descricoesK}</div>
+      <p class="estudo-descricao" lang="pt-PT">
+        <span class="estudo-descricao-lingua">PT</span> {work.description.pt}
+      </p>
+      <p class="estudo-descricao" lang="en">
+        <span class="estudo-descricao-lingua">EN</span> {work.description.en}
+      </p>
+      <p class="placeholder-nota">{s.estudos.descricoesNota}</p>
+    </div>
+
+    <!-- ======================================= descargas -->
+    <div class="log-vazio">
+      <div class="log-vazio-k">{s.estudos.descarregarK}</div>
+      <p class="log-vazio-v">{s.estudos.descarregarVazio}</p>
+    </div>
+
+    <p class="rodape-nav">
+      <a href={routePath('estudos', lang)}>{s.estudos.stubVoltar}</a>
+    </p>
+  </div>
+</Base>

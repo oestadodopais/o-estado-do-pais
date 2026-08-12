@@ -11,19 +11,44 @@
  * emblema EN. Inventar um título inglês seria inventar conteúdo.
  *
  * DATAS: nenhuma data de publicação está confirmada. Ficam todas por verificar.
+ * `updated` é a data da última revisão de uma edição: `null` significa que não
+ * se sabe, e a página mostra-o como tal. Não se escreve a data de publicação no
+ * lugar dela — seriam duas afirmações diferentes com o mesmo valor por acaso.
  * DESCRIÇÕES: são reformulações do próprio título, sem números e sem factos
  * acrescentados. Carecem de aprovação do director. Ver DECISIONS.md.
+ *
+ * DOCUMENTOS: o documento original de um estudo não se declara aqui. Basta
+ * pousá-lo em `studies-src/<slug>/pt.html` (ou `en.html`) e o endereço
+ * `/estudos/<slug>/documento` passa a existir — ver src/lib/documentos.mjs.
  */
 
 /** Marcador único para campos que não foram verificados. Nunca inventar um valor. */
 export const POR_VERIFICAR = '[a verificar]';
+
+/**
+ * Os temas dos trabalhos. O tema é o objecto do estudo, não uma etiqueta de
+ * arrumação: é ele que reconcilia a contagem `estudos_evora_no_arquivo` com o
+ * arquivo. Um trabalho sem tema atribuído fica com `subject: null`, e a página
+ * di-lo por palavras em vez de inventar um.
+ */
+export const SUBJECTS = {
+  evora: { pt: 'Évora', en: 'Évora' },
+};
+
+/** O nome legível de um tema, ou null quando não há tema atribuído. */
+export function subjectLabel(subject, lang = 'pt') {
+  if (!subject) return null;
+  const s = SUBJECTS[subject];
+  if (!s) throw new Error(`studies: tema desconhecido "${subject}". Acrescente-o a SUBJECTS.`);
+  return s[lang] ?? s.pt;
+}
 
 export const WORKS = [
   {
     id: 'evora-quinze-anos-cinco-mandatos',
     slug: 'evora-quinze-anos-cinco-mandatos',
     subject: 'evora',
-    editions: [{ lang: 'pt', title: 'Évora — Quinze Anos, Cinco Mandatos', date: null }],
+    editions: [{ lang: 'pt', title: 'Évora — Quinze Anos, Cinco Mandatos', date: null, updated: null }],
     description: {
       pt: 'Quinze anos de governo municipal em Évora, ao longo de cinco mandatos.',
       en: 'Fifteen years of municipal government in Évora, across five terms.',
@@ -34,7 +59,7 @@ export const WORKS = [
     slug: 'evora-economia-investidores-portas-abertas-2026',
     subject: 'evora',
     editions: [
-      { lang: 'pt', title: 'Évora — Economia, Investidores, Portas Abertas 2026', date: null },
+      { lang: 'pt', title: 'Évora — Economia, Investidores, Portas Abertas 2026', date: null, updated: null },
     ],
     description: {
       pt: 'Economia, investidores e portas abertas no município de Évora.',
@@ -46,8 +71,8 @@ export const WORKS = [
     slug: 'evora-orcamentado-pago-devido-2025',
     subject: 'evora',
     editions: [
-      { lang: 'pt', title: 'Évora — Orçamentado, Pago, Devido 2025', date: null },
-      { lang: 'en', title: 'Budgeted, Paid, Owed 2025', date: null },
+      { lang: 'pt', title: 'Évora — Orçamentado, Pago, Devido 2025', date: null, updated: null },
+      { lang: 'en', title: 'Budgeted, Paid, Owed 2025', date: null, updated: null },
     ],
     description: {
       pt: 'O que foi orçamentado, o que foi pago e o que ficou em dívida no município de Évora.',
@@ -63,6 +88,7 @@ export const WORKS = [
         lang: 'pt',
         title: 'Évora — Os Pelouros, Quem Os Teve, O Que Fizeram',
         date: '2026-08-12',
+        updated: null,
       },
     ],
     // Publicado fora deste sítio enquanto a migração não chega. O endereço vive
@@ -81,8 +107,8 @@ export const WORKS = [
     // avisa, porque a afirmação estudos-evora-publicados é verificada contra ela.
     subject: null,
     editions: [
-      { lang: 'pt', title: 'Onde está a água?', date: null },
-      { lang: 'en', title: 'Onde está a água?', date: null, titleUnverified: true },
+      { lang: 'pt', title: 'Onde está a água?', date: null, updated: null },
+      { lang: 'en', title: 'Onde está a água?', date: null, updated: null, titleUnverified: true },
     ],
     // O título não determina o objecto do estudo. Não se escreve uma descrição a partir de nada.
     description: { pt: '[descrição em preparação]', en: '[description pending]' },
@@ -91,8 +117,8 @@ export const WORKS = [
     id: 'agua-nao-faturada',
     slug: 'agua-nao-faturada',
     editions: [
-      { lang: 'pt', title: 'Água Não Faturada', date: null },
-      { lang: 'en', title: 'Água Não Faturada', date: null, titleUnverified: true },
+      { lang: 'pt', title: 'Água Não Faturada', date: null, updated: null },
+      { lang: 'en', title: 'Água Não Faturada', date: null, updated: null, titleUnverified: true },
     ],
     description: {
       pt: 'Água não faturada nos sistemas de abastecimento em Portugal.',
@@ -103,7 +129,7 @@ export const WORKS = [
     id: 'avaliacao-economica-regional-de-portugal-2026',
     slug: 'avaliacao-economica-regional-de-portugal-2026',
     editions: [
-      { lang: 'pt', title: 'Avaliação Económica Regional de Portugal 2026', date: null },
+      { lang: 'pt', title: 'Avaliação Económica Regional de Portugal 2026', date: null, updated: null },
     ],
     description: {
       pt: 'Avaliação económica das regiões de Portugal.',
@@ -118,6 +144,7 @@ export const WORKS = [
         lang: 'en',
         title: 'Which Door Is Yours — public funding in Portugal, August 2026',
         date: null,
+        updated: null,
       },
     ],
     description: {
@@ -129,7 +156,7 @@ export const WORKS = [
     id: 'alentejo-algarve',
     slug: 'alentejo-algarve',
     editions: [
-      { lang: 'en', title: 'Alentejo & Algarve — Economy, Society, Strategy', date: null },
+      { lang: 'en', title: 'Alentejo & Algarve — Economy, Society, Strategy', date: null, updated: null },
     ],
     description: {
       pt: 'Economia, sociedade e estratégia no Alentejo e no Algarve.',
@@ -139,7 +166,7 @@ export const WORKS = [
   {
     id: 'evolucao-de-portugal-desde-1981',
     slug: 'evolucao-de-portugal-desde-1981',
-    editions: [{ lang: 'pt', title: 'Evolução de Portugal desde 1981', date: null }],
+    editions: [{ lang: 'pt', title: 'Evolução de Portugal desde 1981', date: null, updated: null }],
     description: {
       pt: 'Séries longas sobre a evolução do país.',
       en: 'Long series on the country’s evolution.',

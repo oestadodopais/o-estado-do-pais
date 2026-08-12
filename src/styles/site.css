@@ -1001,6 +1001,78 @@ section {
   padding: 2px 7px;
 }
 
+/* ------------------------------------------------------------ página de estudo */
+
+.estudo-blocos {
+  margin-top: clamp(28px, 4vw, 42px);
+  display: grid;
+  gap: 22px;
+}
+.estudo-accoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin-top: 2px;
+}
+.edicao {
+  border-top: 1px solid var(--rule);
+  padding-top: 12px;
+  margin-top: 4px;
+  display: grid;
+  gap: 6px;
+}
+.edicao:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 0;
+}
+.edicao-cabeca {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: baseline;
+}
+.edicao-titulo {
+  font-size: 15.5px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.edicao-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  align-items: baseline;
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.edicao-meta a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-strong);
+}
+.edicao-meta a:hover {
+  border-bottom-color: currentColor;
+}
+.estudo-descricao {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: 62ch;
+}
+.estudo-descricao-lingua {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-right: 6px;
+}
+
 /* ------------------------------------------------------------ método */
 
 .metodo-secao {

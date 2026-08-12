@@ -59,6 +59,7 @@ faça, e não deve haver.
 | Método            | `/metodo`             | `/en/method`              |
 | Arquivo           | `/estudos`            | `/en/studies`             |
 | Estudo            | `/estudos/<slug>`     | `/en/studies/<slug>`      |
+| Documento         | `/estudos/<slug>/documento` | `/en/studies/<slug>/document` |
 | _Reservado_       | `/municipios/<slug>`  | `/en/municipalities/<slug>` |
 
 Sem barra final, excepto a raiz. A saída é em directório
@@ -115,6 +116,44 @@ E nunca assim:
 
 ---
 
+## Os estudos: a página e o documento
+
+Um estudo migrado tem **duas coisas** neste sítio, e a distinção é o centro de
+todo o mecanismo:
+
+| | O que é | Quem o escreve | Regra de algarismos |
+| --- | --- | --- | --- |
+| `/estudos/<slug>` | a **página do observatório** sobre o trabalho | nós, hoje | livro-razão, como qualquer página |
+| `/estudos/<slug>/documento` | o **trabalho**, tal como foi publicado | o documento, no dia em que foi publicado | dispensado: obra citada, com proveniência própria |
+
+A página do estudo diz o que se sabe do trabalho — título, descrições nas duas
+línguas, tema, edições com data de publicação e de última actualização, o estado
+da migração, o documento quando existe, e as descargas (hoje nenhumas, e di-lo
+por palavras). **Não tem resumo nem números do estudo**: um resumo escrito sem
+ler o estudo seria conteúdo inventado, e os números do estudo só entram quando
+cada um tiver a sua linha no livro-razão.
+
+### Pôr o documento de um estudo no sítio
+
+```
+studies-src/<slug>/pt.html      →  /estudos/<slug>/documento
+studies-src/<slug>/en.html      →  /en/studies/<slug>/document
+```
+
+Pousar o ficheiro e `npm run build`. Mais nada: **a pasta é a declaração.** Não
+há registo para actualizar nem rota para escrever, e a página do estudo passa a
+ligar para o documento sozinha.
+
+O build acrescenta ao documento **uma coisa e só uma**: uma faixa no topo do
+`<body>`, com a marca do observatório ligada de volta à página do estudo, CSS
+embebido e nenhum pedido de rede. Abaixo dela, o documento vai byte a byte como
+está no ficheiro de origem — `<head>`, estilos e scripts intactos.
+
+O portão confere exactamente isso: reconstrói «origem + faixa» e compara,
+carácter a carácter, com o que foi construído. As regras completas, e o que
+falha o build, estão em [`studies-src/README.md`](studies-src/README.md); o
+porquê da dispensa está em [`DECISIONS.md`](DECISIONS.md) §1.19.
+
 ## Os dados por trás dos gráficos
 
 O Método diz: «Os dados por trás de cada gráfico são descarregáveis.» São dois
@@ -146,6 +185,11 @@ ledger/
   allowlist.yml           as únicas excepções ao portão, cada uma com motivo
   README.md               o formato e as regras
 
+studies-src/
+  <slug>/pt.html          o documento original de um estudo, alojado intacto
+  <slug>/en.html          a edição inglesa do mesmo
+  README.md               o processo de dois passos, e o que o build impõe
+
 scripts/
   check-ledger.mjs        antes do build: completude e aritmética
   gate-html.mjs           depois do build: varre dist/ à procura de algarismos órfãos
@@ -155,6 +199,7 @@ src/
   lib/ledger.mjs          carrega, valida e serve o livro-razão
   lib/routes.mjs          a tabela de rotas (navegação, hreflang, sitemap)
   lib/dados.mjs           gera os CSV descarregáveis a partir das mesmas origens
+  lib/documentos.mjs      descobre os documentos de estudo e põe-lhes a faixa
   i18n/strings.mjs        as palavras, nas duas línguas, com paridade imposta
   data/
     caop-centroids.mjs    as 308 posições, transcritas da CAOP 2025
@@ -167,6 +212,7 @@ src/
   views/                  uma página lógica, as duas línguas
   pages/                  as rotas (duas linhas cada)
   pages/dados/            os CSV descarregáveis, servidos como endpoints
+  pages/**/documento/     o documento de um estudo, servido tal como está
   styles/                 tokens.css (tema de três estados) + site.css
 
 public/js/                enriquecimento progressivo, vanilla, sem empacotar

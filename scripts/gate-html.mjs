@@ -24,8 +24,9 @@ import { parse, NodeType } from 'node-html-parser';
 
 import { loadClaims, digitsOf, parsePtNumber, motivoDaEntrada } from '../src/lib/ledger.mjs';
 import { VERBATIM, normalizeWhitespace } from '../src/data/verbatim.mjs';
-import { EDITIONS } from '../src/data/studies.mjs';
-import { matchPath, HREFLANG } from '../src/lib/routes.mjs';
+import { EDITIONS, workById } from '../src/data/studies.mjs';
+import { matchPath, routePath, HREFLANG } from '../src/lib/routes.mjs';
+import { documentoDaEdicao, documentoServido } from '../src/lib/documentos.mjs';
 import { renderizacoesAceites } from '../src/data/correcoes.mjs';
 import { SITE_HOST, SITE_NAME, AUTHORSHIP_LINE, EDITION } from '../site.config.mjs';
 
@@ -77,6 +78,7 @@ const erros = [];
 const avisos = [];
 const idsUsados = new Set();
 let ficheiros = 0;
+let documentos = 0;
 
 /* ------------------------------------------------------------------ auxiliares */
 
@@ -147,7 +149,7 @@ function tokensProibidos(texto, scope) {
  * Sem isto, "…da UE-27" seguido de "PIB per capita…" num elemento vizinho
  * colava num único token "UE-27PIB" e o portão dava um falso positivo.
  */
-function textoDe(no) {
+function textoDe(no, { semEstilo = false } = {}) {
   const partes = [];
   const anda = (n) => {
     if (!n) return;
@@ -155,10 +157,133 @@ function textoDe(no) {
       partes.push(n.rawText);
       return;
     }
+    if (semEstilo) {
+      const tag = String(n.rawTagName ?? '').toLowerCase();
+      if (tag === 'style' || tag === 'script') return;
+    }
     for (const filho of n.childNodes ?? []) anda(filho);
   };
   anda(no);
   return partes.join(' ');
+}
+
+/**
+ * ---------------------------------------------------------------------------
+ * DOCUMENTOS DE ESTUDO — a única classe de página com regra própria.
+ * ---------------------------------------------------------------------------
+ *
+ * `/estudos/<slug>/documento` não é uma página deste sítio: é uma obra JÁ
+ * PUBLICADA, alojada aqui intacta, com uma faixa nossa por cima. Os algarismos
+ * que lá estão são do documento — têm a proveniência que o documento lhes deu,
+ * no dia em que foi publicado. Passá-los pelo varrimento seria exigir que uma
+ * obra citada se reescrevesse para caber nas regras de quem a cita.
+ *
+ * A dispensa é POR ISSO, e é estreita. Aplica-se a um ficheiro construído só se
+ * TUDO isto for verdade:
+ *
+ *   1. o endereço é o de um documento de estudo (tabela de rotas);
+ *   2. o slug é o de um trabalho do arquivo;
+ *   3. existe o ficheiro de origem em studies-src/<slug>/<lingua>.html;
+ *   4. o ficheiro construído é, CARÁCTER A CARÁCTER, «origem + faixa» — isto é
+ *      o que prova que o documento foi alojado intacto e que nada nosso entrou
+ *      abaixo da faixa;
+ *   5. a faixa existe uma só vez, liga para a página do estudo, e **o seu texto
+ *      não tem um único algarismo**.
+ *
+ * O que continua a ser conferido: que o documento é auto-contido (não carrega
+ * nada de fora — a promessa de «nenhum pedido de rede» não tem excepção para
+ * documentos). E as páginas de estudo — /estudos/<slug> — continuam varridas por
+ * inteiro, como qualquer outra página. A dispensa é do corpo do documento, e de
+ * mais nada.
+ *
+ * O que NÃO é conferido, e é honesto dizê-lo: que os números do documento
+ * estejam certos. Não estão no livro-razão e não vão estar — a sua proveniência
+ * é a do próprio documento. Ver DECISIONS §1.19.
+ */
+function verificaDocumento({ rota, html, root, err }) {
+  const { slug } = rota.params;
+  const lang = rota.lang;
+
+  if (!workById(slug)) {
+    err(`documento de um estudo que não existe no arquivo: "${slug}".`);
+    return;
+  }
+  const origem = documentoDaEdicao(slug, lang);
+  if (!origem) {
+    err(
+      `há um documento construído para "${slug}" (${lang}), mas não há ficheiro de origem em ` +
+        `studies-src/${slug}/. Um documento sem origem não pode ser conferido.`,
+    );
+    return;
+  }
+
+  /* 4 — o construído é a origem mais a faixa, e nada mais. */
+  let esperado;
+  try {
+    esperado = documentoServido(slug, lang);
+  } catch (e) {
+    err(`não foi possível reconstruir o documento "${slug}" (${lang}): ${e.message}`);
+    return;
+  }
+  if (esperado !== html) {
+    err(
+      `o documento construído não é o documento de origem mais a faixa.\n` +
+        `      origem:     ${path.relative(ROOT, origem.ficheiro)}\n` +
+        `      construído: ${html.length} carácteres · origem + faixa: ${esperado.length}\n` +
+        `      Um documento de estudo é alojado intacto: acrescenta-se-lhe a faixa e mais nada.`,
+    );
+  }
+
+  /* 5 — a faixa: uma só, a ligar para a página do estudo, sem algarismos. */
+  const faixas = root.querySelectorAll('[data-oedp-faixa]');
+  if (faixas.length !== 1) {
+    err(`o documento tem ${faixas.length} faixas do observatório; tem de ter exactamente uma.`);
+    return;
+  }
+  const faixa = faixas[0];
+
+  const textoDaFaixa = decodeEntities(textoDe(faixa, { semEstilo: true }));
+  const algarismos = textoDaFaixa.match(/\d/g);
+  if (algarismos) {
+    err(
+      `a faixa do observatório tem algarismos no texto ("${algarismos.join('')}"): ` +
+        `"${normalizeWhitespace(textoDaFaixa).slice(0, 120)}".\n` +
+        `      O corpo do documento está dispensado do varrimento porque é obra citada. ` +
+        `A faixa é nossa, e por isso não pode trazer números nenhuns.`,
+    );
+  }
+
+  const destino = routePath('estudo', lang, { slug });
+  const marca = faixa.querySelector('[data-oedp-marca]');
+  if (!marca) {
+    err('a faixa do observatório não traz a marca do sítio.');
+  } else if (marca.getAttribute('href') !== destino) {
+    err(
+      `a marca da faixa liga para "${marca.getAttribute('href')}" e devia ligar para ` +
+        `"${destino}", a página deste estudo.`,
+    );
+  }
+  if (!textoDaFaixa.includes(SITE_NAME)) {
+    err(`a faixa do observatório não diz o nome do sítio.`);
+  }
+
+  /* Auto-contido: a promessa de «nenhum pedido de rede» não abre excepção para
+     documentos. Âncoras para fora são legítimas (um estudo cita fontes); o que
+     não é legítimo é CARREGAR alguma coisa de fora. */
+  const externos = [
+    ...html.matchAll(/\s(?:src|srcset|poster)\s*=\s*["']?(https?:)?\/\/[^"'\s>]+/gi),
+    ...html.matchAll(/<link\b[^>]*\bhref\s*=\s*["']?(https?:)?\/\/[^"'\s>]+/gi),
+    ...html.matchAll(/url\(\s*["']?(?:https?:)?\/\/[^)"']+/gi),
+    ...html.matchAll(/@import\s+(?:url\()?\s*["'](?:https?:)?\/\/[^"']+/gi),
+  ];
+  if (externos.length) {
+    const amostra = externos.slice(0, 3).map((m) => m[0].trim().slice(0, 90));
+    err(
+      `o documento carrega ${externos.length} recurso(s) de fora do domínio: ${amostra.join(' · ')}\n` +
+        `      Um documento de estudo tem de ser auto-contido. Ligações para fora são ` +
+        `legítimas; pedidos de rede não.`,
+    );
+  }
 }
 
 function ficheirosHtml(dir) {
@@ -187,6 +312,16 @@ for (const file of ficheirosHtml(DIST)) {
   /* A língua desta edição, lida da própria página. É ela que decide qual das
      duas versões do motivo de uma correção tem de estar renderizada. */
   const linguaPagina = LINGUA_POR_HREFLANG[root.querySelector('html')?.getAttribute('lang') ?? ''] ?? null;
+
+  const caminho = '/' + rel.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
+  const rota = matchPath(caminho);
+
+  /* --- 0. documentos de estudo: obra citada, regra própria, e sai daqui --- */
+  if (rota?.key === 'documento') {
+    documentos++;
+    verificaDocumento({ rota, html, root, err });
+    continue;
+  }
 
   /* --- 1. ilhas de dados do livro-razão, antes de as remover --- */
   for (const el of root.querySelectorAll('script[data-ledger-json]')) {
@@ -314,8 +449,6 @@ for (const file of ficheirosHtml(DIST)) {
 
   /* Páginas de destino de estudo não se oferecem à indexação enquanto não
      tiverem conteúdo; as outras não podem ganhar noindex por descuido. */
-  const caminho = '/' + rel.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
-  const rota = matchPath(caminho);
   const robots = root.querySelector('head meta[name="robots"]');
   const temNoindex = (robots?.getAttribute('content') ?? '').includes('noindex');
   if (rota?.key === 'estudo' && !temNoindex) {
@@ -530,7 +663,12 @@ for (const [id] of claims) {
 }
 
 console.log('');
-console.log(cinza(`  portão de HTML · ${ficheiros} páginas · ${idsUsados.size}/${claims.size} afirmações citadas`));
+console.log(
+  cinza(
+    `  portão de HTML · ${ficheiros} páginas · ${idsUsados.size}/${claims.size} afirmações citadas` +
+      (documentos ? ` · ${documentos} documento(s) de estudo, conferidos contra a origem` : ''),
+  ),
+);
 
 if (avisos.length) {
   console.log('');
@@ -573,4 +711,9 @@ console.log('');
  *    número lá dentro seja mesmo estrutural. É por isso que a lista de motivos
  *    é curta e cada um tem de justificar-se em ledger/allowlist.yml.
  * 5. Um número escrito por extenso ("vinte e seis por cento") passa incólume.
+ * 6. O CORPO DE UM DOCUMENTO DE ESTUDO não é varrido — é obra já publicada,
+ *    com proveniência própria. Em troca, esse ficheiro é conferido de outra
+ *    maneira, mais apertada: tem de ser, carácter a carácter, o ficheiro de
+ *    origem mais a faixa do observatório, e a faixa não pode ter um único
+ *    algarismo. Ver verificaDocumento() e DECISIONS §1.19.
  * ========================================================================== */

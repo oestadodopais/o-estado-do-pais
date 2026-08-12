@@ -1,5 +1,5 @@
 ---
-import EstudoStubView from '../../../views/EstudoStubView.astro';
+import EstudoView from '../../../views/EstudoView.astro';
 import { WORKS } from '../../../data/studies.mjs';
 
 export function getStaticPaths() {
@@ -8,4 +8,4 @@ export function getStaticPaths() {
 
 const { slug } = Astro.params;
 ---
-<EstudoStubView lang="en" slug={slug} />
+<EstudoView lang="en" slug={slug} />
