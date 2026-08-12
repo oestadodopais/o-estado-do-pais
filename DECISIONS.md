@@ -85,19 +85,32 @@ está a ler sem que a declaração deixe de estar no original.
 **Reversível numa linha** em `SiteFooter.astro`, se o director preferir
 tradução plena.
 
-### 1.6 A formatação portuguesa dos valores mantém-se na edição inglesa
+### 1.6 Formatação portuguesa dos números nas duas edições — por agora
 
 Estava fixado que `value` é «a cadeia exacta como publicada, formatação PT».
 A consequência é que a edição inglesa mostra `77,2` e `26,5%`, com vírgula
-decimal.
+decimal, a um leitor que espera ponto.
 
-Escolha: cumprir a regra à letra. A alternativa — formatar por local — obrigaria
-a um segundo campo no livro-razão e a afrouxar o portão, que hoje compara a
-sequência de algarismos renderizada com a publicada.
+**Decisão da direção: fica assim por agora.** Não é a forma final.
 
-**Decisão do director.** Se quiser formatação inglesa, é um campo `value_en` (ou
-uma função de formatação declarada) mais uma regra no portão; nenhum dos dois
-é difícil, mas mudam o contrato.
+**Aceite e em fila: localização de exibição por edição.** A ideia não foi
+rejeitada — foi adiada. A forma dela é conhecida e não conflitua com nada do
+que está feito:
+
+- a linha do livro-razão continua a guardar a **cadeia exacta como publicada**,
+  em português. Essa é a prova documental e não se toca;
+- a renderização passa a poder localizar essa cadeia por edição — `77,2` em PT,
+  `77.2` em EN — a partir do mesmo valor;
+- o portão não precisa de afrouxar: já compara **sequências de algarismos**, e
+  `77,2` e `77.2` têm a mesma. Apanha um valor trocado tanto num caso como no
+  outro. O que passaria a ser preciso é uma verificação a mais, não a menos:
+  que a cadeia localizada seja a localização daquela cadeia publicada, e não
+  outra qualquer.
+
+Enquanto não estiver feito, a edição inglesa mostra a formatação portuguesa —
+o que é defensável, porque é literalmente o que a fonte publicou, mas não é
+confortável de ler.
+
 
 ### 1.7 As descrições dos estudos são reformulações do título
 
@@ -331,4 +344,6 @@ fácil, não para tornar o desonesto impossível.
 4. **Datas e descrições do arquivo.** Nenhuma data de publicação está
    confirmada; as descrições são reformulações do título.
 5. **Ligar o deploy** e o 301 de `oestadodopais.pt` para o domínio acentuado.
-6. **Decidir** sobre: tradução da linha de autoria (§1.5) · botão de tema (§1.9).
+6. **Em fila, já aceite:** localização de exibição dos números por edição
+   (§1.6) — cadeia exacta preservada no livro-razão, renderização localizada.
+7. **Decidir** sobre: tradução da linha de autoria (§1.5) · botão de tema (§1.9).
