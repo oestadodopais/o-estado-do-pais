@@ -1,0 +1,46 @@
+---
+/**
+ * A ÚNICA maneira de pôr um número numa página.
+ *
+ * <Claim id="pib-pc-portugal-2024" /> escreve o valor tal como está publicado.
+ * Se o id não existir, getClaim() atira e o build pára — é o portão (a).
+ * O elemento fica marcado com data-claim para que o portão de HTML confira,
+ * depois do build, que os algarismos renderizados são mesmo os do livro-razão.
+ *
+ * `as` permite trocar a etiqueta (span, tspan, text…) e os restantes atributos
+ * passam para o elemento — é assim que um número entra dentro de um SVG sem
+ * deixar de ser uma citação do livro-razão.
+ *
+ * Nunca escrever um número directamente num gabarito. É por isto que este
+ * componente existe.
+ */
+import { getClaim } from '../lib/ledger.mjs';
+import Provenance from './Provenance.astro';
+
+const {
+  id,
+  chip = false,
+  lang = 'pt',
+  class: klass = '',
+  as = 'span',
+  ...rest
+} = Astro.props;
+
+const claim = getClaim(id);
+const Tag = as;
+---
+
+{
+  chip ? (
+    <span class="claim claim-com-chip">
+      <Tag class:list={['claim-value', klass]} data-claim={id} {...rest}>
+        {claim.value}
+      </Tag>
+      <Provenance id={id} lang={lang} />
+    </span>
+  ) : (
+    <Tag class:list={['claim-value', klass]} data-claim={id} {...rest}>
+      {claim.value}
+    </Tag>
+  )
+}

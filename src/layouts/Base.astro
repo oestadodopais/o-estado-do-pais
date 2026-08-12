@@ -1,0 +1,87 @@
+---
+/**
+ * O invólucro de todas as páginas.
+ *
+ * Trata do <head> inteiro: canónico no domínio acentuado (em punycode),
+ * pares hreflang PT<->EN a partir da tabela de rotas, e o JSON-LD da
+ * organização em todas as páginas.
+ */
+import { SITE_NAME, SITE_URL, canonicalUrl } from '../../site.config.mjs';
+import { alternatesFor, routePath, normalizePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+import Masthead from '../components/Masthead.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+// A ordem importa: primeiro os tokens, depois a folha que os usa.
+import '../styles/tokens.css';
+import '../styles/site.css';
+
+const {
+  lang = 'pt',
+  title,
+  description,
+  path: pathProp,
+  jsonld = null,
+  mastheadCompact = true,
+} = Astro.props;
+
+const s = t(lang);
+const path = normalizePath(pathProp ?? Astro.url.pathname);
+const canonical = canonicalUrl(path);
+const alternates = alternatesFor(path);
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE_NAME,
+  url: SITE_URL,
+};
+
+const estudosPath = routePath('estudos', lang);
+---
+
+<!doctype html>
+<html lang={s.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <link rel="canonical" href={canonical} />
+    {
+      alternates?.map((a) => (
+        <link rel="alternate" hreflang={a.hreflang} href={canonicalUrl(a.path)} />
+      ))
+    }
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={lang === 'pt' ? 'pt_PT' : 'en_GB'} />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(organizationJsonLd)}
+    />
+    {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
+  </head>
+
+  <body>
+    <a class="skip" href="#conteudo">{s.nav.saltar}</a>
+
+    <div class="wrap">
+      <slot name="masthead">
+        <Masthead lang={lang} path={path} compact={mastheadCompact} />
+      </slot>
+
+      <main id="conteudo">
+        <slot />
+      </main>
+
+      <SiteFooter lang={lang} path={path} estudosPath={estudosPath} />
+    </div>
+  </body>
+</html>
