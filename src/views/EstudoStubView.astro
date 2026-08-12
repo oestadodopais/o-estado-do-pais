@@ -57,6 +57,24 @@ const jsonld = {
       <p class="placeholder-nota">{s.estudos.stubExplicacao}</p>
     </div>
 
+    {
+      work.artifactUrl && (
+        <div class="log-vazio">
+          <div class="log-vazio-k">{s.estudos.stubForaK}</div>
+          <p class="log-vazio-v">{s.estudos.stubForaV}</p>
+          <p>
+            <a
+              class="ligacao-externa"
+              href={work.artifactUrl}
+              rel="noopener noreferrer external"
+            >
+              {s.estudos.stubForaLink} ↗
+            </a>
+          </p>
+        </div>
+      )
+    }
+
     <div class="log-vazio">
       <div class="log-vazio-k">{s.estudos.stubEdicoes}</div>
       {

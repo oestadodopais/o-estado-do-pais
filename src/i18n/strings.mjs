@@ -160,6 +160,9 @@ export const STRINGS = {
       stubEdicoes: 'Edições',
       stubVoltar: 'Voltar ao arquivo',
       stubEstado: 'Rascunho — sem conteúdo',
+      stubForaK: 'Publicado fora deste sítio',
+      stubForaV: 'Enquanto a migração não chega, este estudo está publicado noutro sítio. A ligação sai deste domínio.',
+      stubForaLink: 'Abrir o estudo',
     },
 
     erro404: {
@@ -323,6 +326,9 @@ export const STRINGS = {
       stubEdicoes: 'Editions',
       stubVoltar: 'Back to the archive',
       stubEstado: 'Draft — no content',
+      stubForaK: 'Published outside this site',
+      stubForaV: 'Until the migration happens, this study is published elsewhere. The link leaves this domain.',
+      stubForaLink: 'Open the study',
     },
 
     erro404: {

@@ -55,6 +55,25 @@ export const WORKS = [
     },
   },
   {
+    id: 'evora-os-pelouros-quem-os-teve-o-que-fizeram',
+    slug: 'evora-os-pelouros-quem-os-teve-o-que-fizeram',
+    subject: 'evora',
+    editions: [
+      {
+        lang: 'pt',
+        title: 'Évora — Os Pelouros, Quem Os Teve, O Que Fizeram',
+        date: '2026-08-12',
+      },
+    ],
+    // Publicado fora deste sítio enquanto a migração não chega. O endereço vive
+    // aqui, no registo, e não escrito à mão num gabarito.
+    artifactUrl: 'https://claude.ai/code/artifact/fe9876aa-e778-4519-bc9a-5f2fa199b29a',
+    description: {
+      pt: 'Quem teve cada pelouro da Câmara de Évora em cinco mandatos, ligado — por este documento, não por fonte oficial — ao que as contas gastaram nessas áreas.',
+      en: 'Who held each portfolio on Évora’s council across five terms, mapped — by this document alone, not by any official source — against what the accounts spent in those areas.',
+    },
+  },
+  {
     id: 'onde-esta-a-agua',
     slug: 'onde-esta-a-agua',
     // subject por preencher: o título não diz de que território trata. Se vier

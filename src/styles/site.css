@@ -1294,3 +1294,20 @@ section {
   color: var(--muted);
   letter-spacing: 0.02em;
 }
+
+/* Ligação que sai do domínio. Marcada, porque sair daqui é uma mudança de
+   contexto — e o resto do sítio não faz nenhum pedido para fora. */
+.ligacao-externa {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--rule-strong);
+  overflow-wrap: anywhere;
+}
+.ligacao-externa:hover {
+  text-decoration-color: currentColor;
+}

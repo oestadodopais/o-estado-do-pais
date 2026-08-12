@@ -4,7 +4,7 @@
 id: "estudos-evora-publicados"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "3"
+value: "4"
 unit: "estudos"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -20,7 +20,7 @@ reference_date: "2026-08-12"
 excerpt: "[a verificar]"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "Contagem dos trabalhos do arquivo cujo objecto é o município de Évora: «Évora — Quinze Anos, Cinco Mandatos», «Évora — Economia, Investidores, Portas Abertas 2026» e «Évora — Orçamentado, Pago, Devido 2025». A edição inglesa deste último é uma tradução do mesmo trabalho, não um quarto estudo."
+derivation: "Contagem dos trabalhos do arquivo cujo objecto é o município de Évora: «Évora — Quinze Anos, Cinco Mandatos», «Évora — Economia, Investidores, Portas Abertas 2026», «Évora — Orçamentado, Pago, Devido 2025» e «Évora — Os Pelouros, Quem Os Teve, O Que Fizeram». A edição inglesa do terceiro é uma tradução do mesmo trabalho, não um estudo à parte."
 derived_from: []
 # Expressão verificada no build: tem de dar exactamente o valor acima.
 check: "estudos_evora_no_arquivo"
@@ -34,3 +34,7 @@ corrections:
     old_value: "4"
     new_value: "3"
     reason: "O valor 4 vinha do colofão do estudo de identidade e contava a edição inglesa de «Évora — Orçamentado, Pago, Devido 2025» como estudo autónomo. Pela distinção entre trabalho e edição que o arquivo usa, são três estudos, um deles com edição em inglês."
+  - date: "2026-08-12"
+    old_value: "3"
+    new_value: "4"
+    reason: "Novo estudo publicado a 2026-08-12: Os Pelouros, Quem Os Teve, O Que Fizeram"

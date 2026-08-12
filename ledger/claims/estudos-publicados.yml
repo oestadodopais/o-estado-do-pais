@@ -4,7 +4,7 @@
 id: "estudos-publicados"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "9"
+value: "10"
 unit: "estudos"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
