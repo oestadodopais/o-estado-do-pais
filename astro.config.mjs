@@ -5,6 +5,13 @@ import sitemap from '@astrojs/sitemap';
 import { SITE_URL } from './site.config.mjs';
 import { alternatesFor, pathFromUrl, matchPath } from './src/lib/routes.mjs';
 
+/**
+ * Uma alternativa de língua, tal como routes.mjs a devolve.
+ * Anotada aqui, e não só inferida, para que este ficheiro continue a
+ * type-checkar mesmo quando o editor não resolve os módulos .mjs vizinhos.
+ * @typedef {{ lang: string, hreflang: string, path: string }} Alternativa
+ */
+
 // https://astro.build/config
 export default defineConfig({
   // O domínio canónico vem de site.config.mjs e de mais lado nenhum.
@@ -29,10 +36,18 @@ export default defineConfig({
        * páginas que dizem, elas próprias, que ainda não têm nada.
        * O índice do arquivo (/estudos, /en/studies) continua no sitemap.
        * Levantar isto na migração: apagar este filter e o noindex do stub.
+       *
+       * @param {string} page URL absoluto da página, como o sitemap o vê.
+       * @returns {boolean} true se a página entra no sitemap.
        */
       filter: (page) => matchPath(pathFromUrl(page))?.key !== 'estudo',
 
       namespaces: { xhtml: true },
+
+      /**
+       * @param {import('@astrojs/sitemap').SitemapItem} item
+       * @returns {import('@astrojs/sitemap').SitemapItem}
+       */
       serialize(item) {
         const path = pathFromUrl(item.url);
         // Sem barra final, excepto a raiz — igual ao canónico da página.
@@ -40,10 +55,13 @@ export default defineConfig({
         // Pares hreflang PT<->EN, a partir da mesma tabela de rotas que as páginas usam.
         const alts = alternatesFor(path);
         if (alts) {
-          item.links = alts.map((a) => ({
-            lang: a.hreflang,
-            url: new URL(a.path === '/' ? '/' : a.path, SITE_URL).href,
-          }));
+          item.links = alts.map(
+            /** @param {Alternativa} a */
+            (a) => ({
+              lang: a.hreflang,
+              url: new URL(a.path === '/' ? '/' : a.path, SITE_URL).href,
+            }),
+          );
         }
         return item;
       },

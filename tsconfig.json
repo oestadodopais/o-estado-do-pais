@@ -3,7 +3,12 @@
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"],
   "compilerOptions": {
+    // NÃO DESLIGAR. Os ficheiros de configuração e os módulos partilhados são
+    // .mjs com tipos em JSDoc. Sem allowJs, o TypeScript nem sequer os aceita
+    // no programa (TS6504) e quem os importa passa a ver TS7016, "módulo sem
+    // declaração de tipos". É esta linha que mantém astro.config.mjs verificável.
     "allowJs": true,
+    // Só os ficheiros com // @ts-check são verificados. Hoje é um: astro.config.mjs.
     "checkJs": false
   }
 }

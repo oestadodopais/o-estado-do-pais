@@ -186,6 +186,40 @@ mais recente à primeira. Uma correção só aparece ali se existir no ficheiro 
 afirmação, e nenhuma pode ser retirada de um sítio sem sair do outro.
 
 
+### 1.12 Diagnósticos de TypeScript em `astro.config.mjs`
+
+A direção reportou que o servidor de linguagem assinalava, nesse ficheiro, o
+import de `.mjs` sem tipos e um parâmetro com `any` implícito.
+
+**Reproduzido** — com os imports por resolver, o ficheiro dava sete
+diagnósticos: dois `TS7016` (módulo sem declaração de tipos) e três `TS7006`
+(parâmetro com `any` implícito: `page`, `item` e `a`).
+
+**Diagnóstico das causas, que são duas e diferentes:**
+
+- Os `TS7006` eram defeitos a sério: três funções de callback sem tipo. Foram
+  corrigidos com JSDoc — `filter`, `serialize` e o `map` das alternativas — e o
+  `routes.mjs` ganhou `@typedef` e assinaturas anotadas nas seis funções
+  exportadas. Sob o mesmo teste degradado, os `TS7006` passaram de **três a zero**.
+- O `TS7016` só aparece quando o verificador não está a aplicar `allowJs`.
+  Com `allowJs` desligado, o TypeScript nem aceita um `.mjs` no programa
+  (`TS6504`); com ele ligado, o ficheiro fica limpo. O `tsconfig.json` do
+  projecto já tinha `allowJs: true` — ficou com um comentário a dizer porque não
+  se desliga.
+
+**Mantido o `// @ts-check`.** Vale o que custa: valida o objecto de configuração
+do Astro contra `AstroUserConfig`, e apanha um `trailingSlash: 'nevr'` que de
+outro modo passaria em silêncio.
+
+**A verificação passou a ser um comando, não uma impressão de editor:**
+`npm run typecheck` (`tsc -p tsconfig.check.json`), com o `typescript` fixado
+como dependência de desenvolvimento. Dá **zero diagnósticos**.
+
+`astro.config.mjs` é o único ficheiro com `// @ts-check` — foi confirmado por
+pesquisa, não assumido. Ligar `checkJs` a todos os `.mjs` levantaria 96
+diagnósticos nos scripts do portão e nos módulos de dados, que hoje não são
+verificados; endurecê-los é trabalho à parte, e não foi feito.
+
 ---
 
 ## 2. Como funciona o portão, e o que ele não vê
