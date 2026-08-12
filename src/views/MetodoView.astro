@@ -9,6 +9,7 @@
  * componente e não um texto: está vazio e pronto a receber entradas datadas.
  */
 import Base from '../layouts/Base.astro';
+import RegistoCorrecoes from '../components/RegistoCorrecoes.astro';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 
@@ -60,17 +61,7 @@ const secoes = [
           <p class="placeholder-nota">{s.metodo.correcoesNota}</p>
         </div>
 
-        <div class="log-vazio">
-          <div class="log-vazio-k">{s.metodo.correcoesVazioK}</div>
-          <div class="log-cabecalho">
-            <span>{s.metodo.colunaData}</span>
-            <span>{s.metodo.colunaAntigo}</span>
-            <span>{s.metodo.colunaNovo}</span>
-            <span>{s.metodo.colunaMotivo}</span>
-          </div>
-          <p class="log-vazio-v">{s.metodo.correcoesVazioV}</p>
-          <p class="placeholder-nota">{s.metodo.correcoesVazioNota}</p>
-        </div>
+        <RegistoCorrecoes lang={lang} />
       </div>
     </section>
 

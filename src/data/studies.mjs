@@ -22,6 +22,7 @@ export const WORKS = [
   {
     id: 'evora-quinze-anos-cinco-mandatos',
     slug: 'evora-quinze-anos-cinco-mandatos',
+    subject: 'evora',
     editions: [{ lang: 'pt', title: 'Évora — Quinze Anos, Cinco Mandatos', date: null }],
     description: {
       pt: 'Quinze anos de governo municipal em Évora, ao longo de cinco mandatos.',
@@ -31,6 +32,7 @@ export const WORKS = [
   {
     id: 'evora-economia-investidores-portas-abertas-2026',
     slug: 'evora-economia-investidores-portas-abertas-2026',
+    subject: 'evora',
     editions: [
       { lang: 'pt', title: 'Évora — Economia, Investidores, Portas Abertas 2026', date: null },
     ],
@@ -42,6 +44,7 @@ export const WORKS = [
   {
     id: 'evora-orcamentado-pago-devido-2025',
     slug: 'evora-orcamentado-pago-devido-2025',
+    subject: 'evora',
     editions: [
       { lang: 'pt', title: 'Évora — Orçamentado, Pago, Devido 2025', date: null },
       { lang: 'en', title: 'Budgeted, Paid, Owed 2025', date: null },
@@ -54,6 +57,10 @@ export const WORKS = [
   {
     id: 'onde-esta-a-agua',
     slug: 'onde-esta-a-agua',
+    // subject por preencher: o título não diz de que território trata. Se vier
+    // a ser sobre Évora, a contagem estudos_evora_no_arquivo muda — e o build
+    // avisa, porque a afirmação estudos-evora-publicados é verificada contra ela.
+    subject: null,
     editions: [
       { lang: 'pt', title: 'Onde está a água?', date: null },
       { lang: 'en', title: 'Onde está a água?', date: null, titleUnverified: true },
@@ -170,4 +177,10 @@ export function studyLabel(id, lang = 'pt') {
 export const COUNTS = {
   estudos_no_arquivo: WORKS.length,
   edicoes_no_arquivo: EDITIONS.length,
+  /**
+   * Trabalhos cujo objecto é o município de Évora. Trabalhos, não edições:
+   * uma tradução não é um estudo novo. É esta a contagem que reconcilia a
+   * afirmação estudos-evora-publicados com o arquivo.
+   */
+  estudos_evora_no_arquivo: WORKS.filter((w) => w.subject === 'evora').length,
 };

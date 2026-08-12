@@ -154,16 +154,37 @@ Ambas as contagens são afirmações do livro-razão, e ambas são verificadas
 contra `src/data/studies.mjs` a cada build (`check: estudos_no_arquivo`): se o
 arquivo mudar e a contagem não, o build pára.
 
-### 1.11 Contradição herdada, deixada à vista
+### 1.11 A contagem de Évora: corrigida de 4 para 3
 
-O colofão do estudo de identidade diz «Évora: 4 estudos aprofundados
-publicados». O arquivo tem três títulos com Évora mais uma edição inglesa. Não
-sei qual das leituras está certa — se «Onde está a água?» é sobre Évora, a conta
-fecha de outra maneira.
+O colofão do estudo de identidade dizia «Évora: 4 estudos aprofundados
+publicados». Na primeira construção esse valor foi mantido tal como estava, com
+uma nota a dizer que a base da contagem não estava reconciliada.
 
-O valor `4` foi mantido tal como estava, com o excerto verdadeiro do colofão e
-uma nota no campo `note` a dizer que a base da contagem não está reconciliada.
-Não foi corrigido para um número que me parecesse melhor.
+**A direção reconciliou-a:** os quatro artefactos sobre Évora são três estudos
+mais a edição inglesa de um deles. Pela distinção entre trabalho e edição que o
+arquivo já usava (§1.10), são **três**.
+
+Feito:
+
+- a afirmação `estudos-evora-publicados` passou a `3`;
+- deixou de vir do colofão e passa a vir da contagem do próprio arquivo:
+  `derivation` nomeia os três trabalhos, e `check: estudos_evora_no_arquivo`
+  reavalia a contagem contra `src/data/studies.mjs` a cada build. Se um quarto
+  trabalho sobre Évora entrar no arquivo e o número não mudar, o build falha;
+- os três trabalhos ganharam `subject: 'evora'` no registo. «Onde está a água?»
+  ficou com `subject: null` — o título não diz de que território trata, e a
+  direção não o incluiu na reconciliação;
+- a nota de base não reconciliada saiu: esta **é** a reconciliação;
+- a legenda do mapa passou a «3 estudos aprofundados publicados (um com edição
+  em inglês)», nas duas edições;
+- a correção ficou registada em `corrections[]`, com data, valor antigo, valor
+  novo e motivo. É a primeira entrada real da disciplina de correções da casa.
+
+O registo de correções em `/metodo` deixou de ser um componente vazio: passou a
+ser lido do próprio livro-razão. Junta as correções de todas as afirmações, da
+mais recente à primeira. Uma correção só aparece ali se existir no ficheiro da
+afirmação, e nenhuma pode ser retirada de um sítio sem sair do outro.
+
 
 ---
 
@@ -177,7 +198,7 @@ Não foi corrigido para um número que me parecesse melhor.
 | `astro build` | durante | `<Claim id="…">` com um id que não existe — `getClaim()` atira e o build pára |
 | `gate:html` | depois do build | algarismos, no HTML construído, sem proveniência declarada |
 
-### 2.2 As quatro origens legítimas de um algarismo numa página
+### 2.2 As cinco origens legítimas de um algarismo numa página
 
 1. `data-claim="<id>"` — veio do livro-razão. O portão confere que os algarismos
    renderizados são os do valor publicado. `<Claim/>` põe esta marca sozinho.
@@ -189,6 +210,12 @@ Não foi corrigido para um número que me parecesse melhor.
    `ledger/allowlist.yml`, onde cada um se justifica por escrito.
 4. Um token em `ledger/allowlist.yml` — nomes próprios com algarismos
    (`UE-27`, `PT2030`).
+
+5. `data-correcao-*` — uma entrada do registo de correções. Data, valor antigo,
+   valor novo, motivo e id são **todos** conferidos contra o campo `corrections`
+   da afirmação. O motivo é prosa livre e pode citar números («o valor 4 vinha
+   do colofão…»), por isso é comparado por igualdade de texto, não dispensado:
+   reescrever a história de uma correção falha o build.
 
 As ilhas de dados `<script type="application/json" data-ledger-json>` têm regra
 própria: cada número precisa de um irmão `<x>_claim`, e é conferido contra o
@@ -269,6 +296,5 @@ fácil, não para tornar o desonesto impossível.
    capita, e a base de cálculo do ciclo de substituição de condutas.
 4. **Datas e descrições do arquivo.** Nenhuma data de publicação está
    confirmada; as descrições são reformulações do título.
-5. **A contagem de Évora** (§1.11).
-6. **Ligar o deploy** e o 301 de `oestadodopais.pt` para o domínio acentuado.
-7. **Decidir** sobre: tradução da linha de autoria (§1.5) · botão de tema (§1.9).
+5. **Ligar o deploy** e o 301 de `oestadodopais.pt` para o domínio acentuado.
+6. **Decidir** sobre: tradução da linha de autoria (§1.5) · botão de tema (§1.9).

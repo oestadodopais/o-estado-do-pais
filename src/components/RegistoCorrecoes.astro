@@ -1,0 +1,98 @@
+---
+/**
+ * O registo de correções.
+ *
+ * Não é escrito à mão: é lido do próprio livro-razão. Cada linha de afirmação
+ * guarda as suas correções, e este componente junta-as todas, da mais recente
+ * à primeira. Uma correção só existe aqui se existir no ficheiro da afirmação —
+ * e nenhuma pode ser retirada de um sítio sem sair do outro.
+ *
+ * Os valores antigo e novo vão marcados com data-correcao-*, e o portão de HTML
+ * confere-os contra o campo corrections da própria afirmação. Um valor antigo
+ * reescrito é apanhado no build, tal como um valor corrente.
+ */
+import { allClaims } from '../lib/ledger.mjs';
+import { t } from '../i18n/strings.mjs';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+
+const entradas = [];
+for (const claim of allClaims()) {
+  (claim.corrections ?? []).forEach((corr, n) => {
+    entradas.push({ claimId: claim.id, n, ...corr });
+  });
+}
+// Da mais recente à primeira.
+entradas.sort((a, b) => String(b.date).localeCompare(String(a.date)));
+---
+
+<div class="log-vazio">
+  <div class="log-vazio-k">{s.metodo.correcoesVazioK}</div>
+
+  {
+    entradas.length === 0 ? (
+      <>
+        <p class="log-vazio-v">{s.metodo.correcoesVazioV}</p>
+        <p class="placeholder-nota">{s.metodo.correcoesVazioNota}</p>
+      </>
+    ) : (
+      <>
+        <div class="log-cabecalho">
+          <span>{s.metodo.colunaData}</span>
+          <span>{s.metodo.colunaAntigo}</span>
+          <span>{s.metodo.colunaNovo}</span>
+          <span>{s.metodo.colunaMotivo}</span>
+        </div>
+        {entradas.map((e) => (
+          <div class="log-linha">
+            <span
+              class="log-data"
+              data-correcao-claim={e.claimId}
+              data-correcao-n={String(e.n)}
+              data-correcao-campo="date"
+            >
+              {e.date}
+            </span>
+            <span
+              class="log-valor log-valor-antigo"
+              data-correcao-claim={e.claimId}
+              data-correcao-n={String(e.n)}
+              data-correcao-campo="old_value"
+            >
+              {e.old_value}
+            </span>
+            <span
+              class="log-valor"
+              data-correcao-claim={e.claimId}
+              data-correcao-n={String(e.n)}
+              data-correcao-campo="new_value"
+            >
+              {e.new_value}
+            </span>
+            <div>
+              <p
+                class="log-motivo"
+                data-correcao-claim={e.claimId}
+                data-correcao-n={String(e.n)}
+                data-correcao-campo="reason"
+              >
+                {e.reason}
+              </p>
+              <p class="log-afirmacao">
+                {s.metodo.colunaAfirmacao}:{' '}
+                <code
+                  data-correcao-claim={e.claimId}
+                  data-correcao-n={String(e.n)}
+                  data-correcao-campo="id"
+                >
+                  {e.claimId}
+                </code>
+              </p>
+            </div>
+          </div>
+        ))}
+      </>
+    )
+  }
+</div>

@@ -1181,3 +1181,62 @@ section {
 .rodape-nav a:hover {
   color: var(--ink);
 }
+
+/* ------------------------------------------------------------ registo de correções */
+
+.log-linha {
+  display: grid;
+  grid-template-columns: 110px 1fr 1fr 2fr;
+  gap: 12px;
+  align-items: baseline;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.log-linha:last-child {
+  border-bottom: 0;
+}
+@media (max-width: 700px) {
+  .log-linha {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 12px;
+  }
+  .log-linha > div {
+    grid-column: 1 / -1;
+  }
+}
+.log-data {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+}
+.log-valor {
+  font-family: var(--f-mono);
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+.log-valor-antigo {
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+.log-motivo {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: 60ch;
+}
+.log-afirmacao {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  color: var(--muted);
+  margin-top: 5px;
+  letter-spacing: 0.04em;
+}
+.log-afirmacao code {
+  font-family: inherit;
+  overflow-wrap: anywhere;
+}
