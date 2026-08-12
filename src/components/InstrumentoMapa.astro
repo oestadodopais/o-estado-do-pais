@@ -1,0 +1,169 @@
+---
+/**
+ * Instrumento n.º 2 — o país em pontos.
+ *
+ * Um ponto por município, na posição real do seu centróide. A silhueta não é
+ * desenhada: cai das coordenadas. Nada é colocado a olho.
+ *
+ * DIFERENÇA EM RELAÇÃO AO ESTUDO DE IDENTIDADE: ali o mapa era desenhado em
+ * <canvas>; aqui é SVG construído no servidor. As posições são as mesmas, sem
+ * alteração. As razões: o mapa passa a existir sem JavaScript, as cores passam
+ * a vir dos tokens (logo, o tema escuro funciona sem redesenhar), e cada ponto
+ * passa a ser um nó com nome. Ver DECISIONS.md.
+ *
+ * A citação da CAOP viaja com o código e é transcrita à letra — o portão
+ * confere-a carácter a carácter contra src/data/verbatim.mjs.
+ */
+import { MUNICIPIOS, DISTRITOS, FRAMES, FIELD_W, FIELD_H, INDICE_EVORA } from '../data/caop-centroids.mjs';
+import { VERBATIM } from '../data/verbatim.mjs';
+import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
+import { t } from '../i18n/strings.mjs';
+import Claim from './Claim.astro';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+
+const evora = MUNICIPIOS[INDICE_EVORA];
+const [ex, ey] = [evora[2], evora[3]];
+
+/* Larguras das barras: calculadas a partir do livro-razão, não escritas à mão. */
+const total = parsePtNumber(getClaim('municipios-portugal-caop-2025').value);
+const barra = (id) => {
+  const n = parsePtNumber(getClaim(id).value);
+  return `${((n / total) * 100).toFixed(2)}%`;
+};
+
+const linhas = [
+  { rotulo: s.home.instr2.continente, claim: 'municipios-continente-caop-2025' },
+  { rotulo: s.home.instr2.acores, claim: 'municipios-acores-caop-2025' },
+  { rotulo: s.home.instr2.madeira, claim: 'municipios-madeira-caop-2025' },
+];
+
+const molduras = [
+  { r: FRAMES.mad, rotulo: 'MADEIRA · MESMA ESCALA' },
+  { r: FRAMES.aco, rotulo: 'AÇORES · ESCALA 0,38×' },
+];
+---
+
+<div class="instr" data-instrumento="mapa">
+  <div class="map-grid">
+    <div class="map-panel">
+      <!-- CAMADA 1 — RELANCE -->
+      <div>
+        <p class="layer-tag">{lang === 'pt' ? 'Relance' : 'At a glance'}</p>
+        <div class="cover-num" style="margin-top:12px">
+          <Claim id="municipios-com-estudo-aprofundado" /> / <Claim id="municipios-portugal-caop-2025" />
+        </div>
+        <div class="cover-label">{s.home.instr2.coberturaLabel}</div>
+      </div>
+
+      <!-- CAMADA 2 — LEITURA BREVE -->
+      <p class="map-caption">
+        {s.home.instr2.legendaA}<b>Évora</b>{s.home.instr2.legendaB}<Claim id="estudos-evora-publicados" />{
+          s.home.instr2.legendaC
+        }<Claim id="municipios-sem-estudo-aprofundado" />{s.home.instr2.legendaD}
+      </p>
+
+      <div class="legend">
+        <div class="legend-item">
+          <span class="legend-dot ld-on"><i></i></span>
+          {s.home.instr2.legendaAceso}
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot ld-off"><i></i></span>
+          {s.home.instr2.legendaApagado}
+        </div>
+      </div>
+
+      <div class="compo">
+        <div class="compo-k">{s.home.instr2.contagemK}</div>
+        {
+          linhas.map((l) => (
+            <div class="compo-row">
+              <span class="compo-l">{l.rotulo}</span>
+              <span class="compo-bar"><i style={`width:${barra(l.claim)}`}></i></span>
+              <span class="compo-n"><Claim id={l.claim} /></span>
+            </div>
+          ))
+        }
+        <div class="compo-tot">
+          <span class="compo-l">{s.home.instr2.total}</span>
+          <span></span>
+          <span class="compo-n"><Claim id="municipios-portugal-caop-2025" /></span>
+        </div>
+      </div>
+
+      <div class="readout" data-readout aria-live="polite">
+        <div class="readout-hint" data-readout-hint>{s.home.instr2.readoutHint}</div>
+        <div class="readout-name" data-readout-nome hidden></div>
+        <div class="readout-sub" data-readout-sub hidden></div>
+      </div>
+
+      <p class="map-hint" data-teclado hidden>{s.home.instr2.tecladoHint}</p>
+    </div>
+
+    <div class="map-canvas-wrap" data-mapa-wrap>
+      <svg
+        class="map-svg"
+        viewBox={`0 0 ${FIELD_W} ${FIELD_H}`}
+        role="img"
+        aria-label={s.home.instr2.svgLabel}
+        data-mapa
+      >
+        <g data-nonledger="escala-de-instrumento">
+          {
+            molduras.map((m) => (
+              <>
+                <rect class="frame" x={m.r[0]} y={m.r[1]} width={m.r[2]} height={m.r[3]} />
+                <text class="frame-label" x={m.r[0] + 1} y={m.r[1] - 6}>{m.rotulo}</text>
+              </>
+            ))
+          }
+        </g>
+
+        <g data-pontos>
+          {
+            MUNICIPIOS.map((m, i) =>
+              i === INDICE_EVORA ? null : (
+                <circle class="mun" cx={m[2]} cy={m[3]} r="1.95" data-m={m[0]} data-d={DISTRITOS[m[1]]} />
+              ),
+            )
+          }
+        </g>
+
+        <g data-aceso>
+          <circle class="mun-lit" cx={ex} cy={ey} r="5.4" data-m={evora[0]} data-d={DISTRITOS[evora[1]]} />
+          <path class="lit-leader" d={`M ${ex + 7} ${ey - 2} L ${ex + 20} ${ey - 13} L ${ex + 27} ${ey - 13}`} />
+          <rect x={ex + 29} y={ey - 24} width="44" height="16" fill="var(--paper-2)" />
+          <text class="lit-label" x={ex + 32} y={ey - 12}>Évora</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- CAMADA 2 — a legenda transcrita do estudo de identidade -->
+  <p class="map-cite" data-verbatim="caop-legenda-mapa" lang="pt-PT">{VERBATIM['caop-legenda-mapa'].text}</p>
+
+  <!-- CAMADA 3 — FUNDO -->
+  <details class="deep">
+    <summary>{s.home.instr2.deepTitulo}</summary>
+    <div class="deep-body">
+      <div class="deep-item">
+        <div class="deep-k">{s.home.instr2.coberturaK}</div>
+        <p class="deep-v">{s.home.instr2.coberturaV}</p>
+      </div>
+      <div class="deep-item">
+        <div class="deep-k">{s.home.instr2.fonteK}</div>
+        <p class="deep-v verbatim" data-verbatim="caop-fonte" lang="pt-PT">{VERBATIM['caop-fonte'].text}</p>
+      </div>
+      <div class="deep-item">
+        <div class="deep-k">{s.home.instr2.processamentoK}</div>
+        <p class="deep-v verbatim" data-verbatim="caop-processamento" lang="pt-PT">
+          {VERBATIM['caop-processamento'].text}
+        </p>
+      </div>
+    </div>
+  </details>
+</div>
+
+<script src="/js/mapa.js" defer is:inline></script>
