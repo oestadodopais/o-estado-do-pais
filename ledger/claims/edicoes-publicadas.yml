@@ -1,0 +1,32 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+
+id: "edicoes-publicadas"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "12"
+unit: "edições"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "O Estado do País"
+document:
+  title: "Arquivo de estudos"
+  edition: "12.08.2026"
+source_url: "[a verificar]"
+access_date: "2026-08-12"
+reference_date: "2026-08-12"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "[a verificar]"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "Contagem das edições no arquivo. As edições PT e EN do mesmo trabalho contam em separado."
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "edicoes_no_arquivo"
+
+study: "o-estado-do-pais"
+note: "Verificado no build contra src/data/studies.mjs: se o arquivo mudar e este número não, o build falha."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

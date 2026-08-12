@@ -1,0 +1,32 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+
+id: "municipios-sem-estudo-aprofundado"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "307"
+unit: "municípios"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: null
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "308 − 1 = 307. Total de municípios menos os que já têm estudo aprofundado publicado."
+derived_from:
+  - "municipios-portugal-caop-2025"
+  - "municipios-com-estudo-aprofundado"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "municipios-portugal-caop-2025 - municipios-com-estudo-aprofundado"
+
+study: "o-estado-do-pais"
+note: null
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

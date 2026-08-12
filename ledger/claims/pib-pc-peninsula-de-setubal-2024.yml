@@ -1,0 +1,32 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+
+id: "pib-pc-peninsula-de-setubal-2024"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "55"
+unit: "índice (UE-27 = 100)"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "[a verificar]"
+document:
+  title: "[a verificar]"
+  edition: "[a verificar]"
+source_url: "[a verificar]"
+access_date: "[a verificar]"
+reference_date: "2024"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "[a verificar]"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "avaliacao-economica-regional-de-portugal-2026"
+note: "PIB per capita de Península de Setúbal em paridades de poder de compra. Série publicada como «PIB per capita vs UE-27, PPS, 2024, provisório». O valor de 2024 é provisório. A fonte a montante (organismo e documento) não consta do material de origem. Preencher a partir das fontes do próprio estudo antes de qualquer republicação."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []
