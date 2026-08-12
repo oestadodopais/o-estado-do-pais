@@ -133,23 +133,7 @@ export const STRINGS = {
       metaDescription:
         'Quem faz este observatório, como se escreve, o que é o livro-razão, como se corrigem os erros e o que não se afirma sobre causas.',
       h1: 'Método',
-      lede: 'Como este observatório é feito, e o que se pode e não se pode concluir do que aqui está.',
-      emPreparacao: '[texto em preparação]',
-      porEscrever: 'Por escrever',
-      quemK: 'Quem faz isto',
-      quemNota:
-        'A secção sobre a divisão de trabalho entre a IA que escreve e a pessoa que dirige. Escrita pelo director.',
-      comoK: 'Como se escreve',
-      comoNota:
-        'O processo: da pergunta à fonte, da fonte ao livro-razão, do livro-razão à página. Escrita pelo director.',
-      livroK: 'O livro-razão',
-      livroNota:
-        'O que é uma linha do livro-razão, que campos leva, e porque é que uma página não constrói sem ela. Escrita pelo director.',
-      livroFuncional:
-        'O mecanismo já está a funcionar, e o texto que o explica ainda não está escrito. As duas coisas são independentes.',
-      correcoesK: 'Correções',
-      correcoesNota:
-        'A política de correções. O registo abaixo está vazio e pronto a receber entradas datadas.',
+      avisoTraducao: 'Tradução por rever.',
       correcoesVazioK: 'Registo de correções',
       correcoesVazioV: 'Nenhuma correção publicada até hoje.',
       correcoesVazioNota:
@@ -159,16 +143,12 @@ export const STRINGS = {
       colunaNovo: 'Valor novo',
       colunaMotivo: 'Motivo',
       colunaAfirmacao: 'Afirmação',
-      causalK: 'Atribuição causal',
-      causalNota:
-        'O que este observatório afirma e não afirma sobre causas. Escrita pelo director.',
     },
 
     estudos: {
       metaTitle: 'Estudos — O Estado do País',
       metaDescription: 'O arquivo de estudos publicados, com as suas edições em português e em inglês.',
       h1: 'Estudos',
-      lede: 'O que já foi publicado. Os estudos estão a ser mudados para aqui; por enquanto, cada entrada tem uma página de destino sem conteúdo.',
       aviso:
         'Datas de publicação e descrições ainda não foram confirmadas pelo director. As descrições são reformulações do título, não resumos do conteúdo.',
       dataLabel: 'Publicação',
@@ -316,23 +296,7 @@ export const STRINGS = {
       metaDescription:
         'Who makes this observatory, how it is written, what the ledger is, how errors are corrected and what is not claimed about causes.',
       h1: 'Method',
-      lede: 'How this observatory is made, and what can and cannot be concluded from what is here.',
-      emPreparacao: '[text in preparation]',
-      porEscrever: 'Not yet written',
-      quemK: 'Who makes this',
-      quemNota:
-        'The section on the division of labour between the AI that writes and the person who directs. Written by the director.',
-      comoK: 'How it is written',
-      comoNota:
-        'The process: from question to source, from source to ledger, from ledger to page. Written by the director.',
-      livroK: 'The ledger',
-      livroNota:
-        'What a ledger row is, which fields it carries, and why a page will not build without one. Written by the director.',
-      livroFuncional:
-        'The mechanism already works; the text explaining it is not written yet. The two are independent.',
-      correcoesK: 'Corrections',
-      correcoesNota:
-        'The corrections policy. The log below is empty and ready to receive dated entries.',
+      avisoTraducao: 'This is a translation of the Portuguese text and is awaiting the director’s review. The markers in square brackets are kept in Portuguese, as in the original, with an English gloss.',
       correcoesVazioK: 'Corrections log',
       correcoesVazioV: 'No corrections published to date.',
       correcoesVazioNota:
@@ -342,16 +306,12 @@ export const STRINGS = {
       colunaNovo: 'New value',
       colunaMotivo: 'Reason',
       colunaAfirmacao: 'Claim',
-      causalK: 'Causal attribution',
-      causalNota:
-        'What this observatory does and does not claim about causes. Written by the director.',
     },
 
     estudos: {
       metaTitle: 'Studies — O Estado do País',
       metaDescription: 'The archive of published studies, with their Portuguese and English editions.',
       h1: 'Studies',
-      lede: 'What has been published. The studies are being moved here; for now, each entry has a landing page with no content.',
       aviso:
         'Publication dates and descriptions have not yet been confirmed by the director. The descriptions restate the title; they are not summaries of the content.',
       dataLabel: 'Published',

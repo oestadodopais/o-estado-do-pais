@@ -1,81 +1,85 @@
 ---
 /**
- * Método — ESTRUTURA, sem texto.
+ * Método.
  *
- * As secções estão todas de pé e vazias. Os marcadores são deliberadamente
- * feios: ninguém pode confundir isto com texto acabado. O director escreve.
+ * O texto português é cópia final da direção e está em src/data/metodo.mjs,
+ * transcrito sem alterações. O inglês é tradução do mesmo texto e aguarda
+ * revisão da direção.
  *
- * A única secção com conteúdo a sério é o registo de correções, porque é um
- * componente e não um texto: está vazio e pronto a receber entradas datadas.
+ * Os marcadores por resolver — três [a confirmar] e um [a verificar] — ficam à
+ * vista, com o mesmo aspecto do marcador do livro-razão. Não se escondem nem
+ * se resolvem por conta própria.
+ *
+ * O registo de correções entra dentro da secção «Correções», e é lido do
+ * livro-razão, não escrito à mão.
  */
 import Base from '../layouts/Base.astro';
 import RegistoCorrecoes from '../components/RegistoCorrecoes.astro';
+import Frase from '../components/Frase.astro';
+import { SECOES } from '../data/metodo.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 
 const { lang = 'pt' } = Astro.props;
 const s = t(lang);
 const path = routePath('metodo', lang);
-
-const secoes = [
-  { id: 'quem', titulo: s.metodo.quemK, nota: s.metodo.quemNota },
-  { id: 'como', titulo: s.metodo.comoK, nota: s.metodo.comoNota },
-  { id: 'livro-razao', titulo: s.metodo.livroK, nota: s.metodo.livroNota, extra: s.metodo.livroFuncional },
-];
 ---
 
 <Base lang={lang} path={path} title={s.metodo.metaTitle} description={s.metodo.metaDescription}>
   <div style="padding-top:clamp(20px,3vw,34px)">
     <h1>{s.metodo.h1}</h1>
-    <p class="lede" style="margin-top:16px">{s.metodo.lede}</p>
   </div>
 
-  <div style="margin-top:clamp(34px,5vw,56px)">
+  {
+    lang !== 'pt' && (
+      <p class="aviso-editorial" style="margin-top:22px">
+        {s.metodo.avisoTraducao}
+      </p>
+    )
+  }
+
+  <div style="margin-top:clamp(30px,4vw,48px)">
     {
-      secoes.map((sec) => (
+      SECOES.map((sec) => (
         <section class="metodo-secao" id={sec.id} style="padding-top:clamp(24px,3.2vw,34px)">
           <div>
-            <h2>{sec.titulo}</h2>
+            <h2>{sec.titulo[lang]}</h2>
           </div>
-          <div>
-            <div class="placeholder">
-              <span class="placeholder-tag">{s.metodo.porEscrever}</span>
-              <p class="lede" style="font-size:16px">{s.metodo.emPreparacao}</p>
-              <p class="placeholder-nota">{sec.nota}</p>
-              {sec.extra && <p class="placeholder-nota"><b>{sec.extra}</b></p>}
-            </div>
+          <div class="metodo-corpo">
+            {sec.blocos[lang].map((bloco) => {
+              if (bloco.tipo === 'p') {
+                return (
+                  <p class="metodo-p">
+                    <Frase partes={bloco.partes} lang={lang} />
+                  </p>
+                );
+              }
+              if (bloco.tipo === 'ol') {
+                return (
+                  <ol class="metodo-lista metodo-lista-num">
+                    {bloco.itens.map((item) => (
+                      <li>
+                        <Frase partes={item} lang={lang} />
+                      </li>
+                    ))}
+                  </ol>
+                );
+              }
+              return (
+                <ul class="metodo-lista">
+                  {bloco.itens.map((item) => (
+                    <li>
+                      <Frase partes={item} lang={lang} />
+                    </li>
+                  ))}
+                </ul>
+              );
+            })}
+
+            {sec.registoDeCorrecoes && <RegistoCorrecoes lang={lang} />}
           </div>
         </section>
       ))
     }
-
-    <!-- Correções: a estrutura já existe e está vazia. -->
-    <section class="metodo-secao" id="correcoes" style="padding-top:clamp(24px,3.2vw,34px)">
-      <div>
-        <h2>{s.metodo.correcoesK}</h2>
-      </div>
-      <div style="display:grid;gap:18px">
-        <div class="placeholder">
-          <span class="placeholder-tag">{s.metodo.porEscrever}</span>
-          <p class="lede" style="font-size:16px">{s.metodo.emPreparacao}</p>
-          <p class="placeholder-nota">{s.metodo.correcoesNota}</p>
-        </div>
-
-        <RegistoCorrecoes lang={lang} />
-      </div>
-    </section>
-
-    <section class="metodo-secao" id="atribuicao-causal" style="padding-top:clamp(24px,3.2vw,34px)">
-      <div>
-        <h2>{s.metodo.causalK}</h2>
-      </div>
-      <div>
-        <div class="placeholder">
-          <span class="placeholder-tag">{s.metodo.porEscrever}</span>
-          <p class="lede" style="font-size:16px">{s.metodo.emPreparacao}</p>
-          <p class="placeholder-nota">{s.metodo.causalNota}</p>
-        </div>
-      </div>
-    </section>
   </div>
 </Base>
