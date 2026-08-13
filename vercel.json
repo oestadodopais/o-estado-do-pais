@@ -3,11 +3,17 @@
   "headers": [
     {
       "source": "/(.*)",
+      "has": [{ "type": "host", "value": "o-estado-do-pais.vercel.app" }],
       "headers": [
         {
           "key": "X-Robots-Tag",
           "value": "noindex"
-        },
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
         {
           "key": "X-Content-Type-Options",
           "value": "nosniff"

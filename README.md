@@ -281,10 +281,17 @@ mesma tabela de rotas · `robots.txt` gerado da mesma constante de domínio.
 
 ## Deploy
 
-Ainda por ligar. Quando for:
+Ligado desde 12.08.2026, em [Vercel](https://vercel.com):
 
 - saída estática — serve-se `dist/` e mais nada;
-- `oestadodopais.pt` → **301** → `oestadodopaís.pt` (DNS/Vercel);
+- `oestadodopais.pt`, `www.` de ambas as formas → **308** → `oestadodopaís.pt`
+  (DNS/Vercel, conferido no ar);
+- **indexação aberta desde 13.08.2026.** O escudo de pré-lançamento
+  (`X-Robots-Tag: noindex` em todos os endereços) foi retirado do domínio
+  canónico e mantido no alias `*.vercel.app`, para que o alias não concorra com
+  o domínio nos motores de busca. As páginas que não se oferecem ao índice
+  continuam a dizê-lo na sua própria marca `<meta name="robots">`, que é lida do
+  livro-razão e conferida pelo portão — ver DECISIONS §1.24;
 - os URLs não têm barra final; conferir que o alojamento serve `/metodo` e
   `/metodo/` sem redireccionamento em cadeia;
 - `public/js/*.js` é servido tal como está no repositório, sem empacotamento,
