@@ -56,8 +56,15 @@ const ficha = [
   { k: s.prov.edicao, campo: 'document.edition', valor: claim.document?.edition ?? null },
   { k: s.prov.lido, campo: 'access_date', valor: claim.access_date },
   { k: s.prov.referencia, campo: 'reference_date', valor: claim.reference_date },
-  { k: s.prov.estudo, campo: 'study', valor: studyLabel(claim.study, lang) },
 ].filter((l) => l.valor !== null && l.valor !== undefined);
+
+/**
+ * O estudo mostra-se pelo título, e o título não é um campo desta linha: a
+ * linha guarda o id, e o título vem do registo dos estudos. Vai marcado como o
+ * que é — uma citação de um título — e não como um campo transcrito, que seria
+ * o portão a conferir uma função contra ela própria.
+ */
+const estudo = studyLabel(claim.study, lang);
 ---
 
 <Base
@@ -179,6 +186,9 @@ const ficha = [
             </>
           ))
         }
+
+        <dt>{s.prov.estudo}</dt>
+        <dd data-nonledger="titulo-de-estudo">{estudo}</dd>
 
         {
           claim.source_url !== null && claim.source_url !== undefined && (

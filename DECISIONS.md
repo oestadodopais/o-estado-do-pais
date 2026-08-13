@@ -957,13 +957,65 @@ de dispensa nenhuma. A lista de motivos de `allowlist.yml` **não cresceu** com
 esta secção do sítio, o que era o sinal de alarme a evitar. O molde já existia:
 é o que `data-correcao-*` faz ao campo `corrections`, um nível abaixo.
 
-O portão foi visto a fechar em **doze estragos**, um de cada vez, sobre o
+O portão foi visto a fechar em **dezassete estragos**, um de cada vez, sobre o
 `dist/` construído: excerto com um algarismo trocado; excerto reescrito com uma
 paráfrase plausível; data de acesso adulterada; campo inventado; campo que a
 linha não tem (um excerto numa linha derivada); aritmética portuguesa na edição
 inglesa; lista `derived_from` com uma linha a mais; `noindex` tirado de uma linha
 incompleta; `noindex` posto numa linha completa; título escrito à mão; página de
-uma linha em falta; selo a apontar para uma linha que não existe.
+uma linha em falta; selo a apontar para uma linha que não existe; um espaço do
+livro-razão que a página não mostra; um campo de linha citado numa página que não
+é do livro-razão; uma página de linha a mostrar o campo de outra linha; a ligação
+da fonte a apontar para sítio diferente do endereço escrito; `og:title` adulterado.
+
+#### Os cinco últimos vieram de uma auditoria, e quatro eram buracos a sério
+
+A máquina de conferir foi auditada por um modelo de outra família (Fable, agente
+sem contexto: só o artefacto e as perguntas — o gatilho (b) da política de
+encaminhamento, «desenhar máquina de conferir»). Encontrou cinco coisas, e
+nenhuma delas se via de dentro:
+
+1. **A comparação «carácter a carácter» inventava espaços.** `textoDe()` juntava
+   os nós de texto com um espaço — o que é necessário no varrimento do corpo,
+   para «UE-27» seguido de «PIB» não colar num token só. Numa comparação de
+   transcrição, isso significava que `12<i>340</i>` — que o leitor vê como
+   **12340** — comparava igual a **12 340** no livro-razão. A fronteira entre
+   elementos valia um espaço, e o agrupamento dos milhares deixava de ter de
+   bater certo. Passou a haver duas junções: com espaço para varrer, sem espaço
+   para comparar. A correcção alcança também `data-verbatim` e o registo de
+   correções, onde o mesmo buraco existia desde o início.
+2. **A marca `data-linha-*` funcionava em qualquer página.** A regra estava
+   escrita no cabeçalho do ficheiro — «na página dessa linha» — e não estava
+   imposta. Qualquer página podia citar qualquer campo de qualquer linha: uma
+   segunda porta para pôr texto do livro-razão em prosa corrente, a contornar o
+   registo de citações e a regra de que um valor entra por `<Claim/>`. Agora a
+   marca só vale nas páginas do livro-razão, e numa página de linha só para a
+   sua própria linha.
+3. **`campo="study"` era uma tautologia.** A linha guarda o **id** do estudo; a
+   página mostra o **título**, que vem de `src/data/studies.mjs` — e o portão
+   comparava-o chamando a mesma função que a página tinha chamado. Confirmava a
+   função, não o livro-razão, e parecia estar a fazer trabalho porque os títulos
+   trazem anos. O campo saiu da tabela; o título é o que sempre foi, uma citação,
+   com motivo declarado no `allowlist.yml` desde o primeiro dia.
+4. **O destino da ligação da fonte não era conferido.** O texto do endereço era
+   comparado; o `href` não. Uma ligação rotulada com o endereço da fonte e a
+   apontar para outro sítio passava. O portão não varre atributos — mas aqui o
+   atributo **é** a afirmação, e é a única excepção que se abre a essa regra.
+5. **O aviso das afirmações não citadas continuava a ser apagado**, por outro
+   caminho: a exclusão das páginas do livro-razão tinha sido feita no laço do
+   `data-claim` e não no das correções, e a página de uma linha com correções
+   marcava a sua própria afirmação como citada.
+
+Duas correcções menores da mesma auditoria: `og:title` e `og:description` de uma
+página de linha passaram a ser conferidos como o título e a descrição (batiam
+certo «por construção», que é uma garantia que ninguém tinha verificado); e
+`validateLedger` contava a dívida de proveniência por uma lista própria, sem
+`reference_date` — passou a contar pela mesma função que decide o selo, o
+`noindex` e o sitemap, na mesma altura em que se escreveu que havia uma só
+definição. **`reference_date` passou também a ser obrigatório numa linha não
+derivada:** omiti-lo — não pô-lo a `[a verificar]`, omiti-lo — fazia a linha
+contar como proveniência completa e ser publicada como registo citável sem data
+dos dados. Nenhuma linha estava nesse estado; a porta ficou fechada na mesma.
 
 #### `derivation_en`: a aritmética passou a existir nas duas línguas
 
@@ -1104,11 +1156,19 @@ antes do build (§1.20) e `check:dados` depois (§1.18).
    `reference_date`, `excerpt`, `derivation`, `derived_from`, `check`, `study` e
    `id` — e para mais nada: um campo desconhecido falha o build, e `value` está
    fora de propósito, porque um valor entra por `<Claim/>` e por mais nenhum
-   sítio. `derivation` e `study` resolvem-se na língua da edição, como o motivo
-   de uma correção. É a mesma disciplina da origem 5, aplicada um nível acima:
-   no registo de correções o portão confere o campo `corrections` da afirmação;
-   aqui confere a afirmação inteira. **Não é uma dispensa** — é a única origem,
-   além da 2, que compara texto em vez de o deixar passar.
+   sítio. `derivation` resolve-se na língua da edição, como o motivo de uma
+   correção. **A marca só vale nas páginas do livro-razão** — no índice, ou na
+   página daquela linha, e aí só para a sua própria linha; noutro sítio qualquer
+   seria uma segunda porta para pôr texto do livro-razão em prosa corrente. É a
+   mesma disciplina da origem 5, aplicada um nível acima: no registo de correções
+   o portão confere o campo `corrections` da afirmação; aqui confere a afirmação
+   inteira. **Não é uma dispensa** — é a única origem, além da 2, que compara
+   texto em vez de o deixar passar.
+
+   O **título do estudo** não entra por aqui, e a razão importa: a linha guarda
+   o id do estudo, não o título. Comparar o título renderizado com
+   `studyLabel(...)` seria o portão a conferir uma função contra ela própria. O
+   título é uma citação e vai marcado como tal (`titulo-de-estudo`, origem 3).
 
 As ilhas de dados `<script type="application/json" data-ledger-json>` têm regra
 própria: cada número precisa de um irmão `<x>_claim`, e é conferido contra o
@@ -1148,6 +1208,14 @@ dispensado mediante um `estrutura_motivo` declarado.
    página é o excerto da linha, prova-se; que o excerto da linha é o que a fonte
    diz, não — isso é a verificação contra a fonte, e é trabalho de quem não
    escreveu a linha.
+10. **O portão confere o campo, não o rótulo ao lado dele.** A ficha de uma
+   linha põe «Lido a» ao lado de `access_date` porque o gabarito assim o
+   escreveu; trocar os rótulos entre dois campos conferidos passa. O que está
+   conferido é que cada cadeia é o campo que **declara** ser.
+11. **Atributos continuam fora do varrimento, com uma excepção declarada:** o
+   `href` da âncora que embrulha o endereço da fonte. Abriu-se porque aí o
+   atributo é a afirmação — uma ligação rotulada com o endereço da fonte e a
+   apontar para outro sítio é uma mentira que nenhum varrimento de texto apanha.
 
 O portão apanha o erro comum — um número que se escreveu a correr num gabarito —
 e não apanha a fraude determinada. Serve para tornar o caminho honesto o mais

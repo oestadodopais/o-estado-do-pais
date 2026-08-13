@@ -446,10 +446,23 @@ export function validateLedger() {
         errors.push(
           `${onde} falta "${campo}". Se não é conhecido, escreva "${POR_VERIFICAR}" — nunca um valor plausível.`,
         );
-      } else if (v === POR_VERIFICAR) {
-        porVerificar++;
       }
     }
+
+    /* A data a que os dados se referem é obrigatória numa linha publicada.
+       Sem ela, uma linha passava a contar como proveniência completa — selo
+       cheio, indexada, no sitemap — sendo um registo citável sem data. Numa
+       linha derivada pode ser null, como o resto da proveniência (§1.3). */
+    if (!derivada && (c.reference_date === null || c.reference_date === undefined)) {
+      errors.push(
+        `${onde} falta "reference_date": a que período se referem os dados. ` +
+          `Se não é conhecido, escreva "${POR_VERIFICAR}".`,
+      );
+    }
+
+    /* A contagem da dívida é a mesma que decide o selo, o noindex e o sitemap.
+       Estava a ser contada aqui por uma lista própria, sem reference_date. */
+    porVerificar += camposPorVerificar(c).length;
 
     // 5 — estudo
     if (ausente(c.study)) errors.push(`${onde} falta "study".`);
