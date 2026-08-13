@@ -7,13 +7,18 @@
  * declarado. Os limites honestos deste varrimento estão em DECISIONS.md e
  * repetidos no fim deste ficheiro.
  *
- * Quatro origens legítimas para um algarismo numa página:
+ * Origens legítimas para um algarismo numa página:
  *   1. data-claim="<id>"        — veio do livro-razão. O portão confere os
  *                                 algarismos renderizados contra o valor publicado.
  *   2. data-verbatim="<chave>"  — citação transcrita. O portão exige igualdade
  *                                 carácter a carácter com src/data/verbatim.mjs.
  *   3. data-nonledger="<motivo>"— contexto estrutural, com motivo em ledger/allowlist.yml.
  *   4. token/padrão em ledger/allowlist.yml — nomes próprios com algarismos.
+ *   5. data-correcao-*          — uma entrada do registo de correções, conferida
+ *                                 campo a campo contra a afirmação.
+ *   6. data-linha-*             — um campo de uma linha do livro-razão, na página
+ *                                 dessa linha, conferido carácter a carácter
+ *                                 contra o campo da própria afirmação.
  */
 
 import fs from 'node:fs';
@@ -22,10 +27,18 @@ import { fileURLToPath } from 'node:url';
 import { load } from 'js-yaml';
 import { parse, NodeType } from 'node-html-parser';
 
-import { loadClaims, digitsOf, parsePtNumber, motivoDaEntrada } from '../src/lib/ledger.mjs';
+import {
+  loadClaims,
+  digitsOf,
+  parsePtNumber,
+  motivoDaEntrada,
+  derivacaoDaLinha,
+  provenienciaIncompleta,
+} from '../src/lib/ledger.mjs';
 import { VERBATIM, normalizeWhitespace } from '../src/data/verbatim.mjs';
-import { EDITIONS, workById } from '../src/data/studies.mjs';
-import { matchPath, routePath, HREFLANG } from '../src/lib/routes.mjs';
+import { EDITIONS, workById, studyLabel } from '../src/data/studies.mjs';
+import { tituloDaLinha, descricaoDaLinha } from '../src/lib/livro.mjs';
+import { matchPath, routePath, HREFLANG, LANGS } from '../src/lib/routes.mjs';
 import { documentoDaEdicao, documentoServido } from '../src/lib/documentos.mjs';
 import { renderizacoesAceites } from '../src/data/correcoes.mjs';
 import { SITE_HOST, SITE_NAME, AUTHORSHIP_LINE, EDITION } from '../site.config.mjs';
@@ -76,9 +89,20 @@ const LINGUA_POR_HREFLANG = Object.fromEntries(
 
 const erros = [];
 const avisos = [];
+/**
+ * Afirmações citadas por uma página que NÃO seja a do próprio livro-razão.
+ *
+ * A página de uma linha cita sempre a sua linha, e o índice cita todas: contá-las
+ * aqui apagaria para sempre o aviso «esta afirmação não é citada por nenhuma
+ * página», que é o que diz quanto do livro-razão está mesmo a ser usado. O
+ * livro-razão publica-se; não conta como quem o cita.
+ */
 const idsUsados = new Set();
+/** Páginas de linha construídas, por «língua:id» — para conferir que existem todas. */
+const linhasConstruidas = new Set();
 let ficheiros = 0;
 let documentos = 0;
+let paginasDoLivro = 0;
 
 /* ------------------------------------------------------------------ auxiliares */
 
@@ -286,6 +310,73 @@ function verificaDocumento({ rota, html, root, err }) {
   }
 }
 
+/**
+ * ---------------------------------------------------------------------------
+ * OS CAMPOS DE UMA LINHA, NA PÁGINA DESSA LINHA — a sexta origem.
+ * ---------------------------------------------------------------------------
+ *
+ * Uma página do livro-razão é quase só algarismos: o valor, a data de acesso,
+ * a data dos dados, o código da edição do documento, o endereço da fonte e —
+ * sobretudo — o excerto, que é a prova. Dispensar essas cadeias com
+ * `data-nonledger` seria esvaziar o portão exactamente na página onde ele mais
+ * importa: bastaria escrever um excerto plausível para o portão o deixar passar.
+ *
+ * Por isso não há aqui dispensa nenhuma. Cada campo vai marcado e é conferido
+ * contra o campo da própria afirmação, carácter a carácter (espaços
+ * normalizados) — a mesma disciplina do registo de correções, que já fazia isto
+ * um nível abaixo, no campo `corrections`.
+ *
+ * O valor NÃO está nesta tabela de propósito: um valor entra por <Claim/>, que
+ * põe data-claim e é conferido pelos algarismos. Marcar um valor como campo de
+ * linha seria uma segunda porta para a mesma coisa.
+ */
+const CAMPOS_DA_LINHA = new Set([
+  'unit',
+  'source',
+  'document.title',
+  'document.edition',
+  'source_url',
+  'access_date',
+  'reference_date',
+  'excerpt',
+  'derivation',
+  'derived_from',
+  'check',
+  'study',
+  'id',
+]);
+
+/** Os campos cuja versão depende da língua da edição. */
+const CAMPOS_DA_LINHA_POR_LINGUA = new Set(['derivation', 'study']);
+
+/**
+ * O que a linha diz naquele campo, lido DIRECTAMENTE da afirmação.
+ *
+ * Não passa pelos auxiliares que o gabarito usa para compor a página: se o
+ * portão lesse o campo pela mesma função que o escreve, confirmaria a função e
+ * não o livro-razão.
+ */
+function campoDaLinha(claim, campo, lang) {
+  switch (campo) {
+    case 'document.title':
+      return claim.document?.title ?? null;
+    case 'document.edition':
+      return claim.document?.edition ?? null;
+    case 'derivation':
+      return derivacaoDaLinha(claim, lang);
+    case 'study':
+      return studyLabel(claim.study, lang);
+    case 'derived_from':
+      return Array.isArray(claim.derived_from) && claim.derived_from.length
+        ? claim.derived_from.join(' ')
+        : null;
+    case 'id':
+      return claim.id;
+    default:
+      return claim[campo] ?? null;
+  }
+}
+
 function ficheirosHtml(dir) {
   const out = [];
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -321,6 +412,33 @@ for (const file of ficheirosHtml(DIST)) {
     documentos++;
     verificaDocumento({ rota, html, root, err });
     continue;
+  }
+
+  /* As páginas do próprio livro-razão: o índice e a página de cada linha. */
+  const paginaDoLivro = rota?.key === 'linha' || rota?.key === 'livro';
+  let claimDaPagina = null;
+  if (rota?.key === 'livro') paginasDoLivro++;
+  if (rota?.key === 'linha') {
+    claimDaPagina = claims.get(rota.params.slug) ?? null;
+    if (!claimDaPagina) {
+      err(
+        `há uma página de linha para "${rota.params.slug}", que não é nenhuma afirmação do ` +
+          `livro-razão. Uma porta tem de dar para alguma divisão.`,
+      );
+    } else {
+      linhasConstruidas.add(`${rota.lang}:${claimDaPagina.id}`);
+    }
+  }
+
+  /* O endereço diz de que língua é a página; o <html lang> tem de concordar.
+     Sem isto, uma edição inglesa construída com as palavras portuguesas passava
+     despercebida — e é a língua da página que decide que motivo de correção e
+     que aritmética são conferidos. */
+  if (rota && linguaPagina && linguaPagina !== rota.lang) {
+    err(
+      `esta página está no endereço da edição "${rota.lang}" mas declara <html lang> de ` +
+        `"${linguaPagina}".`,
+    );
   }
 
   /* --- 1. ilhas de dados do livro-razão, antes de as remover --- */
@@ -426,6 +544,36 @@ for (const file of ficheirosHtml(DIST)) {
   let textoHead = '';
   if (titulo) textoHead += ' ' + decodeEntities(titulo.text);
   if (descricao) textoHead += ' ' + decodeEntities(descricao.getAttribute('content') ?? '');
+
+  /**
+   * O <head> de uma página de linha é COMPOSTO da própria linha, não escrito.
+   *
+   * No <head> não há markup onde pendurar as marcas, e o título de uma linha é
+   * quase todo algarismos («89,7 % do PIB — …»). Em vez de uma dispensa, uma
+   * reprodução: o portão recompõe o título e a descrição a partir do
+   * livro-razão e exige que sejam iguais aos construídos.
+   */
+  if (claimDaPagina) {
+    const paresHead = [
+      ['<title>', normalizeWhitespace(decodeEntities(titulo?.text ?? '')), tituloDaLinha(claimDaPagina, rota.lang)],
+      [
+        '<meta name="description">',
+        normalizeWhitespace(decodeEntities(descricao?.getAttribute('content') ?? '')),
+        descricaoDaLinha(claimDaPagina, rota.lang),
+      ],
+    ];
+    for (const [onde, lido, esperado] of paresHead) {
+      if (lido !== normalizeWhitespace(esperado)) {
+        err(
+          `o ${onde} desta página de linha não é o que a linha compõe.\n` +
+            `      esperado:    ${normalizeWhitespace(esperado).slice(0, 150)}\n` +
+            `      construído:  ${lido.slice(0, 150)}`,
+        );
+      }
+      textoHead = textoHead.split(esperado).join(' ');
+    }
+  }
+
   for (const cadeia of CADEIAS_HEAD) textoHead = textoHead.split(cadeia).join(' ');
   for (const token of tokensProibidos(textoHead, 'head')) {
     err(
@@ -448,13 +596,34 @@ for (const file of ficheirosHtml(DIST)) {
   }
 
   /* Páginas de destino de estudo não se oferecem à indexação enquanto não
-     tiverem conteúdo; as outras não podem ganhar noindex por descuido. */
+     tiverem conteúdo; as outras não podem ganhar noindex por descuido.
+
+     A página de uma linha é o caso a meio: oferece-se ao índice quando a
+     proveniência está completa, e fica fora enquanto tiver um campo por
+     confirmar. Não é uma preferência de gabarito — é lido do livro-razão, aqui
+     e no sitemap, pela mesma função que decide o estado do selo. Uma linha
+     incompleta que se oferecesse como registo citável seria o sítio a
+     convidar para a sua própria dívida. */
   const robots = root.querySelector('head meta[name="robots"]');
   const temNoindex = (robots?.getAttribute('content') ?? '').includes('noindex');
   if (rota?.key === 'estudo' && !temNoindex) {
     err('página de destino de estudo sem <meta name="robots" content="noindex">.');
   }
-  if (rota && rota.key !== 'estudo' && temNoindex) {
+  if (claimDaPagina) {
+    const incompleta = provenienciaIncompleta(claimDaPagina);
+    if (incompleta && !temNoindex) {
+      err(
+        `a linha "${claimDaPagina.id}" tem campos por confirmar e a sua página não leva ` +
+          `<meta name="robots" content="noindex">.`,
+      );
+    }
+    if (!incompleta && temNoindex) {
+      err(
+        `a linha "${claimDaPagina.id}" tem proveniência completa e a sua página leva noindex. ` +
+          `Uma linha completa é para ser citável.`,
+      );
+    }
+  } else if (rota && !['estudo', 'linha'].includes(rota.key) && temNoindex) {
     err(`esta página tem noindex e não devia: a rota "${rota.key}" é para ser indexada.`);
   }
 
@@ -466,7 +635,7 @@ for (const file of ficheirosHtml(DIST)) {
 
   for (const el of body.querySelectorAll('[data-claim]')) {
     const id = el.getAttribute('data-claim');
-    idsUsados.add(id);
+    if (!paginaDoLivro) idsUsados.add(id);
     const claim = claims.get(id);
     if (!claim) {
       err(
@@ -604,6 +773,53 @@ for (const file of ficheirosHtml(DIST)) {
     }
   }
 
+  /* --- os campos de uma linha do livro-razão, na página dessa linha --- */
+  for (const el of body.querySelectorAll('[data-linha-claim]')) {
+    const id = el.getAttribute('data-linha-claim');
+    const campo = el.getAttribute('data-linha-campo');
+    aRemover.push(el);
+
+    if (!CAMPOS_DA_LINHA.has(campo)) {
+      err(
+        `data-linha-campo="${campo}" não existe. ` +
+          `Aceites: ${[...CAMPOS_DA_LINHA].join(', ')}.\n` +
+          `      O valor de uma afirmação não entra por aqui: entra por <Claim id="…"/>.`,
+      );
+      continue;
+    }
+    const claim = claims.get(id);
+    if (!claim) {
+      err(`a página cita o campo "${campo}" da afirmação "${id}", que não existe no livro-razão.`);
+      continue;
+    }
+    if (CAMPOS_DA_LINHA_POR_LINGUA.has(campo) && !linguaPagina) {
+      err(
+        `o campo "${campo}" de "${id}" aparece numa página sem <html lang> reconhecido; ` +
+          `sem saber a língua da edição não é possível conferi-lo.`,
+      );
+      continue;
+    }
+
+    const esperado = campoDaLinha(claim, campo, linguaPagina);
+    if (esperado === null || esperado === undefined) {
+      err(
+        `a página renderiza o campo "${campo}" de "${id}", mas a linha não tem esse campo` +
+          (CAMPOS_DA_LINHA_POR_LINGUA.has(campo) ? ` na edição "${linguaPagina}"` : '') +
+          `.\n      Um campo que a linha não tem não se mostra — nem vazio, nem com um valor plausível.`,
+      );
+      continue;
+    }
+
+    const renderizado = normalizeWhitespace(decodeEntities(textoDe(el)));
+    if (renderizado !== normalizeWhitespace(String(esperado))) {
+      err(
+        `o campo "${campo}" de "${id}" não foi transcrito fielmente do livro-razão.\n` +
+          `      no livro-razão: ${normalizeWhitespace(String(esperado)).slice(0, 150)}\n` +
+          `      renderizado:    ${renderizado.slice(0, 150)}`,
+      );
+    }
+  }
+
   for (const el of body.querySelectorAll('[data-verbatim]')) {
     const chave = el.getAttribute('data-verbatim');
     const registado = VERBATIM[chave];
@@ -658,14 +874,43 @@ for (const file of ficheirosHtml(DIST)) {
 
 for (const [id] of claims) {
   if (!idsUsados.has(id)) {
-    avisos.push(`a afirmação "${id}" está no livro-razão mas nenhuma página a cita.`);
+    avisos.push(
+      `a afirmação "${id}" está no livro-razão e tem página própria, mas nenhuma outra página a cita.`,
+    );
   }
+}
+
+/**
+ * Uma página por linha, nas duas edições, da mesma construção.
+ *
+ * É a promessa desta secção do sítio, e é o que a torna endereçável: cada selo
+ * aponta para uma destas páginas. Se uma faltar, o selo dessa linha aponta para
+ * um 404 — e é melhor falhar a construção do que publicar uma porta que não abre.
+ */
+for (const [id] of claims) {
+  for (const lang of LANGS) {
+    if (!linhasConstruidas.has(`${lang}:${id}`)) {
+      erros.push({
+        rel: routePath('linha', lang, { slug: id }),
+        msg:
+          `a afirmação "${id}" não tem página construída na edição "${lang}". ` +
+          `Todo o selo de proveniência aponta para aqui.`,
+      });
+    }
+  }
+}
+if (paginasDoLivro !== LANGS.length) {
+  erros.push({
+    rel: routePath('livro', 'pt'),
+    msg: `o índice do livro-razão foi construído ${paginasDoLivro} vez(es); esperava-se uma por edição (${LANGS.length}).`,
+  });
 }
 
 console.log('');
 console.log(
   cinza(
-    `  portão de HTML · ${ficheiros} páginas · ${idsUsados.size}/${claims.size} afirmações citadas` +
+    `  portão de HTML · ${ficheiros} páginas · ${idsUsados.size}/${claims.size} afirmações citadas ` +
+      `fora do livro-razão · ${linhasConstruidas.size} páginas de linha` +
       (documentos ? ` · ${documentos} documento(s) de estudo, conferidos contra a origem` : ''),
   ),
 );
@@ -716,4 +961,15 @@ console.log('');
  *    maneira, mais apertada: tem de ser, carácter a carácter, o ficheiro de
  *    origem mais a faixa do observatório, e a faixa não pode ter um único
  *    algarismo. Ver verificaDocumento() e DECISIONS §1.19.
+ * 7. O <head> de uma página de linha é conferido por reprodução: o portão
+ *    recompõe o título e a descrição com as MESMAS funções que a página usou
+ *    (src/lib/livro.mjs). Isso apanha um cabeçalho escrito à mão, um cabeçalho
+ *    da linha errada e um cabeçalho da língua errada; não pode apanhar uma
+ *    frase mal composta, porque é a mesma composição dos dois lados. A
+ *    alternativa — a mesma frase escrita em dois sítios — divergiria na
+ *    primeira alteração e daria uma falsa garantia pior do que esta.
+ * 8. `data-linha-*` NÃO É UMA DISPENSA: é o contrário. Confere o texto
+ *    renderizado contra o campo da própria afirmação, carácter a carácter. O
+ *    que ele não pode conferir é se o campo do livro-razão está certo — isso é
+ *    a verificação contra a fonte, e é trabalho de quem não escreveu a linha.
  * ========================================================================== */

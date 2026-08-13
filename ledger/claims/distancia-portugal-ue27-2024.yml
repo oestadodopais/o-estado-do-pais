@@ -19,6 +19,7 @@ excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: "100 − 82 = 18. A média da UE-27 está fixada em 100; a distância é a diferença, em pontos de índice, entre o valor publicado e essa média."
+derivation_en: "100 − 82 = 18. The EU-27 average is fixed at 100; the distance is the difference, in index points, between the published value and that average."
 derived_from:
   - "pib-pc-portugal-2024"
 # Expressão verificada no build: tem de dar exactamente o valor acima.

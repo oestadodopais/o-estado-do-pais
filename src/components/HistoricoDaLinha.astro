@@ -1,0 +1,89 @@
+---
+/**
+ * As correções e atualizações de UMA linha do livro-razão.
+ *
+ * O registo do Método mostra as entradas de todas as linhas, agrupadas por
+ * natureza (RegistoCorrecoes.astro). Aqui é o contrário: uma linha só, em
+ * ordem, com a natureza de cada entrada dita à letra — porque quem chega a esta
+ * página chegou por um número, e o que quer saber é a história daquele número.
+ *
+ * Nada é escrito à mão: cada pedaço leva as marcas data-correcao-* e é
+ * conferido pelo portão contra o campo `corrections` da própria afirmação, na
+ * língua da edição (§1.17, §2.2). Reescrever a história de uma correção falha
+ * a construção.
+ */
+import { motivoDaEntrada } from '../lib/ledger.mjs';
+import { KIND_LABELS } from '../data/correcoes.mjs';
+import { t } from '../i18n/strings.mjs';
+
+const { claim, lang = 'pt' } = Astro.props;
+const s = t(lang);
+
+/* Da mais recente à primeira, como no registo do Método. O índice `n` é o da
+   posição no livro-razão e não muda com a ordenação: é ele que o portão usa. */
+const entradas = (claim.corrections ?? [])
+  .map((corr, n) => ({ ...corr, n }))
+  .sort((a, b) => String(b.date).localeCompare(String(a.date)));
+
+const rotulo = (kind) => KIND_LABELS[kind]?.[lang] ?? kind;
+---
+
+{
+  entradas.length === 0 ? (
+    <p class="log-vazio-v">{s.livro.linha.historicoVazio}</p>
+  ) : (
+    <div class="historico">
+      {entradas.map((e) => (
+        <div class:list={['historico-entrada', e.kind === 'correcao' && 'historico-entrada-correcao']}>
+          <div class="historico-cabeca">
+            <span
+              class="log-data"
+              data-correcao-claim={claim.id}
+              data-correcao-n={String(e.n)}
+              data-correcao-campo="date"
+            >
+              {e.date}
+            </span>
+            <span
+              class:list={['etiqueta-kind', e.kind === 'correcao' && 'etiqueta-correcao']}
+              data-correcao-claim={claim.id}
+              data-correcao-n={String(e.n)}
+              data-correcao-campo="kind"
+            >
+              {rotulo(e.kind)}
+            </span>
+            <span class="registo-salto">
+              <span
+                class="log-valor log-valor-antigo"
+                data-correcao-claim={claim.id}
+                data-correcao-n={String(e.n)}
+                data-correcao-campo="old_value"
+              >
+                {e.old_value}
+              </span>
+              <span aria-hidden="true"> → </span>
+              <span
+                class="log-valor"
+                data-correcao-claim={claim.id}
+                data-correcao-n={String(e.n)}
+                data-correcao-campo="new_value"
+              >
+                {e.new_value}
+              </span>
+            </span>
+          </div>
+          <p
+            class="log-motivo"
+            data-correcao-claim={claim.id}
+            data-correcao-n={String(e.n)}
+            data-correcao-campo="reason"
+          >
+            {motivoDaEntrada(e, lang)}
+          </p>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+<p class="placeholder-nota">{s.livro.linha.historicoNota}</p>

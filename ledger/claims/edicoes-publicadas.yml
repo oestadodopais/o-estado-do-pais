@@ -21,6 +21,7 @@ excerpt: "[a verificar]"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: "Contagem das edições no arquivo. As edições PT e EN do mesmo trabalho contam em separado."
+derivation_en: "Count of the editions in the archive. The PT and EN editions of the same work count separately."
 derived_from: []
 # Expressão verificada no build: tem de dar exactamente o valor acima.
 check: "edicoes_no_arquivo"

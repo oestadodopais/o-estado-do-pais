@@ -19,6 +19,7 @@ const aqui = normalizePath(path ?? Astro.url.pathname);
 
 const home = routePath('home', lang);
 const estudos = routePath('estudos', lang);
+const livro = routePath('livro', lang);
 const metodo = routePath('metodo', lang);
 const outra = otherLanguagePath(aqui, lang);
 ---
@@ -41,6 +42,7 @@ const outra = otherLanguagePath(aqui, lang);
     <nav class="rodape-nav" aria-label={s.nav.inicio}>
       <a href={home}>{s.nav.inicio}</a>
       <a href={estudos}>{s.nav.estudos}</a>
+      <a href={livro}>{s.nav.livro}</a>
       <a href={metodo}>{s.nav.metodo}</a>
       <a href={outra} hreflang={lang === 'pt' ? 'en' : 'pt-PT'}>{s.outraLingua}</a>
     </nav>

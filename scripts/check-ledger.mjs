@@ -5,7 +5,7 @@
  * Corre ANTES do astro build. Se falhar, não se constrói nada.
  */
 
-import { validateLedger, allClaims, POR_VERIFICAR } from '../src/lib/ledger.mjs';
+import { validateLedger, allClaims, camposPorVerificar, POR_VERIFICAR } from '../src/lib/ledger.mjs';
 
 const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
 const amarelo = (s) => `\x1b[33m${s}\x1b[0m`;
@@ -46,17 +46,13 @@ if (errors.length) {
   process.exit(1);
 }
 
-// Dívida de proveniência: não bloqueia, mas fica à vista.
+/* Dívida de proveniência: não bloqueia, mas fica à vista. A lista de campos vem
+   de camposPorVerificar() — a mesma função que decide o estado do selo e se a
+   página da linha entra no índice dos motores de busca. Este script tinha uma
+   cópia da regra, e as duas discordavam numa linha. */
 const porVerificar = [];
 for (const c of allClaims()) {
-  const campos = [];
-  for (const campo of ['source', 'source_url', 'access_date', 'reference_date', 'excerpt']) {
-    if (c[campo] === POR_VERIFICAR) campos.push(campo);
-  }
-  if (c.document && typeof c.document === 'object') {
-    if (c.document.title === POR_VERIFICAR) campos.push('document.title');
-    if (c.document.edition === POR_VERIFICAR) campos.push('document.edition');
-  }
+  const campos = camposPorVerificar(c);
   if (campos.length) porVerificar.push({ id: c.id, campos });
 }
 

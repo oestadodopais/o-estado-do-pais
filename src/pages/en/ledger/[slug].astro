@@ -1,0 +1,11 @@
+---
+import LinhaView from '../../../views/LinhaView.astro';
+import { allClaims } from '../../../lib/ledger.mjs';
+
+export function getStaticPaths() {
+  return allClaims().map((c) => ({ params: { slug: c.id } }));
+}
+
+const { slug } = Astro.params;
+---
+<LinhaView lang="en" id={slug} />

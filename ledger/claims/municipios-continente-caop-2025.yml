@@ -21,6 +21,7 @@ excerpt: "[a verificar]"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: "Contagem das entradas de município no Continente nos ficheiros oficiais da CAOP 2025 (GeoPackage). A contagem é reproduzida no build a partir de src/data/caop-centroids.mjs."
+derivation_en: "Count of the municipality entries for mainland Portugal in the official CAOP 2025 files (GeoPackage). The count is reproduced at build time from src/data/caop-centroids.mjs."
 derived_from: []
 # Expressão verificada no build: tem de dar exactamente o valor acima.
 check: null

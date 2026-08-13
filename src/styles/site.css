@@ -279,7 +279,10 @@ section {
   color: var(--ink);
 }
 
-/* etiqueta de proveniência */
+/* Selo de proveniência. É uma ÂNCORA para a linha do livro-razão — o Método
+   promete que o selo é a porta, e uma etiqueta que não abre nada não é um selo
+   (IDENTIDADE.md §5). O sublinhado só aparece ao passar: o selo é mobília, e
+   sessenta e dois sublinhados numa página de índice seriam ruído. */
 .src-chip {
   display: inline-flex;
   align-items: center;
@@ -289,6 +292,7 @@ section {
   letter-spacing: 0.06em;
   color: var(--muted);
   white-space: normal;
+  text-decoration: none;
 }
 .src-chip::before {
   content: '';
@@ -302,16 +306,26 @@ section {
   background: transparent;
   border-style: dashed;
 }
-
-.tbv {
-  font-family: var(--f-mono);
-  font-size: 10.5px;
-  font-weight: 600;
+a.src-chip:hover {
   color: var(--ink);
-  background: var(--paper-3);
-  padding: 1px 6px;
-  border: 1px solid var(--rule-strong);
-  white-space: nowrap;
+}
+a.src-chip:hover .src-chip-texto {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--rule-strong);
+}
+a.src-chip:hover::before {
+  border-color: var(--ink);
+}
+/* O marcador dentro do selo: mais pequeno, porque ali é etiqueta e não campo. */
+.src-chip .marcador {
+  font-size: 9.5px;
+  padding: 0 4px;
+  letter-spacing: 0.01em;
+}
+/* Amostra dos dois estados, na coluna do aparelho do índice. Só o quadrado. */
+.src-chip-amostra {
+  gap: 0;
 }
 
 /* grelha de números verificados */
@@ -1401,6 +1415,355 @@ section {
 }
 .ligacao-dados:hover {
   text-decoration-color: currentColor;
+}
+
+/* ------------------------------------------------------------ livro-razão
+
+   Disposição B do IDENTIDADE.md §3 — corpo a 68ch e coluna de aparelho a
+   300px. Não é uma quarta disposição: é a segunda das três, usada pela
+   primeira vez. O invólucro tem 1.180px; a diferença entre o corpo e o
+   invólucro é a coluna do aparelho, e por isso ela tem de fazer alguma coisa.
+   Aqui faz: os campos da ficha, o estado da proveniência e o que a página não
+   sabe.                                                                      */
+
+.linha-cabeca {
+  padding-top: clamp(20px, 3vw, 34px);
+  display: grid;
+  gap: 10px;
+  max-width: 68ch;
+}
+
+.linha {
+  margin-top: clamp(26px, 3.4vw, 40px);
+  display: grid;
+  grid-template-columns: minmax(0, 68ch) 300px;
+  gap: clamp(24px, 4vw, 52px);
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .linha {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+}
+
+.linha-corpo {
+  display: grid;
+  gap: clamp(26px, 3.4vw, 38px);
+  min-width: 0;
+}
+
+.linha-bloco {
+  padding-top: 0;
+  border-top: 1px solid var(--rule);
+  padding-block-start: 18px;
+  display: grid;
+  gap: 12px;
+}
+.linha-bloco-titulo {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.linha-nota {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+/* O valor, sozinho: a camada Relance desta página. */
+.linha-valor {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 12px;
+  margin-top: 4px;
+}
+.linha-valor-num {
+  font-size: clamp(40px, 5.2vw, 62px);
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+}
+.linha-valor-unidade {
+  font-family: var(--f-mono);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+.linha-id {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.linha-id code {
+  font-family: inherit;
+  overflow-wrap: anywhere;
+}
+
+/* O excerto: a prova. Levanta-se do fundo e cita-se sem aspas de enfeite —
+   as aspas que lá estiverem são as da fonte. */
+.linha-excerto {
+  margin: 0;
+  padding: 16px 18px;
+  background: var(--paper-2);
+  border-left: 3px solid var(--rule-strong);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+.linha-excerto-vazio {
+  padding: 14px 18px;
+  border: 1px dashed var(--rule-strong);
+  background: var(--paper-2);
+}
+
+.linha-derivacao {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+.linha-campo-k {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+}
+.linha-expressao,
+.linha-deriva {
+  display: grid;
+  gap: 7px;
+  padding-top: 12px;
+  border-top: 1px solid var(--rule);
+}
+.linha-check {
+  font-family: var(--f-mono);
+  font-size: 13px;
+  color: var(--ink);
+  background: var(--paper-3);
+  padding: 8px 10px;
+  overflow-wrap: anywhere;
+}
+.linha-deriva-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 5px;
+  font-family: var(--f-mono);
+  font-size: 12px;
+}
+.linha-deriva-ligacao {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-strong);
+}
+.linha-deriva-ligacao:hover {
+  border-bottom-color: currentColor;
+}
+.linha-deriva-ligacao code {
+  font-family: inherit;
+  overflow-wrap: anywhere;
+}
+
+/* Um campo transcrito do livro-razão. O portão confere-o carácter a carácter;
+   a letra é a mesma da prosa, porque um excerto é uma frase e não um valor. */
+.campo-valor {
+  color: inherit;
+}
+.campo-por-verificar {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px;
+}
+
+/* ------------------------------------------------- a coluna do aparelho */
+
+.aparelho {
+  display: grid;
+  gap: 22px;
+  align-content: start;
+  border-top: 1.5px solid var(--ink);
+  padding-top: 16px;
+  font-size: 13.5px;
+}
+.aparelho-titulo {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.aparelho-ficha {
+  margin: 0;
+  display: grid;
+  gap: 15px;
+}
+.aparelho-ficha dt {
+  font-family: var(--f-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.aparelho-ficha dd {
+  margin: 3px 0 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+.aparelho-nota {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.aparelho-bloco {
+  display: grid;
+  gap: 6px;
+  border-top: 1px solid var(--rule);
+  padding-top: 14px;
+}
+.aparelho-estado {
+  display: grid;
+  gap: 7px;
+  border: 1px solid var(--rule);
+  background: var(--paper-2);
+  padding: 14px 16px;
+}
+/* Falta um campo: a mesma marca a tracejado do selo, sem cor nova. */
+.aparelho-estado-incompleto {
+  border-style: dashed;
+  border-color: var(--rule-strong);
+  background: transparent;
+}
+.aparelho-faltas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 8px;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--ink);
+}
+.aparelho-faltas code {
+  font-family: inherit;
+  background: var(--paper-3);
+  padding: 1px 5px;
+  border: 1px solid var(--rule);
+}
+.aparelho-selos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.aparelho-selos li {
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  gap: 10px;
+  align-items: start;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.aparelho-selos .src-chip-amostra {
+  padding-top: 4px;
+}
+.aparelho-saidas {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+  border-top: 1px solid var(--rule);
+  padding-top: 14px;
+}
+
+/* ------------------------------------------------- índice do livro-razão */
+
+.livro-lista {
+  display: grid;
+  border-top: 1px solid var(--rule);
+}
+/* Uma entrada: o valor à esquerda, e à direita o id com a sua mobília — a
+   unidade e o selo na mesma linha. A unidade não fica debaixo do valor porque
+   há unidades de cinco palavras («% do stock no final do período anterior») e
+   uma coluna estreita transformava-as em cinco linhas de altura. */
+.livro-item {
+  display: grid;
+  grid-template-columns: minmax(0, 9ch) minmax(0, 1fr);
+  gap: 4px 18px;
+  align-items: baseline;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--rule);
+}
+@media (max-width: 620px) {
+  .livro-item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.livro-item-num {
+  font-size: 17px;
+}
+.livro-item-corpo {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.livro-item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 14px;
+}
+.livro-item-unidade {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.livro-item-id {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+/* --------------------------------------------- histórico de uma linha */
+
+.historico {
+  display: grid;
+  gap: 14px;
+}
+.historico-entrada {
+  display: grid;
+  gap: 7px;
+  border-left: 3px solid var(--rule-strong);
+  padding: 2px 0 2px 14px;
+}
+/* Um erro admitido leva a cor do erro admitido, e mais nada leva (IDENTIDADE §2). */
+.historico-entrada-correcao {
+  border-left-color: var(--oxblood);
+}
+.historico-cabeca {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
 }
 
 /* ------------------------------------------------------------ registo: dois grupos */
