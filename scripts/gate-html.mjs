@@ -36,7 +36,7 @@ import {
   provenienciaIncompleta,
 } from '../src/lib/ledger.mjs';
 import { VERBATIM, normalizeWhitespace } from '../src/data/verbatim.mjs';
-import { EDITIONS, workById, studyLabel } from '../src/data/studies.mjs';
+import { EDITIONS, workById } from '../src/data/studies.mjs';
 import { tituloDaLinha, descricaoDaLinha } from '../src/lib/livro.mjs';
 import { matchPath, routePath, HREFLANG, LANGS } from '../src/lib/routes.mjs';
 import { documentoDaEdicao, documentoServido } from '../src/lib/documentos.mjs';
@@ -168,12 +168,20 @@ function tokensProibidos(texto, scope) {
 }
 
 /**
- * Texto de uma subárvore, com as fronteiras entre elementos marcadas.
+ * Texto de uma subárvore.
  *
- * Sem isto, "…da UE-27" seguido de "PIB per capita…" num elemento vizinho
- * colava num único token "UE-27PIB" e o portão dava um falso positivo.
+ * `separador: ' '` — o varrimento do corpo. Sem ele, "…da UE-27" seguido de
+ * "PIB per capita…" num elemento vizinho colava num único token "UE-27PIB" e o
+ * portão dava um falso positivo.
+ *
+ * `separador: ''` — a comparação de uma cadeia transcrita. É o que o leitor vê:
+ * `12<i>340</i>` são "12340" no ecrã. Com o separador a espaço, essa cadeia
+ * comparava igual a "12 340" no livro-razão — a fronteira entre elementos
+ * passava a valer um espaço, e o agrupamento dos milhares mostrado ao leitor
+ * deixava de ter de bater certo com o registado. Os espaços que existem no DOM
+ * continuam lá; o que se deixa de fazer é inventar um.
  */
-function textoDe(no, { semEstilo = false } = {}) {
+function textoDe(no, { semEstilo = false, separador = ' ' } = {}) {
   const partes = [];
   const anda = (n) => {
     if (!n) return;
@@ -188,7 +196,12 @@ function textoDe(no, { semEstilo = false } = {}) {
     for (const filho of n.childNodes ?? []) anda(filho);
   };
   anda(no);
-  return partes.join(' ');
+  return partes.join(separador);
+}
+
+/** O texto de um elemento como o leitor o vê, para comparar com uma transcrição. */
+function textoTranscrito(el) {
+  return normalizeWhitespace(decodeEntities(textoDe(el, { separador: '' })));
 }
 
 /**
@@ -342,12 +355,30 @@ const CAMPOS_DA_LINHA = new Set([
   'derivation',
   'derived_from',
   'check',
-  'study',
   'id',
 ]);
 
 /** Os campos cuja versão depende da língua da edição. */
-const CAMPOS_DA_LINHA_POR_LINGUA = new Set(['derivation', 'study']);
+const CAMPOS_DA_LINHA_POR_LINGUA = new Set(['derivation']);
+
+/**
+ * `derived_from` é uma lista, e o gabarito desenha-a como uma lista de
+ * elementos. É o único campo cujas fronteiras entre elementos valem um espaço;
+ * todos os outros são uma cadeia só e comparam-se como o leitor os vê.
+ */
+const CAMPOS_DA_LINHA_EM_LISTA = new Set(['derived_from']);
+
+/**
+ * `study` NÃO está na tabela, e é uma correcção a este ficheiro.
+ *
+ * O que a linha guarda é o **id** do estudo; o que a página mostra é o título,
+ * que vem de `src/data/studies.mjs` pela mesma função que a página chamou. Um
+ * portão que compare `studyLabel(...)` com `studyLabel(...)` confirma a função,
+ * não o livro-razão — era exactamente o que o comentário abaixo proíbe. E os
+ * títulos trazem algarismos ("… 2026"), por isso a comparação parecia estar a
+ * fazer trabalho. O título de um estudo é uma citação, tem motivo declarado em
+ * `allowlist.yml` desde o primeiro dia, e é assim que a página o marca.
+ */
 
 /**
  * O que a linha diz naquele campo, lido DIRECTAMENTE da afirmação.
@@ -364,8 +395,6 @@ function campoDaLinha(claim, campo, lang) {
       return claim.document?.edition ?? null;
     case 'derivation':
       return derivacaoDaLinha(claim, lang);
-    case 'study':
-      return studyLabel(claim.study, lang);
     case 'derived_from':
       return Array.isArray(claim.derived_from) && claim.derived_from.length
         ? claim.derived_from.join(' ')
@@ -554,13 +583,24 @@ for (const file of ficheirosHtml(DIST)) {
    * livro-razão e exige que sejam iguais aos construídos.
    */
   if (claimDaPagina) {
+    const tituloEsperado = tituloDaLinha(claimDaPagina, rota.lang);
+    const descricaoEsperada = descricaoDaLinha(claimDaPagina, rota.lang);
+    const conteudoDe = (prop) =>
+      normalizeWhitespace(
+        decodeEntities(root.querySelector(`head meta[property="${prop}"]`)?.getAttribute('content') ?? ''),
+      );
+    /* og: repete o título e a descrição. Hoje é a mesma variável no gabarito, e
+       por isso bate certo por construção — que é precisamente a razão para
+       conferir: «por construção» é uma garantia que ninguém verificou. */
     const paresHead = [
-      ['<title>', normalizeWhitespace(decodeEntities(titulo?.text ?? '')), tituloDaLinha(claimDaPagina, rota.lang)],
+      ['<title>', normalizeWhitespace(decodeEntities(titulo?.text ?? '')), tituloEsperado],
       [
         '<meta name="description">',
         normalizeWhitespace(decodeEntities(descricao?.getAttribute('content') ?? '')),
-        descricaoDaLinha(claimDaPagina, rota.lang),
+        descricaoEsperada,
       ],
+      ['<meta property="og:title">', conteudoDe('og:title'), tituloEsperado],
+      ['<meta property="og:description">', conteudoDe('og:description'), descricaoEsperada],
     ];
     for (const [onde, lido, esperado] of paresHead) {
       if (lido !== normalizeWhitespace(esperado)) {
@@ -696,11 +736,11 @@ for (const file of ficheirosHtml(DIST)) {
       err(`o registo de correções cita a afirmação "${id}", que não existe no livro-razão.`);
       continue;
     }
-    idsUsados.add(id);
+    if (!paginaDoLivro) idsUsados.add(id);
 
-    const renderizado = decodeEntities(textoDe(el));
+    const renderizado = textoTranscrito(el);
     if (campo === 'id') {
-      if (normalizeWhitespace(renderizado) !== String(claim.id)) {
+      if (renderizado !== String(claim.id)) {
         err(`no registo de correções, o id foi renderizado como "${renderizado.trim()}" mas a afirmação é "${claim.id}".`);
       }
       continue;
@@ -731,7 +771,7 @@ for (const file of ficheirosHtml(DIST)) {
         );
         continue;
       }
-      if (normalizeWhitespace(renderizado) !== normalizeWhitespace(motivo)) {
+      if (renderizado !== normalizeWhitespace(motivo)) {
         err(
           `no registo, o motivo da correção #${n + 1} de "${id}" não é o da edição ` +
             `"${linguaPagina}".\n` +
@@ -750,7 +790,7 @@ for (const file of ficheirosHtml(DIST)) {
        que se reclassificava uma confissão em silêncio. */
     if (modo === 'natureza') {
       const aceites = renderizacoesAceites(esperado).map(normalizeWhitespace);
-      if (!aceites.includes(normalizeWhitespace(renderizado))) {
+      if (!aceites.includes(renderizado)) {
         err(
           `no registo, a natureza da correção #${n + 1} de "${id}" foi renderizada como ` +
             `"${renderizado.trim()}", mas no livro-razão é "${esperado}" ` +
@@ -763,7 +803,7 @@ for (const file of ficheirosHtml(DIST)) {
     const bate =
       modo === 'algarismos'
         ? digitsOf(renderizado) === digitsOf(esperado)
-        : normalizeWhitespace(renderizado) === normalizeWhitespace(esperado);
+        : renderizado === normalizeWhitespace(esperado);
     if (!bate) {
       err(
         `no registo de correções, "${campo}" de "${id}" foi renderizado como ` +
@@ -778,6 +818,32 @@ for (const file of ficheirosHtml(DIST)) {
     const id = el.getAttribute('data-linha-claim');
     const campo = el.getAttribute('data-linha-campo');
     aRemover.push(el);
+
+    /**
+     * Onde é que esta marca vale — e a regra estava escrita e não imposta.
+     *
+     * `data-linha-*` é a marca de um campo do livro-razão **na página do
+     * livro-razão**: no índice, ou na página daquela linha. Sem esta guarda,
+     * qualquer página podia citar qualquer campo de qualquer linha e passar —
+     * uma segunda porta para pôr texto do livro-razão em prosa corrente, a
+     * contornar o registo de citações (`data-verbatim`) e a disciplina de que
+     * um valor entra por <Claim/> e por mais lado nenhum.
+     */
+    if (!paginaDoLivro) {
+      err(
+        `data-linha-claim="${id}" numa página que não é do livro-razão. ` +
+          `Esta marca é dos campos de uma linha, na página dessa linha ou no índice.\n` +
+          `      Noutra página: um valor entra por <Claim id="…"/>, e uma citação por data-verbatim.`,
+      );
+      continue;
+    }
+    if (claimDaPagina && id !== claimDaPagina.id) {
+      err(
+        `a página da linha "${claimDaPagina.id}" renderiza o campo "${campo}" da linha "${id}". ` +
+          `Uma página de linha só mostra os campos da sua própria linha.`,
+      );
+      continue;
+    }
 
     if (!CAMPOS_DA_LINHA.has(campo)) {
       err(
@@ -810,13 +876,34 @@ for (const file of ficheirosHtml(DIST)) {
       continue;
     }
 
-    const renderizado = normalizeWhitespace(decodeEntities(textoDe(el)));
+    const renderizado = CAMPOS_DA_LINHA_EM_LISTA.has(campo)
+      ? normalizeWhitespace(decodeEntities(textoDe(el)))
+      : textoTranscrito(el);
     if (renderizado !== normalizeWhitespace(String(esperado))) {
       err(
         `o campo "${campo}" de "${id}" não foi transcrito fielmente do livro-razão.\n` +
           `      no livro-razão: ${normalizeWhitespace(String(esperado)).slice(0, 150)}\n` +
           `      renderizado:    ${renderizado.slice(0, 150)}`,
       );
+    }
+
+    /**
+     * O endereço é o único campo cujo destino o leitor segue sem o ler.
+     *
+     * O portão não varre atributos (limite 2) — mas aqui o atributo É a
+     * afirmação: uma ligação rotulada com o endereço da fonte e a apontar para
+     * outro sítio seria uma mentira que nenhum outro varrimento apanha. É a
+     * única excepção, e é estreita: só o href da âncora que embrulha o campo.
+     */
+    if (campo === 'source_url') {
+      const ancora = el.parentNode?.rawTagName?.toLowerCase() === 'a' ? el.parentNode : null;
+      const destino = ancora?.getAttribute('href') ?? null;
+      if (destino !== null && decodeEntities(destino) !== String(esperado)) {
+        err(
+          `o endereço de "${id}" está escrito como "${String(esperado).slice(0, 90)}" mas a ` +
+            `ligação aponta para "${decodeEntities(destino).slice(0, 90)}".`,
+        );
+      }
     }
   }
 
@@ -828,7 +915,7 @@ for (const file of ficheirosHtml(DIST)) {
       aRemover.push(el);
       continue;
     }
-    const renderizado = normalizeWhitespace(decodeEntities(textoDe(el)));
+    const renderizado = textoTranscrito(el);
     const esperado = normalizeWhitespace(registado.text);
     if (renderizado !== esperado) {
       err(
