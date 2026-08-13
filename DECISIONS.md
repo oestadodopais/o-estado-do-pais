@@ -1391,6 +1391,52 @@ vai procurar.
 
 Afirmações: 66 → 62. Páginas: 174 → 166.
 
+---
+
+### 1.30 A conferência que faltava: o que está no ar contra o que está no repositório
+
+Todos os portões da casa correm sobre `dist/`, antes de publicar. Provam coisas
+sobre **a construção**. Nenhum deles pergunta a coisa mais simples: *o que está
+publicado é esta construção?*
+
+A 2026-08-13 a resposta foi «não» duas vezes, e das duas foi uma pessoa a reparar:
+
+- de manhã, `main` estava **quatro commits à frente** de `origin/main` — a
+  primeira página no ar ainda eram as cinco medidas antigas. Custou mais do que
+  um atraso: a auditoria de identidade tinha sido feita **contra o sítio no ar**,
+  ou seja contra código de quatro commits atrás, e precisou de errata (§1.23);
+- à noite, outra vez, um commit por empurrar com o trabalho de §1.27 lá dentro.
+
+O defeito não é a divergência, que é normal. É **não haver nada que a diga.** Num
+sítio onde tudo o resto é conferido, o passo entre «construído» e «publicado» era
+o único assente em confiança.
+
+**Duas metades.** `stamp:version` escreve em `dist/version.json` o commit de que a
+construção saiu — no Vercel do `VERCEL_GIT_COMMIT_SHA` (confirmado na
+documentação: existe em build e em runtime), fora dele do git local.
+`verify:deploy` lê esse ficheiro **do sítio publicado** e exige duas igualdades:
+o commit no ar é `origin/main`, e o `main` local não está à frente de
+`origin/main` — que é exactamente a forma que as duas falhas tiveram.
+
+**Vai para JSON, e não para uma página.** Um SHA numa página seria um algarismo
+sem linha no livro-razão, e a saída seria uma dispensa `data-nonledger` — pôr
+metadado de construção dentro da disciplina que existe para medições. O portão de
+HTML varre `dist/**/*.html`; um ficheiro JSON não lhe passa pela frente e a lista
+de excepções não cresce.
+
+**O carimbo nunca adivinha.** As variáveis de sistema do Vercel só existem se a
+caixa «Enable access to System Environment Variables» estiver ligada nas
+definições do projecto. Se não estiver, não há SHA — e na construção do Vercel
+também não há `.git` de onde o tirar. Nesse caso escreve-se `commit: null` **com
+o motivo à vista**, e é quem confere que falha, não o build: derrubar o deploy por
+uma caixa por ticar seria autoflagelação, mas deixar passar a conferência seria
+pior — um carimbo que adivinha faz passar exactamente a verificação que existe
+para não passar.
+
+**Não entra no `build`, de propósito.** O build tem de correr sem rede e sem
+repositório remoto. Esta conferência precisa das duas coisas, e a pergunta que faz
+só faz sentido depois de publicar. É portão de **lançamento**.
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
