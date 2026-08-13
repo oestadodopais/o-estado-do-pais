@@ -36,6 +36,26 @@ which means it is really running on feeling.
 If you can see clearly what is working, and where, and under whom, you can do
 more of it. That is the entire ambition.
 
+### The shape of the failure
+
+Four ways this goes wrong, none of which requires anybody to be dishonest:
+
+- **Decisions taken on impression.** Money committed to what feels urgent, rather
+  than to what measurement would have identified.
+- **Problems left alone because nobody counted them.** A loss that never appears
+  in a figure never appears on an agenda either.
+- **Responsibility that moves on before the result arrives.** Whoever decided is
+  rarely still in the job by the time the outcome is legible, so the decision and
+  its consequence are never put side by side.
+- **Good work going unrecognised.** This is the one people forget. Where nothing
+  was measured, someone who genuinely improved things gets no credit for it — and
+  what actually worked is lost along with the recognition.
+
+That last one is why this project is not adversarial by design. A record that can
+only catch failure is half a record, and the less useful half: knowing what went
+wrong tells you what to stop, but only knowing what went right tells you what to
+do instead.
+
 ---
 
 ## The problem it addresses
