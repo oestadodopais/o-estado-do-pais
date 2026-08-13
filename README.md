@@ -19,19 +19,27 @@ npm run dev        # servidor de desenvolvimento
 npm run build      # verifica o livro-razão, constrói, e varre o HTML construído
 npm run preview    # serve dist/ como será servido em produção
 npm run verify     # só as verificações, sobre um dist/ já construído
+npm run verify:deploy  # confere o que está NO AR contra origin/main
 ```
 
 Requer Node ≥ 22.12 (exigência do Astro 7).
 
-`npm run build` são cinco passos encadeados, e qualquer um deles pára tudo:
+`npm run build` são seis passos encadeados, e qualquer um deles pára tudo:
 
 1. `ledger:check` — o livro-razão está completo e a aritmética bate certo;
 2. `check:documentos` — cada documento de estudo alojado é, byte a byte, o que o
    manifesto declara;
 3. `astro build` — se um gabarito citar uma afirmação que não existe, o build atira;
-4. `gate:html` — varre `dist/` à procura de algarismos sem proveniência;
-5. `check:dados` — os ficheiros de dados descarregáveis existem e batem certo
+4. `stamp:version` — carimba em `dist/version.json` o commit de que a construção saiu;
+5. `gate:html` — varre `dist/` à procura de algarismos sem proveniência;
+6. `check:dados` — os ficheiros de dados descarregáveis existem e batem certo
    com as suas origens.
+
+**`verify:deploy` não faz parte do build, e é de propósito.** Todos os passos
+acima correm sobre `dist/`, antes de publicar; nenhum vê o que está no ar. Este
+corre contra o sítio publicado e exige que o commit no ar seja `origin/main` e
+que não haja nada por empurrar. É portão de lançamento, não de construção — ver
+`DECISIONS.md §1.30`.
 
 O primeiro, o terceiro e o quarto são os portões da casa e não se afrouxam. Os
 outros dois são mais recentes: `check:dados` existe para que uma promessa do
