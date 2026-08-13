@@ -22,6 +22,18 @@
  * estar verificada.
  */
 
+/**
+ * O endereço das correções.
+ *
+ * É o domínio SEM acento, de propósito. Um endereço com domínio acentuado
+ * depende de o programa de quem envia o converter para punycode antes de
+ * enviar, e nem todos o fazem — falha em silêncio, do lado de quem escreve, e
+ * ninguém fica a saber. Num canal que existe para que nada se perca, isso é
+ * inaceitável. O domínio acentuado tem o mesmo reencaminhamento configurado,
+ * como rede de segurança para quem o escrever à mão; não é o que se publica.
+ */
+export const ENDERECO_CORRECOES = 'correcoes@oestadodopais.pt';
+
 /** Os marcadores por resolver, num sítio só, para se poderem contar. */
 export const MARCADORES = {
   // Menção à convenção da casa, dentro da descrição do método — não é um
@@ -30,10 +42,6 @@ export const MARCADORES = {
   mencaoVerificar: {
     marcador: 'a verificar',
     gloss: 'to verify',
-  },
-  endereco: {
-    marcador: 'endereço a confirmar',
-    gloss: 'address to confirm',
   },
   autarquicas: {
     marcador: 'a verificar: número exato antes de publicar',
@@ -235,7 +243,7 @@ export const SECOES = [
           tipo: 'p',
           partes: [
             'Quem encontrar um erro pode escrevê-lo a ',
-            M.endereco,
+            { email: ENDERECO_CORRECOES },
             '. Um erro confirmado entra no registo com crédito a quem o encontrou, se o desejar.',
           ],
         },
@@ -251,7 +259,7 @@ export const SECOES = [
           tipo: 'p',
           partes: [
             'Anyone who finds an error can report it to ',
-            M.endereco,
+            { email: ENDERECO_CORRECOES },
             '. A confirmed error enters the log with credit to whoever found it, if they wish.',
           ],
         },

@@ -1138,6 +1138,45 @@ publicada, alojada aqui intacta: quem os encontrar encontra o estudo, que é o
 que existe para ser lido. Quando as páginas de leitura forem escritas, passam
 elas a ser o endereço canónico e o documento passa a apontar-lhes.
 
+### 1.26 O endereço das correções passou a existir, e é o domínio sem acento
+
+O Método dizia, desde o primeiro dia, que quem encontrar um erro pode escrevê-lo
+para `[endereço a confirmar]`. Passou a dizer **correcoes@oestadodopais.pt**, em
+ligação `mailto:` e com o endereço à vista, nas duas edições.
+
+**O canal existe mesmo**, e foi conferido pelos cabeçalhos de uma mensagem real:
+entrou pelo servidor da PTServidor (`warp9.servidorpt.pt`), com reescrita SRS do
+remetente, e foi entregue na caixa de destino. Não é uma promessa nova — é a
+promessa antiga a passar a ser verdade.
+
+**Publica-se o domínio SEM acento, e a razão não é estética.** Um endereço num
+domínio acentuado obriga o programa de quem envia a convertê-lo para punycode
+antes de enviar, e nem todos o fazem: falha em silêncio, do lado de quem
+escreve, e ninguém fica a saber. Num canal cuja função é que nada se perca, isso
+é o pior modo de falha possível. O domínio acentuado leva o mesmo
+reencaminhamento, como rede de segurança para quem o escrever à mão; não é o que
+se publica.
+
+**Não é um formulário, e também não é por preguiça.** Um formulário precisa de
+servidor ou de um serviço de terceiros para receber, e a primeira página promete
+«sem pedidos de rede». Mais importante: com correio, as duas partes ficam com
+registo — quem escreveu prova que escreveu, e nós provamos quando chegou. Um
+formulário engole a mensagem e, se falhar, ninguém sabe. Numa publicação que
+existe para dizer que nada desaparece em silêncio, essa assimetria decidia
+sozinha.
+
+**Limite honesto:** um `mailto:` não faz nada num computador sem programa de
+correio configurado. É por isso que o endereço fica escrito por extenso ao lado
+da ligação, para se poder copiar. Se se vier a saber que isso trava gente a
+sério, a alternativa está pensada em §1.24 do registo de sessão: formulário com
+confirmação automática de recepção para quem escreve, para que uma correção não
+possa desaparecer sem que ambos os lados saibam.
+
+Com isto sai também **«endereço a confirmar»**, uma das quatro formulações de
+incerteza que a auditoria encontrou em uso ao mesmo tempo (IDENTIDADE.md §6).
+Ficam duas: `[a verificar]`, que é a boa, e `[descrição em preparação]` no
+arquivo, que é dos defeitos pequenos.
+
 ---
 
 ## 2. Como funciona o portão, e o que ele não vê
