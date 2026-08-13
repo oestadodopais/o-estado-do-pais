@@ -44,6 +44,15 @@ const path = routePath('metodo', lang);
         <section class="metodo-secao" id={sec.id} style="padding-top:clamp(24px,3.2vw,34px)">
           <div>
             <h2>{sec.titulo[lang]}</h2>
+            {/* A secção do livro-razão promete que o selo é a porta para a
+                linha. A ligação vai na coluna do rótulo, e não no meio do
+                texto: a cópia do Método é da direção e transcreve-se sem
+                alterações. */}
+            {sec.id === 'livro-razao' && (
+              <a class="ligacao-dados" href={routePath('livro', lang)}>
+                {s.metodo.livroLink} →
+              </a>
+            )}
           </div>
           <div class="metodo-corpo">
             {sec.blocos[lang].map((bloco) => {

@@ -19,6 +19,7 @@ excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: "100 − 78,3 = 21,7. A mesma distância, medida no ano 2000."
+derivation_en: "100 − 78,3 = 21,7. The same distance, measured in the year 2000."
 derived_from:
   - "pib-pc-alentejo-2000"
 # Expressão verificada no build: tem de dar exactamente o valor acima.

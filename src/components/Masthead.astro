@@ -21,6 +21,7 @@ const aqui = normalizePath(path ?? Astro.url.pathname);
 
 const home = routePath('home', lang);
 const estudos = routePath('estudos', lang);
+const livro = routePath('livro', lang);
 const metodo = routePath('metodo', lang);
 const outra = otherLanguagePath(aqui, lang);
 
@@ -33,6 +34,7 @@ const NomeTag = compact ? 'p' : 'h1';
     <nav class="nav" aria-label={s.nav.inicio}>
       <a href={home} aria-current={atual(home)}>{s.nav.inicio}</a>
       <a href={estudos} aria-current={atual(estudos)}>{s.nav.estudos}</a>
+      <a href={livro} aria-current={atual(livro)}>{s.nav.livro}</a>
       <a href={metodo} aria-current={atual(metodo)}>{s.nav.metodo}</a>
     </nav>
     <nav class="nav" aria-label={s.outraLingua}>

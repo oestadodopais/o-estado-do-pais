@@ -19,6 +19,7 @@ excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: "129 − 55 = 74. Distância entre duas regiões vizinhas, em pontos de índice."
+derivation_en: "129 − 55 = 74. Distance between two neighbouring regions, in index points."
 derived_from:
   - "pib-pc-grande-lisboa-2024"
   - "pib-pc-peninsula-de-setubal-2024"

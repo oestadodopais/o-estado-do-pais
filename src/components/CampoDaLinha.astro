@@ -1,0 +1,44 @@
+---
+/**
+ * Um campo de uma linha do livro-razão, na página dessa linha.
+ *
+ * Leva sempre as marcas data-linha-claim / data-linha-campo: o portão de HTML
+ * confere o texto renderizado contra o campo da própria afirmação, carácter a
+ * carácter. Não é uma dispensa — é uma verificação de transcrição, a mesma
+ * disciplina que o registo de correções já tinha (§2.2).
+ *
+ * Um campo por confirmar renderiza-se com o único marcador de incerteza do
+ * sítio, `[a verificar]`, em português nas duas edições, com glosa inglesa —
+ * como os marcadores do Método (IDENTIDADE.md §6).
+ *
+ * `originalPt` marca os campos que são prosa da casa e vivem numa só língua:
+ * hoje só a unidade. Ver DECISIONS §1.24.
+ */
+import { POR_VERIFICAR } from '../lib/ledger.mjs';
+import { t } from '../i18n/strings.mjs';
+
+const { id, campo, valor, lang = 'pt', class: klass = '', originalPt = false } = Astro.props;
+const s = t(lang);
+const porVerificar = valor === POR_VERIFICAR;
+const gloss = lang !== 'pt' ? s.livro.marcadorGloss : '';
+---
+
+{
+  porVerificar ? (
+    <span class="campo-por-verificar">
+      <span class="marcador" lang="pt-PT" data-linha-claim={id} data-linha-campo={campo}>
+        {valor}
+      </span>
+      {gloss && <span class="marcador-gloss"> ({gloss})</span>}
+    </span>
+  ) : (
+    <span
+      class:list={['campo-valor', klass]}
+      lang={originalPt ? 'pt-PT' : undefined}
+      data-linha-claim={id}
+      data-linha-campo={campo}
+    >
+      {valor}
+    </span>
+  )
+}

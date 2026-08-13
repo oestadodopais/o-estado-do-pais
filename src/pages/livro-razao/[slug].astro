@@ -1,0 +1,15 @@
+---
+/**
+ * Uma página por linha do livro-razão, nas duas edições, da mesma construção.
+ * Os caminhos saem do próprio livro-razão: não há lista escrita à mão.
+ */
+import LinhaView from '../../views/LinhaView.astro';
+import { allClaims } from '../../lib/ledger.mjs';
+
+export function getStaticPaths() {
+  return allClaims().map((c) => ({ params: { slug: c.id } }));
+}
+
+const { slug } = Astro.params;
+---
+<LinhaView lang="pt" id={slug} />

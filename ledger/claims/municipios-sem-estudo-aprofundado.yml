@@ -19,6 +19,7 @@ excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: "308 − 1 = 307. Total de municípios menos os que já têm estudo aprofundado publicado."
+derivation_en: "308 − 1 = 307. Total municipalities less those that already have a published in-depth study."
 derived_from:
   - "municipios-portugal-caop-2025"
   - "municipios-com-estudo-aprofundado"

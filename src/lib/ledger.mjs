@@ -74,6 +74,7 @@ const CAMPOS = [
   'reference_date',
   'excerpt',
   'derivation',
+  'derivation_en',
   'derived_from',
   'check',
   'study',
@@ -83,6 +84,64 @@ const CAMPOS = [
 
 /** Campos de proveniência que só podem ser null numa linha derivada. */
 const CAMPOS_PROVENIENCIA = ['source', 'document', 'source_url', 'access_date', 'excerpt'];
+
+/** Uma linha é derivada quando declara de que linhas deriva. */
+export function eDerivada(claim) {
+  return Array.isArray(claim?.derived_from) && claim.derived_from.length > 0;
+}
+
+/**
+ * Os campos de proveniência que estão por verificar, pelos nomes do formato.
+ *
+ * Esta é a ÚNICA definição de «proveniência incompleta»: a etiqueta, a página
+ * da linha, o índice do livro-razão, o portão, o sitemap e o relatório do
+ * `ledger:check` leem-na daqui. Havia duas — uma dentro do componente da
+ * etiqueta e outra dentro do script — e discordavam numa linha.
+ *
+ * A distinção que importa, e que a versão do componente não fazia:
+ *
+ *   `null` numa linha derivada  — NÃO é buraco. A proveniência é a das linhas
+ *                                 de origem (§1.3), e repeti-la seria convidar
+ *                                 as duas a divergir.
+ *   `[a verificar]`             — é buraco, esteja onde estiver. Uma linha que
+ *                                 declara um campo por confirmar declarou-o.
+ *
+ * `municipios-portugal-caop-2025` é o caso que separava as duas: deriva de três
+ * contagens **e** traz fonte própria, com o excerto por confirmar. Mostrava
+ * selo cheio na página e aparecia na dívida do relatório.
+ */
+export function camposPorVerificar(claim) {
+  if (!claim) return [];
+  const out = [];
+  for (const campo of ['source', 'source_url', 'access_date', 'reference_date', 'excerpt']) {
+    if (claim[campo] === POR_VERIFICAR) out.push(campo);
+  }
+  if (claim.document && typeof claim.document === 'object') {
+    if (claim.document.title === POR_VERIFICAR) out.push('document.title');
+    if (claim.document.edition === POR_VERIFICAR) out.push('document.edition');
+  }
+  return out;
+}
+
+/** true quando falta confirmar pelo menos um campo de proveniência. */
+export function provenienciaIncompleta(claim) {
+  return camposPorVerificar(claim).length > 0;
+}
+
+/**
+ * A aritmética de uma linha derivada, na língua de uma edição.
+ *
+ * Mesma regra do motivo de uma correção (§1.17): a explicação da conta é prosa
+ * da casa, existe nas duas línguas — `derivation` em português, `derivation_en`
+ * em inglês — e **não há recurso à outra língua**. O validador exige as duas;
+ * um `null` aqui significa que o livro-razão não passou.
+ */
+export function derivacaoDaLinha(claim, lang) {
+  if (!claim) return null;
+  if (lang === 'en') return claim.derivation_en ?? null;
+  if (lang === 'pt') return claim.derivation ?? null;
+  return null;
+}
 
 /**
  * Os campos de uma entrada do registo de correções. Todos obrigatórios.
@@ -355,6 +414,19 @@ export function validateLedger() {
     }
     if (derivada && ausente(c.derivation)) {
       errors.push(`${onde} deriva de outras linhas mas não explica a aritmética em "derivation".`);
+    }
+    /* A aritmética é prosa da casa, e a página da linha publica-a nas duas
+       edições. Mesma regra do motivo de uma correção (§1.17): as duas línguas
+       ou nenhuma — sem recurso à outra, que seria o mesmo defeito disfarçado. */
+    if (!ausente(c.derivation) && ausente(c.derivation_en)) {
+      errors.push(
+        `${onde} tem "derivation" mas não tem "derivation_en". A aritmética aparece na página ` +
+          `da linha nas duas edições: escreva-a em português em "derivation" e em inglês em ` +
+          `"derivation_en". Não há recurso à outra língua.`,
+      );
+    }
+    if (ausente(c.derivation) && !ausente(c.derivation_en)) {
+      errors.push(`${onde} tem "derivation_en" sem "derivation". A linha portuguesa é a primeira.`);
     }
     for (const campo of CAMPOS_PROVENIENCIA) {
       const v = c[campo];

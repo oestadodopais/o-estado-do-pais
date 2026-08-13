@@ -29,6 +29,12 @@ export const PRIMARY_LANG = 'pt';
  * `documento` não é uma página deste sítio: é o estudo original, alojado tal
  * como foi publicado, com uma faixa nossa no topo e mais nada. Vive debaixo do
  * endereço do estudo porque é do estudo que ele é — ver src/lib/documentos.mjs.
+ *
+ * `linha` é o endereço de uma afirmação do livro-razão, e o slug é o id da
+ * própria afirmação — que o validador já obriga a ser minúsculas, algarismos e
+ * hífenes. É para aqui que aponta cada selo de proveniência: o Método promete,
+ * nas duas línguas, que o selo é a porta para a linha, e sem esta rota a
+ * promessa era falsa (auditoria de 13.08.2026, F1).
  */
 export const ROUTES = {
   home: { pt: '/', en: '/en' },
@@ -36,6 +42,8 @@ export const ROUTES = {
   estudos: { pt: '/estudos', en: '/en/studies' },
   estudo: { pt: '/estudos/:slug', en: '/en/studies/:slug' },
   documento: { pt: '/estudos/:slug/documento', en: '/en/studies/:slug/document' },
+  livro: { pt: '/livro-razao', en: '/en/ledger' },
+  linha: { pt: '/livro-razao/:slug', en: '/en/ledger/:slug' },
 };
 
 /**

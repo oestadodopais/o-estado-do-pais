@@ -27,12 +27,15 @@ reference_date: "2024"           # AAAA / AAAA-MM / AAAA-MM-DD — a que se refe
 excerpt: "[a verificar]"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
+# Quando existe, tem de existir nas duas línguas — a página da linha publica-a.
 derivation: null
+derivation_en: null
 derived_from: []
 # Expressão verificada no build: tem de dar exactamente o valor acima.
 check: null
 
 study: "avaliacao-economica-regional-de-portugal-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
 note: null
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
@@ -55,7 +58,26 @@ corrections: []
 9. uma correcção não trouxer `date` (AAAA-MM-DD), `kind`, `old_value`,
    `new_value`, `reason` **e `reason_en`** — ou trouxer uma chave que não é
    nenhuma destas;
-10. uma expressão `check` não der exactamente o valor publicado.
+10. uma expressão `check` não der exactamente o valor publicado;
+11. houver `derivation` sem `derivation_en`, ou o contrário.
+
+## Cada linha tem uma página
+
+Uma linha do livro-razão é publicada em `/livro-razao/<id>` e `/en/ledger/<id>`,
+nas duas edições, da mesma construção. É para lá que aponta o selo de
+proveniência junto a cada número — o Método promete que o selo é a porta, e a
+porta é esta.
+
+Daí uma consequência a ter presente ao escrever uma linha: **os campos são
+publicados como estão**. O portão de HTML confere cada campo renderizado contra
+o campo da linha, carácter a carácter, e não deixa passar nem uma paráfrase nem
+um espaço a mais. Escrever no `excerpt` uma frase «parecida» com a da fonte não
+passa a ser verdade por ficar bonita na página.
+
+**`note` não é publicada.** É a única parte do formato que fica para dentro:
+mistura detalhe de proveniência com recado para quem trabalha na linha
+(«preencher antes de qualquer republicação»), e existe numa só língua. Ver
+DECISIONS §1.24.
 
 ## `[a verificar]`
 
@@ -63,8 +85,14 @@ Um campo que não se conhece escreve-se `"[a verificar]"`. **Nunca um valor
 plausível.** É aceite pelo validador e contado no fim de cada verificação, para
 que a dívida de proveniência esteja sempre à vista em vez de desaparecer.
 
-Uma etiqueta de proveniência com campos por confirmar aparece na página com o
-quadrado a tracejado e a dizer-lo por palavras. O leitor vê o que nós vemos.
+É o **único** marcador de incerteza do sítio (IDENTIDADE.md §6), e aparece com a
+mesma cara em todo o lado: no campo da página da linha, e dentro do selo de
+proveniência quando falta alguma coisa.
+
+Uma linha com um campo por confirmar aparece com o selo a tracejado, diz na sua
+página que campos lhe faltam, leva `noindex` e fica fora do sitemap — não porque
+o valor seja duvidoso, mas porque a prova documental ainda não está lá. Volta ao
+índice no dia em que o campo for preenchido, sem mais ninguém decidir nada.
 
 ## Valores derivados
 
@@ -81,6 +109,7 @@ source_url: null
 access_date: null
 excerpt: null
 derivation: "100 − 82 = 18. A média da UE-27 está fixada em 100; a distância é a diferença, em pontos de índice."
+derivation_en: "100 − 82 = 18. The EU-27 average is fixed at 100; the distance is the difference, in index points."
 derived_from:
   - "pib-pc-portugal-2024"
 check: "100 - pib-pc-portugal-2024"
@@ -89,6 +118,11 @@ study: "avaliacao-economica-regional-de-portugal-2026"
 
 `check` é reavaliado a cada build. Se alguém corrigir o valor de origem e se
 esquecer do derivado, o build pára. É a re-derivação cega, feita por máquina.
+
+**`derivation_en` é obrigatório sempre que houver `derivation`**, e pela mesma
+razão que `reason_en` (§1.17): a aritmética é prosa da casa, a página da linha
+publica-a nas duas edições, e não há recurso à outra língua — uma edição
+inglesa a mostrar a conta em português falha o portão.
 
 **Sintaxe de `check`:** números, ids de afirmações, `+ - * /`, parênteses, e as
 contagens `estudos_no_arquivo` e `edicoes_no_arquivo` (tiradas de
@@ -140,8 +174,9 @@ arquivo que mudam por arrastamento — não se registam em separado: já são
 reavaliadas pelo build a cada corrida, e enchê-las no registo abafaria as
 correções, que é o que o registo existe para mostrar.
 
-O registo de correções em `/metodo` está montado e vazio, à espera destas
-entradas.
+O registo de correções vive em dois sítios, lido do livro-razão e nunca escrito
+à mão: em `/metodo`, todas as entradas agrupadas por natureza; e na página de
+cada linha, a história daquela linha.
 
 ## O que NÃO é uma afirmação
 

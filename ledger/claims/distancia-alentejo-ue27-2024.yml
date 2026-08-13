@@ -19,6 +19,7 @@ excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: "100 − 77,2 = 22,8. Distância abaixo da média da UE-27, em pontos de índice."
+derivation_en: "100 − 77,2 = 22,8. Distance below the EU-27 average, in index points."
 derived_from:
   - "pib-pc-alentejo-2024"
 # Expressão verificada no build: tem de dar exactamente o valor acima.

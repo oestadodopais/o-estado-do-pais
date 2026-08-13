@@ -1,15 +1,24 @@
 ---
 /**
- * Etiqueta de proveniência.
+ * O selo de proveniência.
  *
- * Diz de onde veio um número, sem sair do sítio onde o número está.
- * O quadrado cheio: proveniência completa. O quadrado a tracejado: há campos
- * por confirmar — e a etiqueta di-lo por palavras, não só por desenho.
+ * Diz de onde veio um número e **leva à linha que o justifica**. É uma âncora,
+ * não uma legenda: o Método promete, nas duas línguas, que «o selo de
+ * proveniência junto a cada número é a porta para essa linha», e até
+ * 13.08.2026 esta etiqueta era um <span> — a promessa estava escrita e não
+ * estava construída (auditoria, F1; IDENTIDADE.md §5).
+ *
+ * O quadrado cheio: proveniência completa. O quadrado a tracejado: falta pelo
+ * menos um campo — e a etiqueta di-lo com o único marcador de incerteza do
+ * sítio, `[a verificar]`, o mesmo que a linha mostra no campo em falta
+ * (IDENTIDADE.md §6). Dizia «fonte por confirmar», que era uma segunda
+ * formulação para a mesma coisa.
  *
  * Vai marcada com data-nonledger="proveniencia" porque o seu texto é gerado a
- * partir do próprio livro-razão (nomes de estudos com anos, datas de acesso).
+ * partir do próprio livro-razão (nomes de estudos com anos).
  */
-import { getClaim, POR_VERIFICAR } from '../lib/ledger.mjs';
+import { getClaim, provenienciaIncompleta, eDerivada, POR_VERIFICAR } from '../lib/ledger.mjs';
+import { caminhoDaLinha } from '../lib/livro.mjs';
 import { studyLabel } from '../data/studies.mjs';
 import { t } from '../i18n/strings.mjs';
 
@@ -17,20 +26,19 @@ const { id, lang = 'pt' } = Astro.props;
 const s = t(lang);
 const claim = getClaim(id);
 
-const derivada = Array.isArray(claim.derived_from) && claim.derived_from.length > 0;
-
-const campos = [claim.source, claim.source_url, claim.access_date, claim.excerpt];
-if (claim.document && typeof claim.document === 'object') {
-  campos.push(claim.document.title, claim.document.edition);
-}
-const incompleta = !derivada && campos.some((c) => c === POR_VERIFICAR);
-
+const derivada = eDerivada(claim);
+const incompleta = provenienciaIncompleta(claim);
 const estudo = studyLabel(claim.study, lang);
 ---
 
-<span
+<a
   class:list={['src-chip', incompleta && 'is-unverified']}
+  href={caminhoDaLinha(id, lang)}
   data-nonledger="proveniencia"
 >
-  {derivada ? `${s.prov.calculado} · ` : ''}{estudo}{incompleta ? ` · ${s.prov.porConfirmar}` : ''}
-</span>
+  <span class="vh">{s.prov.verLinha}: </span>
+  <span class="src-chip-texto">
+    {derivada ? `${s.prov.calculado} · ` : ''}{estudo}
+  </span>
+  {incompleta && <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>}
+</a>

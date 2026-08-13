@@ -916,6 +916,147 @@ ligados → as 21 linhas → portão de identidade → limpeza dos defeitos pequ
 **sai o `noindex`** → páginas de leitura dos dez estudos. As páginas de leitura
 são a direcção, não o portão do lançamento.
 
+### 1.24 O livro-razão passou a ter páginas, e o selo passou a ser uma porta
+
+O defeito F1 da auditoria (§1.23) era uma afirmação falsa do sítio sobre si
+próprio: o Método promete, nas duas línguas, que «o selo de proveniência junto a
+cada número é a porta para essa linha», e o selo era um `<span>`, e o livro-razão
+não tinha rota nem ficheiro. Está construído: **62 linhas × 2 edições = 124
+páginas de linha**, mais o índice nas duas línguas, tudo da mesma construção.
+Rotas `livro` e `linha` em `routes.mjs`; o slug de uma linha é o id da própria
+afirmação, que o validador já obrigava a ser `minusculas-com-hifenes`.
+
+**Disposição B, e nenhuma quarta** (IDENTIDADE.md §3): corpo a 68ch com a prova
+— o excerto, a aritmética, a história das correções desta linha — e coluna de
+aparelho a 300px com a ficha (fonte, documento, edição, endereço, data de acesso,
+data dos dados, estudo) e o estado da proveniência, que é o que a página não
+sabe. O índice usa a mesma disposição: as linhas no corpo, e à margem os dois
+estados do selo, o marcador e o que o livro-razão não contém.
+
+#### O problema que era preciso resolver antes de escrever uma linha de código
+
+`gate:html` falha em algarismos sem proveniência, e uma página de linha é quase
+só algarismos. Quatro dos cinco campos resolviam-se com o que já existia — o
+valor por `<Claim/>`, as correções por `data-correcao-*`, as datas de referência
+e os códigos de edição pela lista de motivos. **O excerto não.** `data-verbatim`
+só conhece `src/data/verbatim.mjs`, e o portão não sabia nada do campo `excerpt`
+do livro-razão.
+
+A saída fácil era `data-nonledger="proveniencia"` no excerto. Foi recusada: o
+excerto **é a prova** da afirmação, e dispensá-lo do varrimento significaria que
+escrever ali uma paráfrase plausível passava no build. O portão ficaria mais
+fraco exactamente na página que existe para o tornar credível.
+
+**O que se fez, e é mais do que foi pedido:** em vez de estender `data-verbatim`
+a um segundo registo, criou-se `data-linha-*` (origem 6, §2.2) e passaram a ser
+conferidos **todos** os campos da linha, não só o excerto — unidade, fonte,
+documento, edição, endereço, datas, aritmética, expressão de verificação, lista
+de origens, estudo e id. O excerto fica conferido carácter a carácter contra o
+campo `excerpt`, que era o pedido; e os outros doze campos deixaram de precisar
+de dispensa nenhuma. A lista de motivos de `allowlist.yml` **não cresceu** com
+esta secção do sítio, o que era o sinal de alarme a evitar. O molde já existia:
+é o que `data-correcao-*` faz ao campo `corrections`, um nível abaixo.
+
+O portão foi visto a fechar em **doze estragos**, um de cada vez, sobre o
+`dist/` construído: excerto com um algarismo trocado; excerto reescrito com uma
+paráfrase plausível; data de acesso adulterada; campo inventado; campo que a
+linha não tem (um excerto numa linha derivada); aritmética portuguesa na edição
+inglesa; lista `derived_from` com uma linha a mais; `noindex` tirado de uma linha
+incompleta; `noindex` posto numa linha completa; título escrito à mão; página de
+uma linha em falta; selo a apontar para uma linha que não existe.
+
+#### `derivation_en`: a aritmética passou a existir nas duas línguas
+
+A página publica a aritmética das linhas calculadas, e a aritmética é prosa da
+casa. §1.17 já tinha decidido isto para o motivo de uma correção, e a regra
+aplica-se sem alteração: os dois campos são obrigatórios, não há recurso à outra
+língua, e o portão confere o da língua da edição. **18 linhas** ganharam
+`derivation_en`, traduzido e não parafraseado, com os títulos citados literais.
+
+**Um campo ficou por resolver, e diz-se qual: `unit`.** «% do PIB» aparece em
+português na edição inglesa, tal como o valor aparece com vírgula decimal
+(§1.6). É a mesma dívida e resolve-se na mesma altura — é uma cadeia curta, do
+lado do rótulo, e não vale um campo novo antes da localização de exibição.
+
+#### `note` não é publicada
+
+O formato tem um campo `note` e ele **não entra na página**. Duas razões, e
+qualquer uma bastava: existe numa só língua, e §1.17 não deixa mostrar prosa
+portuguesa na edição inglesa; e o que lá está mistura detalhe de proveniência
+com recado interno («preencher a partir das fontes do próprio estudo antes de
+qualquer republicação»), que é escrito para quem trabalha na linha e não para
+quem a lê. Publicar as duas coisas juntas seria publicar instruções nossas como
+se fossem editorial. O que o leitor precisa das notas — que campos faltam — a
+página diz por estrutura, campo a campo.
+
+#### Uma linha incompleta não se oferece ao índice
+
+Uma página de linha leva `noindex` **se e só se** a proveniência estiver
+incompleta, e sai do sitemap pela mesma condição. Hoje: **41 linhas indexáveis,
+21 fora**. Não é preferência de gabarito — é lido do livro-razão em três sítios
+pela mesma função (`provenienciaIncompleta`), e o portão confere as duas
+direcções: uma linha incompleta sem `noindex` falha, e uma linha completa com
+`noindex` também. Uma linha volta ao índice sozinha no dia em que o campo for
+preenchido.
+
+O raciocínio é o do stub de estudo (§1.8): não se convida um motor de busca a
+indexar uma página que diz, ela própria, que ainda não sabe. Uma linha
+incompleta continua a existir, a ter endereço e a ser a porta do seu selo — só
+não se oferece como registo citável.
+
+#### Duas definições de «incompleta» que discordavam
+
+`provenienciaIncompleta` estava escrita duas vezes: dentro de
+`Provenance.astro` e dentro de `check-ledger.mjs`. Discordavam numa linha —
+`municipios-portugal-caop-2025`, que deriva de três contagens **e** traz fonte
+própria com o excerto por confirmar: mostrava selo cheio na página e aparecia na
+dívida do relatório. Passou a haver uma só definição, em `ledger.mjs`, com a
+distinção que a versão do componente não fazia: `null` numa linha derivada não é
+buraco (a proveniência é a das origens, §1.3), `[a verificar]` é buraco esteja
+onde estiver. Consequência visível: **esse selo passou a aparecer a tracejado na
+primeira página**, que é o que sempre esteve escrito na linha.
+
+#### O aviso das afirmações não citadas ia desaparecer sem ninguém dar por isso
+
+O portão avisa quando uma afirmação não é citada por nenhuma página — é o que
+mede quanto do livro-razão está mesmo em uso (24 das 32 linhas do quadro
+institucional, à data da auditoria). Publicar o livro-razão apagava esse aviso
+para sempre: toda a linha passa a ser citada pela sua própria página e pelo
+índice. Agora as citações **nas páginas do próprio livro-razão não contam** para
+esse aviso. Continua a dizer o que dizia: hoje, 33 de 62 citadas fora do
+livro-razão, 29 por citar.
+
+#### O resto do que mudou
+
+- **O selo é uma âncora, e o marcador é um só.** A etiqueta dizia «fonte por
+  confirmar» — uma das quatro formulações que IDENTIDADE.md §6 mandou reduzir a
+  uma. Passou a mostrar `[a verificar]`, o mesmo marcador que a linha mostra no
+  campo em falta, com a mesma classe `.marcador`. `.tbv` foi retirada.
+- **Os dois estados do selo passaram a existir na mesma página** (§5.2), no
+  índice: os grupos são por estado, e a coluna do aparelho mostra os dois
+  quadrados lado a lado, explicados.
+- **`Livro-razão` entrou na navegação** e no rodapé. Uma secção publicada que só
+  se alcança por um selo não está publicada.
+- **O Método ganhou uma ligação para o índice**, na coluna do rótulo da secção
+  «O livro-razão» — fora da cópia da direção, que se transcreve sem alterações.
+- **O endereço da fonte passou a aparecer como texto**, e não só como destino da
+  ligação. §1.16 tinha-o deixado fora do alcance do portão de propósito; aqui é o
+  contrário — está no texto e é conferido carácter a carácter, porque uma página
+  de proveniência que esconde o endereço que diz ter não serve para nada.
+- **Uma invariante nova no portão:** se o livro-razão tem N linhas, o `dist/` tem
+  de ter N×2 páginas de linha e 2 índices. Um selo que aponte para uma página que
+  não foi construída é uma porta que não abre, e é melhor falhar a construção.
+- **Outra:** a língua declarada em `<html lang>` tem de ser a do endereço. É a
+  língua da página que decide que motivo e que aritmética são conferidos; uma
+  edição inglesa construída com as palavras portuguesas passava despercebida.
+
+**O que isto não fecha.** As 21 linhas com campos por confirmar continuam por
+confirmar — é o passo seguinte, e sete delas (a família `pib-pc-*`) exigem voltar
+à fonte primária com um verificador que não as escreveu. E `gate:identidade`
+(IDENTIDADE.md §8) continua por construir: a regra «todo o `.src-chip` é uma
+âncora» está cumprida hoje — 152 selos, 152 âncoras, 0 ligações internas
+quebradas em 2.563 — mas ainda não está imposta por máquina.
+
 ---
 
 ## 2. Como funciona o portão, e o que ele não vê
@@ -932,7 +1073,7 @@ São os três que governam os algarismos. O `npm run build` corre hoje mais dois
 que não são sobre algarismos e por isso não estão na tabela: `check:documentos`
 antes do build (§1.20) e `check:dados` depois (§1.18).
 
-### 2.2 As cinco origens legítimas de um algarismo numa página
+### 2.2 As seis origens legítimas de um algarismo numa página
 
 1. `data-claim="<id>"` — veio do livro-razão. O portão confere que os algarismos
    renderizados são os do valor publicado. `<Claim/>` põe esta marca sozinho.
@@ -954,6 +1095,20 @@ antes do build (§1.20) e `check:dados` depois (§1.18).
    reescrever a história de uma correção falha o build. O motivo é conferido na
    **língua da edição** — `reason` na página portuguesa, `reason_en` na inglesa
    (§1.17).
+
+6. `data-linha-*` — um campo de uma linha do livro-razão, na página dessa linha.
+   `data-linha-claim` diz a afirmação e `data-linha-campo` diz o campo; o portão
+   compara o texto renderizado com esse campo da afirmação, **carácter a
+   carácter** (espaços normalizados). Vale para `unit`, `source`,
+   `document.title`, `document.edition`, `source_url`, `access_date`,
+   `reference_date`, `excerpt`, `derivation`, `derived_from`, `check`, `study` e
+   `id` — e para mais nada: um campo desconhecido falha o build, e `value` está
+   fora de propósito, porque um valor entra por `<Claim/>` e por mais nenhum
+   sítio. `derivation` e `study` resolvem-se na língua da edição, como o motivo
+   de uma correção. É a mesma disciplina da origem 5, aplicada um nível acima:
+   no registo de correções o portão confere o campo `corrections` da afirmação;
+   aqui confere a afirmação inteira. **Não é uma dispensa** — é a única origem,
+   além da 2, que compara texto em vez de o deixar passar.
 
 As ilhas de dados `<script type="application/json" data-ledger-json>` têm regra
 própria: cada número precisa de um irmão `<x>_claim`, e é conferido contra o
@@ -982,6 +1137,17 @@ dispensado mediante um `estrutura_motivo` declarado.
 7. **No `<head>`** só são varridos `<title>` e `<meta name="description">`, e as
    cadeias estruturais toleradas são as calculadas do registo (títulos de
    estudos, nome do sítio, data de edição), não uma lista escrita à mão.
+8. **O `<head>` de uma página de linha é conferido por reprodução.** O portão
+   recompõe o título e a descrição a partir do livro-razão com as **mesmas**
+   funções que a página usou (`src/lib/livro.mjs`). Isso apanha um cabeçalho
+   escrito à mão, um cabeçalho da linha errada e um cabeçalho da língua errada;
+   não pode apanhar uma frase mal composta, porque a composição é a mesma dos
+   dois lados. A alternativa — a mesma frase escrita em dois sítios — divergiria
+   na primeira alteração e daria uma garantia falsa, que é pior.
+9. **`data-linha-*` confere a transcrição, não a fonte.** Que o excerto na
+   página é o excerto da linha, prova-se; que o excerto da linha é o que a fonte
+   diz, não — isso é a verificação contra a fonte, e é trabalho de quem não
+   escreveu a linha.
 
 O portão apanha o erro comum — um número que se escreveu a correr num gabarito —
 e não apanha a fraude determinada. Serve para tornar o caminho honesto o mais

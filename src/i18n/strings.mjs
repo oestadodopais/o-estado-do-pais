@@ -20,21 +20,26 @@ export const STRINGS = {
     nav: {
       inicio: 'Início',
       estudos: 'Estudos',
+      livro: 'Livro-razão',
       metodo: 'Método',
       saltar: 'Saltar para o conteúdo',
     },
 
     prov: {
       calculado: 'calculado',
-      porConfirmar: 'fonte por confirmar',
-      lido: 'lido',
+      lido: 'Lido a',
       fonte: 'Fonte',
       documento: 'Documento',
+      edicao: 'Edição',
+      endereco: 'Endereço',
       excerto: 'Excerto',
       derivacao: 'Aritmética',
       unidade: 'Unidade',
       referencia: 'Dados de',
+      estudo: 'Estudo',
+      afirmacao: 'Afirmação',
       naoPublicado: 'Valor calculado, não publicado',
+      verLinha: 'Linha do livro-razão',
     },
 
     rodape: {
@@ -163,6 +168,65 @@ export const STRINGS = {
       colunaNovo: 'Valor novo',
       colunaMotivo: 'Motivo',
       colunaAfirmacao: 'Afirmação',
+      livroLink: 'Ver o livro-razão',
+    },
+
+    livro: {
+      metaTitle: 'Livro-razão — O Estado do País',
+      metaDescription:
+        'Todas as afirmações publicadas neste sítio, uma linha cada: o valor tal como foi publicado, a fonte, o documento, o endereço, a data de acesso e o excerto.',
+      eyebrow: 'Livro-razão',
+      h1: 'O livro-razão',
+      lede1:
+        'Uma linha por número publicado. Cada linha guarda o valor tal como a fonte o publicou, quem o produziu, o documento e a edição, o endereço, a data em que o lemos e um excerto textual — e, quando o número é calculado por nós, a conta explicada e reavaliada a cada construção.',
+      lede2:
+        'O selo de proveniência junto a cada número é a porta para a sua linha. É este o índice dessas portas.',
+      grupoCompletasK: 'Proveniência completa',
+      grupoCompletasV:
+        'Todos os campos preenchidos e conferidos contra a fonte. O selo é um quadrado cheio.',
+      grupoPorConfirmarK: 'Com campos por confirmar',
+      grupoPorConfirmarV:
+        'Falta pelo menos um campo de proveniência. O campo fica marcado, e nenhum foi preenchido com um valor plausível. O selo é um quadrado a tracejado.',
+      colunaValor: 'Valor',
+      colunaAfirmacao: 'Afirmação',
+      colunaSelo: 'Proveniência',
+      seloK: 'Os dois estados do selo',
+      seloCheio: 'Quadrado cheio: a proveniência está completa.',
+      seloTracejado: 'Quadrado a tracejado: falta pelo menos um campo, e a linha di-lo.',
+      marcadorK: 'O marcador',
+      marcadorV:
+        'É o único marcador de incerteza deste sítio. Aparece onde um campo não foi confirmado contra a fonte. Não é um valor por defeito nem uma estimativa: é a ausência declarada.',
+      marcadorGloss: '',
+      naoDizK: 'O que este índice não diz',
+      naoDizV:
+        'Só estão aqui os números que este sítio publica. Os números dentro dos documentos de estudo alojados aqui não estão no livro-razão — a proveniência deles é a do próprio documento, no dia em que foi publicado. O livro-razão também não é uma base de séries: guarda a leitura que citámos, não a série de onde ela saiu.',
+      metodoLink: 'Como isto é feito',
+
+      linha: {
+        eyebrow: 'Linha do livro-razão',
+        aparelhoK: 'Proveniência',
+        excertoNota:
+          'Transcrito da fonte palavra por palavra. A construção do sítio falha se o texto desta página deixar de ser igual, carácter a carácter, ao que está guardado na linha.',
+        excertoPorConfirmar:
+          'O excerto textual desta linha ainda não foi transcrito da fonte. Escrever aqui uma paráfrase plausível seria exactamente a fabricação que este sistema existe para impedir.',
+        excertoDerivada:
+          'Esta linha não cita nenhuma frase: o valor é calculado a partir de outras linhas, e a prova documental é a delas.',
+        derivacaoNota: 'A conta, por palavras.',
+        expressaoK: 'Reavaliada na construção',
+        expressaoNota:
+          'A mesma conta como expressão. É refeita a cada construção do sítio e tem de dar exactamente o valor publicado; se não der, não se constrói nada.',
+        derivaDeK: 'Deriva de',
+        historicoK: 'Correções e atualizações desta linha',
+        historicoVazio: 'Esta linha nunca foi corrigida nem actualizada.',
+        historicoNota:
+          'Nada é apagado. Um valor que estava errado fica à vista, datado, com o motivo — e um valor que deixou de estar certo porque o que mede mudou fica registado como atualização, que não é a mesma coisa.',
+        incompletaK: 'O que falta nesta linha',
+        incompletaV:
+          'Os campos assinalados não foram confirmados contra a fonte. O valor publicado não muda por isso; o que falta é a prova documental, e enquanto faltar a linha fica fora do índice dos motores de busca.',
+        completaK: 'Estado',
+        completaV: 'Proveniência completa: todos os campos preenchidos e conferidos contra a fonte.',
+        voltar: 'Voltar ao livro-razão',
+      },
     },
 
     estudos: {
@@ -234,21 +298,26 @@ export const STRINGS = {
     nav: {
       inicio: 'Home',
       estudos: 'Studies',
+      livro: 'Ledger',
       metodo: 'Method',
       saltar: 'Skip to content',
     },
 
     prov: {
       calculado: 'calculated',
-      porConfirmar: 'source to confirm',
-      lido: 'read',
+      lido: 'Read on',
       fonte: 'Source',
       documento: 'Document',
+      edicao: 'Edition',
+      endereco: 'Address',
       excerto: 'Excerpt',
       derivacao: 'Arithmetic',
       unidade: 'Unit',
       referencia: 'Data for',
+      estudo: 'Study',
+      afirmacao: 'Claim',
       naoPublicado: 'Calculated value, not published',
+      verLinha: 'Ledger row',
     },
 
     rodape: {
@@ -375,6 +444,65 @@ export const STRINGS = {
       colunaNovo: 'New value',
       colunaMotivo: 'Reason',
       colunaAfirmacao: 'Claim',
+      livroLink: 'See the ledger',
+    },
+
+    livro: {
+      metaTitle: 'Ledger — O Estado do País',
+      metaDescription:
+        'Every claim published on this site, one row each: the value exactly as published, the source, the document, the address, the access date and the excerpt.',
+      eyebrow: 'Ledger',
+      h1: 'The ledger',
+      lede1:
+        'One row per published figure. Each row holds the value exactly as the source published it, who produced it, the document and edition, the address, the date we read it and a textual excerpt — and, when the figure is calculated by us, the sum spelled out and re-evaluated at every build.',
+      lede2:
+        'The provenance seal beside each figure is the door to its row. This is the index of those doors.',
+      grupoCompletasK: 'Complete provenance',
+      grupoCompletasV:
+        'Every field filled in and checked against the source. The seal is a filled square.',
+      grupoPorConfirmarK: 'With fields to confirm',
+      grupoPorConfirmarV:
+        'At least one provenance field is missing. The field is marked as such, and none has been filled in with a plausible value. The seal is a dashed square.',
+      colunaValor: 'Value',
+      colunaAfirmacao: 'Claim',
+      colunaSelo: 'Provenance',
+      seloK: 'The two states of the seal',
+      seloCheio: 'Filled square: the provenance is complete.',
+      seloTracejado: 'Dashed square: at least one field is missing, and the row says so.',
+      marcadorK: 'The marker',
+      marcadorV:
+        'It is the only uncertainty marker on this site. It appears where a field has not been confirmed against the source. It is not a default or an estimate: it is a declared absence. The marker is kept in Portuguese, as in the original.',
+      marcadorGloss: 'to verify',
+      naoDizK: 'What this index does not say',
+      naoDizV:
+        'Only the figures this site publishes are here. The figures inside the study documents hosted here are not in the ledger — their provenance is the document’s own, on the day it was published. Nor is the ledger a database of series: it holds the reading we cited, not the series it came from.',
+      metodoLink: 'How this is made',
+
+      linha: {
+        eyebrow: 'Ledger row',
+        aparelhoK: 'Provenance',
+        excertoNota:
+          'Transcribed from the source word for word. The build fails if the text on this page stops being identical, character for character, to what the row holds.',
+        excertoPorConfirmar:
+          'The textual excerpt for this row has not been transcribed from the source yet. Writing a plausible paraphrase here would be exactly the fabrication this system exists to prevent.',
+        excertoDerivada:
+          'This row quotes no sentence: the value is calculated from other rows, and the documentary proof is theirs.',
+        derivacaoNota: 'The sum, in words.',
+        expressaoK: 'Re-evaluated at build time',
+        expressaoNota:
+          'The same sum as an expression. It is recomputed at every build and must yield exactly the published value; if it does not, nothing is built.',
+        derivaDeK: 'Derived from',
+        historicoK: 'Corrections and updates to this row',
+        historicoVazio: 'This row has never been corrected or updated.',
+        historicoNota:
+          'Nothing is deleted. A value that was wrong stays in plain sight, dated, with the reason — and a value that stopped being right because what it measures changed is recorded as an update, which is not the same thing.',
+        incompletaK: 'What is missing from this row',
+        incompletaV:
+          'The marked fields have not been confirmed against the source. The published value does not change because of it; what is missing is the documentary proof, and while it is missing the row stays out of search engine indexes.',
+        completaK: 'State',
+        completaV: 'Complete provenance: every field filled in and checked against the source.',
+        voltar: 'Back to the ledger',
+      },
     },
 
     estudos: {

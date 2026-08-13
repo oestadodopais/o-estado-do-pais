@@ -4,6 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 import { SITE_URL } from './site.config.mjs';
 import { alternatesFor, pathFromUrl, matchPath } from './src/lib/routes.mjs';
+import { loadClaims, provenienciaIncompleta } from './src/lib/ledger.mjs';
 
 /**
  * Uma alternativa de língua, tal como routes.mjs a devolve.
@@ -42,10 +43,25 @@ export default defineConfig({
        * página do estudo. Estão fora por serem endpoints, e ficam fora por
        * escrito — para não passarem a estar dentro sem ninguém decidir.
        *
+       * As páginas de LINHA do livro-razão entram — são o registo citável, e é
+       * para elas que aponta cada selo de proveniência. Menos as que têm um
+       * campo por confirmar: essas ficam fora do sitemap e levam noindex, pela
+       * mesma leitura do livro-razão que o portão de HTML confere. Uma linha
+       * incompleta não se oferece como registo; volta a entrar sozinha no dia
+       * em que o campo for preenchido.
+       *
        * @param {string} page URL absoluto da página, como o sitemap o vê.
        * @returns {boolean} true se a página entra no sitemap.
        */
-      filter: (page) => !['estudo', 'documento'].includes(matchPath(pathFromUrl(page))?.key ?? ''),
+      filter: (page) => {
+        const hit = matchPath(pathFromUrl(page));
+        if (['estudo', 'documento'].includes(hit?.key ?? '')) return false;
+        if (hit?.key === 'linha') {
+          const claim = loadClaims().get(hit.params.slug ?? '');
+          return Boolean(claim) && !provenienciaIncompleta(claim);
+        }
+        return true;
+      },
 
       namespaces: { xhtml: true },
 
