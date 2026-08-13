@@ -840,6 +840,61 @@ diferente · ficheiro alojado alterado · manifesto desactualizado. Nos três
 últimos sai `MISMATCH` com o diagnóstico certo, e num sexto caso — invólucro
 irreconhecível — pára antes de comparar seja o que for.
 
+
+### 1.23 A auditoria de identidade, e a regra que dela saiu
+
+A 13.08.2026 o sítio publicado foi conferido contra o estudo de identidade v2,
+peça a peça: o estudo inteiro recuperado (85.352 bytes), o sítio percorrido nos
+dois temas, a 1440px e a 726px, nos seis tipos de página e nas duas línguas, com
+as medições feitas no DOM e não a olho. **34 divergências**, em seis classes —
+sustidas (7), sancionadas (6), deriva (7), sem regra (2), por exercer (1),
+defeitos (11). O registo completo está no artefacto
+`claude.ai/code/artifact/63273249-fddb-4b1a-a070-88a2576b9446`.
+
+Três achados mudaram o plano de trabalho, e ficam aqui porque o artefacto é uma
+peça datada e este ficheiro é o registo:
+
+**O selo não é uma porta.** O Método promete, nas duas línguas, que «o selo de
+proveniência junto a cada número é a porta para essa linha». Na primeira página
+publicada, **0 de 11** selos são ligações, **0 de 35** valores estão dentro de
+uma ligação, e o livro-razão **não tem página nenhuma** — nem rota em
+`routes.mjs`, nem ficheiro em `dist/`. A interacção central da publicação não
+está construída, e o Método descreve-a como se estivesse. É o único defeito que
+impede o lançamento, porque não é um defeito de desenho: é uma afirmação falsa
+sobre o próprio sítio.
+
+**42% do CSS não tem referência.** 643 das 1.528 linhas de `site.css` estão
+debaixo de secções sem correspondência no estudo — arquivo, página de estudo,
+método, 404, rodapé, registo de correções, e a grelha `.figuras`. Seis tipos de
+página resolvidos um a um. Daí [`IDENTIDADE.md`](IDENTIDADE.md), que é a regra
+para o sétimo, e que passa a ganhar ao estudo onde os dois discordem.
+
+**O livro-razão está a dois terços, e a primeira página está construída sobre o
+terço que falta.** 41 das 62 linhas têm proveniência completa; 21 têm um campo a
+`[a verificar]` — e são essas que a primeira página cita, o que explica os 11
+selos a tracejado. Dividem-se em **nove baratas** (contagens sobre os próprios
+ficheiros do sítio e a CAOP 2025, já conferidas pelo build e já documentadas no
+colofão do estudo — nunca deviam ter dito «fonte por confirmar») e **doze
+verdadeiras** (`pib-pc-*`, `agua-nao-faturada`, `ciclo-substituicao-condutas`,
+`avisos-pt2030-*`, `saldo-natural`), que exigem voltar às fontes primárias e,
+pela regra da casa, um verificador que não as escreveu.
+
+**Duas decisões da direção**, 13.08.2026:
+
+1. **O invólucro ganha páginas de leitura.** Os documentos ficam byte a byte na
+   identidade em que foram publicados; o observatório escreve as suas próprias
+   páginas por cima deles, e o documento passa a ser a fonte por baixo. A
+   alternativa — o observatório como camada de índice e proveniência, e mais
+   nada — foi considerada e recusada.
+2. **O livro-razão é publicado antes do lançamento.** Lançar com a interacção
+   central por construir obrigaria a enfraquecer a frase do Método à saída, e a
+   promessa é o produto.
+
+Daí a ordem de trabalho: a regra (feita) → páginas do livro-razão e selos
+ligados → as 21 linhas → portão de identidade → limpeza dos defeitos pequenos →
+**sai o `noindex`** → páginas de leitura dos dez estudos. As páginas de leitura
+são a direcção, não o portão do lançamento.
+
 ---
 
 ## 2. Como funciona o portão, e o que ele não vê
