@@ -211,6 +211,8 @@ export const STRINGS = {
           'O excerto textual desta linha ainda não foi transcrito da fonte. Escrever aqui uma paráfrase plausível seria exactamente a fabricação que este sistema existe para impedir.',
         excertoDerivada:
           'Esta linha não cita nenhuma frase: o valor é calculado a partir de outras linhas, e a prova documental é a delas.',
+        excertoDaCasa:
+          'Esta linha não cita nenhuma frase porque não há nenhuma para citar: o valor é uma contagem do próprio registo desta casa, e é reavaliado a cada construção do sítio. Nenhum documento externo o publica.',
         derivacaoNota: 'A conta, por palavras.',
         expressaoK: 'Reavaliada na construção',
         expressaoNota:
@@ -487,6 +489,8 @@ export const STRINGS = {
           'The textual excerpt for this row has not been transcribed from the source yet. Writing a plausible paraphrase here would be exactly the fabrication this system exists to prevent.',
         excertoDerivada:
           'This row quotes no sentence: the value is calculated from other rows, and the documentary proof is theirs.',
+        excertoDaCasa:
+          'This row quotes no sentence because there is none to quote: the value is a count of this publication\'s own record, re-evaluated every time the site is built. No external document publishes it.',
         derivacaoNota: 'The sum, in words.',
         expressaoK: 'Re-evaluated at build time',
         expressaoNota:

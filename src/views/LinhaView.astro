@@ -25,6 +25,7 @@ import {
   getClaim,
   camposPorVerificar,
   provenienciaIncompleta,
+  eDaCasa,
   eDerivada,
   derivacaoDaLinha,
   POR_VERIFICAR,
@@ -41,6 +42,8 @@ const claim = getClaim(id);
 const path = caminhoDaLinha(id, lang);
 const derivada = eDerivada(claim);
 const incompleta = provenienciaIncompleta(claim);
+/* Uma linha da casa não tem linhas de origem: a prosa da derivada seria falsa. */
+const daCasa = eDaCasa(claim);
 const emFalta = camposPorVerificar(claim);
 const derivacao = derivacaoDaLinha(claim, lang);
 
@@ -99,7 +102,9 @@ const estudo = studyLabel(claim.study, lang);
         <h2 class="linha-bloco-titulo" id="excerto">{s.prov.excerto}</h2>
         {
           claim.excerpt === null ? (
-            <p class="linha-nota">{s.livro.linha.excertoDerivada}</p>
+            <p class="linha-nota">
+              {daCasa ? s.livro.linha.excertoDaCasa : s.livro.linha.excertoDerivada}
+            </p>
           ) : claim.excerpt === POR_VERIFICAR ? (
             <>
               <p class="linha-excerto-vazio">

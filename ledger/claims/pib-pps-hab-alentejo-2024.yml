@@ -1,11 +1,11 @@
 # Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
 # Campos obrigatórios e regras: ver ledger/README.md.
 
-id: "pib-pc-algarve-2024"
+id: "pib-pps-hab-alentejo-2024"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "89"
-unit: "índice (UE-27 = 100)"
+value: "30 800"
+unit: "PPS por habitante"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Eurostat"
@@ -17,16 +17,17 @@ access_date: "2026-08-13"
 reference_date: "2024"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "nama_10r_2gdp — unit PPS_HAB_EU27_2020 — geo PT15 (Algarve) — 2024: 89"
+excerpt: "nama_10r_2gdp — unit PPS_EU27_2020_HAB — geo PT1C (Alentejo) — 2024: 30800"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
+derivation_en: null
 derived_from: []
 # Expressão verificada no build: tem de dar exactamente o valor acima.
 check: null
 
 study: "avaliacao-economica-regional-de-portugal-2026"
-note: "Índice do PIB per capita em PPS, UE-27 = 100, tal como o Eurostat o publica (arredondado à unidade). Código NUTS confirmado contra as etiquetas da própria resposta do Eurostat: PT15 = Algarve. Proveniência preenchida a 2026-08-13, contra a fonte primária."
+note: "PIB per capita em paridades de poder de compra, valor absoluto. Serve de origem ao índice do Alentejo, que a casa publica com uma casa decimal e o Eurostat publica arredondado à unidade. O código NUTS foi confirmado contra as etiquetas da própria resposta do Eurostat: PT1C = Alentejo."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

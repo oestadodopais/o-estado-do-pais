@@ -1179,6 +1179,48 @@ arquivo, que é dos defeitos pequenos.
 
 ---
 
+### 1.27 A dívida de proveniência tinha impossíveis lá dentro
+
+Vinte e uma afirmações traziam campos `[a verificar]`. Nove eram dívida a sério.
+As outras doze não eram dívida nenhuma, por duas razões diferentes.
+
+**Cinco eram linhas da casa.** `correcoes-publicadas`, `edicoes-publicadas`,
+`estudos-publicados`, `estudos-evora-publicados`,
+`municipios-com-estudo-aprofundado` — contagens do próprio registo, com `source`
+a dizer O Estado do País. O marcador prometia uma confirmação contra um documento
+externo que não existe e nunca vai existir. Custava duas coisas: inflava a lista,
+e uma lista com impossíveis lá dentro é uma lista que se deixa de ler; e mantinha
+as cinco páginas com `noindex`, por uma incompletude inexistente.
+
+A correcção **não** foi um segundo marcador — o Método promete ao leitor que
+`[a verificar]` é o único, e a promessa fica de pé. Foi estender a regra que já
+existia para as derivadas: `null` não é buraco quando a proveniência está noutro
+lado. Aqui esse outro lado é o livro-razão. A porta exige `source` com o nome da
+casa **e** uma `derivation`; sem as duas, `null` continua a ser erro, para que
+isto não sirva de atalho a proveniência em falta.
+
+**Sete eram do PIB per capita**, e o interessante é que duas delas não tinham
+fonte porque não podiam ter. Cinco (Portugal 82, Algarve 89, Grande Lisboa 129,
+Madeira 88, Península de Setúbal 55) são o índice tal como o Eurostat o publica,
+e ficaram com proveniência completa contra a fonte primária — `nama_10r_2gdp`,
+com o código NUTS confirmado contra as etiquetas da própria resposta, não
+inferido do valor.
+
+As duas do Alentejo — 77,2 em 2024 e 78,3 em 2000 — **não constam de documento
+nenhum**. O Eurostat publica o índice arredondado à unidade: 77 e 78. Os números
+da casa são derivados, com uma casa decimal: 30 800 / 39 900 × 100 = 77,193 e
+14 400 / 18 400 × 100 = 78,261. Procurar-lhes uma fonte era procurar uma coisa
+que não existe. Passaram a linhas derivadas, com as quatro linhas de origem
+acrescentadas ao livro-razão e a conta reavaliada em cada construção.
+
+Para isso o `check` ganhou `round ( x , n )`: sem arredondamento na expressão, uma
+linha publicada com menos casas do que a divisão produz não podia ser verificada
+de todo. A alternativa seria uma tolerância na comparação, que é pior — esconderia
+precisamente a classe de erro que o `check` existe para apanhar. **O arredondamento
+diz-se na expressão; não se presume na comparação.**
+
+Dívida: 21 → 9. Linhas derivadas: 10 → 12. Aritmética reavaliada no build: 14 → 16.
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
@@ -1400,9 +1442,14 @@ fácil, não para tornar o desonesto impossível.
    trabalho — a leitura curta, os números do estudo com linha no livro-razão, a
    proveniência de cada um. É essa que levanta o `noindex`, e são vinte: dez
    trabalhos em duas línguas.
-3. **Fechar a proveniência.** Vinte afirmações têm campos `[a verificar]`:
-   sobretudo o organismo, o documento, o URL e o excerto das séries do PIB per
-   capita, e a base de cálculo do ciclo de substituição de condutas.
+3. **Fechar a proveniência.** Restam **nove** afirmações com campos
+   `[a verificar]`: água não faturada, os dois avisos do PT2030, o ciclo de
+   substituição de condutas, o saldo natural, e o excerto das quatro contagens
+   da CAOP. A 2026-08-13 fecharam-se as sete do PIB per capita (cinco contra a
+   fonte primária do Eurostat; as duas do Alentejo eram derivadas e passaram a
+   dizê-lo) e retiraram-se as cinco linhas da casa, que não eram dívida — ver
+   §1.27.
+
 4. **Datas e descrições do arquivo.** Só «Os Pelouros» tem data de publicação
    confirmada (2026-08-12) e descrição escrita pela direção. Nas outras doze
    entradas a data continua `[a verificar]` e a descrição é reformulação do

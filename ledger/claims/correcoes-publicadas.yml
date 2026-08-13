@@ -12,12 +12,12 @@ source: "O Estado do País"
 document:
   title: "Registo de correções"
   edition: "12.08.2026"
-source_url: "[a verificar]"
+source_url: null
 access_date: "2026-08-12"
 reference_date: "2026-08-12"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "[a verificar]"
+excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: "Contagem das entradas do registo de correções classificadas como «correcao», em todas as linhas do livro-razão. As actualizações não contam: uma actualização não é um erro admitido, e este número é o das confissões."
@@ -27,7 +27,7 @@ derived_from: []
 check: "correcoes_publicadas"
 
 study: "o-estado-do-pais"
-note: "Não há excerto textual: o valor sai de uma contagem do próprio livro-razão. É reavaliado a cada build — se entrar uma correção nova e este número não mudar, o build falha."
+note: "Não há excerto textual: o valor sai de uma contagem do próprio livro-razão. É reavaliado a cada build — se entrar uma correção nova e este número não mudar, o build falha. A partir de 2026-08-13 os campos que só um documento externo poderia preencher ficam a null, em vez de «a verificar»: não há documento externo, e marcar como por confirmar um campo que não pode ser confirmado inflava a dívida de proveniência e mantinha esta página fora do índice."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

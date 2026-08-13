@@ -12,12 +12,12 @@ source: "O Estado do País"
 document:
   title: "Arquivo de estudos"
   edition: "12.08.2026"
-source_url: "[a verificar]"
+source_url: null
 access_date: "2026-08-12"
 reference_date: "2026-08-12"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "[a verificar]"
+excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: "Contagem das edições no arquivo. As edições PT e EN do mesmo trabalho contam em separado."
@@ -27,7 +27,7 @@ derived_from: []
 check: "edicoes_no_arquivo"
 
 study: "o-estado-do-pais"
-note: "Verificado no build contra src/data/studies.mjs: se o arquivo mudar e este número não, o build falha."
+note: "Verificado no build contra src/data/studies.mjs: se o arquivo mudar e este número não, o build falha. A partir de 2026-08-13 os campos que só um documento externo poderia preencher ficam a null, em vez de «a verificar»: não há documento externo, e marcar como por confirmar um campo que não pode ser confirmado inflava a dívida de proveniência e mantinha esta página fora do índice."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
