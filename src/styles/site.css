@@ -1398,6 +1398,58 @@ a.src-chip:hover::before {
   text-decoration-color: currentColor;
 }
 
+/* A caixa das correções. Fica em papel-2 com um fio à esquerda, como o registo
+   de correções logo abaixo: são a mesma conversa em dois tempos — o que se
+   pode escrever, e o que já foi corrigido. Sem cor nova (IDENTIDADE §2). */
+.caixa-correcoes {
+  display: grid;
+  gap: 10px;
+  max-width: 68ch;
+  margin-top: 4px;
+  padding: 18px 20px;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+}
+.caixa-correcoes[hidden] {
+  display: none;
+}
+.caixa-correcoes-texto {
+  font-family: var(--f-sans);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--rule-strong);
+  padding: 12px 14px;
+  width: 100%;
+  resize: vertical;
+}
+.caixa-correcoes-texto::placeholder {
+  color: var(--muted);
+}
+.caixa-correcoes-accoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+}
+.botao-correcao {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  padding: 9px 16px;
+  cursor: pointer;
+}
+.botao-correcao:hover {
+  background: var(--paper);
+  color: var(--ink);
+}
+
 /* O endereço das correções. Vai na letra da prosa, não na monoespaçada: a
    monoespaçada é a marca de um valor do livro-razão (IDENTIDADE §1), e um
    endereço de correio não é uma medição. Fica sublinhado porque é uma ligação,

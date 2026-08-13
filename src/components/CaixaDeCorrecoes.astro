@@ -1,0 +1,58 @@
+---
+/**
+ * A caixa para escrever uma correção.
+ *
+ * O leitor escreve aqui e o botão abre o programa de correio dele, com o texto
+ * já lá dentro, endereçado às correções. **Nada é enviado deste sítio**: não há
+ * servidor a receber, não há serviço de terceiros, não há pedido de rede.
+ *
+ * Porquê assim, e não um formulário que envia:
+ *
+ *   1. com correio, ficam DOIS registos — quem escreveu tem a mensagem em
+ *      «enviados» e pode provar que escreveu; nós temos a data de chegada. Um
+ *      formulário engole a mensagem, e se falhar ninguém fica a saber. Numa
+ *      publicação que existe para dizer que nada desaparece em silêncio, essa
+ *      assimetria decide sozinha;
+ *   2. um formulário precisa de servidor ou de terceiro para receber, e a
+ *      primeira página promete «sem pedidos de rede».
+ *
+ * A caixa começa escondida e é o JavaScript que a revela. É deliberado: sem
+ * JavaScript o botão não conseguiria compor nada, e um botão que não faz nada é
+ * pior do que não haver botão. Quem não tiver JavaScript continua a ver o
+ * endereço escrito na frase acima, que é o caminho que sempre funciona.
+ */
+import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
+import { t } from '../i18n/strings.mjs';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+---
+
+<div
+  class="caixa-correcoes"
+  data-caixa-correcoes
+  data-endereco={ENDERECO_CORRECOES}
+  data-assunto={s.metodo.caixaAssunto}
+  hidden
+>
+  <label class="linha-campo-k" for="correcao-texto">{s.metodo.caixaTitulo}</label>
+  <p class="linha-nota">{s.metodo.caixaNota}</p>
+
+  <textarea
+    id="correcao-texto"
+    class="caixa-correcoes-texto"
+    rows="7"
+    placeholder={s.metodo.caixaExemplo}
+    data-caixa-texto></textarea>
+
+  <div class="caixa-correcoes-accoes">
+    <button type="button" class="botao-correcao" data-caixa-enviar>
+      {s.metodo.caixaBotao}
+    </button>
+    <span class="linha-nota" data-caixa-aviso hidden>{s.metodo.caixaVazia}</span>
+  </div>
+
+  <p class="linha-nota">{s.metodo.caixaComoFunciona}</p>
+</div>
+
+<script src="/js/correcoes.js" defer is:inline></script>

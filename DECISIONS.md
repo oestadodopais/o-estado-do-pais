@@ -1157,20 +1157,36 @@ escreve, e ninguém fica a saber. Num canal cuja função é que nada se perca, 
 reencaminhamento, como rede de segurança para quem o escrever à mão; não é o que
 se publica.
 
-**Não é um formulário, e também não é por preguiça.** Um formulário precisa de
-servidor ou de um serviço de terceiros para receber, e a primeira página promete
-«sem pedidos de rede». Mais importante: com correio, as duas partes ficam com
-registo — quem escreveu prova que escreveu, e nós provamos quando chegou. Um
-formulário engole a mensagem e, se falhar, ninguém sabe. Numa publicação que
-existe para dizer que nada desaparece em silêncio, essa assimetria decidia
-sozinha.
+**Há uma caixa para escrever, e não é um formulário que envia.** Na secção das
+correções há uma área de texto e um botão: o leitor escreve ali e o botão abre o
+programa de correio dele com o texto já dentro, endereçado às correções. **Nada
+é enviado deste sítio** — compõe-se um `mailto:` e entrega-se ao sistema.
+
+A distinção não é técnica, é editorial. Com correio ficam **dois registos**:
+quem escreveu tem a mensagem em «enviados» e pode provar que escreveu; nós temos
+a data de chegada. Um formulário que envia para um servidor engole a mensagem, e
+se falhar ninguém fica a saber — nem quem escreveu, nem nós. Numa publicação que
+existe para dizer que nada desaparece em silêncio, essa assimetria decidiu
+sozinha. E um formulário precisaria de servidor ou de terceiro para receber.
+
+**A caixa começa escondida e é o JavaScript que a revela**, o que é deliberado:
+sem JavaScript o botão não conseguiria compor nada, e um botão que não faz nada
+é pior do que não haver botão. Quem não tiver JavaScript continua a ver o
+endereço escrito na frase acima, que é o caminho que funciona sempre. Mesma
+disciplina dos dois instrumentos da primeira página: a página está correcta sem
+o script, e o script só a torna manejável.
+
+**A promessa de «sem pedidos de rede» mantém-se**, e é preciso ser exacto: o
+`/js/correcoes.js` é servido deste domínio, como o `convergencia.js` e o
+`mapa.js` que a primeira página já carrega. O que a promessa diz é que nada é
+carregado de fora — e continua a não ser.
 
 **Limite honesto:** um `mailto:` não faz nada num computador sem programa de
-correio configurado. É por isso que o endereço fica escrito por extenso ao lado
-da ligação, para se poder copiar. Se se vier a saber que isso trava gente a
-sério, a alternativa está pensada em §1.24 do registo de sessão: formulário com
-confirmação automática de recepção para quem escreve, para que uma correção não
-possa desaparecer sem que ambos os lados saibam.
+correio configurado. É por isso que o endereço fica escrito por extenso na frase
+acima, e que a caixa o diz por palavras por baixo do botão. Se se vier a saber
+que isso trava gente a sério, a alternativa continua a ser um formulário **com
+confirmação automática de recepção para quem escreve** — porque só assim uma
+correção não pode desaparecer sem que ambos os lados saibam.
 
 Com isto sai também **«endereço a confirmar»**, uma das quatro formulações de
 incerteza que a auditoria encontrou em uso ao mesmo tempo (IDENTIDADE.md §6).
