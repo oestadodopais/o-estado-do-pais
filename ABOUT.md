@@ -45,8 +45,9 @@ Four ways this goes wrong, none of which requires anybody to be dishonest:
 - **Problems left alone because nobody counted them.** A loss that never appears
   in a figure never appears on an agenda either.
 - **Responsibility that moves on before the result arrives.** Whoever decided is
-  rarely still in the job by the time the outcome is legible, so the decision and
-  its consequence are never put side by side.
+  rarely still in the job by the time the outcome is legible. The decision and its
+  consequence never get put side by side, so nobody is ever held to what they
+  chose — for the worse or for the better.
 - **Good work going unrecognised.** This is the one people forget. Where nothing
   was measured, someone who genuinely improved things gets no credit for it — and
   what actually worked is lost along with the recognition.
@@ -103,10 +104,14 @@ Then a set of habits that follow from it:
   indicators the European institutions actually use to assess Portugal, with
   their own published thresholds — so we aren't picking the numbers that suit an
   argument.
-- **No rankings of political parties.** Averaging outcomes by party, ignoring
-  which places each party actually governs, produces arithmetic that misleads. It
-  would also be the wrong tool for the job: the aim is to find what works so it
-  can be repeated, not to score teams.
+- **We say who was responsible.** Who governed, when, what they inherited, what
+  they decided, and what they left behind — named, including the party where that
+  is the relevant fact. Knowing who did what, well or badly, is part of the point.
+  The facts settle it. Nobody is protected and nobody is targeted.
+- **But no party league tables.** Averaging outcomes by party across territories
+  that have nothing in common produces arithmetic that misleads. Which party
+  governed a given place, and what happened there, is a fact worth recording. A
+  national scoreboard assembled by averaging those facts is not.
 - **No money from anyone the site measures.** Self-funded, and stated on the page.
 
 ---
@@ -148,6 +153,13 @@ from search engines while the last pieces are finished.
   geographic positions.
 - An archive of ten studies, preserved exactly as they were published.
 - A public corrections log, live from day one.
+
+The archive is kept, not frozen. Studies are preserved byte-for-byte as they were
+published — that is what makes them citable — but the work continues over them:
+they get re-checked as research deepens, and where something turns out to be
+wrong it is corrected in the open, dated, with the old value still visible. The
+document stays as it was; the record around it stays current. Coverage also keeps
+widening — more places, not just more depth in the same one.
 
 **Before launch**
 
