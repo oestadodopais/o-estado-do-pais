@@ -1453,10 +1453,11 @@ a.src-chip:hover::before {
   min-width: 0;
 }
 
+/* É um <section>, e a regra global dá-lhes um padding de topo de página
+   inteira. Aqui são blocos dentro de uma coluna: o fio chega. */
 .linha-bloco {
-  padding-top: 0;
+  padding-top: 18px;
   border-top: 1px solid var(--rule);
-  padding-block-start: 18px;
   display: grid;
   gap: 12px;
 }
