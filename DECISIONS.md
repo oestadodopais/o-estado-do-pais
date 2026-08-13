@@ -1362,6 +1362,35 @@ entre o que a casa transcreve e o que a fonte diz. A conclusão não é apertar 
 portão — é que esta fronteira **só** se atravessa com uma ida à fonte por quem não
 escreveu a linha, e que fechar dívida de proveniência sem essa ida não é fechá-la.
 
+---
+
+### 1.29 As quatro linhas que ficaram sem função, e o que custa retirá-las
+
+Decisão da direcção, 2026-08-13: as quatro linhas de PIB per capita em PPS por
+habitante — Alentejo e UE-27, 2000 e 2024 — saem do livro-razão. Existiam para
+uma coisa só, sustentar a derivação que §1.28 retirou, e não são citadas por
+nenhuma página nem por nenhuma outra linha. Conferido antes de mexer: zero
+referências em `ledger/`, `src/` e `scripts/`, e nenhum `derived_from` a apontar
+para elas.
+
+**O que isto custa, dito em voz alta.** Oito endereços que existiam passam a dar
+404 — quatro linhas em duas edições — e estavam no sitemap submetido ontem. Num
+sítio cuja promessa é que nada desaparece em silêncio, apagar um endereço
+publicado não é um acto neutro.
+
+Fez-se assim mesmo, e por razões datadas: as páginas estiveram no ar cerca de uma
+hora, o domínio tem dias e o Google ainda mal o rastreou, e nada em lado nenhum
+lhes apontava. Não se puseram redireccionamentos: encaminhar oito endereços que
+nunca foram ligados seria maquinaria a fingir que houve leitores. **Se alguma vez
+se retirar uma linha que tenha estado no ar tempo a sério, a decisão não é esta** —
+é redireccionar, ou deixar a página com o registo do que lá esteve.
+
+Os valores não se perdem: `30 800`, `39 900`, `14 400` e `18 400` ficam escritos
+em §1.27 e na aritmética que §1.28 retirou, que é onde um auditor da correcção os
+vai procurar.
+
+Afirmações: 66 → 62. Páginas: 174 → 166.
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
@@ -1599,4 +1628,4 @@ fácil, não para tornar o desonesto impossível.
 5. **Ligar o deploy** e o 301 de `oestadodopais.pt` para o domínio acentuado.
 6. **Em fila, já aceite:** localização de exibição dos números por edição
    (§1.6) — cadeia exacta preservada no livro-razão, renderização localizada.
-7. **Decidir** sobre: tradução da linha de autoria (§1.5) · botão de tema (§1.9) · as quatro linhas de PPS por habitante que ficaram sem página a citá-las (§1.28).
+7. **Decidir** sobre: tradução da linha de autoria (§1.5) · botão de tema (§1.9). As quatro linhas de PPS por habitante foram retiradas (§1.29).
