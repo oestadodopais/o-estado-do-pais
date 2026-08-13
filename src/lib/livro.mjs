@@ -55,8 +55,10 @@ export function descricaoDaLinha(claim, lang) {
   if (claim.document?.title) {
     partes.push(`${claim.document.title} (${claim.document.edition})`);
   }
-  if (claim.access_date) partes.push(`${s.prov.lido}: ${claim.access_date}`);
-  if (claim.reference_date) partes.push(`${s.prov.referencia}: ${claim.reference_date}`);
+  /* «Lido a 2026-08-12», não «Lido a: 2026-08-12» — o rótulo já traz a
+     preposição. A fonte leva dois pontos porque o rótulo é um substantivo. */
+  if (claim.access_date) partes.push(`${s.prov.lido} ${claim.access_date}`);
+  if (claim.reference_date) partes.push(`${s.prov.referencia} ${claim.reference_date}`);
 
   return partes.join(' · ') + '.';
 }
