@@ -8,25 +8,24 @@ value: "77,2"
 unit: "índice (UE-27 = 100)"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
-source: "[a verificar]"
-document:
-  title: "[a verificar]"
-  edition: "[a verificar]"
-source_url: "[a verificar]"
-access_date: "[a verificar]"
+source: null
+document: null
+source_url: null
+access_date: null
 reference_date: "2024"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "[a verificar]"
+excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: null
-derived_from: []
+derivation: "PIB per capita do Alentejo em paridades de poder de compra, dividido pelo da União Europeia a 27 e multiplicado por 100, com uma casa decimal: 30 800 / 39 900 × 100 = 77,19298…. O Eurostat publica este índice arredondado à unidade (77); a casa publica-o com uma casa decimal, calculado a partir dos valores absolutos."
+derivation_en: "Alentejo GDP per capita in purchasing power standards, divided by that of the European Union of 27 and multiplied by 100, to one decimal place: 30 800 / 39 900 × 100 = 77,19298…. Eurostat publishes this index rounded to the unit (77); the house publishes it to one decimal, computed from the absolute values."
+derived_from: ["pib-pps-hab-alentejo-2024", "pib-pps-hab-ue27-2024"]
 # Expressão verificada no build: tem de dar exactamente o valor acima.
-check: null
+check: "round ( pib-pps-hab-alentejo-2024 / pib-pps-hab-ue27-2024 * 100 , 1 )"
 
-study: "alentejo-algarve"
-note: "PIB per capita do Alentejo em paridades de poder de compra. A fonte a montante (organismo e documento) não consta do material de origem. Preencher a partir das fontes do próprio estudo antes de qualquer republicação."
+study: "avaliacao-economica-regional-de-portugal-2026"
+note: "Antes de 2026-08-13 esta linha estava marcada «[a verificar]» com a nota de que a fonte a montante não constava do material de origem. Não constava porque não existe: nenhum documento publica «77,2». O número é derivado, e passa agora a dizê-lo, com a aritmética reavaliada em cada build."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

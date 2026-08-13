@@ -90,6 +90,40 @@ export function eDerivada(claim) {
   return Array.isArray(claim?.derived_from) && claim.derived_from.length > 0;
 }
 
+/** O nome da casa, tal como aparece no campo `source`. */
+export const CASA = 'O Estado do País';
+
+/**
+ * Uma linha cuja origem é o próprio registo da casa — a contagem das correções
+ * publicadas, dos estudos no arquivo, dos municípios com estudo aprofundado.
+ *
+ * Acrescentado a 2026-08-13. Estas linhas traziam `source_url` e `excerpt` a
+ * "[a verificar]" e iam continuar a trazer para sempre: não há documento
+ * externo que publique quantas correções esta casa admitiu. O marcador dizia
+ * «por confirmar» sobre um campo que não pode ser confirmado, o que inflava a
+ * dívida — cinco das vinte e uma linhas eram impossíveis, e uma lista com
+ * impossíveis lá dentro é uma lista que se deixa de ler — e mantinha as cinco
+ * páginas fora do índice (`noindex`) por uma incompletude que não existia.
+ *
+ * A correcção NÃO é um segundo marcador. O Método promete ao leitor que
+ * `[a verificar]` é o único marcador de incerteza do sítio, e essa promessa
+ * fica de pé. É a regra que já existia para as linhas derivadas — `null` não é
+ * buraco quando a proveniência está noutro lado — estendida ao caso em que
+ * esse outro lado é o próprio livro-razão.
+ *
+ * A porta é estreita de propósito: exige o nome da casa em `source` E uma
+ * `derivation` que explique a contagem. Sem as duas, `null` continua a ser um
+ * erro — caso contrário isto seria uma maneira de branquear proveniência em
+ * falta, que é exactamente o que o marcador existe para impedir.
+ */
+export function eDaCasa(claim) {
+  return (
+    claim?.source === CASA &&
+    !ausente(claim?.derivation) &&
+    !eDerivada(claim)
+  );
+}
+
 /**
  * Os campos de proveniência que estão por verificar, pelos nomes do formato.
  *
@@ -244,7 +278,7 @@ export function digitsOf(s) {
  * contêm hífenes, e sem essa regra "a - b" seria ambíguo.
  */
 export function evaluateCheck(expr, { claims, env = COUNTS, selfId = null } = {}) {
-  const bruto = String(expr).replace(/([()])/g, ' $1 ');
+  const bruto = String(expr).replace(/([(),])/g, ' $1 ');
   const tokens = bruto.split(/\s+/).filter(Boolean);
   let i = 0;
 
@@ -275,6 +309,26 @@ export function evaluateCheck(expr, { claims, env = COUNTS, selfId = null } = {}
       return v;
     }
     if (t === '-') return -primary();
+    /* `round ( x , n )` — acrescentado a 2026-08-13. Sem isto, uma linha
+       derivada publicada com menos casas do que a divisão produz não podia ser
+       verificada de todo: 30 800 / 39 900 × 100 = 77,19298…, e o valor publicado
+       é 77,2. A alternativa seria uma tolerância na comparação, que é pior —
+       esconderia precisamente a classe de erro que o check existe para apanhar.
+       O arredondamento diz-se na expressão, não se presume na comparação.
+       Meio para longe do zero, simétrico: Math.round() sozinho trata −0,5 e 0,5
+       de maneiras diferentes. */
+    if (t === 'round') {
+      if (next() !== '(') throw new Error('falta um ( depois de round na expressão check');
+      const v = expression();
+      if (next() !== ',') throw new Error('falta a vírgula das casas decimais em round( … , n )');
+      const casas = next();
+      if (!/^\d+$/.test(String(casas))) {
+        throw new Error(`round( … , n ) precisa de um número inteiro de casas, não "${casas}"`);
+      }
+      if (next() !== ')') throw new Error('falta um ) a fechar round na expressão check');
+      const f = Math.pow(10, Number(casas));
+      return Math.sign(v) * Math.round(Math.abs(v) * f) / f;
+    }
     return valorDe(t);
   }
 
@@ -428,9 +482,19 @@ export function validateLedger() {
     if (ausente(c.derivation) && !ausente(c.derivation_en)) {
       errors.push(`${onde} tem "derivation_en" sem "derivation". A linha portuguesa é a primeira.`);
     }
+    /* Uma linha da casa (contagem do próprio registo) pode deixar em `null` os
+       campos que só um documento externo poderia preencher. Ver eDaCasa(): a
+       porta exige o nome da casa em `source` E uma `derivation`, para que isto
+       não sirva de atalho a proveniência em falta. `source` e `reference_date`
+       continuam obrigatórios — a casa é a fonte, e a data a que a contagem se
+       refere existe sempre. */
+    const daCasa = eDaCasa(c);
+    const NULO_NA_CASA = new Set(['source_url', 'excerpt', 'document']);
+
     for (const campo of CAMPOS_PROVENIENCIA) {
       const v = c[campo];
       if (derivada && v === null) continue; // legítimo: a proveniência é a das origens
+      if (daCasa && v === null && NULO_NA_CASA.has(campo)) continue;
       if (campo === 'document') {
         if (v === null || typeof v !== 'object') {
           errors.push(`${onde} falta "document" (precisa de title e edition).`);

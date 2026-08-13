@@ -8,16 +8,16 @@ value: "82"
 unit: "índice (UE-27 = 100)"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
-source: "[a verificar]"
+source: "Eurostat"
 document:
-  title: "[a verificar]"
-  edition: "[a verificar]"
-source_url: "[a verificar]"
-access_date: "[a verificar]"
+  title: "Gross domestic product (GDP) at current market prices by NUTS 2 region"
+  edition: "nama_10r_2gdp, actualizado 2026-02-10"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10r_2gdp?format=JSON&lang=EN&unit=PPS_EU27_2020_HAB&unit=PPS_HAB_EU27_2020&geo=PT&geo=PT15&geo=PT1A&geo=PT1B&geo=PT1C&geo=PT30&geo=EU27_2020&sinceTimePeriod=2000"
+access_date: "2026-08-13"
 reference_date: "2024"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "[a verificar]"
+excerpt: "nama_10r_2gdp — unit PPS_HAB_EU27_2020 — geo PT (Portugal) — 2024: 82"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -26,7 +26,7 @@ derived_from: []
 check: null
 
 study: "avaliacao-economica-regional-de-portugal-2026"
-note: "PIB per capita de Portugal em paridades de poder de compra. Série publicada como «PIB per capita vs UE-27, PPS, 2024, provisório». O valor de 2024 é provisório. A fonte a montante (organismo e documento) não consta do material de origem. Preencher a partir das fontes do próprio estudo antes de qualquer republicação."
+note: "Índice do PIB per capita em PPS, UE-27 = 100, tal como o Eurostat o publica (arredondado à unidade). Código NUTS confirmado contra as etiquetas da própria resposta do Eurostat: PT = Portugal. Proveniência preenchida a 2026-08-13, contra a fonte primária."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

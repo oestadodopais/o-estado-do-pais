@@ -51,7 +51,8 @@ corrections: []
    de escrita nas chaves);
 3. faltar `value`, `unit`, `study` ou `corrections`;
 4. `value` não tiver nenhum algarismo;
-5. faltar qualquer campo de proveniência numa linha **não derivada**;
+5. faltar qualquer campo de proveniência numa linha **não derivada** — com uma
+   excepção, a *linha da casa* (ver abaixo);
 6. `study` não constar de `src/data/studies.mjs`;
 7. `derived_from` apontar para uma afirmação que não existe;
 8. uma linha derivada não explicar a aritmética em `derivation`;
@@ -60,6 +61,29 @@ corrections: []
    nenhuma destas;
 10. uma expressão `check` não der exactamente o valor publicado;
 11. houver `derivation` sem `derivation_en`, ou o contrário.
+
+## A linha da casa
+
+Algumas linhas contam o próprio registo: quantas correções foram publicadas,
+quantos estudos estão no arquivo, quantos municípios têm estudo aprofundado.
+`source` é **O Estado do País**, porque a casa é mesmo a fonte, e nenhum
+documento externo publica estes números — não há URL para citar nem frase para
+transcrever.
+
+Nessas linhas, `source_url`, `excerpt` e `document` ficam a **null**. Não é um
+buraco: é a mesma regra que já valia para as linhas derivadas — `null` significa
+que a proveniência está noutro lado, e aqui esse outro lado é o próprio
+livro-razão. Antes de 2026-08-13 estes campos traziam «a verificar», que era
+falso em dois sentidos: prometia uma confirmação que nunca poderia acontecer, e
+punha cinco páginas fora do índice por uma incompletude inexistente.
+
+**Não é um segundo marcador.** `[a verificar]` continua a ser o único marcador de
+incerteza do sítio, como o Método promete.
+
+A porta é estreita de propósito. `null` só é aceite numa linha que traga o nome
+da casa em `source` **e** uma `derivation` que explique a contagem. Sem as duas,
+o build falha — de outro modo isto seria uma maneira de branquear proveniência em
+falta, que é exactamente o que o marcador existe para impedir.
 
 ## Cada linha tem uma página
 
