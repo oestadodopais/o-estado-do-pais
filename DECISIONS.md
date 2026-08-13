@@ -869,15 +869,36 @@ método, 404, rodapé, registo de correções, e a grelha `.figuras`. Seis tipos
 página resolvidos um a um. Daí [`IDENTIDADE.md`](IDENTIDADE.md), que é a regra
 para o sétimo, e que passa a ganhar ao estudo onde os dois discordem.
 
-**O livro-razão está a dois terços, e a primeira página está construída sobre o
-terço que falta.** 41 das 62 linhas têm proveniência completa; 21 têm um campo a
-`[a verificar]` — e são essas que a primeira página cita, o que explica os 11
-selos a tracejado. Dividem-se em **nove baratas** (contagens sobre os próprios
-ficheiros do sítio e a CAOP 2025, já conferidas pelo build e já documentadas no
-colofão do estudo — nunca deviam ter dito «fonte por confirmar») e **doze
-verdadeiras** (`pib-pc-*`, `agua-nao-faturada`, `ciclo-substituicao-condutas`,
-`avisos-pt2030-*`, `saldo-natural`), que exigem voltar às fontes primárias e,
-pela regra da casa, um verificador que não as escreveu.
+**O livro-razão está a dois terços, e a dívida está toda nos instrumentos.**
+41 das 62 linhas têm proveniência completa; 21 têm um campo a `[a verificar]`.
+Dessas 21, **16 são citadas** por alguma página e **5 estão em stock** — deixaram
+de ser citadas quando a primeira página passou para o painel europeu. As 16
+dividem-se em **nove baratas** (contagens sobre os próprios ficheiros do sítio e
+a CAOP 2025, já conferidas pelo build e já documentadas no colofão do estudo —
+nunca deviam ter dito «fonte por confirmar») e **sete verdadeiras**, que são
+todas a mesma família: `pib-pc-*`, o PIB per capita regional em PPS que alimenta
+a régua da convergência. Uma fonte, um acesso, um padrão de excerto. Exigem
+voltar à fonte primária e, pela regra da casa, um verificador que não as
+escreveu.
+
+**Correcção ao que esta secção dizia primeiro.** A auditoria foi feita contra o
+sítio publicado, e o sítio publicado estava **quatro commits atrás do HEAD** —
+`main` estava `ahead 4` de `origin/main`, e o deploy dispara no push. A página
+auditada era a das cinco medidas antigas; a página que está no repositório é a
+das oito medidas do painel europeu, e **as oito têm proveniência completa**.
+Dois achados caem com isso: «11 de 11 selos por confirmar na primeira página»
+(no HEAD são zero) e a grelha de cinco peças em quatro colunas (no HEAD são
+oito, e oito enchem). O resto da auditoria mantém-se, e isso é verificável:
+esses quatro commits **não tocaram em `src/styles/` nem em `src/components/`** —
+só em `figuras.mjs`, `HomeView.astro`, `strings.mjs` e no livro-razão. O selo
+continua a ser um `<span>`, o livro-razão continua sem rota, e F1 continua a ser
+o que impede o lançamento.
+
+**E daí um achado que a auditoria não procurava:** um sítio cuja proposta é a
+frescura e a proveniência esteve quatro commits atrás do seu próprio repositório
+sem que nada o dissesse. A edição no cabeçalho continuava a anunciar 12.08.2026 e
+estava certa a respeito de si própria — não há nada que compare o que está no ar
+com o que está em `main`. Entra no portão de lançamento.
 
 **Duas decisões da direção**, 13.08.2026:
 
