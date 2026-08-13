@@ -15,6 +15,7 @@
  */
 import Base from '../layouts/Base.astro';
 import RegistoCorrecoes from '../components/RegistoCorrecoes.astro';
+import CaixaDeCorrecoes from '../components/CaixaDeCorrecoes.astro';
 import Frase from '../components/Frase.astro';
 import { SECOES } from '../data/metodo.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -85,6 +86,9 @@ const path = routePath('metodo', lang);
               );
             })}
 
+            {/* A caixa vem antes do registo: primeiro o que o leitor pode
+                fazer, depois o que já foi corrigido. */}
+            {sec.registoDeCorrecoes && <CaixaDeCorrecoes lang={lang} />}
             {sec.registoDeCorrecoes && <RegistoCorrecoes lang={lang} />}
           </div>
         </section>

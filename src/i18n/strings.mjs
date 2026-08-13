@@ -169,6 +169,17 @@ export const STRINGS = {
       colunaMotivo: 'Motivo',
       colunaAfirmacao: 'Afirmação',
       livroLink: 'Ver o livro-razão',
+
+      caixaTitulo: 'Escrever uma correção',
+      caixaNota:
+        'Escreva aqui e o botão abre o seu programa de correio com o texto já dentro. Nada é enviado deste sítio: a mensagem sai de si, para si ficar com uma cópia.',
+      caixaExemplo:
+        'Que número ou frase está errado, em que página o encontrou, e o que deveria dizer. Se souber, deixe a fonte.',
+      caixaBotao: 'Abrir no meu programa de correio',
+      caixaVazia: 'Escreva primeiro o que está errado.',
+      caixaComoFunciona:
+        'Se o botão não abrir nada, o seu computador não tem programa de correio configurado. Nesse caso copie o endereço acima e escreva de onde costuma escrever.',
+      caixaAssunto: 'Correção',
     },
 
     livro: {
@@ -447,6 +458,17 @@ export const STRINGS = {
       colunaMotivo: 'Reason',
       colunaAfirmacao: 'Claim',
       livroLink: 'See the ledger',
+
+      caixaTitulo: 'Write a correction',
+      caixaNota:
+        'Write here and the button opens your own mail program with the text already in it. Nothing is sent from this site: the message leaves from you, so you keep a copy of it.',
+      caixaExemplo:
+        'Which figure or sentence is wrong, on which page you found it, and what it should say. If you know the source, leave it.',
+      caixaBotao: 'Open in my mail program',
+      caixaVazia: 'Write what is wrong first.',
+      caixaComoFunciona:
+        'If the button opens nothing, your computer has no mail program set up. In that case copy the address above and write from wherever you normally write.',
+      caixaAssunto: 'Correction',
     },
 
     livro: {
