@@ -1398,6 +1398,22 @@ a.src-chip:hover::before {
   text-decoration-color: currentColor;
 }
 
+/* O endereço das correções. Vai na letra da prosa, não na monoespaçada: a
+   monoespaçada é a marca de um valor do livro-razão (IDENTIDADE §1), e um
+   endereço de correio não é uma medição. Fica sublinhado porque é uma ligação,
+   e à vista porque tem de se poder copiar quando o mailto não abre nada. */
+.ligacao-email {
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--rule-strong);
+  overflow-wrap: anywhere;
+}
+.ligacao-email:hover {
+  text-decoration-color: currentColor;
+}
+
 /* Descarga dos dados de um instrumento. Fica na camada Fundo, ao lado da
    proveniência: quem quer os números quer também saber de onde vieram. */
 .ligacao-dados {
