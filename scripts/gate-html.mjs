@@ -33,6 +33,7 @@ import {
   parsePtNumber,
   motivoDaEntrada,
   derivacaoDaLinha,
+  notaDeBandeira,
   provenienciaIncompleta,
 } from '../src/lib/ledger.mjs';
 import { VERBATIM, normalizeWhitespace } from '../src/data/verbatim.mjs';
@@ -352,6 +353,8 @@ const CAMPOS_DA_LINHA = new Set([
   'access_date',
   'reference_date',
   'excerpt',
+  'source_flag',
+  'source_flag_note',
   'derivation',
   'derived_from',
   'check',
@@ -359,7 +362,7 @@ const CAMPOS_DA_LINHA = new Set([
 ]);
 
 /** Os campos cuja versão depende da língua da edição. */
-const CAMPOS_DA_LINHA_POR_LINGUA = new Set(['derivation']);
+const CAMPOS_DA_LINHA_POR_LINGUA = new Set(['derivation', 'source_flag_note']);
 
 /**
  * `derived_from` é uma lista, e o gabarito desenha-a como uma lista de
@@ -395,6 +398,8 @@ function campoDaLinha(claim, campo, lang) {
       return claim.document?.edition ?? null;
     case 'derivation':
       return derivacaoDaLinha(claim, lang);
+    case 'source_flag_note':
+      return notaDeBandeira(claim, lang);
     case 'derived_from':
       return Array.isArray(claim.derived_from) && claim.derived_from.length
         ? claim.derived_from.join(' ')

@@ -63,6 +63,11 @@ export const LEDGER_DIR = encontraLivroRazao();
 /** Marcador de campo por verificar. É aceite; inventar um valor não é. */
 export const POR_VERIFICAR = '[a verificar]';
 
+/** Uma bandeira da fonte é um caractere qualquer; não pode virar sintaxe. */
+function escapaRegex(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 const CAMPOS = [
   'id',
   'value',
@@ -73,6 +78,9 @@ const CAMPOS = [
   'access_date',
   'reference_date',
   'excerpt',
+  'source_flag',
+  'source_flag_note',
+  'source_flag_note_en',
   'derivation',
   'derivation_en',
   'derived_from',
@@ -174,6 +182,25 @@ export function derivacaoDaLinha(claim, lang) {
   if (!claim) return null;
   if (lang === 'en') return claim.derivation_en ?? null;
   if (lang === 'pt') return claim.derivation ?? null;
+  return null;
+}
+
+/**
+ * O que a fonte diz sobre o estado do próprio valor, na língua de uma edição.
+ *
+ * `source_flag` é a bandeira tal como a fonte a escreve — um caractere, e vai
+ * já dentro do `excerpt`, porque faz parte do que a fonte diz. Este campo
+ * existe para que a página possa **dizer por palavras** o que a bandeira
+ * significa, sem inventar um segundo marcador de incerteza (IDENTIDADE.md §6)
+ * nem um terceiro estado de selo (§5) nem um acento novo (§2).
+ *
+ * A nota é prosa da casa e segue a regra de §1.17, como `derivation`: existe
+ * nas duas línguas ou em nenhuma, e não há recurso à outra.
+ */
+export function notaDeBandeira(claim, lang) {
+  if (!claim) return null;
+  if (lang === 'en') return claim.source_flag_note_en ?? null;
+  if (lang === 'pt') return claim.source_flag_note ?? null;
   return null;
 }
 
@@ -481,6 +508,50 @@ export function validateLedger() {
     }
     if (ausente(c.derivation) && !ausente(c.derivation_en)) {
       errors.push(`${onde} tem "derivation_en" sem "derivation". A linha portuguesa é a primeira.`);
+    }
+    /* A bandeira da fonte. Mesma regra das duas línguas — e mais uma: uma nota
+       sem bandeira é a casa a dizer que a fonte marcou alguma coisa sem dizer o
+       que a fonte escreveu, e uma bandeira sem nota é um caractere solto que o
+       leitor não tem como interpretar. */
+    if (!ausente(c.source_flag_note) && ausente(c.source_flag_note_en)) {
+      errors.push(
+        `${onde} tem "source_flag_note" mas não tem "source_flag_note_en". A nota aparece na ` +
+          `página da linha nas duas edições. Não há recurso à outra língua.`,
+      );
+    }
+    if (ausente(c.source_flag_note) && !ausente(c.source_flag_note_en)) {
+      errors.push(
+        `${onde} tem "source_flag_note_en" sem "source_flag_note". A linha portuguesa é a primeira.`,
+      );
+    }
+    if (!ausente(c.source_flag) && ausente(c.source_flag_note)) {
+      errors.push(
+        `${onde} declara a bandeira "${c.source_flag}" da fonte e não a explica em ` +
+          `"source_flag_note". Uma bandeira que o leitor não sabe ler não é proveniência.`,
+      );
+    }
+    if (ausente(c.source_flag) && !ausente(c.source_flag_note)) {
+      errors.push(
+        `${onde} explica uma bandeira em "source_flag_note" sem dizer, em "source_flag", ` +
+          `qual é a bandeira que a fonte escreve.`,
+      );
+    }
+    /* A bandeira faz parte do que a fonte diz: se está declarada, tem de estar
+       no excerto, que é a transcrição. Sem isto, uma linha podia declarar a
+       bandeira no campo novo e continuar a transcrever a fonte sem ela — que é
+       exactamente o defeito que este campo veio fechar (§1.28). */
+    if (!ausente(c.source_flag) && typeof c.excerpt === 'string' && c.excerpt !== POR_VERIFICAR) {
+      /* A bandeira vem DEPOIS do valor, separada por um espaço — é assim que a
+         fonte a escreve, e é a única posição em que ela quer dizer alguma coisa.
+         Procurá-la em qualquer sítio da cadeia não conferia nada: um "p" existe
+         dentro de "nama_10r_2gdp", e a primeira versão desta regra dava-se por
+         satisfeita com ele. Uma conferência que passa sempre não é conferência. */
+      if (!new RegExp(`\\s${escapaRegex(String(c.source_flag))}$`).test(c.excerpt.trimEnd())) {
+        errors.push(
+          `${onde} declara a bandeira "${c.source_flag}" mas o "excerpt" não termina com ela. ` +
+            `A fonte escreve a bandeira a seguir ao valor, separada por um espaço: transcreva-a assim.`,
+        );
+      }
     }
     /* Uma linha da casa (contagem do próprio registo) pode deixar em `null` os
        campos que só um documento externo poderia preencher. Ver eDaCasa(): a

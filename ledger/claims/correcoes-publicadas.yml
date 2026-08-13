@@ -4,7 +4,7 @@
 id: "correcoes-publicadas"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "1"
+value: "3"
 unit: "correções"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.

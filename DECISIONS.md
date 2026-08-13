@@ -1237,6 +1237,131 @@ diz-se na expressão; não se presume na comparação.**
 
 Dívida: 21 → 9. Linhas derivadas: 10 → 12. Aritmética reavaliada no build: 14 → 16.
 
+---
+
+### 1.28 A bandeira que a fonte punha e o livro-razão não
+
+As sete linhas do PIB per capita fecharam-se em §1.27 contra a fonte primária, e
+passaram de selo tracejado a selo cheio. Fecharam-nas quem as escreveu. O plano
+de lançamento dizia, desde 2026-08-13 de manhã, que essas sete precisavam de
+**«um verificador que não as tenha escrito»** — e a promessa ficou por cumprir
+dentro da própria sessão que as fechou. Antes de publicar, cumpriu-se.
+
+**Como se verificou.** Duas extracções independentes, cegas — nenhuma soube que
+valores a casa afirmava, para que nenhuma pudesse confirmar o que nunca viu — e
+por vias diferentes de propósito: uma pela API JSON-stat, outra pelo ficheiro
+SDMX-TSV a granel. A concordância entre duas vias é ela própria prova; a
+discordância teria apontado a linha exacta.
+
+**Os nove valores estão certos**, e com eles três coisas que podiam ter estado
+erradas sem se dar por isso:
+
+- **Os dois códigos de unidade não estão trocados.** `PPS_EU27_2020_HAB` é
+  *«per inhabitant»* (valor absoluto); `PPS_HAB_EU27_2020` é *«per inhabitant in
+  percentage of the EU27 (from 2020) average»* (índice). São quase anagramas um
+  do outro e querem dizer coisas diferentes. Cada linha usa o seu.
+- **As etiquetas NUTS batem certo** com o dicionário do próprio Eurostat.
+- **A data do conjunto bate certo**: `UPDATE_DATA` a 2026-02-10, como a edição diz.
+
+**E apanhou-se o que o portão não pode apanhar.** Todas as células portuguesas de
+2024 trazem a bandeira `p` — **provisório** — e o livro-razão não registava
+nenhuma. O `excerpt`, cuja função inteira é ser o que a fonte diz palavra por
+palavra, dizia `2024: 82` onde a fonte diz `82 p`.
+
+Isto é exactamente o limite 9 de §2.3, a acontecer: *o portão prova que o excerto
+da página é o excerto da linha; não prova que o excerto da linha é o que a fonte
+diz.* Nenhuma quantidade de portão apanhava isto. Só uma ida à fonte por outro
+lado apanhava — que é o argumento da regra que já estava escrita.
+
+**Porque é provisório, e até quando.** Segundo os metadados do próprio Eurostat
+para as contas regionais (ESMS `reg_eco10`): os dados regionais chegam a **T+12
+meses** e divulgam-se **entre 1 e 15 de Fevereiro** (§14.1, §8.1) — 2024 é a
+primeira publicação do ano de referência. O Eurostat **reajusta os valores
+regionais ao PIB nacional uma vez por ano** (§18.6), enquanto o nacional é
+revisto ao longo do ano, sobretudo entre Maio e Outubro (§15.3). Os números de
+2024 estão portanto presos a uma versão do PIB nacional de Fevereiro de 2026, e
+serão reajustados a outra em **Fevereiro de 2027**. Não é um risco vago: tem data.
+
+*Limite honesto:* o ESMS não documenta política de bandeira provisória para as
+primeiras divulgações — §15.2 só descreve o `b` de quebra de série. A bandeira, as
+datas e o reajuste anual estão verificados; que seja o calendário a desencadear o
+`p` é leitura da casa, coerente com a prova mas não afirmada pelo Eurostat.
+
+**A assimetria que fica por explicar.** O agregado UE-27 de 2024 **não** leva
+bandeira, ao contrário de todas as células portuguesas do mesmo conjunto e do
+mesmo ano. As duas vias confirmam-no. Nada do que se leu explica porquê, e a casa
+não lhe atribui razão — fica registado como por explicar, na nota da linha.
+
+**O que mudou nos excertos.** Seis passaram a trazer a bandeira na notação da
+própria fonte (`82 p`), separada por espaço como o Eurostat a escreve. Dois
+excertos da UE-27 perderam uma paráfrase: diziam `(União Europeia (27))` onde o
+dicionário do Eurostat diz `European Union - 27 countries (from 2020)` — tradução
+da casa dentro do único campo que promete não traduzir nada.
+
+#### A bandeira passou a ser um campo, e a dizer-se por palavras
+
+Um `p` no excerto é fiel e é opaco: quem não conhece as bandeiras do Eurostat lê
+uma letra solta. Mas as três saídas óbvias estavam todas fechadas por
+`IDENTIDADE.md` — **sem acento novo** (§2), **sem segundo marcador de incerteza**
+(§6), **sem terceiro estado de selo** (§5). O que sobra é dizê-lo por palavras, e
+é o que o próprio §1 já exemplifica: *«O valor de 2024 é provisório.»*
+
+Então a linha ganhou três campos — `source_flag`, a bandeira tal como a fonte a
+escreve; e `source_flag_note` / `source_flag_note_en`, a prosa da casa que a
+explica, com a regra de §1.17: as duas línguas ou nenhuma. A nota aparece na
+coluna do aparelho da página da linha, sob **«Estado na fonte»**, na camada Fundo
+(§4) — não junto ao número, porque o selo já é a porta para aqui (§5.1).
+
+O campo entra pela sexta origem, `data-linha-*`: é conferido carácter a carácter
+contra o livro-razão, como todos os outros. A lista de excepções não cresceu.
+
+**A regra que escrevi primeiro não conferia nada.** A primeira versão exigia que
+o excerto *contivesse* a bandeira — `excerpt.includes("p")`. Passa sempre: existe
+um `p` dentro de `nama_10r_2gdp`. O teste de corrupção apanhou-o à primeira
+tentativa, o que é o argumento inteiro para o teste de corrupção existir: uma
+conferência que nunca falha é indistinguível de nenhuma conferência, e lê-se na
+mesma como diligência. Agora a bandeira confere-se **no fim** do excerto, a seguir
+ao valor, que é a única posição em que quer dizer alguma coisa.
+
+Sete corrupções deliberadas, cada uma apanhada: bandeira sem excerto que a traga;
+bandeira só dentro de `nama_10r_2gdp`; bandeira sem nota; nota numa só língua;
+nota inglesa sem a portuguesa; página a parafrasear a nota; e nota publicada como
+se fosse o excerto.
+
+#### A precisão a mais saiu, e é a primeira errata pública
+
+`77,2` publicava um décimo de ponto calculado sobre um numerador provisório e um
+denominador que não o é. A aritmética estava certa; a precisão não. O Eurostat
+publica **77**, e é isso que se passa a publicar — a linha deixa de ser derivada e
+passa a citar a fonte directamente, como as outras cinco do mesmo índice. O mesmo
+para **78,3 → 78** em 2000.
+
+Duas entradas `correcao`, e são as primeiras do sítio depois da de origem: o
+registo passa de 1 para 3. As duas linhas de distância seguem por arrastamento
+(23 e 22) e **não levam entrada própria** — a regra já estava escrita em
+`ledger/README.md`: recontagens derivadas que o build reavalia não se registam em
+separado, ou abafavam as correções, que é o que o registo existe para mostrar.
+
+Foi o portão a apanhar o arrastamento: `correcoes-publicadas` dizia 1 e a contagem
+dava 3, e nada se construía até baterem certo.
+
+Com isto, `round ( x , n )` — acrescentado ontem em §1.27 para sustentar
+exactamente a casa decimal que hoje sai — fica sem nenhuma linha a usá-lo. Não se
+remove: fica registado que ficou por usar, e que a justificação que o trouxe durou
+um dia. Linhas derivadas: 12 → 10. Aritmética reavaliada no build: 16 → 14.
+
+**O que fica para a direcção:** as quatro linhas de PPS por habitante que serviam
+de origem à derivação retirada continuam no livro-razão, agora sem nenhuma página
+a citá-las. São afirmações válidas com proveniência completa; a decisão de as
+manter, citar ou retirar é editorial, não mecânica.
+
+**O que isto ensina sobre o método.** É a primeira vez que a regra de revisão por
+outra família apanha um **valor**, e não uma peça de maquinaria (§1.24 apanhou o
+portão). E apanhou-o no sítio onde o sistema é estruturalmente cego: a fronteira
+entre o que a casa transcreve e o que a fonte diz. A conclusão não é apertar o
+portão — é que esta fronteira **só** se atravessa com uma ida à fonte por quem não
+escreveu a linha, e que fechar dívida de proveniência sem essa ida não é fechá-la.
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
@@ -1474,4 +1599,4 @@ fácil, não para tornar o desonesto impossível.
 5. **Ligar o deploy** e o 301 de `oestadodopais.pt` para o domínio acentuado.
 6. **Em fila, já aceite:** localização de exibição dos números por edição
    (§1.6) — cadeia exacta preservada no livro-razão, renderização localizada.
-7. **Decidir** sobre: tradução da linha de autoria (§1.5) · botão de tema (§1.9).
+7. **Decidir** sobre: tradução da linha de autoria (§1.5) · botão de tema (§1.9) · as quatro linhas de PPS por habitante que ficaram sem página a citá-las (§1.28).
