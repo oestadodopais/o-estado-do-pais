@@ -28,6 +28,7 @@ import {
   eDaCasa,
   eDerivada,
   derivacaoDaLinha,
+  notaDeBandeira,
   POR_VERIFICAR,
 } from '../lib/ledger.mjs';
 import { caminhoDaLinha, caminhoDoLivro, tituloDaLinha, descricaoDaLinha } from '../lib/livro.mjs';
@@ -46,6 +47,10 @@ const incompleta = provenienciaIncompleta(claim);
 const daCasa = eDaCasa(claim);
 const emFalta = camposPorVerificar(claim);
 const derivacao = derivacaoDaLinha(claim, lang);
+/* O que a fonte diz sobre o estado do seu próprio valor. Fica na camada Fundo
+   (IDENTIDADE.md §4), ao pé da proveniência, e não junto ao número: o selo já é
+   a porta para aqui (§5.1). Sem cor nova (§2), sem segundo marcador (§6). */
+const bandeira = notaDeBandeira(claim, lang);
 
 /* O endereço só é ligação quando é mesmo um endereço. "[a verificar]" não é. */
 const url = typeof claim.source_url === 'string' && /^https?:\/\//.test(claim.source_url)
@@ -212,6 +217,17 @@ const estudo = studyLabel(claim.study, lang);
           )
         }
       </dl>
+
+      {
+        bandeira && (
+          <div class="aparelho-estado">
+            <span class="linha-campo-k">{s.livro.linha.bandeiraK}</span>
+            <p class="aparelho-nota">
+              <CampoDaLinha id={id} campo="source_flag_note" valor={bandeira} lang={lang} />
+            </p>
+          </div>
+        )
+      }
 
       <div class:list={['aparelho-estado', incompleta && 'aparelho-estado-incompleto']}>
         <span class="linha-campo-k">

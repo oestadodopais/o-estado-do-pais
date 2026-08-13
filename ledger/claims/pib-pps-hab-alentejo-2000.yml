@@ -27,7 +27,7 @@ derived_from: []
 check: null
 
 study: "avaliacao-economica-regional-de-portugal-2026"
-note: "PIB per capita em paridades de poder de compra, valor absoluto. Serve de origem ao índice do Alentejo, que a casa publica com uma casa decimal e o Eurostat publica arredondado à unidade. O código NUTS foi confirmado contra as etiquetas da própria resposta do Eurostat: PT1C = Alentejo."
+note: "PIB per capita em paridades de poder de compra, valor absoluto. Serviu de origem ao índice do Alentejo enquanto a casa o publicou com uma casa decimal; desde 2026-08-13 o índice publica-se como o Eurostat o publica, arredondado à unidade, e esta linha fica pelo seu próprio valor. O código NUTS foi confirmado contra as etiquetas da própria resposta do Eurostat: PT1C = Alentejo. Valor reconferido a 2026-08-13 por extracção independente em duas vias — API JSON-stat e ficheiro SDMX-TSV — por quem não escreveu a linha; ambas devolveram o mesmo valor, a mesma etiqueta de região e a mesma data de actualização do conjunto (2026-02-10)."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

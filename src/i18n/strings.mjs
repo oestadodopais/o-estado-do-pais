@@ -233,6 +233,7 @@ export const STRINGS = {
         historicoVazio: 'Esta linha nunca foi corrigida nem actualizada.',
         historicoNota:
           'Nada é apagado. Um valor que estava errado fica à vista, datado, com o motivo — e um valor que deixou de estar certo porque o que mede mudou fica registado como atualização, que não é a mesma coisa.',
+        bandeiraK: 'Estado na fonte',
         incompletaK: 'O que falta nesta linha',
         incompletaV:
           'Os campos assinalados não foram confirmados contra a fonte. O valor publicado não muda por isso; o que falta é a prova documental, e enquanto faltar a linha fica fora do índice dos motores de busca.',
@@ -522,6 +523,7 @@ export const STRINGS = {
         historicoVazio: 'This row has never been corrected or updated.',
         historicoNota:
           'Nothing is deleted. A value that was wrong stays in plain sight, dated, with the reason — and a value that stopped being right because what it measures changed is recorded as an update, which is not the same thing.',
+        bandeiraK: 'Status at source',
         incompletaK: 'What is missing from this row',
         incompletaV:
           'The marked fields have not been confirmed against the source. The published value does not change because of it; what is missing is the documentary proof, and while it is missing the row stays out of search engine indexes.',
