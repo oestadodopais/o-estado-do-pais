@@ -1109,6 +1109,35 @@ confirmar — é o passo seguinte, e sete delas (a família `pib-pc-*`) exigem v
 âncora» está cumprida hoje — 152 selos, 152 âncoras, 0 ligações internas
 quebradas em 2.563 — mas ainda não está imposta por máquina.
 
+### 1.25 O escudo saiu: o sítio passou a poder ser indexado
+
+**Decisão da direção, 13.08.2026.** O `X-Robots-Tag: noindex` que cobria todos os
+endereços desde o primeiro dia foi retirado do domínio canónico. Foi tomada
+antes das últimas etapas do plano de lançamento — as 21 linhas com dívida de
+proveniência, o `gate:identidade`, os defeitos pequenos — e o raciocínio fica
+escrito, porque é o contrário da ordem que estava planeada:
+
+- **o que não está pronto exclui-se sozinho.** As 21 linhas incompletas levam
+  `noindex` e ficam fora do sitemap por leitura do próprio livro-razão (§1.24);
+  as páginas de estudo por escrever levam `noindex` desde §1.8. Das 166 páginas
+  construídas, **62 não se oferecem ao índice e 104 oferecem-se**, das quais 90
+  estão no sitemap;
+- **o que falta é de aparência, não de honestidade** — defeitos de desenho e o
+  instrumento do mapa sem selos. Nada do que fica indexado é falso;
+- **a indexação demora a começar e é refeita.** Um motor de busca revisita; nada
+  do que for indexado hoje fica preso errado amanhã. O escudo custava tempo que
+  não se recupera.
+
+**O alias `*.vercel.app` mantém o escudo.** É a mesma página no mesmo servidor,
+e sem isso passava a concorrer com o domínio nos motores de busca. O `canonical`
+de cada página já apontava para o domínio acentuado; o cabeçalho fecha a porta em
+vez de a deixar entreaberta com um sinal.
+
+**Os 13 documentos de estudo ficam indexáveis e fora do sitemap.** São obra já
+publicada, alojada aqui intacta: quem os encontrar encontra o estudo, que é o
+que existe para ser lido. Quando as páginas de leitura forem escritas, passam
+elas a ser o endereço canónico e o documento passa a apontar-lhes.
+
 ---
 
 ## 2. Como funciona o portão, e o que ele não vê
