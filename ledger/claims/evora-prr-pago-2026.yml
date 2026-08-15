@@ -15,6 +15,7 @@ document:
   title: "Listagem de entidades PRR"
   edition: "instantâneo 20260803-1828"
   locator: null
+  kind: "ficheiro"
 source_url: "https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3"
 access_date: "2026-08-04"
 reference_date: "2026-08-03"
@@ -40,14 +41,9 @@ note: "Soma sobre o registo público de entidades do PRR. Não há frase para tr
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections:
   - date: "2026-08-15"
-    kind: "actualizacao"
-    old_value: "83 912 476,83"
-    new_value: "83 912 476,83"
-    reason: "endereço da fonte alterado: https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260803-182847-df87c78d/listagem-de-entidades-prr-20260803.xlsx → https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3. O endereço antigo devolve HTTP 404 desde 2026-08-15. O publicador substitui o ficheiro todos os dias e o endereço datado é rotativo por desenho, por isso a linha passa a citar o endereço permanente do recurso. O valor não muda: continua a ser a soma sobre o instantâneo de 2026-08-03, que já não é servido — o que o endereço novo serve é um instantâneo posterior."
-    reason_en: "source address changed: https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260803-182847-df87c78d/listagem-de-entidades-prr-20260803.xlsx → https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3. The old address has returned HTTP 404 since 2026-08-15. The publisher replaces the file daily and the dated address is rotating by design, so the row now cites the resource's permanent address. The value does not change: it is still the sum over the 2026-08-03 snapshot, which is no longer served — what the new address serves is a later snapshot."
-  - date: "2026-08-15"
-    kind: "actualizacao"
-    old_value: "83 912 476,83"
-    new_value: "83 912 476,83"
-    reason: "endereço da fonte alterado: https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260803-182847-df87c78d/listagem-de-entidades-prr-20260803.xlsx → https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3. O endereço antigo devolve HTTP 404 desde 2026-08-15. O publicador substitui o ficheiro todos os dias e o endereço datado é rotativo por desenho, por isso a linha passa a citar o endereço permanente do recurso. O valor não muda: continua a ser a soma sobre o instantâneo de 2026-08-03, que já não é servido — o que o endereço novo serve é um instantâneo posterior."
-    reason_en: "source address changed: https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260803-182847-df87c78d/listagem-de-entidades-prr-20260803.xlsx → https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3. The old address has returned HTTP 404 since 2026-08-15. The publisher replaces the file daily and the dated address is rotating by design, so the row now cites the resource's permanent address. The value does not change: it is still the sum over the 2026-08-03 snapshot, which is no longer served — what the new address serves is a later snapshot."
+    kind: "proveniencia"
+    field: "source_url"
+    old_value: "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260803-182847-df87c78d/listagem-de-entidades-prr-20260803.xlsx"
+    new_value: "https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3"
+    reason: "O endereço antigo devolve HTTP 404 desde 2026-08-15. O publicador substitui o ficheiro todos os dias e o endereço datado é rotativo por desenho, por isso a linha passa a citar o endereço permanente do recurso. O valor publicado não muda: continua a ser a soma sobre o instantâneo de 2026-08-03, que já não é servido — o que o endereço novo serve é um instantâneo posterior."
+    reason_en: "The old address has returned HTTP 404 since 2026-08-15. The publisher replaces the file daily and the dated address is rotating by design, so the row now cites the resource's permanent address. The published value does not change: it is still the sum over the 2026-08-03 snapshot, which is no longer served — what the new address serves is a later snapshot."

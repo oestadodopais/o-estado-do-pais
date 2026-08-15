@@ -17,7 +17,7 @@ import { fileURLToPath } from 'node:url';
 import { load } from 'js-yaml';
 
 import { STUDY_IDS, COUNTS } from '../data/studies.mjs';
-import { KINDS } from '../data/correcoes.mjs';
+import { KINDS, CAMPOS_DE_PROVENIENCIA } from '../data/correcoes.mjs';
 
 /**
  * Onde está o livro-razão.
@@ -100,7 +100,23 @@ const CAMPOS = [
  * cara de campo preenchido. Antes de `locator` existir, este bloco não tinha
  * lista nenhuma: `title` e `edition` eram exigidos e o resto era ignorado.
  */
-const CAMPOS_DO_DOCUMENTO = ['title', 'edition', 'locator'];
+const CAMPOS_DO_DOCUMENTO = ['title', 'edition', 'locator', 'kind'];
+
+/**
+ * O que a fonte É, do ponto de vista de quem a vai abrir.
+ *
+ * Opcional. Sem ele, a página da linha usa os rótulos genéricos — que é o
+ * estado de qualquer linha que ninguém classificou, e não uma omissão a
+ * esconder. Existe porque chamar «Documento» a um pedido que devolve uma
+ * resposta, e «Excerto» ao campo que ela traz, diz ao leitor que há uma frase
+ * impressa algures — e não há.
+ *
+ * Até 15.08.2026 isto era adivinhado pela forma do endereço, e a adivinha
+ * errava: `dados.gov.pt/api/1/datasets/r/…` tem `/api/` no caminho e serve uma
+ * folha de cálculo. Um campo lido é melhor do que um padrão que quase sempre
+ * acerta.
+ */
+export const TIPOS_DE_DOCUMENTO = ['pdf', 'html', 'serie', 'ficheiro', 'registo'];
 
 /** Campos de proveniência que só podem ser null numa linha derivada. */
 const CAMPOS_PROVENIENCIA = ['source', 'document', 'source_url', 'access_date', 'excerpt'];
@@ -262,6 +278,15 @@ export function notaDeBandeira(claim, lang) {
  * de "reason_en" passaria despercebido e a edição inglesa ficaria sem motivo.
  */
 const CAMPOS_CORRECAO = ['date', 'kind', 'old_value', 'new_value', 'reason', 'reason_en'];
+
+/**
+ * `field` só existe — e é obrigatório — numa entrada `proveniencia`.
+ *
+ * Numa revisão de proveniência, `old_value` e `new_value` são os valores DO
+ * CAMPO que mudou (o endereço velho e o novo), e não os do número publicado.
+ * Sem `field`, a entrada dizia «X → Y» sem dizer X e Y de quê.
+ */
+const CAMPOS_CORRECAO_PROVENIENCIA = [...CAMPOS_CORRECAO, 'field'];
 
 let _cache = null;
 
@@ -446,14 +471,21 @@ export function evaluateCheck(expr, { claims, env = COUNTS, selfId = null } = {}
 export function contagensDoRegisto(claims = loadClaims()) {
   let correcoes = 0;
   let actualizacoes = 0;
+  let revisoes = 0;
   for (const c of claims.values()) {
     for (const corr of c.corrections ?? []) {
       if (corr.kind === 'correcao') correcoes++;
       else if (corr.kind === 'actualizacao') actualizacoes++;
+      else if (corr.kind === 'proveniencia') revisoes++;
     }
   }
-  return { correcoes_publicadas: correcoes, actualizacoes_publicadas: actualizacoes };
+  return {
+    correcoes_publicadas: correcoes,
+    actualizacoes_publicadas: actualizacoes,
+    revisoes_de_proveniencia: revisoes,
+  };
 }
+
 
 /**
  * O motivo de uma entrada do registo, na língua de uma edição.
@@ -652,6 +684,14 @@ export function validateLedger() {
             );
           }
         }
+        const tipo = c.document.kind;
+        if (tipo !== null && tipo !== undefined && !TIPOS_DE_DOCUMENTO.includes(tipo)) {
+          errors.push(
+            `${onde} "document.kind" é "${tipo}". Só pode ser ` +
+              `${TIPOS_DE_DOCUMENTO.map((k) => `"${k}"`).join(', ')} — ou nenhum, e a página usa ` +
+              `os rótulos genéricos.`,
+          );
+        }
         const loc = c.document.locator;
         if (loc !== null && loc !== undefined) {
           if (typeof loc !== 'string' || loc.trim() === '') {
@@ -734,10 +774,28 @@ export function validateLedger() {
           errors.push(`${rot}: tem de ser um mapa com date, kind, old_value, new_value, reason e reason_en.`);
           return;
         }
+        const aceites =
+          corr.kind === 'proveniencia' ? CAMPOS_CORRECAO_PROVENIENCIA : CAMPOS_CORRECAO;
         for (const k of Object.keys(corr)) {
-          if (!CAMPOS_CORRECAO.includes(k)) {
+          if (!aceites.includes(k)) {
             errors.push(
-              `${rot}: campo desconhecido "${k}". Aceites: ${CAMPOS_CORRECAO.join(', ')}.`,
+              `${rot}: campo desconhecido "${k}". Aceites: ${aceites.join(', ')}` +
+                (k === 'field' ? ' — "field" só existe numa entrada "proveniencia".' : '.'),
+            );
+          }
+        }
+        /* A revisão de proveniência tem de dizer QUAL o campo que mudou, e o
+           campo tem de ser um dos que a proveniência tem. */
+        if (corr.kind === 'proveniencia') {
+          if (ausente(corr.field)) {
+            errors.push(
+              `${rot}: uma entrada "proveniencia" tem de trazer "field" — qual o campo de ` +
+                `proveniência que mudou. Sem ele, "old_value → new_value" não diz de quê.`,
+            );
+          } else if (!CAMPOS_DE_PROVENIENCIA.includes(corr.field)) {
+            errors.push(
+              `${rot}: "field" é "${corr.field}". Só pode ser ` +
+                `${CAMPOS_DE_PROVENIENCIA.map((k) => `"${k}"`).join(', ')}.`,
             );
           }
         }
@@ -757,7 +815,8 @@ export function validateLedger() {
         if (!ausente(corr.kind) && !KINDS.includes(corr.kind)) {
           errors.push(
             `${rot}: "kind" é "${corr.kind}". Só pode ser ${KINDS.map((k) => `"${k}"`).join(' ou ')}.\n` +
-              `    "correcao" = o valor publicado estava errado. "actualizacao" = estava certo e o que mede mudou.`,
+              `    "correcao" = o valor publicado estava errado. "actualizacao" = estava certo e o que mede mudou.\n` +
+              `    "proveniencia" = o valor não mudou; mudou a maneira de lá chegar.`,
           );
         }
         if (corr.date && !/^\d{4}-\d{2}-\d{2}$/.test(String(corr.date))) {

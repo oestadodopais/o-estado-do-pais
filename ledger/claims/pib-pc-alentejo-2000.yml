@@ -12,6 +12,7 @@ source: "Eurostat"
 document:
   title: "Gross domestic product (GDP) at current market prices by NUTS 2 region"
   edition: "nama_10r_2gdp, actualizado 2026-02-10"
+  kind: "serie"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10r_2gdp?format=JSON&lang=EN&unit=PPS_EU27_2020_HAB&unit=PPS_HAB_EU27_2020&geo=PT&geo=PT15&geo=PT1A&geo=PT1B&geo=PT1C&geo=PT30&geo=EU27_2020&sinceTimePeriod=2000"
 access_date: "2026-08-13"
 reference_date: "2000"

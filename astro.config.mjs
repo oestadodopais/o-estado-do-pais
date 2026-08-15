@@ -5,7 +5,6 @@ import sitemap from '@astrojs/sitemap';
 import { SITE_URL } from './site.config.mjs';
 import { alternatesFor, pathFromUrl, matchPath } from './src/lib/routes.mjs';
 import { loadClaims, provenienciaIncompleta } from './src/lib/ledger.mjs';
-import { lastmodDe } from './src/lib/frescura.mjs';
 import { WORKS } from './src/data/studies.mjs';
 import { temLeitura } from './src/data/leituras.mjs';
 
@@ -84,12 +83,16 @@ export default defineConfig({
         const path = pathFromUrl(item.url);
         // Sem barra final, excepto a raiz — igual ao canónico da página.
         item.url = new URL(path === '/' ? '/' : path, SITE_URL).href;
-        /* `lastmod`, por tipo de página, de onde a alteração está registada —
-           e AUSENTE quando não há data honesta. Nunca a data da construção:
-           carimbar o build em 264 páginas de linha diria que todas mudaram
-           hoje. Ver src/lib/frescura.mjs e DECISIONS §1.36, item 10. */
-        const quando = lastmodDe(matchPath(path));
-        if (quando) item.lastmod = quando.toISOString();
+        /* NÃO HÁ `lastmod`, e é decisão escrita.
+           Carimbar a data da construção seria dizer que 264 páginas mudaram
+           hoje porque o sítio foi reconstruído hoje. Mas as datas que o sítio
+           tem também não servem: `access_date` é quando a FONTE foi lida e a
+           data de publicação de um estudo é quando o TRABALHO saiu — nenhuma
+           delas é «quando esta página mudou». Uma página muda quando muda
+           qualquer uma das suas entradas, incluindo os componentes que
+           partilha com as outras, e esse modelo não está construído. Enquanto
+           não estiver, o campo fica ausente: é o que o protocolo permite e é a
+           verdade. Ver DECISIONS §1.36, item 10, e §4. */
         // Pares hreflang PT<->EN, a partir da mesma tabela de rotas que as páginas usam.
         const alts = alternatesFor(path);
         if (alts) {

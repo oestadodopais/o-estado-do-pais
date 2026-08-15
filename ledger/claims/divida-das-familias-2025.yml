@@ -14,6 +14,7 @@ source: "Eurostat"
 document:
   title: "Household debt including non-profit institutions serving households, consolidated"
   edition: "tipspd22"
+  kind: "serie"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=PT&unit=PC_GDP"
 access_date: "2026-08-12"
 reference_date: "2025"

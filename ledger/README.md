@@ -349,14 +349,71 @@ inglesa a mostrar o motivo português falha o build.
 Tudo o resto de uma entrada — data, natureza, valor antigo, valor novo — é
 igual nas duas edições, porque não é prosa: é o registo.
 
-### `kind`: as duas naturezas
+### `kind`: as três naturezas
 
-Campo obrigatório. Só dois valores, e a diferença não é cosmética:
+Campo obrigatório. Três valores, e a diferença não é cosmética:
 
 | `kind` | o que aconteceu | onde aparece |
 | --- | --- | --- |
 | `correcao` | o valor publicado estava **errado** | grupo «Correções», com peso, e conta para «N correções publicadas» |
 | `actualizacao` | o valor estava **certo** e deixou de estar, porque o que mede mudou | grupo «Atualizações», em surdina, e não conta |
+| `proveniencia` | **o valor não mudou**; mudou a maneira de lá chegar | na história da própria linha, por extenso; no registo do Método, só como caminho para a linha |
+
+#### `proveniencia` — a revisão do caminho, não do número
+
+Uma fonte que muda de endereço não altera o que foi publicado. Até 15.08.2026 o
+formato não tinha como o dizer, e a única saída era escrever uma `actualizacao`
+com `old_value` igual a `new_value` — uma entrada que declara «o valor mudou de
+X para X», que é falso e diz ao leitor exactamente o contrário do que aconteceu.
+
+Uma entrada `proveniencia` traz **um campo a mais, `field`**, e é o único sítio
+do formato onde ele existe:
+
+```yaml
+corrections:
+  - date: "2026-08-15"
+    kind: "proveniencia"
+    field: "source_url"
+    old_value: "https://geo2.dgterritorio.gov.pt/caop/"
+    new_value: "https://geo2.dgterritorio.gov.pt/caop/CAOP_Continente_2025-gpkg.zip"
+    reason: "O endereço antigo é a pasta onde os ficheiros estão alojados e devolve HTTP 403 …"
+    reason_en: "The old address is the directory the files sit in and returns HTTP 403 …"
+```
+
+`old_value` e `new_value` são os valores **desse campo** — os dois endereços —
+e não os do número publicado. `field` só pode ser um campo de proveniência:
+`source`, `source_url`, `document.title`, `document.edition`,
+`document.locator`, `access_date` ou `excerpt`.
+
+**Onde aparece, e porque não aparece no registo geral.** Na história da linha,
+por extenso, como qualquer outra entrada. No registo do Método, **não**: são
+muitas de cada vez — nove no dia em que duas fontes mudaram de sítio — e postas
+a par das confissões afogavam-nas. O registo mostra as linhas que as trazem,
+cada uma com o caminho para a sua história. É a mesma regra em cascata que já
+vale para as recontagens derivadas, um nível acima.
+
+#### O que **não** se regista: as afinações do ponteiro
+
+Nem toda a alteração a um campo de proveniência é um acontecimento. Uma
+alteração que deixa **o documento, o valor, a data de acesso e a base do
+endereço** exactamente onde estavam não muda a resposta a «onde está isto» —
+afina-a. São estas, e a lista é fechada:
+
+- acrescentar `#page=N` a um endereço de PDF, quando a página já estava no
+  localizador;
+- reescrever um `document.locator` para dizer, por outras palavras, o mesmo
+  sítio (de `raw/…json → Dados["2025"]` para «INE, indicador 0012918, Évora
+  (código 1C40705), dados de 2025»);
+- aparar um `excerpt` no fim de uma frase completa, quando o que sai é texto que
+  o extractor tinha cortado a meio de uma palavra.
+
+**Estas ficam registadas no git e no `DECISIONS.md`, e não na história da
+linha** — e isto é uma regra escrita, não uma omissão. A razão: a história de
+uma linha é para quem quer saber se o que leu mudou. Encher-lhe 58 entradas
+porque um localizador ficou mais claro é enterrar as três correções a sério que
+lá estão. O critério é esse, e não a dimensão da alteração: se a resposta a
+«onde está isto» passa a apontar para outro sítio, é `proveniencia`; se aponta
+para o mesmo sítio por palavras melhores, é git.
 
 Misturar as duas faz do registo um diário de alterações, e uma confissão
 diluída vale menos. **Na dúvida, pergunte: o valor antigo estava errado quando

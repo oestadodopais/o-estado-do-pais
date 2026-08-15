@@ -99,6 +99,15 @@ for (const r of REGIOES) {
     <p class="layer-tag">{lang === 'pt' ? 'Relance' : 'At a glance'}</p>
     <div class="glance">
       <Claim id={inicial.valor_claim} class="glance-num" as="div" data-glance-num />
+      {/* O selo do valor em relance. Um por região, e o JavaScript mostra o da
+          região que está a ser lida — a mesma mecânica dos selos da leitura
+          breve, para que a porta acompanhe o número em vez de ficar presa à
+          região com que a página foi construída. */}
+      {REGIOES.map((r) => (
+        <span data-brief-chip={r.id} hidden={r.id !== inicial.id}>
+          <Provenance id={r.valor} lang={lang} />
+        </span>
+      ))}
       <div class="glance-meta">
         <div class="glance-name" data-glance-nome>{inicial.nome}</div>
         <div class="glance-unit">
@@ -196,8 +205,9 @@ for (const r of REGIOES) {
     </svg>
   </div>
 
-  <!-- CAMADA 2 — LEITURA BREVE -->
-  <div class="brief">
+  <!-- CAMADA 2 — LEITURA BREVE. É esta a legenda de selos do instrumento:
+       os valores desenhados dentro do SVG têm aqui a sua porta. -->
+  <div class="brief" data-legenda-selos>
     <p class="layer-tag">{lang === 'pt' ? 'Leitura breve' : 'Brief reading'}</p>
     {
       REGIOES.map((r) => (

@@ -12,7 +12,7 @@
     "alentejo-central-poder-de-compra-2023": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "ead0034f0fd08ea61338627d38f5a9d82856327150ff08480705141299826816",
+      "exported_row_sha256": "010e28a2341cc091009f703a4174ad2577dbb07b138a3d38c657e4ca3b44ba30",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4f7cd13089c9d742707d8d3215aa6ffae45f2fd01244e80d014e25b61fece645",
       "rh_id": "pc-ac-2023",
@@ -22,7 +22,7 @@
     "evora-camara-lugares": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "00adad56f3d85037522e3e7b333c2861b0a4fe393ebd6eda3662bea444335bc9",
+      "exported_row_sha256": "4e90f57e8e18f60f4f6775a4755e1f371032bd68a60793479bda00b4e0cefbd0",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4042a43b2220dbf0a8b5116a086926560fd7bcb733b8693545bc3957c3d4821a",
       "rh_id": "el2025-seats-total",
@@ -32,7 +32,7 @@
     "evora-camara-mandatos-cdu-2013": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "17d24c9b9791431986964f94d80c1805762c93a9e11d29159684d7278aac1d30",
+      "exported_row_sha256": "b27b23fa7332a63a7775a10ba92e58f996887680f28d47bc339447aed36e7fd4",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0c428331f0482644f12ddffd5059eee668567b16b8b8447775aad864aa3ef0cd",
       "rh_id": "el2013-pcp-pev-seats",
@@ -42,7 +42,7 @@
     "evora-camara-mandatos-cdu-2017": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "8bb09870394ed31cedcee56dbc377df3f30bb47727b69c9443a318beeb427b76",
+      "exported_row_sha256": "24a71d51d80930d25aeac46d0ec77728402ca19039e0d7f4179c795e94572b04",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8c92856ea891053d46a2f98835d36cb67b6fa7c1ee51013e4fda64b37de227ae",
       "rh_id": "el2017-pcp-pev-seats",
@@ -52,7 +52,7 @@
     "evora-camara-mandatos-cdu-2021": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "5b390c779f73be18655592afc9867dfc577794685839b99c1e855a6aaaeae16d",
+      "exported_row_sha256": "567f98d4f925583d354063ad4e2b44d35c68c11cde45de287fa74ed0c3463b74",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "aac7fdc706c8d454c12cfe9d81b1609f69c6fd36a1c401933f4ac459033dce81",
       "rh_id": "el2021-pcp-pev-seats",
@@ -62,7 +62,7 @@
     "evora-camara-mandatos-ps-2009": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "f03bf11442ec7107246d199c4ed891cb0d2b09c002aee927ebac595115710903",
+      "exported_row_sha256": "f4413392b38333404cc2eef84e163eb75cc9d58fba59023cc1f57c8d4eb79478",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7c4bbfeec5647e661b84c899407ae9b93d4365491905fcb54a8508dba57a97df",
       "rh_id": "el2009-ps-seats",
@@ -72,7 +72,7 @@
     "evora-camara-mandatos-ps-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "ef6505fc70d4d3af0ea9ba991bb169671720b053b973725ec7996b693c99fdda",
+      "exported_row_sha256": "ce8585ad499d79cee355cfa5a00d5e2aec0eaa62faa387fbff25ec4db88102e4",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fc3cf47698f57b68f7ebf1ed433e80a0fd4e8683713ab19b9684c968bb94c938",
       "rh_id": "el2025-ps-seats",
@@ -82,7 +82,7 @@
     "evora-concentracao-vab4-2024": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "b4fd2c384e39d168c379bb2ba6da87c67736877626b2b583ea4e2dfc2715b370",
+      "exported_row_sha256": "2c44661a5043ff8f2b6dce4fc445d0522bcc3179a610b6634fa935b6f48a897a",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c66300059a5e11c16bafa2b62bd4a1e98fee282fbb5b246e7ca4db9fdae49cb0",
       "rh_id": "conc-vab4-evora",
@@ -92,7 +92,7 @@
     "evora-contas-2024-votos-contra": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "b4c2b89922f796d4326711b02048ee9aa318eb5135ce8912d8fdec55ca1a93e6",
+      "exported_row_sha256": "6812fcbbb464c0ada8718be250bbd1250c279d78dd1947adf96327c7a14fce16",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2b3161c28733fa56730858497227dbbcf83216f351063b1098f74b64f79e050e",
       "rh_id": "clc-2024-votos-contra",
@@ -102,7 +102,7 @@
     "evora-contas-2024-votos-favor": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "5666ca722c5f9c56388fe0d45db787b68d48343d742b6d39a5eb4db9a955c0e2",
+      "exported_row_sha256": "d3596792d516bea33021619ad9e2d1791506b9c0df8d3ba86fb2f49763b35ea3",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "bc57f097f23ebda78fd0b5b372e75d0cee695f651ba6c22a88294ecb67b4b3e4",
       "rh_id": "clc-2024-votos-favor",
@@ -112,7 +112,7 @@
     "evora-desemprego-registado-2013": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "b7a82ce35d75c80f8f22cbace663d5be74d369b5128638504c9d8e8c950e7079",
+      "exported_row_sha256": "0bd9c836875ce72a4dcfb807f1bc93c8a0d70f6e353923c04abb339567d385d5",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "405ecf114c93c6fc3d5c5c5d745b0aefd9068d820f9c48102e4ca46a1bb04761",
       "rh_id": "socio-registered-unemployment-2013",
@@ -122,7 +122,7 @@
     "evora-desemprego-registado-2024": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "113ed522088e53e9e4d6c381ca41204e83c3da7b65b53ef9c08a9d4874dbed91",
+      "exported_row_sha256": "0ed94d1bebfbeff58abfddb85224d61132bc7c07b2982dc2ec1abc98e452cc7d",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "20ee43a5ab6de0691a836fddeee75c187f0503225fd5ddc71387986fdc338574",
       "rh_id": "socio-registered-unemployment-2024",
@@ -132,7 +132,7 @@
     "evora-despesa-paga-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "3fe77fdfe7e55a42bfa2e625e52d3a5a77c6ac66c85aa5f963b99f849e3b766b",
+      "exported_row_sha256": "696120481a67914f2149bfdade5395503c6a42892d2556667c2088ba5f31b429",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "91252e415e1edefde85dfb678d8f4cbce06f48c9923dfe9b7919afe451f7919d",
       "rh_id": "despesa-paga-2025",
@@ -152,7 +152,7 @@
     "evora-divida-31-10-2013": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "8835d163e789c87711542f31cfaa042f1db69955e4871f69f2d70a70eaaf99b7",
+      "exported_row_sha256": "361ef2c3d86f381bd6cab277bc6a64b8b603166d857763ffade76ee4a7d70754",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0ab5d4f1c3faf9b20cd890d539cb9352d15605a953d8a17cdf7f914c75f06f64",
       "rh_id": "divida-31out2013",
@@ -162,7 +162,7 @@
     "evora-divida-dgal-2014": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "b403595cb4b13b607b6cd915f22bfcd1cabfdbdef2a993453d50a1c1628e4f70",
+      "exported_row_sha256": "9363df57a1dbdf9cbde720a311b3d215c54cd3400a3825d20d1b8c1762df7d14",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ea4140b50b0413e9a58da0c25f7dbff2e08575b62a03b3b6b7d9c866689441ab",
       "rh_id": "dgal-divida-2014",
@@ -172,7 +172,7 @@
     "evora-divida-dgal-2017": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "2f7dea8ebb0d93a40ba878446c87d326b732d2dc3e7a55a95223ef511728cf9e",
+      "exported_row_sha256": "23a62444b01fc2728b901b4606676f3d604efe209f615b6ca1a9009845a53c63",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1b357d12429e660089e2c9c160b7ddc2fdc014248333e19034c90ef122af644d",
       "rh_id": "dgal-divida-2017",
@@ -182,7 +182,7 @@
     "evora-divida-dgal-2021": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "9ba4279493c6ad3236435255a92a81876bc2285ca4e3a19d0f3368f4bea5b4c5",
+      "exported_row_sha256": "db8c2b066b56f4e43e0e4097373d6290f891ff7727ce7348a8a7732b2287d716",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4c919fda99782ec61fe8b9077b3621f5a58638856fa03f9992df4729f6404933",
       "rh_id": "dgal-divida-2021",
@@ -192,7 +192,7 @@
     "evora-divida-dgal-2024": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "741eb2961a763fa7c2b791741465d09bd40db78140ddd62b236334ed4606f5bb",
+      "exported_row_sha256": "21974da7a35ed843b18de59f6cde3104294f9bbda7f49d28c3168c95a5fc5aa7",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f37a7bb113e79cd3c8779dfe276d138f6ebce284336b90f89a08bee9fb5621bc",
       "rh_id": "dgal-divida-2024",
@@ -202,7 +202,7 @@
     "evora-divida-inicio-mandato-reexpressa": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "8e20a1ecca52ea4af0e946103e10c5c9b1275d8d4d4ace9c6b9e66fa31d1fd49",
+      "exported_row_sha256": "270b052fd875934c987493e63ef03a39b8f25992d2046d99f041a8c1565d46c3",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e37fdeb57c334a4460b690ca9a362c645248cfa7973856c2e5902b3d84296b8f",
       "rh_id": "divida-inicio-mandato-2021",
@@ -212,7 +212,7 @@
     "evora-divida-total-2017": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "0ac4e7c3ecdba1c03e48d90038ba8d69c9e86338a27eb3d95d608240f3ff1d3d",
+      "exported_row_sha256": "a1e977c9975178541697ec70c02f722546d61485d280cd681d932aabf3b2e50e",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9596b037a89a410cf5b9c0e4fb2210da7fdf437c56e593cd386b20bf6f8492e7",
       "rh_id": "ind-divida-total-2017",
@@ -222,7 +222,7 @@
     "evora-divida-total-2021": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "05ff45582fd94e1165d2c679e1f2213db2bc35058d5f952816b3dc415020974f",
+      "exported_row_sha256": "27a10d3cdf1dc1b03f1499497a4c902ef620e754f1f29a1210668402a1939851",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b16f35928c8dc5a2ee5e8d6a7c68ee49e32fddd348b8eba39d1ffbafad6b6ebe",
       "rh_id": "ind-divida-total-2021",
@@ -232,7 +232,7 @@
     "evora-divida-total-2024": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "6d5a9e119ee766b306088a46b5fcc9d35ea20783a0b8829196fc190ddb16e15a",
+      "exported_row_sha256": "ec1ae44dba888740b21689a9eec5a9443653e2c05e0c9b863677037348c6fea1",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ef73a4cfba58bd58a70ea437ce5b95a8ff9bd175288c11222f1b8fd119b23037",
       "rh_id": "divida-total-2024",
@@ -242,7 +242,7 @@
     "evora-divida-total-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "9297f119c437926a99763276fe41880d8442b3f0c4e6f3cbfddc4f629d7fd201",
+      "exported_row_sha256": "fd22961979e2d55a7de44bdd9cdb460bbf2d24cc6e022b3cfaeceb126e5b7f54",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3a49cb4cf61e01147fc750b650406686bcb53de0298f0b526860b7a8c2f272d1",
       "rh_id": "divida-total-2025",
@@ -252,7 +252,7 @@
     "evora-empresas-2024": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "47c93bfcfaa206298b6c1bbbd30640da4f83eaf0a981bfe980d7c4d9aac5eb95",
+      "exported_row_sha256": "0f5388227b89887d1a112a54733e8348a44ae609685e93679e9fad492c0d9467",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "eb8140d29919c9c7aa9e87b25d6fbdf4b7bba625d11ae8dbe19273d2759d72c2",
       "rh_id": "empresas-evora-2024",
@@ -262,7 +262,7 @@
     "evora-excesso-endividamento-2014": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "4579ff642fdeec34a4d0b3de1c2672e45aaa71f1b4bb8c832ebe3aaf57bcd58a",
+      "exported_row_sha256": "6ccc63f60efd30da0d9e29e5d9fabe110bad7d246f26740eeb9e684b1414cdb7",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f67842ff171162d2277501a4b37d2f7201c82e134c79b72d5dad0cd6981157fa",
       "rh_id": "excesso-jan14",
@@ -272,7 +272,7 @@
     "evora-excesso-endividamento-2019": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "8e040da04ea89131c63fd7d870a1067bb7e0960ad5e9cc5f04765f2e5b582b0a",
+      "exported_row_sha256": "d190e665e1b4a875706eb8b39c7822141eb2834d11cd24674d1809f8db3d1ffc",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0a414fc73f4e427630749c0e38ecf74cf6f1e3a27bf8ecf6c73df3c0bbcb6d1f",
       "rh_id": "excesso-dez19",
@@ -282,7 +282,7 @@
     "evora-execucao-da-receita-2021": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "4cda8a07ba434e452a25cc68c354db3568c0db119fffa05b0fae462c346dc16b",
+      "exported_row_sha256": "a66d82348855f91e42d4fdcd0f6aa6d8305fc857054452953181302a3751b5fc",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fb87438d915181d8109cb946161a7a4bbb5195c624f9600ebe9b9bd0fae67a11",
       "rh_id": "exec-2021-pct",
@@ -292,7 +292,7 @@
     "evora-execucao-da-receita-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "6a93d26a74151f133354091e7532e50ec14f3ffbb7d585a6274eb68dae4deba2",
+      "exported_row_sha256": "ede51d0e8f361f8d9d68d36adc8fd8cfdf4014c6e2cbfa124b953bc2c0a9c379",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ebb926a0dd0b43b9b46ae1e09c6bfa6cb55014f41adbf2f444678334b63d89cb",
       "rh_id": "receita-exec-pct",
@@ -302,7 +302,7 @@
     "evora-executivo-2025-ad": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "56b770dbe7b606a68f55f408c5547e770f43e97fdb07e18fb48fe4a5c161cba5",
+      "exported_row_sha256": "0c3379f68c888c8dcc855f94b571e417a261e26c11c1413e8252c78b289e18dd",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "c03415454d01391c13f192264b52e852487edff6af8717e7ec2ee68ff5df30da",
       "rh_id": "exec2025-ad-seats",
@@ -312,7 +312,7 @@
     "evora-executivo-2025-cdu": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "fd38c303322cc6d72065b892ac14aec43943fe395b70d08d66a18f82dcede66a",
+      "exported_row_sha256": "55f96bf753929d24060154ade7def5e4daf7d23f27296693c6c5f74fb09d82cc",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "49cab8fa573577bbbacecaace34a2ff5baa22dcadcf6f8635bf98983c37626e8",
       "rh_id": "exec2025-cdu-seats",
@@ -322,7 +322,7 @@
     "evora-executivo-2025-chega": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "01cb7dd4207b9fc81fa06549dad68f31de5365ee917363f38d3697068a872409",
+      "exported_row_sha256": "2af2d395d97a7e07e3cc40020e8a122f26a176a0d17337cacf9f4e74cad5c6ed",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7804a3e8417bb79f3dfe891467c4a1696f359e8227f3fc790a7ec231fec5084e",
       "rh_id": "exec2025-chega-seats",
@@ -332,7 +332,7 @@
     "evora-executivo-2025-ps": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "99236ff015a6c2387f941d502231cd75ef4296d1bae8afb24eeaae4377df0167",
+      "exported_row_sha256": "3d95a1cdd3ebd0edf5794c72249f0072d305d52928aec9af8f517ed28c703afe",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cb814c80854932efd4d3d421251ac0b388e531d9c26a94fc574f1744f8b95027",
       "rh_id": "exec2025-ps-seats",
@@ -382,7 +382,7 @@
     "evora-limite-divida-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "2896ba4c215d2dc5d5c730f478f4886d803635ae474ac04ecc2532425d94efc3",
+      "exported_row_sha256": "ba256e80229c7eb4af338dd47ae990f8d1d4e93d309e31bb88f4df582f82d958",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2a12c2a54c8a744f6a273cb00b0c6a9e7f52f4f6d1124096e49d6a35f406e12c",
       "rh_id": "limite-divida-2025",
@@ -392,7 +392,7 @@
     "evora-limite-divida-dgal-2014": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "4332355cc797bd97a4e91d734919397724f1281fc4ba04f03293ac73443a3f73",
+      "exported_row_sha256": "c342b2137a45e78df6027281595992ffaea84bb7a47082c8b0739befb1f16793",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "621cd24161e6f583843382165c041b6f8f881c15cbd3985f98e5f1b544b46a25",
       "rh_id": "dgal-limite-2014",
@@ -402,7 +402,7 @@
     "evora-limite-divida-dgal-2017": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "b73855e9c074be3a8789937df849ffcb62fd8fce7aace2b316f052b0033e2a40",
+      "exported_row_sha256": "6090eded40034053f4ec6132e52ccc69b816dce98e2330bbcdf3c155e5acb21d",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4b2761ff05ce00ba36a7f8621419edc266e0df6de6660974e2618d12c6793bdc",
       "rh_id": "dgal-limite-2017",
@@ -412,7 +412,7 @@
     "evora-limite-divida-dgal-2021": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "3ee4d23b41e4fe81a4a8c0ce9313da6d36bf69eb9d133eb8d8ca368447255c3b",
+      "exported_row_sha256": "6ecc5f0feeea71d2cbedcc92c7254fd0b8439df106d67b77c5d0dd9323ad9e18",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ae9bb14b56fb707f47f4fefb07a357de2117c118468914c12465b550267c886b",
       "rh_id": "dgal-limite-2021",
@@ -422,7 +422,7 @@
     "evora-limite-divida-dgal-2024": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "4f3a201101ae3abeb9b40354eb810e9136268393fde962a0c165bef1c6e60e11",
+      "exported_row_sha256": "672a5d3b4d9a837f37279a67d2cac2541aeb6b2aeb979cbb483510ae00df49d2",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ecada2e09c73b67a7992a792510875ef30a1d48eae1aa44186fb290cd6ff39c7",
       "rh_id": "dgal-limite-2024",
@@ -432,7 +432,7 @@
     "evora-margem-endividamento-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "53368bc18944a2c75d5b14d977dd80033de350f5a0edbf16a11059ba026b9a6d",
+      "exported_row_sha256": "127fa00bdcba4b51513287fc62cd775aa3af865b5f387fdfaa852d20a5e7e837",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "dd55618f23ff9229bbd69d2c12ce9e0d8a980316c31db3c34f6aa37c7ffc2dfd",
       "rh_id": "margem-endividamento-2025",
@@ -442,7 +442,7 @@
     "evora-orcamento-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "81a5ed2a1a9cbc95a5b848507434494985c591b0c4700ff0e3ae7e4a2aeb0793",
+      "exported_row_sha256": "9caaf566c624fc81cb6ef867822f71080af68c04976fe560761cdf99e7daabc7",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5c6da495980ef90dbbddedbaf8e94d5d9a5e045d32422361d6776a304983d6f4",
       "rh_id": "om-2025-corrigido",
@@ -452,7 +452,7 @@
     "evora-pael-emprestimo": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "9356bc5e76f206561e77a8c9bb382728c923ddcba81da3fd9d3656a920b86c82",
+      "exported_row_sha256": "8a18179d2e43686be59a40b3e5aca07b9c9ce2061c1665d13fcaa512e77592f2",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "351a4d3a3fb5d502bde0ee7b01ce361b7fe903b31ddb5102d123b2102e69b517",
       "rh_id": "pael-total",
@@ -462,7 +462,7 @@
     "evora-pagamentos-em-atraso-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "56c2b62444818ee881c4e9415d1ddd46ee0056db5f8bf6d5f8ef4933277cabd5",
+      "exported_row_sha256": "fea479053acde2c72632936efe8d2073a2e2cda4699e01cb3fde6d00c1f43c5b",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fdfe5e63d095509fe3a1b70d1d8ffbb8e01400c38e18e871f43ccdc439e454be",
       "rh_id": "atrasos-2025",
@@ -472,7 +472,7 @@
     "evora-pelouros-2021-presidente": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "06ee60e4c7fd1abc56eeeab7a6a489115c3134114728cecfa080d33dca836385",
+      "exported_row_sha256": "2b71c3d6021de60a3729ac72e91b134e610823ae955d8ab584e482c40706a35e",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "59701a545772e58476252ee2a145b368fd46e357b9e8946be0c91fc17f700325",
       "rh_id": "map-20212025-psa-count",
@@ -492,7 +492,7 @@
     "evora-pelouros-2021-vice-presidente": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "4460b5309c10746386c468cc480ed648f92c0718ef1ad99931603a3529d28a29",
+      "exported_row_sha256": "3b6377469ee3d49ac0fdfe26345988a8a6ce91203f783dfec319853db348ab53",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1486fc01377389cd50ad74d9739c6a839803ce7092d464f3d5cbc88b4a770d71",
       "rh_id": "map-20212025-varela-count",
@@ -502,7 +502,7 @@
     "evora-pelouros-2025-presidente": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "3168b9070839e9a24c0f1e45eca699eca6cae91d2fdafcc0d12543980b6e9be5",
+      "exported_row_sha256": "b0e7ca8ae99eb967bfd8b3c071994cbee045e6328b81109220fb0a2b403d3b03",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3fe52dac2206d5668eba14240db3c7aa91027aa9d1879163c8088a20c02b6ebe",
       "rh_id": "map-2025-zorrinho-count",
@@ -522,7 +522,7 @@
     "evora-pelouros-2025-vereadora": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "53f0525e8c8e9306f0e2fc5856ab959ae8b81d3a091e95906c5a5aa6c4cddb66",
+      "exported_row_sha256": "089c5851d85ae05cb2bdd20280c2dfad0882170bcb60bf904159354ca548cab4",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "719298a491fb37614da73475ce6bb03de7ef8238d431db0b82142440d7812738",
       "rh_id": "map-2025-carvalheira-count",
@@ -532,7 +532,7 @@
     "evora-pelouros-2025-vice-presidente": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "adb60dfa3affd5ec92aad65f82bc7a8476bf0df2c18adec9f05a3926dbd5fc7e",
+      "exported_row_sha256": "1fe0b26028786094a30de9bfa8d23c301edadcb55232aac03b923e87c7b43fbc",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4b335b9c7aba724b75b42dc170af6a51708bb9d832d59f7c05f44ab11918b025",
       "rh_id": "map-2025-vaqueiro-count",
@@ -542,7 +542,7 @@
     "evora-poder-de-compra-2023": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "f2b0b11bbbb6a529f7dc8beaefe6a216139c3c45747f110c6a8072d4a2fbb28d",
+      "exported_row_sha256": "0ee5a872e5281cbdb35c8cb69d9382df44900117df3d8f72f2da77caa29993f3",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "da2d21365d54d935212749dd3248a446c35224486d5392db9405fd1f6464584f",
       "rh_id": "pc-evora-2023",
@@ -552,7 +552,7 @@
     "evora-populacao-2021": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "f315e92a27184b4008989ed0f9bb8b74bea6c76b0a66e07324d50c573b286c77",
+      "exported_row_sha256": "3024d7cb55aaf7dad3d242078c205fcec8c1375dd17f8f6edbf631f19af60de3",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3695f05ecfdd62059b3e25c4655be9f2e85f9c45d4a2ab2e17f7c9e3ef74686c",
       "rh_id": "pop-evora-2021",
@@ -562,7 +562,7 @@
     "evora-populacao-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "3105aa6f1ac7ab12661059ea6038967afa2809c2fef176ce65c684d78197bc12",
+      "exported_row_sha256": "396d336e3e074e4c72f2610c0129bd9c5c7c70125afbc6185b158a3ce9ec5f3f",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e922517317b07b1df58666e1f5ba34f77e5199e0b00e8f0dbf4c8eeea387bc92",
       "rh_id": "pop-evora-2025",
@@ -572,7 +572,7 @@
     "evora-prazo-medio-de-pagamento-2023": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "1d6907ef3af3813858b0a3a06f346cdda6015a645874a6f5cb37e4058ad713ff",
+      "exported_row_sha256": "070eb26dd42b1b073f318696afd184208568686a73800bc4337925018caae5db",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "23ccb3d76a9c4bfa8320878309018527b984cac76bab46835965874fe0f30534",
       "rh_id": "pmp-2023",
@@ -582,7 +582,7 @@
     "evora-prazo-medio-de-pagamento-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "6efec926784f74e94caa5eeefe498a06a46a71af2d25f9180387d82c3ceca4fd",
+      "exported_row_sha256": "253de7d52b0663ad2bac9b5809b5dd4f2f7d92e8ef9935ba58fce0e1c049de00",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b009619747430ab8b6d1bf3e77cf0309f38d527cf775bd2222cda59cbb13194a",
       "rh_id": "pmp-2025",
@@ -590,9 +590,9 @@
       "rh_study": "07 Évora Municipal Accounts"
     },
     "evora-prr-aprovado-2026": {
-      "corrections_at_export": 2,
+      "corrections_at_export": 1,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "f0a26387dd7f8c46967d4c915c90ae84cc80322324cf5de543d8b433fb5bd313",
+      "exported_row_sha256": "5931713cda91415cd9a0a76ecd746c7e21df1ee78ff1e9ffd6051e82dc6991ed",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "339b2687bf9d0958e0fee4f784684dba8d9e0b6e155220305370fd532e17f7f8",
       "rh_id": "prr-approved-evora",
@@ -610,9 +610,9 @@
       "rh_study": "04 Évora Public Money"
     },
     "evora-prr-municipio-contratado": {
-      "corrections_at_export": 2,
+      "corrections_at_export": 1,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "396b76706b3ccc22bce694cfd3636c4e337617f09823a895c22b6c69e78c3e37",
+      "exported_row_sha256": "6d4fc43ae4fab9c931733e2ed3b3a9bea90af70604806407b5bcb0607f7a9f6c",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fe84a0aa489f17ed95c28f92e9db45ae3f7a8e73cfdc8d1436bdb84461a34b7d",
       "rh_id": "fin-municipio-contracted",
@@ -620,9 +620,9 @@
       "rh_study": "04 Évora Public Money"
     },
     "evora-prr-pago-2026": {
-      "corrections_at_export": 2,
+      "corrections_at_export": 1,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "306667c2a908232c63466697384a22715282ff0a3ab7cba3d00fe51ddbc258e9",
+      "exported_row_sha256": "5f8dd7c0608984262c6376f94e6583f1f85894b87a7de99033a09aedf6f78752",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5171edff39440e602d23f98308a92f2305b4e0e6d463983400e4747d1e71bcda",
       "rh_id": "prr-paid-evora",
@@ -630,9 +630,9 @@
       "rh_study": "04 Évora Public Money"
     },
     "evora-prr-universidade-contratado": {
-      "corrections_at_export": 2,
+      "corrections_at_export": 1,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "bbe3bb82531636764e5ceb2f5c0cb727693461597284b35d8c161554c475932c",
+      "exported_row_sha256": "44e55f323d847e28ee2f889599c0fc7c7c11ee8990a30ad4f004c24df0047296",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ecee1d6fb709bdaac8b60040dfdc492be62ec75481d2106263f07472282a8981",
       "rh_id": "fin-uevora-contracted",
@@ -640,9 +640,9 @@
       "rh_study": "04 Évora Public Money"
     },
     "evora-prr-vencido-aprovado-2026": {
-      "corrections_at_export": 2,
+      "corrections_at_export": 1,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "6d7c0eb03cdaec9ef539a71fd588297d2a709ad8cd6f147dfbf318c279ab0565",
+      "exported_row_sha256": "cef9d5a4584b81424bada9fa84e9803d65a9c5a93240f79fb8c24d7a03b8c3b9",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4ea3a863420fc37d533d50ed126f7d6ba1489257c00b6cef997136951421ac57",
       "rh_id": "prr-overdue-approved",
@@ -662,7 +662,7 @@
     "evora-receita-cobrada-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "1b91379edf5e4f6c93a4d6706a8e5f86a2e5975e8a5c51cefcd5071b728046a5",
+      "exported_row_sha256": "f781fbe5c916ad6eda3562681c24a7907adc763f94ce06ab23a435f6cefe85e5",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "58676b1fdc7b44d3e933fd4656e9e5ce8b3476dcb3e5929246e71451923d391c",
       "rh_id": "receita-cobrada-2025",
@@ -672,7 +672,7 @@
     "evora-saneamento-financeiro-2016": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "30a0f2abe59065cc8cc9aeeaec41e5dcfc441bcaeb581c19e8d24057b150edca",
+      "exported_row_sha256": "9102cd3f27262e49d119b56114f7d09c5d0b798849f88e3c3da06588af9ea9f1",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7aa401090f08d80fd29141a6e608c55e2c1943155c6b79fc916eeb5807920039",
       "rh_id": "saneamento-2016",
@@ -682,7 +682,7 @@
     "evora-vab-empresarial-2024": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "63e1935acfe97c16689e0131506f5cd69c11536d92fad8f57743c92cf55da9a1",
+      "exported_row_sha256": "14439c223fabb7a7838a6b5fcf711dd9dccbbeeed35e9615df6e126798a9a94a",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "981d3c0f86085ebae75e23b36c94875eca54c9d9f30e5481c591179b61f3ba80",
       "rh_id": "vab-evora-2024",
@@ -692,7 +692,7 @@
     "indice-de-divida-limite-legal": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "5a3f283603ca7fdea684bcbffbbf99bdbd24da2307fa1a68600eae14cd2c7972",
+      "exported_row_sha256": "bd51d498af99bb9cdd57f3fa48c8034b0be89c2ae7540b3f8718524087f94b46",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b426fd76d4c56e7c1aa1155aa51be588abfb24305ae492eaed4f8c9967276aa6",
       "rh_id": "anuario-indice-permitido",
@@ -702,7 +702,7 @@
     "portugal-concentracao-vab4-2024": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "c83eedb2da3c5abce9d65066ef49a3b9838c59aec92e4c18cf448386232b878d",
+      "exported_row_sha256": "896fbc258ef85e74110d0209590a2d7c317b4e47340a506e98defde9f3b49d97",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e4752a4387075468f69cdc30452284bc8c31eaa79c5ca367b08865224f5ebbae",
       "rh_id": "conc-vab4-pt",

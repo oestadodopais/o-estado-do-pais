@@ -235,6 +235,9 @@ export const STRINGS = {
       registoActualizacoesK: 'Atualizações',
       registoActualizacoesNota:
         'Valores que estavam certos e deixaram de estar, porque aquilo que medem mudou. Não são erros, e não contam para o número acima.',
+      registoProvenienciaK: 'Revisões de proveniência',
+      registoProvenienciaNota:
+        'O valor não mudou; mudou a maneira de lá chegar — uma fonte que muda de endereço, por exemplo. Não são erros nem actualizações, e não se listam aqui uma a uma: são muitas de cada vez e afogariam as correções. Cada linha abaixo leva à sua própria história, onde a revisão está escrita por extenso.',
       correcoesVazioV: 'Nenhuma correção publicada até hoje.',
       correcoesVazioNota:
         'Quando um valor for corrigido, a entrada aparece aqui e na própria linha do livro-razão: data, valor antigo, valor novo, motivo. Nada é apagado.',
@@ -311,6 +314,8 @@ export const STRINGS = {
         incompletaK: 'O que falta nesta linha',
         incompletaV:
           'Os campos assinalados não foram confirmados contra a fonte. O valor publicado não muda por isso; o que falta é a prova documental, e enquanto faltar a linha fica fora do índice dos motores de busca.',
+        completaK: 'Estado da proveniência',
+        completaV: 'Completa.',
         marcadorLink: 'O que quer dizer este marcador',
         voltar: 'Voltar ao livro-razão',
       },
@@ -424,8 +429,9 @@ export const STRINGS = {
       metaDescription: 'O arquivo de estudos publicados, com as suas edições em português e em inglês.',
       h1: 'Estudos',
       lede: 'O arquivo do observatório: cada estudo publicado, com as suas edições, datas e estado de migração. O que ainda não vive aqui está ligado onde vive.',
-      aviso:
-        'Datas de publicação e descrições ainda não foram confirmadas pelo director. As descrições são reformulações do título, não resumos do conteúdo.',
+      aviso: 'Datas de publicação por confirmar.',
+      descricaoRotulo: 'Descrição: reformulação do título',
+      descricaoDoDocumentoRotulo: 'Descrição: frase de abertura do documento',
       dataLabel: 'Publicação',
       lingua: 'Língua',
       verEstudo: 'Página do estudo',
@@ -452,6 +458,7 @@ export const STRINGS = {
       leituraEstado: 'Leitura publicada',
       leituraRelanceK: 'Relance',
       leituraBreveK: 'Leitura breve',
+      leituraBreveRotulo: 'Leitura breve — prosa da casa, assente numa frase do trabalho',
       leituraFundoK: 'Método e ressalvas',
       leituraOutraLingua: 'A mesma frase na outra edição',
       municipioK: 'O concelho de que trata',
@@ -696,6 +703,9 @@ export const STRINGS = {
       registoActualizacoesK: 'Updates',
       registoActualizacoesNota:
         'Values that were right and stopped being so, because what they measure changed. They are not errors, and they do not count towards the number above.',
+      registoProvenienciaK: 'Provenance revisions',
+      registoProvenienciaNota:
+        'The value did not change; the way to find it did — a source that moves address, for example. They are neither errors nor updates, and they are not listed one by one here: they come many at a time and would drown the corrections. Each row below leads to its own history, where the revision is written out in full.',
       correcoesVazioV: 'No corrections published to date.',
       correcoesVazioNota:
         'When a value is corrected, the entry appears here and in the ledger row itself: date, old value, new value, reason. Nothing is deleted.',
@@ -772,6 +782,8 @@ export const STRINGS = {
         incompletaK: 'What is missing from this row',
         incompletaV:
           'The marked fields have not been confirmed against the source. The published value does not change because of it; what is missing is the documentary proof, and while it is missing the row stays out of search engine indexes.',
+        completaK: 'Provenance',
+        completaV: 'Complete.',
         marcadorLink: 'What this marker means',
         voltar: 'Back to the ledger',
       },
@@ -877,8 +889,9 @@ export const STRINGS = {
       metaDescription: 'The archive of published studies, with their Portuguese and English editions.',
       h1: 'Studies',
       lede: 'The observatory’s archive: every published study, with its editions, dates and migration state. What does not live here yet is linked where it lives.',
-      aviso:
-        'Publication dates and descriptions have not yet been confirmed by the director. The descriptions restate the title; they are not summaries of the content.',
+      aviso: 'Publication dates not yet confirmed.',
+      descricaoRotulo: 'Description: restatement of the title',
+      descricaoDoDocumentoRotulo: 'Description: opening sentence of the document',
       dataLabel: 'Published',
       lingua: 'Language',
       verEstudo: 'Study page',
@@ -901,6 +914,7 @@ export const STRINGS = {
       leituraEstado: 'Reading published',
       leituraRelanceK: 'At a glance',
       leituraBreveK: 'Brief reading',
+      leituraBreveRotulo: 'Brief reading — house prose, resting on a sentence of the study',
       leituraFundoK: 'Method and caveats',
       leituraOutraLingua: 'The same sentence in the other edition',
       municipioK: 'The concelho it is about',

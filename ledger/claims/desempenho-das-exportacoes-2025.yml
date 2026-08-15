@@ -14,6 +14,7 @@ source: "Eurostat"
 document:
   title: "Share of exports of advanced economies"
   edition: "tipsbp60"
+  kind: "serie"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp60?format=JSON&lang=EN&geo=PT&unit=PCH_OECD_EU_3Y&partner=WRL_REST"
 access_date: "2026-08-12"
 reference_date: "2025"

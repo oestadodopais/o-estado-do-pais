@@ -2159,19 +2159,24 @@ separada e correndo lá a mesma régua.
 | Páginas com porta de correcções | 0 | **301 de 301** |
 | Valores da primeira página sem selo para a sua própria linha | 38 ocorrências · 16 afirmações | **0** |
 | …dos quais com selo a apontar para a linha do PAI | 18 ocorrências · 8 afirmações | **0** |
-| Frases de moldura distintas | 86 | **77** |
-| Ocorrências de frases de moldura | 2 735 | 2 725 — das quais **301 são a porta nova**; sem ela, **2 424** |
+| Frases de moldura distintas | 86 | **83** |
+| Ocorrências de frases de moldura | 2 735 | 2 787 — das quais **301 são a porta nova**; sem ela, **2 486** |
 | `[descrição em preparação]` | 7 ocorrências, 3 páginas | **0** |
 | Linhas com `#page=` no endereço | 0 de 132 | **23 de 132** |
 | Localizadores que nomeiam um artefacto interno | 35 | **0** |
 | Páginas construídas | 312 | 316 |
-| Endereços no mapa do sítio · com `lastmod` | 260 · 0 | 264 · **258** |
+| Endereços no mapa do sítio · com `lastmod` | 260 · 0 | 264 · **0 — ver F5** |
 
-A conta das ocorrências merece uma palavra, porque à primeira vista não desceu:
-a porta das correcções é um bloco de prosa repetido em todas as páginas, e por
-isso **conta como moldura pela definição da própria régua** — acrescenta 301
-ocorrências sozinha. O que saiu foram 311 ocorrências de máquinas a descrever-se
-a si próprias. É por isso que a régua imprime as duas contas.
+A conta das ocorrências merece uma palavra, porque **subiu**. Duas coisas a
+empurram para cima e nenhuma delas é moldura no sentido de que se queixava a
+medição: a porta das correcções é um bloco de prosa repetido em todas as páginas
+e acrescenta **301** ocorrências sozinha; e os três rótulos de estado que a
+revisão cruzada mandou repor (F4) acrescentam mais. O que saiu foram 311
+ocorrências de máquinas a descrever-se a si próprias — 194 de «a construção do
+sítio falha se…», 240 da caixa que declarava proveniência completa, e o resto.
+É por isso que a régua imprime as duas contas, e é por isso que o alvo de «≤ 12
+frases distintas» do BRIEF §6.3 continua no §4: chegar lá é decidir onde vive
+cada política, e isso é a fase da voz.
 
 ---
 
@@ -2471,62 +2476,144 @@ desdobramento, e é outro trabalho.
 O mapa da primeira página e o «Voltar ao mapa dos municípios» da página de Évora
 passam a levar aqui.
 
-#### 10 · O mapa do sítio ganhou `lastmod` — onde há data honesta
+#### 10 · O mapa do sítio continua sem `lastmod`, e agora está dito porquê
 
-Não havia nenhum. A tentação óbvia é carimbar a data da construção nas 264
-linhas, e isso diria a um motor de busca que 264 páginas mudaram hoje porque o
-sítio foi reconstruído hoje. **Um carimbo de build não é uma data de alteração.**
+Não havia nenhum, e a primeira resposta foi pôr um por tipo de página: a data de
+leitura numa linha, a data de publicação num estudo, a data do commit numa página
+de conteúdo. **A revisão cruzada mostrou que isso é uma data errada, não uma data
+parcial.** `access_date` é quando a FONTE foi lida; a data de um estudo é quando o
+TRABALHO saiu. Nenhuma delas responde à pergunta que o campo faz, que é quando
+**esta página** mudou — e uma página muda quando muda qualquer uma das suas
+entradas, incluindo os componentes que partilha com as outras trezentas.
 
-`src/lib/frescura.mjs`, por tipo de página:
-
-| Tipo | De onde vem a data |
-| --- | --- |
-| página de linha | a mais recente entre `access_date` e a data da última correcção; numa linha derivada, a mais recente das linhas de origem — que é quando os dados que a produzem foram lidos |
-| página de estudo | as datas do arquivo (`src/data/studies.mjs`), quando existem |
-| página de conteúdo | a data do último commit que tocou o gabarito ou os dados que a compõem |
-
-**E onde não há data honesta, não há `lastmod`.** 258 dos 264 endereços têm data;
-**6 não têm** — as páginas dos três trabalhos cuja data de publicação continua
-`[a verificar]` (§1.7), nas duas edições. É precisamente a informação que falta. Se o `git` não
-existir onde a construção acontece, as páginas de conteúdo ficam todas sem
-`lastmod` em vez de ganharem um carimbo inventado.
+O campo saiu por inteiro, e `src/lib/frescura.mjs` com ele. Um carimbo de build
+diria que 264 páginas mudaram hoje; uma data de leitura diz outra coisa qualquer.
+**A ausência é o que o protocolo permite e é a verdade.** O modelo a sério — o
+git sobre o conjunto completo de entradas de cada página — fica no §4.
 
 ---
 
-**O motor, e o defeito que estava lá e ninguém tinha visto.** O plano deste bloco
-mandava conferir, antes de tudo, o que o exportador faz às correcções de uma
-linha cruzada quando ela volta a atravessar. Faz o pior que podia fazer:
-`render_claim()` escrevia a cadeia literal `corrections: []` em **todas** as
-corridas. Uma linha cruzada corrigida do lado do sítio — pelo caminho
-documentado, `corrections[]` mais `check-cruzamento.mjs --accept-correction` —
-perdia a correcção na reexportação seguinte, e o registo da travessia era
-reescrito a dizer `corrections_at_export: 0`, de modo que **a conferência de
-aceitação do sítio não via nada**. Uma publicação cuja tese inteira é que nada
-desaparece estava a apagar o registo das suas próprias confissões, em silêncio.
+#### O que a revisão cruzada apanhou, e o que dela saiu
 
-Foi conferido contra a versão em `master` antes de se lhe tocar, e não deduzido:
-a linha de correcções da saída é `corrections: []` e o registo diz `0`,
-independentemente do que o ficheiro do sítio publique.
+Uma revisão de outra família de modelos (Codex, em leitura apenas, sobre os dois
+ramos) passou por este bloco depois de ele estar escrito. Encontrou dois
+bloqueadores e seis defeitos. Todos foram corrigidos aqui; os números do quadro
+acima são os de depois.
 
-O exportador passou a ler o que o sítio já publica e a carregá-lo, verbatim. Pode
-**acrescentar** (o manifesto declara correcções novas, casadas por data, natureza
-e valores para que uma segunda corrida as reconheça e não as duplique); não pode
-**remover**. `corrections_at_export` passou a ser o comprimento real, e
-`site_corrections` — a história do que o sítio admitiu — é carregada para a
-frente quer a corrida mude alguma coisa quer não. Três validações novas
-(V9, V10 e a da página) e **sete conferências novas** no ficheiro de testes, que
-passou de 17 para 24: uma reexportação preserva uma correcção do sítio · uma
-correcção declarada dos dois lados atravessa uma só vez · correcções malformadas
-são recusadas · um endereço só muda com o acontecimento escrito · `#page=` é lido
-do localizador e só de um PDF.
+**B1 · O exportador duplicava as correcções a cada corrida.** O manifesto escreve
+`__valor__` onde vai o valor da linha, e o exportador resolvia o sentinela
+**depois** de comparar a entrada com o que estava em disco. `__valor__` nunca é
+igual a `12 069 012,6`, por isso cada reexportação acrescentava outra cópia do
+mesmo acontecimento: as cinco linhas do PRR já a traziam **duas vezes**. Três
+correcções: o sentinela resolve-se **antes** da comparação; a identidade de uma
+entrada passou a ser a entrada **inteira** (duas revisões no mesmo dia, sobre o
+mesmo campo, com razões diferentes, são dois acontecimentos — e uma comparação
+por quatro campos engolia a segunda); e o bloco `corrections:` do sítio passou a
+ser levantado do ficheiro **linha a linha** e reemitido tal e qual, em vez de ser
+lido e recomposto — um motivo escrito num escalar multilinha voltava como uma
+cadeia entre aspas, ou seja, o exportador reescrevia o que só devia preservar. As
+cinco linhas foram repostas e reexportadas: **uma entrada cada, estável ao fim de
+quatro corridas seguidas.** O teste #19 foi reescrito para usar o sentinela a
+sério — contra o código antigo, falha.
+
+**B1b · Sair do manifesto não tira a linha do sítio.** Uma linha retirada do
+manifesto continuava publicada e saía do registo de travessia: ficava no ar sem a
+guarda que prova que os seus bytes são os que atravessaram, e sem ninguém dar por
+isso. O exportador passa a recusar (V11); retirar a sério exige uma entrada
+`retired: true` com razão escrita.
+
+**B2 · As nove entradas de endereço estavam mal tipadas.** `ledger/README.md`
+define `actualizacao` como «o valor mudou», e as nove tinham `old_value` igual a
+`new_value` — uma entrada que declara «o valor mudou de X para X», que é falso e
+diz ao leitor o contrário do que aconteceu. Entrou uma **terceira natureza,
+`proveniencia`**: o valor não mudou, mudou a maneira de lá chegar. Traz um campo
+a mais, `field`, e `old_value`/`new_value` são os valores **desse campo** — os
+dois endereços. O validador aceita-a e exige o `field` de uma lista fechada; o
+portão aprendeu-a e compara os dois endereços **como texto**, não por algarismos;
+a história da linha imprime-a. No registo do Método **não é listada**: são muitas
+de cada vez e afogariam as confissões — aparecem como as linhas que as trazem,
+cada uma com o caminho para a sua história. É a regra em cascata do
+`ledger/README.md`. As nove foram retipadas.
+
+E ficou escrita a regra do silêncio, que estava a ser praticada sem estar dita:
+**as afinações do ponteiro não entram na história da linha.** Acrescentar
+`#page=N`, reescrever um localizador por outras palavras para o mesmo sítio, ou
+aparar um excerto no fim de uma frase — nada disso muda a resposta a «onde está
+isto», e todas ficam registadas no git e aqui. O critério não é a dimensão da
+alteração: é se o ponteiro passa a apontar para **outro sítio**.
+
+**F1 · A porta das correcções era contada e não era lida.** A conferência
+contava uma por página e passava com um elemento vazio ou escondido. Passou a
+exigir que a porta **diga o endereço** e que não esteja sob `hidden`,
+`aria-hidden="true"` ou `.vh`. E ficou escrito, no portão e aqui, que os
+documentos de estudo estão fora **por desenho**: são obra já publicada, conferida
+carácter a carácter contra a origem, e acrescentar-lhes uma caixa nossa quebrava
+essa igualdade — quem quiser corrigir um chega à porta pela página do estudo.
+
+**F2 · A auditoria de selos procurava demasiado longe.** Aceitava um selo em
+qualquer antepassado até à secção, e por isso a primeira página passava com
+`distancia-portugal-ue27-2024` e `pib-pc-portugal-2024` sem selo nenhum ao pé do
+número. Regra nova, em duas metades: fora de um `<svg>`, o selo tem de estar
+dentro do **elemento que embrulha o número** — a frase, o mosaico, a célula;
+dentro de um `<svg>`, tem de estar numa **legenda declarada** do próprio
+instrumento (`data-legenda-selos`), e não num selo qualquer da mesma secção. A
+regra apertada apanhou **22 valores** que a anterior deixava passar, todos
+corrigidos: a legenda do instrumento n.º 1 e as três da página do município
+passaram a estar marcadas, o relance da régua ganhou o selo da região que está a
+ser lida, e o relance da linha do tempo passou a levar os selos ao pé dos dois
+números em vez de numa fila por baixo. Uma excepção declarada: o bloco «a mesma
+frase na outra edição» leva o selo para a linha na **outra** edição, de propósito,
+e a conferência aceita a linha daquele id em qualquer das duas.
+
+E passou a apanhar também o caso que faltava: um endereço com `#page=` cuja
+página **não é dita** na página da linha — antes só apanhava um rótulo que
+discordasse.
+
+**F3 · A heurística do endereço rotulava mal o ficheiro do PRR.** `/api/` no
+caminho não faz de uma coisa uma série: `dados.gov.pt/api/1/datasets/r/…` serve
+uma folha de cálculo, e as cinco linhas do PRR ficavam rotuladas «Série». O campo
+existe agora: **`document.kind`**, com o conjunto fechado
+`pdf · html · serie · ficheiro · registo`, validado pelo `ledger:check`, escrito
+no manifesto para as linhas cruzadas e directamente nas nativas. A página da
+linha lê o campo e nunca a forma do endereço; uma linha sem `kind` fica com os
+rótulos genéricos. Contagem: **57 `serie` · 31 `pdf` · 10 `ficheiro` · 6 `html`**
+(28 linhas não têm documento — derivadas, da casa, ou com o endereço por
+confirmar). `registo` fica declarado e por usar.
+
+**F4 · Três cortes tinham ido longe de mais.** Voltam, como rótulos de uma linha
+e não como parágrafos: nas páginas de leitura, «Leitura breve — prosa da casa,
+assente numa frase do trabalho», porque ser prosa da casa e não citação é um
+facto que sustenta a confiança; no arquivo e na página do trabalho, «Descrição:
+reformulação do título», para que uma descrição não seja lida como um resumo do
+conteúdo — sai só o recado interno «aguardam o director»; e na página de uma
+linha, «Estado da proveniência: completa», porque a página de uma linha é a única
+superfície do sítio sem selo para si própria, e sem esta linha o estado não é
+dito em lado nenhum. Tudo o resto que foi cortado fica cortado.
+
+**F5 · O `lastmod` do mapa do sítio não era hora de alteração da página.** A data
+de leitura de uma fonte é quando a **fonte** foi lida; a data de um estudo é
+quando o **trabalho** saiu. Nenhuma delas é «quando esta página mudou» — uma
+página muda quando muda qualquer uma das suas entradas, componentes partilhados
+incluídos, e esse modelo não está construído. O `lastmod` **saiu por inteiro**, e
+`src/lib/frescura.mjs` com ele. Uma ausência honesta vale mais do que uma data
+errada; o modelo a sério fica no §4.
+
+**F6 · O aviso do arquivo ainda dizia «aguardam o director».** Ficou «Datas de
+publicação por confirmar.», que é o que se sabe.
 
 **Conferido nesta passagem:** `npm run build` fecha com código 0 · `typecheck`
-limpo · 316 páginas · 5 393 ligações internas, **0 partidas** (o conferidor foi
+limpo · 316 páginas · 5 423 ligações internas, **0 partidas** (o conferidor foi
 posto à prova com uma ligação partida plantada) · `check-cruzamento --with-origin`
 confere as 70 linhas contra o motor · livro-razão 132 afirmações, **dívida 12**
 (inalterada: nenhum campo `[a verificar]` foi preenchido nem criado) ·
-**29 afirmações não citadas** (inalterado) · o portão de HTML e os cinco estragos
-plantados descritos acima, cada um apanhado e reposto.
+**29 afirmações não citadas** (inalterado) · o portão de HTML posto à prova com
+**nove estragos plantados**, cada um apanhado e reposto: página sem porta ·
+página com duas portas · porta vazia (301 erros) · porta escondida por
+`aria-hidden` num antepassado · valor do cabeçalho sem selo · leitura breve sem
+selos · selo na secção mas não ao pé do número · legenda de instrumento
+desmarcada · endereço com `#page=` sem rótulo de página (46 erros). Do lado do
+motor, `python3 -m core.gate` fecha em PASS e `export_site_rows_test` em
+**28 conferências** (eram 17 antes deste bloco, 24 antes da revisão).
 
 ## 2. Como funciona o portão, e o que ele não vê
 
@@ -2792,6 +2879,7 @@ onde a página da linha passa a ser a prova, e não uma ficha sobre a prova.
 | A origem «calculado sobre um ficheiro alojado» | 7 linhas de soma sobre um registo (3 do PRR, 4 da CAOP) publicam `excerpt: "[a verificar]"` porque não há frase para transcrever. É o limite 12 do §2.3, e continua aberto. | Fecha-se alojando o ficheiro de dados e correndo o `check` sobre ele — o padrão que `check:dados` já tem para os gráficos. É construção, não correcção. |
 | Cópias fixadas das fontes | A classe de defeito «o endereço morreu» disparou duas vezes num dia (§1.36, item 4). A resposta que a fecha é alojar a cópia fixada com o seu resumo, e a linha ligar as duas. | **Depende de uma verificação de licença por fonte, que ninguém fez.** dados.gov.pt e a CAOP declaram licenças abertas; o município, a DGAL, o IEFP e o INE têm de ser lidos um a um. Alojar primeiro e verificar depois seria a ordem errada. |
 | `document.kind` | Hoje a página da linha decide pelo padrão do endereço se uma fonte é uma série de dados ou um documento (§1.36, item 7). Funciona para as 57 linhas de hoje e é uma heurística. | O campo pertence ao redesenho, onde há mais do que duas classes a distinguir (PDF, página, série, registo, ficheiro alojado). |
+| `lastmod` no mapa do sítio | O campo não existe. Pô-lo a partir das datas que o sítio tem seria pôr uma data errada: nenhuma delas é «quando esta página mudou». | Precisa de um modelo de alteração por página — o git sobre o **conjunto completo** de entradas de cada página, componentes partilhados incluídos. É construção, e pertence ao redesenho. |
 | O extractor de citações do motor corta a meio | 15 excertos cruzados estavam cortados a meio de palavra ou de número; 12 puderam ser aparados no último ponto final, 3 **não** (`evora-execucao-da-receita-2025`, `evora-orcamento-2025`, `evora-pael-emprestimo`), porque o valor da linha aparece depois desse ponto. | O corte é do lado do motor, a uma largura fixa. Alargá-lo muda excertos de estudos já publicados e conferidos byte a byte; é trabalho do motor, não do sítio. |
 | O PRR: o instantâneo lido já não é servido | As cinco linhas do PRR foram somadas sobre o ficheiro de 2026-08-03, que devolve 404. O publicador substitui o ficheiro todos os dias e não arquiva o anterior. **Se os valores de Évora mudaram entre esse instantâneo e o de hoje é coisa que não se pode saber.** | Refazer a soma sobre o ficheiro de hoje é uma leitura nova, com data nova, e muda cinco valores publicados. É trabalho de aquisição no motor, com o seu registo de actualização — não um remendo de endereço. |
 | A linha do INE que não se conseguiu medir | O `json_indicador` do INE serviu o primeiro pedido e depois devolveu 429 e esgotou o tempo em três tentativas. Não se consegue separar o INE a limitar a nossa sondagem de um bloqueio a quem lê. | Fica **por medir**, e não como defeito. Mede-se com um pedido isolado, noutro dia. |
@@ -2801,7 +2889,7 @@ e por isso não foi tocada neste bloco.
 
 | Item | Estado |
 | --- | --- |
-| As frases de moldura que ficam | A política de correcções repetida em 264 páginas de linha, a nota de não-ordenação de partidos em 122, a linha do domínio no rodapé de 296. O alvo do `BRIEF` §6.3 é **≤ 12 frases distintas**; a medição de hoje dá **77** pela régua de `scripts/medir-defeitos.mjs`. Cada uma destas mudanças é editorial: onde é que a política passa a viver. |
+| As frases de moldura que ficam | A política de correcções repetida em 264 páginas de linha, a nota de não-ordenação de partidos em 122, a linha do domínio no rodapé de 296. O alvo do `BRIEF` §6.3 é **≤ 12 frases distintas**; a medição de hoje dá **83** pela régua de `scripts/medir-defeitos.mjs`. Cada uma destas mudanças é editorial: onde é que a política passa a viver. |
 | O aparelho da página de Évora | 1 012 palavras, 41 % da prosa da página; quatro dos nove itens de «o que esta página não sabe» repetem uma ressalva de «Método e ressalvas». Cortar isto é reescrever, e reescrever é a fase da voz. |
 | `/sobre` e `/correcoes` | `ABOUT.md` existe no repositório e não é publicado; a única superfície «sobre» é o Método. `/correcoes` seria a casa única da política. Ambos são desenho de páginas novas. |
 | `EDITION` no rodapé | `12.08.2026`, à mão em `site.config.mjs`, em 296 páginas. O `BRIEF` §6.5 propõe substituí-la por «a medir agora / a seguir». É uma decisão sobre o que o cabeçalho promete. |

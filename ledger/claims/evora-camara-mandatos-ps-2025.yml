@@ -15,6 +15,7 @@ document:
   title: "Autárquicas 2025 — resultados oficiais por território"
   edition: "territory-electionId=1-territoryId=1267-organId=4.json"
   locator: "SGMAI, autárquicas de 2025, órgão Câmara Municipal, Évora, lista «PS», mandatos"
+  kind: "serie"
 source_url: "https://www.eleicoes.mai.gov.pt/autarquicas2025/assets/static/result/territory-electionId=1-territoryId=1267-organId=4.json"
 access_date: "2026-08-10"
 reference_date: "2025"

@@ -15,6 +15,7 @@ document:
   title: "Autárquicas 2017 — resultados oficiais por território"
   edition: "TERRITORY-RESULTS-LOCAL-070500-CM.json"
   locator: "SGMAI, autárquicas de 2017, órgão Câmara Municipal, Évora, lista «PCP-PEV», mandatos"
+  kind: "serie"
 source_url: "https://www.eleicoes.mai.gov.pt/autarquicas2017/static-data/territory-results/TERRITORY-RESULTS-LOCAL-070500-CM.json"
 access_date: "2026-08-10"
 reference_date: "2017"

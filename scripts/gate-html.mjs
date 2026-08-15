@@ -44,6 +44,7 @@ import { matchPath, routePath, HREFLANG, LANGS } from '../src/lib/routes.mjs';
 import { documentoDaEdicao, documentoServido } from '../src/lib/documentos.mjs';
 import { renderizacoesAceites } from '../src/data/correcoes.mjs';
 import { SITE_HOST, SITE_NAME, AUTHORSHIP_LINE, EDITION } from '../site.config.mjs';
+import { ENDERECO_CORRECOES } from '../src/data/metodo.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..');
@@ -480,36 +481,79 @@ function campoDaLinha(claim, campo, lang) {
  * linha, e um selo para si própria seria uma porta para a divisão onde já se
  * está.
  */
-const SECCIONADORES = new Set(['section', 'article', 'aside', 'details', 'main', 'header', 'footer', 'body', 'html']);
+const TAGS_SVG = new Set(['svg', 'g', 'text', 'tspan', 'title', 'desc']);
+
+function dentroDeSvg(el) {
+  let p = el.parentNode;
+  while (p) {
+    if (String(p.rawTagName ?? '').toLowerCase() === 'svg') return true;
+    p = p.parentNode;
+  }
+  return false;
+}
+
+/** O primeiro antepassado que é o próprio instrumento, ou a secção que o contém. */
+function raizDoInstrumento(el) {
+  let p = el.parentNode;
+  let seccao = null;
+  while (p) {
+    const attrs = p.attributes ?? {};
+    if ('data-instrumento' in attrs) return p;
+    const tag = String(p.rawTagName ?? '').toLowerCase();
+    if (!seccao && (tag === 'section' || tag === 'article')) seccao = p;
+    p = p.parentNode;
+  }
+  return seccao;
+}
+
+function temChipPara(no, alvos) {
+  for (const a of no?.querySelectorAll?.('.src-chip') ?? []) {
+    if (String(a.rawTagName ?? '').toLowerCase() !== 'a') continue;
+    if (alvos.includes(decodeEntities(a.getAttribute('href') ?? ''))) return true;
+  }
+  return false;
+}
 
 function auditaSelo(el, id, lang, err) {
+  /* A linha daquele id, em qualquer das duas edições. Quase sempre é a da
+     página; o bloco «a mesma frase na outra edição», nas páginas de leitura,
+     é escrito na outra língua de propósito e o seu selo leva à linha na outra
+     edição — o que continua a ser a porta para a linha DAQUELE valor. */
+  const alvos = LANGS.map((l) => routePath('linha', l, { slug: id }));
   const alvo = routePath('linha', lang, { slug: id });
-  const dentroDeSvg = (() => {
-    let p = el.parentNode;
-    while (p) {
-      if (String(p.rawTagName ?? '').toLowerCase() === 'svg') return true;
-      p = p.parentNode;
-    }
-    return false;
-  })();
 
-  let no = el.parentNode;
-  while (no) {
-    for (const a of no.querySelectorAll?.('.src-chip') ?? []) {
-      if (String(a.rawTagName ?? '').toLowerCase() !== 'a') continue;
-      if (decodeEntities(a.getAttribute('href') ?? '') === alvo) return;
+  if (dentroDeSvg(el)) {
+    /* Um <a> dentro de um desenho não se lê como porta: o selo de um valor
+       desenhado vive na LEGENDA do instrumento — e tem de ser essa legenda,
+       marcada com data-legenda-selos, e não um selo qualquer que por acaso
+       esteja na mesma secção. */
+    const raiz = raizDoInstrumento(el);
+    const legendas = raiz?.querySelectorAll?.('[data-legenda-selos]') ?? [];
+    for (const legenda of legendas) {
+      if (temChipPara(legenda, alvos)) return;
     }
-    if (SECCIONADORES.has(String(no.rawTagName ?? '').toLowerCase())) break;
-    no = no.parentNode;
+    err(
+      `o valor da afirmação "${id}" está desenhado dentro de um <svg> e não tem selo na ` +
+        `legenda do seu instrumento.\n` +
+        `      esperava-se <a class="src-chip" href="${alvo}"> dentro de um ` +
+        `[data-legenda-selos] deste instrumento` +
+        (legendas.length ? '' : ' — e este instrumento não tem legenda de selos nenhuma') +
+        `.\n      É a convenção do §1.34: um <a> dentro de um desenho não é uma porta que se veja.`,
+    );
+    return;
   }
+
+  /* Fora de um desenho, o selo é do VALOR e não da secção: tem de estar dentro
+     do elemento que embrulha o número — a frase, o mosaico, a célula. Procurar
+     mais acima deixava passar um selo na secção seguinte. */
+  const pai = el.parentNode;
+  if (pai && temChipPara(pai, alvos)) return;
 
   err(
     `o valor da afirmação "${id}" aparece sem selo para a sua própria linha.\n` +
-      `      esperava-se, ao pé do número, <a class="src-chip" href="${alvo}">.\n` +
-      (dentroDeSvg
-        ? `      O valor está dentro de um <svg>: o selo vai na legenda do instrumento, ` +
-          `ao lado do desenho (DECISIONS §1.34).\n`
-        : `      Use <Claim id="${id}" chip/>, ou <Frase … selos/> quando o valor vai numa frase.\n`) +
+      `      esperava-se <a class="src-chip" href="${alvo}"> dentro do mesmo elemento que ` +
+      `embrulha o número — a frase, o mosaico ou a célula, e não a secção.\n` +
+      `      Use <Claim id="${id}" chip/>, ou <Frase … selos/> quando o valor vai numa frase.\n` +
       `      Um selo que aponte para a linha do PAI não conta: a porta tem de abrir a linha do ` +
       `número que está à vista.`,
   );
@@ -755,8 +799,16 @@ for (const file of ficheirosHtml(DIST)) {
    *
    * Exactamente uma, e não «pelo menos uma»: duas portas na mesma página são
    * duas respostas para a mesma pergunta, e o leitor não tem como saber qual é
-   * a certa. Os documentos de estudo estão fora desta conta — são obra citada,
-   * alojada intacta, e já saíram do varrimento acima.
+   * a certa. E não basta existir: tem de dizer o endereço para onde se escreve,
+   * e não pode estar escondida — `hidden`, `aria-hidden="true"` ou a classe
+   * `.vh`, nela ou em qualquer antepassado.
+   *
+   * **OS DOCUMENTOS DE ESTUDO ESTÃO FORA DESTA CONTA, POR DESENHO.** Um
+   * documento em `/estudos/<slug>/documento` é obra JÁ PUBLICADA, alojada
+   * intacta e conferida carácter a carácter contra a origem: acrescentar-lhe
+   * uma caixa nossa quebrava essa igualdade, que é a garantia mais forte que o
+   * sítio dá sobre eles. Quem quiser corrigir um documento chega à porta pela
+   * página do estudo, que tem a sua. Ver DECISIONS §1.36, item 1.
    */
   const portas = root.querySelectorAll('[data-porta-correccoes]');
   if (portas.length !== 1) {
@@ -765,57 +817,36 @@ for (const file of ficheirosHtml(DIST)) {
         `      <PortaDeCorreccoes/> entra pelo invólucro (Base.astro) em todas as páginas; ` +
         `uma página que a ponha no seu próprio aparelho passa portaNoRodape={false}.`,
     );
-  }
-
-  /* Páginas de destino de estudo não se oferecem à indexação enquanto não
-     tiverem conteúdo; as outras não podem ganhar noindex por descuido.
-
-     A página de uma linha é o caso a meio: oferece-se ao índice quando a
-     proveniência está completa, e fica fora enquanto tiver um campo por
-     confirmar. Não é uma preferência de gabarito — é lido do livro-razão, aqui
-     e no sitemap, pela mesma função que decide o estado do selo. Uma linha
-     incompleta que se oferecesse como registo citável seria o sítio a
-     convidar para a sua própria dívida.
-
-     A página de um estudo é o mesmo caso, um nível acima: enquanto não tiver
-     leitura escrita (src/data/leituras.mjs) fica fora do índice, e no dia em
-     que a tiver, entra. As DUAS metades continuam impostas aqui — falha quem
-     esconde uma página que já tem conteúdo, e falha quem oferece uma que não
-     tem. O que mudou não foi a exigência: foi ela deixar de ser «todas» e
-     passar a ser lida da mesma lista que a página e o sitemap leem. */
-  const robots = root.querySelector('head meta[name="robots"]');
-  const temNoindex = (robots?.getAttribute('content') ?? '').includes('noindex');
-  if (rota?.key === 'estudo') {
-    const work = workById(rota.params.slug ?? '') ?? null;
-    /* Sem trabalho no arquivo, a rota não devia existir; quem o apanha é a
-       construção. Aqui trata-se como «sem leitura», que é o estado prudente. */
-    const comLeitura = Boolean(work) && temLeitura(work.id);
-    if (!comLeitura && !temNoindex) {
-      err('página de destino de estudo sem leitura escrita e sem <meta name="robots" content="noindex">.');
-    }
-    if (comLeitura && temNoindex) {
+  } else {
+    /* Uma porta que não se lê não é uma porta. Um elemento vazio, ou escondido
+       de olhos ou de leitores de ecrã, passava a contagem e não servia a
+       ninguém — e era isso que a contagem sozinha não via. */
+    const porta = portas[0];
+    const textoDaPorta = decodeEntities(textoDe(porta, { semEstilo: true }));
+    if (!textoDaPorta.includes(ENDERECO_CORRECOES)) {
       err(
-        `a página do estudo "${rota.params.slug}" tem leitura escrita e leva noindex. ` +
-          `Uma página com conteúdo é para ser indexada.`,
+        `a porta de correcções não diz o endereço para onde se escreve ` +
+          `("${ENDERECO_CORRECOES}").\n      Uma porta que não diz para onde vai não é uma porta.`,
       );
     }
-  }
-  if (claimDaPagina) {
-    const incompleta = provenienciaIncompleta(claimDaPagina);
-    if (incompleta && !temNoindex) {
+    const escondido = (() => {
+      let no = porta;
+      while (no && no.nodeType !== undefined) {
+        const attrs = no.attributes ?? {};
+        if ('hidden' in attrs) return 'hidden';
+        if ((attrs['aria-hidden'] ?? '') === 'true') return 'aria-hidden="true"';
+        const klass = String(attrs['class'] ?? '');
+        if (/(^|\s)vh(\s|$)/.test(klass)) return 'class="vh"';
+        no = no.parentNode;
+      }
+      return null;
+    })();
+    if (escondido) {
       err(
-        `a linha "${claimDaPagina.id}" tem campos por confirmar e a sua página não leva ` +
-          `<meta name="robots" content="noindex">.`,
+        `a porta de correcções está escondida por ${escondido} (nela ou num antepassado). ` +
+          `Estar na página e não ser vista é o mesmo que não estar.`,
       );
     }
-    if (!incompleta && temNoindex) {
-      err(
-        `a linha "${claimDaPagina.id}" tem proveniência completa e a sua página leva noindex. ` +
-          `Uma linha completa é para ser citável.`,
-      );
-    }
-  } else if (rota && !['estudo', 'linha'].includes(rota.key) && temNoindex) {
-    err(`esta página tem noindex e não devia: a rota "${rota.key}" é para ser indexada.`);
   }
 
   /* --- 4. corpo: retirar o que é legítimo, e ver o que sobra --- */
@@ -864,6 +895,11 @@ for (const file of ficheirosHtml(DIST)) {
   const CAMPOS_CORRECAO = {
     date: 'exacto',
     kind: 'natureza',
+    /* Numa revisão de proveniência, `field` diz qual o campo que mudou, e
+       `old_value`/`new_value` são os valores DESSE campo — endereços, por
+       exemplo. Comparam-se como texto e não por algarismos: dois endereços
+       podem ter os mesmos algarismos e ser sítios diferentes. */
+    field: 'exacto',
     old_value: 'algarismos',
     new_value: 'algarismos',
     reason: 'motivo',
@@ -936,6 +972,19 @@ for (const file of ficheirosHtml(DIST)) {
 
     const esperado = String(corr[campo]);
 
+    /* Um endereço é texto, não uma sequência de algarismos: numa revisão de
+       proveniência os dois valores comparam-se carácter a carácter. */
+    if (corr.kind === 'proveniencia' && (campo === 'old_value' || campo === 'new_value')) {
+      if (renderizado !== normalizeWhitespace(esperado)) {
+        err(
+          `no registo, "${campo}" da revisão de proveniência #${n + 1} de "${id}" não é o do ` +
+            `livro-razão.\n      esperado:    ${normalizeWhitespace(esperado).slice(0, 120)}\n` +
+            `      renderizado: ${renderizado.slice(0, 120)}`,
+        );
+      }
+      continue;
+    }
+
     /* A natureza da entrada pode aparecer como identificador ou como um dos
        seus rótulos traduzidos — e mais nada. Uma entrada rotulada
        «atualização» com kind "correcao" no livro-razão não passa: era assim
@@ -966,9 +1015,11 @@ for (const file of ficheirosHtml(DIST)) {
   }
 
   /* --- os campos de uma linha do livro-razão, na página dessa linha --- */
+  const camposRenderizados = new Set();
   for (const el of body.querySelectorAll('[data-linha-claim]')) {
     const id = el.getAttribute('data-linha-claim');
     const campo = el.getAttribute('data-linha-campo');
+    camposRenderizados.add(`${id}:${campo}`);
     aRemover.push(el);
 
     /**
@@ -1056,6 +1107,25 @@ for (const file of ficheirosHtml(DIST)) {
             `ligação aponta para "${decodeEntities(destino).slice(0, 90)}".`,
         );
       }
+    }
+  }
+
+  /**
+   * Um endereço que fixa a página tem de DIZER a página.
+   *
+   * A conferência de `source_url.page` apanha um rótulo que discorda do
+   * endereço; não apanhava um rótulo que não existe. Um endereço
+   * `…pdf#page=119` sem «Abrir o documento na página 119» manda o leitor para
+   * a página certa e não lhe diz que o faz — e uma ligação que não anuncia o
+   * que abre é a mesma opacidade que o `#page=` veio fechar.
+   */
+  if (claimDaPagina) {
+    const pagina = campoDaLinha(claimDaPagina, 'source_url.page', linguaPagina);
+    if (pagina && !camposRenderizados.has(`${claimDaPagina.id}:source_url.page`)) {
+      err(
+        `o endereço de "${claimDaPagina.id}" fixa a página ${pagina} (\`#page=\`) e esta página ` +
+          `não a diz.\n      Falta o rótulo com data-linha-campo="source_url.page" ao pé da ligação.`,
+      );
     }
   }
 

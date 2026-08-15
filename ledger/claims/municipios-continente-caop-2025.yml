@@ -13,6 +13,7 @@ document:
   title: "Carta Administrativa Oficial de Portugal (CAOP)"
   edition: "2025"
   locator: "CAOP 2025, ficheiro do Continente (GeoPackage), contagem das entradas de município"
+  kind: "ficheiro"
 source_url: "https://geo2.dgterritorio.gov.pt/caop/CAOP_Continente_2025-gpkg.zip"
 access_date: "2026-08-12"
 reference_date: "2025"
@@ -33,8 +34,9 @@ note: "Não há excerto textual: o valor sai de uma contagem de registos num fic
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections:
   - date: "2026-08-15"
-    kind: "actualizacao"
-    old_value: "278"
-    new_value: "278"
-    reason: "endereço da fonte alterado: https://geo2.dgterritorio.gov.pt/caop/ → https://geo2.dgterritorio.gov.pt/caop/CAOP_Continente_2025-gpkg.zip. O endereço antigo é a pasta onde os ficheiros da CAOP estão alojados e devolve HTTP 403 a qualquer pedido, com listagem desactivada — não é, nem nunca foi, uma página que se possa abrir. Os ficheiros por baixo dela respondem HTTP 200. A linha passa a citar o ficheiro de onde a contagem foi feita. O valor não muda."
-    reason_en: "source address changed: https://geo2.dgterritorio.gov.pt/caop/ → https://geo2.dgterritorio.gov.pt/caop/CAOP_Continente_2025-gpkg.zip. The old address is the directory the CAOP files sit in and returns HTTP 403 to every request, with listing disabled — it is not, and never was, a page that can be opened. The files beneath it answer HTTP 200. The row now cites the file the count was made over. The value does not change."
+    kind: "proveniencia"
+    field: "source_url"
+    old_value: "https://geo2.dgterritorio.gov.pt/caop/"
+    new_value: "https://geo2.dgterritorio.gov.pt/caop/CAOP_Continente_2025-gpkg.zip"
+    reason: "O endereço antigo é a pasta onde os ficheiros da CAOP estão alojados e devolve HTTP 403 a qualquer pedido, com listagem desactivada — não é, nem nunca foi, uma página que se possa abrir. Os ficheiros por baixo dela respondem HTTP 200. A linha passa a citar o ficheiro de onde a contagem foi feita. O valor não muda."
+    reason_en: "The old address is the directory the CAOP files sit in and returns HTTP 403 to every request, with listing disabled — it is not, and never was, a page that can be opened. The files beneath it answer HTTP 200. The row now cites the file the count was made over. The value does not change."

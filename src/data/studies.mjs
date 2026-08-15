@@ -264,6 +264,10 @@ export const EDITIONS = WORKS.flatMap((w) =>
     workId: w.id,
     slug: w.slug,
     description: w.description,
+    /* Se a descrição é reformulação do título ou a frase de abertura do próprio
+       documento — o arquivo rotula-a como o que é, para que não seja lida como
+       um resumo do conteúdo. */
+    descriptionFromDocument: w.descriptionFromDocument ?? false,
   })),
 );
 

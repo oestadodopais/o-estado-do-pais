@@ -8,6 +8,14 @@
  *                   publicadas».
  *   actualizacao  — o valor publicado estava CERTO e deixou de estar, porque
  *                   aquilo que mede mudou. Não é um erro, e não conta.
+ *   proveniencia  — o valor NÃO mudou; mudou a maneira de lá chegar. Uma fonte
+ *                   que muda de endereço é o caso típico. Traz um campo a mais,
+ *                   `field`, que diz QUAL o campo de proveniência que mudou —
+ *                   e `old_value`/`new_value` são os valores desse campo, não
+ *                   os do número publicado. Não conta para as correções nem
+ *                   para as actualizações: dizer «o valor mudou de X para X»
+ *                   era o que a natureza `actualizacao` obrigava a escrever, e
+ *                   era falso. Ver ledger/README.md e DECISIONS §1.36.
  *
  * Misturar as duas faria do registo um diário de alterações, e uma confissão
  * diluída vale menos. Ver DECISIONS §1.11.
@@ -19,11 +27,30 @@
  * livro-razão falha o build.
  */
 
-export const KINDS = ['correcao', 'actualizacao'];
+export const KINDS = ['correcao', 'actualizacao', 'proveniencia'];
+
+/** As naturezas que o registo do Método lista uma a uma. Ver RegistoCorrecoes. */
+export const KINDS_NO_REGISTO = ['correcao', 'actualizacao'];
+
+/**
+ * Os campos de proveniência que uma revisão pode nomear. Lista fechada: um
+ * `field` escrito à mão («endereço», «url») passaria a parecer um campo e não
+ * seria nenhum.
+ */
+export const CAMPOS_DE_PROVENIENCIA = [
+  'source',
+  'source_url',
+  'document.title',
+  'document.edition',
+  'document.locator',
+  'access_date',
+  'excerpt',
+];
 
 export const KIND_LABELS = {
   correcao: { pt: 'correção', en: 'correction' },
   actualizacao: { pt: 'atualização', en: 'update' },
+  proveniencia: { pt: 'revisão de proveniência', en: 'provenance revision' },
 };
 
 /** Todas as formas que o portão aceita ver renderizadas para uma natureza. */

@@ -170,7 +170,10 @@ const jsonld = {
         </div>
 
         <div class="leitura-breve">
-          <p class="layer-tag">{s.estudos.leituraBreveK}</p>
+          {/* Que a frase é prosa da casa — e não uma citação — é um facto que
+              sustenta a confiança, e por isso fica: como rótulo de uma linha, e
+              não como o parágrafo de quatro frases que aqui estava. */}
+          <p class="layer-tag">{s.estudos.leituraBreveRotulo}</p>
           <p class="leitura-frase"><Frase partes={leitura.frase[lang]} lang={lang} selos={true} /></p>
           <p class="log-vazio-k">{s.estudos.leituraOutraLingua}</p>
           <p class="leitura-frase-outra" lang={outraLingua === 'pt' ? 'pt-PT' : 'en'}>
@@ -326,6 +329,11 @@ const jsonld = {
         ) : (
           descricaoEn
         )}
+      </p>
+      <p class="log-vazio-k">
+        {work.descriptionFromDocument
+          ? s.estudos.descricaoDoDocumentoRotulo
+          : s.estudos.descricaoRotulo}
       </p>
     </div>
 

@@ -65,23 +65,23 @@ const url = typeof claim.source_url === 'string' && /^https?:\/\//.test(claim.so
   : null;
 
 /**
- * O endereço é um ponto de acesso de dados, e não um documento?
+ * O que a fonte é, lido do campo `document.kind` e de mais lado nenhum.
  *
  * Rótulos. Um pedido a `json_indicador` do INE ou a `api/dissemination` do
  * Eurostat devolve uma resposta, não abre uma página: chamar-lhe «Documento» e
  * ao que ela traz «Excerto» diz ao leitor que existe uma frase impressa algures
- * — e não existe. São **57 das 132 linhas** (BRIEF-confianca §1.4).
+ * — e não existe. São **57 das 132 linhas**.
  *
- * A regra é um padrão de endereço, e é explicitamente provisória: o campo que
- * devia decidir isto é `document.kind`, que fica para o redesenho da página de
- * confiança (DECISIONS §4). Não muda nada além dos rótulos — nenhum campo, nenhum
- * bloco, nenhuma ordem.
+ * Até 15.08.2026 isto era adivinhado pela forma do endereço, e a adivinha
+ * errava: `dados.gov.pt/api/1/datasets/r/…` traz `/api/` no caminho e serve uma
+ * folha de cálculo — as cinco linhas do PRR ficavam rotuladas como série. O
+ * campo é agora lido, e uma linha sem ele fica com os rótulos genéricos, que é
+ * um estado honesto e não uma omissão a esconder.
+ *
+ * Muda os rótulos e mais nada: nenhum campo, nenhum bloco, nenhuma ordem.
  */
-const semFragmento = typeof claim.source_url === 'string' ? claim.source_url.split('#')[0] : '';
-const ehSerieDeDados =
-  semFragmento.includes('json_indicador') ||
-  semFragmento.includes('/api/') ||
-  /\.json(\?|$)/.test(semFragmento);
+const tipoDoDocumento = claim.document?.kind ?? null;
+const ehSerieDeDados = tipoDoDocumento === 'serie';
 
 /**
  * A página do PDF, quando o endereço a fixa.
@@ -313,9 +313,18 @@ const estudo = studyLabel(claim.study, lang);
       }
 
       {
-        /* Só quando falta alguma coisa. Quando não falta, o selo cheio já o diz,
-           e uma caixa a declarar «proveniência completa» em 240 páginas era o
-           sítio a elogiar-se a si próprio (BRIEF-confianca §6.3). */
+        /* O estado diz-se sempre — a página de uma linha é a única superfície
+           do sítio sem selo para si própria, por isso não há nada mais que o
+           diga. O que saiu foi o parágrafo que explicava o que «completa»
+           queria dizer; fica o estado, numa palavra. */
+        !incompleta && (
+          <div class="aparelho-estado">
+            <span class="linha-campo-k">{s.livro.linha.completaK}</span>
+            <p class="aparelho-nota">{s.livro.linha.completaV}</p>
+          </div>
+        )
+      }
+      {
         incompleta && (
           <div class="aparelho-estado aparelho-estado-incompleto">
             <span class="linha-campo-k">{s.livro.linha.incompletaK}</span>

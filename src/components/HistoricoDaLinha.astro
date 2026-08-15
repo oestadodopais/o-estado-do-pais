@@ -52,6 +52,18 @@ const rotulo = (kind) => KIND_LABELS[kind]?.[lang] ?? kind;
             >
               {rotulo(e.kind)}
             </span>
+            {/* Numa revisão de proveniência, o que muda não é o número: é um
+                campo. Sem dizer QUAL, o «X → Y» ao lado não diz de quê. */}
+            {e.kind === 'proveniencia' && (
+              <code
+                class="historico-campo"
+                data-correcao-claim={claim.id}
+                data-correcao-n={String(e.n)}
+                data-correcao-campo="field"
+              >
+                {e.field}
+              </code>
+            )}
             <span class="registo-salto">
               <span
                 class="log-valor log-valor-antigo"

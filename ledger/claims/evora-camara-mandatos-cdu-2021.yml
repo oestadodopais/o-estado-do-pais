@@ -15,6 +15,7 @@ document:
   title: "Autárquicas 2021 — resultados oficiais por território"
   edition: "territory-results-LOCAL-070500-CM.json"
   locator: "SGMAI, autárquicas de 2021, órgão Câmara Municipal, Évora, lista «PCP-PEV», mandatos"
+  kind: "serie"
 source_url: "https://www.eleicoes.mai.gov.pt/autarquicas2021/assets/static/territory-results/territory-results-LOCAL-070500-CM.json"
 access_date: "2026-08-10"
 reference_date: "2021"
