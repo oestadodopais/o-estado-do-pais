@@ -19,6 +19,7 @@ source: "[a verificar]"          # o organismo que publica
 document:
   title: "[a verificar]"
   edition: "[a verificar]"
+  locator: null                  # onde no documento — "p. 108", "Quadro 4, p. 108"
 source_url: "[a verificar]"
 access_date: "[a verificar]"     # AAAA-MM-DD — quando foi lido
 reference_date: "2024"           # AAAA / AAAA-MM / AAAA-MM-DD — a que se refere
@@ -33,6 +34,9 @@ derivation_en: null
 derived_from: []
 # Expressão verificada no build: tem de dar exactamente o valor acima.
 check: null
+
+# A quem o valor é creditado. Lista de entidades, ou campo nenhum.
+attributed_to: null
 
 study: "avaliacao-economica-regional-de-portugal-2026"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
@@ -60,7 +64,62 @@ corrections: []
    `new_value`, `reason` **e `reason_en`** — ou trouxer uma chave que não é
    nenhuma destas;
 10. uma expressão `check` não der exactamente o valor publicado;
-11. houver `derivation` sem `derivation_en`, ou o contrário.
+11. houver `derivation` sem `derivation_en`, ou o contrário;
+12. o bloco `document` trouxer uma chave que não seja `title`, `edition` ou
+    `locator` — ou um `locator` que não seja uma cadeia não vazia;
+13. `attributed_to` não for uma lista de nomes de entidades não vazios, for uma
+    lista vazia, ou algum nome contiver o separador ` · ` com que a página
+    escreve a lista.
+
+## `document.locator` — onde no documento
+
+Opcional. Onde, dentro do documento citado, está a frase que o `excerpt`
+transcreve: `"p. 108"`, `"Quadro 4, p. 108"`, `"mapafluxoscaixa2010.pdf, p. 1"`.
+Uma cadeia livre, escrita como quem manda outra pessoa lá — não há sintaxe a
+cumprir, porque as fontes não a cumprem: umas têm páginas, outras têm quadros,
+outras são um ficheiro dentro de um lote.
+
+Existe porque o documento e a página não são a mesma prova. Uma linha que cite
+um relatório de 400 páginas com `document.title` e mais nada manda o leitor
+para o relatório; a mesma linha com `locator` manda-o para a frase. O campo
+entrou com o material de Évora (DECISIONS §1.31), onde o registo de origem
+guardava o ficheiro e a página e o formato deste sítio não tinha onde os pôr —
+e o que não tem campo perde-se na travessia.
+
+**`null` ou ausente é legítimo**, e é o caso normal: a maior parte das fontes é
+uma página só e não há para onde apontar. `"[a verificar]"` não é o mesmo: é a
+linha a declarar que o excerto está nalgum sítio daquele documento e que ainda
+não se sabe onde — conta para a dívida de proveniência, como qualquer outro
+campo declarado por confirmar. A página da linha publica-o sob «Onde no
+documento», e o portão confere-o carácter a carácter.
+
+## `attributed_to` — a quem o valor é creditado
+
+Opcional. Uma **lista** de entidades: `["Município de Évora"]`,
+`["Município de Évora", "PS"]`. Nunca uma cadeia solta — o validador recusa-a,
+porque a página escreve a lista numa linha só e uma forma única é o que torna a
+comparação do portão possível.
+
+A maior parte das afirmações não credita ninguém: uma taxa de desemprego é uma
+medição de um organismo de estatística, não é «de» alguém. O campo existe para
+as afirmações em que o crédito **faz parte do facto** — uma promessa de um
+executivo, uma verba pedida por uma entidade, um compromisso assumido num
+programa. Vem do registo de origem, onde a atribuição já era um campo com
+verificação própria.
+
+**Um rótulo partidário aqui é registo do que consta, não juízo nem ordenação.**
+É a mesma regra que a direção fixou para a camada de mandatos: *sem viés não é
+o mesmo que sem atribuição*. Este sítio não faz tabelas classificativas por
+partido — territórios que não têm nada em comum não se ordenam — e a página da
+linha di-lo por palavras ao lado do campo, nas duas edições.
+
+**Como é escrito na página:** os elementos da lista, pela ordem em que estão no
+livro-razão, separados por ` · `. A escolha é de rendição e é deliberadamente
+uma só: o portão compara o texto renderizado carácter a carácter, e uma lista
+só pode ser comparada assim se houver uma maneira única de a escrever. O ponto
+médio já é o separador da casa entre partes de uma mesma linha, não introduz
+pontuação nova, e não colide com vírgulas dentro do nome de uma entidade. Um
+nome que contenha `·` é recusado pelo validador, pela mesma razão.
 
 ## A linha da casa
 
