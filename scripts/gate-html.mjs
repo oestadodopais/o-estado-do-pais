@@ -349,6 +349,7 @@ const CAMPOS_DA_LINHA = new Set([
   'source',
   'document.title',
   'document.edition',
+  'document.locator',
   'source_url',
   'access_date',
   'reference_date',
@@ -357,9 +358,21 @@ const CAMPOS_DA_LINHA = new Set([
   'source_flag_note',
   'derivation',
   'derived_from',
+  'attributed_to',
   'check',
   'id',
 ]);
+
+/**
+ * O separador com que a página escreve `attributed_to` numa linha só.
+ *
+ * É uma **segunda cópia** da constante que está em src/lib/ledger.mjs, e é de
+ * propósito. Se este portão lesse a constante do gabarito, confirmaria a
+ * constante e não o livro-razão — o mesmo erro que `campo="study"` cometia
+ * antes de sair desta tabela (§1.24). Assim, trocar o separador no gabarito
+ * pára o build, que é o que se quer de uma rendição que se diz determinista.
+ */
+const SEPARADOR_ATRIBUICAO = ' · ';
 
 /** Os campos cuja versão depende da língua da edição. */
 const CAMPOS_DA_LINHA_POR_LINGUA = new Set(['derivation', 'source_flag_note']);
@@ -396,6 +409,14 @@ function campoDaLinha(claim, campo, lang) {
       return claim.document?.title ?? null;
     case 'document.edition':
       return claim.document?.edition ?? null;
+    case 'document.locator':
+      return claim.document?.locator ?? null;
+    case 'attributed_to':
+      /* Uma lista escrita numa cadeia só, com a cópia local do separador.
+         Não passa por atribuicaoDaLinha() de propósito — ver acima. */
+      return Array.isArray(claim.attributed_to) && claim.attributed_to.length
+        ? claim.attributed_to.join(SEPARADOR_ATRIBUICAO)
+        : null;
     case 'derivation':
       return derivacaoDaLinha(claim, lang);
     case 'source_flag_note':

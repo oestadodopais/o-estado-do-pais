@@ -29,6 +29,7 @@ import {
   eDerivada,
   derivacaoDaLinha,
   notaDeBandeira,
+  atribuicaoDaLinha,
   POR_VERIFICAR,
 } from '../lib/ledger.mjs';
 import { caminhoDaLinha, caminhoDoLivro, tituloDaLinha, descricaoDaLinha } from '../lib/livro.mjs';
@@ -51,6 +52,11 @@ const derivacao = derivacaoDaLinha(claim, lang);
    (IDENTIDADE.md §4), ao pé da proveniência, e não junto ao número: o selo já é
    a porta para aqui (§5.1). Sem cor nova (§2), sem segundo marcador (§6). */
 const bandeira = notaDeBandeira(claim, lang);
+/* A quem o valor é creditado, escrito numa linha só. Fica no aparelho, ao pé
+   da proveniência, porque é isso que é: parte do registo do facto, não um
+   juízo. A nota ao lado di-lo por palavras — um rótulo partidário aqui é o que
+   consta, e este sítio não faz tabelas classificativas por partido. */
+const atribuicao = atribuicaoDaLinha(claim);
 
 /* O endereço só é ligação quando é mesmo um endereço. "[a verificar]" não é. */
 const url = typeof claim.source_url === 'string' && /^https?:\/\//.test(claim.source_url)
@@ -62,6 +68,10 @@ const ficha = [
   { k: s.prov.fonte, campo: 'source', valor: claim.source },
   { k: s.prov.documento, campo: 'document.title', valor: claim.document?.title ?? null },
   { k: s.prov.edicao, campo: 'document.edition', valor: claim.document?.edition ?? null },
+  /* Onde no documento está o excerto. Opcional: a maior parte das fontes é uma
+     página só e não há para onde apontar; quando há, é o que separa «está neste
+     relatório» de «está nesta página deste relatório». */
+  { k: s.prov.localizacao, campo: 'document.locator', valor: claim.document?.locator ?? null },
   { k: s.prov.lido, campo: 'access_date', valor: claim.access_date },
   { k: s.prov.referencia, campo: 'reference_date', valor: claim.reference_date },
 ].filter((l) => l.valor !== null && l.valor !== undefined);
@@ -216,7 +226,22 @@ const estudo = studyLabel(claim.study, lang);
             </>
           )
         }
+        {
+          atribuicao && (
+            <>
+              <dt>{s.prov.atribuicao}</dt>
+              <dd>
+                {/* A lista vai numa cadeia só, com o separador da casa. É o
+                    portão que a confere carácter a carácter, com a sua própria
+                    cópia do separador — ver DECISIONS §1.31. */}
+                <CampoDaLinha id={id} campo="attributed_to" valor={atribuicao} lang={lang} />
+              </dd>
+            </>
+          )
+        }
       </dl>
+
+      {atribuicao && <p class="aparelho-nota">{s.livro.linha.atribuicaoNota}</p>}
 
       {
         bandeira && (

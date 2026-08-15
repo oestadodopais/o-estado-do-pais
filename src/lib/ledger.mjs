@@ -85,13 +85,60 @@ const CAMPOS = [
   'derivation_en',
   'derived_from',
   'check',
+  'attributed_to',
   'study',
   'note',
   'corrections',
 ];
 
+/**
+ * As chaves que o bloco `document` aceita, e mais nenhuma.
+ *
+ * Fechada pela mesma razão que a lista de cima: uma chave mal escrita
+ * («localizador» em vez de `locator`, `page` em vez de `locator`) passaria
+ * despercebida, e a página da linha não mostraria nada — um campo em falta com
+ * cara de campo preenchido. Antes de `locator` existir, este bloco não tinha
+ * lista nenhuma: `title` e `edition` eram exigidos e o resto era ignorado.
+ */
+const CAMPOS_DO_DOCUMENTO = ['title', 'edition', 'locator'];
+
 /** Campos de proveniência que só podem ser null numa linha derivada. */
 const CAMPOS_PROVENIENCIA = ['source', 'document', 'source_url', 'access_date', 'excerpt'];
+
+/**
+ * O separador com que a lista `attributed_to` é escrita numa linha só.
+ *
+ * A escolha é de rendição, não de conteúdo, e é deliberadamente **uma**: o
+ * portão compara o texto renderizado carácter a carácter, e uma lista só pode
+ * ser comparada se houver uma maneira única de a escrever. O ponto médio com
+ * espaços de cada lado é o que o sítio já usa entre partes de uma mesma linha
+ * (o rodapé, a ficha do arquivo), não introduz pontuação nova e não colide com
+ * vírgulas dentro de um nome de entidade — «Câmara Municipal de Évora, Divisão
+ * de Águas» continua a ser uma entidade, não duas.
+ *
+ * O portão tem a sua própria cópia desta constante, de propósito. Ver
+ * scripts/gate-html.mjs: se as duas divergirem, o build pára — que é o que se
+ * quer. Se o portão lesse esta, confirmaria a constante e não o livro-razão.
+ */
+export const SEPARADOR_ATRIBUICAO = ' · ';
+
+/**
+ * A quem o valor é creditado, escrito numa linha só — ou null quando a linha
+ * não credita ninguém.
+ *
+ * O campo é opcional: a maioria das afirmações é uma medição de um organismo
+ * de estatística e não é «de» ninguém. Existe para as afirmações em que o
+ * crédito faz parte do facto — uma promessa de um executivo, uma verba pedida
+ * por uma entidade — e é aí que a atribuição, incluindo um rótulo partidário
+ * quando o há, é **registo do que consta**, não juízo nem ordenação. O sítio
+ * não faz tabelas classificativas por partido; ver IDENTIDADE.md e a decisão
+ * de direcção de 2026-08-15.
+ */
+export function atribuicaoDaLinha(claim) {
+  const lista = claim?.attributed_to;
+  if (!Array.isArray(lista) || lista.length === 0) return null;
+  return lista.join(SEPARADOR_ATRIBUICAO);
+}
 
 /** Uma linha é derivada quando declara de que linhas deriva. */
 export function eDerivada(claim) {
@@ -161,6 +208,11 @@ export function camposPorVerificar(claim) {
   if (claim.document && typeof claim.document === 'object') {
     if (claim.document.title === POR_VERIFICAR) out.push('document.title');
     if (claim.document.edition === POR_VERIFICAR) out.push('document.edition');
+    /* `locator` é opcional: ausente não é buraco — a maior parte das fontes é
+       uma página só, e não há onde apontar. Mas escrito como "[a verificar]" é
+       buraco, como qualquer outro campo: a linha declarou que o excerto está
+       nalgum sítio daquele documento e que ainda não sabe onde. */
+    if (claim.document.locator === POR_VERIFICAR) out.push('document.locator');
   }
   return out;
 }
@@ -581,6 +633,70 @@ export function validateLedger() {
         errors.push(
           `${onde} falta "${campo}". Se não é conhecido, escreva "${POR_VERIFICAR}" — nunca um valor plausível.`,
         );
+      }
+    }
+
+    /* As chaves do bloco `document`, e o tipo de `locator`.
+       Fora do laço de cima de propósito: aquele salta as linhas derivadas e as
+       da casa, e uma chave mal escrita continua a ser um engano numa linha
+       derivada que traga documento próprio. */
+    if (c.document !== null && c.document !== undefined) {
+      if (typeof c.document !== 'object' || Array.isArray(c.document)) {
+        errors.push(`${onde} "document" tem de ser um mapa com title e edition.`);
+      } else {
+        for (const k of Object.keys(c.document)) {
+          if (!CAMPOS_DO_DOCUMENTO.includes(k)) {
+            errors.push(
+              `${onde} chave desconhecida "document.${k}". ` +
+                `Aceites: ${CAMPOS_DO_DOCUMENTO.join(', ')}.`,
+            );
+          }
+        }
+        const loc = c.document.locator;
+        if (loc !== null && loc !== undefined) {
+          if (typeof loc !== 'string' || loc.trim() === '') {
+            errors.push(
+              `${onde} "document.locator" tem de ser uma cadeia não vazia — onde no documento ` +
+                `está o excerto ("p. 108", "Quadro 4, p. 108"). Se não se sabe, ou se escreve ` +
+                `"${POR_VERIFICAR}", ou não se escreve o campo.`,
+            );
+          }
+        }
+      }
+    }
+
+    /* `attributed_to` — a quem o valor é creditado. Opcional, e por isso a
+       regra é sobre a forma e não sobre a presença: uma lista de cadeias não
+       vazias, ou campo nenhum. Uma cadeia solta (`attributed_to: "PS"`) é o
+       engano provável, e passaria a ser renderizada carácter a carácter como
+       uma entidade chamada "PS" — que por acaso até estaria certo, e é
+       exactamente por isso que não se aceita: a forma tem de ser uma só. */
+    if (c.attributed_to !== null && c.attributed_to !== undefined) {
+      if (!Array.isArray(c.attributed_to)) {
+        errors.push(
+          `${onde} "attributed_to" tem de ser uma lista de nomes de entidades ` +
+            `(use — Município de Évora — em lista, não uma cadeia solta).`,
+        );
+      } else if (c.attributed_to.length === 0) {
+        errors.push(
+          `${onde} "attributed_to" está vazio. Uma linha que não credita ninguém não traz o campo.`,
+        );
+      } else {
+        c.attributed_to.forEach((quem, n) => {
+          if (typeof quem !== 'string' || quem.trim() === '') {
+            errors.push(`${onde} "attributed_to[${n}]" tem de ser o nome de uma entidade.`);
+          } else if (quem.includes(SEPARADOR_ATRIBUICAO.trim())) {
+            /* O separador da rendição não pode aparecer dentro de um nome: a
+               página escreve a lista numa linha só, e o portão compara-a
+               carácter a carácter — um nome com o separador lá dentro tornaria
+               a lista ambígua para quem a lê. */
+            errors.push(
+              `${onde} "attributed_to[${n}]" contém "${SEPARADOR_ATRIBUICAO.trim()}", ` +
+                `que é o separador com que a página escreve a lista. Separe as entidades em ` +
+                `elementos da lista.`,
+            );
+          }
+        });
       }
     }
 
