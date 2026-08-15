@@ -20,6 +20,7 @@ document:
   title: "[a verificar]"
   edition: "[a verificar]"
   locator: null                  # onde no documento — "p. 108", "Quadro 4, p. 108"
+  kind: null                     # pdf | html | serie | ficheiro | registo — o que o endereço serve (ver abaixo)
 source_url: "[a verificar]"
 access_date: "[a verificar]"     # AAAA-MM-DD — quando foi lido
 reference_date: "2024"           # AAAA / AAAA-MM / AAAA-MM-DD — a que se refere
@@ -70,6 +71,19 @@ corrections: []
 13. `attributed_to` não for uma lista de nomes de entidades não vazios, for uma
     lista vazia, ou algum nome contiver o separador ` · ` com que a página
     escreve a lista.
+
+## `document.kind` — o que o endereço serve
+
+Opcional. Um de `pdf`, `html`, `serie`, `ficheiro`, `registo`; qualquer outro
+valor falha o `ledger:check`. Diz ao leitor — e à página da linha — que tipo de
+coisa está do outro lado do endereço, porque a forma do URL não o diz de
+maneira fiável (um endereço com `/api/` pode servir um ficheiro, e serviu). A
+página da linha rotula a proveniência conforme o tipo: uma `serie` (um pedido a
+uma API que devolve um campo, não uma frase impressa) mostra «Série», «Pedido»
+e «Campo devolvido» onde as outras mostram «Documento», «Endereço» e «Excerto».
+Ausente, valem os rótulos genéricos. Acrescentado a 2026-08-15 (DECISIONS §1.36,
+revisão cruzada F3) depois de uma heurística sobre o URL ter rotulado a listagem
+do PRR como série.
 
 ## `document.locator` — onde no documento
 
