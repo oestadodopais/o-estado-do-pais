@@ -327,6 +327,26 @@ a.src-chip:hover::before {
 .src-chip-amostra {
   gap: 0;
 }
+/* No cabeçalho, o selo é só o glifo (IDENTIDADE §5, excepção única): o rótulo
+   do estudo e o marcador ficam para leitores de ecrã. O estado continua
+   desenhado — cheio ou a tracejado — e a ligação continua a ser a linha própria
+   do valor; o que sai é o texto, que ali é ruído (defeito registado a
+   2026-08-16, DECISIONS §1.37). */
+.masthead-furniture .src-chip {
+  gap: 0;
+}
+.masthead-furniture .src-chip-texto,
+.masthead-furniture .src-chip .marcador {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 /* grelha de números verificados */
 .figuras {

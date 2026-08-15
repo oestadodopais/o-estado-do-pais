@@ -104,6 +104,10 @@ O Método promete, nas duas línguas: *«O selo de proveniência junto a cada n�
    proveniência está completa; a tracejado quando falta um campo. Um estado que
    nunca foi desenhado ao lado do outro ainda não é uma distinção.
 3. **Onde aparece um valor, aparece o selo.** Sem excepção de página.
+4. **No cabeçalho, o selo é só o glifo.** A única excepção ao rótulo visível:
+   nas contagens da mobília do cabeçalho o quadrado (cheio ou a tracejado)
+   basta, e o rótulo do estudo e o marcador ficam para leitores de ecrã. A
+   ligação continua a ser a linha própria do valor. (2026-08-16, DECISIONS §1.37.)
 
 ---
 

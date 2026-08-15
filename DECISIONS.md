@@ -2615,6 +2615,25 @@ desmarcada · endereço com `#page=` sem rótulo de página (46 erros). Do lado 
 motor, `python3 -m core.gate` fecha em PASS e `export_site_rows_test` em
 **28 conferências** (eram 17 antes deste bloco, 24 antes da revisão).
 
+### 1.37 O selo do cabeçalho passa a ser só o glifo
+
+A direcção viu no sítio no ar, à meia-noite de 15 para 16 de Agosto, o que os
+selos acrescentados de manhã fizeram ao cabeçalho da primeira página: as três
+contagens (municípios, estudos, edições) passaram a arrastar o rótulo inteiro do
+estudo («O Estado do País — apuramento próprio») e, na contagem CAOP, o marcador
+«[a verificar]». Certo pela regra (§1.36 item 2: todo o valor com selo, para a
+sua linha), errado naquele lugar.
+
+Feito: uma regra de CSS para `.masthead-furniture` que esconde visualmente o
+texto do selo e o marcador (o padrão `.vh`, só ali) e fecha o espaço; o quadrado
+fica, com os dois estados desenhados; a ligação continua a apontar para a linha
+própria do valor. Nada mudou no portão: o selo continua ao pé do valor com o
+`href` certo, que é o que a verificação exige. `IDENTIDADE.md` §5 ganhou o ponto
+4, a única excepção ao rótulo visível.
+
+O que este ajuste não decide, e fica para o bloco V: se as contagens ficam no
+cabeçalho, e o que o cabeçalho diz em vez de «Edição de …».
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
