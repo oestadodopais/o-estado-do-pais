@@ -22,6 +22,11 @@ reference_date: "2017"
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "ÉVORA ÉVORA 57 563 962 71 600 238 911 954 861 385 69 826 899 a)"
 
+# A bandeira tal como a fonte a escreve, e o que ela quer dizer.
+source_flag: "a)"
+source_flag_note: "A DGAL assinala com a) que a componente das participações (SM/AM/SEL) estava em confirmação à data de extração do ficheiro."
+source_flag_note_en: "DGAL marks with a) that the holdings component (SM/AM/SEL) was still being confirmed at the date the file was extracted."
+
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
 derivation_en: null

@@ -548,15 +548,15 @@ export const MUNICIPIOS_COM_PAGINA = [
       {
         k: { pt: 'Não existe PIB municipal', en: 'There is no municipal GDP' },
         v: {
-          pt: ['Nenhuma fonte publica um produto interno bruto para um concelho, e esta página não fabrica nenhum. O valor acrescentado das empresas, que existe, não é PIB municipal: não capta a administração pública, a maior parte da universidade e do hospital, e credita toda a atividade de uma empresa ao concelho da sua sede.'],
-          en: ['No source publishes a gross domestic product for a concelho, and this page manufactures none. Enterprise gross value added, which does exist, is not municipal GDP: it misses public administration, most of the university and the hospital, and it credits a firm’s whole activity to its head-office concelho.'],
+          pt: ['Nenhuma fonte publica um produto interno bruto para um concelho, e esta página não fabrica nenhum. O que existe é o registo empresarial: as contas das empresas sediadas no concelho, que creditam toda a atividade de uma empresa ao concelho da sua sede. Não é PIB municipal, e o trabalho sobre a economia escreve porquê nos seus limites: «não capta a administração pública, a maior parte da universidade e do hospital».'],
+          en: ['No source publishes a gross domestic product for a concelho, and this page manufactures none. What does exist is the business register: the accounts of enterprises headquartered in the concelho, which credit a firm’s whole activity to its head-office concelho. It is not municipal GDP, and the work on the economy writes why in its own limits: «it misses public administration, most of the university and the hospital».'],
         },
       },
       {
         k: { pt: 'Duas das oito medidas são o município a falar de si', en: 'Two of the eight measures are the municipality speaking about itself' },
         v: {
-          pt: ['A execução da receita e o prazo médio de pagamento são lidos da prestação de contas do próprio município — a sua linha no livro-razão nomeia esse documento e a página onde estão. O trabalho sobre as contas municipais abre com a mesma ressalva: a maior parte dele é o município a relatar sobre si próprio.'],
-          en: ['Revenue execution and the average payment time are read from the municipality’s own accounts — their ledger rows name that document and the page they sit on. The work on the municipal accounts opens with the same caveat: most of it is the municipality reporting on itself.'],
+          pt: ['A execução da receita e o prazo médio de pagamento são lidos da prestação de contas do próprio município — a sua linha no livro-razão nomeia esse documento e a página onde estão. As duas vozes de fora sobre estas contas são a opinião assinada do auditor e a série anual do regulador, e as duas estão nesta página.'],
+          en: ['Revenue execution and the average payment time are read from the municipality’s own accounts — their ledger rows name that document and the page they sit on. The two outside voices on these accounts are the auditor’s signed opinion and the regulator’s annual series, and both are on this page.'],
         },
       },
       {
@@ -598,8 +598,8 @@ export const MUNICIPIOS_COM_PAGINA = [
       {
         k: { pt: 'O dinheiro do plano de recuperação é atribuído pelo registo, não pela câmara', en: 'Recovery-plan money is attributed by the register, not by the council' },
         v: {
-          pt: ['Os totais do plano de recuperação que aparecem na leitura desse trabalho são somas sobre o registo público, atribuídas ao concelho por esse registo. O endereço da responsabilização, na maior parte dos casos, não são os paços do concelho: a universidade tem mais dinheiro contratado do que o município, e a camada que administra o dinheiro é feita de organismos nacionais.'],
-          en: ['The recovery-plan totals that appear in that work’s reading are sums over the public register, attributed to the concelho by that register. The accountability address is mostly not the town hall: the university holds more contracted money than the municipality, and the layer that administers the money is made of national bodies.'],
+          pt: ['Os totais do plano de recuperação que aparecem na leitura desse trabalho são somas sobre o registo público, atribuídas ao concelho por esse registo. Do dinheiro contratado no concelho, a universidade tem mais do que o município, e a camada que administra o dinheiro é feita de organismos nacionais. Que daí resulte que o endereço da responsabilização não são os paços do concelho é a conclusão assinada desse trabalho, e está na página dele.'],
+          en: ['The recovery-plan totals that appear in that work’s reading are sums over the public register, attributed to the concelho by that register. Of the money contracted in the concelho, the university holds more than the municipality, and the layer that administers the money is made of national bodies. That this makes the accountability address something other than the town hall is that work’s own signed conclusion, and it sits on its page.'],
         },
       },
     ],
@@ -657,6 +657,30 @@ export const MUNICIPIOS_COM_PAGINA = [
       {
         pt: ['Não existe contrafactual para nenhum índice. Nada do que foi lido permite separar a parte de um executivo neles.'],
         en: ['There is no counterfactual for any index. Nothing that was read allows an executive’s share of them to be separated out.'],
+      },
+      {
+        pt: [
+          'Os valores do regulador para ',
+          { ref: '2017' },
+          ' e ',
+          { ref: '2021' },
+          ' trazem ressalvas do próprio ficheiro — uma nota de rodapé em ',
+          { ref: '2017' },
+          ', «dados provisórios» em ',
+          { ref: '2021' },
+          ' — ditas na linha de cada um.',
+        ],
+        en: [
+          'The regulator’s values for ',
+          { ref: '2017' },
+          ' and ',
+          { ref: '2021' },
+          ' carry caveats written into the file itself — a footnote in ',
+          { ref: '2017' },
+          ', «dados provisórios» in ',
+          { ref: '2021' },
+          ' — said on each row.',
+        ],
       },
       {
         pt: ['Sobre o plano de recuperação: o trabalho lê o catálogo do tribunal de contas, não as suas auditorias; a janela de contratos é um limite superior sobre um período truncado; e não existe um valor da União Europeia para um município.'],
