@@ -2853,6 +2853,9 @@ fácil, não para tornar o desonesto impossível.
 
 ## 4. O registo dos defeitos e dos adiamentos
 
+**Defeito registado 2026-08-16 (00:10), encontrado pela direcção no sítio no ar:** os selos acrescentados a 15.08 aos valores do cabeçalho da primeira página (308 · 11 · 15) rendem no cabeçalho com o rótulo inteiro do estudo («O Estado do País — apuramento próprio») e, no caso da contagem CAOP, com o marcador «[a verificar]» ao lado. Certo pela regra (todo o valor tem selo, para a sua linha), errado naquele sítio: no cabeçalho o selo deve ser só o glifo, com o rótulo apenas para leitores de ecrã. **Primeiro item do bloco V**, junto com a saída de «Edição de …», da introdução justificativa da primeira página e de «Estes indicadores não são escolha nossa…» (voz). Sem alteração ao portão: o selo continua ao pé do valor e a apontar para a linha própria.
+
+
 Esta secção era uma lista de recados para o director, escrita em 12.08.2026 e já
 desactualizada em três pontos. Passa a ser outra coisa, e é uma regra e não um
 hábito:
