@@ -1437,6 +1437,177 @@ para não passar.
 repositório remoto. Esta conferência precisa das duas coisas, e a pergunta que faz
 só faz sentido depois de publicar. É portão de **lançamento**.
 
+### 1.31 O motor e o publicador, e os dois campos que o material de Évora pediu
+
+Este bloco é o primeiro em que **conteúdo real** atravessa do motor de
+investigação para o sítio. Trouxe três coisas: uma regra sobre quem faz o quê,
+dois campos novos no formato do livro-razão, e o décimo primeiro trabalho no
+arquivo. Estão aqui juntos porque foram a mesma decisão.
+
+#### A fronteira: o motor produz, o sítio publica
+
+O [ResearchHub](../ResearchHub) é o **motor**: acesso às fontes, aquisição,
+verificação, registo de indicadores, produção dos estudos — tudo local, tudo
+dele. Este sítio **publica**.
+
+O que atravessa a fronteira é **conteúdo estruturado, linhas de livro-razão,
+recursos e um manifesto**. Nunca saída renderizada. Uma página construída no
+motor e servida aqui seria este sítio a garantir uma coisa que não conferiu.
+
+**O sítio mantém os seus portões, e isso não é duplicação.** Um produtor mais
+uma conferência de aceitação independente é como se recebe trabalho de outrem;
+duplicação seria dois sistemas a **originar** afirmações — e não é o caso: o
+motor origina, este sítio aceita ou recusa. Cada linha ou ficheiro que
+atravessa traz o resumo criptográfico da sua origem, e o lado de cá confere-o.
+Hoje isso está feito para os **documentos** (o manifesto, com `origin` e
+`origin_ref` ao commit); para as **linhas** fica para o passo seguinte deste
+bloco, quando o tubo for construído. A regra vivia só no cofre de notas; passa
+a viver nos dois repositórios — aqui e em `BRIEF.md` §13 do motor.
+
+#### `document.locator` — onde no documento
+
+Opcional; uma cadeia livre. Onde, dentro do documento citado, está a frase que
+o `excerpt` transcreve: `"p. 108"`, `"Quadro 4, p. 108"`,
+`"mapafluxoscaixa2010.pdf, p. 1"`. `null` ou ausente é o caso normal — a maior
+parte das fontes é uma página só.
+
+**Porque foi preciso.** O registo do motor guarda a localização com a citação;
+o formato deste sítio não tinha onde a pôr, e o que não tem campo perde-se na
+travessia. Um relatório de 400 páginas citado só por `document.title` manda o
+leitor para o relatório; com `locator`, manda-o para a frase. É a diferença
+entre proveniência e endereço postal.
+
+#### `attributed_to` — a quem o valor é creditado
+
+Opcional; uma **lista** de entidades. Vem do portão de atribuições do motor,
+onde já era um campo com verificação própria. A maior parte das afirmações não
+credita ninguém — uma taxa de desemprego não é «de» alguém — e por isso o campo
+é opcional e não tem valor por defeito.
+
+**Um rótulo partidário aqui é registo do que consta, não juízo nem ordenação.**
+É a regra que a direção fixou para a camada de mandatos a 2026-08-15: *sem viés
+não é o mesmo que sem atribuição*, e este sítio não faz tabelas classificativas
+por partido — territórios que não têm nada em comum não se ordenam. A página da
+linha di-lo por palavras ao lado do campo, nas duas edições.
+
+**A rendição é determinista, e é uma só:** os elementos da lista, pela ordem em
+que estão no livro-razão, separados por ` · `. Uma lista só se compara carácter
+a carácter se houver uma maneira única de a escrever. O ponto médio já é o
+separador da casa entre partes de uma mesma linha, não introduz pontuação nova
+e não colide com as vírgulas dentro do nome de uma entidade; um nome que o
+contenha é recusado pelo validador.
+
+#### O que o portão passou a ver
+
+Nenhum portão novo — a moratória de 2026-08-15 está de pé. Os que já existiam
+aprenderam os dois campos:
+
+- `ledger:check` aceita-os e **continua a recusar** o que não conhece. O bloco
+  `document` passou a ter lista fechada de chaves (`title`, `edition`,
+  `locator`), que antes não tinha nenhuma: `title` e `edition` eram exigidos e
+  o resto era ignorado em silêncio. Os tipos são conferidos — `locator` cadeia
+  não vazia, `attributed_to` lista não vazia de cadeias não vazias.
+- `gate:html` compara os dois **carácter a carácter**, pela origem 6
+  (`data-linha-campo="document.locator"` e `data-linha-campo="attributed_to"`),
+  com a mesma severidade dos outros catorze campos.
+- **O separador está escrito duas vezes, de propósito.** O portão tem a sua
+  cópia da constante em vez de ler a do gabarito. Se lesse a do gabarito,
+  confirmaria a constante e não o livro-razão — foi esse o erro que
+  `campo="study"` cometia antes de sair da tabela (§1.24). Assim, trocar o
+  separador pára o build.
+- **`[a verificar]` num `locator` conta para a dívida** e leva a linha a
+  `noindex`, como qualquer outro campo declarado por confirmar. Ausente não
+  conta: não é buraco não haver página para onde apontar.
+
+**Os campos foram vistos a falhar em doze estragos**, um de cada vez, e o
+caminho honesto foi visto a passar antes e depois: `locator` com tipo errado;
+chave desconhecida dentro de `document`; `attributed_to` como cadeia solta;
+`attributed_to` vazio; o separador dentro de um nome de entidade; a chave de
+topo mal escrita; o `locator` renderizado com uma página trocada; uma entidade
+trocada na lista renderizada; o separador trocado no gabarito; um nome de campo
+inventado na marca; `attributed_to` mostrado numa linha que não o tem; e o
+`locator` traduzido na edição inglesa — que é transcrição, não prosa da casa.
+
+**Uma nota honesta sobre a suíte de estragos:** não existe, e nunca existiu, um
+guião no repositório. Os dezassete estragos de §1.24 e os sete de §1.28 foram
+feitos à mão e revertidos; não são reexecutáveis. Estes doze foram feitos da
+mesma maneira. Escrever esse guião é trabalho que fica em aberto, e é a única
+forma de estas conferências resistirem a uma alteração futura.
+
+**Nenhuma linha publicada traz hoje os dois campos.** São formato à espera do
+conteúdo, que chega com o tubo. Foram exercitados numa linha de teste,
+construída e revertida.
+
+#### O décimo primeiro trabalho: «Évora — Prometido, Pago, Auditado 2026»
+
+Duas edições, PT e EN, `subject: 'evora'`, slug
+`evora-prometido-pago-auditado-2026`. É o primeiro documento do arquivo que
+**nunca foi um artefacto**: foi produzido no motor e atravessou como ficheiro.
+
+- **Os bytes não foram tocados.** Os documentos são auto-contidos — zero
+  `<script>`, zero referências a recursos externos; os únicos `href` são as
+  ligações às fontes citadas. O normalizador não se aplica e não correu: não
+  havia invólucro para retirar.
+- **A data é a do commit que os escreveu pela última vez** no motor,
+  `49758b4c16b483c92fe56b51eb88e6913dd42930`, de **2026-08-04** — o commit que
+  acrescentou as conclusões assinadas nas duas línguas. Os dois HTML não
+  voltaram a mudar depois dele, e por isso `updated` fica a `null`. A data está
+  citada em comentário no arquivo, ao lado da entrada.
+- **`artifactUrl: null`**, escrito e não omitido: nunca foi publicado fora
+  daqui, e o campo di-lo em vez de o deixar por dizer.
+- **A descrição é a frase de abertura do próprio documento**, nas duas edições,
+  sem números e sem nada acrescentado. É a segunda excepção à regra de §1.7 —
+  a primeira foi «Os Pelouros» — e é melhor do que uma reformulação do título
+  porque não é invenção nenhuma: é o documento a dizer o que é.
+
+**O manifesto teve de aprender uma proveniência que não é um artefacto.**
+`artifact_url` era obrigatório. Inventar um endereço de anfitrião seria
+proveniência fabricada — exactamente o que este portão existe para impedir. A
+regra passou a ser **uma das duas, e pelo menos uma**: `artifact_url`, ou
+`origin` + `origin_ref` (o sistema de origem e o ficheiro, ao commit). Um
+documento com nenhuma das duas continua a parar o build, e um com as duas
+também. O portão nomeia estas linhas em voz alta a cada construção, como já
+fazia com o campo `via` (§1.21).
+
+**Os dois resumos são iguais, e é a afirmação certa.** Não houve runtime para
+retirar, e por isso `bytes_runtime_removed` não aparece: os bytes brutos **são**
+os bytes alojados. Onde nos artefactos `sha256_raw` é registo não reproduzível
+e `sha256_normalized` é o invariante, aqui os dois são a mesma coisa — e o
+manifesto di-lo.
+
+**A amarra das contagens funcionou outra vez.** Pôr o trabalho no arquivo sem
+tocar no livro-razão deu três falhas de uma vez, como em §1.14:
+
+```
+✗ edicoes-publicadas       calculado: 15  publicado: 13
+✗ estudos-evora-publicados calculado: 5   publicado: 4
+✗ estudos-publicados       calculado: 11  publicado: 10
+```
+
+`estudos-evora-publicados` foi de **4 para 5** com uma entrada
+`kind: actualizacao` datada de 2026-08-15, nas duas línguas — o valor estava
+certo e o que ele mede mudou. As outras duas contagens mudaram **sem entrada**,
+pela regra de §1.11: recontagens que se seguem por arrastamento, já reavaliadas
+pelo build a cada corrida, e enchê-las no registo abafaria as correções. As
+datas de acesso e a edição do «Arquivo de estudos» das três linhas passaram a
+2026-08-15: deixar 12.08.2026 seria dizer que a contagem de onze saiu de um
+arquivo que tinha dez.
+
+**A legenda do mapa mudou uma palavra:** «um com edição em inglês» passou a
+«dois», porque o novo trabalho traz as duas edições. É prosa do gabarito e o
+portão **não a apanha** — números por extenso não têm algarismos (§2.3, limite
+4). Fica escrito aqui porque é um sítio onde o registo e a prosa podem divergir
+sem ninguém dar por isso.
+
+**Uma coisa para a direção decidir.** Os dois documentos abrem com uma faixa
+que diz, com todas as letras, «Cópia de revisão — aguarda aprovação» /
+«Review copy — awaiting sign-off». Entraram assim, byte a byte, porque a regra
+da casa é que um documento alojado não se edita. As páginas de estudo levam
+`noindex` e os documentos estão fora do sitemap, por isso nada disto foi
+oferecido a um motor de busca — mas o endereço existe e é público. Ou a direção
+aprova o documento e o motor gera uma edição sem a faixa, ou fica assim e
+di-lo. **Não foi decidido aqui.**
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
@@ -1478,12 +1649,16 @@ antes do build (§1.20) e `check:dados` depois (§1.18).
    `data-linha-claim` diz a afirmação e `data-linha-campo` diz o campo; o portão
    compara o texto renderizado com esse campo da afirmação, **carácter a
    carácter** (espaços normalizados). Vale para `unit`, `source`,
-   `document.title`, `document.edition`, `source_url`, `access_date`,
-   `reference_date`, `excerpt`, `derivation`, `derived_from`, `check`, `study` e
+   `document.title`, `document.edition`, `document.locator`, `source_url`,
+   `access_date`, `reference_date`, `excerpt`, `source_flag`,
+   `source_flag_note`, `derivation`, `derived_from`, `attributed_to`, `check` e
    `id` — e para mais nada: um campo desconhecido falha o build, e `value` está
    fora de propósito, porque um valor entra por `<Claim/>` e por mais nenhum
    sítio. `derivation` resolve-se na língua da edição, como o motivo de uma
-   correção. **A marca só vale nas páginas do livro-razão** — no índice, ou na
+   correção, e `attributed_to` — que é uma lista — resolve-se numa cadeia só,
+   com os elementos pela ordem do livro-razão separados por ` · `; o portão tem
+   a sua própria cópia desse separador, para conferir o livro-razão e não o
+   gabarito (§1.31). **A marca só vale nas páginas do livro-razão** — no índice, ou na
    página daquela linha, e aí só para a sua própria linha; noutro sítio qualquer
    seria uma segunda porta para pôr texto do livro-razão em prosa corrente. É a
    mesma disciplina da origem 5, aplicada um nível acima: no registo de correções
