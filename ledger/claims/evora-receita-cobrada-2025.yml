@@ -15,12 +15,12 @@ document:
   title: "Prestação de Contas 2025"
   edition: "2025"
   locator: "PRESTACAO_CONTAS_2025.pdf, p. 111"
-source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf"
+source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=111"
 access_date: "2026-08-10"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "As receitas cobradas no ano 2025 totalizaram 67.263.297,08€ (mais 753.656,66€ que no ano anterior), o que representa uma percentagem de execução de 61% (70% em 2024). O quadro seguinte mostra a execução das receitas por"
+excerpt: "As receitas cobradas no ano 2025 totalizaram 67.263.297,08€ (mais 753.656,66€ que no ano anterior), o que representa uma percentagem de execução de 61% (70% em 2024)."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null

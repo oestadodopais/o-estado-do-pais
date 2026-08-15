@@ -15,12 +15,12 @@ document:
   title: "Prestação de Contas 2025"
   edition: "2025"
   locator: "PRESTACAO_CONTAS_2025.pdf, p. 112"
-source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf"
+source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=112"
 access_date: "2026-08-10"
 reference_date: "2021"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "2024 (70%), 2023 (76%), 2022 (84%), 2021 (96%), 2020 (84%), 2019 (85%) e 2018 (86%). A estrutura das receitas correntes, representada no Gráfico 5, permite-nos visualizar facilmente a excessiva dependência das transferências do Orçamento do Es"
+excerpt: "2024 (70%), 2023 (76%), 2022 (84%), 2021 (96%), 2020 (84%), 2019 (85%) e 2018 (86%)."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null

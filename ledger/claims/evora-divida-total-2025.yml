@@ -15,12 +15,12 @@ document:
   title: "Prestação de Contas 2025"
   edition: "2025"
   locator: "PRESTACAO_CONTAS_2025.pdf, p. 139"
-source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf"
+source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=139"
 access_date: "2026-08-10"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "DÍVIDA TOTAL DE OPERAÇÕES ORÇAMENTAIS = (1) + (2) 54 379 034,55 Unidade: €uro Em 2025 a dívida total de operações orçamentais é de 54.379.034,55€, menos 301.601,03€ que no ano anterior. Se considerarmos apenas a dívida do M"
+excerpt: "DÍVIDA TOTAL DE OPERAÇÕES ORÇAMENTAIS = (1) + (2) 54 379 034,55 Unidade: €uro Em 2025 a dívida total de operações orçamentais é de 54.379.034,55€, menos 301.601,03€ que no ano anterior."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null

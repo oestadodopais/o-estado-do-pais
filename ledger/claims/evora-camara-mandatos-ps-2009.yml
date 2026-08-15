@@ -14,7 +14,7 @@ source: "Secretaria-Geral do Ministério da Administração Interna (SGMAI)"
 document:
   title: "Autárquicas 2009 — resultados oficiais por território"
   edition: "TERRITORY-RESULTS-LOCAL-070500-CM.json"
-  locator: "cm_lists, list='PS'"
+  locator: "SGMAI, autárquicas de 2009, órgão Câmara Municipal, Évora, lista «PS», mandatos"
 source_url: "https://www.eleicoes.mai.gov.pt/autarquicas2009/static-data/territory-results/TERRITORY-RESULTS-LOCAL-070500-CM.json"
 access_date: "2026-08-10"
 reference_date: "2009"

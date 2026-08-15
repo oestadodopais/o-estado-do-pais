@@ -43,7 +43,7 @@ const palavraConta = correcoes.length === 1 ? s.metodo.registoContaSing : s.meto
     <div class="registo-cabeca">
       <h3 class="registo-titulo" id="registo-correcoes">{s.metodo.registoCorrecoesK}</h3>
       <p class="registo-conta">
-        <Claim id="correcoes-publicadas" lang={lang} /> {palavraConta}
+        <Claim id="correcoes-publicadas" lang={lang} chip={true} /> {palavraConta}
       </p>
     </div>
     <p class="registo-nota">{s.metodo.registoCorrecoesNota}</p>

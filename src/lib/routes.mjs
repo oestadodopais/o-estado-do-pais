@@ -48,9 +48,21 @@ export const ROUTES = {
   estudos: { pt: '/estudos', en: '/en/studies' },
   estudo: { pt: '/estudos/:slug', en: '/en/studies/:slug' },
   documento: { pt: '/estudos/:slug/documento', en: '/en/studies/:slug/document' },
+  /**
+   * O índice dos concelhos. Existe porque o tipo de página do município é para
+   * os 308 e só um tem página: sem índice, os outros 307 não têm endereço
+   * nenhum e `/municipios` devolvia 404 — a porta mais óbvia do sítio, fechada
+   * (BRIEF-confianca §4.2 (b)). Ver DECISIONS §1.36, item 9.
+   */
+  municipios: { pt: '/municipios', en: '/en/municipalities' },
   municipio: { pt: '/municipios/:slug', en: '/en/municipalities/:slug' },
   livro: { pt: '/livro-razao', en: '/en/ledger' },
   linha: { pt: '/livro-razao/:slug', en: '/en/ledger/:slug' },
+  /**
+   * A página do marcador. IDENTIDADE §6 promete «uma página que o explica» e
+   * ela não existia; a explicação vivia numa oração do Método.
+   */
+  marcador: { pt: '/a-verificar', en: '/en/to-verify' },
 };
 
 /**

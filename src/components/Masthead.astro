@@ -8,7 +8,8 @@
  *
  * A mobília do cabeçalho (data de edição, contagens) é a única linha da
  * página onde há algarismos que não são medições do país — daí o
- * data-nonledger nas datas e os <Claim> nas contagens.
+ * data-nonledger nas datas e os <Claim> nas contagens — cada uma com o seu selo,
+ * que é a porta para a linha daquela contagem (IDENTIDADE §5.3).
  */
 import { SITE_NAME, METHOD_LINE, EDITION } from '../../site.config.mjs';
 import { routePath, otherLanguagePath, normalizePath } from '../lib/routes.mjs';
@@ -57,13 +58,13 @@ const NomeTag = compact ? 'p' : 'h1';
             {s.rodape.edicao} {EDITION.display}
           </span>
           <span>
-            <Claim id="municipios-portugal-caop-2025" /> {s.rodape.municipios}
+            <Claim id="municipios-portugal-caop-2025" lang={lang} chip={true} /> {s.rodape.municipios}
           </span>
           <span>
-            <Claim id="estudos-publicados" /> {s.rodape.estudos}
+            <Claim id="estudos-publicados" lang={lang} chip={true} /> {s.rodape.estudos}
           </span>
           <span>
-            <Claim id="edicoes-publicadas" /> {s.rodape.edicoes}
+            <Claim id="edicoes-publicadas" lang={lang} chip={true} /> {s.rodape.edicoes}
           </span>
         </div>
       )

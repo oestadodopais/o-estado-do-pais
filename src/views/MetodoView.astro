@@ -50,9 +50,17 @@ const path = routePath('metodo', lang);
                 texto: a cópia do Método é da direção e transcreve-se sem
                 alterações. */}
             {sec.id === 'livro-razao' && (
-              <a class="ligacao-dados" href={routePath('livro', lang)}>
-                {s.metodo.livroLink} →
-              </a>
+              <>
+                <a class="ligacao-dados" href={routePath('livro', lang)}>
+                  {s.metodo.livroLink} →
+                </a>
+                {/* O marcador tem página própria desde 15.08.2026 — a que
+                    IDENTIDADE §6 promete. Até aí, a explicação inteira era uma
+                    oração deste texto. */}
+                <a class="ligacao-dados" href={routePath('marcador', lang)}>
+                  {s.marcador.h1} →
+                </a>
+              </>
             )}
           </div>
           <div class="metodo-corpo">

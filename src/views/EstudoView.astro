@@ -34,6 +34,7 @@ import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
 import Provenance from '../components/Provenance.astro';
 import Frase from '../components/Frase.astro';
+import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import { workById, POR_VERIFICAR, subjectLabel } from '../data/studies.mjs';
 import { leituraDe } from '../data/leituras.mjs';
 import { municipioPorSlug } from '../data/municipios.mjs';
@@ -76,22 +77,29 @@ const municipio = work.subject ? municipioPorSlug(work.subject) : null;
 const municipioPath = municipio ? routePath('municipio', lang, { slug: municipio.slug }) : null;
 
 /* Três estados, e a página diz sempre em qual está: por migrar, documento
-   alojado sem leitura, e leitura publicada. Nenhum finge ser outro. */
+   alojado sem leitura, e leitura publicada. Nenhum finge ser outro.
+   Com a leitura publicada, o estado é só o estado: as duas frases que
+   descreviam a própria página («este trabalho já tem a leitura do
+   observatório: a medida, a frase, o método…» e a nota sobre a prosa da casa)
+   saíram — o leitor está a olhar para as secções que elas enumeravam. */
 const estado = leitura
   ? s.estudos.leituraEstado
   : migrado
     ? s.estudos.migradoEstado
     : s.estudos.stubEstado;
-const estadoLede = leitura
-  ? s.estudos.leituraLede
-  : migrado
-    ? s.estudos.migradoLede
-    : s.estudos.stubLede;
+const estadoLede = leitura ? null : migrado ? s.estudos.migradoLede : s.estudos.stubLede;
 const estadoExplicacao = leitura
-  ? s.estudos.leituraExplicacao
+  ? null
   : migrado
     ? s.estudos.migradoExplicacao
     : s.estudos.stubExplicacao;
+
+/* Uma descrição que ainda não existe mostra-se com o marcador único do sítio,
+   na sua classe — e não com uma segunda formulação em texto simples, que era o
+   que `[descrição em preparação]` fazia (IDENTIDADE §6; BRIEF-confianca §3.5). */
+const descricaoPt = work.description.pt;
+const descricaoEn = work.description.en;
+const descricaoAqui = work.description[lang];
 
 /* Fica "Draft" enquanto a PÁGINA não tiver conteúdo — mesmo com o documento já
    alojado. O que está por escrever é esta página, e é dela que o JSON-LD fala;
@@ -116,11 +124,20 @@ const jsonld = {
   description={work.description[lang]}
   jsonld={jsonld}
   noindex={!leitura}
+  portaNoRodape={false}
 >
   <div style="padding-top:clamp(20px,3vw,34px)">
     <span class="eyebrow">{estado}</span>
     <h1 style="margin-top:12px" data-nonledger="titulo-de-estudo">{principal.title}</h1>
-    <p class="lede" style="margin-top:16px">{work.description[lang]}</p>
+    <p class="lede" style="margin-top:16px">
+      {
+        descricaoAqui === POR_VERIFICAR ? (
+          <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>
+        ) : (
+          descricaoAqui
+        )
+      }
+    </p>
   </div>
 
   {
@@ -190,8 +207,8 @@ const jsonld = {
     <!-- ======================================= o estado da migração -->
     <div class="placeholder">
       <span class="placeholder-tag">{estado}</span>
-      <p class="lede" style="font-size:16px">{estadoLede}</p>
-      <p class="placeholder-nota">{estadoExplicacao}</p>
+      {estadoLede && <p class="lede" style="font-size:16px">{estadoLede}</p>}
+      {estadoExplicacao && <p class="placeholder-nota">{estadoExplicacao}</p>}
     </div>
 
     <!-- ======================================= o documento original -->
@@ -295,16 +312,20 @@ const jsonld = {
 
       <div class="log-vazio-k" style="margin-top:6px">{s.estudos.descricoesK}</div>
       <p class="estudo-descricao" lang="pt-PT">
-        <span class="estudo-descricao-lingua">PT</span> {work.description.pt}
+        <span class="estudo-descricao-lingua">PT</span>{' '}
+        {descricaoPt === POR_VERIFICAR ? (
+          <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>
+        ) : (
+          descricaoPt
+        )}
       </p>
       <p class="estudo-descricao" lang="en">
-        <span class="estudo-descricao-lingua">EN</span> {work.description.en}
-      </p>
-      {/* Nem toda a descrição é uma reformulação do título: a de dois
-          trabalhos é a frase de abertura do próprio documento, declarada como
-          excepção em studies.mjs. Dizer o contrário nessas páginas era falso. */}
-      <p class="placeholder-nota">
-        {work.descriptionFromDocument ? s.estudos.descricoesDoDocumento : s.estudos.descricoesNota}
+        <span class="estudo-descricao-lingua">EN</span>{' '}
+        {descricaoEn === POR_VERIFICAR ? (
+          <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>
+        ) : (
+          descricaoEn
+        )}
       </p>
     </div>
 
@@ -313,6 +334,8 @@ const jsonld = {
       <div class="log-vazio-k">{s.estudos.descarregarK}</div>
       <p class="log-vazio-v">{s.estudos.descarregarVazio}</p>
     </div>
+
+    <PortaDeCorreccoes lang={lang} class="log-vazio" />
 
     <p class="rodape-nav">
       <a href={routePath('estudos', lang)}>{s.estudos.stubVoltar}</a>

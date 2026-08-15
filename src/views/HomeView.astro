@@ -9,6 +9,7 @@ import Provenance from '../components/Provenance.astro';
 import Frase from '../components/Frase.astro';
 import InstrumentoConvergencia from '../components/InstrumentoConvergencia.astro';
 import InstrumentoMapa from '../components/InstrumentoMapa.astro';
+import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import { FIGURAS } from '../data/figuras.mjs';
 import { VERBATIM } from '../data/verbatim.mjs';
 import { VERIFICACAO } from '../data/verificacao.mjs';
@@ -38,6 +39,7 @@ const verificacaoVencida = diasDesdeVerificacao > VERIFICACAO.validadeDias;
   path={path}
   title={s.home.metaTitle}
   description={s.home.metaDescription}
+  portaNoRodape={false}
 >
   <Masthead slot="masthead" lang={lang} path={path} compact={false} furniture={true} />
 
@@ -93,7 +95,7 @@ const verificacaoVencida = diasDesdeVerificacao > VERIFICACAO.validadeDias;
         {s.home.instr2.eyebrow} <span data-nonledger="numeracao">{lang === 'pt' ? 'n.º 2' : 'no. 2'}</span>
       </span>
       <h2>
-        {s.home.instr2.h2} — <Claim id="municipios-portugal-caop-2025" />
+        {s.home.instr2.h2} — <Claim id="municipios-portugal-caop-2025" lang={lang} chip={true} />
       </h2>
       <p class="sec-sub">{s.home.instr2.sub}</p>
     </div>
@@ -123,5 +125,8 @@ const verificacaoVencida = diasDesdeVerificacao > VERIFICACAO.validadeDias;
         </span>
       </div>
     </div>
+
+    <!-- A porta das correções: o colofão é o aparelho desta página. -->
+    <PortaDeCorreccoes lang={lang} class="porta-correccoes-rodape" />
   </section>
 </Base>

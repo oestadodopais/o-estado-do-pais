@@ -14,7 +14,7 @@ source: "INE"
 document:
   title: "População residente (N.º) × sexo × grupo etário"
   edition: "indicador 0012918"
-  locator: "Dados[\"2021\"]"
+  locator: "INE, indicador 0012918, Évora (código 1C40705), dados de 2021"
 source_url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0012918&Dim1=S7A2021%2CS7A2024%2CS7A2025&lang=PT&Dim2=1C40705"
 access_date: "2026-08-10"
 reference_date: "2021"

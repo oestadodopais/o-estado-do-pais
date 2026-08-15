@@ -15,12 +15,12 @@ document:
   title: "Relatório de Gestão 2021"
   edition: "2021"
   locator: "2_Relatorio_Gestao_2021.pdf, p. 33, Quadro 7"
-source_url: "https://www.cm-evora.pt/wp-content/uploads/2022/05/2_Relatorio_Gestao_2021.pdf"
+source_url: "https://www.cm-evora.pt/wp-content/uploads/2022/05/2_Relatorio_Gestao_2021.pdf#page=33"
 access_date: "2026-08-10"
 reference_date: "2019-12"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Montante em Excesso 32 559 910 29 755 643 26 422 446 20 928 244 12 263 435 6 276 132 943 664 -4 948 806 -7 974 708 Unidade: € - Euro Em 2017, no final do anterior mandato, o excesso de endividamento já tinha sido reduzido em -€ 20.296.475, ou seja, em -62,3%. Em 2"
+excerpt: "Montante em Excesso 32 559 910 29 755 643 26 422 446 20 928 244 12 263 435 6 276 132 943 664 -4 948 806 -7 974 708 Unidade: € - Euro Em 2017, no final do anterior mandato, o excesso de endividamento já tinha sido reduzido em -€ 20.296.475, ou seja, em -62,3%."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null

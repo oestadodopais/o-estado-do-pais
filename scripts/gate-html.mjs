@@ -352,6 +352,17 @@ const CAMPOS_DA_LINHA = new Set([
   'document.edition',
   'document.locator',
   'source_url',
+  /**
+   * A página do PDF, tal como o próprio endereço a fixa (`…pdf#page=119`).
+   *
+   * Não é um campo novo do livro-razão: é uma leitura do campo `source_url`,
+   * feita aqui com a **cópia local** da regra — como o separador de
+   * `attributed_to` (§1.31). Se o gabarito lesse o número por uma função e o
+   * portão pela mesma, o portão confirmava a função; assim confirma a linha.
+   * Um rótulo «Abrir o documento na página 42» sobre um endereço que fixa a
+   * página 24 pára a construção.
+   */
+  'source_url.page',
   'access_date',
   'reference_date',
   'excerpt',
@@ -412,6 +423,11 @@ function campoDaLinha(claim, campo, lang) {
       return claim.document?.edition ?? null;
     case 'document.locator':
       return claim.document?.locator ?? null;
+    case 'source_url.page': {
+      /* A cópia local da regra — ver o comentário em CAMPOS_DA_LINHA. */
+      const m = String(claim.source_url ?? '').match(/#page=(\d+)$/);
+      return m ? m[1] : null;
+    }
     case 'attributed_to':
       /* Uma lista escrita numa cadeia só, com a cópia local do separador.
          Não passa por atribuicaoDaLinha() de propósito — ver acima. */
@@ -431,6 +447,72 @@ function campoDaLinha(claim, campo, lang) {
     default:
       return claim[campo] ?? null;
   }
+}
+
+/**
+ * ---------------------------------------------------------------------------
+ * O SELO EM CADA VALOR — a auditoria que era feita à mão.
+ * ---------------------------------------------------------------------------
+ *
+ * `IDENTIDADE.md` §5.3: «onde aparece um valor, aparece o selo. Sem excepção de
+ * página.» A promessa estava escrita e não estava imposta: a 15.08.2026 a
+ * primeira página tinha 18 afirmações distintas sem selo nenhum, e os seis
+ * selos da leitura breve apontavam para a linha do PAI e não para a do valor
+ * mostrado — um leitor que clicasse no «18» aterrava na linha do «82».
+ *
+ * A regra, em duas partes:
+ *
+ *   1. **fora de um `<svg>`** — tem de existir uma âncora `.src-chip` cujo
+ *      `href` é o caminho da linha DAQUELE id, e ela tem de estar ao pé do
+ *      valor: procura-se a subir, e a procura pára ao atravessar um elemento de
+ *      secção. É isto que dá corpo a «ao lado»: um selo no fim da página, ou na
+ *      secção seguinte, não é uma porta ao pé do número;
+ *
+ *   2. **dentro de um `<svg>`** — vale o mesmo, e é a mesma procura: um `<a>`
+ *      dentro de um desenho não se lê como porta, por isso o selo dos valores
+ *      desenhados vive na legenda do próprio instrumento, que é o primeiro
+ *      antepassado comum (DECISIONS §1.34, ponto 2).
+ *
+ * O que esta auditoria NÃO faz: não decide se o selo está bonito nem se está
+ * visível. Confere que existe, e que abre a linha do valor que está ao lado.
+ *
+ * As páginas do próprio livro-razão estão fora: a página de uma linha É a
+ * linha, e um selo para si própria seria uma porta para a divisão onde já se
+ * está.
+ */
+const SECCIONADORES = new Set(['section', 'article', 'aside', 'details', 'main', 'header', 'footer', 'body', 'html']);
+
+function auditaSelo(el, id, lang, err) {
+  const alvo = routePath('linha', lang, { slug: id });
+  const dentroDeSvg = (() => {
+    let p = el.parentNode;
+    while (p) {
+      if (String(p.rawTagName ?? '').toLowerCase() === 'svg') return true;
+      p = p.parentNode;
+    }
+    return false;
+  })();
+
+  let no = el.parentNode;
+  while (no) {
+    for (const a of no.querySelectorAll?.('.src-chip') ?? []) {
+      if (String(a.rawTagName ?? '').toLowerCase() !== 'a') continue;
+      if (decodeEntities(a.getAttribute('href') ?? '') === alvo) return;
+    }
+    if (SECCIONADORES.has(String(no.rawTagName ?? '').toLowerCase())) break;
+    no = no.parentNode;
+  }
+
+  err(
+    `o valor da afirmação "${id}" aparece sem selo para a sua própria linha.\n` +
+      `      esperava-se, ao pé do número, <a class="src-chip" href="${alvo}">.\n` +
+      (dentroDeSvg
+        ? `      O valor está dentro de um <svg>: o selo vai na legenda do instrumento, ` +
+          `ao lado do desenho (DECISIONS §1.34).\n`
+        : `      Use <Claim id="${id}" chip/>, ou <Frase … selos/> quando o valor vai numa frase.\n`) +
+      `      Um selo que aponte para a linha do PAI não conta: a porta tem de abrir a linha do ` +
+      `número que está à vista.`,
+  );
 }
 
 function ficheirosHtml(dir) {
@@ -662,6 +744,29 @@ for (const file of ficheirosHtml(DIST)) {
     err(`falta a linha de autoria no rodapé: "${AUTHORSHIP_LINE}".`);
   }
 
+  /**
+   * A PORTA DAS CORRECÇÕES — exactamente uma por página construída.
+   *
+   * Medido a 15.08.2026: existia em 2 páginas de 296. A chegada mais provável
+   * de quem quer contestar um número sobre si próprio é a página da linha desse
+   * número, vinda de um motor de busca — e era precisamente aí que não havia
+   * nenhuma maneira de o dizer. Uma publicação que promete que nada é apagado
+   * tem de pôr a porta onde o erro é visto.
+   *
+   * Exactamente uma, e não «pelo menos uma»: duas portas na mesma página são
+   * duas respostas para a mesma pergunta, e o leitor não tem como saber qual é
+   * a certa. Os documentos de estudo estão fora desta conta — são obra citada,
+   * alojada intacta, e já saíram do varrimento acima.
+   */
+  const portas = root.querySelectorAll('[data-porta-correccoes]');
+  if (portas.length !== 1) {
+    err(
+      `esta página tem ${portas.length} porta(s) de correcções; tem de ter exactamente uma.\n` +
+        `      <PortaDeCorreccoes/> entra pelo invólucro (Base.astro) em todas as páginas; ` +
+        `uma página que a ponha no seu próprio aparelho passa portaNoRodape={false}.`,
+    );
+  }
+
   /* Páginas de destino de estudo não se oferecem à indexação enquanto não
      tiverem conteúdo; as outras não podem ganhar noindex por descuido.
 
@@ -738,6 +843,7 @@ for (const file of ficheirosHtml(DIST)) {
           `livro-razão diz "${claim.value}".`,
       );
     }
+    if (rota && !paginaDoLivro) auditaSelo(el, id, rota.lang, err);
     aRemover.push(el);
   }
 

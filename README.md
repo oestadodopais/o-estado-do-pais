@@ -82,9 +82,11 @@ faça, e não deve haver.
 | Arquivo           | `/estudos`            | `/en/studies`             |
 | Estudo            | `/estudos/<slug>`     | `/en/studies/<slug>`      |
 | Documento         | `/estudos/<slug>/documento` | `/en/studies/<slug>/document` |
+| Municípios        | `/municipios`         | `/en/municipalities`      |
 | Município         | `/municipios/<slug>`  | `/en/municipalities/<slug>` |
 | Livro-razão       | `/livro-razao`        | `/en/ledger`              |
 | Linha             | `/livro-razao/<slug>` | `/en/ledger/<slug>`       |
+| O marcador        | `/a-verificar`        | `/en/to-verify`           |
 
 Sem barra final, excepto a raiz. A saída é em directório
 (`/metodo/index.html`), e o canónico e o sitemap são normalizados para a mesma
@@ -97,7 +99,9 @@ os hreflang e o sitemap.
 
 Um `<slug>` de município é o nome do concelho sem acentos. A lista dos que têm
 página está em [`src/data/municipios.mjs`](src/data/municipios.mjs) — hoje só
-`evora`. Uma página de município é uma leitura das medidas que as fontes
+`evora`. O índice `/municipios` lista os **308** concelhos pelo nome que a Carta
+Administrativa lhes dá, cada um com o seu estado; não publica nenhuma medida por
+concelho. Uma página de município é uma leitura das medidas que as fontes
 publicam para aquele concelho; o que ela **não** sabe está escrito na coluna do
 aparelho, e não em nota de rodapé.
 

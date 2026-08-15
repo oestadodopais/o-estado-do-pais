@@ -37,7 +37,13 @@ const path = routePath('estudos', lang);
                   {e.title}
                 </a>
               </h2>
-              <p class="arquivo-desc">{e.description[lang]}</p>
+              <p class="arquivo-desc">
+                {e.description[lang] === POR_VERIFICAR ? (
+                  <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>
+                ) : (
+                  e.description[lang]
+                )}
+              </p>
             </div>
             <div class="arquivo-meta">
               <span class="badge">{e.lang.toUpperCase()}</span>

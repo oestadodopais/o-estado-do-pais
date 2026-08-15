@@ -79,6 +79,19 @@ Uma cadeia livre, escrita como quem manda outra pessoa lá — não há sintaxe 
 cumprir, porque as fontes não a cumprem: umas têm páginas, outras têm quadros,
 outras são um ficheiro dentro de um lote.
 
+**Escrito para quem tem o endereço, e mais nada.** Um localizador que nomeie um
+ficheiro do repositório de quem escreveu a linha, ou uma chave de uma estrutura
+de dados — `raw/ine_data_populacao_evora.json → Dados["2025"]`,
+`cm_lists, list='PCP-PEV'` — manda o leitor a uma coisa que ele não tem. Trinta
+e cinco linhas faziam isso até 15.08.2026. O que se escreve é o que a fonte
+publica: «INE, indicador 0012918, Évora (código 1C40705), dados de 2025».
+
+**Quando o endereço é um PDF e o localizador diz uma página**, o `source_url`
+leva o fragmento `#page=N` e a página da linha imprime «Abrir o documento na
+página N». O número é **lido do localizador** e de mais lado nenhum — não há
+campo onde uma página possa ser escrita à parte, e é essa a garantia de que
+nenhuma é inventada.
+
 Existe porque o documento e a página não são a mesma prova. Uma linha que cite
 um relatório de 400 páginas com `document.title` e mais nada manda o leitor
 para o relatório; a mesma linha com `locator` manda-o para a frase. O campo
@@ -301,6 +314,14 @@ pára o build. Há dois caminhos, e nenhum é silencioso:
 
 **Uma correcção continua sempre possível.** O que deixa de ser possível é uma
 alteração sem rasto.
+
+**E uma reexportação não apaga uma correcção deste lado.** Até 15.08.2026
+apagava: o exportador escrevia `corrections: []` em todas as corridas, e o
+registo da travessia era reescrito a dizer que a linha tinha zero correcções, de
+modo que esta conferência não dava por nada. Hoje o exportador **lê o que este
+sítio publica e carrega-o verbatim**; o manifesto do motor pode acrescentar uma
+entrada, nunca remover uma. Ver `ResearchHub/publisher/README.md` e
+`DECISIONS.md` §1.36.
 
 ## Correcções
 

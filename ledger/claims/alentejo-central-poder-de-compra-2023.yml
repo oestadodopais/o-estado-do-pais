@@ -14,7 +14,7 @@ source: "INE"
 document:
   title: "Poder de compra per capita (PT=100)"
   edition: "indicador 0014580"
-  locator: "raw/ine_data_poder_compra_alentejo_central.json"
+  locator: "INE, indicador 0014580, Alentejo Central (código 1C4), dados de 2023"
 source_url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014580&Dim1=S7A2023&lang=PT&Dim2=1C4"
 access_date: "2026-08-10"
 reference_date: "2023"

@@ -207,7 +207,7 @@ for (const r of REGIOES) {
           hidden={r.id !== inicial.id}
           aria-live={r.id === inicial.id ? 'polite' : undefined}
         >
-          <Frase partes={r.frase[lang]} lang={lang} />
+          <Frase partes={r.frase[lang]} lang={lang} selos={true} />
         </p>
       ))
     }
@@ -253,8 +253,8 @@ for (const r of REGIOES) {
                   {linhas.map((l, i) => (
                     <>
                       {i > 0 ? ' · ' : ''}
-                      {l.nome} <Claim id={l.claimId} />
-                      {l.historico ? <> (<span data-nonledger="data-de-referencia">2000</span>: <Claim id={l.historico} />)</> : null}
+                      {l.nome} <Claim id={l.claimId} lang={lang} chip={true} />
+                      {l.historico ? <> (<span data-nonledger="data-de-referencia">2000</span>: <Claim id={l.historico} lang={lang} chip={true} />)</> : null}
                     </>
                   ))}
                   {' — '}

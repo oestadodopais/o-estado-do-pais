@@ -36,8 +36,8 @@ import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
 import Provenance from '../components/Provenance.astro';
 import Frase from '../components/Frase.astro';
+import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import { municipioPorSlug } from '../data/municipios.mjs';
-import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
 import { workById, studyLabel } from '../data/studies.mjs';
 import { leituraDe } from '../data/leituras.mjs';
 import { getClaim, parsePtNumber, POR_VERIFICAR } from '../lib/ledger.mjs';
@@ -148,6 +148,7 @@ const metodoPath = routePath('metodo', lang);
   title={`${nome} — ${s.municipio.metaCauda}`}
   description={`${s.municipio.metaDescricaoA}${nome}${s.municipio.metaDescricaoB}`}
   jsonld={jsonld}
+  portaNoRodape={false}
 >
   <div class="municipio-cabeca">
     <span class="eyebrow">{s.municipio.eyebrow}</span>
@@ -580,18 +581,10 @@ const metodoPath = routePath('metodo', lang);
         </ul>
       </div>
 
-      <div class="aparelho-bloco">
-        <span class="linha-campo-k">{s.municipio.correccoesK}</span>
-        <p class="aparelho-nota">
-          {s.municipio.correccoesV}
-          <a class="ligacao-email" href={`mailto:${ENDERECO_CORRECOES}`}>{ENDERECO_CORRECOES}</a>
-          {s.municipio.correccoesW}
-        </p>
-        <p><a href={`${metodoPath}#correcoes`}>{s.municipio.correccoesLink} →</a></p>
-      </div>
+      <PortaDeCorreccoes lang={lang} class="aparelho-bloco" />
 
       <p class="rodape-nav aparelho-saidas">
-        <a href={`${routePath('home', lang)}#mapa`}>{s.municipio.voltarMapa}</a>
+        <a href={routePath('municipios', lang)}>{s.municipio.voltarMapa}</a>
         <a href={routePath('livro', lang)}>{s.livro.eyebrow}</a>
         <a href={`${metodoPath}#livro-razao`}>{s.livro.metodoLink}</a>
       </p>

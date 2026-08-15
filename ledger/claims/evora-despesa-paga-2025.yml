@@ -15,12 +15,12 @@ document:
   title: "Prestação de Contas 2025"
   edition: "2025"
   locator: "PRESTACAO_CONTAS_2025.pdf, p. 119"
-source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf"
+source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=119"
 access_date: "2026-08-10"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "nível de pagamentos de 65.565.049,87€ (54.575.385,72€ de correntes e 10.989.664,15€ de capital). Quadro 14 – Execução das Despesas por Natureza Designação Orçamento Execução % Despesas Correntes 77"
+excerpt: "nível de pagamentos de 65.565.049,87€ (54.575.385,72€ de correntes e 10.989.664,15€ de capital)."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null

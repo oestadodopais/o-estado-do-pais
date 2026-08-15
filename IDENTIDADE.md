@@ -110,7 +110,11 @@ O Método promete, nas duas línguas: *«O selo de proveniência junto a cada n�
 ## 6. Uma só linguagem de incerteza
 
 Um marcador: **`[a verificar]`**. Uma classe: `.marcador`. Uma página que o
-explica. `.tbv` é retirada.
+explica — **`/a-verificar` · `/en/to-verify`**, construída a 15.08.2026, ligada
+do bloco «O que falta nesta linha» de cada linha incompleta e do Método. A
+segunda formulação, `[descrição em preparação]`, esteve viva sete vezes em três
+páginas até essa data e saiu: vinha de uma descrição de trabalho em
+`src/data/studies.mjs`, que passou ao marcador único. `.tbv` é retirada.
 
 Substitui as quatro formulações que a auditoria encontrou em uso ao mesmo
 tempo: «fonte por confirmar», `[a verificar]`, `[descrição em preparação]`,

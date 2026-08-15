@@ -42,6 +42,15 @@ export const STRINGS = {
       afirmacao: 'Afirmação',
       naoPublicado: 'Valor calculado, não publicado',
       verLinha: 'Linha do livro-razão',
+      /* Quando o endereço da linha é um ponto de acesso de dados e não um
+         documento. Uma série não é um documento, um pedido não é um endereço
+         de leitura, e o que a resposta traz é um campo — não uma frase que se
+         possa citar. Ver DECISIONS §1.36, item 7. */
+      serie: 'Série',
+      pedido: 'Pedido',
+      campoDevolvido: 'Campo devolvido',
+      /* O rótulo da ligação quando o endereço fixa a página do PDF. */
+      abrirNaPagina: 'Abrir o documento na página',
     },
 
     rodape: {
@@ -51,6 +60,70 @@ export const STRINGS = {
       estudos: 'estudos',
       edicoes: 'edições',
       dominioNota: 'Domínio canónico',
+    },
+
+    /**
+     * A porta das correções. Uma só, igual em todas as páginas.
+     *
+     * O texto é o que a página de Évora já dizia, palavra por palavra: foi
+     * escrito para o sítio onde o leitor está mais perto de um erro, e é esse
+     * o sítio onde tem de estar em todo o lado. Ver DECISIONS §1.36, item 1.
+     */
+    porta: {
+      k: 'Encontrou um erro',
+      v: 'Escreva para ',
+      w: '. Um erro confirmado entra no registo de correções e na própria linha, com o valor antigo à vista. Nada é apagado.',
+      link: 'O registo de correções',
+    },
+
+    /** A página que explica o marcador. IDENTIDADE §6 promete-a. */
+    marcador: {
+      metaTitle: 'O marcador [a verificar] — O Estado do País',
+      metaDescription:
+        'O que quer dizer o marcador de incerteza deste sítio, porque existe, e o que acontece a uma linha que o traz.',
+      eyebrow: 'O marcador',
+      h1: 'O que quer dizer este marcador',
+      lede: 'É o único marcador de incerteza deste sítio. Aparece onde um campo não foi confirmado contra a fonte.',
+      queEK: 'O que é',
+      queEV:
+        'Uma ausência declarada. Não é um valor por defeito, não é uma estimativa, e não é uma dúvida sobre o número publicado: é o sítio a dizer que aquele campo — a fonte, o documento, o endereço, a data de leitura ou o excerto — ainda não foi conferido contra a origem.',
+      porqueK: 'Porque existe',
+      porqueV:
+        'Porque a alternativa é preencher o campo com uma coisa plausível. Um campo plausível parece proveniência e não é, e quem o lesse ficava sem maneira de saber a diferença. O marcador torna a falta visível, contável e datável — e é por isso que aparece em vez de desaparecer.',
+      linhaK: 'O que acontece a uma linha que o traz',
+      linhaItens: [
+        'o selo dessa linha desenha-se a tracejado, e não cheio;',
+        'a página da linha diz, por palavras, que campos lhe faltam;',
+        'a linha fica fora do índice dos motores de busca e fora do mapa do sítio, enquanto faltar;',
+        'o valor publicado não muda por causa disto: o que falta é a prova documental, não o número.',
+      ],
+      voltaK: 'Como sai',
+      voltaV:
+        'Sozinho. No dia em que o campo for preenchido e conferido, o selo passa a cheio e a linha volta ao índice, sem mais ninguém decidir nada.',
+      soUmK: 'Só há um',
+      soUmV:
+        'Não há um segundo marcador para dizer a mesma coisa por outras palavras. Um sítio com duas linguagens de incerteza tem, na prática, nenhuma.',
+      livroLink: 'Ver as linhas que o trazem',
+      metodoLink: 'Como isto é feito',
+    },
+
+    /** O índice dos concelhos. */
+    municipios: {
+      metaTitle: 'Municípios — O Estado do País',
+      metaDescription:
+        'Todos os concelhos de Portugal, pela Carta Administrativa Oficial. Os que já têm página do observatório levam a ela; os outros dizem que ainda não têm.',
+      eyebrow: 'Municípios',
+      h1: 'Os concelhos de Portugal',
+      lede: 'Todos os concelhos, pela Carta Administrativa Oficial de Portugal.',
+      contagemA: 'São ',
+      contagemB: ' concelhos. Um tem página do observatório; os restantes ainda não têm, e esta lista di-lo em vez de os esconder.',
+      semPagina: 'sem página ainda',
+      comPagina: 'Abrir a página',
+      naoDizK: 'O que este índice não diz',
+      naoDizV:
+        'Nada sobre o concelho. É uma lista de nomes e de estados: um concelho aparece aqui porque existe na Carta Administrativa, não porque este sítio tenha alguma coisa medida sobre ele.',
+      fonteK: 'De onde vem a lista',
+      mapaLink: 'O mapa dos concelhos',
     },
 
     home: {
@@ -218,18 +291,15 @@ export const STRINGS = {
       linha: {
         eyebrow: 'Linha do livro-razão',
         aparelhoK: 'Proveniência',
-        excertoNota:
-          'Transcrito da fonte palavra por palavra. A construção do sítio falha se o texto desta página deixar de ser igual, carácter a carácter, ao que está guardado na linha.',
-        excertoPorConfirmar:
-          'O excerto textual desta linha ainda não foi transcrito da fonte. Escrever aqui uma paráfrase plausível seria exactamente a fabricação que este sistema existe para impedir.',
+        excertoNota: 'Transcrito da fonte, palavra por palavra.',
+        excertoPorConfirmar: 'O excerto textual desta linha ainda não foi transcrito da fonte.',
         excertoDerivada:
           'Esta linha não cita nenhuma frase: o valor é calculado a partir de outras linhas, e a prova documental é a delas.',
         excertoDaCasa:
           'Esta linha não cita nenhuma frase porque não há nenhuma para citar: o valor é uma contagem do próprio registo desta casa, e é reavaliado a cada construção do sítio. Nenhum documento externo o publica.',
         derivacaoNota: 'A conta, por palavras.',
-        expressaoK: 'Reavaliada na construção',
-        expressaoNota:
-          'A mesma conta como expressão. É refeita a cada construção do sítio e tem de dar exactamente o valor publicado; se não der, não se constrói nada.',
+        expressaoK: 'Reavaliada em cada construção',
+        expressaoNota: 'A mesma conta como expressão.',
         derivaDeK: 'Deriva de',
         historicoK: 'Correções e atualizações desta linha',
         historicoVazio: 'Esta linha nunca foi corrigida nem actualizada.',
@@ -241,8 +311,7 @@ export const STRINGS = {
         incompletaK: 'O que falta nesta linha',
         incompletaV:
           'Os campos assinalados não foram confirmados contra a fonte. O valor publicado não muda por isso; o que falta é a prova documental, e enquanto faltar a linha fica fora do índice dos motores de busca.',
-        completaK: 'Estado',
-        completaV: 'Proveniência completa: todos os campos preenchidos e conferidos contra a fonte.',
+        marcadorLink: 'O que quer dizer este marcador',
         voltar: 'Voltar ao livro-razão',
       },
     },
@@ -342,12 +411,6 @@ export const STRINGS = {
       provenienciaK: 'Proveniência',
       provenienciaV:
         'Cada valor desta página tem uma linha no livro-razão. O selo ao lado do número é a porta para essa linha, onde estão a fonte, o documento, o sítio exacto de onde o valor foi lido, o excerto e o dia em que foi lido. Nenhuma data de leitura é escrita aqui: quem quiser sabê-la, abre a linha.',
-      correccoesK: 'Encontrou um erro',
-      correccoesV: 'Escreva para ',
-      correccoesW:
-        '. Um erro confirmado entra no registo de correções e na própria linha, com o valor antigo à vista. Nada é apagado.',
-      correccoesLink: 'O registo de correções',
-
       estudosK: 'Os trabalhos sobre este concelho',
       estudosV:
         'Cada um tem a sua página, com a medida que o faz valer a pena, a frase do que concluiu, o método e o documento original quando está alojado aqui.',
@@ -387,9 +450,6 @@ export const STRINGS = {
       /* Trabalho com leitura do observatório escrita (src/data/leituras.mjs).
          É este o estado que levanta o noindex — ver DECISIONS §1.35. */
       leituraEstado: 'Leitura publicada',
-      leituraLede: 'Este trabalho já tem a leitura do observatório: a medida que o faz valer a pena, a frase do que concluiu, o método e as ressalvas.',
-      leituraExplicacao:
-        'A frase abaixo é prosa da casa, e não uma citação: assenta numa frase impressa no próprio trabalho, e foi cortada onde ia mais longe do que ela. Os números são citações do livro-razão, cada um com o selo que leva à sua linha. O documento original continua alojado aqui, tal como foi publicado.',
       leituraRelanceK: 'Relance',
       leituraBreveK: 'Leitura breve',
       leituraFundoK: 'Método e ressalvas',
@@ -398,8 +458,7 @@ export const STRINGS = {
       municipioLink: 'A página do município',
 
       documentoK: 'O documento original',
-      documentoV:
-        'Alojado aqui na forma exacta em que foi publicado. A única coisa que lhe foi acrescentada é uma faixa no topo, com a marca do observatório e o caminho de volta a esta página; os estilos, os gráficos e o texto do documento não foram tocados.',
+      documentoV: 'Alojado aqui na forma exacta em que foi publicado, com uma faixa no topo e mais nada.',
       documentoVazio: 'O documento deste estudo ainda não foi alojado aqui.',
       documentoLink: 'Ler o documento',
       /* Vai dentro da faixa, no topo do documento. Sem algarismos: é regra do
@@ -412,12 +471,8 @@ export const STRINGS = {
       temaK: 'Tema',
       temaNenhum: 'Sem tema atribuído',
       descricoesK: 'Descrições',
-      descricoesNota: 'As descrições são reformulações do título, não resumos do conteúdo, e aguardam o director.',
-      descricoesDoDocumento:
-        'A descrição deste trabalho não é uma reformulação do título: é a frase de abertura do próprio documento, nas duas edições, sem nada acrescentado.',
       descarregarK: 'Descarregar',
-      descarregarVazio:
-        'Este estudo ainda não tem ficheiros para descarregar. Quando tiver, aparecem aqui — com a mesma disciplina dos dados dos instrumentos: gerados da origem, com a proveniência no próprio ficheiro.',
+      descarregarVazio: 'Sem ficheiros para descarregar.',
     },
 
     erro404: {
@@ -463,6 +518,10 @@ export const STRINGS = {
       afirmacao: 'Claim',
       naoPublicado: 'Calculated value, not published',
       verLinha: 'Ledger row',
+      serie: 'Series',
+      pedido: 'Request',
+      campoDevolvido: 'Field returned',
+      abrirNaPagina: 'Open the document at page',
     },
 
     rodape: {
@@ -472,6 +531,62 @@ export const STRINGS = {
       estudos: 'studies',
       edicoes: 'editions',
       dominioNota: 'Canonical domain',
+    },
+
+    porta: {
+      k: 'Found an error',
+      v: 'Write to ',
+      w: '. A confirmed error enters the corrections log and the row itself, with the old value still visible. Nothing is deleted.',
+      link: 'The corrections log',
+    },
+
+    marcador: {
+      metaTitle: 'The [a verificar] marker — O Estado do País',
+      metaDescription:
+        'What this site’s uncertainty marker means, why it exists, and what happens to a row that carries it.',
+      eyebrow: 'The marker',
+      h1: 'What this marker means',
+      lede:
+        'It is the only uncertainty marker on this site. It appears where a field has not been confirmed against the source. The marker is kept in Portuguese, as in the original; it reads “to verify”.',
+      queEK: 'What it is',
+      queEV:
+        'A declared absence. It is not a default, not an estimate, and not a doubt about the published figure: it is the site saying that this field — the source, the document, the address, the read date or the excerpt — has not yet been checked against the origin.',
+      porqueK: 'Why it exists',
+      porqueV:
+        'Because the alternative is to fill the field with something plausible. A plausible field looks like provenance and is not, and a reader would have no way of telling the difference. The marker makes the gap visible, countable and datable — which is why it appears instead of disappearing.',
+      linhaK: 'What happens to a row that carries it',
+      linhaItens: [
+        'the seal for that row is drawn dashed, not filled;',
+        'the row’s page says, in words, which fields are missing;',
+        'the row stays out of search engine indexes and out of the sitemap while the gap lasts;',
+        'the published value does not change because of it: what is missing is the documentary proof, not the figure.',
+      ],
+      voltaK: 'How it goes away',
+      voltaV:
+        'On its own. The day the field is filled in and checked, the seal turns solid and the row returns to the index, with nobody else deciding anything.',
+      soUmK: 'There is only one',
+      soUmV:
+        'There is no second marker saying the same thing in other words. A site with two languages of uncertainty has, in practice, none.',
+      livroLink: 'See the rows that carry it',
+      metodoLink: 'How this is made',
+    },
+
+    municipios: {
+      metaTitle: 'Municipalities — O Estado do País',
+      metaDescription:
+        'Every concelho in Portugal, from the official administrative map. Those that already have an observatory page link to it; the others say they do not yet.',
+      eyebrow: 'Municipalities',
+      h1: 'The concelhos of Portugal',
+      lede: 'Every concelho, from the Carta Administrativa Oficial de Portugal.',
+      contagemA: 'There are ',
+      contagemB: ' concelhos. One has an observatory page; the rest do not yet, and this list says so rather than hiding them.',
+      semPagina: 'no page yet',
+      comPagina: 'Open the page',
+      naoDizK: 'What this index does not say',
+      naoDizV:
+        'Anything about the concelho. It is a list of names and states: a concelho appears here because it exists in the official administrative map, not because this site has measured anything about it.',
+      fonteK: 'Where the list comes from',
+      mapaLink: 'The map of concelhos',
     },
 
     home: {
@@ -637,18 +752,15 @@ export const STRINGS = {
       linha: {
         eyebrow: 'Ledger row',
         aparelhoK: 'Provenance',
-        excertoNota:
-          'Transcribed from the source word for word. The build fails if the text on this page stops being identical, character for character, to what the row holds.',
-        excertoPorConfirmar:
-          'The textual excerpt for this row has not been transcribed from the source yet. Writing a plausible paraphrase here would be exactly the fabrication this system exists to prevent.',
+        excertoNota: 'Transcribed from the source, word for word.',
+        excertoPorConfirmar: 'The textual excerpt for this row has not been transcribed from the source yet.',
         excertoDerivada:
           'This row quotes no sentence: the value is calculated from other rows, and the documentary proof is theirs.',
         excertoDaCasa:
           'This row quotes no sentence because there is none to quote: the value is a count of this publication\'s own record, re-evaluated every time the site is built. No external document publishes it.',
         derivacaoNota: 'The sum, in words.',
-        expressaoK: 'Re-evaluated at build time',
-        expressaoNota:
-          'The same sum as an expression. It is recomputed at every build and must yield exactly the published value; if it does not, nothing is built.',
+        expressaoK: 'Re-evaluated at every build',
+        expressaoNota: 'The same sum as an expression.',
         derivaDeK: 'Derived from',
         historicoK: 'Corrections and updates to this row',
         historicoVazio: 'This row has never been corrected or updated.',
@@ -660,8 +772,7 @@ export const STRINGS = {
         incompletaK: 'What is missing from this row',
         incompletaV:
           'The marked fields have not been confirmed against the source. The published value does not change because of it; what is missing is the documentary proof, and while it is missing the row stays out of search engine indexes.',
-        completaK: 'State',
-        completaV: 'Complete provenance: every field filled in and checked against the source.',
+        marcadorLink: 'What this marker means',
         voltar: 'Back to the ledger',
       },
     },
@@ -753,12 +864,6 @@ export const STRINGS = {
       provenienciaK: 'Provenance',
       provenienciaV:
         'Every value on this page has a ledger row. The seal beside the figure is the door to that row, where the source, the document, the exact place the value was read from, the excerpt and the day it was read all live. No reading date is written here: whoever wants it opens the row.',
-      correccoesK: 'Found an error',
-      correccoesV: 'Write to ',
-      correccoesW:
-        '. A confirmed error enters the corrections log and the row itself, with the old value still visible. Nothing is deleted.',
-      correccoesLink: 'The corrections log',
-
       estudosK: 'The works about this concelho',
       estudosV:
         'Each has its own page, with the measure that makes it worth reading, the sentence of what it concluded, the method, and the original document where it is hosted here.',
@@ -794,9 +899,6 @@ export const STRINGS = {
 
 
       leituraEstado: 'Reading published',
-      leituraLede: 'This work now has the observatory’s reading: the measure that makes it worth reading, the sentence of what it concluded, the method and the caveats.',
-      leituraExplicacao:
-        'The sentence below is house prose, not a quotation: it rests on a sentence printed in the work itself, and it was cut back where it went further than that sentence. The figures are citations from the ledger, each with the seal that leads to its row. The original document remains hosted here, exactly as it was published.',
       leituraRelanceK: 'At a glance',
       leituraBreveK: 'Brief reading',
       leituraFundoK: 'Method and caveats',
@@ -805,8 +907,7 @@ export const STRINGS = {
       municipioLink: 'The municipality page',
 
       documentoK: 'The original document',
-      documentoV:
-        'Hosted here in the exact form in which it was published. The only thing added to it is a slim banner at the top, with the observatory’s wordmark and the way back to this page; the document’s styles, graphics and text were not touched.',
+      documentoV: 'Hosted here in the exact form in which it was published, with a banner at the top and nothing else.',
       documentoVazio: 'The document for this study has not been hosted here yet.',
       documentoLink: 'Read the document',
       documentoFaixa: 'Study document, exactly as published',
@@ -817,12 +918,8 @@ export const STRINGS = {
       temaK: 'Subject',
       temaNenhum: 'No subject assigned',
       descricoesK: 'Descriptions',
-      descricoesNota: 'The descriptions restate the title; they are not summaries of the content, and they await the director.',
-      descricoesDoDocumento:
-        'This work’s description does not restate the title: it is the opening sentence of the document itself, in both editions, with nothing added.',
       descarregarK: 'Downloads',
-      descarregarVazio:
-        'This study has no files to download yet. When it does, they appear here — under the same discipline as the instrument data: generated from the source, with the provenance inside the file itself.',
+      descarregarVazio: 'No files to download.',
     },
 
     erro404: {
