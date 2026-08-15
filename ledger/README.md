@@ -207,10 +207,100 @@ razão que `reason_en` (§1.17): a aritmética é prosa da casa, a página da li
 publica-a nas duas edições, e não há recurso à outra língua — uma edição
 inglesa a mostrar a conta em português falha o portão.
 
-**Sintaxe de `check`:** números, ids de afirmações, `+ - * /`, parênteses, e as
-contagens `estudos_no_arquivo` e `edicoes_no_arquivo` (tiradas de
-`src/data/studies.mjs`). Os operadores e os parênteses **têm de estar separados
-por espaços** — os ids levam hífenes, e sem essa regra `a - b` seria ambíguo.
+**Sintaxe de `check`:** números, ids de afirmações, `+ - * /`, parênteses,
+`round ( x , n )`, e as contagens `estudos_no_arquivo` e `edicoes_no_arquivo`
+(tiradas de `src/data/studies.mjs`). Os operadores, os parênteses e a vírgula do
+`round` **têm de estar separados por espaços** — os ids levam hífenes, e sem essa
+regra `a - b` seria ambíguo.
+
+### `round ( x , n )` — o arredondamento diz-se, não se presume
+
+`x` é uma expressão qualquer e `n` é um número inteiro de casas decimais.
+Arredonda **meio para longe do zero**, simétrico: `round ( 0.5 , 0 )` dá `1` e
+`round ( -0.5 , 0 )` dá `−1`. O `Math.round()` do JavaScript sozinho trata os
+dois de maneiras diferentes, e um livro-razão não pode ter uma regra que muda
+com o sinal.
+
+```yaml
+value: "105,5"
+derived_from: ["evora-divida-dgal-2024", "evora-limite-divida-dgal-2024", "indice-de-divida-limite-legal"]
+check: "round ( evora-divida-dgal-2024 / evora-limite-divida-dgal-2024 * indice-de-divida-limite-legal , 1 )"
+```
+
+Existe desde 2026-08-13 e **não estava escrito aqui** — foi documentado a
+2026-08-15, quando as linhas de Évora passaram a depender dele. Existe porque
+sem ele uma linha derivada publicada com menos casas do que a divisão produz não
+podia ser verificada de todo: 54 681 562 ÷ 77 764 656 × 150 = 105,4750…, e o
+valor publicado é 105,5. A alternativa seria uma tolerância na comparação, que é
+pior — esconderia precisamente a classe de erro que o `check` existe para
+apanhar. **Escreve-se o arredondamento na expressão, e a comparação continua a
+ser por igualdade exacta.**
+
+Uma consequência que vale a pena dizer: `round` é para **exprimir** o que a
+linha publica, não para a fazer passar. Se a conta não bate, acrescentar casas
+ao `round` até bater é falsificar a verificação. O caminho é descobrir porque não
+bate.
+
+## Linhas cruzadas — as que vieram do motor de investigação
+
+Algumas linhas não foram escritas aqui. Foram **produzidas no motor de
+investigação** ([ResearchHub](../../ResearchHub)) — onde vive o acesso às fontes,
+a aquisição, a verificação e a produção dos estudos — e atravessaram para cá.
+Hoje são as 70 linhas de Évora. Reconhecem-se pelo cabeçalho do ficheiro, que diz
+que foi gerado e por quem.
+
+**O que atravessa é conteúdo estruturado: linhas, recursos e um manifesto. Nunca
+saída renderizada.** Uma página construída lá e servida aqui seria este sítio a
+garantir uma coisa que nunca conferiu. Ver `DECISIONS.md` §1.31 e §1.32.
+
+**Este sítio mantém os seus portões, e isso não é duplicação.** Um produtor mais
+uma conferência de aceitação independente é como se recebe trabalho de outrem.
+Uma linha cruzada passa por tudo o que uma linha escrita à mão passa —
+`ledger:check`, `astro build`, `gate:html` — e ainda por mais uma coisa.
+
+### `cruzamentos/` — o registo da travessia
+
+Um ficheiro JSON por origem (hoje `cruzamentos/evora.json`), escrito pelo
+exportador e nunca à mão. Por cada linha:
+
+| Campo | O que é |
+| --- | --- |
+| `rh_study` · `rh_id` | de que estudo e de que linha do motor veio |
+| `rh_ledger_sha256` | o resumo do `ledger.json` de origem, como registo |
+| `origin_row_sha256` | o resumo da **linha** de origem, em forma canónica — é este que prende |
+| `exported_row_sha256` | o resumo dos bytes deste ficheiro, tal como foram escritos |
+| `corrections_at_export` | quantas correcções a linha tinha quando atravessou |
+| `exported_at` | quando estes bytes mudaram pela última vez |
+| `site_corrections` | as correcções feitas deste lado e aceites, com o resumo antes e depois |
+
+`scripts/check-cruzamento.mjs` corre em cada build, **sem rede e sem o motor
+presente** — o construtor é remoto e o motor não existe lá — e exige três coisas:
+o ficheiro da linha existe, o resumo dos seus bytes é ainda o do registo, e o
+`study` é um trabalho do arquivo. A conferência contra a origem viva é o modo
+`--with-origin`, que só corre onde o motor está em disco.
+
+### Corrigir uma linha cruzada
+
+Uma linha cruzada **não se edita à mão**: o resumo prende os bytes, e uma edição
+pára o build. Há dois caminhos, e nenhum é silencioso:
+
+1. **Voltar a cruzar** — o valor mudou no motor. Corrige-se lá, corre-se o
+   exportador, o registo actualiza-se sozinho.
+2. **Corrigir deste lado** — é este sítio que admite um erro. Escreve-se a
+   entrada em `corrections[]` como em qualquer outra linha, e depois corre-se:
+
+   ```bash
+   node scripts/check-cruzamento.mjs --accept-correction <id>
+   ```
+
+   A porta é estreita de propósito: exige que a lista de correcções tenha
+   **crescido** e que o `value` publicado seja o `new_value` da correcção mais
+   recente. Sem as duas, recusa — de outro modo seria uma maneira de fazer passar
+   qualquer edição por correcção. O registo guarda o resumo antigo e o novo, e
+   nada é apagado.
+
+**Uma correcção continua sempre possível.** O que deixa de ser possível é uma
+alteração sem rasto.
 
 ## Correcções
 

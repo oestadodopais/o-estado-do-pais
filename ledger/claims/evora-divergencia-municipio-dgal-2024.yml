@@ -1,0 +1,36 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "evora-divergencia-municipio-dgal-2024"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "926"
+unit: "euros"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: null
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "54 681 562 − 54 680 635,58 = 926. A diferença entre a dívida que o regulador publica para 2024 e a que o município publica para o mesmo ano, arredondada ao euro."
+derivation_en: "54 681 562 − 54 680 635.58 = 926. The gap between the debt the regulator publishes for 2024 and the debt the municipality publishes for the same year, rounded to the nearest euro."
+derived_from:
+  - "evora-divida-dgal-2024"
+  - "evora-divida-total-2024"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( evora-divida-dgal-2024 - evora-divida-total-2024 , 0 )"
+
+study: "evora-orcamentado-pago-devido-2025"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] DGAL's 2024 dívida total (excluding exceptions) minus the municipality's own dívida total de operações orçamentais for 2024; rounded to the nearest euro · Cruzado de ResearchHub content/07 Évora Municipal Accounts · dgal-report-residual-2024."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

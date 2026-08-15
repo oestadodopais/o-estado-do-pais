@@ -1,0 +1,36 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "evora-prr-vencido-quota-2026"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "61,64"
+unit: "% do valor aprovado"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: null
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "102 711 703,85 ÷ 166 639 411,36 × 100 = 61,64. O dinheiro aprovado em localizações cuja data prevista de conclusão já passou sem conclusão registada, como quota de todo o dinheiro aprovado para o concelho."
+derivation_en: "102 711 703.85 ÷ 166 639 411.36 × 100 = 61.64. Approved money on project-locations whose planned completion date had passed with no completion recorded, as a share of all money approved for the concelho."
+derived_from:
+  - "evora-prr-vencido-aprovado-2026"
+  - "evora-prr-aprovado-2026"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( evora-prr-vencido-aprovado-2026 / evora-prr-aprovado-2026 * 100 , 2 )"
+
+study: "evora-prometido-pago-auditado-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] overdue approved money as a share of all approved money attributed to Évora · Cruzado de ResearchHub content/04 Évora Public Money · prr-overdue-approved-share."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

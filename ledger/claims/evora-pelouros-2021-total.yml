@@ -1,0 +1,36 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "evora-pelouros-2021-total"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "22"
+unit: "pelouros"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: null
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "12 + 10 = 22. Os pelouros designados no mandato de 2021-2025, somados sobre as duas únicas pessoas do executivo a quem a página da câmara atribuía algum."
+derivation_en: "12 + 10 = 22. The portfolios designated in the 2021-2025 term, summed over the only two members of the executive the council's own page gave any to."
+derived_from:
+  - "evora-pelouros-2021-presidente"
+  - "evora-pelouros-2021-vice-presidente"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "evora-pelouros-2021-presidente + evora-pelouros-2021-vice-presidente"
+
+study: "evora-os-pelouros-quem-os-teve-o-que-fizeram"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] the sum of the lengths of every member's recorded pelouro list · Cruzado de ResearchHub content/09 Évora Pelouros · map-20212025-pelouros."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []
