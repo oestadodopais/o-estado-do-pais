@@ -2248,3 +2248,51 @@ a.src-chip:hover::before {
   color: var(--muted);
   max-width: 60ch;
 }
+
+/* Os selos dos valores desenhados dentro de um SVG. Um <a> dentro de um SVG
+   não se lê como porta; o selo fica ao lado do desenho, como no instrumento
+   n.º 1 (IDENTIDADE §5.3 — onde aparece um valor, aparece o selo). */
+.mun-distancia-selos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  margin-top: 4px;
+}
+.mun-selo-rot {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* A série do índice contra o tecto legal. */
+.mun-serie-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+  margin: 4px 0 2px;
+}
+.mun-serie-svg .tk {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  fill: var(--muted);
+}
+.mun-serie-val {
+  font-family: var(--f-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+  font-weight: 600;
+  fill: var(--ink);
+}
+
+/* Um valor sem selo dentro de uma frase corrida ficaria colado ao seguinte. */
+.deep-v .claim-com-chip,
+.figura-medida .claim-com-chip,
+.leitura-frase .claim-com-chip,
+.leitura-frase-outra .claim-com-chip {
+  white-space: nowrap;
+}

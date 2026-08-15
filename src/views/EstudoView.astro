@@ -146,16 +146,18 @@ const jsonld = {
             ))}
           </div>
           {leitura.medidasNota && (
-            <p class="placeholder-nota">{leitura.medidasNota[lang]}</p>
+            <p class="placeholder-nota">
+              <Frase partes={leitura.medidasNota[lang]} lang={lang} />
+            </p>
           )}
         </div>
 
         <div class="leitura-breve">
           <p class="layer-tag">{s.estudos.leituraBreveK}</p>
-          <p class="leitura-frase"><Frase partes={leitura.frase[lang]} lang={lang} /></p>
+          <p class="leitura-frase"><Frase partes={leitura.frase[lang]} lang={lang} selos={true} /></p>
           <p class="log-vazio-k">{s.estudos.leituraOutraLingua}</p>
           <p class="leitura-frase-outra" lang={outraLingua === 'pt' ? 'pt-PT' : 'en'}>
-            <Frase partes={leitura.frase[outraLingua]} lang={outraLingua} />
+            <Frase partes={leitura.frase[outraLingua]} lang={outraLingua} selos={true} />
           </p>
         </div>
 
@@ -259,11 +261,16 @@ const jsonld = {
               <span class="edicao-titulo" data-nonledger="titulo-de-estudo">{e.title}</span>
             </div>
             <div class="edicao-meta">
+              {/* Um marcador de incerteza usa sempre a mesma classe: é a única
+                  linguagem de incerteza do sítio (IDENTIDADE §6). Aqui era
+                  texto simples e passava despercebido. */}
               <span data-nonledger="data-de-publicacao">
-                {s.estudos.dataLabel}: {e.date ?? POR_VERIFICAR}
+                {s.estudos.dataLabel}:{' '}
+                {e.date ?? <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>}
               </span>
               <span data-nonledger="data-de-actualizacao">
-                {s.estudos.actualizadoLabel}: {e.updated ?? POR_VERIFICAR}
+                {s.estudos.actualizadoLabel}:{' '}
+                {e.updated ?? <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>}
               </span>
               {e.lang !== lang && (
                 <a href={e.paginaDaEdicao} hreflang={e.lang === 'pt' ? 'pt-PT' : 'en'}>
@@ -293,7 +300,12 @@ const jsonld = {
       <p class="estudo-descricao" lang="en">
         <span class="estudo-descricao-lingua">EN</span> {work.description.en}
       </p>
-      <p class="placeholder-nota">{s.estudos.descricoesNota}</p>
+      {/* Nem toda a descrição é uma reformulação do título: a de dois
+          trabalhos é a frase de abertura do próprio documento, declarada como
+          excepção em studies.mjs. Dizer o contrário nessas páginas era falso. */}
+      <p class="placeholder-nota">
+        {work.descriptionFromDocument ? s.estudos.descricoesDoDocumento : s.estudos.descricoesNota}
+      </p>
     </div>
 
     <!-- ======================================= descargas -->

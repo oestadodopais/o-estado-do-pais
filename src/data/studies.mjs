@@ -72,7 +72,12 @@ export const WORKS = [
     subject: 'evora',
     editions: [
       { lang: 'pt', title: 'Évora — Orçamentado, Pago, Devido 2025', date: null, updated: null },
-      { lang: 'en', title: 'Budgeted, Paid, Owed 2025', date: null, updated: null },
+      /* O título é o do próprio documento alojado: `<title>Évora — Budgeted,
+         Paid, Owed 2025</title>` em studies-src/…/en.html. Estava aqui sem o
+         «Évora — », e um título literal não se abrevia (15.08.2026, revisão
+         cruzada). O h1 do documento é outra frase — «Évora — what was
+         budgeted, what was paid, and what is owed» — e não é o título. */
+      { lang: 'en', title: 'Évora — Budgeted, Paid, Owed 2025', date: null, updated: null },
     ],
     description: {
       pt: 'O que foi orçamentado, o que foi pago e o que ficou em dívida no município de Évora.',
@@ -94,6 +99,9 @@ export const WORKS = [
     // Publicado fora deste sítio enquanto a migração não chega. O endereço vive
     // aqui, no registo, e não escrito à mão num gabarito.
     artifactUrl: 'https://claude.ai/code/artifact/fe9876aa-e778-4519-bc9a-5f2fa199b29a',
+    /* A descrição não reformula o título: é a frase de abertura do documento.
+       A página tem de o dizer, em vez de repetir a nota geral de §1.7. */
+    descriptionFromDocument: true,
     description: {
       pt: 'Quem teve cada pelouro da Câmara de Évora em cinco mandatos, ligado — por este documento, não por fonte oficial — ao que as contas gastaram nessas áreas.',
       en: 'Who held each portfolio on Évora’s council across five terms, mapped — by this document alone, not by any official source — against what the accounts spent in those areas.',
@@ -122,6 +130,7 @@ export const WORKS = [
     /* Excepção à regra de §1.7, como a de «Os Pelouros»: esta descrição não
        reformula o título — é a frase de abertura do próprio documento, nas duas
        edições, sem números e sem nada acrescentado. */
+    descriptionFromDocument: true,
     description: {
       pt: 'Uma leitura transversal do município de Évora: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do Tribunal de Contas, postos lado a lado.',
       en: 'A cross-vertical reading of the municipality of Évora: the recovery-plan project register, the public-contracts register and the state auditor’s catalogue, put side by side.',

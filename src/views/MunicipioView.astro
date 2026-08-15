@@ -103,6 +103,42 @@ const jsonld = {
   publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
 };
 
+/* A série do índice contra o tecto legal, desenhada. Só os quatro anos que
+   esta página publica — não «todos os anos», que seria dizer mais do que se
+   mostra. A altura de cada barra sai do valor da linha; o tecto sai da linha
+   do limite legal. Nada é escrito à mão. */
+const SERIE = { W: 720, H: 132, L: 10, R: 710, base: 104, topo: 16 };
+const tectoIndice = parsePtNumber(getClaim(D.tecto).value);
+const serieAnos = m.tempo.mandatos
+  .flatMap((mandato) => mandato.regulador ?? [])
+  .map((r) => ({ indice: r.indice, ref: r.ref }));
+const maxIndice = Math.max(
+  tectoIndice,
+  ...serieAnos.map((r) => parsePtNumber(getClaim(r.indice).value)),
+);
+const alturaDe = (v) => SERIE.base - (v / maxIndice) * (SERIE.base - SERIE.topo);
+const pontosDaSerie = serieAnos.map((r, i) => ({
+  ...r,
+  x: SERIE.L + ((i + 0.5) / serieAnos.length) * (SERIE.R - SERIE.L),
+  y: alturaDe(parsePtNumber(getClaim(r.indice).value)),
+}));
+SERIE.yTecto = alturaDe(tectoIndice);
+
+/* A frase da camada 2 do instrumento: o que a série mede, e nada mais. */
+const primeiro = serieAnos[0];
+const ultimo = serieAnos[serieAnos.length - 1];
+const indiceSeriePartes = [
+  s.municipio.tempoSerieA,
+  { claim: primeiro.indice },
+  s.municipio.tempoSerieB,
+  { ref: primeiro.ref },
+  s.municipio.tempoSerieC,
+  { claim: ultimo.indice },
+  s.municipio.tempoSerieD,
+  { ref: ultimo.ref },
+  s.municipio.tempoSerieE,
+];
+
 const metodoPath = routePath('metodo', lang);
 ---
 
@@ -134,7 +170,7 @@ const metodoPath = routePath('metodo', lang);
             <article class="figura">
               <Claim id={tile.claim} class="figura-num" as="div" />
               <h3 class="figura-nome">{tile.nome[lang]}</h3>
-              <p class="figura-medida"><Frase partes={tile.medida[lang]} lang={lang} /></p>
+              <p class="figura-medida"><Frase partes={tile.medida[lang]} lang={lang} selos={true} /></p>
               <p class="figura-frase"><Frase partes={tile.nota[lang]} lang={lang} /></p>
               <Provenance id={tile.claim} lang={lang} />
             </article>
@@ -165,7 +201,7 @@ const metodoPath = routePath('metodo', lang);
         <p class="linha-nota">{s.municipio.breveSub}</p>
         {
           m.leitura.map((frase) => (
-            <p class="deep-v"><Frase partes={frase[lang]} lang={lang} /></p>
+            <p class="deep-v"><Frase partes={frase[lang]} lang={lang} selos={true} /></p>
           ))
         }
 
@@ -190,9 +226,19 @@ const metodoPath = routePath('metodo', lang);
             <Claim id={D.limite} as="text" class="mun-tecto-rot" x={G.R} y="66" text-anchor="end" />
           </svg>
 
+          {/* Os dois valores desenhados levam o selo aqui, ao lado do desenho:
+              é o que o instrumento n.º 1 já faz com os valores que põe dentro
+              do SVG (`.brief` de InstrumentoConvergencia.astro). Um <a> dentro
+              de um SVG não se vê como porta. */}
+          <p class="mun-distancia-selos">
+            <span class="mun-selo-rot">{s.municipio.distanciaDivida}</span>
+            <Provenance id={D.valor} lang={lang} />
+            <span class="mun-selo-rot">{s.municipio.distanciaTecto}</span>
+            <Provenance id={D.limite} lang={lang} />
+          </p>
           <p class="mun-distancia-legenda">{s.municipio.distanciaLegenda}</p>
           <p class="mun-distancia-legenda">
-            <Frase partes={indicePartes} lang={lang} />
+            <Frase partes={indicePartes} lang={lang} selos={true} />
           </p>
           <p class="mun-distancia-legenda">{s.municipio.distanciaLei}</p>
         </div>
@@ -233,7 +279,10 @@ const metodoPath = routePath('metodo', lang);
             <span data-nonledger="data-de-referencia">{m.contas.refAnterior}</span>
           </dd>
           <dt>{s.municipio.contasDivergenciaDiferenca}</dt>
-          <dd><Claim id={m.contas.divergencia} lang={lang} chip={true} /> €</dd>
+          <dd>
+            <Claim id={m.contas.divergencia} lang={lang} chip={true} /> €{' '}
+            <span class="mun-campo-vazio">{s.municipio.contasDivergenciaArredondada}</span>
+          </dd>
         </dl>
       </section>
 
@@ -256,12 +305,45 @@ const metodoPath = routePath('metodo', lang);
                   {' → '}
                   <span data-nonledger="data-de-referencia">{m.tempo.relance.ateRef}</span>
                 </div>
+                <div class="mun-distancia-selos">
+                  <Provenance id={m.tempo.relance.de} lang={lang} />
+                  <Provenance id={m.tempo.relance.ate} lang={lang} />
+                </div>
               </div>
             </div>
 
-            <!-- CAMADA 2 do instrumento -->
+            <!-- CAMADA 2 do instrumento: uma frase, e a distância desenhada -->
             <p class="layer-tag">{s.municipio.breveK}</p>
-            <p class="deep-v" style="margin:6px 0 14px">{s.municipio.tempoBreve}</p>
+            <p class="deep-v" style="margin:6px 0 12px">
+              <Frase partes={indiceSeriePartes} lang={lang} selos={true} />
+            </p>
+
+            <svg
+              class="mun-serie-svg"
+              viewBox={`0 0 ${SERIE.W} ${SERIE.H}`}
+              role="img"
+              aria-label={s.municipio.tempoRelanceK}
+            >
+              {/* o tecto legal: a régua contra a qual o índice é lido */}
+              <line x1={SERIE.L} y1={SERIE.yTecto} x2={SERIE.R} y2={SERIE.yTecto} stroke="var(--ink)" stroke-width="1.5" />
+              <line x1={SERIE.L} y1={SERIE.base} x2={SERIE.R} y2={SERIE.base} stroke="var(--axis)" stroke-width="1" />
+              {
+                pontosDaSerie.map((pt) => (
+                  <>
+                    {/* a barra é a medição: é para isto que o amarelo existe */}
+                    <rect x={pt.x - 16} y={pt.y} width="32" height={SERIE.base - pt.y} fill="var(--yellow)" />
+                    <Claim id={pt.indice} as="text" class="mun-serie-val" x={pt.x} y={pt.y - 7} text-anchor="middle" />
+                    <text class="tk" x={pt.x} y={SERIE.base + 14} text-anchor="middle" data-nonledger="escala-de-instrumento">
+                      {pt.ref}
+                    </text>
+                  </>
+                ))
+              }
+              <text class="tk" x={SERIE.R} y={SERIE.yTecto - 6} text-anchor="end">{s.municipio.distanciaTecto}</text>
+            </svg>
+            <p class="mun-distancia-selos" style="margin-bottom:12px">
+              {pontosDaSerie.map((pt) => <Provenance id={pt.indice} lang={lang} />)}
+            </p>
 
             <div class="mun-tempo">
               <div class="mun-tempo-eixo" data-nonledger="escala-de-instrumento">
@@ -350,8 +432,11 @@ const metodoPath = routePath('metodo', lang);
                           mandato.regulador.map((r) => (
                             <div>
                               <span data-nonledger="data-de-referencia">{r.ref}</span>:{' '}
-                              <Claim id={r.divida} lang={lang} chip={true} /> €{' / '}
-                              <Claim id={r.limite} lang={lang} chip={true} /> €{' = '}
+                              {s.municipio.distanciaDivida}{' '}
+                              <Claim id={r.divida} lang={lang} chip={true} /> €{' · '}
+                              {s.municipio.distanciaTecto}{' '}
+                              <Claim id={r.limite} lang={lang} chip={true} /> €{' · '}
+                              {s.municipio.tempoIndice}{' '}
                               <Claim id={r.indice} lang={lang} chip={true} /> %
                             </div>
                           ))
@@ -434,6 +519,7 @@ const metodoPath = routePath('metodo', lang);
               </div>
               <div class="deep-item">
                 <div class="deep-k">{s.municipio.tempoAtribuicaoK}</div>
+                <p class="deep-v">{s.municipio.tempoBreve}</p>
                 <p class="deep-v">{s.municipio.tempoAtribuicaoV}</p>
               </div>
             </div>
