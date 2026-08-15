@@ -35,7 +35,7 @@ attributed_to:
 
 study: "evora-orcamentado-pago-devido-2025"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "Pai de evora-indice-de-divida-2014: a página que imprimir o índice deve imprimir também as duas pontas da conta. · [derivation do motor] DGAL 'Evolução endividamento total 2014', Évora row · [note do motor] last column: dívida total excluding exceptions · Cruzado de ResearchHub content/07 Évora Municipal Accounts · dgal-divida-2014. · pending_page: nenhuma página desenhada imprime ainda esta linha; ou o construtor de páginas a imprime, ou ela sai antes da fusão."
+note: "Pai de evora-indice-de-divida-2014: a página que imprimir o índice deve imprimir também as duas pontas da conta. · [derivation do motor] DGAL 'Evolução endividamento total 2014', Évora row · [note do motor] last column: dívida total excluding exceptions · Cruzado de ResearchHub content/07 Évora Municipal Accounts · dgal-divida-2014."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

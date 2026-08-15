@@ -38,6 +38,7 @@ import {
 } from '../src/lib/ledger.mjs';
 import { VERBATIM, normalizeWhitespace } from '../src/data/verbatim.mjs';
 import { EDITIONS, workById } from '../src/data/studies.mjs';
+import { temLeitura } from '../src/data/leituras.mjs';
 import { tituloDaLinha, descricaoDaLinha } from '../src/lib/livro.mjs';
 import { matchPath, routePath, HREFLANG, LANGS } from '../src/lib/routes.mjs';
 import { documentoDaEdicao, documentoServido } from '../src/lib/documentos.mjs';
@@ -669,11 +670,30 @@ for (const file of ficheirosHtml(DIST)) {
      confirmar. Não é uma preferência de gabarito — é lido do livro-razão, aqui
      e no sitemap, pela mesma função que decide o estado do selo. Uma linha
      incompleta que se oferecesse como registo citável seria o sítio a
-     convidar para a sua própria dívida. */
+     convidar para a sua própria dívida.
+
+     A página de um estudo é o mesmo caso, um nível acima: enquanto não tiver
+     leitura escrita (src/data/leituras.mjs) fica fora do índice, e no dia em
+     que a tiver, entra. As DUAS metades continuam impostas aqui — falha quem
+     esconde uma página que já tem conteúdo, e falha quem oferece uma que não
+     tem. O que mudou não foi a exigência: foi ela deixar de ser «todas» e
+     passar a ser lida da mesma lista que a página e o sitemap leem. */
   const robots = root.querySelector('head meta[name="robots"]');
   const temNoindex = (robots?.getAttribute('content') ?? '').includes('noindex');
-  if (rota?.key === 'estudo' && !temNoindex) {
-    err('página de destino de estudo sem <meta name="robots" content="noindex">.');
+  if (rota?.key === 'estudo') {
+    const work = workById(rota.params.slug ?? '') ?? null;
+    /* Sem trabalho no arquivo, a rota não devia existir; quem o apanha é a
+       construção. Aqui trata-se como «sem leitura», que é o estado prudente. */
+    const comLeitura = Boolean(work) && temLeitura(work.id);
+    if (!comLeitura && !temNoindex) {
+      err('página de destino de estudo sem leitura escrita e sem <meta name="robots" content="noindex">.');
+    }
+    if (comLeitura && temNoindex) {
+      err(
+        `a página do estudo "${rota.params.slug}" tem leitura escrita e leva noindex. ` +
+          `Uma página com conteúdo é para ser indexada.`,
+      );
+    }
   }
   if (claimDaPagina) {
     const incompleta = provenienciaIncompleta(claimDaPagina);

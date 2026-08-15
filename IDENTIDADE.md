@@ -66,6 +66,9 @@ Um tipo de página novo escolhe **uma destas três**. Não inventa a quarta.
 - **B · Corpo e aparelho** — corpo a 68ch, coluna de 300px com o aparelho:
   proveniência, ressalvas, contagens, ligações ao livro-razão, o que a página
   **não** sabe. Para páginas de leitura e páginas de linha do livro-razão.
+  Em uso: `/livro-razao/<id>` e `/municipios/<slug>` — o sétimo tipo de página
+  escolheu esta das três, partilha as suas regras de grelha, e não trouxe acento
+  novo (15.08.2026; `DECISIONS.md` §1.34).
 - **C · Instrumento** — largura toda, o instrumento enche-a.
   Só para instrumentos.
 

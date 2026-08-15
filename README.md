@@ -82,7 +82,9 @@ faça, e não deve haver.
 | Arquivo           | `/estudos`            | `/en/studies`             |
 | Estudo            | `/estudos/<slug>`     | `/en/studies/<slug>`      |
 | Documento         | `/estudos/<slug>/documento` | `/en/studies/<slug>/document` |
-| _Reservado_       | `/municipios/<slug>`  | `/en/municipalities/<slug>` |
+| Município         | `/municipios/<slug>`  | `/en/municipalities/<slug>` |
+| Livro-razão       | `/livro-razao`        | `/en/ledger`              |
+| Linha             | `/livro-razao/<slug>` | `/en/ledger/<slug>`       |
 
 Sem barra final, excepto a raiz. A saída é em directório
 (`/metodo/index.html`), e o canónico e o sitemap são normalizados para a mesma
@@ -92,6 +94,12 @@ Um `<slug>` de estudo é o **trabalho**, não a edição: um estudo publicado em
 e em EN tem duas entradas no arquivo e uma só página. A tabela de rotas está em
 [`src/lib/routes.mjs`](src/lib/routes.mjs) e é a mesma que alimenta a navegação,
 os hreflang e o sitemap.
+
+Um `<slug>` de município é o nome do concelho sem acentos. A lista dos que têm
+página está em [`src/data/municipios.mjs`](src/data/municipios.mjs) — hoje só
+`evora`. Uma página de município é uma leitura das medidas que as fontes
+publicam para aquele concelho; o que ela **não** sabe está escrito na coluna do
+aparelho, e não em nota de rodapé.
 
 ## Línguas
 

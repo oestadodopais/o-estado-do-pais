@@ -1,0 +1,514 @@
+---
+/**
+ * A página de um município.
+ *
+ * Uma só fonte para as duas edições: recebe `lang` e o slug, e mais nada.
+ *
+ * DISPOSIÇÃO — **B · Corpo e aparelho** (IDENTIDADE §3). É a segunda das três,
+ * a mesma das páginas de linha do livro-razão, e não uma quarta: partilha com
+ * elas as regras da grelha em `site.css`. A coluna do aparelho tem trabalho a
+ * fazer, e é ele que decide a disposição: esta página tem de dizer, na margem,
+ * que não existe PIB municipal, que duas das oito medidas são o município a
+ * relatar sobre si próprio, que um ano de contas nunca foi certificado e que
+ * ninguém publica dinheiro por pelouro. Com essas quatro ressalvas metidas no
+ * corpo, ficavam enterradas.
+ *
+ * AS TRÊS CAMADAS (IDENTIDADE §4), e abrem-se todas aqui, nunca noutra página:
+ *   Relance        oito medidas, cada uma com o seu selo
+ *   Leitura breve  uma frase por medida, e a distância desenhada
+ *   Fundo          as contas do município, a linha do tempo das administrações,
+ *                  o método, as ressalvas e os trabalhos
+ *
+ * SEM ACENTO NOVO (IDENTIDADE §2). O amarelo aparece uma vez, na barra que
+ * desenha a dívida contra o tecto legal — que é uma medição, que é para o que o
+ * amarelo serve. Tudo o resto distingue-se com fio, fundo e letra monoespaçada.
+ *
+ * ORIGEM DE CADA ALGARISMO (DECISIONS §2.2):
+ *   toda a medição            <Claim/> → data-claim
+ *   períodos e datas de posse data-nonledger="data-de-referencia"
+ *   marcas do eixo do tempo   data-nonledger="escala-de-instrumento"
+ *   nome da lei e do artigo   token declarado em ledger/allowlist.yml
+ *   selos                     data-nonledger="proveniencia" (posto por <Provenance/>)
+ * Não há mais nenhuma. Não há ilha de dados: esta página não tem JavaScript,
+ * por isso não há nada do lado do cliente que precise de ler valores.
+ */
+import Base from '../layouts/Base.astro';
+import Claim from '../components/Claim.astro';
+import Provenance from '../components/Provenance.astro';
+import Frase from '../components/Frase.astro';
+import { municipioPorSlug } from '../data/municipios.mjs';
+import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
+import { workById, studyLabel } from '../data/studies.mjs';
+import { leituraDe } from '../data/leituras.mjs';
+import { getClaim, parsePtNumber, POR_VERIFICAR } from '../lib/ledger.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { canonicalUrl, SITE_NAME, SITE_URL } from '../../site.config.mjs';
+import { t } from '../i18n/strings.mjs';
+
+const { lang = 'pt', slug } = Astro.props;
+const s = t(lang);
+const m = municipioPorSlug(slug);
+if (!m) throw new Error(`município desconhecido: "${slug}"`);
+
+const path = routePath('municipio', lang, { slug });
+const nome = m.nome[lang] ?? m.nome.pt;
+
+/* --- a distância desenhada: a dívida contra o tecto legal ------------------
+   A geometria sai dos dois valores do livro-razão. Nenhum número é escrito à
+   mão aqui, nem sequer o comprimento da barra: se a linha for corrigida, o
+   desenho muda com ela. */
+const D = m.distancia;
+const divida = parsePtNumber(getClaim(D.valor).value);
+const limite = parsePtNumber(getClaim(D.limite).value);
+const G = { W: 720, L: 10, R: 710, barY: 12, barH: 18 };
+const xDivida = G.L + Math.max(0, Math.min(1, divida / limite)) * (G.R - G.L);
+
+/* A frase do índice: as palavras vêm da língua, as afirmações vêm deste
+   município. Um id de afirmação escrito em `strings.mjs` prendia a edição
+   inglesa a Évora — e o tipo de página é para os 308. */
+const indicePartes = [
+  s.municipio.distanciaIndiceA,
+  { claim: D.indice },
+  s.municipio.distanciaIndiceB,
+  { ref: D.ref },
+  s.municipio.distanciaIndiceC,
+  { claim: D.tecto },
+  s.municipio.distanciaIndiceD,
+];
+
+/* --- os trabalhos sobre o concelho --------------------------------------- */
+const estudos = m.estudos.map((id) => {
+  const w = workById(id);
+  if (!w) throw new Error(`municípios: o trabalho "${id}" não está no arquivo`);
+  const leitura = leituraDe(id);
+  return {
+    id,
+    titulo: studyLabel(id, lang),
+    descricao: w.description[lang],
+    rota: routePath('estudo', lang, { slug: w.slug }),
+    /* Uma linha de índice sem leitura escrita di-lo, em vez de repetir o
+       título (IDENTIDADE §7). */
+    temLeitura: Boolean(leitura),
+  };
+});
+
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: `${nome} — ${s.municipio.metaCauda}`,
+  inLanguage: ['pt-PT', 'en'],
+  about: { '@type': 'AdministrativeArea', name: m.nome.pt },
+  url: canonicalUrl(path),
+  isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+  publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+};
+
+const metodoPath = routePath('metodo', lang);
+---
+
+<Base
+  lang={lang}
+  path={path}
+  title={`${nome} — ${s.municipio.metaCauda}`}
+  description={`${s.municipio.metaDescricaoA}${nome}${s.municipio.metaDescricaoB}`}
+  jsonld={jsonld}
+>
+  <div class="municipio-cabeca">
+    <span class="eyebrow">{s.municipio.eyebrow}</span>
+    <h1>{nome}</h1>
+    <p class="municipio-sub">{m.distrito[lang] ?? m.distrito.pt} · {m.regiao[lang] ?? m.regiao.pt}</p>
+    <p class="lede">{s.municipio.ledeA}{nome}{s.municipio.ledeB}</p>
+  </div>
+
+  <!-- ===================================================== CAMADA 1 — RELANCE -->
+  <section id="relance">
+    <div class="sec-head">
+      <span class="eyebrow">{s.municipio.relanceK}</span>
+      <p class="sec-sub">{s.municipio.relanceSub}</p>
+    </div>
+
+    <div class="figuras">
+      {
+        m.relance.map((tile) =>
+          tile.claim ? (
+            <article class="figura">
+              <Claim id={tile.claim} class="figura-num" as="div" />
+              <h3 class="figura-nome">{tile.nome[lang]}</h3>
+              <p class="figura-medida"><Frase partes={tile.medida[lang]} lang={lang} /></p>
+              <p class="figura-frase"><Frase partes={tile.nota[lang]} lang={lang} /></p>
+              <Provenance id={tile.claim} lang={lang} />
+            </article>
+          ) : (
+            /* O estado vazio, desenhado (IDENTIDADE §7). Sem número e sem selo:
+               um selo que não abrisse porta nenhuma tornaria falsa a promessa
+               do Método. O lugar do número leva o único marcador do sítio. */
+            <article class="figura figura-vazia">
+              <div class="figura-num">
+                <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>
+              </div>
+              <h3 class="figura-nome">{tile.nome[lang]}</h3>
+              <p class="figura-medida"><Frase partes={tile.medida[lang]} lang={lang} /></p>
+              <p class="figura-frase">{s.municipio.relanceVazio}</p>
+            </article>
+          ),
+        )
+      }
+    </div>
+  </section>
+
+  <!-- ================================================ disposição B: corpo + aparelho -->
+  <div class="municipio">
+    <div class="municipio-corpo">
+      <!-- ============================================ CAMADA 2 — LEITURA BREVE -->
+      <section class="linha-bloco" aria-labelledby="breve">
+        <h2 class="linha-bloco-titulo" id="breve">{s.municipio.breveK}</h2>
+        <p class="linha-nota">{s.municipio.breveSub}</p>
+        {
+          m.leitura.map((frase) => (
+            <p class="deep-v"><Frase partes={frase[lang]} lang={lang} /></p>
+          ))
+        }
+
+        <!-- a distância desenhada -->
+        <div class="mun-distancia">
+          <p class="layer-tag">{s.municipio.distanciaK}</p>
+          <svg
+            class="mun-distancia-svg"
+            viewBox={`0 0 ${G.W} 76`}
+            role="img"
+            aria-label={s.municipio.distanciaK}
+          >
+            <!-- a barra é a medição: é para isto que o amarelo existe -->
+            <rect x={G.L} y={G.barY} width={Math.max(xDivida - G.L, 1)} height={G.barH} fill="var(--yellow)" />
+            <line x1={G.L} y1={G.barY + G.barH} x2={G.R} y2={G.barY + G.barH} stroke="var(--axis)" stroke-width="1" />
+            <line x1={G.R} y1={G.barY - 8} x2={G.R} y2={G.barY + G.barH + 8} stroke="var(--ink)" stroke-width="1.5" />
+
+            <text class="tk" x={G.L} y="50" text-anchor="start">{s.municipio.distanciaDivida}</text>
+            <Claim id={D.valor} as="text" class="mun-barra-rot" x={G.L} y="66" text-anchor="start" />
+
+            <text class="tk" x={G.R} y="50" text-anchor="end">{s.municipio.distanciaTecto}</text>
+            <Claim id={D.limite} as="text" class="mun-tecto-rot" x={G.R} y="66" text-anchor="end" />
+          </svg>
+
+          <p class="mun-distancia-legenda">{s.municipio.distanciaLegenda}</p>
+          <p class="mun-distancia-legenda">
+            <Frase partes={indicePartes} lang={lang} />
+          </p>
+          <p class="mun-distancia-legenda">{s.municipio.distanciaLei}</p>
+        </div>
+      </section>
+
+      <!-- ================================================== CAMADA 3 — FUNDO -->
+      <section class="linha-bloco" aria-labelledby="contas">
+        <h2 class="linha-bloco-titulo" id="contas">{s.municipio.fundoK}</h2>
+        <h3 class="figura-nome">{s.municipio.contasK}</h3>
+        <p class="linha-nota">{s.municipio.contasV}</p>
+
+        <dl class="mun-campos">
+          <dt>{s.municipio.contasOrcamento}</dt>
+          <dd><Claim id={m.contas.orcamento} lang={lang} chip={true} /> €</dd>
+          <dt>{s.municipio.contasReceita}</dt>
+          <dd><Claim id={m.contas.receita} lang={lang} chip={true} /> €</dd>
+          <dt>{s.municipio.contasDespesa}</dt>
+          <dd><Claim id={m.contas.despesa} lang={lang} chip={true} /> €</dd>
+          <dt>{s.municipio.contasDivida}</dt>
+          <dd><Claim id={m.contas.divida} lang={lang} chip={true} /> €</dd>
+          <dt>{s.municipio.contasLimite}</dt>
+          <dd><Claim id={m.contas.limite} lang={lang} chip={true} /> €</dd>
+          <dt>{s.municipio.contasMargem}</dt>
+          <dd><Claim id={m.contas.margem} lang={lang} chip={true} /> €</dd>
+        </dl>
+
+        <h3 class="figura-nome" style="margin-top:10px">{s.municipio.contasDivergenciaK}</h3>
+        <p class="linha-nota">{s.municipio.contasDivergenciaV}</p>
+        <dl class="mun-campos">
+          <dt>{s.municipio.contasDivergenciaRegulador}</dt>
+          <dd>
+            <Claim id={m.contas.reguladorAnterior} lang={lang} chip={true} /> €
+            <span data-nonledger="data-de-referencia">{m.contas.refAnterior}</span>
+          </dd>
+          <dt>{s.municipio.contasDivergenciaMunicipio}</dt>
+          <dd>
+            <Claim id={m.contas.municipioAnterior} lang={lang} chip={true} /> €
+            <span data-nonledger="data-de-referencia">{m.contas.refAnterior}</span>
+          </dd>
+          <dt>{s.municipio.contasDivergenciaDiferenca}</dt>
+          <dd><Claim id={m.contas.divergencia} lang={lang} chip={true} /> €</dd>
+        </dl>
+      </section>
+
+      <!-- ====================== o instrumento: a linha do tempo das administrações -->
+      <section class="linha-bloco" aria-labelledby="tempo">
+        <h2 class="linha-bloco-titulo" id="tempo">{s.municipio.tempoK}</h2>
+
+        <div class="instr" data-instrumento="mandatos">
+          <div class="instr-top">
+            <!-- CAMADA 1 do instrumento -->
+            <p class="layer-tag">{s.municipio.relanceK}</p>
+            <div class="glance">
+              <div class="glance-num">
+                <Claim id={m.tempo.relance.de} /> → <Claim id={m.tempo.relance.ate} />
+              </div>
+              <div class="glance-meta">
+                <div class="glance-name">{s.municipio.tempoRelanceK}</div>
+                <div class="glance-unit">
+                  % · <span data-nonledger="data-de-referencia">{m.tempo.relance.deRef}</span>
+                  {' → '}
+                  <span data-nonledger="data-de-referencia">{m.tempo.relance.ateRef}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CAMADA 2 do instrumento -->
+            <p class="layer-tag">{s.municipio.breveK}</p>
+            <p class="deep-v" style="margin:6px 0 14px">{s.municipio.tempoBreve}</p>
+
+            <div class="mun-tempo">
+              <div class="mun-tempo-eixo" data-nonledger="escala-de-instrumento">
+                {m.tempo.eixo.map((ano) => <span>{ano}</span>)}
+              </div>
+
+              {
+                m.tempo.mandatos.map((mandato) => (
+                  <div class="mun-mandato">
+                    <div class="mun-mandato-cabeca">
+                      <span class="mun-mandato-periodo" data-nonledger="data-de-referencia">
+                        {mandato.periodo}
+                      </span>
+                      <span class="mun-mandato-quem">
+                        {mandato.quem[lang]}
+                        {mandato.quemData && (
+                          <span data-nonledger="data-de-referencia">{mandato.quemData}</span>
+                        )}
+                      </span>
+                      <span class="mun-mandato-lista">
+                        {mandato.lista}
+                        {mandato.listaNota ? ` · ${mandato.listaNota[lang]}` : ''}
+                      </span>
+                      {mandato.instalado ? (
+                        <span class="mun-mandato-instalado">
+                          {s.municipio.tempoInstalado}{' '}
+                          <span data-nonledger="data-de-referencia">{mandato.instalado}</span>
+                        </span>
+                      ) : null}
+                    </div>
+
+                    <dl class="mun-campos">
+                      <dt>{s.municipio.tempoLugares}</dt>
+                      <dd>
+                        <Claim id={mandato.lugares} lang={lang} chip={true} />
+                        {mandato.lugaresTotal && (
+                          <>
+                            {' / '}
+                            <Claim id={mandato.lugaresTotal} lang={lang} chip={true} />
+                          </>
+                        )}
+                      </dd>
+
+                      <dt>{s.municipio.tempoHerdou}</dt>
+                      <dd>
+                        {mandato.herdou ? (
+                          mandato.herdou.map((v) => (
+                            <>
+                              <Claim id={v.claim} lang={lang} chip={true} /> {v.texto[lang]}{' '}
+                            </>
+                          ))
+                        ) : (
+                          <span class="mun-campo-vazio">{mandato.herdouNota[lang]}</span>
+                        )}
+                      </dd>
+
+                      <dt>{s.municipio.tempoDecidiu}</dt>
+                      <dd>
+                        {mandato.decidiu ? (
+                          mandato.decidiu.map((v) => (
+                            <>
+                              <Claim id={v.claim} lang={lang} chip={true} /> {v.texto[lang]}{' '}
+                            </>
+                          ))
+                        ) : (
+                          <span class="mun-campo-vazio">{mandato.decidiuNota[lang]}</span>
+                        )}
+                      </dd>
+
+                      <dt>{s.municipio.tempoDeixou}</dt>
+                      <dd>
+                        {mandato.deixou ? (
+                          mandato.deixou.map((v) => (
+                            <>
+                              <Claim id={v.claim} lang={lang} chip={true} /> {v.texto[lang]}{' '}
+                            </>
+                          ))
+                        ) : (
+                          <span class="mun-campo-vazio">{mandato.deixouNota[lang]}</span>
+                        )}
+                      </dd>
+
+                      <dt>{s.municipio.tempoRegulador}</dt>
+                      <dd>
+                        {mandato.regulador ? (
+                          mandato.regulador.map((r) => (
+                            <div>
+                              <span data-nonledger="data-de-referencia">{r.ref}</span>:{' '}
+                              <Claim id={r.divida} lang={lang} chip={true} /> €{' / '}
+                              <Claim id={r.limite} lang={lang} chip={true} /> €{' = '}
+                              <Claim id={r.indice} lang={lang} chip={true} /> %
+                            </div>
+                          ))
+                        ) : (
+                          <span class="mun-campo-vazio">{mandato.reguladorNota[lang]}</span>
+                        )}
+                      </dd>
+
+                      <dt>{s.municipio.tempoPelouros}</dt>
+                      <dd>
+                        {mandato.pelouros ? (
+                          <>
+                            <Claim id={mandato.pelouros.total} lang={lang} chip={true} />{' '}
+                            {mandato.pelouros.texto[lang]}
+                            {mandato.pelouros.partes.map((p, i) => (
+                              <>
+                                {i > 0 ? ' · ' : ''}
+                                <Claim id={p} lang={lang} chip={true} />
+                              </>
+                            ))}
+                            .
+                          </>
+                        ) : (
+                          <span class="mun-campo-vazio">{mandato.pelourosNota[lang]}</span>
+                        )}
+                      </dd>
+
+                      {mandato.contasVotadas && (
+                        <>
+                          <dt>{s.municipio.tempoContas}</dt>
+                          <dd>
+                            <Claim id={mandato.contasVotadas.favor} lang={lang} chip={true} />{' / '}
+                            <Claim id={mandato.contasVotadas.contra} lang={lang} chip={true} />{' '}
+                            {mandato.contasVotadas.texto[lang]}
+                          </dd>
+                        </>
+                      )}
+
+                      {mandato.executivo && (
+                        <>
+                          <dt>{s.municipio.tempoExecutivo}</dt>
+                          <dd>
+                            {mandato.executivo.map((e, i) => (
+                              <>
+                                {i > 0 ? ' · ' : ''}
+                                {e.rotulo} <Claim id={e.claim} lang={lang} chip={true} />
+                              </>
+                            ))}
+                          </dd>
+                        </>
+                      )}
+                    </dl>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+
+          <!-- CAMADA 3 do instrumento -->
+          <details class="deep">
+            <summary>{s.municipio.tempoFundoK}</summary>
+            <div class="deep-body">
+              <div class="deep-item">
+                <div class="deep-k">{s.municipio.tempoFundoK}</div>
+                <p class="deep-v"><Frase partes={s.municipio.tempoFundoPartes} lang={lang} /></p>
+              </div>
+              <div class="deep-item">
+                <div class="deep-k">{s.municipio.tempoExcessoK}</div>
+                <p class="deep-v">
+                  <Claim id={m.tempo.excesso.de} lang={lang} chip={true} /> €{' '}
+                  <span data-nonledger="data-de-referencia">
+                    {lang === 'pt' ? m.tempo.excesso.deRef : m.tempo.excesso.deRefEn}
+                  </span>{' → '}
+                  <Claim id={m.tempo.excesso.ate} lang={lang} chip={true} /> €{' '}
+                  <span data-nonledger="data-de-referencia">
+                    {lang === 'pt' ? m.tempo.excesso.ateRef : m.tempo.excesso.ateRefEn}
+                  </span>.
+                </p>
+                <p class="deep-v">{s.municipio.tempoExcessoV}</p>
+              </div>
+              <div class="deep-item">
+                <div class="deep-k">{s.municipio.tempoAtribuicaoK}</div>
+                <p class="deep-v">{s.municipio.tempoAtribuicaoV}</p>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- ===================================================== método e ressalvas -->
+      <section class="linha-bloco" aria-labelledby="metodo">
+        <h2 class="linha-bloco-titulo" id="metodo">{s.municipio.metodoK}</h2>
+        <div class="deep-body" style="border-top:0;padding:0">
+          {
+            m.metodo.map((r) => (
+              <div class="deep-item">
+                <div class="deep-k">{r.k[lang]}</div>
+                <p class="deep-v"><Frase partes={r.v[lang]} lang={lang} /></p>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <!-- ================================================ os trabalhos do concelho -->
+      <section class="linha-bloco" aria-labelledby="trabalhos">
+        <h2 class="linha-bloco-titulo" id="trabalhos">{s.municipio.estudosK}</h2>
+        <p class="linha-nota">{s.municipio.estudosV}</p>
+        <div class="mun-estudos">
+          {
+            estudos.map((e) => (
+              <article class="mun-estudo">
+                <h3 class="mun-estudo-titulo" data-nonledger="titulo-de-estudo">{e.titulo}</h3>
+                <p class="mun-estudo-frase">{e.descricao}</p>
+                <p>
+                  <a class="ligacao-dados" href={e.rota}>
+                    {e.temLeitura ? s.municipio.estudoLink : s.estudos.verEstudo} →
+                  </a>
+                </p>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+    </div>
+
+    <!-- ============================================== aparelho: o que a página sabe de si -->
+    <aside class="aparelho" aria-labelledby="aparelho">
+      <h2 class="aparelho-titulo" id="aparelho">{s.municipio.provenienciaK}</h2>
+      <p class="aparelho-nota">{s.municipio.provenienciaV}</p>
+
+      <div class="aparelho-estado">
+        <span class="linha-campo-k">{s.municipio.naoSabeK}</span>
+        <ul class="mun-nao-sabe">
+          {
+            m.naoSabe.map((item) => (
+              <li><Frase partes={item[lang]} lang={lang} /></li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="aparelho-bloco">
+        <span class="linha-campo-k">{s.municipio.correccoesK}</span>
+        <p class="aparelho-nota">
+          {s.municipio.correccoesV}
+          <a class="ligacao-email" href={`mailto:${ENDERECO_CORRECOES}`}>{ENDERECO_CORRECOES}</a>
+          {s.municipio.correccoesW}
+        </p>
+        <p><a href={`${metodoPath}#correcoes`}>{s.municipio.correccoesLink} →</a></p>
+      </div>
+
+      <p class="rodape-nav aparelho-saidas">
+        <a href={`${routePath('home', lang)}#mapa`}>{s.municipio.voltarMapa}</a>
+        <a href={routePath('livro', lang)}>{s.livro.eyebrow}</a>
+        <a href={`${metodoPath}#livro-razao`}>{s.livro.metodoLink}</a>
+      </p>
+    </aside>
+  </div>
+</Base>

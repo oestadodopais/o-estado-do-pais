@@ -80,6 +80,23 @@ tokens:
   - token: 'CAOP'
     scope: any
     why: Carta Administrativa Oficial de Portugal — sigla sem algarismos, listada por clareza.
+  - token: '73/2013'
+    scope: body
+    why: >-
+      O número da lei que fixa o limite de dívida total de um município (Lei
+      n.º 73/2013, o regime financeiro das autarquias locais). É o NOME de uma
+      lei, da mesma classe que "UE-27": não mede nada e não pode ser escrito
+      sem algarismos. A medição que ele enquadra — o limite legal e o índice
+      contra ele — tem linha própria no livro-razão, ao lado. Acrescentado em
+      2026-08-15 para a página de município; ver DECISIONS §1.34.
+  - token: '52.º'
+    scope: body
+    why: >-
+      O artigo dessa lei onde o limite é definido (uma vez e meia a média da
+      receita corrente líquida dos três anos anteriores). Mesma natureza do
+      token acima: é a referência a um artigo, não uma quantidade. Escrever
+      "o artigo cinquenta e dois" passaria no portão e seria pior — a
+      referência deixaria de ser verificável contra o diploma.
 
 # Padrões, para quando a correspondência exacta não chega. Usar com parcimónia.
 patterns: []

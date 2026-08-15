@@ -132,7 +132,7 @@
     "evora-despesa-paga-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "2f98cbd0cea5aa1194c190caa24d8e96a440c84eeaa3190e498b60401badc953",
+      "exported_row_sha256": "bbd988d0421d90cfb22aca153f9d57a1b276b885f5cb9f6e36ad247c1ded997b",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "91252e415e1edefde85dfb678d8f4cbce06f48c9923dfe9b7919afe451f7919d",
       "rh_id": "despesa-paga-2025",
@@ -162,7 +162,7 @@
     "evora-divida-dgal-2014": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "b9dec3e9c7cb4f4998ab02f16d8da765671b71c6a95c53497e3dceb2a8485729",
+      "exported_row_sha256": "f35cbcd6f573dfd3c2b434dbc87ab7df73fb365ce9e0a3486a3e59803224f1f5",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ea4140b50b0413e9a58da0c25f7dbff2e08575b62a03b3b6b7d9c866689441ab",
       "rh_id": "dgal-divida-2014",
@@ -232,7 +232,7 @@
     "evora-divida-total-2024": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "1f1a569df73805f3b829d2dbeed49e687b04b3501b619a085013bb420ceff9c4",
+      "exported_row_sha256": "5e5ce7c4a542ae49f1a0a7b51860a62a1e49fc00dfb3ea5f160ce233bbb4fd72",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ef73a4cfba58bd58a70ea437ce5b95a8ff9bd175288c11222f1b8fd119b23037",
       "rh_id": "divida-total-2024",
@@ -382,7 +382,7 @@
     "evora-limite-divida-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "7288cb8561defdf28997215cde51084476c339f02e23003e1408f50d9841ce0f",
+      "exported_row_sha256": "e4bbd543f003e220295644b312cd0ac650080e6d1dcce5a9fa61812fbbf9304d",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2a12c2a54c8a744f6a273cb00b0c6a9e7f52f4f6d1124096e49d6a35f406e12c",
       "rh_id": "limite-divida-2025",
@@ -392,7 +392,7 @@
     "evora-limite-divida-dgal-2014": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "2df2a372fb9a3b5eec4da5339fb3861ad2fc1fac9a061b0775d04723db8cd444",
+      "exported_row_sha256": "53e29c3af85e4f00144dd560fc432bd17e7045b5119d45b0c1f5382c91000af1",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "621cd24161e6f583843382165c041b6f8f881c15cbd3985f98e5f1b544b46a25",
       "rh_id": "dgal-limite-2014",
@@ -402,7 +402,7 @@
     "evora-limite-divida-dgal-2017": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "63a1670a7205e75be2486ffbcea55437435b5fa82a8d4207445004431b5a7588",
+      "exported_row_sha256": "4d2626c3d6e9384b48419ddd520c4a4035b7cff17752f538e580872feb186600",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4b2761ff05ce00ba36a7f8621419edc266e0df6de6660974e2618d12c6793bdc",
       "rh_id": "dgal-limite-2017",
@@ -412,7 +412,7 @@
     "evora-limite-divida-dgal-2021": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "5c4468116fe6be3c5c7c7d5d8d4cf5ef58fe481cb2151c369ef5ddd7467346c7",
+      "exported_row_sha256": "ad07ace9bf454382fb18304d80cd553f601bb6bc979eed92cc7e215c7ddf75fc",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ae9bb14b56fb707f47f4fefb07a357de2117c118468914c12465b550267c886b",
       "rh_id": "dgal-limite-2021",
@@ -432,7 +432,7 @@
     "evora-margem-endividamento-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "28cfdd6684e11b39e7c1634e3c04062abbbc1c0060b2a240666fdbb7b5088183",
+      "exported_row_sha256": "46ef46386dbd5d732cea9fda810ef71ba35b150a3bc5b8d8c52f0df2bc893d8f",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "dd55618f23ff9229bbd69d2c12ce9e0d8a980316c31db3c34f6aa37c7ffc2dfd",
       "rh_id": "margem-endividamento-2025",
@@ -442,7 +442,7 @@
     "evora-orcamento-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "414cf121e1730c7d43e5dc579d779309ae31d9717a5030c26c7b99debbe75b76",
+      "exported_row_sha256": "82a73cebb4ba868b8b5b0ff92ea502da13641bdfd73b296a9466e714d9633b3f",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5c6da495980ef90dbbddedbaf8e94d5d9a5e045d32422361d6776a304983d6f4",
       "rh_id": "om-2025-corrigido",
@@ -662,7 +662,7 @@
     "evora-receita-cobrada-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "5f87b35f4c12888ce465d0b77665eac5546a4ea276dac148ea7c8b92d879e1d9",
+      "exported_row_sha256": "217692cf7abab843e709441320b1b1e89545ef287d294566d5bb7b7bc564f8ad",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "58676b1fdc7b44d3e933fd4656e9e5ce8b3476dcb3e5929246e71451923d391c",
       "rh_id": "receita-cobrada-2025",
