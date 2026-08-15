@@ -247,6 +247,106 @@ export const STRINGS = {
       },
     },
 
+    municipio: {
+      eyebrow: 'Município',
+      /* O título e a descrição do <head> não podem ter algarismos: o portão só
+         tolera aí as cadeias que calcula do registo. Compõem-se com o nome do
+         concelho, que não tem nenhum. */
+      metaCauda: 'o município, medido — O Estado do País',
+      metaDescricaoA: 'O que as fontes publicam sobre o município de ',
+      metaDescricaoB:
+        ': população, poder de compra, emprego, empresas, dívida e execução orçamental. Cada valor tem linha no livro-razão, com fonte, documento e data de acesso.',
+      ledeA: 'Esta página mede o município de ',
+      ledeB:
+        ' e mostra de onde vem cada medida. Não interpreta: onde uma fonte não estabelece uma coisa, a página di-lo em vez de a supor.',
+
+      relanceK: 'Relance',
+      relanceSub:
+        'Oito medidas. Seis vêm de organismos que publicam para todos os concelhos do país; duas só existem porque o próprio município as publica, e cada uma dessas diz-lo na sua linha.',
+      relanceVazio: 'Nenhuma fonte central publica esta medida para este concelho.',
+
+      breveK: 'Leitura breve',
+      breveSub: 'Uma frase por medida. Todos os números são citações do livro-razão.',
+
+      distanciaK: 'A dívida contra o tecto legal',
+      distanciaLegenda:
+        'A barra é a dívida total que o regulador publica para o concelho; o fio é o limite legal do mesmo ano. O índice mede uma contra o outro numa escala em que o tecto é o valor permitido.',
+      /* Pedaços de uma frase que o gabarito monta com as afirmações DESTE
+         município. Nenhum id de afirmação se escreve aqui: isto é a língua,
+         não os dados. */
+      distanciaIndiceA: 'O índice é ',
+      distanciaIndiceB: ' % em ',
+      distanciaIndiceC: ', contra um tecto legal de ',
+      distanciaIndiceD: ' %.',
+      distanciaLei:
+        'O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores. É a lei que o define, não este sítio.',
+      distanciaDivida: 'dívida',
+      distanciaTecto: 'limite legal',
+
+      fundoK: 'Fundo',
+
+      contasK: 'A última prestação de contas do município',
+      contasV:
+        'O que o município orçamentou, o que cobrou, o que pagou, e o que dizia dever no fim do ano. São números do próprio município sobre si mesmo: a prestação de contas é dele.',
+      contasOrcamento: 'Orçamento corrigido',
+      contasReceita: 'Receita cobrada',
+      contasDespesa: 'Despesa paga',
+      contasDivida: 'Dívida total',
+      contasLimite: 'Limite de dívida',
+      contasMargem: 'Margem de endividamento',
+      contasDivergenciaK: 'A diferença entre as duas contas da mesma dívida',
+      contasDivergenciaV:
+        'O regulador e o município publicam a dívida do mesmo ano com uma diferença. A diferença é pequena, e mostra-se porque é o único sítio onde uma voz de fora e a voz do próprio medem a mesma coisa.',
+      contasDivergenciaRegulador: 'O regulador publica',
+      contasDivergenciaMunicipio: 'O município publica',
+      contasDivergenciaDiferenca: 'Diferença',
+
+      tempoK: 'Quem administrou, e o que as contas registaram',
+      tempoRelanceK: 'Índice de dívida, do primeiro ano legível ao último',
+      tempoBreve:
+        'Cinco administrações, contadas como foram instaladas e não como foram eleitas. As decisões vão atribuídas a quem as tomou, com o rótulo da lista que ganhou; os índices não vão atribuídos a ninguém.',
+      tempoInstalado: 'instalado a',
+      tempoLugares: 'Lugares',
+      tempoHerdou: 'Herdou',
+      tempoDecidiu: 'Decidiu',
+      tempoDeixou: 'Deixou',
+      tempoRegulador: 'O regulador',
+      tempoPelouros: 'Pelouros',
+      tempoExecutivo: 'Executivo instalado',
+      tempoContas: 'Contas do penúltimo ano',
+      tempoEmFuncoes: 'em funções',
+      tempoExcessoK: 'O excesso sobre o tecto legal',
+      tempoExcessoV:
+        'O que a dívida excedia o limite legal, no primeiro e no último ano em que o relatório o publica como um valor positivo. Depois disso o quadro passa a números negativos, que já não são excesso mas capacidade de endividamento — e por isso esta página pára aqui.',
+      tempoFundoK: 'Como esta linha do tempo é feita',
+      tempoFundoPartes: [
+        'Os períodos são os das administrações tal como foram instaladas, e as datas de instalação vêm do trabalho sobre os quinze anos. Cada valor tem linha no livro-razão. As duas dívidas herdadas em ',
+        { ref: '2013' },
+        ' aparecem as duas: a que foi reportada no fim do mandato e a que um relatório posterior reexpressou. Escolher uma em silêncio seria esconder que a diferença existe.',
+      ],
+      tempoAtribuicaoK: 'Quem responde pelo quê',
+      tempoAtribuicaoV:
+        'Uma administração responde pelas decisões que tomou. Não responde por um índice: nada do que foi lido permite separar a parte de um executivo na população, no emprego ou no poder de compra do concelho. Por isso as decisões levam nome e lista, e os índices não levam nenhum. Não há aqui nenhuma tabela classificativa de partidos, e não vai haver.',
+
+      metodoK: 'Método e ressalvas',
+      naoSabeK: 'O que esta página não sabe',
+      provenienciaK: 'Proveniência',
+      provenienciaV:
+        'Cada valor desta página tem uma linha no livro-razão. O selo ao lado do número é a porta para essa linha, onde estão a fonte, o documento, o sítio exacto de onde o valor foi lido, o excerto e o dia em que foi lido. Nenhuma data de leitura é escrita aqui: quem quiser sabê-la, abre a linha.',
+      correccoesK: 'Encontrou um erro',
+      correccoesV: 'Escreva para ',
+      correccoesW:
+        '. Um erro confirmado entra no registo de correções e na própria linha, com o valor antigo à vista. Nada é apagado.',
+      correccoesLink: 'O registo de correções',
+
+      estudosK: 'Os trabalhos sobre este concelho',
+      estudosV:
+        'Cada um tem a sua página, com a medida que o faz valer a pena, a frase do que concluiu, o método e o documento original quando está alojado aqui.',
+      estudoLink: 'Abrir a leitura',
+
+      voltarMapa: 'Voltar ao mapa dos municípios',
+    },
+
     estudos: {
       metaTitle: 'Estudos — O Estado do País',
       metaDescription: 'O arquivo de estudos publicados, com as suas edições em português e em inglês.',
@@ -273,6 +373,20 @@ export const STRINGS = {
       migradoLede: 'O documento deste estudo já está alojado aqui. A página do observatório à volta dele ainda não foi escrita.',
       migradoExplicacao:
         'O que se lê no documento é o estudo tal como foi publicado: não foi reescrito, resumido nem actualizado para caber aqui. O que falta é a página do observatório — a leitura curta, os números do estudo ligados ao livro-razão e a proveniência de cada um. Fingir esse conteúdo seria pior do que não ter nenhum.',
+
+
+      /* Trabalho com leitura do observatório escrita (src/data/leituras.mjs).
+         É este o estado que levanta o noindex — ver DECISIONS §1.35. */
+      leituraEstado: 'Leitura publicada',
+      leituraLede: 'Este trabalho já tem a leitura do observatório: a medida que o faz valer a pena, a frase do que concluiu, o método e as ressalvas.',
+      leituraExplicacao:
+        'A frase abaixo é prosa da casa, e não uma citação: assenta numa frase impressa no próprio trabalho, e foi cortada onde ia mais longe do que ela. Os números são citações do livro-razão, cada um com o selo que leva à sua linha. O documento original continua alojado aqui, tal como foi publicado.',
+      leituraRelanceK: 'Relance',
+      leituraBreveK: 'Leitura breve',
+      leituraFundoK: 'Método e ressalvas',
+      leituraOutraLingua: 'A mesma frase na outra edição',
+      municipioK: 'O concelho de que trata',
+      municipioLink: 'A página do município',
 
       documentoK: 'O documento original',
       documentoV:
@@ -541,6 +655,100 @@ export const STRINGS = {
       },
     },
 
+    municipio: {
+      eyebrow: 'Municipality',
+      metaCauda: 'the municipality, measured — O Estado do País',
+      metaDescricaoA: 'What the sources publish about the municipality of ',
+      metaDescricaoB:
+        ': population, purchasing power, employment, enterprises, debt and budget execution. Every value has a ledger row, with source, document and access date.',
+      ledeA: 'This page measures the municipality of ',
+      ledeB:
+        ' and shows where each measure comes from. It does not interpret: where a source does not establish something, the page says so rather than assume it.',
+
+      relanceK: 'At a glance',
+      relanceSub:
+        'Eight measures. Six come from bodies that publish for every concelho in the country; two exist only because the municipality itself publishes them, and each of those says so on its own line.',
+      relanceVazio: 'No central source publishes this measure for this concelho.',
+
+      breveK: 'Brief reading',
+      breveSub: 'One sentence per measure. Every figure is a citation from the ledger.',
+
+      distanciaK: 'The debt against the legal ceiling',
+      distanciaLegenda:
+        'The bar is the total debt the regulator publishes for the concelho; the rule is the legal limit for the same year. The index measures one against the other on a scale whose cap is the permitted value.',
+      distanciaIndiceA: 'The index is ',
+      distanciaIndiceB: ' % in ',
+      distanciaIndiceC: ', against a legal cap of ',
+      distanciaIndiceD: ' %.',
+      distanciaLei:
+        'The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue. The law defines it, not this site.',
+      distanciaDivida: 'debt',
+      distanciaTecto: 'legal limit',
+
+      fundoK: 'Background',
+
+      contasK: 'The municipality’s latest accounts',
+      contasV:
+        'What the municipality budgeted, what it collected, what it paid, and what it said it owed at year end. These are the municipality’s own figures about itself: the accounts are its own.',
+      contasOrcamento: 'Corrected budget',
+      contasReceita: 'Revenue collected',
+      contasDespesa: 'Expenditure paid',
+      contasDivida: 'Total debt',
+      contasLimite: 'Debt limit',
+      contasMargem: 'Borrowing margin',
+      contasDivergenciaK: 'The gap between the two accounts of the same debt',
+      contasDivergenciaV:
+        'The regulator and the municipality publish the same year’s debt with a difference between them. The difference is small, and it is shown because it is the only place where an outside voice and the municipality’s own voice measure the same thing.',
+      contasDivergenciaRegulador: 'The regulator publishes',
+      contasDivergenciaMunicipio: 'The municipality publishes',
+      contasDivergenciaDiferenca: 'Difference',
+
+      tempoK: 'Who governed, and what the accounts recorded',
+      tempoRelanceK: 'Debt index, from the first readable year to the last',
+      tempoBreve:
+        'Five administrations, counted as they were installed and not as they were elected. Decisions are attributed to whoever took them, with the label of the list that won; indices are attributed to nobody.',
+      tempoInstalado: 'installed on',
+      tempoLugares: 'Seats',
+      tempoHerdou: 'Inherited',
+      tempoDecidiu: 'Decided',
+      tempoDeixou: 'Left',
+      tempoRegulador: 'The regulator',
+      tempoPelouros: 'Portfolios',
+      tempoExecutivo: 'Executive installed',
+      tempoContas: 'Accounts of the year before last',
+      tempoEmFuncoes: 'in office',
+      tempoExcessoK: 'The excess over the legal ceiling',
+      tempoExcessoV:
+        'How far the debt exceeded the legal limit, in the first and the last year in which the report publishes it as a positive figure. After that the table turns negative, and a negative there is no longer excess but borrowing capacity — so this page stops here.',
+      tempoFundoK: 'How this timeline is made',
+      tempoFundoPartes: [
+        'The periods are those of the administrations as they were installed, and the installation dates come from the study of the fifteen years. Every value has a ledger row. The two debts inherited in ',
+        { ref: '2013' },
+        ' both appear: the one reported at the end of the term and the one a later report restated. Choosing one silently would hide that the difference exists.',
+      ],
+      tempoAtribuicaoK: 'Who answers for what',
+      tempoAtribuicaoV:
+        'An administration answers for the decisions it took. It does not answer for an index: nothing that was read allows an executive’s share of the concelho’s population, employment or purchasing power to be carved out. So decisions carry a name and a list, and indices carry neither. There is no party league table here, and there will not be one.',
+
+      metodoK: 'Method and caveats',
+      naoSabeK: 'What this page does not know',
+      provenienciaK: 'Provenance',
+      provenienciaV:
+        'Every value on this page has a ledger row. The seal beside the figure is the door to that row, where the source, the document, the exact place the value was read from, the excerpt and the day it was read all live. No reading date is written here: whoever wants it opens the row.',
+      correccoesK: 'Found an error',
+      correccoesV: 'Write to ',
+      correccoesW:
+        '. A confirmed error enters the corrections log and the row itself, with the old value still visible. Nothing is deleted.',
+      correccoesLink: 'The corrections log',
+
+      estudosK: 'The works about this concelho',
+      estudosV:
+        'Each has its own page, with the measure that makes it worth reading, the sentence of what it concluded, the method, and the original document where it is hosted here.',
+      estudoLink: 'Open the reading',
+
+      voltarMapa: 'Back to the map of municipalities',
+    },
+
     estudos: {
       metaTitle: 'Studies — O Estado do País',
       metaDescription: 'The archive of published studies, with their Portuguese and English editions.',
@@ -565,6 +773,18 @@ export const STRINGS = {
       migradoLede: 'The document for this study is already hosted here. The observatory page around it has not been written yet.',
       migradoExplicacao:
         'What you read in the document is the study exactly as it was published: it has not been rewritten, shortened or updated to fit here. What is missing is the observatory page — the short reading, the study’s figures tied to the ledger and the provenance of each one. Faking that content would be worse than having none.',
+
+
+      leituraEstado: 'Reading published',
+      leituraLede: 'This work now has the observatory’s reading: the measure that makes it worth reading, the sentence of what it concluded, the method and the caveats.',
+      leituraExplicacao:
+        'The sentence below is house prose, not a quotation: it rests on a sentence printed in the work itself, and it was cut back where it went further than that sentence. The figures are citations from the ledger, each with the seal that leads to its row. The original document remains hosted here, exactly as it was published.',
+      leituraRelanceK: 'At a glance',
+      leituraBreveK: 'Brief reading',
+      leituraFundoK: 'Method and caveats',
+      leituraOutraLingua: 'The same sentence in the other edition',
+      municipioK: 'The concelho it is about',
+      municipioLink: 'The municipality page',
 
       documentoK: 'The original document',
       documentoV:

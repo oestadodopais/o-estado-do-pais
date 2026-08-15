@@ -15,9 +15,11 @@
  * confere-a carácter a carácter contra src/data/verbatim.mjs.
  */
 import { MUNICIPIOS, DISTRITOS, FRAMES, FIELD_W, FIELD_H, INDICE_EVORA } from '../data/caop-centroids.mjs';
+import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
 import { VERBATIM } from '../data/verbatim.mjs';
 import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { DADOS } from '../lib/dados.mjs';
+import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import Claim from './Claim.astro';
 
@@ -26,6 +28,20 @@ const s = t(lang);
 
 const evora = MUNICIPIOS[INDICE_EVORA];
 const [ex, ey] = [evora[2], evora[3]];
+
+/**
+ * A porta para a página do município aceso.
+ *
+ * O ponto aceso já dizia que aquele concelho tem trabalho aprofundado; agora
+ * leva lá. Sai do registo dos municípios pela posição na CAOP — não de um
+ * endereço escrito à mão — para que um ponto aceso sem página não possa dar um
+ * caminho partido. Sem página, fica `null` e o rótulo continua a ser só um
+ * rótulo. Nenhum algarismo é acrescentado ao mapa por causa disto.
+ */
+const municipioAceso = MUNICIPIOS_COM_PAGINA.find((m) => m.caopIndex === INDICE_EVORA) ?? null;
+const rotaDoMunicipio = municipioAceso
+  ? routePath('municipio', lang, { slug: municipioAceso.slug })
+  : null;
 
 /* Larguras das barras: calculadas a partir do livro-razão, não escritas à mão. */
 const total = parsePtNumber(getClaim('municipios-portugal-caop-2025').value);
@@ -60,7 +76,13 @@ const molduras = [
 
       <!-- CAMADA 2 — LEITURA BREVE -->
       <p class="map-caption">
-        {s.home.instr2.legendaA}<b>Évora</b>{s.home.instr2.legendaB}<Claim id="estudos-evora-publicados" />{
+        {s.home.instr2.legendaA}
+        {rotaDoMunicipio ? (
+          <a href={rotaDoMunicipio}><b>Évora</b></a>
+        ) : (
+          <b>Évora</b>
+        )}
+        {s.home.instr2.legendaB}<Claim id="estudos-evora-publicados" />{
           s.home.instr2.legendaC
         }<Claim id="municipios-sem-estudo-aprofundado" />{s.home.instr2.legendaD}
       </p>
@@ -135,8 +157,17 @@ const molduras = [
         <g data-aceso>
           <circle class="mun-lit" cx={ex} cy={ey} r="5.4" data-m={evora[0]} data-d={DISTRITOS[evora[1]]} />
           <path class="lit-leader" d={`M ${ex + 7} ${ey - 2} L ${ex + 20} ${ey - 13} L ${ex + 27} ${ey - 13}`} />
-          <rect x={ex + 29} y={ey - 24} width="44" height="16" fill="var(--paper-2)" />
-          <text class="lit-label" x={ex + 32} y={ey - 12}>Évora</text>
+          {rotaDoMunicipio ? (
+            <a href={rotaDoMunicipio}>
+              <rect x={ex + 29} y={ey - 24} width="44" height="16" fill="var(--paper-2)" />
+              <text class="lit-label" x={ex + 32} y={ey - 12}>Évora</text>
+            </a>
+          ) : (
+            <>
+              <rect x={ex + 29} y={ey - 24} width="44" height="16" fill="var(--paper-2)" />
+              <text class="lit-label" x={ex + 32} y={ey - 12}>Évora</text>
+            </>
+          )}
         </g>
       </svg>
     </div>

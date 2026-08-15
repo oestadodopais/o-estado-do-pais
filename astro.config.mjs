@@ -5,6 +5,8 @@ import sitemap from '@astrojs/sitemap';
 import { SITE_URL } from './site.config.mjs';
 import { alternatesFor, pathFromUrl, matchPath } from './src/lib/routes.mjs';
 import { loadClaims, provenienciaIncompleta } from './src/lib/ledger.mjs';
+import { WORKS } from './src/data/studies.mjs';
+import { temLeitura } from './src/data/leituras.mjs';
 
 /**
  * Uma alternativa de língua, tal como routes.mjs a devolve.
@@ -36,7 +38,11 @@ export default defineConfig({
        * tiverem conteúdo. Não se convida um motor de busca a indexar dezoito
        * páginas que dizem, elas próprias, que ainda não têm nada.
        * O índice do arquivo (/estudos, /en/studies) continua no sitemap.
-       * Levantar isto na migração: apagar este filter e o noindex do stub.
+       *
+       * Um trabalho com leitura escrita (src/data/leituras.mjs) já tem
+       * conteúdo, e entra — pela MESMA lista que levanta o noindex na página e
+       * que o portão de HTML confere. Não é «apagar o filter na migração»: é a
+       * migração acontecer trabalho a trabalho, e o filtro seguir cada um.
        *
        * Os documentos originais (/estudos/:slug/documento) também não entram:
        * são obra já publicada, alojada aqui, e quem os encontra chega pela
@@ -55,7 +61,11 @@ export default defineConfig({
        */
       filter: (page) => {
         const hit = matchPath(pathFromUrl(page));
-        if (['estudo', 'documento'].includes(hit?.key ?? '')) return false;
+        if (hit?.key === 'documento') return false;
+        if (hit?.key === 'estudo') {
+          const work = WORKS.find((w) => w.slug === hit.params.slug);
+          return work ? temLeitura(work.id) : false;
+        }
         if (hit?.key === 'linha') {
           const claim = loadClaims().get(hit.params.slug ?? '');
           return Boolean(claim) && !provenienciaIncompleta(claim);

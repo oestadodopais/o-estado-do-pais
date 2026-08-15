@@ -24,7 +24,13 @@ export const PRIMARY_LANG = 'pt';
 
 /**
  * Cada chave é uma página lógica. `:slug` é o único parâmetro suportado.
- * Rotas futuras reservadas: municipio -> /municipios/:slug , /en/municipalities/:slug
+ *
+ * `municipio` é a página do observatório sobre um município: as medidas que as
+ * fontes centrais publicam para aquele concelho, a leitura breve, e o fundo com
+ * o método, as ressalvas e os trabalhos que o tomaram por objecto. O slug é o
+ * nome do concelho sem acentos — o mesmo que os estudos já usam. Hoje só existe
+ * `evora`; o tipo de página foi desenhado para os 308 e a lista está em
+ * src/data/municipios.mjs, não escrita à mão num gabarito.
  *
  * `documento` não é uma página deste sítio: é o estudo original, alojado tal
  * como foi publicado, com uma faixa nossa no topo e mais nada. Vive debaixo do
@@ -42,6 +48,7 @@ export const ROUTES = {
   estudos: { pt: '/estudos', en: '/en/studies' },
   estudo: { pt: '/estudos/:slug', en: '/en/studies/:slug' },
   documento: { pt: '/estudos/:slug/documento', en: '/en/studies/:slug/document' },
+  municipio: { pt: '/municipios/:slug', en: '/en/municipalities/:slug' },
   livro: { pt: '/livro-razao', en: '/en/ledger' },
   linha: { pt: '/livro-razao/:slug', en: '/en/ledger/:slug' },
 };

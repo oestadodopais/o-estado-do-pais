@@ -1,0 +1,15 @@
+---
+/**
+ * A página de um município, nas duas edições, da mesma construção.
+ * Os caminhos saem do registo dos municípios: não há lista escrita à mão.
+ */
+import MunicipioView from '../../views/MunicipioView.astro';
+import { MUNICIPIOS_COM_PAGINA } from '../../data/municipios.mjs';
+
+export function getStaticPaths() {
+  return MUNICIPIOS_COM_PAGINA.map((m) => ({ params: { slug: m.slug } }));
+}
+
+const { slug } = Astro.params;
+---
+<MunicipioView lang="pt" slug={slug} />

@@ -1779,6 +1779,201 @@ entrada no arquivo, não uma leitura linha a linha do português** — e o
 `VERIFICATION.md` do motor continua a dizê-lo: essa leitura só deixa de estar em
 aberto no dia em que ele ler a edição portuguesa na pré-visualização.
 
+### 1.34 O primeiro tipo de página de município, e o que ele se recusa a dizer
+
+Setenta linhas de Évora atravessaram para o livro-razão (§1.32) e nenhuma
+página as imprimia. O aviso «esta afirmação não é citada por nenhuma página»
+passou de 29 para 99, e essa diferença era a medida exacta do trabalho por
+fazer. Fica em 29 outra vez: **todas as setenta linhas são impressas**, nenhuma
+foi retirada do manifesto.
+
+**A disposição é a B, e não uma quarta.** `IDENTIDADE.md` §3 dá três, e um tipo
+de página novo escolhe uma. Esta escolhe **B · Corpo e aparelho** — a mesma das
+páginas de linha do livro-razão, e partilha com elas as regras da grelha em
+`site.css` em vez de as copiar. A coluna do aparelho não é espaço a encher: é
+onde a página diz que não existe PIB municipal, que duas das oito medidas são o
+município a falar de si próprio, que um ano de contas nunca foi certificado e
+que ninguém publica dinheiro por pelouro. Metidas no corpo, essas quatro
+ressalvas ficavam enterradas. **Não é C** — C é para uma página que *é* um
+instrumento, e esta é uma leitura com um instrumento lá dentro. **Não é A** —
+a coluna de rótulo de A não tem onde pôr as ressalvas.
+
+**Nenhum acento novo** (`IDENTIDADE.md` §2). O amarelo aparece uma vez, na
+barra que desenha a dívida contra o tecto legal, que é uma medição. Tudo o resto
+distingue-se com fio, fundo e letra monoespaçada.
+
+**As três camadas abrem-se na própria página** (§4):
+
+| Camada | O que é |
+| --- | --- |
+| Relance | oito medidas, `.figuras` a quatro por linha, duas linhas cheias |
+| Leitura breve | uma frase por medida, e a distância desenhada |
+| Fundo | as contas do município, a linha do tempo das administrações, o método, as ressalvas e os cinco trabalhos |
+
+**O estado vazio do mosaico foi desenhado, e ainda não foi exercido.** Um
+mosaico sem afirmação mostra o marcador `[a verificar]` no lugar do número, diz
+por palavras que nenhuma fonte central publica aquela medida para aquele
+concelho, e **não leva selo** — um selo que não abrisse porta nenhuma tornaria
+falsa a promessa do Método (§5.1). Évora enche os oito, por isso o estado está
+escrito e não está desenhado no ecrã. Isso é uma dívida, e fica dita: exerce-se
+no primeiro concelho sem execução orçamental nem prazo de pagamento publicados,
+que é o caso de todos os que não tenham prestação de contas lida — as medidas 7
+e 8 saem do relatório do próprio município, não de um agregador central, e essa
+frase está na linha de cada uma delas.
+
+**A linha do tempo das administrações é um instrumento**, e leva as três
+camadas ela própria (§4): relance (o índice do regulador no primeiro ano
+legível da série e no último), leitura breve (cinco administrações, contadas
+como foram instaladas), fundo (como a linha do tempo é feita, o excesso sobre o
+tecto legal, e quem responde pelo quê). Não é um quadro de sete colunas: um
+quadro desses não cabe num corpo de 68ch nem num telefone. É um bloco por
+mandato, com o período, quem presidiu, a lista, e os campos herdou / decidiu /
+deixou / o regulador / pelouros.
+
+**As duas dívidas de 2013 aparecem as duas.** 82 871 522,82 € como reportado
+duas semanas depois da mudança de executivo, e 95 082 509,86 € na reexpressão
+de um relatório posterior. Escolher uma em silêncio esconderia que a diferença
+existe.
+
+**Um campo que a fonte não estabelece diz-se; não fica em branco.** O mandato
+de 2009–2013 não tem repartição de pelouros — o trabalho 09 chama-lhe «uma
+linha de um mapa, não um mapa», e o presidente desse mandato e todos os outros
+membros dele não foram identificados. O mandato de 2017–2021 não tem decisão
+com linha própria, e a página diz que o que falta é a linha, não a decisão.
+
+**Origem de cada algarismo** (§2.2), e não há mais nenhuma:
+
+| Classe | Origem |
+| --- | --- |
+| Toda a medição | `data-claim`, por `<Claim/>` |
+| Períodos de mandato, datas de instalação, anos de referência em prosa | `data-nonledger="data-de-referencia"` |
+| As marcas do eixo da linha do tempo | `data-nonledger="escala-de-instrumento"` |
+| `52.º` e `73/2013` | dois tokens novos em `ledger/allowlist.yml` |
+| Etiquetas de selo | `data-nonledger="proveniencia"`, posto por `<Provenance/>` |
+
+**A lista de motivos não cresceu.** Um período de mandato é o período a que os
+dados daquela linha se referem, que é exactamente o que `data-de-referencia`
+diz. As datas de instalação vêm impressas no trabalho 08 — «são as datas de
+instalação, e não as das eleições, que marcam o início efetivo dos mandatos:
+2013-10-18, 2017-10-20, 2021-10-15 e 2025-10-31». **Os tokens cresceram por
+dois**, cada um justificado por escrito no próprio ficheiro: o nome de uma lei
+e o número do seu artigo não são medições e não podem ser escritos sem
+algarismos. É o mesmo caso de `UE-27`.
+
+**Não há ilha de dados.** A página não tem JavaScript nenhum, por isso não há
+nada do lado do cliente que precise de ler valores. A barra amarela é desenhada
+no servidor a partir dos dois valores do livro-razão: se a linha for corrigida,
+o desenho muda com ela.
+
+**Os dois rótulos dentro do desenho não levam selo ao lado, e isso é a regra da
+casa e não uma excepção.** Um `<a>` dentro de um SVG não é uma porta que se
+veja. O selo dos dois valores desenhados está na frase logo por baixo do
+desenho — que é onde o instrumento n.º 1 já o punha (`.brief` de
+`InstrumentoConvergencia.astro`) — e cada um deles aparece com selo noutro
+ponto da mesma página: a dívida no mosaico do relance, o limite na linha do
+regulador do mandato de 2021–2025. Nenhum valor desta página existe sem porta.
+
+
+**A página não publica uma data de frescura, e é decisão.** Cada linha diz em
+que dia foi lida, e o selo é a porta para essa data. Uma data ao nível da página
+teria de ser ou uma medição sem linha, ou um motivo `data-nonledger` novo para
+uma coisa que já está registada linha a linha. A `VERIFICACAO` que a primeira
+página mostra é da linha de base institucional e não destas linhas; usá-la aqui
+seria dizer que estas foram reconferidas quando não foram.
+
+**As ressalvas, e a frase de cada uma.** Nenhuma vai além do que o trabalho de
+onde vem imprime. Ficheiros em `ResearchHub/content/`:
+
+| Ressalva na página | Frase de origem |
+| --- | --- |
+| Não existe PIB municipal | 06 pt-PT:9 — «Não existe PIB da cidade, e nenhum é inventado aqui.» |
+| Duas das oito medidas são o município a falar de si | 07 pt-PT:16 — «A maior parte deste documento é o município a relatar sobre si próprio.» |
+| Um ano de contas sem assinatura de fora | 07 pt-PT:33 — «As contas de 2024 nunca foram certificadas.» |
+| Duas vozes de fora, não uma | 07 pt-PT:19 — «Existem duas vozes de fora, e ambas estão aqui: a opinião assinada do auditor independente (a Certificação Legal das Contas), e a DGAL…» |
+| Nenhuma fonte publica dinheiro por pelouro | 09 pt-PT:11 — «Nenhuma fonte publica dinheiro por pelouro.» · 09 pt-PT:15 — «Descrição, nunca classificações.» |
+| Um partido é dono das suas decisões, não de uma curva | 08 pt-PT:23 — «Um partido é dono das suas decisões, não de uma curva.» · 08 pt-PT:1114 — «nada do que aqui foi lido fornece o contrafactual que recortaria a parte de cada executivo neles» |
+| O dinheiro do plano de recuperação é atribuído pelo registo | 04 pt-PT:271 — «O endereço da responsabilização, na maior parte dos casos, não são os paços do concelho.» |
+| A repartição de pelouros de 2009–2013 não foi estabelecida | 09 pt-PT:19 — «O mandato de 2009–2013 é uma linha de um mapa, não um mapa. […] O presidente desse mandato, e todos os outros membros dele, não foram identificados.» |
+| O nome legal do presidente interino está por verificar | 08 pt-PT:324 — «O nome legal completo do presidente interino é uma pequena questão em aberto. […] O nome legal completo é [verify]…» |
+| O que o trabalho 04 não abre | 04 pt-PT:13, :15, :17 — «A secção de auditoria lê o catálogo do Tribunal, não as suas auditorias.» · «A secção de contratos é um limite superior sobre uma janela truncada.» · «Não existe um valor da UE para um município, e este documento não o fabrica.» |
+
+**Uma correcção ao plano.** `PLANO-municipio-evora.md` §1.3 escrevia que a série
+da DGAL é «a única verificação de fora» sobre a dívida. O trabalho 07 não diz
+isso: diz que existem **duas** vozes de fora, o auditor e a DGAL. A página
+escreve o que o trabalho escreve. O mesmo §6.7 do plano dizia que 06 não imprime
+«uma região pobre» — imprime («Évora é uma cidade relativamente próspera dentro
+de uma região pobre», 06 pt-PT:20). A decisão do revisor mantém-se na mesma:
+escreve-se «abaixo da média nacional», que é o que os dados dizem e é a leitura
+mais estreita das duas.
+
+**O que a página se recusa a dizer.** Não há tabela classificativa de partidos.
+Não há atribuição de um índice a ninguém. Não há medida de desempenho por
+pessoa. Não há contrafactual. Não há dinheiro por pelouro. Não há PIB municipal.
+Cada uma destas recusas está escrita na página, na coluna do aparelho, e não só
+aqui.
+
+**A porta.** Chega-se à página pelo ponto aceso do mapa da primeira página e
+pelo nome «Évora» na legenda desse instrumento — nenhum algarismo foi
+acrescentado por causa disso — e das cinco páginas de leitura, pelo bloco «o
+concelho de que trata». A ligação sai do registo dos municípios pela posição na
+CAOP, não de um endereço escrito à mão: um ponto aceso sem página não pode dar
+um caminho partido.
+
+### 1.35 As páginas de leitura, e o escudo que passou a ser lido trabalho a trabalho
+
+§1.8 pôs todas as páginas de estudo fora do índice, e escreveu que se levantava
+«na migração: apagar o `filter` no `astro.config.mjs` e o `noindex={true}` em
+`EstudoView.astro`. São duas linhas.» A migração não acontece de uma vez: cinco
+trabalhos ganharam leitura, seis não têm nenhuma. Apagar as duas linhas
+ofereceria ao índice onze páginas, seis das quais continuam a dizer que ainda
+não têm nada.
+
+**O escudo passou a ser lido de uma lista.** `src/data/leituras.mjs` diz que
+trabalhos têm leitura escrita. A página lê-a para saber se leva `noindex`, o
+sitemap lê-a para saber se inclui, e o portão de HTML lê-a para impor **as duas
+metades**: falha quem esconde uma página que já tem conteúdo, e falha quem
+oferece uma que não tem. Não é uma dispensa nem um portão a menos — é a mesma
+exigência de §1.8, a deixar de ser «todas» e a passar a ser lida da mesma
+origem pelos três sítios. É a disciplina que a página de uma linha já usava com
+`provenienciaIncompleta`.
+
+Hoje: **cinco** trabalhos com leitura (04, 06, 07, 08, 09 de Évora), dez páginas
+indexáveis a mais, e as seis restantes na mesma. O `creativeWorkStatus` do
+JSON-LD acompanha: `Published` onde há leitura, `Draft` onde não há.
+
+**As três camadas de uma página de leitura** (`IDENTIDADE.md` §4): a medida que
+faz o trabalho valer a pena, a frase do que concluiu, e o fundo com método,
+ressalvas, proveniência e o documento original.
+
+**As frases são prosa da casa e não podem ultrapassar o trabalho.** Cada uma
+assenta numa frase impressa nesse trabalho, e foi cortada onde ia mais longe.
+Os pares, com a frase de origem:
+
+| Trabalho | Frase da casa | Frase de origem |
+| --- | --- | --- |
+| 04 | «A maior parte do dinheiro público prometido a Évora é administrada e recebida fora da câmara, e a fatia vencida pesa mais do que a que já foi paga» / “Most of the public money promised to Évora is administered and received outside the town hall, and the overdue share weighs more than the share already paid” | pt-PT:271 «O endereço da responsabilização, na maior parte dos casos, não são os paços do concelho.» · pt-PT:267 «As localizações de projeto vencidas transportam 61,64 % de tudo o que foi aprovado para o concelho.» |
+| 06 | «Évora é uma cidade próspera dentro de uma região que está abaixo da média nacional, e a sua economia empresarial está concentrada em muito poucas mãos» / “Évora is a prosperous city inside a region that sits below the national average, and its enterprise economy is concentrated in very few hands” | pt-PT:20 «A própria cidade está **acima** da média nacional no único indicador que existe ao nível do concelho: o índice de poder de compra do INE de 2023 põe Évora em 111,5 (Portugal = 100), com a sua região em 93,9.» · pt-PT:44 «A concentração é o facto estrutural. As quatro maiores empresas detêm 21,5% de todo o VAB empresarial do concelho…» |
+| 07 | «O orçamento de Évora afastou-se do dinheiro que chega, e o aperto aparece nas faturas por pagar e na fila de pagamento, não na dívida legal» / “Évora’s budget has drifted from the money that arrives, and the strain shows in unpaid invoices and the payment queue, not in the legal debt” | pt-PT:456 «O orçamento é uma previsão de esperanças; a taxa de execução é o facto.» · pt-PT:452 «O aperto aparece noutro sítio: nas faturas de fornecedores por pagar e na fila de pagamento de 137 dias.» |
+| 08 | «Quinze anos de contas mostram uma dívida herdada que demorou anos a ser medida, uma década a desbastá-la, e um último mandato em que o desbaste parou» / “Fifteen years of accounts show an inherited debt that took years to measure, a decade of grinding it down, and a last term in which the grinding stalled” | pt-PT:1078 «Uma história, três capítulos. O registo lê-se como um arco contínuo: um município … cuja verdadeira dívida herdada ainda estava a ser descoberta anos depois … e que depois passou uma década a desbastar a montanha … No último mandato o desbaste parou.» |
+| 09 | «Os pelouros de Évora ficam sempre com a lista do presidente, e as contas do município não são cortadas de maneira que permita dizer quanto gastou cada vereador» / “Évora’s portfolios always sit with the president’s own list, and the municipality’s accounts are not cut in a way that lets anyone say what each councillor spent” | pt-PT:498 «O executivo real é mais pequeno do que o eleito.» · pt-PT:17 «Todos os pelouros ficam com o bloco que governa.» · pt-PT:11 «Nenhuma fonte publica dinheiro por pelouro.» |
+
+**A frase aparece nas duas línguas em cada edição.** A da edição em primeiro
+lugar, a outra por baixo em letra pequena e com `lang` próprio — o mesmo padrão
+que as descrições dos trabalhos já usavam. Uma tradução escondida é uma
+tradução que ninguém confere.
+
+**Os quatro selos tracejados de 04, e porque estão certos.** As somas sobre o
+registo público do plano de recuperação atravessaram com `excerpt:
+"[a verificar]"` (§2.3, limite 12): não há frase para transcrever. A página
+di-lo por palavras, nas duas línguas, ao lado das duas medidas do relance — e o
+selo tracejado aparece ali, ao lado do cheio das outras páginas, que é o que
+`IDENTIDADE.md` §5.2 exige de uma distinção para ela existir mesmo.
+
+**O que continua a não estar nestas páginas.** Não há resumo do trabalho, não há
+versão curta, e nenhum número entrou copiado do documento a olho: os que
+aparecem têm todos linha no livro-razão. As descrições continuam como estavam
+(§1.7). O documento original continua alojado ao lado, intacto.
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões

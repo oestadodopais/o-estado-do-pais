@@ -19,9 +19,24 @@
  * Enquanto a página do observatório não estiver escrita, a página fica fora do
  * índice (noindex) e o JSON-LD vai marcado como rascunho: o que se diz ao
  * leitor e o que se diz às máquinas é a mesma coisa. Ver DECISIONS §1.8.
+ *
+ * QUANDO A LEITURA ESTIVER ESCRITA (src/data/leituras.mjs), esta mesma página
+ * ganha as três camadas do IDENTIDADE §4 — a medida, a frase, o fundo — e sai
+ * do escudo: deixa de levar noindex, entra no sitemap e o JSON-LD deixa de
+ * dizer rascunho. Não são três decisões: é uma, lida da mesma lista pelo
+ * gabarito, pelo sitemap e pelo portão de HTML. Ver DECISIONS §1.35.
+ *
+ * A FRASE DA LEITURA É PROSA DA CASA e tem de assentar numa frase impressa no
+ * próprio trabalho. A frase de origem de cada uma está registada, com ficheiro
+ * e linha, em src/data/leituras.mjs e em DECISIONS §1.35.
  */
 import Base from '../layouts/Base.astro';
+import Claim from '../components/Claim.astro';
+import Provenance from '../components/Provenance.astro';
+import Frase from '../components/Frase.astro';
 import { workById, POR_VERIFICAR, subjectLabel } from '../data/studies.mjs';
+import { leituraDe } from '../data/leituras.mjs';
+import { municipioPorSlug } from '../data/municipios.mjs';
 import { documentosDoEstudo } from '../lib/documentos.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { canonicalUrl, SITE_NAME, SITE_URL } from '../../site.config.mjs';
@@ -49,14 +64,45 @@ const edicoes = work.editions.map((e) => ({
 
 const tema = subjectLabel(work.subject, lang);
 
+/* A leitura do observatório sobre este trabalho, se já foi escrita. É a sua
+   existência — e nada mais — que decide o estado desta página. */
+const leitura = leituraDe(work.id);
+const outraLingua = lang === 'pt' ? 'en' : 'pt';
+
+/* O tema de um trabalho é o objecto dele. Quando esse objecto é um concelho
+   com página própria, a leitura leva de volta a ela: as duas falam dos mesmos
+   números, e o leitor não deve ter de adivinhar isso. */
+const municipio = work.subject ? municipioPorSlug(work.subject) : null;
+const municipioPath = municipio ? routePath('municipio', lang, { slug: municipio.slug }) : null;
+
+/* Três estados, e a página diz sempre em qual está: por migrar, documento
+   alojado sem leitura, e leitura publicada. Nenhum finge ser outro. */
+const estado = leitura
+  ? s.estudos.leituraEstado
+  : migrado
+    ? s.estudos.migradoEstado
+    : s.estudos.stubEstado;
+const estadoLede = leitura
+  ? s.estudos.leituraLede
+  : migrado
+    ? s.estudos.migradoLede
+    : s.estudos.stubLede;
+const estadoExplicacao = leitura
+  ? s.estudos.leituraExplicacao
+  : migrado
+    ? s.estudos.migradoExplicacao
+    : s.estudos.stubExplicacao;
+
 /* Fica "Draft" enquanto a PÁGINA não tiver conteúdo — mesmo com o documento já
-   alojado. O que está por escrever é esta página, e é dela que o JSON-LD fala. */
+   alojado. O que está por escrever é esta página, e é dela que o JSON-LD fala;
+   quando a leitura existir, deixa de ser um rascunho e o JSON-LD diz o mesmo
+   que a página e o que o sitemap. */
 const jsonld = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: principal.title,
   inLanguage: work.editions.map((e) => (e.lang === 'pt' ? 'pt-PT' : 'en')),
-  creativeWorkStatus: 'Draft',
+  creativeWorkStatus: leitura ? 'Published' : 'Draft',
   url: canonicalUrl(path),
   isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
   publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
@@ -69,20 +115,81 @@ const jsonld = {
   title={`${principal.title} — ${SITE_NAME}`}
   description={work.description[lang]}
   jsonld={jsonld}
-  noindex={true}
+  noindex={!leitura}
 >
   <div style="padding-top:clamp(20px,3vw,34px)">
-    <span class="eyebrow">{migrado ? s.estudos.migradoEstado : s.estudos.stubEstado}</span>
+    <span class="eyebrow">{estado}</span>
     <h1 style="margin-top:12px" data-nonledger="titulo-de-estudo">{principal.title}</h1>
     <p class="lede" style="margin-top:16px">{work.description[lang]}</p>
   </div>
 
+  {
+    /* ========================================================= A LEITURA
+       As três camadas do IDENTIDADE §4, abertas aqui e não noutra página:
+       Relance (a medida), Leitura breve (a frase), Fundo (método, ressalvas,
+       proveniência). Cada valor entra por <Claim/> e leva o seu selo — e os
+       selos desta página não são todos iguais: as somas sobre um registo
+       público inteiro atravessaram sem frase para transcrever, e o seu selo
+       aparece a tracejado. É a mesma distinção do IDENTIDADE §5.2, e a nota
+       ao lado di-la por palavras. */
+    leitura && (
+      <div class="leitura">
+        <div class="leitura-topo">
+          <p class="layer-tag">{s.estudos.leituraRelanceK}</p>
+          <div class="leitura-medidas">
+            {leitura.medidas.map((med) => (
+              <div class="leitura-medida">
+                <Claim id={med.claim} class="leitura-medida-num" as="div" />
+                <p class="leitura-medida-nome"><Frase partes={med.nome[lang]} lang={lang} /></p>
+                <Provenance id={med.claim} lang={lang} />
+              </div>
+            ))}
+          </div>
+          {leitura.medidasNota && (
+            <p class="placeholder-nota">{leitura.medidasNota[lang]}</p>
+          )}
+        </div>
+
+        <div class="leitura-breve">
+          <p class="layer-tag">{s.estudos.leituraBreveK}</p>
+          <p class="leitura-frase"><Frase partes={leitura.frase[lang]} lang={lang} /></p>
+          <p class="log-vazio-k">{s.estudos.leituraOutraLingua}</p>
+          <p class="leitura-frase-outra" lang={outraLingua === 'pt' ? 'pt-PT' : 'en'}>
+            <Frase partes={leitura.frase[outraLingua]} lang={outraLingua} />
+          </p>
+        </div>
+
+        <details class="deep">
+          <summary>{s.estudos.leituraFundoK}</summary>
+          <div class="deep-body">
+            {leitura.metodo.map((r) => (
+              <div class="deep-item">
+                <div class="deep-k">{r.k[lang]}</div>
+                <p class="deep-v"><Frase partes={r.v[lang]} lang={lang} /></p>
+                {r.valores.length > 0 && (
+                  <p class="deep-v">
+                    {r.valores.map((v, i) => (
+                      <>
+                        {i > 0 ? ' · ' : ''}
+                        <Claim id={v} lang={lang} chip={true} />
+                      </>
+                    ))}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        </details>
+      </div>
+    )
+  }
+
   <div class="estudo-blocos">
     <!-- ======================================= o estado da migração -->
     <div class="placeholder">
-      <span class="placeholder-tag">{migrado ? s.estudos.migradoEstado : s.estudos.stubEstado}</span>
-      <p class="lede" style="font-size:16px">{migrado ? s.estudos.migradoLede : s.estudos.stubLede}</p>
-      <p class="placeholder-nota">{migrado ? s.estudos.migradoExplicacao : s.estudos.stubExplicacao}</p>
+      <span class="placeholder-tag">{estado}</span>
+      <p class="lede" style="font-size:16px">{estadoLede}</p>
+      <p class="placeholder-nota">{estadoExplicacao}</p>
     </div>
 
     <!-- ======================================= o documento original -->
@@ -123,6 +230,19 @@ const jsonld = {
             <a class="ligacao-externa" href={work.artifactUrl} rel="noopener noreferrer external">
               {s.estudos.stubForaLink} ↗
             </a>
+          </p>
+        </div>
+      )
+    }
+
+    <!-- ======================================= o concelho de que trata -->
+    {
+      municipio && municipioPath && (
+        <div class="log-vazio">
+          <div class="log-vazio-k">{s.estudos.municipioK}</div>
+          <p class="log-vazio-v">{municipio.nome[lang] ?? municipio.nome.pt}</p>
+          <p>
+            <a class="ligacao-dados" href={municipioPath}>{s.estudos.municipioLink} →</a>
           </p>
         </div>
       )
