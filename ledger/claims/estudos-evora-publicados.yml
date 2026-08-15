@@ -4,24 +4,24 @@
 id: "estudos-evora-publicados"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "4"
+value: "5"
 unit: "estudos"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "O Estado do País"
 document:
   title: "Arquivo de estudos"
-  edition: "12.08.2026"
+  edition: "15.08.2026"
 source_url: null
-access_date: "2026-08-12"
-reference_date: "2026-08-12"
+access_date: "2026-08-15"
+reference_date: "2026-08-15"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "Contagem dos trabalhos do arquivo cujo objecto é o município de Évora: «Évora — Quinze Anos, Cinco Mandatos», «Évora — Economia, Investidores, Portas Abertas 2026», «Évora — Orçamentado, Pago, Devido 2025» e «Évora — Os Pelouros, Quem Os Teve, O Que Fizeram». A edição inglesa do terceiro é uma tradução do mesmo trabalho, não um estudo à parte."
-derivation_en: "Count of the works in the archive whose subject is the municipality of Évora: «Évora — Quinze Anos, Cinco Mandatos», «Évora — Economia, Investidores, Portas Abertas 2026», «Évora — Orçamentado, Pago, Devido 2025» and «Évora — Os Pelouros, Quem Os Teve, O Que Fizeram». The English edition of the third is a translation of the same work, not a study in its own right."
+derivation: "Contagem dos trabalhos do arquivo cujo objecto é o município de Évora: «Évora — Quinze Anos, Cinco Mandatos», «Évora — Economia, Investidores, Portas Abertas 2026», «Évora — Orçamentado, Pago, Devido 2025», «Évora — Os Pelouros, Quem Os Teve, O Que Fizeram» e «Évora — Prometido, Pago, Auditado 2026». As edições inglesas do terceiro e do quinto são traduções do mesmo trabalho, não estudos à parte."
+derivation_en: "Count of the works in the archive whose subject is the municipality of Évora: «Évora — Quinze Anos, Cinco Mandatos», «Évora — Economia, Investidores, Portas Abertas 2026», «Évora — Orçamentado, Pago, Devido 2025», «Évora — Os Pelouros, Quem Os Teve, O Que Fizeram» and «Évora — Prometido, Pago, Auditado 2026». The English editions of the third and the fifth are translations of the same work, not studies in their own right."
 derived_from: []
 # Expressão verificada no build: tem de dar exactamente o valor acima.
 check: "estudos_evora_no_arquivo"
@@ -43,3 +43,9 @@ corrections:
     new_value: "4"
     reason: "Novo estudo publicado a 2026-08-12: Os Pelouros, Quem Os Teve, O Que Fizeram"
     reason_en: "New study published on 2026-08-12: Os Pelouros, Quem Os Teve, O Que Fizeram"
+  - date: "2026-08-15"
+    kind: "actualizacao"
+    old_value: "4"
+    new_value: "5"
+    reason: "Entrou no arquivo «Évora — Prometido, Pago, Auditado 2026», o quinto trabalho cujo objecto é o município de Évora. É o primeiro que não veio de um anfitrião de artefactos: foi produzido no motor de investigação desta casa e atravessou como ficheiro, com as duas edições."
+    reason_en: "«Évora — Promised, Paid, Audited 2026» entered the archive, the fifth work whose subject is the municipality of Évora. It is the first that did not come from an artifact host: it was produced by this publication’s research engine and crossed over as a file, with both editions."

@@ -65,7 +65,6 @@ const OBRIGATORIOS = [
   'slug',
   'lang',
   'title',
-  'artifact_url',
   'raw_file',
   'fetched_utc',
   'bytes_raw',
@@ -73,6 +72,27 @@ const OBRIGATORIOS = [
   'sha256_raw',
   'sha256_normalized',
 ];
+
+/**
+ * DE ONDE VIERAM OS BYTES — e há duas respostas possíveis, não uma.
+ *
+ * Até 2026-08-15 todos os documentos alojados eram artefactos do claude.ai, e
+ * `artifact_url` era obrigatório. Os dois documentos de «Prometido, Pago,
+ * Auditado» nunca foram artefactos: foram produzidos no motor de investigação
+ * e atravessaram para cá como ficheiros. Não têm endereço de anfitrião, e
+ * inventar-lhes um seria proveniência fabricada — exactamente o que este
+ * portão existe para impedir.
+ *
+ * A regra passou a ser: **uma das duas, e pelo menos uma**.
+ *
+ *   artifact_url            o documento foi servido por um anfitrião externo;
+ *   origin + origin_ref     o documento veio de outro sistema desta casa, e
+ *                           `origin_ref` diz de onde, ao commit.
+ *
+ * Um documento com nenhuma das duas continua a parar o build, que é a
+ * severidade que existia antes. Ver DECISIONS §1.31.
+ */
+const ORIGENS_CONHECIDAS = ['researchhub'];
 
 const chaveDe = (e) => `${e.slug}/${e.lang}`;
 const porChave = new Map();
@@ -84,6 +104,37 @@ for (const [i, e] of edicoes.entries()) {
       err(`${onde}: falta o campo obrigatório "${campo}".`);
     }
   }
+  /* A proveniência dos bytes: endereço de anfitrião, ou sistema de origem. */
+  const temArtefacto = typeof e.artifact_url === 'string' && e.artifact_url.trim() !== '';
+  const temOrigem = typeof e.origin === 'string' && e.origin.trim() !== '';
+  if (!temArtefacto && !temOrigem) {
+    err(
+      `${onde}: falta a proveniência dos bytes. Ou "artifact_url" (documento servido por um ` +
+        `anfitrião externo) ou "origin" + "origin_ref" (documento vindo de outro sistema desta ` +
+        `casa). Um documento sem nenhuma das duas não se aloja.`,
+    );
+  }
+  if (temArtefacto && temOrigem) {
+    err(
+      `${onde}: traz "artifact_url" e "origin" ao mesmo tempo. Os bytes vieram de um sítio só; ` +
+        `declare esse.`,
+    );
+  }
+  if (temOrigem) {
+    if (!ORIGENS_CONHECIDAS.includes(e.origin)) {
+      err(
+        `${onde}: "origin" é "${e.origin}", que não é um sistema conhecido ` +
+          `(${ORIGENS_CONHECIDAS.join(', ')}). Acrescente-o a este portão e diga porquê.`,
+      );
+    }
+    if (typeof e.origin_ref !== 'string' || e.origin_ref.trim() === '') {
+      err(
+        `${onde}: tem "origin" sem "origin_ref". Dizer que os bytes vieram de outro sistema sem ` +
+          `dizer de que ficheiro e de que commit não é proveniência.`,
+      );
+    }
+  }
+
   if (!e.slug || !e.lang) continue;
 
   if (!LANGS.includes(e.lang)) {
@@ -171,6 +222,9 @@ console.log(
    aqui, é uma coisa que quem constrói vê e pode ir conferir. */
 for (const [chave, e] of porChave) {
   if (e.via) console.log(cinza(`    · "${chave}" entrou por «${e.via}» — ver DECISIONS §1.21`));
+  if (e.origin) {
+    console.log(cinza(`    · "${chave}" não é artefacto: veio de «${e.origin}» — ${e.origin_ref}`));
+  }
 }
 
 if (erros.length) {
