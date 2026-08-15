@@ -172,7 +172,7 @@
     "evora-divida-dgal-2017": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "e64856344742deb9269c05f249cb6091d3e2b082b217f399e68604ae43158a90",
+      "exported_row_sha256": "41bf5ef18584920e7aae817270d95fad972c0f51e5c180a544f5b152fbb6b8d5",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1b357d12429e660089e2c9c160b7ddc2fdc014248333e19034c90ef122af644d",
       "rh_id": "dgal-divida-2017",
@@ -182,7 +182,7 @@
     "evora-divida-dgal-2021": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "4724464d074dec9b541285fa333c18bab53463f1cfae32cd64f57b64b8a1beee",
+      "exported_row_sha256": "f3874f477c41522c5c0aaf3044b60cd8b057bebc4329114a996ed42b04282e00",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4c919fda99782ec61fe8b9077b3621f5a58638856fa03f9992df4729f6404933",
       "rh_id": "dgal-divida-2021",
@@ -402,7 +402,7 @@
     "evora-limite-divida-dgal-2017": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "4d2626c3d6e9384b48419ddd520c4a4035b7cff17752f538e580872feb186600",
+      "exported_row_sha256": "241418bf9e8d7e754d3e53a7a3f9a39a3826397bdcb35b0e2e16a2e2fe59f2ad",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4b2761ff05ce00ba36a7f8621419edc266e0df6de6660974e2618d12c6793bdc",
       "rh_id": "dgal-limite-2017",
@@ -412,7 +412,7 @@
     "evora-limite-divida-dgal-2021": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "ad07ace9bf454382fb18304d80cd553f601bb6bc979eed92cc7e215c7ddf75fc",
+      "exported_row_sha256": "726ff8c660403537325185752854c01df0e01df9d402a3b8dc097d0d573516eb",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ae9bb14b56fb707f47f4fefb07a357de2117c118468914c12465b550267c886b",
       "rh_id": "dgal-limite-2021",

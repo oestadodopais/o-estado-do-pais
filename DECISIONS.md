@@ -1979,6 +1979,49 @@ foram por isso tratadas como conclusões, e não como opiniões.
    **por isso** uma Declaração de Impossibilidade…» (pt-PT:374). O nexo é da
    fonte, não da página.
 
+
+**Segunda revisão cruzada, 15.08.2026 — e uma refetch cega.** O mesmo revisor de
+outra família voltou a passar sobre as correcções: 15 de 22 pontos resolvidos,
+as duas novas armadilhas apanhadas, e — o que importa mais — **uma refetch cega
+de todos os oito valores do relance**, feita contra o INE, o IEFP, a DGAL e o
+sítio do município por quem não escreveu as linhas, bateu certo com o
+livro-razão em todos. O que dela saiu para esta página:
+
+8. **Duas ressalvas trocaram o quantificador pelo mecanismo.** «não capta a
+   administração pública, a maior parte da universidade e do hospital» era a
+   frase de 06 dita como se fosse desta página. 06 não estabelece o mecanismo
+   («capta-os apenas nas partes que são empresas»), estabelece o
+   quantificador — por isso a página passa a dizer primeiro o que o registo
+   **é** (as contas das empresas sediadas no concelho, creditadas ao concelho
+   da sede, que é o que 06 escreve) e depois cita o quantificador **como
+   citação de 06**. E «a maior parte deste trabalho é o município a relatar
+   sobre si próprio» passou à forma que a página pode mostrar: as medidas vêm
+   da prestação de contas do município, e as duas vozes de fora são o auditor
+   e o regulador — as duas estão aqui.
+9. **A conclusão de 04 deixou de aparecer como facto desta página.** «O
+   endereço da responsabilização, na maior parte dos casos, não são os paços do
+   concelho» é a leitura assinada de 04. O que os números mostram é que a
+   universidade tem **mais** dinheiro contratado do que a câmara — «mais», não
+   «a maior parte». A página do município diz os números e atribui a conclusão
+   ao trabalho, que é onde ela vive.
+10. **As ressalvas que a própria DGAL escreve nos seus ficheiros passaram a
+    estar nas linhas** (a classe de §1.28). A linha de Évora de 2017 termina,
+    no ficheiro, com a nota de rodapé `a)` — e o excerto das duas linhas desse
+    ano já terminava nela; ganharam `source_flag: "a)"` com a nota nas duas
+    línguas. O ficheiro de 2021 rotula-se a si próprio «Dados provisórios» ao
+    nível do documento e não da linha, por isso a ressalva entrou onde
+    pertence: `document.edition`. Os índices derivados desses anos não mudam —
+    os pais é que carregam a ressalva, e é para lá que o selo leva. A coluna do
+    aparelho da página do município di-lo por palavras, nas duas edições.
+    **A dívida de proveniência não mexeu: continua em 12.** Uma bandeira da
+    fonte não é um campo em falta.
+    Do lado do motor, `publisher/export_site_rows.py` passou a transportar
+    `source_flag` / `source_flag_note` / `source_flag_note_en` do manifesto, e
+    recusa-se a escrever uma bandeira que o excerto da linha de origem não
+    termine — que é a mesma regra que o validador do sítio já impõe, aplicada
+    antes de o ficheiro existir. Não é um portão novo: é o campo a ser provado
+    como todos os outros campos deste exportador já são.
+
 ### 1.35 As páginas de leitura, e o escudo que passou a ser lido trabalho a trabalho
 
 §1.8 pôs todas as páginas de estudo fora do índice, e escreveu que se levantava
@@ -2011,10 +2054,10 @@ Os pares, com a frase de origem:
 
 | Trabalho | Frase da casa | Frase de origem |
 | --- | --- | --- |
-| 04 | «A maior parte do dinheiro público prometido a Évora é administrada e recebida fora da câmara, e a fatia vencida pesa mais do que a que já foi paga» / “Most of the public money promised to Évora is administered and received outside the town hall, and the overdue share weighs more than the share already paid” | pt-PT:271 «O endereço da responsabilização, na maior parte dos casos, não são os paços do concelho.» · pt-PT:267 «As localizações de projeto vencidas transportam 61,64 % de tudo o que foi aprovado para o concelho.» |
-| 06 | «Évora é uma cidade próspera dentro de uma região que está abaixo da média nacional, e a sua economia empresarial está concentrada em muito poucas mãos» / “Évora is a prosperous city inside a region that sits below the national average, and its enterprise economy is concentrated in very few hands” | pt-PT:20 «A própria cidade está **acima** da média nacional no único indicador que existe ao nível do concelho: o índice de poder de compra do INE de 2023 põe Évora em 111,5 (Portugal = 100), com a sua região em 93,9.» · pt-PT:44 «A concentração é o facto estrutural. As quatro maiores empresas detêm 21,5% de todo o VAB empresarial do concelho…» |
+| 04 | «Do dinheiro do plano de recuperação contratado no concelho, a universidade tem mais do que a câmara — 38 596 975,81 € contra 12 069 012,6 € — e, da soma aprovada para o concelho, 61,64 % está vencida contra 50,36 % paga» / EN em espelho | pt-PT:271 «O endereço da responsabilização, na maior parte dos casos, não são os paços do concelho.» · pt-PT:267 «As localizações de projeto vencidas transportam 61,64 % de tudo o que foi aprovado para o concelho.» |
+| 06 | «Évora está acima da média nacional em poder de compra por habitante — 111,47 — dentro de uma região que está abaixo, em 93,86; e a sua economia empresarial está concentrada em poucas mãos: quatro empresas detêm 21,5 % do VAB do concelho, contra 2,56 % no país» / EN em espelho | pt-PT:20 «A própria cidade está **acima** da média nacional no único indicador que existe ao nível do concelho: o índice de poder de compra do INE de 2023 põe Évora em 111,5 (Portugal = 100), com a sua região em 93,9.» · pt-PT:44 «A concentração é o facto estrutural. As quatro maiores empresas detêm 21,5% de todo o VAB empresarial do concelho…» |
 | 07 | «O orçamento de Évora afastou-se do dinheiro que chega, e o aperto aparece nas faturas por pagar e na fila de pagamento, não na dívida legal» / “Évora’s budget has drifted from the money that arrives, and the strain shows in unpaid invoices and the payment queue, not in the legal debt” | pt-PT:456 «O orçamento é uma previsão de esperanças; a taxa de execução é o facto.» · pt-PT:452 «O aperto aparece noutro sítio: nas faturas de fornecedores por pagar e na fila de pagamento de 137 dias.» |
-| 08 | «Quinze anos de contas mostram uma dívida herdada que demorou anos a ser medida, uma década a desbastá-la, e um último mandato em que a fila de pagamento voltou a alongar-se» / “…and a last term in which the payment queue lengthened again” | pt-PT:1078-1086 «Uma história, três capítulos. O registo lê-se como um arco contínuo: um município … cuja verdadeira dívida herdada ainda estava a ser descoberta anos depois … e que depois passou uma década a desbastar a montanha … No último mandato o desbaste parou e a fila voltou a alongar-se: 22 dias em 2023 e depois 137 em 2025, com pagamentos em atraso de €4 976 172.» |
+| 08 | «Quinze anos de contas mostram uma dívida herdada que demorou anos a ser medida, uma década a desbastá-la, e um último mandato em que a fila de pagamento se alongou, de 22 para 137 dias» / “…and a last term in which the payment queue lengthened, from 22 to 137 days” | pt-PT:1078-1086 «Uma história, três capítulos. O registo lê-se como um arco contínuo: um município … cuja verdadeira dívida herdada ainda estava a ser descoberta anos depois … e que depois passou uma década a desbastar a montanha … No último mandato o desbaste parou e a fila voltou a alongar-se: 22 dias em 2023 e depois 137 em 2025, com pagamentos em atraso de €4 976 172.» |
 | 09 | «Os pelouros de Évora ficam, em todos os mandatos que o trabalho conseguiu ler, com a lista do presidente, e as contas do município não são cortadas de maneira que permita dizer quanto gastou cada vereador» / “Évora’s portfolios sit, in every term the study could read, with the president’s own list…” | pt-PT:498 «O executivo real é mais pequeno do que o eleito.» · pt-PT:17 «Todos os pelouros ficam com o bloco que governa.» · pt-PT:11 «Nenhuma fonte publica dinheiro por pelouro.» |
 
 **A frase aparece nas duas línguas em cada edição.** A da edição em primeiro
@@ -2073,6 +2116,24 @@ selo tracejado aparece ali, ao lado do cheio das outras páginas, que é o que
    arquivo dizia «Budgeted, Paid, Owed 2025». Um título literal não se abrevia
    (§1.7 e o cabeçalho de `studies.mjs`); corrigido para o do documento. O `h1`
    do documento é outra frase e não é o título.
+
+**A segunda revisão cruzada reescreveu mais três frases, pela mesma regra: uma
+frase da casa só pode dizer o que a página mostra.**
+
+8. **04** dizia «a maior parte do dinheiro público prometido a Évora é
+   administrada e recebida fora da câmara». A página mostra a universidade com
+   38 596 975,81 € contratados contra 12 069 012,6 € do município — isso prova
+   «mais», não «a maior parte». A frase passou a dizer o que a página mostra, e
+   a leitura de 04 ficou no fundo, atribuída a 04 por palavras.
+9. **06** dizia «uma cidade próspera». Nem o valor acrescentado empresarial nem
+   a concentração estabelecem prosperidade. A frase passou a assentar no único
+   indicador que existe ao nível do concelho — o índice de poder de compra —, e
+   **os dois valores desse índice passaram a estar impressos nesta página**,
+   com selo: o concelho de um lado da média nacional, a sua região do outro.
+10. **08** dizia «voltou a alongar-se». O alongamento anterior a que 08 se
+    refere — 69 dias em 2022 — não está nesta página, por isso o «voltou a»
+    pedia ao leitor que acreditasse num número que não vê. Diz agora «se
+    alongou», com os dois prazos que estão à vista.
 
 **O que continua a não estar nestas páginas.** Não há resumo do trabalho, não há
 versão curta, e nenhum número entrou copiado do documento a olho: os que

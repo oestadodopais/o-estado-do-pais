@@ -58,18 +58,32 @@ export const LEITURAS = {
         ' and the seal shows dashed. Inventing a sentence would be worse than showing the gap.',
       ],
     },
+    /* Reescrita a 15.08.2026, segunda revisão cruzada. Dizia «a maior parte do
+       dinheiro é administrada e recebida fora da câmara» — que é a leitura
+       assinada de 04, não uma coisa que os números desta página estabeleçam:
+       o que a página mostra é a universidade com mais dinheiro contratado do
+       que a câmara, o que prova «mais», não «a maior parte». A leitura de 04
+       continua na página, no fundo, atribuída a 04. */
     frase: {
       pt: [
-        'A maior parte do dinheiro público prometido a Évora é administrada e recebida fora da câmara, e a fatia vencida pesa mais do que a que já foi paga: ',
+        'Do dinheiro do plano de recuperação contratado no concelho, a universidade tem mais do que a câmara — ',
+        { claim: 'evora-prr-universidade-contratado' },
+        ' € contra ',
+        { claim: 'evora-prr-municipio-contratado' },
+        ' € — e, da soma aprovada para o concelho, ',
         { claim: 'evora-prr-vencido-quota-2026' },
-        ' % do aprovado está vencido, contra ',
+        ' % está vencida contra ',
         { claim: 'evora-prr-execucao-2026' },
-        ' % pago.',
+        ' % paga.',
       ],
       en: [
-        'Most of the public money promised to Évora is administered and received outside the town hall, and the overdue share weighs more than the share already paid: ',
+        'Of the recovery-plan money contracted in the concelho, the university holds more than the council — ',
+        { claim: 'evora-prr-universidade-contratado' },
+        ' € against ',
+        { claim: 'evora-prr-municipio-contratado' },
+        ' € — and, of the sum approved for the concelho, ',
         { claim: 'evora-prr-vencido-quota-2026' },
-        ' % of what was approved is overdue, against ',
+        ' % is overdue against ',
         { claim: 'evora-prr-execucao-2026' },
         ' % paid.',
       ],
@@ -81,10 +95,10 @@ export const LEITURAS = {
     },
     metodo: [
       {
-        k: { pt: 'Quem tem o dinheiro contratado', en: 'Who holds the contracted money' },
+        k: { pt: 'O que o trabalho conclui daí', en: 'What the work concludes from that' },
         v: {
-          pt: ['A universidade tem mais dinheiro contratado neste concelho do que o município, e a camada que administra o dinheiro é feita de organismos nacionais.'],
-          en: ['The university holds more contracted money in this concelho than the municipality, and the layer that administers the money is made of national bodies.'],
+          pt: ['A universidade tem mais dinheiro contratado neste concelho do que o município, e a camada que administra o dinheiro é feita de organismos nacionais. O trabalho conclui daí que «o endereço da responsabilização, na maior parte dos casos, não são os paços do concelho» — é a leitura dele, assinada, e não uma contagem: um leitor que queira este total explicado deve dirigir as perguntas aos organismos nacionais e à universidade mais vezes do que à câmara.'],
+          en: ['The university holds more contracted money in this concelho than the municipality, and the layer that administers the money is made of national bodies. The work concludes from that that «the accountability address is mostly not the town hall» — its own signed reading, not a count: a reader who wants this total explained should put questions to national bodies and to the university more often than to the council.'],
         },
         valores: ['evora-prr-universidade-contratado', 'evora-prr-municipio-contratado'],
       },
@@ -128,14 +142,22 @@ export const LEITURAS = {
     medidasNota: null,
     frase: {
       pt: [
-        'Évora é uma cidade próspera dentro de uma região que está abaixo da média nacional, e a sua economia empresarial está concentrada em muito poucas mãos: as quatro maiores empresas detêm ',
+        'Évora está acima da média nacional em poder de compra por habitante — ',
+        { claim: 'evora-poder-de-compra-2023' },
+        ' — dentro de uma região que está abaixo, em ',
+        { claim: 'alentejo-central-poder-de-compra-2023' },
+        '; e a sua economia empresarial está concentrada em poucas mãos: quatro empresas detêm ',
         { claim: 'evora-concentracao-vab4-2024' },
         ' % do valor acrescentado do concelho, contra ',
         { claim: 'portugal-concentracao-vab4-2024' },
         ' % no país.',
       ],
       en: [
-        'Évora is a prosperous city inside a region that sits below the national average, and its enterprise economy is concentrated in very few hands: the four largest enterprises hold ',
+        'Évora is above the national average in purchasing power per inhabitant — ',
+        { claim: 'evora-poder-de-compra-2023' },
+        ' — inside a region that sits below it, at ',
+        { claim: 'alentejo-central-poder-de-compra-2023' },
+        '; and its enterprise economy is concentrated in few hands: four enterprises hold ',
         { claim: 'evora-concentracao-vab4-2024' },
         ' % of the concelho’s value added, against ',
         { claim: 'portugal-concentracao-vab4-2024' },
@@ -151,10 +173,18 @@ export const LEITURAS = {
       {
         k: { pt: 'Isto não é PIB municipal', en: 'This is not municipal GDP' },
         v: {
-          pt: ['Não existe PIB da cidade, e o trabalho não inventa nenhum. Como o próprio trabalho adverte nos seus limites, o valor acrescentado das empresas não capta a administração pública, a maior parte da universidade e do hospital, e credita toda a atividade de uma empresa ao concelho da sua sede.'],
-          en: ['There is no GDP figure for the city, and the work invents none. As the study itself warns in its own limits, enterprise value added misses public administration, most of the university and the hospital, and credits a firm’s whole activity to its head-office concelho.'],
+          pt: ['Não existe PIB da cidade, e o trabalho não inventa nenhum. O que existe ao nível do concelho é o registo empresarial: as contas das empresas sediadas no concelho, que creditam toda a atividade de uma empresa ao concelho da sua sede. Não é PIB municipal, e o próprio trabalho escreve porquê nos seus limites: «não capta a administração pública, a maior parte da universidade e do hospital».'],
+          en: ['There is no GDP figure for the city, and the work invents none. What exists at concelho level is the business register: the accounts of enterprises headquartered in the concelho, which credit a firm’s whole activity to its head-office concelho. It is not municipal GDP, and the study itself writes why in its own limits: «it misses public administration, most of the university and the hospital».'],
         },
         valores: [],
+      },
+      {
+        k: { pt: 'A única medida que existe ao nível do concelho', en: 'The one measure that exists at concelho level' },
+        v: {
+          pt: ['O índice de poder de compra do INE é o único indicador que existe para um concelho, e é o que sustenta a primeira metade da frase acima: o concelho de um lado da média nacional, a sua região do outro. A média nacional é a base do índice.'],
+          en: ['The statistics institute’s purchasing-power index is the one indicator that exists for a concelho, and it is what carries the first half of the sentence above: the concelho on one side of the national average, its region on the other. The national average is the base of the index.'],
+        },
+        valores: ['evora-poder-de-compra-2023', 'alentejo-central-poder-de-compra-2023'],
       },
       {
         k: { pt: 'A comparação com o país', en: 'The comparison with the country' },
@@ -214,10 +244,10 @@ export const LEITURAS = {
     },
     metodo: [
       {
-        k: { pt: 'Quase tudo é o município a falar de si', en: 'Almost all of it is the municipality speaking about itself' },
+        k: { pt: 'De onde vêm as medidas, e as duas vozes de fora', en: 'Where the measures come from, and the two outside voices' },
         v: {
-          pt: ['Como o próprio trabalho abre a dizer, a maior parte dele é o município a relatar sobre si próprio. Existem duas vozes de fora, e as duas estão lá: a opinião assinada do auditor independente, e a série anual do regulador, que publica por município e por ano o mesmo conceito legal de dívida, compilado do lado de fora.'],
-          en: ['As the study itself opens by saying, most of it is the municipality reporting on itself. Two outside voices exist and both are there: the independent auditor’s signed opinion, and the regulator’s annual series, which publishes per municipality and per year the same legal debt concept, compiled from outside.'],
+          pt: ['As medidas deste trabalho vêm da prestação de contas do próprio município — o relato da gestão sobre o seu próprio ano. As duas vozes de fora são a opinião assinada do auditor independente e a série anual do regulador, que publica por município e por ano o mesmo conceito legal de dívida, compilado do lado de fora. As duas estão nesta página.'],
+          en: ['This work’s measures come from the municipality’s own accounts — management reporting on its own year. The two outside voices are the independent auditor’s signed opinion and the regulator’s annual series, which publishes per municipality and per year the same legal debt concept, compiled from outside. Both are on this page.'],
         },
         valores: [],
       },
@@ -276,7 +306,7 @@ export const LEITURAS = {
         { claim: 'evora-divida-31-10-2013' },
         ' € logo a seguir à mudança de executivo, ',
         { claim: 'evora-divida-inicio-mandato-reexpressa' },
-        ' € na reexpressão final —, uma década a desbastá-la, e um último mandato em que a fila de pagamento voltou a alongar-se, de ',
+        ' € na reexpressão final —, uma década a desbastá-la, e um último mandato em que a fila de pagamento se alongou, de ',
         { claim: 'evora-prazo-medio-de-pagamento-2023' },
         ' para ',
         { claim: 'evora-prazo-medio-de-pagamento-2025' },
@@ -287,7 +317,7 @@ export const LEITURAS = {
         { claim: 'evora-divida-31-10-2013' },
         ' € right after the executive changed, ',
         { claim: 'evora-divida-inicio-mandato-reexpressa' },
-        ' € in the final restatement —, a decade of grinding it down, and a last term in which the payment queue lengthened again, from ',
+        ' € in the final restatement —, a decade of grinding it down, and a last term in which the payment queue lengthened, from ',
         { claim: 'evora-prazo-medio-de-pagamento-2023' },
         ' to ',
         { claim: 'evora-prazo-medio-de-pagamento-2025' },
