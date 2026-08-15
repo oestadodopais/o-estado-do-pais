@@ -119,7 +119,12 @@ function aceitarCorreccao(id) {
       break;
     }
     const ultima = linha.corrections[agora - 1];
-    if (String(linha.value) !== String(ultima?.new_value)) {
+    /* Numa revisão de proveniência o valor NÃO muda — `old_value` e `new_value`
+       são os do campo que mudou, não os do número. Exigir que o valor publicado
+       fosse igual ao `new_value` seria exigir que a linha passasse a publicar
+       um endereço. A exigência vale para as duas naturezas em que o número se
+       move. Ver ledger/README.md, «as três naturezas». */
+    if (ultima?.kind !== 'proveniencia' && String(linha.value) !== String(ultima?.new_value)) {
       erros.push(
         `${id}: o valor publicado é "${linha.value}" e a correcção mais recente diz ` +
           `new_value "${ultima?.new_value}". A correcção tem de descrever a alteração que foi feita.`,

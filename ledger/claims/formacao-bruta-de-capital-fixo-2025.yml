@@ -14,6 +14,7 @@ source: "Eurostat"
 document:
   title: "Gross fixed capital formation at current prices"
   edition: "tipsna20"
+  kind: "serie"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna20?format=JSON&lang=EN&geo=PT&unit=PC_GDP"
 access_date: "2026-08-12"
 reference_date: "2025"

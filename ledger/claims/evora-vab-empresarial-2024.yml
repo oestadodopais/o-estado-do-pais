@@ -15,6 +15,7 @@ document:
   title: "VAB (€) das empresas × CAE divisão"
   edition: "indicador 0013863"
   locator: "INE, indicador 0013863, Évora (código 1C40705), total das divisões CAE, dados de 2024"
+  kind: "serie"
 source_url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0013863&Dim1=S7A2023%2CS7A2024&lang=PT&Dim2=1C40705"
 access_date: "2026-08-10"
 reference_date: "2024"

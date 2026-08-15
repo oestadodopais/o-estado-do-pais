@@ -15,6 +15,7 @@ document:
   title: "Poder de compra per capita (PT=100)"
   edition: "indicador 0014580"
   locator: "INE, indicador 0014580, Évora (código 1C40705), dados de 2023"
+  kind: "serie"
 source_url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014580&Dim1=S7A2023&lang=PT&Dim2=1C40705"
 access_date: "2026-08-10"
 reference_date: "2023"

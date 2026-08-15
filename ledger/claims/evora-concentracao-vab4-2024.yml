@@ -15,6 +15,7 @@ document:
   title: "Concentração do VAB nas 4 maiores (%)"
   edition: "indicador 0014047"
   locator: "INE, indicador 0014047, Évora (código 1C40705), dados de 2024"
+  kind: "serie"
 source_url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014047&Dim1=S7A2024&lang=PT&Dim2=1C40705"
 access_date: "2026-08-10"
 reference_date: "2024"

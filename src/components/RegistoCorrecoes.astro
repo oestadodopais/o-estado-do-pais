@@ -10,6 +10,13 @@
  *   Atualizações — o valor estava certo e deixou de estar. Vem depois, em
  *                  surdina, uma linha cada.
  *
+ * As **revisões de proveniência** não são listadas aqui, e é decisão. Uma
+ * mudança de endereço não é uma alteração do que foi publicado; são muitas de
+ * cada vez (nove no mesmo dia, quando duas fontes mudaram de sítio) e, postas a
+ * par das confissões, afogavam-nas — que é a regra em cascata do
+ * `ledger/README.md`. Aparecem aqui como CONTAGEM, com o caminho para as linhas
+ * que as trazem, e por extenso na história de cada uma dessas linhas.
+ *
  * Nada aqui é escrito à mão: as entradas vêm do campo corrections das próprias
  * afirmações, e cada pedaço renderizado — data, natureza, valor antigo, valor
  * novo, motivo e id — é conferido pelo portão contra o livro-razão. Nem o
@@ -21,6 +28,7 @@
  */
 import { entradasDoRegisto, motivoDaEntrada } from '../lib/ledger.mjs';
 import { KIND_LABELS } from '../data/correcoes.mjs';
+import { caminhoDaLinha } from '../lib/livro.mjs';
 import Claim from './Claim.astro';
 import { t } from '../i18n/strings.mjs';
 
@@ -29,6 +37,19 @@ const s = t(lang);
 
 const correcoes = entradasDoRegisto('correcao');
 const actualizacoes = entradasDoRegisto('actualizacao');
+/* As revisões de proveniência entram como contagem e como caminho, não como
+   lista: ver o cabeçalho deste ficheiro. */
+const revisoes = entradasDoRegisto('proveniencia');
+/* Uma entrada por linha, a primeira de cada — a lista é a contagem, e cada
+   item é a porta para a história completa daquela linha. O id vai marcado
+   como campo de uma entrada do registo (data-correcao-*), que é a única
+   origem que o portão aceita para uma cadeia com algarismos fora do
+   livro-razão — e ele confere-a contra a própria afirmação. */
+const primeiraPorLinha = [];
+for (const e of revisoes) {
+  if (!primeiraPorLinha.some((x) => x.claimId === e.claimId)) primeiraPorLinha.push(e);
+}
+primeiraPorLinha.sort((a, b) => a.claimId.localeCompare(b.claimId));
 
 const rotulo = (kind) => KIND_LABELS[kind]?.[lang] ?? kind;
 
@@ -184,6 +205,33 @@ const palavraConta = correcoes.length === 1 ? s.metodo.registoContaSing : s.meto
               >
                 {rotulo(e.kind)}
               </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  <!-- ============================ REVISÕES DE PROVENIÊNCIA -->
+  {
+    primeiraPorLinha.length > 0 && (
+      <section class="registo-grupo" aria-labelledby="registo-proveniencia">
+        <div class="registo-cabeca">
+          <h3 class="registo-titulo" id="registo-proveniencia">{s.metodo.registoProvenienciaK}</h3>
+        </div>
+        <p class="registo-nota">{s.metodo.registoProvenienciaNota}</p>
+        <ul class="registo-proveniencia-linhas">
+          {primeiraPorLinha.map((e) => (
+            <li>
+              <a href={caminhoDaLinha(e.claimId, lang)}>
+                <code
+                  data-correcao-claim={e.claimId}
+                  data-correcao-n={String(e.n)}
+                  data-correcao-campo="id"
+                >
+                  {e.claimId}
+                </code>
+              </a>
             </li>
           ))}
         </ul>

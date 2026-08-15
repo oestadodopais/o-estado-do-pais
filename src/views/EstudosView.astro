@@ -44,6 +44,11 @@ const path = routePath('estudos', lang);
                   e.description[lang]
                 )}
               </p>
+              <p class="log-vazio-k">
+                {e.descriptionFromDocument
+                  ? s.estudos.descricaoDoDocumentoRotulo
+                  : s.estudos.descricaoRotulo}
+              </p>
             </div>
             <div class="arquivo-meta">
               <span class="badge">{e.lang.toUpperCase()}</span>

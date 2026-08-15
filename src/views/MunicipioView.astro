@@ -231,7 +231,7 @@ const metodoPath = routePath('metodo', lang);
               é o que o instrumento n.º 1 já faz com os valores que põe dentro
               do SVG (`.brief` de InstrumentoConvergencia.astro). Um <a> dentro
               de um SVG não se vê como porta. */}
-          <p class="mun-distancia-selos">
+          <p class="mun-distancia-selos" data-legenda-selos>
             <span class="mun-selo-rot">{s.municipio.distanciaDivida}</span>
             <Provenance id={D.valor} lang={lang} />
             <span class="mun-selo-rot">{s.municipio.distanciaTecto}</span>
@@ -297,7 +297,8 @@ const metodoPath = routePath('metodo', lang);
             <p class="layer-tag">{s.municipio.relanceK}</p>
             <div class="glance">
               <div class="glance-num">
-                <Claim id={m.tempo.relance.de} /> → <Claim id={m.tempo.relance.ate} />
+                <Claim id={m.tempo.relance.de} lang={lang} chip={true} /> →{' '}
+                <Claim id={m.tempo.relance.ate} lang={lang} chip={true} />
               </div>
               <div class="glance-meta">
                 <div class="glance-name">{s.municipio.tempoRelanceK}</div>
@@ -305,10 +306,6 @@ const metodoPath = routePath('metodo', lang);
                   % · <span data-nonledger="data-de-referencia">{m.tempo.relance.deRef}</span>
                   {' → '}
                   <span data-nonledger="data-de-referencia">{m.tempo.relance.ateRef}</span>
-                </div>
-                <div class="mun-distancia-selos">
-                  <Provenance id={m.tempo.relance.de} lang={lang} />
-                  <Provenance id={m.tempo.relance.ate} lang={lang} />
                 </div>
               </div>
             </div>
@@ -342,7 +339,7 @@ const metodoPath = routePath('metodo', lang);
               }
               <text class="tk" x={SERIE.R} y={SERIE.yTecto - 6} text-anchor="end">{s.municipio.distanciaTecto}</text>
             </svg>
-            <p class="mun-distancia-selos" style="margin-bottom:12px">
+            <p class="mun-distancia-selos" style="margin-bottom:12px" data-legenda-selos>
               {pontosDaSerie.map((pt) => <Provenance id={pt.indice} lang={lang} />)}
             </p>
 

@@ -15,6 +15,7 @@ document:
   title: "Empresas (N.º) × CAE divisão × forma jurídica"
   edition: "indicador 0014063"
   locator: "INE, indicador 0014063, Évora (código 1C40705), total das divisões CAE e total das formas jurídicas, dados de 2024"
+  kind: "serie"
 source_url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014063&Dim1=S7A2024&lang=PT&Dim2=1C40705"
 access_date: "2026-08-10"
 reference_date: "2024"
