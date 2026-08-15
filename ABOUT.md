@@ -1,7 +1,7 @@
 # O Estado do País — what this is, and why
 
 *Plain-language explanation of the project. Written for anyone, not for engineers.
-Last updated 15 August 2026. If something below stops being true, change it here —
+Last updated 15 August 2026 (evening). If something below stops being true, change it here —
 this file is the source, and the shared link is generated from it.*
 
 ---
@@ -169,11 +169,22 @@ wrong it is corrected in the open, dated, with the old value still visible. The
 document stays as it was; the record around it stays current. Coverage also keeps
 widening — more places, not just more depth in the same one.
 
+- The first municipality page — Évora, the place with the deepest existing
+  research — built as the pattern for all the others (15 August 2026): eight
+  measures at a glance, one sentence each, the town's own accounts, and a
+  timeline of who governed since 2009 — what each administration inherited,
+  decided and left. An index of all 308 municipalities exists, most of them
+  still marked "no page yet".
+- A door to report an error on every page, and every number's seal opening the
+  row it actually came from.
+
 **Next**
 
-A page for one municipality — Évora, the place with the deepest existing
-research — built as the pattern for all the others, and the first study written
-end to end under the site's own rules.
+The site's own voice: an About page written for people rather than for
+engineers, and a public list of what is being measured now, what comes next
+and why — the AI proposes, the director decides, and the list is public so
+that the choice can be checked the way the numbers are. Then the first study
+written end to end under the site's own rules.
 
 **After that**
 
