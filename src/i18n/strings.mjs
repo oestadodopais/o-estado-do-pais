@@ -117,7 +117,7 @@ export const STRINGS = {
         total: 'Total',
         legendaA: 'Aceso: ',
         legendaB: ' — ',
-        legendaC: ' estudos aprofundados publicados (um com edição em inglês). Os restantes ',
+        legendaC: ' estudos aprofundados publicados (dois com edição em inglês). Os restantes ',
         legendaD: ' pontos marcam a posição do município; não representam cobertura.',
         readoutHint: 'Passe o cursor sobre um ponto para ler o município.',
         tecladoHint:
@@ -413,7 +413,7 @@ export const STRINGS = {
         total: 'Total',
         legendaA: 'Lit: ',
         legendaB: ' — ',
-        legendaC: ' in-depth studies published (one with an English edition). The remaining ',
+        legendaC: ' in-depth studies published (two with an English edition). The remaining ',
         legendaD: ' points mark the position of the municipality; they do not represent coverage.',
         readoutHint: 'Hover over a point to read the municipality.',
         tecladoHint:

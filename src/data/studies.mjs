@@ -100,6 +100,34 @@ export const WORKS = [
     },
   },
   {
+    id: 'evora-prometido-pago-auditado-2026',
+    slug: 'evora-prometido-pago-auditado-2026',
+    subject: 'evora',
+    /**
+     * A DATA, e como foi encontrada. Este trabalho nunca passou por um
+     * anfitrião de artefactos: foi produzido no motor de investigação
+     * (ResearchHub) e atravessou de lá como ficheiro. A data de publicação de
+     * uma edição é, por isso, a data do commit que escreveu esses bytes pela
+     * última vez — `49758b4c16b483c92fe56b51eb88e6913dd42930`, de 2026-08-04,
+     * o commit que acrescentou as conclusões assinadas nas duas línguas. Os
+     * dois ficheiros HTML mudaram nesse mesmo commit e não voltaram a mudar,
+     * por isso `updated` fica a null: não há revisão posterior a registar.
+     */
+    editions: [
+      { lang: 'pt', title: 'Évora — Prometido, Pago, Auditado 2026', date: '2026-08-04', updated: null },
+      { lang: 'en', title: 'Évora — Promised, Paid, Audited 2026', date: '2026-08-04', updated: null },
+    ],
+    // Nunca foi publicado fora deste sítio: não há endereço externo para dar.
+    artifactUrl: null,
+    /* Excepção à regra de §1.7, como a de «Os Pelouros»: esta descrição não
+       reformula o título — é a frase de abertura do próprio documento, nas duas
+       edições, sem números e sem nada acrescentado. */
+    description: {
+      pt: 'Uma leitura transversal do município de Évora: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do Tribunal de Contas, postos lado a lado.',
+      en: 'A cross-vertical reading of the municipality of Évora: the recovery-plan project register, the public-contracts register and the state auditor’s catalogue, put side by side.',
+    },
+  },
+  {
     id: 'onde-esta-a-agua',
     slug: 'onde-esta-a-agua',
     // subject por preencher: o título não diz de que território trata. Se vier

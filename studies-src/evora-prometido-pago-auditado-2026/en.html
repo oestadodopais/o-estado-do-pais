@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Évora — what was promised, what was paid, and what was audited</title>
+<style>
+:root {
+  --paper: #FAFBF9; --ink: #1B2126; --muted: #5A6B72;
+  --accent: #16556E; --rule: #D8DFDC; --panel: #F1F4F2; --code: #EDF1EF;
+  --series-1: #2a78d6; --series-1-soft: #86b6ef; --series-2: #eb6834;
+  --track: #D7DEDB; --mark: #93A3A9; --chip-1: #16556E; --chip-2: #7A8A91;
+  --flag: #8A5A00; --flag-bg: #FBF3E2;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    --paper: #12181B; --ink: #E6ECEA; --muted: #8FA1A8;
+    --accent: #6FB3CC; --rule: #243036; --panel: #182024; --code: #1C262B;
+    --series-1: #3987e5; --series-1-soft: #184f95; --series-2: #d95926;
+    --track: #263238; --mark: #52646C; --chip-1: #6FB3CC; --chip-2: #7E9099;
+    --flag: #E7B65C; --flag-bg: #241C0C;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #12181B; --ink: #E6ECEA; --muted: #8FA1A8;
+  --accent: #6FB3CC; --rule: #243036; --panel: #182024; --code: #1C262B;
+  --series-1: #3987e5; --series-1-soft: #184f95; --series-2: #d95926;
+  --track: #263238; --mark: #52646C; --chip-1: #6FB3CC; --chip-2: #7E9099;
+  --flag: #E7B65C; --flag-bg: #241C0C;
+}
+:root[data-theme="light"] {
+  --paper: #FAFBF9; --ink: #1B2126; --muted: #5A6B72;
+  --accent: #16556E; --rule: #D8DFDC; --panel: #F1F4F2; --code: #EDF1EF;
+  --series-1: #2a78d6; --series-1-soft: #86b6ef; --series-2: #eb6834;
+  --track: #D7DEDB; --mark: #93A3A9; --chip-1: #16556E; --chip-2: #7A8A91;
+  --flag: #8A5A00; --flag-bg: #FBF3E2;
+}
+* { box-sizing: border-box; }
+html { background: var(--paper); color-scheme: light dark; }
+body {
+  margin: 0 auto; padding: 2.5rem 1.25rem 5rem; max-width: 48rem;
+  background: var(--paper); color: var(--ink);
+  font: 1.02rem/1.62 Charter, "Iowan Old Style", Georgia, "Times New Roman", serif;
+  overflow-x: hidden;
+}
+h1, h2, h3 {
+  font-family: "Avenir Next", Seravek, "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.2; text-wrap: balance; color: var(--ink);
+}
+h1 { font-size: 1.9rem; font-weight: 700; margin: 0 0 1rem;
+     padding-bottom: .75rem; border-bottom: 3px solid var(--accent); }
+h2 { font-size: 1.28rem; font-weight: 700; margin: 2.6rem 0 .7rem; }
+h2::before { content: ""; display: block; width: 2.2rem; height: 3px;
+  background: var(--accent); margin-bottom: .55rem; }
+h3 { font-size: 1.02rem; font-weight: 600; margin: 1.8rem 0 .5rem;
+     color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+p { margin: .8rem 0; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
+ul { padding-left: 1.2rem; margin: .8rem 0; display: flex; flex-direction: column; gap: .55rem; }
+li { margin: 0; }
+strong { font-variant-numeric: tabular-nums; }
+em { color: var(--muted); }
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+code { font: .88em ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  background: var(--code); padding: .08em .35em; border-radius: 4px; }
+.review {
+  font-family: "Avenir Next", Seravek, "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  font-size: .76rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--flag); background: var(--flag-bg); border: 1px solid currentColor;
+  border-radius: 999px; padding: .3rem .8rem; display: inline-block; margin: 0 0 1.1rem;
+}
+.lede { color: var(--muted); font-size: .97rem; }
+.table-shell { overflow-x: auto; margin: 1.1rem 0 1.4rem;
+  border: 1px solid var(--rule); border-radius: 6px; }
+table { border-collapse: collapse; width: 100%; font-size: .86rem;
+  font-family: "Avenir Next", Seravek, "Segoe UI", ui-sans-serif, system-ui, sans-serif; }
+th, td { padding: .5rem .65rem; border-bottom: 1px solid var(--rule); white-space: nowrap;
+  vertical-align: top; }
+th { background: var(--panel); font-weight: 600; text-align: left; color: var(--muted); }
+th.num, td.num { text-align: right; font-variant-numeric: tabular-nums; }
+td.lab { white-space: normal; min-width: 9rem; }
+td.sub { padding-left: 1.4rem; color: var(--muted); }
+tbody tr:last-child td { border-bottom: 0; }
+table.kv td.lab:first-child { color: var(--muted); }
+table.kv td.num { font-weight: 600; }
+td.has-bar { padding: .3rem .65rem; }
+.cell { position: relative; display: block; min-width: 4.5rem; padding: .2rem .3rem; }
+.cell .bar { position: absolute; left: 0; top: .15rem; bottom: .15rem;
+  background: var(--series-1); opacity: .22; border-radius: 2px; }
+.cell .v { position: relative; }
+.chip { display: inline-block; padding: .1rem .5rem; border-radius: 999px;
+  font-size: .78rem; white-space: nowrap; border: 1px solid currentColor; }
+.chip.tier-1 { color: var(--chip-1); font-weight: 600; }
+.chip.tier-2 { color: var(--chip-2); }
+.fig { margin: 1.6rem 0 1.8rem; padding: 1.1rem 1.15rem .9rem; background: var(--panel);
+  border: 1px solid var(--rule); border-radius: 8px;
+  font-family: "Avenir Next", Seravek, "Segoe UI", ui-sans-serif, system-ui, sans-serif; }
+.fig-title { margin: 0 0 .9rem; font-size: .95rem; font-weight: 700; letter-spacing: .01em; }
+.fig-badge { margin: -.5rem 0 .9rem; font-size: .78rem; font-weight: 600; color: var(--flag); }
+.fig-note { margin: .7rem 0 0; font-size: .78rem; color: var(--muted); }
+.fig-src { margin: .7rem 0 0; font-size: .76rem; color: var(--muted); }
+.fig-src a { word-break: break-word; }
+.chart { display: flex; flex-direction: column; gap: .55rem; }
+.bars .row { display: grid; grid-template-columns: minmax(7rem, 15rem) 1fr auto;
+  gap: .35rem .7rem; align-items: center; }
+.bars .lab { font-size: .82rem; color: var(--muted); }
+.bars .val { font-size: .86rem; font-weight: 600; font-variant-numeric: tabular-nums;
+  white-space: nowrap; }
+.track { background: var(--track); border-radius: 3px; height: .85rem; overflow: hidden; }
+.fill { height: 100%; border-radius: 0 3px 3px 0; }
+.f-approved { background: var(--series-1-soft); }
+.f-paid, .f-exact { background: var(--series-1); }
+.gauges .row { grid-template-columns: minmax(5rem, 9rem) 1fr; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: .6rem; margin-top: 1rem; }
+.tile { background: var(--paper); border: 1px solid var(--rule); border-radius: 6px;
+  padding: .55rem .7rem; display: flex; flex-direction: column; gap: .15rem; }
+.tile-v { font-size: 1.05rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.tile-l { font-size: .76rem; color: var(--muted); line-height: 1.35; }
+.meters { gap: 1.1rem; }
+.meter { display: flex; gap: 2px; height: 1.1rem; border-radius: 3px; overflow: hidden; }
+.seg { min-width: 0; border-radius: 2px; }
+.s-over { background: var(--series-2); }
+.s-paid { background: var(--series-1); }
+.s-rest { background: var(--track); }
+.keys { display: flex; flex-wrap: wrap; gap: .2rem 1rem; margin-top: .4rem;
+  font-size: .78rem; color: var(--muted); }
+.key { display: inline-flex; align-items: center; gap: .35rem; }
+.sw { width: .7rem; height: .7rem; border-radius: 2px; display: inline-block; flex: none; }
+.tiers { gap: .7rem; }
+.tier-row { display: grid; grid-template-columns: minmax(8rem, 16rem) 1fr;
+  gap: .35rem .7rem; align-items: center; }
+.tier-row .lab { font-size: .82rem; color: var(--muted); }
+.docs { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.doc { width: .95rem; height: .95rem; border-radius: 2px; display: inline-block; }
+.t-municipal { background: var(--series-1); }
+.t-mention { background: var(--mark); }
+.doc-none { color: var(--muted); font-size: .82rem; }
+@media (max-width: 34rem) {
+  body { padding: 1.75rem .9rem 4rem; }
+  .bars .row, .gauges .row, .tier-row { grid-template-columns: 1fr; }
+  .bars .val { text-align: right; }
+}
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+</head>
+<body>
+<p class="review">Review copy — awaiting sign-off</p>
+<h1>Évora — what was promised, what was paid, and what was audited</h1>
+<p class="lede"><em>Research Hub. A cross-vertical reading of one Portuguese municipality: the recovery-plan project register, the public-contracts register and the state auditor's catalogue, all fetched live on 2026-08-04. Every figure below has a row in <code>ledger.json</code> beside this file, with its source URL, its fetch timestamp and the exact text it was read from.</em></p>
+<hr>
+<h2>Read this part first</h2>
+<p>Three limits govern everything that follows. They are here rather than in a footnote because each one is the difference between a true sentence and a false one.</p>
+<p><strong>The audit section reads the Tribunal's catalogue, not its audits.</strong> What was fetched is the title and abstract of each published document. That is enough to say <em>what was audited, when, and where to read it</em>. It is not enough to say <strong>what the Tribunal concluded</strong> — the findings, the recommendations and the euro amounts are inside the PDFs, and nothing here opens one. Any sentence in this document that reads like a verdict on Évora's management would be an invention. There are none, and that is deliberate. It also reads 4 of the Tribunal's product families rather than all of them, which turns out to matter enough that the section measures the cost instead of mentioning it.</p>
+<p><strong>The contracts section is an upper bound on a truncated window.</strong> Portal BASE holds 24 436 contracts for the concelho of Évora. This document read 600 of them — the most recently published ones, spanning 2026-05-08 to 2026-08-04. The rest were not read. A contract carried out across several municipalities is returned by each of their filters at its full value, so a concelho contract total is an upper bound and concelho totals must never be added together.</p>
+<p><strong>There is no EU figure for a municipality, and this document does not manufacture one.</strong> The finest geography the EU's project-level data reaches for Portugal is the NUTS3 region. That is a null, established by probe rather than asserted, and it is set out at the end.</p>
+<p>One thing this document <em>can</em> do that a single source cannot: it puts the promise, the payment and the audit record of one place side by side. Where it reasons beyond what a source states, the sentence says <strong>(inference)</strong>.</p>
+<hr>
+<h2>What was promised, and what was paid</h2>
+<p>The Plano de Recuperação e Resiliência publishes a full-refresh snapshot every week, with no version history: last week's file is simply gone from the source. The snapshot read here carries the reference date 2026-08-03.</p>
+<figure class="fig">
+<p class="fig-title">What was approved, and what has been paid</p>
+<div class="chart bars"><div class="row">
+<div class="lab">Approved and attributed to Évora</div>
+<div class="track"><div class="fill f-approved" style="width:100%"></div></div>
+<div class="val"><strong>€166 639 411</strong></div>
+</div>
+<div class="row">
+<div class="lab">Paid and attributed to Évora</div>
+<div class="track"><div class="fill f-paid" style="width:50.3557%"></div></div>
+<div class="val"><strong>€83 912 477</strong></div>
+</div></div><div class="tiles"><div class="tile"><span class="tile-v"><strong>50.36%</strong></span><span class="tile-l">Executed</span></div><div class="tile"><span class="tile-v">2 303</span><span class="tile-l">Project-locations in Évora</span></div><div class="tile"><span class="tile-v">2 259</span><span class="tile-l">of which exclusive to Évora</span></div><div class="tile"><span class="tile-v">44</span><span class="tile-l">of which shared with other concelhos</span></div></div><figcaption class="fig-src">Source: <a href="https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-projetos-2/20260803-182811-d00e842c/listagem-de-projetos-prr-20260803.xlsx" rel="noopener">PRR project register, dados.gov.pt</a></figcaption>
+</figure>
+<p>Both figures are sourced facts, not estimates. They come from the manager layer of the beneficiaries file — the <em>Beneficiário Intermediário</em> and <em>Beneficiário Direto</em> rows — which gives exactly one row per project-location and carries both the approved and the paid amount for that location. The count of those rows, 397 634, equals the row count of the geographic distribution file exactly, which is the structural check that the layer decomposes the money once and only once.</p>
+<p>An independent route to the same approved figure — rebuilding it from the percentage share column in the locations file — lands €1 169 away, which is four-decimal rounding in the published share and nothing else. The other share column in that same file, the one that looks like a per-location payment share, is <strong>not</strong> used: it repeats the project-wide payment ratio on every row, and reading it as a share inflates Évora's paid figure by an order of magnitude. That trap is documented in this repo because an earlier version of this vertical fell into it.</p>
+<p>Nationally the same basis gives €24 703 018 914 approved and €13 740 176 584 paid across 395 918 projects, an execution rate of 55.62%. Évora holds 0.67% of the national approved total and executes it <strong>below the national rate</strong>. One thing to know about that denominator: €3 694 494 765 of the national total — 14.96% of it — belongs to no concelho at all, recorded as national or with no location, so the share of <em>place-attributable</em> money is slightly larger than the figure above.</p>
+<h3>Where the promise sits</h3>
+<p>There is no component column in the projects file; the component is the prefix of the investment code, and it is the only key available. Évora's project locations fall under 13 of the programme's 21 components.</p>
+<div class="table-shell"><table><thead><tr><th class="lab">Component</th>
+<th class="lab">Name</th>
+<th class="num">Approved (€)</th>
+<th class="num">Paid (€)</th>
+<th class="num">Locations</th>
+<th class="num">Overdue</th></tr></thead><tbody><tr>
+<td class="lab">C05</td>
+<td class="lab">Investimento e inovação</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:100%"></span><span class="v">48 941 611</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:48.9576%"></span><span class="v">23 960 647</span></span></td>
+<td class="num">72</td>
+<td class="num">57</td>
+</tr><tr>
+<td class="lab">C07</td>
+<td class="lab">Infraestruturas</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:60.6521%"></span><span class="v">29 684 101</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:55.4126%"></span><span class="v">27 119 799</span></span></td>
+<td class="num">1</td>
+<td class="num">0</td>
+</tr><tr>
+<td class="lab">C02</td>
+<td class="lab">Habitação</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:48.356%"></span><span class="v">23 666 204</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:12.6814%"></span><span class="v">6 206 461</span></span></td>
+<td class="num">39</td>
+<td class="num">39</td>
+</tr><tr>
+<td class="lab">C01</td>
+<td class="lab">Serviço Nacional de Saúde</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:35.6924%"></span><span class="v">17 468 445</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:8.4594%"></span><span class="v">4 140 161</span></span></td>
+<td class="num">23</td>
+<td class="num">17</td>
+</tr><tr>
+<td class="lab">C06</td>
+<td class="lab">Qualificações e competências</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:34.5036%"></span><span class="v">16 886 594</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:17.5021%"></span><span class="v">8 565 822</span></span></td>
+<td class="num">704</td>
+<td class="num">28</td>
+</tr><tr>
+<td class="lab">C04</td>
+<td class="lab">Cultura</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:32.092%"></span><span class="v">15 706 355</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:15.1731%"></span><span class="v">7 425 966</span></span></td>
+<td class="num">16</td>
+<td class="num">5</td>
+</tr><tr>
+<td class="lab">C16</td>
+<td class="lab">Empresas 4.0</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:8.0047%"></span><span class="v">3 917 642</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:4.4393%"></span><span class="v">2 172 662</span></span></td>
+<td class="num">74</td>
+<td class="num">65</td>
+</tr><tr>
+<td class="lab">C19</td>
+<td class="lab">Administração pública digital</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:7.7931%"></span><span class="v">3 814 079</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:1.9886%"></span><span class="v">973 246</span></span></td>
+<td class="num">19</td>
+<td class="num">15</td>
+</tr><tr>
+<td class="lab">C13</td>
+<td class="lab">Eficiência energética em edifícios</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:5.3774%"></span><span class="v">2 631 788</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:3.0422%"></span><span class="v">1 488 885</span></span></td>
+<td class="num">1 009</td>
+<td class="num">349</td>
+</tr><tr>
+<td class="lab">C03</td>
+<td class="lab">Respostas sociais</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:3.9894%"></span><span class="v">1 952 486</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:1.8221%"></span><span class="v">891 745</span></span></td>
+<td class="num">31</td>
+<td class="num">25</td>
+</tr><tr>
+<td class="lab">C21</td>
+<td class="lab">REPowerEU</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:2.8614%"></span><span class="v">1 400 432</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:1.1311%"></span><span class="v">553 561</span></span></td>
+<td class="num">308</td>
+<td class="num">1</td>
+</tr><tr>
+<td class="lab">C11</td>
+<td class="lab">Descarbonização da indústria</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:0.796%"></span><span class="v">389 587</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:0.6621%"></span><span class="v">324 050</span></span></td>
+<td class="num">3</td>
+<td class="num">3</td>
+</tr><tr>
+<td class="lab">C08</td>
+<td class="lab">Florestas</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:0.368%"></span><span class="v">180 086</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:0.1828%"></span><span class="v">89 473</span></span></td>
+<td class="num">4</td>
+<td class="num">2</td>
+</tr></tbody></table></div>
+<p>Component names come from the publisher's own investments file, not from memory.</p>
+<p>Three things in that table are worth pausing on. <strong>Investimento e inovação</strong> is the largest single block of approved money in Évora, and it has paid out under half of it. <strong>Infraestruturas</strong> reaches the concelho through a single project-location, and that is nevertheless where the most money actually paid sits: one road programme has moved €27 119 799 through Évora, more than health, housing and culture together (€17 772 588). And a count of locations is not a measure of size. <strong>Eficiência energética em edifícios</strong> has 1 009 of them for €2 631 788 approved, an average of €2 608 per location.</p>
+<h3>The five largest project-locations</h3>
+<div class="table-shell"><table><thead><tr><th class="lab">Investment</th>
+<th class="lab">Project, as the source names it</th>
+<th class="num">Approved here (€)</th>
+<th class="num">Paid here (€)</th>
+<th class="num">Concelhos</th>
+<th class="lab">Planned completion</th></tr></thead><tbody><tr>
+<td class="lab">C07-i02</td>
+<td class="lab">Missing links e Aumento capacidade da Rede - EN14, EN4, IC35, IP2, EN125, EN211, EN344, IP8 (A26), Baião/Ponte Ermida, IP8 (EN121), IP8 (EN259)</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:100%"></span><span class="v">29 684 101</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:91.3614%"></span><span class="v">27 119 799</span></span></td>
+<td class="num">17</td>
+<td class="lab">2026-12-31</td>
+</tr><tr>
+<td class="lab">C05-i01.01</td>
+<td class="lab">New Space Portugal</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:32.9904%"></span><span class="v">9 792 916</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:13.7301%"></span><span class="v">4 075 659</span></span></td>
+<td class="num">19</td>
+<td class="lab">2026-06-30</td>
+</tr><tr>
+<td class="lab">C02-i06</td>
+<td class="lab">Residência da Malagueira</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:25.2093%"></span><span class="v">7 483 162</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="v">0</span></span></td>
+<td class="num">1</td>
+<td class="lab">2026-03-30</td>
+</tr><tr>
+<td class="lab">C04-i02</td>
+<td class="lab">Mosteiro de São Bento de Cástris</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:20.2128%"></span><span class="v">6 000 000</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:19.2022%"></span><span class="v">5 700 000</span></span></td>
+<td class="num">1</td>
+<td class="lab">2026-08-31</td>
+</tr><tr>
+<td class="lab">C01-i10</td>
+<td class="lab">Aquisição de equipamento médico pesado (EMP) de tecnologia avançada a instalar no novo Hospital Central do Alentejo</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:17.9048%"></span><span class="v">5 314 868</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="v">0</span></span></td>
+<td class="num">1</td>
+<td class="lab">2026-03-31</td>
+</tr></tbody></table></div>
+<p>The "concelhos" column is the reason a municipal figure needs care: the road programme at the top of that table is spread across 17 municipalities and the research alliance across 19. What appears in Évora's total is the Évora share of each, taken from the beneficiaries file rather than apportioned.</p>
+<hr>
+<h2>Who holds the money, and who receives it</h2>
+<p>The same euros can be counted through two different layers, and the two must never be added together: the recipient layer is a second view of the same money, not a component of it. It is also not a complete view, and the shortfall is explained below.</p>
+<div class="table-shell"><table><thead><tr><th class="lab">Layer</th>
+<th class="num">Entities</th>
+<th class="num">Contracted (€)</th>
+<th class="num">Paid (€)</th></tr></thead><tbody><tr>
+<td class="lab">Managers — the bodies that administer and disburse</td>
+<td class="num">22</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:100%"></span><span class="v">166 639 411</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:50.3557%"></span><span class="v">83 912 477</span></span></td>
+</tr><tr>
+<td class="lab">Final recipients — who actually received it</td>
+<td class="num">1 820</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:79.9176%"></span><span class="v">133 174 244</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:33.0618%"></span><span class="v">55 093 934</span></span></td>
+</tr></tbody></table></div>
+<p>The recipient layer falls €28 818 543 short of the manager layer on money paid. That gap is not leakage: it is money on projects contracted directly, which carry no final-beneficiary row at all. Most of it is one item — the road programme's €27 119 799, whose manager appears in no final-recipient row.</p>
+<p><strong>IAPMEI - AGÊNCIA PARA A COMPETITIVIDADE E INOVAÇÃO, I.P.</strong> is the largest single holder of Évora's approved PRR money at €39 030 811 contracted and €21 352 366 paid — and it is a national agency that passes money on, not a recipient. Reporting it as one would be false. <strong>INFRAESTRUTURAS DE PORTUGAL, S.A.</strong> holds €29 684 101 and has been paid €27 119 799, the single largest disbursement in the concelho.</p>
+<div class="table-shell"><table><thead><tr><th class="lab">Manager</th>
+<th class="num">Contracted here (€)</th>
+<th class="num">Paid here (€)</th></tr></thead><tbody><tr>
+<td class="lab">IAPMEI - AGÊNCIA PARA A COMPETITIVIDADE E INOVAÇÃO, I.P.</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:100%"></span><span class="v">39 030 811</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:54.7064%"></span><span class="v">21 352 366</span></span></td>
+</tr><tr>
+<td class="lab">INFRAESTRUTURAS DE PORTUGAL, S.A.</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:76.053%"></span><span class="v">29 684 101</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:69.4831%"></span><span class="v">27 119 799</span></span></td>
+</tr><tr>
+<td class="lab">INSTITUTO PARA O ENSINO SUPERIOR, I.P.</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:52.2477%"></span><span class="v">20 392 715</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:11.6515%"></span><span class="v">4 547 683</span></span></td>
+</tr><tr>
+<td class="lab">ADMINISTRAÇÃO CENTRAL DO SISTEMA DE SAÚDE I.P.</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:45.0736%"></span><span class="v">17 592 594</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:10.9095%"></span><span class="v">4 258 060</span></span></td>
+</tr><tr>
+<td class="lab">FUNDO DE SALVAGUARDA DO PATRIMÓNIO CULTURAL</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:37.2888%"></span><span class="v">14 554 114</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:17.3493%"></span><span class="v">6 771 580</span></span></td>
+</tr><tr>
+<td class="lab">INSTITUTO DA HABITAÇÃO E DA REABILITAÇÃO URBANA, I.P.</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:29.9239%"></span><span class="v">11 679 527</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:12.8914%"></span><span class="v">5 031 636</span></span></td>
+</tr></tbody></table></div>
+<p>The six above are the largest of 22 manager-layer bodies; the other 16 are national agencies and funds holding smaller amounts. The source returns 23 rows rather than 22, because one body holds Évora money under two different roles — a count of rows here is not a count of bodies.</p>
+<p>Among the 1 820 final recipients, the university is the largest final recipient on both measures — contracted and paid. The seven largest by amount contracted:</p>
+<div class="table-shell"><table><thead><tr><th class="lab">Final recipient</th>
+<th class="num">Contracted here (€)</th>
+<th class="num">Paid here (€)</th>
+<th class="num">Projects</th></tr></thead><tbody><tr>
+<td class="lab">Universidade de Évora</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:100%"></span><span class="v">38 596 976</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:35.5538%"></span><span class="v">13 722 696</span></span></td>
+<td class="num">74</td>
+</tr><tr>
+<td class="lab">MUNICÍPIO DE ÉVORA</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:31.2693%"></span><span class="v">12 069 013</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:5.3044%"></span><span class="v">2 047 336</span></span></td>
+<td class="num">20</td>
+</tr><tr>
+<td class="lab">GEO SAT, LDA</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:24.3945%"></span><span class="v">9 415 524</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:9.6808%"></span><span class="v">3 736 498</span></span></td>
+<td class="num">1</td>
+</tr><tr>
+<td class="lab">ADMINISTRAÇÃO REGIONAL DE SAUDE DO ALENTEJO, I.P.</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:23.0552%"></span><span class="v">8 898 604</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:8.7574%"></span><span class="v">3 380 106</span></span></td>
+<td class="num">13</td>
+</tr><tr>
+<td class="lab">HOSPITAL DO ESPÍRITO SANTO DE ÉVORA, E.P.E.</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:19.9947%"></span><span class="v">7 717 353</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:1.46%"></span><span class="v">563 527</span></span></td>
+<td class="num">8</td>
+</tr><tr>
+<td class="lab">HABÉVORA - Gestão Habitacional, E.M.</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:18.358%"></span><span class="v">7 085 640</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:9.3641%"></span><span class="v">3 614 261</span></span></td>
+<td class="num">8</td>
+</tr><tr>
+<td class="lab">Património Cultural, IP</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:17.9913%"></span><span class="v">6 944 114</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:16.4666%"></span><span class="v">6 355 620</span></span></td>
+<td class="num">5</td>
+</tr></tbody></table></div>
+<p>The municipality itself is not the main channel for PRR money in its own territory <em>(inference, from the two tables above: the câmara appears in the recipient layer with less contracted than the university, and not at all in the manager layer)</em>. A reader looking for "what the council did with the money" would be looking at the wrong actor for most of this total.</p>
+<p>A third layer, suppliers, exists with 5 entities. It does not reconcile to project totals and its location column means something different, so it is not used here.</p>
+<hr>
+<h2>What "on time" means in this data, and what is overdue</h2>
+<div class="table-shell"><table><thead><tr><th class="lab">Status</th>
+<th class="num">Project-locations</th></tr></thead><tbody><tr>
+<td class="lab">Completed on or before the planned date</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:100%"></span><span class="v">1 445</span></span></td>
+</tr><tr>
+<td class="lab">Completed late</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:15.3633%"></span><span class="v">222</span></span></td>
+</tr><tr>
+<td class="lab">Not completed</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:44.0138%"></span><span class="v">636</span></span></td>
+</tr><tr>
+<td class="lab sub">— of which the planned date has passed</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:41.9377%"></span><span class="v">606</span></span></td>
+</tr><tr>
+<td class="lab sub">— of which still within schedule</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:2.0761%"></span><span class="v">30</span></span></td>
+</tr></tbody></table></div>
+<figure class="fig">
+<p class="fig-title">Completions dated exactly on the planned date</p>
+<div class="chart bars gauges"><div class="row">
+<div class="lab">Évora</div>
+<div class="track"><div class="fill f-exact" style="width:69.9654%"></div></div>
+</div>
+<div class="row">
+<div class="lab">Portugal</div>
+<div class="track"><div class="fill f-exact" style="width:71.8985%"></div></div>
+</div></div><p class="fig-note">Share of the project-locations counted as on time</p><figcaption class="fig-src">Source: <a href="https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-projetos-2/20260803-182811-d00e842c/listagem-de-projetos-prr-20260803.xlsx" rel="noopener">PRR project register, dados.gov.pt</a></figcaption>
+</figure>
+<p>Status is judged against the snapshot's own reference date, not today's, because that is the date the source speaks for.</p>
+<p>Now the caveat that has to travel with the first row of that table. 1 011 of the 1 445 locations counted as on time record an actual completion date falling <strong>exactly</strong> on the planned date — 69.97% of them. A modal difference of zero at that scale is more consistent with a field being closed out administratively than with delivery being observed and dated <em>(inference)</em>. The remaining 434 locations record an actual date earlier than the planned one, and the same doubt about how these fields are filled applies to them too.</p>
+<p>Two things sharpen that reading, and one of them stops it being a criticism of Évora. First, 470 of those exact matches are rows where the start date, the planned completion date and the actual completion date are <strong>all the same day</strong>. A project cannot be observed to begin and finish on one date at that scale, so those rows record a filing convention rather than an observed date <em>(inference)</em>. All of them sit in a single investment line. Second, the pattern is national, not local: across the country 177 237 of 246 510 on-time locations carry the same exact-date stamp, 71.90%, which is slightly higher than Évora's. Nothing here says Évora reports differently from anywhere else; it says the register's completion dates cannot be read as observed delivery anywhere. So the on-time count is soft evidence, and quoting it bare would overstate punctuality by a wide margin.</p>
+<p>The overdue group is the one that reads as a broken promise: a planned completion date already passed at the snapshot date, with no actual completion date recorded. In Évora that is 606 project-locations carrying €102 711 704 of approved money — 61.64% of everything approved for the concelho — of which €40 727 682 has been paid.</p>
+<p>It is concentrated. <strong>Habitação</strong> has 39 project-locations in Évora, all of them past their planned date with nothing recorded as delivered: <strong>every one of them overdue</strong>. Two of the five largest project-locations in the concelho are in that state and have received nothing at all — the student residence at €7 483 162 approved and €0 paid, and the hospital equipment purchase at €5 314 868 approved and €0 paid.</p>
+<p>That last one is worth naming plainly, because it crosses the two halves of this document. The equipment is for the new central hospital of the Alentejo; the money is approved, the planned date has passed, and nothing has been disbursed <em>(inference: the source records approval, date and payment, and does not say why)</em>.</p>
+<hr>
+<figure class="fig">
+<p class="fig-title">The overdue share of approved value</p>
+<div class="chart meters"><div class="meter-row"><div class="meter"><span class="seg s-paid" style="width:24.4406%"></span><span class="seg s-over" style="width:37.1965%"></span><span class="seg s-rest" style="width:38.3629%"></span></div><div class="keys"><span class="key"><i class="sw s-paid"></i>Overdue, paid</span><span class="key"><i class="sw s-over"></i>Overdue, not paid</span><span class="key"><i class="sw s-rest"></i>Not overdue</span></div></div></div><p class="fig-note">The whole bar is the value approved for the concelho</p><figcaption class="fig-src">Source: <a href="https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-projetos-2/20260803-182811-d00e842c/listagem-de-projetos-prr-20260803.xlsx" rel="noopener">PRR project register, dados.gov.pt</a></figcaption>
+</figure>
+<h2>Public contracts, as context</h2>
+<p>Portal BASE is Portugal's public contracts register. It is included here as context on the same territory, not as a second measure of the same money: recovery-plan grants and contract prices are different quantities, and this document never adds them.</p>
+<div class="table-shell"><table class="kv"><tbody><tr>
+<td class="lab">Contracts on record for the concelho, all periods</td>
+<td class="num">24 436</td>
+</tr><tr>
+<td class="lab">Read for this document</td>
+<td class="num">600</td>
+</tr><tr>
+<td class="lab">Published between</td>
+<td class="num">2026-05-08 and 2026-08-04</td>
+</tr><tr>
+<td class="lab">Sum of initial contractual prices, records read</td>
+<td class="num">€58 501 280</td>
+</tr></tbody></table></div>
+<p>That sum is an upper bound on a truncated window and nothing more. The fetch stopped after 600 records because the register has an undocumented firewall that IP-bans on volume, and the server caps a page at far fewer rows than it is asked for; reading the concelho's full history would take on the order of a thousand requests and trigger the ban long before finishing.</p>
+<p>The filter was proved rather than trusted. The national total stands at 2 390 229 contracts and the concelho filter returns 24 436, so it restricts; a deliberately invalid concelho identifier returns 0 rows, so it does not fail open; and the 3 largest contracts read were checked against their own execution-place field, which exists only on the per-contract endpoint. All three read «Portugal, Évora, Évora».</p>
+<p>The largest contracts in the window read:</p>
+<div class="table-shell"><table><thead><tr><th class="num">Initial price (€)</th>
+<th class="lab">Contracting entity</th>
+<th class="lab">Contractor</th>
+<th class="lab">Object</th></tr></thead><tbody><tr>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:100%"></span><span class="v">13 500 435</span></span></td>
+<td class="lab">Unidade Local de Saúde do Alentejo Central, EPE</td>
+<td class="lab">ATRYS PORTUGAL CENTRO MÉDICO AVANÇADO, S.A.</td>
+<td class="lab">Concessão de exploração da Unidade de Radioncologia da ULSAC, E.P.E</td>
+</tr><tr>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:93.324%"></span><span class="v">12 599 145</span></span></td>
+<td class="lab">GESAMB - Gestão Ambiental e de Resíduos, EIM</td>
+<td class="lab">Painhas, SA; E.R.I., Engenharia, SA; PA RESIDEL - Optimização Energética de Resíduos, S.A.</td>
+<td class="lab">Concurso Público Internacional para a Empreitada de "Centro de Triagem Automático de Embalagens"</td>
+</tr><tr>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:36.5292%"></span><span class="v">4 931 605</span></span></td>
+<td class="lab">Unidade Local de Saúde do Alentejo Central, E.P.E</td>
+<td class="lab">ITAU - Instituto Técnico de Alimentação Humana, S.A.</td>
+<td class="lab">Prestação de Serviço - Alimentação II</td>
+</tr></tbody></table></div>
+<p>And the entities doing the contracting. <strong>Each row below is one spelling, not one body</strong> — that distinction turns out to matter more than anything else in this section:</p>
+<div class="table-shell"><table><thead><tr><th class="lab">Contracting entity</th>
+<th class="num">Contracts</th>
+<th class="num">Sum of initial prices (€)</th></tr></thead><tbody><tr>
+<td class="lab">Unidade Local de Saúde do Alentejo Central, EPE</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:28.5714%"></span><span class="v">60</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:100%"></span><span class="v">16 661 537</span></span></td>
+</tr><tr>
+<td class="lab">Unidade Local de Saúde do Alentejo Central, E.P.E</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:100%"></span><span class="v">210</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:76.4812%"></span><span class="v">12 742 940</span></span></td>
+</tr><tr>
+<td class="lab">GESAMB - Gestão Ambiental e de Resíduos, EIM</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:10%"></span><span class="v">21</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:81.6041%"></span><span class="v">13 596 490</span></span></td>
+</tr><tr>
+<td class="lab">Universidade de Évora</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:29.5238%"></span><span class="v">62</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:13.6712%"></span><span class="v">2 277 839</span></span></td>
+</tr><tr>
+<td class="lab">Associação Évora 2027</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:18.5714%"></span><span class="v">39</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:11.9894%"></span><span class="v">1 997 619</span></span></td>
+</tr><tr>
+<td class="lab">Município de Évora</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:18.5714%"></span><span class="v">39</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:10.5479%"></span><span class="v">1 757 442</span></span></td>
+</tr><tr>
+<td class="lab">CIMAC - Comunidade Intermunicipal do Alentejo Central</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:5.7143%"></span><span class="v">12</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:3.5998%"></span><span class="v">599 781</span></span></td>
+</tr></tbody></table></div>
+<p>The first two rows are the same hospital group under two spellings — and there is a third in the same window that the table above does not show. Grouping the 600 records by body rather than by string gives 56 contracting bodies, of which 5 file under more than one name. The hospital accounts for 3 of those spellings and, taken together, <strong>282 contracts worth €29 580 141</strong> — which makes health <strong>the most active contracting entity in the window read</strong>. The waste utility files under 3 spellings for 23 contracts. The municipality files under 2, giving 45 contracts worth €1 975 150 rather than the 39 its main spelling shows.</p>
+<p>The grouping rule is ours, not the register's: fold accents, drop punctuation, drop the trailing legal-form abbreviation. It is stated so it can be disagreed with, and it is in <code>Technical Source/fetch_base.py</code>. It is also deliberately conservative, and it under-merges — the intermunicipal community in the table above files under its acronym and, twice, under the same name without it, which the rule does not join because the acronym survives normalisation. Together those are 14 contracts worth €735 681. The script reports that shape rather than merging it, because nothing available here can distinguish an acronym prefix from a genuinely different body. So 5 is a floor on how many bodies file under more than one name, not a count. <strong>An earlier draft of this section merged only the two hospital spellings it could see and reported 270 contracts. An independent verifier found the third.</strong> That is the honest shape of this whole register: a per-string count looks like a per-entity count and is not one.</p>
+<p>Read across the two sources, the same institutions recur in a different order, and one of them is easy to lose. The hospital is the largest contracting entity in the window above; in the recovery-plan data it appears under a different name, <strong>HOSPITAL DO ESPÍRITO SANTO DE ÉVORA, E.P.E.</strong>, with €7 717 353 contracted and €563 527 paid. A join on entity names across the two registers would have missed it <em>(inference — the two registers use different names for what the contract objects themselves confirm is one body; nothing in either source states that they are the same entity)</em>.</p>
+<hr>
+<h2>What was audited</h2>
+<p><strong>This section says what was audited and when. It does not say what the Tribunal found.</strong> The Tribunal de Contas publishes a catalogue — the title and abstract of each report — and separately the reports themselves as PDFs. What was fetched is the catalogue: 2 206 documents across 4 product families, spanning 1997 to 2026. Those 4 are not everything the Tribunal publishes — a limit this document measures rather than mentions, below. The conclusions are in the PDFs and were not read.</p>
+<p>Place, in this source, is free text. There is no entity field, no concelho field, no NUTS field: a municipality reaches an audit only as words in a sentence. So matching is string matching, and every match below carries a confidence tier and the source's own words, because the bare count would be misleading. Across these 4 families, 6 documents name Évora, and <strong>only one is about the municipality itself</strong> — a count that the end of this section shows to be a floor, not a total.</p>
+<div class="table-shell"><table><thead><tr><th class="lab">Year</th>
+<th class="lab">Report</th>
+<th class="lab">Tier</th>
+<th class="lab">What the Tribunal's own catalogue says</th></tr></thead><tbody><tr>
+<td class="lab">2018</td>
+<td class="lab"><a href="https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosVerificacaoInternaContas/Documents/2018/vic-dgtc-rel016-2018-2s.pdf" rel="noopener">Relatório N.º 16/2018</a></td>
+<td class="lab tier"><span class="chip tier-1">município/câmara</span></td>
+<td class="lab">Município de Évora - Gerência de 2016</td>
+</tr><tr>
+<td class="lab">2019</td>
+<td class="lab"><a href="https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2019/rel021-2019-2s.pdf" rel="noopener">2ª Secção Relatório nº 21/2019</a></td>
+<td class="lab tier"><span class="chip tier-2">bare mention</span></td>
+<td class="lab">Auditoria de conformidade à nomeação e atribuição de remunerações acessórias e suplementos a pessoal dirigente no Hospital do Espírito Santo de Évora, EPE</td>
+</tr><tr>
+<td class="lab">2018</td>
+<td class="lab"><a href="https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2018/rel014-2018-2s.pdf" rel="noopener">2ª Secção Relatório nº 14/2018</a></td>
+<td class="lab tier"><span class="chip tier-2">bare mention</span></td>
+<td class="lab">Auditoria integrada. Universidade de Évora. Fundação Luís de Molina. ZEA - Zona de Experimentação Agrícola, Sociedade Unipessoal, Lda.</td>
+</tr><tr>
+<td class="lab">2012</td>
+<td class="lab"><a href="https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2012/rel002-2012-1s.pdf" rel="noopener">Relatório de Auditoria nº 2/2012 - 1ª Secção</a></td>
+<td class="lab tier"><span class="chip tier-2">bare mention</span></td>
+<td class="lab">Acção de fiscalização concomitante ao ex-Instituto dos Museus e da Conservação no âmbito da empreitada "Museu de Évora - Remodelação e Valorização"</td>
+</tr><tr>
+<td class="lab">2008</td>
+<td class="lab"><a href="https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2008/rel020-2008-2s.pdf" rel="noopener">Relatório de Auditoria nº 20/2008 - 2 ª Secção</a></td>
+<td class="lab tier"><span class="chip tier-2">bare mention</span></td>
+<td class="lab">Universidade do Évora - Aquisição de Bens e Serviços (Exercício de 2005).</td>
+</tr><tr>
+<td class="lab">2008</td>
+<td class="lab"><a href="https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2008/relsi001-2008-2s.pdf" rel="noopener">Relatório Síntese nº 1/2008 - 2ª Secção</a></td>
+<td class="lab tier"><span class="chip tier-2">bare mention</span></td>
+<td class="lab">Universidade do Algarve, Universidade da Beira Interior, Universidade de Évora, Universidade de Trás-os-Montes e Alto Douro - Aquisição de Bens e Serviços (Exercício de 2005)</td>
+</tr></tbody></table></div>
+<figure class="fig">
+<p class="fig-title">Documents naming Évora, by confidence tier</p>
+<p class="fig-badge">Catalogue, not findings: titles and abstracts.</p><div class="chart tiers"><div class="tier-row"><div class="lab">município/câmara</div><div class="docs"><i class="doc t-municipal"></i></div></div><div class="tier-row"><div class="lab">bare mention</div><div class="docs"><i class="doc t-mention"></i><i class="doc t-mention"></i><i class="doc t-mention"></i><i class="doc t-mention"></i><i class="doc t-mention"></i></div></div><div class="tier-row"><div class="lab">freguesia</div><div class="docs"><span class="doc-none">—</span></div></div><div class="tier-row"><div class="lab">name inside another municipality</div><div class="docs"><span class="doc-none">—</span></div></div></div><p class="fig-note">Catalogue entries — titles and abstracts. A floor, not a total.</p><figcaption class="fig-src">Source: <a href="https://www.tcontas.pt/pt-pt/ProdutosTC" rel="noopener">Tribunal de Contas catalogue</a></figcaption>
+</figure>
+<p>The tiers are not decoration. The matcher distinguishes four of them, and these matches <strong>fall into two of the four confidence tiers</strong>: 1 document where the name follows a municipal designator such as <em>Município de</em>, and 5 where it is a bare mention. The parish tier holds 0 of them, and so does the tier for names belonging to a longer municipality. Reported as "6 audits of Évora", the count would be 6 times the truth: the other 5 are the university on its own account twice, a sector report covering four universities, the hospital, and a museum works contract.</p>
+<p>The one municipal document is not filed among the Tribunal's audit reports at all: its product family is <em>Relatórios de Verificação Interna de Contas</em>, the internal verification of a body's accounts for one financial year. Its subject is «Município de Évora - Gerência de 2016». What that instrument concludes, and how it differs in depth from an audit, is not something this document can tell you — the catalogue records the family and the title, and nothing more.</p>
+<p>There is <strong>nothing since</strong> the 2019 report in these four families that names Évora — a search over the whole corpus, not just the six rows above. It is tempting to read that as the auditor's record not covering the years in which the recovery money moved. <strong>That reading is wrong, and this document's own probes show why.</strong> They are set out in the next section, because they are the most important thing in it.</p>
+<h3>Why a silence here is not a silence</h3>
+<p>Two blind spots, both measured rather than assumed, and both first found by an agent that was forbidden to read this document.</p>
+<p><strong>The four families are not the Tribunal's output.</strong> They are four of the product families it publishes. A fifth — <em>Relatórios de Apuramento de Responsabilidades</em>, 192 documents — contains 2 reports whose subject is the Município de Évora itself:</p>
+<ul><li><a href="https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosApuramentoResponsabilidades/Documents/2016/arf-dgtc-rel001-2016-1s.pdf" rel="noopener">Relatório nº 1/2016 - 1ª Secção</a> — «Auditoria ao Município de Évora para o apuramento de responsabilidade financeira sancionatória identificada no âmbito do contrato de abertura de crédito na modalidade de “curto prazo” outorgado com o Millennium BCP»</li><li><a href="https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosApuramentoResponsabilidades/Documents/2013/arf-dgtc-rel008-2013-1s.pdf" rel="noopener">Relatório nº 8/2013 - ARF</a> — «Contrato de empreitada “Conceção/Construção da Escola EB1/JI dos Canaviais” celebrado entre o Município de Évora e o Consórcio “Ecociaf – Construção Civil e Obras Públicas, Lda. e Certar – Sociedade de Construções, S.A.” (Processo de fiscalização Prévia nº 1968/2009)»</li></ul>
+<p>So the true count of catalogued Tribunal documents about this municipality is at least three, not one, and the four-family search cannot see two of them.</p>
+<p><strong>The catalogue indexes abstracts, not report bodies.</strong> A thematic audit of how mainland municipalities fund their fire brigades carries no mention of Évora in its catalogue entry at all — and names the concelho <a href="https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2022/rel005-2022-2s.pdf" rel="noopener">13 times in its own text</a>, including its position in the Tribunal's own tables. That report sits <em>inside</em> a family this document searched. The search still could not find it.</p>
+<p>The honest statement is therefore narrow: <strong>in the four families this document reads, nothing published after 2019 names Évora in its title or abstract.</strong> Anything stronger — that Évora has not been examined, that the recovery years went unaudited — is refuted by the two probes above.</p>
+<p>Évora is an unusually clean name to search for: the matcher raises 0 structural risks against it, that is, <strong>no structural over-match risk</strong>. It is not one of the two Portuguese municipality names that belong to two places at once, and it is not a whole word inside a longer municipality's name. The gazetteer used to establish that is INE's own live list of 308 municipalities. Names that fail those tests behave very differently — a search for "Guarda" in this catalogue returns the national guard, not the city.</p>
+<h3>The money side's names, in the audit catalogue</h3>
+<p>The bodies holding Évora's PRR money and signing its contracts were searched by name in the same catalogue. This is the only join the source allows, and it is a join on words.</p>
+<div class="table-shell"><table><thead><tr><th class="lab">Searched</th>
+<th class="num">Documents naming it</th></tr></thead><tbody><tr>
+<td class="lab">IAPMEI - AGÊNCIA PARA A COMPETITIVIDADE E INOVAÇÃO, I.P.</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:50%"></span><span class="v">3</span></span></td>
+</tr><tr>
+<td class="lab">ADMINISTRAÇÃO CENTRAL DO SISTEMA DE SAÚDE I.P.</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:50%"></span><span class="v">3</span></span></td>
+</tr><tr>
+<td class="lab">Universidade de Évora</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:33.3333%"></span><span class="v">2</span></span></td>
+</tr><tr>
+<td class="lab">INFRAESTRUTURAS DE PORTUGAL, S.A.</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:16.6667%"></span><span class="v">1</span></span></td>
+</tr><tr>
+<td class="lab">ADMINISTRAÇÃO REGIONAL DE SAUDE DO ALENTEJO, I.P.</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:16.6667%"></span><span class="v">1</span></span></td>
+</tr><tr>
+<td class="lab">INSTITUTO DA HABITAÇÃO E DA REABILITAÇÃO URBANA, I.P.</td>
+<td class="num has-bar"><span class="cell"><span class="v">0</span></span></td>
+</tr><tr>
+<td class="lab">the same body, searched as IHRU</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:33.3333%"></span><span class="v">2</span></span></td>
+</tr><tr>
+<td class="lab">GESAMB - Gestão Ambiental e de Resíduos, EIM</td>
+<td class="num has-bar"><span class="cell"><span class="v">0</span></span></td>
+</tr><tr>
+<td class="lab">Alentejo, as a word</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:100%"></span><span class="v">6</span></span></td>
+</tr></tbody></table></div>
+<p>The housing institute is in that table twice, and it is the most instructive row in this document. Searched under the name the recovery-plan register gives it, it returns 0. Searched under its acronym it returns 2 — the Tribunal writes <em>Instituto de Habitação e Reabilitação Urbana</em>, without the two «da»s the other register uses, so an exact-token match sees two different bodies. <strong>The first number is a false zero, and it was found by a verifier, not by the method.</strong> The same fragility runs the other way in the table above: the Tribunal's own 2008 abstract writes «Universidade do Évora», which the university's correct name does not match, so the university's count of 2 is itself one short of the documents that name it.</p>
+<p>A zero in that table is therefore a weak signal, three times over. A name may be spelled differently, as here. The abstract may simply not name the body even when the report is about it, and the libraries themselves report holding more items than the interface hands back — 10 rows in total: 2 in the audit-reports library, 7 in external verification of accounts and 1 in internal verification, with the cause not established and paging failing to recover them. A nil result here means "not found in the catalogue by this method", never "not audited".</p>
+<p>One over-match is worth showing because it is the same failure mode in reverse. Searching the hospital's name fragment "Espírito Santo" returns 8 documents, of which 7 name the <strong>Hospital Divino Espírito Santo de Ponta Delgada</strong> — a different hospital, in the Azores. The words matched; the subject did not. Only one of the eight is the Évora hospital.</p>
+<hr>
+<h2>What the EU data cannot tell you</h2>
+<p>There is no EU figure for the concelho of Évora. Not "we could not find one" — the granularity does not exist in the source.</p>
+<p>The probes, for the record. The EU's project-level dataset places 2 569 projects in the NUTS3 region containing Évora, which it names Alentejo Central. All 2 569 of them carry the programming period 2014-2020 — an earlier funding cycle, and a different instrument from the recovery plan whose figures open this document. Putting the two side by side would be comparing different things. The dataset has no concelho field, and for Portugal the postal code is empty on every row.</p>
+<p>The size of the aggregation problem is the point. Alentejo Central contains 14 municipalities, per INE's own geographic dimension: Alandroal, Arraiolos, Borba, Estremoz, Montemor-o-Novo, Mora, Mourão, Portel, Redondo, Reguengos de Monsaraz, Vendas Novas, Viana do Alentejo, Vila Viçosa, Évora. A figure for that region is a figure for all of them.</p>
+<p>A codes footnote that has cost this repo time before: PRR publishes the older NUTS vintage — the same dimension carries 25 NUTS3 entries — while the EU project data uses a newer one. Both call the region Alentejo Central; the codes are not interchangeable, and passing one to the other returns zero rows with a perfectly healthy HTTP status.</p>
+<hr>
+<h2>What to make of it</h2>
+<p>Everything above is the record; this section is a reading of it, added at the owner's request and signed by its author: it was written by the model that assembled the document, and it is the part that goes past what the sources state. Every figure in it repeats a ledger row already printed above; the connections and the emphasis are interpretation, and the sentences that interpret carry the same <em>(inference)</em> label the rest of the document uses. It stays on this side of the line the first section draws — where the money and the risk sit is a reading of registers; whether anyone managed well or badly would need the audits this document does not open.</p>
+<p><strong>Start with the share that is late, then decide what the dates are worth.</strong> Overdue project-locations carry 61.64% of everything approved for the concelho, and the completion dates that would soften that reading are the register's weakest field: 1 011 of the 1 445 on-time locations land exactly on their planned date. A date like that is a keystroke; a disbursement is a transaction. Where the two kinds of field disagree, believe the payments <em>(inference)</em>.</p>
+<p><strong>Two promises in particular have the shape of trouble.</strong> The student residence and the hospital equipment purchase are among the five largest project-locations in the concelho, both are past their planned dates, and both stand at €0 paid against €7 483 162 and €5 314 868 approved. Under the reading above these are the credible red flags, because the payment column — the harder field — is the one saying nothing has moved <em>(inference)</em>.</p>
+<p><strong>The accountability address is mostly not the town hall.</strong> The recipient tables above already say it: the university holds €38 596 976 contracted against the municipality's €12 069 013, and the layer that administers the money is made of national agencies. A reader who wants this total explained should be putting questions to national bodies and to the university more often than to the câmara <em>(inference)</em>.</p>
+<p><strong>The registers are individually open and collectively unjoinable, and that is a finding, not a footnote.</strong> Inside one register, a hospital group needed 3 spellings folded together before it showed as 282 contracts worth €29 580 141; across registers, the same body appears under names a join would miss, and a search for the housing institute returned a zero that a verifier had to expose as false. The blame does not sit on missing identifiers — the recovery register carries a tax number on its entity rows, and the contracts register surrenders one contract by contract — but on where they sit: the contracts search returns names without the number, and the audit catalogue has no entity field at all. Follow-the-money work therefore fails at the seams between sources before it fails inside any one of them <em>(inference)</em>.</p>
+<p><strong>The searchable audit trail is thinnest where the money is thickest.</strong> In the four families read, nothing published after 2019 names Évora in its title or abstract — and those are the years in which the recovery money moved. The document's own probes forbid the strong reading: the catalogue cannot see inside report bodies, and a fifth family holds 2 reports on the municipality that the four-family search cannot reach. What survives is the practical point: a citizen who goes looking for an examination of those years will not find it through this catalogue's search, whatever may in fact have been examined <em>(inference)</em>.</p>
+<p><strong>If this document earns a sequel, the data says point it at health.</strong> The equipment for the new central hospital of the Alentejo sits approved and undisbursed past its date. In the contracts window, the health group stands as the most active contracting entity in the window read once its spellings are folded together. In the audit table above, hospital care in the concelho last appears through a 2019 report on managers' pay. Money, delivery risk and a thin searchable trail concentrate in the same corner of the same town <em>(inference)</em>.</p>
+<p><strong>What would turn this reading into knowledge is short and concrete.</strong> Read the Tribunal PDFs this document links, which is where conclusions actually live; put the council's own accounts against DGAL's municipal-finance data, which the next section names as the missing source; and keep the weekly snapshots, because the register erases its own history and a trend will exist where these observations accumulate. Until then the honest landing is the one this section has tried to give: not a verdict, but a map of where verdicts should be sought first <em>(inference)</em>.</p>
+<hr>
+<h2>What this document does not answer</h2>
+<ul><li><strong>Whether Évora's public money was well spent.</strong> Nothing here reads an audit's findings. The Tribunal's conclusions exist; they were not fetched.</li><li><strong>How much the Tribunal has examined Évora.</strong> This document searched four product families by title and abstract, and can name a floor, not a total. Two of its own probes show the floor is well below the truth.</li><li><strong>Why the overdue projects are overdue.</strong> The source records approval, dates and payment. It does not record reasons.</li><li><strong>What the council itself did.</strong> Most of this money moves through national agencies and other public bodies. A council-level accounting question needs DGAL's municipal finance data, which this document does not use.</li><li><strong>How Évora compares with a similar municipality.</strong> Contract totals cannot be compared across concelhos without double-counting multi-place contracts, and the PRR comparison would be a separate exercise.</li><li><strong>What changed over time.</strong> The recovery plan overwrites its own snapshot every week. The observations recorded by this repo start in July 2026, so a trend does not exist yet — only the beginning of one.</li></ul>
+<hr>
+<h2>Method, and where to check it</h2>
+<p>Everything was fetched live for this document. The scripts that did it are in <code>Technical Source/</code>, the untouched responses are in <code>Technical Source/raw/</code> with a SHA-256 per file, and each figure's row in <code>ledger.json</code> names the exact field it came from.</p>
+<div class="table-shell"><table><thead><tr><th class="lab">What</th>
+<th class="lab">Source</th>
+<th class="lab">Type</th></tr></thead><tbody><tr>
+<td class="lab">PRR projects</td>
+<td class="lab"><a href="https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-projetos-2/20260803-182811-d00e842c/listagem-de-projetos-prr-20260803.xlsx" rel="noopener">`listagem-de-projetos-prr`</a></td>
+<td class="lab">government</td>
+</tr><tr>
+<td class="lab">PRR entities</td>
+<td class="lab"><a href="https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260803-182847-df87c78d/listagem-de-entidades-prr-20260803.xlsx" rel="noopener">`listagem-de-entidades-prr`</a></td>
+<td class="lab">government</td>
+</tr><tr>
+<td class="lab">PRR geographic distribution</td>
+<td class="lab"><a href="https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-localizacoes-1/20260803-182920-231edf37/listagem-de-projetos-prr-por-distribuicao-geografica-260803.xlsx" rel="noopener">`listagem-de-projetos-prr-por-distribuicao-geografica`</a></td>
+<td class="lab">government</td>
+</tr><tr>
+<td class="lab">Public contracts</td>
+<td class="lab"><a href="https://www.base.gov.pt/Base4/pt/pesquisa/" rel="noopener">Portal BASE</a></td>
+<td class="lab">government</td>
+</tr><tr>
+<td class="lab">Audit catalogue</td>
+<td class="lab"><a href="https://www.tcontas.pt/pt-pt/ProdutosTC" rel="noopener">Tribunal de Contas</a></td>
+<td class="lab">government</td>
+</tr><tr>
+<td class="lab">Municipality list</td>
+<td class="lab"><a href="https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0008564&amp;lang=PT" rel="noopener">INE</a></td>
+<td class="lab">government</td>
+</tr><tr>
+<td class="lab">EU project data</td>
+<td class="lab"><a href="https://cohesiondata.ec.europa.eu/" rel="noopener">Kohesio, via the EU Cohesion Open Data portal</a></td>
+<td class="lab">intergovernmental</td>
+</tr></tbody></table></div>
+<p>The matching method for the audit half, in the tool's own words: «accent-folded, case-folded whole-token match against Titulo+Resumo. This is a STRING MATCH ON FREE TEXT, not a join: the Tribunal de Contas publishes no structured entity, concelho or NUTS field.»</p>
+<p>This document was written under the Research Hub deliverable rule: a claims ledger before prose, mechanical reconciliation of every printed figure against it, an attribution check that a figure is credited to the institution its row names, an assertion check on quantified claims, and refutation-framed verification by agents that did not write it. The record of what ran and what it found is in <code>Technical Source/VERIFICATION.md</code>.</p>
+</body>
+</html>

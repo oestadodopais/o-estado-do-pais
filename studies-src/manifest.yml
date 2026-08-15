@@ -27,7 +27,26 @@
 # seria uma afirmação sobre bytes que já não existem em lado nenhum, e a função
 # de normalização deixaria de poder ser reexecutada sem rede.
 #
-# fetched_utc é o instante em que a ferramenta de descarga escreveu os bytes.
+# fetched_utc é o instante em que os bytes foram escritos em studies-src/. Para
+# um artefacto, é o instante em que a ferramenta de descarga os escreveu; para
+# um documento que atravessou de outro sistema desta casa, é o instante da
+# cópia. Não é a data de publicação do documento — essa vive no arquivo,
+# src/data/studies.mjs.
+#
+# DOIS CAMINHOS DE PROVENIÊNCIA, e um documento declara um deles:
+#
+#   artifact_url        o documento foi servido por um anfitrião externo
+#                       (claude.ai). Foi o único caso até 2026-08-15.
+#   origin + origin_ref o documento veio de outro sistema desta casa. Hoje há
+#                       um sistema, `researchhub`, e `origin_ref` diz o
+#                       ficheiro e o commit de onde os bytes saíram.
+#
+# Um documento sem nenhum dos dois pára o build. Ver DECISIONS §1.31.
+#
+# NUM DOCUMENTO QUE NUNCA FOI EMBRULHADO, os dois resumos são iguais, e isso é
+# a afirmação certa e não uma folga: não houve runtime para retirar, o
+# normalizador não correu, e `bytes_runtime_removed` não aparece porque nada
+# foi removido. Os bytes brutos SÃO os bytes alojados.
 #
 # via  — campo opcional, e só aparece quando os bytes NÃO vieram de um ficheiro
 #        escrito pela ferramenta de descarga. Hoje há um caso, e um só:
@@ -184,3 +203,29 @@ edicoes:
     bytes_normalized: 1385879
     sha256_raw: a14d0fd60a4215395f15a20d5e3045ed54d38e55f05003d8173b4161755d5319
     sha256_normalized: dd65c649bf7f90d3d529855792c9f94f2b502f1420e647bd1971d71e5b61263d
+  # Os dois primeiros documentos que não são artefactos: vieram do motor de
+  # investigação, onde foram produzidos e verificados, e atravessaram como
+  # ficheiros. Sem anfitrião, sem runtime, sem normalização — os dois resumos
+  # são iguais porque os bytes são os mesmos.
+  - slug: evora-prometido-pago-auditado-2026
+    lang: pt
+    title: "Évora — Prometido, Pago, Auditado 2026"
+    origin: researchhub
+    origin_ref: "content/04 Évora Public Money/Évora — Prometido, Pago, Auditado 2026 (pt-PT).html @ 49758b4c16b483c92fe56b51eb88e6913dd42930"
+    raw_file: _raw/evora-prometido-pago-auditado-2026.pt.html
+    fetched_utc: 2026-08-15T10:49:11Z
+    bytes_raw: 71770
+    bytes_normalized: 71770
+    sha256_raw: b711313892cf4f28f5da084efb5471a57825b2d8e84291cc51823e4d00a6f246
+    sha256_normalized: b711313892cf4f28f5da084efb5471a57825b2d8e84291cc51823e4d00a6f246
+  - slug: evora-prometido-pago-auditado-2026
+    lang: en
+    title: "Évora — Promised, Paid, Audited 2026"
+    origin: researchhub
+    origin_ref: "content/04 Évora Public Money/Évora — Promised, Paid, Audited 2026.html @ 49758b4c16b483c92fe56b51eb88e6913dd42930"
+    raw_file: _raw/evora-prometido-pago-auditado-2026.en.html
+    fetched_utc: 2026-08-15T10:49:11Z
+    bytes_raw: 68373
+    bytes_normalized: 68373
+    sha256_raw: 77696d90e66b1e17972f70f9d3fda4899d991008815efb93da739237fe58e74b
+    sha256_normalized: 77696d90e66b1e17972f70f9d3fda4899d991008815efb93da739237fe58e74b
