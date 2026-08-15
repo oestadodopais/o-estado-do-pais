@@ -1,7 +1,7 @@
 # O Estado do País — what this is, and why
 
 *Plain-language explanation of the project. Written for anyone, not for engineers.
-Last updated 13 August 2026. If something below stops being true, change it here —
+Last updated 15 August 2026. If something below stops being true, change it here —
 this file is the source, and the shared link is generated from it.*
 
 ---
@@ -28,10 +28,13 @@ In the director's words:
 > not feelings or vibes. But real facts.
 
 That is the whole purpose, and it is worth being precise about what kind of
-purpose it is. This is **not** a watchdog project. The point is not to catch
-people out. The point is that improvement is impossible without measurement you
-can rely on — and that most public argument runs on numbers nobody can check,
-which means it is really running on feeling.
+purpose it is. **It keeps score in both directions.** Accountability is in
+scope — what was promised is set against what was delivered, and decisions are
+attributed to whoever took them — but the project does not hunt, campaign, or
+choose targets, and it credits as readily as it debits. The point is that
+improvement is impossible without measurement you can rely on — and that most
+public argument runs on numbers nobody can check, which means it is really
+running on feeling.
 
 If you can see clearly what is working, and where, and under whom, you can do
 more of it. That is the entire ambition.
@@ -141,8 +144,9 @@ AI-authored data observatory exists anywhere. This is the experiment.
 
 ## Where it stands
 
-Live but not launched — it works, it is online, and it is deliberately hidden
-from search engines while the last pieces are finished.
+Live and open to search engines since 13 August 2026 — it works, it is online,
+and it has not been announced anywhere yet. Being findable is not the same as
+being found: the domain is days old and nothing links to it.
 
 **Built so far**
 
@@ -152,7 +156,11 @@ from search engines while the last pieces are finished.
   against the European average, and all 308 municipalities plotted at their real
   geographic positions.
 - An archive of ten studies, preserved exactly as they were published.
-- A public corrections log, live from day one.
+- A public corrections log, live from day one — with its first real
+  corrections in it.
+- The source record itself, published: every provenance seal beside a number
+  opens the row it came from, so traceability is something a reader can click
+  through to rather than something the site claims about itself.
 
 The archive is kept, not frozen. Studies are preserved byte-for-byte as they were
 published — that is what makes them citable — but the work continues over them:
@@ -161,11 +169,11 @@ wrong it is corrected in the open, dated, with the old value still visible. The
 document stays as it was; the record around it stays current. Coverage also keeps
 widening — more places, not just more depth in the same one.
 
-**Before launch**
+**Next**
 
-Publishing the source record itself, so that traceability is something a reader
-can actually click through to, rather than something the site claims about
-itself.
+A page for one municipality — Évora, the place with the deepest existing
+research — built as the pattern for all the others, and the first study written
+end to end under the site's own rules.
 
 **After that**
 
