@@ -1,0 +1,36 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "evora-prr-execucao-2026"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "50,36"
+unit: "% do valor aprovado"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: null
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "83 912 476,83 ÷ 166 639 411,36 × 100 = 50,36. O que já foi pago, como quota do que foi aprovado e atribuído ao concelho."
+derivation_en: "83 912 476.83 ÷ 166 639 411.36 × 100 = 50.36. What has been paid, as a share of what was approved and attributed to the concelho."
+derived_from:
+  - "evora-prr-pago-2026"
+  - "evora-prr-aprovado-2026"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( evora-prr-pago-2026 / evora-prr-aprovado-2026 * 100 , 2 )"
+
+study: "evora-prometido-pago-auditado-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] 100 × paid ÷ approved, both attributed to Évora · Cruzado de ResearchHub content/04 Évora Public Money · prr-execution-evora."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

@@ -24,16 +24,23 @@ npm run verify:deploy  # confere o que está NO AR contra origin/main
 
 Requer Node ≥ 22.12 (exigência do Astro 7).
 
-`npm run build` são seis passos encadeados, e qualquer um deles pára tudo:
+`npm run build` são sete passos encadeados, e qualquer um deles pára tudo:
 
 1. `ledger:check` — o livro-razão está completo e a aritmética bate certo;
-2. `check:documentos` — cada documento de estudo alojado é, byte a byte, o que o
+2. `check:cruzamento` — cada linha que veio do motor de investigação é, byte a
+   byte, a que atravessou (ver [«Linhas cruzadas»](ledger/README.md));
+3. `check:documentos` — cada documento de estudo alojado é, byte a byte, o que o
    manifesto declara;
-3. `astro build` — se um gabarito citar uma afirmação que não existe, o build atira;
-4. `stamp:version` — carimba em `dist/version.json` o commit de que a construção saiu;
-5. `gate:html` — varre `dist/` à procura de algarismos sem proveniência;
-6. `check:dados` — os ficheiros de dados descarregáveis existem e batem certo
+4. `astro build` — se um gabarito citar uma afirmação que não existe, o build atira;
+5. `stamp:version` — carimba em `dist/version.json` o commit de que a construção saiu;
+6. `gate:html` — varre `dist/` à procura de algarismos sem proveniência;
+7. `check:dados` — os ficheiros de dados descarregáveis existem e batem certo
    com as suas origens.
+
+`check:cruzamento` corre **sem rede e sem o motor presente** — o construtor é
+remoto e o ResearchHub não existe lá. A comparação com o lado da origem é um
+modo à parte, `node scripts/check-cruzamento.mjs --with-origin`, e corre na
+máquina de quem exporta.
 
 **`verify:deploy` não faz parte do build, e é de propósito.** Todos os passos
 acima correm sobre `dist/`, antes de publicar; nenhum vê o que está no ar. Este
@@ -41,8 +48,10 @@ corre contra o sítio publicado e exige que o commit no ar seja `origin/main` e
 que não haja nada por empurrar. É portão de lançamento, não de construção — ver
 `DECISIONS.md §1.30`.
 
-O primeiro, o terceiro e o quarto são os portões da casa e não se afrouxam. Os
-outros dois são mais recentes: `check:dados` existe para que uma promessa do
+O primeiro, o quarto e o quinto são os portões da casa e não se afrouxam. Os
+outros são mais recentes: `check:cruzamento` existe porque este sítio passou a
+receber linhas produzidas noutro lado e um produtor não assina por si próprio
+(`DECISIONS.md §1.32`); `check:dados` existe para que uma promessa do
 Método não volte a ser falsa — ver [«Os dados por trás dos
 gráficos»](#os-dados-por-trás-dos-gráficos) — e `check:documentos` existe para
 que «alojado intacto» seja uma verificação e não uma intenção — ver [«Os

@@ -1608,6 +1608,177 @@ oferecido a um motor de busca — mas o endereço existe e é público. Ou a dir
 aprova o documento e o motor gera uma edição sem a faixa, ou fica assim e
 di-lo. **Não foi decidido aqui.**
 
+### 1.32 O tubo: setenta linhas atravessaram, e o sítio confere-as à chegada
+
+§1.31 escreveu a regra de fronteira e os dois campos que o material de Évora
+pediu, e deixou uma frase por cumprir: «para as **linhas** fica para o passo
+seguinte deste bloco, quando o tubo for construído». Está construído. Setenta
+linhas do motor de investigação atravessaram para o livro-razão — o primeiro
+conteúdo em escala a fazê-lo — e o livro-razão passou de **62 para 132
+afirmações**.
+
+#### Porquê um tubo, e não uma cópia
+
+Os dois formatos não são o mesmo. O registo do motor guarda `source_url`,
+`fetched_at`, um excerto que mistura localizador, citação e comentário, e uma
+`attributed_to` que é uma **lista de sinónimos para um varredor** — dez nomes
+numa linha sobre pelouros. O formato daqui quer `unit`, `source`,
+`document.title`, `document.edition`, `access_date`, `reference_date`, e um
+`excerpt` que é só a citação. Copiar linha a linha à mão seria transcrição — a
+camada exacta onde, a 28 de Julho, entraram valores fabricados por baixo de uma
+regra que estava viva e de uma passagem de verificação que os deixou passar.
+
+Por isso a travessia é um programa, e o programa **recusa-se a escrever aquilo
+que não consegue provar**:
+
+| | O que é provado antes de escrever |
+| --- | --- |
+| 1 | cada id nomeado existe no livro-razão do motor |
+| 2 | o valor exportado é o valor do motor, ou um dos seus `alternates`, canonicalizado — ou, quando o motor arredondou e nós publicamos a cadeia mais longa da fonte, essa cadeia está **textualmente** dentro do excerto do motor |
+| 3 | o excerto é um pedaço textual do excerto do motor, ou vem do ficheiro de prova em bruto que o manifesto nomeia, ou é `[a verificar]` |
+| 4 | cada `derived_from` resolve |
+| 5 | cada `check` volta a dar o valor publicado — e, numa linha derivada, o valor da expressão tem de bater com o valor que o motor calculou por conta própria |
+| 6 | `source` nomeia uma entidade que a linha do motor assume, e `attributed_to` é um subconjunto que **nunca** é o conjunto inteiro quando esse conjunto é uma lista de sinónimos |
+| 7 | cada corrida de algarismos do `locator` aparece no texto da linha de origem — uma página lê-se, não se recorda |
+| 8 | correr outra vez sem alterações escreve bytes idênticos |
+
+Se qualquer uma falhar, o programa termina com código 1 e **não escreve ficheiro
+nenhum**. Não há escrita parcial. O código vive em
+`ResearchHub/publisher/`, com o manifesto que o alimenta e a sua própria suíte
+de estragos plantados — onze, cada um apanhado, no portão de commit do motor.
+
+#### O que atravessou
+
+Setenta linhas: oito medidas de relance e as suas comparações, os números das
+contas de 2025, a espinha dos mandatos com as duas dívidas herdadas de 2013
+(**as duas**, porque o relatório de 2021 reexprimiu a de 2013 em alta e escolher
+uma em silêncio seria escolher a narrativa), os pelouros por pessoa, e as
+manchetes das cinco leituras. Nove são derivadas, com a aritmética escrita nas
+duas línguas e reavaliada a cada build.
+
+**O índice de dívida escreve-se sobre três linhas, e nenhuma delas é o 1,5.** A
+conta é `dívida ÷ limite × 150`, com o 150 a ser ele próprio uma afirmação com
+proveniência (o quadro do Anuário Financeiro). Escrever `÷ 1,5` seria pôr no
+livro-razão uma constante que ninguém pode seguir até uma fonte.
+
+**Três linhas do PRR atravessam com o excerto por confirmar**, e é o resultado
+certo: o valor é uma soma sobre o registo público e não existe frase para
+transcrever. A porta da *linha da casa* não serve aqui — os dados são da
+Recuperar Portugal e só a soma é nossa; usá-la seria o branqueamento de
+proveniência que o `ledger/README.md` avisa. Ficam a `[a verificar]`, com selo
+tracejado e fora do índice, até o formato saber dizer «calculado sobre um
+ficheiro de dados alojado» (§2.3, limite 12).
+
+**Nenhum rótulo partidário atravessou.** O plano previa que o empréstimo de
+saneamento levasse «Município de Évora, PCP-PEV». A regra fixada admite um
+partido **só quando o estudo atribui aquela decisão àquele executivo com uma
+linha citada** — e as frases do estudo 08 que fazem essa ligação estão marcadas
+*(inferência)* pelo próprio estudo. Uma inferência não entra num campo que o
+portão compara carácter a carácter como se fosse proveniência. O partido fica na
+prosa e na estrutura da linha do tempo, onde se pode dizer de onde veio.
+
+#### O registo, e as duas conferências
+
+Cada linha que atravessa deixa uma entrada em `ledger/cruzamentos/evora.json`
+com o resumo criptográfico da **linha de origem** e o dos **bytes escritos aqui**.
+`scripts/check-cruzamento.mjs` confere-o, e está partido em dois de propósito:
+
+- **A conferência que corre no build é local.** Sem rede e sem o motor presente.
+  O construtor é remoto e o ResearchHub não existe lá; uma conferência que só
+  funcionasse na máquina de quem exporta seria o produtor a assinar por si
+  próprio. Confere que o ficheiro existe, que os seus bytes são ainda os que
+  atravessaram, e que o `study` é um trabalho do arquivo.
+- **A conferência contra a origem é `--with-origin`**, e corre à mão onde o motor
+  está em disco. Compara o resumo da linha de origem com o livro-razão vivo do
+  motor. **Prende a linha, não o ficheiro:** o `ledger.json` do motor traz um
+  `built_at` que muda a cada reconstrução, por isso uma diferença no ficheiro é
+  um aviso e uma diferença numa linha é um erro.
+
+**Não é um portão novo.** A moratória de 2026-08-15 continua de pé: isto é o que
+a própria regra de fronteira já exigia — «cada linha que atravessa traz o resumo
+da sua origem, e o lado de cá confere-o». Sem ele, a frase era uma intenção.
+
+**Uma nota sobre o resumo, encontrada a correr e não a pensar.** Os dois lados
+liam a mesma linha e davam resumos diferentes: o Python escreve o flutuante
+`3e7` como `30000000.0` e o `JSON.stringify` escreve `30000000`, e trinta e uma
+das setenta linhas falhavam por causa de um limiar de sanidade que ninguém
+publica. A forma canónica passou a ser escrita por extenso nos dois lados —
+número inteiro sem ponto decimal, e todos os outros na forma curta que os dois
+idiomas já produzem.
+
+#### A regra das correcções
+
+O resumo prende os bytes, e é isso que o torna útil: uma linha cruzada não se
+corrige editando-a — o build pára. Há dois caminhos, e nenhum é silencioso:
+voltar a cruzar (o valor mudou no motor), ou escrever a entrada em `corrections[]`
+e correr `node scripts/check-cruzamento.mjs --accept-correction <id>`. A porta é
+estreita de propósito: exige que a lista de correcções tenha **crescido** e que o
+`value` publicado seja o `new_value` da correcção mais recente. Sem as duas,
+recusa — de outro modo seria uma maneira de fazer passar qualquer edição por
+correcção. O registo guarda o resumo antigo e o novo.
+
+**Uma correcção continua sempre possível.** O que deixa de ser possível é uma
+alteração sem rasto. Foi posto à prova nos dois sentidos: uma edição à mão pára o
+build; uma correcção honesta é aceita, e a seguir é a amarra de
+`correcoes-publicadas` que pára o build até a contagem das confissões ser
+reposta — o que é a disciplina de §1.24 a funcionar sobre uma linha que veio de
+fora.
+
+#### Oito estragos plantados deste lado, cada um apanhado
+
+Valor editado à mão; ficheiro de linha apagado com a entrada no registo;
+`study` que não consta do arquivo (com o resumo remendado, para que só essa
+conferência pudesse disparar); campo desconhecido na entrada do registo;
+`--accept-correction` sem correcção nova; `--accept-correction` com uma correcção
+cujo `new_value` não é o valor publicado; a correcção honesta, aceite; e uma
+linha do motor alterada, que o modo local **não** vê — como deve — e o
+`--with-origin` nomeia. Como em §1.31, foram feitos à mão e revertidos: o guião
+continua por escrever, e continua a ser trabalho em aberto.
+
+#### O que ficou por fazer, dito por palavras
+
+- **Setenta linhas, e nenhuma citada por uma página.** O aviso de afirmações não
+  citadas passou de 29 para 99 — exactamente as setenta novas. É o esperado
+  enquanto a página do município e as páginas de leitura não existem, e é a
+  medida honesta do que falta. Dez das setenta estão marcadas `pending_page` no
+  manifesto: não vi onde seriam impressas, e ou o construtor de páginas as
+  imprime, ou saem antes da fusão.
+- **O plano contou 67 e as suas próprias tabelas somam 70.** Não foi
+  acrescentada nenhuma linha fora de §3 do plano; a linha de soma do plano é que
+  estava errada. Fica dito em vez de ser calada por três linhas cortadas ao
+  acaso.
+- **Três linhas tiveram de ser criadas no motor.** O plano dizia que
+  `dgal-limite-2014/2017/2021` estavam no livro-razão do 07. Não estavam — só o
+  de 2024 estava. Sem elas o índice de dívida daqueles anos não podia ser escrito
+  sobre linhas com proveniência. Foram acrescentadas **no motor**, pelo seu
+  próprio construtor, lidas da mesma linha da DGAL que a linha da dívida já
+  citava, e o portão do motor correu por cima.
+
+### 1.33 A cópia de revisão saiu do décimo primeiro trabalho
+
+§1.31 fechava com uma coisa para a direcção decidir: os dois documentos de 04
+abriam com «Cópia de revisão — aguarda aprovação» / «Review copy — awaiting
+sign-off», e o endereço, ainda que fora do índice, é público. **Nuno assinou a
+2026-08-15.**
+
+A regra da casa é que um documento alojado não se edita. A via legítima é o
+motor voltar a gerá-lo, e foi essa: `make_html.py` ganhou uma constante de
+assinatura, as duas edições foram regeradas do mesmo `ledger.json`, e o diff
+contra as cópias de revisão é **uma linha apagada em cada edição** — aquela
+linha, e mais nada. A regra CSS `.review` fica no gabarito: retirá-la mudaria
+bytes que a assinatura não autoriza a mudar.
+
+Antes de mexer em nada, o renderizador correu sem alterações e devolveu as duas
+edições byte a byte iguais às que estavam em disco. É o que torna o diff
+legível: a diferença é a alteração, e não o ruído do gerador.
+
+Aqui entraram os bytes novos, os dois resumos recalculados, o `origin_ref` das
+duas linhas do manifesto a apontar para o commit que os escreveu, e o
+`fetched_utc` à hora em que estes bytes foram tomados. **O que Nuno aprovou foi a
+entrada no arquivo, não uma leitura linha a linha do português** — e o
+`VERIFICATION.md` do motor continua a dizê-lo: essa leitura só deixa de estar em
+aberto no dia em que ele ler a edição portuguesa na pré-visualização.
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
@@ -1717,6 +1888,18 @@ dispensado mediante um `estrutura_motivo` declarado.
    `href` da âncora que embrulha o endereço da fonte. Abriu-se porque aí o
    atributo é a afirmação — uma ligação rotulada com o endereço da fonte e a
    apontar para outro sítio é uma mentira que nenhum varrimento de texto apanha.
+12. **Não há origem para «calculado sobre um ficheiro de dados alojado».** Uma
+   soma sobre um registo público inteiro — os 166 639 411,36 € do PRR atribuídos
+   ao concelho — não tem frase para transcrever nem pais no livro-razão que um
+   `check` possa somar. O formato tem hoje três respostas, e as três estão
+   erradas para este caso: `excerpt` com uma frase inventada (proibido),
+   `derivation` com `source: O Estado do País` (branqueia proveniência de
+   outrem: os dados são da Recuperar Portugal, só a soma é nossa), ou
+   `[a verificar]`. Fica `[a verificar]` — selo tracejado, `noindex`, e conta
+   para a dívida — que é honesto e é incompleto. A resposta certa é o sítio
+   alojar o ficheiro de dados e o `check` correr sobre ele, o padrão que
+   `check:dados` já tem para os gráficos (§1.18) e que o livro-razão ainda não
+   tem. Três linhas esperam por isso.
 
 O portão apanha o erro comum — um número que se escreveu a correr num gabarito —
 e não apanha a fraude determinada. Serve para tornar o caminho honesto o mais

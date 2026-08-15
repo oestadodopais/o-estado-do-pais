@@ -1,0 +1,41 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "evora-limite-divida-2025"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "82 571 687,05"
+unit: "euros"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Município de Évora"
+document:
+  title: "Prestação de Contas 2025"
+  edition: "2025"
+  locator: "PRESTACAO_CONTAS_2025.pdf, p. 140"
+source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf"
+access_date: "2026-08-10"
+reference_date: "2025"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "LIMITE = Média dos Últimos 3 Exercícios * 1,5 82 571 687,05 SITUAÇÃO FACE AOS LIMITES DO ENDIVIDAMENTO = CUMPRIMENTO 28 192 652,50 Unidade: €uro Em 2025, regista-se o cumprimento face aos limites legalmente fixados para"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+# A quem o valor é creditado. Lista de entidades, ou campo nenhum.
+attributed_to:
+  - "Município de Évora"
+
+study: "evora-orcamentado-pago-devido-2025"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] printed to the nearest euro · Cruzado de ResearchHub content/07 Évora Municipal Accounts · limite-divida-2025. · pending_page: nenhuma página desenhada imprime ainda esta linha; ou o construtor de páginas a imprime, ou ela sai antes da fusão."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []
