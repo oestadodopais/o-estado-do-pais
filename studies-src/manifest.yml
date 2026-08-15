@@ -211,21 +211,21 @@ edicoes:
     lang: pt
     title: "Évora — Prometido, Pago, Auditado 2026"
     origin: researchhub
-    origin_ref: "content/04 Évora Public Money/Évora — Prometido, Pago, Auditado 2026 (pt-PT).html @ 49758b4c16b483c92fe56b51eb88e6913dd42930"
+    origin_ref: "content/04 Évora Public Money/Évora — Prometido, Pago, Auditado 2026 (pt-PT).html @ 8d016b03da960d7b43ee538c92197aca405c38f3"
     raw_file: _raw/evora-prometido-pago-auditado-2026.pt.html
-    fetched_utc: 2026-08-15T10:49:11Z
-    bytes_raw: 71770
-    bytes_normalized: 71770
-    sha256_raw: b711313892cf4f28f5da084efb5471a57825b2d8e84291cc51823e4d00a6f246
-    sha256_normalized: b711313892cf4f28f5da084efb5471a57825b2d8e84291cc51823e4d00a6f246
+    fetched_utc: 2026-08-15T11:07:42Z
+    bytes_raw: 71705
+    bytes_normalized: 71705
+    sha256_raw: b66e1e79863cd93e862739418a56bed3c85585777995d02cf81ab6f71c029351
+    sha256_normalized: b66e1e79863cd93e862739418a56bed3c85585777995d02cf81ab6f71c029351
   - slug: evora-prometido-pago-auditado-2026
     lang: en
     title: "Évora — Promised, Paid, Audited 2026"
     origin: researchhub
-    origin_ref: "content/04 Évora Public Money/Évora — Promised, Paid, Audited 2026.html @ 49758b4c16b483c92fe56b51eb88e6913dd42930"
+    origin_ref: "content/04 Évora Public Money/Évora — Promised, Paid, Audited 2026.html @ 8d016b03da960d7b43ee538c92197aca405c38f3"
     raw_file: _raw/evora-prometido-pago-auditado-2026.en.html
-    fetched_utc: 2026-08-15T10:49:11Z
-    bytes_raw: 68373
-    bytes_normalized: 68373
-    sha256_raw: 77696d90e66b1e17972f70f9d3fda4899d991008815efb93da739237fe58e74b
-    sha256_normalized: 77696d90e66b1e17972f70f9d3fda4899d991008815efb93da739237fe58e74b
+    fetched_utc: 2026-08-15T11:07:42Z
+    bytes_raw: 68317
+    bytes_normalized: 68317
+    sha256_raw: adc7daba8cb8c5904ba583358974123c7350e893d5974fd3ffb1d5ee1997ce8f
+    sha256_normalized: adc7daba8cb8c5904ba583358974123c7350e893d5974fd3ffb1d5ee1997ce8f
