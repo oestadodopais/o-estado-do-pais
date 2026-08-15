@@ -1,0 +1,71 @@
+---
+/**
+ * A página do marcador — `/a-verificar` · `/en/to-verify`.
+ *
+ * `IDENTIDADE.md` §6 promete «uma página que o explica» desde que o marcador
+ * único existe. Nunca foi construída: a explicação inteira vivia numa oração do
+ * Método («fica marcado [a verificar], ou é cortado»), e o marcador aparece 182
+ * vezes em 54 páginas. Um leitor que o encontre numa linha não tem, hoje, onde
+ * perguntar o que ele quer dizer.
+ *
+ * Um ecrã, e não mais: o que é, porque existe, o que acontece à linha que o
+ * traz, como sai, e porque só há um.
+ *
+ * Nenhum algarismo. O marcador vai sempre em `.marcador`, com `lang="pt-PT"`,
+ * porque fica em português nas duas edições — como em todo o resto do sítio.
+ */
+import Base from '../layouts/Base.astro';
+import { POR_VERIFICAR } from '../lib/ledger.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+const path = routePath('marcador', lang);
+---
+
+<Base lang={lang} path={path} title={s.marcador.metaTitle} description={s.marcador.metaDescription}>
+  <div style="padding-top:clamp(20px,3vw,34px)">
+    <span class="eyebrow">{s.marcador.eyebrow}</span>
+    <h1 style="margin-top:12px">{s.marcador.h1}</h1>
+    <p style="margin-top:14px">
+      <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>
+    </p>
+    <p class="lede" style="margin-top:14px">{s.marcador.lede}</p>
+  </div>
+
+  <div class="metodo-secao" style="padding-top:clamp(24px,3.2vw,34px)">
+    <div><h2>{s.marcador.queEK}</h2></div>
+    <div class="metodo-corpo"><p class="metodo-p">{s.marcador.queEV}</p></div>
+  </div>
+
+  <div class="metodo-secao" style="padding-top:clamp(24px,3.2vw,34px)">
+    <div><h2>{s.marcador.porqueK}</h2></div>
+    <div class="metodo-corpo"><p class="metodo-p">{s.marcador.porqueV}</p></div>
+  </div>
+
+  <div class="metodo-secao" style="padding-top:clamp(24px,3.2vw,34px)">
+    <div><h2>{s.marcador.linhaK}</h2></div>
+    <div class="metodo-corpo">
+      <ul class="metodo-lista">
+        {s.marcador.linhaItens.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </div>
+
+  <div class="metodo-secao" style="padding-top:clamp(24px,3.2vw,34px)">
+    <div><h2>{s.marcador.voltaK}</h2></div>
+    <div class="metodo-corpo"><p class="metodo-p">{s.marcador.voltaV}</p></div>
+  </div>
+
+  <div class="metodo-secao" style="padding-top:clamp(24px,3.2vw,34px)">
+    <div><h2>{s.marcador.soUmK}</h2></div>
+    <div class="metodo-corpo">
+      <p class="metodo-p">{s.marcador.soUmV}</p>
+      <p class="rodape-nav" style="margin-top:18px">
+        <a href={routePath('livro', lang)}>{s.marcador.livroLink}</a>
+        <a href={`${routePath('metodo', lang)}#livro-razao`}>{s.marcador.metodoLink}</a>
+      </p>
+    </div>
+  </div>
+</Base>

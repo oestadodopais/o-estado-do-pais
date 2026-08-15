@@ -147,8 +147,13 @@ export const WORKS = [
       { lang: 'pt', title: 'Onde está a água?', date: null, updated: null },
       { lang: 'en', title: 'Onde está a água?', date: null, updated: null, titleUnverified: true },
     ],
-    // O título não determina o objecto do estudo. Não se escreve uma descrição a partir de nada.
-    description: { pt: '[descrição em preparação]', en: '[description pending]' },
+    /* O título não determina o objecto do estudo. Não se escreve uma descrição
+       a partir de nada — e a falta diz-se com o MARCADOR ÚNICO do sítio.
+       Até 15.08.2026 estava aqui `[descrição em preparação]` / `[description
+       pending]`: um segundo marcador, que IDENTIDADE §6 tinha retirado e que
+       continuava a aparecer sete vezes em três páginas. Um sítio com duas
+       linguagens de incerteza tem, na prática, nenhuma. */
+    description: { pt: POR_VERIFICAR, en: POR_VERIFICAR },
   },
   {
     id: 'agua-nao-faturada',

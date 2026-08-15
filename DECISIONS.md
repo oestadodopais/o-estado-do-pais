@@ -2140,6 +2140,394 @@ versão curta, e nenhum número entrou copiado do documento a olho: os que
 aparecem têm todos linha no livro-razão. As descrições continuam como estavam
 (§1.7). O documento original continua alojado ao lado, intacto.
 
+### 1.36 Os dez defeitos que a medição da confiança encontrou, e o que se fez a cada um
+
+`BRIEF-confianca.md` mediu o sítio no ar a 15.08.2026 e não propôs nada: contou.
+Deste bloco saem só **defeitos** — coisas que já estavam erradas ou em falta. As
+**decisões** que a mesma medição levanta (o redesenho da página de linha, a
+voz, a agenda, as extensões de formato) não estão aqui: estão no registo do §4,
+com o motivo e a fase a que pertencem.
+
+**A régua.** `scripts/medir-defeitos.mjs` — não é um portão, não falha nada e
+não entra no `npm run build`. É uma fita métrica que corre sobre `dist/` e sobre
+`ledger/claims/`, para que «antes» e «depois» sejam medidos com o mesmo
+instrumento. O «antes» foi obtido construindo `main` numa árvore de trabalho
+separada e correndo lá a mesma régua.
+
+| Medida | Antes (`main`, 297 páginas) | Depois (301 páginas) |
+| --- | ---: | ---: |
+| Páginas com porta de correcções | 0 | **301 de 301** |
+| Valores da primeira página sem selo para a sua própria linha | 38 ocorrências · 16 afirmações | **0** |
+| …dos quais com selo a apontar para a linha do PAI | 18 ocorrências · 8 afirmações | **0** |
+| Frases de moldura distintas | 86 | **77** |
+| Ocorrências de frases de moldura | 2 735 | 2 725 — das quais **301 são a porta nova**; sem ela, **2 424** |
+| `[descrição em preparação]` | 7 ocorrências, 3 páginas | **0** |
+| Linhas com `#page=` no endereço | 0 de 132 | **23 de 132** |
+| Localizadores que nomeiam um artefacto interno | 35 | **0** |
+| Páginas construídas | 312 | 316 |
+| Endereços no mapa do sítio · com `lastmod` | 260 · 0 | 264 · **258** |
+
+A conta das ocorrências merece uma palavra, porque à primeira vista não desceu:
+a porta das correcções é um bloco de prosa repetido em todas as páginas, e por
+isso **conta como moldura pela definição da própria régua** — acrescenta 301
+ocorrências sozinha. O que saiu foram 311 ocorrências de máquinas a descrever-se
+a si próprias. É por isso que a régua imprime as duas contas.
+
+---
+
+#### 1 · A porta das correcções passou a estar em todas as páginas
+
+**Estava em 2 páginas de 296** — a de Évora e o Método. A chegada mais provável
+de quem quer contestar um número sobre si próprio é a página da linha desse
+número, vinda de um motor de busca, e era precisamente aí que não havia nenhuma
+maneira de o dizer (`BRIEF-confianca` §4.1, o oficial municipal).
+
+`src/components/PortaDeCorreccoes.astro` é o texto que a página de Évora já
+dizia, palavra por palavra — não foi reescrito: uma porta que muda de palavras
+de página para página é outra porta. Entra pelo invólucro (`Base.astro`) em
+todas as páginas; as que têm aparelho próprio põem-na lá e passam
+`portaNoRodape={false}`:
+
+| Tipo de página | Onde a porta fica |
+| --- | --- |
+| primeira página | no colofão «Esta página», que é o aparelho desta página |
+| página de linha | na coluna do aparelho, a seguir ao estado da proveniência |
+| página de leitura | no fim da coluna de blocos, antes do caminho de volta |
+| página de município | na coluna do aparelho, onde já estava |
+| todas as outras | antes do rodapé, com um fio a separá-la do corpo |
+
+**Portão (novo, sobre o varrimento que já existia):** *cada página construída
+tem exactamente uma porta de correcções.* Exactamente uma, e não «pelo menos
+uma»: duas portas na mesma página são duas respostas para a mesma pergunta. Os
+documentos de estudo estão fora — são obra citada e já saem do varrimento antes.
+**Posto à prova a falhar, e reposto:** uma página sem porta (o portão fecha, «0
+porta(s) de correcções») e uma página com duas («2 porta(s)»).
+
+#### 2 · Cada valor da primeira página tem selo, e o selo abre a sua própria linha
+
+`IDENTIDADE.md` §5.3 promete «onde aparece um valor, aparece o selo — sem
+excepção de página», e a primeira página nunca cumpriu: 16 afirmações apareciam
+sem selo nenhum (as contagens do cabeçalho, as quatro contagens da CAOP, as duas
+de cobertura, `estudos-evora-publicados`, `pib-pc-alentejo-2000` e as distâncias),
+e onde havia selo na leitura breve **ele apontava para a linha do pai**: quem
+clicasse no «18» aterrava na linha do «82».
+
+O que mudou: `Masthead`, `InstrumentoMapa`, `InstrumentoConvergencia` e
+`RegistoCorrecoes` passam `chip`; a leitura breve da régua passa
+`<Frase … selos>`, que já existia desde §1.34 e não estava a ser usada aqui.
+Nenhum valor foi acrescentado nem retirado da página.
+
+**Portão (novo):** a auditoria de selos que se fazia à mão passa a correr a cada
+construção. Para cada `data-claim` fora das páginas do próprio livro-razão, tem
+de existir uma âncora `.src-chip` cujo `href` é o caminho da linha **daquele**
+id, e a procura sobe pelos antepassados e **pára ao atravessar um elemento de
+secção** — é isso que dá corpo a «ao lado»: um selo na secção seguinte não é uma
+porta ao pé do número. Dentro de um `<svg>` vale a mesma regra e é a mesma
+procura, que é a convenção do §1.34: um `<a>` dentro de um desenho não se lê como
+porta, por isso o selo vive na legenda do instrumento — o primeiro antepassado
+comum. As páginas do livro-razão estão fora: a página de uma linha **é** a linha.
+**Posto à prova a falhar, e reposto:** um valor do cabeçalho sem `chip` (o portão
+fecha, nomeando a âncora que faltava) e a leitura breve sem `selos` (18 erros —
+oito distâncias em duas edições, incluindo a que está dentro do SVG, com a
+mensagem a explicar a convenção da legenda).
+
+#### 3 · O segundo marcador saiu, e o único ganhou a página que lhe faltava
+
+`[descrição em preparação]` / `[description pending]` era um segundo marcador que
+`IDENTIDADE.md` §6 tinha retirado e que continuava vivo **7 vezes em 3 páginas**.
+Vinha de um só sítio: a descrição de «Onde está a água?» em
+`src/data/studies.mjs`. Passa a ser `[a verificar]`, e as três vistas que a
+imprimem (arquivo, lede da página do trabalho, bloco «Descrições») desenham-na
+dentro de `.marcador`, como qualquer outro campo por confirmar. Um sítio com
+duas linguagens de incerteza tem, na prática, nenhuma.
+
+E a página que `IDENTIDADE.md` §6 promete — «uma página que o explica» — passou a
+existir: **`/a-verificar` · `/en/to-verify`**. Um ecrã: o que é (uma ausência
+declarada, não uma estimativa), porque existe, o que acontece à linha que o traz
+(selo a tracejado, os campos em falta nomeados, fora do índice e do mapa do
+sítio, e o valor publicado não muda por isso), como sai, e porque só há um.
+Entra na tabela de rotas, logo tem par `hreflang` e entra no mapa do sítio pela
+mesma máquina que todas as outras. Ligada de dois sítios: do bloco «O que falta
+nesta linha», na página de cada linha incompleta, e do Método, ao lado da
+ligação para o livro-razão.
+
+#### 4 · Os dois endereços mortos
+
+**(a) A listagem de entidades do PRR — 5 linhas.**
+O endereço `dados.gov.pt/…/listagem-de-entidades-prr-20260803.xlsx` devolve
+**HTTP 404** (conferido a 15.08.2026: `404 application/json 146 bytes`). Fui ver
+o que dados.gov.pt serve hoje para o mesmo conjunto de dados. O que encontrei, e
+que **não é a mesma coisa**:
+
+- o recurso existe e mudou de nome — `listagem-de-entidades-prr-20260814.xlsx`,
+  criado a `2026-08-14T14:27:30Z`. É **um instantâneo posterior**, não o mesmo
+  ficheiro noutro sítio: o conjunto declara `frequency: "daily"`, guarda um só
+  recurso e substitui-o todos os dias, e o antigo não fica arquivado em lado
+  nenhum;
+- por isso o endereço datado é rotativo por desenho, e citá-lo garantia o mesmo
+  404 amanhã. A linha passa a citar o **endereço permanente do recurso**,
+  `https://dados.gov.pt/api/1/datasets/r/896a8911-c542-4e9c-941c-874a377dc5b3`
+  (conferido: `200`, 44 330 994 bytes).
+
+**Nenhum valor mudou**, e a diferença fica dita ao leitor e não em rodapé: cada
+uma das cinco linhas leva uma entrada `actualizacao` datada de hoje, com o
+endereço velho e o novo escritos por extenso e com a frase que importa — *o
+valor continua a ser a soma sobre o instantâneo de 2026-08-03, que já não é
+servido; o que o endereço novo serve é um instantâneo posterior.* Se os números
+de Évora mudaram entre os dois instantâneos é coisa que **não se pode saber**: o
+ficheiro antigo desapareceu, e não há diferença para calcular. Isso é dívida, e
+está no §4.
+
+**(b) A CAOP — 4 linhas.** `https://geo2.dgterritorio.gov.pt/caop/` devolvia 403.
+Foi testado três vezes, como o plano pedia: `curl` simples, `curl` com
+cabeçalhos de navegador completos, e uma leitura por WebFetch. **Os três dão
+`403`, com o mesmo corpo de 199 bytes** — o 403 genérico do Apache. Não é um
+bloqueio a robôs: é uma pasta com listagem desactivada, e os ficheiros por baixo
+dela respondem a `curl` sem cabeçalho nenhum (`CAOP_Continente_2025-gpkg.zip`,
+`200 application/zip`, 111 647 845 bytes, `Last-Modified` 2026-02-02). Ou seja:
+o endereço nunca foi uma página que se pudesse abrir, e portanto nunca foi uma
+citação que se pudesse seguir.
+
+As quatro linhas passam a citar o que se pode abrir: cada contagem regional
+aponta para o ficheiro de onde foi contada, e a linha do total — que é derivada
+— aponta para a página da DGT onde a CAOP 2025 é publicada
+(`www.dgterritorio.gov.pt/…/caop`, `200`). As três regionais ganharam também
+`document.locator`, que não tinham. Cada uma leva a sua `actualizacao` com os
+dois endereços e o motivo.
+
+**Alojar cópias fixadas dos ficheiros** — que é o que fecharia esta classe de
+defeito de vez — **fica adiado**: depende de uma verificação de licença por
+fonte que ninguém fez. Está no §4.
+
+#### 5 · `#page=` nas 23 linhas de PDF
+
+A página já estava no localizador («p. 119», «p. 140, Quadro 30») e o endereço
+mandava o leitor para o princípio de um PDF de 16 MB. O endereço passa a
+`…pdf#page=N`, e a página da linha imprime **«Abrir o documento na página N»**
+como rótulo da ligação, nas duas edições, com o endereço por baixo em letra
+pequena.
+
+**A página é lida do localizador, e de mais lado nenhum.** O exportador do motor
+deriva-a com `pin_page()`, só quando o endereço é mesmo um PDF e só quando o
+localizador diz uma página — e o localizador já foi provado pela validação V7,
+que exige que cada corrida de algarismos dele apareça no texto da própria linha
+do motor. Não há campo novo no manifesto onde uma página pudesse ser inventada;
+foi essa a escolha, e é a razão dela. Onde o localizador não diz página, o
+endereço fica como estava.
+
+Do lado do sítio, o rótulo não é uma dispensa: `source_url.page` entrou na tabela
+dos campos que o portão confere, e o portão extrai a página do campo
+`source_url` com a **sua própria cópia** da regra — como já fazia com o separador
+de `attributed_to` (§1.31). Um rótulo «página 42» sobre um endereço que fixa a
+página 24 pára a construção. **Posto à prova a falhar, e reposto:** 46 erros.
+
+#### 6 · Os localizadores passaram a dizer o que um leitor pode procurar
+
+**35 localizadores nomeavam um artefacto interno** — um ficheiro do repositório
+do motor ou uma chave de estrutura de dados: `raw/ine_data_populacao_evora.json →
+Dados["2025"], geocod 1C40705`, `cm_lists, list='PCP-PEV'`,
+`executive_2025.seats[…]`, `mandates['2021-2025'] → …`, `final_recipients, NIF …`,
+`total_mandates`, e os oito da DGAL, que nomeiam um `dgal_divida_AAAA.pdf` que
+não aparece no endereço. Nenhuma destas cadeias é alcançável a partir do
+endereço impresso ao lado. Passam a **0**.
+
+Cada um foi reescrito para o que a fonte publica: «INE, indicador 0012918, Évora
+(código 1C40705), dados de 2025»; «IEFP, desemprego registado por concelhos,
+dezembro de 2013, linha de Évora»; «SGMAI, autárquicas de 2025, órgão Câmara
+Municipal, Évora, lista «PS», mandatos»; «listagem de entidades PRR, beneficiário
+final NIF 504828576 (Município de Évora), valor contratado neste concelho».
+
+**As colunas da DGAL foram lidas, não deduzidas.** Os quatro PDF estão no motor,
+em `content/07 …/Technical Source/raw/pdfs/`, e foram abertos. As rubricas
+impressas, tal como estão:
+
+| Ano | Coluna (1) | Coluna (5) = (2)−(3)−(4) |
+| --- | --- | --- |
+| 2014 | `Limite 2014 (Art. 52º, nº 1, da Lei 73/2013)` | `Excluindo dívidas não orçamentais e Conta 268126 (FAM)` |
+| 2017 | `Limite 2017 (Art. 52º, nº 1, da Lei 73/2013)` | `Dívida total (exclui dívidas não orçamentais, exceções previstas na Lei n.º 73/2013 e no OE/2017 e FAM)` |
+| 2021 | `Limite 2021 (Art. 52º, nº 1, da Lei 73/2013)` | `Dívida total (exclui dívidas não orçamentais, exceções previstas na Lei n.º 73/2013 e no OE/2021 e FAM)` |
+| 2024 | `Limite 2024 (Art.º 52.º, n.º 1 da Lei n.º 73/2013)` | `Dívida total (Exclui dívidas não orçamentais, exceções previstas na Lei n.º 73/2013, no OE/2024 e FAM)` |
+
+O localizador **não transcreve a rubrica inteira**, e a razão é o portão do
+motor: a validação V7 recusa um localizador com uma corrida de algarismos que
+não apareça no texto da linha de origem, e as rubricas trazem `52`, `73/2013` e
+`268126`, que lá não estão. Podia ter-se afrouxado a V7; não se afrouxou. O
+localizador diz, sem algarismos, qual é a coluna — «última coluna do quadro — a
+dívida total que exclui as dívidas não orçamentais, as exceções e o FAM» e
+«primeira coluna do quadro — o limite legal de endividamento do ano» — e as
+rubricas impressas ficam registadas aqui, que é onde um leitor que queira a
+palavra exacta as encontra. A distinção que **não** se podia perder é a de
+«inclui»/«exclui»: as colunas (2) e (5) chamam-se as duas «Dívida total», e o
+que as separa é essa palavra.
+
+**O excerto truncado a meio de um número.** `evora-despesa-paga-2025` terminava
+em «… Quadro 14 … Despesas Correntes 77». Não é um caso isolado: o extractor do
+motor corta a citação a uma largura fixa. Foram examinados **os 70 excertos
+cruzados**; **15** eram prosa cortada a meio de palavra ou de número, e **12**
+puderam ser cortados no último ponto final completo, com duas condições provadas
+por programa: o novo excerto é um prefixo do antigo (logo, continua a ser um
+pedaço textual do excerto do motor, que é o que a validação V3 exige) e **o valor
+da linha continua lá dentro**.
+
+| Linha | Antes | Depois |
+| --- | ---: | ---: |
+| `evora-execucao-da-receita-2021` | 243 | 84 |
+| `evora-prazo-medio-de-pagamento-2025` | 201 | 195 |
+| `evora-prazo-medio-de-pagamento-2023` | 193 | 150 |
+| `evora-pagamentos-em-atraso-2025` | 224 | 67 |
+| `evora-receita-cobrada-2025` | 219 | 166 |
+| `evora-despesa-paga-2025` | 197 | 96 |
+| `evora-divida-total-2025` | 223 | 185 |
+| `evora-margem-endividamento-2025` | 218 | 59 |
+| `evora-excesso-endividamento-2014` | 264 | 259 |
+| `evora-excesso-endividamento-2019` | 264 | 259 |
+| `evora-contas-2024-votos-favor` | 210 | 51 |
+| `evora-contas-2024-votos-contra` | 210 | 51 |
+
+`evora-despesa-paga-2025` termina agora onde o plano pedia: «…(54.575.385,72€ de
+correntes e 10.989.664,15€ de capital).»
+
+**Três ficaram como estavam, e diz-se porquê:** em `evora-execucao-da-receita-2025`,
+`evora-orcamento-2025` e `evora-pael-emprestimo` o valor da linha aparece
+**depois** do último ponto final completo. Cortar aí tirava a prova do excerto,
+e alongar não é possível — o excerto do motor é ele próprio o pedaço cortado,
+não há mais texto deste lado da fronteira. Corrigir isto é corrigir o extractor
+do motor, e é dívida: §4.
+
+#### 7 · As linhas de série de dados deixaram de se chamar «Documento»
+
+**57 das 132 linhas** têm por endereço um ponto de acesso de dados — o
+`json_indicador` do INE, o `api/dissemination` do Eurostat, os ficheiros JSON
+estáticos do portal de resultados eleitorais. Um pedido a um destes devolve uma
+resposta; não abre uma página. Chamar-lhe «Documento», e ao que ela traz
+«Excerto», diz ao leitor que existe uma frase impressa algures, e não existe.
+
+Na página da linha, e **só** nos rótulos: `Documento` → **`Série`**, `Endereço` →
+**`Pedido`**, `Excerto` → **`Campo devolvido`**. Nas duas edições, com paridade
+de chaves. Nenhum campo, nenhum bloco e nenhuma ordem mudaram.
+
+O critério é um padrão de endereço, e é declaradamente provisório: `json_indicador`
+(8 linhas), `/api/` (39) ou um caminho terminado em `.json` (10) — 57 ao todo,
+exactamente a contagem que a medição tinha feito por outra via. O campo que devia
+decidir isto é `document.kind`, e fica para o redesenho da página de confiança
+(§4).
+
+#### 8 · A máquina deixou de se descrever a si própria
+
+Cortes, nas duas edições. Cada um é uma frase em que o sítio explicava o seu
+próprio funcionamento a quem só queria ler um número:
+
+| O que saiu | Onde | Ocorrências (PT+EN) |
+| --- | --- | ---: |
+| «A construção do sítio falha se o texto desta página deixar de ser igual, carácter a carácter…» | página de linha, nota do excerto | 194 |
+| «Proveniência completa: todos os campos preenchidos e conferidos contra a fonte.» + a caixa que a continha | página de linha, estado | 240 |
+| «Escrever aqui uma paráfrase plausível seria exactamente a fabricação que este sistema existe para impedir.» | página de linha, excerto por confirmar | 24 |
+| «É refeita a cada construção do sítio e tem de dar exactamente o valor publicado; se não der, não se constrói nada.» | página de linha, expressão | 46 |
+| «Este trabalho já tem a leitura do observatório: a medida…, a frase…, o método e as ressalvas.» | página de leitura | 10 |
+| «A frase abaixo é prosa da casa, e não uma citação…» | página de leitura | 10 |
+| «As descrições são reformulações do título, não resumos do conteúdo, e aguardam o director.» | página de leitura | 20 |
+| «A descrição deste trabalho não é uma reformulação do título…» | página de leitura | 4 |
+
+E dois encurtamentos, de explicação para estado:
+
+- «Este estudo ainda não tem ficheiros para descarregar. Quando tiver, aparecem
+  aqui — com a mesma disciplina…» → **«Sem ficheiros para descarregar.»**
+- «Alojado aqui na forma exacta em que foi publicado. A única coisa que lhe foi
+  acrescentada é uma faixa no topo, com a marca do observatório e o caminho de
+  volta a esta página; os estilos, os gráficos e o texto do documento não foram
+  tocados.» → **«Alojado aqui na forma exacta em que foi publicado, com uma
+  faixa no topo e mais nada.»**
+
+Onde o estado deixou de precisar de nota, a caixa desapareceu com ela: uma linha
+com proveniência completa já não desenha um quadrado a dizê-lo — **o selo cheio
+já o diz**, e essa era a definição do defeito. A etiqueta da expressão passou de
+«Reavaliada na construção» a «Reavaliada em cada construção», que é o estado que
+a frase cortada dizia por extenso.
+
+**O que NÃO foi tocado, de propósito:** a política de correcções na página de
+linha, a nota de não-ordenação de partidos, as ressalvas da página de Évora e a
+linha do domínio no rodapé. São matéria da fase da voz e do Sobre, e não são
+defeitos: são decisões editoriais por tomar (§4).
+
+#### 9 · `/municipios` existe, e os 308 concelhos têm nome
+
+`/municipios` devolvia **404**, e a única porta para uma página de município era
+um ponto aceso dentro de um SVG. O teste dos dois minutos falhava para 307
+concelhos em 308.
+
+`/municipios` · `/en/municipalities`: os **308** concelhos, agrupados pelo
+distrito ou ilha que a própria Carta Administrativa lhes dá, pela ordem em que a
+carta os regista. Cada um é um nome e um estado — «sem página ainda» — e Évora
+leva à sua página. A contagem entra por `<Claim id="municipios-portugal-caop-2025" chip/>`,
+a mesma linha que o mapa e o cabeçalho já citavam.
+
+**Os nomes existem**: `src/data/caop-centroids.mjs` guarda, por concelho, nome,
+índice do distrito ou ilha e posição — os 308 registos, os mesmos que o mapa
+desenha e que `dados/municipios-308.csv` publica. **O que não existe é código do
+INE nem código da CAOP por concelho**, e por isso nenhum aparece: escrevê-los de
+memória seria inventá-los. Não há aqui **nenhuma medida por concelho**: isso é o
+desdobramento, e é outro trabalho.
+
+O mapa da primeira página e o «Voltar ao mapa dos municípios» da página de Évora
+passam a levar aqui.
+
+#### 10 · O mapa do sítio ganhou `lastmod` — onde há data honesta
+
+Não havia nenhum. A tentação óbvia é carimbar a data da construção nas 264
+linhas, e isso diria a um motor de busca que 264 páginas mudaram hoje porque o
+sítio foi reconstruído hoje. **Um carimbo de build não é uma data de alteração.**
+
+`src/lib/frescura.mjs`, por tipo de página:
+
+| Tipo | De onde vem a data |
+| --- | --- |
+| página de linha | a mais recente entre `access_date` e a data da última correcção; numa linha derivada, a mais recente das linhas de origem — que é quando os dados que a produzem foram lidos |
+| página de estudo | as datas do arquivo (`src/data/studies.mjs`), quando existem |
+| página de conteúdo | a data do último commit que tocou o gabarito ou os dados que a compõem |
+
+**E onde não há data honesta, não há `lastmod`.** 258 dos 264 endereços têm data;
+**6 não têm** — as páginas dos três trabalhos cuja data de publicação continua
+`[a verificar]` (§1.7), nas duas edições. É precisamente a informação que falta. Se o `git` não
+existir onde a construção acontece, as páginas de conteúdo ficam todas sem
+`lastmod` em vez de ganharem um carimbo inventado.
+
+---
+
+**O motor, e o defeito que estava lá e ninguém tinha visto.** O plano deste bloco
+mandava conferir, antes de tudo, o que o exportador faz às correcções de uma
+linha cruzada quando ela volta a atravessar. Faz o pior que podia fazer:
+`render_claim()` escrevia a cadeia literal `corrections: []` em **todas** as
+corridas. Uma linha cruzada corrigida do lado do sítio — pelo caminho
+documentado, `corrections[]` mais `check-cruzamento.mjs --accept-correction` —
+perdia a correcção na reexportação seguinte, e o registo da travessia era
+reescrito a dizer `corrections_at_export: 0`, de modo que **a conferência de
+aceitação do sítio não via nada**. Uma publicação cuja tese inteira é que nada
+desaparece estava a apagar o registo das suas próprias confissões, em silêncio.
+
+Foi conferido contra a versão em `master` antes de se lhe tocar, e não deduzido:
+a linha de correcções da saída é `corrections: []` e o registo diz `0`,
+independentemente do que o ficheiro do sítio publique.
+
+O exportador passou a ler o que o sítio já publica e a carregá-lo, verbatim. Pode
+**acrescentar** (o manifesto declara correcções novas, casadas por data, natureza
+e valores para que uma segunda corrida as reconheça e não as duplique); não pode
+**remover**. `corrections_at_export` passou a ser o comprimento real, e
+`site_corrections` — a história do que o sítio admitiu — é carregada para a
+frente quer a corrida mude alguma coisa quer não. Três validações novas
+(V9, V10 e a da página) e **sete conferências novas** no ficheiro de testes, que
+passou de 17 para 24: uma reexportação preserva uma correcção do sítio · uma
+correcção declarada dos dois lados atravessa uma só vez · correcções malformadas
+são recusadas · um endereço só muda com o acontecimento escrito · `#page=` é lido
+do localizador e só de um PDF.
+
+**Conferido nesta passagem:** `npm run build` fecha com código 0 · `typecheck`
+limpo · 316 páginas · 5 393 ligações internas, **0 partidas** (o conferidor foi
+posto à prova com uma ligação partida plantada) · `check-cruzamento --with-origin`
+confere as 70 linhas contra o motor · livro-razão 132 afirmações, **dívida 12**
+(inalterada: nenhum campo `[a verificar]` foi preenchido nem criado) ·
+**29 afirmações não citadas** (inalterado) · o portão de HTML e os cinco estragos
+plantados descritos acima, cada um apanhado e reposto.
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
@@ -2153,6 +2541,18 @@ aparecem têm todos linha no livro-razão. As descrições continuam como estava
 São os três que governam os algarismos. O `npm run build` corre hoje mais dois,
 que não são sobre algarismos e por isso não estão na tabela: `check:documentos`
 antes do build (§1.20) e `check:dados` depois (§1.18).
+
+O `gate:html` deixou de ser só sobre algarismos a 15.08.2026: passou a conferir
+também **duas promessas de identidade que estavam escritas e não impostas** —
+que cada página construída tem exactamente uma porta de correcções, e que cada
+valor tem, ao pé de si, o selo que abre a **sua própria** linha. Não são portões
+novos: são duas conferências dentro do varrimento que já existia, cada uma
+motivada por conteúdo real que quebrou a regra (§1.36, itens 1 e 2).
+
+`source_url.page` é a única entrada da tabela dos campos que não é um campo do
+ficheiro da linha: é uma leitura do `source_url` — o `#page=N` — feita pelo
+portão com a **sua própria cópia** da regra, para que ele confira a linha e não
+o gabarito. A razão é a mesma do separador de `attributed_to` (§1.31).
 
 ### 2.2 As seis origens legítimas de um algarismo numa página
 
@@ -2182,7 +2582,7 @@ antes do build (§1.20) e `check:dados` depois (§1.18).
    compara o texto renderizado com esse campo da afirmação, **carácter a
    carácter** (espaços normalizados). Vale para `unit`, `source`,
    `document.title`, `document.edition`, `document.locator`, `source_url`,
-   `access_date`, `reference_date`, `excerpt`, `source_flag`,
+   `source_url.page`, `access_date`, `reference_date`, `excerpt`, `source_flag`,
    `source_flag_note`, `derivation`, `derived_from`, `attributed_to`, `check` e
    `id` — e para mais nada: um campo desconhecido falha o build, e `value` está
    fora de propósito, porque um valor entra por `<Claim/>` e por mais nenhum
@@ -2364,33 +2764,76 @@ fácil, não para tornar o desonesto impossível.
 
 ---
 
-## 4. O que fica para o director
+## 4. O registo dos defeitos e dos adiamentos
 
-1. **Fechar o Método.** O texto português está publicado. Falta: resolver os
-   quatro marcadores (forma pública do nome, endereço de contacto, modelo de
-   financiamento, número exato das autárquicas) e rever a tradução inglesa. A
-   frase «os dados por trás de cada gráfico são descarregáveis» deixou de estar
-   por cumprir (§1.18).
-2. **Migrar os estudos.** A metade mecânica está feita: **as treze edições estão
-   alojadas**, com manifesto e portão próprio (§1.20, §1.21). Falta a outra
-   metade, que é escrita e não mecânica: a página do observatório sobre cada
-   trabalho — a leitura curta, os números do estudo com linha no livro-razão, a
-   proveniência de cada um. É essa que levanta o `noindex`, e são vinte: dez
-   trabalhos em duas línguas.
-3. **Fechar a proveniência.** Restam **nove** afirmações com campos
-   `[a verificar]`: água não faturada, os dois avisos do PT2030, o ciclo de
-   substituição de condutas, o saldo natural, e o excerto das quatro contagens
-   da CAOP. A 2026-08-13 fecharam-se as sete do PIB per capita (cinco contra a
-   fonte primária do Eurostat; as duas do Alentejo eram derivadas e passaram a
-   dizê-lo) e retiraram-se as cinco linhas da casa, que não eram dívida — ver
-   §1.27.
+Esta secção era uma lista de recados para o director, escrita em 12.08.2026 e já
+desactualizada em três pontos. Passa a ser outra coisa, e é uma regra e não um
+hábito:
 
-4. **Datas e descrições do arquivo.** Só «Os Pelouros» tem data de publicação
-   confirmada (2026-08-12) e descrição escrita pela direção. Nas outras doze
-   entradas a data continua `[a verificar]` e a descrição é reformulação do
-   título (§1.7). A data de **última actualização** (`updated`) está por
-   confirmar nas treze — pousar o documento de um estudo não a descobre.
-5. **Ligar o deploy** e o 301 de `oestadodopais.pt` para o domínio acentuado.
-6. **Em fila, já aceite:** localização de exibição dos números por edição
-   (§1.6) — cadeia exacta preservada no livro-razão, renderização localizada.
-7. **Decidir** sobre: tradução da linha de autoria (§1.5) · botão de tema (§1.9). As quatro linhas de PPS por habitante foram retiradas (§1.29).
+> **Um bloco de trabalho não começa enquanto os defeitos que o bloco anterior
+> encontrou não estiverem, ou corrigidos, ou adiados aqui por escrito — com o
+> motivo e a fase a que pertencem.** Um defeito medido e não registado volta a
+> ser descoberto, e da segunda vez custa a mesma coisa.
+
+O que está aqui é, portanto, tudo o que `BRIEF-confianca.md` (Partes 1–5, medido
+a 15.08.2026) encontrou e **não** foi fechado no bloco dos defeitos (§1.36), mais
+o que continuava aberto de antes. Cada item diz porque não foi feito agora e a
+quem pertence.
+
+### 4.1 O que fica adiado — e para que fase
+
+**Fase 3 · o redesenho da página de linha e a travessia dos recibos.** É a fase
+onde a página da linha passa a ser a prova, e não uma ficha sobre a prova.
+
+| Item | O que está por fazer | Porque não foi feito aqui |
+| --- | --- | --- |
+| `verifications[]` | Nenhuma das 132 linhas regista uma reconferência independente. O único campo de tempo é `access_date` («Lido a»). A refetch cega de 15.08.2026 sobre 24 linhas de Évora aconteceu e **não está escrita em lado nenhum**. | É um campo novo no formato do livro-razão, com regras próprias (quem, por que caminho, com que resultado) e o portão a aprender a compará-lo. É desenho, não defeito. |
+| A travessia dos recibos | O motor tem **168 recortes** da linha impressa, com `#page=N`, e o sítio serve **216** dentro de `/estudos/*/documento` — em nenhum mapa do sítio e em nenhum menu. A página de linha não os vê. | Precisa de `document.page` e `document.crop` (com o resumo do próprio recorte, que hoje não existe), de os recursos atravessarem por `publisher/` e de o portão aprender a conferir uma imagem. Três extensões de formato. |
+| A origem «calculado sobre um ficheiro alojado» | 7 linhas de soma sobre um registo (3 do PRR, 4 da CAOP) publicam `excerpt: "[a verificar]"` porque não há frase para transcrever. É o limite 12 do §2.3, e continua aberto. | Fecha-se alojando o ficheiro de dados e correndo o `check` sobre ele — o padrão que `check:dados` já tem para os gráficos. É construção, não correcção. |
+| Cópias fixadas das fontes | A classe de defeito «o endereço morreu» disparou duas vezes num dia (§1.36, item 4). A resposta que a fecha é alojar a cópia fixada com o seu resumo, e a linha ligar as duas. | **Depende de uma verificação de licença por fonte, que ninguém fez.** dados.gov.pt e a CAOP declaram licenças abertas; o município, a DGAL, o IEFP e o INE têm de ser lidos um a um. Alojar primeiro e verificar depois seria a ordem errada. |
+| `document.kind` | Hoje a página da linha decide pelo padrão do endereço se uma fonte é uma série de dados ou um documento (§1.36, item 7). Funciona para as 57 linhas de hoje e é uma heurística. | O campo pertence ao redesenho, onde há mais do que duas classes a distinguir (PDF, página, série, registo, ficheiro alojado). |
+| O extractor de citações do motor corta a meio | 15 excertos cruzados estavam cortados a meio de palavra ou de número; 12 puderam ser aparados no último ponto final, 3 **não** (`evora-execucao-da-receita-2025`, `evora-orcamento-2025`, `evora-pael-emprestimo`), porque o valor da linha aparece depois desse ponto. | O corte é do lado do motor, a uma largura fixa. Alargá-lo muda excertos de estudos já publicados e conferidos byte a byte; é trabalho do motor, não do sítio. |
+| O PRR: o instantâneo lido já não é servido | As cinco linhas do PRR foram somadas sobre o ficheiro de 2026-08-03, que devolve 404. O publicador substitui o ficheiro todos os dias e não arquiva o anterior. **Se os valores de Évora mudaram entre esse instantâneo e o de hoje é coisa que não se pode saber.** | Refazer a soma sobre o ficheiro de hoje é uma leitura nova, com data nova, e muda cinco valores publicados. É trabalho de aquisição no motor, com o seu registo de actualização — não um remendo de endereço. |
+| A linha do INE que não se conseguiu medir | O `json_indicador` do INE serviu o primeiro pedido e depois devolveu 429 e esgotou o tempo em três tentativas. Não se consegue separar o INE a limitar a nossa sondagem de um bloqueio a quem lê. | Fica **por medir**, e não como defeito. Mede-se com um pedido isolado, noutro dia. |
+
+**Fase 1 e 2 · a voz e o desenho.** Nada disto é defeito; é matéria por decidir,
+e por isso não foi tocada neste bloco.
+
+| Item | Estado |
+| --- | --- |
+| As frases de moldura que ficam | A política de correcções repetida em 264 páginas de linha, a nota de não-ordenação de partidos em 122, a linha do domínio no rodapé de 296. O alvo do `BRIEF` §6.3 é **≤ 12 frases distintas**; a medição de hoje dá **77** pela régua de `scripts/medir-defeitos.mjs`. Cada uma destas mudanças é editorial: onde é que a política passa a viver. |
+| O aparelho da página de Évora | 1 012 palavras, 41 % da prosa da página; quatro dos nove itens de «o que esta página não sabe» repetem uma ressalva de «Método e ressalvas». Cortar isto é reescrever, e reescrever é a fase da voz. |
+| `/sobre` e `/correcoes` | `ABOUT.md` existe no repositório e não é publicado; a única superfície «sobre» é o Método. `/correcoes` seria a casa única da política. Ambos são desenho de páginas novas. |
+| `EDITION` no rodapé | `12.08.2026`, à mão em `site.config.mjs`, em 296 páginas. O `BRIEF` §6.5 propõe substituí-la por «a medir agora / a seguir». É uma decisão sobre o que o cabeçalho promete. |
+| `/agenda` e o calendário das fontes | Não existem. `core/prereg.py` está construído, ligado ao portão do motor e tem **zero registos**. Não há nenhuma estrutura de agenda em lado nenhum, e tudo o que corre a horas olha para trás. |
+| A ordenação por partido | Continua a não existir, e é para continuar. Não é dívida: é uma recusa. |
+
+### 4.2 O que continua aberto de antes, e não mudou neste bloco
+
+1. **Fechar o Método.** Quatro marcadores por resolver no texto (forma pública do
+   nome, endereço de contacto, modelo de financiamento, número exacto das
+   autárquicas) e a tradução inglesa por rever pela direção.
+2. **Datas e descrições do arquivo.** Só «Os Pelouros» tem data de publicação
+   confirmada. Nas outras entradas a data é `[a verificar]` — e é essa falta que
+   deixa **6 dos 264 endereços do mapa do sítio sem `lastmod`** (§1.36, item 10):
+   a consequência da dívida passou a estar à vista, em vez de ser tapada com um
+   carimbo. `updated` está por confirmar em todas.
+3. **A dívida de proveniência: 12 linhas.** Água não faturada, os dois avisos do
+   PT2030, o ciclo de substituição de condutas, o saldo natural, o excerto das
+   quatro contagens da CAOP e das três somas do PRR. Nenhuma foi preenchida
+   neste bloco, e nenhuma foi criada.
+4. **29 afirmações não são citadas por nenhuma página de conteúdo.** São a linha
+   de base institucional que a primeira página não desenha toda.
+5. **Localização dos números por edição** (§1.6) e as duas decisões em fila:
+   tradução da linha de autoria (§1.5) e botão de tema (§1.9).
+6. **O 301 de `oestadodopais.pt`** para o domínio acentuado.
+
+### 4.3 O que este bloco deixou construído e ainda não foi exercido
+
+- **A régua** (`scripts/medir-defeitos.mjs`). Não é um portão. Corre à mão, e é
+  ela que torna comparável o «antes» e o «depois» do próximo bloco.
+- **A página do marcador** (`/a-verificar`). Está ligada de duas páginas; nenhuma
+  outra superfície do sítio lhe aponta ainda.
+- **O estado vazio de `/municipios`** — «sem página ainda», 307 vezes. É o
+  primeiro uso a sério do estado vazio desenhado em §1.34, e é para ser
+  substituído concelho a concelho.

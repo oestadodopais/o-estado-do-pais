@@ -2296,3 +2296,87 @@ a.src-chip:hover::before {
 .leitura-frase-outra .claim-com-chip {
   white-space: nowrap;
 }
+
+/* =============================================================== a porta das
+   correções. Vive no aparelho de cada tipo de página; quando a página não tem
+   coluna de aparelho, entra antes do rodapé, com um fio a separá-la do corpo. */
+.porta-correccoes {
+  display: grid;
+  gap: 6px;
+}
+.porta-correccoes-rodape {
+  margin-top: clamp(30px, 4vw, 46px);
+  border-top: 1px solid var(--rule);
+  padding-top: 16px;
+  max-width: 68ch;
+}
+
+/* ======================================================== índice de concelhos.
+   Uma lista de nomes e de estados. Sem números por concelho: a única medição da
+   página é a contagem, e essa entra pelo livro-razão. */
+.concelhos {
+  margin-top: clamp(28px, 3.5vw, 40px);
+  display: grid;
+  gap: clamp(20px, 2.6vw, 30px);
+}
+.concelhos-grupo-k {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 6px;
+  margin: 0 0 10px;
+}
+.concelhos-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 2px 18px;
+}
+.concelho {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.concelho-nome {
+  font-size: 14.5px;
+  color: var(--ink);
+}
+.concelho-estado {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.concelho-com-pagina a {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.concelho-com-pagina .concelho-estado {
+  color: var(--ink);
+}
+
+/* O endereço de uma linha: o rótulo que diz o que a ligação abre, e por baixo o
+   endereço tal como está guardado — os dois dentro da mesma âncora, para que o
+   portão continue a poder conferir o destino contra o campo. */
+.linha-endereco-abrir {
+  display: block;
+  font-size: 13px;
+}
+.linha-endereco-bruto {
+  display: block;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}

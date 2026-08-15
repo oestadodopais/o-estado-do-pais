@@ -15,12 +15,12 @@ document:
   title: "Prestação de Contas 2025"
   edition: "2025"
   locator: "PRESTACAO_CONTAS_2025.pdf, p. 141, Quadro 33"
-source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf"
+source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=141"
 access_date: "2026-08-10"
 reference_date: "2023"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "2022 2023 2024 2025 69 22 104 137 Unidade: Dia Em 31 de dezembro de 2025, o PMP do Município de Évora é de 137 dias, mais 33 dias que no ano anterior. Pelo segundo ano consecutivo, o Município "
+excerpt: "2022 2023 2024 2025 69 22 104 137 Unidade: Dia Em 31 de dezembro de 2025, o PMP do Município de Évora é de 137 dias, mais 33 dias que no ano anterior."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null

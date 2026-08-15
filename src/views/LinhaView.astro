@@ -21,6 +21,7 @@ import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
 import HistoricoDaLinha from '../components/HistoricoDaLinha.astro';
+import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import {
   getClaim,
   camposPorVerificar,
@@ -63,10 +64,43 @@ const url = typeof claim.source_url === 'string' && /^https?:\/\//.test(claim.so
   ? claim.source_url
   : null;
 
+/**
+ * O endereço é um ponto de acesso de dados, e não um documento?
+ *
+ * Rótulos. Um pedido a `json_indicador` do INE ou a `api/dissemination` do
+ * Eurostat devolve uma resposta, não abre uma página: chamar-lhe «Documento» e
+ * ao que ela traz «Excerto» diz ao leitor que existe uma frase impressa algures
+ * — e não existe. São **57 das 132 linhas** (BRIEF-confianca §1.4).
+ *
+ * A regra é um padrão de endereço, e é explicitamente provisória: o campo que
+ * devia decidir isto é `document.kind`, que fica para o redesenho da página de
+ * confiança (DECISIONS §4). Não muda nada além dos rótulos — nenhum campo, nenhum
+ * bloco, nenhuma ordem.
+ */
+const semFragmento = typeof claim.source_url === 'string' ? claim.source_url.split('#')[0] : '';
+const ehSerieDeDados =
+  semFragmento.includes('json_indicador') ||
+  semFragmento.includes('/api/') ||
+  /\.json(\?|$)/.test(semFragmento);
+
+/**
+ * A página do PDF, quando o endereço a fixa.
+ *
+ * Lê-se do próprio endereço — `…pdf#page=119` — e de mais lado nenhum. O
+ * número não é escrito aqui nem calculado: sai do campo `source_url` da linha,
+ * e o portão confere-o contra esse campo, carácter a carácter, como confere o
+ * resto (`data-linha-campo="source_url.page"`).
+ */
+const paginaDoPdf = (claim.source_url ?? '').match(/#page=(\d+)$/)?.[1] ?? null;
+
 /** As linhas da ficha que existem nesta afirmação. Uma linha a null não se mostra. */
 const ficha = [
   { k: s.prov.fonte, campo: 'source', valor: claim.source },
-  { k: s.prov.documento, campo: 'document.title', valor: claim.document?.title ?? null },
+  {
+    k: ehSerieDeDados ? s.prov.serie : s.prov.documento,
+    campo: 'document.title',
+    valor: claim.document?.title ?? null,
+  },
   { k: s.prov.edicao, campo: 'document.edition', valor: claim.document?.edition ?? null },
   /* Onde no documento está o excerto. Opcional: a maior parte das fontes é uma
      página só e não há para onde apontar; quando há, é o que separa «está neste
@@ -91,6 +125,7 @@ const estudo = studyLabel(claim.study, lang);
   title={tituloDaLinha(claim, lang)}
   description={descricaoDaLinha(claim, lang)}
   noindex={incompleta}
+  portaNoRodape={false}
 >
   <div class="linha-cabeca">
     <span class="eyebrow">{s.livro.linha.eyebrow}</span>
@@ -114,7 +149,9 @@ const estudo = studyLabel(claim.study, lang);
     <!-- ================================================= corpo: a prova -->
     <div class="linha-corpo">
       <section class="linha-bloco" aria-labelledby="excerto">
-        <h2 class="linha-bloco-titulo" id="excerto">{s.prov.excerto}</h2>
+        <h2 class="linha-bloco-titulo" id="excerto">
+          {ehSerieDeDados ? s.prov.campoDevolvido : s.prov.excerto}
+        </h2>
         {
           claim.excerpt === null ? (
             <p class="linha-nota">
@@ -213,11 +250,32 @@ const estudo = studyLabel(claim.study, lang);
         {
           claim.source_url !== null && claim.source_url !== undefined && (
             <>
-              <dt>{s.prov.endereco}</dt>
+              <dt>{ehSerieDeDados ? s.prov.pedido : s.prov.endereco}</dt>
               <dd>
                 {url ? (
+                  /* O rótulo e o endereço vão DENTRO da mesma âncora, de
+                     propósito: o portão confere o `href` desta âncora contra o
+                     campo `source_url`, e um endereço fora dela deixaria de ser
+                     conferido. Ver DECISIONS §2.3, limite 11. */
                   <a class="ligacao-externa" href={url} rel="noopener noreferrer external">
-                    <CampoDaLinha id={id} campo="source_url" valor={claim.source_url} lang={lang} />
+                    {paginaDoPdf && (
+                      <span class="linha-endereco-abrir">
+                        {s.prov.abrirNaPagina}{' '}
+                        <CampoDaLinha
+                          id={id}
+                          campo="source_url.page"
+                          valor={paginaDoPdf}
+                          lang={lang}
+                        />
+                      </span>
+                    )}
+                    <CampoDaLinha
+                      id={id}
+                      campo="source_url"
+                      valor={claim.source_url}
+                      lang={lang}
+                      class={paginaDoPdf ? 'linha-endereco-bruto' : ''}
+                    />
                   </a>
                 ) : (
                   <CampoDaLinha id={id} campo="source_url" valor={claim.source_url} lang={lang} />
@@ -254,25 +312,25 @@ const estudo = studyLabel(claim.study, lang);
         )
       }
 
-      <div class:list={['aparelho-estado', incompleta && 'aparelho-estado-incompleto']}>
-        <span class="linha-campo-k">
-          {incompleta ? s.livro.linha.incompletaK : s.livro.linha.completaK}
-        </span>
-        {
-          incompleta ? (
-            <>
-              <ul class="aparelho-faltas">
-                {emFalta.map((campo) => (
-                  <li><code>{campo}</code></li>
-                ))}
-              </ul>
-              <p class="aparelho-nota">{s.livro.linha.incompletaV}</p>
-            </>
-          ) : (
-            <p class="aparelho-nota">{s.livro.linha.completaV}</p>
-          )
-        }
-      </div>
+      {
+        /* Só quando falta alguma coisa. Quando não falta, o selo cheio já o diz,
+           e uma caixa a declarar «proveniência completa» em 240 páginas era o
+           sítio a elogiar-se a si próprio (BRIEF-confianca §6.3). */
+        incompleta && (
+          <div class="aparelho-estado aparelho-estado-incompleto">
+            <span class="linha-campo-k">{s.livro.linha.incompletaK}</span>
+            <ul class="aparelho-faltas">
+              {emFalta.map((campo) => (
+                <li><code>{campo}</code></li>
+              ))}
+            </ul>
+            <p class="aparelho-nota">{s.livro.linha.incompletaV}</p>
+            <p><a href={routePath('marcador', lang)}>{s.livro.linha.marcadorLink} →</a></p>
+          </div>
+        )
+      }
+
+      <PortaDeCorreccoes lang={lang} class="aparelho-bloco" />
 
       <p class="rodape-nav aparelho-saidas">
         <a href={caminhoDoLivro(lang)}>{s.livro.linha.voltar}</a>

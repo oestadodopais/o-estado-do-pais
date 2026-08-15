@@ -15,12 +15,12 @@ document:
   title: "Certificação Legal das Contas"
   edition: "2025"
   locator: "Municipio-Evora-CLC-2025.pdf, p. 2"
-source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/Municipio-Evora-CLC-2025.pdf"
+source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/Municipio-Evora-CLC-2025.pdf#page=2"
 access_date: "2026-08-10"
 reference_date: "2024"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "foi rejeitada com 2 votos a favor e 5 votos contra. Tal facto conduziu à emissão de Declaração de Impossibilidade de Certificação Legal de Contas referente ao período findo a 31 de dezembro de 2024. Responsabil"
+excerpt: "foi rejeitada com 2 votos a favor e 5 votos contra."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null

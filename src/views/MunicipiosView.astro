@@ -1,0 +1,121 @@
+---
+/**
+ * O índice dos concelhos — `/municipios` · `/en/municipalities`.
+ *
+ * Porque existe: o tipo de página do município foi desenhado para os 308 e só
+ * um está construído. Até hoje, `/municipios` devolvia 404 e a única porta para
+ * Évora era um ponto aceso dentro de um SVG. O teste dos dois minutos falhava
+ * para 307 concelhos em 308 (BRIEF-confianca §4.2 (b)).
+ *
+ * O QUE ESTA PÁGINA **NÃO** FAZ. Não publica uma única medida por concelho. Não
+ * há aqui população, dívida nem execução orçamental de Beja ou de Faro: isso é
+ * o desdobramento, e é outro trabalho. Publicar aqui um número por concelho sem
+ * a linha do livro-razão correspondente seria exactamente o que o sítio existe
+ * para não fazer.
+ *
+ * De onde vem a lista: `src/data/caop-centroids.mjs`, que guarda **nome**,
+ * índice do distrito ou ilha, e posição — os 308 registos da CAOP 2025, os
+ * mesmos que o mapa da primeira página desenha e que `dados/municipios-308.csv`
+ * publica. Não há aqui código do INE nem código da CAOP por concelho: o módulo
+ * não os guarda, e escrevê-los de memória seria inventá-los. É por isso que
+ * cada entrada é um NOME e um estado, e nada mais.
+ *
+ * O único algarismo da página é a contagem, e entra por `<Claim chip/>` — a
+ * mesma linha do livro-razão que o mapa e o cabeçalho já citam.
+ */
+import Base from '../layouts/Base.astro';
+import Claim from '../components/Claim.astro';
+import { MUNICIPIOS, DISTRITOS, regiaoDe } from '../data/caop-centroids.mjs';
+import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
+import { VERBATIM } from '../data/verbatim.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+const path = routePath('municipios', lang);
+
+/** Que concelhos já têm página, pela posição na CAOP — nunca por um slug escrito à mão. */
+const paginaPorIndice = new Map(MUNICIPIOS_COM_PAGINA.map((m) => [m.caopIndex, m]));
+
+/* Agrupados pelo distrito ou ilha que a própria CAOP lhes dá. Ordem: a de
+   DISTRITOS, e dentro de cada um a ordem em que os registos estão — que é a
+   ordem alfabética da carta. Nada é reordenado à mão. */
+const grupos = DISTRITOS.map((nome, i) => ({
+  nome,
+  regiao: null,
+  entradas: [],
+})).filter(Boolean);
+
+MUNICIPIOS.forEach((m, i) => {
+  const g = grupos[m[1]];
+  g.regiao = regiaoDe(m[1]);
+  g.entradas.push({
+    nome: m[0],
+    pagina: paginaPorIndice.get(i) ?? null,
+  });
+});
+
+const comEntradas = grupos.filter((g) => g.entradas.length > 0);
+---
+
+<Base
+  lang={lang}
+  path={path}
+  title={s.municipios.metaTitle}
+  description={s.municipios.metaDescription}
+>
+  <div style="padding-top:clamp(20px,3vw,34px)">
+    <span class="eyebrow">{s.municipios.eyebrow}</span>
+    <h1 style="margin-top:12px">{s.municipios.h1}</h1>
+    <p class="lede" style="margin-top:16px">{s.municipios.lede}</p>
+    <p class="sec-sub" style="margin-top:10px">
+      {s.municipios.contagemA}
+      <Claim id="municipios-portugal-caop-2025" lang={lang} chip={true} />
+      {s.municipios.contagemB}
+    </p>
+    <p class="rodape-nav" style="margin-top:14px">
+      <a href={`${routePath('home', lang)}#mapa`}>{s.municipios.mapaLink}</a>
+    </p>
+  </div>
+
+  <div class="concelhos">
+    {
+      comEntradas.map((g) => (
+        <section class="concelhos-grupo">
+          <h2 class="concelhos-grupo-k">{g.nome}</h2>
+          <ul class="concelhos-lista">
+            {g.entradas.map((e) =>
+              e.pagina ? (
+                <li class="concelho concelho-com-pagina">
+                  <a href={routePath('municipio', lang, { slug: e.pagina.slug })}>
+                    {e.pagina.nome[lang] ?? e.pagina.nome.pt}
+                  </a>
+                  <span class="concelho-estado">{s.municipios.comPagina} →</span>
+                </li>
+              ) : (
+                <li class="concelho">
+                  <span class="concelho-nome">{e.nome}</span>
+                  <span class="concelho-estado">{s.municipios.semPagina}</span>
+                </li>
+              ),
+            )}
+          </ul>
+        </section>
+      ))
+    }
+  </div>
+
+  <div class="prov" style="margin-top:clamp(30px,4vw,44px)">
+    <div class="prov-row">
+      <span class="prov-study">{s.municipios.naoDizK}</span>
+      <span class="prov-vals">{s.municipios.naoDizV}</span>
+    </div>
+    <div class="prov-row">
+      <span class="prov-study">{s.municipios.fonteK}</span>
+      <span class="prov-vals verbatim" data-verbatim="caop-fonte" lang="pt-PT">
+        {VERBATIM['caop-fonte'].text}
+      </span>
+    </div>
+  </div>
+</Base>

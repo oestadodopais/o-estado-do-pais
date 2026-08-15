@@ -15,12 +15,12 @@ document:
   title: "Prestação de Contas 2025"
   edition: "2025"
   locator: "PRESTACAO_CONTAS_2025.pdf, p. 141"
-source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf"
+source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=141"
 access_date: "2026-08-10"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "encerrou 2025 com pagamentos em atraso, no valor de 4.976.172,24 €. 4.3.6. Indicadores do Financiamento e do Endividamento No quadro seguinte apresentamos alguns indicadores para uma melhor análise da estrutura de financiame"
+excerpt: "encerrou 2025 com pagamentos em atraso, no valor de 4.976.172,24 €."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null

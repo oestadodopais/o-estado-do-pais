@@ -15,12 +15,12 @@ document:
   title: "Prestação de Contas 2025"
   edition: "2025"
   locator: "PRESTACAO_CONTAS_2025.pdf, p. 140"
-source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf"
+source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=140"
 access_date: "2026-08-10"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "com uma margem de endividamento absoluta de 28.192.652,50€. Quadro 32 – Evolução da Capacidade de Endividamento EVOLUÇÃO DA CAPACIDADE DE ENDIVIDAMENTO 2022 / 2025 2022 2023 2024 2025 Endividamento dez/22 dez/23 dez/24"
+excerpt: "com uma margem de endividamento absoluta de 28.192.652,50€."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null

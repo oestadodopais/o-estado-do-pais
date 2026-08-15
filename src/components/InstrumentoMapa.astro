@@ -69,7 +69,8 @@ const molduras = [
       <div>
         <p class="layer-tag">{lang === 'pt' ? 'Relance' : 'At a glance'}</p>
         <div class="cover-num" style="margin-top:12px">
-          <Claim id="municipios-com-estudo-aprofundado" /> / <Claim id="municipios-portugal-caop-2025" />
+          <Claim id="municipios-com-estudo-aprofundado" lang={lang} chip={true} /> /{' '}
+          <Claim id="municipios-portugal-caop-2025" lang={lang} chip={true} />
         </div>
         <div class="cover-label">{s.home.instr2.coberturaLabel}</div>
       </div>
@@ -82,9 +83,9 @@ const molduras = [
         ) : (
           <b>Évora</b>
         )}
-        {s.home.instr2.legendaB}<Claim id="estudos-evora-publicados" />{
+        {s.home.instr2.legendaB}<Claim id="estudos-evora-publicados" lang={lang} chip={true} />{
           s.home.instr2.legendaC
-        }<Claim id="municipios-sem-estudo-aprofundado" />{s.home.instr2.legendaD}
+        }<Claim id="municipios-sem-estudo-aprofundado" lang={lang} chip={true} />{s.home.instr2.legendaD}
       </p>
 
       <div class="legend">
@@ -105,14 +106,14 @@ const molduras = [
             <div class="compo-row">
               <span class="compo-l">{l.rotulo}</span>
               <span class="compo-bar"><i style={`width:${barra(l.claim)}`}></i></span>
-              <span class="compo-n"><Claim id={l.claim} /></span>
+              <span class="compo-n"><Claim id={l.claim} lang={lang} chip={true} /></span>
             </div>
           ))
         }
         <div class="compo-tot">
           <span class="compo-l">{s.home.instr2.total}</span>
           <span></span>
-          <span class="compo-n"><Claim id="municipios-portugal-caop-2025" /></span>
+          <span class="compo-n"><Claim id="municipios-portugal-caop-2025" lang={lang} chip={true} /></span>
         </div>
       </div>
 
