@@ -301,6 +301,15 @@ export const STRINGS = {
       contasDivergenciaMunicipio: 'O município publica',
       contasDivergenciaDiferenca: 'Diferença',
 
+      tempoIndice: 'índice',
+      contasDivergenciaArredondada: '— a diferença é publicada arredondada ao euro; os dois valores acima diferem em cêntimos.',
+      /* A frase da camada 2 do instrumento. Só os anos que a página publica:
+         dizer «todos os anos» seria dizer mais do que se mostra. */
+      tempoSerieA: 'O índice de dívida do regulador desceu de ',
+      tempoSerieB: ' % em ',
+      tempoSerieC: ' para ',
+      tempoSerieD: ' % em ',
+      tempoSerieE: ', nos quatro anos que esta página publica.',
       tempoK: 'Quem administrou, e o que as contas registaram',
       tempoRelanceK: 'Índice de dívida, do primeiro ano legível ao último',
       tempoBreve:
@@ -404,6 +413,8 @@ export const STRINGS = {
       temaNenhum: 'Sem tema atribuído',
       descricoesK: 'Descrições',
       descricoesNota: 'As descrições são reformulações do título, não resumos do conteúdo, e aguardam o director.',
+      descricoesDoDocumento:
+        'A descrição deste trabalho não é uma reformulação do título: é a frase de abertura do próprio documento, nas duas edições, sem nada acrescentado.',
       descarregarK: 'Descarregar',
       descarregarVazio:
         'Este estudo ainda não tem ficheiros para descarregar. Quando tiver, aparecem aqui — com a mesma disciplina dos dados dos instrumentos: gerados da origem, com a proveniência no próprio ficheiro.',
@@ -703,6 +714,13 @@ export const STRINGS = {
       contasDivergenciaMunicipio: 'The municipality publishes',
       contasDivergenciaDiferenca: 'Difference',
 
+      tempoIndice: 'index',
+      contasDivergenciaArredondada: '— the difference is published rounded to the euro; the two figures above differ by cents.',
+      tempoSerieA: 'The regulator’s debt index fell from ',
+      tempoSerieB: ' % in ',
+      tempoSerieC: ' to ',
+      tempoSerieD: ' % in ',
+      tempoSerieE: ', across the four years this page publishes.',
       tempoK: 'Who governed, and what the accounts recorded',
       tempoRelanceK: 'Debt index, from the first readable year to the last',
       tempoBreve:
@@ -800,6 +818,8 @@ export const STRINGS = {
       temaNenhum: 'No subject assigned',
       descricoesK: 'Descriptions',
       descricoesNota: 'The descriptions restate the title; they are not summaries of the content, and they await the director.',
+      descricoesDoDocumento:
+        'This work’s description does not restate the title: it is the opening sentence of the document itself, in both editions, with nothing added.',
       descarregarK: 'Downloads',
       descarregarVazio:
         'This study has no files to download yet. When it does, they appear here — under the same discipline as the instrument data: generated from the source, with the provenance inside the file itself.',

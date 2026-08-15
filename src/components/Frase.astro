@@ -4,7 +4,8 @@
  * se trouxer, o portão de HTML apanha-o.
  *
  *   'palavras'                    — texto corrido
- *   { claim: 'id' }               — um número, citado do livro-razão
+ *   { claim: 'id' }               — um número, citado do livro-razão. Com a
+ *                                   propriedade `selos`, sai com o selo ao lado.
  *   { ref: '2024' }               — ano ou período de referência dos dados
  *   { nl: '100', motivo: '…' }    — outro contexto estrutural declarado
  *   { forte: '…' }                — negrito
@@ -20,13 +21,22 @@
  */
 import Claim from './Claim.astro';
 
-const { partes, lang = 'pt' } = Astro.props;
+/**
+ * `selos` — todo o `{ claim: … }` desta frase sai com o seu selo ao lado.
+ *
+ * IDENTIDADE §5.3: «onde aparece um valor, aparece o selo. Sem excepção de
+ * página.» Uma frase corrida com quatro medições precisa de quatro portas, não
+ * de uma no fim do parágrafo. Fica opcional porque as páginas anteriores a
+ * 15.08.2026 não o fazem e não se reescrevem aqui; tudo o que este bloco
+ * constrói passa `selos`.
+ */
+const { partes, lang = 'pt', selos = false } = Astro.props;
 ---
 
 {
   partes.map((parte) => {
     if (typeof parte === 'string') return <Fragment set:text={parte} />;
-    if (parte.claim) return <Claim id={parte.claim} lang={lang} />;
+    if (parte.claim) return <Claim id={parte.claim} lang={lang} chip={selos} />;
     if (parte.ref) return <span data-nonledger="data-de-referencia">{parte.ref}</span>;
     if (parte.forte) return <strong set:text={parte.forte} />;
     if (parte.email)

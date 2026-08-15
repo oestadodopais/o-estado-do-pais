@@ -47,8 +47,16 @@ export const LEITURAS = {
        lado delas está a tracejado — é o mesmo marcador, e não uma segunda
        linguagem de incerteza (IDENTIDADE §5.2, §6). */
     medidasNota: {
-      pt: 'Estes dois valores são somas sobre o registo público inteiro do plano de recuperação, não uma linha de um documento. Não há nenhuma frase para transcrever, e por isso o excerto da linha fica por confirmar e o selo aparece a tracejado. Inventar uma frase seria pior do que mostrar a falta.',
-      en: 'These two values are sums over the whole public register of the recovery plan, not a line in a document. There is no sentence to transcribe, so the row’s excerpt stays unconfirmed and the seal shows dashed. Inventing a sentence would be worse than showing the gap.',
+      pt: [
+        'Estes dois valores são somas sobre o registo público inteiro do plano de recuperação, não uma linha de um documento. Não há nenhuma frase para transcrever, e por isso o excerto da linha está ',
+        { marcador: 'a verificar', gloss: 'to verify' },
+        ' e o selo aparece a tracejado. Inventar uma frase seria pior do que mostrar a falta.',
+      ],
+      en: [
+        'These two values are sums over the whole public register of the recovery plan, not a line in a document. There is no sentence to transcribe, so the row’s excerpt reads ',
+        { marcador: 'a verificar', gloss: 'to verify' },
+        ' and the seal shows dashed. Inventing a sentence would be worse than showing the gap.',
+      ],
     },
     frase: {
       pt: [
@@ -143,8 +151,8 @@ export const LEITURAS = {
       {
         k: { pt: 'Isto não é PIB municipal', en: 'This is not municipal GDP' },
         v: {
-          pt: ['Não existe PIB da cidade, e o trabalho não inventa nenhum. O valor acrescentado das empresas não capta a administração pública, a maior parte da universidade e do hospital, e credita toda a atividade de uma empresa ao concelho da sua sede.'],
-          en: ['There is no GDP figure for the city, and the work invents none. Enterprise value added misses public administration, most of the university and the hospital, and credits a firm’s whole activity to its head-office concelho.'],
+          pt: ['Não existe PIB da cidade, e o trabalho não inventa nenhum. Como o próprio trabalho adverte nos seus limites, o valor acrescentado das empresas não capta a administração pública, a maior parte da universidade e do hospital, e credita toda a atividade de uma empresa ao concelho da sua sede.'],
+          en: ['There is no GDP figure for the city, and the work invents none. As the study itself warns in its own limits, enterprise value added misses public administration, most of the university and the hospital, and credits a firm’s whole activity to its head-office concelho.'],
         },
         valores: [],
       },
@@ -208,8 +216,8 @@ export const LEITURAS = {
       {
         k: { pt: 'Quase tudo é o município a falar de si', en: 'Almost all of it is the municipality speaking about itself' },
         v: {
-          pt: ['A maior parte deste trabalho é o município a relatar sobre si próprio. Existem duas vozes de fora, e as duas estão lá: a opinião assinada do auditor independente, e a série anual do regulador, que publica por município e por ano o mesmo conceito legal de dívida, compilado do lado de fora.'],
-          en: ['Most of this work is the municipality reporting on itself. Two outside voices exist and both are there: the independent auditor’s signed opinion, and the regulator’s annual series, which publishes per municipality and per year the same legal debt concept, compiled from outside.'],
+          pt: ['Como o próprio trabalho abre a dizer, a maior parte dele é o município a relatar sobre si próprio. Existem duas vozes de fora, e as duas estão lá: a opinião assinada do auditor independente, e a série anual do regulador, que publica por município e por ano o mesmo conceito legal de dívida, compilado do lado de fora.'],
+          en: ['As the study itself opens by saying, most of it is the municipality reporting on itself. Two outside voices exist and both are there: the independent auditor’s signed opinion, and the regulator’s annual series, which publishes per municipality and per year the same legal debt concept, compiled from outside.'],
         },
         valores: [],
       },
@@ -220,6 +228,14 @@ export const LEITURAS = {
           en: ['The accounts of the second-to-last year were rejected in a vote and were never certified.'],
         },
         valores: ['evora-contas-2024-votos-favor', 'evora-contas-2024-votos-contra'],
+      },
+      {
+        k: { pt: 'A dívida legal, e o limite contra o qual se lê', en: 'The legal debt, and the limit it is read against' },
+        v: {
+          pt: ['A frase acima diz que a dívida total ficou abaixo do limite. São estes os dois valores: a dívida total no fim do ano, e o limite legal do mesmo ano, ambos da prestação de contas do município.'],
+          en: ['The sentence above says total debt stayed below the limit. These are the two values: total debt at year end, and the legal limit for the same year, both from the municipality’s own accounts.'],
+        },
+        valores: ['evora-divida-total-2025', 'evora-limite-divida-2025'],
       },
       {
         k: { pt: 'O padrão nacional está atrasado', en: 'The national yardstick lags' },
@@ -248,26 +264,40 @@ export const LEITURAS = {
       },
     ],
     medidasNota: null,
+    /* A frase do último mandato foi reescrita a 15.08.2026 depois da revisão
+       cruzada: dizia «o desbaste parou», e a dívida que esta mesma página
+       mostra continua a cair de 2021 para 2025. O que 08 estabelece com os
+       seus números para esse mandato é a fila de pagamento — «a fila voltou a
+       alongar-se: 22 dias em 2023 e depois 137 em 2025». É isso que a frase
+       passa a dizer. Ver DECISIONS §1.35. */
     frase: {
       pt: [
         'Quinze anos de contas mostram uma dívida herdada que demorou anos a ser medida — ',
         { claim: 'evora-divida-31-10-2013' },
         ' € logo a seguir à mudança de executivo, ',
         { claim: 'evora-divida-inicio-mandato-reexpressa' },
-        ' € na reexpressão final —, uma década a desbastá-la, e um último mandato em que o desbaste parou.',
+        ' € na reexpressão final —, uma década a desbastá-la, e um último mandato em que a fila de pagamento voltou a alongar-se, de ',
+        { claim: 'evora-prazo-medio-de-pagamento-2023' },
+        ' para ',
+        { claim: 'evora-prazo-medio-de-pagamento-2025' },
+        ' dias.',
       ],
       en: [
         'Fifteen years of accounts show an inherited debt that took years to measure — ',
         { claim: 'evora-divida-31-10-2013' },
         ' € right after the executive changed, ',
         { claim: 'evora-divida-inicio-mandato-reexpressa' },
-        ' € in the final restatement —, a decade of grinding it down, and a last term in which the grinding stalled.',
+        ' € in the final restatement —, a decade of grinding it down, and a last term in which the payment queue lengthened again, from ',
+        { claim: 'evora-prazo-medio-de-pagamento-2023' },
+        ' to ',
+        { claim: 'evora-prazo-medio-de-pagamento-2025' },
+        ' days.',
       ],
     },
     origem: {
-      onde: 'content/08 Évora Mandates/Évora — Quinze Anos, Cinco Mandatos (pt-PT).md:1078',
-      pt: 'Uma história, três capítulos. O registo lê-se como um arco contínuo: um município … cuja verdadeira dívida herdada ainda estava a ser descoberta anos depois — €82 871 523 medidos duas semanas após a mudança de executivo de 2013 e €95 082 510 na reexpressão final — e que depois passou uma década a desbastar a montanha … No último mandato o desbaste parou e a fila voltou a alongar-se.',
-      en: 'One story, three chapters. The record reads as a single arc … and which then spent a decade grinding the mountain down.',
+      onde: 'content/08 Évora Mandates/Évora — Quinze Anos, Cinco Mandatos (pt-PT).md:1078-1086',
+      pt: 'Uma história, três capítulos. O registo lê-se como um arco contínuo: um município … cuja verdadeira dívida herdada ainda estava a ser descoberta anos depois — €82 871 523 medidos duas semanas após a mudança de executivo de 2013 e €95 082 510 na reexpressão final — e que depois passou uma década a desbastar a montanha … No último mandato o desbaste parou e a fila voltou a alongar-se: 22 dias em 2023 e depois 137 em 2025, com pagamentos em atraso de €4 976 172.',
+      en: 'One story, three chapters. … In the last mandate the grind stalled and the queue lengthened again: 22 days in 2023 and then 137 in 2025.',
     },
     metodo: [
       {
@@ -326,18 +356,30 @@ export const LEITURAS = {
     medidasNota: null,
     frase: {
       pt: [
-        'Os pelouros de Évora ficam sempre com a lista do presidente, e as contas do município não são cortadas de maneira que permita dizer quanto gastou cada vereador: o executivo real é mais pequeno do que o eleito, com ',
+        'Os pelouros de Évora ficam, em todos os mandatos que o trabalho conseguiu ler, com a lista do presidente, e as contas do município não são cortadas de maneira que permita dizer quanto gastou cada vereador: no mandato de ',
+        { ref: '2021–2025' },
+        ', ',
         { claim: 'evora-pelouros-2021-presidente' },
         ' e ',
         { claim: 'evora-pelouros-2021-vice-presidente' },
-        ' designações em duas pessoas.',
+        ' designações repartidas por duas pessoas; a câmara instalada em ',
+        { ref: '2025' },
+        ' tem ',
+        { claim: 'evora-camara-lugares' },
+        ' lugares.',
       ],
       en: [
-        'Évora’s portfolios always sit with the president’s own list, and the municipality’s accounts are not cut in a way that lets anyone say what each councillor spent: the real executive is smaller than the elected one, with ',
+        'Évora’s portfolios sit, in every term the study could read, with the president’s own list, and the municipality’s accounts are not cut in a way that lets anyone say what each councillor spent: in the ',
+        { ref: '2021–2025' },
+        ' term, ',
         { claim: 'evora-pelouros-2021-presidente' },
         ' and ',
         { claim: 'evora-pelouros-2021-vice-presidente' },
-        ' designations on two people.',
+        ' designations split between two people; the council installed in ',
+        { ref: '2025' },
+        ' has ',
+        { claim: 'evora-camara-lugares' },
+        ' seats.',
       ],
     },
     origem: {
@@ -349,8 +391,8 @@ export const LEITURAS = {
       {
         k: { pt: 'Nenhuma fonte publica dinheiro por pelouro', en: 'No source publishes money per portfolio' },
         v: {
-          pt: ['A correspondência entre as contas e os pelouros é deste trabalho, declarada por ele como sua e não como oficial, e cerca de metade das suas linhas recusa-a. A regra que o trabalho fixa é: descrição, nunca classificações.'],
-          en: ['The mapping between the accounts and the portfolios is this work’s own, declared by it as its own and not as official, and roughly half its lines refuse it. The rule the work sets is: description, never scores.'],
+          pt: ['A correspondência entre as contas e os pelouros é deste trabalho, declarada por ele como sua e não como oficial, e o próprio trabalho diz quais das suas linhas a recusam. Nenhuma dessas linhas atravessou para o livro-razão, e por isso esta página não conta quantas são. A regra que o trabalho fixa é: descrição, nunca classificações.'],
+          en: ['The mapping between the accounts and the portfolios is this work’s own, declared by it as its own and not as official, and the work itself says which of its lines refuse it. None of those lines crossed into the ledger, so this page does not count them. The rule the work sets is: description, never scores.'],
         },
         valores: [],
       },

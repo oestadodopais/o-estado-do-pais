@@ -1919,6 +1919,66 @@ concelho de que trata». A ligação sai do registo dos municípios pela posiç�
 CAOP, não de um endereço escrito à mão: um ponto aceso sem página não pode dar
 um caminho partido.
 
+
+**Revisão cruzada de 15.08.2026, e o que ela mudou nesta página.** Um revisor de
+outra família de modelos, sem contexto deste trabalho, auditou uma cópia da
+construção com defeitos plantados: apanhou os sete. As suas outras conclusões
+foram por isso tratadas como conclusões, e não como opiniões.
+
+1. **Os selos passaram a estar em todas as ocorrências, e não uma por página.**
+   `IDENTIDADE.md` §5.3 diz «onde aparece um valor, aparece o selo — sem
+   excepção de página», e as frases da leitura breve, a legenda da distância, o
+   «tecto legal» do mosaico do índice e o relance da linha do tempo tinham
+   valores sem porta. `Frase.astro` ganhou a propriedade `selos`, que faz de
+   cada `{ claim: … }` de uma frase um `<Claim chip>`. Fica opcional porque as
+   páginas anteriores a esta data não a usam e não se reescrevem aqui; tudo o
+   que este bloco constrói passa `selos`. Conferido depois da construção: **276
+   valores nas doze páginas deste bloco, nenhum sem selo** — e o mesmo
+   conferidor acusa vinte na primeira página, que é anterior a este bloco.
+2. **Os valores desenhados dentro de um SVG levam o selo ao lado do desenho.**
+   É a convenção que o instrumento n.º 1 já usa (`.brief` de
+   `InstrumentoConvergencia.astro`): um `<a>` dentro de um SVG não se lê como
+   porta. A barra da dívida e o fio do tecto legal têm agora a sua fila de
+   selos por baixo, rotulada.
+3. **A linha do regulador deixou de imprimir uma divisão falsa.** Escrevia
+   «dívida € / limite € = índice %», e quem dividisse 77 961 663 por 48 206 020
+   obtinha 1,617 e não 242,6 — porque o índice é essa razão vezes o tecto legal,
+   e o tecto legal não estava na linha. Passou a «dívida … · limite legal … ·
+   índice …», três factos lado a lado; a aritmética completa está na página da
+   linha do índice, que é onde ela é conferida a cada construção.
+4. **A diferença entre as duas contas da mesma dívida diz agora que está
+   arredondada.** Os dois valores impressos diferem em 926,42 e a linha publica
+   926. **A revisão pedia que a linha passasse a 926,42 sem arredondamento; isso
+   não foi feito, e a razão é dura:** o valor dessa linha é impresso dentro do
+   próprio documento do trabalho 07 («difere em €926»), que está alojado neste
+   sítio, é conferido byte a byte contra a origem por `check:documentos` e não
+   se toca. Mudá-lo no motor mudava o documento publicado. O que se fez foi a
+   página dizer o que a linha já dizia na sua aritmética e a página calava: que
+   a diferença é publicada arredondada ao euro e que os dois valores acima
+   diferem em cêntimos. A alternativa honesta — desarredondar a linha — fica
+   para o dia em que o documento 07 for reeditado por outra razão.
+5. **A camada 2 do instrumento da linha do tempo passou a ser o que
+   `IDENTIDADE.md` §4 pede: «uma frase, e a distância desenhada».** Tinha duas
+   frases de atribuição, que são fundo e não leitura breve. Agora tem uma frase
+   sobre a mudança medida e um desenho dos quatro índices contra o tecto legal,
+   com o amarelo a marcar a medição e nenhuma cor nova. A frase diz «nos quatro
+   anos que esta página publica» e não «todos os anos»: só 2014, 2017, 2021 e
+   2024 estão aqui. As frases de atribuição passaram para o fundo do
+   instrumento.
+6. **Duas ressalvas que eram dos trabalhos apareciam como facto nu.** «não
+   capta a administração pública, a maior parte da universidade e do hospital»
+   é um limite que 06 escreve sobre si próprio, e «a maior parte deste
+   documento é o município a relatar sobre si próprio» é a abertura de 07.
+   Passam com «como o próprio trabalho adverte» / «como o próprio trabalho abre
+   a dizer», nas duas edições.
+7. **O «por isso» do bloco de 2021–2025 fica, porque 07 estabelece a causa.**
+   A revisão pedia para não afirmar um nexo causal sem fonte. 07 escreve-o duas
+   vezes: «foram rejeitadas pela própria Câmara — 2 votos a favor, 5 contra, na
+   reunião de 2025-05-28 — **o que forçou** uma Declaração de Impossibilidade de
+   Certificação Legal das Contas para 2024» (pt-PT:34) e «e o auditor emitiu
+   **por isso** uma Declaração de Impossibilidade…» (pt-PT:374). O nexo é da
+   fonte, não da página.
+
 ### 1.35 As páginas de leitura, e o escudo que passou a ser lido trabalho a trabalho
 
 §1.8 pôs todas as páginas de estudo fora do índice, e escreveu que se levantava
@@ -1954,8 +2014,8 @@ Os pares, com a frase de origem:
 | 04 | «A maior parte do dinheiro público prometido a Évora é administrada e recebida fora da câmara, e a fatia vencida pesa mais do que a que já foi paga» / “Most of the public money promised to Évora is administered and received outside the town hall, and the overdue share weighs more than the share already paid” | pt-PT:271 «O endereço da responsabilização, na maior parte dos casos, não são os paços do concelho.» · pt-PT:267 «As localizações de projeto vencidas transportam 61,64 % de tudo o que foi aprovado para o concelho.» |
 | 06 | «Évora é uma cidade próspera dentro de uma região que está abaixo da média nacional, e a sua economia empresarial está concentrada em muito poucas mãos» / “Évora is a prosperous city inside a region that sits below the national average, and its enterprise economy is concentrated in very few hands” | pt-PT:20 «A própria cidade está **acima** da média nacional no único indicador que existe ao nível do concelho: o índice de poder de compra do INE de 2023 põe Évora em 111,5 (Portugal = 100), com a sua região em 93,9.» · pt-PT:44 «A concentração é o facto estrutural. As quatro maiores empresas detêm 21,5% de todo o VAB empresarial do concelho…» |
 | 07 | «O orçamento de Évora afastou-se do dinheiro que chega, e o aperto aparece nas faturas por pagar e na fila de pagamento, não na dívida legal» / “Évora’s budget has drifted from the money that arrives, and the strain shows in unpaid invoices and the payment queue, not in the legal debt” | pt-PT:456 «O orçamento é uma previsão de esperanças; a taxa de execução é o facto.» · pt-PT:452 «O aperto aparece noutro sítio: nas faturas de fornecedores por pagar e na fila de pagamento de 137 dias.» |
-| 08 | «Quinze anos de contas mostram uma dívida herdada que demorou anos a ser medida, uma década a desbastá-la, e um último mandato em que o desbaste parou» / “Fifteen years of accounts show an inherited debt that took years to measure, a decade of grinding it down, and a last term in which the grinding stalled” | pt-PT:1078 «Uma história, três capítulos. O registo lê-se como um arco contínuo: um município … cuja verdadeira dívida herdada ainda estava a ser descoberta anos depois … e que depois passou uma década a desbastar a montanha … No último mandato o desbaste parou.» |
-| 09 | «Os pelouros de Évora ficam sempre com a lista do presidente, e as contas do município não são cortadas de maneira que permita dizer quanto gastou cada vereador» / “Évora’s portfolios always sit with the president’s own list, and the municipality’s accounts are not cut in a way that lets anyone say what each councillor spent” | pt-PT:498 «O executivo real é mais pequeno do que o eleito.» · pt-PT:17 «Todos os pelouros ficam com o bloco que governa.» · pt-PT:11 «Nenhuma fonte publica dinheiro por pelouro.» |
+| 08 | «Quinze anos de contas mostram uma dívida herdada que demorou anos a ser medida, uma década a desbastá-la, e um último mandato em que a fila de pagamento voltou a alongar-se» / “…and a last term in which the payment queue lengthened again” | pt-PT:1078-1086 «Uma história, três capítulos. O registo lê-se como um arco contínuo: um município … cuja verdadeira dívida herdada ainda estava a ser descoberta anos depois … e que depois passou uma década a desbastar a montanha … No último mandato o desbaste parou e a fila voltou a alongar-se: 22 dias em 2023 e depois 137 em 2025, com pagamentos em atraso de €4 976 172.» |
+| 09 | «Os pelouros de Évora ficam, em todos os mandatos que o trabalho conseguiu ler, com a lista do presidente, e as contas do município não são cortadas de maneira que permita dizer quanto gastou cada vereador» / “Évora’s portfolios sit, in every term the study could read, with the president’s own list…” | pt-PT:498 «O executivo real é mais pequeno do que o eleito.» · pt-PT:17 «Todos os pelouros ficam com o bloco que governa.» · pt-PT:11 «Nenhuma fonte publica dinheiro por pelouro.» |
 
 **A frase aparece nas duas línguas em cada edição.** A da edição em primeiro
 lugar, a outra por baixo em letra pequena e com `lang` próprio — o mesmo padrão
@@ -1968,6 +2028,51 @@ registo público do plano de recuperação atravessaram com `excerpt:
 di-lo por palavras, nas duas línguas, ao lado das duas medidas do relance — e o
 selo tracejado aparece ali, ao lado do cheio das outras páginas, que é o que
 `IDENTIDADE.md` §5.2 exige de uma distinção para ela existir mesmo.
+
+**A mesma revisão cruzada mudou três frases e duas peças de vocabulário.**
+
+1. **A frase de 08 contradizia os números ao lado dela.** Dizia «um último
+   mandato em que o desbaste parou» — e a dívida que a página do município
+   mostra continua a cair nesse mandato, de 57 293 550,23 € para
+   54 379 034,55 €, com o índice a passar de 141,9 % para 105,5 %. 08 usa
+   «o desbaste parou» num sentido que os seus próprios números localizam noutro
+   sítio: «a fila voltou a alongar-se: 22 dias em 2023 e depois 137 em 2025,
+   com pagamentos em atraso de €4 976 172» (pt-PT:1085). A frase passou a
+   dizer isso, com os dois prazos citados do livro-razão. Uma frase da casa não
+   pode ser desmentida pelo número que está ao seu lado.
+2. **A frase de 09 dizia «sempre».** A mesma página diz que o mandato de
+   2009–2013 não foi estabelecido, por isso «sempre» era mais do que o trabalho
+   podia. Passou a «em todos os mandatos que o trabalho conseguiu ler» / «in
+   every term the study could read». E a segunda metade — «o executivo real é
+   mais pequeno do que o eleito» — citava uma comparação que a página não
+   mostrava; agora mostra os dois lados, cada um com a sua data: as designações
+   do mandato de 2021–2025 e os lugares da câmara instalada em 2025. As duas
+   datas estão à vista precisamente porque são dois factos, e não um.
+3. **A frase de 07 citava uma dívida e um limite que a página não mostrava.**
+   «com a dívida total ainda abaixo do limite» — os dois valores passaram a
+   estar impressos no fundo dessa página, com selo.
+4. **O fundo de 09 contava linhas que a página não conta.** Dizia «cerca de
+   metade das suas linhas recusa» a correspondência; nenhuma dessas linhas
+   atravessou para o livro-razão, e uma quantidade sem linha é exactamente o
+   que este sítio recusa. Passou a dizer que o próprio trabalho identifica
+   quais recusam, e que esta página não as conta.
+5. **O marcador de incerteza tem uma cara só.** As datas de publicação e de
+   actualização mostravam `[a verificar]` como texto simples, sem a classe
+   `.marcador` (`IDENTIDADE.md` §6); passaram a tê-la. A nota de 04 dizia «o
+   excerto fica por confirmar», que era uma segunda formulação para a mesma
+   coisa; passou a usar o marcador. E a glosa inglesa passou a ser «(to
+   verify)», que é a que as páginas de linha já usavam — uma só cara em todo o
+   sítio.
+6. **A nota «as descrições são reformulações do título» era falsa em dois
+   trabalhos.** A de «Os Pelouros» e a de «Prometido, Pago, Auditado» são a
+   frase de abertura do próprio documento, e `studies.mjs` já o dizia num
+   comentário. Passou a dizê-lo no registo (`descriptionFromDocument`) e a
+   página escolhe a nota certa.
+7. **O título inglês de «Orçamentado, Pago, Devido» estava abreviado.** O
+   documento alojado diz `<title>Évora — Budgeted, Paid, Owed 2025</title>` e o
+   arquivo dizia «Budgeted, Paid, Owed 2025». Um título literal não se abrevia
+   (§1.7 e o cabeçalho de `studies.mjs`); corrigido para o do documento. O `h1`
+   do documento é outra frase e não é o título.
 
 **O que continua a não estar nestas páginas.** Não há resumo do trabalho, não há
 versão curta, e nenhum número entrou copiado do documento a olho: os que
