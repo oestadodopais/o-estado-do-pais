@@ -1,0 +1,48 @@
+---
+/**
+ * Sobre — `/sobre` · `/en/about`.
+ *
+ * Duas frases e uma porta. Mais nada: sem contagens, sem aparelho, sem lede
+ * a explicar o que as duas frases já dizem. O que muda com o tempo é estado,
+ * e o estado rende-se no Método, que o prova.
+ *
+ * O texto vem de `src/data/sobre.mjs` e vai marcado `data-sobre`, que é a
+ * marca que o portão compara carácter a carácter contra esse ficheiro. Não é
+ * uma dispensa: é uma comparação, como `data-verbatim` e `data-linha-*`.
+ *
+ * DISPOSIÇÃO A (IDENTIDADE §3), a mais simples das três, como `/a-verificar`:
+ * o nome da página na coluna de rótulo, o texto no corpo a 68ch. A segunda
+ * coluna não fica vazia, e não se inventa uma quarta disposição.
+ *
+ * A AUTORIA VIVE AQUI, nas palavras da própria direção («produzido
+ * maioritariamente por inteligência artificial, com o mínimo de intervenção
+ * humana»), desde que o rodapé passou a ser navegação só. O nome de quem
+ * dirige está na regra 9 do Método, que é onde a intervenção humana se
+ * descreve.
+ */
+import Base from '../layouts/Base.astro';
+import { SOBRE } from '../data/sobre.mjs';
+import { ABERTURA } from '../data/metodo.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+const path = routePath('sobre', lang);
+---
+
+<Base lang={lang} path={path} title={s.sobre.metaTitle} description={s.sobre.metaDescription}>
+  <div class="metodo-secao sobre-secao" style="border-top:0">
+    <div>
+      <h1>{s.sobre.h1}</h1>
+    </div>
+    <div class="metodo-corpo">
+      <p class="lede sobre-texto" data-sobre={lang}>{SOBRE[lang].texto}</p>
+
+      <p class="sobre-porta">
+        <a href={routePath('metodo', lang)}>→ {s.nav.metodo}</a>
+        <span class="sobre-porta-nota">{ABERTURA[lang]}</span>
+      </p>
+    </div>
+  </div>
+</Base>
