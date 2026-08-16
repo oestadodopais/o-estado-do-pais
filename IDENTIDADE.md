@@ -243,7 +243,7 @@ passagem, `scripts/ortografia.mjs`, que a aplica nos dois sentidos
 (`--aplicar --sentido=acordo|anterior`); e a conferência, dentro do `gate:html`,
 que lê a mesma lista. Os travessões não se convertem por máquina: cada um pede
 uma frase nova, e a ferramenta assinala-os com ficheiro e linha. O que fica por
-converter está em `ortografia/restantes.yml`, rota a rota e palavra a palavra —
+converter está em `ortografia/restantes.yml`, rota a rota e palavra a palavra,
 e desde 16.08.2026 essa lista está **vazia**, porque a prosa da casa das linhas
 cruzadas se converteu onde foi escrita, no manifesto do motor, e voltou por
 reexportação (`DECISIONS.md` §1.40). A lista continua a existir: é ela que pára

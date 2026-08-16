@@ -346,7 +346,7 @@ console.log(
 );
 if (amarra.erros.length) {
   console.log('');
-  console.error(vermelho(`  A AMARRA DAS DECISÕES NÃO FECHA — ${amarra.erros.length} erro(s):`));
+  console.error(vermelho(`  A AMARRA DAS DECISÕES NÃO FECHA · ${amarra.erros.length} erro(s):`));
   console.error('');
   for (const e of amarra.erros) console.error('    ' + vermelho('✗') + ' ' + e);
   console.error('');

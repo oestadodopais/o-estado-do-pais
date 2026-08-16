@@ -3328,7 +3328,7 @@ que ninguém lhes pediu. Só a §1, também: a §2 é como o portão funciona, a
 que esta construção verificou e a §4 é o registo dos defeitos, e nenhuma delas é
 uma decisão a governar um texto.
 
-A §1.38 recebeu `Afecta: nenhum` — é uma decisão sobre como se escreve, não sobre
+A §1.38 recebeu `Afecta: nenhum`: é uma decisão sobre como se escreve, e não sobre
 o que o Sobre, o Método ou a agenda dizem. A §1.39 recebeu `Afecta: sobre ·
 metodo` com os resumos dos ficheiros como esse bloco os deixou, lidos do commit
 que o fechou.
@@ -3348,7 +3348,7 @@ mensal, lê o `DECISIONS.md` deste sítio e os dois ficheiros de texto, e imprim
 por texto, a entrada que o governa, o resumo carimbado, o resumo de hoje, e OK
 ou DIVERGE. Só relatório, e sai com 0 mesmo quando diverge: o código de saída da
 corrida mensal pertence à vigilância que precisa dele. Duplica a conferência do
-sítio **de propósito** — uma regra conferida só pela construção que ela governa é
+sítio **de propósito**: uma regra conferida só pela construção que ela governa é
 conferida pela coisa que ela existe para constranger. Corrido à mão a
 2026-08-16:
 
@@ -3384,7 +3384,7 @@ selo ou uma frase de um trabalho.
 A régua passou a saber o que é `data-agenda`: um excerto do calendário das
 fontes é a fonte a falar, e contá-lo como moldura da casa mediria a coisa
 errada. Entrou na lista das origens declaradas, ao lado de `data-claim` e de
-`data-verbatim` — e, porque a régua mudou, foi **corrida nas duas construções**,
+`data-verbatim`. E, porque a régua mudou, foi **corrida nas duas construções**,
 a de B e a de agora, sobre uma reconstrução da árvore de B.
 
 | Medida | Antes (B, 305 páginas) | Depois (307 páginas) |
@@ -3439,7 +3439,7 @@ duas edições do motivo, iguais menos o carácter que a passagem foi lá trocar
 **Uma coisa que esta corrida descobriu, e é uma dívida do motor.** A V10 do
 exportador de linhas não tem caminho para «a mesma correção, com outra
 redação». O bloco `corrections` do lado do sítio é levantado byte a byte e só
-entradas novas do manifesto são acrescentadas — por desenho, para não reescrever
+entradas novas do manifesto são acrescentadas, por desenho, para não reescrever
 o que outra pessoa escreveu. Uma correção **reescrita** no manifesto chega cá
 como uma **segunda entrada do mesmo acontecimento**, e foi o que a primeira
 reexportação fez, com a duplicação à vista no diff. O caminho que existe é
@@ -3473,7 +3473,7 @@ cadeia exacta, como já tolerava os títulos de estudo: uma frase que não estej
 **Sete linhas do Eurostat** diziam «nama_10r_2gdp, actualizado 2026-02-10».
 §1.38 tinha-as deixado por ser campo transcrito; a leitura estava errada, porque
 a palavra é da casa e não do Eurostat, que publica em inglês. Passam a
-«atualizado». É um afinamento de apontador — mesmo sítio, outra grafia — e por
+«atualizado». É um afinamento de apontador (mesmo sítio, outra grafia) e por
 isso **não leva entrada de correção**, pela regra do silêncio (§1.36,
 `ledger/README.md`). São linhas nativas, não cruzadas, e isso foi conferido antes
 de lhes tocar.
@@ -3501,10 +3501,10 @@ Sobre o sítio construído, sem inflação:
 
 | | O que se pede | Hoje |
 | --- | --- | --- |
-| (a) | perceber o que o sítio é | **passa** — a linha do cabeçalho está em todas as páginas, e `/sobre` diz em duas frases o que é e que é escrito por inteligência artificial |
-| (b) | encontrar o seu concelho e ver medidas com fontes | **parcial** — os 308 estão no índice e no mapa; 307 dizem «sem página ainda». Quem é de Évora vê oito medidas, cada uma com o selo para a sua linha |
-| (c) | abrir um estudo e ler a versão curta | **parcial** — 5 dos 11 trabalhos têm leitura escrita, com relance e leitura breve; os outros seis são página de arquivo com o documento |
-| (d) | ver quando cada coisa foi conferida e como corrigir | **passa** — o sinal de tempo em todas as páginas, agora com nome e porta; «Lido a» em cada linha; a porta das correções em 307 de 307 páginas e a política em `/correcoes` |
+| (a) | perceber o que o sítio é | **passa**. A linha do cabeçalho está em todas as páginas, e `/sobre` diz em duas frases o que é e que é escrito por inteligência artificial |
+| (b) | encontrar o seu concelho e ver medidas com fontes | **parcial**. Os 308 estão no índice e no mapa; 307 dizem «sem página ainda». Quem é de Évora vê oito medidas, cada uma com o selo para a sua linha |
+| (c) | abrir um estudo e ler a versão curta | **parcial**. 5 dos 11 trabalhos têm leitura escrita, com relance e leitura breve; os outros seis são página de arquivo com o documento |
+| (d) | ver quando cada coisa foi conferida e como corrigir | **passa**. O sinal de tempo em todas as páginas, agora com nome e porta; «Lido a» em cada linha; a porta das correções em 307 de 307 páginas e a política em `/correcoes` |
 
 É o que o roteiro esperava. Nada aqui subiu de nota por causa deste bloco, e o
 que subiu foi a honestidade de (d): a data deixou de ser ambígua fora da
@@ -3534,7 +3534,7 @@ página que o expõe:
 E o que a passagem da ortografia deixou de fora, por escolha e com motivo, e que
 o agente da ortografia tinha listado como «fora do âmbito»:
 
-- **identificadores internos com grafia anterior** — `taxa-de-actividade-2025`,
+- **identificadores internos com grafia anterior**: `taxa-de-actividade-2025`,
   `taxa-de-cambio-efectiva-real-2025`, `data-de-actualizacao` já renomeado. Um id
   é um endereço: mudá-lo parte ligações e obriga a reencaminhamento (§1.29);
 - **a «excepção» do próprio `IDENTIDADE.md` §6**, que é documento do repositório

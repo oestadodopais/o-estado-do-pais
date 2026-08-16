@@ -26,11 +26,11 @@ Requer Node ≥ 22.12 (exigência do Astro 7).
 
 `npm run build` são sete passos encadeados, e qualquer um deles pára tudo:
 
-1. `ledger:check` — o livro-razão está completo e a aritmética bate certo, e
+1. `ledger:check`: o livro-razão está completo e a aritmética bate certo, e
    toda a entrada do `DECISIONS.md` a partir da §1.38 declara que texto governa,
    com o resumo desse texto tal como ele está (a **amarra das decisões**: uma
    mudança de rumo não sai em silêncio);
-2. `check:cruzamento` — cada linha **e cada ficheiro** que veio do motor de
+2. `check:cruzamento`: cada linha **e cada ficheiro** que veio do motor de
    investigação é, byte a byte, o que atravessou, e as invariantes da agenda são
    reconferidas deste lado (ver [«Linhas cruzadas»](ledger/README.md));
 3. `check:documentos` — cada documento de estudo alojado é, byte a byte, o que o
