@@ -1,20 +1,32 @@
-# O Estado do País — what this is, and why
+# O Estado do País, what this is
 
 *Plain-language explanation of the project. Written for anyone, not for engineers.
-Last updated 15 August 2026 (evening). If something below stops being true, change it here —
-this file is the source, and the shared link is generated from it.*
+Rewritten 16 August 2026. This file holds the idea and points at the live pages;
+it deliberately states nothing that changes over time. Everything that changes,
+the site generates from its own data and publishes at the addresses listed below.
+If the idea changes, change it here.*
 
 ---
 
-## In one sentence
+## The text of the site's own About page
 
-**A website that measures Portugal, where every single number tells you exactly
-where it came from.**
+Decided by the director on 15 August 2026, and published at `/sobre`:
 
-Not a news site, not a blog, not a think tank. A standing record of the
-country's condition — the economy, housing, water, employment, local government —
-where you can take any figure and see the source document, the exact sentence it
-came from, the date it was read, and, if it was calculated, the arithmetic.
+> O Estado do País mede a sociedade portuguesa, no seu contexto interno e na sua
+> posição em relação ao exterior, e mantém dessa medição um registo contínuo,
+> claro e permanente. É produzido maioritariamente por inteligência artificial,
+> com o mínimo de intervenção humana, numa tentativa de explorar as
+> possibilidades tecnológicas do presente e de levar ao limite a independência e
+> o rigor.
+
+In English, at `/en/about`:
+
+> O Estado do País measures Portuguese society, in its internal context and in
+> its standing in relation to the world outside, and keeps of that measurement a
+> continuous, clear and permanent record. It is produced mostly by artificial
+> intelligence, with the minimum of human intervention, in an attempt to explore
+> the technological possibilities of the present and to push independence and
+> rigour to their limit.
 
 ---
 
@@ -27,196 +39,50 @@ In the director's words:
 > it works, we can do more of that and less of what doesn't. Supported by facts,
 > not feelings or vibes. But real facts.
 
-That is the whole purpose, and it is worth being precise about what kind of
-purpose it is. **It keeps score in both directions.** Accountability is in
-scope — what was promised is set against what was delivered, and decisions are
-attributed to whoever took them — but the project does not hunt, campaign, or
-choose targets, and it credits as readily as it debits. The point is that
-improvement is impossible without measurement you can rely on — and that most
-public argument runs on numbers nobody can check, which means it is really
-running on feeling.
-
-If you can see clearly what is working, and where, and under whom, you can do
-more of it. That is the entire ambition.
-
-### The shape of the failure
-
-Four ways this goes wrong, none of which requires anybody to be dishonest:
-
-- **Decisions taken on impression.** Money committed to what feels urgent, rather
-  than to what measurement would have identified.
-- **Problems left alone because nobody counted them.** A loss that never appears
-  in a figure never appears on an agenda either.
-- **Responsibility that moves on before the result arrives.** Whoever decided is
-  rarely still in the job by the time the outcome is legible. The decision and its
-  consequence never get put side by side, so nobody is ever held to what they
-  chose — for the worse or for the better.
-- **Good work going unrecognised.** This is the one people forget. Where nothing
-  was measured, someone who genuinely improved things gets no credit for it — and
-  what actually worked is lost along with the recognition.
-
-That last one is why this project is not adversarial by design. A record that can
-only catch failure is half a record, and the less useful half: knowing what went
-wrong tells you what to stop, but only knowing what went right tells you what to
-do instead.
-
----
-
-## The problem it addresses
+It keeps score in both directions. Accountability is in scope: what was promised
+is set against what was delivered, and decisions are attributed to whoever took
+them. But the project does not hunt, campaign or choose targets, and it credits
+as readily as it debits. A record that can only catch failure is half a record,
+and the less useful half: knowing what went wrong tells you what to stop, only
+knowing what went right tells you what to do instead.
 
 Numbers about a country circulate without their origins. A figure appears in a
 headline, gets repeated, gets rounded, loses its date, and eventually nobody can
-say where it started or what it actually measured.
+say where it started or what it actually measured. Portuguese government debt is
+published as several different shares of GDP for roughly the same moment, two of
+them inside a single OECD document, and none of them is wrong: they measure
+different things using the same words. Most publications resolve that by picking
+one and sounding confident. This one resolves it by showing its work.
 
-A real example from this project's own research: Portuguese government debt is
-published as **89,7%** *and* **93,6%** *and* **94,9%** *and* **99,3%** of GDP for
-roughly the same moment — two of those inside a single OECD document. None of
-them is wrong. They measure different things using the same words.
+The spine is mechanical rather than a promise: the site cannot publish a figure
+that has no source, because the build fails. Everything else hangs off that.
 
-Most publications resolve that by picking one and sounding confident. This one
-resolves it by showing its work.
-
-There is also a specific gap. Before anything was built, we checked whether this
-already existed. It doesn't: nobody combines rigorous per-number sourcing with
-coverage of all 308 municipalities and an honest account of who governed what,
-when. The nearest Portuguese equivalent publishes snapshots with no methodology,
-and its published "dataset" turns out to contain screenshots.
+And the harder thing it is attempting: it is written by AI, and it says so, with
+a named person accountable for it. The bet is that a publication which openly
+admits its authorship has to be more checkable than a human one, not less. That
+is the experiment, and whether it works is not yet known.
 
 ---
 
-## What actually makes it different
+## Where to read the state, rather than a description of it
 
-One idea, and it is mechanical rather than a promise:
+Nothing about the current state of the site is written in this file, and that is
+deliberate: a description of state goes stale in silence. Each of these pages is
+generated from the site's own data at build time.
 
-> **The site cannot publish a number that has no source.**
-
-Not "we try not to". The site literally fails to build. If a figure is written
-into a page without a recorded source, the whole thing stops and nothing gets
-published. That is the spine of the project, and everything else hangs off it.
-
-Then a set of habits that follow from it:
-
-- **Corrections are public, dated and permanent.** The old value stays visible
-  with a line through it. Nothing is quietly edited. Correcting in silence is the
-  cheapest way to lie.
-- **"We don't know" is an acceptable answer.** Where the data doesn't exist, the
-  site says so instead of reaching for something plausible.
-- **Uncertainty is marked, not smoothed.** A figure that hasn't been confirmed
-  yet is visibly flagged as unconfirmed rather than presented as settled.
-- **The choice of what to measure isn't ours.** The front page carries the
-  indicators the European institutions actually use to assess Portugal, with
-  their own published thresholds — so we aren't picking the numbers that suit an
-  argument.
-- **We say who was responsible.** Who governed, when, what they inherited, what
-  they decided, and what they left behind — named, including the party where that
-  is the relevant fact. Knowing who did what, well or badly, is part of the point.
-  The facts settle it. Nobody is protected and nobody is targeted.
-- **But no party league tables.** Averaging outcomes by party across territories
-  that have nothing in common produces arithmetic that misleads. Which party
-  governed a given place, and what happened there, is a fact worth recording. A
-  national scoreboard assembled by averaging those facts is not.
-- **No money from anyone the site measures.** Self-funded, and stated on the page.
+| What you want to know | Where it is |
+|---|---|
+| What this is, in two sentences | `/sobre` · `/en/about` |
+| The rules, what enforces each one, and today's proof of each | `/metodo` · `/en/method` |
+| Every correction, update and provenance revision, with the old value visible | `/correcoes` · `/en/corrections` |
+| Every published figure, one row each, with its source and excerpt | `/livro-razao` · `/en/ledger` |
+| Every concelho in Portugal, and which ones have a page yet | `/municipios` · `/en/municipalities` |
+| The studies, preserved as they were published | `/estudos` · `/en/studies` |
+| What the uncertainty marker means | `/a-verificar` · `/en/to-verify` |
+| The machine-readable proof of the current build | `/prova.json` |
+| What is being measured now and next | not built yet; it will live at `/agenda` |
 
 ---
-
-## The harder thing it is attempting
-
-**It is written by AI, and it says so on every page, with a named person
-accountable for it.**
-
-This is the genuinely risky part, and it is deliberate. Roughly 20% of people
-trust AI-produced answers about news, against 37% for news generally. The easy
-path would be to keep quiet about the authorship. The bet here is the opposite:
-
-> If an AI writes the publication, it has to be **more** checkable than a human
-> one, not less. So make every claim traceable, publish every correction, disclose
-> the authorship openly, and let people verify instead of asking them to trust.
-
-Which sets up the question the project is really testing:
-
-**Can a publication that openly admits it is written by AI earn credibility
-through machinery, rather than borrowing it from an institution?**
-
-Nobody has an answer, because as far as we could establish, no disclosed
-AI-authored data observatory exists anywhere. This is the experiment.
-
----
-
-## Where it stands
-
-Live and open to search engines since 13 August 2026 — it works, it is online,
-and it has not been announced anywhere yet. Being findable is not the same as
-being found: the domain is days old and nothing links to it.
-
-**Built so far**
-
-- A front page carrying the indicators the European institutions use to judge
-  Portugal, against their own official thresholds.
-- Two instruments you can use rather than just look at: where Portugal sits
-  against the European average, and all 308 municipalities plotted at their real
-  geographic positions.
-- An archive of ten studies, preserved exactly as they were published.
-- A public corrections log, live from day one — with its first real
-  corrections in it.
-- The source record itself, published: every provenance seal beside a number
-  opens the row it came from, so traceability is something a reader can click
-  through to rather than something the site claims about itself.
-
-The archive is kept, not frozen. Studies are preserved byte-for-byte as they were
-published — that is what makes them citable — but the work continues over them:
-they get re-checked as research deepens, and where something turns out to be
-wrong it is corrected in the open, dated, with the old value still visible. The
-document stays as it was; the record around it stays current. Coverage also keeps
-widening — more places, not just more depth in the same one.
-
-- The first municipality page — Évora, the place with the deepest existing
-  research — built as the pattern for all the others (15 August 2026): eight
-  measures at a glance, one sentence each, the town's own accounts, and a
-  timeline of who governed since 2009 — what each administration inherited,
-  decided and left. An index of all 308 municipalities exists, most of them
-  still marked "no page yet".
-- A door to report an error on every page, and every number's seal opening the
-  row it actually came from.
-
-**Next**
-
-The site's own voice: an About page written for people rather than for
-engineers, and a public list of what is being measured now, what comes next
-and why — the AI proposes, the director decides, and the list is public so
-that the choice can be checked the way the numbers are. Then the first study
-written end to end under the site's own rules.
-
-**After that**
-
-The long project: a page for each of the 308 municipalities, and an honest
-account of who governed each one — what they inherited, what they chose, and what
-they left behind. Judged against standards published *before* the verdict, with
-the things outside a mayor's control stated plainly. About a third of councils
-changed president in 2025 because of term limits rather than votes, and any
-reading that ignores that is a bad reading.
-
----
-
-## What we don't know yet
-
-The director's own caveat, and it belongs in this document rather than being
-tidied away:
-
-> I don't know if we will achieve it.
-
-The open questions are real ones. Whether a disclosed AI-authored publication can
-be trusted at all. Whether the sourcing discipline survives contact with the
-volume of work that 308 municipalities implies. Whether anyone comes.
-
-The project's answer to all three is the same as its answer to everything else:
-publish the method, publish the corrections, and let the record be checked.
-
----
-
-*Keep this page current. It should change when: the launch happens; the scope
-changes; the funding position changes; or any commitment above stops being true.
-It is intended for a general reader — if a paragraph here needs technical
-knowledge to follow, that paragraph is wrong.*
 
 *Written by AI, directed by a person. The technical record lives alongside this
 file in `README.md`, `DECISIONS.md` and `IDENTIDADE.md`.*

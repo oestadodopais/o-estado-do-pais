@@ -62,7 +62,10 @@ enche, ou estreita o invólucro.
 Um tipo de página novo escolhe **uma destas três**. Não inventa a quarta.
 
 - **A · Rótulo e corpo** — coluna de rótulo de 220px, corpo a 68ch.
-  Para texto com secções nomeadas. Em uso: `/metodo`.
+  Para texto com secções nomeadas. Em uso: `/metodo`, `/a-verificar`, e desde
+  16.08.2026 `/sobre` e `/correcoes` (`DECISIONS.md` §1.39). O Sobre é o caso
+  mais magro desta disposição: o rótulo é o nome da página e o corpo são duas
+  frases e uma porta.
 - **B · Corpo e aparelho** — corpo a 68ch, coluna de 300px com o aparelho:
   proveniência, ressalvas, contagens, ligações ao livro-razão, o que a página
   **não** sabe. Para páginas de leitura e páginas de linha do livro-razão.
@@ -71,6 +74,12 @@ Um tipo de página novo escolhe **uma destas três**. Não inventa a quarta.
   novo (15.08.2026; `DECISIONS.md` §1.34).
 - **C · Instrumento** — largura toda, o instrumento enche-a.
   Só para instrumentos.
+
+**Um instrumento dentro de uma página não é uma quarta disposição.** A primeira
+página e a página do município já o faziam; o Método passou a fazê-lo a
+16.08.2026, com o mecanismo desenhado a toda a largura entre a abertura e as dez
+regras. A página mantém a sua disposição; o instrumento tem a largura que os
+instrumentos têm.
 
 ---
 
@@ -152,6 +161,17 @@ mecânicas e passam a ser conferidas no build (`gate:identidade`):
 - todo o `.src-chip` é uma âncora;
 - nenhum marcador de incerteza fora do formato ruled.
 
+Três conferências entraram no `gate:html` a 16.08.2026, pelo mesmo motivo das
+duas da regra 9 (a moratória: nenhum portão novo enquanto uma conferência
+couber num que já existe):
+
+- o texto do Sobre renderizado é, carácter a carácter, o que está em
+  `src/data/sobre.mjs`, e a página tem de trazer a marca que o diz;
+- toda a página construída tem uma ligação para o Sobre, que é onde a autoria
+  vive desde que o rodapé passou a ser navegação;
+- todo o número marcado `data-prova` bate certo com a conta que o próprio
+  portão faz da mesma coisa, e tem porta (§10).
+
 As duas conferências da regra 9 foram prometidas a este portão e vivem, por
 agora, no `gate:html`, dentro do varrimento que já existe:
 
@@ -212,6 +232,39 @@ converter está em `ortografia/restantes.yml`, rota a rota e palavra a palavra.
 de palavra da direção, e registada como reversível: o diretor pode revogá-la na
 pré-visualização, e a revogação é uma corrida da ferramenta, não uma reescrita.
 `DECISIONS.md` §1.38.
+
+---
+
+## 10. Números do próprio sítio
+
+Há dois tipos de número numa página, e a letra não chega para os distinguir:
+uma medição de Portugal e uma contagem do próprio sítio. «120» pode ser um
+índice de convergência ou o número de linhas com proveniência completa.
+
+| | Medição de Portugal | Número do próprio sítio |
+|---|---|---|
+| Como entra | `<Claim id="…"/>` | `data-prova="<chave>"` |
+| Origem | uma linha do livro-razão | `src/lib/prova.mjs`, calculado na construção |
+| Ao lado | o selo, que abre a linha | nada |
+| Porta | a linha daquele valor | a página onde se vê o que ele conta |
+| Letra | monoespaçada | monoespaçada |
+
+**O selo é do livro-razão e de mais nada.** Pôr um selo ao lado de uma contagem
+do sítio seria prometer uma linha que não existe, e diluir o sinal que faz o
+selo valer alguma coisa. O que estes números levam em vez do selo é a porta:
+são **sempre** uma ligação, e a ligação é a rota onde o leitor vê o que o
+número conta. Onde aparece um valor, aparece a porta.
+
+**Nunca são escritos.** Uma contagem escrita à mão fica errada na construção
+seguinte e ninguém dá por isso. Um número deste tipo que não venha da prova
+falha no portão como qualquer outro algarismo sem origem.
+
+**Dentro de um desenho, a porta vai na legenda**, marcada `data-legenda-prova`,
+pela mesma razão de §1.34: uma âncora dentro de um `<svg>` não se lê como porta.
+É a convenção do selo, aplicada a um número que não leva selo.
+
+*(16.08.2026, `DECISIONS.md` §1.39; a origem entra na tabela do §2.2 como a
+sétima.)*
 
 ---
 
