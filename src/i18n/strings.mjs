@@ -461,11 +461,17 @@ export const STRINGS = {
         derivaDeK: 'Deriva de',
         historicoK: 'Correções e atualizações desta linha',
         historicoVazio: 'Esta linha nunca foi corrigida nem atualizada.',
-        historicoNota:
-          'Nada é apagado. Um valor que estava errado fica à vista, datado, com o motivo; e um valor que deixou de estar certo porque o que mede mudou fica registado como atualização, que não é a mesma coisa.',
+        /* A política das correções vive em `/correcoes`, e esta linha é a
+           porta para lá. O parágrafo inteiro estava repetido em 264 páginas de
+           linha, a dizer a política onde ela não se decide (BRIEF §6.3;
+           DECISIONS §1.40). */
+        historicoNota: 'Correções: públicas, datadas, permanentes',
+        historicoNotaPorta: 'A política inteira',
         bandeiraK: 'Estado na fonte',
-        atribuicaoNota:
-          'A quem o valor é creditado, tal como consta do documento. Quando aparece um rótulo partidário, é registo do que consta e mais nada: este sítio não ordena partidos nem compara territórios que não têm nada em comum.',
+        /* A promessa de não ordenar partidos vive na regra 10 do Método e na
+           página do município, e aqui fica o rótulo e a porta (DECISIONS §1.40). */
+        atribuicaoNota: 'Como consta do documento; o rótulo partidário é facto de registo',
+        atribuicaoNotaPorta: 'Porque não se ordenam partidos',
         incompletaK: 'O que falta nesta linha',
         incompletaV:
           'Os campos assinalados não foram confirmados contra a fonte. O valor publicado não muda por isso; o que falta é a prova documental, e enquanto faltar a linha fica fora do índice dos motores de busca.',
@@ -1054,11 +1060,11 @@ export const STRINGS = {
         derivaDeK: 'Derived from',
         historicoK: 'Corrections and updates to this row',
         historicoVazio: 'This row has never been corrected or updated.',
-        historicoNota:
-          'Nothing is deleted. A value that was wrong stays in plain sight, dated, with the reason; and a value that stopped being right because what it measures changed is recorded as an update, which is not the same thing.',
+        historicoNota: 'Corrections: public, dated, permanent',
+        historicoNotaPorta: 'The whole policy',
         bandeiraK: 'Status at source',
-        atribuicaoNota:
-          'Who the value is credited to, as the document records it. Where a party label appears, it is a fact of record and nothing more: this site does not rank parties, nor compare territories that have nothing in common.',
+        atribuicaoNota: 'As the document records it; the party label is a fact of record',
+        atribuicaoNotaPorta: 'Why parties are not ranked',
         incompletaK: 'What is missing from this row',
         incompletaV:
           'The marked fields have not been confirmed against the source. The published value does not change because of it; what is missing is the documentary proof, and while it is missing the row stays out of search engine indexes.',
