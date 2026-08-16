@@ -1,0 +1,37 @@
+{
+ "_": [
+  "Registo de travessia, agenda e calendário das fontes. Um resumo criptográfico",
+  "do ficheiro de origem e outro dos bytes escritos aqui, por ficheiro.",
+  "FICHEIRO GERADO. Escrito por ResearchHub/publisher/export_agenda.py.",
+  "Sem datas: uma data por corrida tornaria a idempotência indemonstrável, e a",
+  "idempotência é uma das conferências (X3). Por isso não há `exported_at` aqui,",
+  "ao contrário de ledger/cruzamentos/evora.json, que prende linhas e não ficheiros."
+ ],
+ "counts": {
+  "eventos": 16,
+  "eventos_sem_data_publicada": 8,
+  "itens": 5,
+  "itens_por_estado": {
+   "a_seguir": 1,
+   "concluido": 1,
+   "em_curso": 3,
+   "retirado": 0
+  }
+ },
+ "exporter": "ResearchHub/publisher/export_agenda.py",
+ "files": {
+  "agenda.json": {
+   "exported_sha256": "3f59140e1a5c0da64a30140367f4c92c017ddeb0f8900bb1fc363139cf4b3bbe",
+   "exporter": "ResearchHub/publisher/export_agenda.py",
+   "origin_path": "agenda/agenda.json",
+   "origin_sha256": "5050aa952665afc426091b10addb953f8edb6ba410712c51886a9bfacd0f0f4b"
+  },
+  "calendario.json": {
+   "exported_sha256": "c17c5214e2b73f6c5044d268db0bb8deb8a30ef52e0c1de4d431720dcf1b4b84",
+   "exporter": "ResearchHub/publisher/export_agenda.py",
+   "origin_path": "indicators/calendar.json",
+   "origin_sha256": "b396728601799eb3fd7af6974d86f01015c3b8c875c39b408ced2c663f97c074"
+  }
+ },
+ "origin": "ResearchHub"
+}

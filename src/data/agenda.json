@@ -1,0 +1,307 @@
+{
+ "_origem": {
+  "exportado_em": null,
+  "ficheiro": "agenda/agenda.json",
+  "repositorio": "ResearchHub",
+  "sha256_origem": "5050aa952665afc426091b10addb953f8edb6ba410712c51886a9bfacd0f0f4b"
+ },
+ "formato": 1,
+ "itens": [
+  {
+   "criterios": [
+    {
+     "linhas": [
+      "precos-da-habitacao-2025"
+     ],
+     "nota": {
+      "en": "The Commission's scoreboard page, read on 2026-08-16, writes the threshold thus: 'nominal house price (1-year % change), with a threshold of 9%'. The row publishes 17,6.",
+      "pt": "A página do painel da Comissão, lida a 2026-08-16, escreve o limiar assim: «nominal house price (1-year % change), with a threshold of 9%». A linha publica 17,6."
+     },
+     "quadro": "Procedimento relativo aos Desequilíbrios Macroeconómicos, painel principal (Comissão Europeia)",
+     "tipo": "quadro_institucional"
+    },
+    {
+     "linhas": [
+      "sobrecarga-do-custo-da-habitacao-2025"
+     ],
+     "nota": {
+      "en": "The engine's availability register marks tespm140 with framework 'SocialSB'. This indicator is the one the engine's convergence analysis identifies as a trap: read alone, it says Portuguese housing is fine.",
+      "pt": "O registo de disponibilidade do motor marca tespm140 com o quadro «SocialSB». Este indicador é o que a análise de convergência do motor identifica como armadilha: lido sozinho, diz que a habitação portuguesa está bem."
+     },
+     "quadro": "Painel de Indicadores Sociais (Comissão Europeia)",
+     "tipo": "quadro_institucional"
+    },
+    {
+     "linhas": [
+      "licencas-de-construcao-2025"
+     ],
+     "nota": {
+      "en": "Residential building permits, the supply side of the same scoreboard.",
+      "pt": "Licenças de construção residencial, o lado da oferta do mesmo painel."
+     },
+     "quadro": "Procedimento relativo aos Desequilíbrios Macroeconómicos, indicadores auxiliares (Comissão Europeia)",
+     "tipo": "quadro_institucional"
+    },
+    {
+     "linhas": [],
+     "nota": {
+      "en": "No rows: no livro-razao claim publishes today the Fund's assessment of Portuguese housing. The framework is recorded with no rows rather than omitted, because the absence is part of what the study will close.",
+      "pt": "Sem linhas: nenhuma afirmação do livro-razão publica hoje a avaliação do Fundo sobre habitação portuguesa. O quadro fica registado sem linhas em vez de ser omitido, porque a ausência é parte do que o estudo vai fechar."
+     },
+     "quadro": "Fundo Monetário Internacional, consulta ao abrigo do Artigo IV",
+     "tipo": "quadro_institucional"
+    },
+    {
+     "linhas": [],
+     "nota": {
+      "en": "No rows, for the same reason. It is from this framework that Portugal's high placing on the housing well-being dimension comes, which the question sets against the others.",
+      "pt": "Sem linhas, pela mesma razão. É deste quadro que vem a posição alta de Portugal na dimensão habitação do bem-estar, que a pergunta põe frente aos outros."
+     },
+     "quadro": "OCDE, Estudo Económico de Portugal, Foundations for Growth and Competitiveness, How's Life",
+     "tipo": "quadro_institucional"
+    },
+    {
+     "linhas": [],
+     "nota": {
+      "en": "No rows. Two livro-razao rows cite document SWD(2026) 222 in their `note` field, but to confirm a Eurostat value, not to publish what the Semester says.",
+      "pt": "Sem linhas. Duas linhas do livro-razão citam no seu campo «note» o documento SWD(2026) 222, mas para confirmar um valor do Eurostat, não para publicar o que o Semestre diz."
+     },
+     "quadro": "Semestre Europeu, relatório por país e recomendações específicas",
+     "tipo": "quadro_institucional"
+    },
+    {
+     "evento": "ine-indice-precos-habitacao-t2-2026",
+     "nota": null,
+     "tipo": "calendario_das_fontes"
+    },
+    {
+     "evento": "ine-precos-habitacao-local-t2-2026",
+     "nota": null,
+     "tipo": "calendario_das_fontes"
+    },
+    {
+     "evento": "ine-rendas-habitacao-local-t2-2026",
+     "nota": null,
+     "tipo": "calendario_das_fontes"
+    },
+    {
+     "evento": "ce-relatorio-mecanismo-alerta-2027",
+     "nota": null,
+     "tipo": "calendario_das_fontes"
+    }
+   ],
+   "decidido_em": "2026-08-15",
+   "decidido_fonte": "Obsidian, Decisions/, nota de 2026-08-15 «O Estado do País Direction: Product Before Gates», decisão 9",
+   "decidido_por": "direcao",
+   "entrada": "2026-08-16",
+   "estado": "a_seguir",
+   "historico": [
+    {
+     "data": "2026-08-16",
+     "de": null,
+     "motivo": {
+      "en": "Record created on the day the agenda came into being. The question above is the one in the pre-registration, which was started today and has not been sealed: collection has not begun and the director has not read the question. Sealing before that reading would certify that the question preceded the evidence while what precedes the evidence can still change.",
+      "pt": "Registo criado no dia em que a agenda passou a existir. A pergunta acima é a que está no registo prévio, que foi iniciado hoje e não foi selado: a recolha não começou e a direção ainda não leu a pergunta. Selar antes dessa leitura seria certificar que a pergunta precedeu a prova quando o que precede a prova ainda pode mudar."
+     },
+     "para": "a_seguir",
+     "tipo": "entrada"
+    }
+   ],
+   "id": "habitacao",
+   "pergunta": {
+    "en": "When the institutions that assess Portugal disagree about housing, some naming it the country's gravest structural problem and one placing it among the best dimensions of Portuguese well-being, is that disagreement produced by what each indicator is defined to measure and whom it covers, or does it survive once the definitions are held constant?",
+    "pt": "Quando as instituições que avaliam Portugal divergem sobre a habitação, umas chamando-lhe o problema estrutural mais grave do país e outra colocando-a entre as melhores dimensões do bem-estar português, essa divergência é produzida pelo que cada indicador está definido para medir e por quem abrange, ou sobrevive depois de as definições serem postas todas na mesma base?"
+   },
+   "porque": {
+    "en": "Three livro-razao rows publish housing as an indicator of an institutional framework, and one of them, the price index, is published with a value above the threshold the Commission itself publishes; no site row publishes today what the International Monetary Fund, the OECD or the European Semester say about Portuguese housing.",
+    "pt": "Três linhas do livro-razão publicam habitação como indicador de um quadro institucional, e uma delas, o índice de preços, está publicada com um valor acima do limiar que a própria Comissão publica; nenhuma linha do sítio publica hoje o que o Fundo Monetário Internacional, a OCDE ou o Semestre Europeu dizem sobre habitação portuguesa."
+   },
+   "proposto_em": "2026-08-12",
+   "proposto_fonte": "Obsidian, Experiments/O Estado do País.md, secção Open, entrada de 2026-08-12",
+   "proposto_por": "motor",
+   "registo_previo": "content/10 Housing/preregistration.json",
+   "tipo": "estudo",
+   "titulo": {
+    "en": "Housing: what each institution measures when it speaks of housing in Portugal",
+    "pt": "Habitação: o que cada instituição mede quando fala de habitação em Portugal"
+   },
+   "ultima_alteracao": "2026-08-16",
+   "vigilancia": null
+  },
+  {
+   "criterios": [
+    {
+     "evento": "dgal-endividamento-2025",
+     "nota": {
+      "en": "The calendar event holds the proof that there is no calendar: eleven annual files with no date on the page, and a search for 'calend' returning nothing with a known-positive running beside it.",
+      "pt": "O acontecimento no calendário guarda a prova de que não há calendário: onze ficheiros anuais sem data na página, e a procura por «calend» sem resultado com um conhecido-positivo a correr ao lado."
+     },
+     "tipo": "calendario_das_fontes"
+    }
+   ],
+   "decidido_em": null,
+   "decidido_fonte": null,
+   "decidido_por": null,
+   "entrada": "2026-08-16",
+   "estado": "em_curso",
+   "historico": [
+    {
+     "data": "2026-08-16",
+     "de": null,
+     "motivo": {
+      "en": "The watch existed from 2026-08-10 but ran by hand and left no trace. It runs in the monthly agent from today, and it is today that it enters the agenda.",
+      "pt": "A vigilância existia desde 2026-08-10 mas corria à mão e não deixava rasto. Passa a correr no agente mensal a partir de hoje, e é hoje que entra na agenda."
+     },
+     "para": "em_curso",
+     "tipo": "entrada"
+    }
+   ],
+   "id": "dgal-endividamento-2025",
+   "pergunta": null,
+   "porque": {
+    "en": "DGAL publishes no calendar and the file appears without notice; the monthly watch is what exists in place of a date.",
+    "pt": "A DGAL não publica calendário e o ficheiro aparece sem aviso; a vigilância mensal é o que existe no lugar de uma data."
+   },
+   "proposto_em": "2026-08-10",
+   "proposto_fonte": "ResearchHub, commit 0ec3008 de 2026-08-10, que criou content/08 Évora Mandates/Technical Source/watch_next_events.py, e o parágrafo «Standing watch for the monthly maintenance session (added 2026-08-10)» em NEXT.md",
+   "proposto_por": "motor",
+   "registo_previo": null,
+   "tipo": "vigilancia",
+   "titulo": {
+    "en": "DGAL's 2025 municipal debt file",
+    "pt": "O ficheiro de endividamento de 2025 da DGAL"
+   },
+   "ultima_alteracao": "2026-08-16",
+   "vigilancia": "watch_next_events"
+  },
+  {
+   "criterios": [
+    {
+     "evento": "evora-contas-2026",
+     "nota": {
+      "en": "What the studies say to check, word for word. Study 08, content/08 Évora Mandates/, English edition, lines 1101 to 1108: 'The 2026 execution rate, against the falling series the companion document tables.' · 'Whether the supplier queue turns before anything else does.' · 'The execution rates of the Rossio de São Brás and of the hospital access road when the 2026 accounts appear, against the allocations the plan section prints for both.' · 'How the assembleia municipal votes on those same 2026 accounts, given the seat split above.' Study 07, content/07 Évora Municipal Accounts/, English edition, lines 449 and 450: 'the first number worth checking in the 2026 accounts is the execution rate, not the total'.",
+      "pt": "O que os estudos mandam conferir, palavra por palavra. Estudo 08, content/08 Évora Mandates/, edição inglesa, linhas 1101 a 1108: «The 2026 execution rate, against the falling series the companion document tables.» · «Whether the supplier queue turns before anything else does.» · «The execution rates of the Rossio de São Brás and of the hospital access road when the 2026 accounts appear, against the allocations the plan section prints for both.» · «How the assembleia municipal votes on those same 2026 accounts, given the seat split above.» Estudo 07, content/07 Évora Municipal Accounts/, edição inglesa, linhas 449 e 450: «the first number worth checking in the 2026 accounts is the execution rate, not the total»."
+     },
+     "tipo": "calendario_das_fontes"
+    }
+   ],
+   "decidido_em": null,
+   "decidido_fonte": null,
+   "decidido_por": null,
+   "entrada": "2026-08-16",
+   "estado": "em_curso",
+   "historico": [
+    {
+     "data": "2026-08-16",
+     "de": null,
+     "motivo": {
+      "en": "Enters today, with the legal deadline read in the Diário da República and recorded in the source calendar.",
+      "pt": "Entra hoje, com o prazo legal lido no Diário da República e registado no calendário das fontes."
+     },
+     "para": "em_curso",
+     "tipo": "entrada"
+    }
+   ],
+   "id": "evora-contas-2026",
+   "pergunta": null,
+   "porque": {
+    "en": "They are the first accounts of the executive installed in 2025, and the two Évora studies wrote down the lines to check when they appear.",
+    "pt": "São as primeiras contas do executivo instalado em 2025, e os dois estudos de Évora deixaram escritas as linhas a conferir quando aparecerem."
+   },
+   "proposto_em": "2026-08-10",
+   "proposto_fonte": "ResearchHub, commit 0ec3008 de 2026-08-10, que criou content/08 Évora Mandates/Technical Source/watch_next_events.py com este acontecimento entre os três que vigia",
+   "proposto_por": "motor",
+   "registo_previo": null,
+   "tipo": "vigilancia",
+   "titulo": {
+    "en": "The Município de Évora 2026 accounts",
+    "pt": "As contas de 2026 do Município de Évora"
+   },
+   "ultima_alteracao": "2026-08-16",
+   "vigilancia": "watch_next_events"
+  },
+  {
+   "criterios": [
+    {
+     "evento": "evora-contas-2024-pagina",
+     "nota": {
+      "en": "Study 08 says, in content/08 Évora Mandates/, English edition, line 549: 'No 2024 accounts document was ever published'. And in its reading table, line 104: 'The 2024 accounts were rejected by the câmara (2 votes to 5) and never externally certified; no 2024 accounts document exists on the municipality's site'.",
+      "pt": "O estudo 08 diz, em content/08 Évora Mandates/, edição inglesa, linha 549: «No 2024 accounts document was ever published». E na sua tabela de leitura, linha 104: «The 2024 accounts were rejected by the câmara (2 votes to 5) and never externally certified; no 2024 accounts document exists on the municipality's site»."
+     },
+     "tipo": "calendario_das_fontes"
+    }
+   ],
+   "decidido_em": null,
+   "decidido_fonte": null,
+   "decidido_por": null,
+   "entrada": "2026-08-16",
+   "estado": "em_curso",
+   "historico": [
+    {
+     "data": "2026-08-16",
+     "de": null,
+     "motivo": {
+      "en": "Enters today. It is the only one of the three watches whose event has no deadline at all, legal or observed: it may never happen, and that too is a result.",
+      "pt": "Entra hoje. É a única das três vigilâncias cujo acontecimento não tem prazo nenhum, nem legal nem observado: pode nunca acontecer, e isso também é um resultado."
+     },
+     "para": "em_curso",
+     "tipo": "entrada"
+    }
+   ],
+   "id": "evora-contas-2024-pagina",
+   "pergunta": null,
+   "porque": {
+    "en": "The year has no published dossier, and the reappearance of a 2024 page would be news in itself.",
+    "pt": "O ano não tem dossiê publicado, e o reaparecimento de uma página de 2024 seria notícia por si."
+   },
+   "proposto_em": "2026-08-10",
+   "proposto_fonte": "ResearchHub, commit 0ec3008 de 2026-08-10, que criou content/08 Évora Mandates/Technical Source/watch_next_events.py com este acontecimento entre os três que vigia",
+   "proposto_por": "motor",
+   "registo_previo": null,
+   "tipo": "vigilancia",
+   "titulo": {
+    "en": "The year 2024 with no published accounts in Évora",
+    "pt": "O ano de 2024 sem contas publicadas em Évora"
+   },
+   "ultima_alteracao": "2026-08-16",
+   "vigilancia": "watch_next_events"
+  },
+  {
+   "criterios": [],
+   "decidido_em": "2026-08-15",
+   "decidido_fonte": "Obsidian, Decisions/, nota de 2026-08-15 «O Estado do País Direction: Product Before Gates», decisão 9",
+   "decidido_por": "direcao",
+   "entrada": "2026-08-16",
+   "estado": "concluido",
+   "historico": [
+    {
+     "data": "2026-08-16",
+     "de": null,
+     "motivo": {
+      "en": "Retrospective entry. The work was proposed, decided, built and published on 2026-08-15, before this agenda existed, and it is recorded on 2026-08-16, which is the day the agenda was created. It enters already concluded, and this paragraph is here so that the reader does not read the entry date as the date of the work. Sources for what was concluded: the site's DECISIONS.md §1.34, and the vault decision note, section 'As built, same day (afternoon)'. With no criterion of the four types: it came from a direction decision about what the site did not have, and not from an institutional framework, a calendar, a reader or a correction.",
+      "pt": "Entrada retrospetiva. O trabalho foi proposto, decidido, construído e publicado a 2026-08-15, antes de esta agenda existir, e é registado a 2026-08-16, que é o dia em que a agenda foi criada. Entra já concluído, e este parágrafo está aqui para que o leitor não leia a data de entrada como a data do trabalho. Fontes do que foi concluído: DECISIONS.md §1.34 do sítio, e a nota de decisão do cofre, secção «As built, same day (afternoon)». Sem critério dos quatro tipos: veio de uma decisão de direção sobre o que o sítio não tinha, e não de um quadro institucional, de um calendário, de um leitor ou de uma correção."
+     },
+     "para": "concluido",
+     "tipo": "entrada"
+    }
+   ],
+   "id": "evora-pagina-de-municipio",
+   "pergunta": null,
+   "porque": {
+    "en": "The site measured 308 municipalities and had a page for none; Évora was the only one with enough verified material for one, and it is the page type the other 307 will inherit.",
+    "pt": "O sítio media 308 concelhos e não tinha página para nenhum; Évora era o único com material verificado suficiente para uma, e é o tipo de página que os outros 307 vão herdar."
+   },
+   "proposto_em": "2026-08-15",
+   "proposto_fonte": "Obsidian, Decisions/, nota de 2026-08-15 «O Estado do País Direction: Product Before Gates», decisão 9, sessão de direção da manhã de 2026-08-15",
+   "proposto_por": "motor",
+   "registo_previo": null,
+   "tipo": "pagina",
+   "titulo": {
+    "en": "Évora, the first município page type",
+    "pt": "Évora, o primeiro tipo de página de município"
+   },
+   "ultima_alteracao": "2026-08-16",
+   "vigilancia": null
+  }
+ ]
+}
