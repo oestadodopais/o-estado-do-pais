@@ -2636,6 +2636,13 @@ cabeçalho, e o que o cabeçalho diz em vez de «Edição de …».
 
 ### 1.38 A ortografia do sítio passa a ser uma só
 
+**Afecta:** nenhum
+
+*(A regra de fecho 3 de 2026-08-15 passou a mecanismo a 16.08.2026, e a amarra
+começa nesta entrada. Esta decisão é sobre como se escreve, e não sobre o que o
+Sobre, o Método ou a agenda dizem: não governa nenhum dos três. A conferência
+está em `scripts/check-ledger.mjs`, secção «amarra das decisões»; ver §1.40.)*
+
 O sítio escrevia nas duas grafias ao mesmo tempo. Não por descuido de um dia:
 por acumulação. «Correções» ao lado de «correcção», «atualização» no rótulo e
 `actualizacao` na chave que o produz, «facto» e «exacto» na mesma frase. Um
@@ -2832,6 +2839,14 @@ palavra tinha, e por isso `anterior` também converte o que já estava no Acordo
    preciso resolvê-lo, porque o Método em inglês tem três «director».
 
 ### 1.39 O sítio passa a dizer o que é, e o Método a provar o que faz
+
+**Afecta:** sobre · metodo
+**Texto:** sobre 44362a8d7409 · metodo 1bcc413daa4d
+
+*(Linhas acrescentadas a 16.08.2026, quando a regra de fecho 3 passou a
+mecanismo; §1.40. Os dois resumos são os dos ficheiros como este bloco os
+deixou, lidos do commit que o fechou. Os dois textos mudaram neste bloco: o
+Sobre nasceu aqui, e o Método passou a dez regras.)*
 
 Havia três coisas ao mesmo tempo. O sítio não tinha página sobre si próprio: a
 única superfície «sobre» era o Método, com quatro marcadores por resolver lá
@@ -3097,6 +3112,14 @@ em `src/components/HistoricoDaLinha.astro:101`, com a cadeia em
 construída; a leitura do inglês do Sobre e das dez; e a revogação, se a quiser,
 de qualquer das decisões da cadeira acima (as contagens fora do cabeçalho, o
 rodapé só com navegação, `/a-verificar` fora dele) e da ortografia (§1.38).
+
+### 1.40 A agenda: o que se mede agora, e nada sai dela em silêncio
+
+**Afecta:** agenda · metodo
+**Texto:** metodo 4d218817cc4d
+**Agenda:** habitacao 2026-08-16 · evora-pagina-de-municipio 2026-08-16
+
+ENTRADA POR ESCREVER
 
 ## 2. Como funciona o portão, e o que ele não vê
 
