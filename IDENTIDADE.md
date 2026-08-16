@@ -62,10 +62,13 @@ enche, ou estreita o invólucro.
 Um tipo de página novo escolhe **uma destas três**. Não inventa a quarta.
 
 - **A · Rótulo e corpo** — coluna de rótulo de 220px, corpo a 68ch.
-  Para texto com secções nomeadas. Em uso: `/metodo`, `/a-verificar`, e desde
-  16.08.2026 `/sobre` e `/correcoes` (`DECISIONS.md` §1.39). O Sobre é o caso
-  mais magro desta disposição: o rótulo é o nome da página e o corpo são duas
-  frases e uma porta.
+  Para texto com secções nomeadas. Em uso: `/metodo`, `/a-verificar`, `/sobre`,
+  `/correcoes` (16.08.2026, `DECISIONS.md` §1.39) e `/agenda` (16.08.2026,
+  §1.40). O Sobre é o caso mais magro desta disposição: o rótulo é o nome da
+  página e o corpo são duas frases e uma porta. A agenda é o caso mais cheio: o
+  rótulo é o estado e o corpo são os itens que estão nele. A **B** foi
+  considerada e posta de lado: a sua segunda coluna é o aparelho de *uma*
+  leitura, e na agenda o aparelho pertence a cada item.
 - **B · Corpo e aparelho** — corpo a 68ch, coluna de 300px com o aparelho:
   proveniência, ressalvas, contagens, ligações ao livro-razão, o que a página
   **não** sabe. Para páginas de leitura e páginas de linha do livro-razão.
@@ -172,6 +175,20 @@ couber num que já existe):
 - todo o número marcado `data-prova` bate certo com a conta que o próprio
   portão faz da mesma coisa, e tem porta (§10).
 
+Mais duas entraram a 16.08.2026 com a agenda (§1.40), no mesmo varrimento e
+sem portão novo:
+
+- todo o campo marcado `data-agenda` é, carácter a carácter, o campo do registo
+  que atravessou do motor, e a marca só vale na página da agenda;
+- o que a página da agenda conta bate certo com as contagens do registo da
+  travessia, e cada item e cada acontecimento do registo está na página, pelo
+  nome.
+
+E uma antes de qualquer página ser construída, no `ledger:check`: **a amarra das
+decisões**. Toda a entrada do `DECISIONS.md` a partir da §1.38 declara o que
+governa, e a última entrada que governa um texto traz o resumo desse texto tal
+como ele está. Uma mudança de rumo não sai em silêncio (direção, 2026-08-15).
+
 As duas conferências da regra 9 foram prometidas a este portão e vivem, por
 agora, no `gate:html`, dentro do varrimento que já existe:
 
@@ -226,7 +243,11 @@ passagem, `scripts/ortografia.mjs`, que a aplica nos dois sentidos
 (`--aplicar --sentido=acordo|anterior`); e a conferência, dentro do `gate:html`,
 que lê a mesma lista. Os travessões não se convertem por máquina: cada um pede
 uma frase nova, e a ferramenta assinala-os com ficheiro e linha. O que fica por
-converter está em `ortografia/restantes.yml`, rota a rota e palavra a palavra.
+converter está em `ortografia/restantes.yml`, rota a rota e palavra a palavra —
+e desde 16.08.2026 essa lista está **vazia**, porque a prosa da casa das linhas
+cruzadas se converteu onde foi escrita, no manifesto do motor, e voltou por
+reexportação (`DECISIONS.md` §1.40). A lista continua a existir: é ela que pára
+a construção à primeira ocorrência nova.
 
 **Origem.** É a regra por defeito do roteiro, aplicada a 16.08.2026 na ausência
 de palavra da direção, e registada como reversível: o diretor pode revogá-la na

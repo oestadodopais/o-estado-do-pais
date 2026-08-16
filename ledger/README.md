@@ -306,6 +306,30 @@ o ficheiro da linha existe, o resumo dos seus bytes é ainda o do registo, e o
 `study` é um trabalho do arquivo. A conferência contra a origem viva é o modo
 `--with-origin`, que só corre onde o motor está em disco.
 
+#### Ficheiros inteiros, e não linhas (16.08.2026)
+
+Nem tudo o que atravessa é uma linha. A agenda e o calendário das fontes
+atravessam **inteiros**, e o seu registo é `cruzamentos/agenda.json`, escrito por
+`ResearchHub/publisher/export_agenda.py`. Em vez de um mapa `rows` traz um mapa
+`files`, uma entrada por ficheiro:
+
+| Campo | O que é |
+| --- | --- |
+| `origin_path` | o ficheiro do motor de onde veio |
+| `origin_sha256` | o resumo desse ficheiro, do lado do motor |
+| `exported_sha256` | o resumo dos bytes escritos aqui, em `src/data/` |
+| `exporter` | quem os escreveu |
+
+O registo traz ainda `counts`, e essas contagens **não são a fonte de nada**:
+estão lá para serem comparadas com o que a página conta, e é o `gate:html` que as
+compara. O `check-cruzamento.mjs` lê o tipo de registo **da sua forma** e não do
+nome do ficheiro, e sobre os ficheiros faz o mesmo que faz sobre as linhas: os
+bytes em disco contra o resumo declarado, e com `--with-origin` contra o ficheiro
+do motor. Confere ainda, deste lado, as invariantes que a página precisa para
+renderizar — o estado é o fim do histórico, todo o item tem histórico, quem sai
+traz motivo, as duas edições existem, as linhas e os acontecimentos citados
+existem. Ver `DECISIONS.md` §1.40.
+
 ### Corrigir uma linha cruzada
 
 Uma linha cruzada **não se edita à mão**: o resumo prende os bytes, e uma edição
