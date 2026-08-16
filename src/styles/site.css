@@ -2616,3 +2616,201 @@ a.src-chip:hover::before {
   letter-spacing: 0.06em;
   color: var(--muted);
 }
+
+/* -------------------------------------------------------------- /agenda */
+/* Disposição A (IDENTIDADE §3): a coluna de rótulo leva o estado, o corpo leva
+   os itens. Sem acento novo: os estados são rótulos de texto em monoespaçada,
+   e o que separa um item do seguinte é fio e fundo, não matiz (§2). */
+
+.agenda-estado {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.agenda-item {
+  border-top: 1px solid var(--rule);
+  padding-top: 18px;
+  display: grid;
+  gap: 14px;
+}
+.agenda-item:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.agenda-item-eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.agenda-estado-marca {
+  color: var(--ink);
+}
+.agenda-titulo {
+  font-size: clamp(17px, 1.8vw, 20px);
+  line-height: 1.35;
+  max-width: 44ch;
+}
+.agenda-bloco {
+  display: grid;
+  gap: 8px;
+}
+.agenda-k {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.agenda-k-inline {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.agenda-nota {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 62ch;
+}
+.agenda-vazio,
+.agenda-vazio-inline {
+  color: var(--muted);
+}
+.agenda-criterios {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+.agenda-criterio {
+  display: grid;
+  gap: 5px;
+  padding-left: 12px;
+  border-left: 2px solid var(--rule);
+}
+.agenda-criterio-tipo {
+  font-family: var(--f-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.agenda-quadro {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.agenda-criterio-nota {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.agenda-linhas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+}
+.agenda-sem-data {
+  font-size: 13px;
+  color: var(--muted);
+}
+.agenda-datas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.agenda-historico {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+.agenda-historico-entrada {
+  border-left: 2px solid var(--rule-strong);
+  padding-left: 12px;
+  display: grid;
+  gap: 5px;
+}
+.agenda-historico-cabeca {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.agenda-historico-estados {
+  color: var(--ink);
+}
+.agenda-historico-motivo {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink);
+  max-width: 64ch;
+}
+.agenda-eventos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 18px;
+}
+.agenda-evento {
+  border-top: 1px solid var(--rule);
+  padding-top: 14px;
+  display: grid;
+  gap: 7px;
+}
+.agenda-evento-cabeca {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.agenda-evento-data {
+  color: var(--ink);
+}
+.agenda-evento-titulo {
+  font-size: 15.5px;
+  line-height: 1.45;
+  color: var(--ink);
+  max-width: 58ch;
+}
+.agenda-excerto {
+  margin: 0;
+  padding-left: 12px;
+  border-left: 2px solid var(--rule-strong);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 62ch;
+}
+.agenda-afecta a {
+  font-size: 11.5px;
+}

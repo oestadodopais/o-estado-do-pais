@@ -60,6 +60,18 @@ contexts:
     why: >-
       Etiqueta de proveniência gerada a partir do próprio livro-razão (nome do
       estudo, edição do documento, data de acesso). Não é texto escrito à mão.
+  - id: data-da-agenda
+    why: >-
+      Datas do registo da agenda e do calendário das fontes: quando um item foi
+      proposto, decidido, criado e alterado, e quando uma fonte anuncia
+      publicar. São datas do registo, não medições de Portugal. Acrescentado em
+      2026-08-16, e é a primeira entrada nova desta lista desde a página de
+      município: um tipo de página novo não ganha um motivo novo por existir,
+      ganha-o por trazer uma classe de data que nenhum dos motivos acima
+      descreve. Nenhuma destas datas é uma dispensa: cada uma vai TAMBÉM marcada
+      `data-agenda="<id>.<campo>"` e o portão compara-a com o registo, carácter
+      a carácter. O motivo diz porque é admissível; a comparação prova que é a
+      do registo. Ver DECISIONS §1.40.
   - id: identificador-tecnico
     why: >-
       Identificadores técnicos: códigos de cor, códigos de língua, versões,

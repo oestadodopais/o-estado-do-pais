@@ -22,6 +22,7 @@ export const STRINGS = {
       municipios: 'Municípios',
       estudos: 'Estudos',
       livro: 'Livro-razão',
+      agenda: 'Agenda',
       metodo: 'Método',
       correcoes: 'Correções',
       sobre: 'Sobre',
@@ -34,8 +35,11 @@ export const STRINGS = {
      * duas frases de moldura, e divergiriam à primeira alteração.
      */
     sinal: {
-      reconferido: 'Painel reconferido a',
-      vencido: 'Verificação em atraso: o painel não é reconferido contra a fonte desde',
+      reconferido: 'Painel europeu reconferido a',
+      vencido: 'Verificação em atraso: o painel europeu não é reconferido contra a fonte desde',
+      agenda: 'Agenda:',
+      agendaEmCurso: 'em curso',
+      agendaASeguir: 'a seguir',
     },
 
     prov: {
@@ -92,6 +96,80 @@ export const STRINGS = {
     },
 
     /** A página que explica o marcador. IDENTIDADE §6 promete-a. */
+    /**
+     * A agenda e o calendário das fontes.
+     *
+     * As palavras que embrulham dois registos que vêm do motor. Nenhuma delas
+     * escreve um estado, uma data ou uma contagem: isso vem do registo, e vai
+     * marcado `data-agenda` para o portão o comparar carácter a carácter.
+     */
+    agenda: {
+      metaTitle: 'Agenda · O Estado do País',
+      metaDescription:
+        'O que este observatório está a medir, o que se segue, e o critério que pôs lá cada coisa. Com o calendário do que as fontes publicam a seguir.',
+      eyebrow: 'Agenda',
+      h1: 'O que se mede a seguir',
+      lede:
+        'Cada item traz o critério que o pôs aqui, quem o propôs, quem o decidiu, e o registo de cada mudança de estado. Nada sai desta lista em silêncio.',
+      origemNota:
+        'Esta lista e o calendário abaixo são dois registos do motor de investigação. Atravessam inteiros, com o resumo criptográfico de cada um, e a construção fecha se os bytes já não forem os que atravessaram.',
+      estados: {
+        em_curso: 'Em curso',
+        a_seguir: 'A seguir',
+        concluido: 'Concluído',
+        retirado: 'Retirado',
+      },
+      vazioRetirado:
+        'Nada foi retirado desta agenda até hoje. Quando alguma coisa for, fica aqui, com a data e o motivo: um item não se apaga, muda de estado.',
+      tipos: {
+        estudo: 'Estudo',
+        vigilancia: 'Vigilância',
+        pagina: 'Página',
+      },
+      perguntaK: 'A pergunta',
+      perguntaNota:
+        'A pergunta é fixada no motor antes da recolha, e o registo do motor escreve-se em inglês: o inglês é a forma registada, palavra por palavra, e o português abaixo é a edição portuguesa dessa mesma pergunta.',
+      porqueK: 'Porquê',
+      criteriosK: 'Critérios',
+      quadroK: 'Quadro institucional',
+      eventoK: 'Calendário das fontes',
+      leitorK: 'Pedido de leitor',
+      correcaoK: 'Correção',
+      semCriterios:
+        'Sem critério de nenhum dos quatro tipos. Veio de uma decisão da direção sobre o que faltava ao sítio, e não de um quadro institucional, de um calendário, de um leitor ou de uma correção. A razão está escrita no porquê e no histórico.',
+      verNoCalendario: 'Ver no calendário',
+      semDataDaFonte: 'a fonte não publica data',
+      evidenciaK: 'O que se observou',
+      propostoK: 'Proposto pelo motor a',
+      decididoK: 'Decidido pela direção a',
+      porDecidir: 'sem decisão da direção registada',
+      entradaK: 'Entrada no registo',
+      alteracaoK: 'Última alteração',
+      registoPrevioK: 'Registo prévio',
+      historicoK: 'O que mudou',
+      historicoTipos: {
+        entrada: 'entrada',
+        repriorizacao: 'repriorização',
+        conclusao: 'conclusão',
+        retirada: 'retirada',
+        alteracao: 'alteração',
+      },
+      historicoPara: 'passa a',
+      calendarioH2: 'O calendário das fontes',
+      calendarioLede:
+        'O que as fontes que este sítio cita publicam a seguir. Cada data traz o sítio onde está escrita, a data em que foi lida e a frase que a diz.',
+      datadosK: 'Com data publicada pela fonte',
+      semDataK: 'Sem data, porque a fonte não publica nenhuma',
+      fonteK: 'Fonte',
+      janelaEntre: 'entre',
+      janelaE: 'e',
+      origemDaDataK: 'Onde está escrito',
+      acedidoK: 'Lido a',
+      afectaK: 'Linhas que isto move',
+      notaK: 'Nota',
+      voltarALista: 'Voltar à agenda',
+    },
+
     marcador: {
       metaTitle: 'O marcador [a verificar] · O Estado do País',
       metaDescription:
@@ -582,6 +660,7 @@ export const STRINGS = {
       municipios: 'Municipalities',
       estudos: 'Studies',
       livro: 'Ledger',
+      agenda: 'Agenda',
       metodo: 'Method',
       correcoes: 'Corrections',
       sobre: 'About',
@@ -589,8 +668,12 @@ export const STRINGS = {
     },
 
     sinal: {
-      reconferido: 'Panel re-checked on',
-      vencido: 'Verification overdue: the panel has not been re-checked against the source since',
+      reconferido: 'European panel re-checked on',
+      vencido:
+        'Verification overdue: the European panel has not been re-checked against the source since',
+      agenda: 'Agenda:',
+      agendaEmCurso: 'under way',
+      agendaASeguir: 'next',
     },
 
     prov: {
@@ -626,6 +709,73 @@ export const STRINGS = {
       v: 'Write to ',
       w: '. A confirmed error enters the corrections log and the row itself, with the old value still visible. Nothing is deleted.',
       link: 'The corrections log',
+    },
+
+    agenda: {
+      metaTitle: 'Agenda · O Estado do País',
+      metaDescription:
+        'What this observatory is measuring, what comes next, and the criterion that put each thing there. With the calendar of what the sources publish next.',
+      eyebrow: 'Agenda',
+      h1: 'What gets measured next',
+      lede:
+        'Each item carries the criterion that put it here, who proposed it, who decided it, and the record of every change of state. Nothing leaves this list in silence.',
+      origemNota:
+        'This list and the calendar below are two records from the research engine. They cross whole, each with its cryptographic digest, and the build stops if the bytes are no longer the ones that crossed.',
+      estados: {
+        em_curso: 'Under way',
+        a_seguir: 'Next',
+        concluido: 'Concluded',
+        retirado: 'Withdrawn',
+      },
+      vazioRetirado:
+        'Nothing has been withdrawn from this agenda to date. When something is, it stays here, with the date and the reason: an item is not deleted, it changes state.',
+      tipos: {
+        estudo: 'Study',
+        vigilancia: 'Watch',
+        pagina: 'Page',
+      },
+      perguntaK: 'The question',
+      perguntaNota:
+        'The question is fixed in the engine before collection begins, and the engine’s record is written in English: the English is the registered form, word for word, and the Portuguese edition renders that same question.',
+      porqueK: 'Why',
+      criteriosK: 'Criteria',
+      quadroK: 'Institutional framework',
+      eventoK: 'Source calendar',
+      leitorK: 'Reader request',
+      correcaoK: 'Correction',
+      semCriterios:
+        'No criterion of any of the four kinds. It came from a direction decision about what the site lacked, and not from an institutional framework, a calendar, a reader or a correction. The reason is written in the why and in the change log.',
+      verNoCalendario: 'See in the calendar',
+      semDataDaFonte: 'the source publishes no date',
+      evidenciaK: 'What was observed',
+      propostoK: 'Proposed by the engine on',
+      decididoK: 'Decided by the director on',
+      porDecidir: 'no director decision on record',
+      entradaK: 'Entered the record',
+      alteracaoK: 'Last change',
+      registoPrevioK: 'Pre-registration',
+      historicoK: 'What changed',
+      historicoTipos: {
+        entrada: 'entry',
+        repriorizacao: 'repriorisation',
+        conclusao: 'conclusion',
+        retirada: 'withdrawal',
+        alteracao: 'change',
+      },
+      historicoPara: 'moves to',
+      calendarioH2: 'The source calendar',
+      calendarioLede:
+        'What the sources this site cites publish next. Each date carries the place where it is written, the date it was read, and the sentence that says it.',
+      datadosK: 'With a date the source publishes',
+      semDataK: 'With no date, because the source publishes none',
+      fonteK: 'Source',
+      janelaEntre: 'between',
+      janelaE: 'and',
+      origemDaDataK: 'Where it is written',
+      acedidoK: 'Read on',
+      afectaK: 'Rows this moves',
+      notaK: 'Note',
+      voltarALista: 'Back to the agenda',
     },
 
     marcador: {

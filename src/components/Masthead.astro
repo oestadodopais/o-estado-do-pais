@@ -32,7 +32,8 @@
  */
 import { SITE_NAME, METHOD_LINE } from '../../site.config.mjs';
 import { routePath, otherLanguagePath, normalizePath } from '../lib/routes.mjs';
-import { estadoDaVerificacao } from '../lib/prova.mjs';
+import { estadoDaVerificacao, prova } from '../lib/prova.mjs';
+import ValorDaProva from './ValorDaProva.astro';
 import { t } from '../i18n/strings.mjs';
 
 const { lang = 'pt', path, compact = false, furniture = false } = Astro.props;
@@ -43,6 +44,7 @@ const home = routePath('home', lang);
 const municipios = routePath('municipios', lang);
 const estudos = routePath('estudos', lang);
 const livro = routePath('livro', lang);
+const agenda = routePath('agenda', lang);
 const metodo = routePath('metodo', lang);
 const sobre = routePath('sobre', lang);
 const outra = otherLanguagePath(aqui, lang);
@@ -51,6 +53,17 @@ const atual = (p) => (normalizePath(p) === aqui ? 'page' : undefined);
 const NomeTag = compact ? 'p' : 'h1';
 
 const verificacao = estadoDaVerificacao();
+const p = prova(lang);
+/* A linha da agenda só existe quando o registo atravessou. Um rótulo «Agenda»
+   sem agenda é pior do que nenhum, e por isso a mobília não desenha o lugar
+   vazio: nem contagem, nem palavra. */
+const temAgenda = p.agenda_em_curso.valor !== null && p.agenda_a_seguir.valor !== null;
+/* A porta do sinal de tempo: a secção da primeira página onde estão os valores
+   que essa data cobre. Fora da primeira página «o painel» era ambíguo, e a
+   página do município publica de propósito nenhuma data de frescura própria
+   (§1.34); agora a frase nomeia o painel e leva lá. É a mesma âncora que a
+   chave `painel_reconferido_em` da prova já usa como porta. */
+const painel = `${home}#numeros`;
 ---
 
 <header>
@@ -60,6 +73,7 @@ const verificacao = estadoDaVerificacao();
       <a href={municipios} aria-current={atual(municipios)}>{s.nav.municipios}</a>
       <a href={estudos} aria-current={atual(estudos)}>{s.nav.estudos}</a>
       <a href={livro} aria-current={atual(livro)}>{s.nav.livro}</a>
+      <a href={agenda} aria-current={atual(agenda)}>{s.nav.agenda}</a>
       <a href={metodo} aria-current={atual(metodo)}>{s.nav.metodo}</a>
       <a href={sobre} aria-current={atual(sobre)}>{s.nav.sobre}</a>
     </nav>
@@ -80,18 +94,29 @@ const verificacao = estadoDaVerificacao();
       furniture && (
         <div class="masthead-furniture" data-sinal-de-tempo>
           <span data-vencida={verificacao.vencida ? 'sim' : null}>
-            {verificacao.vencida ? s.sinal.vencido : s.sinal.reconferido}{' '}
-            <span data-nonledger="data-de-atualizacao">{verificacao.verificadoEm}</span>
+            <a href={painel}>
+              {verificacao.vencida ? s.sinal.vencido : s.sinal.reconferido}{' '}
+              <span data-nonledger="data-de-atualizacao">{verificacao.verificadoEm}</span>
+            </a>
           </span>
           {/* --------------------------------------------------------------
-              O ESPAÇO DA AGENDA. Quando `/agenda` existir, a linha entra aqui,
-              como segundo `<span>` desta mobília (o «·» é desenhado pelo CSS,
-              entre irmãos). Lê-se de `src/data/agenda.json` pela mesma prova
-              que o Método usa (`prova(lang).agenda_*`), e rende NADA enquanto
-              o ficheiro não existir: um rótulo «Agenda» sem agenda é pior do
-              que nenhum. Ver DECISIONS §1.39, «o que fica para o agente da
-              agenda».
+              A LINHA DA AGENDA (16.08.2026, DECISIONS §1.40).
+              O lugar que §1.39 deixou marcado, cheio. As duas contagens são
+              números do próprio sítio: vêm de `prova(lang)`, vão marcadas
+              `data-prova` e cada uma é uma porta para `/agenda`, que é a
+              página onde o leitor vê o que elas contam (IDENTIDADE §10).
+              Nenhuma é escrita à mão, e o portão reconta as duas por conta
+              própria a partir do registo que atravessou.
               -------------------------------------------------------------- */}
+          {temAgenda && (
+            <span>
+              {s.sinal.agenda}{' '}
+              <ValorDaProva chave="agenda_em_curso" item={p.agenda_em_curso} lang={lang} />{' '}
+              {s.sinal.agendaEmCurso} ·{' '}
+              <ValorDaProva chave="agenda_a_seguir" item={p.agenda_a_seguir} lang={lang} />{' '}
+              {s.sinal.agendaASeguir}
+            </span>
+          )}
         </div>
       )
     }
