@@ -23,17 +23,24 @@ export const SITE_NAME = 'O Estado do País';
 /** Linha de método. Elemento de identidade: não é traduzida. */
 export const METHOD_LINE = 'Portugal, medido. Cada número tem fonte.';
 
-/** Linha de autoria, obrigatória no rodapé de todas as páginas. */
-export const AUTHORSHIP_LINE = 'Escrito por IA, dirigido por uma pessoa.';
-
 /**
- * A edição corrente. Deliberada e editorial: muda quando o director decide,
- * não a cada build. É uma data de cabeçalho, não um número do livro-razão.
+ * A linha de autoria SAIU daqui a 16.08.2026 (DECISIONS §1.39).
+ *
+ * Estava no rodapé de todas as páginas e o portão exigia-a. A autoria passou a
+ * ter casa própria — o Sobre, nas palavras da direção — e o que todas as
+ * páginas levam é a porta para lá, que é o que o portão passou a contar. Uma
+ * declaração dita de passagem no rodapé não é o mesmo que uma página que a diz.
+ *
+ * O que continua a levar a linha, e é outra coisa, é a faixa do observatório
+ * por cima de um documento de estudo alojado: aí ela identifica quem alojou o
+ * documento, e vive em `src/lib/documentos.mjs`.
+ *
+ * A DATA DE EDIÇÃO também saiu. `EDITION` era escrita à mão aqui e rendia no
+ * cabeçalho e no rodapé de todas as páginas: dizia quando alguém decidiu
+ * chamar-lhe uma edição, não quando alguma coisa foi conferida. O sinal de
+ * tempo do sítio é agora a data da última reconferência do painel, gerada pelo
+ * motor em `src/data/verificacao.mjs`.
  */
-export const EDITION = {
-  iso: '2026-08-12',
-  display: '12.08.2026',
-};
 
 /**
  * URL canónico de um caminho interno.

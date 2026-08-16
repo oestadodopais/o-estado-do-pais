@@ -36,7 +36,23 @@ import { fileURLToPath } from 'node:url';
 
 import { WORKS, workById } from '../data/studies.mjs';
 import { routePath, LANGS } from './routes.mjs';
-import { SITE_NAME, AUTHORSHIP_LINE } from '../../site.config.mjs';
+import { SITE_NAME } from '../../site.config.mjs';
+
+/**
+ * A linha de autoria da faixa do observatório.
+ *
+ * Vivia em `site.config.mjs` e era obrigatória no rodapé de todas as páginas.
+ * Saiu de lá a 16.08.2026 (DECISIONS §1.39): a autoria do sítio passou a ter
+ * casa própria, o Sobre, e todas as páginas levam a porta para lá.
+ *
+ * AQUI ELA FICA, e é outra coisa: um documento de estudo é obra JÁ PUBLICADA,
+ * alojada intacta, e a faixa por cima dele é a única coisa nossa naquele
+ * ficheiro. Sem esta linha, quem chega a um documento por um motor de busca
+ * não tem, naquela página, nada que diga quem o alojou nem como foi feito. O
+ * documento não tem o nosso rodapé e não pode ter: é conferido carácter a
+ * carácter contra a origem mais a faixa.
+ */
+const AUTHORSHIP_LINE = 'Escrito por IA, dirigido por uma pessoa.';
 import { t } from '../i18n/strings.mjs';
 
 /** O nome do ficheiro de cada edição, dentro de `studies-src/<slug>/`. */

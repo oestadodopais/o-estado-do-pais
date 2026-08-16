@@ -7,7 +7,7 @@
  * organização em todas as páginas.
  */
 import { SITE_NAME, SITE_URL, canonicalUrl } from '../../site.config.mjs';
-import { alternatesFor, routePath, normalizePath } from '../lib/routes.mjs';
+import { alternatesFor, normalizePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import Masthead from '../components/Masthead.astro';
 import SiteFooter from '../components/SiteFooter.astro';
@@ -24,6 +24,15 @@ const {
   path: pathProp,
   jsonld = null,
   mastheadCompact = true,
+  /**
+   * A mobília do cabeçalho é o sinal de tempo, e está em TODAS as páginas.
+   *
+   * Antes estava só na primeira, e o que todas as páginas traziam era a data
+   * de edição, no rodapé. Essa saiu (§1.39) e não podia ser substituída lá: o
+   * rodapé passou a ser navegação e mais nada. O sinal de tempo sobe para o
+   * cabeçalho, que é onde uma publicação diz de quando é, e é uma linha só.
+   */
+  furniture = true,
   noindex = false,
   /**
    * A porta das correções vive no aparelho de cada tipo de página — na coluna
@@ -48,7 +57,6 @@ const organizationJsonLd = {
   url: SITE_URL,
 };
 
-const estudosPath = routePath('estudos', lang);
 ---
 
 <!doctype html>
@@ -90,7 +98,7 @@ const estudosPath = routePath('estudos', lang);
 
     <div class="wrap">
       <slot name="masthead">
-        <Masthead lang={lang} path={path} compact={mastheadCompact} />
+        <Masthead lang={lang} path={path} compact={mastheadCompact} furniture={furniture} />
       </slot>
 
       <main id="conteudo">
@@ -99,7 +107,7 @@ const estudosPath = routePath('estudos', lang);
 
       {portaNoRodape && <PortaDeCorreccoes lang={lang} class="porta-correccoes-rodape" />}
 
-      <SiteFooter lang={lang} path={path} estudosPath={estudosPath} />
+      <SiteFooter lang={lang} path={path} />
     </div>
   </body>
 </html>
