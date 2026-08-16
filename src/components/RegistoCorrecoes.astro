@@ -36,7 +36,7 @@ const { lang = 'pt' } = Astro.props;
 const s = t(lang);
 
 const correcoes = entradasDoRegisto('correcao');
-const actualizacoes = entradasDoRegisto('actualizacao');
+const atualizacoes = entradasDoRegisto('atualizacao');
 /* As revisões de proveniência entram como contagem e como caminho, não como
    lista: ver o cabeçalho deste ficheiro. */
 const revisoes = entradasDoRegisto('proveniencia');
@@ -144,15 +144,15 @@ const palavraConta = correcoes.length === 1 ? s.metodo.registoContaSing : s.meto
 
   <!-- ============================ ATUALIZAÇÕES -->
   {
-    actualizacoes.length > 0 && (
-      <section class="registo-grupo registo-grupo-actualizacoes" aria-labelledby="registo-actualizacoes">
-        <h3 class="registo-titulo registo-titulo-quieto" id="registo-actualizacoes">
-          {s.metodo.registoActualizacoesK}
+    atualizacoes.length > 0 && (
+      <section class="registo-grupo registo-grupo-atualizacoes" aria-labelledby="registo-atualizacoes">
+        <h3 class="registo-titulo registo-titulo-quieto" id="registo-atualizacoes">
+          {s.metodo.registoAtualizacoesK}
         </h3>
-        <p class="registo-nota registo-nota-quieta">{s.metodo.registoActualizacoesNota}</p>
+        <p class="registo-nota registo-nota-quieta">{s.metodo.registoAtualizacoesNota}</p>
 
         <ul class="registo-linhas">
-          {actualizacoes.map((e) => (
+          {atualizacoes.map((e) => (
             <li class="registo-linha">
               <span
                 class="log-data"

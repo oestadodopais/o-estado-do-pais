@@ -370,13 +370,13 @@ Campo obrigatório. Três valores, e a diferença não é cosmética:
 | `kind` | o que aconteceu | onde aparece |
 | --- | --- | --- |
 | `correcao` | o valor publicado estava **errado** | grupo «Correções», com peso, e conta para «N correções publicadas» |
-| `actualizacao` | o valor estava **certo** e deixou de estar, porque o que mede mudou | grupo «Atualizações», em surdina, e não conta |
+| `atualizacao` | o valor estava **certo** e deixou de estar, porque o que mede mudou | grupo «Atualizações», em surdina, e não conta |
 | `proveniencia` | **o valor não mudou**; mudou a maneira de lá chegar | na história da própria linha, por extenso; no registo do Método, só como caminho para a linha |
 
 #### `proveniencia` — a revisão do caminho, não do número
 
 Uma fonte que muda de endereço não altera o que foi publicado. Até 15.08.2026 o
-formato não tinha como o dizer, e a única saída era escrever uma `actualizacao`
+formato não tinha como o dizer, e a única saída era escrever uma `atualizacao`
 com `old_value` igual a `new_value` — uma entrada que declara «o valor mudou de
 X para X», que é falso e diz ao leitor exactamente o contrário do que aconteceu.
 
@@ -431,7 +431,7 @@ para o mesmo sítio por palavras melhores, é git.
 
 Misturar as duas faz do registo um diário de alterações, e uma confissão
 diluída vale menos. **Na dúvida, pergunte: o valor antigo estava errado quando
-foi publicado?** Se sim, é `correcao`. Se não, é `actualizacao`.
+foi publicado?** Se sim, é `correcao`. Se não, é `atualizacao`.
 
 **Uma actualização regista-se quando muda o valor de uma afirmação por razões
 que não são erro.** As recontagens derivadas que se seguem — as contagens do
