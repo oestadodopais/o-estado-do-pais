@@ -1,0 +1,35 @@
+---
+/**
+ * Um número que o sítio diz sobre si próprio.
+ *
+ * NÃO É UM VALOR DO LIVRO-RAZÃO e não leva selo: uma medição de Portugal entra
+ * por `<Claim id="…"/>`, tem linha própria e a sua porta é essa linha. Isto é
+ * estado do sítio (linhas publicadas, correções, cobertura), e a sua porta é a
+ * página onde o leitor vê o que ele conta. `IDENTIDADE.md` §10.
+ *
+ * Três coisas, sempre as três:
+ *   · letra monoespaçada, como todo o número que não é prosa;
+ *   · `data-prova="<chave>"`, que o portão recalcula por conta própria e
+ *     compara com os algarismos renderizados (não é uma dispensa);
+ *   · uma ligação, porque onde aparece um valor aparece a porta.
+ *
+ * ESTADO VAZIO. Uma chave cujo valor ainda não existe (a agenda, antes de o
+ * motor a atravessar) rende `null`. Um `null` não se rende como zero nem se
+ * esconde: rende-se por palavras, sem marca e sem porta, porque não há nada
+ * para abrir. IDENTIDADE §7.
+ */
+const { chave, item, vazio = null, lang = 'pt' } = Astro.props;
+
+const valor = item?.valor ?? null;
+const existe = valor !== null && valor !== undefined;
+---
+
+{
+  existe ? (
+    <a class="prova-valor" href={item.porta} data-prova={chave} title={item.origem}>
+      {valor}
+    </a>
+  ) : (
+    <span class="prova-vazio">{vazio?.[lang] ?? vazio}</span>
+  )
+}
