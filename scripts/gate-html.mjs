@@ -19,6 +19,11 @@
  *   6. data-linha-*             — um campo de uma linha do livro-razão, na página
  *                                 dessa linha, conferido carácter a carácter
  *                                 contra o campo da própria afirmação.
+ *   7. data-prova="<chave>"     — um número do sítio sobre si próprio (linhas
+ *                                 publicadas, correções, cobertura). O portão
+ *                                 RECALCULA a chave por conta própria, do seu
+ *                                 ponto de observação, e compara. Não é uma
+ *                                 dispensa: é uma origem conferida, como a 6.
  */
 
 import fs from 'node:fs';
@@ -43,8 +48,11 @@ import { tituloDaLinha, descricaoDaLinha } from '../src/lib/livro.mjs';
 import { matchPath, routePath, HREFLANG, LANGS } from '../src/lib/routes.mjs';
 import { documentoDaEdicao, documentoServido } from '../src/lib/documentos.mjs';
 import { renderizacoesAceites } from '../src/data/correcoes.mjs';
-import { SITE_HOST, SITE_NAME, AUTHORSHIP_LINE, EDITION } from '../site.config.mjs';
+import { SITE_HOST, SITE_NAME } from '../site.config.mjs';
 import { ENDERECO_CORRECOES } from '../src/data/metodo.mjs';
+import { SOBRE } from '../src/data/sobre.mjs';
+import { VERIFICACAO } from '../src/data/verificacao.mjs';
+import { prova, CAMINHO_DA_PROVA } from '../src/lib/prova.mjs';
 import {
   carregaFormas,
   comparador,
@@ -72,6 +80,18 @@ if (!fs.existsSync(DIST)) {
 }
 
 const claims = loadClaims();
+
+/**
+ * A prova, nas duas edições. As chaves e os valores são os mesmos; o que muda
+ * é a PORTA, que é uma rota e por isso tem edição. O portão precisa das duas:
+ * a porta que exige numa página inglesa é a inglesa.
+ *
+ * Isto NÃO é a conta contra a qual os números são conferidos — essa é a do
+ * próprio portão, em contasDoPortao(). Isto é o que se compara com ela.
+ */
+const PROVA_POR_LINGUA = { pt: prova('pt'), en: prova('en') };
+const PROVA = PROVA_POR_LINGUA.pt;
+
 const allow = load(fs.readFileSync(ALLOWLIST, 'utf8')) ?? {};
 const CONTEXTOS = new Set((allow.contexts ?? []).map((c) => c.id));
 const TOKENS = (allow.tokens ?? []).map((t) => ({ ...t, scope: t.scope ?? 'any' }));
@@ -86,12 +106,9 @@ const PATTERNS = (allow.patterns ?? []).map((p) => ({
  * data de edição. No <head> não há markup onde pendurar data-nonledger, por
  * isso a excepção é por cadeia exacta, tirada do registo — não escrita à mão.
  */
-const CADEIAS_HEAD = [
-  ...EDITIONS.map((e) => e.title),
-  SITE_NAME,
-  EDITION.display,
-  EDITION.iso,
-].sort((a, b) => b.length - a.length);
+const CADEIAS_HEAD = [...EDITIONS.map((e) => e.title), SITE_NAME].sort(
+  (a, b) => b.length - a.length,
+);
 
 /** De <html lang="pt-PT"> para a língua da edição. Derivado da tabela de rotas. */
 const LINGUA_POR_HREFLANG = Object.fromEntries(
@@ -114,6 +131,30 @@ const linhasConstruidas = new Set();
 let ficheiros = 0;
 let documentos = 0;
 let paginasDoLivro = 0;
+/** Valores auditados pela regra do selo, e quantos ficaram sem ele (sempre 0: falha). */
+let valoresAuditados = 0;
+let valoresSemSelo = 0;
+/** Ligações internas conferidas contra os ficheiros construídos. */
+let ligacoesConferidas = 0;
+/** Cada `href` interno encontrado, com a página onde está. */
+const ligacoesInternas = [];
+
+/**
+ * As ocorrências de `data-prova` de TODAS as páginas, guardadas para depois.
+ *
+ * A comparação não pode acontecer durante o varrimento: metade das contas do
+ * portão só existem quando ele acabou de contar as páginas construídas. Cada
+ * ocorrência guarda o que basta para a mensagem de erro dizer onde está.
+ */
+const ocorrenciasDaProva = [];
+
+/**
+ * As páginas construídas de cada rota lógica, para o portão poder contar do seu
+ * próprio ponto de observação — páginas, e não os módulos de onde elas saíram.
+ */
+const paginasPorRota = new Map();
+/** Páginas de linha construídas SEM `noindex`, por edição. */
+const linhasIndexaveis = new Set();
 
 /**
  * O restante da ortografia: por rota e por palavra, quantas ocorrências podem
@@ -710,6 +751,187 @@ function provaDaOrtografia() {
   }
 }
 
+/**
+ * ---------------------------------------------------------------------------
+ * A SÉTIMA ORIGEM: `data-prova` — o número que o sítio diz sobre si próprio
+ * ---------------------------------------------------------------------------
+ *
+ * `src/lib/prova.mjs` calcula, na construção, tudo o que o Método diz sobre o
+ * estado do sítio. Uma página que rende um desses números marca-o
+ * `data-prova="<chave>"`, como um valor do livro-razão se marca `data-claim`.
+ *
+ * O QUE ESTE PORTÃO NÃO FAZ, E É O PONTO: não chama `prova()` e compara o
+ * resultado consigo próprio. Isso seria confirmar uma função contra ela
+ * própria, que foi o defeito que `campo="study"` cometia até §1.24. Aqui há
+ * duas contas para cada chave:
+ *
+ *   A. a conta do portão, feita do SEU ponto de observação, contra `prova()`;
+ *   B. a conta do portão contra os ALGARISMOS que a página rendeu.
+ *
+ * O ponto de observação do portão é o `dist/` construído: as páginas de linha
+ * que existem, as que levam `noindex`, as páginas de estudo, as de município,
+ * o mapa do sítio, os ficheiros de dados. Onde não há segundo ponto de
+ * observação — as chaves que só se podem contar sobre os mesmos ficheiros do
+ * livro-razão — a conta é uma SEGUNDA IMPLEMENTAÇÃO sobre a mesma fonte, e
+ * isso está declarado chave a chave na tabela abaixo, na coluna `vista`:
+ *
+ *   'dist'     conta feita sobre o que foi construído. Independente.
+ *   'ledger'   segunda leitura dos mesmos ficheiros do livro-razão. Apanha um
+ *              erro de qualquer um dos dois lados; não apanha um livro-razão
+ *              errado, que é trabalho da verificação contra a fonte.
+ *   'modulo'   o mesmo módulo dos dois lados (a data da verificação, o endereço
+ *              das correções). A conta é a mesma; o que fica conferido é que a
+ *              página rendeu o que o módulo diz, e mais nada.
+ */
+const PROVA_VISTA = {};
+
+/** Uma conta do portão, com a vista de onde foi feita. */
+function conta(chave, valor, vista) {
+  PROVA_VISTA[chave] = vista;
+  return [chave, valor];
+}
+
+/**
+ * O que o portão conta, por conta própria, no fim do varrimento.
+ * @param {Map<string, any>} claims
+ */
+function contasDoPortao(claims) {
+  const linhas = [...claims.values()];
+  const paginasDeLinhaPt = [...linhasConstruidas].filter((k) => k.startsWith('pt:')).length;
+  const indexaveisPt = [...linhasIndexaveis].filter((k) => k.startsWith('pt:')).length;
+
+  /* As correções, contadas aqui e não por entradasDoRegisto(): é a segunda
+     implementação sobre os mesmos ficheiros. */
+  const porNatureza = { correcao: 0, atualizacao: 0, proveniencia: 0 };
+  for (const c of linhas) {
+    for (const corr of c.corrections ?? []) {
+      if (corr.kind in porNatureza) porNatureza[corr.kind]++;
+    }
+  }
+
+  /* O registo da travessia, lido aqui com o seu próprio leitor. */
+  let cruzadas = 0;
+  const dirCruzamentos = path.join(ROOT, 'ledger', 'cruzamentos');
+  if (fs.existsSync(dirCruzamentos)) {
+    for (const f of fs.readdirSync(dirCruzamentos)) {
+      if (!f.endsWith('.json')) continue;
+      const manifesto = JSON.parse(fs.readFileSync(path.join(dirCruzamentos, f), 'utf8'));
+      cruzadas += Object.keys(manifesto?.rows ?? {}).length;
+    }
+  }
+
+  /* Os concelhos, contados nas linhas do ficheiro que o sítio serve. */
+  let municipiosNoCsv = null;
+  const csv = path.join(DIST, 'dados', 'municipios-308.csv');
+  if (fs.existsSync(csv)) {
+    const linhasCsv = fs
+      .readFileSync(csv, 'utf8')
+      .split('\n')
+      .filter((l) => l.trim() !== '' && !l.startsWith('#'));
+    municipiosNoCsv = Math.max(0, linhasCsv.length - 1); // menos o cabeçalho
+  }
+
+  /* Os trabalhos com leitura escrita: são os únicos `estudo` que entram no mapa
+     do sítio, pelo mesmo filtro que a página usa para levantar o `noindex`. */
+  let leiturasNoMapa = null;
+  const mapa = path.join(DIST, 'sitemap-0.xml');
+  if (fs.existsSync(mapa)) {
+    const xml = fs.readFileSync(mapa, 'utf8');
+    const enderecos = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+    leiturasNoMapa = enderecos.filter((u) => matchPath(u.replace(/^https?:\/\/[^/]+/, ''))?.key === 'estudo' &&
+      matchPath(u.replace(/^https?:\/\/[^/]+/, ''))?.lang === 'pt').length;
+  }
+
+  /* A data da verificação, com a aritmética do portão e não a da prova. */
+  const diasDaVerificacao = Math.round(
+    (Date.parse(`${new Date().toISOString().slice(0, 10)}T00:00:00Z`) -
+      Date.parse(`${VERIFICACAO.verificadoEm}T00:00:00Z`)) / 86400000,
+  );
+
+  /* A agenda, lida aqui com o seu próprio leitor. Ausente é `null`. */
+  let agendaTotal = null;
+  const ficheiroAgenda = path.join(ROOT, 'src', 'data', 'agenda.json');
+  if (fs.existsSync(ficheiroAgenda)) {
+    try {
+      const cru = JSON.parse(fs.readFileSync(ficheiroAgenda, 'utf8'));
+      const itens = Array.isArray(cru?.itens) ? cru.itens : Array.isArray(cru) ? cru : null;
+      if (itens) agendaTotal = itens.length;
+    } catch {
+      agendaTotal = null;
+    }
+  }
+  const porEstadoDaAgenda = (estado) => {
+    if (agendaTotal === null) return null;
+    try {
+      const cru = JSON.parse(fs.readFileSync(ficheiroAgenda, 'utf8'));
+      const itens = Array.isArray(cru?.itens) ? cru.itens : cru;
+      return itens.filter((i) => i?.estado === estado).length;
+    } catch {
+      return null;
+    }
+  };
+
+  return Object.fromEntries([
+    conta('afirmacoes', paginasDeLinhaPt, 'dist'),
+    conta('indexaveis', indexaveisPt, 'dist'),
+    conta('divida', paginasDeLinhaPt - indexaveisPt, 'dist'),
+    conta('derivadas', linhas.filter((c) => (c.derived_from ?? []).length > 0).length, 'ledger'),
+    conta(
+      'aritmetica_reavaliada',
+      linhas.filter((c) => typeof c.check === 'string' && c.check.trim() !== '').length,
+      'ledger',
+    ),
+    conta(
+      'valores_creditados',
+      linhas.filter((c) => (c.attributed_to ?? []).length > 0).length,
+      'ledger',
+    ),
+    conta('fontes', new Set(linhas.map((c) => c.source).filter(Boolean)).size, 'ledger'),
+    conta(
+      'tipos_de_documento',
+      linhas.filter((c) => typeof c.document?.kind === 'string' && c.document.kind !== '').length,
+      'ledger',
+    ),
+    conta('linhas_cruzadas', cruzadas, 'ledger'),
+    conta('estudos', (paginasPorRota.get('pt:estudo') ?? 0), 'dist'),
+    conta('edicoes', EDITIONS.length, 'modulo'),
+    conta('leituras', leiturasNoMapa, 'dist'),
+    conta('municipios_com_pagina', (paginasPorRota.get('pt:municipio') ?? 0), 'dist'),
+    conta('municipios_total', municipiosNoCsv, 'dist'),
+    conta(
+      'releituras_registadas',
+      linhas.reduce((n, c) => n + (Array.isArray(c.verifications) ? c.verifications.length : 0), 0),
+      'ledger',
+    ),
+    conta('painel_reconferido_em', VERIFICACAO.verificadoEm, 'modulo'),
+    conta('correcoes', porNatureza.correcao, 'ledger'),
+    conta('atualizacoes', porNatureza.atualizacao, 'ledger'),
+    conta('revisoes_de_proveniencia', porNatureza.proveniencia, 'ledger'),
+    conta('endereco_correcoes', ENDERECO_CORRECOES, 'modulo'),
+    conta('agenda_total', agendaTotal, 'dist'),
+    conta('agenda_em_curso', porEstadoDaAgenda('em-curso'), 'dist'),
+    conta('agenda_a_seguir', porEstadoDaAgenda('a-seguir'), 'dist'),
+    conta('agenda_concluido', porEstadoDaAgenda('concluido'), 'dist'),
+    conta('agenda_retirado', porEstadoDaAgenda('retirado'), 'dist'),
+    ['_dias_da_verificacao', diasDaVerificacao],
+  ]);
+}
+
+/**
+ * A legenda de portas de um instrumento — o irmão de `data-legenda-selos`.
+ *
+ * Um número desenhado dentro de um `<svg>` não pode ser embrulhado numa
+ * ligação que se leia como porta (§1.34), e por isso a porta vive na legenda
+ * do próprio instrumento, marcada `data-legenda-prova`. É a mesma disciplina
+ * do selo, aplicada a um número que não é do livro-razão.
+ */
+function temPortaPara(no, destino) {
+  for (const a of no?.querySelectorAll?.('a') ?? []) {
+    if (decodeEntities(a.getAttribute('href') ?? '') === destino) return true;
+  }
+  return false;
+}
+
 function ficheirosHtml(dir) {
   const out = [];
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -751,7 +973,16 @@ for (const file of ficheirosHtml(DIST)) {
   const paginaDoLivro = rota?.key === 'linha' || rota?.key === 'livro';
   let claimDaPagina = null;
   if (rota?.key === 'livro') paginasDoLivro++;
+  if (rota) {
+    const chaveDaRota = `${rota.lang}:${rota.key}`;
+    paginasPorRota.set(chaveDaRota, (paginasPorRota.get(chaveDaRota) ?? 0) + 1);
+  }
   if (rota?.key === 'linha') {
+    /* Uma linha incompleta leva `noindex` e sai do mapa do sítio. É essa marca,
+       na página construída, que o portão conta para a dívida de proveniência —
+       e não a mesma leitura do livro-razão que a página fez. Duas vistas. */
+    const robots = root.querySelector('head meta[name="robots"]')?.getAttribute('content') ?? '';
+    if (!/noindex/i.test(robots)) linhasIndexaveis.add(`${rota.lang}:${rota.params.slug}`);
     claimDaPagina = claims.get(rota.params.slug) ?? null;
     if (!claimDaPagina) {
       err(
@@ -927,6 +1158,9 @@ for (const file of ficheirosHtml(DIST)) {
   }
 
   /* --- 3. invariantes de identidade --- */
+  /* O corpo, antes de lhe tirar seja o que for: as invariantes leem-no inteiro. */
+  const body0 = root.querySelector('body') ?? root;
+
   const canonical = root.querySelector('head link[rel="canonical"]');
   if (!canonical) err('falta <link rel="canonical">.');
   else {
@@ -935,8 +1169,82 @@ for (const file of ficheirosHtml(DIST)) {
       err(`o canonical não está no domínio canónico: "${href}" (esperado https://${SITE_HOST}/…).`);
     }
   }
-  if (!html.includes(AUTHORSHIP_LINE)) {
-    err(`falta a linha de autoria no rodapé: "${AUTHORSHIP_LINE}".`);
+  /**
+   * ---------------------------------------------------------------------
+   * A AUTORIA TEM CASA, E TODAS AS PÁGINAS TÊM A PORTA PARA LÁ
+   * ---------------------------------------------------------------------
+   *
+   * Até 16.08.2026 este portão exigia a linha «Escrito por IA, dirigido por
+   * uma pessoa» no rodapé de todas as páginas. A linha saiu (§1.39): a
+   * autoria passou a estar dita no Sobre, nas palavras da direção, e o que
+   * todas as páginas levam é a porta para lá. A invariante trocou de objecto,
+   * não desapareceu — e ficou mais forte, porque uma porta pode ser seguida e
+   * uma frase de rodapé não.
+   *
+   * Os documentos de estudo estão fora, como sempre: são obra alojada
+   * intacta, conferida carácter a carácter contra a origem, e saem deste
+   * varrimento antes de aqui chegar.
+   */
+  if (rota) {
+    const portaDoSobre = routePath('sobre', rota.lang);
+    const temPorta = body0
+      .querySelectorAll('a[href]')
+      .some((a) => decodeEntities(a.getAttribute('href') ?? '') === portaDoSobre);
+    if (!temPorta) {
+      err(
+        `esta página não tem ligação para "${portaDoSobre}".\n` +
+          `      A autoria deste sítio está dita no Sobre, e todas as páginas construídas têm de ` +
+          `levar lá. A ligação entra pela navegação do rodapé (SiteFooter.astro).`,
+      );
+    }
+  }
+
+  /**
+   * ---------------------------------------------------------------------
+   * O TEXTO DO SOBRE, CARÁCTER A CARÁCTER
+   * ---------------------------------------------------------------------
+   *
+   * O Sobre não é uma transcrição de uma fonte: é prosa da casa, escrita pela
+   * direção, e vive em `src/data/sobre.mjs`. Por isso não leva `data-verbatim`
+   * — mas leva a mesma disciplina. A marca `data-sobre="<lingua>"` não é uma
+   * dispensa de nada: é uma comparação, e a construção fecha à primeira
+   * palavra que difira do ficheiro.
+   *
+   * A página tem de trazer a marca. Sem esta segunda metade, apagar o
+   * atributo apagava a conferência.
+   */
+  if (rota?.key === 'sobre') {
+    const blocos = body0.querySelectorAll('[data-sobre]');
+    if (blocos.length !== 1) {
+      err(
+        `a página do Sobre tem ${blocos.length} blocos marcados data-sobre; tem de ter ` +
+          `exactamente um, com o texto decidido.`,
+      );
+    }
+    for (const bloco of blocos) {
+      const lingua = bloco.getAttribute('data-sobre');
+      const registado = SOBRE[lingua]?.texto;
+      if (!registado) {
+        err(`data-sobre="${lingua}" não é uma edição de src/data/sobre.mjs.`);
+        continue;
+      }
+      if (lingua !== rota.lang) {
+        err(
+          `a página do Sobre da edição "${rota.lang}" rende o texto de "${lingua}".`,
+        );
+        continue;
+      }
+      const renderizado = textoTranscrito(bloco);
+      const esperado = normalizeWhitespace(registado);
+      if (renderizado !== esperado) {
+        err(
+          `o texto do Sobre não é o que está decidido em src/data/sobre.mjs.\n` +
+            `      decidido:    ${esperado.slice(0, 150)}\n` +
+            `      renderizado: ${renderizado.slice(0, 150)}\n` +
+            `      Este texto é da direção. Muda por decisão, e no ficheiro.`,
+        );
+      }
+    }
   }
 
   /**
@@ -1000,8 +1308,29 @@ for (const file of ficheirosHtml(DIST)) {
     }
   }
 
+  /**
+   * ---------------------------------------------------------------------
+   * AS LIGAÇÕES INTERNAS APONTAM PARA ALGUMA COISA
+   * ---------------------------------------------------------------------
+   *
+   * O sítio promete que o selo é uma porta e que a porta abre. Isso estava
+   * conferido para os selos (que apontam para páginas de linha, e essas são
+   * contadas) e para mais nada: uma ligação da navegação para uma rota que
+   * deixou de ser construída dava 404 e passava.
+   *
+   * Confere-se o destino, não o texto: cada `href` que comece por `/` tem de
+   * corresponder a um ficheiro construído em `dist/` — uma página, um ponto
+   * final de dados, ou um ficheiro que o portão escreve. A âncora (`#`) é
+   * cortada: uma âncora que não existe não é uma ligação partida.
+   */
+  for (const a of body0.querySelectorAll('a[href]')) {
+    const href = decodeEntities(a.getAttribute('href') ?? '');
+    if (!href.startsWith('/')) continue;
+    ligacoesInternas.push({ rel, href });
+  }
+
   /* --- 4. corpo: retirar o que é legítimo, e ver o que sobra --- */
-  const body = root.querySelector('body') ?? root;
+  const body = body0;
   for (const el of body.querySelectorAll('script, style')) el.remove();
 
   /* A grafia da casa, antes de retirar seja o que for: a conferência precisa do
@@ -1052,7 +1381,12 @@ for (const file of ficheirosHtml(DIST)) {
           `livro-razão diz "${claim.value}".`,
       );
     }
-    if (rota && !paginaDoLivro) auditaSelo(el, id, rota.lang, err);
+    if (rota && !paginaDoLivro) {
+      valoresAuditados++;
+      const antes = erros.length;
+      auditaSelo(el, id, rota.lang, err);
+      if (erros.length > antes) valoresSemSelo++;
+    }
     aRemover.push(el);
   }
 
@@ -1307,6 +1641,80 @@ for (const file of ficheirosHtml(DIST)) {
     }
   }
 
+  /**
+   * ---------------------------------------------------------------------
+   * `data-prova` — a sétima origem, recolhida aqui e conferida no fim
+   * ---------------------------------------------------------------------
+   *
+   * Aqui confere-se o que se pode conferir com a página à frente: que a chave
+   * existe, que traz algarismos, e que é uma porta. A comparação com o número
+   * fica para o fim do varrimento, quando o portão já contou as páginas
+   * construídas — que é metade do seu ponto de observação.
+   */
+  for (const el of body.querySelectorAll('[data-prova]')) {
+    const chave = el.getAttribute('data-prova');
+    aRemover.push(el);
+
+    if (!(chave in PROVA)) {
+      err(
+        `data-prova="${chave}" não é uma chave de src/lib/prova.mjs. ` +
+          `Chaves: ${Object.keys(PROVA).join(', ')}.`,
+      );
+      continue;
+    }
+
+    const renderizado = textoTranscrito(el);
+    if (!/\d/.test(renderizado)) {
+      err(
+        `data-prova="${chave}" não rende nenhum algarismo ("${renderizado.slice(0, 60)}").\n` +
+          `      A marca é a origem de um NÚMERO do próprio sítio. Um estado vazio diz-se por ` +
+          `palavras, sem marca e sem porta.`,
+      );
+      continue;
+    }
+
+    /**
+     * A porta. Fora de um desenho, a marca vai na própria âncora ou dentro
+     * dela; dentro de um `<svg>` vale a legenda do instrumento, marcada
+     * `data-legenda-prova` — a mesma convenção do selo (§1.34), aplicada a um
+     * número que não é do livro-razão.
+     */
+    const destino = PROVA_POR_LINGUA[linguaPagina ?? 'pt'][chave].porta;
+    let temPorta = false;
+    if (dentroDeSvg(el)) {
+      const raiz = raizDoInstrumento(el);
+      for (const legenda of raiz?.querySelectorAll?.('[data-legenda-prova]') ?? []) {
+        if (temPortaPara(legenda, destino)) temPorta = true;
+      }
+      if (!temPorta) {
+        err(
+          `o número da prova "${chave}" está desenhado dentro de um <svg> e não tem porta na ` +
+            `legenda do seu instrumento.\n` +
+            `      esperava-se <a href="${destino}"> dentro de um [data-legenda-prova] deste ` +
+            `instrumento.`,
+        );
+      }
+    } else {
+      let no = el;
+      while (no && !temPorta) {
+        if (String(no.rawTagName ?? '').toLowerCase() === 'a') {
+          temPorta = decodeEntities(no.getAttribute('href') ?? '') === destino;
+          break;
+        }
+        no = no.parentNode;
+      }
+      if (!temPorta) {
+        err(
+          `o número da prova "${chave}" aparece sem a sua porta.\n` +
+            `      esperava-se que fosse, ou estivesse dentro de, <a href="${destino}">. ` +
+            `Onde aparece um valor, aparece a porta.`,
+        );
+      }
+    }
+
+    ocorrenciasDaProva.push({ rel, chave, digitos: digitsOf(renderizado), texto: renderizado });
+  }
+
   for (const el of body.querySelectorAll('[data-verbatim]')) {
     const chave = el.getAttribute('data-verbatim');
     const registado = VERBATIM[chave];
@@ -1354,6 +1762,104 @@ for (const file of ficheirosHtml(DIST)) {
         `      Se é uma medição, faça dela uma linha do livro-razão e cite-a com <Claim id="…"/>.\n` +
         `      Se é estrutura (data, título, escala), embrulhe-a em data-nonledger="…".`,
     );
+  }
+}
+
+/* --------------------------------------------------- depois do varrimento */
+
+/**
+ * As ligações internas, conferidas contra o que foi construído.
+ *
+ * `dist/prova.json` ainda não existe quando isto corre — é escrito no fim, e é
+ * escrito por este portão. Vai na lista do que se aceita, com a garantia de
+ * que é mesmo escrito: a última conferência deste ficheiro reabre-o e falha
+ * se não estiver lá.
+ */
+const CONSTRUIDOS = new Set();
+{
+  const anda = (dir) => {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, e.name);
+      if (e.isDirectory()) anda(full);
+      else CONSTRUIDOS.add('/' + path.relative(DIST, full).split(path.sep).join('/'));
+    }
+  };
+  anda(DIST);
+}
+function existeConstruido(caminho) {
+  if (caminho === CAMINHO_DA_PROVA) return true; // escrito no fim deste varrimento
+  if (CONSTRUIDOS.has(caminho)) return true;
+  const limpo = caminho.replace(/\/$/, '');
+  return (
+    CONSTRUIDOS.has(limpo + '.html') ||
+    CONSTRUIDOS.has(limpo + '/index.html') ||
+    (limpo === '' && CONSTRUIDOS.has('/index.html'))
+  );
+}
+for (const { rel, href } of ligacoesInternas) {
+  const semAncora = href.split('#')[0].split('?')[0];
+  if (semAncora === '') continue; // ligação só de âncora, na própria página
+  ligacoesConferidas++;
+  if (!existeConstruido(semAncora)) {
+    erros.push({
+      rel,
+      msg:
+        `a ligação interna "${href}" não corresponde a nada construído em dist/.\n` +
+        `      Uma porta que não abre é pior do que não haver porta.`,
+    });
+  }
+}
+
+/**
+ * ---------------------------------------------------------------------------
+ * A PROVA: duas contas, e nenhuma delas compara uma função consigo própria
+ * ---------------------------------------------------------------------------
+ *
+ *   A. a conta do portão contra `prova()` — duas implementações, e onde a
+ *      vista é a mesma isso está declarado em PROVA_VISTA;
+ *   B. a conta do portão contra os algarismos que cada página rendeu.
+ *
+ * A ordem importa: se A falhar, B falharia pela mesma razão e diria a coisa
+ * errada, por isso A é dita primeiro e com o seu próprio nome.
+ */
+const CONTAS = contasDoPortao(claims);
+const provaFinal = {};
+
+for (const [chave, item] of Object.entries(PROVA)) {
+  const meu = CONTAS[chave];
+  const dela = item.valor;
+  provaFinal[chave] = { valor: dela, vista: PROVA_VISTA[chave] ?? 'modulo' };
+  if (meu === undefined) {
+    erros.push({
+      rel: 'src/lib/prova.mjs',
+      msg:
+        `a chave "${chave}" existe na prova e o portão não a sabe contar. ` +
+        `Uma chave que o portão não confere é uma dispensa, e a marca data-prova não é isso.`,
+    });
+    continue;
+  }
+  if (meu === null && dela === null) continue;
+  if (String(meu) !== String(dela)) {
+    erros.push({
+      rel: 'src/lib/prova.mjs',
+      msg:
+        `a prova diz que "${chave}" é ${JSON.stringify(dela)} e o portão conta ` +
+        `${JSON.stringify(meu)} (vista: ${PROVA_VISTA[chave] ?? 'modulo'}).\n` +
+        `      Não é um desacordo de rendição: são duas contas da mesma coisa, e discordam.`,
+    });
+  }
+}
+
+for (const o of ocorrenciasDaProva) {
+  const esperado = CONTAS[o.chave];
+  if (esperado === undefined || esperado === null) continue; // já dito acima
+  if (digitsOf(String(esperado)) !== o.digitos) {
+    erros.push({
+      rel: o.rel,
+      msg:
+        `o número da prova "${o.chave}" foi renderizado como "${o.texto.slice(0, 40)}" e o ` +
+        `portão conta ${JSON.stringify(esperado)}.`,
+    });
   }
 }
 
@@ -1446,8 +1952,90 @@ if (erros.length) {
   process.exit(1);
 }
 
+/**
+ * ---------------------------------------------------------------------------
+ * `dist/prova.json` — a prova desta construção, para quem não lê páginas
+ * ---------------------------------------------------------------------------
+ *
+ * Escrito AQUI, e não antes: metade destas contas só existe depois de o
+ * varrimento acabar (páginas construídas, valores auditados, ligações
+ * conferidas). Só se escreve depois de o varrimento passar: um ficheiro de
+ * prova escrito por uma construção que falhou seria uma prova de nada.
+ *
+ * É JSON e não uma página, como `version.json`, e por isso está fora do
+ * varrimento de algarismos — não precisa de dispensa nenhuma, porque nunca
+ * passa à frente do portão. O Método liga-o uma vez, como porta da prova da
+ * regra da construção.
+ *
+ * O carimbo da construção NÃO é recalculado aqui: lê-se de `version.json`,
+ * que é onde ele é escrito. Duas fontes para o mesmo commit divergiriam.
+ */
+const versao = (() => {
+  try {
+    return JSON.parse(fs.readFileSync(path.join(DIST, 'version.json'), 'utf8'));
+  } catch {
+    return null;
+  }
+})();
+
+const documentoDaProva = {
+  _: [
+    'A prova desta construção. FICHEIRO GERADO por scripts/gate-html.mjs, no fim',
+    'de um varrimento sem erros. Cada chave de `prova` traz o valor e a vista de',
+    'onde o portão a recontou: dist (o que foi construído), ledger (segunda',
+    'leitura dos mesmos ficheiros do livro-razão) ou modulo (o mesmo módulo dos',
+    'dois lados). Ver DECISIONS.md §1.39 e §2.2, origem 7.',
+  ],
+  commit: versao?.commit ?? null,
+  construido_em: versao?.construido_em ?? null,
+  prova: provaFinal,
+  portao: {
+    paginas_construidas: ficheiros,
+    paginas_de_linha: linhasConstruidas.size,
+    documentos_conferidos: documentos,
+    valores_auditados: valoresAuditados,
+    valores_sem_selo: valoresSemSelo,
+    ligacoes_internas_conferidas: ligacoesConferidas,
+    restantes_ortografia: ocorrenciasRestantes,
+    afirmacoes_citadas_fora_do_livro: idsUsados.size,
+    avisos: avisos.length,
+  },
+};
+
+const FICHEIRO_DA_PROVA = path.join(DIST, CAMINHO_DA_PROVA.replace(/^\//, ''));
+fs.writeFileSync(FICHEIRO_DA_PROVA, JSON.stringify(documentoDaProva, null, 2) + '\n', 'utf8');
+
+/**
+ * E relê-se. Um ficheiro que se escreve e não se volta a abrir é uma
+ * suposição: o Método liga-o, e uma porta que não abre é o defeito que este
+ * bloco existe para fechar.
+ */
+try {
+  const relido = JSON.parse(fs.readFileSync(FICHEIRO_DA_PROVA, 'utf8'));
+  const chavesEscritas = Object.keys(relido.prova ?? {});
+  if (chavesEscritas.length !== Object.keys(PROVA).length) {
+    console.error(
+      vermelho(
+        `\n  ${CAMINHO_DA_PROVA} foi escrito com ${chavesEscritas.length} chaves; ` +
+          `esperavam-se ${Object.keys(PROVA).length}.\n`,
+      ),
+    );
+    process.exit(1);
+  }
+} catch (e) {
+  console.error(vermelho(`\n  ${CAMINHO_DA_PROVA} não existe ou não é JSON válido: ${e.message}\n`));
+  process.exit(1);
+}
+
 console.log('');
 console.log('  ' + verde('✓') + ' nenhum algarismo sem proveniência nas páginas construídas.');
+console.log(
+  cinza(
+    `    prova · ${Object.keys(PROVA).length} chaves reconferidas pelo portão · ` +
+      `${ocorrenciasDaProva.length} números marcados nas páginas · ` +
+      `${ligacoesConferidas} ligações internas · escrito em ${CAMINHO_DA_PROVA}`,
+  ),
+);
 console.log('');
 
 /* =============================================================================

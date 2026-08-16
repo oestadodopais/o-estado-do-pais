@@ -44,7 +44,23 @@ export const PRIMARY_LANG = 'pt';
  */
 export const ROUTES = {
   home: { pt: '/', en: '/en' },
+  /**
+   * A página que diz a ideia e pára. O texto é da direção, está em
+   * `src/data/sobre.mjs` e o portão compara-o com o que a página rende.
+   * É aqui que vive a autoria, desde que o rodapé passou a ser navegação só:
+   * por isso todas as páginas construídas têm de trazer a porta para aqui, e
+   * o portão conta-a (DECISIONS §1.39).
+   */
+  sobre: { pt: '/sobre', en: '/en/about' },
   metodo: { pt: '/metodo', en: '/en/method' },
+  /**
+   * O registo de correções, que vivia dentro do Método. Uma política tem uma
+   * casa só: a política em três naturezas, o registo lido do livro-razão e a
+   * caixa para escrever. `/metodo#correcoes` continua a existir e aponta para
+   * aqui — as páginas que estiveram no ar ganham reencaminhamento, não
+   * apagamento (§1.29).
+   */
+  correcoes: { pt: '/correcoes', en: '/en/corrections' },
   estudos: { pt: '/estudos', en: '/en/studies' },
   estudo: { pt: '/estudos/:slug', en: '/en/studies/:slug' },
   documento: { pt: '/estudos/:slug/documento', en: '/en/studies/:slug/document' },
