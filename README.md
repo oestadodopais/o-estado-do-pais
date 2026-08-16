@@ -26,9 +26,13 @@ Requer Node ≥ 22.12 (exigência do Astro 7).
 
 `npm run build` são sete passos encadeados, e qualquer um deles pára tudo:
 
-1. `ledger:check` — o livro-razão está completo e a aritmética bate certo;
-2. `check:cruzamento` — cada linha que veio do motor de investigação é, byte a
-   byte, a que atravessou (ver [«Linhas cruzadas»](ledger/README.md));
+1. `ledger:check` — o livro-razão está completo e a aritmética bate certo, e
+   toda a entrada do `DECISIONS.md` a partir da §1.38 declara que texto governa,
+   com o resumo desse texto tal como ele está (a **amarra das decisões**: uma
+   mudança de rumo não sai em silêncio);
+2. `check:cruzamento` — cada linha **e cada ficheiro** que veio do motor de
+   investigação é, byte a byte, o que atravessou, e as invariantes da agenda são
+   reconferidas deste lado (ver [«Linhas cruzadas»](ledger/README.md));
 3. `check:documentos` — cada documento de estudo alojado é, byte a byte, o que o
    manifesto declara;
 4. `astro build` — se um gabarito citar uma afirmação que não existe, o build atira;
@@ -39,9 +43,12 @@ Requer Node ≥ 22.12 (exigência do Astro 7).
    travessão no texto renderizado (`IDENTIDADE.md` §9, `DECISIONS.md` §1.38);
    o texto do Sobre igual, carácter a carácter, ao que está decidido em
    `src/data/sobre.mjs`; a porta para o Sobre em todas as páginas construídas;
-   e cada número marcado `data-prova` reconferido contra a conta que o próprio
-   portão faz da mesma coisa (`IDENTIDADE.md` §10, `DECISIONS.md` §1.39). No
-   fim, escreve `dist/prova.json` e relê-o;
+   cada número marcado `data-prova` reconferido contra a conta que o próprio
+   portão faz da mesma coisa (`IDENTIDADE.md` §10, `DECISIONS.md` §1.39); e cada
+   campo marcado `data-agenda` comparado, carácter a carácter, com o registo da
+   agenda que atravessou do motor, mais a contagem do que a página rende contra
+   a do registo da travessia (`DECISIONS.md` §1.40). No fim, escreve
+   `dist/prova.json` e relê-o;
 7. `check:dados` — os ficheiros de dados descarregáveis existem e batem certo
    com as suas origens.
 
@@ -96,6 +103,7 @@ faça, e não deve haver.
 | Município         | `/municipios/<slug>`  | `/en/municipalities/<slug>` |
 | Livro-razão       | `/livro-razao`        | `/en/ledger`              |
 | Linha             | `/livro-razao/<slug>` | `/en/ledger/<slug>`       |
+| Agenda            | `/agenda`             | `/en/agenda`              |
 | O marcador        | `/a-verificar`        | `/en/to-verify`           |
 
 `/prova.json` não é uma página e não está nesta tabela: é o resumo desta
@@ -110,6 +118,11 @@ Um `<slug>` de estudo é o **trabalho**, não a edição: um estudo publicado em
 e em EN tem duas entradas no arquivo e uma só página. A tabela de rotas está em
 [`src/lib/routes.mjs`](src/lib/routes.mjs) e é a mesma que alimenta a navegação,
 os hreflang e o sitemap.
+
+`/agenda` diz o que este observatório está a medir, o que se segue, e o critério
+que pôs lá cada coisa, com o histórico inteiro de cada mudança de estado; e traz,
+na mesma página, o calendário do que as fontes publicam a seguir. Os dois
+registos vêm do motor e não se escrevem aqui: `DECISIONS.md` §1.40.
 
 Um `<slug>` de município é o nome do concelho sem acentos. A lista dos que têm
 página está em [`src/data/municipios.mjs`](src/data/municipios.mjs) — hoje só

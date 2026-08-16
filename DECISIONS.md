@@ -3119,7 +3119,426 @@ rodapé só com navegação, `/a-verificar` fora dele) e da ortografia (§1.38).
 **Texto:** metodo 4d218817cc4d
 **Agenda:** habitacao 2026-08-16 · evora-pagina-de-municipio 2026-08-16
 
-ENTRADA POR ESCREVER
+A regra 8 do Método prometia, desde 16.08.2026, que «a lista do que está em
+curso, do que se segue e do porquê é pública, e nada sai dela em silêncio». A
+lista não existia. O nó AGENDA do instrumento dizia «sem registo» e a linha de
+prova dessa regra dizia «sem registo nesta construção»: um estado vazio
+desenhado com honestidade, à espera do outro lado. O motor atravessou-o, e este
+bloco é a página que a promessa pedia.
+
+*Este registo segue a grafia que §1.38 fixou.*
+
+#### A travessia: dois registos inteiros, e não linhas
+
+O que atravessa deixou de ser só linhas do livro-razão. A agenda
+(`agenda/agenda.json` no motor) e o calendário das fontes
+(`indicators/calendar.json`) atravessam como **ficheiros inteiros**: não são
+valores com proveniência por campo, são dois registos que a página renderiza
+inteiros. Chegam a `src/data/agenda.json` e `src/data/calendario.json`, e o
+registo da travessia a `ledger/cruzamentos/agenda.json`, ao lado do `evora.json`.
+
+O exportador do motor escrevia esse registo em `src/data/`, que não é onde este
+sítio guarda registos de travessia. Passou a escrevê-lo na casa certa, e a raiz
+lê-se do destino: um destino que seja o `src/data` de um sítio tem o sítio por
+cima, e qualquer outro destino é a sua própria raiz. Uma regra só, a mesma forma
+dos dois lados, e uma reexportação passa a ser um comando em vez de um comando e
+um passo à mão. As vinte e duas conferências de `export_agenda_test.py`
+continuam verdes, incluindo a da idempotência, que agora lê o registo na casa
+nova.
+
+| Ficheiro | Onde | O que leva |
+| --- | --- | ---: |
+| `src/data/agenda.json` | o sítio | 5 itens |
+| `src/data/calendario.json` | o sítio | 16 acontecimentos, 8 sem data publicada |
+| `ledger/cruzamentos/agenda.json` | o sítio | os resumos de origem e de chegada, e as contagens |
+
+#### A conferência: dois tipos de registo, uma disciplina
+
+O `check:cruzamento` passou a conhecer os dois tipos, e lê o tipo **da forma do
+registo e não do nome do ficheiro**: um mapa `rows` prende linhas, um mapa
+`files` prende ficheiros. Offline compara o resumo dos bytes em disco com o que
+o registo declara; `--with-origin` compara com o ficheiro do motor. As mesmas
+mensagens e a mesma forma da conferência das linhas.
+
+E as invariantes que a página precisa para renderizar são **reconferidas deste
+lado**, não aceites do motor: o estado é o `para` da última entrada do
+histórico, todo o item tem histórico, quem vai para `retirado` traz motivo, tudo
+o que renderiza tem `pt` e `en`, as linhas citadas existem no livro-razão deste
+sítio, os acontecimentos citados existem no calendário. O motor confere-as antes
+de escrever, e isso não é razão para não as conferir aqui: uma conferência de
+aceitação que confiasse no produtor seria o produtor a assinar por si próprio, e
+é a mesma frase que já estava escrita sobre o modo offline das linhas.
+
+**Posto à prova a falhar, um estrago de cada vez, e cada um reposto:**
+
+| Estrago | A conferência |
+| --- | --- |
+| um carácter editado em `src/data/agenda.json` | fecha, código 1: «os bytes em disco já não são os que atravessaram», com os dois resumos |
+| um ficheiro do registo em falta em `src/data/` | fecha: «o registo diz que este ficheiro atravessou, e não há src/data/calendario.json» |
+| o `agenda/agenda.json` do motor tocado | fecha **só** com `--with-origin`: «já não é o ficheiro do motor que atravessou»; offline passa, código 0, como nas linhas |
+| o estado fora do fim do histórico | fecha: «o estado é "concluido" e a última entrada do histórico leva-o a "a_seguir"» |
+| um item sem histórico | fecha: «sem histórico. É o histórico que prova que nada saiu em silêncio» |
+| um critério a apontar para uma linha que não existe | fecha: «aponta para a linha "precos-da-habitacao-2099", que não existe em ledger/claims/» |
+| um critério a nomear um acontecimento fora do calendário | fecha: «nomeia o acontecimento "dgal-endividamento-2099", que não está no calendário das fontes» |
+
+#### A página, e a disposição que escolheu
+
+`/agenda` · `/en/agenda`, **disposição A** (`IDENTIDADE.md` §3). A coluna de
+rótulo leva o nome do estado e o corpo leva os itens: é a disposição das páginas
+com secções nomeadas, e os quatro estados são exactamente isso. A **B** foi
+posta de lado com razão escrita: a sua segunda coluna é o aparelho de *uma*
+leitura (proveniência, ressalvas, o que a página não sabe), e aqui o aparelho
+pertence a cada item e não à página; uma coluna de 300px vazia, ou a repetir-se
+item a item, é o defeito que a §3 existe para impedir. **Sem cor nova**: os
+estados são rótulos de texto em monoespaçada, e o que separa um item do seguinte
+é fio e fundo.
+
+As secções, por esta ordem: **Em curso · A seguir · Concluído · Retirado**. A
+ordem é editorial e não do registo: quem abre a página quer saber o que se está
+a fazer. `Retirado` está vazio, e o vazio está **desenhado**, nas duas edições:
+«Nada foi retirado desta agenda até hoje. Quando alguma coisa for, fica aqui,
+com a data e o motivo: um item não se apaga, muda de estado.»
+
+Cada item traz o título, a pergunta registada, o porquê, os critérios, as datas,
+e o histórico inteiro. Três coisas ficam ditas porque são decisões:
+
+1. **A pergunta.** O registo prévio do motor escreve-se em inglês, e a `pergunta.en`
+   é a `question` do registo, carácter a carácter, conferida pela A9 do
+   exportador. A `pergunta.pt` é a edição portuguesa dessa mesma pergunta. A
+   página diz qual é qual, na edição que o leitor tem à frente, em vez de
+   deixar as duas parecerem iguais em estatuto.
+2. **Os critérios com linhas vazias não se escondem.** Três dos seis quadros
+   institucionais do estudo da habitação não têm linha nenhuma no livro-razão, e
+   é o registo que o diz, com a razão escrita: a ausência é parte do que o
+   estudo vai fechar. A página rende a nota.
+3. **O item sem critério nenhum.** A entrada retrospectiva da página de Évora
+   veio de uma decisão de direção e não de um quadro, de um calendário, de um
+   leitor ou de uma correção. A página rende a ausência por palavras.
+
+O calendário das fontes vai na **mesma página**, e não numa sub-página: quem lê
+um item quer ver o acontecimento sem mudar de endereço, e o critério liga-lhe
+por âncora. Primeiro o que tem data publicada pela fonte, por ordem de data, com
+o endereço onde está escrita, a data em que foi lida e a frase que a diz;
+depois o que a fonte não datou.
+
+**O marcador, no calendário, não quer dizer «valor por confirmar».** Quer dizer
+que a fonte não publica data nenhuma, e é assim que a página o rende: o marcador
+e, ao lado, «a fonte não publica data», com a evidência indirecta por baixo
+quando existe. São oito acontecimentos. O caso da ERSAR fica exactamente como
+está no registo: nada foi lido, porque `ersar.pt` não respondeu.
+
+Uma coisa que a página **não** rende, e é decisão: o campo `serie` de cada
+acontecimento (códigos de conjunto de dados do organismo). É apontador de
+máquina, não diz nada a quem lê, e `afecta_linhas` já mostra o que o
+acontecimento move, com a porta para cada linha.
+
+#### A oitava origem, e porque é que ela não é uma dispensa
+
+Estados, datas e prosa do registo vão marcados `data-agenda="<id>.<campo>"`, e o
+portão compara o texto renderizado com o campo do registo, **carácter a
+carácter**. É a origem 6 (`data-linha-*`) aplicada um nível acima: ali um campo
+de uma linha do livro-razão na página dessa linha, aqui um campo dos dois
+registos que atravessaram na página que os renderiza. Vale **só** na página da
+agenda, pela mesma razão que a 6 vale só nas páginas do livro-razão: noutro
+sítio seria uma segunda porta para pôr texto de um registo em prosa corrente.
+
+Os acontecimentos levam o prefixo `evento:` porque um item da agenda e um
+acontecimento do calendário podem ter o mesmo id, e têm: `dgal-endividamento-2025`
+é os dois.
+
+O portão **lê os dois ficheiros com o seu próprio leitor** e traz a sua própria
+cópia dos rótulos dos quatro estados. Se lesse `src/lib/agenda.mjs`, que é o
+módulo da página, confirmava o módulo e não o registo, que é o erro que
+`campo="study"` cometia até §1.24.
+
+**As datas levam ainda `data-nonledger="data-da-agenda"`**, motivo novo em
+`ledger/allowlist.yml` e o primeiro desde a página de município. §1.34 fez ponto
+de honra de a lista não crescer, e este é um tipo de página com uma classe de
+data que nenhum dos motivos existentes descreve: quando um item foi proposto,
+decidido, criado e alterado, e quando uma fonte anuncia publicar. Não é uma
+dispensa: a comparação prova que a data é a do registo, e o motivo declarado diz
+porque é que uma data do registo pode aparecer numa página que só publica
+valores medidos. São duas perguntas diferentes, e cada uma tem a sua marca.
+
+**O que não sai do varrimento da ortografia.** `data-agenda` **não** entra na
+lista do que a conferência da grafia ignora. A prosa destes registos é prosa da
+casa, escrita do outro lado da fronteira mas pela mesma casa, e por isso é
+varrida como qualquer outra: nenhuma forma anterior ao Acordo nas páginas em
+pt-PT, nenhum travessão em nenhuma das duas edições. O motor já proíbe o
+travessão (a sua conferência X2), e o «director» que existe no registo está
+dentro da chave `en`, que rende numa página inglesa.
+
+**Estragos plantados, cada um reposto:**
+
+| Estrago | O portão |
+| --- | --- |
+| o estado renderizado do campo errado | fecha: «o campo "habitacao.estado" não foi transcrito fielmente do registo da agenda» |
+| uma data com um dia a mais | fecha, com as duas: «no registo: 2026-08-10 · renderizado: 2026-08-11» |
+| um item do registo que a página não rende | fecha três vezes: a contagem total, o item pelo nome, e a contagem daquele estado |
+| uma contagem editada no registo da travessia | fecha: «a página rende 3 item(ns) em "Em curso" e o registo da travessia conta 2» |
+
+As contagens do registo são comparadas com o que a página conta, **nunca usadas
+como fonte da página**: é o que o contrato do motor pede, e é o que o portão faz
+no fim do varrimento, nas duas edições.
+
+#### As costuras que estavam à espera, e as duas que estavam partidas
+
+O cabeçalho ganhou a linha que §1.39 deixou marcada por comentário: «Agenda: N
+em curso · N a seguir», nas duas edições, com os dois números marcados
+`data-prova` e cada um porta para `/agenda`. A rota entrou na tabela e
+`portaDaAgenda()` passou a devolvê-la sem que fosse preciso tocar-lhe. O nó
+AGENDA do instrumento encheu-se sozinho.
+
+**Duas costuras estavam partidas, e ficam ditas.** `src/lib/prova.mjs` e o
+portão contavam os estados da agenda com hífen (`em-curso`, `a-seguir`) e o
+registo do motor escreve-os com traço baixo (`em_curso`, `a_seguir`): com o
+ficheiro presente, as duas chaves davam **zero**. Não era possível descobri-lo
+antes de existir um ficheiro a sério, que é precisamente o que §4.3 dizia da
+agenda («o caminho está construído dos dois lados e nunca correu com um ficheiro
+a sério»). Correu, e o caminho tinha um degrau.
+
+**A regra 8 do Método** passa a provar-se com as quatro contagens da agenda, cada
+uma porta para a página, e a contagem dos concelhos com página sai dessa linha:
+é cobertura, e a regra 8 não é sobre cobertura. A chave continua na prova e vive
+onde conta, no mapa e em `/municipios`. A porta da regra deixou de ser «Os
+concelhos de Portugal» e passou a ser «A agenda inteira», porque as portas de
+uma regra levam ao que a regra prova. E a frase do mecanismo foi lida contra a
+página construída e ajustada ao que a página faz, nem mais nem menos: nomeia o
+que cada item traz, e diz que onde não há critério, ou não há ainda decisão da
+direção, a página di-lo.
+
+#### A amarra das decisões: uma mudança de rumo não sai em silêncio
+
+Regra de fecho 3 da direção, 2026-08-15, passada a mecanismo. Toda a entrada
+deste registo **a partir da §1.38** declara, na primeira linha por baixo do
+título, o que a decisão governa: `**Afecta:** sobre · metodo · agenda · nenhum`.
+Para cada texto nomeado, a entrada carrega o resumo criptográfico do ficheiro
+tal como ele estava quando a entrada foi escrita, e ou o texto mudou no bloco,
+ou a entrada diz `**Sem alteração:**` com o motivo. Uma entrada que nomeie a
+agenda cita a entrada do histórico que regista a mudança.
+
+E depois a conferência que fecha o círculo, dentro do `ledger:check`: a **última**
+entrada que governa cada texto tem de trazer o resumo do ficheiro tal como ele
+está hoje. Se não trouxer, ou o texto mudou depois da última decisão que o
+governa, ou a decisão foi registada contra outro texto.
+
+As entradas anteriores à §1.38 **não** são conferidas, e é honesto: são
+anteriores à regra, e carimbá-las agora seria escrever que declararam uma coisa
+que ninguém lhes pediu. Só a §1, também: a §2 é como o portão funciona, a §3 é o
+que esta construção verificou e a §4 é o registo dos defeitos, e nenhuma delas é
+uma decisão a governar um texto.
+
+A §1.38 recebeu `Afecta: nenhum` — é uma decisão sobre como se escreve, não sobre
+o que o Sobre, o Método ou a agenda dizem. A §1.39 recebeu `Afecta: sobre ·
+metodo` com os resumos dos ficheiros como esse bloco os deixou, lidos do commit
+que o fechou.
+
+**Estragos plantados, cada um reposto:**
+
+| Estrago | A conferência |
+| --- | --- |
+| um carácter mudado em `src/data/sobre.mjs` sem entrada nova | fecha: «o texto mudou depois da última decisão que o governa», com os dois resumos |
+| a linha `Afecta` apagada da §1.39 | fecha duas vezes: a entrada não declara, e nenhuma entrada passa a governar o Sobre |
+| `Sem alteração` sem motivo | fecha: «sem motivo escrito. O motivo é a metade que conta» |
+| uma data do histórico da agenda que não existe | fecha: «cita "habitacao 2026-08-17" e o histórico desse item não tem essa data (tem 2026-08-16)» |
+| uma entrada a nomear o Método com o resumo errado | fecha, nomeando a entrada e os dois resumos |
+
+**A terceira cláusula vive no motor.** `sweeps/decisoes.py` corre no varrimento
+mensal, lê o `DECISIONS.md` deste sítio e os dois ficheiros de texto, e imprime,
+por texto, a entrada que o governa, o resumo carimbado, o resumo de hoje, e OK
+ou DIVERGE. Só relatório, e sai com 0 mesmo quando diverge: o código de saída da
+corrida mensal pertence à vigilância que precisa dele. Duplica a conferência do
+sítio **de propósito** — uma regra conferida só pela construção que ela governa é
+conferida pela coisa que ela existe para constranger. Corrido à mão a
+2026-08-16:
+
+```
+DECISOES  sobre   §1.39  stamped 44362a8d7409  now 44362a8d7409  ->  OK
+DECISOES  metodo  §1.40  stamped 4d218817cc4d  now 4d218817cc4d  ->  OK
+DECISOES: 2 governed text(s), each agreeing with the decision that governs it.
+```
+
+E com um carácter plantado em `sobre.mjs`, a linha que ele imprime é
+`DECISOES  sobre   §1.39  stamped 44362a8d7409  now 7e72fa40afce  ->  DIVERGE`.
+
+#### Os cortes de palavras, e a régua nas duas construções
+
+Três cortes adiados desde o `BRIEF-confianca.md` §6.3. Nenhum muda um valor, um
+selo ou uma frase de um trabalho.
+
+1. **A política das correções sai das páginas de linha.** Estava dita por
+   inteiro em 132 páginas de linha, nas duas edições, num sítio onde ela não se
+   decide. Passa a uma linha e a porta: «Correções: públicas, datadas,
+   permanentes · A política inteira →». A porta que o portão conta em todas as
+   páginas não mexeu: o que saiu foi o parágrafo, não a porta.
+2. **A promessa de não ordenar partidos** vive na regra 10 do Método e na página
+   do município, e nas 61 páginas de linha com atribuição fica o rótulo e a
+   âncora para a regra 10.
+3. **O aparelho de Évora** perde as quatro ressalvas que repetiam, em versão
+   curta, o que «Método e ressalvas» já diz por inteiro e com a frase do
+   trabalho que a sustenta. Ficam onde estão ditas com a sua prova, e o aparelho
+   ganha a porta para a secção, **com o rótulo dela e sem uma palavra nova**. De
+   316 palavras para 262 na edição portuguesa, de 305 para 250 na inglesa, e de
+   dez itens para seis em «o que esta página não sabe».
+
+A régua passou a saber o que é `data-agenda`: um excerto do calendário das
+fontes é a fonte a falar, e contá-lo como moldura da casa mediria a coisa
+errada. Entrou na lista das origens declaradas, ao lado de `data-claim` e de
+`data-verbatim` — e, porque a régua mudou, foi **corrida nas duas construções**,
+a de B e a de agora, sobre uma reconstrução da árvore de B.
+
+| Medida | Antes (B, 305 páginas) | Depois (307 páginas) |
+| --- | ---: | ---: |
+| Frases de moldura distintas | 80 | **80** |
+| Ocorrências | 2 345 | **2 349** |
+| …sem a porta das correções | 2 040 | **2 042** |
+| Páginas com porta de correções | 305 de 305 | **307 de 307** |
+| Palavras de moldura | 31 852 | **25 159** |
+| Valores da primeira página sem selo | 0 | **0** |
+
+**As distintas não mexem, e a razão importa:** cada frase cortada foi
+substituída por uma linha, e uma linha com trinta ou mais carácteres continua a
+ser uma frase de moldura para esta régua. O que mudou foram as **palavras**:
+menos 6 693, vinte e um por cento. As quatro ocorrências a mais são a agenda:
+duas páginas novas, cada uma com a linha do cabeçalho e a porta das correções.
+
+**Esta é a linha de base** que o `gate:identidade` vai segurar quando for
+construído (fase 4): 80 frases distintas, 2 349 ocorrências, 25 159 palavras de
+moldura, 307 de 307 páginas com porta de correções. A régua **não mede** frases
+de meta-comentário: não tem essa conta e não se inventou uma aqui, porque uma
+medida nova sem um «antes» medido com ela não compara nada. Fica por construir,
+e é trabalho de quem escrever o `gate:identidade`.
+
+#### A ortografia das linhas cruzadas, fechada na origem
+
+§4.1 deixou isto ao agente que trabalha o motor neste mesmo bloco, e está feito.
+A prosa da casa das 70 linhas cruzadas converteu-se onde foi escrita, que é
+`publisher/manifest.evora.json`, e voltou por reexportação. Quatro `derivation`
+com «tecto» passam a «teto». Cinco entradas de correção do PRR, nas duas
+edições, trocam o travessão por dois pontos: é um aposto que explica a oração
+anterior. **Nenhuma palavra acrescentada, nenhuma retirada, nenhum valor
+tocado**, e campos da casa só: nem um `excerpt`, nem um `document.title`, nem uma
+`source`.
+
+Do lado da fonte, de **19 ocorrências para 5**; das visíveis nas páginas, de
+**10 para 0**. `ortografia/restantes.yml` fica **vazio**, que é o estado a que uma
+lista destas devia chegar, e continua a existir para parar a construção à
+primeira ocorrência nova. As cinco que ficam estão todas no campo `note`, que
+`ledger/README.md` declara não publicado: duas são o título de um quadro do
+documento citado entre plicas, e transcrição não se converte; uma é inglês
+(«no actual completion date»); duas são prosa do motor que ninguém lê.
+
+**As correções sobreviveram byte a byte**, e foi conferido linha a linha contra
+uma cópia de antes: os seis campos, a data, a natureza, os dois endereços e as
+duas edições do motivo, iguais menos o carácter que a passagem foi lá trocar.
+
+**Uma coisa que esta corrida descobriu, e é uma dívida do motor.** A V10 do
+exportador de linhas não tem caminho para «a mesma correção, com outra
+redação». O bloco `corrections` do lado do sítio é levantado byte a byte e só
+entradas novas do manifesto são acrescentadas — por desenho, para não reescrever
+o que outra pessoa escreveu. Uma correção **reescrita** no manifesto chega cá
+como uma **segunda entrada do mesmo acontecimento**, e foi o que a primeira
+reexportação fez, com a duplicação à vista no diff. O caminho que existe é
+regenerar a linha, e só é seguro porque o registo mostra `site_corrections`
+vazio nas setenta: nenhuma correção nasceu do lado do sítio, por isso nada se
+perde ao deixar o exportador reescrever a linha inteira a partir do manifesto.
+Foi conferido antes de o fazer. **Com uma correção nascida do lado do sítio,
+este caminho perdia-a**, e é isso que fica por resolver do lado do motor.
+
+#### Os defeitos pequenos, fechados
+
+**Duas descrições diziam ser a frase de abertura do documento e não eram.** As
+páginas de «Os Pelouros» e de «Prometido, Pago, Auditado» imprimiam «Descrição:
+frase de abertura do documento» por cima de uma reformulação. **Isto corrige o
+item 6 da §1.35**, que registou o rótulo como se a afirmação fosse verdadeira; o
+registo não se reescreve, e a correção fica aqui.
+
+As duas passam a ser a frase, lida do próprio ficheiro em `studies-src/`, e a
+frase entra por `src/data/verbatim.mjs`: o portão compara-a com o registo,
+carácter a carácter, em todos os sítios onde ela rende. A descrição inglesa de
+«Os Pelouros» **não pode** ser a frase, porque o documento não tem edição
+inglesa: é tradução da casa, e a página passa a dizer isso. O rótulo passou a ser
+**por edição** e não por trabalho, que é a razão de o defeito ter sido possível.
+
+A frase de «Prometido, Pago, Auditado» traz a data da recolha, e é por isso que
+entra por `verbatim.mjs` em vez de ser texto corrido. No `<head>` não há markup
+onde pendurar a marca, e o portão passa a tolerar lá as citações registadas pela
+cadeia exacta, como já tolerava os títulos de estudo: uma frase que não esteja em
+`verbatim.mjs` continua a fechar o portão.
+
+**Sete linhas do Eurostat** diziam «nama_10r_2gdp, actualizado 2026-02-10».
+§1.38 tinha-as deixado por ser campo transcrito; a leitura estava errada, porque
+a palavra é da casa e não do Eurostat, que publica em inglês. Passam a
+«atualizado». É um afinamento de apontador — mesmo sítio, outra grafia — e por
+isso **não leva entrada de correção**, pela regra do silêncio (§1.36,
+`ledger/README.md`). São linhas nativas, não cruzadas, e isso foi conferido antes
+de lhes tocar.
+
+**O marcador estava definido duas vezes**, em `src/data/studies.mjs` e em
+`src/lib/ledger.mjs`, com os dois valores iguais por sorte e não por construção.
+Passa a ter uma casa, `src/data/marcador.mjs`, e os dois módulos reexportam-no.
+A identidade diz que há um marcador; agora há uma definição.
+
+**O sinal de tempo do cabeçalho passa a nomear o painel.** Dizia «Painel
+reconferido a», e fora da primeira página «o painel» é ambíguo: a página do
+município publica de propósito nenhuma data de frescura própria (§1.34). Passa a
+«Painel europeu reconferido a» / «European panel re-checked on», e a frase passa
+a ser **porta** para a secção da primeira página onde estão os valores que essa
+data cobre. É a mesma âncora que a chave `painel_reconferido_em` da prova já
+usava.
+
+E a §3 dizia «Treze documentos reais alojados» quando a construção conta quinze.
+Essa secção é o registo da construção de hoje, e passou a dizer o que a
+construção diz.
+
+#### O teste dos dois minutos, marcado outra vez
+
+Sobre o sítio construído, sem inflação:
+
+| | O que se pede | Hoje |
+| --- | --- | --- |
+| (a) | perceber o que o sítio é | **passa** — a linha do cabeçalho está em todas as páginas, e `/sobre` diz em duas frases o que é e que é escrito por inteligência artificial |
+| (b) | encontrar o seu concelho e ver medidas com fontes | **parcial** — os 308 estão no índice e no mapa; 307 dizem «sem página ainda». Quem é de Évora vê oito medidas, cada uma com o selo para a sua linha |
+| (c) | abrir um estudo e ler a versão curta | **parcial** — 5 dos 11 trabalhos têm leitura escrita, com relance e leitura breve; os outros seis são página de arquivo com o documento |
+| (d) | ver quando cada coisa foi conferida e como corrigir | **passa** — o sinal de tempo em todas as páginas, agora com nome e porta; «Lido a» em cada linha; a porta das correções em 307 de 307 páginas e a política em `/correcoes` |
+
+É o que o roteiro esperava. Nada aqui subiu de nota por causa deste bloco, e o
+que subiu foi a honestidade de (d): a data deixou de ser ambígua fora da
+primeira página.
+
+#### O que fica aberto
+
+Do lado do motor, escrito no contrato da travessia e repetido aqui porque é a
+página que o expõe:
+
+1. **Não há histórico do calendário.** Um acontecimento que passa e é
+   substituído pelo do ano seguinte não deixa registo do que estava lá antes.
+2. **Não há ligação automática entre um acontecimento e a linha que ele move.**
+   `afecta_linhas` é escrito à mão e conferido contra o livro-razão: garante-se
+   que o que lá está existe, não que esteja completo.
+3. **A agenda não sabe quando um item está atrasado.** Não tem prazos.
+4. **Oito acontecimentos sem data**, porque a fonte não publica nenhuma, e a
+   ERSAR **não foi lida de todo**: `ersar.pt` não respondeu.
+5. **A pergunta do estudo da habitação espera a leitura da direção**, e o registo
+   prévio está iniciado e **não selado**: selar antes dessa leitura seria
+   certificar que a pergunta precedeu a prova quando o que precede a prova ainda
+   pode mudar.
+6. **A V10 e a correção reescrita**, acima.
+7. **A ortografia continua revogável na pré-visualização** (§1.38), e agora a
+   revogação também atravessa o manifesto do motor.
+
+E o que a passagem da ortografia deixou de fora, por escolha e com motivo, e que
+o agente da ortografia tinha listado como «fora do âmbito»:
+
+- **identificadores internos com grafia anterior** — `taxa-de-actividade-2025`,
+  `taxa-de-cambio-efectiva-real-2025`, `data-de-actualizacao` já renomeado. Um id
+  é um endereço: mudá-lo parte ligações e obriga a reencaminhamento (§1.29);
+- **a «excepção» do próprio `IDENTIDADE.md` §6**, que é documento do repositório
+  e fica na grafia em que foi escrito;
+- **uma `note` em duas línguas ao mesmo tempo** numa linha do PRR;
+- **os quatro travessões em `excluded[].reason`** do manifesto do motor, que é o
+  registo sobre o que **não** atravessa e não rende em página nenhuma;
+- **as chaves de cadeia mortas** que o agente do Sobre listou, por arrumar.
 
 ## 2. Como funciona o portão, e o que ele não vê
 
@@ -3155,7 +3574,7 @@ ficheiro da linha: é uma leitura do `source_url` — o `#page=N` — feita pelo
 portão com a **sua própria cópia** da regra, para que ele confira a linha e não
 o gabarito. A razão é a mesma do separador de `attributed_to` (§1.31).
 
-### 2.2 As sete origens legítimas de um algarismo numa página
+### 2.2 As oito origens legítimas de um algarismo numa página
 
 1. `data-claim="<id>"` — veio do livro-razão. O portão confere que os algarismos
    renderizados são os do valor publicado. `<Claim/>` põe esta marca sozinho.
@@ -3231,6 +3650,31 @@ o gabarito. A razão é a mesma do separador de `attributed_to` (§1.31).
    `data-prova` sem a sua porta falha; dentro de um `<svg>`, a porta é exigida na
    legenda `data-legenda-prova` do instrumento, pela mesma razão que o selo
    (§1.34). Ver §1.39.
+
+8. `data-agenda="<id>.<campo>"` — um campo dos dois registos que atravessaram
+   do motor (`src/data/agenda.json` e `src/data/calendario.json`), na página que
+   os renderiza. O portão compara o texto renderizado com esse campo do registo,
+   **carácter a carácter** (espaços normalizados). É a origem 6 aplicada um nível
+   acima: ali um campo de uma linha do livro-razão na página dessa linha, aqui um
+   campo de um registo na página da agenda.
+
+   Um acontecimento do calendário leva o prefixo `evento:` — um item da agenda e
+   um acontecimento podem ter o mesmo id, e têm. Um par de edições (`{pt, en}`)
+   resolve-se na língua da página, como o `derivation` de uma linha; uma lista
+   resolve-se numa cadeia só com ` · `, e o portão tem a sua própria cópia desse
+   separador. O `estado` renderiza-se pelo rótulo da edição, e o portão traz a
+   **sua** cópia da tabela dos quatro rótulos, para conferir o registo e não o
+   gabarito (§1.31).
+
+   **A marca só vale na página da agenda**, pela mesma disciplina da origem 6:
+   noutro sítio seria uma segunda porta para pôr texto de um registo em prosa
+   corrente. **Não é uma dispensa** — é comparação. E as datas do registo levam
+   **também** `data-nonledger="data-da-agenda"`: a comparação prova que a data é
+   a do registo, e o motivo declarado diz porque é que uma data do registo pode
+   aparecer numa página que só publica valores medidos. O portão lê os dois
+   ficheiros com o seu próprio leitor, e no fim do varrimento compara o que a
+   página contou com as contagens do registo da travessia, exigindo cada item e
+   cada acontecimento pelo nome. Ver §1.40.
 
 As ilhas de dados `<script type="application/json" data-ledger-json>` têm regra
 própria: cada número precisa de um irmão `<x>_claim`, e é conferido contra o
@@ -3418,14 +3862,14 @@ quem pertence.
 
 ### 4.1 O que fica adiado — e para que fase
 
-**Bloco V · a ortografia das linhas cruzadas.** A grafia do sítio passou a ser
-uma só (§1.38), mas a prosa da casa das 70 linhas que vieram do motor não pode
-ser convertida deste lado: os bytes estão presos pelo registo da travessia. São
-19 ocorrências, das quais 10 visíveis nas páginas, listadas uma a uma em
-`ortografia/restantes.yml`. Convertem-se no manifesto do motor e voltam por
-reexportação; a lista é para encolher, e o portão avisa quando uma entrada dela
-já não corresponde a nada. **Pertence ao agente que trabalha o motor neste
-mesmo bloco.**
+~~**Bloco V · a ortografia das linhas cruzadas.**~~ **Fechada a 16.08.2026
+(§1.40).** Converteu-se em `publisher/manifest.evora.json` e voltou por
+reexportação: de 19 ocorrências para 5, e das visíveis nas páginas de 10 para 0.
+`ortografia/restantes.yml` está vazio. As cinco que ficam estão todas no campo
+`note`, que não é publicado, e cada uma tem motivo escrito para não se mover.
+Ficou uma dívida do motor: a V10 do exportador de linhas não tem caminho para «a
+mesma correção, com outra redação», e a regeneração da linha só foi segura porque
+nenhuma correção nasceu do lado do sítio.
 
 **Fase 3 · o redesenho da página de linha e a travessia dos recibos.** É a fase
 onde a página da linha passa a ser a prova, e não uma ficha sobre a prova.
@@ -3447,11 +3891,11 @@ e por isso não foi tocada neste bloco.
 
 | Item | Estado |
 | --- | --- |
-| As frases de moldura que ficam | A linha do domínio saiu do rodapé a 16.08.2026 e a régua passou de **83** para **80** frases distintas, de 2 787 para 2 345 ocorrências (§1.39). Fica a política de correcções repetida em 264 páginas de linha (`src/components/HistoricoDaLinha.astro`) e a nota de não-ordenação de partidos em 122. O alvo do `BRIEF` §6.3 é **≤ 12 frases distintas**. Cada uma destas mudanças é editorial: onde é que a política passa a viver. |
-| O aparelho da página de Évora | 1 012 palavras, 41 % da prosa da página; quatro dos nove itens de «o que esta página não sabe» repetem uma ressalva de «Método e ressalvas». Cortar isto é reescrever, e reescrever é a fase da voz. |
+| As frases de moldura que ficam | A política de correções e a nota de não-ordenação de partidos saíram das páginas de linha a 16.08.2026 e passaram a rótulo e porta (§1.40): as frases distintas ficam em **80**, as ocorrências em **2 349**, e as **palavras** de moldura caem de 31 852 para **25 159**. O alvo do `BRIEF` §6.3 é **≤ 12 frases distintas**, e continua longe: o que resta são rótulos e cabeçalhos de secção, que esta régua conta como moldura e um leitor não lê como tal. Fechar a diferença é decidir se a régua mede a coisa certa, e é trabalho da fase da voz. |
+| O aparelho da página de Évora | As quatro ressalvas repetidas saíram a 16.08.2026 (§1.40): cada uma ficou onde é dita com a sua prova, e o aparelho ganhou a porta para lá. De 316 para 262 palavras em português, de 305 para 250 em inglês, e de dez para seis itens em «o que esta página não sabe». O que resta é a prosa que só existe ali. |
 | ~~`/sobre` e `/correcoes`~~ | **Construídos a 16.08.2026 (§1.39).** `ABOUT.md` passou a ser a ideia e os apontadores; a política das correções tem casa única. |
 | ~~`EDITION` no rodapé~~ | **Retirada a 16.08.2026 (§1.39),** com a própria constante. O cabeçalho passa a mostrar a data da última reconferência do painel, em todas as páginas. |
-| `/agenda` e o calendário das fontes | Não existem. `core/prereg.py` está construído, ligado ao portão do motor e tem **zero registos**. Não há nenhuma estrutura de agenda em lado nenhum, e tudo o que corre a horas olha para trás. |
+| ~~`/agenda` e o calendário das fontes~~ | **Construídos a 16.08.2026 (§1.40).** Cinco itens em quatro estados, dezasseis acontecimentos das fontes, oito deles sem data porque a fonte não publica nenhuma. `core/prereg.py` deixou de ter zero registos: o estudo da habitação é o primeiro, **iniciado e não selado**. Ficam abertos o histórico do calendário, a ligação automática entre um acontecimento e a linha que ele move, e os prazos da agenda. |
 | A ordenação por partido | Continua a não existir, e é para continuar. Não é dívida: é uma recusa. |
 
 ### 4.2 O que continua aberto de antes, e não mudou neste bloco
@@ -3488,6 +3932,8 @@ e por isso não foi tocada neste bloco.
 - **`dist/prova.json`** (16.08.2026, §1.39). Está escrito, ligado do Método e
   relido pelo próprio portão, e ainda ninguém o consumiu de fora. É a superfície
   por onde uma auditoria externa pode comparar duas construções sem ler páginas.
-- **As cinco chaves `agenda_*` da prova**, a `null` até o motor atravessar
-  `src/data/agenda.json`. O caminho está construído dos dois lados e nunca
-  correu com um ficheiro a sério.
+- ~~**As cinco chaves `agenda_*` da prova**~~ — **exercidas a 16.08.2026
+  (§1.40)**, e o caminho tinha um degrau: duas delas contavam os estados com
+  hífen e o registo escreve-os com traço baixo, por isso davam zero. É a
+  primeira vez que uma coisa construída e nunca exercida foi exercida, e
+  encontrou-se o defeito que só um ficheiro a sério podia encontrar.

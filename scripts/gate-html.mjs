@@ -24,6 +24,10 @@
  *                                 RECALCULA a chave por conta própria, do seu
  *                                 ponto de observação, e compara. Não é uma
  *                                 dispensa: é uma origem conferida, como a 6.
+ *   8. data-agenda="<id>.<campo>" — um campo do registo da agenda ou do
+ *                                 calendário das fontes, na página da agenda,
+ *                                 comparado carácter a carácter contra o
+ *                                 registo que atravessou (§1.40).
  */
 
 import fs from 'node:fs';
@@ -85,6 +89,10 @@ const claims = loadClaims();
  * A prova, nas duas edições. As chaves e os valores são os mesmos; o que muda
  * é a PORTA, que é uma rota e por isso tem edição. O portão precisa das duas:
  * a porta que exige numa página inglesa é a inglesa.
+ *   8. data-agenda="<id>.<campo>" — um campo do registo da agenda ou do
+ *                                 calendário das fontes, na página da agenda,
+ *                                 comparado carácter a carácter contra o
+ *                                 registo que atravessou (§1.40).
  *
  * Isto NÃO é a conta contra a qual os números são conferidos — essa é a do
  * próprio portão, em contasDoPortao(). Isto é o que se compara com ela.
