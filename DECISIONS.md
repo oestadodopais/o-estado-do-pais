@@ -2831,6 +2831,273 @@ palavra tinha, e por isso `anterior` também converte o que já estava no Acordo
    da fonte isso resolve-se pela chave `en` que embrulha o texto inglês, e foi
    preciso resolvê-lo, porque o Método em inglês tem três «director».
 
+### 1.39 O sítio passa a dizer o que é, e o Método a provar o que faz
+
+Havia três coisas ao mesmo tempo. O sítio não tinha página sobre si próprio: a
+única superfície «sobre» era o Método, com quatro marcadores por resolver lá
+dentro. O Método descrevia o método e não o provava. E tudo o que o sítio dizia
+sobre si próprio, quando dizia, estava escrito à mão e podia ficar errado sem
+que ninguém desse por isso.
+
+*Este registo segue a grafia que §1.38 fixou.*
+
+#### As quatro páginas, e a disposição de cada uma
+
+| Página | Rotas | Disposição |
+| --- | --- | --- |
+| Sobre | `/sobre` · `/en/about` | A (`IDENTIDADE.md` §3), a mais magra: o nome na coluna de rótulo, duas frases e uma porta no corpo |
+| Método | `/metodo` · `/en/method` | A, a mesma que já tinha, com o instrumento a toda a largura dentro dela |
+| Correções | `/correcoes` · `/en/corrections` | A |
+| A prova da construção | `/prova.json` | não é uma página: é JSON, como o `version.json` |
+
+Nenhuma quarta disposição, e o instrumento dentro de uma página não é uma: a
+primeira página e a página do município já o fazem.
+
+#### O texto decidido, e onde vive
+
+O português do Sobre é **da direção**, escrito por ela em conversa a
+2026-08-15 depois de dois rascunhos e uma crítica cega terem sido postos de
+lado por explicarem e se desculparem em vez de dizerem o que o projeto é.
+Está registado em `VOZ-final.md` e vive em `src/data/sobre.mjs`, carácter a
+carácter. O inglês é tradução da casa do mesmo texto, e vai à leitura da
+direção na pré-visualização.
+
+Na página não há mais nada: sem contagens, sem aparelho, sem lede a explicar o
+que as duas frases já dizem. A porta para o Método leva o rótulo que é a linha
+de abertura do próprio Método, com origem única.
+
+A autoria vive aqui, nas palavras da direção («produzido maioritariamente por
+inteligência artificial, com o mínimo de intervenção humana»). O nome de quem
+dirige está na regra 9, que é onde a intervenção humana se descreve.
+
+#### As dez regras, e as duas coisas que este bloco mudou nelas
+
+As dez foram propostas à direção a 2026-08-15 e estão construídas as dez. **O
+corte é dela, na pré-visualização, sobre a página construída**: é para isso
+que estão todas lá.
+
+Cada regra rende três linhas: a regra, o **mecanismo** que a impõe (nomeando a
+página ou o ficheiro onde se confere) e a **prova**, que são os números desta
+construção. Quatro e cinco levam uma quarta linha, **o que isto não apanha**,
+que é o §2.3 deste ficheiro dito em quatro linhas ao leitor.
+
+Duas mudanças de facto, e ficam ditas:
+
+1. **Regra 9.** Passa a nomear quem dirige, nas palavras que o Método já usava
+   («A direção é de Nuno dos Santos», §1.13). E a frase «a autoria por
+   inteligência artificial está declarada em todas as páginas» deixaria de ser
+   verdade no momento em que a linha do rodapé saísse: passa a dizer o que é
+   verdade, que a autoria está no Sobre e que todas as páginas levam a porta
+   para lá.
+2. **Regra 10.** Carrega a frase do financiamento que o Método já dava como
+   decidida, numa oração só, e a regra da atribuição que estava na secção
+   «atribuição causal»: regista-se quem decidiu o quê, com o rótulo partidário
+   como facto de registo, e não se fazem médias por partido.
+
+O Método antigo foi dobrado a menos de um terço. `quem-faz-isto` foi à regra 9
+e o resto caiu, porque a ideia passou a ter casa no Sobre; `como-se-escreve` aos
+mecanismos das regras 1, 2, 4 e 6; `livro-razao` às regras 3 e 5; `correcoes` à
+regra 7, com o registo a mudar de casa; `atribuicao-causal` à regra 10;
+`limites` às linhas de limite das regras 4 e 5.
+
+**Os quatro marcadores saíram, e três por estarem resolvidos:** o nome
+(decidido a 12.08), o endereço (vivo desde §1.26), o financiamento (decidido).
+O quarto, a contagem das câmaras que mudaram de presidente por limitação de
+mandatos, **não se resolveu**: a frase inteira saiu e o facto espera pela
+verificação, no cofre. Um facto que não está verificado não se reescreve com
+outras palavras.
+
+**Inglês.** As dez em inglês são prosa da casa e a edição inglesa rende só
+inglês. Saiu o aviso «tradução por rever» que a página tinha: fazia sentido
+quando o português era cópia final da direção e o inglês uma tradução à espera
+de revisão; agora as duas são proposta da casa, e as duas vão à mesma leitura.
+
+#### A prova viva, e porque é que ela não é uma dispensa
+
+`src/lib/prova.mjs` calcula, na construção, tudo o que o Método diz sobre o
+estado do sítio: vinte e cinco chaves, cada uma com o valor, a frase que diz
+como é obtida e a **porta**, que é a página onde o leitor vê o que ela conta.
+Nada disto é escrito à mão em lado nenhum.
+
+Um número desses é marcado `data-prova="<chave>"` e passa a ser a **sétima
+origem legítima de um algarismo numa página** (§2.2). O perigo óbvio era o
+portão chamar `prova()` e comparar o resultado consigo próprio: seria confirmar
+uma função contra ela própria, que é o defeito que `campo="study"` cometia até
+§1.24 e que uma auditoria de outra família teve de encontrar.
+
+Por isso há **duas contas para cada chave**, e a do portão é feita do seu
+próprio ponto de observação:
+
+| Vista | O que é | Chaves |
+| --- | --- | ---: |
+| `dist` | contado sobre o que foi construído: páginas de linha que existem, quais levam `noindex`, páginas de estudo e de município, o mapa do sítio, o ficheiro dos concelhos | 9 |
+| `ledger` | segunda leitura dos mesmos ficheiros do livro-razão, com o seu próprio código | 11 |
+| `modulo` | o mesmo módulo dos dois lados: a data da verificação, o endereço das correções, a contagem das edições do arquivo | 3 |
+
+**A vista `modulo` é fraca e está dita.** Ali o que fica conferido é que a
+página rendeu o que o módulo diz, e mais nada. A vista `ledger` apanha um erro
+de qualquer um dos dois lados e não apanha um livro-razão errado, que é
+trabalho da verificação contra a fonte (§2.3, limite 9). A vista `dist` é a que
+vale: a dívida de proveniência, por exemplo, é contada pelas páginas de linha
+que levam `noindex`, que é a **promessa** da regra 5, medida onde ela se
+cumpre, e não a mesma leitura do livro-razão que a página já fez.
+
+A conferência tem três partes: a conta do portão contra a da prova; a conta do
+portão contra os algarismos que cada página rendeu; e a porta, porque um número
+sem porta falha. Uma chave desconhecida falha. Um `data-prova` sem algarismos
+falha.
+
+**`dist/prova.json`** é escrito pelo portão no fim de um varrimento sem erros,
+com todas as chaves e a vista de cada uma, mais o que só o portão sabe: páginas
+construídas, páginas de linha, valores auditados e sem selo, ligações internas
+conferidas, documentos conferidos, o restante da ortografia, e o commit e a
+hora, lidos do `version.json` e não recalculados. Escrito no fim porque metade
+destas contas só existe quando o varrimento acaba, e só depois de passar porque
+uma prova escrita por uma construção que falhou é prova de nada. Depois de
+escrito é **relido**: um ficheiro que se escreve e não se abre é uma suposição.
+O Método liga-o uma vez, como porta da prova da regra 4. Não entra no mapa do
+sítio, e o `verify-deploy.mjs` não precisa de o conhecer (confere o
+`version.json`, que é outra coisa).
+
+#### O instrumento, e a escolha sobre ligações dentro de um desenho
+
+O mecanismo desenhado, no servidor e sem JavaScript, a toda a largura:
+FONTES → MOTOR → LIVRO-RAZÃO → CONSTRUÇÃO → PÁGINA → LEITOR, com a agenda a
+alimentar o motor, a releitura a alimentar o livro-razão, e a correção que o
+leitor escreve a voltar ao livro-razão. Cada nó traz os números de hoje. Sem
+cor nova: tinta, fios e papel, porque o amarelo é marca de medição e aqui não
+há nenhuma medição de Portugal.
+
+**As portas não vão dentro do desenho.** §1.34 fixou que uma âncora dentro de
+um `<svg>` não se lê como porta, e por isso o selo de um valor desenhado vive na
+legenda do instrumento. Essa convenção é sobre selos, e estes números não levam
+selo: podia abrir-se uma exceção. Não se abriu, por três razões: a convenção
+fica inteira em vez de ganhar um caso; os mesmos números aparecem, com a mesma
+porta, nas linhas de prova das dez regras, por isso nada fica inacessível; e
+uma âncora dentro de um desenho estático tem alvo de toque e foco imprevisíveis,
+que é o problema prático que §1.34 descreveu. A legenda por baixo leva
+`data-legenda-prova`, e é lá que o portão exige a porta de cada chave desenhada.
+
+**As três camadas** (`IDENTIDADE.md` §4): relance é o desenho com os números,
+leitura breve é a frase por baixo («Um número chega ao leitor só se tem linha, e
+a linha diz de onde veio.»), fundo são as dez regras.
+
+**Os estados vazios estão desenhados, não deixados.** A agenda ainda não
+atravessou do motor: o nó diz «sem registo» e a linha de prova da regra 8 diz
+«sem registo nesta construção», em vez de escrever zero. A verificação em
+atraso diz-se por palavras, no nó e no cabeçalho. E o nó do leitor **não traz
+número nenhum**, e di-lo: este sítio não mede quem o lê.
+
+#### O cabeçalho, o rodapé e a primeira página
+
+Estas são decisões da cadeira, tomadas na ausência de palavra da direção, e são
+**revogáveis na pré-visualização**.
+
+**O cabeçalho.** As três contagens saem (§1.37 tinha deixado esta pergunta em
+aberto): liam-se como cobertura, e a cobertura deste sítio é um concelho em
+trezentos e oito. A dos concelhos já vive no mapa e no índice; as duas do
+arquivo passam para `/estudos`, que é a página que elas contam, e continuam a
+ser valores do livro-razão com o seu selo (o aviso «não é citada por nenhuma
+página» não ganhou nenhuma linha nova: continua em 29).
+
+Sai «Edição de …», e sai a própria `EDITION` de `site.config.mjs`: era escrita
+à mão e dizia quando alguém decidiu chamar-lhe uma edição, não quando alguma
+coisa foi conferida. A mobília passa a ser **o sinal de tempo**, que é a data
+da última reconferência do painel, escrita pelo motor. Está em **todas** as
+páginas, porque a data de edição também estava, no rodapé; e o rodapé deixou de
+poder levá-la. A conta dos dias é uma só, partilhada com a primeira página. O
+espaço da agenda fica preparado e vazio.
+
+**O rodapé** fica navegação e mais nada: Início · Municípios · Estudos ·
+Livro-razão · Método · Correções · Sobre, e a troca de língua. Saem a linha de
+autoria, a linha do domínio e a data de edição. `/a-verificar` **não** entra, e
+é decisão: é a definição de um sinal, alcança-se de onde o sinal aparece (a
+linha incompleta, o índice do livro-razão, a regra 5 do Método), e uma lista de
+secções não é um glossário.
+
+**A invariante do portão trocou de objeto.** Era «falta a linha de autoria no
+rodapé»; passa a ser, em todas as páginas construídas menos os documentos de
+estudo, a ligação para `/sobre`. É mais forte: uma porta pode ser seguida, uma
+frase de rodapé não. A linha de autoria continua onde é outra coisa: na faixa
+por cima de um documento alojado, que não tem rodapé nenhum e não pode ter
+(`src/lib/documentos.mjs`, para onde a constante se mudou).
+
+**A primeira página.** Saem `lede1` (dizia por outras palavras o que a linha de
+método do cabeçalho já diz, e a ideia passou a ter casa no Sobre), `lede2` (a
+máquina a descrever-se) e `numeros.nota` (a página do marcador di-lo, e o selo
+a tracejado mostra-o). `numeros.sub` fica a dizer o que o painel é, sem defesa
+e sem «nossa». **Nenhum valor mudou, nenhum selo mudou.**
+
+A régua de `scripts/medir-defeitos.mjs`, antes e depois:
+
+| Medida | Antes (301 páginas) | Depois (305 páginas) |
+| --- | ---: | ---: |
+| Frases de moldura distintas | 83 | **80** |
+| Ocorrências | 2 787 | **2 345** |
+| …sem a porta das correções | 2 486 | **2 040** |
+| Páginas com porta de correções | 301 de 301 | 305 de 305 |
+| Valores da primeira página sem selo | 0 | 0 |
+
+#### As correções ganham casa
+
+`/correcoes` é a casa única da política: as três naturezas ditas uma vez, a
+caixa para escrever, e o registo lido do livro-razão como sempre foi (correções
+primeiro, atualizações a seguir, revisões de proveniência como contagem com o
+caminho para as linhas). A porta que está em todas as páginas passa a apontar
+para aqui em vez de para uma âncora dentro do Método. `/metodo#correcoes`
+continua a existir e é a regra 7: quem lá aterrar encontra a política e o
+registo a um clique (§1.29, uma página que esteve no ar ganha reencaminhamento
+e não apagamento).
+
+#### O que o portão passou a ver, e os estragos que o provaram
+
+Três conferências novas, todas dentro do varrimento que já existia (a moratória
+de 2026-08-15 continua de pé), mais uma quarta que veio de borla com a segunda.
+
+| Estrago plantado | O portão |
+| --- | --- |
+| um número `data-prova` editado à mão (132 → 133) | fecha: «o número da prova "afirmacoes" foi renderizado como "133" e o portão conta 132» |
+| `data-prova` com uma chave que não existe | fecha: «data-prova="linhas_do_livro" não é uma chave de src/lib/prova.mjs», com as 25 nomeadas |
+| o mesmo número escrito sem a marca | fecha no varrimento dos algarismos: «algarismos fora do livro-razão: "132"» |
+| a porta de um número a apontar para outra página | fecha: «o número da prova "afirmacoes" aparece sem a sua porta» |
+| as portas do livro-razão fora da legenda do instrumento | fecha, 7 erros: «está desenhado dentro de um `<svg>` e não tem porta na legenda do seu instrumento» |
+| uma frase do Sobre reescrita | fecha: «o texto do Sobre não é o que está decidido em src/data/sobre.mjs», com as duas versões |
+| a marca `data-sobre` apagada da página | fecha: «a página do Sobre tem 0 blocos marcados data-sobre» |
+| as ligações para `/sobre` retiradas de uma página | fecha: «esta página não tem ligação para "/sobre"» |
+| uma ligação interna para um endereço que não existe | fecha: «a ligação interna "/correccoes" não corresponde a nada construído em dist/» |
+| `prova.json` escrito com uma chave a menos | fecha, com código 1: «foi escrito com 24 chaves; esperavam-se 25» |
+| a prova a contar uma linha a mais do que o portão | fecha: «a prova diz que "afirmacoes" é 133 e o portão conta 132 (vista: dist)» |
+
+A conferência das ligações internas não estava pedida e ficou: o sítio promete
+que o selo é uma porta e que a porta abre, e isso estava conferido para os
+selos e para mais nada. São 6 731 ligações conferidas nesta construção.
+
+**Um defeito que este trabalho encontrou em si próprio, e fica dito.** A
+primeira corrida da prova deu **zero** linhas atravessadas na página e **70** no
+portão. A causa: `src/lib/prova.mjs` resolvia a raiz do repositório a partir do
+próprio ficheiro, e na construção este módulo é empacotado para dentro de
+`dist/`. O portão fechou a construção, que é o que ele existe para fazer, e a
+resolução passou a ser a mesma de `encontraLivroRazao()`. É a primeira vez que
+uma conferência nova apanha um defeito do código que a acompanha.
+
+#### O que fica para quem vem a seguir
+
+**Para o agente da agenda, neste mesmo ramo:** o ficheiro
+`src/data/agenda.json` é lido por `prova()` **se existir**, e as cinco chaves
+`agenda_*` ficam a `null` enquanto não existir; a linha da mobília do cabeçalho
+tem o seu lugar marcado por comentário em `Masthead.astro`; a porta das chaves
+da agenda passa a ser `/agenda` sozinha, no dia em que a rota entrar na tabela
+(`portaDaAgenda()` já a procura lá); a linha de prova da regra 8 do Método
+enche-se sem tocar em código, e o nó AGENDA do instrumento também; e o
+parágrafo da política de correções que se repete nas 264 páginas de linha está
+em `src/components/HistoricoDaLinha.astro:101`, com a cadeia em
+`src/i18n/strings.mjs`, `livro.linha.historicoNota`.
+
+**Para a direção, na pré-visualização:** o corte das dez regras, sobre a página
+construída; a leitura do inglês do Sobre e das dez; e a revogação, se a quiser,
+de qualquer das decisões da cadeira acima (as contagens fora do cabeçalho, o
+rodapé só com navegação, `/a-verificar` fora dele) e da ortografia (§1.38).
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
@@ -2852,12 +3119,20 @@ valor tem, ao pé de si, o selo que abre a **sua própria** linha. Não são por
 novos: são duas conferências dentro do varrimento que já existia, cada uma
 motivada por conteúdo real que quebrou a regra (§1.36, itens 1 e 2).
 
+A 16.08.2026 ganhou mais quatro, pelo mesmo caminho e pela mesma moratória: a
+grafia e os travessões (§1.38); o texto do Sobre conferido carácter a carácter
+contra `src/data/sobre.mjs`; a porta para o Sobre em todas as páginas
+construídas, que substituiu a exigência da linha de autoria no rodapé; e a
+sétima origem, `data-prova`, com a sua recontagem (§1.39). O mesmo varrimento
+passou também a conferir que uma ligação interna abre alguma coisa, e a
+escrever `dist/prova.json` no fim.
+
 `source_url.page` é a única entrada da tabela dos campos que não é um campo do
 ficheiro da linha: é uma leitura do `source_url` — o `#page=N` — feita pelo
 portão com a **sua própria cópia** da regra, para que ele confira a linha e não
 o gabarito. A razão é a mesma do separador de `attributed_to` (§1.31).
 
-### 2.2 As seis origens legítimas de um algarismo numa página
+### 2.2 As sete origens legítimas de um algarismo numa página
 
 1. `data-claim="<id>"` — veio do livro-razão. O portão confere que os algarismos
    renderizados são os do valor publicado. `<Claim/>` põe esta marca sozinho.
@@ -2905,6 +3180,34 @@ o gabarito. A razão é a mesma do separador de `attributed_to` (§1.31).
    o id do estudo, não o título. Comparar o título renderizado com
    `studyLabel(...)` seria o portão a conferir uma função contra ela própria. O
    título é uma citação e vai marcado como tal (`titulo-de-estudo`, origem 3).
+
+7. `data-prova="<chave>"` é um número **do sítio sobre si próprio**: linhas
+   publicadas, linhas com um campo por confirmar, correções, concelhos com
+   página, a data da última reconferência do painel. Não é uma medição de
+   Portugal, não tem linha no livro-razão e não leva selo (`IDENTIDADE.md`
+   §10); leva a porta, que é a página onde o leitor vê o que ele conta.
+
+   **Não é uma dispensa, e é a origem em que isso era mais fácil de falsear.**
+   Os valores vêm de `src/lib/prova.mjs`, que os calcula na construção a partir
+   dos dados do próprio sítio. Se o portão chamasse essa função e comparasse o
+   resultado consigo próprio, confirmava a função e não o sítio: é o erro que
+   `campo="study"` cometia até §1.24. Por isso o portão **reconta cada chave por
+   conta própria**, e faz duas comparações: a sua conta contra a da prova, e a
+   sua conta contra os algarismos que a página rendeu.
+
+   O ponto de observação do portão é o `dist/` construído. Nove chaves contam-se
+   lá (as páginas de linha que existem, quais levam `noindex`, as páginas de
+   estudo e de município, o mapa do sítio, o ficheiro dos concelhos); onze são
+   uma **segunda leitura** dos mesmos ficheiros do livro-razão, com código
+   próprio; e três leem o mesmo módulo dos dois lados, e nessas o que fica
+   conferido é que a página rendeu o que o módulo diz, e mais nada. Cada chave
+   escreve a sua vista em `dist/prova.json`, para que a fraqueza de uma vista
+   `modulo` não passe por força de uma vista `dist`.
+
+   Uma chave desconhecida falha. Um `data-prova` sem algarismos falha. Um
+   `data-prova` sem a sua porta falha; dentro de um `<svg>`, a porta é exigida na
+   legenda `data-legenda-prova` do instrumento, pela mesma razão que o selo
+   (§1.34). Ver §1.39.
 
 As ilhas de dados `<script type="application/json" data-ledger-json>` têm regra
 própria: cada número precisa de um irmão `<x>_claim`, e é conferido contra o
@@ -3117,18 +3420,20 @@ e por isso não foi tocada neste bloco.
 
 | Item | Estado |
 | --- | --- |
-| As frases de moldura que ficam | A política de correcções repetida em 264 páginas de linha, a nota de não-ordenação de partidos em 122, a linha do domínio no rodapé de 296. O alvo do `BRIEF` §6.3 é **≤ 12 frases distintas**; a medição de hoje dá **83** pela régua de `scripts/medir-defeitos.mjs`. Cada uma destas mudanças é editorial: onde é que a política passa a viver. |
+| As frases de moldura que ficam | A linha do domínio saiu do rodapé a 16.08.2026 e a régua passou de **83** para **80** frases distintas, de 2 787 para 2 345 ocorrências (§1.39). Fica a política de correcções repetida em 264 páginas de linha (`src/components/HistoricoDaLinha.astro`) e a nota de não-ordenação de partidos em 122. O alvo do `BRIEF` §6.3 é **≤ 12 frases distintas**. Cada uma destas mudanças é editorial: onde é que a política passa a viver. |
 | O aparelho da página de Évora | 1 012 palavras, 41 % da prosa da página; quatro dos nove itens de «o que esta página não sabe» repetem uma ressalva de «Método e ressalvas». Cortar isto é reescrever, e reescrever é a fase da voz. |
-| `/sobre` e `/correcoes` | `ABOUT.md` existe no repositório e não é publicado; a única superfície «sobre» é o Método. `/correcoes` seria a casa única da política. Ambos são desenho de páginas novas. |
-| `EDITION` no rodapé | `12.08.2026`, à mão em `site.config.mjs`, em 296 páginas. O `BRIEF` §6.5 propõe substituí-la por «a medir agora / a seguir». É uma decisão sobre o que o cabeçalho promete. |
+| ~~`/sobre` e `/correcoes`~~ | **Construídos a 16.08.2026 (§1.39).** `ABOUT.md` passou a ser a ideia e os apontadores; a política das correções tem casa única. |
+| ~~`EDITION` no rodapé~~ | **Retirada a 16.08.2026 (§1.39),** com a própria constante. O cabeçalho passa a mostrar a data da última reconferência do painel, em todas as páginas. |
 | `/agenda` e o calendário das fontes | Não existem. `core/prereg.py` está construído, ligado ao portão do motor e tem **zero registos**. Não há nenhuma estrutura de agenda em lado nenhum, e tudo o que corre a horas olha para trás. |
 | A ordenação por partido | Continua a não existir, e é para continuar. Não é dívida: é uma recusa. |
 
 ### 4.2 O que continua aberto de antes, e não mudou neste bloco
 
-1. **Fechar o Método.** Quatro marcadores por resolver no texto (forma pública do
-   nome, endereço de contacto, modelo de financiamento, número exacto das
-   autárquicas) e a tradução inglesa por rever pela direção.
+1. ~~**Fechar o Método.**~~ **Fechado a 16.08.2026 (§1.39).** Três dos quatro
+   marcadores saíram por estarem resolvidos (nome, endereço, financiamento); o
+   quarto, a contagem das autárquicas, saiu com a frase inteira e **o facto
+   continua por verificar**, à espera de uma leitura da fonte. Falta a leitura
+   da direção sobre as dez regras e sobre o inglês, na pré-visualização.
 2. **Datas e descrições do arquivo.** Só «Os Pelouros» tem data de publicação
    confirmada. Nas outras entradas a data é `[a verificar]` — e é essa falta que
    deixa **6 dos 264 endereços do mapa do sítio sem `lastmod`** (§1.36, item 10):
@@ -3153,3 +3458,9 @@ e por isso não foi tocada neste bloco.
 - **O estado vazio de `/municipios`** — «sem página ainda», 307 vezes. É o
   primeiro uso a sério do estado vazio desenhado em §1.34, e é para ser
   substituído concelho a concelho.
+- **`dist/prova.json`** (16.08.2026, §1.39). Está escrito, ligado do Método e
+  relido pelo próprio portão, e ainda ninguém o consumiu de fora. É a superfície
+  por onde uma auditoria externa pode comparar duas construções sem ler páginas.
+- **As cinco chaves `agenda_*` da prova**, a `null` até o motor atravessar
+  `src/data/agenda.json`. O caminho está construído dos dois lados e nunca
+  correu com um ficheiro a sério.

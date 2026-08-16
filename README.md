@@ -34,9 +34,14 @@ Requer Node ≥ 22.12 (exigência do Astro 7).
 4. `astro build` — se um gabarito citar uma afirmação que não existe, o build atira;
 5. `stamp:version` — carimba em `dist/version.json` o commit de que a construção saiu;
 6. `gate:html` — varre `dist/` à procura de algarismos sem proveniência, e
-   ainda de duas coisas mais: nas páginas em pt-PT, nenhuma forma anterior ao
+   ainda de mais cinco coisas: nas páginas em pt-PT, nenhuma forma anterior ao
    Acordo Ortográfico de 1990; em qualquer página das duas edições, nenhum
    travessão no texto renderizado (`IDENTIDADE.md` §9, `DECISIONS.md` §1.38);
+   o texto do Sobre igual, carácter a carácter, ao que está decidido em
+   `src/data/sobre.mjs`; a porta para o Sobre em todas as páginas construídas;
+   e cada número marcado `data-prova` reconferido contra a conta que o próprio
+   portão faz da mesma coisa (`IDENTIDADE.md` §10, `DECISIONS.md` §1.39). No
+   fim, escreve `dist/prova.json` e relê-o;
 7. `check:dados` — os ficheiros de dados descarregáveis existem e batem certo
    com as suas origens.
 
@@ -81,7 +86,9 @@ faça, e não deve haver.
 | Página            | PT                    | EN                        |
 | ----------------- | --------------------- | ------------------------- |
 | Início            | `/`                   | `/en`                     |
+| Sobre             | `/sobre`              | `/en/about`               |
 | Método            | `/metodo`             | `/en/method`              |
+| Correções         | `/correcoes`          | `/en/corrections`         |
 | Arquivo           | `/estudos`            | `/en/studies`             |
 | Estudo            | `/estudos/<slug>`     | `/en/studies/<slug>`      |
 | Documento         | `/estudos/<slug>/documento` | `/en/studies/<slug>/document` |
@@ -90,6 +97,10 @@ faça, e não deve haver.
 | Livro-razão       | `/livro-razao`        | `/en/ledger`              |
 | Linha             | `/livro-razao/<slug>` | `/en/ledger/<slug>`       |
 | O marcador        | `/a-verificar`        | `/en/to-verify`           |
+
+`/prova.json` não é uma página e não está nesta tabela: é o resumo desta
+construção, escrito pelo `gate:html`, servido nas duas edições e fora do mapa
+do sítio. É a porta da prova da regra da construção, no Método.
 
 Sem barra final, excepto a raiz. A saída é em directório
 (`/metodo/index.html`), e o canónico e o sitemap são normalizados para a mesma
@@ -268,12 +279,16 @@ scripts/
   verify-fetch.mjs        para quem vem de fora: uma descarga nova contra o que está alojado
   extract-from-transcript.mjs  recurso: os bytes de uma descarga que não escreveu ficheiro
   gate-html.mjs           depois do build: varre dist/ à procura de algarismos órfãos,
-                          de grafia anterior ao Acordo e de travessões
+                          de grafia anterior ao Acordo e de travessões; confere o
+                          texto do Sobre, a porta para o Sobre em cada página, os
+                          números marcados data-prova e as ligações internas; e
+                          escreve dist/prova.json
   check-dados.mjs         depois do build: os CSV existem e batem certo com as origens
   ortografia.mjs          a passagem da ortografia, nos dois sentidos (à mão, não no build)
 
 src/
   lib/ledger.mjs          carrega, valida e serve o livro-razão
+  lib/prova.mjs           os números do sítio sobre si próprio, calculados na construção
   lib/routes.mjs          a tabela de rotas (navegação, hreflang, sitemap)
   lib/dados.mjs           gera os CSV descarregáveis a partir das mesmas origens
   lib/documentos.mjs      descobre os documentos de estudo e põe-lhes a faixa
@@ -282,6 +297,8 @@ src/
     caop-centroids.mjs    as 308 posições, transcritas da CAOP 2025
     verbatim.mjs          citações que têm de ser transcritas à letra
     studies.mjs           o arquivo: trabalhos e edições
+    sobre.mjs             o texto decidido do Sobre, nas duas línguas
+    metodo.mjs            as dez regras do Método, com mecanismo, prova e limite
     regioes.mjs           as regiões da régua e as suas frases
     figuras.mjs           os cartões da primeira página
   components/             Claim, Provenance, Masthead, rodapé, instrumentos
