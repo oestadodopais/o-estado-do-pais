@@ -295,6 +295,16 @@ function confereFicheirosNaOrigem(regs, raizMotor, erros) {
  *   4. tudo o que renderiza tem `pt` e `en`, e nenhum dos dois vazio
  *   5. cada id em `linhas` existe em ledger/claims/
  *   6. cada `evento` existe no calendário
+ *   7. o histórico é uma cadeia: `de` continua o `para` anterior, o primeiro
+ *      não vem de lado nenhum, e as datas não andam para trás
+ *   8. `entrada` é a data da primeira entrada e `ultima_alteracao` a da última
+ *   9. um acontecimento com marcador diz porque não tem data, e a página tem
+ *      duas frases diferentes para as duas razões
+ *
+ * As três últimas entraram a 16.08.2026 com a revisão cruzada (§1.41). O motor
+ * confere-as antes de escrever (H1, H2, H3, C6); estão aqui pela mesma razão
+ * que as outras seis: uma conferência de aceitação que confiasse no produtor
+ * seria o produtor a assinar por si próprio.
  */
 function confereInvariantes(erros) {
   const fAgenda = path.join(DIR_DADOS, 'agenda.json');
@@ -358,6 +368,43 @@ function confereInvariantes(erros) {
         }
         if (entrada?.motivo) bilingue(entrada.motivo, `${onde}.historico[${n}].motivo`);
       }
+
+      /* A cadeia: cada entrada continua a anterior, e o tempo anda para a
+         frente. Sem isto, um histórico com o número certo de entradas podia
+         contar uma história que não fecha. */
+      if (historico[0]?.de != null) {
+        erros.push(
+          `${onde}: a primeira entrada do histórico vem de "${historico[0].de}". ` +
+            `A primeira entrada é a entrada: não vem de lado nenhum.`,
+        );
+      }
+      for (let n = 1; n < historico.length; n++) {
+        if (historico[n]?.de !== historico[n - 1]?.para) {
+          erros.push(
+            `${onde}: a entrada ${n + 1} do histórico vem de "${historico[n]?.de}" e a anterior ` +
+              `deixou o item em "${historico[n - 1]?.para}". Um histórico com um buraco não é ` +
+              `um histórico.`,
+          );
+        }
+        if (String(historico[n]?.data ?? '') < String(historico[n - 1]?.data ?? '')) {
+          erros.push(
+            `${onde}: a entrada ${n + 1} do histórico é de ${historico[n]?.data} e a anterior ` +
+              `de ${historico[n - 1]?.data}. O registo é a ordem por que as coisas aconteceram.`,
+          );
+        }
+      }
+      if (item?.entrada !== historico[0]?.data) {
+        erros.push(
+          `${onde}: entrada é "${item?.entrada}" e a primeira entrada do histórico é de ` +
+            `"${historico[0]?.data}".`,
+        );
+      }
+      if (item?.ultima_alteracao !== historico[historico.length - 1]?.data) {
+        erros.push(
+          `${onde}: ultima_alteracao é "${item?.ultima_alteracao}" e a última entrada do ` +
+            `histórico é de "${historico[historico.length - 1]?.data}".`,
+        );
+      }
     }
     if (!ESTADOS.includes(item?.estado)) {
       erros.push(
@@ -389,8 +436,20 @@ function confereInvariantes(erros) {
     }
   }
 
+  const MOTIVOS_SEM_DATA = ['nao_publica', 'nao_lida'];
   for (const evento of eventos) {
     const onde = `calendário ${evento?.id ?? '(sem id)'}`;
+    /* Um marcador sem razão escrita fazia a página dizer «a fonte não publica
+       data» sobre uma fonte que não chegou a ser lida. */
+    if (evento?.marcador && !MOTIVOS_SEM_DATA.includes(evento?.motivo_sem_data)) {
+      erros.push(
+        `${onde}: leva o marcador e motivo_sem_data "${evento?.motivo_sem_data}". ` +
+          `Tem de ser um de ${MOTIVOS_SEM_DATA.join(', ')}: a página tem uma frase para cada.`,
+      );
+    }
+    if (!evento?.marcador && evento?.motivo_sem_data) {
+      erros.push(`${onde}: tem data e motivo_sem_data ao mesmo tempo.`);
+    }
     bilingue(evento?.titulo, `${onde}.titulo`);
     if (evento?.evidencia_indireta) bilingue(evento.evidencia_indireta, `${onde}.evidencia_indireta`);
     if (evento?.nota) bilingue(evento.nota, `${onde}.nota`);

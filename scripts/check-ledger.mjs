@@ -103,6 +103,18 @@ console.log('');
  * ficheiro tal como ele está hoje. Se não trouxer, ou o texto mudou depois da
  * última decisão que o governa, ou a decisão foi registada contra outro texto.
  *
+ * E o sentido inverso, desde 16.08.2026: uma entrada que nomeia um texto,
+ * carimba o mesmo resumo da entrada anterior e não diz `Sem alteração` é uma
+ * decisão que declara governar uma coisa que não mexeu, sem dizer porquê.
+ *
+ * O LIMITE DESTA AMARRA, e é honesto dizê-lo aqui e não só no registo: isto
+ * corre sobre o ficheiro que está em disco, e o que proíbe é a mudança
+ * SILENCIOSA: o texto mexer sem que nenhuma decisão o nomeie. Não proíbe uma
+ * reescrita deliberada da própria entrada por quem tem direito de escrita no
+ * repositório: essa reescreve o carimbo e o resumo volta a bater certo. A
+ * segunda linha para esse caso é o git, e a auditoria mensal que o lê de fora
+ * desta construção (`sweeps/decisoes.py` no motor). Ver DECISIONS §1.41.
+ *
  * AS ENTRADAS ANTERIORES À §1.38 NÃO SÃO CONFERIDAS: são anteriores à regra, e
  * carimbá-las agora seria escrever que declararam uma coisa que ninguém lhes
  * pediu. A regra começa onde começou.
@@ -261,6 +273,29 @@ function confereAmarra() {
       }
       for (const nome of nomeados) {
         if (!(nome in e.textos)) erros.push(`${onde}: **Texto:** não traz o resumo de "${nome}".`);
+      }
+    }
+
+    /**
+     * O outro sentido da mesma regra, e faltava.
+     *
+     * A entrada dizia `Afecta: metodo`, carimbava o MESMO resumo da entrada
+     * anterior, e não dizia `Sem alteração`. Lida à letra, é uma decisão que
+     * declara governar um texto que não mexeu, sem dizer porquê: ou o texto
+     * mudou e o carimbo está errado, ou não mudou e falta a frase que o
+     * explica. As duas leituras são defeitos, e nenhuma era apanhada
+     * (revisão cruzada, #3).
+     */
+    for (const nome of nomeados) {
+      const anterior = ultimaQueNomeia[nome];
+      if (!anterior || e.semAlteracao !== null) continue;
+      if (!e.textos?.[nome] || !anterior.textos?.[nome]) continue;
+      if (e.textos[nome] === anterior.textos[nome]) {
+        erros.push(
+          `${onde}: **Afecta:** nomeia "${nome}" e o resumo é o mesmo de §${anterior.numero} ` +
+            `(${e.textos[nome]}), sem **Sem alteração:**.\n` +
+            `        A decisão diz que afecta o texto e o texto não mudou; ou muda, ou diz porquê.`,
+        );
       }
     }
 

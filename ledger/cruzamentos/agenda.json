@@ -5,7 +5,11 @@
   "FICHEIRO GERADO. Escrito por ResearchHub/publisher/export_agenda.py.",
   "Sem datas: uma data por corrida tornaria a idempotência indemonstrável, e a",
   "idempotência é uma das conferências (X3). Por isso não há `exported_at` aqui,",
-  "ao contrário de ledger/cruzamentos/evora.json, que prende linhas e não ficheiros."
+  "ao contrário de ledger/cruzamentos/evora.json, que prende linhas e não ficheiros.",
+  "`historia` guarda, por item, quantas entradas de histórico atravessaram e o",
+  "resumo dessas entradas: é contra ele que a travessia seguinte recusa um",
+  "histórico mais curto ou uma entrada passada reescrita (H4). `eventos` guarda",
+  "os ids do calendário, para que nenhum desapareça sem ser declarado (H5)."
  ],
  "counts": {
   "eventos": 16,
@@ -18,19 +22,59 @@
    "retirado": 0
   }
  },
+ "eventos": [
+  "ce-relatorio-conjunto-emprego-2027",
+  "ce-relatorio-mecanismo-alerta-2027",
+  "dgal-endividamento-2025",
+  "ersar-rasarp",
+  "eurostat-pde-notificacao-outubro-2026",
+  "evora-contas-2024-pagina",
+  "evora-contas-2026",
+  "iefp-desemprego-concelhos-mensal",
+  "ine-contas-regionais-preliminares-2025",
+  "ine-empresas-em-portugal-2025",
+  "ine-estimativas-populacao-residente",
+  "ine-indice-precos-habitacao-t2-2026",
+  "ine-pde-2a-notificacao-2026",
+  "ine-poder-de-compra-concelhio",
+  "ine-precos-habitacao-local-t2-2026",
+  "ine-rendas-habitacao-local-t2-2026"
+ ],
  "exporter": "ResearchHub/publisher/export_agenda.py",
  "files": {
   "agenda.json": {
-   "exported_sha256": "3f59140e1a5c0da64a30140367f4c92c017ddeb0f8900bb1fc363139cf4b3bbe",
+   "exported_sha256": "3f0491e7e429014bfae827a6b5868d871015227b429840d80bac32e520f67f2c",
    "exporter": "ResearchHub/publisher/export_agenda.py",
    "origin_path": "agenda/agenda.json",
-   "origin_sha256": "5050aa952665afc426091b10addb953f8edb6ba410712c51886a9bfacd0f0f4b"
+   "origin_sha256": "63e3fdcbaf80c312ef900bfbcb1faab251780e838a3ee9d095982835722d3678"
   },
   "calendario.json": {
-   "exported_sha256": "c17c5214e2b73f6c5044d268db0bb8deb8a30ef52e0c1de4d431720dcf1b4b84",
+   "exported_sha256": "de66a7c69a2a11c4e14b92226e8ac3528f76471ff75808b4b0598e24db4dd779",
    "exporter": "ResearchHub/publisher/export_agenda.py",
    "origin_path": "indicators/calendar.json",
-   "origin_sha256": "b396728601799eb3fd7af6974d86f01015c3b8c875c39b408ced2c663f97c074"
+   "origin_sha256": "94d9d5eb466f005648e7bcad9d4e5ce556f15e501d6588d678ab4bf52cc2febe"
+  }
+ },
+ "historia": {
+  "dgal-endividamento-2025": {
+   "entradas": 1,
+   "sha256": "e6a84e67f31299cea25577484c66444bc601b4d1b0bacfb6c8979ec13fa59692"
+  },
+  "evora-contas-2024-pagina": {
+   "entradas": 1,
+   "sha256": "0bd5ed883af6a067e0be33bb8b9a383ee418caffe2607da7a4ccd3054e17b11f"
+  },
+  "evora-contas-2026": {
+   "entradas": 1,
+   "sha256": "41edf628038a1f163fdbfb037925a9d1aa91d6654a7f500d7b82c594b77111eb"
+  },
+  "evora-pagina-de-municipio": {
+   "entradas": 1,
+   "sha256": "c7055a9cfd8cf59ceb77017f7dd85edd43bed1d90acf1e9d89f018962dac5b8f"
+  },
+  "habitacao": {
+   "entradas": 1,
+   "sha256": "a712eeed4698a1c567f0c183fa22a1e3758a6b4a7668f969544c0753fb11a77a"
   }
  },
  "origin": "ResearchHub"

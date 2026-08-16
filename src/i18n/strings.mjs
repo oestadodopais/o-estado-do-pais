@@ -112,7 +112,7 @@ export const STRINGS = {
       lede:
         'Cada item traz o critério que o pôs aqui, quem o propôs, quem o decidiu, e o registo de cada mudança de estado. Nada sai desta lista em silêncio.',
       origemNota:
-        'Esta lista e o calendário abaixo são dois registos do motor de investigação. Atravessam inteiros, com o resumo criptográfico de cada um, e a construção fecha se os bytes já não forem os que atravessaram.',
+        'A lista e o calendário são dois registos do motor de investigação, publicados tal como atravessaram.',
       estados: {
         em_curso: 'Em curso',
         a_seguir: 'A seguir',
@@ -127,8 +127,13 @@ export const STRINGS = {
         pagina: 'Página',
       },
       perguntaK: 'A pergunta',
-      perguntaNota:
-        'A pergunta é fixada no motor antes da recolha, e o registo do motor escreve-se em inglês: o inglês é a forma registada, palavra por palavra, e o português abaixo é a edição portuguesa dessa mesma pergunta.',
+      /* Duas frases, e a que sai depende do registo prévio. Enquanto ele não
+         estiver selado, dizer «a pergunta é fixada» ao lado de um histórico que
+         diz «não foi selado» é o sítio a contradizer-se na mesma página. */
+      perguntaNotaSelada:
+        'A pergunta fica fixada no motor antes da recolha, e o registo do motor escreve-se em inglês: o inglês é a forma registada, palavra por palavra, e o português abaixo é a edição portuguesa dessa mesma pergunta.',
+      perguntaNotaPorSelar:
+        'A pergunta fica fixada no motor antes da recolha; esta ainda não foi selada. O registo do motor escreve-se em inglês: o inglês é a forma registada, palavra por palavra, e o português abaixo é a edição portuguesa dessa mesma pergunta.',
       porqueK: 'Porquê',
       criteriosK: 'Critérios',
       quadroK: 'Quadro institucional',
@@ -138,14 +143,23 @@ export const STRINGS = {
       semCriterios:
         'Sem critério de nenhum dos quatro tipos. Veio de uma decisão da direção sobre o que faltava ao sítio, e não de um quadro institucional, de um calendário, de um leitor ou de uma correção. A razão está escrita no porquê e no histórico.',
       verNoCalendario: 'Ver no calendário',
-      semDataDaFonte: 'a fonte não publica data',
+      /* Um tempo esgotado não prova que a fonte não publique calendário. O
+         registo distingue as duas coisas e a página diz qual delas é. */
+      semDataMotivos: {
+        nao_publica: 'a fonte não publica data',
+        nao_lida: 'a fonte não foi lida',
+      },
       evidenciaK: 'O que se observou',
       propostoK: 'Proposto pelo motor a',
       decididoK: 'Decidido pela direção a',
       porDecidir: 'Sem decisão da direção registada',
       entradaK: 'Entrada no registo',
       alteracaoK: 'Última alteração',
-      registoPrevioK: 'Registo prévio',
+      registoPrevioIniciado: 'Registo prévio iniciado a',
+      registoPrevioSelado: 'Registo prévio selado a',
+      registoPrevioPorSelar: 'por selar',
+      documentosK: 'Documentos alojados',
+      edicoesDoDocumento: { pt: 'edição portuguesa', en: 'edição inglesa' },
       historicoK: 'O que mudou',
       historicoTipos: {
         entrada: 'entrada',
@@ -370,7 +384,7 @@ export const STRINGS = {
         'A política de correções deste sítio e o registo de todas: o valor anterior à vista, datado, com o motivo, e nada apagado.',
       eyebrow: 'Correções',
       h1: 'O que foi corrigido, e o que mudou',
-      lede: 'Corrigir em silêncio é a forma mais barata de mentir. Toda a correção deste sítio é pública, datada e permanente, com o valor anterior à vista.',
+      lede: 'Corrigir em silêncio é a forma mais barata de mentir.',
       politicaK: 'A política',
       politicaV:
         'Uma entrada do registo guarda o valor anterior, o valor novo, a data, o motivo e a linha do livro-razão que mudou. Nada é removido: uma entrada corrigida acresce à história daquela linha, não a substitui. São três naturezas, e não se misturam:',
@@ -727,7 +741,7 @@ export const STRINGS = {
       lede:
         'Each item carries the criterion that put it here, who proposed it, who decided it, and the record of every change of state. Nothing leaves this list in silence.',
       origemNota:
-        'This list and the calendar below are two records from the research engine. They cross whole, each with its cryptographic digest, and the build stops if the bytes are no longer the ones that crossed.',
+        'The list and the calendar are two records from the research engine, published exactly as they crossed.',
       estados: {
         em_curso: 'Under way',
         a_seguir: 'Next',
@@ -742,8 +756,10 @@ export const STRINGS = {
         pagina: 'Page',
       },
       perguntaK: 'The question',
-      perguntaNota:
+      perguntaNotaSelada:
         'The question is fixed in the engine before collection begins, and the engine’s record is written in English: the English is the registered form, word for word, and the Portuguese edition renders that same question.',
+      perguntaNotaPorSelar:
+        'The question is fixed in the engine before collection begins; this one has not been sealed yet. The engine’s record is written in English: the English is the registered form, word for word, and the Portuguese edition renders that same question.',
       porqueK: 'Why',
       criteriosK: 'Criteria',
       quadroK: 'Institutional framework',
@@ -753,14 +769,21 @@ export const STRINGS = {
       semCriterios:
         'No criterion of any of the four kinds. It came from a direction decision about what the site lacked, and not from an institutional framework, a calendar, a reader or a correction. The reason is written in the why and in the change log.',
       verNoCalendario: 'See in the calendar',
-      semDataDaFonte: 'the source publishes no date',
+      semDataMotivos: {
+        nao_publica: 'the source publishes no date',
+        nao_lida: 'the source was not read',
+      },
       evidenciaK: 'What was observed',
       propostoK: 'Proposed by the engine on',
       decididoK: 'Decided by the director on',
       porDecidir: 'No director decision on record',
       entradaK: 'Entered the record',
       alteracaoK: 'Last change',
-      registoPrevioK: 'Pre-registration',
+      registoPrevioIniciado: 'Pre-registration started on',
+      registoPrevioSelado: 'Pre-registration sealed on',
+      registoPrevioPorSelar: 'not yet sealed',
+      documentosK: 'Hosted documents',
+      edicoesDoDocumento: { pt: 'Portuguese edition', en: 'English edition' },
       historicoK: 'What changed',
       historicoTipos: {
         entrada: 'entry',
@@ -971,7 +994,7 @@ export const STRINGS = {
         'The corrections policy of this site and the register of them all: the previous value in plain sight, dated, with the reason, and nothing deleted.',
       eyebrow: 'Corrections',
       h1: 'What was corrected, and what changed',
-      lede: 'Correcting in silence is the cheapest way of lying. Every correction on this site is public, dated and permanent, with the previous value in plain sight.',
+      lede: 'Correcting in silence is the cheapest way of lying.',
       politicaK: 'The policy',
       politicaV:
         'An entry in the register holds the previous value, the new value, the date, the reason and the ledger row that changed. Nothing is removed: a corrected entry is added to that row’s history, it does not replace it. There are three kinds, and they are not mixed:',

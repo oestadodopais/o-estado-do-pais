@@ -3544,6 +3544,316 @@ o agente da ortografia tinha listado como «fora do âmbito»:
   registo sobre o que **não** atravessa e não rende em página nenhuma;
 - **as chaves de cadeia mortas** que o agente do Sobre listou, por arrumar.
 
+### 1.41 A revisão cruzada do bloco V, e o que ela mudou
+
+**Afecta:** sobre · metodo
+**Texto:** sobre 0507f5f3d6af · metodo 24c5401cfd85
+
+Duas revisões de outra família de modelos leram este ramo: uma leu o `diff`
+inteiro, outra leu as quatro páginas novas com quatro defeitos plantados lá
+dentro e encontrou os quatro, o que é o que dá crédito ao resto do que disse.
+Esta entrada é o que se fez com o resultado: o que foi corrigido, o que foi
+lido e mantido com razão escrita, e os limites que ficam por escrito em vez de
+ficarem por dizer.
+
+*Este registo segue a grafia que §1.38 fixou.*
+
+#### A prosa da agenda deixa de repetir uma medição
+
+A origem 8 provava que o texto da agenda é, carácter a carácter, o do registo
+que atravessou. Não provava a outra coisa: que o registo não trouxesse, em
+prosa corrente, um valor que tem linha e selo noutro sítio da mesma página. E
+trazia. «A linha publica 17,6» e «O índice de dívida de Évora está em 105,5%»
+eram medições sem selo, e a fidelidade da travessia não lhes dá proveniência.
+
+**Do lado do motor**, a prosa foi reescrita para que a medição chegue ao leitor
+por onde tem de chegar: pelas linhas do critério, com o selo que abre cada uma.
+Saíram o «17,6» restated, o «105,5%» e a cláusula interpretativa que vinha
+colada a ele («descer abaixo de cem seria o fim da era de resgate»), a
+repetição de «308 concelhos» e «os outros 307», e a citação do estudo que
+trazia a votação («2 votes to 5»), substituída pela outra citação que já lá
+estava e diz o mesmo facto. As datas escritas por extenso passaram a ISO, que é
+como a casa as escreve em todo o lado.
+
+**Do lado do sítio**, o portão passou a recusar: nenhum número dentro de um
+elemento `data-agenda` pode ter a sequência de algarismos de um **valor** do
+livro-razão, com a mesma normalização com que a origem 1 confere um
+`data-claim`. **Estrago plantado:** repôs-se «A linha publica 17,6.» na nota do
+critério; o portão fechou com «a prosa da agenda repete um valor do
+livro-razão: "17,6" é o valor da linha "precos-da-habitacao-2025"». Reposto.
+
+**O limite, e é estreito de propósito.** A conferência recusa **os valores do
+livro-razão**, e mais nada. A prosa da agenda continua a poder trazer
+algarismos que não são medições publicadas: códigos de conjuntos de dados
+(`tespm140`), ordinais («2.º trimestre»), números de diploma, e um limiar
+citado de um quadro institucional que não coincida com nenhum valor publicado
+(«with a threshold of 9%» passa porque `9` não é valor de linha nenhuma; se
+viesse a ser, a nota teria de citar o limiar pelo campo `note` da linha). E há
+uma dispensa declarada, uma só: o campo `origem_da_data.excerto`, que é a frase
+da fonte que diz a data, citada palavra por palavra e renderizada em
+`<blockquote>`. Reescrevê-la para lhe tirar um algarismo seria reescrever a
+prova. **Um valor escondido dentro de um excerto passa por aqui**, e a defesa
+que resta é a de sempre: o excerto está preso por resumo criptográfico ao
+ficheiro do motor, e o que ele cita é a data e não a medição.
+
+#### O histórico da agenda passa a ser append-only, e o calendário a declarar saídas
+
+O exportador conferia que havia histórico e que o `estado` era o `para` da
+última entrada. Não conferia que o histórico fosse uma **cadeia**: as
+transições podiam não encaixar, as datas podiam andar para trás, `entrada` e
+`ultima_alteracao` podiam dizer qualquer coisa, e uma entrada passada podia ser
+reescrita sem deixar rasto. Cinco conferências novas (H1 a H5) e uma do
+calendário (C6):
+
+| | O que passou a ser provado |
+| --- | --- |
+| H1 | `historico[n].de` é o `para` da entrada anterior; a primeira vem de `null` |
+| H2 | as datas do histórico nunca andam para trás |
+| H3 | `entrada` é a data da primeira entrada e `ultima_alteracao` a da última |
+| H4 | o histórico só cresce: o registo da travessia guarda, por item, quantas entradas atravessaram e o resumo dessas entradas, e a travessia seguinte recusa um histórico mais curto ou um prefixo diferente |
+| H5 | um acontecimento que sai do calendário sai por `saidas`, com `substituido_por` ou `retirado`, e um motivo |
+| C6 | um acontecimento com marcador diz **porquê** não tem data: `nao_publica` ou `nao_lida` |
+
+H4 é a que fecha o defeito de fundo. A A6 comparava esta exportação com o
+ficheiro de destino, que qualquer pessoa pode editar; H4 compara-a com o
+**registo da travessia**, que é o que o `check:cruzamento` prende, e compara o
+passado e não o presente. `ledger/cruzamentos/agenda.json` passou a levar
+`historia` (por item: quantas entradas e o resumo delas) e `eventos` (os ids do
+calendário).
+
+**Estragos plantados, cada um provado a falhar e reposto** (agora 35
+conferências em `publisher/export_agenda_test.py`, 31 delas contra um estrago):
+uma entrada de histórico passada reescrita depois de ter atravessado
+(«A past entry was rewritten»); um histórico mais curto do que o que atravessou
+(«A history only grows»); um acontecimento do calendário a desaparecer em
+silêncio («a departure has to be declared»); a mesma saída **declarada**, e
+aceite; uma transição partida; uma primeira entrada vinda de um estado; datas
+fora de ordem; `ultima_alteracao` a 2099; `entrada` um dia depois da primeira
+entrada do histórico; o marcador sem razão; a razão ao lado de uma data.
+
+As três primeiras (cadeia, ordem, limites das datas) e a C6 são **reconferidas
+do lado do sítio**, no `check:cruzamento`, pela mesma razão que as outras seis
+que já lá estavam: uma conferência de aceitação que confiasse no produtor seria
+o produtor a assinar por si próprio.
+
+#### A amarra das decisões: o outro sentido, e o que ela não pode fazer
+
+A `check-ledger.mjs` já recusava o texto que muda sem decisão que o nomeie.
+Faltava o inverso: uma entrada que declara `Afecta: metodo`, carimba o **mesmo**
+resumo da entrada anterior e não diz `Sem alteração`. Lida à letra, é uma
+decisão que governa um texto que não mexeu, sem dizer porquê. **Estrago
+plantado:** duplicou-se o carimbo da §1.39 numa entrada nova sem
+`Sem alteração`; a amarra fechou com «a decisão diz que afecta o texto e o
+texto não mudou; ou muda, ou diz porquê». Reposto.
+
+**O limite, escrito porque a revisão o apontou e tem razão.** Esta amarra corre
+sobre o ficheiro que está em disco e sobre o `DECISIONS.md` que está em disco.
+O que ela proíbe é a mudança **silenciosa**: o texto mexer sem que nenhuma
+entrada o nomeie. O que ela **não** proíbe é a reescrita deliberada da própria
+entrada por quem tem direito de escrita no repositório: essa reescreve o
+carimbo, e o resumo volta a bater certo. Para isso a linha de defesa é outra, e
+é o git: `sweeps/decisoes.py`, no motor, passou a fazer uma **auditoria de
+histórico** quando o `.git` do sítio está acessível. Para cada texto governado
+compara o commit que mexeu no ficheiro pela última vez com o commit que
+introduziu no `DECISIONS.md` a linha do carimbo actual, e diz OK ou DIVERGE. É
+report-only por contrato do varrimento mensal, e corre uma vez por mês, de
+fora da construção que governa.
+
+#### Todas as páginas construídas levam a porta para o Sobre, e agora é verdade
+
+A regra 9 do Método diz «todas as páginas construídas levam a porta para lá», e
+havia **quinze** páginas onde ela não estava: as dos documentos de estudo, que
+saem do varrimento antes de a conferência correr. A escolha era entre mudar a
+regra e cumprir a regra. Cumpriu-se: **a faixa do observatório passou a levar a
+porta para o Sobre**, e o portão passou a exigi-la ali. A faixa é markup nosso
+e não entra na comparação com a origem; entra no `esperado` que o portão
+recalcula, dos dois lados da igualdade, e por isso a promessa mais forte que o
+sítio dá sobre um documento (é o ficheiro de origem mais a faixa, carácter a
+carácter) fica intacta. Medido depois: **0 de 322** páginas construídas sem a
+porta, contra 15 de 322 antes. **Estrago plantado:** retirou-se a ligação da
+faixa; o portão fechou nas quinze páginas de documento com «a faixa do
+observatório não tem ligação para "/sobre"». Reposto.
+
+#### O portão da agenda prova o item inteiro, e a secção onde ele está
+
+Renderizar **um** campo de um item dava o item por presente: apagar o bloco do
+histórico inteiro deixava a contagem certa e passava. E a secção de cada item
+era calculada do **registo**, não da página: um item posto debaixo do cabeçalho
+errado passava, desde que o seu rótulo de estado estivesse certo. Duas
+conferências novas: os campos obrigatórios de cada item são derivados do
+próprio registo (título, estado, porquê, as quatro datas, a pergunta e o estado
+do registo prévio onde existem, cada critério com `quadro` ou `nota`, e **cada**
+entrada do histórico com a sua data e o seu motivo), e a secção é lida a subir
+no DOM. **Estragos plantados:** apagou-se o bloco do histórico de um item, e o
+portão fechou com «o item "habitacao" não rende "habitacao.historico[0].data"»;
+moveu-se um item para a secção errada, e fechou com «o item
+"evora-contas-2026" está na secção "concluido" e o registo põe-no em
+"em_curso"». Repostos.
+
+#### A ortografia: os plurais que faltavam, e as formas só de ida
+
+A lista tinha `concepção` e não tinha `concepções`. A conferência era um
+vocabulário finito com buracos, e uma flexão óbvia passava. A regra da lista
+mudou, e está escrita no seu cabeçalho: **a flexão regular de uma forma
+atestada não pede atestação própria**. O plural regular e o feminino regular de
+um par já consultado derivam-se pela regra da língua e entram sem consulta
+nova; o que continua a exigir consulta forma a forma é uma palavra nova e uma
+flexão irregular. De **196 pares para 252**. As contagens sobre a árvore actual
+não mexeram: 0 fora da grafia da casa, 5 no restante, 45 avisos em `note`, 16
+em citação, antes e depois.
+
+E a reversibilidade prometida em `IDENTIDADE.md` §9 passou a ser dita com
+verdade. A passagem inversa convertia `ato → acto` cegamente, e «Eu ato a
+corda» é o verbo *atar*. Um par pode agora ser marcado `so_ida: true`: no
+sentido «anterior» a ferramenta assinala-o e não lhe toca, como já fazia à
+lista `manuais` e aos travessões. Hoje há um: `acto → ato`. A frase da §9 passou
+a dizer que **a reversão é uma corrida da ferramenta mais uma passagem à mão
+sobre as formas listadas como só de ida**. **Estrago plantado:** um ficheiro de
+prosa com «Eu ato a corda.» e «O acto foi publicado.»; a passagem inversa
+converteu o segundo e deixou o primeiro intacto, listando-o para a mão.
+Reposto.
+
+#### A etiqueta do selo passa a ser comparada, e as dispensas por citação são contadas
+
+`data-nonledger="proveniencia"` era uma dispensa a sério: qualquer prosa
+embrulhada nela escapava ao varrimento de algarismos **e** ao da ortografia. O
+motivo declarado diz que a etiqueta é «gerada a partir do próprio livro-razão»,
+e o portão acreditava na frase. Passa a comparar: o conjunto de rendições
+legítimas é finito, calcula-se do registo dos trabalhos, e o que não estiver
+nele fecha a construção. **Estrago plantado:** embrulhou-se prosa arbitrária
+naquela marca; o portão fechou com «data-nonledger="proveniencia" com texto que
+a etiqueta do selo não sabe escrever». Reposto.
+
+A dispensa de «…» fica, porque é a regra da casa sobre citação, e passa a ser
+**contada em voz alta** na linha de fecho do portão, para que não cresça em
+silêncio: hoje são **8** ocorrências. **O limite:** o que está entre «…» não
+precisa de fonte registada; a aspa é uma afirmação de quem escreve, e o que a
+conferência garante é que o texto não se converte, não que a citação exista.
+
+#### `data-prova` compara o texto, e `prova.json` é relido inteiro
+
+A comparação era da sequência de algarismos, e por isso «1,32», «-132» ou «132
+e picos» comparavam iguais a `132`: o defeito plantado que a §1.39 registou
+(132 → 133) falhava, e a vírgula, o sinal e a escala não. Passa a comparar-se o
+texto renderizado com o que o portão escreve. E a releitura final de
+`dist/prova.json` deixou de contar chaves: relê chave a chave, com o nome, o
+valor e a vista. **Estragos plantados:** rendeu-se «1,32» onde o portão conta
+`132`, e o portão fechou com «foi renderizado como "1,32" e o portão escreve-o
+"132"»; alterou-se um valor no ficheiro depois de escrito, e a releitura fechou
+com «"afirmacoes": escrito 999, calculado 132». Repostos.
+
+#### As ligações internas: as relativas e as âncoras
+
+A conferência só via `href` que começassem por `/`. «agenda» e «../sobre» eram
+invisíveis, e uma âncora inexistente também. Passa a entrar tudo o que não
+traga esquema, um endereço relativo resolve-se contra a página onde está (com a
+distinção que o navegador faz entre uma página servida de `<dir>/index.html` e
+uma servida de `<nome>.html`), e a âncora é conferida contra os `id` da página
+de destino. Hoje: **9142** ligações internas conferidas, **0** relativas (o
+sítio escreve-as todas absolutas) e **1030** âncoras. **Estragos plantados:**
+uma ligação relativa partida, e o portão fechou com «a ligação interna
+"metodo-que-nao-existe" não corresponde a nada construído em dist/ (resolvida
+contra "/agenda/" dá "/agenda/metodo-que-nao-existe")»; uma ligação para uma
+âncora que não existe, e fechou com «aponta para a âncora "#nao-existe", que
+não existe em "/agenda"». Repostos.
+
+#### As palavras que diziam mais do que a prova
+
+- **Regra 2.** A prova dizia «linhas vindas do motor: 70» ao lado de «linhas
+  publicadas: 132», e deixava o leitor a concluir que as outras vieram de outro
+  lado. Vieram do mesmo sítio: foram escritas antes de o tubo existir, e o que
+  lhes falta é o registo da travessia. A prova passa a dizer as duas coisas:
+  «linhas atravessadas do motor com registo: 70 · linhas anteriores ao tubo:
+  62». A chave nova (`linhas_anteriores_ao_tubo`) é calculada como as outras e
+  reconferida pelo portão por conta própria.
+- **Regra 10.** O rótulo «valores creditados a quem os decidiu» dizia mais do
+  que a contagem estabelece: o campo mostra atribuição, não decisão. Passa a
+  «valores com crédito atribuído na linha». E o mecanismo ganhou a cláusula que
+  faltava: as frases sobre o financiamento e sobre a publicidade **não têm
+  máquina nenhuma por trás**, são regras da casa como a primeira, e valem por
+  estarem escritas e por quem responde por elas.
+- **Inglês.** «organism» passou a «body» (é uma instituição, não um ser vivo);
+  «standing in relation to the world outside» a «position in relation to the
+  outside» (a palavra inglesa acrescentava uma avaliação que a portuguesa não
+  pede); «what the official sources are about to publish» a «what the official
+  sources will publish»; «It does not rank parties» a «It does not rank or
+  classify parties».
+- **`/agenda`.** A segunda frase da abertura falava de bytes, resumos
+  criptográficos e da construção a fechar, e afirmava um comportamento que os
+  dois registos não guardam. Passa a «A lista e o calendário são dois registos
+  do motor de investigação, publicados tal como atravessaram.»
+- **`/correcoes`.** A política era dita três vezes: na abertura, no bloco da
+  política e no rodapé. A abertura perdeu a repetição e ficou a frase que não é
+  a política: «Corrigir em silêncio é a forma mais barata de mentir.» O bloco
+  fica, e a porta de todo o sítio também, que é regra.
+- **A pergunta fixada.** O rótulo dizia «A pergunta é fixada no motor antes da
+  recolha» ao lado de um histórico que diz que o registo prévio **não foi
+  selado**: a mesma página a contradizer-se. O registo passou a carregar
+  `registo_previo_estado` e `registo_previo_em`, conferidos contra o ficheiro
+  do registo prévio (A10: `selado` exactamente quando existe `core_sha256`), e
+  a página tem duas frases, uma para cada estado. Hoje sai a segunda: «A
+  pergunta fica fixada no motor antes da recolha; esta ainda não foi selada.»
+- **A ERSAR.** A página dizia «a fonte não publica data» sobre uma fonte que
+  **não chegou a ser lida**: `ersar.pt` não respondeu. Um tempo esgotado não é
+  prova sobre o calendário de ninguém. O registo passou a distinguir as duas
+  coisas (C6) e a página tem uma frase para cada: «a fonte não publica data» e
+  «a fonte não foi lida».
+- **Os caminhos do motor na prosa.** «content/08 Évora Mandates/, edição
+  inglesa, linhas 1101 a 1108» é um endereço dentro do motor: não abre, e não
+  diz nada a quem lê. Um critério passa a poder nomear `documentos`
+  (`slug` + `edicao`), o sítio renderiza-os como porta para
+  `/estudos/<slug>/documento` com o título do arquivo, e a A11 confere que o
+  ficheiro existe. As citações passaram a ser as do documento **alojado**,
+  palavra por palavra. O caminho do registo prévio saiu pela mesma razão, e no
+  seu lugar está o estado.
+
+#### Lido, e mantido, com a razão escrita
+
+- **A mobília do cabeçalho no `/sobre`** (o sinal de tempo e a linha da agenda)
+  e a porta das correcções no rodapé daquela página. A revisão leu-as como
+  contagens e como uma terceira formulação da política numa página que devia
+  parar em duas frases. São **mobília por regra**: entram pelo invólucro em
+  todas as páginas construídas, e uma excepção para o `/sobre` seria uma página
+  fora da regra do sítio. Fica para o juízo da direcção na pré-visualização.
+- **`correcoes-publicadas` como linha selada da casa.** A revisão diz que uma
+  contagem do próprio sítio devia ser porta (`data-prova`) e não linha com
+  selo. As duas coisas são legítimas e estão declaradas: esta contagem é a
+  mecanismo mais antigo, tem linha no livro-razão, tem amarra ao registo, e
+  trocá-la agora era trocar uma garantia por outra sem ganhar nada. Fica.
+- **O zero honesto da regra 6** («releituras independentes registadas: 0», com
+  o limite ao lado a dizer que o campo não existe no formato) e **a prova por
+  frase da regra 9**. A revisão diz que um zero e uma frase não são provas. São
+  o estado, dito como ele é; o corte, se houver, é da direcção na
+  pré-visualização, e o registo já diz porquê (§1.39).
+- **O mecanismo da regra 1** («não é imposta por uma máquina: é imposta por
+  estar à vista»). A revisão chama-lhe confundir inspeccionabilidade com
+  imposição. É exactamente o que a frase diz de si própria, e é honesto: a
+  regra não tem máquina, e diz que não tem.
+
+#### O que fica aberto, e não foi tocado aqui
+
+- **A antiguidade e a autoridade de uma fonte não são conferidas por máquina.**
+  A regra 1 diz «só fontes oficiais»; nenhum validador classifica uma fonte
+  como oficial, e as contagens da prova contam fontes e tipos de documento, não
+  elegibilidade. Continua a ser o que a regra diz de si própria.
+- **Os valores antigo e novo do registo de correcções** aparecem sem selo, com
+  a origem 5 a conferi-los campo a campo contra o livro-razão. E **as revisões
+  de proveniência** aparecem como nove identificadores sem uma contagem com
+  porta. As duas coisas foram apontadas pela revisão e **não foram triadas para
+  este bloco**: ficam registadas aqui para que a próxima leitura não as
+  redescubra do zero.
+- **A prosa da agenda pode trazer algarismos que não são valores do
+  livro-razão**, e a dispensa do `origem_da_data.excerto`, ambas acima.
+- **A amarra das decisões governa dois ficheiros**, `sobre.mjs` e `metodo.mjs`.
+  O resto da superfície pública (as cadeias de `strings.mjs`, os registos da
+  agenda, os títulos) não tem decisão que o governe. Os registos da agenda
+  ganharam neste bloco a sua própria amarra, que é outra e é criptográfica
+  (H4). As cadeias não ganharam nada.
+- **Este bloco mudou a prosa dos dois registos da agenda e não mudou nenhum
+  estado**: não há entrada nova no histórico de item nenhum, e por isso o
+  `Afecta:` desta entrada não nomeia a agenda. O que prende essa prosa é o
+  resumo criptográfico da travessia, não esta amarra.
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
@@ -3587,7 +3897,12 @@ o gabarito. A razão é a mesma do separador de `attributed_to` (§1.31).
    registado em `src/data/verbatim.mjs`. Não é um passe livre: é uma verificação
    de transcrição.
 3. `data-nonledger="<motivo>"` — contexto estrutural. O motivo tem de constar de
-   `ledger/allowlist.yml`, onde cada um se justifica por escrito.
+   `ledger/allowlist.yml`, onde cada um se justifica por escrito. **Um dos
+   motivos deixou de ser confiança e passou a ser comparação** (16.08.2026,
+   §1.41): a etiqueta do selo, `proveniencia`, é gerada do registo dos trabalhos
+   e o portão compara-a com o conjunto finito de rendições que esse registo
+   permite. Prosa arbitrária embrulhada nessa marca escapava ao varrimento de
+   algarismos e ao da ortografia; agora fecha a construção.
 4. Um token em `ledger/allowlist.yml` — nomes próprios com algarismos
    (`UE-27`, `PT2030`).
 
@@ -3655,6 +3970,13 @@ o gabarito. A razão é a mesma do separador de `attributed_to` (§1.31).
    legenda `data-legenda-prova` do instrumento, pela mesma razão que o selo
    (§1.34). Ver §1.39.
 
+   **A comparação é do TEXTO renderizado, não da sequência de algarismos**
+   (16.08.2026, §1.41). Enquanto foi de algarismos, «1,32», «-132» e «132 e
+   picos» comparavam iguais a `132`: apanhava-se um valor trocado e não uma
+   vírgula, um sinal ou uma escala. E a releitura de `dist/prova.json` no fim do
+   varrimento deixou de contar chaves: relê chave a chave, com o nome, o valor e
+   a vista, contra o que a construção acabou de calcular.
+
 8. `data-agenda="<id>.<campo>"` — um campo dos dois registos que atravessaram
    do motor (`src/data/agenda.json` e `src/data/calendario.json`), na página que
    os renderiza. O portão compara o texto renderizado com esse campo do registo,
@@ -3680,6 +4002,23 @@ o gabarito. A razão é a mesma do separador de `attributed_to` (§1.31).
    página contou com as contagens do registo da travessia, exigindo cada item e
    cada acontecimento pelo nome. Ver §1.40.
 
+   **Três conferências entraram a 16.08.2026 com a revisão cruzada (§1.41),** e
+   fecham o que a fidelidade da travessia não podia fechar sozinha:
+
+   - **a prosa não repete uma medição.** Nenhum número dentro de um elemento
+     `data-agenda` pode ter a sequência de algarismos de um **valor** do
+     livro-razão (mesma normalização da origem 1). Uma medição chega ao leitor
+     por `<Claim/>`, com selo; um registo pode atravessar fielmente e trazer,
+     em prosa, um valor que tem linha e selo noutro sítio da mesma página.
+     Excepção declarada, uma só: `origem_da_data.excerto`, que é a frase da
+     fonte citada palavra por palavra;
+   - **o item inteiro.** Os campos obrigatórios de cada item derivam-se do
+     próprio registo, e **cada** entrada do histórico é exigida com a sua data
+     e o seu motivo. Renderizar um campo já não dá o item por presente;
+   - **a secção é lida do DOM.** A secção de estado onde o item está é lida a
+     subir na página (`data-agenda-seccao`), e não calculada do registo: um
+     item debaixo do cabeçalho errado com o rótulo certo passava.
+
 As ilhas de dados `<script type="application/json" data-ledger-json>` têm regra
 própria: cada número precisa de um irmão `<x>_claim`, e é conferido contra o
 livro-razão; `<x>_texto` tem de ser igual ao `value` publicado; `<x>_ref` igual
@@ -3699,9 +4038,11 @@ dispensado mediante um `estrutura_motivo` declarado.
    passa. É por isso que a lista de motivos é curta, cada um se justifica por
    escrito, e o crescimento dessa lista deve ser tratado como sinal de alarme.
 4. **Números por extenso passam.** «vinte e seis por cento» não tem algarismos.
-5. **Só compara a sequência de algarismos.** `22,8` e `22.8` são
-   indistinguíveis para o portão — ele apanha um valor trocado, não uma
-   formatação trocada.
+5. **Só compara a sequência de algarismos, fora duas origens.** `22,8` e `22.8`
+   são indistinguíveis para a origem 1, que apanha um valor trocado e não uma
+   formatação trocada. A origem 7 (`data-prova`) deixou de ser assim a
+   16.08.2026 (§1.41): compara o texto renderizado. A origem 8 (`data-agenda`)
+   e a origem 6 (`data-linha-*`) sempre compararam texto.
 6. **Só varre `dist/`.** Um número num ficheiro de `public/` servido tal como
    está não é varrido.
 7. **No `<head>`** só são varridos `<title>` e `<meta name="description">`, e as
@@ -3722,11 +4063,18 @@ dispensado mediante um `estrutura_motivo` declarado.
    linha põe «Lido a» ao lado de `access_date` porque o gabarito assim o
    escreveu; trocar os rótulos entre dois campos conferidos passa. O que está
    conferido é que cada cadeia é o campo que **declara** ser.
-11. **Atributos continuam fora do varrimento, com uma excepção declarada:** o
+11. **As ligações internas passaram a ser conferidas por inteiro** (16.08.2026,
+   §1.41): um `href` sem esquema entra na conferência mesmo quando é relativo,
+   resolve-se contra a página onde está, e a sua âncora tem de existir na
+   página de destino. Antes só entravam os que começavam por `/`, e uma âncora
+   inexistente passava sempre. O que continua fora: uma ligação para fora do
+   domínio (é uma promessa sobre outra pessoa) e um `href` construído por
+   script.
+12. **Atributos continuam fora do varrimento, com uma excepção declarada:** o
    `href` da âncora que embrulha o endereço da fonte. Abriu-se porque aí o
    atributo é a afirmação — uma ligação rotulada com o endereço da fonte e a
    apontar para outro sítio é uma mentira que nenhum varrimento de texto apanha.
-12. **Não há origem para «calculado sobre um ficheiro de dados alojado».** Uma
+13. **Não há origem para «calculado sobre um ficheiro de dados alojado».** Uma
    soma sobre um registo público inteiro — os 166 639 411,36 € do PRR atribuídos
    ao concelho — não tem frase para transcrever nem pais no livro-razão que um
    `check` possa somar. O formato tem hoje três respostas, e as três estão
@@ -3738,6 +4086,11 @@ dispensado mediante um `estrutura_motivo` declarado.
    alojar o ficheiro de dados e o `check` correr sobre ele, o padrão que
    `check:dados` já tem para os gráficos (§1.18) e que o livro-razão ainda não
    tem. Três linhas esperam por isso.
+14. **A dispensa da citação entre «…» não exige fonte registada.** A aspa da
+   casa marca citação, e o que se cita não se converte nem se de-travessona. O
+   que a conferência garante é que o texto não se converte, não que a citação
+   exista. Desde 16.08.2026 (§1.41) a linha de fecho do portão **conta** essas
+   ocorrências, para que a dispensa não cresça em silêncio.
 
 O portão apanha o erro comum — um número que se escreveu a correr num gabarito —
 e não apanha a fraude determinada. Serve para tornar o caminho honesto o mais
@@ -3923,6 +4276,22 @@ e por isso não foi tocada neste bloco.
 5. **Localização dos números por edição** (§1.6) e as duas decisões em fila:
    tradução da linha de autoria (§1.5) e botão de tema (§1.9).
 6. **O 301 de `oestadodopais.pt`** para o domínio acentuado.
+7. **O registo de correcções publica valores sem selo** (16.08.2026, apontado
+   pela revisão cruzada e **não triado** para este bloco). O valor antigo e o
+   valor novo de cada entrada são conferidos campo a campo contra o livro-razão
+   pela origem 5, e não levam selo nem porta para a linha. É uma origem
+   declarada a fazer o trabalho de outra; se a interface pública de
+   proveniência é o selo, ou o registo passa a levá-lo, ou a regra diz que ali
+   a porta é outra. Fica escrito para que a próxima leitura não o redescubra.
+8. **As revisões de proveniência não têm contagem com porta** (mesma origem,
+   também não triado). A secção lista nove identificadores e o leitor conta-os
+   à mão; a chave `revisoes_de_proveniencia` existe na prova e é usada no
+   Método, não naquela secção.
+9. **A amarra das decisões governa dois ficheiros.** `sobre.mjs` e `metodo.mjs`.
+   As cadeias de `src/i18n/strings.mjs`, os títulos e as descrições de página
+   não têm decisão registada que os governe, e mudam sem que nada o note. Os
+   dois registos da agenda ganharam a sua própria amarra a 16.08.2026, e é
+   outra: criptográfica e append-only (§1.41, H4).
 
 ### 4.3 O que este bloco deixou construído e ainda não foi exercido
 
@@ -3941,3 +4310,15 @@ e por isso não foi tocada neste bloco.
   hífen e o registo escreve-os com traço baixo, por isso davam zero. É a
   primeira vez que uma coisa construída e nunca exercida foi exercida, e
   encontrou-se o defeito que só um ficheiro a sério podia encontrar.
+- **A lista `saidas` do calendário das fontes** (16.08.2026, §1.41, H5). Está
+  construída, provada contra um estrago plantado e contra uma saída declarada,
+  e **está vazia**: nenhum acontecimento saiu ainda. O primeiro que sair é o
+  primeiro uso a sério.
+- **A conferência de ligações relativas** (§1.41). Corre sobre 9142 ligações e
+  encontra **zero** relativas, porque o sítio as escreve todas absolutas. O que
+  ela impede é a primeira que não for.
+- **O campo `documentos` de um critério da agenda** (§1.41, A11). Dois critérios
+  o usam hoje, os dois a apontar para a edição portuguesa de dois estudos de
+  Évora. A edição inglesa do estudo dos mandatos **não está alojada** neste
+  sítio, e por isso a citação inglesa daquela nota não tem porta: a porta que
+  existe abre a edição portuguesa do mesmo trabalho.
