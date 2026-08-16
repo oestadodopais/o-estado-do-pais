@@ -470,18 +470,18 @@ export function evaluateCheck(expr, { claims, env = COUNTS, selfId = null } = {}
  */
 export function contagensDoRegisto(claims = loadClaims()) {
   let correcoes = 0;
-  let actualizacoes = 0;
+  let atualizacoes = 0;
   let revisoes = 0;
   for (const c of claims.values()) {
     for (const corr of c.corrections ?? []) {
       if (corr.kind === 'correcao') correcoes++;
-      else if (corr.kind === 'actualizacao') actualizacoes++;
+      else if (corr.kind === 'atualizacao') atualizacoes++;
       else if (corr.kind === 'proveniencia') revisoes++;
     }
   }
   return {
     correcoes_publicadas: correcoes,
-    actualizacoes_publicadas: actualizacoes,
+    atualizacoes_publicadas: atualizacoes,
     revisoes_de_proveniencia: revisoes,
   };
 }
@@ -815,7 +815,7 @@ export function validateLedger() {
         if (!ausente(corr.kind) && !KINDS.includes(corr.kind)) {
           errors.push(
             `${rot}: "kind" é "${corr.kind}". Só pode ser ${KINDS.map((k) => `"${k}"`).join(' ou ')}.\n` +
-              `    "correcao" = o valor publicado estava errado. "actualizacao" = estava certo e o que mede mudou.\n` +
+              `    "correcao" = o valor publicado estava errado. "atualizacao" = estava certo e o que mede mudou.\n` +
               `    "proveniencia" = o valor não mudou; mudou a maneira de lá chegar.`,
           );
         }

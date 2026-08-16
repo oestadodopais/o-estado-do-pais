@@ -232,8 +232,8 @@ export const STRINGS = {
         'Valores que estavam errados. Cada um fica com o valor anterior à vista, datado, e nenhum é removido.',
       registoConta: 'correções publicadas',
       registoContaSing: 'correção publicada',
-      registoActualizacoesK: 'Atualizações',
-      registoActualizacoesNota:
+      registoAtualizacoesK: 'Atualizações',
+      registoAtualizacoesNota:
         'Valores que estavam certos e deixaram de estar, porque aquilo que medem mudou. Não são erros, e não contam para o número acima.',
       registoProvenienciaK: 'Revisões de proveniência',
       registoProvenienciaNota:
@@ -474,7 +474,7 @@ export const STRINGS = {
       documentoVoltar: 'Voltar à página do estudo',
 
       edicaoIrma: 'Ver esta edição',
-      actualizadoLabel: 'Última atualização',
+      atualizadoLabel: 'Última atualização',
       temaK: 'Tema',
       temaNenhum: 'Sem tema atribuído',
       descricoesK: 'Descrições',
@@ -700,8 +700,8 @@ export const STRINGS = {
         'Values that were wrong. Each keeps its previous value in plain sight, dated, and none is removed.',
       registoConta: 'corrections published',
       registoContaSing: 'correction published',
-      registoActualizacoesK: 'Updates',
-      registoActualizacoesNota:
+      registoAtualizacoesK: 'Updates',
+      registoAtualizacoesNota:
         'Values that were right and stopped being so, because what they measure changed. They are not errors, and they do not count towards the number above.',
       registoProvenienciaK: 'Provenance revisions',
       registoProvenienciaNota:
@@ -928,7 +928,7 @@ export const STRINGS = {
       documentoVoltar: 'Back to the study page',
 
       edicaoIrma: 'See this edition',
-      actualizadoLabel: 'Last updated',
+      atualizadoLabel: 'Last updated',
       temaK: 'Subject',
       temaNenhum: 'No subject assigned',
       descricoesK: 'Descriptions',

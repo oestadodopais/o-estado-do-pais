@@ -6,7 +6,7 @@
  *   correcao      — o valor publicado estava ERRADO. É uma confissão, e é a
  *                   razão de o registo existir. Conta para «N correções
  *                   publicadas».
- *   actualizacao  — o valor publicado estava CERTO e deixou de estar, porque
+ *   atualizacao  — o valor publicado estava CERTO e deixou de estar, porque
  *                   aquilo que mede mudou. Não é um erro, e não conta.
  *   proveniencia  — o valor NÃO mudou; mudou a maneira de lá chegar. Uma fonte
  *                   que muda de endereço é o caso típico. Traz um campo a mais,
@@ -14,23 +14,23 @@
  *                   e `old_value`/`new_value` são os valores desse campo, não
  *                   os do número publicado. Não conta para as correções nem
  *                   para as actualizações: dizer «o valor mudou de X para X»
- *                   era o que a natureza `actualizacao` obrigava a escrever, e
+ *                   era o que a natureza `atualizacao` obrigava a escrever, e
  *                   era falso. Ver ledger/README.md e DECISIONS §1.36.
  *
  * Misturar as duas faria do registo um diário de alterações, e uma confissão
  * diluída vale menos. Ver DECISIONS §1.11.
  *
- * Os identificadores levam a grafia que a direção fixou (`actualizacao`);
+ * Os identificadores levam a grafia que a direção fixou (`atualizacao`);
  * os rótulos visíveis levam a grafia do texto publicado («atualização»).
  * O portão aceita, para cada natureza, o identificador ou um dos seus rótulos —
  * e mais nada. Uma entrada rotulada «atualização» com `kind: correcao` no
  * livro-razão falha o build.
  */
 
-export const KINDS = ['correcao', 'actualizacao', 'proveniencia'];
+export const KINDS = ['correcao', 'atualizacao', 'proveniencia'];
 
 /** As naturezas que o registo do Método lista uma a uma. Ver RegistoCorrecoes. */
-export const KINDS_NO_REGISTO = ['correcao', 'actualizacao'];
+export const KINDS_NO_REGISTO = ['correcao', 'atualizacao'];
 
 /**
  * Os campos de proveniência que uma revisão pode nomear. Lista fechada: um
@@ -49,7 +49,7 @@ export const CAMPOS_DE_PROVENIENCIA = [
 
 export const KIND_LABELS = {
   correcao: { pt: 'correção', en: 'correction' },
-  actualizacao: { pt: 'atualização', en: 'update' },
+  atualizacao: { pt: 'atualização', en: 'update' },
   proveniencia: { pt: 'revisão de proveniência', en: 'provenance revision' },
 };
 

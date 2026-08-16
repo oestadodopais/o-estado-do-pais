@@ -1911,7 +1911,7 @@ a.src-chip:hover::before {
 }
 
 /* Atualizações: em surdina. Sem cor, sem caixa, uma linha cada. */
-.registo-grupo-actualizacoes {
+.registo-grupo-atualizacoes {
   border-top: 1px solid var(--rule);
   padding-top: 18px;
 }

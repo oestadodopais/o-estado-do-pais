@@ -23,7 +23,7 @@
  * O QUE NÃO VARRE, E PORQUÊ
  *   · Comentários e nomes de código. Um comentário não chega ao leitor, e um
  *     identificador não é prosa: a ferramenta lê cadeias e texto de gabarito, e
- *     mais nada. É por isso que «data-de-actualizacao» ou «porta-correccoes»
+ *     mais nada. É por isso que «data-de-atualizacao» ou «porta-correccoes»
  *     não são tocados por aqui: mudam-se à mão, quando se decide mudá-los.
  *   · O que é transcrito. src/data/verbatim.mjs inteiro; os campos `title`,
  *     `titulo`, `origem` e `onde` dos dados; e, nos gabaritos, tudo o que esteja
@@ -37,8 +37,8 @@
  *     escritos (IDENTIDADE.md §9).
  *
  * UMA PALAVRA COM HÍFEN É UMA PALAVRA SÓ
- *   «mun-tecto-rot» não é «tecto», e «data-de-actualizacao» não é
- *   «actualizacao»: para efeito de procura, o hífen liga em vez de separar. É o
+ *   «mun-tecto-rot» não é «tecto», e «data-de-atualizacao» não é
+ *   «atualizacao»: para efeito de procura, o hífen liga em vez de separar. É o
  *   que impede a ferramenta de reescrever nomes de classe e de rota. O custo é
  *   que um composto a sério («Direcção-Geral») precisa de entrada própria na
  *   lista, e é por isso que ela lá está.
