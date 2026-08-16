@@ -99,6 +99,22 @@ const estadoExplicacao = leitura
    que `[descrição em preparação]` fazia (IDENTIDADE §6; BRIEF-confianca §3.5). */
 const descricaoPt = work.description.pt;
 const descricaoEn = work.description.en;
+
+/**
+ * O que a descrição É, por edição, e o rótulo que o diz.
+ *
+ * Três casos e não dois: a frase de abertura do documento, transcrita e
+ * conferida contra o ficheiro; uma tradução da casa dessa frase, onde o
+ * documento não tem edição naquela língua; e, por omissão, a reformulação do
+ * título (§1.7). Um rótulo que dissesse «frase de abertura» sobre uma tradução
+ * seria a mesma afirmação por conferir que este bloco veio corrigir (§1.40).
+ */
+const rotuloDaDescricao = (edicao) => {
+  const tipo = work.descricaoDoDocumento?.[edicao] ?? null;
+  if (tipo === 'verbatim') return s.estudos.descricaoDoDocumentoRotulo;
+  if (tipo === 'traducao') return s.estudos.descricaoTraduzidaRotulo;
+  return s.estudos.descricaoRotulo;
+};
 const descricaoAqui = work.description[lang];
 
 /* Fica "Draft" enquanto a PÁGINA não tiver conteúdo — mesmo com o documento já
@@ -133,6 +149,8 @@ const jsonld = {
       {
         descricaoAqui === POR_VERIFICAR ? (
           <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>
+        ) : work.verbatimDaAbertura?.[lang] ? (
+          <span data-verbatim={work.verbatimDaAbertura[lang]}>{descricaoAqui}</span>
         ) : (
           descricaoAqui
         )
@@ -318,23 +336,24 @@ const jsonld = {
         <span class="estudo-descricao-lingua">PT</span>{' '}
         {descricaoPt === POR_VERIFICAR ? (
           <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>
+        ) : work.verbatimDaAbertura?.pt ? (
+          <span data-verbatim={work.verbatimDaAbertura.pt}>{descricaoPt}</span>
         ) : (
           descricaoPt
         )}
       </p>
+      <p class="log-vazio-k">{rotuloDaDescricao('pt')}</p>
       <p class="estudo-descricao" lang="en">
         <span class="estudo-descricao-lingua">EN</span>{' '}
         {descricaoEn === POR_VERIFICAR ? (
           <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>
+        ) : work.verbatimDaAbertura?.en ? (
+          <span data-verbatim={work.verbatimDaAbertura.en}>{descricaoEn}</span>
         ) : (
           descricaoEn
         )}
       </p>
-      <p class="log-vazio-k">
-        {work.descriptionFromDocument
-          ? s.estudos.descricaoDoDocumentoRotulo
-          : s.estudos.descricaoRotulo}
-      </p>
+      <p class="log-vazio-k">{rotuloDaDescricao('en')}</p>
     </div>
 
     <!-- ======================================= descargas -->

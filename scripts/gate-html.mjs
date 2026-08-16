@@ -103,10 +103,23 @@ const PATTERNS = (allow.patterns ?? []).map((p) => ({
 
 /**
  * Cadeias estruturais toleradas no <head>: títulos de estudos, nome do sítio,
- * data de edição. No <head> não há markup onde pendurar data-nonledger, por
- * isso a excepção é por cadeia exacta, tirada do registo — não escrita à mão.
+ * e as citações registadas. No <head> não há markup onde pendurar
+ * data-nonledger, por isso a excepção é por cadeia exacta, tirada do registo —
+ * não escrita à mão.
+ *
+ * As citações entraram a 16.08.2026 (§1.40): a descrição de dois trabalhos
+ * passou a ser a frase de abertura do próprio documento, transcrita, e uma
+ * delas traz a data da recolha. No corpo da página essa frase vai marcada
+ * `data-verbatim` e é comparada carácter a carácter; no `<head>` não há onde
+ * pendurar a marca, e a cadeia exacta do registo é a mesma prova por outro
+ * caminho. Uma frase que não esteja em `verbatim.mjs` continua a fechar o
+ * portão.
  */
-const CADEIAS_HEAD = [...EDITIONS.map((e) => e.title), SITE_NAME].sort(
+const CADEIAS_HEAD = [
+  ...EDITIONS.map((e) => e.title),
+  ...Object.values(VERBATIM).map((v) => v.text),
+  SITE_NAME,
+].sort(
   (a, b) => b.length - a.length,
 );
 

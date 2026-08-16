@@ -54,14 +54,18 @@ const path = routePath('estudos', lang);
               <p class="arquivo-desc">
                 {e.description[lang] === POR_VERIFICAR ? (
                   <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>
+                ) : e.verbatimDaAbertura?.[lang] ? (
+                  <span data-verbatim={e.verbatimDaAbertura[lang]}>{e.description[lang]}</span>
                 ) : (
                   e.description[lang]
                 )}
               </p>
               <p class="log-vazio-k">
-                {e.descriptionFromDocument
+                {e.descricaoDoDocumento?.[lang] === 'verbatim'
                   ? s.estudos.descricaoDoDocumentoRotulo
-                  : s.estudos.descricaoRotulo}
+                  : e.descricaoDoDocumento?.[lang] === 'traducao'
+                    ? s.estudos.descricaoTraduzidaRotulo
+                    : s.estudos.descricaoRotulo}
               </p>
             </div>
             <div class="arquivo-meta">
