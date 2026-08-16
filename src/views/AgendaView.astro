@@ -239,9 +239,12 @@ const rotuloDoCriterio = (tipo) =>
                         {item.proposto_em}
                       </span>
                     </span>
-                    <span>
-                      <span class="agenda-k-inline">{s.agenda.decididoK}</span>{' '}
-                      {item.decidido_em ? (
+                    {/* Sem decisão, o rótulo sai com ela: «Decidido pela direção
+                        a» pede uma data, e pô-lo à frente de uma ausência lê-se
+                        mal. A ausência diz-se numa frase inteira. */}
+                    {item.decidido_em ? (
+                      <span>
+                        <span class="agenda-k-inline">{s.agenda.decididoK}</span>{' '}
                         <span
                           class="mono"
                           data-nonledger="data-da-agenda"
@@ -249,10 +252,10 @@ const rotuloDoCriterio = (tipo) =>
                         >
                           {item.decidido_em}
                         </span>
-                      ) : (
-                        <span class="agenda-vazio-inline">{s.agenda.porDecidir}</span>
-                      )}
-                    </span>
+                      </span>
+                    ) : (
+                      <span class="agenda-vazio-inline">{s.agenda.porDecidir}</span>
+                    )}
                     <span>
                       <span class="agenda-k-inline">{s.agenda.entradaK}</span>{' '}
                       <span
