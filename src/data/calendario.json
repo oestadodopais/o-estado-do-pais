@@ -1,0 +1,476 @@
+{
+ "_origem": {
+  "exportado_em": null,
+  "ficheiro": "indicators/calendar.json",
+  "repositorio": "ResearchHub",
+  "sha256_origem": "b396728601799eb3fd7af6974d86f01015c3b8c875c39b408ced2c663f97c074"
+ },
+ "eventos": [
+  {
+   "afecta_linhas": [
+    "custo-unitario-do-trabalho-2025",
+    "desempenho-das-exportacoes-2025",
+    "divida-das-empresas-2025",
+    "divida-das-familias-2025",
+    "divida-publica-2025",
+    "fluxo-de-credito-as-empresas-2025",
+    "fluxo-de-credito-as-familias-2025",
+    "posicao-de-investimento-internacional-2025",
+    "precos-da-habitacao-2025",
+    "saldo-da-balanca-corrente-2025",
+    "taxa-de-actividade-2025",
+    "taxa-de-cambio-efectiva-real-2025",
+    "taxa-de-desemprego-mip-2025"
+   ],
+   "data": null,
+   "evidencia_indireta": {
+    "en": "The Commission's own Alert Mechanism Report page announces no date and no periodicity. It lists the editions with each one's date: 2026 Semester on 25 November 2025, 2025 Semester on 18 December 2024, 2024 Semester on 21 November 2023, 2023 Semester on 22 November 2022, 2022 Semester on 24 November 2021. Five editions in November or December, which is an observation about the past and not an announced date (inference).",
+    "pt": "A página da própria Comissão para o Relatório sobre o Mecanismo de Alerta não anuncia data nem periodicidade. Lista as edições com a data de cada uma: Semestre de 2026 a 25 de novembro de 2025, Semestre de 2025 a 18 de dezembro de 2024, Semestre de 2024 a 21 de novembro de 2023, Semestre de 2023 a 22 de novembro de 2022, Semestre de 2022 a 24 de novembro de 2021. Cinco edições em novembro ou dezembro, o que é observação sobre o passado e não uma data anunciada (inferência)."
+   },
+   "fonte": "Comissão Europeia",
+   "id": "ce-relatorio-mecanismo-alerta-2027",
+   "janela": null,
+   "marcador": "[a verificar]",
+   "nota": {
+    "en": "The thirteen rows named are those whose `note` field carries the Procedure's threshold, and they are the thirteen headline indicators. Thresholds live in documents and not in the data interface, which is why the `threshold` canary in indicators/refresh.py watches the scoreboard page and not a series. The scoreboard page, read today, gives the house price index threshold as +9% and does not say when it is updated.",
+    "pt": "As treze linhas nomeadas são as que trazem no seu campo «note» o limiar do Procedimento, e são as treze do painel principal. Os limiares vivem em documentos e não na interface de dados, que é a razão de a canária «threshold» de indicators/refresh.py vigiar a página do painel e não uma série. A página do painel, lida hoje, dá o limiar do índice de preços da habitação em +9% e não diz quando é atualizada."
+   },
+   "origem_da_data": null,
+   "precisao": "desconhecida",
+   "serie": [
+    "tipsbp10",
+    "tipsbp60",
+    "tipser10",
+    "tipsgo10",
+    "tipsho20",
+    "tipsii10",
+    "tipslm10",
+    "tipslm60",
+    "tipspc30",
+    "tipspc40",
+    "tipspd22",
+    "tipspd30",
+    "tipsun20"
+   ],
+   "titulo": {
+    "en": "Alert Mechanism Report and Macroeconomic Imbalance Procedure scoreboard, 2027 European Semester",
+    "pt": "Relatório sobre o Mecanismo de Alerta e painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, Semestre Europeu de 2027"
+   },
+   "vigilancia": "refresh"
+  },
+  {
+   "afecta_linhas": [
+    "abandono-escolar-precoce-2025",
+    "competencias-digitais-2025",
+    "criancas-em-creche-2025",
+    "desemprego-de-longa-duracao-2025",
+    "disparidade-de-emprego-entre-sexos-2025",
+    "necessidades-medicas-nao-satisfeitas-2025",
+    "racio-s80-s20-2025",
+    "risco-de-pobreza-ou-exclusao-2025",
+    "sobrecarga-do-custo-da-habitacao-2025",
+    "taxa-de-emprego-2025"
+   ],
+   "data": null,
+   "evidencia_indireta": {
+    "en": "The Commission's news item on the 2026 Semester autumn package is dated 25 November 2025 and names among the package's documents the 'Proposal for a Joint Employment Report'. No Commission page read today announces the date of the next package. The autumn package is the observed vehicle, once (inference).",
+    "pt": "A notícia da Comissão sobre o pacote de outono do Semestre de 2026 tem data de 25 de novembro de 2025 e nomeia entre os documentos do pacote a «Proposal for a Joint Employment Report». Nenhuma página da Comissão lida hoje anuncia a data do pacote seguinte. O pacote de outono é o veículo observado, uma vez (inferência)."
+   },
+   "fonte": "Comissão Europeia",
+   "id": "ce-relatorio-conjunto-emprego-2027",
+   "janela": null,
+   "marcador": "[a verificar]",
+   "nota": {
+    "en": "The ten rows named are those the engine's availability register (indicators/availability.json) marks with framework 'SocialSB'.",
+    "pt": "As dez linhas nomeadas são as que o registo de disponibilidade do motor (indicators/availability.json) marca com framework «SocialSB»."
+   },
+   "origem_da_data": null,
+   "precisao": "desconhecida",
+   "serie": [
+    "edat_lfse_14",
+    "lfsi_emp_a",
+    "tepsr_sp210",
+    "tepsr_sp410",
+    "tesem060",
+    "tesem130",
+    "tespm110",
+    "tespm140",
+    "tessi180",
+    "une_rt_a"
+   ],
+   "titulo": {
+    "en": "Joint Employment Report and Social Scoreboard, 2027 European Semester",
+    "pt": "Relatório Conjunto sobre o Emprego e Painel de Indicadores Sociais, Semestre Europeu de 2027"
+   },
+   "vigilancia": "refresh"
+  },
+  {
+   "afecta_linhas": [
+    "divida-publica-2025"
+   ],
+   "data": "2026-10-21",
+   "evidencia_indireta": null,
+   "fonte": "Eurostat",
+   "id": "eurostat-pde-notificacao-outubro-2026",
+   "janela": null,
+   "marcador": null,
+   "nota": {
+    "en": "The release of 22 April 2026 says of itself: 'In this release, Eurostat, the statistical office of the European Union, is providing government deficit and debt data for the years 2022-2025, based on figures reported by EU Member States in the first notification in 2026, for the application of the excessive deficit procedure (EDP).' The site row divida-publica-2025 publishes the annual table tipsgo10, on the Procedure's basis.",
+    "pt": "O comunicado de 22 de abril de 2026 diz de si próprio: «In this release, Eurostat, the statistical office of the European Union, is providing government deficit and debt data for the years 2022-2025, based on figures reported by EU Member States in the first notification in 2026, for the application of the excessive deficit procedure (EDP).» A linha do sítio divida-publica-2025 publica o quadro anual tipsgo10, na base do Procedimento."
+   },
+   "origem_da_data": {
+    "acedido_em": "2026-08-16",
+    "excerto": "Next release: 21 October 2026",
+    "url": "https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-22042026-ap"
+   },
+   "precisao": "dia",
+   "serie": [
+    "tipsgo10"
+   ],
+   "titulo": {
+    "en": "Excessive deficit procedure notification: general government deficit and debt",
+    "pt": "Notificação do Procedimento relativo aos Défices Excessivos: défice e dívida das administrações públicas"
+   },
+   "vigilancia": "refresh"
+  },
+  {
+   "afecta_linhas": [],
+   "data": "2026-09-23",
+   "evidencia_indireta": null,
+   "fonte": "INE",
+   "id": "ine-pde-2a-notificacao-2026",
+   "janela": null,
+   "marcador": null,
+   "nota": {
+    "en": "This is the national notification. The value the site publishes comes from the Eurostat table, which comes later: see eurostat-pde-notificacao-outubro-2026.",
+    "pt": "É a notificação nacional. O valor que o sítio publica sai do quadro do Eurostat, que sai depois: ver eurostat-pde-notificacao-outubro-2026."
+   },
+   "origem_da_data": {
+    "acedido_em": "2026-08-16",
+    "excerto": "Procedimento dos Défices Excessivos - 2ª Notificação · 2026 · 23 de setembro de 2026",
+    "url": "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_calendarios&xlang=pt"
+   },
+   "precisao": "dia",
+   "serie": [],
+   "titulo": {
+    "en": "Excessive deficit procedure, 2nd notification of 2026",
+    "pt": "Procedimento dos Défices Excessivos, 2.ª Notificação de 2026"
+   },
+   "vigilancia": null
+  },
+  {
+   "afecta_linhas": [],
+   "data": "2026-09-22",
+   "evidencia_indireta": null,
+   "fonte": "INE",
+   "id": "ine-indice-precos-habitacao-t2-2026",
+   "janela": null,
+   "marcador": null,
+   "nota": {
+    "en": "The site row precos-da-habitacao-2025 publishes the Eurostat annual table (tipsho20), not this quarterly index. It is registered because it is the national measurement of the same object and because the housing study starts there.",
+    "pt": "A linha precos-da-habitacao-2025 do sítio publica o quadro anual do Eurostat (tipsho20), não este índice trimestral. Fica registado porque é a medição nacional do mesmo objeto e porque o estudo da habitação começa por ela."
+   },
+   "origem_da_data": {
+    "acedido_em": "2026-08-16",
+    "excerto": "Índice de Preços da Habitação · 2.º Trimestre de 2026 · 22 de setembro de 2026",
+    "url": "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_calendarios&xlang=pt"
+   },
+   "precisao": "dia",
+   "serie": [],
+   "titulo": {
+    "en": "House Price Index, 2nd quarter of 2026",
+    "pt": "Índice de Preços da Habitação, 2.º trimestre de 2026"
+   },
+   "vigilancia": null
+  },
+  {
+   "afecta_linhas": [],
+   "data": "2026-09-29",
+   "evidencia_indireta": null,
+   "fonte": "INE",
+   "id": "ine-rendas-habitacao-local-t2-2026",
+   "janela": null,
+   "marcador": null,
+   "nota": {
+    "en": "Municipality level. No site row uses it today.",
+    "pt": "Nível de concelho. Nenhuma linha do sítio a usa hoje."
+   },
+   "origem_da_data": {
+    "acedido_em": "2026-08-16",
+    "excerto": "Estatísticas de Rendas da Habitação ao nível local · 2.º Trimestre de 2026 · 29 de setembro de 2026",
+    "url": "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_calendarios&xlang=pt"
+   },
+   "precisao": "dia",
+   "serie": [],
+   "titulo": {
+    "en": "House rental statistics at local level, 2nd quarter of 2026",
+    "pt": "Estatísticas de Rendas da Habitação ao nível local, 2.º trimestre de 2026"
+   },
+   "vigilancia": null
+  },
+  {
+   "afecta_linhas": [],
+   "data": "2026-10-23",
+   "evidencia_indireta": null,
+   "fonte": "INE",
+   "id": "ine-precos-habitacao-local-t2-2026",
+   "janela": null,
+   "marcador": null,
+   "nota": {
+    "en": "Municipality level. No site row uses it today.",
+    "pt": "Nível de concelho. Nenhuma linha do sítio a usa hoje."
+   },
+   "origem_da_data": {
+    "acedido_em": "2026-08-16",
+    "excerto": "Estatísticas de Preços da Habitação ao nível local · 2.º Trimestre de 2026 · 23 de outubro de 2026",
+    "url": "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_calendarios&xlang=pt"
+   },
+   "precisao": "dia",
+   "serie": [],
+   "titulo": {
+    "en": "House prices statistics at local level, 2nd quarter of 2026",
+    "pt": "Estatísticas de Preços da Habitação ao nível local, 2.º trimestre de 2026"
+   },
+   "vigilancia": null
+  },
+  {
+   "afecta_linhas": [
+    "evora-concentracao-vab4-2024",
+    "evora-empresas-2024",
+    "evora-vab-empresarial-2024",
+    "portugal-concentracao-vab4-2024"
+   ],
+   "data": "2026-10-30",
+   "evidencia_indireta": null,
+   "fonte": "INE",
+   "id": "ine-empresas-em-portugal-2025",
+   "janela": null,
+   "marcador": null,
+   "nota": {
+    "en": "The four rows come from indicators 0013863, 0014047 and 0014063, which INE's own metainformation attributes to the enterprises' 'Sistema de contas integradas'. That metainformation, read on 2026-08-10 and kept in the engine, gives DataUltimaAtualizacao 2025-12-11 and last period 2024: the database and the Destaque do not necessarily move on the same day.",
+    "pt": "As quatro linhas saem dos indicadores 0013863, 0014047 e 0014063, que a metainformação do próprio INE atribui ao «Sistema de contas integradas» das empresas. Essa metainformação, lida em 2026-08-10 e guardada no motor, dá DataUltimaAtualizacao 2025-12-11 e último período 2024: a base de dados e o Destaque não mexem forçosamente no mesmo dia."
+   },
+   "origem_da_data": {
+    "acedido_em": "2026-08-16",
+    "excerto": "Empresas em Portugal · 2025 · 30 de outubro de 2026",
+    "url": "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_calendarios&xlang=pt"
+   },
+   "precisao": "dia",
+   "serie": [
+    "0013863",
+    "0014047",
+    "0014063"
+   ],
+   "titulo": {
+    "en": "Enterprises in Portugal, 2025",
+    "pt": "Empresas em Portugal, 2025"
+   },
+   "vigilancia": null
+  },
+  {
+   "afecta_linhas": [],
+   "data": null,
+   "evidencia_indireta": null,
+   "fonte": "INE",
+   "id": "ine-contas-regionais-preliminares-2025",
+   "janela": {
+    "fim": "2026-12-31",
+    "inicio": "2026-12-01"
+   },
+   "marcador": null,
+   "nota": {
+    "en": "INE's calendar gives a month, not a day, for December 2026. The site's seven pib-pc-* rows publish Eurostat's regional table (nama_10r_2gdp) and not these accounts; the link between the two was not read in any source, so afecta_linhas is left empty.",
+    "pt": "O calendário do INE dá mês, não dia, para dezembro de 2026. As sete linhas pib-pc-* do sítio publicam o quadro regional do Eurostat (nama_10r_2gdp) e não estas contas; a ligação entre os dois não foi lida em fonte nenhuma e por isso afecta_linhas fica vazia."
+   },
+   "origem_da_data": {
+    "acedido_em": "2026-08-16",
+    "excerto": "Contas Regionais - Dados preliminares · 2025 · dezembro de 2026",
+    "url": "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_calendarios&xlang=pt"
+   },
+   "precisao": "mes",
+   "serie": [],
+   "titulo": {
+    "en": "Regional accounts, preliminary data for 2025",
+    "pt": "Contas Regionais, dados preliminares de 2025"
+   },
+   "vigilancia": null
+  },
+  {
+   "afecta_linhas": [
+    "evora-populacao-2021",
+    "evora-populacao-2025"
+   ],
+   "data": null,
+   "evidencia_indireta": {
+    "en": "INE's release calendar, read in full today (thirteen pages, 18 August to December 2026), carries no entry under this name; it carries 'Estatísticas Demográficas · 2025 · 18 November 2026', which is a different operation. The metainformation of indicator 0012918, read by the engine on 2026-08-10, gives DataUltimaAtualizacao 2026-06-22 and last period 2025. An update around June is what is observed once, not an announced date (inference).",
+    "pt": "O calendário de difusão do INE, lido hoje inteiro (treze páginas, de 18 de agosto a dezembro de 2026), não traz nenhuma entrada com este nome; traz «Estatísticas Demográficas · 2025 · 18 de novembro de 2026», que é outra operação. A metainformação do indicador 0012918, lida pelo motor em 2026-08-10, dá DataUltimaAtualizacao 2026-06-22 e último período 2025. Uma atualização por volta de junho é o que se observa uma vez, não uma data anunciada (inferência)."
+   },
+   "fonte": "INE",
+   "id": "ine-estimativas-populacao-residente",
+   "janela": null,
+   "marcador": "[a verificar]",
+   "nota": null,
+   "origem_da_data": null,
+   "precisao": "desconhecida",
+   "serie": [
+    "0012918"
+   ],
+   "titulo": {
+    "en": "Annual estimates of the resident population",
+    "pt": "Estimativas Anuais da População Residente"
+   },
+   "vigilancia": null
+  },
+  {
+   "afecta_linhas": [
+    "alentejo-central-poder-de-compra-2023",
+    "evora-poder-de-compra-2023"
+   ],
+   "data": null,
+   "evidencia_indireta": {
+    "en": "INE's release calendar, read in full today, does not carry this operation; it carries 'Paridades de Poder de Compra · 2025 · December 2026', which is another. The metainformation of indicator 0014580, read by the engine on 2026-08-10, says 'Bienal', gives DataUltimaAtualizacao 2025-11-06 and both first and last period 2023. Biennial from 2023 points to 2025 as the next reference (inference), with no date.",
+    "pt": "O calendário de difusão do INE, lido hoje inteiro, não traz esta operação; traz «Paridades de Poder de Compra · 2025 · dezembro de 2026», que é outra. A metainformação do indicador 0014580, lida pelo motor em 2026-08-10, diz «Bienal», dá DataUltimaAtualizacao 2025-11-06 e primeiro e último período 2023. Bienal a partir de 2023 aponta para 2025 como referência seguinte (inferência), sem data."
+   },
+   "fonte": "INE",
+   "id": "ine-poder-de-compra-concelhio",
+   "janela": null,
+   "marcador": "[a verificar]",
+   "nota": null,
+   "origem_da_data": null,
+   "precisao": "desconhecida",
+   "serie": [
+    "0014580"
+   ],
+   "titulo": {
+    "en": "Study on municipal purchasing power",
+    "pt": "Estudo sobre o Poder de Compra Concelhio"
+   },
+   "vigilancia": null
+  },
+  {
+   "afecta_linhas": [],
+   "data": null,
+   "evidencia_indireta": {
+    "en": "DGAL publishes no calendar. The debt evolution page, read today, lists eleven annual files (2014 to 2024) and puts a date on none of them; searching for 'calend' in the debt section and on the Portal Autárquico home page returns nothing, with 'endividamento' as the known-positive (23 and 5 occurrences). What the source does write is each file's address, and that carries a dtestate parameter: 2025-12-18 on the 2024 file, 2024-11-14 on the 2023 file, 2024-04-11 on the 2022 file, 2022-12-13 on the 2021 file. That dtestate is the publication date is our reading (inference).",
+    "pt": "A DGAL não publica calendário. A página de evolução do endividamento, lida hoje, lista onze ficheiros anuais (2014 a 2024) e não põe data em nenhum; a procura por «calend» na secção do endividamento e na página inicial do Portal Autárquico não dá nada, com «endividamento» a servir de conhecido-positivo (23 e 5 ocorrências). O que a fonte escreve é o endereço de cada ficheiro, e esse traz um parâmetro dtestate: 2025-12-18 no ficheiro de 2024, 2024-11-14 no de 2023, 2024-04-11 no de 2022, 2022-12-13 no de 2021. Que dtestate seja a data de publicação é leitura nossa (inferência)."
+   },
+   "fonte": "Direção-Geral das Autarquias Locais (DGAL)",
+   "id": "dgal-endividamento-2025",
+   "janela": null,
+   "marcador": "[a verificar]",
+   "nota": {
+    "en": "One file per year, not cumulative (study 07's raw record holds eleven distinct files, one per year). So a 2025 file adds rows and does not move the published ones, and afecta_linhas is left empty. Évora's debt index stands at 105.5%: falling below one hundred would be the end of the rescue era.",
+    "pt": "Um ficheiro por ano, não cumulativo (o registo em bruto do estudo 07 guarda onze ficheiros distintos, um por ano). Por isso um ficheiro de 2025 acrescenta linhas e não mexe nas que estão publicadas, e afecta_linhas fica vazia. O índice de dívida de Évora está em 105,5%: descer abaixo de cem seria o fim da era de resgate."
+   },
+   "origem_da_data": null,
+   "precisao": "desconhecida",
+   "serie": [],
+   "titulo": {
+    "en": "File 'Evolução endividamento total 2025' on the Portal Autárquico",
+    "pt": "Ficheiro «Evolução endividamento total 2025» no Portal Autárquico"
+   },
+   "vigilancia": "watch_next_events"
+  },
+  {
+   "afecta_linhas": [],
+   "data": null,
+   "evidencia_indireta": {
+    "en": "IEFP publishes no calendar: the statistics page names the products and does not say when they appear, and the metainformation document there covers concepts. What is observed is the last-modified date the server returns for each file: 20 July 2026 for the June 2026 file, 22 June 2026 for May, 20 May 2026 for April. That the following month's file appears around the 20th is our reading of three cases (inference). Today, 16 August 2026, the last published month is June.",
+    "pt": "O IEFP não publica calendário: a página de estatísticas nomeia os produtos e não diz quando saem, e o documento de metainformação que lá está trata de conceitos. O que se observa é a data de última modificação que o servidor devolve para cada ficheiro: 20 de julho de 2026 para o de junho de 2026, 22 de junho de 2026 para o de maio, 20 de maio de 2026 para o de abril. O ficheiro do mês seguinte aparecer por volta do dia 20 é leitura nossa sobre três casos (inferência). Hoje, 16 de agosto de 2026, o último mês publicado é junho."
+   },
+   "fonte": "Instituto do Emprego e Formação Profissional (IEFP)",
+   "id": "iefp-desemprego-concelhos-mensal",
+   "janela": null,
+   "marcador": "[a verificar]",
+   "nota": {
+    "en": "The two site rows citing IEFP are December values (2013 and 2024); a new monthly file adds a month and does not move them, so afecta_linhas is left empty.",
+    "pt": "As duas linhas do sítio que citam o IEFP são valores de dezembro (2013 e 2024); um ficheiro mensal novo acrescenta um mês e não as move, por isso afecta_linhas fica vazia."
+   },
+   "origem_da_data": null,
+   "precisao": "desconhecida",
+   "serie": [],
+   "titulo": {
+    "en": "SIE, registered unemployment by municipality, monthly file",
+    "pt": "SIE, Desemprego registado por concelhos, ficheiro mensal"
+   },
+   "vigilancia": null
+  },
+  {
+   "afecta_linhas": [],
+   "data": null,
+   "evidencia_indireta": {
+    "en": "The deadline is for the appreciation, not for publication. The municipality's own page dates each document it puts online: 2025 accounts on 21-05-2026, 2023 on 07-06-2024, 2022 on 12-05-2023, 2021 on 18-05-2022, 2020 on 03-08-2021. That the document appears weeks after the April session is our reading of these five cases (inference).",
+    "pt": "O prazo é o da apreciação, não o da publicação. A página do próprio município data cada documento que põe em linha: contas de 2025 a 21-05-2026, de 2023 a 07-06-2024, de 2022 a 12-05-2023, de 2021 a 18-05-2022, de 2020 a 03-08-2021. O documento aparecer semanas depois da sessão de abril é leitura nossa sobre estes cinco casos (inferência)."
+   },
+   "fonte": "Município de Évora",
+   "id": "evora-contas-2026",
+   "janela": {
+    "fim": "2027-04-30",
+    "inicio": "2027-04-01"
+   },
+   "marcador": null,
+   "nota": {
+    "en": "The window is the one the law fixes. The text quoted is article 76 as it stands in the republication annexed to Lei n.º 51/2018 of 16 August (Diário da República, 1st series, no. 157, pp. 4109 to 4147), and it is word for word the same as the 2013 original (Lei n.º 73/2013, 1st series, no. 169, pp. 5499 to 5519, also read today). Amendments after 2018 were not checked: the consolidated version on diariodarepublica.pt returns the 'JavaScript is required' shell to both curl and WebFetch, which the engine's BRIEF §9 already recorded.",
+    "pt": "A janela é a que a lei fixa. O texto citado é o do artigo 76.º na republicação anexa à Lei n.º 51/2018, de 16 de agosto (Diário da República, 1.ª série, n.º 157, pp. 4109 a 4147), e é palavra por palavra o mesmo do original de 2013 (Lei n.º 73/2013, 1.ª série, n.º 169, pp. 5499 a 5519, também lido hoje). Alterações posteriores a 2018 não foram conferidas: a versão consolidada em diariodarepublica.pt devolve a casca «JavaScript is required» tanto a curl como ao WebFetch, o que o BRIEF §9 do motor já registava."
+   },
+   "origem_da_data": {
+    "acedido_em": "2026-08-16",
+    "excerto": "Artigo 76.º, «Apreciação dos documentos de prestação de contas individuais e consolidadas», n.º 1: «Os documentos de prestação de contas individuais das autarquias locais, das entidades intermunicipais e das entidades associativas municipais são apreciados pelos seus órgãos deliberativos, reunidos em sessão ordinária durante o mês de abril do ano seguinte àquele a que respeitam.»",
+    "url": "https://files.diariodarepublica.pt/1s/2018/08/15700/0410904147.pdf"
+   },
+   "precisao": "mes",
+   "serie": [],
+   "titulo": {
+    "en": "Município de Évora 2026 accounts, appreciation by the Assembleia Municipal",
+    "pt": "Prestação de contas de 2026 do Município de Évora, apreciação pela Assembleia Municipal"
+   },
+   "vigilancia": "watch_next_events"
+  },
+  {
+   "afecta_linhas": [],
+   "data": null,
+   "evidencia_indireta": {
+    "en": "There is no date because there is no announced event: the year has no dossier. The municipality's 'Anos anteriores' page, read today, goes from the 2023 management report (07-06-2024) to the 2025 accounts (21-05-2026) with nothing for 2024. Study 08 says the same, and that is what is being watched: 'No 2024 accounts document was ever published' (content/08 Évora Mandates/, English edition, line 549).",
+    "pt": "Não há data porque não há acontecimento anunciado: o ano não tem dossiê. A página «Anos anteriores» do município, lida hoje, passa do Relatório de Gestão 2023 (07-06-2024) para as contas de 2025 (21-05-2026) sem nada de 2024. O estudo 08 diz o mesmo, e é o que se vigia: «No 2024 accounts document was ever published» (content/08 Évora Mandates/, edição inglesa, linha 549)."
+   },
+   "fonte": "Município de Évora",
+   "id": "evora-contas-2024-pagina",
+   "janela": null,
+   "marcador": "[a verificar]",
+   "nota": null,
+   "origem_da_data": null,
+   "precisao": "desconhecida",
+   "serie": [],
+   "titulo": {
+    "en": "Reappearance of a 2024 accounts page on cm-evora.pt",
+    "pt": "Reaparecimento de uma página de contas de 2024 em cm-evora.pt"
+   },
+   "vigilancia": "watch_next_events"
+  },
+  {
+   "afecta_linhas": [
+    "agua-nao-faturada-portugal-2024"
+   ],
+   "data": null,
+   "evidencia_indireta": null,
+   "fonte": "ERSAR",
+   "id": "ersar-rasarp",
+   "janela": null,
+   "marcador": "[a verificar]",
+   "nota": {
+    "en": "Nothing was read: ersar.pt did not answer today. The RASARP annual editions page timed out to curl twice (45 s and 60 s) and refused the connection to WebFetch, and the domain root timed out too. With no page there is no calendar and no observed dates, so this event carries no indirect evidence at all. The site row agua-nao-faturada-portugal-2024 cites the 2025 RASARP edition and has its address still to confirm.",
+    "pt": "Nada foi lido: ersar.pt não respondeu hoje. A página das edições anuais do RASARP deu tempo esgotado a curl por duas vezes (45 s e 60 s) e ligação recusada ao WebFetch, e a raiz do domínio também esgotou o tempo. Sem página não há calendário nem datas observadas, e por isso este acontecimento não leva evidência indireta nenhuma. A linha do sítio agua-nao-faturada-portugal-2024 cita a edição de 2025 do RASARP e tem o endereço por confirmar."
+   },
+   "origem_da_data": null,
+   "precisao": "desconhecida",
+   "serie": [],
+   "titulo": {
+    "en": "RASARP, annual report on water and waste services in Portugal, next edition",
+    "pt": "RASARP, Relatório Anual dos Serviços de Águas e Resíduos em Portugal, edição seguinte"
+   },
+   "vigilancia": null
+  }
+ ],
+ "formato": 1,
+ "gerado_por": "ResearchHub, escrito à mão: cada data traz a sua origem (endereço, data de acesso, excerto). Onde a fonte não publica calendário, a entrada di-lo e leva o marcador."
+}

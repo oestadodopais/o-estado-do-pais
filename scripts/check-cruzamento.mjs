@@ -46,6 +46,34 @@
  *     de outro modo seria uma maneira de branquear qualquer edição.
  *
  * Uma correcção continua, portanto, possível — e continua a deixar rasto.
+ *
+ * ### Os dois tipos de registo
+ *
+ * Há duas coisas que atravessam a fronteira, e cada uma tem o seu registo em
+ * `ledger/cruzamentos/`:
+ *
+ *   · **linhas** — um registo com um mapa `rows`, uma entrada por linha do
+ *     livro-razão (`evora.json`). É o de cima.
+ *   · **ficheiros** — um registo com um mapa `files`, uma entrada por ficheiro
+ *     inteiro (`agenda.json`, escrito por ResearchHub/publisher/export_agenda.py).
+ *     A agenda e o calendário das fontes atravessam como ficheiros e não como
+ *     linhas: não são valores com proveniência por campo, são dois registos que
+ *     a página renderiza inteiros.
+ *
+ * O tipo lê-se da forma do registo, não do nome do ficheiro. A conferência é a
+ * mesma nas duas: o resumo dos bytes em disco contra o resumo que o registo
+ * declara, e com `--with-origin` o resumo do lado do motor.
+ *
+ * ### As invariantes, reconferidas deste lado
+ *
+ * O exportador do motor confere dezassete invariantes antes de escrever. Este
+ * portão volta a conferir as que a página precisa para renderizar — o estado é
+ * o `para` da última entrada do histórico, todo o item tem histórico, quem sai
+ * traz motivo, o que renderiza tem `pt` e `en`, as linhas citadas existem no
+ * livro-razão deste sítio, os acontecimentos citados existem no calendário.
+ * Não é desconfiança do motor: é a regra da casa. Uma conferência de aceitação
+ * que confiasse no produtor seria o produtor a assinar por si próprio, que é o
+ * que o comentário acima diz do modo offline.
  */
 
 import fs from 'node:fs';
@@ -59,6 +87,8 @@ import { STUDY_IDS } from '../src/data/studies.mjs';
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIR_CRUZAMENTOS = path.join(RAIZ, 'ledger', 'cruzamentos');
 const DIR_CLAIMS = path.join(RAIZ, 'ledger', 'claims');
+/** Onde aterram os ficheiros que atravessam inteiros. */
+const DIR_DADOS = path.join(RAIZ, 'src', 'data');
 
 const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
 const amarelo = (s) => `\x1b[33m${s}\x1b[0m`;
@@ -150,7 +180,7 @@ function aceitarCorreccao(id) {
     console.log('');
     console.log(
       `  ${verde('✓')} correcção aceite em "${id}" (${antes} → ${agora}) — ` +
-        `${reg.ficheiro} actualizado.`,
+        `${reg.ficheiro} atualizado.`,
     );
     console.log(cinza('    O registo guarda o resumo antigo e o novo. Nada foi apagado.'));
     console.log('');
@@ -168,6 +198,205 @@ function aceitarCorreccao(id) {
   }
   console.error('');
   return 1;
+}
+
+/* ----------------------------------------- os ficheiros que atravessam inteiros */
+
+const CAMPOS_FICHEIRO = ['origin_path', 'origin_sha256', 'exported_sha256', 'exporter'];
+
+/** Os quatro estados da agenda. Um quinto não tem secção onde renderizar. */
+const ESTADOS = ['em_curso', 'a_seguir', 'concluido', 'retirado'];
+
+/**
+ * Um registo de ficheiros: os bytes em disco contra o resumo que o registo
+ * declara. A mesma conferência das linhas, um nível acima.
+ */
+function confereFicheiros(regs, erros) {
+  let total = 0;
+  for (const { ficheiro, dados } of regs) {
+    for (const [nome, entrada] of Object.entries(dados.files)) {
+      total++;
+      const onde = `[${ficheiro}] ${nome}`;
+      for (const k of Object.keys(entrada)) {
+        if (!CAMPOS_FICHEIRO.includes(k)) erros.push(`${onde}: campo desconhecido "${k}".`);
+      }
+      for (const k of ['origin_path', 'origin_sha256', 'exported_sha256']) {
+        if (!entrada[k]) erros.push(`${onde}: falta "${k}".`);
+      }
+      const caminho = path.join(DIR_DADOS, nome);
+      if (!fs.existsSync(caminho)) {
+        erros.push(
+          `${onde}: o registo diz que este ficheiro atravessou, e não há ` +
+            `src/data/${nome}. Ou o ficheiro voltou a ser exportado, ou foi apagado ` +
+            `sem sair do registo.`,
+        );
+        continue;
+      }
+      const actual = sha256(fs.readFileSync(caminho));
+      if (actual !== entrada.exported_sha256) {
+        erros.push(
+          `${onde}: os bytes em disco já não são os que atravessaram.\n` +
+            `        registo: ${entrada.exported_sha256}\n` +
+            `        disco:   ${actual}\n` +
+            `        Um ficheiro cruzado não se edita à mão. Corrige-se no motor e ` +
+            `volta a atravessar:\n` +
+            `        python3 publisher/export_agenda.py --destino <sítio>/src/data/`,
+        );
+      }
+    }
+  }
+  return total;
+}
+
+/**
+ * O lado da origem, para ficheiros: o resumo do ficheiro do motor em disco.
+ * Fora do build pela mesma razão que o das linhas.
+ */
+function confereFicheirosNaOrigem(regs, raizMotor, erros) {
+  let lidos = 0;
+  for (const { ficheiro, dados } of regs) {
+    for (const [nome, entrada] of Object.entries(dados.files)) {
+      const caminho = path.join(raizMotor, entrada.origin_path ?? '');
+      if (!fs.existsSync(caminho)) {
+        erros.push(
+          `--with-origin: [${ficheiro}] ${nome}: o motor não tem ${entrada.origin_path}.`,
+        );
+        continue;
+      }
+      lidos++;
+      const actual = sha256(fs.readFileSync(caminho));
+      if (actual !== entrada.origin_sha256) {
+        erros.push(
+          `--with-origin: [${ficheiro}] ${nome} ← ${entrada.origin_path} já não é o ficheiro ` +
+            `do motor que atravessou.\n` +
+            `        registo: ${entrada.origin_sha256}\n` +
+            `        motor:   ${actual}\n` +
+            `        Volte a cruzar: python3 publisher/export_agenda.py --destino <sítio>/src/data/`,
+        );
+      }
+    }
+  }
+  return lidos;
+}
+
+/* ------------------------------------- as invariantes que a página precisa */
+
+/**
+ * As invariantes do registo da agenda, reconferidas deste lado.
+ *
+ * O exportador do motor confere-as antes de escrever (publisher/README.md, A1
+ * a X3). Estas seis são as que a página precisa para renderizar, e por isso
+ * são reconferidas aqui: o portão deste sítio não passa a existir do outro
+ * lado da fronteira.
+ *
+ *   1. o `estado` é o `para` da última entrada do histórico, e é um dos quatro
+ *   2. todo o item tem histórico
+ *   3. quem vai para `retirado` traz motivo na entrada que o retirou
+ *   4. tudo o que renderiza tem `pt` e `en`, e nenhum dos dois vazio
+ *   5. cada id em `linhas` existe em ledger/claims/
+ *   6. cada `evento` existe no calendário
+ */
+function confereInvariantes(erros) {
+  const fAgenda = path.join(DIR_DADOS, 'agenda.json');
+  const fCalendario = path.join(DIR_DADOS, 'calendario.json');
+  if (!fs.existsSync(fAgenda) || !fs.existsSync(fCalendario)) return 0;
+
+  let agenda;
+  let calendario;
+  try {
+    agenda = JSON.parse(fs.readFileSync(fAgenda, 'utf8'));
+    calendario = JSON.parse(fs.readFileSync(fCalendario, 'utf8'));
+  } catch (err) {
+    erros.push(`agenda: JSON inválido em src/data/: ${err.message}`);
+    return 0;
+  }
+
+  const itens = Array.isArray(agenda?.itens) ? agenda.itens : [];
+  const eventos = Array.isArray(calendario?.eventos) ? calendario.eventos : [];
+  const idsDeEvento = new Set(eventos.map((e) => e?.id));
+  const idsDeLinha = new Set(
+    fs.existsSync(DIR_CLAIMS)
+      ? fs.readdirSync(DIR_CLAIMS).filter((f) => f.endsWith('.yml')).map((f) => f.slice(0, -4))
+      : [],
+  );
+
+  /** Um par de edições: as duas presentes, nenhuma vazia. */
+  const bilingue = (no, onde) => {
+    if (!no || typeof no !== 'object') return;
+    for (const lingua of ['pt', 'en']) {
+      const v = no[lingua];
+      if (typeof v !== 'string' || v.trim() === '') {
+        erros.push(`${onde}: falta a edição "${lingua}", ou está vazia. A página rende as duas.`);
+      }
+    }
+  };
+
+  for (const item of itens) {
+    const id = item?.id ?? '(sem id)';
+    const onde = `agenda ${id}`;
+
+    const historico = Array.isArray(item?.historico) ? item.historico : [];
+    if (!historico.length) {
+      erros.push(
+        `${onde}: sem histórico. É o histórico que prova que nada saiu em silêncio; ` +
+          `um item sem ele não tem o que a página existe para mostrar.`,
+      );
+    } else {
+      const ultima = historico[historico.length - 1];
+      if (item?.estado !== ultima?.para) {
+        erros.push(
+          `${onde}: o estado é "${item?.estado}" e a última entrada do histórico ` +
+            `leva-o a "${ultima?.para}". O estado é o fim da história, não um campo à parte.`,
+        );
+      }
+      for (const [n, entrada] of historico.entries()) {
+        if (entrada?.para === 'retirado' && !(entrada?.motivo?.pt ?? '').trim()) {
+          erros.push(
+            `${onde}: a entrada ${n + 1} do histórico retira o item e não traz motivo. ` +
+              `Nada sai desta agenda em silêncio.`,
+          );
+        }
+        if (entrada?.motivo) bilingue(entrada.motivo, `${onde}.historico[${n}].motivo`);
+      }
+    }
+    if (!ESTADOS.includes(item?.estado)) {
+      erros.push(
+        `${onde}: estado "${item?.estado}" desconhecido. Os quatro são ${ESTADOS.join(', ')}, ` +
+          `e um quinto não tem secção onde renderizar.`,
+      );
+    }
+
+    bilingue(item?.titulo, `${onde}.titulo`);
+    bilingue(item?.porque, `${onde}.porque`);
+    if (item?.pergunta) bilingue(item.pergunta, `${onde}.pergunta`);
+
+    for (const [n, criterio] of (item?.criterios ?? []).entries()) {
+      if (criterio?.nota) bilingue(criterio.nota, `${onde}.criterios[${n}].nota`);
+      for (const linha of criterio?.linhas ?? []) {
+        if (!idsDeLinha.has(linha)) {
+          erros.push(
+            `${onde}: o critério ${n + 1} aponta para a linha "${linha}", que não existe em ` +
+              `ledger/claims/. Um critério que aponta para nada não é um critério.`,
+          );
+        }
+      }
+      if (criterio?.tipo === 'calendario_das_fontes' && !idsDeEvento.has(criterio?.evento)) {
+        erros.push(
+          `${onde}: o critério ${n + 1} nomeia o acontecimento "${criterio?.evento}", que não ` +
+            `está no calendário das fontes.`,
+        );
+      }
+    }
+  }
+
+  for (const evento of eventos) {
+    const onde = `calendário ${evento?.id ?? '(sem id)'}`;
+    bilingue(evento?.titulo, `${onde}.titulo`);
+    if (evento?.evidencia_indireta) bilingue(evento.evidencia_indireta, `${onde}.evidencia_indireta`);
+    if (evento?.nota) bilingue(evento.nota, `${onde}.nota`);
+  }
+
+  return itens.length;
 }
 
 /* ------------------------------------------------------------ conferência */
@@ -191,6 +420,11 @@ function main(argv) {
   const porEstudo = new Map();
 
   const regs = registos();
+  /* O tipo lê-se da forma do registo: `rows` prende linhas, `files` prende
+     ficheiros inteiros. Um registo que não seja nem uma coisa nem outra não se
+     adivinha. */
+  const regsDeLinhas = regs.filter((r) => r.dados?.rows && typeof r.dados.rows === 'object');
+  const regsDeFicheiros = regs.filter((r) => r.dados?.files && typeof r.dados.files === 'object');
   if (!regs.length) {
     console.log('');
     console.log(cinza('  cruzamentos · nenhum registo em ledger/cruzamentos/ — nada a conferir'));
@@ -199,12 +433,16 @@ function main(argv) {
   }
 
   for (const { ficheiro, dados } of regs) {
+    if (!dados?.rows && !dados?.files) {
+      erros.push(
+        `[${ficheiro}] não traz nem um mapa "rows" (linhas) nem um mapa "files" (ficheiros).`,
+      );
+    }
+  }
+
+  for (const { ficheiro, dados } of regsDeLinhas) {
     ficheiros++;
     const linhas = dados.rows;
-    if (!linhas || typeof linhas !== 'object') {
-      erros.push(`[${ficheiro}] não traz um mapa "rows".`);
-      continue;
-    }
     for (const [id, entrada] of Object.entries(linhas)) {
       total++;
       const onde = `[${ficheiro}] ${id}`;
@@ -284,7 +522,8 @@ function main(argv) {
       );
     } else {
       const cacheLedger = new Map();
-      for (const { ficheiro, dados } of regs) {
+      origem.ficheirosLidos = confereFicheirosNaOrigem(regsDeFicheiros, raizMotor, erros);
+      for (const { ficheiro, dados } of regsDeLinhas) {
         for (const [id, entrada] of Object.entries(dados.rows ?? {})) {
           const caminhoLedger = path.join(raizMotor, 'content', entrada.rh_study, 'ledger.json');
           if (!cacheLedger.has(caminhoLedger)) {
@@ -338,6 +577,9 @@ function main(argv) {
     }
   }
 
+  const ficheirosCruzados = confereFicheiros(regsDeFicheiros, erros);
+  const itensDaAgenda = confereInvariantes(erros);
+
   console.log('');
   console.log(
     cinza(
@@ -345,6 +587,16 @@ function main(argv) {
         (origem ? ` · ${origem.lidos} conferida(s) contra o motor` : ''),
     ),
   );
+  if (regsDeFicheiros.length) {
+    console.log(
+      cinza(
+        `  cruzamentos · ${ficheirosCruzados} ficheiro(s) inteiro(s) em ` +
+          `${regsDeFicheiros.length} registo(s)` +
+          (origem ? ` · ${origem.ficheirosLidos ?? 0} conferido(s) contra o motor` : '') +
+          (itensDaAgenda ? ` · ${itensDaAgenda} item(ns) da agenda reconferidos` : ''),
+      ),
+    );
+  }
   for (const [estudo, n] of [...porEstudo].sort()) {
     console.log(cinza(`    ${estudo}: ${n}`));
   }
@@ -367,8 +619,8 @@ function main(argv) {
   console.log('');
   console.log(
     '  ' + verde('✓') +
-      ' cada linha vinda do motor é, byte a byte, a que atravessou' +
-      (origem ? ', e é ainda a linha que o motor tem.' : '.'),
+      ' cada linha e cada ficheiro vindos do motor são, byte a byte, o que atravessou' +
+      (origem ? ', e são ainda o que o motor tem.' : '.'),
   );
   console.log('');
   return 0;
