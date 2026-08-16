@@ -299,7 +299,16 @@ const estudo = studyLabel(claim.study, lang);
         }
       </dl>
 
-      {atribuicao && <p class="aparelho-nota">{s.livro.linha.atribuicaoNota}</p>}
+      {
+        atribuicao && (
+          <p class="aparelho-nota">
+            {s.livro.linha.atribuicaoNota}{' '}
+            <a href={`${routePath('metodo', lang)}#o-que-nao-faz`}>
+              {s.livro.linha.atribuicaoNotaPorta} →
+            </a>
+          </p>
+        )
+      }
 
       {
         bandeira && (

@@ -73,8 +73,12 @@ const SECCIONADORES = new Set(['section', 'article', 'aside', 'details', 'main',
  *   · um bloco de texto (um elemento que não contém outro elemento de bloco);
  *   · com 30 ou mais carácteres;
  *   · que não seja, nem contenha, conteúdo com origem declarada — `data-claim`,
- *     `data-linha-*`, `data-correcao-*`, `data-verbatim`, `data-nonledger`.
- *     Esses são o livro-razão a falar, não a casa;
+ *     `data-linha-*`, `data-correcao-*`, `data-verbatim`, `data-nonledger`,
+ *     `data-agenda`. Esses são o livro-razão, ou o registo da agenda, a falar,
+ *     e não a casa. (`data-agenda` entrou a 16.08.2026 com a origem 8, pela
+ *     mesma razão das outras: um excerto do calendário das fontes é a fonte a
+ *     falar, e contá-lo como moldura da casa mediria a coisa errada. Quem
+ *     comparar duas construções tem de correr esta régua nas duas.);
  *   · e que apareça em MAIS DO QUE UMA página construída.
  *
  * A última condição é a do BRIEF §3.2 («todas as 43 aparecem em mais de uma
@@ -90,7 +94,8 @@ const SECCIONADORES = new Set(['section', 'article', 'aside', 'details', 'main',
  * são comparáveis entre si e com mais nada.
  */
 const BLOCOS = 'p,li,dd,dt,h1,h2,h3,h4,figcaption,summary,blockquote,td,th,caption';
-const ORIGEM_DECLARADA = '[data-claim],[data-linha-claim],[data-correcao-claim],[data-verbatim],[data-nonledger]';
+const ORIGEM_DECLARADA =
+  '[data-claim],[data-linha-claim],[data-correcao-claim],[data-verbatim],[data-nonledger],[data-agenda]';
 
 function blocosDe(root) {
   const out = [];

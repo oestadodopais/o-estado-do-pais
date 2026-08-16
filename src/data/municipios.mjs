@@ -604,24 +604,19 @@ export const MUNICIPIOS_COM_PAGINA = [
       },
     ],
 
-    /* -------------------------------- o que esta página não sabe (aparelho) */
+    /* -------------------------------- o que esta página não sabe (aparelho)
+     *
+     * UMA RESSALVA, UMA CASA (16.08.2026, DECISIONS §1.40). Quatro destes itens
+     * repetiam, em versão curta, uma ressalva que «Método e ressalvas» já diz
+     * por inteiro e com a frase do trabalho que a sustenta: não existe PIB
+     * municipal; duas das oito medidas são o município a falar de si; um ano de
+     * contas existe sem assinatura de fora; nenhuma fonte publica dinheiro por
+     * pelouro. Saíram daqui e ficaram lá, que é onde estão ditas com a sua
+     * prova; o aparelho ganhou a porta para a secção, com o rótulo dela e sem
+     * uma palavra nova. Nenhum valor, nenhum selo e nenhuma frase de trabalho
+     * mudou.
+     */
     naoSabe: [
-      {
-        pt: ['Não existe PIB municipal. Nenhuma fonte o publica para um concelho, e esta página não o inventa.'],
-        en: ['There is no municipal GDP. No source publishes one for a concelho, and this page does not invent one.'],
-      },
-      {
-        pt: ['A execução da receita e o prazo médio de pagamento são reportados pelo próprio município.'],
-        en: ['Revenue execution and the average payment time are reported by the municipality itself.'],
-      },
-      {
-        pt: ['As contas do penúltimo ano do mandato anterior nunca foram certificadas por ninguém de fora.'],
-        en: ['The accounts of the previous term’s second-to-last year were never certified by anyone outside.'],
-      },
-      {
-        pt: ['Não existe dinheiro por pelouro, em fonte nenhuma. As contagens desta página são designações.'],
-        en: ['Money per portfolio does not exist, in any source. The counts on this page are designations.'],
-      },
       {
         pt: ['Não existe medida de desempenho por pessoa. As contas públicas não são cortadas dessa maneira.'],
         en: ['There is no per-person performance measure. Public accounts are not cut that way.'],
