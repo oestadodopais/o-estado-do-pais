@@ -326,7 +326,7 @@ compara. O `check-cruzamento.mjs` lê o tipo de registo **da sua forma** e não 
 nome do ficheiro, e sobre os ficheiros faz o mesmo que faz sobre as linhas: os
 bytes em disco contra o resumo declarado, e com `--with-origin` contra o ficheiro
 do motor. Confere ainda, deste lado, as invariantes que a página precisa para
-renderizar — o estado é o fim do histórico, todo o item tem histórico, quem sai
+renderizar: o estado é o fim do histórico, todo o item tem histórico, quem sai
 traz motivo, as duas edições existem, as linhas e os acontecimentos citados
 existem. Ver `DECISIONS.md` §1.40.
 
