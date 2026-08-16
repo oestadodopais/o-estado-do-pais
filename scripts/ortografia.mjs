@@ -131,8 +131,16 @@ export function carregaFormas(ficheiro = FICHEIRO_FORMAS) {
 
 const escapa = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-/** Os caracteres que continuam uma palavra. O hífen liga; o ponto separa. */
-const CONTINUA = "A-Za-zÀ-ÖØ-öø-ÿ0-9_'’\\-";
+/**
+ * Os caracteres que continuam uma palavra. O hífen liga; o ponto separa.
+ *
+ * A plica recta (') NÃO entra, e isso é uma correcção: enquanto entrou, uma
+ * palavra no fim de uma cadeia — «'Última actualização'» — ficava por apanhar,
+ * porque a aspa que fecha a cadeia contava como letra seguinte. Custou 15
+ * ocorrências renderizadas que a primeira passagem não viu. A plica curva (’)
+ * fica, porque essa aparece dentro do texto e nunca a delimitá-lo.
+ */
+const CONTINUA = 'A-Za-zÀ-ÖØ-öø-ÿ0-9_’\\-';
 
 function variantes(par) {
   if (par.caso === 'fixo') return [[par.anterior, par.acordo]];
@@ -217,9 +225,16 @@ export function procura(texto, comp, de = 0, ate = texto.length) {
  * travessão é uma delas. Uma citação dentro de prosa da casa não se converte
  * nem se de-travessona; assinala-se à parte, para que se veja o que ficou.
  */
-export function emCitacao(texto, i, inicioDaFatia = 0) {
-  const antes = texto.slice(inicioDaFatia, i);
-  return antes.lastIndexOf('«') > antes.lastIndexOf('»');
+export const ALCANCE_DA_CITACAO = 200;
+
+export function emCitacao(texto, i, inicioDaFatia = 0, fimDaFatia = texto.length) {
+  const de = Math.max(inicioDaFatia, i - ALCANCE_DA_CITACAO);
+  const antes = texto.slice(de, i);
+  if (antes.lastIndexOf('«') <= antes.lastIndexOf('»')) return false;
+  /* Uma aspa que abre e nunca fecha não é uma citação: é um erro de escrita, e
+     não pode servir de dispensa para o resto da página. */
+  const ate = Math.min(fimDaFatia, i + ALCANCE_DA_CITACAO);
+  return texto.slice(i, ate).includes('»');
 }
 
 /** Os travessões, e o meio-traço usado como travessão (com espaço dos dois lados). */
@@ -662,7 +677,7 @@ function varre(sentido) {
       if (fatia.lingua !== 'en') {
         for (const o of procura(texto, comp, fatia.ini, fatia.fim)) {
           if (o.fim > fatia.fim) continue;
-          const citado = emCitacao(texto, o.inicio, fatia.ini);
+          const citado = emCitacao(texto, o.inicio, fatia.ini, fatia.fim);
           achados.push({
             rel, texto, campo, cruzada, lingua: fatia.lingua,
             tipo: o.assinala ? 'manual' : 'palavra',
@@ -672,7 +687,7 @@ function varre(sentido) {
         }
       }
       for (const o of procuraTravessoes(texto, fatia.ini, fatia.fim)) {
-        const citado = emCitacao(texto, o.inicio, fatia.ini);
+        const citado = emCitacao(texto, o.inicio, fatia.ini, fatia.fim);
         achados.push({
           rel, texto, campo, cruzada, lingua: fatia.lingua,
           tipo: o.tipo,
@@ -705,7 +720,7 @@ function aplica(sentido) {
       if (fatia.lingua === 'en') continue;
       for (const o of procura(texto, comp, fatia.ini, fatia.fim)) {
         if (o.fim > fatia.fim) continue;
-        if (emCitacao(texto, o.inicio, fatia.ini)) continue;
+        if (emCitacao(texto, o.inicio, fatia.ini, fatia.fim)) continue;
         trocas.push(o);
       }
     }

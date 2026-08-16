@@ -45,14 +45,14 @@ export const REGIOES = [
       pt: [
         'A Península de Setúbal está ',
         { claim: 'distancia-peninsula-de-setubal-ue27-2024' },
-        ' pontos abaixo da média da UE-27 — e a ',
+        ' pontos abaixo da média da UE-27, e a ',
         { claim: 'distancia-setubal-grande-lisboa-2024' },
         ' pontos da Grande Lisboa, sua vizinha.',
       ],
       en: [
         'The Setúbal Peninsula is ',
         { claim: 'distancia-peninsula-de-setubal-ue27-2024' },
-        ' points below the EU-27 average — and ',
+        ' points below the EU-27 average, and ',
         { claim: 'distancia-setubal-grande-lisboa-2024' },
         ' points from Greater Lisbon, its neighbour.',
       ],

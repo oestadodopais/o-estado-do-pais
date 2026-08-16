@@ -106,10 +106,10 @@ export const FIGURAS = [
     },
     frase: {
       pt: [
-        'Indicador principal do Painel Social Europeu. Está acima da média da União — que é uma posição relativa, não um limiar: muda quando os outros mudam.',
+        'Indicador principal do Painel Social Europeu. Está acima da média da União, que é uma posição relativa, não um limiar: muda quando os outros mudam.',
       ],
       en: [
-        'A headline indicator of the European Social Scoreboard. It sits above the Union average — a relative position, not a threshold: it moves when other countries move.',
+        'A headline indicator of the European Social Scoreboard. It sits above the Union average, a relative position, not a threshold: it moves when other countries move.',
       ],
     },
   },
@@ -150,12 +150,12 @@ export const FIGURAS = [
       pt: [
         'Proporção que gasta mais de ',
         { nl: '40', motivo: 'escala-de-instrumento' },
-        '% do rendimento disponível em habitação. Está abaixo da média europeia — e a própria Comissão adverte que só se lê ao lado do regime de propriedade. Onde a taxa de proprietários é alta, esta medida não vê quem não conseguiu comprar.',
+        '% do rendimento disponível em habitação. Está abaixo da média europeia, e a própria Comissão adverte que só se lê ao lado do regime de propriedade. Onde a taxa de proprietários é alta, esta medida não vê quem não conseguiu comprar.',
       ],
       en: [
         'The share spending more than ',
         { nl: '40', motivo: 'escala-de-instrumento' },
-        '% of disposable income on housing. It is below the European average — and the Commission itself warns it must be read alongside the tenure structure. Where owner-occupation is high, this measure does not see those who never bought.',
+        '% of disposable income on housing. It is below the European average, and the Commission itself warns it must be read alongside the tenure structure. Where owner-occupation is high, this measure does not see those who never bought.',
       ],
     },
   },

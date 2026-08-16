@@ -7,7 +7,7 @@ id: "taxa-de-desemprego-2025"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
 value: "6"
-unit: "% da população activa"
+unit: "% da população ativa"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Eurostat"

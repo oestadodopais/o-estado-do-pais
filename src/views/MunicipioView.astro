@@ -95,7 +95,7 @@ const estudos = m.estudos.map((id) => {
 const jsonld = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: `${nome} — ${s.municipio.metaCauda}`,
+  headline: `${nome} · ${s.municipio.metaCauda}`,
   inLanguage: ['pt-PT', 'en'],
   about: { '@type': 'AdministrativeArea', name: m.nome.pt },
   url: canonicalUrl(path),
@@ -145,7 +145,7 @@ const metodoPath = routePath('metodo', lang);
 <Base
   lang={lang}
   path={path}
-  title={`${nome} — ${s.municipio.metaCauda}`}
+  title={`${nome} · ${s.municipio.metaCauda}`}
   description={`${s.municipio.metaDescricaoA}${nome}${s.municipio.metaDescricaoB}`}
   jsonld={jsonld}
   portaNoRodape={false}

@@ -20,7 +20,7 @@ reference_date: "2026-08-12"
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "Contagem das entradas do registo de correções classificadas como «correcao», em todas as linhas do livro-razão. As actualizações não contam: uma actualização não é um erro admitido, e este número é o das confissões."
+derivation: "Contagem das entradas do registo de correções classificadas como «correcao», em todas as linhas do livro-razão. As atualizações não contam: uma atualização não é um erro admitido, e este número é o das confissões."
 derivation_en: "Count of the entries in the corrections log classified as «correcao», across every row of the ledger. Updates do not count: an update is not an admitted error, and this figure is the count of the admissions."
 derived_from: []
 # Expressão verificada no build: tem de dar exactamente o valor acima.

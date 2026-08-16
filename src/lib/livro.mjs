@@ -34,7 +34,7 @@ export function caminhoDoLivro(lang) {
  */
 export function tituloDaLinha(claim, lang) {
   const s = t(lang);
-  return `${claim.value} ${claim.unit} — ${s.livro.eyebrow} — ${SITE_NAME}`;
+  return `${claim.value} ${claim.unit} · ${s.livro.eyebrow} · ${SITE_NAME}`;
 }
 
 /**

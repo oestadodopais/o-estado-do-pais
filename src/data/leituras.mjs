@@ -39,7 +39,7 @@ export const LEITURAS = {
       },
       {
         claim: 'evora-prr-pago-2026',
-        nome: { pt: ['€ efectivamente pagos'], en: ['€ actually paid'] },
+        nome: { pt: ['€ efetivamente pagos'], en: ['€ actually paid'] },
       },
     ],
     /* §6.1 do plano: estas linhas atravessaram com o excerto por confirmar, e
@@ -66,22 +66,22 @@ export const LEITURAS = {
        continua na página, no fundo, atribuída a 04. */
     frase: {
       pt: [
-        'Do dinheiro do plano de recuperação contratado no concelho, a universidade tem mais do que a câmara — ',
+        'Do dinheiro do plano de recuperação contratado no concelho, a universidade tem mais do que a câmara: ',
         { claim: 'evora-prr-universidade-contratado' },
         ' € contra ',
         { claim: 'evora-prr-municipio-contratado' },
-        ' € — e, da soma aprovada para o concelho, ',
+        ' €. Da soma aprovada para o concelho, ',
         { claim: 'evora-prr-vencido-quota-2026' },
         ' % está vencida contra ',
         { claim: 'evora-prr-execucao-2026' },
         ' % paga.',
       ],
       en: [
-        'Of the recovery-plan money contracted in the concelho, the university holds more than the council — ',
+        'Of the recovery-plan money contracted in the concelho, the university holds more than the council: ',
         { claim: 'evora-prr-universidade-contratado' },
         ' € against ',
         { claim: 'evora-prr-municipio-contratado' },
-        ' € — and, of the sum approved for the concelho, ',
+        ' €. Of the sum approved for the concelho, ',
         { claim: 'evora-prr-vencido-quota-2026' },
         ' % is overdue against ',
         { claim: 'evora-prr-execucao-2026' },
@@ -97,8 +97,8 @@ export const LEITURAS = {
       {
         k: { pt: 'O que o trabalho conclui daí', en: 'What the work concludes from that' },
         v: {
-          pt: ['A universidade tem mais dinheiro contratado neste concelho do que o município, e a camada que administra o dinheiro é feita de organismos nacionais. O trabalho conclui daí que «o endereço da responsabilização, na maior parte dos casos, não são os paços do concelho» — é a leitura dele, assinada, e não uma contagem: um leitor que queira este total explicado deve dirigir as perguntas aos organismos nacionais e à universidade mais vezes do que à câmara.'],
-          en: ['The university holds more contracted money in this concelho than the municipality, and the layer that administers the money is made of national bodies. The work concludes from that that «the accountability address is mostly not the town hall» — its own signed reading, not a count: a reader who wants this total explained should put questions to national bodies and to the university more often than to the council.'],
+          pt: ['A universidade tem mais dinheiro contratado neste concelho do que o município, e a camada que administra o dinheiro é feita de organismos nacionais. O trabalho conclui daí que «o endereço da responsabilização, na maior parte dos casos, não são os paços do concelho», é a leitura dele, assinada, e não uma contagem: um leitor que queira este total explicado deve dirigir as perguntas aos organismos nacionais e à universidade mais vezes do que à câmara.'],
+          en: ['The university holds more contracted money in this concelho than the municipality, and the layer that administers the money is made of national bodies. The work concludes from that that «the accountability address is mostly not the town hall», its own signed reading, not a count: a reader who wants this total explained should put questions to national bodies and to the university more often than to the council.'],
         },
         valores: ['evora-prr-universidade-contratado', 'evora-prr-municipio-contratado'],
       },
@@ -113,8 +113,8 @@ export const LEITURAS = {
       {
         k: { pt: 'O que o trabalho não abre', en: 'What the work does not open' },
         v: {
-          pt: ['A secção de auditoria lê o catálogo do tribunal de contas, não as suas auditorias. A secção de contratos é um limite superior sobre uma janela truncada. E não existe um valor da União Europeia para um município: não é que não se tenha encontrado — a granularidade não existe na fonte.'],
-          en: ['The audit section reads the state auditor’s catalogue, not its audits. The contracts section is an upper bound on a truncated window. And there is no European Union figure for a municipality: it is not that none was found — the granularity does not exist in the source.'],
+          pt: ['A secção de auditoria lê o catálogo do tribunal de contas, não as suas auditorias. A secção de contratos é um limite superior sobre uma janela truncada. E não existe um valor da União Europeia para um município: não é que não se tenha encontrado; a granularidade não existe na fonte.'],
+          en: ['The audit section reads the state auditor’s catalogue, not its audits. The contracts section is an upper bound on a truncated window. And there is no European Union figure for a municipality: it is not that none was found; the granularity does not exist in the source.'],
         },
         valores: [],
       },
@@ -142,9 +142,9 @@ export const LEITURAS = {
     medidasNota: null,
     frase: {
       pt: [
-        'Évora está acima da média nacional em poder de compra por habitante — ',
+        'Évora está acima da média nacional em poder de compra por habitante, ',
         { claim: 'evora-poder-de-compra-2023' },
-        ' — dentro de uma região que está abaixo, em ',
+        ', dentro de uma região que está abaixo, em ',
         { claim: 'alentejo-central-poder-de-compra-2023' },
         '; e a sua economia empresarial está concentrada em poucas mãos: quatro empresas detêm ',
         { claim: 'evora-concentracao-vab4-2024' },
@@ -153,9 +153,9 @@ export const LEITURAS = {
         ' % no país.',
       ],
       en: [
-        'Évora is above the national average in purchasing power per inhabitant — ',
+        'Évora is above the national average in purchasing power per inhabitant, ',
         { claim: 'evora-poder-de-compra-2023' },
-        ' — inside a region that sits below it, at ',
+        ', inside a region that sits below it, at ',
         { claim: 'alentejo-central-poder-de-compra-2023' },
         '; and its enterprise economy is concentrated in few hands: four enterprises hold ',
         { claim: 'evora-concentracao-vab4-2024' },
@@ -246,8 +246,8 @@ export const LEITURAS = {
       {
         k: { pt: 'De onde vêm as medidas, e as duas vozes de fora', en: 'Where the measures come from, and the two outside voices' },
         v: {
-          pt: ['As medidas deste trabalho vêm da prestação de contas do próprio município — o relato da gestão sobre o seu próprio ano. As duas vozes de fora são a opinião assinada do auditor independente e a série anual do regulador, que publica por município e por ano o mesmo conceito legal de dívida, compilado do lado de fora. As duas estão nesta página.'],
-          en: ['This work’s measures come from the municipality’s own accounts — management reporting on its own year. The two outside voices are the independent auditor’s signed opinion and the regulator’s annual series, which publishes per municipality and per year the same legal debt concept, compiled from outside. Both are on this page.'],
+          pt: ['As medidas deste trabalho vêm da prestação de contas do próprio município: o relato da gestão sobre o seu próprio ano. As duas vozes de fora são a opinião assinada do auditor independente e a série anual do regulador, que publica por município e por ano o mesmo conceito legal de dívida, compilado do lado de fora. As duas estão nesta página.'],
+          en: ['This work’s measures come from the municipality’s own accounts: management reporting on its own year. The two outside voices are the independent auditor’s signed opinion and the regulator’s annual series, which publishes per municipality and per year the same legal debt concept, compiled from outside. Both are on this page.'],
         },
         valores: [],
       },
@@ -302,22 +302,22 @@ export const LEITURAS = {
        passa a dizer. Ver DECISIONS §1.35. */
     frase: {
       pt: [
-        'Quinze anos de contas mostram uma dívida herdada que demorou anos a ser medida — ',
+        'Quinze anos de contas mostram uma dívida herdada que demorou anos a ser medida (',
         { claim: 'evora-divida-31-10-2013' },
         ' € logo a seguir à mudança de executivo, ',
         { claim: 'evora-divida-inicio-mandato-reexpressa' },
-        ' € na reexpressão final —, uma década a desbastá-la, e um último mandato em que a fila de pagamento se alongou, de ',
+        ' € na reexpressão final), uma década a desbastá-la, e um último mandato em que a fila de pagamento se alongou, de ',
         { claim: 'evora-prazo-medio-de-pagamento-2023' },
         ' para ',
         { claim: 'evora-prazo-medio-de-pagamento-2025' },
         ' dias.',
       ],
       en: [
-        'Fifteen years of accounts show an inherited debt that took years to measure — ',
+        'Fifteen years of accounts show an inherited debt that took years to measure (',
         { claim: 'evora-divida-31-10-2013' },
         ' € right after the executive changed, ',
         { claim: 'evora-divida-inicio-mandato-reexpressa' },
-        ' € in the final restatement —, a decade of grinding it down, and a last term in which the payment queue lengthened, from ',
+        ' € in the final restatement), a decade of grinding it down, and a last term in which the payment queue lengthened, from ',
         { claim: 'evora-prazo-medio-de-pagamento-2023' },
         ' to ',
         { claim: 'evora-prazo-medio-de-pagamento-2025' },
@@ -341,8 +341,8 @@ export const LEITURAS = {
       {
         k: { pt: 'A palavra «dívida» muda de sentido ao longo da série', en: 'The word “debt” changes meaning across the series' },
         v: {
-          pt: ['O sistema contabilístico mudou por baixo da série, um ano de contas foi publicado em digitalizações e outro não foi publicado de todo. O trabalho marca com um asterisco os valores lidos da coluna comparativa de um relatório posterior, e com uma adaga os recuperados de uma digitalização degradada — e nenhum valor marcado assim atravessou para este livro-razão.'],
-          en: ['The accounting system changed underneath the series, one year of accounts was published as scans and another was not published at all. The work marks with an asterisk the figures read from a later report’s comparative column, and with a dagger those recovered from a degraded scan — and no figure marked either way crossed into this ledger.'],
+          pt: ['O sistema contabilístico mudou por baixo da série, um ano de contas foi publicado em digitalizações e outro não foi publicado de todo. O trabalho marca com um asterisco os valores lidos da coluna comparativa de um relatório posterior, e com uma adaga os recuperados de uma digitalização degradada; nenhum valor marcado assim atravessou para este livro-razão.'],
+          en: ['The accounting system changed underneath the series, one year of accounts was published as scans and another was not published at all. The work marks with an asterisk the figures read from a later report’s comparative column, and with a dagger those recovered from a degraded scan; no figure marked either way crossed into this ledger.'],
         },
         valores: [],
       },
