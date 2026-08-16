@@ -1,0 +1,1355 @@
+/* ============================================================================
+   DIREÇÃO B · INSTRUMENTO À FRENTE · o sistema
+   Componentes desenhados a fio e a monoespaçada. Nenhuma sombra, nenhum canto
+   redondo, nenhum segundo matiz. Sem JavaScript em lado nenhum.
+   ============================================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-sans);
+  font-size: 15px;
+  line-height: 1.55;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+svg {
+  max-width: 100%;
+}
+a {
+  color: inherit;
+}
+:focus-visible {
+  outline: var(--focus-w) solid var(--focus);
+  outline-offset: var(--focus-off);
+}
+.vh {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--f-mono);
+  font-size: 12px;
+  padding: 8px 12px;
+  z-index: 40;
+}
+.skip:focus {
+  left: 8px;
+  top: 8px;
+}
+
+.wrap {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* ---------------------------------------------------------------- mobília --
+   Rótulos, eixos, chaves: tudo o que não é prosa nem valor. */
+.mono {
+  font-family: var(--f-mono);
+  font-variant-numeric: tabular-nums;
+}
+.rot {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+}
+.chave {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.legenda {
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: var(--measure-cap);
+}
+.prosa {
+  font-family: var(--f-sans);
+  font-size: 15px;
+  line-height: 1.62;
+  max-width: var(--measure);
+}
+.prosa-peq {
+  font-family: var(--f-sans);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: var(--measure);
+}
+
+/* ------------------------------------------------------------- o cabeçalho --
+   O cabeçalho é o painel de bordo: a marca, a linha de método, e uma tira de
+   células com os dois sinais que o sítio gera. */
+.topo {
+  border-bottom: 1px solid var(--rule);
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+.nav a {
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: var(--muted);
+  padding: 4px 8px;
+  border: 1px solid transparent;
+}
+.nav a:hover {
+  color: var(--ink);
+  border-color: var(--rule);
+}
+.nav a[aria-current='page'] {
+  color: var(--ink);
+  border-color: var(--rule-strong);
+  background: var(--paper-2);
+}
+
+.marca {
+  padding: clamp(18px, 2.6vw, 30px) 0 0;
+  display: grid;
+  gap: 6px;
+}
+.wordmark {
+  font-family: var(--f-serif);
+  font-weight: 400;
+  font-size: clamp(32px, 5.4vw, 56px);
+  line-height: 1.02;
+  letter-spacing: -0.014em;
+  margin: 0;
+}
+.marca-compacta .wordmark {
+  font-size: clamp(22px, 2.8vw, 30px);
+}
+.wordmark a {
+  text-decoration: none;
+}
+.method-line {
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* A tira de sinais: cada sinal é uma célula, e cada célula é uma porta. */
+.sinal {
+  margin-top: clamp(12px, 1.6vw, 18px);
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid var(--rule);
+  background: var(--paper-2);
+}
+.sinal-cel {
+  display: grid;
+  gap: 2px;
+  padding: 8px 14px;
+  border-right: 1px solid var(--rule);
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.sinal-cel:last-child {
+  border-right: 0;
+}
+.sinal-cel a {
+  font-family: var(--f-mono);
+  font-size: 12.5px;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-strong);
+}
+.sinal-cel a:hover {
+  border-bottom-color: var(--ink);
+}
+.sinal-v {
+  font-family: var(--f-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+/* ------------------------------------------------------------------ o selo --
+   Dois pesos, os mesmos dois estados, a mesma porta.
+
+   `.selo` (peso de célula)  quadrado + a palavra «fonte» + o estudo, em caixa.
+   `.selo-fio` (peso de prosa) o mesmo quadrado e a mesma palavra, sem caixa,
+                              para não pôr sessenta molduras num parágrafo.
+
+   Estado cheio: quadrado preenchido a tinta.
+   Estado incompleto: quadrado vazio, limite a tracejado a `--axis` (4,51:1),
+   mais o marcador. Os dois estados aparecem lado a lado em todas as páginas
+   onde existem, que é a regra 5.2 da identidade. */
+.selo {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 7px;
+  line-height: 1.35;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--rule-strong);
+  background: var(--paper);
+  padding: 3px 8px;
+  max-width: 100%;
+  position: relative;
+}
+.selo::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  margin-top: 3px;
+  flex: none;
+  background: var(--ink);
+  border: 1px solid var(--ink);
+}
+.selo.incompleto::before {
+  background: transparent;
+  border: 1px dashed var(--axis);
+}
+.selo:hover {
+  border-color: var(--ink);
+  background: var(--paper-2);
+}
+.selo-p {
+  font-weight: 600;
+  flex: none;
+}
+.selo-e {
+  color: var(--muted);
+  min-width: 0;
+  /* Quebra em vez de cortar: um nome de estudo cortado a meio deixa de ser
+     uma fonte, e uma palavra sem quebra alarga a célula toda. */
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.selo-fio {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  text-decoration: none;
+  vertical-align: 2px;
+  position: relative;
+}
+.selo-fio::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  flex: none;
+  background: var(--ink);
+  border: 1px solid var(--ink);
+}
+.selo-fio.incompleto::before {
+  background: transparent;
+  border: 1px dashed var(--axis);
+}
+.selo-fio:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+/* O mini-recibo: o que o selo diz antes de ser aberto. Só CSS, aparece ao
+   passar o cursor e ao receber o foco. Não substitui a porta: acrescenta. */
+.recibinho {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: -1px;
+  z-index: 30;
+  min-width: 230px;
+  max-width: 320px;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  padding: 8px 10px;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--ink);
+  text-align: left;
+  white-space: normal;
+}
+.selo:hover .recibinho,
+.selo:focus-visible .recibinho,
+.selo-fio:hover .recibinho,
+.selo-fio:focus-visible .recibinho {
+  display: block;
+}
+.recibinho b {
+  font-weight: 600;
+}
+.recibinho span {
+  color: var(--muted);
+  display: block;
+}
+.recibinho em {
+  font-style: normal;
+  display: block;
+  margin-top: 4px;
+  border-top: 1px solid var(--rule);
+  padding-top: 4px;
+}
+
+/* --------------------------------------------------------------- o marcador --
+   Um só marcador, uma só classe, e o mesmo tracejado do selo incompleto: as
+   duas coisas são a mesma língua. Quando está sozinho, é porta para a página
+   que o explica; quando está dentro de um selo, a porta já é a do selo. */
+.marcador {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--paper-3);
+  border: 1px dashed var(--axis);
+  padding: 0 5px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  text-decoration: none;
+}
+a.marcador:hover {
+  border-style: solid;
+  background: var(--paper-2);
+}
+
+/* --------------------------------------------------------------- o valor ---- */
+.valor {
+  font-family: var(--f-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 0.95;
+}
+.v-xl {
+  font-size: var(--v-xl);
+  letter-spacing: -0.04em;
+}
+.v-l {
+  font-size: var(--v-l);
+  letter-spacing: -0.03em;
+}
+.v-m {
+  font-size: var(--v-m);
+}
+.v-s {
+  font-size: var(--v-s);
+}
+
+/* ------------------------------------------------------- as três camadas ---- */
+.camada {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--f-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+.camada::after {
+  content: '';
+  height: 1px;
+  background: var(--rule);
+  flex: 1 1 auto;
+}
+details.fundo {
+  border: 1px solid var(--rule);
+  background: var(--paper-2);
+  margin-top: 14px;
+}
+details.fundo > summary {
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  cursor: pointer;
+  color: var(--ink);
+}
+details.fundo > summary::marker {
+  color: var(--muted);
+}
+.fundo-corpo {
+  padding: 0 14px 16px;
+  display: grid;
+  gap: 14px;
+  border-top: 1px solid var(--rule);
+  padding-top: 14px;
+}
+.fundo-item {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 6px 18px;
+}
+@media (max-width: 760px) {
+  .fundo-item {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ------------------------------------------------------------- a secção ----- */
+.sec {
+  border-top: 1px solid var(--rule-strong);
+  padding: clamp(22px, 2.8vw, 34px) 0 clamp(8px, 1.4vw, 14px);
+}
+.sec-cabeca {
+  display: grid;
+  gap: 6px;
+  margin-bottom: clamp(14px, 1.8vw, 20px);
+}
+.sec-cabeca h2 {
+  font-family: var(--f-mono);
+  font-size: clamp(17px, 1.9vw, 21px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+h1 {
+  font-family: var(--f-mono);
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+h3 {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------- o painel ---
+   A grelha de células. Cinco colunas a 1240px, quatro a 1080, duas a 760, uma
+   a 430. Nunca sobra célula vazia: a contagem é constante e o que muda é o
+   número de colunas. */
+.painel {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.painel-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.celula {
+  background: var(--paper);
+  padding: clamp(12px, 1.4vw, 16px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+  align-content: start;
+  min-width: 0;
+}
+.celula-nome {
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0;
+}
+.celula-unidade {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin: 0;
+}
+.celula-frase {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--muted);
+  margin: 0;
+}
+.celula-selo {
+  margin-top: 2px;
+}
+@media (max-width: 1080px) {
+  .painel {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 820px) {
+  .painel,
+  .painel-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 430px) {
+  .painel,
+  .painel-3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ------------------------------------------------------------- a escala -----
+   O instrumento mais pequeno do sistema: a medida contra o seu limiar.
+   O traço do limiar fica sempre no mesmo sítio da pista (30%), e a barra
+   mede-se nele. Duas células diferentes leem-se assim uma contra a outra sem
+   partilharem unidade. A barra é amarela porque é uma medição. */
+.escala {
+  display: grid;
+  gap: 4px;
+}
+.escala-pista {
+  position: relative;
+  height: 10px;
+  background: var(--paper-3);
+  border: 1px solid var(--rule);
+}
+.escala-barra {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--yellow);
+}
+.escala-limiar {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 1.5px;
+  background: var(--ink);
+}
+.escala-rot {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--f-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+/* O estado desenhado para a célula que não tem limiar publicado. */
+.sem-escala {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px dashed var(--rule-strong);
+  padding: 4px 6px;
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------ o par ---
+   Duas leituras da mesma coisa, desenhadas na mesma linha: o que a página já
+   escrevia em prosa («caiu de X para Y») passa a ser uma distância. Cada
+   marca leva o seu valor e o seu selo; nenhum número novo é escrito. */
+.par {
+  display: grid;
+  gap: 6px;
+}
+.par-eixo {
+  position: relative;
+  height: 22px;
+}
+.par-linha {
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  top: 10px;
+  height: 1px;
+  background: var(--rule-strong);
+}
+.par-seg {
+  position: absolute;
+  top: 8px;
+  height: 5px;
+  background: var(--yellow);
+}
+.par-ponto {
+  position: absolute;
+  top: 5px;
+  width: 11px;
+  height: 11px;
+  margin-left: -5.5px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+}
+.par-rots {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+}
+.par-rot {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.par-rot.direita {
+  text-align: right;
+  justify-items: end;
+}
+.par-rot .chave {
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* -------------------------------------------------------- o instrumento ----- */
+.instr {
+  border: 1px solid var(--rule-strong);
+  background: var(--paper-2);
+  padding: clamp(14px, 1.8vw, 22px);
+}
+.instr-quadro {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: clamp(10px, 1.4vw, 16px);
+  overflow-x: auto;
+}
+.instr-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.portas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  align-items: center;
+  margin: 12px 0 0;
+}
+.portas-k {
+  font-family: var(--f-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.portas a {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-strong);
+}
+.portas a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+/* dentro dos SVG */
+.tk {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  fill: var(--muted);
+  letter-spacing: 0.04em;
+}
+.tk-forte {
+  fill: var(--ink);
+  font-weight: 600;
+}
+.mk-nome {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  fill: var(--ink);
+  letter-spacing: 0.02em;
+}
+.mk-val {
+  font-family: var(--f-mono);
+  font-size: 15px;
+  font-weight: 600;
+  fill: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.mk-val-g {
+  font-size: 19px;
+}
+
+/* --------------------------------------------------------------- a ficha ----
+   A lista de campos de uma linha: chave à esquerda em mono pequena, valor à
+   direita em mono legível. É o aparelho, e em B o aparelho é uma tabela. */
+.ficha {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  border-top: 1px solid var(--rule);
+}
+.ficha dt {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 9px 12px 9px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.ficha dd {
+  margin: 0;
+  font-family: var(--f-mono);
+  font-size: 12.5px;
+  line-height: 1.5;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--rule);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.ficha dd a {
+  color: var(--ink);
+}
+@media (max-width: 620px) {
+  .ficha {
+    grid-template-columns: 1fr;
+  }
+  .ficha dt {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+  .ficha dd {
+    padding-top: 3px;
+  }
+}
+
+/* -------------------------------------------------------------- o recibo ----
+   A página da linha. A leitura é de cima para baixo e não muda com a classe
+   da fonte: valor · quem publicou · a prova · as verificações · o histórico ·
+   a porta das correções · os dados. */
+.recibo {
+  border: 1px solid var(--rule-strong);
+  background: var(--paper);
+}
+.recibo-cabeca {
+  padding: clamp(18px, 2.6vw, 30px);
+  border-bottom: 1px solid var(--rule-strong);
+  background: var(--paper-2);
+  display: grid;
+  gap: 10px;
+}
+.recibo-valor {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.recibo-unidade {
+  font-family: var(--f-mono);
+  font-size: clamp(13px, 1.4vw, 16px);
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+.recibo-frase {
+  font-family: var(--f-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 0;
+  max-width: 74ch;
+}
+.recibo-frase b {
+  font-weight: 600;
+}
+.recibo-id {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0;
+}
+.recibo-corpo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+}
+@media (max-width: 900px) {
+  .recibo-corpo {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.recibo-prova {
+  padding: clamp(16px, 2vw, 24px);
+  display: grid;
+  gap: clamp(18px, 2vw, 24px);
+  align-content: start;
+  border-right: 1px solid var(--rule);
+  min-width: 0;
+}
+.recibo-lado {
+  padding: clamp(16px, 2vw, 24px);
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  background: var(--paper-2);
+  min-width: 0;
+}
+.bloco {
+  display: grid;
+  gap: 8px;
+}
+.bloco-t {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.bloco-t::after {
+  content: '';
+  height: 1px;
+  background: var(--rule);
+  flex: 1 1 auto;
+}
+.excerto {
+  margin: 0;
+  border-left: 3px solid var(--ink);
+  background: var(--paper-2);
+  padding: 12px 14px;
+  font-family: var(--f-mono);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.recibo-lado .excerto {
+  background: var(--paper-3);
+}
+.nota {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* O lugar do recorte e o lugar da releitura: existem no desenho antes de
+   existirem nos dados. Caixa marcada, sem algarismo nenhum lá dentro. */
+.exemplo {
+  border: 1px dashed var(--rule-strong);
+  background: repeating-linear-gradient(
+    135deg,
+    var(--paper-2) 0 6px,
+    var(--paper) 6px 12px
+  );
+  padding: 14px;
+  display: grid;
+  gap: 6px;
+  justify-items: start;
+}
+.exemplo-et {
+  font-family: var(--f-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--paper);
+  border: 1px solid var(--rule-strong);
+  padding: 1px 6px;
+}
+.exemplo-c {
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  color: var(--muted);
+  margin: 0;
+}
+.exemplo-faixa {
+  width: 100%;
+  height: 44px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+}
+
+/* a linha de verificação */
+.verif {
+  display: grid;
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.verif-l {
+  background: var(--paper);
+  padding: 9px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  align-items: baseline;
+  font-family: var(--f-mono);
+  font-size: 12px;
+}
+.verif-k {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  flex: none;
+  min-width: 92px;
+}
+
+/* -------------------------------------------------------- porta de correções */
+.porta {
+  border: 1px solid var(--rule-strong);
+  background: var(--paper-2);
+  padding: 12px 14px;
+  display: grid;
+  gap: 6px;
+}
+.porta-k {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.porta p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.porta a {
+  font-family: var(--f-mono);
+  font-size: 12px;
+}
+.seta {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-strong);
+}
+.seta:hover {
+  border-bottom-color: var(--ink);
+}
+
+/* ------------------------------------------------------------- o quadro -----
+   A agenda: quatro estados em quatro colunas, cada item uma ficha. */
+.quadro {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule-strong);
+}
+.coluna {
+  background: var(--paper);
+  min-width: 0;
+  display: grid;
+  align-content: start;
+}
+.coluna-cabeca {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--rule-strong);
+  background: var(--paper-2);
+}
+.coluna-nome {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.coluna-corpo {
+  display: grid;
+  gap: 1px;
+  background: var(--rule);
+}
+.item {
+  background: var(--paper);
+  padding: 12px;
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+.item-tipo {
+  font-family: var(--f-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.item h3 {
+  font-size: 14px;
+  line-height: 1.3;
+}
+.item-k {
+  font-family: var(--f-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 6px 0 0;
+}
+.item p {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+.item-datas {
+  display: grid;
+  gap: 3px;
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  color: var(--muted);
+  border-top: 1px solid var(--rule);
+  padding-top: 8px;
+}
+.vazio {
+  padding: 12px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--muted);
+  border: 1px dashed var(--rule-strong);
+  margin: 12px;
+}
+@media (max-width: 1080px) {
+  .quadro {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 660px) {
+  .quadro {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ------------------------------------------------------------- as regras ---- */
+.regra {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) 300px;
+  gap: clamp(14px, 2vw, 26px);
+  border-top: 1px solid var(--rule);
+  padding: clamp(16px, 2vw, 22px) 0;
+  align-items: start;
+}
+.regra-n {
+  font-family: var(--f-mono);
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--rule-strong);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.regra h2 {
+  font-family: var(--f-mono);
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+.regra-linha {
+  margin-top: 10px;
+  display: grid;
+  gap: 3px;
+}
+.regra-prova {
+  border: 1px solid var(--rule-strong);
+  background: var(--paper-2);
+  display: grid;
+  gap: 1px;
+  align-content: start;
+}
+.regra-prova-k {
+  font-family: var(--f-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 8px 12px 4px;
+}
+.prova-l {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 12px;
+  background: var(--paper);
+  margin: 0 1px;
+}
+.prova-l:last-child {
+  margin-bottom: 1px;
+}
+.prova-t {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+.prova-v {
+  font-family: var(--f-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 2px solid var(--rule-strong);
+  flex: none;
+}
+.prova-v:hover {
+  border-bottom-color: var(--ink);
+}
+.prova-nota {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--muted);
+  padding: 6px 12px 10px;
+  margin: 0;
+}
+@media (max-width: 980px) {
+  .regra {
+    grid-template-columns: 44px minmax(0, 1fr);
+  }
+  .regra-prova {
+    grid-column: 1 / -1;
+  }
+}
+
+/* --------------------------------------------------------- linha do tempo --- */
+.mandatos {
+  display: grid;
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule-strong);
+}
+.mandato {
+  background: var(--paper);
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 0;
+}
+.mandato-quem {
+  padding: 12px;
+  border-right: 1px solid var(--rule);
+  display: grid;
+  gap: 4px;
+  align-content: start;
+  background: var(--paper-2);
+}
+.mandato-per {
+  font-family: var(--f-mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.mandato-nome {
+  font-size: 13px;
+  line-height: 1.35;
+}
+.mandato-lista {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  border: 1px solid var(--rule-strong);
+  padding: 1px 6px;
+  justify-self: start;
+}
+.mandato-campos {
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px 18px;
+  min-width: 0;
+}
+.campo {
+  display: grid;
+  gap: 3px;
+  align-content: start;
+  min-width: 0;
+}
+.campo-k {
+  font-family: var(--f-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.campo-v {
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+.campo-vazio {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--muted);
+  border-left: 2px solid var(--rule-strong);
+  padding-left: 8px;
+}
+@media (max-width: 760px) {
+  .mandato {
+    grid-template-columns: 1fr;
+  }
+  .mandato-quem {
+    border-right: 0;
+    border-bottom: 1px solid var(--rule);
+  }
+}
+
+/* ------------------------------------------------------------- o rodapé ----- */
+.rodape {
+  border-top: 1px solid var(--rule-strong);
+  margin-top: clamp(28px, 3.4vw, 44px);
+  padding: 16px 0 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+.rodape a {
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+}
+.rodape a:hover {
+  color: var(--ink);
+  border-color: var(--rule);
+}
+
+/* ------------------------------------------------------------- utilidades --- */
+.tira {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: center;
+}
+.linha-dupla {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: clamp(18px, 2.4vw, 32px);
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .linha-dupla {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+/* Todo o contentor de grelha de uma coluna leva a coluna declarada a
+   `minmax(0, 1fr)`: sem isso, um filho que não quebra alarga a coluna e
+   arrasta a célula inteira para fora do seu carril. */
+.pilha,
+.pilha-l,
+.bloco,
+.item,
+.campo,
+.par,
+.escala,
+.compo,
+.exemplo,
+.porta,
+.sinal-cel,
+.coluna,
+.recibo-prova,
+.recibo-lado,
+.recibo-cabeca,
+.sec-cabeca,
+.mandato-quem,
+.regra-linha {
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+}
+.pilha {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+.pilha-l {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
+/* ------------------------------------------------------------ o telemóvel ---
+   Regra da direção: um instrumento não encolhe abaixo do legível. Num ecrã
+   estreito, o desenho mantém a sua escala e o quadro que o contém passa a
+   deslizar de lado. O mapa é a exceção declarada: é vertical, e cabe. */
+@media (max-width: 700px) {
+  .instr-svg {
+    width: auto;
+    min-width: 680px;
+  }
+  .mapa-svg {
+    width: 100%;
+    min-width: 0;
+  }
+  .instr-quadro {
+    padding: 10px;
+  }
+}
+@media (max-width: 560px) {
+  .sinal {
+    display: grid;
+  }
+  .sinal-cel {
+    border-right: 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .sinal-cel:last-child {
+    border-bottom: 0;
+  }
+  .nav a,
+  .rodape a {
+    padding: 4px 6px;
+  }
+  .recibo-cabeca,
+  .recibo-prova,
+  .recibo-lado {
+    padding: 14px;
+  }
+  .fundo-item,
+  .regra {
+    grid-template-columns: 1fr;
+  }
+  .regra-n {
+    font-size: 22px;
+  }
+}
