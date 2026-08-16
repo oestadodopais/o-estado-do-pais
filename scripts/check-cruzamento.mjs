@@ -66,14 +66,17 @@
  *
  * ### As invariantes, reconferidas deste lado
  *
- * O exportador do motor confere dezassete invariantes antes de escrever. Este
- * portão volta a conferir as que a página precisa para renderizar — o estado é
- * o `para` da última entrada do histórico, todo o item tem histórico, quem sai
- * traz motivo, o que renderiza tem `pt` e `en`, as linhas citadas existem no
- * livro-razão deste sítio, os acontecimentos citados existem no calendário.
- * Não é desconfiança do motor: é a regra da casa. Uma conferência de aceitação
- * que confiasse no produtor seria o produtor a assinar por si próprio, que é o
- * que o comentário acima diz do modo offline.
+ * O exportador do motor confere trinta e uma invariantes antes de escrever.
+ * Este portão volta a conferir as que a página precisa para renderizar: o
+ * estado é o `para` da última entrada do histórico, todo o item tem histórico,
+ * quem sai traz motivo, o que renderiza tem `pt` e `en`, as linhas citadas
+ * existem no livro-razão deste sítio, os acontecimentos citados existem no
+ * calendário. E, desde 16.08.2026 (§1.42), confere que o próprio registo da
+ * travessia traz a sua linha de base: sem `historia` e sem `eventos` não há
+ * passado contra que a travessia seguinte se meça, e apagar um campo apagava a
+ * promessa. Não é desconfiança do motor: é a regra da casa. Uma conferência de
+ * aceitação que confiasse no produtor seria o produtor a assinar por si
+ * próprio, que é o que o comentário acima diz do modo offline.
  */
 
 import fs from 'node:fs';
@@ -208,6 +211,44 @@ const CAMPOS_FICHEIRO = ['origin_path', 'origin_sha256', 'exported_sha256', 'exp
 const ESTADOS = ['em_curso', 'a_seguir', 'concluido', 'retirado'];
 
 /**
+ * O passado que o registo da travessia tem de carregar.
+ *
+ * `historia` guarda, por item, quantas entradas de histórico atravessaram e o
+ * resumo dessas entradas; `eventos` guarda os ids do calendário; `saidas`
+ * guarda os que já saíram dele. É contra estes três que a travessia seguinte
+ * recusa um histórico mais curto, uma entrada passada reescrita, um
+ * acontecimento que desaparece sem ser declarado e uma saída que é apagada
+ * depois de declarada (H4, H5).
+ *
+ * SEM ELES O EXPORTADOR NÃO TEM PASSADO CONTRA QUE COMPARAR. Apagar `historia`
+ * do ficheiro fazia a travessia seguinte ler-se como a primeira, e a promessa
+ * de append-only passava a valer sobre nada (revisão cruzada 2, #1). Aqui,
+ * deste lado da fronteira, um registo sem eles pára o build offline: o registo
+ * da travessia não é um resumo de conveniência, é a linha de base.
+ */
+const CAMPOS_DO_PASSADO = ['historia', 'eventos', 'saidas'];
+
+function confereRegistoDaTravessia(regs, erros) {
+  for (const { ficheiro, dados } of regs) {
+    /* O registo da agenda é o que prende `agenda.json`; os outros registos de
+       ficheiros não têm histórico de itens para guardar. */
+    if (!dados?.files?.['agenda.json']) continue;
+    const faltam = CAMPOS_DO_PASSADO.filter((c) => !(c in (dados ?? {})));
+    if (faltam.length) {
+      erros.push(
+        `[${ficheiro}] o registo da travessia perdeu a sua história: falta ` +
+          `${faltam.map((c) => `"${c}"`).join(', ')}.\n` +
+          `        É contra estes campos que a travessia seguinte recusa um histórico mais ` +
+          `curto, uma entrada passada reescrita ou uma saída apagada. Um registo sem eles ` +
+          `faz a travessia seguinte parecer a primeira.\n` +
+          `        Reponha o ficheiro (git) ou volte a cruzar: ` +
+          `python3 publisher/export_agenda.py --destino <sítio>/src/data/`,
+      );
+    }
+  }
+}
+
+/**
  * Um registo de ficheiros: os bytes em disco contra o resumo que o registo
  * declara. A mesma conferência das linhas, um nível acima.
  */
@@ -300,6 +341,8 @@ function confereFicheirosNaOrigem(regs, raizMotor, erros) {
  *   8. `entrada` é a data da primeira entrada e `ultima_alteracao` a da última
  *   9. um acontecimento com marcador diz porque não tem data, e a página tem
  *      duas frases diferentes para as duas razões
+ *  10. o registo da travessia traz `historia` e `eventos`: a linha de base
+ *      contra a qual a travessia seguinte prova que só cresceu
  *
  * As três últimas entraram a 16.08.2026 com a revisão cruzada (§1.41). O motor
  * confere-as antes de escrever (H1, H2, H3, C6); estão aqui pela mesma razão
@@ -637,6 +680,7 @@ function main(argv) {
   }
 
   const ficheirosCruzados = confereFicheiros(regsDeFicheiros, erros);
+  confereRegistoDaTravessia(regsDeFicheiros, erros);
   const itensDaAgenda = confereInvariantes(erros);
 
   console.log('');

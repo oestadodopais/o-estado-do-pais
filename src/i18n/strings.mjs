@@ -127,16 +127,19 @@ export const STRINGS = {
         pagina: 'Página',
       },
       perguntaK: 'A pergunta',
-      /* Duas frases, e a que sai depende do registo prévio. Enquanto ele não
-         estiver selado, dizer «a pergunta é fixada» ao lado de um histórico que
-         diz «não foi selado» é o sítio a contradizer-se na mesma página. */
+      /* Duas frases, e a que sai depende do registo prévio. A primeira frase diz
+         a regra, no plural e sobre os estudos; a segunda diz o estado DESTA. Uma
+         frase que dissesse «a pergunta fica fixada» ao lado de um histórico que
+         diz «não foi selado» punha a página a contradizer-se (revisão cruzada 2,
+         R11), e «o português abaixo» apontava para cima (R12). */
       perguntaNotaSelada:
-        'A pergunta fica fixada no motor antes da recolha, e o registo do motor escreve-se em inglês: o inglês é a forma registada, palavra por palavra, e o português abaixo é a edição portuguesa dessa mesma pergunta.',
+        'Nos estudos, a pergunta é selada no motor antes de a recolha começar. Esta está selada. O registo do motor escreve-se em inglês: o inglês é a forma registada, palavra por palavra, e o português acima é a edição portuguesa dessa mesma pergunta.',
       perguntaNotaPorSelar:
-        'A pergunta fica fixada no motor antes da recolha; esta ainda não foi selada. O registo do motor escreve-se em inglês: o inglês é a forma registada, palavra por palavra, e o português abaixo é a edição portuguesa dessa mesma pergunta.',
+        'Nos estudos, a pergunta é selada no motor antes de a recolha começar. Esta está registada e ainda não selada: a direção não a leu. O registo do motor escreve-se em inglês: o inglês é a forma registada, palavra por palavra, e o português acima é a edição portuguesa dessa mesma pergunta.',
       porqueK: 'Porquê',
       criteriosK: 'Critérios',
       quadroK: 'Quadro institucional',
+      limiarK: 'Limiar publicado pela Comissão:',
       eventoK: 'Calendário das fontes',
       leitorK: 'Pedido de leitor',
       correcaoK: 'Correção',
@@ -409,6 +412,8 @@ export const STRINGS = {
       registoAtualizacoesNota:
         'Valores que estavam certos e deixaram de estar, porque aquilo que medem mudou. Não são erros, e não contam para o número acima.',
       registoProvenienciaK: 'Revisões de proveniência',
+      registoProvenienciaConta: 'revisões de proveniência',
+      registoProvenienciaContaSing: 'revisão de proveniência',
       registoProvenienciaNota:
         'O valor não mudou; mudou a maneira de lá chegar: uma fonte que muda de endereço, por exemplo. Não são erros nem atualizações, e não se listam aqui uma a uma: são muitas de cada vez e afogariam as correções. Cada linha abaixo leva à sua própria história, onde a revisão está escrita por extenso.',
       correcoesVazioV: 'Nenhuma correção publicada até hoje.',
@@ -757,12 +762,13 @@ export const STRINGS = {
       },
       perguntaK: 'The question',
       perguntaNotaSelada:
-        'The question is fixed in the engine before collection begins, and the engine’s record is written in English: the English is the registered form, word for word, and the Portuguese edition renders that same question.',
+        'In studies, the question is sealed in the engine before collection begins. This one is sealed. The engine’s record is written in English: the English is the registered form, word for word, and the Portuguese edition renders that same question.',
       perguntaNotaPorSelar:
-        'The question is fixed in the engine before collection begins; this one has not been sealed yet. The engine’s record is written in English: the English is the registered form, word for word, and the Portuguese edition renders that same question.',
+        'In studies, the question is sealed in the engine before collection begins. This one is registered and not yet sealed: the director has not read it. The engine’s record is written in English: the English is the registered form, word for word, and the Portuguese edition renders that same question.',
       porqueK: 'Why',
       criteriosK: 'Criteria',
       quadroK: 'Institutional framework',
+      limiarK: 'Threshold published by the Commission:',
       eventoK: 'Source calendar',
       leitorK: 'Reader request',
       correcaoK: 'Correction',
@@ -971,11 +977,11 @@ export const STRINGS = {
         agenda: 'AGENDA',
         releitura: 'RE-READING',
         correcoes: 'CORRECTIONS',
-        capOrganismos: 'organisms',
+        capOrganismos: 'bodies',
         capAtravessadas: 'rows crossed',
         capLinhas: 'rows',
         capPorConfirmar: 'to confirm',
-        capContas: 'sums redone',
+        capContas: 'arithmetic re-evaluated',
         capNoMapa: 'rows in the sitemap',
         capItens: 'items',
         capRegistadas: 'on record',
@@ -1018,6 +1024,8 @@ export const STRINGS = {
       registoAtualizacoesNota:
         'Values that were right and stopped being so, because what they measure changed. They are not errors, and they do not count towards the number above.',
       registoProvenienciaK: 'Provenance revisions',
+      registoProvenienciaConta: 'provenance revisions',
+      registoProvenienciaContaSing: 'provenance revision',
       registoProvenienciaNota:
         'The value did not change; the way to find it did: a source that moves address, for example. They are neither errors nor updates, and they are not listed one by one here: they come many at a time and would drown the corrections. Each row below leads to its own history, where the revision is written out in full.',
       correcoesVazioV: 'No corrections published to date.',

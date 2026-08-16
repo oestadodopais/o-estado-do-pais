@@ -3,19 +3,28 @@
   "exportado_em": null,
   "ficheiro": "agenda/agenda.json",
   "repositorio": "ResearchHub",
-  "sha256_origem": "63e3fdcbaf80c312ef900bfbcb1faab251780e838a3ee9d095982835722d3678"
+  "sha256_origem": "2437d47c02ae090bf859dbd42a7f7d8126f225ce2f9ded0bf8e59cf7f9807e23"
  },
  "formato": 1,
  "itens": [
   {
    "criterios": [
     {
+     "limiar": {
+      "origem": {
+       "acedido_em": "2026-08-16",
+       "excerto": "nominal house price (1-year % change), with a threshold of 9%",
+       "url": "https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en"
+      },
+      "unidade": "%",
+      "valor": "9"
+     },
      "linhas": [
       "precos-da-habitacao-2025"
      ],
      "nota": {
-      "en": "The Commission's scoreboard page, read on 2026-08-16, writes the threshold thus: 'nominal house price (1-year % change), with a threshold of 9%'. The published value is the row beside this note, with its seal.",
-      "pt": "A página do painel da Comissão, lida a 2026-08-16, escreve o limiar assim: «nominal house price (1-year % change), with a threshold of 9%». O valor publicado é o da linha ao lado, com o seu selo."
+      "en": "The published value is the row beside this note, with its seal. The threshold it is read against is the one the Commission publishes on the scoreboard page, and it sits in this criterion's own field, with the address, the date it was read and the sentence that says it.",
+      "pt": "O valor publicado é o da linha ao lado, com o seu selo. O limiar contra o qual ele se lê é o que a Comissão publica na página do painel, e está no campo próprio deste critério, com o endereço, a data da leitura e a frase que o diz."
      },
      "quadro": "Procedimento relativo aos Desequilíbrios Macroeconómicos, painel principal (Comissão Europeia)",
      "tipo": "quadro_institucional"
@@ -25,8 +34,8 @@
       "sobrecarga-do-custo-da-habitacao-2025"
      ],
      "nota": {
-      "en": "The engine's availability register marks tespm140 with framework 'SocialSB'. This indicator is the one the engine's convergence analysis identifies as a trap: it is below the European average, and the Commission itself warns it must be read alongside the tenure structure.",
-      "pt": "O registo de disponibilidade do motor marca tespm140 com o quadro «SocialSB». Este indicador é o que a análise de convergência do motor identifica como armadilha: está abaixo da média europeia, e a própria Comissão adverte que só se lê ao lado do regime de propriedade."
+      "en": "The engine's availability register marks tespm140 with framework 'SocialSB'. The engine's convergence analysis identifies this indicator as a trap, for the reason the front page already gives: the Commission itself warns it must be read alongside the tenure structure, and where owner-occupation is high this measure does not see those who never bought. The site does not publish the European average of this indicator today, so the comparison with it is not made here.",
+      "pt": "O registo de disponibilidade do motor marca tespm140 com o quadro «SocialSB». A análise de convergência do motor identifica este indicador como armadilha, e a razão é a que a primeira página já diz: a própria Comissão adverte que só se lê ao lado do regime de propriedade, e onde a taxa de proprietários é alta esta medida não vê quem não conseguiu comprar. O sítio não publica hoje a média europeia deste indicador, e por isso a comparação com ela não é feita aqui."
      },
      "quadro": "Painel de Indicadores Sociais (Comissão Europeia)",
      "tipo": "quadro_institucional"
@@ -135,8 +144,8 @@
     {
      "evento": "dgal-endividamento-2025",
      "nota": {
-      "en": "The calendar event holds the proof that there is no calendar: eleven annual files with no date on the page, and a search for 'calend' returning nothing. The same search does find 'endividamento' on the page, so the absence of 'calendário' is not a failure of the search.",
-      "pt": "O acontecimento no calendário guarda a prova de que não há calendário: onze ficheiros anuais sem data na página, e a procura por «calend» sem resultado. A mesma procura encontra «endividamento» na página, por isso a ausência de «calendário» não é falha da procura."
+      "en": "The calendar event records that the page announces no date at all: eleven annual files are there with no date, and a search for 'calend' returns nothing. The same search does find 'endividamento' on the page, so the absence of 'calendário' is not a failure of the search.",
+      "pt": "O acontecimento no calendário regista que a página não anuncia data nenhuma: onze ficheiros anuais estão lá sem data, e a procura por «calend» não dá nada. A mesma procura encontra «endividamento» na página, por isso a ausência de «calendário» não é falha da procura."
      },
      "tipo": "calendario_das_fontes"
     }

@@ -45,6 +45,7 @@ import {
   derivacaoDaLinha,
   notaDeBandeira,
   provenienciaIncompleta,
+  eDerivada,
   POR_VERIFICAR,
 } from '../src/lib/ledger.mjs';
 import { VERBATIM, normalizeWhitespace } from '../src/data/verbatim.mjs';
@@ -851,13 +852,44 @@ const ORDINAL = /[ºª]$/;
 const CAMPOS_TRANSCRITOS_DA_AGENDA = ['origem_da_data.excerto'];
 
 /**
+ * O número que um símbolo da prosa carrega, ou `null` quando não carrega nenhum.
+ *
+ * A regra é a ORDEM DAS LETRAS, e é o que a primeira versão desta conferência
+ * não olhava: qualquer letra no símbolo punha-o de fora, e «17,6pp» passava a
+ * publicar um valor do livro-razão sem selo (revisão cruzada 2, #2). Um símbolo
+ * que COMEÇA por algarismo e acaba numa unidade colada («9%», «17,6pp», «6,3%»)
+ * é um número com a sua unidade; um símbolo que COMEÇA por letra é um código
+ * («tipsgo10», «edat_lfse_14») e continua de fora, porque a sequência de
+ * algarismos de um código não é uma medição.
+ */
+const UNIDADE_COLADA = /[%A-Za-zÀ-ÖØ-öø-ÿ]+$/;
+
+/**
+ * O ordinal inglês, que também começa por algarismo: «2nd quarter», «1st
+ * series». É a mesma classe que `ORDINAL` já tira na edição portuguesa («2.º»),
+ * escrita para a outra língua: quatro sufixos, sobre o símbolo inteiro. O preço
+ * é o mesmo que aquela paga, e está registado em DECISIONS §1.42: um valor do
+ * livro-razão que por acaso seja o número de um ordinal escapa aqui.
+ */
+const ORDINAL_EN = /^\d+(st|nd|rd|th)$/i;
+
+function numeroDoSimbolo(token) {
+  if (!/^\d/.test(token)) return null;
+  if (ORDINAL_EN.test(token)) return null;
+  const semUnidade = token.replace(UNIDADE_COLADA, '');
+  if (!semUnidade || !/\d/.test(semUnidade)) return null;
+  if (TEM_LETRA.test(semUnidade)) return null;
+  return semUnidade;
+}
+
+/**
  * Os números da prosa que são, tal e qual, um valor do livro-razão.
  *
  * O que NÃO é apanhado, de propósito: uma data ISO (é uma data do registo, e a
  * marca `data-nonledger="data-da-agenda"` já a declara), um código de conjunto
- * de dados («tipsgo10», «edat_lfse_14», que trazem letras), um ordinal («2.º»,
- * «1.ª»), e um limiar citado de um quadro institucional que não coincida com
- * nenhum valor publicado («with a threshold of 9%»). Ver DECISIONS §1.41.
+ * de dados («tipsgo10», «edat_lfse_14», que começam por letra), um ordinal
+ * («2.º», «1.ª»), e um número que não coincida com nenhum valor publicado. Ver
+ * DECISIONS §1.41 e §1.42.
  */
 function valoresDoLivroEmProsa(texto, chave) {
   if (CAMPOS_TRANSCRITOS_DA_AGENDA.some((c) => chave.endsWith(c))) return [];
@@ -868,9 +900,10 @@ function valoresDoLivroEmProsa(texto, chave) {
     if (!bruto || !/\d/.test(bruto)) continue;
     const token = limpaToken(bruto);
     if (!token || !/\d/.test(token)) continue;
-    if (TEM_LETRA.test(token)) continue;
     if (ORDINAL.test(token)) continue;
-    const d = digitsOf(token);
+    const numero = numeroDoSimbolo(token);
+    if (!numero) continue;
+    const d = digitsOf(numero);
     const id = VALORES_DO_LIVRO.get(d);
     if (!id || vistos.has(d)) continue;
     vistos.add(d);
@@ -883,7 +916,11 @@ function valoresDoLivroEmProsa(texto, chave) {
  * Os campos que a página TEM de renderizar de um item, lidos do registo.
  *
  * Não é uma lista escrita à mão: sai do próprio item, campo a campo, e cresce
- * com ele. Um histórico com três entradas exige três datas renderizadas.
+ * com ele. Os campos de cada critério e de cada entrada do histórico saíram
+ * daqui para as duas funções abaixo, porque a exigência mudou de sítio: não
+ * basta que a chave esteja NA PÁGINA, tem de estar DENTRO do critério ou da
+ * entrada a que pertence. Esvaziar um critério e deixar a marca passava
+ * (revisão cruzada 2, #5).
  */
 function camposObrigatoriosDoItem(item) {
   const id = item.id;
@@ -898,16 +935,50 @@ function camposObrigatoriosDoItem(item) {
   if (item.pergunta) chaves.push(`${id}.pergunta`);
   if (item.registo_previo_estado) chaves.push(`${id}.registo_previo_em`);
   if (item.decidido_em) chaves.push(`${id}.decidido_em`);
-  for (const [n, c] of (item.criterios ?? []).entries()) {
-    if (c?.quadro) chaves.push(`${id}.criterios[${n}].quadro`);
-    if (c?.nota) chaves.push(`${id}.criterios[${n}].nota`);
-  }
-  for (const [n, h] of (item.historico ?? []).entries()) {
-    chaves.push(`${id}.historico[${n}].data`);
-    if (h?.motivo) chaves.push(`${id}.historico[${n}].motivo`);
-  }
   return chaves;
 }
+
+/** O que um critério tem de mostrar, dentro do seu próprio elemento. */
+function camposDoCriterio(item, n, criterio) {
+  const chaves = [];
+  if (criterio?.quadro) chaves.push(`${item.id}.criterios[${n}].quadro`);
+  if (criterio?.limiar) {
+    chaves.push(`${item.id}.criterios[${n}].limiar.valor`);
+    chaves.push(`${item.id}.criterios[${n}].limiar.unidade`);
+  }
+  if (criterio?.tipo === 'calendario_das_fontes' && criterio?.evento) {
+    chaves.push(`evento:${criterio.evento}.titulo`);
+  }
+  if (criterio?.nota) chaves.push(`${item.id}.criterios[${n}].nota`);
+  return chaves;
+}
+
+/** O que uma entrada do histórico tem de mostrar, dentro do seu elemento. */
+function camposDaEntrada(item, n, entrada) {
+  const chaves = [`${item.id}.historico[${n}].data`];
+  if (entrada?.motivo) chaves.push(`${item.id}.historico[${n}].motivo`);
+  return chaves;
+}
+
+/**
+ * As frases da casa que dizem um ESTADO do registo, e que o registo não escreve.
+ *
+ * Terceira cópia da mesma disciplina de `ROTULO_DO_ESTADO`: se o portão lesse
+ * estas frases do gabarito, confirmava o gabarito. Assim confirma o registo, e
+ * trocar «iniciado» por «selado», ou «não foi lida» por «não publica data»,
+ * fecha a construção.
+ */
+const ROTULO_DO_REGISTO_PREVIO = {
+  pt: { iniciado: 'Registo prévio iniciado a', selado: 'Registo prévio selado a' },
+  en: { iniciado: 'Pre-registration started on', selado: 'Pre-registration sealed on' },
+};
+
+const PREFIXO_DA_TRANSICAO = { pt: 'passa a', en: 'moves to' };
+
+const MOTIVO_SEM_DATA_RENDIDO = {
+  pt: { nao_publica: 'a fonte não publica data', nao_lida: 'a fonte não foi lida' },
+  en: { nao_publica: 'the source publishes no date', nao_lida: 'the source was not read' },
+};
 
 /**
  * ---------------------------------------------------------------------------
@@ -1039,22 +1110,47 @@ function auditaSelo(el, id, lang, err) {
  */
 const semEspacos = (s) => String(s).replace(/\s+/g, '');
 
+/**
+ * O endereço de uma linha, ao contrário: da porta para o id e a edição.
+ *
+ * É isto que amarra a etiqueta À SUA afirmação. Comparar contra o conjunto de
+ * todas as etiquetas legítimas provava que a etiqueta era UMA delas, e uma
+ * etiqueta válida de outro trabalho passava: o selo de «6,3» podia dizer «Água
+ * Não Faturada» (revisão cruzada 2, #6). O `href` do selo diz de que linha ele
+ * é a porta, e `auditaSelo()` já obriga esse `href` a ser o da linha do valor
+ * que está ao lado. Uma amarra fecha a outra: o selo abre a linha daquele
+ * número, e a etiqueta é a daquela linha.
+ */
+const LINHA_POR_PORTA = new Map();
+for (const [id] of claims) {
+  for (const lang of LANGS) {
+    LINHA_POR_PORTA.set(routePath('linha', lang, { slug: id }), { id, lang });
+  }
+}
+
+/** A ÚNICA rendição legítima da etiqueta do selo daquela linha, naquela edição. */
+function provenienciaDaLinha(id, lang) {
+  const claim = claims.get(id);
+  if (!claim) return null;
+  const s = t(lang);
+  const trabalho = studyLabel(claim.study, lang);
+  const calculado = eDerivada(claim) ? `${s.prov.calculado} · ` : '';
+  /* Sem espaço antes do marcador: o gabarito põe-no no elemento a seguir e o
+     DOM não traz espaço nenhum entre os dois, e é o DOM que o leitor vê. */
+  const marcador = provenienciaIncompleta(claim) ? POR_VERIFICAR : '';
+  return normalizeWhitespace(`${s.prov.verLinha}: ${calculado}${trabalho}${marcador}`);
+}
+
+/**
+ * As rendições legítimas para uma etiqueta que NÃO é a porta de uma linha: a
+ * legenda de proveniência de um instrumento, que nomeia o trabalho e mais nada.
+ * Sem `href` não há linha a que a amarrar, e o que resta é o conjunto finito.
+ */
 const PROVENIENCIAS_ACEITES = new Set();
 {
   const ids = [...new Set([...claims.values()].map((c) => c.study).filter(Boolean))];
   for (const lang of LANGS) {
-    const s = t(lang);
-    for (const id of ids) {
-      const trabalho = studyLabel(id, lang);
-      for (const calculado of ['', `${s.prov.calculado} · `]) {
-        for (const marcador of ['', POR_VERIFICAR]) {
-          PROVENIENCIAS_ACEITES.add(semEspacos(`${trabalho}${marcador}`));
-          PROVENIENCIAS_ACEITES.add(
-            semEspacos(`${s.prov.verLinha}: ${calculado}${trabalho}${marcador}`),
-          );
-        }
-      }
-    }
+    for (const id of ids) PROVENIENCIAS_ACEITES.add(normalizeWhitespace(studyLabel(id, lang)));
   }
 }
 
@@ -2134,7 +2230,42 @@ for (const file of ficheirosHtml(DIST)) {
    * secção onde o item está mesmo.
    */
   if (rota?.key === 'agenda' && AGENDA_REGISTO) {
+    const lingua = linguaPagina ?? 'pt';
+    const rotulos = ROTULO_DO_ESTADO[lingua];
+    const chavesDe = (no) =>
+      new Set(no.querySelectorAll('[data-agenda]').map((e) => e.getAttribute('data-agenda')));
+
+    /* As quatro secções, e o cabeçalho de cada uma. A marca dizia o estado e a
+       frase visível podia dizer outro: trocar «Em curso» por «A seguir» no
+       cabeçalho passava (revisão cruzada 2, #5). */
+    const seccoes = body.querySelectorAll('[data-agenda-seccao]');
+    const estadosVistos = new Set();
+    for (const seccao of seccoes) {
+      const estado = seccao.getAttribute('data-agenda-seccao');
+      estadosVistos.add(estado);
+      const esperado = rotulos[estado];
+      if (!esperado) {
+        err(`data-agenda-seccao="${estado}" não é um dos quatro estados da agenda.`);
+        continue;
+      }
+      const cabeca = seccao.querySelector('h2');
+      const lido = cabeca ? textoTranscrito(cabeca) : null;
+      if (lido !== esperado) {
+        err(
+          `a secção "${estado}" tem o cabeçalho "${lido ?? '(nenhum)'}" e o estado que ela ` +
+            `guarda escreve-se "${esperado}".\n      O cabeçalho é o que o leitor lê como ` +
+            `estado: a marca e a frase dizem a mesma coisa, ou a página mente a uma delas.`,
+        );
+      }
+    }
+    for (const estado of Object.keys(rotulos)) {
+      if (!estadosVistos.has(estado)) {
+        err(`a página da agenda não tem secção para o estado "${estado}".`);
+      }
+    }
+
     const artigos = body.querySelectorAll('[data-agenda-item]');
+    const itensRendidos = new Set();
     for (const artigo of artigos) {
       const id = artigo.getAttribute('data-agenda-item');
       const item = ITENS_DA_AGENDA.get(id);
@@ -2142,6 +2273,7 @@ for (const file of ficheirosHtml(DIST)) {
         err(`a página rende um item "${id}" que não está em src/data/agenda.json.`);
         continue;
       }
+      itensRendidos.add(id);
 
       /* A secção, lida a subir no DOM. */
       let seccao = null;
@@ -2162,19 +2294,106 @@ for (const file of ficheirosHtml(DIST)) {
         );
       }
 
-      /* Os critérios, contados na página. */
-      const criterios = artigo.querySelectorAll('[data-agenda-criterio]').length;
+      /* Os critérios: um elemento por critério, e cada um com o que é SEU. */
+      const elementosDeCriterio = artigo.querySelectorAll('[data-agenda-criterio]');
       const esperadosCriterios = (item.criterios ?? []).length;
-      if (criterios !== esperadosCriterios) {
+      if (elementosDeCriterio.length !== esperadosCriterios) {
         err(
-          `o item "${id}" rende ${criterios} critério(s) e o registo tem ${esperadosCriterios}.`,
+          `o item "${id}" rende ${elementosDeCriterio.length} critério(s) e o registo tem ` +
+            `${esperadosCriterios}.`,
         );
+      }
+      for (const [n, criterio] of (item.criterios ?? []).entries()) {
+        const elemento = elementosDeCriterio.find(
+          (e) => e.getAttribute('data-agenda-criterio') === String(n),
+        );
+        if (!elemento) {
+          err(`o item "${id}" não rende o critério ${n} do registo.`);
+          continue;
+        }
+        const dentro = chavesDe(elemento);
+        for (const chave of camposDoCriterio(item, n, criterio)) {
+          if (!dentro.has(chave)) {
+            err(
+              `o critério ${n} de "${id}" não rende "${chave}", que o registo tem.\n` +
+                `      A conferência é DENTRO do critério: um critério esvaziado com a marca ` +
+                `intacta contava como presente.`,
+            );
+          }
+        }
+      }
+
+      /* O estado do registo prévio: a marca contra o registo, e a frase visível
+         contra a cópia do portão. */
+      if (item.registo_previo_estado) {
+        const marca = artigo.querySelector('[data-agenda-registo-previo]');
+        const lido = marca?.getAttribute('data-agenda-registo-previo') ?? null;
+        if (lido !== item.registo_previo_estado) {
+          err(
+            `o item "${id}" rende o registo prévio como "${lido ?? '(nada)'}" e o registo diz ` +
+              `"${item.registo_previo_estado}".`,
+          );
+        } else {
+          const esperado = ROTULO_DO_REGISTO_PREVIO[lingua][item.registo_previo_estado];
+          if (!textoTranscrito(marca).startsWith(esperado)) {
+            err(
+              `o item "${id}" diz o registo prévio com "${textoTranscrito(marca).slice(0, 60)}" ` +
+                `e o estado "${item.registo_previo_estado}" escreve-se "${esperado}".\n` +
+                `      Um registo por selar anunciado como selado é a promessa que a página não ` +
+                `pode fazer.`,
+            );
+          }
+        }
+      }
+
+      /* O histórico: uma entrada por entrada, com a sua transição e o seu motivo. */
+      const entradas = artigo.querySelectorAll('[data-agenda-historico]');
+      const esperadasEntradas = (item.historico ?? []).length;
+      if (entradas.length !== esperadasEntradas) {
+        err(
+          `o item "${id}" rende ${entradas.length} entrada(s) de histórico e o registo tem ` +
+            `${esperadasEntradas}.`,
+        );
+      }
+      for (const [n, entrada] of (item.historico ?? []).entries()) {
+        const elemento = entradas.find(
+          (e) => e.getAttribute('data-agenda-historico') === String(n),
+        );
+        if (!elemento) {
+          err(`o item "${id}" não rende a entrada ${n} do histórico.`);
+          continue;
+        }
+        const dentro = chavesDe(elemento);
+        for (const chave of camposDaEntrada(item, n, entrada)) {
+          if (!dentro.has(chave)) {
+            err(`a entrada ${n} do histórico de "${id}" não rende "${chave}".`);
+          }
+        }
+        const marca = elemento.querySelector('[data-agenda-transicao]');
+        const esperadaMarca = `${entrada.de ?? ''}>${entrada.para}`;
+        const lidaMarca = marca?.getAttribute('data-agenda-transicao') ?? null;
+        if (lidaMarca !== esperadaMarca) {
+          err(
+            `a entrada ${n} do histórico de "${id}" rende a transição "${lidaMarca ?? '(nada)'}" ` +
+              `e o registo diz "${esperadaMarca}".`,
+          );
+          continue;
+        }
+        const esperadaFrase = entrada.de
+          ? `${rotulos[entrada.de]} → ${rotulos[entrada.para]}`
+          : `${PREFIXO_DA_TRANSICAO[lingua]} ${rotulos[entrada.para]}`;
+        const lidaFrase = normalizeWhitespace(textoTranscrito(marca));
+        if (lidaFrase !== esperadaFrase) {
+          err(
+            `a entrada ${n} do histórico de "${id}" escreve a transição "${lidaFrase}" e o ` +
+              `registo leva-a de "${entrada.de ?? '(nada)'}" a "${entrada.para}", que se ` +
+              `escreve "${esperadaFrase}".`,
+          );
+        }
       }
 
       /* E cada campo que a página existe para mostrar. */
-      const rendidos = new Set(
-        artigo.querySelectorAll('[data-agenda]').map((e) => e.getAttribute('data-agenda')),
-      );
+      const rendidos = chavesDe(artigo);
       for (const chave of camposObrigatoriosDoItem(item)) {
         if (!rendidos.has(chave)) {
           err(
@@ -2182,6 +2401,47 @@ for (const file of ficheirosHtml(DIST)) {
               `      A página mostra o item inteiro, ou o que ela mostra deixa de ser o registo.`,
           );
         }
+      }
+    }
+
+    for (const id of ITENS_DA_AGENDA.keys()) {
+      if (!itensRendidos.has(id)) {
+        err(`o item "${id}" está no registo e a página não o rende.`);
+      }
+    }
+
+    /* A razão de um acontecimento não ter data: a marca contra o registo, e a
+       frase visível contra a cópia do portão. Uma fonte que não respondeu e uma
+       fonte que não publica calendário são factos diferentes, e trocar um pelo
+       outro passava (revisão cruzada 2, #5). */
+    for (const marca of body.querySelectorAll('[data-agenda-sem-data]')) {
+      const motivo = marca.getAttribute('data-agenda-sem-data');
+      const marcador = marca.querySelector('[data-agenda]');
+      const chave = marcador?.getAttribute('data-agenda') ?? '';
+      const ident = chave.startsWith('evento:') ? chave.slice('evento:'.length).split('.')[0] : null;
+      const evento = ident ? EVENTOS_DO_CALENDARIO.get(ident) : null;
+      if (!evento) {
+        err(`um acontecimento sem data rende a marca "${motivo}" e não se sabe qual é.`);
+        continue;
+      }
+      if (motivo !== evento.motivo_sem_data) {
+        err(
+          `o acontecimento "${ident}" rende o motivo "${motivo}" e o registo diz ` +
+            `"${evento.motivo_sem_data}".`,
+        );
+        continue;
+      }
+      const esperado = MOTIVO_SEM_DATA_RENDIDO[lingua][motivo];
+      if (!esperado) {
+        err(`o acontecimento "${ident}" traz motivo_sem_data "${motivo}", que não é um dos dois.`);
+        continue;
+      }
+      if (!textoTranscrito(marca).endsWith(esperado)) {
+        err(
+          `o acontecimento "${ident}" diz "${textoTranscrito(marca).slice(0, 80)}" e o motivo ` +
+            `"${motivo}" escreve-se "${esperado}".\n      Dizer que uma fonte não publica data ` +
+            `quando ela não foi lida é afirmar mais do que se sabe.`,
+        );
       }
     }
   }
@@ -2299,14 +2559,27 @@ for (const file of ficheirosHtml(DIST)) {
      * portão. Ver PROVENIENCIAS_ACEITES.
      */
     if (motivo === 'proveniencia') {
-      const lido = semEspacos(textoTranscrito(el));
-      if (!PROVENIENCIAS_ACEITES.has(lido)) {
+      const lido = normalizeWhitespace(textoTranscrito(el));
+      const porta = decodeEntities(el.getAttribute('href') ?? '');
+      const alvo = LINHA_POR_PORTA.get(porta);
+      if (alvo) {
+        const esperado = provenienciaDaLinha(alvo.id, alvo.lang);
+        if (lido !== esperado) {
+          err(
+            `a etiqueta do selo que abre a linha "${alvo.id}" não é a etiqueta dessa linha.\n` +
+              `      no registo:  ${esperado}\n` +
+              `      renderizada: ${lido}\n` +
+              `      A etiqueta diz o trabalho DAQUELA linha, «calculado» quando aquela linha é ` +
+              `calculada, e o marcador só quando aquela linha tem proveniência por confirmar. ` +
+              `Uma etiqueta legítima de outro trabalho é uma proveniência falsa.`,
+          );
+        }
+      } else if (!PROVENIENCIAS_ACEITES.has(lido)) {
         err(
-          `data-nonledger="proveniencia" com texto que a etiqueta do selo não sabe escrever: ` +
-            `"${textoTranscrito(el).slice(0, 120)}".\n` +
-            `      A etiqueta é gerada do registo dos trabalhos (nome do trabalho, «calculado», ` +
-            `o marcador), e o portão compara-a com esse conjunto. Prosa embrulhada nesta marca ` +
-            `escapava ao varrimento inteiro.`,
+          `data-nonledger="proveniencia" sem porta para uma linha e com texto que a etiqueta ` +
+            `não sabe escrever: "${lido.slice(0, 120)}".\n` +
+            `      Fora de um selo, esta marca só nomeia um trabalho do arquivo. Prosa embrulhada ` +
+            `nela escapava ao varrimento inteiro.`,
         );
       }
     }
@@ -2709,30 +2982,51 @@ fs.writeFileSync(FICHEIRO_DA_PROVA, JSON.stringify(documentoDaProva, null, 2) + 
  * suposição: o Método liga-o, e uma porta que não abre é o defeito que este
  * bloco existe para fechar.
  */
+/**
+ * O documento inteiro, e não só o bloco `prova`.
+ *
+ * Reler `prova` chave a chave apanhava um valor do livro-razão alterado depois
+ * de escrito e deixava passar `portao.valores_sem_selo` posto a 999 (revisão
+ * cruzada 2, #9). O ficheiro é a prova desta construção para quem não lê
+ * páginas: relê-se por inteiro contra o que o varrimento acabou de calcular.
+ *
+ * `construido_em` é a única excepção, e é dita: é a data do carimbo, lida de
+ * `version.json`, e não uma conta deste varrimento.
+ */
+function comparavel(doc) {
+  const copia = JSON.parse(JSON.stringify(doc));
+  delete copia.construido_em;
+  return copia;
+}
+
+/** Onde dois documentos diferem, caminho a caminho. */
+function diferencas(escrito, calculado, caminho = '') {
+  const onde = caminho || '(raiz)';
+  if (escrito === null || calculado === null || typeof escrito !== 'object' ||
+      typeof calculado !== 'object') {
+    return JSON.stringify(escrito) === JSON.stringify(calculado)
+      ? []
+      : [`${onde}: escrito ${JSON.stringify(escrito)}, calculado ${JSON.stringify(calculado)}`];
+  }
+  if (Array.isArray(escrito) || Array.isArray(calculado)) {
+    return JSON.stringify(escrito) === JSON.stringify(calculado)
+      ? []
+      : [`${onde}: a lista escrita não é a calculada`];
+  }
+  const saida = [];
+  for (const chave of Object.keys(calculado)) {
+    if (!(chave in escrito)) saida.push(`${onde}: falta "${chave}"`);
+    else saida.push(...diferencas(escrito[chave], calculado[chave], caminho ? `${caminho}.${chave}` : chave));
+  }
+  for (const chave of Object.keys(escrito)) {
+    if (!(chave in calculado)) saida.push(`${onde}: chave a mais "${chave}"`);
+  }
+  return saida;
+}
+
 try {
   const relido = JSON.parse(fs.readFileSync(FICHEIRO_DA_PROVA, 'utf8'));
-  const escritas = relido.prova ?? {};
-  const problemas = [];
-  /* Contar chaves provava que o ficheiro tinha o tamanho certo, e mais nada
-     (revisão cruzada, #9). Agora relê-se chave a chave, com o nome e o valor,
-     contra o que este varrimento acabou de escrever. */
-  for (const chave of Object.keys(provaFinal)) {
-    if (!(chave in escritas)) {
-      problemas.push(`falta a chave "${chave}"`);
-      continue;
-    }
-    const foi = JSON.stringify(escritas[chave]?.valor);
-    const era = JSON.stringify(provaFinal[chave].valor);
-    if (foi !== era) problemas.push(`"${chave}": escrito ${foi}, calculado ${era}`);
-    if (escritas[chave]?.vista !== provaFinal[chave].vista) {
-      problemas.push(
-        `"${chave}": vista escrita "${escritas[chave]?.vista}", calculada "${provaFinal[chave].vista}"`,
-      );
-    }
-  }
-  for (const chave of Object.keys(escritas)) {
-    if (!(chave in provaFinal)) problemas.push(`chave a mais no ficheiro: "${chave}"`);
-  }
+  const problemas = diferencas(comparavel(relido), comparavel(documentoDaProva));
   if (problemas.length) {
     console.error(
       vermelho(

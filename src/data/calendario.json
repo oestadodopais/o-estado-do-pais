@@ -3,7 +3,7 @@
   "exportado_em": null,
   "ficheiro": "indicators/calendar.json",
   "repositorio": "ResearchHub",
-  "sha256_origem": "94d9d5eb466f005648e7bcad9d4e5ce556f15e501d6588d678ab4bf52cc2febe"
+  "sha256_origem": "ef616e453f81c444705bc512719b14c826b5d055867ff96636be294fcdff49e8"
  },
  "eventos": [
   {
@@ -33,8 +33,8 @@
    "marcador": "[a verificar]",
    "motivo_sem_data": "nao_publica",
    "nota": {
-    "en": "The thirteen rows named are those whose `note` field carries the Procedure's threshold, and they are the thirteen headline indicators. Thresholds live in documents and not in the data interface, which is why the engine's threshold canary watches the scoreboard page and not a series. The scoreboard page, read today, gives the house price index threshold as +9% and does not say when it is updated.",
-    "pt": "As treze linhas nomeadas são as que trazem no seu campo «note» o limiar do Procedimento, e são as treze do painel principal. Os limiares vivem em documentos e não na interface de dados, que é a razão de a canária dos limiares do motor vigiar a página do painel e não uma série. A página do painel, lida hoje, dá o limiar do índice de preços da habitação em +9% e não diz quando é atualizada."
+    "en": "The thirteen rows named are those whose `note` field carries the Procedure's threshold, and they are the thirteen headline indicators. Thresholds live in documents and not in the data interface, which is why the engine's threshold check watches the scoreboard page and not a series. The scoreboard page, read today, does not say when it is updated; the threshold it publishes for the house price index sits in the housing item's criterion, in its own field.",
+    "pt": "As treze linhas nomeadas são as que trazem no seu campo «note» o limiar do Procedimento, e são as treze do painel principal. Os limiares vivem em documentos e não na interface de dados, que é a razão de a conferência de limiares do motor vigiar a página do painel e não uma série. A página do painel, lida hoje, não diz quando é atualizada; o limiar que ela publica para o índice de preços da habitação está no critério do item da habitação, no campo próprio."
    },
    "origem_da_data": null,
    "precisao": "desconhecida",
@@ -281,8 +281,8 @@
    },
    "marcador": null,
    "nota": {
-    "en": "INE's calendar gives a month, not a day, for December 2026. The site's seven pib-pc-* rows publish Eurostat's regional table (nama_10r_2gdp) and not these accounts; the link between the two was not read in any source, so afecta_linhas is left empty.",
-    "pt": "O calendário do INE dá mês, não dia, para dezembro de 2026. As sete linhas pib-pc-* do sítio publicam o quadro regional do Eurostat (nama_10r_2gdp) e não estas contas; a ligação entre os dois não foi lida em fonte nenhuma e por isso afecta_linhas fica vazia."
+    "en": "INE's calendar gives a month, not a day, for December 2026. The site's seven pib-pc-* rows publish Eurostat's regional table (nama_10r_2gdp) and not these accounts; the link between the two was not read in any source, so no site row depends on this.",
+    "pt": "O calendário do INE dá mês, não dia, para dezembro de 2026. As sete linhas pib-pc-* do sítio publicam o quadro regional do Eurostat (nama_10r_2gdp) e não estas contas; a ligação entre os dois não foi lida em fonte nenhuma e por isso nenhuma linha do sítio depende disto."
    },
    "origem_da_data": {
     "acedido_em": "2026-08-16",
@@ -364,8 +364,8 @@
    "marcador": "[a verificar]",
    "motivo_sem_data": "nao_publica",
    "nota": {
-    "en": "One file per year, not cumulative (study 07's raw record holds eleven distinct files, one per year). So a 2025 file adds rows and does not move the published ones, and afecta_linhas is left empty.",
-    "pt": "Um ficheiro por ano, não cumulativo (o registo em bruto do estudo 07 guarda onze ficheiros distintos, um por ano). Por isso um ficheiro de 2025 acrescenta linhas e não mexe nas que estão publicadas, e afecta_linhas fica vazia."
+    "en": "One file per year, not cumulative (study 07's raw record holds eleven distinct files, one per year). So a 2025 file adds rows and does not move the published ones: no site row depends on this.",
+    "pt": "Um ficheiro por ano, não cumulativo (o registo em bruto do estudo 07 guarda onze ficheiros distintos, um por ano). Por isso um ficheiro de 2025 acrescenta linhas e não mexe nas que estão publicadas: nenhuma linha do sítio depende disto."
    },
    "origem_da_data": null,
    "precisao": "desconhecida",
@@ -389,8 +389,8 @@
    "marcador": "[a verificar]",
    "motivo_sem_data": "nao_publica",
    "nota": {
-    "en": "The two site rows citing IEFP are December values (2013 and 2024); a new monthly file adds a month and does not move them, so afecta_linhas is left empty.",
-    "pt": "As duas linhas do sítio que citam o IEFP são valores de dezembro (2013 e 2024); um ficheiro mensal novo acrescenta um mês e não as move, por isso afecta_linhas fica vazia."
+    "en": "The two site rows citing IEFP are December values (2013 and 2024); a new monthly file adds a month and does not move them, so no site row depends on this.",
+    "pt": "As duas linhas do sítio que citam o IEFP são valores de dezembro (2013 e 2024); um ficheiro mensal novo acrescenta um mês e não as move, por isso nenhuma linha do sítio depende disto."
    },
    "origem_da_data": null,
    "precisao": "desconhecida",

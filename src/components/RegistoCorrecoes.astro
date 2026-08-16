@@ -29,11 +29,14 @@
 import { entradasDoRegisto, motivoDaEntrada } from '../lib/ledger.mjs';
 import { KIND_LABELS } from '../data/correcoes.mjs';
 import { caminhoDaLinha } from '../lib/livro.mjs';
+import { prova } from '../lib/prova.mjs';
 import Claim from './Claim.astro';
+import ValorDaProva from './ValorDaProva.astro';
 import { t } from '../i18n/strings.mjs';
 
 const { lang = 'pt' } = Astro.props;
 const s = t(lang);
+const p = prova(lang);
 
 const correcoes = entradasDoRegisto('correcao');
 const atualizacoes = entradasDoRegisto('atualizacao');
@@ -56,6 +59,10 @@ const rotulo = (kind) => KIND_LABELS[kind]?.[lang] ?? kind;
 // Concordância: «1 correção publicada», «2 correções publicadas». O número em
 // si vem do livro-razão; só a palavra que o acompanha é escolhida aqui.
 const palavraConta = correcoes.length === 1 ? s.correcoes.registoContaSing : s.correcoes.registoConta;
+const palavraRevisoes =
+  revisoes.length === 1
+    ? s.correcoes.registoProvenienciaContaSing
+    : s.correcoes.registoProvenienciaConta;
 ---
 
 <div class="registo">
@@ -126,13 +133,15 @@ const palavraConta = correcoes.length === 1 ? s.correcoes.registoContaSing : s.c
                   </span>
                   {' '}
                   {s.correcoes.colunaAfirmacao}:{' '}
-                  <code
-                    data-correcao-claim={e.claimId}
-                    data-correcao-n={String(e.n)}
-                    data-correcao-campo="id"
-                  >
-                    {e.claimId}
-                  </code>
+                  <a href={caminhoDaLinha(e.claimId, lang)}>
+                    <code
+                      data-correcao-claim={e.claimId}
+                      data-correcao-n={String(e.n)}
+                      data-correcao-campo="id"
+                    >
+                      {e.claimId}
+                    </code>
+                  </a>
                 </p>
               </div>
             </div>
@@ -189,14 +198,16 @@ const palavraConta = correcoes.length === 1 ? s.correcoes.registoContaSing : s.c
               >
                 {motivoDaEntrada(e, lang)}
               </span>
-              <code
-                class="registo-id"
-                data-correcao-claim={e.claimId}
-                data-correcao-n={String(e.n)}
-                data-correcao-campo="id"
-              >
-                {e.claimId}
-              </code>
+              <a href={caminhoDaLinha(e.claimId, lang)}>
+                <code
+                  class="registo-id"
+                  data-correcao-claim={e.claimId}
+                  data-correcao-n={String(e.n)}
+                  data-correcao-campo="id"
+                >
+                  {e.claimId}
+                </code>
+              </a>
               <span
                 class="vh"
                 data-correcao-claim={e.claimId}
@@ -220,6 +231,18 @@ const palavraConta = correcoes.length === 1 ? s.correcoes.registoContaSing : s.c
           <h3 class="registo-titulo" id="registo-proveniencia">{s.correcoes.registoProvenienciaK}</h3>
         </div>
         <p class="registo-nota">{s.correcoes.registoProvenienciaNota}</p>
+        {/* A CONTAGEM, COM A SUA PORTA. A lista dava o número a quem o contasse
+            à mão (revisão cruzada 2, R16). É estado do sítio e não uma medição
+            de Portugal: leva `data-prova` e a porta desta secção, e o portão
+            recalcula-a por conta própria. */}
+        <p class="registo-conta">
+          <ValorDaProva
+            chave="revisoes_de_proveniencia"
+            item={p.revisoes_de_proveniencia}
+            lang={lang}
+          />{' '}
+          {palavraRevisoes}
+        </p>
         <ul class="registo-proveniencia-linhas">
           {primeiraPorLinha.map((e) => (
             <li>

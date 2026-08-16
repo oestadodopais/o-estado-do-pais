@@ -154,8 +154,15 @@ const rotuloDoCriterio = (tipo) =>
                         endereço dentro do motor: não abre, não diz nada a quem
                         lê, e a única coisa que o leitor precisa de saber sobre
                         ele é se está selado. */}
+                    {/* O ESTADO DO REGISTO PRÉVIO, MARCADO PARA SER CONFERIDO.
+                        O rótulo é uma frase da casa e não um campo do registo,
+                        e por isso não leva `data-agenda`: leva a marca do
+                        estado, e o portão compara o estado com o registo E a
+                        frase visível com a sua própria cópia dos dois rótulos.
+                        Trocar «iniciado» por «selado» no gabarito passava
+                        (revisão cruzada 2, #5). */}
                     {item.registo_previo_estado && (
-                      <p class="agenda-nota">
+                      <p class="agenda-nota" data-agenda-registo-previo={item.registo_previo_estado}>
                         <span class="agenda-k-inline">
                           {item.registo_previo_estado === 'selado'
                             ? s.agenda.registoPrevioSelado
@@ -226,7 +233,10 @@ const rotuloDoCriterio = (tipo) =>
                                   </span>
                                 </span>
                               ) : (
-                                <span class="agenda-sem-data">
+                                <span
+                                  class="agenda-sem-data"
+                                  data-agenda-sem-data={evento.motivo_sem_data}
+                                >
                                   <span
                                     class="marcador"
                                     lang="pt-PT"
@@ -246,6 +256,28 @@ const rotuloDoCriterio = (tipo) =>
                                   <Claim id={id} chip lang={lang} />
                                 </span>
                               ))}
+                            </span>
+                          )}
+                          {/* O LIMIAR DO QUADRO, COMO CAMPO E NÃO COMO FRASE.
+                              Até 16.08.2026 o «9%» vinha citado dentro da nota,
+                              onde era um algarismo em prosa corrente sem
+                              natureza declarada (revisão cruzada 2, R09). O
+                              registo passou a trazê-lo em campo próprio, com o
+                              endereço, a data da leitura e a frase da fonte, e
+                              aqui rende-se com o motivo que a casa já tinha
+                              para exactamente isto: um limiar é a régua contra
+                              a qual a medição se lê, não uma medição. */}
+                          {criterio.limiar && (
+                            <span class="agenda-limiar">
+                              <span class="agenda-k-inline">{s.agenda.limiarK}</span>{' '}
+                              <span class="mono" data-nonledger="limiar-do-quadro">
+                                <span data-agenda={`${item.id}.criterios[${n}].limiar.valor`}>
+                                  {criterio.limiar.valor}
+                                </span>{' '}
+                                <span data-agenda={`${item.id}.criterios[${n}].limiar.unidade`}>
+                                  {criterio.limiar.unidade}
+                                </span>
+                              </span>
                             </span>
                           )}
                           {criterio.nota && (
@@ -342,7 +374,7 @@ const rotuloDoCriterio = (tipo) =>
                   <p class="agenda-k">{s.agenda.historicoK}</p>
                   <ol class="agenda-historico">
                     {item.historico.map((entrada, n) => (
-                      <li class="agenda-historico-entrada">
+                      <li class="agenda-historico-entrada" data-agenda-historico={String(n)}>
                         <p class="agenda-historico-cabeca">
                           <span
                             class="mono"
@@ -354,7 +386,16 @@ const rotuloDoCriterio = (tipo) =>
                           <span class="agenda-historico-tipo">
                             {s.agenda.historicoTipos[entrada.tipo] ?? entrada.tipo}
                           </span>
-                          <span class="agenda-historico-estados mono">
+                          {/* A TRANSIÇÃO, MARCADA. Os rótulos são da casa e a
+                              transição é do registo: a marca traz `de` e `para`
+                              crus, e o portão confere os dois contra o registo e
+                              a frase visível contra a sua cópia dos rótulos.
+                              Trocar «passa a Em curso» por «passa a Concluído»
+                              passava (revisão cruzada 2, #5). */}
+                          <span
+                            class="agenda-historico-estados mono"
+                            data-agenda-transicao={`${entrada.de ?? ''}>${entrada.para}`}
+                          >
                             {entrada.de ? `${s.agenda.estados[entrada.de]} → ` : `${s.agenda.historicoPara} `}
                             {s.agenda.estados[entrada.para] ?? entrada.para}
                           </span>
@@ -487,7 +528,7 @@ const rotuloDoCriterio = (tipo) =>
           semData.map((evento) => (
             <li class="agenda-evento" id={ancoraDoEvento(evento.id)}>
               <p class="agenda-evento-cabeca">
-                <span class="agenda-sem-data">
+                <span class="agenda-sem-data" data-agenda-sem-data={evento.motivo_sem_data}>
                   <span class="marcador" lang="pt-PT" data-agenda={`evento:${evento.id}.marcador`}>
                     {evento.marcador}
                   </span>{' '}

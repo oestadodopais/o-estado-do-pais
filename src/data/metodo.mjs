@@ -153,8 +153,8 @@ export const REGRAS = [
       {
         chave: 'linhas_anteriores_ao_tubo',
         rotulo: {
-          pt: 'linhas anteriores ao tubo',
-          en: 'rows written before the pipe existed',
+          pt: 'linhas registadas antes de existir travessia',
+          en: 'rows recorded before any crossing existed',
         },
       },
       {
@@ -228,7 +228,7 @@ export const REGRAS = [
         chave: 'aritmetica_reavaliada',
         rotulo: {
           pt: 'contas refeitas nesta construção',
-          en: 'sums redone in this build',
+          en: 'arithmetic re-evaluated in this build',
         },
       },
     ],
