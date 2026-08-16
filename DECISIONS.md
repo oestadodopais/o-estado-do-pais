@@ -3389,21 +3389,25 @@ a de B e a de agora, sobre uma reconstrução da árvore de B.
 
 | Medida | Antes (B, 305 páginas) | Depois (307 páginas) |
 | --- | ---: | ---: |
-| Frases de moldura distintas | 80 | **80** |
-| Ocorrências | 2 345 | **2 349** |
-| …sem a porta das correções | 2 040 | **2 042** |
+| Frases de moldura distintas | 80 | **75** |
+| Ocorrências | 2 345 | **2 353** |
+| …sem a porta das correções | 2 040 | **2 046** |
 | Páginas com porta de correções | 305 de 305 | **307 de 307** |
-| Palavras de moldura | 31 852 | **25 159** |
+| Palavras de moldura | 31 852 | **24 858** |
 | Valores da primeira página sem selo | 0 | **0** |
 
-**As distintas não mexem, e a razão importa:** cada frase cortada foi
-substituída por uma linha, e uma linha com trinta ou mais carácteres continua a
-ser uma frase de moldura para esta régua. O que mudou foram as **palavras**:
-menos 6 693, vinte e um por cento. As quatro ocorrências a mais são a agenda:
-duas páginas novas, cada uma com a linha do cabeçalho e a porta das correções.
+**Os dois cortes das páginas de linha não movem as distintas, e a razão
+importa:** cada frase cortada foi substituída por uma linha, e uma linha com
+trinta ou mais carácteres continua a ser uma frase de moldura para esta régua. O
+que esses cortes mudaram foram as **palavras**. As cinco distintas que
+desaparecem são outra coisa: as descrições dos dois trabalhos que passaram a ser
+transcrição (abaixo, nos defeitos pequenos) saíram da conta ao ganharem
+`data-verbatim`, que é uma origem declarada. E as oito ocorrências a mais são a
+agenda: duas páginas novas, cada uma com a linha do cabeçalho, a porta das
+correções e os rótulos das secções.
 
 **Esta é a linha de base** que o `gate:identidade` vai segurar quando for
-construído (fase 4): 80 frases distintas, 2 349 ocorrências, 25 159 palavras de
+construído (fase 4): 75 frases distintas, 2 353 ocorrências, 24 858 palavras de
 moldura, 307 de 307 páginas com porta de correções. A régua **não mede** frases
 de meta-comentário: não tem essa conta e não se inventou uma aqui, porque uma
 medida nova sem um «antes» medido com ela não compara nada. Fica por construir,
@@ -3891,7 +3895,7 @@ e por isso não foi tocada neste bloco.
 
 | Item | Estado |
 | --- | --- |
-| As frases de moldura que ficam | A política de correções e a nota de não-ordenação de partidos saíram das páginas de linha a 16.08.2026 e passaram a rótulo e porta (§1.40): as frases distintas ficam em **80**, as ocorrências em **2 349**, e as **palavras** de moldura caem de 31 852 para **25 159**. O alvo do `BRIEF` §6.3 é **≤ 12 frases distintas**, e continua longe: o que resta são rótulos e cabeçalhos de secção, que esta régua conta como moldura e um leitor não lê como tal. Fechar a diferença é decidir se a régua mede a coisa certa, e é trabalho da fase da voz. |
+| As frases de moldura que ficam | A política de correções e a nota de não-ordenação de partidos saíram das páginas de linha a 16.08.2026 e passaram a rótulo e porta (§1.40): as **palavras** de moldura caem de 31 852 para **24 858**; as frases distintas ficam em **75** e as ocorrências em **2 353**. O alvo do `BRIEF` §6.3 é **≤ 12 frases distintas**, e continua longe: o que resta são rótulos e cabeçalhos de secção, que esta régua conta como moldura e um leitor não lê como tal. Fechar a diferença é decidir se a régua mede a coisa certa, e é trabalho da fase da voz. |
 | O aparelho da página de Évora | As quatro ressalvas repetidas saíram a 16.08.2026 (§1.40): cada uma ficou onde é dita com a sua prova, e o aparelho ganhou a porta para lá. De 316 para 262 palavras em português, de 305 para 250 em inglês, e de dez para seis itens em «o que esta página não sabe». O que resta é a prosa que só existe ali. |
 | ~~`/sobre` e `/correcoes`~~ | **Construídos a 16.08.2026 (§1.39).** `ABOUT.md` passou a ser a ideia e os apontadores; a política das correções tem casa única. |
 | ~~`EDITION` no rodapé~~ | **Retirada a 16.08.2026 (§1.39),** com a própria constante. O cabeçalho passa a mostrar a data da última reconferência do painel, em todas as páginas. |
