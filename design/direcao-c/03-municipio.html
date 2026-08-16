@@ -1,0 +1,479 @@
+<!-- direção C · Editorial generoso · protótipo 03 · a página do município (Évora) -->
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Évora · Municípios · O Estado do País</title>
+<style>/* direção C · Editorial generoso · a folha, apertada. Fonte legível e comentada: tokens.css + _estilo.css, ao lado deste ficheiro. */
+:root{--paper:#fbfaf7;--paper-2:#f3f0e9;--paper-3:#e9e4d9;--ink:#1b1a17;--muted:#5c574e;--yellow:#e8a80c;--oxblood:#7c2333;--rule:#e3ded3;--rule-strong:#c2bbac;--axis:#8a8478;--dotcol:#6f6a60;--onyellow:#1b1a17;--focus:#1b1a17;--shadow:none;--f-leitura:'Iowan Old Style','Palatino','Palatino Linotype','Book Antiqua','URW Palladio L',Georgia,'Times New Roman',serif;--f-mono:ui-monospace,'SF Mono',SFMono-Regular,Menlo,Monaco,'Cascadia Mono','Roboto Mono',Consolas,monospace;--f-serif:'Iowan Old Style','Palatino','Palatino Linotype','Book Antiqua','URW Palladio L',Georgia,'Times New Roman',serif;--f-sans:'Avenir Next','Avenir','Helvetica Neue',Helvetica,Arial,'Segoe UI',system-ui,sans-serif;--ajuste-x:0.47;--corpo:19px;--medida:640px;--altura-linha:1.62;--wrap:1120px;--calha:120px;--nota:240px;--vao:48px;--gutter:clamp(20px,4vw,56px);--ar-1:8px;--ar-2:16px;--ar-3:28px;--ar-4:48px;--ar-5:80px;--ar-6:120px}@media (prefers-color-scheme:dark){:root:not([data-theme='light']){--paper:#14130f;--paper-2:#1b1915;--paper-3:#24211b;--ink:#ece7dc;--muted:#a09a8d;--yellow:#e8a80c;--oxblood:#d98a95;--rule:#2c2921;--rule-strong:#443f35;--axis:#6e6a60;--dotcol:#8a8478;--onyellow:#1b1a17;--focus:#ece7dc;--shadow:none}}:root[data-theme='dark']{--paper:#14130f;--paper-2:#1b1915;--paper-3:#24211b;--ink:#ece7dc;--muted:#a09a8d;--yellow:#e8a80c;--oxblood:#d98a95;--rule:#2c2921;--rule-strong:#443f35;--axis:#6e6a60;--dotcol:#8a8478;--onyellow:#1b1a17;--focus:#ece7dc;--shadow:none}*,*::before,*::after{box-sizing:border-box}html{color-scheme:light dark}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-leitura);font-size:var(--corpo);line-height:var(--altura-linha);font-size-adjust:var(--ajuste-x);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:1px}a{color:inherit;text-decoration-color:var(--rule-strong);text-underline-offset:3px}a:hover{text-decoration-color:currentColor}img,svg{max-width:100%}p{margin:0 0 var(--ar-2)}p:last-child{margin-bottom:0}.vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}.skip{position:absolute;left:-9999px;top:0;background:var(--paper);color:var(--ink);border:1px solid var(--ink);padding:10px 16px;z-index:20}.skip:focus{left:var(--gutter);top:10px}.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter) var(--ar-6)}.pagina{display:grid;grid-template-columns:var(--calha) minmax(0,var(--medida)) var(--nota);column-gap:var(--vao);align-items:start}.rail{grid-column:1}.texto{grid-column:2;min-width:0}.nota{grid-column:3;min-width:0}.faixa{grid-column:1 / -1;min-width:0}.texto-e-nota{grid-column:2 / -1;min-width:0}.pagina>*{margin-bottom:var(--ar-5)}.pagina>*:last-child{margin-bottom:0}.topbar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--ar-2);padding:var(--ar-2) 0;border-bottom:1px solid var(--rule)}.nav{display:flex;flex-wrap:wrap;gap:var(--ar-2) var(--ar-3);font-family:var(--f-mono);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)}.nav a{text-decoration:none;padding-bottom:2px;border-bottom:1px solid transparent}.nav a:hover{color:var(--ink);border-bottom-color:var(--rule-strong)}.nav a[aria-current='page']{color:var(--ink);border-bottom-color:var(--ink)}.masthead{padding:var(--ar-5) 0 var(--ar-3);display:grid;gap:var(--ar-1)}.wordmark{font-family:var(--f-leitura);font-weight:400;font-size:clamp(38px,5.4vw,62px);line-height:1;letter-spacing:-0.012em;margin:0}.wordmark a{text-decoration:none}.masthead-compact{padding:var(--ar-3) 0 var(--ar-2);grid-template-columns:1fr auto;align-items:baseline;gap:var(--ar-2) var(--ar-3)}.masthead-compact .wordmark{font-size:clamp(22px,2.6vw,28px)}.method-line{font-family:var(--f-mono);font-size:12px;letter-spacing:0.06em;color:var(--muted);margin:0}.masthead-furniture{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:var(--ar-1) var(--ar-3);font-family:var(--f-mono);font-size:11.5px;letter-spacing:0.04em;color:var(--muted);border-top:1px solid var(--rule);padding-top:var(--ar-2);margin-top:var(--ar-2)}.masthead-furniture a{text-decoration:none;border-bottom:1px solid var(--rule)}.masthead-furniture a:hover{color:var(--ink);border-bottom-color:var(--ink)}.masthead-furniture [data-vencida='sim']{color:var(--ink)}.claim-value{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-weight:600;font-size:0.92em;letter-spacing:-0.012em;color:var(--ink);font-size-adjust:none}.claim{display:inline}.src-chip{display:inline-flex;align-items:baseline;gap:6px;text-transform:none;font-family:var(--f-mono);font-size:11px;font-size-adjust:none;letter-spacing:0.05em;color:var(--muted);text-decoration:none;white-space:nowrap;vertical-align:baseline;position:relative}.src-chip::before{content:'';width:7px;height:7px;flex:none;align-self:center;border:1px solid var(--rule-strong);background:var(--paper-3)}.src-chip.is-unverified::before{background:transparent;border-style:dashed;border-color:var(--muted)}.src-chip-porta{border-bottom:1px solid var(--rule)}a.src-chip:hover,a.src-chip:focus-visible{color:var(--ink)}a.src-chip:hover::before,a.src-chip:focus-visible::before{border-color:var(--ink)}a.src-chip:hover .src-chip-porta{border-bottom-color:var(--ink)}.src-chip-texto{white-space:normal}.claim .src-chip .src-chip-texto{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}.claim .src-chip:hover .src-chip-texto,.claim .src-chip:focus-visible .src-chip-texto{position:absolute;left:0;top:calc(100% + 8px);z-index:30;width:max-content;max-width:20rem;height:auto;margin:0;padding:9px 11px;overflow:visible;clip:auto;white-space:normal;background:var(--paper);border:1px solid var(--rule-strong);color:var(--ink);font-size:11px;line-height:1.5;letter-spacing:0.02em;text-align:left}.claim .src-chip:hover .src-chip-texto::after,.claim .src-chip:focus-visible .src-chip-texto::after{content:' · abrir a linha \2192';color:var(--muted)}.selo-solto .src-chip-texto{color:var(--muted)}.selo-solto .src-chip{white-space:normal}.marcador{font-family:var(--f-mono);font-size:10.5px;font-size-adjust:none;font-weight:600;letter-spacing:0.03em;color:var(--ink);background:transparent;border:1px dashed var(--muted);padding:1px 6px;white-space:nowrap;text-decoration:none;display:inline-block;vertical-align:baseline}a.marcador:hover{border-style:solid;background:var(--paper-3)}h1,h2,h3,h4{font-family:var(--f-leitura);font-weight:400;margin:0;text-wrap:balance;letter-spacing:-0.008em}h1{font-size:clamp(34px,4.6vw,50px);line-height:1.08}h2{font-size:clamp(24px,2.6vw,30px);line-height:1.18}h3{font-size:21px;line-height:1.25}h4{font-size:19px;line-height:1.3}.eyebrow{display:block;font-family:var(--f-mono);font-size:10.5px;font-size-adjust:none;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted)}.mono{font-family:var(--f-mono);font-size:0.86em;font-size-adjust:none;font-variant-numeric:tabular-nums}.lede{font-size:22px;line-height:1.5;margin-top:var(--ar-3)}.sec-sub{color:var(--muted);font-size:18px}.linha-nota,.aparelho-nota{font-size:16px;color:var(--muted)}.layer-tag,.rail-k{font-family:var(--f-mono);font-size:10.5px;font-size-adjust:none;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin:0 0 var(--ar-1);padding-top:4px;border-top:1px solid var(--rule-strong);display:block}.rail-k-solto{border-top:0;padding-top:0;letter-spacing:0.12em}.nota-bloco{font-family:var(--f-mono);font-size:12px;font-size-adjust:none;line-height:1.55;color:var(--muted);border-left:1px solid var(--rule);padding-left:var(--ar-2)}.nota-bloco + .nota-bloco{margin-top:var(--ar-3)}.nota-k{display:block;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;font-size:10px;color:var(--ink);margin-bottom:var(--ar-1)}.nota-bloco p{margin:0 0 var(--ar-1)}.nota-bloco ul{margin:0;padding-left:1.1em}.nota-bloco li{margin-bottom:var(--ar-1)}.nota-bloco a{text-decoration-color:var(--rule-strong)}.nota-de-prototipo{font-family:var(--f-mono);font-size:11px;font-size-adjust:none;line-height:1.5;color:var(--muted);border:1px dashed var(--rule-strong);padding:var(--ar-2)}.nota-de-prototipo::before{content:'protótipo';display:block;font-size:9.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);margin-bottom:6px}.glance-num,.figura-num,.linha-valor-num{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-weight:600;font-size-adjust:none;letter-spacing:-0.04em;color:var(--ink);line-height:0.94}.glance-num{font-size:clamp(64px,9vw,108px);display:block}.glance-num-par{font-size:clamp(40px,5vw,62px);line-height:1.1}.glance-meta{margin-top:var(--ar-2)}.glance-name{font-size:21px}.glance-unit{font-family:var(--f-mono);font-size:11.5px;font-size-adjust:none;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-top:4px}details.deep{border-top:1px solid var(--rule-strong);margin-top:var(--ar-4)}details.deep>summary{font-family:var(--f-mono);font-size:11.5px;font-size-adjust:none;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);padding:var(--ar-2) 0;cursor:pointer;list-style:none;display:flex;gap:var(--ar-2);align-items:baseline}details.deep>summary::-webkit-details-marker{display:none}details.deep>summary::before{content:'+';font-weight:600;color:var(--ink)}details.deep[open]>summary::before{content:'\2212'}details.deep>summary:hover{color:var(--ink)}.deep-body{padding-bottom:var(--ar-3);display:grid;gap:var(--ar-3)}.deep-item{display:grid;gap:var(--ar-1)}.deep-k{font-family:var(--f-mono);font-size:10.5px;font-size-adjust:none;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted)}.deep-v{font-size:17.5px;line-height:1.55}.verbatim{font-family:var(--f-mono);font-size:12.5px;font-size-adjust:none;line-height:1.6;color:var(--muted);white-space:pre-line}.abertura{padding:var(--ar-3) 0 0}.abertura-frase{font-size:26px;line-height:1.4;margin-top:var(--ar-3)}.figuras{border-top:1px solid var(--rule-strong)}.figura{display:grid;grid-template-columns:minmax(150px,auto) minmax(0,1fr);gap:var(--ar-2) var(--ar-3);padding:var(--ar-3) 0;border-bottom:1px solid var(--rule);align-items:start}.figura-num{font-size:clamp(30px,3.2vw,42px);grid-row:span 4}.figura-nome{font-size:21px;align-self:end}.figura-medida{font-family:var(--f-mono);font-size:10.5px;font-size-adjust:none;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);line-height:1.5;grid-column:2}.figura-frase{grid-column:2;font-size:17.5px;line-height:1.55}.figura-selo{grid-column:2;margin-top:calc(var(--ar-1) * -1)}.map-svg{display:block;max-height:860px;width:auto;max-width:100%;height:auto;margin:0 auto}.mun{fill:var(--dotcol);opacity:0.5}.mun-lit{fill:var(--yellow);stroke:var(--ink);stroke-width:1}.lit-leader{stroke:var(--ink);stroke-width:1;fill:none}.lit-label{font-family:var(--f-mono);font-size:11px;fill:var(--ink)}.frame{fill:none;stroke:var(--rule-strong);stroke-width:1}.frame-label,.tk,.datum-label,.gap-label,.mk-name{font-family:var(--f-mono);font-size:10.5px;letter-spacing:0.08em;fill:var(--muted)}.tk-datum,.datum-label,.mk-name{fill:var(--ink)}.map-legenda{display:grid;gap:var(--ar-1)}.legend-item{display:flex;align-items:center;gap:var(--ar-1)}.legend-dot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}.ld-on{background:var(--yellow);border:1px solid var(--ink)}.ld-off{background:var(--dotcol);opacity:0.5}.compo-row,.compo-tot{display:grid;grid-template-columns:1fr auto;gap:var(--ar-1);align-items:baseline;padding:4px 0;border-bottom:1px solid var(--rule)}.compo-tot{border-bottom:0;border-top:1px solid var(--rule-strong);color:var(--ink)}.compo-n{text-align:right}.rule-svg{display:block;width:100%;height:auto}.mk-val{font-size:15px;font-weight:600;fill:var(--ink)}.gap-label{font-size:12px}.legenda-de-portas{display:flex;flex-wrap:wrap;gap:var(--ar-1) var(--ar-2);border-top:1px solid var(--rule);padding-top:var(--ar-2);margin-top:var(--ar-2)}.legenda-de-portas .rail-k{border:0;padding:0;margin:0;flex:none}.svg-scroll{overflow-x:auto}.linha-cabeca{padding-top:var(--ar-3)}.linha-valor{display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--ar-1) var(--ar-2);margin:var(--ar-2) 0 var(--ar-2)}.linha-valor-num{font-size:clamp(56px,8vw,96px)}.linha-valor-unidade{font-family:var(--f-mono);font-size:14px;font-size-adjust:none;font-weight:600;letter-spacing:0.04em;color:var(--muted)}.linha-id{font-family:var(--f-mono);font-size:12px;font-size-adjust:none;letter-spacing:0.04em;color:var(--muted);margin:0}.linha-frase{font-size:22px;line-height:1.5;margin-top:var(--ar-3)}.recibo{border-top:1px solid var(--rule-strong)}.recibo-degrau{display:grid;grid-template-columns:128px minmax(0,1fr);gap:var(--ar-1) var(--ar-3);padding:var(--ar-3) 0;border-bottom:1px solid var(--rule);align-items:start}.recibo-k{font-family:var(--f-mono);font-size:10.5px;font-size-adjust:none;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);padding-top:5px}.recibo-v{min-width:0}.recibo-v>p{margin-bottom:var(--ar-1)}.linha-excerto{margin:0 0 var(--ar-1);padding:0 0 0 var(--ar-2);border-left:2px solid var(--yellow);font-family:var(--f-mono);font-size:13px;font-size-adjust:none;line-height:1.6}.endereco{font-family:var(--f-mono);font-size:12px;font-size-adjust:none;word-break:break-all;line-height:1.55}.recorte{border:1px dashed var(--rule-strong);background:var(--paper-2);min-height:108px;display:grid;place-items:center;padding:var(--ar-3);text-align:center;font-family:var(--f-mono);font-size:11px;font-size-adjust:none;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)}.verificacao-linha{display:grid;grid-template-columns:auto minmax(0,1fr);gap:var(--ar-1) var(--ar-2);padding:6px 0;border-bottom:1px solid var(--rule);font-family:var(--f-mono);font-size:12.5px;font-size-adjust:none;align-items:baseline}.verificacao-linha:last-child{border-bottom:0}.verificacao-estado{color:var(--muted)}.log-vazio-v{font-size:17.5px;color:var(--muted)}.porta-correccoes{border-top:1px solid var(--rule-strong);padding-top:var(--ar-2)}.porta-correccoes .linha-campo-k{display:block;font-family:var(--f-mono);font-size:10.5px;font-size-adjust:none;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);margin-bottom:var(--ar-1)}.ligacao-email{white-space:nowrap}.porta-seguinte{font-family:var(--f-mono);font-size:12px;font-size-adjust:none;letter-spacing:0.04em}.mun-campos{margin:0;display:grid;grid-template-columns:200px minmax(0,1fr);gap:0 var(--ar-3);border-top:1px solid var(--rule)}.mun-campos dt{font-family:var(--f-mono);font-size:11px;font-size-adjust:none;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);padding:var(--ar-2) 0 0}.mun-campos dd{margin:0;padding:var(--ar-2) 0;border-bottom:1px solid var(--rule);font-size:17px;line-height:1.55}.mun-campos dt + dd{grid-column:2}.mun-campo-vazio{color:var(--muted)}.mun-distancia-svg,.mun-serie-svg{display:block;width:100%;height:auto}.mun-barra-rot,.mun-tecto-rot,.mun-serie-val{font-size:13px;font-weight:600;fill:var(--ink)}.mun-tempo-eixo{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:10.5px;letter-spacing:0.1em;color:var(--muted);border-bottom:1px solid var(--rule-strong);padding-bottom:4px;margin-bottom:var(--ar-3)}.mun-mandato{border-left:1px solid var(--rule-strong);padding-left:var(--ar-3);margin-bottom:var(--ar-4);position:relative}.mun-mandato::before{content:'';position:absolute;left:-4px;top:9px;width:7px;height:7px;background:var(--ink)}.mun-mandato-cabeca{display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--ar-1) var(--ar-2);margin-bottom:var(--ar-2)}.mun-mandato-periodo{font-family:var(--f-mono);font-size:15px;font-size-adjust:none;font-weight:600;letter-spacing:0.02em}.mun-mandato-quem{font-size:21px}.mun-mandato-lista,.mun-mandato-instalado{font-family:var(--f-mono);font-size:11px;font-size-adjust:none;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted)}.mun-estudo{border-top:1px solid var(--rule);padding:var(--ar-3) 0}.mun-estudo-titulo{font-size:21px;margin-bottom:var(--ar-1)}.mun-estudo-frase{color:var(--muted);font-size:17px}.regra{border-top:1px solid var(--rule-strong);padding:var(--ar-4) 0 var(--ar-4)}.regra-n{font-family:var(--f-mono);font-size:30px;font-size-adjust:none;font-weight:600;color:var(--muted);display:block;line-height:1}.regra-titulo{margin-bottom:var(--ar-2)}.metodo-p{font-size:19px;line-height:1.62}.regra-linha{margin-top:var(--ar-3);display:grid;grid-template-columns:128px minmax(0,1fr);gap:var(--ar-1) var(--ar-3);align-items:start}.regra-k{font-family:var(--f-mono);font-size:10.5px;font-size-adjust:none;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);padding-top:5px}.regra-v{font-size:17px;line-height:1.55;color:var(--muted)}.regra-prova{font-family:var(--f-mono);font-size:12.5px;font-size-adjust:none;letter-spacing:0.02em;color:var(--muted);line-height:1.7}.prova-valor{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule-strong)}.prova-valor:hover{border-bottom-color:var(--ink)}.regra-portas{margin-top:var(--ar-3);font-family:var(--f-mono);font-size:12px;font-size-adjust:none;letter-spacing:0.04em}.mecanismo-svg{display:block;width:100%;height:auto}.mecanismo-caixa{fill:var(--paper-2);stroke:var(--rule-strong);stroke-width:1}.mecanismo-rotulo{font-family:var(--f-mono);font-size:10.5px;letter-spacing:0.14em;fill:var(--muted)}.mecanismo-num{font-family:var(--f-mono);font-size:22px;font-weight:600;fill:var(--ink)}.mecanismo-cap{font-family:var(--f-mono);font-size:10px;letter-spacing:0.04em;fill:var(--muted)}.mecanismo-seta{stroke:var(--axis);stroke-width:1;fill:none}.mecanismo-ponta{fill:var(--axis)}.mecanismo-breve{font-size:21px;line-height:1.45;margin-top:var(--ar-3)}.agenda-estado{font-family:var(--f-mono);font-size:13px;font-size-adjust:none;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);border-top:2px solid var(--ink);padding-top:var(--ar-1)}.agenda-item{border-top:1px solid var(--rule);padding:var(--ar-4) 0}.agenda-item-eyebrow{display:flex;flex-wrap:wrap;gap:var(--ar-1) var(--ar-2);font-family:var(--f-mono);font-size:10.5px;font-size-adjust:none;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--ar-1)}.agenda-titulo{font-size:26px;line-height:1.2;margin-bottom:var(--ar-3)}.agenda-bloco{margin-top:var(--ar-3);display:grid;grid-template-columns:128px minmax(0,1fr);gap:var(--ar-1) var(--ar-3);align-items:start}.agenda-k{font-family:var(--f-mono);font-size:10.5px;font-size-adjust:none;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);padding-top:5px;margin:0}.agenda-v{min-width:0}.agenda-criterios{list-style:none;margin:0;padding:0;display:grid;gap:var(--ar-2)}.agenda-criterio{border-left:1px solid var(--rule-strong);padding-left:var(--ar-2)}.agenda-criterio-tipo{display:block;font-family:var(--f-mono);font-size:10px;font-size-adjust:none;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted)}.agenda-quadro{display:block;font-size:17px;line-height:1.45;margin:2px 0 var(--ar-1)}.agenda-criterio-nota,.agenda-nota{font-family:var(--f-mono);font-size:12px;font-size-adjust:none;line-height:1.6;color:var(--muted)}.agenda-linha-selo{display:inline-flex;align-items:baseline;gap:var(--ar-1)}.agenda-datas{display:flex;flex-wrap:wrap;gap:var(--ar-1) var(--ar-3);font-family:var(--f-mono);font-size:12px;font-size-adjust:none;color:var(--muted);margin:0}.agenda-k-inline{color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;font-size:10px;margin-right:6px}.agenda-datas .mono,.agenda-nota .mono{color:var(--ink)}.agenda-historico{list-style:none;margin:0;padding:0;display:grid;gap:var(--ar-2)}.agenda-historico-cabeca{display:flex;flex-wrap:wrap;gap:var(--ar-1) var(--ar-2);font-family:var(--f-mono);font-size:11.5px;font-size-adjust:none;letter-spacing:0.04em;color:var(--ink);margin-bottom:4px}.agenda-historico-tipo{color:var(--muted);text-transform:uppercase;letter-spacing:0.14em;font-size:10px}.agenda-historico-motivo{font-size:17px;line-height:1.55;color:var(--muted)}.agenda-vazio{color:var(--muted)}.agenda-evento{border-top:1px solid var(--rule);padding:var(--ar-3) 0;list-style:none}.agenda-eventos{margin:0;padding:0}.agenda-evento-cabeca{display:flex;flex-wrap:wrap;gap:var(--ar-1) var(--ar-2);align-items:baseline;margin-bottom:4px}.agenda-evento-data{font-weight:600;color:var(--ink)}.agenda-evento-fonte{font-family:var(--f-mono);font-size:10.5px;font-size-adjust:none;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)}.agenda-evento-titulo{font-size:19px;line-height:1.4;margin-bottom:var(--ar-1)}.agenda-excerto{margin:var(--ar-1) 0;padding-left:var(--ar-2);border-left:2px solid var(--yellow);font-family:var(--f-mono);font-size:12.5px;font-size-adjust:none;line-height:1.6;color:var(--ink)}.agenda-afecta a{color:var(--ink)}.etiqueta-correcao{font-family:var(--f-mono);font-size:10px;font-size-adjust:none;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--oxblood);border:1px solid var(--oxblood);padding:1px 6px}.ar-antes-1{margin-top:var(--ar-1)}.ar-antes-2{margin-top:var(--ar-2)}.ar-antes-3{margin-top:var(--ar-3)}.rodape{border-top:1px solid var(--rule-strong);margin-top:var(--ar-6);padding:var(--ar-3) 0 var(--ar-5)}.rodape-nav{display:flex;flex-wrap:wrap;gap:var(--ar-2) var(--ar-3);font-family:var(--f-mono);font-size:11.5px;font-size-adjust:none;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin:0}.rodape-nav a{text-decoration:none;border-bottom:1px solid transparent}.rodape-nav a:hover{color:var(--ink);border-bottom-color:var(--rule-strong)}@media (max-width:1180px){.pagina{grid-template-columns:minmax(0,var(--medida)) var(--nota)}.rail{grid-column:1}.texto{grid-column:1}.nota{grid-column:2}.texto-e-nota{grid-column:1 / -1}.rail{margin-bottom:var(--ar-2)}}@media (max-width:900px){.pagina{grid-template-columns:minmax(0,1fr)}.rail,.texto,.nota,.faixa,.texto-e-nota{grid-column:1}.pagina>*{margin-bottom:var(--ar-4)}.rail{margin-bottom:var(--ar-1)}.figura{grid-template-columns:minmax(110px,auto) minmax(0,1fr)}.mun-campos{grid-template-columns:minmax(0,1fr)}.mun-campos dt{padding-bottom:0}.mun-campos dt + dd{grid-column:1}}@media (max-width:620px){:root{--corpo:18px;--ar-5:56px;--ar-6:72px}.figura{grid-template-columns:minmax(0,1fr);gap:var(--ar-1)}.figura-num{grid-row:auto;font-size:44px}.figura-medida,.figura-frase,.figura-selo{grid-column:1}.recibo-degrau,.regra-linha,.agenda-bloco{grid-template-columns:minmax(0,1fr);gap:var(--ar-1)}.recibo-k,.regra-k,.agenda-k{padding-top:0}.lede{font-size:20px}.linha-frase,.abertura-frase{font-size:20px}.glance-num{font-size:68px}.linha-valor-num{font-size:60px}.mun-mandato{padding-left:var(--ar-2)}.masthead{padding-top:var(--ar-3)}.masthead-compact{grid-template-columns:minmax(0,1fr)}.svg-scroll>.rule-svg,.svg-scroll>.mecanismo-svg,.svg-scroll>.mun-distancia-svg,.svg-scroll>.mun-serie-svg{min-width:560px}.src-chip .mini{left:auto;right:0}}@media (prefers-reduced-motion:reduce){*,::before,::after{animation-duration:0.01ms !important;transition-duration:0.01ms !important;scroll-behavior:auto !important}}</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+<div class="wrap">
+
+<header>
+  <div class="topbar">
+    <nav class="nav" aria-label="Início">
+      <a href="https://oestadodopaís.pt/">Início</a>
+      <a href="https://oestadodopaís.pt/municipios" aria-current="page">Municípios</a>
+      <a href="https://oestadodopaís.pt/estudos">Estudos</a>
+      <a href="https://oestadodopaís.pt/livro-razao">Livro-razão</a>
+      <a href="https://oestadodopaís.pt/agenda">Agenda</a>
+      <a href="https://oestadodopaís.pt/metodo">Método</a>
+      <a href="https://oestadodopaís.pt/sobre">Sobre</a>
+    </nav>
+    <nav class="nav" aria-label="English">
+      <a href="https://oestadodopaís.pt/en/municipalities/evora" hreflang="en" lang="en">English</a>
+    </nav>
+  </div>
+  <div class="masthead masthead-compact">
+    <p class="wordmark"><a href="https://oestadodopaís.pt/">O Estado do País</a></p>
+    <p class="method-line" lang="pt-PT">Portugal, medido. Cada número tem fonte.</p>
+    <div class="masthead-furniture" data-sinal-de-tempo>
+      <span><a href="https://oestadodopaís.pt/#numeros">Painel europeu reconferido a <span data-nonledger="data-de-atualizacao">2026-08-12</span></a></span>
+      <span>Agenda: <a class="prova-valor" href="https://oestadodopaís.pt/agenda" data-prova="agenda_em_curso">3</a> em curso · <a class="prova-valor" href="https://oestadodopaís.pt/agenda" data-prova="agenda_a_seguir">1</a> a seguir</span>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+<div class="pagina">
+
+  <div class="rail"><p class="rail-k">Município</p></div>
+  <div class="texto">
+    <h1>Évora</h1>
+    <p class="glance-unit">distrito de Évora · Alentejo Central</p>
+    <p class="lede">Esta página mede o município de Évora e mostra de onde vem cada medida. Não interpreta: onde uma fonte não estabelece uma coisa, a página di-lo em vez de a supor.</p>
+  </div>
+  <div class="nota">
+    <div class="nota-bloco">
+      <span class="nota-k">Proveniência</span>
+      <p>Cada valor desta página tem uma linha no livro-razão. O selo ao lado do número é a porta para essa linha, onde estão a fonte, o documento, o sítio exato de onde o valor foi lido, o excerto e o dia em que foi lido. Nenhuma data de leitura é escrita aqui: quem quiser sabê-la, abre a linha.</p>
+    </div>
+  </div>
+
+  <!-- ===================================================== relance -->
+  <div class="rail"><p class="rail-k">Relance</p></div>
+  <div class="texto-e-nota">
+    <p class="sec-sub">Oito medidas. Seis vêm de organismos que publicam para todos os concelhos do país; duas só existem porque o próprio município as publica, e cada uma dessas diz-lo na sua linha.</p>
+    <div class="figuras">
+
+      <article class="figura">
+        <div class="claim-value figura-num" data-claim="evora-populacao-2025">58&#8239;567</div>
+        <h2 class="figura-nome">População residente</h2>
+        <p class="figura-medida">Pessoas · 2025</p>
+        <p class="figura-frase">Estimativa anual do INE para o concelho.</p>
+        <p class="figura-selo selo-solto"><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-populacao-2025"><span class="src-chip-porta">fonte</span> <span class="src-chip-texto">Évora — Economia, Investidores, Portas Abertas 2026</span></a></p>
+      </article>
+
+      <article class="figura">
+        <div class="claim-value figura-num" data-claim="evora-poder-de-compra-2023">111,47</div>
+        <h2 class="figura-nome">Poder de compra por habitante</h2>
+        <p class="figura-medida">Índice · média nacional = base · 2023</p>
+        <p class="figura-frase">Poder de compra per capita, publicado pelo INE para todos os concelhos.</p>
+        <p class="figura-selo selo-solto"><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-poder-de-compra-2023"><span class="src-chip-porta">fonte</span> <span class="src-chip-texto">Évora — Economia, Investidores, Portas Abertas 2026</span></a></p>
+      </article>
+
+      <article class="figura">
+        <div class="claim-value figura-num" data-claim="evora-desemprego-registado-2024">1&#8239;596</div>
+        <h2 class="figura-nome">Desemprego registado</h2>
+        <p class="figura-medida">Pessoas · dezembro de 2024</p>
+        <p class="figura-frase">Inscritos no fim do mês nos serviços de emprego, ficheiro mensal por concelho.</p>
+        <p class="figura-selo selo-solto"><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-desemprego-registado-2024"><span class="src-chip-porta">fonte</span> <span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></p>
+      </article>
+
+      <article class="figura">
+        <div class="claim-value figura-num" data-claim="evora-empresas-2024">7&#8239;907</div>
+        <h2 class="figura-nome">Empresas sediadas</h2>
+        <p class="figura-medida">Empresas · 2024</p>
+        <p class="figura-frase">Sistema de contas integradas das empresas, por concelho da sede.</p>
+        <p class="figura-selo selo-solto"><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-empresas-2024"><span class="src-chip-porta">fonte</span> <span class="src-chip-texto">Évora — Economia, Investidores, Portas Abertas 2026</span></a></p>
+      </article>
+
+      <article class="figura">
+        <div class="claim-value figura-num" data-claim="evora-divida-dgal-2024">54&#8239;681&#8239;562</div>
+        <h2 class="figura-nome">Dívida total do município</h2>
+        <p class="figura-medida">Euros · 2024</p>
+        <p class="figura-frase">Série anual da Direção-Geral das Autarquias Locais, o regulador das contas municipais.</p>
+        <p class="figura-selo selo-solto"><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-divida-dgal-2024"><span class="src-chip-porta">fonte</span> <span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></p>
+      </article>
+
+      <article class="figura">
+        <div class="claim-value figura-num" data-claim="evora-indice-de-divida-2024">105,5</div>
+        <h2 class="figura-nome">Índice de dívida</h2>
+        <p class="figura-medida">Percentagem, teto legal = <span class="claim"><span class="claim-value" data-claim="indice-de-divida-limite-legal">150</span><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/indice-de-divida-limite-legal"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> · 2024</p>
+        <p class="figura-frase">Calculado sobre duas colunas do mesmo ficheiro do regulador. A aritmética está na linha.</p>
+        <p class="figura-selo selo-solto"><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-indice-de-divida-2024"><span class="src-chip-porta">fonte</span> <span class="src-chip-texto">calculado · Évora — Orçamentado, Pago, Devido 2025</span></a></p>
+      </article>
+
+      <article class="figura">
+        <div class="claim-value figura-num" data-claim="evora-execucao-da-receita-2025">61,44</div>
+        <h2 class="figura-nome">Execução da receita</h2>
+        <p class="figura-medida">Percentagem do orçamento · 2025</p>
+        <p class="figura-frase">Reportado pelo município: sai da prestação de contas do próprio, não de um agregador central.</p>
+        <p class="figura-selo selo-solto"><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-execucao-da-receita-2025"><span class="src-chip-porta">fonte</span> <span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></p>
+      </article>
+
+      <article class="figura">
+        <div class="claim-value figura-num" data-claim="evora-prazo-medio-de-pagamento-2025">137</div>
+        <h2 class="figura-nome">Prazo médio de pagamento</h2>
+        <p class="figura-medida">Dias · 2025</p>
+        <p class="figura-frase">Reportado pelo município: sai da prestação de contas do próprio, não de um agregador central.</p>
+        <p class="figura-selo selo-solto"><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-prazo-medio-de-pagamento-2025"><span class="src-chip-porta">fonte</span> <span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></p>
+      </article>
+
+    </div>
+  </div>
+
+  <!-- ================================================ leitura breve -->
+  <div class="rail"><p class="rail-k">Leitura breve</p></div>
+  <div class="texto">
+    <p class="linha-nota">Uma frase por medida. Todos os números são citações do livro-razão.</p>
+    <p class="brief-text">A população residente subiu de <span class="claim"><span class="claim-value" data-claim="evora-populacao-2021">55&#8239;711</span><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-populacao-2021"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Economia, Investidores, Portas Abertas 2026</span></a></span> em 2021 para <span class="claim"><span class="claim-value" data-claim="evora-populacao-2025">58&#8239;567</span><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-populacao-2025"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Economia, Investidores, Portas Abertas 2026</span></a></span> em 2025.</p>
+    <p class="brief-text">O poder de compra por habitante está acima da média nacional, que é a base do índice: <span class="claim"><span class="claim-value" data-claim="evora-poder-de-compra-2023">111,47</span><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-poder-de-compra-2023"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Economia, Investidores, Portas Abertas 2026</span></a></span> no concelho, enquanto a sua região, o Alentejo Central, está abaixo dessa média, em <span class="claim"><span class="claim-value" data-claim="alentejo-central-poder-de-compra-2023">93,86</span><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/alentejo-central-poder-de-compra-2023"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Economia, Investidores, Portas Abertas 2026</span></a></span>.</p>
+    <p class="brief-text">O desemprego registado no fim de dezembro caiu de <span class="claim"><span class="claim-value" data-claim="evora-desemprego-registado-2013">3&#8239;720</span><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-desemprego-registado-2013"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span> pessoas em 2013 para <span class="claim"><span class="claim-value" data-claim="evora-desemprego-registado-2024">1&#8239;596</span><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-desemprego-registado-2024"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span> em 2024.</p>
+    <p class="brief-text">Estão sediadas no concelho <span class="claim"><span class="claim-value" data-claim="evora-empresas-2024">7&#8239;907</span><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-empresas-2024"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Economia, Investidores, Portas Abertas 2026</span></a></span> empresas.</p>
+    <p class="brief-text">A execução da receita caiu de <span class="claim"><span class="claim-value" data-claim="evora-execucao-da-receita-2021">96</span><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-execucao-da-receita-2021"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> % do orçamento em 2021 para <span class="claim"><span class="claim-value" data-claim="evora-execucao-da-receita-2025">61,44</span><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-execucao-da-receita-2025"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> % em 2025.</p>
+    <p class="brief-text">O prazo médio de pagamento a fornecedores passou de <span class="claim"><span class="claim-value" data-claim="evora-prazo-medio-de-pagamento-2023">22</span><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-prazo-medio-de-pagamento-2023"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> dias em 2023 para <span class="claim"><span class="claim-value" data-claim="evora-prazo-medio-de-pagamento-2025">137</span><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-prazo-medio-de-pagamento-2025"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> dias em 2025, com <span class="claim"><span class="claim-value" data-claim="evora-pagamentos-em-atraso-2025">4&#8239;976&#8239;172,24</span><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-pagamentos-em-atraso-2025"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> € de pagamentos em atraso no fim do ano.</p>
+  </div>
+  <div class="nota">
+    <div class="nota-bloco">
+      <span class="nota-k">O que esta página não sabe</span>
+      <ul>
+        <li>Não existe medida de desempenho por pessoa. As contas públicas não são cortadas dessa maneira.</li>
+        <li>A repartição de pelouros do mandato de 2009–2013 não foi estabelecida: o presidente desse mandato, e todos os outros membros dele, não foram identificados.</li>
+        <li>O nome legal completo do presidente interino de 2013 é <a class="marcador" lang="pt-PT" href="https://oestadodopaís.pt/a-verificar">[a verificar]</a> nas palavras do próprio trabalho: duas fontes oficiais dão nomes completos diferentes para o mesmo homem. «Manuel Melgão» é a forma que o próprio município usa.</li>
+        <li>Não existe contrafactual para nenhum índice. Nada do que foi lido permite separar a parte de um executivo neles.</li>
+        <li>Os valores do regulador para 2017 e 2021 trazem ressalvas do próprio ficheiro (uma nota de rodapé em 2017, «dados provisórios» em 2021), ditas na linha de cada um.</li>
+        <li>Sobre o plano de recuperação: o trabalho lê o catálogo do tribunal de contas, não as suas auditorias; a janela de contratos é um limite superior sobre um período truncado; e não existe um valor da União Europeia para um município.</li>
+      </ul>
+      <p><a href="#metodo">Método e ressalvas →</a></p>
+    </div>
+  </div>
+
+  <!-- =========================================== a dívida e o teto -->
+  <div class="rail"><p class="rail-k">A dívida contra o teto legal</p></div>
+  <div class="texto-e-nota">
+    <div class="svg-scroll" data-svg="mun-distancia"><svg class="mun-distancia-svg" viewBox="0 0 720 76" role="img" aria-label="A dívida contra o teto legal"><!-- a barra é a medição: é para isto que o amarelo existe --><rect x="10" y="12" width="492.21709924364615" height="18" fill="var(--yellow)"></rect><line x1="10" y1="30" x2="710" y2="30" stroke="var(--axis)" stroke-width="1"></line><line x1="710" y1="4" x2="710" y2="38" stroke="var(--ink)" stroke-width="1.5"></line><text class="tk" x="10" y="50" text-anchor="start">dívida</text><text data-claim="evora-divida-dgal-2024" x="10" y="66" text-anchor="start" class="claim-value mun-barra-rot">54 681 562</text><text class="tk" x="710" y="50" text-anchor="end">limite legal</text><text data-claim="evora-limite-divida-dgal-2024" x="710" y="66" text-anchor="end" class="claim-value mun-tecto-rot">77 764 656</text></svg></div>
+    <p class="legenda-de-portas">
+      <span class="rail-k rail-k-solto">Portas</span>
+      <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-divida-dgal-2024"><span class="src-chip-porta">fonte</span> <span class="src-chip-texto">dívida</span></a>
+      <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-limite-divida-dgal-2024"><span class="src-chip-porta">fonte</span> <span class="src-chip-texto">limite legal</span></a>
+    </p>
+    <p class="deep-v ar-antes-3">A barra é a dívida total que o regulador publica para o concelho; o fio é o limite legal do mesmo ano. O índice mede uma contra o outro numa escala em que o teto é o valor permitido.</p>
+    <p class="deep-v">O índice é <span class="claim"><span class="claim-value" data-claim="evora-indice-de-divida-2024">105,5</span><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-indice-de-divida-2024"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">calculado · Évora — Orçamentado, Pago, Devido 2025</span></a></span> % em 2024, contra um teto legal de <span class="claim"><span class="claim-value" data-claim="indice-de-divida-limite-legal">150</span><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/indice-de-divida-limite-legal"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> %.</p>
+    <p class="deep-v">O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores. É a lei que o define, não este sítio.</p>
+  </div>
+
+  <!-- ======================================================= fundo -->
+  <div class="rail"><p class="rail-k">Fundo</p></div>
+  <div class="texto" id="contas">
+    <h2>A última prestação de contas do município</h2>
+    <p class="linha-nota ar-antes-1">O que o município orçamentou, o que cobrou, o que pagou, e o que dizia dever no fim do ano. São números do próprio município sobre si mesmo: a prestação de contas é dele.</p>
+    <dl class="mun-campos ar-antes-3">
+      <dt>Orçamento corrigido</dt>
+      <dd><span class="claim"><span class="claim-value" data-claim="evora-orcamento-2025">109&#8239;483&#8239;314,95</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-orcamento-2025"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> €</dd>
+      <dt>Receita cobrada</dt>
+      <dd><span class="claim"><span class="claim-value" data-claim="evora-receita-cobrada-2025">67&#8239;263&#8239;297,08</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-receita-cobrada-2025"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> €</dd>
+      <dt>Despesa paga</dt>
+      <dd><span class="claim"><span class="claim-value" data-claim="evora-despesa-paga-2025">65&#8239;565&#8239;049,87</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-despesa-paga-2025"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> €</dd>
+      <dt>Dívida total</dt>
+      <dd><span class="claim"><span class="claim-value" data-claim="evora-divida-total-2025">54&#8239;379&#8239;034,55</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-divida-total-2025"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> €</dd>
+      <dt>Limite de dívida</dt>
+      <dd><span class="claim"><span class="claim-value" data-claim="evora-limite-divida-2025">82&#8239;571&#8239;687,05</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-limite-divida-2025"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> €</dd>
+      <dt>Margem de endividamento</dt>
+      <dd><span class="claim"><span class="claim-value" data-claim="evora-margem-endividamento-2025">28&#8239;192&#8239;652,50</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-margem-endividamento-2025"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> €</dd>
+    </dl>
+
+    <h2 class="ar-antes-3">A diferença entre as duas contas da mesma dívida</h2>
+    <p class="linha-nota ar-antes-1">O regulador e o município publicam a dívida do mesmo ano com uma diferença. A diferença é pequena, e mostra-se porque é o único sítio onde uma voz de fora e a voz do próprio medem a mesma coisa.</p>
+    <dl class="mun-campos ar-antes-3">
+      <dt>O regulador publica</dt>
+      <dd><span class="claim"><span class="claim-value" data-claim="evora-divida-dgal-2024">54&#8239;681&#8239;562</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-divida-dgal-2024"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> € 2024</dd>
+      <dt>O município publica</dt>
+      <dd><span class="claim"><span class="claim-value" data-claim="evora-divida-total-2024">54&#8239;680&#8239;635,58</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-divida-total-2024"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> € 2024</dd>
+      <dt>Diferença</dt>
+      <dd><span class="claim"><span class="claim-value" data-claim="evora-divergencia-municipio-dgal-2024">926</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-divergencia-municipio-dgal-2024"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">calculado · Évora — Orçamentado, Pago, Devido 2025</span></a></span> € <span class="mun-campo-vazio">· a diferença é publicada arredondada ao euro; os dois valores acima diferem em cêntimos.</span></dd>
+    </dl>
+  </div>
+
+  <!-- ================================================== quem administrou -->
+  <div class="rail" id="tempo"><p class="rail-k">Relance</p></div>
+  <div class="texto">
+    <h2>Quem administrou, e o que as contas registaram</h2>
+    <div class="glance ar-antes-3">
+      <span class="glance-num glance-num-par"><span class="claim"><span class="claim-value" data-claim="evora-indice-de-divida-2014">242,6</span><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-indice-de-divida-2014"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">calculado · Évora — Orçamentado, Pago, Devido 2025</span></a></span> → <span class="claim"><span class="claim-value" data-claim="evora-indice-de-divida-2024">105,5</span><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-indice-de-divida-2024"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">calculado · Évora — Orçamentado, Pago, Devido 2025</span></a></span></span>
+      <div class="glance-meta">
+        <div class="glance-name">Índice de dívida, do primeiro ano legível ao último</div>
+        <div class="glance-unit">% · 2014 → 2024</div>
+      </div>
+    </div>
+    <p class="brief-text ar-antes-3">O índice de dívida do regulador desceu de <span class="claim"><span class="claim-value" data-claim="evora-indice-de-divida-2014">242,6</span><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-indice-de-divida-2014"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">calculado · Évora — Orçamentado, Pago, Devido 2025</span></a></span> % em 2014 para <span class="claim"><span class="claim-value" data-claim="evora-indice-de-divida-2024">105,5</span><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-indice-de-divida-2024"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">calculado · Évora — Orçamentado, Pago, Devido 2025</span></a></span> % em 2024, nos quatro anos que esta página publica.</p>
+  </div>
+  <div class="nota">
+    <div class="nota-bloco">
+      <span class="nota-k">Quem responde pelo quê</span>
+      <p>Cinco administrações, contadas como foram instaladas e não como foram eleitas. As decisões vão atribuídas a quem as tomou, com o rótulo da lista que ganhou; os índices não vão atribuídos a ninguém.</p>
+      <p>Uma administração responde pelas decisões que tomou. Não responde por um índice: nada do que foi lido permite separar a parte de um executivo na população, no emprego ou no poder de compra do concelho. Por isso as decisões levam nome e lista, e os índices não levam nenhum. Não há aqui nenhuma tabela classificativa de partidos, e não vai haver.</p>
+    </div>
+  </div>
+
+  <div class="faixa">
+    <div class="svg-scroll" data-svg="mun-serie"><svg class="mun-serie-svg" viewBox="0 0 720 132" role="img" aria-label="Índice de dívida, do primeiro ano legível ao último"><line x1="10" y1="49.589447650453415" x2="710" y2="49.589447650453415" stroke="var(--ink)" stroke-width="1.5"></line><line x1="10" y1="104" x2="710" y2="104" stroke="var(--axis)" stroke-width="1"></line><rect x="81.5" y="16" width="32" height="88" fill="var(--yellow)"></rect><text data-claim="evora-indice-de-divida-2014" x="97.5" y="9" text-anchor="middle" class="claim-value mun-serie-val">242,6</text><text class="tk" x="97.5" y="118" text-anchor="middle" data-nonledger="escala-de-instrumento">2014</text><rect x="256.5" y="37.98186314921682" width="32" height="66.01813685078318" fill="var(--yellow)"></rect><text data-claim="evora-indice-de-divida-2017" x="272.5" y="30.98186314921682" text-anchor="middle" class="claim-value mun-serie-val">182,0</text><text class="tk" x="272.5" y="118" text-anchor="middle" data-nonledger="escala-de-instrumento">2017</text><rect x="431.5" y="52.52761747732894" width="32" height="51.47238252267106" fill="var(--yellow)"></rect><text data-claim="evora-indice-de-divida-2021" x="447.5" y="45.52761747732894" text-anchor="middle" class="claim-value mun-serie-val">141,9</text><text class="tk" x="447.5" y="118" text-anchor="middle" data-nonledger="escala-de-instrumento">2021</text><rect x="606.5" y="65.73124484748557" width="32" height="38.26875515251443" fill="var(--yellow)"></rect><text data-claim="evora-indice-de-divida-2024" x="622.5" y="58.73124484748557" text-anchor="middle" class="claim-value mun-serie-val">105,5</text><text class="tk" x="622.5" y="118" text-anchor="middle" data-nonledger="escala-de-instrumento">2024</text><text class="tk" x="710" y="43.589447650453415" text-anchor="end">limite legal</text></svg></div>
+    <p class="legenda-de-portas">
+      <span class="rail-k rail-k-solto">Portas</span>
+      <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-indice-de-divida-2014"><span class="src-chip-porta">fonte</span> <span class="src-chip-texto">índice de 2014</span></a>
+      <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-indice-de-divida-2017"><span class="src-chip-porta">fonte</span> <span class="src-chip-texto">índice de 2017</span></a>
+      <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-indice-de-divida-2021"><span class="src-chip-porta">fonte</span> <span class="src-chip-texto">índice de 2021</span></a>
+      <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-indice-de-divida-2024"><span class="src-chip-porta">fonte</span> <span class="src-chip-texto">índice de 2024</span></a>
+      <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/indice-de-divida-limite-legal"><span class="src-chip-porta">fonte</span> <span class="src-chip-texto">limite legal</span></a>
+    </p>
+  </div>
+
+  <div class="rail"><p class="rail-k">Cinco administrações</p></div>
+  <div class="texto-e-nota">
+    <div class="mun-tempo-eixo"><span>2009</span><span>2013</span><span>2017</span><span>2021</span><span>2025</span></div>
+
+    <div class="mun-mandato">
+      <div class="mun-mandato-cabeca">
+        <span class="mun-mandato-periodo">2009–2013</span>
+        <span class="mun-mandato-quem">José Ernesto d’Oliveira, depois Manuel Melgão a partir de 2013-05-01</span>
+        <span class="mun-mandato-lista">PS</span>
+      </div>
+      <dl class="mun-campos">
+        <dt>Lugares</dt>
+        <dd><span class="claim"><span class="claim-value" data-claim="evora-camara-mandatos-ps-2009">3</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-camara-mandatos-ps-2009"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span></dd>
+        <dt>Herdou</dt>
+        <dd><span class="mun-campo-vazio">Antes do primeiro ano de contas legível nesta janela.</span></dd>
+        <dt>Decidiu</dt>
+        <dd><span class="claim"><span class="claim-value" data-claim="evora-pael-emprestimo">32&#8239;166&#8239;372,20</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-pael-emprestimo"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span> € de empréstimo do Programa de Apoio à Economia Local.</dd>
+        <dt>Deixou</dt>
+        <dd><span class="claim"><span class="claim-value" data-claim="evora-divida-31-10-2013">82&#8239;871&#8239;522,82</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-divida-31-10-2013"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span> € de dívida total, medidos duas semanas depois da mudança de executivo. <span class="claim"><span class="claim-value" data-claim="evora-divida-inicio-mandato-reexpressa">95&#8239;082&#8239;509,86</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-divida-inicio-mandato-reexpressa"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span> € na reexpressão de um relatório posterior, para a mesma data de início de mandato. A página mostra as duas: escolher uma em silêncio esconderia que a diferença existe.</dd>
+        <dt>O regulador</dt>
+        <dd><span class="mun-campo-vazio">A série anual do regulador usada nesta página começa depois deste mandato.</span></dd>
+        <dt>Pelouros</dt>
+        <dd><span class="mun-campo-vazio">Não estabelecido. O trabalho sobre os pelouros diz que este mandato «é uma linha de um mapa, não um mapa»: o presidente desse mandato, e todos os outros membros dele, não foram identificados.</span></dd>
+      </dl>
+    </div>
+
+    <div class="mun-mandato">
+      <div class="mun-mandato-cabeca">
+        <span class="mun-mandato-periodo">2013–2017</span>
+        <span class="mun-mandato-quem">Carlos Pinto de Sá</span>
+        <span class="mun-mandato-lista">CDU</span>
+        <span class="mun-mandato-instalado">instalado a 2013-10-18</span>
+      </div>
+      <dl class="mun-campos">
+        <dt>Lugares</dt>
+        <dd><span class="claim"><span class="claim-value" data-claim="evora-camara-mandatos-cdu-2013">4</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-camara-mandatos-cdu-2013"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span></dd>
+        <dt>Herdou</dt>
+        <dd><span class="claim"><span class="claim-value" data-claim="evora-divida-31-10-2013">82&#8239;871&#8239;522,82</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-divida-31-10-2013"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span> € como reportado, e <span class="claim"><span class="claim-value" data-claim="evora-divida-inicio-mandato-reexpressa">95&#8239;082&#8239;509,86</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-divida-inicio-mandato-reexpressa"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span> € como reexpresso mais tarde.</dd>
+        <dt>Decidiu</dt>
+        <dd><span class="claim"><span class="claim-value" data-claim="evora-saneamento-financeiro-2016">32&#8239;500&#8239;000,00</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-saneamento-financeiro-2016"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span> € de empréstimo de saneamento financeiro.</dd>
+        <dt>Deixou</dt>
+        <dd><span class="claim"><span class="claim-value" data-claim="evora-divida-total-2017">69&#8239;532&#8239;414,48</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-divida-total-2017"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span> € de dívida total, na conta do próprio município.</dd>
+        <dt>O regulador</dt>
+        <dd>
+          <div>2014: dívida <span class="claim"><span class="claim-value" data-claim="evora-divida-dgal-2014">77&#8239;961&#8239;663</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-divida-dgal-2014"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> € · limite legal <span class="claim"><span class="claim-value" data-claim="evora-limite-divida-dgal-2014">48&#8239;206&#8239;020</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-limite-divida-dgal-2014"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> € · índice <span class="claim"><span class="claim-value" data-claim="evora-indice-de-divida-2014">242,6</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-indice-de-divida-2014"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">calculado · Évora — Orçamentado, Pago, Devido 2025</span></a></span> %</div>
+          <div>2017: dívida <span class="claim"><span class="claim-value" data-claim="evora-divida-dgal-2017">69&#8239;826&#8239;899</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-divida-dgal-2017"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> € · limite legal <span class="claim"><span class="claim-value" data-claim="evora-limite-divida-dgal-2017">57&#8239;563&#8239;962</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-limite-divida-dgal-2017"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> € · índice <span class="claim"><span class="claim-value" data-claim="evora-indice-de-divida-2017">182,0</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-indice-de-divida-2017"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">calculado · Évora — Orçamentado, Pago, Devido 2025</span></a></span> %</div>
+        </dd>
+        <dt>Pelouros</dt>
+        <dd><span class="mun-campo-vazio">Fora do que foi lido: as capturas que sustentam a repartição de pelouros começam no mandato seguinte.</span></dd>
+      </dl>
+    </div>
+
+    <div class="mun-mandato">
+      <div class="mun-mandato-cabeca">
+        <span class="mun-mandato-periodo">2017–2021</span>
+        <span class="mun-mandato-quem">Carlos Pinto de Sá</span>
+        <span class="mun-mandato-lista">CDU</span>
+        <span class="mun-mandato-instalado">instalado a 2017-10-20</span>
+      </div>
+      <dl class="mun-campos">
+        <dt>Lugares</dt>
+        <dd><span class="claim"><span class="claim-value" data-claim="evora-camara-mandatos-cdu-2017">4</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-camara-mandatos-cdu-2017"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span></dd>
+        <dt>Herdou</dt>
+        <dd><span class="claim"><span class="claim-value" data-claim="evora-divida-total-2017">69&#8239;532&#8239;414,48</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-divida-total-2017"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span> € de dívida total.</dd>
+        <dt>Decidiu</dt>
+        <dd><span class="mun-campo-vazio">Nenhuma decisão deste mandato atravessou para o livro-razão com valor próprio. Um campo em branco seria diferente disto: o que falta é a linha, não a decisão.</span></dd>
+        <dt>Deixou</dt>
+        <dd><span class="claim"><span class="claim-value" data-claim="evora-divida-total-2021">57&#8239;293&#8239;550,23</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-divida-total-2021"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span> € de dívida total.</dd>
+        <dt>O regulador</dt>
+        <dd>
+          <div>2021: dívida <span class="claim"><span class="claim-value" data-claim="evora-divida-dgal-2021">61&#8239;737&#8239;315</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-divida-dgal-2021"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> € · limite legal <span class="claim"><span class="claim-value" data-claim="evora-limite-divida-dgal-2021">65&#8239;268&#8239;258</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-limite-divida-dgal-2021"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> € · índice <span class="claim"><span class="claim-value" data-claim="evora-indice-de-divida-2021">141,9</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-indice-de-divida-2021"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">calculado · Évora — Orçamentado, Pago, Devido 2025</span></a></span> %</div>
+        </dd>
+        <dt>Pelouros</dt>
+        <dd><span class="mun-campo-vazio">Fora do que foi lido.</span></dd>
+      </dl>
+    </div>
+
+    <div class="mun-mandato">
+      <div class="mun-mandato-cabeca">
+        <span class="mun-mandato-periodo">2021–2025</span>
+        <span class="mun-mandato-quem">Carlos Pinto de Sá</span>
+        <span class="mun-mandato-lista">CDU · em minoria</span>
+        <span class="mun-mandato-instalado">instalado a 2021-10-15</span>
+      </div>
+      <dl class="mun-campos">
+        <dt>Lugares</dt>
+        <dd><span class="claim"><span class="claim-value" data-claim="evora-camara-mandatos-cdu-2021">2</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-camara-mandatos-cdu-2021"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span></dd>
+        <dt>Herdou</dt>
+        <dd><span class="claim"><span class="claim-value" data-claim="evora-divida-total-2021">57&#8239;293&#8239;550,23</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-divida-total-2021"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span> € de dívida total.</dd>
+        <dt>Decidiu</dt>
+        <dd><span class="claim"><span class="claim-value" data-claim="evora-pelouros-2021-total">22</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-pelouros-2021-total"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">calculado · Évora — Os Pelouros, Quem Os Teve, O Que Fizeram</span></a></span> designações de pelouro repartidas por duas pessoas do executivo.</dd>
+        <dt>Deixou</dt>
+        <dd><span class="claim"><span class="claim-value" data-claim="evora-divida-total-2025">54&#8239;379&#8239;034,55</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-divida-total-2025"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> € de dívida total. <span class="claim"><span class="claim-value" data-claim="evora-prazo-medio-de-pagamento-2025">137</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-prazo-medio-de-pagamento-2025"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> dias de prazo médio de pagamento a fornecedores, e <span class="claim"><span class="claim-value" data-claim="evora-pagamentos-em-atraso-2025">4&#8239;976&#8239;172,24</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-pagamentos-em-atraso-2025"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> € de pagamentos em atraso.</dd>
+        <dt>O regulador</dt>
+        <dd>
+          <div>2024: dívida <span class="claim"><span class="claim-value" data-claim="evora-divida-dgal-2024">54&#8239;681&#8239;562</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-divida-dgal-2024"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> € · limite legal <span class="claim"><span class="claim-value" data-claim="evora-limite-divida-dgal-2024">77&#8239;764&#8239;656</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-limite-divida-dgal-2024"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> € · índice <span class="claim"><span class="claim-value" data-claim="evora-indice-de-divida-2024">105,5</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-indice-de-divida-2024"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">calculado · Évora — Orçamentado, Pago, Devido 2025</span></a></span> %</div>
+        </dd>
+        <dt>Pelouros</dt>
+        <dd><span class="claim"><span class="claim-value" data-claim="evora-pelouros-2021-total">22</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-pelouros-2021-total"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">calculado · Évora — Os Pelouros, Quem Os Teve, O Que Fizeram</span></a></span> designações, sobre as duas únicas pessoas do executivo a quem a página da câmara atribuía alguma: <span class="claim"><span class="claim-value" data-claim="evora-pelouros-2021-presidente">12</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-pelouros-2021-presidente"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Os Pelouros, Quem Os Teve, O Que Fizeram</span></a></span> · <span class="claim"><span class="claim-value" data-claim="evora-pelouros-2021-vice-presidente">10</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-pelouros-2021-vice-presidente"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Os Pelouros, Quem Os Teve, O Que Fizeram</span></a></span>.</dd>
+        <dt>Contas do penúltimo ano</dt>
+        <dd><span class="claim"><span class="claim-value" data-claim="evora-contas-2024-votos-favor">2</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-contas-2024-votos-favor"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> / <span class="claim"><span class="claim-value" data-claim="evora-contas-2024-votos-contra">5</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-contas-2024-votos-contra"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> votos a favor e contra, na votação das contas do penúltimo ano deste mandato. O auditor emitiu por isso uma declaração de impossibilidade de certificação legal das contas.</dd>
+      </dl>
+    </div>
+
+    <div class="mun-mandato">
+      <div class="mun-mandato-cabeca">
+        <span class="mun-mandato-periodo">2025–</span>
+        <span class="mun-mandato-quem">Carlos Zorrinho</span>
+        <span class="mun-mandato-lista">PS</span>
+        <span class="mun-mandato-instalado">instalado a 2025-10-31</span>
+      </div>
+      <dl class="mun-campos">
+        <dt>Lugares</dt>
+        <dd><span class="claim"><span class="claim-value" data-claim="evora-camara-mandatos-ps-2025">3</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-camara-mandatos-ps-2025"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span> / <span class="claim"><span class="claim-value" data-claim="evora-camara-lugares">7</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-camara-lugares"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span></dd>
+        <dt>Herdou</dt>
+        <dd><span class="claim"><span class="claim-value" data-claim="evora-divida-total-2025">54&#8239;379&#8239;034,55</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-divida-total-2025"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Orçamentado, Pago, Devido 2025</span></a></span> € de dívida total.</dd>
+        <dt>Decidiu</dt>
+        <dd><span class="claim"><span class="claim-value" data-claim="evora-pelouros-2025-total">21</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-pelouros-2025-total"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">calculado · Évora — Os Pelouros, Quem Os Teve, O Que Fizeram</span></a></span> designações de pelouro repartidas por três pessoas do executivo.</dd>
+        <dt>Deixou</dt>
+        <dd><span class="mun-campo-vazio">Em funções.</span></dd>
+        <dt>O regulador</dt>
+        <dd><span class="mun-campo-vazio">A série anual do regulador ainda não chegou a este mandato.</span></dd>
+        <dt>Pelouros</dt>
+        <dd><span class="claim"><span class="claim-value" data-claim="evora-pelouros-2025-total">21</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-pelouros-2025-total"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">calculado · Évora — Os Pelouros, Quem Os Teve, O Que Fizeram</span></a></span> designações, sobre as três pessoas do executivo a quem a página da câmara atribui alguma: <span class="claim"><span class="claim-value" data-claim="evora-pelouros-2025-presidente">7</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-pelouros-2025-presidente"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Os Pelouros, Quem Os Teve, O Que Fizeram</span></a></span> · <span class="claim"><span class="claim-value" data-claim="evora-pelouros-2025-vice-presidente">7</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-pelouros-2025-vice-presidente"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Os Pelouros, Quem Os Teve, O Que Fizeram</span></a></span> · <span class="claim"><span class="claim-value" data-claim="evora-pelouros-2025-vereadora">7</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-pelouros-2025-vereadora"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Os Pelouros, Quem Os Teve, O Que Fizeram</span></a></span>.</dd>
+        <dt>Executivo instalado</dt>
+        <dd>PS <span class="claim"><span class="claim-value" data-claim="evora-executivo-2025-ps">3</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-executivo-2025-ps"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span> · AD <span class="claim"><span class="claim-value" data-claim="evora-executivo-2025-ad">2</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-executivo-2025-ad"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span> · CDU <span class="claim"><span class="claim-value" data-claim="evora-executivo-2025-cdu">1</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-executivo-2025-cdu"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span> · CH <span class="claim"><span class="claim-value" data-claim="evora-executivo-2025-chega">1</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-executivo-2025-chega"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span></dd>
+      </dl>
+    </div>
+
+    <details class="deep">
+      <summary>Fundo · como esta linha do tempo é feita</summary>
+      <div class="deep-body">
+        <div class="deep-item">
+          <div class="deep-k">Como esta linha do tempo é feita</div>
+          <p class="deep-v">Os períodos são os das administrações tal como foram instaladas, e as datas de instalação vêm do trabalho sobre os quinze anos. Cada valor tem linha no livro-razão. As duas dívidas herdadas em 2013 aparecem as duas: a que foi reportada no fim do mandato e a que um relatório posterior reexpressou. Escolher uma em silêncio seria esconder que a diferença existe.</p>
+        </div>
+        <div class="deep-item">
+          <div class="deep-k">O excesso sobre o teto legal</div>
+          <p class="deep-v"><span class="claim"><span class="claim-value" data-claim="evora-excesso-endividamento-2014">32&#8239;559&#8239;910</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-excesso-endividamento-2014"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span> € janeiro de 2014 → <span class="claim"><span class="claim-value" data-claim="evora-excesso-endividamento-2019">943&#8239;664</span> <a class="src-chip" href="https://oestadodopaís.pt/livro-razao/evora-excesso-endividamento-2019"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Évora — Quinze Anos, Cinco Mandatos</span></a></span> € dezembro de 2019.</p>
+          <p class="deep-v">O que a dívida excedia o limite legal, no primeiro e no último ano em que o relatório o publica como um valor positivo. Depois disso o quadro passa a números negativos, que já não são excesso mas capacidade de endividamento, e por isso esta página para aqui.</p>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- ============================================ método e ressalvas -->
+  <div class="rail" id="metodo"><p class="rail-k">Método e ressalvas</p></div>
+  <div class="texto">
+    <div class="deep-body">
+      <div class="deep-item">
+        <div class="deep-k">Não existe PIB municipal</div>
+        <p class="deep-v">Nenhuma fonte publica um produto interno bruto para um concelho, e esta página não fabrica nenhum. O que existe é o registo empresarial: as contas das empresas sediadas no concelho, que creditam toda a atividade de uma empresa ao concelho da sua sede. Não é PIB municipal, e o trabalho sobre a economia escreve porquê nos seus limites: «não capta a administração pública, a maior parte da universidade e do hospital».</p>
+      </div>
+      <div class="deep-item">
+        <div class="deep-k">Duas das oito medidas são o município a falar de si</div>
+        <p class="deep-v">A execução da receita e o prazo médio de pagamento são lidos da prestação de contas do próprio município: a sua linha no livro-razão nomeia esse documento e a página onde estão. As duas vozes de fora sobre estas contas são a opinião assinada do auditor e a série anual do regulador, e as duas estão nesta página.</p>
+      </div>
+      <div class="deep-item">
+        <div class="deep-k">Um ano de contas existe sem assinatura de fora</div>
+        <p class="deep-v">As contas do penúltimo ano do mandato de 2021–2025 foram rejeitadas em votação e nunca foram certificadas: o auditor emitiu uma declaração de impossibilidade de certificação legal das contas.</p>
+      </div>
+      <div class="deep-item">
+        <div class="deep-k">Duas vozes de fora, não uma</div>
+        <p class="deep-v">Sobre as contas deste município existem duas vozes que não são a dele: a opinião assinada do auditor independente, e a série anual do regulador, que publica por município e por ano o mesmo conceito legal de dívida que o relatório usa, compilado do lado de fora. As duas estão nesta página.</p>
+      </div>
+      <div class="deep-item">
+        <div class="deep-k">Nenhuma fonte publica dinheiro por pelouro</div>
+        <p class="deep-v">As contagens de pelouros desta página são designações, não despesa. A correspondência entre as contas e os pelouros existe num dos trabalhos, é declarada por ele como sua e não como oficial, e esta página não a usa para atribuir dinheiro a ninguém. Esse trabalho fixa também a regra: descrição, nunca classificações.</p>
+      </div>
+      <div class="deep-item">
+        <div class="deep-k">Um partido é dono das suas decisões, não de uma curva</div>
+        <p class="deep-v">As decisões desta página vão atribuídas a quem as tomou, com o rótulo da lista que ganhou. Os índices (população, emprego, poder de compra, e o próprio índice de dívida) não vão atribuídos a ninguém: nada do que foi lido fornece o contrafactual que recortaria a parte de um executivo neles.</p>
+      </div>
+      <div class="deep-item">
+        <div class="deep-k">O dinheiro do plano de recuperação é atribuído pelo registo, não pela câmara</div>
+        <p class="deep-v">Os totais do plano de recuperação que aparecem na leitura desse trabalho são somas sobre o registo público, atribuídas ao concelho por esse registo. Do dinheiro contratado no concelho, a universidade tem mais do que o município, e a camada que administra o dinheiro é feita de organismos nacionais. Que daí resulte que o endereço da responsabilização não são os paços do concelho é a conclusão assinada desse trabalho, e está na página dele.</p>
+      </div>
+    </div>
+  </div>
+  <div class="nota">
+    <div class="porta-correccoes">
+      <span class="linha-campo-k">Encontrou um erro</span>
+      <p class="aparelho-nota">Escreva para <a class="ligacao-email" href="mailto:correcoes@oestadodopais.pt">correcoes@oestadodopais.pt</a>. Um erro confirmado entra no registo de correções e na própria linha, com o valor antigo à vista. Nada é apagado.</p>
+      <p class="porta-seguinte"><a href="https://oestadodopaís.pt/correcoes">O registo de correções →</a></p>
+    </div>
+  </div>
+
+  <!-- ==================================================== trabalhos -->
+  <div class="rail" id="trabalhos"><p class="rail-k">Os trabalhos sobre este concelho</p></div>
+  <div class="texto">
+    <p class="linha-nota">Cada um tem a sua página, com a medida que o faz valer a pena, a frase do que concluiu, o método e o documento original quando está alojado aqui.</p>
+    <article class="mun-estudo">
+      <h3 class="mun-estudo-titulo">Évora — Prometido, Pago, Auditado 2026</h3>
+      <p class="mun-estudo-frase">Uma leitura transversal de um município português: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado, recolhidos em direto a 2026-08-04.</p>
+      <p class="porta-seguinte"><a href="https://oestadodopaís.pt/estudos/evora-prometido-pago-auditado-2026">Abrir a leitura →</a></p>
+    </article>
+    <article class="mun-estudo">
+      <h3 class="mun-estudo-titulo">Évora — Economia, Investidores, Portas Abertas 2026</h3>
+      <p class="mun-estudo-frase">Economia, investidores e portas abertas no município de Évora.</p>
+      <p class="porta-seguinte"><a href="https://oestadodopaís.pt/estudos/evora-economia-investidores-portas-abertas-2026">Abrir a leitura →</a></p>
+    </article>
+    <article class="mun-estudo">
+      <h3 class="mun-estudo-titulo">Évora — Orçamentado, Pago, Devido 2025</h3>
+      <p class="mun-estudo-frase">O que foi orçamentado, o que foi pago e o que ficou em dívida no município de Évora.</p>
+      <p class="porta-seguinte"><a href="https://oestadodopaís.pt/estudos/evora-orcamentado-pago-devido-2025">Abrir a leitura →</a></p>
+    </article>
+    <article class="mun-estudo">
+      <h3 class="mun-estudo-titulo">Évora — Quinze Anos, Cinco Mandatos</h3>
+      <p class="mun-estudo-frase">Quinze anos de governo municipal em Évora, ao longo de cinco mandatos.</p>
+      <p class="porta-seguinte"><a href="https://oestadodopaís.pt/estudos/evora-quinze-anos-cinco-mandatos">Abrir a leitura →</a></p>
+    </article>
+    <article class="mun-estudo">
+      <h3 class="mun-estudo-titulo">Évora — Os Pelouros, Quem Os Teve, O Que Fizeram</h3>
+      <p class="mun-estudo-frase">Quem teve cada pelouro da Câmara Municipal de Évora ao longo de cinco mandatos, quanto gastaram as contas do próprio município nas áreas que esses pelouros cobrem, e o que os relatórios dizem que essas áreas fizeram.</p>
+      <p class="porta-seguinte"><a href="https://oestadodopaís.pt/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram">Abrir a leitura →</a></p>
+    </article>
+  </div>
+
+  <div class="faixa">
+    <p class="rodape-nav">
+      <a href="https://oestadodopaís.pt/municipios">Voltar ao mapa dos municípios</a>
+      <a href="https://oestadodopaís.pt/livro-razao">Livro-razão</a>
+      <a href="https://oestadodopaís.pt/metodo#livro-razao">Como isto é feito</a>
+    </p>
+  </div>
+
+</div>
+</main>
+
+<footer class="rodape">
+  <nav class="rodape-nav" aria-label="Início">
+    <a href="https://oestadodopaís.pt/">Início</a>
+    <a href="https://oestadodopaís.pt/municipios">Municípios</a>
+    <a href="https://oestadodopaís.pt/estudos">Estudos</a>
+    <a href="https://oestadodopaís.pt/livro-razao">Livro-razão</a>
+    <a href="https://oestadodopaís.pt/agenda">Agenda</a>
+    <a href="https://oestadodopaís.pt/metodo">Método</a>
+    <a href="https://oestadodopaís.pt/correcoes">Correções</a>
+    <a href="https://oestadodopaís.pt/sobre">Sobre</a>
+    <a href="https://oestadodopaís.pt/en/municipalities/evora" hreflang="en">English</a>
+  </nav>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,527 @@
+<!-- direção C · Editorial generoso · protótipo 05 · a agenda -->
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O que se mede a seguir · O Estado do País</title>
+<style>/* direção C · Editorial generoso · a folha, apertada. Fonte legível e comentada: tokens.css + _estilo.css, ao lado deste ficheiro. */
+:root{--paper:#fbfaf7;--paper-2:#f3f0e9;--paper-3:#e9e4d9;--ink:#1b1a17;--muted:#5c574e;--yellow:#e8a80c;--oxblood:#7c2333;--rule:#e3ded3;--rule-strong:#c2bbac;--axis:#8a8478;--dotcol:#6f6a60;--onyellow:#1b1a17;--focus:#1b1a17;--shadow:none;--f-leitura:'Iowan Old Style','Palatino','Palatino Linotype','Book Antiqua','URW Palladio L',Georgia,'Times New Roman',serif;--f-mono:ui-monospace,'SF Mono',SFMono-Regular,Menlo,Monaco,'Cascadia Mono','Roboto Mono',Consolas,monospace;--f-serif:'Iowan Old Style','Palatino','Palatino Linotype','Book Antiqua','URW Palladio L',Georgia,'Times New Roman',serif;--f-sans:'Avenir Next','Avenir','Helvetica Neue',Helvetica,Arial,'Segoe UI',system-ui,sans-serif;--ajuste-x:0.47;--corpo:19px;--medida:640px;--altura-linha:1.62;--wrap:1120px;--calha:120px;--nota:240px;--vao:48px;--gutter:clamp(20px,4vw,56px);--ar-1:8px;--ar-2:16px;--ar-3:28px;--ar-4:48px;--ar-5:80px;--ar-6:120px}@media (prefers-color-scheme:dark){:root:not([data-theme='light']){--paper:#14130f;--paper-2:#1b1915;--paper-3:#24211b;--ink:#ece7dc;--muted:#a09a8d;--yellow:#e8a80c;--oxblood:#d98a95;--rule:#2c2921;--rule-strong:#443f35;--axis:#6e6a60;--dotcol:#8a8478;--onyellow:#1b1a17;--focus:#ece7dc;--shadow:none}}:root[data-theme='dark']{--paper:#14130f;--paper-2:#1b1915;--paper-3:#24211b;--ink:#ece7dc;--muted:#a09a8d;--yellow:#e8a80c;--oxblood:#d98a95;--rule:#2c2921;--rule-strong:#443f35;--axis:#6e6a60;--dotcol:#8a8478;--onyellow:#1b1a17;--focus:#ece7dc;--shadow:none}*,*::before,*::after{box-sizing:border-box}html{color-scheme:light dark}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-leitura);font-size:var(--corpo);line-height:var(--altura-linha);font-size-adjust:var(--ajuste-x);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:1px}a{color:inherit;text-decoration-color:var(--rule-strong);text-underline-offset:3px}a:hover{text-decoration-color:currentColor}img,svg{max-width:100%}p{margin:0 0 var(--ar-2)}p:last-child{margin-bottom:0}.vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}.skip{position:absolute;left:-9999px;top:0;background:var(--paper);color:var(--ink);border:1px solid var(--ink);padding:10px 16px;z-index:20}.skip:focus{left:var(--gutter);top:10px}.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter) var(--ar-6)}.pagina{display:grid;grid-template-columns:var(--calha) minmax(0,var(--medida)) var(--nota);column-gap:var(--vao);align-items:start}.rail{grid-column:1}.texto{grid-column:2;min-width:0}.nota{grid-column:3;min-width:0}.faixa{grid-column:1 / -1;min-width:0}.texto-e-nota{grid-column:2 / -1;min-width:0}.pagina>*{margin-bottom:var(--ar-5)}.pagina>*:last-child{margin-bottom:0}.topbar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--ar-2);padding:var(--ar-2) 0;border-bottom:1px solid var(--rule)}.nav{display:flex;flex-wrap:wrap;gap:var(--ar-2) var(--ar-3);font-family:var(--f-mono);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)}.nav a{text-decoration:none;padding-bottom:2px;border-bottom:1px solid transparent}.nav a:hover{color:var(--ink);border-bottom-color:var(--rule-strong)}.nav a[aria-current='page']{color:var(--ink);border-bottom-color:var(--ink)}.masthead{padding:var(--ar-5) 0 var(--ar-3);display:grid;gap:var(--ar-1)}.wordmark{font-family:var(--f-leitura);font-weight:400;font-size:clamp(38px,5.4vw,62px);line-height:1;letter-spacing:-0.012em;margin:0}.wordmark a{text-decoration:none}.masthead-compact{padding:var(--ar-3) 0 var(--ar-2);grid-template-columns:1fr auto;align-items:baseline;gap:var(--ar-2) var(--ar-3)}.masthead-compact .wordmark{font-size:clamp(22px,2.6vw,28px)}.method-line{font-family:var(--f-mono);font-size:12px;letter-spacing:0.06em;color:var(--muted);margin:0}.masthead-furniture{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:var(--ar-1) var(--ar-3);font-family:var(--f-mono);font-size:11.5px;letter-spacing:0.04em;color:var(--muted);border-top:1px solid var(--rule);padding-top:var(--ar-2);margin-top:var(--ar-2)}.masthead-furniture a{text-decoration:none;border-bottom:1px solid var(--rule)}.masthead-furniture a:hover{color:var(--ink);border-bottom-color:var(--ink)}.masthead-furniture [data-vencida='sim']{color:var(--ink)}.claim-value{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-weight:600;font-size:0.92em;letter-spacing:-0.012em;color:var(--ink);font-size-adjust:none}.claim{display:inline}.src-chip{display:inline-flex;align-items:baseline;gap:6px;text-transform:none;font-family:var(--f-mono);font-size:11px;font-size-adjust:none;letter-spacing:0.05em;color:var(--muted);text-decoration:none;white-space:nowrap;vertical-align:baseline;position:relative}.src-chip::before{content:'';width:7px;height:7px;flex:none;align-self:center;border:1px solid var(--rule-strong);background:var(--paper-3)}.src-chip.is-unverified::before{background:transparent;border-style:dashed;border-color:var(--muted)}.src-chip-porta{border-bottom:1px solid var(--rule)}a.src-chip:hover,a.src-chip:focus-visible{color:var(--ink)}a.src-chip:hover::before,a.src-chip:focus-visible::before{border-color:var(--ink)}a.src-chip:hover .src-chip-porta{border-bottom-color:var(--ink)}.src-chip-texto{white-space:normal}.claim .src-chip .src-chip-texto{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}.claim .src-chip:hover .src-chip-texto,.claim .src-chip:focus-visible .src-chip-texto{position:absolute;left:0;top:calc(100% + 8px);z-index:30;width:max-content;max-width:20rem;height:auto;margin:0;padding:9px 11px;overflow:visible;clip:auto;white-space:normal;background:var(--paper);border:1px solid var(--rule-strong);color:var(--ink);font-size:11px;line-height:1.5;letter-spacing:0.02em;text-align:left}.claim .src-chip:hover .src-chip-texto::after,.claim .src-chip:focus-visible .src-chip-texto::after{content:' · abrir a linha \2192';color:var(--muted)}.selo-solto .src-chip-texto{color:var(--muted)}.selo-solto .src-chip{white-space:normal}.marcador{font-family:var(--f-mono);font-size:10.5px;font-size-adjust:none;font-weight:600;letter-spacing:0.03em;color:var(--ink);background:transparent;border:1px dashed var(--muted);padding:1px 6px;white-space:nowrap;text-decoration:none;display:inline-block;vertical-align:baseline}a.marcador:hover{border-style:solid;background:var(--paper-3)}h1,h2,h3,h4{font-family:var(--f-leitura);font-weight:400;margin:0;text-wrap:balance;letter-spacing:-0.008em}h1{font-size:clamp(34px,4.6vw,50px);line-height:1.08}h2{font-size:clamp(24px,2.6vw,30px);line-height:1.18}h3{font-size:21px;line-height:1.25}h4{font-size:19px;line-height:1.3}.eyebrow{display:block;font-family:var(--f-mono);font-size:10.5px;font-size-adjust:none;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted)}.mono{font-family:var(--f-mono);font-size:0.86em;font-size-adjust:none;font-variant-numeric:tabular-nums}.lede{font-size:22px;line-height:1.5;margin-top:var(--ar-3)}.sec-sub{color:var(--muted);font-size:18px}.linha-nota,.aparelho-nota{font-size:16px;color:var(--muted)}.layer-tag,.rail-k{font-family:var(--f-mono);font-size:10.5px;font-size-adjust:none;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin:0 0 var(--ar-1);padding-top:4px;border-top:1px solid var(--rule-strong);display:block}.rail-k-solto{border-top:0;padding-top:0;letter-spacing:0.12em}.nota-bloco{font-family:var(--f-mono);font-size:12px;font-size-adjust:none;line-height:1.55;color:var(--muted);border-left:1px solid var(--rule);padding-left:var(--ar-2)}.nota-bloco + .nota-bloco{margin-top:var(--ar-3)}.nota-k{display:block;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;font-size:10px;color:var(--ink);margin-bottom:var(--ar-1)}.nota-bloco p{margin:0 0 var(--ar-1)}.nota-bloco ul{margin:0;padding-left:1.1em}.nota-bloco li{margin-bottom:var(--ar-1)}.nota-bloco a{text-decoration-color:var(--rule-strong)}.nota-de-prototipo{font-family:var(--f-mono);font-size:11px;font-size-adjust:none;line-height:1.5;color:var(--muted);border:1px dashed var(--rule-strong);padding:var(--ar-2)}.nota-de-prototipo::before{content:'protótipo';display:block;font-size:9.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);margin-bottom:6px}.glance-num,.figura-num,.linha-valor-num{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-weight:600;font-size-adjust:none;letter-spacing:-0.04em;color:var(--ink);line-height:0.94}.glance-num{font-size:clamp(64px,9vw,108px);display:block}.glance-num-par{font-size:clamp(40px,5vw,62px);line-height:1.1}.glance-meta{margin-top:var(--ar-2)}.glance-name{font-size:21px}.glance-unit{font-family:var(--f-mono);font-size:11.5px;font-size-adjust:none;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-top:4px}details.deep{border-top:1px solid var(--rule-strong);margin-top:var(--ar-4)}details.deep>summary{font-family:var(--f-mono);font-size:11.5px;font-size-adjust:none;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);padding:var(--ar-2) 0;cursor:pointer;list-style:none;display:flex;gap:var(--ar-2);align-items:baseline}details.deep>summary::-webkit-details-marker{display:none}details.deep>summary::before{content:'+';font-weight:600;color:var(--ink)}details.deep[open]>summary::before{content:'\2212'}details.deep>summary:hover{color:var(--ink)}.deep-body{padding-bottom:var(--ar-3);display:grid;gap:var(--ar-3)}.deep-item{display:grid;gap:var(--ar-1)}.deep-k{font-family:var(--f-mono);font-size:10.5px;font-size-adjust:none;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted)}.deep-v{font-size:17.5px;line-height:1.55}.verbatim{font-family:var(--f-mono);font-size:12.5px;font-size-adjust:none;line-height:1.6;color:var(--muted);white-space:pre-line}.abertura{padding:var(--ar-3) 0 0}.abertura-frase{font-size:26px;line-height:1.4;margin-top:var(--ar-3)}.figuras{border-top:1px solid var(--rule-strong)}.figura{display:grid;grid-template-columns:minmax(150px,auto) minmax(0,1fr);gap:var(--ar-2) var(--ar-3);padding:var(--ar-3) 0;border-bottom:1px solid var(--rule);align-items:start}.figura-num{font-size:clamp(30px,3.2vw,42px);grid-row:span 4}.figura-nome{font-size:21px;align-self:end}.figura-medida{font-family:var(--f-mono);font-size:10.5px;font-size-adjust:none;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);line-height:1.5;grid-column:2}.figura-frase{grid-column:2;font-size:17.5px;line-height:1.55}.figura-selo{grid-column:2;margin-top:calc(var(--ar-1) * -1)}.map-svg{display:block;max-height:860px;width:auto;max-width:100%;height:auto;margin:0 auto}.mun{fill:var(--dotcol);opacity:0.5}.mun-lit{fill:var(--yellow);stroke:var(--ink);stroke-width:1}.lit-leader{stroke:var(--ink);stroke-width:1;fill:none}.lit-label{font-family:var(--f-mono);font-size:11px;fill:var(--ink)}.frame{fill:none;stroke:var(--rule-strong);stroke-width:1}.frame-label,.tk,.datum-label,.gap-label,.mk-name{font-family:var(--f-mono);font-size:10.5px;letter-spacing:0.08em;fill:var(--muted)}.tk-datum,.datum-label,.mk-name{fill:var(--ink)}.map-legenda{display:grid;gap:var(--ar-1)}.legend-item{display:flex;align-items:center;gap:var(--ar-1)}.legend-dot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}.ld-on{background:var(--yellow);border:1px solid var(--ink)}.ld-off{background:var(--dotcol);opacity:0.5}.compo-row,.compo-tot{display:grid;grid-template-columns:1fr auto;gap:var(--ar-1);align-items:baseline;padding:4px 0;border-bottom:1px solid var(--rule)}.compo-tot{border-bottom:0;border-top:1px solid var(--rule-strong);color:var(--ink)}.compo-n{text-align:right}.rule-svg{display:block;width:100%;height:auto}.mk-val{font-size:15px;font-weight:600;fill:var(--ink)}.gap-label{font-size:12px}.legenda-de-portas{display:flex;flex-wrap:wrap;gap:var(--ar-1) var(--ar-2);border-top:1px solid var(--rule);padding-top:var(--ar-2);margin-top:var(--ar-2)}.legenda-de-portas .rail-k{border:0;padding:0;margin:0;flex:none}.svg-scroll{overflow-x:auto}.linha-cabeca{padding-top:var(--ar-3)}.linha-valor{display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--ar-1) var(--ar-2);margin:var(--ar-2) 0 var(--ar-2)}.linha-valor-num{font-size:clamp(56px,8vw,96px)}.linha-valor-unidade{font-family:var(--f-mono);font-size:14px;font-size-adjust:none;font-weight:600;letter-spacing:0.04em;color:var(--muted)}.linha-id{font-family:var(--f-mono);font-size:12px;font-size-adjust:none;letter-spacing:0.04em;color:var(--muted);margin:0}.linha-frase{font-size:22px;line-height:1.5;margin-top:var(--ar-3)}.recibo{border-top:1px solid var(--rule-strong)}.recibo-degrau{display:grid;grid-template-columns:128px minmax(0,1fr);gap:var(--ar-1) var(--ar-3);padding:var(--ar-3) 0;border-bottom:1px solid var(--rule);align-items:start}.recibo-k{font-family:var(--f-mono);font-size:10.5px;font-size-adjust:none;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);padding-top:5px}.recibo-v{min-width:0}.recibo-v>p{margin-bottom:var(--ar-1)}.linha-excerto{margin:0 0 var(--ar-1);padding:0 0 0 var(--ar-2);border-left:2px solid var(--yellow);font-family:var(--f-mono);font-size:13px;font-size-adjust:none;line-height:1.6}.endereco{font-family:var(--f-mono);font-size:12px;font-size-adjust:none;word-break:break-all;line-height:1.55}.recorte{border:1px dashed var(--rule-strong);background:var(--paper-2);min-height:108px;display:grid;place-items:center;padding:var(--ar-3);text-align:center;font-family:var(--f-mono);font-size:11px;font-size-adjust:none;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)}.verificacao-linha{display:grid;grid-template-columns:auto minmax(0,1fr);gap:var(--ar-1) var(--ar-2);padding:6px 0;border-bottom:1px solid var(--rule);font-family:var(--f-mono);font-size:12.5px;font-size-adjust:none;align-items:baseline}.verificacao-linha:last-child{border-bottom:0}.verificacao-estado{color:var(--muted)}.log-vazio-v{font-size:17.5px;color:var(--muted)}.porta-correccoes{border-top:1px solid var(--rule-strong);padding-top:var(--ar-2)}.porta-correccoes .linha-campo-k{display:block;font-family:var(--f-mono);font-size:10.5px;font-size-adjust:none;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);margin-bottom:var(--ar-1)}.ligacao-email{white-space:nowrap}.porta-seguinte{font-family:var(--f-mono);font-size:12px;font-size-adjust:none;letter-spacing:0.04em}.mun-campos{margin:0;display:grid;grid-template-columns:200px minmax(0,1fr);gap:0 var(--ar-3);border-top:1px solid var(--rule)}.mun-campos dt{font-family:var(--f-mono);font-size:11px;font-size-adjust:none;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);padding:var(--ar-2) 0 0}.mun-campos dd{margin:0;padding:var(--ar-2) 0;border-bottom:1px solid var(--rule);font-size:17px;line-height:1.55}.mun-campos dt + dd{grid-column:2}.mun-campo-vazio{color:var(--muted)}.mun-distancia-svg,.mun-serie-svg{display:block;width:100%;height:auto}.mun-barra-rot,.mun-tecto-rot,.mun-serie-val{font-size:13px;font-weight:600;fill:var(--ink)}.mun-tempo-eixo{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:10.5px;letter-spacing:0.1em;color:var(--muted);border-bottom:1px solid var(--rule-strong);padding-bottom:4px;margin-bottom:var(--ar-3)}.mun-mandato{border-left:1px solid var(--rule-strong);padding-left:var(--ar-3);margin-bottom:var(--ar-4);position:relative}.mun-mandato::before{content:'';position:absolute;left:-4px;top:9px;width:7px;height:7px;background:var(--ink)}.mun-mandato-cabeca{display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--ar-1) var(--ar-2);margin-bottom:var(--ar-2)}.mun-mandato-periodo{font-family:var(--f-mono);font-size:15px;font-size-adjust:none;font-weight:600;letter-spacing:0.02em}.mun-mandato-quem{font-size:21px}.mun-mandato-lista,.mun-mandato-instalado{font-family:var(--f-mono);font-size:11px;font-size-adjust:none;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted)}.mun-estudo{border-top:1px solid var(--rule);padding:var(--ar-3) 0}.mun-estudo-titulo{font-size:21px;margin-bottom:var(--ar-1)}.mun-estudo-frase{color:var(--muted);font-size:17px}.regra{border-top:1px solid var(--rule-strong);padding:var(--ar-4) 0 var(--ar-4)}.regra-n{font-family:var(--f-mono);font-size:30px;font-size-adjust:none;font-weight:600;color:var(--muted);display:block;line-height:1}.regra-titulo{margin-bottom:var(--ar-2)}.metodo-p{font-size:19px;line-height:1.62}.regra-linha{margin-top:var(--ar-3);display:grid;grid-template-columns:128px minmax(0,1fr);gap:var(--ar-1) var(--ar-3);align-items:start}.regra-k{font-family:var(--f-mono);font-size:10.5px;font-size-adjust:none;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);padding-top:5px}.regra-v{font-size:17px;line-height:1.55;color:var(--muted)}.regra-prova{font-family:var(--f-mono);font-size:12.5px;font-size-adjust:none;letter-spacing:0.02em;color:var(--muted);line-height:1.7}.prova-valor{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule-strong)}.prova-valor:hover{border-bottom-color:var(--ink)}.regra-portas{margin-top:var(--ar-3);font-family:var(--f-mono);font-size:12px;font-size-adjust:none;letter-spacing:0.04em}.mecanismo-svg{display:block;width:100%;height:auto}.mecanismo-caixa{fill:var(--paper-2);stroke:var(--rule-strong);stroke-width:1}.mecanismo-rotulo{font-family:var(--f-mono);font-size:10.5px;letter-spacing:0.14em;fill:var(--muted)}.mecanismo-num{font-family:var(--f-mono);font-size:22px;font-weight:600;fill:var(--ink)}.mecanismo-cap{font-family:var(--f-mono);font-size:10px;letter-spacing:0.04em;fill:var(--muted)}.mecanismo-seta{stroke:var(--axis);stroke-width:1;fill:none}.mecanismo-ponta{fill:var(--axis)}.mecanismo-breve{font-size:21px;line-height:1.45;margin-top:var(--ar-3)}.agenda-estado{font-family:var(--f-mono);font-size:13px;font-size-adjust:none;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);border-top:2px solid var(--ink);padding-top:var(--ar-1)}.agenda-item{border-top:1px solid var(--rule);padding:var(--ar-4) 0}.agenda-item-eyebrow{display:flex;flex-wrap:wrap;gap:var(--ar-1) var(--ar-2);font-family:var(--f-mono);font-size:10.5px;font-size-adjust:none;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--ar-1)}.agenda-titulo{font-size:26px;line-height:1.2;margin-bottom:var(--ar-3)}.agenda-bloco{margin-top:var(--ar-3);display:grid;grid-template-columns:128px minmax(0,1fr);gap:var(--ar-1) var(--ar-3);align-items:start}.agenda-k{font-family:var(--f-mono);font-size:10.5px;font-size-adjust:none;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);padding-top:5px;margin:0}.agenda-v{min-width:0}.agenda-criterios{list-style:none;margin:0;padding:0;display:grid;gap:var(--ar-2)}.agenda-criterio{border-left:1px solid var(--rule-strong);padding-left:var(--ar-2)}.agenda-criterio-tipo{display:block;font-family:var(--f-mono);font-size:10px;font-size-adjust:none;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted)}.agenda-quadro{display:block;font-size:17px;line-height:1.45;margin:2px 0 var(--ar-1)}.agenda-criterio-nota,.agenda-nota{font-family:var(--f-mono);font-size:12px;font-size-adjust:none;line-height:1.6;color:var(--muted)}.agenda-linha-selo{display:inline-flex;align-items:baseline;gap:var(--ar-1)}.agenda-datas{display:flex;flex-wrap:wrap;gap:var(--ar-1) var(--ar-3);font-family:var(--f-mono);font-size:12px;font-size-adjust:none;color:var(--muted);margin:0}.agenda-k-inline{color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;font-size:10px;margin-right:6px}.agenda-datas .mono,.agenda-nota .mono{color:var(--ink)}.agenda-historico{list-style:none;margin:0;padding:0;display:grid;gap:var(--ar-2)}.agenda-historico-cabeca{display:flex;flex-wrap:wrap;gap:var(--ar-1) var(--ar-2);font-family:var(--f-mono);font-size:11.5px;font-size-adjust:none;letter-spacing:0.04em;color:var(--ink);margin-bottom:4px}.agenda-historico-tipo{color:var(--muted);text-transform:uppercase;letter-spacing:0.14em;font-size:10px}.agenda-historico-motivo{font-size:17px;line-height:1.55;color:var(--muted)}.agenda-vazio{color:var(--muted)}.agenda-evento{border-top:1px solid var(--rule);padding:var(--ar-3) 0;list-style:none}.agenda-eventos{margin:0;padding:0}.agenda-evento-cabeca{display:flex;flex-wrap:wrap;gap:var(--ar-1) var(--ar-2);align-items:baseline;margin-bottom:4px}.agenda-evento-data{font-weight:600;color:var(--ink)}.agenda-evento-fonte{font-family:var(--f-mono);font-size:10.5px;font-size-adjust:none;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)}.agenda-evento-titulo{font-size:19px;line-height:1.4;margin-bottom:var(--ar-1)}.agenda-excerto{margin:var(--ar-1) 0;padding-left:var(--ar-2);border-left:2px solid var(--yellow);font-family:var(--f-mono);font-size:12.5px;font-size-adjust:none;line-height:1.6;color:var(--ink)}.agenda-afecta a{color:var(--ink)}.etiqueta-correcao{font-family:var(--f-mono);font-size:10px;font-size-adjust:none;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--oxblood);border:1px solid var(--oxblood);padding:1px 6px}.ar-antes-1{margin-top:var(--ar-1)}.ar-antes-2{margin-top:var(--ar-2)}.ar-antes-3{margin-top:var(--ar-3)}.rodape{border-top:1px solid var(--rule-strong);margin-top:var(--ar-6);padding:var(--ar-3) 0 var(--ar-5)}.rodape-nav{display:flex;flex-wrap:wrap;gap:var(--ar-2) var(--ar-3);font-family:var(--f-mono);font-size:11.5px;font-size-adjust:none;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin:0}.rodape-nav a{text-decoration:none;border-bottom:1px solid transparent}.rodape-nav a:hover{color:var(--ink);border-bottom-color:var(--rule-strong)}@media (max-width:1180px){.pagina{grid-template-columns:minmax(0,var(--medida)) var(--nota)}.rail{grid-column:1}.texto{grid-column:1}.nota{grid-column:2}.texto-e-nota{grid-column:1 / -1}.rail{margin-bottom:var(--ar-2)}}@media (max-width:900px){.pagina{grid-template-columns:minmax(0,1fr)}.rail,.texto,.nota,.faixa,.texto-e-nota{grid-column:1}.pagina>*{margin-bottom:var(--ar-4)}.rail{margin-bottom:var(--ar-1)}.figura{grid-template-columns:minmax(110px,auto) minmax(0,1fr)}.mun-campos{grid-template-columns:minmax(0,1fr)}.mun-campos dt{padding-bottom:0}.mun-campos dt + dd{grid-column:1}}@media (max-width:620px){:root{--corpo:18px;--ar-5:56px;--ar-6:72px}.figura{grid-template-columns:minmax(0,1fr);gap:var(--ar-1)}.figura-num{grid-row:auto;font-size:44px}.figura-medida,.figura-frase,.figura-selo{grid-column:1}.recibo-degrau,.regra-linha,.agenda-bloco{grid-template-columns:minmax(0,1fr);gap:var(--ar-1)}.recibo-k,.regra-k,.agenda-k{padding-top:0}.lede{font-size:20px}.linha-frase,.abertura-frase{font-size:20px}.glance-num{font-size:68px}.linha-valor-num{font-size:60px}.mun-mandato{padding-left:var(--ar-2)}.masthead{padding-top:var(--ar-3)}.masthead-compact{grid-template-columns:minmax(0,1fr)}.svg-scroll>.rule-svg,.svg-scroll>.mecanismo-svg,.svg-scroll>.mun-distancia-svg,.svg-scroll>.mun-serie-svg{min-width:560px}.src-chip .mini{left:auto;right:0}}@media (prefers-reduced-motion:reduce){*,::before,::after{animation-duration:0.01ms !important;transition-duration:0.01ms !important;scroll-behavior:auto !important}}</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+<div class="wrap">
+
+<header>
+  <div class="topbar">
+    <nav class="nav" aria-label="Início">
+      <a href="https://oestadodopaís.pt/">Início</a>
+      <a href="https://oestadodopaís.pt/municipios">Municípios</a>
+      <a href="https://oestadodopaís.pt/estudos">Estudos</a>
+      <a href="https://oestadodopaís.pt/livro-razao">Livro-razão</a>
+      <a href="https://oestadodopaís.pt/agenda" aria-current="page">Agenda</a>
+      <a href="https://oestadodopaís.pt/metodo">Método</a>
+      <a href="https://oestadodopaís.pt/sobre">Sobre</a>
+    </nav>
+    <nav class="nav" aria-label="English">
+      <a href="https://oestadodopaís.pt/en/agenda" hreflang="en" lang="en">English</a>
+    </nav>
+  </div>
+  <div class="masthead masthead-compact">
+    <p class="wordmark"><a href="https://oestadodopaís.pt/">O Estado do País</a></p>
+    <p class="method-line" lang="pt-PT">Portugal, medido. Cada número tem fonte.</p>
+    <div class="masthead-furniture" data-sinal-de-tempo>
+      <span><a href="https://oestadodopaís.pt/#numeros">Painel europeu reconferido a <span data-nonledger="data-de-atualizacao">2026-08-12</span></a></span>
+      <span>Agenda: <a class="prova-valor" href="https://oestadodopaís.pt/agenda" data-prova="agenda_em_curso">3</a> em curso · <a class="prova-valor" href="https://oestadodopaís.pt/agenda" data-prova="agenda_a_seguir">1</a> a seguir</span>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+<div class="pagina">
+
+  <div class="rail"><p class="rail-k">Agenda</p></div>
+  <div class="texto">
+    <h1>O que se mede a seguir</h1>
+    <p class="lede">Cada item traz o critério que o pôs aqui, quem o propôs, quem o decidiu, e o registo de cada mudança de estado. Nada sai desta lista em silêncio.</p>
+  </div>
+  <div class="nota">
+    <div class="nota-bloco">
+      <span class="nota-k">De onde vem esta página</span>
+      <p>A lista e o calendário são dois registos do motor de investigação, publicados tal como atravessaram.</p>
+    </div>
+  </div>
+
+  <!-- ==================================================== em curso -->
+  <div class="rail" id="estado-em_curso"><h2 class="agenda-estado">Em curso</h2></div>
+  <div class="texto-e-nota">
+
+    <article class="agenda-item" id="item-dgal-endividamento-2025">
+      <p class="agenda-item-eyebrow"><span>Vigilância</span><span>Em curso</span></p>
+      <h3 class="agenda-titulo">O ficheiro de endividamento de 2025 da DGAL</h3>
+      <div class="agenda-bloco">
+        <p class="agenda-k">Porquê</p>
+        <div class="agenda-v"><p class="metodo-p">A DGAL não publica calendário e o ficheiro aparece sem aviso; a vigilância mensal é o que existe no lugar de uma data.</p></div>
+      </div>
+      <div class="agenda-bloco">
+        <p class="agenda-k">Critérios</p>
+        <div class="agenda-v">
+          <ul class="agenda-criterios">
+            <li class="agenda-criterio">
+              <span class="agenda-criterio-tipo">Calendário das fontes</span>
+              <span class="agenda-quadro"><a href="#ev-dgal-endividamento-2025">Ficheiro «Evolução endividamento total 2025» no Portal Autárquico</a></span>
+              <p class="agenda-nota"><a class="marcador" lang="pt-PT" href="https://oestadodopaís.pt/a-verificar">[a verificar]</a> a fonte não publica data</p>
+              <p class="agenda-criterio-nota">O acontecimento no calendário regista que a página não anuncia data nenhuma: onze ficheiros anuais estão lá sem data, e a procura por «calend» não dá nada. A mesma procura encontra «endividamento» na página, por isso a ausência de «calendário» não é falha da procura.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="agenda-bloco">
+        <p class="agenda-k">Datas</p>
+        <div class="agenda-v">
+          <p class="agenda-datas">
+            <span><span class="agenda-k-inline">Proposto pelo motor a</span><span class="mono">2026-08-10</span></span>
+            <span class="agenda-vazio">Sem decisão da direção registada</span>
+            <span><span class="agenda-k-inline">Entrada no registo</span><span class="mono">2026-08-16</span></span>
+            <span><span class="agenda-k-inline">Última alteração</span><span class="mono">2026-08-16</span></span>
+          </p>
+        </div>
+      </div>
+      <div class="agenda-bloco">
+        <p class="agenda-k">O que mudou</p>
+        <div class="agenda-v">
+          <ol class="agenda-historico">
+            <li>
+              <p class="agenda-historico-cabeca"><span class="mono">2026-08-16</span><span class="agenda-historico-tipo">entrada</span><span class="mono">passa a Em curso</span></p>
+              <p class="agenda-historico-motivo">A vigilância existia desde 2026-08-10 mas corria à mão e não deixava rasto. Passa a correr no agente mensal a partir de hoje, e é hoje que entra na agenda.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </article>
+
+    <article class="agenda-item" id="item-evora-contas-2026">
+      <p class="agenda-item-eyebrow"><span>Vigilância</span><span>Em curso</span></p>
+      <h3 class="agenda-titulo">As contas de 2026 do Município de Évora</h3>
+      <div class="agenda-bloco">
+        <p class="agenda-k">Porquê</p>
+        <div class="agenda-v"><p class="metodo-p">São as primeiras contas do executivo instalado em 2025, e os dois estudos de Évora deixaram escritas as linhas a conferir quando aparecerem.</p></div>
+      </div>
+      <div class="agenda-bloco">
+        <p class="agenda-k">Critérios</p>
+        <div class="agenda-v">
+          <ul class="agenda-criterios">
+            <li class="agenda-criterio">
+              <span class="agenda-criterio-tipo">Calendário das fontes</span>
+              <span class="agenda-quadro"><a href="#ev-evora-contas-2026">Prestação de contas de 2026 do Município de Évora, apreciação pela Assembleia Municipal</a></span>
+              <p class="agenda-nota"><span class="mono">entre 2027-04-01 e 2027-04-30</span></p>
+              <p class="agenda-criterio-nota">O que os dois estudos mandam conferir, palavra por palavra, nos documentos alojados aqui. Do estudo dos mandatos de Évora: «A taxa de execução de 2026, contra a série descendente que o documento companheiro tabela.» · «Se a fila dos fornecedores vira antes de tudo o resto.» · «As taxas de execução do Rossio de São Brás e da via de acesso ao hospital quando as contas de 2026 aparecerem, contra as dotações que a secção do plano imprime para ambos.» · «Como vota a assembleia municipal essas mesmas contas de 2026, dada a repartição de mandatos acima.» Do estudo das contas de Évora: «o primeiro número a verificar nas contas de 2026 é a taxa de execução, não o total».</p>
+              <p class="agenda-criterio-nota"><span class="agenda-k-inline">Documentos alojados</span><a href="https://oestadodopaís.pt/estudos/evora-quinze-anos-cinco-mandatos/documento">Évora — Quinze Anos, Cinco Mandatos (edição portuguesa)</a> · <a href="https://oestadodopaís.pt/estudos/evora-orcamentado-pago-devido-2025/documento">Évora — Orçamentado, Pago, Devido 2025 (edição portuguesa)</a></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="agenda-bloco">
+        <p class="agenda-k">Datas</p>
+        <div class="agenda-v">
+          <p class="agenda-datas">
+            <span><span class="agenda-k-inline">Proposto pelo motor a</span><span class="mono">2026-08-10</span></span>
+            <span class="agenda-vazio">Sem decisão da direção registada</span>
+            <span><span class="agenda-k-inline">Entrada no registo</span><span class="mono">2026-08-16</span></span>
+            <span><span class="agenda-k-inline">Última alteração</span><span class="mono">2026-08-16</span></span>
+          </p>
+        </div>
+      </div>
+      <div class="agenda-bloco">
+        <p class="agenda-k">O que mudou</p>
+        <div class="agenda-v">
+          <ol class="agenda-historico">
+            <li>
+              <p class="agenda-historico-cabeca"><span class="mono">2026-08-16</span><span class="agenda-historico-tipo">entrada</span><span class="mono">passa a Em curso</span></p>
+              <p class="agenda-historico-motivo">Entra hoje, com o prazo legal lido no Diário da República e registado no calendário das fontes.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </article>
+
+    <article class="agenda-item" id="item-evora-contas-2024-pagina">
+      <p class="agenda-item-eyebrow"><span>Vigilância</span><span>Em curso</span></p>
+      <h3 class="agenda-titulo">O ano de 2024 sem contas publicadas em Évora</h3>
+      <div class="agenda-bloco">
+        <p class="agenda-k">Porquê</p>
+        <div class="agenda-v"><p class="metodo-p">O ano não tem dossiê publicado, e o reaparecimento de uma página de 2024 seria notícia por si.</p></div>
+      </div>
+      <div class="agenda-bloco">
+        <p class="agenda-k">Critérios</p>
+        <div class="agenda-v">
+          <ul class="agenda-criterios">
+            <li class="agenda-criterio">
+              <span class="agenda-criterio-tipo">Calendário das fontes</span>
+              <span class="agenda-quadro"><a href="#ev-evora-contas-2024-pagina">Reaparecimento de uma página de contas de 2024 em cm-evora.pt</a></span>
+              <p class="agenda-nota"><a class="marcador" lang="pt-PT" href="https://oestadodopaís.pt/a-verificar">[a verificar]</a> a fonte não publica data</p>
+              <p class="agenda-criterio-nota">O estudo dos mandatos de Évora diz, no documento alojado aqui: «Nunca foi publicado nenhum documento de contas de 2024». É esse o facto que se vigia.</p>
+              <p class="agenda-criterio-nota"><span class="agenda-k-inline">Documentos alojados</span><a href="https://oestadodopaís.pt/estudos/evora-quinze-anos-cinco-mandatos/documento">Évora — Quinze Anos, Cinco Mandatos (edição portuguesa)</a></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="agenda-bloco">
+        <p class="agenda-k">Datas</p>
+        <div class="agenda-v">
+          <p class="agenda-datas">
+            <span><span class="agenda-k-inline">Proposto pelo motor a</span><span class="mono">2026-08-10</span></span>
+            <span class="agenda-vazio">Sem decisão da direção registada</span>
+            <span><span class="agenda-k-inline">Entrada no registo</span><span class="mono">2026-08-16</span></span>
+            <span><span class="agenda-k-inline">Última alteração</span><span class="mono">2026-08-16</span></span>
+          </p>
+        </div>
+      </div>
+      <div class="agenda-bloco">
+        <p class="agenda-k">O que mudou</p>
+        <div class="agenda-v">
+          <ol class="agenda-historico">
+            <li>
+              <p class="agenda-historico-cabeca"><span class="mono">2026-08-16</span><span class="agenda-historico-tipo">entrada</span><span class="mono">passa a Em curso</span></p>
+              <p class="agenda-historico-motivo">Entra hoje. É a única das três vigilâncias cujo acontecimento não tem prazo nenhum, nem legal nem observado: pode nunca acontecer, e isso também é um resultado.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- =================================================== a seguir -->
+  <div class="rail" id="estado-a_seguir"><h2 class="agenda-estado">A seguir</h2></div>
+  <div class="texto-e-nota">
+
+    <article class="agenda-item" id="item-habitacao">
+      <p class="agenda-item-eyebrow"><span>Estudo</span><span>A seguir</span></p>
+      <h3 class="agenda-titulo">Habitação: o que cada instituição mede quando fala de habitação em Portugal</h3>
+      <div class="agenda-bloco">
+        <p class="agenda-k">A pergunta</p>
+        <div class="agenda-v">
+          <p class="metodo-p">Quando as instituições que avaliam Portugal divergem sobre a habitação, umas chamando-lhe o problema estrutural mais grave do país e outra colocando-a entre as melhores dimensões do bem-estar português, essa divergência é produzida pelo que cada indicador está definido para medir e por quem abrange, ou sobrevive depois de as definições serem postas todas na mesma base?</p>
+          <p class="agenda-nota">Nos estudos, a pergunta é selada no motor antes de a recolha começar. Esta está registada e ainda não selada: a direção não a leu. O registo do motor escreve-se em inglês: o inglês é a forma registada, palavra por palavra, e o português acima é a edição portuguesa dessa mesma pergunta.</p>
+          <p class="agenda-nota"><span class="agenda-k-inline">Registo prévio iniciado a</span><span class="mono">2026-08-16, por selar</span></p>
+        </div>
+      </div>
+      <div class="agenda-bloco">
+        <p class="agenda-k">Porquê</p>
+        <div class="agenda-v"><p class="metodo-p">Três linhas do livro-razão publicam habitação como indicador de um quadro institucional, e uma delas, o índice de preços, está publicada com um valor acima do limiar que a própria Comissão publica; nenhuma linha do sítio publica hoje o que o Fundo Monetário Internacional, a OCDE ou o Semestre Europeu dizem sobre habitação portuguesa.</p></div>
+      </div>
+      <div class="agenda-bloco">
+        <p class="agenda-k">Critérios</p>
+        <div class="agenda-v">
+          <ul class="agenda-criterios">
+
+            <li class="agenda-criterio">
+              <span class="agenda-criterio-tipo">Quadro institucional</span>
+              <span class="agenda-quadro">Procedimento relativo aos Desequilíbrios Macroeconómicos, painel principal (Comissão Europeia)</span>
+              <p class="agenda-linha-selo"><span class="claim"><span class="claim-value" data-claim="precos-da-habitacao-2025">17,6</span><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/precos-da-habitacao-2025"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Quadro institucional de indicadores, leitura direta da fonte</span></a></span></p>
+              <p class="agenda-nota"><span class="agenda-k-inline">Limiar publicado pela Comissão</span><span class="mono">9%</span></p>
+              <p class="agenda-nota"><span class="agenda-k-inline">Onde está escrito</span><a href="https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en"><span class="mono">https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en</span></a></p>
+              <p class="agenda-nota"><span class="agenda-k-inline">Lido a</span><span class="mono">2026-08-16</span></p>
+              <blockquote class="agenda-excerto">nominal house price (1-year % change), with a threshold of 9%</blockquote>
+              <p class="agenda-criterio-nota">O valor publicado é o da linha ao lado, com o seu selo. O limiar contra o qual ele se lê é o que a Comissão publica na página do painel, e está no campo próprio deste critério, com o endereço, a data da leitura e a frase que o diz.</p>
+            </li>
+
+            <li class="agenda-criterio">
+              <span class="agenda-criterio-tipo">Quadro institucional</span>
+              <span class="agenda-quadro">Painel de Indicadores Sociais (Comissão Europeia)</span>
+              <p class="agenda-linha-selo"><span class="claim"><span class="claim-value" data-claim="sobrecarga-do-custo-da-habitacao-2025">6,3</span><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/sobrecarga-do-custo-da-habitacao-2025"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Quadro institucional de indicadores, leitura direta da fonte</span></a></span></p>
+              <p class="agenda-criterio-nota">O registo de disponibilidade do motor marca tespm140 com o quadro «SocialSB». A análise de convergência do motor identifica este indicador como armadilha, e a razão é a que a primeira página já diz: a própria Comissão adverte que só se lê ao lado do regime de propriedade, e onde a taxa de proprietários é alta esta medida não vê quem não conseguiu comprar. O sítio não publica hoje a média europeia deste indicador, e por isso a comparação com ela não é feita aqui.</p>
+            </li>
+
+            <li class="agenda-criterio">
+              <span class="agenda-criterio-tipo">Quadro institucional</span>
+              <span class="agenda-quadro">Procedimento relativo aos Desequilíbrios Macroeconómicos, indicadores auxiliares (Comissão Europeia)</span>
+              <p class="agenda-linha-selo"><span class="claim"><span class="claim-value" data-claim="licencas-de-construcao-2025">749,7</span><a class="src-chip" href="https://oestadodopaís.pt/livro-razao/licencas-de-construcao-2025"><span class="src-chip-porta">fonte</span><span class="src-chip-texto">Quadro institucional de indicadores, leitura direta da fonte</span></a></span></p>
+              <p class="agenda-criterio-nota">Licenças de construção residencial, um indicador auxiliar do mesmo painel.</p>
+            </li>
+
+            <li class="agenda-criterio">
+              <span class="agenda-criterio-tipo">Quadro institucional</span>
+              <span class="agenda-quadro">Fundo Monetário Internacional, consulta ao abrigo do Artigo IV</span>
+              <p class="agenda-criterio-nota">Sem linhas: nenhuma afirmação do livro-razão publica hoje a avaliação do Fundo sobre habitação portuguesa. O quadro fica registado sem linhas em vez de ser omitido, porque a ausência é uma das lacunas que o estudo vai preencher.</p>
+            </li>
+
+            <li class="agenda-criterio">
+              <span class="agenda-criterio-tipo">Quadro institucional</span>
+              <span class="agenda-quadro">OCDE, Estudo Económico de Portugal, Foundations for Growth and Competitiveness, How's Life</span>
+              <p class="agenda-criterio-nota">Sem linhas, pela mesma razão. É deste quadro que vem a leitura favorável da habitação portuguesa que a pergunta põe frente às outras.</p>
+            </li>
+
+            <li class="agenda-criterio">
+              <span class="agenda-criterio-tipo">Quadro institucional</span>
+              <span class="agenda-quadro">Semestre Europeu, relatório por país e recomendações específicas</span>
+              <p class="agenda-criterio-nota">Sem linhas. Duas linhas do livro-razão citam no seu campo «note» o documento SWD(2026) 222, mas para confirmar um valor do Eurostat, não para publicar o que o Semestre diz.</p>
+            </li>
+
+            <li class="agenda-criterio">
+              <span class="agenda-criterio-tipo">Calendário das fontes</span>
+              <span class="agenda-quadro"><a href="#ev-ine-indice-precos-habitacao-t2-2026">Índice de Preços da Habitação, 2.º trimestre de 2026</a></span>
+              <p class="agenda-nota"><span class="mono">2026-09-22</span></p>
+            </li>
+
+            <li class="agenda-criterio">
+              <span class="agenda-criterio-tipo">Calendário das fontes</span>
+              <span class="agenda-quadro"><a href="#ev-ine-precos-habitacao-local-t2-2026">Estatísticas de Preços da Habitação ao nível local, 2.º trimestre de 2026</a></span>
+              <p class="agenda-nota"><span class="mono">2026-10-23</span></p>
+            </li>
+
+            <li class="agenda-criterio">
+              <span class="agenda-criterio-tipo">Calendário das fontes</span>
+              <span class="agenda-quadro"><a href="#ev-ine-rendas-habitacao-local-t2-2026">Estatísticas de Rendas da Habitação ao nível local, 2.º trimestre de 2026</a></span>
+              <p class="agenda-nota"><span class="mono">2026-09-29</span></p>
+            </li>
+
+            <li class="agenda-criterio">
+              <span class="agenda-criterio-tipo">Calendário das fontes</span>
+              <span class="agenda-quadro"><a href="#ev-ce-relatorio-mecanismo-alerta-2027">Relatório sobre o Mecanismo de Alerta e painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, Semestre Europeu de 2027</a></span>
+              <p class="agenda-nota"><a class="marcador" lang="pt-PT" href="https://oestadodopaís.pt/a-verificar">[a verificar]</a> a fonte não publica data</p>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+      <div class="agenda-bloco">
+        <p class="agenda-k">Datas</p>
+        <div class="agenda-v">
+          <p class="agenda-datas">
+            <span><span class="agenda-k-inline">Proposto pelo motor a</span><span class="mono">2026-08-12</span></span>
+            <span><span class="agenda-k-inline">Decidido pela direção a</span><span class="mono">2026-08-15</span></span>
+            <span><span class="agenda-k-inline">Entrada no registo</span><span class="mono">2026-08-16</span></span>
+            <span><span class="agenda-k-inline">Última alteração</span><span class="mono">2026-08-16</span></span>
+          </p>
+        </div>
+      </div>
+      <div class="agenda-bloco">
+        <p class="agenda-k">O que mudou</p>
+        <div class="agenda-v">
+          <ol class="agenda-historico">
+            <li>
+              <p class="agenda-historico-cabeca"><span class="mono">2026-08-16</span><span class="agenda-historico-tipo">entrada</span><span class="mono">passa a A seguir</span></p>
+              <p class="agenda-historico-motivo">Registo criado no dia em que a agenda passou a existir. A pergunta acima é a que está no registo prévio, que foi iniciado hoje e não foi selado: a recolha não começou e a direção ainda não leu a pergunta. Selar antes dessa leitura seria certificar que a pergunta precedeu a prova quando o que precede a prova ainda pode mudar.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ================================================== concluído -->
+  <div class="rail" id="estado-concluido"><h2 class="agenda-estado">Concluído</h2></div>
+  <div class="texto-e-nota">
+    <article class="agenda-item" id="item-evora-pagina-de-municipio">
+      <p class="agenda-item-eyebrow"><span>Página</span><span>Concluído</span></p>
+      <h3 class="agenda-titulo">Évora, o primeiro tipo de página de município</h3>
+      <div class="agenda-bloco">
+        <p class="agenda-k">Porquê</p>
+        <div class="agenda-v"><p class="metodo-p">O sítio não tinha página para nenhum concelho; Évora era o único com material verificado suficiente para uma, e é o tipo de página que os outros vão herdar.</p></div>
+      </div>
+      <div class="agenda-bloco">
+        <p class="agenda-k">Critérios</p>
+        <div class="agenda-v"><p class="metodo-p agenda-vazio">Sem critério de nenhum dos quatro tipos. Veio de uma decisão da direção sobre o que faltava ao sítio, e não de um quadro institucional, de um calendário, de um leitor ou de uma correção. A razão está escrita no porquê e no histórico.</p></div>
+      </div>
+      <div class="agenda-bloco">
+        <p class="agenda-k">Datas</p>
+        <div class="agenda-v">
+          <p class="agenda-datas">
+            <span><span class="agenda-k-inline">Proposto pelo motor a</span><span class="mono">2026-08-15</span></span>
+            <span><span class="agenda-k-inline">Decidido pela direção a</span><span class="mono">2026-08-15</span></span>
+            <span><span class="agenda-k-inline">Entrada no registo</span><span class="mono">2026-08-16</span></span>
+            <span><span class="agenda-k-inline">Última alteração</span><span class="mono">2026-08-16</span></span>
+          </p>
+        </div>
+      </div>
+      <div class="agenda-bloco">
+        <p class="agenda-k">O que mudou</p>
+        <div class="agenda-v">
+          <ol class="agenda-historico">
+            <li>
+              <p class="agenda-historico-cabeca"><span class="mono">2026-08-16</span><span class="agenda-historico-tipo">entrada</span><span class="mono">passa a Concluído</span></p>
+              <p class="agenda-historico-motivo">Entrada retrospetiva. O trabalho foi proposto, decidido, construído e publicado a 2026-08-15, antes de esta agenda existir, e é registado a 2026-08-16, que é o dia em que a agenda foi criada. Entra já concluído, e este parágrafo está aqui para que o leitor não leia a data de entrada como a data do trabalho. Fontes do que foi concluído: DECISIONS.md §1.34 do sítio, e a nota de decisão do cofre, secção «As built, same day (afternoon)». Sem critério dos quatro tipos: veio de uma decisão de direção sobre o que o sítio não tinha, e não de um quadro institucional, de um calendário, de um leitor ou de uma correção.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- =================================================== retirado -->
+  <div class="rail" id="estado-retirado"><h2 class="agenda-estado">Retirado</h2></div>
+  <div class="texto-e-nota">
+    <p class="metodo-p agenda-vazio">Nada foi retirado desta agenda até hoje. Quando alguma coisa for, fica aqui, com a data e o motivo: um item não se apaga, muda de estado.</p>
+  </div>
+
+  <!-- ================================================= o calendário -->
+  <div class="rail" id="calendario"><h2 class="agenda-estado">O calendário das fontes</h2></div>
+  <div class="texto-e-nota">
+    <p class="metodo-p">O que as fontes que este sítio cita publicam a seguir. Cada data traz o sítio onde está escrita, a data em que foi lida e a frase que a diz.</p>
+
+    <p class="agenda-k ar-antes-3">Com data publicada pela fonte</p>
+    <ul class="agenda-eventos">
+
+      <li class="agenda-evento" id="ev-ine-indice-precos-habitacao-t2-2026">
+        <p class="agenda-evento-cabeca"><span class="mono agenda-evento-data">2026-09-22</span><span class="agenda-evento-fonte">INE</span></p>
+        <p class="agenda-evento-titulo">Índice de Preços da Habitação, 2.º trimestre de 2026</p>
+        <p class="agenda-nota"><span class="agenda-k-inline">Onde está escrito</span><a href="https://www.ine.pt/xportal/xmain?xpid=INE&amp;xpgid=ine_calendarios&amp;xlang=pt"><span class="mono">https://www.ine.pt/xportal/xmain?xpid=INE&amp;xpgid=ine_calendarios&amp;xlang=pt</span></a> <span class="agenda-k-inline">Lido a</span><span class="mono">2026-08-16</span></p>
+        <blockquote class="agenda-excerto">Índice de Preços da Habitação · 2.º Trimestre de 2026 · 22 de setembro de 2026</blockquote>
+        <p class="agenda-nota"><span class="agenda-k-inline">Nota</span>A linha precos-da-habitacao-2025 do sítio publica o quadro anual do Eurostat (tipsho20), não este índice trimestral. Fica registado porque é a medição nacional do mesmo objeto e porque o estudo da habitação começa por ela.</p>
+      </li>
+
+      <li class="agenda-evento" id="ev-ine-pde-2a-notificacao-2026">
+        <p class="agenda-evento-cabeca"><span class="mono agenda-evento-data">2026-09-23</span><span class="agenda-evento-fonte">INE</span></p>
+        <p class="agenda-evento-titulo">Procedimento dos Défices Excessivos, 2.ª Notificação de 2026</p>
+        <p class="agenda-nota"><span class="agenda-k-inline">Onde está escrito</span><a href="https://www.ine.pt/xportal/xmain?xpid=INE&amp;xpgid=ine_calendarios&amp;xlang=pt"><span class="mono">https://www.ine.pt/xportal/xmain?xpid=INE&amp;xpgid=ine_calendarios&amp;xlang=pt</span></a> <span class="agenda-k-inline">Lido a</span><span class="mono">2026-08-16</span></p>
+        <blockquote class="agenda-excerto">Procedimento dos Défices Excessivos - 2ª Notificação · 2026 · 23 de setembro de 2026</blockquote>
+        <p class="agenda-nota"><span class="agenda-k-inline">Nota</span>É a notificação nacional. O valor que o sítio publica sai do quadro do Eurostat, que sai depois: ver eurostat-pde-notificacao-outubro-2026.</p>
+      </li>
+
+      <li class="agenda-evento" id="ev-ine-rendas-habitacao-local-t2-2026">
+        <p class="agenda-evento-cabeca"><span class="mono agenda-evento-data">2026-09-29</span><span class="agenda-evento-fonte">INE</span></p>
+        <p class="agenda-evento-titulo">Estatísticas de Rendas da Habitação ao nível local, 2.º trimestre de 2026</p>
+        <p class="agenda-nota"><span class="agenda-k-inline">Onde está escrito</span><a href="https://www.ine.pt/xportal/xmain?xpid=INE&amp;xpgid=ine_calendarios&amp;xlang=pt"><span class="mono">https://www.ine.pt/xportal/xmain?xpid=INE&amp;xpgid=ine_calendarios&amp;xlang=pt</span></a> <span class="agenda-k-inline">Lido a</span><span class="mono">2026-08-16</span></p>
+        <blockquote class="agenda-excerto">Estatísticas de Rendas da Habitação ao nível local · 2.º Trimestre de 2026 · 29 de setembro de 2026</blockquote>
+        <p class="agenda-nota"><span class="agenda-k-inline">Nota</span>Nível de concelho. Nenhuma linha do sítio a usa hoje.</p>
+      </li>
+
+      <li class="agenda-evento" id="ev-eurostat-pde-notificacao-outubro-2026">
+        <p class="agenda-evento-cabeca"><span class="mono agenda-evento-data">2026-10-21</span><span class="agenda-evento-fonte">Eurostat</span></p>
+        <p class="agenda-evento-titulo">Notificação do Procedimento relativo aos Défices Excessivos: défice e dívida das administrações públicas</p>
+        <p class="agenda-nota"><span class="agenda-k-inline">Onde está escrito</span><a href="https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-22042026-ap"><span class="mono">https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-22042026-ap</span></a> <span class="agenda-k-inline">Lido a</span><span class="mono">2026-08-16</span></p>
+        <blockquote class="agenda-excerto">Next release: 21 October 2026</blockquote>
+        <p class="agenda-nota"><span class="agenda-k-inline">Nota</span>O comunicado de 2026-04-22 diz de si próprio: «In this release, Eurostat, the statistical office of the European Union, is providing government deficit and debt data for the years 2022-2025, based on figures reported by EU Member States in the first notification in 2026, for the application of the excessive deficit procedure (EDP).» A linha do sítio divida-publica-2025 publica o quadro anual tipsgo10, na base do Procedimento.</p>
+        <p class="agenda-nota agenda-afecta"><span class="agenda-k-inline">Linhas que isto move</span><span class="mono"><a href="https://oestadodopaís.pt/livro-razao/divida-publica-2025">divida-publica-2025</a></span></p>
+      </li>
+
+      <li class="agenda-evento" id="ev-ine-precos-habitacao-local-t2-2026">
+        <p class="agenda-evento-cabeca"><span class="mono agenda-evento-data">2026-10-23</span><span class="agenda-evento-fonte">INE</span></p>
+        <p class="agenda-evento-titulo">Estatísticas de Preços da Habitação ao nível local, 2.º trimestre de 2026</p>
+        <p class="agenda-nota"><span class="agenda-k-inline">Onde está escrito</span><a href="https://www.ine.pt/xportal/xmain?xpid=INE&amp;xpgid=ine_calendarios&amp;xlang=pt"><span class="mono">https://www.ine.pt/xportal/xmain?xpid=INE&amp;xpgid=ine_calendarios&amp;xlang=pt</span></a> <span class="agenda-k-inline">Lido a</span><span class="mono">2026-08-16</span></p>
+        <blockquote class="agenda-excerto">Estatísticas de Preços da Habitação ao nível local · 2.º Trimestre de 2026 · 23 de outubro de 2026</blockquote>
+        <p class="agenda-nota"><span class="agenda-k-inline">Nota</span>Nível de concelho. Nenhuma linha do sítio a usa hoje.</p>
+      </li>
+
+      <li class="agenda-evento" id="ev-ine-empresas-em-portugal-2025">
+        <p class="agenda-evento-cabeca"><span class="mono agenda-evento-data">2026-10-30</span><span class="agenda-evento-fonte">INE</span></p>
+        <p class="agenda-evento-titulo">Empresas em Portugal, 2025</p>
+        <p class="agenda-nota"><span class="agenda-k-inline">Onde está escrito</span><a href="https://www.ine.pt/xportal/xmain?xpid=INE&amp;xpgid=ine_calendarios&amp;xlang=pt"><span class="mono">https://www.ine.pt/xportal/xmain?xpid=INE&amp;xpgid=ine_calendarios&amp;xlang=pt</span></a> <span class="agenda-k-inline">Lido a</span><span class="mono">2026-08-16</span></p>
+        <blockquote class="agenda-excerto">Empresas em Portugal · 2025 · 30 de outubro de 2026</blockquote>
+        <p class="agenda-nota"><span class="agenda-k-inline">Nota</span>As quatro linhas saem dos indicadores 0013863, 0014047 e 0014063, que a metainformação do próprio INE atribui ao «Sistema de contas integradas» das empresas. Essa metainformação, lida em 2026-08-10 e guardada no motor, dá DataUltimaAtualizacao 2025-12-11 e último período 2024: a base de dados e o Destaque não mexem forçosamente no mesmo dia.</p>
+        <p class="agenda-nota agenda-afecta"><span class="agenda-k-inline">Linhas que isto move</span><span class="mono"><a href="https://oestadodopaís.pt/livro-razao/evora-concentracao-vab4-2024">evora-concentracao-vab4-2024</a> · <a href="https://oestadodopaís.pt/livro-razao/evora-empresas-2024">evora-empresas-2024</a> · <a href="https://oestadodopaís.pt/livro-razao/evora-vab-empresarial-2024">evora-vab-empresarial-2024</a> · <a href="https://oestadodopaís.pt/livro-razao/portugal-concentracao-vab4-2024">portugal-concentracao-vab4-2024</a></span></p>
+      </li>
+
+      <li class="agenda-evento" id="ev-ine-contas-regionais-preliminares-2025">
+        <p class="agenda-evento-cabeca"><span class="mono agenda-evento-data">entre 2026-12-01 e 2026-12-31</span><span class="agenda-evento-fonte">INE</span></p>
+        <p class="agenda-evento-titulo">Contas Regionais, dados preliminares de 2025</p>
+        <p class="agenda-nota"><span class="agenda-k-inline">Onde está escrito</span><a href="https://www.ine.pt/xportal/xmain?xpid=INE&amp;xpgid=ine_calendarios&amp;xlang=pt"><span class="mono">https://www.ine.pt/xportal/xmain?xpid=INE&amp;xpgid=ine_calendarios&amp;xlang=pt</span></a> <span class="agenda-k-inline">Lido a</span><span class="mono">2026-08-16</span></p>
+        <blockquote class="agenda-excerto">Contas Regionais - Dados preliminares · 2025 · dezembro de 2026</blockquote>
+        <p class="agenda-nota"><span class="agenda-k-inline">Nota</span>O calendário do INE dá mês, não dia, para dezembro de 2026. As sete linhas pib-pc-* do sítio publicam o quadro regional do Eurostat (nama_10r_2gdp) e não estas contas; a ligação entre os dois não foi lida em fonte nenhuma e por isso nenhuma linha do sítio depende disto.</p>
+      </li>
+
+      <li class="agenda-evento" id="ev-evora-contas-2026">
+        <p class="agenda-evento-cabeca"><span class="mono agenda-evento-data">entre 2027-04-01 e 2027-04-30</span><span class="agenda-evento-fonte">Município de Évora</span></p>
+        <p class="agenda-evento-titulo">Prestação de contas de 2026 do Município de Évora, apreciação pela Assembleia Municipal</p>
+        <p class="agenda-nota"><span class="agenda-k-inline">Onde está escrito</span><a href="https://files.diariodarepublica.pt/1s/2018/08/15700/0410904147.pdf"><span class="mono">https://files.diariodarepublica.pt/1s/2018/08/15700/0410904147.pdf</span></a> <span class="agenda-k-inline">Lido a</span><span class="mono">2026-08-16</span></p>
+        <blockquote class="agenda-excerto">Artigo 76.º, «Apreciação dos documentos de prestação de contas individuais e consolidadas», n.º 1: «Os documentos de prestação de contas individuais das autarquias locais, das entidades intermunicipais e das entidades associativas municipais são apreciados pelos seus órgãos deliberativos, reunidos em sessão ordinária durante o mês de abril do ano seguinte àquele a que respeitam.»</blockquote>
+        <p class="agenda-nota"><span class="agenda-k-inline">O que se observou</span>O prazo é o da apreciação, não o da publicação. A página do próprio município data cada documento que põe em linha: contas de 2025 a 21-05-2026, de 2023 a 07-06-2024, de 2022 a 12-05-2023, de 2021 a 18-05-2022, de 2020 a 03-08-2021. O documento aparecer semanas depois da sessão de abril é leitura nossa sobre estes cinco casos (inferência).</p>
+        <p class="agenda-nota"><span class="agenda-k-inline">Nota</span>A janela é a que a lei fixa. O texto citado é o do artigo 76.º na republicação anexa à Lei n.º 51/2018, de 16 de agosto (Diário da República, 1.ª série, n.º 157, pp. 4109 a 4147), e é palavra por palavra o mesmo do original de 2013 (Lei n.º 73/2013, 1.ª série, n.º 169, pp. 5499 a 5519, também lido hoje). Alterações posteriores a 2018 não foram conferidas: a versão consolidada em diariodarepublica.pt devolve a casca «JavaScript is required» tanto a curl como ao WebFetch, e o motor já o tinha registado.</p>
+      </li>
+
+    </ul>
+
+    <p class="agenda-k ar-antes-3">Sem data, porque a fonte não publica nenhuma</p>
+    <ul class="agenda-eventos">
+
+      <li class="agenda-evento" id="ev-ce-relatorio-mecanismo-alerta-2027">
+        <p class="agenda-evento-cabeca"><a class="marcador" lang="pt-PT" href="https://oestadodopaís.pt/a-verificar">[a verificar]</a> <span class="agenda-evento-fonte">a fonte não publica data · Comissão Europeia</span></p>
+        <p class="agenda-evento-titulo">Relatório sobre o Mecanismo de Alerta e painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, Semestre Europeu de 2027</p>
+        <p class="agenda-nota"><span class="agenda-k-inline">O que se observou</span>A página da própria Comissão para o Relatório sobre o Mecanismo de Alerta não anuncia data nem periodicidade. Lista as edições com a data de cada uma: Semestre de 2026 a 2025-11-25, Semestre de 2025 a 2024-12-18, Semestre de 2024 a 2023-11-21, Semestre de 2023 a 2022-11-22, Semestre de 2022 a 2021-11-24. Cinco edições em novembro ou dezembro, o que é observação sobre o passado e não uma data anunciada (inferência).</p>
+        <p class="agenda-nota"><span class="agenda-k-inline">Nota</span>As treze linhas nomeadas são as que trazem no seu campo «note» o limiar do Procedimento, e são as treze do painel principal. Os limiares vivem em documentos e não na interface de dados, que é a razão de a conferência de limiares do motor vigiar a página do painel e não uma série. A página do painel, lida hoje, não diz quando é atualizada; o limiar que ela publica para o índice de preços da habitação está no critério do item da habitação, no campo próprio.</p>
+        <p class="agenda-nota agenda-afecta"><span class="agenda-k-inline">Linhas que isto move</span><span class="mono"><a href="https://oestadodopaís.pt/livro-razao/custo-unitario-do-trabalho-2025">custo-unitario-do-trabalho-2025</a> · <a href="https://oestadodopaís.pt/livro-razao/desempenho-das-exportacoes-2025">desempenho-das-exportacoes-2025</a> · <a href="https://oestadodopaís.pt/livro-razao/divida-das-empresas-2025">divida-das-empresas-2025</a> · <a href="https://oestadodopaís.pt/livro-razao/divida-das-familias-2025">divida-das-familias-2025</a> · <a href="https://oestadodopaís.pt/livro-razao/divida-publica-2025">divida-publica-2025</a> · <a href="https://oestadodopaís.pt/livro-razao/fluxo-de-credito-as-empresas-2025">fluxo-de-credito-as-empresas-2025</a> · <a href="https://oestadodopaís.pt/livro-razao/fluxo-de-credito-as-familias-2025">fluxo-de-credito-as-familias-2025</a> · <a href="https://oestadodopaís.pt/livro-razao/posicao-de-investimento-internacional-2025">posicao-de-investimento-internacional-2025</a> · <a href="https://oestadodopaís.pt/livro-razao/precos-da-habitacao-2025">precos-da-habitacao-2025</a> · <a href="https://oestadodopaís.pt/livro-razao/saldo-da-balanca-corrente-2025">saldo-da-balanca-corrente-2025</a> · <a href="https://oestadodopaís.pt/livro-razao/taxa-de-actividade-2025">taxa-de-actividade-2025</a> · <a href="https://oestadodopaís.pt/livro-razao/taxa-de-cambio-efectiva-real-2025">taxa-de-cambio-efectiva-real-2025</a> · <a href="https://oestadodopaís.pt/livro-razao/taxa-de-desemprego-mip-2025">taxa-de-desemprego-mip-2025</a></span></p>
+      </li>
+
+      <li class="agenda-evento" id="ev-ce-relatorio-conjunto-emprego-2027">
+        <p class="agenda-evento-cabeca"><a class="marcador" lang="pt-PT" href="https://oestadodopaís.pt/a-verificar">[a verificar]</a> <span class="agenda-evento-fonte">a fonte não publica data · Comissão Europeia</span></p>
+        <p class="agenda-evento-titulo">Relatório Conjunto sobre o Emprego e Painel de Indicadores Sociais, Semestre Europeu de 2027</p>
+        <p class="agenda-nota"><span class="agenda-k-inline">O que se observou</span>A notícia da Comissão sobre o pacote de outono do Semestre de 2026 tem data de 2025-11-25 e nomeia entre os documentos do pacote a «Proposal for a Joint Employment Report». Nenhuma página da Comissão lida hoje anuncia a data do pacote seguinte. O pacote de outono é o veículo observado, uma vez (inferência).</p>
+        <p class="agenda-nota"><span class="agenda-k-inline">Nota</span>As dez linhas nomeadas são as que o registo de disponibilidade do motor marca com o quadro «SocialSB».</p>
+        <p class="agenda-nota agenda-afecta"><span class="agenda-k-inline">Linhas que isto move</span><span class="mono"><a href="https://oestadodopaís.pt/livro-razao/abandono-escolar-precoce-2025">abandono-escolar-precoce-2025</a> · <a href="https://oestadodopaís.pt/livro-razao/competencias-digitais-2025">competencias-digitais-2025</a> · <a href="https://oestadodopaís.pt/livro-razao/criancas-em-creche-2025">criancas-em-creche-2025</a> · <a href="https://oestadodopaís.pt/livro-razao/desemprego-de-longa-duracao-2025">desemprego-de-longa-duracao-2025</a> · <a href="https://oestadodopaís.pt/livro-razao/disparidade-de-emprego-entre-sexos-2025">disparidade-de-emprego-entre-sexos-2025</a> · <a href="https://oestadodopaís.pt/livro-razao/necessidades-medicas-nao-satisfeitas-2025">necessidades-medicas-nao-satisfeitas-2025</a> · <a href="https://oestadodopaís.pt/livro-razao/racio-s80-s20-2025">racio-s80-s20-2025</a> · <a href="https://oestadodopaís.pt/livro-razao/risco-de-pobreza-ou-exclusao-2025">risco-de-pobreza-ou-exclusao-2025</a> · <a href="https://oestadodopaís.pt/livro-razao/sobrecarga-do-custo-da-habitacao-2025">sobrecarga-do-custo-da-habitacao-2025</a> · <a href="https://oestadodopaís.pt/livro-razao/taxa-de-emprego-2025">taxa-de-emprego-2025</a></span></p>
+      </li>
+
+      <li class="agenda-evento" id="ev-ine-estimativas-populacao-residente">
+        <p class="agenda-evento-cabeca"><a class="marcador" lang="pt-PT" href="https://oestadodopaís.pt/a-verificar">[a verificar]</a> <span class="agenda-evento-fonte">a fonte não publica data · INE</span></p>
+        <p class="agenda-evento-titulo">Estimativas Anuais da População Residente</p>
+        <p class="agenda-nota"><span class="agenda-k-inline">O que se observou</span>O calendário de difusão do INE, lido hoje inteiro (treze páginas, de 2026-08-18 a dezembro de 2026), não traz nenhuma entrada com este nome; traz a operação «Estatísticas Demográficas», com data de 2026-11-18, que é outra. A metainformação do indicador 0012918, lida pelo motor em 2026-08-10, dá DataUltimaAtualizacao 2026-06-22 e último período 2025. Uma atualização por volta de junho é o que se observa uma vez, não uma data anunciada (inferência).</p>
+        <p class="agenda-nota agenda-afecta"><span class="agenda-k-inline">Linhas que isto move</span><span class="mono"><a href="https://oestadodopaís.pt/livro-razao/evora-populacao-2021">evora-populacao-2021</a> · <a href="https://oestadodopaís.pt/livro-razao/evora-populacao-2025">evora-populacao-2025</a></span></p>
+      </li>
+
+      <li class="agenda-evento" id="ev-ine-poder-de-compra-concelhio">
+        <p class="agenda-evento-cabeca"><a class="marcador" lang="pt-PT" href="https://oestadodopaís.pt/a-verificar">[a verificar]</a> <span class="agenda-evento-fonte">a fonte não publica data · INE</span></p>
+        <p class="agenda-evento-titulo">Estudo sobre o Poder de Compra Concelhio</p>
+        <p class="agenda-nota"><span class="agenda-k-inline">O que se observou</span>O calendário de difusão do INE, lido hoje inteiro, não traz esta operação; traz «Paridades de Poder de Compra · 2025 · dezembro de 2026», que é outra. A metainformação do indicador 0014580, lida pelo motor em 2026-08-10, diz «Bienal», dá DataUltimaAtualizacao 2025-11-06 e primeiro e último período 2023. Bienal a partir de 2023 aponta para 2025 como referência seguinte (inferência), sem data.</p>
+        <p class="agenda-nota agenda-afecta"><span class="agenda-k-inline">Linhas que isto move</span><span class="mono"><a href="https://oestadodopaís.pt/livro-razao/alentejo-central-poder-de-compra-2023">alentejo-central-poder-de-compra-2023</a> · <a href="https://oestadodopaís.pt/livro-razao/evora-poder-de-compra-2023">evora-poder-de-compra-2023</a></span></p>
+      </li>
+
+      <li class="agenda-evento" id="ev-dgal-endividamento-2025">
+        <p class="agenda-evento-cabeca"><a class="marcador" lang="pt-PT" href="https://oestadodopaís.pt/a-verificar">[a verificar]</a> <span class="agenda-evento-fonte">a fonte não publica data · Direção-Geral das Autarquias Locais (DGAL)</span></p>
+        <p class="agenda-evento-titulo">Ficheiro «Evolução endividamento total 2025» no Portal Autárquico</p>
+        <p class="agenda-nota"><span class="agenda-k-inline">O que se observou</span>A DGAL não publica calendário. A página de evolução do endividamento, lida hoje, lista onze ficheiros anuais (2014 a 2024) e não põe data em nenhum; a procura por «calend» na secção do endividamento e na página inicial do Portal Autárquico não dá nada, e a mesma procura por «endividamento» encontra ocorrências nas duas páginas. O que a fonte escreve é o endereço de cada ficheiro, e esse traz um parâmetro dtestate: 2025-12-18 no ficheiro de 2024, 2024-11-14 no de 2023, 2024-04-11 no de 2022, 2022-12-13 no de 2021. Que dtestate seja a data de publicação é leitura nossa (inferência).</p>
+        <p class="agenda-nota"><span class="agenda-k-inline">Nota</span>Um ficheiro por ano, não cumulativo (o registo em bruto do estudo 07 guarda onze ficheiros distintos, um por ano). Por isso um ficheiro de 2025 acrescenta linhas e não mexe nas que estão publicadas: nenhuma linha do sítio depende disto.</p>
+      </li>
+
+      <li class="agenda-evento" id="ev-iefp-desemprego-concelhos-mensal">
+        <p class="agenda-evento-cabeca"><a class="marcador" lang="pt-PT" href="https://oestadodopaís.pt/a-verificar">[a verificar]</a> <span class="agenda-evento-fonte">a fonte não publica data · Instituto do Emprego e Formação Profissional (IEFP)</span></p>
+        <p class="agenda-evento-titulo">SIE, Desemprego registado por concelhos, ficheiro mensal</p>
+        <p class="agenda-nota"><span class="agenda-k-inline">O que se observou</span>O IEFP não publica calendário: a página de estatísticas nomeia os produtos e não diz quando saem, e o documento de metainformação que lá está trata de conceitos. O que se observa é a data de última modificação que o servidor devolve para cada ficheiro: 2026-07-20 para o de junho de 2026, 2026-06-22 para o de maio, 2026-05-20 para o de abril. O ficheiro do mês seguinte aparecer por volta do dia 20 é leitura nossa sobre três casos (inferência). A 2026-08-16, o último mês publicado é junho.</p>
+        <p class="agenda-nota"><span class="agenda-k-inline">Nota</span>As duas linhas do sítio que citam o IEFP são valores de dezembro (2013 e 2024); um ficheiro mensal novo acrescenta um mês e não as move, por isso nenhuma linha do sítio depende disto.</p>
+      </li>
+
+      <li class="agenda-evento" id="ev-evora-contas-2024-pagina">
+        <p class="agenda-evento-cabeca"><a class="marcador" lang="pt-PT" href="https://oestadodopaís.pt/a-verificar">[a verificar]</a> <span class="agenda-evento-fonte">a fonte não publica data · Município de Évora</span></p>
+        <p class="agenda-evento-titulo">Reaparecimento de uma página de contas de 2024 em cm-evora.pt</p>
+        <p class="agenda-nota"><span class="agenda-k-inline">O que se observou</span>Não há data porque não há acontecimento anunciado: o ano não tem dossiê. A página «Anos anteriores» do município, lida hoje, passa do Relatório de Gestão 2023 (07-06-2024) para as contas de 2025 (21-05-2026) sem nada de 2024. O estudo dos mandatos de Évora diz o mesmo, e é o que se vigia: «Nunca foi publicado nenhum documento de contas de 2024».</p>
+      </li>
+
+      <li class="agenda-evento" id="ev-ersar-rasarp">
+        <p class="agenda-evento-cabeca"><a class="marcador" lang="pt-PT" href="https://oestadodopaís.pt/a-verificar">[a verificar]</a> <span class="agenda-evento-fonte">a fonte não foi lida · ERSAR</span></p>
+        <p class="agenda-evento-titulo">RASARP, Relatório Anual dos Serviços de Águas e Resíduos em Portugal, edição seguinte</p>
+        <p class="agenda-nota"><span class="agenda-k-inline">Nota</span>Nada foi lido: ersar.pt não respondeu hoje. A página das edições anuais do RASARP deu tempo esgotado a curl por duas vezes e ligação recusada ao WebFetch, e a raiz do domínio também esgotou o tempo. Sem página não há calendário nem datas observadas, e por isso este acontecimento não leva evidência indireta nenhuma. A linha do sítio agua-nao-faturada-portugal-2024 cita a edição de 2025 do RASARP e tem o endereço por confirmar.</p>
+        <p class="agenda-nota agenda-afecta"><span class="agenda-k-inline">Linhas que isto move</span><span class="mono"><a href="https://oestadodopaís.pt/livro-razao/agua-nao-faturada-portugal-2024">agua-nao-faturada-portugal-2024</a></span></p>
+      </li>
+
+    </ul>
+  </div>
+
+  <div class="faixa">
+    <div class="porta-correccoes">
+      <span class="linha-campo-k">Encontrou um erro</span>
+      <p class="aparelho-nota">Escreva para <a class="ligacao-email" href="mailto:correcoes@oestadodopais.pt">correcoes@oestadodopais.pt</a>. Um erro confirmado entra no registo de correções e na própria linha, com o valor antigo à vista. Nada é apagado.</p>
+      <p class="porta-seguinte"><a href="https://oestadodopaís.pt/correcoes">O registo de correções →</a></p>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<footer class="rodape">
+  <nav class="rodape-nav" aria-label="Início">
+    <a href="https://oestadodopaís.pt/">Início</a>
+    <a href="https://oestadodopaís.pt/municipios">Municípios</a>
+    <a href="https://oestadodopaís.pt/estudos">Estudos</a>
+    <a href="https://oestadodopaís.pt/livro-razao">Livro-razão</a>
+    <a href="https://oestadodopaís.pt/agenda">Agenda</a>
+    <a href="https://oestadodopaís.pt/metodo">Método</a>
+    <a href="https://oestadodopaís.pt/correcoes">Correções</a>
+    <a href="https://oestadodopaís.pt/sobre">Sobre</a>
+    <a href="https://oestadodopaís.pt/en/agenda" hreflang="en">English</a>
+  </nav>
+</footer>
+
+</div>
+</body>
+</html>
