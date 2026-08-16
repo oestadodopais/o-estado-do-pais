@@ -22,7 +22,7 @@ Decided by the director on 15 August 2026, and published at `/sobre`:
 In English, at `/en/about`:
 
 > O Estado do País measures Portuguese society, in its internal context and in
-> its standing in relation to the world outside, and keeps of that measurement a
+> its position in relation to the outside, and keeps of that measurement a
 > continuous, clear and permanent record. It is produced mostly by artificial
 > intelligence, with the minimum of human intervention, in an attempt to explore
 > the technological possibilities of the present and to push independence and
@@ -80,7 +80,7 @@ generated from the site's own data at build time.
 | The studies, preserved as they were published | `/estudos` · `/en/studies` |
 | What the uncertainty marker means | `/a-verificar` · `/en/to-verify` |
 | The machine-readable proof of the current build | `/prova.json` |
-| What is being measured now and next | not built yet; it will live at `/agenda` |
+| What is being measured now and next, with the source calendar | `/agenda` · `/en/agenda` |
 
 ---
 
