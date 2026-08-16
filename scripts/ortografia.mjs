@@ -48,6 +48,11 @@
  *     quem escreve. A ferramenta lista-os com ficheiro e linha.
  *   · A lista `manuais` de ortografia/formas.yml: trocas cujo sentido inverso é
  *     ambíguo (de «para» não se sabe se veio de «pára»). Assinalam-se.
+ *   · No sentido «anterior», os pares marcados `so_ida` em ortografia/formas.yml:
+ *     a forma do Acordo é outra palavra corrente («ato», de «atar»), e
+ *     desconvertê-la estragaria a frase. Assinalam-se, com ficheiro e linha.
+ *     É por isso que a reversão prometida em IDENTIDADE.md §9 é uma corrida da
+ *     ferramenta MAIS uma passagem à mão, e não só a corrida.
  *
  * `note` NÃO É PUBLICADA (ledger/README.md), e por isso o que lá se encontra é
  * aviso e não erro. As palavras convertem-se na mesma, para que o repositório
@@ -89,6 +94,13 @@ function normalizaPar(e, onde) {
     acordo: String(e.acordo),
     caso: e.caso === 'fixo' ? 'fixo' : 'preserva',
     guarda: e.guarda ?? null,
+    /**
+     * Só de ida: converte-se por máquina para o Acordo, e não se desconverte.
+     * A forma do Acordo é, por si, outra palavra corrente («ato», de «atar»),
+     * e a passagem inversa estragava-a. No sentido «anterior» o par entra em
+     * modo de aviso, como as entradas de `manuais`.
+     */
+    soIda: e.so_ida === true,
     fonte: e.fonte ?? null,
     nota: e.nota ?? null,
   };
@@ -176,7 +188,9 @@ export function comparador(formas, sentido = 'acordo', { comManuais = true } = {
     }
   };
 
-  for (const p of formas.pares) junta(p, false);
+  /* No sentido do Acordo todos os pares se aplicam. No inverso, os que estão
+     marcados `so_ida` entram só para serem assinalados. */
+  for (const p of formas.pares) junta(p, sentido === 'anterior' && p.soIda);
   if (comManuais) for (const p of formas.manuais) junta(p, true);
 
   const alternativas = [...troca.keys()].sort((a, b) => b.length - a.length).map(escapa);
@@ -721,6 +735,10 @@ function aplica(sentido) {
       for (const o of procura(texto, comp, fatia.ini, fatia.fim)) {
         if (o.fim > fatia.fim) continue;
         if (emCitacao(texto, o.inicio, fatia.ini, fatia.fim)) continue;
+        /* Uma forma só de ida não se troca por máquina no sentido inverso.
+           `comManuais: false` tira as de `manuais`; esta guarda tira as que a
+           lista marcou `so_ida`, e o relatório lista-as para a mão. */
+        if (o.assinala) continue;
         trocas.push(o);
       }
     }
