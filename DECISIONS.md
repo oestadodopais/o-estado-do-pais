@@ -2634,6 +2634,203 @@ própria do valor. Nada mudou no portão: o selo continua ao pé do valor com o
 O que este ajuste não decide, e fica para o bloco V: se as contagens ficam no
 cabeçalho, e o que o cabeçalho diz em vez de «Edição de …».
 
+### 1.38 A ortografia do sítio passa a ser uma só
+
+O sítio escrevia nas duas grafias ao mesmo tempo. Não por descuido de um dia:
+por acumulação. «Correções» ao lado de «correcção», «atualização» no rótulo e
+`actualizacao` na chave que o produz, «facto» e «exacto» na mesma frase. Um
+observatório que promete que cada número tem fonte não pode hesitar sobre como
+se escreve a palavra ao lado dele.
+
+*Este registo fica na grafia em que foi escrito. Esta entrada, e as que vierem
+depois dela, seguem a grafia que ela fixa.*
+
+**A decisão.** A superfície pública segue o **Acordo Ortográfico de 1990, tal
+como é aplicado em Portugal**. A regra inteira está em `IDENTIDADE.md` §9.
+Superfície pública é tudo o que rende em HTML nas duas edições; o que é
+transcrito nunca se converte; os documentos deste repositório são registo e
+ficam como estão.
+
+**A origem, e é preciso dizê-la por inteiro.** Não houve palavra da direção. O
+roteiro (`PLANO-fases.md`, fase 1) previa exatamente este caso e fixou o
+Acordo como valor por defeito; foi esse valor que se aplicou, a 16.08.2026. Fica
+**revogável na pré-visualização**: se o diretor preferir a grafia anterior, a
+reversão é uma corrida da ferramenta
+(`node scripts/ortografia.mjs --aplicar --sentido=anterior`) e não uma
+reescrita. Foi para isso que o mecanismo se construiu com um interruptor de
+sentido em vez de uma passagem só.
+
+#### A lista, e a autoridade que a sustenta
+
+`ortografia/formas.yml`: 196 pares, 7 manuais, 50 iguais. Não é uma regra de
+substituição por padrão, e a razão é a que o próprio Acordo dá: as consoantes
+de `cc`, `cç`, `ct`, `pc`, `pç` e `pt` **ora se conservam, ora se eliminam**,
+conforme se pronunciem (Base IV, 1). «Facto» e «exacto» têm a mesma forma e
+destinos opostos. Um `sed` sobre o radical estava errado por construção.
+
+Cada par de consoante foi consultado **forma a forma** no Vocabulário
+Ortográfico Comum da Língua Portuguesa, na versão VOP, que é a de Portugal
+(`voc.cplp.org`, consultado a 16.08.2026): a forma anterior não consta, a forma
+do Acordo consta. Onde constam as duas é dupla grafia, e o par diz qual das
+duas a casa escreve e porquê. É o caso de `sector`/`setor`, que o vocabulário
+regista as duas: a casa escreve «setor». `aspecto` não consta e `aspeto`
+consta, apesar de o Priberam lhe chamar dupla grafia; ficou «aspeto», que é o
+que o vocabulário atesta.
+
+Três classes não se podem provar pelo vocabulário, porque a pesquisa dele não
+distingue diacríticos, e por isso citam a base do próprio Acordo: o acento
+circunflexo que cai em «creem, deem, leem, veem» (Base IX, 7), o acento agudo
+que cai no ditongo «oi» das palavras graves (Base IX, 3), e os nomes dos meses
+e dos dias, que passam a minúscula (Base XIX, 1 b).
+
+A lista `iguais` não é decorativa: quem a lê carrega-a, e uma palavra que esteja
+ao mesmo tempo em `pares` e em `iguais` faz a leitura falhar. É o que impede
+alguém de «corrigir» facto, contacto, secção, carácter ou artefacto.
+
+**O que não se converte por máquina, e porquê.** Sete trocas cujo sentido
+inverso é ambíguo (de «para» não se sabe se veio de «pára») ficam em `manuais`:
+assinalam-se, não se aplicam. Uma passagem que não se pode desfazer não é
+reversível, e a reversibilidade é a razão de haver aqui uma lista.
+
+#### O que foi convertido
+
+| Classe | O que mudou |
+| --- | ---: |
+| Cadeias e dados (`src/i18n/strings.mjs`, `src/data/*.mjs`) | 16 palavras |
+| Prosa da casa do livro-razão (`derivation`, `note`, `source_flag_note`, `unit`, `reason`) | 54 palavras |
+| Travessões reescritos à mão | 146, em 133 linhas de 23 ficheiros, mais 2 em `src/lib/livro.mjs`, que está fora da lista da ferramenta |
+| O identificador da natureza | 37 ocorrências em 10 ficheiros |
+
+Medido no que é renderizado, sobre as **301 páginas** que não são documentos de
+estudo:
+
+| Medida | Antes | Depois |
+| --- | ---: | ---: |
+| Formas anteriores ao Acordo (pt-PT) | 209, em 140 páginas | **0** |
+| Travessões e meios-traços | 1 042, em 300 páginas | **10**, em 10 páginas |
+
+Do lado da fonte, as mesmas contas: 33 formas anteriores e 147 a reescrever à
+mão passam a **0** e **0**; ficam 19 no restante, 45 avisos em `note` e 16
+dentro de aspas angulares.
+
+Os travessões não se trocaram por máquina de propósito: cada um pede uma frase
+nova, e uma frase nova é escolha de quem escreve. Onde separava partes de uma
+mesma linha ficou o ponto médio «·», que já era o separador da casa; onde era
+aposto ficaram parênteses, dois pontos ou vírgula. **Nenhuma palavra foi
+acrescentada.**
+
+Três coisas que a passagem obrigou a decidir, e ficam ditas. O rótulo do estudo
+da casa passou de «O Estado do País — apuramento próprio» a «O Estado do País,
+apuramento próprio», na sua origem única. O título de uma página de linha passou
+a separar por «·» (`src/lib/livro.mjs`), que é o separador que a descrição da
+mesma página já usava. E os títulos publicados que trazem travessão a sério
+(«Évora — Os Pelouros, Quem Os Teve, O Que Fizeram») são citação e ficam com
+ele: vão marcados como título de estudo, e a conferência sai deles.
+
+#### O que ficou, e a quem pertence
+
+**As 70 linhas cruzadas não se editam deste lado.** Os bytes de cada uma estão
+presos pelo resumo em `ledger/cruzamentos/evora.json`, e o `check:cruzamento`
+para a construção a quem lhes toque. A prosa da casa delas fica como veio, e
+converte-se onde foi escrita, que é o manifesto do motor; depois disso a
+reexportação traz os bytes novos. São 19 ocorrências do lado da fonte, das quais
+**10 são visíveis nas páginas**: o mesmo travessão numa entrada de correção de
+cinco linhas do PRR, nas duas edições. Estão em `ortografia/restantes.yml`, rota
+a rota e palavra a palavra, com o motivo escrito.
+
+**`note` não é publicada** (`ledger/README.md`), e por isso não é superfície
+pública. As palavras converteram-se na mesma, porque a passagem é de máquina e
+não custa nada; os 45 travessões que lá ficam **não** foram reescritos à mão, e
+a decisão é minha e não da regra: reescrever à mão texto que ninguém lê é
+trabalho sem leitor. A ferramenta conta-os como aviso a cada corrida, para que a
+escolha continue à vista.
+
+#### Os dois identificadores
+
+`actualizacao` passa a `atualizacao`, e `data-de-actualizacao` a
+`data-de-atualizacao`. Era o único sítio do sistema onde as duas grafias
+conviviam por desenho: o rótulo visível dizia «atualização» desde o princípio e
+a chave dizia outra coisa (§1.11). Trinta e sete ocorrências deste lado, e zero
+fora dos documentos do repositório depois.
+
+**A troca só é atómica na fusão.** O motor escreve o mesmo identificador no
+exportador, nos testes e no manifesto. Esse lado é renomeado em paralelo, no
+ramo `voz` do ResearchHub, e os dois ramos têm de entrar juntos: com um só, uma
+reexportação escreve `actualizacao` numa linha cujo validador já só conhece
+`atualizacao`, e a construção para.
+
+Uma coisa que **não** mudou: `document.edition` de sete linhas do Eurostat diz
+«nama_10r_2gdp, actualizado 2026-02-10». É campo transcrito, conferido carácter
+a carácter contra a fonte, e converter um campo desses era reescrever a prova.
+
+#### A conferência, e os estragos que a provaram
+
+Nenhum portão novo: duas conferências dentro do varrimento do `gate:html`, que é
+onde a moratória de 2026-08-15 as manda ficar até o `gate:identidade` existir.
+Nas páginas em pt-PT, nenhuma forma anterior ao Acordo; em qualquer página das
+duas edições, nenhum travessão. **A lista é a mesma que a ferramenta usa**, lida
+do mesmo ficheiro: com duas listas, uma delas ficava para trás à primeira
+palavra acrescentada.
+
+Sai do varrimento o que não é prosa da casa: `blockquote`, `q` e `cite`; o que
+está marcado `data-verbatim` ou `data-linha-campo`; o título de um trabalho
+publicado e a etiqueta do selo, que o `allowlist.yml` já declara como texto
+gerado do registo; e o que estiver entre «…», que é a aspa da casa a dizer
+citação.
+
+**Posto à prova a falhar, um estrago de cada vez, e cada um reposto:**
+
+| Estrago | O portão |
+| --- | --- |
+| forma anterior numa cadeia portuguesa («actualizada») | fecha, 120 erros, «grafia anterior ao Acordo: "actualizada" (a forma da casa é "atualizada")» |
+| travessão numa cadeia portuguesa | fecha, 120 erros, «travessão no texto renderizado: "—"» |
+| travessão numa cadeia inglesa | fecha, 120 erros, a mesma mensagem, nas páginas `/en/` |
+| palavras de `iguais` («facto», «secção», «contacto») numa cadeia portuguesa | **passa**, código 0 |
+| forma anterior e travessão dentro de um `<blockquote>` | **passa**, código 0 |
+| uma entrada retirada de `restantes.yml` com a ocorrência ainda lá | fecha, 1 erro, nomeando `/livro-razao/evora-prr-pago-2026` |
+
+E duas provas da própria lista, que não estavam pedidas e ficam: pôr «exacto» ao
+mesmo tempo em `pares` e em `iguais` faz a leitura da lista atirar antes de
+qualquer página ser varrida; e mover «facto» de `iguais` para `pares` faz falhar
+a prova que a conferência corre sobre si própria a cada construção, em seis
+páginas de mentira escritas dentro do portão.
+
+A reversibilidade também foi posta à prova, e o resultado tem duas metades.
+Sobre a árvore já convertida, `acordo` não muda nada, `anterior` muda 113
+palavras em 25 ficheiros, e `acordo` repõe os bytes **exatamente** os que
+estavam. Sobre a árvore de antes, misturada, a ida e volta **não** repõe os
+bytes, e não pode: a passagem não tem memória de qual das duas grafias cada
+palavra tinha, e por isso `anterior` também converte o que já estava no Acordo.
+É essa a diferença que a decisão existe para acabar.
+
+#### Os limites, honestos
+
+1. **A conferência vê texto renderizado, e não vê o que está dentro de um
+   elemento transcrito.** É lá que vivem os campos das linhas cruzadas: quatro
+   `derivation` com «tecto» rendem nas páginas de linha dentro de
+   `data-linha-campo`, e a conferência passa por cima. Contam-se do lado da
+   fonte, com `node scripts/ortografia.mjs --verificar`. As duas metades
+   cobrem-se uma à outra e nenhuma cobre tudo sozinha.
+2. **Uma palavra que não esteja na lista não é vista.** A lista tem 196 pares e
+   a língua tem mais. Cobre o que ocorre no repositório e o conjunto comum; não
+   é um corrector ortográfico e não pretende ser.
+3. **As regras de hífen que não estão na lista não são vistas.** Estão lá os
+   pares que ocorrem ou que se esperam; a regra geral do Acordo (Base XVI) não
+   está imposta em lado nenhum. E porque, para efeito de procura, uma palavra
+   com hífen conta como palavra só, um composto novo precisa de entrada própria.
+4. **Texto dentro de imagens e de `<text>` de SVG.** O varrimento lê o texto do
+   SVG como qualquer outro; o que está dentro de uma imagem de mapa de bits não
+   é lido por ninguém. Não há hoje nenhuma imagem dessas no sítio.
+5. **Atributos não são varridos**, como em todo o resto do portão: `title`,
+   `alt` e `aria-label` podem trazer um travessão e passam.
+6. **O corpo dos documentos de estudo continua fora**, como sempre esteve: é
+   obra citada, e é conferida de outra maneira.
+7. **A conferência não sabe português.** Sabe comparar cadeias contra uma lista.
+   Uma palavra inglesa que por acaso seja uma forma anterior portuguesa
+   («director», «actual») é apanhada se aparecer numa página em pt-PT; do lado
+   da fonte isso resolve-se pela chave `en` que embrulha o texto inglês, e foi
+   preciso resolvê-lo, porque o Método em inglês tem três «director».
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
@@ -2890,6 +3087,15 @@ o que continuava aberto de antes. Cada item diz porque não foi feito agora e a
 quem pertence.
 
 ### 4.1 O que fica adiado — e para que fase
+
+**Bloco V · a ortografia das linhas cruzadas.** A grafia do sítio passou a ser
+uma só (§1.38), mas a prosa da casa das 70 linhas que vieram do motor não pode
+ser convertida deste lado: os bytes estão presos pelo registo da travessia. São
+19 ocorrências, das quais 10 visíveis nas páginas, listadas uma a uma em
+`ortografia/restantes.yml`. Convertem-se no manifesto do motor e voltam por
+reexportação; a lista é para encolher, e o portão avisa quando uma entrada dela
+já não corresponde a nada. **Pertence ao agente que trabalha o motor neste
+mesmo bloco.**
 
 **Fase 3 · o redesenho da página de linha e a travessia dos recibos.** É a fase
 onde a página da linha passa a ser a prova, e não uma ficha sobre a prova.

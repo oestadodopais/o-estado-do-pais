@@ -152,10 +152,66 @@ mecânicas e passam a ser conferidas no build (`gate:identidade`):
 - todo o `.src-chip` é uma âncora;
 - nenhum marcador de incerteza fora do formato ruled.
 
+As duas conferências da regra 9 foram prometidas a este portão e vivem, por
+agora, no `gate:html`, dentro do varrimento que já existe:
+
+- nenhuma forma anterior ao Acordo no texto renderizado das páginas em pt-PT;
+- nenhum travessão no texto renderizado, em qualquer das duas edições.
+
+Ficam ali porque a moratória de 2026-08-15 continua de pé: nenhum portão novo
+enquanto uma conferência couber num que já existe. Mudam de casa quando o
+`gate:identidade` for construído.
+
 **O que o portão não vê**, e continua a ser trabalho de quem revê: se a segunda
 coluna está a fazer alguma coisa (regra 3), se um instrumento tem as três
 camadas (regra 4), e se um estado vazio foi desenhado ou apenas não aconteceu
 ainda (regra 7).
+
+---
+
+## 9. Ortografia e voz
+
+**A superfície pública segue o Acordo Ortográfico de 1990, tal como é aplicado
+em Portugal.** Superfície pública é tudo o que rende em HTML, nas duas edições:
+as cadeias de texto, os gabaritos, a prosa da casa dos dados e a prosa da casa
+das linhas do livro-razão que é publicada (`derivation`, `source_flag_note`,
+`unit`, o `reason` de uma correção). O campo `note` não é publicado
+(`ledger/README.md`) e por isso não é superfície pública: a passagem converte-lhe
+as palavras na mesma, porque é de máquina e não custa nada, e a ferramenta conta
+como aviso o que lá ficar.
+
+**O que é transcrito nunca se converte.** Um excerto, o título de um documento,
+o nome de uma fonte, o título de um trabalho publicado, uma citação entre
+«…»: cita-se pelas palavras exatas, e o travessão de «Évora — Os Pelouros,
+Quem Os Teve, O Que Fizeram» é uma delas.
+
+**Os documentos do repositório são registo.** `DECISIONS.md`, este ficheiro,
+`README.md`, `ledger/README.md`, os `PLANO-*`, os `BRIEF-*` e os `VOZ-*` ficam
+na grafia em que foram escritos, e uma entrada nova segue a grafia do ficheiro
+onde entra. Esta secção é a exceção que se explica a si própria: é a regra, e
+por isso escreve-se na grafia que fixa.
+
+**Sem travessões, nas duas edições.** Nem o travessão (—) nem o meio-traço (–)
+entre espaços. Onde é preciso separar partes de uma mesma linha usa-se o ponto
+médio «·», que já é o separador da casa; onde é preciso um aposto usam-se
+vírgulas, dois pontos ou parênteses. A seta «→» não é um traço: é a marca de
+ligação do sítio («Abrir a leitura →»), e fica onde já está.
+
+**O marcador não muda.** `[a verificar]` continua a ser o único marcador de
+incerteza, com a sua página e a sua classe (§6).
+
+**O mecanismo, e é reversível de propósito.** Uma lista só,
+`ortografia/formas.yml`, com as formas e a autoridade que as sustenta; uma
+passagem, `scripts/ortografia.mjs`, que a aplica nos dois sentidos
+(`--aplicar --sentido=acordo|anterior`); e a conferência, dentro do `gate:html`,
+que lê a mesma lista. Os travessões não se convertem por máquina: cada um pede
+uma frase nova, e a ferramenta assinala-os com ficheiro e linha. O que fica por
+converter está em `ortografia/restantes.yml`, rota a rota e palavra a palavra.
+
+**Origem.** É a regra por defeito do roteiro, aplicada a 16.08.2026 na ausência
+de palavra da direção, e registada como reversível: o diretor pode revogá-la na
+pré-visualização, e a revogação é uma corrida da ferramenta, não uma reescrita.
+`DECISIONS.md` §1.38.
 
 ---
 
