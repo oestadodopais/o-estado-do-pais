@@ -2,13 +2,13 @@
 
 *Written 2026-08-16 (early), by Claude Fable 5 in seat, at the director's request, after the day of 2026-08-15. This is the roadmap; `DECISIONS.md` records what actually gets built, and §4 there is the defect-and-deferral register that must be clean before a block starts. Costs are rough, in subagent tokens as agents report them. Model routing: Opus builds, Sonnet does mechanical passes and blind fetches, Codex reviews across families, Fable designs and reviews in seat.*
 
-## Where we are (2026-08-16)
+## Where we are (2026-08-16, evening)
 
-Live: the Évora município page and five reading pages; the index of all 308 concelhos (307 in the honest empty state); a correction door on every page; every value sealed to its own row; PDF proofs one click to the page; honest labels for series; a third correction kind (revisão de proveniência); the marker's own page; 316 pages; 132 ledger rows, 12 with provenance debt; the publisher pipe with 28 checks; the trust brief measured on the live site.
+Live (`main` = `96feb4d`): the Évora município page and five reading pages; the index of all 308 concelhos; a correction door on every page; every value sealed to its own row; PDF proofs one click to the page; 316 pages; 132 ledger rows, 12 with provenance debt; the publisher pipe with 28 checks; the trust brief measured on the live site.
 
-Decided and not yet built: the About text (two sentences, decided by the director); Método as rules with live proof; state rendered never written; no quiet course change; no em dashes; the footer to navigation only, authorship stated on Sobre.
+**Built, reviewed and on preview (branch `voz`, site 27 commits, engine 16; merge is the director's word):** Block V in full. Orthography AO90 PT-PT enforced (wordlist 254 pairs, reversible tool, gate check, remainder 0, no em dashes); `/sobre` (the decided text, gate-compared); `/metodo` as ten rules with mechanism and live proof (`prova.mjs`, 26 keys recomputed by the gate, `/prova.json`, the mechanism drawn); `/correcoes` (register moved, policy once, entries as doors); `/agenda` from the engine's records (5 items, 16 calendar events, four states, full change log); masthead = time signal + agenda line; footer navigation only; the door to Sobre on every page including hosted documents; `Afecta` on DECISIONS entries with the tether check and a git audit in the monthly sweep; housing pre-registered in the engine (unfrozen); source calendar and watches in the monthly agent; word cuts (frame words 31 852 → 24 858); `ABOUT.md` cut to the idea. Verified: build green, engine gate PASS, Sonnet blind re-fetch of the calendar 8/8, Codex five passes (8/8 canaries caught). Record: `DECISIONS.md` §1.38 to §1.42.
 
-Not yet decided: the orthography of the public surface (this plan assumes the Acordo de 1990 unless the director says otherwise); the cut of Método (to be done on the built page at preview); the time-signal line (this plan uses the weekly panel date, the only generated date the site has).
+Still the director's: read `/sobre` (EN is house prose), cut `/metodo` on the built page, confirm or overrule the orthography default, read the housing question on `/agenda`; then the word to merge.
 
 ## The rules that govern every block
 
@@ -24,12 +24,12 @@ Not yet decided: the orthography of the public surface (this plan assumes the Ac
 
 | Item | Owner | Done when |
 |---|---|---|
-| Orthography decision | director | one word: Acordo / anterior (default: Acordo) |
-| Método cut | director, at preview | the built `/metodo` read and trimmed |
-| Footer line | decided: navigation only | built in Block V |
-| Time signal | decided by default: weekly panel date; agenda line when `/agenda` exists | built in Block V |
+| Orthography decision | applied by default (Acordo), overrulable at preview | `IDENTIDADE.md` §9; reversal is a rerun plus a hand pass on the one-way forms |
+| Método cut | director, at preview | the built `/metodo` is on the preview; rules 1, 6, 9, 10 have the weakest proofs |
+| Footer line | decided: navigation only | built (Block V, on preview) |
+| Time signal | built: «Painel europeu reconferido a …» + «Agenda: N em curso · N a seguir» | on preview |
 
-## Block V — the site's own voice and self-description (next session)
+## Block V — the site's own voice and self-description (BUILT 2026-08-16, on preview, awaiting the director's word)
 
 Goal: `/sobre`, `/metodo`, `/correcoes`, `/agenda` built; the self-description made unable to go stale; the orthography rule enforced; the deferred word cuts done now that the voice exists.
 
@@ -99,9 +99,6 @@ Cost: 400k to 600k.
 
 ## The next session, in order
 
-1. Read the pickup files (vault Experiment note → `DECISIONS.md` incl. §4 → `NEXT.md` in the engine → this plan → `VOZ-final.md`).
-2. Orthography: take the director's word if given; otherwise apply the default (Acordo) and say so in the block's DECISIONS entry so he can overrule at preview.
-3. Run Block V as one branch in each repo (`voz`), with two or three Opus agents in sequence: (a) orthography rule + pass + check, and the gates' machine-readable summary; (b) `/sobre`, `/metodo` with live proof and the instrument, `/correcoes`, footer and masthead, `ABOUT.md`; (c) `/agenda` + source calendar + pre-registration seeds + the decision flag and its check + the deferred word cuts. Each agent ends with build green and its fixtures proven.
-4. Codex: a diff review and a canaried read of the four new pages (plant an em dash, a pre-Acordo form, a stale state claim, an unsealed value).
-5. Preview → the director reads Sobre and cuts Método → merge → `verify:deploy` → records (DECISIONS, vault, `NEXT.md`, this plan updated).
-6. Then decide with the director whether Phase 2 (design) or Block T (trust page) comes next; the housing study's pre-registration can be written in parallel with either, since it needs no site change to begin.
+1. If the director has not yet given his word on Block V: read the preview (Sobre, the cut of Método, the orthography, the housing question), apply his cut on the built page (both editions), merge `voz` in both repos, `verify:deploy`, close the records (DECISIONS §4, vault note, `NEXT.md`, this plan). If Nuno overrules the orthography: rerun `scripts/ortografia.mjs --aplicar --sentido=anterior`, hand-review the listed one-way forms, flip the rule in `IDENTIDADE.md` §9, rebuild.
+2. Then decide with the director whether Phase 2 (design explorations) or Block T (the trust page) comes next; the housing study's pre-registration exists (`ResearchHub/content/10 Housing/preregistration.json`, unfrozen) and its question awaits his read; sealing it is the first act of the study.
+3. Standing from Block V's record (`DECISIONS.md` §4): the eight sources with no published calendar (re-check ERSAR); the reworded-correction duplication on re-export (engine V10's counterpart); calendar history; the two mechanisms for site counts (house rows vs `data-prova`); dead string keys; the five pre-Acordo forms left in the unpublished `note` field.
