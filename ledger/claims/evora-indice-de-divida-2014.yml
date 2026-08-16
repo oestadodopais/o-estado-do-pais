@@ -20,7 +20,7 @@ reference_date: null
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "A dívida total de 2014 publicada pela DGAL, dividida pelo limite legal do mesmo ano e multiplicada por 150. O limite legal é 1,5 vezes a média da receita corrente líquida dos três anos anteriores (art. 52.º da Lei n.º 73/2013); o índice mede a dívida contra esse limite numa escala em que o tecto é 150."
+derivation: "A dívida total de 2014 publicada pela DGAL, dividida pelo limite legal do mesmo ano e multiplicada por 150. O limite legal é 1,5 vezes a média da receita corrente líquida dos três anos anteriores (art. 52.º da Lei n.º 73/2013); o índice mede a dívida contra esse limite numa escala em que o teto é 150."
 derivation_en: "DGAL's published total debt for 2014, divided by the same year's legal ceiling and multiplied by 150. The ceiling is 1.5 times the three-year average of net current revenue (art. 52.º, Lei n.º 73/2013); the index measures debt against that ceiling on a scale whose cap is 150."
 derived_from:
   - "evora-divida-dgal-2014"
