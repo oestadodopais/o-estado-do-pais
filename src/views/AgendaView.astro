@@ -49,6 +49,7 @@ import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
+import { studyLabel } from '../data/studies.mjs';
 import {
   ESTADOS,
   agendaCruzada,
@@ -72,6 +73,15 @@ const ANCORA_DO_CALENDARIO = 'calendario';
 
 /** O rótulo de uma edição, na língua da página. */
 const ed = (par) => (par ? (par[lang] ?? par.pt) : null);
+
+/**
+ * O motivo por que um acontecimento não tem data, dito pelo registo.
+ *
+ * `nao_publica` e `nao_lida` não são a mesma coisa: a primeira é uma leitura da
+ * fonte, a segunda é a ausência dela. A ERSAR não respondeu, e dizer que ela
+ * «não publica data» seria afirmar mais do que se sabe (revisão cruzada, F16).
+ */
+const motivoSemData = (evento) => s.agenda.semDataMotivos[evento.motivo_sem_data] ?? null;
 
 /** O rótulo do tipo de critério. */
 const rotuloDoCriterio = (tipo) =>
@@ -100,7 +110,12 @@ const rotuloDoCriterio = (tipo) =>
     ESTADOS.map((estado) => {
       const itens = itensDoEstado(estado, agenda);
       return (
-        <div class="metodo-secao" id={`estado-${estado}`} style="padding-top:clamp(24px,3.2vw,34px)">
+        <div
+          class="metodo-secao"
+          id={`estado-${estado}`}
+          data-agenda-seccao={estado}
+          style="padding-top:clamp(24px,3.2vw,34px)"
+        >
           <div>
             <h2 class="agenda-estado">{s.agenda.estados[estado]}</h2>
           </div>
@@ -109,8 +124,12 @@ const rotuloDoCriterio = (tipo) =>
               <p class="metodo-p agenda-vazio">{s.agenda.vazioRetirado}</p>
             )}
 
+            {/* `data-agenda-item` e `data-agenda-seccao` não são texto: são a
+                estrutura, para o portão poder exigir que TODOS os campos do item
+                estejam renderizados e que o item esteja debaixo da secção do seu
+                estado, lida do DOM e não do registo (revisão cruzada, #5). */}
             {itens.map((item) => (
-              <article class="agenda-item" id={`item-${item.id}`}>
+              <article class="agenda-item" id={`item-${item.id}`} data-agenda-item={item.id}>
                 <p class="agenda-item-eyebrow">
                   <span class="agenda-tipo">{s.agenda.tipos[item.tipo] ?? item.tipo}</span>
                   <span class="agenda-estado-marca" data-agenda={`${item.id}.estado`}>
@@ -124,13 +143,29 @@ const rotuloDoCriterio = (tipo) =>
                   <div class="agenda-bloco">
                     <p class="agenda-k">{s.agenda.perguntaK}</p>
                     <p class="metodo-p" data-agenda={`${item.id}.pergunta`}>{ed(item.pergunta)}</p>
-                    <p class="agenda-nota">{s.agenda.perguntaNota}</p>
-                    {item.registo_previo && (
+                    <p class="agenda-nota">
+                      {item.registo_previo_estado === 'selado'
+                        ? s.agenda.perguntaNotaSelada
+                        : s.agenda.perguntaNotaPorSelar}
+                    </p>
+                    {/* O ESTADO DO REGISTO PRÉVIO, E NÃO O SEU CAMINHO.
+                        Até 16.08.2026 esta linha rendia
+                        «content/10 Housing/preregistration.json», que é um
+                        endereço dentro do motor: não abre, não diz nada a quem
+                        lê, e a única coisa que o leitor precisa de saber sobre
+                        ele é se está selado. */}
+                    {item.registo_previo_estado && (
                       <p class="agenda-nota">
-                        <span class="agenda-k-inline">{s.agenda.registoPrevioK}</span>{' '}
-                        <span class="mono" data-agenda={`${item.id}.registo_previo`}>
-                          {item.registo_previo}
-                        </span>
+                        <span class="agenda-k-inline">
+                          {item.registo_previo_estado === 'selado'
+                            ? s.agenda.registoPrevioSelado
+                            : s.agenda.registoPrevioIniciado}
+                        </span>{' '}
+                        <span
+                          class="mono"
+                          data-nonledger="data-da-agenda"
+                          data-agenda={`${item.id}.registo_previo_em`}
+                        >{item.registo_previo_em}</span>{item.registo_previo_estado !== 'selado' ? `, ${s.agenda.registoPrevioPorSelar}` : ''}
                       </p>
                     )}
                   </div>
@@ -153,7 +188,7 @@ const rotuloDoCriterio = (tipo) =>
                           ? eventoPorId(criterio.evento, calendario)
                           : null;
                       return (
-                        <li class="agenda-criterio">
+                        <li class="agenda-criterio" data-agenda-criterio={String(n)}>
                           <span class="agenda-criterio-tipo">{rotuloDoCriterio(criterio.tipo)}</span>
                           {criterio.quadro && (
                             <span class="agenda-quadro" data-agenda={`${item.id}.criterios[${n}].quadro`}>
@@ -199,7 +234,7 @@ const rotuloDoCriterio = (tipo) =>
                                   >
                                     {evento.marcador}
                                   </span>{' '}
-                                  {s.agenda.semDataDaFonte}
+                                  {motivoSemData(evento)}
                                 </span>
                               )}
                             </span>
@@ -219,6 +254,30 @@ const rotuloDoCriterio = (tipo) =>
                               data-agenda={`${item.id}.criterios[${n}].nota`}
                             >
                               {ed(criterio.nota)}
+                            </span>
+                          )}
+                          {/* OS DOCUMENTOS QUE A NOTA CITA, COMO PORTA.
+                              O registo nomeia `slug` e `edicao`; o título vem
+                              do arquivo deste sítio e é citação (a marca
+                              `titulo-de-estudo`, motivo declarado desde o
+                              primeiro dia). Substitui os endereços dentro do
+                              motor que a nota trazia até 16.08.2026. */}
+                          {(criterio.documentos ?? []).length > 0 && (
+                            <span class="agenda-documentos">
+                              <span class="agenda-k-inline">{s.agenda.documentosK}</span>{' '}
+                              {criterio.documentos.map((doc, i) => (
+                                <>
+                                  {i > 0 ? ' · ' : ''}
+                                  <a href={routePath('documento', doc.edicao, { slug: doc.slug })}>
+                                    <span data-nonledger="titulo-de-estudo">
+                                      {studyLabel(doc.slug, doc.edicao)}
+                                    </span>
+                                    {' ('}
+                                    {s.agenda.edicoesDoDocumento[doc.edicao]}
+                                    {')'}
+                                  </a>
+                                </>
+                              ))}
                             </span>
                           )}
                         </li>
@@ -432,7 +491,7 @@ const rotuloDoCriterio = (tipo) =>
                   <span class="marcador" lang="pt-PT" data-agenda={`evento:${evento.id}.marcador`}>
                     {evento.marcador}
                   </span>{' '}
-                  {s.agenda.semDataDaFonte}
+                  {motivoSemData(evento)}
                 </span>
                 <span class="agenda-evento-fonte" data-agenda={`evento:${evento.id}.fonte`}>
                   {evento.fonte}

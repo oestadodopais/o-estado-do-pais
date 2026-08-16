@@ -36,6 +36,7 @@ import { fileURLToPath } from 'node:url';
 import { load } from 'js-yaml';
 import { parse, NodeType } from 'node-html-parser';
 
+import { t } from '../src/i18n/strings.mjs';
 import {
   loadClaims,
   digitsOf,
@@ -44,9 +45,10 @@ import {
   derivacaoDaLinha,
   notaDeBandeira,
   provenienciaIncompleta,
+  POR_VERIFICAR,
 } from '../src/lib/ledger.mjs';
 import { VERBATIM, normalizeWhitespace } from '../src/data/verbatim.mjs';
-import { EDITIONS, workById } from '../src/data/studies.mjs';
+import { EDITIONS, workById, studyLabel } from '../src/data/studies.mjs';
 import { temLeitura } from '../src/data/leituras.mjs';
 import { tituloDaLinha, descricaoDaLinha } from '../src/lib/livro.mjs';
 import { matchPath, routePath, HREFLANG, LANGS } from '../src/lib/routes.mjs';
@@ -157,8 +159,24 @@ let valoresAuditados = 0;
 let valoresSemSelo = 0;
 /** Ligações internas conferidas contra os ficheiros construídos. */
 let ligacoesConferidas = 0;
-/** Cada `href` interno encontrado, com a página onde está. */
+/**
+ * Cada `href` interno encontrado, com a página onde está e a base contra a
+ * qual um endereço relativo se resolve.
+ *
+ * Até 16.08.2026 só entravam aqui os `href` que começavam por `/`: «agenda» e
+ * «../sobre» eram invisíveis à conferência, e uma âncora que não existisse na
+ * página de destino também (revisão cruzada, #11). Passa a entrar tudo o que
+ * não seja um endereço com esquema, e a âncora é conferida contra os `id` da
+ * página para onde aponta.
+ */
 const ligacoesInternas = [];
+/** Os `id` de cada página construída, para conferir as âncoras. */
+const idsPorPagina = new Map();
+/** Quantas ligações relativas e quantas âncoras foram conferidas. */
+let ligacoesRelativas = 0;
+let ancorasConferidas = 0;
+/** Ocorrências dispensadas por estarem entre «…»: contadas para não crescerem em silêncio. */
+let excluidasPorCitacao = 0;
 
 /**
  * As ocorrências de `data-prova` de TODAS as páginas, guardadas para depois.
@@ -375,12 +393,18 @@ function ocorrenciasDaPagina(raiz, lingua) {
   const saida = [];
   if (lingua === 'pt') {
     for (const o of procura(texto, COMPARADOR)) {
-      if (emCitacao(texto, o.inicio)) continue;
+      if (emCitacao(texto, o.inicio)) {
+        excluidasPorCitacao++;
+        continue;
+      }
       saida.push({ palavra: o.forma, troca: o.troca, ctx: contexto(texto, o.forma) });
     }
   }
   for (const o of procuraTravessoes(texto)) {
-    if (emCitacao(texto, o.inicio)) continue;
+    if (emCitacao(texto, o.inicio)) {
+      excluidasPorCitacao++;
+      continue;
+    }
     saida.push({
       palavra: o.forma,
       troca: null,
@@ -423,7 +447,7 @@ function ocorrenciasDaPagina(raiz, lingua) {
  * estejam certos. Não estão no livro-razão e não vão estar — a sua proveniência
  * é a do próprio documento. Ver DECISIONS §1.19.
  */
-function verificaDocumento({ rota, html, root, err }) {
+function verificaDocumento({ rota, rel, caminho, html, root, err }) {
   const { slug } = rota.params;
   const lang = rota.lang;
 
@@ -488,6 +512,38 @@ function verificaDocumento({ rota, html, root, err }) {
   }
   if (!textoDaFaixa.includes(SITE_NAME)) {
     err(`a faixa do observatório não diz o nome do sítio.`);
+  }
+
+  /**
+   * A PORTA PARA O SOBRE, TAMBÉM AQUI.
+   *
+   * A regra 9 do Método diz «todas as páginas construídas levam a porta para
+   * lá», e até 16.08.2026 não era verdade: este ramo devolve antes de a
+   * conferência geral correr, e as quinze páginas de documento saíam sem ela.
+   * A conferência não podia simplesmente estender-se ao ficheiro inteiro: o
+   * corpo do documento é obra citada e não se lhe acrescenta nada. Estende-se
+   * à FAIXA, que é markup nosso e já é conferida aqui campo a campo.
+   */
+  const portaDoSobre = routePath('sobre', lang);
+  const temSobre = (faixa.querySelectorAll('a[href]') ?? []).some(
+    (a) => decodeEntities(a.getAttribute('href') ?? '') === portaDoSobre,
+  );
+  if (!temSobre) {
+    err(
+      `a faixa do observatório não tem ligação para "${portaDoSobre}".\n` +
+        `      A autoria deste sítio está dita no Sobre, e todas as páginas construídas levam ` +
+        `lá. Num documento a porta vai na faixa: o corpo é obra citada e não se lhe acrescenta ` +
+        `nada (src/lib/documentos.mjs).`,
+    );
+  }
+
+  /* As ligações da faixa entram na conferência das ligações internas, como as
+     de qualquer página: uma porta para o Sobre que dê 404 é pior do que não a
+     haver. As do corpo do documento não entram: são de obra citada. */
+  for (const a of faixa.querySelectorAll('a[href]') ?? []) {
+    const href = decodeEntities(a.getAttribute('href') ?? '');
+    if (!eLigacaoInterna(href)) continue;
+    ligacoesInternas.push({ rel, base: baseDeResolucao(rel, caminho), href });
   }
 
   /* Auto-contido: a promessa de «nenhum pedido de rede» não abre excepção para
@@ -764,6 +820,97 @@ function campoDaAgenda(chave, lang) {
 
 /**
  * ---------------------------------------------------------------------------
+ * OS VALORES DO LIVRO-RAZÃO, PARA OS RECONHECER EM PROSA
+ * ---------------------------------------------------------------------------
+ *
+ * A chave é `digitsOf(value)`, a MESMA normalização com que a origem 1 confere
+ * um `data-claim`. Assim «17,6» na prosa e «17,6» na linha são a mesma coisa
+ * para esta conferência, tal como já eram para aquela.
+ */
+const VALORES_DO_LIVRO = new Map();
+for (const [id, c] of claims) {
+  const d = digitsOf(c.value);
+  if (!d) continue;
+  if (!VALORES_DO_LIVRO.has(d)) VALORES_DO_LIVRO.set(d, id);
+}
+
+const ISO_NA_PROSA = /\d{4}-\d{2}-\d{2}/g;
+const TEM_LETRA = /[A-Za-zÀ-ÖØ-öø-ÿ]/;
+const ORDINAL = /[ºª]$/;
+
+/**
+ * Os campos dos dois registos que são TRANSCRIÇÃO de uma fonte, e por isso
+ * saem desta conferência.
+ *
+ * Um só: `origem_da_data.excerto`, que é a frase da fonte que diz a data,
+ * citada palavra por palavra, renderizada em `<blockquote>` e comparada
+ * carácter a carácter contra o registo. Reescrevê-la para lhe tirar um
+ * algarismo seria reescrever a prova. O limite fica registado em DECISIONS
+ * §1.41: um valor escondido dentro de um excerto passa por aqui.
+ */
+const CAMPOS_TRANSCRITOS_DA_AGENDA = ['origem_da_data.excerto'];
+
+/**
+ * Os números da prosa que são, tal e qual, um valor do livro-razão.
+ *
+ * O que NÃO é apanhado, de propósito: uma data ISO (é uma data do registo, e a
+ * marca `data-nonledger="data-da-agenda"` já a declara), um código de conjunto
+ * de dados («tipsgo10», «edat_lfse_14», que trazem letras), um ordinal («2.º»,
+ * «1.ª»), e um limiar citado de um quadro institucional que não coincida com
+ * nenhum valor publicado («with a threshold of 9%»). Ver DECISIONS §1.41.
+ */
+function valoresDoLivroEmProsa(texto, chave) {
+  if (CAMPOS_TRANSCRITOS_DA_AGENDA.some((c) => chave.endsWith(c))) return [];
+  const achados = [];
+  const limpo = String(texto).replace(ISO_NA_PROSA, ' ');
+  const vistos = new Set();
+  for (const bruto of limpo.split(/\s+/)) {
+    if (!bruto || !/\d/.test(bruto)) continue;
+    const token = limpaToken(bruto);
+    if (!token || !/\d/.test(token)) continue;
+    if (TEM_LETRA.test(token)) continue;
+    if (ORDINAL.test(token)) continue;
+    const d = digitsOf(token);
+    const id = VALORES_DO_LIVRO.get(d);
+    if (!id || vistos.has(d)) continue;
+    vistos.add(d);
+    achados.push({ token, id });
+  }
+  return achados;
+}
+
+/**
+ * Os campos que a página TEM de renderizar de um item, lidos do registo.
+ *
+ * Não é uma lista escrita à mão: sai do próprio item, campo a campo, e cresce
+ * com ele. Um histórico com três entradas exige três datas renderizadas.
+ */
+function camposObrigatoriosDoItem(item) {
+  const id = item.id;
+  const chaves = [
+    `${id}.titulo`,
+    `${id}.estado`,
+    `${id}.porque`,
+    `${id}.proposto_em`,
+    `${id}.entrada`,
+    `${id}.ultima_alteracao`,
+  ];
+  if (item.pergunta) chaves.push(`${id}.pergunta`);
+  if (item.registo_previo_estado) chaves.push(`${id}.registo_previo_em`);
+  if (item.decidido_em) chaves.push(`${id}.decidido_em`);
+  for (const [n, c] of (item.criterios ?? []).entries()) {
+    if (c?.quadro) chaves.push(`${id}.criterios[${n}].quadro`);
+    if (c?.nota) chaves.push(`${id}.criterios[${n}].nota`);
+  }
+  for (const [n, h] of (item.historico ?? []).entries()) {
+    chaves.push(`${id}.historico[${n}].data`);
+    if (h?.motivo) chaves.push(`${id}.historico[${n}].motivo`);
+  }
+  return chaves;
+}
+
+/**
+ * ---------------------------------------------------------------------------
  * O SELO EM CADA VALOR — a auditoria que era feita à mão.
  * ---------------------------------------------------------------------------
  *
@@ -869,6 +1016,46 @@ function auditaSelo(el, id, lang, err) {
       `      Um selo que aponte para a linha do PAI não conta: a porta tem de abrir a linha do ` +
       `número que está à vista.`,
   );
+}
+
+/**
+ * ---------------------------------------------------------------------------
+ * AS RENDIÇÕES LEGÍTIMAS DA ETIQUETA DO SELO
+ * ---------------------------------------------------------------------------
+ *
+ * Lidas dos dois componentes que põem a marca, e de mais lado nenhum:
+ *
+ *   src/components/Provenance.astro       «<verLinha>: [calculado · ]<trabalho>[<marcador>]»
+ *   src/components/InstrumentoConvergencia.astro  «<trabalho>»
+ *
+ * O nome do trabalho vem de `studyLabel()`, que é o registo. Isto NÃO é o
+ * portão a comparar `studyLabel` consigo próprio: o que se confere é que a
+ * etiqueta é UMA das rendições que o registo permite, e não prosa qualquer.
+ * O defeito que fecha é «texto arbitrário dentro da marca», não «título de
+ * trabalho errado», que é trabalho do arquivo.
+ *
+ * A comparação ignora espaços: entre dois elementos vizinhos o gabarito pode
+ * pôr um espaço ou nenhum, e isso é composição e não conteúdo.
+ */
+const semEspacos = (s) => String(s).replace(/\s+/g, '');
+
+const PROVENIENCIAS_ACEITES = new Set();
+{
+  const ids = [...new Set([...claims.values()].map((c) => c.study).filter(Boolean))];
+  for (const lang of LANGS) {
+    const s = t(lang);
+    for (const id of ids) {
+      const trabalho = studyLabel(id, lang);
+      for (const calculado of ['', `${s.prov.calculado} · `]) {
+        for (const marcador of ['', POR_VERIFICAR]) {
+          PROVENIENCIAS_ACEITES.add(semEspacos(`${trabalho}${marcador}`));
+          PROVENIENCIAS_ACEITES.add(
+            semEspacos(`${s.prov.verLinha}: ${calculado}${trabalho}${marcador}`),
+          );
+        }
+      }
+    }
+  }
 }
 
 /**
@@ -1053,6 +1240,10 @@ function contasDoPortao(claims) {
       'ledger',
     ),
     conta('linhas_cruzadas', cruzadas, 'ledger'),
+    /* As linhas publicadas menos as que têm registo de travessia. A vista é a
+       mais fraca das duas parcelas: a contagem das páginas é do `dist`, a do
+       registo é uma segunda leitura dos mesmos ficheiros, e é essa que manda. */
+    conta('linhas_anteriores_ao_tubo', paginasDeLinhaPt - cruzadas, 'ledger'),
     conta('estudos', (paginasPorRota.get('pt:estudo') ?? 0), 'dist'),
     conta('edicoes', EDITIONS.length, 'modulo'),
     conta('leituras', leiturasNoMapa, 'dist'),
@@ -1092,6 +1283,48 @@ function temPortaPara(no, destino) {
   return false;
 }
 
+/**
+ * ---------------------------------------------------------------------------
+ * AS LIGAÇÕES INTERNAS: RELATIVAS, E COM ÂNCORA
+ * ---------------------------------------------------------------------------
+ *
+ * Um `href` é interno quando não traz esquema (`https:`, `mailto:`, `tel:`,
+ * `data:`) nem começa por `//`. Tudo o resto é deste sítio, seja absoluto
+ * (`/agenda`), relativo (`agenda`, `../sobre`) ou só âncora (`#calendario`).
+ *
+ * A base contra a qual um relativo se resolve é a que o navegador usa: uma
+ * página servida de `<dir>/index.html` resolve contra `<dir>/`, e uma servida
+ * de `<nome>.html` resolve contra o endereço dessa página. Sem esta distinção,
+ * «agenda» numa página de directório apontava um nível acima do que aponta.
+ */
+function eLigacaoInterna(href) {
+  if (!href) return false;
+  if (/^[a-z][a-z0-9+.-]*:/i.test(href)) return false; // https:, mailto:, tel:, data:
+  if (href.startsWith('//')) return false; // relativo ao protocolo: é para fora
+  return true;
+}
+
+function baseDeResolucao(rel, caminho) {
+  if (!rel.endsWith('index.html')) return caminho;
+  return caminho.endsWith('/') ? caminho : `${caminho}/`;
+}
+
+/** O endereço absoluto e a âncora de uma ligação, resolvidos contra a base. */
+function resolveLigacao(base, href) {
+  try {
+    const u = new URL(href, `https://ligacao.interna${base.startsWith('/') ? base : `/${base}`}`);
+    return { caminho: decodeURIComponent(u.pathname), ancora: u.hash.replace(/^#/, '') };
+  } catch {
+    return null;
+  }
+}
+
+/** A forma canónica de um endereço de página, para o comparar com `caminho`. */
+function normalizaCaminho(p) {
+  if (p === '/' || p === '') return '/';
+  return p.replace(/\/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+}
+
 function ficheirosHtml(dir) {
   const out = [];
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -1122,10 +1355,19 @@ for (const file of ficheirosHtml(DIST)) {
   const caminho = '/' + rel.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
   const rota = matchPath(caminho);
 
+  /* Os `id` desta página, guardados antes de tudo o resto: é contra eles que
+     uma âncora de outra página é conferida no fim do varrimento. Guardados
+     também para os documentos, que saem daqui a seguir mas continuam a ser
+     endereços deste sítio. */
+  idsPorPagina.set(
+    normalizaCaminho(caminho),
+    new Set(root.querySelectorAll('[id]').map((e) => e.getAttribute('id')).filter(Boolean)),
+  );
+
   /* --- 0. documentos de estudo: obra citada, regra própria, e sai daqui --- */
   if (rota?.key === 'documento') {
     documentos++;
-    verificaDocumento({ rota, html, root, err });
+    verificaDocumento({ rota, rel, caminho, html, root, err });
     continue;
   }
 
@@ -1485,8 +1727,8 @@ for (const file of ficheirosHtml(DIST)) {
    */
   for (const a of body0.querySelectorAll('a[href]')) {
     const href = decodeEntities(a.getAttribute('href') ?? '');
-    if (!href.startsWith('/')) continue;
-    ligacoesInternas.push({ rel, href });
+    if (!eLigacaoInterna(href)) continue;
+    ligacoesInternas.push({ rel, base: baseDeResolucao(rel, caminho), href });
   }
 
   /* --- 4. corpo: retirar o que é legítimo, e ver o que sobra --- */
@@ -1838,13 +2080,110 @@ for (const file of ficheirosHtml(DIST)) {
       );
     }
 
+    /**
+     * ---------------------------------------------------------------------
+     * A PROSA DA AGENDA NÃO REPETE UMA MEDIÇÃO
+     * ---------------------------------------------------------------------
+     *
+     * A origem 8 provava que o texto é o do registo; não provava que o registo
+     * não trouxesse, em prosa corrente, um valor que tem linha e selo noutro
+     * sítio da mesma página (revisão cruzada, #1; F11, F13). «A linha publica
+     * 17,6» é uma medição sem selo, e o facto de ter atravessado fielmente não
+     * lhe dá proveniência.
+     *
+     * O que se recusa é ESTREITO e é dito em voz alta: um número da prosa cuja
+     * sequência de algarismos seja a de um VALOR do livro-razão. A mesma
+     * normalização da origem 1 (`digitsOf`), para que a mesma medição seja a
+     * mesma coisa dos dois lados.
+     */
+    if (!('data-claim' in (el.attributes ?? {}))) {
+      for (const achado of valoresDoLivroEmProsa(renderizado, chave)) {
+        err(
+          `a prosa da agenda repete um valor do livro-razão: "${achado.token}" é o valor da ` +
+            `linha "${achado.id}".\n      campo: ${chave}\n` +
+            `      Uma medição chega ao leitor por <Claim id="…"/>, com o selo que abre a sua ` +
+            `linha. Um critério mostra as suas linhas em \`criterios[].linhas\`; a nota diz o ` +
+            `que elas não dizem, e não as repete.`,
+        );
+      }
+    }
+
     const [alvo] = chave.split('.');
     if (!agendaRenderizada.has(rel)) {
-      agendaRenderizada.set(rel, { itens: new Set(), eventos: new Set(), lang: linguaPagina });
+      agendaRenderizada.set(rel, {
+        itens: new Set(), eventos: new Set(), campos: new Set(), lang: linguaPagina,
+      });
     }
     const visto = agendaRenderizada.get(rel);
+    visto.campos.add(chave);
     if (alvo.startsWith('evento:')) visto.eventos.add(alvo.slice('evento:'.length));
     else visto.itens.add(alvo);
+  }
+
+  /**
+   * ---------------------------------------------------------------------
+   * CADA ITEM, INTEIRO, E DEBAIXO DA SUA SECÇÃO
+   * ---------------------------------------------------------------------
+   *
+   * Renderizar UM campo de um item dava o item por presente: apagar o bloco do
+   * histórico inteiro deixava a contagem certa e passava (revisão cruzada, #5).
+   * E a secção era calculada do REGISTO, não do DOM: um item posto debaixo do
+   * cabeçalho errado passava, desde que o seu rótulo de estado estivesse certo.
+   *
+   * Estas duas conferências leem a página: os campos que cada item rendeu, e a
+   * secção onde o item está mesmo.
+   */
+  if (rota?.key === 'agenda' && AGENDA_REGISTO) {
+    const artigos = body.querySelectorAll('[data-agenda-item]');
+    for (const artigo of artigos) {
+      const id = artigo.getAttribute('data-agenda-item');
+      const item = ITENS_DA_AGENDA.get(id);
+      if (!item) {
+        err(`a página rende um item "${id}" que não está em src/data/agenda.json.`);
+        continue;
+      }
+
+      /* A secção, lida a subir no DOM. */
+      let seccao = null;
+      for (let no = artigo.parentNode; no; no = no.parentNode) {
+        const estadoDaSeccao = (no.attributes ?? {})['data-agenda-seccao'];
+        if (estadoDaSeccao) {
+          seccao = estadoDaSeccao;
+          break;
+        }
+      }
+      if (seccao === null) {
+        err(`o item "${id}" não está dentro de nenhuma secção de estado da agenda.`);
+      } else if (seccao !== item.estado) {
+        err(
+          `o item "${id}" está na secção "${seccao}" e o registo põe-no em "${item.estado}".\n` +
+            `      A secção é lida do DOM, não do registo: um item debaixo do cabeçalho errado ` +
+            `com o rótulo certo é exactamente o defeito que isto fecha.`,
+        );
+      }
+
+      /* Os critérios, contados na página. */
+      const criterios = artigo.querySelectorAll('[data-agenda-criterio]').length;
+      const esperadosCriterios = (item.criterios ?? []).length;
+      if (criterios !== esperadosCriterios) {
+        err(
+          `o item "${id}" rende ${criterios} critério(s) e o registo tem ${esperadosCriterios}.`,
+        );
+      }
+
+      /* E cada campo que a página existe para mostrar. */
+      const rendidos = new Set(
+        artigo.querySelectorAll('[data-agenda]').map((e) => e.getAttribute('data-agenda')),
+      );
+      for (const chave of camposObrigatoriosDoItem(item)) {
+        if (!rendidos.has(chave)) {
+          err(
+            `o item "${id}" não rende "${chave}", que o registo tem.\n` +
+              `      A página mostra o item inteiro, ou o que ela mostra deixa de ser o registo.`,
+          );
+        }
+      }
+    }
   }
 
   /**
@@ -1918,7 +2257,7 @@ for (const file of ficheirosHtml(DIST)) {
       }
     }
 
-    ocorrenciasDaProva.push({ rel, chave, digitos: digitsOf(renderizado), texto: renderizado });
+    ocorrenciasDaProva.push({ rel, chave, texto: renderizado });
   }
 
   for (const el of body.querySelectorAll('[data-verbatim]')) {
@@ -1948,6 +2287,28 @@ for (const file of ficheirosHtml(DIST)) {
         `data-nonledger="${motivo}" não é um motivo declarado. ` +
           `Motivos aceites: ${[...CONTEXTOS].join(', ')} (ver ledger/allowlist.yml).`,
       );
+    }
+    /**
+     * `proveniencia` deixa de ser uma dispensa e passa a ser uma comparação.
+     *
+     * O motivo declarado diz que a etiqueta do selo é «gerada a partir do
+     * próprio livro-razão», e o portão acreditava nessa frase: qualquer prosa
+     * embrulhada nela escapava ao varrimento de algarismos E ao da ortografia
+     * (revisão cruzada, #8). O conjunto de rendições legítimas é finito e
+     * calcula-se do registo dos trabalhos; o que não estiver nele fecha o
+     * portão. Ver PROVENIENCIAS_ACEITES.
+     */
+    if (motivo === 'proveniencia') {
+      const lido = semEspacos(textoTranscrito(el));
+      if (!PROVENIENCIAS_ACEITES.has(lido)) {
+        err(
+          `data-nonledger="proveniencia" com texto que a etiqueta do selo não sabe escrever: ` +
+            `"${textoTranscrito(el).slice(0, 120)}".\n` +
+            `      A etiqueta é gerada do registo dos trabalhos (nome do trabalho, «calculado», ` +
+            `o marcador), e o portão compara-a com esse conjunto. Prosa embrulhada nesta marca ` +
+            `escapava ao varrimento inteiro.`,
+        );
+      }
     }
     aRemover.push(el);
   }
@@ -2002,16 +2363,42 @@ function existeConstruido(caminho) {
     (limpo === '' && CONSTRUIDOS.has('/index.html'))
   );
 }
-for (const { rel, href } of ligacoesInternas) {
-  const semAncora = href.split('#')[0].split('?')[0];
-  if (semAncora === '') continue; // ligação só de âncora, na própria página
+for (const { rel, base, href } of ligacoesInternas) {
+  const resolvido = resolveLigacao(base, href);
+  if (!resolvido) {
+    erros.push({ rel, msg: `a ligação interna "${href}" não é um endereço que se possa resolver.` });
+    continue;
+  }
   ligacoesConferidas++;
-  if (!existeConstruido(semAncora)) {
+  if (!href.startsWith('/') && !href.startsWith('#')) ligacoesRelativas++;
+
+  if (!existeConstruido(resolvido.caminho)) {
     erros.push({
       rel,
       msg:
-        `a ligação interna "${href}" não corresponde a nada construído em dist/.\n` +
-        `      Uma porta que não abre é pior do que não haver porta.`,
+        `a ligação interna "${href}" não corresponde a nada construído em dist/` +
+        (href.startsWith('/') ? '' : ` (resolvida contra "${base}" dá "${resolvido.caminho}")`) +
+        `.\n      Uma porta que não abre é pior do que não haver porta.`,
+    });
+    continue;
+  }
+
+  /**
+   * A âncora. Uma ligação que aponta para uma divisão que não existe leva o
+   * leitor ao topo de uma página que não é a que lhe foi prometida, e não dá
+   * erro nenhum: é a maneira mais silenciosa de uma porta não abrir.
+   */
+  if (!resolvido.ancora) continue;
+  const ids = idsPorPagina.get(normalizaCaminho(resolvido.caminho));
+  if (!ids) continue; // o destino não é uma página construída (um ficheiro de dados)
+  ancorasConferidas++;
+  if (!ids.has(resolvido.ancora)) {
+    erros.push({
+      rel,
+      msg:
+        `a ligação interna "${href}" aponta para a âncora "#${resolvido.ancora}", que não existe ` +
+        `em "${normalizaCaminho(resolvido.caminho)}".\n` +
+        `      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.`,
     });
   }
 }
@@ -2149,15 +2536,27 @@ for (const [chave, item] of Object.entries(PROVA)) {
   }
 }
 
+/**
+ * A COMPARAÇÃO É DO TEXTO RENDERIZADO, NÃO DA SEQUÊNCIA DE ALGARISMOS.
+ *
+ * Até 16.08.2026 comparavam-se os algarismos (`digitsOf`), e por isso «1,32»,
+ * «-132» ou «132 e picos» comparavam iguais a `132` (revisão cruzada, #9). O
+ * defeito plantado que a §1.39 registou (132 → 133) falhava; a vírgula, o
+ * sinal e a escala não. Passa a comparar-se o texto que o leitor vê com o que
+ * o portão conta, escrito como o sítio o escreve: um número é o seu valor em
+ * cadeia, uma data é ISO, um endereço é ele próprio.
+ */
 for (const o of ocorrenciasDaProva) {
   const esperado = CONTAS[o.chave];
   if (esperado === undefined || esperado === null) continue; // já dito acima
-  if (digitsOf(String(esperado)) !== o.digitos) {
+  if (o.texto !== String(esperado)) {
     erros.push({
       rel: o.rel,
       msg:
-        `o número da prova "${o.chave}" foi renderizado como "${o.texto.slice(0, 40)}" e o ` +
-        `portão conta ${JSON.stringify(esperado)}.`,
+        `o número da prova "${o.chave}" foi renderizado como "${o.texto.slice(0, 60)}" e o ` +
+        `portão escreve-o "${String(esperado)}".\n` +
+        `      Não é só o valor que tem de bater certo: é a forma. Uma vírgula, um sinal ou ` +
+        `uma escala trocados são um número diferente.`,
     });
   }
 }
@@ -2224,7 +2623,8 @@ console.log(
   cinza(
     `  ortografia · Acordo de 1990 como se aplica em Portugal · ${FORMAS.pares.length} pares, ` +
       `${FORMAS.iguais.length} iguais · restante: ${ocorrenciasRestantes} ocorrência(s) em ` +
-      `${[...RESTANTE.values()].filter((r) => r.usadas > 0).length} rota(s), todas de linhas cruzadas`,
+      `${[...RESTANTE.values()].filter((r) => r.usadas > 0).length} rota(s), todas de linhas cruzadas` +
+      ` · ${excluidasPorCitacao} dispensada(s) por estarem entre «…»`,
   ),
 );
 
@@ -2311,12 +2711,35 @@ fs.writeFileSync(FICHEIRO_DA_PROVA, JSON.stringify(documentoDaProva, null, 2) + 
  */
 try {
   const relido = JSON.parse(fs.readFileSync(FICHEIRO_DA_PROVA, 'utf8'));
-  const chavesEscritas = Object.keys(relido.prova ?? {});
-  if (chavesEscritas.length !== Object.keys(PROVA).length) {
+  const escritas = relido.prova ?? {};
+  const problemas = [];
+  /* Contar chaves provava que o ficheiro tinha o tamanho certo, e mais nada
+     (revisão cruzada, #9). Agora relê-se chave a chave, com o nome e o valor,
+     contra o que este varrimento acabou de escrever. */
+  for (const chave of Object.keys(provaFinal)) {
+    if (!(chave in escritas)) {
+      problemas.push(`falta a chave "${chave}"`);
+      continue;
+    }
+    const foi = JSON.stringify(escritas[chave]?.valor);
+    const era = JSON.stringify(provaFinal[chave].valor);
+    if (foi !== era) problemas.push(`"${chave}": escrito ${foi}, calculado ${era}`);
+    if (escritas[chave]?.vista !== provaFinal[chave].vista) {
+      problemas.push(
+        `"${chave}": vista escrita "${escritas[chave]?.vista}", calculada "${provaFinal[chave].vista}"`,
+      );
+    }
+  }
+  for (const chave of Object.keys(escritas)) {
+    if (!(chave in provaFinal)) problemas.push(`chave a mais no ficheiro: "${chave}"`);
+  }
+  if (problemas.length) {
     console.error(
       vermelho(
-        `\n  ${CAMINHO_DA_PROVA} foi escrito com ${chavesEscritas.length} chaves; ` +
-          `esperavam-se ${Object.keys(PROVA).length}.\n`,
+        `\n  ${CAMINHO_DA_PROVA} não é o que esta construção calculou ` +
+          `(${problemas.length} diferença(s)):\n    ` +
+          problemas.slice(0, 10).join('\n    ') +
+          `\n`,
       ),
     );
     process.exit(1);
@@ -2332,7 +2755,8 @@ console.log(
   cinza(
     `    prova · ${Object.keys(PROVA).length} chaves reconferidas pelo portão · ` +
       `${ocorrenciasDaProva.length} números marcados nas páginas · ` +
-      `${ligacoesConferidas} ligações internas · escrito em ${CAMINHO_DA_PROVA}`,
+      `${ligacoesConferidas} ligações internas (${ligacoesRelativas} relativas, ` +
+      `${ancorasConferidas} âncoras) · escrito em ${CAMINHO_DA_PROVA}`,
   ),
 );
 console.log('');

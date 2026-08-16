@@ -184,6 +184,23 @@ sem portão novo:
   travessia, e cada item e cada acontecimento do registo está na página, pelo
   nome.
 
+E mais seis a 16.08.2026, depois da revisão cruzada (§1.41), todas no mesmo
+varrimento e nenhuma num portão novo:
+
+- nenhum número da prosa da agenda é, algarismo a algarismo, o valor de uma
+  linha do livro-razão: uma medição chega ao leitor por `<Claim/>`, com selo,
+  e não repetida em prosa;
+- cada item da agenda rende **todos** os campos que o registo lhe dá, e está
+  debaixo da secção do seu estado lida do DOM, não do registo;
+- a etiqueta do selo (`data-nonledger="proveniencia"`) é uma das rendições que
+  o registo dos trabalhos permite, e não prosa qualquer;
+- um número marcado `data-prova` bate certo com o TEXTO que o portão escreve,
+  não só com a sua sequência de algarismos;
+- uma ligação interna resolve-se contra a página onde está, mesmo quando é
+  relativa, e a sua âncora existe na página de destino;
+- a faixa de um documento de estudo leva a porta para o Sobre, e o portão
+  exige-a: a regra 9 diz «todas as páginas construídas» e agora é verdade.
+
 E uma antes de qualquer página ser construída, no `ledger:check`: **a amarra das
 decisões**. Toda a entrada do `DECISIONS.md` a partir da §1.38 declara o que
 governa, e a última entrada que governa um texto traz o resumo desse texto tal
@@ -242,7 +259,20 @@ incerteza, com a sua página e a sua classe (§6).
 passagem, `scripts/ortografia.mjs`, que a aplica nos dois sentidos
 (`--aplicar --sentido=acordo|anterior`); e a conferência, dentro do `gate:html`,
 que lê a mesma lista. Os travessões não se convertem por máquina: cada um pede
-uma frase nova, e a ferramenta assinala-os com ficheiro e linha. O que fica por
+uma frase nova, e a ferramenta assinala-os com ficheiro e linha.
+
+**A reversão não é só uma corrida da ferramenta, e desde 16.08.2026 esta secção
+di-lo.** A ida é de máquina inteira; a volta é uma corrida da ferramenta **mais
+uma passagem à mão sobre as formas listadas como só de ida**. Uma forma só de
+ida é aquela cuja grafia do Acordo é, por si, outra palavra corrente: «acto»
+passa a «ato» sem risco, e «ato» de volta a «acto» estragaria «eu ato a corda»,
+que sempre se escreveu assim. A lista marca-as `so_ida: true`, a passagem
+inversa não lhes toca e imprime-as com ficheiro e linha, e a lista `manuais`
+(«para», «pelo», «pela», «polo», «pera») já fazia o mesmo pela mesma razão.
+Antes de 16.08.2026 esta secção prometia uma reversão de máquina inteira, e uma
+revisão de outra família de modelos mostrou o contrário: correu a passagem
+inversa sobre «Eu ato a corda» e sobre «O ato foi publicado», e converteu as
+duas. O que fica por
 converter está em `ortografia/restantes.yml`, rota a rota e palavra a palavra,
 e desde 16.08.2026 essa lista está **vazia**, porque a prosa da casa das linhas
 cruzadas se converteu onde foi escrita, no manifesto do motor, e voltou por

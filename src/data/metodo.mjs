@@ -100,11 +100,11 @@ export const REGRAS = [
         'Cada linha do livro-razão nomeia o organismo que produziu o valor e o documento onde ele está impresso. Esta regra não é imposta por uma máquina: é imposta por estar à vista, linha a linha, no livro-razão público.',
       ],
       en: [
-        'Every ledger row names the organism that produced the value and the document it is printed in. This rule is not enforced by a machine: it is enforced by being in plain sight, row by row, in the public ledger.',
+        'Every ledger row names the body that produced the value and the document it is printed in. This rule is not enforced by a machine: it is enforced by being in plain sight, row by row, in the public ledger.',
       ],
     },
     prova: [
-      { chave: 'fontes', rotulo: { pt: 'organismos citados', en: 'organisms cited' } },
+      { chave: 'fontes', rotulo: { pt: 'organismos citados', en: 'bodies cited' } },
       {
         chave: 'tipos_de_documento',
         rotulo: {
@@ -125,7 +125,7 @@ export const REGRAS = [
         'A investigação corre num motor separado do sítio. É lá que se procura, lê, extrai, calcula e verifica. Cada número sai de lá com a sua origem: o organismo, o documento, a página, o excerto exato, a data da leitura e, quando é calculado, a conta e os números de onde vem.',
       ],
       en: [
-        'The research runs in an engine separate from the site. That is where things are searched for, read, extracted, calculated and checked. Every figure leaves it with its origin: the organism, the document, the page, the exact excerpt, the date it was read and, when it is calculated, the arithmetic and the figures it comes from.',
+        'The research runs in an engine separate from the site. That is where things are searched for, read, extracted, calculated and checked. Every figure leaves it with its origin: the body, the document, the page, the exact excerpt, the date it was read and, when it is calculated, the arithmetic and the figures it comes from.',
       ],
     },
     mecanismo: {
@@ -139,7 +139,23 @@ export const REGRAS = [
     prova: [
       {
         chave: 'linhas_cruzadas',
-        rotulo: { pt: 'linhas vindas do motor', en: 'rows that came from the engine' },
+        rotulo: {
+          pt: 'linhas atravessadas do motor com registo',
+          en: 'rows crossed from the engine with a record',
+        },
+      },
+      /* A honestidade que faltava a esta regra. O tubo é de 2026-08-15; as
+         linhas escritas antes dele vieram da mesma investigação e não têm
+         registo de travessia, porque não havia registo de travessia. Dizer
+         «linhas vindas do motor: 70» ao lado de «linhas publicadas: 132»
+         deixava o leitor a concluir que as outras vieram de outro lado.
+         Vieram do mesmo sítio; o que lhes falta é o registo. */
+      {
+        chave: 'linhas_anteriores_ao_tubo',
+        rotulo: {
+          pt: 'linhas anteriores ao tubo',
+          en: 'rows written before the pipe existed',
+        },
       },
       {
         chave: 'leituras',
@@ -361,7 +377,7 @@ export const REGRAS = [
         'A inteligência artificial propõe o que medir, a partir de critérios declarados: o que os quadros com que as instituições avaliam Portugal apontam como problema, o que as fontes oficiais vão publicar, o que os leitores perguntam ou corrigem. A direção decide. A lista do que está em curso, do que se segue e do porquê é pública, e nada sai dela em silêncio.',
       ],
       en: [
-        'Artificial intelligence proposes what to measure, from declared criteria: what the frameworks the institutions use to assess Portugal flag as a problem, what the official sources are about to publish, what readers ask about or correct. The director decides. The list of what is under way, what comes next and why is public, and nothing leaves it in silence.',
+        'Artificial intelligence proposes what to measure, from declared criteria: what the frameworks the institutions use to assess Portugal flag as a problem, what the official sources will publish, what readers ask about or correct. The director decides. The list of what is under way, what comes next and why is public, and nothing leaves it in silence.',
       ],
     },
     /* O mecanismo lido contra a página construída, a 16.08.2026: a página existe
@@ -449,23 +465,23 @@ export const REGRAS = [
         'Não classifica partidos nem faz médias por partido: regista quem decidiu o quê e o que aconteceu, com o nome tal como consta do documento e o rótulo partidário como facto de registo. Médias por partido sobre territórios que não têm nada em comum são aritmética enganosa. Não publica um número sem fonte. Não corrige em silêncio. Não recebe dinheiro de nenhuma entidade que mede: é financiado pessoalmente pelo diretor, sem publicidade nem financiamento externo.',
       ],
       en: [
-        'It does not rank parties and does not average by party: it records who decided what and what happened, with the name as the document gives it and the party label as a fact of record. Averages by party across territories with nothing in common are misleading arithmetic. It does not publish a figure without a source. It does not correct in silence. It takes no money from any entity it measures: it is funded personally by the director, with no advertising and no outside funding.',
+        'It does not rank or classify parties and does not average by party: it records who decided what and what happened, with the name as the document gives it and the party label as a fact of record. Averages by party across territories with nothing in common are misleading arithmetic. It does not publish a figure without a source. It does not correct in silence. It takes no money from any entity it measures: it is funded personally by the director, with no advertising and no outside funding.',
       ],
     },
     mecanismo: {
       pt: [
-        'Não há neste sítio nenhuma ordenação por partido. O crédito de um valor é um campo da sua linha, conferido carácter a carácter na página dessa linha, como qualquer outro campo.',
+        'Não há neste sítio nenhuma ordenação por partido. O crédito de um valor é um campo da sua linha, conferido carácter a carácter na página dessa linha, como qualquer outro campo. As frases sobre o financiamento e sobre a publicidade não têm máquina nenhuma por trás: são regras da casa, como a primeira, e valem por estarem escritas e por quem responde por elas.',
       ],
       en: [
-        'There is no ranking by party anywhere on this site. The credit for a value is a field of its row, checked character for character on that row page, like any other field.',
+        'There is no ranking by party anywhere on this site. The credit for a value is a field of its row, checked character for character on that row page, like any other field. The sentences about funding and about advertising have no machine behind them: they are house rules, like the first one, and they hold by being written down and by whoever answers for them.',
       ],
     },
     prova: [
       {
         chave: 'valores_creditados',
         rotulo: {
-          pt: 'valores creditados a quem os decidiu',
-          en: 'values credited to whoever decided them',
+          pt: 'valores com crédito atribuído na linha',
+          en: 'values with credit recorded in the row',
         },
       },
     ],

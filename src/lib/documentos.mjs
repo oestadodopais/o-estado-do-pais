@@ -51,6 +51,15 @@ import { SITE_NAME } from '../../site.config.mjs';
  * não tem, naquela página, nada que diga quem o alojou nem como foi feito. O
  * documento não tem o nosso rodapé e não pode ter: é conferido carácter a
  * carácter contra a origem mais a faixa.
+ *
+ * E DESDE 16.08.2026 A FAIXA LEVA TAMBÉM A PORTA PARA O SOBRE. A regra 9 do
+ * Método diz que «todas as páginas construídas levam a porta para lá», e havia
+ * quinze páginas construídas onde ela não estava: as dos documentos, que o
+ * portão dispensava antes de chegar a essa conferência (revisão cruzada, #4).
+ * A faixa é markup nosso e não entra na comparação com a origem: entra no
+ * `esperado` que o portão recalcula, dos dois lados da igualdade. Pô-la aqui
+ * fecha a diferença entre o que a regra promete e o que o sítio faz, sem tocar
+ * num único byte do documento.
  */
 const AUTHORSHIP_LINE = 'Escrito por IA, dirigido por uma pessoa.';
 import { t } from '../i18n/strings.mjs';
@@ -218,6 +227,7 @@ export function faixa(slug, lang) {
     `<a data-oedp-marca href="${atributo(destino)}">${texto(SITE_NAME)}</a>`,
     `<span data-oedp-nota>${texto(s.estudos.documentoFaixa)}</span>`,
     `<span data-oedp-autoria lang="pt-PT">${texto(AUTHORSHIP_LINE)}</span>`,
+    `<a data-oedp-sobre href="${atributo(routePath('sobre', lang))}">${texto(s.nav.sobre)}</a>`,
     `<a data-oedp-voltar href="${atributo(destino)}">${texto(s.estudos.documentoVoltar)} ↑</a>`,
     '</div>',
   ].join('');

@@ -2725,6 +2725,13 @@ a.src-chip:hover::before {
   flex-wrap: wrap;
   gap: 6px 16px;
 }
+/* A porta para o documento que a nota cita. Mesma escala da nota: é aparelho
+   do critério, não uma segunda afirmação. */
+.agenda-documentos {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
 .agenda-sem-data {
   font-size: 13px;
   color: var(--muted);

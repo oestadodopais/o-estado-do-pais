@@ -191,6 +191,10 @@ const FRASES = {
     pt: 'linhas com entrada no registo da travessia do motor',
     en: 'rows with an entry in the engine crossing record',
   },
+  linhas_anteriores_ao_tubo: {
+    pt: 'linhas escritas antes de o tubo do motor existir, e por isso sem registo de travessia',
+    en: 'rows written before the engine pipe existed, and so with no crossing record',
+  },
   leituras: {
     pt: 'trabalhos do arquivo com leitura do observatório escrita',
     en: 'archive works with an observatory reading written',
@@ -322,6 +326,16 @@ export function prova(lang = 'pt') {
     linhas_cruzadas: k('linhas_cruzadas', cruzadas.total, livro, {
       manifestos: cruzadas.ficheiros,
     }),
+    /* O resto das linhas publicadas. Vieram da mesma investigação, e foram
+       escritas antes de haver registo de travessia: o tubo é de 2026-08-15. A
+       regra 2 do Método diz «cada número sai do motor», e sem esta chave a sua
+       prova mostrava só as que têm registo, deixando o leitor a somar de
+       cabeça e a concluir mal. Ver DECISIONS §1.41. */
+    linhas_anteriores_ao_tubo: k(
+      'linhas_anteriores_ao_tubo',
+      claims.size - cruzadas.total,
+      livro,
+    ),
 
     /* ---- o arquivo ---- */
     estudos: k('estudos', WORKS.length, routePath('estudos', lang)),
