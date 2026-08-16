@@ -9,7 +9,10 @@
   "`historia` guarda, por item, quantas entradas de histórico atravessaram e o",
   "resumo dessas entradas: é contra ele que a travessia seguinte recusa um",
   "histórico mais curto ou uma entrada passada reescrita (H4). `eventos` guarda",
-  "os ids do calendário, para que nenhum desapareça sem ser declarado (H5)."
+  "TODOS os ids do calendário que já atravessaram, e não só os de hoje, para",
+  "que nenhum desapareça sem ser declarado; `saidas` guarda os que já saíram.",
+  "Os dois são cumulativos: uma saída declarada uma vez não volta a poder ser",
+  "apagada do registo (H5)."
  ],
  "counts": {
   "eventos": 16,
@@ -43,16 +46,16 @@
  "exporter": "ResearchHub/publisher/export_agenda.py",
  "files": {
   "agenda.json": {
-   "exported_sha256": "3f0491e7e429014bfae827a6b5868d871015227b429840d80bac32e520f67f2c",
+   "exported_sha256": "554b87f371a6a27146d9ad7e0c05591e316871f46ae16e6689996dce3243eaec",
    "exporter": "ResearchHub/publisher/export_agenda.py",
    "origin_path": "agenda/agenda.json",
-   "origin_sha256": "63e3fdcbaf80c312ef900bfbcb1faab251780e838a3ee9d095982835722d3678"
+   "origin_sha256": "2437d47c02ae090bf859dbd42a7f7d8126f225ce2f9ded0bf8e59cf7f9807e23"
   },
   "calendario.json": {
-   "exported_sha256": "de66a7c69a2a11c4e14b92226e8ac3528f76471ff75808b4b0598e24db4dd779",
+   "exported_sha256": "e208816a586ca939b4b84442c2bd80af8f03c6d5f0a356563f097d56fdaee003",
    "exporter": "ResearchHub/publisher/export_agenda.py",
    "origin_path": "indicators/calendar.json",
-   "origin_sha256": "94d9d5eb466f005648e7bcad9d4e5ce556f15e501d6588d678ab4bf52cc2febe"
+   "origin_sha256": "ef616e453f81c444705bc512719b14c826b5d055867ff96636be294fcdff49e8"
   }
  },
  "historia": {
@@ -77,5 +80,6 @@
    "sha256": "a712eeed4698a1c567f0c183fa22a1e3758a6b4a7668f969544c0753fb11a77a"
   }
  },
- "origin": "ResearchHub"
+ "origin": "ResearchHub",
+ "saidas": []
 }

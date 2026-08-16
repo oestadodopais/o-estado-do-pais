@@ -15,13 +15,18 @@
  * próprias afirmações e cada pedaço renderizado é conferido pelo portão contra
  * o livro-razão (origem 5, DECISIONS §2.2).
  *
- * A PORTA DAS CORREÇÕES entra pelo invólucro, como em todas as páginas. Aqui
- * ela não é uma porta para outro sítio: é o aparelho desta página, e por isso
- * fica onde o invólucro a põe, uma só vez.
+ * A PORTA DAS CORREÇÕES, UMA VEZ E DENTRO DA POLÍTICA. Ela entra em todas as
+ * páginas pelo invólucro, no rodapé; aqui isso punha a política duas vezes na
+ * mesma página, uma no bloco e outra depois dele (revisão cruzada 2, R17). Esta
+ * página faz o que a primeira já fazia: passa `portaNoRodape={false}` e põe a
+ * porta onde ela pertence, que é dentro do bloco da política, como o seu último
+ * parágrafo. Continua a ser exactamente uma por página, que é o que o portão
+ * conta.
  */
 import Base from '../layouts/Base.astro';
 import RegistoCorrecoes from '../components/RegistoCorrecoes.astro';
 import CaixaDeCorrecoes from '../components/CaixaDeCorrecoes.astro';
+import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import Frase from '../components/Frase.astro';
 import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -37,6 +42,7 @@ const path = routePath('correcoes', lang);
   path={path}
   title={s.correcoes.metaTitle}
   description={s.correcoes.metaDescription}
+  portaNoRodape={false}
 >
   <div style="padding-top:clamp(20px,3vw,34px)">
     <span class="eyebrow">{s.correcoes.eyebrow}</span>
@@ -67,6 +73,7 @@ const path = routePath('correcoes', lang);
       <p class="regra-portas">
         <a href={`${routePath('metodo', lang)}#correcoes`}>{s.correcoes.metodoLink} →</a>
       </p>
+      <PortaDeCorreccoes lang={lang} class="aparelho-bloco" />
     </div>
   </section>
 

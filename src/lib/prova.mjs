@@ -181,7 +181,7 @@ function portaDaAgenda(lang) {
 const FRASES = {
   fontes: {
     pt: 'organismos distintos no campo da fonte das linhas do livro-razão',
-    en: 'distinct organisms in the source field of the ledger rows',
+    en: 'distinct bodies in the source field of the ledger rows',
   },
   tipos_de_documento: {
     pt: 'linhas cujo documento declara o seu tipo, dos cinco que o formato conhece',
@@ -192,8 +192,8 @@ const FRASES = {
     en: 'rows with an entry in the engine crossing record',
   },
   linhas_anteriores_ao_tubo: {
-    pt: 'linhas escritas antes de o tubo do motor existir, e por isso sem registo de travessia',
-    en: 'rows written before the engine pipe existed, and so with no crossing record',
+    pt: 'linhas escritas antes de existir registo de travessia, e por isso sem um',
+    en: 'rows written before any crossing record existed, and so without one',
   },
   leituras: {
     pt: 'trabalhos do arquivo com leitura do observatório escrita',
@@ -370,10 +370,14 @@ export function prova(lang = 'pt') {
       entradasDoRegisto('atualizacao').length,
       routePath('correcoes', lang),
     ),
+    /* A porta é a secção do registo e não a página inteira: a contagem passou a
+       ser dita na própria página das correções, e uma porta que aponta para a
+       página onde já se está não abre nada. Da regra 7 do Método continua a
+       levar o leitor ao mesmo sítio, um pouco mais abaixo. */
     revisoes_de_proveniencia: k(
       'revisoes_de_proveniencia',
       entradasDoRegisto('proveniencia').length,
-      routePath('correcoes', lang),
+      ancora(routePath('correcoes', lang), 'registo'),
     ),
     endereco_correcoes: k('endereco_correcoes', ENDERECO_CORRECOES, routePath('correcoes', lang)),
 

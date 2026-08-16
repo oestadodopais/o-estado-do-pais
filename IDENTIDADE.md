@@ -201,6 +201,22 @@ varrimento e nenhuma num portão novo:
 - a faixa de um documento de estudo leva a porta para o Sobre, e o portão
   exige-a: a regra 9 diz «todas as páginas construídas» e agora é verdade.
 
+E mais quatro a 16.08.2026, depois da segunda revisão cruzada (§1.42), no mesmo
+varrimento e sem portão novo:
+
+- um número da prosa da agenda com a unidade colada («17,6pp») é um número, e
+  não uma cadeia com letras que escapa à conferência;
+- cada critério e cada entrada do histórico rende, **dentro do seu elemento**,
+  os campos que o registo lhe dá; e a frase visível de cada rótulo da casa (o
+  estado de uma secção, o estado de um registo prévio, a transição de uma
+  entrada, a razão de um acontecimento não ter data) é comparada com a cópia que
+  o portão traz, e não com o gabarito;
+- a etiqueta do selo é a rendição **daquela** linha, e não uma rendição legítima
+  qualquer: o `href` diz de que linha o selo é porta, e a etiqueta tem de ser a
+  dela;
+- o `dist/prova.json` é relido por inteiro contra o que o varrimento calculou,
+  e não só no bloco `prova`.
+
 E uma antes de qualquer página ser construída, no `ledger:check`: **a amarra das
 decisões**. Toda a entrada do `DECISIONS.md` a partir da §1.38 declara o que
 governa, e a última entrada que governa um texto traz o resumo desse texto tal

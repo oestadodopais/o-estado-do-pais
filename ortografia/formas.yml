@@ -388,6 +388,8 @@ pares:
   - { anterior: 'contra-ordenações', acordo: 'contraordenações' }
   - { anterior: 'co-autor', acordo: 'coautor' }
   - { anterior: 'co-autores', acordo: 'coautores' }
+  - { anterior: 'co-autora', acordo: 'coautora' }
+  - { anterior: 'co-autoras', acordo: 'coautoras' }
   - { anterior: 'co-autoria', acordo: 'coautoria' }
   - { anterior: 'co-autorias', acordo: 'coautorias' }
   - { anterior: 'auto-avaliação', acordo: 'autoavaliação' }
