@@ -364,30 +364,47 @@ export const REGRAS = [
         'Artificial intelligence proposes what to measure, from declared criteria: what the frameworks the institutions use to assess Portugal flag as a problem, what the official sources are about to publish, what readers ask about or correct. The director decides. The list of what is under way, what comes next and why is public, and nothing leaves it in silence.',
       ],
     },
+    /* O mecanismo lido contra a página construída, a 16.08.2026: a página existe
+       e faz isto, nem mais nem menos. Onde um item não tem critério, ou não tem
+       ainda decisão da direção, a página diz a ausência por palavras em vez de
+       a esconder, e a frase abaixo diz isso porque é o que lá está. */
     mecanismo: {
       pt: [
-        'A pergunta de um trabalho é fixada e guardada no motor antes da recolha, e cada item da lista traz o critério que o pôs lá e o registo de cada mudança de estado.',
+        'A pergunta de um trabalho é fixada e guardada no motor antes da recolha, e a agenda mostra, item a item, o critério que o pôs lá, quem o propôs, quem o decidiu, e cada mudança de estado com a sua data e o seu motivo. Onde não há critério, ou onde não há ainda decisão da direção, a página di-lo.',
       ],
       en: [
-        'The question of a piece of work is fixed and stored in the engine before collection begins, and each item on the list carries the criterion that put it there and the record of every change of state.',
+        'The question of a piece of work is fixed and stored in the engine before collection begins, and the agenda shows, item by item, the criterion that put it there, who proposed it, who decided it, and every change of state with its date and its reason. Where there is no criterion, or no director decision yet, the page says so.',
       ],
     },
+    /* A prova desta regra são as contagens da agenda, e mais nada. A contagem
+       dos concelhos com página saiu daqui a 16.08.2026: é cobertura, e a regra 8
+       não é sobre cobertura. A chave continua na prova e vive onde conta, no
+       mapa e em `/municipios`. Cada uma destas quatro é uma porta para a agenda,
+       que é a página onde o leitor vê o que elas contam. */
     prova: [
       {
-        chave: 'municipios_com_pagina',
-        rotulo: { pt: 'concelhos com página', en: 'concelhos with a page' },
+        chave: 'agenda_em_curso',
+        rotulo: { pt: 'em curso', en: 'under way' },
+        vazio: { pt: 'sem registo nesta construção', en: 'no record in this build' },
       },
       {
-        chave: 'agenda_total',
-        rotulo: { pt: 'agenda', en: 'agenda' },
-        vazio: {
-          pt: 'sem registo nesta construção',
-          en: 'no record in this build',
-        },
+        chave: 'agenda_a_seguir',
+        rotulo: { pt: 'a seguir', en: 'next' },
+        vazio: { pt: 'sem registo', en: 'no record' },
+      },
+      {
+        chave: 'agenda_concluido',
+        rotulo: { pt: 'concluídos', en: 'concluded' },
+        vazio: { pt: 'sem registo', en: 'no record' },
+      },
+      {
+        chave: 'agenda_retirado',
+        rotulo: { pt: 'retirados', en: 'withdrawn' },
+        vazio: { pt: 'sem registo', en: 'no record' },
       },
     ],
     ligacoes: [
-      { rota: 'municipios', rotulo: { pt: 'Os concelhos de Portugal', en: 'The concelhos of Portugal' } },
+      { rota: 'agenda', rotulo: { pt: 'A agenda inteira', en: 'The whole agenda' } },
     ],
   },
 

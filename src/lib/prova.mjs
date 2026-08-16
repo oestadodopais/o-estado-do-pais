@@ -131,8 +131,8 @@ export function agenda() {
     const porEstado = (estado) => itens.filter((i) => i?.estado === estado).length;
     return {
       total: itens.length,
-      em_curso: porEstado('em-curso'),
-      a_seguir: porEstado('a-seguir'),
+      em_curso: porEstado('em_curso'),
+      a_seguir: porEstado('a_seguir'),
       concluido: porEstado('concluido'),
       retirado: porEstado('retirado'),
     };

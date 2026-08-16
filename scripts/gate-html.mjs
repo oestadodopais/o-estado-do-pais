@@ -149,6 +149,16 @@ const ligacoesInternas = [];
 const ocorrenciasDaProva = [];
 
 /**
+ * Os itens e os acontecimentos que cada edição da página da agenda rendeu.
+ *
+ * Guardados aqui e conferidos no fim, contra o registo da travessia
+ * (`ledger/cruzamentos/agenda.json`): as contagens do registo estão lá para
+ * serem comparadas com o que a página conta, e um item que exista no registo e
+ * não na página é a maneira mais silenciosa de uma coisa sair desta agenda.
+ */
+const agendaRenderizada = new Map();
+
+/**
  * As páginas construídas de cada rota lógica, para o portão poder contar do seu
  * próprio ponto de observação — páginas, e não os módulos de onde elas saíram.
  */
@@ -604,6 +614,135 @@ function campoDaLinha(claim, campo, lang) {
 
 /**
  * ---------------------------------------------------------------------------
+ * `data-agenda` — UM CAMPO DO REGISTO DA AGENDA, NA PÁGINA DA AGENDA
+ * ---------------------------------------------------------------------------
+ *
+ * É a origem 6 aplicada um nível acima. Ali o portão compara um campo de uma
+ * linha do livro-razão com a página dessa linha; aqui compara um campo dos dois
+ * registos que atravessaram do motor (`src/data/agenda.json` e
+ * `src/data/calendario.json`) com a página que os renderiza, carácter a
+ * carácter. Não é uma dispensa: é a única maneira de um estado ou uma data do
+ * registo chegarem a uma página deste sítio.
+ *
+ * A marca é `data-agenda="<id>.<campo>"` para um item, e
+ * `data-agenda="evento:<id>.<campo>"` para um acontecimento do calendário: um
+ * item da agenda e um acontecimento podem ter o mesmo id, e têm
+ * (`dgal-endividamento-2025` é os dois).
+ *
+ * VALE SÓ NA PÁGINA DA AGENDA, pela mesma razão que `data-linha-*` vale só nas
+ * páginas do livro-razão: noutro sítio seria uma segunda porta para pôr texto
+ * de um registo em prosa corrente.
+ *
+ * OS FICHEIROS SÃO LIDOS AQUI, com o leitor deste portão. Se este ficheiro
+ * chamasse `src/lib/agenda.mjs` — o módulo que a página usa — confirmava o
+ * módulo e não o registo, que é o erro que `campo="study"` cometia até §1.24.
+ */
+const FICHEIRO_DA_AGENDA_GATE = path.join(ROOT, 'src', 'data', 'agenda.json');
+const FICHEIRO_DO_CALENDARIO_GATE = path.join(ROOT, 'src', 'data', 'calendario.json');
+
+function leRegisto(ficheiro) {
+  try {
+    if (!fs.existsSync(ficheiro)) return null;
+    return JSON.parse(fs.readFileSync(ficheiro, 'utf8'));
+  } catch {
+    return null;
+  }
+}
+
+const AGENDA_REGISTO = leRegisto(FICHEIRO_DA_AGENDA_GATE);
+const CALENDARIO_REGISTO = leRegisto(FICHEIRO_DO_CALENDARIO_GATE);
+
+const ITENS_DA_AGENDA = new Map(
+  (AGENDA_REGISTO?.itens ?? []).map((i) => [i?.id, i]),
+);
+const EVENTOS_DO_CALENDARIO = new Map(
+  (CALENDARIO_REGISTO?.eventos ?? []).map((e) => [e?.id, e]),
+);
+
+/**
+ * Os rótulos dos quatro estados, nas duas edições.
+ *
+ * É uma SEGUNDA CÓPIA da tabela que está em `src/i18n/strings.mjs`, e é de
+ * propósito — a mesma disciplina de `SEPARADOR_ATRIBUICAO`. Se o portão lesse
+ * os rótulos do gabarito, confirmava o gabarito; assim confirma o registo.
+ * Trocar «Em curso» por «A seguir» no gabarito pára a construção.
+ */
+const ROTULO_DO_ESTADO = {
+  pt: { em_curso: 'Em curso', a_seguir: 'A seguir', concluido: 'Concluído', retirado: 'Retirado' },
+  en: { em_curso: 'Under way', a_seguir: 'Next', concluido: 'Concluded', retirado: 'Withdrawn' },
+};
+
+/** O separador com que a página escreve uma lista de linhas afectadas. */
+const SEPARADOR_DA_AGENDA = ' · ';
+
+/**
+ * O que o registo diz naquele campo, lido DIRECTAMENTE do JSON.
+ *
+ * Devolve `{ texto }` quando resolve, `{ erro }` quando a marca não faz
+ * sentido. Nunca devolve uma cadeia vazia por conveniência: um campo que o
+ * registo não tem não se renderiza.
+ */
+function campoDaAgenda(chave, lang) {
+  const lingua = lang === 'en' ? 'en' : 'pt';
+  const eEvento = chave.startsWith('evento:');
+  const cru = eEvento ? chave.slice('evento:'.length) : chave;
+  const ponto = cru.indexOf('.');
+  if (ponto < 1) return { erro: `data-agenda="${chave}" não tem a forma "<id>.<campo>".` };
+  const id = cru.slice(0, ponto);
+  const campo = cru.slice(ponto + 1);
+
+  const fonte = eEvento ? EVENTOS_DO_CALENDARIO.get(id) : ITENS_DA_AGENDA.get(id);
+  if (!fonte) {
+    return {
+      erro:
+        `data-agenda="${chave}" nomeia ${eEvento ? 'um acontecimento' : 'um item'} "${id}" que ` +
+        `não existe em ${eEvento ? 'src/data/calendario.json' : 'src/data/agenda.json'}.`,
+    };
+  }
+
+  /* O estado renderiza-se pelo rótulo da edição, e o portão traz o seu. */
+  if (!eEvento && campo === 'estado') {
+    const rotulo = ROTULO_DO_ESTADO[lingua][fonte.estado];
+    if (!rotulo) return { erro: `data-agenda="${chave}": estado "${fonte.estado}" desconhecido.` };
+    return { texto: rotulo };
+  }
+
+  /* Um caminho dentro do registo: `criterios[0].nota`, `janela.inicio`,
+     `historico[2].motivo`. Resolve-se aqui, sem passar por nenhum auxiliar do
+     gabarito. */
+  let no = fonte;
+  for (const passo of campo.split('.')) {
+    const m = passo.match(/^([a-z_]+)(?:\[(\d+)\])?$/);
+    if (!m) return { erro: `data-agenda="${chave}": campo "${campo}" não é um caminho do registo.` };
+    no = no?.[m[1]];
+    if (m[2] !== undefined) no = Array.isArray(no) ? no[Number(m[2])] : undefined;
+    if (no === undefined) break;
+  }
+  if (no === undefined || no === null) {
+    return {
+      erro:
+        `a página renderiza "${campo}" de "${id}", e o registo não tem esse campo.\n` +
+        `      Um campo que o registo não tem não se mostra: nem vazio, nem com um valor plausível.`,
+    };
+  }
+  /* Um par de edições resolve-se na língua da página, como o `derivation` de
+     uma linha (origem 6). */
+  if (typeof no === 'object' && !Array.isArray(no) && ('pt' in no || 'en' in no)) {
+    const v = no[lingua];
+    if (typeof v !== 'string') {
+      return { erro: `data-agenda="${chave}" não tem edição "${lingua}" no registo.` };
+    }
+    return { texto: v };
+  }
+  if (Array.isArray(no)) return { texto: no.join(SEPARADOR_DA_AGENDA) };
+  if (typeof no === 'object') {
+    return { erro: `data-agenda="${chave}" aponta para um objecto, não para um texto.` };
+  }
+  return { texto: String(no) };
+}
+
+/**
+ * ---------------------------------------------------------------------------
  * O SELO EM CADA VALOR — a auditoria que era feita à mão.
  * ---------------------------------------------------------------------------
  *
@@ -909,8 +1048,8 @@ function contasDoPortao(claims) {
     conta('revisoes_de_proveniencia', porNatureza.proveniencia, 'ledger'),
     conta('endereco_correcoes', ENDERECO_CORRECOES, 'modulo'),
     conta('agenda_total', agendaTotal, 'dist'),
-    conta('agenda_em_curso', porEstadoDaAgenda('em-curso'), 'dist'),
-    conta('agenda_a_seguir', porEstadoDaAgenda('a-seguir'), 'dist'),
+    conta('agenda_em_curso', porEstadoDaAgenda('em_curso'), 'dist'),
+    conta('agenda_a_seguir', porEstadoDaAgenda('a_seguir'), 'dist'),
     conta('agenda_concluido', porEstadoDaAgenda('concluido'), 'dist'),
     conta('agenda_retirado', porEstadoDaAgenda('retirado'), 'dist'),
     ['_dias_da_verificacao', diasDaVerificacao],
@@ -1641,6 +1780,52 @@ for (const file of ficheirosHtml(DIST)) {
     }
   }
 
+  /* --- os campos do registo da agenda, na página da agenda (origem 8) --- */
+  for (const el of body.querySelectorAll('[data-agenda]')) {
+    const chave = el.getAttribute('data-agenda');
+    aRemover.push(el);
+
+    if (rota?.key !== 'agenda') {
+      err(
+        `data-agenda="${chave}" numa página que não é a agenda. ` +
+          `Esta marca é dos campos do registo da agenda, na página que o renderiza.\n` +
+          `      Noutra página: um valor entra por <Claim id="…"/>, e uma citação por data-verbatim.`,
+      );
+      continue;
+    }
+    if (!AGENDA_REGISTO || !CALENDARIO_REGISTO) {
+      err(
+        `a página da agenda rende data-agenda="${chave}" e não há registo em src/data/ para ` +
+          `conferir. Corra o exportador do motor: python3 publisher/export_agenda.py.`,
+      );
+      continue;
+    }
+
+    const resolvido = campoDaAgenda(chave, linguaPagina ?? 'pt');
+    if (resolvido.erro) {
+      err(resolvido.erro);
+      continue;
+    }
+
+    const renderizado = textoTranscrito(el);
+    const esperado = normalizeWhitespace(String(resolvido.texto));
+    if (renderizado !== esperado) {
+      err(
+        `o campo "${chave}" não foi transcrito fielmente do registo da agenda.\n` +
+          `      no registo:  ${esperado.slice(0, 150)}\n` +
+          `      renderizado: ${renderizado.slice(0, 150)}`,
+      );
+    }
+
+    const [alvo] = chave.split('.');
+    if (!agendaRenderizada.has(rel)) {
+      agendaRenderizada.set(rel, { itens: new Set(), eventos: new Set(), lang: linguaPagina });
+    }
+    const visto = agendaRenderizada.get(rel);
+    if (alvo.startsWith('evento:')) visto.eventos.add(alvo.slice('evento:'.length));
+    else visto.itens.add(alvo);
+  }
+
   /**
    * ---------------------------------------------------------------------
    * `data-prova` — a sétima origem, recolhida aqui e conferida no fim
@@ -1807,6 +1992,99 @@ for (const { rel, href } of ligacoesInternas) {
         `a ligação interna "${href}" não corresponde a nada construído em dist/.\n` +
         `      Uma porta que não abre é pior do que não haver porta.`,
     });
+  }
+}
+
+/**
+ * ---------------------------------------------------------------------------
+ * A AGENDA: O QUE A PÁGINA CONTOU CONTRA O QUE O REGISTO DIZ
+ * ---------------------------------------------------------------------------
+ *
+ * O registo da travessia (`ledger/cruzamentos/agenda.json`) traz `counts`, e o
+ * contrato do motor é claro: as contagens estão lá para serem comparadas com o
+ * que a página conta, não para serem a fonte da página. É o que se faz aqui.
+ *
+ * E confere-se a coisa que nenhuma contagem apanha sozinha: que TODOS os itens
+ * do registo estão na página. Um item que exista no registo e não na página é a
+ * maneira mais silenciosa de uma coisa sair desta agenda, e a regra 8 do Método
+ * promete exactamente o contrário.
+ */
+{
+  const registoDaTravessia = leRegisto(
+    path.join(ROOT, 'ledger', 'cruzamentos', 'agenda.json'),
+  );
+  const paginasDaAgenda = [...agendaRenderizada.entries()];
+
+  if (AGENDA_REGISTO && !paginasDaAgenda.length) {
+    erros.push({
+      rel: 'dist/',
+      msg:
+        'a agenda atravessou do motor e nenhuma página construída a rende. ' +
+        'Um registo que chega e não aparece é pior do que não chegar.',
+    });
+  }
+
+  if (registoDaTravessia?.counts && paginasDaAgenda.length) {
+    const esperadoItens = Number(registoDaTravessia.counts.itens);
+    const esperadoEventos = Number(registoDaTravessia.counts.eventos);
+    const porEstado = registoDaTravessia.counts.itens_por_estado ?? {};
+
+    for (const [rel, visto] of paginasDaAgenda) {
+      if (visto.itens.size !== esperadoItens) {
+        erros.push({
+          rel,
+          msg:
+            `a página rende ${visto.itens.size} item(ns) da agenda e o registo da travessia ` +
+            `conta ${esperadoItens}.\n` +
+            `      O registo é ledger/cruzamentos/agenda.json, e as suas contagens estão lá ` +
+            `para serem comparadas com o que a página conta.`,
+        });
+      }
+      if (visto.eventos.size !== esperadoEventos) {
+        erros.push({
+          rel,
+          msg:
+            `a página rende ${visto.eventos.size} acontecimento(s) do calendário e o registo ` +
+            `da travessia conta ${esperadoEventos}.`,
+        });
+      }
+      /* Cada item do registo, nomeado. Uma contagem certa com o item errado
+         passaria; isto não. */
+      for (const id of ITENS_DA_AGENDA.keys()) {
+        if (!visto.itens.has(id)) {
+          erros.push({
+            rel,
+            msg:
+              `o item "${id}" está no registo da agenda e não está nesta página.\n` +
+              `      A página rende todos, ou o que ela mostra deixa de ser a agenda.`,
+          });
+        }
+      }
+      for (const id of EVENTOS_DO_CALENDARIO.keys()) {
+        if (!visto.eventos.has(id)) {
+          erros.push({
+            rel,
+            msg: `o acontecimento "${id}" está no calendário das fontes e não está nesta página.`,
+          });
+        }
+      }
+      /* E os quatro estados, um a um: o registo diz quantos itens estão em
+         cada um, e a página põe cada item na sua secção. */
+      const lingua = visto.lang === 'en' ? 'en' : 'pt';
+      for (const [estado, quantos] of Object.entries(porEstado)) {
+        const naPagina = [...visto.itens].filter(
+          (id) => ITENS_DA_AGENDA.get(id)?.estado === estado,
+        ).length;
+        if (naPagina !== Number(quantos)) {
+          erros.push({
+            rel,
+            msg:
+              `a página rende ${naPagina} item(ns) em "${ROTULO_DO_ESTADO[lingua][estado] ?? estado}" ` +
+              `e o registo da travessia conta ${quantos}.`,
+          });
+        }
+      }
+    }
   }
 }
 

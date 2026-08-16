@@ -72,6 +72,16 @@ export const ROUTES = {
    */
   municipios: { pt: '/municipios', en: '/en/municipalities' },
   municipio: { pt: '/municipios/:slug', en: '/en/municipalities/:slug' },
+  /**
+   * A agenda: o que se mede agora, o que se segue, e o calendário das fontes.
+   *
+   * Os dois registos vêm do motor (`src/data/agenda.json` e
+   * `src/data/calendario.json`) e atravessam inteiros. A rota entra aqui e, com
+   * ela, a porta das cinco chaves `agenda_*` da prova passa a ser esta página
+   * em vez do Método: `portaDaAgenda()` em `src/lib/prova.mjs` procura-a nesta
+   * tabela e não precisa de ser tocada. Ver DECISIONS §1.40.
+   */
+  agenda: { pt: '/agenda', en: '/en/agenda' },
   livro: { pt: '/livro-razao', en: '/en/ledger' },
   linha: { pt: '/livro-razao/:slug', en: '/en/ledger/:slug' },
   /**
