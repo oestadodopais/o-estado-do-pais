@@ -1,0 +1,33 @@
+DIREÇÃO B · INSTRUMENTO À FRENTE
+Saída de `node design/direcao-b/check.mjs`, corrida a 2026-08-16 contra o `dist/`
+construído em main e897e06.
+
+As cinco regras foram provadas num defeito plantado antes de esta corrida contar:
+  · <script> plantado no 04 → apanhado;
+  · <img src="https://…"> plantado no 04 → apanhado, duas vezes (imagem e src externo);
+  · o algarismo 4321 plantado na prosa do 04 → apanhado;
+  · o algarismo 99 plantado dentro de uma caixa data-exemplo no 02 → apanhado;
+  · os ficheiros foram repostos e a corrida abaixo é a dos ficheiros como estão.
+
+========================================================================
+
+DIREÇÃO B · INSTRUMENTO À FRENTE · conferência dos protótipos
+origem dos algarismos: /Users/nunosantos/Instruments/OEstadoDoPais/dist
+
+ficheiro            KiB      <script>  pedidos  exemplos  estado
+------------------------------------------------------------------
+01-primeira.html    55.4     não       não      0         passa
+02-linha.html       21.4     não       não      6         passa
+03-municipio.html   55.8     não       não      0         passa
+04-metodo.html      31.6     não       não      0         passa
+05-agenda.html      46.8     não       não      0         passa
+06-mobile.html      112.2    não       não      6         passa
+board.html          375.2    não       não      12        passa
+------------------------------------------------------------------
+ficheiros: 7 · falhas: 0 · limite: 400 KiB
+
+Algarismos do desenho (marcados `data-desenho`), um a um:
+  06-mobile.html       390 390 1 390 390 2 390 390
+  board.html           01 02 03 04 05 06 390 390 390 1 390 390 2 390 390
+
+RESULTADO: PASSA

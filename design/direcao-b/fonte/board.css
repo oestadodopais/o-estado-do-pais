@@ -1,0 +1,126 @@
+/* ---- o quadro que a direção abre ------------------------------------------- */
+.board-wrap {
+  max-width: 1400px;
+  padding-bottom: 60px;
+}
+.board-topo {
+  padding: clamp(24px, 3vw, 40px) 0 clamp(18px, 2.4vw, 28px);
+  border-bottom: 1px solid var(--rule-strong);
+  display: grid;
+  gap: 10px;
+}
+.board-t {
+  font-family: var(--f-mono);
+  font-size: clamp(34px, 5vw, 62px);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  margin: 0;
+}
+.board-lede {
+  font-size: clamp(15px, 1.3vw, 17px);
+  line-height: 1.6;
+  max-width: 84ch;
+  margin: 0;
+}
+.board-sec {
+  padding: clamp(22px, 2.8vw, 34px) 0 0;
+}
+.board-h2 {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+.board-razao {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.board-razao .celula {
+  gap: 10px;
+  padding: clamp(14px, 1.6vw, 20px);
+}
+.board-razao .celula-frase {
+  font-size: 13px;
+  color: var(--ink);
+}
+@media (max-width: 1000px) {
+  .board-razao {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 620px) {
+  .board-razao {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.board-pecas {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.peca {
+  background: var(--paper);
+  padding: 16px;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+.peca p {
+  margin: 0;
+}
+@media (max-width: 1000px) {
+  .board-pecas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 620px) {
+  .board-pecas {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.board-fig {
+  margin: 0 0 clamp(22px, 2.6vw, 34px);
+  display: grid;
+  gap: 8px;
+}
+.board-cap {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 110ch;
+}
+.board-n {
+  font-weight: 600;
+  color: var(--ink);
+  border: 1px solid var(--rule-strong);
+  padding: 0 6px;
+  flex: none;
+}
+.board-quadro {
+  width: 100%;
+  height: 900px;
+  border: 1px solid var(--rule-strong);
+  background: var(--paper);
+  display: block;
+}
+.board-quadro-alto {
+  height: 1080px;
+}
+.board-rodape {
+  border-top: 1px solid var(--rule-strong);
+  padding-top: 14px;
+}
+.board-rodape .legenda {
+  max-width: 100ch;
+}

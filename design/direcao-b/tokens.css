@@ -1,0 +1,161 @@
+/* ============================================================================
+   DIREÇÃO B · INSTRUMENTO À FRENTE
+   Fichas de tokens. Cada grupo diz o que muda em relação a
+   `src/styles/tokens.css` e porquê.
+
+   A tese: o sítio diz que é um instrumento, e deve parecer um. A medição vem
+   à frente, a prosa recua para legenda e para o Fundo, e a página é desenhada
+   a fio e a monoespaçada, não a caixa e a sombra.
+
+   O padrão de três estados (raiz nua · prefers-color-scheme · data-theme) é o
+   mesmo do sítio e não se toca: é o que faz a escolha do leitor ganhar nos
+   dois sentidos.
+   ============================================================================ */
+
+:root {
+  /* -- PAPEL E TINTA ---------------------------------------------------------
+     MUDA: os três papéis arrefecem meio grau e afastam-se mais uns dos outros
+     (#f6f7f9 · #eceef2 · #e0e4ea contra #fafbfc · #f1f4f7 · #e7ecf1), e a
+     tinta escurece para #12141a.
+     PORQUE: numa página de painel a distinção entre a célula e o fundo faz
+     trabalho de leitura, não de decoração: é ela que separa um instrumento do
+     seguinte sem uma segunda cor. Contraste tinta sobre papel: 17,17:1. */
+  --paper: #f6f7f9;
+  --paper-2: #eceef2;
+  --paper-3: #e0e4ea;
+  --ink: #12141a;
+
+  /* MUDA: o cinzento de apoio escurece de #5a5e66 para #545a64.
+     PORQUE: em B a legenda carrega mais texto do que a prosa, e uma legenda é
+     texto a sério. Contraste sobre papel: 6,48:1; sobre `--paper-3`: 5,44:1,
+     que é o pior caso e continua AA. */
+  --muted: #545a64;
+
+  /* -- A MARCA DE MEDIÇÃO ----------------------------------------------------
+     NÃO MUDA: o amarelo fica exatamente onde estava, #e8a80c.
+     PORQUE: em B o amarelo passa a aparecer em quase todas as células, e é
+     por ser o único matiz do sistema que continua a querer dizer medição.
+     Mudar-lhe o valor não compraria nada e custaria o reconhecimento. O que
+     muda é o uso, não a cor: cada célula do painel passa a desenhar a sua
+     própria distância ao limiar com esta barra. Nunca como cor de texto.
+     A pista da barra é `--paper-3`, e não um segundo amarelo claro: um matiz
+     novo, ainda que da mesma família, seria um segundo acento. */
+  --yellow: #e8a80c;
+  --onyellow: #12141a; /* 8,80:1 sobre o amarelo */
+
+  /* NÃO MUDA: o oxblood do erro admitido, #7c2333. 9,13:1 sobre papel.
+     PORQUE: é a cor de uma confissão e só do registo de correções. */
+  --oxblood: #7c2333;
+
+  /* -- FIOS ------------------------------------------------------------------
+     MUDA: `--rule` e `--rule-strong` escurecem, e entra `--grid`.
+     PORQUE: B desenha, e o que desenha uma grelha de instrumento é o fio.
+     São três pesos com três funções e nenhuma cor nova:
+       `--grid`       a graticula, o fundo quadriculado de uma escala;
+       `--rule`       a separação corrente entre células e blocos;
+       `--rule-strong` a moldura de uma célula ou de um selo.
+     `--axis` sobe para 4,51:1 sobre papel porque também desenha o quadrado a
+     tracejado do selo incompleto, que é uma distinção que o leitor tem de
+     conseguir ver: um limite que carrega significado não pode ficar abaixo de
+     3:1. Rótulos de eixo vão a `--muted`, nunca a `--axis`. */
+  --grid: #e5e8ee;
+  --rule: #d3d8e0;
+  --rule-strong: #8b93a0;
+  --axis: #6b7280;
+  --dotcol: #6e7681;
+
+  /* -- FOCO ------------------------------------------------------------------
+     MUDA: o foco ganha espessura e afastamento próprios.
+     PORQUE: em B há muitas portas pequenas juntas (selos, legendas de portas,
+     células), e um anel de 1px encostado desaparece entre fios. */
+  --focus: #12141a;
+  --focus-w: 2px;
+  --focus-off: 2px;
+
+  /* -- SOMBRA ----------------------------------------------------------------
+     MUDA: desaparece. Era duas camadas de sombra; passa a `none`.
+     PORQUE: um instrumento é desenhado a fio, não iluminado. Onde havia
+     elevação há agora moldura. Fica o token, a valer `none`, para que nenhuma
+     folha o vá procurar e não o encontre. */
+  --shadow: none;
+
+  /* -- TIPOS -----------------------------------------------------------------
+     NÃO MUDAM as três famílias nem a regra 1 da identidade: serifada só na
+     marca, monoespaçada nos valores, sem serifa na prosa.
+     MUDA o peso relativo: em B a monoespaçada deixa de ser a letra dos valores
+     e passa a ser a letra da casa (rótulos, eixos, legendas de instrumento,
+     mobília, cabeçalho), e a sem serifa fica reservada à prosa que se lê a
+     sério: a leitura breve, o Fundo, as regras do Método.
+     PORQUE: é a mudança que faz a página parecer o que a página é.
+     CUSTO: zero bytes. B não propõe nenhuma letra da rede. Um instrumento que
+     espera por um ficheiro para desenhar a sua escala não é um instrumento, e
+     as três pilhas de sistema já dão as três funções em qualquer máquina. */
+  --f-sans: 'Avenir Next', 'Avenir', 'Helvetica Neue', Helvetica, Arial, 'Segoe UI', system-ui, sans-serif;
+  --f-serif: 'Iowan Old Style', 'Palatino', 'Palatino Linotype', 'Book Antiqua', 'URW Palladio L', Georgia, 'Times New Roman', serif;
+  --f-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Monaco, 'Cascadia Mono', 'Roboto Mono', Consolas, monospace;
+
+  /* -- ESCALA DO VALOR -------------------------------------------------------
+     NOVO: os valores medidos passam a ter escala própria e declarada, em vez
+     de um `clamp` por sítio onde aparecem.
+     PORQUE: em B o valor é o herói, e um herói precisa de tamanhos fixados:
+     `xl` para o valor de uma linha do livro-razão, `l` para a célula do
+     painel, `m` para a célula densa, `s` para o valor dentro de um desenho. */
+  --v-xl: clamp(52px, 7.4vw, 92px);
+  --v-l: clamp(30px, 3.6vw, 44px);
+  --v-m: clamp(21px, 2.2vw, 26px);
+  --v-s: 15px;
+
+  /* -- MEDIDA E MÓDULO -------------------------------------------------------
+     MUDA: o invólucro alarga de 1180px para 1240px e a medida da prosa aperta
+     de 66ch para 60ch; entra uma medida de legenda, 46ch, e o módulo de 4px.
+     PORQUE: a coluna que sobra em B não é espaço vazio nem coluna de aparelho:
+     é a largura do instrumento, que é o que a disposição C da identidade já
+     permite. A prosa aperta porque recuou: em B lê-se um parágrafo de cada
+     vez, não uma página de parágrafos. O módulo existe para que células de
+     páginas diferentes assentem na mesma pauta. */
+  --wrap: 1240px;
+  --measure: 60ch;
+  --measure-cap: 46ch;
+  --u: 4px;
+  --gutter: clamp(16px, 3.4vw, 40px);
+}
+
+/* O escuro do sistema, exceto se o leitor tiver escolhido claro. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --paper: #0d0f13;
+    --paper-2: #14171c;
+    --paper-3: #1c2027;
+    --ink: #e9ecf1;
+    --muted: #98a0ac; /* 7,27:1 sobre papel; 6,19:1 sobre `--paper-3` */
+    --yellow: #e8a80c;
+    --onyellow: #12141a;
+    --oxblood: #d98a95; /* 7,32:1 sobre papel */
+    --grid: #1b1f26;
+    --rule: #242932;
+    --rule-strong: #545d6b;
+    --axis: #7b838f; /* 5,01:1 sobre papel, para o tracejado do selo incompleto */
+    --dotcol: #868d97;
+    --focus: #e9ecf1;
+    --shadow: none;
+  }
+}
+
+/* A escolha explícita ganha nos dois sentidos. */
+:root[data-theme='dark'] {
+  --paper: #0d0f13;
+  --paper-2: #14171c;
+  --paper-3: #1c2027;
+  --ink: #e9ecf1;
+  --muted: #98a0ac;
+  --yellow: #e8a80c;
+  --onyellow: #12141a;
+  --oxblood: #d98a95;
+  --grid: #1b1f26;
+  --rule: #242932;
+  --rule-strong: #545d6b;
+  --axis: #7b838f;
+  --dotcol: #868d97;
+  --focus: #e9ecf1;
+  --shadow: none;
+}
