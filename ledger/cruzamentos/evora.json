@@ -342,7 +342,7 @@
     "evora-indice-de-divida-2014": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "bc35a9dd6c2be9ee195c53adbc0062b1efa7abff627ec381d0eba459e273bcec",
+      "exported_row_sha256": "d4865337d55d2e502cf88d6e6dc2e1e8ccf0811730c887a1e6117af084298507",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "83b5e574ae93005cb794a135ecb06d581fafeed19daa2fb77d56f0274bbf9674",
       "rh_id": "evora-indice-2014",
@@ -352,7 +352,7 @@
     "evora-indice-de-divida-2017": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "7bfee5afb8b20dc8a6c38581265b717a30fbecad72a8e076659754e2a1a99182",
+      "exported_row_sha256": "1e49afc9215af02a33d3602aa6e70f105ca857536aeff30899c0e92a7343b7b5",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "712a8af78d50cc426f05b37c8e1a775e8b8d760191fa640a107e3c61983cb1c8",
       "rh_id": "evora-indice-2017",
@@ -362,7 +362,7 @@
     "evora-indice-de-divida-2021": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "26fda87204364cdf74ad99889ffd324862f8368586fb71d20b13d3802f10646b",
+      "exported_row_sha256": "a78dd47d441a0da2de45d9560555fc7246a97ce05e27d9f6ca77502c5be90981",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "410a1b511305f22dd0ff2251c30a5c1352667b2d9f93bb81504d4dcb7ea785b9",
       "rh_id": "evora-indice-2021",
@@ -372,7 +372,7 @@
     "evora-indice-de-divida-2024": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "2b49bacf23b4233086576b4ad18e6839399320f340648f86cc56695e7a5221e6",
+      "exported_row_sha256": "68794036cb60aa430814754d88950072ea33ddd8ba9211c419a96ce3f26d75d7",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "56875d412285a9fab5a1df8d79f09fd347a1f53a9a64a63488b73472161cba8c",
       "rh_id": "evora-indice-2024",
@@ -592,7 +592,7 @@
     "evora-prr-aprovado-2026": {
       "corrections_at_export": 1,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "5931713cda91415cd9a0a76ecd746c7e21df1ee78ff1e9ffd6051e82dc6991ed",
+      "exported_row_sha256": "938ee70d1738f3211f4fa3a2b87364be796c0d68eb99b78c4637d677a7e83985",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "339b2687bf9d0958e0fee4f784684dba8d9e0b6e155220305370fd532e17f7f8",
       "rh_id": "prr-approved-evora",
@@ -612,7 +612,7 @@
     "evora-prr-municipio-contratado": {
       "corrections_at_export": 1,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "6d4fc43ae4fab9c931733e2ed3b3a9bea90af70604806407b5bcb0607f7a9f6c",
+      "exported_row_sha256": "993bd18c134042d29e1f1c6c94b8f5ee219cbb49035d9ac359a83078bf67e2cf",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fe84a0aa489f17ed95c28f92e9db45ae3f7a8e73cfdc8d1436bdb84461a34b7d",
       "rh_id": "fin-municipio-contracted",
@@ -622,7 +622,7 @@
     "evora-prr-pago-2026": {
       "corrections_at_export": 1,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "5f8dd7c0608984262c6376f94e6583f1f85894b87a7de99033a09aedf6f78752",
+      "exported_row_sha256": "e4d406e9c6cd9e0f497719d36d43055f8ba62066b0cbc263561b0e04e9fbed61",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5171edff39440e602d23f98308a92f2305b4e0e6d463983400e4747d1e71bcda",
       "rh_id": "prr-paid-evora",
@@ -632,7 +632,7 @@
     "evora-prr-universidade-contratado": {
       "corrections_at_export": 1,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "44e55f323d847e28ee2f889599c0fc7c7c11ee8990a30ad4f004c24df0047296",
+      "exported_row_sha256": "832eae64efb43729be4e7b398910416c004c0813922dccfeded5f23b44c62cf9",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ecee1d6fb709bdaac8b60040dfdc492be62ec75481d2106263f07472282a8981",
       "rh_id": "fin-uevora-contracted",
@@ -642,7 +642,7 @@
     "evora-prr-vencido-aprovado-2026": {
       "corrections_at_export": 1,
       "exported_at": "2026-08-15",
-      "exported_row_sha256": "cef9d5a4584b81424bada9fa84e9803d65a9c5a93240f79fb8c24d7a03b8c3b9",
+      "exported_row_sha256": "28154a231768409668a9c2004d4b9a98a64a29464cea26eef9f4f642b95b20f8",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4ea3a863420fc37d533d50ed126f7d6ba1489257c00b6cef997136951421ac57",
       "rh_id": "prr-overdue-approved",

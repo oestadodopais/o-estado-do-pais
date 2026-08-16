@@ -20,7 +20,7 @@ reference_date: null
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "54 681 562 ÷ 77 764 656 × 150 = 105,5. O limite legal é 1,5 vezes a média da receita corrente líquida dos três anos anteriores (art. 52.º da Lei n.º 73/2013), e o índice mede a dívida contra esse limite numa escala em que o tecto é 150."
+derivation: "54 681 562 ÷ 77 764 656 × 150 = 105,5. O limite legal é 1,5 vezes a média da receita corrente líquida dos três anos anteriores (art. 52.º da Lei n.º 73/2013), e o índice mede a dívida contra esse limite numa escala em que o teto é 150."
 derivation_en: "54 681 562 ÷ 77 764 656 × 150 = 105.5. The legal ceiling is 1.5 times the three-year average of net current revenue (art. 52.º, Lei n.º 73/2013), and the index measures debt against that ceiling on a scale whose cap is 150."
 derived_from:
   - "evora-divida-dgal-2024"
