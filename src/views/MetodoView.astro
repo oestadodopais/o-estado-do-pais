@@ -1,103 +1,104 @@
 ---
 /**
- * Método.
+ * Método — dez regras, cada uma com o seu mecanismo e a sua prova de hoje.
  *
- * O texto português é cópia final da direção e está em src/data/metodo.mjs,
- * transcrito sem alterações. O inglês é tradução do mesmo texto e aguarda
- * revisão da direção.
+ * DISPOSIÇÃO A (IDENTIDADE §3), a mesma que esta página sempre teve: coluna de
+ * rótulo com o número e o nome da regra, corpo a 68ch. O instrumento entra
+ * dentro da página, a toda a largura, como os dois instrumentos entram na
+ * primeira página e o mapa de mandatos entra na página do município. Não há
+ * quarta disposição.
  *
- * Os marcadores por resolver — três [a confirmar] e um [a verificar] — ficam à
- * vista, com o mesmo aspecto do marcador do livro-razão. Não se escondem nem
- * se resolvem por conta própria.
+ * NENHUM NÚMERO ESCRITO À MÃO. O texto das regras não pode trazer algarismos —
+ * é o portão que o obriga — e todos os números vêm de `src/lib/prova.mjs`,
+ * marcados `data-prova` e embrulhados na sua porta.
  *
- * O registo de correções entra dentro da secção «Correções», e é lido do
- * livro-razão, não escrito à mão.
+ * O REGISTO DE CORREÇÕES NÃO ESTÁ AQUI. Mudou para `/correcoes`, que é a casa
+ * única da política. A âncora `#correcoes` fica: era um endereço público, e as
+ * páginas que estiveram no ar ganham reencaminhamento e não apagamento
+ * (§1.29). Quem lá aterre encontra a regra 7 e a porta para o registo.
  */
 import Base from '../layouts/Base.astro';
-import RegistoCorrecoes from '../components/RegistoCorrecoes.astro';
-import CaixaDeCorrecoes from '../components/CaixaDeCorrecoes.astro';
 import Frase from '../components/Frase.astro';
-import { SECOES } from '../data/metodo.mjs';
+import ValorDaProva from '../components/ValorDaProva.astro';
+import InstrumentoMecanismo from '../components/InstrumentoMecanismo.astro';
+import { REGRAS, ABERTURA } from '../data/metodo.mjs';
+import { prova, CAMINHO_DA_PROVA } from '../lib/prova.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 
 const { lang = 'pt' } = Astro.props;
 const s = t(lang);
 const path = routePath('metodo', lang);
+const p = prova(lang);
+
+const destino = (l) => (l.prova ? CAMINHO_DA_PROVA : routePath(l.rota, lang));
 ---
 
 <Base lang={lang} path={path} title={s.metodo.metaTitle} description={s.metodo.metaDescription}>
   <div style="padding-top:clamp(20px,3vw,34px)">
     <h1>{s.metodo.h1}</h1>
+    <p class="lede" style="margin-top:14px">{ABERTURA[lang]}</p>
   </div>
 
-  {
-    lang !== 'pt' && (
-      <p class="aviso-editorial" style="margin-top:22px">
-        {s.metodo.avisoTraducao}
-      </p>
-    )
-  }
+  <!-- ===================================== o mecanismo, desenhado -->
+  <div style="margin-top:clamp(26px,3.4vw,40px)">
+    <InstrumentoMecanismo lang={lang} />
+  </div>
 
-  <div style="margin-top:clamp(30px,4vw,48px)">
+  <!-- ===================================== as dez regras -->
+  <div style="margin-top:clamp(24px,3vw,36px)">
     {
-      SECOES.map((sec) => (
-        <section class="metodo-secao" id={sec.id} style="padding-top:clamp(24px,3.2vw,34px)">
-          <div>
-            <h2>{sec.titulo[lang]}</h2>
-            {/* A secção do livro-razão promete que o selo é a porta para a
-                linha. A ligação vai na coluna do rótulo, e não no meio do
-                texto: a cópia do Método é da direção e transcreve-se sem
-                alterações. */}
-            {sec.id === 'livro-razao' && (
-              <>
-                <a class="ligacao-dados" href={routePath('livro', lang)}>
-                  {s.metodo.livroLink} →
-                </a>
-                {/* O marcador tem página própria desde 15.08.2026 — a que
-                    IDENTIDADE §6 promete. Até aí, a explicação inteira era uma
-                    oração deste texto. */}
-                <a class="ligacao-dados" href={routePath('marcador', lang)}>
-                  {s.marcador.h1} →
-                </a>
-              </>
-            )}
+      REGRAS.map((r) => (
+        <section class="metodo-secao regra" id={r.id}>
+          <div class="regra-cabeca">
+            <span class="regra-n" data-nonledger="numeracao">
+              {r.n}
+            </span>
+            <h2>{r.titulo[lang]}</h2>
           </div>
-          <div class="metodo-corpo">
-            {sec.blocos[lang].map((bloco) => {
-              if (bloco.tipo === 'p') {
-                return (
-                  <p class="metodo-p">
-                    <Frase partes={bloco.partes} lang={lang} />
-                  </p>
-                );
-              }
-              if (bloco.tipo === 'ol') {
-                return (
-                  <ol class="metodo-lista metodo-lista-num">
-                    {bloco.itens.map((item) => (
-                      <li>
-                        <Frase partes={item} lang={lang} />
-                      </li>
-                    ))}
-                  </ol>
-                );
-              }
-              return (
-                <ul class="metodo-lista">
-                  {bloco.itens.map((item) => (
-                    <li>
-                      <Frase partes={item} lang={lang} />
-                    </li>
-                  ))}
-                </ul>
-              );
-            })}
 
-            {/* A caixa vem antes do registo: primeiro o que o leitor pode
-                fazer, depois o que já foi corrigido. */}
-            {sec.registoDeCorrecoes && <CaixaDeCorrecoes lang={lang} />}
-            {sec.registoDeCorrecoes && <RegistoCorrecoes lang={lang} />}
+          <div class="metodo-corpo">
+            <p class="metodo-p">
+              <Frase partes={r.regra[lang]} lang={lang} />
+            </p>
+
+            <div class="regra-linha">
+              <span class="regra-k">{s.metodo.mecanismoK}</span>
+              <p class="regra-v">
+                <Frase partes={r.mecanismo[lang]} lang={lang} />
+              </p>
+            </div>
+
+            {r.limite && (
+              <div class="regra-linha">
+                <span class="regra-k">{s.metodo.limiteK}</span>
+                <p class="regra-v">
+                  <Frase partes={r.limite[lang]} lang={lang} />
+                </p>
+              </div>
+            )}
+
+            <div class="regra-linha regra-linha-prova">
+              <span class="regra-k">{s.metodo.provaK}</span>
+              <p class="regra-v regra-prova">
+                {r.prova.map((v, i) => (
+                  <span class="regra-prova-item">
+                    {i > 0 && <span class="regra-sep" aria-hidden="true"> · </span>}
+                    {v.rotulo[lang]}:{' '}
+                    <ValorDaProva chave={v.chave} item={p[v.chave]} vazio={v.vazio} lang={lang} />
+                  </span>
+                ))}
+                {r.provaNota && <span class="regra-prova-nota">{r.provaNota[lang]}</span>}
+              </p>
+            </div>
+
+            {r.ligacoes.length > 0 && (
+              <p class="regra-portas">
+                {r.ligacoes.map((l) => (
+                  <a href={destino(l)}>{l.rotulo[lang]} →</a>
+                ))}
+              </p>
+            )}
           </div>
         </section>
       ))

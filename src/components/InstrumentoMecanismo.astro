@@ -1,0 +1,253 @@
+---
+/**
+ * O instrumento do Método: o mecanismo desenhado, com os números de hoje.
+ *
+ * A cadeia, pela ordem em que o trabalho acontece:
+ *   FONTES → MOTOR → LIVRO-RAZÃO → CONSTRUÇÃO → PÁGINA → LEITOR
+ * e três retornos: a agenda alimenta o motor, a releitura alimenta o
+ * livro-razão, e a correção que o leitor escreve volta ao livro-razão e daí,
+ * pela mesma cadeia, à página.
+ *
+ * ---------------------------------------------------------------------------
+ * DESENHADO NO SERVIDOR, SEM JAVASCRIPT
+ * ---------------------------------------------------------------------------
+ * Como os dois instrumentos da primeira página. Sem cor nova: tinta, fios e
+ * papel. O amarelo é marca de medição e aqui não há nenhuma medição de
+ * Portugal: os números deste desenho são estado do próprio sítio.
+ *
+ * ---------------------------------------------------------------------------
+ * AS PORTAS NÃO VIVEM DENTRO DO DESENHO, E ISSO É UMA ESCOLHA
+ * ---------------------------------------------------------------------------
+ * §1.34 fixou que um `<a>` dentro de um `<svg>` não se lê como porta, e por
+ * isso o selo de um valor desenhado vive na legenda do instrumento. Essa
+ * convenção é sobre selos; estes números não são valores do livro-razão e não
+ * levam selo. Podia abrir-se uma excepção e pôr aqui âncoras.
+ *
+ * Não se abriu, por três razões: a convenção fica inteira, em vez de ganhar um
+ * caso; os mesmos números aparecem, com a mesma porta, nas linhas de prova das
+ * dez regras, por isso nada fica inacessível; e uma âncora dentro de um desenho
+ * estático tem alvo de toque e foco imprevisíveis, que é o problema prático que
+ * §1.34 descreveu. A legenda por baixo do desenho leva `data-legenda-prova`, e
+ * é lá que o portão exige a porta de cada chave desenhada.
+ *
+ * ---------------------------------------------------------------------------
+ * ESTADOS
+ * ---------------------------------------------------------------------------
+ * · a agenda ainda não atravessou do motor: o nó di-lo por palavras, não em
+ *   branco e não a zero;
+ * · a verificação do painel em atraso: o nó da releitura di-lo por palavras,
+ *   com a mesma regra e as mesmas cadeias do cabeçalho e da primeira página;
+ * · o leitor não é contado, e o nó di-lo. Este sítio não mede quem o lê.
+ */
+import { prova } from '../lib/prova.mjs';
+import { LEITURA_BREVE } from '../data/metodo.mjs';
+import { t } from '../i18n/strings.mjs';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+const p = prova(lang);
+const m = s.metodo.instrumento;
+
+/* Geometria. Uma linha de seis nós, com dois nós acima e um abaixo. */
+const W = 1200;
+const H = 350;
+const NO_W = 158;
+const NO_H = 92;
+const Y = 128;
+const Y_CIMA = 14;
+const Y_BAIXO = 250;
+const XS = [15, 213, 411, 609, 807, 1005];
+
+const cadeia = [
+  {
+    x: XS[0],
+    rotulo: m.fontes,
+    valores: [{ chave: 'fontes', rotulo: m.capOrganismos }],
+  },
+  {
+    x: XS[1],
+    rotulo: m.motor,
+    valores: [{ chave: 'linhas_cruzadas', rotulo: m.capAtravessadas }],
+  },
+  {
+    x: XS[2],
+    rotulo: m.livro,
+    valores: [
+      { chave: 'afirmacoes', rotulo: m.capLinhas },
+      { chave: 'divida', rotulo: m.capPorConfirmar },
+    ],
+  },
+  {
+    x: XS[3],
+    rotulo: m.construcao,
+    valores: [{ chave: 'aritmetica_reavaliada', rotulo: m.capContas }],
+  },
+  {
+    x: XS[4],
+    rotulo: m.pagina,
+    valores: [{ chave: 'indexaveis', rotulo: m.capNoMapa }],
+  },
+  {
+    x: XS[5],
+    rotulo: m.leitor,
+    valores: [],
+    nota: m.capSemContagem,
+  },
+];
+
+const agendaTem = p.agenda_total.valor !== null;
+const vencida = p.painel_reconferido_em.vencida;
+
+const retornos = [
+  {
+    x: XS[1],
+    y: Y_CIMA,
+    rotulo: m.agenda,
+    valores: agendaTem ? [{ chave: 'agenda_total', rotulo: m.capItens }] : [],
+    nota: agendaTem ? null : m.semRegisto,
+    /* a agenda alimenta o motor: seta para baixo, da caixa de cima para a cadeia */
+    seta: { x1: XS[1] + NO_W / 2, y1: Y_CIMA + NO_H, x2: XS[1] + NO_W / 2, y2: Y },
+  },
+  {
+    x: XS[2],
+    y: Y_CIMA,
+    rotulo: m.releitura,
+    valores: [
+      { chave: 'releituras_registadas', rotulo: m.capRegistadas },
+      /* O estado vencido diz-se por palavras também aqui, em versão curta: a
+         frase inteira do cabeçalho e da primeira página não cabe numa caixa de
+         desenho, e uma frase cortada a meio seria pior do que uma curta. */
+      { chave: 'painel_reconferido_em', rotulo: vencida ? m.capEmAtraso : m.capReconferido },
+    ],
+    seta: { x1: XS[2] + NO_W / 2, y1: Y_CIMA + NO_H, x2: XS[2] + NO_W / 2, y2: Y },
+  },
+  {
+    x: XS[2],
+    y: Y_BAIXO,
+    rotulo: m.correcoes,
+    valores: [{ chave: 'correcoes', rotulo: m.capPublicadas }],
+    /* a correção volta ao livro-razão: seta para cima */
+    seta: { x1: XS[2] + NO_W / 2, y1: Y_BAIXO, x2: XS[2] + NO_W / 2, y2: Y + NO_H },
+  },
+];
+
+/* As chaves desenhadas, pela ordem em que aparecem: é esta a legenda de portas. */
+const desenhadas = [];
+for (const no of [...cadeia, ...retornos]) {
+  for (const v of no.valores) {
+    if (p[v.chave]?.valor === null || p[v.chave]?.valor === undefined) continue;
+    if (!desenhadas.some((d) => d.chave === v.chave)) desenhadas.push(v);
+  }
+}
+---
+
+<section class="instr mecanismo" data-instrumento="mecanismo">
+  <div class="svg-scroll">
+    <svg
+      class="mecanismo-svg"
+      viewBox={`0 0 ${W} ${H}`}
+      role="img"
+      aria-labelledby="mecanismo-titulo mecanismo-desc"
+      preserveAspectRatio="xMidYMid meet"
+    >
+      <title id="mecanismo-titulo">{m.svgTitulo}</title>
+      <desc id="mecanismo-desc">{m.svgDescricao}</desc>
+
+      <defs>
+        <marker
+          id="ponta"
+          viewBox="0 0 10 10"
+          refX="9"
+          refY="5"
+          markerWidth="7"
+          markerHeight="7"
+          orient="auto-start-reverse"
+        >
+          <path d="M 0 1 L 9 5 L 0 9 z" class="mecanismo-ponta" />
+        </marker>
+      </defs>
+
+      {/* a cadeia: setas entre nós vizinhos */}
+      {
+        XS.slice(0, -1).map((x, i) => (
+          <line
+            class="mecanismo-seta"
+            x1={x + NO_W + 6}
+            y1={Y + NO_H / 2}
+            x2={XS[i + 1] - 6}
+            y2={Y + NO_H / 2}
+            marker-end="url(#ponta)"
+          />
+        ))
+      }
+
+      {/* os retornos */}
+      {
+        retornos.map((r) => (
+          <line
+            class="mecanismo-seta"
+            x1={r.seta.x1}
+            y1={r.seta.y1 + (r.y === Y_BAIXO ? -6 : 6)}
+            x2={r.seta.x2}
+            y2={r.seta.y2 + (r.y === Y_BAIXO ? 6 : -6)}
+            marker-end="url(#ponta)"
+          />
+        ))
+      }
+
+      {/* o leitor escreve a correção: do último nó, por baixo, até ao registo */}
+      <path
+        class="mecanismo-seta mecanismo-seta-longa"
+        d={`M ${XS[5] + NO_W / 2} ${Y + NO_H + 6} V ${Y_BAIXO + NO_H / 2} H ${XS[2] + NO_W + 8}`}
+        marker-end="url(#ponta)"
+        fill="none"
+      />
+
+      {
+        [...cadeia.map((n) => ({ ...n, y: Y })), ...retornos].map((no) => (
+          <g class="mecanismo-no">
+            <rect x={no.x} y={no.y} width={NO_W} height={NO_H} rx="2" class="mecanismo-caixa" />
+            <text x={no.x + 12} y={no.y + 18} class="mecanismo-rotulo">
+              {no.rotulo}
+            </text>
+            {no.valores.map((v, i) => (
+              <>
+                <text
+                  x={no.x + 12}
+                  y={no.y + 46 + i * 24}
+                  class="mecanismo-num"
+                  data-prova={p[v.chave].valor === null ? undefined : v.chave}
+                >
+                  {p[v.chave].valor === null ? m.semRegisto : p[v.chave].valor}
+                </text>
+                <text x={no.x + 12} y={no.y + 60 + i * 24} class="mecanismo-cap">
+                  {v.rotulo}
+                </text>
+              </>
+            ))}
+            {no.nota && (
+              <text x={no.x + 12} y={no.y + 46} class="mecanismo-cap mecanismo-cap-so">
+                {no.nota}
+              </text>
+            )}
+          </g>
+        ))
+      }
+    </svg>
+  </div>
+
+  {/* ============ a legenda: uma porta por chave desenhada ============ */}
+  <p class="mecanismo-legenda" data-legenda-prova>
+    <span class="mecanismo-legenda-k">{m.legendaK}</span>
+    {
+      desenhadas.map((v) => (
+        <a href={p[v.chave].porta} title={p[v.chave].origem}>
+          {v.rotulo}
+        </a>
+      ))
+    }
+  </p>
+
+  {/* ============ leitura breve: uma frase, e mais nada ============ */}
+  <p class="brief-text mecanismo-breve">{LEITURA_BREVE[lang]}</p>
+</section>
