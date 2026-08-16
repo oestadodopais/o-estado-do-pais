@@ -1,0 +1,88 @@
+---
+/**
+ * Correções — `/correcoes` · `/en/corrections`.
+ *
+ * A casa única da política. Estava dentro do Método, misturada com tudo o
+ * resto; o Método guarda agora a regra 7 e a porta, e o que está aqui é o
+ * aparelho: a política nas suas três naturezas, a caixa para escrever, e o
+ * registo lido do livro-razão.
+ *
+ * DISPOSIÇÃO A (IDENTIDADE §3): rótulo e corpo, como o Método e a página do
+ * marcador. O registo é uma lista de algarismos e não pede coluna de aparelho:
+ * a prova de cada entrada é a linha do livro-razão, e cada entrada leva lá.
+ *
+ * NADA AQUI É ESCRITO À MÃO. As entradas vêm do campo `corrections` das
+ * próprias afirmações e cada pedaço renderizado é conferido pelo portão contra
+ * o livro-razão (origem 5, DECISIONS §2.2).
+ *
+ * A PORTA DAS CORREÇÕES entra pelo invólucro, como em todas as páginas. Aqui
+ * ela não é uma porta para outro sítio: é o aparelho desta página, e por isso
+ * fica onde o invólucro a põe, uma só vez.
+ */
+import Base from '../layouts/Base.astro';
+import RegistoCorrecoes from '../components/RegistoCorrecoes.astro';
+import CaixaDeCorrecoes from '../components/CaixaDeCorrecoes.astro';
+import Frase from '../components/Frase.astro';
+import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+const path = routePath('correcoes', lang);
+---
+
+<Base
+  lang={lang}
+  path={path}
+  title={s.correcoes.metaTitle}
+  description={s.correcoes.metaDescription}
+>
+  <div style="padding-top:clamp(20px,3vw,34px)">
+    <span class="eyebrow">{s.correcoes.eyebrow}</span>
+    <h1 style="margin-top:12px">{s.correcoes.h1}</h1>
+    <p class="lede" style="margin-top:14px">{s.correcoes.lede}</p>
+  </div>
+
+  <!-- ======================================= a política, dita uma vez -->
+  <section class="metodo-secao" id="politica">
+    <div><h2>{s.correcoes.politicaK}</h2></div>
+    <div class="metodo-corpo">
+      <p class="metodo-p">{s.correcoes.politicaV}</p>
+      <ul class="metodo-lista">
+        {
+          s.correcoes.naturezas.map((n) => (
+            <li>
+              <strong>{n.k}</strong> {n.v}
+            </li>
+          ))
+        }
+      </ul>
+      <p class="metodo-p">
+        <Frase
+          partes={[s.correcoes.enderecoA, { email: ENDERECO_CORRECOES }, s.correcoes.enderecoB]}
+          lang={lang}
+        />
+      </p>
+      <p class="regra-portas">
+        <a href={`${routePath('metodo', lang)}#correcoes`}>{s.correcoes.metodoLink} →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ======================================= escrever uma correção -->
+  <section class="metodo-secao" id="escrever">
+    <div><h2>{s.correcoes.caixaTitulo}</h2></div>
+    <div class="metodo-corpo">
+      <CaixaDeCorrecoes lang={lang} />
+    </div>
+  </section>
+
+  <!-- ======================================= o registo -->
+  <section class="metodo-secao" id="registo">
+    <div><h2>{s.correcoes.registoK}</h2></div>
+    <div class="metodo-corpo">
+      <RegistoCorrecoes lang={lang} />
+    </div>
+  </section>
+</Base>

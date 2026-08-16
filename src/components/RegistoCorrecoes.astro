@@ -55,30 +55,30 @@ const rotulo = (kind) => KIND_LABELS[kind]?.[lang] ?? kind;
 
 // Concordância: «1 correção publicada», «2 correções publicadas». O número em
 // si vem do livro-razão; só a palavra que o acompanha é escolhida aqui.
-const palavraConta = correcoes.length === 1 ? s.metodo.registoContaSing : s.metodo.registoConta;
+const palavraConta = correcoes.length === 1 ? s.correcoes.registoContaSing : s.correcoes.registoConta;
 ---
 
 <div class="registo">
   <!-- ============================ CORREÇÕES -->
   <section class="registo-grupo registo-grupo-correcoes" aria-labelledby="registo-correcoes">
     <div class="registo-cabeca">
-      <h3 class="registo-titulo" id="registo-correcoes">{s.metodo.registoCorrecoesK}</h3>
+      <h3 class="registo-titulo" id="registo-correcoes">{s.correcoes.registoCorrecoesK}</h3>
       <p class="registo-conta">
         <Claim id="correcoes-publicadas" lang={lang} chip={true} /> {palavraConta}
       </p>
     </div>
-    <p class="registo-nota">{s.metodo.registoCorrecoesNota}</p>
+    <p class="registo-nota">{s.correcoes.registoCorrecoesNota}</p>
 
     {
       correcoes.length === 0 ? (
-        <p class="log-vazio-v">{s.metodo.correcoesVazioV}</p>
+        <p class="log-vazio-v">{s.correcoes.correcoesVazioV}</p>
       ) : (
         <div class="registo-lista">
           <div class="log-cabecalho">
-            <span>{s.metodo.colunaData}</span>
-            <span>{s.metodo.colunaAntigo}</span>
-            <span>{s.metodo.colunaNovo}</span>
-            <span>{s.metodo.colunaMotivo}</span>
+            <span>{s.correcoes.colunaData}</span>
+            <span>{s.correcoes.colunaAntigo}</span>
+            <span>{s.correcoes.colunaNovo}</span>
+            <span>{s.correcoes.colunaMotivo}</span>
           </div>
           {correcoes.map((e) => (
             <div class="log-linha">
@@ -125,7 +125,7 @@ const palavraConta = correcoes.length === 1 ? s.metodo.registoContaSing : s.meto
                     {rotulo(e.kind)}
                   </span>
                   {' '}
-                  {s.metodo.colunaAfirmacao}:{' '}
+                  {s.correcoes.colunaAfirmacao}:{' '}
                   <code
                     data-correcao-claim={e.claimId}
                     data-correcao-n={String(e.n)}
@@ -147,9 +147,9 @@ const palavraConta = correcoes.length === 1 ? s.metodo.registoContaSing : s.meto
     atualizacoes.length > 0 && (
       <section class="registo-grupo registo-grupo-atualizacoes" aria-labelledby="registo-atualizacoes">
         <h3 class="registo-titulo registo-titulo-quieto" id="registo-atualizacoes">
-          {s.metodo.registoAtualizacoesK}
+          {s.correcoes.registoAtualizacoesK}
         </h3>
-        <p class="registo-nota registo-nota-quieta">{s.metodo.registoAtualizacoesNota}</p>
+        <p class="registo-nota registo-nota-quieta">{s.correcoes.registoAtualizacoesNota}</p>
 
         <ul class="registo-linhas">
           {atualizacoes.map((e) => (
@@ -217,9 +217,9 @@ const palavraConta = correcoes.length === 1 ? s.metodo.registoContaSing : s.meto
     primeiraPorLinha.length > 0 && (
       <section class="registo-grupo" aria-labelledby="registo-proveniencia">
         <div class="registo-cabeca">
-          <h3 class="registo-titulo" id="registo-proveniencia">{s.metodo.registoProvenienciaK}</h3>
+          <h3 class="registo-titulo" id="registo-proveniencia">{s.correcoes.registoProvenienciaK}</h3>
         </div>
-        <p class="registo-nota">{s.metodo.registoProvenienciaNota}</p>
+        <p class="registo-nota">{s.correcoes.registoProvenienciaNota}</p>
         <ul class="registo-proveniencia-linhas">
           {primeiraPorLinha.map((e) => (
             <li>

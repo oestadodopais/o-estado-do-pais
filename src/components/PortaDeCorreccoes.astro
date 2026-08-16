@@ -21,7 +21,10 @@ import { t } from '../i18n/strings.mjs';
 
 const { lang = 'pt', class: klass = '' } = Astro.props;
 const s = t(lang);
-const metodoPath = routePath('metodo', lang);
+/* O registo mudou do Método para a sua própria página a 16.08.2026: a porta
+   leva agora à casa da política e do registo, e não a uma âncora dentro de
+   outra página (DECISIONS §1.39). */
+const registoPath = routePath('correcoes', lang);
 ---
 
 <div class:list={['porta-correccoes', klass]} data-porta-correccoes>
@@ -31,5 +34,5 @@ const metodoPath = routePath('metodo', lang);
     <a class="ligacao-email" href={`mailto:${ENDERECO_CORRECOES}`}>{ENDERECO_CORRECOES}</a>
     {s.porta.w}
   </p>
-  <p><a href={`${metodoPath}#correcoes`}>{s.porta.link} →</a></p>
+  <p><a href={registoPath}>{s.porta.link} →</a></p>
 </div>

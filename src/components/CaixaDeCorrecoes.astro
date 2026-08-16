@@ -32,27 +32,27 @@ const s = t(lang);
   class="caixa-correcoes"
   data-caixa-correcoes
   data-endereco={ENDERECO_CORRECOES}
-  data-assunto={s.metodo.caixaAssunto}
+  data-assunto={s.correcoes.caixaAssunto}
   hidden
 >
-  <label class="linha-campo-k" for="correcao-texto">{s.metodo.caixaTitulo}</label>
-  <p class="linha-nota">{s.metodo.caixaNota}</p>
+  <label class="linha-campo-k" for="correcao-texto">{s.correcoes.caixaTitulo}</label>
+  <p class="linha-nota">{s.correcoes.caixaNota}</p>
 
   <textarea
     id="correcao-texto"
     class="caixa-correcoes-texto"
     rows="7"
-    placeholder={s.metodo.caixaExemplo}
+    placeholder={s.correcoes.caixaExemplo}
     data-caixa-texto></textarea>
 
   <div class="caixa-correcoes-accoes">
     <button type="button" class="botao-correcao" data-caixa-enviar>
-      {s.metodo.caixaBotao}
+      {s.correcoes.caixaBotao}
     </button>
-    <span class="linha-nota" data-caixa-aviso hidden>{s.metodo.caixaVazia}</span>
+    <span class="linha-nota" data-caixa-aviso hidden>{s.correcoes.caixaVazia}</span>
   </div>
 
-  <p class="linha-nota">{s.metodo.caixaComoFunciona}</p>
+  <p class="linha-nota">{s.correcoes.caixaComoFunciona}</p>
 </div>
 
 <script src="/js/correcoes.js" defer is:inline></script>
