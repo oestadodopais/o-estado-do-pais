@@ -1,25 +1,48 @@
 /**
- * O texto do Método.
+ * O Método: dez regras, cada uma com o seu mecanismo, a sua prova de hoje e,
+ * onde é preciso, o seu limite honesto.
  *
- * PT: cópia final da direção, transcrita do rascunho aprovado
- * (metodo-draft.md, v1). NÃO reescrever, NÃO apertar, NÃO acrescentar.
- * A nota de integração do topo do rascunho era instrução, não conteúdo, e por
- * isso não está aqui.
+ * ---------------------------------------------------------------------------
+ * O QUE MUDOU, E PORQUÊ
+ * ---------------------------------------------------------------------------
+ * O texto anterior eram seis secções de prosa, cópia final da direção de
+ * 2026-08-12, com quatro marcadores por resolver lá dentro. Descrevia o
+ * método; não o provava. As dez regras abaixo foram propostas à direção a
+ * 2026-08-15 e substituem-no: a regra diz o que se faz, o mecanismo diz o que
+ * a impõe e onde isso se confere, e a prova traz os números de hoje, calculados
+ * na construção a partir dos dados do próprio sítio (`src/lib/prova.mjs`).
+ * Nada aqui é um número escrito à mão. Ver `DECISIONS.md` §1.13 e §1.39.
  *
- * EN: tradução fiel do mesmo texto — sem acrescentos e sem omissões.
- * AGUARDA REVISÃO DA DIREÇÃO. Os marcadores ficam em português, como na
- * origem, com uma glosa inglesa ao lado.
+ * Os quatro marcadores saíram por estarem resolvidos: o nome de quem dirige
+ * (regra 9), o endereço das correções (regra 7, vivo desde §1.26), o modelo de
+ * financiamento (regra 10) e a contagem das autárquicas, cuja frase saiu por
+ * inteiro. Um facto que não está verificado não se escreve com outras palavras:
+ * cai.
  *
- * Pedaços de texto:
- *   'palavras'                     — texto corrido
- *   { forte: '…' }                 — negrito
- *   { marcador: '…', gloss: '…' }  — marcador por resolver, em chip visível
- *   { ref: '2025' }                — ano de referência (passa pelo portão)
+ * ---------------------------------------------------------------------------
+ * PEDAÇOS DE TEXTO — o mesmo sistema de sempre (ver src/components/Frase.astro)
+ * ---------------------------------------------------------------------------
+ *   'palavras'                     texto corrido
+ *   { forte: '…' }                 negrito
+ *   { marcador: '…', gloss: '…' }  o marcador da casa, em chip visível
+ *   { email: '…' }                 endereço de correio, como ligação
+ *   { ref: '…' }                   ano ou período de referência
  *
- * Nenhum pedaço de texto corrido pode trazer algarismos: é o que obriga a que
- * o único número deste texto — o ano das autárquicas — passe pela porta certa.
- * A contagem de câmaras dessa frase fica deliberadamente por escrever, até
- * estar verificada.
+ * NENHUM PEDAÇO DE TEXTO CORRIDO PODE TRAZER ALGARISMOS. É o que obriga a que
+ * todo o número desta página venha da prova, com a sua chave e a sua porta.
+ *
+ * ---------------------------------------------------------------------------
+ * A FORMA DE UMA REGRA
+ * ---------------------------------------------------------------------------
+ *   n            o número da regra (rótulo; escrito por extenso no gabarito)
+ *   id           a âncora da regra no endereço da página
+ *   titulo       o nome da regra
+ *   regra        o que se faz
+ *   mecanismo    o que a impõe, e onde isso se confere
+ *   limite       o que o mecanismo NÃO apanha (só onde existe)
+ *   prova        as chaves de src/lib/prova.mjs a mostrar, com o seu rótulo
+ *   provaNota    o estado por palavras, quando não há número (ou não há ainda)
+ *   ligacoes     as portas desta regra
  */
 
 /**
@@ -27,369 +50,408 @@
  *
  * É o domínio SEM acento, de propósito. Um endereço com domínio acentuado
  * depende de o programa de quem envia o converter para punycode antes de
- * enviar, e nem todos o fazem — falha em silêncio, do lado de quem escreve, e
+ * enviar, e nem todos o fazem: falha em silêncio, do lado de quem escreve, e
  * ninguém fica a saber. Num canal que existe para que nada se perca, isso é
  * inaceitável. O domínio acentuado tem o mesmo reencaminhamento configurado,
  * como rede de segurança para quem o escrever à mão; não é o que se publica.
  */
 export const ENDERECO_CORRECOES = 'correcoes@oestadodopais.pt';
 
-/** Os marcadores por resolver, num sítio só, para se poderem contar. */
+/**
+ * A linha de abertura do Método, e o rótulo da porta que o Sobre lhe abre.
+ * Uma origem só: se mudar aqui, muda nos dois sítios.
+ */
+export const ABERTURA = {
+  pt: 'Como se procura a independência e o rigor',
+  en: 'How independence and rigour are pursued',
+};
+
+/** A leitura breve do instrumento: uma frase, e mais nada (IDENTIDADE §4). */
+export const LEITURA_BREVE = {
+  pt: 'Um número chega ao leitor só se tem linha, e a linha diz de onde veio.',
+  en: 'A figure reaches the reader only if it has a row, and the row says where it came from.',
+};
+
+/** O marcador da casa, citado dentro da regra 5. */
 export const MARCADORES = {
-  // Menção à convenção da casa, dentro da descrição do método — não é um
-  // item por resolver. Fica com o mesmo aspecto porque é literalmente o
-  // mesmo marcador, e a frase à volta diz o que ele é.
   mencaoVerificar: {
     marcador: 'a verificar',
     gloss: 'to verify',
-  },
-  autarquicas: {
-    marcador: 'a verificar: número exato antes de publicar',
-    gloss: 'to verify: exact number before publishing',
   },
 };
 
 const M = MARCADORES;
 
-export const SECOES = [
+export const REGRAS = [
   {
-    id: 'quem-faz-isto',
-    titulo: { pt: 'Quem faz isto', en: 'Who makes this' },
-    blocos: {
+    n: 1,
+    id: 'fontes',
+    titulo: { pt: 'As fontes', en: 'The sources' },
+    regra: {
       pt: [
-        { tipo: 'p', partes: ['O Estado do País é escrito por inteligência artificial e dirigido por uma pessoa.'] },
-        {
-          tipo: 'p',
-          partes: [
-            'A direção é de ',
-            { forte: 'Nuno dos Santos' },
-            ', que escolhe os temas, define as regras deste método e responde, em última instância, pelo que aqui se publica. A escrita, a investigação e a verificação são feitas por modelos de inteligência artificial (Claude, da Anthropic), sob essa direção.',
-          ],
-        },
-        {
-          tipo: 'p',
-          partes: [
-            'Cada página declara esta autoria no rodapé. Não há exceções: se está publicado aqui, foi escrito por IA e revisto segundo este método.',
-          ],
-        },
-        {
-          tipo: 'p',
-          partes: [
-            'Dizemos isto no primeiro parágrafo porque é a pergunta certa a fazer a este site. A resposta que se segue (o livro-razão, as correções públicas, os limites declarados) existe para que a confiança não dependa de quem escreve, mas do que qualquer leitor pode verificar.',
-          ],
-        },
+        'Só fontes oficiais e autoridades reconhecidas: institutos de estatística, reguladores, tribunais, ministérios, câmaras, universidades e institutos independentes de interesse público, cada uma identificada pelo tipo. Imprensa e agregadores comerciais não são fontes.',
       ],
       en: [
-        { tipo: 'p', partes: ['O Estado do País is written by artificial intelligence and directed by a person.'] },
-        {
-          tipo: 'p',
-          partes: [
-            'It is directed by ',
-            { forte: 'Nuno dos Santos' },
-            ', who chooses the subjects, sets the rules of this method and answers, ultimately, for what is published here. The writing, the research and the verification are done by artificial intelligence models (Claude, by Anthropic), under that direction.',
-          ],
-        },
-        {
-          tipo: 'p',
-          partes: [
-            'Every page declares this authorship in the footer. There are no exceptions: if it is published here, it was written by AI and reviewed according to this method.',
-          ],
-        },
-        {
-          tipo: 'p',
-          partes: [
-            'We say this in the first paragraph because it is the right question to ask of this site. The answer that follows (the ledger, the public corrections, the declared limits) exists so that trust does not depend on who writes, but on what any reader can verify.',
-          ],
-        },
+        'Official sources and recognised authorities only: statistical institutes, regulators, courts, ministries, municipal councils, universities and independent institutes of public interest, each identified by its type. Press and commercial aggregators are not sources.',
       ],
     },
+    mecanismo: {
+      pt: [
+        'Cada linha do livro-razão nomeia o organismo que produziu o valor e o documento onde ele está impresso. Esta regra não é imposta por uma máquina: é imposta por estar à vista, linha a linha, no livro-razão público.',
+      ],
+      en: [
+        'Every ledger row names the organism that produced the value and the document it is printed in. This rule is not enforced by a machine: it is enforced by being in plain sight, row by row, in the public ledger.',
+      ],
+    },
+    prova: [
+      { chave: 'fontes', rotulo: { pt: 'organismos citados', en: 'organisms cited' } },
+      {
+        chave: 'tipos_de_documento',
+        rotulo: {
+          pt: 'linhas com o tipo de documento declarado',
+          en: 'rows with the document kind declared',
+        },
+      },
+    ],
+    ligacoes: [{ rota: 'livro', rotulo: { pt: 'Ver o livro-razão', en: 'See the ledger' } }],
   },
 
   {
-    id: 'como-se-escreve',
-    titulo: { pt: 'Como se escreve', en: 'How it is written' },
-    blocos: {
+    n: 2,
+    id: 'motor',
+    titulo: { pt: 'O motor', en: 'The engine' },
+    regra: {
       pt: [
-        {
-          tipo: 'p',
-          partes: [
-            'Um estudo começa com uma pergunta: da direção, ou proposta pela própria IA e aprovada pela direção. A partir daí:',
-          ],
-        },
-        {
-          tipo: 'ol',
-          itens: [
-            [
-              { forte: 'Investigação em fontes primárias.' },
-              ' Institutos de estatística, publicações oficiais, documentos originais. Um resumo de imprensa nunca é a fonte.',
-            ],
-            [
-              { forte: 'Escrita sobre o livro-razão.' },
-              ' O texto não contém números escritos à mão: cada valor é resolvido a partir de uma linha do livro-razão no momento da construção da página. Um número sem linha não é publicado: fica marcado ',
-              M.mencaoVerificar,
-              ', ou é cortado.',
-            ],
-            [
-              { forte: 'Verificação por quem não escreveu.' },
-              ' As afirmações centrais são verificadas por agentes que não participaram na escrita, instruídos para as refutar. As afirmações de destaque passam por rederivação cega: outro agente refaz o cálculo sem ver o texto.',
-            ],
-            [{ forte: 'Revisão da direção' }, ' antes de qualquer publicação.'],
-          ],
-        },
-        {
-          tipo: 'p',
-          partes: [
-            'O que não sobrevive a este processo não é suavizado: é removido, ou publicado como incerteza declarada.',
-          ],
-        },
+        'A investigação corre num motor separado do sítio. É lá que se procura, lê, extrai, calcula e verifica. Cada número sai de lá com a sua origem: o organismo, o documento, a página, o excerto exato, a data da leitura e, quando é calculado, a conta e os números de onde vem.',
       ],
       en: [
-        {
-          tipo: 'p',
-          partes: [
-            'A study begins with a question: from the director, or proposed by the AI itself and approved by the director. From there:',
-          ],
-        },
-        {
-          tipo: 'ol',
-          itens: [
-            [
-              { forte: 'Research in primary sources.' },
-              ' Statistical institutes, official publications, original documents. A press summary is never the source.',
-            ],
-            [
-              { forte: 'Writing on top of the ledger.' },
-              ' The text contains no hand-written numbers: each value is resolved from a ledger row at the moment the page is built. A number without a row is not published: it is flagged ',
-              M.mencaoVerificar,
-              ', or it is cut.',
-            ],
-            [
-              { forte: 'Verification by someone who did not write it.' },
-              ' Central claims are verified by agents that took no part in the writing, instructed to refute them. Headline claims go through blind re-derivation: another agent redoes the calculation without seeing the text.',
-            ],
-            [{ forte: 'Review by the director' }, ' before any publication.'],
-          ],
-        },
-        {
-          tipo: 'p',
-          partes: [
-            'What does not survive this process is not softened: it is removed, or published as declared uncertainty.',
-          ],
-        },
+        'The research runs in an engine separate from the site. That is where things are searched for, read, extracted, calculated and checked. Every figure leaves it with its origin: the organism, the document, the page, the exact excerpt, the date it was read and, when it is calculated, the arithmetic and the figures it comes from.',
       ],
     },
+    mecanismo: {
+      pt: [
+        'O sítio não sabe procurar nem calcular: só sabe ler o livro-razão. O que atravessa é conferido à chegada contra o resumo criptográfico de cada linha de origem, e uma linha alterada deste lado faz parar a construção.',
+      ],
+      en: [
+        'The site cannot search and cannot calculate: it can only read the ledger. What crosses is checked on arrival against the cryptographic digest of each origin row, and a row edited on this side stops the build.',
+      ],
+    },
+    prova: [
+      {
+        chave: 'linhas_cruzadas',
+        rotulo: { pt: 'linhas vindas do motor', en: 'rows that came from the engine' },
+      },
+      {
+        chave: 'leituras',
+        rotulo: {
+          pt: 'trabalhos com leitura do observatório',
+          en: 'works with an observatory reading',
+        },
+      },
+    ],
+    ligacoes: [{ rota: 'estudos', rotulo: { pt: 'Ver o arquivo', en: 'See the archive' } }],
   },
 
   {
+    n: 3,
     id: 'livro-razao',
     titulo: { pt: 'O livro-razão', en: 'The ledger' },
-    blocos: {
+    regra: {
+      pt: ['Uma linha por número, com essa origem. O livro-razão é público, linha a linha.'],
+      en: ['One row per figure, with that origin. The ledger is public, row by row.'],
+    },
+    mecanismo: {
       pt: [
-        {
-          tipo: 'p',
-          partes: [
-            'Todos os números deste site rastreiam até uma linha de um livro-razão de afirmações. Cada linha guarda: o valor exato tal como publicado pela fonte; a entidade que o produziu; o documento e a edição; o endereço; a data de acesso; um excerto textual da fonte; e, quando o valor é calculado por nós, a derivação completa.',
-          ],
-        },
-        {
-          tipo: 'p',
-          partes: [
-            'O selo de proveniência junto a cada número é a porta para essa linha. A construção do site falha, deliberadamente, se uma página tentar publicar um número sem linha correspondente.',
-          ],
-        },
-        {
-          tipo: 'p',
-          partes: [
-            'Os dados por trás de cada gráfico são descarregáveis. Se citamos, mostramos; se calculámos, mostramos como.',
-          ],
-        },
+        'Cada linha tem endereço próprio e página própria, nas duas edições, e o índice de todas é o livro-razão. A construção falha se uma linha ficar sem página: um selo que aponte para o vazio é uma porta que não abre.',
       ],
       en: [
-        {
-          tipo: 'p',
-          partes: [
-            'Every number on this site traces back to a row of a ledger of claims. Each row holds: the exact value as published by the source; the entity that produced it; the document and the edition; the URL; the access date; a textual excerpt from the source; and, when the value is calculated by us, the full derivation.',
-          ],
-        },
-        {
-          tipo: 'p',
-          partes: [
-            'The provenance seal beside each number is the door to that row. The site build fails, deliberately, if a page tries to publish a number without a corresponding row.',
-          ],
-        },
-        {
-          tipo: 'p',
-          partes: [
-            'The data behind each graphic is downloadable. If we cite, we show; if we calculated, we show how.',
-          ],
-        },
+        'Every row has its own address and its own page, in both editions, and the index of them all is the ledger. The build fails if a row is left without a page: a seal pointing at nothing is a door that does not open.',
       ],
     },
+    prova: [
+      { chave: 'afirmacoes', rotulo: { pt: 'linhas publicadas', en: 'rows published' } },
+      {
+        chave: 'indexaveis',
+        rotulo: { pt: 'com proveniência completa', en: 'with complete provenance' },
+      },
+    ],
+    ligacoes: [{ rota: 'livro', rotulo: { pt: 'Ver o livro-razão', en: 'See the ledger' } }],
   },
 
   {
+    n: 4,
+    id: 'construcao',
+    titulo: { pt: 'A construção', en: 'The build' },
+    regra: {
+      pt: [
+        'O sítio é gerado a partir do livro-razão. Um número escrito numa página sem linha própria faz parar a construção; um valor na página diferente do da linha, também. Cada excerto é comparado, carácter a carácter, com o que a linha guarda.',
+      ],
+      en: [
+        'The site is generated from the ledger. A figure written into a page with no row of its own stops the build; so does a value on the page that differs from the value in the row. Every excerpt is compared, character for character, with what the row holds.',
+      ],
+    },
+    mecanismo: {
+      pt: [
+        'Depois de construído, um varrimento lê todas as páginas e fecha a construção em qualquer algarismo sem origem declarada. Cada origem legítima está escrita numa lista fechada, e nenhuma é uma dispensa: todas comparam o que a página rende com aquilo que ela diz ser.',
+      ],
+      en: [
+        'Once built, a sweep reads every page and closes the build on any digit without a declared origin. Every legitimate origin is written on a closed list, and none of them is a waiver: each compares what the page renders with what it claims to be.',
+      ],
+    },
+    limite: {
+      pt: [
+        'O varrimento vê texto. Um número dentro de um script, um número escrito por extenso ou um número dentro de um atributo passam. E um motivo estrutural declarado é confiança de quem escreve o gabarito: confere-se que o motivo consta da lista fechada, não que o número seja mesmo estrutura.',
+      ],
+      en: [
+        'The sweep sees text. A figure inside a script, a figure written out in words or a figure inside an attribute all pass. And a declared structural reason is trust in whoever writes the template: what is checked is that the reason is on the closed list, not that the figure is really structure.',
+      ],
+    },
+    prova: [
+      { chave: 'derivadas', rotulo: { pt: 'linhas calculadas', en: 'rows calculated' } },
+      {
+        chave: 'aritmetica_reavaliada',
+        rotulo: {
+          pt: 'contas refeitas nesta construção',
+          en: 'sums redone in this build',
+        },
+      },
+    ],
+    ligacoes: [
+      {
+        /* O ficheiro que o portão escreve no fim de um varrimento limpo. O
+           endereço vem de `src/lib/prova.mjs`, não escrito aqui: este ficheiro
+           não pode importar de lá (a prova importa daqui o endereço das
+           correções), por isso o gabarito resolve a marca. */
+        prova: true,
+        rotulo: { pt: 'A prova desta construção', en: 'The proof of this build' },
+      },
+    ],
+  },
+
+  {
+    n: 5,
+    id: 'selo',
+    titulo: { pt: 'O selo', en: 'The seal' },
+    regra: {
+      pt: [
+        'Ao lado de cada número há um selo que abre a sua linha: cheio quando a origem está completa, a tracejado quando falta um campo. Um campo em falta escreve-se ',
+        M.mencaoVerificar,
+        '; a linha diz o que lhe falta e fica fora dos motores de busca até estar completa. Um valor que a fonte marca como provisório é dito por palavras.',
+      ],
+      en: [
+        'Beside every figure there is a seal that opens its row: filled when the origin is complete, dashed when a field is missing. A missing field is written ',
+        M.mencaoVerificar,
+        '; the row says what it lacks and stays out of search engines until it is complete. A value the source marks as provisional is said in words.',
+      ],
+    },
+    mecanismo: {
+      pt: [
+        'A construção confere que cada valor tem, ao pé de si, o selo que abre a sua própria linha, e não a de outra. Uma linha incompleta sai sozinha do índice dos motores de busca e do mapa do sítio, e volta sozinha no dia em que o campo for preenchido.',
+      ],
+      en: [
+        'The build checks that every value has, beside it, the seal that opens its own row and not another. An incomplete row leaves the search index and the sitemap on its own, and returns on its own the day the field is filled in.',
+      ],
+    },
+    limite: {
+      pt: [
+        'O selo prova que o número da página é o da linha, e que a linha diz de onde veio. Não prova que a fonte diga o que a linha guarda: isso é a releitura, e é trabalho de quem não escreveu a linha.',
+      ],
+      en: [
+        'The seal proves that the figure on the page is the figure in the row, and that the row says where it came from. It does not prove that the source says what the row holds: that is the re-reading, and it is the work of someone who did not write the row.',
+      ],
+    },
+    prova: [
+      {
+        chave: 'divida',
+        rotulo: { pt: 'linhas com um campo por confirmar', en: 'rows with a field to confirm' },
+      },
+    ],
+    ligacoes: [
+      { rota: 'marcador', rotulo: { pt: 'O que quer dizer este marcador', en: 'What this marker means' } },
+    ],
+  },
+
+  {
+    n: 6,
+    id: 'releitura',
+    titulo: { pt: 'A releitura', en: 'The re-reading' },
+    regra: {
+      pt: [
+        'Antes de um número ser publicado, é relido na fonte por um caminho diferente e por quem não o escreveu. O painel da primeira página é reconferido contra a fonte todas as semanas, e a página diz quando foi a última vez.',
+      ],
+      en: [
+        'Before a figure is published, it is read again at the source by a different route and by someone who did not write it. The panel on the front page is re-checked against the source every week, and the page says when the last time was.',
+      ],
+    },
+    mecanismo: {
+      pt: [
+        'A data da última reconferência é escrita pelo motor a cada verificação, e o cabeçalho de todas as páginas mostra-a. Quando passa do prazo, o cabeçalho di-lo por palavras, em vez de mostrar uma data que parece fresca.',
+      ],
+      en: [
+        'The date of the last re-check is written by the engine at each verification, and the masthead of every page shows it. Once it is overdue, the masthead says so in words, instead of showing a date that looks fresh.',
+      ],
+    },
+    limite: {
+      pt: [
+        'A releitura acontece e ainda não fica escrita na linha: o campo que a guardaria não existe no formato. Enquanto não existir, a conta abaixo é zero, e é zero por isso.',
+      ],
+      en: [
+        'The re-reading happens and is not yet written into the row: the field that would hold it does not exist in the format. Until it does, the count below is zero, and it is zero for that reason.',
+      ],
+    },
+    prova: [
+      {
+        chave: 'releituras_registadas',
+        rotulo: {
+          pt: 'releituras independentes registadas',
+          en: 'independent re-readings on record',
+        },
+      },
+      {
+        chave: 'painel_reconferido_em',
+        rotulo: { pt: 'painel reconferido a', en: 'panel re-checked on' },
+      },
+    ],
+    ligacoes: [],
+  },
+
+  {
+    n: 7,
     id: 'correcoes',
-    titulo: { pt: 'Correções', en: 'Corrections' },
-    registoDeCorrecoes: true,
-    blocos: {
+    titulo: { pt: 'As correções', en: 'The corrections' },
+    regra: {
       pt: [
-        {
-          tipo: 'p',
-          partes: [
-            'Corrigir em silêncio é a forma mais barata de mentir. Aqui, toda a correção é pública, datada e permanente: valor anterior, valor corrigido, motivo, e ligação à linha do livro-razão que mudou. O registo de correções desta página lista todas, da mais recente à primeira, e nenhuma é removida.',
-          ],
-        },
-        {
-          tipo: 'p',
-          partes: [
-            'Quem encontrar um erro pode escrevê-lo a ',
-            { email: ENDERECO_CORRECOES },
-            '. Um erro confirmado entra no registo com crédito a quem o encontrou, se o desejar.',
-          ],
-        },
+        'Públicas, datadas e permanentes, com o valor anterior à vista, em três naturezas: correção (o valor estava errado), atualização (o valor estava certo e o mundo mudou), revisão de proveniência (o valor não mudou; mudou o caminho até à fonte).',
       ],
       en: [
-        {
-          tipo: 'p',
-          partes: [
-            'Correcting in silence is the cheapest way of lying. Here, every correction is public, dated and permanent: previous value, corrected value, reason, and a link to the ledger row that changed. This page’s corrections log lists them all, from the most recent to the first, and none is removed.',
-          ],
-        },
-        {
-          tipo: 'p',
-          partes: [
-            'Anyone who finds an error can report it to ',
-            { email: ENDERECO_CORRECOES },
-            '. A confirmed error enters the log with credit to whoever found it, if they wish.',
-          ],
-        },
+        'Public, dated and permanent, with the previous value in plain sight, in three kinds: correction (the value was wrong), update (the value was right and the world changed), provenance revision (the value did not change; the route to the source did).',
       ],
     },
+    mecanismo: {
+      pt: [
+        'Cada entrada é um campo da própria linha, e a construção confere data, natureza, valor antigo, valor novo e motivo contra o livro-razão: reescrever a história de uma correção faz parar a construção. Quem encontrar um erro escreve para ',
+        { email: ENDERECO_CORRECOES },
+        ', e a porta para o fazer está em todas as páginas.',
+      ],
+      en: [
+        'Every entry is a field of the row itself, and the build checks date, kind, old value, new value and reason against the ledger: rewriting the history of a correction stops the build. Anyone who finds an error writes to ',
+        { email: ENDERECO_CORRECOES },
+        ', and the door to do it is on every page.',
+      ],
+    },
+    prova: [
+      { chave: 'correcoes', rotulo: { pt: 'correções', en: 'corrections' } },
+      { chave: 'atualizacoes', rotulo: { pt: 'atualizações', en: 'updates' } },
+      {
+        chave: 'revisoes_de_proveniencia',
+        rotulo: { pt: 'revisões de proveniência', en: 'provenance revisions' },
+      },
+    ],
+    ligacoes: [
+      { rota: 'correcoes', rotulo: { pt: 'O registo inteiro', en: 'The whole register' } },
+    ],
   },
 
   {
-    id: 'atribuicao-causal',
-    titulo: { pt: 'Atribuição causal', en: 'Causal attribution' },
-    blocos: {
+    n: 8,
+    id: 'agenda',
+    titulo: { pt: 'O que se mede a seguir', en: 'What gets measured next' },
+    regra: {
       pt: [
-        {
-          tipo: 'p',
-          partes: [
-            'A parte mais delicada deste observatório é ligar resultados a quem governa. A regra é prestação de contas de gestão, não atribuição de mérito:',
-          ],
-        },
-        {
-          tipo: 'ul',
-          itens: [
-            [
-              { forte: 'Herdado, decidido, deixado.' },
-              ' Cada mandato é lido pelo que recebeu, pelo que decidiu, e pelo estado em que entregou, nunca por um número único de mérito.',
-            ],
-            [
-              { forte: 'Métricas anunciadas antes dos veredictos.' },
-              ' Os indicadores usados para ler um mandato são publicados antes da leitura, não escolhidos depois.',
-            ],
-            [
-              { forte: 'Confundidores declarados.' },
-              ' Grande parte do que acontece num concelho decide-se fora dele: em Lisboa, em Bruxelas, na demografia, no ciclo económico. E há mecânica institucional que quebra leituras ingénuas: nas autárquicas de ',
-              { ref: '2025' },
-              ', uma parte substancial das câmaras mudou de presidente por limitação de mandatos, não por voto ',
-              M.autarquicas,
-              '. Estes limites são declarados junto de cada leitura.',
-            ],
-            [
-              { forte: 'Sem rankings de partidos.' },
-              ' Médias por partido sem controlo do território que cada partido governa são aritmética enganosa. Não as publicamos.',
-            ],
-            [
-              { forte: 'Inferência assinada.' },
-              ' Onde este site conclui além dos dados, a conclusão é marcada como inferência e assinada como tal.',
-            ],
-          ],
-        },
+        'A inteligência artificial propõe o que medir, a partir de critérios declarados: o que os quadros com que as instituições avaliam Portugal apontam como problema, o que as fontes oficiais vão publicar, o que os leitores perguntam ou corrigem. A direção decide. A lista do que está em curso, do que se segue e do porquê é pública, e nada sai dela em silêncio.',
       ],
       en: [
-        {
-          tipo: 'p',
-          partes: [
-            'The most delicate part of this observatory is linking outcomes to those who govern. The rule is management accountability, not attribution of merit:',
-          ],
-        },
-        {
-          tipo: 'ul',
-          itens: [
-            [
-              { forte: 'Inherited, decided, left.' },
-              ' Each term is read by what it inherited, by what it decided, and by the state in which it handed over, never by a single number of merit.',
-            ],
-            [
-              { forte: 'Metrics announced before verdicts.' },
-              ' The indicators used to read a term are published before the reading, not chosen afterwards.',
-            ],
-            [
-              { forte: 'Confounders declared.' },
-              ' Much of what happens in a municipality is decided outside it: in Lisbon, in Brussels, in demography, in the economic cycle. And there is institutional machinery that breaks naive readings: in the ',
-              { ref: '2025' },
-              ' local elections, a substantial share of councils changed president through term limits, not through the vote ',
-              M.autarquicas,
-              '. These limits are declared alongside each reading.',
-            ],
-            [
-              { forte: 'No party rankings.' },
-              ' Averages by party without controlling for the territory each party governs are misleading arithmetic. We do not publish them.',
-            ],
-            [
-              { forte: 'Signed inference.' },
-              ' Where this site concludes beyond the data, the conclusion is marked as inference and signed as such.',
-            ],
-          ],
-        },
+        'Artificial intelligence proposes what to measure, from declared criteria: what the frameworks the institutions use to assess Portugal flag as a problem, what the official sources are about to publish, what readers ask about or correct. The director decides. The list of what is under way, what comes next and why is public, and nothing leaves it in silence.',
       ],
     },
+    mecanismo: {
+      pt: [
+        'A pergunta de um trabalho é fixada e guardada no motor antes da recolha, e cada item da lista traz o critério que o pôs lá e o registo de cada mudança de estado.',
+      ],
+      en: [
+        'The question of a piece of work is fixed and stored in the engine before collection begins, and each item on the list carries the criterion that put it there and the record of every change of state.',
+      ],
+    },
+    prova: [
+      {
+        chave: 'municipios_com_pagina',
+        rotulo: { pt: 'concelhos com página', en: 'concelhos with a page' },
+      },
+      {
+        chave: 'agenda_total',
+        rotulo: { pt: 'agenda', en: 'agenda' },
+        vazio: {
+          pt: 'sem registo nesta construção',
+          en: 'no record in this build',
+        },
+      },
+    ],
+    ligacoes: [
+      { rota: 'municipios', rotulo: { pt: 'Os concelhos de Portugal', en: 'The concelhos of Portugal' } },
+    ],
   },
 
   {
-    id: 'limites',
-    titulo: { pt: 'Limites', en: 'Limits' },
-    blocos: {
+    n: 9,
+    id: 'intervencao-humana',
+    titulo: { pt: 'A intervenção humana', en: 'Human intervention' },
+    regra: {
       pt: [
-        {
-          tipo: 'ul',
-          itens: [
-            [
-              'Este site não sabe o que as fontes não medem. Onde os dados não existem, dizemos que não existem: uma resposta nula é uma resposta.',
-            ],
-            [
-              'A IA que escreve isto pode errar de formas próprias: inventar com fluência é o risco central, e é exatamente por isso que o livro-razão, a verificação adversarial e as correções públicas não são opcionais.',
-            ],
-            [
-              'Os dados oficiais chegam com atraso e são revistos. A data de acesso em cada selo diz quando lemos; se a fonte mudou depois, a discrepância trata-se como correção, não como argumento.',
-            ],
-            [
-              'Independência: este site não recebe financiamento de partidos, governos ou câmaras municipais. É financiado pessoalmente pelo diretor, e não tem publicidade nem financiamento externo.',
-            ],
-          ],
-        },
+        'A direção é de ',
+        { forte: 'Nuno dos Santos' },
+        ', que escolhe o que se publica e responde por ele; não escreve números. A autoria por inteligência artificial está declarada no Sobre, e todas as páginas construídas levam a porta para lá.',
       ],
       en: [
-        {
-          tipo: 'ul',
-          itens: [
-            [
-              'This site does not know what the sources do not measure. Where the data does not exist, we say it does not exist: a null answer is an answer.',
-            ],
-            [
-              'The AI that writes this can err in ways of its own: inventing fluently is the central risk, and that is exactly why the ledger, adversarial verification and public corrections are not optional.',
-            ],
-            [
-              'Official data arrives late and is revised. The access date on each seal says when we read it; if the source changed afterwards, the discrepancy is treated as a correction, not as an argument.',
-            ],
-            [
-              'Independence: this site receives no funding from parties, governments or municipal councils. It is funded personally by the director, and has no advertising and no external funding.',
-            ],
-          ],
-        },
+        'It is directed by ',
+        { forte: 'Nuno dos Santos' },
+        ', who chooses what gets published and answers for it; he does not write figures. Authorship by artificial intelligence is stated on the About page, and every page built carries the door to it.',
       ],
     },
+    mecanismo: {
+      pt: [
+        'Um número não entra por uma pessoa nem por um gabarito: entra por uma linha do livro-razão, e por mais lado nenhum. E a construção conta a porta para o Sobre em cada página: uma página sem ela faz parar a construção.',
+      ],
+      en: [
+        'A figure does not enter through a person or through a template: it enters through a ledger row, and through nothing else. And the build counts the door to the About page on every page: a page without it stops the build.',
+      ],
+    },
+    prova: [],
+    provaNota: {
+      pt: 'a autoria está dita no Sobre, e a porta para lá está em todas as páginas desta construção',
+      en: 'authorship is stated on the About page, and the door to it is on every page in this build',
+    },
+    ligacoes: [{ rota: 'sobre', rotulo: { pt: 'Sobre', en: 'About' } }],
+  },
+
+  {
+    n: 10,
+    id: 'o-que-nao-faz',
+    titulo: { pt: 'O que o observatório não faz', en: 'What the observatory does not do' },
+    regra: {
+      pt: [
+        'Não classifica partidos nem faz médias por partido: regista quem decidiu o quê e o que aconteceu, com o nome tal como consta do documento e o rótulo partidário como facto de registo. Médias por partido sobre territórios que não têm nada em comum são aritmética enganosa. Não publica um número sem fonte. Não corrige em silêncio. Não recebe dinheiro de nenhuma entidade que mede: é financiado pessoalmente pelo diretor, sem publicidade nem financiamento externo.',
+      ],
+      en: [
+        'It does not rank parties and does not average by party: it records who decided what and what happened, with the name as the document gives it and the party label as a fact of record. Averages by party across territories with nothing in common are misleading arithmetic. It does not publish a figure without a source. It does not correct in silence. It takes no money from any entity it measures: it is funded personally by the director, with no advertising and no outside funding.',
+      ],
+    },
+    mecanismo: {
+      pt: [
+        'Não há neste sítio nenhuma ordenação por partido. O crédito de um valor é um campo da sua linha, conferido carácter a carácter na página dessa linha, como qualquer outro campo.',
+      ],
+      en: [
+        'There is no ranking by party anywhere on this site. The credit for a value is a field of its row, checked character for character on that row page, like any other field.',
+      ],
+    },
+    prova: [
+      {
+        chave: 'valores_creditados',
+        rotulo: {
+          pt: 'valores creditados a quem os decidiu',
+          en: 'values credited to whoever decided them',
+        },
+      },
+    ],
+    ligacoes: [{ rota: 'livro', rotulo: { pt: 'Ver o livro-razão', en: 'See the ledger' } }],
   },
 ];
