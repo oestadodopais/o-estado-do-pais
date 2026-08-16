@@ -33,7 +33,10 @@ Requer Node ≥ 22.12 (exigência do Astro 7).
    manifesto declara;
 4. `astro build` — se um gabarito citar uma afirmação que não existe, o build atira;
 5. `stamp:version` — carimba em `dist/version.json` o commit de que a construção saiu;
-6. `gate:html` — varre `dist/` à procura de algarismos sem proveniência;
+6. `gate:html` — varre `dist/` à procura de algarismos sem proveniência, e
+   ainda de duas coisas mais: nas páginas em pt-PT, nenhuma forma anterior ao
+   Acordo Ortográfico de 1990; em qualquer página das duas edições, nenhum
+   travessão no texto renderizado (`IDENTIDADE.md` §9, `DECISIONS.md` §1.38);
 7. `check:dados` — os ficheiros de dados descarregáveis existem e batem certo
    com as suas origens.
 
@@ -247,6 +250,10 @@ ledger/
   allowlist.yml           as únicas excepções ao portão, cada uma com motivo
   README.md               o formato e as regras
 
+ortografia/
+  formas.yml              as formas e a autoridade que as sustenta; uma lista, dois usos
+  restantes.yml           o que fica por converter, rota a rota, com o motivo
+
 studies-src/
   <slug>/pt.html          o documento original de um estudo, alojado intacto
   <slug>/en.html          a edição inglesa do mesmo
@@ -260,8 +267,10 @@ scripts/
   normalize-study.mjs     a função pura que separa o documento do invólucro do anfitrião
   verify-fetch.mjs        para quem vem de fora: uma descarga nova contra o que está alojado
   extract-from-transcript.mjs  recurso: os bytes de uma descarga que não escreveu ficheiro
-  gate-html.mjs           depois do build: varre dist/ à procura de algarismos órfãos
+  gate-html.mjs           depois do build: varre dist/ à procura de algarismos órfãos,
+                          de grafia anterior ao Acordo e de travessões
   check-dados.mjs         depois do build: os CSV existem e batem certo com as origens
+  ortografia.mjs          a passagem da ortografia, nos dois sentidos (à mão, não no build)
 
 src/
   lib/ledger.mjs          carrega, valida e serve o livro-razão
