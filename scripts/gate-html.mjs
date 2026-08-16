@@ -45,11 +45,19 @@ import { documentoDaEdicao, documentoServido } from '../src/lib/documentos.mjs';
 import { renderizacoesAceites } from '../src/data/correcoes.mjs';
 import { SITE_HOST, SITE_NAME, AUTHORSHIP_LINE, EDITION } from '../site.config.mjs';
 import { ENDERECO_CORRECOES } from '../src/data/metodo.mjs';
+import {
+  carregaFormas,
+  comparador,
+  procura,
+  procuraTravessoes,
+  emCitacao,
+} from './ortografia.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..');
 const DIST = path.join(ROOT, 'dist');
 const ALLOWLIST = path.join(ROOT, 'ledger', 'allowlist.yml');
+const RESTANTES = path.join(ROOT, 'ortografia', 'restantes.yml');
 
 const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
 const amarelo = (s) => `\x1b[33m${s}\x1b[0m`;
@@ -106,6 +114,23 @@ const linhasConstruidas = new Set();
 let ficheiros = 0;
 let documentos = 0;
 let paginasDoLivro = 0;
+
+/**
+ * O restante da ortografia: por rota e por palavra, quantas ocorrências podem
+ * ficar, e porquê. Lista fechada — o que não estiver aqui pára a construção, e
+ * o que aqui estiver e já não ocorra é um aviso, para que a lista encolha.
+ */
+const restantesCru = load(fs.readFileSync(RESTANTES, 'utf8')) ?? {};
+const RESTANTE = new Map();
+for (const r of restantesCru.restantes ?? []) {
+  const chave = `${r.rota} ${r.palavra}`;
+  RESTANTE.set(chave, {
+    ...r,
+    resta: Number(r.ocorrencias ?? 1),
+    usadas: 0,
+  });
+}
+let ocorrenciasRestantes = 0;
 
 /* ------------------------------------------------------------------ auxiliares */
 
@@ -205,6 +230,92 @@ function textoDe(no, { semEstilo = false, separador = ' ' } = {}) {
 /** O texto de um elemento como o leitor o vê, para comparar com uma transcrição. */
 function textoTranscrito(el) {
   return normalizeWhitespace(decodeEntities(textoDe(el, { separador: '' })));
+}
+
+/**
+ * ---------------------------------------------------------------------------
+ * A ORTOGRAFIA E OS TRAVESSÕES — a regra escrita, agora imposta.
+ * ---------------------------------------------------------------------------
+ *
+ * `IDENTIDADE.md` §9: a superfície pública segue o Acordo Ortográfico de 1990
+ * tal como é aplicado em Portugal, e não leva travessões em nenhuma das duas
+ * edições. A regra estava decidida e não estava conferida; passa a estar aqui,
+ * e não num portão novo (a moratória de 2026-08-15 continua de pé).
+ *
+ * A lista das formas é UMA SÓ e vive em `ortografia/formas.yml`: a mesma que
+ * `scripts/ortografia.mjs` usa para converter. Duas listas divergiriam à
+ * primeira palavra acrescentada.
+ *
+ * O QUE NÃO É PROSA DA CASA, e por isso sai do varrimento:
+ *   · `<blockquote>`, `<q>`, `<cite>` — citação, pela própria etiqueta;
+ *   · `data-verbatim` — transcrição conferida carácter a carácter;
+ *   · `data-linha-campo` — um campo do livro-razão, conferido contra a linha;
+ *   · `data-nonledger="titulo-de-estudo"` — o título de um trabalho publicado,
+ *     que se cita pelas palavras exactas: «Évora — Os Pelouros, Quem Os Teve,
+ *     O Que Fizeram» tem um travessão a sério e fica com ele;
+ *   · `data-nonledger="proveniencia"` — a etiqueta do selo, que o
+ *     `allowlist.yml` declara como texto gerado do próprio registo (nome do
+ *     estudo) e não escrito à mão;
+ *   · o que estiver dentro de «…» — a aspa da casa marca citação, e o que se
+ *     cita não se converte.
+ *
+ * O QUE FICA POR VER, e é honesto dizê-lo: dentro de um elemento transcrito não
+ * se vê nada, e é aí que vivem os campos das linhas cruzadas. Esses contam-se
+ * do lado da fonte, com `node scripts/ortografia.mjs --verificar`.
+ */
+const TAGS_CITADAS = new Set(['blockquote', 'q', 'cite', 'script', 'style', 'template']);
+const NONLEDGER_CITADO = new Set(['titulo-de-estudo', 'proveniencia']);
+
+function eCitado(no) {
+  const tag = String(no.rawTagName ?? '').toLowerCase();
+  if (TAGS_CITADAS.has(tag)) return true;
+  const attrs = no.attributes ?? {};
+  if ('data-verbatim' in attrs) return true;
+  if ('data-linha-campo' in attrs) return true;
+  return NONLEDGER_CITADO.has(attrs['data-nonledger'] ?? '');
+}
+
+/** O texto de uma página tirando o que é citação. */
+function textoPublico(no) {
+  const partes = [];
+  const anda = (n) => {
+    if (!n) return;
+    if (n.nodeType === NodeType.TEXT_NODE) {
+      partes.push(n.rawText);
+      return;
+    }
+    if (n.nodeType === NodeType.ELEMENT_NODE && eCitado(n)) return;
+    for (const filho of n.childNodes ?? []) anda(filho);
+  };
+  anda(no);
+  return partes.join(' ');
+}
+
+const FORMAS = carregaFormas();
+const COMPARADOR = comparador(FORMAS, 'acordo');
+
+/**
+ * O que uma página traz fora da grafia da casa.
+ * `lingua` decide só a ortografia: o travessão é regra das duas edições.
+ */
+function ocorrenciasDaPagina(raiz, lingua) {
+  const texto = decodeEntities(textoPublico(raiz));
+  const saida = [];
+  if (lingua === 'pt') {
+    for (const o of procura(texto, COMPARADOR)) {
+      if (emCitacao(texto, o.inicio)) continue;
+      saida.push({ palavra: o.forma, troca: o.troca, ctx: contexto(texto, o.forma) });
+    }
+  }
+  for (const o of procuraTravessoes(texto)) {
+    if (emCitacao(texto, o.inicio)) continue;
+    saida.push({
+      palavra: o.forma,
+      troca: null,
+      ctx: texto.slice(Math.max(0, o.inicio - 55), o.fim + 55).replace(/\s+/g, ' '),
+    });
+  }
+  return saida;
 }
 
 /**
@@ -559,6 +670,46 @@ function auditaSelo(el, id, lang, err) {
   );
 }
 
+/**
+ * ---------------------------------------------------------------------------
+ * A PROVA DA CONFERÊNCIA — corre a cada construção, sobre páginas de mentira.
+ * ---------------------------------------------------------------------------
+ *
+ * Uma conferência que nunca disparou não se sabe se funciona. Estes seis casos
+ * são a prova mínima, e são o que separa a lista `iguais` de um comentário: se
+ * alguém puser «facto» em `pares`, este bloco fecha o build antes de a página
+ * chegar a ser construída.
+ *
+ * Não é uma dispensa nem uma amostra do sítio: são cadeias escritas aqui, que
+ * não existem em lado nenhum e não entram em `dist/`.
+ */
+function provaDaOrtografia() {
+  const pagina = (lang, corpo) =>
+    parse(`<!doctype html><html lang="${lang}"><body>${corpo}</body></html>`, { comment: false });
+  const casos = [
+    { nome: 'palavra de «iguais»', lang: 'pt', corpo: '<p>É um facto, e uma secção do contacto.</p>', espera: 0 },
+    { nome: 'forma anterior ao Acordo', lang: 'pt', corpo: '<p>Uma correcção.</p>', espera: 1 },
+    { nome: 'forma anterior dentro de citação', lang: 'pt', corpo: '<blockquote>Uma correcção.</blockquote>', espera: 0 },
+    { nome: 'forma anterior num campo de linha', lang: 'pt', corpo: '<span data-linha-campo="derivation">Uma correcção.</span>', espera: 0 },
+    { nome: 'travessão na edição portuguesa', lang: 'pt', corpo: '<p>Uma coisa — outra.</p>', espera: 1 },
+    { nome: 'travessão na edição inglesa', lang: 'en', corpo: '<p>One thing — another.</p>', espera: 1 },
+  ];
+  for (const c of casos) {
+    const lingua = LINGUA_POR_HREFLANG[c.lang === 'pt' ? HREFLANG.pt : HREFLANG.en] ?? c.lang;
+    const achado = ocorrenciasDaPagina(pagina(c.lang === 'pt' ? HREFLANG.pt : HREFLANG.en, c.corpo), lingua);
+    if (achado.length !== c.espera) {
+      erros.push({
+        rel: 'ortografia/formas.yml',
+        msg:
+          `a prova da conferência de ortografia falhou no caso "${c.nome}": ` +
+          `esperavam-se ${c.espera} ocorrência(s) e encontraram-se ${achado.length}` +
+          (achado.length ? ` (${achado.map((a) => a.palavra).join(', ')})` : '') +
+          `.\n      A lista mudou de maneira que a conferência deixou de valer. Ver ortografia/formas.yml.`,
+      });
+    }
+  }
+}
+
 function ficheirosHtml(dir) {
   const out = [];
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -852,6 +1003,33 @@ for (const file of ficheirosHtml(DIST)) {
   /* --- 4. corpo: retirar o que é legítimo, e ver o que sobra --- */
   const body = root.querySelector('body') ?? root;
   for (const el of body.querySelectorAll('script, style')) el.remove();
+
+  /* A grafia da casa, antes de retirar seja o que for: a conferência precisa do
+     corpo inteiro, e sai dela pela sua própria lista de citações. */
+  for (const o of ocorrenciasDaPagina(body, linguaPagina)) {
+    const entrada = RESTANTE.get(`${caminho} ${o.palavra}`);
+    if (entrada && entrada.resta > 0) {
+      entrada.resta--;
+      entrada.usadas++;
+      ocorrenciasRestantes++;
+      continue;
+    }
+    const eTravessao = o.palavra === '—' || o.palavra === '–';
+    err(
+      eTravessao
+        ? `travessão no texto renderizado: "${o.palavra}".\n` +
+            `      contexto: ${o.ctx}\n` +
+            `      A casa não usa travessão em nenhuma das duas edições (IDENTIDADE.md §9). ` +
+            `Reescreva a frase com vírgula, dois pontos, parênteses ou «·».\n` +
+            `      Se for uma citação, cite-a entre «…» ou marque o elemento como transcrito.`
+        : `grafia anterior ao Acordo: "${o.palavra}" (a forma da casa é "${o.troca}").\n` +
+            `      contexto: ${o.ctx}\n` +
+            `      A superfície pública segue o Acordo de 1990 tal como é aplicado em Portugal ` +
+            `(IDENTIDADE.md §9).\n` +
+            `      Corra "node scripts/ortografia.mjs --aplicar --sentido=acordo". ` +
+            `Se a palavra é a forma certa em Portugal, acrescente-a a "iguais" em ortografia/formas.yml.`,
+    );
+  }
 
   const aRemover = [];
 
@@ -1181,6 +1359,20 @@ for (const file of ficheirosHtml(DIST)) {
 
 /* ------------------------------------------------------------------ relatório */
 
+provaDaOrtografia();
+
+/* Uma entrada do restante que já não ocorre é um aviso, e não um erro: a lista
+   tem de encolher à medida que o motor converte as linhas cruzadas, e uma
+   entrada morta que ninguém remove torna a lista num hábito. */
+for (const [chave, r] of RESTANTE) {
+  if (r.resta > 0) {
+    avisos.push(
+      `o restante da ortografia guarda ${r.resta} ocorrência(s) de "${r.palavra}" em "${r.rota}" ` +
+        `que já não existem. Retire a entrada de ortografia/restantes.yml (${chave}).`,
+    );
+  }
+}
+
 for (const [id] of claims) {
   if (!idsUsados.has(id)) {
     avisos.push(
@@ -1221,6 +1413,13 @@ console.log(
     `  portão de HTML · ${ficheiros} páginas · ${idsUsados.size}/${claims.size} afirmações citadas ` +
       `fora do livro-razão · ${linhasConstruidas.size} páginas de linha` +
       (documentos ? ` · ${documentos} documento(s) de estudo, conferidos contra a origem` : ''),
+  ),
+);
+console.log(
+  cinza(
+    `  ortografia · Acordo de 1990 como se aplica em Portugal · ${FORMAS.pares.length} pares, ` +
+      `${FORMAS.iguais.length} iguais · restante: ${ocorrenciasRestantes} ocorrência(s) em ` +
+      `${[...RESTANTE.values()].filter((r) => r.usadas > 0).length} rota(s), todas de linhas cruzadas`,
   ),
 );
 
