@@ -1,0 +1,92 @@
+# =============================================================================
+# O restante: o que fica por converter, rota a rota e palavra a palavra.
+#
+# A regra é IDENTIDADE.md §9 e a decisão é DECISIONS.md §1.38. Esta lista é a
+# única saída, e é fechada: uma ocorrência que não esteja aqui pára a
+# construção; uma entrada daqui que já não ocorra é um aviso, para que a lista
+# encolha em vez de envelhecer.
+#
+# PORQUE EXISTE. As 70 linhas que vieram do motor de investigação têm os bytes
+# presos por `ledger/cruzamentos/evora.json`: o `check:cruzamento` confere o
+# resumo de cada ficheiro e uma edição deste lado pára o build. A prosa da casa
+# dessas linhas (o motivo de uma correcção, a aritmética) fica como veio, e
+# converte-se onde foi escrita, que é o manifesto do motor. Depois disso, a
+# reexportação traz os bytes novos e estas entradas saem daqui.
+#
+# NÃO É UMA LISTA DE DISPENSAS. Nada além das linhas cruzadas entra aqui. Se
+# uma página da casa trouxer um travessão, a resposta é reescrever a frase.
+#
+# O QUE ESTA LISTA NÃO COBRE, e é honesto dizê-lo: a conferência corre sobre o
+# texto renderizado e não vê o que está dentro de um elemento transcrito. Os
+# campos de uma linha do livro-razão vão marcados `data-linha-campo` — o portão
+# compara-os carácter a carácter contra a própria linha — e por isso quatro
+# `derivation` de linhas cruzadas com «tecto» não aparecem aqui: não são vistos
+# pela conferência. Vêem-se do lado da fonte, com
+# `node scripts/ortografia.mjs --verificar`, que os conta no seu restante.
+# =============================================================================
+
+restantes:
+  - rota: '/livro-razao/evora-prr-aprovado-2026'
+    palavra: '—'
+    ocorrencias: 1
+    linha: 'evora-prr-aprovado-2026'
+    campo: 'corrections[0].reason'
+    motivo: 'linha cruzada; converte-se no motor'
+  - rota: '/en/ledger/evora-prr-aprovado-2026'
+    palavra: '—'
+    ocorrencias: 1
+    linha: 'evora-prr-aprovado-2026'
+    campo: 'corrections[0].reason_en'
+    motivo: 'linha cruzada; converte-se no motor'
+
+  - rota: '/livro-razao/evora-prr-municipio-contratado'
+    palavra: '—'
+    ocorrencias: 1
+    linha: 'evora-prr-municipio-contratado'
+    campo: 'corrections[0].reason'
+    motivo: 'linha cruzada; converte-se no motor'
+  - rota: '/en/ledger/evora-prr-municipio-contratado'
+    palavra: '—'
+    ocorrencias: 1
+    linha: 'evora-prr-municipio-contratado'
+    campo: 'corrections[0].reason_en'
+    motivo: 'linha cruzada; converte-se no motor'
+
+  - rota: '/livro-razao/evora-prr-pago-2026'
+    palavra: '—'
+    ocorrencias: 1
+    linha: 'evora-prr-pago-2026'
+    campo: 'corrections[0].reason'
+    motivo: 'linha cruzada; converte-se no motor'
+  - rota: '/en/ledger/evora-prr-pago-2026'
+    palavra: '—'
+    ocorrencias: 1
+    linha: 'evora-prr-pago-2026'
+    campo: 'corrections[0].reason_en'
+    motivo: 'linha cruzada; converte-se no motor'
+
+  - rota: '/livro-razao/evora-prr-universidade-contratado'
+    palavra: '—'
+    ocorrencias: 1
+    linha: 'evora-prr-universidade-contratado'
+    campo: 'corrections[0].reason'
+    motivo: 'linha cruzada; converte-se no motor'
+  - rota: '/en/ledger/evora-prr-universidade-contratado'
+    palavra: '—'
+    ocorrencias: 1
+    linha: 'evora-prr-universidade-contratado'
+    campo: 'corrections[0].reason_en'
+    motivo: 'linha cruzada; converte-se no motor'
+
+  - rota: '/livro-razao/evora-prr-vencido-aprovado-2026'
+    palavra: '—'
+    ocorrencias: 1
+    linha: 'evora-prr-vencido-aprovado-2026'
+    campo: 'corrections[0].reason'
+    motivo: 'linha cruzada; converte-se no motor'
+  - rota: '/en/ledger/evora-prr-vencido-aprovado-2026'
+    palavra: '—'
+    ocorrencias: 1
+    linha: 'evora-prr-vencido-aprovado-2026'
+    campo: 'corrections[0].reason_en'
+    motivo: 'linha cruzada; converte-se no motor'
