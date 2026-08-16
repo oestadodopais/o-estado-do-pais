@@ -20,10 +20,29 @@
 #              Estão aqui para que a conferência não dispare sobre elas, e para
 #              que ninguém as «corrija».
 #
+# UM PAR PODE SER SÓ DE IDA: `so_ida: true`. É o caso em que a forma do Acordo
+# é, por si, uma palavra corrente com outro sentido, e a passagem inversa a
+# estragaria: «acto → ato» converte-se sem risco, mas «ato» é também «eu ato a
+# corda», que sempre se escreveu assim. No sentido «anterior» a ferramenta
+# assinala estes pares e não lhes toca, como faz aos travessões e à lista
+# `manuais`. `IDENTIDADE.md` §9 diz o mesmo por palavras: a reversão é uma
+# corrida da ferramenta MAIS uma passagem à mão sobre as formas só de ida.
+#
 # COMO SE ACRESCENTA UMA FORMA: consulte-a no vocabulário abaixo, forma a forma
 # (a flexão que vai usar, não o infinitivo). Se a forma anterior não constar e a
 # do Acordo constar, é um par. Se constarem as duas, é dupla grafia: escolha a
-# forma do Acordo e escreva porquê em «nota». Nunca deduza uma flexão: escreva-a.
+# forma do Acordo e escreva porquê em «nota».
+#
+# A FLEXÃO REGULAR DE UMA FORMA ATESTADA NÃO PEDE ATESTAÇÃO PRÓPRIA, e é uma
+# correcção a esta lista (16.08.2026). Até aqui a regra era «nunca deduza uma
+# flexão: escreva-a», e o resultado foi uma lista com «concepção» e sem
+# «concepções»: a conferência era um vocabulário finito com buracos, e uma
+# flexão óbvia passava (revisão cruzada, #6). O plural regular (-s, -es, -ões
+# de -ão) e o feminino regular (-a, -as) de um par já atestado derivam-se pela
+# regra da língua e entram sem consulta nova; o que continua a exigir consulta
+# forma a forma é uma palavra NOVA, e uma flexão irregular. As formas
+# acrescentadas por esta regra não levam «fonte» própria: a fonte é a do par
+# de que derivam, logo acima delas.
 # =============================================================================
 
 autoridade:
@@ -53,11 +72,16 @@ autoridade:
 pares:
   - { anterior: 'acção', acordo: 'ação' }
   - { anterior: 'acções', acordo: 'ações' }
-  - { anterior: 'acto', acordo: 'ato' }
+  # SÓ DE IDA. «ato» é também a primeira pessoa do presente de «atar» («eu ato a
+  # corda»), e essa forma sempre se escreveu assim. A passagem para o Acordo é
+  # segura; a passagem inversa não é, e por isso a ferramenta assinala esta em
+  # vez de a trocar quando corre no sentido «anterior».
+  - { anterior: 'acto', acordo: 'ato', so_ida: true }
   - { anterior: 'actos', acordo: 'atos' }
   - { anterior: 'actor', acordo: 'ator' }
   - { anterior: 'actores', acordo: 'atores' }
   - { anterior: 'actriz', acordo: 'atriz' }
+  - { anterior: 'actrizes', acordo: 'atrizes' }
   - { anterior: 'actual', acordo: 'atual' }
   - { anterior: 'actuais', acordo: 'atuais' }
   - { anterior: 'actualmente', acordo: 'atualmente' }
@@ -70,6 +94,7 @@ pares:
   - { anterior: 'actualizadas', acordo: 'atualizadas' }
   - { anterior: 'actuar', acordo: 'atuar' }
   - { anterior: 'actuação', acordo: 'atuação' }
+  - { anterior: 'actuações', acordo: 'atuações' }
   - { anterior: 'activo', acordo: 'ativo' }
   - { anterior: 'activa', acordo: 'ativa' }
   - { anterior: 'activos', acordo: 'ativos' }
@@ -80,11 +105,15 @@ pares:
   - { anterior: 'desactivar', acordo: 'desativar' }
   - { anterior: 'desactivado', acordo: 'desativado' }
   - { anterior: 'desactivada', acordo: 'desativada' }
+  - { anterior: 'desactivados', acordo: 'desativados' }
+  - { anterior: 'desactivadas', acordo: 'desativadas' }
   - { anterior: 'adopção', acordo: 'adoção' }
   - { anterior: 'adopções', acordo: 'adoções' }
   - { anterior: 'adoptar', acordo: 'adotar' }
   - { anterior: 'adoptado', acordo: 'adotado' }
   - { anterior: 'adoptada', acordo: 'adotada' }
+  - { anterior: 'adoptados', acordo: 'adotados' }
+  - { anterior: 'adoptadas', acordo: 'adotadas' }
   - { anterior: 'afectar', acordo: 'afetar' }
   - { anterior: 'afecta', acordo: 'afeta' }
   - { anterior: 'afectado', acordo: 'afetado' }
@@ -93,15 +122,21 @@ pares:
   - { anterior: 'afectadas', acordo: 'afetadas' }
   - { anterior: 'arquitecto', acordo: 'arquiteto' }
   - { anterior: 'arquitectos', acordo: 'arquitetos' }
+  - { anterior: 'arquitecta', acordo: 'arquiteta' }
+  - { anterior: 'arquitectas', acordo: 'arquitetas' }
   - { anterior: 'arquitectura', acordo: 'arquitetura' }
+  - { anterior: 'arquitecturas', acordo: 'arquiteturas' }
   - { anterior: 'baptismo', acordo: 'batismo' }
+  - { anterior: 'baptismos', acordo: 'batismos' }
   - { anterior: 'baptizar', acordo: 'batizar' }
   - { anterior: 'colectivo', acordo: 'coletivo' }
   - { anterior: 'colectiva', acordo: 'coletiva' }
   - { anterior: 'colectivos', acordo: 'coletivos' }
   - { anterior: 'colectivas', acordo: 'coletivas' }
   - { anterior: 'concepção', acordo: 'conceção' }
+  - { anterior: 'concepções', acordo: 'conceções' }
   - { anterior: 'contracção', acordo: 'contração' }
+  - { anterior: 'contracções', acordo: 'contrações' }
   - { anterior: 'correcção', acordo: 'correção' }
   - { anterior: 'correcções', acordo: 'correções' }
   - { anterior: 'correcto', acordo: 'correto' }
@@ -110,10 +145,14 @@ pares:
   - { anterior: 'correctas', acordo: 'corretas' }
   - { anterior: 'correctamente', acordo: 'corretamente' }
   - { anterior: 'decepção', acordo: 'deceção' }
+  - { anterior: 'decepções', acordo: 'deceções' }
   - { anterior: 'detectar', acordo: 'detetar' }
   - { anterior: 'detectado', acordo: 'detetado' }
   - { anterior: 'detectada', acordo: 'detetada' }
+  - { anterior: 'detectados', acordo: 'detetados' }
+  - { anterior: 'detectadas', acordo: 'detetadas' }
   - { anterior: 'detecção', acordo: 'deteção' }
+  - { anterior: 'detecções', acordo: 'deteções' }
   - { anterior: 'direcção', acordo: 'direção' }
   - { anterior: 'direcções', acordo: 'direções' }
   - { anterior: 'directo', acordo: 'direto' }
@@ -123,13 +162,17 @@ pares:
   - { anterior: 'directamente', acordo: 'diretamente' }
   - { anterior: 'director', acordo: 'diretor' }
   - { anterior: 'directora', acordo: 'diretora' }
+  - { anterior: 'directoras', acordo: 'diretoras' }
   - { anterior: 'directores', acordo: 'diretores' }
   - { anterior: 'directório', acordo: 'diretório' }
+  - { anterior: 'directórios', acordo: 'diretórios' }
   - { anterior: 'directriz', acordo: 'diretriz' }
+  - { anterior: 'directrizes', acordo: 'diretrizes' }
   # «Direcção-Geral» é uma palavra só para efeito de procura, porque o hífen não
   # separa palavras nesta conferência (ver o cabeçalho de scripts/ortografia.mjs).
   # Por isso o composto tem par próprio: sem ele passaria despercebido.
   - { anterior: 'Direcção-Geral', acordo: 'Direção-Geral', caso: fixo }
+  - { anterior: 'Direcções-Gerais', acordo: 'Direções-Gerais', caso: fixo }
   - { anterior: 'efectivo', acordo: 'efetivo' }
   - { anterior: 'efectiva', acordo: 'efetiva' }
   - { anterior: 'efectivos', acordo: 'efetivos' }
@@ -138,11 +181,17 @@ pares:
   - { anterior: 'efectuar', acordo: 'efetuar' }
   - { anterior: 'efectuado', acordo: 'efetuado' }
   - { anterior: 'efectuada', acordo: 'efetuada' }
+  - { anterior: 'efectuados', acordo: 'efetuados' }
+  - { anterior: 'efectuadas', acordo: 'efetuadas' }
   - { anterior: 'eléctrico', acordo: 'elétrico' }
   - { anterior: 'eléctrica', acordo: 'elétrica' }
+  - { anterior: 'eléctricos', acordo: 'elétricos' }
+  - { anterior: 'eléctricas', acordo: 'elétricas' }
   - { anterior: 'electricidade', acordo: 'eletricidade' }
   - { anterior: 'electrónico', acordo: 'eletrónico' }
   - { anterior: 'electrónica', acordo: 'eletrónica' }
+  - { anterior: 'electrónicos', acordo: 'eletrónicos' }
+  - { anterior: 'electrónicas', acordo: 'eletrónicas' }
   - { anterior: 'espectáculo', acordo: 'espetáculo' }
   - { anterior: 'espectáculos', acordo: 'espetáculos' }
   - { anterior: 'exacto', acordo: 'exato' }
@@ -154,20 +203,32 @@ pares:
   - { anterior: 'excepção', acordo: 'exceção' }
   - { anterior: 'excepções', acordo: 'exceções' }
   - { anterior: 'excepcional', acordo: 'excecional' }
+  - { anterior: 'excepcionais', acordo: 'excecionais' }
   - { anterior: 'excepto', acordo: 'exceto' }
   - { anterior: 'extracção', acordo: 'extração' }
   - { anterior: 'extracções', acordo: 'extrações' }
   - { anterior: 'factura', acordo: 'fatura' }
   - { anterior: 'facturas', acordo: 'faturas' }
   - { anterior: 'facturação', acordo: 'faturação' }
+  - { anterior: 'facturações', acordo: 'faturações' }
   - { anterior: 'facturado', acordo: 'faturado' }
+  - { anterior: 'facturada', acordo: 'faturada' }
+  - { anterior: 'facturados', acordo: 'faturados' }
+  - { anterior: 'facturadas', acordo: 'faturadas' }
   - { anterior: 'infecção', acordo: 'infeção' }
+  - { anterior: 'infecções', acordo: 'infeções' }
   - { anterior: 'insecto', acordo: 'inseto' }
   - { anterior: 'insectos', acordo: 'insetos' }
   - { anterior: 'inspecção', acordo: 'inspeção' }
+  - { anterior: 'inspecções', acordo: 'inspeções' }
   - { anterior: 'inspector', acordo: 'inspetor' }
+  - { anterior: 'inspectora', acordo: 'inspetora' }
+  - { anterior: 'inspectores', acordo: 'inspetores' }
+  - { anterior: 'inspectoras', acordo: 'inspetoras' }
   - { anterior: 'lectivo', acordo: 'letivo' }
   - { anterior: 'lectiva', acordo: 'letiva' }
+  - { anterior: 'lectivos', acordo: 'letivos' }
+  - { anterior: 'lectivas', acordo: 'letivas' }
   - { anterior: 'objectivo', acordo: 'objetivo' }
   - { anterior: 'objectiva', acordo: 'objetiva' }
   - { anterior: 'objectivos', acordo: 'objetivos' }
@@ -180,7 +241,9 @@ pares:
   - { anterior: 'óptimas', acordo: 'ótimas' }
   - { anterior: 'optimizar', acordo: 'otimizar' }
   - { anterior: 'optimização', acordo: 'otimização' }
+  - { anterior: 'optimizações', acordo: 'otimizações' }
   - { anterior: 'percepção', acordo: 'perceção' }
+  - { anterior: 'percepções', acordo: 'perceções' }
   - { anterior: 'perspectiva', acordo: 'perspetiva' }
   - { anterior: 'perspectivas', acordo: 'perspetivas' }
   - { anterior: 'projecto', acordo: 'projeto' }
@@ -191,12 +254,21 @@ pares:
   - { anterior: 'projectados', acordo: 'projetados' }
   - { anterior: 'projectadas', acordo: 'projetadas' }
   - { anterior: 'protecção', acordo: 'proteção' }
+  - { anterior: 'protecções', acordo: 'proteções' }
   - { anterior: 'protector', acordo: 'protetor' }
+  - { anterior: 'protectora', acordo: 'protetora' }
+  - { anterior: 'protectores', acordo: 'protetores' }
+  - { anterior: 'protectoras', acordo: 'protetoras' }
   - { anterior: 'reacção', acordo: 'reação' }
   - { anterior: 'reacções', acordo: 'reações' }
   - { anterior: 'recepção', acordo: 'receção' }
+  - { anterior: 'recepções', acordo: 'receções' }
   - { anterior: 'redacção', acordo: 'redação' }
+  - { anterior: 'redacções', acordo: 'redações' }
   - { anterior: 'redactor', acordo: 'redator' }
+  - { anterior: 'redactora', acordo: 'redatora' }
+  - { anterior: 'redactores', acordo: 'redatores' }
+  - { anterior: 'redactoras', acordo: 'redatoras' }
   - { anterior: 'respectivo', acordo: 'respetivo' }
   - { anterior: 'respectiva', acordo: 'respetiva' }
   - { anterior: 'respectivos', acordo: 'respetivos' }
@@ -243,6 +315,9 @@ pares:
     acordo: 'setorial'
     fonte: 'https://voc.cplp.org/'
     nota: 'Como «sector»: as duas constam, a casa escreve «setorial».'
+  - anterior: 'sectoriais'
+    acordo: 'setoriais'
+    nota: 'Flexão regular de «sectorial».'
 
   # -------------------------------------------------------------------------
   # 2. O acento que deixa de se escrever.
@@ -271,6 +346,8 @@ pares:
   - { anterior: 'jóias', acordo: 'joias', nota: 'Base IX, 3, como «jóia».' }
   - { anterior: 'heróico', acordo: 'heroico', nota: 'Base IX, 3, nomeado no texto.' }
   - { anterior: 'heróica', acordo: 'heroica', nota: 'Base IX, 3, como «heróico».' }
+  - { anterior: 'heróicos', acordo: 'heroicos', nota: 'Base IX, 3, como «heróico».' }
+  - { anterior: 'heróicas', acordo: 'heroicas', nota: 'Base IX, 3, como «heróico».' }
 
   # -------------------------------------------------------------------------
   # 3. A maiúscula que passa a minúscula.
@@ -312,7 +389,9 @@ pares:
   - { anterior: 'co-autor', acordo: 'coautor' }
   - { anterior: 'co-autores', acordo: 'coautores' }
   - { anterior: 'co-autoria', acordo: 'coautoria' }
+  - { anterior: 'co-autorias', acordo: 'coautorias' }
   - { anterior: 'auto-avaliação', acordo: 'autoavaliação' }
+  - { anterior: 'auto-avaliações', acordo: 'autoavaliações' }
   - anterior: 'auto-contido'
     acordo: 'autocontido'
     fonte: 'http://www.portaldalinguaportuguesa.org/acordo.php?action=acordo&version=1990'
@@ -322,6 +401,8 @@ pares:
       hífen quando o segundo elemento começa por consoante diferente
       («autoestrada», «autoaprendizagem» são os exemplos do texto).
   - { anterior: 'auto-contida', acordo: 'autocontida', nota: 'Como «auto-contido».' }
+  - { anterior: 'auto-contidos', acordo: 'autocontidos', nota: 'Como «auto-contido».' }
+  - { anterior: 'auto-contidas', acordo: 'autocontidas', nota: 'Como «auto-contido».' }
 
 # -----------------------------------------------------------------------------
 # Só se assinalam. O sentido inverso destas trocas é ambíguo: de «para» não se
