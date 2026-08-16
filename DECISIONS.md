@@ -3903,7 +3903,7 @@ changed, but this run would write different bytes (X3)»). Do lado do sítio,
 `check-cruzamento.mjs` passou a exigir os mesmos campos, e apagar `historia` do
 ficheiro fecha a conferência offline com «o registo da travessia perdeu a sua
 história: falta "historia"». Repostos. De 26 para 31 conferências no exportador,
-e de 34 para 42 casos no ficheiro de saúde.
+e de 34 para 43 casos no ficheiro de saúde, 40 deles contra um estrago plantado.
 
 #### O selo, a data e o documento passaram a ser conferidos pela forma
 
