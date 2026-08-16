@@ -2,6 +2,9 @@
 dist/
 .astro/
 
+# feixe de cartões para o Claude Design (gerado por scripts/design-bundle.mjs)
+design-system/
+
 # dependencies
 node_modules/
 
