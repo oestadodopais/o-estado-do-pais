@@ -12,7 +12,7 @@ import InstrumentoMapa from '../components/InstrumentoMapa.astro';
 import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import { FIGURAS } from '../data/figuras.mjs';
 import { VERBATIM } from '../data/verbatim.mjs';
-import { VERIFICACAO } from '../data/verificacao.mjs';
+import { estadoDaVerificacao } from '../lib/prova.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 
@@ -21,17 +21,13 @@ const s = t(lang);
 const path = routePath('home', lang);
 
 /**
- * Há quantos dias a linha de base foi reconferida contra a fonte.
+ * Quando o painel foi reconferido contra a fonte, e se isso já passou do prazo.
  *
- * O número aparece na página. Se a verificação atrasar, a página di-lo por
- * palavras em vez de deixar um número parecer fresco — mesma regra da dívida
- * de proveniência: o leitor vê o que nós vemos.
+ * A conta vive em src/lib/prova.mjs e é a mesma que o cabeçalho de todas as
+ * páginas usa. Se a verificação atrasar, a página di-lo por palavras em vez de
+ * deixar uma data parecer fresca.
  */
-const diasDesdeVerificacao = Math.floor(
-  (Date.parse(`${new Date().toISOString().slice(0, 10)}T00:00:00Z`) -
-    Date.parse(`${VERIFICACAO.verificadoEm}T00:00:00Z`)) / 86400000,
-);
-const verificacaoVencida = diasDesdeVerificacao > VERIFICACAO.validadeDias;
+const verificacao = estadoDaVerificacao();
 ---
 
 <Base
@@ -43,11 +39,8 @@ const verificacaoVencida = diasDesdeVerificacao > VERIFICACAO.validadeDias;
 >
   <Masthead slot="masthead" lang={lang} path={path} compact={false} furniture={true} />
 
-  <p class="lede" style="margin-top:8px">{s.home.lede1}</p>
-  <p class="lede">{s.home.lede2}</p>
-
   <!-- ============================ O país em números verificados -->
-  <section id="numeros">
+  <section id="numeros" style="padding-top:clamp(18px,2.4vw,28px)">
     <div class="sec-head">
       <span class="eyebrow">{s.home.numeros.eyebrow}</span>
       <h2>{s.home.numeros.h2}</h2>
@@ -68,11 +61,9 @@ const verificacaoVencida = diasDesdeVerificacao > VERIFICACAO.validadeDias;
       }
     </div>
 
-    <p class="sec-sub" style="margin-top:20px">{s.home.numeros.nota}</p>
-
-    <p class="sec-sub verificacao" data-vencida={verificacaoVencida ? 'sim' : null}>
-      {verificacaoVencida ? s.home.numeros.verificacaoVencida : s.home.numeros.verificacaoEm}{' '}
-      <span data-nonledger="data-de-atualizacao">{VERIFICACAO.verificadoEm}</span>.
+    <p class="sec-sub verificacao" data-vencida={verificacao.vencida ? 'sim' : null}>
+      {verificacao.vencida ? s.sinal.vencido : s.sinal.reconferido}{' '}
+      <span data-nonledger="data-de-atualizacao">{verificacao.verificadoEm}</span>.
     </p>
   </section>
 

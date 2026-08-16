@@ -254,8 +254,25 @@ section {
   text-transform: uppercase;
   color: var(--ink);
 }
-.masthead-furniture span:not(:first-child) {
+.masthead-furniture span:not(:first-child)::before {
+  content: '· ';
+  color: var(--rule-strong);
+}
+/* A mobília do cabeçalho compacto é a mesma linha, mais discreta: nas páginas
+   interiores o sinal de tempo não compete com o conteúdo. */
+.masthead-compact .masthead-furniture {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid var(--rule);
+  font-size: 9.5px;
   color: var(--muted);
+}
+/* Verificação em atraso: a frase é mais longa e deixa de caber em versaletes
+   espaçados. Mesma regra da linha da primeira página. */
+.masthead-furniture [data-vencida='sim'] {
+  letter-spacing: 0.06em;
+  text-transform: none;
+  font-size: 11px;
 }
 
 /* ------------------------------------------------------------ afirmações */
@@ -1236,39 +1253,7 @@ a.src-chip:hover::before {
 .rodape {
   margin-top: clamp(56px, 7vw, 96px);
   border-top: 1.5px solid var(--ink);
-  padding: 26px 0 60px;
-  display: grid;
-  gap: 22px;
-}
-.rodape-linha {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 24px;
-  align-items: baseline;
-  justify-content: space-between;
-}
-.autoria {
-  font-size: 15px;
-  line-height: 1.55;
-  color: var(--ink);
-  max-width: 52ch;
-}
-.autoria a {
-  font-weight: 600;
-}
-.autoria-en {
-  font-size: 13px;
-  color: var(--muted);
-  margin-top: 4px;
-}
-.rodape-meta {
-  display: grid;
-  gap: 6px;
-  font-family: var(--f-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.06em;
-  color: var(--muted);
-  line-height: 1.6;
+  padding: 22px 0 60px;
 }
 .rodape-nav {
   display: flex;
@@ -2399,4 +2384,235 @@ a.src-chip:hover::before {
   font-size: 11px;
   color: var(--muted);
   overflow-wrap: anywhere;
+}
+
+
+/* ============================================================
+   SOBRE · MÉTODO · CORREÇÕES — a voz do sítio (16.08.2026)
+   ============================================================ */
+
+/* ------------------------------------------------------------ /sobre */
+
+/* Disposição A, com uma diferença: o texto decidido é a lede da página, e não
+   há mais nada a seguir a não ser a porta. */
+.sobre-secao {
+  padding-top: clamp(24px, 3.4vw, 40px);
+}
+.sobre-texto {
+  max-width: 62ch;
+}
+.sobre-porta {
+  margin-top: clamp(22px, 3vw, 32px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+}
+.sobre-porta a {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--rule-strong);
+  padding-bottom: 2px;
+}
+.sobre-porta a:hover {
+  border-bottom-color: var(--ink);
+}
+.sobre-porta-nota {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ------------------------------------------------------------ as regras */
+
+.regra-cabeca {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.regra-n {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  min-width: 1.6em;
+}
+.regra-linha {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 4px 14px;
+  align-items: baseline;
+}
+@media (max-width: 640px) {
+  .regra-linha {
+    grid-template-columns: 1fr;
+  }
+}
+.regra-k {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.regra-v {
+  font-size: 15px;
+  line-height: 1.62;
+  color: var(--muted);
+  max-width: 66ch;
+}
+.regra-linha-prova .regra-v {
+  color: var(--ink);
+}
+.regra-prova {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  line-height: 1.9;
+}
+.regra-prova-nota {
+  color: var(--muted);
+}
+.regra-sep {
+  color: var(--rule-strong);
+}
+.regra-portas {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.regra-portas a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.regra-portas a:hover {
+  color: var(--ink);
+}
+
+/* ---------------------------------------------- os números do próprio sítio */
+
+/*
+ * IDENTIDADE §10. Monoespaçado como todo o número que não é prosa, mas SEM
+ * selo: não é um valor do livro-razão. É sempre uma ligação, e o sublinhado
+ * é o que diz que se abre.
+ */
+.prova-valor {
+  font-family: var(--f-mono);
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-strong);
+  padding-bottom: 1px;
+  white-space: nowrap;
+}
+.prova-valor:hover {
+  border-bottom-color: var(--ink);
+}
+.prova-vazio {
+  font-family: var(--f-mono);
+  color: var(--muted);
+}
+
+/* ------------------------------------------------------------ o instrumento */
+
+.mecanismo {
+  border-top: 1.5px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding: clamp(18px, 2.4vw, 26px) 0 clamp(16px, 2vw, 22px);
+}
+.mecanismo-svg {
+  display: block;
+  width: 100%;
+  min-width: 760px;
+  height: auto;
+}
+.mecanismo-caixa {
+  fill: var(--paper-2);
+  stroke: var(--rule-strong);
+  stroke-width: 1;
+}
+.mecanismo-rotulo {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  fill: var(--ink);
+}
+.mecanismo-num {
+  font-family: var(--f-mono);
+  font-size: 19px;
+  font-weight: 600;
+  fill: var(--ink);
+}
+.mecanismo-cap {
+  font-family: var(--f-mono);
+  font-size: 8.5px;
+  letter-spacing: 0.06em;
+  fill: var(--muted);
+}
+.mecanismo-cap-so {
+  font-size: 10px;
+}
+.mecanismo-seta {
+  stroke: var(--rule-strong);
+  stroke-width: 1.2;
+  fill: none;
+}
+.mecanismo-seta-longa {
+  stroke-dasharray: 3 3;
+}
+.mecanismo-ponta {
+  fill: var(--rule-strong);
+}
+.mecanismo-legenda {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 16px;
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.mecanismo-legenda-k {
+  font-weight: 700;
+  color: var(--muted);
+}
+.mecanismo-legenda a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+.mecanismo-legenda a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+.mecanismo-breve {
+  margin-top: 16px;
+  max-width: 60ch;
+}
+
+/* ------------------------------------------------------------ /estudos */
+
+.estudos-contagens {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 22px;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
 }

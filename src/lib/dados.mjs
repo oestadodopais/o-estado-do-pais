@@ -30,7 +30,7 @@ import {
   regiaoDe,
 } from '../data/caop-centroids.mjs';
 import { VERBATIM } from '../data/verbatim.mjs';
-import { SITE_NAME, SITE_HOST_DISPLAY, METHOD_LINE, EDITION } from '../../site.config.mjs';
+import { SITE_NAME, SITE_HOST_DISPLAY, METHOD_LINE } from '../../site.config.mjs';
 
 /**
  * Onde cada ficheiro é servido. Uma constante só, partilhada pelas ligações das
@@ -52,14 +52,23 @@ function linha(campos) {
   return campos.map(campo).join(',');
 }
 
-/** Cabeçalho comum: quem publica, que edição, e onde está o método. */
+/**
+ * Cabeçalho comum: quem publica e onde está o método.
+ *
+ * A linha «Edição de …» saiu a 16.08.2026 com a própria `EDITION`
+ * (DECISIONS §1.39). Não foi substituída por outra data: um ficheiro de dados
+ * gerado a cada construção carimbado com a data da construção diria que os
+ * dados mudaram sempre que o sítio é reconstruído, que é falso. Quem quiser
+ * saber de quando é cada valor tem, em cada linha, o id da afirmação e a sua
+ * data de referência.
+ */
 function preambulo(titulo) {
   return [
     `# ${SITE_NAME} — ${titulo}`,
     `# ${METHOD_LINE}`,
     '#',
     `# https://${SITE_HOST_DISPLAY}/metodo`,
-    `# Edição de ${EDITION.display}. Gerado na construção do sítio.`,
+    '# Gerado na construção do sítio.',
     '# NÃO EDITAR À MÃO: a construção seguinte reescreve este ficheiro.',
   ];
 }

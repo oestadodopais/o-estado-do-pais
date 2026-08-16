@@ -19,10 +19,23 @@ export const STRINGS = {
 
     nav: {
       inicio: 'Início',
+      municipios: 'Municípios',
       estudos: 'Estudos',
       livro: 'Livro-razão',
       metodo: 'Método',
+      correcoes: 'Correções',
+      sobre: 'Sobre',
       saltar: 'Saltar para o conteúdo',
+    },
+
+    /**
+     * O sinal de tempo. Uma cadeia só, lida pelo cabeçalho de todas as
+     * páginas e pela primeira página: duas frases para o mesmo facto seriam
+     * duas frases de moldura, e divergiriam à primeira alteração.
+     */
+    sinal: {
+      reconferido: 'Painel reconferido a',
+      vencido: 'Verificação em atraso: o painel não é reconferido contra a fonte desde',
     },
 
     prov: {
@@ -53,13 +66,15 @@ export const STRINGS = {
       abrirNaPagina: 'Abrir o documento na página',
     },
 
+    /**
+     * O rodapé é navegação e mais nada desde 16.08.2026: a linha de autoria
+     * passou para o Sobre, e a linha do domínio e a data de edição saíram
+     * (§1.39). O que resta são os rótulos das duas contagens do arquivo, que
+     * passaram do cabeçalho para a página dos estudos.
+     */
     rodape: {
-      metodoTexto: 'Como isto é feito',
-      edicao: 'Edição de',
-      municipios: 'municípios',
-      estudos: 'estudos',
+      estudos: 'trabalhos no arquivo',
       edicoes: 'edições',
-      dominioNota: 'Domínio canónico',
     },
 
     /**
@@ -126,22 +141,24 @@ export const STRINGS = {
       mapaLink: 'O mapa dos concelhos',
     },
 
+    /**
+     * A primeira página não se explica antes de mostrar.
+     *
+     * Saíram, a 16.08.2026 (§1.39): a introdução (dizia por outras palavras o
+     * que a linha de método do cabeçalho já diz, e a ideia passou a ter casa
+     * no Sobre); a frase da mecânica (o sítio a descrever o próprio portão); e
+     * a nota dos campos por confirmar (a página do marcador di-lo, e o selo a
+     * tracejado mostra-o). O que sobra do subtítulo do painel é o que ele é.
+     */
     home: {
       metaTitle: 'O Estado do País · Portugal, medido',
       metaDescription:
         'Observatório de dados sobre Portugal. Cada número publicado tem uma linha no livro-razão, com fonte, documento e data de acesso.',
-      lede1:
-        'Este é um observatório de dados sobre Portugal. Mede o país e mostra de onde vem cada medida.',
-      lede2:
-        'Nenhum número aparece aqui sem uma linha no livro-razão: valor tal como foi publicado, fonte, documento, data de acesso e, quando é calculado, a aritmética explicada. Um número sem essa linha não passa no build.',
 
       numeros: {
         eyebrow: 'O país em números verificados',
         h2: 'Medidas do painel europeu',
-        sub: 'Estes indicadores não são escolha nossa. São os do painel de desequilíbrios macroeconómicos e do painel social europeu, o conjunto com que as instituições avaliam um Estado-Membro, com os limiares que elas próprias publicam. Cada valor está tal como foi publicado, e a etiqueta diz de onde veio.',
-        nota: 'Os campos por confirmar aparecem marcados. Nenhum foi preenchido com um valor plausível.',
-        verificacaoEm: 'Linha de base reconferida contra a fonte a',
-        verificacaoVencida: 'Verificação em atraso: estes valores não são reconferidos contra a fonte desde',
+        sub: 'O painel de desequilíbrios macroeconómicos e o painel social europeu, com os limiares que as instituições publicam.',
       },
 
       instr1: {
@@ -220,13 +237,77 @@ export const STRINGS = {
       },
     },
 
+    /** O Sobre: duas frases decididas e uma porta. Nada mais rende aqui. */
+    sobre: {
+      metaTitle: 'Sobre · O Estado do País',
+      metaDescription:
+        'O que é O Estado do País, em duas frases, e a porta para o método que as sustenta.',
+      h1: 'Sobre',
+    },
+
     metodo: {
       metaTitle: 'Método · O Estado do País',
       metaDescription:
-        'Quem faz este observatório, como se escreve, o que é o livro-razão, como se corrigem os erros e o que não se afirma sobre causas.',
+        'As dez regras deste observatório, o mecanismo que impõe cada uma e os números que o provam nesta construção.',
       h1: 'Método',
-      avisoTraducao: 'Tradução por rever.',
-      correcoesVazioK: 'Registo de correções',
+      mecanismoK: 'Mecanismo',
+      provaK: 'Prova',
+      limiteK: 'O que isto não apanha',
+
+      /** O instrumento: a cadeia desenhada, com os números de hoje. */
+      instrumento: {
+        svgTitulo: 'O mecanismo, das fontes ao leitor',
+        svgDescricao:
+          'Uma cadeia de seis passos, da esquerda para a direita: fontes, motor de investigação, livro-razão, construção do sítio, página e leitor. Três retornos entram na cadeia: a agenda alimenta o motor, a releitura alimenta o livro-razão, e a correção escrita pelo leitor volta ao livro-razão. Cada passo mostra os números desta construção.',
+        fontes: 'FONTES',
+        motor: 'MOTOR',
+        livro: 'LIVRO-RAZÃO',
+        construcao: 'CONSTRUÇÃO',
+        pagina: 'PÁGINA',
+        leitor: 'LEITOR',
+        agenda: 'AGENDA',
+        releitura: 'RELEITURA',
+        correcoes: 'CORREÇÕES',
+        capOrganismos: 'organismos',
+        capAtravessadas: 'linhas atravessadas',
+        capLinhas: 'linhas',
+        capPorConfirmar: 'por confirmar',
+        capContas: 'contas refeitas',
+        capNoMapa: 'linhas no mapa do sítio',
+        capItens: 'itens',
+        capRegistadas: 'registadas',
+        capReconferido: 'reconferido a',
+        capEmAtraso: 'em atraso desde',
+        capPublicadas: 'publicadas',
+        capSemContagem: 'não é contado',
+        semRegisto: 'sem registo',
+        legendaK: 'Portas',
+      },
+    },
+
+    /** A casa única da política das correções, e do registo. */
+    correcoes: {
+      metaTitle: 'Correções · O Estado do País',
+      metaDescription:
+        'A política de correções deste sítio e o registo de todas: o valor anterior à vista, datado, com o motivo, e nada apagado.',
+      eyebrow: 'Correções',
+      h1: 'O que foi corrigido, e o que mudou',
+      lede: 'Corrigir em silêncio é a forma mais barata de mentir. Toda a correção deste sítio é pública, datada e permanente, com o valor anterior à vista.',
+      politicaK: 'A política',
+      politicaV:
+        'Uma entrada do registo guarda o valor anterior, o valor novo, a data, o motivo e a linha do livro-razão que mudou. Nada é removido: uma entrada corrigida acresce à história daquela linha, não a substitui. São três naturezas, e não se misturam:',
+      naturezas: [
+        { k: 'Correção.', v: 'O valor publicado estava errado. É uma confissão, e é a razão de o registo existir.' },
+        { k: 'Atualização.', v: 'O valor estava certo e deixou de estar, porque aquilo que mede mudou. Não é um erro.' },
+        { k: 'Revisão de proveniência.', v: 'O valor não mudou; mudou o caminho até à fonte, um endereço por exemplo. Não é erro nem atualização.' },
+      ],
+      enderecoA: 'Quem encontrar um erro escreve para ',
+      enderecoB:
+        '. Um erro confirmado entra no registo com crédito a quem o encontrou, se o desejar.',
+      metodoLink: 'A regra, no Método',
+      registoK: 'O registo',
+      caixaTitulo: 'Escrever uma correção',
+
       registoCorrecoesK: 'Correções',
       registoCorrecoesNota:
         'Valores que estavam errados. Cada um fica com o valor anterior à vista, datado, e nenhum é removido.',
@@ -239,16 +320,12 @@ export const STRINGS = {
       registoProvenienciaNota:
         'O valor não mudou; mudou a maneira de lá chegar: uma fonte que muda de endereço, por exemplo. Não são erros nem atualizações, e não se listam aqui uma a uma: são muitas de cada vez e afogariam as correções. Cada linha abaixo leva à sua própria história, onde a revisão está escrita por extenso.',
       correcoesVazioV: 'Nenhuma correção publicada até hoje.',
-      correcoesVazioNota:
-        'Quando um valor for corrigido, a entrada aparece aqui e na própria linha do livro-razão: data, valor antigo, valor novo, motivo. Nada é apagado.',
       colunaData: 'Data',
       colunaAntigo: 'Valor antigo',
       colunaNovo: 'Valor novo',
       colunaMotivo: 'Motivo',
       colunaAfirmacao: 'Afirmação',
-      livroLink: 'Ver o livro-razão',
 
-      caixaTitulo: 'Escrever uma correção',
       caixaNota:
         'Escreva aqui e o botão abre o seu programa de correio com o texto já dentro. Nada é enviado deste sítio: a mensagem sai de si, para si ficar com uma cópia.',
       caixaExemplo:
@@ -502,10 +579,18 @@ export const STRINGS = {
 
     nav: {
       inicio: 'Home',
+      municipios: 'Municipalities',
       estudos: 'Studies',
       livro: 'Ledger',
       metodo: 'Method',
+      correcoes: 'Corrections',
+      sobre: 'About',
       saltar: 'Skip to content',
+    },
+
+    sinal: {
+      reconferido: 'Panel re-checked on',
+      vencido: 'Verification overdue: the panel has not been re-checked against the source since',
     },
 
     prov: {
@@ -532,12 +617,8 @@ export const STRINGS = {
     },
 
     rodape: {
-      metodoTexto: 'How this is made',
-      edicao: 'Edition of',
-      municipios: 'municipalities',
-      estudos: 'studies',
+      estudos: 'works in the archive',
       edicoes: 'editions',
-      dominioNota: 'Canonical domain',
     },
 
     porta: {
@@ -600,18 +681,11 @@ export const STRINGS = {
       metaTitle: 'O Estado do País · Portugal, measured',
       metaDescription:
         'A data observatory on Portugal. Every published figure has a row in the ledger, with source, document and access date.',
-      lede1:
-        'This is a data observatory on Portugal. It measures the country and shows where each measurement came from.',
-      lede2:
-        'No figure appears here without a row in the ledger: the value exactly as published, the source, the document, the access date and, when it is calculated, the arithmetic spelled out. A figure without that row fails the build.',
 
       numeros: {
         eyebrow: 'The country in verified figures',
         h2: 'Measures from the European scoreboard',
-        sub: 'These indicators are not our choice. They are the macroeconomic imbalance and social scoreboards, the set the European institutions use to assess a member state, with the thresholds those institutions publish themselves. Every value is exactly as published, and the tag says where it came from.',
-        nota: 'Fields still to be confirmed are marked as such. None has been filled in with a plausible value.',
-        verificacaoEm: 'Baseline last re-checked against source on',
-        verificacaoVencida: 'Verification overdue: these values have not been re-checked against source since',
+        sub: 'The macroeconomic imbalance scoreboard and the European social scoreboard, with the thresholds the institutions publish.',
       },
 
       instr1: {
@@ -688,13 +762,73 @@ export const STRINGS = {
       },
     },
 
+    sobre: {
+      metaTitle: 'About · O Estado do País',
+      metaDescription:
+        'What O Estado do País is, in two sentences, and the door to the method that holds them up.',
+      h1: 'About',
+    },
+
     metodo: {
       metaTitle: 'Method · O Estado do País',
       metaDescription:
-        'Who makes this observatory, how it is written, what the ledger is, how errors are corrected and what is not claimed about causes.',
+        'The ten rules of this observatory, the mechanism that enforces each one and the figures that prove it in this build.',
       h1: 'Method',
-      avisoTraducao: 'This is a translation of the Portuguese text and is awaiting the director’s review. The markers in square brackets are kept in Portuguese, as in the original, with an English gloss.',
-      correcoesVazioK: 'Corrections log',
+      mecanismoK: 'Mechanism',
+      provaK: 'Proof',
+      limiteK: 'What this does not catch',
+
+      instrumento: {
+        svgTitulo: 'The mechanism, from the sources to the reader',
+        svgDescricao:
+          'A chain of six steps, left to right: sources, research engine, ledger, site build, page and reader. Three returns feed into the chain: the agenda feeds the engine, the re-reading feeds the ledger, and the correction written by the reader goes back into the ledger. Each step shows the figures for this build.',
+        fontes: 'SOURCES',
+        motor: 'ENGINE',
+        livro: 'LEDGER',
+        construcao: 'BUILD',
+        pagina: 'PAGE',
+        leitor: 'READER',
+        agenda: 'AGENDA',
+        releitura: 'RE-READING',
+        correcoes: 'CORRECTIONS',
+        capOrganismos: 'organisms',
+        capAtravessadas: 'rows crossed',
+        capLinhas: 'rows',
+        capPorConfirmar: 'to confirm',
+        capContas: 'sums redone',
+        capNoMapa: 'rows in the sitemap',
+        capItens: 'items',
+        capRegistadas: 'on record',
+        capReconferido: 're-checked on',
+        capEmAtraso: 'overdue since',
+        capPublicadas: 'published',
+        capSemContagem: 'not counted',
+        semRegisto: 'no record',
+        legendaK: 'Doors',
+      },
+    },
+
+    correcoes: {
+      metaTitle: 'Corrections · O Estado do País',
+      metaDescription:
+        'The corrections policy of this site and the register of them all: the previous value in plain sight, dated, with the reason, and nothing deleted.',
+      eyebrow: 'Corrections',
+      h1: 'What was corrected, and what changed',
+      lede: 'Correcting in silence is the cheapest way of lying. Every correction on this site is public, dated and permanent, with the previous value in plain sight.',
+      politicaK: 'The policy',
+      politicaV:
+        'An entry in the register holds the previous value, the new value, the date, the reason and the ledger row that changed. Nothing is removed: a corrected entry is added to that row’s history, it does not replace it. There are three kinds, and they are not mixed:',
+      naturezas: [
+        { k: 'Correction.', v: 'The published value was wrong. It is a confession, and it is the reason the register exists.' },
+        { k: 'Update.', v: 'The value was right and stopped being so, because what it measures changed. It is not an error.' },
+        { k: 'Provenance revision.', v: 'The value did not change; the route to the source did, an address for example. It is neither an error nor an update.' },
+      ],
+      enderecoA: 'Anyone who finds an error writes to ',
+      enderecoB: '. A confirmed error enters the register with credit to whoever found it, if they wish.',
+      metodoLink: 'The rule, in the Method',
+      registoK: 'The register',
+      caixaTitulo: 'Write a correction',
+
       registoCorrecoesK: 'Corrections',
       registoCorrecoesNota:
         'Values that were wrong. Each keeps its previous value in plain sight, dated, and none is removed.',
@@ -707,16 +841,12 @@ export const STRINGS = {
       registoProvenienciaNota:
         'The value did not change; the way to find it did: a source that moves address, for example. They are neither errors nor updates, and they are not listed one by one here: they come many at a time and would drown the corrections. Each row below leads to its own history, where the revision is written out in full.',
       correcoesVazioV: 'No corrections published to date.',
-      correcoesVazioNota:
-        'When a value is corrected, the entry appears here and in the ledger row itself: date, old value, new value, reason. Nothing is deleted.',
       colunaData: 'Date',
       colunaAntigo: 'Old value',
       colunaNovo: 'New value',
       colunaMotivo: 'Reason',
       colunaAfirmacao: 'Claim',
-      livroLink: 'See the ledger',
 
-      caixaTitulo: 'Write a correction',
       caixaNota:
         'Write here and the button opens your own mail program with the text already in it. Nothing is sent from this site: the message leaves from you, so you keep a copy of it.',
       caixaExemplo:

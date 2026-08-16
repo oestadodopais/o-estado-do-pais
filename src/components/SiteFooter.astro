@@ -1,56 +1,50 @@
 ---
 /**
- * Rodapé.
+ * Rodapé: navegação, e mais nada.
  *
- * A linha de autoria é obrigatória em todas as páginas e vai literal, em
- * português, nas duas edições — é uma declaração de autoria, não uma frase
- * de circunstância. Na edição inglesa leva uma tradução por baixo, em letra
- * pequena, para que o leitor inglês perceba o que está a ler.
+ * ---------------------------------------------------------------------------
+ * O QUE SAIU DAQUI, E PORQUÊ (16.08.2026, DECISIONS §1.39)
+ * ---------------------------------------------------------------------------
+ * · A LINHA DE AUTORIA. «Escrito por IA, dirigido por uma pessoa» estava em
+ *   todas as páginas e era uma declaração dita de passagem, no sítio onde
+ *   ninguém lê. A autoria passou a ter casa: está no Sobre, nas palavras da
+ *   própria direção, e o que todas as páginas levam é a PORTA para lá. O
+ *   portão deixou de contar a linha e passou a contar a porta.
  *
- * O portão de HTML falha o build se esta linha desaparecer de uma página.
+ * · A LINHA DO DOMÍNIO. Era meta: o leitor está no domínio, e o canónico já
+ *   está no <head> para quem o precisa.
+ *
+ * · A DATA DE EDIÇÃO. Escrita à mão em site.config.mjs, dizia quando alguém
+ *   decidiu chamar-lhe uma edição. O sinal de tempo é agora o do cabeçalho, e
+ *   é gerado.
+ *
+ * A PÁGINA DO MARCADOR não entra nesta navegação, e é decisão: `/a-verificar`
+ * é a definição de um sinal, e alcança-se de onde o sinal aparece (a linha
+ * incompleta, o índice do livro-razão, a regra do selo no Método). Uma lista de
+ * secções não é um glossário.
  */
-import { SITE_NAME, AUTHORSHIP_LINE, EDITION, SITE_HOST_DISPLAY } from '../../site.config.mjs';
 import { routePath, otherLanguagePath, normalizePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 
 const { lang = 'pt', path } = Astro.props;
 const s = t(lang);
 const aqui = normalizePath(path ?? Astro.url.pathname);
-
-const home = routePath('home', lang);
-const estudos = routePath('estudos', lang);
-const livro = routePath('livro', lang);
-const metodo = routePath('metodo', lang);
 const outra = otherLanguagePath(aqui, lang);
+
+const secoes = [
+  ['home', s.nav.inicio],
+  ['municipios', s.nav.municipios],
+  ['estudos', s.nav.estudos],
+  ['livro', s.nav.livro],
+  ['metodo', s.nav.metodo],
+  ['correcoes', s.nav.correcoes],
+  ['sobre', s.nav.sobre],
+];
 ---
 
 <footer class="rodape">
-  <div class="rodape-linha">
-    <div>
-      <p class="autoria" lang="pt-PT">
-        {AUTHORSHIP_LINE} <a href={metodo}>{s.rodape.metodoTexto}</a>.
-      </p>
-      {
-        lang === 'en' && (
-          <p class="autoria-en" lang="en">
-            Written by AI, directed by a person.
-          </p>
-        )
-      }
-    </div>
-
-    <nav class="rodape-nav" aria-label={s.nav.inicio}>
-      <a href={home}>{s.nav.inicio}</a>
-      <a href={estudos}>{s.nav.estudos}</a>
-      <a href={livro}>{s.nav.livro}</a>
-      <a href={metodo}>{s.nav.metodo}</a>
-      <a href={outra} hreflang={lang === 'pt' ? 'en' : 'pt-PT'}>{s.outraLingua}</a>
-    </nav>
-  </div>
-
-  <div class="rodape-meta">
-    <span>{SITE_NAME}</span>
-    <span data-nonledger="data-de-edicao">{s.rodape.edicao} {EDITION.display}</span>
-    <span>{s.rodape.dominioNota}: {SITE_HOST_DISPLAY}</span>
-  </div>
+  <nav class="rodape-nav" aria-label={s.nav.inicio}>
+    {secoes.map(([rota, rotulo]) => <a href={routePath(rota, lang)}>{rotulo}</a>)}
+    <a href={outra} hreflang={lang === 'pt' ? 'en' : 'pt-PT'}>{s.outraLingua}</a>
+  </nav>
 </footer>

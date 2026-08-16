@@ -8,6 +8,7 @@
  * do título, à espera do director. O aviso no topo di-lo por palavras.
  */
 import Base from '../layouts/Base.astro';
+import Claim from '../components/Claim.astro';
 import { EDITIONS } from '../data/studies.mjs';
 import { POR_VERIFICAR } from '../data/studies.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -22,6 +23,19 @@ const path = routePath('estudos', lang);
   <div style="padding-top:clamp(20px,3vw,34px)">
     <h1>{s.estudos.h1}</h1>
     <p class="lede" style="margin-top:16px">{s.estudos.lede}</p>
+
+    {/* As contagens do arquivo. Estavam na mobília do cabeçalho de todas as
+        páginas, onde se liam como cobertura do país; passaram para aqui, que é
+        a página que elas contam (DECISIONS §1.39). Cada uma continua a ser um
+        valor do livro-razão, com o selo que abre a sua linha. */}
+    <p class="estudos-contagens">
+      <span>
+        <Claim id="estudos-publicados" lang={lang} chip={true} /> {s.rodape.estudos}
+      </span>
+      <span>
+        <Claim id="edicoes-publicadas" lang={lang} chip={true} /> {s.rodape.edicoes}
+      </span>
+    </p>
   </div>
 
   <div style="margin-top:clamp(30px,4vw,44px)">

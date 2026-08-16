@@ -6,37 +6,62 @@
  * em mais lado nenhum. A linha de método vem de site.config.mjs e não é
  * traduzida: é identidade, como o nome.
  *
- * A mobília do cabeçalho (data de edição, contagens) é a única linha da
- * página onde há algarismos que não são medições do país — daí o
- * data-nonledger nas datas e os <Claim> nas contagens — cada uma com o seu selo,
- * que é a porta para a linha daquela contagem (IDENTIDADE §5.3).
+ * ---------------------------------------------------------------------------
+ * A MOBÍLIA É O SINAL DE TEMPO, E MAIS NADA (16.08.2026, DECISIONS §1.39)
+ * ---------------------------------------------------------------------------
+ * Saíram daqui duas coisas:
+ *
+ *   · «Edição de …» — uma data editorial, escrita à mão em site.config.mjs,
+ *     que dizia ao leitor quando alguém decidiu chamar-lhe uma edição, e não
+ *     quando alguma coisa foi conferida. O sinal de tempo passa a ser o único
+ *     que o sítio gera: a data da última reconferência do painel contra a
+ *     fonte. Quando passa do prazo, di-lo por palavras em vez de mostrar uma
+ *     data que parece fresca.
+ *
+ *   · as três contagens (municípios, estudos, edições) com os seus selos —
+ *     liam-se como cobertura, e a cobertura deste sítio é um concelho em
+ *     trezentos e oito. A contagem dos concelhos vive no mapa e em
+ *     `/municipios`; as do arquivo vivem em `/estudos`, que é a página que
+ *     elas contam.
+ *
+ * A data é contexto estrutural, e leva o mesmo motivo declarado que a primeira
+ * página já lhe dá («data-de-atualizacao»): é a data da leitura, não a leitura.
+ *
+ * O ESPAÇO DA AGENDA fica preparado e vazio: quando `/agenda` existir, entra
+ * aqui, depois do ponto médio, pela mesma mobília.
  */
-import { SITE_NAME, METHOD_LINE, EDITION } from '../../site.config.mjs';
+import { SITE_NAME, METHOD_LINE } from '../../site.config.mjs';
 import { routePath, otherLanguagePath, normalizePath } from '../lib/routes.mjs';
+import { estadoDaVerificacao } from '../lib/prova.mjs';
 import { t } from '../i18n/strings.mjs';
-import Claim from './Claim.astro';
 
 const { lang = 'pt', path, compact = false, furniture = false } = Astro.props;
 const s = t(lang);
 const aqui = normalizePath(path ?? Astro.url.pathname);
 
 const home = routePath('home', lang);
+const municipios = routePath('municipios', lang);
 const estudos = routePath('estudos', lang);
 const livro = routePath('livro', lang);
 const metodo = routePath('metodo', lang);
+const sobre = routePath('sobre', lang);
 const outra = otherLanguagePath(aqui, lang);
 
 const atual = (p) => (normalizePath(p) === aqui ? 'page' : undefined);
 const NomeTag = compact ? 'p' : 'h1';
+
+const verificacao = estadoDaVerificacao();
 ---
 
 <header>
   <div class="topbar">
     <nav class="nav" aria-label={s.nav.inicio}>
       <a href={home} aria-current={atual(home)}>{s.nav.inicio}</a>
+      <a href={municipios} aria-current={atual(municipios)}>{s.nav.municipios}</a>
       <a href={estudos} aria-current={atual(estudos)}>{s.nav.estudos}</a>
       <a href={livro} aria-current={atual(livro)}>{s.nav.livro}</a>
       <a href={metodo} aria-current={atual(metodo)}>{s.nav.metodo}</a>
+      <a href={sobre} aria-current={atual(sobre)}>{s.nav.sobre}</a>
     </nav>
     <nav class="nav" aria-label={s.outraLingua}>
       <a class="lang" href={outra} hreflang={lang === 'pt' ? 'en' : 'pt-PT'} lang={lang === 'pt' ? 'en' : 'pt-PT'}>
@@ -53,19 +78,20 @@ const NomeTag = compact ? 'p' : 'h1';
 
     {
       furniture && (
-        <div class="masthead-furniture">
-          <span data-nonledger="data-de-edicao">
-            {s.rodape.edicao} {EDITION.display}
+        <div class="masthead-furniture" data-sinal-de-tempo>
+          <span data-vencida={verificacao.vencida ? 'sim' : null}>
+            {verificacao.vencida ? s.sinal.vencido : s.sinal.reconferido}{' '}
+            <span data-nonledger="data-de-atualizacao">{verificacao.verificadoEm}</span>
           </span>
-          <span>
-            <Claim id="municipios-portugal-caop-2025" lang={lang} chip={true} /> {s.rodape.municipios}
-          </span>
-          <span>
-            <Claim id="estudos-publicados" lang={lang} chip={true} /> {s.rodape.estudos}
-          </span>
-          <span>
-            <Claim id="edicoes-publicadas" lang={lang} chip={true} /> {s.rodape.edicoes}
-          </span>
+          {/* --------------------------------------------------------------
+              O ESPAÇO DA AGENDA. Quando `/agenda` existir, a linha entra aqui,
+              como segundo `<span>` desta mobília (o «·» é desenhado pelo CSS,
+              entre irmãos). Lê-se de `src/data/agenda.json` pela mesma prova
+              que o Método usa (`prova(lang).agenda_*`), e rende NADA enquanto
+              o ficheiro não existir: um rótulo «Agenda» sem agenda é pior do
+              que nenhum. Ver DECISIONS §1.39, «o que fica para o agente da
+              agenda».
+              -------------------------------------------------------------- */}
         </div>
       )
     }
