@@ -85,6 +85,9 @@ const estudos = m.estudos.map((id) => {
     id,
     titulo: studyLabel(id, lang),
     descricao: w.description[lang],
+    /* Onde a descrição É a frase de abertura do documento, a página não a
+       escreve: transcreve-a, e o portão compara-a com o registo. */
+    verbatimDaAbertura: w.verbatimDaAbertura?.[lang] ?? null,
     rota: routePath('estudo', lang, { slug: w.slug }),
     /* Uma linha de índice sem leitura escrita di-lo, em vez de repetir o
        título (IDENTIDADE §7). */
@@ -549,7 +552,13 @@ const metodoPath = routePath('metodo', lang);
             estudos.map((e) => (
               <article class="mun-estudo">
                 <h3 class="mun-estudo-titulo" data-nonledger="titulo-de-estudo">{e.titulo}</h3>
-                <p class="mun-estudo-frase">{e.descricao}</p>
+                <p class="mun-estudo-frase">
+                  {e.verbatimDaAbertura ? (
+                    <span data-verbatim={e.verbatimDaAbertura}>{e.descricao}</span>
+                  ) : (
+                    e.descricao
+                  )}
+                </p>
                 <p>
                   <a class="ligacao-dados" href={e.rota}>
                     {e.temLeitura ? s.municipio.estudoLink : s.estudos.verEstudo} →

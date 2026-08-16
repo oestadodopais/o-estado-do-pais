@@ -3357,13 +3357,17 @@ fácil, não para tornar o desonesto impossível.
 - **A dispensa não afrouxou o varrimento das páginas:** com o documento
   sintético alojado, dois números metidos na página de estudo deram quarenta
   erros — dois por página, nas vinte páginas de estudo.
-- **Treze documentos reais alojados** (§1.20, §1.21): o build fecha a 40 páginas,
-  com o portão de HTML a reconstruir os treze contra a origem e a encontrá-los
-  iguais carácter a carácter. A única diferença entre origem e construído é a
-  faixa, entre 1529 e 1593 bytes conforme a língua e o slug.
-- **Os treze endereços existem no `dist/`** e devolvem `200 text/html` no
-  servidor de pré-visualização — sete em `/estudos/<slug>/documento` e seis em
-  `/en/studies/<slug>/document`; um endereço inexistente devolve 404.
+- **Quinze documentos reais alojados** (§1.20, §1.21; contagem refrescada a
+  16.08.2026, §1.40 — dizia treze, que era o que o build de 15.08 imprimia): o
+  `check:documentos` conta 15 edições no manifesto e 15 em disco, e o portão de
+  HTML reconstrói cada uma contra a origem e encontra-as iguais carácter a
+  carácter. A única diferença entre origem e construído é a faixa, entre 1529 e
+  1593 bytes conforme a língua e o slug.
+- **Os quinze endereços existem no `dist/`** — nove em `/estudos/<slug>/documento`
+  e seis em `/en/studies/<slug>/document`. Os treze de 15.08 devolviam
+  `200 text/html` no servidor de pré-visualização, e um endereço inexistente
+  devolvia 404; os dois que entraram depois não foram servidos a um servidor de
+  pré-visualização nesta corrida.
 - **O título de cada documento foi conferido contra o trabalho a que foi
   atribuído**, lido do próprio ficheiro instalado, antes de qualquer instalação.
   Nenhuma correspondência ficou por confirmar.

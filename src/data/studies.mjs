@@ -22,8 +22,13 @@
  * `/estudos/<slug>/documento` passa a existir — ver src/lib/documentos.mjs.
  */
 
-/** Marcador único para campos que não foram verificados. Nunca inventar um valor. */
-export const POR_VERIFICAR = '[a verificar]';
+/**
+ * O marcador único, importado e reexportado: uma definição só, em
+ * `src/data/marcador.mjs` (IDENTIDADE §6; DECISIONS §1.40). Estava escrito aqui
+ * e outra vez em `src/lib/ledger.mjs`.
+ */
+export { POR_VERIFICAR } from './marcador.mjs';
+import { POR_VERIFICAR } from './marcador.mjs';
 
 /**
  * Os temas dos trabalhos. O tema é o objecto do estudo, não uma etiqueta de
@@ -99,12 +104,24 @@ export const WORKS = [
     // Publicado fora deste sítio enquanto a migração não chega. O endereço vive
     // aqui, no registo, e não escrito à mão num gabarito.
     artifactUrl: 'https://claude.ai/code/artifact/fe9876aa-e778-4519-bc9a-5f2fa199b29a',
-    /* A descrição não reformula o título: é a frase de abertura do documento.
-       A página tem de o dizer, em vez de repetir a nota geral de §1.7. */
-    descriptionFromDocument: true,
+    /**
+     * A DESCRIÇÃO É A FRASE DE ABERTURA, e desde 16.08.2026 é mesmo (§1.40).
+     *
+     * O que aqui estava era uma reformulação com o rótulo «frase de abertura do
+     * documento» por cima: a página afirmava uma coisa sobre o documento que o
+     * documento não dizia. O português passa a ser a frase, transcrita, e entra
+     * por `src/data/verbatim.mjs`, onde o portão a compara com o ficheiro.
+     *
+     * O documento NÃO tem edição inglesa. O inglês é tradução da casa dessa
+     * mesma frase, e a página rotula-o como tradução e não como a frase: um
+     * rótulo que dissesse «frase de abertura» sobre uma tradução seria o mesmo
+     * defeito com outra roupa.
+     */
+    descricaoDoDocumento: { pt: 'verbatim', en: 'traducao' },
+    verbatimDaAbertura: { pt: 'estudo-pelouros-abertura-pt' },
     description: {
-      pt: 'Quem teve cada pelouro da Câmara de Évora em cinco mandatos, ligado (por este documento, não por fonte oficial) ao que as contas gastaram nessas áreas.',
-      en: 'Who held each portfolio on Évora’s council across five terms, mapped (by this document alone, not by any official source) against what the accounts spent in those areas.',
+      pt: 'Quem teve cada pelouro da Câmara Municipal de Évora ao longo de cinco mandatos, quanto gastaram as contas do próprio município nas áreas que esses pelouros cobrem, e o que os relatórios dizem que essas áreas fizeram.',
+      en: 'Who held each portfolio of the Câmara Municipal de Évora across five terms, how much the municipality’s own accounts spent in the areas those portfolios cover, and what the reports say those areas did.',
     },
   },
   {
@@ -127,13 +144,23 @@ export const WORKS = [
     ],
     // Nunca foi publicado fora deste sítio: não há endereço externo para dar.
     artifactUrl: null,
-    /* Excepção à regra de §1.7, como a de «Os Pelouros»: esta descrição não
-       reformula o título — é a frase de abertura do próprio documento, nas duas
-       edições, sem números e sem nada acrescentado. */
-    descriptionFromDocument: true,
+    /**
+     * A frase de abertura, nas duas edições, transcrita (16.08.2026, §1.40).
+     *
+     * O que aqui estava dizia «do município de Évora» e o documento diz «de um
+     * município português»; e faltava-lhe a data da recolha, que a frase traz.
+     * A data é a razão de isto entrar por `verbatim.mjs` em vez de ser texto
+     * corrido: um algarismo numa descrição precisa de origem, e a origem certa
+     * de uma transcrição é a transcrição conferida.
+     */
+    descricaoDoDocumento: { pt: 'verbatim', en: 'verbatim' },
+    verbatimDaAbertura: {
+      pt: 'estudo-prometido-abertura-pt',
+      en: 'estudo-prometido-abertura-en',
+    },
     description: {
-      pt: 'Uma leitura transversal do município de Évora: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do Tribunal de Contas, postos lado a lado.',
-      en: 'A cross-vertical reading of the municipality of Évora: the recovery-plan project register, the public-contracts register and the state auditor’s catalogue, put side by side.',
+      pt: 'Uma leitura transversal de um município português: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado, recolhidos em direto a 2026-08-04.',
+      en: "A cross-vertical reading of one Portuguese municipality: the recovery-plan project register, the public-contracts register and the state auditor's catalogue, all fetched live on 2026-08-04.",
     },
   },
   {
@@ -264,10 +291,12 @@ export const EDITIONS = WORKS.flatMap((w) =>
     workId: w.id,
     slug: w.slug,
     description: w.description,
-    /* Se a descrição é reformulação do título ou a frase de abertura do próprio
-       documento — o arquivo rotula-a como o que é, para que não seja lida como
-       um resumo do conteúdo. */
-    descriptionFromDocument: w.descriptionFromDocument ?? false,
+    /* O que a descrição é, por edição: a frase de abertura do documento
+       transcrita, uma tradução da casa dessa frase, ou (por omissão) uma
+       reformulação do título. O arquivo rotula-a como o que ela é, para que não
+       seja lida como um resumo do conteúdo. */
+    descricaoDoDocumento: w.descricaoDoDocumento ?? null,
+    verbatimDaAbertura: w.verbatimDaAbertura ?? null,
   })),
 );
 

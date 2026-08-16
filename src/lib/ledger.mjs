@@ -60,8 +60,13 @@ function encontraLivroRazao() {
 
 export const LEDGER_DIR = encontraLivroRazao();
 
-/** Marcador de campo por verificar. É aceite; inventar um valor não é. */
-export const POR_VERIFICAR = '[a verificar]';
+/**
+ * O marcador de campo por verificar. É aceite; inventar um valor não é.
+ * Uma definição só, em `src/data/marcador.mjs`, reexportada aqui para os
+ * sítios que já a pediam a este módulo (DECISIONS §1.40).
+ */
+export { POR_VERIFICAR } from '../data/marcador.mjs';
+import { POR_VERIFICAR } from '../data/marcador.mjs';
 
 /** Uma bandeira da fonte é um caractere qualquer; não pode virar sintaxe. */
 function escapaRegex(s) {
