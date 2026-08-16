@@ -1108,8 +1108,6 @@ function auditaSelo(el, id, lang, err) {
  * A comparação ignora espaços: entre dois elementos vizinhos o gabarito pode
  * pôr um espaço ou nenhum, e isso é composição e não conteúdo.
  */
-const semEspacos = (s) => String(s).replace(/\s+/g, '');
-
 /**
  * O endereço de uma linha, ao contrário: da porta para o id e a edição.
  *
