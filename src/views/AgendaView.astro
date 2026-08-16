@@ -278,6 +278,28 @@ const rotuloDoCriterio = (tipo) =>
                                   {criterio.limiar.unidade}
                                 </span>
                               </span>
+                              {criterio.limiar.origem && (
+                                <>
+                                  {' '}
+                                  <span class="agenda-k-inline">{s.agenda.origemDaDataK}</span>{' '}
+                                  <a href={criterio.limiar.origem.url} rel="nofollow">
+                                    <span class="mono" data-agenda={`${item.id}.criterios[${n}].limiar.origem.url`}>
+                                      {criterio.limiar.origem.url}
+                                    </span>
+                                  </a>{' '}
+                                  <span class="agenda-k-inline">{s.agenda.acedidoK}</span>{' '}
+                                  <span
+                                    class="mono"
+                                    data-nonledger="data-da-agenda"
+                                    data-agenda={`${item.id}.criterios[${n}].limiar.origem.acedido_em`}
+                                  >
+                                    {criterio.limiar.origem.acedido_em}
+                                  </span>{' '}
+                                  <q data-agenda={`${item.id}.criterios[${n}].limiar.origem.excerto`}>
+                                    {criterio.limiar.origem.excerto}
+                                  </q>
+                                </>
+                              )}
                             </span>
                           )}
                           {criterio.nota && (

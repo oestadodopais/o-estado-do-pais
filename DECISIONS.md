@@ -4141,6 +4141,24 @@ ficheiros e não a superfície inteira.
   mais nada) continua a valer o conjunto finito de nomes do arquivo, porque não
   há `href` a que a amarrar.
 
+#### A terceira leitura das quatro páginas
+
+O mesmo revisor leu uma terceira cópia com dois estragos plantados (um plural
+anterior ao Acordo numa regra do Método; um valor antigo trocado no registo das
+correções) e apanhou os dois: oito em oito nas três leituras. Do que persiste,
+tudo é decisão registada acima (a mobília do cabeçalho e a porta das correções
+no Sobre; a contagem das correções como linha da casa; as regras cujas provas são
+mais fracas e a página o diz; a porta por entrada no registo em vez de um selo por
+valor histórico). Uma coisa era real e ficou feita: o limiar do quadro
+institucional passou a mostrar, ao lado do valor, onde está escrito, quando foi
+lido e a frase da fonte (`limiar.origem`, já no registo, agora renderizada), e a
+frase da fonte entrou na lista dos campos transcritos que a conferência da prosa
+da agenda não lê (`CAMPOS_TRANSCRITOS_DA_AGENDA`), pela mesma razão do excerto
+das datas: reescrever a prova para lhe tirar um algarismo seria pior. Posto à
+prova depois da alteração: «A linha publica 17,6.» numa nota renderizada faz
+parar o portão em duas linhas (fidelidade ao registo, e valor do livro-razão
+repetido); reposto por reconstrução.
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões

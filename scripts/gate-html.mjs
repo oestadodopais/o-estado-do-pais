@@ -843,13 +843,16 @@ const ORDINAL = /[ºª]$/;
  * Os campos dos dois registos que são TRANSCRIÇÃO de uma fonte, e por isso
  * saem desta conferência.
  *
- * Um só: `origem_da_data.excerto`, que é a frase da fonte que diz a data,
+ * Dois: `origem_da_data.excerto`, que é a frase da fonte que diz a data,
  * citada palavra por palavra, renderizada em `<blockquote>` e comparada
- * carácter a carácter contra o registo. Reescrevê-la para lhe tirar um
- * algarismo seria reescrever a prova. O limite fica registado em DECISIONS
- * §1.41: um valor escondido dentro de um excerto passa por aqui.
+ * carácter a carácter contra o registo; e `limiar.origem.excerto`, a frase
+ * do quadro institucional que publica o limiar, da mesma natureza e mostrada
+ * ao lado do limiar desde 16.08.2026 (revisão cruzada 3, T09). Reescrever
+ * qualquer uma para lhe tirar um algarismo seria reescrever a prova. O
+ * limite fica registado em DECISIONS §1.41: um valor escondido dentro de um
+ * excerto passa por aqui.
  */
-const CAMPOS_TRANSCRITOS_DA_AGENDA = ['origem_da_data.excerto'];
+const CAMPOS_TRANSCRITOS_DA_AGENDA = ['origem_da_data.excerto', 'limiar.origem.excerto'];
 
 /**
  * O número que um símbolo da prosa carrega, ou `null` quando não carrega nenhum.
