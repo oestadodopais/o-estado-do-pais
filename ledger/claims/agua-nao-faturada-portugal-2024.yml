@@ -26,7 +26,7 @@ derived_from: []
 check: null
 
 study: "agua-nao-faturada"
-note: "Dados de 2024, publicados no RASARP 2025. O título completo do relatório e o URL exacto do documento estão por confirmar contra a fonte."
+note: "Dados de 2024, publicados no RASARP 2025. O título completo do relatório e o URL exato do documento estão por confirmar contra a fonte."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

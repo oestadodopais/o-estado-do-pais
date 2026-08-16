@@ -78,7 +78,7 @@ export const STRINGS = {
 
     /** A página que explica o marcador. IDENTIDADE §6 promete-a. */
     marcador: {
-      metaTitle: 'O marcador [a verificar] — O Estado do País',
+      metaTitle: 'O marcador [a verificar] · O Estado do País',
       metaDescription:
         'O que quer dizer o marcador de incerteza deste sítio, porque existe, e o que acontece a uma linha que o traz.',
       eyebrow: 'O marcador',
@@ -86,10 +86,10 @@ export const STRINGS = {
       lede: 'É o único marcador de incerteza deste sítio. Aparece onde um campo não foi confirmado contra a fonte.',
       queEK: 'O que é',
       queEV:
-        'Uma ausência declarada. Não é um valor por defeito, não é uma estimativa, e não é uma dúvida sobre o número publicado: é o sítio a dizer que aquele campo — a fonte, o documento, o endereço, a data de leitura ou o excerto — ainda não foi conferido contra a origem.',
+        'Uma ausência declarada. Não é um valor por defeito, não é uma estimativa, e não é uma dúvida sobre o número publicado: é o sítio a dizer que aquele campo (a fonte, o documento, o endereço, a data de leitura ou o excerto) ainda não foi conferido contra a origem.',
       porqueK: 'Porque existe',
       porqueV:
-        'Porque a alternativa é preencher o campo com uma coisa plausível. Um campo plausível parece proveniência e não é, e quem o lesse ficava sem maneira de saber a diferença. O marcador torna a falta visível, contável e datável — e é por isso que aparece em vez de desaparecer.',
+        'Porque a alternativa é preencher o campo com uma coisa plausível. Um campo plausível parece proveniência e não é, e quem o lesse ficava sem maneira de saber a diferença. O marcador torna a falta visível, contável e datável, e é por isso que aparece em vez de desaparecer.',
       linhaK: 'O que acontece a uma linha que o traz',
       linhaItens: [
         'o selo dessa linha desenha-se a tracejado, e não cheio;',
@@ -109,7 +109,7 @@ export const STRINGS = {
 
     /** O índice dos concelhos. */
     municipios: {
-      metaTitle: 'Municípios — O Estado do País',
+      metaTitle: 'Municípios · O Estado do País',
       metaDescription:
         'Todos os concelhos de Portugal, pela Carta Administrativa Oficial. Os que já têm página do observatório levam a ela; os outros dizem que ainda não têm.',
       eyebrow: 'Municípios',
@@ -127,7 +127,7 @@ export const STRINGS = {
     },
 
     home: {
-      metaTitle: 'O Estado do País — Portugal, medido',
+      metaTitle: 'O Estado do País · Portugal, medido',
       metaDescription:
         'Observatório de dados sobre Portugal. Cada número publicado tem uma linha no livro-razão, com fonte, documento e data de acesso.',
       lede1:
@@ -138,7 +138,7 @@ export const STRINGS = {
       numeros: {
         eyebrow: 'O país em números verificados',
         h2: 'Medidas do painel europeu',
-        sub: 'Estes indicadores não são escolha nossa. São os do painel de desequilíbrios macroeconómicos e do painel social europeu — o conjunto com que as instituições avaliam um Estado-Membro, com os limiares que elas próprias publicam. Cada valor está tal como foi publicado, e a etiqueta diz de onde veio.',
+        sub: 'Estes indicadores não são escolha nossa. São os do painel de desequilíbrios macroeconómicos e do painel social europeu, o conjunto com que as instituições avaliam um Estado-Membro, com os limiares que elas próprias publicam. Cada valor está tal como foi publicado, e a etiqueta diz de onde veio.',
         nota: 'Os campos por confirmar aparecem marcados. Nenhum foi preenchido com um valor plausível.',
         verificacaoEm: 'Linha de base reconferida contra a fonte a',
         verificacaoVencida: 'Verificação em atraso: estes valores não são reconferidos contra a fonte desde',
@@ -150,7 +150,7 @@ export const STRINGS = {
         subPartes: [
           'PIB per capita em paridades de poder de compra, com a média da UE-27 fixada em ',
           { nl: '100', motivo: 'escala-de-instrumento' },
-          '. Seleccione regiões para as pôr na mesma régua.',
+          '. Selecione regiões para as pôr na mesma régua.',
         ],
         glanceUnidade: 'Índice · UE-27 = 100',
         controlsLabel: 'Pôr na régua',
@@ -158,11 +158,11 @@ export const STRINGS = {
         repor: 'Repor',
         svgTitulo: 'Régua de convergência: índice de PIB per capita em PPS, UE-27 = 100',
         svgDescricao:
-          'Uma escala horizontal com a média da UE-27 marcada em 100. Cada região seleccionada aparece como um marcador na régua, com o seu valor.',
+          'Uma escala horizontal com a média da UE-27 marcada em 100. Cada região selecionada aparece como um marcador na régua, com o seu valor.',
         deepTitulo: 'Método, ressalvas e proveniência',
         dadosK: 'Os dados desta régua',
         dadosV:
-          'Uma linha por região posta na régua: o valor tal como foi publicado, o ano a que se refere, a unidade, o estudo e o id da afirmação no livro-razão. O ficheiro é gerado do livro-razão a cada construção — não é uma cópia mantida à parte.',
+          'Uma linha por região posta na régua: o valor tal como foi publicado, o ano a que se refere, a unidade, o estudo e o id da afirmação no livro-razão. O ficheiro é gerado do livro-razão a cada construção; não é uma cópia mantida à parte.',
         significadoK: 'O que o número quer dizer',
         significadoV:
           'O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27. Um valor abaixo da média significa menos poder de compra por pessoa; um valor acima, mais.',
@@ -170,7 +170,7 @@ export const STRINGS = {
         ressalvaPartes: ['O valor de ', { ref: '2024' }, ' para Portugal é provisório.'],
         distanciasK: 'Distâncias',
         distanciasV:
-          'As diferenças em pontos que a régua desenha são calculadas a partir dos valores publicados. São aritmética sobre esses valores, não valores publicados em si — e cada uma tem a sua própria linha no livro-razão, com a conta explicada.',
+          'As diferenças em pontos que a régua desenha são calculadas a partir dos valores publicados. São aritmética sobre esses valores, não valores publicados em si. Cada uma tem a sua própria linha no livro-razão, com a conta explicada.',
         provenienciaK: 'Proveniência',
         semJs:
           'Sem JavaScript, a régua mostra Portugal. Os comandos acrescentam regiões à mesma régua.',
@@ -189,7 +189,7 @@ export const STRINGS = {
         madeira: 'Madeira',
         total: 'Total',
         legendaA: 'Aceso: ',
-        legendaB: ' — ',
+        legendaB: ' · ',
         legendaC: ' estudos aprofundados publicados (dois com edição em inglês). Os restantes ',
         legendaD: ' pontos marcam a posição do município; não representam cobertura.',
         readoutHint: 'Passe o cursor sobre um ponto para ler o município.',
@@ -221,7 +221,7 @@ export const STRINGS = {
     },
 
     metodo: {
-      metaTitle: 'Método — O Estado do País',
+      metaTitle: 'Método · O Estado do País',
       metaDescription:
         'Quem faz este observatório, como se escreve, o que é o livro-razão, como se corrigem os erros e o que não se afirma sobre causas.',
       h1: 'Método',
@@ -237,7 +237,7 @@ export const STRINGS = {
         'Valores que estavam certos e deixaram de estar, porque aquilo que medem mudou. Não são erros, e não contam para o número acima.',
       registoProvenienciaK: 'Revisões de proveniência',
       registoProvenienciaNota:
-        'O valor não mudou; mudou a maneira de lá chegar — uma fonte que muda de endereço, por exemplo. Não são erros nem actualizações, e não se listam aqui uma a uma: são muitas de cada vez e afogariam as correções. Cada linha abaixo leva à sua própria história, onde a revisão está escrita por extenso.',
+        'O valor não mudou; mudou a maneira de lá chegar: uma fonte que muda de endereço, por exemplo. Não são erros nem atualizações, e não se listam aqui uma a uma: são muitas de cada vez e afogariam as correções. Cada linha abaixo leva à sua própria história, onde a revisão está escrita por extenso.',
       correcoesVazioV: 'Nenhuma correção publicada até hoje.',
       correcoesVazioNota:
         'Quando um valor for corrigido, a entrada aparece aqui e na própria linha do livro-razão: data, valor antigo, valor novo, motivo. Nada é apagado.',
@@ -261,13 +261,13 @@ export const STRINGS = {
     },
 
     livro: {
-      metaTitle: 'Livro-razão — O Estado do País',
+      metaTitle: 'Livro-razão · O Estado do País',
       metaDescription:
         'Todas as afirmações publicadas neste sítio, uma linha cada: o valor tal como foi publicado, a fonte, o documento, o endereço, a data de acesso e o excerto.',
       eyebrow: 'Livro-razão',
       h1: 'O livro-razão',
       lede1:
-        'Uma linha por número publicado. Cada linha guarda o valor tal como a fonte o publicou, quem o produziu, o documento e a edição, o endereço, a data em que o lemos e um excerto textual — e, quando o número é calculado por nós, a conta explicada e reavaliada a cada construção.',
+        'Uma linha por número publicado. Cada linha guarda o valor tal como a fonte o publicou, quem o produziu, o documento e a edição, o endereço, a data em que o lemos e um excerto textual (e, quando o número é calculado por nós, a conta explicada e reavaliada a cada construção).',
       lede2:
         'O selo de proveniência junto a cada número é a porta para a sua linha. É este o índice dessas portas.',
       grupoCompletasK: 'Proveniência completa',
@@ -288,7 +288,7 @@ export const STRINGS = {
       marcadorGloss: '',
       naoDizK: 'O que este índice não diz',
       naoDizV:
-        'Só estão aqui os números que este sítio publica. Os números dentro dos documentos de estudo alojados aqui não estão no livro-razão — a proveniência deles é a do próprio documento, no dia em que foi publicado. O livro-razão também não é uma base de séries: guarda a leitura que citámos, não a série de onde ela saiu.',
+        'Só estão aqui os números que este sítio publica. Os números dentro dos documentos de estudo alojados aqui não estão no livro-razão: a proveniência deles é a do próprio documento, no dia em que foi publicado. O livro-razão também não é uma base de séries: guarda a leitura que citámos, não a série de onde ela saiu.',
       metodoLink: 'Como isto é feito',
 
       linha: {
@@ -305,9 +305,9 @@ export const STRINGS = {
         expressaoNota: 'A mesma conta como expressão.',
         derivaDeK: 'Deriva de',
         historicoK: 'Correções e atualizações desta linha',
-        historicoVazio: 'Esta linha nunca foi corrigida nem actualizada.',
+        historicoVazio: 'Esta linha nunca foi corrigida nem atualizada.',
         historicoNota:
-          'Nada é apagado. Um valor que estava errado fica à vista, datado, com o motivo — e um valor que deixou de estar certo porque o que mede mudou fica registado como atualização, que não é a mesma coisa.',
+          'Nada é apagado. Um valor que estava errado fica à vista, datado, com o motivo; e um valor que deixou de estar certo porque o que mede mudou fica registado como atualização, que não é a mesma coisa.',
         bandeiraK: 'Estado na fonte',
         atribuicaoNota:
           'A quem o valor é creditado, tal como consta do documento. Quando aparece um rótulo partidário, é registo do que consta e mais nada: este sítio não ordena partidos nem compara territórios que não têm nada em comum.',
@@ -326,7 +326,7 @@ export const STRINGS = {
       /* O título e a descrição do <head> não podem ter algarismos: o portão só
          tolera aí as cadeias que calcula do registo. Compõem-se com o nome do
          concelho, que não tem nenhum. */
-      metaCauda: 'o município, medido — O Estado do País',
+      metaCauda: 'o município, medido · O Estado do País',
       metaDescricaoA: 'O que as fontes publicam sobre o município de ',
       metaDescricaoB:
         ': população, poder de compra, emprego, empresas, dívida e execução orçamental. Cada valor tem linha no livro-razão, com fonte, documento e data de acesso.',
@@ -342,15 +342,15 @@ export const STRINGS = {
       breveK: 'Leitura breve',
       breveSub: 'Uma frase por medida. Todos os números são citações do livro-razão.',
 
-      distanciaK: 'A dívida contra o tecto legal',
+      distanciaK: 'A dívida contra o teto legal',
       distanciaLegenda:
-        'A barra é a dívida total que o regulador publica para o concelho; o fio é o limite legal do mesmo ano. O índice mede uma contra o outro numa escala em que o tecto é o valor permitido.',
+        'A barra é a dívida total que o regulador publica para o concelho; o fio é o limite legal do mesmo ano. O índice mede uma contra o outro numa escala em que o teto é o valor permitido.',
       /* Pedaços de uma frase que o gabarito monta com as afirmações DESTE
          município. Nenhum id de afirmação se escreve aqui: isto é a língua,
          não os dados. */
       distanciaIndiceA: 'O índice é ',
       distanciaIndiceB: ' % em ',
-      distanciaIndiceC: ', contra um tecto legal de ',
+      distanciaIndiceC: ', contra um teto legal de ',
       distanciaIndiceD: ' %.',
       distanciaLei:
         'O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores. É a lei que o define, não este sítio.',
@@ -376,7 +376,7 @@ export const STRINGS = {
       contasDivergenciaDiferenca: 'Diferença',
 
       tempoIndice: 'índice',
-      contasDivergenciaArredondada: '— a diferença é publicada arredondada ao euro; os dois valores acima diferem em cêntimos.',
+      contasDivergenciaArredondada: '· a diferença é publicada arredondada ao euro; os dois valores acima diferem em cêntimos.',
       /* A frase da camada 2 do instrumento. Só os anos que a página publica:
          dizer «todos os anos» seria dizer mais do que se mostra. */
       tempoSerieA: 'O índice de dívida do regulador desceu de ',
@@ -398,9 +398,9 @@ export const STRINGS = {
       tempoExecutivo: 'Executivo instalado',
       tempoContas: 'Contas do penúltimo ano',
       tempoEmFuncoes: 'em funções',
-      tempoExcessoK: 'O excesso sobre o tecto legal',
+      tempoExcessoK: 'O excesso sobre o teto legal',
       tempoExcessoV:
-        'O que a dívida excedia o limite legal, no primeiro e no último ano em que o relatório o publica como um valor positivo. Depois disso o quadro passa a números negativos, que já não são excesso mas capacidade de endividamento — e por isso esta página pára aqui.',
+        'O que a dívida excedia o limite legal, no primeiro e no último ano em que o relatório o publica como um valor positivo. Depois disso o quadro passa a números negativos, que já não são excesso mas capacidade de endividamento, e por isso esta página para aqui.',
       tempoFundoK: 'Como esta linha do tempo é feita',
       tempoFundoPartes: [
         'Os períodos são os das administrações tal como foram instaladas, e as datas de instalação vêm do trabalho sobre os quinze anos. Cada valor tem linha no livro-razão. As duas dívidas herdadas em ',
@@ -415,7 +415,7 @@ export const STRINGS = {
       naoSabeK: 'O que esta página não sabe',
       provenienciaK: 'Proveniência',
       provenienciaV:
-        'Cada valor desta página tem uma linha no livro-razão. O selo ao lado do número é a porta para essa linha, onde estão a fonte, o documento, o sítio exacto de onde o valor foi lido, o excerto e o dia em que foi lido. Nenhuma data de leitura é escrita aqui: quem quiser sabê-la, abre a linha.',
+        'Cada valor desta página tem uma linha no livro-razão. O selo ao lado do número é a porta para essa linha, onde estão a fonte, o documento, o sítio exato de onde o valor foi lido, o excerto e o dia em que foi lido. Nenhuma data de leitura é escrita aqui: quem quiser sabê-la, abre a linha.',
       estudosK: 'Os trabalhos sobre este concelho',
       estudosV:
         'Cada um tem a sua página, com a medida que o faz valer a pena, a frase do que concluiu, o método e o documento original quando está alojado aqui.',
@@ -425,7 +425,7 @@ export const STRINGS = {
     },
 
     estudos: {
-      metaTitle: 'Estudos — O Estado do País',
+      metaTitle: 'Estudos · O Estado do País',
       metaDescription: 'O arquivo de estudos publicados, com as suas edições em português e em inglês.',
       h1: 'Estudos',
       lede: 'O arquivo do observatório: cada estudo publicado, com as suas edições, datas e estado de migração. O que ainda não vive aqui está ligado onde vive.',
@@ -440,17 +440,17 @@ export const STRINGS = {
         'A migração dos estudos é a fase seguinte do trabalho. Até lá, esta página existe para fixar o endereço e nada mais: não há aqui um resumo, nem uma versão curta, nem números do estudo. Fingir conteúdo seria pior do que não ter nenhum.',
       stubEdicoes: 'Edições',
       stubVoltar: 'Voltar ao arquivo',
-      stubEstado: 'Rascunho — sem conteúdo',
+      stubEstado: 'Rascunho · sem conteúdo',
       stubForaK: 'Publicado fora deste sítio',
       stubForaV: 'Enquanto a migração não chega, este estudo está publicado noutro sítio. A ligação sai deste domínio.',
       stubForaLink: 'Abrir o estudo',
 
       /* Estudo com o documento já alojado aqui, mas com a página do
          observatório ainda por escrever. É um estado a sério, e diz-se. */
-      migradoEstado: 'Documento alojado — página por escrever',
+      migradoEstado: 'Documento alojado · página por escrever',
       migradoLede: 'O documento deste estudo já está alojado aqui. A página do observatório à volta dele ainda não foi escrita.',
       migradoExplicacao:
-        'O que se lê no documento é o estudo tal como foi publicado: não foi reescrito, resumido nem actualizado para caber aqui. O que falta é a página do observatório — a leitura curta, os números do estudo ligados ao livro-razão e a proveniência de cada um. Fingir esse conteúdo seria pior do que não ter nenhum.',
+        'O que se lê no documento é o estudo tal como foi publicado: não foi reescrito, resumido nem atualizado para caber aqui. O que falta é a página do observatório: a leitura curta, os números do estudo ligados ao livro-razão e a proveniência de cada um. Fingir esse conteúdo seria pior do que não ter nenhum.',
 
 
       /* Trabalho com leitura do observatório escrita (src/data/leituras.mjs).
@@ -458,14 +458,14 @@ export const STRINGS = {
       leituraEstado: 'Leitura publicada',
       leituraRelanceK: 'Relance',
       leituraBreveK: 'Leitura breve',
-      leituraBreveRotulo: 'Leitura breve — prosa da casa, assente numa frase do trabalho',
+      leituraBreveRotulo: 'Leitura breve · prosa da casa, assente numa frase do trabalho',
       leituraFundoK: 'Método e ressalvas',
       leituraOutraLingua: 'A mesma frase na outra edição',
       municipioK: 'O concelho de que trata',
       municipioLink: 'A página do município',
 
       documentoK: 'O documento original',
-      documentoV: 'Alojado aqui na forma exacta em que foi publicado, com uma faixa no topo e mais nada.',
+      documentoV: 'Alojado aqui na forma exata em que foi publicado, com uma faixa no topo e mais nada.',
       documentoVazio: 'O documento deste estudo ainda não foi alojado aqui.',
       documentoLink: 'Ler o documento',
       /* Vai dentro da faixa, no topo do documento. Sem algarismos: é regra do
@@ -474,7 +474,7 @@ export const STRINGS = {
       documentoVoltar: 'Voltar à página do estudo',
 
       edicaoIrma: 'Ver esta edição',
-      actualizadoLabel: 'Última actualização',
+      actualizadoLabel: 'Última atualização',
       temaK: 'Tema',
       temaNenhum: 'Sem tema atribuído',
       descricoesK: 'Descrições',
@@ -483,7 +483,7 @@ export const STRINGS = {
     },
 
     erro404: {
-      metaTitle: 'Página não encontrada — O Estado do País',
+      metaTitle: 'Página não encontrada · O Estado do País',
       metaDescription: 'Não existe nada neste endereço.',
       h1: 'Não existe nada neste endereço.',
       corpo:
@@ -548,7 +548,7 @@ export const STRINGS = {
     },
 
     marcador: {
-      metaTitle: 'The [a verificar] marker — O Estado do País',
+      metaTitle: 'The [a verificar] marker · O Estado do País',
       metaDescription:
         'What this site’s uncertainty marker means, why it exists, and what happens to a row that carries it.',
       eyebrow: 'The marker',
@@ -557,10 +557,10 @@ export const STRINGS = {
         'It is the only uncertainty marker on this site. It appears where a field has not been confirmed against the source. The marker is kept in Portuguese, as in the original; it reads “to verify”.',
       queEK: 'What it is',
       queEV:
-        'A declared absence. It is not a default, not an estimate, and not a doubt about the published figure: it is the site saying that this field — the source, the document, the address, the read date or the excerpt — has not yet been checked against the origin.',
+        'A declared absence. It is not a default, not an estimate, and not a doubt about the published figure: it is the site saying that this field (the source, the document, the address, the read date or the excerpt) has not yet been checked against the origin.',
       porqueK: 'Why it exists',
       porqueV:
-        'Because the alternative is to fill the field with something plausible. A plausible field looks like provenance and is not, and a reader would have no way of telling the difference. The marker makes the gap visible, countable and datable — which is why it appears instead of disappearing.',
+        'Because the alternative is to fill the field with something plausible. A plausible field looks like provenance and is not, and a reader would have no way of telling the difference. The marker makes the gap visible, countable and datable, which is why it appears instead of disappearing.',
       linhaK: 'What happens to a row that carries it',
       linhaItens: [
         'the seal for that row is drawn dashed, not filled;',
@@ -579,7 +579,7 @@ export const STRINGS = {
     },
 
     municipios: {
-      metaTitle: 'Municipalities — O Estado do País',
+      metaTitle: 'Municipalities · O Estado do País',
       metaDescription:
         'Every concelho in Portugal, from the official administrative map. Those that already have an observatory page link to it; the others say they do not yet.',
       eyebrow: 'Municipalities',
@@ -597,7 +597,7 @@ export const STRINGS = {
     },
 
     home: {
-      metaTitle: 'O Estado do País — Portugal, measured',
+      metaTitle: 'O Estado do País · Portugal, measured',
       metaDescription:
         'A data observatory on Portugal. Every published figure has a row in the ledger, with source, document and access date.',
       lede1:
@@ -608,7 +608,7 @@ export const STRINGS = {
       numeros: {
         eyebrow: 'The country in verified figures',
         h2: 'Measures from the European scoreboard',
-        sub: 'These indicators are not our choice. They are the macroeconomic imbalance and social scoreboards — the set the European institutions use to assess a member state, with the thresholds those institutions publish themselves. Every value is exactly as published, and the tag says where it came from.',
+        sub: 'These indicators are not our choice. They are the macroeconomic imbalance and social scoreboards, the set the European institutions use to assess a member state, with the thresholds those institutions publish themselves. Every value is exactly as published, and the tag says where it came from.',
         nota: 'Fields still to be confirmed are marked as such. None has been filled in with a plausible value.',
         verificacaoEm: 'Baseline last re-checked against source on',
         verificacaoVencida: 'Verification overdue: these values have not been re-checked against source since',
@@ -632,7 +632,7 @@ export const STRINGS = {
         deepTitulo: 'Method, caveats and provenance',
         dadosK: 'The data behind this rule',
         dadosV:
-          'One row per region placed on the rule: the value exactly as published, the year it refers to, the unit, the study and the id of the ledger row. The file is generated from the ledger at every build — it is not a copy kept on the side.',
+          'One row per region placed on the rule: the value exactly as published, the year it refers to, the unit, the study and the id of the ledger row. The file is generated from the ledger at every build; it is not a copy kept on the side.',
         significadoK: 'What the figure means',
         significadoV:
           'The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 average. A value below the average means less purchasing power per person; a value above it, more.',
@@ -640,7 +640,7 @@ export const STRINGS = {
         ressalvaPartes: ['The ', { ref: '2024' }, ' value for Portugal is provisional.'],
         distanciasK: 'Distances',
         distanciasV:
-          'The point differences the rule draws are calculated from the published values. They are arithmetic on those values, not published values themselves — and each has its own ledger row, with the sum spelled out.',
+          'The point differences the rule draws are calculated from the published values. They are arithmetic on those values, not published values themselves. Each has its own ledger row, with the sum spelled out.',
         provenienciaK: 'Provenance',
         semJs:
           'Without JavaScript, the rule shows Portugal. The controls add regions to the same rule.',
@@ -659,7 +659,7 @@ export const STRINGS = {
         madeira: 'Madeira',
         total: 'Total',
         legendaA: 'Lit: ',
-        legendaB: ' — ',
+        legendaB: ' · ',
         legendaC: ' in-depth studies published (two with an English edition). The remaining ',
         legendaD: ' points mark the position of the municipality; they do not represent coverage.',
         readoutHint: 'Hover over a point to read the municipality.',
@@ -689,7 +689,7 @@ export const STRINGS = {
     },
 
     metodo: {
-      metaTitle: 'Method — O Estado do País',
+      metaTitle: 'Method · O Estado do País',
       metaDescription:
         'Who makes this observatory, how it is written, what the ledger is, how errors are corrected and what is not claimed about causes.',
       h1: 'Method',
@@ -705,7 +705,7 @@ export const STRINGS = {
         'Values that were right and stopped being so, because what they measure changed. They are not errors, and they do not count towards the number above.',
       registoProvenienciaK: 'Provenance revisions',
       registoProvenienciaNota:
-        'The value did not change; the way to find it did — a source that moves address, for example. They are neither errors nor updates, and they are not listed one by one here: they come many at a time and would drown the corrections. Each row below leads to its own history, where the revision is written out in full.',
+        'The value did not change; the way to find it did: a source that moves address, for example. They are neither errors nor updates, and they are not listed one by one here: they come many at a time and would drown the corrections. Each row below leads to its own history, where the revision is written out in full.',
       correcoesVazioV: 'No corrections published to date.',
       correcoesVazioNota:
         'When a value is corrected, the entry appears here and in the ledger row itself: date, old value, new value, reason. Nothing is deleted.',
@@ -729,13 +729,13 @@ export const STRINGS = {
     },
 
     livro: {
-      metaTitle: 'Ledger — O Estado do País',
+      metaTitle: 'Ledger · O Estado do País',
       metaDescription:
         'Every claim published on this site, one row each: the value exactly as published, the source, the document, the address, the access date and the excerpt.',
       eyebrow: 'Ledger',
       h1: 'The ledger',
       lede1:
-        'One row per published figure. Each row holds the value exactly as the source published it, who produced it, the document and edition, the address, the date we read it and a textual excerpt — and, when the figure is calculated by us, the sum spelled out and re-evaluated at every build.',
+        'One row per published figure. Each row holds the value exactly as the source published it, who produced it, the document and edition, the address, the date we read it and a textual excerpt (and, when the figure is calculated by us, the sum spelled out and re-evaluated at every build).',
       lede2:
         'The provenance seal beside each figure is the door to its row. This is the index of those doors.',
       grupoCompletasK: 'Complete provenance',
@@ -756,7 +756,7 @@ export const STRINGS = {
       marcadorGloss: 'to verify',
       naoDizK: 'What this index does not say',
       naoDizV:
-        'Only the figures this site publishes are here. The figures inside the study documents hosted here are not in the ledger — their provenance is the document’s own, on the day it was published. Nor is the ledger a database of series: it holds the reading we cited, not the series it came from.',
+        'Only the figures this site publishes are here. The figures inside the study documents hosted here are not in the ledger: their provenance is the document’s own, on the day it was published. Nor is the ledger a database of series: it holds the reading we cited, not the series it came from.',
       metodoLink: 'How this is made',
 
       linha: {
@@ -775,7 +775,7 @@ export const STRINGS = {
         historicoK: 'Corrections and updates to this row',
         historicoVazio: 'This row has never been corrected or updated.',
         historicoNota:
-          'Nothing is deleted. A value that was wrong stays in plain sight, dated, with the reason — and a value that stopped being right because what it measures changed is recorded as an update, which is not the same thing.',
+          'Nothing is deleted. A value that was wrong stays in plain sight, dated, with the reason; and a value that stopped being right because what it measures changed is recorded as an update, which is not the same thing.',
         bandeiraK: 'Status at source',
         atribuicaoNota:
           'Who the value is credited to, as the document records it. Where a party label appears, it is a fact of record and nothing more: this site does not rank parties, nor compare territories that have nothing in common.',
@@ -791,7 +791,7 @@ export const STRINGS = {
 
     municipio: {
       eyebrow: 'Municipality',
-      metaCauda: 'the municipality, measured — O Estado do País',
+      metaCauda: 'the municipality, measured · O Estado do País',
       metaDescricaoA: 'What the sources publish about the municipality of ',
       metaDescricaoB:
         ': population, purchasing power, employment, enterprises, debt and budget execution. Every value has a ledger row, with source, document and access date.',
@@ -838,7 +838,7 @@ export const STRINGS = {
       contasDivergenciaDiferenca: 'Difference',
 
       tempoIndice: 'index',
-      contasDivergenciaArredondada: '— the difference is published rounded to the euro; the two figures above differ by cents.',
+      contasDivergenciaArredondada: '· the difference is published rounded to the euro; the two figures above differ by cents.',
       tempoSerieA: 'The regulator’s debt index fell from ',
       tempoSerieB: ' % in ',
       tempoSerieC: ' to ',
@@ -860,7 +860,7 @@ export const STRINGS = {
       tempoEmFuncoes: 'in office',
       tempoExcessoK: 'The excess over the legal ceiling',
       tempoExcessoV:
-        'How far the debt exceeded the legal limit, in the first and the last year in which the report publishes it as a positive figure. After that the table turns negative, and a negative there is no longer excess but borrowing capacity — so this page stops here.',
+        'How far the debt exceeded the legal limit, in the first and the last year in which the report publishes it as a positive figure. After that the table turns negative, and a negative there is no longer excess but borrowing capacity, so this page stops here.',
       tempoFundoK: 'How this timeline is made',
       tempoFundoPartes: [
         'The periods are those of the administrations as they were installed, and the installation dates come from the study of the fifteen years. Every value has a ledger row. The two debts inherited in ',
@@ -885,7 +885,7 @@ export const STRINGS = {
     },
 
     estudos: {
-      metaTitle: 'Studies — O Estado do País',
+      metaTitle: 'Studies · O Estado do País',
       metaDescription: 'The archive of published studies, with their Portuguese and English editions.',
       h1: 'Studies',
       lede: 'The observatory’s archive: every published study, with its editions, dates and migration state. What does not live here yet is linked where it lives.',
@@ -900,21 +900,21 @@ export const STRINGS = {
         'Migrating the studies is the next phase of the work. Until then, this page exists to hold the address and nothing else: there is no summary here, no short version, no figures from the study. Faking content would be worse than having none.',
       stubEdicoes: 'Editions',
       stubVoltar: 'Back to the archive',
-      stubEstado: 'Draft — no content',
+      stubEstado: 'Draft · no content',
       stubForaK: 'Published outside this site',
       stubForaV: 'Until the migration happens, this study is published elsewhere. The link leaves this domain.',
       stubForaLink: 'Open the study',
 
-      migradoEstado: 'Document hosted — page not yet written',
+      migradoEstado: 'Document hosted · page not yet written',
       migradoLede: 'The document for this study is already hosted here. The observatory page around it has not been written yet.',
       migradoExplicacao:
-        'What you read in the document is the study exactly as it was published: it has not been rewritten, shortened or updated to fit here. What is missing is the observatory page — the short reading, the study’s figures tied to the ledger and the provenance of each one. Faking that content would be worse than having none.',
+        'What you read in the document is the study exactly as it was published: it has not been rewritten, shortened or updated to fit here. What is missing is the observatory page: the short reading, the study’s figures tied to the ledger and the provenance of each one. Faking that content would be worse than having none.',
 
 
       leituraEstado: 'Reading published',
       leituraRelanceK: 'At a glance',
       leituraBreveK: 'Brief reading',
-      leituraBreveRotulo: 'Brief reading — house prose, resting on a sentence of the study',
+      leituraBreveRotulo: 'Brief reading · house prose, resting on a sentence of the study',
       leituraFundoK: 'Method and caveats',
       leituraOutraLingua: 'The same sentence in the other edition',
       municipioK: 'The concelho it is about',
@@ -937,7 +937,7 @@ export const STRINGS = {
     },
 
     erro404: {
-      metaTitle: 'Page not found — O Estado do País',
+      metaTitle: 'Page not found · O Estado do País',
       metaDescription: 'There is nothing at this address.',
       h1: 'There is nothing at this address.',
       corpo:

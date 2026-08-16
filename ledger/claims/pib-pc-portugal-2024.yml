@@ -22,8 +22,8 @@ excerpt: "nama_10r_2gdp — unit PPS_HAB_EU27_2020 — geo PT (Portugal) — 202
 
 # A bandeira tal como a fonte a escreve, e o que ela quer dizer.
 source_flag: "p"
-source_flag_note: "O Eurostat marca este valor como provisório. Os dados regionais de 2024 são a primeira publicação do ano de referência, e o Eurostat reajusta os valores regionais ao PIB nacional uma vez por ano, enquanto o nacional é revisto ao longo do ano — pelo que se espera que este número mude na divulgação de Fevereiro de 2027."
-source_flag_note_en: "Eurostat marks this value as provisional. The 2024 regional data is the first release of the reference year, and Eurostat re-benchmarks regional values to national GDP once a year, while the national figures are revised throughout the year — so this number is expected to change at the February 2027 release."
+source_flag_note: "O Eurostat marca este valor como provisório. Os dados regionais de 2024 são a primeira publicação do ano de referência, e o Eurostat reajusta os valores regionais ao PIB nacional uma vez por ano, enquanto o nacional é revisto ao longo do ano, pelo que se espera que este número mude na divulgação de fevereiro de 2027."
+source_flag_note_en: "Eurostat marks this value as provisional. The 2024 regional data is the first release of the reference year, and Eurostat re-benchmarks regional values to national GDP once a year, while the national figures are revised throughout the year, so this number is expected to change at the February 2027 release."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -32,7 +32,7 @@ derived_from: []
 check: null
 
 study: "avaliacao-economica-regional-de-portugal-2026"
-note: "Índice do PIB per capita em PPS, UE-27 = 100, tal como o Eurostat o publica (arredondado à unidade). Código NUTS confirmado contra as etiquetas da própria resposta do Eurostat: PT = Portugal. Proveniência preenchida a 2026-08-13, contra a fonte primária. O Eurostat marca este valor como provisório (bandeira «p»). Os dados regionais de 2024 são a primeira publicação do ano de referência: transmissão a T+12 meses e divulgação entre 1 e 15 de Fevereiro (ESMS reg_eco10 §14.1, §8.1). O Eurostat reajusta os valores regionais ao PIB nacional uma vez por ano (§18.6), ao passo que o nacional é revisto ao longo do ano, sobretudo entre Maio e Outubro (§15.3) — pelo que se espera que este número mude na divulgação de Fevereiro de 2027. Valor reconferido a 2026-08-13 por extracção independente em duas vias — API JSON-stat e ficheiro SDMX-TSV — por quem não escreveu a linha; ambas devolveram o mesmo valor, a mesma etiqueta de região e a mesma data de actualização do conjunto (2026-02-10)."
+note: "Índice do PIB per capita em PPS, UE-27 = 100, tal como o Eurostat o publica (arredondado à unidade). Código NUTS confirmado contra as etiquetas da própria resposta do Eurostat: PT = Portugal. Proveniência preenchida a 2026-08-13, contra a fonte primária. O Eurostat marca este valor como provisório (bandeira «p»). Os dados regionais de 2024 são a primeira publicação do ano de referência: transmissão a T+12 meses e divulgação entre 1 e 15 de fevereiro (ESMS reg_eco10 §14.1, §8.1). O Eurostat reajusta os valores regionais ao PIB nacional uma vez por ano (§18.6), ao passo que o nacional é revisto ao longo do ano, sobretudo entre maio e outubro (§15.3) — pelo que se espera que este número mude na divulgação de fevereiro de 2027. Valor reconferido a 2026-08-13 por extração independente em duas vias — API JSON-stat e ficheiro SDMX-TSV — por quem não escreveu a linha; ambas devolveram o mesmo valor, a mesma etiqueta de região e a mesma data de atualização do conjunto (2026-02-10)."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

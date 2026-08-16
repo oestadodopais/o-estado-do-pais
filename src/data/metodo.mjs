@@ -75,7 +75,7 @@ export const SECOES = [
         {
           tipo: 'p',
           partes: [
-            'Dizemos isto no primeiro parágrafo porque é a pergunta certa a fazer a este site. A resposta que se segue — o livro-razão, as correções públicas, os limites declarados — existe para que a confiança não dependa de quem escreve, mas do que qualquer leitor pode verificar.',
+            'Dizemos isto no primeiro parágrafo porque é a pergunta certa a fazer a este site. A resposta que se segue (o livro-razão, as correções públicas, os limites declarados) existe para que a confiança não dependa de quem escreve, mas do que qualquer leitor pode verificar.',
           ],
         },
       ],
@@ -98,7 +98,7 @@ export const SECOES = [
         {
           tipo: 'p',
           partes: [
-            'We say this in the first paragraph because it is the right question to ask of this site. The answer that follows — the ledger, the public corrections, the declared limits — exists so that trust does not depend on who writes, but on what any reader can verify.',
+            'We say this in the first paragraph because it is the right question to ask of this site. The answer that follows (the ledger, the public corrections, the declared limits) exists so that trust does not depend on who writes, but on what any reader can verify.',
           ],
         },
       ],
@@ -113,7 +113,7 @@ export const SECOES = [
         {
           tipo: 'p',
           partes: [
-            'Um estudo começa com uma pergunta — da direção, ou proposta pela própria IA e aprovada pela direção. A partir daí:',
+            'Um estudo começa com uma pergunta: da direção, ou proposta pela própria IA e aprovada pela direção. A partir daí:',
           ],
         },
         {
@@ -125,7 +125,7 @@ export const SECOES = [
             ],
             [
               { forte: 'Escrita sobre o livro-razão.' },
-              ' O texto não contém números escritos à mão: cada valor é resolvido a partir de uma linha do livro-razão no momento da construção da página. Um número sem linha não é publicado — fica marcado ',
+              ' O texto não contém números escritos à mão: cada valor é resolvido a partir de uma linha do livro-razão no momento da construção da página. Um número sem linha não é publicado: fica marcado ',
               M.mencaoVerificar,
               ', ou é cortado.',
             ],
@@ -139,7 +139,7 @@ export const SECOES = [
         {
           tipo: 'p',
           partes: [
-            'O que não sobrevive a este processo não é suavizado — é removido, ou publicado como incerteza declarada.',
+            'O que não sobrevive a este processo não é suavizado: é removido, ou publicado como incerteza declarada.',
           ],
         },
       ],
@@ -147,7 +147,7 @@ export const SECOES = [
         {
           tipo: 'p',
           partes: [
-            'A study begins with a question — from the director, or proposed by the AI itself and approved by the director. From there:',
+            'A study begins with a question: from the director, or proposed by the AI itself and approved by the director. From there:',
           ],
         },
         {
@@ -159,7 +159,7 @@ export const SECOES = [
             ],
             [
               { forte: 'Writing on top of the ledger.' },
-              ' The text contains no hand-written numbers: each value is resolved from a ledger row at the moment the page is built. A number without a row is not published — it is flagged ',
+              ' The text contains no hand-written numbers: each value is resolved from a ledger row at the moment the page is built. A number without a row is not published: it is flagged ',
               M.mencaoVerificar,
               ', or it is cut.',
             ],
@@ -173,7 +173,7 @@ export const SECOES = [
         {
           tipo: 'p',
           partes: [
-            'What does not survive this process is not softened — it is removed, or published as declared uncertainty.',
+            'What does not survive this process is not softened: it is removed, or published as declared uncertainty.',
           ],
         },
       ],
@@ -194,7 +194,7 @@ export const SECOES = [
         {
           tipo: 'p',
           partes: [
-            'O selo de proveniência junto a cada número é a porta para essa linha. A construção do site falha — deliberadamente — se uma página tentar publicar um número sem linha correspondente.',
+            'O selo de proveniência junto a cada número é a porta para essa linha. A construção do site falha, deliberadamente, se uma página tentar publicar um número sem linha correspondente.',
           ],
         },
         {
@@ -214,7 +214,7 @@ export const SECOES = [
         {
           tipo: 'p',
           partes: [
-            'The provenance seal beside each number is the door to that row. The site build fails — deliberately — if a page tries to publish a number without a corresponding row.',
+            'The provenance seal beside each number is the door to that row. The site build fails, deliberately, if a page tries to publish a number without a corresponding row.',
           ],
         },
         {
@@ -283,7 +283,7 @@ export const SECOES = [
           itens: [
             [
               { forte: 'Herdado, decidido, deixado.' },
-              ' Cada mandato é lido pelo que recebeu, pelo que decidiu, e pelo estado em que entregou — nunca por um número único de mérito.',
+              ' Cada mandato é lido pelo que recebeu, pelo que decidiu, e pelo estado em que entregou, nunca por um número único de mérito.',
             ],
             [
               { forte: 'Métricas anunciadas antes dos veredictos.' },
@@ -291,7 +291,7 @@ export const SECOES = [
             ],
             [
               { forte: 'Confundidores declarados.' },
-              ' Grande parte do que acontece num concelho decide-se fora dele — em Lisboa, em Bruxelas, na demografia, no ciclo económico. E há mecânica institucional que quebra leituras ingénuas: nas autárquicas de ',
+              ' Grande parte do que acontece num concelho decide-se fora dele: em Lisboa, em Bruxelas, na demografia, no ciclo económico. E há mecânica institucional que quebra leituras ingénuas: nas autárquicas de ',
               { ref: '2025' },
               ', uma parte substancial das câmaras mudou de presidente por limitação de mandatos, não por voto ',
               M.autarquicas,
@@ -320,7 +320,7 @@ export const SECOES = [
           itens: [
             [
               { forte: 'Inherited, decided, left.' },
-              ' Each term is read by what it inherited, by what it decided, and by the state in which it handed over — never by a single number of merit.',
+              ' Each term is read by what it inherited, by what it decided, and by the state in which it handed over, never by a single number of merit.',
             ],
             [
               { forte: 'Metrics announced before verdicts.' },
@@ -328,7 +328,7 @@ export const SECOES = [
             ],
             [
               { forte: 'Confounders declared.' },
-              ' Much of what happens in a municipality is decided outside it — in Lisbon, in Brussels, in demography, in the economic cycle. And there is institutional machinery that breaks naive readings: in the ',
+              ' Much of what happens in a municipality is decided outside it: in Lisbon, in Brussels, in demography, in the economic cycle. And there is institutional machinery that breaks naive readings: in the ',
               { ref: '2025' },
               ' local elections, a substantial share of councils changed president through term limits, not through the vote ',
               M.autarquicas,
@@ -357,7 +357,7 @@ export const SECOES = [
           tipo: 'ul',
           itens: [
             [
-              'Este site não sabe o que as fontes não medem. Onde os dados não existem, dizemos que não existem — uma resposta nula é uma resposta.',
+              'Este site não sabe o que as fontes não medem. Onde os dados não existem, dizemos que não existem: uma resposta nula é uma resposta.',
             ],
             [
               'A IA que escreve isto pode errar de formas próprias: inventar com fluência é o risco central, e é exatamente por isso que o livro-razão, a verificação adversarial e as correções públicas não são opcionais.',
@@ -376,7 +376,7 @@ export const SECOES = [
           tipo: 'ul',
           itens: [
             [
-              'This site does not know what the sources do not measure. Where the data does not exist, we say it does not exist — a null answer is an answer.',
+              'This site does not know what the sources do not measure. Where the data does not exist, we say it does not exist: a null answer is an answer.',
             ],
             [
               'The AI that writes this can err in ways of its own: inventing fluently is the central risk, and that is exactly why the ledger, adversarial verification and public corrections are not optional.',

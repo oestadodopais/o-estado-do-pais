@@ -113,7 +113,7 @@ export const MUNICIPIOS_COM_PAGINA = [
         claim: 'evora-indice-de-divida-2024',
         nome: { pt: 'Índice de dívida', en: 'Debt index' },
         medida: {
-          pt: ['Percentagem, tecto legal = ', { claim: 'indice-de-divida-limite-legal' }, ' · ', { ref: '2024' }],
+          pt: ['Percentagem, teto legal = ', { claim: 'indice-de-divida-limite-legal' }, ' · ', { ref: '2024' }],
           en: ['Percentage, legal cap = ', { claim: 'indice-de-divida-limite-legal' }, ' · ', { ref: '2024' }],
         },
         nota: {
@@ -555,8 +555,8 @@ export const MUNICIPIOS_COM_PAGINA = [
       {
         k: { pt: 'Duas das oito medidas são o município a falar de si', en: 'Two of the eight measures are the municipality speaking about itself' },
         v: {
-          pt: ['A execução da receita e o prazo médio de pagamento são lidos da prestação de contas do próprio município — a sua linha no livro-razão nomeia esse documento e a página onde estão. As duas vozes de fora sobre estas contas são a opinião assinada do auditor e a série anual do regulador, e as duas estão nesta página.'],
-          en: ['Revenue execution and the average payment time are read from the municipality’s own accounts — their ledger rows name that document and the page they sit on. The two outside voices on these accounts are the auditor’s signed opinion and the regulator’s annual series, and both are on this page.'],
+          pt: ['A execução da receita e o prazo médio de pagamento são lidos da prestação de contas do próprio município: a sua linha no livro-razão nomeia esse documento e a página onde estão. As duas vozes de fora sobre estas contas são a opinião assinada do auditor e a série anual do regulador, e as duas estão nesta página.'],
+          en: ['Revenue execution and the average payment time are read from the municipality’s own accounts: their ledger rows name that document and the page they sit on. The two outside voices on these accounts are the auditor’s signed opinion and the regulator’s annual series, and both are on this page.'],
         },
       },
       {
@@ -591,8 +591,8 @@ export const MUNICIPIOS_COM_PAGINA = [
       {
         k: { pt: 'Um partido é dono das suas decisões, não de uma curva', en: 'A party owns its decisions, not a curve' },
         v: {
-          pt: ['As decisões desta página vão atribuídas a quem as tomou, com o rótulo da lista que ganhou. Os índices — população, emprego, poder de compra, e o próprio índice de dívida — não vão atribuídos a ninguém: nada do que foi lido fornece o contrafactual que recortaria a parte de um executivo neles.'],
-          en: ['The decisions on this page are attributed to whoever took them, with the label of the list that won. The indices — population, employment, purchasing power, and the debt index itself — are attributed to nobody: nothing that was read provides the counterfactual that would carve out an executive’s share of them.'],
+          pt: ['As decisões desta página vão atribuídas a quem as tomou, com o rótulo da lista que ganhou. Os índices (população, emprego, poder de compra, e o próprio índice de dívida) não vão atribuídos a ninguém: nada do que foi lido fornece o contrafactual que recortaria a parte de um executivo neles.'],
+          en: ['The decisions on this page are attributed to whoever took them, with the label of the list that won. The indices (population, employment, purchasing power, and the debt index itself) are attributed to nobody: nothing that was read provides the counterfactual that would carve out an executive’s share of them.'],
         },
       },
       {
@@ -664,22 +664,22 @@ export const MUNICIPIOS_COM_PAGINA = [
           { ref: '2017' },
           ' e ',
           { ref: '2021' },
-          ' trazem ressalvas do próprio ficheiro — uma nota de rodapé em ',
+          ' trazem ressalvas do próprio ficheiro (uma nota de rodapé em ',
           { ref: '2017' },
           ', «dados provisórios» em ',
           { ref: '2021' },
-          ' — ditas na linha de cada um.',
+          '), ditas na linha de cada um.',
         ],
         en: [
           'The regulator’s values for ',
           { ref: '2017' },
           ' and ',
           { ref: '2021' },
-          ' carry caveats written into the file itself — a footnote in ',
+          ' carry caveats written into the file itself (a footnote in ',
           { ref: '2017' },
           ', «dados provisórios» in ',
           { ref: '2021' },
-          ' — said on each row.',
+          '), said on each row.',
         ],
       },
       {

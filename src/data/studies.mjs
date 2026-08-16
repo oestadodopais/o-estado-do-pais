@@ -103,8 +103,8 @@ export const WORKS = [
        A página tem de o dizer, em vez de repetir a nota geral de §1.7. */
     descriptionFromDocument: true,
     description: {
-      pt: 'Quem teve cada pelouro da Câmara de Évora em cinco mandatos, ligado — por este documento, não por fonte oficial — ao que as contas gastaram nessas áreas.',
-      en: 'Who held each portfolio on Évora’s council across five terms, mapped — by this document alone, not by any official source — against what the accounts spent in those areas.',
+      pt: 'Quem teve cada pelouro da Câmara de Évora em cinco mandatos, ligado (por este documento, não por fonte oficial) ao que as contas gastaram nessas áreas.',
+      en: 'Who held each portfolio on Évora’s council across five terms, mapped (by this document alone, not by any official source) against what the accounts spent in those areas.',
     },
   },
   {
@@ -229,7 +229,7 @@ export const EXCLUIDOS = [
     titulo: 'Three Seats, One Ledger',
     data: '2026-08-12',
     motivo:
-      'Registo de método e de processo sobre a infraestrutura de investigação com IA do próprio dono. Não é um estudo sobre Portugal, e o arquivo é o que este observatório publica sobre Portugal. A exclusão não é um juízo sobre o valor do documento: é o arquivo ter um objecto, e este documento não ser dele.',
+      'Registo de método e de processo sobre a infraestrutura de investigação com IA do próprio dono. Não é um estudo sobre Portugal, e o arquivo é o que este observatório publica sobre Portugal. A exclusão não é um juízo sobre o valor do documento: é o arquivo ter um objeto, e este documento não ser dele.',
   },
 ];
 
@@ -242,7 +242,7 @@ export const EXCLUIDOS = [
 export const INTERNAL_SOURCES = [
   {
     id: 'o-estado-do-pais',
-    label: { pt: 'O Estado do País — apuramento próprio', en: 'O Estado do País — own count' },
+    label: { pt: 'O Estado do País, apuramento próprio', en: 'O Estado do País, own count' },
   },
   {
     // Não é um apuramento próprio: os números são dos organismos que os publicam.
@@ -251,8 +251,8 @@ export const INTERNAL_SOURCES = [
     // Escolha do conjunto: indicators/convergence.md no ResearchHub.
     id: 'quadro-institucional',
     label: {
-      pt: 'Quadro institucional de indicadores — leitura directa da fonte',
-      en: 'Institutional indicator framework — read directly from source',
+      pt: 'Quadro institucional de indicadores, leitura direta da fonte',
+      en: 'Institutional indicator framework, read directly from source',
     },
   },
 ];
