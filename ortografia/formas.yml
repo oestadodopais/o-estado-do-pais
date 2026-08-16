@@ -1,0 +1,419 @@
+# =============================================================================
+# As formas, e o sentido em que se convertem.
+#
+# Uma lista, dois consumidores: `scripts/ortografia.mjs` converte por ela, e
+# `scripts/gate-html.mjs` confere por ela o texto renderizado. Se houvesse duas
+# listas, uma delas ficaria para trás.
+#
+# A regra que esta lista serve está em IDENTIDADE.md §9: a superfície pública
+# do sítio segue o Acordo Ortográfico de 1990 tal como é aplicado em Portugal.
+# O que é transcrito nunca se converte. Os documentos do repositório
+# (DECISIONS.md, IDENTIDADE.md, README.md, PLANO-*.md, BRIEF-*.md, VOZ-*.md)
+# são registo e ficam na grafia em que foram escritos.
+#
+# TRÊS LISTAS:
+#   pares    — convertem-se por máquina, nos dois sentidos.
+#   manuais  — só se assinalam. O sentido inverso é ambíguo (de «para» não se
+#              sabe se veio de «pára»), e uma conversão que não se pode desfazer
+#              não é reversível. Reescrevem-se à mão, como os travessões.
+#   iguais   — parecem anteriores ao Acordo e são a forma certa em Portugal.
+#              Estão aqui para que a conferência não dispare sobre elas, e para
+#              que ninguém as «corrija».
+#
+# COMO SE ACRESCENTA UMA FORMA: consulte-a no vocabulário abaixo, forma a forma
+# (a flexão que vai usar, não o infinitivo). Se a forma anterior não constar e a
+# do Acordo constar, é um par. Se constarem as duas, é dupla grafia: escolha a
+# forma do Acordo e escreva porquê em «nota». Nunca deduza uma flexão: escreva-a.
+# =============================================================================
+
+autoridade:
+  vocabulario: >-
+    Vocabulário Ortográfico Comum da Língua Portuguesa, na versão VOP
+    (Vocabulário Ortográfico do Português, 2.ª edição), que é a versão de
+    Portugal.
+  vocabulario_url: 'https://voc.cplp.org/'
+  texto_do_acordo: 'Acordo Ortográfico da Língua Portuguesa (1990), texto integral'
+  texto_do_acordo_url: 'http://www.portaldalinguaportuguesa.org/acordo.php?action=acordo&version=1990'
+  segunda_opiniao_url: 'https://dicionario.priberam.org/'
+  consultado: '2026-08-16'
+  como: >-
+    Cada par de consoante foi consultado forma a forma no vocabulário: a forma
+    anterior não consta, a forma do Acordo consta. Onde constam as duas, é
+    dupla grafia, e o par leva nota. A pesquisa do vocabulário não distingue
+    diacríticos, e por isso os pares de acento e os de maiúscula não se podem
+    provar por ela: citam a base do próprio Acordo.
+
+# -----------------------------------------------------------------------------
+# 1. As consoantes que deixam de se escrever quando não se pronunciam.
+#    Acordo, Base IV, 1: o c das sequências cc, cç e ct e o p das sequências
+#    pc, pç e pt «ora se conservam, ora se eliminam»; eliminam-se onde não são
+#    proferidos nas pronúncias cultas da língua.
+#    Todas as formas abaixo foram consultadas uma a uma no vocabulário.
+# -----------------------------------------------------------------------------
+pares:
+  - { anterior: 'acção', acordo: 'ação' }
+  - { anterior: 'acções', acordo: 'ações' }
+  - { anterior: 'acto', acordo: 'ato' }
+  - { anterior: 'actos', acordo: 'atos' }
+  - { anterior: 'actor', acordo: 'ator' }
+  - { anterior: 'actores', acordo: 'atores' }
+  - { anterior: 'actriz', acordo: 'atriz' }
+  - { anterior: 'actual', acordo: 'atual' }
+  - { anterior: 'actuais', acordo: 'atuais' }
+  - { anterior: 'actualmente', acordo: 'atualmente' }
+  - { anterior: 'actualizar', acordo: 'atualizar' }
+  - { anterior: 'actualização', acordo: 'atualização' }
+  - { anterior: 'actualizações', acordo: 'atualizações' }
+  - { anterior: 'actualizado', acordo: 'atualizado' }
+  - { anterior: 'actualizada', acordo: 'atualizada' }
+  - { anterior: 'actualizados', acordo: 'atualizados' }
+  - { anterior: 'actualizadas', acordo: 'atualizadas' }
+  - { anterior: 'actuar', acordo: 'atuar' }
+  - { anterior: 'actuação', acordo: 'atuação' }
+  - { anterior: 'activo', acordo: 'ativo' }
+  - { anterior: 'activa', acordo: 'ativa' }
+  - { anterior: 'activos', acordo: 'ativos' }
+  - { anterior: 'activas', acordo: 'ativas' }
+  - { anterior: 'activar', acordo: 'ativar' }
+  - { anterior: 'actividade', acordo: 'atividade' }
+  - { anterior: 'actividades', acordo: 'atividades' }
+  - { anterior: 'desactivar', acordo: 'desativar' }
+  - { anterior: 'desactivado', acordo: 'desativado' }
+  - { anterior: 'desactivada', acordo: 'desativada' }
+  - { anterior: 'adopção', acordo: 'adoção' }
+  - { anterior: 'adopções', acordo: 'adoções' }
+  - { anterior: 'adoptar', acordo: 'adotar' }
+  - { anterior: 'adoptado', acordo: 'adotado' }
+  - { anterior: 'adoptada', acordo: 'adotada' }
+  - { anterior: 'afectar', acordo: 'afetar' }
+  - { anterior: 'afecta', acordo: 'afeta' }
+  - { anterior: 'afectado', acordo: 'afetado' }
+  - { anterior: 'afectada', acordo: 'afetada' }
+  - { anterior: 'afectados', acordo: 'afetados' }
+  - { anterior: 'afectadas', acordo: 'afetadas' }
+  - { anterior: 'arquitecto', acordo: 'arquiteto' }
+  - { anterior: 'arquitectos', acordo: 'arquitetos' }
+  - { anterior: 'arquitectura', acordo: 'arquitetura' }
+  - { anterior: 'baptismo', acordo: 'batismo' }
+  - { anterior: 'baptizar', acordo: 'batizar' }
+  - { anterior: 'colectivo', acordo: 'coletivo' }
+  - { anterior: 'colectiva', acordo: 'coletiva' }
+  - { anterior: 'colectivos', acordo: 'coletivos' }
+  - { anterior: 'colectivas', acordo: 'coletivas' }
+  - { anterior: 'concepção', acordo: 'conceção' }
+  - { anterior: 'contracção', acordo: 'contração' }
+  - { anterior: 'correcção', acordo: 'correção' }
+  - { anterior: 'correcções', acordo: 'correções' }
+  - { anterior: 'correcto', acordo: 'correto' }
+  - { anterior: 'correcta', acordo: 'correta' }
+  - { anterior: 'correctos', acordo: 'corretos' }
+  - { anterior: 'correctas', acordo: 'corretas' }
+  - { anterior: 'correctamente', acordo: 'corretamente' }
+  - { anterior: 'decepção', acordo: 'deceção' }
+  - { anterior: 'detectar', acordo: 'detetar' }
+  - { anterior: 'detectado', acordo: 'detetado' }
+  - { anterior: 'detectada', acordo: 'detetada' }
+  - { anterior: 'detecção', acordo: 'deteção' }
+  - { anterior: 'direcção', acordo: 'direção' }
+  - { anterior: 'direcções', acordo: 'direções' }
+  - { anterior: 'directo', acordo: 'direto' }
+  - { anterior: 'directa', acordo: 'direta' }
+  - { anterior: 'directos', acordo: 'diretos' }
+  - { anterior: 'directas', acordo: 'diretas' }
+  - { anterior: 'directamente', acordo: 'diretamente' }
+  - { anterior: 'director', acordo: 'diretor' }
+  - { anterior: 'directora', acordo: 'diretora' }
+  - { anterior: 'directores', acordo: 'diretores' }
+  - { anterior: 'directório', acordo: 'diretório' }
+  - { anterior: 'directriz', acordo: 'diretriz' }
+  # «Direcção-Geral» é uma palavra só para efeito de procura, porque o hífen não
+  # separa palavras nesta conferência (ver o cabeçalho de scripts/ortografia.mjs).
+  # Por isso o composto tem par próprio: sem ele passaria despercebido.
+  - { anterior: 'Direcção-Geral', acordo: 'Direção-Geral', caso: fixo }
+  - { anterior: 'efectivo', acordo: 'efetivo' }
+  - { anterior: 'efectiva', acordo: 'efetiva' }
+  - { anterior: 'efectivos', acordo: 'efetivos' }
+  - { anterior: 'efectivas', acordo: 'efetivas' }
+  - { anterior: 'efectivamente', acordo: 'efetivamente' }
+  - { anterior: 'efectuar', acordo: 'efetuar' }
+  - { anterior: 'efectuado', acordo: 'efetuado' }
+  - { anterior: 'efectuada', acordo: 'efetuada' }
+  - { anterior: 'eléctrico', acordo: 'elétrico' }
+  - { anterior: 'eléctrica', acordo: 'elétrica' }
+  - { anterior: 'electricidade', acordo: 'eletricidade' }
+  - { anterior: 'electrónico', acordo: 'eletrónico' }
+  - { anterior: 'electrónica', acordo: 'eletrónica' }
+  - { anterior: 'espectáculo', acordo: 'espetáculo' }
+  - { anterior: 'espectáculos', acordo: 'espetáculos' }
+  - { anterior: 'exacto', acordo: 'exato' }
+  - { anterior: 'exacta', acordo: 'exata' }
+  - { anterior: 'exactos', acordo: 'exatos' }
+  - { anterior: 'exactas', acordo: 'exatas' }
+  - { anterior: 'exactamente', acordo: 'exatamente' }
+  - { anterior: 'exactidão', acordo: 'exatidão' }
+  - { anterior: 'excepção', acordo: 'exceção' }
+  - { anterior: 'excepções', acordo: 'exceções' }
+  - { anterior: 'excepcional', acordo: 'excecional' }
+  - { anterior: 'excepto', acordo: 'exceto' }
+  - { anterior: 'extracção', acordo: 'extração' }
+  - { anterior: 'extracções', acordo: 'extrações' }
+  - { anterior: 'factura', acordo: 'fatura' }
+  - { anterior: 'facturas', acordo: 'faturas' }
+  - { anterior: 'facturação', acordo: 'faturação' }
+  - { anterior: 'facturado', acordo: 'faturado' }
+  - { anterior: 'infecção', acordo: 'infeção' }
+  - { anterior: 'insecto', acordo: 'inseto' }
+  - { anterior: 'insectos', acordo: 'insetos' }
+  - { anterior: 'inspecção', acordo: 'inspeção' }
+  - { anterior: 'inspector', acordo: 'inspetor' }
+  - { anterior: 'lectivo', acordo: 'letivo' }
+  - { anterior: 'lectiva', acordo: 'letiva' }
+  - { anterior: 'objectivo', acordo: 'objetivo' }
+  - { anterior: 'objectiva', acordo: 'objetiva' }
+  - { anterior: 'objectivos', acordo: 'objetivos' }
+  - { anterior: 'objectivas', acordo: 'objetivas' }
+  - { anterior: 'objecto', acordo: 'objeto' }
+  - { anterior: 'objectos', acordo: 'objetos' }
+  - { anterior: 'óptimo', acordo: 'ótimo' }
+  - { anterior: 'óptima', acordo: 'ótima' }
+  - { anterior: 'óptimos', acordo: 'ótimos' }
+  - { anterior: 'óptimas', acordo: 'ótimas' }
+  - { anterior: 'optimizar', acordo: 'otimizar' }
+  - { anterior: 'optimização', acordo: 'otimização' }
+  - { anterior: 'percepção', acordo: 'perceção' }
+  - { anterior: 'perspectiva', acordo: 'perspetiva' }
+  - { anterior: 'perspectivas', acordo: 'perspetivas' }
+  - { anterior: 'projecto', acordo: 'projeto' }
+  - { anterior: 'projectos', acordo: 'projetos' }
+  - { anterior: 'projectar', acordo: 'projetar' }
+  - { anterior: 'projectado', acordo: 'projetado' }
+  - { anterior: 'projectada', acordo: 'projetada' }
+  - { anterior: 'projectados', acordo: 'projetados' }
+  - { anterior: 'projectadas', acordo: 'projetadas' }
+  - { anterior: 'protecção', acordo: 'proteção' }
+  - { anterior: 'protector', acordo: 'protetor' }
+  - { anterior: 'reacção', acordo: 'reação' }
+  - { anterior: 'reacções', acordo: 'reações' }
+  - { anterior: 'recepção', acordo: 'receção' }
+  - { anterior: 'redacção', acordo: 'redação' }
+  - { anterior: 'redactor', acordo: 'redator' }
+  - { anterior: 'respectivo', acordo: 'respetivo' }
+  - { anterior: 'respectiva', acordo: 'respetiva' }
+  - { anterior: 'respectivos', acordo: 'respetivos' }
+  - { anterior: 'respectivas', acordo: 'respetivas' }
+  - { anterior: 'respectivamente', acordo: 'respetivamente' }
+  - { anterior: 'selecção', acordo: 'seleção' }
+  - { anterior: 'selecções', acordo: 'seleções' }
+  - { anterior: 'seleccionar', acordo: 'selecionar' }
+  - { anterior: 'seleccionado', acordo: 'selecionado' }
+  - { anterior: 'seleccionada', acordo: 'selecionada' }
+  - { anterior: 'seleccionados', acordo: 'selecionados' }
+  - { anterior: 'seleccionadas', acordo: 'selecionadas' }
+  - { anterior: 'seleccione', acordo: 'selecione' }
+  - { anterior: 'tecto', acordo: 'teto' }
+  - { anterior: 'tectos', acordo: 'tetos' }
+
+  # Dupla grafia: o vocabulário regista as duas formas, porque a consoante é
+  # proferida por uns e não por outros. A casa escreve uma só, e escreve a do
+  # Acordo. Ver IDENTIDADE.md §9.
+  - anterior: 'aspecto'
+    acordo: 'aspeto'
+    fonte: 'https://voc.cplp.org/'
+    nota: >-
+      O vocabulário de Portugal regista «aspeto» e não regista «aspecto». Priberam
+      chama-lhe dupla grafia («aspeto ou aspecto»); a forma que o vocabulário
+      atesta é «aspeto», e é a que a casa escreve.
+  - anterior: 'aspectos'
+    acordo: 'aspetos'
+    fonte: 'https://voc.cplp.org/'
+    nota: 'Como «aspecto».'
+  - anterior: 'sector'
+    acordo: 'setor'
+    fonte: 'https://voc.cplp.org/'
+    nota: >-
+      Dupla grafia a sério: o vocabulário regista «setor» E «sector». A casa
+      escreve «setor», que é a forma do Acordo. Não ocorre hoje no repositório;
+      está aqui para que a primeira ocorrência não fique ao critério de quem a
+      escrever.
+  - anterior: 'sectores'
+    acordo: 'setores'
+    fonte: 'https://voc.cplp.org/'
+    nota: 'Como «sector»: as duas constam, a casa escreve «setores».'
+  - anterior: 'sectorial'
+    acordo: 'setorial'
+    fonte: 'https://voc.cplp.org/'
+    nota: 'Como «sector»: as duas constam, a casa escreve «setorial».'
+
+  # -------------------------------------------------------------------------
+  # 2. O acento que deixa de se escrever.
+  #    Acordo, Base IX, 3 (ditongo tónico oi de palavras graves) e Base IX, 7
+  #    (circunflexo na terminação -em da 3.ª pessoa do plural).
+  #    A pesquisa do vocabulário não distingue diacríticos, por isso estes pares
+  #    não se provam por ela: provam-se pelo texto do Acordo, que os nomeia.
+  # -------------------------------------------------------------------------
+  - anterior: 'crêem'
+    acordo: 'creem'
+    fonte: 'http://www.portaldalinguaportuguesa.org/acordo.php?action=acordo&version=1990'
+    nota: >-
+      Base IX, 7: «Prescinde-se de acento circunflexo nas formas verbais
+      paroxítonas que contêm um e tónico oral fechado em hiato com a terminação
+      -em da 3ª pessoa do plural do presente do indicativo ou do conjuntivo:
+      creem, deem, descreem, leem, preveem, releem, reveem, veem.»
+  - { anterior: 'dêem', acordo: 'deem', nota: 'Base IX, 7, como «crêem».' }
+  - { anterior: 'lêem', acordo: 'leem', nota: 'Base IX, 7, como «crêem».' }
+  - { anterior: 'vêem', acordo: 'veem', nota: 'Base IX, 7, como «crêem».' }
+  - anterior: 'jóia'
+    acordo: 'joia'
+    fonte: 'http://www.portaldalinguaportuguesa.org/acordo.php?action=acordo&version=1990'
+    nota: >-
+      Base IX, 3: os ditongos tónicos oi das palavras graves deixam de levar
+      acento agudo. O texto nomeia «heroico» e «paranoico» na mesma lista.
+  - { anterior: 'jóias', acordo: 'joias', nota: 'Base IX, 3, como «jóia».' }
+  - { anterior: 'heróico', acordo: 'heroico', nota: 'Base IX, 3, nomeado no texto.' }
+  - { anterior: 'heróica', acordo: 'heroica', nota: 'Base IX, 3, como «heróico».' }
+
+  # -------------------------------------------------------------------------
+  # 3. A maiúscula que passa a minúscula.
+  #    Acordo, Base XIX, 1 b): «A letra minúscula inicial é usada nos nomes dos
+  #    dias, meses, estações do ano: segunda-feira; outubro; primavera.»
+  #    «caso: fixo» — não há preservação de caixa: o par É a caixa.
+  #    «guarda: inicio-de-frase» — um mês no princípio de uma frase leva
+  #    maiúscula por ser princípio de frase, e a ferramenta não lhe toca.
+  # -------------------------------------------------------------------------
+  - anterior: 'Janeiro'
+    acordo: 'janeiro'
+    caso: fixo
+    guarda: inicio-de-frase
+    fonte: 'http://www.portaldalinguaportuguesa.org/acordo.php?action=acordo&version=1990'
+    nota: 'Base XIX, 1 b). Vale para os doze meses e para os dias da semana.'
+  - { anterior: 'Fevereiro', acordo: 'fevereiro', caso: fixo, guarda: inicio-de-frase }
+  - { anterior: 'Março', acordo: 'março', caso: fixo, guarda: inicio-de-frase }
+  - { anterior: 'Abril', acordo: 'abril', caso: fixo, guarda: inicio-de-frase }
+  - { anterior: 'Maio', acordo: 'maio', caso: fixo, guarda: inicio-de-frase }
+  - { anterior: 'Junho', acordo: 'junho', caso: fixo, guarda: inicio-de-frase }
+  - { anterior: 'Julho', acordo: 'julho', caso: fixo, guarda: inicio-de-frase }
+  - { anterior: 'Agosto', acordo: 'agosto', caso: fixo, guarda: inicio-de-frase }
+  - { anterior: 'Setembro', acordo: 'setembro', caso: fixo, guarda: inicio-de-frase }
+  - { anterior: 'Outubro', acordo: 'outubro', caso: fixo, guarda: inicio-de-frase }
+  - { anterior: 'Novembro', acordo: 'novembro', caso: fixo, guarda: inicio-de-frase }
+  - { anterior: 'Dezembro', acordo: 'dezembro', caso: fixo, guarda: inicio-de-frase }
+  - { anterior: 'Segunda-feira', acordo: 'segunda-feira', caso: fixo, guarda: inicio-de-frase }
+  - { anterior: 'Terça-feira', acordo: 'terça-feira', caso: fixo, guarda: inicio-de-frase }
+  - { anterior: 'Quarta-feira', acordo: 'quarta-feira', caso: fixo, guarda: inicio-de-frase }
+  - { anterior: 'Quinta-feira', acordo: 'quinta-feira', caso: fixo, guarda: inicio-de-frase }
+  - { anterior: 'Sexta-feira', acordo: 'sexta-feira', caso: fixo, guarda: inicio-de-frase }
+
+  # -------------------------------------------------------------------------
+  # 4. O hífen que cai.
+  #    Acordo, Base XVI. Formas consultadas uma a uma no vocabulário.
+  # -------------------------------------------------------------------------
+  - { anterior: 'contra-ordenação', acordo: 'contraordenação' }
+  - { anterior: 'contra-ordenações', acordo: 'contraordenações' }
+  - { anterior: 'co-autor', acordo: 'coautor' }
+  - { anterior: 'co-autores', acordo: 'coautores' }
+  - { anterior: 'co-autoria', acordo: 'coautoria' }
+  - { anterior: 'auto-avaliação', acordo: 'autoavaliação' }
+  - anterior: 'auto-contido'
+    acordo: 'autocontido'
+    fonte: 'http://www.portaldalinguaportuguesa.org/acordo.php?action=acordo&version=1990'
+    nota: >-
+      Nenhuma das duas formas consta do vocabulário: é termo técnico. O par vem
+      da regra e não do léxico. Base XVI: com o prefixo «auto» não se emprega
+      hífen quando o segundo elemento começa por consoante diferente
+      («autoestrada», «autoaprendizagem» são os exemplos do texto).
+  - { anterior: 'auto-contida', acordo: 'autocontida', nota: 'Como «auto-contido».' }
+
+# -----------------------------------------------------------------------------
+# Só se assinalam. O sentido inverso destas trocas é ambíguo: de «para» não se
+# pode saber se veio de «pára» ou se sempre foi a preposição. Uma conversão que
+# não se pode desfazer não é reversível, e a reversibilidade é a razão de haver
+# aqui uma lista em vez de uma passagem de um só sentido. Reescrevem-se à mão,
+# como os travessões.
+#
+# Acordo, Base IX, 9: os acentos que só serviam para distinguir homógrafos
+# deixam de se escrever. O Portal da Língua Portuguesa resume-o assim:
+# «escreve-se agora pelo e não pêlo, pela e não péla, para e não pára».
+# -----------------------------------------------------------------------------
+manuais:
+  - { anterior: 'pára', acordo: 'para' }
+  - { anterior: 'pêlo', acordo: 'pelo' }
+  - { anterior: 'pêlos', acordo: 'pelos' }
+  # Só a forma minúscula: «Castanheira de Pêra» é um dos 308 concelhos, e um
+  # topónimo escreve-se como o seu dono o escreve. Uma «Pêra» com maiúscula no
+  # princípio de uma frase fica por assinalar, e é o preço deste par.
+  - { anterior: 'pêra', acordo: 'pera', caso: fixo }
+  - { anterior: 'pólo', acordo: 'polo' }
+  - { anterior: 'pólos', acordo: 'polos' }
+  - { anterior: 'péla', acordo: 'pela' }
+
+# -----------------------------------------------------------------------------
+# Parecem anteriores ao Acordo e são a forma certa em Portugal: a consoante
+# pronuncia-se, e por isso escreve-se (Acordo, Base IV, 1 a): «conservam-se nos
+# casos em que são invariavelmente proferidos nas pronúncias cultas da língua:
+# compacto, convicção, convicto, ficção, friccionar, pacto…»).
+#
+# Esta lista não é decorativa: `carregaFormas()` recusa uma palavra que esteja
+# ao mesmo tempo aqui e em `pares`, e é assim que ela prende. Uma palavra daqui
+# nunca faz a conferência fechar.
+# -----------------------------------------------------------------------------
+iguais:
+  - facto
+  - factos
+  - factual
+  - factuais
+  - contacto
+  - contactos
+  - contactar
+  - secção
+  - secções
+  - seccionar
+  - pacto
+  - pactos
+  - ficção
+  - ficções
+  - dicção
+  - fricção
+  - convicção
+  - convicções
+  - convicto
+  - invicto
+  - adepto
+  - adeptos
+  - apto
+  - aptos
+  - rapto
+  - corrupto
+  - corrupção
+  - egípcio
+  - carácter
+  - característica
+  - características
+  - caracterizar
+  - compacto
+  - intacto
+  - bactéria
+  - bactérias
+  - artefacto
+  - artefactos
+  - opcional
+  - opcionais
+  - captar
+  - capta
+  - captura
+  - capturas
+  - subscrição
+  - ideia
+  - ideias
+  - palavra: 'veredicto'
+    fonte: 'https://voc.cplp.org/'
+    nota: >-
+      Dupla grafia: o vocabulário regista «veredicto» e «veredito». As duas são
+      do Acordo, e por isso «veredicto» não é uma forma anterior. O Método
+      escreve «veredictos», e fica como está.
+  - palavra: 'veredictos'
+    nota: 'Como «veredicto».'
+  - palavra: 'contrafactual'
+    fonte: 'https://voc.cplp.org/'
+    nota: >-
+      O vocabulário não regista o composto, regista «facto» e «factual». A
+      consoante é a de «facto», que se pronuncia e se escreve.
