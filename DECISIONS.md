@@ -5104,7 +5104,7 @@ As alíneas 3 e 5 são a §11 a ser cumprida onde não estava.
 ### 1.45 A direção decide as vigilâncias, sela a pergunta da habitação, e o Método diz «medição»
 
 **Afecta:** metodo · agenda
-**Texto:** metodo 4df6de48cbb1
+**Texto:** metodo 67205ce6ebeb
 **Agenda:** habitacao 2026-08-18 · dgal-endividamento-2025 2026-08-18 · evora-contas-2026 2026-08-18 · evora-contas-2024-pagina 2026-08-18
 
 *Este registo segue a grafia que §1.38 fixou.*
@@ -5230,79 +5230,147 @@ porta e não selo. As contagens `data-prova` da casa são números que chegam ao
 leitor sem selo nenhum, e por isso a frase, lida à letra, prometia mais do que a
 regra dá.
 
-A direção leu as dez regras e cortou a palavra onde ela faz a promessa: «número»
-passa a «medição» na leitura breve do instrumento, na regra 3 («Uma linha por
-medição, com essa origem») e na regra 5, nas duas edições. Uma medição é o que
+A direção leu as dez regras e cortou duas palavras: «número» passa a «medição» na
+leitura breve do instrumento e na regra 5, nas duas edições. Uma medição é o que
 sai do livro-razão com a sua origem; uma contagem que o sítio faz de si próprio
-não é uma medição, e é por isso que leva porta. As três frases passam a ser
+não é uma medição, e é por isso que leva porta. As duas frases passam a ser
 verdadeiras à letra.
 
-**Uma ocorrência fica, e fica por uma razão.** O limite da regra 5 diz «O selo
-prova que o número da página é o da linha», e ali «número» está certo: os
-algarismos que aparecem ao lado de um selo são, por construção, uma medição do
-livro-razão, e a frase fala desses e não da promessa. As restantes ocorrências no
-Método falam do trabalho do motor, do varrimento e do que a construção recusa, e
-não do que o leitor recebe.
-
-#### A leitura cruzada
-
-Um leitor de outra família (Codex, com o contexto cortado) leu os dois diffs e as
-páginas construídas, e devolveu «fundível depois destas correções». Onze pontos,
-todos fechados neste bloco, e um deles não era um defeito.
-
-**Do lado do motor.** A data do selo não podia continuar a ser um campo ao lado
-do selo: o `stamp-seal-date` tinha data por omissão, e hoje é o dia em que se
-reparou na falta e não o dia em que o selo foi feito, o que escreveria o primeiro
-pelo segundo justamente nos ficheiros para que o comando existe; a data passa a
-ser exigida, e quem sela lê o dia na história do repositório. A forma passa a ser
-conferida por padrão e por calendário, porque o `date.fromisoformat` aceita
-`20260818` desde o 3.11 e essa cadeia numa página imprimia-se como está. E o selo
-passa a estar **atado** à sua data por `seal_sha256`, que é o resumo de
-`core_sha256` com `sealed_at`: sem a atadura, mexer na data mudava o que a página
-imprime sem que nada reparasse, e a A10 confere-a na fronteira, antes de comparar
-datas, porque é ali que a data está prestes a ser publicada. O `freeze` e o
-`stamp` passam a escrever por um só escritor, com mudança de linha final, e a
-conferência do `stamp` julga o ficheiro que ele escreveu em vez de acreditar no
-que ele imprime sobre si próprio. As conferências do motor ficam em 25 e 46.
-
-**O ponto que não era um defeito.** A leitura disse que a dívida «selo sem data»
-disparava também num registo que nunca foi selado, por a cadeia não ter guarda. A
-cadeia é `if/elif` e o primeiro ramo devolve `core never sealed`, por isso o caso
-nunca chegava lá, e está verificado a correr. Fica na mesma uma conferência de
-controlo negativo, plantada: com o guarda retirado, a bateria fecha e diz «an
-unsealed registration was reported as an undated seal». Uma linha de dívida que
-dispara no ficheiro errado ensina a ignorar a lista, e é uma coisa que se prova,
-não se argumenta.
-
-**Do lado do sítio.** A leitura apanhou uma citação velha na constituição, que
-nenhuma conferência lê, e duas palavras que faltavam ao corte da direção: a regra
-3 prometia «Uma linha por número» com a mesma promessa da regra 5, e ficou
-«Uma linha por medição». A ocorrência que fica no limite da regra 5 fica dita
-acima, com a razão. E «mantém-se em Em curso» lia-se mal: o rótulo do estado já é
-um nome, e a preposição punha duas coisas a concordar que não concordam. Passa a
-«estado mantido: Em curso» e «state unchanged: Under way», com os dois estragos
-plantados outra vez contra a redação nova.
-
-**A redação, também.** Onde os comentários e esta entrada diziam que a data errada
-esteve publicada, passam a dizer o que aconteceu: foi renderizada na construção e
-corrigida antes de sair. Nada disto chegou ao ar.
+Uma terceira frase tinha a mesma promessa e escapou a esta leitura. Foi a leitura
+cruzada que a encontrou, e o registo dela é a §1.46.
 
 #### O que não mudou
 
-`IDENTIDADE.md` mudou numa citação, e só nela. A §5 abria com *«O selo de
-proveniência junto a cada número é a porta para essa linha.»*, dado como o que o
-Método promete, e o Método já não diz isso: o bloco V reescreveu as dez regras e
-a citação ficou a citar uma frase que deixou de existir, sem que nada o notasse,
-porque nenhuma conferência lê a constituição. Passa a citar o que a regra 5 diz
-hoje, palavra por palavra: *«Ao lado de cada medição há um selo que abre a sua
-linha: cheio quando a origem está completa, a tracejado quando falta um campo.»*
-Os três pontos por baixo dela não mudam, porque era essa a promessa que eles já
-desdobravam. Nenhuma regra da constituição foi tornada falsa por este bloco, e a
-§10 é a razão do corte do Método e não a sua vítima. `src/data/sobre.mjs` não mudou, e
+`IDENTIDADE.md` não mudou neste passo, e nenhuma destas decisões torna falsa uma
+regra dela: a §10 é a razão do corte do Método e não a sua vítima. Uma citação
+dela ficou a citar uma frase que o Método já não diz, e isso é da §1.46. `src/data/sobre.mjs` não mudou, e
 por isso esta entrada não o nomeia. As outras nove regras do Método estão como
 estavam, palavra por palavra. `src/data/calendario.json` atravessou outra vez e
 não mudou um byte, e o registo da travessia só cresceu, que é o que a H4 exige.
 
+### 1.46 A leitura cruzada do bloco da agenda, e a palavra que faltava ao corte
+
+**Afecta:** metodo
+**Texto:** metodo 4df6de48cbb1
+
+*Este registo segue a grafia que §1.38 fixou.*
+
+Um leitor de outra família (Codex, com o contexto cortado) leu os dois diffs da
+§1.45 e as páginas construídas, e devolveu «fundível depois destas correções».
+Onze pontos, todos fechados, e um deles não era um defeito.
+
+#### O que faltava ao corte do Método
+
+A §1.45 mudou «número» para «medição» em duas frases, e deixou uma terceira com a
+mesma promessa: a regra 3 dizia «Uma linha por número, com essa origem», que é o
+que a regra 5 diz do selo, escrito do lado do livro-razão. Fica «Uma linha por
+medição, com essa origem» e «One row per measurement, with that origin». O corte
+da direção era «ficam as dez regras, muda a palavra onde ela promete», e esta era
+uma delas.
+
+**Uma ocorrência fica, e fica por uma razão.** O limite da regra 5 diz «O selo
+prova que o número da página é o da linha». Ali «número» está certo: os algarismos
+que aparecem ao lado de um selo são, por construção, uma medição do livro-razão, e
+a frase fala desses. A §1.45 dizia que as restantes ocorrências «falam do trabalho
+do motor e do varrimento», e a leitura marcou-a como falsa, com razão: esta não
+fala. A razão a sério é esta.
+
+#### A constituição citava uma frase que já não existia
+
+A §5 da `IDENTIDADE.md` abria com *«O selo de proveniência junto a cada número é a
+porta para essa linha.»*, dado como o que o Método promete nas duas línguas. O
+Método não diz isso desde o bloco V, que reescreveu as dez regras: a citação ficou
+a citar uma frase que deixou de existir, e ninguém deu por ela porque **nenhuma
+conferência lê a constituição**. Passa a citar a regra 5 tal como está hoje,
+palavra por palavra: *«Ao lado de cada medição há um selo que abre a sua linha:
+cheio quando a origem está completa, a tracejado quando falta um campo.»* Os três
+pontos por baixo dela não mudam, porque era essa a promessa que eles já
+desdobravam.
+
+Fica dito o que isto é: uma citação da constituição pode voltar a envelhecer no
+dia em que o Método mudar, e não há nada construído que o note. Vai para a §4.
+
+#### «Estado mantido» em vez de «mantém-se em»
+
+A frase da entrada de mesmo estado lia-se mal: o rótulo do estado já é um nome, e
+a preposição punha duas coisas a concordar que não concordam. Passa a «estado
+mantido: Em curso» e «state unchanged: Under way». Os dois estragos plantados
+outra vez contra a redação nova, cada um reposto, cada um a fechar nas duas
+edições: uma entrada de mesmo estado escrita «passa a» («que se escreve "estado
+mantido: Em curso"»), e uma transição a sério escrita «estado mantido:» («que se
+escreve "A seguir → Em curso"»).
+
+#### A data do selo, do lado do motor
+
+A §1.45 pôs a data do selo a existir. A leitura mostrou que ela ainda não estava
+segura, e são quatro coisas:
+
+- **O `stamp-seal-date` tinha data por omissão.** Hoje é o dia em que se repara
+  na falta, e não o dia em que o selo foi feito, e a omissão escrevia o primeiro
+  pelo segundo justamente nos ficheiros para que o comando existe. A data passa a
+  ser exigida; quem sela lê o dia na história do repositório.
+- **A forma da data.** O `date.fromisoformat` aceita `20260818` desde o 3.11, e
+  essa cadeia numa página imprimia-se como está. Passa a ser conferida por padrão
+  e por calendário.
+- **A data não estava atada ao selo.** `seal_sha256` é o resumo de `core_sha256`
+  com `sealed_at`. Sem ele, mexer na data mudava o que a página imprime sem que
+  nada reparasse. O `check` recusa uma data mexida depois do selo, e a A10
+  confere a atadura **na fronteira**, antes de comparar datas, porque é ali que a
+  data está prestes a ser publicada: dois campos a concordarem um com o outro não
+  são prova, o resumo sobre os dois é.
+- **O ficheiro.** O `freeze` e o `stamp` passam a escrever por um só escritor,
+  com mudança de linha final, e a conferência do `stamp` julga o ficheiro que ele
+  escreveu em vez de acreditar no que ele imprime sobre si próprio.
+
+**Os estragos, cada um reposto:**
+
+| Estrago | O que fecha |
+| --- | --- |
+| a data do selo mexida depois do selo | o `check` fecha: «the seal date was changed after the seal. `seal_sha256` binds `core_sha256` to `sealed_at`, and this file carries 4d48864dfc7d where the two fields in it make 6d899a19db10» |
+| a mesma, vista da fronteira | a A10 fecha: «the registration's seal date was changed after the seal (A10) ... The date this page would print is not the date that was sealed» |
+| um selo datado e não atado | a A10 fecha: «the registration is sealed and carries no `seal_sha256` (A10)» |
+| `20260818` como data | o `stamp` recusa: «'20260818' is not a date in the form AAAA-MM-DD» |
+| o `stamp` sem data | recusa: «this command needs the date the seal was made ... It is not defaulted to today» |
+| uma segunda data por cima da primeira | recusa: «already dated 2026-08-18, and this says 2026-08-19. A seal is dated once» |
+
+As conferências do motor ficam em 25 no `prereg_test` e 46 no `export_agenda_test`.
+O selo da habitação ficou atado pelo mesmo caminho guardado, `seal_sha256`
+4d48864dfc7d, e o `core_sha256` continua a52898c8638e: o resumo é sobre o objecto
+e não sobre os bytes.
+
+#### O ponto que não era um defeito
+
+A leitura disse que a dívida «selo sem data» disparava também num registo que
+nunca foi selado, por a cadeia não ter guarda. A cadeia é `if/elif` e o primeiro
+ramo devolve `core never sealed`, por isso o caso nunca chegava lá. Está
+verificado a correr, e não por leitura: com o guarda retirado de propósito, a
+bateria fecha e diz «an unsealed registration was reported as an undated seal».
+A conferência de controlo negativo fica, plantada, porque uma linha de dívida que
+dispara no ficheiro errado ensina a ignorar a lista inteira.
+
+#### A redação, e porque é que esta entrada existe em vez de a §1.45 ser reescrita
+
+Onde os comentários e a §1.45 diziam que a data errada **esteve publicada**,
+passam a dizer o que aconteceu: foi renderizada na construção e corrigida antes de
+sair. Nada disto chegou ao ar, e escrever que chegou seria uma segunda
+imprecisão por cima da primeira.
+
+E o resumo novo do Método veio numa entrada nova, e não por cima da linha
+`Texto:` da §1.45. Foi o varrimento do motor que o exigiu: reescrito, o
+`sweeps/decisoes.py` respondia «entrada reescrita no mesmo commit: não escreveu
+uma decisão nova, reescreveu a §1.45 e o carimbo dentro dela», que é exactamente
+a mudança que a conferência do sítio não consegue ver, porque depois dela o
+carimbo e o ficheiro voltam a bater certo (§1.40, e a revisão cruzada 2 que a
+pôs lá). A §1.45 fica com o resumo que carimbou no dia em que foi escrita, e esta
+entrada carrega o de hoje.
+
+E fica dito com precisão, porque o varrimento passa a responder OK e a razão
+importa: o resumo `4df6de48cbb1` aparece pela primeira vez no commit que o pôs,
+por engano, dentro da §1.45, e este ramo guarda esse commit e a correção que se
+lhe seguiu. O varrimento responde OK porque a pergunta que faz é se o commit do
+carimbo reescreveu **a entrada que hoje o carrega**, e a §1.46 não existia nesse
+commit. A sequência inteira está no ramo, e está escrita aqui, que é o que
+distingue uma correção de um apagamento.
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
@@ -5693,6 +5761,16 @@ o que continuava aberto de antes. Cada item diz porque não foi feito agora e a
 quem pertence.
 
 ### 4.1 O que fica adiado — e para que fase
+
+**As citações da constituição não são conferidas por nada** (18.08.2026, §1.46).
+A §5 da `IDENTIDADE.md` citou durante dois blocos uma frase do Método que o bloco
+V tinha apagado, e nenhuma conferência deu por isso, porque nenhuma lê a
+`IDENTIDADE.md`. A citação está corrigida; o buraco não. Toda a citação da
+constituição pode voltar a envelhecer no dia seguinte a um bloco tocar num texto
+governado. Não se abre um portão novo para isto neste bloco: a amarra das
+decisões já sabe ler ficheiros governados e comparar resumos, e o caminho barato
+é estendê-la para conferir que uma frase citada entre aspas na constituição existe
+no ficheiro que ela diz citar. Fica para o bloco que voltar ao Método.
 
 ~~**Bloco V · a ortografia das linhas cruzadas.**~~ **Fechada a 16.08.2026
 (§1.40).** Converteu-se em `publisher/manifest.evora.json` e voltou por
