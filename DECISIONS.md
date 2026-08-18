@@ -4336,7 +4336,11 @@ uma régua de anos por cima de uma lista. Passa a ser uma **banda**. Cada mandat
 ocupa no desenho o pedaço de tempo que ocupou na realidade, sobre um eixo
 partilhado; a legenda por baixo leva as portas, uma por mandato, para o bloco
 daquele mandato na mesma página, porque uma âncora dentro de um desenho não se lê
-como porta. Nada é escrito: os anos saem de `tempo.eixo`, os períodos de
+como porta. A aresta de cada segmento é o que separa um mandato do seguinte, e
+por isso é objeto de interface e não arrumação: `--paper-3` sobre o fundo do
+instrumento mede 1,11:1, o preenchimento não desenha nada, e a aresta leva
+`--muted`, medido em 6,30:1 contra o fundo e 5,66:1 contra o preenchimento em
+claro. Nada é escrito: os anos saem de `tempo.eixo`, os períodos de
 `mandato.periodo`, e a geometria é derivada dos dois. Sem acento novo: um mandato
 não é uma medição, e a banda distingue-se com fundo, fio e monoespaçada. O
 mandato em curso não tem fim publicado e por isso não tem aresta direita: ocupa a
@@ -4971,7 +4975,7 @@ neste bloco.
 
 | Item | O que foi medido | Porque não foi fechado aqui |
 | --- | --- | --- |
-| `--rule-strong` sobre papel, nas fronteiras de caixa | 1,83:1 em claro e 1,78:1 em escuro, contra os 3:1 que a 1.4.11 pede a um objeto de interface. São **19 fronteiras** na folha. Duas saíram deste par neste bloco, porque eram portas e não arrumação: o separador da prova de cada regra e o fio debaixo de cada `data-prova`, os dois agora em `--muted`. | Uma fronteira de caixa é arrumação e não estado: quem não a vir não perde informação nenhuma, e é por isso que a régua a conta também como decoração, sem limiar. Subi-la a 3:1 mudaria o peso de fio de 19 sítios de uma vez, que é uma decisão de desenho e não uma correção. Fica para o juízo da direção na pré-visualização. |
+| `--rule-strong` sobre papel, nas fronteiras de caixa | 1,83:1 em claro e 1,78:1 em escuro, contra os 3:1 que a 1.4.11 pede a um objeto de interface. São **19 fronteiras** na folha. Três saíram deste par neste bloco, porque nenhuma delas era arrumação: o separador da prova de cada regra, o fio debaixo de cada `data-prova` e a aresta dos segmentos da banda dos mandatos, os três agora em `--muted`. | Uma fronteira de caixa é arrumação e não estado: quem não a vir não perde informação nenhuma, e é por isso que a régua a conta também como decoração, sem limiar. Subi-la a 3:1 mudaria o peso de fio de 19 sítios de uma vez, que é uma decisão de desenho e não uma correção. Fica para o juízo da direção na pré-visualização. |
 | A caixa de estado de `/estudos/<slug>` (`.placeholder`) | Um tracejado com fundo às riscas e uma etiqueta de estado («Rascunho · sem conteúdo», «Documento alojado · página por escrever»). A palavra `placeholder` **não** entrou na lista de estados de espécime que o portão recusa (§6), e foi decisão e não esquecimento. | O que a §6 proíbe é desenhar uma **ausência de dados** como espécime. Isto não é isso: é o estado editorial de uma página do arquivo, dito por palavras, sem prometer prova nenhuma e sem número por trás. Mas o vocabulário visual é o do espécime, e a v2 acabou de o proibir noutro sítio. Fica escrito para a direção decidir se a caixa muda de forma ou se o nome muda. |
 
 ### 4.2 O que continua aberto de antes, e não mudou neste bloco

@@ -2218,9 +2218,16 @@ a.src-chip.is-unverified:hover::before {
   display: block;
   overflow: visible;
 }
+/* A ARESTA É O SEGMENTO. `--paper-3` sobre o fundo do instrumento mede 1,11:1:
+   o preenchimento não desenha nada, e o que separa um mandato do seguinte é a
+   aresta. Por isso ela é objeto de interface e não arrumação, e vai em
+   `--muted`, que mede 6,30:1 contra o fundo e 5,66:1 contra o preenchimento em
+   claro (6,27 e 5,73 em escuro). `--rule-strong` media 1,68:1 e 1,51:1, e
+   `--axis` fica em 3,26:1 e 2,93:1, abaixo dos 3:1 de um dos dois lados.
+   Medido em `scripts/medir-contraste.mjs`. */
 .mun-banda-seg {
   fill: var(--paper-3);
-  stroke: var(--rule-strong);
+  stroke: var(--muted);
   stroke-width: 1;
 }
 .mun-banda-seg.is-aberto {
