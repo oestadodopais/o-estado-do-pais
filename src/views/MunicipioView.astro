@@ -210,9 +210,13 @@ const metodoPath = routePath('metodo', lang);
   </div>
 
   <!-- ===================================================== CAMADA 1 — RELANCE -->
-  <section id="relance">
+  <section id="relance" aria-labelledby="relance-k">
     <div class="sec-head">
-      <span class="eyebrow">{s.municipio.relanceK}</span>
+      {/* «Relance» é o título desta secção, e não só uma sobrancelha: as oito
+          medidas por baixo são `h3`, e sem um `h2` aqui o sumário de
+          cabeçalhos saltava de h1 para h3. O nível passa a existir; o desenho
+          é o mesmo, medido. */}
+      <h2 class="eyebrow" id="relance-k">{s.municipio.relanceK}</h2>
       <p class="sec-sub">{s.municipio.relanceSub}</p>
     </div>
 
