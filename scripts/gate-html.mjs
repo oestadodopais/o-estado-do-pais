@@ -333,6 +333,58 @@ function textoTranscrito(el) {
 }
 
 /**
+ * A FORMA DE UM VALOR — a cópia própria do portão, e o que ela normaliza.
+ *
+ * Bloco T, T4. Até 18.08.2026 um `data-claim` era conferido por `digitsOf`, que
+ * deita fora tudo o que não é algarismo: o sinal menos, a vírgula decimal, o
+ * espaço dos milhares e qualquer símbolo metido dentro do elemento. Medido com
+ * dois estragos plantados de propósito (§1.44, e a §4.1 registou-os): «96%»
+ * onde o livro-razão diz «96» passava, e a posição de investimento
+ * internacional sem o sinal menos rendia «50,2» na primeira página sem um único
+ * erro nessa página.
+ *
+ * Passa a comparar-se a CADEIA. Esta função diz, exactamente, o que é a mesma
+ * escrita e o que é outro número. Vive aqui, e não em `src/lib/`, porque um
+ * portão que normalize pela mesma função que o gabarito usa confirma a função e
+ * não o livro-razão (a mesma razão do separador de `attributed_to`, §1.31, e
+ * dos rótulos das reconferências, §1.47 T1). O gabarito não normaliza nada: ele
+ * escreve o valor tal e qual, e é isso que esta função existe para provar.
+ *
+ * O QUE É NORMALIZADO, e porquê:
+ *
+ *   · U+2212 (−) passa a U+002D (-). São o mesmo sinal para quem lê: o
+ *     livro-razão escreve o tipográfico, um teclado escreve o outro. O que NÃO
+ *     se normaliza é a PRESENÇA do sinal: sem ele o número é outro, e é
+ *     exactamente o estrago que fechou esta conferência;
+ *   · U+202F (espaço fino inquebrável), U+00A0 (espaço inquebrável) e U+2009
+ *     (espaço fino) passam a U+0020. Os quatro são o separador dos milhares na
+ *     tipografia portuguesa, e o próprio livro-razão usa dois deles: a maioria
+ *     dos valores leva U+202F e «−34 100» leva U+0020. O mesmo separador escrito
+ *     noutro ponto de código é o mesmo separador;
+ *   · corridas de espaço em branco passam a um só espaço, e as pontas caem. O
+ *     espaço em branco do HTML é indentação do gabarito e não conteúdo.
+ *
+ * O QUE NÃO É NORMALIZADO, e é o que faz a conferência valer alguma coisa:
+ *
+ *   · a vírgula decimal. «50,2» e «50.2» são números diferentes: em português o
+ *     ponto separa milhares, e trocá-los muda o valor por três ordens de
+ *     grandeza;
+ *   · tudo o resto. Um «%», um «€», uma palavra ou uma letra dentro do elemento
+ *     `data-claim` fazem as cadeias diferir, e é assim que se impõe a regra que
+ *     o `Claim.astro` já segue: dentro do elemento vai o valor do livro-razão e
+ *     mais nada, e o símbolo da unidade fica fora dele.
+ *
+ * @param {string} s
+ */
+function formaDoValor(s) {
+  return String(s)
+    .replace(/−/g, '-')
+    .replace(/[   ]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/**
  * O texto que um leitor COM VISTA vê: o mesmo, menos o que está escondido para
  * leitores de ecrã (`.vh`). São duas superfícies diferentes e a v2 precisa de
  * as separar: o selo carrega a etiqueta do estudo no texto oculto e a palavra
@@ -2225,6 +2277,18 @@ for (const file of ficheirosHtml(DIST)) {
       err(
         `a afirmação "${id}" foi renderizada como "${renderizado.trim()}" mas o ` +
           `livro-razão diz "${claim.value}".`,
+      );
+    } else if (formaDoValor(textoTranscrito(el)) !== formaDoValor(claim.value)) {
+      /* Os algarismos batem e a escrita não: o sinal, a vírgula ou um símbolo
+         metido dentro do elemento. Ver formaDoValor(), que diz o que é a mesma
+         escrita e o que é outro número. */
+      err(
+        `a afirmação "${id}" foi renderizada como "${textoTranscrito(el).slice(0, 60)}" e o ` +
+          `livro-razão diz "${claim.value}".\n` +
+          `      Os algarismos batem certo e a forma não. Não é só o valor: um sinal, uma ` +
+          `vírgula ou um símbolo de unidade dentro do elemento são um número diferente.\n` +
+          `      Dentro de [data-claim] vai o valor da linha e mais nada; o símbolo da ` +
+          `unidade vai ao lado, fora dele (src/components/Claim.astro, "sufixo").`,
       );
     }
     if (rota && !paginaDoLivro) {
