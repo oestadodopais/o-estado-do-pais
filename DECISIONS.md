@@ -6100,7 +6100,7 @@ consegue ver uma regressão que mova 169 excertos sem mover um valor.
 | ficheiros alojados conferidos pelo portão | 0 | **6** (3 linhas × 2 edições) |
 | blocos de `computed_over` conferidos | 0 | **10** (5 × 2) |
 | páginas de série conferidas | 0 | **84** (42 × 2) |
-| conferências do `export_site_rows_test` | 49 | **62** |
+| conferências do `export_site_rows_test` | 49 | **63** |
 | excertos cruzados cortados a meio | 6 | **0** |
 | linhas do livro-razão | 132 | 132 |
 
@@ -6170,6 +6170,7 @@ No motor, o `export_site_rows_test.py`, que corre no portão de commit:
 | uma página humana numa linha que não é série | «The human page exists where the address is a request to an API» |
 | uma página humana noutro anfitrião | «somebody else's promise» |
 | uma página humana com um identificador que o pedido não tem | «the identifiers have to be the same» |
+| a página humana do território certo na eleição errada (a de 2013 na linha de 2009) | «document.url carries digit run(s) ['2013'] that the address the engine read does not. A human page is the page of THIS measurement, and the identifiers have to be the same.» |
 | uma página humana que não é https | «is not https» |
 
 E a via positiva: as cinco linhas do PRR com os ficheiros, as datas e os resumos
