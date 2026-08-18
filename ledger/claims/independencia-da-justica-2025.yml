@@ -33,3 +33,10 @@ note: "Excerto composto a partir das etiquetas da própria resposta do Eurostat;
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas por indicators/refresh.py, nunca à mão.
+verifications:
+  - date: "2026-08-18"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sdg_16_40?format=JSON&lang=EN&geo=PT&lev_perc=VG_FG"
+    result: "igual"
+    by: "painel-semanal"
