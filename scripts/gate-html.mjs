@@ -388,8 +388,8 @@ function eCitado(no) {
 /**
  * OS ESTADOS DE ESPÉCIME que uma página construída não pode render (§6).
  *
- * São os três que a constituição nomeia — caixa de exemplo, espécime, nota de
- * protótipo — nas duas edições, e as suas flexões regulares. A lista é curta de
+ * São os três que a constituição nomeia (caixa de exemplo, espécime, nota de
+ * protótipo), nas duas edições, e as suas flexões regulares. A lista é curta de
  * propósito: cada palavra a mais é uma palavra portuguesa a menos que a prosa
  * da casa pode usar. `placeholder` NÃO está aqui, e é uma decisão: é o nome de
  * uma classe que este sítio usa para o ESTADO EDITORIAL de uma página do
@@ -2697,7 +2697,7 @@ for (const file of ficheirosHtml(DIST)) {
    *
    *   a marca      `data-exemplo`, `data-prototipo`, ou uma marca qualquer cujo
    *                VALOR seja um destes estados (`data-estado="exemplo"`);
-   *   a classe     `exemplo`, `exemplo-k`, `prototipo-nota` — é assim que os
+   *   a classe     `exemplo`, `exemplo-k`, `prototipo-nota`, que é como os
    *                protótipos as escreveram;
    *   o texto      um rótulo que DIZ o estado: «Exemplo», «Exemplo:», «Protótipo
    *                ·», e não a palavra no meio de uma frase.
