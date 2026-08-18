@@ -460,6 +460,15 @@ resumos curtos, a coluna e o filtro, e diz por palavras que o sítio não os alo
 e porquê. É um estado desenhado e não o marcador (`IDENTIDADE.md` §6 e §7): o
 marcador é para um campo que falta, e nenhum campo falta ali.
 
+**Quando a conta é refeita sobre um instantâneo novo, os campos seguem-no todos**
+(18.08.2026, §1.47, T3c). O `computed_over`, o `access_date`, o `reference_date`
+e a `document.edition` passam a ser os do instantâneo lido, mesmo nas linhas cujo
+valor não mexeu: uma releitura é uma leitura nova, e uma linha que diz ter sido
+calculada sobre um ficheiro que esta corrida não somou diz uma coisa que não fez.
+O instantâneo antigo não se perde, porque fica na série de observações do motor e
+no git. Uma linha cujo valor **mexeu** leva ainda uma `atualizacao` datada, e o
+exportador recusa a travessia sem ela (V16): ver «Linhas cruzadas».
+
 ## `attributed_to` — a quem o valor é creditado
 
 Opcional. Uma **lista** de entidades: `["Município de Évora"]`,
@@ -683,7 +692,17 @@ Uma linha cruzada **não se edita à mão**: o resumo prende os bytes, e uma edi
 pára o build. Há dois caminhos, e nenhum é silencioso:
 
 1. **Voltar a cruzar** — o valor mudou no motor. Corrige-se lá, corre-se o
-   exportador, o registo actualiza-se sozinho.
+   exportador, o registo actualiza-se sozinho. **E o valor novo não entra
+   sozinho** (18.08.2026, §1.47, T3c): se o valor exportado for diferente do que
+   esta linha publica em disco, o exportador exige uma entrada `correcao` ou
+   `atualizacao` tipada cujo `new_value` seja o valor novo e cujo `old_value`
+   seja o que está no ficheiro, e **recusa a travessia inteira** sem ela,
+   nomeando a linha, os dois valores e os dois instantâneos. É a conferência V16,
+   e existe porque até essa data uma reexportação podia reescrever um número
+   publicado sem que nada, em nenhum dos dois lados, dissesse que ele tinha
+   mudado. Os dois valores da entrada escrevem-se no manifesto do motor como
+   sentinelas, `__valor__` e `__valor_anterior__`, e são resolvidos lá, um do
+   motor e outro deste disco: o manifesto não guarda números.
 2. **Corrigir deste lado** — é este sítio que admite um erro. Escreve-se a
    entrada em `corrections[]` como em qualquer outra linha, e depois corre-se:
 
@@ -791,6 +810,16 @@ afina-a. São estas, e a lista é fechada:
   (código 1C40705), dados de 2025»);
 - aparar um `excerpt` no fim de uma frase completa, quando o que sai é texto que
   o extractor tinha cortado a meio de uma palavra.
+
+**Um excerto que muda porque a FONTE mudou não é uma afinação destas** e fica na
+história da linha, como `proveniencia` sobre `excerpt` (18.08.2026, §1.47, T3c).
+O caso: no instantâneo de 2026-08-17 o registo do PRR escreve «UNIVERSIDADE DE
+ÉVORA» onde no de 2026-08-03 escrevia «Universidade de Évora». O valor é o mesmo
+ao cêntimo e o excerto muda na mesma, porque o excerto transcreve o que a fonte
+escreve. A diferença com a lista acima é quem mexeu: aparar um corte a meio de
+uma palavra é a casa a apontar melhor para o mesmo texto; uma grafia nova é a
+fonte a escrever outro texto, e é a única coisa que explica ao leitor porque é
+que o nome mudou de forma entre uma visita e a seguinte.
 
 **Estas ficam registadas no git e no `DECISIONS.md`, e não na história da
 linha** — e isto é uma regra escrita, não uma omissão. A razão: a história de
