@@ -234,6 +234,72 @@ PRR corre no motor (`content/04 …/Technical Source/fetch_prr.py`) contra o
 instantâneo de hoje, sob os portões do motor; se os valores mudarem, entram como
 `atualizacao` tipada pelo manifesto (`__valor__`), nunca à mão.
 
+**O que a leitura cega das licenças encontrou (agente Sonnet, 2026-08-18, 13:05 a
+13:27 UTC, sem acesso aos repositórios; 196 237 tokens; o relatório inteiro está
+na transcrição da sessão e o essencial fica aqui, verbatim onde é citação):**
+
+- **PRR (dados.gov.pt).** O recurso `896a8911-c542-4e9c-941c-874a377dc5b3` que as
+  cinco linhas do PRR citam desde 15.08.2026 devolve hoje **404** na própria API
+  («Resource not found», 13:06 UTC): o endereço «permanente» era o recurso de um
+  dia, e o conjunto que melhor lhe corresponde, «Dataset Estrutura de Missão PRR -
+  Entidades» (`https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1`,
+  organização «Estrutura de Missão Recuperar Portugal», `frequency: daily`),
+  regenera o seu único recurso todos os dias com nome datado
+  (`listagem-de-entidades-prr-20260817.xlsx` a 17.08) e id novo. A licença
+  declarada nesse conjunto é **`notspecified` («Licença não especificada»)**. Os
+  termos da plataforma (`https://dados.gov.pt/pt/termos-de-utilizacao`) dizem,
+  palavra por palavra: «Todos os dados carregados por organismos do estado são
+  publicados ao abrigo de uma licença Creative Commons CC BY 4.0, exceto se
+  houver uma especificação em contrário.» e «Os recursos relativos a conjuntos de
+  dados estão abrangidos pela licença que se aplica ao conjunto em que estão
+  inseridos.» A página de termos do portal Recuperar Portugal
+  (`https://recuperarportugal.gov.pt/termos-e-condicoes/`) diz que «Todos os
+  conteúdos […] são propriedade da Recuperar Portugal» e não tem termos de
+  reutilização. **Decisão do lugar de direção para T3:** a licença do PRR não está
+  verificada (um campo «não especificada» ao lado de uma omissão «CC BY 4.0» da
+  plataforma é uma questão jurídica, e é da direção, com o `legal/counsel-brief.md`);
+  por isso **o instantâneo do PRR não se aloja neste bloco**. O que T3 faz no PRR:
+  (a) a morte do endereço é um acontecimento e regista-se como tal, com uma
+  `proveniencia` sobre `source_url` do endereço morto para **a página do
+  conjunto**, que é o endereço estável, e a razão escrita; (b) a reextração corre
+  no motor contra o instantâneo de hoje, e os valores que mexerem entram como
+  `atualizacao` tipada; (c) as linhas de soma passam a dizer sobre que ficheiros
+  foram calculadas (nome do ficheiro tal como o publicador o nomeia, data do
+  instantâneo, sha256 de cada ficheiro, o filtro e a coluna somada) num campo
+  `document.computed_over` (lista de `{file, snapshot_date, sha256, bytes}` mais
+  `filter` e `column`), sem alojar nada; o excerto continua `[a verificar]` nas
+  três somas, porque não há frase nem linha única para transcrever, e a página
+  di-lo; (d) fica escrito na §4.1 que o alojamento espera a decisão da direção
+  sobre a licença.
+- **CAOP (DGT).** Licença **verificada duas vezes**: o campo do conjunto em
+  dados.gov.pt (`"license": "cc-by"`, «Creative Commons Attribution 4.0 - CC BY
+  4.0», organização «Direção-Geral do Território», nos três conjuntos Continente,
+  RAA e RAM) e a página «Dados abertos» da DGT
+  (`https://www.dgterritorio.gov.pt/dados-abertos`): «A informação geográfica
+  descarregada do Centro de Dados está sujeita a uma licença de utilização CC-BY
+  4.0, que permite a utilização livre e gratuita dos dados tendo apenas como
+  obrigação a menção de que a entidade proprietária da informação é a
+  Direção-Geral do Território.» Sem cláusula de partilha nas mesmas condições nem
+  de uso não comercial em nenhuma das páginas lidas. O ficheiro do Continente tem
+  111 647 845 bytes (`Last-Modified: 02 Feb 2026`): **não se aloja o zip inteiro**;
+  aloja-se o **extrato** de que a contagem é feita (a lista das entidades
+  contadas, uma linha por município, com o código e o nome, tirada do GeoPackage
+  pela mesma leitura que produziu a contagem), com o sha256 do zip inteiro de
+  onde saiu, e a atribuição na forma que a DGT pede. A contagem passa a ser
+  `check:dados` sobre o extrato alojado; o marcador sai das quatro linhas da CAOP.
+- **IEFP.** Nenhuma página de termos de utilização, aviso legal ou licença
+  encontrada em iefp.pt (página de estatísticas, página inicial, RGPD; sete
+  caminhos plausíveis dão 404). Não se aloja nada do IEFP; as duas linhas
+  `kind: ficheiro` do IEFP ficam como estão.
+
+O campo `document.hosted` da versão anterior desta secção passa a chamar-se
+**`document.hosted`** só para o que se aloja de facto (CAOP): `{asset:
+"dados/<nome>.csv", sha256, bytes, licence: "CC BY 4.0", licence_url,
+attribution, extracted_from: [{file, sha256, bytes, url}]}`; e
+**`document.computed_over`** para o que se calcula sobre um ficheiro que não se
+aloja (PRR). Os dois entram no validador com regras e estragos plantados como os
+outros campos deste bloco; o exportador é quem os escreve nas linhas cruzadas.
+
 ### 2.5 As linhas de API (T3)
 
 57 linhas `document.kind: "serie"`. A página passa a mostrar, por esta ordem: a
