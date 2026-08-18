@@ -312,6 +312,40 @@ e confirma que a página nomeia o mesmo indicador (código e nome); um endereço
 não confirmado fica ausente, e a página não o inventa. Sem heurística de URL,
 que já saiu (§1.36).
 
+**O que a leitura cega dos endereços humanos encontrou (agente Sonnet, 2026-08-18,
+com dois códigos falsos plantados, `tipsxx99` e `tipsho77`; 143 876 tokens
+próprios e cerca de 526 000 nos sub-agentes que lançou por sua conta):** os dois
+falsos foram dados como não encontrados (bem), mas a leitura é fraca por
+construção: o data browser do Eurostat é uma aplicação de página única que
+devolve HTTP 200 e um título vazio para **qualquer** código, verdadeiro ou falso,
+e o agente só pôde confirmar títulos pelo índice de pesquisa do próprio Eurostat
+(27 de 33 códigos reais; 6 reais ficaram sem título, sem que isso prove nada).
+`www.ine.pt` recusou ou deixou expirar todas as ligações a partir desta máquina
+(reproduzido pelo lugar de direção às 14:5x UTC: `curl` expira em 20 s nas duas
+formas de endereço), por isso nenhuma página humana do INE se confirmou hoje. Do
+SGMAI confirmaram-se as páginas de 2009, 2013, 2017 e 2021 (a de 2009 a 2017 pelo
+JSON emparelhado da mesma origem, com um código falso a dar 404 a sério; a de 2021
+pelo índice); a de 2025 não se encontrou.
+
+**Decisão do lugar de direção para T3, em vez de uma segunda leitura por modelo:**
+a página humana de uma série do Eurostat prova-se por **máquina**, sem índice de
+pesquisa nem leitura: o código existe se a API de disseminação responder 200 ao
+pedido da própria linha (um código falso responde 404, verificado: `tipsgo10` 200,
+`tipsxx99` 404), o título vem do índice de conteúdos oficial em texto
+(`https://ec.europa.eu/eurostat/api/dissemination/catalogue/toc/txt?lang=en`,
+descarregado na hora e guardado no motor com o seu resumo), e o endereço humano é
+o do produto no data browser,
+`https://ec.europa.eu/eurostat/databrowser/view/<código>/default/table?lang=en`,
+que é a forma que o próprio Eurostat publica para cada conjunto. Cada linha do
+Eurostat ganha `document.url` só quando as duas provas passam; o título do índice
+fica registado ao lado no manifesto do motor. INE: `document.url` **não se
+escreve neste bloco** (a fonte não respondeu; fica em §4.1 como «por medir, noutro
+dia», como a linha do INE que já lá está). SGMAI: `document.url` para 2009, 2013,
+2017 e 2021 com os endereços que a leitura abriu (o construtor volta a abri-los
+antes de escrever); 2025 fica sem página humana e a linha di-lo. Lição registada
+para os pedidos cegos seguintes: **proibir sub-agentes** no prompt de uma leitura
+cega, ou o custo foge.
+
 ### 2.6 O conjunto de dados (T4)
 
 `/livro-razao.csv` e `/livro-razao.json` gerados na construção a partir das
