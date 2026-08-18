@@ -156,8 +156,8 @@ section {
 }
 
 .lede {
-  font-size: clamp(16px, 1.55vw, 18px);
-  line-height: 1.62;
+  font-size: clamp(var(--t-leitura), 1.7vw, 19px);
+  line-height: var(--lh-leitura);
   color: var(--ink);
   max-width: 60ch;
 }
@@ -619,8 +619,8 @@ a.src-chip:hover::before {
   gap: 9px;
 }
 .brief-text {
-  font-size: clamp(15.5px, 1.5vw, 17.5px);
-  line-height: 1.5;
+  font-size: var(--t-leitura);
+  line-height: var(--lh-leitura);
   letter-spacing: -0.008em;
   max-width: 70ch;
 }
@@ -684,8 +684,8 @@ a.src-chip:hover::before {
   color: var(--muted);
 }
 .deep-v {
-  font-size: 14.5px;
-  line-height: 1.55;
+  font-size: var(--t-leitura);
+  line-height: var(--lh-leitura);
   color: var(--ink);
 }
 .deep-v.verbatim {
@@ -1110,8 +1110,8 @@ a.src-chip:hover::before {
   border-bottom-color: currentColor;
 }
 .estudo-descricao {
-  font-size: 14.5px;
-  line-height: 1.55;
+  font-size: var(--t-leitura);
+  line-height: var(--lh-leitura);
   color: var(--ink);
   max-width: 62ch;
 }
@@ -1340,8 +1340,8 @@ a.src-chip:hover::before {
   max-width: 68ch;
 }
 .metodo-p {
-  font-size: 16px;
-  line-height: 1.65;
+  font-size: var(--t-leitura);
+  line-height: var(--lh-leitura);
   color: var(--ink);
 }
 .metodo-p strong,
@@ -1353,8 +1353,8 @@ a.src-chip:hover::before {
   padding-left: 1.35em;
   display: grid;
   gap: 11px;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: var(--t-leitura);
+  line-height: var(--lh-leitura);
   color: var(--ink);
 }
 .metodo-lista li::marker {
@@ -1886,8 +1886,8 @@ a.src-chip:hover::before {
   color: inherit;
 }
 .registo-nota {
-  font-size: 14.5px;
-  line-height: 1.55;
+  font-size: var(--t-leitura);
+  line-height: var(--lh-leitura);
   color: var(--ink);
   max-width: 58ch;
 }
