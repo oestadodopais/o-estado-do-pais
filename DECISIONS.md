@@ -5101,6 +5101,117 @@ e as da primeira leitura.
 A IDENTIDADE não mudou: nenhuma das cinco correções tornou falsa uma regra dela.
 As alíneas 3 e 5 são a §11 a ser cumprida onde não estava.
 
+### 1.45 A direção decide as vigilâncias, sela a pergunta da habitação, e o Método diz «medição»
+
+**Afecta:** metodo · agenda
+**Texto:** metodo 67205ce6ebeb
+**Agenda:** habitacao 2026-08-18 · dgal-endividamento-2025 2026-08-18 · evora-contas-2026 2026-08-18 · evora-contas-2024-pagina 2026-08-18
+
+*Este registo segue a grafia que §1.38 fixou.*
+
+A 2026-08-18, em conversa, a direção leu as três vigilâncias, a pergunta da
+habitação e as dez regras do Método, e decidiu sobre as três. Este bloco é o
+registo dessas decisões e o mínimo de código que a página precisava para as dizer
+sem mentir.
+
+#### As três vigilâncias ficam em curso, e a decisão fica escrita
+
+`dgal-endividamento-2025`, `evora-contas-2026` e `evora-contas-2024-pagina`
+entraram na agenda a 2026-08-16, propostas pelo motor, e as três tinham
+`decidido_por: null`: a página escrevia «Sem decisão da direção registada», e era
+verdade. A direção leu-as e decidiu mantê-las em curso. Passam a
+`decidido_por: direcao`, com a data e a fonte, e cada uma leva uma entrada de
+histórico do tipo `alteracao` que sai de `em_curso` e chega a `em_curso`.
+
+Uma entrada cujo estado de partida e de chegada é o mesmo pode parecer ruído, e
+não é. A regra 8 promete que nada sai desta agenda em silêncio, e o que aconteceu
+a 2026-08-18 foi uma mudança de quem responde pelas três, não do que se está a
+fazer com elas: sem entrada, a decisão apareceria como um campo que trocou de
+valor sozinho. O exportador aceita-a sem precisar de mudança nenhuma, e a razão é
+a forma da H1: a continuidade que ela exige é `de` igual ao `para` da entrada
+anterior, e é.
+
+#### A entrada que não é uma transição passa a dizê-lo
+
+Com `de` igual a `para`, a página escrevia «Em curso → Em curso». A seta anuncia
+uma mudança de estado, e ali não houve nenhuma. A página passa a ter três formas
+e não duas: a entrada, que não vem de estado nenhum, «passa a X»; a transição a
+sério, `X → Y`; e a entrada de mesmo estado, «mantém-se em X», «stays in X» na
+edição inglesa. A marca `data-agenda-transicao` não mudou, e continua a levar
+`de` e `para` crus do registo.
+
+O portão ganhou a segunda frase na sua própria cópia dos rótulos, ao lado da
+primeira, pela razão de sempre: se lesse a cadeia do gabarito, confirmava o
+gabarito. Não é conferência nova, é a mesma a conhecer as três formas.
+**Os dois estragos plantados, cada um reposto:**
+
+| Estrago | O portão |
+| --- | --- |
+| uma entrada de mesmo estado escrita «passa a» | fecha: «a entrada 1 do histórico de "dgal-endividamento-2025" escreve a transição "passa a Em curso" e o registo leva-a de "em_curso" a "em_curso", que se escreve "mantém-se em Em curso"» |
+| uma transição a sério escrita «mantém-se em» | fecha: «a entrada 2 do histórico de "habitacao" escreve a transição "mantém-se em Em curso" e o registo leva-a de "a_seguir" a "em_curso", que se escreve "A seguir → Em curso"» |
+
+O segundo estrago precisou de uma transição a sério, que o registo de hoje não
+tem: foram plantadas em `habitacao` duas entradas que a levam a `em_curso` e a
+trazem de volta, e por isso nenhuma contagem de estado se mexeu. Os dois fecham
+nas duas edições, e o ficheiro do registo voltou byte a byte ao que o exportador
+escreveu.
+
+#### A pergunta da habitação está selada
+
+A direção leu a pergunta, e `python3 -m core.prereg freeze` selou o registo
+prévio do motor: `core_sha256`
+`a52898c8638ebf3741bd65d2f46f874dc5f43cfbbd6fffe9ac112df5413bd209`, escrito no
+próprio ficheiro do registo ao lado do número de emendas à data do selo. A
+pergunta já não muda sem emenda registada, e a recolha ainda não começou. O item
+`habitacao` passa a `registo_previo_estado: selado`, e a página deixa de escrever
+«esta ainda não foi selada» por baixo da pergunta. A pergunta não foi tocada: o
+`freeze` acrescentou dois campos e mais nada.
+
+**A data que a página escreve ao lado do selo é a do registo, e não a do selo, e
+isso fica em aberto.** A A10 do exportador compara `registo_previo_em` com o
+campo `registered` do próprio registo prévio, que é 2026-08-16, o dia em que a
+pergunta foi registada; o `freeze` não escreve data nenhuma. A página escreve
+«Registo prévio selado a 2026-08-16», e o selo é de 2026-08-18. Fica escrito aqui
+em vez de ser corrigido de passagem: mudar isto é mudar o que o `freeze` escreve
+e o que a A10 compara, dos dois lados da fronteira, e isso é decisão da direção e
+não afinação de quem constrói.
+
+A primeira entrada do histórico deste item diz que a direção ainda não tinha lido
+a pergunta. É história, e fica como foi escrita. O que se acrescenta é a entrada
+de 2026-08-18, que diz que leu.
+
+**E uma conferência do motor tinha deixado de conferir.** A conferência 25 de
+`export_agenda_test.py` plantava `registo_previo_estado: selado` sobre um registo
+por selar; com o registo selado, essa linha deixou de plantar seja o que for, e a
+bateria de conferências ficava verde sobre uma que já não podia fechar. Passa a
+plantar sempre o contrário do que é verdade no dia, e volta a fechar:
+«registo_previo_estado says 'iniciado' and the registration is 'selado' (A10)».
+
+#### As duas palavras do Método
+
+A §1.44 registou o ponto, lido pela revisão cruzada: o Método escreve «Um número
+chega ao leitor só se tem linha» e «Ao lado de cada número há um selo que abre a
+sua linha», e a §10 da constituição diz que uma contagem do próprio sítio leva
+porta e não selo. As contagens `data-prova` da casa são números que chegam ao
+leitor sem selo nenhum, e por isso a frase, lida à letra, prometia mais do que a
+regra dá.
+
+A direção leu as dez regras e cortou duas palavras, e nada mais: «número» passa a
+«medição» na leitura breve do instrumento e na regra 5, nas duas edições. Uma
+medição é o que sai do livro-razão com a sua origem; uma contagem que o sítio faz
+de si próprio não é uma medição, e é por isso que leva porta. As duas frases
+passam a ser verdadeiras à letra. As outras ocorrências de «número» no Método
+ficam onde estão: falam do trabalho do motor e do varrimento, e não da promessa
+do selo.
+
+#### O que não mudou
+
+`IDENTIDADE.md` não mudou: nenhuma destas decisões torna falsa uma regra dela, e
+a §10 é a razão do corte e não a sua vítima. `src/data/sobre.mjs` não mudou, e
+por isso esta entrada não o nomeia. As outras nove regras do Método estão como
+estavam, palavra por palavra. `src/data/calendario.json` atravessou outra vez e
+não mudou um byte, e o registo da travessia só cresceu, que é o que a H4 exige.
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
