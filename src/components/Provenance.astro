@@ -9,13 +9,35 @@
  * estava construída (auditoria, F1; IDENTIDADE.md §5).
  *
  * O quadrado cheio: proveniência completa. O quadrado a tracejado: falta pelo
- * menos um campo — e a etiqueta di-lo com o único marcador de incerteza do
+ * menos um campo — e o marcador di-lo com o único marcador de incerteza do
  * sítio, `[a verificar]`, o mesmo que a linha mostra no campo em falta
- * (IDENTIDADE.md §6). Dizia «fonte por confirmar», que era uma segunda
- * formulação para a mesma coisa.
+ * (IDENTIDADE.md §6).
  *
- * Vai marcada com data-nonledger="proveniencia" porque o seu texto é gerado a
- * partir do próprio livro-razão (nomes de estudos com anos).
+ * ---------------------------------------------------------------------------
+ * V2 (`design/DECISAO.md`, direção S; IDENTIDADE.md §5.4 e §5.5)
+ * ---------------------------------------------------------------------------
+ *
+ * O SELO ESCREVE A PALAVRA. «fonte» em português, «source» em inglês, à vista
+ * e sublinhada. Estava escondida com `.vh` e um leitor com vista via só um
+ * título de estudo em cinzento a 10,5px: a promessa mais exposta do sítio era
+ * a mais fácil de não ver.
+ *
+ * A ETIQUETA DO ESTUDO SAI DO TEXTO VISÍVEL. Repetida em cada célula, era
+ * ruído; e é ela que o cabeçalho teve de esconder à mão a 16.08.2026 (§1.37).
+ * Passa a três sítios, todos eles conferidos:
+ *
+ *   · `data-selo-etiqueta` — o atributo declarado que o portão lê e compara
+ *     com a etiqueta DAQUELA linha;
+ *   · `title` — o que aparece ao parar o cursor;
+ *   · o texto oculto (`.vh`) — o que um leitor de ecrã ouve, e que continua a
+ *     ser comparado carácter a carácter, para que nenhuma prosa se embrulhe
+ *     dentro de uma marca que dispensa o varrimento.
+ *
+ * A UNIDADE INTEIRA É A PORTA. Um só `<a>`: quadrado, palavra e, quando a
+ * proveniência está incompleta, o marcador. A folha dá-lhe altura de alvo.
+ *
+ * O marcador não se mexeu: continua onde estava, ao lado do quadrado a
+ * tracejado, e a sua conta não desce.
  */
 import { getClaim, provenienciaIncompleta, eDerivada, POR_VERIFICAR } from '../lib/ledger.mjs';
 import { caminhoDaLinha } from '../lib/livro.mjs';
@@ -29,16 +51,20 @@ const claim = getClaim(id);
 const derivada = eDerivada(claim);
 const incompleta = provenienciaIncompleta(claim);
 const estudo = studyLabel(claim.study, lang);
+
+/* A etiqueta desta linha, e é uma cadeia só: é ela que vai no atributo, no
+   `title` e no texto oculto, e é ela que o portão reconstrói do livro-razão. */
+const etiqueta = `${derivada ? `${s.prov.calculado} · ` : ''}${estudo}`;
 ---
 
 <a
   class:list={['src-chip', incompleta && 'is-unverified']}
   href={caminhoDaLinha(id, lang)}
   data-nonledger="proveniencia"
+  data-selo-etiqueta={etiqueta}
+  title={etiqueta}
 >
-  <span class="vh">{s.prov.verLinha}: </span>
-  <span class="src-chip-texto">
-    {derivada ? `${s.prov.calculado} · ` : ''}{estudo}
-  </span>
+  <span class="vh">{s.prov.verLinha}: {etiqueta}</span>
+  <span class="src-chip-texto">{s.prov.selo}</span>
   {incompleta && <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>}
 </a>

@@ -44,6 +44,10 @@ export const STRINGS = {
 
     prov: {
       calculado: 'calculado',
+      /* A palavra que o selo escreve, à vista (IDENTIDADE.md §5.4). Esteve
+         escondida para leitores de ecrã até à v2, e um leitor com vista via só
+         um título de estudo em cinzento. */
+      selo: 'fonte',
       lido: 'Lido a',
       fonte: 'Fonte',
       documento: 'Documento',
@@ -704,6 +708,7 @@ export const STRINGS = {
 
     prov: {
       calculado: 'calculated',
+      selo: 'source',
       lido: 'Read on',
       fonte: 'Source',
       documento: 'Document',

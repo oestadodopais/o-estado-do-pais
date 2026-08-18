@@ -298,12 +298,25 @@ section {
 
 /* Selo de proveniência. É uma ÂNCORA para a linha do livro-razão — o Método
    promete que o selo é a porta, e uma etiqueta que não abre nada não é um selo
-   (IDENTIDADE.md §5). O sublinhado só aparece ao passar: o selo é mobília, e
-   sessenta e dois sublinhados numa página de índice seriam ruído. */
+   (IDENTIDADE.md §5).
+
+   V2: a palavra «fonte» está à vista e sublinhada, e a unidade inteira
+   (quadrado, palavra e, quando falta um campo, o marcador) é a porta. O
+   sublinhado deixou de ser só ao passar: era mobília a fingir-se de mobília, e
+   a interação central do sítio não pode depender de se descobrir que ali há
+   uma ligação (IDENTIDADE.md §5.4; `design/CRITICA-codex.md`, «the door is too
+   quiet for the most important interaction on the site»).
+
+   O ALVO. `min-height: 24px` e um pouco de folga vertical: a unidade é
+   pequena, mas o que se toca não é. Em ecrã de toque sobe para 44px, que é o
+   alvo que as duas normas de plataforma pedem, sem mexer na composição de quem
+   usa cursor. */
 .src-chip {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
+  min-height: 24px;
+  padding-block: 2px;
   font-family: var(--f-mono);
   font-size: 10.5px;
   letter-spacing: 0.06em;
@@ -311,28 +324,46 @@ section {
   white-space: normal;
   text-decoration: none;
 }
+/* O quadrado é a distinção de estado que o leitor TEM de ver: cheio quando a
+   proveniência está completa, a tracejado quando falta um campo. Por isso vai
+   em `--axis` (3,56:1 sobre papel) e não em `--rule-strong` (1,83:1), que é a
+   ficha das fronteiras de arrumação. Medido em `scripts/medir-contraste.mjs`. */
 .src-chip::before {
   content: '';
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   flex: none;
-  border: 1px solid var(--rule-strong);
-  background: var(--paper-3);
+  border: 1px solid var(--axis);
+  background: var(--axis);
 }
 .src-chip.is-unverified::before {
   background: transparent;
   border-style: dashed;
 }
+.src-chip-texto {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: from-font;
+  text-decoration-color: var(--axis);
+}
 a.src-chip:hover {
   color: var(--ink);
 }
 a.src-chip:hover .src-chip-texto {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: var(--rule-strong);
+  text-decoration-color: var(--ink);
 }
 a.src-chip:hover::before {
   border-color: var(--ink);
+  background: var(--ink);
+}
+a.src-chip.is-unverified:hover::before {
+  background: transparent;
+}
+@media (pointer: coarse) {
+  .src-chip {
+    min-height: 44px;
+    align-items: center;
+  }
 }
 /* O marcador dentro do selo: mais pequeno, porque ali é etiqueta e não campo. */
 .src-chip .marcador {
@@ -344,26 +375,12 @@ a.src-chip:hover::before {
 .src-chip-amostra {
   gap: 0;
 }
-/* No cabeçalho, o selo é só o glifo (IDENTIDADE §5, excepção única): o rótulo
-   do estudo e o marcador ficam para leitores de ecrã. O estado continua
-   desenhado — cheio ou a tracejado — e a ligação continua a ser a linha própria
-   do valor; o que sai é o texto, que ali é ruído (defeito registado a
-   2026-08-16, DECISIONS §1.37). */
-.masthead-furniture .src-chip {
-  gap: 0;
-}
-.masthead-furniture .src-chip-texto,
-.masthead-furniture .src-chip .marcador {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-  border: 0;
-}
+/* A regra que escondia o texto do selo no cabeçalho (§1.37, 16.08.2026) saiu
+   aqui: o cabeçalho não tem selo nenhum desde que as contagens saíram dele
+   (§1.39), e a mobília leva números do próprio sítio, que têm porta e não
+   levam selo (IDENTIDADE.md §10). Uma regra que não governa nada é uma regra
+   que engana quem a lê. Se um valor do livro-razão voltar ao cabeçalho, a §5.5
+   diz o que fazer, e a regra volta com ele. */
 
 /* grelha de números verificados */
 .figuras {
