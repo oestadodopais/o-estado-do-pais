@@ -212,10 +212,12 @@ for (const file of ficheiros) {
  * é interno: é exactamente o que o campo serve para dizer.
  */
 let comPage = 0;
+let comRecorte = 0;
 const localizadoresInternos = [];
 const CHAVES = /(\.json|raw\/|→|\[["']|\bcm_lists\b|\bexecutive_\d|\bmandates\[|\bfinal_recipients\b|\btotal_mandates\b)/;
 for (const [id, c] of claims) {
   if (typeof c.source_url === 'string' && c.source_url.includes('#page=')) comPage++;
+  if (c.document?.crop) comRecorte++;
   const loc = c.document?.locator;
   if (typeof loc !== 'string') continue;
   const url = typeof c.source_url === 'string' ? c.source_url : '';
@@ -252,6 +254,7 @@ const medicao = {
   },
   marcador_retirado: { ocorrencias: marcadorRetirado, paginas: paginasComMarcadorRetirado.size },
   linhas_com_page: comPage,
+  linhas_com_recorte: comRecorte,
   localizadores_internos: localizadoresInternos.length,
 };
 
@@ -281,6 +284,7 @@ console.log(
 );
 console.log(`  [descrição em preparação] . ${marcadorRetirado} ocorrências em ${paginasComMarcadorRetirado.size} páginas`);
 console.log(`  linhas com #page= ......... ${comPage} de ${claims.size}`);
+console.log(`  linhas com recorte ........ ${comRecorte} de ${claims.size}`);
 console.log(`  localizadores internos .... ${localizadoresInternos.length}`);
 console.log('');
 if (semPorta.length) {

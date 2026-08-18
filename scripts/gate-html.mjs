@@ -30,6 +30,7 @@
  *                                 registo que atravessou (§1.40).
  */
 
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -160,6 +161,8 @@ let valoresAuditados = 0;
 let valoresSemSelo = 0;
 /** Ligações internas conferidas contra os ficheiros construídos. */
 let ligacoesConferidas = 0;
+/** Recortes conferidos: o ficheiro construído contra o resumo da linha. */
+let recortesConferidos = 0;
 /**
  * Cada `href` interno encontrado, com a página onde está e a base contra a
  * qual um endereço relativo se resolve.
@@ -665,6 +668,15 @@ const CAMPOS_DA_LINHA = new Set([
    * renderizado com o campo, como compara qualquer outro.
    */
   'document.page',
+  /**
+   * A página de onde o recorte foi tirado.
+   *
+   * É um campo próprio e não uma segunda escrita de `document.page`: o
+   * validador obriga os dois a bater, e a legenda do recorte diz o que o
+   * recorte É, não o que o endereço abre. Quem trocar a legenda de um recorte
+   * pela página de outra linha pára aqui.
+   */
+  'document.crop.page',
   'source_url',
   /**
    * A página do PDF, tal como o próprio endereço a fixa (`…pdf#page=119`).
@@ -803,6 +815,8 @@ function campoDaLinha(claim, campo, lang) {
       /* Inteiro no livro-razão, texto na página: comparam-se como texto, que é
          o que o leitor vê. */
       return claim.document?.page ?? null;
+    case 'document.crop.page':
+      return claim.document?.crop?.page ?? null;
     case 'source_url.page': {
       /* A cópia local da regra — ver o comentário em CAMPOS_DA_LINHA. */
       const m = String(claim.source_url ?? '').match(/#page=(\d+)$/);
@@ -2377,6 +2391,113 @@ for (const file of ficheirosHtml(DIST)) {
     }
   }
 
+  /* --- o recorte da linha impressa, na página dessa linha (bloco T2) -------
+   *
+   * Um recorte é a coisa mais convincente que este sítio publica: uma
+   * fotografia da linha impressa, com toda a autoridade de uma fotografia.
+   * Mostrado ao lado da linha errada, ou trocado depois da travessia, seria um
+   * recibo falso que nenhuma conferência de texto apanha, porque não há texto
+   * nenhum a mudar.
+   *
+   * O que se confere aqui, sobre o HTML construído e os bytes em `dist/`:
+   *
+   *   · uma imagem de `/recortes/` só aparece na página de uma linha, e só na
+   *     da linha que ela prova;
+   *   · o `src` é exactamente `/recortes/<id>.webp`, que é o `asset` que a
+   *     linha declara — com a cópia própria da regra do nome, para conferir o
+   *     livro-razão e não o gabarito;
+   *   · o ficheiro foi construído para `dist/` e os seus bytes dão o resumo que
+   *     a linha declara;
+   *   · uma página não mostra um recorte que a sua linha não tem;
+   *   · e uma linha que TEM recorte mostra-o: uma prova que existe e não se vê
+   *     é a mesma opacidade que este bloco veio fechar, e é o argumento do
+   *     rótulo obrigatório de `source_url.page`, um campo ao lado.
+   *
+   * A legenda («página N») é conferida pela marca de campo, como qualquer
+   * outro campo: `data-linha-campo="document.crop.page"`.
+   */
+  {
+    const recortes = body.querySelectorAll('img[src]').filter((el) =>
+      decodeEntities(el.getAttribute('src') ?? '').startsWith('/recortes/'),
+    );
+    if (recortes.length && !claimDaPagina) {
+      err(
+        `uma imagem de "/recortes/" numa página que não é a de uma linha. Um recorte é a ` +
+          `prova de uma linha, e mostra-se na página dessa linha e em mais lado nenhum.`,
+      );
+    } else if (claimDaPagina) {
+      const recorte = claimDaPagina.document?.crop ?? null;
+      if (recortes.length > 1) {
+        err(
+          `a página de "${claimDaPagina.id}" mostra ${recortes.length} recortes. Uma linha tem ` +
+            `um recorte: o da página onde está a frase que o seu excerto transcreve.`,
+        );
+      }
+      if (!recorte && recortes.length) {
+        err(
+          `a página de "${claimDaPagina.id}" mostra o recorte ` +
+            `"${decodeEntities(recortes[0].getAttribute('src'))}" e a linha não tem ` +
+            `"document.crop". Uma prova que a linha não guarda não se desenha.`,
+        );
+      }
+      if (recorte && !recortes.length) {
+        err(
+          `a linha "${claimDaPagina.id}" traz o recorte "${recorte.asset}" e a página não o ` +
+            `mostra.\n      Uma prova que existe e não se vê deixa o leitor com a ` +
+            `transcrição, que é o que o recorte veio substituir.`,
+        );
+      }
+      for (const img of recortes) {
+        const src = decodeEntities(img.getAttribute('src') ?? '');
+        /* A cópia própria da regra do nome: um recorte por linha, com o nome
+           da linha. Se este portão lesse o `asset` do livro-razão para saber o
+           que esperar, conferia que a página copia o campo — e não que o campo
+           é o que tem de ser. */
+        const esperado = `/recortes/${claimDaPagina.id}.webp`;
+        if (src !== esperado) {
+          err(
+            `a página de "${claimDaPagina.id}" mostra "${src}" e o recorte desta linha é ` +
+              `"${esperado}". Um recorte por linha, com o nome da linha.`,
+          );
+          continue;
+        }
+        if (!recorte) continue;                 // já dito acima
+        if (`/${recorte.asset}` !== esperado) {
+          err(
+            `a linha "${claimDaPagina.id}" declara o recorte "${recorte.asset}" e o nome de um ` +
+              `recorte é "recortes/${claimDaPagina.id}.webp".`,
+          );
+          continue;
+        }
+        const ficheiro = path.join(DIST, 'recortes', `${claimDaPagina.id}.webp`);
+        if (!fs.existsSync(ficheiro)) {
+          err(
+            `a página de "${claimDaPagina.id}" mostra "${src}" e não há ficheiro em ` +
+              `dist${src}. Uma imagem que a construção não produziu é uma porta que não abre.`,
+          );
+          continue;
+        }
+        const resumo = crypto.createHash('sha256').update(fs.readFileSync(ficheiro)).digest('hex');
+        if (resumo !== recorte.sha256) {
+          err(
+            `o recorte de "${claimDaPagina.id}" que foi construído não é o que a linha declara.\n` +
+              `      no livro-razão: ${recorte.sha256}\n` +
+              `      em dist/:       ${resumo}`,
+          );
+        }
+        recortesConferidos++;
+      }
+      /* A legenda diz a página do recorte, e diz-la é a única maneira de o
+         leitor saber de que página é a imagem que está a ver. */
+      if (recorte && !camposRenderizados.has(`${claimDaPagina.id}:document.crop.page`)) {
+        err(
+          `o recorte de "${claimDaPagina.id}" é da página ${recorte.page} e a página não a ` +
+            `diz.\n      Falta a legenda com data-linha-campo="document.crop.page".`,
+        );
+      }
+    }
+  }
+
   /* --- as reconferências de uma linha, na página dessa linha ---------------
    *
    * É a origem 6 aplicada a uma lista: ali um campo da linha, aqui uma entrada
@@ -3562,7 +3683,8 @@ console.log(
     `    prova · ${Object.keys(PROVA).length} chaves reconferidas pelo portão · ` +
       `${ocorrenciasDaProva.length} números marcados nas páginas · ` +
       `${ligacoesConferidas} ligações internas (${ligacoesRelativas} relativas, ` +
-      `${ancorasConferidas} âncoras) · escrito em ${CAMINHO_DA_PROVA}`,
+      `${ancorasConferidas} âncoras) · ${recortesConferidos} recortes · ` +
+      `escrito em ${CAMINHO_DA_PROVA}`,
   ),
 );
 console.log('');
@@ -3573,7 +3695,10 @@ console.log('');
  * 1. Só vê texto. Números dentro de <script> e <style> não são varridos, com
  *    uma excepção: as ilhas <script data-ledger-json>, essas são conferidas
  *    valor a valor contra o livro-razão.
- * 2. Não vê atributos (title, alt, aria-label, conteúdo gerado por CSS).
+ * 2. Não vê atributos (title, alt, aria-label, conteúdo gerado por CSS), com
+ *    duas excepções, as duas onde o atributo É a afirmação: o `href` da âncora
+ *    que embrulha `source_url`, e o `src` de um recorte, que é conferido contra
+ *    o `document.crop` da linha e contra os bytes construídos em dist/.
  * 3. As coordenadas da CAOP são dados geométricos, não afirmações: a sua
  *    proveniência é a citação transcrita, não uma linha do livro-razão.
  * 4. data-nonledger é uma afirmação de confiança de quem escreve o gabarito.

@@ -17,9 +17,10 @@
  *   ii   uma frase de atribuição, em palavras e não em rótulos, composta só dos
  *        campos que existem, e o marcador não é um campo que exista: sem
  *        organismo não há frase, e a dívida diz-se uma vez, no aparelho;
- *   iii  a prova: a porta para a página exata do documento, quando o endereço a
- *        fixa, e a transcrição: o excerto, ou o campo devolvido quando a fonte
- *        é uma série;
+ *   iii  a prova: o recorte da linha impressa quando a linha o tem, com a sua
+ *        legenda e a porta para a página exata do documento; a porta sozinha
+ *        quando o endereço fixa a página e não há recorte; e a transcrição: o
+ *        excerto, ou o campo devolvido quando a fonte é uma série;
  *   iv   o pedido exato ou o endereço, quando não foi já a porta de (iii);
  *   v    as verificações: «Lido a», que a linha guarda desde sempre, e
  *        «Reconferido a», uma linha por cada uma das duas entradas mais
@@ -27,9 +28,11 @@
  *        nenhuma entrada, o marcador com a porta para a regra da releitura;
  *   vi   as correções e atualizações desta linha.
  *
- * O QUE NÃO ESTÁ AQUI, E É DE PROPÓSITO. O recorte da linha impressa não existe
- * no formato: é o T2. Onde ele há-de entrar não há caixa de exemplo nem
- * espécime, há o marcador com a sua porta (IDENTIDADE.md §6 e §12).
+ * O RECORTE, ONDE ELE EXISTE. Desde 18.08.2026 (T2) uma linha pode trazer
+ * `document.crop`: a imagem da linha impressa, recortada no motor do PDF fixado
+ * por `core/pdfproof.py`. Onde ela não existe não se desenha nada no seu lugar,
+ * nem caixa nem espécime (IDENTIDADE.md §6): o excerto transcrito faz o que
+ * sempre fez, e é ele a prova.
  *
  *   aparelho  a ficha. Fonte, documento, edição, data de acesso, data dos
  *             dados, estudo, e o estado da proveniência, que é o que esta
@@ -136,6 +139,38 @@ const paginaDoDocumento = claim.document?.page ?? null;
  */
 const paginaDoPdf = (claim.source_url ?? '').match(/#page=(\d+)$/)?.[1] ?? null;
 
+/* Um campo existe quando tem valor E esse valor não é o marcador: «[a verificar]»
+   é a linha a dizer que o campo falta, e um campo que falta não entra numa frase
+   composta. Usado pela frase de atribuição e pelo texto alternativo do recorte. */
+const presente = (v) => Boolean(v) && v !== POR_VERIFICAR;
+
+/**
+ * O recorte da linha impressa, quando a linha o tem.
+ *
+ * A prova documental desta página era, até aqui, uma transcrição: o `excerpt`,
+ * que é a linha impressa copiada palavra por palavra. Com o `document.crop` a
+ * mesma linha vê-se, tal como está no PDF fixado: o recorte foi produzido no
+ * motor por `core/pdfproof.py`, que só o faz quando localiza a frase do excerto
+ * por correspondência exacta, única naquela página. O ficheiro atravessou com o
+ * resumo dos seus bytes, e o validador confere-o a cada construção.
+ *
+ * Onde não há recorte não se desenha nada: nem caixa, nem espécime, nem
+ * marcador a mais (IDENTIDADE.md §6). O excerto faz o que sempre fez.
+ */
+const recorte = claim.document?.crop ?? null;
+
+/**
+ * O texto alternativo do recorte, composto SÓ dos campos que existem.
+ *
+ * A mesma disciplina da frase de atribuição: um título que é o marcador não é
+ * um título, e «Recorte da linha impressa, página 119 de [a verificar]» seria
+ * uma frase com um buraco lida em voz alta a quem não vê a imagem.
+ */
+const recorteAlt = recorte
+  ? `${s.prov.recorteAlt} ${recorte.page}` +
+    (presente(claim.document?.title) ? ` ${s.prov.recorteAltDe} ${claim.document.title}` : '')
+  : null;
+
 /**
  * As reconferências independentes que a página mostra: as duas mais recentes,
  * da mais nova para a mais velha.
@@ -192,7 +227,6 @@ const estudo = studyLabel(claim.study, lang);
  * legível. Cada peça que sobra é um `CampoDaLinha`, e por isso é conferida
  * contra o livro-razão carácter a carácter.
  */
-const presente = (v) => Boolean(v) && v !== POR_VERIFICAR;
 const atribuicaoPecas = [
   presente(claim.source) ? { k: s.livro.linha.publicadoPor, campo: 'source', valor: claim.source } : null,
   presente(claim.document?.title)
@@ -278,11 +312,69 @@ const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undef
         <h2 class="linha-bloco-titulo" id="prova-k">{s.livro.linha.provaK}</h2>
 
         {
+          /* O recorte da linha impressa, e a sua legenda.
+
+             A imagem é a prova; a legenda diz de que página é e leva a porta
+             para lá. A porta é a MESMA âncora que a linha sem recorte mostra
+             logo abaixo, mudada de sítio e não duplicada: duas âncoras para o
+             mesmo endereço seriam o mesmo endereço escrito duas vezes, e é o
+             `href` desta que o portão confere contra `source_url`.
+
+             SEM `width` nem `height`: os recortes não têm todos as mesmas
+             dimensões (o pdfproof reduz até 1000px de largura e a altura é a da
+             linha recortada), o formato guarda três campos e nenhum deles é o
+             tamanho, e um número escrito aqui de cabeça seria um número
+             inventado num atributo. */
+          recorte && (
+            <figure class="linha-recorte">
+              <img
+                src={`/${recorte.asset}`}
+                alt={recorteAlt}
+                decoding="async"
+              />
+              <figcaption class="linha-recorte-legenda">
+                <span class="linha-recorte-pagina">
+                  {s.prov.recortePagina}{' '}
+                  <CampoDaLinha
+                    id={id}
+                    campo="document.crop.page"
+                    valor={String(recorte.page)}
+                    lang={lang}
+                  />
+                </span>
+                {portaNaProva && (
+                  <a class="ligacao-externa" href={url} rel="noopener noreferrer external">
+                    <span class="linha-endereco-abrir">
+                      {s.prov.abrirNaPagina}{' '}
+                      <CampoDaLinha
+                        id={id}
+                        campo="document.page"
+                        valor={String(paginaDoDocumento)}
+                        lang={lang}
+                      />
+                    </span>
+                    <CampoDaLinha
+                      id={id}
+                      campo="source_url"
+                      valor={claim.source_url}
+                      lang={lang}
+                      class="linha-endereco-bruto"
+                    />
+                  </a>
+                )}
+              </figcaption>
+            </figure>
+          )
+        }
+
+        {
           /* A porta para a página exata do documento. O rótulo e o endereço vão
              DENTRO da mesma âncora, de propósito: o portão confere o `href`
              desta âncora contra o campo `source_url`, e um endereço fora dela
-             deixaria de ser conferido (DECISIONS §2.3, limite 11). */
-          portaNaProva && (
+             deixaria de ser conferido (DECISIONS §2.3, limite 11).
+
+             Com recorte, esta porta é a da legenda, acima: uma só. */
+          portaNaProva && !recorte && (
             <p class="linha-porta-documento">
               <a class="ligacao-externa" href={url} rel="noopener noreferrer external">
                 <span class="linha-endereco-abrir">
