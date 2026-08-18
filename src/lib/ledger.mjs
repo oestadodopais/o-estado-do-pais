@@ -107,7 +107,7 @@ const CAMPOS = [
  * cara de campo preenchido. Antes de `locator` existir, este bloco não tinha
  * lista nenhuma: `title` e `edition` eram exigidos e o resto era ignorado.
  */
-const CAMPOS_DO_DOCUMENTO = ['title', 'edition', 'locator', 'page', 'kind', 'crop'];
+const CAMPOS_DO_DOCUMENTO = ['title', 'edition', 'locator', 'page', 'kind', 'crop', 'hosted'];
 
 /**
  * As chaves do recorte, e mais nenhuma. Um mapa de três campos: o ficheiro, o
@@ -132,6 +132,87 @@ const MAX_BYTES_DO_RECORTE = 40_000;
 
 /** Onde vivem os recortes: `public/recortes/`, servidos em `/recortes/`. */
 const DIR_RECORTES = path.join(path.dirname(path.dirname(LEDGER_DIR)), 'public', 'recortes');
+
+/**
+ * ---------------------------------------------------------------------------
+ * `document.hosted`: o ficheiro de dados que este sítio aloja, e de que a linha
+ * é contada
+ * ---------------------------------------------------------------------------
+ *
+ * A quarta resposta ao limite 13 (DECISIONS §2.3). Uma linha cujo valor é uma
+ * contagem ou uma soma sobre um registo público não tem frase para transcrever:
+ * o `excerpt` ficava `[a verificar]`, honesto e incompleto. Fecha-se alojando
+ * **aqui** o ficheiro de que a conta é feita, com o resumo dos seus bytes e com
+ * o resumo do ficheiro da fonte de onde ele foi extraído, de modo que quem
+ * descarregar o original possa provar que o extrato é dele.
+ *
+ * A licença é lida na página da fonte ANTES de se alojar o que quer que seja, e
+ * por quem não escreve o bloco (BRIEF-bloco-T.md §2.4). O campo publica-a, com
+ * o endereço da licença e a atribuição na forma que a fonte pede. Um ficheiro
+ * alojado sem licença dita é uma reutilização que este sítio não pode defender.
+ */
+const CAMPOS_DO_ALOJADO = [
+  'asset',
+  'sha256',
+  'bytes',
+  'licence',
+  'licence_url',
+  'attribution',
+  'extracted_from',
+];
+
+/** As chaves de cada origem de um ficheiro alojado, e mais nenhuma. */
+const CAMPOS_DA_EXTRACAO = ['file', 'url', 'sha256', 'bytes'];
+
+/** Onde vivem os ficheiros de dados alojados: `public/dados/`, servidos em `/dados/`. */
+const DIR_DADOS = path.join(path.dirname(path.dirname(LEDGER_DIR)), 'public', 'dados');
+
+/**
+ * O ficheiro alojado está completo: existe, os bytes batem, e a licença, o seu
+ * endereço e a atribuição estão escritos.
+ *
+ * É a condição da **porta estreita** do `excerpt: null`; ver `eContadaSobreFicheiro`.
+ * Não confere o resumo (isso é trabalho do validador, que lê o disco): confere
+ * que a linha declarou tudo o que a porta exige que ela declare.
+ */
+export function alojamentoCompleto(claim) {
+  const h = claim?.document?.hosted;
+  if (!h || typeof h !== 'object' || Array.isArray(h)) return false;
+  for (const k of ['asset', 'sha256', 'licence', 'licence_url', 'attribution']) {
+    if (typeof h[k] !== 'string' || h[k].trim() === '') return false;
+  }
+  if (!Number.isInteger(h.bytes) || h.bytes < 1) return false;
+  if (!Array.isArray(h.extracted_from) || h.extracted_from.length === 0) return false;
+  return h.extracted_from.every(
+    (e) =>
+      e &&
+      typeof e === 'object' &&
+      !Array.isArray(e) &&
+      CAMPOS_DA_EXTRACAO.every((k) => e[k] !== null && e[k] !== undefined && e[k] !== ''),
+  );
+}
+
+/**
+ * Uma linha contada sobre um ficheiro alojado por este sítio.
+ *
+ * A porta estreita do `excerpt: null`, na forma que o BRIEF do bloco T fixou
+ * (§2.4) e que a §1.47 regista: **as três coisas, ou nenhuma**. O ficheiro
+ * alojado completo, a aritmética escrita nas duas línguas (que coluna, que
+ * filtro, o que se contou), e, fora daqui, porque é depois da construção, a
+ * reconta mecânica de `scripts/check-dados.mjs` sobre o próprio ficheiro.
+ *
+ * Sem as três, `[a verificar]` fica. É a mesma disciplina da linha da casa: uma
+ * porta larga aqui seria uma maneira de branquear proveniência em falta, que é
+ * exactamente o que o marcador existe para impedir.
+ */
+export function eContadaSobreFicheiro(claim) {
+  return (
+    claim?.document?.kind === 'ficheiro' &&
+    alojamentoCompleto(claim) &&
+    !ausente(claim?.derivation) &&
+    !ausente(claim?.derivation_en)
+  );
+}
 
 /**
  * `p. N` dentro de um localizador. A cópia da regra vive aqui, e é a única do
@@ -738,11 +819,19 @@ export function validateLedger() {
        refere existe sempre. */
     const daCasa = eDaCasa(c);
     const NULO_NA_CASA = new Set(['source_url', 'excerpt', 'document']);
+    /* A porta estreita da §2.4: uma linha contada sobre um ficheiro que este
+       sítio aloja pode deixar `excerpt` a null, porque não há frase para
+       transcrever: há um ficheiro, com o seu resumo, e uma conta escrita nas
+       duas línguas. Só o `excerpt`: a fonte, o endereço, a data de leitura e o
+       documento continuam obrigatórios, e é isso que separa esta porta de uma
+       maneira de branquear proveniência em falta. */
+    const contadaSobreFicheiro = eContadaSobreFicheiro(c);
 
     for (const campo of CAMPOS_PROVENIENCIA) {
       const v = c[campo];
       if (derivada && v === null) continue; // legítimo: a proveniência é a das origens
       if (daCasa && v === null && NULO_NA_CASA.has(campo)) continue;
+      if (contadaSobreFicheiro && v === null && campo === 'excerpt') continue;
       if (campo === 'document') {
         if (v === null || typeof v !== 'object') {
           errors.push(`${onde} falta "document" (precisa de title e edition).`);
@@ -946,6 +1035,163 @@ export function validateLedger() {
                   );
                 }
               }
+            }
+          }
+        }
+      }
+
+      /* ---------------------------------------------------------------------
+       * `document.hosted`: o ficheiro de dados de que esta linha é contada
+       * ---------------------------------------------------------------------
+       *
+       * A prova de uma contagem não é uma frase, é o conjunto contado. Alojá-lo
+       * aqui é o que permite ao leitor refazer a conta; e é também o que obriga
+       * este sítio a saber o que está a redistribuir, por isso a licença, o seu
+       * endereço e a atribuição são campos e não comentários.
+       *
+       * O que se confere sem sair do disco: o nome, o ficheiro, os bytes, o
+       * tamanho, e a forma de cada origem. O resumo do ficheiro de ORIGEM
+       * (o zip da DGT) não se pode conferir aqui: o sítio não o aloja, e é
+       * essa a razão de o publicar: quem o descarregar confere-o.
+       */
+      {
+        const alojado = c.document && typeof c.document === 'object' ? c.document.hosted : undefined;
+        if (alojado !== null && alojado !== undefined) {
+          if (typeof alojado !== 'object' || Array.isArray(alojado)) {
+            errors.push(
+              `${onde} "document.hosted" tem de ser um mapa com ` +
+                `${CAMPOS_DO_ALOJADO.join(', ')}.`,
+            );
+          } else {
+            for (const k of Object.keys(alojado)) {
+              if (!CAMPOS_DO_ALOJADO.includes(k)) {
+                errors.push(
+                  `${onde} chave desconhecida "document.hosted.${k}". ` +
+                    `Aceites: ${CAMPOS_DO_ALOJADO.join(', ')}.`,
+                );
+              }
+            }
+            /* Um ficheiro alojado é o que o endereço serve. Numa linha que
+               diga que a sua fonte é uma página, uma série ou um PDF, o campo
+               estaria a prometer que o documento citado É o ficheiro que este
+               sítio aloja, e não é. */
+            if (c.document.kind !== 'ficheiro') {
+              errors.push(
+                `${onde} tem "document.hosted" e "document.kind" é ` +
+                  `${JSON.stringify(c.document.kind ?? null)}. Um ficheiro alojado é o extrato ` +
+                  `de um ficheiro: declare "kind: ficheiro", ou o campo está na linha errada.`,
+              );
+            }
+            const asset = alojado.asset;
+            if (typeof asset !== 'string' || !/^dados\/[A-Za-z0-9._-]+$/.test(asset)) {
+              errors.push(
+                `${onde} "document.hosted.asset" é ${JSON.stringify(asset)} e tem de ser ` +
+                  `"dados/<nome>", o ficheiro em public/dados/ que o sítio serve em /dados/.`,
+              );
+            } else if (
+              typeof alojado.sha256 !== 'string' ||
+              !RESUMO_SHA256.test(alojado.sha256)
+            ) {
+              errors.push(
+                `${onde} "document.hosted.sha256" é ${JSON.stringify(alojado.sha256)}. Tem de ` +
+                  `ser o resumo sha256 dos bytes do ficheiro, 64 hexadecimais em minúsculas.`,
+              );
+            } else {
+              const ficheiro = path.join(DIR_DADOS, asset.slice('dados/'.length));
+              let octetos = null;
+              try {
+                octetos = fs.readFileSync(ficheiro);
+              } catch {
+                errors.push(
+                  `${onde} declara o ficheiro "${asset}" e não há nada em public/${asset}. ` +
+                    `Um ficheiro que a linha promete e o sítio não serve é uma conta que ` +
+                    `ninguém pode refazer.`,
+                );
+              }
+              if (octetos) {
+                const resumo = crypto.createHash('sha256').update(octetos).digest('hex');
+                if (resumo !== alojado.sha256) {
+                  errors.push(
+                    `${onde} o ficheiro "${asset}" não é o que a linha declara.\n` +
+                      `      no livro-razão: ${alojado.sha256}\n` +
+                      `      em disco:       ${resumo}\n` +
+                      `      Um ficheiro trocado depois de alojado é a conta a dar outro ` +
+                      `resultado sem que nada mude no texto.`,
+                  );
+                }
+                if (!Number.isInteger(alojado.bytes) || alojado.bytes !== octetos.length) {
+                  errors.push(
+                    `${onde} "document.hosted.bytes" é ${JSON.stringify(alojado.bytes)} e o ` +
+                      `ficheiro "${asset}" tem ${octetos.length} bytes.`,
+                  );
+                }
+              }
+            }
+            for (const [campo, rotulo] of [
+              ['licence', 'a licença sob a qual a fonte publica'],
+              ['licence_url', 'o endereço onde a licença está escrita'],
+              ['attribution', 'a atribuição na forma que a fonte pede'],
+            ]) {
+              if (typeof alojado[campo] !== 'string' || alojado[campo].trim() === '') {
+                errors.push(
+                  `${onde} falta "document.hosted.${campo}": ${rotulo}. Um ficheiro ` +
+                    `redistribuído sem a licença dita é uma reutilização que este sítio não ` +
+                    `pode defender.`,
+                );
+              }
+            }
+            if (
+              typeof alojado.licence_url === 'string' &&
+              alojado.licence_url.trim() !== '' &&
+              !/^https?:\/\//.test(alojado.licence_url)
+            ) {
+              errors.push(
+                `${onde} "document.hosted.licence_url" é "${alojado.licence_url}". Tem de ser ` +
+                  `um endereço, a começar por "http://" ou "https://".`,
+              );
+            }
+            const origens = alojado.extracted_from;
+            if (!Array.isArray(origens) || origens.length === 0) {
+              errors.push(
+                `${onde} "document.hosted.extracted_from" tem de ser uma lista, não vazia, dos ` +
+                  `ficheiros da fonte de onde este extrato saiu, cada um com ` +
+                  `${CAMPOS_DA_EXTRACAO.join(', ')}. Sem ela, o extrato não se liga a nada.`,
+              );
+            } else {
+              origens.forEach((e, n) => {
+                const rot = `${onde} "document.hosted.extracted_from[${n}]"`;
+                if (!e || typeof e !== 'object' || Array.isArray(e)) {
+                  errors.push(`${rot}: tem de ser um mapa com ${CAMPOS_DA_EXTRACAO.join(', ')}.`);
+                  return;
+                }
+                for (const k of Object.keys(e)) {
+                  if (!CAMPOS_DA_EXTRACAO.includes(k)) {
+                    errors.push(
+                      `${rot}: chave desconhecida "${k}". Aceites: ${CAMPOS_DA_EXTRACAO.join(', ')}.`,
+                    );
+                  }
+                }
+                if (typeof e.file !== 'string' || e.file.trim() === '') {
+                  errors.push(`${rot}: falta "file", o nome do ficheiro tal como a fonte o nomeia.`);
+                }
+                if (typeof e.url !== 'string' || !/^https?:\/\//.test(e.url)) {
+                  errors.push(
+                    `${rot}: "url" é ${JSON.stringify(e.url)}. Tem de ser o endereço de onde o ` +
+                      `ficheiro foi descarregado.`,
+                  );
+                }
+                if (typeof e.sha256 !== 'string' || !RESUMO_SHA256.test(e.sha256)) {
+                  errors.push(
+                    `${rot}: "sha256" é ${JSON.stringify(e.sha256)}. Tem de ser o resumo dos ` +
+                      `bytes do ficheiro da fonte, 64 hexadecimais em minúsculas: é ele que ` +
+                      `liga o extrato ao original.`,
+                  );
+                }
+                if (!Number.isInteger(e.bytes) || e.bytes < 1) {
+                  errors.push(`${rot}: "bytes" é ${JSON.stringify(e.bytes)}, e tem de ser o ` +
+                    `tamanho do ficheiro da fonte, um inteiro ≥ 1.`);
+                }
+              });
             }
           }
         }

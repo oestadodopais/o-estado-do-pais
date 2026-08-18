@@ -163,6 +163,8 @@ let valoresSemSelo = 0;
 let ligacoesConferidas = 0;
 /** Recortes conferidos: o ficheiro construído contra o resumo da linha. */
 let recortesConferidos = 0;
+/** Ficheiros alojados conferidos: a porta da página contra o campo da linha. */
+let alojadosConferidos = 0;
 /**
  * Cada `href` interno encontrado, com a página onde está e a base contra a
  * qual um endereço relativo se resolve.
@@ -677,6 +679,20 @@ const CAMPOS_DA_LINHA = new Set([
    * pela página de outra linha pára aqui.
    */
   'document.crop.page',
+  /**
+   * O ficheiro de dados que o sítio aloja, e de que a linha é contada (T3).
+   *
+   * Cinco campos escritos: o ficheiro, o seu tamanho, o resumo curto dos seus
+   * bytes, a licença e a atribuição. O resumo curto é uma leitura do campo
+   * `sha256` feita aqui com a **cópia local** da regra do encurtamento, como
+   * `source_url.page` é do `#page=`: se o portão lesse o número de caracteres do
+   * gabarito, confirmava o gabarito.
+   */
+  'document.hosted.asset',
+  'document.hosted.bytes',
+  'document.hosted.sha256.curto',
+  'document.hosted.licence',
+  'document.hosted.attribution',
   'source_url',
   /**
    * A página do PDF, tal como o próprio endereço a fixa (`…pdf#page=119`).
@@ -710,6 +726,25 @@ const CAMPOS_DA_LINHA = new Set([
  * campos escritos são a data e, numa entrada `diverge`, o valor encontrado.
  */
 const CAMPO_DE_VERIFICACAO = /^verifications\.(\d+)\.(date|found)$/;
+
+/**
+ * `document.hosted.extracted_from.<n>.<campo>`: o ficheiro da fonte de onde o
+ * extrato alojado saiu, e o resumo dos bytes desse ficheiro.
+ *
+ * O índice é a posição na lista da linha, como o das reconferências: a página
+ * escreve-o, e o portão vai buscar a entrada a essa posição. Um extrato pode
+ * sair de mais do que um ficheiro (a soma das três regiões, se um dia for
+ * alojada), e por isso é uma lista e não um mapa.
+ */
+const CAMPO_DE_ALOJAMENTO =
+  /^document\.hosted\.extracted_from\.(\d+)\.(file|sha256\.curto)$/;
+
+/**
+ * Quantos hexadecimais do resumo a página escreve. CÓPIA PRÓPRIA da constante
+ * do gabarito, pela mesma razão que o separador de `attributed_to`: se as duas
+ * divergirem, a construção pára, que é o que se quer.
+ */
+const RESUMO_CURTO_GATE = 12;
 
 /**
  * Os rótulos de `by` e de `result`, nas duas edições.
@@ -817,6 +852,19 @@ function campoDaLinha(claim, campo, lang) {
       return claim.document?.page ?? null;
     case 'document.crop.page':
       return claim.document?.crop?.page ?? null;
+    case 'document.hosted.asset':
+      return claim.document?.hosted?.asset ?? null;
+    case 'document.hosted.bytes':
+      return claim.document?.hosted?.bytes ?? null;
+    case 'document.hosted.licence':
+      return claim.document?.hosted?.licence ?? null;
+    case 'document.hosted.attribution':
+      return claim.document?.hosted?.attribution ?? null;
+    case 'document.hosted.sha256.curto': {
+      /* A cópia local da regra do encurtamento; ver RESUMO_CURTO_GATE. */
+      const h = claim.document?.hosted?.sha256;
+      return typeof h === 'string' ? h.slice(0, RESUMO_CURTO_GATE) : null;
+    }
     case 'source_url.page': {
       /* A cópia local da regra — ver o comentário em CAMPOS_DA_LINHA. */
       const m = String(claim.source_url ?? '').match(/#page=(\d+)$/);
@@ -843,6 +891,15 @@ function campoDaLinha(claim, campo, lang) {
       if (v) {
         const entrada = (claim.verifications ?? [])[Number(v[1])];
         return entrada ? (entrada[v[2]] ?? null) : null;
+      }
+      const a = campo.match(CAMPO_DE_ALOJAMENTO);
+      if (a) {
+        const origem = (claim.document?.hosted?.extracted_from ?? [])[Number(a[1])];
+        if (!origem) return null;
+        if (a[2] === 'file') return origem.file ?? null;
+        return typeof origem.sha256 === 'string'
+          ? origem.sha256.slice(0, RESUMO_CURTO_GATE)
+          : null;
       }
       return claim[campo] ?? null;
     }
@@ -2309,11 +2366,16 @@ for (const file of ficheirosHtml(DIST)) {
       continue;
     }
 
-    if (!CAMPOS_DA_LINHA.has(campo) && !CAMPO_DE_VERIFICACAO.test(campo)) {
+    if (
+      !CAMPOS_DA_LINHA.has(campo) &&
+      !CAMPO_DE_VERIFICACAO.test(campo) &&
+      !CAMPO_DE_ALOJAMENTO.test(campo)
+    ) {
       err(
         `data-linha-campo="${campo}" não existe. ` +
           `Aceites: ${[...CAMPOS_DA_LINHA].join(', ')}, verifications.<n>.date, ` +
-          `verifications.<n>.found.\n` +
+          `verifications.<n>.found, document.hosted.extracted_from.<n>.file, ` +
+          `document.hosted.extracted_from.<n>.sha256.curto.\n` +
           `      O valor de uma afirmação não entra por aqui: entra por <Claim id="…"/>.`,
       );
       continue;
@@ -2495,6 +2557,64 @@ for (const file of ficheirosHtml(DIST)) {
             `diz.\n      Falta a legenda com data-linha-campo="document.crop.page".`,
         );
       }
+    }
+  }
+
+  /* --- o ficheiro alojado, na página da linha contada sobre ele (bloco T3) --
+   *
+   * Uma linha que publica uma contagem sobre um ficheiro alojado troca o
+   * excerto pelo ficheiro: é ele a prova, e se a página não o der o leitor
+   * fica com um número e uma promessa. Por isso a porta é obrigatória onde o
+   * campo existe, e proibida onde ele não existe.
+   *
+   * A regra do nome é COPIADA e não lida: a porta de uma linha alojada é
+   * `/<asset>` da PRÓPRIA linha. Uma página de linha que ofereça outro ficheiro
+   * de `/dados/` está a dar ao leitor um conjunto que não é o desta conta.
+   */
+  if (claimDaPagina) {
+    const alojado = claimDaPagina.document?.hosted ?? null;
+    const portas = body
+      .querySelectorAll('a[href]')
+      .filter((el) => decodeEntities(el.getAttribute('href') ?? '').startsWith('/dados/'));
+    const esperado = alojado ? `/${alojado.asset}` : null;
+
+    for (const a of portas) {
+      const destino = decodeEntities(a.getAttribute('href') ?? '');
+      if (!alojado) {
+        err(
+          `a página de "${claimDaPagina.id}" oferece o ficheiro "${destino}" e a linha não tem ` +
+            `"document.hosted". Um conjunto de dados que a linha não declara não é a prova ` +
+            `desta conta.`,
+        );
+      } else if (destino !== esperado) {
+        err(
+          `a página de "${claimDaPagina.id}" oferece "${destino}" e o ficheiro desta linha é ` +
+            `"${esperado}". A conta desta linha faz-se sobre o ficheiro que ela declara.`,
+        );
+      }
+    }
+    if (alojado) {
+      if (!portas.length) {
+        err(
+          `a linha "${claimDaPagina.id}" é contada sobre "${alojado.asset}" e a página não o ` +
+            `oferece.\n      Sem o ficheiro, a contagem é um número com uma promessa: o ` +
+            `excerto saiu daqui precisamente porque o ficheiro entrou.`,
+        );
+      }
+      /* A licença e a atribuição são a obrigação que a fonte impõe a quem
+         redistribui. Um ficheiro alojado sem elas à vista é uma reutilização
+         que este sítio não pode defender, e nenhuma marca de campo apanha uma
+         linha que simplesmente não foi escrita. */
+      for (const campo of ['asset', 'licence', 'attribution']) {
+        if (!camposRenderizados.has(`${claimDaPagina.id}:document.hosted.${campo}`)) {
+          err(
+            `a linha "${claimDaPagina.id}" aloja "${alojado.asset}" e a página não escreve ` +
+              `"document.hosted.${campo}".\n      A licença e a atribuição que a fonte pede ` +
+              `publicam-se ao pé do ficheiro, ou o ficheiro não se aloja.`,
+          );
+        }
+      }
+      alojadosConferidos++;
     }
   }
 
@@ -3684,6 +3804,7 @@ console.log(
       `${ocorrenciasDaProva.length} números marcados nas páginas · ` +
       `${ligacoesConferidas} ligações internas (${ligacoesRelativas} relativas, ` +
       `${ancorasConferidas} âncoras) · ${recortesConferidos} recortes · ` +
+      `${alojadosConferidos} ficheiros alojados · ` +
       `escrito em ${CAMINHO_DA_PROVA}`,
   ),
 );

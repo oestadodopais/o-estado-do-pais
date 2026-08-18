@@ -1,0 +1,25 @@
+# O Estado do País — municípios: Região Autónoma da Madeira, CAOP 2025
+# Carta Administrativa Oficial de Portugal (CAOP) 2025
+# Direção-Geral do Território · CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/
+#
+# Extraído de CAOP_RAM_2025-gpkg.zip
+#   https://geo2.dgterritorio.gov.pt/caop/CAOP_RAM_2025-gpkg.zip
+#   sha256 ae568ca2006e91205601309ff46bc8ae0cc73236165f095f8aa99a5b9a17e5d6
+#   15235290 bytes · Last-Modified: Mon, 02 Feb 2026 14:27:46 GMT
+# Camadas do GeoPackage, uma linha por município:
+#   ArqMadeira_CAOP2025.gpkg:ram_municipios
+# Colunas com os nomes que a fonte lhes dá. A contagem é o número de
+# linhas de dados deste ficheiro.
+# Produzido por ResearchHub/publisher/caop_municipios.py. NÃO EDITAR À MÃO.
+dtmn,municipio,distrito_ilha,nuts3,nuts2,nuts1
+3101,Calheta,Ilha da Madeira,Região Autónoma da Madeira,Região Autónoma da Madeira,Região Autónoma da Madeira
+3102,Câmara de Lobos,Ilha da Madeira,Região Autónoma da Madeira,Região Autónoma da Madeira,Região Autónoma da Madeira
+3103,Funchal,Ilha da Madeira,Região Autónoma da Madeira,Região Autónoma da Madeira,Região Autónoma da Madeira
+3104,Machico,Ilha da Madeira,Região Autónoma da Madeira,Região Autónoma da Madeira,Região Autónoma da Madeira
+3105,Ponta do Sol,Ilha da Madeira,Região Autónoma da Madeira,Região Autónoma da Madeira,Região Autónoma da Madeira
+3106,Porto Moniz,Ilha da Madeira,Região Autónoma da Madeira,Região Autónoma da Madeira,Região Autónoma da Madeira
+3107,Ribeira Brava,Ilha da Madeira,Região Autónoma da Madeira,Região Autónoma da Madeira,Região Autónoma da Madeira
+3108,Santa Cruz,Ilha da Madeira,Região Autónoma da Madeira,Região Autónoma da Madeira,Região Autónoma da Madeira
+3109,Santana,Ilha da Madeira,Região Autónoma da Madeira,Região Autónoma da Madeira,Região Autónoma da Madeira
+3110,São Vicente,Ilha da Madeira,Região Autónoma da Madeira,Região Autónoma da Madeira,Região Autónoma da Madeira
+3201,Porto Santo,Ilha de Porto Santo,Região Autónoma da Madeira,Região Autónoma da Madeira,Região Autónoma da Madeira

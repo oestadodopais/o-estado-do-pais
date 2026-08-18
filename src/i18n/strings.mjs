@@ -87,6 +87,28 @@ export const STRINGS = {
       recorteAlt: 'Recorte da linha impressa, página',
       recorteAltDe: 'de',
       recortePagina: 'página',
+      /* O ficheiro de dados que este sítio aloja, e de que a linha é contada
+         (bloco T3). A licença e a atribuição vão à vista, porque a obrigação
+         que a fonte impõe a quem redistribui é dizê-las. */
+      alojado: 'Ficheiro alojado',
+      alojadoBytes: 'bytes',
+      alojadoResumo: 'sha256',
+      alojadoExtraido: 'extraído de',
+      /* Os ficheiros sobre que a conta foi feita e que este sítio NÃO aloja.
+         O estado é desenhado e dito por palavras: não é o marcador, porque não
+         é um campo por confirmar (IDENTIDADE.md §6, §7). */
+      calculadoSobre: 'Calculado sobre',
+      calculadoSobreInstantaneo: 'instantâneo de',
+      calculadoSobreColuna: 'coluna',
+      calculadoSobreFiltro: 'filtro',
+      calculadoSobreNota:
+        'Este sítio não aloja estes ficheiros. O conjunto de onde vieram declara, em ' +
+        'dados.gov.pt, a licença «Licença não especificada», e redistribuir um ficheiro sem ' +
+        'licença dita é uma reutilização que este sítio não pode defender. Fica o resumo de ' +
+        'cada ficheiro, para que quem tenha o instantâneo possa refazer a conta.',
+      /* A página humana de uma série de dados: a página do indicador, para
+         pessoas, antes do pedido exato que a máquina faz. */
+      paginaDaSerie: 'Página da série',
     },
 
     /**
@@ -507,6 +529,8 @@ export const STRINGS = {
           'Esta linha não cita nenhuma frase: o valor é calculado a partir de outras linhas, e a prova documental é a delas.',
         excertoDaCasa:
           'Esta linha não cita nenhuma frase porque não há nenhuma para citar: o valor é uma contagem do próprio registo desta casa, e é reavaliado a cada construção do sítio. Nenhum documento externo o publica.',
+        excertoAlojado:
+          'Esta linha não cita nenhuma frase porque a fonte não publica nenhuma: o valor é a contagem das linhas do ficheiro que este sítio aloja, acima, e é recontado a cada construção.',
         derivacaoNota: 'A conta, por palavras.',
         expressaoK: 'Reavaliada em cada construção',
         expressaoNota: 'A mesma conta como expressão.',
@@ -793,6 +817,21 @@ export const STRINGS = {
       recorteAlt: 'Crop of the printed line, page',
       recorteAltDe: 'of',
       recortePagina: 'page',
+      alojado: 'Hosted file',
+      alojadoBytes: 'bytes',
+      alojadoResumo: 'sha256',
+      alojadoExtraido: 'extracted from',
+      calculadoSobre: 'Computed over',
+      calculadoSobreInstantaneo: 'snapshot of',
+      calculadoSobreColuna: 'column',
+      calculadoSobreFiltro: 'filter',
+      calculadoSobreNota:
+        'This site does not host these files. The dataset they came from declares, on ' +
+        'dados.gov.pt, the licence "Licença não especificada" (licence not specified), and ' +
+        'redistributing a file whose licence is not stated is a reuse this site cannot ' +
+        'defend. What stays is the hash of each file, so that anybody holding the snapshot ' +
+        'can re-make the count.',
+      paginaDaSerie: 'Series page',
     },
 
     rodape: {
@@ -1158,6 +1197,8 @@ export const STRINGS = {
           'This row quotes no sentence: the value is calculated from other rows, and the documentary proof is theirs.',
         excertoDaCasa:
           'This row quotes no sentence because there is none to quote: the value is a count of this publication\'s own record, re-evaluated every time the site is built. No external document publishes it.',
+        excertoAlojado:
+          'This row quotes no sentence because the source publishes none: the value is the line count of the file this site hosts, above, and it is re-counted at every build.',
         derivacaoNota: 'The sum, in words.',
         expressaoK: 'Re-evaluated at every build',
         expressaoNota: 'The same sum as an expression.',

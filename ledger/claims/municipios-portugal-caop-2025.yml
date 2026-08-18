@@ -18,11 +18,11 @@ access_date: "2026-08-12"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "[a verificar]"
+excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "278 + 19 + 11 = 308. Soma das contagens por região nos ficheiros oficiais da CAOP 2025."
-derivation_en: "278 + 19 + 11 = 308. Sum of the per-region counts in the official CAOP 2025 files."
+derivation: "278 + 19 + 11 = 308. Cada parcela é a contagem das linhas do ficheiro que este sítio aloja para a sua região, e o total é a soma das três, reavaliada na construção pela expressão abaixo. A Direção-Geral do Território não publica um ficheiro com os 308: publica três, um por região."
+derivation_en: "278 + 19 + 11 = 308. Each part is the line count of the file this site hosts for its region, and the total is the sum of the three, re-evaluated at build time by the expression below. The Direção-Geral do Território publishes no single file with all 308: it publishes three, one per region."
 derived_from:
   - "municipios-continente-caop-2025"
   - "municipios-acores-caop-2025"
@@ -31,7 +31,7 @@ derived_from:
 check: "municipios-continente-caop-2025 + municipios-acores-caop-2025 + municipios-madeira-caop-2025"
 
 study: "o-estado-do-pais"
-note: "O total dos municípios de Portugal segundo a CAOP 2025."
+note: "O total dos municípios de Portugal segundo a CAOP 2025. Linha derivada: a proveniência é a das três contagens por região, cada uma contada sobre o ficheiro que este sítio aloja. Até 18.08.2026 as três contagens eram reproduzidas a partir de src/data/caop-centroids.mjs."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections:

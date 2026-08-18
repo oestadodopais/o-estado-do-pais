@@ -1,0 +1,292 @@
+# O Estado do País — municípios: Continente, CAOP 2025
+# Carta Administrativa Oficial de Portugal (CAOP) 2025
+# Direção-Geral do Território · CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/
+#
+# Extraído de CAOP_Continente_2025-gpkg.zip
+#   https://geo2.dgterritorio.gov.pt/caop/CAOP_Continente_2025-gpkg.zip
+#   sha256 87cd67f4b1fbadf23d9324e6fb231ff05531e4db347af36ccc7c6cbabe3ecd1d
+#   111647845 bytes · Last-Modified: Mon, 02 Feb 2026 14:26:40 GMT
+# Camadas do GeoPackage, uma linha por município:
+#   Continente_CAOP2025.gpkg:cont_municipios
+# Colunas com os nomes que a fonte lhes dá. A contagem é o número de
+# linhas de dados deste ficheiro.
+# Produzido por ResearchHub/publisher/caop_municipios.py. NÃO EDITAR À MÃO.
+dtmn,municipio,distrito_ilha,nuts3,nuts2,nuts1
+0101,Águeda,Aveiro,Região de Aveiro,Centro,Continente
+0102,Albergaria-a-Velha,Aveiro,Região de Aveiro,Centro,Continente
+0103,Anadia,Aveiro,Região de Aveiro,Centro,Continente
+0104,Arouca,Aveiro,Área Metropolitana do Porto,Norte,Continente
+0105,Aveiro,Aveiro,Região de Aveiro,Centro,Continente
+0106,Castelo de Paiva,Aveiro,Tâmega e Sousa,Norte,Continente
+0107,Espinho,Aveiro,Área Metropolitana do Porto,Norte,Continente
+0108,Estarreja,Aveiro,Região de Aveiro,Centro,Continente
+0109,Santa Maria da Feira,Aveiro,Área Metropolitana do Porto,Norte,Continente
+0110,Ílhavo,Aveiro,Região de Aveiro,Centro,Continente
+0111,Mealhada,Aveiro,Região de Coimbra,Centro,Continente
+0112,Murtosa,Aveiro,Região de Aveiro,Centro,Continente
+0113,Oliveira de Azeméis,Aveiro,Área Metropolitana do Porto,Norte,Continente
+0114,Oliveira do Bairro,Aveiro,Região de Aveiro,Centro,Continente
+0115,Ovar,Aveiro,Região de Aveiro,Centro,Continente
+0116,São João da Madeira,Aveiro,Área Metropolitana do Porto,Norte,Continente
+0117,Sever do Vouga,Aveiro,Região de Aveiro,Centro,Continente
+0118,Vagos,Aveiro,Região de Aveiro,Centro,Continente
+0119,Vale de Cambra,Aveiro,Área Metropolitana do Porto,Norte,Continente
+0201,Aljustrel,Beja,Baixo Alentejo,Alentejo,Continente
+0202,Almodôvar,Beja,Baixo Alentejo,Alentejo,Continente
+0203,Alvito,Beja,Baixo Alentejo,Alentejo,Continente
+0204,Barrancos,Beja,Baixo Alentejo,Alentejo,Continente
+0205,Beja,Beja,Baixo Alentejo,Alentejo,Continente
+0206,Castro Verde,Beja,Baixo Alentejo,Alentejo,Continente
+0207,Cuba,Beja,Baixo Alentejo,Alentejo,Continente
+0208,Ferreira do Alentejo,Beja,Baixo Alentejo,Alentejo,Continente
+0209,Mértola,Beja,Baixo Alentejo,Alentejo,Continente
+0210,Moura,Beja,Baixo Alentejo,Alentejo,Continente
+0211,Odemira,Beja,Alentejo Litoral,Alentejo,Continente
+0212,Ourique,Beja,Baixo Alentejo,Alentejo,Continente
+0213,Serpa,Beja,Baixo Alentejo,Alentejo,Continente
+0214,Vidigueira,Beja,Baixo Alentejo,Alentejo,Continente
+0301,Amares,Braga,Cávado,Norte,Continente
+0302,Barcelos,Braga,Cávado,Norte,Continente
+0303,Braga,Braga,Cávado,Norte,Continente
+0304,Cabeceiras de Basto,Braga,Ave,Norte,Continente
+0305,Celorico de Basto,Braga,Tâmega e Sousa,Norte,Continente
+0306,Esposende,Braga,Cávado,Norte,Continente
+0307,Fafe,Braga,Ave,Norte,Continente
+0308,Guimarães,Braga,Ave,Norte,Continente
+0309,Póvoa de Lanhoso,Braga,Ave,Norte,Continente
+0310,Terras de Bouro,Braga,Cávado,Norte,Continente
+0311,Vieira do Minho,Braga,Ave,Norte,Continente
+0312,Vila Nova de Famalicão,Braga,Ave,Norte,Continente
+0313,Vila Verde,Braga,Cávado,Norte,Continente
+0314,Vizela,Braga,Ave,Norte,Continente
+0401,Alfândega da Fé,Bragança,Terras de Trás-os-Montes,Norte,Continente
+0402,Bragança,Bragança,Terras de Trás-os-Montes,Norte,Continente
+0403,Carrazeda de Ansiães,Bragança,Douro,Norte,Continente
+0404,Freixo de Espada à Cinta,Bragança,Douro,Norte,Continente
+0405,Macedo de Cavaleiros,Bragança,Terras de Trás-os-Montes,Norte,Continente
+0406,Miranda do Douro,Bragança,Terras de Trás-os-Montes,Norte,Continente
+0407,Mirandela,Bragança,Terras de Trás-os-Montes,Norte,Continente
+0408,Mogadouro,Bragança,Terras de Trás-os-Montes,Norte,Continente
+0409,Torre de Moncorvo,Bragança,Douro,Norte,Continente
+0410,Vila Flor,Bragança,Terras de Trás-os-Montes,Norte,Continente
+0411,Vimioso,Bragança,Terras de Trás-os-Montes,Norte,Continente
+0412,Vinhais,Bragança,Terras de Trás-os-Montes,Norte,Continente
+0501,Belmonte,Castelo Branco,Beiras e Serra da Estrela,Centro,Continente
+0502,Castelo Branco,Castelo Branco,Beira Baixa,Centro,Continente
+0503,Covilhã,Castelo Branco,Beiras e Serra da Estrela,Centro,Continente
+0504,Fundão,Castelo Branco,Beiras e Serra da Estrela,Centro,Continente
+0505,Idanha-a-Nova,Castelo Branco,Beira Baixa,Centro,Continente
+0506,Oleiros,Castelo Branco,Beira Baixa,Centro,Continente
+0507,Penamacor,Castelo Branco,Beira Baixa,Centro,Continente
+0508,Proença-a-Nova,Castelo Branco,Beira Baixa,Centro,Continente
+0509,Sertã,Castelo Branco,Beira Baixa,Centro,Continente
+0510,Vila de Rei,Castelo Branco,Beira Baixa,Centro,Continente
+0511,Vila Velha de Ródão,Castelo Branco,Beira Baixa,Centro,Continente
+0601,Arganil,Coimbra,Região de Coimbra,Centro,Continente
+0602,Cantanhede,Coimbra,Região de Coimbra,Centro,Continente
+0603,Coimbra,Coimbra,Região de Coimbra,Centro,Continente
+0604,Condeixa-a-Nova,Coimbra,Região de Coimbra,Centro,Continente
+0605,Figueira da Foz,Coimbra,Região de Coimbra,Centro,Continente
+0606,Góis,Coimbra,Região de Coimbra,Centro,Continente
+0607,Lousã,Coimbra,Região de Coimbra,Centro,Continente
+0608,Mira,Coimbra,Região de Coimbra,Centro,Continente
+0609,Miranda do Corvo,Coimbra,Região de Coimbra,Centro,Continente
+0610,Montemor-o-Velho,Coimbra,Região de Coimbra,Centro,Continente
+0611,Oliveira do Hospital,Coimbra,Região de Coimbra,Centro,Continente
+0612,Pampilhosa da Serra,Coimbra,Região de Coimbra,Centro,Continente
+0613,Penacova,Coimbra,Região de Coimbra,Centro,Continente
+0614,Penela,Coimbra,Região de Coimbra,Centro,Continente
+0615,Soure,Coimbra,Região de Coimbra,Centro,Continente
+0616,Tábua,Coimbra,Região de Coimbra,Centro,Continente
+0617,Vila Nova de Poiares,Coimbra,Região de Coimbra,Centro,Continente
+0701,Alandroal,Évora,Alentejo Central,Alentejo,Continente
+0702,Arraiolos,Évora,Alentejo Central,Alentejo,Continente
+0703,Borba,Évora,Alentejo Central,Alentejo,Continente
+0704,Estremoz,Évora,Alentejo Central,Alentejo,Continente
+0705,Évora,Évora,Alentejo Central,Alentejo,Continente
+0706,Montemor-o-Novo,Évora,Alentejo Central,Alentejo,Continente
+0707,Mora,Évora,Alentejo Central,Alentejo,Continente
+0708,Mourão,Évora,Alentejo Central,Alentejo,Continente
+0709,Portel,Évora,Alentejo Central,Alentejo,Continente
+0710,Redondo,Évora,Alentejo Central,Alentejo,Continente
+0711,Reguengos de Monsaraz,Évora,Alentejo Central,Alentejo,Continente
+0712,Vendas Novas,Évora,Alentejo Central,Alentejo,Continente
+0713,Viana do Alentejo,Évora,Alentejo Central,Alentejo,Continente
+0714,Vila Viçosa,Évora,Alentejo Central,Alentejo,Continente
+0801,Albufeira,Faro,Algarve,Algarve,Continente
+0802,Alcoutim,Faro,Algarve,Algarve,Continente
+0803,Aljezur,Faro,Algarve,Algarve,Continente
+0804,Castro Marim,Faro,Algarve,Algarve,Continente
+0805,Faro,Faro,Algarve,Algarve,Continente
+0806,Lagoa,Faro,Algarve,Algarve,Continente
+0807,Lagos,Faro,Algarve,Algarve,Continente
+0808,Loulé,Faro,Algarve,Algarve,Continente
+0809,Monchique,Faro,Algarve,Algarve,Continente
+0810,Olhão,Faro,Algarve,Algarve,Continente
+0811,Portimão,Faro,Algarve,Algarve,Continente
+0812,São Brás de Alportel,Faro,Algarve,Algarve,Continente
+0813,Silves,Faro,Algarve,Algarve,Continente
+0814,Tavira,Faro,Algarve,Algarve,Continente
+0815,Vila do Bispo,Faro,Algarve,Algarve,Continente
+0816,Vila Real de Santo António,Faro,Algarve,Algarve,Continente
+0901,Aguiar da Beira,Guarda,Viseu Dão Lafões,Centro,Continente
+0902,Almeida,Guarda,Beiras e Serra da Estrela,Centro,Continente
+0903,Celorico da Beira,Guarda,Beiras e Serra da Estrela,Centro,Continente
+0904,Figueira de Castelo Rodrigo,Guarda,Beiras e Serra da Estrela,Centro,Continente
+0905,Fornos de Algodres,Guarda,Beiras e Serra da Estrela,Centro,Continente
+0906,Gouveia,Guarda,Beiras e Serra da Estrela,Centro,Continente
+0907,Guarda,Guarda,Beiras e Serra da Estrela,Centro,Continente
+0908,Manteigas,Guarda,Beiras e Serra da Estrela,Centro,Continente
+0909,Mêda,Guarda,Beiras e Serra da Estrela,Centro,Continente
+0910,Pinhel,Guarda,Beiras e Serra da Estrela,Centro,Continente
+0911,Sabugal,Guarda,Beiras e Serra da Estrela,Centro,Continente
+0912,Seia,Guarda,Beiras e Serra da Estrela,Centro,Continente
+0913,Trancoso,Guarda,Beiras e Serra da Estrela,Centro,Continente
+0914,Vila Nova de Foz Côa,Guarda,Douro,Norte,Continente
+1001,Alcobaça,Leiria,Oeste,Oeste e Vale do Tejo,Continente
+1002,Alvaiázere,Leiria,Região de Leiria,Centro,Continente
+1003,Ansião,Leiria,Região de Leiria,Centro,Continente
+1004,Batalha,Leiria,Região de Leiria,Centro,Continente
+1005,Bombarral,Leiria,Oeste,Oeste e Vale do Tejo,Continente
+1006,Caldas da Rainha,Leiria,Oeste,Oeste e Vale do Tejo,Continente
+1007,Castanheira de Pêra,Leiria,Região de Leiria,Centro,Continente
+1008,Figueiró dos Vinhos,Leiria,Região de Leiria,Centro,Continente
+1009,Leiria,Leiria,Região de Leiria,Centro,Continente
+1010,Marinha Grande,Leiria,Região de Leiria,Centro,Continente
+1011,Nazaré,Leiria,Oeste,Oeste e Vale do Tejo,Continente
+1012,Óbidos,Leiria,Oeste,Oeste e Vale do Tejo,Continente
+1013,Pedrógão Grande,Leiria,Região de Leiria,Centro,Continente
+1014,Peniche,Leiria,Oeste,Oeste e Vale do Tejo,Continente
+1015,Pombal,Leiria,Região de Leiria,Centro,Continente
+1016,Porto de Mós,Leiria,Região de Leiria,Centro,Continente
+1101,Alenquer,Lisboa,Oeste,Oeste e Vale do Tejo,Continente
+1102,Arruda dos Vinhos,Lisboa,Oeste,Oeste e Vale do Tejo,Continente
+1103,Azambuja,Lisboa,Lezíria do Tejo,Oeste e Vale do Tejo,Continente
+1104,Cadaval,Lisboa,Oeste,Oeste e Vale do Tejo,Continente
+1105,Cascais,Lisboa,Grande Lisboa,Grande Lisboa,Continente
+1106,Lisboa,Lisboa,Grande Lisboa,Grande Lisboa,Continente
+1107,Loures,Lisboa,Grande Lisboa,Grande Lisboa,Continente
+1108,Lourinhã,Lisboa,Oeste,Oeste e Vale do Tejo,Continente
+1109,Mafra,Lisboa,Grande Lisboa,Grande Lisboa,Continente
+1110,Oeiras,Lisboa,Grande Lisboa,Grande Lisboa,Continente
+1111,Sintra,Lisboa,Grande Lisboa,Grande Lisboa,Continente
+1112,Sobral de Monte Agraço,Lisboa,Oeste,Oeste e Vale do Tejo,Continente
+1113,Torres Vedras,Lisboa,Oeste,Oeste e Vale do Tejo,Continente
+1114,Vila Franca de Xira,Lisboa,Grande Lisboa,Grande Lisboa,Continente
+1115,Amadora,Lisboa,Grande Lisboa,Grande Lisboa,Continente
+1116,Odivelas,Lisboa,Grande Lisboa,Grande Lisboa,Continente
+1201,Alter do Chão,Portalegre,Alto Alentejo,Alentejo,Continente
+1202,Arronches,Portalegre,Alto Alentejo,Alentejo,Continente
+1203,Avis,Portalegre,Alto Alentejo,Alentejo,Continente
+1204,Campo Maior,Portalegre,Alto Alentejo,Alentejo,Continente
+1205,Castelo de Vide,Portalegre,Alto Alentejo,Alentejo,Continente
+1206,Crato,Portalegre,Alto Alentejo,Alentejo,Continente
+1207,Elvas,Portalegre,Alto Alentejo,Alentejo,Continente
+1208,Fronteira,Portalegre,Alto Alentejo,Alentejo,Continente
+1209,Gavião,Portalegre,Alto Alentejo,Alentejo,Continente
+1210,Marvão,Portalegre,Alto Alentejo,Alentejo,Continente
+1211,Monforte,Portalegre,Alto Alentejo,Alentejo,Continente
+1212,Nisa,Portalegre,Alto Alentejo,Alentejo,Continente
+1213,Ponte de Sor,Portalegre,Alto Alentejo,Alentejo,Continente
+1214,Portalegre,Portalegre,Alto Alentejo,Alentejo,Continente
+1215,Sousel,Portalegre,Alto Alentejo,Alentejo,Continente
+1301,Amarante,Porto,Tâmega e Sousa,Norte,Continente
+1302,Baião,Porto,Tâmega e Sousa,Norte,Continente
+1303,Felgueiras,Porto,Tâmega e Sousa,Norte,Continente
+1304,Gondomar,Porto,Área Metropolitana do Porto,Norte,Continente
+1305,Lousada,Porto,Tâmega e Sousa,Norte,Continente
+1306,Maia,Porto,Área Metropolitana do Porto,Norte,Continente
+1307,Marco de Canaveses,Porto,Tâmega e Sousa,Norte,Continente
+1308,Matosinhos,Porto,Área Metropolitana do Porto,Norte,Continente
+1309,Paços de Ferreira,Porto,Tâmega e Sousa,Norte,Continente
+1310,Paredes,Porto,Área Metropolitana do Porto,Norte,Continente
+1311,Penafiel,Porto,Tâmega e Sousa,Norte,Continente
+1312,Porto,Porto,Área Metropolitana do Porto,Norte,Continente
+1313,Póvoa de Varzim,Porto,Área Metropolitana do Porto,Norte,Continente
+1314,Santo Tirso,Porto,Área Metropolitana do Porto,Norte,Continente
+1315,Valongo,Porto,Área Metropolitana do Porto,Norte,Continente
+1316,Vila do Conde,Porto,Área Metropolitana do Porto,Norte,Continente
+1317,Vila Nova de Gaia,Porto,Área Metropolitana do Porto,Norte,Continente
+1318,Trofa,Porto,Área Metropolitana do Porto,Norte,Continente
+1401,Abrantes,Santarém,Médio Tejo,Oeste e Vale do Tejo,Continente
+1402,Alcanena,Santarém,Médio Tejo,Oeste e Vale do Tejo,Continente
+1403,Almeirim,Santarém,Lezíria do Tejo,Oeste e Vale do Tejo,Continente
+1404,Alpiarça,Santarém,Lezíria do Tejo,Oeste e Vale do Tejo,Continente
+1405,Benavente,Santarém,Lezíria do Tejo,Oeste e Vale do Tejo,Continente
+1406,Cartaxo,Santarém,Lezíria do Tejo,Oeste e Vale do Tejo,Continente
+1407,Chamusca,Santarém,Lezíria do Tejo,Oeste e Vale do Tejo,Continente
+1408,Constância,Santarém,Médio Tejo,Oeste e Vale do Tejo,Continente
+1409,Coruche,Santarém,Lezíria do Tejo,Oeste e Vale do Tejo,Continente
+1410,Entroncamento,Santarém,Médio Tejo,Oeste e Vale do Tejo,Continente
+1411,Ferreira do Zêzere,Santarém,Médio Tejo,Oeste e Vale do Tejo,Continente
+1412,Golegã,Santarém,Lezíria do Tejo,Oeste e Vale do Tejo,Continente
+1413,Mação,Santarém,Médio Tejo,Oeste e Vale do Tejo,Continente
+1414,Rio Maior,Santarém,Lezíria do Tejo,Oeste e Vale do Tejo,Continente
+1415,Salvaterra de Magos,Santarém,Lezíria do Tejo,Oeste e Vale do Tejo,Continente
+1416,Santarém,Santarém,Lezíria do Tejo,Oeste e Vale do Tejo,Continente
+1417,Sardoal,Santarém,Médio Tejo,Oeste e Vale do Tejo,Continente
+1418,Tomar,Santarém,Médio Tejo,Oeste e Vale do Tejo,Continente
+1419,Torres Novas,Santarém,Médio Tejo,Oeste e Vale do Tejo,Continente
+1420,Vila Nova da Barquinha,Santarém,Médio Tejo,Oeste e Vale do Tejo,Continente
+1421,Ourém,Santarém,Médio Tejo,Oeste e Vale do Tejo,Continente
+1501,Alcácer do Sal,Setúbal,Alentejo Litoral,Alentejo,Continente
+1502,Alcochete,Setúbal,Península de Setúbal,Península de Setúbal,Continente
+1503,Almada,Setúbal,Península de Setúbal,Península de Setúbal,Continente
+1504,Barreiro,Setúbal,Península de Setúbal,Península de Setúbal,Continente
+1505,Grândola,Setúbal,Alentejo Litoral,Alentejo,Continente
+1506,Moita,Setúbal,Península de Setúbal,Península de Setúbal,Continente
+1507,Montijo,Setúbal,Península de Setúbal,Península de Setúbal,Continente
+1508,Palmela,Setúbal,Península de Setúbal,Península de Setúbal,Continente
+1509,Santiago do Cacém,Setúbal,Alentejo Litoral,Alentejo,Continente
+1510,Seixal,Setúbal,Península de Setúbal,Península de Setúbal,Continente
+1511,Sesimbra,Setúbal,Península de Setúbal,Península de Setúbal,Continente
+1512,Setúbal,Setúbal,Península de Setúbal,Península de Setúbal,Continente
+1513,Sines,Setúbal,Alentejo Litoral,Alentejo,Continente
+1601,Arcos de Valdevez,Viana do Castelo,Alto Minho,Norte,Continente
+1602,Caminha,Viana do Castelo,Alto Minho,Norte,Continente
+1603,Melgaço,Viana do Castelo,Alto Minho,Norte,Continente
+1604,Monção,Viana do Castelo,Alto Minho,Norte,Continente
+1605,Paredes de Coura,Viana do Castelo,Alto Minho,Norte,Continente
+1606,Ponte da Barca,Viana do Castelo,Alto Minho,Norte,Continente
+1607,Ponte de Lima,Viana do Castelo,Alto Minho,Norte,Continente
+1608,Valença,Viana do Castelo,Alto Minho,Norte,Continente
+1609,Viana do Castelo,Viana do Castelo,Alto Minho,Norte,Continente
+1610,Vila Nova de Cerveira,Viana do Castelo,Alto Minho,Norte,Continente
+1701,Alijó,Vila Real,Douro,Norte,Continente
+1702,Boticas,Vila Real,Alto Tâmega e Barroso,Norte,Continente
+1703,Chaves,Vila Real,Alto Tâmega e Barroso,Norte,Continente
+1704,Mesão Frio,Vila Real,Douro,Norte,Continente
+1705,Mondim de Basto,Vila Real,Ave,Norte,Continente
+1706,Montalegre,Vila Real,Alto Tâmega e Barroso,Norte,Continente
+1707,Murça,Vila Real,Douro,Norte,Continente
+1708,Peso da Régua,Vila Real,Douro,Norte,Continente
+1709,Ribeira de Pena,Vila Real,Alto Tâmega e Barroso,Norte,Continente
+1710,Sabrosa,Vila Real,Douro,Norte,Continente
+1711,Santa Marta de Penaguião,Vila Real,Douro,Norte,Continente
+1712,Valpaços,Vila Real,Alto Tâmega e Barroso,Norte,Continente
+1713,Vila Pouca de Aguiar,Vila Real,Alto Tâmega e Barroso,Norte,Continente
+1714,Vila Real,Vila Real,Douro,Norte,Continente
+1801,Armamar,Viseu,Douro,Norte,Continente
+1802,Carregal do Sal,Viseu,Viseu Dão Lafões,Centro,Continente
+1803,Castro Daire,Viseu,Viseu Dão Lafões,Centro,Continente
+1804,Cinfães,Viseu,Tâmega e Sousa,Norte,Continente
+1805,Lamego,Viseu,Douro,Norte,Continente
+1806,Mangualde,Viseu,Viseu Dão Lafões,Centro,Continente
+1807,Moimenta da Beira,Viseu,Douro,Norte,Continente
+1808,Mortágua,Viseu,Região de Coimbra,Centro,Continente
+1809,Nelas,Viseu,Viseu Dão Lafões,Centro,Continente
+1810,Oliveira de Frades,Viseu,Viseu Dão Lafões,Centro,Continente
+1811,Penalva do Castelo,Viseu,Viseu Dão Lafões,Centro,Continente
+1812,Penedono,Viseu,Douro,Norte,Continente
+1813,Resende,Viseu,Tâmega e Sousa,Norte,Continente
+1814,Santa Comba Dão,Viseu,Viseu Dão Lafões,Centro,Continente
+1815,São João da Pesqueira,Viseu,Douro,Norte,Continente
+1816,São Pedro do Sul,Viseu,Viseu Dão Lafões,Centro,Continente
+1817,Sátão,Viseu,Viseu Dão Lafões,Centro,Continente
+1818,Sernancelhe,Viseu,Douro,Norte,Continente
+1819,Tabuaço,Viseu,Douro,Norte,Continente
+1820,Tarouca,Viseu,Douro,Norte,Continente
+1821,Tondela,Viseu,Viseu Dão Lafões,Centro,Continente
+1822,Vila Nova de Paiva,Viseu,Viseu Dão Lafões,Centro,Continente
+1823,Viseu,Viseu,Viseu Dão Lafões,Centro,Continente
+1824,Vouzela,Viseu,Viseu Dão Lafões,Centro,Continente
