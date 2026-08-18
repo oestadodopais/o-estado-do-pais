@@ -29,12 +29,33 @@ export function caminhoDoLivro(lang) {
 }
 
 /**
+ * O valor com a sua unidade, escrito como a §11 da constituição manda.
+ *
+ * Uma unidade que **começa por um símbolo** cola-se ao número: «26,5%»,
+ * «89,7% do PIB». Uma unidade que começa por uma palavra leva o espaço:
+ * «82 índice (UE-27 = 100)», «54 681 562 euros». Colar sempre daria
+ * «82índice (UE-27 = 100)», e separar sempre dá «26,5 %», que é o que a §11
+ * recusa: a percentagem escreve-se colada ao número.
+ *
+ * Hoje o único símbolo em uso é `%`: trinta e seis das 132 linhas começam a
+ * unidade por ele. A regra é escrita pela forma da unidade e não por uma lista
+ * de unidades, para não haver uma segunda lista a manter ao lado do
+ * livro-razão.
+ */
+export function valorComUnidade(claim) {
+  const unidade = String(claim.unit ?? '');
+  if (!unidade) return String(claim.value);
+  const comecaPorLetra = /^\p{L}/u.test(unidade);
+  return comecaPorLetra ? `${claim.value} ${unidade}` : `${claim.value}${unidade}`;
+}
+
+/**
  * O título de uma página de linha: o valor, a unidade, a secção e a marca.
  * Sem prosa — é a linha a dizer o que é.
  */
 export function tituloDaLinha(claim, lang) {
   const s = t(lang);
-  return `${claim.value} ${claim.unit} · ${s.livro.eyebrow} · ${SITE_NAME}`;
+  return `${valorComUnidade(claim)} · ${s.livro.eyebrow} · ${SITE_NAME}`;
 }
 
 /**
@@ -46,7 +67,7 @@ export function tituloDaLinha(claim, lang) {
  */
 export function descricaoDaLinha(claim, lang) {
   const s = t(lang);
-  const partes = [`${s.livro.linha.eyebrow} ${claim.id}`, `${claim.value} ${claim.unit}`];
+  const partes = [`${s.livro.linha.eyebrow} ${claim.id}`, valorComUnidade(claim)];
 
   if (eDerivada(claim)) {
     partes.push(s.prov.naoPublicado);
