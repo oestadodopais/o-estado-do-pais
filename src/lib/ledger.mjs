@@ -105,7 +105,17 @@ const CAMPOS = [
  * cara de campo preenchido. Antes de `locator` existir, este bloco não tinha
  * lista nenhuma: `title` e `edition` eram exigidos e o resto era ignorado.
  */
-const CAMPOS_DO_DOCUMENTO = ['title', 'edition', 'locator', 'kind'];
+const CAMPOS_DO_DOCUMENTO = ['title', 'edition', 'locator', 'page', 'kind'];
+
+/**
+ * `p. N` dentro de um localizador. A cópia da regra vive aqui, e é a única do
+ * lado do sítio: o exportador do motor tem a sua, pela mesma razão pela qual o
+ * portão tem a dele.
+ */
+const PAGINA_NO_LOCALIZADOR = /\bp\.\s?(\d+)\b/;
+
+/** `…#page=N` no fim de um endereço. */
+const PAGINA_NO_ENDERECO = /#page=(\d+)$/;
 
 /**
  * O que a fonte É, do ponto de vista de quem a vai abrir.
@@ -706,6 +716,85 @@ export function validateLedger() {
                 `"${POR_VERIFICAR}", ou não se escreve o campo.`,
             );
           }
+        }
+
+      }
+    }
+
+    /* -----------------------------------------------------------------------
+     * `document.page` — a página onde está a frase que o excerto transcreve
+     * -----------------------------------------------------------------------
+     *
+     * Passa a ser a ÚNICA origem da página. Até 18.08.2026 o número era lido
+     * do localizador e de mais lado nenhum, e o fragmento `#page=N` do endereço
+     * derivava daí; hoje é o contrário — o campo declara-se, o fragmento tem de
+     * o repetir, e o localizador não pode dizer outra coisa. Uma página não se
+     * lê de duas maneiras.
+     *
+     * Fora do bloco de cima de propósito: a conferência do endereço vale mesmo
+     * numa linha sem `document`, porque um `#page=` sem campo que o declare é
+     * o mesmo defeito com uma cara diferente.
+     */
+    {
+      const pag = c.document && typeof c.document === 'object' ? c.document.page : undefined;
+      const temPagina = pag !== null && pag !== undefined;
+      if (temPagina) {
+        if (typeof pag !== 'number' || !Number.isInteger(pag) || pag < 1) {
+          errors.push(
+            `${onde} "document.page" é ${JSON.stringify(pag)}. Tem de ser um inteiro ≥ 1 — ` +
+              `a página do documento onde está a frase que o "excerpt" transcreve.`,
+          );
+        }
+        /* Uma linha derivada e uma linha da casa não têm documento: uma página
+           ali seria uma prova a apontar para um documento que a linha não cita. */
+        if (derivada || eDaCasa(c)) {
+          errors.push(
+            `${onde} "document.page" numa linha ${derivada ? 'derivada' : 'da casa'}. ` +
+              `Não há documento onde essa página exista: a proveniência está ` +
+              `${derivada ? 'nas linhas de origem' : 'no próprio livro-razão'}.`,
+          );
+        }
+      }
+
+      const endereco = typeof c.source_url === 'string' ? c.source_url : '';
+      const noEndereco = endereco.match(PAGINA_NO_ENDERECO)?.[1] ?? null;
+      const semFragmento = endereco.split('#')[0];
+
+      if (noEndereco !== null) {
+        if (!temPagina) {
+          errors.push(
+            `${onde} o endereço fixa a página ${noEndereco} ("#page=${noEndereco}") e a linha ` +
+              `não declara "document.page". O fragmento deriva do campo, e não o contrário.`,
+          );
+        } else if (String(pag) !== noEndereco) {
+          errors.push(
+            `${onde} "document.page" é ${pag} e o endereço fixa a página ${noEndereco} ` +
+              `("#page=${noEndereco}"). São a mesma página, e por isso têm de ser o mesmo número.`,
+          );
+        }
+      } else if (temPagina && semFragmento.toLowerCase().endsWith('.pdf')) {
+        errors.push(
+          `${onde} declara "document.page: ${pag}" sobre um PDF e o endereço não leva ` +
+            `"#page=${pag}". Quem abre o endereço tem de cair na página que a linha declara.`,
+        );
+      }
+
+      const localizador = c.document && typeof c.document === 'object' ? c.document.locator : null;
+      const noLocalizador =
+        typeof localizador === 'string'
+          ? (localizador.match(PAGINA_NO_LOCALIZADOR)?.[1] ?? null)
+          : null;
+      if (noLocalizador !== null) {
+        if (!temPagina) {
+          errors.push(
+            `${onde} o localizador diz "p. ${noLocalizador}" e a linha não declara ` +
+              `"document.page". Declare-o: a página não se lê de duas maneiras.`,
+          );
+        } else if (String(pag) !== noLocalizador) {
+          errors.push(
+            `${onde} "document.page" é ${pag} e o localizador diz "p. ${noLocalizador}". ` +
+              `O localizador e o campo apontam para a mesma página.`,
+          );
         }
       }
     }
