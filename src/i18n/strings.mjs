@@ -549,7 +549,7 @@ export const STRINGS = {
 
       relanceK: 'Relance',
       relanceSub:
-        'Oito medidas. Seis vêm de organismos que publicam para todos os concelhos do país; duas só existem porque o próprio município as publica, e cada uma dessas diz-lo na sua linha.',
+        'Oito medidas. Seis vêm de organismos que publicam para todos os concelhos do país; duas só existem porque o próprio município as publica, e cada uma dessas di-lo na sua linha.',
       relanceVazio: 'Nenhuma fonte central publica esta medida para este concelho.',
 
       breveK: 'Leitura breve',
