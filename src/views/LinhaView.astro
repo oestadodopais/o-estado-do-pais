@@ -177,6 +177,20 @@ const RESUMO_CURTO = 12;
 const encurta = (h) => String(h).slice(0, RESUMO_CURTO);
 
 /**
+ * Os ficheiros sobre que a conta foi feita, e que este sítio NÃO aloja.
+ *
+ * O gémeo honesto do bloco acima. Onde a licença da fonte não permite alojar,
+ * ou não está verificada, a linha diz pelo menos sobre que ficheiros foi
+ * calculada: o nome do publicador, a data do instantâneo, o resumo de cada um,
+ * a coluna somada e o filtro aplicado. É registo, não prova: o excerto continua
+ * por confirmar, a dívida continua contada, e a página di-lo por palavras.
+ *
+ * Um estado desenhado, e não o marcador (IDENTIDADE.md §6 e §7): o marcador é
+ * para um campo que falta, e nenhum campo falta aqui.
+ */
+const calculado = claim.document?.computed_over ?? null;
+
+/**
  * O texto alternativo do recorte, composto SÓ dos campos que existem.
  *
  * A mesma disciplina da frase de atribuição: um título que é o marcador não é
@@ -495,6 +509,64 @@ const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undef
                   </span>
                 </p>
               ))}
+            </div>
+          )
+        }
+
+        {
+          /* Os ficheiros de que a conta foi feita, quando não são alojados. */
+          calculado && (
+            <div class="linha-calculado">
+              <h3 class="linha-campo-k">{s.prov.calculadoSobre}</h3>
+              <ul class="linha-calculado-lista">
+                {calculado.files.map((f, n) => (
+                  <li>
+                    <CampoDaLinha
+                      id={id}
+                      campo={`document.computed_over.files.${n}.file`}
+                      valor={f.file}
+                      lang={lang}
+                    />
+                    {' · '}
+                    {s.prov.calculadoSobreInstantaneo}{' '}
+                    <CampoDaLinha
+                      id={id}
+                      campo={`document.computed_over.files.${n}.snapshot_date`}
+                      valor={f.snapshot_date}
+                      lang={lang}
+                    />
+                    {' · '}
+                    {s.prov.alojadoResumo}{' '}
+                    <span title={f.sha256}>
+                      <CampoDaLinha
+                        id={id}
+                        campo={`document.computed_over.files.${n}.sha256.curto`}
+                        valor={encurta(f.sha256)}
+                        lang={lang}
+                        class="linha-alojado-resumo"
+                      />
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p class="linha-calculado-conta">
+                {s.prov.calculadoSobreColuna}{' '}
+                <CampoDaLinha
+                  id={id}
+                  campo="document.computed_over.column"
+                  valor={calculado.column}
+                  lang={lang}
+                />
+                {' · '}
+                {s.prov.calculadoSobreFiltro}{' '}
+                <CampoDaLinha
+                  id={id}
+                  campo="document.computed_over.filter"
+                  valor={calculado.filter}
+                  lang={lang}
+                />
+              </p>
+              <p class="linha-nota">{s.prov.calculadoSobreNota}</p>
             </div>
           )
         }

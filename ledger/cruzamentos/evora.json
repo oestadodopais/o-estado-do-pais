@@ -668,9 +668,9 @@
       "verifications_at_export": 1
     },
     "evora-prr-aprovado-2026": {
-      "corrections_at_export": 1,
-      "exported_at": "2026-08-15",
-      "exported_row_sha256": "938ee70d1738f3211f4fa3a2b87364be796c0d68eb99b78c4637d677a7e83985",
+      "corrections_at_export": 2,
+      "exported_at": "2026-08-18",
+      "exported_row_sha256": "cef502f73cd8a09445589287c312d431984c877d7703abfd6ada30601399e450",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "339b2687bf9d0958e0fee4f784684dba8d9e0b6e155220305370fd532e17f7f8",
       "rh_id": "prr-approved-evora",
@@ -690,9 +690,9 @@
       "verifications_at_export": 0
     },
     "evora-prr-municipio-contratado": {
-      "corrections_at_export": 1,
-      "exported_at": "2026-08-15",
-      "exported_row_sha256": "993bd18c134042d29e1f1c6c94b8f5ee219cbb49035d9ac359a83078bf67e2cf",
+      "corrections_at_export": 2,
+      "exported_at": "2026-08-18",
+      "exported_row_sha256": "32d5622827c310da84f71eaf69d6a61a64ead051c09da9b60c36715f92878b89",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fe84a0aa489f17ed95c28f92e9db45ae3f7a8e73cfdc8d1436bdb84461a34b7d",
       "rh_id": "fin-municipio-contracted",
@@ -701,9 +701,9 @@
       "verifications_at_export": 0
     },
     "evora-prr-pago-2026": {
-      "corrections_at_export": 1,
-      "exported_at": "2026-08-15",
-      "exported_row_sha256": "e4d406e9c6cd9e0f497719d36d43055f8ba62066b0cbc263561b0e04e9fbed61",
+      "corrections_at_export": 2,
+      "exported_at": "2026-08-18",
+      "exported_row_sha256": "92fd1292f00d1269c5d27a78e482cf14cd9f3ad84fa714744e2bb06169edc390",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5171edff39440e602d23f98308a92f2305b4e0e6d463983400e4747d1e71bcda",
       "rh_id": "prr-paid-evora",
@@ -712,9 +712,9 @@
       "verifications_at_export": 0
     },
     "evora-prr-universidade-contratado": {
-      "corrections_at_export": 1,
-      "exported_at": "2026-08-15",
-      "exported_row_sha256": "832eae64efb43729be4e7b398910416c004c0813922dccfeded5f23b44c62cf9",
+      "corrections_at_export": 2,
+      "exported_at": "2026-08-18",
+      "exported_row_sha256": "361605f789a8142c22906084bd627c8506832bcb81d01bd762f8ae41594ba4f5",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ecee1d6fb709bdaac8b60040dfdc492be62ec75481d2106263f07472282a8981",
       "rh_id": "fin-uevora-contracted",
@@ -723,9 +723,9 @@
       "verifications_at_export": 0
     },
     "evora-prr-vencido-aprovado-2026": {
-      "corrections_at_export": 1,
-      "exported_at": "2026-08-15",
-      "exported_row_sha256": "28154a231768409668a9c2004d4b9a98a64a29464cea26eef9f4f642b95b20f8",
+      "corrections_at_export": 2,
+      "exported_at": "2026-08-18",
+      "exported_row_sha256": "0f3269d6b3605bd68d989963531111daf7e44cec521d930bde47ccc37ef96879",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4ea3a863420fc37d533d50ed126f7d6ba1489257c00b6cef997136951421ac57",
       "rh_id": "prr-overdue-approved",
