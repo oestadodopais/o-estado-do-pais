@@ -160,6 +160,23 @@ const presente = (v) => Boolean(v) && v !== POR_VERIFICAR;
 const recorte = claim.document?.crop ?? null;
 
 /**
+ * O ficheiro de dados que este sítio aloja, e de que esta linha é contada.
+ *
+ * A prova de uma contagem não é uma frase: é o conjunto contado. Onde ele
+ * existe, a página dá-o inteiro: a ligação para o ficheiro, o seu tamanho, o
+ * resumo dos seus bytes, a licença com a atribuição que a fonte pede, e o
+ * ficheiro da fonte de onde o extrato saiu, com o resumo desse. Quem quiser
+ * refazer a conta descarrega as duas coisas e confere as duas.
+ *
+ * O resumo escreve-se curto e vai inteiro no `title`: 64 hexadecimais numa
+ * linha de leitura são uma parede. O portão tem a sua própria cópia da regra do
+ * encurtamento, como tem a do `#page=`.
+ */
+const alojado = claim.document?.hosted ?? null;
+const RESUMO_CURTO = 12;
+const encurta = (h) => String(h).slice(0, RESUMO_CURTO);
+
+/**
  * O texto alternativo do recorte, composto SÓ dos campos que existem.
  *
  * A mesma disciplina da frase de atribuição: um título que é o marcador não é
@@ -398,13 +415,101 @@ const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undef
           )
         }
 
+        {
+          /* O ficheiro alojado, quando a linha é contada sobre um.
+             Nada de caixa onde ele não existe (IDENTIDADE.md §6): a maior parte
+             das linhas cita um documento, e um documento não se aloja aqui. */
+          alojado && (
+            <div class="linha-alojado">
+              <h3 class="linha-campo-k">{s.prov.alojado}</h3>
+              <p class="linha-alojado-ficheiro">
+                <a class="linha-alojado-porta" href={`/${alojado.asset}`}>
+                  <CampoDaLinha
+                    id={id}
+                    campo="document.hosted.asset"
+                    valor={alojado.asset}
+                    lang={lang}
+                  />
+                </a>
+                {' · '}
+                <CampoDaLinha
+                  id={id}
+                  campo="document.hosted.bytes"
+                  valor={String(alojado.bytes)}
+                  lang={lang}
+                />{' '}
+                {s.prov.alojadoBytes}
+                {' · '}
+                {s.prov.alojadoResumo}{' '}
+                <span title={alojado.sha256}>
+                  <CampoDaLinha
+                    id={id}
+                    campo="document.hosted.sha256.curto"
+                    valor={encurta(alojado.sha256)}
+                    lang={lang}
+                    class="linha-alojado-resumo"
+                  />
+                </span>
+              </p>
+              {/* A licença, e a atribuição na forma que a fonte pede. É a
+                  obrigação que a licença impõe a quem redistribui, e por isso
+                  vai à vista e não numa nota de rodapé. */}
+              <p class="linha-nota linha-alojado-licenca">
+                <a class="ligacao-externa" href={alojado.licence_url} rel="noopener noreferrer external license">
+                  <CampoDaLinha
+                    id={id}
+                    campo="document.hosted.licence"
+                    valor={alojado.licence}
+                    lang={lang}
+                  />
+                </a>
+                {' · '}
+                <CampoDaLinha
+                  id={id}
+                  campo="document.hosted.attribution"
+                  valor={alojado.attribution}
+                  lang={lang}
+                />
+              </p>
+              {alojado.extracted_from.map((origem, n) => (
+                <p class="linha-nota linha-alojado-origem">
+                  {s.prov.alojadoExtraido}{' '}
+                  <a class="ligacao-externa" href={origem.url} rel="noopener noreferrer external">
+                    <CampoDaLinha
+                      id={id}
+                      campo={`document.hosted.extracted_from.${n}.file`}
+                      valor={origem.file}
+                      lang={lang}
+                    />
+                  </a>
+                  {' · '}
+                  {s.prov.alojadoResumo}{' '}
+                  <span title={origem.sha256}>
+                    <CampoDaLinha
+                      id={id}
+                      campo={`document.hosted.extracted_from.${n}.sha256.curto`}
+                      valor={encurta(origem.sha256)}
+                      lang={lang}
+                      class="linha-alojado-resumo"
+                    />
+                  </span>
+                </p>
+              ))}
+            </div>
+          )
+        }
+
         <h3 class="linha-campo-k" id="excerto">
           {ehSerieDeDados ? s.prov.campoDevolvido : s.prov.excerto}
         </h3>
         {
           claim.excerpt === null ? (
             <p class="linha-nota">
-              {daCasa ? s.livro.linha.excertoDaCasa : s.livro.linha.excertoDerivada}
+              {alojado
+                ? s.livro.linha.excertoAlojado
+                : daCasa
+                  ? s.livro.linha.excertoDaCasa
+                  : s.livro.linha.excertoDerivada}
             </p>
           ) : claim.excerpt === POR_VERIFICAR ? (
             /* Uma ausência nunca se desenha (IDENTIDADE §6). O excerto que

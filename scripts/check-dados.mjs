@@ -19,7 +19,12 @@
  *   4. `convergencia.csv` tem uma linha por região activa da régua, e cada
  *      linha bate certo, campo a campo, com a afirmação que ela própria nomeia;
  *   5. as duas edições da primeira página ligam para os dois ficheiros, e
- *      nenhuma ligação /dados/… aponta para um ficheiro que não foi construído.
+ *      nenhuma ligação /dados/… aponta para um ficheiro que não foi construído;
+ *   6. cada linha com `document.hosted` é RECONTADA sobre o ficheiro que a
+ *      construção pôs em dist/: o número de linhas de dados é o valor que a
+ *      linha publica, e os bytes construídos dão o resumo que ela declara. É a
+ *      terceira perna da porta estreita do `excerpt: null` (DECISIONS §1.47,
+ *      T3): o validador prende os bytes, e a conta faz-se aqui.
  *
  * Repare-se no que NÃO é feito: o ficheiro construído não é comparado com uma
  * segunda chamada ao gerador. Isso seria uma tautologia. É lido do disco e
@@ -30,8 +35,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import crypto from 'node:crypto';
+
 import { DADOS, lerCsv, linhasDaConvergencia } from '../src/lib/dados.mjs';
-import { getClaim, parsePtNumber } from '../src/lib/ledger.mjs';
+import { allClaims, getClaim, parsePtNumber } from '../src/lib/ledger.mjs';
 import { REGIOES } from '../src/data/regioes.mjs';
 import { MUNICIPIOS, DISTRITOS, regiaoDe } from '../src/data/caop-centroids.mjs';
 import { routePath } from '../src/lib/routes.mjs';
@@ -186,6 +193,81 @@ if (brutoConvergencia) {
   }
 }
 
+/* ------------------------------- os ficheiros alojados, e a sua recontagem
+ *
+ * A terceira perna da porta estreita do `excerpt: null` (DECISIONS §1.47, T3;
+ * BRIEF-bloco-T.md §2.4). O validador prende os BYTES do ficheiro alojado: o
+ * resumo da linha contra o ficheiro em `public/`. O que ele não pode fazer é a
+ * conta: aqui, sobre o ficheiro que a construção pôs em `dist/`, o número de
+ * linhas de dados é recontado e comparado com o valor que a linha publica.
+ *
+ * Uma linha a mais no CSV fecha a construção. É o que separa «o sítio aloja um
+ * ficheiro» de «o número que o sítio publica é o número de linhas desse
+ * ficheiro»: sem a recontagem, o campo seria uma promessa com um anexo.
+ *
+ * O resumo é conferido outra vez, agora sobre os bytes construídos: entre
+ * `public/` e `dist/` há uma cópia, e uma cópia é um sítio por onde um ficheiro
+ * pode mudar sem que ninguém escreva nada.
+ */
+const alojadas = allClaims().filter((c) => c.document?.hosted);
+let recontadas = 0;
+const nomesAlojados = new Set();
+
+for (const claim of alojadas) {
+  const h = claim.document.hosted;
+  const rota = `/${h.asset}`;
+  const bruto = leDoDist(rota);
+  if (!bruto) continue;
+
+  const octetos = fs.readFileSync(path.join(DIST, h.asset));
+  const resumo = crypto.createHash('sha256').update(octetos).digest('hex');
+  if (resumo !== h.sha256) {
+    err(
+      `${rota}: os bytes construídos não são os que "${claim.id}" declara.\n` +
+        `      no livro-razão: ${h.sha256}\n` +
+        `      em dist/:       ${resumo}`,
+    );
+    continue;
+  }
+
+  const { cabecalho, linhas } = lerCsv(bruto);
+  if (cabecalho.length === 0) {
+    err(`${rota}: não tem linha de cabeçalho, e sem ela não se sabe o que cada coluna é.`);
+    continue;
+  }
+  const publicado = parsePtNumber(claim.value);
+  if (linhas.length !== publicado) {
+    err(
+      `${rota}: tem ${linhas.length} linhas de dados e a linha "${claim.id}" publica ` +
+        `${claim.value}. O valor de uma linha contada sobre um ficheiro alojado é o número ` +
+        `de linhas desse ficheiro, recontado aqui a cada construção.`,
+    );
+  } else {
+    recontadas++;
+  }
+  /* O nome do município é a segunda coluna, e é a coluna pela qual o mapa e a
+     contagem se podem comparar. Guardada aqui, comparada abaixo. */
+  const iNome = cabecalho.indexOf('municipio');
+  if (iNome >= 0) for (const l of linhas) nomesAlojados.add(l[iNome]);
+}
+
+/* As duas origens dos 308 nunca se tinham comparado. O mapa desenha-se de
+   `src/data/caop-centroids.mjs` e a contagem faz-se dos ficheiros da DGT: se as
+   duas discordarem num nome, o sítio conta um município que não desenha, ou
+   desenha um que não conta. */
+if (nomesAlojados.size) {
+  const noModulo = new Set(MUNICIPIOS.map((m) => m[0]));
+  const soNoFicheiro = [...nomesAlojados].filter((n) => !noModulo.has(n));
+  const soNoModulo = [...noModulo].filter((n) => !nomesAlojados.has(n));
+  if (soNoFicheiro.length || soNoModulo.length) {
+    err(
+      `os ficheiros alojados da CAOP e src/data/caop-centroids.mjs não nomeiam os mesmos ` +
+        `municípios.\n      só nos ficheiros: ${soNoFicheiro.slice(0, 8).join(', ') || 'nenhum'}` +
+        `\n      só no módulo:     ${soNoModulo.slice(0, 8).join(', ') || 'nenhum'}`,
+    );
+  }
+}
+
 /* ------------------------------------------- as ligações das duas edições */
 
 /** Todos os ficheiros HTML construídos. */
@@ -236,6 +318,7 @@ for (const lang of ['pt', 'en']) {
 
 console.log('');
 console.log(cinza(`  dados descarregáveis · ${Object.keys(DADOS).length} ficheiros · ${ligacoes.size} endereços ligados`));
+console.log(cinza(`  ficheiros alojados · ${alojadas.length} linha(s) com document.hosted · ${recontadas} recontada(s)`));
 
 if (erros.length) {
   console.log('');

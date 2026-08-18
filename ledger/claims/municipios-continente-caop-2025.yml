@@ -14,22 +14,34 @@ document:
   edition: "2025"
   locator: "CAOP 2025, ficheiro do Continente (GeoPackage), contagem das entradas de município"
   kind: "ficheiro"
+  hosted:
+    asset: "dados/caop-2025-municipios-continente.csv"
+    sha256: "404adbf9410c3cc5f231c5d0824ee8bcc728750f83dd0165d9ef59b2ac6b020a"
+    bytes: 17777
+    licence: "CC BY 4.0"
+    licence_url: "https://creativecommons.org/licenses/by/4.0/"
+    attribution: "Direção-Geral do Território"
+    extracted_from:
+      - file: "CAOP_Continente_2025-gpkg.zip"
+        url: "https://geo2.dgterritorio.gov.pt/caop/CAOP_Continente_2025-gpkg.zip"
+        sha256: "87cd67f4b1fbadf23d9324e6fb231ff05531e4db347af36ccc7c6cbabe3ecd1d"
+        bytes: 111647845
 source_url: "https://geo2.dgterritorio.gov.pt/caop/CAOP_Continente_2025-gpkg.zip"
 access_date: "2026-08-12"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "[a verificar]"
+excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "Contagem das entradas de município no Continente nos ficheiros oficiais da CAOP 2025 (GeoPackage). A contagem é reproduzida no build a partir de src/data/caop-centroids.mjs."
-derivation_en: "Count of the municipality entries for mainland Portugal in the official CAOP 2025 files (GeoPackage). The count is reproduced at build time from src/data/caop-centroids.mjs."
+derivation: "Contagem das linhas de dados do ficheiro alojado dados/caop-2025-municipios-continente.csv: 278 linhas, uma por município, cada uma com o seu código na coluna \"dtmn\". O ficheiro é o extrato da camada cont_municipios do GeoPackage CAOP_Continente_2025-gpkg.zip, cujo resumo a linha publica. A contagem é refeita na construção sobre o ficheiro alojado."
+derivation_en: "Count of the data lines of the hosted file dados/caop-2025-municipios-continente.csv: 278 lines, one per municipality, each with its code in the \"dtmn\" column. The file is the extract of the cont_municipios layer of the CAOP_Continente_2025-gpkg.zip GeoPackage, whose hash the row publishes. The count is re-made at build time over the hosted file."
 derived_from: []
 # Expressão verificada no build: tem de dar exactamente o valor acima.
 check: null
 
 study: "o-estado-do-pais"
-note: "Não há excerto textual: o valor sai de uma contagem de registos num ficheiro geoespacial, não de uma frase publicada. A transcrição completa do processamento está em src/data/verbatim.mjs (caop-processamento)."
+note: "A contagem passou a ser feita sobre o ficheiro alojado em public/dados/caop-2025-municipios-continente.csv, escrito por ResearchHub/publisher/caop_municipios.py a partir do GeoPackage da DGT e reconferido em cada construção por scripts/check-dados.mjs. Até 18.08.2026 a contagem era reproduzida a partir de src/data/caop-centroids.mjs, que continua a ser a origem das posições do mapa e deixou de ser a origem da contagem. A transcrição do processamento das coordenadas está em src/data/verbatim.mjs (caop-processamento)."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections:

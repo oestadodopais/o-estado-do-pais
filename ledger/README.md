@@ -27,6 +27,20 @@ document:
   #   asset: "recortes/pib-pc-portugal-2024.webp"   # o ficheiro, em public/
   #   sha256: "…"                                   # 64 hexadecimais: o resumo dos seus bytes
   #   page: 108                                     # igual a document.page
+  # O ficheiro de dados que ESTE sítio aloja, e de que a linha é contada.
+  # Escrito pelo motor (publisher/caop_municipios.py), nunca à mão.
+  # hosted:
+  #   asset: "dados/caop-2025-municipios-madeira.csv"  # o ficheiro, em public/
+  #   sha256: "…"                                      # o resumo dos seus bytes
+  #   bytes: 2117
+  #   licence: "CC BY 4.0"                             # lida na página da fonte
+  #   licence_url: "https://creativecommons.org/licenses/by/4.0/"
+  #   attribution: "Direção-Geral do Território"       # na forma que a fonte pede
+  #   extracted_from:                                  # o ficheiro da fonte, e o seu resumo
+  #     - file: "CAOP_RAM_2025-gpkg.zip"
+  #       url: "https://geo2.dgterritorio.gov.pt/caop/CAOP_RAM_2025-gpkg.zip"
+  #       sha256: "…"
+  #       bytes: 15235290
 source_url: "[a verificar]"
 access_date: "[a verificar]"     # AAAA-MM-DD — quando foi lido
 reference_date: "2024"           # AAAA / AAAA-MM / AAAA-MM-DD — a que se refere
@@ -102,7 +116,20 @@ verifications:
     o `asset` não for exactamente `recortes/<id>.webp`; não houver ficheiro em
     `public/<asset>`; o `sha256` não for 64 hexadecimais ou não for o resumo dos
     bytes desse ficheiro; o ficheiro passar dos 40 000 bytes; a `page` não for a
-    `document.page`; ou a linha não declarar `document.page`.
+    `document.page`; ou a linha não declarar `document.page`;
+17. `document.hosted` trouxer uma chave que não seja `asset`, `sha256`, `bytes`,
+    `licence`, `licence_url`, `attribution` ou `extracted_from`; estiver numa
+    linha cujo `document.kind` não seja `ficheiro`; o `asset` não for
+    `dados/<nome>`; não houver ficheiro em `public/<asset>`; o `sha256` não for
+    64 hexadecimais ou não for o resumo dos bytes desse ficheiro; `bytes` não
+    for o tamanho do ficheiro; faltar `licence`, `licence_url` (que tem de ser
+    um endereço) ou `attribution`; `extracted_from` não for uma lista não vazia
+    de mapas com `file`, `url` (um endereço), `sha256` (64 hexadecimais) e
+    `bytes` (inteiro ≥ 1);
+18. `excerpt` for `null` numa linha que não é derivada nem da casa e que não
+    traz `document.hosted` completo, `document.kind: "ficheiro"` e a
+    `derivation` nas duas línguas: a porta estreita da contagem sobre um
+    ficheiro alojado, abaixo.
 
 ## `document.kind` — o que o endereço serve
 
@@ -278,6 +305,77 @@ a sua linha não tem.
 porta «Abrir na página N →» para o endereço, que traz `#page=N`. Onde não há
 recorte não há caixa nenhuma: fica o excerto transcrito, como sempre esteve
 (IDENTIDADE.md §6).
+
+## `document.hosted`: o ficheiro de dados de que a linha é contada
+
+Opcional, dentro de `document`, e só onde `document.kind` é `ficheiro`. Existe
+desde 18.08.2026 (DECISIONS §1.47, T3).
+
+| Campo | O que é |
+| --- | --- |
+| `asset` | `dados/<nome>`, o ficheiro em `public/dados/`, servido de `/dados/` |
+| `sha256` | 64 hexadecimais, o resumo dos bytes desse ficheiro |
+| `bytes` | o tamanho do ficheiro |
+| `licence` | a licença sob a qual a fonte publica, lida na página da fonte |
+| `licence_url` | o endereço onde a licença está escrita |
+| `attribution` | a atribuição na forma que a fonte pede |
+| `extracted_from` | lista dos ficheiros da fonte de onde o extrato saiu: `file`, `url`, `sha256`, `bytes` |
+
+**Porque existe.** Um valor que é uma **contagem** ou uma **soma** sobre um
+registo público não tem frase para transcrever. O `excerpt` ficava
+`[a verificar]`, que é honesto e incompleto: era o limite 13 do `DECISIONS.md` §2.3,
+e sete linhas esperavam por ele. A resposta é o sítio alojar **o conjunto que
+foi contado** e a contagem ser refeita sobre ele a cada construção. A prova de
+uma contagem é o conjunto, não uma frase sobre o conjunto.
+
+**A licença lê-se antes de se alojar, e por quem não escreve a linha.** Foi o
+que se fez a 18.08.2026: um agente sem acesso a estes repositórios leu as
+páginas das fontes e transcreveu o que lá está (`BRIEF-bloco-T.md` §2.4). Para a
+CAOP, duas vezes: o campo `license: cc-by` dos três conjuntos em dados.gov.pt e
+a página «Dados abertos» da DGT, cuja frase fica em
+`ResearchHub/publisher/dados/manifest.json`, transcrita, com o endereço e a data
+em que foi lida. Sem cláusula de partilha nas mesmas condições nem de uso não
+comercial. **A obrigação é a atribuição**, e por isso ela é um campo e a página
+publica-a ao pé do ficheiro. Onde a licença não está verificada, não se aloja
+nada: é o caso do PRR, e a linha di-lo com `document.computed_over`.
+
+**O que atravessa é o extrato, não o original.** O zip da CAOP do Continente tem
+111 647 845 bytes: alojá-lo seria servir uma cópia de um ficheiro que a fonte já
+serve. O que se aloja é a lista das entidades contadas, uma por linha, tirada do
+GeoPackage pela mesma leitura que produziu a contagem, **com o resumo do zip
+inteiro de onde saiu**. Quem descarregar o original confere o resumo e sabe que o
+extrato é daquele ficheiro.
+
+**Não se escreve à mão.** O ficheiro, o seu resumo, o seu tamanho e o resumo da
+origem são escritos por `ResearchHub/publisher/caop_municipios.py`, que os leu
+dos bytes que descarregou. Um resumo copiado por uma pessoa é um resumo que
+ninguém pode conferir.
+
+### A porta estreita do `excerpt: null`
+
+Uma linha que não é derivada nem da casa só pode ter `excerpt: null` quando traz
+as **três** coisas. É a quarta resposta ao limite 13, e a porta é estreita de
+propósito:
+
+1. `document.hosted` completo, com `document.kind: "ficheiro"`: o ficheiro
+   existe em `public/dados/`, os seus bytes dão o resumo declarado, e a licença,
+   o seu endereço e a atribuição estão escritos;
+2. a `derivation` nas **duas línguas**, a dizer o que foi contado ou somado: que
+   coluna, que filtro, sobre que ficheiro;
+3. a **recontagem mecânica** na construção, `scripts/check-dados.mjs`: o número
+   de linhas de dados do ficheiro em `dist/` é o valor que a linha publica. Uma
+   linha a mais no CSV fecha a construção.
+
+Sem as três, `[a verificar]` fica. Com as três, o selo passa a cheio e a linha
+volta ao índice, sem ninguém decidir nada, como este ficheiro já promete para
+qualquer campo preenchido.
+
+**A página da linha** mostra o ficheiro no bloco da prova, antes do excerto: a
+porta para o CSV, o seu tamanho, o resumo dos seus bytes (curto, inteiro no
+`title`), a linha da licença com a atribuição, e o ficheiro da fonte de onde o
+extrato saiu com o resumo desse. O `gate:html` exige que uma linha que aloja um
+ficheiro o mostre, e que uma página de linha não ofereça um ficheiro de
+`/dados/` que a sua linha não declara.
 
 ## `attributed_to` — a quem o valor é creditado
 

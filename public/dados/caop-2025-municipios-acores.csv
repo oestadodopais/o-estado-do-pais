@@ -1,0 +1,34 @@
+# O Estado do País — municípios: Região Autónoma dos Açores, CAOP 2025
+# Carta Administrativa Oficial de Portugal (CAOP) 2025
+# Direção-Geral do Território · CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/
+#
+# Extraído de CAOP_RAA_2025-gpkg.zip
+#   https://geo2.dgterritorio.gov.pt/caop/CAOP_RAA_2025-gpkg.zip
+#   sha256 b0e3b4fe5544647eb4593e0222c6430fae7e50c97f953d8ceae10707c4df9dcf
+#   15909724 bytes · Last-Modified: Mon, 02 Feb 2026 14:29:12 GMT
+# Camadas do GeoPackage, uma linha por município:
+#   ArqAcores_GCentral_GOriental_CAOP2025.gpkg:raa_cen_ori_municipios
+#   ArqAcores_GOcidental_CAOP2025.gpkg:raa_oci_municipios
+# Colunas com os nomes que a fonte lhes dá. A contagem é o número de
+# linhas de dados deste ficheiro.
+# Produzido por ResearchHub/publisher/caop_municipios.py. NÃO EDITAR À MÃO.
+dtmn,municipio,distrito_ilha,nuts3,nuts2,nuts1
+4101,Vila do Porto,Ilha de Santa Maria,Região Autónoma dos Açores,Região Autónoma dos Açores,Região Autónoma dos Açores
+4201,Lagoa,Ilha de São Miguel,Região Autónoma dos Açores,Região Autónoma dos Açores,Região Autónoma dos Açores
+4202,Nordeste,Ilha de São Miguel,Região Autónoma dos Açores,Região Autónoma dos Açores,Região Autónoma dos Açores
+4203,Ponta Delgada,Ilha de São Miguel,Região Autónoma dos Açores,Região Autónoma dos Açores,Região Autónoma dos Açores
+4204,Povoação,Ilha de São Miguel,Região Autónoma dos Açores,Região Autónoma dos Açores,Região Autónoma dos Açores
+4205,Ribeira Grande,Ilha de São Miguel,Região Autónoma dos Açores,Região Autónoma dos Açores,Região Autónoma dos Açores
+4206,Vila Franca do Campo,Ilha de São Miguel,Região Autónoma dos Açores,Região Autónoma dos Açores,Região Autónoma dos Açores
+4301,Angra do Heroísmo,Ilha Terceira,Região Autónoma dos Açores,Região Autónoma dos Açores,Região Autónoma dos Açores
+4302,Praia da Vitória,Ilha Terceira,Região Autónoma dos Açores,Região Autónoma dos Açores,Região Autónoma dos Açores
+4401,Santa Cruz da Graciosa,Ilha da Graciosa,Região Autónoma dos Açores,Região Autónoma dos Açores,Região Autónoma dos Açores
+4501,Calheta de São Jorge,Ilha de São Jorge,Região Autónoma dos Açores,Região Autónoma dos Açores,Região Autónoma dos Açores
+4502,Velas,Ilha de São Jorge,Região Autónoma dos Açores,Região Autónoma dos Açores,Região Autónoma dos Açores
+4601,Lajes do Pico,Ilha do Pico,Região Autónoma dos Açores,Região Autónoma dos Açores,Região Autónoma dos Açores
+4602,Madalena,Ilha do Pico,Região Autónoma dos Açores,Região Autónoma dos Açores,Região Autónoma dos Açores
+4603,São Roque do Pico,Ilha do Pico,Região Autónoma dos Açores,Região Autónoma dos Açores,Região Autónoma dos Açores
+4701,Horta,Ilha do Faial,Região Autónoma dos Açores,Região Autónoma dos Açores,Região Autónoma dos Açores
+4801,Lajes das Flores,Ilha das Flores,Região Autónoma dos Açores,Região Autónoma dos Açores,Região Autónoma dos Açores
+4802,Santa Cruz das Flores,Ilha das Flores,Região Autónoma dos Açores,Região Autónoma dos Açores,Região Autónoma dos Açores
+4901,Corvo,Ilha do Corvo,Região Autónoma dos Açores,Região Autónoma dos Açores,Região Autónoma dos Açores

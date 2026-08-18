@@ -101,6 +101,15 @@ tokens:
       sem algarismos. A medição que ele enquadra — o limite legal e o índice
       contra ele — tem linha própria no livro-razão, ao lado. Acrescentado em
       2026-08-15 para a página de município; ver DECISIONS §1.34.
+  - token: 'sha256'
+    scope: body
+    why: >-
+      O nome da função de resumo criptográfico com que este sítio prende os
+      bytes de um ficheiro alojado e do ficheiro da fonte de onde ele saiu
+      (bloco T3, DECISIONS §1.47). É o NOME do algoritmo, da mesma classe que
+      "UE-27": não mede nada, e o "256" que ele traz é o comprimento do resumo
+      em bits, escrito dentro do nome. O resumo em si é um campo da linha,
+      marcado `data-linha-campo` e conferido carácter a carácter ao lado.
   - token: '52.º'
     scope: body
     why: >-
