@@ -1,0 +1,24 @@
+CONFERÊNCIA · direção C · Editorial generoso
+corrida a partir de design/direcao-c, contra dist/ do mesmo repositório
+
+ficheiro              tamanho   script  pedidos  1.ª linha  travessões  algarismos
+--------------------  --------  ------  -------  ---------  ----------  ----------
+01-primeira.html      73.2 KiB     não   nenhum         ok           0    61 corridos, todos de dist
+02-linha.html         32.0 KiB     não   nenhum         ok           0    10 corridos, todos de dist
+03-municipio.html     81.2 KiB     não   nenhum         ok           0    70 corridos, todos de dist
+04-metodo.html        47.8 KiB     não   nenhum         ok           0    23 corridos, todos de dist
+05-agenda.html        73.3 KiB     não   nenhum         ok           0    65 corridos, todos de dist
+06-mobile.html        103.8 KiB     não   nenhum         ok           0    63 corridos embebidos, todos dos protótipos
+_board-racional.html   4.7 KiB     não   nenhum         ok           0    sem página correspondente
+board.html            360.4 KiB     não   nenhum         ok           0    158 corridos embebidos, todos dos protótipos
+
+Algarismos que a moldura escreve sobre si própria, declarados à mão:
+  390 e 400 são larguras e o tecto de tamanho; 01 a 06 numeram as peças;
+  2 e 3 são os nomes das fichas paper-2 e paper-3 na amostra da paleta.
+Lista:
+  390 · 400 · 06 · 01 · 02 · 03 · 04 · 05 · 2 · 3
+
+Ligações para fora: são portas, não pedidos. As páginas construídas citam
+as suas fontes por endereço, e esses endereços atravessaram tal como estão.
+
+PASSA. Nenhuma falha.

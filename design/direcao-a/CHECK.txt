@@ -1,0 +1,27 @@
+Direção A · Refinamento · conferência dos protótipos
+corrida a partir de design/direcao-a, contra dist/ em 5 páginas construídas
+
+ficheiro               bytes  script  números  exemplo  desenho  estado
+------------------------------------------------------------------------
+01-primeira.html       66202       0       52        0        0  passa
+02-linha.html          23026       0        8        4        0  passa
+03-municipio.html      87020       0       77        0        0  passa
+04-metodo.html         44952       0       22        0        0  passa
+05-agenda.html         67923       0       90        0        0  passa
+06-mobile.html         94145       0       55        4        1  passa
+board.html            392712       0      209        8        7  passa
+------------------------------------------------------------------------
+limite de tamanho: 409600 B por ficheiro
+caixas de exemplo (sem algarismos, por regra): 16
+
+Números marcados data-design, medidas do próprio desenho e não de Portugal:
+  06-mobile.html: 390
+  board.html: 01
+  board.html: 02
+  board.html: 03
+  board.html: 04
+  board.html: 05
+  board.html: 06
+  board.html: 390
+
+RESULTADO: passa em todos os ficheiros.

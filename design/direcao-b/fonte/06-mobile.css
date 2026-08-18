@@ -1,0 +1,82 @@
+/* ---- a folha dos 390 px ---------------------------------------------------- */
+.mob-cabeca {
+  padding: clamp(18px, 2.4vw, 28px) 0 clamp(14px, 2vw, 22px);
+  display: grid;
+  gap: 8px;
+}
+.mob-cabeca h1 {
+  font-size: clamp(24px, 3.2vw, 34px);
+}
+.mob-par {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(24px, 3.4vw, 44px);
+  align-items: start;
+  padding-bottom: 20px;
+}
+.mob-fig {
+  margin: 0;
+  display: grid;
+  gap: 8px;
+  width: 390px;
+  max-width: 100%;
+}
+.mob-cap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.mob-n {
+  font-weight: 600;
+  color: var(--ink);
+  border: 1px solid var(--rule-strong);
+  padding: 0 6px;
+}
+.mob-regua {
+  height: 14px;
+  border-left: 1px solid var(--ink);
+  border-right: 1px solid var(--ink);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mob-regua::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: var(--rule-strong);
+}
+.mob-regua span {
+  position: relative;
+  background: var(--paper);
+  padding: 0 8px;
+  font-family: var(--f-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.mob-ecra {
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  padding: 0;
+  height: 820px;
+  overflow: hidden;
+}
+.mob-quadro {
+  width: 390px;
+  height: 100%;
+  border: 0;
+  display: block;
+  background: var(--paper);
+}
+.mob-nota {
+  max-width: 100%;
+}
