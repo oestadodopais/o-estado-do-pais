@@ -309,10 +309,10 @@ export const REGRAS = [
     },
     limite: {
       pt: [
-        'A releitura acontece e ainda não fica escrita na linha: o campo que a guardaria não existe no formato. Enquanto não existir, a conta abaixo é zero, e é zero por isso.',
+        'A releitura de uma linha fica escrita nela: a data, o caminho, o resultado e quem a fez. O que ainda não existe é a releitura de todas as linhas: as contas ao lado dizem quantas a têm, e quantas leram um valor diferente.',
       ],
       en: [
-        'The re-reading happens and is not yet written into the row: the field that would hold it does not exist in the format. Until it does, the count below is zero, and it is zero for that reason.',
+        'The re-reading of a row is written into the row itself: the date, the path, the result and who did it. What does not yet exist is a re-reading of every row: the counts beside say how many have one, and how many read a different value.',
       ],
     },
     prova: [
@@ -321,6 +321,20 @@ export const REGRAS = [
         rotulo: {
           pt: 'releituras independentes registadas',
           en: 'independent re-readings on record',
+        },
+      },
+      {
+        chave: 'linhas_reconferidas',
+        rotulo: {
+          pt: 'linhas com reconferência escrita',
+          en: 'rows with a re-check written',
+        },
+      },
+      {
+        chave: 'releituras_divergentes',
+        rotulo: {
+          pt: 'releituras que leram outro valor',
+          en: 're-readings that read a different value',
         },
       },
       {
