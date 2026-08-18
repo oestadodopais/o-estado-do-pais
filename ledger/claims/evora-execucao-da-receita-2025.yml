@@ -41,3 +41,10 @@ note: "Cruzado de ResearchHub content/07 Évora Municipal Accounts · receita-ex
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo exportador a partir de um registo de releitura.
+verifications:
+  - date: "2026-08-15"
+    path: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf"
+    result: "igual"
+    by: "leitura-independente"

@@ -41,3 +41,10 @@ note: "[derivation do motor] Quadro 33's series, year 2023 · Cruzado de Researc
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo exportador a partir de um registo de releitura.
+verifications:
+  - date: "2026-08-15"
+    path: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf"
+    result: "igual"
+    by: "leitura-independente"

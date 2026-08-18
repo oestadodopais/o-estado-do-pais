@@ -105,6 +105,12 @@ const CAMPOS_ENTRADA = [
   'origin_row_sha256',
   'exported_row_sha256',
   'corrections_at_export',
+  /* Quantas reconferências a linha trazia quando atravessou. Entrou com o
+     `verifications[]` (DECISIONS §1.47), e existe pela mesma razão que a
+     contagem de correções ao lado: a conferência de aceitação compara o
+     ficheiro em disco com o registo, e uma contagem que não está escrita é uma
+     contagem com que ninguém pode discordar. */
+  'verifications_at_export',
   'exported_at',
   'exporter',
   'site_corrections',
@@ -603,6 +609,14 @@ function main(argv) {
         erros.push(
           `${onde}: a linha tem ${nCorr} correcção(ões) e o registo diz ` +
             `${entrada.corrections_at_export}. Corra --accept-correction ${id}.`,
+        );
+      }
+      const nVer = Array.isArray(linha?.verifications) ? linha.verifications.length : 0;
+      if (nVer !== Number(entrada.verifications_at_export ?? 0)) {
+        erros.push(
+          `${onde}: a linha tem ${nVer} reconferência(s) e o registo diz ` +
+            `${entrada.verifications_at_export ?? 0}. Uma reconferência de uma linha cruzada ` +
+            `entra pelo exportador do motor e por mais lado nenhum: volte a cruzar.`,
         );
       }
     }

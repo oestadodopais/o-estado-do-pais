@@ -11,13 +11,14 @@
   "rows": {
     "alentejo-central-poder-de-compra-2023": {
       "corrections_at_export": 0,
-      "exported_at": "2026-08-15",
-      "exported_row_sha256": "010e28a2341cc091009f703a4174ad2577dbb07b138a3d38c657e4ca3b44ba30",
+      "exported_at": "2026-08-18",
+      "exported_row_sha256": "c44cf161d8fda8fcc4d90ee9345591cb9449b26972d2802a83930a76448988dc",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4f7cd13089c9d742707d8d3215aa6ffae45f2fd01244e80d014e25b61fece645",
       "rh_id": "pc-ac-2023",
       "rh_ledger_sha256": "128f0ea744ad0c5ecb8d98ecf2daf04006c89bff78627b7a001c09aaf69a3aa0",
-      "rh_study": "06 Évora Economy"
+      "rh_study": "06 Évora Economy",
+      "verifications_at_export": 1
     },
     "evora-camara-lugares": {
       "corrections_at_export": 0,
@@ -27,7 +28,8 @@
       "origin_row_sha256": "4042a43b2220dbf0a8b5116a086926560fd7bcb733b8693545bc3957c3d4821a",
       "rh_id": "el2025-seats-total",
       "rh_ledger_sha256": "2ff276b0a62c86f87a705b70b185ba6510999b7e233996509bd3cb2660a70d07",
-      "rh_study": "08 Évora Mandates"
+      "rh_study": "08 Évora Mandates",
+      "verifications_at_export": 0
     },
     "evora-camara-mandatos-cdu-2013": {
       "corrections_at_export": 0,
@@ -37,7 +39,8 @@
       "origin_row_sha256": "0c428331f0482644f12ddffd5059eee668567b16b8b8447775aad864aa3ef0cd",
       "rh_id": "el2013-pcp-pev-seats",
       "rh_ledger_sha256": "2ff276b0a62c86f87a705b70b185ba6510999b7e233996509bd3cb2660a70d07",
-      "rh_study": "08 Évora Mandates"
+      "rh_study": "08 Évora Mandates",
+      "verifications_at_export": 0
     },
     "evora-camara-mandatos-cdu-2017": {
       "corrections_at_export": 0,
@@ -47,7 +50,8 @@
       "origin_row_sha256": "8c92856ea891053d46a2f98835d36cb67b6fa7c1ee51013e4fda64b37de227ae",
       "rh_id": "el2017-pcp-pev-seats",
       "rh_ledger_sha256": "2ff276b0a62c86f87a705b70b185ba6510999b7e233996509bd3cb2660a70d07",
-      "rh_study": "08 Évora Mandates"
+      "rh_study": "08 Évora Mandates",
+      "verifications_at_export": 0
     },
     "evora-camara-mandatos-cdu-2021": {
       "corrections_at_export": 0,
@@ -57,7 +61,8 @@
       "origin_row_sha256": "aac7fdc706c8d454c12cfe9d81b1609f69c6fd36a1c401933f4ac459033dce81",
       "rh_id": "el2021-pcp-pev-seats",
       "rh_ledger_sha256": "2ff276b0a62c86f87a705b70b185ba6510999b7e233996509bd3cb2660a70d07",
-      "rh_study": "08 Évora Mandates"
+      "rh_study": "08 Évora Mandates",
+      "verifications_at_export": 0
     },
     "evora-camara-mandatos-ps-2009": {
       "corrections_at_export": 0,
@@ -67,7 +72,8 @@
       "origin_row_sha256": "7c4bbfeec5647e661b84c899407ae9b93d4365491905fcb54a8508dba57a97df",
       "rh_id": "el2009-ps-seats",
       "rh_ledger_sha256": "2ff276b0a62c86f87a705b70b185ba6510999b7e233996509bd3cb2660a70d07",
-      "rh_study": "08 Évora Mandates"
+      "rh_study": "08 Évora Mandates",
+      "verifications_at_export": 0
     },
     "evora-camara-mandatos-ps-2025": {
       "corrections_at_export": 0,
@@ -77,7 +83,8 @@
       "origin_row_sha256": "fc3cf47698f57b68f7ebf1ed433e80a0fd4e8683713ab19b9684c968bb94c938",
       "rh_id": "el2025-ps-seats",
       "rh_ledger_sha256": "2ff276b0a62c86f87a705b70b185ba6510999b7e233996509bd3cb2660a70d07",
-      "rh_study": "08 Évora Mandates"
+      "rh_study": "08 Évora Mandates",
+      "verifications_at_export": 0
     },
     "evora-concentracao-vab4-2024": {
       "corrections_at_export": 0,
@@ -87,7 +94,8 @@
       "origin_row_sha256": "c66300059a5e11c16bafa2b62bd4a1e98fee282fbb5b246e7ca4db9fdae49cb0",
       "rh_id": "conc-vab4-evora",
       "rh_ledger_sha256": "128f0ea744ad0c5ecb8d98ecf2daf04006c89bff78627b7a001c09aaf69a3aa0",
-      "rh_study": "06 Évora Economy"
+      "rh_study": "06 Évora Economy",
+      "verifications_at_export": 0
     },
     "evora-contas-2024-votos-contra": {
       "corrections_at_export": 0,
@@ -97,7 +105,8 @@
       "origin_row_sha256": "2b3161c28733fa56730858497227dbbcf83216f351063b1098f74b64f79e050e",
       "rh_id": "clc-2024-votos-contra",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 0
     },
     "evora-contas-2024-votos-favor": {
       "corrections_at_export": 0,
@@ -107,27 +116,30 @@
       "origin_row_sha256": "bc57f097f23ebda78fd0b5b372e75d0cee695f651ba6c22a88294ecb67b4b3e4",
       "rh_id": "clc-2024-votos-favor",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 0
     },
     "evora-desemprego-registado-2013": {
       "corrections_at_export": 0,
-      "exported_at": "2026-08-15",
-      "exported_row_sha256": "0bd9c836875ce72a4dcfb807f1bc93c8a0d70f6e353923c04abb339567d385d5",
+      "exported_at": "2026-08-18",
+      "exported_row_sha256": "bf58cf87fe4b1f01b87b9f350a9325fe2375db99f8dc6cd5e833e8313baa0ba3",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "405ecf114c93c6fc3d5c5c5d745b0aefd9068d820f9c48102e4ca46a1bb04761",
       "rh_id": "socio-registered-unemployment-2013",
       "rh_ledger_sha256": "2ff276b0a62c86f87a705b70b185ba6510999b7e233996509bd3cb2660a70d07",
-      "rh_study": "08 Évora Mandates"
+      "rh_study": "08 Évora Mandates",
+      "verifications_at_export": 1
     },
     "evora-desemprego-registado-2024": {
       "corrections_at_export": 0,
-      "exported_at": "2026-08-15",
-      "exported_row_sha256": "0ed94d1bebfbeff58abfddb85224d61132bc7c07b2982dc2ec1abc98e452cc7d",
+      "exported_at": "2026-08-18",
+      "exported_row_sha256": "cf27b35b3dfbf63227e98a2448e3b1414d5bc0bf27ca550c48677424b25ade1a",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "20ee43a5ab6de0691a836fddeee75c187f0503225fd5ddc71387986fdc338574",
       "rh_id": "socio-registered-unemployment-2024",
       "rh_ledger_sha256": "2ff276b0a62c86f87a705b70b185ba6510999b7e233996509bd3cb2660a70d07",
-      "rh_study": "08 Évora Mandates"
+      "rh_study": "08 Évora Mandates",
+      "verifications_at_export": 1
     },
     "evora-despesa-paga-2025": {
       "corrections_at_export": 0,
@@ -137,7 +149,8 @@
       "origin_row_sha256": "91252e415e1edefde85dfb678d8f4cbce06f48c9923dfe9b7919afe451f7919d",
       "rh_id": "despesa-paga-2025",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 0
     },
     "evora-divergencia-municipio-dgal-2024": {
       "corrections_at_export": 0,
@@ -147,7 +160,8 @@
       "origin_row_sha256": "5505602e957439c6de8e989c5f0b6a44f7d9f32770e805e2bcf90cd1dca2a78a",
       "rh_id": "dgal-report-residual-2024",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 0
     },
     "evora-divida-31-10-2013": {
       "corrections_at_export": 0,
@@ -157,47 +171,52 @@
       "origin_row_sha256": "0ab5d4f1c3faf9b20cd890d539cb9352d15605a953d8a17cdf7f914c75f06f64",
       "rh_id": "divida-31out2013",
       "rh_ledger_sha256": "2ff276b0a62c86f87a705b70b185ba6510999b7e233996509bd3cb2660a70d07",
-      "rh_study": "08 Évora Mandates"
+      "rh_study": "08 Évora Mandates",
+      "verifications_at_export": 0
     },
     "evora-divida-dgal-2014": {
       "corrections_at_export": 0,
-      "exported_at": "2026-08-15",
-      "exported_row_sha256": "9363df57a1dbdf9cbde720a311b3d215c54cd3400a3825d20d1b8c1762df7d14",
+      "exported_at": "2026-08-18",
+      "exported_row_sha256": "6079bee0affc4ce4fed0273877aaaa9b4541b71eee803f919dcee4bf98f4dd32",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ea4140b50b0413e9a58da0c25f7dbff2e08575b62a03b3b6b7d9c866689441ab",
       "rh_id": "dgal-divida-2014",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 1
     },
     "evora-divida-dgal-2017": {
       "corrections_at_export": 0,
-      "exported_at": "2026-08-15",
-      "exported_row_sha256": "23a62444b01fc2728b901b4606676f3d604efe209f615b6ca1a9009845a53c63",
+      "exported_at": "2026-08-18",
+      "exported_row_sha256": "abf327c7e5a61d1b74bc11fdcc8bdc3845fd288f69b2c7bf74431e8a76d0f9e0",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1b357d12429e660089e2c9c160b7ddc2fdc014248333e19034c90ef122af644d",
       "rh_id": "dgal-divida-2017",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 1
     },
     "evora-divida-dgal-2021": {
       "corrections_at_export": 0,
-      "exported_at": "2026-08-15",
-      "exported_row_sha256": "db8c2b066b56f4e43e0e4097373d6290f891ff7727ce7348a8a7732b2287d716",
+      "exported_at": "2026-08-18",
+      "exported_row_sha256": "1f11d92149ff6b7c8dececf727a50b0ab0b3c712ed56ce454ba8b0b9b74e7aa8",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4c919fda99782ec61fe8b9077b3621f5a58638856fa03f9992df4729f6404933",
       "rh_id": "dgal-divida-2021",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 1
     },
     "evora-divida-dgal-2024": {
       "corrections_at_export": 0,
-      "exported_at": "2026-08-15",
-      "exported_row_sha256": "21974da7a35ed843b18de59f6cde3104294f9bbda7f49d28c3168c95a5fc5aa7",
+      "exported_at": "2026-08-18",
+      "exported_row_sha256": "a0c6a8dd59cd462539ac9e3d03a10e3770c7ba9e5acf44f86f695e0afe8b1c57",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f37a7bb113e79cd3c8779dfe276d138f6ebce284336b90f89a08bee9fb5621bc",
       "rh_id": "dgal-divida-2024",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 1
     },
     "evora-divida-inicio-mandato-reexpressa": {
       "corrections_at_export": 0,
@@ -207,7 +226,8 @@
       "origin_row_sha256": "e37fdeb57c334a4460b690ca9a362c645248cfa7973856c2e5902b3d84296b8f",
       "rh_id": "divida-inicio-mandato-2021",
       "rh_ledger_sha256": "2ff276b0a62c86f87a705b70b185ba6510999b7e233996509bd3cb2660a70d07",
-      "rh_study": "08 Évora Mandates"
+      "rh_study": "08 Évora Mandates",
+      "verifications_at_export": 0
     },
     "evora-divida-total-2017": {
       "corrections_at_export": 0,
@@ -217,7 +237,8 @@
       "origin_row_sha256": "9596b037a89a410cf5b9c0e4fb2210da7fdf437c56e593cd386b20bf6f8492e7",
       "rh_id": "ind-divida-total-2017",
       "rh_ledger_sha256": "2ff276b0a62c86f87a705b70b185ba6510999b7e233996509bd3cb2660a70d07",
-      "rh_study": "08 Évora Mandates"
+      "rh_study": "08 Évora Mandates",
+      "verifications_at_export": 0
     },
     "evora-divida-total-2021": {
       "corrections_at_export": 0,
@@ -227,7 +248,8 @@
       "origin_row_sha256": "b16f35928c8dc5a2ee5e8d6a7c68ee49e32fddd348b8eba39d1ffbafad6b6ebe",
       "rh_id": "ind-divida-total-2021",
       "rh_ledger_sha256": "2ff276b0a62c86f87a705b70b185ba6510999b7e233996509bd3cb2660a70d07",
-      "rh_study": "08 Évora Mandates"
+      "rh_study": "08 Évora Mandates",
+      "verifications_at_export": 0
     },
     "evora-divida-total-2024": {
       "corrections_at_export": 0,
@@ -237,27 +259,30 @@
       "origin_row_sha256": "ef73a4cfba58bd58a70ea437ce5b95a8ff9bd175288c11222f1b8fd119b23037",
       "rh_id": "divida-total-2024",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 0
     },
     "evora-divida-total-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-18",
-      "exported_row_sha256": "a53abfcc5caf5fe878fc73dd1920aff1c674ff14bdaed85c30d3077affbf2b3e",
+      "exported_row_sha256": "a63d181f520c207235181f8c476bcec897f9574cb61d11d396ddc738866306ac",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3a49cb4cf61e01147fc750b650406686bcb53de0298f0b526860b7a8c2f272d1",
       "rh_id": "divida-total-2025",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 1
     },
     "evora-empresas-2024": {
       "corrections_at_export": 0,
-      "exported_at": "2026-08-15",
-      "exported_row_sha256": "0f5388227b89887d1a112a54733e8348a44ae609685e93679e9fad492c0d9467",
+      "exported_at": "2026-08-18",
+      "exported_row_sha256": "924ba77b24d4d744d273a6b0350e9122261a48afa0be415d2d2096f7ac46af51",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "eb8140d29919c9c7aa9e87b25d6fbdf4b7bba625d11ae8dbe19273d2759d72c2",
       "rh_id": "empresas-evora-2024",
       "rh_ledger_sha256": "128f0ea744ad0c5ecb8d98ecf2daf04006c89bff78627b7a001c09aaf69a3aa0",
-      "rh_study": "06 Évora Economy"
+      "rh_study": "06 Évora Economy",
+      "verifications_at_export": 1
     },
     "evora-excesso-endividamento-2014": {
       "corrections_at_export": 0,
@@ -267,7 +292,8 @@
       "origin_row_sha256": "f67842ff171162d2277501a4b37d2f7201c82e134c79b72d5dad0cd6981157fa",
       "rh_id": "excesso-jan14",
       "rh_ledger_sha256": "2ff276b0a62c86f87a705b70b185ba6510999b7e233996509bd3cb2660a70d07",
-      "rh_study": "08 Évora Mandates"
+      "rh_study": "08 Évora Mandates",
+      "verifications_at_export": 0
     },
     "evora-excesso-endividamento-2019": {
       "corrections_at_export": 0,
@@ -277,7 +303,8 @@
       "origin_row_sha256": "0a414fc73f4e427630749c0e38ecf74cf6f1e3a27bf8ecf6c73df3c0bbcb6d1f",
       "rh_id": "excesso-dez19",
       "rh_ledger_sha256": "2ff276b0a62c86f87a705b70b185ba6510999b7e233996509bd3cb2660a70d07",
-      "rh_study": "08 Évora Mandates"
+      "rh_study": "08 Évora Mandates",
+      "verifications_at_export": 0
     },
     "evora-execucao-da-receita-2021": {
       "corrections_at_export": 0,
@@ -287,17 +314,19 @@
       "origin_row_sha256": "fb87438d915181d8109cb946161a7a4bbb5195c624f9600ebe9b9bd0fae67a11",
       "rh_id": "exec-2021-pct",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 0
     },
     "evora-execucao-da-receita-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-18",
-      "exported_row_sha256": "9667bf1776d98f2c1c1fa3e82b5c9f112d2015efc721045f98f6a4d5f4644207",
+      "exported_row_sha256": "15619b2163b13e744127bcf2318c92ab920320f5c64cb58967f3ee9a9981d3ff",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ebb926a0dd0b43b9b46ae1e09c6bfa6cb55014f41adbf2f444678334b63d89cb",
       "rh_id": "receita-exec-pct",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 1
     },
     "evora-executivo-2025-ad": {
       "corrections_at_export": 0,
@@ -307,7 +336,8 @@
       "origin_row_sha256": "c03415454d01391c13f192264b52e852487edff6af8717e7ec2ee68ff5df30da",
       "rh_id": "exec2025-ad-seats",
       "rh_ledger_sha256": "2ff276b0a62c86f87a705b70b185ba6510999b7e233996509bd3cb2660a70d07",
-      "rh_study": "08 Évora Mandates"
+      "rh_study": "08 Évora Mandates",
+      "verifications_at_export": 0
     },
     "evora-executivo-2025-cdu": {
       "corrections_at_export": 0,
@@ -317,7 +347,8 @@
       "origin_row_sha256": "49cab8fa573577bbbacecaace34a2ff5baa22dcadcf6f8635bf98983c37626e8",
       "rh_id": "exec2025-cdu-seats",
       "rh_ledger_sha256": "2ff276b0a62c86f87a705b70b185ba6510999b7e233996509bd3cb2660a70d07",
-      "rh_study": "08 Évora Mandates"
+      "rh_study": "08 Évora Mandates",
+      "verifications_at_export": 0
     },
     "evora-executivo-2025-chega": {
       "corrections_at_export": 0,
@@ -327,7 +358,8 @@
       "origin_row_sha256": "7804a3e8417bb79f3dfe891467c4a1696f359e8227f3fc790a7ec231fec5084e",
       "rh_id": "exec2025-chega-seats",
       "rh_ledger_sha256": "2ff276b0a62c86f87a705b70b185ba6510999b7e233996509bd3cb2660a70d07",
-      "rh_study": "08 Évora Mandates"
+      "rh_study": "08 Évora Mandates",
+      "verifications_at_export": 0
     },
     "evora-executivo-2025-ps": {
       "corrections_at_export": 0,
@@ -337,7 +369,8 @@
       "origin_row_sha256": "cb814c80854932efd4d3d421251ac0b388e531d9c26a94fc574f1744f8b95027",
       "rh_id": "exec2025-ps-seats",
       "rh_ledger_sha256": "2ff276b0a62c86f87a705b70b185ba6510999b7e233996509bd3cb2660a70d07",
-      "rh_study": "08 Évora Mandates"
+      "rh_study": "08 Évora Mandates",
+      "verifications_at_export": 0
     },
     "evora-indice-de-divida-2014": {
       "corrections_at_export": 0,
@@ -347,7 +380,8 @@
       "origin_row_sha256": "83b5e574ae93005cb794a135ecb06d581fafeed19daa2fb77d56f0274bbf9674",
       "rh_id": "evora-indice-2014",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 0
     },
     "evora-indice-de-divida-2017": {
       "corrections_at_export": 0,
@@ -357,7 +391,8 @@
       "origin_row_sha256": "712a8af78d50cc426f05b37c8e1a775e8b8d760191fa640a107e3c61983cb1c8",
       "rh_id": "evora-indice-2017",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 0
     },
     "evora-indice-de-divida-2021": {
       "corrections_at_export": 0,
@@ -367,7 +402,8 @@
       "origin_row_sha256": "410a1b511305f22dd0ff2251c30a5c1352667b2d9f93bb81504d4dcb7ea785b9",
       "rh_id": "evora-indice-2021",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 0
     },
     "evora-indice-de-divida-2024": {
       "corrections_at_export": 0,
@@ -377,57 +413,63 @@
       "origin_row_sha256": "56875d412285a9fab5a1df8d79f09fd347a1f53a9a64a63488b73472161cba8c",
       "rh_id": "evora-indice-2024",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 0
     },
     "evora-limite-divida-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-18",
-      "exported_row_sha256": "e5d60fa2aaa16e22c222554377fdd8e1bb645ae08cb39a8337ce88d93f14dad8",
+      "exported_row_sha256": "56b35821c39c7e36885f1264143c579167bab357f00a617398f82cc2d14a681d",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2a12c2a54c8a744f6a273cb00b0c6a9e7f52f4f6d1124096e49d6a35f406e12c",
       "rh_id": "limite-divida-2025",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 1
     },
     "evora-limite-divida-dgal-2014": {
       "corrections_at_export": 0,
-      "exported_at": "2026-08-15",
-      "exported_row_sha256": "c342b2137a45e78df6027281595992ffaea84bb7a47082c8b0739befb1f16793",
+      "exported_at": "2026-08-18",
+      "exported_row_sha256": "c8955833ae052c6ae47e69fb77706fa5f3a9445c5af63673ebeee6644bec0919",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "621cd24161e6f583843382165c041b6f8f881c15cbd3985f98e5f1b544b46a25",
       "rh_id": "dgal-limite-2014",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 1
     },
     "evora-limite-divida-dgal-2017": {
       "corrections_at_export": 0,
-      "exported_at": "2026-08-15",
-      "exported_row_sha256": "6090eded40034053f4ec6132e52ccc69b816dce98e2330bbcdf3c155e5acb21d",
+      "exported_at": "2026-08-18",
+      "exported_row_sha256": "bf223942760edbeb5a748625aee8c897a7d310ce83ac86675077b5b69befa5cd",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4b2761ff05ce00ba36a7f8621419edc266e0df6de6660974e2618d12c6793bdc",
       "rh_id": "dgal-limite-2017",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 1
     },
     "evora-limite-divida-dgal-2021": {
       "corrections_at_export": 0,
-      "exported_at": "2026-08-15",
-      "exported_row_sha256": "6ecc5f0feeea71d2cbedcc92c7254fd0b8439df106d67b77c5d0dd9323ad9e18",
+      "exported_at": "2026-08-18",
+      "exported_row_sha256": "2599ccf7fd9bf3b015a7c55d9a0848b9dd583affa7a73125cb047e78bbc39c63",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ae9bb14b56fb707f47f4fefb07a357de2117c118468914c12465b550267c886b",
       "rh_id": "dgal-limite-2021",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 1
     },
     "evora-limite-divida-dgal-2024": {
       "corrections_at_export": 0,
-      "exported_at": "2026-08-15",
-      "exported_row_sha256": "672a5d3b4d9a837f37279a67d2cac2541aeb6b2aeb979cbb483510ae00df49d2",
+      "exported_at": "2026-08-18",
+      "exported_row_sha256": "4bf6be9168b0c71880c371f134d25f4715306e27fd595d8e4b39006d5b224685",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ecada2e09c73b67a7992a792510875ef30a1d48eae1aa44186fb290cd6ff39c7",
       "rh_id": "dgal-limite-2024",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 1
     },
     "evora-margem-endividamento-2025": {
       "corrections_at_export": 0,
@@ -437,7 +479,8 @@
       "origin_row_sha256": "dd55618f23ff9229bbd69d2c12ce9e0d8a980316c31db3c34f6aa37c7ffc2dfd",
       "rh_id": "margem-endividamento-2025",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 0
     },
     "evora-orcamento-2025": {
       "corrections_at_export": 0,
@@ -447,7 +490,8 @@
       "origin_row_sha256": "5c6da495980ef90dbbddedbaf8e94d5d9a5e045d32422361d6776a304983d6f4",
       "rh_id": "om-2025-corrigido",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 0
     },
     "evora-pael-emprestimo": {
       "corrections_at_export": 0,
@@ -457,17 +501,19 @@
       "origin_row_sha256": "351a4d3a3fb5d502bde0ee7b01ce361b7fe903b31ddb5102d123b2102e69b517",
       "rh_id": "pael-total",
       "rh_ledger_sha256": "2ff276b0a62c86f87a705b70b185ba6510999b7e233996509bd3cb2660a70d07",
-      "rh_study": "08 Évora Mandates"
+      "rh_study": "08 Évora Mandates",
+      "verifications_at_export": 0
     },
     "evora-pagamentos-em-atraso-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-18",
-      "exported_row_sha256": "4fb5588ef9ac7879b053bfb4212ab36c11ecfa80a610bc8f79db0d44e28d73df",
+      "exported_row_sha256": "c8d778de80134faff025a5730444f5b12931528b6de55cd3f05289016bc2a0d8",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fdfe5e63d095509fe3a1b70d1d8ffbb8e01400c38e18e871f43ccdc439e454be",
       "rh_id": "atrasos-2025",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 1
     },
     "evora-pelouros-2021-presidente": {
       "corrections_at_export": 0,
@@ -477,7 +523,8 @@
       "origin_row_sha256": "59701a545772e58476252ee2a145b368fd46e357b9e8946be0c91fc17f700325",
       "rh_id": "map-20212025-psa-count",
       "rh_ledger_sha256": "3eb424c206e47501171dc0d952251766ebd10e004afb6093e333336cdb5bc8ab",
-      "rh_study": "09 Évora Pelouros"
+      "rh_study": "09 Évora Pelouros",
+      "verifications_at_export": 0
     },
     "evora-pelouros-2021-total": {
       "corrections_at_export": 0,
@@ -487,7 +534,8 @@
       "origin_row_sha256": "88e3bc9c89142ddb8067e3be1c0e3a937d845326b5844c267f4898a420c690c8",
       "rh_id": "map-20212025-pelouros",
       "rh_ledger_sha256": "3eb424c206e47501171dc0d952251766ebd10e004afb6093e333336cdb5bc8ab",
-      "rh_study": "09 Évora Pelouros"
+      "rh_study": "09 Évora Pelouros",
+      "verifications_at_export": 0
     },
     "evora-pelouros-2021-vice-presidente": {
       "corrections_at_export": 0,
@@ -497,7 +545,8 @@
       "origin_row_sha256": "1486fc01377389cd50ad74d9739c6a839803ce7092d464f3d5cbc88b4a770d71",
       "rh_id": "map-20212025-varela-count",
       "rh_ledger_sha256": "3eb424c206e47501171dc0d952251766ebd10e004afb6093e333336cdb5bc8ab",
-      "rh_study": "09 Évora Pelouros"
+      "rh_study": "09 Évora Pelouros",
+      "verifications_at_export": 0
     },
     "evora-pelouros-2025-presidente": {
       "corrections_at_export": 0,
@@ -507,7 +556,8 @@
       "origin_row_sha256": "3fe52dac2206d5668eba14240db3c7aa91027aa9d1879163c8088a20c02b6ebe",
       "rh_id": "map-2025-zorrinho-count",
       "rh_ledger_sha256": "3eb424c206e47501171dc0d952251766ebd10e004afb6093e333336cdb5bc8ab",
-      "rh_study": "09 Évora Pelouros"
+      "rh_study": "09 Évora Pelouros",
+      "verifications_at_export": 0
     },
     "evora-pelouros-2025-total": {
       "corrections_at_export": 0,
@@ -517,7 +567,8 @@
       "origin_row_sha256": "a534c68c93089f4df97d895fc94203f26eeed863f1262c5f927b98ec92b0bd0a",
       "rh_id": "map-2025-pelouros",
       "rh_ledger_sha256": "3eb424c206e47501171dc0d952251766ebd10e004afb6093e333336cdb5bc8ab",
-      "rh_study": "09 Évora Pelouros"
+      "rh_study": "09 Évora Pelouros",
+      "verifications_at_export": 0
     },
     "evora-pelouros-2025-vereadora": {
       "corrections_at_export": 0,
@@ -527,7 +578,8 @@
       "origin_row_sha256": "719298a491fb37614da73475ce6bb03de7ef8238d431db0b82142440d7812738",
       "rh_id": "map-2025-carvalheira-count",
       "rh_ledger_sha256": "3eb424c206e47501171dc0d952251766ebd10e004afb6093e333336cdb5bc8ab",
-      "rh_study": "09 Évora Pelouros"
+      "rh_study": "09 Évora Pelouros",
+      "verifications_at_export": 0
     },
     "evora-pelouros-2025-vice-presidente": {
       "corrections_at_export": 0,
@@ -537,17 +589,19 @@
       "origin_row_sha256": "4b335b9c7aba724b75b42dc170af6a51708bb9d832d59f7c05f44ab11918b025",
       "rh_id": "map-2025-vaqueiro-count",
       "rh_ledger_sha256": "3eb424c206e47501171dc0d952251766ebd10e004afb6093e333336cdb5bc8ab",
-      "rh_study": "09 Évora Pelouros"
+      "rh_study": "09 Évora Pelouros",
+      "verifications_at_export": 0
     },
     "evora-poder-de-compra-2023": {
       "corrections_at_export": 0,
-      "exported_at": "2026-08-15",
-      "exported_row_sha256": "0ee5a872e5281cbdb35c8cb69d9382df44900117df3d8f72f2da77caa29993f3",
+      "exported_at": "2026-08-18",
+      "exported_row_sha256": "b70b9ddd39fed2db4d017833707dc3166a276bdeb4f6db8075dcbc5a42723b2c",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "da2d21365d54d935212749dd3248a446c35224486d5392db9405fd1f6464584f",
       "rh_id": "pc-evora-2023",
       "rh_ledger_sha256": "128f0ea744ad0c5ecb8d98ecf2daf04006c89bff78627b7a001c09aaf69a3aa0",
-      "rh_study": "06 Évora Economy"
+      "rh_study": "06 Évora Economy",
+      "verifications_at_export": 1
     },
     "evora-populacao-2021": {
       "corrections_at_export": 0,
@@ -557,37 +611,41 @@
       "origin_row_sha256": "3695f05ecfdd62059b3e25c4655be9f2e85f9c45d4a2ab2e17f7c9e3ef74686c",
       "rh_id": "pop-evora-2021",
       "rh_ledger_sha256": "128f0ea744ad0c5ecb8d98ecf2daf04006c89bff78627b7a001c09aaf69a3aa0",
-      "rh_study": "06 Évora Economy"
+      "rh_study": "06 Évora Economy",
+      "verifications_at_export": 0
     },
     "evora-populacao-2025": {
       "corrections_at_export": 0,
-      "exported_at": "2026-08-15",
-      "exported_row_sha256": "396d336e3e074e4c72f2610c0129bd9c5c7c70125afbc6185b158a3ce9ec5f3f",
+      "exported_at": "2026-08-18",
+      "exported_row_sha256": "a0e655ee96c32fc641435b4edfc366e071f2ee80eef9f1e2cc080849cbb6af25",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e922517317b07b1df58666e1f5ba34f77e5199e0b00e8f0dbf4c8eeea387bc92",
       "rh_id": "pop-evora-2025",
       "rh_ledger_sha256": "128f0ea744ad0c5ecb8d98ecf2daf04006c89bff78627b7a001c09aaf69a3aa0",
-      "rh_study": "06 Évora Economy"
+      "rh_study": "06 Évora Economy",
+      "verifications_at_export": 1
     },
     "evora-prazo-medio-de-pagamento-2023": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-18",
-      "exported_row_sha256": "85668a7267637584844d96792f9be8959b198e52aabcd628af2f46f61003dc5b",
+      "exported_row_sha256": "e0d0b758e24f279f9b9063ec04a9d59c92383844bffd590c8bce661793ccd7d6",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "23ccb3d76a9c4bfa8320878309018527b984cac76bab46835965874fe0f30534",
       "rh_id": "pmp-2023",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 1
     },
     "evora-prazo-medio-de-pagamento-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-18",
-      "exported_row_sha256": "f5e25a8632980accaf19321366646a5ab4162441fa0279bd153574c5c392ab7a",
+      "exported_row_sha256": "de6b104d02e59cb6a18da066995ed827c66d8d40e50f984ed9ee32b2c2801d6e",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b009619747430ab8b6d1bf3e77cf0309f38d527cf775bd2222cda59cbb13194a",
       "rh_id": "pmp-2025",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 1
     },
     "evora-prr-aprovado-2026": {
       "corrections_at_export": 1,
@@ -597,7 +655,8 @@
       "origin_row_sha256": "339b2687bf9d0958e0fee4f784684dba8d9e0b6e155220305370fd532e17f7f8",
       "rh_id": "prr-approved-evora",
       "rh_ledger_sha256": "ace5f4eecbd1837fd93566e2608e535a33985e07797689a4e4d5e18969de44b6",
-      "rh_study": "04 Évora Public Money"
+      "rh_study": "04 Évora Public Money",
+      "verifications_at_export": 0
     },
     "evora-prr-execucao-2026": {
       "corrections_at_export": 0,
@@ -607,7 +666,8 @@
       "origin_row_sha256": "2617e5a3442d1f9859d9d296721bf7f71bc1fcd042b752832f9cb45b460bfbc2",
       "rh_id": "prr-execution-evora",
       "rh_ledger_sha256": "ace5f4eecbd1837fd93566e2608e535a33985e07797689a4e4d5e18969de44b6",
-      "rh_study": "04 Évora Public Money"
+      "rh_study": "04 Évora Public Money",
+      "verifications_at_export": 0
     },
     "evora-prr-municipio-contratado": {
       "corrections_at_export": 1,
@@ -617,7 +677,8 @@
       "origin_row_sha256": "fe84a0aa489f17ed95c28f92e9db45ae3f7a8e73cfdc8d1436bdb84461a34b7d",
       "rh_id": "fin-municipio-contracted",
       "rh_ledger_sha256": "ace5f4eecbd1837fd93566e2608e535a33985e07797689a4e4d5e18969de44b6",
-      "rh_study": "04 Évora Public Money"
+      "rh_study": "04 Évora Public Money",
+      "verifications_at_export": 0
     },
     "evora-prr-pago-2026": {
       "corrections_at_export": 1,
@@ -627,7 +688,8 @@
       "origin_row_sha256": "5171edff39440e602d23f98308a92f2305b4e0e6d463983400e4747d1e71bcda",
       "rh_id": "prr-paid-evora",
       "rh_ledger_sha256": "ace5f4eecbd1837fd93566e2608e535a33985e07797689a4e4d5e18969de44b6",
-      "rh_study": "04 Évora Public Money"
+      "rh_study": "04 Évora Public Money",
+      "verifications_at_export": 0
     },
     "evora-prr-universidade-contratado": {
       "corrections_at_export": 1,
@@ -637,7 +699,8 @@
       "origin_row_sha256": "ecee1d6fb709bdaac8b60040dfdc492be62ec75481d2106263f07472282a8981",
       "rh_id": "fin-uevora-contracted",
       "rh_ledger_sha256": "ace5f4eecbd1837fd93566e2608e535a33985e07797689a4e4d5e18969de44b6",
-      "rh_study": "04 Évora Public Money"
+      "rh_study": "04 Évora Public Money",
+      "verifications_at_export": 0
     },
     "evora-prr-vencido-aprovado-2026": {
       "corrections_at_export": 1,
@@ -647,7 +710,8 @@
       "origin_row_sha256": "4ea3a863420fc37d533d50ed126f7d6ba1489257c00b6cef997136951421ac57",
       "rh_id": "prr-overdue-approved",
       "rh_ledger_sha256": "ace5f4eecbd1837fd93566e2608e535a33985e07797689a4e4d5e18969de44b6",
-      "rh_study": "04 Évora Public Money"
+      "rh_study": "04 Évora Public Money",
+      "verifications_at_export": 0
     },
     "evora-prr-vencido-quota-2026": {
       "corrections_at_export": 0,
@@ -657,7 +721,8 @@
       "origin_row_sha256": "4e9164f7211a067f22340a95966b0a4aa0962384f880f87a2353f79f97b13216",
       "rh_id": "prr-overdue-approved-share",
       "rh_ledger_sha256": "ace5f4eecbd1837fd93566e2608e535a33985e07797689a4e4d5e18969de44b6",
-      "rh_study": "04 Évora Public Money"
+      "rh_study": "04 Évora Public Money",
+      "verifications_at_export": 0
     },
     "evora-receita-cobrada-2025": {
       "corrections_at_export": 0,
@@ -667,7 +732,8 @@
       "origin_row_sha256": "58676b1fdc7b44d3e933fd4656e9e5ce8b3476dcb3e5929246e71451923d391c",
       "rh_id": "receita-cobrada-2025",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 0
     },
     "evora-saneamento-financeiro-2016": {
       "corrections_at_export": 0,
@@ -677,17 +743,19 @@
       "origin_row_sha256": "7aa401090f08d80fd29141a6e608c55e2c1943155c6b79fc916eeb5807920039",
       "rh_id": "saneamento-2016",
       "rh_ledger_sha256": "2ff276b0a62c86f87a705b70b185ba6510999b7e233996509bd3cb2660a70d07",
-      "rh_study": "08 Évora Mandates"
+      "rh_study": "08 Évora Mandates",
+      "verifications_at_export": 0
     },
     "evora-vab-empresarial-2024": {
       "corrections_at_export": 0,
-      "exported_at": "2026-08-15",
-      "exported_row_sha256": "14439c223fabb7a7838a6b5fcf711dd9dccbbeeed35e9615df6e126798a9a94a",
+      "exported_at": "2026-08-18",
+      "exported_row_sha256": "d3c12256252cc83d390d41dd8f78fd68ca0518f320eb335b4750028e1296b9f0",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "981d3c0f86085ebae75e23b36c94875eca54c9d9f30e5481c591179b61f3ba80",
       "rh_id": "vab-evora-2024",
       "rh_ledger_sha256": "128f0ea744ad0c5ecb8d98ecf2daf04006c89bff78627b7a001c09aaf69a3aa0",
-      "rh_study": "06 Évora Economy"
+      "rh_study": "06 Évora Economy",
+      "verifications_at_export": 1
     },
     "indice-de-divida-limite-legal": {
       "corrections_at_export": 0,
@@ -697,7 +765,8 @@
       "origin_row_sha256": "b426fd76d4c56e7c1aa1155aa51be588abfb24305ae492eaed4f8c9967276aa6",
       "rh_id": "anuario-indice-permitido",
       "rh_ledger_sha256": "1c36b1bba9539bfcdc105b6af02da6f70c1d495aca6716603c9cca37c570633b",
-      "rh_study": "07 Évora Municipal Accounts"
+      "rh_study": "07 Évora Municipal Accounts",
+      "verifications_at_export": 0
     },
     "portugal-concentracao-vab4-2024": {
       "corrections_at_export": 0,
@@ -707,7 +776,8 @@
       "origin_row_sha256": "e4752a4387075468f69cdc30452284bc8c31eaa79c5ca367b08865224f5ebbae",
       "rh_id": "conc-vab4-pt",
       "rh_ledger_sha256": "128f0ea744ad0c5ecb8d98ecf2daf04006c89bff78627b7a001c09aaf69a3aa0",
-      "rh_study": "06 Évora Economy"
+      "rh_study": "06 Évora Economy",
+      "verifications_at_export": 0
     }
   }
 }

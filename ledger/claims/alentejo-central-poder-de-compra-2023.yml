@@ -40,3 +40,10 @@ note: "Cruzado de ResearchHub content/06 Évora Economy · pc-ac-2023."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo exportador a partir de um registo de releitura.
+verifications:
+  - date: "2026-08-15"
+    path: "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=759871921&att_display=n&att_download=y"
+    result: "igual"
+    by: "leitura-independente"
