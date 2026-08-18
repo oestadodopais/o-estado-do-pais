@@ -33,3 +33,10 @@ note: "Valor confirmado contra a Comissão Europeia, SWD(2026) 222 (Relatório p
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas por indicators/refresh.py, nunca à mão.
+verifications:
+  - date: "2026-08-18"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslc10?format=JSON&lang=EN&geo=PT&unit=PC"
+    result: "igual"
+    by: "painel-semanal"
