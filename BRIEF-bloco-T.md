@@ -292,6 +292,21 @@ na transcrição da sessão e o essencial fica aqui, verbatim onde é citação)
   caminhos plausíveis dão 404). Não se aloja nada do IEFP; as duas linhas
   `kind: ficheiro` do IEFP ficam como estão.
 
+**A quarta resposta ao limite 13 da §2.3, escrita aqui para não ser improvisada.**
+Uma linha cuja prova é um ficheiro alojado passa a poder ter `excerpt: null`,
+pela mesma porta estreita da linha da casa: só quando traz `document.hosted`
+completo (o ficheiro existe em `public/dados/`, o resumo bate, a licença e a
+atribuição estão escritas), uma `derivation` nas duas línguas que diga o que se
+contou ou somou (que coluna, que filtro), **e** uma reconta mecânica na
+construção sobre o ficheiro alojado (`scripts/check-dados.mjs`, extensão do que
+já faz para os gráficos, uma reconta por linha, provada num estrago plantado:
+uma linha a mais no CSV tem de fechar). Sem as três, `[a verificar]` fica. Com as
+três, o selo passa a cheio e a linha volta ao índice, sem ninguém decidir nada,
+como o `README` já promete para qualquer campo preenchido. Para o PRR, sem
+ficheiro alojado, o excerto continua `[a verificar]` e a dívida continua contada:
+`document.computed_over` diz sobre que ficheiros se calculou, e é registo, não
+prova.
+
 O campo `document.hosted` da versão anterior desta secção fica só para o que se
 aloja de facto (CAOP): `{asset:
 "dados/<nome>.csv", sha256, bytes, licence: "CC BY 4.0", licence_url,
