@@ -406,10 +406,14 @@ rolam dentro da sua caixa, e não empurram a página.
 
 ## 12. Os limites, escritos em vez de contornados
 
-- **Os testes 1 e 3 do `BRIEF-confianca.md` §6.8 não passam com desenho.** O
-  recorte da linha impressa e o campo `verifications[]` são dados que ainda não
-  existem, e são o bloco T. O desenho deixa o lugar pronto e não inventa nada:
-  onde o recorte não existe não há caixa, há o marcador com o seu motivo (§6).
+- **O teste 3 do `BRIEF-confianca.md` §6.8 já passa com dados; o teste 1 ainda
+  não.** O campo `verifications[]` existe desde 18.08.2026 (`DECISIONS.md`
+  §1.47), e uma linha que tenha sido relida diz na sua página quando foi, por
+  quem e com que resultado, com a porta para repetir a leitura. O recorte da
+  linha impressa continua a ser um dado que não existe, e é o T2. O desenho
+  deixa o lugar pronto e não inventa nada: onde o recorte não existe não há
+  caixa, há o marcador com o seu motivo (§6), e onde não há reconferência
+  nenhuma o marcador fica, como já estava.
 - **O teste 8 conta-se no portão, não num protótipo.** Os três racionais contaram
   os valores da primeira página de três maneiras (28, 32, 35). A contagem que
   vale é a que o portão faz sobre a construção real.
