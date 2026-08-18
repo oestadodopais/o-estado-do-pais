@@ -213,6 +213,32 @@ section {
 .nav .lang {
   color: var(--ink);
 }
+/* O ALVO DE TOQUE DA NAVEGAÇÃO.
+
+   O selo já sobe para 44px num apontador grosseiro (§1.43), que é o alvo que
+   as duas normas de plataforma pedem; as ligações da barra e do rodapé ficaram
+   com os cerca de 24 e 16px que a letra lhes dava. Aqui sobem. Em cursor não
+   muda coisa nenhuma: a regra inteira vive dentro de `pointer: coarse`, e as
+   duas navegações são caixas flexíveis, por isso as ligações são itens e a
+   altura mínima vale nelas.
+
+   A marca da página actual passa de um fio no fundo da caixa a um sublinhado
+   do texto: com a caixa a 44px o fio ficava a mais de dez pixels do que
+   sublinha, e uma marca que se descola do que marca deixa de marcar. */
+@media (pointer: coarse) {
+  .nav a,
+  .rodape-nav a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .nav a[aria-current='page'] {
+    box-shadow: none;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 4px;
+  }
+}
 
 .masthead {
   padding: clamp(34px, 6vw, 64px) 0 clamp(26px, 3.5vw, 40px);
