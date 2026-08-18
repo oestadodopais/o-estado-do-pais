@@ -23,6 +23,8 @@ import { allClaims, provenienciaIncompleta, POR_VERIFICAR } from '../lib/ledger.
 import { caminhoDoLivro } from '../lib/livro.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
+import { LICENCA } from '../data/licenca.mjs';
+import { CONJUNTO } from '../lib/conjunto.mjs';
 
 const { lang = 'pt' } = Astro.props;
 const s = t(lang);
@@ -117,6 +119,48 @@ const grupos = [
           {' · '}{s.livro.marcadorV}
         </p>
         <p><a href={routePath('marcador', lang)}>{s.livro.linha.marcadorLink} →</a></p>
+      </div>
+
+      {
+        /**
+         * O conjunto de dados, e os dois estados que ele tem.
+         *
+         * Sem licença decidida: **o estado, dito por palavras**, e nenhum
+         * ficheiro oferecido. Não é o marcador: não falta aqui uma prova, falta
+         * uma decisão que é da direção, e a IDENTIDADE.md §6 reserva o marcador
+         * para a primeira. É um estado desenhado (§7), como a coluna vazia da
+         * agenda.
+         *
+         * Com licença decidida: os dois ficheiros, a licença sob que saem e a
+         * atribuição que ela obriga. Um só campo muda entre os dois estados,
+         * em src/data/licenca.mjs.
+         */
+      }
+      <div class="aparelho-bloco">
+        <span class="linha-campo-k">{s.livro.conjuntoK}</span>
+        {
+          LICENCA ? (
+            <>
+              <p class="aparelho-nota">{s.livro.conjuntoV}</p>
+              <p class="livro-conjunto-portas">
+                {s.livro.conjuntoDescarregar}:{' '}
+                <a href={CONJUNTO.csv} download>CSV</a>
+                {' · '}
+                <a href={CONJUNTO.json} download>JSON</a>
+              </p>
+              <p class="aparelho-nota">
+                {s.livro.conjuntoLicenca}{' '}
+                <a class="ligacao-externa" href={LICENCA.url} rel="noopener noreferrer external license">
+                  <span data-nonledger="licenca-do-conjunto">{LICENCA.nome}</span>
+                </a>
+                {' · '}
+                {s.livro.conjuntoAtribuicao}: {LICENCA.atribuicao}
+              </p>
+            </>
+          ) : (
+            <p class="aparelho-nota">{s.livro.conjuntoEstado}</p>
+          )
+        }
       </div>
 
       <div class="aparelho-bloco">

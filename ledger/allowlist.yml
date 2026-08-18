@@ -76,6 +76,22 @@ contexts:
     why: >-
       Identificadores técnicos: códigos de cor, códigos de língua, versões,
       nomes de ficheiros.
+  - id: licenca-do-conjunto
+    why: >-
+      O nome da licença sob a qual o conjunto de dados do livro-razão é
+      oferecido, quando a direcção a tiver decidido ("CC BY 4.0" é a
+      recomendação do BRIEF-bloco-T.md §2.6, e não a decisão). Traz algarismos
+      porque uma licença se identifica pela sua versão, e é isso mesmo que o
+      leitor precisa de ler: "CC BY" sem versão não são termos. Não é uma
+      medição de Portugal nem um número deste sítio: é o nome que um terceiro
+      dá aos termos em que este conjunto sai. Nenhum dos motivos acima o
+      descreve — não é escala, nem limiar, nem título de trabalho, nem data,
+      nem identificador da própria máquina. A licença de um ficheiro alojado
+      numa linha é outra coisa e continua a entrar pela origem 6
+      (`document.hosted.licence`, comparada contra a linha): esta é a licença do
+      CONJUNTO, que não tem linha. Acrescentado em 2026-08-18 (DECISIONS §1.47,
+      T4); enquanto `LICENCA` for `null` este motivo não é usado por nenhuma
+      página, e está registado na §4.3.
 
 # Palavras que contêm algarismos mas não são medições. Correspondência exacta.
 # scope: any | body | head

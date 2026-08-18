@@ -65,6 +65,8 @@ import { caminhoDaLinha, caminhoDoLivro, tituloDaLinha, descricaoDaLinha } from 
 import { studyLabel } from '../data/studies.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
+import { LICENCA } from '../data/licenca.mjs';
+import { CONJUNTO } from '../lib/conjunto.mjs';
 
 const { lang = 'pt', id } = Astro.props;
 const s = t(lang);
@@ -870,6 +872,26 @@ const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undef
             </ul>
             <p class="aparelho-nota">{s.livro.linha.incompletaV}</p>
             <p><a href={routePath('marcador', lang)}>{s.livro.linha.marcadorLink} →</a></p>
+          </div>
+        )
+      }
+
+      {
+        /**
+         * O acesso aos dados desta linha (IDENTIDADE.md §11).
+         *
+         * Só existe com a licença decidida. Sem ela não há bloco nenhum: o
+         * ficheiro é construído, mas nenhuma página o oferece, e desenhar aqui
+         * um estado à espera de uma decisão era pôr em 264 páginas uma frase
+         * que só se decide num sítio. O estado diz-se uma vez, na página do
+         * livro-razão. Ver src/data/licenca.mjs.
+         */
+        LICENCA && (
+          <div class="aparelho-bloco">
+            <span class="linha-campo-k">{s.livro.linha.dadosK}</span>
+            <p class="aparelho-nota">
+              <a href={CONJUNTO.linha(id)} download>{s.livro.linha.linhaEmJson} →</a>
+            </p>
           </div>
         )
       }

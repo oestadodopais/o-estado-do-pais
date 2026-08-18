@@ -2054,6 +2054,18 @@ a.src-chip.is-unverified:hover::before {
   padding-top: 14px;
 }
 
+/**
+ * As portas do conjunto de dados, na coluna do aparelho do índice do
+ * livro-razão. Monoespaçada porque são nomes de formato, não prosa
+ * (IDENTIDADE.md §1: a mono é a letra da mobília e dos rótulos).
+ */
+.livro-conjunto-portas {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
 /* ------------------------------------------------- índice do livro-razão */
 
 .livro-lista {
