@@ -6948,6 +6948,210 @@ porque as duas aplicações não têm o território no endereço, e isso está p
 no T3 e não suposto. O IEFP não publica termos de utilização em nenhum dos sete
 caminhos plausíveis lidos, e por isso nada do IEFP se aloja.
 
+#### A leitura cruzada, e o estádio que a fechou
+
+*Escrito a 18.08.2026 pelo lugar de construção do estádio de correção (T5),
+depois de a leitura ter corrido. O bloco continua construído e não fundido: o
+que muda aqui é o que a leitura mandou mudar, e nada mais.*
+
+##### Como foi feita
+
+Uma leitura de outra família, **Codex, sem contexto nenhum**: sem os
+repositórios, sem o `BRIEF`, sem a constituição, sem esta entrada. O que recebeu
+foi o que um leitor recebe, e mais nada:
+
+- **11 páginas da edição portuguesa** e **2 da inglesa**, tal como a construção
+  as escreve. Das portuguesas, seis são páginas de linha
+  (`divida-publica-2025`, `evora-despesa-paga-2025`, `evora-populacao-2025`,
+  `evora-prr-aprovado-2026`, `evora-prr-pago-2026`,
+  `municipios-continente-caop-2025`) e as outras cinco são a primeira página, o
+  livro-razão, o Método, a agenda e o município de Évora; das inglesas, o Método
+  e a linha da despesa;
+- **2 recortes** (`evora-despesa-paga-2025.webp` e `evora-orcamento-2025.webp`) e
+  **1 ficheiro alojado** (`caop-2025-municipios-continente.csv`), para poder
+  refazer contas em vez de acreditar nelas;
+- **24 renders**, claro e escuro, a 1280 e a 390, de seis páginas.
+
+E **cinco estragos plantados**, um de cada natureza que este bloco podia produzir:
+um recorte que não é o da página da sua linha, uma verificação com data futura,
+um valor sem selo na primeira página, um travessão na prosa do município, e uma
+variante do marcador.
+
+##### Os estragos: quatro de cinco, e o quinto está escrito
+
+| Estrago plantado | Apanhado | Achado |
+| --- | --- | --- |
+| o recorte de `evora-orcamento-2025` na página de `evora-despesa-paga-2025` | **sim**, e abriu os dois ficheiros para o provar | 4 |
+| «Reconferido a 2026-09-15» numa construção de 18.08 | **sim**, e disse que não era agendamento | 5 |
+| o valor de `precos-da-habitacao-2025` sem selo na primeira página | **sim**, e contou os sete que o têm | 2 |
+| «[por confirmar]» ao lado do selo, uma segunda língua de incerteza | **sim**, contra o «[a verificar]» do índice e do Método | 8 |
+| um travessão na prosa do município | **não** | nenhum |
+
+O travessão passou, e fica escrito assim e não de outra maneira. **A conferência
+mecânica recusa-o na mesma**: com o mesmo travessão posto na cadeia da abertura
+da página do município (`src/i18n/strings.mjs:611`), o
+`node scripts/ortografia.mjs --verificar` diz «A ORTOGRAFIA NÃO FECHA, 1
+ocorrência(s) fora do restante registado», nomeia o ficheiro, a linha e a coluna,
+e sai com código 1; reposta a cadeia, sai com 0. É por isso que este era o estrago
+do leitor e não o do portão: o que ele mede é se um humano vê um travessão a
+passar por uma leitura inteira, e a resposta é que não vê. Um leitor não é uma
+segunda conferência de ortografia, e nenhuma leitura cruzada substitui a régua.
+
+##### Os dezassete achados, e o que ficou de cada um
+
+| # | O achado | O que ficou |
+| --- | --- | --- |
+| 1 | as 132 portas do índice contra seis páginas de linha na pasta | **artefacto do empacotamento da leitura**: a construção tem as 264 páginas de linha, e a pasta que a leitura recebeu tinha seis. O que a leitura viu foi verdade sobre a pasta e falso sobre o sítio. |
+| 2 | um valor sem selo na primeira página | **estrago plantado**, reposto. |
+| 3 | os limiares «60%», «−35%» e «9%» sem selo | **é decisão, e está escrita**: são `data-nonledger="limiar-do-quadro"`, quatro ocorrências na primeira página construída, e a `IDENTIDADE.md` §11 fixa-os assim: um limiar publicado por um quadro institucional entra como motivo de dispensa e não como medição com linha. Fica para o diretor, com o achado 7. |
+| 4 | o recorte de outra linha | **estrago plantado**, reposto. |
+| 5 | uma verificação com data futura | **estrago plantado**, reposto. |
+| 6 | a prova da população não demonstra o ano | **corrigido aqui**, abaixo. |
+| 7 | a primeira frase da regra 6 do Método contra 53 linhas de 132 relidas | **texto governado, e vai ao diretor**. O T4 já reescreveu o **limite** da regra por esta razão, e a nova redação é proposta e não decisão (§1.47, T4). A primeira frase («Antes de um número ser publicado, é relido na fonte por um caminho diferente e por quem não o escreveu») não foi tocada, e a leitura tem razão em lê-la como absoluta. As dez regras são da direção: lê-se na pré-visualização, com o item da §4.2. |
+| 8 | um segundo marcador de incerteza | **estrago plantado**, reposto. |
+| 9 | os totais do PRR não são refazíveis a partir da prova pública | **conhecido e escrito, e espera a direção**: o alojamento do instantâneo do PRR está preso a uma licença que diz «não especificada» ao lado de um termo de plataforma que diz CC BY 4.0 (§4.1). Até lá a linha diz sobre que ficheiros foi calculada, com a data do instantâneo e o resumo de cada um, que é registo e não prova, e as três somas ficam com `[a verificar]` e contam para a dívida. |
+| 10 | «sha256» sobre doze hexadecimais | **corrigido aqui**, abaixo. |
+| 11 | os dois CSV da primeira página não existem | **artefacto do empacotamento da leitura**: `/dados/convergencia.csv` e `/dados/municipios-308.csv` estão na construção e são ligados de `index.html`; a pasta da leitura levava um CSV só. |
+| 12 | o prazo de apreciação das contas classificado como data publicada pela fonte | **pré-existente, do bloco da agenda, e entra na §4.1**. Confirmado na construção: `evora-contas-2026` está no grupo «Com data publicada pela fonte», e a nota do próprio acontecimento diz «O prazo é o da apreciação, não o da publicação» e que as alterações posteriores a 2018 não foram conferidas. É registo de calendário do motor, e não desenho desta página. |
+| 13 | o item do município sem critério contra o «a partir de critérios declarados» do Método | **já lido, e a resposta está na §1.44**: a abertura da agenda passou a dizer «ou diz o que ainda lhe falta», e o item declara de onde veio. O que a leitura aponta agora é a frase do **Método** e não a da agenda, e essa é a mesma pergunta do achado 7: vai ao diretor com ele. |
+| 14 | os 12 renders de 390 com conteúdo cortado | **artefacto do render**: a janela do Chrome no macOS não desce abaixo de 500px, e os renders de 390 foram feitos com ela. A prova é a medição, não a imagem: com o viewport imposto por `Emulation.setDeviceMetricsOverride`, o `scrollWidth` das quatro páginas medidas é exatamente 390 depois deste estádio, e a varredura das 322 rotas construídas nas duas larguras não deixa nenhuma página do sítio a rolar de lado. Números abaixo. |
+| 15 | o corpo a atravessar a coluna do aparelho a 1280 | **corrigido aqui**, abaixo. |
+| 16 | a página do município promete «Não interpreta» e escreve frases que interpretam | **observação real, e entra na §4.1**. Conferido na construção: a abertura diz «Não interpreta: onde uma fonte não estabelece uma coisa, a página di-lo em vez de a supor», e a mesma página escreve «Quem responde pelo quê», «Um partido é dono das suas decisões, não de uma curva» e «A diferença é pequena». É leitura de prosa, é a fase da voz, e não se resolve com uma emenda de gabarito. |
+| 17 | um selo sozinho na legenda da régua | **é a convenção da `IDENTIDADE.md` §10**, e está a funcionar como foi desenhada: um valor desenhado dentro de um `<svg>` não leva porta lá dentro, leva-a na legenda. Medido na página construída a 1280: a legenda tem **catorze** selos e a cada momento só **dois** estão visíveis, um ao lado do valor 18 e outro sem valor nenhum ao lado, que é a porta do 82 que o desenho imprime (`pib-pc-portugal-2024`). Foi esse que a leitura viu. O que ela levanta é se a convenção se lê, e isso é desenho: fica com o achado 16, para a fase da voz. |
+
+Quatro achados são estragos plantados, dois são artefactos do empacotamento da
+leitura, um é artefacto do render, três fecham aqui e sete ficam escritos com
+morada. **Nenhum dos dezassete era um número errado.**
+
+##### O que se fez aqui, com as medições
+
+**1. A coluna do corpo deixa de entrar na do aparelho (achado 15).**
+
+A causa foi medida e não suposta. `.registo-salto` tinha `white-space: nowrap`,
+e por isso um `old_value` que é um endereço passava a ter uma largura mínima de
+1 188,5px numa linha só. Num item de grelha a largura mínima é a da **pista**,
+porque `min-width` é `auto` por omissão, e a pista levava a coluna inteira com
+ela. Medida a largura de conteúdo mínimo de cada bloco da coluna, por clone numa
+caixa `width: min-content`: a secção das correções dá **1 851,8px** no PRR e
+**924,6px** na CAOP, e nenhum outro bloco da coluna passa de **179px**. Os
+blocos do ficheiro alojado (106,6px) e da conta sobre ficheiros (151,5px) nunca
+foram a causa: transbordavam por arrasto.
+
+O `nowrap` protegia o número, e não é preciso para isso: o espaço dos milhares
+que o sítio escreve é o U+202F, que não parte. Sai, e entram `overflow-wrap:
+anywhere` no par «antigo → novo» e nos dois blocos do T3, e `min-width: 0` nos
+itens da coluna, para que um bloco que não parta transborde de si e mais nada.
+
+**Medido em Chrome sem cabeça sobre o `dist/` servido em `127.0.0.1`**, com o
+viewport imposto por `Emulation.setDeviceMetricsOverride`, que não tem o mínimo
+de 500px da janela do macOS. Para cada elemento, a distância entre a sua aresta
+direita e a aresta da caixa de conteúdo da sua coluna; o máximo por página, nas
+duas edições (que dão o mesmo número), em px:
+
+| Página | 1280 antes | 1280 depois | 390 antes | 390 depois |
+| --- | --- | --- | --- | --- |
+| `/livro-razao/evora-prr-aprovado-2026` | **1 220,7** | **0** | **1 497,8** | **0** |
+| `/livro-razao/municipios-continente-caop-2025` | **293,6** | **0** | **570,6** | **0** |
+| `/livro-razao/divida-publica-2025` | 0 | 0 | 0 | 0 |
+| `/livro-razao/index.html` | 0 | 0 | 0 | 0 |
+
+E o `scrollWidth` do documento, contra o viewport:
+
+| Página | 1280 antes | 1280 depois | 390 antes | 390 depois |
+| --- | --- | --- | --- | --- |
+| `/livro-razao/evora-prr-aprovado-2026` | **1 946** | **1 280** | **1 870** | **390** |
+| `/livro-razao/municipios-continente-caop-2025` | 1 280 | 1 280 | **943** | **390** |
+| `/livro-razao/divida-publica-2025` | 1 280 | 1 280 | 390 | 390 |
+| `/livro-razao/index.html` | 1 280 | 1 280 | 390 | 390 |
+
+A 1280, os elementos do corpo cuja aresta direita passava a aresta **esquerda**
+da coluna do aparelho eram **42** no PRR (o pior a 1 169,5px lá dentro) e **25**
+na CAOP (o pior a 242,4px). Depois: **0** e **0**. A coluna do corpo tem 631px a
+1280 e 354px a 390, antes e depois: a largura não mudou.
+
+Três coisas ditas para que a medição se possa repetir e desmentir. **(a)** O
+número «antes» e o número «depois» saem da mesma sonda, sobre as mesmas páginas:
+o «antes» é o conhecido-positivo desta medição, e sem ele um «0» não provava
+nada. **(b)** A sonda ignora um elemento que esteja dentro de uma caixa que rola
+por desenho, porque esse é recortado e não empurra a página; nas páginas de linha
+esse filtro exclui **zero** elementos de 178, o que quer dizer que o «0» é sobre
+tudo o que lá está. **(c)** Varridas as **322 rotas construídas** nas duas
+larguras, 644 medições, **duas** páginas ficam a rolar de lado a 390 e são as
+duas páginas de documento de estudo (`.../documento/` e `.../document/`, 654 e
+615): é uma tabela de 639px dentro dos bytes que o sítio prende por resumo em
+`studies-src/`, não usa a folha do sítio, e a sua republicação já é um item
+aberto da §4.1. Não foi tocada aqui, e não veio deste bloco.
+
+**2. O resumo curto passa a dizer que é curto (achado 10).**
+
+A página escrevia «sha256 0d5335642a26». O prefixo fica e ganha reticências, e a
+escolha diz-se com a razão, e a razão foi medida: **o resumo inteiro não cabe na
+linha de leitura**. Os 64 hexadecimais na letra de leitura da página (Avenir
+Next a 16px) dão **572,3px** numa linha só, e a coluna do corpo tem 631px a 1280
+e **354px a 390**. A 1280 ficariam quase toda a largura da coluna, numa linha só
+para eles, depois do nome do ficheiro e do tamanho; a 390 partiam-se a meio em
+duas linhas de hexadecimais, dentro de uma frase. O prefixo com reticências diz
+o que um resumo curto de git diz, e diz também que continua.
+
+As reticências ficam **fora do elemento comparado**. O portão confere o texto
+rendido de `document.hosted.sha256.curto` carácter a carácter contra a sua
+própria cópia da regra do encurtamento (`RESUMO_CURTO_GATE = 12`), e um carácter
+a mais lá dentro era a transcrição a deixar de bater. O resumo inteiro está em
+dois sítios que já existiam: o `title` do grupo, que cobre o prefixo e o corte, e
+o ficheiro JSON da linha, que a construção escreve para as 132. **Fica dito o que
+isto ainda não é**: enquanto a licença do conjunto não for decidida, nenhuma
+página liga o JSON da linha (§4.1), e por isso o caminho visível para o resumo
+inteiro é o `title`, que num ecrã de toque não existe. No dia da decisão a porta
+aparece nas 264 páginas sem que mais nada mude.
+
+Três sítios, nas duas edições: o ficheiro alojado, o ficheiro de onde ele foi
+extraído, e cada ficheiro de «Calculado sobre». A régua dos defeitos não mexe:
+**77 frases de moldura distintas e 2 367 ocorrências**, exatamente como o T4 as
+deixou, porque um corte de reticências não é uma frase.
+
+**3. As duas linhas de população passam a provar o ano (achado 6).**
+
+O pedido de `evora-populacao-2025` carrega `Dim1=S7A2021,S7A2024,S7A2025` e o
+campo devolvido dizia «valor 58567»: três períodos no pedido e um número na
+prova. O período **já estava** no excerto do motor e não atravessava.
+`pop-evora-2025` diz «raw/ine_data_populacao_evora.json → Dados["2025"], geocod
+1C40705, valor 58567» e `pop-evora-2021` diz «Dados["2021"], valor 55711».
+
+O `excerpt_override` das duas passa a apontar para um pedaço mais longo do
+**mesmo** excerto do motor. Nada foi escrito à mão, e não é uma promessa: a V3 do
+exportador recusa um `excerpt_override` que não seja um pedaço textual do excerto
+do motor, e é ela que o prova. Reexportado com `--write`: **2 linhas alteradas,
+68 inalteradas**, `origin_row_sha256` das duas inalterado, nenhum valor mexido,
+nenhuma entrada nova na história de nenhuma das duas.
+`export_site_rows_test`: **67 conferências, PASS**. `core.gate`: **PASS**.
+
+**A lista fechada do `ledger/README.md` ganhou o quarto caso, e é por isso que
+esta afinação não abre correção.** A lista tinha «aparar um `excerpt` no fim de
+uma frase completa» e não tinha o sentido contrário. Estender para um pedaço mais
+longo do mesmo excerto do motor é a mesma coisa vista do outro lado, e passa a
+estar escrita, com o limite ao lado: um excerto que ganhe uma palavra que o motor
+não tem não é isto, é texto novo, e não há porta para ele. Uma lista que se diz
+fechada e é usada para um caso que não está nela deixa de ser uma lista fechada.
+
+##### O que a leitura deixou aberto, e onde ficou
+
+Dois achados reais e pré-existentes entram na §4.1 (12 e 16); dois vão ao diretor
+na pré-visualização com o que já lá estava (7 e 13, e o 3 com eles); um continua
+a esperar a decisão da licença (9); e um fica com a fase da voz (17). Nada disto
+é matéria da página de linha, e nada disto se fecha com uma emenda de gabarito.
+
+**A `IDENTIDADE.md` não muda, e é uma conclusão e não uma omissão.** Nenhuma
+regra da constituição ficou falsa com o que este estádio fez. A página de linha
+continua na disposição B com o corpo a 68ch e o aparelho a 300px (§3), e a
+medição confirma que a largura da coluna do corpo é a mesma antes e depois; o
+corte de reticências não é uma segunda língua de incerteza (§6), porque não diz
+que falta uma prova, diz que o que está impresso está abreviado e onde está o
+resto; a ordem do recibo (§11) é a mesma; e os limites do §12 continuam a
+descrever o que o bloco deixa, incluindo as três coisas que esperam a direção. O
+que a leitura acrescentou ao que o diretor lê na pré-visualização é a **primeira**
+frase da regra 6, ao lado da redação nova do limite que o T4 já lhe tinha posto à
+frente: é a mesma regra, e é o mesmo leitor.
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
@@ -7439,6 +7643,15 @@ como script.
 | As contagens em palavras da página do município | «Oito medidas. Seis vêm de organismos que publicam para todos os concelhos do país; duas só existem porque o próprio município as publica, e cada uma dessas di-lo na sua linha.» Em inglês, «Eight measures. Six come from bodies that publish for every concelho in the country; two exist only because the municipality itself publishes them, and each of those says so on its own line.» As três contagens não vêm de contar nada: são estado escrito, e se uma medida entrar ou sair na página a frase fica errada sem que nada feche. | A régua dos algarismos não vê palavras, e é isso que faz esta classe escapar inteira. Fechá-la é uma de duas coisas, e as duas são desenho: ou a frase passa a derivar das medidas que a página rende, e então precisa de porta como qualquer contagem do próprio sítio (§10), ou o portão da prosa aprende a exigir prova de uma contagem escrita por extenso. Encontrada na segunda leitura cruzada da v2 (§1.44). |
 | As citações de fonte em inglês sem língua declarada | Numa página `pt-PT`, o excerto de `divida-publica-2025` rende «General government gross debt (EDP concept), consolidated - annual data …» sem `lang="en"`, e o mesmo vale para o `source` e o `document.title` de qualquer fonte estrangeira. Quem ouve a página ouve inglês lido à portuguesa. | O registo **não tem campo de língua por campo**: nenhuma das 132 linhas diz em que língua está o seu excerto. Pôr o atributo a olho seria adivinhar, e adivinhar bem nas 132 de hoje não impede a 133.ª de entrar sem ele. É trabalho do motor primeiro, e só depois do sítio e do portão. Encontrada na segunda leitura cruzada da v2 (§1.44). |
 | ~~O portão compara os algarismos do valor, e não a cadeia~~ | **Fechado a 18.08.2026 (§1.47, T4).** Um `data-claim` passa a comparar a **cadeia** renderizada com o valor da linha, com a cópia própria do portão da normalização: o menos tipográfico e o ASCII são o mesmo sinal, os quatro espaços de milhares são o mesmo separador, o espaço em branco do HTML não é conteúdo, e mais nada. A vírgula decimal e a **presença** do sinal não se normalizam. Os dois estragos que esta linha nomeava fecham: «96%» onde a linha diz «96», e o menos apagado na posição de investimento, agora na própria primeira página e não só no `<head>` da página de linha. | As três respostas que faltavam foram medidas em vez de decididas: a corrida inteira passa sem um falso positivo, com **16** valores desenhados dentro de um `<svg>`, **32** com a escala `--figura-car` e **36** com o símbolo da unidade colado ao lado. A escala é um atributo e não toca no texto; o sufixo está fora do elemento desde a v2, e esta conferência é o que garante que continua fora. Não foi preciso esperar pelo `gate:identidade`. |
+
+**Bloco T · o que a leitura cruzada deixou aberto** (18.08.2026, §1.47, «A
+leitura cruzada»). Dois achados reais, pré-existentes, e nenhum deles é matéria
+da página de linha: um é registo do motor, o outro é redação.
+
+| Item | O que está por fazer | Porque não foi feito aqui |
+| --- | --- | --- |
+| O prazo de apreciação das contas está no grupo da data publicada pela fonte | O calendário das fontes põe «Prestação de contas de 2026 do Município de Évora, apreciação pela Assembleia Municipal entre 2027-04-01 e 2027-04-30» em **«Com data publicada pela fonte»**, e a nota do próprio acontecimento diz duas coisas que o desmentem: «O prazo é o da apreciação, não o da publicação», e que as alterações à lei posteriores a 2018 não foram conferidas, porque a versão consolidada em `diariodarepublica.pt` devolve a casca «JavaScript is required» a `curl` e ao WebFetch. Conferido na construção de 18.08.2026: `evora-contas-2026` está mesmo nesse grupo, com os outros sete. | O acontecimento é um **registo de calendário do motor**, escrito no bloco da agenda (§1.40), e o grupo em que ele cai é lido de um campo desse registo. Reclassificá-lo do lado do sítio era o sítio a escrever o que o motor declara, que é exatamente a fronteira que a §1.31 fixou. A saída é uma de duas, e as duas são de formato: ou o registo ganha maneira de dizer «prazo legal» ao lado de «data publicada pela fonte», ou o acontecimento sai do calendário até a fonte publicar uma data. Encontrado pela leitura cruzada do bloco T (§1.47, achado 12). |
+| A página do município promete «Não interpreta» e escreve frases que interpretam | A abertura diz «Não interpreta: onde uma fonte não estabelece uma coisa, a página di-lo em vez de a supor», e a mesma página escreve «Quem responde pelo quê», «Um partido é dono das suas decisões, não de uma curva» e «A diferença é pequena». As quatro estão na construção de 18.08.2026, nas duas edições. Nenhuma delas é falsa, e nenhuma atribui um número a ninguém: o que elas são é juízo editorial, e a promessa da abertura é absoluta. | Ou a página interpreta e a abertura di-lo, ou não interpreta e as frases mudam. As duas são redação, e é a mesma classe que a §1.44 já deixou aberta para o portão da prosa: a régua dos algarismos não vê palavras. Emendar as três frases à mão sem decidir a regra deixava a quarta a entrar pela mesma porta, e ainda por cima numa página cuja prosa a fase da voz vai ler inteira. Encontrada pela leitura cruzada do bloco T (§1.47, achado 16). |
 
 ~~**Fase 1 · a redacção do Método sobre os números do próprio sítio**~~
 (18.08.2026, §1.44). **Fechado a 18.08.2026 pela §1.45 e pela §1.46.** O Método
