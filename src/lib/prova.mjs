@@ -241,8 +241,16 @@ const FRASES = {
     en: 'rows with the arithmetic written as an expression, redone at each build',
   },
   releituras_registadas: {
-    pt: 'reconferências independentes escritas nas linhas; o campo ainda não existe em nenhuma, e por isso a conta é zero',
-    en: 'independent re-checks written into the rows; no row has the field yet, so the count is zero',
+    pt: 'entradas de reconferência escritas nas linhas do livro-razão',
+    en: 're-check entries written into the ledger rows',
+  },
+  linhas_reconferidas: {
+    pt: 'linhas com pelo menos uma reconferência escrita',
+    en: 'rows with at least one re-check written',
+  },
+  releituras_divergentes: {
+    pt: 'reconferências em que a fonte disse outra coisa',
+    en: 're-checks where the source said something else',
   },
   painel_reconferido_em: {
     pt: 'data escrita pelo motor na última reconferência do painel',
@@ -301,6 +309,10 @@ export function prova(lang = 'pt') {
   const f = (chave) => FRASES[chave][lang] ?? FRASES[chave].pt;
 
   const divida = linhas.filter((c) => provenienciaIncompleta(c)).length;
+  /* Todas as entradas de reconferência, de todas as linhas, numa lista só. */
+  const entradasDeReleitura = linhas.flatMap((c) =>
+    Array.isArray(c.verifications) ? c.verifications : [],
+  );
   const cruzadas = linhasCruzadas();
   const verificacao = estadoDaVerificacao();
   const ag = agenda();
@@ -371,10 +383,20 @@ export function prova(lang = 'pt') {
     ),
     municipios_total: k('municipios_total', MUNICIPIOS.length, routePath('municipios', lang)),
 
-    /* ---- a releitura ---- */
-    releituras_registadas: k(
-      'releituras_registadas',
-      linhas.reduce((n, c) => n + (Array.isArray(c.verifications) ? c.verifications.length : 0), 0),
+    /* ---- a releitura ----
+       O campo `verifications[]` entrou a 18.08.2026 (DECISIONS §1.47). Estas
+       três chaves contam-no: quantas entradas há, em quantas linhas, e quantas
+       encontraram outro valor. A porta é o livro-razão, que é onde o leitor vê
+       o que elas contam. */
+    releituras_registadas: k('releituras_registadas', entradasDeReleitura.length, livro),
+    linhas_reconferidas: k(
+      'linhas_reconferidas',
+      linhas.filter((c) => (c.verifications ?? []).length > 0).length,
+      livro,
+    ),
+    releituras_divergentes: k(
+      'releituras_divergentes',
+      entradasDeReleitura.filter((v) => v.result === 'diverge').length,
       livro,
     ),
     painel_reconferido_em: k(

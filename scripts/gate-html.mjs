@@ -690,6 +690,68 @@ const CAMPOS_DA_LINHA = new Set([
 ]);
 
 /**
+ * `verifications.<n>.<campo>` — um campo de uma reconferência da linha.
+ *
+ * Não é um nome fixo: o índice é a posição da entrada na lista do livro-razão,
+ * e a página marca-a com esse índice de propósito, para que o portão vá buscar
+ * a entrada à posição que ela diz ser e não à ordem em que foi rendida. Os dois
+ * campos escritos são a data e, numa entrada `diverge`, o valor encontrado.
+ */
+const CAMPO_DE_VERIFICACAO = /^verifications\.(\d+)\.(date|found)$/;
+
+/**
+ * Os rótulos de `by` e de `result`, nas duas edições.
+ *
+ * SEGUNDA CÓPIA da tabela de `src/i18n/strings.mjs`, e é de propósito — a mesma
+ * disciplina de `ROTULO_DO_ESTADO` e de `SEPARADOR_ATRIBUICAO`. Se o portão
+ * lesse os rótulos do gabarito, confirmava o gabarito; assim confirma o
+ * livro-razão. Trocar «o mesmo valor» por «valor diferente:» no gabarito pára a
+ * construção.
+ */
+const ROTULO_DE_QUEM_RELEU = {
+  pt: {
+    'leitura-independente': 'leitura independente',
+    'painel-semanal': 'reconferência semanal do painel',
+    'revisao-cruzada': 'revisão cruzada',
+  },
+  en: {
+    'leitura-independente': 'independent reading',
+    'painel-semanal': 'weekly panel re-check',
+    'revisao-cruzada': 'cross-family review',
+  },
+};
+
+const ROTULO_DO_RESULTADO = {
+  pt: {
+    igual: 'o mesmo valor',
+    diverge: 'valor diferente:',
+    inacessivel: 'fonte inacessível nesse dia',
+  },
+  en: {
+    igual: 'the same value',
+    diverge: 'a different value:',
+    inacessivel: 'source unreachable that day',
+  },
+};
+
+/** Quantas entradas a página mostra. Cópia própria, pela mesma razão. */
+const VERIFICACOES_MOSTRADAS_GATE = 2;
+
+/**
+ * As entradas de uma linha, da mais nova para a mais velha, com o seu índice.
+ *
+ * Segunda implementação da ordenação que o gabarito faz, escrita aqui: o que
+ * fica conferido é que o conjunto rendido são mesmo as mais recentes, e não que
+ * duas funções concordam uma com a outra.
+ */
+function verificacoesOrdenadasGate(claim) {
+  const lista = Array.isArray(claim?.verifications) ? claim.verifications : [];
+  return lista
+    .map((v, n) => ({ v, n }))
+    .sort((a, b) => String(b.v.date).localeCompare(String(a.v.date)) || b.n - a.n);
+}
+
+/**
  * O separador com que a página escreve `attributed_to` numa linha só.
  *
  * É uma **segunda cópia** da constante que está em src/lib/ledger.mjs, e é de
@@ -762,8 +824,14 @@ function campoDaLinha(claim, campo, lang) {
         : null;
     case 'id':
       return claim.id;
-    default:
+    default: {
+      const v = campo.match(CAMPO_DE_VERIFICACAO);
+      if (v) {
+        const entrada = (claim.verifications ?? [])[Number(v[1])];
+        return entrada ? (entrada[v[2]] ?? null) : null;
+      }
       return claim[campo] ?? null;
+    }
   }
 }
 
@@ -1366,6 +1434,12 @@ function contasDoPortao(claims) {
     }
   }
 
+  /* Todas as entradas de reconferência, numa lista só. */
+  const releituras = [];
+  for (const c of linhas) {
+    for (const v of c.verifications ?? []) releituras.push(v);
+  }
+
   /* O registo da travessia, lido aqui com o seu próprio leitor. */
   let cruzadas = 0;
   const dirCruzamentos = path.join(ROOT, 'ledger', 'cruzamentos');
@@ -1459,9 +1533,17 @@ function contasDoPortao(claims) {
     conta('leituras', leiturasNoMapa, 'dist'),
     conta('municipios_com_pagina', (paginasPorRota.get('pt:municipio') ?? 0), 'dist'),
     conta('municipios_total', municipiosNoCsv, 'dist'),
+    /* As reconferências, contadas aqui e não por prova(): é a segunda
+       implementação sobre os mesmos ficheiros, como as correções. */
+    conta('releituras_registadas', releituras.length, 'ledger'),
     conta(
-      'releituras_registadas',
-      linhas.reduce((n, c) => n + (Array.isArray(c.verifications) ? c.verifications.length : 0), 0),
+      'linhas_reconferidas',
+      linhas.filter((c) => (c.verifications ?? []).length > 0).length,
+      'ledger',
+    ),
+    conta(
+      'releituras_divergentes',
+      releituras.filter((v) => v?.result === 'diverge').length,
       'ledger',
     ),
     conta('painel_reconferido_em', VERIFICACAO.verificadoEm, 'modulo'),
@@ -2213,10 +2295,11 @@ for (const file of ficheirosHtml(DIST)) {
       continue;
     }
 
-    if (!CAMPOS_DA_LINHA.has(campo)) {
+    if (!CAMPOS_DA_LINHA.has(campo) && !CAMPO_DE_VERIFICACAO.test(campo)) {
       err(
         `data-linha-campo="${campo}" não existe. ` +
-          `Aceites: ${[...CAMPOS_DA_LINHA].join(', ')}.\n` +
+          `Aceites: ${[...CAMPOS_DA_LINHA].join(', ')}, verifications.<n>.date, ` +
+          `verifications.<n>.found.\n` +
           `      O valor de uma afirmação não entra por aqui: entra por <Claim id="…"/>.`,
       );
       continue;
@@ -2291,6 +2374,105 @@ for (const file of ficheirosHtml(DIST)) {
         `o endereço de "${claimDaPagina.id}" fixa a página ${pagina} (\`#page=\`) e esta página ` +
           `não a diz.\n      Falta o rótulo com data-linha-campo="source_url.page" ao pé da ligação.`,
       );
+    }
+  }
+
+  /* --- as reconferências de uma linha, na página dessa linha ---------------
+   *
+   * É a origem 6 aplicada a uma lista: ali um campo da linha, aqui uma entrada
+   * da lista de reconferências, com o seu índice, os seus atributos crus e os
+   * seus dois rótulos. Os campos escritos (a data, e o valor encontrado numa
+   * entrada `diverge`) já passaram pela conferência de cima, marcados
+   * `verifications.<n>.<campo>`; o que se confere aqui é o que a marca de campo
+   * não pode conferir: que a entrada rendida é a entrada que ela diz ser, que
+   * os rótulos são os que aquele `by` e aquele `result` escrevem, e que o
+   * conjunto rendido são exactamente as duas mais recentes.
+   */
+  {
+    const rendidas = body.querySelectorAll('[data-linha-verificacao]');
+    if (rendidas.length && !claimDaPagina) {
+      err(
+        `data-linha-verificacao numa página que não é a de uma linha. Uma reconferência ` +
+          `mostra-se na página da linha que foi relida, e em mais lado nenhum.`,
+      );
+    } else if (claimDaPagina) {
+      const lingua = linguaPagina === 'en' ? 'en' : 'pt';
+      const ordenadas = verificacoesOrdenadasGate(claimDaPagina);
+      const esperadas = ordenadas.slice(0, VERIFICACOES_MOSTRADAS_GATE);
+      const lidos = rendidas.map((el) => el.getAttribute('data-linha-verificacao'));
+
+      /* O conjunto, e a ordem. Uma página que mostre a penúltima no lugar da
+         última diz ao leitor que a linha foi relida há mais tempo do que foi,
+         ou há menos; as duas são falsas, e nenhuma marca de campo as apanha. */
+      const esperados = esperadas.map((e) => String(e.n));
+      if (lidos.join(',') !== esperados.join(',')) {
+        err(
+          `a página de "${claimDaPagina.id}" rende as reconferências ` +
+            `[${lidos.join(', ') || '(nenhuma)'}] e o livro-razão manda render ` +
+            `[${esperados.join(', ') || '(nenhuma)'}], da mais recente para a mais antiga.\n` +
+            `      A linha tem ${ordenadas.length} entrada(s); a página mostra as ` +
+            `${VERIFICACOES_MOSTRADAS_GATE} mais recentes, nem uma a mais, nem a mais velha no ` +
+            `lugar da mais nova.`,
+        );
+      }
+
+      for (const el of rendidas) {
+        const cru = el.getAttribute('data-linha-verificacao');
+        const n = Number(cru);
+        const entrada = (claimDaPagina.verifications ?? [])[n];
+        if (!Number.isInteger(n) || !entrada) {
+          err(
+            `a página de "${claimDaPagina.id}" rende a reconferência "${cru}", que a linha não ` +
+              `tem. O índice é a posição da entrada na lista do livro-razão.`,
+          );
+          continue;
+        }
+        for (const [attr, campo] of [['data-por', 'by'], ['data-resultado', 'result']]) {
+          const lido = el.getAttribute(attr);
+          if (lido !== String(entrada[campo])) {
+            err(
+              `a reconferência ${n} de "${claimDaPagina.id}" leva ${attr}="${lido ?? '(nada)'}" ` +
+                `e o livro-razão diz "${entrada[campo]}".`,
+            );
+          }
+        }
+        const marcaPor = el.querySelector('[data-linha-verificacao-por]');
+        const esperadoPor = ROTULO_DE_QUEM_RELEU[lingua][entrada.by];
+        const lidoPor = marcaPor ? normalizeWhitespace(textoTranscrito(marcaPor)) : null;
+        if (!esperadoPor) {
+          err(
+            `a reconferência ${n} de "${claimDaPagina.id}" diz by="${entrada.by}", que o portão ` +
+              `não sabe escrever.`,
+          );
+        } else if (lidoPor !== esperadoPor) {
+          err(
+            `a reconferência ${n} de "${claimDaPagina.id}" escreve quem releu como ` +
+              `"${lidoPor ?? '(nada)'}" e o registo diz "${entrada.by}", que se escreve ` +
+              `"${esperadoPor}".`,
+          );
+        }
+        const marcaResultado = el.querySelector('[data-linha-verificacao-resultado]');
+        const base = ROTULO_DO_RESULTADO[lingua][entrada.result];
+        /* Numa divergência o rótulo leva o valor encontrado: o leitor tem de
+           ver o que a fonte imprimiu, e não só que imprimiu outra coisa. */
+        const esperadoResultado =
+          entrada.result === 'diverge' ? `${base} ${entrada.found}` : base;
+        const lidoResultado = marcaResultado
+          ? normalizeWhitespace(textoTranscrito(marcaResultado))
+          : null;
+        if (!base) {
+          err(
+            `a reconferência ${n} de "${claimDaPagina.id}" diz result="${entrada.result}", que o ` +
+              `portão não sabe escrever.`,
+          );
+        } else if (lidoResultado !== normalizeWhitespace(esperadoResultado)) {
+          err(
+            `a reconferência ${n} de "${claimDaPagina.id}" escreve o resultado como ` +
+              `"${lidoResultado ?? '(nada)'}" e o registo diz "${entrada.result}", que se escreve ` +
+              `"${esperadoResultado}".`,
+          );
+        }
+      }
     }
   }
 
