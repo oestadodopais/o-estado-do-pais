@@ -17,6 +17,10 @@ document:
   locator: "Relatorio_Gestão_2016.pdf, p. 84"
   page: 84
   kind: "pdf"
+  crop:
+    asset: "recortes/evora-pael-emprestimo.webp"
+    sha256: "a472b7ef0d5afbd0d14eb5b0f5a2ac4c856b4e450d819f51c8289be30c920f6e"
+    page: 84
 source_url: "https://www.cm-evora.pt/wp-content/uploads/2020/06/Relatorio_Gestão_2016.pdf#page=84"
 access_date: "2026-08-10"
 reference_date: "2013"

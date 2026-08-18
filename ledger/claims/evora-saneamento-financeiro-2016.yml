@@ -17,6 +17,10 @@ document:
   locator: "Relatorio_Gestão_2016.pdf, p. 79"
   page: 79
   kind: "pdf"
+  crop:
+    asset: "recortes/evora-saneamento-financeiro-2016.webp"
+    sha256: "2f9f79b346eb0c6e08367607f4423c3b973be4478c0cc214d9fb1ed2227cd8fe"
+    page: 79
 source_url: "https://www.cm-evora.pt/wp-content/uploads/2020/06/Relatorio_Gestão_2016.pdf#page=79"
 access_date: "2026-08-10"
 reference_date: "2016"

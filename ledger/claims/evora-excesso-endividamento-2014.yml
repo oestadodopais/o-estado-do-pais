@@ -17,6 +17,10 @@ document:
   locator: "2_Relatorio_Gestao_2021.pdf, p. 33, Quadro 7"
   page: 33
   kind: "pdf"
+  crop:
+    asset: "recortes/evora-excesso-endividamento-2014.webp"
+    sha256: "f6715bf11f0bbb2a13a370a204f65c682ca60611783dc294782524acc7723b32"
+    page: 33
 source_url: "https://www.cm-evora.pt/wp-content/uploads/2022/05/2_Relatorio_Gestao_2021.pdf#page=33"
 access_date: "2026-08-10"
 reference_date: "2014-01"

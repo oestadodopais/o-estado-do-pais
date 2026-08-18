@@ -17,6 +17,10 @@ document:
   locator: "2.Relatorio_de_Gestão_2017.pdf, p. 94"
   page: 94
   kind: "pdf"
+  crop:
+    asset: "recortes/evora-divida-total-2017.webp"
+    sha256: "b2637b31008d11ab21ecd81a948cd850a1af3456526d76e47a258c7b9d047d5b"
+    page: 94
 source_url: "https://www.cm-evora.pt/wp-content/uploads/2020/06/2.Relatorio_de_Gestão_2017.pdf#page=94"
 access_date: "2026-08-10"
 reference_date: "2017"

@@ -11,6 +11,7 @@
  *   4. uma expressão `check:` é reavaliada no build e tem de dar o valor publicado.
  */
 
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -106,7 +107,31 @@ const CAMPOS = [
  * cara de campo preenchido. Antes de `locator` existir, este bloco não tinha
  * lista nenhuma: `title` e `edition` eram exigidos e o resto era ignorado.
  */
-const CAMPOS_DO_DOCUMENTO = ['title', 'edition', 'locator', 'page', 'kind'];
+const CAMPOS_DO_DOCUMENTO = ['title', 'edition', 'locator', 'page', 'kind', 'crop'];
+
+/**
+ * As chaves do recorte, e mais nenhuma. Um mapa de três campos: o ficheiro, o
+ * resumo dos seus bytes e a página de onde foi tirado.
+ */
+const CAMPOS_DO_RECORTE = ['asset', 'sha256', 'page'];
+
+/** 64 hexadecimais em minúsculas: um resumo sha256 e não um prefixo dele. */
+const RESUMO_SHA256 = /^[0-9a-f]{64}$/;
+
+/**
+ * O teto de um recorte, em bytes.
+ *
+ * **Cópia própria** do `MAX_IMAGE_BYTES` de `core/pdfproof.py`, que é quem o
+ * impõe ao produzir. Existe aqui pela mesma razão que o portão tem a sua cópia
+ * das regras que confere: um recorte que chegue acima do teto veio de outro
+ * sítio que não uma corrida do pdfproof, e o sítio recusa-o na porta em vez de
+ * confiar em quem lho entregou. Um recorte é uma linha impressa, não uma
+ * página digitalizada.
+ */
+const MAX_BYTES_DO_RECORTE = 40_000;
+
+/** Onde vivem os recortes: `public/recortes/`, servidos em `/recortes/`. */
+const DIR_RECORTES = path.join(path.dirname(path.dirname(LEDGER_DIR)), 'public', 'recortes');
 
 /**
  * `p. N` dentro de um localizador. A cópia da regra vive aqui, e é a única do
@@ -830,6 +855,100 @@ export function validateLedger() {
           `${onde} declara "document.page: ${pag}" sobre um PDF e o endereço não leva ` +
             `"#page=${pag}". Quem abre o endereço tem de cair na página que a linha declara.`,
         );
+      }
+
+      /* ---------------------------------------------------------------------
+       * `document.crop`: o recorte da linha impressa
+       * ---------------------------------------------------------------------
+       *
+       * A prova documental deixa de ser uma transcrição e passa a ser também
+       * uma imagem da linha impressa, produzida no motor por `core/pdfproof.py`
+       * e atravessada como ficheiro (DECISIONS §1.47, T2). Um recorte é a coisa
+       * mais convincente que este sítio publica: mostrado ao lado da linha
+       * errada, ou tirado de outra página, seria um recibo falso com uma
+       * fotografia agarrada. Por isso o validador confere tudo o que se pode
+       * conferir sem sair do disco: o nome, o ficheiro, os bytes e a página.
+       */
+      {
+        const recorte = c.document && typeof c.document === 'object' ? c.document.crop : undefined;
+        if (recorte !== null && recorte !== undefined) {
+          if (typeof recorte !== 'object' || Array.isArray(recorte)) {
+            errors.push(
+              `${onde} "document.crop" tem de ser um mapa com "asset", "sha256" e "page".`,
+            );
+          } else {
+            for (const k of Object.keys(recorte)) {
+              if (!CAMPOS_DO_RECORTE.includes(k)) {
+                errors.push(
+                  `${onde} chave desconhecida "document.crop.${k}". ` +
+                    `Aceites: ${CAMPOS_DO_RECORTE.join(', ')}.`,
+                );
+              }
+            }
+            /* Um recorte é de uma página, e uma linha sem página declarada não
+               tem página de que ele seja. Também não há documento onde uma
+               página exista numa linha derivada ou da casa: a regra acima já o
+               diz da página, e o recorte herda-a por vir agarrado a ela. */
+            if (!temPagina) {
+              errors.push(
+                `${onde} tem "document.crop" e não declara "document.page". Um recorte é a ` +
+                  `imagem de UMA página: sem o campo que diz qual, ninguém pode conferir que ` +
+                  `é a página que o excerto transcreve.`,
+              );
+            } else if (recorte.page !== pag) {
+              errors.push(
+                `${onde} "document.crop.page" é ${JSON.stringify(recorte.page)} e ` +
+                  `"document.page" é ${pag}. O recorte é da página onde está a frase que o ` +
+                  `"excerpt" transcreve, e por isso são o mesmo número.`,
+              );
+            }
+
+            const esperado = `recortes/${c.id}.webp`;
+            if (recorte.asset !== esperado) {
+              errors.push(
+                `${onde} "document.crop.asset" é ${JSON.stringify(recorte.asset)} e tem de ser ` +
+                  `"${esperado}". Um recorte por linha, com o nome da linha: um nome livre ` +
+                  `deixava duas linhas apontar para a mesma imagem.`,
+              );
+            } else if (typeof recorte.sha256 !== 'string' || !RESUMO_SHA256.test(recorte.sha256)) {
+              errors.push(
+                `${onde} "document.crop.sha256" é ${JSON.stringify(recorte.sha256)}. Tem de ser ` +
+                  `o resumo sha256 dos bytes do ficheiro, 64 hexadecimais em minúsculas.`,
+              );
+            } else {
+              const ficheiro = path.join(DIR_RECORTES, `${c.id}.webp`);
+              let octetos = null;
+              try {
+                octetos = fs.readFileSync(ficheiro);
+              } catch {
+                errors.push(
+                  `${onde} declara o recorte "${recorte.asset}" e não há ficheiro em ` +
+                    `public/${recorte.asset}. Um recorte que a linha promete e o sítio não ` +
+                    `serve é uma prova que não abre.`,
+                );
+              }
+              if (octetos) {
+                if (octetos.length > MAX_BYTES_DO_RECORTE) {
+                  errors.push(
+                    `${onde} o recorte "${recorte.asset}" tem ${octetos.length} bytes, acima do ` +
+                      `teto de ${MAX_BYTES_DO_RECORTE}. Um recorte é uma linha impressa, não ` +
+                      `uma página digitalizada.`,
+                  );
+                }
+                const resumo = crypto.createHash('sha256').update(octetos).digest('hex');
+                if (resumo !== recorte.sha256) {
+                  errors.push(
+                    `${onde} o recorte "${recorte.asset}" não é o que a linha declara.\n` +
+                      `      no livro-razão: ${recorte.sha256}\n` +
+                      `      em disco:       ${resumo}\n` +
+                      `      Uma imagem trocada depois da travessia é a prova a dizer outra ` +
+                      `coisa sem que nada mude no texto.`,
+                  );
+                }
+              }
+            }
+          }
+        }
       }
 
       const localizador = c.document && typeof c.document === 'object' ? c.document.locator : null;

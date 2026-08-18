@@ -17,6 +17,10 @@ document:
   locator: "PRESTACAO_CONTAS_2025.pdf, p. 119"
   page: 119
   kind: "pdf"
+  crop:
+    asset: "recortes/evora-despesa-paga-2025.webp"
+    sha256: "55288b18998433008d15112ad1e3a68382721144612e3bd607be9579b716c296"
+    page: 119
 source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=119"
 access_date: "2026-08-10"
 reference_date: "2025"

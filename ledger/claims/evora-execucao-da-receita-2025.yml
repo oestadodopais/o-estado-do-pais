@@ -17,6 +17,10 @@ document:
   locator: "PRESTACAO_CONTAS_2025.pdf, p. 111"
   page: 111
   kind: "pdf"
+  crop:
+    asset: "recortes/evora-execucao-da-receita-2025.webp"
+    sha256: "0d9559ed7a63295ea4c06bebb039a5c7668d2c302a6abd766b06482e1a734f03"
+    page: 111
 source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=111"
 access_date: "2026-08-10"
 reference_date: "2025"

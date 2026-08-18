@@ -17,6 +17,10 @@ document:
   locator: "PRESTACAO_CONTAS_2025.pdf, p. 141"
   page: 141
   kind: "pdf"
+  crop:
+    asset: "recortes/evora-pagamentos-em-atraso-2025.webp"
+    sha256: "0e18a003073dc2ce50573e1e3f5dd032d21463d49e355669f6364a5aec60766c"
+    page: 141
 source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=141"
 access_date: "2026-08-10"
 reference_date: "2025"

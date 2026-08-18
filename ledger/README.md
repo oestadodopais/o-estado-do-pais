@@ -22,6 +22,11 @@ document:
   locator: null                  # onde no documento — "p. 108", "Quadro 4, p. 108"
   page: null                     # inteiro ≥ 1, a página onde está a frase do excerto (ver abaixo)
   kind: null                     # pdf | html | serie | ficheiro | registo — o que o endereço serve (ver abaixo)
+  # O recorte da linha impressa. Escrito pelo exportador do motor, nunca à mão.
+  # crop:
+  #   asset: "recortes/pib-pc-portugal-2024.webp"   # o ficheiro, em public/
+  #   sha256: "…"                                   # 64 hexadecimais: o resumo dos seus bytes
+  #   page: 108                                     # igual a document.page
 source_url: "[a verificar]"
 access_date: "[a verificar]"     # AAAA-MM-DD — quando foi lido
 reference_date: "2024"           # AAAA / AAAA-MM / AAAA-MM-DD — a que se refere
@@ -76,8 +81,8 @@ verifications:
 10. uma expressão `check` não der exactamente o valor publicado;
 11. houver `derivation` sem `derivation_en`, ou o contrário;
 12. o bloco `document` trouxer uma chave que não seja `title`, `edition`,
-    `locator`, `page` ou `kind`, ou um `locator` que não seja uma cadeia não
-    vazia;
+    `locator`, `page`, `kind` ou `crop`, ou um `locator` que não seja uma cadeia
+    não vazia;
 13. `attributed_to` não for uma lista de nomes de entidades não vazios, for uma
     lista vazia, ou algum nome contiver o separador ` · ` com que a página
     escreve a lista;
@@ -92,7 +97,12 @@ verifications:
     ou `by` estiverem fora dos três valores de cada um; faltar `found` numa
     entrada `diverge`, ou existir numa que não seja; a lista não estiver por
     ordem cronológica crescente; duas entradas repetirem (`date`, `path`, `by`,
-    `result`); ou a linha não tiver `source_url`.
+    `result`); ou a linha não tiver `source_url`;
+16. `document.crop` trouxer uma chave que não seja `asset`, `sha256` ou `page`;
+    o `asset` não for exactamente `recortes/<id>.webp`; não houver ficheiro em
+    `public/<asset>`; o `sha256` não for 64 hexadecimais ou não for o resumo dos
+    bytes desse ficheiro; o ficheiro passar dos 40 000 bytes; a `page` não for a
+    `document.page`; ou a linha não declarar `document.page`.
 
 ## `document.kind` — o que o endereço serve
 
@@ -225,6 +235,49 @@ em atributos e são comparados com a linha, os dois rótulos são comparados com
 **cópia própria** do portão da tabela de rótulos, e o conjunto rendido tem de
 ser exactamente as duas entradas mais recentes: nem uma a mais, nem a mais
 velha no lugar da mais nova.
+
+## `document.crop`: o recorte da linha impressa
+
+Opcional, dentro de `document`, e só onde `document.page` existe. Um mapa de
+três campos: `asset`, o ficheiro (`recortes/<id>.webp`, servido de
+`public/recortes/`); `sha256`, o resumo dos seus bytes; `page`, a página de onde
+foi tirado, que é a `document.page`. Existe desde 18.08.2026 (DECISIONS §1.47).
+
+| Campo | O que é |
+| --- | --- |
+| `asset` | `recortes/<id>.webp` e mais nada: um recorte por linha, com o nome da linha |
+| `sha256` | 64 hexadecimais, o resumo dos bytes do ficheiro em disco |
+| `page` | a página de onde o recorte foi tirado, igual a `document.page` |
+
+**Porque existe.** O teste 1 do `BRIEF-confianca.md` §6.8 pede que qualquer
+número leve à linha impressa numa ligação. Até aqui a página de uma linha dava
+duas coisas: o `excerpt`, que é a linha impressa **transcrita**, e o endereço do
+PDF, que é o documento inteiro para descarregar. A transcrição pede confiança e
+o descarregamento pede trabalho. O recorte é a própria linha, vista.
+
+**Não se produz aqui, e essa é a regra que sustenta o campo.** Um recorte nasce
+de `ResearchHub/core/pdfproof.py`, que localiza a frase do excerto no PDF fixado
+por **correspondência exacta de caracteres**, aceita-a apenas se for **única
+naquela página** e não se espalhar por mais de três linhas, e recorta essa
+região. Uma frase que não se localize assim não dá imagem nenhuma: a recusa
+fica escrita com o seu motivo, e a linha do sítio simplesmente não tem recorte.
+Um recorte adivinhado seria uma fotografia da linha errada com toda a autoridade
+de uma fotografia. O exportador do motor escreve o ficheiro e o campo; nenhum
+recorte entra por outra porta, e nenhum se faz à mão.
+
+**O que o sítio confere à chegada**, na regra 16: que o ficheiro existe, que os
+seus bytes dão o resumo declarado, que cabe nos 40 000 bytes (o mesmo teto que o
+pdfproof impõe ao produzir, escrito de novo deste lado para que um recorte que
+venha de outro sítio seja recusado na porta), e que a página do recorte é a
+página do excerto. O `gate:html` confere o outro lado: que a imagem que a página
+mostra é o ficheiro que a linha declara, que ele foi construído para `dist/`,
+que a legenda diz a página da linha, e que uma página não mostra um recorte que
+a sua linha não tem.
+
+**A página da linha** mostra-o no bloco da prova, com a legenda «página N» e a
+porta «Abrir na página N →» para o endereço, que traz `#page=N`. Onde não há
+recorte não há caixa nenhuma: fica o excerto transcrito, como sempre esteve
+(IDENTIDADE.md §6).
 
 ## `attributed_to` — a quem o valor é creditado
 
@@ -409,6 +462,7 @@ exportador e nunca à mão. Por cada linha:
 | `origin_row_sha256` | o resumo da **linha** de origem, em forma canónica — é este que prende |
 | `exported_row_sha256` | o resumo dos bytes deste ficheiro, tal como foram escritos |
 | `corrections_at_export` | quantas correcções a linha tinha quando atravessou |
+| `crop_sha256` | o resumo do recorte que atravessou com ela, quando há recorte |
 | `exported_at` | quando estes bytes mudaram pela última vez |
 | `site_corrections` | as correcções feitas deste lado e aceites, com o resumo antes e depois |
 
