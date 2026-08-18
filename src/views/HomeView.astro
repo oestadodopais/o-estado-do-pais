@@ -9,10 +9,8 @@ import Provenance from '../components/Provenance.astro';
 import Frase from '../components/Frase.astro';
 import InstrumentoConvergencia from '../components/InstrumentoConvergencia.astro';
 import InstrumentoMapa from '../components/InstrumentoMapa.astro';
-import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import { FIGURAS, comparacaoComOLimiar } from '../data/figuras.mjs';
 import { getClaim } from '../lib/ledger.mjs';
-import { VERBATIM } from '../data/verbatim.mjs';
 import { estadoDaVerificacao } from '../lib/prova.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -50,7 +48,6 @@ const cartoes = FIGURAS.map((f) => ({
   path={path}
   title={s.home.metaTitle}
   description={s.home.metaDescription}
-  portaNoRodape={false}
 >
   <Masthead slot="masthead" lang={lang} path={path} compact={false} furniture={true} />
 
@@ -124,31 +121,10 @@ const cartoes = FIGURAS.map((f) => ({
     <InstrumentoMapa lang={lang} />
   </section>
 
-  <!-- ============================ Esta página -->
-  <section id="esta-pagina">
-    <div class="sec-head">
-      <span class="eyebrow">{s.home.estaPagina.eyebrow}</span>
-    </div>
-    <div class="prov">
-      <div class="prov-row">
-        <span class="prov-study">{s.home.estaPagina.rede}</span>
-        <span class="prov-vals" data-verbatim="sem-pedidos-de-rede" lang="pt-PT">
-          {VERBATIM['sem-pedidos-de-rede'].text}
-        </span>
-      </div>
-      <div class="prov-row">
-        <span class="prov-study">{lang === 'pt' ? 'Tipos' : 'Typefaces'}</span>
-        <span class="prov-vals">{s.home.estaPagina.tipos}</span>
-      </div>
-      <div class="prov-row">
-        <span class="prov-study">{lang === 'pt' ? 'Amarelo' : 'Yellow'}</span>
-        <span class="prov-vals" data-verbatim="regra-do-amarelo" lang="pt-PT">
-          {VERBATIM['regra-do-amarelo'].text}
-        </span>
-      </div>
-    </div>
-
-    <!-- A porta das correções: o colofão é o aparelho desta página. -->
-    <PortaDeCorreccoes lang={lang} class="porta-correccoes-rodape" />
-  </section>
+  <!-- O colofão «Esta página» saiu a 18.08.2026 (DECISIONS §1.44). Dizia ao
+       leitor que a página não faz pedidos de rede, que tipos usa e qual é a
+       regra do amarelo: comentário de implementação numa página pública, e o
+       BRIEF-confianca §6.3 pede o contrário, mostrar em vez de declarar. A
+       porta das correções volta ao rodapé pelo invólucro, e por isso esta
+       página deixou de passar `portaNoRodape={false}`. -->
 </Base>

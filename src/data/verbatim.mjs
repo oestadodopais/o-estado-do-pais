@@ -75,17 +75,10 @@ Posições projetadas em Web Mercator e normalizadas para o referencial da pági
     text: `Posições: Carta Administrativa Oficial de Portugal 2025, Direção-Geral do Território. Centróides ponderados pela área, calculados a partir dos polígonos oficiais. Madeira à mesma escala do Continente; Açores a 0,38× dessa escala, por o arquipélago se estender por cerca de 600 km. Detalhe completo no colofão.`,
   },
 
-  'regra-do-amarelo': {
-    lang: 'pt',
-    origem: 'Colofão do estudo de identidade v2, bloco «Esta página».',
-    text: `O amarelo #E8A80C é reservado a marcas de medição e nunca é usado como texto sobre fundo claro.`,
-  },
-
-  'sem-pedidos-de-rede': {
-    lang: 'pt',
-    origem: 'Colofão do estudo de identidade v2, bloco «Esta página».',
-    text: `Não faz pedidos de rede. As 308 posições estão embebidas no ficheiro.`,
-  },
+  /* As duas citações do bloco «Esta página» do colofão saíram a 18.08.2026
+     (DECISIONS §1.44) com a secção que as rendia. Eram comentário de
+     implementação numa página pública, e o portão só exige que uma chave
+     renderizada exista aqui: uma entrada que ninguém rende não guarda nada. */
 };
 
 /** Normalização de espaços usada pelo portão — a mesma dos dois lados da comparação. */
