@@ -141,8 +141,9 @@ tem.
 
 ## 5. O selo de proveniência
 
-O Método promete, nas duas línguas: *«O selo de proveniência junto a cada número
-é a porta para essa linha.»* Então:
+A regra 5 do Método promete, nas duas línguas: *«Ao lado de cada medição há um
+selo que abre a sua linha: cheio quando a origem está completa, a tracejado
+quando falta um campo.»* Então:
 
 1. **O selo é sempre uma ligação** para a linha do livro-razão. Um selo que não
    liga a lado nenhum não é um selo: é uma legenda, e a promessa fica falsa.
