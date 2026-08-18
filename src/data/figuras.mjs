@@ -72,12 +72,24 @@ export const FIGURAS = [
       en: ['Percentage of GDP · ', { ref: '2025' }],
     },
     limiar: { nl: '35', sinal: '−' },
+    /* A frase dizia o contrário do valor publicado, e dizia duas coisas que a
+       página não pode mostrar.
+
+       «O que o país deve ao exterior menos o que tem a haver dele» é passivo
+       menos activo, que daria +50,2; a posição de investimento internacional é
+       activo menos passivo, e a linha publica −50,2. A frase passa a ser uma
+       definição, com o sinal do lado certo.
+
+       «É a medida com a maior distância ao limiar» era falso no mesmo ecrã: a
+       dívida pública está 29,7 pontos além dos 60 do seu limiar e esta está
+       15,2 além dos −35. «A que mais tem melhorado» é uma tendência, e este
+       sítio não publica série nenhuma. As duas saem. */
     frase: {
       pt: [
-        'O que o país deve ao exterior menos o que tem a haver dele. É a medida com a maior distância ao limiar, e a que mais tem melhorado.',
+        'O que o país tem a haver do exterior menos o que lhe deve: negativo quando deve mais do que tem a haver.',
       ],
       en: [
-        'What the country owes the rest of the world, less what it is owed. It sits furthest from its threshold, and has improved most.',
+        'What the country is owed from abroad minus what it owes abroad: negative when it owes more than it is owed.',
       ],
     },
   },
