@@ -40,3 +40,10 @@ note: "[derivation do motor] resident population estimate, both sexes, all ages 
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo exportador a partir de um registo de releitura.
+verifications:
+  - date: "2026-08-15"
+    path: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0012917&Dim1=S7A2025&Dim2=1C40705&Dim3=T&Dim4=T&lang=PT"
+    result: "igual"
+    by: "leitura-independente"

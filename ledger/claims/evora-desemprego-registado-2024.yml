@@ -40,3 +40,10 @@ note: "Cruzado de ResearchHub content/08 Évora Mandates · socio-registered-une
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo exportador a partir de um registo de releitura.
+verifications:
+  - date: "2026-08-15"
+    path: "https://www.iefp.pt/documents/10181/12563215/SIE+-+Desemprego+registado+por+concelhos+dezembro+2024.pdf/52db05d1-25dd-4891-b893-9eeab0614036"
+    result: "igual"
+    by: "leitura-independente"

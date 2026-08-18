@@ -40,3 +40,10 @@ note: "Cruzado de ResearchHub content/06 Évora Economy · empresas-evora-2024."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências. Escritas pelo exportador a partir de um registo de releitura.
+verifications:
+  - date: "2026-08-15"
+    path: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014061&Dim1=S7A2024&Dim2=1C40705&Dim3=T&lang=PT"
+    result: "igual"
+    by: "leitura-independente"
