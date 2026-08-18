@@ -241,17 +241,22 @@ regra desta constituição ganhou em máquina:
   traz o resumo desse texto tal como ele está. Uma mudança de rumo não sai em
   silêncio.
 
-**As três conferências que a v2 acrescenta**, todas extensões de conferências que
-já existem, e cada uma só conta depois de fechar sobre um estrago plantado
+**As quatro conferências que a v2 acrescenta**, todas extensões de conferências
+que já existem, e cada uma só conta depois de fechar sobre um estrago plantado
 (`DECISIONS.md` §1.43):
 
 - a etiqueta do selo lê-se de um atributo declarado e compara-se com a etiqueta
   daquela linha, e já não do texto visível do chip, que passa a ser «fonte»
   (extensão da conferência da `proveniencia`, §1.42);
-- um `data-prova` pode ter como porta uma âncora na própria página, quando é ali
-  que se vê o que ele conta;
+- a porta de um selo pode ser uma âncora na própria página, e o fragmento não
+  muda de que linha o selo é porta: é a amarra a resolver-se através dele (§5.3);
+- a porta de um `data-prova` pode ser uma âncora na própria página, quando é ali
+  que se vê o que ele conta; compara-se resolvida contra a página onde está, e a
+  âncora tem de existir no destino (§10);
 - `data-exemplo`, e qualquer estado «exemplo» ou «protótipo», é recusado numa
-  página construída (§6).
+  página construída, na marca, na classe e no rótulo; a mesma palavra dentro de
+  uma citação não é recusada, porque reescrever uma prova para lhe tirar uma
+  palavra seria pior (§6).
 
 **O que ainda não é conferido por máquina, e é promessa e não facto.** As regras
 de folha de estilos de §1 e §2 (nenhum literal de cor fora de `tokens.css`;
