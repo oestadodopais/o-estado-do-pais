@@ -1048,8 +1048,12 @@ const PREFIXO_DA_TRANSICAO = { pt: 'passa a', en: 'moves to' };
  * e escrita com a seta («Em curso → Em curso») anunciava uma mudança que não
  * houve. Cópia do portão, como as outras: se lesse a cadeia do gabarito,
  * confirmava o gabarito.
+ *
+ * A primeira redacção era «mantém-se em Em curso», e lia-se mal: o rótulo do
+ * estado já é um nome, e a preposição punha duas coisas a concordar que não
+ * concordam. «Estado mantido: Em curso» diz o mesmo e lê-se de uma vez.
  */
-const PREFIXO_DE_MANUTENCAO = { pt: 'mantém-se em', en: 'stays in' };
+const PREFIXO_DE_MANUTENCAO = { pt: 'estado mantido:', en: 'state unchanged:' };
 
 const MOTIVO_SEM_DATA_RENDIDO = {
   pt: { nao_publica: 'a fonte não publica data', nao_lida: 'a fonte não foi lida' },
