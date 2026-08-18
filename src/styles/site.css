@@ -358,6 +358,13 @@ section {
   font-family: var(--f-mono);
   font-size: 10.5px;
   letter-spacing: 0.06em;
+  /* A palavra do selo é «fonte», em minúsculas, nas duas edições, e é assim
+     que a §5.4 a nomeia. Dentro de uma sobrancelha em maiúsculas (a linha da
+     medida do mosaico, «PERCENTAGEM, TETO LEGAL = 150 · fonte · 2024») o selo
+     herdava o `text-transform` da linha e rendia «FONTE», que é outra palavra
+     à vista do leitor. O selo declara a sua própria caixa, esteja onde
+     estiver. O HTML já escrevia «fonte»: o que mudou foi só o desenho. */
+  text-transform: none;
   color: var(--muted);
   white-space: normal;
   text-decoration: none;
