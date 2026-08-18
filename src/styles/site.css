@@ -2678,8 +2678,11 @@ a.src-chip.is-unverified:hover::before {
 .regra-prova-nota {
   color: var(--muted);
 }
+/* O ponto médio entre duas provas da mesma regra. Estava em `--rule-strong`,
+   que mede 1,83:1 sobre papel: separava duas leituras e não se via. Passa a
+   `--muted` (6,87:1 em claro, 6,64:1 em escuro), que é a ficha da mobília. */
 .regra-sep {
-  color: var(--rule-strong);
+  color: var(--muted);
 }
 .regra-portas {
   margin-top: 16px;
@@ -2712,7 +2715,13 @@ a.src-chip.is-unverified:hover::before {
   font-weight: 600;
   color: var(--ink);
   text-decoration: none;
-  border-bottom: 1px solid var(--rule-strong);
+  /* O fio é a porta: é ele que diz que este número abre alguma coisa, e é a
+     única marca que estes números levam, porque selo não levam (§10). Em
+     `--rule-strong` media 1,83:1 sobre papel e a porta lia-se como sublinhado
+     de enfeite; em `--muted` mede 6,87:1 em claro e 6,64:1 em escuro. É a
+     mesma correção que a v2 fez ao selo, pela mesma razão: a promessa mais
+     exposta do sítio era a mais fácil de não ver. */
+  border-bottom: 1px solid var(--muted);
   padding-bottom: 1px;
   white-space: nowrap;
 }
