@@ -258,6 +258,12 @@ export const STRINGS = {
         eyebrow: 'O país em números verificados',
         h2: 'Medidas do painel europeu',
         sub: 'O painel de desequilíbrios macroeconómicos e o painel social europeu, com os limiares que as instituições publicam.',
+        /* A linha do limiar de um cartão (IDENTIDADE.md §11). A palavra é
+           derivada de dois números que já existem, e não é um número. */
+        limiar: 'limiar',
+        acima: 'acima',
+        abaixo: 'abaixo',
+        noLimiar: 'no limiar',
       },
 
       instr1: {
@@ -877,6 +883,10 @@ export const STRINGS = {
         eyebrow: 'The country in verified figures',
         h2: 'Measures from the European scoreboard',
         sub: 'The macroeconomic imbalance scoreboard and the European social scoreboard, with the thresholds the institutions publish.',
+        limiar: 'threshold',
+        acima: 'above',
+        abaixo: 'below',
+        noLimiar: 'at threshold',
       },
 
       instr1: {
