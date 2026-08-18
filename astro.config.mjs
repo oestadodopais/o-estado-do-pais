@@ -83,16 +83,44 @@ export default defineConfig({
         const path = pathFromUrl(item.url);
         // Sem barra final, excepto a raiz — igual ao canónico da página.
         item.url = new URL(path === '/' ? '/' : path, SITE_URL).href;
-        /* NÃO HÁ `lastmod`, e é decisão escrita.
+        /* NÃO HÁ `lastmod`, e é decisão escrita, agora com o modelo medido.
            Carimbar a data da construção seria dizer que 264 páginas mudaram
            hoje porque o sítio foi reconstruído hoje. Mas as datas que o sítio
            tem também não servem: `access_date` é quando a FONTE foi lida e a
            data de publicação de um estudo é quando o TRABALHO saiu — nenhuma
            delas é «quando esta página mudou». Uma página muda quando muda
            qualquer uma das suas entradas, incluindo os componentes que
-           partilha com as outras, e esse modelo não está construído. Enquanto
-           não estiver, o campo fica ausente: é o que o protocolo permite e é a
-           verdade. Ver DECISIONS §1.36, item 10, e §4. */
+           partilha com as outras.
+
+           O bloco T (T4) foi construir esse modelo e mediu-o antes de o
+           escrever. Três coisas, e cada uma sozinha chegava:
+
+           1. A CONSTRUÇÃO QUE PUBLICA NÃO TEM HISTÓRIA. O Vercel clona a
+              `--depth=10` por omissão, não é configurável e não há remoto de
+              onde puxar o resto (`git fetch --unshallow` não tem para onde
+              ir). Medido neste repositório a 18.08.2026, no dia mais movimentado
+              do bloco: dos 244 ficheiros de entrada versionados (src/,
+              ledger/claims/, public/, este ficheiro e o site.config), os
+              últimos 10 commits tocam em 66. Para os outros 178 o
+              `git log -1 -- <ficheiro>` de um clone assim devolve vazio: não há
+              data, e uma data que não há não se estima.
+           2. O MODELO HONESTO DÁ UMA DATA SÓ. Toda a página construída depende
+              de `src/i18n/strings.mjs`, de `src/styles/site.css` e do cabeçalho,
+              que traz a data da última reconferência do painel
+              (`src/data/verificacao.mjs`, reescrita a cada corrida semanal).
+              O `lastmod` de qualquer página passa a ser o commit mais recente
+              que tocou num desses — o mesmo para as 264. Um mapa do sítio com
+              264 endereços a dizer a mesma data diz exactamente o que diz não
+              ter campo nenhum.
+           3. UM MAPA COMETIDO SERIA ESTADO ESCRITO. Calcular fora da construção
+              e cometer um `src/data/lastmod.json` resolveria (1), e trocaria o
+              problema por outro que esta casa já recusou noutro sítio: uma
+              contagem escrita à mão fica errada no commit seguinte e ninguém dá
+              por isso (IDENTIDADE.md §10). O primeiro commit depois do mapa
+              deixa-o a mentir.
+
+           O campo fica ausente: é o que o protocolo permite e é a verdade.
+           Ver DECISIONS §1.36, item 10, §1.47 (T4) e §4.1. */
         // Pares hreflang PT<->EN, a partir da mesma tabela de rotas que as páginas usam.
         const alts = alternatesFor(path);
         if (alts) {
