@@ -110,6 +110,12 @@ faça, e não deve haver.
 construção, escrito pelo `gate:html`, servido nas duas edições e fora do mapa
 do sítio. É a porta da prova da regra da construção, no Método.
 
+`/livro-razao.csv`, `/livro-razao.json` e `/livro-razao/<id>.json` também não
+são páginas e também não estão na tabela nem no mapa do sítio: são o livro-razão
+como conjunto de dados, um só para as duas edições, e nenhuma página os liga
+enquanto a licença for decisão da direcção. Ver [«O livro-razão inteiro, como
+conjunto de dados»](#o-livro-razão-inteiro-como-conjunto-de-dados).
+
 Sem barra final, excepto a raiz. A saída é em directório
 (`/metodo/index.html`), e o canónico e o sitemap são normalizados para a mesma
 forma, sem barra — para não haver duas versões do mesmo endereço.
@@ -263,6 +269,33 @@ cada linha da convergência contra a afirmação que ela própria nomeia, e as
 ligações contra os ficheiros que existem. Não compara a saída com uma segunda
 chamada ao gerador: isso não provaria nada.
 
+## O livro-razão inteiro, como conjunto de dados
+
+Desde 18.08.2026 (`DECISIONS.md` §1.47, T4) a construção escreve mais três
+coisas, também geradas de `ledger/claims/` e nunca copiadas:
+
+| Endereço | O que traz |
+| --- | --- |
+| `/livro-razao.csv` | as 132 linhas, uma por registo, com cabeçalho. RFC 4180 inteiro: aspas duplicadas, fim de linha CRLF e **nenhuma linha de comentário**, ao contrário dos dois CSV acima |
+| `/livro-razao.json` | as mesmas linhas, com a estrutura que o CSV achata, e um bloco `_` que diz o que o ficheiro é |
+| `/livro-razao/<id>.json` | uma linha, 132 ficheiros |
+
+Os campos são os do formato menos `note`, e a lista não está escrita duas vezes:
+é `CAMPOS_PUBLICADOS` em [`src/lib/ledger.mjs`](src/lib/ledger.mjs). Todos os
+campos vão em todas as linhas, `null` ou célula vazia onde a linha não os tem.
+No CSV, uma coluna é um escalar ou é JSON. Gerados por
+[`src/lib/conjunto.mjs`](src/lib/conjunto.mjs); as duas edições servem-se dos
+mesmos ficheiros, porque isto são dados e não prosa.
+
+**A licença é decisão da direcção, e até ela existir nada se liga.** Uma
+constante, `LICENCA` em [`src/data/licenca.mjs`](src/data/licenca.mjs), a `null`
+por omissão: com `null` nenhuma página oferece estes ficheiros e o índice do
+livro-razão diz o estado; preenchida, o índice oferece o CSV e o JSON com a
+licença ao lado e cada página de linha ganha «Esta linha em JSON». Um só campo
+muda no dia da decisão. Os ficheiros são construídos nos dois estados, e o
+`check:dados` confere as duas metades: que batem certo com o livro-razão, e que
+**nenhuma página os liga** enquanto a licença não existir.
+
 ## Estrutura
 
 ```
@@ -296,11 +329,14 @@ scripts/
                           texto do Sobre, a porta para o Sobre em cada página, os
                           números marcados data-prova e as ligações internas; e
                           escreve dist/prova.json
-  check-dados.mjs         depois do build: os CSV existem e batem certo com as origens
+  check-dados.mjs         depois do build: os CSV e o conjunto de dados existem, batem
+                          certo com as origens, e o conjunto só se liga sob licença
   ortografia.mjs          a passagem da ortografia, nos dois sentidos (à mão, não no build)
 
 src/
   lib/ledger.mjs          carrega, valida e serve o livro-razão
+  lib/conjunto.mjs        o livro-razão como CSV e JSON descarregáveis
+  data/licenca.mjs        a licença do conjunto: null até a direcção decidir
   lib/prova.mjs           os números do sítio sobre si próprio, calculados na construção
   lib/routes.mjs          a tabela de rotas (navegação, hreflang, sitemap)
   lib/dados.mjs           gera os CSV descarregáveis a partir das mesmas origens
@@ -319,6 +355,8 @@ src/
   views/                  uma página lógica, as duas línguas
   pages/                  as rotas (duas linhas cada)
   pages/dados/            os CSV descarregáveis, servidos como endpoints
+  pages/livro-razao.*     o livro-razão como conjunto de dados (CSV e JSON), e
+  pages/livro-razao/[slug].json.js  um ficheiro por linha
   pages/**/documento/     o documento de um estudo, servido tal como está
   styles/                 tokens.css (tema de três estados) + site.css
 
