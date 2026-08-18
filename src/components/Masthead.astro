@@ -69,7 +69,7 @@ const painel = `${home}#numeros`;
 
 <header>
   <div class="topbar">
-    <nav class="nav" aria-label={s.nav.inicio}>
+    <nav class="nav" aria-label={s.nav.rotuloPrincipal}>
       <a href={home} aria-current={atual(home)}>{s.nav.inicio}</a>
       <a href={municipios} aria-current={atual(municipios)}>{s.nav.municipios}</a>
       <a href={estudos} aria-current={atual(estudos)}>{s.nav.estudos}</a>
@@ -78,7 +78,7 @@ const painel = `${home}#numeros`;
       <a href={metodo} aria-current={atual(metodo)}>{s.nav.metodo}</a>
       <a href={sobre} aria-current={atual(sobre)}>{s.nav.sobre}</a>
     </nav>
-    <nav class="nav" aria-label={s.outraLingua}>
+    <nav class="nav" aria-label={s.nav.rotuloIdioma}>
       <a class="lang" href={outra} hreflang={lang === 'pt' ? 'en' : 'pt-PT'} lang={lang === 'pt' ? 'en' : 'pt-PT'}>
         {s.outraLingua}
       </a>
