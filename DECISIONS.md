@@ -4542,6 +4542,337 @@ esta entrada pode fazer por elas.
 - **A leitura cruzada, a pré-visualização e a palavra da direção** são o que se
   segue, e não aconteceram neste bloco.
 
+### 1.44 A revisão cruzada da identidade v2
+
+**Afecta:** nenhum
+
+*(Este bloco corrigiu desenho, folha de estilos, gabaritos, uma linha do
+livro-razão e duas frases da prosa da primeira página, e não mudou uma palavra
+de nenhum dos textos governados: o Sobre, as dez regras do Método e os dois
+registos da agenda estão como estavam. Por isso a entrada não nomeia nenhum, e
+não traz linha `Texto:`.)*
+
+*Escreve-se no Acordo de 1990, pela mesma razão que a §1.43: é a continuação do
+bloco da v2 da constituição, e a v2 escreve-se na grafia que fixa. O que é
+citado fica com os caracteres que tem.*
+
+#### Como a leitura foi feita, e o que ela apanhou
+
+Um revisor de outra família de modelos (Codex), sem contexto do bloco, leu seis
+páginas construídas: a primeira página, uma linha do livro-razão com documento
+em PDF, a linha da dívida, o município de Évora, o Método e a agenda. Leu o HTML
+e as renderizações, em claro e em escuro, a 1280px e a 390px.
+
+Na cópia que lhe foi dada estavam **cinco estragos plantados**: um valor sem
+selo, um travessão, um segundo marcador de incerteza a par de `[a verificar]`,
+uma caixa de exemplo, e um limiar sem o motivo que o declara. **Apanhou os
+cinco.** É a quarta leitura cruzada desta constituição e a primeira sobre a v2;
+as três anteriores estão nas §1.41 e §1.42, e o total das quatro é de treze
+estragos plantados e treze apanhados.
+
+Das suas observações reais, mais duas do lugar de construção, saíram os onze
+itens abaixo. O que foi lido e mantido, com a razão, vem a seguir a eles.
+
+#### O que mudou
+
+**A · O mosaico deixa de aparar um valor.** A 1280px, na célula «Dívida total do
+município» de `/municipios/evora`, o valor `54 681 562` media 313,1px numa célula
+com 223,8px de conteúdo: via-se «54 681 5», e a descrição ia com ele, tapada pelo
+fundo da célula seguinte. Duas causas. A grelha interna de `.figura` não tinha
+colunas declaradas e a coluna implícita media-se pelo conteúdo mais largo; passa
+a `minmax(0, 1fr)`. E o separador dos milhares é o espaço fino inquebrável
+(U+202F), que faz de «54 681 562» uma só palavra para quem parte linhas; a letra
+passa a escalar com o comprimento do valor, por `--figura-car`, que o gabarito
+escreve a partir do valor publicado (`Claim.astro`, propriedade `escala`), e pela
+largura da célula em `cqw`. Partir dentro do número seria pior do que encolhê-lo:
+«54 681 5» e «62» em duas linhas lêem-se como dois números. Medido a 1280, 1100,
+900 e 640, na primeira página e no município: nenhum `.figura-num` excede a sua
+célula. A 1280 o valor longo passa de 313,1px para 213,8px de texto, com a letra
+a 35,5px em vez de 52px, e os outros sete ficam nos 52px. As oito células da
+primeira página têm valores de três a cinco caracteres e não mudam em largura
+nenhuma.
+
+**B · O selo escreve «fonte» também dentro de uma sobrancelha.** Na linha da
+medida do mosaico, que é uma sobrancelha em maiúsculas, o selo herdava o
+`text-transform` e rendia «PERCENTAGEM, TETO LEGAL = 150 ■ FONTE · 2024». O selo
+passa a declarar `text-transform: none`. O HTML não mudou: 463 selos escrevem
+«fonte» e 463 escrevem «source» nas páginas construídas, antes e depois.
+
+**C · O excerto que falta deixa de ter caixa.** A linha sem excerto desenhava um
+rectângulo a tracejado do tamanho de uma prova, com o marcador sozinho lá dentro
+e a frase do motivo por baixo, fora da caixa. A §6 diz que uma ausência nunca se
+desenha e que a língua é o marcador com o seu motivo e o caminho para a correção.
+Passa a uma linha: o marcador, e a seguir «O excerto textual desta linha ainda
+não foi transcrito da fonte.», que é a frase que já lá estava. Dois blocos
+abaixo, na mesma página, o endereço por confirmar já fazia o certo. As contagens
+não desceram, e foram medidas nas duas construções: `class="marcador"` 502 e 502,
+«[a verificar]» 602 e 602, e as 218 marcas `data-linha-campo="excerpt"` ficam nas
+mesmas 218.
+
+**D · Duas afirmações falsas na prosa da primeira página.** A descrição da
+posição de investimento internacional dizia «O que o país deve ao exterior menos
+o que tem a haver dele», que é passivo menos activo e daria +50,2; a medida é
+activo menos passivo e a linha publica −50,2. A frase dizia o contrário do número
+que estava por cima dela. Passa a uma definição com o sinal explicado: «O que o
+país tem a haver do exterior menos o que lhe deve: negativo quando deve mais do
+que tem a haver.» Em inglês, «What the country is owed from abroad minus what it
+owes abroad: negative when it owes more than it is owed.» Saem da mesma frase
+«É a medida com a maior distância ao limiar», falsa no mesmo ecrã (com os oito
+valores e os quatro limiares que a página publica, a dívida pública está 29,7
+pontos além dos 60 do seu limiar e esta está 15,2 além dos −35), e «a que mais
+tem melhorado», que é uma tendência sem série nenhuma neste sítio. **Nenhum
+valor, selo ou limiar mudou.** Não é um valor do livro-razão que estava errado, é
+prosa da casa: não há entrada no registo de correções, e o erro fica registado
+aqui, que é onde a prosa da casa se corrige.
+
+**E · Sai o colofão «Esta página».** A primeira página fechava com «Sem pedidos
+de rede», a lista das três famílias de letra e a regra do amarelo com o literal
+da cor. É comentário de implementação numa superfície pública, e o
+`BRIEF-confianca.md` §6.3 pede o contrário: mostrar em vez de declarar. Que a
+página não faz pedidos de rede prova-se abrindo-a. A secção sai inteira, com as
+duas citações que só ela rendia (`sem-pedidos-de-rede` e `regra-do-amarelo`: o
+portão exige que uma chave renderizada exista em `verbatim.mjs` e não o
+contrário, por isso uma entrada que ninguém rende não guardava nada) e com as
+três cadeias `estaPagina` das duas edições. A porta das correções vinha do
+colofão e volta ao rodapé pelo invólucro: a página deixa de passar
+`portaNoRodape={false}`, e o portão continua a ver exactamente uma porta por
+página.
+
+**F · O sumário de cabeçalhos do município deixa de saltar.** Ia de `h1` «Évora»
+para os oito `h3` das medidas, e o primeiro `h2` só aparecia depois, em «Leitura
+breve»: quem navega por cabeçalhos perdia a camada Relance inteira. «Relance»
+passa a `<h2 class="eyebrow">` com `id`, e a secção a `aria-labelledby`. O
+desenho não muda, e é medido e não visto: a 1280px a sobrancelha fica em x=94,0
+y=594,4 w=1092,0 h=17,6, com 11px, entrelinha 17,6px, espaçamento 1,76px e margem
+de topo 0, antes e depois, e a página continua com 7918px de altura; na edição
+inglesa, «At a glance», a mesma geometria. Varridas as 322 páginas construídas,
+sem este salto ficam só dois documentos de estudo alojados, que são obra
+publicada e conferida carácter a carácter contra a origem, e por isso não se lhes
+mexe (§1.36, item 1).
+
+**G · As fichas da régua já tinham `aria-pressed`, e a observação era falsa.** As
+seis fichas de região do instrumento n.º 1 declaram `aria-pressed="true|false"`
+no servidor e a passagem alterna-o em `public/js/convergencia.js` onde alterna
+`is-read`, desde `f2ed777`, que é anterior a este ramo. Conferido no HTML
+construído: as únicas fichas sem `aria-pressed` são as duas de acção, «Todas as
+regiões» e «Repor», que não são estados e onde o atributo estaria errado. Nada
+mudou. O que fica dito é o que a leitura não viu: `aria-pressed` segue a região
+estar **na régua**, e `is-read` segue a região **que está a ser lida**, que são
+dois estados diferentes, e o segundo não tem hoje equivalente para quem não vê.
+Vai para a §4.1 com o nome acessível dos selos.
+
+**H · As regiões de navegação passam a dizer o que são.** Chamavam-se «Início» ou
+«English»: quem percorre uma página por regiões ouvia «navegação Início» na barra
+de cima, «navegação Início» no rodapé, e na página de erro uma terceira igual.
+Quatro chaves novas em `nav`, oito cadeias nas duas edições: «Navegação
+principal» e «Main navigation», «Navegação do rodapé» e «Footer navigation»,
+«Idioma» e «Language», e «Por onde continuar» e «Where to continue» para as três
+portas da página de erro, que tinha o mesmo defeito e não estava na lista.
+Conferido no HTML construído: 154 páginas com «Navegação principal», 153 com
+«Main navigation», o mesmo par no rodapé, e nenhuma região com o nome de uma
+ligação.
+
+**I · A linha da água não faturada deixa de escrever a unidade duas vezes.** Era
+a única das 132 cujo `value` trazia o símbolo da unidade dentro: `value: "26,5%"`
+com `unit: "percentagem"`, e a página rendia «26,5% percentagem» no cabeçalho e
+no título da aba. Passa a `value: "26,5"` e `unit: "%"`, que é o par que as
+outras oito linhas de percentagem já usam. Antes de mexer: nenhuma outra página a
+cita, e ela não é das 70 linhas de origem externa que atravessam do motor, por
+isso não há prosa a escrever «<Claim/>%» que passasse a dobrar o sinal, nem nada
+do lado do motor a contradizer. O valor publicado é o mesmo: mudou onde o sinal
+está escrito. É um apontador e não uma medição, e por isso **não entra no registo
+de correções**, pela regra do silêncio da §1.36.
+
+E um limite que esta normalização pôs à vista, dito aqui para não voltar a ser
+descoberto: o título da aba e a descrição de uma página de linha juntam o valor e
+a unidade com um espaço (`tituloDaLinha` e `descricaoDaLinha`, em
+`src/lib/livro.mjs`), e por isso nove linhas de percentagem escrevem «6,1 %» ali,
+onde a §11 da constituição diz que a percentagem se escreve colada ao número. Já
+era assim em oito antes desta mudança e passou a nove; no cabeçalho da página não
+acontece, porque ali o valor e a unidade são duas peças do recibo, com a unidade
+em rótulo monoespaçado. A saída não é colar sempre, que daria «82índice (UE-27 =
+100)»: é distinguir uma unidade que é um símbolo de uma unidade que é uma
+palavra, e isso é uma decisão de redacção sobre as 132 linhas. Fica escrito e não
+fica corrigido aqui.
+
+**J · Um nó do mecanismo com dois valores tem lugar para os dois.** Dois nós
+levam dois valores cada um, o livro-razão («132 linhas» e «12 por confirmar») e a
+releitura («0 registadas» e «2026-08-17 reconferido a»). Com a caixa a 92 e o
+passo entre pares a 24, o segundo número subia por cima da legenda do primeiro:
+a página rendia «132» com «linhas» tapado por «12», e «0» com «registadas» tapado
+pela data, nas duas edições, nos dois temas, e também na versão que está no ar. O
+passo passa a 36, que é o que a subida de um número de 19px pede por cima da
+descida de uma legenda de 8,5px, e a caixa a 108, que é o que dois pares pedem
+com a mesma folga em cima e em baixo; os afastamentos entre as três filas ficam
+como estavam, 22 e 30, e a altura do desenho acompanha, de 350 para 398. Todas as
+setas são derivadas destas medidas e nenhuma foi escrita à mão, e o primeiro
+valor continua à mesma altura em todos os nós da fila. Conferido por renderização
+a 1280 e a 1024, em claro e em escuro, nas duas edições, e no HTML: as dez chaves
+`data-prova` desenhadas, as dez portas da legenda e os dez números continuam os
+mesmos, «14 70 132 12 23 120 5 0 2026-08-17 3».
+
+**K · A navegação ganha alvo de toque num apontador grosseiro.** O selo já sobe
+para 44px em ecrã de toque desde a §1.43; as ligações da barra e do rodapé, que
+são as primeiras que qualquer pessoa usa, ficaram nos cerca de 25px que a letra
+lhes dava. Passam a 44px dentro de `@media (pointer: coarse)`. A marca da página
+actual passa, dentro da mesma regra, de um fio no fundo da caixa a um sublinhado
+do texto: com a caixa a 44px o fio ficava a mais de dez pixels do que sublinha. Em
+cursor não muda nada, e isso é estrutural e não medido, porque a regra inteira
+está dentro da condição na folha construída. Medido do lado de lá, com a condição
+reescrita para `(pointer: fine)` numa cópia descartável do `dist`: as ligações
+passam de 25,6px para 44,0px de altura com as mesmas posições horizontais.
+**Uma renderização de Chrome não é um apontador grosseiro**, e nenhuma opção de
+linha de comandos o torna: `--touch-events=enabled` deixa `(pointer: coarse)` em
+falso. A emulação está dita como emulação.
+
+#### O que foi lido e mantido, com a razão
+
+- **A linha da dívida não tem excerto nem endereço**, e é uma das doze da dívida
+  de proveniência (§4.2, item 3), que é o bloco T. Está à vista, contada, e dita
+  na própria página com o marcador e o motivo.
+- **Nenhuma linha tem data de reconferência independente.** O campo
+  `verifications[]` não existe no formato: não há uma linha do livro-razão com
+  ele, e o que o conta no sítio conta-o defensivamente, contra um campo que
+  ninguém escreve. É o bloco T, e a página já o diz, com o marcador e a porta
+  para a regra da releitura no Método.
+- **Três vigilâncias estão «Em curso» com «Sem decisão da direção registada»**
+  enquanto o Método diz que é a direção que decide. Conferido no registo: os três
+  itens de tipo `vigilancia` têm `decidido_por` e `decidido_em` a nulo, e a
+  página rende a frase três vezes. O registo está honesto: a decisão é do
+  diretor, e é dele que se espera na pré-visualização. Fica nomeada como tal, e
+  não como defeito.
+- **O item concluído do município não tem critério**, por registo:
+  `evora-pagina-de-municipio` tem zero critérios e `concluido` como estado. O
+  registo diz o que tem; inventar-lhe um critério a posteriori seria escrever
+  história.
+- **Três contagens do sítio entram na primeira página como linhas seladas da
+  casa**: `municipios-com-estudo-aprofundado`, `municipios-sem-estudo-aprofundado`
+  e `estudos-evora-publicados`. É a decisão em pé da §1.41 e da §1.42, «duas
+  garantias legítimas»: têm linha, têm derivação escrita e têm selo, e trocá-las
+  por porta seria trocar uma garantia por outra sem ganhar nada. Não muda.
+- **«UE-27» e «Lei n.º 73/2013» passam o portão por motivo declarado**, e é a
+  lista de excepções que os cobre, cada um com a sua razão escrita:
+  `tokens`, `UE-27`, âmbito `any`, «Nome do agregado de referência da União
+  Europeia. É um nome, não um valor.»; e `tokens`, `73/2013`, âmbito `body`, «É o
+  NOME de uma lei, da mesma classe que "UE-27": não mede nada e não pode ser
+  escrito sem algarismos.» O artigo tem a sua própria entrada, `52.º`, pela mesma
+  razão. Nenhum é uma dispensa de medição: o limite legal e o índice contra ele
+  têm linha própria, ao lado.
+- **A redacção do Método sobre os números do sítio.** O Método escreve «Um número
+  chega ao leitor só se tem linha, e a linha diz de onde veio.» e «Ao lado de cada
+  número há um selo que abre a sua linha», e a §10 da constituição diz que uma
+  contagem do próprio sítio leva porta e não selo. As duas coisas convivem hoje
+  porque as contagens que aparecem com selo são linhas da casa a sério, mas a
+  frase, lida à letra, promete mais do que a regra dá. É texto governado: o corte
+  é da direção, e vai para a §4.1 como afinação de redacção para a leitura do
+  Método na pré-visualização.
+- **O mosaico não passa a tabela.** É a decisão da direção S: uma grelha de
+  células, cada uma um `<article>` com o seu cabeçalho e o seu selo, e não uma
+  matriz de linhas e colunas onde se compara medida com medida. Comparar oito
+  medidas que não são comparáveis é exactamente o que a §11 recusa.
+- **Os cartões da agenda levam todos os campos porque o portão os exige.** Não é
+  excesso de zelo do gabarito: a conferência dos textos governados exige o item
+  inteiro, cada critério dentro do seu próprio elemento e cada entrada de
+  histórico dentro do seu, e esvaziar um deixando a marca fecharia o portão.
+- **Os dois identificadores anteriores ao Acordo visíveis na agenda**
+  (`taxa-de-actividade-2025` e `taxa-de-cambio-efectiva-real-2025`) são
+  endereços, e não texto: a §1.40 fixou que um id é o nome de uma coisa e não
+  muda de grafia por a superfície ter mudado.
+- **O mapa tem travessia por teclado**, e está em `public/js/mapa.js`: o
+  invólucro leva `tabindex="0"`, o `keydown` responde às quatro setas e há um
+  `focus` que abre a leitura. A observação leu o HTML construído, onde não
+  aparece: quem a fez tinha razão no que viu e não no que concluiu.
+- **Os alvos de toque dos selos** já são 24px de altura mínima em cursor e 44px
+  num apontador grosseiro desde a §1.43. As renderizações não são apontadores
+  grosseiros, e por isso a medição de um e de outro faz-se como no ponto K.
+
+#### O que sai daqui para a §4.1
+
+**As afirmações da prosa da primeira página que nenhuma linha da página
+sustenta.** A frase da posição de investimento foi corrigida acima porque estava
+**errada**; estas não estão erradas, estão **por provar na página onde são
+lidas**, que é outra coisa e é trabalho do portão da prosa, fase 4. Ficam aqui
+com as palavras exactas, nas duas edições, para que a próxima leitura não as
+redescubra:
+
+| Célula | A afirmação | O que a página não tem |
+| --- | --- | --- |
+| Dívida pública | «e a descer» · «and falling» | Uma tendência. O sítio publica um valor de 2025 e nenhuma série. |
+| Preços da habitação | «O limiar foi ultrapassado em 2024 e o excesso quase duplicou no ano seguinte» · «The threshold was breached in 2024, and the overshoot nearly doubled the following year» | O valor de 2024, e portanto a comparação entre os dois anos. |
+| Taxa de emprego | «Está acima da média da União» · «It sits above the Union average» | A média da União. A célula não tem limiar nem comparação derivada. |
+| Crianças em creche | «É das medidas em que Portugal mais se destaca no painel social» · «It is one of the measures where Portugal stands out most on the social scoreboard» | As outras medidas do painel social contra as quais o superlativo se mede. |
+| Abandono escolar precoce | «Era mais de um terço no início do século» · «It was over a third at the turn of the century» | Um valor do início do século. |
+| Sobrecarga do custo da habitação | «Está abaixo da média europeia» · «It is below the European average» | A média europeia. |
+| Sobrecarga do custo da habitação | «a própria Comissão adverte que só se lê ao lado do regime de propriedade» · «the Commission itself warns it must be read alongside the tenure structure» | A citação da Comissão. É uma atribuição sem porta. |
+
+E uma de outra natureza, que fica dita por honestidade e não como tendência: o
+custo unitário do trabalho diz «A definição por hora é de 2024: antes media-se
+por pessoa empregada.» Não compara valores nem afirma um sentido, mas é uma
+afirmação sobre a metodologia da fonte que a página não sustenta em lado nenhum.
+
+**O nome acessível dos selos dentro de uma legenda de instrumento.** Na legenda
+do instrumento n.º 1 da primeira página há catorze selos e **três** nomes
+acessíveis distintos: seis dizem «Linha do livro-razão: calculado · Avaliação
+Económica Regional de Portugal 2026 fonte», seis dizem o mesmo sem «calculado», e
+dois dizem «Linha do livro-razão: calculado · Alentejo & Algarve — Economy,
+Society, Strategy fonte». Quem ouve a lista de ligações de uma página ouve
+catorze portas com três nomes. É um defeito real de acessibilidade e não é uma
+afinação: distingui-los obriga o texto oculto a levar a linha, e obriga a
+conferência (4) da conferência da `proveniencia` em `scripts/gate-html.mjs`, a
+que compara o texto inteiro do selo com `seloDaLinha(id, lang).inteiro`, a
+aprender a forma nova. É desenho de conferência, e por isso vai para a fase 4 com
+o portão da prosa e não para aqui.
+
+#### As duas réguas, antes e depois
+
+A régua dos defeitos (`scripts/medir-defeitos.mjs`) correu nas duas
+construções: o «antes» é `04a0133`, construído de propósito para esta comparação
+e não copiado da §1.43.
+
+| | Antes (`04a0133`) | Depois |
+| --- | --- | --- |
+| páginas construídas | 307 | 307 |
+| porta de correções | 307/307 | 307/307 |
+| primeira página: valores sem selo · selos para outra linha | 0 · 0 | 0 · 0 |
+| frases de moldura | 77 distintas · 2 617 ocorrências | **75 distintas · 2 593** |
+| `[descrição em preparação]` | 0 | 0 |
+| linhas com `#page=` | 23 de 132 | 23 de 132 |
+| localizadores internos | 0 | 0 |
+| `class="marcador"` | 502 | 502 |
+| «[a verificar]» | 602 | 602 |
+| `data-linha-campo="excerpt"` | 218 | 218 |
+
+**As duas frases de moldura a menos são as duas citações do colofão**, que
+apareciam nas duas edições da primeira página e em mais lado nenhum. As
+vinte e quatro ocorrências a menos são essas duas mais as cadeias do colofão que
+a régua contava, e a régua conta como moldura todo o bloco de trinta ou mais
+caracteres que se repita em mais do que uma página.
+
+E as conferências, todas verdes depois do último item: `npm run build`,
+`npm run typecheck`, `node scripts/ortografia.mjs --verificar`,
+`npm run check:cruzamento -- --with-origin` e `npm run ledger:check`.
+
+#### O que este bloco acrescentou e não tem amarra
+
+**Quatro chaves novas em `src/i18n/strings.mjs`**, oito cadeias nas duas
+edições: os quatro nomes das regiões de navegação (`rotuloPrincipal`,
+`rotuloRodape`, `rotuloIdioma`, `rotuloErro`). E **três saíram**, seis cadeias:
+as do colofão (`estaPagina.eyebrow`, `.rede`, `.tipos`). Nenhuma tem decisão
+registada que a governe, e é o item 9 da §4.2: a amarra governa `sobre.mjs` e
+`metodo.mjs`, e as cadeias de `strings.mjs` mudam sem que nada o note. Ficam
+contadas aqui, como as dezanove da §1.43.
+
+#### O que fica aberto
+
+- **A leitura cruzada aconteceu; a pré-visualização e a palavra da direção
+  não.** Continuam a ser o que se segue, e este ramo continua sem ser fundido.
+- **Os testes 1 e 3 do `BRIEF-confianca.md` §6.8 continuam a não passar**, e
+  continuam a não passar com desenho: são dados que o formato não tem, e são o
+  bloco T.
+- **O `gate:identidade` continua a não existir**, e as regras de folha de estilos
+  da §1 e da §2 continuam a segurar-se por atenção. É a fase 4, e é onde o portão
+  da prosa e o nome acessível dos selos também vão dar.
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
@@ -4977,6 +5308,26 @@ neste bloco.
 | --- | --- | --- |
 | `--rule-strong` sobre papel, nas fronteiras de caixa | 1,83:1 em claro e 1,78:1 em escuro, contra os 3:1 que a 1.4.11 pede a um objeto de interface. São **19 fronteiras** na folha. Três saíram deste par neste bloco, porque nenhuma delas era arrumação: o separador da prova de cada regra, o fio debaixo de cada `data-prova` e a aresta dos segmentos da banda dos mandatos, os três agora em `--muted`. | Uma fronteira de caixa é arrumação e não estado: quem não a vir não perde informação nenhuma, e é por isso que a régua a conta também como decoração, sem limiar. Subi-la a 3:1 mudaria o peso de fio de 19 sítios de uma vez, que é uma decisão de desenho e não uma correção. Fica para o juízo da direção na pré-visualização. |
 | A caixa de estado de `/estudos/<slug>` (`.placeholder`) | Um tracejado com fundo às riscas e uma etiqueta de estado («Rascunho · sem conteúdo», «Documento alojado · página por escrever»). A palavra `placeholder` **não** entrou na lista de estados de espécime que o portão recusa (§6), e foi decisão e não esquecimento. | O que a §6 proíbe é desenhar uma **ausência de dados** como espécime. Isto não é isso: é o estado editorial de uma página do arquivo, dito por palavras, sem prometer prova nenhuma e sem número por trás. Mas o vocabulário visual é o do espécime, e a v2 acabou de o proibir noutro sítio. Fica escrito para a direção decidir se a caixa muda de forma ou se o nome muda. |
+
+**Fase 4 · o que a revisão cruzada da v2 encontrou e não se fecha sem uma
+conferência nova** (18.08.2026, §1.44). Três, e os três são trabalho do
+`gate:identidade` e do portão da prosa, que ainda não existem como script.
+
+| Item | O que está por fazer | Porque não foi feito aqui |
+| --- | --- | --- |
+| As afirmações da prosa da primeira página que a página não sustenta | Sete afirmações em seis das oito células, nas duas edições, com as palavras exactas na tabela da §1.44: «e a descer», «o excesso quase duplicou no ano seguinte», «Está acima da média da União», «É das medidas em que Portugal mais se destaca no painel social», «Era mais de um terço no início do século», «Está abaixo da média europeia» e a advertência atribuída à Comissão sem porta. Mais uma de outra natureza, a mudança de definição do custo unitário do trabalho, que é uma afirmação sobre a metodologia da fonte. Nenhuma é falsa, e por isso nenhuma foi corrigida aqui; todas afirmam uma tendência, uma comparação ou uma atribuição que nenhuma linha **daquela página** prova. | Uma delas foi corrigida neste bloco, e foi a única que estava **errada** (a definição da posição de investimento, com o sinal ao contrário). Estas estão por provar, que é outra coisa: a saída é o portão da prosa, que aprende a exigir de uma frase da casa o mesmo que já exige de um algarismo, e isso é a fase 4. Apagá-las à mão agora deixaria a regra por escrever e a próxima frase a entrar pela mesma porta. |
+| O nome acessível de vários selos dentro da mesma legenda | Na legenda do instrumento n.º 1 há **catorze** selos e **três** nomes acessíveis distintos: seis «Linha do livro-razão: calculado · Avaliação Económica Regional de Portugal 2026 fonte», seis o mesmo sem «calculado», e dois de «Alentejo & Algarve». Quem ouve a lista de ligações ouve catorze portas com três nomes. | Distingui-los obriga o texto oculto de cada selo a levar a linha que ele abre, e obriga a conferência (4) da conferência da `proveniencia` em `scripts/gate-html.mjs`, a que compara o texto inteiro do selo com `seloDaLinha(id, lang).inteiro`, a aprender a forma nova. É desenho de conferência e não uma afinação de gabarito. |
+| O estado «lido» das fichas da régua não tem equivalente para quem não vê | `aria-pressed` segue a região estar **na régua** e `is-read` segue a região **que está a ser lida**. O segundo é só visual: o parágrafo da leitura breve só é região viva na região com que a página foi construída, e as outras trocam de `hidden` sem anunciar nada. | É comportamento de um instrumento com JavaScript, e a saída certa não é óbvia: ou a leitura breve passa a região viva única, ou o estado entra no nome da própria ficha. As duas mudam o que um leitor de ecrã ouve a cada toque, e isso é decisão de desenho. Encontrado ao conferir a observação da revisão sobre `aria-pressed`, que já estava feita (§1.44, G). |
+
+**Fase 1 · a redacção do Método sobre os números do próprio sítio** (18.08.2026,
+§1.44). O Método escreve «Um número chega ao leitor só se tem linha, e a linha
+diz de onde veio.» e «Ao lado de cada número há um selo que abre a sua linha», e
+a §10 da constituição diz que uma contagem do próprio sítio leva porta e não
+selo. Hoje as duas convivem porque as contagens que aparecem com selo são linhas
+da casa a sério, com derivação escrita. Mas a frase, lida à letra, promete mais
+do que a regra dá. **É texto governado**, e por isso não se afina aqui: vai para
+a leitura do Método pela direção na pré-visualização, junto com o que a §4.2,
+item 1, já lhe deixou.
 
 ### 4.2 O que continua aberto de antes, e não mudou neste bloco
 
