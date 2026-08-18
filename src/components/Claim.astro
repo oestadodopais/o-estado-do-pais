@@ -13,6 +13,11 @@
  *
  * Nunca escrever um número directamente num gabarito. É por isto que este
  * componente existe.
+ *
+ * `escala` — o elemento leva `--figura-car`, o comprimento do valor em
+ * caracteres, para a folha poder encolher a letra até o valor caber na sua
+ * célula. É derivado do valor publicado, nunca escrito à mão, e não muda um
+ * carácter do que rende: a célula do mosaico é a única que o pede.
  */
 import { getClaim } from '../lib/ledger.mjs';
 import Provenance from './Provenance.astro';
@@ -23,23 +28,28 @@ const {
   lang = 'pt',
   class: klass = '',
   as = 'span',
+  escala = false,
+  style,
   ...rest
 } = Astro.props;
 
 const claim = getClaim(id);
 const Tag = as;
+const estilo = escala
+  ? [`--figura-car:${[...String(claim.value)].length}`, style].filter(Boolean).join(';')
+  : style;
 ---
 
 {
   chip ? (
     <span class="claim claim-com-chip">
-      <Tag class:list={['claim-value', klass]} data-claim={id} {...rest}>
+      <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
         {claim.value}
       </Tag>
       <Provenance id={id} lang={lang} />
     </span>
   ) : (
-    <Tag class:list={['claim-value', klass]} data-claim={id} {...rest}>
+    <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
       {claim.value}
     </Tag>
   )

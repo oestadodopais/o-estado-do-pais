@@ -66,7 +66,7 @@ const cartoes = FIGURAS.map((f) => ({
       {
         cartoes.map((f) => (
           <article class="figura">
-            <Claim id={f.claim} class="figura-num" as="div" />
+            <Claim id={f.claim} class="figura-num" as="div" escala={true} />
             <h3 class="figura-nome">{f.nome[lang]}</h3>
             <p class="figura-medida"><Frase partes={f.medida[lang]} lang={lang} /></p>
             {f.limiar && (
