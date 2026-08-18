@@ -10,7 +10,9 @@ Live (`main` = `c75f4a1`, `verify:deploy` ✓): everything of Block V. Orthograp
 
 **Merged and live 2026-08-18** on the director's word: Codex read the built pages twice, context-starved, with five planted defects each time and caught 10 of 10 (its real findings closed in two fix rounds, `DECISIONS.md` §1.44); the branch went to a protected Vercel preview; `main` fast-forwarded to it and pushed; `verify:deploy` and the design bundle plus DesignSync run right after the merge (the seat records the outcome in the vault, §Ninth block). **Block T is next.**
 
-Still the director's, on the live site: cut `/metodo` (rules 1, 6, 9 and 10 have the weakest proofs and say so), correct the English of Sobre and Método if he wants, confirm or overrule the orthography default, read the housing question on `/agenda` (sealing it is the first act of the study).
+**Given on 2026-08-18, in conversation (`DECISIONS.md` §1.45):** the `/metodo` cut is «keep all ten rules, change two words» («número» → «medição» in the short reading and in rule 5, both editions, because the site's own `data-prova` counts carry doors and not seals, IDENTIDADE §10); the three watches are decided and stay under way, with the decision on the record; the housing question is read and its pre-registration is sealed (`core_sha256` `a52898c8638e`), which is the first act of the study.
+
+Still the director's, on the live site: correct the English of Sobre and Método if he wants, and confirm or overrule the orthography default.
 
 ## The rules that govern every block
 
@@ -104,6 +106,6 @@ Cost: 400k to 600k.
 ## The next session, in order
 
 1. Read the pickup files (vault Experiment note §Eighth block and Open → `DECISIONS.md` §1.38 to §1.42 and §4 → engine `NEXT.md` → this plan). §4 must be clean or written before a block starts.
-2. Take the director's cut of `/metodo` if given (apply on both editions; the `Afecta`/`Texto` tether needs a DECISIONS entry naming `metodo` with the new digest), and his word on the orthography (if «anterior»: rerun `scripts/ortografia.mjs --aplicar --sentido=anterior`, hand-review the listed one-way forms, flip `IDENTIDADE.md` §9, rebuild) and on the housing question (sealing the pre-registration is the first act of the study).
+2. ~~Take the director's cut of `/metodo` if given, and his word on the housing question.~~ **Both given and applied 2026-08-18 (§1.45).** Still open here: his word on the orthography (if «anterior»: rerun `scripts/ortografia.mjs --aplicar --sentido=anterior`, hand-review the listed one-way forms, flip `IDENTIDADE.md` §9, rebuild).
 3. Then decide with the director whether Phase 2 (design explorations) or Block T (the trust page) comes next; the housing study can begin in parallel with either.
 4. Standing from Block V's record (`DECISIONS.md` §4): the eight sources with no published calendar (re-check ERSAR); the reworded-correction duplication on re-export (engine V10's counterpart); calendar history; the two mechanisms for site counts (house rows vs `data-prova`); dead string keys; the five pre-Acordo forms left in the unpublished `note` field; the engine's failing health checks (`servers.pt_public_money` 8 of 19, `core.health_check` 1 of 5) seen by the sweep.
