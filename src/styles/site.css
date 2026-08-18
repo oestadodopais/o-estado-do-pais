@@ -1782,11 +1782,10 @@ a.src-chip.is-unverified:hover::before {
   color: var(--ink);
   overflow-wrap: anywhere;
 }
-.linha-excerto-vazio {
-  padding: 14px 18px;
-  border: 1px dashed var(--rule-strong);
-  background: var(--paper-2);
-}
+/* Não há regra para o excerto que falta, e é de propósito: uma ausência nunca
+   se desenha (IDENTIDADE §6). `.linha-excerto-vazio` era um rectângulo a
+   tracejado com o marcador sozinho lá dentro, do tamanho de uma prova que não
+   existe. O que ficou é o marcador com o seu motivo, numa `.linha-nota`. */
 
 .linha-derivacao {
   font-size: 15.5px;
