@@ -327,12 +327,12 @@ const metodoPath = routePath('metodo', lang);
         <dl class="mun-campos">
           <dt>{s.municipio.contasDivergenciaRegulador}</dt>
           <dd>
-            <Claim id={m.contas.reguladorAnterior} lang={lang} chip={true} /> €
+            <Claim id={m.contas.reguladorAnterior} lang={lang} chip={true} /> €{' · '}
             <span data-nonledger="data-de-referencia">{m.contas.refAnterior}</span>
           </dd>
           <dt>{s.municipio.contasDivergenciaMunicipio}</dt>
           <dd>
-            <Claim id={m.contas.municipioAnterior} lang={lang} chip={true} /> €
+            <Claim id={m.contas.municipioAnterior} lang={lang} chip={true} /> €{' · '}
             <span data-nonledger="data-de-referencia">{m.contas.refAnterior}</span>
           </dd>
           <dt>{s.municipio.contasDivergenciaDiferenca}</dt>
