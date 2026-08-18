@@ -44,9 +44,15 @@ import { caminhoDaLinha } from '../lib/livro.mjs';
 import { studyLabel } from '../data/studies.mjs';
 import { t } from '../i18n/strings.mjs';
 
-const { id, lang = 'pt' } = Astro.props;
+const { id, lang = 'pt', ancora = null } = Astro.props;
 const s = t(lang);
 const claim = getClaim(id);
+
+/* A porta. Quase sempre é a página da linha; na PRÓPRIA página da linha é uma
+   âncora para o bloco da prova, porque estar já na página certa não dispensa a
+   porta, dispensa a viagem (IDENTIDADE.md §5.3, v2). O portão resolve as duas
+   contra a mesma linha. */
+const porta = `${caminhoDaLinha(id, lang)}${ancora ?? ''}`;
 
 const derivada = eDerivada(claim);
 const incompleta = provenienciaIncompleta(claim);
@@ -59,7 +65,7 @@ const etiqueta = `${derivada ? `${s.prov.calculado} · ` : ''}${estudo}`;
 
 <a
   class:list={['src-chip', incompleta && 'is-unverified']}
-  href={caminhoDaLinha(id, lang)}
+  href={porta}
   data-nonledger="proveniencia"
   data-selo-etiqueta={etiqueta}
   title={etiqueta}

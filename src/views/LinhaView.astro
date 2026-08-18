@@ -5,13 +5,34 @@
  * É o destino do selo de proveniência. O Método promete, nas duas línguas, que
  * o selo é a porta para a linha; esta é a divisão do outro lado da porta.
  *
- * Disposição B do IDENTIDADE.md §3 — corpo a 68ch, coluna de aparelho a 300px:
+ * Disposição B do IDENTIDADE.md §3 — corpo a 68ch, coluna de aparelho a 300px.
  *
- *   corpo     a prova. O excerto tal como está guardado, a aritmética quando o
- *             valor é calculado, e a história das correções desta linha.
- *   aparelho  a ficha. Fonte, documento, edição, endereço, data de acesso, data
- *             dos dados, unidade, estudo, id — e o estado da proveniência, que
- *             é o que esta página não sabe.
+ * A ORDEM DO RECIBO (v2, IDENTIDADE.md §11; `design/DECISAO.md`). O corpo deixa
+ * de ser uma ficha sobre a prova e passa a ser a prova, pela ordem em que um
+ * leitor a confirma:
+ *
+ *   i    o valor, grande, COM O SEU PRÓPRIO SELO, a unidade e o id. O selo abre
+ *        o bloco da prova nesta mesma página: estar já na página certa não
+ *        dispensa a porta, dispensa a viagem (§5.3);
+ *   ii   uma frase de atribuição, em palavras e não em rótulos, composta só dos
+ *        campos que existem;
+ *   iii  a prova: a porta para a página exata do documento, quando o endereço a
+ *        fixa, e a transcrição — o excerto, ou o campo devolvido quando a fonte
+ *        é uma série;
+ *   iv   o pedido exato ou o endereço, quando não foi já a porta de (iii);
+ *   v    as verificações, em duas linhas: «Lido a», que a linha guarda, e
+ *        «Reconferido a», que ela ainda não guarda e que por isso leva o
+ *        marcador;
+ *   vi   as correções e atualizações desta linha.
+ *
+ * O QUE NÃO ESTÁ AQUI, E É DE PROPÓSITO. O recorte da linha impressa e o campo
+ * `verifications[]` não existem no formato: são o bloco T. Onde eles hão-de
+ * entrar não há caixa de exemplo nem espécime — há o marcador com a sua porta
+ * (IDENTIDADE.md §6 e §12).
+ *
+ *   aparelho  a ficha. Fonte, documento, edição, data de acesso, data dos
+ *             dados, estudo — e o estado da proveniência, que é o que esta
+ *             página não sabe.
  *
  * TODOS os campos vão marcados com data-linha-*: o portão confere cada um
  * contra o livro-razão, carácter a carácter. Nesta página quase tudo são
@@ -20,6 +41,7 @@
 import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
+import Provenance from '../components/Provenance.astro';
 import HistoricoDaLinha from '../components/HistoricoDaLinha.astro';
 import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import {
@@ -117,6 +139,43 @@ const ficha = [
  * o portão a conferir uma função contra ela própria.
  */
 const estudo = studyLabel(claim.study, lang);
+
+/**
+ * A FRASE DE ATRIBUIÇÃO (v2, §11 iii da ordem do recibo).
+ *
+ * «Publicado por *organismo*, em *documento* (*edição*), p. *N* · lido a
+ * *data*». É a mesma informação que a ficha do aparelho dá em campos, dita uma
+ * vez em palavras: a ficha é para quem cita, a frase é para quem lê.
+ *
+ * COMPÕE-SE SÓ DO QUE EXISTE. Uma linha calculada não tem organismo nem
+ * documento nem data de leitura, e não ganha frase nenhuma; uma linha sem
+ * edição não ganha parêntesis vazios. Cada peça é um `CampoDaLinha`, e por isso
+ * cada uma é conferida contra o livro-razão carácter a carácter — incluindo o
+ * marcador, quando o campo está por confirmar: «Publicado por [a verificar]» é
+ * o que a linha sabe, e é o que ela diz.
+ */
+const atribuicaoPecas = [
+  claim.source ? { k: s.livro.linha.publicadoPor, campo: 'source', valor: claim.source } : null,
+  claim.document?.title
+    ? { k: s.livro.linha.publicadoEm, campo: 'document.title', valor: claim.document.title }
+    : null,
+  claim.document?.edition
+    ? { k: null, campo: 'document.edition', valor: claim.document.edition, entreParenteses: true }
+    : null,
+  paginaDoPdf
+    ? { k: s.livro.linha.publicadoPagina, campo: 'source_url.page', valor: paginaDoPdf }
+    : null,
+  claim.access_date
+    ? { k: s.livro.linha.publicadoLido, campo: 'access_date', valor: claim.access_date, apos: true }
+    : null,
+].filter(Boolean);
+
+/* A porta do documento gasta-se uma vez. Quando o endereço fixa a página, ela é
+   o primeiro passo da prova; quando não fixa, é o pedido, e vai no seu bloco.
+   Duas âncoras para o mesmo endereço seriam o mesmo endereço escrito duas
+   vezes, e é o `href` desta que o portão confere contra `source_url`. */
+const portaNaProva = Boolean(url && paginaDoPdf);
+const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undefined && !portaNaProva;
 ---
 
 <Base
@@ -140,6 +199,13 @@ const estudo = studyLabel(claim.study, lang);
         originalPt={true}
       />
     </h1>
+    {/* O selo ao lado do valor de cabeça, na sua própria página. §5.3 não abre
+        exceção de página: a porta é uma âncora para o bloco da prova, aqui
+        mesmo. O quadrado desenha o estado desta linha, como em qualquer outro
+        sítio onde o valor apareça. */}
+    <p class="linha-selo">
+      <Provenance id={id} lang={lang} ancora="#prova" />
+    </p>
     <p class="linha-id">
       <code data-linha-claim={id} data-linha-campo="id">{claim.id}</code>
     </p>
@@ -148,10 +214,54 @@ const estudo = studyLabel(claim.study, lang);
   <div class="linha">
     <!-- ================================================= corpo: a prova -->
     <div class="linha-corpo">
-      <section class="linha-bloco" aria-labelledby="excerto">
-        <h2 class="linha-bloco-titulo" id="excerto">
+      {/* ---------------------------------------------------- ii · a frase */}
+      {
+        atribuicaoPecas.length > 0 && (
+          <p class="linha-atribuicao">
+            {atribuicaoPecas.map((peca, i) => (
+              <>
+                {i > 0 && (peca.apos ? ' · ' : peca.entreParenteses ? ' ' : ', ')}
+                {peca.k && `${peca.k} `}
+                {peca.entreParenteses && '('}
+                <CampoDaLinha id={id} campo={peca.campo} valor={peca.valor} lang={lang} />
+                {peca.entreParenteses && ')'}
+              </>
+            ))}
+          </p>
+        )
+      }
+
+      {/* --------------------------------------------------- iii · a prova */}
+      <section class="linha-bloco" aria-labelledby="prova-k" id="prova">
+        <h2 class="linha-bloco-titulo" id="prova-k">{s.livro.linha.provaK}</h2>
+
+        {
+          /* A porta para a página exata do documento. O rótulo e o endereço vão
+             DENTRO da mesma âncora, de propósito: o portão confere o `href`
+             desta âncora contra o campo `source_url`, e um endereço fora dela
+             deixaria de ser conferido (DECISIONS §2.3, limite 11). */
+          portaNaProva && (
+            <p class="linha-porta-documento">
+              <a class="ligacao-externa" href={url} rel="noopener noreferrer external">
+                <span class="linha-endereco-abrir">
+                  {s.prov.abrirNaPagina}{' '}
+                  <CampoDaLinha id={id} campo="source_url.page" valor={paginaDoPdf} lang={lang} />
+                </span>
+                <CampoDaLinha
+                  id={id}
+                  campo="source_url"
+                  valor={claim.source_url}
+                  lang={lang}
+                  class="linha-endereco-bruto"
+                />
+              </a>
+            </p>
+          )
+        }
+
+        <h3 class="linha-campo-k" id="excerto">
           {ehSerieDeDados ? s.prov.campoDevolvido : s.prov.excerto}
-        </h2>
+        </h3>
         {
           claim.excerpt === null ? (
             <p class="linha-nota">
@@ -214,6 +324,61 @@ const estudo = studyLabel(claim.study, lang);
         )
       }
 
+      {/* -------------------------------------- iv · o pedido ou o endereço */}
+      {
+        temBlocoDoPedido && (
+          <section class="linha-bloco" aria-labelledby="pedido">
+            <h2 class="linha-bloco-titulo" id="pedido">
+              {ehSerieDeDados ? s.prov.pedido : s.prov.endereco}
+            </h2>
+            <p class="linha-pedido">
+              {url ? (
+                /* Uma âncora só, como na prova: é o `href` dela que o portão
+                   confere contra `source_url`. */
+                <a class="ligacao-externa" href={url} rel="noopener noreferrer external">
+                  <CampoDaLinha id={id} campo="source_url" valor={claim.source_url} lang={lang} />
+                </a>
+              ) : (
+                <CampoDaLinha id={id} campo="source_url" valor={claim.source_url} lang={lang} />
+              )}
+            </p>
+          </section>
+        )
+      }
+
+      {/* ----------------------------------------------- v · as verificações
+
+          Duas linhas, e a segunda está vazia em todas as 132 linhas: nenhuma
+          reconferência independente está escrita no livro-razão, porque o campo
+          que a guardaria não existe no formato (bloco T; `BRIEF-confianca.md`
+          §6.8, testes 1 e 3). O lugar fica desenhado e não fica preenchido: o
+          marcador único, com a sua porta e com a regra do Método que diz o que
+          uma releitura é. Sem caixa de exemplo e sem espécime (IDENTIDADE §6).
+      */}
+      <section class="linha-bloco" aria-labelledby="verificacoes">
+        <h2 class="linha-bloco-titulo" id="verificacoes">{s.livro.linha.verificacoesK}</h2>
+        <dl class="linha-verificacoes">
+          {/* Uma linha sem data de leitura não é lida de lado nenhum: é
+              calculada, e a sua prova é a aritmética acima. A linha da tabela
+              não se rende vazia nem com a frase de outro campo. */}
+          {claim.access_date && (
+            <>
+              <dt>{s.prov.lido}</dt>
+              <dd>
+                <CampoDaLinha id={id} campo="access_date" valor={claim.access_date} lang={lang} />
+              </dd>
+            </>
+          )}
+          <dt>{s.livro.linha.reconferidoK}</dt>
+          <dd>
+            <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>{' '}
+            <a href={`${routePath('metodo', lang)}#releitura`}>
+              {s.livro.linha.releituraPorta} →
+            </a>
+          </dd>
+        </dl>
+      </section>
+
       <section class="linha-bloco" aria-labelledby="historico">
         <h2 class="linha-bloco-titulo" id="historico">{s.livro.linha.historicoK}</h2>
         <HistoricoDaLinha claim={claim} lang={lang} />
@@ -247,43 +412,10 @@ const estudo = studyLabel(claim.study, lang);
         <dt>{s.prov.estudo}</dt>
         <dd data-nonledger="titulo-de-estudo">{estudo}</dd>
 
-        {
-          claim.source_url !== null && claim.source_url !== undefined && (
-            <>
-              <dt>{ehSerieDeDados ? s.prov.pedido : s.prov.endereco}</dt>
-              <dd>
-                {url ? (
-                  /* O rótulo e o endereço vão DENTRO da mesma âncora, de
-                     propósito: o portão confere o `href` desta âncora contra o
-                     campo `source_url`, e um endereço fora dela deixaria de ser
-                     conferido. Ver DECISIONS §2.3, limite 11. */
-                  <a class="ligacao-externa" href={url} rel="noopener noreferrer external">
-                    {paginaDoPdf && (
-                      <span class="linha-endereco-abrir">
-                        {s.prov.abrirNaPagina}{' '}
-                        <CampoDaLinha
-                          id={id}
-                          campo="source_url.page"
-                          valor={paginaDoPdf}
-                          lang={lang}
-                        />
-                      </span>
-                    )}
-                    <CampoDaLinha
-                      id={id}
-                      campo="source_url"
-                      valor={claim.source_url}
-                      lang={lang}
-                      class={paginaDoPdf ? 'linha-endereco-bruto' : ''}
-                    />
-                  </a>
-                ) : (
-                  <CampoDaLinha id={id} campo="source_url" valor={claim.source_url} lang={lang} />
-                )}
-              </dd>
-            </>
-          )
-        }
+        {/* O endereço saiu daqui e vive no corpo: é prova, e não ficha. Vai
+            no bloco da prova quando fixa a página do documento, e no bloco do
+            pedido quando não fixa. Uma âncora só, e é o `href` dela que o
+            portão confere contra `source_url` (DECISIONS §2.3, limite 11). */}
         {
           atribuicao && (
             <>
