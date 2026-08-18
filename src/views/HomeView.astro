@@ -10,7 +10,8 @@ import Frase from '../components/Frase.astro';
 import InstrumentoConvergencia from '../components/InstrumentoConvergencia.astro';
 import InstrumentoMapa from '../components/InstrumentoMapa.astro';
 import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
-import { FIGURAS } from '../data/figuras.mjs';
+import { FIGURAS, comparacaoComOLimiar } from '../data/figuras.mjs';
+import { getClaim } from '../lib/ledger.mjs';
 import { VERBATIM } from '../data/verbatim.mjs';
 import { estadoDaVerificacao } from '../lib/prova.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -28,6 +29,20 @@ const path = routePath('home', lang);
  * deixar uma data parecer fresca.
  */
 const verificacao = estadoDaVerificacao();
+
+/**
+ * O painel, cartão a cartão (v2, IDENTIDADE.md §11).
+ *
+ * A comparação com o limiar calcula-se aqui, uma vez, e não dentro do gabarito:
+ * é prosa da casa gerada de dois números que já existem (o valor publicado da
+ * linha e o limiar publicado pelo quadro), e não um número novo. Quando um dos
+ * dois lados não é um número simples, `comparacaoComOLimiar` devolve `null` e a
+ * célula fica sem a palavra. Nunca com uma palavra inventada.
+ */
+const cartoes = FIGURAS.map((f) => ({
+  ...f,
+  comparacao: f.limiar ? comparacaoComOLimiar(getClaim(f.claim), f.limiar) : null,
+}));
 ---
 
 <Base
@@ -49,11 +64,27 @@ const verificacao = estadoDaVerificacao();
 
     <div class="figuras">
       {
-        FIGURAS.map((f) => (
+        cartoes.map((f) => (
           <article class="figura">
             <Claim id={f.claim} class="figura-num" as="div" />
             <h3 class="figura-nome">{f.nome[lang]}</h3>
             <p class="figura-medida"><Frase partes={f.medida[lang]} lang={lang} /></p>
+            {f.limiar && (
+              /* Uma linha mono, sem barra e sem distância. O limiar continua
+                 debaixo do motivo `limiar-do-quadro`, que é o que declara que
+                 aqueles algarismos não são uma linha do livro-razão; a palavra
+                 ao lado não tem algarismo nenhum. */
+              <p class="figura-limiar">
+                <span class="figura-limiar-k">{s.home.numeros.limiar}</span>{' '}
+                <span class="figura-limiar-v">
+                  {f.limiar.sinal ?? ''}
+                  <span data-nonledger="limiar-do-quadro">{f.limiar.nl}</span>%
+                </span>
+                {f.comparacao && (
+                  <span class="figura-limiar-palavra"> · {s.home.numeros[f.comparacao]}</span>
+                )}
+              </p>
+            )}
             <p class="figura-frase"><Frase partes={f.frase[lang]} lang={lang} /></p>
             <Provenance id={f.claim} lang={lang} />
           </article>
