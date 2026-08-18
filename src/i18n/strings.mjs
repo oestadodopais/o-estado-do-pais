@@ -78,8 +78,10 @@ export const STRINGS = {
       serie: 'Série',
       pedido: 'Pedido',
       campoDevolvido: 'Campo devolvido',
-      /* O rótulo da ligação quando o endereço fixa a página do PDF. */
-      abrirNaPagina: 'Abrir o documento na página',
+      /* O rótulo da ligação para a página exata do documento. O número vem de
+         `document.page`, que desde 18.08.2026 é a única origem da página: o
+         fragmento `#page=` do endereço deriva dela. */
+      abrirNaPagina: 'Abrir na página',
     },
 
     /**
@@ -768,7 +770,7 @@ export const STRINGS = {
       serie: 'Series',
       pedido: 'Request',
       campoDevolvido: 'Field returned',
-      abrirNaPagina: 'Open the document at page',
+      abrirNaPagina: 'Open at page',
     },
 
     rodape: {

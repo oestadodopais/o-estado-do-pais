@@ -656,6 +656,15 @@ const CAMPOS_DA_LINHA = new Set([
   'document.title',
   'document.edition',
   'document.locator',
+  /**
+   * A página do documento onde está a frase que o excerto transcreve.
+   *
+   * Desde 18.08.2026 é um campo do livro-razão e é a ÚNICA origem da página: o
+   * fragmento `#page=N` do endereço deriva dela, e o validador obriga as duas a
+   * bater. A porta da prova escreve-a; esta conferência compara o número
+   * renderizado com o campo, como compara qualquer outro.
+   */
+  'document.page',
   'source_url',
   /**
    * A página do PDF, tal como o próprio endereço a fixa (`…pdf#page=119`).
@@ -728,6 +737,10 @@ function campoDaLinha(claim, campo, lang) {
       return claim.document?.edition ?? null;
     case 'document.locator':
       return claim.document?.locator ?? null;
+    case 'document.page':
+      /* Inteiro no livro-razão, texto na página: comparam-se como texto, que é
+         o que o leitor vê. */
+      return claim.document?.page ?? null;
     case 'source_url.page': {
       /* A cópia local da regra — ver o comentário em CAMPOS_DA_LINHA. */
       const m = String(claim.source_url ?? '').match(/#page=(\d+)$/);
