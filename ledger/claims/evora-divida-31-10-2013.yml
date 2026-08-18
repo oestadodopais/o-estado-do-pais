@@ -26,7 +26,7 @@ access_date: "2026-08-10"
 reference_date: "2013-10-31"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "A 31/10/2013 82.871.522,82 Surgida e registada em 2014 e 3.203.586,28 anterior a Out/2013 Surgida e registada em 2015 e 1.607.661,40 anterior a Out/2013 Dívida Total no Início "
+excerpt: "A 31/10/2013 82.871.522,82 Surgida e registada em 2014 e 3.203.586,28 anterior a Out/2013 Surgida e registada em 2015 e 1.607.661,40 anterior a Out/2013 Dívida Total no Início"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
