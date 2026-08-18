@@ -68,8 +68,8 @@ export const ABERTURA = {
 
 /** A leitura breve do instrumento: uma frase, e mais nada (IDENTIDADE §4). */
 export const LEITURA_BREVE = {
-  pt: 'Um número chega ao leitor só se tem linha, e a linha diz de onde veio.',
-  en: 'A figure reaches the reader only if it has a row, and the row says where it came from.',
+  pt: 'Uma medição chega ao leitor só se tem linha, e a linha diz de onde veio.',
+  en: 'A measurement reaches the reader only if it has a row, and the row says where it came from.',
 };
 
 /** O marcador da casa, citado dentro da regra 5. */
@@ -250,12 +250,12 @@ export const REGRAS = [
     titulo: { pt: 'O selo', en: 'The seal' },
     regra: {
       pt: [
-        'Ao lado de cada número há um selo que abre a sua linha: cheio quando a origem está completa, a tracejado quando falta um campo. Um campo em falta escreve-se ',
+        'Ao lado de cada medição há um selo que abre a sua linha: cheio quando a origem está completa, a tracejado quando falta um campo. Um campo em falta escreve-se ',
         M.mencaoVerificar,
         '; a linha diz o que lhe falta e fica fora dos motores de busca até estar completa. Um valor que a fonte marca como provisório é dito por palavras.',
       ],
       en: [
-        'Beside every figure there is a seal that opens its row: filled when the origin is complete, dashed when a field is missing. A missing field is written ',
+        'Beside every measurement there is a seal that opens its row: filled when the origin is complete, dashed when a field is missing. A missing field is written ',
         M.mencaoVerificar,
         '; the row says what it lacks and stays out of search engines until it is complete. A value the source marks as provisional is said in words.',
       ],
