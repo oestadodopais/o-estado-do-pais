@@ -18,6 +18,15 @@
  * caracteres, para a folha poder encolher a letra até o valor caber na sua
  * célula. É derivado do valor publicado, nunca escrito à mão, e não muda um
  * carácter do que rende: a célula do mosaico é a única que o pede.
+ *
+ * `sufixo` — o símbolo da unidade, escrito COLADO ao valor e ANTES do selo.
+ * A §11 diz que a percentagem se escreve colada ao número; numa frase, o `%`
+ * vinha depois do selo e a prosa lia-se «96 ■ fonte % do orçamento», com a
+ * porta metida entre o número e a sua unidade. O símbolo fica FORA do elemento
+ * `data-claim`, que continua a conter exactamente o valor do livro-razão e mais
+ * nada, e DENTRO do mesmo invólucro do selo, que é onde `auditaSelo()` o
+ * procura. Só para símbolos que se colam: «euros» e «índice» são palavras e
+ * levam o espaço que a frase já lhes dá.
  */
 import { getClaim } from '../lib/ledger.mjs';
 import Provenance from './Provenance.astro';
@@ -29,6 +38,7 @@ const {
   class: klass = '',
   as = 'span',
   escala = false,
+  sufixo = '',
   style,
   ...rest
 } = Astro.props;
@@ -46,7 +56,15 @@ const estilo = escala
       <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
         {claim.value}
       </Tag>
+      {sufixo && <span class="claim-sufixo" set:text={sufixo} />}
       <Provenance id={id} lang={lang} />
+    </span>
+  ) : sufixo ? (
+    <span class="claim">
+      <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
+        {claim.value}
+      </Tag>
+      <span class="claim-sufixo" set:text={sufixo} />
     </span>
   ) : (
     <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>

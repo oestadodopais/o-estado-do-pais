@@ -360,6 +360,27 @@ section {
   gap: 4px 10px;
   white-space: normal;
 }
+/* O símbolo da unidade escrito ao pé do valor (§11: «26,5%», não «26,5 %»).
+   `.claim-com-chip` é um flex com 10px de intervalo entre o valor e o selo, e
+   um terceiro filho herdaria esse intervalo: o `%` ficaria a 10px do número.
+   A regra tira o intervalo e devolve-o ao selo, e vai presa a `:has()` para
+   que os selos sem sufixo fiquem exactamente como estavam, por construção.
+   Onde `:has()` não existir, o sufixo fica a 10px do valor, que é o que a
+   página já escrevia antes desta correcção. */
+.claim-com-chip:has(.claim-sufixo) {
+  column-gap: 0;
+}
+.claim-com-chip:has(.claim-sufixo) > .src-chip {
+  margin-inline-start: 10px;
+}
+.claim-sufixo {
+  font-family: var(--f-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
 .claim-value {
   font-family: var(--f-mono);
   font-variant-numeric: tabular-nums;
