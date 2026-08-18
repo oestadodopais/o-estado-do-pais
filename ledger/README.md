@@ -544,6 +544,67 @@ mistura detalhe de proveniência com recado para quem trabalha na linha
 («preencher antes de qualquer republicação»), e existe numa só língua. Ver
 DECISIONS §1.24.
 
+## O livro-razão inteiro, como conjunto de dados
+
+Uma página por linha serve quem quer conferir **uma** afirmação. Não serve quem
+quer contar, cruzar ou reproduzir o conjunto. Desde 18.08.2026 (bloco T, T4) a
+construção escreve também:
+
+| Endereço | O que é |
+| --- | --- |
+| `/livro-razao.csv` | todas as linhas, uma por registo, com cabeçalho |
+| `/livro-razao.json` | as mesmas linhas, com a estrutura que o CSV achata |
+| `/livro-razao/<id>.json` | uma linha |
+
+Os três são gerados de `ledger/claims/*.yml` a cada construção
+(`src/lib/conjunto.mjs`), e por isso não podem divergir do que as páginas
+mostram. **As duas edições servem-se dos mesmos ficheiros**: isto são dados e
+não prosa, e um segundo conjunto em inglês seria a mesma tabela com um endereço
+a mais para ficar fora de passo.
+
+**Os campos são os do formato menos `note`.** A lista não está escrita duas
+vezes: é `CAMPOS_PUBLICADOS` em `src/lib/ledger.mjs`, que é `CAMPOS` menos
+`CAMPOS_NAO_PUBLICADOS`. Um campo novo no formato aparece nos ficheiros sozinho.
+**Todos os campos vão em todas as linhas**, mesmo os que a linha não tem: `null`
+no JSON, célula vazia no CSV. Um conjunto cuja forma muda de registo para
+registo obriga quem o lê a adivinhá-la.
+
+**O `value` vai como foi publicado**, em formatação portuguesa, com a vírgula
+decimal, o espaço fino dos milhares e o sinal menos tipográfico onde os há. Não
+é convertido para número: é a prova documental.
+
+**O CSV não leva preâmbulo, e é uma decisão.** Os dois ficheiros de
+`/dados/*.csv` abrem com linhas de comentário `#`; este não. O RFC 4180 não
+define comentários, e um leitor estrito engole essas linhas como dados. Aqueles
+dois são a matéria de dois gráficos e chega-se lá pela legenda do gráfico; este
+existe para ser lido por quem não foi avisado das convenções da casa. Fim de
+linha CRLF e aspas duplicadas, como o RFC fixa. O que o preâmbulo diria está no
+`_` dos ficheiros JSON.
+
+**Uma coluna é um escalar, ou é JSON.** `document` desdobra-se em
+`document_title`, `document_edition`, `document_locator`, `document_page`,
+`document_kind` e `document_url`; tudo o que é lista ou mapa (`corrections`,
+`verifications`, `derived_from`, `attributed_to`, `document_crop`,
+`document_hosted`, `document_computed_over`) vai numa só coluna, com o seu JSON
+dentro da célula. A alternativa era desdobrá-los em colunas numeradas até um
+tecto, e um tecto perde dados no dia em que uma linha tiver mais correcções do
+que ele. Uma célula vazia é a ausência, sem distinguir `null` de lista vazia: o
+JSON distingue, para quem precisar.
+
+**A licença é decisão da direcção, e até ela existir nada se liga.** Uma
+constante, `LICENCA` em `src/data/licenca.mjs`, a `null` por omissão. Com `null`,
+nenhuma página oferece estes ficheiros e a página do livro-razão diz o estado
+(«conjunto de dados preparado; a licença aguarda decisão da direcção»), que é um
+estado desenhado e não o marcador: não falta aqui uma prova, falta uma decisão.
+Com ela preenchida, o índice oferece o CSV e o JSON com a licença ao lado e cada
+página de linha ganha «Esta linha em JSON». **Os ficheiros são construídos nos
+dois estados**, e diz-se porquê sem rodeios: um ficheiro servido num caminho que
+qualquer pessoa pode adivinhar está acessível, e chamar-lhe «não publicado» seria
+escolher a palavra que nos convém; o que a ausência de licença faz é o que pode
+fazer, que é não convidar ninguém a reutilizá-lo e não declarar termos que
+ninguém decidiu. Construí-los sempre é o que impede que o dia da decisão seja o
+dia de estreia de um caminho que nunca foi construído nem conferido.
+
 ## `[a verificar]`
 
 Um campo que não se conhece escreve-se `"[a verificar]"`. **Nunca um valor

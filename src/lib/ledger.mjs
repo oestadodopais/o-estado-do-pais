@@ -74,7 +74,17 @@ function escapaRegex(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-const CAMPOS = [
+/**
+ * Os campos de uma linha, e mais nenhum.
+ *
+ * Exportada desde 18.08.2026 (bloco T, T4) porque o conjunto de dados
+ * descarregável se compõe **desta** lista menos `CAMPOS_NAO_PUBLICADOS`, e não
+ * de uma segunda lista escrita ao lado. Um campo novo no formato entra no
+ * ficheiro descarregável sozinho, que é o que se quer: uma lista copiada é uma
+ * lista que fica para trás no dia em que o formato crescer, e o conjunto
+ * passaria a dizer menos do que o livro-razão sem que nada o notasse.
+ */
+export const CAMPOS = [
   'id',
   'value',
   'unit',
@@ -99,6 +109,20 @@ const CAMPOS = [
 ];
 
 /**
+ * O que o formato guarda e **não** publica.
+ *
+ * Uma lista, e é curta: `note` (`ledger/README.md`, «`note` não é publicada»;
+ * `DECISIONS.md` §1.24). Vive aqui, ao lado dos campos, porque é uma regra do
+ * formato e não de uma superfície: a página não a mostra, o conjunto de dados
+ * descarregável não a leva, e quem escrever a terceira superfície tira-a da
+ * mesma lista em vez de se lembrar dela.
+ */
+export const CAMPOS_NAO_PUBLICADOS = ['note'];
+
+/** Os campos publicados, na ordem do formato. */
+export const CAMPOS_PUBLICADOS = CAMPOS.filter((c) => !CAMPOS_NAO_PUBLICADOS.includes(c));
+
+/**
  * As chaves que o bloco `document` aceita, e mais nenhuma.
  *
  * Fechada pela mesma razão que a lista de cima: uma chave mal escrita
@@ -107,7 +131,7 @@ const CAMPOS = [
  * cara de campo preenchido. Antes de `locator` existir, este bloco não tinha
  * lista nenhuma: `title` e `edition` eram exigidos e o resto era ignorado.
  */
-const CAMPOS_DO_DOCUMENTO = [
+export const CAMPOS_DO_DOCUMENTO = [
   'title',
   'edition',
   'locator',

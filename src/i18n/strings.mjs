@@ -520,6 +520,16 @@ export const STRINGS = {
         'Só estão aqui os números que este sítio publica. Os números dentro dos documentos de estudo alojados aqui não estão no livro-razão: a proveniência deles é a do próprio documento, no dia em que foi publicado. O livro-razão também não é uma base de séries: guarda a leitura que citámos, não a série de onde ela saiu.',
       metodoLink: 'Como isto é feito',
 
+      /* O conjunto de dados (bloco T, T4). Com a licença por decidir, o bloco
+         diz o estado e não oferece ficheiro nenhum; com ela decidida, oferece
+         os dois e escreve a licença ao lado. Ver src/data/licenca.mjs. */
+      conjuntoK: 'O livro-razão como conjunto de dados',
+      conjuntoEstado: 'Conjunto de dados preparado; a licença aguarda decisão da direção.',
+      conjuntoV: 'Todas as linhas, com todos os campos publicados.',
+      conjuntoDescarregar: 'Descarregar o livro-razão',
+      conjuntoLicenca: 'Publicado sob',
+      conjuntoAtribuicao: 'Atribuição',
+
       linha: {
         eyebrow: 'Linha do livro-razão',
         aparelhoK: 'Proveniência',
@@ -554,6 +564,11 @@ export const STRINGS = {
         completaV: 'Completa.',
         marcadorLink: 'O que quer dizer este marcador',
         voltar: 'Voltar ao livro-razão',
+        /* A porta para os dados desta linha. Só existe com licença decidida:
+           sem ela não há bloco nenhum, porque uma ausência não se desenha
+           (IDENTIDADE.md §6). */
+        dadosK: 'Acesso aos dados',
+        linhaEmJson: 'Esta linha em JSON',
         /* O recibo, v2 (IDENTIDADE.md §11). A frase de atribuição compõe-se
            dos campos que existem; os que não existem não deixam buraco nem
            palavra a mais. */
@@ -1188,6 +1203,13 @@ export const STRINGS = {
         'Only the figures this site publishes are here. The figures inside the study documents hosted here are not in the ledger: their provenance is the document’s own, on the day it was published. Nor is the ledger a database of series: it holds the reading we cited, not the series it came from.',
       metodoLink: 'How this is made',
 
+      conjuntoK: 'The ledger as a dataset',
+      conjuntoEstado: 'Dataset prepared; the licence awaits the director’s decision.',
+      conjuntoV: 'Every row, with every published field.',
+      conjuntoDescarregar: 'Download the ledger',
+      conjuntoLicenca: 'Published under',
+      conjuntoAtribuicao: 'Attribution',
+
       linha: {
         eyebrow: 'Ledger row',
         aparelhoK: 'Provenance',
@@ -1216,6 +1238,8 @@ export const STRINGS = {
         completaV: 'Complete.',
         marcadorLink: 'What this marker means',
         voltar: 'Back to the ledger',
+        dadosK: 'Access to the data',
+        linhaEmJson: 'This row as JSON',
         provaK: 'Proof',
         publicadoPor: 'Published by',
         publicadoEm: 'in',
