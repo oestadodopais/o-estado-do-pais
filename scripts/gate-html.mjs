@@ -167,6 +167,8 @@ let recortesConferidos = 0;
 let alojadosConferidos = 0;
 /** Linhas calculadas sobre ficheiros que o sítio não aloja, conferidas. */
 let calculadosConferidos = 0;
+/** Páginas humanas de séries conferidas contra o campo da linha. */
+let paginasDeSerieConferidas = 0;
 /**
  * Cada `href` interno encontrado, com a página onde está e a base contra a
  * qual um endereço relativo se resolve.
@@ -702,6 +704,12 @@ const CAMPOS_DA_LINHA = new Set([
    */
   'document.computed_over.column',
   'document.computed_over.filter',
+  /**
+   * A página humana de uma série: a porta principal, antes do pedido exato.
+   * Como o `source_url`, o seu destino é seguido sem ser lido, e por isso o
+   * `href` da âncora que a embrulha é conferido contra o campo.
+   */
+  'document.url',
   'source_url',
   /**
    * A página do PDF, tal como o próprio endereço a fixa (`…pdf#page=119`).
@@ -877,6 +885,8 @@ function campoDaLinha(claim, campo, lang) {
       return claim.document?.hosted?.licence ?? null;
     case 'document.hosted.attribution':
       return claim.document?.hosted?.attribution ?? null;
+    case 'document.url':
+      return claim.document?.url ?? null;
     case 'document.computed_over.column':
       return claim.document?.computed_over?.column ?? null;
     case 'document.computed_over.filter':
@@ -2454,13 +2464,14 @@ for (const file of ficheirosHtml(DIST)) {
      * outro sítio seria uma mentira que nenhum outro varrimento apanha. É a
      * única excepção, e é estreita: só o href da âncora que embrulha o campo.
      */
-    if (campo === 'source_url') {
+    if (campo === 'source_url' || campo === 'document.url') {
       const ancora = el.parentNode?.rawTagName?.toLowerCase() === 'a' ? el.parentNode : null;
       const destino = ancora?.getAttribute('href') ?? null;
       if (destino !== null && decodeEntities(destino) !== String(esperado)) {
         err(
-          `o endereço de "${id}" está escrito como "${String(esperado).slice(0, 90)}" mas a ` +
-            `ligação aponta para "${decodeEntities(destino).slice(0, 90)}".`,
+          `o endereço de "${id}" (${campo}) está escrito como ` +
+            `"${String(esperado).slice(0, 90)}" mas a ligação aponta para ` +
+            `"${decodeEntities(destino).slice(0, 90)}".`,
         );
       }
     }
@@ -2648,6 +2659,25 @@ for (const file of ficheirosHtml(DIST)) {
       }
       alojadosConferidos++;
     }
+  }
+
+  /* --- a página humana de uma série, na página dessa linha (bloco T3) -------
+   *
+   * O campo existe para ser a porta principal. Uma linha que o tenha e não o
+   * mostre deixa o leitor com o pedido a uma API, que é o endereço de uma
+   * máquina, e foi por isso que o campo entrou no formato.
+   */
+  if (claimDaPagina) {
+    const humana = claimDaPagina.document?.url ?? null;
+    const rendida = camposRenderizados.has(`${claimDaPagina.id}:document.url`);
+    if (humana && !rendida) {
+      err(
+        `a linha "${claimDaPagina.id}" tem a página da série "${humana}" e a página não a ` +
+          `mostra.\n      É a porta principal desta linha: sem ela, o leitor fica com o ` +
+          `pedido a uma API.`,
+      );
+    }
+    if (humana) paginasDeSerieConferidas++;
   }
 
   /* --- os ficheiros de que a conta foi feita, e que o sítio não aloja -------
@@ -3880,6 +3910,7 @@ console.log(
       `${ancorasConferidas} âncoras) · ${recortesConferidos} recortes · ` +
       `${alojadosConferidos} ficheiros alojados · ` +
       `${calculadosConferidos} contas sobre ficheiros não alojados · ` +
+      `${paginasDeSerieConferidas} páginas de série · ` +
       `escrito em ${CAMINHO_DA_PROVA}`,
   ),
 );

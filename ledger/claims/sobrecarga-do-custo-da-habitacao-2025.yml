@@ -15,6 +15,7 @@ document:
   title: "Housing cost overburden rate"
   edition: "tespm140"
   kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/tespm140/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T"
 access_date: "2026-08-12"
 reference_date: "2025"

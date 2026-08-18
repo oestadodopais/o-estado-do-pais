@@ -15,6 +15,7 @@ document:
   title: "Current account balance - 3 year average"
   edition: "tipsbp10"
   kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/tipsbp10/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp10?format=JSON&lang=EN&geo=PT&unit=PC_GDP_3Y&partner=WRL_REST"
 access_date: "2026-08-12"
 reference_date: "2025"

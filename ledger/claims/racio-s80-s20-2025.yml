@@ -15,6 +15,7 @@ document:
   title: "Income quintile share ratio (S80/S20) by sex"
   edition: "tessi180"
   kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/tessi180/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi180?format=JSON&lang=EN&geo=PT&sex=T"
 access_date: "2026-08-12"
 reference_date: "2025"

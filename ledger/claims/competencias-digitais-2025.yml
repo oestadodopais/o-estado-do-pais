@@ -15,6 +15,7 @@ document:
   title: "Individuals who have basic or above basic overall digital skills by sex"
   edition: "tepsr_sp410"
   kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/tepsr_sp410/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tepsr_sp410?format=JSON&lang=EN&geo=PT&ind_type=IND_TOTAL"
 access_date: "2026-08-12"
 reference_date: "2025"
