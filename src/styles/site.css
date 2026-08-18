@@ -1817,7 +1817,7 @@ a.src-chip.is-unverified:hover::before {
    auto`, e por isso a largura mínima do item mais largo é a largura da pista.
    Uma cadeia que não parte deixava de transbordar de si própria e passava a
    levar a coluna inteira com ela, por cima do aparelho. Com isto, um bloco que
-   não parta transborda de si e mais nada — e é visto pela medição, que é
+   não parta transborda de si e mais nada, e continua visto pela medição, que é
    contra a caixa de cada elemento e não contra a página. */
 .linha-corpo > *,
 .municipio-corpo > * {
