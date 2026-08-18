@@ -212,7 +212,7 @@ for (const estado of ['claro', 'escuro-sistema']) {
     const largura = 30 + (etiqueta.length - nome.length - tipo.nome.length - 3);
     const cols = celulas
       .map((c) => {
-        if (!c) return cinza('—'.padEnd(22));
+        if (!c) return cinza('n/d'.padEnd(22));
         const n = c.r.toFixed(2).replace('.', ',') + ':1';
         if (tipo.limiar === 0) return cinza((n + '  ·').padEnd(22));
         const marca = c.passa ? '✓' : '✗';

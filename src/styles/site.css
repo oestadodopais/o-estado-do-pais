@@ -423,7 +423,7 @@ a.src-chip.is-unverified:hover::before {
 /* grelha de números verificados */
 /* O painel: 4 colunas, 2, 1 (IDENTIDADE.md §11, v2).
 
-   Era `auto-fit, minmax(258px, 1fr)`, que a certas larguras dá três colunas —
+   Era `auto-fit, minmax(258px, 1fr)`, que a certas larguras dá três colunas,
    e oito cartões em três colunas fazem uma última fila com dois, que é a
    aritmética que não fecha da §7. Quatro, dois e um dividem oito sempre. */
 .figuras {
