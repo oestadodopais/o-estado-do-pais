@@ -173,8 +173,8 @@ export const REGRAS = [
     id: 'livro-razao',
     titulo: { pt: 'O livro-razão', en: 'The ledger' },
     regra: {
-      pt: ['Uma linha por número, com essa origem. O livro-razão é público, linha a linha.'],
-      en: ['One row per figure, with that origin. The ledger is public, row by row.'],
+      pt: ['Uma linha por medição, com essa origem. O livro-razão é público, linha a linha.'],
+      en: ['One row per measurement, with that origin. The ledger is public, row by row.'],
     },
     mecanismo: {
       pt: [
