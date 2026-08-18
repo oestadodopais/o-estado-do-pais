@@ -5104,7 +5104,7 @@ As alíneas 3 e 5 são a §11 a ser cumprida onde não estava.
 ### 1.45 A direção decide as vigilâncias, sela a pergunta da habitação, e o Método diz «medição»
 
 **Afecta:** metodo · agenda
-**Texto:** metodo 67205ce6ebeb
+**Texto:** metodo 4df6de48cbb1
 **Agenda:** habitacao 2026-08-18 · dgal-endividamento-2025 2026-08-18 · evora-contas-2026 2026-08-18 · evora-contas-2024-pagina 2026-08-18
 
 *Este registo segue a grafia que §1.38 fixou.*
@@ -5138,9 +5138,9 @@ anterior, e é.
 Com `de` igual a `para`, a página escrevia «Em curso → Em curso». A seta anuncia
 uma mudança de estado, e ali não houve nenhuma. A página passa a ter três formas
 e não duas: a entrada, que não vem de estado nenhum, «passa a X»; a transição a
-sério, `X → Y`; e a entrada de mesmo estado, «mantém-se em X», «stays in X» na
-edição inglesa. A marca `data-agenda-transicao` não mudou, e continua a levar
-`de` e `para` crus do registo.
+sério, `X → Y`; e a entrada de mesmo estado, «estado mantido: X», «state
+unchanged: X» na edição inglesa. A marca `data-agenda-transicao` não mudou, e
+continua a levar `de` e `para` crus do registo.
 
 O portão ganhou a segunda frase na sua própria cópia dos rótulos, ao lado da
 primeira, pela razão de sempre: se lesse a cadeia do gabarito, confirmava o
@@ -5149,8 +5149,8 @@ gabarito. Não é conferência nova, é a mesma a conhecer as três formas.
 
 | Estrago | O portão |
 | --- | --- |
-| uma entrada de mesmo estado escrita «passa a» | fecha: «a entrada 1 do histórico de "dgal-endividamento-2025" escreve a transição "passa a Em curso" e o registo leva-a de "em_curso" a "em_curso", que se escreve "mantém-se em Em curso"» |
-| uma transição a sério escrita «mantém-se em» | fecha: «a entrada 2 do histórico de "habitacao" escreve a transição "mantém-se em Em curso" e o registo leva-a de "a_seguir" a "em_curso", que se escreve "A seguir → Em curso"» |
+| uma entrada de mesmo estado escrita «passa a» | fecha: «a entrada 1 do histórico de "dgal-endividamento-2025" escreve a transição "passa a Em curso" e o registo leva-a de "em_curso" a "em_curso", que se escreve "estado mantido: Em curso"» |
+| uma transição a sério escrita «estado mantido:» | fecha: «a entrada 2 do histórico de "habitacao" escreve a transição "estado mantido: Em curso" e o registo leva-a de "a_seguir" a "em_curso", que se escreve "A seguir → Em curso"» |
 
 O segundo estrago precisou de uma transição a sério, que o registo de hoje não
 tem: foram plantadas em `habitacao` duas entradas que a levam a `em_curso` e a
@@ -5200,7 +5200,7 @@ antes de isto sair, e não publicar com a data errada. Está feito assim:
 
 | Estrago | O que fecha |
 | --- | --- |
-| um registo selado sem `sealed_at` | o `core.prereg check` reporta-o: «sealed with no `sealed_at`», e a razão, «the seal has no date, and anything publishing it has to fall back on `registered`, which is a different day» |
+| um registo selado sem `sealed_at` | o `core.prereg check` reporta-o: «sealed with no `sealed_at`», e a razão, «the seal has no date, and anything publishing it has to fall back on `registered`, which may be a different day» |
 | um registo selado datado pelo dia do registo | o exportador fecha: «registo_previo_em is '2026-08-16' and the registration's `sealed_at` is '2026-08-18' (A10) ... Publishing one date under the other's label is a false date on a public page» |
 | a página a escrever «selado a» sobre um registo `iniciado` | o portão fecha, nas duas edições: «o item "habitacao" diz o registo prévio com "Registo prévio selado a 2026-08-18, por selar" e o estado "iniciado" escreve-se "Registo prévio iniciado a"» |
 
@@ -5230,18 +5230,75 @@ porta e não selo. As contagens `data-prova` da casa são números que chegam ao
 leitor sem selo nenhum, e por isso a frase, lida à letra, prometia mais do que a
 regra dá.
 
-A direção leu as dez regras e cortou duas palavras, e nada mais: «número» passa a
-«medição» na leitura breve do instrumento e na regra 5, nas duas edições. Uma
-medição é o que sai do livro-razão com a sua origem; uma contagem que o sítio faz
-de si próprio não é uma medição, e é por isso que leva porta. As duas frases
-passam a ser verdadeiras à letra. As outras ocorrências de «número» no Método
-ficam onde estão: falam do trabalho do motor e do varrimento, e não da promessa
-do selo.
+A direção leu as dez regras e cortou a palavra onde ela faz a promessa: «número»
+passa a «medição» na leitura breve do instrumento, na regra 3 («Uma linha por
+medição, com essa origem») e na regra 5, nas duas edições. Uma medição é o que
+sai do livro-razão com a sua origem; uma contagem que o sítio faz de si próprio
+não é uma medição, e é por isso que leva porta. As três frases passam a ser
+verdadeiras à letra.
+
+**Uma ocorrência fica, e fica por uma razão.** O limite da regra 5 diz «O selo
+prova que o número da página é o da linha», e ali «número» está certo: os
+algarismos que aparecem ao lado de um selo são, por construção, uma medição do
+livro-razão, e a frase fala desses e não da promessa. As restantes ocorrências no
+Método falam do trabalho do motor, do varrimento e do que a construção recusa, e
+não do que o leitor recebe.
+
+#### A leitura cruzada
+
+Um leitor de outra família (Codex, com o contexto cortado) leu os dois diffs e as
+páginas construídas, e devolveu «fundível depois destas correções». Onze pontos,
+todos fechados neste bloco, e um deles não era um defeito.
+
+**Do lado do motor.** A data do selo não podia continuar a ser um campo ao lado
+do selo: o `stamp-seal-date` tinha data por omissão, e hoje é o dia em que se
+reparou na falta e não o dia em que o selo foi feito, o que escreveria o primeiro
+pelo segundo justamente nos ficheiros para que o comando existe; a data passa a
+ser exigida, e quem sela lê o dia na história do repositório. A forma passa a ser
+conferida por padrão e por calendário, porque o `date.fromisoformat` aceita
+`20260818` desde o 3.11 e essa cadeia numa página imprimia-se como está. E o selo
+passa a estar **atado** à sua data por `seal_sha256`, que é o resumo de
+`core_sha256` com `sealed_at`: sem a atadura, mexer na data mudava o que a página
+imprime sem que nada reparasse, e a A10 confere-a na fronteira, antes de comparar
+datas, porque é ali que a data está prestes a ser publicada. O `freeze` e o
+`stamp` passam a escrever por um só escritor, com mudança de linha final, e a
+conferência do `stamp` julga o ficheiro que ele escreveu em vez de acreditar no
+que ele imprime sobre si próprio. As conferências do motor ficam em 25 e 46.
+
+**O ponto que não era um defeito.** A leitura disse que a dívida «selo sem data»
+disparava também num registo que nunca foi selado, por a cadeia não ter guarda. A
+cadeia é `if/elif` e o primeiro ramo devolve `core never sealed`, por isso o caso
+nunca chegava lá, e está verificado a correr. Fica na mesma uma conferência de
+controlo negativo, plantada: com o guarda retirado, a bateria fecha e diz «an
+unsealed registration was reported as an undated seal». Uma linha de dívida que
+dispara no ficheiro errado ensina a ignorar a lista, e é uma coisa que se prova,
+não se argumenta.
+
+**Do lado do sítio.** A leitura apanhou uma citação velha na constituição, que
+nenhuma conferência lê, e duas palavras que faltavam ao corte da direção: a regra
+3 prometia «Uma linha por número» com a mesma promessa da regra 5, e ficou
+«Uma linha por medição». A ocorrência que fica no limite da regra 5 fica dita
+acima, com a razão. E «mantém-se em Em curso» lia-se mal: o rótulo do estado já é
+um nome, e a preposição punha duas coisas a concordar que não concordam. Passa a
+«estado mantido: Em curso» e «state unchanged: Under way», com os dois estragos
+plantados outra vez contra a redação nova.
+
+**A redação, também.** Onde os comentários e esta entrada diziam que a data errada
+esteve publicada, passam a dizer o que aconteceu: foi renderizada na construção e
+corrigida antes de sair. Nada disto chegou ao ar.
 
 #### O que não mudou
 
-`IDENTIDADE.md` não mudou: nenhuma destas decisões torna falsa uma regra dela, e
-a §10 é a razão do corte e não a sua vítima. `src/data/sobre.mjs` não mudou, e
+`IDENTIDADE.md` mudou numa citação, e só nela. A §5 abria com *«O selo de
+proveniência junto a cada número é a porta para essa linha.»*, dado como o que o
+Método promete, e o Método já não diz isso: o bloco V reescreveu as dez regras e
+a citação ficou a citar uma frase que deixou de existir, sem que nada o notasse,
+porque nenhuma conferência lê a constituição. Passa a citar o que a regra 5 diz
+hoje, palavra por palavra: *«Ao lado de cada medição há um selo que abre a sua
+linha: cheio quando a origem está completa, a tracejado quando falta um campo.»*
+Os três pontos por baixo dela não mudam, porque era essa a promessa que eles já
+desdobravam. Nenhuma regra da constituição foi tornada falsa por este bloco, e a
+§10 é a razão do corte do Método e não a sua vítima. `src/data/sobre.mjs` não mudou, e
 por isso esta entrada não o nomeia. As outras nove regras do Método estão como
 estavam, palavra por palavra. `src/data/calendario.json` atravessou outra vez e
 não mudou um byte, e o registo da travessia só cresceu, que é o que a H4 exige.
