@@ -5966,6 +5966,11 @@ instantâneo de hoje não correu: o `_fetched_at` da vertical continua em
 2026-08-04. Nenhuma `atualizacao` foi escrita, e escrever uma sem a leitura que
 a justifica seria pior do que não a escrever. Fica aberto, e escrito.
 
+*(Este parágrafo e a tabela acima são o estado do T3, e ficam como registo do
+que ele tinha em disco. **A partir de 2026-08-18 as cinco linhas dizem o
+instantâneo de 2026-08-17**, com os resumos desse instantâneo: ver «A reextração
+do PRR», mais abaixo.)*
+
 **O endereço morreu duas vezes, e isso é um acontecimento.** O recurso
 `896a8911-c542-4e9c-941c-874a377dc5b3` que as cinco linhas citavam desde
 15.08.2026 devolve 404 na própria API de dados.gov.pt: o endereço «permanente»
@@ -6189,10 +6194,10 @@ milhares), o teste diz «mid-number: 'Total da receita 4 976' != 'Total da recei
 
 ##### O que fica aberto, e porquê
 
-- **O instantâneo do PRR não foi refeito.** A reextração contra o instantâneo de
-  hoje, que o BRIEF §2.4 (b) pede, não correu: a vertical 04 continua no
-  instantâneo de 2026-08-03, lido a 2026-08-04. Os cinco valores publicados são
-  os desse instantâneo e dizem-no. Enquanto não correr, não se sabe se mexeram.
+- ~~**O instantâneo do PRR não foi refeito.**~~ **Fechado a 2026-08-18 pelo
+  T3c**, e o que a reextração encontrou está na secção «A reextração do PRR», mais
+  abaixo: o instantâneo passou a ser o de 2026-08-17, três das cinco somas
+  mexeram e duas não, e cada valor que mexeu leva a sua `atualizacao` tipada.
 - **O ficheiro do PRR não se aloja, e espera a direção.** A licença do conjunto
   diz «não especificada» e os termos da plataforma dizem CC BY 4.0 «exceto se
   houver uma especificação em contrário». É uma questão jurídica, é da direção,
@@ -6220,6 +6225,230 @@ milhares), o teste diz «mid-number: 'Total da receita 4 976' != 'Total da recei
 - **As duas medidas que o T2 deixou** continuam onde estavam: as dimensões da
   imagem do recorte não existem em campo nenhum, e as 110 linhas sem recorte
   continuam a não ser dívida.
+
+##### A reextração do PRR
+
+*Estádio T3c, 18.08.2026. O único item do T3 que não estava feito: a reextração
+que o BRIEF §2.4 (b) pede, contra o instantâneo de hoje.*
+
+**O que a descoberta encontrou.** `fetch_prr.py` correu a partir da raiz do
+motor, com descoberta fresca no dados.gov.pt (`RESEARCHHUB_NO_CACHE=1` está
+dentro do próprio programa) e `2026-08-18T18:19:43+00:00` gravado nos ficheiros
+em bruto. A data de referência do instantâneo passou de **2026-08-03** para
+**2026-08-17**, que é a que o publicador escreve no nome do ficheiro de projetos.
+
+| Ficheiro, no nome que o publicador lhe dá | Antes | Agora |
+| --- | --- | --- |
+| entidades | `listagem-de-entidades-prr-20260803.xlsx` · `cc5eac3866217f1f…` · 44 331 540 bytes · 800 061 linhas | `listagem-de-entidades-prr-20260817.xlsx` · `0d5335642a26495d…` · 44 344 321 bytes · 800 577 linhas |
+| projetos | `listagem-de-projetos-prr-20260803.xlsx` · `0d2a911eaa584432…` · 41 026 368 bytes · 395 918 linhas | `listagem-de-projetos-prr-20260817.xlsx` · `c1e70941e96b55ee…` · 40 434 190 bytes · 396 103 linhas |
+| distribuição geográfica | `listagem-de-projetos-prr-por-distribuicao-geografica-260803.xlsx` · `d348cf3e0cbfe1fd…` · 24 634 139 bytes · 397 634 linhas | `listagem-de-projetos-prr-por-distribuicao-geografica-260817.xlsx` · `54191298386676ec…` · 24 513 010 bytes · 397 819 linhas |
+
+**Os três ficheiros não foram descarregados por esta corrida, e isso diz-se.** O
+índice SQLite do instantâneo de 2026-08-17 já estava em
+`~/.cache/researchhub/prr/2026-08-17/`, construído hoje às 15:50 locais por outra
+corrida, e o `ensure_index` do motor reutiliza um índice que já tem as suas três
+linhas de proveniência em vez de voltar a puxar 110 MB. Os resumos da tabela
+acima vêm dessa proveniência. Para não os dar por bons por estarem escritos,
+foram **recalculados** sobre os bytes dos três XLSX na cache HTTP, que os nomeia
+pelo resumo do pedido e não pelo do conteúdo: os três batem certo, algarismo a
+algarismo. A mesma outra corrida já tinha registado a observação no armazém às
+14:50:42 UTC, pelo que o `fetch_prr.py` desta sessão disse «observation already
+recorded for these exact bytes» e não duplicou a linha. A série do armazém vai em
+nove entradas, e a nona é, verbatim:
+
+> «PRR: Évora — €167,366,755.84 approved and €84,699,317.63 paid (50.61% executed)
+> across 2305 project locations (1445 on time, 222 late, 602 overdue, 36 not yet
+> due) as at snapshot 2026-08-17»
+
+**O que mexeu.** 57 dos 278 valores do livro-razão da vertical. Das sete linhas
+que atravessam para o sítio:
+
+| Linha do sítio | Antes | Agora | |
+| --- | --- | --- | --- |
+| `evora-prr-aprovado-2026` | 166 639 411,36 | **167 366 755,84** | mais 727 344,48 |
+| `evora-prr-pago-2026` | 83 912 476,83 | **84 699 317,63** | mais 786 840,80 |
+| `evora-prr-vencido-aprovado-2026` | 102 711 703,85 | **102 618 703,85** | menos 93 000,00 |
+| `evora-prr-municipio-contratado` | 12 069 012,6 | 12 069 012,6 | **não mexeu** |
+| `evora-prr-universidade-contratado` | 38 596 975,81 | 38 596 975,81 | **não mexeu** |
+| `evora-prr-execucao-2026` (derivada) | 50,36 | **50,61** | por `check` |
+| `evora-prr-vencido-quota-2026` (derivada) | 61,64 | **61,31** | por `check` |
+
+O `fetched_at` da vertical passou de `2026-08-04T11:44:29+00:00` para
+`2026-08-18T18:19:43+00:00` nas sete, e os excertos do motor passaram a nomear o
+instantâneo novo por dentro (`"valor_aprovado_atribuido_ao_concelho": 167366755.84`,
+e assim por diante).
+
+**Uma coisa mudou no excerto sem nenhum valor mudar.** No instantâneo de
+2026-08-17 o publicador escreve «UNIVERSIDADE DE ÉVORA» em maiúsculas onde no de
+2026-08-03 escrevia «Universidade de Évora». O valor contratado da universidade
+é o mesmo ao cêntimo, e o excerto que a linha publica muda na mesma, porque o
+excerto transcreve o que a fonte escreve. Não é nenhuma das três afinações de
+ponteiro da lista fechada do `ledger/README.md`, e por isso não fica só no git:
+fica uma `proveniencia` sobre `excerpt`, que é o único sítio onde um leitor pode
+ver porque é que o nome mudou de forma.
+
+**As entradas escritas, e nenhuma à mão.** Doze ao todo, todas datadas de
+2026-08-18 e todas compostas pelo exportador a partir do manifesto:
+
+| Natureza | Onde | Quantas | O que diz |
+| --- | --- | --- | --- |
+| `atualizacao` | as três somas que mexeram | 3 | o publicador substitui o ficheiro e não arquiva o anterior; a soma foi refeita sobre o instantâneo de 2026-08-17, nomeando o ficheiro (ou os dois, na do vencido aprovado), e a anterior era sobre o de 2026-08-03 |
+| `atualizacao` | as duas derivadas | 2 | de que duas linhas derivam, que as duas mexeram, e que a anterior era sobre o instantâneo de 2026-08-03 |
+| `proveniencia` sobre `source_url` | as cinco linhas de soma | 5 | o endereço datado que esta leitura usou é rotativo por desenho, e a linha continua a citar a página do conjunto, que é o endereço estável |
+| `proveniencia` sobre `excerpt` | a da universidade | 1 | a fonte passou a escrever o nome em maiúsculas |
+
+O passo novo de `source_url` era obrigatório e não decorativo: a cadeia da V9
+tem de **começar no endereço que o motor leu**, e esse endereço é outro em cada
+instantâneo. Sem ele o exportador recusava, e recusou, com a cadeia impressa a
+começar e a acabar no mesmo sítio. É o preço do formato, e é honesto: cada
+reextração torna a dizer que o endereço lido não é o endereço servido.
+
+**`computed_over` e `access_date` mexem nas cinco, e as duas que não mexeram de
+valor mexem na mesma.** A decisão, escrita porque o BRIEF a pediu escrita: uma
+releitura é uma leitura nova, e os cinco valores publicados são agora, todos
+eles, somas sobre os ficheiros de 2026-08-17. Dizer que o contratado do município
+foi calculado sobre o ficheiro de 2026-08-03, quando o que esta corrida somou foi
+o de 2026-08-17, seria a linha a dizer uma coisa que não fez. Por isso o
+`computed_over` (nome do ficheiro, data do instantâneo, resumo, bytes), o
+`access_date`, o `reference_date` e a `document.edition` seguem o instantâneo novo
+nas cinco. O instantâneo antigo não se perde: continua na série de observações do
+motor e no git dos dois lados. Nas duas linhas cujo valor não mexeu **não se
+escreve entrada nenhuma**: não houve correção, porque nada estava errado, nem
+atualização, porque o valor não mudou. O que aconteceu foi uma releitura, e a
+casa já tem campo para isso, que é o `access_date`; a forma mais forte de o dizer,
+`verifications[]`, exige um registo de **releitura cega por um agente
+independente** (V12), e uma corrida do próprio programa de aquisição da vertical
+não é isso. Inventar-lhe um tipo de acontecimento seria inventar um aparelho.
+
+**A V16, que é a conferência que faltava.** Tudo o resto no exportador prova que
+o número que ele escreve veio do motor. Faltava a outra metade: que o número que
+ele **substitui** não desaparece sem registo. Até hoje nada o provava. Uma
+reexportação de uma linha cujo valor do motor tinha mexido reescrevia o ficheiro
+do sítio com o número novo, o registo de travessia concordava com os bytes novos,
+os portões dos dois lados ficavam verdes, e a página passava a dizer um número
+que nunca tinha dito sem nada na página dizer que tinha mudado. É a falha que o
+formato das correções existe para impedir, e estava aberta na única superfície
+onde um valor muda sem ninguém do lado do sítio decidir nada.
+
+A regra: uma linha cruzada cujo valor exportado difere do valor que a linha do
+sítio publica em disco tem de trazer, no manifesto desta corrida, uma entrada
+`correcao` ou `atualizacao` cujo `new_value` é o valor novo e cujo `old_value` é
+o valor que está em disco. Entra também o segundo sentinela, **`__valor_anterior__`**,
+pelo mesmo argumento que o primeiro: o manifesto não guarda números. O
+`__valor__` resolve-se do valor que a corrida exporta e o `__valor_anterior__`
+resolve-se **do ficheiro em disco**, e é assim que as entradas desta reextração
+foram escritas. Um literal também é aceite, e responde à mesma prova: se não for
+o valor que está em disco, a corrida recusa. Depois de escrito, o
+`__valor_anterior__` resolve-se da entrada que o sítio já publica para o mesmo
+acontecimento, ou uma reexportação leria «X → X», não reconheceria o
+acontecimento que ela própria escreveu, e acrescentaria outra cópia a cada
+corrida, que é o defeito que o primeiro sentinela já teve uma vez. Provado a
+correr: a segunda corrida do exportador diz «0 nova(s) · 0 alterada(s) · 70
+inalterada(s) · registo inalterado».
+
+A recusa, tal como saiu sobre a linha do aprovado antes de a entrada existir:
+
+```
+evora-prr-aprovado-2026: this run exports '167 366 755,84' and the site's row
+publishes '166 639 411,36'. A crossed row whose value moves carries a typed
+`correcao` or `atualizacao` saying so, with `old_value` the value on disk and
+`new_value` the value this run exports. Without one the number changes on the
+page and nothing on the page says it changed.
+      on disk:  166 639 411,36   (snapshot 2026-08-03)
+      this run: 167 366 755,84   (snapshot 2026-08-17)
+```
+
+Quatro estragos plantados em `export_site_rows_test.py`, que passa de **63 para
+67** conferências. O valor do motor é mexido pelo excerto de onde a V2 o lê, e o
+`source_form` e o `excerpt_override` do manifesto com ele, senão a V2 e a V3
+recusavam primeiro e isto seria o teste da conferência errada.
+
+| Estrago | O exportador |
+| --- | --- |
+| um valor do motor que mexeu, sem entrada nenhuma | recusa, com a frase acima |
+| o mesmo valor com uma `atualizacao` bem formada | **passa**, e os dois sentinelas resolvem, um do motor e outro do disco |
+| uma entrada cujo `old_value` está a um algarismo do valor que está em disco | recusa, com a mesma frase |
+| `__valor_anterior__` numa linha cujo valor não mexeu e sem nada publicado que registe tal movimento | «there is no earlier value for it to mean» |
+
+Os dois primeiros foram provados a desligar a V16 no lugar: com ela desligada, o
+teste diz «a value that moved with nothing recording it: the exporter accepted
+it» e «a value that moved with an old_value that is not the value on disk: the
+exporter accepted it». A V16 foi reposta e o ficheiro conferido byte a byte
+contra a cópia de antes.
+
+**O que a reconstrução da vertical obrigou a fazer, e não estava previsto.** O
+livro-razão do motor e as quatro edições do estudo 04 são uma coisa só debaixo do
+portão do motor: mover o livro-razão para um instantâneo novo sem mover as
+edições deixou **45 números órfãos** nas quatro, que é o portão a fazer o que
+existe para fazer. As edições foram regeneradas pelo caminho da própria vertical
+(`build_doc.py`, `make_pt.py`, `make_html.py`), que é mecânico por construção: o
+modelo do documento não tem um único algarismo, todos são `{{id-da-linha}}`
+resolvidos do livro-razão, e a edição pt-PT falha ruidosamente em cada bloco cujo
+texto inglês mexeu, como foi feita para falhar. **Isto não republica nada**: o
+que o sítio serve são os bytes fixados em `studies-src/`, com o seu resumo e o
+commit de onde saíram, e continuam onde estavam.
+
+Três defeitos que só apareceram porque a reconstrução correu, e nenhum deles é do
+instantâneo:
+
+1. **`build_ledger.py` não reproduzia o seu próprio ficheiro.** As dezoito
+   citações em português das asserções, os seis `assertion_ignores` da edição
+   pt-PT e uma asserção inteira (`tc-floor-below-truth`) tinham sido escritos à
+   mão no `ledger.json` quando o par pt-PT foi construído, a 04.08.2026. A
+   primeira reconstrução desde então apagava-os, e as duas edições portuguesas
+   deixavam de ser conferidas **sem nada ficar vermelho**, porque uma asserção
+   que ninguém cita é uma asserção que ninguém mede. Entraram no construtor, cada
+   cadeia conferida contra a edição pt-PT antes de ser escrita.
+2. **A atribuição do «25» do INE passava por coincidência.** O portão das
+   atribuições junta os créditos por valor, e a contagem de localizações vencidas
+   do componente C03 calhava ser 25 também. Com ela em 24, o «25» da nota de
+   rodapé sobre a vintage NUTS ficou sozinho ao pé do nome do PRR e o portão
+   marcou-o. A contagem é do INE e o crédito do INE fica em primeiro; o do PRR
+   fica ao lado, que é a resolução que o próprio módulo escreve para um falso
+   positivo de proximidade. Uma coincidência não é uma conferência.
+3. **A ficha do documento dizia que tudo tinha sido lido a 2026-08-04.** Deixou
+   de ser verdade no momento em que o registo do PRR foi relido. Passa a dizer
+   também que esse registo foi relido a 2026-08-18.
+
+**As contagens, antes e depois.**
+
+| | Depois do T3 | Depois do T3c |
+| --- | --- | --- |
+| conferências do `export_site_rows_test` | 63 | **67** |
+| linhas cruzadas com valor mexido | 0 | **5** (3 somas e 2 derivadas) |
+| entradas `atualizacao` nas linhas do PRR | 0 | **5** |
+| entradas `proveniencia` nas linhas do PRR | 10 | **16** |
+| instantâneo que as cinco linhas nomeiam | 2026-08-03 | **2026-08-17** |
+| `class="marcador"` nas páginas construídas | 358 | 358 |
+| «[a verificar]» nas páginas construídas | 458 | 458 |
+| páginas construídas | 307 | 307 |
+
+Os dois marcadores não mexem, e é o que se espera: o excerto das três somas
+continua `[a verificar]` e a dívida continua contada, porque o ficheiro do PRR
+continua sem se poder alojar. As frases de moldura passaram de 2 371 para 2 367
+ocorrências, com as mesmas 77 distintas, e a diferença não é deste estádio: entre
+as duas medições entrou no ramo o commit da agenda de outro construtor.
+
+**O que fica aberto.**
+
+- **A licença, que é da direção**, e com ela o alojamento do ficheiro do PRR. Nada
+  disto mexeu: o excerto das três somas continua `[a verificar]`, o
+  `document.computed_over` continua a ser registo e não prova, e a §4.1 continua a
+  dizer que o alojamento espera a decisão.
+- **A cópia do estudo 04 que o sítio serve é a do instantâneo de 2026-08-03.** As
+  edições do motor foram regeneradas; os bytes fixados em `studies-src/` não, e
+  não é matéria de construção: é a mesma decisão de publicação que o T3 já deixou
+  escrita para os documentos do 07 e do 08. Enquanto não for tomada, a página do
+  estudo diz os números de um instantâneo e a linha do livro-razão diz os de
+  outro, cada uma com a sua data à vista e a história da linha a dizer o que
+  mudou.
+- **Não há `verifications[]` para esta releitura**, e não é esquecimento: o
+  aparelho que existe é para uma releitura cega por um agente independente, e uma
+  corrida do programa de aquisição da própria vertical não é isso.
+- **A cadeia de `proveniencia` sobre `source_url` cresce a cada reextração.** É o
+  preço de uma fonte que serve um endereço novo por instantâneo e não arquiva
+  nenhum. Se a lista se tornar longa ao ponto de afogar as correções a sério, a
+  resposta é de formato e não de conteúdo, e ainda não é hoje.
 
 #### T4 · o conjunto de dados, o `lastmod`, o portão e os registos
 
@@ -6647,7 +6876,7 @@ onde a página da linha passa a ser a prova, e não uma ficha sobre a prova.
 | `document.kind` | Hoje a página da linha decide pelo padrão do endereço se uma fonte é uma série de dados ou um documento (§1.36, item 7). Funciona para as 57 linhas de hoje e é uma heurística. | O campo pertence ao redesenho, onde há mais do que duas classes a distinguir (PDF, página, série, registo, ficheiro alojado). |
 | `lastmod` no mapa do sítio | O campo não existe. Pô-lo a partir das datas que o sítio tem seria pôr uma data errada: nenhuma delas é «quando esta página mudou». | Precisa de um modelo de alteração por página — o git sobre o **conjunto completo** de entradas de cada página, componentes partilhados incluídos. É construção, e pertence ao redesenho. |
 | O extractor de citações do motor corta a meio | 15 excertos cruzados estavam cortados a meio de palavra ou de número; 12 puderam ser aparados no último ponto final, 3 **não** (`evora-execucao-da-receita-2025`, `evora-orcamento-2025`, `evora-pael-emprestimo`), porque o valor da linha aparece depois desse ponto. | O corte é do lado do motor, a uma largura fixa. Alargá-lo muda excertos de estudos já publicados e conferidos byte a byte; é trabalho do motor, não do sítio. |
-| O PRR: o instantâneo lido já não é servido | As cinco linhas do PRR foram somadas sobre o ficheiro de 2026-08-03, que devolve 404. O publicador substitui o ficheiro todos os dias e não arquiva o anterior. **Se os valores de Évora mudaram entre esse instantâneo e o de hoje é coisa que não se pode saber.** | Refazer a soma sobre o ficheiro de hoje é uma leitura nova, com data nova, e muda cinco valores publicados. É trabalho de aquisição no motor, com o seu registo de actualização — não um remendo de endereço. |
+| ~~O PRR: o instantâneo lido já não é servido~~ | **Fechado a 18.08.2026 pelo T3c** (§1.47, «A reextração do PRR»). A reextração correu no motor contra o instantâneo de hoje, que é o de 2026-08-17: três das cinco somas mexeram e duas não, e cada valor que mexeu atravessou com uma `atualizacao` tipada. O que faltava não era o caminho de aquisição: era a **V16** do exportador, sem a qual um valor podia mexer e ser reescrito sem registo nenhum. | Fica o alojamento, que é outra linha desta tabela e espera a decisão da direção sobre a licença; e fica a cópia do estudo 04 que o sítio serve, que é a do instantâneo de 2026-08-03 e cuja republicação é decisão de publicação, como a dos documentos do 07 e do 08. |
 | A linha do INE que não se conseguiu medir | O `json_indicador` do INE serviu o primeiro pedido e depois devolveu 429 e esgotou o tempo em três tentativas. Não se consegue separar o INE a limitar a nossa sondagem de um bloqueio a quem lê. | Fica **por medir**, e não como defeito. Mede-se com um pedido isolado, noutro dia. |
 
 **O alojamento do instantâneo do PRR espera uma decisão da direção sobre a
@@ -6665,9 +6894,12 @@ ela ser respondida não se redistribui nada, as três somas ficam com
 `[a verificar]` e contam para a dívida, e o que a linha diz é sobre que ficheiros
 foi calculada, com a data do instantâneo e o resumo de cada um
 (`document.computed_over`), que é registo e não prova. **A reextração do PRR
-contra o instantâneo de hoje também não correu**: a vertical 04 continua no
-instantâneo de 2026-08-03, e enquanto não correr não se sabe se os cinco valores
-mexeram.
+contra o instantâneo de hoje correu no T3c, a 18.08.2026**: o instantâneo passou
+a ser o de 2026-08-17, três das cinco somas mexeram, as duas linhas derivadas
+seguiram por `check`, e cada valor que mexeu atravessou com a sua `atualizacao`
+tipada, sob uma conferência nova do exportador (V16) que recusa uma travessia em
+que um valor mexa sem entrada que o diga. O alojamento continua a ser o que
+espera a direção, e as três somas continuam com `[a verificar]`.
 
 **Fase 1 e 2 · a voz e o desenho.** Nada disto é defeito; é matéria por decidir,
 e por isso não foi tocada neste bloco.
