@@ -15,7 +15,8 @@
  *        o bloco da prova nesta mesma página: estar já na página certa não
  *        dispensa a porta, dispensa a viagem (§5.3);
  *   ii   uma frase de atribuição, em palavras e não em rótulos, composta só dos
- *        campos que existem;
+ *        campos que existem, e o marcador não é um campo que exista: sem
+ *        organismo não há frase, e a dívida diz-se uma vez, no aparelho;
  *   iii  a prova: a porta para a página exata do documento, quando o endereço a
  *        fixa, e a transcrição: o excerto, ou o campo devolvido quando a fonte
  *        é uma série;
@@ -147,28 +148,37 @@ const estudo = studyLabel(claim.study, lang);
  * *data*». É a mesma informação que a ficha do aparelho dá em campos, dita uma
  * vez em palavras: a ficha é para quem cita, a frase é para quem lê.
  *
- * COMPÕE-SE SÓ DO QUE EXISTE. Uma linha calculada não tem organismo nem
- * documento nem data de leitura, e não ganha frase nenhuma; uma linha sem
- * edição não ganha parêntesis vazios. Cada peça é um `CampoDaLinha`, e por isso
- * cada uma é conferida contra o livro-razão carácter a carácter, incluindo o
- * marcador, quando o campo está por confirmar: «Publicado por [a verificar]» é
- * o que a linha sabe, e é o que ela diz.
+ * COMPÕE-SE SÓ DO QUE EXISTE, E O MARCADOR NÃO É UM CAMPO QUE EXISTA. Uma
+ * linha calculada não tem organismo nem documento nem data de leitura, e não
+ * ganha frase nenhuma; uma linha sem edição não ganha parêntesis vazios; e um
+ * campo cujo valor É o marcador conta como ausente aqui, porque «Publicado por
+ * [a verificar], em [a verificar] ([a verificar]) · lido a [a verificar]» é uma
+ * frase com quatro buracos e não uma frase. **Quando o organismo falta, ou é o
+ * marcador, não se rende frase nenhuma**: a dívida declara-se uma vez, no bloco
+ * «O que falta nesta linha» do aparelho, com o motivo tipado e a porta da página
+ * do marcador. Dizê-la duas vezes não a torna mais honesta, torna a página menos
+ * legível. Cada peça que sobra é um `CampoDaLinha`, e por isso é conferida
+ * contra o livro-razão carácter a carácter.
  */
+const presente = (v) => Boolean(v) && v !== POR_VERIFICAR;
 const atribuicaoPecas = [
-  claim.source ? { k: s.livro.linha.publicadoPor, campo: 'source', valor: claim.source } : null,
-  claim.document?.title
+  presente(claim.source) ? { k: s.livro.linha.publicadoPor, campo: 'source', valor: claim.source } : null,
+  presente(claim.document?.title)
     ? { k: s.livro.linha.publicadoEm, campo: 'document.title', valor: claim.document.title }
     : null,
-  claim.document?.edition
+  presente(claim.document?.edition)
     ? { k: null, campo: 'document.edition', valor: claim.document.edition, entreParenteses: true }
     : null,
   paginaDoPdf
     ? { k: s.livro.linha.publicadoPagina, campo: 'source_url.page', valor: paginaDoPdf }
     : null,
-  claim.access_date
+  presente(claim.access_date)
     ? { k: s.livro.linha.publicadoLido, campo: 'access_date', valor: claim.access_date, apos: true }
     : null,
 ].filter(Boolean);
+/* Sem organismo não há atribuição: a frase começaria por «Publicado em», que
+   atribui a um documento sem dizer de quem ele é. */
+const temFraseDeAtribuicao = presente(claim.source) && atribuicaoPecas.length > 0;
 
 /* A porta do documento gasta-se uma vez. Quando o endereço fixa a página, ela é
    o primeiro passo da prova; quando não fixa, é o pedido, e vai no seu bloco.
@@ -216,7 +226,7 @@ const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undef
     <div class="linha-corpo">
       {/* ---------------------------------------------------- ii · a frase */}
       {
-        atribuicaoPecas.length > 0 && (
+        temFraseDeAtribuicao && (
           <p class="linha-atribuicao">
             {atribuicaoPecas.map((peca, i) => (
               <>
