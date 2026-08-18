@@ -4159,6 +4159,385 @@ prova depois da alteração: «A linha publica 17,6.» numa nota renderizada faz
 parar o portão em duas linhas (fidelidade ao registo, e valor do livro-razão
 repetido); reposto por reconstrução.
 
+### 1.43 A identidade v2: a direção S construída
+
+**Afecta:** nenhum
+
+*(Este bloco mudou desenho, folha de estilos, gabaritos e portão, e não mudou
+uma palavra de nenhum dos textos governados: o Sobre, as dez regras do Método e
+os dois registos da agenda estão como estavam. Por isso a entrada não nomeia
+nenhum, e não traz linha `Texto:`.)*
+
+*Esta entrada escreve-se no Acordo de 1990, como a v2 da constituição, e não na
+grafia das entradas anteriores. É a mesma razão do §9: uma reescrita inteira é
+uma versão nova, e escreve-se na grafia que fixa. O que é citado fica com os
+caracteres que tem.*
+
+#### O que é a direção S, e onde foi decidida
+
+A fase 2 construiu três direções de desenho em paralelo, cada uma com cinco
+páginas, o móvel, o racional e a sua conferência: `design/direcao-a`
+(refinamento), `design/direcao-b` (instrumento à frente), `design/direcao-c`
+(editorial generoso). Um crítico de outra família de modelos leu as três contra
+os nove testes de aceitação do `BRIEF-confianca.md` §6.8, contra a constituição e
+contra as palavras da direção, sem contexto e com as imagens renderizadas: a
+crítica está em `design/CRITICA-codex.md`. A decisão está em `design/DECISAO.md`,
+16.08.2026, e a direção escolhida, **S**, é a síntese das três e não uma delas:
+o chassis de A, a mecânica de prova de B, a cadência de C.
+
+Os três protótipos ficam neste ramo como registo. Não são especificação de
+detalhe: a especificação é a decisão, e onde as duas discordarem ganha a
+decisão.
+
+A constituição foi reescrita a partir dessa decisão e é a **v2** de
+`IDENTIDADE.md`. A v1 fica no git, em `git show e340fa6:IDENTIDADE.md`.
+
+#### As cinco decisões que o lugar de direção fixou antes da construção
+
+1. **A entrelinha da leitura.** A decisão de desenho escreveu 1,55 e a folha de
+   hoje tinha 1,6 sobre 16px. O que se fixou foi o intervalo, 1,55 a 1,6, com a
+   entrelinha **absoluta** a não descer: `--lh-leitura` fica em 1,58 e
+   `--t-leitura` em 17,5px, que dá 27,65px contra os 25,6px de antes.
+2. **A agenda fica na disposição A**, e o quadro de estados entra **por cima**,
+   como instrumento dentro da página. Não é uma quarta disposição: é o que a §3
+   já permite, e o que a §7 já pedia.
+3. **O cabeçalho não ganha selo nenhum.** A v1 §5.4 dizia que o selo do
+   cabeçalho passava a levar o glifo e a palavra. Só que as contagens saíram do
+   cabeçalho a 16.08.2026 (§1.39) e o que lá está é mobília, que leva números do
+   sítio com porta e sem selo (§10). A regra revê-se sem que o cabeçalho mude:
+   é a §5.5 da v2.
+4. **A percentagem escreve-se colada ao número.** O painel já escrevia «limiar
+   60%»; a agenda era a última superfície a escrever «9 %» com espaço.
+5. **As contagens do quadro de estados entram por `data-prova`**, e a porta de
+   cada uma é a âncora da sua secção na mesma página.
+
+#### As fichas v2: os neutros aquecem, e cada par foi medido
+
+O papel deixou de ser azulado e passou a quente, a tinta passou a
+castanha-escura, os fios e o eixo seguiram-nos. Os valores são os da direção C,
+adotados sem alteração **depois de medidos**. Os dois acentos não se tocaram,
+dígito a dígito, nos dois temas: `--yellow` continua a ser a marca de medição e
+`--oxblood` o erro admitido, e mexer-lhes na matiz obrigaria a mudar o que o
+sítio escreve sobre eles (§2).
+
+A régua é `scripts/medir-contraste.mjs`, escrita neste bloco: mede cada par que
+a folha de facto usa, nos dois temas, contra os limiares da WCAG 2.1. Corre à
+mão e **não é um portão**. Os números abaixo são os que ela imprime.
+
+**Claro (v1 → v2).** Texto: ink/paper 17,17 → 16,67 · ink/paper-2 16,11 → 15,29 ·
+ink/paper-3 14,96 → 13,73 · muted/paper 6,28 → **6,87** · muted/paper-2 5,89 →
+6,30 · muted/paper-3 5,47 → 5,66 · oxblood/paper 9,45 → 9,38 · oxblood/paper-2
+8,87 → 8,60 · oxblood/paper-3 8,24 → 7,72 · onyellow/yellow 8,50 → 8,32.
+Interface: axis/paper 3,45 → **3,56** · dotcol/paper 4,43 → 5,15 · focus/paper
+17,17 → 16,67 · yellow/paper 2,02 → 2,00 · yellow/paper-3 1,76 → **1,65**.
+Decoração: rule-strong/paper 1,58 → 1,83 · rule/paper 1,23 → 1,29.
+
+**Escuro.** Todos os pares de texto passam AA, de 5,73 a 15,07. axis/paper 4,02 →
+3,45 · dotcol/paper 5,65 → 5,00 · yellow/paper 9,04 → 8,88 · yellow/paper-3 7,63
+→ 7,67 · rule-strong/paper 1,81 → 1,78. Os dois blocos escuros, o do sistema e o
+escolhido, são iguais ficha a ficha, e a régua confere-o.
+
+**Todos os pares de texto passam AA nos dois temas, antes e depois.** Onde mais
+se lê, melhorou: `--muted` sobre papel, que é a ficha do aparelho inteiro, subiu
+de 6,28 para 6,87.
+
+**A regressão, dita e fechada.** O amarelo sobre `--paper-3`, que é a calha das
+barras de composição, desceu de 1,76:1 para 1,65:1. Os dois estão muito abaixo
+dos 3:1 e já estavam; procurou-se um `--paper-3` quente que batesse o de hoje sem
+perder o terceiro degrau de papel e não existe nenhum. A saída não é mexer no
+amarelo: é dar ao preenchimento uma **fronteira desenhada**. A aresta que carrega
+a leitura é a direita da barra, e leva 1px de `--muted`, que mede **5,66:1 em
+claro e 5,73:1 em escuro** contra a calha. `--axis`, que é o token das arestas de
+instrumento e seria o primeiro candidato, mede 2,93:1 e 2,98:1 e não chega aos
+3:1 da 1.4.11: foi medido com a mesma régua e recusado por causa disso. O par
+usado entrou na lista.
+
+#### O selo: escreve a palavra, e a etiqueta passa a ser declarada
+
+O Método promete, nas duas línguas, que «o selo de proveniência junto a cada
+número é a porta para essa linha». A palavra existia **escondida** para leitores
+de ecrã, e um leitor com vista via um título de estudo em cinzento a 10,5px: a
+promessa mais exposta do sítio era a mais fácil de não ver.
+
+- o selo escreve **«fonte»** em português e **«source»** em inglês, à vista e
+  sublinhada, ao lado do quadrado;
+- **a unidade compacta inteira é a ligação**, com `min-height: 24px`, que é o
+  alvo de toque que as duas normas de plataforma pedem;
+- o quadrado desenha o estado, cheio ou a tracejado, e passou a ir em `--axis`
+  (**3,56:1** sobre papel) e não em `--rule-strong` (1,83:1): é uma distinção
+  que o leitor tem de ver, e por isso é objeto de interface e não arrumação;
+- **a etiqueta do estudo sai do texto visível** e passa a três sítios, todos
+  conferidos: `data-selo-etiqueta`, o `title`, e o texto oculto para leitores de
+  ecrã. Era ela que o cabeçalho teve de esconder à mão a 16.08.2026 (§1.37);
+- o marcador não se mexeu: continua ao lado do quadrado a tracejado, e a sua
+  conta não desceu por causa disto.
+
+#### O cabeçalho: duas leituras rotuladas, e um fio
+
+O espaço da agenda encheu-se a 16.08.2026 (§1.40) e era microtexto corrido.
+Passa a duas leituras de aparelho, cada uma com rótulo e valor em monoespaçada e
+cada uma com a sua porta: a reconferência do painel, que abre a secção dos
+números da primeira página, e o estado da agenda, cujas duas contagens são
+`data-prova` e abrem, desde este bloco, a secção do estado que contam. Sem caixa
+à volta do cabeçalho: um fio (§3).
+
+#### A primeira página: a grelha fecha, e o limiar ganha linha própria
+
+A grelha do painel era `repeat(auto-fit, minmax(258px, 1fr))`, e uma grelha de
+largura variável é aritmética que não fecha: com oito células e uma largura
+qualquer, a última fila fica com uma célula sozinha e ninguém decidiu isso.
+Passa a **4/2/1 explícito**, com pontos de quebra escritos (900px e 560px), que
+é o que a §7 pede.
+
+**Sem barras por célula.** Barras normalizadas cada uma ao seu limiar convidam a
+uma comparação que não é válida. Onde um quadro institucional publica um limiar,
+a célula leva uma linha monoespaçada, «limiar 60% · acima», com o limiar debaixo
+do motivo `limiar-do-quadro` e a palavra de comparação derivada de dois números
+que já existem, por `comparacaoComOLimiar()`. A palavra não é um algarismo: não
+acrescenta um dígito à página, e onde um dos dois lados não é um número simples
+a função devolve `null` e a célula fica sem ela. Nunca com uma palavra inventada.
+
+#### A página de linha é um recibo, e esta é a ordem
+
+O valor com o seu próprio selo, a unidade e o id; uma frase de atribuição; o
+bloco da prova; o campo devolvido ou o excerto; o pedido exato ou o endereço; as
+verificações em duas linhas, «Lido a» e «Reconferido a»; as correções. A coluna
+do aparelho tem 300px e leva a proveniência em campos, o estado, o acesso aos
+dados e a porta das correções. **Sem «como se lê este recibo»**: uma interface
+que explica a interface antes de dar a prova está a adiar a prova.
+
+**O selo ao lado do valor de cabeça, na sua própria página** (§5.3). A porta é
+uma âncora para o bloco da prova, aqui mesmo: estar já na página certa não
+dispensa a porta, dispensa a viagem.
+
+**A frase de atribuição cala-se onde não sabe.** Tratava o marcador como um campo
+preenchido, e três linhas rendiam «Publicado por [a verificar], em [a verificar]
+([a verificar]) · lido a [a verificar]», que é uma frase com quatro buracos e não
+uma frase. Um campo cujo valor **é** o marcador conta como ausente, e sem
+organismo não se rende frase nenhuma: a dívida declara-se uma vez, no bloco «O
+que falta nesta linha», com o motivo tipado e a porta da página do marcador.
+Quatro linhas mudaram, e não três: `avisos-pt2030-abertos`,
+`avisos-pt2030-pessoas-singulares` e `ciclo-substituicao-condutas` perdem a frase
+inteira, e `saldo-natural-portugal-2025`, que tem organismo e mais nada, passa a
+dizer «Publicado por PORDATA» e cala o resto. De **532 para 502** ocorrências da
+classe do marcador nas páginas construídas, e de 632 para 602 ocorrências do
+texto: quinze peças de quatro linhas, nas duas edições. A dívida de proveniência
+não mudou; o que mudou foi dizê-la uma vez em vez de quatro.
+
+#### O município: os mandatos passam a banda
+
+O mosaico já era a grelha 4/2/1 da primeira página, com selo em cada célula e o
+estado vazio desenhado, e o aparelho já era o de A: 300px, a proveniência, «o que
+esta página não sabe» e a porta das correções. Ficam como estavam, e a prosa de
+leitura já vivia em `--t-leitura` e `--lh-leitura`.
+
+A linha do tempo das administrações tinha os anos desenhados e os mandatos não:
+uma régua de anos por cima de uma lista. Passa a ser uma **banda**. Cada mandato
+ocupa no desenho o pedaço de tempo que ocupou na realidade, sobre um eixo
+partilhado; a legenda por baixo leva as portas, uma por mandato, para o bloco
+daquele mandato na mesma página, porque uma âncora dentro de um desenho não se lê
+como porta. Nada é escrito: os anos saem de `tempo.eixo`, os períodos de
+`mandato.periodo`, e a geometria é derivada dos dois. Sem acento novo: um mandato
+não é uma medição, e a banda distingue-se com fundo, fio e monoespaçada. O
+mandato em curso não tem fim publicado e por isso não tem aresta direita: ocupa a
+cauda do desenho, que é espaço de desenho e não tempo medido, e fecha a
+tracejado, que é a mesma língua com que o selo diz que falta um campo (§7).
+
+#### O Método: a porta de cada número do sítio passa a ver-se
+
+A página já era a que a direção S pede: disposição A, o mecanismo a toda a
+largura entre a abertura e as dez regras, e a prova de cada regra numa linha
+monoespaçada com as suas portas. **O texto governado das dez regras não foi
+tocado**, e é por isso que esta entrada não nomeia `metodo`: nenhum rótulo de
+prova precisava de mudar, e mexer-lhe obrigaria a um resumo novo por nada.
+
+O que estava errado era de leitura, e estava na folha. O ponto médio entre duas
+provas da mesma regra e o fio que faz de porta debaixo de cada `data-prova`
+viviam em `--rule-strong`, que mede 1,83:1 sobre papel: o separador não separava
+e a porta lia-se como sublinhado de enfeite. Passam a `--muted`, 6,87:1 em claro
+e 6,64:1 em escuro. É a mesma correção que a v2 fez ao selo, e pela mesma razão.
+
+#### A agenda: o quadro no topo, cartões curtos, e o calendário num eixo
+
+**O quadro de estados** (§7 e §11). Quatro colunas, «Em curso · A seguir ·
+Concluído · Retirado», cada uma com a sua contagem por `data-prova`, que o portão
+recalcula do `dist/` construído. A coluna vazia desenha-se: «Retirado» está a
+zero, e um zero é um estado e não uma ausência. A porta de cada contagem é a
+âncora da secção que a mostra, nesta mesma página. Nenhuma chave nova: as cinco
+`agenda_*` já existiam desde a §1.40; o que mudou foi a porta, em `prova.mjs`, e
+por isso a mesma contagem no cabeçalho de qualquer página passa também a abrir a
+secção que conta, e não a página inteira.
+
+**Os itens como cartões curtos.** O que se lê primeiro é o que identifica o item:
+natureza e estado, título, o «porquê» num parágrafo, os critérios e a linha das
+datas. A pergunta registada e o histórico inteiro descem para o fim do cartão,
+compactos, sem perder um campo: o portão continua a exigir o item inteiro, cada
+critério dentro do seu elemento e cada entrada de histórico dentro do seu.
+
+**O calendário num eixo de tempo**, desenhado no servidor, sem uma linha de
+JavaScript. Os meses são a escala, escritos na notação de datas da casa
+(`AAAA-MM`), com a marca `escala-de-instrumento`: é a mesma notação com que este
+sítio escreve uma data em todo o lado, e por isso não há aqui uma tabela de nomes
+de meses em duas línguas para manter. As janelas de publicação vão a amarelo,
+porque uma janela é a marca de uma medição de tempo; os dias que uma fonte
+publica são marcas sobre o eixo, com o seu rótulo e o seu organismo. Cada data
+desenhada leva a marca `data-agenda` do seu campo, como a lista já levava: o
+portão compara as duas contra o mesmo registo. A legenda por baixo leva as
+portas, uma por acontecimento. A lista datada e a lista sem data ficam onde
+estavam, palavra por palavra, com a razão de cada ausência dita como o registo a
+diz.
+
+**E a percentagem fechou-se**: «9 %» passa a «9%». Cada campo continua marcado
+por si, e é campo a campo que o portão os compara com o registo.
+
+#### As restantes páginas
+
+`/estudos`, `/estudos/<slug>`, `/livro-razao`, `/municipios`, `/sobre`,
+`/correcoes`, `/a-verificar` e o 404 receberam as fichas e o selo novo, e mais
+nada mudou nelas. **Conferido por renderização e não por suposição**: as oito
+foram construídas e lidas, e os selos que têm escrevem «fonte» na edição
+portuguesa e «source» na inglesa.
+
+#### O móvel: a 390px nenhuma página rola de lado
+
+Medido, não visto: o `scrollWidth` do documento com o ecrã a 390px. A janela do
+Chrome não desce abaixo de 500px no macOS, e por isso a medição faz-se dentro de
+um iframe de 390 servido da mesma origem, com a largura do documento lida do DOM.
+
+| Página | Antes (pt · en) | Depois (pt · en) |
+| --- | --- | --- |
+| primeira página | 438 · 445 | **390 · 390** |
+| página de linha | 390 · 390 | 390 · 390 |
+| município de Évora | 390 · 390 | 390 · 390 |
+| Método | 390 · 390 | 390 · 390 |
+| agenda | 574 · 574 | **390 · 390** |
+
+O «antes» é o do estado herdado (`53af3c9`), medido numa construção própria: as
+duas transbordâncias já lá estavam, e nenhuma delas veio deste bloco. Nove outras
+rotas foram medidas por conta própria e estão todas a 390.
+
+**Duas causas, e nenhuma delas era a que se suspeitava.** Os instrumentos com
+`min-width` já rolavam dentro da sua caixa e não empurravam nada.
+
+- Na agenda era **um endereço**. Um endereço de 115 caracteres em monoespaçada
+  tem mais de 700px de largura mínima e não parte em lado nenhum: era ele que
+  punha a página inteira a 574. Passa a partir onde for preciso, como a
+  `.ligacao-externa` já fazia.
+- Na primeira página era **o selo**. A coluna do número das barras de composição
+  tem 4ch, que chega para «308» e não chega para o selo ao lado dele: a unidade
+  saía da célula com `white-space: nowrap` e levava a página com ela. O selo
+  passa a poder dobrar de linha por dentro, sem deixar de ser uma só ligação e um
+  só grupo visível, e num ecrã estreito a coluna do número passa a ter a largura
+  de que precisa, com a barra a encolher.
+
+#### O portão: quatro conferências novas, cada uma sobre um estrago plantado
+
+Todas extensões de conferências que já existem, pela moratória de 15.08.2026:
+nenhum portão novo.
+
+| Conferência | Estrago plantado | O que o portão disse |
+| --- | --- | --- |
+| A etiqueta do selo é **declarada** e é a daquela linha (extensão da `proveniencia`, §1.42) | o atributo em falta | «o selo que abre a linha "…" não declara a sua etiqueta» |
+| | a etiqueta de «Água Não Faturada» no selo de `precos-da-habitacao-2025` | «a etiqueta declarada no selo que abre a linha "precos-da-habitacao-2025" não é a etiqueta dessa linha» |
+| | o texto visível a dizer outra coisa que não a palavra da edição | «o selo que abre a linha "…" não escreve a palavra desta edição» |
+| A porta de um selo pode ser uma **âncora na própria página** (§5.3) | o mesmo estrago da etiqueta, na página da própria linha, onde o selo é `…#prova` | o portão fechou em `livro-razao/precos-da-habitacao-2025/index.html`: o fragmento não impediu a amarra de reconhecer a linha, que é o que esta tolerância tem de garantir |
+| A porta de um `data-prova` pode ser uma **âncora na própria página** (§10) | a porta das quatro chaves `agenda_*` a apontar para `#estado-<estado>-que-nao-existe`, com as secções a manter os seus `id` | «a porta do número da prova "agenda_em_curso" aponta para a âncora "#estado-em_curso-que-nao-existe", que não existe em "/agenda"» |
+| **Uma ausência nunca se desenha** (§6) | `<div data-exemplo="recorte">Exemplo: …</div>` numa página | «a página rende a marca "data-exemplo", que declara um estado de espécime» e «a página escreve o rótulo "Exemplo: …", que anuncia um estado de espécime» |
+| | `<p class="exemplo-k">` | «a página rende a classe "exemplo-k", que desenha um estado de espécime» |
+| | *(o controlo)* «Exemplo da falta de civismo…» dentro de um `blockquote` | **não fechou**, e é metade da regra |
+
+Todos repostos, e a construção verde depois de cada um.
+
+**A porta do `data-prova` passou a comparar-se resolvida**, e não carácter a
+carácter: `#estado-em_curso` escrito na agenda e `/agenda#estado-em_curso`
+escrito no cabeçalho de outra página são a mesma porta, e a igualdade de cadeias
+dizia que não. Provado pelo lado positivo: com o quadro a escrever a âncora nua,
+a construção fica verde, e a comparação antiga recusava-a.
+
+**A conferência da ausência olha para três superfícies**, a marca, a classe e o
+texto, porque um espécime entra por qualquer uma. E metade da regra é o que ela
+**não** fecha: «exemplo» é uma palavra portuguesa, e há um documento transcrito
+neste sítio que começa por «Exemplo da falta de civismo é demonstrado pelos mais
+de 4000 depósitos». Por isso a conferência do texto só olha para rótulos (a
+palavra no princípio, seguida de fim, de dois pontos ou do separador da casa) e
+nunca dentro de uma citação. Reescrever uma prova para lhe tirar uma palavra
+seria pior do que o defeito que isto fecha. `placeholder` **não** está na lista,
+e é decisão: ver §4.1.
+
+#### O `verify:deploy` media o que não nomeava
+
+Dizia «o "main" local está N commit(s) à frente de origin/main» e comparava
+`HEAD`. De um ramo de trabalho, `HEAD` nunca é `origin/main`: a conferência
+acusava sempre, e a acusação era falsa. **Provado nos dois sentidos**, com a
+árvore neste ramo e `main` exatamente em `origin/main`: a versão anterior disse
+«o "main" local está 21 commit(s) à frente de origin/main» e saiu com erro; a
+versão corrigida diz que o que está no ar é o que está no repositório, e mostra
+`HEAD` à parte, com a nota de que não decide nada. E com um ramo descartável
+criado a partir de `main` com um commit por cima, a conferência voltou a fechar:
+«o "_prova-verify" local está 1 commit(s) à frente de origin/main». O ramo
+descartável foi apagado e **nenhum commit ficou em `main`**, que continua em
+`6cbf0c1`, onde `origin/main` está.
+
+#### A régua dos defeitos, antes e depois
+
+A régua é `scripts/medir-defeitos.mjs`, e o «antes» é o de `main` em `6cbf0c1`.
+
+| | Antes (`main`) | Depois |
+| --- | --- | --- |
+| páginas construídas | 307 | 307 |
+| porta de correções | 307/307 | 307/307 |
+| primeira página: valores sem selo · selos para outra linha | 0 · 0 | 0 · 0 |
+| frases de moldura | 75 distintas · 2 353 ocorrências | 77 distintas · 2 617 ocorrências |
+| `[descrição em preparação]` | 0 | 0 |
+| linhas com `#page=` | 23 de 132 | 23 de 132 |
+| localizadores internos | 0 | 0 |
+
+**As duas frases de moldura a mais são o preço de uma promessa cumprida**, e
+valem a pena ser explicadas: são «[a verificar] A regra da releitura →» e a sua
+gémea inglesa, a linha «Reconferido a» que a página de linha passou a desenhar em
+todas as 132 linhas, nas duas edições. A régua conta como moldura todo o bloco de
+texto com 30 ou mais caracteres que se repita em mais do que uma página, e uma
+linha que aparece em 264 páginas é exatamente isso. O aumento das ocorrências, de
+2 353 para 2 617, é essa linha vezes as páginas onde ela agora está.
+
+**As cadeias que este bloco acrescentou não entraram nesta conta**, e a razão é
+mecânica e não sorte: são rótulos com menos de 30 caracteres, ou aparecem numa
+página só. Quem comparar duas construções tem de correr esta régua nas duas.
+
+#### O que este bloco acrescentou e não tem amarra
+
+**19 chaves novas em `src/i18n/strings.mjs`**, 38 cadeias nas duas edições: a
+palavra do selo (`selo`); a linha do limiar do painel (`limiar`, `acima`,
+`abaixo`, `noLimiar`); a ordem do recibo (`provaK`, `publicadoPor`,
+`publicadoEm`, `publicadoPagina`, `publicadoLido`, `verificacoesK`,
+`reconferidoK`, `releituraPorta`); a banda dos mandatos (`tempoBandaK`,
+`tempoBandaLegendaK`); e a agenda (`quadroDeEstadosK`, `semRegisto`, `eixoK`,
+`eixoLegendaK`). **Nenhuma tem decisão registada que a governe**, e é o item 9 da
+§4.2: a amarra das decisões governa `sobre.mjs` e `metodo.mjs`, e as cadeias de
+`strings.mjs` mudam sem que nada o note. Ficam contadas aqui, que é o mais que
+esta entrada pode fazer por elas.
+
+#### O que fica aberto, e é honesto dizê-lo
+
+- **Os testes 1 e 3 do `BRIEF-confianca.md` §6.8 continuam a não passar, e não
+  passam com desenho.** O recorte da linha impressa e o campo `verifications[]`
+  são dados que não existem no formato, e são o bloco T. O desenho deixou o lugar
+  pronto e não inventou nada: onde o recorte não existe não há caixa, há o
+  marcador com o seu motivo, e a conferência da ausência passou a ser mecânica.
+- **A fronteira da barra de composição resolve a leitura e não resolve o par.**
+  O amarelo sobre a calha continua em 1,65:1, e o que passa a estar acima de 3:1
+  é a aresta que carrega a leitura, medida em 5,66:1 e 5,73:1. É a saída que a §2
+  permite; a outra seria mexer no amarelo, e essa está fechada.
+- **O `gate:identidade` continua a não existir.** As regras de folha de estilos
+  da §1 e da §2 (nenhum literal de cor fora de `tokens.css`, `--yellow` nunca
+  como `color`, a serifada só no `.wordmark`) e o marcador só na sua classe
+  continuam a segurar-se por atenção. É a fase 4.
+- **O que o portão não vê continua a não ver**: se a segunda coluna está a fazer
+  alguma coisa, se um instrumento tem as três camadas, e se um estado vazio foi
+  desenhado ou apenas ainda não aconteceu.
+- **A leitura cruzada, a pré-visualização e a palavra da direção** são o que se
+  segue, e não aconteceram neste bloco.
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
@@ -4585,6 +4964,15 @@ e por isso não foi tocada neste bloco.
 | ~~`EDITION` no rodapé~~ | **Retirada a 16.08.2026 (§1.39),** com a própria constante. O cabeçalho passa a mostrar a data da última reconferência do painel, em todas as páginas. |
 | ~~`/agenda` e o calendário das fontes~~ | **Construídos a 16.08.2026 (§1.40).** Cinco itens em quatro estados, dezasseis acontecimentos das fontes, oito deles sem data porque a fonte não publica nenhuma. `core/prereg.py` deixou de ter zero registos: o estudo da habitação é o primeiro, **iniciado e não selado**. Ficam abertos o histórico do calendário, a ligação automática entre um acontecimento e a linha que ele move, e os prazos da agenda. |
 | A ordenação por partido | Continua a não existir, e é para continuar. Não é dívida: é uma recusa. |
+
+**Fase 2 · o que a construção da direção S mediu e não fechou** (18.08.2026,
+§1.43). Dois, os dois medidos com a régua do contraste e nenhum deles corrigido
+neste bloco.
+
+| Item | O que foi medido | Porque não foi fechado aqui |
+| --- | --- | --- |
+| `--rule-strong` sobre papel, nas fronteiras de caixa | 1,83:1 em claro e 1,78:1 em escuro, contra os 3:1 que a 1.4.11 pede a um objeto de interface. São **19 fronteiras** na folha. Duas saíram deste par neste bloco, porque eram portas e não arrumação: o separador da prova de cada regra e o fio debaixo de cada `data-prova`, os dois agora em `--muted`. | Uma fronteira de caixa é arrumação e não estado: quem não a vir não perde informação nenhuma, e é por isso que a régua a conta também como decoração, sem limiar. Subi-la a 3:1 mudaria o peso de fio de 19 sítios de uma vez, que é uma decisão de desenho e não uma correção. Fica para o juízo da direção na pré-visualização. |
+| A caixa de estado de `/estudos/<slug>` (`.placeholder`) | Um tracejado com fundo às riscas e uma etiqueta de estado («Rascunho · sem conteúdo», «Documento alojado · página por escrever»). A palavra `placeholder` **não** entrou na lista de estados de espécime que o portão recusa (§6), e foi decisão e não esquecimento. | O que a §6 proíbe é desenhar uma **ausência de dados** como espécime. Isto não é isso: é o estado editorial de uma página do arquivo, dito por palavras, sem prometer prova nenhuma e sem número por trás. Mas o vocabulário visual é o do espécime, e a v2 acabou de o proibir noutro sítio. Fica escrito para a direção decidir se a caixa muda de forma ou se o nome muda. |
 
 ### 4.2 O que continua aberto de antes, e não mudou neste bloco
 

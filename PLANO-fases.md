@@ -2,9 +2,13 @@
 
 *Written 2026-08-16 (early), by Claude Fable 5 in seat, at the director's request, after the day of 2026-08-15. This is the roadmap; `DECISIONS.md` records what actually gets built, and §4 there is the defect-and-deferral register that must be clean before a block starts. Costs are rough, in subagent tokens as agents report them. Model routing: Opus builds, Sonnet does mechanical passes and blind fetches, Codex reviews across families, Fable designs and reviews in seat.*
 
-## Where we are (2026-08-16, night)
+## Where we are (2026-08-18)
 
 Live (`main` = `c75f4a1`, `verify:deploy` ✓): everything of Block V. Orthography AO90 PT-PT enforced (wordlist 254 pairs, reversible tool, gate check, remainder 0, no em dashes); `/sobre` (the decided text, gate-compared); `/metodo` as ten rules with mechanism and live proof (`prova.mjs`, 26 keys recomputed by the gate, `/prova.json`, the mechanism drawn); `/correcoes` (register moved, policy once, entries as doors); `/agenda` from the engine's records (5 items, 16 calendar events, four states, full change log); masthead = time signal + agenda line; footer navigation only; the door to Sobre on every page including hosted documents; `Afecta` on DECISIONS entries with the tether check and a git audit in the monthly sweep; housing pre-registered in the engine (unfrozen); source calendar and watches in the monthly agent; word cuts (frame words 31 852 → 24 858); `ABOUT.md` cut to the idea. Plus what was live before: the Évora município page and five reading pages, the index of all 308 concelhos, a correction door on every page, every value sealed; 322 pages; 132 ledger rows, 12 with provenance debt. Verified: build green, engine gate PASS, Sonnet blind re-fetch of the calendar 8/8, Codex five passes (8/8 canaries caught). Record: `DECISIONS.md` §1.38 to §1.42.
+
+**Phase 2 is built, on the branch `identidade-v2`, and is not merged.** Direction S (the synthesis of A, B and C: `design/DECISAO.md`) is applied to the real pages, and `IDENTIDADE.md` v2 is the rule (v1 at `e340fa6`). What it delivered: warm neutral tokens with every used pair measured in both themes by `scripts/medir-contraste.mjs` (all text pairs pass AA, before and after); the seal writing «fonte» / «source» with the study label moved into a declared attribute the gate compares; two labelled readings in the masthead; the front page grid closed to an explicit 4/2/1 with the threshold as a mono line and no per-cell bars; the row page reordered as a receipt with its own seal on the head value; the attribution sentence that stops where it does not know; the município mandates drawn as a band with a legend of doors; the Método proof line made legible; the agenda's state board on top with counts by `data-prova` opening the section each one counts, items as short cards, and the source calendar drawn on a time axis; and 390px measured clean on every route, both editions (front page 438 → 390, agenda 574 → 390). Four gate checks were added as extensions of existing ones, each proven on a planted defect, plus the `verify:deploy` fix that made it compare the branch it names. Record: `DECISIONS.md` §1.43.
+
+What that branch is still waiting for: a cross-family read (canaried), the Vercel preview, the director's word, the merge, `verify:deploy`, and the design bundle plus DesignSync from the built site. The merge state is written here after the merge, not before it. **Block T is next.**
 
 Still the director's, on the live site: cut `/metodo` (rules 1, 6, 9 and 10 have the weakest proofs and say so), correct the English of Sobre and Método if he wants, confirm or overrule the orthography default, read the housing question on `/agenda` (sealing it is the first act of the study).
 
@@ -47,9 +51,11 @@ Acceptance: build green with the new checks; Codex review of the diff and a cana
 
 Cost: roughly 700k to 1M (Opus build in two or three agents; Codex two reviews; Sonnet for the wordlist and string pass).
 
-## Phase 2 — design explorations (after Block V, or before it if the director prefers)
+## Phase 2 — design explorations (BUILT ON `identidade-v2`, awaiting review, preview and the director's word)
 
-Goal: the visual direction chosen against the trust brief's acceptance tests, then `IDENTIDADE.md` v2.
+Goal: the visual direction chosen against the trust brief's acceptance tests, then `IDENTIDADE.md` v2. **Done, in three steps:** three directions built in parallel (`design/direcao-a`, `-b`, `-c`, each with five pages, mobile, rationale and its own check); a cross-family critique of all three against the nine acceptance tests (`design/CRITICA-codex.md`); and the decision, direction S, which is the synthesis and not one of them (`design/DECISAO.md`, 2026-08-16). `IDENTIDADE.md` v2 was written from that decision and is the rule; the construction on the real pages is `DECISIONS.md` §1.43.
+
+What is left of this phase and did not happen in the block: the design bundle regenerated from the built site and DesignSync run against it. Both come after the merge, and the seat does them.
 
 1. Claude Design trial: import the current tokens and CSS; prototype the row page (the trust page), the front page, the município page, Sobre/Método, the agenda; three directions (refinement / instrument-forward / editorial-generous); live HTML the director reacts to. `[verify]` how well the import handles the Astro/CSS-token codebase; a small trial first.
 2. `IDENTIDADE.md` v2: the visual rules that survive, plus the voice rules (state the idea and stop; no dashes; one home per caveat; where time is shown; the orthography), and the seal/legend conventions now written down.
