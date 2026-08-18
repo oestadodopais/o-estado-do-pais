@@ -4599,7 +4599,7 @@ passa a declarar `text-transform: none`. O HTML não mudou: 463 selos escrevem
 «fonte» e 463 escrevem «source» nas páginas construídas, antes e depois.
 
 **C · O excerto que falta deixa de ter caixa.** A linha sem excerto desenhava um
-rectângulo a tracejado do tamanho de uma prova, com o marcador sozinho lá dentro
+retângulo a tracejado do tamanho de uma prova, com o marcador sozinho lá dentro
 e a frase do motivo por baixo, fora da caixa. A §6 diz que uma ausência nunca se
 desenha e que a língua é o marcador com o seu motivo e o caminho para a correção.
 Passa a uma linha: o marcador, e a seguir «O excerto textual desta linha ainda
@@ -4611,8 +4611,8 @@ mesmas 218.
 
 **D · Duas afirmações falsas na prosa da primeira página.** A descrição da
 posição de investimento internacional dizia «O que o país deve ao exterior menos
-o que tem a haver dele», que é passivo menos activo e daria +50,2; a medida é
-activo menos passivo e a linha publica −50,2. A frase dizia o contrário do número
+o que tem a haver dele», que é passivo menos ativo e daria +50,2; a medida é
+ativo menos passivo e a linha publica −50,2. A frase dizia o contrário do número
 que estava por cima dela. Passa a uma definição com o sinal explicado: «O que o
 país tem a haver do exterior menos o que lhe deve: negativo quando deve mais do
 que tem a haver.» Em inglês, «What the country is owed from abroad minus what it
@@ -4661,7 +4661,7 @@ mexe (§1.36, item 1).
 seis fichas de região do instrumento n.º 1 declaram `aria-pressed="true|false"`
 no servidor e a passagem alterna-o em `public/js/convergencia.js` onde alterna
 `is-read`, desde `f2ed777`, que é anterior a este ramo. Conferido no HTML
-construído: as únicas fichas sem `aria-pressed` são as duas de acção, «Todas as
+construído: as únicas fichas sem `aria-pressed` são as duas de ação, «Todas as
 regiões» e «Repor», que não são estados e onde o atributo estaria errado. Nada
 mudou. O que fica dito é o que a leitura não viu: `aria-pressed` segue a região
 estar **na régua**, e `is-read` segue a região **que está a ser lida**, que são
@@ -4699,7 +4699,7 @@ era assim em oito antes desta mudança e passou a nove; no cabeçalho da página
 acontece, porque ali o valor e a unidade são duas peças do recibo, com a unidade
 em rótulo monoespaçado. A saída não é colar sempre, que daria «82índice (UE-27 =
 100)»: é distinguir uma unidade que é um símbolo de uma unidade que é uma
-palavra, e isso é uma decisão de redacção sobre as 132 linhas. Fica escrito e não
+palavra, e isso é uma decisão de redação sobre as 132 linhas. Fica escrito e não
 fica corrigido aqui.
 
 **J · Um nó do mecanismo com dois valores tem lugar para os dois.** Dois nós
@@ -4722,7 +4722,7 @@ mesmos, «14 70 132 12 23 120 5 0 2026-08-17 3».
 para 44px em ecrã de toque desde a §1.43; as ligações da barra e do rodapé, que
 são as primeiras que qualquer pessoa usa, ficaram nos cerca de 25px que a letra
 lhes dava. Passam a 44px dentro de `@media (pointer: coarse)`. A marca da página
-actual passa, dentro da mesma regra, de um fio no fundo da caixa a um sublinhado
+atual passa, dentro da mesma regra, de um fio no fundo da caixa a um sublinhado
 do texto: com a caixa a 44px o fio ficava a mais de dez pixels do que sublinha. Em
 cursor não muda nada, e isso é estrutural e não medido, porque a regra inteira
 está dentro da condição na folha construída. Medido do lado de lá, com a condição
@@ -4758,20 +4758,20 @@ falso. A emulação está dita como emulação.
   garantias legítimas»: têm linha, têm derivação escrita e têm selo, e trocá-las
   por porta seria trocar uma garantia por outra sem ganhar nada. Não muda.
 - **«UE-27» e «Lei n.º 73/2013» passam o portão por motivo declarado**, e é a
-  lista de excepções que os cobre, cada um com a sua razão escrita:
+  lista de exceções que os cobre, cada um com a sua razão escrita:
   `tokens`, `UE-27`, âmbito `any`, «Nome do agregado de referência da União
   Europeia. É um nome, não um valor.»; e `tokens`, `73/2013`, âmbito `body`, «É o
   NOME de uma lei, da mesma classe que "UE-27": não mede nada e não pode ser
   escrito sem algarismos.» O artigo tem a sua própria entrada, `52.º`, pela mesma
   razão. Nenhum é uma dispensa de medição: o limite legal e o índice contra ele
   têm linha própria, ao lado.
-- **A redacção do Método sobre os números do sítio.** O Método escreve «Um número
+- **A redação do Método sobre os números do sítio.** O Método escreve «Um número
   chega ao leitor só se tem linha, e a linha diz de onde veio.» e «Ao lado de cada
   número há um selo que abre a sua linha», e a §10 da constituição diz que uma
   contagem do próprio sítio leva porta e não selo. As duas coisas convivem hoje
   porque as contagens que aparecem com selo são linhas da casa a sério, mas a
   frase, lida à letra, promete mais do que a regra dá. É texto governado: o corte
-  é da direção, e vai para a §4.1 como afinação de redacção para a leitura do
+  é da direção, e vai para a §4.1 como afinação de redação para a leitura do
   Método na pré-visualização.
 - **O mosaico não passa a tabela.** É a decisão da direção S: uma grelha de
   células, cada uma um `<article>` com o seu cabeçalho e o seu selo, e não uma
