@@ -20,6 +20,7 @@ document:
   title: "[a verificar]"
   edition: "[a verificar]"
   locator: null                  # onde no documento — "p. 108", "Quadro 4, p. 108"
+  page: null                     # inteiro ≥ 1 — a página onde está a frase do excerto (ver abaixo)
   kind: null                     # pdf | html | serie | ficheiro | registo — o que o endereço serve (ver abaixo)
 source_url: "[a verificar]"
 access_date: "[a verificar]"     # AAAA-MM-DD — quando foi lido
@@ -66,11 +67,16 @@ corrections: []
    nenhuma destas;
 10. uma expressão `check` não der exactamente o valor publicado;
 11. houver `derivation` sem `derivation_en`, ou o contrário;
-12. o bloco `document` trouxer uma chave que não seja `title`, `edition` ou
-    `locator` — ou um `locator` que não seja uma cadeia não vazia;
+12. o bloco `document` trouxer uma chave que não seja `title`, `edition`,
+    `locator`, `page` ou `kind` — ou um `locator` que não seja uma cadeia não
+    vazia;
 13. `attributed_to` não for uma lista de nomes de entidades não vazios, for uma
     lista vazia, ou algum nome contiver o separador ` · ` com que a página
-    escreve a lista.
+    escreve a lista;
+14. `document.page` não for um inteiro ≥ 1; estiver numa linha derivada ou da
+    casa; discordar do `#page=N` do endereço; faltar quando o endereço traz
+    `#page=N` ou quando o localizador diz `p. N`; ou faltar no endereço, quando
+    a linha declara a página e o endereço é um PDF.
 
 ## `document.kind` — o que o endereço serve
 
@@ -100,11 +106,11 @@ de dados — `raw/ine_data_populacao_evora.json → Dados["2025"]`,
 e cinco linhas faziam isso até 15.08.2026. O que se escreve é o que a fonte
 publica: «INE, indicador 0012918, Évora (código 1C40705), dados de 2025».
 
-**Quando o endereço é um PDF e o localizador diz uma página**, o `source_url`
-leva o fragmento `#page=N` e a página da linha imprime «Abrir o documento na
-página N». O número é **lido do localizador** e de mais lado nenhum — não há
-campo onde uma página possa ser escrita à parte, e é essa a garantia de que
-nenhuma é inventada.
+**Quando o localizador diz uma página, essa página é também um campo**:
+`document.page`, a seguir. Até 18.08.2026 o número era lido do localizador e de
+mais lado nenhum, e o fragmento `#page=N` do endereço saía daí; hoje é o campo
+que manda, e o localizador não pode dizer outra coisa. O localizador continua a
+ser prosa — o quadro, o ficheiro dentro do lote — e a página é o número.
 
 Existe porque o documento e a página não são a mesma prova. Uma linha que cite
 um relatório de 400 páginas com `document.title` e mais nada manda o leitor
@@ -119,6 +125,40 @@ linha a declarar que o excerto está nalgum sítio daquele documento e que ainda
 não se sabe onde — conta para a dívida de proveniência, como qualquer outro
 campo declarado por confirmar. A página da linha publica-o sob «Onde no
 documento», e o portão confere-o carácter a carácter.
+
+## `document.page` — a página onde está a frase
+
+Opcional. Um inteiro ≥ 1: **a página do documento onde está a frase que o
+`excerpt` transcreve**. Existe desde 18.08.2026 (DECISIONS §1.47) e é a **única
+origem da página**. O fragmento `#page=N` do `source_url` deriva dela; até aqui
+derivava do localizador, e a página vivia como prosa dentro de um campo de prosa
+e como fragmento dentro de um endereço, sem nenhum sítio onde uma conferência a
+pudesse comparar.
+
+O que o `ledger:check` impõe, e cada regra fecha um caminho por onde uma página
+errada entrava:
+
+- o endereço acaba em `#page=N` → a linha declara `document.page` e é N;
+- a linha declara `document.page` e o endereço, sem fragmento, acaba em `.pdf`
+  (sem distinguir maiúsculas) → o endereço traz `#page=<document.page>`;
+- o `document.locator` diz `p. N` → N é o `document.page`;
+- numa linha derivada ou da casa é recusado: não têm documento onde uma página
+  exista.
+
+A página da linha escreve «Abrir na página N» a partir deste campo, marcada
+`data-linha-campo="document.page"`, e o portão compara-a com o campo. A frase de
+atribuição continua a escrever «p. N» a partir do endereço
+(`data-linha-campo="source_url.page"`, que é a leitura do `#page=` feita pelo
+portão com a sua própria cópia da regra): as duas batem por construção, porque o
+validador as obriga a bater, e renderizar as duas é o que torna essa obrigação
+visível na página em vez de ficar só no validador.
+
+**Do lado do motor**, o manifesto declara `page` por linha e o exportador
+compõe o fragmento a partir dele. Um `page` declarado é provado como o
+localizador é (V7): os seus algarismos existem no texto da linha do motor, ou no
+ficheiro que o manifesto nomeia em `locator_from`. Um localizador com `p. N` sem
+`page` declarado é recusado. Uma página é lida, nunca recordada — e nunca de
+duas maneiras.
 
 ## `attributed_to` — a quem o valor é creditado
 
