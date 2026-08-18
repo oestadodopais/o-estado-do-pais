@@ -122,7 +122,7 @@ export const STRINGS = {
       eyebrow: 'Agenda',
       h1: 'O que se mede a seguir',
       lede:
-        'Cada item traz o critério que o pôs aqui, quem o propôs, quem o decidiu, e o registo de cada mudança de estado. Nada sai desta lista em silêncio.',
+        'Cada item traz o critério que o pôs aqui, quem o propôs e quem o decidiu, ou diz o que ainda lhe falta; e traz o registo de cada mudança de estado. Nada sai desta lista em silêncio.',
       origemNota:
         'A lista e o calendário são dois registos do motor de investigação, publicados tal como atravessaram.',
       estados: {
@@ -787,7 +787,7 @@ export const STRINGS = {
       eyebrow: 'Agenda',
       h1: 'What gets measured next',
       lede:
-        'Each item carries the criterion that put it here, who proposed it, who decided it, and the record of every change of state. Nothing leaves this list in silence.',
+        'Each item carries the criterion that put it here, who proposed it and who decided it, or says what it still lacks; and it carries the record of every change of state. Nothing leaves this list in silence.',
       origemNota:
         'The list and the calendar are two records from the research engine, published exactly as they crossed.',
       estados: {
