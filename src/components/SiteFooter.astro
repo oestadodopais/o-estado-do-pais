@@ -44,7 +44,7 @@ const secoes = [
 ---
 
 <footer class="rodape">
-  <nav class="rodape-nav" aria-label={s.nav.inicio}>
+  <nav class="rodape-nav" aria-label={s.nav.rotuloRodape}>
     {secoes.map(([rota, rotulo]) => <a href={routePath(rota, lang)}>{rotulo}</a>)}
     <a href={outra} hreflang={lang === 'pt' ? 'en' : 'pt-PT'}>{s.outraLingua}</a>
   </nav>
