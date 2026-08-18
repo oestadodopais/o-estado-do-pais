@@ -3,7 +3,7 @@
   "exportado_em": null,
   "ficheiro": "agenda/agenda.json",
   "repositorio": "ResearchHub",
-  "sha256_origem": "20e112b3b6aec502413b8f3bdc4a7490c50d5e73a9761a765fc4e12a149fe7c3"
+  "sha256_origem": "c8c60f3838566fc5c13b8695719a292b1c534f7dd8ca562afc7419685735c3e0"
  },
  "formato": 1,
  "itens": [
@@ -103,7 +103,7 @@
    "decidido_fonte": "Obsidian, Decisions/, nota de 2026-08-15 «O Estado do País Direction: Product Before Gates», decisão 9",
    "decidido_por": "direcao",
    "entrada": "2026-08-16",
-   "estado": "a_seguir",
+   "estado": "em_curso",
    "historico": [
     {
      "data": "2026-08-16",
@@ -123,6 +123,18 @@
       "pt": "A direção leu a pergunta a 2026-08-18 e o registo prévio foi selado. A pergunta já não muda sem emenda registada; a recolha ainda não começou."
      },
      "para": "a_seguir",
+     "tipo": "alteracao"
+    },
+    {
+     "data": "2026-08-18",
+     "de": "a_seguir",
+     "decidido_por": "direcao",
+     "fonte": "Instrução da direção de 2026-08-18: o estudo começa contra a pergunta selada, a partir do levantamento dos quadros institucionais.",
+     "motivo": {
+      "en": "Collection began, with the institutional framework survey: the documents were fetched and pinned by sha256, and what each institution publishes about Portuguese housing is recorded in `content/10 Housing/Technical Source/SURVEY.md`, with the claims ledger beside it. The question sealed on 2026-08-18 did not change, and nothing in this entry amends it.",
+      "pt": "A recolha começou, pelo levantamento dos quadros institucionais: os documentos foram buscados e fixados por sha256, e o que cada instituição publica sobre habitação portuguesa está registado em «content/10 Housing/Technical Source/SURVEY.md», com o livro de afirmações ao lado. A pergunta selada a 2026-08-18 não mudou, e nada nesta entrada a emenda."
+     },
+     "para": "em_curso",
      "tipo": "alteracao"
     }
    ],
