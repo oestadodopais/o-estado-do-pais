@@ -153,6 +153,12 @@ const PARES = [
   { frente: '--dotcol', fundo: '--paper', tipo: 'interface', onde: '.ld-off i, a legenda de portas' },
   { frente: '--yellow', fundo: '--paper', tipo: 'interface', onde: '.ld-on i, as barras de medição' },
   { frente: '--yellow', fundo: '--paper-3', tipo: 'interface', onde: '.compo-bar i sobre a calha' },
+  {
+    frente: '--muted',
+    fundo: '--paper-3',
+    tipo: 'interface',
+    onde: '.compo-bar i, a fronteira desenhada do preenchimento sobre a calha',
+  },
   { frente: '--focus', fundo: '--paper', tipo: 'interface', onde: 'outline: 2px solid var(--focus)' },
   { frente: '--focus', fundo: '--paper-2', tipo: 'interface', onde: 'foco dentro do aparelho' },
 ];

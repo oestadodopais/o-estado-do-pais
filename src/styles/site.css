@@ -873,10 +873,21 @@ a.src-chip.is-unverified:hover::before {
   height: 7px;
   background: var(--paper-3);
 }
+/* A FRONTEIRA DESENHADA DO PREENCHIMENTO.
+   O amarelo sobre a calha mede 1,65:1 em claro (`medir-contraste.mjs`, v2), e
+   quem lê esta barra lê uma coisa só: até onde vai o amarelo. Uma diferença que
+   o leitor tem de ver não pode viver de 1,65:1, e a saída não é mexer no
+   amarelo, que `IDENTIDADE.md` §2 fixa dígito a dígito. É desenhar a aresta que
+   carrega a leitura, e é esta: a direita do preenchimento, a 1px, sobre a
+   calha. `--muted` mede 5,66:1 em claro e 5,73:1 em escuro contra `--paper-3`;
+   `--axis`, que é o token das arestas de instrumento e seria o primeiro
+   candidato, mede 2,93:1 e 2,98:1 e não chega aos 3:1 da 1.4.11. O par medido
+   está na lista da régua. */
 .compo-bar i {
   display: block;
   height: 100%;
   background: var(--yellow);
+  border-right: 1px solid var(--muted);
 }
 .compo-n {
   font-family: var(--f-mono);
