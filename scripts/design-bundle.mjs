@@ -490,8 +490,11 @@ function markdownSimples(fonte) {
   }
 
   const html = fora.join('\n');
-  /* Sintaxe que tenha escapado à conversão apareceria ao leitor como ruído. */
-  const semEtiquetas = html.replace(/<[^>]+>/g, '');
+  /* Sintaxe que tenha escapado à conversão apareceria ao leitor como ruído.
+     O que está dentro de <code> é texto citado, não sintaxe: desde o bloco T a
+     constituição escreve `**Afecta:**` entre crases, e essa sequência não é um
+     forte por converter. Por isso o código sai antes de se procurar. */
+  const semEtiquetas = html.replace(/<code>[\s\S]*?<\/code>/g, '').replace(/<[^>]+>/g, '');
   for (const [re, oQue] of [
     [/\*\*/, 'forte por converter (`**`)'],
     [/^\s*\|/m, 'linha de tabela por converter (`|`)'],
@@ -628,7 +631,18 @@ ${amostras}
 /* ------------------------------------------------- 3. Selo e marcador */
 {
   const naSentenca = peca('index.html', 'p.brief-text[data-brief="pt"]');
-  const seloIncompleto = peca('index.html', '.claim-com-chip', {
+  /* O estado a tracejado já não existe na primeira página desde o bloco T
+     (18.08.2026): as quatro contagens da CAOP fecharam a sua dívida e o painel
+     não publica nenhuma das linhas que ainda a têm. O espécime lê-se da
+     primeira página onde ele existir, pela ordem: a primeira página, o índice
+     do livro-razão, a página de leitura do estudo do PRR, cuja medida de
+     cabeça é uma soma com dívida. A nota do cartão diz de onde veio. */
+  const ondeIncompleto = ['index.html', 'livro-razao/index.html',
+    'estudos/evora-prometido-pago-auditado-2026/index.html'].find((rota) =>
+    arvore(rota).querySelectorAll('.claim-com-chip')
+      .some((el) => el.querySelector('.src-chip.is-unverified') !== null));
+  if (!ondeIncompleto) morre('não encontrei nenhum selo a tracejado nas páginas candidatas.');
+  const seloIncompleto = peca(ondeIncompleto, '.claim-com-chip', {
     filtro: (el) => el.querySelector('.src-chip.is-unverified') !== null,
   });
   const doisEstados = peca('livro-razao/index.html', 'ul.aparelho-selos');
@@ -656,7 +670,7 @@ ${amostras}
     </div>
     <p class="ds-nota"><code class="ds-mono">dist/livro-razao/index.html</code> · a amostra dos dois estados, na coluna do aparelho do índice. Ali o selo é só o quadrado.</p>
     <div class="ds-mostra">${seloIncompleto}</div>
-    <p class="ds-nota"><code class="ds-mono">dist/index.html</code> · o estado a tracejado em uso, com o marcador dentro do selo a dizer o que falta. Quadrado cheio quando a proveniência está completa; a tracejado quando falta um campo. «Um estado que nunca foi desenhado ao lado do outro ainda não é uma distinção.»</p>
+    <p class="ds-nota"><code class="ds-mono">dist/${ondeIncompleto}</code> · o estado a tracejado em uso, com o marcador dentro do selo a dizer o que falta. Quadrado cheio quando a proveniência está completa; a tracejado quando falta um campo. «Um estado que nunca foi desenhado ao lado do outro ainda não é uma distinção.»</p>
   </section>
 
   <section class="ds-bloco">
