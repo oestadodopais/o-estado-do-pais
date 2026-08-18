@@ -4635,7 +4635,7 @@ portão exige que uma chave renderizada exista em `verbatim.mjs` e não o
 contrário, por isso uma entrada que ninguém rende não guardava nada) e com as
 três cadeias `estaPagina` das duas edições. A porta das correções vinha do
 colofão e volta ao rodapé pelo invólucro: a página deixa de passar
-`portaNoRodape={false}`, e o portão continua a ver exactamente uma porta por
+`portaNoRodape={false}`, e o portão continua a ver exatamente uma porta por
 página.
 
 Um resto que fica dito: a legenda transcrita do mapa acaba em «Detalhe completo
@@ -4776,7 +4776,7 @@ falso. A emulação está dita como emulação.
 - **O mosaico não passa a tabela.** É a decisão da direção S: uma grelha de
   células, cada uma um `<article>` com o seu cabeçalho e o seu selo, e não uma
   matriz de linhas e colunas onde se compara medida com medida. Comparar oito
-  medidas que não são comparáveis é exactamente o que a §11 recusa.
+  medidas que não são comparáveis é exatamente o que a §11 recusa.
 - **Os cartões da agenda levam todos os campos porque o portão os exige.** Não é
   excesso de zelo do gabarito: a conferência dos textos governados exige o item
   inteiro, cada critério dentro do seu próprio elemento e cada entrada de
@@ -4799,7 +4799,7 @@ falso. A emulação está dita como emulação.
 sustenta.** A frase da posição de investimento foi corrigida acima porque estava
 **errada**; estas não estão erradas, estão **por provar na página onde são
 lidas**, que é outra coisa e é trabalho do portão da prosa, fase 4. Ficam aqui
-com as palavras exactas, nas duas edições, para que a próxima leitura não as
+com as palavras exatas, nas duas edições, para que a próxima leitura não as
 redescubra:
 
 | Célula | A afirmação | O que a página não tem |
@@ -4879,6 +4879,227 @@ contadas aqui, como as dezanove da §1.43.
 - **O `gate:identidade` continua a não existir**, e as regras de folha de estilos
   da §1 e da §2 continuam a segurar-se por atenção. É a fase 4, e é onde o portão
   da prosa e o nome acessível dos selos também vão dar.
+
+#### A segunda leitura
+
+O mesmo revisor de outra família de modelos (Codex), outra vez sem contexto do
+bloco, leu as mesmas seis páginas depois de corrigidas: a primeira página, uma
+linha do livro-razão com documento em PDF, a linha da dívida, o município de
+Évora, o Método e a agenda. Na cópia que lhe foi dada estavam **cinco estragos
+plantados novos**, das mesmas cinco classes da primeira leitura: um valor sem
+selo, um travessão, um segundo marcador de incerteza a par de `[a verificar]`,
+uma caixa de exemplo e um limiar sem o motivo que o declara. **Apanhou os
+cinco.**
+
+A conta, dita por extenso para não ter de ser refeita: as §1.41 e §1.42 contam
+**oito** plantados e oito apanhados em três leituras cruzadas; a primeira
+leitura da v2, acima, conta **cinco**; esta conta **cinco**. São **dez em dez
+sobre a v2** e **dezoito em dezoito nas cinco leituras cruzadas desta
+constituição** (8 + 5 + 5 = 18).
+
+Das observações reais desta segunda leitura saíram os cinco itens abaixo. Nove
+ficaram lidos e mantidos, com a razão, a seguir a eles.
+
+**O que mudou**
+
+**1 · A abertura da agenda deixa de prometer o que três itens não têm.** A
+entrada dizia «Cada item traz o critério que o pôs aqui, quem o propôs, quem o
+decidiu, e o registo de cada mudança de estado.» Conferido na página
+construída: três itens rendem «Sem decisão da direção registada» e um rende
+«Sem critério de nenhum dos quatro tipos». A frase prometia mais do que o
+registo dá, e a saída não é calar o que falta: é a entrada dizer as duas
+coisas. Passa a «Cada item traz o critério que o pôs aqui, quem o propôs e quem
+o decidiu, ou diz o que ainda lhe falta; e traz o registo de cada mudança de
+estado. Nada sai desta lista em silêncio.» Em inglês, «Each item carries the
+criterion that put it here, who proposed it and who decided it, or says what it
+still lacks; and it carries the record of every change of state. Nothing leaves
+this list in silence.» É prosa da casa e não campo do registo: as marcas
+`data-agenda` e a comparação carácter a carácter não mudaram.
+
+**2 · «di-lo», e não «diz-lo».** O sub-título do Relance da página do município
+escrevia «cada uma dessas diz-lo na sua linha». A ênclise de «dizer» na terceira
+pessoa do singular é «di-lo», e era a única ocorrência da forma errada em `src/`.
+O `BRIEF-confianca.md` cita a frase antiga na sua §3.4: é a auditoria medida a
+15.08.2026 e não se reescreve.
+
+**3 · O euro deixa de ficar colado ao ano.** Nas duas linhas da divergência da
+dívida, na camada Fundo do município, o gabarito escrevia o sinal do euro no fim
+de uma linha e a data de referência na seguinte, e a moldura come essa mudança
+de linha: a página rendia «54 681 562 fonte €2024». Passa a levar o separador da
+casa entre a unidade e o ano, «€ · 2024», que é o que as células do mosaico já
+escrevem (unidade · ano). Duas ocorrências em cada edição, e nenhum valor mudou.
+Medido na construção: nenhum `€<span` em nenhuma das 322 páginas.
+
+**4 · A nota da atribuição deixa de falar de partidos onde não há partido
+nenhum.** Ao lado de cada `attributed_to` a página da linha escrevia «Como
+consta do documento; o rótulo partidário é facto de registo · Porque não se
+ordenam partidos →». Em `evora-orcamento-2025` a atribuição é «Município de
+Évora», e a nota falava de uma coisa que não estava na página.
+
+Conferido no livro-razão: **61 das 132 linhas** trazem `attributed_to`, em oito
+listas distintas, e todas são organismos: «Município de Évora» (25), «SGMAI»
+(10), «INE» (8), «DGAL» (8), «Recuperar Portugal» (5), «IEFP» (2), «Marques,
+Cruz & Associados» (2) e «Anuário Financeiro dos Municípios Portugueses» (1).
+**Nenhuma credita um partido**, e a §1.31 já tinha registado porquê: «Nenhum
+rótulo partidário atravessou», porque a regra admite um partido só quando o
+estudo atribui aquela decisão àquele executivo com uma linha citada, e as frases
+que fazem essa ligação estão marcadas *(inferência)* pelo próprio estudo.
+
+O formato também não tem campo que marque um elemento da lista como partido, e
+por isso uma condição sobre ele seria uma condição sempre falsa: código que
+nunca rende nada, que é o que a alínea E acima acabou de tirar de outro sítio.
+Fica a frase que é verdadeira nas 61, «Como consta do documento.», nas duas
+edições; sai a cláusula do partido e sai a porta que ela abria para a regra do
+Método. **Nenhuma página de linha guarda a cláusula do partido, e as 61 linhas
+perdem-na, o que são 122 páginas nas duas edições.** A regra continua escrita no
+Método, e `/metodo#o-que-nao-faz` continua a existir. A cláusula volta com o
+campo que a possa marcar, e não com uma adivinha.
+
+O `ledger/README.md` prometia «a página da linha di-lo por palavras ao lado do
+campo, nas duas edições», e essa frase passou a ser falsa: foi reescrita lá,
+com a data e o motivo. A frase igual da §1.31 fica como foi escrita, porque era
+verdadeira quando o foi, e é aqui que se corrige.
+
+**5 · O sinal de percentagem cola-se ao número, nos dois sítios onde não
+colava.** A §11 diz que a percentagem se escreve colada ao número, e a alínea I
+acima deixou o caso escrito e por corrigir. Corrige-se aqui, em duas frentes.
+
+*No título e na descrição de uma página de linha.* `tituloDaLinha` e
+`descricaoDaLinha` juntavam sempre o valor e a unidade com um espaço. Passam por
+`valorComUnidade()`, em `src/lib/livro.mjs`, que distingue **a unidade que
+começa por símbolo, que se cola, da que começa por palavra, que fica com o
+espaço**. A regra é escrita pela forma da unidade e não por uma lista de
+unidades, para não haver uma segunda lista a manter ao lado do livro-razão.
+Medido nos títulos construídos: 39 trazem `%`, **36 mudaram em cada edição**, 72
+ao todo, e os três cuja unidade só acaba em «%» («variação em três anos, %»,
+«variação anual média, %») ficam com o espaço, que é o que a frase pede.
+«82 índice (UE-27 = 100)» e «54 681 562 euros» não mudaram um carácter.
+
+*Na prosa.* Numa frase, o sinal vinha depois do selo, porque era um pedaço de
+texto da frase e o selo é um elemento: a leitura breve do município lia-se «96
+■ fonte % do orçamento». O `Claim.astro` ganha a propriedade `sufixo`, escrita
+a seguir ao valor e antes do selo, **dentro do mesmo invólucro**, que é onde
+`auditaSelo()` procura a porta, e **fora do elemento `data-claim`**, que
+continua a conter exatamente o valor do livro-razão e mais nada. São 36 sítios
+em seis páginas: a página do município (dez em cada edição) e dois estudos que
+citam as mesmas frases da casa (quatro e quatro em cada edição).
+
+Medido a 1280 e a 390, na página do município: **0px** entre o valor e o sinal
+nos dez casos, **10px** entre o sinal e o selo, que é exatamente a folga que um
+selo sem sufixo tem hoje, e nenhum par se parte em duas linhas a 390. A regra da
+folha vai presa a `:has(.claim-sufixo)`, para que os selos sem sufixo fiquem
+como estavam por construção; onde `:has()` não existir, o sinal fica a 10px do
+número, que é o que a página já escrevia antes desta correção.
+
+**E o que o portão não vê, dito aqui para não voltar a ser descoberto.** O
+estrago plantado que se esperava que fechasse o portão **não o fecha**: com o
+sinal metido dentro do elemento `data-claim` («96%» onde o livro-razão diz
+«96»), o build fica verde. A conferência é
+`digitsOf(renderizado) !== digitsOf(claim.value)`, e `digitsOf` deita fora tudo
+o que não é algarismo, por isso «96%» e «96» são a mesma coisa para ela. O que o
+portão guarda é o número, não a cadeia. Dois estragos que **fecham**, plantados
+para provar que a amarra está inteira: o valor trocado para «69» fecha em 19
+sítios com «a afirmação "evora-execucao-da-receita-2021" foi renderizada como
+"69" mas o livro-razão diz "96".»; e um algarismo dentro do sufixo novo
+(`sufixo: '%9'`) fecha o varrimento com «algarismos fora do livro-razão: "%9"».
+O elemento novo está, portanto, dentro do alcance do varrimento e não abriu
+buraco nenhum. O que falta é uma conferência da cadeia inteira, e vai para a
+§4.1.
+
+**O que foi lido e mantido, com a razão**
+
+- **O mecanismo a 390 não está comprimido: rola dentro da sua caixa.** Medido
+  pelo método da §1.43, num iframe de 390 servido da mesma origem: a janela do
+  iframe tem 390px e o documento 375px, sem rolamento lateral da página; o
+  `.mecanismo-svg` mede **760,00px de largura por 252,06px de altura**, que é o
+  `min-width: 760px` da folha com o `viewBox` de `0 0 1200 398` inteiro
+  (760 × 398 ÷ 1200 = 252,07); a `.svg-scroll` mostra 337px, tem
+  `overflow-x: auto` e rola 423px. Quem leu viu o desenho cortado à direita, que
+  é o que uma régua que rola faz, e não o desenho espremido.
+- **«A lista e o calendário são dois registos do motor de investigação,
+  publicados tal como atravessaram.»** Não é comentário sobre o sítio: é a frase
+  de proveniência que a §1.41 escolheu, no lugar de uma que falava de bytes, de
+  resumos criptográficos e da construção a fechar, e que afirmava um
+  comportamento que os dois registos não guardam.
+- **O instrumento n.º 2 sem camada 2** é o caso que a IDENTIDADE §4 já nomeia:
+  «leva hoje só duas: não tem camada 2. Ou ganha uma leitura breve, ou declara
+  por escrito porque não a tem.» Está nomeado, e é decisão de desenho.
+- **As contagens em palavras da página do município.** «Oito medidas. Seis vêm
+  de organismos que publicam para todos os concelhos do país; duas só existem
+  porque o próprio município as publica, e cada uma dessas di-lo na sua linha.»
+  Em inglês, «Eight measures. Six come from bodies that publish for every
+  concelho in the country; two exist only because the municipality itself
+  publishes them, and each of those says so on its own line.» São estado escrito
+  em vez de renderizado: se uma medida entrar ou sair, a frase fica errada e
+  nenhum varrimento a apanha, porque a régua dos algarismos não vê palavras.
+  Vai para a §4.1 com as palavras exatas.
+- **As citações de fonte em inglês sem `lang="en"`.** Numa página portuguesa, o
+  excerto de `divida-publica-2025` rende «General government gross debt (EDP
+  concept), consolidated - annual data …» dentro de um documento em `pt-PT` e
+  sem língua declarada: quem ouve a página ouve inglês lido à portuguesa. Não se
+  corrige aqui porque **o registo não tem campo de língua por campo**: pôr
+  `lang="en"` a olho seria adivinhar qual dos 132 excertos está em que língua.
+  Vai para a §4.1, e é trabalho do motor antes de ser do sítio.
+- **Os dois identificadores anteriores ao Acordo como texto de ligação.**
+  `taxa-de-actividade-2025` e `taxa-de-cambio-efectiva-real-2025` são dois dos
+  132 ids, e aparecem como texto em seis páginas construídas: o índice do
+  livro-razão, a sua própria página de linha e a agenda, nas duas edições. A
+  §1.40 fixou que um id é o nome de uma coisa e não muda de grafia por a
+  superfície ter mudado.
+- **As três contagens do sítio como linhas seladas da casa.** É a decisão em pé
+  da §1.41 e da §1.42, já dita na lista da primeira leitura: têm linha, têm
+  derivação escrita e têm selo, e trocá-las por porta seria trocar uma garantia
+  por outra sem ganhar nada.
+- **O mapa tem travessia por teclado**, e está em `public/js/mapa.js`: o
+  invólucro leva `tabindex="0"` (linha 140), as quatro setas estão declaradas
+  (146), o `keydown` responde (148) e há um `focus` que abre a leitura (183).
+  A observação repetiu-se porque leu o HTML construído, onde isto não aparece.
+- **Os alvos de toque** são os da alínea K: 44px dentro de
+  `@media (pointer: coarse)`, e uma renderização de Chrome não é um apontador
+  grosseiro.
+
+**As duas réguas desta leitura**
+
+O «antes» é `e97ca23`, a ponta do ramo antes destes cinco itens, construído de
+propósito para esta comparação.
+
+| | Antes (`e97ca23`) | Depois |
+| --- | --- | --- |
+| páginas construídas | 307 | 307 |
+| porta de correções | 307/307 | 307/307 |
+| primeira página: valores sem selo · selos para outra linha | 0 · 0 | 0 · 0 |
+| frases de moldura | 75 distintas · 2 593 ocorrências | **73 distintas · 2 471** |
+| `[descrição em preparação]` | 0 | 0 |
+| linhas com `#page=` | 23 de 132 | 23 de 132 |
+| localizadores internos | 0 | 0 |
+| `class="marcador"` | 502 | 502 |
+| «[a verificar]» | 602 | 602 |
+| `data-linha-campo="excerpt"` | 218 | 218 |
+
+**As duas frases de moldura a menos são as duas notas da atribuição**, uma por
+edição, cada uma em 61 páginas: «Como consta do documento; o rótulo partidário é
+facto de registo Porque não se ordenam partidos →» e a sua igual inglesa. São
+também as 122 ocorrências a menos. A nota que fica tem 25 caracteres e a régua
+conta blocos de 30 ou mais: deixa de ser contada por ser mais curta, e não por
+ter desaparecido.
+
+E as conferências, todas verdes depois do último item: `npm run build`,
+`npm run typecheck`, `node scripts/ortografia.mjs --verificar`,
+`npm run check:cruzamento -- --with-origin`, `npm run ledger:check` e
+`node scripts/medir-defeitos.mjs`.
+
+**O que esta leitura mexeu em `strings.mjs`, e não tem amarra**
+
+Uma chave saiu, `livro.linha.atribuicaoNotaPorta`, com as suas duas cadeias; e
+mudaram onze cadeias sem mudar de chave: a nota da atribuição e a abertura da
+agenda nas duas edições, e os quatro pedaços de frase do município que traziam o
+sinal de percentagem dentro do texto (`distanciaIndiceB`, `distanciaIndiceD`,
+`tempoSerieB`, `tempoSerieD`, nas duas edições, que são oito). Nenhuma tem
+decisão registada que a governe, e é o item 9 da §4.2, como as dezanove da §1.43
+e as da primeira leitura.
+
+A IDENTIDADE não mudou: nenhuma das cinco correções tornou falsa uma regra dela.
+As alíneas 3 e 5 são a §11 a ser cumprida onde não estava.
 
 ## 2. Como funciona o portão, e o que ele não vê
 
@@ -5317,14 +5538,18 @@ neste bloco.
 | A caixa de estado de `/estudos/<slug>` (`.placeholder`) | Um tracejado com fundo às riscas e uma etiqueta de estado («Rascunho · sem conteúdo», «Documento alojado · página por escrever»). A palavra `placeholder` **não** entrou na lista de estados de espécime que o portão recusa (§6), e foi decisão e não esquecimento. | O que a §6 proíbe é desenhar uma **ausência de dados** como espécime. Isto não é isso: é o estado editorial de uma página do arquivo, dito por palavras, sem prometer prova nenhuma e sem número por trás. Mas o vocabulário visual é o do espécime, e a v2 acabou de o proibir noutro sítio. Fica escrito para a direção decidir se a caixa muda de forma ou se o nome muda. |
 
 **Fase 4 · o que a revisão cruzada da v2 encontrou e não se fecha sem uma
-conferência nova** (18.08.2026, §1.44). Três, e os três são trabalho do
-`gate:identidade` e do portão da prosa, que ainda não existem como script.
+conferência nova** (18.08.2026, §1.44). Seis, três de cada leitura, e os seis
+são trabalho do `gate:identidade` e do portão da prosa, que ainda não existem
+como script.
 
 | Item | O que está por fazer | Porque não foi feito aqui |
 | --- | --- | --- |
 | As afirmações da prosa da primeira página que a página não sustenta | Sete afirmações em seis das oito células, nas duas edições, com as palavras exactas na tabela da §1.44: «e a descer», «o excesso quase duplicou no ano seguinte», «Está acima da média da União», «É das medidas em que Portugal mais se destaca no painel social», «Era mais de um terço no início do século», «Está abaixo da média europeia» e a advertência atribuída à Comissão sem porta. Mais uma de outra natureza, a mudança de definição do custo unitário do trabalho, que é uma afirmação sobre a metodologia da fonte. Nenhuma é falsa, e por isso nenhuma foi corrigida aqui; todas afirmam uma tendência, uma comparação ou uma atribuição que nenhuma linha **daquela página** prova. | Uma delas foi corrigida neste bloco, e foi a única que estava **errada** (a definição da posição de investimento, com o sinal ao contrário). Estas estão por provar, que é outra coisa: a saída é o portão da prosa, que aprende a exigir de uma frase da casa o mesmo que já exige de um algarismo, e isso é a fase 4. Apagá-las à mão agora deixaria a regra por escrever e a próxima frase a entrar pela mesma porta. |
 | O nome acessível de vários selos dentro da mesma legenda | Na legenda do instrumento n.º 1 há **catorze** selos e **três** nomes acessíveis distintos: seis «Linha do livro-razão: calculado · Avaliação Económica Regional de Portugal 2026 fonte», seis o mesmo sem «calculado», e dois de «Alentejo & Algarve». Quem ouve a lista de ligações ouve catorze portas com três nomes. | Distingui-los obriga o texto oculto de cada selo a levar a linha que ele abre, e obriga a conferência (4) da conferência da `proveniencia` em `scripts/gate-html.mjs`, a que compara o texto inteiro do selo com `seloDaLinha(id, lang).inteiro`, a aprender a forma nova. É desenho de conferência e não uma afinação de gabarito. |
 | O estado «lido» das fichas da régua não tem equivalente para quem não vê | `aria-pressed` segue a região estar **na régua** e `is-read` segue a região **que está a ser lida**. O segundo é só visual: o parágrafo da leitura breve só é região viva na região com que a página foi construída, e as outras trocam de `hidden` sem anunciar nada. | É comportamento de um instrumento com JavaScript, e a saída certa não é óbvia: ou a leitura breve passa a região viva única, ou o estado entra no nome da própria ficha. As duas mudam o que um leitor de ecrã ouve a cada toque, e isso é decisão de desenho. Encontrado ao conferir a observação da revisão sobre `aria-pressed`, que já estava feita (§1.44, G). |
+| As contagens em palavras da página do município | «Oito medidas. Seis vêm de organismos que publicam para todos os concelhos do país; duas só existem porque o próprio município as publica, e cada uma dessas di-lo na sua linha.» Em inglês, «Eight measures. Six come from bodies that publish for every concelho in the country; two exist only because the municipality itself publishes them, and each of those says so on its own line.» As três contagens não vêm de contar nada: são estado escrito, e se uma medida entrar ou sair na página a frase fica errada sem que nada feche. | A régua dos algarismos não vê palavras, e é isso que faz esta classe escapar inteira. Fechá-la é uma de duas coisas, e as duas são desenho: ou a frase passa a derivar das medidas que a página rende, e então precisa de porta como qualquer contagem do próprio sítio (§10), ou o portão da prosa aprende a exigir prova de uma contagem escrita por extenso. Encontrada na segunda leitura cruzada da v2 (§1.44). |
+| As citações de fonte em inglês sem língua declarada | Numa página `pt-PT`, o excerto de `divida-publica-2025` rende «General government gross debt (EDP concept), consolidated - annual data …» sem `lang="en"`, e o mesmo vale para o `source` e o `document.title` de qualquer fonte estrangeira. Quem ouve a página ouve inglês lido à portuguesa. | O registo **não tem campo de língua por campo**: nenhuma das 132 linhas diz em que língua está o seu excerto. Pôr o atributo a olho seria adivinhar, e adivinhar bem nas 132 de hoje não impede a 133.ª de entrar sem ele. É trabalho do motor primeiro, e só depois do sítio e do portão. Encontrada na segunda leitura cruzada da v2 (§1.44). |
+| O portão compara os algarismos do valor, e não a cadeia | A conferência de um `data-claim` é `digitsOf(renderizado) !== digitsOf(claim.value)`, e `digitsOf` deita fora tudo o que não é algarismo: o sinal menos (U+2212), a vírgula decimal, o espaço fino dos milhares (U+202F) e um símbolo de unidade metido dentro do elemento. Medido com dois estragos plantados de propósito: «96%» onde o livro-razão diz «96» passa e o build fica **verde**; e o valor da posição de investimento internacional sem o sinal menos rende «50,2» na primeira página **sem um único erro nessa página**. O que fechou o segundo foi outra amarra, a do `<head>` da página de linha, que compara a cadeia inteira, e essa só cobre a página de linha. | Passar a comparar cadeias obriga a fixar o que é o valor renderizado e o que é composição, e há casos com resposta por decidir: o valor desenhado dentro de um `<svg>`, o valor com escala (`--figura-car`) e o espaço que a moldura põe à volta de um elemento. É desenho de conferência, e vai com o `gate:identidade`. Até lá, a amarra que existe é o `<head>` da página de linha, e ela não vê as outras páginas. Encontrada na segunda leitura cruzada da v2 (§1.44). |
 
 **Fase 1 · a redacção do Método sobre os números do próprio sítio** (18.08.2026,
 §1.44). O Método escreve «Um número chega ao leitor só se tem linha, e a linha
