@@ -385,6 +385,51 @@ function eCitado(no) {
   return NONLEDGER_CITADO.has(attrs['data-nonledger'] ?? '');
 }
 
+/**
+ * OS ESTADOS DE ESPÉCIME que uma página construída não pode render (§6).
+ *
+ * São os três que a constituição nomeia — caixa de exemplo, espécime, nota de
+ * protótipo — nas duas edições, e as suas flexões regulares. A lista é curta de
+ * propósito: cada palavra a mais é uma palavra portuguesa a menos que a prosa
+ * da casa pode usar. `placeholder` NÃO está aqui, e é uma decisão: é o nome de
+ * uma classe que este sítio usa para o ESTADO EDITORIAL de uma página do
+ * arquivo («Rascunho · sem conteúdo»), que se diz por palavras e leva a lado
+ * nenhum sem prometer prova. Está em `DECISIONS.md` §4.1, para o juízo da
+ * direção.
+ */
+const ESTADOS_DE_ESPECIME = new Set([
+  'exemplo',
+  'exemplos',
+  'prototipo',
+  'prototipos',
+  'especime',
+  'especimes',
+  'example',
+  'examples',
+  'prototype',
+  'prototypes',
+  'specimen',
+  'specimens',
+]);
+
+/** Sem acentos e em minúsculas: «Protótipo», «PROTOTIPO» e «protótipos» são o mesmo estado. */
+function normalizaEstado(s) {
+  return String(s ?? '')
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .trim();
+}
+
+/** Este nó, ou algum antepassado, é citação? A palavra citada não se julga. */
+function dentroDeCitacao(no) {
+  for (let n = no; n; n = n.parentNode) {
+    if (n.nodeType !== NodeType.ELEMENT_NODE) continue;
+    if (eCitado(n)) return true;
+  }
+  return false;
+}
+
 /** O texto de uma página tirando o que é citação. */
 function textoPublico(no) {
   const partes = [];
@@ -1415,12 +1460,53 @@ function contasDoPortao(claims) {
  * do próprio instrumento, marcada `data-legenda-prova`. É a mesma disciplina
  * do selo, aplicada a um número que não é do livro-razão.
  */
-function temPortaPara(no, destino) {
+function temPortaPara(no, destino, base = null) {
   for (const a of no?.querySelectorAll?.('a') ?? []) {
-    if (decodeEntities(a.getAttribute('href') ?? '') === destino) return true;
+    const href = decodeEntities(a.getAttribute('href') ?? '');
+    if (href === destino) return true;
+    if (base && mesmaPorta(base, href, destino)) return true;
   }
   return false;
 }
+
+/**
+ * ---------------------------------------------------------------------------
+ * A PORTA DE UM `data-prova` PODE SER UMA ÂNCORA NA PRÓPRIA PÁGINA (v2)
+ * ---------------------------------------------------------------------------
+ *
+ * `IDENTIDADE.md` §10, v2: «a porta pode ser uma âncora na própria página.
+ * Quando o que o número conta se vê ali mesmo, o destino é a secção que o
+ * mostra». O quadro de estados da agenda conta quatro coisas que se veem mais
+ * abaixo na mesma página, e é para lá que cada contagem abre.
+ *
+ * DUAS COISAS MUDAM NESTA CONFERÊNCIA, e as duas são a mesma disciplina que a
+ * conferência das ligações internas já tem:
+ *
+ *   1. a porta compara-se RESOLVIDA, e não carácter a carácter. `#estado-em_curso`
+ *      escrito na página da agenda e `/agenda#estado-em_curso` escrito no
+ *      cabeçalho de outra página são a mesma porta, e a comparação de cadeias
+ *      dizia que não. É a base que resolve, como o navegador resolve;
+ *   2. quando a porta traz âncora, essa âncora TEM DE EXISTIR no destino. Uma
+ *      porta que aponta para uma secção que não existe leva o leitor ao topo de
+ *      uma página e não dá erro nenhum: é a maneira mais silenciosa de uma porta
+ *      não abrir, e aqui ela é ainda mais silenciosa do que numa ligação
+ *      qualquer, porque quem a escreveu foi `src/lib/prova.mjs` e não o
+ *      gabarito. A mensagem diz a chave, para que se saiba onde a corrigir.
+ */
+function portaResolvida(base, href) {
+  const r = resolveLigacao(base, href);
+  if (!r) return null;
+  return `${normalizaCaminho(r.caminho)}${r.ancora ? `#${r.ancora}` : ''}`;
+}
+
+function mesmaPorta(base, href, destino) {
+  const a = portaResolvida(base, href);
+  const b = portaResolvida(base, destino);
+  return a !== null && a === b;
+}
+
+/** As portas de `data-prova` com âncora, conferidas no fim contra os `id`. */
+const ancorasDaProva = [];
 
 /**
  * ---------------------------------------------------------------------------
@@ -2528,11 +2614,19 @@ for (const file of ficheirosHtml(DIST)) {
      * número que não é do livro-razão.
      */
     const destino = PROVA_POR_LINGUA[linguaPagina ?? 'pt'][chave].porta;
+    const base = baseDeResolucao(rel, caminho);
+    /* A âncora da porta, guardada para o fim: é contra os `id` do destino que
+       ela se confere, e os `id` de todas as páginas só existem quando o
+       varrimento acabar. */
+    const daPorta = resolveLigacao(base, destino);
+    if (daPorta?.ancora) {
+      ancorasDaProva.push({ rel, chave, destino, caminho: daPorta.caminho, ancora: daPorta.ancora });
+    }
     let temPorta = false;
     if (dentroDeSvg(el)) {
       const raiz = raizDoInstrumento(el);
       for (const legenda of raiz?.querySelectorAll?.('[data-legenda-prova]') ?? []) {
-        if (temPortaPara(legenda, destino)) temPorta = true;
+        if (temPortaPara(legenda, destino, base)) temPorta = true;
       }
       if (!temPorta) {
         err(
@@ -2546,7 +2640,11 @@ for (const file of ficheirosHtml(DIST)) {
       let no = el;
       while (no && !temPorta) {
         if (String(no.rawTagName ?? '').toLowerCase() === 'a') {
-          temPorta = decodeEntities(no.getAttribute('href') ?? '') === destino;
+          const href = decodeEntities(no.getAttribute('href') ?? '');
+          /* Resolvida, e não carácter a carácter: uma âncora na própria página
+             («#estado-em_curso») e o caminho inteiro («/agenda#estado-em_curso»)
+             são a mesma porta (§10, v2). */
+          temPorta = href === destino || mesmaPorta(base, href, destino);
           break;
         }
         no = no.parentNode;
@@ -2581,6 +2679,88 @@ for (const file of ficheirosHtml(DIST)) {
       );
     }
     aRemover.push(el);
+  }
+
+  /**
+   * ---------------------------------------------------------------------
+   * UMA AUSÊNCIA NUNCA SE DESENHA (v2, IDENTIDADE.md §6)
+   * ---------------------------------------------------------------------
+   *
+   * «A única língua pública para "esta prova não está aqui" é o marcador, com o
+   * seu motivo tipado e o caminho para a correção. Uma página construída que
+   * renda `data-exemplo`, ou qualquer estado "exemplo" ou "protótipo", é
+   * recusada pelo portão.» As três direções de desenho renderizaram `EXEMPLO` e
+   * `PROTÓTIPO` ao lado de `[a verificar]`, e a crítica cruzada apanhou as três:
+   * o que a v2 acrescenta é que deixa de ser preciso alguém as apanhar.
+   *
+   * TRÊS SUPERFÍCIES, porque um espécime pode entrar por qualquer uma:
+   *
+   *   a marca      `data-exemplo`, `data-prototipo`, ou uma marca qualquer cujo
+   *                VALOR seja um destes estados (`data-estado="exemplo"`);
+   *   a classe     `exemplo`, `exemplo-k`, `prototipo-nota` — é assim que os
+   *                protótipos as escreveram;
+   *   o texto      um rótulo que DIZ o estado: «Exemplo», «Exemplo:», «Protótipo
+   *                ·», e não a palavra no meio de uma frase.
+   *
+   * O QUE NÃO FECHA, E É METADE DA REGRA. A palavra «exemplo» é uma palavra
+   * portuguesa. «uma fonte que muda de endereço, por exemplo» é prosa legítima
+   * do Método, e um documento transcrito que comece por «Exemplo da falta de
+   * civismo…» é o que a fonte escreveu. Por isso a conferência do texto só olha
+   * para rótulos (a palavra no PRINCÍPIO, seguida de fim, de dois pontos ou do
+   * separador da casa) e nunca dentro de uma citação: `blockquote`, `q`, `cite`,
+   * `data-verbatim`, um campo transcrito de uma linha, ou qualquer descendente
+   * deles. Reescrever a prova para lhe tirar uma palavra seria pior do que o
+   * defeito que isto fecha.
+   */
+  for (const el of body.querySelectorAll('*')) {
+    const attrs = el.attributes ?? {};
+    for (const [nome, valor] of Object.entries(attrs)) {
+      const n = nome.toLowerCase();
+      const raiz = n.startsWith('data-') ? n.slice('data-'.length).split('-')[0] : null;
+      if (raiz && ESTADOS_DE_ESPECIME.has(raiz)) {
+        err(
+          `a página rende a marca "${nome}", que declara um estado de espécime.\n` +
+            `      IDENTIDADE.md §6: uma ausência de dados nunca se desenha, nem como caixa de ` +
+            `exemplo, nem como espécime, nem como nota de protótipo.\n` +
+            `      A única língua pública para «esta prova não está aqui» é «${POR_VERIFICAR}», ` +
+            `com o seu motivo tipado e o caminho para a correção.`,
+        );
+        continue;
+      }
+      if (n.startsWith('data-') && ESTADOS_DE_ESPECIME.has(normalizaEstado(valor))) {
+        err(
+          `a marca "${nome}" desta página vale "${valor}", que é um estado de espécime.\n` +
+            `      IDENTIDADE.md §6: uma ausência de dados nunca se desenha. O que falta diz-se ` +
+            `com «${POR_VERIFICAR}», e mais nada.`,
+        );
+      }
+    }
+
+    for (const classe of String(el.getAttribute('class') ?? '').trim().split(/\s+/)) {
+      if (!classe) continue;
+      if (ESTADOS_DE_ESPECIME.has(normalizaEstado(classe.split('-')[0]))) {
+        err(
+          `a página rende a classe "${classe}", que desenha um estado de espécime.\n` +
+            `      IDENTIDADE.md §6: nem caixa de exemplo, nem espécime, nem nota de protótipo. ` +
+            `O que falta leva «${POR_VERIFICAR}».`,
+        );
+        break;
+      }
+    }
+
+    /* O texto: só um rótulo, e nunca dentro de uma citação. */
+    if (el.childNodes?.some?.((n) => n.nodeType === NodeType.ELEMENT_NODE)) continue;
+    if (dentroDeCitacao(el)) continue;
+    const rotulo = normalizeWhitespace(decodeEntities(textoDe(el)));
+    const m = rotulo.match(/^([\p{L}]+)\s*(?:[:·]|$)/u);
+    if (m && ESTADOS_DE_ESPECIME.has(normalizaEstado(m[1]))) {
+      err(
+        `a página escreve o rótulo "${rotulo.slice(0, 60)}", que anuncia um estado de espécime.\n` +
+          `      IDENTIDADE.md §6: uma ausência de dados nunca se desenha, nem como caixa de ` +
+          `exemplo, nem como espécime, nem como nota de protótipo.\n` +
+          `      Diga o que falta com «${POR_VERIFICAR}» e o seu motivo, ou não desenhe o lugar.`,
+      );
+    }
   }
 
   for (const el of body.querySelectorAll('[data-nonledger]')) {
@@ -2760,6 +2940,40 @@ for (const { rel, base, href } of ligacoesInternas) {
         `a ligação interna "${href}" aponta para a âncora "#${resolvido.ancora}", que não existe ` +
         `em "${normalizaCaminho(resolvido.caminho)}".\n` +
         `      Uma porta que abre a página errada, ou o topo dela, é uma porta que não abre.`,
+    });
+  }
+}
+
+/**
+ * A ÂNCORA DA PORTA DE UM NÚMERO DO SÍTIO (v2, IDENTIDADE.md §10).
+ *
+ * Um `data-prova` pode ter como porta uma âncora na própria página, quando é
+ * ali que se vê o que ele conta. A âncora tem de existir: quem a escreveu foi
+ * `src/lib/prova.mjs` e não o gabarito, e por isso a mensagem diz a CHAVE, para
+ * que se saiba onde a corrigir. A conferência das ligações internas apanha a
+ * mesma coisa pelo lado da ligação; esta apanha-a pelo lado da prova, que é
+ * onde a porta é decidida.
+ */
+for (const { rel, chave, destino, caminho, ancora } of ancorasDaProva) {
+  const ids = idsPorPagina.get(normalizaCaminho(caminho));
+  if (!ids) {
+    erros.push({
+      rel,
+      msg:
+        `a porta do número da prova "${chave}" é "${destino}", e "${normalizaCaminho(caminho)}" ` +
+        `não é uma página construída.`,
+    });
+    continue;
+  }
+  if (!ids.has(ancora)) {
+    erros.push({
+      rel,
+      msg:
+        `a porta do número da prova "${chave}" aponta para a âncora "#${ancora}", que não existe ` +
+        `em "${normalizaCaminho(caminho)}".\n` +
+        `      A porta de um número do sítio pode ser uma âncora na própria página (§10, v2), e ` +
+        `então é essa secção que tem de existir.\n` +
+        `      Corrija a porta em src/lib/prova.mjs, ou dê à secção o "id" que a porta nomeia.`,
     });
   }
 }
