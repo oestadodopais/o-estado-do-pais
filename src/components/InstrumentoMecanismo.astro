@@ -48,14 +48,29 @@ const s = t(lang);
 const p = prova(lang);
 const m = s.metodo.instrumento;
 
-/* Geometria. Uma linha de seis nós, com dois nós acima e um abaixo. */
+/* Geometria. Uma linha de seis nós, com dois nós acima e um abaixo.
+
+   A ALTURA DO NÓ É A DE DOIS VALORES, e não a de um. Dois nós levam dois
+   valores cada um, o livro-razão («linhas» e «por confirmar») e a releitura
+   («registadas» e «reconferido a»), e com 92 de altura e 24 de passo o segundo
+   número subia por cima da legenda do primeiro: a página rendia «132» com
+   «linhas» tapado por «12», e «0» com «registadas» tapado pela data. Um número
+   tapado por outro é pior do que um número que não está lá.
+
+   O passo entre pares passa a 36, que é o que a subida de um número de 19px
+   pede por cima da descida de uma legenda de 8,5px, e a caixa a 108, que é o
+   que dois pares pedem com a mesma folga em cima e em baixo. Os afastamentos
+   entre as três filas ficam como estavam, 22 e 30, e a altura do desenho
+   acompanha: todas as setas são derivadas destas medidas e nenhuma foi escrita
+   à mão. */
 const W = 1200;
-const H = 350;
+const H = 398;
 const NO_W = 158;
-const NO_H = 92;
-const Y = 128;
+const NO_H = 108;
+const PASSO = 36;
+const Y = 144;
 const Y_CIMA = 14;
-const Y_BAIXO = 250;
+const Y_BAIXO = 282;
 const XS = [15, 213, 411, 609, 807, 1005];
 
 const cadeia = [
@@ -214,13 +229,13 @@ for (const no of [...cadeia, ...retornos]) {
               <>
                 <text
                   x={no.x + 12}
-                  y={no.y + 46 + i * 24}
+                  y={no.y + 46 + i * PASSO}
                   class="mecanismo-num"
                   data-prova={p[v.chave].valor === null ? undefined : v.chave}
                 >
                   {p[v.chave].valor === null ? m.semRegisto : p[v.chave].valor}
                 </text>
-                <text x={no.x + 12} y={no.y + 60 + i * 24} class="mecanismo-cap">
+                <text x={no.x + 12} y={no.y + 60 + i * PASSO} class="mecanismo-cap">
                   {v.rotulo}
                 </text>
               </>
