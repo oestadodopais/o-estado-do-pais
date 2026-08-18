@@ -13,20 +13,20 @@ unit: "euros"
 source: "Estrutura de Missão Recuperar Portugal"
 document:
   title: "Listagem de entidades PRR"
-  edition: "instantâneo 20260803-1828"
+  edition: "instantâneo 20260817-2035"
   locator: "listagem de entidades PRR, beneficiário final NIF 504828576 (Município de Évora), valor contratado neste concelho"
   kind: "ficheiro"
   computed_over:
     files:
-      - file: "listagem-de-entidades-prr-20260803.xlsx"
-        snapshot_date: "2026-08-03"
-        sha256: "cc5eac3866217f1f1830f06c9872c300d59e62a4d8c20c7277ca20dc8cd0921d"
-        bytes: 44331540
+      - file: "listagem-de-entidades-prr-20260817.xlsx"
+        snapshot_date: "2026-08-17"
+        sha256: "0d5335642a26495dd5cd2b12b1706c0fad6e310701d4f8264143273ba62c69b5"
+        bytes: 44344321
     column: "valor_contratado"
     filter: "papel_entidade = Beneficiário Final · localizacao_sede = Évora · nif_entidade = 504828576"
 source_url: "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1"
-access_date: "2026-08-04"
-reference_date: "2026-08-03"
+access_date: "2026-08-18"
+reference_date: "2026-08-17"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "NIF 504828576 \"MUNICÍPIO DE ÉVORA\" \"contratado_neste_concelho\": 12069012.6"
@@ -62,3 +62,10 @@ corrections:
     new_value: "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1"
     reason: "O recurso que a linha citava desde 2026-08-15 devolve HTTP 404 na própria API do dados.gov.pt, lido a 2026-08-18: o endereço «permanente» do recurso era o de um dia. O conjunto é regenerado todos os dias, com nome datado e identificador novo, pelo que nenhum endereço de recurso é estável. O endereço estável é a página do conjunto, que é a que passa a ser citada. Os ficheiros sobre que o valor foi calculado ficam identificados pelo seu resumo em «calculado sobre». O valor publicado não muda."
     reason_en: "The resource the row had cited since 2026-08-15 returns HTTP 404 on dados.gov.pt's own API, read on 2026-08-18: the resource's «permanent» address was one day's address. The dataset is regenerated daily, with a dated filename and a new identifier, so no resource address is stable. The stable address is the dataset page, which is what the row now cites. The files the value was computed over are identified by their hash under «computed over». The published value does not change."
+  - date: "2026-08-18"
+    kind: "proveniencia"
+    field: "source_url"
+    old_value: "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx"
+    new_value: "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1"
+    reason: "A reextração de 2026-08-18 leu o instantâneo de 2026-08-17 no endereço datado que o publicador servia nesse dia, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx». Esse endereço é rotativo por desenho: o publicador regenera o recurso com nome datado e identificador novo, e não arquiva o anterior. A linha continua a citar a página do conjunto, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», que é o endereço estável. Este passo não muda o valor publicado; os ficheiros sobre que ele foi calculado ficam identificados pelo resumo dos seus bytes em «calculado sobre»."
+    reason_en: "The 2026-08-18 re-extraction read the 2026-08-17 snapshot at the dated address the publisher was serving that day, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx». That address rotates by design: the publisher regenerates the resource with a dated filename and a new identifier, and archives nothing. The row still cites the dataset page, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», which is the stable address. This step does not change the published value; the files it was computed over are identified by the hash of their bytes under «computed over»."
