@@ -561,9 +561,9 @@ export const STRINGS = {
          município. Nenhum id de afirmação se escreve aqui: isto é a língua,
          não os dados. */
       distanciaIndiceA: 'O índice é ',
-      distanciaIndiceB: ' % em ',
+      distanciaIndiceB: ' em ',
       distanciaIndiceC: ', contra um teto legal de ',
-      distanciaIndiceD: ' %.',
+      distanciaIndiceD: '.',
       distanciaLei:
         'O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores. É a lei que o define, não este sítio.',
       distanciaDivida: 'dívida',
@@ -592,9 +592,9 @@ export const STRINGS = {
       /* A frase da camada 2 do instrumento. Só os anos que a página publica:
          dizer «todos os anos» seria dizer mais do que se mostra. */
       tempoSerieA: 'O índice de dívida do regulador desceu de ',
-      tempoSerieB: ' % em ',
+      tempoSerieB: ' em ',
       tempoSerieC: ' para ',
-      tempoSerieD: ' % em ',
+      tempoSerieD: ' em ',
       tempoSerieE: ', nos quatro anos que esta página publica.',
       tempoK: 'Quem administrou, e o que as contas registaram',
       /* A banda dos mandatos: o rótulo do desenho e o rótulo da legenda que
@@ -1179,9 +1179,9 @@ export const STRINGS = {
       distanciaLegenda:
         'The bar is the total debt the regulator publishes for the concelho; the rule is the legal limit for the same year. The index measures one against the other on a scale whose cap is the permitted value.',
       distanciaIndiceA: 'The index is ',
-      distanciaIndiceB: ' % in ',
+      distanciaIndiceB: ' in ',
       distanciaIndiceC: ', against a legal cap of ',
-      distanciaIndiceD: ' %.',
+      distanciaIndiceD: '.',
       distanciaLei:
         'The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue. The law defines it, not this site.',
       distanciaDivida: 'debt',
@@ -1208,9 +1208,9 @@ export const STRINGS = {
       tempoIndice: 'index',
       contasDivergenciaArredondada: '· the difference is published rounded to the euro; the two figures above differ by cents.',
       tempoSerieA: 'The regulator’s debt index fell from ',
-      tempoSerieB: ' % in ',
+      tempoSerieB: ' in ',
       tempoSerieC: ' to ',
-      tempoSerieD: ' % in ',
+      tempoSerieD: ' in ',
       tempoSerieE: ', across the four years this page publishes.',
       tempoK: 'Who governed, and what the accounts recorded',
       tempoBandaK: 'Terms, in time',

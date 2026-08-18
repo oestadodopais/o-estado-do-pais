@@ -6,6 +6,8 @@
  *   'palavras'                    — texto corrido
  *   { claim: 'id' }               — um número, citado do livro-razão. Com a
  *                                   propriedade `selos`, sai com o selo ao lado.
+ *   { claim: 'id', sufixo: '%' }  — o mesmo, com o símbolo da unidade colado
+ *                                   ao valor e antes do selo (§11).
  *   { ref: '2024' }               — ano ou período de referência dos dados
  *   { nl: '100', motivo: '…' }    — outro contexto estrutural declarado
  *   { forte: '…' }                — negrito
@@ -36,7 +38,8 @@ const { partes, lang = 'pt', selos = false } = Astro.props;
 {
   partes.map((parte) => {
     if (typeof parte === 'string') return <Fragment set:text={parte} />;
-    if (parte.claim) return <Claim id={parte.claim} lang={lang} chip={selos} />;
+    if (parte.claim)
+      return <Claim id={parte.claim} lang={lang} chip={selos} sufixo={parte.sufixo ?? ''} />;
     if (parte.ref) return <span data-nonledger="data-de-referencia">{parte.ref}</span>;
     if (parte.forte) return <strong set:text={parte.forte} />;
     if (parte.email)

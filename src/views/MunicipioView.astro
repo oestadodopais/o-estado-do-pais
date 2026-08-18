@@ -68,11 +68,11 @@ const xDivida = G.L + Math.max(0, Math.min(1, divida / limite)) * (G.R - G.L);
    inglesa a Évora — e o tipo de página é para os 308. */
 const indicePartes = [
   s.municipio.distanciaIndiceA,
-  { claim: D.indice },
+  { claim: D.indice, sufixo: '%' },
   s.municipio.distanciaIndiceB,
   { ref: D.ref },
   s.municipio.distanciaIndiceC,
-  { claim: D.tecto },
+  { claim: D.tecto, sufixo: '%' },
   s.municipio.distanciaIndiceD,
 ];
 
@@ -132,11 +132,11 @@ const primeiro = serieAnos[0];
 const ultimo = serieAnos[serieAnos.length - 1];
 const indiceSeriePartes = [
   s.municipio.tempoSerieA,
-  { claim: primeiro.indice },
+  { claim: primeiro.indice, sufixo: '%' },
   s.municipio.tempoSerieB,
   { ref: primeiro.ref },
   s.municipio.tempoSerieC,
-  { claim: ultimo.indice },
+  { claim: ultimo.indice, sufixo: '%' },
   s.municipio.tempoSerieD,
   { ref: ultimo.ref },
   s.municipio.tempoSerieE,
@@ -567,7 +567,7 @@ const metodoPath = routePath('metodo', lang);
                               {s.municipio.distanciaTecto}{' '}
                               <Claim id={r.limite} lang={lang} chip={true} /> €{' · '}
                               {s.municipio.tempoIndice}{' '}
-                              <Claim id={r.indice} lang={lang} chip={true} /> %
+                              <Claim id={r.indice} lang={lang} chip={true} sufixo="%" />
                             </div>
                           ))
                         ) : (
