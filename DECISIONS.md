@@ -5110,7 +5110,9 @@ As alíneas 3 e 5 são a §11 a ser cumprida onde não estava.
 *Este registo segue a grafia que §1.38 fixou.*
 
 A 2026-08-18, em conversa, a direção leu as três vigilâncias, a pergunta da
-habitação e as dez regras do Método, e decidiu sobre as três. Este bloco é o
+habitação e, do Método, as regras cujas provas a §1.39 dá como mais fracas (1, 6,
+9 e 10) e a frase da regra 5, e decidiu sobre as três coisas: manter as
+vigilâncias, selar a pergunta, mudar duas palavras e nada mais. Este bloco é o
 registo dessas decisões e o mínimo de código que a página precisava para as dizer
 sem mentir.
 
