@@ -46,6 +46,14 @@ note: null
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
+
+# Reconferências independentes. Escritas pelo motor, nunca à mão. Ver abaixo.
+verifications:
+  - date: "2026-08-15"                 # AAAA-MM-DD, o dia da reconferência
+    path: "https://www.ine.pt/…"       # o endereço que foi lido nesse dia
+    result: "igual"                    # igual | diverge | inacessivel
+    by: "leitura-independente"         # leitura-independente | painel-semanal | revisao-cruzada
+    # found: "12,3"                    # só quando result é diverge: o valor como a fonte o imprimiu
 ```
 
 ## Regras que o build impõe
@@ -76,7 +84,15 @@ corrections: []
 14. `document.page` não for um inteiro ≥ 1; estiver numa linha derivada ou da
     casa; discordar do `#page=N` do endereço; faltar quando o endereço traz
     `#page=N` ou quando o localizador diz `p. N`; ou faltar no endereço, quando
-    a linha declara a página e o endereço é um PDF.
+    a linha declara a página e o endereço é um PDF;
+15. uma entrada de `verifications` não trouxer `date` (AAAA-MM-DD), `path`,
+    `result` e `by`, ou trouxer uma chave que não é nenhuma destas nem `found`;
+    a data for posterior ao dia da construção (UTC) ou anterior a
+    `access_date`; o `path` não começar por `http://` ou `https://`; `result`
+    ou `by` estiverem fora dos três valores de cada um; faltar `found` numa
+    entrada `diverge`, ou existir numa que não seja; a lista não estiver por
+    ordem cronológica crescente; duas entradas repetirem (`date`, `path`, `by`,
+    `result`); ou a linha não tiver `source_url`.
 
 ## `document.kind` — o que o endereço serve
 
@@ -159,6 +175,56 @@ localizador é (V7): os seus algarismos existem no texto da linha do motor, ou n
 ficheiro que o manifesto nomeia em `locator_from`. Um localizador com `p. N` sem
 `page` declarado é recusado. Uma página é lida, nunca recordada — e nunca de
 duas maneiras.
+
+## `verifications[]` — as reconferências independentes
+
+Opcional, no fim da linha, a seguir a `corrections`. Existe desde 18.08.2026
+(DECISIONS §1.47). Cada entrada é **uma releitura que aconteceu**: o dia, o
+endereço que foi lido nesse dia, o que se encontrou, e por que caminho.
+
+| Campo | O que é |
+| --- | --- |
+| `date` | AAAA-MM-DD, o dia da reconferência |
+| `path` | o endereço lido nesse dia, a começar por `http://` ou `https://` |
+| `result` | `igual` · `diverge` · `inacessivel` |
+| `by` | `leitura-independente` · `painel-semanal` · `revisao-cruzada` |
+| `found` | **só** quando `result` é `diverge`: o valor como a fonte o imprimiu |
+
+**Porque existe.** O único campo de tempo de uma linha era `access_date`, «lido
+a»: o dia em que a fonte foi lida pela primeira vez. Uma linha lida uma vez em
+2026 e nunca mais tinha exactamente a mesma cara de uma linha relida ontem. A
+regra 3 do `BRIEF-confianca.md` §6.8 pede as duas datas visíveis, e esta é a
+segunda.
+
+**Não se escreve à mão, e essa é a regra que sustenta o campo.** Uma entrada
+nasce de uma releitura que aconteceu, e entra por um de dois caminhos:
+
+- **as linhas cruzadas**, pelo exportador do motor
+  (`ResearchHub/publisher/export_site_rows.py`), a partir de um registo de
+  releitura em `publisher/verificacoes/` e de um mapa que diz que valor do
+  registo corresponde a que linha do sítio. O mapa não carrega valores: a
+  comparação faz-se no exportador, entre o valor impresso no registo e o valor
+  que a linha publica;
+- **as 32 linhas de base** (`quadro-institucional`), pelo
+  `ResearchHub/indicators/refresh.py`, no fim de cada corrida das canárias:
+  `igual` quando a canária do valor passou, `diverge` com `found` quando o
+  valor mexeu, `inacessivel` quando a fonte não respondeu.
+
+Um campo de reconferência preenchido à mão é a promessa mais fácil de fazer e a
+mais difícil de desmentir. **O que não se pode provar não se escreve.**
+
+**A página da linha** mostra «Lido a *access_date*» e, a seguir, as **duas**
+entradas mais recentes, da mais nova para a mais velha: «Reconferido a *data* ·
+*quem releu* · *o que encontrou*», com a porta para repetir a leitura. Sem
+nenhuma entrada fica o marcador, com a porta para a regra da releitura no
+Método: uma reconferência que não aconteceu não se desenha (IDENTIDADE.md §6).
+
+O portão confere o conjunto, e não só cada peça: cada entrada rendida leva o
+índice que tem na lista do livro-razão, os valores crus de `by` e `result` vão
+em atributos e são comparados com a linha, os dois rótulos são comparados com a
+**cópia própria** do portão da tabela de rótulos, e o conjunto rendido tem de
+ser exactamente as duas entradas mais recentes — nem uma a mais, nem a mais
+velha no lugar da mais nova.
 
 ## `attributed_to` — a quem o valor é creditado
 

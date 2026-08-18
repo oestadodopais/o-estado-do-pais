@@ -94,6 +94,7 @@ const CAMPOS = [
   'study',
   'note',
   'corrections',
+  'verifications',
 ];
 
 /**
@@ -302,6 +303,58 @@ const CAMPOS_CORRECAO = ['date', 'kind', 'old_value', 'new_value', 'reason', 're
  * Sem `field`, a entrada dizia «X → Y» sem dizer X e Y de quê.
  */
 const CAMPOS_CORRECAO_PROVENIENCIA = [...CAMPOS_CORRECAO, 'field'];
+
+/**
+ * ---------------------------------------------------------------------------
+ * `verifications[]` — as reconferências independentes de uma linha
+ * ---------------------------------------------------------------------------
+ *
+ * O único campo de tempo que uma linha tinha era `access_date`, «lido a»: a
+ * data em que a fonte foi lida pela primeira vez. Uma linha lida uma vez em
+ * 2026 e nunca mais é indistinguível de uma linha reconferida ontem, e as duas
+ * apareciam com a mesma cara. Este campo guarda a segunda leitura: quando, por
+ * que caminho, por quem, e com que resultado.
+ *
+ * NÃO SE ESCREVE À MÃO. Uma entrada nasce de uma releitura que aconteceu — o
+ * exportador do motor escreve as das linhas cruzadas a partir do registo da
+ * releitura, e o `indicators/refresh.py` escreve as das linhas de base a partir
+ * das canárias que corre. Um campo de reconferência preenchido à mão é a
+ * promessa mais fácil de fazer e a mais difícil de desmentir.
+ */
+const CAMPOS_VERIFICACAO = ['date', 'path', 'result', 'by'];
+
+/** O que a releitura encontrou. Três valores, e a diferença não é cosmética. */
+export const RESULTADOS_DA_VERIFICACAO = ['igual', 'diverge', 'inacessivel'];
+
+/** Quem releu. Três caminhos, e cada um vale o que vale. */
+export const AUTORES_DA_VERIFICACAO = [
+  'leitura-independente',
+  'painel-semanal',
+  'revisao-cruzada',
+];
+
+/**
+ * As entradas de uma linha, da mais nova para a mais velha, com o índice que
+ * cada uma tem na lista do livro-razão.
+ *
+ * O índice acompanha a entrada porque é ele que a página marca e o portão
+ * resolve: uma entrada renderizada diz que posição da lista é, e o portão vai
+ * buscá-la a essa posição. Sem isso a comparação seria por ordem de rendição,
+ * que é precisamente o que se quer conferir.
+ *
+ * A ordenação é estável: a lista está por ordem cronológica crescente (o
+ * validador exige-o), e duas entradas do mesmo dia mantêm a ordem em que foram
+ * escritas, com a mais recente da lista à frente.
+ */
+export function verificacoesDaLinha(claim) {
+  const lista = Array.isArray(claim?.verifications) ? claim.verifications : [];
+  return lista
+    .map((v, n) => ({ ...v, __n: n }))
+    .sort((a, b) => String(b.date).localeCompare(String(a.date)) || b.__n - a.__n);
+}
+
+/** Quantas entradas a página mostra: as duas mais recentes, ou menos. */
+export const VERIFICACOES_MOSTRADAS = 2;
 
 let _cache = null;
 
@@ -917,6 +970,135 @@ export function validateLedger() {
           errors.push(`${rot}: "date" tem de ser AAAA-MM-DD.`);
         }
       });
+    }
+
+    /* 6b — as reconferências independentes.
+       Opcional: uma linha sem entradas é uma linha que ainda não foi relida, e
+       a página di-lo com o marcador. O que não é opcional é a forma de uma
+       entrada que exista. */
+    if (c.verifications !== null && c.verifications !== undefined) {
+      if (!Array.isArray(c.verifications)) {
+        errors.push(
+          `${onde} "verifications" tem de ser uma lista (não escreva o campo quando não há ` +
+            `nenhuma reconferência: uma lista vazia e campo nenhum dizem o mesmo).`,
+        );
+      } else {
+        /* Uma linha sem endereço não tem o que reler. A derivada é reconferida
+           pelo `check` a cada construção, e a da casa conta-se a si própria:
+           uma entrada de releitura numa dessas prometia uma leitura de uma
+           fonte que não existe. */
+        if (c.verifications.length && ausente(c.source_url)) {
+          errors.push(
+            `${onde} tem "verifications" e não tem "source_url". Uma linha ${
+              derivada ? 'derivada' : 'sem endereço'
+            } não tem o que reler: a derivada é reconferida pelo "check" a cada construção, e ` +
+              `a da casa conta-se a si própria.`,
+          );
+        }
+        /* O dia da construção, em UTC. Uma reconferência no futuro é um
+           estrago: ninguém releu ainda uma coisa que ainda não aconteceu. */
+        const hoje = new Date().toISOString().slice(0, 10);
+        const vistas = new Set();
+        let anterior = null;
+        c.verifications.forEach((v, n) => {
+          const rot = `${onde} verificação #${n + 1}`;
+          if (!v || typeof v !== 'object' || Array.isArray(v)) {
+            errors.push(`${rot}: tem de ser um mapa com date, path, result e by.`);
+            return;
+          }
+          const aceites =
+            v.result === 'diverge' ? [...CAMPOS_VERIFICACAO, 'found'] : CAMPOS_VERIFICACAO;
+          for (const k of Object.keys(v)) {
+            if (!aceites.includes(k)) {
+              errors.push(
+                `${rot}: campo desconhecido "${k}". Aceites: ${aceites.join(', ')}` +
+                  (k === 'found'
+                    ? ' — "found" só existe numa entrada "diverge", onde é o valor como a fonte o imprimiu.'
+                    : '.'),
+              );
+            }
+          }
+          for (const campo of CAMPOS_VERIFICACAO) {
+            if (ausente(v[campo])) errors.push(`${rot}: falta "${campo}".`);
+          }
+
+          if (v.date !== null && v.date !== undefined) {
+            if (!/^\d{4}-\d{2}-\d{2}$/.test(String(v.date))) {
+              errors.push(`${rot}: "date" tem de ser AAAA-MM-DD.`);
+            } else {
+              if (String(v.date) > hoje) {
+                errors.push(
+                  `${rot}: "date" é ${v.date} e a construção corre a ${hoje}. Uma reconferência ` +
+                    `no futuro não aconteceu.`,
+                );
+              }
+              if (/^\d{4}-\d{2}-\d{2}$/.test(String(c.access_date ?? '')) &&
+                  String(v.date) < String(c.access_date)) {
+                errors.push(
+                  `${rot}: "date" é ${v.date} e a linha foi lida a ${c.access_date}. Uma ` +
+                    `releitura é depois da leitura.`,
+                );
+              }
+              if (anterior !== null && String(v.date) < anterior) {
+                errors.push(
+                  `${rot}: "date" é ${v.date} e a entrada anterior é de ${anterior}. A lista ` +
+                    `está por ordem cronológica crescente, e a página mostra as duas últimas.`,
+                );
+              }
+              anterior = String(v.date);
+            }
+          }
+
+          if (!ausente(v.path) && !/^https?:\/\//.test(String(v.path))) {
+            errors.push(
+              `${rot}: "path" é "${v.path}". Tem de ser o endereço que foi lido nesse dia, a ` +
+                `começar por "http://" ou "https://".`,
+            );
+          }
+
+          if (!ausente(v.by) && !AUTORES_DA_VERIFICACAO.includes(v.by)) {
+            errors.push(
+              `${rot}: "by" é "${v.by}". Só pode ser ` +
+                `${AUTORES_DA_VERIFICACAO.map((k) => `"${k}"`).join(', ')}.`,
+            );
+          }
+
+          if (!ausente(v.result) && !RESULTADOS_DA_VERIFICACAO.includes(v.result)) {
+            errors.push(
+              `${rot}: "result" é "${v.result}". Só pode ser ` +
+                `${RESULTADOS_DA_VERIFICACAO.map((k) => `"${k}"`).join(', ')}.\n` +
+                `    "igual" = a fonte diz o mesmo. "diverge" = diz outra coisa, e "found" ` +
+                `guarda-a. "inacessivel" = a fonte não respondeu nesse dia.`,
+            );
+          }
+          if (v.result === 'diverge') {
+            if (ausente(v.found)) {
+              errors.push(
+                `${rot}: "result" é "diverge" e falta "found" — o valor como a fonte o imprimiu ` +
+                  `nesse dia. Uma divergência sem o valor que se encontrou não se pode conferir.`,
+              );
+            } else if (!/\d/.test(String(v.found))) {
+              errors.push(
+                `${rot}: "found" ("${v.found}") não contém nenhum algarismo. É um valor, não ` +
+                  `uma descrição do que aconteceu.`,
+              );
+            }
+          }
+
+          /* A identidade é o quarteto. Duas releituras do mesmo endereço, no
+             mesmo dia, pelo mesmo caminho e com o mesmo resultado são a mesma
+             releitura escrita duas vezes, e inflam a contagem que a página
+             publica. */
+          const chave = [v.date, v.path, v.by, v.result].join(' ');
+          if (vistas.has(chave)) {
+            errors.push(
+              `${rot}: repete a entrada de ${v.date} sobre "${String(v.path).slice(0, 60)}" ` +
+                `(${v.by}, ${v.result}). A mesma releitura não se escreve duas vezes.`,
+            );
+          }
+          vistas.add(chave);
+        });
+      }
     }
 
     // 7 — datas
