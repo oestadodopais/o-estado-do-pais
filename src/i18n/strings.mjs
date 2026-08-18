@@ -189,6 +189,10 @@ export const STRINGS = {
         alteracao: 'alteração',
       },
       historicoPara: 'passa a',
+      /* Uma entrada que sai de um estado e chega ao mesmo não é uma transição, e
+         escrevê-la com a seta («Em curso → Em curso») fazia a página anunciar
+         uma mudança de estado onde só houve uma decisão registada. */
+      historicoMantem: 'mantém-se em',
       calendarioH2: 'O calendário das fontes',
       calendarioLede:
         'O que as fontes que este sítio cita publicam a seguir. Cada data traz o sítio onde está escrita, a data em que foi lida e a frase que a diz.',
@@ -843,6 +847,7 @@ export const STRINGS = {
         alteracao: 'change',
       },
       historicoPara: 'moves to',
+      historicoMantem: 'stays in',
       calendarioH2: 'The source calendar',
       calendarioLede:
         'What the sources this site cites publish next. Each date carries the place where it is written, the date it was read, and the sentence that says it.',

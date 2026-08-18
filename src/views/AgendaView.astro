@@ -551,12 +551,28 @@ const rotuloDoCriterio = (tipo) =>
                               crus, e o portão confere os dois contra o registo e
                               a frase visível contra a sua cópia dos rótulos.
                               Trocar «passa a Em curso» por «passa a Concluído»
-                              passava (revisão cruzada 2, #5). */}
+                              passava (revisão cruzada 2, #5).
+
+                              TRÊS FORMAS, e não duas. A entrada não vem de
+                              estado nenhum e escreve-se «passa a X». Uma
+                              entrada que sai de um estado e chega a outro leva
+                              a seta. E uma que sai de um estado e chega ao
+                              MESMO não é uma transição: escrevê-la «Em curso →
+                              Em curso» anunciava uma mudança de estado onde só
+                              houve uma decisão registada, e é o que uma
+                              `alteracao` de mesmo estado é. Passa a
+                              «mantém-se em X». A marca não muda: continua a
+                              trazer `de` e `para` crus, e o portão confere as
+                              três formas contra a sua própria cópia. */}
                           <span
                             class="agenda-historico-estados mono"
                             data-agenda-transicao={`${entrada.de ?? ''}>${entrada.para}`}
                           >
-                            {entrada.de ? `${s.agenda.estados[entrada.de]} → ` : `${s.agenda.historicoPara} `}
+                            {!entrada.de
+                              ? `${s.agenda.historicoPara} `
+                              : entrada.de === entrada.para
+                                ? `${s.agenda.historicoMantem} `
+                                : `${s.agenda.estados[entrada.de]} → `}
                             {s.agenda.estados[entrada.para] ?? entrada.para}
                           </span>
                         </p>

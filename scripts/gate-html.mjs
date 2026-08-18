@@ -1042,6 +1042,15 @@ const ROTULO_DO_REGISTO_PREVIO = {
 
 const PREFIXO_DA_TRANSICAO = { pt: 'passa a', en: 'moves to' };
 
+/**
+ * E a frase da entrada que NÃO é uma transição: sai de um estado e chega ao
+ * mesmo. Uma `alteracao` de mesmo estado regista uma decisão sem mover o item,
+ * e escrita com a seta («Em curso → Em curso») anunciava uma mudança que não
+ * houve. Cópia do portão, como as outras: se lesse a cadeia do gabarito,
+ * confirmava o gabarito.
+ */
+const PREFIXO_DE_MANUTENCAO = { pt: 'mantém-se em', en: 'stays in' };
+
 const MOTIVO_SEM_DATA_RENDIDO = {
   pt: { nao_publica: 'a fonte não publica data', nao_lida: 'a fonte não foi lida' },
   en: { nao_publica: 'the source publishes no date', nao_lida: 'the source was not read' },
@@ -2508,9 +2517,11 @@ for (const file of ficheirosHtml(DIST)) {
           );
           continue;
         }
-        const esperadaFrase = entrada.de
-          ? `${rotulos[entrada.de]} → ${rotulos[entrada.para]}`
-          : `${PREFIXO_DA_TRANSICAO[lingua]} ${rotulos[entrada.para]}`;
+        const esperadaFrase = !entrada.de
+          ? `${PREFIXO_DA_TRANSICAO[lingua]} ${rotulos[entrada.para]}`
+          : entrada.de === entrada.para
+            ? `${PREFIXO_DE_MANUTENCAO[lingua]} ${rotulos[entrada.para]}`
+            : `${rotulos[entrada.de]} → ${rotulos[entrada.para]}`;
         const lidaFrase = normalizeWhitespace(textoTranscrito(marca));
         if (lidaFrase !== esperadaFrase) {
           err(
