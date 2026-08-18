@@ -6376,6 +6376,22 @@ it» e «a value that moved with an old_value that is not the value on disk: the
 exporter accepted it». A V16 foi reposta e o ficheiro conferido byte a byte
 contra a cópia de antes.
 
+**A V16 apanhou uma mentira dentro do próprio teste, e só depois de a travessia
+estar escrita.** Dois blocos do `export_site_rows_test.py` punham um
+`site_corrections_on_disk` de mentira que devolvia «esta linha tem esta
+correção» para a linha plantada e «nenhuma correção» para todas as outras. A
+segunda metade era falsa e não custava nada enquanto ninguém lesse o disco por
+outro motivo. Com a V16, uma linha cuja `atualizacao` publicada fica escondida
+parece uma linha que regista um movimento que nunca houve, e a corrida é recusada
+por uma razão que o teste inventou. O detalhe que vale a pena guardar é **quando**
+isto apareceu: enquanto os valores novos ainda não estavam escritos no sítio, o
+caminho que falhava nem sequer era percorrido, e o portão do motor passou nos
+três commits anteriores. Apareceu na primeira corrida depois do `--write`. Os
+dois substitutos passam a delegar no leitor real fora da linha plantada, os
+quatro estragos voltaram a ser provados a desligar a V16, e o portão passa outra
+vez. Uma conferência que lê o disco muda o que um substituto do disco pode
+mentir sem que se note.
+
 **O que a reconstrução da vertical obrigou a fazer, e não estava previsto.** O
 livro-razão do motor e as quatro edições do estudo 04 são uma coisa só debaixo do
 portão do motor: mover o livro-razão para um instantâneo novo sem mover as
