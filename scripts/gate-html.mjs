@@ -690,7 +690,7 @@ const CAMPOS_DA_LINHA = new Set([
 ]);
 
 /**
- * `verifications.<n>.<campo>` — um campo de uma reconferência da linha.
+ * `verifications.<n>.<campo>`: um campo de uma reconferência da linha.
  *
  * Não é um nome fixo: o índice é a posição da entrada na lista do livro-razão,
  * e a página marca-a com esse índice de propósito, para que o portão vá buscar
@@ -702,7 +702,7 @@ const CAMPO_DE_VERIFICACAO = /^verifications\.(\d+)\.(date|found)$/;
 /**
  * Os rótulos de `by` e de `result`, nas duas edições.
  *
- * SEGUNDA CÓPIA da tabela de `src/i18n/strings.mjs`, e é de propósito — a mesma
+ * SEGUNDA CÓPIA da tabela de `src/i18n/strings.mjs`, e é de propósito: a mesma
  * disciplina de `ROTULO_DO_ESTADO` e de `SEPARADOR_ATRIBUICAO`. Se o portão
  * lesse os rótulos do gabarito, confirmava o gabarito; assim confirma o
  * livro-razão. Trocar «o mesmo valor» por «valor diferente:» no gabarito pára a

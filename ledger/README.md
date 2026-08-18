@@ -20,7 +20,7 @@ document:
   title: "[a verificar]"
   edition: "[a verificar]"
   locator: null                  # onde no documento — "p. 108", "Quadro 4, p. 108"
-  page: null                     # inteiro ≥ 1 — a página onde está a frase do excerto (ver abaixo)
+  page: null                     # inteiro ≥ 1, a página onde está a frase do excerto (ver abaixo)
   kind: null                     # pdf | html | serie | ficheiro | registo — o que o endereço serve (ver abaixo)
 source_url: "[a verificar]"
 access_date: "[a verificar]"     # AAAA-MM-DD — quando foi lido
@@ -76,7 +76,7 @@ verifications:
 10. uma expressão `check` não der exactamente o valor publicado;
 11. houver `derivation` sem `derivation_en`, ou o contrário;
 12. o bloco `document` trouxer uma chave que não seja `title`, `edition`,
-    `locator`, `page` ou `kind` — ou um `locator` que não seja uma cadeia não
+    `locator`, `page` ou `kind`, ou um `locator` que não seja uma cadeia não
     vazia;
 13. `attributed_to` não for uma lista de nomes de entidades não vazios, for uma
     lista vazia, ou algum nome contiver o separador ` · ` com que a página
@@ -126,7 +126,7 @@ publica: «INE, indicador 0012918, Évora (código 1C40705), dados de 2025».
 `document.page`, a seguir. Até 18.08.2026 o número era lido do localizador e de
 mais lado nenhum, e o fragmento `#page=N` do endereço saía daí; hoje é o campo
 que manda, e o localizador não pode dizer outra coisa. O localizador continua a
-ser prosa — o quadro, o ficheiro dentro do lote — e a página é o número.
+ser prosa (o quadro, o ficheiro dentro do lote) e a página é o número.
 
 Existe porque o documento e a página não são a mesma prova. Uma linha que cite
 um relatório de 400 páginas com `document.title` e mais nada manda o leitor
@@ -142,7 +142,7 @@ não se sabe onde — conta para a dívida de proveniência, como qualquer outro
 campo declarado por confirmar. A página da linha publica-o sob «Onde no
 documento», e o portão confere-o carácter a carácter.
 
-## `document.page` — a página onde está a frase
+## `document.page`: a página onde está a frase
 
 Opcional. Um inteiro ≥ 1: **a página do documento onde está a frase que o
 `excerpt` transcreve**. Existe desde 18.08.2026 (DECISIONS §1.47) e é a **única
@@ -173,10 +173,10 @@ visível na página em vez de ficar só no validador.
 compõe o fragmento a partir dele. Um `page` declarado é provado como o
 localizador é (V7): os seus algarismos existem no texto da linha do motor, ou no
 ficheiro que o manifesto nomeia em `locator_from`. Um localizador com `p. N` sem
-`page` declarado é recusado. Uma página é lida, nunca recordada — e nunca de
+`page` declarado é recusado. Uma página é lida, nunca recordada, e nunca de
 duas maneiras.
 
-## `verifications[]` — as reconferências independentes
+## `verifications[]`: as reconferências independentes
 
 Opcional, no fim da linha, a seguir a `corrections`. Existe desde 18.08.2026
 (DECISIONS §1.47). Cada entrada é **uma releitura que aconteceu**: o dia, o
@@ -223,7 +223,7 @@ O portão confere o conjunto, e não só cada peça: cada entrada rendida leva o
 índice que tem na lista do livro-razão, os valores crus de `by` e `result` vão
 em atributos e são comparados com a linha, os dois rótulos são comparados com a
 **cópia própria** do portão da tabela de rótulos, e o conjunto rendido tem de
-ser exactamente as duas entradas mais recentes — nem uma a mais, nem a mais
+ser exactamente as duas entradas mais recentes: nem uma a mais, nem a mais
 velha no lugar da mais nova.
 
 ## `attributed_to` — a quem o valor é creditado
