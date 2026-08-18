@@ -5371,6 +5371,254 @@ lhe seguiu. O varrimento responde OK porque a pergunta que faz é se o commit do
 carimbo reescreveu **a entrada que hoje o carrega**, e a §1.46 não existia nesse
 commit. A sequência inteira está no ramo, e está escrita aqui, que é o que
 distingue uma correção de um apagamento.
+### 1.47 O bloco T: a página da linha passa a ser o recibo, com dados a sério
+
+**Afecta:** nenhum
+
+*(O bloco T mudou o formato do livro-razão, o validador, o exportador do motor, o
+portão e a página da linha, e não mudou uma palavra de nenhum dos textos
+governados: o Sobre, as dez regras do Método e os dois registos da agenda estão
+como estavam. Por isso a entrada não nomeia nenhum, e não traz linha `Texto:`.
+O que o T1 encontrou no Método, e não corrigiu por ser texto governado, está
+escrito no fim da sua secção.)*
+
+*Esta entrada escreve-se no Acordo de 1990, como as entradas a partir da §1.43.
+O que é citado fica com os caracteres que tem. Cada estádio do bloco acrescenta
+aqui a sua secção; a especificação de todos eles é o `BRIEF-bloco-T.md`.*
+
+#### T1 · `document.page` e `verifications[]`
+
+Os testes 1 e 3 do `BRIEF-confianca.md` §6.8 não passam com desenho: pedem que a
+linha impressa se veja numa ligação, e que qualquer linha diga a data da última
+leitura **e** a data da última reconferência independente. Os dois pedem campos
+que o formato não tinha. O T1 põe os dois no formato, e enche-os com o que já
+tinha acontecido e não estava escrito em lado nenhum.
+
+##### `document.page`: a página deixa de se ler de duas maneiras
+
+Até aqui a página de um PDF vivia em dois sítios e em nenhum deles como campo:
+em prosa, dentro do `document.locator` («PRESTACAO_CONTAS_2025.pdf, p. 119»), e
+como fragmento `#page=119`, dentro do `source_url`. O exportador do motor lia o
+número do localizador em tempo de travessia e pendurava-o no endereço. Nenhuma
+conferência podia comparar um com o outro, porque nenhum dos dois era um campo.
+
+Entra `document.page`: inteiro maior ou igual a 1, opcional, dentro de
+`document`. **É a página do documento onde está a frase que o `excerpt`
+transcreve**, e é a única origem da página. O que o `ledger:check` impõe:
+
+| A regra | O caminho que fecha |
+| --- | --- |
+| endereço com `#page=N` obriga `document.page` e obriga-o a ser N | um fragmento que ninguém declarou |
+| campo declarado sobre um `.pdf` obriga o endereço a levar `#page=<campo>` | uma linha que declara uma página e manda o leitor para a capa |
+| localizador com `p. N` obriga o campo a ser N | a página escrita duas vezes com dois números |
+| numa linha derivada ou da casa é recusado | uma página a apontar para um documento que a linha não cita |
+
+A página da linha escreve «Abrir na página N» a partir do campo, marcada
+`data-linha-campo="document.page"`, e o portão compara-a com o campo. A frase de
+atribuição continua a escrever «p. N» a partir do endereço, com a marca
+`source_url.page` que o portão já conferia com a sua própria cópia da regra do
+`#page=`. **As duas batem por construção, porque o validador as obriga a bater**,
+e renderizar as duas é o que torna essa obrigação visível na página em vez de
+ficar só no validador.
+
+No motor, o manifesto passa a declarar `page` por linha. As 23 linhas de PDF
+ganharam-no por um passo único, `publisher/fixar_paginas_no_manifesto.py`, que
+lê o que o `pin_page()` dava naquele momento e o escreve no manifesto: nenhum
+número foi escrito à mão. A V7 estende-se ao campo, com a mesma exigência que já
+fazia ao localizador, e um localizador que diga «p. N» sem `page` declarado é
+recusado. Uma página é lida, nunca recordada.
+
+##### `verifications[]`: a linha passa a poder dizer quando foi relida
+
+O único campo de tempo de uma linha era `access_date`, «lido a»: o dia em que a
+fonte foi lida pela primeira vez. Uma linha lida uma vez e nunca mais tinha
+exactamente a mesma cara de uma linha relida ontem.
+
+Entra `verifications[]`, no fim da linha, a seguir a `corrections`. Cada entrada
+é uma releitura que aconteceu: `date`, `path` (o endereço lido nesse dia),
+`result` (`igual`, `diverge`, `inacessivel`), `by` (`leitura-independente`,
+`painel-semanal`, `revisao-cruzada`), e `found` só numa divergência, que é onde
+ele quer dizer alguma coisa. O validador impõe a forma inteira: a data no
+formato, nunca depois do dia da construção nem antes do `access_date`; o
+endereço com esquema; os três valores de cada lista fechada; `found` obrigatório
+numa divergência e proibido nas outras; a lista por ordem cronológica crescente;
+sem entradas repetidas no quarteto (data, endereço, quem, resultado); e recusada
+numa linha sem endereço, porque a derivada é reconferida pelo `check` a cada
+construção e a da casa conta-se a si própria.
+
+**Não se escreve à mão, e é essa regra que sustenta o campo.** Um campo de
+reconferência preenchido à mão é a promessa mais fácil de fazer e a mais difícil
+de desmentir. Há dois caminhos, e mais nenhum:
+
+- **as linhas cruzadas**, pelo exportador do motor, a partir do registo da
+  releitura cega de 2026-08-15 (`publisher/verificacoes/`) e de um mapa,
+  `mapa.evora.json`, que diz por linha do sítio que valor de que registo lhe
+  corresponde. **O mapa não carrega valores**: um número escrito ali podia ser
+  copiado errado e nada o apanhava. A comparação faz-se no exportador. Ele corre
+  o `conferir.py` do próprio registo e pára se ele falhar; recusa uma referência
+  ou um índice que o registo não tenha; exige que o organismo da tabela seja o
+  `source` da linha e que o período contenha o ano de `reference_date`; exige um
+  endereço resolvido, que passa a ser o `path`; recusa duas entradas da mesma
+  linha a partir do mesmo registo; e no fim diz em voz alta o que o registo leu e
+  ninguém publicou. **Uma divergência não é uma recusa**: escreve-se
+  `result: diverge` com `found`, e a corrida di-lo. Um tubo que só saiba publicar
+  concordância publica concordância;
+- **as 32 linhas de base** (`quadro-institucional`), pelo
+  `indicators/refresh.py`, no fim de cada corrida das canárias: `igual` se a
+  canária do valor passou, `diverge` com `found` se o valor mexeu, `inacessivel`
+  se a canária de existência falhou. Escreve só o bloco `verifications` e deixa
+  todos os outros bytes do ficheiro onde estavam; não escreve duas vezes a mesma
+  (data, endereço, quem). Como o `verificacao.mjs`, fica por confirmar em disco e
+  é revisto no mesmo diff de segunda-feira.
+
+**A página** mostra «Lido a», como sempre, e a seguir uma linha por cada uma das
+**duas** entradas mais recentes, da mais nova para a mais velha: o dia, quem
+releu, o que encontrou, e a porta para repetir a leitura. Sem nenhuma entrada
+fica o que já havia, o marcador com a porta para a regra da releitura no Método:
+uma reconferência que não aconteceu não se desenha (IDENTIDADE §6).
+
+**O portão confere o conjunto, e não só cada peça.** Cada entrada rendida diz que
+posição da lista é, e é a essa posição que ele a vai buscar; os valores crus de
+`by` e de `result` vão em atributos e comparam-se com a linha; os dois rótulos
+comparam-se com a **cópia própria** do portão da tabela de rótulos, e nunca com a
+cadeia do gabarito; e o conjunto rendido tem de ser exactamente as duas mais
+recentes. Uma página que mostre a penúltima no lugar da última diz ao leitor que
+a linha foi relida noutro dia, e nenhuma marca de campo apanha isso.
+
+A prova ganha `linhas_reconferidas` e `releituras_divergentes`, e a descrição de
+`releituras_registadas` deixa de dizer que o campo não existe. O portão reconta
+as três por conta própria, sobre os mesmos ficheiros e com código próprio.
+
+##### As contagens, antes e depois
+
+| | Antes do T1 | Depois |
+| --- | --- | --- |
+| linhas com `document.page` | 0 (o campo não existia) | **23** |
+| linhas com pelo menos uma reconferência | 0 | **53** |
+| entradas de reconferência | 0 | **53** |
+| `igual` · `diverge` · `inacessivel` | 0 · 0 · 0 | **53** · **0** · **0** |
+| chaves de prova reconferidas pelo portão | 26 | **28** |
+
+As 53 são 21 linhas de Évora, da releitura cega de 2026-08-15, e as 32 do quadro
+institucional, da corrida do painel de 2026-08-18. **Nenhuma divergiu**: as duas
+releituras leram o mesmo que o sítio publica. O registo da releitura imprimiu 28
+valores; 21 têm linha no sítio e 7 não têm, e o exportador nomeia os sete na
+corrida (os totais «inclui» da DGAL, a versão arredondada do poder de compra na
+narrativa do INE, a taxa de execução só das receitas correntes, e o limite de
+dívida previsto em PSF).
+
+##### Os estragos plantados, cada um reposto
+
+No sítio, o `ledger:check` sobre o formato:
+
+| Estrago | O portão |
+| --- | --- |
+| `document.page` a discordar do `#page=` | «"document.page" é 118 e o endereço fixa a página 119 ("#page=119"). São a mesma página, e por isso têm de ser o mesmo número.» |
+| `document.page` num endereço `.pdf` sem fragmento | «declara "document.page: 119" sobre um PDF e o endereço não leva "#page=119". Quem abre o endereço tem de cair na página que a linha declara.» |
+| localizador «p. 7» com `document.page: 8` | «"document.page" é 8 e o localizador diz "p. 7". O localizador e o campo apontam para a mesma página.» |
+| `document.page` numa linha derivada | «"document.page" numa linha derivada. Não há documento onde essa página exista: a proveniência está nas linhas de origem.» |
+| `document.page` numa linha da casa | «"document.page" numa linha da casa. Não há documento onde essa página exista: a proveniência está no próprio livro-razão.» |
+| uma verificação com data futura | «verificação #3: "date" é 2027-01-05 e a construção corre a 2026-08-18. Uma reconferência no futuro não aconteceu.» |
+| uma verificação anterior ao `access_date` | «verificação #1: "date" é 2026-08-01 e a linha foi lida a 2026-08-12. Uma releitura é depois da leitura.» |
+| `diverge` sem `found` | «verificação #2: "result" é "diverge" e falta "found", o valor como a fonte o imprimiu nesse dia. Uma divergência sem o valor que se encontrou não se pode conferir.» |
+| `found` numa entrada `igual` | «verificação #1: campo desconhecido "found". Aceites: date, path, result, by, "found" só existe numa entrada "diverge", onde é o valor como a fonte o imprimiu.» |
+| `by` desconhecido | «verificação #3: "by" é "revisao-cruzado". Só pode ser "leitura-independente", "painel-semanal", "revisao-cruzada".» |
+| `result` desconhecido | «verificação #3: "result" é "inacessível". Só pode ser "igual", "diverge", "inacessivel".» |
+| uma entrada repetida | «verificação #4: repete a entrada de 2026-08-17 sobre "https://exemplo.invalido/c" (revisao-cruzada, inacessivel). A mesma releitura não se escreve duas vezes.» |
+| um `path` sem esquema | «verificação #3: "path" é "exemplo.invalido/c". Tem de ser o endereço que foi lido nesse dia, a começar por "http://" ou "https://".» |
+| a lista fora de ordem cronológica | «verificação #2: "date" é 2026-08-13 e a entrada anterior é de 2026-08-16. A lista está por ordem cronológica crescente, e a página mostra as duas últimas.» |
+| uma verificação numa linha derivada | «tem "verifications" e não tem "source_url". Uma linha derivada não tem o que reler: a derivada é reconferida pelo "check" a cada construção, e a da casa conta-se a si própria.» |
+
+No sítio, o `gate:html` sobre a página construída, os seis nas duas edições:
+
+| Estrago | O portão |
+| --- | --- |
+| a porta a imprimir outra página que não a declarada | «o campo "document.page" de "evora-despesa-paga-2025" não foi transcrito fielmente do livro-razão.» |
+| a página a render uma verificação que a linha não tem | «a página de "taxa-de-desemprego-2025" rende a reconferência "7", que a linha não tem. O índice é a posição da entrada na lista do livro-razão.» |
+| um rótulo de quem releu errado | «a reconferência 2 de "taxa-de-desemprego-2025" escreve quem releu como "reconferência semanal do painel" e o registo diz "revisao-cruzada", que se escreve "revisão cruzada".» |
+| um rótulo de resultado errado | «a reconferência 1 de "taxa-de-desemprego-2025" escreve o resultado como "the same value 6,4" e o registo diz "diverge", que se escreve "a different value: 6,4".» |
+| o atributo cru `data-por` a discordar da linha | «a reconferência 2 de "taxa-de-desemprego-2025" leva data-por="painel-semanal" e o livro-razão diz "revisao-cruzada".» |
+| a mais velha no lugar da mais nova | «a página de "taxa-de-desemprego-2025" rende as reconferências [1, 0] e o livro-razão manda render [2, 1], da mais recente para a mais antiga.» |
+| uma das duas mais recentes escondida | «a página de "taxa-de-desemprego-2025" rende as reconferências [2] e o livro-razão manda render [2, 1], da mais recente para a mais antiga.» |
+
+No motor, o `export_site_rows_test.py`, que corre no portão de commit:
+
+| Estrago | O exportador |
+| --- | --- |
+| uma página declarada que ninguém leu | «document.page 444 appears nowhere in the engine row. A page number is read, never remembered.» |
+| um localizador que contradiz a página declarada | «document.page is 119 and the locator says "p. 2025". They point at the same page.» |
+| um localizador com página e nenhuma declarada | «the locator says "p. 119" and the manifest declares no document.page: declare-o. A page is not read in two ways, the field is the source, and the address fragment comes from it.» |
+| uma referência do mapa que não existe | «the map names table reference '9.99', which the record '2026-08-15-releitura-cega-evora' does not have» |
+| um índice do mapa que não existe | «the map names value 4 of reference '1', and the record prints 1 value(s) there» |
+| um registo que o mapa inventa | «the map names the record '2026-01-01-nao-existe', and … does not exist» |
+| uma linha que o manifesto não exporta | «the verification map names 'linha-que-nao-atravessa', which this manifest does not export» |
+| duas entradas da mesma linha do mesmo registo | «the map gives it two entries from the record '2026-08-15-releitura-cega-evora'. One re-reading of one row is one entry.» |
+| um organismo que não é o `source` da linha | «the row says source 'INE' and the record read 'DGAL'. Two different bodies are not a re-reading of the same measurement.» |
+| um período sem o ano da linha | «the row is about '2025' and the record read the period '2023', which does not carry that year.» |
+| uma linha do registo com `url_completo` nulo | «the record's row '1' has no resolved `url_completo`, so there is no address to publish as the one that was read.» |
+| um registo que falha o seu próprio `conferir` | «the record does not pass its own conferir.py, so nothing is published from it.» |
+| uma reconferência que o sítio publica e a corrida não produz | «the site publishes a re-check of '2026-08-16' that this run does not produce. A re-export rewrites this block, so it would be erased. Map it, or find out who wrote it.» |
+
+E a via positiva, que é a que importa não fechar: um valor mudado numa cópia do
+registo faz o exportador escrever `result: diverge` com `found`, imprimir
+«DIVERGE evora-populacao-2025 publica '58 567' · a releitura de 2026-08-15 leu
+'93.86'» e **continuar**.
+
+No motor, o `indicators/refresh.py --prove-gates`, duas conferências novas, as
+duas com o seu conhecido-positivo verificado nos dois sentidos: a mesma
+reconferência não se escreve duas vezes e o resto da linha fica byte a byte onde
+estava; e o `ledger:check` do sítio recusa uma entrada mal formada, provado
+plantando uma numa cópia do livro-razão e correndo o portão do sítio sobre a
+cópia («falta "found"»).
+
+##### Duas correções de rumo que este estádio fez pelo caminho
+
+**O `exported_at` do registo da travessia tinha uma data fixa.** Estava preso a
+2026-08-15, o dia em que o registo nasceu, e qualquer corrida posterior que
+mexesse numa linha carimbava um dia em que nada aconteceu, a menos que alguém se
+lembrasse do `--exported-at`. É a mesma família de defeito que a §1.45 corrigiu
+no selo do registo prévio: uma data debaixo do rótulo de outra. Passa a ser o dia
+da corrida, e a opção fica para repetir uma corrida passada de propósito.
+
+**O `check-cruzamento.mjs` aprendeu `verifications_at_export`.** O registo da
+travessia passa a contar as reconferências de cada linha, e a conferência de
+aceitação compara essa contagem com o ficheiro em disco, como já fazia às
+correções. Uma reconferência de uma linha cruzada entra pelo exportador do motor
+e por mais lado nenhum.
+
+##### O que o T1 encontrou e não podia corrigir
+
+**A regra 6 do Método passou a dizer uma coisa falsa, e é texto governado.** O
+seu limite escreve «A releitura acontece e ainda não fica escrita na linha: o
+campo que a guardaria não existe no formato. Enquanto não existir, a conta abaixo
+é zero, e é zero por isso.» O campo existe desde hoje, e a prova ao lado dessa
+frase diz **53**. A página do Método publica as duas coisas a seguir uma à outra.
+Não se toca aqui porque um texto governado é decisão da direção e tem o seu
+caminho (§1.38, §1.45): fica para o T4, com a leitura do Método pela direção na
+pré-visualização, e é o primeiro item dessa leitura. A prova dessa regra pode
+também passar a levar `linhas_reconferidas` e `releituras_divergentes`, que
+existem desde hoje.
+
+##### O que fica para os estádios seguintes
+
+O T2 leva o `document.crop`. O T3 leva a origem «calculado sobre um ficheiro
+alojado», as linhas de API com a página humana da série, e o extrator de largura
+fixa do motor. O T4 leva o livro-razão descarregável, o `lastmod`, as duas
+extensões de dentro do portão, e os registos: esta entrada fechada, a §4 item a
+item, o `PLANO-fases.md`, o `NEXT.md` do motor. Nenhum destes foi tocado aqui.
+
+#### T2 · `document.crop`
+
+*Por escrever: o estádio T2 acrescenta aqui a sua secção.*
+
+#### T3 · a origem «calculado sobre um ficheiro alojado», as linhas de API, o extrator
+
+*Por escrever: o estádio T3 acrescenta aqui a sua secção.*
+
+#### T4 · o conjunto de dados, o `lastmod`, o portão e os registos
+
+*Por escrever: o estádio T4 acrescenta aqui a sua secção, e fecha esta entrada.*
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
