@@ -292,8 +292,8 @@ na transcrição da sessão e o essencial fica aqui, verbatim onde é citação)
   caminhos plausíveis dão 404). Não se aloja nada do IEFP; as duas linhas
   `kind: ficheiro` do IEFP ficam como estão.
 
-O campo `document.hosted` da versão anterior desta secção passa a chamar-se
-**`document.hosted`** só para o que se aloja de facto (CAOP): `{asset:
+O campo `document.hosted` da versão anterior desta secção fica só para o que se
+aloja de facto (CAOP): `{asset:
 "dados/<nome>.csv", sha256, bytes, licence: "CC BY 4.0", licence_url,
 attribution, extracted_from: [{file, sha256, bytes, url}]}`; e
 **`document.computed_over`** para o que se calcula sobre um ficheiro que não se
