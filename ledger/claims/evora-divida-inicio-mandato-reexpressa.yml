@@ -17,6 +17,10 @@ document:
   locator: "2_Relatorio_Gestao_2021.pdf, p. 30"
   page: 30
   kind: "pdf"
+  crop:
+    asset: "recortes/evora-divida-inicio-mandato-reexpressa.webp"
+    sha256: "875575644526c6661970430b6e61e8eaab5060991dd84ee74f9ec8fe748e5c9b"
+    page: 30
 source_url: "https://www.cm-evora.pt/wp-content/uploads/2022/05/2_Relatorio_Gestao_2021.pdf#page=30"
 access_date: "2026-08-10"
 reference_date: "2013-10"

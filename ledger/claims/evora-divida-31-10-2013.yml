@@ -17,6 +17,10 @@ document:
   locator: "Relatorio_Gestao_2015.pdf, p. 11"
   page: 11
   kind: "pdf"
+  crop:
+    asset: "recortes/evora-divida-31-10-2013.webp"
+    sha256: "a9d0e5bd6a1cb27b64599ae0463494aeb10a395a710b24d00324e5d6b209c5df"
+    page: 11
 source_url: "https://www.cm-evora.pt/wp-content/uploads/2020/06/Relatorio_Gestao_2015.pdf#page=11"
 access_date: "2026-08-10"
 reference_date: "2013-10-31"

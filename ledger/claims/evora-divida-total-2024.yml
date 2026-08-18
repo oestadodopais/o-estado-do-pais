@@ -17,6 +17,10 @@ document:
   locator: "PRESTACAO_CONTAS_2025.pdf, p. 140, Quadro 30"
   page: 140
   kind: "pdf"
+  crop:
+    asset: "recortes/evora-divida-total-2024.webp"
+    sha256: "9a9e505f2f496f0455a6c44af7ea5bc386cad400ba46d5494acf7414e896de7a"
+    page: 140
 source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=140"
 access_date: "2026-08-10"
 reference_date: "2024"

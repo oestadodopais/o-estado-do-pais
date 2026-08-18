@@ -17,6 +17,10 @@ document:
   locator: "PRESTACAO_CONTAS_2025.pdf, p. 141, Quadro 33"
   page: 141
   kind: "pdf"
+  crop:
+    asset: "recortes/evora-prazo-medio-de-pagamento-2023.webp"
+    sha256: "7014d25414218afa0725753ce36770f0cfa7e664d945e694ec72ad64f750d60b"
+    page: 141
 source_url: "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf#page=141"
 access_date: "2026-08-10"
 reference_date: "2023"

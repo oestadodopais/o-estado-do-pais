@@ -17,6 +17,10 @@ document:
   locator: "2_Relatorio_Gestao_2021.pdf, p. 83, Quadro 31"
   page: 83
   kind: "pdf"
+  crop:
+    asset: "recortes/evora-divida-total-2021.webp"
+    sha256: "565584303a2798a7f6042e65efbb501e3c5cc105e16c84e0d5548c214b79aa14"
+    page: 83
 source_url: "https://www.cm-evora.pt/wp-content/uploads/2022/05/2_Relatorio_Gestao_2021.pdf#page=83"
 access_date: "2026-08-10"
 reference_date: "2021"
