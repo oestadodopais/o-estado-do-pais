@@ -437,22 +437,51 @@ rolam dentro da sua caixa, e não empurram a página.
 
 ## 12. Os limites, escritos em vez de contornados
 
-- **Os testes 1 e 3 do `BRIEF-confianca.md` §6.8 passam com dados, em 22 das 132
-  linhas.** O campo `verifications[]` existe desde 18.08.2026 (`DECISIONS.md`
-  §1.47), e uma linha que tenha sido relida diz na sua página quando foi, por
-  quem e com que resultado, com a porta para repetir a leitura. O recorte da
-  linha impressa entrou no mesmo dia (§1.47, T2) e existe em **22 linhas**: a
-  imagem da linha do PDF de onde o número foi lido, recortada no motor por
-  correspondência exata e conferida à chegada pelo resumo dos seus bytes. O que
-  falta é o resto: das 23 linhas que citam um PDF com página, uma ficou sem
-  recorte porque o excerto do motor não fixa ficheiro, página e frase, e a recusa
-  está escrita; as outras 109 linhas citam séries de dados, páginas e ficheiros,
-  onde não há linha impressa para recortar. **Onde o recorte não existe não se
-  desenha nada** (§6): fica o excerto transcrito, que é a prova que essa linha
-  tem, e onde não há reconferência nenhuma o marcador fica, como já estava.
+*Redação final do bloco T, 18.08.2026 (`DECISIONS.md` §1.47). O bloco está
+construído no ramo e não fundido: o que se segue descreve o que ele deixa, e não
+o que está no ar.*
+
+- **O teste 1 do `BRIEF-confianca.md` §6.8 passa em 22 das 132 linhas.** O
+  recorte da linha impressa entrou a 18.08.2026 (§1.47, T2): a imagem da linha do
+  PDF de onde o número foi lido, recortada no motor por correspondência exata de
+  caracteres e conferida à chegada pelo resumo dos seus bytes. Um clique no selo
+  abre a página da linha, e a linha impressa está lá. O orçamento cumpre-se com
+  folga: os 22 recortes somam **243 496 bytes**, o maior tem **17 692**, e a
+  maior página de linha construída tem **18 416 bytes** de HTML, contra o teto de
+  1 MB do teste. Das 23 linhas que citam um PDF com página, **uma** ficou sem
+  recorte porque o excerto da sua linha no motor não fixa ficheiro, página nem
+  frase, e a recusa está escrita nas palavras do próprio produtor; as outras 109
+  citam séries de dados, páginas e ficheiros, onde não há linha impressa para
+  recortar. **Onde o recorte não existe não se desenha nada** (§6): fica o
+  excerto transcrito, que é a prova que essa linha tem.
+- **O teste 3 passa em 53 das 132 linhas.** O campo `verifications[]` existe
+  desde 18.08.2026 (§1.47, T1) e não se escreve à mão: entra pelo exportador do
+  motor, a partir de um registo de releitura cega, e pelo `indicators/refresh.py`,
+  no fim de cada corrida das canárias. **53** linhas dizem na sua página quando
+  foram relidas, por quem e com que resultado, com a porta para repetir a
+  leitura, e nenhuma das 53 entradas divergiu. Nas outras **79** fica o marcador
+  com o motivo, que é o estado honesto: o aparelho existe, o que falta é
+  releitura, e ela entra por onde entrou.
 - **O teste 8 conta-se no portão, não num protótipo.** Os três racionais contaram
   os valores da primeira página de três maneiras (28, 32, 35). A contagem que
   vale é a que o portão faz sobre a construção real.
+- **O conjunto de dados existe e não é oferecido.** `/livro-razao.csv`,
+  `/livro-razao.json` e um ficheiro por linha são construídos a cada corrida, e
+  **nenhuma página os liga**: a licença é decisão da direção e o índice do
+  livro-razão diz esse estado por palavras. Um estado desenhado (§7), e não o
+  marcador (§6): não falta ali uma prova, falta uma decisão.
+- **O mapa do sítio continua sem `lastmod`, e agora com a medida.** O modelo de
+  alteração por página foi construído no papel e medido antes de se decidir: a
+  construção que publica clona a `--depth=10` e não pode datar 178 dos 244
+  ficheiros de entrada; um modelo honesto dá a mesma data às 264 páginas, porque
+  todas dependem das cadeias, da folha e do cabeçalho; e um mapa cometido seria
+  estado escrito, que é o que a §10 recusa. As três medições estão em
+  `astro.config.mjs`.
+- **Três coisas ficam à espera da direção**, e nenhuma delas é matéria de
+  construção: a licença do conjunto de dados, a licença do instantâneo do PRR
+  (que mantém três somas com o marcador) e a redação nova do limite da regra 6 do
+  Método, que o T4 propõe porque a antiga passou a ser falsa. As três estão na
+  §4 do `DECISIONS.md`, com a fase a que pertencem.
 
 ---
 
