@@ -1,0 +1,164 @@
+/* ============================================================
+   DIREÇÃO C · EDITORIAL GENEROSO · fichas
+   Exploração de desenho, fase 2. Não está em uso no sítio.
+
+   Comparação com `src/styles/tokens.css`, grupo a grupo. O que não
+   está aqui não mudou.
+
+   Os contrastes citados nos comentários foram calculados sobre estes
+   valores (fórmula de luminância relativa das WCAG 2), não copiados.
+   ============================================================ */
+
+:root {
+  /* ---------------------------------------------------- papel e tinta
+     MUDA. O papel deixa de ser azulado e passa a ser quente, e a tinta
+     deixa de ser preta-azulada e passa a ser castanha-escura. Razão: a
+     direção C põe a leitura à frente, e uma página que se lê durante
+     minutos cansa menos num branco quente do que num branco frio. É a
+     única mudança de matiz da paleta, e é toda ela nos neutros.
+     Contraste tinta sobre papel: 16,67:1. */
+  --paper: #fbfaf7;
+  --paper-2: #f3f0e9;
+  --paper-3: #e9e4d9;
+  --ink: #1b1a17;
+  /* Contraste sobre --paper: 6,87:1; sobre --paper-2: 6,30:1; sobre
+     --paper-3: 5,66:1. O aparelho desta direção vive quase todo em
+     --muted, por isso o valor é alto de propósito. */
+  --muted: #5c574e;
+
+  /* ---------------------------------------------------------- acentos
+     NÃO MUDA, nem um dígito. O amarelo é a marca de medição e o oxblood
+     é o erro admitido (IDENTIDADE §2). Uma direção que lhes mexesse na
+     matiz obrigava o colofão da primeira página a mudar de frase e o
+     portão a aprender um valor novo, e não ganhava nada: o que faz falta
+     à leitura são os neutros, não os acentos.
+     Amarelo: nunca cor de texto. Tinta sobre amarelo: 8,32:1.
+     Oxblood sobre papel: 9,38:1; sobre --paper-2: 8,60:1. */
+  --yellow: #e8a80c;
+  --oxblood: #7c2333;
+
+  /* ------------------------------------------------------------- fios
+     MUDA. Fios mais claros e quentes, porque nesta direção há mais fios:
+     as caixas com fundo desaparecem quase todas e o que separa passa a
+     ser uma linha. Um fio que separa não precisa de ser visto; precisa
+     de estar lá. --rule-strong sobre papel: 1,83:1, e é por isso que
+     nunca leva texto nem sozinho separa dois blocos que têm de se
+     distinguir: para isso há espaço. */
+  --rule: #e3ded3;
+  --rule-strong: #c2bbac;
+
+  /* --------------------------------------------- eixos e pontos
+     MUDA (só para o quente). Não são texto: são traço de instrumento, e
+     a exigência é 3:1. --axis sobre papel: 3,56:1. */
+  --axis: #8a8478;
+  --dotcol: #6f6a60;
+
+  --onyellow: #1b1a17;
+  --focus: #1b1a17;
+  /* MUDA. A sombra sai. Nesta direção nada flutua: o que separa é fio,
+     espaço e fundo. Fica definida a zero para o gabarito não partir. */
+  --shadow: none;
+
+  /* -------------------------------------------------------------- tipo
+     MUDA, e é a mudança central da direção.
+
+     Hoje: serifada só na marca, sem serifa na prosa, mono nos valores
+     (IDENTIDADE §1). Três famílias para três funções, e a função da
+     serifada é uma palavra por página.
+
+     Aqui: DUAS famílias para as duas funções que a casa vende.
+       --f-leitura (serifada) = tudo o que se lê: marca, títulos, prosa,
+         legendas, o Fundo.
+       --f-mono                = tudo o que se mede ou se rotula: valores,
+         datas, rótulos, selos, marcador, eixos.
+     A distinção que passa a ver-se é «isto lê-se» contra «isto mede-se»,
+     que é a distinção que o §1 já dizia ser o produto. A sem serifa sai
+     da página: com a serifada na prosa, ela não tem função nenhuma que
+     não seja repetir. Fica definida porque os gabaritos ainda a nomeiam
+     e porque a edição inglesa a pode querer; não é usada em lado nenhum
+     desta direção.
+
+     Nenhuma família nova, nenhum ficheiro de tipo, nenhum pedido de
+     rede: as três pilhas são as que `src/styles/tokens.css` já declara.
+     A primeira página promete «Não faz pedidos de rede», e esta direção
+     não gasta essa promessa. */
+  --f-leitura: 'Iowan Old Style', 'Palatino', 'Palatino Linotype', 'Book Antiqua', 'URW Palladio L', Georgia, 'Times New Roman', serif;
+  --f-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Monaco, 'Cascadia Mono', 'Roboto Mono', Consolas, monospace;
+  --f-serif: 'Iowan Old Style', 'Palatino', 'Palatino Linotype', 'Book Antiqua', 'URW Palladio L', Georgia, 'Times New Roman', serif;
+  --f-sans: 'Avenir Next', 'Avenir', 'Helvetica Neue', Helvetica, Arial, 'Segoe UI', system-ui, sans-serif;
+  /* Sem ficheiro de tipo, a cascata muda de altura de x conforme a
+     máquina de quem lê. Isto fixa a altura de x aparente para que uma
+     página em Georgia não pareça maior do que a mesma página em Iowan
+     Old Style. Onde a propriedade não existe, não acontece nada. */
+  --ajuste-x: 0.47;
+
+  /* -------------------------------------------------- corpo e medida
+     MUDA. O corpo sobe de 16px para 19px e a medida passa a ser fixada
+     em pixéis, não em ch: com a serifada a medida em ch encolhe, e o que
+     se quer é uma linha longa e constante. 640px a 19px dá uma linha de
+     livro. */
+  --corpo: 19px;
+  --medida: 640px;
+  --altura-linha: 1.62;
+
+  /* --------------------------------------------------------- grelha
+     MUDA. O invólucro estreita de 1180px para 1120px e reparte-se em
+     três: a calha dos rótulos, a coluna que se lê, e a margem das notas.
+     O aparelho deixa de ser uma segunda coluna com caixa e passa a ser
+     nota de margem (IDENTIDADE §3 B, redesenhada: a segunda coluna
+     enche-se, com o aparelho da leitura, mas sem moldura). */
+  --wrap: 1120px;
+  --calha: 120px;
+  --nota: 240px;
+  --vao: 48px;
+  --gutter: clamp(20px, 4vw, 56px);
+
+  /* --------------------------------------------------------- ritmo
+     NOVO. O espaço vertical passa a ter nomes, porque nesta direção o
+     espaço é o material principal. */
+  --ar-1: 8px;
+  --ar-2: 16px;
+  --ar-3: 28px;
+  --ar-4: 48px;
+  --ar-5: 80px;
+  --ar-6: 120px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    /* Escuro quente: a mesma página, à luz de um candeeiro. As mesmas
+       regras. Tinta sobre papel: 15,07:1; --muted sobre papel: 6,64:1;
+       oxblood sobre papel: 7,10:1; --axis sobre papel: 3,45:1. */
+    --paper: #14130f;
+    --paper-2: #1b1915;
+    --paper-3: #24211b;
+    --ink: #ece7dc;
+    --muted: #a09a8d;
+    --yellow: #e8a80c;
+    --oxblood: #d98a95;
+    --rule: #2c2921;
+    --rule-strong: #443f35;
+    --axis: #6e6a60;
+    --dotcol: #8a8478;
+    --onyellow: #1b1a17;
+    --focus: #ece7dc;
+    --shadow: none;
+  }
+}
+
+:root[data-theme='dark'] {
+  --paper: #14130f;
+  --paper-2: #1b1915;
+  --paper-3: #24211b;
+  --ink: #ece7dc;
+  --muted: #a09a8d;
+  --yellow: #e8a80c;
+  --oxblood: #d98a95;
+  --rule: #2c2921;
+  --rule-strong: #443f35;
+  --axis: #6e6a60;
+  --dotcol: #8a8478;
+  --onyellow: #1b1a17;
+  --focus: #ece7dc;
+  --shadow: none;
+}

@@ -1,0 +1,97 @@
+/* ---- a página da linha ---------------------------------------------------- */
+.trilho {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 0 0 12px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.trilho a {
+  color: var(--muted);
+}
+.ficha-estreita {
+  grid-template-columns: 132px minmax(0, 1fr);
+}
+@media (max-width: 620px) {
+  .ficha-estreita {
+    grid-template-columns: 1fr;
+  }
+}
+.pedido {
+  margin: 0;
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  border: 1px solid var(--rule);
+  background: var(--paper-2);
+  padding: 10px 12px;
+}
+.abrir {
+  margin: 0;
+}
+.abrir-l {
+  display: inline-block;
+  font-family: var(--f-mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  padding: 8px 14px;
+  background: var(--paper);
+}
+.abrir-l:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+.estado-vazio {
+  margin: 0;
+  font-family: var(--f-mono);
+  font-size: 12px;
+  color: var(--muted);
+  border-left: 2px solid var(--rule-strong);
+  padding-left: 10px;
+}
+.estado-cheio {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  color: var(--ink);
+}
+.q-cheio {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  background: var(--ink);
+  border: 1px solid var(--ink);
+}
+.nota-prototipo {
+  border: 1px dashed var(--rule-strong);
+  background: var(--paper-2);
+  padding: 12px 14px;
+  margin: clamp(22px, 3vw, 34px) 0 0;
+  display: grid;
+  gap: 6px;
+}
+.nota-prototipo-k {
+  font-family: var(--f-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.nota-prototipo p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  max-width: 78ch;
+}

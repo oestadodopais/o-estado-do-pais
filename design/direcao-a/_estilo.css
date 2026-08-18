@@ -1,0 +1,478 @@
+/* Direção A · Refinamento · folha partilhada dos protótipos.
+   Os nomes de classe são os do sítio (src/styles/site.css) sempre que a peça
+   já existe: é de propósito, e é metade do custo desta direção. */
+
+/*#base*/
+*,*::before,*::after{box-sizing:border-box}
+html{color-scheme:light dark}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--f-sans);font-size:var(--t-sans-2);line-height:var(--l-prosa);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+:focus-visible{outline:var(--foco-peso) solid var(--foco-cor);outline-offset:var(--foco-folga);border-radius:2px}
+@media (prefers-reduced-motion:reduce){*,::before,::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+a{color:inherit;text-decoration-color:var(--rule-strong);text-underline-offset:3px}
+a:hover{text-decoration-color:currentColor}
+img,svg{max-width:100%}
+p{margin:0}
+h1,h2,h3{margin:0;text-wrap:balance}
+h1{font-size:var(--t-h1);line-height:1.08;font-weight:600;letter-spacing:-.022em}
+h2{font-size:var(--t-h2);line-height:1.16;font-weight:600;letter-spacing:-.016em}
+h3{font-size:var(--t-h3);line-height:1.3;font-weight:600;letter-spacing:-.006em}
+.vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:-9999px;top:0;background:var(--paper);color:var(--ink);border:1px solid var(--ink);padding:10px 16px;z-index:20}
+.skip:focus{left:var(--gutter);top:10px}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+
+/* ---------------------------------------------------------------- estrutura */
+.wrap{max-width:var(--inv);margin:0 auto;padding:0 var(--gutter)}
+section{padding-top:var(--esp-secao)}
+/* O corpo começa a um degrau do fio que fecha o cabeçalho; a primeira secção
+   não soma o intervalo de secção a esse degrau. */
+main{padding-top:var(--esp-5)}
+main>section:first-child{padding-top:0}
+
+/* O olho de cabeçalho de secção: um só peso de fio, um só corpo, uma só
+   posição. Hoje a folha alterna entre .eyebrow solto e .eyebrow dentro de
+   .sec-head, com fios de pesos diferentes. */
+.sec-head{border-top:var(--fio-forte);padding-top:var(--esp-4);display:grid;gap:var(--esp-2);margin-bottom:var(--esp-bloco)}
+.eyebrow{
+  font-family:var(--f-mono);font-size:var(--t-mono-1);font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:block;
+}
+.sec-sub{color:var(--muted);font-size:var(--t-sans-2);max-width:var(--medida-aparelho);line-height:var(--l-mobilia)}
+.lede{font-size:var(--t-sans-4);line-height:1.55;max-width:var(--medida-aparelho)}
+.nota{font-size:var(--t-sans-1);color:var(--muted);line-height:var(--l-mobilia);max-width:var(--medida-aparelho)}
+
+/* ---------------------------------------------------------------- cabeçalho */
+.topbar{display:flex;flex-wrap:wrap;gap:var(--esp-2) var(--esp-5);align-items:baseline;justify-content:space-between;padding-top:var(--esp-4)}
+.nav{display:flex;flex-wrap:wrap;gap:var(--esp-1) var(--esp-4);align-items:baseline;
+  font-family:var(--f-mono);font-size:var(--t-mono-1);font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.nav a{color:var(--muted);text-decoration:none;padding:4px 0}
+.nav a:hover{color:var(--ink)}
+.nav a[aria-current='page']{color:var(--ink);box-shadow:inset 0 -1.5px 0 var(--ink)}
+.nav .lang{color:var(--ink)}
+
+.masthead{padding:var(--esp-7) 0 0;display:grid;gap:0}
+.masthead-compact{padding:var(--esp-5) 0 0}
+.wordmark{font-family:var(--f-serif);font-weight:400;font-size:clamp(34px,7.4vw,68px);line-height:1.02;
+  letter-spacing:-.014em;color:var(--ink);font-feature-settings:'kern' 1,'liga' 1}
+.masthead-compact .wordmark{font-size:clamp(23px,3.2vw,31px)}
+.wordmark a{text-decoration:none}
+.method-line{font-family:var(--f-mono);font-size:var(--t-mono-2);letter-spacing:.045em;color:var(--muted);padding-top:var(--esp-3)}
+.masthead-compact .method-line{font-size:var(--t-mono-1);padding-top:var(--esp-2)}
+
+/* O SINAL DE TEMPO, desenhado com intenção.
+   Deixa de ser uma tira de versaletes corridos e passa a ser o que diz que é:
+   duas leituras de instrumento, cada uma com rótulo e valor, alinhadas à
+   mesma linha de base, debaixo do único fio de página do cabeçalho. */
+.masthead-furniture{
+  margin-top:var(--esp-5);padding-top:var(--esp-3);border-top:var(--fio-pagina);
+  display:flex;flex-wrap:wrap;gap:var(--esp-3) var(--esp-6);align-items:baseline;
+  font-family:var(--f-mono);font-size:var(--t-mono-1);color:var(--muted);
+}
+.masthead-furniture .sinal-k{display:block;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--muted);font-size:var(--t-mono-1)}
+.masthead-furniture .sinal-v{display:block;margin-top:3px;font-size:var(--t-mono-3);font-weight:600;letter-spacing:.02em;color:var(--ink);font-variant-numeric:tabular-nums}
+.masthead-furniture a{text-decoration:none}
+.masthead-furniture a:hover .sinal-v{text-decoration:underline;text-underline-offset:3px}
+.masthead-compact .masthead-furniture{margin-top:var(--esp-3);padding-top:var(--esp-2);border-top:var(--fio-forte);gap:var(--esp-2) var(--esp-5)}
+.masthead-compact .masthead-furniture .sinal-v{font-size:var(--t-mono-2);margin-top:2px}
+.cabeca-fim{border-bottom:var(--fio-pagina);padding-bottom:var(--esp-4)}
+
+/* ------------------------------------------------------------------- rodapé */
+.rodape{margin-top:var(--esp-secao);border-top:var(--fio-pagina);padding:var(--esp-5) 0 var(--esp-7)}
+.rodape-nav{display:flex;flex-wrap:wrap;gap:var(--esp-2) var(--esp-5);
+  font-family:var(--f-mono);font-size:var(--t-mono-1);font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.rodape-nav a{color:var(--muted);text-decoration:none}
+.rodape-nav a:hover{color:var(--ink)}
+
+/* --------------------------------------------------------------- afirmações */
+.claim{display:inline;white-space:nowrap}
+.claim-com-chip{display:inline;white-space:normal}
+.claim-value{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+
+/* O SELO. Mais calado e mais inconfundível ao mesmo tempo:
+   · o que se vê é a palavra que diz o que ele faz, não o título do estudo;
+   · o título do estudo continua no texto rendido, para o portão e para quem
+     lê com leitor de ecrã, marcado data-selo-etiqueta;
+   · o sublinhado ténue está sempre lá, porque uma porta que não se anuncia
+     não é uma porta;
+   · não leva seta: a seta da casa é a de «Abrir a leitura →», e sessenta
+     setas numa página seriam ruído. */
+.src-chip{
+  display:inline-flex;align-items:center;gap:6px;vertical-align:baseline;
+  font-family:var(--f-mono);font-size:var(--selo-corpo);font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  text-decoration:none;white-space:nowrap;padding:3px 0;
+}
+.src-chip::before{content:'';width:var(--selo-glifo);height:var(--selo-glifo);flex:none;
+  border:1px solid var(--rule-strong);background:var(--paper-3)}
+.src-chip.is-unverified::before{background:transparent;border-style:dashed;border-color:var(--muted)}
+.src-chip .src-chip-palavra{text-decoration:underline;text-decoration-color:var(--rule-strong);text-underline-offset:3px}
+.src-chip:hover,.src-chip:focus-visible{color:var(--ink)}
+.src-chip:hover::before,.src-chip:focus-visible::before{border-color:var(--ink)}
+.src-chip:hover .src-chip-palavra,.src-chip:focus-visible .src-chip-palavra{text-decoration-color:currentColor}
+/* forma longa: onde o selo está sozinho e o estudo é informação, não ruído */
+.src-chip-longo .src-chip-texto{text-transform:none;letter-spacing:.03em;font-weight:400;font-size:var(--t-mono-2)}
+.src-chip-longo{white-space:normal}
+/* Onde o selo está sozinho e não dentro de uma frase, tem o alvo de toque
+   declarado nas fichas de valor: numa frase, esse alvo partiria a entrelinha. */
+.figura .src-chip,.mun-distancia-selos .src-chip,.glance .src-chip,.brief>.src-chip{min-height:var(--selo-alvo)}
+
+/* O MARCADOR. Mesmo chip, um corpo mais pequeno, e porta própria onde pode
+   ter uma: dentro do selo não pode, porque uma âncora não entra noutra. */
+.marcador{font-family:var(--f-mono);font-size:var(--t-mono-1);font-weight:600;color:var(--ink);
+  background:var(--paper-3);border:1px solid var(--rule-strong);padding:1px 5px;letter-spacing:.02em;white-space:nowrap}
+a.marcador{text-decoration:none}
+a.marcador:hover,a.marcador:focus-visible{border-color:var(--ink)}
+.src-chip .marcador{font-size:9.5px;padding:0 4px;letter-spacing:0}
+
+/* Número do próprio sítio: sem selo, sempre com porta (IDENTIDADE §10). */
+.prova-valor{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink);
+  text-decoration:underline;text-decoration-color:var(--rule-strong);text-underline-offset:3px}
+.prova-valor:hover{text-decoration-color:currentColor}
+
+/* ------------------------------------------------------------- ligações */
+.ligacao-dados,.ligacao-externa{font-family:var(--f-mono);font-size:var(--t-mono-2);font-weight:600;
+  letter-spacing:.05em;color:var(--ink);text-decoration:underline;text-underline-offset:4px;
+  text-decoration-color:var(--rule-strong);overflow-wrap:anywhere}
+.ligacao-dados:hover,.ligacao-externa:hover{text-decoration-color:currentColor}
+.ligacao-email{font-family:var(--f-mono);font-size:var(--t-mono-2);text-underline-offset:3px;overflow-wrap:anywhere}
+
+/* --------------------------------------------------- a porta das correções */
+.aparelho-titulo,.linha-campo-k{font-family:var(--f-mono);font-size:var(--t-mono-1);font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:block}
+.aparelho-nota{font-size:var(--t-sans-1);color:var(--muted);line-height:var(--l-mobilia);margin-top:var(--esp-2)}
+.porta-correccoes{display:grid;gap:var(--esp-1)}
+.porta-correccoes-rodape{max-width:var(--medida-aparelho);margin-top:var(--esp-secao);
+  border-top:var(--fio-forte);padding-top:var(--esp-3)}
+
+/*#mosaico*/
+/* ---------------------------------------------------------------- mosaicos */
+/* A grelha fecha a aritmética: oito mosaicos são 4x2, 2x4 ou 8x1, e nunca
+   3+3+2 com uma célula vazia (IDENTIDADE §7). */
+.figuras{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);border:var(--fio)}
+.figura{background:var(--paper-2);padding:var(--esp-5) var(--esp-4);display:flex;flex-direction:column}
+.figura-num{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:var(--t-valor-mosaico);
+  font-weight:600;line-height:var(--l-valor);letter-spacing:-.04em;color:var(--ink)}
+.figura-nome{margin-top:var(--esp-3)}
+.figura-medida{font-family:var(--f-mono);font-size:var(--t-mono-1);font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);line-height:1.5;margin-top:var(--esp-1)}
+.figura-frase{font-size:var(--t-sans-1);line-height:var(--l-mobilia);color:var(--ink);margin-top:var(--esp-3)}
+/* a porta separa-se da leitura por um fio, não por um espaço a mais */
+.figura .src-chip{margin-top:auto;padding-top:var(--esp-3);border-top:var(--fio);align-self:stretch}
+.figura .src-chip::before{border-color:var(--rule-strong)}
+
+/*#instr*/
+/* -------------------------------------------------------------- instrumento */
+.instr{border:var(--fio);background:var(--paper-2)}
+.instr-top{padding:var(--esp-5) var(--esp-5) 0}
+.layer-tag{font-family:var(--f-mono);font-size:var(--t-mono-1);font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:var(--esp-2)}
+.layer-tag::before{content:'';width:16px;height:1px;background:var(--rule-strong);flex:none}
+.glance{display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--esp-2) var(--esp-4);margin-top:var(--esp-3)}
+.glance-num{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:clamp(38px,4.6vw,56px);
+  font-weight:600;line-height:var(--l-valor);letter-spacing:-.04em}
+.glance-meta{display:grid;gap:2px}
+.glance-name{font-size:var(--t-sans-1);font-weight:600}
+.glance-unit{font-family:var(--f-mono);font-size:var(--t-mono-1);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.glance .src-chip-longo{flex-basis:100%}
+.svg-scroll{overflow-x:auto;padding:var(--esp-4) var(--esp-5) 0}
+.brief{padding:var(--esp-4) var(--esp-5) var(--esp-5)}
+.brief-text{font-size:var(--t-sans-3);line-height:1.5;margin-top:var(--esp-2);max-width:var(--medida-aparelho)}
+.map-hint{font-family:var(--f-mono);font-size:var(--t-mono-1);color:var(--muted);letter-spacing:.04em;margin-top:var(--esp-3)}
+.tk{font-family:var(--f-mono);font-size:10px;fill:var(--muted);letter-spacing:.08em}
+.tk-datum{fill:var(--ink);font-weight:600}
+.datum-label{font-family:var(--f-mono);font-size:10px;fill:var(--ink);font-weight:600;letter-spacing:.1em}
+.gap-label{font-family:var(--f-mono);font-size:12px;fill:var(--ink);font-weight:600}
+.mk-name{font-family:var(--f-mono);font-size:10px;fill:var(--muted);letter-spacing:.06em}
+.mk-val{font-family:var(--f-mono);font-size:15px;fill:var(--ink);font-weight:600}
+.frame{fill:none;stroke:var(--rule-strong);stroke-width:1}
+.frame-label{font-family:var(--f-mono);font-size:7.5px;fill:var(--muted);letter-spacing:.14em}
+[data-pontos] use{fill:var(--dotcol);opacity:.55}
+.mun-lit{fill:var(--yellow);opacity:1}
+.lit-leader{fill:none;stroke:var(--ink);stroke-width:1}
+.lit-label{font-family:var(--f-mono);font-size:10px;fill:var(--ink);font-weight:600}
+
+/* A terceira camada. O triângulo é o da casa; o que muda é que o corpo do
+   fundo é aparelho e passa a estar escrito no registo do aparelho. */
+.deep{border-top:var(--fio-forte);margin-top:var(--esp-5)}
+.deep>summary{list-style:none;cursor:pointer;padding:var(--esp-3) var(--esp-5);
+  font-family:var(--f-mono);font-size:var(--t-mono-1);font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:var(--esp-2)}
+.deep>summary::-webkit-details-marker{display:none}
+.deep>summary::before{content:'';width:0;height:0;border-left:5px solid var(--rule-strong);
+  border-top:4px solid transparent;border-bottom:4px solid transparent}
+.deep[open]>summary::before{border-left:4px solid transparent;border-right:4px solid transparent;
+  border-top:5px solid var(--rule-strong);border-bottom:0}
+.deep>summary:hover{color:var(--ink)}
+.deep-body{padding:0 var(--esp-5) var(--esp-5);display:grid;gap:var(--esp-4)}
+.deep-item{display:grid;grid-template-columns:var(--col-rotulo) minmax(0,1fr);gap:var(--esp-2) var(--esp-5);
+  border-top:var(--fio);padding-top:var(--esp-3)}
+.deep-k{font-family:var(--f-mono);font-size:var(--t-mono-1);font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--muted)}
+.deep-v{font-size:var(--t-sans-1);line-height:var(--l-mobilia);color:var(--ink);max-width:var(--medida-aparelho)}
+.deep-v+.deep-v,.deep-v+p{margin-top:var(--esp-2)}
+.verbatim{white-space:pre-wrap;font-family:var(--f-mono);font-size:var(--t-mono-2);line-height:1.5;color:var(--muted)}
+
+/* --------------------------------------------------------- prov e legendas */
+.prov{border-top:var(--fio-forte);display:grid}
+.prov-row{display:grid;grid-template-columns:var(--col-rotulo) minmax(0,1fr);gap:var(--esp-2) var(--esp-5);
+  padding:var(--esp-3) 0;border-bottom:var(--fio)}
+.prov-study{font-family:var(--f-mono);font-size:var(--t-mono-1);font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--muted)}
+.prov-vals{font-size:var(--t-sans-1);line-height:var(--l-mobilia);color:var(--muted)}
+.map-cite{font-size:var(--t-sans-1);line-height:var(--l-mobilia);color:var(--muted);padding:var(--esp-4) var(--esp-5);max-width:var(--medida-aparelho)}
+
+/*#aparelho*/
+/* ------------------------------------------------------------- o aparelho */
+/* Recua por corpo e por cor, não por caixa: o chão fica para o que foi
+   medido. O fio do topo passou de 1,5px --ink a forte. */
+.aparelho{display:grid;gap:var(--esp-5);align-content:start;border-top:var(--fio-forte);
+  padding-top:var(--esp-3);font-size:var(--t-sans-1);color:var(--muted);line-height:var(--l-mobilia)}
+.aparelho-ficha{margin:0;display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.aparelho-ficha dt{font-family:var(--f-mono);font-size:var(--t-mono-1);font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);padding-top:var(--esp-3);border-top:var(--fio)}
+.aparelho-ficha dd{margin:0;padding-bottom:var(--esp-3);color:var(--ink);font-size:var(--t-sans-1)}
+.aparelho-ficha dd .campo-valor{font-family:var(--f-mono);font-size:var(--t-mono-2);overflow-wrap:anywhere}
+.aparelho-bloco{border-top:var(--fio-forte);padding-top:var(--esp-3)}
+.aparelho-saidas{padding-top:var(--esp-3);border-top:var(--fio-forte)}
+
+/*#linha*/
+/* ---------------------------------------------------- marcas de exemplo */
+/* Uma caixa de exemplo nunca tem algarismos: se tivesse, seria um número
+   inventado com outro nome. */
+.exemplo{border:1px dashed var(--rule-strong);
+  background:repeating-linear-gradient(-45deg,transparent,transparent 8px,var(--paper-2) 8px,var(--paper-2) 16px);
+  display:grid;gap:var(--esp-2);align-content:center;justify-items:start;padding:var(--esp-4);color:var(--muted)}
+.exemplo-k{font-family:var(--f-mono);font-size:var(--t-mono-1);font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted)}
+.exemplo-v{font-family:var(--f-mono);font-size:var(--t-mono-2);letter-spacing:.03em;color:var(--muted)}
+.exemplo-linha{min-height:64px}
+.exemplo-inline{display:inline-grid;padding:var(--esp-2) var(--esp-3);gap:2px}
+
+/* ------------------------------------------------- a página de uma linha */
+.linha-cabeca{border-bottom:var(--fio-forte);padding-bottom:var(--esp-5)}
+.linha-valor{display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--esp-2) var(--esp-3);margin-top:var(--esp-2)}
+.linha-valor-num{font-size:var(--t-valor-linha);line-height:var(--l-valor);letter-spacing:-.04em}
+.linha-valor-unidade{font-family:var(--f-mono);font-size:var(--t-mono-4);font-weight:600;letter-spacing:.02em;color:var(--muted)}
+.linha-frase{font-size:var(--t-sans-4);line-height:1.5;margin-top:var(--esp-4);max-width:var(--medida-leitura)}
+.linha-frase .campo-valor{font-weight:600}
+.linha-id{font-family:var(--f-mono);font-size:var(--t-mono-2);letter-spacing:.03em;color:var(--muted);margin-top:var(--esp-3)}
+.linha{margin-top:var(--esp-5);display:grid;grid-template-columns:minmax(0,var(--medida-leitura)) var(--col-aparelho);
+  gap:var(--esp-5) var(--esp-7);align-items:start}
+.linha-corpo{display:grid;gap:var(--esp-6);min-width:0}
+.linha-bloco{padding-top:0}
+.linha-bloco-titulo{font-family:var(--f-mono);font-size:var(--t-mono-1);font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);border-top:var(--fio-forte);padding-top:var(--esp-3);margin-bottom:var(--esp-3)}
+.recibo{display:grid;gap:var(--esp-3)}
+.recibo-porta{font-family:var(--f-mono);font-size:var(--t-mono-2);font-weight:600;letter-spacing:.05em}
+.linha-excerto{margin:0;background:var(--paper-2);border-left:2px solid var(--ink);padding:var(--esp-4);
+  font-family:var(--f-mono);font-size:var(--t-mono-3);line-height:1.55;overflow-wrap:anywhere}
+.linha-nota{font-size:var(--t-sans-1);color:var(--muted);line-height:var(--l-mobilia);margin-top:var(--esp-2)}
+.verificacoes{display:grid;gap:0}
+.verificacao-l{display:grid;grid-template-columns:180px minmax(0,1fr);gap:var(--esp-2) var(--esp-4);
+  border-top:var(--fio);padding:var(--esp-3) 0;align-items:baseline}
+.verificacao-k{font-family:var(--f-mono);font-size:var(--t-mono-1);font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted)}
+.verificacao-v{font-family:var(--f-mono);font-size:var(--t-mono-3);font-variant-numeric:tabular-nums;color:var(--ink)}
+.log-vazio-v{font-size:var(--t-sans-2);color:var(--ink)}
+.placeholder-nota{font-size:var(--t-sans-1);color:var(--muted);margin-top:var(--esp-2)}
+
+/*#municipio*/
+/* -------------------------------------------------- a página de município */
+/* Sem fio no fim: a secção seguinte abre com o seu, e dois fios a sessenta
+   pixels um do outro não são hierarquia, são um erro de ritmo. */
+.municipio-cabeca{padding-bottom:var(--esp-2)}
+.municipio-sub{font-family:var(--f-mono);font-size:var(--t-mono-2);letter-spacing:.08em;color:var(--muted);margin-top:var(--esp-2)}
+.municipio-cabeca .lede{margin-top:var(--esp-4)}
+.municipio{margin-top:var(--esp-secao);display:grid;grid-template-columns:minmax(0,var(--medida-leitura)) var(--col-aparelho);
+  gap:var(--esp-5) var(--esp-7);align-items:start}
+.municipio-corpo{display:grid;gap:var(--esp-secao);min-width:0}
+.mun-campos{margin:0;display:grid;grid-template-columns:200px minmax(0,1fr);gap:0}
+.mun-campos dt{font-family:var(--f-mono);font-size:var(--t-mono-1);font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);border-top:var(--fio);padding:var(--esp-3) var(--esp-4) var(--esp-3) 0}
+.mun-campos dd{margin:0;border-top:var(--fio);padding:var(--esp-3) 0;font-size:var(--t-sans-1);line-height:var(--l-mobilia)}
+.mun-campo-vazio{color:var(--muted);background:var(--paper-3);padding:1px 6px;font-size:var(--t-sans-1)}
+.mun-distancia{margin-top:var(--esp-5);border-top:var(--fio-forte);padding-top:var(--esp-4)}
+.mun-distancia-selos{display:flex;flex-wrap:wrap;gap:var(--esp-2) var(--esp-4);align-items:baseline;margin-top:var(--esp-3)}
+.mun-selo-rot{font-family:var(--f-mono);font-size:var(--t-mono-1);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.mun-distancia-legenda{font-size:var(--t-sans-1);color:var(--muted);line-height:var(--l-mobilia);margin-top:var(--esp-3);max-width:var(--medida-aparelho)}
+.mun-distancia-svg,.mun-serie-svg{display:block;width:100%;height:auto}
+.mun-barra-rot,.mun-tecto-rot,.mun-serie-val{font-family:var(--f-mono);font-size:14px;fill:var(--ink);font-weight:600}
+.mun-tempo{margin-top:var(--esp-5)}
+.mun-tempo-eixo{display:grid;grid-template-columns:repeat(5,1fr);font-family:var(--f-mono);font-size:var(--t-mono-1);
+  letter-spacing:.1em;color:var(--muted);border-bottom:var(--fio-forte);padding-bottom:var(--esp-2)}
+.mun-mandato{border-bottom:var(--fio);padding:var(--esp-4) 0}
+.mun-mandato-cabeca{display:grid;grid-template-columns:200px minmax(0,1fr);gap:var(--esp-1) var(--esp-4);align-items:baseline}
+.mun-mandato-periodo{font-family:var(--f-mono);font-size:var(--t-mono-3);font-weight:600;letter-spacing:.04em;color:var(--ink)}
+.mun-mandato-quem{font-size:var(--t-sans-3);font-weight:600}
+.mun-mandato-lista{font-family:var(--f-mono);font-size:var(--t-mono-1);font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);grid-column:2}
+.mun-mandato-instalado{font-family:var(--f-mono);font-size:var(--t-mono-1);letter-spacing:.06em;color:var(--muted);grid-column:2}
+.mun-mandato .mun-campos{margin-top:var(--esp-3)}
+.mun-nao-sabe{margin:var(--esp-2) 0 0;padding:0;list-style:none;display:grid;gap:var(--esp-2)}
+.mun-nao-sabe li{border-top:var(--fio);padding-top:var(--esp-2);font-size:var(--t-sans-1);line-height:var(--l-mobilia)}
+.mun-estudos{display:grid;gap:0;border-top:var(--fio-forte)}
+.mun-estudo{border-bottom:var(--fio);padding:var(--esp-4) 0;display:grid;gap:var(--esp-2)}
+.mun-estudo-titulo{font-size:var(--t-sans-3)}
+.mun-estudo-frase{font-size:var(--t-sans-1);color:var(--muted);line-height:var(--l-mobilia);max-width:var(--medida-aparelho)}
+
+/*#metodo*/
+/* ------------------------------------------------------- método e agenda */
+/* Disposição A: rótulo e corpo. O rótulo passa a ser sempre a mesma coluna,
+   com o mesmo alinhamento de topo, em Método, Agenda, Sobre e Correções. */
+.metodo-secao{border-top:var(--fio-forte);padding:var(--esp-5) 0;display:grid;
+  grid-template-columns:var(--col-rotulo) minmax(0,1fr);gap:var(--esp-3) var(--esp-6);align-items:start}
+.metodo-corpo{display:grid;gap:var(--esp-4);min-width:0;max-width:var(--medida-leitura)}
+.metodo-p{font-size:var(--t-sans-3);line-height:1.55}
+/*#regras*/
+.regra-cabeca{display:grid;gap:var(--esp-2);align-content:start}
+.regra-n{font-family:var(--f-mono);font-size:var(--t-mono-3);font-weight:600;letter-spacing:.1em;color:var(--muted)}
+.regra-cabeca h2{font-size:var(--t-h3);letter-spacing:-.004em}
+.regra-linha{display:grid;grid-template-columns:150px minmax(0,1fr);gap:var(--esp-2) var(--esp-4);
+  border-top:var(--fio);padding-top:var(--esp-3)}
+.regra-k{font-family:var(--f-mono);font-size:var(--t-mono-1);font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted)}
+.regra-v{font-size:var(--t-sans-1);color:var(--muted);line-height:var(--l-mobilia)}
+/* A FITA DA PROVA. Cada regra acaba numa leitura, e a leitura lê-se como
+   leitura: mono, tabular, sobre o chão do que foi medido. */
+.regra-prova{display:flex;flex-wrap:wrap;gap:var(--esp-2) var(--esp-5);background:var(--paper-2);
+  border:var(--fio);padding:var(--esp-3) var(--esp-4);font-family:var(--f-mono);
+  font-size:var(--t-mono-1);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);align-items:baseline}
+.regra-linha-prova{border-top:0;grid-template-columns:150px minmax(0,1fr)}
+.regra-prova-item{display:inline-flex;gap:6px;align-items:baseline}
+.regra-prova-item .prova-valor{font-size:var(--t-mono-3);letter-spacing:0}
+.regra-portas{font-family:var(--f-mono);font-size:var(--t-mono-2);font-weight:600;letter-spacing:.05em}
+.mecanismo-svg{display:block;width:100%;min-width:760px;height:auto}
+.mecanismo-caixa{fill:var(--paper);stroke:var(--rule-strong);stroke-width:1}
+.mecanismo-rotulo{font-family:var(--f-mono);font-size:9px;fill:var(--muted);letter-spacing:.16em;font-weight:600}
+.mecanismo-num{font-family:var(--f-mono);font-size:16px;fill:var(--ink);font-weight:600}
+/* Uma data não é uma contagem, e num nó com duas leituras não pode ter o corpo
+   de uma: o desenho da casa punha as duas ao mesmo tamanho e elas encavalitavam-se. */
+.mecanismo-num[data-prova='painel_reconferido_em']{font-size:12px;letter-spacing:.02em}
+.mecanismo-cap{font-family:var(--f-mono);font-size:8.5px;fill:var(--muted);letter-spacing:.06em}
+.mecanismo-cap-so{font-size:9.5px}
+.mecanismo-seta{stroke:var(--rule-strong);stroke-width:1;fill:none}
+.mecanismo-seta-longa{fill:none}
+.mecanismo-ponta{fill:var(--rule-strong)}
+.mecanismo-legenda{display:flex;flex-wrap:wrap;gap:var(--esp-2) var(--esp-4);padding:var(--esp-3) var(--esp-5);
+  border-top:var(--fio);font-family:var(--f-mono);font-size:var(--t-mono-1);letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted)}
+.mecanismo-legenda-k{font-weight:600;color:var(--ink)}
+.mecanismo-breve{padding:0 var(--esp-5) var(--esp-5)}
+
+/*#agenda*/
+.agenda-estado{font-size:var(--t-h3);letter-spacing:.02em}
+.agenda-conta{font-family:var(--f-mono);font-size:var(--t-mono-1);letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);margin-top:var(--esp-2);display:block}
+.agenda-item{border-top:var(--fio);padding-top:var(--esp-4);display:grid;gap:var(--esp-4)}
+.agenda-item:first-child{border-top:0;padding-top:0}
+.agenda-item-eyebrow{display:flex;flex-wrap:wrap;gap:var(--esp-2) var(--esp-4);align-items:baseline;
+  font-family:var(--f-mono);font-size:var(--t-mono-1);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.agenda-tipo{color:var(--muted)}
+.agenda-estado-marca{color:var(--ink);background:var(--paper-3);padding:1px 6px}
+.agenda-titulo{font-size:var(--t-sans-4);line-height:1.3}
+.agenda-bloco{display:grid;grid-template-columns:150px minmax(0,1fr);gap:var(--esp-2) var(--esp-4);
+  border-top:var(--fio);padding-top:var(--esp-3)}
+.agenda-k{font-family:var(--f-mono);font-size:var(--t-mono-1);font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted)}
+.agenda-criterios{margin:0;padding:0;list-style:none;display:grid;gap:var(--esp-3)}
+.agenda-criterio{display:grid;gap:var(--esp-2);border-left:2px solid var(--rule);padding-left:var(--esp-3)}
+.agenda-criterio-tipo{font-family:var(--f-mono);font-size:var(--t-mono-1);font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted)}
+.agenda-quadro{font-size:var(--t-sans-2);line-height:var(--l-mobilia)}
+.agenda-criterio-nota,.agenda-nota{font-size:var(--t-sans-1);color:var(--muted);line-height:var(--l-mobilia)}
+.agenda-limiar,.agenda-linhas,.agenda-documentos{font-size:var(--t-sans-1);color:var(--muted);line-height:1.7}
+.agenda-k-inline{font-family:var(--f-mono);font-size:var(--t-mono-1);font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted)}
+.agenda-datas{display:flex;flex-wrap:wrap;gap:var(--esp-2) var(--esp-5);font-size:var(--t-sans-1);color:var(--muted)}
+.agenda-datas .mono{color:var(--ink);font-size:var(--t-mono-2)}
+.agenda-historico{margin:0;padding:0;list-style:none;display:grid;gap:var(--esp-3)}
+.agenda-historico-cabeca{display:flex;flex-wrap:wrap;gap:var(--esp-2) var(--esp-3);align-items:baseline;
+  font-family:var(--f-mono);font-size:var(--t-mono-1);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.agenda-historico-cabeca .mono{color:var(--ink);letter-spacing:.02em;font-size:var(--t-mono-2)}
+.agenda-historico-estados{color:var(--muted)}
+.agenda-historico-tipo{background:var(--paper-3);padding:1px 6px;color:var(--ink);font-weight:600}
+.agenda-historico-motivo{font-size:var(--t-sans-1);color:var(--muted);line-height:var(--l-mobilia);margin-top:var(--esp-2)}
+.agenda-vazio,.agenda-vazio-inline{color:var(--muted);font-size:var(--t-sans-1)}
+.agenda-sem-data{font-family:var(--f-mono);font-size:var(--t-mono-1);letter-spacing:.04em;color:var(--muted)}
+.agenda-afecta a{font-family:var(--f-mono);font-size:var(--t-mono-1);letter-spacing:.02em}
+/* O CALENDÁRIO É UMA COLUNA DE DATAS. Hoje as datas correm no meio da frase
+   e não se conseguem varrer. */
+.agenda-eventos{margin:var(--esp-3) 0 0;padding:0;list-style:none;border-top:var(--fio-forte)}
+.agenda-evento{display:grid;grid-template-columns:170px minmax(0,1fr);gap:var(--esp-2) var(--esp-4);
+  border-bottom:var(--fio);padding:var(--esp-4) 0}
+.agenda-evento-data{font-family:var(--f-mono);font-size:var(--t-mono-2);font-variant-numeric:tabular-nums;
+  color:var(--ink);font-weight:600;letter-spacing:.02em}
+.agenda-evento-fonte{font-family:var(--f-mono);font-size:var(--t-mono-1);letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);display:block;margin-top:var(--esp-1)}
+.agenda-evento-corpo{display:grid;gap:var(--esp-2);min-width:0}
+.agenda-evento-titulo{font-size:var(--t-sans-3);font-weight:600;line-height:1.35}
+.agenda-excerto{margin:0;background:var(--paper-2);border-left:2px solid var(--rule-strong);
+  padding:var(--esp-3);font-family:var(--f-mono);font-size:var(--t-mono-2);line-height:1.55;color:var(--ink)}
+.agenda-eventos .mono{overflow-wrap:anywhere}
+
+/*#mapa*/
+/* ------------------------------------------------------- painel e mapa */
+.verificacao{margin-top:var(--esp-3);font-family:var(--f-mono);font-size:var(--t-mono-1);
+  letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.rule-svg{width:980px;max-width:none;height:auto;display:block}
+.mk{opacity:.35}
+.mk.is-on{opacity:1}
+.legend-dot.ld-off i{background:var(--dotcol);opacity:.55}
+.map-svg{width:100%;height:auto;display:block}
+.map-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:var(--esp-6);padding:var(--esp-5)}
+.map-panel{display:grid;gap:var(--esp-5);align-content:start}
+.cover-num{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:clamp(34px,4vw,46px);
+  font-weight:600;line-height:var(--l-valor);letter-spacing:-.03em;margin-top:var(--esp-3)}
+.cover-label{font-size:var(--t-sans-1);color:var(--muted);line-height:var(--l-mobilia);margin-top:var(--esp-2)}
+.map-caption{font-size:var(--t-sans-1);line-height:var(--l-mobilia)}
+.legend{display:grid;gap:var(--esp-2);font-family:var(--f-mono);font-size:var(--t-mono-1);
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.legend-item{display:flex;align-items:center;gap:var(--esp-2)}
+.legend-dot{width:10px;height:10px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.legend-dot i{width:6px;height:6px;border-radius:50%;background:var(--dotcol);opacity:.55}
+.legend-dot.ld-on i{background:var(--yellow);opacity:1}
+.compo{border-top:var(--fio-forte);padding-top:var(--esp-3);display:grid;gap:var(--esp-2)}
+.compo-k{font-family:var(--f-mono);font-size:var(--t-mono-1);font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--muted)}
+.compo-row,.compo-tot{display:grid;grid-template-columns:120px minmax(0,1fr) 100px;gap:var(--esp-3);align-items:center}
+.compo-tot{border-top:var(--fio);padding-top:var(--esp-2)}
+.compo-l{font-family:var(--f-mono);font-size:var(--t-mono-1);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.compo-bar{display:block;height:9px;background:var(--paper-3)}
+.compo-bar i{display:block;height:100%;background:var(--yellow)}
+.compo-n{text-align:right;font-size:var(--t-mono-2)}
+.readout{border-top:var(--fio);padding-top:var(--esp-3)}
+.readout-hint{font-family:var(--f-mono);font-size:var(--t-mono-1);letter-spacing:.04em;color:var(--muted)}
+.map-canvas-wrap{align-self:start}
+
+/*#respostas*/
+/* -------------------------------------------------------------- respostas */
+@media (max-width:1080px){
+  .figuras{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  .linha,.municipio{grid-template-columns:minmax(0,1fr);gap:var(--esp-6)}
+  .agenda-evento{grid-template-columns:minmax(0,1fr)}
+  .map-grid{grid-template-columns:minmax(0,1fr);gap:var(--esp-5)}
+}
+@media (max-width:780px){
+  .metodo-secao{grid-template-columns:1fr;gap:var(--esp-3)}
+  .deep-item,.prov-row{grid-template-columns:1fr;gap:var(--esp-1)}
+  .regra-linha,.regra-linha-prova,.agenda-bloco{grid-template-columns:1fr;gap:var(--esp-2)}
+  .mun-campos,.mun-mandato-cabeca{grid-template-columns:1fr}
+  .mun-campos dd{border-top:0;padding-top:0}
+  .mun-mandato-lista,.mun-mandato-instalado{grid-column:1}
+}
+@media (max-width:620px){
+  .figuras{grid-template-columns:minmax(0,1fr)}
+  .verificacao-l{grid-template-columns:1fr;gap:var(--esp-1)}
+  .instr-top,.svg-scroll,.brief,.deep-body,.deep>summary,.mecanismo-legenda,.mecanismo-breve,.map-cite{
+    padding-left:var(--esp-4);padding-right:var(--esp-4)}
+  .masthead{padding-top:var(--esp-6)}
+  .masthead-furniture{gap:var(--esp-3) var(--esp-5)}
+  .mun-tempo-eixo{grid-template-columns:repeat(3,1fr)}
+  .mun-tempo-eixo span:nth-child(2),.mun-tempo-eixo span:nth-child(4){display:none}
+}

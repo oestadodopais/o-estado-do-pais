@@ -1,0 +1,102 @@
+/* ---- primeira página: o mapa e a composição ------------------------------ */
+.mapa-grelha {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 440px);
+  gap: clamp(18px, 2.6vw, 34px);
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .mapa-grelha {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.mapa-quadro {
+  padding: 10px;
+}
+.mapa-svg {
+  max-height: 74vh;
+}
+.mapa-moldura {
+  fill: none;
+  stroke: var(--rule-strong);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+.mapa-moldura-rot {
+  font-family: var(--f-mono);
+  font-size: 7.5px;
+  letter-spacing: 0.12em;
+  fill: var(--muted);
+}
+[data-pontos] circle {
+  fill: var(--dotcol);
+}
+.mun-lit {
+  fill: var(--yellow);
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+.lit-leader {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1;
+}
+.lit-label {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 600;
+  fill: var(--ink);
+}
+[data-aceso] rect {
+  fill: var(--paper);
+  stroke: var(--ink);
+  stroke-width: 1;
+}
+
+.mapa-legenda {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+}
+.mapa-ponto {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--dotcol);
+  margin-right: 8px;
+  vertical-align: 0;
+}
+.mapa-ponto.aceso {
+  background: var(--yellow);
+  border: 1.5px solid var(--ink);
+}
+
+.compo {
+  display: grid;
+  gap: 8px;
+  border-top: 1px solid var(--rule);
+  padding-top: 12px;
+}
+.compo-barra {
+  display: flex;
+  height: 14px;
+  border: 1px solid var(--rule-strong);
+  background: var(--paper-3);
+}
+.compo-barra i {
+  background: var(--yellow);
+  border-right: 1px solid var(--paper);
+}
+.compo-barra i:last-child {
+  border-right: 0;
+}
+.compo-linhas {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 6px 12px;
+  align-items: center;
+}
+.compo-linhas .selo {
+  justify-self: end;
+}

@@ -1,0 +1,58 @@
+/* ---- o Método -------------------------------------------------------------- */
+.met-cabeca {
+  padding: clamp(18px, 2.4vw, 28px) 0 clamp(14px, 2vw, 22px);
+  display: grid;
+  gap: 8px;
+}
+.met-cabeca h1 {
+  font-size: clamp(26px, 3.6vw, 40px);
+  max-width: 22ch;
+}
+.mec-caixa {
+  fill: var(--paper);
+  stroke: var(--rule-strong);
+  stroke-width: 1;
+}
+.mec-caixa-forte {
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+.mec-rot {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  fill: var(--muted);
+}
+.mec-val {
+  font-family: var(--f-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  fill: var(--ink);
+}
+.mec-val-p {
+  font-size: 17px;
+  letter-spacing: -0.01em;
+}
+.mec-cap {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  fill: var(--muted);
+}
+.mec-breve {
+  margin: 14px 0 0;
+  font-family: var(--f-mono);
+  font-size: 14px;
+  letter-spacing: 0.01em;
+}
+.regra-selos {
+  margin-top: 14px;
+}
+.regra-selos p {
+  margin: 4px 0 0;
+}
+.prova-v-data {
+  font-size: 13px;
+}

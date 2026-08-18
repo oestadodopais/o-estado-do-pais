@@ -1,0 +1,121 @@
+/* ---- a página do município ------------------------------------------------ */
+.mun-cabeca {
+  padding: clamp(18px, 2.4vw, 28px) 0 clamp(6px, 1vw, 12px);
+  display: grid;
+  gap: 8px;
+}
+.mun-cabeca h1 {
+  font-size: clamp(30px, 4.4vw, 46px);
+}
+.ficha-valores dd {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+}
+.ficha-valores dd .valor {
+  letter-spacing: -0.01em;
+}
+.painel-texto .celula {
+  gap: 6px;
+}
+.par-largo .par-eixo {
+  height: 26px;
+}
+.par-largo .par-linha {
+  top: 12px;
+}
+.par-largo .par-seg {
+  top: 10px;
+}
+.par-largo .par-ponto {
+  top: 7px;
+}
+
+/* a faixa dos mandatos: proporcional ao tempo, aberta à direita no que está
+   em funções. */
+.faixa-tempo {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+.faixa-bandas {
+  display: flex;
+  gap: 2px;
+}
+.banda {
+  background: var(--paper-3);
+  border: 1px solid var(--rule-strong);
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  overflow: hidden;
+}
+.banda b {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+}
+.banda.aberta {
+  border-right: 1px dashed var(--axis);
+  background: var(--yellow);
+}
+.faixa-anos {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.trabalhos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.trabalhos li {
+  background: var(--paper);
+  padding: 12px 14px;
+  display: grid;
+  gap: 4px;
+}
+.trabalhos p {
+  margin: 0;
+}
+
+.nao-sabe {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.nao-sabe li {
+  background: var(--paper);
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+/* Na coluna estreita da direita a ficha passa a uma coluna: um valor de nove
+   algarismos não cabe ao lado do seu rótulo em 320px. */
+.linha-dupla .pilha .ficha {
+  grid-template-columns: minmax(0, 1fr);
+}
+.linha-dupla .pilha .ficha dt {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.linha-dupla .pilha .ficha dd {
+  padding-top: 3px;
+}

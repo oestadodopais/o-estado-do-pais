@@ -1,0 +1,184 @@
+/* Direção A · Refinamento · fichas de valor (tokens) desta direção.
+   O que muda em relação a src/styles/tokens.css está dito grupo a grupo.
+   Regra da direção: nenhum valor de cor muda. O que muda é que as medidas
+   que hoje estão espalhadas pela folha como literais passam a ter nome. */
+
+/* ============================================================
+   1 · COR · sem uma única alteração de valor.
+   Todos os treze valores são os de src/styles/tokens.css, carácter a
+   carácter, nos três estados do tema. A pergunta desta direção é «até onde
+   chega esta identidade sem trocar as suas peças», e a cor é a peça que
+   mais depressa a trocaria. O que passa a estar escrito é o SIGNIFICADO de
+   cada papel, que hoje se aprende a ler a folha:
+
+     --paper    a página, e a leitura.
+     --paper-2  um objeto medido: um mosaico, um instrumento, o bloco da prova.
+     --paper-3  um estado pequeno e local: o quadrado cheio do selo, o fundo
+                do marcador, uma célula vazia.
+     --ink      o texto da leitura, e o fio que emoldura a página.
+     --muted    o aparelho: rótulos, fichas, ressalvas, proveniência.
+     --rule     fio de célula.        --rule-strong  fio de bloco.
+     --yellow   marca de medição, nunca texto.
+     --oxblood  erro admitido, e mais nada.
+
+   Antes desta direção, --paper-2 servia ao mesmo tempo de mosaico e de
+   aparelho, e por isso a leitura e o aparelho tinham o mesmo chão. Aqui o
+   aparelho não tem chão nenhum: recua por tamanho e por --muted, e o chão
+   fica reservado ao que foi medido.
+   ============================================================ */
+:root {
+  --paper: #fafbfc;
+  --paper-2: #f1f4f7;
+  --paper-3: #e7ecf1;
+  --ink: #16181b;
+  --muted: #5a5e66;
+  --yellow: #e8a80c;
+  /* Reservado ao registo de correções, e a mais nada. Contraste sobre
+     --paper: 9,45:1 (valor herdado, não recalculado aqui). */
+  --oxblood: #7c2333;
+  --rule: #dfe4ea;
+  --rule-strong: #c4cbd4;
+  --axis: #82888f;
+  --dotcol: #6e7681;
+  --onyellow: #16181b;
+  --focus: #16181b;
+  --shadow: 0 1px 1px rgba(22, 24, 27, 0.04), 0 10px 28px -18px rgba(22, 24, 27, 0.35);
+
+  /* ============================================================
+     2 · TIPO · as mesmas três famílias, sem exceção.
+     Serifada só na marca, monoespaçada em valores e mobília, sem serifa na
+     prosa. Nenhuma família nova, nenhum tipo da rede, nenhum pedido para
+     fora. O que muda é a ESCALA: a folha atual usa doze corpos entre 9,5px
+     e 18px, muitos deles a meio ponto uns dos outros, e meio ponto não é
+     hierarquia, é ruído. Aqui há quatro degraus por família, e um corpo que
+     não esteja na escala é um defeito.
+     ============================================================ */
+  --f-sans: 'Avenir Next', 'Avenir', 'Helvetica Neue', Helvetica, Arial, 'Segoe UI', system-ui, sans-serif;
+  --f-serif: 'Iowan Old Style', 'Palatino', 'Palatino Linotype', 'Book Antiqua', 'URW Palladio L', Georgia, 'Times New Roman', serif;
+  --f-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Monaco, 'Cascadia Mono', 'Roboto Mono', Consolas, monospace;
+
+  /* monoespaçada: mobília · rótulo · campo · valor pequeno */
+  --t-mono-1: 10px;
+  --t-mono-2: 11.5px;
+  --t-mono-3: 13px;
+  --t-mono-4: 15px;
+  /* sem serifa: legenda · corpo do aparelho · leitura · leitura destacada */
+  --t-sans-1: 13.5px;
+  --t-sans-2: 15px;
+  --t-sans-3: 16.5px;
+  --t-sans-4: clamp(17px, 1.6vw, 19px);
+  /* números e títulos que enchem uma coluna */
+  /* O teto (38px) é o que faz caber dez algarismos monoespaçados na célula
+     mais estreita da grelha de quatro colunas: é a dívida de um município em
+     euros que fixa este número, e não o gosto. */
+  --t-valor-mosaico: clamp(30px, 3.3vw, 38px);
+  --t-valor-linha: clamp(40px, 5.2vw, 62px);
+  --t-h1: clamp(30px, 4.2vw, 46px);
+  --t-h2: clamp(21px, 2.4vw, 27px);
+  --t-h3: 16.5px;
+
+  /* entrelinha: uma para prosa, uma para mobília, uma para números */
+  --l-prosa: 1.6;
+  --l-mobilia: 1.45;
+  --l-valor: 0.94;
+
+  /* ============================================================
+     3 · RITMO · um degrau de quatro, e nenhuma medida solta.
+     A folha atual escreve espaçamentos como literais em cada componente
+     (6, 8, 10, 11, 12, 14, 16, 18, 20, 22, 26, 30, 34, 38, 40, 52…). Um
+     ritmo que ninguém consegue enunciar não é ritmo. Sete degraus chegam
+     para tudo o que o sítio faz hoje.
+     ============================================================ */
+  --esp-1: 4px;
+  --esp-2: 8px;
+  --esp-3: 12px;
+  --esp-4: 16px;
+  --esp-5: 24px;
+  --esp-6: 36px;
+  --esp-7: 56px;
+  --esp-secao: clamp(40px, 5.2vw, 68px);
+  --esp-bloco: clamp(22px, 2.8vw, 32px);
+
+  /* ============================================================
+     4 · FIOS · três pesos, e o mais forte só duas vezes por página.
+     Hoje o fio de 1,5px a --ink aparece debaixo da mobília do cabeçalho, no
+     topo do aparelho e no topo do rodapé: três âncoras a disputar a mesma
+     função. Aqui o fio da página emoldura a página (fecha o cabeçalho, abre
+     o rodapé) e mais nada; o aparelho passa a fio forte.
+     ============================================================ */
+  --fio: 1px solid var(--rule);
+  --fio-forte: 1px solid var(--rule-strong);
+  --fio-pagina: 1.5px solid var(--ink);
+
+  /* ============================================================
+     5 · GRELHA · as três disposições da IDENTIDADE §3, com nome.
+     O invólucro e a medida não mudam de valor. O que passa a existir é o
+     nome das duas colunas, para que o aparelho tenha a mesma largura em
+     todas as páginas que o têm, e para que uma página nova escolha uma das
+     três em vez de inventar uma quarta.
+     ============================================================ */
+  --inv: 1180px;
+  --medida: 66ch;
+  --medida-leitura: 68ch;
+  --medida-aparelho: 60ch;
+  --col-rotulo: 220px;
+  --col-aparelho: 300px;
+  --gutter: clamp(18px, 4vw, 44px);
+
+  /* ============================================================
+     6 · SELO · o único componente com medidas próprias.
+     O selo é a promessa central do sítio e por isso deixa de ser desenhado
+     com literais dentro de uma regra. O glifo cresce meio ponto (6px → 7px)
+     para que o estado a tracejado se veja sem aproximar a cara, e o alvo de
+     toque passa a ter um mínimo declarado.
+     ============================================================ */
+  --selo-glifo: 7px;
+  --selo-alvo: 24px;
+  --selo-corpo: var(--t-mono-1);
+
+  /* ============================================================
+     7 · FOCO · inalterado em valor, com nome.
+     ============================================================ */
+  --foco-cor: var(--focus);
+  --foco-peso: 2px;
+  --foco-folga: 3px;
+}
+
+/* Escuro do sistema, exceto se o leitor tiver escolhido claro.
+   Valores inalterados. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --paper: #0f1114;
+    --paper-2: #16191e;
+    --paper-3: #1e2229;
+    --ink: #eaecf0;
+    --muted: #969ca6;
+    --yellow: #e8a80c;
+    --oxblood: #d98a95; /* contraste sobre --paper escuro: 7,22:1 */
+    --rule: #262b33;
+    --rule-strong: #3a4049;
+    --axis: #6e747e;
+    --dotcol: #868d97;
+    --onyellow: #16181b;
+    --focus: #eaecf0;
+    --shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 10px 28px -18px rgba(0, 0, 0, 0.85);
+  }
+}
+
+/* Escolha explícita do leitor, ganha nos dois sentidos. Valores inalterados. */
+:root[data-theme='dark'] {
+  --paper: #0f1114;
+  --paper-2: #16191e;
+  --paper-3: #1e2229;
+  --ink: #eaecf0;
+  --muted: #969ca6;
+  --yellow: #e8a80c;
+  --oxblood: #d98a95;
+  --rule: #262b33;
+  --rule-strong: #3a4049;
+  --axis: #6e747e;
+  --dotcol: #868d97;
+  --onyellow: #16181b;
+  --focus: #eaecf0;
+  --shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 10px 28px -18px rgba(0, 0, 0, 0.85);
+}
