@@ -19,9 +19,9 @@
   "eventos_sem_data_publicada": 8,
   "itens": 5,
   "itens_por_estado": {
-   "a_seguir": 1,
+   "a_seguir": 0,
    "concluido": 1,
-   "em_curso": 3,
+   "em_curso": 4,
    "retirado": 0
   }
  },
@@ -46,10 +46,10 @@
  "exporter": "ResearchHub/publisher/export_agenda.py",
  "files": {
   "agenda.json": {
-   "exported_sha256": "dc31231965cde2431b802301abe0e4964a6588aae002431a1276df6f3d2e9a3d",
+   "exported_sha256": "e74b5ffd39db821665eb7d1ab0eb57e0202675e2162fa8f720fc965d81c3044a",
    "exporter": "ResearchHub/publisher/export_agenda.py",
    "origin_path": "agenda/agenda.json",
-   "origin_sha256": "20e112b3b6aec502413b8f3bdc4a7490c50d5e73a9761a765fc4e12a149fe7c3"
+   "origin_sha256": "c8c60f3838566fc5c13b8695719a292b1c534f7dd8ca562afc7419685735c3e0"
   },
   "calendario.json": {
    "exported_sha256": "e208816a586ca939b4b84442c2bd80af8f03c6d5f0a356563f097d56fdaee003",
@@ -76,8 +76,8 @@
    "sha256": "c7055a9cfd8cf59ceb77017f7dd85edd43bed1d90acf1e9d89f018962dac5b8f"
   },
   "habitacao": {
-   "entradas": 2,
-   "sha256": "ec135246bd52fdc3af127da2a4a40fb73d327dc00d3385d9b8b92ee9a90f5848"
+   "entradas": 3,
+   "sha256": "e284f741f2e472a0424694949d1f402752bb0f83210d43c644f70a75b74059df"
   }
  },
  "origin": "ResearchHub",
