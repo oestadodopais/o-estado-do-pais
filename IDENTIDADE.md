@@ -406,14 +406,19 @@ rolam dentro da sua caixa, e não empurram a página.
 
 ## 12. Os limites, escritos em vez de contornados
 
-- **O teste 3 do `BRIEF-confianca.md` §6.8 já passa com dados; o teste 1 ainda
-  não.** O campo `verifications[]` existe desde 18.08.2026 (`DECISIONS.md`
+- **Os testes 1 e 3 do `BRIEF-confianca.md` §6.8 passam com dados, em 22 das 132
+  linhas.** O campo `verifications[]` existe desde 18.08.2026 (`DECISIONS.md`
   §1.47), e uma linha que tenha sido relida diz na sua página quando foi, por
   quem e com que resultado, com a porta para repetir a leitura. O recorte da
-  linha impressa continua a ser um dado que não existe, e é o T2. O desenho
-  deixa o lugar pronto e não inventa nada: onde o recorte não existe não há
-  caixa, há o marcador com o seu motivo (§6), e onde não há reconferência
-  nenhuma o marcador fica, como já estava.
+  linha impressa entrou no mesmo dia (§1.47, T2) e existe em **22 linhas**: a
+  imagem da linha do PDF de onde o número foi lido, recortada no motor por
+  correspondência exata e conferida à chegada pelo resumo dos seus bytes. O que
+  falta é o resto: das 23 linhas que citam um PDF com página, uma ficou sem
+  recorte porque o excerto do motor não fixa ficheiro, página e frase, e a recusa
+  está escrita; as outras 109 linhas citam séries de dados, páginas e ficheiros,
+  onde não há linha impressa para recortar. **Onde o recorte não existe não se
+  desenha nada** (§6): fica o excerto transcrito, que é a prova que essa linha
+  tem, e onde não há reconferência nenhuma o marcador fica, como já estava.
 - **O teste 8 conta-se no portão, não num protótipo.** Os três racionais contaram
   os valores da primeira página de três maneiras (28, 32, 35). A contagem que
   vale é a que o portão faz sobre a construção real.
