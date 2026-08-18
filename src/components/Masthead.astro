@@ -27,8 +27,9 @@
  * A data é contexto estrutural, e leva o mesmo motivo declarado que a primeira
  * página já lhe dá («data-de-atualizacao»): é a data da leitura, não a leitura.
  *
- * O ESPAÇO DA AGENDA fica preparado e vazio: quando `/agenda` existir, entra
- * aqui, depois do ponto médio, pela mesma mobília.
+ * O ESPAÇO DA AGENDA encheu-se a 16.08.2026 (§1.40) e, desde a v2, as duas
+ * leituras são rotuladas: rótulo e valor, os dois em monoespaçada, cada uma
+ * com a sua porta. Sem caixa à volta do cabeçalho: um fio (IDENTIDADE.md §3).
  */
 import { SITE_NAME, METHOD_LINE } from '../../site.config.mjs';
 import { routePath, otherLanguagePath, normalizePath } from '../lib/routes.mjs';
@@ -93,28 +94,45 @@ const painel = `${home}#numeros`;
     {
       furniture && (
         <div class="masthead-furniture" data-sinal-de-tempo>
-          <span data-vencida={verificacao.vencida ? 'sim' : null}>
-            <a href={painel}>
-              {verificacao.vencida ? s.sinal.vencido : s.sinal.reconferido}{' '}
-              <span data-nonledger="data-de-atualizacao">{verificacao.verificadoEm}</span>
+          {/* --------------------------------------------------------------
+              DUAS LEITURAS ROTULADAS E LIGADAS (v2, direção S).
+              Cada uma tem rótulo e valor, os dois em monoespaçada, e cada uma
+              tem porta. Eram microtexto corrido; passam a ler-se como o que
+              são, duas leituras de aparelho por baixo da marca. Sem caixa: o
+              cabeçalho leva um fio e mais nada (IDENTIDADE.md §3).
+              -------------------------------------------------------------- */}
+          <span class="leitura" data-vencida={verificacao.vencida ? 'sim' : null}>
+            <a class="leitura-porta" href={painel}>
+              <span class="leitura-k">
+                {verificacao.vencida ? s.sinal.vencido : s.sinal.reconferido}
+              </span>
+              <span class="leitura-v" data-nonledger="data-de-atualizacao">
+                {verificacao.verificadoEm}
+              </span>
             </a>
           </span>
           {/* --------------------------------------------------------------
               A LINHA DA AGENDA (16.08.2026, DECISIONS §1.40).
-              O lugar que §1.39 deixou marcado, cheio. As duas contagens são
-              números do próprio sítio: vêm de `prova(lang)`, vão marcadas
-              `data-prova` e cada uma é uma porta para `/agenda`, que é a
-              página onde o leitor vê o que elas contam (IDENTIDADE §10).
-              Nenhuma é escrita à mão, e o portão reconta as duas por conta
-              própria a partir do registo que atravessou.
+              As duas contagens são números do próprio sítio: vêm de
+              `prova(lang)`, vão marcadas `data-prova` e cada uma é uma porta
+              para `/agenda`, que é a página onde o leitor vê o que elas contam
+              (IDENTIDADE §10). Nenhuma é escrita à mão, e o portão reconta as
+              duas por conta própria a partir do registo que atravessou.
+
+              O rótulo é a terceira porta, e é uma âncora à parte: uma ligação
+              dentro de outra ligação não é HTML, e as contagens já são portas.
               -------------------------------------------------------------- */}
           {temAgenda && (
-            <span>
-              {s.sinal.agenda}{' '}
-              <ValorDaProva chave="agenda_em_curso" item={p.agenda_em_curso} lang={lang} />{' '}
-              {s.sinal.agendaEmCurso} ·{' '}
-              <ValorDaProva chave="agenda_a_seguir" item={p.agenda_a_seguir} lang={lang} />{' '}
-              {s.sinal.agendaASeguir}
+            <span class="leitura">
+              <a class="leitura-k" href={agenda}>
+                {s.sinal.agenda}
+              </a>
+              <span class="leitura-v">
+                <ValorDaProva chave="agenda_em_curso" item={p.agenda_em_curso} lang={lang} />{' '}
+                {s.sinal.agendaEmCurso} ·{' '}
+                <ValorDaProva chave="agenda_a_seguir" item={p.agenda_a_seguir} lang={lang} />{' '}
+                {s.sinal.agendaASeguir}
+              </span>
             </span>
           )}
         </div>

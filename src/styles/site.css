@@ -254,9 +254,47 @@ section {
   text-transform: uppercase;
   color: var(--ink);
 }
-.masthead-furniture span:not(:first-child)::before {
+/* O separador entre as DUAS leituras, e só entre elas: com as leituras
+   rotuladas há agora spans dentro de spans, e um seletor solto punha um ponto
+   médio dentro de cada valor. */
+.masthead-furniture > .leitura:not(:first-child)::before {
   content: '· ';
   color: var(--rule-strong);
+}
+
+/* ---------------------------------------------------------- as duas leituras
+
+   Rótulo e valor, os dois em monoespaçada, cada leitura com a sua porta
+   (IDENTIDADE.md §3, v2). O rótulo recua para `--muted` e o valor fica em
+   `--ink`: é a diferença que faz uma leitura de aparelho ler-se como leitura
+   e não como uma frase pequena. */
+.leitura {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 2px 7px;
+}
+.leitura-porta {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 2px 7px;
+  text-decoration: none;
+}
+.leitura-k {
+  color: var(--muted);
+  font-weight: 600;
+  text-decoration: none;
+}
+.leitura-v {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.masthead-furniture a.leitura-k:hover,
+.masthead-furniture .leitura-porta:hover .leitura-k {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 /* A mobília do cabeçalho compacto é a mesma linha, mais discreta: nas páginas
    interiores o sinal de tempo não compete com o conteúdo. */
