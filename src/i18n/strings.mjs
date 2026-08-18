@@ -123,6 +123,11 @@ export const STRINGS = {
         concluido: 'Concluído',
         retirado: 'Retirado',
       },
+      /* O quadro de estados (IDENTIDADE.md §7). Quatro colunas, uma por estado,
+         cada uma com a sua contagem por `data-prova` e a âncora da sua secção
+         por porta (§10). Uma coluna sem itens desenha-se na mesma. */
+      quadroDeEstadosK: 'O que está em cada estado',
+      semRegisto: 'sem registo',
       vazioRetirado:
         'Nada foi retirado desta agenda até hoje. Quando alguma coisa for, fica aqui, com a data e o motivo: um item não se apaga, muda de estado.',
       tipos: {
@@ -179,6 +184,12 @@ export const STRINGS = {
       calendarioH2: 'O calendário das fontes',
       calendarioLede:
         'O que as fontes que este sítio cita publicam a seguir. Cada data traz o sítio onde está escrita, a data em que foi lida e a frase que a diz.',
+      /* O eixo do tempo do calendário (IDENTIDADE.md §11). As janelas a amarelo,
+         porque são marcas de medição; os dias que uma fonte publica como marcas
+         no eixo; e a legenda a levar as portas, porque uma âncora dentro de um
+         desenho não se lê como porta (§10). */
+      eixoK: 'O calendário, no tempo',
+      eixoLegendaK: 'Abrir cada acontecimento',
       datadosK: 'Com data publicada pela fonte',
       semDataK: 'Sem data, porque a fonte não publica nenhuma',
       fonteK: 'Fonte',
@@ -780,6 +791,8 @@ export const STRINGS = {
         concluido: 'Concluded',
         retirado: 'Withdrawn',
       },
+      quadroDeEstadosK: 'What is in each state',
+      semRegisto: 'no record',
       vazioRetirado:
         'Nothing has been withdrawn from this agenda to date. When something is, it stays here, with the date and the reason: an item is not deleted, it changes state.',
       tipos: {
@@ -829,6 +842,8 @@ export const STRINGS = {
       calendarioH2: 'The source calendar',
       calendarioLede:
         'What the sources this site cites publish next. Each date carries the place where it is written, the date it was read, and the sentence that says it.',
+      eixoK: 'The calendar, in time',
+      eixoLegendaK: 'Open each event',
       datadosK: 'With a date the source publishes',
       semDataK: 'With no date, because the source publishes none',
       fonteK: 'Source',
