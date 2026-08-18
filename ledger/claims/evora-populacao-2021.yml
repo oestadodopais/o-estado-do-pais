@@ -21,7 +21,7 @@ access_date: "2026-08-10"
 reference_date: "2021"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "valor 55711"
+excerpt: "Dados[\"2021\"], valor 55711"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null

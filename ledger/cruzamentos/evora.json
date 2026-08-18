@@ -623,8 +623,8 @@
     },
     "evora-populacao-2021": {
       "corrections_at_export": 0,
-      "exported_at": "2026-08-15",
-      "exported_row_sha256": "3024d7cb55aaf7dad3d242078c205fcec8c1375dd17f8f6edbf631f19af60de3",
+      "exported_at": "2026-08-18",
+      "exported_row_sha256": "5ce52fe40d03f2d701276b9ce59c6871fe028fca47021324b71c026126c5eab7",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3695f05ecfdd62059b3e25c4655be9f2e85f9c45d4a2ab2e17f7c9e3ef74686c",
       "rh_id": "pop-evora-2021",
@@ -635,7 +635,7 @@
     "evora-populacao-2025": {
       "corrections_at_export": 0,
       "exported_at": "2026-08-18",
-      "exported_row_sha256": "a0e655ee96c32fc641435b4edfc366e071f2ee80eef9f1e2cc080849cbb6af25",
+      "exported_row_sha256": "760779e758cca1e7dcf3f75bfcbd5ab4edab220063bc50d77be7ab3dac095360",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e922517317b07b1df58666e1f5ba34f77e5199e0b00e8f0dbf4c8eeea387bc92",
       "rh_id": "pop-evora-2025",
