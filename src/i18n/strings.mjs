@@ -508,6 +508,17 @@ export const STRINGS = {
         completaV: 'Completa.',
         marcadorLink: 'O que quer dizer este marcador',
         voltar: 'Voltar ao livro-razão',
+        /* O recibo, v2 (IDENTIDADE.md §11). A frase de atribuição compõe-se
+           dos campos que existem; os que não existem não deixam buraco nem
+           palavra a mais. */
+        provaK: 'Prova',
+        publicadoPor: 'Publicado por',
+        publicadoEm: 'em',
+        publicadoPagina: 'p.',
+        publicadoLido: 'lido a',
+        verificacoesK: 'Verificações',
+        reconferidoK: 'Reconferido a',
+        releituraPorta: 'A regra da releitura',
       },
     },
 
@@ -1119,6 +1130,14 @@ export const STRINGS = {
         completaV: 'Complete.',
         marcadorLink: 'What this marker means',
         voltar: 'Back to the ledger',
+        provaK: 'Proof',
+        publicadoPor: 'Published by',
+        publicadoEm: 'in',
+        publicadoPagina: 'p.',
+        publicadoLido: 'read on',
+        verificacoesK: 'Verifications',
+        reconferidoK: 'Re-checked on',
+        releituraPorta: 'The re-reading rule',
       },
     },
 

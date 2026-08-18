@@ -1591,6 +1591,60 @@ a.src-chip.is-unverified:hover::before {
   gap: 10px;
   max-width: 68ch;
 }
+/* O selo do valor de cabeça, na sua própria página (IDENTIDADE.md §5.3, v2).
+   Fica logo abaixo do número, com folga por cima, porque é a primeira porta do
+   recibo e não uma legenda do título. */
+.linha-selo {
+  margin-top: -2px;
+}
+
+/* ------------------------------------------------------------ o recibo, v2
+
+   A frase de atribuição: a mesma informação que a ficha do aparelho dá em
+   campos, dita uma vez em palavras. É a camada de leitura, e por isso cresce
+   com a escala da leitura (IDENTIDADE.md §1). */
+.linha-atribuicao {
+  font-size: var(--t-leitura);
+  line-height: var(--lh-leitura);
+  color: var(--ink);
+  max-width: 62ch;
+}
+/* A porta para a página exata do documento: é o primeiro passo da prova e
+   ganha o peso disso. */
+.linha-porta-documento {
+  margin-bottom: 16px;
+}
+.linha-pedido {
+  word-break: break-word;
+}
+/* As verificações: duas linhas, e a segunda está vazia em todas as linhas
+   publicadas. O lugar está desenhado; o que falta é o campo, não o desenho. */
+.linha-verificacoes {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 8px 18px;
+  margin: 0;
+  align-items: baseline;
+}
+.linha-verificacoes dt {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.linha-verificacoes dd {
+  margin: 0;
+  font-family: var(--f-mono);
+  font-size: 12px;
+  color: var(--ink);
+}
+.linha-verificacoes dd a {
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
 
 .linha,
 .municipio {

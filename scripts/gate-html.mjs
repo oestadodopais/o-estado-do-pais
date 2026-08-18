@@ -2603,7 +2603,13 @@ for (const file of ficheirosHtml(DIST)) {
      */
     if (motivo === 'proveniencia') {
       const lido = normalizeWhitespace(textoTranscrito(el));
-      const porta = decodeEntities(el.getAttribute('href') ?? '');
+      /* A porta de um selo pode ser uma ÂNCORA na própria página: é o caso do
+         selo ao lado do valor de cabeça, na página da sua própria linha, que
+         abre o bloco da prova em vez de recarregar a página onde já se está
+         (IDENTIDADE.md §5.3 e §10, v2; `design/DECISAO.md`, «abertura do
+         recibo»). O fragmento não muda de que linha o selo é porta, e é isso
+         que esta comparação verifica. */
+      const porta = decodeEntities(el.getAttribute('href') ?? '').split('#')[0];
       const alvo = LINHA_POR_PORTA.get(porta);
       if (alvo) {
         const selo = seloDaLinha(alvo.id, alvo.lang);
