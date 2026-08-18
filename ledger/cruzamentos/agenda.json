@@ -46,10 +46,10 @@
  "exporter": "ResearchHub/publisher/export_agenda.py",
  "files": {
   "agenda.json": {
-   "exported_sha256": "d854910414982c7af22d4ba40f5a8ed75b10f7e497400955a116971964d17952",
+   "exported_sha256": "dc31231965cde2431b802301abe0e4964a6588aae002431a1276df6f3d2e9a3d",
    "exporter": "ResearchHub/publisher/export_agenda.py",
    "origin_path": "agenda/agenda.json",
-   "origin_sha256": "0c17d26918677e6a6b96379b37a082637b5d9f27ff5dbb135228098d115e94e1"
+   "origin_sha256": "20e112b3b6aec502413b8f3bdc4a7490c50d5e73a9761a765fc4e12a149fe7c3"
   },
   "calendario.json": {
    "exported_sha256": "e208816a586ca939b4b84442c2bd80af8f03c6d5f0a356563f097d56fdaee003",
