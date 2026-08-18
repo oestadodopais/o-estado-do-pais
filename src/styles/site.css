@@ -3171,3 +3171,46 @@ a.quadro-estados-col:hover .quadro-estados-e {
 .agenda-afecta a {
   font-size: 11.5px;
 }
+
+/* ==================================================================== o móvel
+
+   `IDENTIDADE.md` §11, e é a promessa mais fácil de partir sem dar por isso:
+   uma coisa por linha; o valor, o título e o selo num só grupo visível; os
+   instrumentos rolam dentro da sua caixa e não empurram a página.
+
+   O que se segue é o que faz a última parte ser verdade. Medido, não visto: a
+   régua é o `scrollWidth` do documento com o ecrã a 390px, e os números estão
+   em `DECISIONS.md` §1.43. Uma página que rola de lado a 390 não é uma questão
+   de gosto: parte as frases ao meio contra a borda, e um leitor de telemóvel é
+   a maior parte dos leitores.                                                */
+
+/* UM ENDEREÇO NÃO É UMA PALAVRA. Um endereço de 115 caracteres numa fonte
+   monoespaçada tem 700px de largura mínima e não parte em lado nenhum: era ele
+   que fazia a agenda medir 574px de largura num ecrã de 390. Parte-se onde for
+   preciso, como a `.ligacao-externa` já parte. */
+.mono,
+.agenda-afecta,
+.agenda-documentos,
+.agenda-linhas {
+  overflow-wrap: anywhere;
+}
+
+/* O SELO NUNCA EMPURRA A PÁGINA. A unidade compacta continua a ser uma só
+   ligação e um só grupo visível: o que passa a poder mudar de linha é o que
+   está DENTRO dela, quando a caixa é mais estreita do que ela. O quadrado, a
+   palavra e o marcador ficam inteiros; a linha é que dobra. */
+.src-chip {
+  flex-wrap: wrap;
+}
+
+/* AS BARRAS DE COMPOSIÇÃO, a 390px. A coluna do número tinha 4ch, que chega
+   para «308» e não chega para «308 · fonte · [a verificar]»: o selo saía da
+   célula e levava a página com ele. Num ecrã estreito a coluna do número passa
+   a ter a largura de que precisa, e é a barra que encolhe. */
+@media (max-width: 560px) {
+  .compo-row,
+  .compo-tot {
+    grid-template-columns: minmax(0, 7ch) minmax(0, 1fr) auto;
+    gap: 8px;
+  }
+}
