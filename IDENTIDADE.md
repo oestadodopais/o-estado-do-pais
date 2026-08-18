@@ -143,7 +143,7 @@ tem.
 
 A regra 5 do Método promete, nas duas línguas: *«Ao lado de cada medição há um
 selo que abre a sua linha: cheio quando a origem está completa, a tracejado
-quando falta um campo.»* Então:
+quando falta um campo.»* (`metodo`) Então:
 
 1. **O selo é sempre uma ligação** para a linha do livro-razão. Um selo que não
    liga a lado nenhum não é um selo: é uma legenda, e a promessa fica falsa.
@@ -242,6 +242,22 @@ regra desta constituição ganhou em máquina:
   traz o resumo desse texto tal como ele está. Uma mudança de rumo não sai em
   silêncio.
 
+**Como esta constituição cita um texto governado, e é uma convenção fixa.** Uma
+frase do Método ou do Sobre citada aqui escreve-se entre «…» e **traz logo a
+seguir, entre parênteses e em código, o nome curto do texto**: `metodo` ou
+`sobre`, os mesmos nomes do `**Afecta:**` das decisões. A §5 é o exemplo, e é o
+único uso de hoje.
+A amarra das decisões lê este ficheiro, procura cada citação assim marcada e
+exige que a frase exista, palavra por palavra, no texto que ela nomeia. Existe
+porque a §5 citou durante dois blocos uma frase que o bloco V tinha apagado do
+Método, e nenhuma conferência deu por isso: uma citação da constituição pode
+envelhecer no dia seguinte a um bloco tocar num texto governado (`DECISIONS.md`
+§1.46 e §4.1). **A marca não é decoração e não é opcional**: uma citação sem ela
+não é conferida, e por isso não se cita um texto governado sem a pôr. A amarra
+apanha também a omissão enquanto a citação ainda está certa, que é quando ela
+se escreve: uma frase entre «…» que exista num texto governado e não traga a
+marca é recusada.
+
 **As quatro conferências que a v2 acrescenta**, todas extensões de conferências
 que já existem, e cada uma só conta depois de fechar sobre um estrago plantado
 (`DECISIONS.md` §1.43):
@@ -258,6 +274,19 @@ que já existem, e cada uma só conta depois de fechar sobre um estrago plantado
   página construída, na marca, na classe e no rótulo; a mesma palavra dentro de
   uma citação não é recusada, porque reescrever uma prova para lhe tirar uma
   palavra seria pior (§6).
+
+**As duas que o bloco T acrescenta** (18.08.2026, `DECISIONS.md` §1.47, T4),
+também extensões e também provadas em estragos plantados:
+
+- um `data-claim` compara a **cadeia** renderizada com o valor da linha, e já
+  não só os algarismos: o sinal menos e a vírgula decimal contam, e um símbolo
+  de unidade metido dentro do elemento fecha a construção. O portão tem a sua
+  própria cópia da normalização, e ela é estreita de propósito: o menos
+  tipográfico e o ASCII são o mesmo sinal, os quatro espaços de milhares são o
+  mesmo separador, o espaço em branco do HTML não é conteúdo, e mais nada;
+- a amarra das decisões lê **esta constituição** e exige que cada frase aqui
+  citada de um texto governado exista nele palavra por palavra, pela convenção
+  de citação acima. Fecha o buraco que a §1.46 encontrou e não pôde fechar.
 
 **O que ainda não é conferido por máquina, e é promessa e não facto.** As regras
 de folha de estilos de §1 e §2 (nenhum literal de cor fora de `tokens.css`;
