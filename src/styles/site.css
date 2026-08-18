@@ -443,17 +443,46 @@ a.src-chip.is-unverified:hover::before {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+/* A célula tem uma coluna, e a coluna é a célula: `minmax(0, 1fr)`.
+
+   Sem isto a coluna implícita da grelha interna mede-se pelo conteúdo mais
+   largo, e um valor que não parte leva com ele o nome, a medida e a descrição
+   para fora da célula, onde o fundo da célula seguinte os tapa. A descrição da
+   dívida de Évora estava cortada à direita por esta razão, e não por falta de
+   espaço.
+
+   `container-type: inline-size` é o que dá ao valor a largura real da célula,
+   em `cqw`, para a regra de escala abaixo. */
 .figura {
   background: var(--paper-2);
   padding: clamp(18px, 2.2vw, 24px);
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 8px;
   align-content: start;
+  container-type: inline-size;
 }
+/* Um valor de cabeça nunca se apara.
+
+   O separador dos milhares é o espaço fino inquebrável (U+202F): «54 681 562»
+   é uma só palavra para quem parte linhas, e uma célula de quatro colunas a
+   1280px não lhe chega. Partir dentro do número seria pior do que encolhê-lo:
+   «54 681 5» numa linha e «62» na seguinte lêem-se como dois números.
+
+   Então a letra escala com o comprimento do próprio valor. `--figura-car` é o
+   número de caracteres que a linha do livro-razão publica, escrito pelo
+   gabarito a partir do valor e nunca à mão (`Claim.astro`, `escala`), e a
+   largura da célula entra por `cqw`. O factor 0,63em é o avanço medido desta
+   pilha monoespaçada com `tabular-nums`, com margem. Um valor curto fica
+   exactamente onde estava; um valor longo encolhe até caber.
+
+   A primeira declaração é a de antes, e fica: onde a divisão por uma variável
+   ou o `cqw` não forem entendidos, a célula volta ao tamanho fixo. */
 .figura-num {
   font-family: var(--f-mono);
   font-variant-numeric: tabular-nums;
   font-size: clamp(38px, 4.4vw, 52px);
+  font-size: clamp(24px, min(4.4vw, calc(100cqw / (var(--figura-car, 6) * 0.63))), 52px);
   font-weight: 600;
   line-height: 0.92;
   letter-spacing: -0.04em;

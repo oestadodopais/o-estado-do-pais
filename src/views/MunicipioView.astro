@@ -221,7 +221,7 @@ const metodoPath = routePath('metodo', lang);
         m.relance.map((tile) =>
           tile.claim ? (
             <article class="figura">
-              <Claim id={tile.claim} class="figura-num" as="div" />
+              <Claim id={tile.claim} class="figura-num" as="div" escala={true} />
               <h3 class="figura-nome">{tile.nome[lang]}</h3>
               <p class="figura-medida"><Frase partes={tile.medida[lang]} lang={lang} selos={true} /></p>
               <p class="figura-frase"><Frase partes={tile.nota[lang]} lang={lang} /></p>
