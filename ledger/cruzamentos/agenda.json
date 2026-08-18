@@ -46,10 +46,10 @@
  "exporter": "ResearchHub/publisher/export_agenda.py",
  "files": {
   "agenda.json": {
-   "exported_sha256": "554b87f371a6a27146d9ad7e0c05591e316871f46ae16e6689996dce3243eaec",
+   "exported_sha256": "d854910414982c7af22d4ba40f5a8ed75b10f7e497400955a116971964d17952",
    "exporter": "ResearchHub/publisher/export_agenda.py",
    "origin_path": "agenda/agenda.json",
-   "origin_sha256": "2437d47c02ae090bf859dbd42a7f7d8126f225ce2f9ded0bf8e59cf7f9807e23"
+   "origin_sha256": "0c17d26918677e6a6b96379b37a082637b5d9f27ff5dbb135228098d115e94e1"
   },
   "calendario.json": {
    "exported_sha256": "e208816a586ca939b4b84442c2bd80af8f03c6d5f0a356563f097d56fdaee003",
@@ -60,24 +60,24 @@
  },
  "historia": {
   "dgal-endividamento-2025": {
-   "entradas": 1,
-   "sha256": "e6a84e67f31299cea25577484c66444bc601b4d1b0bacfb6c8979ec13fa59692"
+   "entradas": 2,
+   "sha256": "c648f9eb049fe5fd73eb2d8d5be440e3b19e2f3fa441e651342813312aa4d138"
   },
   "evora-contas-2024-pagina": {
-   "entradas": 1,
-   "sha256": "0bd5ed883af6a067e0be33bb8b9a383ee418caffe2607da7a4ccd3054e17b11f"
+   "entradas": 2,
+   "sha256": "0734cca89052dad3e899bdd481588ca501208d45ac538861b4b257744c26b7cb"
   },
   "evora-contas-2026": {
-   "entradas": 1,
-   "sha256": "41edf628038a1f163fdbfb037925a9d1aa91d6654a7f500d7b82c594b77111eb"
+   "entradas": 2,
+   "sha256": "ded54e66ddd8d581dbfb2ffd3df1ffe9f6c9ca92058cbe0388967e915302fadf"
   },
   "evora-pagina-de-municipio": {
    "entradas": 1,
    "sha256": "c7055a9cfd8cf59ceb77017f7dd85edd43bed1d90acf1e9d89f018962dac5b8f"
   },
   "habitacao": {
-   "entradas": 1,
-   "sha256": "a712eeed4698a1c567f0c183fa22a1e3758a6b4a7668f969544c0753fb11a77a"
+   "entradas": 2,
+   "sha256": "ec135246bd52fdc3af127da2a4a40fb73d327dc00d3385d9b8b92ee9a90f5848"
   }
  },
  "origin": "ResearchHub",
