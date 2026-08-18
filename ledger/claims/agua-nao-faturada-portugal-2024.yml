@@ -4,8 +4,8 @@
 id: "agua-nao-faturada-portugal-2024"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "26,5%"
-unit: "percentagem"
+value: "26,5"
+unit: "%"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "ERSAR"
