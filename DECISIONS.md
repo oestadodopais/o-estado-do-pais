@@ -5373,14 +5373,19 @@ commit. A sequência inteira está no ramo, e está escrita aqui, que é o que
 distingue uma correção de um apagamento.
 ### 1.47 O bloco T: a página da linha passa a ser o recibo, com dados a sério
 
-**Afecta:** nenhum
+**Afecta:** metodo
+**Texto:** metodo 4c94508d8ad4
 
-*(O bloco T mudou o formato do livro-razão, o validador, o exportador do motor, o
-portão e a página da linha, e não mudou uma palavra de nenhum dos textos
-governados: o Sobre, as dez regras do Método e os dois registos da agenda estão
-como estavam. Por isso a entrada não nomeia nenhum, e não traz linha `Texto:`.
-O que o T1 encontrou no Método, e não corrigiu por ser texto governado, está
-escrito no fim da sua secção.)*
+*(Durante três estádios esta entrada dizia `Afecta: nenhum`, e era verdade: o T1,
+o T2 e o T3 mudaram o formato do livro-razão, o validador, o exportador do motor,
+o portão e a página da linha, e não uma palavra de nenhum texto governado. O que
+o T1 encontrou e não podia corrigir está escrito no fim da sua secção: o limite
+da regra 6 do Método passou a dizer uma coisa falsa no momento em que o campo
+`verifications[]` nasceu. **O T4 corrige-o, e é a única mudança de texto governado
+do bloco**: é proposta do lugar de construção e não decisão tomada, e o diretor
+lê-a na pré-visualização e pode revogá-la antes da fusão. O Sobre e os dois registos
+da agenda estão como estavam, e por isso a entrada não os nomeia. Ver «A regra 6
+do Método», no T4.)*
 
 *Esta entrada escreve-se no Acordo de 1990, como as entradas a partir da §1.43.
 O que é citado fica com os caracteres que tem. Cada estádio do bloco acrescenta
@@ -6468,7 +6473,480 @@ as duas medições entrou no ramo o commit da agenda de outro construtor.
 
 #### T4 · o conjunto de dados, o `lastmod`, o portão e os registos
 
-*Por escrever: o estádio T4 acrescenta aqui a sua secção, e fecha esta entrada.*
+O último estádio do bloco não acrescenta campos ao formato: fecha o que ficou
+por fechar. O livro-razão passa a descarregar-se inteiro, o `lastmod` responde
+com uma medição em vez de uma promessa, o portão aprende duas coisas que a
+revisão cruzada da v2 tinha nomeado, e a regra 6 do Método deixa de dizer uma
+coisa falsa.
+
+##### O livro-razão inteiro, num ficheiro
+
+Uma página por linha serve quem quer conferir **uma** afirmação. Não serve quem
+quer contar, cruzar ou reproduzir o conjunto: para isso são 264 páginas e um
+raspador. A construção passa a escrever três coisas, todas de
+`ledger/claims/*.yml` e nenhuma copiada à mão:
+
+| Endereço | O que é |
+| --- | --- |
+| `/livro-razao.csv` | as 132 linhas, uma por registo, com cabeçalho |
+| `/livro-razao.json` | as mesmas linhas, com a estrutura que o CSV achata |
+| `/livro-razao/<id>.json` | uma linha, 132 ficheiros |
+
+**Os campos são os do formato menos `note`, e a lista não está escrita duas
+vezes.** `CAMPOS_PUBLICADOS`, em `src/lib/ledger.mjs`, é `CAMPOS` menos
+`CAMPOS_NAO_PUBLICADOS`, que hoje é `note` e mais nada. Um campo novo no formato
+entra nestes ficheiros sozinho; se a lista fosse copiada para o gerador, o
+conjunto passaria a dizer menos do que o livro-razão no dia em que o formato
+crescesse, e nada o notava. **Todos os campos em todas as linhas**, mesmo os que
+a linha não tem: `null` no JSON, célula vazia no CSV. Um conjunto cuja forma
+muda de registo para registo obriga quem o lê a adivinhá-la, e é a mesma
+disciplina com que a página declara o que falta em vez de o esconder.
+
+**O CSV não leva preâmbulo, e é uma decisão contra o hábito da casa.** Os dois
+ficheiros de `/dados/` abrem com linhas de comentário `#`: a proveniência da
+CAOP, a explicação da vírgula decimal. Este não. O RFC 4180 não define
+comentários, e um leitor estrito, uma folha de cálculo ou um `csv.reader` sem
+opções, engole essas linhas como se fossem dados. Aqueles dois são a matéria de
+dois gráficos e chega-se lá pela legenda do gráfico; este é o conjunto de dados,
+e existe para ser lido por quem não foi avisado das convenções da casa. Leva o
+cabeçalho, os registos, aspas duplicadas e fim de linha CRLF, que é o RFC
+inteiro. O que o preâmbulo diria está no `_` dos ficheiros JSON, na mesma
+convenção do `dist/prova.json`.
+
+**Uma coluna é um escalar, ou é JSON.** `document` desdobra-se em `document_*` no
+lugar onde está; tudo o que é lista ou mapa (`corrections`, `verifications`,
+`derived_from`, `attributed_to`, e os três blocos de `document` que o bloco T
+criou) vai numa só coluna com o seu JSON dentro da célula. A alternativa era
+desdobrá-los em colunas numeradas até um teto, e um teto perde dados no dia em
+que uma linha tiver mais correções do que ele. Vinte e oito colunas, e a
+estrutura inteira fica no JSON para quem precisar de distinguir uma lista vazia
+de um campo ausente.
+
+**O `value` vai como foi publicado**, com a vírgula decimal, o espaço fino dos
+milhares e o sinal menos tipográfico onde os há. Não se converte para número:
+é a prova documental, e quem quiser aritmética tem `unit`, `reference_date` e o
+`check` de cada linha derivada.
+
+**As duas edições servem-se dos mesmos ficheiros.** Isto são dados e não prosa:
+um segundo conjunto em inglês seria a mesma tabela com o mesmo conteúdo e um
+endereço a mais para ficar fora de passo. Nenhum campo do formato tem edição.
+
+##### A licença é da direção, e o estado diz-se em vez de se supor
+
+O `BRIEF-bloco-T.md` §2.6 é explícito: **até a direção decidir, nada se publica
+sob licença nenhuma**. A decisão vive numa constante, `LICENCA` em
+`src/data/licenca.mjs`, a `null` por omissão, com a forma `{ nome, url,
+atribuicao }`. Com `null`:
+
+- nenhuma página construída liga os ficheiros. Medido sobre as 322 páginas:
+  **zero** ligações;
+- a página do livro-razão diz o estado, nas duas edições: «Conjunto de dados
+  preparado; a licença aguarda decisão da direção.» É um **estado desenhado**
+  (IDENTIDADE §7) e não o marcador (§6), e a distinção não é de gosto: o
+  marcador é a língua de «esta prova não está aqui», e aqui não falta uma prova,
+  falta uma decisão que não é de quem constrói.
+
+Com a constante preenchida, e provado com `CC BY 4.0` a título de ensaio: o
+índice oferece o CSV e o JSON nas duas edições, com a licença ligada e a
+atribuição ao lado, cada uma das 264 páginas de linha ganha «Esta linha em
+JSON» / «This row as JSON», e a linha de estado sai. **Um só campo muda entre os
+dois estados.**
+
+**O motivo `licenca-do-conjunto` entrou hoje na lista de dispensas, e não é
+usado por nenhuma página.** Um nome de licença traz algarismos, porque uma
+licença se identifica pela versão: «CC BY» sem versão não são termos. Sem o
+motivo, o dia da decisão seria o dia em que a construção parava por um algarismo
+sem origem declarada, e a promessa de «um só campo a mudar» era falsa. Fica
+registado na §4.3, com os outros aparelhos construídos e ainda não exercidos.
+
+**Os ficheiros são construídos nos dois estados, e a razão diz-se sem rodeios.**
+A pergunta é justa: um ficheiro que existe em `dist/` num caminho adivinhável
+está publicado? Está acessível, e chamar-lhe «não publicado» seria escolher a
+palavra que nos convém. O que a ausência de licença faz é o que pode fazer: não
+convidar ninguém a reutilizá-lo, e não declarar termos que ninguém decidiu. O
+que se ganha em troca é que o caminho é construído e conferido todos os dias
+desde hoje, em vez de estrear no dia da decisão. Um caminho que nasce no dia em
+que é preciso é um caminho que nunca foi lido por ninguém.
+
+##### O `lastmod` continua a não existir, e agora com a medida à vista
+
+A §4.1 pedia «um modelo real de alteração por página, ou nenhum». O T4 foi
+construir o modelo e mediu-o antes de o escrever. Três coisas, e cada uma
+sozinha chegava:
+
+1. **A construção que publica não tem história.** O Vercel clona a `--depth=10`
+   por omissão, não é configurável, e não há remoto de onde puxar o resto
+   (`git fetch --unshallow` não tem para onde ir). Medido neste repositório a
+   18.08.2026, no dia mais movimentado do bloco: dos **244** ficheiros de
+   entrada versionados (`src/`, `ledger/claims/`, `public/`, o
+   `astro.config.mjs` e o `site.config.mjs`), os últimos dez commits tocam em
+   **66**. Para os outros **178** o `git log -1` de um clone assim devolve
+   vazio. Uma data que não há não se estima.
+2. **O modelo honesto dá uma data só.** Toda a página construída depende de
+   `src/i18n/strings.mjs` (45 commits), de `src/styles/site.css` (38) e do
+   cabeçalho, que traz a data da última reconferência do painel
+   (`src/data/verificacao.mjs`, reescrita a cada corrida semanal). O `lastmod`
+   de qualquer página passa a ser o commit mais recente que tocou num desses,
+   e é o mesmo para as 264. Um mapa do sítio com 264 endereços a dizer a mesma
+   data diz ao rastreador exatamente o que diz não haver campo nenhum.
+3. **Um mapa cometido seria estado escrito.** Calcular fora da construção e
+   cometer um `src/data/lastmod.json` resolvia o primeiro ponto e trocava o
+   problema por outro que esta casa já recusou noutro sítio: uma contagem
+   escrita à mão fica errada na construção seguinte e ninguém dá por isso
+   (IDENTIDADE §10). O primeiro commit depois do mapa deixa-o a mentir, e a
+   conferência que o apanharia precisa da história que o ponto 1 diz que não
+   existe onde ela seria precisa.
+
+O campo fica ausente. O que mudou é que a razão deixou de ser «esse modelo não
+está construído» e passou a ser um número: o modelo foi construído no papel,
+medido, e recusado por medir a coisa errada. As três medições ficam escritas em
+`astro.config.mjs`, ao lado da decisão, e não só aqui.
+
+##### Dentro do portão, primeira extensão: a forma de um valor
+
+A revisão cruzada da v2 tinha registado o buraco (§1.44, e a §4.1 guardou-o com
+os dois estragos que o mediram): a conferência de um `data-claim` era
+`digitsOf(renderizado) !== digitsOf(claim.value)`, e o `digitsOf` deita fora
+tudo o que não é algarismo. «96%» onde o livro-razão diz «96» passava e a
+construção ficava verde; o valor da posição de investimento internacional sem o
+sinal menos rendia «50,2» na primeira página **sem um único erro nessa página**.
+
+Passa a comparar-se a cadeia. A conferência não é nova: é a mesma, com outra
+régua, e a régua é a cópia própria do portão. Vive em `scripts/gate-html.mjs` e
+não em `src/lib/`, pela razão de sempre: um portão que normalize pela função que
+o gabarito usa confirma a função e não o livro-razão. O gabarito não normaliza
+nada, e é isso que esta conferência existe para provar.
+
+**O que é normalizado, e porquê:**
+
+| A troca | A razão |
+| --- | --- |
+| U+2212 (−) passa a U+002D (-) | são o mesmo sinal para quem lê: o livro-razão escreve o tipográfico, um teclado escreve o outro. A **presença** do sinal não se normaliza |
+| U+202F, U+00A0 e U+2009 passam a U+0020 | os quatro são o separador dos milhares na tipografia portuguesa, e o próprio livro-razão usa dois deles: a maioria dos valores leva U+202F e «−34 100» leva o espaço comum |
+| corridas de espaço passam a um só, e as pontas caem | o espaço em branco do HTML é indentação do gabarito, não conteúdo |
+
+**O que não é normalizado, e é onde a conferência vale:** a vírgula decimal
+(«50,2» e «50.2» são números diferentes: em português o ponto separa milhares) e
+tudo o resto. Um «%», um «€», uma palavra dentro do elemento `data-claim` fazem
+as cadeias diferir, e é assim que se impõe a regra que o `Claim.astro` já segue:
+dentro do elemento vai o valor e mais nada, e o símbolo da unidade fica fora
+dele. **O varrimento dos algarismos fica**, e é a primeira a falar: a mensagem
+antiga continua a sair quando os algarismos diferem, e a nova só quando eles
+batem e a forma não.
+
+**Os casos que não podem fechar, e a corrida inteira prova-o:** a construção
+completa passa sem um falso positivo, com **16** valores desenhados dentro de um
+`<svg>`, **32** com a escala `--figura-car` e **36** com o símbolo da unidade
+colado ao lado. A escala é um atributo de estilo e não toca no texto; o sufixo
+está fora do elemento desde a v2, e esta conferência é o que passa a garantir
+que continua fora.
+
+##### Dentro do portão, segunda extensão: a constituição passa a ser lida
+
+A §1.46 encontrou uma citação da `IDENTIDADE.md` §5 que citava, havia dois
+blocos, uma frase do Método que o bloco V tinha apagado. Corrigiu-a e escreveu o
+que faltava: **nenhuma conferência lê a constituição**, e toda a citação dela
+pode voltar a envelhecer no dia seguinte a um bloco tocar num texto governado.
+
+Não se abre portão novo: a amarra das decisões, dentro do `ledger:check`, já lê
+ficheiros governados e já compara resumos. Ganha a segunda metade.
+
+**A convenção, escrita na `IDENTIDADE.md` §8 e usada pela §5.** Uma frase de um
+texto governado citada na constituição vai entre «…» e traz logo a seguir, entre
+parênteses e em código, o nome curto do texto: `metodo` ou `sobre`, que são os
+mesmos nomes do `**Afecta:**` das decisões e não um segundo vocabulário. Três
+coisas passam a ser conferidas:
+
+1. uma citação marcada existe, palavra por palavra, no texto que nomeia. Compara
+   com os espaços achatados, porque o markdown parte as linhas onde calha e o
+   ficheiro governado não. O texto vem do **módulo** e não do ficheiro: é o
+   módulo que a página rende;
+2. uma citação **não** marcada que exista num texto governado é recusada, com o
+   nome do texto e o pedido da marca. É isto que apanha a omissão no dia em que
+   ela se escreve, que é o único dia em que a citação ainda está certa;
+3. uma marca que não vem a seguir a uma citação não nomeia nada, e fecha.
+
+**O limite, dito aqui e não descoberto depois:** uma frase que nasça já diferente
+do texto governado, e sem marca, não é apanhada por nada. A marca é de quem
+escreve. O que isto fecha é o **envelhecimento**, a citação que estava certa e
+deixou de estar, que é a classe de defeito que aconteceu de facto. A corrida de
+hoje diz «1 citação da constituição conferida, de 43 entre «…»»: as outras 42
+são termos, rótulos e nomes próprios, e nenhuma delas existe num texto governado.
+
+##### A regra 6 do Método, e é a única mudança de texto governado do bloco
+
+O T1 deixou-a escrita e não lhe tocou: o limite da regra 6 dizia «A releitura
+acontece e ainda não fica escrita na linha: o campo que a guardaria não existe
+no formato. Enquanto não existir, a conta abaixo é zero, e é zero por isso.» O
+campo existe desde 18.08.2026, e a prova ao lado dessa frase diz **53**. A
+página publicava as duas coisas uma a seguir à outra.
+
+**Uma frase falsa não sai para o ar**, e por isso o T4 reescreve-a. É texto
+governado, e a mudança é feita pelo caminho que a §1.38, a §1.45 e a §1.46
+fixaram: esta entrada passa de `**Afecta:** nenhum` a `**Afecta:** metodo`, com
+o `**Texto:** metodo` do ficheiro tal como fica, e o `ledger:check` só fecha com
+o resumo certo. O que fica dito com todas as letras: **isto é a proposta do
+lugar de construção, e não uma decisão tomada.** As dez regras são da direção;
+o diretor lê o Método na pré-visualização, como a §4.2 já lhe deixou marcado, e
+pode revogar esta redação antes da fusão. O que o lugar de construção não pode
+fazer é publicar, sabendo, uma frase que a página ao lado desmente.
+
+O limite passa a ser, nas duas edições:
+
+> «A releitura de uma linha fica escrita nela: a data, o caminho, o resultado e
+> quem a fez. O que ainda não existe é a releitura de todas as linhas: as contas
+> ao lado dizem quantas a têm, e quantas leram um valor diferente.»
+
+> «The re-reading of a row is written into the row itself: the date, the path,
+> the result and who did it. What does not yet exist is a re-reading of every
+> row: the counts beside say how many have one, and how many read a different
+> value.»
+
+E a prova da regra ganha as duas chaves que o T1 criou e não pôde usar:
+`linhas_reconferidas` («linhas com reconferência escrita» / «rows with a re-check
+written») e `releituras_divergentes` («releituras que leram outro valor» /
+«re-readings that read a different value»). A regra passa a render quatro
+números: **53 · 53 · 0 · 2026-08-18**.
+
+**Uma diferença em relação ao rascunho do lugar de direção, e é para ser vista.**
+O rascunho do `BRIEF` escrevia «desde 18.08.2026» dentro da frase. A data saiu, e
+não por descuido: o Método é a única página do sítio onde nenhum pedaço de texto
+pode trazer algarismos, e é o portão que o obriga. Uma data ali obrigava a um
+motivo de dispensa novo para uma frase só, numa lista que a própria casa
+mandou não inflacionar. A frase diz o mesmo sem ela, porque o que a data
+contava, que o aparelho é recente, está nas contas ao lado. As restantes nove
+regras não mudaram uma palavra.
+
+##### O conjunto conferido, e não só construído
+
+O `check:dados` já reconta os dois ficheiros dos gráficos e os três ficheiros
+alojados da CAOP, lendo-os do `dist/` e comparando-os com o livro-razão, nunca
+com uma segunda chamada ao gerador. Os três ficheiros do conjunto entram pela
+mesma porta, e a comutação da licença com eles: com `LICENCA` a `null`, nenhuma
+página construída pode ligar estes endereços; com ela preenchida, os dois
+índices têm de os oferecer. Sem isto, «nada se publica sob licença nenhuma» era
+uma frase e não um estado.
+
+##### Os estragos plantados, cada um reposto
+
+No sítio, o `gate:html` sobre a construção:
+
+| Estrago | O portão |
+| --- | --- |
+| o sinal menos apagado na posição de investimento internacional, na primeira página | «a afirmação "posicao-de-investimento-internacional-2025" foi renderizada como "50,2" e o livro-razão diz "−50,2". Os algarismos batem certo e a forma não. Não é só o valor: um sinal, uma vírgula ou um símbolo de unidade dentro do elemento são um número diferente.» |
+| o símbolo da unidade metido dentro do elemento («96%» onde a linha diz «96») | «a afirmação "evora-execucao-da-receita-2021" foi renderizada como "96%" e o livro-razão diz "96". […] Dentro de [data-claim] vai o valor da linha e mais nada; o símbolo da unidade vai ao lado, fora dele.» |
+
+No sítio, o `ledger:check`, na amarra das decisões:
+
+| Estrago | O portão |
+| --- | --- |
+| uma palavra trocada na citação da §5 | «IDENTIDADE.md cita, como sendo do "metodo": «…cheio quando a origem está completa e conferida…» e essa frase não existe em src/data/metodo.mjs. Ou o texto governado mudou e a citação ficou para trás, ou a citação nunca foi essa.» |
+| a citação certa, sem a marca | «IDENTIDADE.md cita «Ao lado de cada medição há um selo que abre a sua linha: cheio quando …», que é uma frase de "metodo", e não a marca como tal. Escreva (`metodo`) a seguir ao fecho das aspas.» |
+| uma marca que não vem depois de uma citação | «IDENTIDADE.md: a marca (`metodo`) não vem a seguir a uma citação entre «…». A marca diz de que texto governado é a frase citada antes dela; sozinha não nomeia nada.» |
+
+No sítio, o `check:dados` sobre a construção:
+
+| Estrago | O portão |
+| --- | --- |
+| uma página a oferecer o conjunto sem licença decidida | «a licença do conjunto não está decidida (LICENCA = null em src/data/licenca.mjs) e 1 endereço(s) do conjunto estão ligados de páginas construídas (/livro-razao.csv). Até a direção decidir, nada se oferece sob licença nenhuma.» |
+| com licença decidida, a edição inglesa a não oferecer o CSV | «o índice do livro-razão da edição "en" não liga para "/livro-razao.csv". Com licença decidida, o conjunto oferece-se nas duas edições, ou não se oferece.» |
+| um valor mexido no CSV construído | «/livro-razao.csv, registo 84: "value" é "58 568" e a linha "evora-populacao-2025" diz "58 567". O conjunto publica o livro-razão, não uma cópia dele.» |
+| uma linha a menos no JSON do conjunto | «/livro-razao.json: tem 131 linhas e o livro-razão tem 132.» |
+| um ficheiro de linha em falta | «/livro-razao/evora-populacao-2025.json não foi construído. O Método promete que os dados são descarregáveis; sem este ficheiro, a promessa é falsa.» |
+| a coluna `note` no cabeçalho do CSV | «/livro-razao.csv: o cabeçalho não é o do formato.», com as duas listas lado a lado |
+
+E a via positiva, que é a que importa não fechar: a corrida inteira sem um falso
+positivo na forma dos valores, com os desenhados dentro de SVG, os de escala e os
+de sufixo todos a passar; a amarra a dizer «1 citação da constituição
+conferida»; e o `check:dados` a dizer «132 registos no CSV · 132 ficheiros de
+linha · licença por decidir · 0 endereços ligados».
+
+##### As contagens, antes e depois
+
+| | Depois do T3c | Depois do T4 |
+| --- | --- | --- |
+| endereços do conjunto de dados construídos | 0 | **134** (o CSV, o JSON e 132 ficheiros de linha) |
+| endereços do conjunto ligados de alguma página | 0 | **0**, e é o estado com licença por decidir |
+| chaves da prova na regra 6 do Método | 2 | **4** |
+| regras do Método com limite falso | 1 | **0** |
+| citações da constituição conferidas por máquina | 0 | **1** (de 43 entre «…») |
+| `data-claim` conferidos pela cadeia e não só pelos algarismos | 0 | **908** marcas nas páginas construídas |
+| `lastmod` no mapa do sítio | ausente | ausente, com três medições escritas |
+| ligações internas conferidas | 9 803 | **9 807** |
+| páginas construídas | 307 | 307 |
+| `class="marcador"` · «[a verificar]» | 358 · 458 | 358 · 458 |
+| frases de moldura | 77 distintas · 2 367 | 77 distintas · 2 367 |
+
+As duas últimas linhas não mexem, e é o que se espera: o conjunto de dados não
+rende prosa nova em mais do que uma página, e a linha de estado da licença
+aparece uma vez em cada edição, que é menos do que esta régua conta como
+moldura.
+
+#### O bloco T, fechado
+
+*Escrito no fim do T4, sobre a construção do ramo `confianca`. O bloco está
+construído e **não está fundido**: falta a leitura cruzada de outra família, a
+pré-visualização e a palavra da direção.*
+
+##### Os dois testes que este bloco existia para passar
+
+O `BRIEF-confianca.md` §6.8 tem nove testes de aceitação. Dois não passavam com
+desenho nenhum, porque pediam campos que o formato não tinha.
+
+**Teste 1: «qualquer número → a linha impressa em ≤ 1 clique, sem descarregar
+mais de 1 MB (o recorte visível; a ligação profunda oferecida)».**
+
+Passa nas **22 linhas** que citam um PDF com página e cujo excerto o
+`core/pdfproof.py` conseguiu localizar por correspondência exata. Um clique no
+selo abre a página da linha; a linha impressa está lá, recortada da própria
+página, e a porta «Abrir na página N →» leva ao `#page=N`. O orçamento cumpre-se
+com folga: os 22 recortes somam **243 496 bytes**, o maior tem **17 692**, e a
+maior página de linha construída tem **18 416 bytes** de HTML. Um recibo inteiro
+fica abaixo de 40 KB, contra o teto de 1 MB do teste.
+
+Não passa nas outras 110: **23** linhas citam um PDF com página e uma delas ficou
+sem recorte porque o excerto da sua linha no motor não fixa ficheiro, página nem
+frase; as restantes **109** citam séries de dados, páginas e ficheiros, onde não
+há linha impressa para recortar. Nessas, o que o leitor tem é o que já tinha e
+melhorou: o excerto transcrito, a página humana da série antes do pedido em
+**42** linhas, e o ficheiro de dados alojado com a sua licença em **3**.
+
+**Teste 3: «qualquer linha → a data da última leitura e a data da última
+reconferência independente, visíveis».**
+
+A data da última leitura já existia e continua em todas as linhas com fonte
+externa (**110** com data a sério, **4** com o marcador). A da reconferência
+não existia em lado nenhum: passa a existir em **53** linhas, com **53** entradas,
+das quais **0** divergiram. São 21 linhas de Évora, da releitura cega de
+2026-08-15, e as 32 do quadro institucional, da corrida do painel de 2026-08-18.
+As duas mais recentes de cada linha rendem-se na página, com quem releu, o que
+encontrou e a porta para repetir a leitura; nas outras **79** fica o marcador com
+o motivo, que é o estado honesto e é o que a regra 6 do Método passou a dizer.
+
+**O que mais o roteiro pedia ao bloco, item a item:** a origem «calculado sobre
+um ficheiro alojado» fechou em **4** das 7 linhas (as da CAOP, com o extrato
+alojado e recontado a cada construção) e ficou aberta nas **3** do PRR, por uma
+questão de licença que é da direção; as linhas de API mostram a página humana da
+série primeiro em **42** das 57; o livro-razão descarrega-se como conjunto, com a
+licença por dizer e o estado dito; o `lastmod` não vem, e agora com a medição
+que o justifica; o extrator de excertos do motor deixou de cortar a meio de um
+número, em **169** excertos.
+
+##### A régua, antes e depois
+
+Construídos os dois lados e corrido `node scripts/medir-defeitos.mjs` em cada um:
+o «antes» é `main` em `fc8f032`, que é o commit de onde o ramo saiu; o «depois» é
+o ramo `confianca` no fim do T4. A régua é a mesma nos dois, e a única diferença
+entre as duas cópias do script é a contagem dos recortes, que o «antes» não podia
+fazer porque o campo não existia.
+
+| | Antes (`main`, `fc8f032`) | Depois (`confianca`, fim do T4) |
+| --- | --- | --- |
+| páginas construídas | 307 | 307 |
+| porta de correções | 307/307 | 307/307 |
+| primeira página: valores sem selo · selos para outra linha | 0 · 0 | 0 · 0 |
+| frases de moldura | 73 distintas · 2 471 ocorrências | **77 distintas · 2 367** |
+| `[descrição em preparação]` | 0 | 0 |
+| linhas com `#page=` | 23 de 132 | 23 de 132 |
+| linhas com recorte | (o campo não existia) | **22 de 132** |
+| localizadores internos | 0 | 0 |
+| `class="marcador"` nas páginas construídas | 502 | **358** |
+| «[a verificar]» nas páginas construídas | 602 | **458** |
+
+E as contagens que o próprio sítio publica, lidas do `dist/prova.json` das duas
+construções:
+
+| Chave da prova | Antes | Depois |
+| --- | --- | --- |
+| `afirmacoes` | 132 | 132 |
+| `indexaveis` | 120 | **124** |
+| `divida` | 12 | **8** |
+| `releituras_registadas` | 0 | **53** |
+| `linhas_reconferidas` | (a chave não existia) | **53** |
+| `releituras_divergentes` | (a chave não existia) | **0** |
+| `atualizacoes` | 2 | **7** |
+| `revisoes_de_proveniencia` | 9 | **20** |
+| `painel_reconferido_em` | 2026-08-17 | 2026-08-18 |
+| chaves reconferidas pelo portão | 26 | **28** |
+
+**As 144 ocorrências do marcador que saíram** são as quatro linhas da CAOP e as
+alterações que vieram com elas, e a dívida de proveniência caiu de 12 para 8
+linhas pela mesma via. **As quatro frases de moldura novas** são os rótulos do
+bloco do ficheiro alojado, e o preço de o publicar. Duas coisas mexeram e não são
+deste bloco, e diz-se para que a comparação não se leia mal: `agenda_em_curso`
+passou de 3 para 4 e `agenda_a_seguir` de 1 para 0 por um commit da agenda de
+outro construtor que entrou no ramo, e o `painel_reconferido_em` mexeu por a
+corrida semanal do painel ter corrido no meio do bloco.
+
+##### Os estragos plantados do bloco
+
+Cada conferência nova ou mudada foi provada num estrago plantado antes de contar,
+e cada estrago foi reposto. As tabelas desta entrada listam-nos um a um:
+
+| Estádio | Estragos | Onde |
+| --- | --- | --- |
+| T1 | 35 | 15 no `ledger:check`, 7 no `gate:html`, 13 no `export_site_rows_test` do motor |
+| T2 | 18 | 4 no `ledger:check`, 7 no `gate:html`, 3 no `check:cruzamento`, 4 no motor |
+| T3 | 25 | 7 no `ledger:check`, 1 no `check:dados`, 5 no `gate:html`, 12 no motor |
+| T3c | 4 | os quatro da V16, no motor |
+| T4 | 11 | 2 no `gate:html`, 3 na amarra das decisões, 6 no `check:dados` |
+| **Total** | **93** | |
+
+Fora das tabelas ficam os conhecidos-positivos das corridas de prova do motor,
+que não são estragos plantados no conteúdo mas prova do mesmo tipo: as duas
+conferências novas do `indicators/refresh.py --prove-gates`, as oito do
+`series_pages.py --prove-gates` (com um código real e dois inventados de cada
+lado) e a do `core.excerpts_test` com a fronteira estragada de propósito.
+
+##### O que fica aberto, por item e com a fase a que pertence
+
+**Espera a direção, e não é matéria de construção:**
+
+1. **A licença do conjunto de dados** (T4). `LICENCA` está a `null`, os ficheiros
+   existem e nenhuma página os liga. Um só campo muda no dia da decisão.
+2. **A licença do instantâneo do PRR, e com ela o alojamento** (T3, §4.1). O
+   conjunto declara «não especificada» ao lado de um termo da plataforma que diz
+   CC BY 4.0 «exceto se houver uma especificação em contrário». Vai com o
+   `legal/counsel-brief.md`. Até lá, as três somas ficam com `[a verificar]` e
+   contam para a dívida.
+3. **A redação nova do limite da regra 6 do Método** (T4). É proposta, e o
+   diretor lê-a na pré-visualização.
+4. **A republicação dos documentos de estudo** (T3, T3c). Duas, e são a mesma
+   decisão: os **338** excertos das quatro edições do 07 e do 08 que ficaram fora
+   de passo com o livro-razão do motor, e a cópia do estudo 04 que o sítio serve,
+   que é a do instantâneo de 2026-08-03 enquanto a linha diz o de 2026-08-17.
+
+**Fase 3, e é trabalho medido e adiado:**
+
+5. **As 8 linhas do INE sem página humana**, por estarem **por medir**:
+   `www.ine.pt` não respondeu a esta máquina em nenhuma tentativa de 18.08.2026.
+   Mede-se noutro dia, com um pedido isolado.
+6. **`indice-de-divida-limite-legal` sem recorte**, e continuará enquanto o
+   excerto da sua linha no motor não fixar ficheiro, página e frase. É trabalho
+   do motor.
+7. **As dimensões do recorte não existem em campo nenhum**, e por isso a página
+   não reserva espaço para a imagem antes de ela carregar. Fechar isto é um
+   quarto campo no `document.crop`, e é decisão de formato.
+8. **A releitura não cobre o livro-razão**: 53 linhas de 132 têm uma
+   reconferência escrita. O aparelho existe; o que falta é releitura, e ela
+   entra por onde entrou, que é o motor.
+9. **A reextração de uma vertical não produz `verifications[]`** (T3c), e não é
+   esquecimento: o aparelho é para uma releitura cega por um agente
+   independente, e uma corrida do programa de aquisição da própria vertical não
+   é isso. Se alguma vez o for, é um tipo novo de `by`, e é decisão de formato.
+10. **A cadeia de `proveniencia` sobre `source_url` cresce a cada reextração do
+    PRR** (T3c). É o preço de uma fonte que serve um endereço novo por
+    instantâneo. Se a lista afogar as correções a sério, a resposta é de formato.
+
+**Fase 4, e é o que precisa de conferências que ainda não existem como script:**
+os cinco itens da tabela da §4.1 que a revisão cruzada da v2 deixou, menos a
+comparação por algarismos, que o T4 fechou. O portão da prosa e o
+`gate:identidade` continuam por escrever.
+
+**Recusas, e não dívida:** as autárquicas de 2021 e de 2025 não têm página humana
+porque as duas aplicações não têm o território no endereço, e isso está provado
+no T3 e não suposto. O IEFP não publica termos de utilização em nenhum dos sete
+caminhos plausíveis lidos, e por isso nada do IEFP se aloja.
 
 ## 2. Como funciona o portão, e o que ele não vê
 
@@ -6861,15 +7339,17 @@ quem pertence.
 
 ### 4.1 O que fica adiado — e para que fase
 
-**As citações da constituição não são conferidas por nada** (18.08.2026, §1.46).
-A §5 da `IDENTIDADE.md` citou durante dois blocos uma frase do Método que o bloco
-V tinha apagado, e nenhuma conferência deu por isso, porque nenhuma lê a
-`IDENTIDADE.md`. A citação está corrigida; o buraco não. Toda a citação da
-constituição pode voltar a envelhecer no dia seguinte a um bloco tocar num texto
-governado. Não se abre um portão novo para isto neste bloco: a amarra das
-decisões já sabe ler ficheiros governados e comparar resumos, e o caminho barato
-é estendê-la para conferir que uma frase citada entre aspas na constituição existe
-no ficheiro que ela diz citar. Fica para o bloco que voltar ao Método.
+~~**As citações da constituição não são conferidas por nada**~~ (18.08.2026,
+§1.46). **Fechado a 18.08.2026 pelo T4 (§1.47, «Dentro do portão, segunda
+extensão»),** que é o bloco que voltou ao Método, como este item previa. A amarra
+das decisões passou a ler a `IDENTIDADE.md`: uma frase de um texto governado
+citada entre «…» traz a seguir, entre parênteses e em código, o nome curto do
+texto (`IDENTIDADE.md` §8), e o `ledger:check` exige que ela exista lá palavra
+por palavra. Uma citação sem a marca que exista num texto governado é recusada,
+o que apanha a omissão no dia em que ela se escreve; uma marca sem citação antes
+dela também. Fica o limite, e está escrito no §1.47: uma frase que nasça já
+diferente do texto governado, e sem marca, continua a não ser apanhada por nada.
+O que isto fecha é o envelhecimento, que é o que aconteceu.
 
 ~~**Bloco V · a ortografia das linhas cruzadas.**~~ **Fechada a 16.08.2026
 (§1.40).** Converteu-se em `publisher/manifest.evora.json` e voltou por
@@ -6881,19 +7361,27 @@ mesma correção, com outra redação», e a regeneração da linha só foi segu
 nenhuma correção nasceu do lado do sítio.
 
 **Fase 3 · o redesenho da página de linha e a travessia dos recibos.** É a fase
-onde a página da linha passa a ser a prova, e não uma ficha sobre a prova.
+onde a página da linha passa a ser a prova, e não uma ficha sobre a prova. **O
+bloco T fechou-a item a item a 18.08.2026** (§1.47), e o que fica aberto fica com
+a razão escrita.
 
 | Item | O que está por fazer | Porque não foi feito aqui |
 | --- | --- | --- |
-| `verifications[]` | Nenhuma das 132 linhas regista uma reconferência independente. O único campo de tempo é `access_date` («Lido a»). A refetch cega de 15.08.2026 sobre 24 linhas de Évora aconteceu e **não está escrita em lado nenhum**. | É um campo novo no formato do livro-razão, com regras próprias (quem, por que caminho, com que resultado) e o portão a aprender a compará-lo. É desenho, não defeito. |
-| A travessia dos recibos | O motor tem **168 recortes** da linha impressa, com `#page=N`, e o sítio serve **216** dentro de `/estudos/*/documento` — em nenhum mapa do sítio e em nenhum menu. A página de linha não os vê. | Precisa de `document.page` e `document.crop` (com o resumo do próprio recorte, que hoje não existe), de os recursos atravessarem por `publisher/` e de o portão aprender a conferir uma imagem. Três extensões de formato. |
-| A origem «calculado sobre um ficheiro alojado» | 7 linhas de soma sobre um registo (3 do PRR, 4 da CAOP) publicam `excerpt: "[a verificar]"` porque não há frase para transcrever. É o limite 12 do §2.3, e continua aberto. | Fecha-se alojando o ficheiro de dados e correndo o `check` sobre ele — o padrão que `check:dados` já tem para os gráficos. É construção, não correcção. |
-| Cópias fixadas das fontes | A classe de defeito «o endereço morreu» disparou duas vezes num dia (§1.36, item 4). A resposta que a fecha é alojar a cópia fixada com o seu resumo, e a linha ligar as duas. | **Depende de uma verificação de licença por fonte, que ninguém fez.** dados.gov.pt e a CAOP declaram licenças abertas; o município, a DGAL, o IEFP e o INE têm de ser lidos um a um. Alojar primeiro e verificar depois seria a ordem errada. |
-| `document.kind` | Hoje a página da linha decide pelo padrão do endereço se uma fonte é uma série de dados ou um documento (§1.36, item 7). Funciona para as 57 linhas de hoje e é uma heurística. | O campo pertence ao redesenho, onde há mais do que duas classes a distinguir (PDF, página, série, registo, ficheiro alojado). |
-| `lastmod` no mapa do sítio | O campo não existe. Pô-lo a partir das datas que o sítio tem seria pôr uma data errada: nenhuma delas é «quando esta página mudou». | Precisa de um modelo de alteração por página — o git sobre o **conjunto completo** de entradas de cada página, componentes partilhados incluídos. É construção, e pertence ao redesenho. |
-| O extractor de citações do motor corta a meio | 15 excertos cruzados estavam cortados a meio de palavra ou de número; 12 puderam ser aparados no último ponto final, 3 **não** (`evora-execucao-da-receita-2025`, `evora-orcamento-2025`, `evora-pael-emprestimo`), porque o valor da linha aparece depois desse ponto. | O corte é do lado do motor, a uma largura fixa. Alargá-lo muda excertos de estudos já publicados e conferidos byte a byte; é trabalho do motor, não do sítio. |
+| ~~`verifications[]`~~ | **Fechado a 18.08.2026 (§1.47, T1).** O campo existe no formato, no validador, no exportador, no portão e na página, e **53 linhas** têm uma reconferência escrita, com 53 entradas e nenhuma divergente. Não se escreve à mão: entra pelo exportador do motor, a partir do registo da releitura cega de 15.08, e pelo `indicators/refresh.py`, no fim de cada corrida das canárias. A página mostra as duas últimas. | Fica que a releitura **não cobre o livro-razão**: 53 linhas de 132. O aparelho existe; o que falta é releitura, e ela entra por onde entrou, que é o motor. |
+| ~~A travessia dos recibos~~ | **Fechado a 18.08.2026 (§1.47, T2).** `document.crop` atravessa por `publisher/` como recurso mais manifesto, os recortes vivem em `public/recortes/` com o resumo dos seus bytes, e **22** das 23 linhas de PDF mostram a linha impressa em «Onde no documento», com «Abrir na página N». Nada de base64 dentro de HTML. | Fica **uma** linha de PDF sem recorte, e as dimensões da imagem, que não existem em campo nenhum: as duas abaixo. |
+| A origem «calculado sobre um ficheiro alojado» | **4 das 7 fecharam a 18.08.2026 (§1.47, T3)**, e são as da CAOP: a licença da DGT foi lida na página da fonte por um agente que não escreveu o bloco (CC BY 4.0, sem partilha nas mesmas condições nem uso não comercial), o extrato contado está em `public/dados/` com o resumo do zip de onde saiu, e o `check:dados` reconta-o a cada construção. **As 3 do PRR não fecharam.** | Não é matéria de construção: o conjunto declara «Licença não especificada» ao lado de um termo da plataforma que diz CC BY 4.0 «exceto se houver uma especificação em contrário». É jurídico, é da direção, e vai com o `legal/counsel-brief.md`. Até lá as três somas ficam com `[a verificar]`, contam para a dívida, e a linha diz sobre que ficheiros foi calculada (`document.computed_over`), que é registo e não prova. |
+| Cópias fixadas das fontes | **Feito onde a licença o permite (§1.47, T3):** os três extratos da CAOP estão alojados, com o resumo do ficheiro da fonte de onde saíram. **Por fazer no resto**, e cada caso tem uma razão lida e não suposta: o PRR espera a decisão da direção (linha acima); o IEFP **não publica termos de utilização** em nenhum dos sete caminhos plausíveis que a leitura cega abriu, e por isso nada do IEFP se aloja. | O município, a DGAL e o INE continuam por ler, um a um. Alojar primeiro e verificar depois continua a ser a ordem errada. |
+| ~~`document.kind`~~ | **Fechado a 15.08.2026 (§1.36, item 7 e a revisão cruzada que o seguiu),** e não por este bloco: o campo existe, a página lê-o e a heurística de endereço saiu. Hoje **104** linhas declaram-no; as 28 que não o declaram são as 23 derivadas e da casa, que não têm documento, e as 5 cuja proveniência inteira está por confirmar. O bloco T usou-o e não o criou. | Fechado. |
+| ~~`lastmod` no mapa do sítio~~ | **Fechado a 18.08.2026 (§1.47, T4), e a resposta é «não vem».** O modelo foi construído no papel e medido antes de se escrever a decisão: o Vercel clona a `--depth=10` e não é configurável, e dos 244 ficheiros de entrada versionados os últimos dez commits tocam em 66, pelo que 178 não têm data nenhuma nessa construção; um modelo honesto por página dá a **mesma** data às 264, porque todas dependem das cadeias, da folha e do cabeçalho; e um mapa cometido seria estado escrito, errado no commit seguinte. | As três medições estão em `astro.config.mjs`, ao lado do campo que não se escreve, e não só no registo. |
+| ~~O extractor de citações do motor corta a meio~~ | **Fechado a 18.08.2026 (§1.47, T3).** A regra passou a viver uma só vez, em `core/excerpts.py`: a janela anda até à primeira fronteira de símbolo, e uma fronteira é espaço em branco que não tem um algarismo de cada lado, porque «4 976 172,24» é um símbolo só com dois espaços dentro. **169 excertos** mexeram e nenhum valor mexeu; os seis que chegam ao sítio incluem as três que esta linha nomeava. | Fica o que a regeneração destapou e é decisão de publicação: **338** excertos das quatro edições do 07 e do 08 ficaram fora de passo com o livro-razão do motor. |
 | ~~O PRR: o instantâneo lido já não é servido~~ | **Fechado a 18.08.2026 pelo T3c** (§1.47, «A reextração do PRR»). A reextração correu no motor contra o instantâneo de hoje, que é o de 2026-08-17: três das cinco somas mexeram e duas não, e cada valor que mexeu atravessou com uma `atualizacao` tipada. O que faltava não era o caminho de aquisição: era a **V16** do exportador, sem a qual um valor podia mexer e ser reescrito sem registo nenhum. | Fica o alojamento, que é outra linha desta tabela e espera a decisão da direção sobre a licença; e fica a cópia do estudo 04 que o sítio serve, que é a do instantâneo de 2026-08-03 e cuja republicação é decisão de publicação, como a dos documentos do 07 e do 08. |
-| A linha do INE que não se conseguiu medir | O `json_indicador` do INE serviu o primeiro pedido e depois devolveu 429 e esgotou o tempo em três tentativas. Não se consegue separar o INE a limitar a nossa sondagem de um bloqueio a quem lê. | Fica **por medir**, e não como defeito. Mede-se com um pedido isolado, noutro dia. |
+| A linha do INE que não se conseguiu medir | O `json_indicador` do INE serviu o primeiro pedido e depois devolveu 429 e esgotou o tempo em três tentativas. Não se consegue separar o INE a limitar a nossa sondagem de um bloqueio a quem lê. **Continua por medir a 18.08.2026**, e com companhia: `www.ine.pt` não respondeu a esta máquina em nenhuma das tentativas do bloco T (`curl` esgota o tempo aos 20 s nas duas formas de endereço, reproduzido três vezes). | Fica **por medir**, e não como defeito. Mede-se com um pedido isolado, noutro dia. |
+| A página humana das 8 linhas do INE (`document.url`) | **Aberto a 18.08.2026 (§1.47, T3).** As linhas de série passaram a mostrar a página humana antes do pedido, e ela existe em **42** das 57: 39 do Eurostat, provadas por máquina (a API responde 200 ao código da própria linha e o título vem do índice de conteúdos oficial, guardado no motor com o seu resumo), e 3 das autárquicas. As 8 do INE ficaram sem ela. | Pela mesma razão da linha acima, e é a mesma fonte: uma página que não abre não se confirma. Um campo opcional ausente não é dívida, é a ausência de uma promessa que ninguém fez. Mede-se noutro dia, com o mesmo pedido isolado. |
+| A página humana das autárquicas de 2021 e de 2025 | **Recusa provada, e não dívida** (18.08.2026, §1.47, T3). As duas são aplicações de página única sem território no endereço: a forma estática dá 404, a rota da aplicação devolve a mesma casca a qualquer caminho, e o pacote de 2021 declara duas rotas, nenhum parâmetro de rota e zero ocorrências de `territoryKey`. | Sem ligação profunda para um concelho não há página humana **desta** medição para escrever, e escrever a do país seria escrever outra coisa. Fica escrito para não voltar a ser descoberto. |
+| O recorte de `indice-de-divida-limite-legal` | **Aberto desde 18.08.2026 (§1.47, T2).** É a única das 23 linhas de PDF sem recorte: o `core/pdfproof.py` recusou-a, e a recusa está escrita nas suas próprias palavras («the ledger excerpt names no pinned PDF, no page, no quoted line»). | O PDF está no repositório do motor; o que falta é o excerto da **linha do motor** fixar ficheiro, página e frase. É trabalho na linha do motor, não aqui, e nenhum limiar desce para o obter. |
+| As dimensões intrínsecas do recorte | **Aberto desde 18.08.2026 (§1.47, T2).** O `document.crop` guarda três campos e nenhum deles é o tamanho, por isso a página não reserva espaço para a imagem antes de ela carregar. O custo é o salto de disposição. | Um número escrito de cabeça num atributo seria um número inventado, e a régua da casa não abre exceção para atributos. Fechar isto é um quarto campo no formato, e é decisão de formato que o bloco T não tomou sozinho. |
+| Os recibos dos documentos de estudo, republicados | **Aberto a 18.08.2026 (§1.47, T3 e T3c).** Duas peças, e são a mesma decisão. **(a)** Os quatro documentos publicados do 07 e do 08 embutem os excertos na sua ilha de recibos, e **338** deles (169 × 2 edições) ficaram fora de passo com o livro-razão do motor quando o extrator foi corrigido. **(b)** A cópia do estudo 04 que este sítio serve é a do instantâneo de 2026-08-03, e a linha do livro-razão diz agora o de 2026-08-17; as edições do motor foram regeneradas, os bytes fixados em `studies-src/` não. | Regenerá-los é **republicar** edições cujos bytes o sítio prende por resumo em `studies-src/manifest.yml`, com o seu registo de descarga e o seu rasto. É decisão de publicação e não um passo de construção. Enquanto não for tomada, a página do estudo diz os números de um instantâneo e a linha diz os de outro, cada uma com a sua data à vista e a história da linha a dizer o que mudou. |
+| A licença do conjunto de dados do livro-razão | **Aberto a 18.08.2026 (§1.47, T4).** `/livro-razao.csv`, `/livro-razao.json` e os 132 ficheiros de linha são construídos a cada corrida e **nenhuma página os liga**: `LICENCA` está a `null` e a página do livro-razão diz o estado. | É decisão da direção (recomendada CC BY 4.0, e a recomendação não é a decisão). Um só campo muda no dia em que ela for tomada, e o motivo de dispensa de que a linha da licença precisa já existe, para que esse dia não seja o dia de estreia de um caminho novo. |
 
 **O alojamento do instantâneo do PRR espera uma decisão da direção sobre a
 licença** (18.08.2026, §1.47, T3). Quatro das sete linhas desta tabela fecharam
@@ -6950,17 +7438,24 @@ como script.
 | O estado «lido» das fichas da régua não tem equivalente para quem não vê | `aria-pressed` segue a região estar **na régua** e `is-read` segue a região **que está a ser lida**. O segundo é só visual: o parágrafo da leitura breve só é região viva na região com que a página foi construída, e as outras trocam de `hidden` sem anunciar nada. | É comportamento de um instrumento com JavaScript, e a saída certa não é óbvia: ou a leitura breve passa a região viva única, ou o estado entra no nome da própria ficha. As duas mudam o que um leitor de ecrã ouve a cada toque, e isso é decisão de desenho. Encontrado ao conferir a observação da revisão sobre `aria-pressed`, que já estava feita (§1.44, G). |
 | As contagens em palavras da página do município | «Oito medidas. Seis vêm de organismos que publicam para todos os concelhos do país; duas só existem porque o próprio município as publica, e cada uma dessas di-lo na sua linha.» Em inglês, «Eight measures. Six come from bodies that publish for every concelho in the country; two exist only because the municipality itself publishes them, and each of those says so on its own line.» As três contagens não vêm de contar nada: são estado escrito, e se uma medida entrar ou sair na página a frase fica errada sem que nada feche. | A régua dos algarismos não vê palavras, e é isso que faz esta classe escapar inteira. Fechá-la é uma de duas coisas, e as duas são desenho: ou a frase passa a derivar das medidas que a página rende, e então precisa de porta como qualquer contagem do próprio sítio (§10), ou o portão da prosa aprende a exigir prova de uma contagem escrita por extenso. Encontrada na segunda leitura cruzada da v2 (§1.44). |
 | As citações de fonte em inglês sem língua declarada | Numa página `pt-PT`, o excerto de `divida-publica-2025` rende «General government gross debt (EDP concept), consolidated - annual data …» sem `lang="en"`, e o mesmo vale para o `source` e o `document.title` de qualquer fonte estrangeira. Quem ouve a página ouve inglês lido à portuguesa. | O registo **não tem campo de língua por campo**: nenhuma das 132 linhas diz em que língua está o seu excerto. Pôr o atributo a olho seria adivinhar, e adivinhar bem nas 132 de hoje não impede a 133.ª de entrar sem ele. É trabalho do motor primeiro, e só depois do sítio e do portão. Encontrada na segunda leitura cruzada da v2 (§1.44). |
-| O portão compara os algarismos do valor, e não a cadeia | A conferência de um `data-claim` é `digitsOf(renderizado) !== digitsOf(claim.value)`, e `digitsOf` deita fora tudo o que não é algarismo: o sinal menos (U+2212), a vírgula decimal, o espaço fino dos milhares (U+202F) e um símbolo de unidade metido dentro do elemento. Medido com dois estragos plantados de propósito: «96%» onde o livro-razão diz «96» passa e o build fica **verde**; e o valor da posição de investimento internacional sem o sinal menos rende «50,2» na primeira página **sem um único erro nessa página**. O que fechou o segundo foi outra amarra, a do `<head>` da página de linha, que compara a cadeia inteira, e essa só cobre a página de linha. | Passar a comparar cadeias obriga a fixar o que é o valor renderizado e o que é composição, e há casos com resposta por decidir: o valor desenhado dentro de um `<svg>`, o valor com escala (`--figura-car`) e o espaço que a moldura põe à volta de um elemento. É desenho de conferência, e vai com o `gate:identidade`. Até lá, a amarra que existe é o `<head>` da página de linha, e ela não vê as outras páginas. Encontrada na segunda leitura cruzada da v2 (§1.44). |
+| ~~O portão compara os algarismos do valor, e não a cadeia~~ | **Fechado a 18.08.2026 (§1.47, T4).** Um `data-claim` passa a comparar a **cadeia** renderizada com o valor da linha, com a cópia própria do portão da normalização: o menos tipográfico e o ASCII são o mesmo sinal, os quatro espaços de milhares são o mesmo separador, o espaço em branco do HTML não é conteúdo, e mais nada. A vírgula decimal e a **presença** do sinal não se normalizam. Os dois estragos que esta linha nomeava fecham: «96%» onde a linha diz «96», e o menos apagado na posição de investimento, agora na própria primeira página e não só no `<head>` da página de linha. | As três respostas que faltavam foram medidas em vez de decididas: a corrida inteira passa sem um falso positivo, com **16** valores desenhados dentro de um `<svg>`, **32** com a escala `--figura-car` e **36** com o símbolo da unidade colado ao lado. A escala é um atributo e não toca no texto; o sufixo está fora do elemento desde a v2, e esta conferência é o que garante que continua fora. Não foi preciso esperar pelo `gate:identidade`. |
 
-**Fase 1 · a redacção do Método sobre os números do próprio sítio** (18.08.2026,
-§1.44). O Método escreve «Um número chega ao leitor só se tem linha, e a linha
-diz de onde veio.» e «Ao lado de cada número há um selo que abre a sua linha», e
-a §10 da constituição diz que uma contagem do próprio sítio leva porta e não
-selo. Hoje as duas convivem porque as contagens que aparecem com selo são linhas
-da casa a sério, com derivação escrita. Mas a frase, lida à letra, promete mais
-do que a regra dá. **É texto governado**, e por isso não se afina aqui: vai para
-a leitura do Método pela direção na pré-visualização, junto com o que a §4.2,
-item 1, já lhe deixou.
+~~**Fase 1 · a redacção do Método sobre os números do próprio sítio**~~
+(18.08.2026, §1.44). **Fechado a 18.08.2026 pela §1.45 e pela §1.46.** O Método
+escrevia «Um número chega ao leitor só se tem linha» e «Ao lado de cada número há
+um selo que abre a sua linha», e a §10 da constituição diz que uma contagem do
+próprio sítio leva porta e não selo: a frase, lida à letra, prometia mais do que
+a regra dá. A direção leu as dez regras e cortou uma palavra, «número» passa a
+«medição», na leitura breve e na regra 5 (§1.45); a leitura cruzada encontrou a
+terceira ocorrência com a mesma promessa, na regra 3, e ela seguiu o mesmo corte
+(§1.46). Uma ocorrência ficou, no limite da regra 5, e ficou com a razão
+escrita: ali «número» fala dos algarismos que aparecem ao lado de um selo, que
+são por construção uma medição do livro-razão.
+
+**O que continua a pertencer à leitura do Método pela direção na
+pré-visualização**, e não é este item: o inglês das dez regras e do Sobre (§4.2,
+item 1), e a redação nova do limite da regra 6, que o T4 propõe porque a antiga
+passou a ser falsa no dia em que o campo `verifications[]` nasceu (§1.47, T4).
 
 ### 4.2 O que continua aberto de antes, e não mudou neste bloco
 
@@ -6974,10 +7469,13 @@ item 1, já lhe deixou.
    deixa **6 dos 264 endereços do mapa do sítio sem `lastmod`** (§1.36, item 10):
    a consequência da dívida passou a estar à vista, em vez de ser tapada com um
    carimbo. `updated` está por confirmar em todas.
-3. **A dívida de proveniência: 12 linhas.** Água não faturada, os dois avisos do
-   PT2030, o ciclo de substituição de condutas, o saldo natural, o excerto das
-   quatro contagens da CAOP e das três somas do PRR. Nenhuma foi preenchida
-   neste bloco, e nenhuma foi criada.
+3. **A dívida de proveniência: 8 linhas** (era 12 até 18.08.2026). Água não
+   faturada, os dois avisos do PT2030, o ciclo de substituição de condutas, o
+   saldo natural, e o excerto das três somas do PRR. **As quatro contagens da
+   CAOP saíram da dívida a 18.08.2026 (§1.47, T3)**, com o extrato alojado e a
+   recontagem mecânica; as três do PRR continuam, e continuarão enquanto a
+   licença for uma questão jurídica por responder. Nenhuma das oito foi
+   preenchida com um valor plausível, e nenhuma foi criada.
 4. **29 afirmações não são citadas por nenhuma página de conteúdo.** São a linha
    de base institucional que a primeira página não desenha toda.
 5. **Localização dos números por edição** (§1.6) e as duas decisões em fila:
@@ -7032,6 +7530,17 @@ item 1, já lhe deixou.
 - **A conferência de ligações relativas** (§1.41). Corre sobre 9142 ligações e
   encontra **zero** relativas, porque o sítio as escreve todas absolutas. O que
   ela impede é a primeira que não for.
+- **O conjunto de dados do livro-razão** (18.08.2026, §1.47, T4). `/livro-razao.csv`,
+  `/livro-razao.json` e os 132 ficheiros de linha são construídos e conferidos a
+  cada corrida, e **nenhuma página os liga**, porque a licença é decisão da
+  direção. É o caso mais nítido desta secção: construído de propósito antes de
+  ser preciso, para que o dia da decisão não seja o dia de estreia de um caminho
+  que nunca foi lido.
+- **O motivo `licenca-do-conjunto` da lista de dispensas** (18.08.2026, §1.47,
+  T4). Existe para a linha da licença poder trazer a versão que a identifica, e
+  **nenhuma página o usa hoje**. Passa a ser usado no mesmo dia em que a
+  constante mudar, e nem por isso é uma dispensa nova: é a mesma que já lá
+  estaria, escrita antes de ser precisa em vez de a correr.
 - **O campo `documentos` de um critério da agenda** (§1.41, A11). Dois critérios
   o usam hoje, os dois a apontar para a edição portuguesa de dois estudos de
   Évora. A edição inglesa do estudo dos mandatos **não está alojada** neste
