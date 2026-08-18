@@ -111,6 +111,11 @@ const CAMPOS_ENTRADA = [
      ficheiro em disco com o registo, e uma contagem que não está escrita é uma
      contagem com que ninguém pode discordar. */
   'verifications_at_export',
+  /* O resumo do recorte que atravessou com a linha, quando há recorte. Mesma
+     razão que as duas contagens acima: a conferência de aceitação compara o que
+     está em disco com o registo, e uma imagem cujo resumo ninguém escreveu é
+     uma imagem com que ninguém pode discordar (DECISIONS §1.47, T2). */
+  'crop_sha256',
   'exported_at',
   'exporter',
   'site_corrections',
@@ -610,6 +615,33 @@ function main(argv) {
           `${onde}: a linha tem ${nCorr} correcção(ões) e o registo diz ` +
             `${entrada.corrections_at_export}. Corra --accept-correction ${id}.`,
         );
+      }
+      /* O recorte: os bytes em public/recortes/ contra o resumo do registo. É a
+         mesma conferência que a linha faz de si própria pelo `document.crop`,
+         feita aqui a partir do registo da travessia — a linha e o registo são
+         dois documentos, e uma imagem trocada tem de desmentir os dois. */
+      const resumoDoRecorte = linha?.document?.crop?.sha256 ?? null;
+      if ((entrada.crop_sha256 ?? null) !== resumoDoRecorte) {
+        erros.push(
+          `${onde}: o registo diz que o recorte é "${entrada.crop_sha256 ?? '(nenhum)'}" e a ` +
+            `linha publica "${resumoDoRecorte ?? '(nenhum)'}". Um recorte de uma linha cruzada ` +
+            `entra pelo exportador do motor e por mais lado nenhum: volte a cruzar.`,
+        );
+      } else if (entrada.crop_sha256) {
+        const imagem = path.join(RAIZ, 'public', 'recortes', `${id}.webp`);
+        if (!fs.existsSync(imagem)) {
+          erros.push(
+            `${onde}: o registo diz que o recorte "${entrada.crop_sha256.slice(0, 12)}…" ` +
+              `atravessou e não há ficheiro em public/recortes/${id}.webp.`,
+          );
+        } else if (sha256(fs.readFileSync(imagem)) !== entrada.crop_sha256) {
+          erros.push(
+            `${onde}: os bytes de public/recortes/${id}.webp já não são os que atravessaram.\n` +
+              `        registo: ${entrada.crop_sha256}\n` +
+              `        disco:   ${sha256(fs.readFileSync(imagem))}\n` +
+              `        Um recorte não se edita à mão: volte a cruzar no motor.`,
+          );
+        }
       }
       const nVer = Array.isArray(linha?.verifications) ? linha.verifications.length : 0;
       if (nVer !== Number(entrada.verifications_at_export ?? 0)) {

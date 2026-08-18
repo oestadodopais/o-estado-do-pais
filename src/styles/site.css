@@ -1716,6 +1716,49 @@ a.src-chip.is-unverified:hover::before {
 .linha-porta-documento {
   margin-bottom: 16px;
 }
+
+/* O RECORTE DA LINHA IMPRESSA (bloco T2).
+
+   A imagem ocupa a largura da coluna de leitura e nunca mais do que ela: um
+   recorte tem 1000px de largura no ficheiro e a coluna tem 68ch, por isso o que
+   manda é sempre o `max-width: 100%`. A altura acompanha, porque o ficheiro não
+   declara dimensões e o formato não as guarda.
+
+   Sem cor nova (IDENTIDADE §2): o fio é `--rule`, o fundo é o mesmo papel do
+   excerto, e a legenda é a letra mono cinzenta que o resto do recibo já usa. Um
+   recorte não é um destaque, é uma prova. */
+.linha-recorte {
+  margin: 0 0 16px;
+  padding: 0;
+}
+.linha-recorte img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+}
+.linha-recorte-legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  align-items: baseline;
+  margin-top: 7px;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+.linha-recorte-pagina {
+  letter-spacing: 0.04em;
+}
+/* A porta vive dentro da legenda quando há recorte, e o endereço cru que ela
+   leva por baixo é longo: sem isto, um ecrã de 390px ganhava rolamento lateral
+   por causa de uma cadeia que não quebra. */
+.linha-recorte-legenda a {
+  min-width: 0;
+  max-width: 100%;
+}
 .linha-pedido {
   word-break: break-word;
 }

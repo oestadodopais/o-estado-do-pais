@@ -82,6 +82,11 @@ export const STRINGS = {
          `document.page`, que desde 18.08.2026 é a única origem da página: o
          fragmento `#page=` do endereço deriva dela. */
       abrirNaPagina: 'Abrir na página',
+      /* O recorte da linha impressa (bloco T2). O texto alternativo compõe-se
+         só dos campos que existem: sem título de documento, fica a página. */
+      recorteAlt: 'Recorte da linha impressa, página',
+      recorteAltDe: 'de',
+      recortePagina: 'página',
     },
 
     /**
@@ -785,6 +790,9 @@ export const STRINGS = {
       pedido: 'Request',
       campoDevolvido: 'Field returned',
       abrirNaPagina: 'Open at page',
+      recorteAlt: 'Crop of the printed line, page',
+      recorteAltDe: 'of',
+      recortePagina: 'page',
     },
 
     rodape: {
