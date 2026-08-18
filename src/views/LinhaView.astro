@@ -113,12 +113,24 @@ const tipoDoDocumento = claim.document?.kind ?? null;
 const ehSerieDeDados = tipoDoDocumento === 'serie';
 
 /**
- * A página do PDF, quando o endereço a fixa.
+ * A página do documento, quando a linha a declara.
  *
- * Lê-se do próprio endereço — `…pdf#page=119` — e de mais lado nenhum. O
- * número não é escrito aqui nem calculado: sai do campo `source_url` da linha,
- * e o portão confere-o contra esse campo, carácter a carácter, como confere o
- * resto (`data-linha-campo="source_url.page"`).
+ * Desde 18.08.2026 é o campo `document.page` — a página onde está a frase que
+ * o `excerpt` transcreve — e é a única origem da página: o fragmento `#page=N`
+ * do endereço deriva dela, e o validador obriga os dois a bater. A porta da
+ * prova escreve-a com `data-linha-campo="document.page"`, e o portão compara-a
+ * com o campo da linha.
+ */
+const paginaDoDocumento = claim.document?.page ?? null;
+
+/**
+ * A mesma página, lida do próprio endereço — `…pdf#page=119`.
+ *
+ * Continua a ser renderizada, na frase de atribuição, e continua a ser
+ * conferida contra o endereço com a cópia local da regra que o portão tem
+ * (`data-linha-campo="source_url.page"`). As duas leituras batem por
+ * construção porque o validador as obriga a bater; renderizar as duas é o que
+ * torna essa obrigação visível na página, em vez de ficar só no validador.
  */
 const paginaDoPdf = (claim.source_url ?? '').match(/#page=(\d+)$/)?.[1] ?? null;
 
@@ -190,7 +202,7 @@ const temFraseDeAtribuicao = presente(claim.source) && atribuicaoPecas.length > 
    o primeiro passo da prova; quando não fixa, é o pedido, e vai no seu bloco.
    Duas âncoras para o mesmo endereço seriam o mesmo endereço escrito duas
    vezes, e é o `href` desta que o portão confere contra `source_url`. */
-const portaNaProva = Boolean(url && paginaDoPdf);
+const portaNaProva = Boolean(url && paginaDoPdf && paginaDoDocumento);
 const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undefined && !portaNaProva;
 ---
 
@@ -261,7 +273,12 @@ const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undef
               <a class="ligacao-externa" href={url} rel="noopener noreferrer external">
                 <span class="linha-endereco-abrir">
                   {s.prov.abrirNaPagina}{' '}
-                  <CampoDaLinha id={id} campo="source_url.page" valor={paginaDoPdf} lang={lang} />
+                  <CampoDaLinha
+                    id={id}
+                    campo="document.page"
+                    valor={String(paginaDoDocumento)}
+                    lang={lang}
+                  />
                 </span>
                 <CampoDaLinha
                   id={id}
