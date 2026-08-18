@@ -3,7 +3,7 @@
   "exportado_em": null,
   "ficheiro": "agenda/agenda.json",
   "repositorio": "ResearchHub",
-  "sha256_origem": "0c17d26918677e6a6b96379b37a082637b5d9f27ff5dbb135228098d115e94e1"
+  "sha256_origem": "20e112b3b6aec502413b8f3bdc4a7490c50d5e73a9761a765fc4e12a149fe7c3"
  },
  "formato": 1,
  "itens": [
@@ -139,7 +139,7 @@
    "proposto_fonte": "Obsidian, Experiments/O Estado do País.md, secção Open, entrada de 2026-08-12",
    "proposto_por": "motor",
    "registo_previo": "content/10 Housing/preregistration.json",
-   "registo_previo_em": "2026-08-16",
+   "registo_previo_em": "2026-08-18",
    "registo_previo_estado": "selado",
    "tipo": "estudo",
    "titulo": {
