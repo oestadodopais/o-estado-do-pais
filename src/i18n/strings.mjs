@@ -344,13 +344,6 @@ export const STRINGS = {
       /* O rótulo é o mesmo nos dois instrumentos: a acção é a mesma, e um
          rótulo por instrumento seria duas coisas para manter e nenhuma razão. */
       dadosLink: 'descarregar os dados (CSV)',
-
-      estaPagina: {
-        eyebrow: 'Esta página',
-        rede: 'Sem pedidos de rede',
-        tipos:
-          'Tipos: Iowan Old Style (marcas) · Avenir Next (prosa) · SF Mono (números e rótulos), com alternativas de sistema.',
-      },
     },
 
     /** O Sobre: duas frases decididas e uma porta. Nada mais rende aqui. */
@@ -985,13 +978,6 @@ export const STRINGS = {
       },
 
       dadosLink: 'download the data (CSV)',
-
-      estaPagina: {
-        eyebrow: 'This page',
-        rede: 'No network requests',
-        tipos:
-          'Typefaces: Iowan Old Style (wordmarks) · Avenir Next (prose) · SF Mono (figures and labels), with system fallbacks.',
-      },
     },
 
     sobre: {
