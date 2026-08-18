@@ -130,6 +130,11 @@ verifications:
     traz `document.hosted` completo, `document.kind: "ficheiro"` e a
     `derivation` nas duas línguas: a porta estreita da contagem sobre um
     ficheiro alojado, abaixo.
+19. `document.computed_over` trouxer uma chave que não seja `files`, `column` ou
+    `filter`; estiver numa linha cujo `document.kind` não seja `ficheiro`;
+    faltar `column` ou `filter`; `files` não for uma lista não vazia de mapas
+    com `file`, `snapshot_date` (AAAA-MM-DD), `sha256` (64 hexadecimais) e
+    `bytes` (inteiro ≥ 1).
 
 ## `document.kind` — o que o endereço serve
 
@@ -376,6 +381,45 @@ porta para o CSV, o seu tamanho, o resumo dos seus bytes (curto, inteiro no
 extrato saiu com o resumo desse. O `gate:html` exige que uma linha que aloja um
 ficheiro o mostre, e que uma página de linha não ofereça um ficheiro de
 `/dados/` que a sua linha não declara.
+
+## `document.computed_over`: os ficheiros de que a conta foi feita, e que o sítio não aloja
+
+Opcional, dentro de `document`, e só onde `document.kind` é `ficheiro`. Existe
+desde 18.08.2026 (DECISIONS §1.47, T3). É o gémeo honesto do `document.hosted`.
+
+| Campo | O que é |
+| --- | --- |
+| `files` | lista dos ficheiros somados: `file` (o nome que o publicador lhe dá), `snapshot_date`, `sha256`, `bytes` |
+| `column` | a coluna somada, com o nome que a fonte lhe dá |
+| `filter` | que linhas do ficheiro entraram na conta |
+
+**É registo, não prova, e a diferença é o campo inteiro.** O sítio **não** aloja
+estes ficheiros, por isso o leitor não pode refazer a conta a partir daqui: o
+`excerpt` continua `[a verificar]`, a linha continua com o selo a tracejado, e
+continua a contar para a dívida de proveniência. O que muda é que deixa de ser
+uma soma sobre «um ficheiro» e passa a ser uma soma sobre ficheiros
+identificados pelo resumo dos seus bytes, com a data do instantâneo em que foram
+lidos. Quem tenha esse instantâneo pode refazer a conta; quem não o tenha sabe
+exactamente o que pedir.
+
+**Porque o PRR não se aloja.** O conjunto de onde estas somas saem declara, em
+dados.gov.pt, `license: notspecified`, «Licença não especificada» (lido a
+18.08.2026), ao lado de um termo da plataforma que diz que «Todos os dados
+carregados por organismos do estado são publicados ao abrigo de uma licença
+Creative Commons CC BY 4.0, exceto se houver uma especificação em contrário». Um
+campo «não especificada» ao lado de uma excepção geral é uma questão jurídica, e
+é da direção. Até ela ser respondida, não se redistribui nada.
+
+**A data do instantâneo é obrigatória por uma razão concreta.** O publicador
+substitui o ficheiro todos os dias, com o mesmo conjunto e um nome datado, e não
+arquiva o anterior: um nome de ficheiro sem data e sem resumo não identifica
+nada. O endereço do recurso também não: o que a linha cita é a **página do
+conjunto**, que é o endereço estável, e não o recurso do dia, que morre.
+
+**A página da linha** mostra «Calculado sobre» com os ficheiros, as datas e os
+resumos curtos, a coluna e o filtro, e diz por palavras que o sítio não os aloja
+e porquê. É um estado desenhado e não o marcador (`IDENTIDADE.md` §6 e §7): o
+marcador é para um campo que falta, e nenhum campo falta ali.
 
 ## `attributed_to` — a quem o valor é creditado
 

@@ -165,6 +165,8 @@ let ligacoesConferidas = 0;
 let recortesConferidos = 0;
 /** Ficheiros alojados conferidos: a porta da página contra o campo da linha. */
 let alojadosConferidos = 0;
+/** Linhas calculadas sobre ficheiros que o sítio não aloja, conferidas. */
+let calculadosConferidos = 0;
 /**
  * Cada `href` interno encontrado, com a página onde está e a base contra a
  * qual um endereço relativo se resolve.
@@ -693,6 +695,13 @@ const CAMPOS_DA_LINHA = new Set([
   'document.hosted.sha256.curto',
   'document.hosted.licence',
   'document.hosted.attribution',
+  /**
+   * A conta que foi feita sobre ficheiros que este sítio NÃO aloja (T3): a
+   * coluna somada e o filtro aplicado. Os ficheiros em si vão na lista, com o
+   * índice, como as reconferências e as origens de um extrato alojado.
+   */
+  'document.computed_over.column',
+  'document.computed_over.filter',
   'source_url',
   /**
    * A página do PDF, tal como o próprio endereço a fixa (`…pdf#page=119`).
@@ -738,6 +747,14 @@ const CAMPO_DE_VERIFICACAO = /^verifications\.(\d+)\.(date|found)$/;
  */
 const CAMPO_DE_ALOJAMENTO =
   /^document\.hosted\.extracted_from\.(\d+)\.(file|sha256\.curto)$/;
+
+/**
+ * `document.computed_over.files.<n>.<campo>`: um dos ficheiros sobre que a soma
+ * foi feita, o dia do instantâneo em que foi lido, e o resumo curto dos seus
+ * bytes. Mesma regra do índice, e mesma cópia local do encurtamento.
+ */
+const CAMPO_DO_CALCULO =
+  /^document\.computed_over\.files\.(\d+)\.(file|snapshot_date|sha256\.curto)$/;
 
 /**
  * Quantos hexadecimais do resumo a página escreve. CÓPIA PRÓPRIA da constante
@@ -860,6 +877,10 @@ function campoDaLinha(claim, campo, lang) {
       return claim.document?.hosted?.licence ?? null;
     case 'document.hosted.attribution':
       return claim.document?.hosted?.attribution ?? null;
+    case 'document.computed_over.column':
+      return claim.document?.computed_over?.column ?? null;
+    case 'document.computed_over.filter':
+      return claim.document?.computed_over?.filter ?? null;
     case 'document.hosted.sha256.curto': {
       /* A cópia local da regra do encurtamento; ver RESUMO_CURTO_GATE. */
       const h = claim.document?.hosted?.sha256;
@@ -891,6 +912,15 @@ function campoDaLinha(claim, campo, lang) {
       if (v) {
         const entrada = (claim.verifications ?? [])[Number(v[1])];
         return entrada ? (entrada[v[2]] ?? null) : null;
+      }
+      const k = campo.match(CAMPO_DO_CALCULO);
+      if (k) {
+        const f = (claim.document?.computed_over?.files ?? [])[Number(k[1])];
+        if (!f) return null;
+        if (k[2] === 'sha256.curto') {
+          return typeof f.sha256 === 'string' ? f.sha256.slice(0, RESUMO_CURTO_GATE) : null;
+        }
+        return f[k[2]] ?? null;
       }
       const a = campo.match(CAMPO_DE_ALOJAMENTO);
       if (a) {
@@ -2369,13 +2399,15 @@ for (const file of ficheirosHtml(DIST)) {
     if (
       !CAMPOS_DA_LINHA.has(campo) &&
       !CAMPO_DE_VERIFICACAO.test(campo) &&
-      !CAMPO_DE_ALOJAMENTO.test(campo)
+      !CAMPO_DE_ALOJAMENTO.test(campo) &&
+      !CAMPO_DO_CALCULO.test(campo)
     ) {
       err(
         `data-linha-campo="${campo}" não existe. ` +
           `Aceites: ${[...CAMPOS_DA_LINHA].join(', ')}, verifications.<n>.date, ` +
           `verifications.<n>.found, document.hosted.extracted_from.<n>.file, ` +
-          `document.hosted.extracted_from.<n>.sha256.curto.\n` +
+          `document.hosted.extracted_from.<n>.sha256.curto, ` +
+          `document.computed_over.files.<n>.{file,snapshot_date,sha256.curto}.\n` +
           `      O valor de uma afirmação não entra por aqui: entra por <Claim id="…"/>.`,
       );
       continue;
@@ -2615,6 +2647,48 @@ for (const file of ficheirosHtml(DIST)) {
         }
       }
       alojadosConferidos++;
+    }
+  }
+
+  /* --- os ficheiros de que a conta foi feita, e que o sítio não aloja -------
+   *
+   * O mesmo argumento do bloco acima, do outro lado: uma linha que diz sobre
+   * que ficheiros foi calculada tem de o dizer NA PÁGINA, ou o campo é um
+   * registo que só quem lê o YAML vê. E a página não pode dizer que a conta foi
+   * feita sobre ficheiros que a linha não nomeia.
+   */
+  if (claimDaPagina) {
+    const calc = claimDaPagina.document?.computed_over ?? null;
+    const marcados = [...camposRenderizados].filter((k) =>
+      k.startsWith(`${claimDaPagina.id}:document.computed_over.`),
+    );
+    if (calc) {
+      const faltam = ['column', 'filter'].filter(
+        (campo) => !camposRenderizados.has(`${claimDaPagina.id}:document.computed_over.${campo}`),
+      );
+      const ficheirosRendidos = calc.files.filter((_, n) =>
+        camposRenderizados.has(`${claimDaPagina.id}:document.computed_over.files.${n}.file`),
+      ).length;
+      if (faltam.length) {
+        err(
+          `a linha "${claimDaPagina.id}" foi calculada sobre ficheiros que este sítio não ` +
+            `aloja e a página não escreve ${faltam.map((f) => `"${f}"`).join(' nem ')}.\n` +
+            `      Sem a coluna e o filtro, «calculado sobre» diz onde e não diz o quê.`,
+        );
+      }
+      if (ficheirosRendidos !== calc.files.length) {
+        err(
+          `a linha "${claimDaPagina.id}" foi calculada sobre ${calc.files.length} ficheiro(s) e ` +
+            `a página nomeia ${ficheirosRendidos}. Um ficheiro que entrou na conta e não ` +
+            `aparece é uma parte da soma que o leitor não pode pedir.`,
+        );
+      }
+      calculadosConferidos++;
+    } else if (marcados.length) {
+      err(
+        `a página de "${claimDaPagina.id}" escreve "calculado sobre" e a linha não tem ` +
+          `"document.computed_over". Uma conta que a linha não regista não se desenha.`,
+      );
     }
   }
 
@@ -3805,6 +3879,7 @@ console.log(
       `${ligacoesConferidas} ligações internas (${ligacoesRelativas} relativas, ` +
       `${ancorasConferidas} âncoras) · ${recortesConferidos} recortes · ` +
       `${alojadosConferidos} ficheiros alojados · ` +
+      `${calculadosConferidos} contas sobre ficheiros não alojados · ` +
       `escrito em ${CAMINHO_DA_PROVA}`,
   ),
 );

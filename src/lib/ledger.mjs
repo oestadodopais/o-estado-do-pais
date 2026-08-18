@@ -107,7 +107,16 @@ const CAMPOS = [
  * cara de campo preenchido. Antes de `locator` existir, este bloco não tinha
  * lista nenhuma: `title` e `edition` eram exigidos e o resto era ignorado.
  */
-const CAMPOS_DO_DOCUMENTO = ['title', 'edition', 'locator', 'page', 'kind', 'crop', 'hosted'];
+const CAMPOS_DO_DOCUMENTO = [
+  'title',
+  'edition',
+  'locator',
+  'page',
+  'kind',
+  'crop',
+  'hosted',
+  'computed_over',
+];
 
 /**
  * As chaves do recorte, e mais nenhuma. Um mapa de três campos: o ficheiro, o
@@ -163,6 +172,35 @@ const CAMPOS_DO_ALOJADO = [
 
 /** As chaves de cada origem de um ficheiro alojado, e mais nenhuma. */
 const CAMPOS_DA_EXTRACAO = ['file', 'url', 'sha256', 'bytes'];
+
+/**
+ * ---------------------------------------------------------------------------
+ * `document.computed_over`: os ficheiros sobre que a conta foi feita, e que
+ * este sítio NÃO aloja
+ * ---------------------------------------------------------------------------
+ *
+ * O gémeo honesto do `document.hosted`. Onde a licença da fonte permite alojar,
+ * aloja-se e o marcador sai; onde não permite, ou não está verificada, não se
+ * aloja nada e a linha diz, pelo menos, sobre que ficheiros foi calculada: o
+ * nome que o publicador lhes dá, a data do instantâneo, o resumo de cada um, a
+ * coluna somada e o filtro aplicado.
+ *
+ * **É registo, não prova.** O leitor não pode refazer a conta a partir deste
+ * sítio, e por isso o `excerpt` continua `[a verificar]` e a linha continua a
+ * contar para a dívida de proveniência. O que muda é que deixa de ser uma soma
+ * sobre «um ficheiro» e passa a ser uma soma sobre ficheiros identificados pelo
+ * resumo dos seus bytes: quem tiver o instantâneo pode refazê-la.
+ *
+ * O caso é o PRR: o conjunto em dados.gov.pt declara «Licença não especificada»
+ * ao lado de um termo da plataforma que diz que os organismos do Estado
+ * publicam sob CC BY 4.0 «exceto se houver uma especificação em contrário».
+ * Isso é uma questão jurídica, é da direção, e até ela ser respondida não se
+ * redistribui nada (BRIEF-bloco-T.md §2.4).
+ */
+const CAMPOS_DO_CALCULO = ['files', 'column', 'filter'];
+
+/** As chaves de cada ficheiro sobre que a conta foi feita, e mais nenhuma. */
+const CAMPOS_DO_FICHEIRO_CALCULADO = ['file', 'snapshot_date', 'sha256', 'bytes'];
 
 /** Onde vivem os ficheiros de dados alojados: `public/dados/`, servidos em `/dados/`. */
 const DIR_DADOS = path.join(path.dirname(path.dirname(LEDGER_DIR)), 'public', 'dados');
@@ -1190,6 +1228,99 @@ export function validateLedger() {
                 if (!Number.isInteger(e.bytes) || e.bytes < 1) {
                   errors.push(`${rot}: "bytes" é ${JSON.stringify(e.bytes)}, e tem de ser o ` +
                     `tamanho do ficheiro da fonte, um inteiro ≥ 1.`);
+                }
+              });
+            }
+          }
+        }
+      }
+
+      /* ---------------------------------------------------------------------
+       * `document.computed_over`: os ficheiros de que a conta foi feita
+       * ---------------------------------------------------------------------
+       *
+       * Registo e não prova: o sítio não aloja estes ficheiros, e por isso o
+       * excerto continua por confirmar e a linha continua a contar para a
+       * dívida. O que se confere aqui é a forma: um ficheiro sem resumo, sem
+       * data de instantâneo ou sem tamanho não identifica nada, e uma soma sem
+       * coluna e sem filtro não diz o que somou nem sobre o quê.
+       */
+      {
+        const calc = c.document && typeof c.document === 'object' ? c.document.computed_over : undefined;
+        if (calc !== null && calc !== undefined) {
+          if (typeof calc !== 'object' || Array.isArray(calc)) {
+            errors.push(
+              `${onde} "document.computed_over" tem de ser um mapa com ` +
+                `${CAMPOS_DO_CALCULO.join(', ')}.`,
+            );
+          } else {
+            for (const k of Object.keys(calc)) {
+              if (!CAMPOS_DO_CALCULO.includes(k)) {
+                errors.push(
+                  `${onde} chave desconhecida "document.computed_over.${k}". ` +
+                    `Aceites: ${CAMPOS_DO_CALCULO.join(', ')}.`,
+                );
+              }
+            }
+            if (c.document.kind !== 'ficheiro') {
+              errors.push(
+                `${onde} tem "document.computed_over" e "document.kind" é ` +
+                  `${JSON.stringify(c.document.kind ?? null)}. Uma soma faz-se sobre ficheiros: ` +
+                  `declare "kind: ficheiro", ou o campo está na linha errada.`,
+              );
+            }
+            for (const campo of ['column', 'filter']) {
+              if (typeof calc[campo] !== 'string' || calc[campo].trim() === '') {
+                errors.push(
+                  `${onde} falta "document.computed_over.${campo}". Uma soma diz que coluna ` +
+                    `somou e sobre que linhas do ficheiro: sem as duas, não se pode refazer.`,
+                );
+              }
+            }
+            if (!Array.isArray(calc.files) || calc.files.length === 0) {
+              errors.push(
+                `${onde} "document.computed_over.files" tem de ser uma lista, não vazia, dos ` +
+                  `ficheiros sobre que a conta foi feita, cada um com ` +
+                  `${CAMPOS_DO_FICHEIRO_CALCULADO.join(', ')}.`,
+              );
+            } else {
+              calc.files.forEach((f, n) => {
+                const rot = `${onde} "document.computed_over.files[${n}]"`;
+                if (!f || typeof f !== 'object' || Array.isArray(f)) {
+                  errors.push(
+                    `${rot}: tem de ser um mapa com ${CAMPOS_DO_FICHEIRO_CALCULADO.join(', ')}.`,
+                  );
+                  return;
+                }
+                for (const k of Object.keys(f)) {
+                  if (!CAMPOS_DO_FICHEIRO_CALCULADO.includes(k)) {
+                    errors.push(
+                      `${rot}: chave desconhecida "${k}". ` +
+                        `Aceites: ${CAMPOS_DO_FICHEIRO_CALCULADO.join(', ')}.`,
+                    );
+                  }
+                }
+                if (typeof f.file !== 'string' || f.file.trim() === '') {
+                  errors.push(`${rot}: falta "file", o nome que o publicador dá ao ficheiro.`);
+                }
+                if (!/^\d{4}-\d{2}-\d{2}$/.test(String(f.snapshot_date ?? ''))) {
+                  errors.push(
+                    `${rot}: "snapshot_date" é ${JSON.stringify(f.snapshot_date)}. Tem de ser ` +
+                      `AAAA-MM-DD, a data do instantâneo em que o ficheiro foi lido: um ` +
+                      `publicador que substitui o ficheiro todos os dias serve um ficheiro ` +
+                      `diferente com o mesmo nome.`,
+                  );
+                }
+                if (typeof f.sha256 !== 'string' || !RESUMO_SHA256.test(f.sha256)) {
+                  errors.push(
+                    `${rot}: "sha256" é ${JSON.stringify(f.sha256)}. Tem de ser o resumo dos ` +
+                      `bytes do ficheiro, 64 hexadecimais em minúsculas: sem ele, o nome do ` +
+                      `ficheiro não identifica nada.`,
+                  );
+                }
+                if (!Number.isInteger(f.bytes) || f.bytes < 1) {
+                  errors.push(`${rot}: "bytes" é ${JSON.stringify(f.bytes)}, e tem de ser o ` +
+                    `tamanho do ficheiro, um inteiro ≥ 1.`);
                 }
               });
             }
