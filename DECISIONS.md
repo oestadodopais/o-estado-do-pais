@@ -5823,7 +5823,402 @@ entregou.
 
 #### T3 · a origem «calculado sobre um ficheiro alojado», as linhas de API, o extrator
 
-*Por escrever: o estádio T3 acrescenta aqui a sua secção.*
+O limite 13 da §2.3 diz que sete linhas de soma não têm resposta no formato. O
+T3 fecha quatro delas alojando o ficheiro contado, deixa três abertas por uma
+questão de licença que é da direção, põe a página humana antes do pedido em 42
+linhas de série, e corrige o corte de largura fixa do extrator do motor.
+
+Este estádio começou por uma auditoria, e não pela construção: uma primeira
+tentativa de o construir foi interrompida a meio por um limite da API, e o que
+ela tinha deixado em disco não podia ser aceite por parecer feito.
+
+##### A auditoria do que estava em disco, refeita conferência a conferência
+
+Nada foi dado por bom por estar cometido. Cada afirmação da entrega interrompida
+foi reconferida correndo o que a prova, ou plantando o estrago que a devia
+fechar.
+
+| A afirmação | Como foi reconferida | O que deu |
+| --- | --- | --- |
+| Os três commits do sítio e os três do motor existem e a árvore está limpa | `git status --short` e `git log --oneline` dos dois lados | confirmado. O motor tem ainda `510f5d9` e `aac7f1c`, que são do mapa de cobertura e de outra sessão |
+| A contagem da CAOP é 278 + 19 + 11 = 308 | recontadas as linhas de dados dos três CSV alojados, fora do `check:dados`, com as linhas de comentário descontadas | confirmado: 278, 19, 11, e o total deriva por `check` |
+| O resumo de cada CSV é o que a linha declara | `shasum -a 256` sobre os três ficheiros de `public/dados/` | confirmado, os três |
+| O resumo de cada zip da DGT é o que a linha publica em `extracted_from` | os três zips estavam na cache do motor; recalculados os resumos sobre os bytes em disco | confirmado: `87cd67f4…`, `b0e3b4fe…`, `ae568ca2…`, e os tamanhos batem |
+| O `check:dados` reconta o ficheiro alojado a cada construção | corrida limpa, e depois um estrago plantado (uma linha a mais no CSV construído, com o resumo e os bytes da linha ajustados para que a guarda dos bytes passasse) | fecha, com a frase da recontagem |
+| O instantâneo do PRR é o de hoje | lidos `MANIFEST.json` e `prr_observation.json` da vertical 04 | **não é.** `_fetched_at` é 2026-08-04 e `snapshot_reference_date` é 2026-08-03. A reextração do BRIEF §2.4 (b) não correu, e fica escrita como aberta |
+| Os cinco valores do PRR são os que o motor tem | ensaio do exportador, que os imprime | confirmado, os cinco, e as duas linhas derivadas concordam com o motor |
+| Foram escritas `atualizacao` tipadas onde os valores mexeram | lidas as `corrections` das cinco linhas | nenhuma, e está certo: nenhum valor mexeu, porque a reextração não correu. As duas entradas que lá estão são `proveniencia` sobre `source_url`, e formam a cadeia do endereço que morreu duas vezes |
+| O índice de conteúdos do Eurostat está guardado com o seu resumo | `shasum -a 256` sobre `indicators/data/eurostat-toc.txt` contra o que `series_pages.json` regista | confirmado: `b7b8b60ce3b8…`, 1 970 510 bytes, 9 448 códigos com título |
+| Cada `document.url` do Eurostat usa o código a que a API respondeu 200 | comparados, nas 39 linhas, o código do endereço humano com o código do pedido da própria linha, e cada um procurado no índice | confirmado nas 39, sem exceção |
+| A API de disseminação separa um código verdadeiro de um inventado | `series_pages.py --prove-gates`, e depois cinco códigos reais à parte | PASSOU, 8 conferências. `edat_lfse_14`, `nama_10r_2gdp`, `sdg_16_40`, `une_rt_a` e `tessi180` dão 200; `tipsxx99` e `tipsho77` dão 404 |
+| As páginas do SGMAI de 2009, 2013 e 2017 abrem e nomeiam Évora | reabertas as três hoje, com o ficheiro emparelhado da mesma origem e uma chave inventada | confirmado: as três dão 200 e leem `gup('territoryKey')`; o ficheiro de `LOCAL-070500` dá 200 e nomeia Évora nas três; `LOCAL-999999` dá 404 nas três |
+| A página do SGMAI de 2021 fica sem `document.url` | reaberta hoje: a forma estática dá 404, e a rota da aplicação foi lida no pacote | **a recusa está certa, e agora está provada.** Ver abaixo |
+| Os estragos plantados do exportador ainda fecham | `python3 -m publisher.export_site_rows_test` | PASSA, 62 conferências, incluindo as treze do T3 |
+| O portão do motor está verde | `python3 -m core.gate` | PASSA |
+| O sítio está verde | `build`, `typecheck`, `ledger:check`, `ortografia --verificar`, `check:cruzamento --with-origin`, `check:dados`, `medir-defeitos` | todos verdes |
+| O extrator de excertos estava resolvido | lidos `core/excerpts.py` e `core/excerpts_test.py`, que estavam por seguir em disco, e corrido o teste | o módulo estava completo e o teste passa; faltava ligá-lo aos construtores, e é o que este estádio fez |
+| A secção do T3 da §1.47 estava escrita | lido o ficheiro | não estava: era o marcador de lugar |
+
+Duas coisas que a auditoria mudou: a reextração do PRR passa de «feita» a
+aberta, e a recusa de 2021 passa de afirmação a prova.
+
+##### `document.hosted`: a contagem passa a ser feita sobre um ficheiro que o sítio serve
+
+Quatro linhas contavam municípios na CAOP 2025 e publicavam `[a verificar]` no
+excerto, porque uma contagem sobre um ficheiro geoespacial não tem frase para
+transcrever. O que fecha isso não é uma frase melhor: é o conjunto contado.
+
+**A licença foi lida antes de se alojar o que quer que fosse**, e por um agente
+que não escreveu o bloco (BRIEF §2.4). Foi verificada duas vezes: o campo do
+conjunto em dados.gov.pt (`"license": "cc-by"`, «Creative Commons Attribution
+4.0 - CC BY 4.0», organização «Direção-Geral do Território», nos três conjuntos
+Continente, RAA e RAM) e a página «Dados abertos» da DGT
+(`https://www.dgterritorio.gov.pt/dados-abertos`, lida a 18.08.2026), que diz,
+palavra por palavra:
+
+> «A informação geográfica descarregada do Centro de Dados está sujeita a uma
+> licença de utilização CC-BY 4.0, que permite a utilização livre e gratuita dos
+> dados tendo apenas como obrigação a menção de que a entidade proprietária da
+> informação é a Direção-Geral do Território.»
+
+Sem cláusula de partilha nas mesmas condições nem de uso não comercial em
+nenhuma das páginas lidas. A frase está guardada no motor, com o seu endereço e
+a sua data, em `publisher/dados/manifest.json`.
+
+**O zip do Continente tem 111 647 845 bytes e não se aloja.** Aloja-se o extrato
+de que a contagem é feita: a lista das entidades contadas, uma linha por
+município, com o código e o nome tal como a fonte lhes chama, tirada do
+GeoPackage pela mesma leitura que produziu a contagem, com o resumo do zip
+inteiro de onde saiu. Quem descarregar o original confere que o extrato é dele.
+
+O campo, dentro de `document`:
+
+| Campo | O que é |
+| --- | --- |
+| `asset` | `dados/<nome>` e mais nada: o ficheiro em `public/dados/`, servido em `/dados/` |
+| `sha256` · `bytes` | o resumo e o tamanho dos bytes do ficheiro em disco, conferidos pelo validador contra o próprio ficheiro |
+| `licence` · `licence_url` | a licença sob a qual a fonte publica, e o endereço onde ela está escrita |
+| `attribution` | a atribuição na forma que a fonte pede |
+| `extracted_from[]` | os ficheiros da fonte de onde o extrato saiu, cada um com `file`, `url`, `sha256` e `bytes` |
+
+A licença é campo e não comentário porque a obrigação que a CC BY 4.0 impõe a
+quem redistribui é a atribuição, e o portão exige que a página a escreva: um
+ficheiro alojado sem a licença à vista é uma reutilização que este sítio não
+pode defender.
+
+**A porta do `excerpt: null` é estreita, e são três coisas ou nenhuma:** o
+ficheiro alojado completo com `document.kind: "ficheiro"`, a aritmética escrita
+nas duas línguas (que coluna, que filtro, o que se contou), e a recontagem
+mecânica do `check:dados` sobre o ficheiro que a construção pôs em `dist/`. Sem
+as três, o marcador fica. O validador prende os bytes; a conta faz-se na
+construção, porque um validador que lê YAML não conta linhas de um CSV
+construído.
+
+**O total (308) não é alojado**, e é deliberado: a DGT não publica um ficheiro
+com 308 entradas, publica três. A soma já tem resposta no formato, que é derivar
+das três com `check`, e é o que a linha faz.
+
+A recontagem comparou também, pela primeira vez, as duas origens dos 308: os
+nomes dos ficheiros da DGT contra `src/data/caop-centroids.mjs`, de onde o mapa
+se desenha. Se as duas discordarem num nome, o sítio conta um município que não
+desenha, ou desenha um que não conta. Hoje não discordam.
+
+##### `document.computed_over`: o gémeo honesto, para o que não se pode alojar
+
+O PRR não se aloja neste bloco, e a razão é uma questão jurídica que é da
+direção. O conjunto «Dataset Estrutura de Missão PRR - Entidades»
+(`https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1`)
+declara **`notspecified`, «Licença não especificada»**, e os termos da própria
+plataforma (`https://dados.gov.pt/pt/termos-de-utilizacao`) dizem:
+
+> «Todos os dados carregados por organismos do estado são publicados ao abrigo
+> de uma licença Creative Commons CC BY 4.0, exceto se houver uma especificação
+> em contrário.»
+
+> «Os recursos relativos a conjuntos de dados estão abrangidos pela licença que
+> se aplica ao conjunto em que estão inseridos.»
+
+E a página de termos do portal Recuperar Portugal
+(`https://recuperarportugal.gov.pt/termos-e-condicoes/`) diz que «Todos os
+conteúdos […] são propriedade da Recuperar Portugal» e não tem termos de
+reutilização. Um campo «não especificada» ao lado de uma omissão «CC BY 4.0» da
+plataforma não é uma leitura que um construtor faça sozinho. As três leituras
+são de 18.08.2026 e são do agente cego, não deste estádio.
+
+Entra `document.computed_over`, um mapa com `files`, `column` e `filter`, onde
+cada ficheiro leva `file` (o nome que o publicador lhe dá), `snapshot_date`,
+`sha256` e `bytes`. **É registo, não prova.** O leitor não pode refazer a conta a
+partir deste sítio, e por isso o excerto continua `[a verificar]` nas três somas
+e a dívida continua contada. O que muda é que deixa de ser uma soma sobre «um
+ficheiro» e passa a ser uma soma sobre ficheiros identificados pelo resumo dos
+seus bytes: quem tiver o instantâneo pode refazê-la.
+
+**O instantâneo é o de 2026-08-03**, e não o de hoje. As cinco linhas dizem-no
+no campo, com os resumos que a vertical 04 registou quando o leu:
+
+| Ficheiro | Data | Resumo | Bytes |
+| --- | --- | --- | --- |
+| `listagem-de-entidades-prr-20260803.xlsx` | 2026-08-03 | `cc5eac3866217f1f…` | 44 331 540 |
+| `listagem-de-projetos-prr-20260803.xlsx` | 2026-08-03 | `0d2a911eaa584432…` | 41 026 368 |
+
+**Nenhum valor do PRR mexeu neste estádio**, e é porque a reextração contra o
+instantâneo de hoje não correu: o `_fetched_at` da vertical continua em
+2026-08-04. Nenhuma `atualizacao` foi escrita, e escrever uma sem a leitura que
+a justifica seria pior do que não a escrever. Fica aberto, e escrito.
+
+**O endereço morreu duas vezes, e isso é um acontecimento.** O recurso
+`896a8911-c542-4e9c-941c-874a377dc5b3` que as cinco linhas citavam desde
+15.08.2026 devolve 404 na própria API de dados.gov.pt: o endereço «permanente»
+era o recurso de um dia, e o publicador regenera o único recurso do conjunto
+todos os dias com nome datado e id novo. As cinco linhas passam a citar a página
+do conjunto, que é o endereço estável, e a V9 do exportador cresceu de um salto
+para uma **cadeia**: uma mudança de endereço só passa quando as entradas
+`proveniencia` tipadas, as do manifesto e as que o sítio já publica, levam do
+endereço que o motor leu ao que se declara agora e **acabam** ali. Uma entrada
+única do primeiro ao terceiro apagaria o passo que o sítio já publicou, que é um
+facto.
+
+##### `document.url`: a página humana de uma série vem primeiro
+
+57 linhas citam uma série: um pedido a uma API que devolve um campo, e não um
+documento com uma frase impressa. A página dava ao leitor o pedido, que é o
+endereço de uma máquina. Entra `document.url`, o endereço de uma pessoa, e a
+ordem da prova passa a ser: a página da série, o pedido exato, o campo devolvido.
+Só existe onde `document.kind` é `serie`: noutra linha o endereço já é legível
+por pessoas, e um segundo endereço «humano» ao lado seriam dois endereços a
+prometer a mesma coisa.
+
+**Escreve-se só depois de provado, e a prova não é uma leitura.** A leitura cega
+de 18.08.2026 descobriu porquê: o data browser do Eurostat é uma aplicação de
+página única que responde HTTP 200 com título vazio a **qualquer** código,
+verdadeiro ou inventado. Abrir a página não prova nada.
+
+- **Eurostat, duas provas ou campo nenhum.** O código existe se a API de
+  disseminação responder 200 ao pedido da própria linha, e o título vem do
+  índice de conteúdos oficial em texto, descarregado na corrida e guardado no
+  motor com o resumo dos seus bytes (`indicators/data/eurostat-toc.txt`,
+  `b7b8b60ce3b8…`, 9 448 códigos). O endereço humano é o do produto no data
+  browser, que é a forma que o próprio Eurostat publica.
+- **Autárquicas estáticas de 2009, 2013 e 2017, quatro provas juntas.** A página
+  responde 200; lê mesmo o território do endereço, e a chamada
+  `gup('territoryKey')` é **lida da página** e não recordada; o ficheiro de
+  resultados emparelhado da mesma origem para aquela chave responde 200 e nomeia
+  o concelho; e uma chave inventada (`LOCAL-999999`) responde 404 a sério, que é
+  o que diz que a origem não está a responder 200 a tudo.
+
+**As recusas, e são recusas e não dívida.** Um campo opcional ausente não é uma
+dívida: é a ausência de uma promessa que ninguém fez.
+
+| Quem | Porquê |
+| --- | --- |
+| as 8 linhas do INE | `www.ine.pt` não responde a esta máquina: `curl` esgota o tempo aos 20 s nas duas formas de endereço, reproduzido pelo lugar de direção e outra vez aqui. Uma página que não abre não se confirma |
+| as autárquicas de 2021 e de 2025 | são aplicações de página única sem território no endereço |
+
+A recusa de 2021 foi **reprovada nesta auditoria**, porque o BRIEF §2.5 pedia o
+campo e a entrega interrompida não o tinha escrito. O que a reabertura de hoje
+encontrou: a forma estática
+(`…/autarquicas2021/territorio-nacional.html?territoryKey=LOCAL-070500`) devolve
+404; a rota da aplicação (`…/autarquicas2021/resultados/territorio-nacional`)
+devolve 200 com 1 545 bytes, que são exatamente os mesmos 1 545 bytes de `/` e
+de `/index.html`, e acrescentar-lhe `?territoryKey=LOCAL-070500` devolve os
+mesmos 1 545 bytes; e o pacote da aplicação declara duas rotas, `''` e `'**'`,
+nenhum parâmetro de rota, e **zero** ocorrências de `territoryKey`. É a mesma
+armadilha do data browser do Eurostat, e por isso a mesma resposta: sem ligação
+profunda para um concelho, não há página humana desta medição para escrever. A
+de 2025 dá o mesmo, com 9 857 bytes em vez de 1 545.
+
+**Onde cada campo é escrito, e porque são dois caminhos.** As linhas do Eurostat
+são do próprio sítio, e nada guarda os seus bytes: `series_pages.py` edita a
+chave no lugar, byte a byte igual em todo o resto, como o `refresh.py` escreve as
+reconferências. As três das autárquicas atravessam do motor, e uma linha cruzada
+não se edita de fora: o campo entra no `manifest.evora.json` e o exportador
+leva-o sob a **V15**, que confere o que se pode conferir com a rede desligada,
+porque corre dentro do portão de commit: a linha é `kind: serie`, o endereço é
+`https`, é da mesma origem que o endereço que o motor leu, e não traz nenhuma
+corrida de algarismos que esse endereço não traga. É isso que prende o
+território: uma página para o concelho 070500 ao lado de um pedido para 070500 é
+a mesma medição, e uma para 070600 não é.
+
+##### O extrator de largura fixa, e o que ele cortava
+
+Os construtores de livro-razão do 07 e do 08 citam a fonte tomando a agulha que
+encontraram mais um número fixo de caracteres de contexto. Uma largura fixa cai
+onde cai: quinze excertos cruzados acabavam a meio de uma palavra ou de um
+número, e três não podiam ser aparados até ao ponto final anterior porque o valor
+que a linha afirma vem **depois** desse ponto (§4.1).
+
+A regra passa a viver em `core/excerpts.py`, uma só vez, porque dois construtores
+cortavam com o mesmo defeito e uma regra copiada em dois sítios é uma regra que
+se desencontra num deles. Começa na largura fixa; anda para a frente até à
+primeira fronteira de símbolo, gastando no máximo quarenta caracteres; toma o fim
+de frase se ele estiver ao alcance primeiro; e, se nada estiver ao alcance, anda
+para trás. **Uma fronteira é espaço em branco que não tem um algarismo de cada
+lado**, porque o português escreve os milhares com espaço e «4 976 172,24» é um
+símbolo só com dois espaços dentro. A janela só cresce ou encolhe até uma
+fronteira, nunca para lá da agulha, e por isso a afirmação que cada construtor já
+fazia (o valor da linha está dentro da janela) continua a querer dizer o mesmo.
+
+O 07 mantém os seus 160 caracteres de contexto e o 08 os seus 150: as larguras
+nunca foram o defeito, o corte é que era.
+
+**169 excertos mexeram** (107 no 07, 62 no 08) e mais nenhum campo mexeu. Seis
+chegam ao sítio pelas linhas cruzadas:
+
+| Linha do sítio | Antes acabava em | Agora acaba em |
+| --- | --- | --- |
+| `evora-execucao-da-receita-2025` | «…representam 87% do total das receitas enquan» | «…representam 87% do total das receitas enquanto» |
+| `evora-orcamento-2025` | «…evidencia as importâncias » | «…evidencia as importâncias» |
+| `evora-pael-emprestimo` | «…Águas do Centro Alentejo, S.A. (AdCA» | «…Águas do Centro Alentejo, S.A. (AdCA)» |
+| `evora-divida-inicio-mandato-reexpressa` | «…A 31/12/2020 60.282.480,» | «…A 31/12/2020 60.282.480,32» |
+| `evora-divida-total-2024` | «…estabelece no art.º 52.º, n.» | «…estabelece no art.º 52.º, n.º 1, o seguinte:» |
+| `evora-divida-31-10-2013` | «…Dívida Total no Início » | «…Dívida Total no Início» |
+
+As três primeiras são as que a §4.1 nomeava como as que não se podiam aparar. As
+outras três ninguém tinha listado, e uma delas cortava um número ao meio.
+
+**Nenhuma correção se escreve por isto**, e é a decisão do BRIEF: a V3 continua a
+exigir que o excerto seja um pedaço textual do excerto do motor, e continuou a
+passar. Um excerto mais longo é o mesmo apontador com melhor pontaria, não uma
+afirmação diferente. Nenhum valor mexeu.
+
+`core.excerpts_test` entra em `TEST_MODULES` do portão do motor pelo mesmo
+argumento dos dois testes do publicador que já lá estavam: não é um portão novo,
+é o conhecido-positivo de um módulo novo, e é a única conferência da casa que
+consegue ver uma regressão que mova 169 excertos sem mover um valor.
+
+##### As contagens, antes e depois
+
+| | Antes do T3 (`dce6ad1`) | Depois |
+| --- | --- | --- |
+| linhas com `document.hosted` | 0 (o campo não existia) | **3** |
+| linhas com `document.computed_over` | 0 (o campo não existia) | **5** |
+| linhas com `document.url` | 0 (o campo não existia) | **42** (39 do Eurostat, 3 das autárquicas) |
+| ficheiros em `public/dados/` | 0 | **3 CSV**, 23 178 bytes |
+| dívida de proveniência | 12 | **8** |
+| `class="marcador"` nas páginas construídas | 396 | **358** |
+| «[a verificar]» nas páginas construídas | 496 | **458** |
+| ficheiros alojados conferidos pelo portão | 0 | **6** (3 linhas × 2 edições) |
+| blocos de `computed_over` conferidos | 0 | **10** (5 × 2) |
+| páginas de série conferidas | 0 | **84** (42 × 2) |
+| conferências do `export_site_rows_test` | 49 | **62** |
+| excertos cruzados cortados a meio | 6 | **0** |
+| linhas do livro-razão | 132 | 132 |
+
+As quatro linhas que saíram da dívida são as da CAOP: `municipios-continente-`,
+`municipios-acores-`, `municipios-madeira-` e `municipios-portugal-caop-2025`.
+Os números do «antes» da dívida e dos dois marcadores são os que o T2 mediu em
+`dce6ad1`; os do «depois» foram medidos hoje sobre a construção.
+
+A régua dos defeitos, com o que mexeu e o que não:
+
+| | Depois do T2 | Depois do T3 |
+| --- | --- | --- |
+| páginas construídas | 307 | 307 |
+| porta de correções | 307/307 | 307/307 |
+| primeira página: valores sem selo · selos para outra linha | 0 · 0 | 0 · 0 |
+| frases de moldura | 73 distintas · 2 365 | **77 distintas · 2 371** |
+| linhas com `#page=` | 23 de 132 | 23 de 132 |
+| linhas com recorte | 22 de 132 | 22 de 132 |
+| localizadores internos | 0 | 0 |
+
+**As quatro frases de moldura novas são o bloco do ficheiro alojado**, e são o
+preço de o publicar: os rótulos da licença, da atribuição, do tamanho e do
+ficheiro de origem. Cada um deles está ao lado de um campo marcado, e o número
+que dizem vem da linha.
+
+##### Os estragos plantados, cada um reposto
+
+No sítio, o `ledger:check` sobre o formato:
+
+| Estrago | O portão |
+| --- | --- |
+| o ficheiro alojado trocado depois de alojado | «o ficheiro "dados/caop-2025-municipios-madeira.csv" não é o que a linha declara. no livro-razão: bae35fd8… em disco: 65552854… Um ficheiro trocado depois de alojado é a conta a dar outro resultado sem que nada mude no texto.» |
+| o ficheiro alojado em falta | «declara o ficheiro "dados/caop-2025-municipios-madeira.csv" e não há nada em public/dados/caop-2025-municipios-madeira.csv. Um ficheiro que a linha promete e o sítio não serve é uma conta que ninguém pode refazer.» |
+| `document.hosted` numa linha que não serve um ficheiro | «tem "document.hosted" e "document.kind" é "html". Um ficheiro alojado é o extrato de um ficheiro: declare "kind: ficheiro", ou o campo está na linha errada.» |
+| `excerpt: null` sem as três condições (a aritmética em inglês retirada) | «falta "excerpt". Se não é conhecido, escreva "[a verificar]" — nunca um valor plausível.» |
+| `document.computed_over` numa linha que não é ficheiro | «tem "document.computed_over" e "document.kind" é "html". Uma soma faz-se sobre ficheiros: declare "kind: ficheiro", ou o campo está na linha errada.» |
+| um ficheiro de `computed_over` sem resumo | «"document.computed_over.files[0]": "sha256" é undefined. Tem de ser o resumo dos bytes do ficheiro, 64 hexadecimais em minúsculas: sem ele, o nome do ficheiro não identifica nada.» |
+| `document.url` numa linha que não é uma série | «tem "document.url" e "document.kind" é "ficheiro". A página humana existe onde o endereço é um pedido a uma API: numa linha que já cita um documento, o endereço é a página, e um segundo seria a mesma promessa escrita duas vezes.» |
+
+No sítio, o `check:dados` sobre a construção:
+
+| Estrago | O portão |
+| --- | --- |
+| uma linha a mais no CSV alojado, com os bytes e o resumo da linha ajustados para que a guarda dos bytes passasse | «/dados/caop-2025-municipios-madeira.csv: tem 12 linhas de dados e a linha "municipios-madeira-caop-2025" publica 11. O valor de uma linha contada sobre um ficheiro alojado é o número de linhas desse ficheiro, recontado aqui a cada construção.» |
+
+No sítio, o `gate:html` sobre as páginas construídas:
+
+| Estrago | O portão |
+| --- | --- |
+| a página a render uma página de série que a linha não tem | «a página renderiza o campo "document.url" de "evora-populacao-2025", mas a linha não tem esse campo. Um campo que a linha não tem não se mostra — nem vazio, nem com um valor plausível.» |
+| a linha tem página de série e a página esconde-a | «a linha "divida-publica-2025" tem a página da série "https://ec.europa.eu/eurostat/databrowser/view/tipsgo10/default/table?lang=en" e a página não a mostra.» |
+| um ficheiro de `/dados/` oferecido numa página cuja linha não o declara | «a página de "evora-populacao-2025" oferece o ficheiro "/dados/caop-2025-municipios-madeira.csv" e a linha não tem "document.hosted". Um conjunto de dados que a linha não declara não é a prova desta conta.» |
+| a página de uma linha alojada a oferecer o ficheiro de outra | «a página de "municipios-madeira-caop-2025" oferece "/dados/caop-2025-municipios-acores.csv" e o ficheiro desta linha é "/dados/caop-2025-municipios-madeira.csv". A conta desta linha faz-se sobre o ficheiro que ela declara.» |
+| a atribuição que a licença obriga escondida da página | «a linha "municipios-madeira-caop-2025" aloja "dados/caop-2025-municipios-madeira.csv" e a página não escreve "document.hosted.attribution".» |
+
+No motor, o `export_site_rows_test.py`, que corre no portão de commit:
+
+| Estrago | O exportador |
+| --- | --- |
+| um endereço declarado a que nenhuma cadeia chega | «chain of typed `proveniencia`» |
+| o manifesto a declarar o meio de uma cadeia que o sítio já passou | «chain of typed `proveniencia`» |
+| `computed_over` a nomear um ficheiro que a vertical nunca registou | «which Technical Source/raw/prr_evora_components.json does not record» |
+| `computed_over` a nomear uma coluna que não aparece em lado nenhum | «A column is read, never remembered» |
+| um filtro com um número que ninguém leu | «A filter is read, never remembered» |
+| `computed_over` numa linha que não serve um ficheiro | «A sum is computed over files» |
+| `computed_over` sem ficheiro nenhum | «computed over nothing is not a sum» |
+| uma página humana numa linha que não é série | «The human page exists where the address is a request to an API» |
+| uma página humana noutro anfitrião | «somebody else's promise» |
+| uma página humana com um identificador que o pedido não tem | «the identifiers have to be the same» |
+| uma página humana que não é https | «is not https» |
+
+E a via positiva: as cinco linhas do PRR com os ficheiros, as datas e os resumos
+que a vertical registou; as três das autárquicas com a página do seu próprio
+território; e uma linha que não é soma nem série a não ganhar bloco nenhum.
+
+No motor, o `series_pages.py --prove-gates`: **PASSOU**, 8 conferências, com o
+conhecido-positivo e o conhecido-negativo de cada prova (`tipsgo10` 200 e com
+título, `tipsxx99` e `tipsho77` 404 e sem título, a chave real do SGMAI 200 e a
+inventada 404), mais a sondagem ao INE, que continua a não responder.
+
+No motor, o `core.excerpts_test` dentro do portão: com a fronteira estragada de
+propósito (a função a aceitar qualquer espaço em branco, incluindo o dos
+milhares), o teste diz «mid-number: 'Total da receita 4 976' != 'Total da receita
+4 976 172,24'» e o portão diz «GATE excerpts_test FAIL» e recusa o commit.
+
+##### O que fica aberto, e porquê
+
+- **O instantâneo do PRR não foi refeito.** A reextração contra o instantâneo de
+  hoje, que o BRIEF §2.4 (b) pede, não correu: a vertical 04 continua no
+  instantâneo de 2026-08-03, lido a 2026-08-04. Os cinco valores publicados são
+  os desse instantâneo e dizem-no. Enquanto não correr, não se sabe se mexeram.
+- **O ficheiro do PRR não se aloja, e espera a direção.** A licença do conjunto
+  diz «não especificada» e os termos da plataforma dizem CC BY 4.0 «exceto se
+  houver uma especificação em contrário». É uma questão jurídica, é da direção,
+  e tem o seu caminho no `legal/counsel-brief.md`. Até ela ser respondida, as
+  três somas do PRR ficam com `[a verificar]` e contam para a dívida.
+- **As oito linhas do INE ficam sem página humana**, e por **estarem por medir**,
+  não por serem defeito: `www.ine.pt` não respondeu a esta máquina em nenhuma das
+  tentativas de hoje. Mede-se noutro dia, com um pedido isolado, como a linha do
+  INE que a §4.1 já lá tinha.
+- **As autárquicas de 2021 e de 2025 ficam sem página humana**, e agora com a
+  razão provada: o pacote da aplicação de 2021 não declara nenhum parâmetro de
+  território, e as duas devolvem a mesma casca a qualquer rota. Não é dívida.
+- **`indice-de-divida-limite-legal` continua sem recorte**, como o T2 deixou, e
+  continuará enquanto o excerto da sua linha no motor não fixar ficheiro, página
+  e frase.
+- **Os documentos de estudo do 07 e do 08 ainda citam a janela antiga.** Os
+  quatro documentos publicados embutem os excertos na sua ilha de recibos, e
+  **338** deles (169 excertos × 2 edições) ficaram fora de passo com o
+  livro-razão do motor. Regenerá-los é republicar quatro edições cujos bytes o
+  sítio prende por resumo em `studies-src/manifest.yml`, com o seu registo de
+  descarga e o seu rasto: é uma decisão de publicação e não um passo de
+  construção, e por isso fica escrita aqui em vez de ser feita de passagem. O
+  portão do motor não vê esta diferença (compara valores, não excertos), e a
+  próxima corrida do `make_html.py` de cada vertical move-os todos de uma vez.
+- **As duas medidas que o T2 deixou** continuam onde estavam: as dimensões da
+  imagem do recorte não existem em campo nenhum, e as 110 linhas sem recorte
+  continuam a não ser dívida.
 
 #### T4 · o conjunto de dados, o `lastmod`, o portão e os registos
 
@@ -6253,6 +6648,25 @@ onde a página da linha passa a ser a prova, e não uma ficha sobre a prova.
 | O extractor de citações do motor corta a meio | 15 excertos cruzados estavam cortados a meio de palavra ou de número; 12 puderam ser aparados no último ponto final, 3 **não** (`evora-execucao-da-receita-2025`, `evora-orcamento-2025`, `evora-pael-emprestimo`), porque o valor da linha aparece depois desse ponto. | O corte é do lado do motor, a uma largura fixa. Alargá-lo muda excertos de estudos já publicados e conferidos byte a byte; é trabalho do motor, não do sítio. |
 | O PRR: o instantâneo lido já não é servido | As cinco linhas do PRR foram somadas sobre o ficheiro de 2026-08-03, que devolve 404. O publicador substitui o ficheiro todos os dias e não arquiva o anterior. **Se os valores de Évora mudaram entre esse instantâneo e o de hoje é coisa que não se pode saber.** | Refazer a soma sobre o ficheiro de hoje é uma leitura nova, com data nova, e muda cinco valores publicados. É trabalho de aquisição no motor, com o seu registo de actualização — não um remendo de endereço. |
 | A linha do INE que não se conseguiu medir | O `json_indicador` do INE serviu o primeiro pedido e depois devolveu 429 e esgotou o tempo em três tentativas. Não se consegue separar o INE a limitar a nossa sondagem de um bloqueio a quem lê. | Fica **por medir**, e não como defeito. Mede-se com um pedido isolado, noutro dia. |
+
+**O alojamento do instantâneo do PRR espera uma decisão da direção sobre a
+licença** (18.08.2026, §1.47, T3). Quatro das sete linhas desta tabela fecharam
+no T3, que são as da CAOP: a licença da DGT foi lida na página da fonte por um
+agente que não escreveu o bloco, é CC BY 4.0 sem cláusula de partilha nem de uso
+não comercial, o extrato contado está alojado em `public/dados/` com o resumo do
+zip de onde saiu, e o `check:dados` reconta as linhas a cada construção. **As
+três do PRR não fecharam, e não é matéria de construção**: o conjunto em
+dados.gov.pt declara `notspecified`, «Licença não especificada», e os termos da
+plataforma dizem que os organismos do Estado publicam sob CC BY 4.0 «exceto se
+houver uma especificação em contrário». Um campo «não especificada» ao lado
+dessa omissão é uma questão jurídica, e vai com o `legal/counsel-brief.md`. Até
+ela ser respondida não se redistribui nada, as três somas ficam com
+`[a verificar]` e contam para a dívida, e o que a linha diz é sobre que ficheiros
+foi calculada, com a data do instantâneo e o resumo de cada um
+(`document.computed_over`), que é registo e não prova. **A reextração do PRR
+contra o instantâneo de hoje também não correu**: a vertical 04 continua no
+instantâneo de 2026-08-03, e enquanto não correr não se sabe se os cinco valores
+mexeram.
 
 **Fase 1 e 2 · a voz e o desenho.** Nada disto é defeito; é matéria por decidir,
 e por isso não foi tocada neste bloco.

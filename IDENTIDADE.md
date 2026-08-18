@@ -384,10 +384,12 @@ escrevê-la assim. **Nenhuma distância nova.** O desenho de distância vive no
 instrumento, onde há uma escala partilhada, e não nas células.
 
 **A página de linha é um recibo, e esta é a ordem.** O valor com o seu próprio
-selo, a unidade e o id; uma frase de atribuição; o bloco da prova; o campo
-devolvido ou o excerto; o pedido exato ou o endereço; as verificações numa tabela
-de duas linhas, «Lido a» e «Reconferido a», com o marcador quando a releitura
-falta; as correções. A coluna do aparelho tem 300px e leva a proveniência em
+selo, a unidade e o id; uma frase de atribuição; a página humana da série, quando
+a linha cita uma série e essa página está provada; o bloco da prova, com o
+recorte e, numa linha contada sobre um ficheiro, o ficheiro alojado com a sua
+licença e a sua atribuição; o campo devolvido ou o excerto; o pedido exato ou o
+endereço; as verificações numa tabela de duas linhas, «Lido a» e «Reconferido a»,
+com o marcador quando a releitura falta; as correções. A coluna do aparelho tem 300px e leva a proveniência em
 campos, o estado da proveniência, o acesso aos dados, esta linha noutro sítio e a
 porta das correções. **Sem «como se lê este recibo»**: uma interface que explica
 a interface antes de dar a prova está a adiar a prova.
