@@ -306,7 +306,7 @@ const CAMPOS_CORRECAO_PROVENIENCIA = [...CAMPOS_CORRECAO, 'field'];
 
 /**
  * ---------------------------------------------------------------------------
- * `verifications[]` — as reconferências independentes de uma linha
+ * `verifications[]`: as reconferências independentes de uma linha
  * ---------------------------------------------------------------------------
  *
  * O único campo de tempo que uma linha tinha era `access_date`, «lido a»: a
@@ -315,7 +315,7 @@ const CAMPOS_CORRECAO_PROVENIENCIA = [...CAMPOS_CORRECAO, 'field'];
  * apareciam com a mesma cara. Este campo guarda a segunda leitura: quando, por
  * que caminho, por quem, e com que resultado.
  *
- * NÃO SE ESCREVE À MÃO. Uma entrada nasce de uma releitura que aconteceu — o
+ * NÃO SE ESCREVE À MÃO. Uma entrada nasce de uma releitura que aconteceu: o
  * exportador do motor escreve as das linhas cruzadas a partir do registo da
  * releitura, e o `indicators/refresh.py` escreve as das linhas de base a partir
  * das canárias que corre. Um campo de reconferência preenchido à mão é a
@@ -775,12 +775,12 @@ export function validateLedger() {
     }
 
     /* -----------------------------------------------------------------------
-     * `document.page` — a página onde está a frase que o excerto transcreve
+     * `document.page`: a página onde está a frase que o excerto transcreve
      * -----------------------------------------------------------------------
      *
      * Passa a ser a ÚNICA origem da página. Até 18.08.2026 o número era lido
      * do localizador e de mais lado nenhum, e o fragmento `#page=N` do endereço
-     * derivava daí; hoje é o contrário — o campo declara-se, o fragmento tem de
+     * derivava daí; hoje é o contrário: o campo declara-se, o fragmento tem de
      * o repetir, e o localizador não pode dizer outra coisa. Uma página não se
      * lê de duas maneiras.
      *
@@ -794,7 +794,7 @@ export function validateLedger() {
       if (temPagina) {
         if (typeof pag !== 'number' || !Number.isInteger(pag) || pag < 1) {
           errors.push(
-            `${onde} "document.page" é ${JSON.stringify(pag)}. Tem de ser um inteiro ≥ 1 — ` +
+            `${onde} "document.page" é ${JSON.stringify(pag)}. Tem de ser um inteiro ≥ 1, ` +
               `a página do documento onde está a frase que o "excerpt" transcreve.`,
           );
         }
