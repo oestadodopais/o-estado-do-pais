@@ -1813,6 +1813,16 @@ a.src-chip.is-unverified:hover::before {
   gap: clamp(26px, 3.4vw, 38px);
   min-width: 0;
 }
+/* O `min-width: 0` da coluna não chega: um item de grelha tem `min-width:
+   auto`, e por isso a largura mínima do item mais largo é a largura da pista.
+   Uma cadeia que não parte deixava de transbordar de si própria e passava a
+   levar a coluna inteira com ela, por cima do aparelho. Com isto, um bloco que
+   não parta transborda de si e mais nada — e é visto pela medição, que é
+   contra a caixa de cada elemento e não contra a página. */
+.linha-corpo > *,
+.municipio-corpo > * {
+  min-width: 0;
+}
 
 /* É um <section>, e a regra global dá-lhes um padding de topo de página
    inteira. Aqui são blocos dentro de uma coluna: o fio chega. */
@@ -1898,6 +1908,28 @@ a.src-chip.is-unverified:hover::before {
   text-transform: uppercase;
   color: var(--muted);
   display: block;
+}
+
+/* O FICHEIRO ALOJADO E A CONTA SOBRE FICHEIROS (bloco T3).
+
+   Estes dois blocos escrevem o que a fonte nomeia e não o que a casa escreve:
+   nomes de ficheiro, resumos, colunas e filtros. São cadeias longas com poucos
+   sítios por onde partir, e o filtro do PRR tem 671px numa linha só. Partem
+   onde for preciso, dentro da coluna de leitura, como o endereço já parte. Sem
+   isto ficavam por dentro da largura da coluna só por sorte da cadeia.
+
+   Nada de caixa nem de cor nova (IDENTIDADE §2 e §6): é só quebra de linha. */
+.linha-alojado,
+.linha-calculado {
+  min-width: 0;
+}
+.linha-alojado-ficheiro,
+.linha-alojado-licenca,
+.linha-alojado-origem,
+.linha-calculado-lista,
+.linha-calculado-conta {
+  overflow-wrap: anywhere;
+  min-width: 0;
 }
 .linha-expressao,
 .linha-deriva {
@@ -2229,12 +2261,21 @@ a.src-chip.is-unverified:hover::before {
 .registo-linha:last-child {
   border-bottom: 0;
 }
+/* O «antigo → novo» de uma entrada. Era `white-space: nowrap`, e o que essa
+   linha protegia era o número: «166 639 411,36» não se parte no espaço dos
+   milhares. Não é preciso o `nowrap` para isso, porque o espaço dos milhares
+   que o sítio escreve é U+202F, que já não parte; o que o `nowrap` fazia era
+   pôr um endereço de 1.188px numa linha só, e com ele a largura mínima da
+   entrada inteira. Num item de grelha essa largura mínima é a da pista, e a
+   coluna do corpo entrava na do aparelho (§1.48). Parte onde for preciso,
+   como o endereço da agenda passou a partir (§1.43). */
 .registo-salto {
   font-family: var(--f-mono);
   font-variant-numeric: tabular-nums;
   font-size: 12.5px;
   color: var(--ink);
-  white-space: nowrap;
+  overflow-wrap: anywhere;
+  min-width: 0;
 }
 .registo-motivo-curto {
   flex: 1 1 22ch;
