@@ -52,8 +52,9 @@ provisório.» está **certo** com duas letras: o 18 é uma medição, o 2024 é
 data. A letra distingue-os, e essa distinção é o produto.
 
 **A escala da leitura, desde a v2.** A prosa das camadas de leitura passa a 17 a
-18px de base, com entrelinha 1,55 (`design/DECISAO.md`). Cresce onde se lê a
-sério: leitura breve, Fundo, as dez regras do Método, a frase de atribuição de
+18px de base, com entrelinha entre 1,55 e 1,6 (`design/DECISAO.md` escreve 1,55;
+a de hoje é 1,6 sobre 16px, e a entrelinha absoluta não desce). Cresce onde se
+lê a sério: leitura breve, Fundo, as dez regras do Método, a frase de atribuição de
 uma linha. A mobília não cresce, porque continua a ser mobília: a diferença de
 escala entre a prosa e o aparelho é o que faz a página ler-se como instrumento e
 não como jornal.
@@ -96,8 +97,10 @@ Um tipo de página novo escolhe **uma destas três**. Não inventa a quarta.
 - **A · Rótulo e corpo**, coluna de rótulo de 220px, corpo a 68ch. Para texto com
   secções nomeadas. Em uso: `/metodo`, `/a-verificar`, `/sobre`, `/correcoes`
   (`DECISIONS.md` §1.39) e `/agenda` (§1.40). O Sobre é o caso mais magro desta
-  disposição; a agenda é o caso mais cheio, **fica em A**, e o rótulo do estado
-  passa a ser o quadro de estados de §7.
+  disposição; a agenda é o caso mais cheio e **fica em A**: as secções por
+  estado continuam com o rótulo na coluna e os itens no corpo, e ganham no topo
+  o quadro de estados de §7, que é um instrumento dentro da página (abaixo) e
+  não uma quarta disposição.
 - **B · Corpo e aparelho**, corpo a 68ch, coluna de 300px com o aparelho:
   proveniência, ressalvas, contagens, ligações ao livro-razão, o que a página
   **não** sabe. Para páginas de leitura e páginas de linha do livro-razão. Em
@@ -156,11 +159,13 @@ O Método promete, nas duas línguas: *«O selo de proveniência junto a cada n�
    leitor com vista via só um título em cinzento: a promessa mais exposta do
    sítio era a mais fácil de não ver.
 5. **A etiqueta do estudo não se repete em cada célula.** Aparece no foco e no
-   `title`, e na forma longa, que é a página de linha. No cabeçalho aparecem o
-   glifo e a palavra, sem a etiqueta e sem o marcador, que ficam para leitores de
-   ecrã. Este ponto 5 revê o ponto 4 da v1, que a 16.08.2026 tinha deixado o
-   cabeçalho só com o glifo (`DECISIONS.md` §1.37): a etiqueta era o que
-   estorvava, e não a palavra. Revisto pela decisão de desenho de 16.08.2026.
+   `title`, e na forma longa, que é a página de linha. No cabeçalho não há hoje
+   selo nenhum: as contagens saíram a 16.08.2026 (`DECISIONS.md` §1.39) e a
+   mobília leva números do sítio, com porta e sem selo (§10). Se um valor do
+   livro-razão voltar ao cabeçalho, o selo é o glifo e a palavra, sem a etiqueta
+   e sem o marcador, que ficam para leitores de ecrã. Este ponto 5 revê o ponto 4
+   da v1, que a 16.08.2026 tinha deixado o cabeçalho só com o glifo (§1.37): a
+   etiqueta era o que estorvava, e não a palavra.
 
 ---
 
@@ -198,7 +203,8 @@ velho**, e não só o feliz.
 - **O quadro de estados da agenda é um estado desenhado.** Quatro colunas, «Em
   curso · A seguir · Concluído · Retirado», cada uma com a sua contagem. Uma
   coluna sem itens diz que está vazia e não desaparece, como «Retirado» já faz
-  hoje.
+  hoje. As contagens entram por `data-prova` (as chaves `agenda_*` da prova) e
+  cada uma tem por porta a âncora da sua secção na mesma página (§10).
 
 ---
 
@@ -252,7 +258,8 @@ de folha de estilos de §1 e §2 (nenhum literal de cor fora de `tokens.css`;
 `--yellow` nunca como `color`; a família serifada só em `.wordmark`) e o marcador
 só na sua classe (§6) **não têm hoje nenhuma conferência**: esperam o
 `gate:identidade`, que é a fase 4 e ainda não existe como script. Até lá
-seguram-se por atenção, e a v1 dizia-as conferidas quando não estavam.
+seguram-se por atenção; a v1 anunciava-as como conferidas no build por esse
+portão, e o portão nunca chegou a existir.
 
 **O que o portão não vê**, e continua a ser trabalho de quem revê: se a segunda
 coluna está a fazer alguma coisa (§3), se um instrumento tem as três camadas
@@ -363,9 +370,11 @@ leitor comparar ou acreditar em coisa que o sítio não pode provar.
 **O painel da primeira página.** Grelha 4/2/1, com economia de texto e **sem
 barras por célula**: barras normalizadas cada uma ao seu limiar convidam a uma
 comparação que não é válida. Onde um quadro institucional publica um limiar, a
-célula leva uma linha mono, «limiar 9 % · acima» ou «abaixo», com o limiar no
+célula leva uma linha mono, «limiar 60% · acima» ou «abaixo», com o limiar no
 motivo `limiar-do-quadro` e a palavra de comparação derivada de dois números que
-já existem. **Nenhuma distância nova.** O desenho de distância vive no
+já existem. A percentagem escreve-se colada ao número, como o painel já escreve
+«limiar 60%»; onde o sítio a escrevia com espaço («9 %», na agenda) passa a
+escrevê-la assim. **Nenhuma distância nova.** O desenho de distância vive no
 instrumento, onde há uma escala partilhada, e não nas células.
 
 **A página de linha é um recibo, e esta é a ordem.** O valor com o seu próprio
