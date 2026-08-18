@@ -2199,21 +2199,70 @@ a.src-chip.is-unverified:hover::before {
   color: var(--muted);
 }
 
-/* A linha do tempo das administrações. */
-.mun-tempo {
+/* A BANDA DOS MANDATOS (v2, IDENTIDADE.md §11).
+
+   Cada mandato ocupa no desenho o tempo que ocupou. Sem acento novo: um
+   mandato não é uma medição, e por isso a banda distingue-se com fundo, fio e
+   letra monoespaçada, que é o que a §2 manda usar quando é preciso distinguir
+   sem matiz. O mandato em curso não tem fim publicado e por isso não tem aresta
+   direita: fecha a tracejado, a mesma língua com que o selo diz que falta um
+   campo (§7, o estado desenhado).                                            */
+.mun-banda {
   display: grid;
+  gap: 10px;
+  margin-bottom: 18px;
 }
-.mun-tempo-eixo {
-  display: flex;
-  justify-content: space-between;
-  gap: 6px;
-  border-bottom: 1px solid var(--rule-strong);
-  padding: 0 0 6px;
+.mun-banda-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+.mun-banda-seg {
+  fill: var(--paper-3);
+  stroke: var(--rule-strong);
+  stroke-width: 1;
+}
+.mun-banda-seg.is-aberto {
+  fill: none;
+  stroke-dasharray: 3 3;
+}
+.mun-banda-lista {
   font-family: var(--f-mono);
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.1em;
-  color: var(--muted);
+  letter-spacing: 0.12em;
+  fill: var(--ink);
+}
+.mun-banda .tk {
+  font-family: var(--f-mono);
+  font-size: 9px;
+  fill: var(--muted);
+  letter-spacing: 0.06em;
+}
+.mun-banda-legenda {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 16px;
+}
+.mun-banda-porta {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-underline-offset: 3px;
+  text-decoration-color: var(--rule-strong);
+}
+.mun-banda-porta:hover {
+  text-decoration-color: currentColor;
+}
+
+/* A linha do tempo das administrações. */
+.mun-tempo {
+  display: grid;
 }
 .mun-mandato {
   border-bottom: 1px solid var(--rule);
