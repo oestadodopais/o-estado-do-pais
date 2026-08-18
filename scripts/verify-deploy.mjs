@@ -10,14 +10,23 @@
  * Três coisas têm de coincidir:
  *
  *   no ar  ==  origin/main      o publicado é o que foi empurrado
- *   local  ==  origin/main      não há trabalho por empurrar
+ *   main   ==  origin/main      não há trabalho por empurrar
  *
  * Sai com código != 0 em qualquer divergência, para servir de portão de
  * lançamento. Um `version.json` sem commit é FALHA, não é desculpa: o sítio não
  * consegue dizer de onde veio, e isso é exactamente o que esta conferência
  * existe para não deixar passar.
  *
+ * A SEGUNDA PERGUNTA COMPARAVA `HEAD` E DIZIA «main» (v2, DECISIONS §1.43). De
+ * um ramo de trabalho, `HEAD` nunca é `origin/main`, e a conferência anunciava
+ * que «o "main" local está N commits à frente» quando `main` estava exactamente
+ * onde devia: a mensagem nomeava um ramo e media outro. Passa a ler o ramo que
+ * o `--ref` nomeia, e um `main` local que não exista é falha e não silêncio.
+ * `HEAD` continua impresso, porque saber onde se está é útil; o que ele já não
+ * faz é decidir.
+ *
  * Uso:  node scripts/verify-deploy.mjs [--host <dominio>] [--ref <git-ref>]
+ *                                      [--branch <ramo-local>]
  */
 import { execFileSync } from 'node:child_process';
 import { SITE_HOST } from '../site.config.mjs';
@@ -34,6 +43,11 @@ const arg = (nome, fallback) => {
 };
 const host = arg('--host', SITE_HOST);
 const ref = arg('--ref', 'origin/main');
+/* O ramo LOCAL que a segunda pergunta compara. Por defeito é o que o `--ref`
+   nomeia («origin/main» → «main»): é esse que se empurra, e não onde se está a
+   trabalhar. `--branch` existe para se poder provar esta conferência contra um
+   ramo descartável, sem escrever um commit no `main`. */
+const ramoLocal = arg('--branch', ref.replace(/^[^/]+\//, ''));
 
 const erros = [];
 
@@ -54,8 +68,18 @@ try {
 }
 
 const esperado = git(['rev-parse', ref]);
-const local = git(['rev-parse', 'HEAD']);
+const cabeca = git(['rev-parse', 'HEAD']);
+/* `refs/heads/<ramo>` e não `<ramo>`: um nome solto podia resolver-se contra uma
+   etiqueta ou contra o remoto, e a pergunta é sobre o ramo local. */
+const local = git(['rev-parse', `refs/heads/${ramoLocal}`]);
 if (!esperado) erros.push(`"git rev-parse ${ref}" não devolveu nada.`);
+if (!local) {
+  erros.push(
+    `não existe um ramo local "${ramoLocal}" para comparar com ${ref}.\n` +
+      `      A pergunta é se há trabalho por empurrar, e sem o ramo não há resposta: ` +
+      `um silêncio aqui é o que deixou o sítio para trás a 2026-08-13.`,
+  );
+}
 
 /* A CDN serve o ficheiro tal como estava; sem isto podia responder-se a esta
    pergunta com uma resposta anterior à pergunta. */
@@ -81,9 +105,10 @@ try {
 
 console.log();
 console.log(cinza(`  o que está no ar · ${host}`));
-console.log(cinza(`    no ar        ${publicado ? publicado.slice(0, 7) : '—'}${stamp?.construido_em ? `  (${stamp.construido_em})` : ''}`));
-console.log(cinza(`    ${ref.padEnd(12)} ${esperado ? esperado.slice(0, 7) : '—'}`));
-console.log(cinza(`    local HEAD   ${local ? local.slice(0, 7) : '—'}`));
+console.log(cinza(`    no ar        ${publicado ? publicado.slice(0, 7) : '·'}${stamp?.construido_em ? `  (${stamp.construido_em})` : ''}`));
+console.log(cinza(`    ${ref.padEnd(12)} ${esperado ? esperado.slice(0, 7) : '·'}`));
+console.log(cinza(`    ${ramoLocal.padEnd(12)} ${local ? local.slice(0, 7) : '·'}`));
+console.log(cinza(`    HEAD         ${cabeca ? cabeca.slice(0, 7) : '·'}${cabeca && cabeca !== local ? '  (onde se está a trabalhar; não decide nada)' : ''}`));
 console.log();
 
 if (publicado && esperado && publicado !== esperado) {
@@ -95,7 +120,7 @@ if (publicado && esperado && publicado !== esperado) {
 if (local && esperado && local !== esperado) {
   const à_frente = git(['rev-list', '--count', `${esperado}..${local}`]);
   erros.push(
-    `o "main" local está ${à_frente ?? '?'} commit(s) à frente de ${ref}: há trabalho por empurrar.\n` +
+    `o "${ramoLocal}" local está ${à_frente ?? '?'} commit(s) à frente de ${ref}: há trabalho por empurrar.\n` +
       `      Foi assim que o sítio ficou para trás duas vezes a 2026-08-13.`,
   );
 }
