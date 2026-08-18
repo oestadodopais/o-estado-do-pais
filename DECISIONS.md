@@ -5167,14 +5167,46 @@ pergunta já não muda sem emenda registada, e a recolha ainda não começou. O 
 «esta ainda não foi selada» por baixo da pergunta. A pergunta não foi tocada: o
 `freeze` acrescentou dois campos e mais nada.
 
-**A data que a página escreve ao lado do selo é a do registo, e não a do selo, e
-isso fica em aberto.** A A10 do exportador compara `registo_previo_em` com o
-campo `registered` do próprio registo prévio, que é 2026-08-16, o dia em que a
-pergunta foi registada; o `freeze` não escreve data nenhuma. A página escreve
-«Registo prévio selado a 2026-08-16», e o selo é de 2026-08-18. Fica escrito aqui
-em vez de ser corrigido de passagem: mudar isto é mudar o que o `freeze` escreve
-e o que a A10 compara, dos dois lados da fronteira, e isso é decisão da direção e
-não afinação de quem constrói.
+**A data ao lado do selo era a do registo, e não a do selo. Foi corrigida no
+mesmo dia, dos dois lados da fronteira.** Ao construir isto apareceu uma data
+falsa: a A10 comparava `registo_previo_em` com o campo `registered` do registo
+prévio, que é 2026-08-16, o dia em que a pergunta foi registada, e o `freeze` não
+escrevia data nenhuma. A página escreveu, durante a construção, «Registo prévio
+selado a 2026-08-16» sobre um selo feito a 2026-08-18. A direção decidiu corrigir
+antes de isto sair, e não publicar com a data errada. Está feito assim:
+
+- **O selo passa a ter data própria.** O `freeze` escreve `sealed_at` com o dia
+  em que sela, fora do núcleo selado: datar um selo não é mudar a pergunta, e a
+  data dentro do resumo faria cada selo mudar aquilo que sela. Um selo feito antes
+  desta mudança não é resselado, porque resselar seria certificar hoje uma coisa
+  que ninguém fez hoje, e porque moveria a contagem de emendas: é reportado como
+  dívida, e a data escreve-se com `python3 -m core.prereg stamp-seal-date`,
+  guardado para recusar um registo por selar, um núcleo que se mexeu desde o selo,
+  e uma segunda data. O selo da habitação ficou datado por esse caminho, e o
+  núcleo não foi tocado.
+- **A A10 passa a pedir a data certa.** Um registo selado é datado pelo
+  `sealed_at` e um só iniciado pelo `registered`. A recusa nomeia as duas datas,
+  porque as duas são reais e estão as duas no ficheiro: quem apenas confira que o
+  campo é uma data não vê a troca.
+- **A página não precisou de mudar.** O rótulo já escolhia pelo estado, «Registo
+  prévio iniciado a» ou «Registo prévio selado a», e o portão já o comparava com a
+  sua própria cópia desde a §1.42. O que mudou foi a data que o registo lhe dá. A
+  página escreve hoje «Registo prévio selado a 2026-08-18» e «Pre-registration
+  sealed on 2026-08-18».
+
+**Os três estragos, cada um reposto:**
+
+| Estrago | O que fecha |
+| --- | --- |
+| um registo selado sem `sealed_at` | o `core.prereg check` reporta-o: «sealed with no `sealed_at`», e a razão, «the seal has no date, and anything publishing it has to fall back on `registered`, which is a different day» |
+| um registo selado datado pelo dia do registo | o exportador fecha: «registo_previo_em is '2026-08-16' and the registration's `sealed_at` is '2026-08-18' (A10) ... Publishing one date under the other's label is a false date on a public page» |
+| a página a escrever «selado a» sobre um registo `iniciado` | o portão fecha, nas duas edições: «o item "habitacao" diz o registo prévio com "Registo prévio selado a 2026-08-18, por selar" e o estado "iniciado" escreve-se "Registo prévio iniciado a"» |
+
+O primeiro não teve de ser plantado: era o estado a sério do ficheiro entre o selo
+e a correção, e a frase acima é a que o `check` deu sobre ele. As conferências do
+motor ficam em 20 no `prereg_test` e 44 no `export_agenda_test`. Nenhuma entrada
+de histórico mudou nesta correção, e por isso os resumos do registo da travessia
+ficam onde estavam: para a H4, o que atravessou continua a ser um prefixo.
 
 A primeira entrada do histórico deste item diz que a direção ainda não tinha lido
 a pergunta. É história, e fica como foi escrita. O que se acrescenta é a entrada
