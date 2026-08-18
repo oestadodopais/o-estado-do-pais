@@ -15,6 +15,7 @@ document:
   title: "Children aged less than 3 years in formal childcare"
   edition: "tepsr_sp210"
   kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/tepsr_sp210/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tepsr_sp210?format=JSON&lang=EN&geo=PT"
 access_date: "2026-08-12"
 reference_date: "2025"

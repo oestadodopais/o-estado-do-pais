@@ -15,6 +15,7 @@ document:
   title: "Net international investment position - annual data"
   edition: "tipsii10"
   kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/tipsii10/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsii10?format=JSON&lang=EN&geo=PT&unit=PC_GDP&partner=WRL_REST"
 access_date: "2026-08-12"
 reference_date: "2025"

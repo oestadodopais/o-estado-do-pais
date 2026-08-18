@@ -15,6 +15,7 @@ document:
   title: "Nominal unit labour cost per hour worked"
   edition: "tipslm10"
   kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/tipslm10/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm10?format=JSON&lang=EN&geo=PT&unit=PCH_3Y"
 access_date: "2026-08-12"
 reference_date: "2025"

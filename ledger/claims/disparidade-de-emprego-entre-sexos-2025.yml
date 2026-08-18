@@ -15,6 +15,7 @@ document:
   title: "Gender employment gap"
   edition: "tesem060"
   kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/tesem060/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem060?format=JSON&lang=EN&geo=PT"
 access_date: "2026-08-12"
 reference_date: "2025"

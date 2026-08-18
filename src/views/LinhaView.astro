@@ -118,6 +118,20 @@ const tipoDoDocumento = claim.document?.kind ?? null;
 const ehSerieDeDados = tipoDoDocumento === 'serie';
 
 /**
+ * A PÁGINA HUMANA de uma série, e a razão de ela vir primeiro (bloco T3).
+ *
+ * O `source_url` de uma linha de série é o pedido exato que foi feito a uma API:
+ * é o que prova o número, e é ilegível para quem não é uma máquina. A página do
+ * indicador no sítio de quem o publica é a porta principal para uma pessoa, e a
+ * ordem da prova passa a ser: a página, o pedido, o campo devolvido.
+ *
+ * O campo só existe depois de o motor o provar. Onde não existe não se desenha
+ * nada (IDENTIDADE.md §6): fica o pedido, como sempre esteve, e um campo
+ * opcional ausente não é dívida nem marcador.
+ */
+const paginaDaSerie = claim.document?.url ?? null;
+
+/**
  * A página do documento, quando a linha a declara.
  *
  * Desde 18.08.2026 é o campo `document.page` — a página onde está a frase que
@@ -335,6 +349,23 @@ const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undef
               </>
             ))}
           </p>
+        )
+      }
+
+      {/* ------------------------------------------- iii(a) · a porta humana
+
+          A página do indicador vem antes do pedido exato: uma é para quem lê,
+          a outra é para quem confere. */}
+      {
+        paginaDaSerie && (
+          <section class="linha-bloco" aria-labelledby="serie">
+            <h2 class="linha-bloco-titulo" id="serie">{s.prov.paginaDaSerie}</h2>
+            <p class="linha-pagina-serie">
+              <a class="ligacao-externa" href={paginaDaSerie} rel="noopener noreferrer external">
+                <CampoDaLinha id={id} campo="document.url" valor={paginaDaSerie} lang={lang} />
+              </a>
+            </p>
+          </section>
         )
       }
 

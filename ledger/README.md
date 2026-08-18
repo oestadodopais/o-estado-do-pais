@@ -134,7 +134,9 @@ verifications:
     `filter`; estiver numa linha cujo `document.kind` não seja `ficheiro`;
     faltar `column` ou `filter`; `files` não for uma lista não vazia de mapas
     com `file`, `snapshot_date` (AAAA-MM-DD), `sha256` (64 hexadecimais) e
-    `bytes` (inteiro ≥ 1).
+    `bytes` (inteiro ≥ 1);
+20. `document.url` não começar por `http://` ou `https://`, ou estiver numa
+    linha cujo `document.kind` não seja `serie`.
 
 ## `document.kind` — o que o endereço serve
 
@@ -310,6 +312,43 @@ a sua linha não tem.
 porta «Abrir na página N →» para o endereço, que traz `#page=N`. Onde não há
 recorte não há caixa nenhuma: fica o excerto transcrito, como sempre esteve
 (IDENTIDADE.md §6).
+
+## `document.url`: a página humana de uma série de dados
+
+Opcional, dentro de `document`, e só onde `document.kind` é `serie`. Existe
+desde 18.08.2026 (DECISIONS §1.47, T3). É o endereço do indicador legível por
+pessoas, ao lado do `source_url`, que é o pedido exato feito à API.
+
+**Porque existe.** Cinquenta e sete linhas citam uma série. O que a página dava
+ao leitor era o pedido:
+`…/statistics/1.0/data/une_rt_a?format=JSON&lang=EN&geo=PT&age=Y15-74&sex=T&unit=PC_ACT`.
+Isso prova o número e é ilegível para quem não é uma máquina. A ordem da prova
+numa linha de série passa a ser: **a página da série**, o **pedido exato**, o
+**campo devolvido**.
+
+**Escreve-se só depois de provado, e a prova é por máquina.** Não é uma escolha
+de estilo: o data browser do Eurostat é uma aplicação de página única que
+responde HTTP 200 com título vazio a **qualquer** código, verdadeiro ou
+inventado, por isso abrir a página não prova nada. O que prova é
+`ResearchHub/publisher/series_pages.py`:
+
+- **Eurostat:** a API de disseminação responde 200 ao pedido **da própria
+  linha**, e o código tem título no índice de conteúdos oficial em texto,
+  descarregado na corrida e guardado no motor com o resumo dos seus bytes. As
+  duas provas, ou campo nenhum;
+- **SGMAI (autárquicas de 2009, 2013 e 2017):** a página responde 200, lê o
+  território do endereço (a sua própria chamada `gup('territoryKey')`, lida do
+  ficheiro e não recordada), o ficheiro de resultados emparelhado da mesma
+  origem para aquela chave responde 200 e nomeia o concelho, e uma chave
+  inventada responde 404 a sério.
+
+**Quem não o tem, e porquê.** As oito linhas do INE: `www.ine.pt` não responde a
+esta máquina, e uma página que não se abre não se confirma; fica por medir,
+noutro dia. As linhas das autárquicas de 2021 e 2025: aqueles sítios são
+aplicações cujo caminho de resultados não leva o território no endereço, por isso
+não há ligação profunda para um concelho. **Um endereço não confirmado fica
+ausente, e a página não o inventa** (DECISIONS §1.36: a heurística de URL saiu).
+Um campo opcional ausente não é dívida nem marcador.
 
 ## `document.hosted`: o ficheiro de dados de que a linha é contada
 

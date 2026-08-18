@@ -113,6 +113,7 @@ const CAMPOS_DO_DOCUMENTO = [
   'locator',
   'page',
   'kind',
+  'url',
   'crop',
   'hosted',
   'computed_over',
@@ -1231,6 +1232,46 @@ export function validateLedger() {
                 }
               });
             }
+          }
+        }
+      }
+
+      /* ---------------------------------------------------------------------
+       * `document.url`: a página humana de uma série de dados
+       * ---------------------------------------------------------------------
+       *
+       * 57 linhas citam uma série: um pedido a uma API que devolve um campo, e
+       * não um documento com uma frase impressa. A página dava ao leitor o
+       * pedido, que é o endereço de uma máquina. Este campo é o endereço de uma
+       * pessoa: a página do indicador, no sítio de quem o publica.
+       *
+       * Só existe onde `document.kind` é `serie`. Noutra linha o endereço já é
+       * legível por pessoas, e um segundo endereço «humano» ao lado seria dois
+       * endereços a prometer a mesma coisa.
+       *
+       * **Escreve-se só depois de provado**, e a prova é do motor
+       * (`publisher/series_pages.py`): para o Eurostat, o código responde 200 à
+       * API de disseminação e tem título no catálogo oficial; para o SGMAI, a
+       * página lê o território do endereço e o ficheiro emparelhado da mesma
+       * origem nomeia o concelho, com uma chave inventada a dar 404. Um endereço
+       * não confirmado fica ausente, e a página não o inventa.
+       */
+      {
+        const humana = c.document && typeof c.document === 'object' ? c.document.url : undefined;
+        if (humana !== null && humana !== undefined) {
+          if (typeof humana !== 'string' || !/^https?:\/\//.test(humana)) {
+            errors.push(
+              `${onde} "document.url" é ${JSON.stringify(humana)}. Tem de ser a página do ` +
+                `indicador legível por pessoas, a começar por "http://" ou "https://".`,
+            );
+          }
+          if (c.document.kind !== 'serie') {
+            errors.push(
+              `${onde} tem "document.url" e "document.kind" é ` +
+                `${JSON.stringify(c.document.kind ?? null)}. A página humana existe onde o ` +
+                `endereço é um pedido a uma API: numa linha que já cita um documento, o ` +
+                `endereço é a página, e um segundo seria a mesma promessa escrita duas vezes.`,
+            );
           }
         }
       }
