@@ -324,6 +324,25 @@ function textoTranscrito(el) {
 }
 
 /**
+ * O texto que um leitor COM VISTA vê: o mesmo, menos o que está escondido para
+ * leitores de ecrã (`.vh`). São duas superfícies diferentes e a v2 precisa de
+ * as separar: o selo carrega a etiqueta do estudo no texto oculto e a palavra
+ * «fonte» à vista, e cada uma tem a sua conferência.
+ */
+function textoVisivel(el) {
+  const partes = [];
+  const anda = (n) => {
+    if (!n) return;
+    if (n.nodeType === NodeType.TEXT_NODE) return void partes.push(n.rawText);
+    const classes = String(n.getAttribute?.('class') ?? '').split(/\s+/);
+    if (classes.includes('vh')) return;
+    for (const filho of n.childNodes ?? []) anda(filho);
+  };
+  anda(el);
+  return normalizeWhitespace(decodeEntities(partes.join('')));
+}
+
+/**
  * ---------------------------------------------------------------------------
  * A ORTOGRAFIA E OS TRAVESSÕES — a regra escrita, agora imposta.
  * ---------------------------------------------------------------------------
@@ -988,8 +1007,8 @@ const MOTIVO_SEM_DATA_RENDIDO = {
  * O SELO EM CADA VALOR — a auditoria que era feita à mão.
  * ---------------------------------------------------------------------------
  *
- * `IDENTIDADE.md` §5.3: «onde aparece um valor, aparece o selo. Sem excepção de
- * página.» A promessa estava escrita e não estava imposta: a 15.08.2026 a
+ * `IDENTIDADE.md` §5.3, v2: «onde aparece um valor, aparece o selo. Sem exceção
+ * de página.» A promessa estava escrita e não estava imposta: a 15.08.2026 a
  * primeira página tinha 18 afirmações distintas sem selo nenhum, e os seis
  * selos da leitura breve apontavam para a linha do PAI e não para a do valor
  * mostrado — um leitor que clicasse no «18» aterrava na linha do «82».
@@ -1129,8 +1148,25 @@ for (const [id] of claims) {
   }
 }
 
-/** A ÚNICA rendição legítima da etiqueta do selo daquela linha, naquela edição. */
-function provenienciaDaLinha(id, lang) {
+/**
+ * O SELO DAQUELA LINHA, peça a peça (v2, IDENTIDADE.md §5.4 e §5.5).
+ *
+ * O selo deixou de ser uma cadeia só. São três superfícies, e cada uma tem a
+ * sua conferência, porque cada uma pode mentir de maneira diferente:
+ *
+ *   etiqueta — o que `data-selo-etiqueta` declara e o `title` mostra. É a
+ *              etiqueta DAQUELA linha, e é aqui que a amarra da §1.42 passa a
+ *              viver: comparava-se o texto visível, e o texto visível deixou
+ *              de a levar;
+ *   visivel  — o que um leitor com vista lê: a palavra da edição («fonte» /
+ *              «source») e, quando falta um campo, o marcador. Mais nada:
+ *              prosa dentro do selo é uma segunda porta a dizer outra coisa;
+ *   inteiro  — tudo, com o texto oculto. Continua a ser comparado carácter a
+ *              carácter porque `data-nonledger` dispensa este elemento do
+ *              varrimento dos algarismos e do da ortografia, e uma dispensa
+ *              sem comparação é um buraco (revisão cruzada, #8).
+ */
+function seloDaLinha(id, lang) {
   const claim = claims.get(id);
   if (!claim) return null;
   const s = t(lang);
@@ -1139,7 +1175,13 @@ function provenienciaDaLinha(id, lang) {
   /* Sem espaço antes do marcador: o gabarito põe-no no elemento a seguir e o
      DOM não traz espaço nenhum entre os dois, e é o DOM que o leitor vê. */
   const marcador = provenienciaIncompleta(claim) ? POR_VERIFICAR : '';
-  return normalizeWhitespace(`${s.prov.verLinha}: ${calculado}${trabalho}${marcador}`);
+  const etiqueta = normalizeWhitespace(`${calculado}${trabalho}`);
+  return {
+    etiqueta,
+    palavra: s.prov.selo,
+    visivel: normalizeWhitespace(`${s.prov.selo}${marcador}`),
+    inteiro: normalizeWhitespace(`${s.prov.verLinha}: ${etiqueta}${s.prov.selo}${marcador}`),
+  };
 }
 
 /**
@@ -2564,15 +2606,54 @@ for (const file of ficheirosHtml(DIST)) {
       const porta = decodeEntities(el.getAttribute('href') ?? '');
       const alvo = LINHA_POR_PORTA.get(porta);
       if (alvo) {
-        const esperado = provenienciaDaLinha(alvo.id, alvo.lang);
-        if (lido !== esperado) {
+        const selo = seloDaLinha(alvo.id, alvo.lang);
+        const declarada = el.getAttribute('data-selo-etiqueta');
+
+        /* (1) A etiqueta é declarada. Sem o atributo não há o que comparar, e
+           o selo volta a ser uma marca em que se acredita. */
+        if (declarada === null || declarada === undefined) {
           err(
-            `a etiqueta do selo que abre a linha "${alvo.id}" não é a etiqueta dessa linha.\n` +
-              `      no registo:  ${esperado}\n` +
-              `      renderizada: ${lido}\n` +
-              `      A etiqueta diz o trabalho DAQUELA linha, «calculado» quando aquela linha é ` +
-              `calculada, e o marcador só quando aquela linha tem proveniência por confirmar. ` +
-              `Uma etiqueta legítima de outro trabalho é uma proveniência falsa.`,
+            `o selo que abre a linha "${alvo.id}" não declara a sua etiqueta.\n` +
+              `      esperava-se data-selo-etiqueta="${selo.etiqueta}".\n` +
+              `      Desde a v2 a etiqueta do estudo saiu do texto visível (IDENTIDADE.md §5.5) e ` +
+              `passou a viver no atributo, no title e no texto oculto. É o atributo que o portão ` +
+              `compara: sem ele, a amarra da §1.42 deixa de existir.`,
+          );
+        } else if (normalizeWhitespace(decodeEntities(declarada)) !== selo.etiqueta) {
+          /* (2) E é a etiqueta DAQUELA linha, e não uma legítima qualquer. */
+          err(
+            `a etiqueta declarada no selo que abre a linha "${alvo.id}" não é a etiqueta dessa linha.\n` +
+              `      no registo:  ${selo.etiqueta}\n` +
+              `      declarada:   ${normalizeWhitespace(decodeEntities(declarada))}\n` +
+              `      A etiqueta diz o trabalho DAQUELA linha e «calculado» quando aquela linha é ` +
+              `calculada. Uma etiqueta legítima de outro trabalho é uma proveniência falsa.`,
+          );
+        }
+
+        /* (3) À vista, o selo escreve a palavra da edição e mais nada — e o
+           marcador, quando aquela linha tem proveniência por confirmar. */
+        const visivel = textoVisivel(el);
+        if (visivel !== selo.visivel) {
+          err(
+            `o selo que abre a linha "${alvo.id}" não escreve a palavra desta edição.\n` +
+              `      à vista, esperava-se: ${selo.visivel}\n` +
+              `      à vista, está:        ${visivel}\n` +
+              `      O selo escreve «${selo.palavra}» (IDENTIDADE.md §5.4), sublinhado, e o ` +
+              `marcador só quando falta um campo. Prosa dentro do selo é uma segunda língua para ` +
+              `a mesma porta.`,
+          );
+        }
+
+        /* (4) E tudo, com o oculto: a marca dispensa este elemento do
+           varrimento dos algarismos e do da ortografia, e uma dispensa sem
+           comparação é um buraco. */
+        if (lido !== selo.inteiro) {
+          err(
+            `o texto do selo que abre a linha "${alvo.id}" não é o que o registo escreve.\n` +
+              `      no registo:  ${selo.inteiro}\n` +
+              `      renderizado: ${lido}\n` +
+              `      Conta o texto oculto: é ele que um leitor de ecrã ouve, e é dentro dele que ` +
+              `prosa qualquer escaparia ao varrimento inteiro.`,
           );
         }
       } else if (!PROVENIENCIAS_ACEITES.has(lido)) {
