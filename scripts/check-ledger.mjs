@@ -11,6 +11,8 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 import { validateLedger, allClaims, camposPorVerificar, POR_VERIFICAR } from '../src/lib/ledger.mjs';
+import { REGRAS, ABERTURA, LEITURA_BREVE } from '../src/data/metodo.mjs';
+import { SOBRE } from '../src/data/sobre.mjs';
 
 const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
 const amarelo = (s) => `\x1b[33m${s}\x1b[0m`;
@@ -371,22 +373,173 @@ function confereAmarra() {
   return { erros, conferidas: entradas.length };
 }
 
+/* ===========================================================================
+ * A MESMA AMARRA, DO LADO DA CONSTITUIÇÃO — uma citação não envelhece calada
+ * ===========================================================================
+ *
+ * Bloco T, T4, e o buraco que a fecha está registado na §4.1: a §5 da
+ * `IDENTIDADE.md` citou durante dois blocos uma frase do Método que o bloco V
+ * tinha apagado, e **nenhuma conferência lê a constituição**. A citação foi
+ * corrigida na §1.46; o buraco não. Toda a citação da constituição pode voltar
+ * a envelhecer no dia seguinte a um bloco tocar num texto governado.
+ *
+ * Não se abre um portão novo para isto (moratória de 2026-08-15): a amarra
+ * acima já lê ficheiros governados e já corre dentro do `ledger:check`. Ganha
+ * esta segunda metade, com a mesma disciplina.
+ *
+ * A CONVENÇÃO, escrita na `IDENTIDADE.md` §8 e usada por ela: uma frase de um
+ * texto governado citada na constituição vai entre «…» e traz o nome do
+ * ficheiro logo a seguir, entre parênteses e em código: (`metodo`), (`sobre`).
+ * São os mesmos nomes curtos do `**Afecta:**`, e não um segundo vocabulário.
+ *
+ * O QUE ISTO CONFERE, e são três coisas:
+ *
+ *   1. uma citação marcada tem de existir, palavra por palavra, no texto que
+ *      nomeia (comparada com os espaços normalizados, porque o markdown parte
+ *      as linhas onde calha e o ficheiro governado não);
+ *   2. uma citação **não** marcada que exista num texto governado é recusada:
+ *      cite-se com a marca. É isto que apanha a omissão no dia em que ela é
+ *      escrita, que é o único dia em que a citação ainda está certa;
+ *   3. uma marca que não vem a seguir a uma citação não nomeia nada.
+ *
+ * O LIMITE, e é honesto dizê-lo: uma frase que nasça já diferente do texto
+ * governado, e sem marca, não é apanhada por nada. A marca é o que a prende, e
+ * a marca é de quem escreve. O que isto fecha é o envelhecimento — a citação
+ * que estava certa e deixou de estar —, que é a classe de defeito que
+ * aconteceu.
+ */
+
+/** O ficheiro que a regra governa deste lado. */
+const CONSTITUICAO = path.join(RAIZ, 'IDENTIDADE.md');
+
+/** Quantos caracteres fazem de uma citação uma frase, e não um termo entre aspas. */
+const CITACAO_MINIMA = 40;
+
+/** Espaços normalizados dos dois lados: o markdown parte linhas, o texto governado não. */
+function achata(s) {
+  return String(s).replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * Todas as cadeias de um texto governado, achatadas.
+ *
+ * Lidas do MÓDULO e não do ficheiro: é o módulo que a página rende, e é ele o
+ * texto. Uma citação bate quando é um pedaço de uma destas cadeias — uma regra
+ * inteira, ou a frase de dentro dela que a constituição escolheu citar.
+ */
+function cadeiasDoTexto(nome) {
+  const out = [];
+  const anda = (v) => {
+    if (typeof v === 'string') out.push(achata(v));
+    else if (Array.isArray(v)) v.forEach(anda);
+    else if (v && typeof v === 'object') Object.values(v).forEach(anda);
+  };
+  if (nome === 'metodo') anda([REGRAS, ABERTURA, LEITURA_BREVE]);
+  else if (nome === 'sobre') anda(SOBRE);
+  return out;
+}
+
+function confereCitacoes() {
+  const erros = [];
+  if (!fs.existsSync(CONSTITUICAO)) {
+    return { erros: ['não há IDENTIDADE.md'], marcadas: 0, citacoes: 0 };
+  }
+  const texto = fs.readFileSync(CONSTITUICAO, 'utf8');
+
+  /* Por parágrafo, e achatado: uma citação da constituição atravessa linhas. */
+  const paragrafos = texto.split(/\n\s*\n/);
+  const CITACAO = /«([^»]*)»(\*{0,2}\s*\(`?([a-z]+)`?\))?/g;
+
+  const cadeias = {};
+  for (const nome of Object.keys(TEXTOS)) cadeias[nome] = cadeiasDoTexto(nome);
+
+  let marcadas = 0;
+  let citacoes = 0;
+
+  for (const p of paragrafos) {
+    const linha = achata(p);
+    let m;
+    CITACAO.lastIndex = 0;
+    while ((m = CITACAO.exec(linha))) {
+      const frase = achata(m[1]);
+      const nome = m[3] ?? null;
+      citacoes++;
+
+      if (nome) {
+        marcadas++;
+        if (!(nome in TEXTOS)) {
+          erros.push(
+            `IDENTIDADE.md: a citação «${frase.slice(0, 60)}…» está marcada "(${nome})", que não é ` +
+              `um texto governado. Os nomes são: ${Object.keys(TEXTOS).join(', ')}.`,
+          );
+          continue;
+        }
+        if (!cadeias[nome].some((c) => c.includes(frase))) {
+          erros.push(
+            `IDENTIDADE.md cita, como sendo do "${nome}":\n` +
+              `        «${frase}»\n` +
+              `        e essa frase não existe em ${path.relative(RAIZ, TEXTOS[nome])}.\n` +
+              `        Ou o texto governado mudou e a citação ficou para trás, ou a citação nunca ` +
+              `foi essa. A constituição cita palavra por palavra, ou não cita.`,
+          );
+        }
+        continue;
+      }
+
+      /* Sem marca: só é defeito se a frase estiver mesmo num texto governado. */
+      if (frase.length < CITACAO_MINIMA) continue;
+      for (const [n, lista] of Object.entries(cadeias)) {
+        if (lista.some((c) => c.includes(frase))) {
+          erros.push(
+            `IDENTIDADE.md cita «${frase.slice(0, 70)}…», que é uma frase de "${n}", e não a marca ` +
+              `como tal.\n` +
+              `        Escreva (\`${n}\`) a seguir ao fecho das aspas (IDENTIDADE.md §8). Sem a ` +
+              `marca, a citação não é conferida, e envelhece no dia em que o texto mudar.`,
+          );
+          break;
+        }
+      }
+    }
+  }
+
+  /* Uma marca que não vem a seguir a uma citação não nomeia nada. */
+  const MARCA_SOLTA = /(^|[^»*\s])\s*\(`(metodo|sobre)`\)/g;
+  let s;
+  MARCA_SOLTA.lastIndex = 0;
+  const inteiro = achata(texto);
+  while ((s = MARCA_SOLTA.exec(inteiro))) {
+    erros.push(
+      `IDENTIDADE.md: a marca (\`${s[2]}\`) não vem a seguir a uma citação entre «…». ` +
+        `A marca diz de que texto governado é a frase citada antes dela; sozinha não nomeia nada.`,
+    );
+  }
+
+  return { erros, marcadas, citacoes };
+}
+
 const amarra = confereAmarra();
+const citacoes = confereCitacoes();
 console.log('');
 console.log(
   cinza(
     `  amarra das decisões · ${amarra.conferidas} entrada(s) a partir da §1.38 · ` +
-      `${Object.keys(TEXTOS).length} texto(s) governado(s)`,
+      `${Object.keys(TEXTOS).length} texto(s) governado(s) · ` +
+      `${citacoes.marcadas} citação(ões) da constituição conferida(s), de ${citacoes.citacoes} entre «…»`,
   ),
 );
-if (amarra.erros.length) {
+const errosDaAmarra = [...amarra.erros, ...citacoes.erros];
+if (errosDaAmarra.length) {
   console.log('');
-  console.error(vermelho(`  A AMARRA DAS DECISÕES NÃO FECHA · ${amarra.erros.length} erro(s):`));
+  console.error(vermelho(`  A AMARRA DAS DECISÕES NÃO FECHA · ${errosDaAmarra.length} erro(s):`));
   console.error('');
-  for (const e of amarra.erros) console.error('    ' + vermelho('✗') + ' ' + e);
+  for (const e of errosDaAmarra) console.error('    ' + vermelho('✗') + ' ' + e);
   console.error('');
   console.error('  Uma mudança de rumo não sai em silêncio (direção, 2026-08-15).');
   console.error('');
   process.exit(1);
 }
-console.log('  ' + verde('✓') + ' cada texto no ar tem uma decisão registada que o governa.');
+console.log(
+  '  ' +
+    verde('✓') +
+    ' cada texto no ar tem uma decisão registada que o governa, e cada frase que a constituição lhe cita está lá.',
+);
