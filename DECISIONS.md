@@ -4638,6 +4638,13 @@ colofão e volta ao rodapé pelo invólucro: a página deixa de passar
 `portaNoRodape={false}`, e o portão continua a ver exactamente uma porta por
 página.
 
+Um resto que fica dito: a legenda transcrita do mapa acaba em «Detalhe completo
+no colofão.», e a palavra deixou de ter secção com esse nome na página. O detalhe
+continua lá, no bloco «Método, ressalvas e proveniência» do próprio instrumento,
+que rende `caop-fonte` e `caop-processamento` inteiros. A frase é transcrita do
+estudo de identidade e não se reescreve (§9): fica registada como leitura
+imperfeita e não como defeito por corrigir.
+
 **F · O sumário de cabeçalhos do município deixa de saltar.** Ia de `h1` «Évora»
 para os oito `h3` das medidas, e o primeiro `h2` só aparecia depois, em «Leitura
 breve»: quem navega por cabeçalhos perdia a camada Relance inteira. «Relance»
