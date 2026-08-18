@@ -2404,7 +2404,7 @@ for (const file of ficheirosHtml(DIST)) {
    *   · uma imagem de `/recortes/` só aparece na página de uma linha, e só na
    *     da linha que ela prova;
    *   · o `src` é exactamente `/recortes/<id>.webp`, que é o `asset` que a
-   *     linha declara — com a cópia própria da regra do nome, para conferir o
+   *     linha declara, com a cópia própria da regra do nome, para conferir o
    *     livro-razão e não o gabarito;
    *   · o ficheiro foi construído para `dist/` e os seus bytes dão o resumo que
    *     a linha declara;
@@ -2451,7 +2451,7 @@ for (const file of ficheirosHtml(DIST)) {
         const src = decodeEntities(img.getAttribute('src') ?? '');
         /* A cópia própria da regra do nome: um recorte por linha, com o nome
            da linha. Se este portão lesse o `asset` do livro-razão para saber o
-           que esperar, conferia que a página copia o campo — e não que o campo
+           que esperar, conferia que a página copia o campo, e não que o campo
            é o que tem de ser. */
         const esperado = `/recortes/${claimDaPagina.id}.webp`;
         if (src !== esperado) {

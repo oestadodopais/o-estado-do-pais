@@ -5609,7 +5609,217 @@ item, o `PLANO-fases.md`, o `NEXT.md` do motor. Nenhum destes foi tocado aqui.
 
 #### T2 · `document.crop`
 
-*Por escrever: o estádio T2 acrescenta aqui a sua secção.*
+O teste 1 do `BRIEF-confianca.md` §6.8 pede que qualquer número leve à linha
+impressa em **uma** ligação. A página de uma linha dava duas coisas, e nenhuma
+delas era isso: o `excerpt`, que é a linha impressa **transcrita** (e uma
+transcrição pede-se confiança), e o endereço do PDF, que é o documento inteiro
+para descarregar (e um relatório de 400 páginas pede-se trabalho). Faltava a
+coisa: a linha, vista.
+
+##### O recorte já existia, e não atravessava
+
+O motor produz recortes desde 12.08.2026, e tinha **168** deles nos três
+`snippets.json` das verticais de Évora. Nenhum atravessava por `publisher/`:
+viviam em base64 dentro do JSON e dentro do HTML dos documentos de estudo, que é
+obra citada e não superfície deste sítio. Do lado de cá, o campo que os
+guardasse não existia.
+
+Entra `document.crop`, um mapa de três campos dentro de `document`:
+
+| Campo | O que é |
+| --- | --- |
+| `asset` | `recortes/<id>.webp` e mais nada: um recorte por linha, com o nome da linha |
+| `sha256` | 64 hexadecimais, o resumo dos bytes do ficheiro em disco |
+| `page` | a página de onde o recorte foi tirado, igual a `document.page` |
+
+Só existe onde `document.page` existe, e por isso nunca numa linha derivada ou
+da casa, que não têm documento onde uma página exista. O ficheiro vive em
+`public/recortes/` e é servido de `/recortes/`. **Nada de base64 dentro de
+HTML**: o que atravessa a fronteira é um ficheiro, e o sítio confere-o.
+
+##### O que o produz, e o que ele se recusa a fazer
+
+`core/pdfproof.py`, no motor, dentro da vertical que tem o PDF. Localiza a frase
+do excerto no texto da página por **correspondência exacta de caracteres**,
+aceita-a só se for **única naquela página** e não se espalhar por mais de três
+linhas, e recorta essa região a 200 DPI. Uma frase que não se localize assim não
+dá imagem nenhuma: a recusa fica escrita com o seu motivo, e a linha do sítio
+fica sem recorte. Um recorte adivinhado seria uma fotografia da linha errada com
+toda a autoridade de uma fotografia.
+
+O `cap` de 60 do `pdfproof` é uma regra de **curadoria do documento**: diz
+quantas das linhas de cabeça de um estudo levam recorte dentro do próprio
+estudo, e come a cauda que a vertical declarou como cauda. Uma linha que
+atravessa para o sítio precisa do recorte fora do documento, e podia estar fora
+do conjunto curado ou depois da posição 60. O `build()` ganha `also`: ids pedidos
+um a um pela vertical, tentados **depois** do conjunto curado e **fora** do
+`cap`. Nenhuma regra de prova muda, e nenhum recorte que já estava feito se
+mexe: os 48 da 07 e os 60 da 08 saíram byte a byte iguais, e a única entrada de
+`skipped` que saiu foi a da linha pedida que o `cap` tinha comido.
+
+##### As três linhas de PDF que atravessavam sem recorte
+
+| Linha do sítio | Linha do motor | O que aconteceu |
+| --- | --- | --- |
+| `evora-divida-total-2021` | `ind-divida-total-2021` (08) | recorte feito: p. 83, 4 908 bytes. Estava só fora do `cap` |
+| `evora-excesso-endividamento-2019` | `excesso-dez19` (08) | recorte feito: p. 33, 12 338 bytes. Nunca fora impressa por uma secção curada |
+| `indice-de-divida-limite-legal` | `anuario-indice-permitido` (07) | **recusado**, e fica sem recorte |
+
+A recusa, nas palavras do próprio `pdfproof` e escrita no `snippets.json` da 07:
+«the ledger excerpt names no pinned PDF, no page, no quoted line». O PDF está no
+repositório (`anuario_2024_occ_apresentacao.pdf`) e o excerto da linha do motor
+não fixa ficheiro, não fixa página e não traz frase entre aspas: não há o que
+localizar. **Nada se recortou à mão e nenhum limiar desceu.** O que faltava para
+que essa linha possa vir a ter recorte é um excerto do motor que fixe as três
+coisas, e isso é trabalho na linha do motor, não aqui.
+
+##### Como um recorte atravessa
+
+A ligação entre um recorte e uma linha do sítio é a **identidade da linha do
+motor**, que o `manifest.evora.json` já declara. Não há segundo mapa, porque um
+mapa a mais é um mapa que fica fora de passo com o primeiro. O exportador
+descodifica o webp, escreve `public/recortes/<site_id>.webp`, calcula o resumo
+dos bytes que escreveu e escreve o campo. Escreve ainda
+`publisher/recortes/manifest.json`, o registo do que atravessou: por linha, de
+que estudo e de que linha do motor veio, o PDF fixado, a página, o resumo e o
+tamanho. O registo da travessia ganha `crop_sha256` por linha.
+
+##### As contagens, antes e depois
+
+| | Antes do T2 | Depois |
+| --- | --- | --- |
+| linhas com `document.crop` | 0 (o campo não existia) | **22** de 23 linhas de PDF |
+| bytes de recorte no sítio | 0 | **243 496** (média 11 068, máximo 17 692) |
+| recortes no motor | 168 | **170** |
+| ficheiros em `public/` | 0 imagens | **22 webp** |
+| imagens `/recortes/` nas páginas construídas | 0 | **44** (22 linhas × 2 edições) |
+| recortes conferidos pelo portão | 0 | **44** |
+
+A régua dos defeitos (`scripts/medir-defeitos.mjs`), com o «antes» construído de
+propósito em `66e7e3f`:
+
+| | Antes (`66e7e3f`) | Depois |
+| --- | --- | --- |
+| páginas construídas | 307 | 307 |
+| porta de correções | 307/307 | 307/307 |
+| primeira página: valores sem selo · selos para outra linha | 0 · 0 | 0 · 0 |
+| frases de moldura | 73 distintas · 2 365 ocorrências | 73 distintas · 2 365 |
+| `[descrição em preparação]` | 0 | 0 |
+| linhas com `#page=` | 23 de 132 | 23 de 132 |
+| linhas com recorte | (a régua não contava) | **22 de 132** |
+| localizadores internos | 0 | 0 |
+| `class="marcador"` | 396 | 396 |
+| «[a verificar]» | 496 | 496 |
+| `data-linha-campo="excerpt"` | 218 | 218 |
+
+**A legenda do recorte não acrescentou uma frase de moldura**, e é a razão de
+`73 · 2 365` não mexer: a legenda tem menos de 30 caracteres, que é o que esta
+régua conta como bloco, e o número que ela diz é um campo marcado.
+
+##### A página, e o que ela não faz
+
+O bloco da prova abre com um `<figure>`: a imagem à largura da coluna de leitura,
+com `max-width: 100%`; a legenda em mono com «página N», marcada
+`data-linha-campo="document.crop.page"`; e a porta «Abrir na página N →» para o
+endereço, que traz `#page=N`. **A porta não se duplica**: com recorte é a da
+legenda, sem recorte é a que já estava no seu parágrafo. O excerto transcrito
+fica por baixo, como sempre esteve, e continua a ser conferido carácter a
+carácter.
+
+O texto alternativo compõe-se **só dos campos que existem**, nas duas edições:
+«Recorte da linha impressa, página 119 de Prestação de Contas 2025» e «Crop of
+the printed line, page 119 of …». Um título que é o marcador não entra na frase,
+pela mesma regra da frase de atribuição.
+
+**Sem `width` nem `height` no elemento.** Os recortes não têm todos as mesmas
+dimensões (o `pdfproof` reduz até 1000px de largura e a altura é a da linha
+recortada), e o formato guarda três campos, nenhum deles o tamanho. Um número
+escrito de cabeça num atributo seria um número inventado, e a régua da casa não
+abre excepção para atributos. O custo é conhecido e é o salto de disposição
+enquanto a imagem carrega; o remédio seria um quarto campo, e é decisão de
+formato que este estádio não tomou sozinho.
+
+**Onde não há recorte não se desenha nada** (IDENTIDADE §6): nem caixa, nem
+espécime, nem marcador novo. As 110 linhas sem recorte têm a página que já
+tinham.
+
+Medido a 390 e a 1280 pelo método da §1.43, num iframe da mesma origem: nenhuma
+das cinco páginas medidas rola de lado (o documento dá 375 e 1265, que é a
+largura menos a barra de deslocamento), e a imagem escala com a coluna, de
+1000×151 no ficheiro para 339×53 a 390 e 631×97 a 1280.
+
+##### Os estragos plantados, cada um reposto
+
+No sítio, o `ledger:check` sobre o formato:
+
+| Estrago | O portão |
+| --- | --- |
+| o ficheiro trocado depois da travessia | «o recorte "recortes/evora-despesa-paga-2025.webp" não é o que a linha declara. no livro-razão: 55288b18… em disco: 60c3900d… Uma imagem trocada depois da travessia é a prova a dizer outra coisa sem que nada mude no texto.» |
+| o ficheiro em falta | «declara o recorte "recortes/evora-despesa-paga-2025.webp" e não há ficheiro em public/recortes/evora-despesa-paga-2025.webp. Um recorte que a linha promete e o sítio não serve é uma prova que não abre.» |
+| a página do recorte a discordar da linha | «"document.crop.page" é 118 e "document.page" é 119. O recorte é da página onde está a frase que o "excerpt" transcreve, e por isso são o mesmo número.» |
+| um recorte numa linha sem página declarada | «tem "document.crop" e não declara "document.page". Um recorte é a imagem de UMA página: sem o campo que diz qual, ninguém pode conferir que é a página que o excerto transcreve.» |
+
+No sítio, o `gate:html` sobre a construção:
+
+| Estrago | O portão |
+| --- | --- |
+| um recorte numa linha que não o tem | «a página de "evora-populacao-2025" mostra o recorte "/recortes/evora-populacao-2025.webp" e a linha não tem "document.crop". Uma prova que a linha não guarda não se desenha.» |
+| a legenda a dizer outra página | «o campo "document.crop.page" de "evora-despesa-paga-2025" não foi transcrito fielmente do livro-razão.» |
+| o recorte de outra linha na página desta | «a página de "evora-despesa-paga-2025" mostra "/recortes/evora-orcamento-2025.webp" e o recorte desta linha é "/recortes/evora-despesa-paga-2025.webp". Um recorte por linha, com o nome da linha.» |
+| a imagem construída trocada | «o recorte de "evora-despesa-paga-2025" que foi construído não é o que a linha declara.» |
+| a imagem construída em falta | «a página de "evora-despesa-paga-2025" mostra "/recortes/evora-despesa-paga-2025.webp" e não há ficheiro em dist/recortes/evora-despesa-paga-2025.webp. Uma imagem que a construção não produziu é uma porta que não abre.» |
+| a página a esconder o recorte que a linha tem | «a linha "evora-despesa-paga-2025" traz o recorte "recortes/evora-despesa-paga-2025.webp" e a página não o mostra. Uma prova que existe e não se vê deixa o leitor com a transcrição, que é o que o recorte veio substituir.» |
+| um recorte fora de uma página de linha | «uma imagem de "/recortes/" numa página que não é a de uma linha. Um recorte é a prova de uma linha, e mostra-se na página dessa linha e em mais lado nenhum.» |
+
+No sítio, o `check:cruzamento` sobre o registo da travessia:
+
+| Estrago | O portão |
+| --- | --- |
+| o registo a discordar da linha | «o registo diz que o recorte é "0000…" e a linha publica "55288b18…". Um recorte de uma linha cruzada entra pelo exportador do motor e por mais lado nenhum: volte a cruzar.» |
+| os bytes do ficheiro trocados | «os bytes de public/recortes/evora-despesa-paga-2025.webp já não são os que atravessaram. registo: 55288b18… disco: 60c3900d… Um recorte não se edita à mão: volte a cruzar no motor.» |
+| o ficheiro desaparecido | «o registo diz que o recorte "55288b189984…" atravessou e não há ficheiro em public/recortes/evora-despesa-paga-2025.webp.» |
+
+No motor, o `export_site_rows_test.py`, que corre no portão de commit:
+
+| Estrago | O exportador |
+| --- | --- |
+| um recorte de outra página | «the crop was taken from page 118 of 'PRESTACAO_CONTAS_2025.pdf' and the row declares document.page 119. A crop of another page is not this row's proof.» |
+| um recorte acima do orçamento | «the crop is 40,001 bytes, over the 40,000-byte budget. A crop is one printed line, not a scanned page.» |
+| um recorte para uma linha sem página | «the engine has a crop of pop-evora-2025 and this row declares no document.page. A crop is a picture of ONE page: declare the page it is of, or the crop does not cross.» |
+| um recorte que o sítio publica e a corrida não produz | «the site publishes a crop (recortes/evora-populacao-2025.webp) that this run does not produce. A re-export rewrites this row, so it would be erased. Find the snippet, or find out who wrote it.» |
+
+E a via positiva: 22 linhas com recorte, cada uma com o resumo dos seus próprios
+bytes, a página que a linha declara, um ficheiro que começa por `RIFF` e cabe no
+orçamento; a linha sem recorte sem bloco nenhum; e a corrida a nomear, com a
+razão do `pdfproof`, a linha de PDF que ficou sem ele. O teste passa a ter **49**
+conferências.
+
+**V8, um nível abaixo dos ficheiros da linha**: uma segunda corrida com
+`--write` não mexe num byte, nem nos webp. Conferido pelo resumo da árvore
+inteira (`public/recortes`, `ledger/claims`, `ledger/cruzamentos`) antes e
+depois, e pela data de modificação do ficheiro, que não mexeu.
+
+##### Os dois tetos, escritos três vezes de propósito
+
+O teto de 40 000 bytes existe em `core/pdfproof.py`, que o impõe ao produzir; no
+exportador, que recusa um recorte acima dele; e no validador do sítio, que o
+recusa outra vez à chegada. Não é repetição por descuido: é a disciplina da cópia
+própria (§1.31, §1.45). Um recorte acima do teto veio de outro sítio que não uma
+corrida do `pdfproof`, e cada porta recusa-o em vez de confiar em quem lho
+entregou.
+
+##### O que o T2 deixou aberto
+
+- **`indice-de-divida-limite-legal` continua sem recorte**, e continuará
+  enquanto o excerto da sua linha no motor não fixar ficheiro, página e frase.
+- **As dimensões da imagem não existem em lado nenhum**, e por isso a página não
+  reserva espaço para o recorte antes de ele carregar. Fechar isto é acrescentar
+  um quarto campo ao `document.crop`, e a forma do campo foi fixada no
+  `BRIEF-bloco-T.md` §2.3.
+- **As 110 linhas sem recorte** são as 109 que não citam um PDF com página e a
+  que o `pdfproof` recusou. O campo não é uma dívida: uma linha de série de dados
+  não tem linha impressa para recortar.
+
 
 #### T3 · a origem «calculado sobre um ficheiro alojado», as linhas de API, o extrator
 

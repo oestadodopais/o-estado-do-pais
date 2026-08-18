@@ -618,7 +618,7 @@ function main(argv) {
       }
       /* O recorte: os bytes em public/recortes/ contra o resumo do registo. É a
          mesma conferência que a linha faz de si própria pelo `document.crop`,
-         feita aqui a partir do registo da travessia — a linha e o registo são
+         feita aqui a partir do registo da travessia: a linha e o registo são
          dois documentos, e uma imagem trocada tem de desmentir os dois. */
       const resumoDoRecorte = linha?.document?.crop?.sha256 ?? null;
       if ((entrada.crop_sha256 ?? null) !== resumoDoRecorte) {
