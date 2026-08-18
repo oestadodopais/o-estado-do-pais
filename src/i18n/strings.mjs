@@ -536,6 +536,20 @@ export const STRINGS = {
         verificacoesK: 'Verificações',
         reconferidoK: 'Reconferido a',
         releituraPorta: 'A regra da releitura',
+        /* As reconferências independentes de uma linha (bloco T, §1.47). Os
+           rótulos vivem aqui e o portão tem a sua própria cópia deles: se ele
+           lesse esta tabela, confirmava a tabela e não o livro-razão. */
+        verificacaoPor: {
+          'leitura-independente': 'leitura independente',
+          'painel-semanal': 'reconferência semanal do painel',
+          'revisao-cruzada': 'revisão cruzada',
+        },
+        verificacaoResultado: {
+          igual: 'o mesmo valor',
+          diverge: 'valor diferente:',
+          inacessivel: 'fonte inacessível nesse dia',
+        },
+        verificacaoPorta: 'Repetir a leitura',
       },
     },
 
@@ -1161,6 +1175,17 @@ export const STRINGS = {
         verificacoesK: 'Verifications',
         reconferidoK: 'Re-checked on',
         releituraPorta: 'The re-reading rule',
+        verificacaoPor: {
+          'leitura-independente': 'independent reading',
+          'painel-semanal': 'weekly panel re-check',
+          'revisao-cruzada': 'cross-family review',
+        },
+        verificacaoResultado: {
+          igual: 'the same value',
+          diverge: 'a different value:',
+          inacessivel: 'source unreachable that day',
+        },
+        verificacaoPorta: 'Repeat the reading',
       },
     },
 

@@ -21,15 +21,15 @@
  *        fixa, e a transcrição: o excerto, ou o campo devolvido quando a fonte
  *        é uma série;
  *   iv   o pedido exato ou o endereço, quando não foi já a porta de (iii);
- *   v    as verificações, em duas linhas: «Lido a», que a linha guarda, e
- *        «Reconferido a», que ela ainda não guarda e que por isso leva o
- *        marcador;
+ *   v    as verificações: «Lido a», que a linha guarda desde sempre, e
+ *        «Reconferido a», uma linha por cada uma das duas entradas mais
+ *        recentes de `verifications[]`, da mais nova para a mais velha. Sem
+ *        nenhuma entrada, o marcador com a porta para a regra da releitura;
  *   vi   as correções e atualizações desta linha.
  *
- * O QUE NÃO ESTÁ AQUI, E É DE PROPÓSITO. O recorte da linha impressa e o campo
- * `verifications[]` não existem no formato: são o bloco T. Onde eles hão-de
- * entrar não há caixa de exemplo nem espécime, há o marcador com a sua porta
- * (IDENTIDADE.md §6 e §12).
+ * O QUE NÃO ESTÁ AQUI, E É DE PROPÓSITO. O recorte da linha impressa não existe
+ * no formato: é o T2. Onde ele há-de entrar não há caixa de exemplo nem
+ * espécime, há o marcador com a sua porta (IDENTIDADE.md §6 e §12).
  *
  *   aparelho  a ficha. Fonte, documento, edição, data de acesso, data dos
  *             dados, estudo, e o estado da proveniência, que é o que esta
@@ -54,6 +54,8 @@ import {
   derivacaoDaLinha,
   notaDeBandeira,
   atribuicaoDaLinha,
+  verificacoesDaLinha,
+  VERIFICACOES_MOSTRADAS,
   POR_VERIFICAR,
 } from '../lib/ledger.mjs';
 import { caminhoDaLinha, caminhoDoLivro, tituloDaLinha, descricaoDaLinha } from '../lib/livro.mjs';
@@ -133,6 +135,18 @@ const paginaDoDocumento = claim.document?.page ?? null;
  * torna essa obrigação visível na página, em vez de ficar só no validador.
  */
 const paginaDoPdf = (claim.source_url ?? '').match(/#page=(\d+)$/)?.[1] ?? null;
+
+/**
+ * As reconferências independentes que a página mostra: as duas mais recentes,
+ * da mais nova para a mais velha.
+ *
+ * Duas, e não todas: o recibo diz quando a linha foi relida pela última vez e
+ * o que a vez anterior deu, que é o que responde à pergunta «isto ainda é
+ * verdade». A lista inteira vive no livro-razão, e é de lá que a contagem do
+ * sítio sobre si próprio sai. Cada entrada leva o índice que tem na lista da
+ * linha: é por ele que o portão a vai buscar, e não pela ordem em que aparece.
+ */
+const verificacoes = verificacoesDaLinha(claim).slice(0, VERIFICACOES_MOSTRADAS);
 
 /** As linhas da ficha que existem nesta afirmação. Uma linha a null não se mostra. */
 const ficha = [
@@ -386,12 +400,15 @@ const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undef
 
       {/* ----------------------------------------------- v · as verificações
 
-          Duas linhas, e a segunda está vazia em todas as 132 linhas: nenhuma
-          reconferência independente está escrita no livro-razão, porque o campo
-          que a guardaria não existe no formato (bloco T; `BRIEF-confianca.md`
-          §6.8, testes 1 e 3). O lugar fica desenhado e não fica preenchido: o
-          marcador único, com a sua porta e com a regra do Método que diz o que
-          uma releitura é. Sem caixa de exemplo e sem espécime (IDENTIDADE §6).
+          «Lido a», que a linha guarda desde sempre, e «Reconferido a», que ela
+          passou a poder guardar com o bloco T: as duas entradas mais recentes
+          de `verifications[]`, da mais nova para a mais velha, cada uma com o
+          dia, quem releu, o que encontrou e a porta para repetir a leitura.
+
+          Onde não há nenhuma entrada fica o que já havia: o marcador único, com
+          a porta para a regra da releitura no Método. Sem caixa de exemplo e
+          sem espécime (IDENTIDADE §6): uma reconferência que não aconteceu não
+          se desenha.
       */}
       <section class="linha-bloco" aria-labelledby="verificacoes">
         <h2 class="linha-bloco-titulo" id="verificacoes">{s.livro.linha.verificacoesK}</h2>
@@ -407,13 +424,61 @@ const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undef
               </dd>
             </>
           )}
-          <dt>{s.livro.linha.reconferidoK}</dt>
-          <dd>
-            <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>{' '}
-            <a href={`${routePath('metodo', lang)}#releitura`}>
-              {s.livro.linha.releituraPorta} →
-            </a>
-          </dd>
+          {
+            verificacoes.length === 0 ? (
+              <>
+                <dt>{s.livro.linha.reconferidoK}</dt>
+                <dd>
+                  <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>{' '}
+                  <a href={`${routePath('metodo', lang)}#releitura`}>
+                    {s.livro.linha.releituraPorta} →
+                  </a>
+                </dd>
+              </>
+            ) : (
+              verificacoes.map((v) => (
+                <>
+                  <dt>{s.livro.linha.reconferidoK}</dt>
+                  {/* Os atributos crus vão a par dos rótulos: o portão compara
+                      os primeiros com o livro-razão e os segundos com a sua
+                      própria cópia da tabela de rótulos. */}
+                  <dd
+                    class="linha-verificacao"
+                    data-linha-verificacao={String(v.__n)}
+                    data-por={v.by}
+                    data-resultado={v.result}
+                  >
+                    <CampoDaLinha
+                      id={id}
+                      campo={`verifications.${v.__n}.date`}
+                      valor={v.date}
+                      lang={lang}
+                    />
+                    {' · '}
+                    <span data-linha-verificacao-por>{s.livro.linha.verificacaoPor[v.by]}</span>
+                    {' · '}
+                    <span data-linha-verificacao-resultado>
+                      {s.livro.linha.verificacaoResultado[v.result]}
+                      {v.result === 'diverge' && (
+                        <>
+                          {' '}
+                          <CampoDaLinha
+                            id={id}
+                            campo={`verifications.${v.__n}.found`}
+                            valor={v.found}
+                            lang={lang}
+                          />
+                        </>
+                      )}
+                    </span>{' '}
+                    <a class="ligacao-externa" href={v.path} rel="noopener noreferrer external">
+                      {s.livro.linha.verificacaoPorta} →
+                    </a>
+                  </dd>
+                </>
+              ))
+            )
+          }
         </dl>
       </section>
 
