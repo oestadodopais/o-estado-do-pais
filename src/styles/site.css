@@ -2278,7 +2278,7 @@ a.src-chip.is-unverified:hover::before {
    que o sítio escreve é U+202F, que já não parte; o que o `nowrap` fazia era
    pôr um endereço de 1.188px numa linha só, e com ele a largura mínima da
    entrada inteira. Num item de grelha essa largura mínima é a da pista, e a
-   coluna do corpo entrava na do aparelho (§1.48). Parte onde for preciso,
+   coluna do corpo entrava na do aparelho (§1.47). Parte onde for preciso,
    como o endereço da agenda passou a partir (§1.43). */
 .registo-salto {
   font-family: var(--f-mono);

@@ -870,7 +870,16 @@ afina-a. São estas, e a lista é fechada:
   sítio (de `raw/…json → Dados["2025"]` para «INE, indicador 0012918, Évora
   (código 1C40705), dados de 2025»);
 - aparar um `excerpt` no fim de uma frase completa, quando o que sai é texto que
-  o extractor tinha cortado a meio de uma palavra.
+  o extractor tinha cortado a meio de uma palavra;
+- **estender um `excerpt` a um pedaço mais longo do MESMO excerto do motor**,
+  quando o que entra é contexto que já lá estava e a linha já apontava para ele
+  (de «valor 58567» para «Dados["2025"], geocod 1C40705, valor 58567», a
+  18.08.2026, §1.47: o pedido pede três períodos e o excerto não dizia qual dos
+  três era o número). Vale nos dois sentidos pela mesma razão: aparar e
+  estender são a casa a apontar melhor para o mesmo texto, e a V3 do exportador
+  prova-o, porque recusa um `excerpt_override` que não seja um pedaço textual
+  do excerto do motor. Um excerto que ganhe uma palavra que o motor não tem não
+  é isto: é texto novo, e não há porta para ele.
 
 **Um excerto que muda porque a FONTE mudou não é uma afinação destas** e fica na
 história da linha, como `proveniencia` sobre `excerpt` (18.08.2026, §1.47, T3c).
