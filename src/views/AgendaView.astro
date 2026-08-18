@@ -50,6 +50,7 @@ import Claim from '../components/Claim.astro';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import { studyLabel } from '../data/studies.mjs';
+import { prova, ancoraDoEstadoDaAgenda } from '../lib/prova.mjs';
 import {
   ESTADOS,
   agendaCruzada,
@@ -68,8 +69,117 @@ const path = routePath('agenda', lang);
 const agenda = agendaCruzada();
 const calendario = calendarioCruzado();
 const { datados, semData } = eventosOrdenados(calendario);
+const p = prova(lang);
 
 const ANCORA_DO_CALENDARIO = 'calendario';
+
+/**
+ * ---------------------------------------------------------------------------
+ * O QUADRO DE ESTADOS (v2, IDENTIDADE.md §7 e §11)
+ * ---------------------------------------------------------------------------
+ *
+ * Quatro colunas, uma por estado, cada uma com a sua contagem. É um instrumento
+ * dentro da página, e não uma quarta disposição: a página fica em A e as
+ * secções por estado continuam onde estavam (§3).
+ *
+ * A contagem não é escrita: entra por `data-prova`, é recalculada pelo portão a
+ * partir do `dist/` construído, e a sua porta é a âncora da secção daquele
+ * estado, nesta mesma página. É a regra da v2: a porta não desaparece por o
+ * leitor já estar onde ela leva (§10).
+ *
+ * UMA COLUNA VAZIA DESENHA-SE. «Retirado» está a zero hoje, e um zero é um
+ * estado e não uma ausência: aparece com o seu número e com a sua porta, como
+ * as outras três (§7). O que não se desenha é uma contagem que ainda não
+ * existe, e essa diz-se por palavras.
+ */
+const quadro = ESTADOS.map((estado) => {
+  const chave = `agenda_${estado}`;
+  const item = p[chave];
+  return {
+    estado,
+    chave,
+    item,
+    existe: item.valor !== null && item.valor !== undefined,
+  };
+});
+
+/**
+ * ---------------------------------------------------------------------------
+ * O EIXO DO TEMPO DO CALENDÁRIO (v2, IDENTIDADE.md §11)
+ * ---------------------------------------------------------------------------
+ *
+ * O calendário era uma lista com datas dentro. Passa a ser desenhado no
+ * servidor, sem uma linha de JavaScript: um eixo de tempo com os meses por
+ * escala, as janelas de publicação a amarelo, porque uma janela é uma marca de
+ * medição, e os dias que as fontes publicam como marcas sobre o eixo. A lista
+ * datada fica onde estava, por baixo, e é ela que cada porta da legenda abre.
+ *
+ * A ESCALA ESCREVE-SE NA NOTAÇÃO DA CASA. Os rótulos dos meses são `AAAA-MM`,
+ * que é como este sítio escreve uma data em todo o lado, e por isso não há aqui
+ * uma tabela de nomes de meses em duas línguas para manter, nem uma segunda
+ * maneira de escrever tempo. Vão marcados `escala-de-instrumento`, que é o
+ * motivo que a casa já tem para os algarismos de uma régua.
+ *
+ * NENHUMA DATA É ESCRITA. Cada data desenhada leva a marca `data-agenda` do seu
+ * campo, como a lista já leva: o portão compara as duas contra o mesmo registo.
+ */
+const DIA = 86400000;
+const instante = (iso) => Date.parse(`${iso}T00:00:00Z`);
+const inicioDoEvento = (e) => e.data ?? e.janela?.inicio ?? null;
+const fimDoEvento = (e) => e.data ?? e.janela?.fim ?? null;
+
+const EIXO = { W: 1200, H: 212, L: 62, R: 1138, y: 172, alturaJanela: 12, degraus: 3 };
+/** O primeiro dia do mês de um instante, e o primeiro dia do mês seguinte. */
+const inicioDoMes = (ms) => {
+  const d = new Date(ms);
+  return Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), 1);
+};
+const mesSeguinte = (ms) => {
+  const d = new Date(ms);
+  return Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1);
+};
+const rotuloDoMes = (ms) => {
+  const d = new Date(ms);
+  return `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, '0')}`;
+};
+
+const marcosDoEixo = datados.flatMap((e) => [
+  instante(inicioDoEvento(e)),
+  instante(fimDoEvento(e)),
+]);
+const eixoDe = marcosDoEixo.length ? inicioDoMes(Math.min(...marcosDoEixo)) : null;
+const eixoAte = marcosDoEixo.length ? mesSeguinte(Math.max(...marcosDoEixo)) : null;
+const temEixo = eixoDe !== null && eixoAte > eixoDe;
+
+const xDoInstante = (ms) =>
+  EIXO.L + ((ms - eixoDe) / (eixoAte - eixoDe)) * (EIXO.R - EIXO.L);
+
+/** Os meses que o eixo cobre, do primeiro ao último, inteiros. */
+const mesesDoEixo = [];
+if (temEixo) {
+  for (let m = eixoDe; m < eixoAte; m = mesSeguinte(m)) {
+    mesesDoEixo.push({ inicio: m, fim: mesSeguinte(m), rotulo: rotuloDoMes(m) });
+  }
+}
+
+/* Cada acontecimento datado, colocado. Os rótulos sobem em degraus para não se
+   pisarem: três degraus, pela ordem do eixo, que é a ordem da lista. */
+const noEixo = temEixo
+  ? datados.map((evento, i) => {
+      const de = instante(inicioDoEvento(evento));
+      const ate = instante(fimDoEvento(evento));
+      const eJanela = !evento.data && Boolean(evento.janela);
+      const degrau = i % EIXO.degraus;
+      return {
+        evento,
+        eJanela,
+        x: xDoInstante(de),
+        largura: Math.max(xDoInstante(ate + DIA) - xDoInstante(de), 2),
+        centro: (xDoInstante(de) + xDoInstante(ate + DIA)) / 2,
+        yRotulo: 34 + degrau * 38,
+      };
+    })
+  : [];
 
 /** O rótulo de uma edição, na língua da página. */
 const ed = (par) => (par ? (par[lang] ?? par.pt) : null);
@@ -106,13 +216,35 @@ const rotuloDoCriterio = (tipo) =>
     <p class="placeholder-nota" style="margin-top:12px">{s.agenda.origemNota}</p>
   </div>
 
+  {/* ============================== o quadro de estados, no topo (§7, §11) */}
+  <div class="quadro-estados" aria-labelledby="quadro-k">
+    <p class="quadro-estados-k" id="quadro-k">{s.agenda.quadroDeEstadosK}</p>
+    <div class="quadro-estados-cols">
+      {
+        quadro.map((c) =>
+          c.existe ? (
+            <a class="quadro-estados-col" href={c.item.porta} title={c.item.origem}>
+              <span class="quadro-estados-n" data-prova={c.chave}>{c.item.valor}</span>
+              <span class="quadro-estados-e">{s.agenda.estados[c.estado]}</span>
+            </a>
+          ) : (
+            <div class="quadro-estados-col">
+              <span class="quadro-estados-n prova-vazio">{s.agenda.semRegisto}</span>
+              <span class="quadro-estados-e">{s.agenda.estados[c.estado]}</span>
+            </div>
+          ),
+        )
+      }
+    </div>
+  </div>
+
   {
     ESTADOS.map((estado) => {
       const itens = itensDoEstado(estado, agenda);
       return (
         <div
           class="metodo-secao"
-          id={`estado-${estado}`}
+          id={ancoraDoEstadoDaAgenda(estado)}
           data-agenda-seccao={estado}
           style="padding-top:clamp(24px,3.2vw,34px)"
         >
@@ -138,45 +270,6 @@ const rotuloDoCriterio = (tipo) =>
                 </p>
 
                 <h3 class="agenda-titulo" data-agenda={`${item.id}.titulo`}>{ed(item.titulo)}</h3>
-
-                {item.pergunta && (
-                  <div class="agenda-bloco">
-                    <p class="agenda-k">{s.agenda.perguntaK}</p>
-                    <p class="metodo-p" data-agenda={`${item.id}.pergunta`}>{ed(item.pergunta)}</p>
-                    <p class="agenda-nota">
-                      {item.registo_previo_estado === 'selado'
-                        ? s.agenda.perguntaNotaSelada
-                        : s.agenda.perguntaNotaPorSelar}
-                    </p>
-                    {/* O ESTADO DO REGISTO PRÉVIO, E NÃO O SEU CAMINHO.
-                        Até 16.08.2026 esta linha rendia
-                        «content/10 Housing/preregistration.json», que é um
-                        endereço dentro do motor: não abre, não diz nada a quem
-                        lê, e a única coisa que o leitor precisa de saber sobre
-                        ele é se está selado. */}
-                    {/* O ESTADO DO REGISTO PRÉVIO, MARCADO PARA SER CONFERIDO.
-                        O rótulo é uma frase da casa e não um campo do registo,
-                        e por isso não leva `data-agenda`: leva a marca do
-                        estado, e o portão compara o estado com o registo E a
-                        frase visível com a sua própria cópia dos dois rótulos.
-                        Trocar «iniciado» por «selado» no gabarito passava
-                        (revisão cruzada 2, #5). */}
-                    {item.registo_previo_estado && (
-                      <p class="agenda-nota" data-agenda-registo-previo={item.registo_previo_estado}>
-                        <span class="agenda-k-inline">
-                          {item.registo_previo_estado === 'selado'
-                            ? s.agenda.registoPrevioSelado
-                            : s.agenda.registoPrevioIniciado}
-                        </span>{' '}
-                        <span
-                          class="mono"
-                          data-nonledger="data-da-agenda"
-                          data-agenda={`${item.id}.registo_previo_em`}
-                        >{item.registo_previo_em}</span>{item.registo_previo_estado !== 'selado' ? `, ${s.agenda.registoPrevioPorSelar}` : ''}
-                      </p>
-                    )}
-                  </div>
-                )}
 
                 <div class="agenda-bloco">
                   <p class="agenda-k">{s.agenda.porqueK}</p>
@@ -270,11 +363,17 @@ const rotuloDoCriterio = (tipo) =>
                           {criterio.limiar && (
                             <span class="agenda-limiar">
                               <span class="agenda-k-inline">{s.agenda.limiarK}</span>{' '}
+                              {/* A PERCENTAGEM ESCREVE-SE COLADA (v2, §11). O
+                                  painel da primeira página já escreve «limiar
+                                  60%»; esta era a última superfície do sítio a
+                                  escrever «9 %» com espaço. O espaço saiu e mais
+                                  nada: cada campo continua marcado por si, e é
+                                  campo a campo que o portão os compara com o
+                                  registo. */}
                               <span class="mono" data-nonledger="limiar-do-quadro">
                                 <span data-agenda={`${item.id}.criterios[${n}].limiar.valor`}>
                                   {criterio.limiar.valor}
-                                </span>{' '}
-                                <span data-agenda={`${item.id}.criterios[${n}].limiar.unidade`}>
+                                </span><span data-agenda={`${item.id}.criterios[${n}].limiar.unidade`}>
                                   {criterio.limiar.unidade}
                                 </span>
                               </span>
@@ -392,6 +491,45 @@ const rotuloDoCriterio = (tipo) =>
                   </p>
                 </div>
 
+                {item.pergunta && (
+                  <div class="agenda-bloco">
+                    <p class="agenda-k">{s.agenda.perguntaK}</p>
+                    <p class="metodo-p" data-agenda={`${item.id}.pergunta`}>{ed(item.pergunta)}</p>
+                    <p class="agenda-nota">
+                      {item.registo_previo_estado === 'selado'
+                        ? s.agenda.perguntaNotaSelada
+                        : s.agenda.perguntaNotaPorSelar}
+                    </p>
+                    {/* O ESTADO DO REGISTO PRÉVIO, E NÃO O SEU CAMINHO.
+                        Até 16.08.2026 esta linha rendia
+                        «content/10 Housing/preregistration.json», que é um
+                        endereço dentro do motor: não abre, não diz nada a quem
+                        lê, e a única coisa que o leitor precisa de saber sobre
+                        ele é se está selado. */}
+                    {/* O ESTADO DO REGISTO PRÉVIO, MARCADO PARA SER CONFERIDO.
+                        O rótulo é uma frase da casa e não um campo do registo,
+                        e por isso não leva `data-agenda`: leva a marca do
+                        estado, e o portão compara o estado com o registo E a
+                        frase visível com a sua própria cópia dos dois rótulos.
+                        Trocar «iniciado» por «selado» no gabarito passava
+                        (revisão cruzada 2, #5). */}
+                    {item.registo_previo_estado && (
+                      <p class="agenda-nota" data-agenda-registo-previo={item.registo_previo_estado}>
+                        <span class="agenda-k-inline">
+                          {item.registo_previo_estado === 'selado'
+                            ? s.agenda.registoPrevioSelado
+                            : s.agenda.registoPrevioIniciado}
+                        </span>{' '}
+                        <span
+                          class="mono"
+                          data-nonledger="data-da-agenda"
+                          data-agenda={`${item.id}.registo_previo_em`}
+                        >{item.registo_previo_em}</span>{item.registo_previo_estado !== 'selado' ? `, ${s.agenda.registoPrevioPorSelar}` : ''}
+                      </p>
+                    )}
+                  </div>
+                )}
+
                 <div class="agenda-bloco">
                   <p class="agenda-k">{s.agenda.historicoK}</p>
                   <ol class="agenda-historico">
@@ -442,13 +580,156 @@ const rotuloDoCriterio = (tipo) =>
     })
   }
 
-  <div class="metodo-secao" id={ANCORA_DO_CALENDARIO} style="padding-top:clamp(28px,3.6vw,40px)">
+  <div
+    class="metodo-secao agenda-calendario"
+    id={ANCORA_DO_CALENDARIO}
+    style="padding-top:clamp(28px,3.6vw,40px)"
+  >
     <div>
       <h2 class="agenda-estado">{s.agenda.calendarioH2}</h2>
     </div>
     <div class="metodo-corpo">
       <p class="metodo-p">{s.agenda.calendarioLede}</p>
+    </div>
 
+    {/* ================================ o eixo do tempo, desenhado (§11) */}
+    {
+      temEixo && (
+        <div class="agenda-eixo">
+          <p class="layer-tag">{s.agenda.eixoK}</p>
+          <div class="agenda-eixo-caixa">
+            <svg
+              class="agenda-eixo-svg"
+              viewBox={`0 0 ${EIXO.W} ${EIXO.H}`}
+              role="img"
+              aria-label={s.agenda.eixoK}
+            >
+              <line
+                x1={EIXO.L}
+                y1={EIXO.y}
+                x2={EIXO.R}
+                y2={EIXO.y}
+                stroke="var(--axis)"
+                stroke-width="1"
+              />
+              {/* A escala: um traço em cada mudança de mês, e o mês por baixo,
+                  na notação da casa. */}
+              {mesesDoEixo.map((mes) => (
+                <>
+                  <line
+                    x1={xDoInstante(mes.inicio)}
+                    y1={EIXO.y - 5}
+                    x2={xDoInstante(mes.inicio)}
+                    y2={EIXO.y + 5}
+                    stroke="var(--axis)"
+                    stroke-width="1"
+                  />
+                  <text
+                    class="tk"
+                    x={(xDoInstante(mes.inicio) + xDoInstante(mes.fim)) / 2}
+                    y={EIXO.y + 22}
+                    text-anchor="middle"
+                    data-nonledger="escala-de-instrumento"
+                  >
+                    {mes.rotulo}
+                  </text>
+                </>
+              ))}
+              <line
+                x1={xDoInstante(mesesDoEixo[mesesDoEixo.length - 1].fim)}
+                y1={EIXO.y - 5}
+                x2={xDoInstante(mesesDoEixo[mesesDoEixo.length - 1].fim)}
+                y2={EIXO.y + 5}
+                stroke="var(--axis)"
+                stroke-width="1"
+              />
+
+              {/* As janelas de publicação: a amarelo, porque uma janela é a
+                  marca de uma medição de tempo e não uma decoração (§2). */}
+              {noEixo
+                .filter((n) => n.eJanela)
+                .map((n) => (
+                  <rect
+                    x={n.x}
+                    y={EIXO.y - EIXO.alturaJanela / 2}
+                    width={n.largura}
+                    height={EIXO.alturaJanela}
+                    fill="var(--yellow)"
+                  />
+                ))}
+
+              {/* Os dias que uma fonte publica: uma marca sobre o eixo, e o fio
+                  que a liga ao seu rótulo. */}
+              {noEixo.map((n) => (
+                <>
+                  <line
+                    x1={n.centro}
+                    y1={n.yRotulo + 4}
+                    x2={n.centro}
+                    y2={n.eJanela ? EIXO.y - EIXO.alturaJanela / 2 : EIXO.y}
+                    stroke="var(--axis)"
+                    stroke-width="1"
+                  />
+                  {!n.eJanela && <circle cx={n.centro} cy={EIXO.y} r="3.5" fill="var(--ink)" />}
+                  <text class="ev-d" x={n.centro} y={n.yRotulo - 10} text-anchor="middle">
+                    {n.evento.data ? (
+                      <tspan
+                        data-nonledger="data-da-agenda"
+                        data-agenda={`evento:${n.evento.id}.data`}
+                      >
+                        {n.evento.data}
+                      </tspan>
+                    ) : (
+                      <>
+                        <tspan
+                          data-nonledger="data-da-agenda"
+                          data-agenda={`evento:${n.evento.id}.janela.inicio`}
+                        >
+                          {n.evento.janela.inicio}
+                        </tspan>
+                        <tspan> {s.agenda.janelaE} </tspan>
+                        <tspan
+                          data-nonledger="data-da-agenda"
+                          data-agenda={`evento:${n.evento.id}.janela.fim`}
+                        >
+                          {n.evento.janela.fim}
+                        </tspan>
+                      </>
+                    )}
+                  </text>
+                  <text class="tk" x={n.centro} y={n.yRotulo + 2} text-anchor="middle">
+                    <tspan data-agenda={`evento:${n.evento.id}.fonte`}>{n.evento.fonte}</tspan>
+                  </text>
+                </>
+              ))}
+            </svg>
+          </div>
+
+          {/* A legenda leva as portas: um <a> dentro de um desenho não se lê
+              como porta (§10). Cada uma abre o acontecimento na lista abaixo. */}
+          <p class="agenda-eixo-legenda">
+            <span class="agenda-k-inline">{s.agenda.eixoLegendaK}</span>
+            {noEixo.map((n) => (
+              <a class="agenda-eixo-porta" href={`#${ancoraDoEvento(n.evento.id)}`}>
+                <span
+                  class="mono"
+                  data-nonledger="data-da-agenda"
+                  data-agenda={
+                    n.evento.data
+                      ? `evento:${n.evento.id}.data`
+                      : `evento:${n.evento.id}.janela.inicio`
+                  }
+                >
+                  {n.evento.data ?? n.evento.janela.inicio}
+                </span>
+              </a>
+            ))}
+          </p>
+        </div>
+      )
+    }
+
+    <div class="metodo-corpo agenda-listas">
       <p class="agenda-k" style="margin-top:20px">{s.agenda.datadosK}</p>
       <ul class="agenda-eventos">
         {

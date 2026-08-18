@@ -2839,6 +2839,82 @@ a.src-chip.is-unverified:hover::before {
   text-transform: uppercase;
   color: var(--ink);
 }
+
+/* O QUADRO DE ESTADOS, no topo (IDENTIDADE §7 e §11).
+
+   Quatro colunas, uma por estado, e a coluna vazia desenha-se como as outras:
+   um zero é um estado, não uma ausência. Cada contagem é uma porta para a
+   secção que a mostra, nesta mesma página (§10, v2). Sem acento novo: o que
+   separa as colunas é fio e fundo.                                          */
+.quadro-estados {
+  margin-top: clamp(22px, 3vw, 32px);
+  display: grid;
+  gap: 10px;
+}
+.quadro-estados-k {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.quadro-estados-cols {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+@media (max-width: 700px) {
+  .quadro-estados-cols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.quadro-estados-col {
+  background: var(--paper-2);
+  padding: clamp(14px, 1.8vw, 20px);
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  text-decoration: none;
+  color: inherit;
+}
+.quadro-estados-n {
+  font-family: var(--f-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(30px, 3.4vw, 40px);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  border-bottom: 0;
+  padding-bottom: 0;
+  white-space: normal;
+}
+a.quadro-estados-col .quadro-estados-e {
+  text-decoration: underline;
+  text-decoration-color: var(--muted);
+  text-underline-offset: 3px;
+}
+a.quadro-estados-col:hover .quadro-estados-e {
+  text-decoration-color: var(--ink);
+}
+.quadro-estados-e {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  justify-self: start;
+}
+.quadro-estados .prova-vazio {
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+
 .agenda-item {
   border-top: 1px solid var(--rule);
   padding-top: 18px;
@@ -2985,6 +3061,71 @@ a.src-chip.is-unverified:hover::before {
   color: var(--ink);
   max-width: 64ch;
 }
+/* O EIXO DO TEMPO DO CALENDÁRIO (IDENTIDADE §11).
+
+   Um instrumento dentro de uma página não é uma quarta disposição (§3): a
+   agenda fica em A, e o eixo atravessa as duas colunas porque é essa a largura
+   que os instrumentos têm. A caixa rola por dentro, e não empurra a página
+   (§11, móvel).                                                             */
+.agenda-calendario .metodo-corpo {
+  grid-column: 2;
+}
+.agenda-eixo {
+  grid-column: 1 / -1;
+  margin-top: clamp(18px, 2.4vw, 26px);
+  display: grid;
+  gap: 12px;
+}
+@media (max-width: 780px) {
+  .agenda-calendario .metodo-corpo,
+  .agenda-eixo {
+    grid-column: 1;
+  }
+}
+.agenda-eixo-caixa {
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  background: var(--paper-2);
+  padding: 14px 16px;
+}
+.agenda-eixo-svg {
+  display: block;
+  width: 100%;
+  min-width: 720px;
+  height: auto;
+}
+.agenda-eixo .tk {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  fill: var(--muted);
+  letter-spacing: 0.06em;
+}
+.agenda-eixo .ev-d {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 600;
+  fill: var(--ink);
+  letter-spacing: 0.02em;
+}
+.agenda-eixo-legenda {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 16px;
+}
+.agenda-eixo-porta {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  text-underline-offset: 3px;
+  text-decoration-color: var(--muted);
+}
+.agenda-eixo-porta:hover {
+  text-decoration-color: currentColor;
+}
+
 .agenda-eventos {
   margin: 0;
   padding: 0;

@@ -167,15 +167,36 @@ function ancora(rota, id) {
 }
 
 /**
+ * A ÂNCORA DA SECÇÃO DE UM ESTADO, na própria página da agenda.
+ *
+ * É a mesma cadeia que `AgendaView.astro` põe no `id` de cada secção. Vive
+ * aqui porque é daqui que a porta sai: a chave da prova é que decide para onde
+ * a sua contagem abre, e o gabarito obedece.
+ */
+export const ancoraDoEstadoDaAgenda = (estado) => `estado-${estado}`;
+
+/**
  * A porta da agenda.
  *
  * A rota `agenda` ainda não existe: é o agente que atravessa o calendário do
  * motor que a acrescenta, neste mesmo ramo. Enquanto não existir, a porta é o
  * Método, que é onde a regra 8 está escrita. No dia em que a rota entrar na
  * tabela, esta função devolve-a sem que seja preciso tocar aqui.
+ *
+ * DESDE A V2, UMA CONTAGEM POR ESTADO ABRE A SUA SECÇÃO (IDENTIDADE.md §10, «a
+ * porta pode ser uma âncora na própria página»). O quadro de estados da agenda
+ * conta quatro coisas que se veem ali mesmo, mais abaixo na mesma página: a
+ * porta de «3 em curso» é a secção «Em curso», e não a página inteira, onde já
+ * se está. Da mobília do cabeçalho, noutra página, a mesma porta continua a
+ * levar ao mesmo sítio, um pouco mais abaixo.
+ *
+ * `agenda_total` fica sem âncora: conta a agenda inteira, e o que ela conta vê-se
+ * na página inteira.
  */
-function portaDaAgenda(lang) {
-  return ROUTES.agenda ? routePath('agenda', lang) : routePath('metodo', lang);
+function portaDaAgenda(lang, estado = null) {
+  if (!ROUTES.agenda) return routePath('metodo', lang);
+  const rota = routePath('agenda', lang);
+  return estado ? ancora(rota, ancoraDoEstadoDaAgenda(estado)) : rota;
 }
 
 const FRASES = {
@@ -383,10 +404,10 @@ export function prova(lang = 'pt') {
 
     /* ---- a agenda: existe quando o ficheiro existe, e não antes ---- */
     agenda_total: k('agenda', ag ? ag.total : null, portaDaAgenda(lang)),
-    agenda_em_curso: k('agenda', ag ? ag.em_curso : null, portaDaAgenda(lang)),
-    agenda_a_seguir: k('agenda', ag ? ag.a_seguir : null, portaDaAgenda(lang)),
-    agenda_concluido: k('agenda', ag ? ag.concluido : null, portaDaAgenda(lang)),
-    agenda_retirado: k('agenda', ag ? ag.retirado : null, portaDaAgenda(lang)),
+    agenda_em_curso: k('agenda', ag ? ag.em_curso : null, portaDaAgenda(lang, 'em_curso')),
+    agenda_a_seguir: k('agenda', ag ? ag.a_seguir : null, portaDaAgenda(lang, 'a_seguir')),
+    agenda_concluido: k('agenda', ag ? ag.concluido : null, portaDaAgenda(lang, 'concluido')),
+    agenda_retirado: k('agenda', ag ? ag.retirado : null, portaDaAgenda(lang, 'retirado')),
   };
 }
 
