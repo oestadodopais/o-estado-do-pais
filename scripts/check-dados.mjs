@@ -38,7 +38,14 @@ import { fileURLToPath } from 'node:url';
 import crypto from 'node:crypto';
 
 import { DADOS, lerCsv, linhasDaConvergencia } from '../src/lib/dados.mjs';
-import { allClaims, getClaim, parsePtNumber } from '../src/lib/ledger.mjs';
+import {
+  allClaims,
+  getClaim,
+  parsePtNumber,
+  CAMPOS_PUBLICADOS,
+  CAMPOS_DO_DOCUMENTO,
+} from '../src/lib/ledger.mjs';
+import { LICENCA, CONJUNTO } from '../src/data/licenca.mjs';
 import { REGIOES } from '../src/data/regioes.mjs';
 import { MUNICIPIOS, DISTRITOS, regiaoDe } from '../src/data/caop-centroids.mjs';
 import { routePath } from '../src/lib/routes.mjs';
@@ -314,11 +321,222 @@ for (const lang of ['pt', 'en']) {
   }
 }
 
+/* -------------------------------------- o livro-razão como conjunto de dados
+ *
+ * Bloco T, T4. Os três ficheiros são gerados na construção, e por isso não
+ * podem divergir do livro-razão por descuido de edição — só por defeito do
+ * gerador, que é exactamente a classe que os dois ficheiros de cima já são
+ * conferidos para apanhar. Lidos do dist/, confrontados com `ledger/claims/`,
+ * e nunca com uma segunda chamada ao gerador: seria uma tautologia.
+ *
+ * E confere-se a comutação da licença, que é o que a §2.6 do BRIEF-bloco-T
+ * mandou construir: com `LICENCA` a `null`, NENHUMA página construída liga
+ * estes ficheiros; com ela preenchida, o índice liga os dois nas duas edições e
+ * cada página de linha liga o seu. Sem isto, a promessa «nada se publica sob
+ * licença nenhuma» era uma frase, e não um estado.
+ */
+
+/** Leitor RFC 4180 suficiente para este ficheiro: aspas, vírgulas e CRLF. */
+function lerRfc4180(texto) {
+  const registos = [];
+  let campo = '';
+  let registo = [];
+  let dentro = false;
+  for (let i = 0; i < texto.length; i++) {
+    const ch = texto[i];
+    if (dentro) {
+      if (ch === '"') {
+        if (texto[i + 1] === '"') {
+          campo += '"';
+          i++;
+        } else dentro = false;
+      } else campo += ch;
+      continue;
+    }
+    if (ch === '"') dentro = true;
+    else if (ch === ',') {
+      registo.push(campo);
+      campo = '';
+    } else if (ch === '\r' && texto[i + 1] === '\n') {
+      registo.push(campo);
+      registos.push(registo);
+      registo = [];
+      campo = '';
+      i++;
+    } else campo += ch;
+  }
+  if (campo !== '' || registo.length) {
+    registo.push(campo);
+    registos.push(registo);
+  }
+  return registos;
+}
+
+/** As colunas que o ficheiro tem de ter, compostas AQUI a partir do formato. */
+const colunasEsperadas = [];
+for (const c of CAMPOS_PUBLICADOS) {
+  if (c === 'document') for (const k of CAMPOS_DO_DOCUMENTO) colunasEsperadas.push(`document_${k}`);
+  else colunasEsperadas.push(c);
+}
+
+const linhasDoLivro = allClaims();
+let conjuntoConferido = 0;
+
+const brutoConjunto = leDoDist(CONJUNTO.csv);
+if (brutoConjunto) {
+  const registos = lerRfc4180(brutoConjunto);
+  const cabecalho = registos[0] ?? [];
+  const dados = registos.slice(1);
+  if (cabecalho.join(',') !== colunasEsperadas.join(',')) {
+    err(
+      `${CONJUNTO.csv}: o cabeçalho não é o do formato.\n` +
+        `      esperado:   ${colunasEsperadas.join(',')}\n` +
+        `      construído: ${cabecalho.join(',')}`,
+    );
+  }
+  if (cabecalho.includes('note')) {
+    err(`${CONJUNTO.csv}: traz uma coluna "note". O campo "note" não é publicado (ledger/README.md).`);
+  }
+  if (dados.length !== linhasDoLivro.length) {
+    err(
+      `${CONJUNTO.csv}: tem ${dados.length} registos e o livro-razão tem ${linhasDoLivro.length} ` +
+        `linhas. O conjunto é o livro-razão inteiro, ou não é o conjunto.`,
+    );
+  } else {
+    const iId = cabecalho.indexOf('id');
+    const iValor = cabecalho.indexOf('value');
+    const iLido = cabecalho.indexOf('access_date');
+    for (let n = 0; n < dados.length; n++) {
+      const c = linhasDoLivro[n];
+      const r = dados[n];
+      for (const [coluna, i, esperado] of [
+        ['id', iId, c.id],
+        ['value', iValor, c.value],
+        ['access_date', iLido, c.access_date ?? null],
+      ]) {
+        if (i < 0) continue;
+        const noFicheiro = r[i] ?? '';
+        const daLinha = esperado === null || esperado === undefined ? '' : String(esperado);
+        if (noFicheiro !== daLinha) {
+          err(
+            `${CONJUNTO.csv}, registo ${n + 1}: "${coluna}" é "${noFicheiro}" e a linha ` +
+              `"${c.id}" diz "${daLinha}". O conjunto publica o livro-razão, não uma cópia dele.`,
+          );
+        }
+      }
+      conjuntoConferido++;
+    }
+  }
+}
+
+const brutoJson = leDoDist(CONJUNTO.json);
+if (brutoJson) {
+  let doc = null;
+  try {
+    doc = JSON.parse(brutoJson);
+  } catch (e) {
+    err(`${CONJUNTO.json} não é JSON válido: ${e.message}`);
+  }
+  if (doc) {
+    if (JSON.stringify(doc.licenca ?? null) !== JSON.stringify(LICENCA ?? null)) {
+      err(`${CONJUNTO.json}: a licença que o ficheiro declara não é a de src/data/licenca.mjs.`);
+    }
+    const linhas = Array.isArray(doc.linhas) ? doc.linhas : [];
+    if (linhas.length !== linhasDoLivro.length) {
+      err(
+        `${CONJUNTO.json}: tem ${linhas.length} linhas e o livro-razão tem ${linhasDoLivro.length}.`,
+      );
+    } else {
+      for (let n = 0; n < linhas.length; n++) {
+        const c = linhasDoLivro[n];
+        const l = linhas[n];
+        if ('note' in l) err(`${CONJUNTO.json}: a linha "${c.id}" traz "note", que não é publicada.`);
+        if (l.id !== c.id || String(l.value) !== String(c.value)) {
+          err(
+            `${CONJUNTO.json}, linha ${n + 1}: diz "${l.id}" = "${l.value}" e o livro-razão diz ` +
+              `"${c.id}" = "${c.value}".`,
+          );
+        }
+        const chaves = Object.keys(l).join(',');
+        if (chaves !== CAMPOS_PUBLICADOS.join(',')) {
+          err(
+            `${CONJUNTO.json}: a linha "${c.id}" não traz os campos do formato.\n` +
+              `      esperado:   ${CAMPOS_PUBLICADOS.join(',')}\n` +
+              `      construído: ${chaves}`,
+          );
+        }
+      }
+    }
+  }
+}
+
+let porLinhaConferidas = 0;
+for (const c of linhasDoLivro) {
+  const bruto = leDoDist(CONJUNTO.linha(c.id));
+  if (!bruto) continue;
+  try {
+    const doc = JSON.parse(bruto);
+    if (doc?.linha?.id !== c.id || String(doc?.linha?.value) !== String(c.value)) {
+      err(
+        `${CONJUNTO.linha(c.id)}: diz "${doc?.linha?.id}" = "${doc?.linha?.value}" e o ` +
+          `livro-razão diz "${c.id}" = "${c.value}".`,
+      );
+    } else porLinhaConferidas++;
+  } catch (e) {
+    err(`${CONJUNTO.linha(c.id)} não é JSON válido: ${e.message}`);
+  }
+}
+
+/* A comutação da licença, sobre as páginas construídas. */
+const paginasQueLigam = new Map();
+for (const file of ficheirosHtml(DIST)) {
+  const html = fs.readFileSync(file, 'utf8');
+  for (const m of html.matchAll(/href="(\/livro-razao(?:\.csv|\.json|\/[a-z0-9-]+\.json))"/g)) {
+    const rel = '/' + path.relative(DIST, file);
+    if (!paginasQueLigam.has(m[1])) paginasQueLigam.set(m[1], new Set());
+    paginasQueLigam.get(m[1]).add(rel);
+  }
+}
+if (!LICENCA) {
+  if (paginasQueLigam.size) {
+    err(
+      `a licença do conjunto não está decidida (LICENCA = null em src/data/licenca.mjs) e ` +
+        `${paginasQueLigam.size} endereço(s) do conjunto estão ligados de páginas construídas ` +
+        `(${[...paginasQueLigam.keys()].slice(0, 3).join(', ')}).\n` +
+        `      Até a direção decidir, nada se oferece sob licença nenhuma (BRIEF-bloco-T §2.6).`,
+    );
+  }
+} else {
+  for (const lang of ['pt', 'en']) {
+    const rota = routePath('livro', lang);
+    const ficheiro = path.join(DIST, rota.replace(/^\//, '') + '/index.html');
+    if (!fs.existsSync(ficheiro)) {
+      err(`não encontrei o índice do livro-razão da edição "${lang}" em ${ficheiro}.`);
+      continue;
+    }
+    const html = fs.readFileSync(ficheiro, 'utf8');
+    for (const alvo of [CONJUNTO.csv, CONJUNTO.json]) {
+      if (!html.includes(`href="${alvo}"`)) {
+        err(
+          `o índice do livro-razão da edição "${lang}" não liga para "${alvo}". Com licença ` +
+            `decidida, o conjunto oferece-se nas duas edições, ou não se oferece.`,
+        );
+      }
+    }
+  }
+}
+
 /* ------------------------------------------------------------- relatório */
 
 console.log('');
 console.log(cinza(`  dados descarregáveis · ${Object.keys(DADOS).length} ficheiros · ${ligacoes.size} endereços ligados`));
 console.log(cinza(`  ficheiros alojados · ${alojadas.length} linha(s) com document.hosted · ${recontadas} recontada(s)`));
+console.log(
+  cinza(
+    `  conjunto de dados · ${conjuntoConferido} registos no CSV · ${porLinhaConferidas} ficheiros de linha · ` +
+      `licença ${LICENCA ? LICENCA.nome : 'por decidir'} · ${paginasQueLigam.size} endereço(s) ligado(s)`,
+  ),
+);
 
 if (erros.length) {
   console.log('');
