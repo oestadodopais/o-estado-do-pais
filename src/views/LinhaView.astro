@@ -278,12 +278,17 @@ const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undef
               {daCasa ? s.livro.linha.excertoDaCasa : s.livro.linha.excertoDerivada}
             </p>
           ) : claim.excerpt === POR_VERIFICAR ? (
-            <>
-              <p class="linha-excerto-vazio">
-                <CampoDaLinha id={id} campo="excerpt" valor={claim.excerpt} lang={lang} />
-              </p>
-              <p class="linha-nota">{s.livro.linha.excertoPorConfirmar}</p>
-            </>
+            /* Uma ausência nunca se desenha (IDENTIDADE §6). O excerto que
+               falta não leva caixa nenhuma: leva o marcador, e a seguir o
+               motivo por palavras, na mesma linha em que se lê. É o que a
+               linha do endereço já fazia dois blocos abaixo, e o caminho para
+               a correção fica onde já estava, no bloco «O que falta nesta
+               linha». A marca do campo continua no marcador, e por isso a
+               conferência de transcrição do portão lê exactamente o mesmo. */
+            <p class="linha-nota">
+              <CampoDaLinha id={id} campo="excerpt" valor={claim.excerpt} lang={lang} />{' '}
+              {s.livro.linha.excertoPorConfirmar}
+            </p>
           ) : (
             <>
               <blockquote class="linha-excerto">
