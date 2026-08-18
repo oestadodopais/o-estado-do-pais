@@ -511,8 +511,7 @@ export const STRINGS = {
         bandeiraK: 'Estado na fonte',
         /* A promessa de não ordenar partidos vive na regra 10 do Método e na
            página do município, e aqui fica o rótulo e a porta (DECISIONS §1.40). */
-        atribuicaoNota: 'Como consta do documento; o rótulo partidário é facto de registo',
-        atribuicaoNotaPorta: 'Porque não se ordenam partidos',
+        atribuicaoNota: 'Como consta do documento.',
         incompletaK: 'O que falta nesta linha',
         incompletaV:
           'Os campos assinalados não foram confirmados contra a fonte. O valor publicado não muda por isso; o que falta é a prova documental, e enquanto faltar a linha fica fora do índice dos motores de busca.',
@@ -1139,8 +1138,7 @@ export const STRINGS = {
         historicoNota: 'Corrections: public, dated, permanent',
         historicoNotaPorta: 'The whole policy',
         bandeiraK: 'Status at source',
-        atribuicaoNota: 'As the document records it; the party label is a fact of record',
-        atribuicaoNotaPorta: 'Why parties are not ranked',
+        atribuicaoNota: 'As the document records it.',
         incompletaK: 'What is missing from this row',
         incompletaV:
           'The marked fields have not been confirmed against the source. The published value does not change because of it; what is missing is the documentary proof, and while it is missing the row stays out of search engine indexes.',

@@ -137,8 +137,14 @@ verificação própria.
 **Um rótulo partidário aqui é registo do que consta, não juízo nem ordenação.**
 É a mesma regra que a direção fixou para a camada de mandatos: *sem viés não é
 o mesmo que sem atribuição*. Este sítio não faz tabelas classificativas por
-partido — territórios que não têm nada em comum não se ordenam — e a página da
-linha di-lo por palavras ao lado do campo, nas duas edições.
+partido: territórios que não têm nada em comum não se ordenam, e a regra está
+escrita no Método. **Nenhuma linha credita hoje um partido** (DECISIONS §1.31,
+«Nenhum rótulo partidário atravessou»), e o formato não tem campo que marque um
+elemento da lista como partido. Até 18.08.2026 a página da linha escrevia a
+frase ao lado do campo em todas as linhas com atribuição, inclusive nas que só
+creditam um organismo: dizia-o de uma coisa que não estava lá. A nota da página
+passa a dizer só «Como consta do documento.», e a frase do partido volta quando
+o formato souber marcá-lo (DECISIONS §1.44).
 
 **Como é escrito na página:** os elementos da lista, pela ordem em que estão no
 livro-razão, separados por ` · `. A escolha é de rendição e é deliberadamente

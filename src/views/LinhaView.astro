@@ -78,8 +78,14 @@ const derivacao = derivacaoDaLinha(claim, lang);
 const bandeira = notaDeBandeira(claim, lang);
 /* A quem o valor é creditado, escrito numa linha só. Fica no aparelho, ao pé
    da proveniência, porque é isso que é: parte do registo do facto, não um
-   juízo. A nota ao lado di-lo por palavras — um rótulo partidário aqui é o que
-   consta, e este sítio não faz tabelas classificativas por partido. */
+   juízo. A nota ao lado di-lo por palavras.
+
+   Até 18.08.2026 a nota dizia também «o rótulo partidário é facto de registo»
+   e abria a regra do Método sobre não ordenar partidos. Nenhuma das 61 linhas
+   com `attributed_to` credita um partido: são oito listas distintas, todas de
+   organismos, e o formato não tem campo que marque um. Ver DECISIONS §1.31,
+   «Nenhum rótulo partidário atravessou». A frase falava de uma coisa que não
+   estava na página. Volta com o campo, não com uma adivinha. */
 const atribuicao = atribuicaoDaLinha(claim);
 
 /* O endereço só é ligação quando é mesmo um endereço. "[a verificar]" não é. */
@@ -446,16 +452,7 @@ const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undef
         }
       </dl>
 
-      {
-        atribuicao && (
-          <p class="aparelho-nota">
-            {s.livro.linha.atribuicaoNota}{' '}
-            <a href={`${routePath('metodo', lang)}#o-que-nao-faz`}>
-              {s.livro.linha.atribuicaoNotaPorta} →
-            </a>
-          </p>
-        )
-      }
+      {atribuicao && <p class="aparelho-nota">{s.livro.linha.atribuicaoNota}</p>}
 
       {
         bandeira && (
