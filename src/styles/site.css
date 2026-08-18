@@ -1931,6 +1931,17 @@ a.src-chip.is-unverified:hover::before {
   overflow-wrap: anywhere;
   min-width: 0;
 }
+/* O resumo curto e o corte que diz que é curto. O que se lê são os 12
+   primeiros hexadecimais, e as reticências dizem-no; o resumo inteiro está no
+   `title` do grupo e no JSON da linha. As reticências ficam FORA do elemento
+   comparado: o portão confere o campo carácter a carácter, e um carácter que a
+   linha não tem não entra lá dentro. */
+.linha-alojado-resumo {
+  font-variant-numeric: tabular-nums;
+}
+.linha-resumo-corte {
+  color: var(--muted);
+}
 .linha-expressao,
 .linha-deriva {
   display: grid;

@@ -193,6 +193,24 @@ const RESUMO_CURTO = 12;
 const encurta = (h) => String(h).slice(0, RESUMO_CURTO);
 
 /**
+ * O corte que diz que o resumo está cortado.
+ *
+ * «sha256 0d5335642a26» são doze hexadecimais debaixo de um rótulo que promete
+ * sessenta e quatro, e quem lê toma o prefixo pelo resumo (leitura cruzada de
+ * 18.08.2026, achado 10). O prefixo fica — é a leitura de relance de uma
+ * impressão digital, e o resumo inteiro numa coluna de leitura de 354px a 390
+ * parte-se a meio em duas linhas de hexadecimais —, mas passa a trazer as
+ * reticências, que são a única coisa que faltava: dizem que aquilo continua.
+ *
+ * Ficam FORA do elemento comparado. O portão confere o texto rendido do campo
+ * carácter a carácter contra a sua própria cópia da regra do encurtamento
+ * (`document.hosted.sha256.curto`); um carácter a mais lá dentro seria a
+ * transcrição a deixar de bater. O resumo inteiro vai no `title` do grupo, que
+ * cobre o prefixo e o corte, e no JSON da linha, que a construção escreve.
+ */
+const CORTE = '…';
+
+/**
  * Os ficheiros sobre que a conta foi feita, e que este sítio NÃO aloja.
  *
  * O gémeo honesto do bloco acima. Onde a licença da fonte não permite alojar,
@@ -496,6 +514,7 @@ const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undef
                     lang={lang}
                     class="linha-alojado-resumo"
                   />
+                  <span class="linha-resumo-corte">{CORTE}</span>
                 </span>
               </p>
               {/* A licença, e a atribuição na forma que a fonte pede. É a
@@ -539,6 +558,7 @@ const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undef
                       lang={lang}
                       class="linha-alojado-resumo"
                     />
+                    <span class="linha-resumo-corte">{CORTE}</span>
                   </span>
                 </p>
               ))}
@@ -578,6 +598,7 @@ const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undef
                         lang={lang}
                         class="linha-alojado-resumo"
                       />
+                      <span class="linha-resumo-corte">{CORTE}</span>
                     </span>
                   </li>
                 ))}
