@@ -1154,14 +1154,14 @@ for (const [id] of claims) {
  * O selo deixou de ser uma cadeia só. São três superfícies, e cada uma tem a
  * sua conferência, porque cada uma pode mentir de maneira diferente:
  *
- *   etiqueta — o que `data-selo-etiqueta` declara e o `title` mostra. É a
+ *   etiqueta: o que `data-selo-etiqueta` declara e o `title` mostra. É a
  *              etiqueta DAQUELA linha, e é aqui que a amarra da §1.42 passa a
  *              viver: comparava-se o texto visível, e o texto visível deixou
  *              de a levar;
- *   visivel  — o que um leitor com vista lê: a palavra da edição («fonte» /
+ *   visivel:  o que um leitor com vista lê, a palavra da edição («fonte» /
  *              «source») e, quando falta um campo, o marcador. Mais nada:
  *              prosa dentro do selo é uma segunda porta a dizer outra coisa;
- *   inteiro  — tudo, com o texto oculto. Continua a ser comparado carácter a
+ *   inteiro:  tudo, com o texto oculto. Continua a ser comparado carácter a
  *              carácter porque `data-nonledger` dispensa este elemento do
  *              varrimento dos algarismos e do da ortografia, e uma dispensa
  *              sem comparação é um buraco (revisão cruzada, #8).
@@ -2636,7 +2636,7 @@ for (const file of ficheirosHtml(DIST)) {
           );
         }
 
-        /* (3) À vista, o selo escreve a palavra da edição e mais nada — e o
+        /* (3) À vista, o selo escreve a palavra da edição e mais nada, e o
            marcador, quando aquela linha tem proveniência por confirmar. */
         const visivel = textoVisivel(el);
         if (visivel !== selo.visivel) {
