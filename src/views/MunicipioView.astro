@@ -142,6 +142,55 @@ const indiceSeriePartes = [
   s.municipio.tempoSerieE,
 ];
 
+/**
+ * A BANDA DOS MANDATOS (v2, IDENTIDADE.md §11; `design/DECISAO.md`, «Município»).
+ *
+ * Até aqui a linha do tempo era uma régua de anos por cima de uma lista: os
+ * anos estavam desenhados, os mandatos não. Passa a ser uma banda, que é o que
+ * uma linha do tempo é: cada mandato ocupa no desenho o pedaço de tempo que
+ * ocupou na realidade, sobre um eixo partilhado, e a legenda por baixo leva as
+ * portas para o mandato de cada segmento (§10: dentro de um desenho, a porta
+ * vai na legenda).
+ *
+ * NADA AQUI É ESCRITO. Os anos saem de `m.tempo.eixo`, os períodos de
+ * `mandato.periodo`, e a geometria é derivada dos dois. Nenhum número novo
+ * aparece na página: os que se veem já lá estavam.
+ *
+ * SEM ACENTO NOVO. Um mandato não é uma medição, e por isso não leva amarelo
+ * (§2): a banda distingue-se com fundo, fio e letra monoespaçada.
+ *
+ * O MANDATO EM CURSO É UM ESTADO DESENHADO (§7). Não tem fim publicado, e por
+ * isso não pode ter aresta direita: ocupa a cauda do desenho, que é espaço de
+ * desenho e não tempo medido, e fecha-se a tracejado, que é a mesma língua com
+ * que o selo diz «falta um campo».
+ */
+const BANDA = { W: 720, H: 62, L: 10, R: 710, y: 8, h: 26, cauda: 96 };
+/** Um período do registo, «2009–2013» ou «2025–», lido e não interpretado. */
+const anosDoPeriodo = (periodo) => {
+  const [de, ate] = String(periodo).split(/[–-]/);
+  return { de: Number(de), ate: ate ? Number(ate) : null };
+};
+const periodos = m.tempo.mandatos.map((mandato) => anosDoPeriodo(mandato.periodo));
+const anoMin = Math.min(...periodos.map((p) => p.de));
+const anoMax = Math.max(...periodos.map((p) => p.ate ?? p.de));
+/* O eixo do tempo vive entre a esquerda e o início da cauda; a cauda é do
+   mandato sem fim, e não representa anos nenhuns. */
+const xDoAno = (ano) =>
+  BANDA.L + ((ano - anoMin) / (anoMax - anoMin)) * (BANDA.R - BANDA.L - BANDA.cauda);
+/** A âncora de um mandato: o seu período, e mais nada. */
+const ancoraDoMandato = (periodo) => `mandato-${String(periodo).replace(/[–-]+$/, '').replace(/[–-]/g, '-')}`;
+const banda = m.tempo.mandatos.map((mandato, i) => {
+  const { de, ate } = periodos[i];
+  const x = xDoAno(de);
+  return {
+    mandato,
+    ancora: ancoraDoMandato(mandato.periodo),
+    aberto: ate === null,
+    x,
+    largura: (ate === null ? BANDA.R : xDoAno(ate)) - x,
+  };
+});
+
 const metodoPath = routePath('metodo', lang);
 ---
 
@@ -346,14 +395,90 @@ const metodoPath = routePath('metodo', lang);
               {pontosDaSerie.map((pt) => <Provenance id={pt.indice} lang={lang} />)}
             </p>
 
-            <div class="mun-tempo">
-              <div class="mun-tempo-eixo" data-nonledger="escala-de-instrumento">
-                {m.tempo.eixo.map((ano) => <span>{ano}</span>)}
-              </div>
+            {/* --------------------------------------------------- a banda */}
+            <div class="mun-banda">
+              <p class="layer-tag">{s.municipio.tempoBandaK}</p>
+              <svg
+                class="mun-banda-svg"
+                viewBox={`0 0 ${BANDA.W} ${BANDA.H}`}
+                role="img"
+                aria-label={s.municipio.tempoBandaK}
+              >
+                {
+                  banda.map((seg) => (
+                    <>
+                      <rect
+                        class:list={['mun-banda-seg', seg.aberto && 'is-aberto']}
+                        x={seg.x}
+                        y={BANDA.y}
+                        width={seg.largura}
+                        height={BANDA.h}
+                      />
+                      <text
+                        class="mun-banda-lista"
+                        x={seg.x + 8}
+                        y={BANDA.y + BANDA.h / 2 + 4}
+                        text-anchor="start"
+                      >
+                        {seg.mandato.lista}
+                      </text>
+                    </>
+                  ))
+                }
+                <line
+                  x1={BANDA.L}
+                  y1={BANDA.y + BANDA.h}
+                  x2={BANDA.R}
+                  y2={BANDA.y + BANDA.h}
+                  stroke="var(--axis)"
+                  stroke-width="1"
+                />
+                {
+                  m.tempo.eixo.map((ano) => (
+                    <>
+                      <line
+                        x1={xDoAno(Number(ano))}
+                        y1={BANDA.y + BANDA.h}
+                        x2={xDoAno(Number(ano))}
+                        y2={BANDA.y + BANDA.h + 5}
+                        stroke="var(--axis)"
+                        stroke-width="1"
+                      />
+                      <text
+                        class="tk"
+                        x={xDoAno(Number(ano))}
+                        y={BANDA.y + BANDA.h + 18}
+                        text-anchor="middle"
+                        data-nonledger="escala-de-instrumento"
+                      >
+                        {ano}
+                      </text>
+                    </>
+                  ))
+                }
+              </svg>
 
+              {/* A legenda leva as portas: um <a> dentro de um desenho não se
+                  lê como porta, e por isso o segmento não é a ligação (§10, a
+                  convenção do §1.34). Cada porta abre o mandato do seu
+                  segmento, mais abaixo nesta mesma página. */}
+              <p class="mun-banda-legenda">
+                <span class="mun-selo-rot">{s.municipio.tempoBandaLegendaK}</span>
+                {
+                  banda.map((seg) => (
+                    <a class="mun-banda-porta" href={`#${seg.ancora}`}>
+                      <span data-nonledger="data-de-referencia">{seg.mandato.periodo}</span>
+                      {seg.aberto ? ` ${s.municipio.tempoEmFuncoes}` : ''}
+                    </a>
+                  ))
+                }
+              </p>
+            </div>
+
+            <div class="mun-tempo">
               {
                 m.tempo.mandatos.map((mandato) => (
-                  <div class="mun-mandato">
+                  <div class="mun-mandato" id={ancoraDoMandato(mandato.periodo)}>
                     <div class="mun-mandato-cabeca">
                       <span class="mun-mandato-periodo" data-nonledger="data-de-referencia">
                         {mandato.periodo}

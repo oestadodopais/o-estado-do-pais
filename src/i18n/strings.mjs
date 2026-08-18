@@ -586,6 +586,11 @@ export const STRINGS = {
       tempoSerieD: ' % em ',
       tempoSerieE: ', nos quatro anos que esta página publica.',
       tempoK: 'Quem administrou, e o que as contas registaram',
+      /* A banda dos mandatos: o rótulo do desenho e o rótulo da legenda que
+         leva as portas (IDENTIDADE.md §10). Os anos do eixo e os períodos são
+         os que a página já publica; a banda não escreve nenhum número novo. */
+      tempoBandaK: 'Mandatos, no tempo',
+      tempoBandaLegendaK: 'Abrir cada mandato',
       tempoRelanceK: 'Índice de dívida, do primeiro ano legível ao último',
       tempoBreve:
         'Cinco administrações, contadas como foram instaladas e não como foram eleitas. As decisões vão atribuídas a quem as tomou, com o rótulo da lista que ganhou; os índices não vão atribuídos a ninguém.',
@@ -1197,6 +1202,8 @@ export const STRINGS = {
       tempoSerieD: ' % in ',
       tempoSerieE: ', across the four years this page publishes.',
       tempoK: 'Who governed, and what the accounts recorded',
+      tempoBandaK: 'Terms, in time',
+      tempoBandaLegendaK: 'Open each term',
       tempoRelanceK: 'Debt index, from the first readable year to the last',
       tempoBreve:
         'Five administrations, counted as they were installed and not as they were elected. Decisions are attributed to whoever took them, with the label of the list that won; indices are attributed to nobody.',
