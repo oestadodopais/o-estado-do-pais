@@ -1,0 +1,297 @@
+{
+ "pages": [
+  {
+   "id": "page-1",
+   "name": "Direção"
+  },
+  {
+   "id": "page-2",
+   "name": "Páginas"
+  },
+  {
+   "id": "page-3",
+   "name": "v2 · três densidades"
+  },
+  {
+   "id": "page-4",
+   "name": "v3 · Espécime em três densidades"
+  },
+  {
+   "id": "page-5",
+   "name": "v3 · cabeça: opções"
+  }
+ ],
+ "artboards": [
+  {
+   "file": "Main.dc.html",
+   "title": "Direção «Espécime» · constituição v3",
+   "x": 0,
+   "y": 0,
+   "w": 1120,
+   "h": 2775,
+   "page": "page-1"
+  },
+  {
+   "file": "Inicio.dc.html",
+   "title": "Início · desktop 1280",
+   "x": 0,
+   "y": 0,
+   "w": 1280,
+   "h": 3900,
+   "page": "page-2"
+  },
+  {
+   "file": "Linha.dc.html",
+   "title": "Linha do livro-razão · o recibo",
+   "x": 1380,
+   "y": 0,
+   "w": 1280,
+   "h": 1092,
+   "page": "page-2"
+  },
+  {
+   "file": "Municipio.dc.html",
+   "title": "Município · Évora",
+   "x": 1380,
+   "y": 1200,
+   "w": 1280,
+   "h": 3193,
+   "page": "page-2"
+  },
+  {
+   "file": "Estudo.dc.html",
+   "title": "Estudo · leitura publicada",
+   "x": 2760,
+   "y": 0,
+   "w": 1280,
+   "h": 1805,
+   "page": "page-2"
+  },
+  {
+   "file": "Metodo.dc.html",
+   "title": "Método",
+   "x": 4140,
+   "y": 0,
+   "w": 1280,
+   "h": 5990,
+   "page": "page-2"
+  },
+  {
+   "file": "Agenda.dc.html",
+   "title": "Agenda",
+   "x": 5520,
+   "y": 0,
+   "w": 1280,
+   "h": 5020,
+   "page": "page-2"
+  },
+  {
+   "file": "Correcoes.dc.html",
+   "title": "Correções",
+   "x": 6900,
+   "y": 0,
+   "w": 1280,
+   "h": 3424,
+   "page": "page-2"
+  },
+  {
+   "file": "InicioMovel.dc.html",
+   "title": "Início · telemóvel 390",
+   "x": 0,
+   "y": 6300,
+   "w": 390,
+   "h": 7172,
+   "page": "page-2"
+  },
+  {
+   "file": "LinhaMovel.dc.html",
+   "title": "Linha · telemóvel 390",
+   "x": 500,
+   "y": 6300,
+   "w": 390,
+   "h": 2945,
+   "page": "page-2"
+  },
+  {
+   "file": "MunicipioMovel.dc.html",
+   "title": "Município · telemóvel 390",
+   "x": 1000,
+   "y": 6300,
+   "w": 390,
+   "h": 7163,
+   "page": "page-2"
+  },
+  {
+   "file": "V2Relance.dc.html",
+   "x": 0,
+   "y": 0,
+   "w": 1280,
+   "h": 4976,
+   "page": "page-3",
+   "title": "v2 · Início em RELANCE (registo de cartaz)"
+  },
+  {
+   "file": "V2Leitura.dc.html",
+   "x": 1380,
+   "y": 0,
+   "w": 1280,
+   "h": 4467,
+   "page": "page-3",
+   "title": "v2 · Início em LEITURA BREVE (bloco aberto: régua)"
+  },
+  {
+   "file": "V2Fundo.dc.html",
+   "x": 2760,
+   "y": 0,
+   "w": 1280,
+   "h": 4474,
+   "page": "page-3",
+   "title": "v2 · Início em FUNDO (linhas + recibo)"
+  },
+  {
+   "file": "V2Prototipo.dc.html",
+   "x": 4140,
+   "y": 0,
+   "w": 1280,
+   "h": 1560,
+   "page": "page-3",
+   "title": "v2 · protótipo interativo (▷ para correr)"
+  },
+  {
+   "file": "V3Prototipo.dc.html",
+   "x": 2900,
+   "y": 0,
+   "w": 1280,
+   "h": 1560,
+   "page": "page-4",
+   "title": "v3 · só o painel (protótipo anterior)"
+  },
+  {
+   "file": "V3Completo.dc.html",
+   "x": 0,
+   "y": 0,
+   "w": 1280,
+   "h": 3576,
+   "page": "page-4",
+   "title": "v3 · Início · protótipo (▷) · revisto após crítica Opus+Codex (2026-08-20)"
+  },
+  {
+   "file": "OpcaoA.dc.html",
+   "x": 0,
+   "y": 0,
+   "w": 1280,
+   "h": 2507,
+   "page": "page-5",
+   "title": "Opção A · «Balcão» · o mapa sobe para a cabeça (um só mapa)"
+  },
+  {
+   "file": "OpcaoB.dc.html",
+   "x": 1380,
+   "y": 0,
+   "w": 1280,
+   "h": 1961,
+   "page": "page-5",
+   "title": "Opção B · «Separadores» · âmbito como separadores com contagens; mapa só em baixo"
+  },
+  {
+   "file": "OpcaoC.dc.html",
+   "x": 2760,
+   "y": 0,
+   "w": 1280,
+   "h": 2025,
+   "page": "page-5",
+   "title": "Opção C · «Margem» · mapa e âmbito numa margem fixa; painel a três colunas"
+  },
+  {
+   "file": "OpcaoA2.dc.html",
+   "x": 0,
+   "y": 2720,
+   "w": 1280,
+   "h": 2787,
+   "page": "page-5",
+   "title": "A2 · «Respira» · o instrumento segue o âmbito; o mapa encolhe com a profundidade"
+  },
+  {
+   "file": "OpcaoA3.dc.html",
+   "x": 1380,
+   "y": 2720,
+   "w": 1280,
+   "h": 2265,
+   "page": "page-5",
+   "title": "A3 · «Selo» · mapa sempre pequeno; cresce só ao escolher concelho"
+  },
+  {
+   "file": "OpcaoA4.dc.html",
+   "x": 2760,
+   "y": 2720,
+   "w": 1280,
+   "h": 1990,
+   "page": "page-5",
+   "title": "A4 · «Só quando serve» · sem mapa na cabeça; some depois de escolhido o âmbito"
+  },
+  {
+   "file": "OpcaoA2b.dc.html",
+   "x": 0,
+   "y": 5620,
+   "w": 1280,
+   "h": 2911,
+   "page": "page-5",
+   "title": "A2b · a A2 reequilibrada: linha de base, grelha 2+2, ficha ao lado do mapa"
+  },
+  {
+   "file": "V3Movel.dc.html",
+   "x": 1400,
+   "y": 0,
+   "w": 390,
+   "h": 3217,
+   "page": "page-4",
+   "title": "v3 · Início · telemóvel 390 (lista do Opus: destinos, números primeiro, selo como maior alvo)"
+  }
+ ],
+ "annotations": [
+  {
+   "id": "nota-paginas",
+   "x": 0,
+   "y": -300,
+   "w": 900,
+   "page": "page-2",
+   "text": "MAQUETAS «ESPÉCIME» · dez páginas construídas sob a constituição v3 (página «Direção» desta prancha).\n\nFila de cima, desktop 1280: Início · Linha do livro-razão (o recibo) · Município (Évora) · Estudo (leitura publicada) · Método · Agenda · Correções. Fila de baixo, telemóvel 390: Início · Linha · Município.\n\nTudo o que está nas pranchas é valor ou texto publicado hoje no sítio, com a fonte e a data de leitura da respetiva linha do livro-razão. Nada foi inventado; onde um texto do sítio estava truncado, ficou «…» ou parou. A única frase nova é a entrada «A letra» no Método, que declara os tipos e a sua linhagem.\n\nTipos: substitutos OFL declarados em cada prancha (Spectral por Parnaso, Bitter por Sebenta); os tipos decididos são comerciais e não podem ser embutidos aqui. A régua-espécime, o selo, as cores de estado (âmbar/ocre = fora do limiar; cobalto = dentro / acima da média), o recibo e os instrumentos a tinta estão como a constituição os fixa.\n\nConstruído por Opus sob especificação da cadeira (Fable), revisto visualmente pela cadeira; nada tocou os repositórios."
+  },
+  {
+   "id": "nota-direcao",
+   "x": 0,
+   "y": -220,
+   "w": 900,
+   "page": "page-1",
+   "text": "DIREÇÃO «ESPÉCIME» · a constituição visual v3 proposta, decidida sobre o dossiê de 233 referências lidas na fonte. As dez páginas construídas estão na página «Páginas» desta prancha (menu de páginas na barra). EMENDAS 2026-08-20 adotadas (constituição v3.1, ver direcao.md e a página «v3»): cor só para limiares formais; duas densidades (o recibo é o destino do selo); mapa em postura de selo; régua com gramática única; tipos livres (Spectral + Bitter + Spectral SC para versaletes editoriais), compra Feliciano por gatilho; «Espécime» é nome interno; densidade por defeito Relance, codificada no URL."
+  },
+  {
+   "id": "nota-v2",
+   "x": 0,
+   "y": -420,
+   "w": 1000,
+   "page": "page-3",
+   "text": "V2 · «ESPÉCIME EM TRÊS DENSIDADES» · a mesma identidade, três densidades de leitura; o v1 continua intacto na página «Páginas».\n\nO que muda: a página inicial passa a ter um seletor de densidade na cabeça (RELANCE · LEITURA BREVE · FUNDO). RELANCE é o primeiro contacto (registo de cartaz: campo de cor como estado, número gigante, uma frase, o carimbo da fonte); LEITURA BREVE abre cada bloco no sítio (marcador, régua-espécime contra o limiar, distância em palavras, frase e selo); FUNDO é a linha do espécime com o recibo por baixo. Cor: âmbar = fora do limiar; cobalto = dentro / acima da média; preto = sem limiar. O conteúdo é o mesmo nas três pranchas, palavra por palavra; só a densidade muda.\n\nAs três primeiras pranchas são estáticas (uma por densidade). A quarta é um protótipo com lógica: o botão ▷ na cabeça da prancha («Play») abre-a como protótipo clicável; o seletor muda a densidade de todos os blocos e um toque num bloco muda só o dele (relance → leitura breve → fundo → relance), para se sentir o gesto de «cavar» sem sair da página. Também há um ajuste «densidade» na prancha para a ver em cada estado.\n\nTipos substitutos declarados em rodapé (Spectral por Parnaso, Bitter por Sebenta, Sofia Sans Condensed por Grotzec Condensed). Valores e textos são os publicados no sítio a 2026-08-18, com fonte e data de leitura. Pranchas estáticas construídas por Opus sob especificação da cadeira (Fable); protótipo escrito pela cadeira; nada tocou os repositórios."
+  },
+  {
+   "id": "nota-v3",
+   "x": 0,
+   "y": -400,
+   "w": 1000,
+   "page": "page-4",
+   "text": "V3 · O V1 USADO MELHOR — página inicial interativa (▷ na prancha grande). Cabeça A2b: linha de comando (âmbito | densidade), título-frase, fila de estados, divisão 2+2 na grelha, linha de base; âmbito País · Região · Município (pesquisa nos 308 concelhos); catálogo de medidas; estado vazio honesto (ex.: Beja).\n\nREVISÃO PÓS-CRÍTICA (2026-08-20; Opus esforço máximo + Codex xhigh como auditores sem contexto): (1) cor SÓ para limiares formais publicados — «acima/abaixo da média» e «destaque» passam a palavra a tinta; a fila de estados bate certo com o dek (4 âmbar · 4 sem limiar); (2) DUAS densidades — o recibo é o destino do selo (página de linha); o seletor global já não apaga escolhas por peça; o selo saiu de dentro do alvo da peça; (3) mapa em postura de SELO — no País é selo com contagens e porta «Abrir um concelho»; mapa inteiro só no modo Município, com quadrados ■/□, alvos maiores e arquipélagos rotulados; a ficha-localizadora manteve o selo CAOP; (4) régua com gramática única: referência a tinta à altura toda, barra = distância, traço = valor, nenhuma barra sem referência; (5) molduras cinzentas (estado no marcador e na palavra; âmbar com contorno de tinta); corpo do valor por glifos; (6) «dossiê do leitor» com âmbito por medida; marca de seleção ●/○; (7) cauda editorial só no âmbito País. Não adotado (registado): linhas-como-página, linha de carga partilhada, separação publicação/exploração.\n\nTELEMÓVEL 390 (prancha à direita, lista da crítica): âmbito como destino, um controlo de densidade, linhas com números primeiro, selo = maior alvo (≥44px) nunca aninhado, sem mapa-seletor (frase + pesquisa), régua como lista ordenada com o fio UE-27 = 100.\n\nTIPOS (teste medido em Chromium, 2026-08-20): os substitutos Google NÃO têm versaletes (smcp inerte; só Spectral SC os tem) nem algarismos antigos (onum inerte); Bitter TEM tabulares (tnum real). §2 (versaletes/onum) só se testa nos trials da Feliciano, antes da compra.\n\nValores e textos: os publicados no sítio (lidos na fonte); distâncias a referências publicadas assinaladas «calculado». Nada tocou os repositórios."
+  },
+  {
+   "id": "nota-opcoes",
+   "x": 0,
+   "y": -360,
+   "w": 1000,
+   "page": "page-5",
+   "text": "CABEÇA DO V3 · TRÊS OPÇÕES, LADO A LADO. O problema nomeado pelo diretor: dois mapas pontilhados (o pequeno perdido no espaço branco), o âmbito mal integrado, e o número gigante no lede que não convence.\n\nO que as três partilham: o número gigante sai; o título volta a ser frase («Quatro limiares europeus ultrapassados.») e por baixo entra a FILA DE ESTADOS — um quadrado por medida, na ordem do painel (4 âmbar · 2 cobalto · 2 sem cor), a mesma linguagem do mapa e da legenda; num concelho sem página a fila é tracejada («por ler» = a forma do por confirmar). Cada prancha mostra o mesmo desenho em dois âmbitos: País em cima, um município sem página (Beja) em baixo — o teste honesto.\n\nOPÇÃO A · «BALCÃO» — uma linha de comando com os dois seletores (âmbito à esquerda, densidade à direita); o mapa sobe para a cabeça como O único mapa da página, com a ficha do Instrumento n.º 2 (1/308, contagens, CAOP) por baixo; o Instrumento n.º 2 desaparece em baixo. Resolve a duplicação promovendo o mapa a navegador.\n\nOPÇÃO B · «SEPARADORES» — o âmbito é uma fila de três separadores de largura total, cada um com a sua contagem (o separador diz o que contém antes de se abrir: «8 medidas · 4 fora do limiar» / «5 regiões» / «308 concelhos · 1 com página»); SEM mapa na cabeça — o mapa fica só em baixo como Instrumento n.º 2 e o separador Município aponta para ele. Resolve a duplicação retirando o mapa da cabeça.\n\nOPÇÃO C · «MARGEM» — o mapa e o âmbito vivem numa margem fixa à esquerda (seletor empilhado, mapa, contagens como ficha), o conteúdo corre ao lado com o painel a três colunas; o Instrumento n.º 2 desaparece em baixo. A mais ousada; paga com um mapa mais pequeno e um painel mais estreito.\n\nPranchas estáticas (comparação); a interação continua na página «v3». Valores e textos: os já publicados. A recomendação da cadeira está na conversa.\n\n— SEGUNDA FILA · ITERAÇÕES DA OPÇÃO A (a escolhida) · quando é que o mapa encolhe ou desaparece —\n\nA2 «RESPIRA» (recomendada): o instrumento da cabeça segue o âmbito — País = mapa inteiro com a ficha (porta + prova de cobertura); Região = a régua da convergência (as regiões não se desenham em pontos de concelho; não fingimos no mapa o que a fonte não publica); Município escolhido, leitura mais funda = o mapa encolhe para selo-localizador com a porta «trocar de concelho». O mapa nunca aparece duas vezes nem maior do que o seu trabalho.\n\nA3 «SELO»: o mapa é sempre pequeno (selo cartográfico = marca + localizador) e só cresce quando a geografia é a interface (escolher concelho). Cabeça do País quase toda tipográfica.\n\nA4 «SÓ QUANDO SERVE»: sem mapa na cabeça; no País a porta é um botão; o mapa inteiro existe só no modo de escolha e desaparece depois. O extremo da remoção — perde a referência reconhecível à entrada.\n\nA regra proposta (da cadeira): o mapa em tamanho inteiro só onde a geografia é a interface (entrada do País, escolha de concelho); selo-localizador quando o âmbito está escolhido e se lê fundo; ausente onde a unidade de leitura já não é um lugar (linha do livro-razão, método, correções). No telemóvel, nunca o mapa inteiro na cabeça — selo + pesquisa.\n\n— TERCEIRA FILA · A2b (a A2 reequilibrada, após a nota do diretor sobre o equilíbrio) — linha de base fecha a cabeça; divisão 2+2 sobre a grelha das peças (texto em duas colunas, instrumento nas outras duas: mapa + ficha lado a lado); fila de estados e legenda numa só linha agrupada; régua da região como banda de largura total; localizador como ficha horizontal com borda."
+  }
+ ],
+ "launch": {
+  "view": "canvas",
+  "page": "page-4"
+ }
+}

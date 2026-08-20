@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Bitter:ital,wght@0,100..900;1,100..900&display=swap">
+  <style>
+    html, body { margin: 0; background: #F6F7F4; }
+    a { color: #17191B; } a:hover { color: #1F4E8C; }
+    :root, .pg { --paper: #F6F7F4; --ink: #17191B; --g1: #585D5B; --g2: #7F8681; --g3: #D9DDD8; --amb: #E0A21A; --ocre: #7A5300; --cob: #1F4E8C; }
+    .pg { background: var(--paper); color: var(--ink); font-family: "Spectral", Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.55; font-variant-numeric: oldstyle-nums; -webkit-font-smoothing: antialiased; }
+    .pg * { box-sizing: border-box; }
+    h1, h2 { margin: 0; font-weight: 500; letter-spacing: -0.005em; }
+    h1 { font-size: 40px; line-height: 1.12; }
+    h2 { font-size: 28px; line-height: 1.18; }
+    p { margin: 0; }
+    .sl { font-family: "Bitter", "Rockwell", Georgia, serif; font-variant-numeric: tabular-nums lining-nums; }
+    .num { font-family: "Bitter", "Rockwell", Georgia, serif; font-variant-numeric: tabular-nums lining-nums; font-weight: 500; letter-spacing: -0.005em; white-space: nowrap; }
+    .lab { font-family: "Bitter", Georgia, serif; font-size: 11px; line-height: 1.45; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; color: var(--g1); font-variant-numeric: tabular-nums lining-nums; }
+    .meta { font-family: "Bitter", Georgia, serif; font-size: 11px; line-height: 1.5; letter-spacing: .02em; color: var(--g1); font-variant-numeric: tabular-nums lining-nums; }
+    .est { font-family: "Bitter", Georgia, serif; font-size: 12px; line-height: 1.32; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; font-variant-numeric: tabular-nums lining-nums; }
+    .nome { font-size: 18px; font-weight: 500; line-height: 1.25; }
+    .nav { font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; color: var(--ink); }
+    .nav:hover { color: var(--cob); }
+    .sep { font-family: "Bitter", Georgia, serif; font-size: 12px; color: var(--g2); }
+    .lig { font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .selo { display: inline-flex; align-items: center; gap: 6px; font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); text-decoration: none; white-space: nowrap; }
+    .selo::before { content: ""; width: 9px; height: 9px; background: var(--ink); display: inline-block; }
+    .selo.pc::before { background: transparent; border: 1px dashed var(--ink); }
+    .pv { font-family: "Bitter", Georgia, serif; font-size: 11px; letter-spacing: .04em; color: var(--ink); border: 1px dashed var(--ink); padding: 1px 5px; white-space: nowrap; }
+    .rule2 { border-top: 2px solid var(--g2); }
+    .rulei { border-top: 1px solid var(--ink); }
+    .hair { border-top: 1px solid var(--g3); }
+    .row { display: grid; grid-template-columns: minmax(220px, 1.4fr) 84px minmax(220px, 1fr) 210px 64px; gap: 16px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--g3); }
+    .cel { border-right: 1px solid var(--g3); border-bottom: 1px solid var(--g3); padding: 16px 18px; display: flex; flex-direction: column; gap: 5px; align-items: flex-start; }
+    .chip { font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .04em; border: 1px solid var(--g2); padding: 7px 11px; color: var(--ink); text-decoration: none; display: inline-block; }
+    .chip.on { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+    .fora { color: var(--ocre); }
+    .dentro { color: var(--cob); }
+    .neutro { color: var(--g1); }
+    .g1 { color: var(--g1); }
+    .prosa { font-size: 15px; line-height: 1.55; color: var(--g1); }
+    .k { font-family: "Bitter", Georgia, serif; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--g1); font-weight: 600; font-variant-numeric: tabular-nums lining-nums; }
+    .field { font-family: "Bitter", Georgia, serif; font-size: 13px; }
+    .slab { font-family: "Bitter", "Rockwell", Georgia, serif; font-variant-numeric: tabular-nums lining-nums; }
+    .dens { display: inline-flex; }
+    .seg { font-family: "Bitter", Georgia, serif; font-size: 12px; line-height: 1; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; padding: 8px 12px; border: 1px solid var(--ink); cursor: pointer; user-select: none; }
+    .seg + .seg { border-left: none; }
+    .sq { width: 11px; height: 11px; display: inline-block; flex: none; vertical-align: middle; margin-right: 6px; }
+    .tile { cursor: pointer; padding: 14px 16px 16px 16px; display: flex; flex-direction: column; gap: 8px; min-height: 268px; border: 2px solid var(--g3); background-color: var(--paper); }
+    .tile:hover, .tile.hov { border-width: 3px; padding: 13px 15px 15px 15px; }
+    .tile:hover .abrir, .tile.hov .abrir { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+    .tile .num { font-size: 80px; line-height: 1; padding-top: 6px; }
+    .tile .num.long { font-size: 52px; padding-top: 18px; padding-bottom: 12px; }
+    .open { cursor: pointer; border-top: 2px solid var(--g2); padding: 16px 4px 18px 4px; display: flex; flex-direction: column; gap: 10px; }
+    .frow { cursor: pointer; border-bottom: 1px solid var(--g3); padding: 12px 4px; display: flex; flex-direction: column; gap: 10px; align-items: stretch; }
+    .chipb { font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .04em; border: 1px solid var(--g2); padding: 7px 11px; color: var(--ink); background: transparent; cursor: pointer; user-select: none; }
+    .chipb.on { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+    .chipb.lit { border-color: var(--ink); }
+    .cat { border: 1px solid var(--ink); padding: 18px 20px 20px 20px; display: flex; flex-direction: column; gap: 14px; background: var(--paper); }
+    .catrow { display: grid; grid-template-columns: 22px minmax(0, 1.5fr) 110px minmax(0, 1fr) 190px; gap: 12px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--g3); cursor: pointer; }
+    .catrow:hover { background: var(--paper); }
+    .box { width: 12px; height: 12px; border: 1px solid var(--ink); display: inline-block; }
+    .box.on { background: var(--ink); }
+    .inp { font-family: "Bitter", Georgia, serif; font-size: 13px; padding: 8px 10px; border: 1px solid var(--g2); background: var(--paper); color: var(--ink); width: 300px; outline: none; }
+    .inp:focus { border-color: var(--ink); }
+    .empty { border: 2px dashed var(--g2); padding: 22px 24px; display: flex; flex-direction: column; gap: 10px; grid-column: span 4; }
+    .abrir { }
+  </style>
+</helmet>
+<div class="pg" style="width: 1280px; box-sizing: border-box; min-height: 100vh; padding: 34px 48px 44px 48px; display: flex; flex-direction: column; gap: 26px;">
+  <!-- 4.1 CABEÇALHO -->
+  <div style="display: flex; flex-direction: column;">
+    <div style="display: flex; justify-content: space-between; align-items: center; height: 48px; border-bottom: 1px solid var(--g3);">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <a class="nav" href="#">Início</a><span class="sep">·</span>
+        <a class="nav" href="#">Municípios</a><span class="sep">·</span>
+        <a class="nav" href="#">Estudos</a><span class="sep">·</span>
+        <a class="nav" href="#">Livro-razão</a><span class="sep">·</span>
+        <a class="nav" href="#">Agenda</a><span class="sep">·</span>
+        <a class="nav" href="#">Método</a><span class="sep">·</span>
+        <a class="nav" href="#">Sobre</a>
+      </div>
+      <a class="nav" href="#">English</a>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; padding: 26px 0 20px 0;">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-size: 64px; font-weight: 500; line-height: 1; letter-spacing: -0.01em;">O Estado do País</div>
+        <div class="g1" style="font-style: italic; font-size: 18px; line-height: 1.4;">Portugal, medido. Cada número tem fonte.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 5px; align-items: flex-start; flex: none; padding-bottom: 4px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="width: 12px; height: 12px; background: var(--cob); display: inline-block; flex: none;"></span>
+          <span class="sl" style="font-size: 11px; letter-spacing: .08em; font-weight: 600;">PAINEL EUROPEU RECONFERIDO A 2026-08-17</span>
+        </div>
+        <div class="lab" style="padding-left: 20px;">AGENDA · 3 EM CURSO · 1 A SEGUIR</div>
+      </div>
+    </div>
+    <div class="rulei"></div>
+  </div>
+
+
+  <div style="display: flex; flex-direction: column; gap: 0;">
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 2px 0 14px 0; border-bottom: 1px solid var(--ink);">
+      <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;"><div class="lab">Âmbito</div><div class="dens"><span class="seg" style="background-color: var(--ink); color: var(--paper);">País</span><span class="seg" style="">Região</span><span class="seg" style="">Município</span></div></div>
+      <div style="display: flex; align-items: center; gap: 14px;"><div class="lab">Densidade</div><div class="dens"><span class="seg" style="background-color: var(--ink); color: var(--paper);">Relance</span><span class="seg" style="">Leitura breve</span><span class="seg" style="">Fundo</span></div></div>
+    </div>
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: start; padding-top: 20px;">
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="lab">PORTUGAL · PAINEL EUROPEU · 8 MEDIDAS</div>
+        <h1 style="max-width: 15em;">Quatro limiares europeus ultrapassados.</h1>
+        <div style="display: flex; gap: 5px; align-items: center;"><span style="width: 16px; height: 16px; display: inline-block; flex: none; background: var(--amb);"></span><span style="width: 16px; height: 16px; display: inline-block; flex: none; background: var(--amb);"></span><span style="width: 16px; height: 16px; display: inline-block; flex: none; background: var(--amb);"></span><span style="width: 16px; height: 16px; display: inline-block; flex: none; background: var(--amb);"></span><span style="width: 16px; height: 16px; display: inline-block; flex: none; background: var(--cob);"></span><span style="width: 16px; height: 16px; display: inline-block; flex: none; background: var(--cob);"></span><span style="width: 16px; height: 16px; display: inline-block; flex: none; border: 1px solid var(--ink);"></span><span style="width: 16px; height: 16px; display: inline-block; flex: none; border: 1px solid var(--ink);"></span></div>
+        <div class="lab" style="display: flex; gap: 22px; flex-wrap: wrap; color: var(--ink);">
+  <span><span class="sq" style="background: var(--amb);"></span>Âmbar · fora do limiar</span>
+  <span><span class="sq" style="background: var(--cob);"></span>Cobalto · do lado bom da referência</span>
+  <span><span class="sq" style="border: 1px solid var(--ink);"></span>Sem limiar</span>
+  <span><span class="sq" style="border: 1px dashed var(--ink);"></span>Por ler</span>
+</div>
+        <p style="font-size: 19px; line-height: 1.45; max-width: 34em;">Dos oito indicadores do painel europeu que este sítio publica, quatro têm limiar da Comissão e os quatro estão fora dele: dívida pública, posição de investimento internacional, custo unitário do trabalho e preços da habitação. Painel de 2025, lido do Eurostat a 2026-08-12.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding-top: 8px;">
+        <p class="prosa" style="max-width: 44ch;">O painel de desequilíbrios macroeconómicos e o painel social europeu, com os limiares que as instituições publicam.</p>
+        <span class="chipb" style="align-self: flex-start;">▸ Medidas · catálogo</span>
+        <span class="chipb" style="align-self: flex-start;">▸ Abrir um concelho · escrever o nome ou escolher no mapa</span>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 20px; row-gap: 20px; border-top: 1px solid var(--ink); padding-top: 20px; margin-top: 24px;">
+      <div class="tile" style="border-color: var(--amb);">
+  <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><span style="width: 12px; height: 12px; display: inline-block; flex: none; background: var(--amb);"></span><span class="est" style="color: var(--ocre);">Limiar 60 · acima</span></div>
+    <span class="lab abrir" style="flex: none;">▸ abrir</span>
+  </div>
+  <div class="num">89,7</div>
+  <div class="lab">% do PIB · 2025</div>
+  <div class="nome" style="font-size: 21px; padding-top: 4px;">Dívida pública</div>
+  <div class="prosa" style="font-size: 14.5px; line-height: 1.45;">Acima do limiar do painel europeu, e a descer.</div>
+  <div style="margin-top: auto; display: flex; align-items: center; gap: 12px; padding-top: 6px;"><a class="selo" href="#">fonte</a><span class="meta">Eurostat · tipsgo10</span></div>
+</div><div class="tile" style="border-color: var(--amb);">
+  <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><span style="width: 12px; height: 12px; display: inline-block; flex: none; background: var(--amb);"></span><span class="est" style="color: var(--ocre);">Limiar −35 · abaixo</span></div>
+    <span class="lab abrir" style="flex: none;">▸ abrir</span>
+  </div>
+  <div class="num">−50,2</div>
+  <div class="lab">% do PIB · 2025</div>
+  <div class="nome" style="font-size: 21px; padding-top: 4px;">Posição de investimento internacional</div>
+  <div class="prosa" style="font-size: 14.5px; line-height: 1.45;">O que o país tem a haver do exterior menos o que lhe deve.</div>
+  <div style="margin-top: auto; display: flex; align-items: center; gap: 12px; padding-top: 6px;"><a class="selo" href="#">fonte</a><span class="meta">Eurostat · tipsii10</span></div>
+</div><div class="tile" style="border-color: var(--amb);">
+  <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><span style="width: 12px; height: 12px; display: inline-block; flex: none; background: var(--amb);"></span><span class="est" style="color: var(--ocre);">Limiar 9 · acima</span></div>
+    <span class="lab abrir" style="flex: none;">▸ abrir</span>
+  </div>
+  <div class="num">21,3</div>
+  <div class="lab">variação em três anos, % · 2025</div>
+  <div class="nome" style="font-size: 21px; padding-top: 4px;">Custo unitário do trabalho</div>
+  <div class="prosa" style="font-size: 14.5px; line-height: 1.45;">Custo do trabalho por unidade produzida, por hora trabalhada.</div>
+  <div style="margin-top: auto; display: flex; align-items: center; gap: 12px; padding-top: 6px;"><a class="selo" href="#">fonte</a><span class="meta">Eurostat · tipslm10</span></div>
+</div><div class="tile" style="border-color: var(--amb);">
+  <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><span style="width: 12px; height: 12px; display: inline-block; flex: none; background: var(--amb);"></span><span class="est" style="color: var(--ocre);">Limiar 9 · acima</span></div>
+    <span class="lab abrir" style="flex: none;">▸ abrir</span>
+  </div>
+  <div class="num">17,6</div>
+  <div class="lab">variação anual, % · 2025</div>
+  <div class="nome" style="font-size: 21px; padding-top: 4px;">Preços da habitação</div>
+  <div class="prosa" style="font-size: 14.5px; line-height: 1.45;">O limiar foi ultrapassado em 2024 e o excesso quase duplicou no ano seguinte.</div>
+  <div style="margin-top: auto; display: flex; align-items: center; gap: 12px; padding-top: 6px;"><a class="selo" href="#">fonte</a><span class="meta">Eurostat · tipsho20</span></div>
+</div>
+    </div>
+  </div><div style="display: flex; align-items: center; gap: 14px; padding: 26px 0 4px 0;">
+  <div style="flex: 1; border-top: 2px dashed var(--g2);"></div>
+  <div class="lab" style="color: var(--g1);">ÂMBITO ESCOLHIDO: SEM MAPA EM NENHUMA DENSIDADE · ÉVORA</div>
+  <div style="flex: 1; border-top: 2px dashed var(--g2);"></div>
+</div>  <div style="display: flex; flex-direction: column; gap: 0;">
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 2px 0 14px 0; border-bottom: 1px solid var(--ink);">
+      <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;"><div class="lab">Âmbito</div><div class="dens"><span class="seg" style="">País</span><span class="seg" style="">Região</span><span class="seg" style="background-color: var(--ink); color: var(--paper);">Município</span></div><input class="inp" type="text" value="évora" style="width: 150px;"><span class="chipb on">Évora · com página</span></div>
+      <div style="display: flex; align-items: center; gap: 14px;"><div class="lab">Densidade</div><div class="dens"><span class="seg" style="background-color: var(--ink); color: var(--paper);">Relance</span><span class="seg" style="">Leitura breve</span><span class="seg" style="">Fundo</span></div></div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 16px; padding-top: 20px;">
+      <div class="lab">ÉVORA · MUNICÍPIO · DISTRITO DE ÉVORA · 8 MEDIDAS</div>
+      <h1 style="max-width: 18em;">Oito medidas do concelho, cada uma com a sua linha.</h1>
+      <div style="display: flex; gap: 5px; align-items: center;"><span style="width: 16px; height: 16px; display: inline-block; flex: none; border: 1px solid var(--ink);"></span><span style="width: 16px; height: 16px; display: inline-block; flex: none; background: var(--cob);"></span><span style="width: 16px; height: 16px; display: inline-block; flex: none; border: 1px solid var(--ink);"></span><span style="width: 16px; height: 16px; display: inline-block; flex: none; border: 1px solid var(--ink);"></span><span style="width: 16px; height: 16px; display: inline-block; flex: none; border: 1px solid var(--ink);"></span><span style="width: 16px; height: 16px; display: inline-block; flex: none; background: var(--cob);"></span><span style="width: 16px; height: 16px; display: inline-block; flex: none; border: 1px solid var(--ink);"></span><span style="width: 16px; height: 16px; display: inline-block; flex: none; border: 1px solid var(--ink);"></span></div>
+      <p class="prosa" style="max-width: 66ch;">Oito medidas. Seis vêm de organismos que publicam para todos os concelhos do país; duas só existem porque o próprio município as publica, e cada uma dessas di-lo na sua linha.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 20px; row-gap: 20px; border-top: 1px solid var(--ink); padding-top: 20px; margin-top: 20px;">
+      <div class="tile" style="border-color: var(--g3);">
+  <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><span style="width: 12px; height: 12px; display: inline-block; flex: none; background: transparent; border: 1px solid #17191B;"></span><span class="est" style="color: var(--g1);">Contagem · sem limiar</span></div>
+    <span class="lab abrir" style="flex: none;">▸ abrir</span>
+  </div>
+  <div class="num">58 567</div>
+  <div class="lab">pessoas · 2025</div>
+  <div class="nome" style="font-size: 21px; padding-top: 4px;">População residente</div>
+  <div class="prosa" style="font-size: 14.5px; line-height: 1.45;">Estimativa anual do INE para o concelho.</div>
+  <div style="margin-top: auto; display: flex; align-items: center; gap: 12px; padding-top: 6px;"><a class="selo" href="#">fonte</a><span class="meta">INE · indicador 0012918</span></div>
+</div><div class="tile" style="border-color: var(--cob);">
+  <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><span style="width: 12px; height: 12px; display: inline-block; flex: none; background: var(--cob);"></span><span class="est" style="color: var(--cob);">Acima da média nacional</span></div>
+    <span class="lab abrir" style="flex: none;">▸ abrir</span>
+  </div>
+  <div class="num">111,47</div>
+  <div class="lab">índice · média nacional = 100 · 2023</div>
+  <div class="nome" style="font-size: 21px; padding-top: 4px;">Poder de compra por habitante</div>
+  <div class="prosa" style="font-size: 14.5px; line-height: 1.45;">Poder de compra per capita, publicado pelo INE para todos os concelhos.</div>
+  <div style="margin-top: auto; display: flex; align-items: center; gap: 12px; padding-top: 6px;"><a class="selo" href="#">fonte</a><span class="meta">INE · indicador 0014580</span></div>
+</div><div class="tile" style="border-color: var(--cob);">
+  <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><span style="width: 12px; height: 12px; display: inline-block; flex: none; background: var(--cob);"></span><span class="est" style="color: var(--cob);">Teto 150 · abaixo</span></div>
+    <span class="lab abrir" style="flex: none;">▸ abrir</span>
+  </div>
+  <div class="num">105,5</div>
+  <div class="lab">%, teto legal = 150 · 2024</div>
+  <div class="nome" style="font-size: 21px; padding-top: 4px;">Índice de dívida</div>
+  <div class="prosa" style="font-size: 14.5px; line-height: 1.45;">Calculado sobre duas colunas do mesmo ficheiro do regulador. A aritmética está na linha.</div>
+  <div style="margin-top: auto; display: flex; align-items: center; gap: 12px; padding-top: 6px;"><a class="selo" href="#">fonte</a><span class="meta">calculado · DGAL</span></div>
+</div><div class="tile" style="border-color: var(--g3);">
+  <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><span style="width: 12px; height: 12px; display: inline-block; flex: none; background: transparent; border: 1px solid #17191B;"></span><span class="est" style="color: var(--g1);">Sem limiar</span></div>
+    <span class="lab abrir" style="flex: none;">▸ abrir</span>
+  </div>
+  <div class="num">137</div>
+  <div class="lab">dias · 2025</div>
+  <div class="nome" style="font-size: 21px; padding-top: 4px;">Prazo médio de pagamento</div>
+  <div class="prosa" style="font-size: 14.5px; line-height: 1.45;">Reportado pelo município: sai da prestação de contas do próprio, não de um agregador central.</div>
+  <div style="margin-top: auto; display: flex; align-items: center; gap: 12px; padding-top: 6px;"><a class="selo" href="#">fonte</a><span class="meta">Município de Évora</span></div>
+</div>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 40px; padding-top: 10px; border-top: 1px solid var(--g3);">
+    <p class="prosa" style="max-width: 78ch;">Iteração A4 · «Só quando serve». Sem mapa na cabeça: no País a porta é um botão («abrir um concelho»); o mapa inteiro só existe dentro do modo de escolha (como na A3) e desaparece por completo assim que o âmbito está escolhido — Évora lê-se sem geografia. É o extremo da remoção: pouparia a cabeça, mas perde a referência reconhecível e a prova de cobertura à entrada.</p>
+    <div class="meta" style="text-align: right; flex: none;">Maqueta v3 · iteração da Opção A · tipos substitutos: Spectral por Parnaso, Bitter por Sebenta</div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1280,"height":1990}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

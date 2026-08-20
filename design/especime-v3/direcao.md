@@ -1,0 +1,83 @@
+# Direção «Espécime» · proposta de constituição visual v3 para O Estado do País
+
+Data: 2026-08-18 · Decidida em cadeira (Fable) sobre o dossiê de 233 referências lidas na fonte (dossier-v2.md) e a leitura visual das fundições e dos espécimes · Todas as afirmações abaixo com [Rnnn] remetem para o livro-razão do dossiê; os preços e termos de licença foram lidos hoje em felicianotype.com.
+
+## 0 · Numa frase
+
+O sítio é um **espécime**: uma pauta fixa, impressa a tinta sobre papel de cal branco, onde só muda o que se mede. A referência (limiar, média, teto, zero) está sempre gravada na página como a linha de carga no casco; o valor move-se contra ela; a cor aparece só para dizer em que estado ele está. Lê-se como uma publicação séria; mede como um instrumento.
+
+## 1 · Essência → cinco princípios
+
+1. **Pauta fixa, variável móvel.** O catálogo da fundição da Imprensa Nacional repete desde 1838 a mesma cadeia de caracteres enquanto muda só o tipo em exame [R035, R058]; o boletim de voto dá uma linha por entidade, os mesmos campos na mesma ordem, e declara o estado do documento por uma marca de água [R022]. Cada instrumento do sítio é desenhado assim: a mesma régua, a mesma ordem de campos, a mesma linha de referência a 2px [R137]; o que muda é o número.
+2. **A referência inscreve-se no objeto medido.** Linha de carga Plimsoll [R196], carta de controlo [R197], zero altimétrico do Marégrafo de Cascais [R198], limiares do MIP publicados com o número e nunca compostos num índice único [R140]. Nenhum valor aparece sem a sua referência ao lado, e não há «índice do estado do país».
+3. **A cor é estado, e só estado.** Vocabulário fechado, com nome, cor e código, como a ISO 3864 [R225] e a escala do Polígrafo [R183]; qualidade por intensidade de um só matiz, escuro para o mau [R195]; diferença de brilho garantida entre estados [R226]; nenhuma cor partidária como base [R031]. Tudo o resto é tinta, cinzento e espessura de traço.
+4. **Serifa como seriedade, mobília como instrumento.** «Uma letra com serifa, que vem novamente ao encontro da seriedade da informação» (o Público de Cayatte, 1989) [R049]; a justificação pública da letra por linhagem documentada, como o Politico Europe fez [R188]. Aqui: dois tipos portugueses da mesma fundição, ambos com linhagem em espécimes portugueses.
+5. **Autêntico por documentação, nunca por evocação.** Nada de caravelas, azulejos desenhados, escudetes ou «Portugal» como estilo [R029, R113, R171]. A raiz portuguesa entra pelo tipo (Lisboa, 1938), pela cor material medida (cal, ocre, cobalto) [R108, R109] e pelos precedentes de página (DN 1995, Público 2000, boletim 2025); e o teste final é o de R167: se alguém dissesse «isto foi feito por IA», acreditaria de imediato? A resposta tem de ser não.
+
+## 2 · Tipografia (decidida; compra é do diretor)
+
+**Parnaso** (Feliciano Type, 2017) · a voz editorial. Serifa com cinco tamanhos óticos (Hairline, Display, Standard, Small, Petit) e um Mono; desenhada «para as necessidades do design contemporâneo de revistas»; lineage declarada pelo autor: as séries «Elzévir» das fundições francesas de 1894–1912 **e o Catálogo da Fundição Tipográfica Gini, Manuel Guedes Lda. (Lisboa, 1938)**. Maiúsculas de proporção Didot com serifas em cunha, minúsculas mais condensadas e cerradas: voz própria, não genérica. Papéis: marca «O Estado do País» (Display), títulos e ledes (Display/Standard), prosa da Leitura breve e do Fundo (Standard 17–19px; Small abaixo de 14px), citações; **Parnaso Mono** para tudo o que é transcrito ou é identificador (excertos, pedidos à fonte, ids de linha, endereços).
+
+**Sebenta** (Feliciano Type, 2021–2025) · a voz do instrumento. Egípcia contemporânea (Clarendon/Ionic) «inspirada por um tipo monoespaçado do início do século XX da Fundição Tipográfica Gini (Manuel Guedes, Lda.), apresentado num espécime de 1938». É a letra dos números: valores do Relance, tabelas, réguas, selos, rótulos de unidade e período, o recibo. Uma egípcia lê «isto foi medido e registado» sem dizer «terminal»; nove pesos com itálicos. Contém no próprio conjunto de glifos os quadrados cheio e vazio (■ □) que o selo usa.
+
+**Regras de algarismos.** Tabelas e réguas em algarismos tabulares versais; prosa em algarismos antigos; nunca os dois na mesma linha; sinal de menos verdadeiro (−), não hífen; espaço fino como separador de milhares (54 681 562), vírgula decimal, percentagem colada (89,7%). **Eliminatório antes da compra:** confirmar com as fontes de teste (Trial Fonts, gratuitas) que Parnaso e Sebenta têm algarismos tabulares e versaletes; a fundição não o afirma nas páginas lidas [dossiê §3a].
+
+**Licença e custo, verificados hoje.** Licença Standard única, perpétua, sem taxas recorrentes, cobre impressão, web (WOFF/WOFF2), apps e e-books; escalão Small = 1–3 utilizadores e até 100 000 visitantes únicos por mês. Preços: qualquer estilo €50; Parnaso, cada tamanho ótico (12 estilos) €400; Parnaso Mono (2 estilos) €80; Sebenta, família de 18 estilos €400. Conjunto mínimo recomendado: Parnaso Display Regular, Standard Regular/Italic/Bold, Small Regular, Mono Regular (6 × €50 = €300) + Sebenta Regular/Medium/Bold (3 × €50 = €150) ≈ **€450 uma vez**. Alternativa a custo zero: manter pilhas de sistema (a regra atual) ou tipos OFL, com perda de carácter e da linhagem; nas maquetas desta fase os tipos comerciais são substituídos por OFL declarados como substitutos.
+
+Ficha técnica pública: o Método passa a dizer, numa linha, de onde vem a letra (fundição, ano, o espécime de 1938), como o Politico Europe faz [R188].
+
+## 3 · Cor
+
+**Papel e tinta.** Papel de cal **branco e frio**, não creme: `#F6F7F4`, o branco da caiação com anil (as caiações alentejanas levam azul ultramarino entre os pigmentos [R109]); superfície clara a dominar a área, como no azulejo, 38–78% claro [R114]. O creme quente com serifa e acento terracota é hoje a superfície «de bom gosto» por defeito do design gerado por IA [R161] e fica proibido aqui. Tinta `#17191B` (16,4:1); cinzentos frios de estrutura em três valores (`#585D5B` texto secundário, 6,2:1; `#7F8681` eixos e linhas de referência, 3,5:1 para grafismo; `#D9DDD8` grelha, decorativa). Regra do ONS: referência a 2px em cinzento escuro, grelhas a 1px em cinzento claro, linha do zero mais escura que as restantes [R137]. Instrumentos desenham-se a tinta e cinzento. **Modo escuro:** existe (regra do sítio), com os mesmos tokens invertidos e medidos AA; não é o padrão.
+
+**Estados, vocabulário fechado (quatro, com nome, cor e código):**
+- **Fora do limiar** · `âmbar` `#E0A21A` no marcador e `ocre` `#7A5300` na palavra (o mesmo matiz em duas intensidades: o claro assinala, o escuro lê-se, 6,4:1). É a cor de aviso da ISO 3864 (amarelo 1003 = aviso, não proibição [R225]) e a família de amarelos-ocre das caiações [R109]; continua o amarelo que a identidade atual já usa para medição, agora com um só significado: atenção, fora do limiar.
+- **Dentro do limiar / acima da média** · `cobalto` `#1F4E8C` (o azul de cobalto do azulejo [R108]; 7,7:1).
+- **Sem limiar** · tinta e cinzento (nenhuma cor; o estado é «não há referência publicada» e diz-se por palavras).
+- **Por confirmar** · sem cor; a forma muda: quadrado tracejado, marcador «[a verificar]», e no recibo uma marca de água diagonal em cinzento como no boletim [R022].
+Os valores hexadecimais são decisão nossa (o dossiê não encontrou nenhuma paleta portuguesa medida em valores de ecrã, §5): a raiz é material e documentada, o valor exato é escolha, medida AA em claro e em escuro antes de entrar. Distâncias e bandas de qualidade (quando existirem) fazem-se por intensidade do mesmo matiz, do escuro (mau) ao claro (bom), nunca por matizes diferentes [R195]. Medido hoje: âmbar contra cobalto 3,7:1 e no eixo amarelo-azul, o par que o daltonismo vermelho-verde distingue melhor [R226]; a palavra de estado é sempre escrita (ocre escuro ou cobalto, ambos AA) e o estado nunca é dito só pela cor: leva a palavra («acima do limiar 60») e a posição na régua; o equivalente em cinzentos [R130] é distinto por luminância (âmbar claro, cobalto escuro). O amarelo de medição da identidade atual muda de significado (de «medição» para «aviso: fora do limiar»); as réguas passam a tinta; o oxblood sai, porque a correção deixa de ter cor e passa a ter forma (valor antigo riscado a cinzento, valor novo a tinta, data).
+
+**Sinal do tempo como cor de estado.** O DN pôs em 1995 um retângulo de cor com o dia da semana junto do cabeçalho [R049]. Aqui: um pequeno bloco junto da marca com «reconferido a AAAA-MM-DD»; cobalto quando dentro do prazo, âmbar quando «em atraso» (o texto já existe). É a única cor do cabeçalho.
+
+## 4 · Composição
+
+- **Cabeçalho neutro.** Marca a tinta em Parnaso Display, linha de método por baixo, o bloco de estado ao lado; navegação em Sebenta versaletes, sete itens; nas páginas interiores a marca encolhe para uma linha (a cabeça de 250px acaba).
+- **A régua-espécime.** Todo o indicador com referência é desenhado pela mesma peça: uma barra fina de tinta para o valor, um traço vertical de 2px para o limiar, a escala escrita nas pontas em Sebenta Small, e a distância ao limiar escrita em palavras e número («+29,7 pontos acima do limiar de 60»). O estado colore só o marcador do valor e a palavra de estado. Sem mostradores, sem ponteiros, sem barras normalizadas entre indicadores diferentes: cada régua tem a sua escala escrita, e a comparação entre indicadores faz-se pela palavra de estado, não pelo comprimento [R195, R140].
+- **A página inicial lidera.** Uma manchete numérica no molde do comunicado estatístico [R194] («Quatro dos oito indicadores do painel europeu fora do limiar · painel de 2025 · reconferido a …»), depois os oito indicadores em linhas iguais (uma linha por entidade, como o boletim), os instrumentos, os municípios, os estudos, a agenda. Um destaque dominante por página [R045].
+- **Três profundidades, com registo.** Relance (números em Sebenta, uma frase), Leitura breve (prosa em Parnaso, uma frase por medida, cada número com selo), Fundo («reflexivo, problemático, ensaístico» [R044]). Abrem no sítio, nunca noutra página.
+- **O recibo é o boletim.** A página de linha mantém a ordem fixa dos campos e ganha o vocabulário do impresso oficial: filetes finos, os mesmos rótulos sempre na mesma posição, Parnaso Mono para o que é transcrito, e a marca de água diagonal «POR CONFIRMAR» quando falta um campo. Proveniência ao lado do valor, não em rodapé; a nota é auditável, não percorrida («93% dos links de citação nunca são clicados» [R093]).
+- **Selo.** ■ fonte / □ fonte em Sebenta versaletes, ao pé do número, sempre ligação; ganha altura de linha inteira na prosa (não é chip): «55 711 ■ fonte». O mesmo par cheio/tracejado diz cobertura no mapa (município com página / sem página ainda) e estado no livro-razão.
+- **Instrumentos a tinta.** Mapa dos 308 pontos em tinta, Évora cheio, os restantes vazios; régua da convergência a tinta com o 100 a 2px; banda de mandatos a cinzento com o rótulo do partido como registo; barras da dívida contra o teto a tinta, o teto a 2px.
+- **Telemóvel.** Uma coisa por linha; a régua-espécime encolhe em largura mas mantém a ordem; os números primeiro.
+
+## 5 · Voz
+
+Manchetes numéricas com indicador, período e referência; frases-moldura ≤ 12 distintas no sítio inteiro (a régua do repositório mede-as); a ausência de dado publica-se como matéria («sem página ainda», «sem limiar publicado», «por confirmar») [R150]; ficha técnica nominal por função [R147]; calendário de publicação exposto (a agenda já o faz) [R193].
+
+## 6 · O que fica proibido (com fonte no dossiê §3e)
+
+Inter/Roboto/Geist e afins como tipo por defeito; creme quente como superfície por defeito; gradiente índigo-roxo; fila de três cartões arredondados com sombra; cartão com borda colorida à esquerda; herói centrado com badge; texto em gradiente sobre métricas e «hero metric» sem referência; ícones de linha intercambiáveis; modo escuro permanente; mostrador com ponteiro; bandas de qualidade por matiz; par vermelho-verde equiluminante; índice compósito; cores partidárias como base; iconografia nacional afirmativa; escolher letra pelo que evoca em vez de pelo que documenta.
+
+## 7 · Plano de construção (Opus a construir sob esta especificação, Fable a rever)
+
+Fase 3, canvas «O Estado do País · Espécime»: (1) Início desktop 1280; (2) Início telemóvel 390; (3) Linha do livro-razão (o recibo, `divida-publica-2025`); (4) Município (Évora); depois, se aprovado, Estudo, Método, Agenda, Correções. Conteúdo: só valores publicados hoje, fontes das linhas (o pacote já verificado). Tipos: substitutos OFL declarados nas maquetas (Parnaso → Spectral; Sebenta → Bitter), com a nota «substituto de …» num canto de cada prancha; a compra e o teste das Trial Fonts são do diretor. Verificação: leitura cruzada por outra família (Codex ou Opus não construtor) com plantas, como nos blocos anteriores.
+
+## 8 · Decisões que ficam com o diretor
+
+1. Comprar Parnaso + Sebenta (≈ €450, licença Small) ou ficar em pilhas de sistema/OFL.
+2. Aceitar `âmbar/ocre` e `cobalto` como cores de estado (fora / dentro), sabendo que qualquer matiz tem eco partidário em Portugal e que aqui a cor entra por norma (ISO 3864) e por material, em pequena área.
+3. Mudar o significado do amarelo (de medição para aviso) e aposentar o oxblood (a identidade v2 dá-lhes significado escrito no Método; o Método terá de mudar essa linha).
+4. O nome público desta constituição: «Espécime».
+
+---
+
+## Emendas · 2026-08-20 (adotadas pelo diretor, «adopt all», após crítica cruzada Opus máx + Codex xhigh)
+
+1. **Cor (§3 emendado):** cor SÓ para limiares formais publicados — âmbar = fora do limiar, cobalto = dentro do limiar. Posições face a médias, destaques e rankings ficam a palavra, a tinta. O estado vive no marcador, na palavra e na régua; as molduras das peças são cinzentas. O marcador âmbar leva contorno de tinta (âmbar sobre papel mediu 2,09:1 — a auditoria original não tinha esta medição).
+2. **Densidades (§4 emendado):** duas — Relance e Leitura breve. O Fundo deixa de ser densidade: o recibo é o destino do selo (a página de linha). O selo nunca fica aninhado dentro de outro alvo.
+3. **Mapa (§4 emendado):** postura de selo — no âmbito País o mapa é selo (contagens + porta «Abrir um concelho»); o mapa inteiro só onde a geografia é a interface (escolher concelho), com pares ■/□ como marcador de cobertura, alvos reais e arquipélagos rotulados; a ficha-localizadora mantém sempre o selo da fonte. Região usa a régua, nunca pontos de concelho. No telemóvel o mapa não é seletor.
+4. **Régua (§3/§4 emendado):** uma gramática — referência a tinta à altura toda, barra = distância à referência, traço fino = valor, nenhuma barra sem referência publicada.
+5. **Tipos (§2 emendado, decisão de custo do diretor):** identidade v1 é livre — Spectral (prosa) + Bitter (instrumento; tabulares reais confirmados) + **Spectral SC para versaletes editoriais** (antetítulos, secções, legendas); Bitter caixa alta só dentro dos instrumentos. Algarismos antigos e versaletes em Sebenta ficam como aspiração dependente de compra. Gatilho de compra registado: tráfego real sustentado (teto natural: 100k visitantes únicos/mês do escalão Small) ou primeira receita; nesse dia, primeiro **Sebenta (3 estilos, ≈€150)**, Parnaso é uma segunda decisão. O Método não reclama a linhagem Gini 1938 — essa história pertence às fontes não compradas.
+6. **Nome:** «Espécime» é nome interno de trabalho; não aparece no sítio.
+7. **Densidade por defeito:** Relance, para todos, em todas as visitas; a escolha codifica-se no URL (partilhável), sem memória entre visitas — a folha é a mesma para todos.
+8. **«Dossiê do leitor»** (novo): a composição de medidas pelo leitor chama-se dossiê, declara o âmbito por medida, não soma nem ordena, e no sítio ganha endereço próprio e linha de proveniência.

@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Spectral+SC:wght@400;600&family=Bitter:ital,wght@0,100..900;1,100..900&display=swap">
+  <style>
+    html, body { margin: 0; background: #F6F7F4; }
+    a { color: #17191B; } a:hover { color: #1F4E8C; }
+    .e { --paper: #F6F7F4; --ink: #17191B; --g1: #585D5B; --g2: #7F8681; --g3: #D9DDD8; --amb: #E0A21A; --ocre: #7A5300; --cob: #1F4E8C;
+         width: 1120px; box-sizing: border-box; background: var(--paper); color: var(--ink);
+         font-family: "Spectral", Georgia, "Times New Roman", serif; font-size: 16.5px; line-height: 1.55; }
+    .e * { box-sizing: border-box; }
+    .slab { font-family: "Bitter", "Rockwell", Georgia, serif; font-variant-numeric: tabular-nums lining-nums; }
+    .sc { font-family: "Spectral SC", "Spectral", Georgia, serif; letter-spacing: .04em; }
+    .lab { font-family: "Bitter", Georgia, serif; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--g1); font-weight: 600; }
+    h1, h2, h3 { margin: 0; font-weight: 500; letter-spacing: -0.01em; }
+    h1 { font-size: 44px; line-height: 1.05; }
+    h2 { font-size: 24px; line-height: 1.15; padding-top: 6px; }
+    p { margin: 0; }
+    .rule2 { border-top: 2px solid var(--g2); }
+    .hair { border-top: 1px solid var(--g3); }
+    .cols { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 12px 28px; align-items: start; }
+    .seal { display: inline-flex; align-items: center; gap: 6px; font-family: "Bitter", Georgia, serif; font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); text-decoration: none; }
+    .seal::before { content: ""; width: 9px; height: 9px; background: var(--ink); display: inline-block; }
+    .seal.pc::before { background: transparent; border: 1px dashed var(--ink); }
+    .sw { display: flex; flex-direction: column; gap: 6px; }
+    .sw i { display: block; height: 44px; }
+    .sw b { font-family: "Bitter", Georgia, serif; font-weight: 600; font-size: 12px; letter-spacing: .04em; }
+    .sw span { font-family: "Bitter", Georgia, serif; font-size: 11px; color: var(--g1); }
+    ul { margin: 0; padding-left: 18px; } li { margin: 0 0 4px 0; }
+    .num { font-family: "Bitter", Georgia, serif; font-variant-numeric: tabular-nums lining-nums; font-weight: 500; letter-spacing: -0.01em; }
+    .fora { color: var(--ocre); } .dentro { color: var(--cob); }
+    .small { font-size: 14px; color: var(--g1); }
+    .note { font-family: "Bitter", Georgia, serif; font-size: 11px; color: var(--g1); letter-spacing: .02em; }
+  </style>
+</helmet>
+<div class="e" style="min-height: 100vh; padding: 40px 48px 48px 48px; display: flex; flex-direction: column; gap: 26px;">
+
+  <!-- head -->
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px;">
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div class="lab">O Estado do País · direção «Espécime» · constituição visual v3 · proposta · 2026-08-18</div>
+      <h1>Uma pauta fixa, impressa a tinta sobre papel de cal branco, onde só muda o que se mede.</h1>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px; flex: none;">
+      <span style="width: 12px; height: 12px; background: var(--cob); display: inline-block;"></span>
+      <span class="slab" style="font-size: 12px; letter-spacing: .06em; text-transform: uppercase;">Reconferido a 2026-08-17</span>
+    </div>
+  </div>
+  <div class="rule2"></div>
+
+  <!-- 0 -->
+  <div class="cols">
+    <div class="lab">0 · Numa frase</div>
+    <p style="font-size: 19px; line-height: 1.5;">A referência (limiar, média, teto, zero) está sempre gravada na página, como a linha de carga no casco; o valor move-se contra ela; a cor aparece só para dizer em que estado ele está. Lê-se como uma publicação séria; mede como um instrumento.</p>
+  </div>
+
+  <!-- 1 -->
+  <div class="cols">
+    <div class="lab">1 · Cinco princípios</div>
+    <ul>
+      <li><b>Pauta fixa, variável móvel.</b> O catálogo da Imprensa Nacional repete desde 1838 a mesma cadeia de caracteres e muda só o tipo em exame [R035, R058]; o boletim de voto dá uma linha por entidade, os mesmos campos na mesma ordem, e declara o estado do documento por marca de água [R022]. Cada instrumento do sítio é assim: a mesma régua, a mesma ordem, a referência a 2px [R137].</li>
+      <li><b>A referência inscreve-se no objeto medido.</b> Plimsoll [R196], carta de controlo [R197], zero altimétrico de Cascais [R198], limiares do MIP publicados com o número e nunca compostos num índice [R140]. Não há «índice do estado do país».</li>
+      <li><b>A cor é estado, e só estado.</b> Vocabulário fechado com nome, cor e código, como a ISO 3864 [R225] e o Polígrafo [R183]; qualidade por intensidade de um matiz [R195]; nenhuma cor partidária como base [R031]. O resto é tinta, cinzento e espessura.</li>
+      <li><b>Serifa como seriedade, mobília como instrumento.</b> «Uma letra com serifa, que vem novamente ao encontro da seriedade da informação» [R049]; letra justificada por linhagem documentada [R188].</li>
+      <li><b>Autêntico por documentação, nunca por evocação.</b> Nada de caravelas, azulejos desenhados, escudetes [R029, R113, R171]. A raiz entra pelo tipo (Lisboa, 1938), pela cor material [R108, R109] e pelos precedentes de página. Teste final [R167]: se alguém dissesse «isto foi feito por IA», acreditaria de imediato? Tem de ser não.</li>
+    </ul>
+  </div>
+
+  <div class="hair"></div>
+
+  <!-- 2 typography -->
+  <div class="cols">
+    <div class="lab">2 · Tipografia<br><span style="font-weight: 400; letter-spacing: .02em; text-transform: none;">Nesta prancha: substitutos OFL (Spectral por Parnaso, Bitter por Sebenta)</span></div>
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div class="lab">Parnaso · Feliciano Type, 2017 · a voz editorial</div>
+          <div style="font-size: 40px; line-height: 1.05;">O Estado do País</div>
+          <p class="small">Cinco tamanhos ópticos e um Mono; linhagem declarada pelo autor: as séries «Elzévir» francesas de 1894–1912 <b>e o Catálogo da Fundição Tipográfica Gini, Manuel Guedes Lda. (Lisboa, 1938)</b>. Marca, títulos, ledes, prosa; o Mono para o transcrito e os identificadores.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div class="lab">Sebenta · Feliciano Type, 2021–2025 · a voz do instrumento</div>
+          <div class="slab" style="font-size: 32px; line-height: 1.05; font-weight: 500; white-space: nowrap;">89,7 · 54 681 562</div>
+          <p class="small">Egípcia contemporânea «inspirada por um tipo monoespaçado do início do século XX da Fundição Tipográfica Gini, apresentado num espécime de 1938». Números, tabelas, réguas, selos, rótulos, o recibo. Traz no glifário os quadrados ■ □ do selo.</p>
+        </div>
+      </div>
+      <p class="small">Algarismos: tabulares versais nas tabelas e réguas, antigos na prosa; menos verdadeiro (−); espaço fino nos milhares; percentagem colada. <b>Eliminatório antes da compra:</b> confirmar nas Trial Fonts os algarismos tabulares e os versaletes. Licença Standard, perpétua, impressão + web, escalão Small até 100 000 visitantes/mês; qualquer estilo €50; conjunto mínimo (6 Parnaso + 3 Sebenta) ≈ €450, uma vez. Lido hoje em felicianotype.com.</p>
+    </div>
+  </div>
+
+  <div class="hair"></div>
+
+  <!-- 3 colour -->
+  <div class="cols">
+    <div class="lab">3 · Cor</div>
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px;">
+        <div class="sw"><i style="background: #F6F7F4; border: 1px solid #D9DDD8;"></i><b>papel de cal, com anil</b><span>#F6F7F4 · branco frio, área dominante</span></div>
+        <div class="sw"><i style="background: #17191B;"></i><b>tinta</b><span>#17191B · 16,4:1</span></div>
+        <div class="sw"><i style="background: #7F8681;"></i><b>eixo · referência 2px</b><span>#7F8681 · 3,5:1</span></div>
+        <div class="sw"><i style="background: #D9DDD8;"></i><b>grelha 1px</b><span>#D9DDD8 · decorativa</span></div>
+        <div class="sw"><i style="background: linear-gradient(90deg, #E0A21A 0 50%, #7A5300 50% 100%);"></i><b>âmbar + ocre · fora do limiar</b><span>#E0A21A marcador · #7A5300 palavra, 6,4:1 · aviso ISO 3864 [R225]</span></div>
+        <div class="sw"><i style="background: #1F4E8C;"></i><b>cobalto · dentro / acima da média</b><span>#1F4E8C · 7,7:1 · azulejo [R108]</span></div>
+      </div>
+      <p class="small">Quatro estados, vocabulário fechado: <span class="fora"><b>fora do limiar</b></span> · <span class="dentro"><b>dentro / acima da média</b></span> · <b>sem limiar</b> (tinta e cinzento; diz-se por palavras) · <b>por confirmar</b> (sem cor; muda a forma: □ tracejado, «[a verificar]», marca de água diagonal no recibo [R022]). Papel branco e frio, não creme: o creme quente com serifa e acento terracota é a superfície por defeito do design gerado por IA [R161] e fica proibido. Os valores hexadecimais são decisão nossa: a raiz é material e documentada (caiação com anil, azulejo, ocres [R108, R109]), o valor exato é escolha, medida AA. Âmbar contra cobalto: 3,7:1, eixo amarelo-azul, o par que o daltonismo vermelho-verde distingue melhor [R226]; a palavra de estado é sempre escrita, em ocre escuro ou cobalto, e o estado nunca é dito só pela cor [R130]. Distâncias e bandas por intensidade de um só matiz [R195]. O amarelo da identidade atual muda de significado (de medição para aviso); as réguas passam a tinta; o oxblood sai. O sinal do tempo é a única cor do cabeçalho: cobalto dentro do prazo, âmbar em atraso [R049].</p>
+    </div>
+  </div>
+
+  <div class="hair"></div>
+
+  <!-- 4 composition + the specimen ruler -->
+  <div class="cols">
+    <div class="lab">4 · A régua-espécime</div>
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <p class="small">Todo o indicador com referência é desenhado pela mesma peça: barra de tinta para o valor, traço de 2px para o limiar, escala escrita nas pontas, distância ao limiar em palavras e número. O estado colore só o marcador e a palavra. Sem mostradores, sem barras normalizadas entre indicadores [R195, R140].</p>
+      <div style="display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--g2);">
+        <div style="display: grid; grid-template-columns: 180px 64px minmax(200px, 1fr) 190px 60px; gap: 16px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--g3);">
+          <div><div style="font-weight: 500;">Dívida pública</div><div class="note">% do PIB · 2025 · Eurostat, tipsgo10</div></div>
+          <div class="num" style="font-size: 26px; text-align: right;">89,7</div>
+          <svg viewBox="0 0 300 30" width="100%" height="30" style="display: block; overflow: visible;">
+            <line x1="0" y1="16" x2="300" y2="16" stroke="#D9DDD8" stroke-width="1"></line>
+            <rect x="0" y="12" width="224.25" height="8" fill="#17191B"></rect>
+            <line x1="150" y1="4" x2="150" y2="28" stroke="#7F8681" stroke-width="2"></line>
+            <circle cx="224.25" cy="16" r="6.5" fill="#E0A21A" stroke="#17191B" stroke-width="1"></circle>
+            <text x="0" y="6" font-family="Bitter, serif" font-size="9" fill="#585D5B">0</text>
+            <text x="150" y="6" font-family="Bitter, serif" font-size="9" fill="#585D5B" text-anchor="middle">limiar 60</text>
+            <text x="300" y="6" font-family="Bitter, serif" font-size="9" fill="#585D5B" text-anchor="end">120</text>
+          </svg>
+          <div class="slab fora" style="font-size: 12px; font-weight: 600; letter-spacing: .04em;">▲ ACIMA DO LIMIAR · +29,7</div>
+          <a class="seal" href="#">fonte</a>
+        </div>
+        <div style="display: grid; grid-template-columns: 180px 64px minmax(200px, 1fr) 190px 60px; gap: 16px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--g3);">
+          <div><div style="font-weight: 500;">Taxa de emprego</div><div class="note">% dos 20–64 anos · 2025 · Eurostat, lfsi_emp_a</div></div>
+          <div class="num" style="font-size: 26px; text-align: right;">79,6</div>
+          <svg viewBox="0 0 300 30" width="100%" height="30" style="display: block; overflow: visible;">
+            <line x1="0" y1="16" x2="300" y2="16" stroke="#D9DDD8" stroke-width="1"></line>
+            <rect x="0" y="12" width="238.8" height="8" fill="#17191B"></rect>
+            <circle cx="238.8" cy="16" r="6.5" fill="#1F4E8C"></circle>
+            <text x="0" y="6" font-family="Bitter, serif" font-size="9" fill="#585D5B">0</text>
+            <text x="300" y="6" font-family="Bitter, serif" font-size="9" fill="#585D5B" text-anchor="end">100</text>
+          </svg>
+          <div class="slab dentro" style="font-size: 12px; font-weight: 600; letter-spacing: .04em;">ACIMA DA MÉDIA UE · SEM LIMIAR</div>
+          <a class="seal" href="#">fonte</a>
+        </div>
+        <div style="display: grid; grid-template-columns: 180px 64px minmax(200px, 1fr) 190px 60px; gap: 16px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--g3);">
+          <div><div style="font-weight: 500;">Água não faturada</div><div class="note">% · 2024 · linha com campo por confirmar</div></div>
+          <div class="num" style="font-size: 26px; text-align: right;">26,5</div>
+          <svg viewBox="0 0 300 30" width="100%" height="30" style="display: block; overflow: visible;">
+            <line x1="0" y1="16" x2="300" y2="16" stroke="#D9DDD8" stroke-width="1"></line>
+            <rect x="0" y="12" width="79.5" height="8" fill="#7F8681"></rect>
+            <circle cx="79.5" cy="16" r="6" fill="#F6F7F4" stroke="#17191B" stroke-width="1.5" stroke-dasharray="3 2"></circle>
+            <text x="0" y="6" font-family="Bitter, serif" font-size="9" fill="#585D5B">0</text>
+            <text x="300" y="6" font-family="Bitter, serif" font-size="9" fill="#585D5B" text-anchor="end">100</text>
+          </svg>
+          <div class="slab" style="font-size: 12px; font-weight: 600; letter-spacing: .04em; color: var(--g1);">SEM LIMIAR · [A VERIFICAR]</div>
+          <a class="seal pc" href="#">fonte</a>
+        </div>
+      </div>
+      <p class="small">Cabeçalho neutro (marca a tinta, bloco de estado ao lado, sete itens em versaletes; nas interiores a marca encolhe para uma linha). A página inicial lidera com uma manchete numérica no molde do comunicado estatístico [R194]: «Quatro dos oito indicadores do painel europeu fora do limiar · painel de 2025 · reconferido a 2026-08-17», depois oito linhas iguais, os instrumentos a tinta (mapa: Évora cheia, os restantes vazios), municípios, estudos, agenda. Três profundidades com registo: Relance (Sebenta), Leitura breve (Parnaso, uma frase por medida, cada número com selo em altura de linha: «55 711 <a class="seal" href="#" style="font-size: 11px;">fonte</a>»), Fundo («reflexivo, problemático, ensaístico» [R044]). O recibo é o boletim: filetes finos, os mesmos rótulos na mesma posição, Mono para o transcrito, marca de água «POR CONFIRMAR» quando falta um campo. Telemóvel: uma coisa por linha, os números primeiro.</p>
+    </div>
+  </div>
+
+  <div class="hair"></div>
+
+  <!-- 5-8 -->
+  <div class="cols">
+    <div class="lab">5 · Voz</div>
+    <p class="small">Manchetes numéricas com indicador, período e referência; ≤ 12 frases-moldura no sítio inteiro; a ausência de dado publica-se como matéria («sem página ainda», «sem limiar publicado», «por confirmar») [R150]; ficha técnica nominal por função [R147]; a letra explicada numa linha do Método, como o Politico Europe [R188].</p>
+  </div>
+  <div class="cols">
+    <div class="lab">6 · Proibido</div>
+    <p class="small">Inter/Roboto/Geist por defeito; creme quente como superfície por defeito; gradiente índigo-roxo; três cartões arredondados com sombra; borda colorida à esquerda; herói centrado com badge; «hero metric» sem referência; ícones de linha intercambiáveis; modo escuro permanente; mostrador com ponteiro; bandas por matiz; vermelho-verde equiluminante; índice compósito; cores partidárias como base; iconografia nacional afirmativa; letra escolhida pelo que evoca [dossiê §3e].</p>
+  </div>
+  <div class="cols">
+    <div class="lab">7 · Construção</div>
+    <p class="small">Canvas «O Estado do País · Espécime»: Início (1280), Início telemóvel (390), Linha do livro-razão (o recibo, divida-publica-2025), Município (Évora); depois Estudo, Método, Agenda, Correções. Só valores publicados hoje, fontes das linhas. Opus constrói sob esta especificação; Fable revê; leitura cruzada por outra família com plantas antes de qualquer merge.</p>
+  </div>
+  <div class="cols">
+    <div class="lab">8 · Decisões do diretor</div>
+    <ul class="small" style="color: var(--ink);">
+      <li>Comprar Parnaso + Sebenta (≈ €450, licença Small) ou ficar em pilhas de sistema/OFL, e testar antes os algarismos tabulares nas Trial Fonts.</li>
+      <li>Aceitar âmbar/ocre e cobalto como cores de estado, sabendo que qualquer matiz tem eco partidário em Portugal e que aqui a cor entra por norma (ISO 3864) e por material, em pequena área.</li>
+      <li>Mudar o significado do amarelo (de medição para aviso) e aposentar o oxblood; mudar a linha do Método que lhes dá significado.</li>
+      <li>O nome público desta constituição: «Espécime».</li>
+    </ul>
+  </div>
+  <div class="hair"></div>
+  <p class="note">Fontes: dossiê de referências (233 entradas lidas na fonte a 2026-08-18, ids Rnnn no livro-razão do dossiê); felicianotype.com (tipos, preços, licença, lidos a 2026-08-18); contrastes calculados hoje (WCAG). Nesta prancha os tipos são substitutos OFL: Spectral por Parnaso, Bitter por Sebenta.</p>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1120,"height":2775}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
