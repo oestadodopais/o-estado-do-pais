@@ -491,10 +491,10 @@ export const REGRAS = [
     titulo: { pt: 'O que o observatório não faz', en: 'What the observatory does not do' },
     regra: {
       pt: [
-        'Não classifica partidos nem faz médias por partido: regista quem decidiu o quê e o que aconteceu, com o nome tal como consta do documento e o rótulo partidário como facto de registo. Médias por partido sobre territórios que não têm nada em comum são aritmética enganosa. Não publica um número sem fonte. Não corrige em silêncio. Não recebe dinheiro de nenhuma entidade que mede: é financiado pessoalmente pelo diretor, sem publicidade nem financiamento externo.',
+        'Não classifica partidos nem faz médias por partido: regista quem decidiu o quê e o que aconteceu, com o nome tal como consta do documento e o rótulo partidário como facto de registo. Médias por partido sobre territórios que não têm nada em comum são aritmética enganosa. Não publica um número sem linha no livro-razão; onde a fonte ainda está por confirmar, a própria linha o diz com o marcador. Não corrige em silêncio. Não recebe dinheiro de nenhuma entidade que mede: é financiado pessoalmente pelo diretor, sem publicidade nem financiamento externo.',
       ],
       en: [
-        'It does not rank or classify parties and does not average by party: it records who decided what and what happened, with the name as the document gives it and the party label as a fact of record. Averages by party across territories with nothing in common are misleading arithmetic. It does not publish a figure without a source. It does not correct in silence. It takes no money from any entity it measures: it is funded personally by the director, with no advertising and no outside funding.',
+        'It does not rank or classify parties and does not average by party: it records who decided what and what happened, with the name as the document gives it and the party label as a fact of record. Averages by party across territories with nothing in common are misleading arithmetic. It does not publish a figure without a ledger row; where the source is still to be confirmed, the row itself says so with the marker. It does not correct in silence. It takes no money from any entity it measures: it is funded personally by the director, with no advertising and no outside funding.',
       ],
     },
     mecanismo: {
