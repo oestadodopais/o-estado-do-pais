@@ -353,12 +353,17 @@ export const STRINGS = {
         abrirConcelho: 'Abrir um concelho',
         verRegiao: 'Ver uma região',
         seloDaEscolha: 'Abrir a escolha de concelho',
-        /* A primeira metade desta frase («um toque no mapa devolve os concelhos
-           mais próximos») saiu na 2g: com a caixa vazia a lista é a da prancha
-           (Évora e o concelho escolhido), e a frase prometia o que a página
-           deixou de fazer. O que fica é a metade que continua verdadeira. */
+        /* A frase inteira voltou na 2h, porque o gesto voltou. A 2g aparou-lhe a
+           primeira metade («um toque no mapa devolve os concelhos mais
+           próximos») por ela prometer o que a página tinha deixado de fazer: a
+           lista de proximidade e a regra da caixa vazia estavam a descrever o
+           MESMO estado, e ficou a da prancha. A 2h separa os dois estados — sem
+           toque, Évora e o concelho escolhido; depois de um toque no selo, os
+           mais próximos do sítio tocado —, e com dois estados as duas metades da
+           frase são verdadeiras ao mesmo tempo: os pontos continuam a não ser
+           alvos, e o mapa inteiro continua a ser um. */
         proximos:
-          'No telemóvel os pontos não são alvos: a pesquisa é o caminho.',
+          'Um toque no mapa devolve os concelhos mais próximos, para escolher. No telemóvel os pontos não são alvos: a pesquisa é o caminho.',
       },
 
       peca: {
@@ -1181,7 +1186,8 @@ export const STRINGS = {
         abrirConcelho: 'Open a concelho',
         verRegiao: 'See a region',
         seloDaEscolha: 'Open the concelho chooser',
-        proximos: 'On a phone the points are not targets: the search is the way.',
+        proximos:
+          'Tapping the map returns the nearest concelhos to choose from. On a phone the points are not targets: the search is the way.',
       },
 
       peca: {

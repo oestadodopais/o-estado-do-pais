@@ -22,7 +22,8 @@ um comando que está escrito ao lado deles.*
 | `99a2694` | 2d | início, runtime: o estado no endereço, e um script que só escolhe cadeias já validadas |
 | `d7f7a7e` | 2e | início, telemóvel: o âmbito como destinos, o selo do país como único alvo, e as medidas em filas |
 | `2d34617` | 2f | réguas: a invariância como conselheiro, a matriz de aceitação e as 64 capturas |
-| *(o commit que contém esta nota)* | 2g | início, revisão: as sete correcções do lugar de direcção |
+| `14c533c` | 2g | início, revisão: as sete correcções do lugar de direcção à primeira página |
+| *(o commit que contém esta nota)* | 2h | início, proximidade e duas arestas: o gesto da Emenda 3 atrás de um toque, ISSUES I20 e I21 |
 
 ---
 
@@ -946,3 +947,232 @@ segunda construção do ramo para ter o delta de invariância exacto em vez de o
 inferir de duas leituras contra a base, uma varredura de seis estados por quatro
 larguras nas duas construções, e 64 capturas refeitas. Não tenho um número exacto
 e não o invento.
+
+---
+
+## 2h · a proximidade, e duas arestas
+
+*Construtor B3, **Claude Opus**, sozinho, sem subagentes, 20.08.2026, a partir de
+`14c533c`. Um commit. Nada foi empurrado, nada foi posto no ar, `vercel.json` não
+foi tocado, nenhum ficheiro partilhado (`tokens.css`, `site.css`, `Base.astro`,
+`Masthead.astro`, `SiteFooter.astro`, `Claim.astro`, `Provenance.astro`,
+`Frase.astro`, `PortaDeCorreccoes.astro`) mudou um byte, nenhum portão novo,
+nenhum número inventado. Todos os números abaixo trazem ao lado o comando que os
+produziu.*
+
+**Os oito ficheiros que mudaram**, todos da lista da BRIEF-etapa-2 §2:
+`src/components/inicio/{Regua,MapaRespira,Pesquisa}.astro`,
+`src/styles/inicio.css`, `public/js/inicio.js`, `src/i18n/strings.mjs`,
+`tests/inicio/{matriz,capturas}.mjs`.
+
+### 1 · a lista de proximidade volta, atrás de um toque a sério
+
+A Emenda 3 diz que no telemóvel, «na escolha, um toque no mapa devolve os
+concelhos mais próximos como botões (lista de proximidade sobre os centróides
+CAOP)», e a prancha do telemóvel desenha-o. A 2g tirou-a, e a nota da 2g escreveu
+porquê e o que faltava decidir: a lista de proximidade e a regra da prancha para
+a caixa vazia estavam a descrever **o mesmo estado**, e «teriam de ser estados
+diferentes, com gestos diferentes». É o que a 2h faz.
+
+**Três estados, três gestos**, e nenhum deles precisa que outro deixe de ser
+verdade:
+
+| gesto | o que a fila mostra |
+| --- | --- |
+| caixa escrita | os que casam com o que está escrito, no máximo oito |
+| toque no selo, já dentro da vista | os mais próximos do sítio tocado, no máximo oito |
+| nem uma coisa nem outra | Évora e o concelho escolhido (a regra da 2g, intacta) |
+
+O primeiro toque no selo, vindo de outro âmbito, continua a ser **a porta**: abre
+a vista, limpa a caixa e põe o foco na pesquisa. O toque seguinte, já lá dentro,
+é **o gesto**. Escrever desfaz o gesto; tocar outra vez refá-lo noutro sítio.
+
+**O defeito da 2e não volta, e a guarda é explícita.** O que a revisão da 2g
+apanhou nas capturas («Arcos de Valdevez, Caminha, Melgaço…») era o defeito e não
+a funcionalidade: sem toque nenhum, a ordenação saía do canto do campo e a
+«proximidade» era a ordem da Carta. `maisProximosDe()` recusa-se a devolver uma
+lista quando não houve toque a sério — `detail` 0, que é o que uma activação por
+teclado traz —, quando o rectângulo do mapa é degenerado, quando o ponto tocado
+cai fora do mapa, ou quando alguma distância não é um número finito. **Sem lista,
+fica a regra da caixa vazia**: nunca uma lista errada a fingir-se de certa.
+
+**A regra da fase mantém-se inteira.** Uma ordenação sobre os 308 centróides que
+o servidor desenhou não é uma figura: decide QUEM se acende, e nada mais. Não se
+escreve, não se arredonda, não aparece. Os botões são os mesmos 308 que o
+servidor rendeu, os nomes são os que a Carta escreveu, e o script continua a
+trocar `hidden` e mais nada. Os botões acendem-se pela **ordem da Carta**, que é
+a ordem em que estão no documento: a distância escolhe o conjunto, não a fila.
+Reordenar nós não está na lista do que este script pode fazer.
+
+**Uma entrada na história por toque, e não duas.** O selo é um `[data-modo]` como
+os outros e o ouvinte geral também o servia, o que fazia o mesmo toque passar
+duas vezes por `vai()` — duas entradas iguais na história, e um «voltar» que à
+primeira não fazia nada. O ouvinte geral passa a ignorá-lo; o `aria-pressed` do
+selo continua a ser posto por `aplica()`, como sempre foi.
+
+**A cadeia `inicio.movel.proximos` volta ao que era**, nas duas edições, porque o
+gesto que ela descreve voltou: «Um toque no mapa devolve os concelhos mais
+próximos, para escolher. No telemóvel os pontos não são alvos: a pesquisa é o
+caminho.» Não é texto novo — é a cadeia que a 2e escreveu e a 2g aparou, e está
+em `CHAVES-EN.md` com as duas metades. Com dois estados, as duas frases são
+verdadeiras ao mesmo tempo: os pontos continuam a não ser alvos, e o selo inteiro
+continua a ser um.
+
+**Medido** (`node tests/inicio/matriz.mjs`, célula «largura 390 · a lista de
+proximidade entra com um toque, e só com um»). A célula calcula a lista do seu
+lado, sobre `caop-centroids.mjs`, e compara com o que a página acende — se as
+duas baterem certo, a ordenação do cliente é a dos centróides e não a da Carta:
+
+```
+sem toque (a porta):        evora
+com toque em (450, 521) do campo 600×790:
+   a página acende:         alvito · cuba · evora · portel · redondo
+                            · reguengos-de-monsaraz · viana-do-alentejo · vidigueira
+   a matriz calcula:        alvito · cuba · evora · portel · redondo
+                            · reguengos-de-monsaraz · viana-do-alentejo · vidigueira
+   8 botões · 0 algarismos · 1 entrada na história
+a escrever «bej»:           beja          (o toque desfaz-se)
+a limpar a caixa:           evora         (volta a regra da caixa vazia)
+Enter no selo, já na vista: evora         (uma tecla não é um sítio)
+```
+
+### 2 · ISSUES I20, fechado · o rótulo da referência prende-se à ponta
+
+O rótulo da referência da régua estava centrado no traço da referência, e um
+tecto legal **é** o extremo da sua própria escala: centrado no 100%, metade dele
+ficava fora da caixa e empurrava a página. Passa a encostar-se à ponta quando lá
+calha — que é a mesma ponta onde a escala já não se escreve, precisamente porque
+o rótulo a tapava. Os dois limites são os que já existiam (18 e 82), e nenhuma
+palavra mudou: «limite legal» e «UE-27 = 100» são as que eram.
+
+**E o defeito tinha seis instâncias, não uma.** A varredura da 2g apanhou-o em
+`evora-leitura` porque é o estado que ela varria; os cinco «UE-27 = 100» das
+regiões estão no mesmo 100% e transbordavam pelo mesmo motivo, num estado que a
+lista dos seis não continha. Medido antes e depois, com o estado da região
+acrescentado:
+
+```
+node …/varrer.mjs dist-2h-antes dist-2h        (seis estados × quatro larguras)
+dist-2h-antes  evora-leitura  320:10 regua-ref-rotulo «limite legal» | 390:10 … | 768:0 | 1280:0
+dist-2h        evora-leitura  320:0  | 390:0  | 768:0 | 1280:0
+   antes 22 de 24 a zero · depois 24 de 24 a zero
+
+o estado que a lista dos seis não tinha:
+dist-2h-antes  regiao-alentejo-leitura  320:15 SPAN «UE-27 = 100» | 390:15 … | 768:0 | 1280:0
+dist-2h        regiao-alentejo-leitura  320:0  | 390:0  | 768:0 | 1280:0
+```
+
+A varredura **mudou de sítio**: era um guião do rascunho, e passou a ser uma
+célula da matriz («ISSUES I20 · seis estados × quatro larguras sem transbordo, e
+o rótulo dentro da régua»), com `regiao-alentejo-leitura` no lugar do
+`regiao-alentejo` fechado. Um defeito que só uma ferramenta de fora vê volta na
+subetapa seguinte. A célula mede duas coisas: o transbordo da página, e se o
+rótulo cabe na caixa da própria régua — porque uma régua dentro de um contentor
+que rolasse esconderia o mesmo defeito em vez de o fechar. **24 de 24 a zero, e 0
+rótulos fora da régua.**
+
+### 3 · ISSUES I21, fechado · a dica que descrevia o que a página não faz
+
+«Toque num ponto para escolher o concelho.» rendia-se sempre que o âmbito era
+Município, inclusive a 390, onde nenhum ponto é alvo: a Emenda 3 diz que o selo
+inteiro é o alvo e a folha põe `pointer-events: none` em todos os `.mun-alvo`
+abaixo de 640. Passa a seguir a regra das outras duas dicas, que o ponto 2 da 2g
+fechou: entra `hidden` do servidor (o caso sem script), o script acende-a no
+âmbito Município, e a folha volta a apagá-la abaixo de 640 e na postura de
+localizador. Nenhuma palavra mudou.
+
+**Medido** (`node tests/inicio/matriz.mjs`, célula «ISSUES I21»):
+
+```
+1280 no âmbito Município  visível      (o mapa escolhe pontos, e a dica é verdade)
+ 390 no âmbito Município  não visível
+1280 no âmbito País       não visível
+sem script, 1280 e 390    não visível
+```
+
+---
+
+## 2h · as réguas
+
+### A matriz de aceitação
+
+`node tests/inicio/matriz.mjs` — **71 de 71 células passam** (as 68 da 2g, todas
+ainda verdes, mais três: a lista de proximidade, I20 e I21). Uma célula da 2g
+mudou de guião sem mudar de medida: «largura 390 · vista de escolha, caixa
+vazia», na metade do concelho escolhido, deixou de tocar no selo — em
+`?ambito=municipio:beja` a página **já** está na vista, e a 390 o
+`[data-modo="municipio"]` à vista é o selo, pelo que tocar-lhe ali passou a ser o
+gesto da proximidade e não a porta. O que a célula mede é a lista com que a vista
+se apresenta, e essa lê-se sem lhe tocar. As duas continuam a dar
+`sem escolha: evora · com Beja escolhida: beja · evora`.
+
+### A régua da invariância
+
+`node scripts/medir-invariancia.mjs <2g> <2h>`, com a construção da 2g guardada
+antes da primeira alteração:
+
+```
+322 rotas · 320 idênticas em texto · 2 com diferenças
+  /      +1 −1
+  /en/   +1 −1
+```
+
+O bloco que entra e o que sai são o mesmo par nas duas edições — a cadeia
+`inicio.movel.proximos` inteira a substituir a metade que a 2g deixou. **Mais
+nada mudou de texto em lado nenhum**: as correcções 2 e 3 são forma, e nem uma
+palavra se moveu por causa delas. `--chaves` imprime **14 chaves** com o mesmo
+valor nas duas edições, o mesmo número da 2f e da 2g, e nenhuma nova.
+
+### As duas réguas antigas
+
+- **Defeitos**: `node scripts/medir-defeitos.mjs --json` dá um ficheiro
+  **idêntico, byte a byte**, ao da 2g (`diff` sem saída, código 0). 307 páginas;
+  porta de correcções 307/307; primeira página 0 valores sem selo e 0 selos para
+  outra linha; frases de moldura 94 distintas · 2 405 ocorrências; cobertura 1
+  distinta por estado e por edição nas quatro combinações. **Delta: nenhum.** A
+  frase que mudou aparece numa página por edição, e a régua das molduras só conta
+  as que aparecem em mais do que uma.
+- **Contraste**: `node scripts/medir-contraste.mjs --json` dá um ficheiro
+  **idêntico, byte a byte**, ao da 2g e ao da 2f. Nenhum par novo, nenhum literal
+  de cor: o rótulo da régua já era `--ink` e continua a ser.
+
+Guardados em `design/especime-v3/medicoes/2026-08-20-etapa-2h-{defeitos,contraste,invariancia}.json`.
+
+### As capturas
+
+`node tests/inicio/capturas.mjs` — **68**, na mesma pasta e com os mesmos nomes:
+as 64 refeitas (a `escolha-*` e a `escolha-1280-*` porque a vista mudou de
+guião, a `evora-leitura-*` e o resto porque a régua mudou de rótulo), mais
+**quatro novas**, `escolha-proxima-390-{pt,en}-{claro,escuro}`, que é a vista de
+escolha **depois** do gesto: o único estado desta página que uma captura não
+alcançava sem tocar duas vezes. O guião das capturas ganhou, para isso, um campo
+de larguras por estado — este só existe a 390, porque só lá o selo é o alvo.
+
+---
+
+## 2h · o que fica por fazer, e porquê
+
+1. **O foco depois do gesto vai para a caixa de pesquisa**, como ia antes. Num
+   telemóvel a sério isso levanta o teclado do sistema por cima dos botões que o
+   toque acabou de acender, e o foco no primeiro botão da lista seria
+   provavelmente melhor. **Não mudei, e não é preciso adivinhar porquê: não
+   consigo medir um teclado de sistema num Chromium sem cabeça**, e trocar o foco
+   por uma melhoria que não posso medir é escrever uma opinião no código. Fica
+   dito, para quem tiver um telefone na mão.
+2. **A fila sai pela ordem da Carta**, e não pela distância. Pô-la por distância
+   seria reordenar nós, que não está na lista do que o script pode fazer. Se a
+   direcção quiser a ordem da distância, é uma decisão de forma com um custo de
+   regra, e tem de ser dita.
+3. **I19** continua aberto, e continua a ser da fase da voz.
+
+## 2h · quem fez o quê, e quanto custou
+
+**Claude Opus** (construtor B3), num só fio, sem subagentes e sem delegação.
+Nenhuma parte desta subetapa correu noutro modelo.
+
+**Contagem de fichas:** a única contagem honesta é a diferença de dois
+contadores. No início desta subetapa o contador dizia **14 972 786** por usar; no
+commit dizia **14 773 295** — ou seja **≈ 199 mil fichas**, das quais a maior
+parte é medição: a matriz inteira duas vezes, a varredura de seis estados por
+quatro larguras nas duas construções, e 68 capturas. Não tenho um número exacto
+para lá desta diferença, e não o invento.

@@ -260,7 +260,15 @@ const caop = getClaim('municipios-portugal-caop-2025');
       <Provenance id="municipios-portugal-caop-2025" lang={lang} />
     </p>
 
-    <p class="mapa-hint" data-hint-escolher>{s.inicio.mapa.escolher}</p>
+    {/* A TERCEIRA DICA SEGUE A REGRA DAS OUTRAS DUAS (ISSUES I21). «Toque num
+        ponto para escolher o concelho» só é verdade onde o mapa escolhe pontos:
+        na secretária, com o mapa inteiro e com script. Rendia-se em qualquer
+        largura no âmbito Município, e a 390 nenhum ponto é alvo — a Emenda 3 diz
+        que o selo inteiro é o alvo, e a folha põe `pointer-events: none` em todos
+        os `.mun-alvo` abaixo de 640. Por isso entra `hidden` (que cobre o caso
+        sem script), o script acende-a só no âmbito Município, e a folha volta a
+        apagá-la abaixo de 640 e na postura de localizador. */}
+    <p class="mapa-hint" data-hint-escolher hidden>{s.inicio.mapa.escolher}</p>
 
     <div class="mapa-leitura" data-readout aria-live="polite">
       <span class="readout-name" data-readout-nome hidden></span>

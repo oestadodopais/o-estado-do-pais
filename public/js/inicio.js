@@ -15,6 +15,12 @@
  * número, escrever um algarismo. Tudo o que a página mostra em qualquer estado
  * veio do servidor e passou pelo portão de HTML.
  *
+ * Uma ORDENAÇÃO cabe dentro desta regra, e é o que a lista de proximidade faz
+ * (Emenda 3, subetapa 2h): ordena os 308 centróides que o servidor desenhou pela
+ * distância ao sítio tocado e tira o `hidden` aos oito primeiros. A distância
+ * decide QUEM se acende; não se escreve, não se arredonda e não aparece em lado
+ * nenhum. O que o leitor lê continuam a ser os nomes que a Carta escreveu.
+ *
  * Sem este ficheiro a página é o âmbito País em Relance, completa e correcta.
  *
  * ---------------------------------------------------------------------------
@@ -135,6 +141,7 @@
   var pecas = document.querySelectorAll('.peca-mais');
   var campo = raiz.querySelector('[data-pesquisa]');
   var semResultado = raiz.querySelector('[data-sem-resultado]');
+  var seloDoPais = raiz.querySelector('.movel-selo');
   var ligacaoDeIdioma = document.querySelector('a.lang');
   var baseDoIdioma = ligacaoDeIdioma ? ligacaoDeIdioma.getAttribute('href').split('?')[0] : null;
 
@@ -158,6 +165,21 @@
      porque a regra da prancha inclui o concelho ESCOLHIDO. Declara-se aqui, sem
      fazer nada, e ganha corpo mais abaixo se houver caixa de pesquisa. */
   var filtra = function () {};
+
+  /* --------------------------------------------------------- a proximidade
+   *
+   * `proximos` é a lista de concelhos mais próximos do sítio onde o leitor tocou
+   * no selo do país, ou `null` enquanto ninguém tocou. Não vive no endereço: um
+   * toque não é um estado partilhável, e uma recarga volta à regra da caixa
+   * vazia, que é o que a página sabe dizer sem o dedo de ninguém.
+   *
+   * É uma ORDENAÇÃO sobre os centróides que o servidor já desenhou, e uma
+   * ordenação não é uma figura: nenhuma distância se escreve, nenhum número
+   * aparece, e os botões que se acendem são os mesmos 308 que o servidor rendeu.
+   * A regra da fase mantém-se inteira — o script escolhe cadeias já validadas.
+   */
+  var MAX_RESULTADOS = 8;
+  var proximos = null;
 
   function mostraSo(lista, atributo, chave) {
     for (var k = 0; k < lista.length; k++) {
@@ -302,6 +324,12 @@
     (function (botao) {
       botao.addEventListener('click', function (ev) {
         ev.preventDefault();
+        /* O selo do país é um `[data-modo]` como os outros — leva o mesmo
+           `aria-pressed` —, mas tem ouvinte próprio, porque um toque nele é
+           também um sítio no mapa. Sem esta guarda o mesmo toque passava duas
+           vezes por `vai()` e escrevia duas entradas iguais na história: o
+           «voltar» ficava a não fazer nada à primeira. */
+        if (botao === seloDoPais) return;
         var modo = botao.getAttribute('data-modo');
         /* «Região» e «Município» abrem a fila de escolha e não mudam o âmbito:
            só há âmbito quando há uma região ou um concelho escolhido. «País» é
@@ -362,10 +390,21 @@
    * leitor escrever. Uma vista de escolha que abre com oito nomes que ninguém
    * pediu diz que aqueles oito são especiais, e não são: são os primeiros da
    * Carta.
+   *
+   * E A LISTA DE PROXIMIDADE É O TERCEIRO ESTADO (subetapa 2h, Emenda 3). São
+   * três, e cada um tem o seu gesto:
+   *
+   *   caixa escrita     os que casam com o que está escrito
+   *   toque no selo     os mais próximos do sítio tocado, no telemóvel
+   *   nem uma coisa     Évora e o concelho escolhido
+   *
+   * A 2g tinha os dois últimos a descrever o MESMO estado — a caixa vazia — e
+   * por isso teve de escolher entre eles; a 2h separa-os pelo gesto, e nenhum
+   * dos dois precisa de deixar de ser verdade.
    */
   if (campo) {
     var itens = raiz.querySelectorAll('.pesquisa-item');
-    var MAX = 8;
+    var MAX = MAX_RESULTADOS;
     filtra = function () {
       var q = campo.value
         .normalize('NFD')
@@ -378,26 +417,38 @@
           : null;
       var vistos = 0;
       for (var j = 0; j < itens.length; j++) {
-        /* Caixa vazia: os concelhos que têm página, que é o que o servidor já
-           rendeu, mais o concelho escolhido, se houver um. Caixa com texto: os
-           oito primeiros que casam. */
+        /* Caixa com texto: os oito primeiros que casam. Caixa vazia depois de um
+           toque no selo: os mais próximos do sítio tocado. Caixa vazia e sem
+           toque: os concelhos que têm página, que é o que o servidor já rendeu,
+           mais o concelho escolhido, se houver um. */
         var botaoDoItem = itens[j].querySelector('[data-escolher]');
         var slugDoItem = botaoDoItem ? botaoDoItem.getAttribute('data-escolher') : null;
-        var casa =
-          q.length > 0
-            ? itens[j].getAttribute('data-normal').indexOf(q) >= 0
-            : itens[j].hasAttribute('data-tem-pagina') ||
-              (escolhido !== null && slugDoItem === escolhido);
+        var casa;
+        if (q.length > 0) {
+          casa = itens[j].getAttribute('data-normal').indexOf(q) >= 0;
+        } else if (proximos) {
+          casa = slugDoItem !== null && proximos[slugDoItem] === true;
+        } else {
+          casa =
+            itens[j].hasAttribute('data-tem-pagina') ||
+            (escolhido !== null && slugDoItem === escolhido);
+        }
         var mostrar = casa && vistos < MAX;
         itens[j].hidden = !mostrar;
         if (mostrar) vistos++;
       }
       if (semResultado) semResultado.hidden = !(q.length > 0 && vistos === 0);
     };
-    campo.addEventListener('input', filtra);
+    /* Escrever desfaz o toque: a lista volta a ser a da caixa, que é o caminho
+       principal da Emenda 3. O Escape, que limpa a caixa, desfá-lo também. */
+    campo.addEventListener('input', function () {
+      proximos = null;
+      filtra();
+    });
     campo.addEventListener('keydown', function (ev) {
       if (ev.key !== 'Escape') return;
       campo.value = '';
+      proximos = null;
       filtra();
       ev.stopPropagation();
     });
@@ -424,25 +475,87 @@
   /* --------------------------------------------------- o selo do país, no telemóvel
    *
    * Emenda 3: no telemóvel o mapa não é seletor ponto a ponto — o selo inteiro é
-   * o alvo, e nenhum ponto é alvo. Um toque abre a vista de escolha e põe o foco
-   * na caixa de pesquisa, que é o caminho principal.
+   * o alvo, e nenhum ponto é alvo —, e «na escolha, um toque no mapa devolve os
+   * concelhos mais próximos como botões (lista de proximidade sobre os centróides
+   * CAOP)».
    *
-   * A LISTA DOS OITO MAIS PRÓXIMOS SAIU NA 2g, e o motivo está medido. A 2e
-   * fazia o selo devolver os oito concelhos mais próximos do sítio tocado; a
-   * revisão apanhou nas capturas a 390 os oito PRIMEIROS da Carta («Arcos de
-   * Valdevez, Caminha, Melgaço…»), que é o que a ordenação devolve quando a
-   * geometria degenera. E, defeito à parte, a regra da prancha para a caixa
-   * vazia é outra: Évora e o concelho escolhido, e mais nada até alguém
-   * escrever. As duas coisas não podem ser verdade do mesmo estado, e a que
-   * fica é a da prancha (subetapa 2g, ponto 5). O que se perde fica escrito na
-   * nota: a ordenação espacial da Emenda 3, que era o único uso da distância
-   * entre centróides no cliente.
+   * O SELO FAZ DUAS COISAS, E QUEM DECIDE QUAL DELAS É O ESTADO EM QUE ELE É
+   * TOCADO. Vindo de fora, é a porta: abre a vista de escolha e põe o foco na
+   * caixa, que é o caminho principal. Já dentro da vista, é o gesto: devolve os
+   * concelhos mais próximos do sítio tocado, como botões, sem número nenhum à
+   * vista.
+   *
+   * PORQUE É QUE ISTO SAIU NA 2g E VOLTA AGORA. A 2e tinha a lista de
+   * proximidade a responder pela caixa vazia, e a regra da prancha para a caixa
+   * vazia é outra (Évora e o concelho escolhido): as duas descreviam o mesmo
+   * estado, e a 2g escolheu uma. O que estava mal era o defeito — sem toque
+   * nenhum, a ordenação saía do canto do campo e devolvia os oito PRIMEIROS da
+   * Carta («Arcos de Valdevez, Caminha, Melgaço…») —, e o defeito era o defeito,
+   * não a funcionalidade. A 2h separa os dois estados pelo gesto e põe a
+   * ordenação atrás de um toque a sério, com as guardas de `maisProximosDe()`.
    */
-  var seloDoPais = raiz.querySelector('.movel-selo');
+  function maisProximosDe(ev) {
+    if (!mapa || !pontos.length) return null;
+
+    /* UM TOQUE, E NÃO UMA ACTIVAÇÃO POR TECLADO. Um `click` vindo do Enter ou do
+       espaço traz `detail` 0 e coordenadas 0, e uma lista de proximidade tirada
+       do canto do campo é exactamente o defeito que a 2g apanhou. Sem toque,
+       nenhuma lista: o selo fica a ser só a porta. */
+    if (!ev || !ev.detail) return null;
+
+    var r = mapa.getBoundingClientRect();
+    if (!(r.width > 0) || !(r.height > 0)) return null;
+
+    /* O toque tem de cair DENTRO do mapa. O selo cobre-o exactamente, e se um
+       dia deixar de o cobrir é melhor não devolver lista nenhuma do que devolver
+       a de um sítio onde ninguém pôs o dedo. */
+    if (ev.clientX < r.left || ev.clientX > r.right) return null;
+    if (ev.clientY < r.top || ev.clientY > r.bottom) return null;
+
+    var vb = mapa.viewBox && mapa.viewBox.baseVal;
+    var LW = vb && vb.width ? vb.width : 600;
+    var LH = vb && vb.height ? vb.height : 790;
+    var px = ((ev.clientX - r.left) / r.width) * LW;
+    var py = ((ev.clientY - r.top) / r.height) * LH;
+    if (!isFinite(px) || !isFinite(py)) return null;
+
+    var ordenados = [];
+    for (var q3 = 0; q3 < pontos.length; q3++) {
+      var dx3 = pontos[q3].x - px;
+      var dy3 = pontos[q3].y - py;
+      var dd3 = dx3 * dx3 + dy3 * dy3;
+      /* Uma distância que não é um número não é uma ordenação: é a ordem da
+         Carta a fingir-se de proximidade. Nesse caso não há lista nenhuma. */
+      if (!isFinite(dd3)) return null;
+      ordenados.push({ slug: pontos[q3].slug, d: dd3 });
+    }
+    ordenados.sort(function (x, y) {
+      return x.d - y.d;
+    });
+
+    var perto = {};
+    for (var z = 0; z < ordenados.length && z < MAX_RESULTADOS; z++) perto[ordenados[z].slug] = true;
+    return perto;
+  }
+
   if (seloDoPais) {
     seloDoPais.addEventListener('click', function (ev) {
       ev.preventDefault();
-      if (campo) campo.value = '';
+      if (modoEscolhido === 'municipio') {
+        /* Já na vista de escolha: o gesto. Se as guardas recusarem — activação
+           por teclado, geometria degenerada, toque fora do mapa —, a lista fica
+           como estava, e a vista continua a ser o que era. */
+        var perto = maisProximosDe(ev);
+        if (perto) {
+          proximos = perto;
+          if (campo) campo.value = '';
+        }
+      } else {
+        /* Vindo de fora: a porta. A caixa limpa-se e a lista volta à regra da
+           caixa vazia, que é o que se vê ao chegar. */
+        proximos = null;
+        if (campo) campo.value = '';
+      }
       vai({ ambito: estado.ambito, densidade: estado.densidade }, 'municipio', campo || seloDoPais);
     });
   }
