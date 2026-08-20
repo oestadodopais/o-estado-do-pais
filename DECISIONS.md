@@ -7187,7 +7187,7 @@ vista, e nada disto atravessa sem a reextração sob a V16.
 ### 1.48 A direção decide: a licença do conjunto é CC BY 4.0, e a regra 6 diz o que se faz
 
 **Afecta:** metodo
-**Texto:** metodo 95d4deae431a
+**Texto:** metodo 1e2c805da1fb
 
 *Este registo segue a grafia que §1.38 fixou.*
 
@@ -7233,6 +7233,45 @@ linha, que é o que a §1.31 pede a qualquer frase da casa sobre o seu próprio
 trabalho. E não traz algarismos: o Método é a única página onde nenhum pedaço
 de texto corrido os pode trazer, e a conta que diz **quantas** linhas já foram
 relidas está onde sempre esteve, na prova ao lado.
+
+#### O limite da regra 1, e é a segunda mudança de texto governado do bloco
+
+*Escrito no estádio de correção, depois da leitura cruzada de 20.08.2026 (achado
+2, abaixo).*
+
+O mecanismo da regra 1 diz que **cada** linha do livro-razão nomeia o organismo
+que produziu o valor e o documento onde ele está impresso. Três linhas levam
+`[a verificar]` no campo `source`: `avisos-pt2030-abertos`,
+`avisos-pt2030-pessoas-singulares` e `ciclo-substituicao-condutas`. É a mesma
+classe de defeito da primeira frase da regra 6, e é a mesma resposta: uma
+promessa universal ao lado da prova que a desmente não sai para o ar por a
+frase ser antiga.
+
+A regra e o mecanismo não mudam uma palavra. A regra 1 ganha um **limite**, que
+é o campo que a forma de uma regra reserva para o que o mecanismo não apanha, e
+que oito das dez já tinham. Nas duas edições:
+
+> «Nem todas as linhas têm já a proveniência completa: a que não tem leva o
+> marcador no campo que falta, e a conta ao lado diz quantas são.»
+
+> «Not every row has its provenance complete yet: one that does not carries the
+> marker in the missing field, and the count beside says how many there are.»
+
+E a prova da regra ganha a chave `divida`, que já existia e que o portão já
+recontava por conta própria (é uma das vinte e oito), com o rótulo «linhas com
+dívida de proveniência» e «rows with provenance debt». A frase diz «a conta ao
+lado», e a conta passa a estar ao lado: sem ela a frase mandava o leitor
+procurar um número noutra página. A mesma chave já é a prova do limite da regra
+5, com outro rótulo, e isso é a mesma dívida contada de dois sítios que a
+nomeiam de maneiras diferentes, não duas contagens.
+
+**Isto é proposta do lugar de construção, e não decisão tomada**, exatamente
+como o T4 fez com o limite da regra 6 a 18.08.2026. A delegação de 20.08 é sobre
+a lista de decisões desse dia, e o limite da regra 1 não estava nela: nasceu da
+leitura cruzada, depois. As dez regras são da direção, o diretor lê o Método na
+pré-visualização, e pode revogar esta redação antes da fusão. O que o lugar de
+construção não pode fazer é publicar, sabendo, uma frase que a página ao lado
+desmente.
 
 #### A licença do conjunto: um só campo, e a promessa era mesmo de um só campo
 
@@ -7347,12 +7386,91 @@ o JSON em cada um dos dois índices. Nenhuma das 28 chaves de `prova` mexeu, e a
 outras oito de `portao` também não: a regra 6 mudou palavras e não números, e o
 conjunto passou a ser oferecido sem mudar uma única contagem do livro-razão.
 
+#### A leitura cruzada
+
+*Escrito no estádio de correção, depois de a leitura ter corrido. O bloco
+continua construído e não fundido: o que muda aqui é o que a leitura mandou
+mudar, e nada mais.*
+
+##### Como foi feita
+
+Uma leitura de outra família, **Codex (`gpt-5.6-sol`), com o contexto cortado**:
+sem os repositórios, sem o `BRIEF`, sem a constituição, sem esta entrada. O que
+recebeu foi o que este bloco põe à frente de um leitor, e mais nada:
+
+- o **Método construído**, que é onde a regra 6 mudou;
+- os **dois índices do livro-razão**, o português e o inglês, que são onde a
+  licença aparece;
+- **quatro páginas de linha nas duas edições**, que são onde a porta do JSON
+  nasceu;
+- o **CSV**, o **JSON do conjunto** e **quatro ficheiros de linha**, que são o
+  que a licença passou a oferecer.
+
+E **cinco estragos plantados**, um de cada natureza que este bloco podia
+produzir: um de texto governado, dois de licença, um de porta e um de grafia.
+
+##### Os estragos: cinco de cinco, e o travessão foi apanhado desta vez
+
+| Estrago plantado | Apanhado | Achado |
+| --- | --- | --- |
+| a primeira frase da regra 6, na edição inglesa, reposta no absoluto antigo | **sim** | 1 |
+| «CC BY-SA 4.0» no índice da edição portuguesa | **sim** | 5 ou 8 |
+| a licença a `null` dentro do JSON do conjunto | **sim** | 5 ou 8 |
+| a porta do JSON de uma página de linha a apontar para outra linha | **sim** | 5 ou 8 |
+| um travessão na frase nova do âmbito da licença, edição portuguesa | **sim** | 12 |
+
+Os três do meio saíram em dois achados, o 5 com dois e o 8 com um. **Qual deles
+ficou sozinho não está fixado no que chegou a este lugar, e não se escreve o que
+não se sabe.**
+
+O que interessa neste quadro é a última linha. Na leitura de 18.08.2026 o
+travessão plantado **passou** por uma leitura inteira, e ficou escrito que um
+leitor não é uma segunda conferência de ortografia (§1.47, «Os estragos: quatro
+de cinco»). Desta vez foi apanhado. Uma leitura que apanha não prova que a
+próxima apanhe, e a régua mecânica continua a ser o que garante o resultado:
+o mesmo travessão, posto na mesma cadeia, faz o
+`node scripts/ortografia.mjs --verificar` sair com código 1, e é isso que está
+provado acima, nos estragos plantados deste bloco.
+
+##### Os doze achados, e o que ficou de cada um
+
+| # | O achado | O que ficou |
+| --- | --- | --- |
+| 1 | a frase da regra 6 na edição inglesa promete releitura antes da publicação | **estrago plantado**, reposto. **A metade verdadeira fica de pé**: a frase nova diz que cada linha diz se já foi relida, quando e com que resultado, e é isso que a página prova linha a linha. |
+| 2 | o mecanismo da regra 1 diz que cada linha nomeia o organismo, e três linhas levam `[a verificar]` no `source` | **real, e fecha aqui**: a regra 1 ganha um limite nas duas edições e a chave `divida` na prova, acima. É proposta do lugar de construção, e o diretor lê-a na pré-visualização. |
+| 3 | a derivação escrita de `evora-prr-execucao-2026` diz «= 50,36» e a linha vale 50,61 | **real, e anterior a este bloco (18.08.2026)**. Conferido no livro-razão: `value: "50,61"` e a prosa da derivação ainda traz os números do instantâneo de 2026-08-03, operandos incluídos. O valor está certo e a conta ao lado dele está velha. Vai com o bloco das republicações, que reexporta estas linhas do motor com o instantâneo de hoje, e entra na §4.1 até lá. |
+| 4 | a derivação escrita de `evora-prr-vencido-quota-2026` diz «= 61,64» e a linha vale 61,31 | **o mesmo defeito, na linha ao lado**, e a mesma morada. Conferido: `value: "61,31"`, prosa com os números de 2026-08-03. |
+| 5 | a licença não diz o mesmo em todo o lado | **estragos plantados** (dois), repostos. |
+| 6 | quatro linhas guardam «3», «8», «6» e «6» e o excerto imprime 3.0, 8.0, 6.0 e 6.0 | **real, e anterior a este bloco (12.08.2026)**. Conferido nas quatro: `fluxo-de-credito-as-empresas-2025`, `jovens-nem-2025`, `taxa-de-desemprego-2025` e `taxa-de-desemprego-mip-2025`. Não é um valor errado: é a forma do valor, que perdeu a casa decimal que a fonte imprime. É correção do lado do motor, no `generate_claims`, e entra na §4.1 para a próxima passagem da linha de base. |
+| 7 | a legenda do selo promete «todos os campos preenchidos» e não diz as exceções que são de origem | **real**. Uma linha alojada não tem excerto para ter, e uma linha derivada ou da casa não tem fonte nem documento: o selo cheio dessas não mente, mas a legenda não o diz. É redação das cadeias do índice, entra na §4.1, e não se emenda no mesmo estádio em que se lhe descobre o alcance. |
+| 8 | uma porta do conjunto não abre o que promete | **estrago plantado**, reposto. |
+| 9 | o preâmbulo de um ficheiro de linha diz que traz todas as linhas | **real, e deste bloco: fechado aqui.** O `_` era o mesmo nos dois ficheiros. Passa a dizer «uma linha» no ficheiro de linha e «todas as linhas» no do conjunto, que é a única coisa que os distingue e a única que muda entre eles. |
+| 10 | o `reason_en` de uma atualização de 18.08 junta dois nomes de ficheiro com «e» | **real, e fica como está.** É a entrada de `evora-prr-vencido-aprovado-2026`, e a reexportação de hoje escreve «and». **Uma correção publicada não se reescreve** (`ledger/README.md`): a entrada de 18.08 fica com as palavras com que foi publicada, e a de hoje nasce certa. |
+| 11 | dois identificadores com grafia anterior ao Acordo | **decidido desde 16.08.2026 (§1.40) e confirmado a seguir (§1.42)**: `taxa-de-actividade-2025` e `taxa-de-cambio-efectiva-real-2025`. Um id é um endereço, e mudá-lo parte ligações. Ficam. |
+| 12 | um travessão na frase do âmbito da licença | **estrago plantado**, reposto, **e ao lado dele um a sério**: o preâmbulo dos ficheiros JSON levava um travessão desde que nasceu. Saiu, nas duas variantes, e o preâmbulo passa a separar com dois pontos. Fechado aqui. |
+
+Cinco achados são estragos plantados, dois fecham aqui, quatro ficam escritos
+com morada e um estava decidido há quatro dias. **Nenhum dos doze era um número
+errado**, e os dois que falavam de números (3 e 4) falavam da prosa ao lado
+deles.
+
+##### O que a leitura deixa para o diretor na pré-visualização
+
+Duas frases de texto governado, e leem-se juntas: a **primeira frase da regra 6**,
+que é decisão dele por delegação, e o **limite novo da regra 1**, que é proposta
+do lugar de construção e nasceu desta leitura. As duas dizem a mesma coisa em
+dois sítios diferentes do Método, que é que a promessa vale onde a prova ao lado
+a sustenta e não mais longe.
+
 #### O que fica dito, para não ser descoberto depois
 
-A redação nova da primeira frase é **decisão da direção** e não proposta do lugar
-de construção, ao contrário da do limite, que o T4 propôs a 18.08.2026 e que
-continua a valer enquanto não for revogada. As duas leem-se juntas na
-pré-visualização, e a regra 6 é a única das dez que mudou neste bloco.
+A redação nova da primeira frase da regra 6 é **decisão da direção** e não
+proposta do lugar de construção, ao contrário da do limite da mesma regra, que o
+T4 propôs a 18.08.2026 e que continua a valer enquanto não for revogada, e ao
+contrário do limite novo da regra 1, que nasceu da leitura cruzada deste bloco e
+é proposta também. As três leem-se juntas na pré-visualização. **Duas das dez
+regras mudaram neste bloco**, a 1 e a 6, e nenhuma delas mudou a regra
+propriamente dita: mudou a primeira frase de uma e entrou um limite na outra.
 
 A licença cobre o conjunto tal como ele é hoje: 132 linhas, das quais 8 com
 dívida de proveniência e 3 com as somas do PRR ainda com o marcador. Licenciar
@@ -7888,6 +8006,40 @@ são por construção uma medição do livro-razão.
 pré-visualização**, e não é este item: o inglês das dez regras e do Sobre (§4.2,
 item 1), e a redação nova do limite da regra 6, que o T4 propõe porque a antiga
 passou a ser falsa no dia em que o campo `verifications[]` nasceu (§1.47, T4).
+
+**A prosa da derivação de duas linhas do PRR nomeia o instantâneo anterior**
+(20.08.2026, §1.48, leitura cruzada, achados 3 e 4). `evora-prr-execucao-2026`
+vale 50,61 e a derivação escrita diz «= 50,36»; `evora-prr-vencido-quota-2026`
+vale 61,31 e a derivação diz «= 61,64». Os operandos escritos são os do
+instantâneo de 2026-08-03 e os valores são os do de 2026-08-17: o valor mexeu
+com a `atualizacao` tipada que a V16 obriga, e a prosa ao lado dele não. **É
+anterior a este bloco**, nasceu com a reextração de 18.08.2026 (§1.47, T3c), e
+não se emenda deste lado: a derivação vem do motor com a linha, e reescrevê-la
+aqui era o sítio a escrever o que o motor declara. Fecha com o **bloco das
+republicações**, que reexporta estas linhas com o instantâneo de hoje. Até lá, a
+página diz um valor certo com uma conta velha ao lado, e as duas datas estão à
+vista.
+
+**Quatro linhas guardam o valor sem a casa decimal que a fonte imprime**
+(20.08.2026, §1.48, leitura cruzada, achado 6). `fluxo-de-credito-as-empresas-2025`
+guarda «3», `jovens-nem-2025` guarda «8», `taxa-de-desemprego-2025` e
+`taxa-de-desemprego-mip-2025` guardam «6», e o excerto transcrito de cada uma
+imprime 3.0, 8.0, 6.0 e 6.0. **Nenhum valor está errado**: o que se perdeu foi a
+forma com que a fonte o publica, e uma casa decimal que a fonte escreve diz
+quanta precisão ela declara. São de 12.08.2026, das primeiras linhas semeadas.
+É correção do lado do motor, no `generate_claims`, e vai com a próxima passagem
+da linha de base, não com uma emenda a quatro ficheiros deste lado.
+
+**A legenda do selo cheio não diz as exceções que são de origem** (20.08.2026,
+§1.48, leitura cruzada, achado 7). O índice do livro-razão promete «Todos os
+campos preenchidos e conferidos contra a fonte» e «Every field filled in and
+checked against the source», e há campos que certas linhas não têm por
+construção: uma linha alojada não tem excerto para ter, e uma linha derivada ou
+da casa não tem fonte nem documento. O selo cheio dessas linhas não mente, e a
+legenda é que promete mais do que a categoria significa. É redação de duas
+cadeias do índice, nas duas edições, e é da fase da voz: fica com o achado 16 da
+leitura do bloco T, pela mesma razão de não se emendar prosa no mesmo estádio em
+que se lhe descobre o alcance.
 
 ### 4.2 O que continua aberto de antes, e não mudou neste bloco
 
