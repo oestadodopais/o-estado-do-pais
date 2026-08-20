@@ -174,7 +174,7 @@ const jsonld = {
           <div class="leitura-medidas">
             {leitura.medidas.map((med) => (
               <div class="leitura-medida">
-                <Claim id={med.claim} class="leitura-medida-num" as="div" />
+                <Claim id={med.claim} lang={lang} class="leitura-medida-num" as="div" />
                 <p class="leitura-medida-nome"><Frase partes={med.nome[lang]} lang={lang} /></p>
                 <Provenance id={med.claim} lang={lang} />
               </div>

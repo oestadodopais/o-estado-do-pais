@@ -100,6 +100,32 @@ const organizationJsonLd = {
       crossorigin
     />
 
+    {
+      /* ------------------------------------------------------------------
+         A GUARDA CONTRA O PISCA DO TEMA (Emenda 12, 21.08.2026; §1.52)
+         ------------------------------------------------------------------
+         Claro por defeito para todos. Quem escolheu escuro tem a escolha
+         guardada no aparelho, e esta linha é o que a aplica ANTES da primeira
+         pintura: um ficheiro adiado corre depois de a página pintar, e o leitor
+         que pediu escuro veria a página clara primeiro e o escuro a seguir.
+
+         É bloqueante e é minúscula de propósito. E é a única coisa que pode
+         escrever `data-theme`: compara a chave com UMA cadeia e, quando não bate
+         certo, não faz nada — um valor estranho não produz atributo nenhum. O
+         `try` existe porque `localStorage` ATIRA, e não devolve nada, quando o
+         aparelho o recusa; sem ele, um separador privado partia o `<head>`.
+
+         `set:html` porque o que aqui vai é o corpo do script e não um filho de
+         texto qualquer, e `is:inline` porque uma etiqueta que o empacotador
+         mova deixa de estar antes da pintura, que é a única coisa que esta
+         linha faz.
+         ------------------------------------------------------------------ */
+    }
+    <script
+      is:inline
+      set:html={`(function(){try{if(localStorage.getItem('tema')==='dark'){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})()`}
+    />
+
     <link rel="canonical" href={canonical} />
     {
       alternates?.map((a) => (
@@ -137,5 +163,13 @@ const organizationJsonLd = {
 
       <SiteFooter lang={lang} path={path} />
     </div>
+
+    {
+      /* O CONTROLO DO TEMA, adiado e partilhado por todas as páginas. A guarda
+         do `<head>` trata da primeira pintura; este trata do clique e do que se
+         guarda. Vem depois do documento porque nada do que ele faz é preciso
+         antes de o leitor ver a página. */
+    }
+    <script src="/js/tema.js" defer is:inline></script>
   </body>
 </html>

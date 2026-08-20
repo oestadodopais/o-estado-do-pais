@@ -8247,6 +8247,96 @@ não entram nesta entrada nem neste commit: entram na etapa 4, cada uma no mesmo
 commit da entrada que a governa, com `**Afecta:** metodo` e o resumo do ficheiro,
 que é o que a amarra das decisões exige e é a razão de ela existir.
 
+### 1.52 A direção lê a pré-visualização n.º 1: cinco emendas, quatro decisões de forma, e o tema deixa de ser uma pergunta
+
+**Afecta:** nenhum
+
+*(Esta entrada regista uma leitura da direção e implementa-a em ficheiros que
+não são texto governado: a mobília partilhada, os tokens, a primeira página e a
+cópia da constituição no repositório. Nenhuma palavra de `src/data/sobre.mjs`
+ou de `src/data/metodo.mjs` mexe aqui, e nenhuma frase do Método é acrescentada
+ou retirada por causa dela.)*
+
+A 21.08.2026 a direção leu a **pré-visualização n.º 1** — o ramo `redesenho-v3`
+no seu endereço de pré-visualização, no estado do commit `0a8274b`, em modo
+escuro — e deu oito notas. A cadeira respondeu, a direção confirmou, e a
+constituição visual ganhou as **Emendas 10 a 14**, mais quatro decisões de forma
+sem emenda. A cópia da constituição no repositório
+(`design/especime-v3/direcao.md`) recebeu as cinco emendas verbatim no mesmo
+commit desta entrada.
+
+#### As cinco emendas
+
+| # | O que decide |
+| --- | --- |
+| 10 | **Um glifo, um significado.** O quadrado marca prova e estado ao pé de um valor (o selo, o marcador); o ponto redondo marca um lugar, nos mapas; um lugar escolhido é um anel e nunca um preenchimento. Os 308 pontos são iguais e nenhum vem preenchido por defeito: a cobertura diz-se por palavras ao lado do mapa e na lista |
+| 11 | **O sítio não se explica na mobília.** A linha de método sai do cabeçalho e do rodapé do cartão de partilha. O que o sítio é está no Sobre e no Método |
+| 12 | **Tema.** Claro por defeito para todos, independentemente da preferência do sistema; um controlo «claro · escuro» no cabeçalho; a escolha fica no aparelho do leitor |
+| 13 | **A fila de estados sai da cabeça.** A manchete e a lede levam as contagens, e cada peça leva o seu marcador e a sua palavra de estado |
+| 14 | **Um concelho sem página rende a disposição-padrão municipal.** As mesmas oito medidas da página de concelho, como peças vazias, em vez de uma só caixa de estado vazio |
+
+**As quatro decisões de forma, sem emenda:** as peças sem caixas, separadas por
+fios; os algarismos das peças com tecto à volta de 56px e escala fluida; as duas
+leituras do cabeçalho sem molduras; o Instrumento n.º 1 mais pequeno, com escala
+fluida em vez de saltos por patamar, medido também a 1024.
+
+#### A §1.9 fica decidida, e não revogada
+
+A §1.9 desta lista chama-se «Não há botão de tema» e diz porquê: seria
+JavaScript numa página que não tinha instrumento nenhum, e a regra fixada era
+zero JavaScript de origem. A frase acaba em «é meia dúzia de linhas quando o
+director quiser». **A Emenda 12 é esse dia.** A §1.9 não estava errada quando foi
+escrita e não se apaga: o que mudou foi a página — a primeira página v3 já tem
+estado, já serve um script adiado, e a preferência de leitura passa a ser uma
+escolha do leitor em vez de uma leitura da preferência do sistema.
+
+O que a Emenda 12 obriga, e que a §1.9 não podia prever: **claro por defeito para
+todos**. O bloco `@media (prefers-color-scheme: dark)` sai de
+`src/styles/tokens.css`, e a paleta escura passa a viver só em
+`:root[data-theme='dark']`. Deixa de haver um tema de três estados: há uma folha
+clara, e um leitor que pede escuro. A escolha guarda-se no aparelho do leitor,
+porque é preferência de leitura e não estado de conteúdo — ao contrário da
+densidade, que a Emenda 7 manda continuar sem memória e a viver no endereço.
+
+#### A linha de método sai, e o que ela é
+
+`METHOD_LINE` («Portugal, medido. Cada número tem fonte.») vivia em
+`site.config.mjs` e rendia em duas superfícies: por baixo da marca, em todas as
+páginas, e no cabeçalho de comentários dos dois ficheiros CSV descarregáveis.
+Sai das duas, e a constante sai com elas.
+
+**É cópia de identidade, e não texto governado**, e é por isso que sai sem tocar
+na amarra das decisões: não é uma das dez regras do Método, não é uma frase do
+Sobre, e nenhuma entrada anterior a governa. Estava em `site.config.mjs` — o
+ficheiro do domínio, do nome e da edição — declarada como «elemento de
+identidade: não é traduzida», que é exatamente o que a Emenda 11 diz que ela é:
+uma promessa dita na mobília, no sítio onde a marca já está. A promessa não
+desaparece do sítio; muda de casa para as páginas que a podem provar.
+
+`scripts/check-dados.mjs` compara o cabeçalho de COLUNAS dos dois CSV e exige que
+os comentários tragam a citação da CAOP, a data de acesso e o caminho das linhas
+do livro-razão. Nenhuma das três é a linha de método, e por isso o cabeçalho e a
+conferência não tinham de se mover juntos: a linha sai e o `check:dados` continua
+a passar sem uma alteração.
+
+#### O que esta ronda constrói
+
+Na mobília partilhada: a linha de método fora; o controlo «claro · escuro» no
+cabeçalho, com as duas palavras como cadeias novas nas duas edições; a guarda
+contra o pisca do tema no `<head>`; a paleta escura só à escolha; as duas
+leituras sem molduras. Em `src/components/Claim.astro`, a língua passa a
+obrigatória e a construção pára quando falta (ISSUES I24), em vez de escolher
+português por defeito. Na primeira página: os pontos do mapa passam a redondos,
+o escolhido a anel, a fila de estados sai da cabeça, as peças perdem as caixas e
+ganham fios, os algarismos ganham tecto e escala fluida, o Instrumento n.º 1
+encolhe, e um concelho sem página passa a render as oito medidas municipais como
+peças vazias.
+
+**O que esta entrada não faz.** Não muda uma palavra do Método nem do Sobre, não
+acrescenta nem retira uma linha do livro-razão, e não muda um valor. As cadeias
+novas entram nas duas edições no mesmo commit, como sempre, e ficam listadas em
+`design/especime-v3/CHAVES-EN.md` para a revisão de voz.
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões

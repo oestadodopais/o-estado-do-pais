@@ -14,6 +14,9 @@
  * Nunca escrever um número directamente num gabarito. É por isto que este
  * componente existe.
  *
+ * `lang` é OBRIGATÓRIO e não tem defeito: ver a exceção mais abaixo (ISSUES
+ * I24).
+ *
  * `escala` — o elemento leva `--figura-car`, o comprimento do valor em
  * caracteres, para a folha poder encolher a letra até o valor caber na sua
  * célula. É derivado do valor publicado, nunca escrito à mão, e não muda um
@@ -77,7 +80,7 @@ import Provenance from './Provenance.astro';
 const {
   id,
   chip = false,
-  lang = 'pt',
+  lang,
   class: klass = '',
   as = 'span',
   escala = false,
@@ -85,6 +88,30 @@ const {
   style,
   ...rest
 } = Astro.props;
+
+/**
+ * A LÍNGUA É OBRIGATÓRIA, E A CONSTRUÇÃO PÁRA QUANDO FALTA (ISSUES I24).
+ *
+ * Até 21.08.2026 esta propriedade tinha `'pt'` por defeito, e o defeito era uma
+ * armadilha: uma chamada sem língua rendia a palavra «provisório» em português
+ * na edição inglesa, e o defeito só se apanhava por `grep` DEPOIS de construir.
+ * Foi assim que sete valores da primeira página saíram em português na edição
+ * inglesa (leitura cruzada de 20.08, achado 7); a etapa 2i corrigiu os sete e
+ * pediu que a armadilha deixasse de existir, porque as etapas 3 e 4 têm dezenas
+ * de chamadas a fazer.
+ *
+ * A mensagem nomeia o `id` da linha, como as do portão, para que quem a lê saiba
+ * qual das chamadas é. E é uma exceção na construção e não uma conferência
+ * nova: nenhum portão aprendeu nada, e o que muda é que uma chamada incompleta
+ * deixa de ter um caminho silencioso.
+ */
+if (!lang) {
+  throw new Error(
+    `<Claim id="${id}"> sem "lang". A língua é obrigatória: sem ela, a palavra ` +
+      `«provisório» sairia em português na edição inglesa (ISSUES I24). ` +
+      `Passe lang={lang} na chamada.`,
+  );
+}
 
 const claim = getClaim(id);
 const s = t(lang);
