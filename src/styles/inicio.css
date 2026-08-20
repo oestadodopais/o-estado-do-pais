@@ -846,3 +846,45 @@ a.porta:hover .porta-abrir {
     transition: none;
   }
 }
+
+/* ------------------------------------------------- as posturas do mapa (2d) */
+
+/* O concelho escolhido é maior, e é a única distinção além da cobertura. */
+.mun-escolhido {
+  fill: var(--ink);
+}
+.mapa-svg .mun-escolhido {
+  stroke-width: 2;
+}
+/* A escolha só existe quando a página está a escolher: fora daí nenhum ponto é
+   alvo, e é a Emenda 3 a dizê-lo para o telemóvel e o bom senso a dizê-lo para
+   o resto. */
+[data-inicio][data-modo='municipio'] .mun-alvo {
+  pointer-events: all;
+  cursor: pointer;
+}
+[data-postura='localizador'] .mapa-tela {
+  width: 170px;
+}
+[data-postura='localizador'] .mapa {
+  align-items: center;
+}
+
+/* O SELO É O MAIOR ALVO DA PEÇA, e é uma medição e não uma intenção.
+ *
+ * A área de toque do selo vem de um `::after` posicionado (`site.css`,
+ * `.src-chip`), com 44px de altura e a largura da unidade. Medido na peça: o
+ * `<summary>` «abrir» dá 55×44 e o selo dava 52,5×44, e por dois píxeis e meio o
+ * maior alvo da peça era o comando de densidade e não a porta da prova. O plano
+ * §13 pede o contrário, e é o contrário que faz sentido: quem toca no pé da peça
+ * quer a linha.
+ *
+ * A área do selo passa a 160px de largura dentro da peça, e o pé ganha folga
+ * para que a área do selo e a do `<summary>` não se toquem — a matriz de
+ * aceitação mede os pares sobrepostos e exige zero. */
+.peca .peca-pe a.src-chip::after {
+  min-width: 160px;
+}
+.peca-pe {
+  padding-top: 18px;
+}
