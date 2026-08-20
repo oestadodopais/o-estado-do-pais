@@ -156,6 +156,20 @@ const grupos = [
                 {' · '}
                 {s.livro.conjuntoAtribuicao}: {LICENCA.atribuicao}
               </p>
+              {
+                /**
+                 * O que a licença cobre, ao pé dela e não noutra página.
+                 *
+                 * A casa licencia o que é seu: a estrutura do conjunto, os
+                 * valores que ela própria conta, as derivações e as descrições.
+                 * O que está entre aspas no campo `excerpt` de uma linha é da
+                 * fonte, e uma licença nossa não lhe pode tocar. Dizer só «CC BY
+                 * 4.0» sobre um ficheiro que leva excertos de terceiros era
+                 * prometer mais do que se pode dar. Decidido a 20.08.2026
+                 * (DECISIONS.md §1.48).
+                 */
+              }
+              <p class="aparelho-nota">{s.livro.conjuntoAmbito}</p>
             </>
           ) : (
             <p class="aparelho-nota">{s.livro.conjuntoEstado}</p>

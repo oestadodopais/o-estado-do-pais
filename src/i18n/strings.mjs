@@ -529,6 +529,8 @@ export const STRINGS = {
       conjuntoDescarregar: 'Descarregar o livro-razão',
       conjuntoLicenca: 'Publicado sob',
       conjuntoAtribuicao: 'Atribuição',
+      conjuntoAmbito:
+        'A licença cobre o conjunto: a estrutura, os valores da casa, as derivações e as descrições. Os excertos transcritos das fontes continuam sob os termos de quem os publicou.',
 
       linha: {
         eyebrow: 'Linha do livro-razão',
@@ -1209,6 +1211,8 @@ export const STRINGS = {
       conjuntoDescarregar: 'Download the ledger',
       conjuntoLicenca: 'Published under',
       conjuntoAtribuicao: 'Attribution',
+      conjuntoAmbito:
+        'The licence covers the dataset: its structure, the house values, the derivations and the descriptions. Excerpts transcribed from sources remain under their publishers’ terms.',
 
       linha: {
         eyebrow: 'Ledger row',

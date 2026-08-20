@@ -15,20 +15,27 @@
  *     (IDENTIDADE.md §7) e não o marcador (§6): não falta aqui uma prova, falta
  *     uma decisão, e as duas não se dizem com a mesma língua.
  *
- * No dia em que a direção decidir, muda-se **este** campo e mais nenhum: as
- * ligações aparecem nas duas edições, cada linha ganha a porta para o seu
- * JSON, e a licença fica escrita ao pé dos ficheiros que ela cobre.
+ * **A direção decidiu a 20.08.2026** (`DECISIONS.md` §1.48), e mudou-se este
+ * campo e mais nenhum: as ligações aparecem nas duas edições, cada linha ganha
+ * a porta para o seu JSON, a licença fica escrita ao pé dos ficheiros que ela
+ * cobre, e a linha de estado sai. O parágrafo acima fica escrito porque é o
+ * estado a que esta constante volta se a decisão for revogada, e porque é a
+ * razão de o caminho ter sido construído antes de ser preciso.
  *
- * A forma:
+ * A forma, que é a decidida:
  *
  *   export const LICENCA = {
  *     nome: 'CC BY 4.0',                                    // como a licença se chama
  *     url: 'https://creativecommons.org/licenses/by/4.0/',  // onde ela está escrita
- *     atribuicao: 'O Estado do País',                       // a forma da atribuição que ela obriga
+ *     atribuicao: 'O Estado do País, oestadodopaís.pt',     // a forma da atribuição que ela obriga
  *   };
  *
- * A recomendação do `BRIEF` é CC BY 4.0, por ser a das fontes que já se citam e
- * a que permite a reutilização com atribuição. A recomendação não é a decisão.
+ * CC BY 4.0 era a recomendação do `BRIEF`, por ser a das fontes que já se citam
+ * e a que permite a reutilização com atribuição. A decisão é da direção, e é
+ * esta. **O que a licença cobre diz-se ao pé dela, na página**: a estrutura, os
+ * valores da casa, as derivações e as descrições. Os excertos transcritos das
+ * fontes continuam sob os termos de quem os publicou, e essa frase vive nas
+ * cadeias (`src/i18n/strings.mjs`, `conjuntoAmbito`) e não aqui.
  *
  * ---------------------------------------------------------------------------
  * OS FICHEIROS EXISTEM MESMO SEM LICENÇA, E ISSO DIZ-SE EM VOZ ALTA
@@ -52,7 +59,11 @@
  */
 
 /** @type {Licenca | null} */
-export const LICENCA = null;
+export const LICENCA = {
+  nome: 'CC BY 4.0',
+  url: 'https://creativecommons.org/licenses/by/4.0/',
+  atribuicao: 'O Estado do País, oestadodopaís.pt',
+};
 
 /** Onde o conjunto é servido. Uma origem só, partilhada pelas páginas e pelo portão. */
 export const CONJUNTO = {
