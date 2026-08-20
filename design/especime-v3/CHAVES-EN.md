@@ -16,7 +16,17 @@
 ## Por etapa
 
 ### Etapa 1
-*(por preencher pela etapa; prevê-se `nav.correcoes` já existe; nenhuma cadeia pública nova além da eventual oitava entrada do cabeçalho)*
+**Nenhuma chave nova, e é um resultado e não um esquecimento.** A etapa 1 mudou a letra, os tokens, o cabeçalho, o rodapé e o selo, e não escreveu uma palavra nova em nenhuma das duas edições. As chaves de que precisou já existiam todas:
+
+| chave | pt | en | onde foi usada |
+|---|---|---|---|
+| `nav.inicio` · `nav.municipios` · `nav.estudos` · `nav.livro` · `nav.agenda` · `nav.metodo` · `nav.sobre` | Início · Municípios · Estudos · Livro-razão · Agenda · Método · Sobre | Home · Municipalities · Studies · Ledger · Agenda · Method · About | a navegação do cabeçalho, agora rendida de uma lista de chaves de rota |
+| `nav.correcoes` | Correções | Corrections | **já existe**, e é o oitavo item do cabeçalho no dia em que a decisão (a) chegar. Nenhuma cadeia nova é precisa para essa decisão: só uma linha de `Masthead.astro` |
+| `prov.selo` | fonte | source | a palavra do selo, sem mudança |
+
+Conferido: `assertKeyParity()` atira a cada `t()` e a construção está verde, o que quer dizer que as duas edições continuam com as mesmas chaves.
+
+A ficha técnica pública da letra (a linha «A letra» do Método, plano §12) traria cadeias novas nas duas edições, e **não entra nesta etapa**: é texto governado e espera a palavra da direção.
 
 ### Etapa 2
 *(por preencher: `ambito.*`, `densidade.*`, `inicio.cabeca.*`, `inicio.mapa.*`, `inicio.portas.*`, `inicio.movel.*`)*

@@ -213,17 +213,21 @@ section {
   padding: 18px 0 0;
 }
 
+/* A NAVEGAÇÃO É EDITORIAL, E NÃO É UM INSTRUMENTO (v3, etapa 1d).
+   As maquetas desenham-na em caixa alta de Bitter; a Emenda 5 guarda a caixa
+   alta de Bitter para DENTRO dos instrumentos, e uma barra de navegação não é
+   um instrumento. Vai em versaletes de Spectral SC, com o texto em caixa baixa
+   e o tipo a desenhar as versaletes. As maquetas não ganham. */
 .nav {
   display: flex;
   flex-wrap: wrap;
   gap: 4px 18px;
   align-items: baseline;
-  font-family: var(--f-instr);
-  font-variant-numeric: tabular-nums lining-nums;
-  font-size: 11px;
+  font-family: var(--f-versal);
+  font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
 }
 .nav a {
   color: var(--muted);
@@ -302,6 +306,16 @@ section {
   padding-top: 12px;
 }
 
+/* AS DUAS LEITURAS SÃO DE APARELHO, E FICAM A TINTA (v3, Emenda 1).
+   O corpo §3 da constituição visual dava-lhes cor (cobalto dentro do prazo,
+   âmbar em atraso) e chamava-lhes «a única cor do cabeçalho». A Emenda 1, que é
+   mais alta, diz que a cor só aparece onde a fonte publica um limiar formal, e
+   um prazo interno de reconferência não é um limiar publicado por fonte
+   nenhuma. Ficam a tinta, e o estado diz-se por palavras, que é o que já
+   faziam. Assinalado à direção (plano §3 i).
+
+   A caixa alta saiu: são Bitter, e a §1 guarda a caixa alta de Bitter para
+   dentro dos instrumentos. O cabeçalho não é um instrumento. */
 .masthead-furniture {
   margin-top: 20px;
   padding-top: 11px;
@@ -311,10 +325,9 @@ section {
   gap: 6px 18px;
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--ink);
 }
 /* O separador entre as DUAS leituras, e só entre elas: com as leituras
@@ -429,19 +442,32 @@ section {
    uma ligação (IDENTIDADE.md §5.4; `design/CRITICA-codex.md`, «the door is too
    quiet for the most important interaction on the site»).
 
-   O ALVO. `min-height: 24px` e um pouco de folga vertical: a unidade é
-   pequena, mas o que se toca não é. Em ecrã de toque sobe para 44px, que é o
-   alvo que as duas normas de plataforma pedem, sem mexer na composição de quem
-   usa cursor. */
+   V3 (etapa 1d). O SELO SENTA-SE NA LINHA DA PROSA. Deixa de ter caixa própria:
+   nada de fundo, nada de moldura, nada de altura mínima que empurre a
+   entrelinha. `display: inline` põe o quadrado e a palavra na linha do texto que
+   os rodeia, como a constituição visual §4 pede («ganha altura de linha inteira
+   na prosa; não é chip»). O sublinhado da palavra é o que diz que ali há uma
+   porta.
+
+   A LETRA É BITTER EM VERSALETES, e não em caixa alta: a §1 guarda a caixa alta
+   de Bitter para dentro dos instrumentos, e o selo vive tanto dentro de um
+   instrumento como no meio de uma frase. `font-variant-caps: small-caps` dá as
+   versaletes do próprio tipo, que o Bitter tem (`smcp` na `GSUB`, e medido).
+
+   O ALVO DE TOQUE NÃO MUDA A CAIXA DE LINHA, e é a razão de ser um
+   pseudo-elemento posicionado. Um `min-height` num elemento em linha ou não faz
+   nada ou empurra a linha; um `::after` absoluto e centrado alarga o que se
+   toca sem alargar o que se compõe. 44px nos dois eixos, que é o alvo que as
+   duas normas de plataforma pedem, e vale em cursor e em toque, porque quem tem
+   a mão insegura não tem só um ecrã de toque. Medido no navegador, em duas
+   páginas, e os números estão na nota da etapa. */
 .src-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  min-height: 24px;
-  padding-block: 2px;
+  display: inline;
+  position: relative;
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;
-  font-size: 10.5px;
+  font-variant-caps: small-caps;
+  font-size: 12px;
   letter-spacing: 0.06em;
   /* A palavra do selo é «fonte», em minúsculas, nas duas edições, e é assim
      que a §5.4 a nomeia. Dentro de uma sobrancelha em maiúsculas (a linha da
@@ -455,20 +481,65 @@ section {
   text-decoration: none;
 }
 /* O quadrado é a distinção de estado que o leitor TEM de ver: cheio quando a
-   proveniência está completa, a tracejado quando falta um campo. Por isso vai
-   em `--axis` (3,56:1 sobre papel) e não em `--rule-strong` (1,83:1), que é a
-   ficha das fronteiras de arrumação. Medido em `scripts/medir-contraste.mjs`. */
+   proveniência está completa, a tracejado quando falta um campo. Vai em
+   `--axis`, que na v3 é `--g2` e mede 3,47:1 sobre papel, acima dos 3:1 que a
+   1.4.11 pede a um objeto de interface. Medido em `scripts/medir-contraste.mjs`.
+
+   Em linha, o quadrado é um `inline-block` com margem à direita: a folga que a
+   caixa flexível dava com `gap` passa a ser dela. */
 .src-chip::before {
   content: '';
+  display: inline-block;
   width: 7px;
   height: 7px;
-  flex: none;
+  margin-right: 6px;
+  vertical-align: baseline;
   border: 1px solid var(--axis);
   background: var(--axis);
 }
 .src-chip.is-unverified::before {
   background: transparent;
   border-style: dashed;
+}
+
+/* A ÁREA DE TOQUE, e mais nada. Não desenha, não muda a caixa de linha, e não
+   é a porta: a porta é a âncora inteira, e isto é só o que ela apanha. */
+a.src-chip::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  min-width: 44px;
+  height: 44px;
+}
+/* E ONDE OS SELOS SE EMPILHAM, A ÁREA VOLTA AO TAMANHO DA UNIDADE.
+
+   Medido na página construída, em Chromium sem cabeça: dentro dos instrumentos,
+   do mosaico e dos blocos da página do município há selos a 3,1px, 18,2px e
+   22,4px uns dos outros. Duas áreas de 44px a 18px de distância sobrepõem-se por
+   26, e a de baixo, que vem depois no documento, apanha o clique da de cima:
+   **uma área sobreposta não é um alvo maior, é uma porta que abre a linha do
+   vizinho**, e para este sítio isso é pior do que um alvo pequeno.
+
+   A saída certa não é encolher a área: é dar altura à fila. As filas são a
+   primeira página (etapa 2, e o plano §13 pede exactamente isto, «o selo como o
+   maior alvo de cada fila, >= 44px») e a página do município (etapa 3). Até lá,
+   nestes sete lugares a área é a unidade, e a nota da etapa diz quantos selos
+   ficam por alargar e onde. Medido depois desta regra: zero pares de áreas
+   sobrepostas em `/`, `/livro-razao/divida-publica-2025` e `/municipios/evora`. */
+.compo-n a.src-chip::after,
+.figura a.src-chip::after,
+.glance a.src-chip::after,
+.brief-text a.src-chip::after,
+.prov-vals a.src-chip::after,
+.mun-campos a.src-chip::after,
+.linha-bloco .deep-v a.src-chip::after,
+.linha-verificacoes a.src-chip::after {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
 }
 .src-chip-texto {
   text-decoration: underline;
@@ -489,12 +560,9 @@ a.src-chip:hover::before {
 a.src-chip.is-unverified:hover::before {
   background: transparent;
 }
-@media (pointer: coarse) {
-  .src-chip {
-    min-height: 44px;
-    align-items: center;
-  }
-}
+/* A regra que subia o selo para 44px de altura num apontador grosseiro saiu: a
+   altura passou a vir do `::after`, que vale nos dois apontadores e não mexe na
+   composição de nenhum. */
 /* O marcador dentro do selo: mais pequeno, porque ali é etiqueta e não campo. */
 .src-chip .marcador {
   font-size: 9.5px;
@@ -502,8 +570,10 @@ a.src-chip.is-unverified:hover::before {
   letter-spacing: 0.01em;
 }
 /* Amostra dos dois estados, na coluna do aparelho do índice. Só o quadrado. */
-.src-chip-amostra {
-  gap: 0;
+/* A amostra dos dois estados não é uma porta: leva o quadrado e mais nada, e
+   por isso não leva a folga que separa o quadrado da palavra. */
+.src-chip-amostra::before {
+  margin-right: 0;
 }
 /* A regra que escondia o texto do selo no cabeçalho (§1.37, 16.08.2026) saiu
    aqui: o cabeçalho não tem selo nenhum desde que as contagens saíram dele
@@ -1554,12 +1624,11 @@ a.src-chip.is-unverified:hover::before {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 20px;
-  font-family: var(--f-instr);
-  font-variant-numeric: tabular-nums lining-nums;
-  font-size: 10.5px;
+  font-family: var(--f-versal);
+  font-size: 13.5px;
   font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
 }
 .rodape-nav a {
   color: var(--muted);
@@ -1761,7 +1830,12 @@ a.src-chip.is-unverified:hover::before {
    monoespaçada é a marca de um valor do livro-razão (IDENTIDADE §1), e um
    endereço de correio não é uma medição. Fica sublinhado porque é uma ligação,
    e à vista porque tem de se poder copiar quando o mailto não abre nada. */
+/* Um endereço de correio é transcrito, e o que é transcrito vai em Bitter
+   (`IDENTIDADE.md` §1, v3). É o que a porta das correções e a `<Frase>` rendem,
+   e é a única mudança de tipo que os dois componentes levam nesta etapa. */
 .ligacao-email {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-weight: 600;
   color: var(--ink);
   text-decoration: underline;
@@ -3576,13 +3650,10 @@ a.quadro-estados-col:hover .quadro-estados-e {
   overflow-wrap: anywhere;
 }
 
-/* O SELO NUNCA EMPURRA A PÁGINA. A unidade compacta continua a ser uma só
-   ligação e um só grupo visível: o que passa a poder mudar de linha é o que
-   está DENTRO dela, quando a caixa é mais estreita do que ela. O quadrado, a
-   palavra e o marcador ficam inteiros; a linha é que dobra. */
-.src-chip {
-  flex-wrap: wrap;
-}
+/* O SELO NUNCA EMPURRA A PÁGINA, e na v3 isso deixou de precisar de regra: o
+   selo é um elemento em linha e parte onde a linha parte, como qualquer texto.
+   A regra `flex-wrap: wrap` que vivia aqui governava a caixa flexível que ele
+   já não é, e uma regra que não governa nada engana quem a lê. */
 
 /* AS BARRAS DE COMPOSIÇÃO, a 390px. A coluna do número tinha 4ch, que chega
    para «308» e não chega para «308 · fonte · [a verificar]»: o selo saía da

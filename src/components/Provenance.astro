@@ -38,6 +38,29 @@
  *
  * O marcador não se mexeu: continua onde estava, ao lado do quadrado a
  * tracejado, e a sua conta não desce.
+ *
+ * ---------------------------------------------------------------------------
+ * V3 (etapa 1d do redesenho): O SELO NUNCA FICA ANINHADO DENTRO DE OUTRO ALVO
+ * ---------------------------------------------------------------------------
+ *
+ * É a Emenda 2 de 20.08.2026, e é uma regra para quem construir peças
+ * clicáveis: **este componente não pode ser rendido dentro de outra `<a>` nem
+ * dentro de um `<button>`**. Não é uma questão de gosto nem de HTML válido (que
+ * também não é): é a promessa do sítio. O selo é a porta para a linha que
+ * justifica o número, e uma porta metida dentro de outra porta abre a de fora.
+ * Quem toca no selo quer a prova, e recebia a peça.
+ *
+ * Onde isto morde: as peças e os mosaicos da primeira página da v3 (etapa 2) e
+ * os cartões dos índices (etapa 3). Uma peça inteira clicável leva o selo FORA
+ * do alvo, ou deixa de ser inteira clicável. O portão confere que o selo é uma
+ * âncora com o `href` da linha daquele valor; **não confere que não está
+ * aninhado**, e por isso esta regra segura-se por atenção e por leitura cruzada.
+ *
+ * A FORMA, na v3: o quadrado e a palavra sentam-se na linha da prosa, sem caixa
+ * própria, sem fundo e sem moldura, com o sublinhado da palavra a dizer que ali
+ * há uma porta. O alvo de toque de 44×44 vem de um `::after` posicionado, que
+ * alarga o que se toca sem alargar o que se compõe (`src/styles/site.css`,
+ * `.src-chip`).
  */
 import { getClaim, provenienciaIncompleta, eDerivada, POR_VERIFICAR } from '../lib/ledger.mjs';
 import { caminhoDaLinha } from '../lib/livro.mjs';

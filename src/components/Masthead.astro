@@ -42,13 +42,66 @@ const s = t(lang);
 const aqui = normalizePath(path ?? Astro.url.pathname);
 
 const home = routePath('home', lang);
-const municipios = routePath('municipios', lang);
-const estudos = routePath('estudos', lang);
-const livro = routePath('livro', lang);
 const agenda = routePath('agenda', lang);
-const metodo = routePath('metodo', lang);
-const sobre = routePath('sobre', lang);
-const outra = otherLanguagePath(aqui, lang);
+
+/**
+ * ---------------------------------------------------------------------------
+ * A NAVEGAÇÃO É UMA LISTA DE CHAVES DE ROTA, E É POR ISSO QUE A DECISÃO CUSTA
+ * UMA LINHA (v3, etapa 1d)
+ * ---------------------------------------------------------------------------
+ * A constituição visual §4 diz sete itens; a decisão (a) do plano §3 pede oito,
+ * com «Correções», e espera a palavra da direção. Enquanto ela não chega ficam
+ * sete, e o oitavo é ESTA linha: `OITAVO_ITEM = 'correcoes'`. A folha e a
+ * medição já contam com ele, medidos a 320, 390 e 1280 com oito itens, para que
+ * a decisão não possa partir a composição seja qual for.
+ *
+ * As chaves são as de `routePath()`; o rótulo vem de `s.nav`, e a única que não
+ * tem o mesmo nome dos dois lados é a primeira.
+ */
+const OITAVO_ITEM = null;
+const ROTAS_NAV = [
+  'home',
+  'municipios',
+  'estudos',
+  'livro',
+  'agenda',
+  'metodo',
+  ...(OITAVO_ITEM ? [OITAVO_ITEM] : []),
+  'sobre',
+];
+const ETIQUETA_NAV = {
+  home: 'inicio',
+  municipios: 'municipios',
+  estudos: 'estudos',
+  livro: 'livro',
+  agenda: 'agenda',
+  metodo: 'metodo',
+  correcoes: 'correcoes',
+  sobre: 'sobre',
+};
+const itensNav = ROTAS_NAV.map((chave) => ({
+  chave,
+  href: routePath(chave, lang),
+  rotulo: s.nav[ETIQUETA_NAV[chave]],
+}));
+
+/**
+ * A LIGAÇÃO DE IDIOMA LEVA O ESTADO DA PRIMEIRA PÁGINA CONSIGO.
+ *
+ * A primeira página da v3 codifica o âmbito e a densidade no URL, e é o URL que
+ * se partilha (Emenda 7). Trocar de edição no meio de uma leitura tinha de
+ * deixar de a perder. Só na chave `home`: em mais lado nenhum há estado no URL,
+ * e arrastar uma cadeia de pesquisa para uma rota que não a entende seria pior
+ * do que não a levar.
+ *
+ * O que aqui se escreve é o valor da construção, e numa construção estática ele
+ * é vazio: quem mantém esta ligação em dia enquanto o leitor muda de estado é o
+ * JavaScript da primeira página, na etapa 2, que a encontra por `.lang`. Esta
+ * linha é o contrato do lado do servidor, e é o que faz a rendição sem
+ * JavaScript continuar a ser correcta.
+ */
+const naHome = normalizePath(home) === aqui;
+const outra = `${otherLanguagePath(aqui, lang)}${naHome ? Astro.url.search : ''}`;
 
 const atual = (p) => (normalizePath(p) === aqui ? 'page' : undefined);
 const NomeTag = compact ? 'p' : 'h1';
@@ -70,13 +123,13 @@ const painel = `${home}#numeros`;
 <header>
   <div class="topbar">
     <nav class="nav" aria-label={s.nav.rotuloPrincipal}>
-      <a href={home} aria-current={atual(home)}>{s.nav.inicio}</a>
-      <a href={municipios} aria-current={atual(municipios)}>{s.nav.municipios}</a>
-      <a href={estudos} aria-current={atual(estudos)}>{s.nav.estudos}</a>
-      <a href={livro} aria-current={atual(livro)}>{s.nav.livro}</a>
-      <a href={agenda} aria-current={atual(agenda)}>{s.nav.agenda}</a>
-      <a href={metodo} aria-current={atual(metodo)}>{s.nav.metodo}</a>
-      <a href={sobre} aria-current={atual(sobre)}>{s.nav.sobre}</a>
+      {
+        itensNav.map((item) => (
+          <a href={item.href} aria-current={atual(item.href)}>
+            {item.rotulo}
+          </a>
+        ))
+      }
     </nav>
     <nav class="nav" aria-label={s.nav.rotuloIdioma}>
       <a class="lang" href={outra} hreflang={lang === 'pt' ? 'en' : 'pt-PT'} lang={lang === 'pt' ? 'en' : 'pt-PT'}>
