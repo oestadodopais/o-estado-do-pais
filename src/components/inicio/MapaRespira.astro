@@ -1,0 +1,235 @@
+---
+/**
+ * O MAPA QUE RESPIRA — os 308 concelhos, iguais, num só instrumento.
+ *
+ * ---------------------------------------------------------------------------
+ * A EMENDA 3, E A NEUTRALIDADE DOS PONTOS
+ * ---------------------------------------------------------------------------
+ * «Nenhum município é destacado por estatuto — nem capital do país, nem capitais
+ * de distrito ou região; todos os 308 pontos são iguais, e a única distinção
+ * permitida é o estado de cobertura ■/□.» É o que este componente desenha: um
+ * quadrado de contorno de tinta por concelho, cheio quando aquele concelho tem
+ * página, e maior quando é o escolhido. Não há capital, não há sede de distrito,
+ * não há tamanho por população. A legenda que a Emenda manda pôr ao lado está
+ * aqui, e é a frase que já existia na v2 (relocação R3).
+ *
+ * UM SÓ INSTRUMENTO, TRÊS POSTURAS. O mapa não se desenha três vezes: desenha-se
+ * uma, e a folha muda-lhe o tamanho e o que está à volta.
+ *
+ *   inteiro      o mapa com a sua ficha (âmbito País, e a escolha de concelho)
+ *   localizador  o cartão pequeno, quando um concelho está escolhido e a leitura
+ *                aprofunda
+ *   selo         no telemóvel, ~84px, e o selo inteiro é o alvo: nenhum ponto é
+ *                alvo (Emenda 3)
+ *
+ * Três cópias dos 308 pontos seriam 924 nós para dizer a mesma coisa, e o SVG
+ * escala sozinho: um ponto de 9 unidades num campo de 600 mede 4,2px quando o
+ * mapa tem 281px e 1,3px quando tem 84px, que é exactamente a diferença entre
+ * um ponto que se pode escolher e um ponto que é textura.
+ *
+ * ---------------------------------------------------------------------------
+ * AS ÁREAS DE TOQUE, E O QUE A GEOMETRIA NÃO DEIXA FAZER
+ * ---------------------------------------------------------------------------
+ * Cada ponto leva uma área invisível maior do que o quadrado. O tamanho de cada
+ * uma é METADE da distância ao vizinho mais próximo, com um tecto: mais do que
+ * isso e duas áreas encostam, e uma área sobreposta não é um alvo maior — é uma
+ * porta que abre o concelho do lado. É a mesma medição que a etapa 1d fez aos
+ * selos empilhados (ISSUES I13), aplicada a um mapa.
+ *
+ * **E é por isso que 24×24 CSS px por ponto não é alcançável, e fica dito em vez
+ * de contornado**: em 308 centróides num campo de 600×790, os vizinhos mais
+ * próximos estão a 1,41 unidades um do outro (a área de Lisboa). Nenhum desenho
+ * dá a esses pontos um alvo de 24px sem lhes dar o do lado. Os pontos isolados
+ * chegam ao tecto; os densos ficam pelo que a sua vizinhança permite, e a etapa
+ * 2f mede a distribuição inteira. O caminho fiável para escolher um concelho é a
+ * pesquisa, e é essa a razão pela qual a Emenda 3 já a nomeia como caminho
+ * principal no telemóvel.
+ */
+import Claim from '../Claim.astro';
+import ValorDaProva from '../ValorDaProva.astro';
+import { FRAMES, FIELD_W, FIELD_H } from '../../data/caop-centroids.mjs';
+import { VERBATIM } from '../../data/verbatim.mjs';
+import { DADOS } from '../../lib/dados.mjs';
+import { routePath } from '../../lib/routes.mjs';
+
+const { s, lang, p, concelhos, evora } = Astro.props;
+
+/* A geometria dos pontos, em unidades do campo. O mapa inteiro desenha-se a
+   281px de largura, ou seja 0,468px por unidade de campo; um alvo de 24 CSS px
+   de lado são 51,25 unidades, e portanto 25,6 de meia-largura. É esse o tecto:
+   nenhum alvo passa dos 24px, e quase nenhum lá chega, porque o vizinho está
+   mais perto do que isso. A etapa 2f mede a distribuição toda. */
+const LADO = { normal: 9, comPagina: 13, escolhido: 19 };
+const TECTO_DO_ALVO = 25.6;
+const PISO_DO_ALVO = LADO.comPagina / 2;
+
+const pontos = concelhos.map((c) => {
+  const lado = c.pagina ? LADO.comPagina : LADO.normal;
+  const meio = Math.max(PISO_DO_ALVO, Math.min(TECTO_DO_ALVO, c.alvo));
+  return {
+    ...c,
+    x0: c.x - lado / 2,
+    y0: c.y - lado / 2,
+    lado,
+    ax: c.x - meio,
+    ay: c.y - meio,
+    aLado: meio * 2,
+  };
+});
+
+const rotaDeEvora = evora?.pagina ? routePath('municipio', lang, { slug: evora.pagina.slug }) : null;
+
+const parcelas = [
+  { rotulo: s.inicio.mapa.continente, claim: 'municipios-continente-caop-2025' },
+  { rotulo: s.inicio.mapa.acores, claim: 'municipios-acores-caop-2025' },
+  { rotulo: s.inicio.mapa.madeira, claim: 'municipios-madeira-caop-2025' },
+];
+---
+
+<figure class="mapa" id="mapa" data-instrumento="mapa" data-mapa-raiz data-postura="inteiro">
+  <div class="mapa-tela" data-mapa-wrap>
+    <svg
+      class="mapa-svg"
+      viewBox={`0 0 ${FIELD_W} ${FIELD_H}`}
+      role="img"
+      aria-label={s.inicio.mapa.svgLabel}
+      data-mapa
+    >
+      <g class="mapa-molduras">
+        <rect
+          class="mapa-moldura"
+          x={FRAMES.mad[0]}
+          y={FRAMES.mad[1]}
+          width={FRAMES.mad[2]}
+          height={FRAMES.mad[3]}
+        />
+        <rect
+          class="mapa-moldura"
+          x={FRAMES.aco[0]}
+          y={FRAMES.aco[1]}
+          width={FRAMES.aco[2]}
+          height={FRAMES.aco[3]}
+        />
+        <text class="mapa-arq" x={FRAMES.mad[0] + 2} y={FRAMES.mad[1] - 6}>
+          {s.inicio.mapa.madeira}
+        </text>
+        <text class="mapa-arq" x={FRAMES.aco[0] + 2} y={FRAMES.aco[1] - 6}>
+          {s.inicio.mapa.acores}
+        </text>
+      </g>
+
+      {/* A ilha da CAOP: um nó por concelho, com o nome e o distrito ou ilha que
+          a própria Carta lhe dá. É daqui que os dois `data-slot` da cabeça e do
+          estado vazio recebem o seu texto, por `textContent` e mais nada. */}
+      <g class="mapa-pontos" data-pontos>
+        {
+          pontos.map((c) => (
+            <rect
+              class:list={['mun', c.pagina && 'mun-com-pagina']}
+              x={c.x0}
+              y={c.y0}
+              width={c.lado}
+              height={c.lado}
+              data-m={c.nome}
+              data-d={c.distrito}
+              data-caop={c.slug}
+            />
+          ))
+        }
+      </g>
+
+      {/* As áreas de toque. Sem pintura, sem tamanho na composição, e só
+          activas quando a página está a escolher um concelho. */}
+      <g class="mapa-alvos" data-alvos>
+        {
+          pontos.map((c) => (
+            <rect
+              class="mun-alvo"
+              x={c.ax}
+              y={c.ay}
+              width={c.aLado}
+              height={c.aLado}
+              data-caop={c.slug}
+              data-alvo-de={c.nome}
+            />
+          ))
+        }
+      </g>
+    </svg>
+  </div>
+
+  <figcaption class="mapa-ficha" data-mapa-ficha>
+    <p class="mapa-titulo">
+      <ValorDaProva chave="municipios_com_pagina" item={p.municipios_com_pagina} lang={lang} />
+      {s.inicio.mapa.coberturaA}
+      <ValorDaProva chave="municipios_total" item={p.municipios_total} lang={lang} />
+      {s.inicio.mapa.coberturaB}
+      <span data-cobertura="com-pagina">{s.cobertura.temPagina}</span>
+    </p>
+
+    <p class="mapa-neutro">{s.inicio.mapa.naoDiz}</p>
+
+    <div class="compo">
+      <div class="compo-k">{s.inicio.mapa.contagemK}</div>
+      {
+        parcelas.map((l) => (
+          <div class="compo-row">
+            <span class="compo-l">{l.rotulo}</span>
+            <span class="compo-n">
+              <Claim id={l.claim} lang={lang} chip={true} />
+            </span>
+          </div>
+        ))
+      }
+      <div class="compo-tot">
+        <span class="compo-l">{s.inicio.mapa.total}</span>
+        <span class="compo-n">
+          <Claim id="municipios-portugal-caop-2025" lang={lang} chip={true} />
+        </span>
+      </div>
+    </div>
+
+    <p class="mapa-fonte verbatim" data-verbatim="caop-fonte" lang="pt-PT">
+      {VERBATIM['caop-fonte'].text}
+    </p>
+    <p class="mapa-dados">
+      <a class="ligacao-dados" href={DADOS.municipios} download>{s.home.dadosLink} ↓</a>
+    </p>
+
+    <p class="mapa-hint" data-hint-escolher>{s.inicio.mapa.escolher}</p>
+
+    <div class="mapa-leitura" data-readout aria-live="polite">
+      <span class="readout-hint" data-readout-hint>{s.inicio.mapa.readoutHint}</span>
+      <span class="readout-name" data-readout-nome hidden></span>
+      <span class="readout-sub" data-readout-sub hidden></span>
+    </div>
+    <p class="mapa-hint" data-teclado hidden>{s.inicio.mapa.tecladoHint}</p>
+  </figcaption>
+
+  {/* O cartão localizador: a mesma tela, outra moldura e outro texto. */}
+  <div class="mapa-cartao" data-mapa-cartao hidden>
+    <p class="mapa-cartao-nome">
+      <span data-slot="nome">{evora?.nome}</span>
+    </p>
+    <p class="mapa-cartao-cobertura">
+      <ValorDaProva chave="municipios_com_pagina" item={p.municipios_com_pagina} lang={lang} />
+      {s.inicio.mapa.coberturaA}
+      <ValorDaProva chave="municipios_total" item={p.municipios_total} lang={lang} />
+      {s.inicio.mapa.coberturaB}
+      <span data-cobertura="com-pagina">{s.cobertura.temPagina}</span>
+    </p>
+    <p class="mapa-cartao-selo">
+      <Claim id="municipios-portugal-caop-2025" lang={lang} chip={true} />
+    </p>
+    <p class="mapa-cartao-portas">
+      <a class="lig" href="#pesquisa" data-trocar>{s.inicio.mapa.trocar} →</a>
+      {
+        rotaDeEvora && (
+          <a class="lig" href={rotaDeEvora} data-so-evora hidden>
+            {s.inicio.mapa.paginaInteira} →
+          </a>
+        )
+      }
+    </p>
+  </div>
+</figure>

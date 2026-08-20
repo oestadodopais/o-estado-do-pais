@@ -1,0 +1,67 @@
+---
+/**
+ * A PESQUISA DOS 308 CONCELHOS — o caminho principal para escolher um.
+ *
+ * ---------------------------------------------------------------------------
+ * OS RESULTADOS JÁ ESTÃO NA PÁGINA, E O SCRIPT SÓ OS ACENDE
+ * ---------------------------------------------------------------------------
+ * A regra da fase é que o código de execução escolhe cadeias já validadas e
+ * nunca compõe texto (resposta 3 da direcção). Uma pesquisa que criasse os
+ * resultados no cliente estava a compor texto — e a compor precisamente os
+ * nomes que o portão existe para conferir. Por isso os 308 resultados saem do
+ * servidor, escondidos, e a pesquisa faz uma coisa só: tira o `hidden` aos
+ * primeiros oito que casam.
+ *
+ * A COMPARAÇÃO É SEM ACENTOS, E A REGRA ESTÁ ESCRITA UMA VEZ. Cada botão traz
+ * `data-normal` — o nome sem acentos e em caixa baixa, calculado na construção
+ * pela mesma função que faz o pedaço do endereço (`src/lib/inicio.mjs`). O
+ * cliente normaliza só o que o leitor escreveu, que não é texto da página.
+ *
+ * SEM JAVASCRIPT NÃO SE VÊ NADA DISTO, e é de propósito: o âmbito «Município»
+ * só se atinge com script, e o comando dele leva, sem script, ao índice dos 308
+ * (`/municipios`), que é uma página inteira com a mesma lista e a mesma
+ * cobertura. Uma caixa de pesquisa que não pesquisa é pior do que nenhuma.
+ */
+import ValorDaProva from '../ValorDaProva.astro';
+
+const { s, lang, p, concelhos } = Astro.props;
+---
+
+<div class="pesquisa" id="pesquisa">
+  <label class="pesquisa-rotulo" for="pesquisa-concelho">{s.ambito.pesquisaRotulo}</label>
+  <input
+    class="pesquisa-campo"
+    id="pesquisa-concelho"
+    type="search"
+    autocomplete="off"
+    data-pesquisa
+    aria-describedby="pesquisa-meta"
+  />
+
+  <ul class="pesquisa-res" data-resultados>
+    {
+      concelhos.map((c) => (
+        <li class="pesquisa-item" data-normal={c.normal} hidden>
+          <button type="button" class="chipb" data-escolher={c.slug}>
+            <span class="pesquisa-nome">{c.nome}</span>
+            {c.pagina && (
+              <span class="pesquisa-cobertura" data-cobertura="com-pagina">
+                {s.cobertura.temPagina}
+              </span>
+            )}
+          </button>
+        </li>
+      ))
+    }
+  </ul>
+
+  <p class="pesquisa-vazio" data-sem-resultado hidden>{s.ambito.pesquisaSemResultado}</p>
+
+  <p class="pesquisa-meta" id="pesquisa-meta">
+    <ValorDaProva chave="municipios_com_pagina" item={p.municipios_com_pagina} lang={lang} />
+    {s.inicio.mapa.coberturaA}
+    <ValorDaProva chave="municipios_total" item={p.municipios_total} lang={lang} />
+    {s.inicio.mapa.coberturaB}
+    <span data-cobertura="com-pagina">{s.cobertura.temPagina}</span>
+  </p>
+</div>

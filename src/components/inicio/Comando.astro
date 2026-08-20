@@ -1,0 +1,84 @@
+---
+/**
+ * A LINHA DE COMANDO DA PRIMEIRA PÁGINA — âmbito e densidade.
+ *
+ * ---------------------------------------------------------------------------
+ * SÃO LIGAÇÕES, E NÃO BOTÕES, ATÉ HAVER JAVASCRIPT
+ * ---------------------------------------------------------------------------
+ * Um botão sem JavaScript é um comando que não atende. Estes cinco comandos
+ * saem do servidor como `<a href>` para um destino que existe e que faz sentido
+ * sem script nenhum:
+ *
+ *   País        →  `/`                a própria primeira página, no seu defeito
+ *   Região      →  `/#convergencia`   a régua da convergência, que É a leitura
+ *                                     regional desta página quando não há estado
+ *   Município   →  `/municipios`      o índice dos 308, com a sua cobertura
+ *   Relance     →  `/`                o defeito
+ *   Leitura breve → `/?densidade=leitura`
+ *
+ * Quando o script assume, reescreve o `href` para a forma do estado
+ * (`/?ambito=…`), acrescenta `role="button"` e `aria-pressed`, e passa a mudar a
+ * página sem a recarregar. Até lá, e para quem nunca tiver script, os cinco
+ * levam a alguma parte: é a diferença entre um comando degradado e um comando
+ * partido.
+ *
+ * A densidade é o único dos dois que, sem script, não muda nada à vista: o
+ * endereço `?densidade=leitura` é servido pela construção estática como o
+ * defeito. A página di-lo, com `densidade.semJs`, em vez de deixar um comando a
+ * fingir. Cada medida continua a abrir-se sozinha, porque a peça é um
+ * `<details>` nativo.
+ *
+ * NENHUM ALGARISMO PASSA POR AQUI. Os rótulos são cinco palavras.
+ */
+const { s, hrefs } = Astro.props;
+
+const AMBITOS = [
+  { chave: 'pais', rotulo: s.ambito.pais, href: hrefs.pais },
+  { chave: 'regiao', rotulo: s.ambito.regiao, href: hrefs.regiao },
+  { chave: 'municipio', rotulo: s.ambito.municipio, href: hrefs.municipio },
+];
+const DENSIDADES = [
+  { chave: 'relance', rotulo: s.densidade.relance, href: hrefs.relance },
+  { chave: 'leitura', rotulo: s.densidade.leitura, href: hrefs.leitura },
+];
+---
+
+<div class="cmd" data-comando>
+  <div class="cmd-grupo">
+    <span class="cmd-k" id="cmd-k-ambito">{s.ambito.rotulo}</span>
+    <div class="cmd-segs" role="group" aria-labelledby="cmd-k-ambito" data-grupo="ambito">
+      {
+        AMBITOS.map((a) => (
+          <a
+            class="seg"
+            href={a.href}
+            data-modo={a.chave}
+            aria-current={a.chave === 'pais' ? 'true' : undefined}
+          >
+            {a.rotulo}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="cmd-grupo">
+    <span class="cmd-k" id="cmd-k-densidade">{s.densidade.rotulo}</span>
+    <div class="cmd-segs" role="group" aria-labelledby="cmd-k-densidade" data-grupo="densidade">
+      {
+        DENSIDADES.map((d) => (
+          <a
+            class="seg"
+            href={d.href}
+            data-densidade={d.chave}
+            aria-current={d.chave === 'relance' ? 'true' : undefined}
+          >
+            {d.rotulo}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<p class="cmd-nota" data-sem-js>{s.densidade.semJs}</p>

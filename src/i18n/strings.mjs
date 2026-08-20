@@ -282,6 +282,97 @@ export const STRINGS = {
 
     /**
      * ------------------------------------------------------------------
+     * A PRIMEIRA PÁGINA v3: O ÂMBITO, A DENSIDADE E A CABEÇA
+     * ------------------------------------------------------------------
+     * A página passou a ter estado, e o estado está no endereço (Emenda 7). Estas
+     * são as palavras dos comandos e da cabeça, e nenhuma delas traz algarismos:
+     * onde a frase precisa de um número, ele entra por `<Claim/>` (uma medição de
+     * Portugal) ou por `data-prova` (uma contagem do próprio sítio), e a cadeia
+     * parte-se em dois pedaços à volta dele, como `municipios.contagemA/B` já faz.
+     */
+    ambito: {
+      rotulo: 'Âmbito',
+      pais: 'País',
+      regiao: 'Região',
+      municipio: 'Município',
+      /* A meta da fila das regiões. Seis, e não cinco: Portugal está na régua da
+         convergência com as outras cinco, e a banda desenha-o como elas. */
+      regioesMeta: 'As seis leituras publicadas na régua da convergência.',
+      pesquisaRotulo: 'Escreva o nome do concelho',
+      pesquisaSemResultado: 'Nenhum concelho com esse nome.',
+    },
+
+    densidade: {
+      rotulo: 'Densidade',
+      relance: 'Relance',
+      leitura: 'Leitura breve',
+      abrir: 'abrir',
+      fechar: 'fechar',
+      /* Sem JavaScript o comando de densidade não muda a página inteira, e a
+         página di-lo em vez de deixar um comando a não fazer nada. Cada medida
+         continua a abrir-se sozinha, porque a peça é um `<details>` nativo. */
+      semJs:
+        'Sem JavaScript, este comando não muda a página inteira: cada medida abre-se na sua própria linha.',
+    },
+
+    inicio: {
+      cabeca: {
+        paisA: 'Portugal · painel europeu · ',
+        paisB: ' medidas',
+        regiaoSufixo: ' · região',
+        municipioPalavra: ' · município · ',
+        tituloPaisUm: ' limiar europeu ultrapassado.',
+        tituloPaisMuitos: ' limiares europeus ultrapassados.',
+        tituloEvora: 'As medidas do concelho, cada uma com a sua linha.',
+        tituloVazioA: 'Ainda sem linhas para ',
+        tituloVazioB: '.',
+        ledePais:
+          'O painel de desequilíbrios macroeconómicos e o painel social europeu, com os limiares que as instituições publicam.',
+        ledeRegiaoPartes: [
+          'PIB per capita em paridades de poder de compra, com a média da UE-27 fixada em ',
+          { nl: '100', motivo: 'escala-de-instrumento' },
+          '.',
+        ],
+        ledeVazioA: 'O ponto marca a posição do concelho na Carta Administrativa, e não cobertura. Quando houver linhas para ',
+        ledeVazioB: ', entram aqui com a sua fonte e a sua data de leitura.',
+        estadoRotulo: 'Estado das medidas',
+      },
+
+      mapa: {
+        /* «<n> de <total> concelhos · tem página». As duas contagens entram por
+           `data-prova`, e a palavra de cobertura é uma das duas do vocabulário. */
+        coberturaA: ' de ',
+        coberturaB: ' concelhos · ',
+        contagemK: 'Contagem verificada nos ficheiros',
+        continente: 'Continente',
+        acores: 'Açores',
+        madeira: 'Madeira',
+        total: 'Total',
+        naoDizK: 'O que o mapa não diz',
+        naoDiz:
+          'O ponto aceso marca cobertura editorial, não qualidade nem importância. Os restantes pontos marcam a posição do município e mais nada.',
+        escolher: 'Toque num ponto para escolher o concelho.',
+        readoutHint: 'Passe o cursor sobre um ponto para ler o município.',
+        tecladoHint:
+          'Teclado: Tab até ao mapa, setas para percorrer os municípios vizinhos, Home para voltar a Évora.',
+        svgLabel:
+          'Mapa de pontos dos municípios de Portugal. Use as setas para percorrer os municípios.',
+        trocar: 'trocar de concelho',
+        paginaInteira: 'a página inteira, com quem governou',
+      },
+
+      banda: {
+        rotuloPartes: [
+          'A régua da convergência · UE-27 = ',
+          { nl: '100', motivo: 'escala-de-instrumento' },
+        ],
+        naoSeDesenham:
+          'As regiões não se desenham em pontos de concelho: a régua é o instrumento do âmbito regional. O mapa volta quando o âmbito é um município.',
+      },
+    },
+
+    /**
+     * ------------------------------------------------------------------
      * O VOCABULÁRIO DE ESTADO E O DE COBERTURA (v3, etapa 2a)
      * ------------------------------------------------------------------
      * Duas listas fechadas, decididas uma vez, antes da primeira etapa que as
@@ -1014,6 +1105,80 @@ export const STRINGS = {
         'There is no second marker saying the same thing in other words. A site with two languages of uncertainty has, in practice, none.',
       livroLink: 'See the rows that carry it',
       metodoLink: 'How this is made',
+    },
+
+    ambito: {
+      rotulo: 'Scope',
+      pais: 'Country',
+      regiao: 'Region',
+      municipio: 'Municipality',
+      regioesMeta: 'The six readings published on the convergence rule.',
+      pesquisaRotulo: 'Type the name of the concelho',
+      pesquisaSemResultado: 'No concelho by that name.',
+    },
+
+    densidade: {
+      rotulo: 'Density',
+      relance: 'At a glance',
+      leitura: 'Brief reading',
+      abrir: 'open',
+      fechar: 'close',
+      semJs:
+        'Without JavaScript this control does not change the whole page: each measure opens on its own row.',
+    },
+
+    inicio: {
+      cabeca: {
+        paisA: 'Portugal · European panel · ',
+        paisB: ' measures',
+        regiaoSufixo: ' · region',
+        municipioPalavra: ' · municipality · ',
+        tituloPaisUm: ' European threshold breached.',
+        tituloPaisMuitos: ' European thresholds breached.',
+        tituloEvora: 'The measures of the concelho, each with its own row.',
+        tituloVazioA: 'Still no rows for ',
+        tituloVazioB: '.',
+        ledePais:
+          'The macroeconomic imbalance scoreboard and the European social scoreboard, with the thresholds the institutions publish.',
+        ledeRegiaoPartes: [
+          'GDP per capita in purchasing power standards, with the EU-27 average fixed at ',
+          { nl: '100', motivo: 'escala-de-instrumento' },
+          '.',
+        ],
+        ledeVazioA: 'The point marks where the concelho sits on the official administrative map, and not coverage. When there are rows for ',
+        ledeVazioB: ', they will appear here with their source and their reading date.',
+        estadoRotulo: 'State of the measures',
+      },
+
+      mapa: {
+        coberturaA: ' of ',
+        coberturaB: ' concelhos · ',
+        contagemK: 'Count verified in the files',
+        continente: 'Mainland',
+        acores: 'Azores',
+        madeira: 'Madeira',
+        total: 'Total',
+        naoDizK: 'What the map does not say',
+        naoDiz:
+          'The lit point marks editorial coverage, not quality or importance. The remaining points mark the position of the municipality and nothing else.',
+        escolher: 'Tap a point to choose the concelho.',
+        readoutHint: 'Hover over a point to read the municipality.',
+        tecladoHint:
+          'Keyboard: Tab to the map, arrow keys to move between neighbouring municipalities, Home to return to Évora.',
+        svgLabel:
+          'Point map of the municipalities of Portugal. Use the arrow keys to move between municipalities.',
+        trocar: 'change concelho',
+        paginaInteira: 'the whole page, with who governed it',
+      },
+
+      banda: {
+        rotuloPartes: [
+          'The convergence rule · EU-27 = ',
+          { nl: '100', motivo: 'escala-de-instrumento' },
+        ],
+        naoSeDesenham:
+          'Regions are not drawn as concelho points: the rule is the instrument of the regional scope. The map returns when the scope is a municipality.',
+      },
     },
 
     estado: {

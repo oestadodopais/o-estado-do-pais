@@ -1,0 +1,144 @@
+---
+/**
+ * A BANDA DA REGIÃO — a régua da convergência em largura inteira.
+ *
+ * ---------------------------------------------------------------------------
+ * A EMENDA 3: «REGIÃO USA A RÉGUA, NUNCA PONTOS DE CONCELHO»
+ * ---------------------------------------------------------------------------
+ * Uma região não é um conjunto de concelhos acesos: as NUTS II não coincidem com
+ * concelhos no mapa deste sítio, e pintar concelhos para dizer uma região seria
+ * desenhar uma coisa que os dados não dizem. O instrumento do âmbito regional é
+ * a régua, e é esta.
+ *
+ * A GRAMÁTICA É A DA EMENDA 4, a mesma da régua de cada peça: a referência a
+ * tinta à altura toda (aqui, a média da UE-27 fixada em 100), a barra a medir a
+ * distância da referência ao valor, o traço fino no valor, e a escala escrita
+ * nas pontas. Nenhuma barra sem referência publicada.
+ *
+ * SEM COR. Uma média não é um limiar (Emenda 1): a posição de uma região face à
+ * média da União diz-se por palavras e desenha-se a tinta e a cinzento. A
+ * palavra está na frase da própria região, que é a manchete deste âmbito.
+ *
+ * SEM DISTÂNCIA EM ALGARISMOS DESENHADA NA RÉGUA (decisão e da direcção): a
+ * distância existe como linha do livro-razão e aparece escrita na frase, com o
+ * seu selo. O que a barra faz é mostrá-la; o que a barra não faz é anotá-la com
+ * um número que ninguém possa abrir.
+ *
+ * OS VALORES DESENHADOS DENTRO DO SVG TÊM A SUA PORTA NA LEGENDA. Um `<a>`
+ * dentro de um desenho não se lê como porta (§1.34), e por isso o selo de cada
+ * valor vive em `[data-legenda-selos]`, que é onde `auditaSelo()` o procura.
+ */
+import Claim from '../Claim.astro';
+import { ESCALA } from '../../data/regioes.mjs';
+import { parsePtNumber } from '../../lib/ledger.mjs';
+import Frase from '../Frase.astro';
+
+const { s, lang, regioes, escolhida } = Astro.props;
+
+const { min, max, datum } = ESCALA;
+const W = 1000;
+const X = (v) => ((v - min) / (max - min)) * W;
+
+const pontos = regioes.map((r) => ({
+  ...r,
+  v: parsePtNumber(r.linha.value),
+}));
+
+/* Dois patamares de rótulo, para que dois valores próximos não se sobreponham.
+   A regra é mecânica: percorre-se da esquerda para a direita e um rótulo cujo
+   vizinho esteja a menos de 130 unidades desce um patamar. */
+let ultimo = -Infinity;
+const rotulados = [...pontos]
+  .sort((a, b) => X(a.v) - X(b.v))
+  .map((r) => {
+    const x = X(r.v);
+    const nivel = x - ultimo < 130 ? 1 : 0;
+    if (nivel === 0) ultimo = x;
+    return { ...r, x, nivel };
+  });
+
+const Y_EIXO = 62;
+---
+
+<div class="banda instr" data-instrumento="banda" data-banda-raiz>
+  <div class="banda-cabeca">
+    <p class="banda-k"><Frase partes={s.inicio.banda.rotuloPartes} lang={lang} /></p>
+  </div>
+
+  <div class="banda-tela">
+    <svg class="banda-svg" viewBox={`0 0 ${W} 104`} role="img" aria-label={s.inicio.banda.naoSeDesenham}>
+      <g class="banda-escala" data-nonledger="escala-de-instrumento">
+        <line x1="0" y1={Y_EIXO} x2={W} y2={Y_EIXO} class="banda-eixo" />
+        <line x1="0" y1={Y_EIXO - 6} x2="0" y2={Y_EIXO + 6} class="banda-ponta" />
+        <line x1={W} y1={Y_EIXO - 6} x2={W} y2={Y_EIXO + 6} class="banda-ponta" />
+        <text class="banda-fim" x="0" y={Y_EIXO + 24}>{min}</text>
+        <text class="banda-fim" x={W} y={Y_EIXO + 24} text-anchor="end">{max}</text>
+        <line x1={X(datum)} y1="18" x2={X(datum)} y2={Y_EIXO + 12} class="banda-datum" />
+        <text class="banda-datum-rotulo" x={X(datum)} y="12" text-anchor="middle">
+          {lang === 'pt' ? 'UE-27 = ' : 'EU-27 = '}{datum}
+        </text>
+      </g>
+
+      {/* Os seis pontos, sempre todos: a régua é uma só e as leituras vivem nela
+          ao mesmo tempo. O escolhido é maior, e é o único com barra. */}
+      <g class="banda-pontos">
+        {
+          rotulados.map((r) => (
+            <>
+              <circle
+                class:list={['banda-ponto', r.slug === escolhida && 'is-escolhido']}
+                cx={r.x}
+                cy={Y_EIXO}
+                r={r.slug === escolhida ? 6 : 3.5}
+                data-banda-ponto={r.slug}
+              />
+              <text
+                class="banda-rotulo"
+                x={r.x}
+                y={r.nivel ? 44 : 30}
+                text-anchor="middle"
+              >
+                {r.nome}{' '}
+                <Claim id={r.valor} as="tspan" class="banda-valor" />
+              </text>
+            </>
+          ))
+        }
+      </g>
+
+      {
+        regioes.map((r) => (
+          <g class="banda-barra" data-banda={r.slug} hidden={r.slug !== escolhida}>
+            <rect
+              x={Math.min(X(datum), X(parsePtNumber(r.linha.value)))}
+              y={Y_EIXO - 4}
+              width={Math.max(Math.abs(X(parsePtNumber(r.linha.value)) - X(datum)), 1)}
+              height="8"
+            />
+            <line
+              x1={X(parsePtNumber(r.linha.value))}
+              y1={Y_EIXO - 14}
+              x2={X(parsePtNumber(r.linha.value))}
+              y2={Y_EIXO + 14}
+              class="banda-traco"
+            />
+          </g>
+        ))
+      }
+    </svg>
+  </div>
+
+  {/* A legenda de selos: a porta de cada valor desenhado, e a proveniência da
+      régua inteira, na forma que o componente do selo já dá. */}
+  <div class="banda-legenda" data-legenda-selos>
+    {
+      regioes.map((r) => (
+        <span class="banda-legenda-item">
+          {r.nome} <Claim id={r.valor} lang={lang} chip={true} />
+        </span>
+      ))
+    }
+  </div>
+
+  <p class="banda-nota">{s.inicio.banda.naoSeDesenham}</p>
+</div>
