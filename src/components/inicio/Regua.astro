@@ -1,0 +1,89 @@
+---
+/**
+ * A RÉGUA-ESPÉCIME — uma gramática, e uma só (Emenda 4).
+ *
+ *   · a referência a TINTA, à altura toda da régua;
+ *   · a BARRA a medir a distância da referência ao valor;
+ *   · um TRAÇO FINO no valor;
+ *   · a escala escrita nas pontas;
+ *   · **nenhuma barra sem referência publicada**.
+ *
+ * A DISTÂNCIA DIZ-SE EM PALAVRAS, E NÃO EM ALGARISMOS (decisão e da direcção,
+ * 20.08.2026). A barra mostra-a; a palavra de estado nomeia-a. Um número novo em
+ * cima da régua seria um valor sem linha e sem selo, e a fase 1 assume-se
+ * parcial nesta regra em vez de a contornar: quando existirem linhas derivadas
+ * com a distância, elas entram por `<Claim/>` como qualquer outro valor.
+ *
+ * A COR SÓ ENTRA ONDE HÁ LIMIAR FORMAL (Emenda 1). `colore` é a decisão de quem
+ * chama, e vem de `src/lib/estado.mjs`: um tecto legal colore, uma média não.
+ * Sem cor, a barra é cinzenta e a régua lê-se na mesma, porque o estado vive
+ * também na palavra e na posição.
+ *
+ * OS NÚMEROS DAS PONTAS SÃO A RÉGUA, NÃO A MEDIÇÃO, e vão marcados
+ * `data-nonledger="escala-de-instrumento"`; o limiar vai marcado
+ * `limiar-do-quadro`, que é o motivo que a v2 já lhe dá. A escala inteira é
+ * calculada em `escalaDaRegua()` a partir dos dois números que já existem: nem
+ * uma ponta é escrita à mão.
+ */
+import { escalaDaRegua, posicaoNaRegua } from '../../lib/estado.mjs';
+
+const { valor, referencia, estado = 'sem', colore = false, rotuloId = null } = Astro.props;
+
+/* O rótulo da referência entra por ranhura, e não por propriedade: é MARCAÇÃO —
+   a palavra «limiar», o sinal, e o algarismo debaixo do motivo
+   `limiar-do-quadro`. Passá-lo como cadeia obrigaria a montar «limiar 60%» num
+   texto sem marca, que é exactamente o que o portão existe para recusar. */
+const temRotulo = Astro.slots.has('referencia');
+
+const escala = escalaDaRegua(valor, referencia);
+
+/* A escrita da casa para um número de escala: vírgula decimal e sinal de menos
+   verdadeiro. Não formata nenhuma medição — só as pontas da própria régua. */
+const escreve = (n) => {
+  const texto = Number.isInteger(n) ? String(Math.abs(n)) : String(Math.abs(n)).replace('.', ',');
+  return n < 0 ? `−${texto}` : texto;
+};
+
+const pv = escala ? posicaoNaRegua(valor, escala) : null;
+const pr = escala ? posicaoNaRegua(referencia, escala) : null;
+const W = 600;
+const Y = 17;
+---
+
+{
+  escala && pv !== null && pr !== null && (
+    <div class="regua" data-regua data-colore={colore ? 'sim' : 'nao'}>
+      <div class="regua-tela">
+        <svg
+          class="regua-svg"
+          viewBox={`0 0 ${W} 34`}
+          preserveAspectRatio="none"
+          role="img"
+          aria-labelledby={rotuloId ?? undefined}
+        >
+          <line class="regua-calha" x1="0" y1={Y} x2={W} y2={Y} />
+          <rect
+            class:list={['regua-barra', colore && `barra-${estado}`]}
+            x={(Math.min(pv, pr) / 100) * W}
+            y={Y - 4}
+            width={Math.max((Math.abs(pv - pr) / 100) * W, 1)}
+            height="8"
+          />
+          <line class="regua-ref" x1={(pr / 100) * W} y1="0" x2={(pr / 100) * W} y2="34" />
+          <line class="regua-valor" x1={(pv / 100) * W} y1="4" x2={(pv / 100) * W} y2="30" />
+        </svg>
+      </div>
+      <div class="regua-escala">
+        <span class="regua-fim" data-nonledger="escala-de-instrumento">{escreve(escala.min)}</span>
+        {temRotulo && (
+          <span class="regua-ref-rotulo" style={`left:${pr}%`}>
+            <slot name="referencia" />
+          </span>
+        )}
+        <span class="regua-fim regua-fim-dir" data-nonledger="escala-de-instrumento">
+          {escreve(escala.max)}
+        </span>
+      </div>
+    </div>
+  )
+}

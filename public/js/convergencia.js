@@ -102,7 +102,7 @@
       var a = Math.min(X(E.datum), X(cur.valor));
       var b = Math.max(X(E.datum), X(cur.valor));
       gGap.appendChild(
-        cria('rect', { x: a, y: E.RY - 4.5, width: Math.max(b - a, 1), height: 9, fill: 'var(--yellow)' }),
+        cria('rect', { x: a, y: E.RY - 4.5, width: Math.max(b - a, 1), height: 9, fill: 'var(--ink)' }),
       );
       var rot = cria('text', {
         x: (a + b) / 2,
@@ -172,7 +172,7 @@
         y: f.y - 32,
         width: f.w,
         height: 36,
-        fill: 'var(--paper-2)',
+        fill: 'var(--paper)',
       });
       f.g.insertBefore(fundo, f.g.firstChild);
 
@@ -187,7 +187,7 @@
           cy: E.RY,
           r: f.r.id === cur.id ? 5.5 : 4,
           fill: 'var(--ink)',
-          stroke: 'var(--paper-2)',
+          stroke: 'var(--paper)',
           'stroke-width': 1.5,
         }),
       );
@@ -196,7 +196,7 @@
       if (f.r.historico !== undefined) {
         var hx = X(f.r.historico);
         f.g.appendChild(
-          cria('circle', { cx: hx, cy: E.RY, r: 4, fill: 'var(--paper-2)', stroke: 'var(--ink)', 'stroke-width': 1.5 }),
+          cria('circle', { cx: hx, cy: E.RY, r: 4, fill: 'var(--paper)', stroke: 'var(--ink)', 'stroke-width': 1.5 }),
         );
         var ht = cria('text', { x: hx - 9, y: E.RY + 60, 'text-anchor': 'end', class: 'hist-label' });
         ht.textContent = f.r.historico_texto + ' ' + (PALAVRAS.em || '') + ' ' + f.r.historico_ref;

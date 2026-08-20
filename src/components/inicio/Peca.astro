@@ -1,0 +1,154 @@
+---
+/**
+ * UMA PEÇA DO PAINEL — a mesma medida nas duas densidades, num só elemento.
+ *
+ * ---------------------------------------------------------------------------
+ * A DENSIDADE É UM `<details>` NATIVO, E É POR ISSO QUE FUNCIONA SEM SCRIPT
+ * ---------------------------------------------------------------------------
+ * Fechado é Relance, aberto é Leitura breve. O comando global abre ou fecha
+ * todos; o `<summary>` de cada peça muda só o dela, e o comando global nunca
+ * apaga uma escolha peça a peça (regra da prancha). Nada disto precisa de
+ * JavaScript: o `<details>` é um elemento do navegador, com teclado, com estado
+ * anunciado e com foco, e nenhuma implementação nossa faria melhor.
+ *
+ * ---------------------------------------------------------------------------
+ * O SELO FICA FORA DO `<summary>`, E FORA DE QUALQUER OUTRO ALVO
+ * ---------------------------------------------------------------------------
+ * Emenda 2: «o selo nunca fica aninhado dentro de outro alvo». Uma porta metida
+ * dentro de outra porta abre a de fora, e quem toca no selo quer a prova e
+ * receberia a peça. O selo é o ÚLTIMO elemento da peça, sozinho na sua linha, e
+ * é o maior alvo da peça — que é a saída que a etapa 1d deixou marcada em ISSUES
+ * I13: «a saída certa não é encolher a área, é dar altura à fila».
+ *
+ * E é UM selo por peça, não dois. A prancha desenha um no pé e outro na linha do
+ * recibo, quando a peça está aberta; dois alvos de 44px a poucos píxeis um do
+ * outro sobrepõem-se, e uma área sobreposta é uma porta que abre a linha do
+ * vizinho. Aqui a linha do recibo É a linha do selo: fechada, o pé diz só o
+ * selo; aberta, ganha à frente as palavras «o recibo completo está na linha». A
+ * troca é da folha de estilos, sobre `[open] ~`, e não do script.
+ *
+ * ---------------------------------------------------------------------------
+ * O QUE A PEÇA MOSTRA, E O QUE NÃO INVENTA
+ * ---------------------------------------------------------------------------
+ * Relance: o marcador e a palavra de estado; o valor; a unidade e o período; o
+ * nome; a frase INTEIRA da medida (relocação R1 — as frases curtas da prancha
+ * são cortes, isto é, frases novas, e não entram).
+ *
+ * Leitura breve: a régua, para as medidas com referência publicada; a palavra de
+ * estado por extenso; e a linha do recibo.
+ *
+ * A linha do limiar é a da célula da v2, movida sem mudar uma palavra: «limiar
+ * 60% · acima». O algarismo continua debaixo do motivo `limiar-do-quadro` e a
+ * palavra continua a ser derivada de dois números que já existem, sem
+ * acrescentar um dígito à página.
+ */
+import Claim from '../Claim.astro';
+import { getClaim } from '../../lib/ledger.mjs';
+import Frase from '../Frase.astro';
+import Provenance from '../Provenance.astro';
+import Regua from './Regua.astro';
+
+const {
+  s,
+  lang,
+  id,
+  nome,
+  medida,
+  frase,
+  limiar = null,
+  comparacao = null,
+  estado = 'sem',
+  colore = estado === 'fora' || estado === 'dentro',
+  regua = null,
+  ambito = null,
+  selosNaMedida = false,
+} = Astro.props;
+
+const PALAVRA = {
+  fora: s.estado.foraDoLimiar,
+  dentro: s.estado.dentroDoLimiar,
+  sem: s.estado.semLimiar,
+};
+const palavra = PALAVRA[estado] ?? null;
+
+/* O corpo do valor por número de glifos, decidido aqui e não por uma regra de
+   folha que adivinhe: até 5 glifos o valor tem 80px, até 7 tem 60px, e daí para
+   cima 44px. É derivado do valor publicado, como o `--figura-car` da v2, e não
+   muda um carácter do que rende. */
+const glifos = [...String(getClaim(id).value)].length;
+const corpo = glifos <= 5 ? 80 : glifos <= 7 ? 60 : 44;
+const pintado = colore && (estado === 'fora' || estado === 'dentro');
+const marca = pintado ? estado : 'sem';
+---
+
+<article class="peca" data-medida={id} data-estado={estado} data-limiar={limiar ? 'sim' : 'nao'}>
+  <div class="peca-topo">
+    <span class={`sq sq-${marca}`} aria-hidden="true"></span>
+    {
+      limiar ? (
+        <span class:list={['peca-limiar', pintado && `est-${estado}`]}>
+          <span class="peca-limiar-k">{s.home.numeros.limiar}</span>{' '}
+          <span class="peca-limiar-v">
+            {limiar.sinal ?? ''}
+            <span data-nonledger="limiar-do-quadro">{limiar.nl}</span>%
+          </span>
+          {comparacao && <span> · {s.home.numeros[comparacao]}</span>}
+        </span>
+      ) : (
+        <span class:list={['peca-limiar', pintado && `est-${estado}`]}>{palavra}</span>
+      )
+    }
+  </div>
+
+  <Claim id={id} class="peca-valor" as="div" style={`--peca-corpo:${corpo}px`} />
+  <p class="peca-unidade"><Frase partes={medida} lang={lang} selos={selosNaMedida} /></p>
+  <h3 class="peca-nome">{nome}</h3>
+  <p class="peca-frase"><Frase partes={frase} lang={lang} selos={true} /></p>
+
+  <details class="peca-mais">
+    <summary class="peca-abrir">
+      <span class="peca-seta" aria-hidden="true"></span>
+      <span class="peca-abrir-a">{s.densidade.abrir}</span>
+      <span class="peca-abrir-f">{s.densidade.fechar}</span>
+    </summary>
+    <div class="peca-leitura">
+      {
+        regua ? (
+          <Regua
+            valor={regua.valor}
+            referencia={regua.referencia}
+            estado={estado}
+            colore={pintado}
+          >
+            {regua.rotulo === 'limiar' && limiar && (
+              <Fragment slot="referencia">
+                {s.home.numeros.limiar}{' '}
+                {limiar.sinal ?? ''}
+                <span data-nonledger="limiar-do-quadro">{limiar.nl}</span>%
+              </Fragment>
+            )}
+            {regua.rotulo === 'tecto' && (
+              <Fragment slot="referencia">{s.municipio.distanciaTecto}</Fragment>
+            )}
+            {regua.rotulo === 'datum' && (
+              <Fragment slot="referencia">
+                <span data-nonledger="escala-de-instrumento">
+                  {lang === 'pt' ? 'UE-27 = 100' : 'EU-27 = 100'}
+                </span>
+              </Fragment>
+            )}
+          </Regua>
+        ) : (
+          <p class="peca-sem-regua">{s.inicio.peca.semReferencia}</p>
+        )
+      }
+      {palavra && <p class:list={['peca-estado', pintado && `est-${estado}`]}>{palavra}</p>}
+      {ambito && <p class="peca-ambito">{ambito}</p>}
+    </div>
+  </details>
+
+  <p class="peca-pe">
+    <span class="peca-recibo">{s.inicio.peca.recibo}</span>
+    <Provenance id={id} lang={lang} />
+  </p>
+</article>

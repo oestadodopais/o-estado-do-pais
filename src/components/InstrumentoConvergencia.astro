@@ -12,6 +12,19 @@
  * Todos os números — o valor no relance, o valor no marcador, a distância
  * anotada — são citações do livro-razão. Os números do eixo são a régua, não
  * uma medição, e vão marcados como tal.
+ *
+ * ---------------------------------------------------------------------------
+ * V3 (etapa 2c): A TINTA, E COM O ESTADO DITO POR PALAVRAS
+ * ---------------------------------------------------------------------------
+ * Três literais de ficha morta saíram deste gabarito e três do seu par em
+ * `public/js/convergencia.js` (ISSUES I12): a barra da distância era
+ * `var(--yellow)`, que a etapa 1c aposentou, e as chapas dos rótulos eram
+ * `var(--paper-2)`, que a v3 não tem. A barra passa a TINTA, que é o que a
+ * Emenda 4 manda («barra = distância à referência»), e as chapas passam a
+ * papel. Até aqui o desenho era salvo por seis regras de remapeamento em
+ * `site.css`, escritas na etapa 1c precisamente porque esta etapa ainda não
+ * tinha aberto o ficheiro; essas regras podem agora sair, e isso é um pedido ao
+ * dono da folha.
  */
 import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { DADOS } from '../lib/dados.mjs';
@@ -184,7 +197,7 @@ for (const r of REGIOES) {
       </g>
 
       <g data-gap>
-        <rect x={x0} y={RY - 4.5} width={Math.max(x1 - x0, 1)} height="9" fill="var(--yellow)" />
+        <rect x={x0} y={RY - 4.5} width={Math.max(x1 - x0, 1)} height="9" fill="var(--ink)" />
         <text x={(x0 + x1) / 2} y={RY + 42} text-anchor="middle" class="gap-label">
           {inicial.sinal}<Claim id={inicial.distancia_claim} as="tspan" /> {lang === 'pt' ? 'pontos' : 'points'}
         </text>
@@ -196,10 +209,10 @@ for (const r of REGIOES) {
 
       <g data-marks>
         <g class="mk is-on" data-mk={inicial.id}>
-          <rect x={X(inicial.valor) - larguraRotulo / 2} y={yPatamar - 32} width={larguraRotulo} height="36" fill="var(--paper-2)" />
+          <rect x={X(inicial.valor) - larguraRotulo / 2} y={yPatamar - 32} width={larguraRotulo} height="36" fill="var(--paper)" />
           <text x={X(inicial.valor)} y={yPatamar - 18} text-anchor="middle" class="mk-name">{inicial.nome}</text>
           <Claim id={inicial.valor_claim} as="text" class="mk-val" x={X(inicial.valor)} y={yPatamar - 1} text-anchor="middle" />
-          <circle cx={X(inicial.valor)} cy={RY} r="5.5" fill="var(--ink)" stroke="var(--paper-2)" stroke-width="1.5" />
+          <circle cx={X(inicial.valor)} cy={RY} r="5.5" fill="var(--ink)" stroke="var(--paper)" stroke-width="1.5" />
         </g>
       </g>
     </svg>
@@ -207,7 +220,17 @@ for (const r of REGIOES) {
 
   <!-- CAMADA 2 — LEITURA BREVE. É esta a legenda de selos do instrumento:
        os valores desenhados dentro do SVG têm aqui a sua porta. -->
-  <div class="brief" data-legenda-selos>
+  {/* ------------------------------------------------------------------------
+      A REGIÃO VIVA É O CONTENTOR, E NÃO A FRASE QUE CALHA ESTAR À VISTA
+      ------------------------------------------------------------------------
+      `DECISIONS.md` §4, item P: o estado lido dos chips não tinha equivalente
+      não-visual. O `aria-live` estava na frase da região com que a página foi
+      construída; ao trocar de região o script mostrava OUTRA frase, que não
+      tinha marca nenhuma, e quem ouve a página não recebia nada. A marca sobe
+      para o contentor, que é o que muda, e o que se anuncia são as palavras da
+      região que passou a estar lida — palavras que já estavam na página.
+      ---------------------------------------------------------------------- */}
+  <div class="brief" data-legenda-selos aria-live="polite">
     <p class="layer-tag">{lang === 'pt' ? 'Leitura breve' : 'Brief reading'}</p>
     {
       REGIOES.map((r) => (
@@ -215,7 +238,6 @@ for (const r of REGIOES) {
           class="brief-text"
           data-brief={r.id}
           hidden={r.id !== inicial.id}
-          aria-live={r.id === inicial.id ? 'polite' : undefined}
         >
           <Frase partes={r.frase[lang]} lang={lang} selos={true} />
         </p>

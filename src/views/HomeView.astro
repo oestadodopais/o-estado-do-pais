@@ -30,18 +30,19 @@
  */
 import Base from '../layouts/Base.astro';
 import Masthead from '../components/Masthead.astro';
-import Claim from '../components/Claim.astro';
-import Provenance from '../components/Provenance.astro';
 import Frase from '../components/Frase.astro';
 import InstrumentoConvergencia from '../components/InstrumentoConvergencia.astro';
 import Comando from '../components/inicio/Comando.astro';
+import Peca from '../components/inicio/Peca.astro';
+import Portas from '../components/inicio/Portas.astro';
+import EstadoVazio from '../components/inicio/EstadoVazio.astro';
 import Cabeca from '../components/inicio/Cabeca.astro';
 import Pesquisa from '../components/inicio/Pesquisa.astro';
 import MapaRespira from '../components/inicio/MapaRespira.astro';
 import BandaDaRegiao from '../components/inicio/BandaDaRegiao.astro';
 import { FIGURAS, comparacaoComOLimiar } from '../data/figuras.mjs';
-import { REGIOES } from '../data/regioes.mjs';
-import { getClaim } from '../lib/ledger.mjs';
+import { REGIOES, ESCALA } from '../data/regioes.mjs';
+import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { estadoDaMedida, estadoDaRegua } from '../lib/estado.mjs';
 import { concelhos, chaveDaRegiao, chaveDoConcelho } from '../lib/inicio.mjs';
 import { estadoDaVerificacao, prova } from '../lib/prova.mjs';
@@ -108,6 +109,38 @@ const estadosDeEvora = evora
       }
       return 'sem';
     })
+  : [];
+
+/* O tecto legal do índice de dívida é uma linha do livro-razão, e é contra ela
+   que a peça de Évora colore: a lei publica o limite, e um limite publicado é um
+   limiar formal (Emenda 1). Tudo o resto do concelho fica a tinta. */
+const TECTO_DA_DIVIDA = 'indice-de-divida-limite-legal';
+const pecasDeEvora = evora
+  ? evora.pagina.relance
+      .filter((m) => m.claim)
+      .map((m) => {
+        const linha = getClaim(m.claim);
+        if (m.claim !== 'evora-indice-de-divida-2024') {
+          return { ...m, linha, estado: 'sem', colore: false, regua: null };
+        }
+        const tecto = getClaim(TECTO_DA_DIVIDA);
+        const r = estadoDaRegua(linha, {
+          valor: tecto.value,
+          lado: 'superior',
+          colore: true,
+        });
+        return {
+          ...m,
+          linha,
+          estado: r.estado ?? 'sem',
+          colore: r.colore,
+          regua: {
+            valor: parsePtNumber(linha.value),
+            referencia: parsePtNumber(tecto.value),
+            rotulo: 'tecto',
+          },
+        };
+      })
   : [];
 
 const blocos = [
@@ -190,31 +223,85 @@ const blocos = [
   </div>
 
   <!-- ============================ O painel -->
+  {/* Os quatro painéis estão todos no HTML, e o script acende um. É a mesma
+      regra da cabeça: o portão vê tudo o que o leitor pode ver. */}
   <section id="painel">
-    <div class="figuras">
+    <div class="painel" data-painel="pais">
       {
         medidas.map((f) => (
-          <article class="figura">
-            <Claim id={f.claim} class="figura-num" as="div" escala={true} />
-            <h3 class="figura-nome">{f.nome[lang]}</h3>
-            <p class="figura-medida"><Frase partes={f.medida[lang]} lang={lang} /></p>
-            {f.limiar && (
-              <p class="figura-limiar">
-                <span class="figura-limiar-k">{s.home.numeros.limiar}</span>{' '}
-                <span class="figura-limiar-v">
-                  {f.limiar.sinal ?? ''}
-                  <span data-nonledger="limiar-do-quadro">{f.limiar.nl}</span>%
-                </span>
-                {f.comparacao && (
-                  <span class="figura-limiar-palavra"> · {s.home.numeros[f.comparacao]}</span>
-                )}
-              </p>
-            )}
-            <p class="figura-frase"><Frase partes={f.frase[lang]} lang={lang} /></p>
-            <Provenance id={f.claim} lang={lang} />
-          </article>
+          <Peca
+            s={s}
+            lang={lang}
+            id={f.claim}
+            nome={f.nome[lang]}
+            medida={f.medida[lang]}
+            frase={f.frase[lang]}
+            limiar={f.limiar}
+            comparacao={f.comparacao}
+            estado={f.estado ?? 'sem'}
+            regua={
+              f.limiar
+                ? {
+                    valor: parsePtNumber(f.linha.value),
+                    referencia: parsePtNumber(`${f.limiar.sinal ?? ''}${f.limiar.nl}`),
+                    rotulo: 'limiar',
+                  }
+                : null
+            }
+          />
         ))
       }
+    </div>
+
+    {
+      regioesDaBanda.map((r) => (
+        <div class="painel painel-um" data-painel={chaveDaRegiao(r.slug)} hidden>
+          <Peca
+            s={s}
+            lang={lang}
+            id={r.valor}
+            nome={r.nome}
+            medida={[
+              { nl: s.home.instr1.glanceUnidade, motivo: 'escala-de-instrumento' },
+              ' · ',
+              { ref: '2024' },
+            ]}
+            frase={r.frase}
+            estado="sem"
+            regua={{
+              valor: parsePtNumber(r.linha.value),
+              referencia: ESCALA.datum,
+              rotulo: 'datum',
+            }}
+          />
+        </div>
+      ))
+    }
+
+    {
+      evora && (
+        <div class="painel" data-painel={chaveDoConcelho(evora.slug)} hidden>
+          {pecasDeEvora.map((m) => (
+            <Peca
+              s={s}
+              lang={lang}
+              id={m.claim}
+              nome={m.nome[lang]}
+              medida={m.medida[lang]}
+              frase={m.nota[lang]}
+              estado={m.estado}
+              colore={m.colore}
+              regua={m.regua}
+              ambito={`${evora.pagina.nome[lang] ?? evora.pagina.nome.pt}${s.inicio.cabeca.municipioSufixo}`}
+              selosNaMedida={true}
+            />
+          ))}
+        </div>
+      )
+    }
+
+    <div data-painel="vazio" hidden>
+      <EstadoVazio s={s} lang={lang} nome={primeiroSemPagina?.nome ?? ''} />
     </div>
 
     {/* A âncora `#numeros` é a porta do sinal de tempo do cabeçalho e da chave
@@ -225,8 +312,8 @@ const blocos = [
     </p>
   </section>
 
-  <!-- ============================ Instrumento n.º 1 -->
-  <section id="convergencia">
+  <!-- ============================ Instrumento n.º 1 · só no âmbito País -->
+  <section id="convergencia" data-so-pais>
     <div class="sec-head">
       <span class="eyebrow">
         {s.home.instr1.eyebrow} <span data-nonledger="numeracao">{lang === 'pt' ? 'n.º 1' : 'no. 1'}</span>
@@ -236,6 +323,20 @@ const blocos = [
     </div>
     <InstrumentoConvergencia lang={lang} />
   </section>
+
+  <!-- ============================ As portas · só no âmbito País -->
+  <div data-so-pais>
+    <Portas
+      s={s}
+      lang={lang}
+      p={p}
+      rotas={{
+        municipios: routePath('municipios', lang),
+        estudos: routePath('estudos', lang),
+        agenda: routePath('agenda', lang),
+      }}
+    />
+  </div>
 </Base>
 
 <script src="/js/inicio.js" defer is:inline></script>
