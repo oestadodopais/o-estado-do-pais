@@ -18,11 +18,14 @@ comando que está escrito ao lado deles.*
 | `a21cc2a` | 1a | `IDENTIDADE`, `DECISIONS` §1.50: a letra passa a ser alojada aqui, e a cor passa a ser o par de estados |
 | `7643251` | 1b | tipos: as três famílias alojadas aqui, convertidas sem perda, e a régua que as mede |
 | `7650aed` | 1c | tokens: a paleta v3, o par de estados, e a folha partilhada sem os dois acentos da v2 |
-| *(o commit que contém esta nota)* | 1d | cabeçalho, rodapé, selo: a navegação em versaletes, o selo à altura da linha, e o alvo medido |
+| `a2fa798` | 1d | cabeçalho, rodapé, selo: a navegação em versaletes, o selo à altura da linha, e o alvo medido |
+| *(o commit que contém esta nota)* | 1e | cabeçalho: a navegação colapsa atrás de «Menu» abaixo de 640px, sem JavaScript |
 
-*(O commit da 1d não se nomeia a si próprio: um ficheiro não pode trazer no nome
-nem no corpo o resumo do commit que o contém. É o quarto commit do ramo a partir
-de `2adf2cd`, e `git log --oneline` di-lo em uma linha.)*
+*(O commit da 1e não se nomeia a si próprio: um ficheiro não pode trazer no
+corpo o resumo do commit que o contém. É o quinto commit do ramo a partir de
+`2adf2cd`, e `git log --oneline` di-lo em uma linha. A subetapa 1e foi pedida
+pela cadeira na revisão da etapa 1, depois de as quatro primeiras estarem
+fechadas.)*
 
 ---
 
@@ -578,6 +581,126 @@ elas mostram é a letra, os tokens e a mobília.
 
 ---
 
+## 4b. Subetapa 1e · a navegação no telemóvel
+
+*Pedida pela cadeira na revisão da etapa 1, a partir da medição da 1d: a 320 e a
+390 a navegação primária quebrava em três linhas e empurrava o primeiro valor
+medido para fora do primeiro ecrã. A prancha móvel
+(`design/especime-v3/maquetas/V3Movel.dc.html`, «cabeça compacta») resolve-o com
+«Menu» ao lado da ligação de idioma, e é isso que entra. Só `Masthead.astro`,
+`site.css` e uma chave em `strings.mjs`.*
+
+### O mecanismo, e porque a lista fica FORA do `<details>`
+
+Nativo e sem JavaScript. O que não é óbvio, e que medi antes de escrever a
+regra: **o conteúdo de um `<details>` fechado não se volta a mostrar por folha
+de estilos de maneira portátil.** Escrevi três candidatos e medi-os num Chromium
+148, com um `<details>` fechado sem regra nenhuma como controlo negativo, e o
+teste que conta não é `getBoundingClientRect()` (que devolve caixa mesmo com o
+conteúdo escondido, e diria que os quatro funcionam) mas `elementFromPoint()`
+sobre a ligação lá dentro:
+
+| candidato | a ligação é alcançável? |
+| --- | --- |
+| controlo: `<details>` fechado, sem regra | **não** |
+| `details { display: contents }` + `summary { display: none }` | **não** |
+| `details > nav { display: flex !important }` | **não** |
+| `details::details-content { content-visibility: visible; display: contents }` | **sim** |
+
+Só o terceiro funciona, e `::details-content` é recente: `CSS.supports` diz que
+sim neste Chromium, e não existe em todos os motores. Se a lista vivesse dentro
+do `<details>`, num motor sem essa regra ficaria escondida **também a 1280**, ou
+seja o desktop inteiro sem navegação primária. Isso não se arrisca por uma
+elegância de marcação.
+
+Por isso o `<details>` leva só o `<summary>`, e a lista é **irmã** dele. O que
+governa é `.nav-menu[open] ~ .nav-principal`: um seletor de atributo e um
+combinador de irmãos, que existem em todos os motores há duas décadas. Acima de
+640px o comando é `display: none` e a lista renderiza-se como sempre, sem
+depender de nada que o navegador tenha de saber revelar. **Medido só em
+Chromium**, e digo-o: o Firefox e o Safari não estão nesta máquina; o que o
+desenho garante é que o caminho de 1280 não usa nenhuma regra recente.
+
+### O nome do comando
+
+O comando mostra **«Menu»** e chama-se **«Menu · Navegação principal»**
+(«Menu · Main navigation» na edição inglesa). A cadeira pediu o `aria-label` com
+`nav.rotuloPrincipal`; pô-lo sozinho substituiria o nome visível pelo invisível,
+e quem fala com a página pelo que lê nela pediria «Menu» a um comando que se
+chama outra coisa (WCAG 2.5.3, «label in name»). A composição cumpre as duas: a
+palavra visível é a primeira do nome, e a etiqueta da região vai lá. As duas
+metades são cadeias que já existem, e a única chave nova é `nav.menu`.
+
+A ligação de idioma fica à vista ao lado, como na prancha. A ligação de salto
+continua a ser o primeiro elemento do `<body>` (conferido: `skipPrimeiro=true`
+nas oito medições), e o `aria-current` da página actual continua a marcar um
+item (conferido: 1 na primeira página, 0 na página de linha, que não está na
+navegação). **O rodapé não colapsa**: é a navegação inteira, sempre à vista, e é
+ele a porta ao Sobre que o portão conta em todas as páginas.
+
+### As medições
+
+Cabeçalho **fechado**, e o topo do `<main>`, que aqui é o mesmo número porque o
+primeiro filho do `<main>` começa onde o `<main>` começa:
+
+| rota | largura | cabeçalho antes | cabeçalho depois | barra antes | barra depois | topo do `<main>` |
+| --- | --- | --- | --- | --- | --- | --- |
+| `/` | 320 | 411,7px | **316,1px** | 157,6px | **62px** | 411,7 → **316,1px** |
+| `/` | 390 | 377,3px | **316,1px** | 123,2px | **62px** | 377,3 → **316,1px** |
+| `/` | 1280 | 340,7px | **340,7px** | 48,4px | **48,4px** | 340,7 → **340,7px** |
+| `/livro-razao/divida-publica-2025` | 320 | 362,3px | **266,7px** | 157,6px | **62px** | 362,3 → **266,7px** |
+| `/livro-razao/divida-publica-2025` | 390 | 327,9px | **266,7px** | 123,2px | **62px** | 327,9 → **266,7px** |
+| `/livro-razao/divida-publica-2025` | 1280 | 246,3px | **246,3px** | 48,4px | **48,4px** | 246,3 → **246,3px** |
+
+O primeiro filho do `<main>` é `<section>` na primeira página e
+`div.linha-cabeca` na página de linha, e o seu topo é, nas doze medições, igual
+ao topo do `<main>`. **95,6px** recuperados a 320 e **61,2px** a 390, nas duas
+rotas.
+
+**Uma precisão sobre o número da 1d, para não o citar mal.** Os 157,6px e as
+três linhas da nota da 1d são a medição com **oito** itens, que é o pior caso da
+decisão (a). Com os sete que hoje se rendem, a barra media 157,6px a 320 e
+123,2px a 390. As duas passam a **62px**, e a barra deixa de depender do número
+de itens: é a altura do comando, e o oitavo item não lhe mexe.
+
+**Aberto**, o cabeçalho vai a 549,9px na primeira página e 500,5px na de linha
+(320 e 390 dão o mesmo), com a lista em coluna, um item por linha, separados por
+um fio. É o custo de abrir o menu, e é uma escolha do leitor.
+
+**O alvo do comando: 62 × 44 px**, a 320 e a 390, e alcançável no centro
+(`elementFromPoint` devolve o próprio `<summary>`). Aqui a altura pode ser
+altura a sério, ao contrário do selo: o comando é um bloco na barra e não uma
+unidade no meio de uma frase, e crescer não empurra linha nenhuma.
+
+**Nada mudou a 640px nem acima.** A 640 o comando já está escondido e a lista
+visível com as sete ligações. A 1280, as **16 capturas** da etapa 1 foram
+retiradas outra vez com o mesmo procedimento e comparadas por resumo SHA-256
+contra as que estavam guardadas: **as 16 são byte a byte iguais**. Que a
+comparação sabe distinguir prova-se com um positivo conhecido: a mesma
+comparação sobre `inicio-390-pt-claro.png`, que mudou, diz que difere.
+
+### A construção e as réguas
+
+```
+npm run build                      → verde
+npm run verify                     → os cinco portões verdes
+node scripts/medir-defeitos.mjs --json   → idêntico, campo a campo, ao da 1c
+node scripts/medir-contraste.mjs --json  → idêntico, campo a campo, ao da 1c
+```
+
+Nenhuma das duas réguas mexeu, e era o esperado: a 1e não tocou em `tokens.css`,
+não mudou uma ligação, um texto ou uma contagem, e o que acrescentou ao HTML é
+um comando de interface. `assertKeyParity()` continua a passar com a chave nova
+nas duas edições.
+
+**As capturas a 390 foram retiradas outra vez**, e não só as quatro que a
+cadeira pediu: a mudança é do cabeçalho e vale em todas as páginas, por isso as
+**16** capturas a 390 (as quatro rotas, duas edições, dois temas) estão
+refrescadas. Deixar `metodo-390-*` e `evora-390-*` com o cabeçalho antigo ao
+lado das novas seria uma mentira por omissão.
+
+---
+
 ## 5. O que fica dito, e não descoberto depois
 
 1. **Quatro literais `var(--yellow)` sobrevivem em três ficheiros que esta etapa
@@ -605,7 +728,10 @@ elas mostram é a letra, os tokens e a mobília.
 10. **A régua do contraste ganhou um resolvedor de `var()`** além do `PARES` que
     o brief me dá: sem ele a régua atirava sobre os tokens derivados. É uma
     régua, não um portão, e não entra em `npm run build`.
-11. **Nenhum portão novo**, e nenhuma extensão de portão. Esta etapa não mudou
+11. **A navegação móvel foi medida só em Chromium** (1e). O desenho evita de
+    propósito qualquer regra recente no caminho de 1280, e a razão está escrita
+    com a medição que a suporta; o Firefox e o Safari não estão nesta máquina.
+12. **Nenhum portão novo**, e nenhuma extensão de portão. Esta etapa não mudou
     uma linha de `gate-html.mjs`, `check-ledger.mjs` ou `check-dados.mjs`: as
     duas réguas novas (`medir-tipos.mjs`) e a alterada (`medir-contraste.mjs`)
     correm à mão e fora da construção. Não foi preciso plantar defeito nenhum
@@ -620,6 +746,8 @@ subagentes e sem delegação. Nenhuma parte desta etapa correu noutro modelo.
 **Contagem de fichas:** a única contagem que esta sessão me reporta é o
 orçamento que sobra, e não o que gastei. No fim da etapa 1d o contador dizia
 **cerca de 14,60 milhões de fichas por usar**, de um teto de 15 milhões, o que
-põe o gasto desta etapa na ordem das **400 mil fichas**, dentro da escala de 250
-a 350 mil que o brief estimou, mas acima dela. Não tenho um número exacto e não
-o invento: o que existe é este.
+põe o gasto das subetapas 1a a 1d na ordem das **400 mil fichas**, acima da
+escala de 250 a 350 mil que o brief estimou. No fim da 1e dizia **cerca de 14,57
+milhões**, ou seja **cerca de 30 mil fichas** para a subetapa pedida pela
+cadeira. Não tenho um número exacto e não o invento: o que existe é este, e é
+uma diferença de contadores e não uma medição.
