@@ -225,7 +225,36 @@ const CAMPOS_DA_EXTRACAO = ['file', 'url', 'sha256', 'bytes'];
 const CAMPOS_DO_CALCULO = ['files', 'column', 'filter'];
 
 /** As chaves de cada ficheiro sobre que a conta foi feita, e mais nenhuma. */
-const CAMPOS_DO_FICHEIRO_CALCULADO = ['file', 'snapshot_date', 'sha256', 'bytes'];
+const CAMPOS_DO_FICHEIRO_CALCULADO = ['file', 'snapshot_date', 'sha256', 'bytes', 'archived'];
+
+/**
+ * `archived`: a cópia datada que um terceiro guardou do ficheiro contado.
+ *
+ * A direção decidiu a 20.08.2026 não alojar o ficheiro do PRR nem pedir
+ * autorização, e em vez disso dar ao leitor a porta para uma captura do
+ * Internet Archive do próprio ficheiro sobre que a soma foi feita. O publicador
+ * substitui o recurso todos os dias e não arquiva o anterior: sem captura, o
+ * endereço que a linha nomeia serve outro ficheiro no dia seguinte.
+ *
+ * **NÃO FECHA O MARCADOR.** A regra do excerto nulo pede a recontagem mecânica
+ * na construção, sobre um ficheiro que este sítio serve; uma cópia de terceiro
+ * não a permite. As três somas continuam `[a verificar]` e continuam a contar
+ * para a dívida de proveniência. O que a captura dá é uma coisa mais pequena e
+ * verdadeira: os bytes que foram contados continuam a poder ser pedidos.
+ *
+ * `digest_match` é o que separa uma porta de uma promessa: é verdadeiro quando
+ * o resumo SHA-1 que o Internet Archive publica da captura é o resumo dos bytes
+ * que o motor leu. Falso, o campo fica como registo do que se pediu e a página
+ * NÃO abre porta nenhuma, porque uma captura que não bate certo é uma porta
+ * para outro ficheiro.
+ */
+const CAMPOS_DO_ARQUIVO = ['url', 'at', 'digest_match'];
+
+/** O anfitrião das capturas, e só ele. */
+const ANFITRIAO_DO_ARQUIVO = 'web.archive.org';
+
+/** Uma data-hora ISO 8601 em UTC: 2026-08-20T11:22:33Z. */
+const DATA_HORA_ISO = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/;
 
 /** Onde vivem os ficheiros de dados alojados: `public/dados/`, servidos em `/dados/`. */
 const DIR_DADOS = path.join(path.dirname(path.dirname(LEDGER_DIR)), 'public', 'dados');
@@ -1386,6 +1415,61 @@ export function validateLedger() {
                 if (!Number.isInteger(f.bytes) || f.bytes < 1) {
                   errors.push(`${rot}: "bytes" é ${JSON.stringify(f.bytes)}, e tem de ser o ` +
                     `tamanho do ficheiro, um inteiro ≥ 1.`);
+                }
+                /* A cópia arquivada: uma forma só, e nenhuma outra. Um campo
+                   que aceitasse «recusado» ou «à espera» seria a página a ter
+                   de decidir, a cada construção, o que mostrar sobre um estado
+                   que não é dela. O que não tem captura não traz o campo. */
+                if (f.archived !== null && f.archived !== undefined) {
+                  const a = f.archived;
+                  if (typeof a !== 'object' || Array.isArray(a)) {
+                    errors.push(
+                      `${rot}: "archived" tem de ser um mapa com ` +
+                        `${CAMPOS_DO_ARQUIVO.join(', ')}.`,
+                    );
+                  } else {
+                    for (const k of Object.keys(a)) {
+                      if (!CAMPOS_DO_ARQUIVO.includes(k)) {
+                        errors.push(
+                          `${rot}: chave desconhecida "archived.${k}". ` +
+                            `Aceites: ${CAMPOS_DO_ARQUIVO.join(', ')}. Uma captura que não ` +
+                            `existe não se declara com outra forma: omite-se.`,
+                        );
+                      }
+                    }
+                    let anfitriao = null;
+                    try {
+                      anfitriao = new URL(String(a.url)).hostname;
+                    } catch {
+                      anfitriao = null;
+                    }
+                    if (
+                      typeof a.url !== 'string' ||
+                      !a.url.startsWith('https://') ||
+                      anfitriao !== ANFITRIAO_DO_ARQUIVO
+                    ) {
+                      errors.push(
+                        `${rot}: "archived.url" é ${JSON.stringify(a.url)}. Tem de ser um ` +
+                          `endereço https em ${ANFITRIAO_DO_ARQUIVO}: a porta que esta linha ` +
+                          `abre é a de uma captura do Internet Archive, e um endereço noutro ` +
+                          `anfitrião é outra coisa com o mesmo nome.`,
+                      );
+                    }
+                    if (!DATA_HORA_ISO.test(String(a.at ?? ''))) {
+                      errors.push(
+                        `${rot}: "archived.at" é ${JSON.stringify(a.at)}. Tem de ser a data e ` +
+                          `a hora da captura, AAAA-MM-DDTHH:MM:SSZ: uma captura sem instante ` +
+                          `não diz de que dia é o ficheiro que guardou.`,
+                      );
+                    }
+                    if (typeof a.digest_match !== 'boolean') {
+                      errors.push(
+                        `${rot}: "archived.digest_match" é ${JSON.stringify(a.digest_match)}, ` +
+                          `e tem de ser um booleano: ou o resumo da captura é o dos bytes ` +
+                          `contados, ou não é.`,
+                      );
+                    }
+                  }
                 }
               });
             }

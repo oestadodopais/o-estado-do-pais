@@ -601,6 +601,20 @@ const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undef
                       />
                       <span class="linha-resumo-corte">{CORTE}</span>
                     </span>
+                    {
+                      /* A porta para a cópia arquivada, e só quando o resumo da
+                         captura é o dos bytes contados. `digest_match` falso
+                         deixa o campo como registo e não abre porta nenhuma:
+                         uma captura que não bate certo leva a outro ficheiro. */
+                      f.archived?.digest_match === true && (
+                        <>
+                          {' · '}
+                          <a href={f.archived.url} rel="nofollow noopener">
+                            {s.prov.calculadoSobreArquivada}
+                          </a>
+                        </>
+                      )
+                    }
                   </li>
                 ))}
               </ul>
