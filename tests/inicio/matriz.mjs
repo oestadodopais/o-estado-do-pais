@@ -483,30 +483,30 @@ const estadoDaPagina = (p) =>
   await p.goto(base + '/', { waitUntil: 'networkidle' });
   const f = await p.evaluate(() => {
     const ficha = document.querySelector('[data-mapa-ficha]');
-    const fundo = document.querySelector('[data-mapa-fundo]');
+    const aparelho = document.querySelector('[data-mapa-aparelho]');
     return {
       alturaDaFicha: Math.round(ficha.getBoundingClientRect().height),
       citacaoNaFicha: !!ficha.querySelector('[data-verbatim]'),
       csvNaFicha: !!ficha.querySelector('.ligacao-dados'),
       dicasNaFicha: !!ficha.querySelector('[data-dica-cursor], [data-teclado]'),
-      citacaoNoFundo: !!fundo.querySelector('[data-verbatim]'),
-      csvNoFundo: !!fundo.querySelector('.ligacao-dados'),
-      dicasNoFundo: fundo.querySelectorAll('[data-dica-cursor], [data-teclado]').length,
+      citacaoNoAparelho: !!aparelho.querySelector('[data-verbatim]'),
+      csvNoAparelho: !!aparelho.querySelector('.ligacao-dados'),
+      dicasNoAparelho: aparelho.querySelectorAll('[data-dica-cursor], [data-teclado]').length,
       fonteCurta: !!ficha.querySelector('.mapa-fonte-curta a.src-chip'),
-      fundoFechado: !fundo.open,
+      aparelhoFechado: !aparelho.open,
     };
   });
   conta(
-    'a ficha do mapa é compacta e o fundo leva a citação, o CSV e as dicas',
+    'a ficha do mapa é compacta e o aparelho leva a citação, o CSV e as dicas',
     !f.citacaoNaFicha &&
       !f.csvNaFicha &&
       !f.dicasNaFicha &&
-      f.citacaoNoFundo &&
-      f.csvNoFundo &&
-      f.dicasNoFundo === 2 &&
+      f.citacaoNoAparelho &&
+      f.csvNoAparelho &&
+      f.dicasNoAparelho === 2 &&
       f.fonteCurta &&
-      f.fundoFechado,
-    `ficha ${f.alturaDaFicha}px · citação, CSV e dicas na camada de fundo, fechada · linha de fonte com selo`,
+      f.aparelhoFechado,
+    `ficha ${f.alturaDaFicha}px · citação, CSV e dicas na camada do aparelho, fechada · linha de fonte com selo`,
   );
   await p.__contexto.close();
 }
@@ -899,6 +899,294 @@ for (const largura of [1280, 390]) {
       noPais === false,
     `1280 no âmbito Município ${lidas[1280]} · 390 ${lidas[390]} · sem script 1280 ${lidas['1280-sem-js']} e 390 ${lidas['390-sem-js']} · 1280 no âmbito País ${noPais}`,
   );
+}
+
+/* =============================================================================
+ * ETAPA 2i · as células da leitura cruzada
+ * ========================================================================== */
+
+/* (2i·1) Portugal não é uma região, e a régua continua a ter as seis leituras. */
+{
+  const p = await pagina();
+  await p.goto(`${base}/?ambito=regiao:portugal`, { waitUntil: 'networkidle' });
+  const e = await estadoDaPagina(p);
+  const c = await p.evaluate(() => {
+    const chaves = (sel, attr) =>
+      [...document.querySelectorAll(sel)]
+        .map((x) => x.getAttribute(attr))
+        .filter((k) => k && k.indexOf('regiao:') === 0);
+    return {
+      cabecas: chaves('[data-cabeca]', 'data-cabeca'),
+      paineis: chaves('[data-painel]', 'data-painel'),
+      pastilhas: document.querySelectorAll('[data-regiao]').length,
+      pontosDaBanda: document.querySelectorAll('[data-banda-ponto]').length,
+      barrasDaBanda: document.querySelectorAll('[data-banda]').length,
+      portugalNaBanda: !!document.querySelector('[data-banda-ponto="portugal"]'),
+      portugalNaLegenda: document.body.textContent.indexOf('Portugal') >= 0,
+      portugalNoInstrumento: !!document.querySelector('[data-regiao-chip="pt"]'),
+    };
+  });
+  conta(
+    '2i·1 · Portugal não é uma região: sem estado, e na régua como referência',
+    e.ambito === 'pais' &&
+      e.url === '/' &&
+      c.cabecas.length === 5 &&
+      c.paineis.length === 5 &&
+      c.pastilhas === 5 &&
+      c.pontosDaBanda === 6 &&
+      c.barrasDaBanda === 5 &&
+      c.portugalNaBanda &&
+      c.portugalNoInstrumento,
+    `?ambito=regiao:portugal → ${e.ambito}, endereço «${e.url}» · ${c.cabecas.length} cabeças, ${c.paineis.length} painéis e ${c.pastilhas} pastilhas de região · banda: ${c.pontosDaBanda} pontos e ${c.barrasDaBanda} barras, Portugal ponto ${c.portugalNaBanda} · instrumento n.º 1 com Portugal ${c.portugalNoInstrumento}`,
+  );
+  await p.__contexto.close();
+}
+
+/* (2i·2) A palavra da ressalva segue a edição, e não a língua por defeito de
+   `Claim.astro`. Contam-se TODAS, inclusive as dos blocos escondidos: um estado
+   que o leitor pode acender é um estado que o portão e a matriz têm de ver. */
+{
+  const p = await pagina();
+  const lidas = {};
+  for (const [rota, edicao] of [
+    ['/', 'pt'],
+    ['/en/', 'en'],
+  ]) {
+    await p.goto(base + rota, { waitUntil: 'networkidle' });
+    lidas[edicao] = await p.evaluate(() => {
+      const conta = {};
+      for (const el of document.querySelectorAll('.claim-provisorio')) {
+        const t = el.textContent.trim();
+        conta[t] = (conta[t] ?? 0) + 1;
+      }
+      return conta;
+    });
+  }
+  const soUma = (o, palavra) => Object.keys(o).length === 1 && o[palavra] > 0;
+  conta(
+    '2i·2 · a palavra do provisório segue a edição, nas duas',
+    soUma(lidas.pt, 'provisório') &&
+      soUma(lidas.en, 'provisional') &&
+      lidas.pt['provisório'] === lidas.en['provisional'],
+    `pt ${JSON.stringify(lidas.pt)} · en ${JSON.stringify(lidas.en)}`,
+  );
+  await p.__contexto.close();
+}
+
+/* (2i·3a) Os 308 pontos do mapa têm o mesmo tamanho: a cobertura é o enchimento. */
+{
+  const p = await pagina();
+  await p.goto(`${base}/`, { waitUntil: 'networkidle' });
+  const m = await p.evaluate(() => {
+    const pontos = [...document.querySelectorAll('[data-pontos] .mun')];
+    const lados = new Set(
+      pontos.map((x) => `${x.getAttribute('width')}×${x.getAttribute('height')}`),
+    );
+    const cheios = pontos.filter((x) => x.classList.contains('mun-com-pagina'));
+    return { n: pontos.length, lados: [...lados], cheios: cheios.length };
+  });
+  conta(
+    '2i·3a · os 308 pontos do mapa têm o mesmo tamanho (Emenda 3)',
+    m.n === 308 && m.lados.length === 1 && m.cheios === 1,
+    `${m.n} pontos · ${m.lados.length} tamanho(s): ${m.lados.join(', ')} · ${m.cheios} com página`,
+  );
+  await p.__contexto.close();
+}
+
+/* (2i·3b) O CONCELHO ESCOLHIDO É UM ANEL, E NUNCA UM ENCHIMENTO.
+ *
+ * A medida não converte cores: compara o enchimento do ponto ESCOLHIDO com o de
+ * outro ponto sem página do mesmo documento, que é o papel por definição. Se os
+ * dois forem iguais, o escolhido não está cheio; se o escolhido for igual ao de
+ * Évora, está a dizer que tem página. */
+{
+  const leituraDoPonto = (p, slug) =>
+    p.evaluate((s) => {
+      const escolhido = document.querySelector(`[data-pontos] [data-caop="${s}"]`);
+      const outroSemPagina = [...document.querySelectorAll('[data-pontos] .mun')].find(
+        (x) => x !== escolhido && !x.classList.contains('mun-com-pagina'),
+      );
+      const comPagina = document.querySelector('[data-pontos] .mun-com-pagina');
+      const est = (el) => {
+        const cs = getComputedStyle(el);
+        return { fill: cs.fill, stroke: cs.stroke, largura: parseFloat(cs.strokeWidth) };
+      };
+      return {
+        temClasse: escolhido.classList.contains('mun-escolhido'),
+        escolhido: est(escolhido),
+        papel: est(outroSemPagina),
+        tinta: est(comPagina),
+      };
+    }, slug);
+
+  const linhas = [];
+  let bem = true;
+  for (const [rota, largura, nome] of [
+    ['/?ambito=municipio:beja', 1280, 'Beja · 1280 · relance'],
+    ['/?ambito=municipio:beja&densidade=leitura', 1280, 'Beja · 1280 · leitura (localizador)'],
+    ['/?ambito=municipio:beja', 390, 'Beja · 390'],
+  ]) {
+    const p = await pagina({ largura });
+    await p.goto(base + rota, { waitUntil: 'networkidle' });
+    const r = await leituraDoPonto(p, 'beja');
+    const ok =
+      r.temClasse &&
+      r.escolhido.fill === r.papel.fill &&
+      r.escolhido.fill !== r.tinta.fill &&
+      r.escolhido.largura > r.papel.largura;
+    if (!ok) bem = false;
+    linhas.push(
+      `${nome}: enchimento ${r.escolhido.fill} = papel ${r.papel.fill} · ≠ tinta ${r.tinta.fill} · anel ${r.escolhido.largura} contra ${r.papel.largura}`,
+    );
+    await p.__contexto.close();
+  }
+  /* E o contrário: Évora escolhida continua cheia, porque TEM página. */
+  const pe = await pagina();
+  await pe.goto(`${base}/?ambito=municipio:evora`, { waitUntil: 'networkidle' });
+  const ev = await leituraDoPonto(pe, 'evora');
+  const evoraOk = ev.temClasse && ev.escolhido.fill === ev.tinta.fill;
+  if (!evoraOk) bem = false;
+  linhas.push(`Évora escolhida: enchimento ${ev.escolhido.fill} = tinta ${ev.tinta.fill}`);
+  await pe.__contexto.close();
+
+  conta(
+    '2i·3b · o ponto escolhido é um anel de tinta, e nunca um enchimento',
+    bem,
+    linhas.join(' · '),
+  );
+}
+
+/* (2i·3c) A frase de neutralidade fica ao pé do mapa em todas as posturas. */
+{
+  const linhas = [];
+  let bem = true;
+  for (const [rota, largura, nome] of [
+    ['/', 1280, 'País · inteiro'],
+    ['/?ambito=municipio:beja', 1280, 'escolha · inteiro'],
+    ['/?ambito=municipio:evora&densidade=leitura', 1280, 'Évora · localizador'],
+    ['/?ambito=municipio:evora&densidade=leitura', 390, 'Évora · localizador · 390'],
+    ['/', 390, 'País · 390'],
+  ]) {
+    const p = await pagina({ largura });
+    await p.goto(base + rota, { waitUntil: 'networkidle' });
+    const r = await p.evaluate(() => {
+      const figura = document.querySelector('[data-mapa-raiz]');
+      const frase = document.querySelector('.mapa-neutro').textContent.trim();
+      const todas = [...document.querySelectorAll('.mapa-neutro, .mapa-cartao-neutro')];
+      const visiveis = todas.filter((e) => e.getClientRects().length > 0);
+      return {
+        postura: figura.getAttribute('data-postura'),
+        frase,
+        visiveis: visiveis.length,
+        iguais: visiveis.every((e) => e.textContent.trim() === frase),
+        dentroDoMapa: visiveis.every((e) => !!e.closest('[data-mapa-raiz]')),
+      };
+    });
+    const ok = r.visiveis === 1 && r.iguais && r.dentroDoMapa;
+    if (!ok) bem = false;
+    linhas.push(`${nome} (${r.postura}): ${r.visiveis} visível, dentro do mapa ${r.dentroDoMapa}`);
+    await p.__contexto.close();
+  }
+  conta(
+    '2i·3c · a frase de neutralidade acompanha o mapa em todas as posturas',
+    bem,
+    linhas.join(' · '),
+  );
+}
+
+/* (2i·3d) Abaixo de 640 nenhum ponto é activável, por nenhum meio. */
+{
+  const sonda = async (largura) => {
+    const p = await pagina({ largura });
+    await p.goto(`${base}/?ambito=municipio:beja`, { waitUntil: 'networkidle' });
+    const alvos = await p.evaluate(
+      () =>
+        getComputedStyle(document.querySelector('[data-alvos] [data-caop]')).pointerEvents,
+    );
+    await p.focus('[data-mapa-wrap]');
+    await p.keyboard.press('ArrowRight');
+    const leitura = await p.evaluate(
+      () => document.querySelector('[data-readout-nome]')?.textContent.trim() ?? '',
+    );
+    await p.keyboard.press('Enter');
+    const depoisDoEnter = (await estadoDaPagina(p)).ambito;
+    await p.keyboard.press('Space');
+    const depoisDoEspaco = (await estadoDaPagina(p)).ambito;
+    await p.__contexto.close();
+    return { alvos, leitura, depoisDoEnter, depoisDoEspaco };
+  };
+  const estreito = await sonda(390);
+  const largo = await sonda(1280);
+  conta(
+    '2i·3d · abaixo de 640 nenhum ponto é activável, e a leitura fica',
+    estreito.alvos === 'none' &&
+      estreito.depoisDoEnter === 'municipio:beja' &&
+      estreito.depoisDoEspaco === 'municipio:beja' &&
+      estreito.leitura.length > 0 &&
+      largo.alvos !== 'none' &&
+      largo.depoisDoEnter !== 'municipio:beja',
+    `390: alvos «${estreito.alvos}», seta lê «${estreito.leitura}», Enter → ${estreito.depoisDoEnter}, espaço → ${estreito.depoisDoEspaco} · 1280: alvos «${largo.alvos}», Enter → ${largo.depoisDoEnter}`,
+  );
+}
+
+/* (2i·5) O espaço activa os comandos, como o Enter, e não rola a página. */
+{
+  const p = await pagina();
+  await p.goto(`${base}/`, { waitUntil: 'networkidle' });
+  await p.focus('[data-densidade="leitura"]');
+  await p.keyboard.press('Space');
+  const a = await estadoDaPagina(p);
+  const rolou = await p.evaluate(() => window.scrollY);
+  await p.focus('[data-modo="regiao"]');
+  await p.keyboard.press('Space');
+  const b = await estadoDaPagina(p);
+  /* Os comandos são os DESCENDENTES de `[data-inicio]`: a própria raiz leva
+     `data-modo` e `data-densidade` como estado, e não é um comando. É o mesmo
+     alcance com que o script os apanha. */
+  const papeis = await p.evaluate(() => {
+    const raiz = document.querySelector('[data-inicio]');
+    const papel = (sel) => {
+      const es = [...raiz.querySelectorAll(sel)];
+      return `${es.filter((e) => e.getAttribute('role') === 'button').length}/${es.length}`;
+    };
+    return { ambito: papel('[data-modo]'), densidade: papel('[data-densidade]') };
+  });
+  const todosBotoes = (r) => r.split('/')[0] === r.split('/')[1] && r.split('/')[1] !== '0';
+  conta(
+    '2i·5 · o espaço activa os comandos de âmbito e de densidade',
+    a.densidade === 'leitura' &&
+      b.modo === 'regiao' &&
+      rolou === 0 &&
+      todosBotoes(papeis.ambito) &&
+      todosBotoes(papeis.densidade),
+    `espaço na densidade → ${a.densidade} (rolagem ${rolou}) · espaço no âmbito → modo ${b.modo} · com role="button": âmbito ${papeis.ambito}, densidade ${papeis.densidade}`,
+  );
+  await p.__contexto.close();
+}
+
+/* (2i·5) Nenhuma régua fica com papel de imagem e sem nome. */
+{
+  const p = await pagina();
+  await p.goto(`${base}/?densidade=leitura`, { waitUntil: 'networkidle' });
+  const r = await p.evaluate(() => {
+    const svgs = [...document.querySelectorAll('svg.regua-svg')];
+    const semNome = (s) =>
+      !s.getAttribute('aria-label') &&
+      !s.getAttribute('aria-labelledby') &&
+      !s.querySelector('title, desc');
+    return {
+      n: svgs.length,
+      escondidas: svgs.filter((s) => s.getAttribute('aria-hidden') === 'true').length,
+      papelSemNome: svgs.filter((s) => s.getAttribute('role') === 'img' && semNome(s)).length,
+      focaveisDentro: svgs.filter((s) => s.querySelector('a[href],button,input,[tabindex]')).length,
+    };
+  });
+  conta(
+    '2i·5 · nenhuma régua com papel de imagem e sem nome acessível',
+    r.n > 0 && r.escondidas === r.n && r.papelSemNome === 0 && r.focaveisDentro === 0,
+    `${r.n} réguas · ${r.escondidas} com aria-hidden · ${r.papelSemNome} com role="img" sem nome · ${r.focaveisDentro} com conteúdo focável dentro`,
+  );
+  await p.__contexto.close();
 }
 
 /* --------------------------------------------------------------------- relatório */

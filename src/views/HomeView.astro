@@ -44,7 +44,7 @@ import { FIGURAS, comparacaoComOLimiar } from '../data/figuras.mjs';
 import { REGIOES, ESCALA } from '../data/regioes.mjs';
 import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { estadoDaMedida, estadoDaRegua } from '../lib/estado.mjs';
-import { concelhos, chaveDaRegiao, chaveDoConcelho } from '../lib/inicio.mjs';
+import { concelhos, chaveDaRegiao, chaveDoConcelho, REGIOES_DE_AMBITO } from '../lib/inicio.mjs';
 import { estadoDaVerificacao, prova } from '../lib/prova.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -83,14 +83,24 @@ const cs = concelhos();
 const evora = cs.find((c) => c.pagina) ?? null;
 const primeiroSemPagina = cs.find((c) => !c.pagina) ?? null;
 
-/* ------------------------------------------------------- as seis leituras da régua */
-const regioesDaBanda = REGIOES.map((r) => ({
+/* ------------------------------------------------------- as seis leituras da régua
+ *
+ * A RÉGUA TEM SEIS LEITURAS; O ÂMBITO TEM CINCO REGIÕES (etapa 2i, achado 5).
+ * Portugal está na régua — é a marca contra a qual as regiões se leem, e sai da
+ * mesma lista publicada — mas não é uma região e não tem estado: não tem ficha
+ * na cabeça, não tem painel, não tem pastilha, e `?ambito=regiao:portugal` cai
+ * no defeito como qualquer valor desconhecido. Quem separa as duas listas é o
+ * campo `referencia` de `regioes.mjs`, lido em `src/lib/inicio.mjs`.
+ */
+const leitura = (r) => ({
   slug: r.slug,
   nome: r.nome[lang],
   valor: r.valor,
   linha: getClaim(r.valor),
   frase: r.frase[lang],
-}));
+});
+const regioesDaBanda = REGIOES.map(leitura);
+const regioesDeAmbito = REGIOES_DE_AMBITO.map(leitura);
 
 /* ------------------------------------------------------------ Évora, na cabeça */
 /* O estado das oito medidas do concelho: o índice de dívida contra o tecto legal
@@ -145,7 +155,7 @@ const pecasDeEvora = evora
 
 const blocos = [
   { chave: 'pais', tipo: 'pais', estados: medidas.map((m) => m.estado) },
-  ...regioesDaBanda.map((r) => ({
+  ...regioesDeAmbito.map((r) => ({
     chave: chaveDaRegiao(r.slug),
     tipo: 'regiao',
     nome: r.nome,
@@ -192,7 +202,7 @@ const blocos = [
     <div class="cmd-sub" data-sub="regiao" hidden>
       <div class="cmd-chips">
         {
-          regioesDaBanda.map((r) => (
+          regioesDeAmbito.map((r) => (
             <a
               class="chipb"
               href={`${home}?ambito=${chaveDaRegiao(r.slug)}`}
@@ -244,8 +254,16 @@ const blocos = [
       </div>
     </div>
 
+    {/* A banda desenha as SEIS leituras (a régua é uma só, e Portugal é a marca
+        de referência), mas só as CINCO regiões têm barra e podem ser escolhidas. */}
     <div data-banda-caixa hidden>
-      <BandaDaRegiao s={s} lang={lang} regioes={regioesDaBanda} escolhida={regioesDaBanda[0].slug} />
+      <BandaDaRegiao
+        s={s}
+        lang={lang}
+        regioes={regioesDaBanda}
+        escolhiveis={regioesDeAmbito}
+        escolhida={regioesDeAmbito[0].slug}
+      />
     </div>
 
     {/* A região viva do anúncio: uma só, e sempre com palavras que já estão na
@@ -285,8 +303,13 @@ const blocos = [
       }
     </div>
 
+    {/* A FRASE DA REGIÃO NÃO SE REPETE AQUI (etapa 2i, achado 6, R4). A frase de
+        cada região era a manchete deste âmbito E o texto da sua peça, uma por
+        cima da outra no mesmo ecrã, com o mesmo valor e o mesmo selo duas vezes.
+        A manchete é o sítio onde ela se lê; a peça leva o valor, a sua régua e o
+        seu selo. O registo passa de três ocorrências por região a duas. */}
     {
-      regioesDaBanda.map((r) => (
+      regioesDeAmbito.map((r) => (
         <div class="painel painel-um" data-painel={chaveDaRegiao(r.slug)} hidden>
           <Peca
             s={s}
@@ -298,7 +321,6 @@ const blocos = [
               ' · ',
               { ref: '2024' },
             ]}
-            frase={r.frase}
             estado="sem"
             regua={{
               valor: parsePtNumber(r.linha.value),
@@ -412,6 +434,19 @@ const blocos = [
       }}
     />
   </div>
-</Base>
 
-<script src="/js/inicio.js" defer is:inline></script>
+  {/* ----------------------------------------------------------------------
+      O SCRIPT DENTRO DO DOCUMENTO (etapa 2i, achado 18)
+      ----------------------------------------------------------------------
+      Estava depois de `</Base>`, e um `is:inline` não se move: a página
+      construída acabava em `</body></html><script …>`, com a etiqueta fora do
+      documento. Nenhum motor deixa de a executar, mas um documento que fecha e
+      continua não é HTML válido, e a promessa desta página é que o que se serve
+      é o que se diz.
+
+      O lugar é o mesmo que `convergencia.js` já usava: dentro da ranhura de
+      `Base.astro`, no fim do que a vista escreve. `defer` mantém a ordem e a
+      execução depois da análise do documento.
+      ---------------------------------------------------------------------- */}
+  <script src="/js/inicio.js" defer is:inline></script>
+</Base>

@@ -302,9 +302,13 @@ export const STRINGS = {
       pais: 'País',
       regiao: 'Região',
       municipio: 'Município',
-      /* A meta da fila das regiões. Seis, e não cinco: Portugal está na régua da
-         convergência com as outras cinco, e a banda desenha-o como elas. */
-      regioesMeta: 'As seis leituras publicadas na régua da convergência.',
+      /* A meta da fila das regiões. Dizia «as seis leituras» porque a etapa 2
+         rendia seis pastilhas, com Portugal entre elas; a leitura cruzada de
+         20.08 mostrou que Portugal não é uma região, e a fila passou a cinco
+         (plano §13). A frase deixa de contar: as leituras que a régua publica
+         continuam a ser seis, e as regiões da fila são as que a fila mostra.
+         Contar aqui obrigaria a mudar a frase de cada vez que a lista mudasse. */
+      regioesMeta: 'As regiões publicadas na régua da convergência.',
       pesquisaRotulo: 'Escreva o nome do concelho',
       pesquisaSemResultado: 'Nenhum concelho com esse nome.',
     },
@@ -1145,7 +1149,7 @@ export const STRINGS = {
       pais: 'Country',
       regiao: 'Region',
       municipio: 'Municipality',
-      regioesMeta: 'The six readings published on the convergence rule.',
+      regioesMeta: 'The regions published on the convergence rule.',
       pesquisaRotulo: 'Type the name of the concelho',
       pesquisaSemResultado: 'No concelho by that name.',
     },

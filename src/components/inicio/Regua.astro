@@ -27,7 +27,7 @@
  */
 import { escalaDaRegua, posicaoNaRegua } from '../../lib/estado.mjs';
 
-const { valor, referencia, estado = 'sem', colore = false, rotuloId = null } = Astro.props;
+const { valor, referencia, estado = 'sem', colore = false } = Astro.props;
 
 /* O rótulo da referência entra por ranhura, e não por propriedade: é MARCAÇÃO —
    a palavra «limiar», o sinal, e o algarismo debaixo do motivo
@@ -71,12 +71,27 @@ const ponta = pr === null ? null : pr >= 82 ? 'dir' : pr <= 18 ? 'esq' : null;
   escala && pv !== null && pr !== null && (
     <div class="regua" data-regua data-colore={colore ? 'sim' : 'nao'}>
       <div class="regua-tela">
+        {/* ------------------------------------------------------------------
+            A RÉGUA É UM DESENHO DAS PALAVRAS QUE ESTÃO AO PÉ DELA
+            ------------------------------------------------------------------
+            Etapa 2i, achado 16: as onze réguas da página levavam `role="img"`
+            sem nome nenhum — nem `aria-label`, nem `aria-labelledby`, nem
+            `<title>`. Um `role="img"` sem nome é uma imagem que um leitor de
+            ecrã anuncia sem saber dizer o que é, e a propriedade `rotuloId` que
+            prometia esse nome nunca era passada por ninguém: saiu.
+
+            Das duas saídas que o brief dá, esta é a certa aqui: `aria-hidden`.
+            Tudo o que a régua desenha já está escrito ao lado dela em palavras
+            validadas — o valor com o seu selo, o rótulo da referência, as pontas
+            da escala e a palavra do estado —, e um nome acessível repetiria uma
+            das três em vez de acrescentar. Não há conteúdo focável lá dentro: o
+            desenho sai da árvore inteiro, e não fica nada por dizer.
+            ------------------------------------------------------------------ */}
         <svg
           class="regua-svg"
           viewBox={`0 0 ${W} 34`}
           preserveAspectRatio="none"
-          role="img"
-          aria-labelledby={rotuloId ?? undefined}
+          aria-hidden="true"
         >
           <line class="regua-calha" x1="0" y1={Y} x2={W} y2={Y} />
           <rect

@@ -149,13 +149,37 @@
      recarregar, e o que se anuncia é um estado premido e não um destino. O
      `href` fica, e passa a ser a forma do estado — assim continua a copiar-se,
      a abrir noutro separador e a partilhar-se. */
+
+  /* O ESPAÇO ACTIVA, COMO O ENTER (etapa 2i, achado 16).
+   *
+   * Um `<a href>` activa-se com Enter e não com espaço; um `role="button"`
+   * promete as duas teclas, e quem usa teclado ou leitor de ecrã conta com
+   * isso. Ao pôr o papel de botão nestes comandos sem lhes dar a tecla, a
+   * página passou a prometer uma coisa que não fazia — que é pior do que não a
+   * prometer.
+   *
+   * O `preventDefault` não é um detalhe: sem ele o espaço rola a página por
+   * baixo do comando que acabou de ser premido, e o leitor perde o sítio onde
+   * estava. O `click()` é o mesmo caminho do rato, com o mesmo `vai()` e a
+   * mesma devolução do foco; um `click()` sintético traz `detail` 0, que é
+   * exactamente o que as guardas da lista de proximidade já sabem recusar. */
+  function activaComEspaco(botao) {
+    botao.addEventListener('keydown', function (ev) {
+      if (ev.key !== ' ' && ev.key !== 'Spacebar') return;
+      ev.preventDefault();
+      botao.click();
+    });
+  }
+
   for (var a = 0; a < segsAmbito.length; a++) {
     segsAmbito[a].setAttribute('role', 'button');
     segsAmbito[a].removeAttribute('aria-current');
+    activaComEspaco(segsAmbito[a]);
   }
   for (var d = 0; d < segsDensidade.length; d++) {
     segsDensidade[d].setAttribute('role', 'button');
     segsDensidade[d].removeAttribute('aria-current');
+    activaComEspaco(segsDensidade[d]);
   }
 
   var estado = leDoEndereco();
@@ -454,6 +478,30 @@
     });
   }
 
+  /* ------------------------------------------------- um ponto é um alvo, aqui?
+   *
+   * Emenda 3: abaixo de 640 o SELO INTEIRO é o alvo e nenhum ponto é alvo. A
+   * folha di-lo com `pointer-events: none !important` em todos os `.mun-alvo`, e
+   * isso trava o rato e o dedo — mas não travava o teclado, que escolhia um
+   * concelho ponto a ponto a 390, onde nenhum outro gesto o consegue (etapa 2i,
+   * achado 8d).
+   *
+   * A pergunta faz-se À FOLHA e não a uma largura escrita aqui. O 640 vive numa
+   * `@media`, e uma segunda cópia dele neste ficheiro divergiria da primeira no
+   * dia em que a folha mudasse — é a mesma razão pela qual as listas fechadas
+   * são lidas do documento. O que se lê é a resposta da folha para o estado em
+   * que a página está, e essa resposta já inclui o âmbito, porque é o âmbito que
+   * acende os alvos.
+   *
+   * Falha do lado seguro: sem folha carregada o valor é `auto`, e a página fica
+   * com o comportamento que tinha. */
+  var alvoDeReferencia = mapa ? mapa.querySelector('[data-alvos] [data-caop]') : null;
+
+  function pontoEAlvo() {
+    if (!alvoDeReferencia || !window.getComputedStyle) return false;
+    return window.getComputedStyle(alvoDeReferencia).pointerEvents !== 'none';
+  }
+
   /* Um toque no mapa escolhe o concelho mais próximo, e só quando a página está
      a escolher: fora daí os pontos não são alvos. */
   if (mapa) {
@@ -461,7 +509,7 @@
     for (var c5 = 0; c5 < alvos.length; c5++) {
       (function (alvo) {
         alvo.addEventListener('click', function () {
-          if (modoEscolhido !== 'municipio') return;
+          if (modoEscolhido !== 'municipio' || !pontoEAlvo()) return;
           vai(
             { ambito: 'municipio:' + alvo.getAttribute('data-caop'), densidade: estado.densidade },
             'municipio',
@@ -705,7 +753,12 @@
 
     tela.addEventListener('keydown', function (ev) {
       if (ev.key === 'Enter' || ev.key === ' ') {
-        if (modoEscolhido !== 'municipio' || sel < 0) return;
+        /* A LEITURA FICA, A ESCOLHA NÃO (etapa 2i, achado 8d). Onde nenhum ponto
+           é alvo — no telemóvel, e na postura de localizador — as setas continuam
+           a percorrer o mapa e a dizer o nome do concelho em voz alta, que é
+           leitura e não escolha; o que não pode acontecer é o Enter ou o espaço
+           escolherem um ponto que nenhum outro gesto alcança. */
+        if (modoEscolhido !== 'municipio' || !pontoEAlvo() || sel < 0) return;
         ev.preventDefault();
         vai(
           { ambito: 'municipio:' + pontos[sel].slug, densidade: estado.densidade },

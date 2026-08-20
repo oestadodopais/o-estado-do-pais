@@ -2,8 +2,12 @@
 /**
  * Instrumento n.º 1 — a régua da convergência.
  *
- * Três camadas no mesmo gráfico: Relance, Leitura breve, Fundo. A profundidade
- * abre-se dentro do instrumento, nunca noutra página.
+ * Duas densidades no mesmo gráfico — Relance e Leitura breve —, e por baixo
+ * delas o APARELHO: método, ressalvas e proveniência. O aparelho não é uma
+ * terceira densidade, e a distinção não é de palavras: as densidades são um
+ * comando com dois estados no cimo da página, e o aparelho é o que qualquer
+ * instrumento leva por baixo para se poder conferir. A profundidade abre-se
+ * dentro do instrumento, nunca noutra página.
  *
  * Sem JavaScript, a régua já está desenhada com Portugal em cima dela: o SVG
  * é construído no servidor. O JavaScript só acrescenta a possibilidade de pôr
@@ -97,7 +101,7 @@ const ilha = {
 };
 const ilhaJson = JSON.stringify(ilha).replace(/</g, '\\u003c');
 
-/* --- proveniência agrupada por estudo, para a camada Fundo --- */
+/* --- proveniência agrupada por estudo, para a camada do aparelho --- */
 const porEstudo = new Map();
 for (const r of REGIOES) {
   const claim = getClaim(r.valor);
@@ -111,7 +115,10 @@ for (const r of REGIOES) {
     <!-- CAMADA 1 — RELANCE -->
     <p class="layer-tag">{lang === 'pt' ? 'Relance' : 'At a glance'}</p>
     <div class="glance">
-      <Claim id={inicial.valor_claim} class="glance-num" as="div" data-glance-num />
+      {/* `lang` é obrigatório aqui pela mesma razão que na peça (etapa 2i,
+          achado 7): a palavra «provisório» vem de `Claim.astro`, que assume
+          português quando a língua não chega. Era o sétimo caso. */}
+      <Claim id={inicial.valor_claim} lang={lang} class="glance-num" as="div" data-glance-num />
       {/* O selo do valor em relance. Um por região, e o JavaScript mostra o da
           região que está a ser lida — a mesma mecânica dos selos da leitura
           breve, para que a porta acompanhe o número em vez de ficar presa à
@@ -260,8 +267,24 @@ for (const r of REGIOES) {
     <p class="map-hint" data-sem-js>{s.home.instr1.semJs}</p>
   </div>
 
-  <!-- CAMADA 3 — FUNDO -->
-  <details class="deep">
+  {/* --------------------------------------------------------------------
+      O APARELHO DO INSTRUMENTO (etapa 2i, achado 9)
+      --------------------------------------------------------------------
+      Esta dobra tinha o nome da terceira densidade da v2, que a Emenda 2
+      aposentou, e um comentário de camada por cima. O que está aqui dentro
+      nunca foi uma densidade: é o aparelho do instrumento, «Método, ressalvas e
+      proveniência», o mesmo que o mapa leva por baixo e com o mesmo rótulo.
+      Mudou o nome e saiu o comentário; não mudou uma palavra do que se lê. A
+      história inteira está na nota da etapa.
+
+      As regras da folha para esta dobra vivem em `src/styles/inicio.css` e não
+      em `site.css`: `.deep` continua a governar as dobras de `EstudoView` e
+      `MunicipioView`, que são das etapas 3 e 4 e não são deste construtor. As
+      classes de dentro (`deep-body`, `deep-k`, `deep-v`) ficam como estão
+      precisamente por isso — renomeá-las aqui daria três nomes à mesma coisa em
+      três vistas, e o nome a mudar era o da dobra.
+      -------------------------------------------------------------------- */}
+  <details class="aparelho">
     <summary>{s.home.instr1.deepTitulo}</summary>
     <div class="deep-body">
       <div class="deep-item">

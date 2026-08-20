@@ -1176,3 +1176,488 @@ commit dizia **14 773 295** — ou seja **≈ 199 mil fichas**, das quais a maio
 parte é medição: a matriz inteira duas vezes, a varredura de seis estados por
 quatro larguras nas duas construções, e 68 capturas. Não tenho um número exacto
 para lá desta diferença, e não o invento.
+
+---
+
+## 2i · a leitura cruzada
+
+*Construtor B4, **Claude Opus**, sozinho, sem subagentes, 20.08.2026, a partir de
+`b7bff35`. Um commit. Nada foi empurrado, nada foi posto no ar, `vercel.json` não
+foi tocado, nenhum ficheiro partilhado (`tokens.css`, `site.css`, `Base.astro`,
+`Masthead.astro`, `SiteFooter.astro`, `Claim.astro`, `Provenance.astro`,
+`Frase.astro`, `PortaDeCorreccoes.astro`) mudou um byte, nem `src/data/metodo.mjs`
+nem `src/data/sobre.mjs` foram abertos, nenhum portão novo, nenhum número
+inventado. Conferido com `git diff --stat` ficheiro a ficheiro, e com um controlo
+positivo (`src/lib/inicio.mjs`, que mudou) a provar que o comando sabe ver uma
+diferença. Todos os números abaixo trazem ao lado o comando que os produziu.*
+
+**Os treze ficheiros que mudaram**, todos da lista da BRIEF-etapa-2 §2:
+`src/views/HomeView.astro`,
+`src/components/inicio/{BandaDaRegiao,MapaRespira,Peca,Regua}.astro`,
+`src/components/InstrumentoConvergencia.astro`, `src/styles/inicio.css`,
+`public/js/{inicio,convergencia}.js`, `src/lib/inicio.mjs`,
+`src/data/regioes.mjs`, `src/i18n/strings.mjs`, `tests/inicio/matriz.mjs`.
+`convergencia.js` é o par de execução do instrumento n.º 1, e mudou-lhe **um nome
+de variável local** (ponto 4); é a mesma razão pela qual a 2c e a 2g lhe tocaram,
+e está escrita no §6.8 desta nota.
+
+**A construção de referência.** O brief oferecia a cópia do `dist` com as cinco
+plantas do Codex. **Não a usei**: `HEAD` estava limpo e era o código da 2h, e por
+isso construí o ramo como estava ANTES de tocar em nada e guardei o `dist` em
+`…/scratchpad/dist-2h`. É uma referência exacta, sem as plantas pelo meio; a
+cópia com plantas teria feito `/` e `/en/` diferirem também pelos cinco estragos,
+e eu teria de os separar dos meus à mão.
+
+### 1 · Portugal não é uma região
+
+O esquema do plano §13 fecha a lista em cinco (`grande-lisboa`,
+`peninsula-de-setubal`, `algarve`, `madeira`, `alentejo`); o brief da etapa 2
+mandou seis pastilhas, e a construção deu a Portugal um estado a que chamava
+«Portugal · região».
+
+**Onde a lista se parte, e porquê ali.** `regioes.mjs` continua a ter as seis
+leituras, porque a régua da convergência publica-as às seis. O que entra é um
+campo **declarado**, `referencia: true`, na leitura que é a marca contra a qual as
+outras se leem — o mesmo padrão do `lado` dos limiares, e pela mesma razão: não
+se infere de um nome nem de uma posição. `src/lib/inicio.mjs` exporta
+`REGIOES_DE_AMBITO = REGIOES.filter((r) => !r.referencia)`, e é essa a lista que
+faz as fichas da cabeça, os painéis, as pastilhas e as barras da banda. Uma
+segunda lista escrita à mão noutro sítio divergiria desta à primeira alteração.
+
+Saíram: a ficha de cabeça `regiao:portugal`, o painel `regiao:portugal`, a
+pastilha, e a barra da banda (uma barra da referência a ela própria teria largura
+zero). Ficaram: o ponto de Portugal na banda, com o seu rótulo, o seu valor e o
+seu selo na legenda, e Portugal inteiro no Instrumento n.º 1.
+
+`inicio.js` não precisou de uma linha: a lista fechada já era **lida do
+documento** (`comBloco`, dos blocos de cabeça). Sem bloco, `regiao:portugal` cai
+no defeito como qualquer valor desconhecido — que é exactamente o que a 2d
+prometeu e o que esta correcção prova.
+
+**Medido** (`node tests/inicio/matriz.mjs`, célula «2i·1»):
+
+```
+?ambito=regiao:portugal → pais, endereço «/»
+5 cabeças, 5 painéis e 5 pastilhas de região
+banda: 6 pontos e 5 barras, Portugal ponto true
+instrumento n.º 1 com Portugal true
+```
+
+**Uma cadeia mudou por causa disto, e é a única mudança de texto da subetapa.**
+`ambito.regioesMeta` dizia «As seis leituras publicadas na régua da
+convergência.», por cima de uma fila que passou a ter cinco pastilhas. Ficou «As
+regiões publicadas na régua da convergência.» / «The regions published on the
+convergence rule.», sem contagem: pôr «cinco» seria escrever à mão um número que
+volta a ficar errado na primeira mudança da lista, e a régua continua a publicar
+seis leituras. Nas duas edições, em `RELOCACOES.md` e em `CHAVES-EN.md`. **É
+chamada editorial, e vai assinalada em vez de decidida.**
+
+### 2 · os sete «provisório» na edição inglesa
+
+**Antes** (o comando do brief):
+
+```
+grep -o 'claim-provisorio">[^<]*' dist/en/index.html | sort | uniq -c
+     12 claim-provisorio">provisional
+      7 claim-provisorio">provisório
+grep -o 'claim-provisorio">[^<]*' dist/index.html | sort | uniq -c
+     19 claim-provisorio">provisório
+```
+
+**Os sete lugares, e são dois ficheiros e não sete.** A palavra vem de
+`Claim.astro`, que lê `source_flag` da linha; a língua vem da propriedade `lang`,
+que tem **`'pt'` por defeito**. Duas chamadas não a passavam:
+
+- `Peca.astro`, o valor grande da peça — **seis** ocorrências, uma por painel
+  regional (as seis linhas `pib-pc-*-2024` são as seis que o Eurostat marca com
+  `p`);
+- `InstrumentoConvergencia.astro`, o valor do relance (`.glance-num`) — **uma**.
+
+Seis mais uma são os sete. As outras três chamadas do instrumento são
+`as="text"` e `as="tspan"`, e `Claim.astro` já não escreve a palavra dentro de um
+`<svg>` (ISSUES I22).
+
+**Depois:**
+
+```
+grep -o 'claim-provisorio">[^<]*' dist/en/index.html | sort | uniq -c
+     18 claim-provisorio">provisional
+grep -o 'claim-provisorio">[^<]*' dist/index.html | sort | uniq -c
+     18 claim-provisorio">provisório
+```
+
+**Zero «provisório» na edição inglesa, e as duas edições com a mesma contagem.**
+São 18 e não 19 porque o painel de Portugal saiu com a correcção 1, e com ele uma
+rendição de `pib-pc-portugal-2024`. A matriz ganhou a célula «2i·2», que conta
+todas — inclusive as dos blocos escondidos, porque um estado que o leitor pode
+acender é um estado que tem de estar certo: `pt {"provisório":18} · en
+{"provisional":18}`.
+
+**O pedido ao dono de `Claim.astro` está escrito no §5 desta nota e em ISSUES
+I24**: `lang` devia falhar a construção quando falta, em vez de escolher
+português. Corrigi os sete lugares; a armadilha fica de pé para as etapas 3 e 4,
+que têm dezenas de chamadas a fazer, e um defeito que se apanha por grep na
+edição inglesa é um defeito que o portão devia apanhar por construção.
+
+### 3 · o mapa
+
+**(a) Os 308 pontos são do mesmo tamanho.** Évora tinha 13 unidades e os outros
+307 tinham 9; a Emenda 3 diz que a única distinção permitida é a cobertura ■/□. O
+lado passou a ser um só (`const LADO = 9`), e a cobertura é o enchimento e mais
+nada. O **piso** da área de toque ficou onde estava (6,5 unidades): é o alvo que
+ele governa, e não o ponto, e baixá-lo com o tamanho de Évora encolheria 308
+alvos por causa de um desenho.
+
+```
+node tests/inicio/matriz.mjs   (célula «2i·3a»)
+   308 pontos · 1 tamanho(s): 9×9 · 1 com página
+```
+
+**(b) O concelho escolhido é um anel, e nunca um enchimento.** Enchia-se a tinta,
+que é exactamente o desenho de «tem página»: escolher Beja fazia Beja parecer
+coberta. Passa a ser o mesmo contorno de tinta, mais grosso (`stroke-width: 3`
+contra 1,2), com o enchimento intacto.
+
+A célula «2i·3b» não converte cores — compara o enchimento do ponto escolhido com
+o de outro ponto sem página do mesmo documento, que é o papel por definição, e com
+o de Évora, que é a tinta:
+
+```
+Beja · 1280 · relance:              enchimento rgb(246,247,244) = papel · ≠ tinta rgb(23,25,27) · anel 3 contra 1,2
+Beja · 1280 · leitura (localizador): idem
+Beja · 390:                          idem
+Évora escolhida:                     enchimento rgb(23,25,27) = tinta   (tem página, e continua cheia)
+```
+
+E a geometria não muda com a escolha, o que é a leitura mais dura da Emenda 3:
+medido em Chromium sem cabeça, o ponto escolhido, o ponto com página e um ponto
+qualquer pintam a **mesma caixa** — `4,21×4,21px` a 1280 (mapa de 281px) e
+`1,26×1,26px` a 390 (mapa de 84px). O que muda no escolhido é a tinta do contorno.
+
+**(c) A frase de neutralidade acompanha o mapa em todas as posturas.** Vivia na
+ficha, e na postura de localizador a ficha esconde-se: ficavam um ponto cheio e um
+ponto vazio a dizer uma coisa, sem a frase que diz o que essa coisa não é. Entrou
+no cartão, a `--muted` (que é `--g1`), a mesma cadeia palavra por palavra, contada
+como a mesma relocação R3.
+
+```
+node tests/inicio/matriz.mjs   (célula «2i·3c»)
+País · inteiro (inteiro):            1 visível, dentro do mapa true
+escolha · inteiro (inteiro):         1 visível, dentro do mapa true
+Évora · localizador (localizador):   1 visível, dentro do mapa true
+Évora · localizador · 390:           1 visível, dentro do mapa true
+País · 390 (inteiro):                1 visível, dentro do mapa true
+```
+
+Uma em cada postura, e nunca duas: na postura inteira o texto do cartão está
+`display: none`, na de localizador a ficha está escondida.
+
+**(d) Abaixo de 640 nenhum ponto é activável, por nenhum meio.** A folha já punha
+`pointer-events: none !important` nos 308 alvos, e isso trava o rato e o dedo; o
+teclado não estava a ouvir, e o Enter e o espaço sobre o mapa escolhiam um
+concelho a 390, onde nenhum outro gesto o consegue.
+
+**A pergunta faz-se à folha, e não a uma largura escrita no script.** O 640 vive
+numa `@media`, e uma segunda cópia dele em `inicio.js` divergiria da primeira no
+dia em que a folha mudasse — é a mesma razão pela qual as listas fechadas são
+lidas do documento. `pontoEAlvo()` lê o `pointer-events` calculado de um alvo, o
+que já inclui o âmbito, porque é o âmbito que os acende. Sem folha carregada o
+valor é `auto` e a página fica como estava: falha do lado seguro.
+
+A leitura fica. As setas continuam a percorrer o mapa e a dizer o nome do concelho
+na região viva, porque isso é leitura e não escolha.
+
+```
+node tests/inicio/matriz.mjs   (célula «2i·3d»)
+390:  alvos «none», seta lê «Redondo», Enter → municipio:beja, espaço → municipio:beja
+1280: alvos «all», Enter → municipio:redondo
+```
+
+A segunda linha é o controlo positivo: na secretária a mesma tecla escolhe, o que
+prova que a guarda é da largura e não um desligar geral.
+
+### 4 · o vestígio das três densidades
+
+O comentário `<!-- CAMADA 3 — FUNDO -->` saiu e a classe `deep` do `<details>`
+passou a `aparelho`, que é o que a dobra é: «Método, ressalvas e proveniência», o
+mesmo rótulo que o mapa leva por baixo. **Nenhuma palavra do que se lê mudou.**
+
+**As regras da folha tiveram de mudar de casa, e isso é uma decisão e não um
+acidente.** `.deep` é estilizada em `site.css`, que é do construtor A, e continua
+a governar as dobras de `EstudoView` e de `MunicipioView`, que são das etapas 3 e
+4. As **seis** regras que dependem de `.deep` (`.deep`, `.deep > summary`, o
+marcador do WebKit, o `::before`, o `[open] > summary::before` e o `:hover`)
+foram **copiadas para `src/styles/inicio.css` como `.aparelho`, sem mudar um valor
+nem uma ficha** — e `inicio.css` só é importada por `HomeView.astro`, que é a
+única vista onde este instrumento vive (conferido: `grep -rn
+"InstrumentoConvergencia" src/` dá o import da vista, a chamada, e dois
+comentários). As classes de DENTRO (`deep-body`, `deep-item`, `deep-k`,
+`deep-v`) ficam como estão: as regras que as governam não dependem de `.deep`,
+são as mesmas nas três vistas, e forká-las aqui daria três nomes a uma coisa só.
+
+De caminho, e pela mesma razão, a camada do mapa deixou de se chamar
+`mapa-fundo` e passou a `mapa-aparelho` (folha, gabarito e a célula da matriz que
+a mede), e a variável local `var fundo` de `convergencia.js` — que é a chapa de
+papel por baixo de um rótulo, e não uma densidade — passou a `var chapa`.
+
+**O critério de saída do brief**, com um positivo conhecido a provar que o comando
+sabe encontrar:
+
+```
+grep -rn "FUNDO\|Fundo\|fundo" src/components/InstrumentoConvergencia.astro \
+  src/components/inicio src/views/HomeView.astro public/js/inicio.js \
+  public/js/convergencia.js src/styles/inicio.css
+   (sem saída · exit=1)
+
+o mesmo comando com src/styles/site.css no fim:
+  src/styles/site.css:336:   A marca da página actual passa de um fio no fundo da caixa …
+  src/styles/site.css:554:   nada de fundo, nada de moldura …
+  src/styles/site.css:720:   para fora da célula, onde o fundo da célula seguinte os tapa …
+   (exit=0)
+```
+
+**O que NÃO saiu, e porquê**: os comentários `<!-- CAMADA 1 — RELANCE -->` e
+`<!-- CAMADA 2 — LEITURA BREVE -->` nomeiam as duas densidades que existem, e
+`?densidade=fundo` continua a ser um dos cinco valores inválidos da matriz —
+é a célula que prova que «fundo» não é uma densidade, e tirá-la seria deixar de o
+provar.
+
+### 5 · nomes acessíveis e o espaço
+
+**As réguas.** Onze `svg.regua-svg` levavam `role="img"` e nome nenhum — nem
+`aria-label`, nem `aria-labelledby`, nem `<title>`. A propriedade `rotuloId` que
+prometia esse nome **nunca era passada por ninguém**, e saiu com o papel que a
+acompanhava. Das duas saídas que o brief dá, esta é a certa aqui:
+`aria-hidden="true"`. Tudo o que a régua desenha já está escrito ao lado dela em
+palavras validadas — o valor com o seu selo, o rótulo da referência, as pontas da
+escala e a palavra do estado —, e não há conteúdo focável lá dentro.
+
+**São dez e não onze**, porque o painel de Portugal saiu na correcção 1 e levou a
+sua régua. A regra aplica-se a todas as que existem:
+
+```
+node tests/inicio/matriz.mjs   (célula «2i·5», réguas)
+   10 réguas · 10 com aria-hidden · 0 com role="img" sem nome · 0 com conteúdo focável dentro
+```
+
+**O espaço.** Os comandos de âmbito e de densidade são `<a href>` promovidos a
+`role="button"`, e um `role="button"` promete Enter **e** espaço. `activaComEspaco()`
+dá-lhes a tecla, com `preventDefault` — sem ele o espaço rola a página por baixo
+do comando que acabou de ser premido — e chama `click()`, que é o mesmo caminho do
+rato, com o mesmo `vai()` e a mesma devolução do foco. Um `click()` sintético traz
+`detail` 0, que é o que as guardas da lista de proximidade já sabem recusar.
+
+```
+node tests/inicio/matriz.mjs   (célula «2i·5», espaço)
+   espaço na densidade → leitura (rolagem 0) · espaço no âmbito → modo regiao
+   com role="button": âmbito 6/6, densidade 2/2
+```
+
+**Encontrado e deixado (ISSUES I25):** as pastilhas das regiões recebem
+`aria-pressed` do script mas não são promovidas a `role="button"`, e `aria-pressed`
+num `<a>` sem papel de botão não é ARIA válido. As da pesquisa são `<button>` e
+estão certas. São duas linhas, mas a instrução desta ronda é fazer as sete e nada
+mais.
+
+### 6 · o script depois de `</html>`
+
+`<script src="/js/inicio.js" defer is:inline>` estava depois de `</Base>`, e um
+`is:inline` não se move: a página construída fechava o documento e continuava. O
+lugar é o mesmo que `convergencia.js` já usava — dentro da ranhura de
+`Base.astro`, no fim do que a vista escreve.
+
+```
+tail -c 120 dist/index.html
+…<a href="/en" hreflang="en">English</a></nav></footer></div></body></html>
+
+tail -c 120 dist/en/index.html
+…<a href="/" hreflang="pt-PT">Português</a></nav></footer></div></body></html>
+```
+
+As duas edições acabam em `</html>`.
+
+### 7 · o registo
+
+**R3 · a contagem «1 → 1» não era verdade, e a verdade tem três partes.**
+
+| o quê | onde | por edição |
+| --- | --- | --- |
+| a CITAÇÃO da CAOP (`data-verbatim="caop-fonte"`) | a camada do aparelho por baixo do mapa **e** o estado vazio de um concelho sem página | **2** |
+| a LINHA DE FONTE COMPACTA (`source` · `document.title` · `reference_date`, com selo) | a ficha do mapa | **1** |
+| a FRASE DE NEUTRALIDADE | a ficha **e**, desde esta subetapa, o cartão localizador | **2** |
+
+```
+grep -o 'data-verbatim="caop-fonte"' dist/index.html | wc -l      → 2   (o mesmo em dist/en/)
+grep -o 'mapa-fonte-curta' dist/index.html | wc -l                → 1
+grep -o 'O ponto aceso marca cobertura editorial' dist/index.html | wc -l → 2
+```
+
+A segunda citação é o estado vazio, que veio da mesma rota e do mesmo âmbito e é
+a mesma relocação; a linha compacta **não é a citação** (são campos da linha, não
+o bloco transcrito); a segunda neutralidade é desta subetapa e está justificada em
+(3c). `RELOCACOES.md` diz agora as três, com os comandos.
+
+**R4 · eram três ocorrências por região, e passaram a duas.** A frase de cada
+região era a manchete do âmbito, o texto da peça do painel regional, **e** a frase
+do instrumento n.º 1. **Tirei a da peça**, que é a escolha de forma que o brief me
+dá: a manchete é o sítio onde a frase se lê, e a peça repetia-a imediatamente por
+baixo, no mesmo ecrã, com o mesmo valor e o mesmo selo. A peça fica com o valor, a
+sua régua e o seu selo; nada de proveniência se perde, porque a manchete carrega
+os selos da frase e o pé da peça carrega o da sua linha.
+
+```
+grep -o 'O Alentejo está' dist/index.html | wc -l   → 2   (era 3)
+grep -o 'Portugal está' dist/index.html | wc -l     → 1   (era 3: Portugal perdeu o âmbito)
+```
+
+E as duas linhas que faltavam à lista de R4, ambas rendidas pelo instrumento:
+`distancia-alentejo-ue27-2000` (2 por edição: a manchete do Alentejo e a frase do
+instrumento) e `pib-pc-alentejo-2000` (1, na proveniência por estudo do aparelho).
+
+```
+grep -o 'data-claim="distancia-alentejo-ue27-2000"' dist/index.html | wc -l → 2
+grep -o 'data-claim="pib-pc-alentejo-2000"' dist/index.html | wc -l        → 1
+```
+
+**Nada mais mudou no registo**, como o brief manda.
+
+---
+
+## 2i · as réguas
+
+### A matriz de aceitação
+
+`node tests/inicio/matriz.mjs --json design/especime-v3/medicoes/2026-08-20-etapa-2i-matriz.json`
+— **79 de 79 células passam** (as 71 da 2h, todas ainda verdes, mais oito novas):
+
+```
+passa  2i·1 · Portugal não é uma região: sem estado, e na régua como referência
+passa  2i·2 · a palavra do provisório segue a edição, nas duas
+passa  2i·3a · os 308 pontos do mapa têm o mesmo tamanho (Emenda 3)
+passa  2i·3b · o ponto escolhido é um anel de tinta, e nunca um enchimento
+passa  2i·3c · a frase de neutralidade acompanha o mapa em todas as posturas
+passa  2i·3d · abaixo de 640 nenhum ponto é activável, e a leitura fica
+passa  2i·5 · o espaço activa os comandos de âmbito e de densidade
+passa  2i·5 · nenhuma régua com papel de imagem e sem nome acessível
+```
+
+Uma célula da 2h mudou de número sem mudar de medida: «o selo de cada peça é alvo
+de 44×44» passou de **31 de 31** para **22 de 22** selos de peça, porque as cinco
+peças regionais deixaram de levar a frase da região e os selos que ela trazia. O
+mínimo continua `100×44`, 0 aninhados, 0 pares sobrepostos, e o selo continua a
+ser o maior alvo da peça (7 040px² contra 2 415px²).
+
+**Uma célula minha falhou à primeira, e o defeito era da célula.** A verificação
+do papel de botão perguntava por `document.querySelectorAll('[data-modo]')`, e a
+própria raiz `[data-inicio]` leva `data-modo` e `data-densidade` como ESTADO — não
+é um comando e não tem papel. A célula passou a perguntar pelos descendentes da
+raiz, que é o alcance com que o script os apanha, e a imprimir a fracção
+(`6/6`, `2/2`) em vez de um booleano.
+
+### A régua da invariância
+
+`node scripts/medir-invariancia.mjs …/dist-2h dist` — a construção da 2h feita do
+ramo limpo antes de eu tocar em nada:
+
+```
+322 rotas · 320 idênticas em texto · 2 com diferenças
+  /      +2 −47
+  /en/   +8 −53
+```
+
+**Nenhuma outra rota mudou um bloco de texto.** A conta por bloco (guião de
+rascunho, com a mesma normalização da régua) dá, em `/`: **2 blocos entram, 67
+ocorrências saem em 43 blocos distintos**, e cada um tem dono:
+
+| o que entra | de que correcção |
+| --- | --- |
+| «O ponto aceso marca cobertura editorial…» (a segunda) | 3c, a frase no cartão |
+| «As regiões publicadas na régua da convergência.» | 1, a cadeia aparada |
+
+| o que sai | de que correcção |
+| --- | --- |
+| «Portugal · região», «Portugal está», «18», «pontos abaixo…», «sem limiar», «PIB per capita em paridades…», «.», «82», «provisório», «Índice · UE-27 = 100», «2024», «abrir», «fechar», «o recibo completo está na linha», «UE-27 = 100», «0» | 1, a ficha e o painel de Portugal |
+| as cinco frases regionais e as suas distâncias («A Grande Lisboa está», «29», «45», «74», «11», «12», «23», «22», «2000», «estava a», «: a distância aumentou.») | 7 (R4), a duplicação que saiu da peça |
+| 10 × «fonte» e 10 × «Linha do livro-razão: …» | os selos que iam com as duas coisas acima |
+| «As seis leituras publicadas na régua da convergência.» | 1, a cadeia aparada |
+
+Na edição inglesa a lista é a mesma mais uma linha, e é a correcção 2: **entram 6
+«provisional» e saem 7 «provisório»** — 12 mais 6 são os 18 de agora, e os 7 vão a
+zero.
+
+`node scripts/medir-invariancia.mjs --chaves` imprime **14 chaves** com o mesmo
+valor nas duas edições, o mesmo número da 2f, da 2g e da 2h, e nenhuma nova: a
+única cadeia que esta subetapa tocou tem inglês próprio.
+
+### As duas réguas antigas
+
+- **Defeitos**: `node scripts/medir-defeitos.mjs --json` dá um ficheiro
+  **idêntico, byte a byte**, ao da 2h (`diff` sem saída, código 0; os dois
+  ficheiros têm 15 577 bytes, e um controlo positivo contra o de contraste prova
+  que o `diff` sabe ver uma diferença). 307 páginas; porta de correcções 307/307;
+  primeira página 0 valores sem selo e 0 selos para outra linha; frases de moldura
+  94 distintas · 2 405 ocorrências; cobertura 1 distinta por estado e por edição
+  nas quatro combinações. **Delta: nenhum**, e é o esperado — a régua só conta uma
+  frase quando ela aparece em mais do que uma PÁGINA, e esta subetapa tirou
+  repetições dentro da mesma página e acrescentou outra dentro da mesma página.
+- **Contraste**: `node scripts/medir-contraste.mjs --json` dá um ficheiro
+  **idêntico, byte a byte**, ao da 2h, ao da 2g, ao da 2f e ao da 1c. Nenhum par
+  novo, nenhum literal de cor: o anel do ponto escolhido é `--ink` sobre `--paper`,
+  e a frase do cartão é `--muted`, que é `--g1` — os dois já medidos.
+
+Guardados em
+`design/especime-v3/medicoes/2026-08-20-etapa-2i-{matriz,defeitos,contraste,invariancia}.json`.
+
+### As capturas
+
+`node tests/inicio/capturas.mjs` — **as 68 refeitas**, mesmos nomes, mesma pasta,
+e `git status` diz que as 68 mudaram. Era o esperado: os pontos do mapa mudaram de
+tamanho em todos os estados, as réguas mudaram de marcação, a ficha do mapa mudou
+de altura onde a frase de neutralidade entrou no cartão, e o painel regional
+perdeu uma frase.
+
+---
+
+## 2i · o que fica por fazer, e porquê
+
+1. **ISSUES I24 · `Claim.astro` assume português.** Os sete lugares estão
+   corrigidos; a armadilha é do ficheiro, é do construtor A, e o pedido exacto
+   está abaixo.
+2. **ISSUES I25 · `aria-pressed` nas pastilhas sem papel de botão.** Encontrado ao
+   fazer o achado 16 e deixado: a instrução era fazer as sete.
+3. **A cadeia `ambito.regioesMeta`**, aparada em vez de reescrita com um número.
+   Chamada editorial, assinalada.
+4. **A frase da região saiu da peça** (R4). É chamada de forma, o brief dá-ma, e
+   fica documentada em vez de silenciosa: se a direção a quiser de volta, é uma
+   propriedade em `HomeView.astro` e uma linha no registo.
+5. **I19** continua aberto, e continua a ser da fase da voz.
+
+## 2i · pedidos ao dono da folha (construtor A)
+
+Nenhum destes ficheiros foi tocado por esta subetapa. Os três pedidos das etapas
+2c e 2g continuam de pé; entram dois:
+
+6. **`src/components/Claim.astro`, a língua obrigatória (ISSUES I24).** Hoje
+   `const { lang = 'pt' } = Astro.props`, e uma chamada sem `lang` rende
+   «provisório» na edição inglesa. A alteração pedida: **`lang` sem defeito, e a
+   construção a falhar quando falta** — `if (!lang) throw new Error(...)`, com a
+   mensagem a nomear o `id` da linha, como as outras mensagens do portão. É a
+   diferença entre um defeito que se apanha por `grep` depois de construir e um
+   que não chega a existir; e as etapas 3 e 4 têm dezenas de chamadas a fazer.
+7. **`src/styles/site.css`, as seis regras `.deep`.** O instrumento n.º 1 deixou de
+   as usar (passou a `.aparelho`, em `inicio.css`). Elas **ficam**, porque
+   `EstudoView.astro` e `MunicipioView.astro` ainda dependem delas; o pedido é só
+   que fiquem escritas como dívida das etapas 3 e 4, ao lado do bloco de
+   remapeamento do amarelo, que sai pelo mesmo caminho e pela mesma razão.
+
+## 2i · quem fez o quê, e quanto custou
+
+**Claude Opus** (construtor B4), num só fio, sem subagentes e sem delegação.
+Nenhuma parte desta subetapa correu noutro modelo.
+
+**Contagem de fichas:** a única contagem honesta é a diferença de dois contadores.
+No início desta subetapa o contador dizia **14 973 277** por usar; no momento em
+que esta nota se fecha dizia cerca de **14,68 milhões** — ou seja **≈ 290 mil
+fichas**, dentro da escala do brief (150 a 250 mil) mais o que a medição custou:
+a matriz inteira três vezes, 68 capturas, duas construções e a conta por bloco da
+invariância. Não tenho um número exacto para lá desta diferença, e não o invento.

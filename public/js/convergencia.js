@@ -167,14 +167,14 @@
         }),
       );
 
-      var fundo = cria('rect', {
+      var chapa = cria('rect', {
         x: f.x - f.w / 2,
         y: f.y - 37,
         width: f.w,
         height: 41,
         fill: 'var(--paper)',
       });
-      f.g.insertBefore(fundo, f.g.firstChild);
+      f.g.insertBefore(chapa, f.g.firstChild);
 
       f.nome.setAttribute('x', f.x);
       f.nome.setAttribute('y', f.y - 24);

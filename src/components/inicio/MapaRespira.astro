@@ -8,10 +8,15 @@
  * «Nenhum município é destacado por estatuto — nem capital do país, nem capitais
  * de distrito ou região; todos os 308 pontos são iguais, e a única distinção
  * permitida é o estado de cobertura ■/□.» É o que este componente desenha: um
- * quadrado de contorno de tinta por concelho, cheio quando aquele concelho tem
- * página, e maior quando é o escolhido. Não há capital, não há sede de distrito,
- * não há tamanho por população. A legenda que a Emenda manda pôr ao lado está
- * aqui, e é a frase que já existia na v2 (relocação R3).
+ * quadrado de contorno de tinta por concelho, do MESMO tamanho para os 308, e
+ * cheio quando aquele concelho tem página. Não há capital, não há sede de
+ * distrito, não há tamanho por população, e não há tamanho por escolha: o
+ * concelho escolhido é um estado de interacção e leva um anel de tinta mais
+ * grosso, nunca enchimento — um concelho sem página que se enchesse ao ser
+ * escolhido estaria a dizer que tem página. A legenda que a Emenda manda pôr ao
+ * lado está aqui, e é a frase que já existia na v2 (relocação R3); desde a
+ * etapa 2i está TAMBÉM no cartão localizador, porque a ficha que a levava
+ * esconde-se nessa postura e a frase não pode desaparecer com ela.
  *
  * UM SÓ INSTRUMENTO, TRÊS POSTURAS. O mapa não se desenha três vezes: desenha-se
  * uma, e a folha muda-lhe o tamanho e o que está à volta.
@@ -56,23 +61,31 @@ import { routePath } from '../../lib/routes.mjs';
 
 const { s, lang, p, concelhos, evora } = Astro.props;
 
-/* A geometria dos pontos, em unidades do campo. O mapa inteiro desenha-se a
+/* OS 308 PONTOS SÃO DO MESMO TAMANHO (Emenda 3; etapa 2i, achado 8).
+   A construção dava 13 unidades a Évora e 9 aos outros 307, e a Emenda diz que
+   «todos os 308 pontos são iguais, e a única distinção permitida é o estado de
+   cobertura ■/□». Um ponto maior é uma segunda distinção, e diz «importante»
+   onde a página só queria dizer «tem página». A cobertura passa a ser o
+   ENCHIMENTO, e mais nada: □ contorno de tinta em papel, ■ cheio de tinta.
+
+   A geometria dos alvos, em unidades do campo. O mapa inteiro desenha-se a
    281px de largura, ou seja 0,468px por unidade de campo; um alvo de 24 CSS px
    de lado são 51,25 unidades, e portanto 25,6 de meia-largura. É esse o tecto:
    nenhum alvo passa dos 24px, e quase nenhum lá chega, porque o vizinho está
-   mais perto do que isso. A etapa 2f mede a distribuição toda. */
-const LADO = { normal: 9, comPagina: 13, escolhido: 19 };
+   mais perto do que isso (ISSUES I17). O PISO fica onde estava, em 6,5: é o
+   alvo que ele governa, não o ponto, e baixá-lo com o tamanho de Évora seria
+   encolher 308 alvos por causa de um desenho. */
+const LADO = 9;
 const TECTO_DO_ALVO = 25.6;
-const PISO_DO_ALVO = LADO.comPagina / 2;
+const PISO_DO_ALVO = 6.5;
 
 const pontos = concelhos.map((c) => {
-  const lado = c.pagina ? LADO.comPagina : LADO.normal;
   const meio = Math.max(PISO_DO_ALVO, Math.min(TECTO_DO_ALVO, c.alvo));
   return {
     ...c,
-    x0: c.x - lado / 2,
-    y0: c.y - lado / 2,
-    lado,
+    x0: c.x - LADO / 2,
+    y0: c.y - LADO / 2,
+    lado: LADO,
     ax: c.x - meio,
     ay: c.y - meio,
     aLado: meio * 2,
@@ -93,7 +106,7 @@ const parcelas = [
  * A ficha ao lado do mapa levava a citação inteira da CAOP — publicação,
  * distribuição, os três nomes de ficheiro, dois endereços e a data de acesso —
  * e era ela que mandava na altura da cabeça. A citação desce inteira para a
- * camada de fundo, onde continua a ser conferida carácter a carácter por
+ * camada do aparelho, onde continua a ser conferida carácter a carácter por
  * `data-verbatim`, e o que fica ao lado do mapa é UMA linha, montada dos campos
  * da própria linha do livro-razão: quem publica e o que publicou.
  *
@@ -204,6 +217,13 @@ const caop = getClaim('municipios-portugal-caop-2025');
         {s.inicio.mapa.coberturaB}
         <span data-cobertura="com-pagina">{s.cobertura.temPagina}</span>
       </p>
+      {/* A NEUTRALIDADE FICA AO PÉ DO MAPA EM TODAS AS POSTURAS (etapa 2i,
+          achado 8). A frase vive na ficha, e na postura de localizador a ficha
+          esconde-se: o mapa continuava lá, com um ponto cheio e um ponto vazio a
+          dizerem uma coisa, e a frase que diz o que essa coisa NÃO é tinha
+          desaparecido. É a mesma cadeia, palavra por palavra, e conta como a
+          mesma relocação (R3). */}
+      <p class="mapa-cartao-neutro">{s.inicio.mapa.naoDiz}</p>
       <p class="mapa-cartao-selo">
         <Claim id="municipios-portugal-caop-2025" lang={lang} chip={true} />
       </p>
@@ -252,8 +272,8 @@ const caop = getClaim('municipios-portugal-caop-2025');
     </div>
 
     {/* A linha de fonte compacta: quem publica, o que publicou, o ano da
-        edição, e o selo que abre a linha. A citação inteira está na camada de
-        fundo, aqui em baixo. */}
+        edição, e o selo que abre a linha. A citação inteira está na camada do
+        aparelho, aqui em baixo. */}
     <p class="mapa-fonte-curta">
       {caop.source} · {caop.document.title}{' '}
       <span data-nonledger="data-de-referencia">{caop.reference_date}</span>{' '}
@@ -278,7 +298,7 @@ const caop = getClaim('municipios-portugal-caop-2025');
   </figcaption>
 
   {/* ------------------------------------------------------------------------
-      A CAMADA DE FUNDO DO MAPA (subetapa 2g, ponto 2)
+      A CAMADA DO APARELHO DO MAPA (subetapa 2g, ponto 2; renomeada na 2i)
       ------------------------------------------------------------------------
       O rótulo é o do instrumento n.º 2 da v2, relocado com a sua secção (R3) e
       sem uma palavra mudada. Debaixo dele: a citação da CAOP inteira, tal como
@@ -293,9 +313,9 @@ const caop = getClaim('municipios-portugal-caop-2025');
       abaixo de 640 e na postura de localizador. Uma dica que descreve o que a
       página não faz é uma promessa falhada, e é mais barato não a escrever.
       ---------------------------------------------------------------------- */}
-  <details class="mapa-fundo" data-mapa-fundo>
-    <summary class="mapa-fundo-sum">{s.inicio.mapa.deepTitulo}</summary>
-    <div class="mapa-fundo-corpo">
+  <details class="mapa-aparelho" data-mapa-aparelho>
+    <summary class="mapa-aparelho-sum">{s.inicio.mapa.deepTitulo}</summary>
+    <div class="mapa-aparelho-corpo">
       <p class="mapa-fonte verbatim" data-verbatim="caop-fonte" lang="pt-PT">
         {VERBATIM['caop-fonte'].text}
       </p>
