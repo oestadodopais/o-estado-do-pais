@@ -72,7 +72,7 @@ const molduras = [
           <Claim id="municipios-com-estudo-aprofundado" lang={lang} chip={true} /> /{' '}
           <Claim id="municipios-portugal-caop-2025" lang={lang} chip={true} />
         </div>
-        <div class="cover-label">{s.home.instr2.coberturaLabel}</div>
+        <div class="cover-label" data-cobertura="com-pagina">{s.cobertura.temPagina}</div>
       </div>
 
       <!-- CAMADA 2 — LEITURA BREVE -->
@@ -89,13 +89,13 @@ const molduras = [
       </p>
 
       <div class="legend">
-        <div class="legend-item">
+        <div class="legend-item" data-cobertura="com-pagina">
           <span class="legend-dot ld-on"><i></i></span>
-          {s.home.instr2.legendaAceso}
+          {s.cobertura.temPagina}
         </div>
-        <div class="legend-item">
+        <div class="legend-item" data-cobertura="sem-pagina">
           <span class="legend-dot ld-off"><i></i></span>
-          {s.home.instr2.legendaApagado}
+          {s.cobertura.semPaginaAinda}
         </div>
       </div>
 

@@ -9,11 +9,25 @@
  *   { ref: '2000' }    — um ano de referência (é a data da leitura, não a leitura)
  *
  * Assim uma frase nunca pode ganhar um número que não passe pelo livro-razão.
+ *
+ * ---------------------------------------------------------------------------
+ * O `slug`: O NOME DA REGIÃO NO ENDEREÇO (v3, etapa 2a)
+ * ---------------------------------------------------------------------------
+ * A primeira página da v3 codifica o âmbito no URL, e o URL é o que se partilha
+ * (Emenda 7). `?ambito=regiao:<slug>` resolve-se contra ESTA lista, que é a
+ * lista fechada: um valor que não esteja aqui cai no âmbito por defeito, em
+ * silêncio, e o endereço é reescrito para a forma normalizada.
+ *
+ * O `slug` é a máquina e o `id` é o desenho: o `id` («gl», «ps») é curto porque
+ * vive dentro de um SVG e de uma ilha de dados; o `slug` é legível porque vive
+ * num endereço que alguém copia para uma mensagem. São iguais nas duas edições:
+ * o que se traduz é o rótulo, nunca a chave (plano §13).
  */
 
 export const REGIOES = [
   {
     id: 'pt',
+    slug: 'portugal',
     nome: { pt: 'Portugal', en: 'Portugal' },
     valor: 'pib-pc-portugal-2024',
     distancia: 'distancia-portugal-ue27-2024',
@@ -26,6 +40,7 @@ export const REGIOES = [
   },
   {
     id: 'gl',
+    slug: 'grande-lisboa',
     nome: { pt: 'Grande Lisboa', en: 'Greater Lisbon' },
     valor: 'pib-pc-grande-lisboa-2024',
     distancia: 'distancia-grande-lisboa-ue27-2024',
@@ -37,6 +52,7 @@ export const REGIOES = [
   },
   {
     id: 'ps',
+    slug: 'peninsula-de-setubal',
     nome: { pt: 'Península de Setúbal', en: 'Setúbal Peninsula' },
     valor: 'pib-pc-peninsula-de-setubal-2024',
     distancia: 'distancia-peninsula-de-setubal-ue27-2024',
@@ -60,6 +76,7 @@ export const REGIOES = [
   },
   {
     id: 'alg',
+    slug: 'algarve',
     nome: { pt: 'Algarve', en: 'Algarve' },
     valor: 'pib-pc-algarve-2024',
     distancia: 'distancia-algarve-ue27-2024',
@@ -71,6 +88,7 @@ export const REGIOES = [
   },
   {
     id: 'mad',
+    slug: 'madeira',
     nome: { pt: 'Madeira', en: 'Madeira' },
     valor: 'pib-pc-madeira-2024',
     distancia: 'distancia-madeira-ue27-2024',
@@ -82,6 +100,7 @@ export const REGIOES = [
   },
   {
     id: 'ale',
+    slug: 'alentejo',
     nome: { pt: 'Alentejo', en: 'Alentejo' },
     valor: 'pib-pc-alentejo-2024',
     valorHistorico: 'pib-pc-alentejo-2000',

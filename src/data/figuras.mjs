@@ -28,6 +28,30 @@
  * o sinal é um símbolo, não um algarismo: fica fora da marca, como já estava
  * quando o limiar vivia dentro da linha da medida.
  *
+ * ---------------------------------------------------------------------------
+ * O LADO DO LIMIAR, DECLARADO (v3, etapa 2a; ISSUES I6)
+ * ---------------------------------------------------------------------------
+ * Cada `limiar` diz de que lado dele o valor tem de ficar, com a palavra que o
+ * quadro publica:
+ *
+ *   `lado: 'superior'`  o limiar é um TETO. Estar acima dele é estar fora.
+ *   `lado: 'inferior'`  o limiar é um CHÃO. Estar abaixo dele é estar fora.
+ *
+ * É um campo DECLARADO, e nunca inferido do sinal. A posição de investimento
+ * internacional publica −35 e é um chão: uma regra que lesse «negativo, logo
+ * chão» acertaria nesta linha e erraria na primeira linha negativa com teto que
+ * o painel viesse a ganhar.
+ *
+ * Os quatro lados: dívida 60 (teto), posição de investimento −35 (chão), custo
+ * unitário do trabalho +9 em três anos (teto), preços da habitação +9 (teto).
+ * O limiar de cada uma, com o seu sinal, está escrito na nota da própria linha
+ * do livro-razão; o LADO é a leitura do quadro que o plano do redesenho v3
+ * (`design/especime-v3/PLANO-redesenho-v3.md`, etapa 2a) fixa, e é por isso que
+ * se escreve aqui à mão em vez de sair de uma regra.
+ *
+ * As quatro medidas sem `limiar` não ganham campo nenhum: o quadro não publica
+ * limiar para elas, e um lado sem limiar seria uma referência inventada.
+ *
  * As frases dizem o que a medida é, não o que ela significa. A interpretação
  * é trabalho do director, e vai nos estudos.
  *
@@ -54,7 +78,7 @@ export const FIGURAS = [
       pt: ['Percentagem do PIB · ', { ref: '2025' }],
       en: ['Percentage of GDP · ', { ref: '2025' }],
     },
-    limiar: { nl: '60' },
+    limiar: { nl: '60', lado: 'superior' },
     frase: {
       pt: [
         'Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu, e a descer.',
@@ -71,7 +95,7 @@ export const FIGURAS = [
       pt: ['Percentagem do PIB · ', { ref: '2025' }],
       en: ['Percentage of GDP · ', { ref: '2025' }],
     },
-    limiar: { nl: '35', sinal: '−' },
+    limiar: { nl: '35', sinal: '−', lado: 'inferior' },
     /* A frase dizia o contrário do valor publicado, e dizia duas coisas que a
        página não pode mostrar.
 
@@ -100,7 +124,7 @@ export const FIGURAS = [
       pt: ['Variação em três anos · ', { ref: '2025' }],
       en: ['Three-year change · ', { ref: '2025' }],
     },
-    limiar: { nl: '9' },
+    limiar: { nl: '9', lado: 'superior' },
     frase: {
       pt: [
         'Custo do trabalho por unidade produzida, por hora trabalhada. A definição por hora é de ',
@@ -121,7 +145,7 @@ export const FIGURAS = [
       pt: ['Variação anual · ', { ref: '2025' }],
       en: ['Annual change · ', { ref: '2025' }],
     },
-    limiar: { nl: '9' },
+    limiar: { nl: '9', lado: 'superior' },
     frase: {
       pt: [
         'Índice nominal de preços da habitação. O limiar foi ultrapassado em ',

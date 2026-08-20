@@ -15,7 +15,9 @@
  *      aparecem em mais do que uma página;
  *   4. o marcador retirado `[descrição em preparação]`;
  *   5. `#page=` nas linhas do livro-razão;
- *   6. localizadores que nomeiam um artefacto interno (ficheiro, chave JSON).
+ *   6. localizadores que nomeiam um artefacto interno (ficheiro, chave JSON);
+ *   7. frases de cobertura — quantas cadeias visíveis DISTINTAS o sítio usa
+ *      para cada estado de cobertura editorial, por edição (defeito 7).
  *
  * Uso:  node scripts/medir-defeitos.mjs            (imprime)
  *       node scripts/medir-defeitos.mjs --json     (para guardar uma medição)
@@ -134,6 +136,33 @@ let frontSemSelo = [];
 let frontSeloErrado = [];
 const blocosDaPorta = new Set();
 
+/**
+ * 7 — AS FRASES DE COBERTURA (v3, etapa 2a; defeito 7 de `DECISIONS.md` §4).
+ *
+ * O sítio dizia a mesma coisa de três maneiras: «Municípios com estudo
+ * aprofundado publicado», «Município com estudo publicado» e «sem página
+ * ainda», em três superfícies, e nenhuma máquina sabia que eram a mesma coisa.
+ * Agora cada rendição de um estado de cobertura leva
+ * `data-cobertura="com-pagina"` ou `"sem-pagina"`, e esta medida conta, POR
+ * EDIÇÃO E POR ESTADO, quantas cadeias visíveis distintas existem.
+ *
+ * **O defeito fecha quando cada contagem é 1.** Duas cadeias para o mesmo
+ * estado na mesma edição são duas línguas para a mesma coisa; zero quer dizer
+ * que a marca desapareceu, e isso não é um sucesso, é uma medição que deixou de
+ * medir. As duas leituras estão na saída.
+ *
+ * A edição sai do `<html lang>` da própria página, e não da rota: é o que o
+ * leitor recebe.
+ */
+const coberturaPorEdicao = new Map(); // edição → estado → Map(cadeia → ocorrências)
+function registaCobertura(edicao, estado, cadeia) {
+  if (!coberturaPorEdicao.has(edicao)) coberturaPorEdicao.set(edicao, new Map());
+  const porEstado = coberturaPorEdicao.get(edicao);
+  if (!porEstado.has(estado)) porEstado.set(estado, new Map());
+  const cadeias = porEstado.get(estado);
+  cadeias.set(cadeia, (cadeias.get(cadeia) ?? 0) + 1);
+}
+
 for (const file of ficheiros) {
   const rel = path.relative(DIST, file);
   const caminho = '/' + rel.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
@@ -158,6 +187,12 @@ for (const file of ficheiros) {
   for (const porta of portas) for (const b of blocosDe(porta)) blocosDaPorta.add(b);
   for (const b of vistosNestaPagina) {
     paginasPorBloco.set(b, (paginasPorBloco.get(b) ?? 0) + 1);
+  }
+
+  /* 7 — as frases de cobertura */
+  const edicao = root.querySelector('html')?.getAttribute('lang') ?? '(sem lang)';
+  for (const el of root.querySelectorAll('[data-cobertura]')) {
+    registaCobertura(edicao, el.getAttribute('data-cobertura'), norm(texto(el)));
   }
 
   /* 4 — o marcador retirado */
@@ -238,6 +273,19 @@ const ocorrenciasDaPorta = molduras
   .filter(([b]) => blocosDaPorta.has(b))
   .reduce((s, [, n]) => s + n, 0);
 
+/* As frases de cobertura, arrumadas para a saída e para o JSON. */
+const cobertura = {};
+for (const [edicao, porEstado] of [...coberturaPorEdicao.entries()].sort()) {
+  cobertura[edicao] = {};
+  for (const [estado, cadeias] of [...porEstado.entries()].sort()) {
+    cobertura[edicao][estado] = {
+      distintas: cadeias.size,
+      ocorrencias: [...cadeias.values()].reduce((a, b) => a + b, 0),
+      cadeias: [...cadeias.keys()].sort(),
+    };
+  }
+}
+
 const medicao = {
   paginas,
   porta_correccoes: { com: comPorta, sem: semPorta.length },
@@ -256,6 +304,7 @@ const medicao = {
   linhas_com_page: comPage,
   linhas_com_recorte: comRecorte,
   localizadores_internos: localizadoresInternos.length,
+  frases_de_cobertura: cobertura,
 };
 
 if (process.argv.includes('--json')) {
@@ -286,6 +335,22 @@ console.log(`  [descrição em preparação] . ${marcadorRetirado} ocorrências 
 console.log(`  linhas com #page= ......... ${comPage} de ${claims.size}`);
 console.log(`  linhas com recorte ........ ${comRecorte} de ${claims.size}`);
 console.log(`  localizadores internos .... ${localizadoresInternos.length}`);
+console.log('');
+const edicoesDeCobertura = Object.keys(cobertura);
+if (!edicoesDeCobertura.length) {
+  console.log(amarelo('  frases de cobertura ....... nenhuma marca data-cobertura no dist/'));
+} else {
+  for (const edicao of edicoesDeCobertura) {
+    for (const [estado, c] of Object.entries(cobertura[edicao])) {
+      const bom = c.distintas === 1;
+      console.log(
+        `  frases de cobertura · ${edicao} · ${estado} ... ${c.distintas} distinta(s) em ` +
+          `${c.ocorrencias} ocorrência(s)` + (bom ? verde('  ✓') : amarelo('  ✗')),
+      );
+      if (!bom) for (const t of c.cadeias) console.log(cinza(`      · «${t}»`));
+    }
+  }
+}
 console.log('');
 if (semPorta.length) {
   console.log(cinza('  páginas sem porta de correcções (primeiras 10):'));
