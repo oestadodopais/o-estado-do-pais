@@ -7359,6 +7359,18 @@ dívida de proveniência e 3 com as somas do PRR ainda com o marcador. Licenciar
 um conjunto não é declarar que ele está fechado, e o índice continua a dizer o
 que não diz.
 
+**O `check:cruzamento --with-origin` fecha, e fecha igual em `main`.** Sete
+linhas do PRR já não são a linha do motor que atravessou, porque a reextração de
+19.08.2026 no motor moveu as somas outra vez, e as linhas deste sítio continuam
+a ser as do instantâneo de 2026-08-17, com a data à vista. Foi medido nas duas
+construções, na mesma máquina e no mesmo dia: a mesma frase e as mesmas sete
+linhas em `0068d33` e no ramo. Não é deste bloco, não é matéria de construção do
+sítio, e repô-lo é voltar a cruzar do lado do motor (`export_site_rows.py`), que
+é trabalho que este ramo tem instruções para não fazer. O `check:cruzamento` sem
+`--with-origin`, que é o que o `npm run build` corre, fecha a verde: cada linha e
+cada ficheiro vindos do motor são, byte a byte, o que atravessou. Fica escrito
+aqui para não ser descoberto como novidade na leitura cruzada.
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
