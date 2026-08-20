@@ -59,6 +59,12 @@ const ESTADOS = [
   { nome: 'evora-leitura', q: '?ambito=municipio:evora&densidade=leitura' },
   { nome: 'beja-vazio', q: '?ambito=municipio:beja' },
   { nome: 'escolha', q: '', clicar: '[data-modo="municipio"]' },
+  /* A vista de escolha DEPOIS do gesto da Emenda 3 (subetapa 2h): um toque no
+     selo abre a vista, um segundo toque, num sítio concreto do mapa, troca os
+     botões pelos concelhos mais próximos desse sítio. Só existe no telemóvel,
+     porque só lá o selo é o alvo — a 1280 os pontos são alvos e o gesto é
+     outro —, e por isso este estado declara a sua largura. */
+  { nome: 'escolha-proxima', q: '', clicar: '[data-modo="municipio"]', tocarNoSelo: true, larguras: [390] },
   { nome: 'pais-sem-js', q: '', js: false },
 ];
 
@@ -67,7 +73,7 @@ const navegador = await chromium.launch({ headless: true });
 let feitas = 0;
 
 for (const estado of ESTADOS) {
-  for (const largura of [1280, 390]) {
+  for (const largura of estado.larguras ?? [1280, 390]) {
     for (const [edicao, rota] of [['pt', '/'], ['en', '/en']]) {
       for (const tema of ['claro', 'escuro']) {
         const contexto = await navegador.newContext({
@@ -86,6 +92,17 @@ for (const estado of ESTADOS) {
            de comando (escondido) e a linha de destino do telemóvel. Clica-se no
            que está à vista, que é o que o leitor tem. */
         if (estado.clicar) await p.locator(`${estado.clicar}:visible`).first().click();
+        /* O gesto: o sítio tocado lê-se do rectângulo do mapa, que o selo cobre
+           exactamente. É preciso trazer o selo à janela antes, porque um toque
+           fora da janela não é um toque em sítio nenhum. */
+        if (estado.tocarNoSelo) {
+          await p.locator('.movel-selo').scrollIntoViewIfNeeded();
+          const r = await p.evaluate(() => {
+            const b = document.querySelector('[data-mapa]').getBoundingClientRect();
+            return { left: b.left, top: b.top, w: b.width, h: b.height };
+          });
+          await p.mouse.click(r.left + r.w * 0.75, r.top + r.h * 0.66);
+        }
         await p.evaluate(() => document.fonts.ready);
         await p.screenshot({
           path: path.join(DESTINO, `${estado.nome}-${largura}-${edicao}-${tema}.png`),

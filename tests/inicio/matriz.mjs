@@ -21,6 +21,11 @@ import http from 'node:http';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
+/* A matriz calcula a lista de proximidade do seu lado, a partir dos mesmos
+   centróides que a página desenha: uma célula que perguntasse à página se ela
+   concorda com ela própria não media nada (subetapa 2h). */
+import { concelhos } from '../../src/lib/inicio.mjs';
+import { FIELD_W, FIELD_H } from '../../src/data/caop-centroids.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -616,7 +621,13 @@ for (const largura of [320, 390]) {
   await p.__contexto.close();
 }
 
-/* (5) A vista de escolha com a caixa vazia: Évora, e o escolhido se houver um. */
+/* (5) A vista de escolha com a caixa vazia: Évora, e o escolhido se houver um.
+ *
+ * O segundo caso NÃO leva toque, e a razão entrou na 2h: em `?ambito=
+ * municipio:beja` a página já está na vista de escolha, e a 390 o
+ * `[data-modo="municipio"]` à vista é o selo do país — tocar-lhe ali seria o
+ * gesto da proximidade e não a porta. O que esta célula mede é a lista com que a
+ * vista se apresenta, e essa lê-se sem lhe tocar. */
 for (const largura of [1280, 390]) {
   const p = await pagina({ largura });
   await p.goto(base + '/', { waitUntil: 'networkidle' });
@@ -627,7 +638,6 @@ for (const largura of [1280, 390]) {
       .map((e) => e.querySelector('[data-escolher]').getAttribute('data-escolher')),
   );
   await p.goto(base + '/?ambito=municipio:beja', { waitUntil: 'networkidle' });
-  await p.locator('[data-modo="municipio"]:visible').first().click();
   const comEscolhido = await p.evaluate(() =>
     [...document.querySelectorAll('.pesquisa-item')]
       .filter((e) => e.getClientRects().length)
@@ -721,6 +731,174 @@ for (const largura of [1280, 390]) {
     `Beja «${lidos.beja}» · Horta «${lidos.horta}» · Lagoa «${lidos['lagoa-ilha-de-sao-miguel']}» · Évora traz a sua etiqueta de municipios.mjs`,
   );
   await p.__contexto.close();
+}
+
+/* ===========================================================================
+ * SUBETAPA 2h · a proximidade, e duas arestas
+ * ======================================================================== */
+
+/* (2h·1) A LISTA DE PROXIMIDADE ENTRA COM UM TOQUE A SÉRIO, E SÓ COM UM.
+ *
+ * A célula compara o que a página acende com o que ESTE ficheiro calcula, do seu
+ * lado, sobre `caop-centroids.mjs`: se as duas listas baterem certo, a ordenação
+ * do cliente é a ordenação dos centróides e não a ordem da Carta a fingir-se de
+ * proximidade (que foi o defeito que a 2g apanhou). Mede também o que a lista
+ * NÃO tem — algarismos —, e que uma activação por teclado não é um toque. */
+{
+  const p = await pagina({ largura: 390 });
+  await p.goto(base + '/', { waitUntil: 'networkidle' });
+
+  const acesos = () =>
+    p.evaluate(() =>
+      [...document.querySelectorAll('.pesquisa-item')]
+        .filter((e) => e.getClientRects().length)
+        .map((e) => ({
+          slug: e.querySelector('[data-escolher]').getAttribute('data-escolher'),
+          texto: e.textContent.replace(/\s+/g, ' ').trim(),
+          etiqueta: e.querySelector('[data-escolher]').tagName,
+        })),
+    );
+
+  /* O primeiro toque vem do âmbito País: é a porta, e não o gesto. */
+  await p.locator('.movel-selo').click();
+  const semToque = await acesos();
+  const historiaAntes = await p.evaluate(() => history.length);
+
+  /* O segundo é o gesto, num sítio concreto do selo. O selo cobre o mapa
+     exactamente, e por isso o sítio tocado lê-se do rectângulo do mapa. */
+  await p.locator('.movel-selo').scrollIntoViewIfNeeded();
+  const r = await p.evaluate(() => {
+    const b = document.querySelector('[data-mapa]').getBoundingClientRect();
+    return { left: b.left, top: b.top, w: b.width, h: b.height };
+  });
+  const cx = r.left + r.w * 0.75;
+  const cy = r.top + r.h * 0.66;
+  await p.mouse.click(cx, cy);
+  const comToque = await acesos();
+  const historiaDepois = await p.evaluate(() => history.length);
+
+  const px = ((cx - r.left) / r.w) * FIELD_W;
+  const py = ((cy - r.top) / r.h) * FIELD_H;
+  const esperados = concelhos()
+    .map((c) => ({ slug: c.slug, d: (c.x - px) ** 2 + (c.y - py) ** 2 }))
+    .sort((a, b) => a.d - b.d)
+    .slice(0, 8)
+    .map((c) => c.slug)
+    .sort();
+  const obtidos = comToque.map((c) => c.slug).sort();
+
+  /* Escrever desfaz o toque; limpar a caixa devolve a regra da caixa vazia. */
+  await p.locator('[data-pesquisa]').fill('bej');
+  const escrito = await acesos();
+  await p.locator('[data-pesquisa]').fill('');
+  const limpo = await acesos();
+
+  /* E a activação por teclado não é um toque: `detail` 0 não tem sítio nenhum. */
+  await p.goto(base + '/', { waitUntil: 'networkidle' });
+  await p.locator('.movel-selo').click();
+  await p.evaluate(() => document.querySelector('.movel-selo').focus());
+  await p.keyboard.press('Enter');
+  const porTeclado = await acesos();
+
+  conta(
+    'largura 390 · a lista de proximidade entra com um toque, e só com um',
+    semToque.length === 1 &&
+      semToque[0].slug === 'evora' &&
+      obtidos.length === 8 &&
+      obtidos.join('|') === esperados.join('|') &&
+      comToque.every((c) => c.etiqueta === 'BUTTON') &&
+      !comToque.some((c) => /[0-9]/.test(c.texto)) &&
+      historiaDepois === historiaAntes + 1 &&
+      escrito.length === 1 &&
+      escrito[0].slug === 'beja' &&
+      limpo.length === 1 &&
+      limpo[0].slug === 'evora' &&
+      porTeclado.length === 1 &&
+      porTeclado[0].slug === 'evora',
+    `sem toque: ${semToque.map((c) => c.slug).join(' · ')} · com toque em (${px.toFixed(0)}, ${py.toFixed(0)}): ${obtidos.join(' · ')} · esperados: ${esperados.join(' · ')} · ${comToque.length} botões, 0 algarismos · 1 entrada na história · a escrever «bej»: ${escrito.map((c) => c.slug).join(' · ')} · por teclado: ${porTeclado.map((c) => c.slug).join(' · ')}`,
+  );
+  await p.__contexto.close();
+}
+
+/* (2h·2) ISSUES I20 · o rótulo da referência da régua fica dentro da caixa.
+ *
+ * Seis estados por quatro larguras, dentro da matriz e não num guião de fora: a
+ * varredura que apanhou o defeito era de fora, e um defeito que só uma
+ * ferramenta de fora vê volta na subetapa seguinte. */
+{
+  const ESTADOS_DE_TRANSBORDO = [
+    ['pais-relance', '/'],
+    ['pais-leitura', '/?densidade=leitura'],
+    ['regiao-alentejo-leitura', '/?ambito=regiao:alentejo&densidade=leitura'],
+    ['evora-relance', '/?ambito=municipio:evora'],
+    ['evora-leitura', '/?ambito=municipio:evora&densidade=leitura'],
+    ['beja-vazio', '/?ambito=municipio:beja'],
+  ];
+  const linhas = [];
+  let piores = 0;
+  for (const [nome, q] of ESTADOS_DE_TRANSBORDO) {
+    for (const largura of [320, 390, 768, 1280]) {
+      const p = await pagina({ largura });
+      await p.goto(base + q, { waitUntil: 'networkidle' });
+      const m = await p.evaluate(() => {
+        const d = document.documentElement.scrollWidth - document.documentElement.clientWidth;
+        /* E, para lá do transbordo da página, o rótulo tem de caber na caixa da
+           própria régua: uma régua dentro de um contentor que rolasse esconderia
+           o mesmo defeito em vez de o fechar. */
+        let fora = 0;
+        for (const e of document.querySelectorAll('.regua-ref-rotulo')) {
+          const caixa = e.closest('.regua');
+          if (!caixa || !e.getClientRects().length) continue;
+          const a = e.getBoundingClientRect();
+          const b = caixa.getBoundingClientRect();
+          if (a.right > b.right + 0.5 || a.left < b.left - 0.5) fora++;
+        }
+        return { d, fora };
+      });
+      if (m.d > 0 || m.fora > 0) piores++;
+      linhas.push(`${nome}@${largura}:${m.d}${m.fora ? ` (${m.fora} fora da régua)` : ''}`);
+      await p.__contexto.close();
+    }
+  }
+  conta(
+    'ISSUES I20 · seis estados × quatro larguras sem transbordo, e o rótulo dentro da régua',
+    piores === 0,
+    `${linhas.length - piores} de ${linhas.length} a zero · ${linhas.join(' · ')}`,
+  );
+}
+
+/* (2h·3) ISSUES I21 · a dica de escolha segue a regra das outras duas. */
+{
+  const lidas = {};
+  for (const largura of [390, 1280]) {
+    const p = await pagina({ largura });
+    await p.goto(base + '/?ambito=municipio:evora', { waitUntil: 'networkidle' });
+    lidas[largura] = await p.evaluate(
+      () => document.querySelector('[data-hint-escolher]').getClientRects().length > 0,
+    );
+    await p.__contexto.close();
+    const semJs = await pagina({ largura, js: false });
+    await semJs.goto(base + '/', { waitUntil: 'networkidle' });
+    lidas[`${largura}-sem-js`] = await semJs.evaluate(
+      () => document.querySelector('[data-hint-escolher]').getClientRects().length > 0,
+    );
+    await semJs.__contexto.close();
+  }
+  const p2 = await pagina({ largura: 1280 });
+  await p2.goto(base + '/', { waitUntil: 'networkidle' });
+  const noPais = await p2.evaluate(
+    () => document.querySelector('[data-hint-escolher]').getClientRects().length > 0,
+  );
+  await p2.__contexto.close();
+  conta(
+    'ISSUES I21 · «Toque num ponto» só onde o mapa escolhe pontos',
+    lidas[1280] === true &&
+      lidas[390] === false &&
+      lidas['1280-sem-js'] === false &&
+      lidas['390-sem-js'] === false &&
+      noPais === false,
+    `1280 no âmbito Município ${lidas[1280]} · 390 ${lidas[390]} · sem script 1280 ${lidas['1280-sem-js']} e 390 ${lidas['390-sem-js']} · 1280 no âmbito País ${noPais}`,
+  );
 }
 
 /* --------------------------------------------------------------------- relatório */

@@ -429,10 +429,13 @@
   padding: 8px 0 4px 0;
 }
 
-/* As duas dicas descrevem o que só é verdade onde o mapa escolhe pontos: na
+/* As TRÊS dicas descrevem o que só é verdade onde o mapa escolhe pontos: na
    secretária, com o mapa inteiro e com script. O `hidden` do servidor cobre o
-   caso sem script; estas duas regras cobrem o telemóvel e o localizador. */
-[data-postura='localizador'] .mapa-dicas {
+   caso sem script; estas duas regras cobrem o telemóvel e o localizador. A
+   terceira — «Toque num ponto para escolher o concelho» — juntou-se-lhes na
+   subetapa 2h, e é ISSUES I21. */
+[data-postura='localizador'] .mapa-dicas,
+[data-postura='localizador'] .mapa-hint[data-hint-escolher] {
   display: none;
 }
 
@@ -604,9 +607,11 @@ svg [hidden] {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 14px;
   }
-  /* As duas dicas do mapa não se escrevem onde o mapa não escolhe pontos: no
-     telemóvel o selo inteiro é o alvo e nenhum ponto é alvo (Emenda 3). */
-  .mapa-dicas {
+  /* As três dicas do mapa não se escrevem onde o mapa não escolhe pontos: no
+     telemóvel o selo inteiro é o alvo e nenhum ponto é alvo (Emenda 3). A
+     terceira é ISSUES I21, e entrou na subetapa 2h. */
+  .mapa-dicas,
+  .mapa-hint[data-hint-escolher] {
     display: none;
   }
 }
@@ -853,6 +858,20 @@ svg [hidden] {
   transform: translateX(-50%);
   white-space: nowrap;
   color: var(--ink);
+  max-width: 100%;
+}
+/* ISSUES I20: quando a referência calha numa ponta — e calha, porque um tecto
+   legal é o extremo da sua própria escala —, o rótulo encosta-se à ponta em vez
+   de se centrar nela. Centrado no 100%, metade dele ficava fora da caixa e
+   empurrava a página: 10px de transbordo a 320 e a 390. É a ponta onde a escala
+   já não se escreve, porque o rótulo a tapava. */
+.regua-ref-rotulo[data-ponta='dir'] {
+  right: 0;
+  transform: none;
+}
+.regua-ref-rotulo[data-ponta='esq'] {
+  left: 0;
+  transform: none;
 }
 
 /* ------------------------------------------------------------ estado vazio */

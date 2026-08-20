@@ -1,0 +1,32 @@
+{
+  "a": "/private/tmp/claude-501/-Users-nunosantos/b185e650-e114-4dd4-a233-45407e03b19a/scratchpad/dist-2h-antes",
+  "b": "dist",
+  "rotas": 322,
+  "iguais": 320,
+  "diferencas": [
+    {
+      "rota": "/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 1,
+      "acrescentados": [
+        "Um toque no mapa devolve os concelhos mais próximos, para escolher. No telemóvel os pontos não são alvos: a pesquisa é o caminho."
+      ],
+      "retirados": [
+        "No telemóvel os pontos não são alvos: a pesquisa é o caminho."
+      ]
+    },
+    {
+      "rota": "/en/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 1,
+      "acrescentados": [
+        "Tapping the map returns the nearest concelhos to choose from. On a phone the points are not targets: the search is the way."
+      ],
+      "retirados": [
+        "On a phone the points are not targets: the search is the way."
+      ]
+    }
+  ]
+}

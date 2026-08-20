@@ -48,6 +48,23 @@ const pv = escala ? posicaoNaRegua(valor, escala) : null;
 const pr = escala ? posicaoNaRegua(referencia, escala) : null;
 const W = 600;
 const Y = 17;
+
+/* ---------------------------------------------------------------------------
+ * O RÓTULO DA REFERÊNCIA PRENDE-SE À PONTA EM QUE CALHA (ISSUES I20)
+ * ---------------------------------------------------------------------------
+ * O rótulo estava centrado no traço da referência, e um tecto legal É o extremo
+ * da sua própria escala: centrado no 100%, metade dele ficava fora da caixa e
+ * empurrava a página inteira — 10px de transbordo a 320 e a 390, medidos em
+ * `evora-leitura` («limite legal»), e o mesmo valia para os cinco «UE-27 = 100»
+ * das regiões. Quando a referência calha numa ponta, o rótulo deixa de se
+ * centrar nela e encosta-se à ponta, que é o mesmo sítio com a caixa do lado
+ * de dentro. Nenhuma palavra muda.
+ *
+ * Os dois limites são os MESMOS que já decidiam qual das pontas da escala se
+ * escreve (18 e 82, abaixo): onde o rótulo da referência tapa a ponta, a ponta
+ * não se escreve e o rótulo ocupa-lhe o lugar.
+ */
+const ponta = pr === null ? null : pr >= 82 ? 'dir' : pr <= 18 ? 'esq' : null;
 ---
 
 {
@@ -83,7 +100,11 @@ const Y = 17;
           <span class="regua-fim" data-nonledger="escala-de-instrumento">{escreve(escala.min)}</span>
         )}
         {temRotulo && (
-          <span class="regua-ref-rotulo" style={`left:${pr}%`}>
+          <span
+            class="regua-ref-rotulo"
+            data-ponta={ponta}
+            style={ponta ? undefined : `left:${pr}%`}
+          >
             <slot name="referencia" />
           </span>
         )}
