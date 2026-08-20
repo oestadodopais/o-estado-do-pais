@@ -209,6 +209,33 @@ const blocos = [
       <Cabeca s={s} lang={lang} p={p} blocos={blocos} ambito="pais" />
       <div class="cabeca-inst" data-coluna-instrumento>
         <MapaRespira s={s} lang={lang} p={p} concelhos={cs} evora={evora} />
+
+        {/* ----------------------------------------------------------------
+            O ÂMBITO COMO DESTINOS, NO TELEMÓVEL (Emenda 3, subetapa 2e)
+            ----------------------------------------------------------------
+            Num ecrã estreito o âmbito deixa de ser um interruptor de três
+            posições e passa a ser duas linhas inteiras, ao lado do selo do
+            país. **O selo inteiro é o alvo, e nenhum ponto é alvo**: 308
+            pontos num mapa de 84px são textura, e um deles sob o polegar é
+            uma porta que abre o concelho errado.
+
+            São os mesmos `data-modo` da linha de comando, e por isso o mesmo
+            ouvinte os serve; sem script, levam ao índice dos 308 e à régua da
+            convergência, que existem os dois.
+            ---------------------------------------------------------------- */}
+        <div class="movel-destinos">
+          <a class="movel-selo" href={routePath('municipios', lang)} data-modo="municipio">
+            <span class="vh">{s.inicio.movel.seloDaEscolha}</span>
+          </a>
+          <div class="movel-linhas">
+            <a class="movel-destino" href={routePath('municipios', lang)} data-modo="municipio">
+              {s.inicio.movel.abrirConcelho} <span aria-hidden="true">→</span>
+            </a>
+            <a class="movel-destino" href={`${home}#convergencia`} data-modo="regiao">
+              {s.inicio.movel.verRegiao} <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
 

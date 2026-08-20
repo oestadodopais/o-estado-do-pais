@@ -382,6 +382,46 @@
     }
   }
 
+  /* --------------------------------------------------- o selo do país, no telemóvel
+   *
+   * Emenda 3: no telemóvel o mapa não é seletor ponto a ponto — o selo inteiro é
+   * o alvo, e um toque devolve os concelhos MAIS PRÓXIMOS como botões. Os botões
+   * não são criados aqui: são os mesmos 308 resultados da pesquisa que o
+   * servidor já rendeu, e o que isto faz é tirar o `hidden` aos oito mais
+   * próximos do sítio onde o dedo tocou. Nenhuma distância é escrita.
+   */
+  var seloDoPais = raiz.querySelector('.movel-selo');
+  if (seloDoPais && mapa) {
+    seloDoPais.addEventListener('click', function (ev) {
+      ev.preventDefault();
+      var r = mapa.getBoundingClientRect();
+      var caixa2 = mapa.viewBox && mapa.viewBox.baseVal;
+      var LW = caixa2 && caixa2.width ? caixa2.width : 600;
+      var LH = caixa2 && caixa2.height ? caixa2.height : 790;
+      var px = ((ev.clientX - r.left) / r.width) * LW;
+      var py = ((ev.clientY - r.top) / r.height) * LH;
+      var ordenados = pontos
+        .map(function (pt3) {
+          var dx3 = pt3.x - px;
+          var dy3 = pt3.y - py;
+          return { slug: pt3.slug, d: dx3 * dx3 + dy3 * dy3 };
+        })
+        .sort(function (x, y) {
+          return x.d - y.d;
+        })
+        .slice(0, 8);
+      var perto = {};
+      for (var z = 0; z < ordenados.length; z++) perto[ordenados[z].slug] = true;
+      var itens2 = raiz.querySelectorAll('.pesquisa-item');
+      for (var z2 = 0; z2 < itens2.length; z2++) {
+        var botao2 = itens2[z2].querySelector('[data-escolher]');
+        itens2[z2].hidden = !(botao2 && perto[botao2.getAttribute('data-escolher')]);
+      }
+      if (semResultado) semResultado.hidden = true;
+      vai({ ambito: estado.ambito, densidade: estado.densidade }, 'municipio', campo || seloDoPais);
+    });
+  }
+
   /* «trocar de concelho» leva de volta à fila de escolha, e o foco vai com ele. */
   var trocar = raiz.querySelector('[data-trocar]');
   if (trocar && campo) {
