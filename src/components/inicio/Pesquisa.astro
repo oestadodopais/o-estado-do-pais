@@ -66,6 +66,7 @@ const { s, lang, p, concelhos } = Astro.props;
   </ul>
 
   <p class="pesquisa-vazio" data-sem-resultado hidden>{s.ambito.pesquisaSemResultado}</p>
+  <p class="pesquisa-proximos">{s.inicio.movel.proximos}</p>
 
   <p class="pesquisa-meta" id="pesquisa-meta">
     <ValorDaProva chave="municipios_com_pagina" item={p.municipios_com_pagina} lang={lang} />

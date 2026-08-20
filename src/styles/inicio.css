@@ -888,3 +888,172 @@ a.porta:hover .porta-abrir {
 .peca-pe {
   padding-top: 18px;
 }
+
+/* ============================================================================
+ * O TELEMÓVEL (subetapa 2e) — uma coisa por linha, os números primeiro
+ *
+ * IDENTIDADE §11: «Uma coisa por linha. O valor, o título e o selo ficam num só
+ * grupo visível, para que a porta nunca se separe do número que abre. Os
+ * instrumentos rolam dentro da sua caixa, e não empurram a página.»
+ * ========================================================================= */
+
+.movel-destinos {
+  display: none;
+}
+.pesquisa-proximos {
+  display: none;
+  font-family: var(--f-instr);
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  /* O âmbito como destinos, e o selo do país como único alvo do mapa. */
+  /* O selo do país e os dois destinos partilham uma fila; a ficha do mapa desce
+     para baixo dos dois. `display: contents` dissolve a `<figure>` para que a
+     tela e a ficha sejam elas próprias itens desta grelha. */
+  .cabeca-inst {
+    display: grid;
+    grid-template-columns: 84px minmax(0, 1fr);
+    column-gap: 14px;
+    row-gap: 14px;
+    position: relative;
+    align-items: start;
+  }
+  .mapa {
+    display: contents;
+  }
+  .mapa-tela {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .mapa-ficha,
+  .mapa-cartao {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .movel-destinos {
+    display: block;
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .movel-linhas {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+  .movel-destino {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 14px;
+    border: 1px solid var(--rule-strong);
+    font-family: var(--f-versal);
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  /* O selo do país: o alvo é o rectângulo inteiro do mapa, e não um ponto. */
+  .movel-selo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 84px;
+    height: 111px;
+    z-index: 2;
+  }
+  .mun-alvo {
+    pointer-events: none !important;
+  }
+  .mapa-tela {
+    width: 84px;
+  }
+  .pesquisa-proximos {
+    display: block;
+  }
+
+  /* A linha de comando fica só com a densidade, em dois estados de largura
+     inteira; o âmbito são os destinos acima. */
+  .cmd {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .cmd-grupo:first-child {
+    display: none;
+  }
+  .cmd-grupo {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+  .cmd-segs {
+    display: flex;
+  }
+  .seg {
+    flex: 1;
+    text-align: center;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* As oito medidas como filas: o valor primeiro, o estado à direita, e o selo
+     como o maior alvo da fila. */
+  .painel {
+    gap: 0;
+  }
+  .peca {
+    border: none;
+    border-bottom: 1px solid var(--g3);
+    padding: 14px 0 12px 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 10px;
+    row-gap: 6px;
+    align-items: baseline;
+  }
+  .peca:hover,
+  .peca:focus-within {
+    box-shadow: none;
+  }
+  .peca-valor {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 44px;
+  }
+  .peca-topo {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    text-align: right;
+  }
+  .peca-nome,
+  .peca-unidade,
+  .peca-frase,
+  .peca-mais,
+  .peca-pe {
+    grid-column: 1 / -1;
+  }
+  /* A fila fechada mostra o valor, o estado, o nome e a unidade · período. A
+     frase abre com a peça. Escrita ao contrário de propósito: num motor sem
+     `:has()` a frase fica à vista, que é o lado seguro de falhar. */
+  .peca:has(.peca-mais:not([open])) .peca-frase {
+    display: none;
+  }
+  .peca-pe {
+    padding-top: 10px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .porta {
+    padding: 16px 0;
+  }
+}

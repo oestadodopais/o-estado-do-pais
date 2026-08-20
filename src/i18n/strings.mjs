@@ -341,6 +341,14 @@ export const STRINGS = {
         estadoRotulo: 'Estado das medidas',
       },
 
+      movel: {
+        abrirConcelho: 'Abrir um concelho',
+        verRegiao: 'Ver uma região',
+        seloDaEscolha: 'Abrir a escolha de concelho',
+        proximos:
+          'Um toque no mapa devolve os concelhos mais próximos, para escolher. No telemóvel os pontos não são alvos: a pesquisa é o caminho.',
+      },
+
       peca: {
         /* A linha do limiar da peça é a da célula da v2, movida sem mudar uma
            palavra (relocação R1): «limiar 60% · acima». O algarismo continua
@@ -1176,6 +1184,14 @@ export const STRINGS = {
         ledeVazioA: 'The point marks where the concelho sits on the official administrative map, and not coverage. When there are rows for ',
         ledeVazioB: ', they will appear here with their source and their reading date.',
         estadoRotulo: 'State of the measures',
+      },
+
+      movel: {
+        abrirConcelho: 'Open a concelho',
+        verRegiao: 'See a region',
+        seloDaEscolha: 'Open the concelho chooser',
+        proximos:
+          'Tapping the map returns the nearest concelhos to choose from. On a phone the points are not targets: the search is the way.',
       },
 
       peca: {
