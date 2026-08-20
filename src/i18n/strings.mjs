@@ -51,6 +51,8 @@ export const STRINGS = {
       agenda: 'Agenda:',
       agendaEmCurso: 'em curso',
       agendaASeguir: 'a seguir',
+      agendaConcluido: 'concluído',
+      agendaRetirado: 'retirado',
     },
 
     prov: {
@@ -320,6 +322,7 @@ export const STRINGS = {
         paisA: 'Portugal · painel europeu · ',
         paisB: ' medidas',
         regiaoSufixo: ' · região',
+        municipioSufixo: ' · município',
         municipioPalavra: ' · município · ',
         tituloPaisUm: ' limiar europeu ultrapassado.',
         tituloPaisMuitos: ' limiares europeus ultrapassados.',
@@ -336,6 +339,28 @@ export const STRINGS = {
         ledeVazioA: 'O ponto marca a posição do concelho na Carta Administrativa, e não cobertura. Quando houver linhas para ',
         ledeVazioB: ', entram aqui com a sua fonte e a sua data de leitura.',
         estadoRotulo: 'Estado das medidas',
+      },
+
+      peca: {
+        /* A linha do limiar da peça é a da célula da v2, movida sem mudar uma
+           palavra (relocação R1): «limiar 60% · acima». O algarismo continua
+           debaixo do motivo `limiar-do-quadro` e a palavra continua a ser
+           derivada de dois números que já existem. */
+        recibo: 'o recibo completo está na linha',
+        semReferencia: 'Sem referência publicada: não há barra a desenhar.',
+      },
+
+      portas: {
+        k: 'As páginas · o resto vive a uma porta',
+        abrir: 'a página inteira',
+        estudosA: ' trabalhos · ',
+        estudosB: ' edições',
+      },
+
+      vazio: {
+        explicaA: 'Nenhuma medida foi lida para ',
+        explicaB:
+          '. As fontes que publicam para todos os concelhos do país permitem que as mesmas medidas existam aqui, com a mesma prova, no dia em que forem lidas.',
       },
 
       mapa: {
@@ -937,6 +962,8 @@ export const STRINGS = {
       agenda: 'Agenda:',
       agendaEmCurso: 'under way',
       agendaASeguir: 'next',
+      agendaConcluido: 'concluded',
+      agendaRetirado: 'withdrawn',
     },
 
     prov: {
@@ -1132,6 +1159,7 @@ export const STRINGS = {
         paisA: 'Portugal · European panel · ',
         paisB: ' measures',
         regiaoSufixo: ' · region',
+        municipioSufixo: ' · municipality',
         municipioPalavra: ' · municipality · ',
         tituloPaisUm: ' European threshold breached.',
         tituloPaisMuitos: ' European thresholds breached.',
@@ -1148,6 +1176,24 @@ export const STRINGS = {
         ledeVazioA: 'The point marks where the concelho sits on the official administrative map, and not coverage. When there are rows for ',
         ledeVazioB: ', they will appear here with their source and their reading date.',
         estadoRotulo: 'State of the measures',
+      },
+
+      peca: {
+        recibo: 'the full receipt is on the row',
+        semReferencia: 'No published reference: there is no bar to draw.',
+      },
+
+      portas: {
+        k: 'The pages · the rest is one door away',
+        abrir: 'the whole page',
+        estudosA: ' works · ',
+        estudosB: ' editions',
+      },
+
+      vazio: {
+        explicaA: 'No measure has been read for ',
+        explicaB:
+          '. The bodies that publish for every concelho in the country make it possible for the same measures to exist here, with the same proof, the day they are read.',
       },
 
       mapa: {

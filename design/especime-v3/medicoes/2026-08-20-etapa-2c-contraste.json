@@ -1,0 +1,389 @@
+{
+  "ficheiros": [
+    "src/styles/tokens.css"
+  ],
+  "estados": {
+    "claro": [
+      {
+        "par": "ink / paper",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": "body, e a marca",
+        "valores": [
+          16.39
+        ]
+      },
+      {
+        "par": "muted / paper",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": "99 regras, o aparelho todo",
+        "valores": [
+          6.24
+        ]
+      },
+      {
+        "par": "paper / ink",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": ".botao-correcao, .chip.is-read[aria-pressed='true'], a.src-chip:hover",
+        "valores": [
+          16.39
+        ]
+      },
+      {
+        "par": "ink / g3",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": ".deep > summary:hover",
+        "valores": [
+          12.83
+        ]
+      },
+      {
+        "par": "ochre / paper",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": "a palavra «fora do limiar» (IDENTIDADE §2; etapa 2)",
+        "valores": [
+          6.37
+        ]
+      },
+      {
+        "par": "cobalt-palavra / paper",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": "a palavra «dentro do limiar» (IDENTIDADE §2; etapa 2)",
+        "valores": [
+          7.73
+        ]
+      },
+      {
+        "par": "rule-strong / paper",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "15 fronteiras de caixa, .mecanismo-caixa, .linha-excerto",
+        "valores": [
+          3.47
+        ]
+      },
+      {
+        "par": "axis / paper",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "eixos dos instrumentos; o quadrado do selo, cheio e a tracejado",
+        "valores": [
+          3.47
+        ]
+      },
+      {
+        "par": "g2 / paper",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": ".ld-off i, .map-svg .mun, a janela de publicação da agenda",
+        "valores": [
+          3.47
+        ]
+      },
+      {
+        "par": "focus / paper",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "outline: 2px solid var(--focus)",
+        "valores": [
+          16.39
+        ]
+      },
+      {
+        "par": "ink / g3",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": ".compo-bar i sobre a calha",
+        "valores": [
+          12.83
+        ]
+      },
+      {
+        "par": "muted / g3",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": ".mun-banda-seg, a aresta que separa um mandato do seguinte",
+        "valores": [
+          4.88
+        ]
+      },
+      {
+        "par": "paper / ink",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": ".ld-on i, o anel de papel que separa o ponto aceso dos vizinhos",
+        "valores": [
+          16.39
+        ]
+      },
+      {
+        "par": "amber / paper",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "o marcador «fora do limiar», e é por isto que leva contorno (etapa 2)",
+        "valores": [
+          2.09
+        ]
+      },
+      {
+        "par": "onamber / amber",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "o contorno de tinta do marcador âmbar (etapa 2)",
+        "valores": [
+          7.85
+        ]
+      },
+      {
+        "par": "cobalt / paper",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "o marcador «dentro do limiar» (etapa 2)",
+        "valores": [
+          7.73
+        ]
+      },
+      {
+        "par": "ink / cobalt",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "o contorno do marcador cobalto, que em escuro é o que o segura (etapa 2)",
+        "valores": [
+          2.12
+        ]
+      },
+      {
+        "par": "amber / cobalt",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "a distinção entre os dois marcadores, um ao lado do outro",
+        "valores": [
+          3.7
+        ]
+      },
+      {
+        "par": "rule / paper",
+        "tipo": "decoracao",
+        "limiar": 0,
+        "onde": "51 fios de arrumação e molduras de peça",
+        "valores": [
+          1.28
+        ]
+      },
+      {
+        "par": "g3 / paper",
+        "tipo": "decoracao",
+        "limiar": 0,
+        "onde": ".compo-bar (a calha), .placeholder (as riscas)",
+        "valores": [
+          1.28
+        ]
+      },
+      {
+        "par": "rule-strong / paper",
+        "tipo": "decoracao",
+        "limiar": 0,
+        "onde": ".layer-tag::before, .mun-nao-sabe li::before, o «·» da mobília",
+        "valores": [
+          3.47
+        ]
+      }
+    ],
+    "escuro-sistema": [
+      {
+        "par": "ink / paper",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": "body, e a marca",
+        "valores": [
+          15.38
+        ]
+      },
+      {
+        "par": "muted / paper",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": "99 regras, o aparelho todo",
+        "valores": [
+          9.52
+        ]
+      },
+      {
+        "par": "paper / ink",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": ".botao-correcao, .chip.is-read[aria-pressed='true'], a.src-chip:hover",
+        "valores": [
+          15.38
+        ]
+      },
+      {
+        "par": "ink / g3",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": ".deep > summary:hover",
+        "valores": [
+          9.19
+        ]
+      },
+      {
+        "par": "ochre / paper",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": "a palavra «fora do limiar» (IDENTIDADE §2; etapa 2)",
+        "valores": [
+          8
+        ]
+      },
+      {
+        "par": "cobalt-palavra / paper",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": "a palavra «dentro do limiar» (IDENTIDADE §2; etapa 2)",
+        "valores": [
+          7.18
+        ]
+      },
+      {
+        "par": "rule-strong / paper",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "15 fronteiras de caixa, .mecanismo-caixa, .linha-excerto",
+        "valores": [
+          5.8
+        ]
+      },
+      {
+        "par": "axis / paper",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "eixos dos instrumentos; o quadrado do selo, cheio e a tracejado",
+        "valores": [
+          5.8
+        ]
+      },
+      {
+        "par": "g2 / paper",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": ".ld-off i, .map-svg .mun, a janela de publicação da agenda",
+        "valores": [
+          5.8
+        ]
+      },
+      {
+        "par": "focus / paper",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "outline: 2px solid var(--focus)",
+        "valores": [
+          15.38
+        ]
+      },
+      {
+        "par": "ink / g3",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": ".compo-bar i sobre a calha",
+        "valores": [
+          9.19
+        ]
+      },
+      {
+        "par": "muted / g3",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": ".mun-banda-seg, a aresta que separa um mandato do seguinte",
+        "valores": [
+          5.69
+        ]
+      },
+      {
+        "par": "paper / ink",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": ".ld-on i, o anel de papel que separa o ponto aceso dos vizinhos",
+        "valores": [
+          15.38
+        ]
+      },
+      {
+        "par": "amber / paper",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "o marcador «fora do limiar», e é por isto que leva contorno (etapa 2)",
+        "valores": [
+          8
+        ]
+      },
+      {
+        "par": "onamber / amber",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "o contorno de tinta do marcador âmbar (etapa 2)",
+        "valores": [
+          1.92
+        ]
+      },
+      {
+        "par": "cobalt / paper",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "o marcador «dentro do limiar» (etapa 2)",
+        "valores": [
+          2.16
+        ]
+      },
+      {
+        "par": "ink / cobalt",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "o contorno do marcador cobalto, que em escuro é o que o segura (etapa 2)",
+        "valores": [
+          7.12
+        ]
+      },
+      {
+        "par": "amber / cobalt",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "a distinção entre os dois marcadores, um ao lado do outro",
+        "valores": [
+          3.7
+        ]
+      },
+      {
+        "par": "rule / paper",
+        "tipo": "decoracao",
+        "limiar": 0,
+        "onde": "51 fios de arrumação e molduras de peça",
+        "valores": [
+          1.67
+        ]
+      },
+      {
+        "par": "g3 / paper",
+        "tipo": "decoracao",
+        "limiar": 0,
+        "onde": ".compo-bar (a calha), .placeholder (as riscas)",
+        "valores": [
+          1.67
+        ]
+      },
+      {
+        "par": "rule-strong / paper",
+        "tipo": "decoracao",
+        "limiar": 0,
+        "onde": ".layer-tag::before, .mun-nao-sabe li::before, o «·» da mobília",
+        "valores": [
+          5.8
+        ]
+      }
+    ]
+  }
+}

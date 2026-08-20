@@ -1,0 +1,90 @@
+---
+/**
+ * AS PORTAS — três linhas, e o resto do sítio vive atrás delas.
+ *
+ * Relocação R5: os textos das secções Municípios, Estudos e Agenda da primeira
+ * página v2 são CORTADOS. As portas levam só contagens, e cada contagem é um
+ * número do próprio sítio, com `data-prova` e com a sua porta; os textos vivem
+ * nas páginas que eles contam, que é onde o leitor os vai ler.
+ *
+ * ---------------------------------------------------------------------------
+ * DUAS FORMAS DE LINHA, E A RAZÃO NÃO É DE GOSTO
+ * ---------------------------------------------------------------------------
+ * Municípios e Estudos: a LINHA INTEIRA é a ligação. As duas contagens de cada
+ * uma abrem a mesma página, e por isso a porta de cada número é o próprio
+ * elemento que o embrulha — o portão sobe a partir do número até encontrar uma
+ * âncora e compara o destino resolvido (`temPortaPara`, e a regra §10 v2 de que
+ * a porta pode ser uma âncora na própria página).
+ *
+ * Agenda: as quatro contagens abrem QUATRO secções diferentes da página da
+ * agenda (`/agenda#estado-em_curso`, e as outras três). Uma ligação dentro de
+ * outra ligação não é HTML, e uma porta que aponta para a página inteira quando
+ * a chave promete a secção seria uma porta que abre o sítio errado. Por isso
+ * nesta linha cada contagem é a sua própria porta, e o nome tem a sua.
+ *
+ * `ValorDaProva` não serve nas duas primeiras: esse componente rende SEMPRE a
+ * sua própria âncora, e aqui a âncora é a linha. O que se marca é o `span`.
+ *
+ * NÃO HÁ AQUI PORTA PARA O CATÁLOGO NEM PARA O DOSSIÊ (plano §4, desvio 1): são
+ * fase 2, e uma porta para um endereço que não existe é pior do que a ausência.
+ */
+import ValorDaProva from '../ValorDaProva.astro';
+
+const { s, lang, p, rotas } = Astro.props;
+
+const agenda = [
+  { chave: 'agenda_em_curso', palavra: s.sinal.agendaEmCurso },
+  { chave: 'agenda_a_seguir', palavra: s.sinal.agendaASeguir },
+  { chave: 'agenda_concluido', palavra: s.sinal.agendaConcluido },
+  { chave: 'agenda_retirado', palavra: s.sinal.agendaRetirado },
+];
+const temAgenda = agenda.every((a) => p[a.chave].valor !== null);
+---
+
+<nav class="portas" aria-label={s.inicio.portas.k}>
+  <p class="portas-k">{s.inicio.portas.k}</p>
+
+  <a class="porta" href={rotas.municipios}>
+    <span class="porta-nome">{s.nav.municipios}</span>
+    <span class="porta-conta">
+      <span data-prova="municipios_com_pagina" title={p.municipios_com_pagina.origem}>
+        {p.municipios_com_pagina.valor}
+      </span>
+      {s.inicio.mapa.coberturaA}
+      <span data-prova="municipios_total" title={p.municipios_total.origem}>
+        {p.municipios_total.valor}
+      </span>
+      {s.inicio.mapa.coberturaB}
+      <span data-cobertura="com-pagina">{s.cobertura.temPagina}</span>
+    </span>
+    <span class="lig porta-abrir">{s.inicio.portas.abrir} →</span>
+  </a>
+
+  <a class="porta" href={rotas.estudos}>
+    <span class="porta-nome">{s.nav.estudos}</span>
+    <span class="porta-conta">
+      <span data-prova="estudos" title={p.estudos.origem}>{p.estudos.valor}</span>
+      {s.inicio.portas.estudosA}
+      <span data-prova="edicoes" title={p.edicoes.origem}>{p.edicoes.valor}</span>
+      {s.inicio.portas.estudosB}
+    </span>
+    <span class="lig porta-abrir">{s.inicio.portas.abrir} →</span>
+  </a>
+
+  {
+    temAgenda && (
+      <div class="porta porta-agenda">
+        <a class="porta-nome" href={rotas.agenda}>{s.nav.agenda}</a>
+        <span class="porta-conta">
+          {agenda.map((a, i) => (
+            <>
+              {i > 0 && ' · '}
+              <ValorDaProva chave={a.chave} item={p[a.chave]} lang={lang} /> {a.palavra}
+            </>
+          ))}
+        </span>
+        <a class="lig porta-abrir" href={rotas.agenda}>{s.inicio.portas.abrir} →</a>
+      </div>
+    )
+  }
+</nav>

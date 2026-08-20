@@ -1,0 +1,45 @@
+---
+/**
+ * O CONCELHO SEM PÁGINA — o estado vazio, desenhado antes de ser preciso.
+ *
+ * IDENTIDADE §7: todo o componente tem de ter desenhado o estado cheio, vazio,
+ * parcial e velho, e não só o feliz. 307 dos 308 concelhos estão neste estado, e
+ * por isso ele não é uma excepção: é o caso comum.
+ *
+ * DECISÃO (b) DA DIRECÇÃO, 20.08.2026: um concelho sem página **não renderiza
+ * quadrado de estado nenhum** e diz as palavras da cobertura. «Por ler» não é um
+ * estado de medição e não entra no vocabulário; o quadrado tracejado está tomado
+ * pela regra 5 do Método («falta um campo») e não pode dizer uma segunda coisa.
+ *
+ * NENHUMA CONTAGEM É COMPOSTA AQUI. A prancha escreve «0 medidas»; este bloco
+ * não escreve algarismo nenhum, porque um zero calculado no cliente seria
+ * exactamente o número que ninguém pode abrir. O que o bloco diz é o que se
+ * sabe: que nenhuma medida foi lida para aquele concelho, e o que é preciso para
+ * que passe a haver.
+ *
+ * O NOME DO CONCELHO ENTRA POR RANHURA MARCADA (`data-slot`), copiado da ilha da
+ * CAOP com `textContent`. É o único texto desta página que o script escreve.
+ */
+import Claim from '../Claim.astro';
+import { VERBATIM } from '../../data/verbatim.mjs';
+
+const { s, lang, nome } = Astro.props;
+---
+
+<div class="vazio" data-vazio>
+  <p class="vazio-titulo">
+    <span data-slot="nome">{nome}</span> ·{' '}
+    <span data-cobertura="sem-pagina">{s.cobertura.semPaginaAinda}</span>
+  </p>
+  <p class="vazio-texto">
+    {s.inicio.vazio.explicaA}
+    <span data-slot="nome">{nome}</span>
+    {s.inicio.vazio.explicaB}
+  </p>
+  <p class="vazio-caop">
+    <Claim id="municipios-portugal-caop-2025" lang={lang} chip={true} />
+  </p>
+  <p class="vazio-fonte verbatim" data-verbatim="caop-fonte" lang="pt-PT">
+    {VERBATIM['caop-fonte'].text}
+  </p>
+</div>

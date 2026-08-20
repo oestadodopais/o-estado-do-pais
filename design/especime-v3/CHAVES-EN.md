@@ -44,7 +44,45 @@ A ficha técnica pública da letra (a linha «A letra» do Método, plano §12) 
 
 **Saíram cinco chaves, nas duas edições**, e as cinco eram formulações concorrentes das duas de cima (defeito 7): `municipios.semPagina`, `municipios.comPagina`, `home.instr2.coberturaLabel`, `home.instr2.legendaAceso`, `home.instr2.legendaApagado`.
 
-*(por preencher nas subetapas seguintes: `ambito.*`, `densidade.*`, `inicio.cabeca.*`, `inicio.mapa.*`, `inicio.portas.*`, `inicio.movel.*`)*
+**2b e 2c · as palavras da primeira página.** O inglês foi pensado, e onde uma
+escolha custou algo está dita a razão.
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `ambito.rotulo` | Âmbito | Scope | |
+| `ambito.pais` · `regiao` · `municipio` | País · Região · Município | Country · Region · Municipality | |
+| `ambito.regioesMeta` | As seis leituras publicadas na régua da convergência. | The six readings published on the convergence rule. | seis, e não cinco: Portugal está na régua com as outras |
+| `ambito.pesquisaRotulo` | Escreva o nome do concelho | Type the name of the concelho | «concelho» fica em português na edição inglesa, como já acontece em `municipios.h1` |
+| `ambito.pesquisaSemResultado` | Nenhum concelho com esse nome. | No concelho by that name. | |
+| `densidade.rotulo` | Densidade | Density | |
+| `densidade.relance` · `leitura` | Relance · Leitura breve | At a glance · Brief reading | as mesmas palavras que os instrumentos já usavam em literal |
+| `densidade.abrir` · `fechar` | abrir · fechar | open · close | as duas metades do comando da peça; as duas estão no HTML e a folha troca-as |
+| `densidade.semJs` | Sem JavaScript, este comando não muda a página inteira: cada medida abre-se na sua própria linha. | Without JavaScript this control does not change the whole page: each measure opens on its own row. | |
+| `inicio.cabeca.paisA` · `paisB` | Portugal · painel europeu ·  ·  medidas | Portugal · European panel ·  ·  measures | os dois pedaços à volta de `painel_total` |
+| `inicio.cabeca.regiaoSufixo` · `municipioSufixo` · `municipioPalavra` | · região · · município · · município · | · region · · municipality · · municipality · | |
+| `inicio.cabeca.tituloPaisUm` · `tituloPaisMuitos` | limiar europeu ultrapassado. · limiares europeus ultrapassados. | European threshold breached. · European thresholds breached. | **«breached» e não «exceeded»**: a posição de investimento internacional ultrapassa o seu limiar por baixo, e «exceeded» diria o contrário. É a mesma razão pela qual o estado é «outside» e não «above» |
+| `inicio.cabeca.tituloEvora` | As medidas do concelho, cada uma com a sua linha. | The measures of the concelho, each with its own row. | |
+| `inicio.cabeca.tituloVazioA` · `tituloVazioB` | Ainda sem linhas para  · . | Still no rows for  · . | |
+| `inicio.cabeca.ledePais` | *(a cadeia de `home.numeros.sub`, sem uma palavra mudada)* | *(idem)* | não é texto novo: é a mesma frase, na mesma rota, noutro lugar da página |
+| `inicio.cabeca.ledeRegiaoPartes` | PIB per capita em paridades de poder de compra, com a média da UE-27 fixada em 100. | GDP per capita in purchasing power standards, with the EU-27 average fixed at 100. | é a primeira metade de `home.instr1.subPartes`, sem a frase que manda seleccionar regiões |
+| `inicio.cabeca.ledeVazioA` · `ledeVazioB` | O ponto marca a posição do concelho na Carta Administrativa, e não cobertura. Quando houver linhas para  · , entram aqui com a sua fonte e a sua data de leitura. | The point marks where the concelho sits on the official administrative map, and not coverage. When there are rows for  · , they will appear here with their source and their reading date. | |
+| `inicio.cabeca.estadoRotulo` | Estado das medidas | State of the measures | o nome da região de grupo da fila de estados; só é ouvido |
+| `inicio.mapa.coberturaA` · `coberturaB` | de  ·  concelhos ·  | of  ·  concelhos ·  | os pedaços à volta das duas contagens de cobertura |
+| `inicio.mapa.escolher` | Toque num ponto para escolher o concelho. | Tap a point to choose the concelho. | a prancha escreve «para abrir o concelho», e um toque aqui escolhe o âmbito, não abre a página |
+| `inicio.mapa.trocar` | trocar de concelho | change concelho | |
+| `inicio.mapa.paginaInteira` | a página inteira, com quem governou | the whole page, with who governed it | |
+| `inicio.mapa.naoDiz` · `contagemK` · `continente` · `acores` · `madeira` · `total` · `readoutHint` · `tecladoHint` · `svgLabel` · `naoDizK` | *(as cadeias de `home.instr2.*`, sem mudança)* | *(idem)* | relocação R3 |
+| `inicio.banda.rotuloPartes` | A régua da convergência · UE-27 = 100 | The convergence rule · EU-27 = 100 | |
+| `inicio.banda.naoSeDesenham` | As regiões não se desenham em pontos de concelho: a régua é o instrumento do âmbito regional. O mapa volta quando o âmbito é um município. | Regions are not drawn as concelho points: the rule is the instrument of the regional scope. The map returns when the scope is a municipality. | |
+| `inicio.peca.recibo` | o recibo completo está na linha | the full receipt is on the row | |
+| `inicio.peca.semReferencia` | Sem referência publicada: não há barra a desenhar. | No published reference: there is no bar to draw. | a Emenda 4 proíbe barra sem referência, e a peça di-lo em vez de deixar o lugar vazio |
+| `inicio.portas.k` | As páginas · o resto vive a uma porta | The pages · the rest is one door away | |
+| `inicio.portas.abrir` | a página inteira | the whole page | |
+| `inicio.portas.estudosA` · `estudosB` | trabalhos ·  ·  edições | works ·  ·  editions | |
+| `inicio.vazio.explicaA` · `explicaB` | Nenhuma medida foi lida para  · . As fontes que publicam para todos os concelhos do país permitem que as mesmas medidas existam aqui, com a mesma prova, no dia em que forem lidas. | No measure has been read for  · . The bodies that publish for every concelho in the country make it possible for the same measures to exist here, with the same proof, the day they are read. | |
+| `sinal.agendaConcluido` · `agendaRetirado` | concluído · retirado | concluded · withdrawn | as duas em falta para completar o par que a mobília já tinha em minúsculas |
+
+*(por preencher na subetapa 2e: `inicio.movel.*`)*
 
 ### Etapa 3
 *(por preencher: `linha.*`, `livro.*`, `municipios.*`, `municipio.*`)*
