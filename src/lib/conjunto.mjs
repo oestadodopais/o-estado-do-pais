@@ -124,10 +124,19 @@ export function linhaDoConjunto(claim) {
  *
  * A mesma convenção do `dist/prova.json`. Vai em lista de linhas para que o
  * ficheiro se leia sem uma linha de mil caracteres.
+ *
+ * A primeira linha diz **quanto** do livro-razão vem no ficheiro, e é a única
+ * que muda entre os dois: `/livro-razao.json` traz todas as linhas, e cada
+ * `/livro-razao/<id>.json` traz uma. Dizer «todas as linhas» num ficheiro que
+ * tem uma era descrever o irmão em vez do próprio, e quem abre o ficheiro pelo
+ * endereço não tem outra maneira de saber. Apanhado pela leitura cruzada de
+ * 20.08.2026 (achado 9, `DECISIONS.md` §1.48).
+ *
+ * @param {'todas' | 'uma'} quanto
  */
-function nota() {
+function nota(quanto) {
   return [
-    `${SITE_NAME} — o livro-razão, todas as linhas.`,
+    `${SITE_NAME}: o livro-razão, ${quanto === 'uma' ? 'uma linha' : 'todas as linhas'}.`,
     'FICHEIRO GERADO na construção do sítio a partir de ledger/claims/*.yml.',
     'NÃO EDITAR À MÃO: a construção seguinte reescreve-o.',
     `O método e a explicação de cada campo: https://${SITE_HOST_DISPLAY}/metodo`,
@@ -152,7 +161,7 @@ function licenca() {
 export function jsonDoConjunto() {
   return (
     JSON.stringify(
-      { _: nota(), licenca: licenca(), linhas: allClaims().map(linhaDoConjunto) },
+      { _: nota('todas'), licenca: licenca(), linhas: allClaims().map(linhaDoConjunto) },
       null,
       2,
     ) + '\n'
@@ -162,7 +171,7 @@ export function jsonDoConjunto() {
 /** `/livro-razao/<id>.json` — uma linha, com o mesmo invólucro. */
 export function jsonDaLinha(id) {
   return (
-    JSON.stringify({ _: nota(), licenca: licenca(), linha: linhaDoConjunto(getClaim(id)) }, null, 2) +
+    JSON.stringify({ _: nota('uma'), licenca: licenca(), linha: linhaDoConjunto(getClaim(id)) }, null, 2) +
     '\n'
   );
 }
