@@ -8170,6 +8170,83 @@ amarra confere; não escreve as duas linhas do Método; não muda um byte de
 paleta escura entra na fase como **proposta medida**, debaixo de um comentário
 que o diz, à espera da decisão (f) do plano.
 
+### 1.51 A direção responde às sete decisões do plano, e três entram na mobília partilhada
+
+**Afecta:** nenhum
+
+*(Esta entrada regista respostas da direção e implementa três delas em ficheiros
+que não são texto governado: a mobília partilhada, os tokens e a constituição.
+Nenhuma palavra do Sobre, das dez regras do Método ou dos registos da agenda
+mexe aqui, e as duas frases que o Método vai ganhar não entram nesta entrada:
+entram na etapa 4, no mesmo commit da sua própria entrada, com `Afecta: metodo` e
+o resumo do ficheiro, como a §1.38 exige.)*
+
+A 20.08.2026, à noite, a direção respondeu por escrito às sete decisões que o
+plano do redesenho v3 tinha deixado à sua espera (`design/especime-v3/PLANO-redesenho-v3.md`
+§3). Nenhuma foi construída antes da resposta, que era a regra do plano: nada se
+constrói à volta de uma decisão que falta.
+
+#### As sete respostas
+
+| # | O que a direção disse | Onde vai |
+| --- | --- | --- |
+| a | **Oito.** «Correções» entra no cabeçalho, e a contagem da constituição é emendada no mesmo commit | esta etapa (1f) |
+| b | **Rótulo.** «Por ler» é cobertura e não estado; só palavras, sem glifo, sem quinto estado, e o quadrado tracejado guarda o seu único sentido do Método | etapa 2, que já o tinha por defeito parado |
+| c | **Sim.** Campo a campo, mais o selo da linha como porta | etapa 4 |
+| d | **Sim.** A palavra «provisório» ao pé do valor onde a fonte marca `p`, com o selo a continuar a ser a porta e a nota a continuar a ser o conteúdo | esta etapa (1f) |
+| e | **Sim.** A fase 1 leva a distância em palavras e diz-se parcial; uma distância numérica é um valor calculado e precisa da sua própria linha | etapa 2, que já o tinha por defeito parado |
+| f | **Sim, como regra provisória, com duas condições**: os contornos dos marcadores na tinta do tema, e a auditoria de contraste inteira repetida no papel escuro, âmbar sobre papel incluído | esta etapa (1f) |
+| g | **«A cor» aprovada como está, com uma condição**: o registo de correções tem de render mesmo a forma riscada antes de a frase sair | etapa 4 |
+| h | **«A letra» aprovada com a emenda**, no texto da direção, e só depois de o alojamento dos tipos estar vivo (está, desde `7643251`) | etapa 4 |
+
+#### O que esta etapa construiu, e o que ela não construiu
+
+**O oitavo item** (a). A navegação do cabeçalho passa a oito, com «Correções»
+entre «Método» e «Sobre», que é a ordem que o rodapé já tinha. A etapa 1d tinha
+deixado a lista preparada para sete ou oito e medido a barra com oito antes de a
+decisão chegar, exactamente para que ela não pudesse partir a composição; a
+etapa 1e tinha posto a navegação atrás de «Menu» abaixo de 640px. Por isso o
+oitavo item não mudou um número: a barra mede 62px a 320 e a 390 e 48,4px a
+1280, os mesmos de antes, e não transborda em nenhuma das três. A cópia da
+constituição no repositório ganhou a **Emenda 9**, verbatim da nota do cofre, e
+o §4 passou de «sete itens» a «oito itens».
+
+**A palavra «provisório»** (d). Rende ao pé do valor onde a linha traz
+`source_flag: "p"`, lido do próprio livro-razão e nunca de uma lista escrita à
+mão. São **seis** linhas, e não uma como o inventário do plano supunha: as seis
+do PIB per capita de 2024, Portugal e as cinco regiões. Depois da construção,
+16 páginas e 63 ocorrências. A palavra fica fora do elemento comparado, fora do
+selo, e num elemento sem os atributos por onde o portão compara um campo
+transcrito. O selo continua a ser a porta e a nota continua a ser o conteúdo da
+página da linha.
+
+Uma coisa que o portão ensinou, e que fica escrita porque é o género de erro que
+se repete: embrulhar um valor que não tinha invólucro pôs um elemento entre ele
+e o selo que a vista lhe tinha posto ao lado, e a conferência do selo, que o
+procura no pai do valor, recusou cinco valores da primeira página. O ramo sem
+sufixo passou a ser um fragmento.
+
+**O escuro** (f). O bloco escuro deixa de ser proposta e passa a regra
+provisória, com as duas condições escritas no próprio ficheiro. A primeira
+estava cumprida antes de ser decidida: os cinco contornos de marcador do sítio
+já iam na tinta do tema. A segunda correu: 0 falhas de texto no papel escuro, e
+os dois pares abaixo de 3:1 são o par simétrico de sempre, o contorno que não
+faz falta ao âmbar em escuro e o cobalto que só se lê pelo contorno. «Provisória»
+quer dizer revogável depois de a direção a ver no ar, e não por medir.
+
+**O que esta etapa não construiu, e para quando.** As respostas (b) e (e) já
+eram os defeitos parados da etapa 2 e não pedem trabalho novo. As respostas (c),
+(g) e (h) são da etapa 4: o registo de correções com a forma riscada e a porta do
+selo da linha, e as duas frases do Método. A condição da (g) é uma ordem dentro
+da etapa: a forma riscada tem de render antes de a frase sair, ou a frase é
+cortada até ser verdadeira.
+
+**E o que não muda aqui, e é preciso dizê-lo.** `src/data/metodo.mjs` e
+`src/data/sobre.mjs` ficam byte a byte como estavam. As duas frases aprovadas
+não entram nesta entrada nem neste commit: entram na etapa 4, cada uma no mesmo
+commit da entrada que a governa, com `**Afecta:** metodo` e o resumo do ficheiro,
+que é o que a amarra das decisões exige e é a razão de ela existir.
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões

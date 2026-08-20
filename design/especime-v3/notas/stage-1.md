@@ -19,13 +19,19 @@ comando que está escrito ao lado deles.*
 | `7643251` | 1b | tipos: as três famílias alojadas aqui, convertidas sem perda, e a régua que as mede |
 | `7650aed` | 1c | tokens: a paleta v3, o par de estados, e a folha partilhada sem os dois acentos da v2 |
 | `a2fa798` | 1d | cabeçalho, rodapé, selo: a navegação em versaletes, o selo à altura da linha, e o alvo medido |
-| *(o commit que contém esta nota)* | 1e | cabeçalho: a navegação colapsa atrás de «Menu» abaixo de 640px, sem JavaScript |
+| `484da14` | 1e | cabeçalho: a navegação colapsa atrás de «Menu» abaixo de 640px, sem JavaScript |
 
-*(O commit da 1e não se nomeia a si próprio: um ficheiro não pode trazer no
-corpo o resumo do commit que o contém. É o quinto commit do ramo a partir de
-`2adf2cd`, e `git log --oneline` di-lo em uma linha. A subetapa 1e foi pedida
-pela cadeira na revisão da etapa 1, depois de as quatro primeiras estarem
-fechadas.)*
+| `2a8df84` | 1f (1/4) | cabeçalho, direcao.md: o oitavo item entra, e a constituição passa de sete para oito |
+| `408221b` | 1f (2/4) | Claim: a palavra «provisório» ao pé de um valor que a fonte marca |
+| `d5e4b51` | 1f (3/4) | tokens, IDENTIDADE §2: o escuro passa de proposta a regra provisória |
+| *(o commit que contém esta nota)* | 1f (4/4) | `DECISIONS.md` §1.51: as sete respostas da direção |
+
+*(O commit final da 1f não se nomeia a si próprio: um ficheiro não pode trazer no
+corpo o resumo do commit que o contém. É o que traz a `DECISIONS.md` §1.51, e
+`git log --oneline` di-lo em uma linha. A subetapa 1e foi pedida pela cadeira na
+revisão da etapa 1, e a 1f depois de a direção responder às sete decisões do
+plano; as duas entraram com as quatro primeiras já fechadas, e por isso esta nota
+tem secções fora de ordem alfabética.)*
 
 ---
 
@@ -701,6 +707,193 @@ lado das novas seria uma mentira por omissão.
 
 ---
 
+## 4c. Subetapa 1f · as decisões da direção na mobília partilhada
+
+*A direção respondeu às sete decisões do plano §3 a 20.08.2026, à noite. Três
+caem nos ficheiros partilhados e são estas. Quatro commits, na ordem do brief.
+`DECISIONS.md` §1.51 regista as sete.*
+
+### O oitavo item (decisão a)
+
+`Masthead.astro`: `OITAVO_ITEM` passa de `null` a `'correcoes'`, que era a linha
+que a etapa 1d deixou preparada. Nenhuma cadeia nova: `nav.correcoes` existia
+nas duas edições desde antes desta fase. `direcao.md` recebe a **Emenda 9**
+verbatim da nota do cofre, e o §4 passa de «sete itens» a «oito itens (Emenda
+9)», no mesmo commit em que o item entra.
+
+Medido em Chromium sem cabeça, com os oito itens a sério e não simulados, em
+`/`, `/en/` e `/correcoes/`:
+
+| largura | menu | navegação | linhas | barra | cabeçalho | transbordo |
+| --- | --- | --- | --- | --- | --- | --- |
+| 320px | visível | atrás do menu | n/a | **62px** | 316,1px | **0px** |
+| 390px | visível | atrás do menu | n/a | **62px** | 316,1px | **0px** |
+| 1280px | escondido | 8 itens à vista | **1** | **48,4px** | 340,7px | **0px** |
+
+**Os três números são os mesmos que a etapa 1e mediu com sete itens.** Abaixo de
+640px a navegação está atrás de «Menu» e o oitavo item não custa nada; a 1280 os
+oito continuam a caber numa linha. Rótulos a 1280: «Início · Municípios ·
+Estudos · Livro-razão · Agenda · Método · Correções · Sobre», e em inglês «Home ·
+Municipalities · Studies · Ledger · Agenda · Method · Corrections · About».
+`aria-current` marca «Correções» em `/correcoes/` e «Início» na primeira página,
+nas duas edições.
+
+**As capturas: retirei as 32 e não as cinco que o brief nomeia**, e é um desvio
+com razão. A mobília é de todas as páginas, e uma pasta onde o mesmo cabeçalho
+tem sete itens numa página e oito noutra não é registo de nada; o estado
+anterior fica no git, em `484da14`. **Mudaram 20; as outras 12 são byte a byte
+iguais**, e são exactamente as 12 a 390px fora da primeira página. Isso é a
+prova, por bytes, de que abaixo de 640px o oitavo item não muda um pixel.
+
+### A palavra «provisório» (decisão d)
+
+`Claim.astro` lê `source_flag` do `getClaim()`, que é o mesmo livro-razão que o
+portão confere, e nunca de uma lista escrita à mão. Chave nova, `prov.provisorio`,
+PT «provisório» e EN «provisional», no mesmo commit.
+
+**Uma correção ao inventário do plano.** O plano §3 dá a bandeira como sendo de
+uma linha, «the `82 p` claim». São **seis**: `pib-pc-portugal-2024`,
+`pib-pc-grande-lisboa-2024`, `pib-pc-peninsula-de-setubal-2024`,
+`pib-pc-algarve-2024`, `pib-pc-madeira-2024`, `pib-pc-alentejo-2024`. E há duas
+linhas com `source_flag: "a)"` (`evora-divida-dgal-2017` e
+`evora-limite-divida-dgal-2017`) que não levam palavra nenhuma, e são o controlo
+negativo que a casa já tinha. A implementação não herdou o erro porque lê a
+linha e não o inventário. ISSUES **I18**.
+
+**Onde a palavra vai, e porque passa em cada conferência**, lidas as funções
+antes de a colocar:
+
+- **fora do `[data-claim]`**: `formaDoValor(textoTranscrito(el))` compara a
+  cadeia dentro desse elemento com o valor do livro-razão e **não** normaliza
+  letras (normaliza o menos tipográfico, os quatro espaços de milhares e o
+  espaço em branco, e mais nada). Uma palavra lá dentro faria as duas diferirem,
+  que é exactamente a conferência que o bloco T fechou;
+- **fora do selo**: `seloDaLinha()` compara `visivel` (a palavra da edição, mais
+  o marcador quando falta um campo) e `inteiro` (com o texto oculto) carácter a
+  carácter contra o que a linha permite. Prosa dentro do selo seria uma segunda
+  porta a dizer outra coisa;
+- **num `<span>` próprio**, sem `data-campo` nem `data-correcao`, que são os
+  atributos por onde o portão compara um campo transcrito da linha. O `span` não
+  é a nota: a nota continua a ser o campo `source_flag_note` da página da linha,
+  e o selo continua a ser a porta.
+
+A ordem que rende é **valor, unidade colada, palavra, selo**:
+`<span data-claim>82</span><span class="claim-provisorio">provisório</span><a class="src-chip">`.
+
+**O portão ensinou uma coisa, e o código mudou por causa dela.** A primeira
+versão embrulhava também o ramo sem sufixo, e a construção parou com cinco
+erros: «o valor da afirmação "pib-pc-…" aparece sem selo para a sua própria
+linha». `auditaSelo()` procura o selo no **pai** do elemento do valor e pára aí;
+o invólucro novo pôs-se entre o valor e o selo que a vista lhe tinha posto ao
+lado. O ramo sem sufixo passou a ser um fragmento, e o pai ficou como estava.
+
+**O inventário, depois da construção** (`grep -rl claim-provisorio dist/`):
+**16 páginas, 63 ocorrências**, mais o ficheiro de estilo onde vive a regra.
+
+| superfície | ocorrências |
+| --- | --- |
+| `/` e `/en/` (a primeira página) | 19 cada |
+| `/livro-razao` e `/en/ledger` (o índice) | 6 cada |
+| as seis páginas de linha, nas duas edições | 1 cada |
+
+Nada de inesperado, e uma ausência desenhada: **0 das 14 `<svg>` da primeira
+página** levam a palavra, porque dentro de um desenho ela não entra (ISSUES
+**I17**).
+
+**O estrago plantado, e o que ele apanhou antes de eu chegar.** Pus
+`source_flag: "p"` numa sétima linha, `divida-publica-2025`. O `ledger:check`
+recusou-a duas vezes antes de construir seja o que for:
+
+> «declara a bandeira "p" da fonte e não a explica em "source_flag_note". Uma
+> bandeira que o leitor não sabe ler não é proveniência.»
+>
+> «declara a bandeira "p" mas o "excerpt" não termina com ela.»
+
+Isso é um resultado e não um obstáculo: a casa já impedia uma bandeira muda. Com
+a nota e o excerto completos, as contas passaram de **16 páginas e 63
+ocorrências** para **18 e 69**, com a primeira página a subir de 19 para 20, o
+índice de 6 para 7, e duas páginas novas, que são as duas edições da linha
+plantada. Revertido com `git checkout`; o ficheiro é idêntico ao original
+(`diff -q` contra a cópia guardada) e as contas voltaram a **16 e 63**.
+
+### O escuro como regra provisória (decisão f)
+
+`tokens.css`: o comentário do bloco escuro deixa de dizer «proposta» e passa a
+dizer o que é, com as duas condições da direção escritas e com a pré-visualização
+n.º 1 nomeada como o seu primeiro teste real. `IDENTIDADE.md` §2 ganha uma frase
+com o mesmo, sem citar texto governado; `npm run ledger:check` verde a seguir.
+
+**A primeira condição estava cumprida antes de ser decidida.** Os contornos dos
+marcadores não estão em `site.css`: estão os cinco em `src/styles/inicio.css`,
+que é da etapa 2. Varridos um a um:
+
+| regra | contorno |
+| --- | --- |
+| `.sq-fora` | `border: 1px solid var(--onamber)` (`--onamber` = `var(--ink)`) |
+| `.sq-dentro` | `border: 1px solid var(--ink)` |
+| `.sq-sem` | `border: 1px solid var(--ink)` |
+| `.regua-barra.barra-fora` | `stroke: var(--onamber)` |
+| `.regua-barra.barra-dentro` | `stroke: var(--ink)` |
+
+Nenhuma é um literal de cor e nenhuma é uma ficha só de claro. A etapa 2 seguiu
+a regra antes de ela existir, e nada teve de mudar.
+
+**A segunda condição: a tabela escura inteira**, `node scripts/medir-contraste.mjs`.
+
+| par | tipo | limiar | medido | |
+| --- | --- | --- | --- | --- |
+| ink / paper | texto | 4,5 | 15,38:1 | ✓ |
+| muted / paper | texto | 4,5 | 9,52:1 | ✓ |
+| paper / ink | texto | 4,5 | 15,38:1 | ✓ |
+| ink / g3 | texto | 4,5 | 9,19:1 | ✓ |
+| ochre / paper | texto | 4,5 | 8,00:1 | ✓ |
+| cobalt-palavra / paper | texto | 4,5 | 7,18:1 | ✓ |
+| rule-strong / paper | interface | 3 | 5,80:1 | ✓ |
+| axis / paper | interface | 3 | 5,80:1 | ✓ |
+| g2 / paper | interface | 3 | 5,80:1 | ✓ |
+| focus / paper | interface | 3 | 15,38:1 | ✓ |
+| ink / g3 | interface | 3 | 9,19:1 | ✓ |
+| muted / g3 | interface | 3 | 5,69:1 | ✓ |
+| paper / ink | interface | 3 | 15,38:1 | ✓ |
+| **amber / paper** | interface | 3 | **8,00:1** | **✓** |
+| **onamber / amber** | interface | 3 | **1,92:1** | **✗** |
+| cobalt / paper | interface | 3 | 2,16:1 | ✗ |
+| ink / cobalt | interface | 3 | 7,12:1 | ✓ |
+| amber / cobalt | interface | 3 | 3,70:1 | ✓ |
+| rule / paper | decoração | 0 | 1,67:1 | · |
+| g3 / paper | decoração | 0 | 1,67:1 | · |
+| rule-strong / paper | decoração | 0 | 5,80:1 | · |
+
+**0 falhas de texto.** Os dois pares a negrito são os que a direção nomeou:
+**âmbar sobre papel escuro, 8,00:1**, que passa e é a razão de em escuro o âmbar
+se ler sozinho; e **o contorno sobre o âmbar, 1,92:1**, que não passa e **não faz
+falta**, precisamente porque o âmbar já se lê. O outro par abaixo de 3:1 é a
+outra metade da simetria: o cobalto sobre papel escuro mede 2,16:1 e é o
+contorno que o segura, a 7,12:1. Em cada tema, cada marcador é segurado por si
+ou pelo contorno, e nunca por nenhum dos dois. Os dois blocos escuros continuam
+iguais ficha a ficha, o que a régua confere por conta própria.
+
+### A entrada §1.51, e o que ela não faz
+
+`DECISIONS.md` §1.51, `**Afecta:** nenhum`: as sete respostas em prosa com a
+data, o que esta subetapa construiu, e o que espera a sua etapa. Diz por
+extenso que **os bytes do Método não mudam aqui**: as duas frases aprovadas
+entram na etapa 4, cada uma no mesmo commit da entrada que a governa, com
+`**Afecta:** metodo` e o resumo do ficheiro. `npm run ledger:check` verde: 14
+entradas a partir da §1.38.
+
+### A saída
+
+```
+npm run build                                → verde
+grep -r "fonts.googleapis" dist/ | wc -l     → 0
+   (controlo: o mesmo grep em design/especime-v3/maquetas/ dá 35 ficheiros)
+npm run ledger:check                         → verde, 14 entradas
+node scripts/medir-contraste.mjs             → 0 falhas de texto nos dois temas
+```
+
+---
+
 ## 5. O que fica dito, e não descoberto depois
 
 1. **Quatro literais `var(--yellow)` sobrevivem em três ficheiros que esta etapa
@@ -728,10 +921,14 @@ lado das novas seria uma mentira por omissão.
 10. **A régua do contraste ganhou um resolvedor de `var()`** além do `PARES` que
     o brief me dá: sem ele a régua atirava sobre os tokens derivados. É uma
     régua, não um portão, e não entra em `npm run build`.
-11. **A navegação móvel foi medida só em Chromium** (1e). O desenho evita de
+11. **A palavra «provisório» não entra dentro de um `<svg>`** (1f, I17), e os
+    três usos que isso toca são da etapa 2.
+12. **O inventário do plano §3 nomeia uma linha com a bandeira `p` e há seis**
+    (1f, I18). O código lê a linha, não o inventário.
+13. **A navegação móvel foi medida só em Chromium** (1e). O desenho evita de
     propósito qualquer regra recente no caminho de 1280, e a razão está escrita
     com a medição que a suporta; o Firefox e o Safari não estão nesta máquina.
-12. **Nenhum portão novo**, e nenhuma extensão de portão. Esta etapa não mudou
+14. **Nenhum portão novo**, e nenhuma extensão de portão. Esta etapa não mudou
     uma linha de `gate-html.mjs`, `check-ledger.mjs` ou `check-dados.mjs`: as
     duas réguas novas (`medir-tipos.mjs`) e a alterada (`medir-contraste.mjs`)
     correm à mão e fora da construção. Não foi preciso plantar defeito nenhum
