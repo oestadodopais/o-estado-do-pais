@@ -241,6 +241,10 @@ Proposed home: a short closing entry after the ten rules, in the form the Métod
 
 Build green; rulers and the advisor before and after each stage; a context-starved Codex read with plants at the end of the phase (and, at the seat's call, after stage 2 on the home alone, because the preview is where the director spends money); protected preview n.º 1 after stage 2 and n.º 2 after stage 5; the director's word; merge; `verify:deploy`; design bundle and DesignSync. Blockers are surfaced the moment they appear. The running ISSUES list is `design/especime-v3/ISSUES.md`, appended per stage, closed items kept.
 
+## 14a. Preview n.º 1 · 20.08.2026, 23:37 BST
+
+On the director's word («let's do it»), the branch was pushed (`git push -u origin redesenho-v3`, 32 commits on `77e82eb`, HEAD `a5d512e`) and Vercel raised the protected preview in 25 s: `https://o-estado-do-pais-git-redesenho-v3-nunos-projects-b945a519.vercel.app` (deployment `o-estado-do-pais-g991r7e9p`, target preview, answers 302 to the login). Before it: the Codex read (`critica/2026-08-20-codex-leitura-da-primeira-pagina.md`, 4 of 5 plants, 3 real defects and 4 worth fixing, all closed in 2i), the acceptance matrix 79/79 on the final build, five gates green, `main` unmoved since the base. Open at the preview: ISSUES I24, I25, I13/I14; the director's judgement on the `--g3` frames and on the dark palette as provisional rule. Nothing merged.
+
 ## 15. Deviations register
 
 1. No catálogo/dossiê block, placeholder or door on the home (phase 2 parked).
