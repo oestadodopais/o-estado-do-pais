@@ -31,25 +31,40 @@ pública que ela governa. O que é citado fica com os caracteres que tem.
 
 | Tipo | Função | Onde aparece |
 |---|---|---|
-| Serifada | A marca | **Só** no `.wordmark`. Em mais lado nenhum. |
-| Monoespaçada | Valores medidos, rótulos, mobília | Todo o `<Claim>`, eyebrows, metadados, eixos |
-| Sem serifa | Prosa | Lede, corpo, descrições, legendas |
+| **Spectral** | A prosa, e a marca | Lede, corpo, descrições, legendas; e o `.wordmark` |
+| **Bitter** | Valores medidos, rótulos, eixos, o que é transcrito | Todo o `<Claim>`, metadados, eixos, mobília, excertos |
+| **Spectral SC** | Antetítulos editoriais e rótulos de secção | Os antetítulos e os rótulos de secção, e mais lado nenhum |
 
-**Sem tipos de rede.** As três famílias são pilhas do sistema, declaradas em
-`src/styles/tokens.css`. Uma família nova não entra por gosto: entra por decisão
-registada, e nenhuma delas se descarrega.
+**Só tipos alojados aqui.** Nenhum anfitrião de terceiros: nem
+`fonts.googleapis.com`, nem `fonts.gstatic.com`, nem outro. Uma família nova não
+entra por gosto: entra por decisão registada, e fica no repositório, com a sua
+licença ao lado e com o resumo dos bytes que entraram (`design/especime-v3/TIPOS.md`).
+Um tipo servido por terceiros é um pedido do leitor a uma casa que não é esta, e
+uma dependência que pode mudar de bytes sem ninguém deste lado dar por isso.
+Isto muda a regra da v2, que dizia que as três famílias eram pilhas do sistema:
+a proibição de descarregar de fora fica e endurece, a pilha do sistema sai
+(`DECISIONS.md` §1.50). As pilhas de sistema continuam a existir, e só como
+recuo declarado na folha, para o caso de um ficheiro não chegar.
+
+**Bitter em caixa alta só dentro dos instrumentos.** É a Emenda 5 de
+20.08.2026, e a navegação não é um instrumento: leva versaletes de Spectral SC.
+
+**Algarismos tabulares versais nos instrumentos.** Uma coluna de números que
+não alinha não é uma coluna, e a comparação que ela convida é falsa. Todo o
+valor e toda a régua levam `font-variant-numeric: tabular-nums lining-nums`.
 
 **O caso que o estudo não resolveu, um número no meio de uma frase.** A regra não
-é «algarismos vão a mono». É esta:
+é «algarismos vão a Bitter». É esta:
 
-> A monoespaçada é a marca de **um valor que tem linha no livro-razão**, e não a
-> marca de um algarismo. Um valor do livro-razão vai sempre a mono, através de
+> Bitter é a marca de **um valor que tem linha no livro-razão**, e não a marca
+> de um algarismo. Um valor do livro-razão vai sempre a Bitter, através de
 > `<Claim>`. Uma data de referência, um número de secção ou um nome próprio com
 > algarismos fica na letra da frase que o rodeia.
 
 Por isso «Portugal está **18** pontos abaixo da média da UE-27. O valor de 2024 é
-provisório.» está **certo** com duas letras: o 18 é uma medição, o 2024 é uma
-data. A letra distingue-os, e essa distinção é o produto.
+provisório.» está **certo** com duas letras: o 18 é uma medição e sai a Bitter,
+o 2024 é uma data e fica em Spectral, na letra da frase. A letra distingue-os, e
+essa distinção é o produto.
 
 **A escala da leitura, desde a v2.** A prosa das camadas de leitura passa a 17 a
 18px de base, com entrelinha entre 1,55 e 1,6 (`design/DECISAO.md` escreve 1,55;
@@ -63,26 +78,47 @@ não como jornal.
 
 ## 2. Cor com significado
 
-- **Amarelo `--yellow`**, marca de medição. A barra da distância, o município
-  aceso, as barras de composição, a região que está a ser lida, as janelas do
-  calendário das fontes. **Nunca como cor de texto. Nunca decoração.**
-- **Oxblood `--oxblood`**, erro admitido. O registo de correções, e mais nada.
-  Nunca ênfase, nunca alerta, nunca «só desta vez».
-- **Tudo o resto**: `--paper`, `--paper-2`, `--paper-3`, `--ink`, `--muted`,
-  `--rule`, `--rule-strong`.
+**A cor aparece só onde a fonte publica um limiar formal**, e o que ela diz é o
+estado do valor contra esse limiar. Uma posição face a uma média, um destaque ou
+um lugar num ordenamento não é um limiar publicado: diz-se por palavras, a
+tinta. É a Emenda 1 de 20.08.2026, e é a regra mais alta desta secção.
+
+- **Fora do limiar**: `--amber` `#E0A21A` no marcador, **com contorno de
+  tinta**, e `--ochre` `#7A5300` na palavra. O contorno não é desenho: é uma
+  medição. Âmbar sobre papel dá 2,09:1, que não chega para um objeto de
+  interface; a tinta contra o âmbar dá 7,85:1, e é ela que desenha a fronteira.
+  O ocre é o mesmo matiz na intensidade que se lê, 6,37:1.
+- **Dentro do limiar**: `--cobalt` `#1F4E8C`, no marcador e na palavra, 7,73:1.
+- **Sem limiar** e **por confirmar**: nenhuma cor. O primeiro diz-se por
+  palavras; o segundo muda de forma, e a forma é a de §6.
+- **Tudo o resto**: `--paper`, `--ink`, e os três cinzentos `--g1` (texto
+  secundário), `--g2` (eixos e fronteiras) e `--g3` (grelha e molduras).
+
+**O estado nunca é dito só pela cor.** Leva sempre a palavra e a posição na
+régua, porque uma folha impressa a cinzento, ou um leitor que não separa estes
+dois matizes, tem de ler o mesmo. Âmbar e cobalto distinguem-se por 3,70:1, no
+eixo amarelo-azul, e não é isso que carrega o significado: é a palavra.
 
 **A regra para um caso novo: não há acento novo.** Um tipo de página novo não
 ganha uma cor. Se for preciso distinguir alguma coisa, distingue-se com peso de
-fio, com fundo (`--paper-2` / `--paper-3`) ou com a letra monoespaçada. Nunca com
-matiz. Um segundo acento destrói o significado do primeiro.
+fio, com uma moldura de `--g3`, com um fio de `--g2` ou com a letra do
+instrumento. Nunca com matiz, e nunca com um segundo papel: não há `--paper-2`
+nem `--paper-3`, e o aparelho separa-se com fios e molduras cinzentas (Emenda
+1). Um segundo acento destrói o significado do primeiro.
 
-**Os neutros podem aquecer; os dois acentos não se tocam.** A direção S admite os
-neutros quentes (papel, tinta, fio) em lugar dos frios de hoje, com uma condição
-que não é de gosto: **cada par usado passa AA em claro e em escuro, medido por um
-script no passo de construção**, e não a olho nem por um número copiado de um
-racional. O amarelo e o oxblood ficam exatamente como estão, dígito a dígito, e
-exclusivos no significado: mexer-lhes na matiz obrigaria a mudar o que o sítio
-escreve sobre eles. As medições ficam registadas em `DECISIONS.md` §1.43.
+**Duas cores retiraram-se, e não foi por gosto** (`DECISIONS.md` §1.50). O
+amarelo `--yellow` era a marca de medição, e a medição deixou de ser um estado:
+os instrumentos desenham-se a tinta e a cinzento, e a cor guarda-se para o
+limiar. O oxblood `--oxblood` era o erro admitido, e uma correção deixa de ter
+cor e passa a ter forma: valor antigo riscado a cinzento, valor novo a tinta, e
+a data. As duas fichas saíram de `src/styles/tokens.css` e de todas as regras
+que as usavam.
+
+**Cada par usado passa AA em claro e em escuro, medido por um script**, e não a
+olho nem por um número copiado de um racional. `scripts/medir-contraste.mjs` mede
+cada par que a folha de facto usa, nos dois temas; um par que não esteja na sua
+lista é um par que ninguém mediu. Os números de hoje estão em
+`design/especime-v3/notas/stage-1.md`, os da v2 em `DECISIONS.md` §1.43.
 
 ---
 
@@ -290,8 +326,10 @@ também extensões e também provadas em estragos plantados:
 
 **O que ainda não é conferido por máquina, e é promessa e não facto.** As regras
 de folha de estilos de §1 e §2 (nenhum literal de cor fora de `tokens.css`;
-`--yellow` nunca como `color`; a família serifada só em `.wordmark`) e o marcador
-só na sua classe (§6) **não têm hoje nenhuma conferência**: esperam o
+`--amber` nunca como `color`; `--ochre` e `--cobalt` só na palavra de estado; a
+caixa alta de Bitter só dentro dos instrumentos; nenhum anfitrião de tipos de
+terceiros) e o marcador só na sua classe (§6) **não têm hoje nenhuma
+conferência**: esperam o
 `gate:identidade`, que é a fase 4 e ainda não existe como script. Até lá
 seguram-se por atenção; a v1 anunciava-as como conferidas no build por esse
 portão, e o portão nunca chegou a existir.
