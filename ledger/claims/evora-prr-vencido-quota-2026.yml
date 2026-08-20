@@ -6,7 +6,7 @@
 id: "evora-prr-vencido-quota-2026"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "61,31"
+value: "61,32"
 unit: "% do valor aprovado"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -20,8 +20,8 @@ reference_date: null
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "102 711 703,85 ÷ 166 639 411,36 × 100 = 61,64. O dinheiro aprovado em localizações cuja data prevista de conclusão já passou sem conclusão registada, como quota de todo o dinheiro aprovado para o concelho."
-derivation_en: "102 711 703.85 ÷ 166 639 411.36 × 100 = 61.64. Approved money on project-locations whose planned completion date had passed with no completion recorded, as a share of all money approved for the concelho."
+derivation: "O dinheiro aprovado em localizações cuja data prevista de conclusão já passou sem conclusão registada, a dividir por todo o dinheiro aprovado para o concelho, vezes cem."
+derivation_en: "Approved money on project-locations whose planned completion date had passed with no completion recorded, divided by all the money approved for the concelho, times one hundred."
 derived_from:
   - "evora-prr-vencido-aprovado-2026"
   - "evora-prr-aprovado-2026"
@@ -40,3 +40,9 @@ corrections:
     new_value: "61,31"
     reason: "Esta linha deriva de duas que foram refeitas sobre o instantâneo de 2026-08-17: o aprovado vencido e o aprovado atribuídos ao concelho. As duas mudaram, e a quota que esta linha publica mudou com elas. A anterior era sobre o instantâneo de 2026-08-03."
     reason_en: "This row derives from two that were recomputed over the 2026-08-17 snapshot: the overdue approved money and all the approved money attributed to the concelho. Both moved, and the share this row publishes moved with them. The previous one was over the 2026-08-03 snapshot."
+  - date: "2026-08-20"
+    kind: "atualizacao"
+    old_value: "61,31"
+    new_value: "61,32"
+    reason: "Esta linha deriva de duas que foram refeitas sobre o instantâneo de 2026-08-19: o aprovado vencido e o aprovado atribuídos ao concelho. As duas mudaram, e a quota que esta linha publica mudou com elas. A anterior era sobre o instantâneo de 2026-08-17."
+    reason_en: "This row derives from two that were recomputed over the 2026-08-19 snapshot: the overdue approved money and all the approved money attributed to the concelho. Both moved, and the share this row publishes moved with them. The previous one was over the 2026-08-17 snapshot."
