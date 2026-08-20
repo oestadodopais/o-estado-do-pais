@@ -88,75 +88,92 @@
 }
 
 /* ============================================================
-   TOKENS — padrão de tema de três estados.
+   TOKENS v3 — padrão de tema de três estados.
 
    :root nu                       = paleta clara completa
    @media (prefers-color-scheme)  = escuro do sistema, exceto se o leitor
                                     tiver escolhido claro
    :root[data-theme="dark"]       = escolha explícita, ganha em ambos os sentidos
 
-   REGRA DO AMARELO: --yellow é reservado a marcas de medição.
-   Nunca é usado como cor de texto sobre fundo claro.
+   Os dois blocos escuros têm de ser iguais, ficha a ficha: um tema que muda
+   conforme a porta por onde se entra não é um tema. `medir-contraste.mjs`
+   confere-o e di-lo se não forem.
 
    ------------------------------------------------------------
-   V2, DA DIREÇÃO S (`design/DECISAO.md`, 16.08.2026).
+   A COR É O ESTADO (v3; `IDENTIDADE.md` §2, `DECISIONS.md` §1.50, Emenda 1 de
+   20.08.2026).
 
-   OS NEUTROS AQUECERAM. O papel deixou de ser azulado e passou a quente, a
-   tinta passou a castanha-escura, os fios e o eixo seguiram-nos. Os valores
-   são os da direção C (`design/direcao-c/tokens.css`), adotados sem alteração
-   depois de medidos.
+   A cor aparece SÓ onde a fonte publica um limiar formal, e o que ela diz é o
+   estado do valor contra esse limiar. Fora do limiar: `--amber` no marcador,
+   com contorno de `--onamber`, e `--ochre` na palavra. Dentro do limiar:
+   `--cobalt` no marcador e `--cobalt-palavra` na palavra. Sem limiar e por
+   confirmar: nenhuma cor. Tudo o resto é tinta e cinzento.
 
-   OS DOIS ACENTOS NÃO SE TOCARAM. `--yellow` e `--oxblood` estão aqui dígito
-   a dígito como estavam antes da v2, nos dois temas. `IDENTIDADE.md` §2: o
-   amarelo é a marca de medição e o oxblood o erro admitido, e mexer-lhes na
-   matiz obrigaria a mudar o que o sítio escreve sobre eles.
+   O CONTORNO DO MARCADOR ÂMBAR NÃO É DESENHO, É UMA MEDIÇÃO. Âmbar sobre papel
+   claro mede 2,09:1, que não chega para um objeto de interface; tinta sobre
+   âmbar mede 7,85:1, e é a tinta que desenha a fronteira. Sem o contorno, o
+   marcador não existe para quem o tem de ver.
+
+   O QUE SAIU, E NÃO POR GOSTO. `--yellow` era a marca de medição, e a medição
+   deixou de ser um estado: os instrumentos desenham-se a tinta e a cinzento.
+   `--oxblood` era o erro admitido, e uma correção passa a dizer-se pela forma,
+   com o valor antigo riscado a cinzento e o novo a tinta. `--paper-2` e
+   `--paper-3` saíram porque o aparelho se separa com fios e molduras cinzentas
+   e não com painéis tingidos (Emenda 1): um segundo papel seria um valor
+   inventado, sem linha na constituição. `--shadow`, `--dotcol` e `--onyellow`
+   saíram com as regras que os usavam.
 
    MEDIDO, NÃO VISTO. `node scripts/medir-contraste.mjs` mede cada par que a
-   folha de facto usa, nos dois temas, contra os limiares da WCAG 2.1. Todos
-   os pares de TEXTO passam AA (4,5:1) nos dois temas, antes e depois. A régua
-   corre à mão e não é um portão. Os números da adoção estão em `DECISIONS.md`
-   §1.43.
-
-   Onde a v2 melhorou, e é onde mais se lê: `--muted` sobre papel passou de
-   6,28:1 para 6,87:1 em claro, e o aparelho inteiro vive nessa ficha.
-
-   Onde a v2 não melhorou, e fica escrito: o amarelo sobre `--paper-3` (a
-   calha das barras de composição) passou de 1,76:1 para 1,65:1. Os dois
-   estão abaixo de 3:1 e já estavam; procurou-se um `--paper-3` quente que
-   batesse o de hoje sem perder o terceiro degrau de papel e não existe
-   nenhum. A saída não é mexer no amarelo, que a §2 fixa: é dar à calha uma
-   fronteira desenhada. Fica registado e não fica corrigido aqui.
+   folha de facto usa, nos dois temas, contra os limiares da WCAG 2.1. Um par
+   que não esteja na lista dessa régua é um par que ninguém mediu. A régua corre
+   à mão e não é um portão. Os números desta etapa estão em
+   `design/especime-v3/notas/stage-1.md`.
    ============================================================ */
 :root {
-  --paper: #fbfaf7;
-  --paper-2: #f3f0e9;
-  --paper-3: #e9e4d9;
-  --ink: #1b1a17;
-  --muted: #5c574e;
-  --yellow: #e8a80c;
-  /* Reservado ao registo de correções, e a mais nada. O amarelo marca medição;
-     este marca uma confissão. Contraste sobre --paper: 9,38:1. */
-  --oxblood: #7c2333;
-  --rule: #e3ded3;
-  --rule-strong: #c2bbac;
-  /* Também desenha o quadrado do selo, cheio e a tracejado. Uma distinção que
-     o leitor tem de ver não pode ficar abaixo de 3:1: sobre papel, 3,56:1. */
-  --axis: #8a8478;
-  --dotcol: #6f6a60;
-  --onyellow: #1b1a17;
-  --focus: #1b1a17;
-  --shadow: 0 1px 1px rgba(27, 26, 23, 0.04), 0 10px 28px -18px rgba(27, 26, 23, 0.35);
+  /* as duas superfícies */
+  --paper: #f6f7f4;
+  --ink: #17191b;
 
-  --f-sans: 'Avenir Next', 'Avenir', 'Helvetica Neue', Helvetica, Arial, 'Segoe UI', system-ui, sans-serif;
-  --f-serif: 'Iowan Old Style', 'Palatino', 'Palatino Linotype', 'Book Antiqua', 'URW Palladio L', Georgia, 'Times New Roman', serif;
-  --f-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Monaco, 'Cascadia Mono', 'Roboto Mono', Consolas, monospace;
+  /* os três cinzentos frios de estrutura, do mais escuro ao mais claro */
+  --g1: #585d5b; /* texto secundário · 6,24:1 sobre papel */
+  --g2: #7f8681; /* eixos e fronteiras · 3,47:1 */
+  --g3: #d9ddd8; /* grelha e molduras · 1,28:1, decoração */
 
-  /* A ESCALA DA LEITURA (`IDENTIDADE.md` §1, v2). A prosa das camadas de
-     leitura cresce; a mobília não. A decisão dá 17 a 18px de base e uma
-     entrelinha entre 1,55 e 1,6, com a entrelinha ABSOLUTA a nunca descer
-     abaixo dos 25,6px de hoje (16px × 1,6). Estes dois valores são o meio de
-     cada intervalo: 17,5 × 1,58 = 27,65px. Quem os mexer mexe-os aqui, e não
-     regra a regra. */
+  /* o par de estados, e mais nenhuma cor no sítio */
+  --amber: #e0a21a; /* fora do limiar, no marcador · 2,09:1, e é por isso que leva contorno */
+  --ochre: #7a5300; /* fora do limiar, na palavra · 6,37:1 */
+  --cobalt: #1f4e8c; /* dentro do limiar, no marcador · 7,73:1 */
+  --cobalt-palavra: #1f4e8c; /* dentro do limiar, na palavra; em claro é o mesmo */
+
+  /* os derivados: a folha nomeia o papel, não a cor */
+  --rule: var(--g3);
+  --rule-strong: var(--g2);
+  --muted: var(--g1);
+  --axis: var(--g2);
+  --focus: var(--ink);
+  /* O CONTORNO DE UM MARCADOR DE ESTADO, e serve os dois. Em claro é ele que
+     segura o âmbar (7,85:1 contra o âmbar, que sozinho mede 2,09:1 sobre papel)
+     e não faz falta nenhuma ao cobalto, que se lê sozinho (7,73:1). Em escuro é
+     ao contrário: o âmbar lê-se sozinho (8,00:1) e é o contorno que segura o
+     cobalto (7,12:1 contra ele, que sozinho mede 2,16:1). Em cada tema, cada
+     marcador é segurado por si ou pelo contorno, e nunca por nenhum dos dois. */
+  --onamber: var(--ink);
+
+  /* AS TRÊS LETRAS (`IDENTIDADE.md` §1, v3). Os ficheiros estão alojados aqui,
+     declarados nos `@font-face` acima; as pilhas a seguir são o recuo real para
+     o intervalo em que o ficheiro ainda não chegou, e não enfeite. O Spectral SC
+     recua para o Spectral com versaletes sintéticos, que é o menos mau: um
+     versalete falso lê-se, uma sem serifa genérica trocava a voz. */
+  --f-prosa: 'Spectral', Georgia, 'Times New Roman', serif;
+  --f-instr: 'Bitter', 'Rockwell', 'Roboto Slab', Georgia, serif;
+  --f-versal: 'Spectral SC', 'Spectral', Georgia, 'Times New Roman', serif;
+
+  /* A ESCALA DA LEITURA (`IDENTIDADE.md` §1, v2, e não muda na v3). A prosa das
+     camadas de leitura cresce; a mobília não. A decisão dá 17 a 18px de base e
+     uma entrelinha entre 1,55 e 1,6, com a entrelinha ABSOLUTA a nunca descer
+     abaixo dos 25,6px de 16px × 1,6. Estes dois valores são o meio de cada
+     intervalo: 17,5 × 1,58 = 27,65px. Quem os mexer mexe-os aqui, e não regra a
+     regra. */
   --t-leitura: 17.5px;
   --lh-leitura: 1.58;
 
@@ -164,38 +181,41 @@
   --gutter: clamp(18px, 4vw, 44px);
 }
 
+/* ============================================================
+   O ESCURO É UMA PROPOSTA, E ESPERA A PALAVRA DA DIREÇÃO.
+
+   As maquetas da v3 não trazem paleta escura nenhuma e o sítio serve um tema de
+   três estados desde a v2: o escuro tinha de existir, e não podia ser inventado
+   a olho. Estes oito valores são a proposta do plano §3 (f), medida com a mesma
+   fórmula da régua, e MUDAM POR DECISÃO DELE. Duas coisas que a medição obrigou
+   e não são gosto: o ocre `#7a5300` falha sobre papel escuro (2,62:1), e por
+   isso em escuro a palavra do estado «fora do limiar» é o próprio âmbar (8,00:1);
+   o cobalto `#1f4e8c` como palavra fica em 2,16:1 e por isso a palavra «dentro
+   do limiar» clareia para `#7fa6dc` (7,18:1), enquanto o marcador pode ficar no
+   cobalto escuro porque leva contorno.
+   ============================================================ */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --paper: #14130f;
-    --paper-2: #1b1915;
-    --paper-3: #24211b;
-    --ink: #ece7dc;
-    --muted: #a09a8d;
-    --yellow: #e8a80c;
-    --oxblood: #d98a95; /* contraste sobre --paper escuro: 7,10:1 */
-    --rule: #2c2921;
-    --rule-strong: #443f35;
-    --axis: #6e6a60;
-    --dotcol: #8a8478;
-    --onyellow: #1b1a17;
-    --focus: #ece7dc;
-    --shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 10px 28px -18px rgba(0, 0, 0, 0.85);
+    --paper: #15171a;
+    --ink: #eceeea; /* 15,38:1 sobre o papel escuro */
+    --g1: #b9beba; /* 9,52:1 */
+    --g2: #8e948f; /* 5,80:1 */
+    --g3: #3a3f3c; /* 1,67:1, decoração */
+    --amber: #e0a21a; /* 8,00:1 sobre papel escuro: aqui o âmbar lê-se sozinho */
+    --ochre: #e0a21a; /* a palavra do estado em escuro É o âmbar; o ocre falha aqui */
+    --cobalt: #1f4e8c; /* marcador; 2,16:1 sozinho, e por isso leva contorno */
+    --cobalt-palavra: #7fa6dc; /* 7,18:1 */
   }
 }
 
 :root[data-theme='dark'] {
-  --paper: #14130f;
-  --paper-2: #1b1915;
-  --paper-3: #24211b;
-  --ink: #ece7dc;
-  --muted: #a09a8d;
-  --yellow: #e8a80c;
-  --oxblood: #d98a95; /* contraste sobre --paper escuro: 7,10:1 */
-  --rule: #2c2921;
-  --rule-strong: #443f35;
-  --axis: #6e6a60;
-  --dotcol: #8a8478;
-  --onyellow: #1b1a17;
-  --focus: #ece7dc;
-  --shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 10px 28px -18px rgba(0, 0, 0, 0.85);
+  --paper: #15171a;
+  --ink: #eceeea;
+  --g1: #b9beba;
+  --g2: #8e948f;
+  --g3: #3a3f3c;
+  --amber: #e0a21a;
+  --ochre: #e0a21a;
+  --cobalt: #1f4e8c;
+  --cobalt-palavra: #7fa6dc;
 }

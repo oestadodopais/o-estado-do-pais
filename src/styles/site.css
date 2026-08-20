@@ -1,8 +1,16 @@
 /* ============================================================
    O ESTADO DO PAÍS — folha de estilo do sítio.
-   Portada do estudo de identidade v2 aprovado. Três tipos, três funções,
-   sem sobreposição: a serifada só em marcas, a monoespaçada em todos os
-   números e rótulos, a sem serifa só em prosa.
+   Três tipos, três funções, sem sobreposição (`IDENTIDADE.md` §1, v3):
+   Spectral (`--f-prosa`) na prosa e na marca, Bitter (`--f-instr`) nos valores,
+   rótulos, eixos e no que é transcrito, Spectral SC (`--f-versal`) nos
+   antetítulos editoriais e nos rótulos de secção. Bitter em caixa alta só
+   dentro dos instrumentos. Os ficheiros estão alojados aqui, em
+   `public/tipos/`, e declarados em `tokens.css`.
+
+   A cor é o estado (`IDENTIDADE.md` §2, v3): âmbar com contorno e ocre para
+   fora do limiar, cobalto para dentro, e mais nada. Os instrumentos desenham-se
+   a tinta e a cinzento; o aparelho separa-se com fios e molduras de `--g3`, e
+   não com painéis tingidos.
    ============================================================ */
 
 *,
@@ -19,9 +27,17 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--f-sans);
+  font-family: var(--f-prosa);
   font-size: 16px;
   line-height: 1.6;
+  /* A PROSA LEVA ALGARISMOS ANTIGOS, e são reais: `node scripts/medir-tipos.mjs`
+     mostrou que o `onum` do Spectral funciona, ao contrário do que a sessão de
+     desenho tinha concluído medindo o par errado. `proportional-nums` é o que
+     lhe dá os antigos PROPORCIONAIS (`.OP`); pedir `oldstyle-nums` sozinho dá os
+     antigos tabulares, que numa frase corrida abrem buracos. Os tabulares
+     versais são do aparelho, e o aparelho pede-os por baixo (`.mono`,
+     `--f-instr`): nunca os dois na mesma linha. */
+  font-variant-numeric: oldstyle-nums proportional-nums;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -97,22 +113,32 @@ svg {
    o desenho continua a ser o da sobrancelha. As três declarações a mais
    (`line-height`, `text-wrap`, `margin`) são o que um `<h2>` traz e um `<span>`
    não; num `<span>` não mudam nada, porque é o que ele já herdava. */
+/* VERSALETES EDITORIAIS, E NÃO CAIXA ALTA DE BITTER. A Emenda 5 guarda a caixa
+   alta de Bitter para DENTRO dos instrumentos; uma sobrancelha é editorial, e
+   vai em Spectral SC, cujas minúsculas SÃO as versaletes. Daí o
+   `text-transform: lowercase`: o texto entra em caixa normal e o tipo desenha-o
+   em versaletes de verdade, e não em maiúsculas encolhidas pelo navegador. */
 .eyebrow {
-  font-family: var(--f-mono);
-  font-size: 11px;
+  font-family: var(--f-versal);
+  font-size: 13px;
   font-weight: 600;
   line-height: inherit;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
   text-wrap: wrap;
   color: var(--muted);
   display: block;
   margin: 0;
 }
 
+/* Todo o aparelho: tabulares VERSAIS, e os do Bitter são reais.
+   `node scripts/medir-tipos.mjs`: «1111111» e «0000000» medem 284,438 e 448,938
+   px sem a feature e 441 px as duas com ela, a 100px. `lining-nums` é preciso
+   porque a prosa por cima pede antigos, e um valor não herda os antigos da
+   frase que o rodeia. */
 .mono {
-  font-family: var(--f-mono);
-  font-variant-numeric: tabular-nums;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
 }
 
 h1,
@@ -192,7 +218,8 @@ section {
   flex-wrap: wrap;
   gap: 4px 18px;
   align-items: baseline;
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -250,7 +277,7 @@ section {
 }
 
 .wordmark {
-  font-family: var(--f-serif);
+  font-family: var(--f-prosa);
   font-weight: 400;
   font-size: clamp(34px, 7.4vw, 68px);
   line-height: 1.04;
@@ -267,7 +294,8 @@ section {
 }
 
 .method-line {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 11.5px;
   letter-spacing: 0.045em;
   color: var(--muted);
@@ -281,7 +309,8 @@ section {
   display: flex;
   flex-wrap: wrap;
   gap: 6px 18px;
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.13em;
@@ -322,7 +351,7 @@ section {
 }
 .leitura-v {
   color: var(--ink);
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: tabular-nums lining-nums;
 }
 .masthead-furniture a.leitura-k:hover,
 .masthead-furniture .leitura-porta:hover .leitura-k {
@@ -374,16 +403,16 @@ section {
   margin-inline-start: 10px;
 }
 .claim-sufixo {
-  font-family: var(--f-mono);
-  font-variant-numeric: tabular-nums;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--ink);
 }
 
 .claim-value {
-  font-family: var(--f-mono);
-  font-variant-numeric: tabular-nums;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--ink);
@@ -410,7 +439,8 @@ section {
   gap: 7px;
   min-height: 24px;
   padding-block: 2px;
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10.5px;
   letter-spacing: 0.06em;
   /* A palavra do selo é «fonte», em minúsculas, nas duas edições, e é assim
@@ -516,7 +546,8 @@ a.src-chip.is-unverified:hover::before {
    `container-type: inline-size` é o que dá ao valor a largura real da célula,
    em `cqw`, para a regra de escala abaixo. */
 .figura {
-  background: var(--paper-2);
+  background: var(--paper);
+  border: 1px solid var(--rule);
   padding: clamp(18px, 2.2vw, 24px);
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -541,8 +572,8 @@ a.src-chip.is-unverified:hover::before {
    A primeira declaração é a de antes, e fica: onde a divisão por uma variável
    ou o `cqw` não forem entendidos, a célula volta ao tamanho fixo. */
 .figura-num {
-  font-family: var(--f-mono);
-  font-variant-numeric: tabular-nums;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: clamp(38px, 4.4vw, 52px);
   font-size: clamp(24px, min(4.4vw, calc(100cqw / (var(--figura-car, 6) * 0.63))), 52px);
   font-weight: 600;
@@ -556,7 +587,8 @@ a.src-chip.is-unverified:hover::before {
   letter-spacing: -0.01em;
 }
 .figura-medida {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10.5px;
   font-weight: 600;
   letter-spacing: 0.13em;
@@ -568,11 +600,11 @@ a.src-chip.is-unverified:hover::before {
    palavra ficam em tinta. A palavra é derivada de dois números que já existem
    (`comparacaoComOLimiar`), e não é um número. */
 .figura-limiar {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
   font-size: 11px;
   letter-spacing: 0.04em;
   color: var(--ink);
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: tabular-nums lining-nums;
 }
 .figura-limiar-k {
   color: var(--muted);
@@ -592,17 +624,19 @@ a.src-chip.is-unverified:hover::before {
 
 /* ------------------------------------------------------------ instrumento */
 
+/* A peça é uma moldura cinzenta sobre o papel, e não um painel tingido com
+   sombra: Emenda 1. O estado vive no marcador, na palavra e na régua. */
 .instr {
   border: 1px solid var(--rule);
-  background: var(--paper-2);
-  box-shadow: var(--shadow);
+  background: var(--paper);
 }
 .instr-top {
   padding: clamp(20px, 2.6vw, 30px) clamp(20px, 2.8vw, 32px) 0;
 }
 
 .layer-tag {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 9.5px;
   font-weight: 600;
   letter-spacing: 0.18em;
@@ -629,8 +663,8 @@ a.src-chip.is-unverified:hover::before {
   padding: clamp(16px, 2vw, 22px) 0 clamp(18px, 2.2vw, 24px);
 }
 .glance-num {
-  font-family: var(--f-mono);
-  font-variant-numeric: tabular-nums;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: clamp(56px, 9vw, 88px);
   font-weight: 600;
   line-height: 0.86;
@@ -649,7 +683,8 @@ a.src-chip.is-unverified:hover::before {
   letter-spacing: -0.01em;
 }
 .glance-unit {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10.5px;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -666,7 +701,8 @@ a.src-chip.is-unverified:hover::before {
   padding: 0 0 clamp(16px, 2vw, 22px);
 }
 .controls-label {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -675,7 +711,7 @@ a.src-chip.is-unverified:hover::before {
   margin-right: 4px;
 }
 .chip {
-  font-family: var(--f-sans);
+  font-family: var(--f-prosa);
   font-size: 13.5px;
   font-weight: 500;
   letter-spacing: -0.004em;
@@ -693,16 +729,20 @@ a.src-chip.is-unverified:hover::before {
   border-color: var(--ink);
 }
 .chip[aria-pressed='true'] {
-  background: var(--paper-3);
+  background: var(--paper);
   border-color: var(--ink);
   color: var(--ink);
   font-weight: 600;
 }
-/* a única região a ser lida recebe o acento — o mesmo da sua barra na régua */
+/* A região que está a ser lida é a única que se inverte. Era o amarelo, e o
+   amarelo saiu: o estado de leitura não é um limiar publicado, e por isso
+   diz-se a tinta (`IDENTIDADE.md` §2, v3). A distinção entre escolhido e
+   escolhido-e-lido continua a ser visível: moldura de tinta contra bloco de
+   tinta, 16,39:1 contra o papel nos dois casos. */
 .chip.is-read[aria-pressed='true'] {
-  background: var(--yellow);
-  border-color: var(--yellow);
-  color: var(--onyellow);
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
 }
 .chip-plain {
   background: transparent;
@@ -732,20 +772,21 @@ a.src-chip.is-unverified:hover::before {
   height: auto;
 }
 .rule-svg text {
-  font-family: var(--f-sans);
+  font-family: var(--f-prosa);
 }
 .rule-svg .tk {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
   font-size: 11px;
   fill: var(--muted);
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: tabular-nums lining-nums;
 }
 .rule-svg .tk-datum {
   fill: var(--ink);
   font-weight: 600;
 }
 .rule-svg .datum-label {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.13em;
@@ -756,23 +797,24 @@ a.src-chip.is-unverified:hover::before {
   fill: var(--muted);
 }
 .rule-svg .mk-val {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
   font-size: 16px;
   font-weight: 600;
   fill: var(--ink);
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: tabular-nums lining-nums;
 }
 .rule-svg .hist-label {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   fill: var(--muted);
 }
 .rule-svg .gap-label {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
   font-size: 11px;
   font-weight: 600;
   fill: var(--ink);
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: tabular-nums lining-nums;
 }
 .rule-svg .mk {
   cursor: pointer;
@@ -785,6 +827,53 @@ a.src-chip.is-unverified:hover::before {
 }
 .rule-svg .mk-hit {
   fill: transparent;
+}
+
+/* ============================================================
+   OS DESENHOS QUE AINDA ESCREVEM A COR NO GABARITO
+
+   Cinco `<rect>` e um `<circle>` estão desenhados dentro de componentes e de
+   vistas, com a cor escrita no atributo `fill` do próprio gabarito
+   (`InstrumentoConvergencia`, `InstrumentoMapa`, `MunicipioView`,
+   `AgendaView`). Esses ficheiros não são desta etapa e não foram tocados: a
+   regra da fase é que uma peça que perca um token se conserta AQUI, remapeando
+   a regra, e não abrindo a vista.
+
+   Um atributo de apresentação de SVG perde para qualquer declaração de folha de
+   estilos, e é isso que estas regras usam. Quando as etapas 2 a 4 reescreverem
+   esses desenhos, este bloco desaparece com eles.
+
+   As três barras eram amarelas, e o amarelo saiu: uma distância desenhada, uma
+   série contra o tecto legal e uma janela de publicação não são limiares
+   publicados a comparar, e por isso desenham-se a tinta e a cinzento
+   (`IDENTIDADE.md` §2, v3). As duas chapas eram do segundo papel, e passam a
+   papel: o que as separa do fundo é a moldura da peça.
+   ============================================================ */
+
+/* a distância ao limiar, na régua da convergência */
+.rule-svg [data-gap] rect {
+  fill: var(--ink);
+}
+/* a chapa por baixo do rótulo do marcador, e o anel do próprio marcador */
+.rule-svg .mk rect {
+  fill: var(--paper);
+}
+.rule-svg .mk circle {
+  stroke: var(--paper);
+}
+/* a chapa por baixo do rótulo do concelho aceso, no mapa */
+.map-svg [data-aceso] rect {
+  fill: var(--paper);
+}
+/* a dívida contra o tecto legal, e a série do índice, na página do município */
+.mun-distancia-svg rect,
+.mun-serie-svg rect {
+  fill: var(--ink);
+}
+/* a janela de publicação de uma fonte, no eixo da agenda: uma banda cinzenta,
+   para que a marca do dia, que é de tinta, se leia por cima dela */
+.agenda-eixo-svg rect {
+  fill: var(--g2);
 }
 
 /* camada 2 — leitura breve */
@@ -805,7 +894,7 @@ a.src-chip.is-unverified:hover::before {
 /* camada 3 — fundo */
 .deep {
   border-top: 1px solid var(--rule);
-  background: var(--paper-2);
+  background: var(--paper);
 }
 .deep > summary {
   list-style: none;
@@ -814,7 +903,8 @@ a.src-chip.is-unverified:hover::before {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -839,7 +929,7 @@ a.src-chip.is-unverified:hover::before {
   transform: rotate(90deg);
 }
 .deep > summary:hover {
-  background: var(--paper-3);
+  background: var(--g3);
 }
 .deep-body {
   padding: 4px clamp(20px, 2.8vw, 32px) clamp(22px, 2.6vw, 28px);
@@ -853,7 +943,8 @@ a.src-chip.is-unverified:hover::before {
   max-width: 74ch;
 }
 .deep-k {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -866,7 +957,8 @@ a.src-chip.is-unverified:hover::before {
   color: var(--ink);
 }
 .deep-v.verbatim {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 11px;
   line-height: 1.75;
   color: var(--muted);
@@ -894,17 +986,18 @@ a.src-chip.is-unverified:hover::before {
   }
 }
 .prov-study {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 11px;
   font-weight: 600;
   color: var(--ink);
   letter-spacing: 0.02em;
 }
 .prov-vals {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
   font-size: 11.5px;
   color: var(--muted);
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: tabular-nums lining-nums;
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
@@ -938,7 +1031,8 @@ a.src-chip.is-unverified:hover::before {
   gap: 9px;
 }
 .compo-k {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -954,38 +1048,35 @@ a.src-chip.is-unverified:hover::before {
   align-items: center;
 }
 .compo-l {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 11px;
   color: var(--muted);
   letter-spacing: 0.02em;
 }
+/* A calha é cinzenta, o preenchimento é tinta. */
 .compo-bar {
   display: block;
   height: 7px;
-  background: var(--paper-3);
+  background: var(--g3);
 }
-/* A FRONTEIRA DESENHADA DO PREENCHIMENTO.
-   O amarelo sobre a calha mede 1,65:1 em claro (`medir-contraste.mjs`, v2), e
-   quem lê esta barra lê uma coisa só: até onde vai o amarelo. Uma diferença que
-   o leitor tem de ver não pode viver de 1,65:1, e a saída não é mexer no
-   amarelo, que `IDENTIDADE.md` §2 fixa dígito a dígito. É desenhar a aresta que
-   carrega a leitura, e é esta: a direita do preenchimento, a 1px, sobre a
-   calha. `--muted` mede 5,66:1 em claro e 5,73:1 em escuro contra `--paper-3`;
-   `--axis`, que é o token das arestas de instrumento e seria o primeiro
-   candidato, mede 2,93:1 e 2,98:1 e não chega aos 3:1 da 1.4.11. O par medido
-   está na lista da régua. */
+/* A ARESTA DESENHADA DEIXOU DE SER PRECISA, e é o resultado da mudança de cor.
+   Na v2 o preenchimento era amarelo sobre a calha e media 1,65:1: quem lia a
+   barra lia uma coisa só, até onde ia o amarelo, e 1,65:1 não chega para isso.
+   A saída era desenhar-lhe a aresta direita a `--muted`. Agora o preenchimento
+   é tinta sobre uma calha de `--g3` e mede 12,84:1: a aresta seria uma linha
+   escura dentro de um bloco escuro. O par medido está na lista da régua. */
 .compo-bar i {
   display: block;
   height: 100%;
-  background: var(--yellow);
-  border-right: 1px solid var(--muted);
+  background: var(--ink);
 }
 .compo-n {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
   font-size: 12.5px;
   font-weight: 600;
   color: var(--ink);
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: tabular-nums lining-nums;
   text-align: right;
 }
 .compo-tot {
@@ -998,8 +1089,8 @@ a.src-chip.is-unverified:hover::before {
 }
 
 .cover-num {
-  font-family: var(--f-mono);
-  font-variant-numeric: tabular-nums;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: clamp(38px, 4.6vw, 52px);
   font-weight: 600;
   line-height: 0.9;
@@ -1007,7 +1098,8 @@ a.src-chip.is-unverified:hover::before {
   color: var(--ink);
 }
 .cover-label {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -1055,13 +1147,16 @@ a.src-chip.is-unverified:hover::before {
 .ld-off i {
   width: 5px;
   height: 5px;
-  background: var(--dotcol);
+  background: var(--g2);
 }
+/* O ponto aceso era amarelo e passa a tinta: a cobertura editorial não é um
+   limiar publicado. O anel deixa de ser de tinta e passa a ser de papel, que é
+   o que separa o ponto cheio dos vazios à volta dele. */
 .ld-on i {
   width: 10px;
   height: 10px;
-  background: var(--yellow);
-  box-shadow: 0 0 0 1.5px var(--ink);
+  background: var(--ink);
+  box-shadow: 0 0 0 1.5px var(--paper);
 }
 .readout {
   border: 1px solid var(--rule);
@@ -1080,7 +1175,8 @@ a.src-chip.is-unverified:hover::before {
   line-height: 1.2;
 }
 .readout-sub {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 11px;
   color: var(--muted);
   letter-spacing: 0.03em;
@@ -1091,7 +1187,8 @@ a.src-chip.is-unverified:hover::before {
   line-height: 1.5;
 }
 .map-hint {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10.5px;
   color: var(--muted);
   line-height: 1.6;
@@ -1117,14 +1214,14 @@ a.src-chip.is-unverified:hover::before {
 /* O contorno é pintado por baixo do preenchimento (paint-order), o que dá o
    anel de superfície que mantém dois pontos encostados legíveis como dois. */
 .map-svg .mun {
-  fill: var(--dotcol);
-  stroke: var(--paper-2);
+  fill: var(--g2);
+  stroke: var(--paper);
   stroke-width: 1.5;
   paint-order: stroke;
 }
 .map-svg .mun-lit {
-  fill: var(--yellow);
-  stroke: var(--ink);
+  fill: var(--ink);
+  stroke: var(--paper);
   stroke-width: 1.4;
 }
 .map-svg .mun-hit {
@@ -1137,14 +1234,15 @@ a.src-chip.is-unverified:hover::before {
   stroke-width: 1.2;
 }
 .map-svg .frame-label {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 9.5px;
   font-weight: 600;
   fill: var(--muted);
   letter-spacing: 0.06em;
 }
 .map-svg .lit-label {
-  font-family: var(--f-sans);
+  font-family: var(--f-prosa);
   font-size: 12.5px;
   font-weight: 600;
   fill: var(--ink);
@@ -1162,7 +1260,8 @@ a.src-chip.is-unverified:hover::before {
 
 .map-cite {
   padding: 0 clamp(20px, 2.8vw, 32px) clamp(20px, 2.6vw, 28px);
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10.5px;
   line-height: 1.65;
   color: var(--muted);
@@ -1174,7 +1273,7 @@ a.src-chip.is-unverified:hover::before {
 
 .aviso-editorial {
   border: 1px dashed var(--rule-strong);
-  background: var(--paper-2);
+  background: var(--paper);
   padding: 14px 16px;
   font-size: 14px;
   line-height: 1.55;
@@ -1223,20 +1322,22 @@ a.src-chip.is-unverified:hover::before {
   flex-wrap: wrap;
   gap: 8px 12px;
   align-items: center;
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
 }
 .badge {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.14em;
   color: var(--ink);
   border: 1px solid var(--rule-strong);
-  background: var(--paper-2);
+  background: var(--paper);
   padding: 2px 7px;
 }
 
@@ -1282,7 +1383,8 @@ a.src-chip.is-unverified:hover::before {
   flex-wrap: wrap;
   gap: 4px 18px;
   align-items: baseline;
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10.5px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1304,7 +1406,8 @@ a.src-chip.is-unverified:hover::before {
   max-width: 62ch;
 }
 .estudo-descricao-lingua {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -1337,8 +1440,8 @@ a.src-chip.is-unverified:hover::before {
     -45deg,
     transparent,
     transparent 9px,
-    var(--paper-2) 9px,
-    var(--paper-2) 18px
+    var(--g3) 9px,
+    var(--g3) 18px
   );
   padding: 20px 22px;
   display: grid;
@@ -1346,7 +1449,8 @@ a.src-chip.is-unverified:hover::before {
   max-width: 68ch;
 }
 .placeholder-tag {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.16em;
@@ -1370,14 +1474,15 @@ a.src-chip.is-unverified:hover::before {
 
 .log-vazio {
   border: 1px solid var(--rule);
-  background: var(--paper-2);
+  background: var(--paper);
   padding: 18px 20px;
   display: grid;
   gap: 8px;
   max-width: 68ch;
 }
 .log-vazio-k {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -1393,7 +1498,8 @@ a.src-chip.is-unverified:hover::before {
   display: grid;
   grid-template-columns: 110px 1fr 1fr 2fr;
   gap: 12px;
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 9.5px;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -1417,8 +1523,8 @@ a.src-chip.is-unverified:hover::before {
   max-width: 60ch;
 }
 .erro-codigo {
-  font-family: var(--f-mono);
-  font-variant-numeric: tabular-nums;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: clamp(56px, 9vw, 88px);
   font-weight: 600;
   line-height: 0.86;
@@ -1429,7 +1535,8 @@ a.src-chip.is-unverified:hover::before {
   display: flex;
   flex-wrap: wrap;
   gap: 10px 22px;
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -1447,7 +1554,8 @@ a.src-chip.is-unverified:hover::before {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 20px;
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10.5px;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -1484,17 +1592,17 @@ a.src-chip.is-unverified:hover::before {
   }
 }
 .log-data {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
   font-size: 11px;
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: tabular-nums lining-nums;
   color: var(--muted);
   letter-spacing: 0.03em;
 }
 .log-valor {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
   font-size: 14px;
   font-weight: 600;
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: tabular-nums lining-nums;
   color: var(--ink);
 }
 .log-valor-antigo {
@@ -1509,7 +1617,8 @@ a.src-chip.is-unverified:hover::before {
   max-width: 60ch;
 }
 .log-afirmacao {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10.5px;
   color: var(--muted);
   margin-top: 5px;
@@ -1547,7 +1656,8 @@ a.src-chip.is-unverified:hover::before {
 }
 .metodo-lista li::marker {
   color: var(--muted);
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 13px;
 }
 .metodo-lista-num {
@@ -1557,18 +1667,20 @@ a.src-chip.is-unverified:hover::before {
 /* Marcador por resolver. Mesmo aspecto do marcador do livro-razão: quem lê
    uma página e quem lê uma linha do livro-razão vê o mesmo sinal. */
 .marcador {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10.5px;
   font-weight: 600;
   color: var(--ink);
-  background: var(--paper-3);
+  background: var(--paper);
   padding: 1px 6px;
   border: 1px solid var(--rule-strong);
   white-space: normal;
   letter-spacing: 0.02em;
 }
 .marcador-gloss {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10.5px;
   color: var(--muted);
   letter-spacing: 0.02em;
@@ -1577,7 +1689,8 @@ a.src-chip.is-unverified:hover::before {
 /* Ligação que sai do domínio. Marcada, porque sair daqui é uma mudança de
    contexto — e o resto do sítio não faz nenhum pedido para fora. */
 .ligacao-externa {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -1600,14 +1713,14 @@ a.src-chip.is-unverified:hover::before {
   max-width: 68ch;
   margin-top: 4px;
   padding: 18px 20px;
-  background: var(--paper-2);
+  background: var(--paper);
   border: 1px solid var(--rule);
 }
 .caixa-correcoes[hidden] {
   display: none;
 }
 .caixa-correcoes-texto {
-  font-family: var(--f-sans);
+  font-family: var(--f-prosa);
   font-size: 15px;
   line-height: 1.55;
   color: var(--ink);
@@ -1627,7 +1740,8 @@ a.src-chip.is-unverified:hover::before {
   gap: 8px 16px;
 }
 .botao-correcao {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -1664,7 +1778,8 @@ a.src-chip.is-unverified:hover::before {
 .ligacao-dados {
   display: inline-block;
   margin-top: 4px;
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -1736,7 +1851,7 @@ a.src-chip.is-unverified:hover::before {
   width: 100%;
   max-width: 100%;
   height: auto;
-  background: var(--paper-2);
+  background: var(--paper);
   border: 1px solid var(--rule);
 }
 .linha-recorte-legenda {
@@ -1745,7 +1860,8 @@ a.src-chip.is-unverified:hover::before {
   gap: 4px 14px;
   align-items: baseline;
   margin-top: 7px;
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 11px;
   color: var(--muted);
 }
@@ -1772,7 +1888,8 @@ a.src-chip.is-unverified:hover::before {
   align-items: baseline;
 }
 .linha-verificacoes dt {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10.5px;
   font-weight: 600;
   letter-spacing: 0.13em;
@@ -1781,7 +1898,8 @@ a.src-chip.is-unverified:hover::before {
 }
 .linha-verificacoes dd {
   margin: 0;
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 12px;
   color: var(--ink);
 }
@@ -1833,7 +1951,8 @@ a.src-chip.is-unverified:hover::before {
   gap: 12px;
 }
 .linha-bloco-titulo {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.16em;
@@ -1861,14 +1980,16 @@ a.src-chip.is-unverified:hover::before {
   letter-spacing: -0.04em;
 }
 .linha-valor-unidade {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.02em;
   color: var(--muted);
 }
 .linha-id {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 11px;
   letter-spacing: 0.04em;
   color: var(--muted);
@@ -1880,10 +2001,12 @@ a.src-chip.is-unverified:hover::before {
 
 /* O excerto: a prova. Levanta-se do fundo e cita-se sem aspas de enfeite —
    as aspas que lá estiverem são as da fonte. */
+/* O excerto levantava-se do fundo com um segundo papel; agora levanta-se com o
+   fio de 3px à esquerda, que é o que a Emenda 1 deixa. */
 .linha-excerto {
   margin: 0;
   padding: 16px 18px;
-  background: var(--paper-2);
+  background: var(--paper);
   border-left: 3px solid var(--rule-strong);
   font-size: 15px;
   line-height: 1.6;
@@ -1901,7 +2024,8 @@ a.src-chip.is-unverified:hover::before {
   color: var(--ink);
 }
 .linha-campo-k {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -1937,7 +2061,7 @@ a.src-chip.is-unverified:hover::before {
    comparado: o portão confere o campo carácter a carácter, e um carácter que a
    linha não tem não entra lá dentro. */
 .linha-alojado-resumo {
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: tabular-nums lining-nums;
 }
 .linha-resumo-corte {
   color: var(--muted);
@@ -1950,10 +2074,12 @@ a.src-chip.is-unverified:hover::before {
   border-top: 1px solid var(--rule);
 }
 .linha-check {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 13px;
   color: var(--ink);
-  background: var(--paper-3);
+  background: var(--paper);
+  border: 1px solid var(--rule);
   padding: 8px 10px;
   overflow-wrap: anywhere;
 }
@@ -1963,7 +2089,8 @@ a.src-chip.is-unverified:hover::before {
   padding: 0;
   display: grid;
   gap: 5px;
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 12px;
 }
 .linha-deriva-ligacao {
@@ -2002,7 +2129,8 @@ a.src-chip.is-unverified:hover::before {
   font-size: 13.5px;
 }
 .aparelho-titulo {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.16em;
@@ -2015,7 +2143,8 @@ a.src-chip.is-unverified:hover::before {
   gap: 15px;
 }
 .aparelho-ficha dt {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 9.5px;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -2044,7 +2173,7 @@ a.src-chip.is-unverified:hover::before {
   display: grid;
   gap: 7px;
   border: 1px solid var(--rule);
-  background: var(--paper-2);
+  background: var(--paper);
   padding: 14px 16px;
 }
 /* Falta um campo: a mesma marca a tracejado do selo, sem cor nova. */
@@ -2060,13 +2189,14 @@ a.src-chip.is-unverified:hover::before {
   display: flex;
   flex-wrap: wrap;
   gap: 5px 8px;
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 11px;
   color: var(--ink);
 }
 .aparelho-faltas code {
   font-family: inherit;
-  background: var(--paper-3);
+  background: var(--paper);
   padding: 1px 5px;
   border: 1px solid var(--rule);
 }
@@ -2103,7 +2233,8 @@ a.src-chip.is-unverified:hover::before {
  * (IDENTIDADE.md §1: a mono é a letra da mobília e dos rótulos).
  */
 .livro-conjunto-portas {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 12px;
   line-height: 1.5;
   color: var(--muted);
@@ -2147,13 +2278,15 @@ a.src-chip.is-unverified:hover::before {
   gap: 2px 14px;
 }
 .livro-item-unidade {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   letter-spacing: 0.04em;
   color: var(--muted);
 }
 .livro-item-id {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 12px;
   color: var(--ink);
   overflow-wrap: anywhere;
@@ -2171,9 +2304,15 @@ a.src-chip.is-unverified:hover::before {
   border-left: 3px solid var(--rule-strong);
   padding: 2px 0 2px 14px;
 }
-/* Um erro admitido leva a cor do erro admitido, e mais nada leva (IDENTIDADE §2). */
+/* UMA CORREÇÃO DIZ-SE PELA FORMA, E JÁ NÃO PELA COR (`IDENTIDADE.md` §2, v3).
+   A cor da confissão saiu, com o nome que tinha e que está escrito em
+   `DECISIONS.md` §1.50: a entrada de correção distingue-se da entrada de
+   atualização pelo fio da esquerda a tinta contra o fio cinzento das outras, e
+   não por um matiz. A forma final do registo (valor antigo riscado a cinzento, valor novo
+   a tinta, a data) é da etapa 4 e espera a decisão (c) do plano; aqui muda a
+   cor e não muda a forma. */
 .historico-entrada-correcao {
-  border-left-color: var(--oxblood);
+  border-left-color: var(--ink);
 }
 .historico-cabeca {
   display: flex;
@@ -2194,10 +2333,10 @@ a.src-chip.is-unverified:hover::before {
   gap: 10px;
 }
 
-/* Correções: a confissão. Leva o peso, e a única cor do sistema que não é o
-   amarelo — o amarelo marca medição, este marca um erro admitido. */
+/* Correções: a confissão. Leva o peso, e já não leva cor: o fio de tinta a
+   3px é o que a distingue de um grupo de atualizações. */
 .registo-grupo-correcoes {
-  border-left: 3px solid var(--oxblood);
+  border-left: 3px solid var(--ink);
   padding: 4px 0 4px 18px;
 }
 .registo-cabeca {
@@ -2211,15 +2350,16 @@ a.src-chip.is-unverified:hover::before {
   font-size: 17px;
   font-weight: 600;
   letter-spacing: -0.012em;
-  color: var(--oxblood);
+  color: var(--ink);
 }
 .registo-conta {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--oxblood);
+  color: var(--ink);
 }
 .registo-conta .claim-value {
   color: inherit;
@@ -2242,7 +2382,8 @@ a.src-chip.is-unverified:hover::before {
 .registo-titulo-quieto {
   color: var(--muted);
   font-size: 13px;
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -2281,8 +2422,8 @@ a.src-chip.is-unverified:hover::before {
    coluna do corpo entrava na do aparelho (§1.47). Parte onde for preciso,
    como o endereço da agenda passou a partir (§1.43). */
 .registo-salto {
-  font-family: var(--f-mono);
-  font-variant-numeric: tabular-nums;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 12.5px;
   color: var(--ink);
   overflow-wrap: anywhere;
@@ -2293,7 +2434,8 @@ a.src-chip.is-unverified:hover::before {
   min-width: 0;
 }
 .registo-id {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10.5px;
   color: var(--muted);
   overflow-wrap: anywhere;
@@ -2303,7 +2445,8 @@ a.src-chip.is-unverified:hover::before {
    título do grupo é texto do gabarito, esta etiqueta vem do livro-razão e é
    conferida contra ele. */
 .etiqueta-kind {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 9.5px;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -2312,7 +2455,7 @@ a.src-chip.is-unverified:hover::before {
   border: 1px solid currentColor;
 }
 .etiqueta-correcao {
-  color: var(--oxblood);
+  color: var(--ink);
 }
 
 /* =============================================================== município
@@ -2338,7 +2481,8 @@ a.src-chip.is-unverified:hover::before {
   max-width: 68ch;
 }
 .municipio-sub {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.13em;
@@ -2364,7 +2508,7 @@ a.src-chip.is-unverified:hover::before {
 /* A distância desenhada: a dívida contra o tecto legal. */
 .mun-distancia {
   border: 1px solid var(--rule);
-  background: var(--paper-2);
+  background: var(--paper);
   padding: clamp(16px, 2vw, 22px);
   display: grid;
   gap: 12px;
@@ -2376,13 +2520,15 @@ a.src-chip.is-unverified:hover::before {
   overflow: visible;
 }
 .mun-distancia .tk {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 9px;
   fill: var(--muted);
 }
 .mun-distancia .mun-barra-rot,
 .mun-distancia .mun-tecto-rot {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   font-weight: 600;
   fill: var(--ink);
@@ -2415,15 +2561,14 @@ a.src-chip.is-unverified:hover::before {
   display: block;
   overflow: visible;
 }
-/* A ARESTA É O SEGMENTO. `--paper-3` sobre o fundo do instrumento mede 1,11:1:
-   o preenchimento não desenha nada, e o que separa um mandato do seguinte é a
+/* A ARESTA É O SEGMENTO. O preenchimento é a grelha, `--g3`, e sobre o papel
+   mede 1,28:1: não desenha nada, e o que separa um mandato do seguinte é a
    aresta. Por isso ela é objeto de interface e não arrumação, e vai em
-   `--muted`, que mede 6,30:1 contra o fundo e 5,66:1 contra o preenchimento em
-   claro (6,27 e 5,73 em escuro). `--rule-strong` media 1,68:1 e 1,51:1, e
-   `--axis` fica em 3,26:1 e 2,93:1, abaixo dos 3:1 de um dos dois lados.
-   Medido em `scripts/medir-contraste.mjs`. */
+   `--muted`, que mede 6,24:1 contra o papel e 4,88:1 contra o preenchimento em
+   claro. `--rule-strong` (= `--g2`) mediria 2,71:1 contra o preenchimento e não
+   chega aos 3:1 da 1.4.11. Medido em `scripts/medir-contraste.mjs`. */
 .mun-banda-seg {
-  fill: var(--paper-3);
+  fill: var(--g3);
   stroke: var(--muted);
   stroke-width: 1;
 }
@@ -2432,14 +2577,16 @@ a.src-chip.is-unverified:hover::before {
   stroke-dasharray: 3 3;
 }
 .mun-banda-lista {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.12em;
   fill: var(--ink);
 }
 .mun-banda .tk {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 9px;
   fill: var(--muted);
   letter-spacing: 0.06em;
@@ -2451,10 +2598,10 @@ a.src-chip.is-unverified:hover::before {
   gap: 6px 16px;
 }
 .mun-banda-porta {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
   font-size: 11px;
   font-weight: 600;
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: tabular-nums lining-nums;
   letter-spacing: 0.04em;
   color: var(--ink);
   text-underline-offset: 3px;
@@ -2484,8 +2631,8 @@ a.src-chip.is-unverified:hover::before {
   gap: 6px 12px;
 }
 .mun-mandato-periodo {
-  font-family: var(--f-mono);
-  font-variant-numeric: tabular-nums;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 15px;
   font-weight: 600;
   color: var(--ink);
@@ -2496,7 +2643,8 @@ a.src-chip.is-unverified:hover::before {
   letter-spacing: -0.01em;
 }
 .mun-mandato-lista {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -2506,7 +2654,8 @@ a.src-chip.is-unverified:hover::before {
   padding: 1px 6px;
 }
 .mun-mandato-instalado {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10.5px;
   color: var(--muted);
 }
@@ -2526,7 +2675,8 @@ a.src-chip.is-unverified:hover::before {
   }
 }
 .mun-campos dt {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 9.5px;
   font-weight: 600;
   letter-spacing: 0.13em;
@@ -2605,8 +2755,7 @@ a.src-chip.is-unverified:hover::before {
 
 .leitura {
   border: 1px solid var(--rule);
-  background: var(--paper-2);
-  box-shadow: var(--shadow);
+  background: var(--paper);
   margin-top: clamp(24px, 3vw, 34px);
 }
 .leitura-topo {
@@ -2625,8 +2774,8 @@ a.src-chip.is-unverified:hover::before {
   align-content: start;
 }
 .leitura-medida-num {
-  font-family: var(--f-mono);
-  font-variant-numeric: tabular-nums;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: clamp(28px, 3.4vw, 40px);
   font-weight: 600;
   line-height: 0.95;
@@ -2669,7 +2818,8 @@ a.src-chip.is-unverified:hover::before {
   margin-top: 4px;
 }
 .mun-selo-rot {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -2686,13 +2836,14 @@ a.src-chip.is-unverified:hover::before {
   margin: 4px 0 2px;
 }
 .mun-serie-svg .tk {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   fill: var(--muted);
 }
 .mun-serie-val {
-  font-family: var(--f-mono);
-  font-variant-numeric: tabular-nums;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 12px;
   font-weight: 600;
   fill: var(--ink);
@@ -2729,7 +2880,8 @@ a.src-chip.is-unverified:hover::before {
   gap: clamp(20px, 2.6vw, 30px);
 }
 .concelhos-grupo-k {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -2760,7 +2912,8 @@ a.src-chip.is-unverified:hover::before {
   color: var(--ink);
 }
 .concelho-estado {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10.5px;
   letter-spacing: 0.04em;
   color: var(--muted);
@@ -2784,7 +2937,8 @@ a.src-chip.is-unverified:hover::before {
 }
 .linha-endereco-bruto {
   display: block;
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 11px;
   color: var(--muted);
   overflow-wrap: anywhere;
@@ -2813,7 +2967,8 @@ a.src-chip.is-unverified:hover::before {
   gap: 6px 14px;
 }
 .sobre-porta a {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -2838,7 +2993,8 @@ a.src-chip.is-unverified:hover::before {
   gap: 10px;
 }
 .regra-n {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 12px;
   font-weight: 700;
   color: var(--muted);
@@ -2857,7 +3013,8 @@ a.src-chip.is-unverified:hover::before {
   }
 }
 .regra-k {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -2874,7 +3031,8 @@ a.src-chip.is-unverified:hover::before {
   color: var(--ink);
 }
 .regra-prova {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 12px;
   letter-spacing: 0.02em;
   line-height: 1.9;
@@ -2893,7 +3051,8 @@ a.src-chip.is-unverified:hover::before {
   display: flex;
   flex-wrap: wrap;
   gap: 6px 20px;
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10.5px;
   font-weight: 600;
   letter-spacing: 0.13em;
@@ -2915,7 +3074,8 @@ a.src-chip.is-unverified:hover::before {
  * é o que diz que se abre.
  */
 .prova-valor {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-weight: 600;
   color: var(--ink);
   text-decoration: none;
@@ -2933,7 +3093,8 @@ a.src-chip.is-unverified:hover::before {
   border-bottom-color: var(--ink);
 }
 .prova-vazio {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   color: var(--muted);
 }
 
@@ -2951,25 +3112,28 @@ a.src-chip.is-unverified:hover::before {
   height: auto;
 }
 .mecanismo-caixa {
-  fill: var(--paper-2);
+  fill: var(--paper);
   stroke: var(--rule-strong);
   stroke-width: 1;
 }
 .mecanismo-rotulo {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.11em;
   fill: var(--ink);
 }
 .mecanismo-num {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 19px;
   font-weight: 600;
   fill: var(--ink);
 }
 .mecanismo-cap {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 8.5px;
   letter-spacing: 0.06em;
   fill: var(--muted);
@@ -2994,7 +3158,8 @@ a.src-chip.is-unverified:hover::before {
   flex-wrap: wrap;
   align-items: baseline;
   gap: 6px 16px;
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -3024,7 +3189,8 @@ a.src-chip.is-unverified:hover::before {
   display: flex;
   flex-wrap: wrap;
   gap: 6px 22px;
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 11px;
   letter-spacing: 0.06em;
   color: var(--muted);
@@ -3036,7 +3202,8 @@ a.src-chip.is-unverified:hover::before {
    e o que separa um item do seguinte é fio e fundo, não matiz (§2). */
 
 .agenda-estado {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -3056,7 +3223,8 @@ a.src-chip.is-unverified:hover::before {
   gap: 10px;
 }
 .quadro-estados-k {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.16em;
@@ -3076,7 +3244,8 @@ a.src-chip.is-unverified:hover::before {
   }
 }
 .quadro-estados-col {
-  background: var(--paper-2);
+  background: var(--paper);
+  border: 1px solid var(--rule);
   padding: clamp(14px, 1.8vw, 20px);
   display: grid;
   gap: 6px;
@@ -3085,8 +3254,8 @@ a.src-chip.is-unverified:hover::before {
   color: inherit;
 }
 .quadro-estados-n {
-  font-family: var(--f-mono);
-  font-variant-numeric: tabular-nums;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: clamp(30px, 3.4vw, 40px);
   font-weight: 600;
   line-height: 0.95;
@@ -3105,7 +3274,8 @@ a.quadro-estados-col:hover .quadro-estados-e {
   text-decoration-color: var(--ink);
 }
 .quadro-estados-e {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10.5px;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -3133,11 +3303,11 @@ a.quadro-estados-col:hover .quadro-estados-e {
   display: flex;
   flex-wrap: wrap;
   gap: 4px 14px;
-  font-family: var(--f-mono);
-  font-size: 10px;
+  font-family: var(--f-versal);
+  font-size: 12.5px;
   font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
   color: var(--muted);
 }
 .agenda-estado-marca {
@@ -3153,7 +3323,8 @@ a.quadro-estados-col:hover .quadro-estados-e {
   gap: 8px;
 }
 .agenda-k {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -3161,7 +3332,8 @@ a.quadro-estados-col:hover .quadro-estados-e {
   color: var(--muted);
 }
 .agenda-k-inline {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -3192,7 +3364,8 @@ a.quadro-estados-col:hover .quadro-estados-e {
   border-left: 2px solid var(--rule);
 }
 .agenda-criterio-tipo {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 9.5px;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -3249,7 +3422,8 @@ a.quadro-estados-col:hover .quadro-estados-e {
   display: flex;
   flex-wrap: wrap;
   gap: 4px 14px;
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10.5px;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -3289,7 +3463,7 @@ a.quadro-estados-col:hover .quadro-estados-e {
 .agenda-eixo-caixa {
   overflow-x: auto;
   border: 1px solid var(--rule);
-  background: var(--paper-2);
+  background: var(--paper);
   padding: 14px 16px;
 }
 .agenda-eixo-svg {
@@ -3299,13 +3473,15 @@ a.quadro-estados-col:hover .quadro-estados-e {
   height: auto;
 }
 .agenda-eixo .tk {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10px;
   fill: var(--muted);
   letter-spacing: 0.06em;
 }
 .agenda-eixo .ev-d {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 11px;
   font-weight: 600;
   fill: var(--ink);
@@ -3318,10 +3494,10 @@ a.quadro-estados-col:hover .quadro-estados-e {
   gap: 6px 16px;
 }
 .agenda-eixo-porta {
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
   font-size: 11px;
   font-weight: 600;
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: tabular-nums lining-nums;
   color: var(--ink);
   text-underline-offset: 3px;
   text-decoration-color: var(--muted);
@@ -3347,7 +3523,8 @@ a.quadro-estados-col:hover .quadro-estados-e {
   display: flex;
   flex-wrap: wrap;
   gap: 4px 16px;
-  font-family: var(--f-mono);
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
   font-size: 10.5px;
   font-weight: 600;
   letter-spacing: 0.1em;
