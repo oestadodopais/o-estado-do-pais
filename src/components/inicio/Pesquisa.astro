@@ -17,6 +17,11 @@
  * pela mesma função que faz o pedaço do endereço (`src/lib/inicio.mjs`). O
  * cliente normaliza só o que o leitor escreveu, que não é texto da página.
  *
+ * COM A CAIXA VAZIA, A LISTA NÃO ESTÁ VAZIA. Mostram-se os concelhos que já têm
+ * página — hoje um, Évora. Uma vista de escolha que começa em branco não diz a
+ * quem chega que há alguma coisa para escolher, e a cobertura deste sítio é
+ * precisamente a informação que falta a quem procura.
+ *
  * SEM JAVASCRIPT NÃO SE VÊ NADA DISTO, e é de propósito: o âmbito «Município»
  * só se atinge com script, e o comando dele leva, sem script, ao índice dos 308
  * (`/municipios`), que é uma página inteira com a mesma lista e a mesma
@@ -41,7 +46,12 @@ const { s, lang, p, concelhos } = Astro.props;
   <ul class="pesquisa-res" data-resultados>
     {
       concelhos.map((c) => (
-        <li class="pesquisa-item" data-normal={c.normal} hidden>
+        <li
+          class="pesquisa-item"
+          data-normal={c.normal}
+          data-tem-pagina={c.pagina ? 'sim' : null}
+          hidden={!c.pagina}
+        >
           <button type="button" class="chipb" data-escolher={c.slug}>
             <span class="pesquisa-nome">{c.nome}</span>
             {c.pagina && (
