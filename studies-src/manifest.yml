@@ -59,17 +59,20 @@
 #        voz alta a cada construção.
 
 edicoes:
+  # Republicado a 2026-08-20 do motor, e deixou de ser artefacto: a cópia que
+  # este sítio servia era a do artefacto de 12.08, com os excertos que o
+  # extractor de largura fixa cortava a meio. Ver DECISIONS §1.49.
   - slug: evora-quinze-anos-cinco-mandatos
     lang: pt
     title: "Évora — Quinze Anos, Cinco Mandatos"
-    artifact_url: https://claude.ai/code/artifact/c644310e-3522-465c-a509-c1aa5c773bdb
+    origin: researchhub
+    origin_ref: "content/08 Évora Mandates/Évora — Quinze Anos, Cinco Mandatos (pt-PT).html @ afb8bfbcdb200c6547d3f614c3a3c84d35736019"
     raw_file: _raw/evora-quinze-anos-cinco-mandatos.pt.html
-    fetched_utc: 2026-08-12T13:46:22Z
-    bytes_raw: 1885326
-    bytes_runtime_removed: 17141
-    bytes_normalized: 1868185
-    sha256_raw: 76d18ed0136820b90c698ec180b528ea428d76af06af5eed3fdd7e7ca86cf3cc
-    sha256_normalized: 7c545625b51c30d807a2eda316db66fa5a24ac8192943c4e667893f843de84d6
+    fetched_utc: 2026-08-20T11:15:09Z
+    bytes_raw: 1059969
+    bytes_normalized: 1059969
+    sha256_raw: ceab4d26ceedf9aa20aa7864271354b4e66847fa617a2b561cc887644c39970a
+    sha256_normalized: ceab4d26ceedf9aa20aa7864271354b4e66847fa617a2b561cc887644c39970a
   - slug: evora-economia-investidores-portas-abertas-2026
     lang: pt
     title: "Évora — Economia, Investidores, Portas Abertas 2026"
@@ -82,28 +85,30 @@ edicoes:
     bytes_normalized: 26624
     sha256_raw: 0ef4c8364ea5d1fadc1329024280b36aecd14048232ae58592d04114ec285f16
     sha256_normalized: 645432bc291f49c8793a6014c2ffeb18fcf252abf48b958643304df7f90c6c67
+  # Republicadas a 2026-08-20 do motor, e deixaram de ser artefactos, pela mesma
+  # razão da linha do 08. Ver DECISIONS §1.49.
   - slug: evora-orcamentado-pago-devido-2025
     lang: pt
     title: "Évora — Orçamentado, Pago, Devido 2025"
-    artifact_url: https://claude.ai/code/artifact/396c5268-60d5-42a1-b969-21202fc6e70d
+    origin: researchhub
+    origin_ref: "content/07 Évora Municipal Accounts/Évora — Orçamentado, Pago, Devido 2025 (pt-PT).html @ afb8bfbcdb200c6547d3f614c3a3c84d35736019"
     raw_file: _raw/evora-orcamentado-pago-devido-2025.pt.html
-    fetched_utc: 2026-08-12T13:54:29Z
-    bytes_raw: 1869220
-    bytes_runtime_removed: 17141
-    bytes_normalized: 1852079
-    sha256_raw: 85f85896816e48c1dc3a0629bb2780926c13b4e2931a51de16d8e48589b8b273
-    sha256_normalized: dfb0f48fc07a4858a7865c08db589e92e30d8b1a2b2282f7149205bae0d44ee5
+    fetched_utc: 2026-08-20T11:15:09Z
+    bytes_raw: 960916
+    bytes_normalized: 960916
+    sha256_raw: 8f56b58ceed7970b2eeaa5acf20646e9acb47cebdcb98ba74834a09bb40a1426
+    sha256_normalized: 8f56b58ceed7970b2eeaa5acf20646e9acb47cebdcb98ba74834a09bb40a1426
   - slug: evora-orcamentado-pago-devido-2025
     lang: en
     title: "Évora — Budgeted, Paid, Owed 2025"
-    artifact_url: https://claude.ai/code/artifact/cfa42bb1-aa1e-4681-bebc-5c16b53e43d9
+    origin: researchhub
+    origin_ref: "content/07 Évora Municipal Accounts/Évora — Budgeted, Paid, Owed 2025.html @ afb8bfbcdb200c6547d3f614c3a3c84d35736019"
     raw_file: _raw/evora-orcamentado-pago-devido-2025.en.html
-    fetched_utc: 2026-08-12T13:54:38Z
-    bytes_raw: 1867398
-    bytes_runtime_removed: 17141
-    bytes_normalized: 1850257
-    sha256_raw: 7a9714dc0674dfc5d4c7a6515e412005c525486b01b3e225121223e97cb918b1
-    sha256_normalized: 4e01cb144acee3615121cf452918c75b24d3756bdad28142ef4597c23e733325
+    fetched_utc: 2026-08-20T11:15:09Z
+    bytes_raw: 959140
+    bytes_normalized: 959140
+    sha256_raw: 6d88c0a422fd206b4893e4afcb4b0c2694115be193ee41fbe658e1ce5fcf5d3f
+    sha256_normalized: 6d88c0a422fd206b4893e4afcb4b0c2694115be193ee41fbe658e1ce5fcf5d3f
   - slug: onde-esta-a-agua
     lang: pt
     title: "Onde está a água? — a água de Portugal, de onde vem, e o que custaria a autonomia"
@@ -211,21 +216,21 @@ edicoes:
     lang: pt
     title: "Évora — Prometido, Pago, Auditado 2026"
     origin: researchhub
-    origin_ref: "content/04 Évora Public Money/Évora — Prometido, Pago, Auditado 2026 (pt-PT).html @ 8d016b03da960d7b43ee538c92197aca405c38f3"
+    origin_ref: "content/04 Évora Public Money/Évora — Prometido, Pago, Auditado 2026 (pt-PT).html @ 1634b7b5821e8737763d982540abf7c964796a5e"
     raw_file: _raw/evora-prometido-pago-auditado-2026.pt.html
-    fetched_utc: 2026-08-15T11:07:42Z
-    bytes_raw: 71705
-    bytes_normalized: 71705
-    sha256_raw: b66e1e79863cd93e862739418a56bed3c85585777995d02cf81ab6f71c029351
-    sha256_normalized: b66e1e79863cd93e862739418a56bed3c85585777995d02cf81ab6f71c029351
+    fetched_utc: 2026-08-20T11:15:09Z
+    bytes_raw: 71761
+    bytes_normalized: 71761
+    sha256_raw: b7d054d2abb9592e0f46594746447f1237ca777f99480499caf93ec4c5227337
+    sha256_normalized: b7d054d2abb9592e0f46594746447f1237ca777f99480499caf93ec4c5227337
   - slug: evora-prometido-pago-auditado-2026
     lang: en
     title: "Évora — Promised, Paid, Audited 2026"
     origin: researchhub
-    origin_ref: "content/04 Évora Public Money/Évora — Promised, Paid, Audited 2026.html @ 8d016b03da960d7b43ee538c92197aca405c38f3"
+    origin_ref: "content/04 Évora Public Money/Évora — Promised, Paid, Audited 2026.html @ 1634b7b5821e8737763d982540abf7c964796a5e"
     raw_file: _raw/evora-prometido-pago-auditado-2026.en.html
-    fetched_utc: 2026-08-15T11:07:42Z
-    bytes_raw: 68317
-    bytes_normalized: 68317
-    sha256_raw: adc7daba8cb8c5904ba583358974123c7350e893d5974fd3ffb1d5ee1997ce8f
-    sha256_normalized: adc7daba8cb8c5904ba583358974123c7350e893d5974fd3ffb1d5ee1997ce8f
+    fetched_utc: 2026-08-20T11:15:09Z
+    bytes_raw: 68371
+    bytes_normalized: 68371
+    sha256_raw: 30484dfc26c11d31acff816b5bc340c8ca6e61775fbbd317423ff90028179c2b
+    sha256_normalized: 30484dfc26c11d31acff816b5bc340c8ca6e61775fbbd317423ff90028179c2b
