@@ -3,14 +3,13 @@
 *Escrito a 20.08.2026 pelo lugar de direção (Claude Fable 5), como rascunho para
 a direção editar e enviar. **Não foi enviado.** É a ação 4 do Anexo A do
 `counsel-brief.md` (pergunta A5): uma resposta escrita do publicador esvazia a
-pergunta ao jurista. O destinatário e o endereço de remetente estão por
-confirmar; nenhum endereço foi inventado.*
+pergunta ao jurista. O endereço de remetente está por confirmar; o destinatário
+foi lido no sítio do publicador; nenhum endereço foi inventado.*
 
-**Para:** `[verify]` (o conjunto em dados.gov.pt não lista ponto de contacto;
-a página da organização é
-`https://dados.gov.pt/organizations/estrutura-de-missao-recuperar-portugal`;
-o contacto institucional está no sítio recuperarportugal.gov.pt e tem de ser
-lido de lá, não adivinhado)
+**Para:** info@recuperarportugal.gov.pt (lido a 20.08.2026 no rodapé de
+`https://recuperarportugal.gov.pt/`, secção «Contacts», com a morada Av. João
+Crisóstomo, 11, 1000-177 Lisboa; o conjunto em dados.gov.pt não lista ponto de
+contacto)
 **De:** `[verify]` (a direção decide se vai do endereço das correções,
 `correcoes@oestadodopais.pt`, ou de outro)
 **CC:** nunopdsantos@gmail.com
