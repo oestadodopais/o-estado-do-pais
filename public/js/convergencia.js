@@ -169,15 +169,15 @@
 
       var fundo = cria('rect', {
         x: f.x - f.w / 2,
-        y: f.y - 32,
+        y: f.y - 37,
         width: f.w,
-        height: 36,
+        height: 41,
         fill: 'var(--paper)',
       });
       f.g.insertBefore(fundo, f.g.firstChild);
 
       f.nome.setAttribute('x', f.x);
-      f.nome.setAttribute('y', f.y - 18);
+      f.nome.setAttribute('y', f.y - 24);
       f.val.setAttribute('x', f.x);
       f.val.setAttribute('y', f.y - 1);
 

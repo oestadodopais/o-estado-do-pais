@@ -88,9 +88,14 @@ const tituloPais = fora === 1 ? s.inicio.cabeca.tituloPaisUm : s.inicio.cabeca.t
 
         {b.tipo === 'vazio' && (
           <>
+            {/* O prefixo do distrito é uma cadeia validada que já está na
+                página, e o script só lhe troca o `hidden` conforme o concelho
+                escolhido seja de um distrito ou de uma ilha (ISSUES I18). Não
+                se compõe texto: escolhe-se entre um prefixo escrito e nenhum. */}
             <p class="cabeca-rotulo">
               <span data-slot="nome">{b.nome}</span>
               {s.inicio.cabeca.municipioPalavra}
+              <span data-prefixo-distrito hidden={b.ilha}>{s.inicio.cabeca.distritoDe}</span>
               <span data-slot="distrito">{b.distrito}</span>
             </p>
             <h1 class="cabeca-h1">

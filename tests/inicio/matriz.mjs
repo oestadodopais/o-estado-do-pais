@@ -445,6 +445,284 @@ const estadoDaPagina = (p) =>
   }
 }
 
+/* ------------------------------------------------------- 7. as sete da subetapa 2g
+ *
+ * Sete correcções da revisão do lugar de direcção, e uma célula por cada uma:
+ * o que mudou tem de se poder medir, e não só ver numa captura.
+ */
+
+/* (1) O sinal de tempo do painel europeu não se lê fora do âmbito País. */
+{
+  const p = await pagina();
+  const lidos = [];
+  for (const q of ['/', '/?ambito=regiao:alentejo', '/?ambito=municipio:evora', '/?ambito=municipio:beja']) {
+    await p.goto(base + q, { waitUntil: 'networkidle' });
+    lidos.push(
+      await p.evaluate(() => {
+        const v = document.querySelector('.verificacao');
+        return v && v.getClientRects().length > 0;
+      }),
+    );
+  }
+  conta(
+    'o sinal de tempo do painel só se lê no âmbito País',
+    lidos[0] === true && lidos.slice(1).every((x) => x === false),
+    `pais ${lidos[0]} · regiao ${lidos[1]} · évora ${lidos[2]} · beja ${lidos[3]}`,
+  );
+  await p.__contexto.close();
+}
+
+/* (2) A ficha do mapa deixou de levar a citação, a porta do CSV e as dicas. */
+{
+  const p = await pagina();
+  await p.goto(base + '/', { waitUntil: 'networkidle' });
+  const f = await p.evaluate(() => {
+    const ficha = document.querySelector('[data-mapa-ficha]');
+    const fundo = document.querySelector('[data-mapa-fundo]');
+    return {
+      alturaDaFicha: Math.round(ficha.getBoundingClientRect().height),
+      citacaoNaFicha: !!ficha.querySelector('[data-verbatim]'),
+      csvNaFicha: !!ficha.querySelector('.ligacao-dados'),
+      dicasNaFicha: !!ficha.querySelector('[data-dica-cursor], [data-teclado]'),
+      citacaoNoFundo: !!fundo.querySelector('[data-verbatim]'),
+      csvNoFundo: !!fundo.querySelector('.ligacao-dados'),
+      dicasNoFundo: fundo.querySelectorAll('[data-dica-cursor], [data-teclado]').length,
+      fonteCurta: !!ficha.querySelector('.mapa-fonte-curta a.src-chip'),
+      fundoFechado: !fundo.open,
+    };
+  });
+  conta(
+    'a ficha do mapa é compacta e o fundo leva a citação, o CSV e as dicas',
+    !f.citacaoNaFicha &&
+      !f.csvNaFicha &&
+      !f.dicasNaFicha &&
+      f.citacaoNoFundo &&
+      f.csvNoFundo &&
+      f.dicasNoFundo === 2 &&
+      f.fonteCurta &&
+      f.fundoFechado,
+    `ficha ${f.alturaDaFicha}px · citação, CSV e dicas na camada de fundo, fechada · linha de fonte com selo`,
+  );
+  await p.__contexto.close();
+}
+
+/* (3) A peça aberta ocupa duas colunas, e a régua deixa de ser um fio. */
+for (const largura of [768, 1280]) {
+  const p = await pagina({ largura });
+  await p.goto(base + '/?densidade=leitura', { waitUntil: 'networkidle' });
+  const r = await p.evaluate(() => {
+    const reguas = [...document.querySelectorAll('[data-painel="pais"] .regua-svg')].map((e) =>
+      Math.round(e.getBoundingClientRect().width),
+    );
+    /* `grid-column: span 2` põe o `span 2` no LADO DE INÍCIO e deixa o fim em
+       `auto`: é o início que se lê. */
+    const colunas = [...document.querySelectorAll('[data-painel="pais"] .peca')].map(
+      (e) => getComputedStyle(e).gridColumnStart,
+    );
+    return {
+      reguas,
+      colunas,
+      span: colunas.length === 8 && colunas.every((c) => c === 'span 2'),
+      transbordo: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+    };
+  });
+  conta(
+    `largura ${largura} · a peça aberta ocupa duas colunas`,
+    r.span && r.reguas.every((w) => w > 400) && r.transbordo <= 0,
+    `régua ${r.reguas[0]}px · grid-column-start «${r.colunas[0]}» em ${r.colunas.length} peças · transbordo ${r.transbordo}`,
+  );
+  await p.__contexto.close();
+}
+
+/* (4) A régua da convergência é uma porta abaixo de 640, e a porta é palavras. */
+for (const largura of [320, 390]) {
+  const p = await pagina({ largura });
+  await p.goto(base + '/', { waitUntil: 'networkidle' });
+  const fechado = await p.evaluate(() => {
+    const vis = (e) => !!e && e.getClientRects().length > 0;
+    const s = document.querySelector('.conv-porta-sum');
+    const b = s.getBoundingClientRect();
+    return {
+      porta: vis(document.querySelector('.conv-porta')),
+      corpo: vis(document.querySelector('.conv-corpo')),
+      alvo: `${Math.round(b.width)}×${Math.round(b.height)}`,
+      altoQb: b.height >= 44,
+      /* «palavras só»: nenhuma porta, nenhum selo e nenhum algarismo dentro do
+         `<summary>`, e o `<summary>` fora de qualquer outro alvo (Emenda 2). */
+      alvosDentro: s.querySelectorAll('a, button, summary, .src-chip, [data-claim]').length,
+      aninhado: !!s.parentElement.closest('a, button, summary'),
+      algarismos: /[0-9]/.test(s.textContent),
+    };
+  });
+  await p.locator('.conv-porta-sum').click();
+  const aberto = await p.evaluate(() => {
+    const svg = document.querySelector('.rule-svg');
+    const caixas = [...svg.querySelectorAll('text, tspan')]
+      .filter((e) => e.getClientRects().length && e.textContent.trim())
+      .map((e) => e.getBoundingClientRect());
+    let pares = 0;
+    for (let i = 0; i < caixas.length; i++) {
+      for (let j = i + 1; j < caixas.length; j++) {
+        const a = caixas[i];
+        const b = caixas[j];
+        if (a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom) pares++;
+      }
+    }
+    const cx = document.querySelector('.svg-scroll');
+    return {
+      corpo: document.querySelector('.conv-corpo').getClientRects().length > 0,
+      rotulos: caixas.length,
+      pares,
+      rola: cx.scrollWidth > cx.clientWidth,
+      transbordo: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+    };
+  });
+  conta(
+    `largura ${largura} · a régua da convergência é uma porta de palavras`,
+    fechado.porta &&
+      !fechado.corpo &&
+      fechado.altoQb &&
+      fechado.alvosDentro === 0 &&
+      !fechado.aninhado &&
+      !fechado.algarismos &&
+      aberto.corpo,
+    `porta ${fechado.alvo}, sem alvo dentro e sem alvo à volta, sem algarismos; abre o instrumento`,
+  );
+  conta(
+    `largura ${largura} · rótulos do instrumento sem caixas sobrepostas`,
+    aberto.pares === 0 && aberto.rola && aberto.transbordo <= 0,
+    `${aberto.rotulos} rótulos · ${aberto.pares} pares sobrepostos · rola na sua caixa · transbordo ${aberto.transbordo}`,
+  );
+  await p.__contexto.close();
+}
+
+/* (4b) Na secretária nada muda: a porta não existe e o instrumento está à vista. */
+{
+  const p = await pagina({ largura: 1280 });
+  await p.goto(base + '/', { waitUntil: 'networkidle' });
+  const d = await p.evaluate(() => {
+    const vis = (e) => !!e && e.getClientRects().length > 0;
+    return {
+      porta: vis(document.querySelector('.conv-porta')),
+      corpo: vis(document.querySelector('.conv-corpo')),
+      instrumento: vis(document.querySelector('.rule-svg')),
+    };
+  });
+  conta(
+    'secretária · a porta da régua não existe e o instrumento está à vista',
+    !d.porta && d.corpo && d.instrumento,
+    `porta ${d.porta} · corpo ${d.corpo} · instrumento ${d.instrumento}`,
+  );
+  await p.__contexto.close();
+}
+
+/* (5) A vista de escolha com a caixa vazia: Évora, e o escolhido se houver um. */
+for (const largura of [1280, 390]) {
+  const p = await pagina({ largura });
+  await p.goto(base + '/', { waitUntil: 'networkidle' });
+  await p.locator('[data-modo="municipio"]:visible').first().click();
+  const vazio = await p.evaluate(() =>
+    [...document.querySelectorAll('.pesquisa-item')]
+      .filter((e) => e.getClientRects().length)
+      .map((e) => e.querySelector('[data-escolher]').getAttribute('data-escolher')),
+  );
+  await p.goto(base + '/?ambito=municipio:beja', { waitUntil: 'networkidle' });
+  await p.locator('[data-modo="municipio"]:visible').first().click();
+  const comEscolhido = await p.evaluate(() =>
+    [...document.querySelectorAll('.pesquisa-item')]
+      .filter((e) => e.getClientRects().length)
+      .map((e) => e.querySelector('[data-escolher]').getAttribute('data-escolher')),
+  );
+  conta(
+    `largura ${largura} · vista de escolha, caixa vazia`,
+    vazio.length === 1 &&
+      vazio[0] === 'evora' &&
+      comEscolhido.length === 2 &&
+      comEscolhido.indexOf('evora') >= 0 &&
+      comEscolhido.indexOf('beja') >= 0,
+    `sem escolha: ${vazio.join(' · ')} · com Beja escolhida: ${comEscolhido.join(' · ')}`,
+  );
+  await p.__contexto.close();
+}
+
+/* (6) Évora na leitura breve: o mapa pequeno DENTRO do cartão, e um só mapa. */
+{
+  const p = await pagina();
+  await p.goto(base + '/?ambito=municipio:evora&densidade=leitura', { waitUntil: 'networkidle' });
+  const c = await p.evaluate(() => {
+    const tela = document.querySelector('.mapa-tela');
+    const cartao = document.querySelector('[data-mapa-cartao]');
+    return {
+      postura: document.querySelector('[data-mapa-raiz]').getAttribute('data-postura'),
+      dentro: !!tela.closest('[data-mapa-cartao]'),
+      largura: Math.round(tela.getBoundingClientRect().width),
+      mapas: document.querySelectorAll('[data-mapa]').length,
+      moldura: getComputedStyle(cartao).borderTopWidth,
+      fichaVisivel: document.querySelector('[data-mapa-ficha]').getClientRects().length > 0,
+    };
+  });
+  const relance = await pagina();
+  await relance.goto(base + '/?ambito=municipio:evora', { waitUntil: 'networkidle' });
+  const r = await relance.evaluate(() => ({
+    postura: document.querySelector('[data-mapa-raiz]').getAttribute('data-postura'),
+    largura: Math.round(document.querySelector('.mapa-tela').getBoundingClientRect().width),
+    fichaVisivel: document.querySelector('[data-mapa-ficha]').getClientRects().length > 0,
+  }));
+  conta(
+    'Évora · o mapa do localizador está dentro do cartão, e o mapa inteiro fica no Relance',
+    c.postura === 'localizador' &&
+      c.dentro &&
+      c.largura === 170 &&
+      c.mapas === 1 &&
+      parseFloat(c.moldura) > 0 &&
+      !c.fichaVisivel &&
+      r.postura === 'inteiro' &&
+      r.largura === 281 &&
+      r.fichaVisivel,
+    `leitura: ${c.postura} ${c.largura}px dentro do cartão (moldura ${c.moldura}) · relance: ${r.postura} ${r.largura}px com ficha · ${c.mapas} mapa no documento`,
+  );
+  await p.__contexto.close();
+  await relance.__contexto.close();
+}
+
+/* (7) O rótulo do distrito: uma regra para os 308 (ISSUES I18). */
+{
+  const p = await pagina();
+  const lidos = {};
+  for (const [slug, q] of [
+    ['evora', '/?ambito=municipio:evora'],
+    ['beja', '/?ambito=municipio:beja'],
+    ['horta', '/?ambito=municipio:horta'],
+    ['lagoa-ilha-de-sao-miguel', '/?ambito=municipio:lagoa-ilha-de-sao-miguel'],
+  ]) {
+    await p.goto(base + q, { waitUntil: 'networkidle' });
+    lidos[slug] = await p.evaluate(() => {
+      const b = [...document.querySelectorAll('.cabeca-bloco')].find(
+        (e) => e.getClientRects().length,
+      );
+      const r = b.querySelector('.cabeca-rotulo');
+      /* O que se LÊ do prefixo e do distrito, e não o que está escrito:
+         `textContent` traz também o prefixo escondido, e é exactamente isso que
+         esta célula tem de distinguir. */
+      return [...r.querySelectorAll('[data-prefixo-distrito], [data-slot="distrito"]')]
+        .filter((e) => !e.hidden)
+        .map((e) => e.textContent)
+        .join('')
+        .replace(/\s+/g, ' ')
+        .trim();
+    });
+  }
+  conta(
+    'o rótulo do distrito segue uma regra só nos 308 (ISSUES I18)',
+    lidos.beja === 'distrito de Beja' &&
+      lidos.horta === 'Ilha do Faial' &&
+      lidos['lagoa-ilha-de-sao-miguel'] === 'Ilha de São Miguel' &&
+      lidos.evora === '',
+    `Beja «${lidos.beja}» · Horta «${lidos.horta}» · Lagoa «${lidos['lagoa-ilha-de-sao-miguel']}» · Évora traz a sua etiqueta de municipios.mjs`,
+  );
+  await p.__contexto.close();
+}
+
 /* --------------------------------------------------------------------- relatório */
 await navegador.close();
 servidor.close();

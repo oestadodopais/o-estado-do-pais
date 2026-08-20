@@ -209,8 +209,15 @@ for (const r of REGIOES) {
 
       <g data-marks>
         <g class="mk is-on" data-mk={inicial.id}>
-          <rect x={X(inicial.valor) - larguraRotulo / 2} y={yPatamar - 32} width={larguraRotulo} height="36" fill="var(--paper)" />
-          <text x={X(inicial.valor)} y={yPatamar - 18} text-anchor="middle" class="mk-name">{inicial.nome}</text>
+          <rect x={X(inicial.valor) - larguraRotulo / 2} y={yPatamar - 37} width={larguraRotulo} height="41" fill="var(--paper)" />
+          {/* O nome sobe seis unidades (2g, ponto 4). Medidas as caixas dos
+              rótulos do instrumento a 320 e a 390, o único par que se tocava era
+              o nome da região e o seu valor, encostados por 18 unidades de
+              patamar com 12,5px e 16px de corpo. Medido a 390: as caixas
+              cruzavam-se, e com 24 unidades de patamar ficam a 2,5px uma da
+              outra. A chapa de papel por baixo sobe as mesmas seis unidades
+              para não cortar o topo do nome. */}
+          <text x={X(inicial.valor)} y={yPatamar - 24} text-anchor="middle" class="mk-name">{inicial.nome}</text>
           <Claim id={inicial.valor_claim} as="text" class="mk-val" x={X(inicial.valor)} y={yPatamar - 1} text-anchor="middle" />
           <circle cx={X(inicial.valor)} cy={RY} r="5.5" fill="var(--ink)" stroke="var(--paper)" stroke-width="1.5" />
         </g>

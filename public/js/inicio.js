@@ -65,6 +65,11 @@
         y: parseFloat(el.getAttribute('y')) + parseFloat(el.getAttribute('height')) / 2,
         nome: el.getAttribute('data-m'),
         distrito: el.getAttribute('data-d') || '',
+        /* ISSUES I18: o servidor já decidiu, para cada um dos 308, se o campo
+           da Carta é um distrito ou uma ilha. O cliente não repete a regra:
+           lê a resposta e escolhe entre um prefixo que já está escrito na
+           página e nenhum prefixo. */
+        ilha: el.getAttribute('data-ilha') === 'sim',
         slug: el.getAttribute('data-caop'),
         comPagina: el.classList.contains('mun-com-pagina'),
       };
@@ -149,6 +154,11 @@
   var estado = leDoEndereco();
   var modoEscolhido = modoDe(estado.ambito);
 
+  /* A fila de resultados da pesquisa recalcula-se sempre que o âmbito muda,
+     porque a regra da prancha inclui o concelho ESCOLHIDO. Declara-se aqui, sem
+     fazer nada, e ganha corpo mais abaixo se houver caixa de pesquisa. */
+  var filtra = function () {};
+
   function mostraSo(lista, atributo, chave) {
     for (var k = 0; k < lista.length; k++) {
       lista[k].hidden = lista[k].getAttribute(atributo) !== chave;
@@ -195,6 +205,10 @@
       for (var s1 = 0; s1 < slotsNome.length; s1++) slotsNome[s1].textContent = ponto.nome;
       var slotsDist = document.querySelectorAll('[data-slot="distrito"]');
       for (var s2 = 0; s2 < slotsDist.length; s2++) slotsDist[s2].textContent = ponto.distrito;
+      /* E o prefixo «distrito de», que não é escrito aqui: está na página nas
+         duas edições e o que isto faz é acendê-lo ou apagá-lo. */
+      var prefixos = document.querySelectorAll('[data-prefixo-distrito]');
+      for (var s3 = 0; s3 < prefixos.length; s3++) prefixos[s3].hidden = ponto.ilha;
     }
 
     var chave = chaveDoBloco(ambito);
@@ -225,10 +239,15 @@
     }
 
     /* A postura do mapa. Ficha inteira no País e na escolha; cartão localizador
-       quando um concelho está escolhido e a leitura aprofunda (Emenda 3). */
+       quando um concelho está escolhido e a leitura aprofunda (Emenda 3).
+
+       O cartão já NÃO se esconde por atributo: desde a 2g ele é a moldura que
+       tem o mapa dentro, e esconder o cartão esconderia o mapa. Quem decide o
+       que dele se vê é `data-postura`, lido pela folha — o mesmo atributo que
+       já decidia o tamanho da tela. */
     var comCartao = !!ponto && estado.densidade !== 'relance';
     if (ficha) ficha.hidden = comCartao || mo === 'regiao';
-    if (cartao) cartao.hidden = !comCartao;
+    if (cartao) cartao.hidden = false;
     if (soEvora) soEvora.hidden = !(ponto && ponto.comPagina);
     if (dicaEscolher) dicaEscolher.hidden = mo !== 'municipio';
     var figura = raiz.querySelector('[data-mapa-raiz]');
@@ -249,6 +268,8 @@
     if (ligacaoDeIdioma && baseDoIdioma !== null) {
       ligacaoDeIdioma.setAttribute('href', baseDoIdioma + pesquisaDe(estado));
     }
+
+    filtra();
   }
 
   /* A mudança dita por palavras, e as palavras já estão na página: o rótulo do
@@ -330,25 +351,43 @@
     })(escolhas[c4]);
   }
 
-  /* A pesquisa: os resultados já estão na página e o que isto faz é tirar-lhes o
-     `hidden`. Oito, no máximo, e a ordem é a da Carta. */
+  /* --------------------------------------------------------------- a pesquisa
+   *
+   * Os resultados já estão na página e o que isto faz é tirar-lhes o `hidden`.
+   * Oito, no máximo, e a ordem é a da Carta.
+   *
+   * A REGRA DA CAIXA VAZIA É A DA PRANCHA (subetapa 2g, ponto 5): com a caixa
+   * vazia mostram-se os concelhos que têm página — hoje um, Évora — e, se
+   * houver um concelho escolhido, também ele. Os outros aparecem quando o
+   * leitor escrever. Uma vista de escolha que abre com oito nomes que ninguém
+   * pediu diz que aqueles oito são especiais, e não são: são os primeiros da
+   * Carta.
+   */
   if (campo) {
     var itens = raiz.querySelectorAll('.pesquisa-item');
     var MAX = 8;
-    var filtra = function () {
+    filtra = function () {
       var q = campo.value
         .normalize('NFD')
         .replace(/[\u0300-\u036f]/g, '')
         .toLowerCase()
         .trim();
+      var escolhido =
+        estado.ambito.indexOf('municipio:') === 0
+          ? estado.ambito.slice('municipio:'.length)
+          : null;
       var vistos = 0;
       for (var j = 0; j < itens.length; j++) {
-        /* Caixa vazia: ficam à vista os concelhos que têm página, que é o que o
-           servidor já rendeu. Caixa com texto: os oito primeiros que casam. */
+        /* Caixa vazia: os concelhos que têm página, que é o que o servidor já
+           rendeu, mais o concelho escolhido, se houver um. Caixa com texto: os
+           oito primeiros que casam. */
+        var botaoDoItem = itens[j].querySelector('[data-escolher]');
+        var slugDoItem = botaoDoItem ? botaoDoItem.getAttribute('data-escolher') : null;
         var casa =
           q.length > 0
             ? itens[j].getAttribute('data-normal').indexOf(q) >= 0
-            : itens[j].hasAttribute('data-tem-pagina');
+            : itens[j].hasAttribute('data-tem-pagina') ||
+              (escolhido !== null && slugDoItem === escolhido);
         var mostrar = casa && vistos < MAX;
         itens[j].hidden = !mostrar;
         if (mostrar) vistos++;
@@ -385,39 +424,25 @@
   /* --------------------------------------------------- o selo do país, no telemóvel
    *
    * Emenda 3: no telemóvel o mapa não é seletor ponto a ponto — o selo inteiro é
-   * o alvo, e um toque devolve os concelhos MAIS PRÓXIMOS como botões. Os botões
-   * não são criados aqui: são os mesmos 308 resultados da pesquisa que o
-   * servidor já rendeu, e o que isto faz é tirar o `hidden` aos oito mais
-   * próximos do sítio onde o dedo tocou. Nenhuma distância é escrita.
+   * o alvo, e nenhum ponto é alvo. Um toque abre a vista de escolha e põe o foco
+   * na caixa de pesquisa, que é o caminho principal.
+   *
+   * A LISTA DOS OITO MAIS PRÓXIMOS SAIU NA 2g, e o motivo está medido. A 2e
+   * fazia o selo devolver os oito concelhos mais próximos do sítio tocado; a
+   * revisão apanhou nas capturas a 390 os oito PRIMEIROS da Carta («Arcos de
+   * Valdevez, Caminha, Melgaço…»), que é o que a ordenação devolve quando a
+   * geometria degenera. E, defeito à parte, a regra da prancha para a caixa
+   * vazia é outra: Évora e o concelho escolhido, e mais nada até alguém
+   * escrever. As duas coisas não podem ser verdade do mesmo estado, e a que
+   * fica é a da prancha (subetapa 2g, ponto 5). O que se perde fica escrito na
+   * nota: a ordenação espacial da Emenda 3, que era o único uso da distância
+   * entre centróides no cliente.
    */
   var seloDoPais = raiz.querySelector('.movel-selo');
-  if (seloDoPais && mapa) {
+  if (seloDoPais) {
     seloDoPais.addEventListener('click', function (ev) {
       ev.preventDefault();
-      var r = mapa.getBoundingClientRect();
-      var caixa2 = mapa.viewBox && mapa.viewBox.baseVal;
-      var LW = caixa2 && caixa2.width ? caixa2.width : 600;
-      var LH = caixa2 && caixa2.height ? caixa2.height : 790;
-      var px = ((ev.clientX - r.left) / r.width) * LW;
-      var py = ((ev.clientY - r.top) / r.height) * LH;
-      var ordenados = pontos
-        .map(function (pt3) {
-          var dx3 = pt3.x - px;
-          var dy3 = pt3.y - py;
-          return { slug: pt3.slug, d: dx3 * dx3 + dy3 * dy3 };
-        })
-        .sort(function (x, y) {
-          return x.d - y.d;
-        })
-        .slice(0, 8);
-      var perto = {};
-      for (var z = 0; z < ordenados.length; z++) perto[ordenados[z].slug] = true;
-      var itens2 = raiz.querySelectorAll('.pesquisa-item');
-      for (var z2 = 0; z2 < itens2.length; z2++) {
-        var botao2 = itens2[z2].querySelector('[data-escolher]');
-        itens2[z2].hidden = !(botao2 && perto[botao2.getAttribute('data-escolher')]);
-      }
-      if (semResultado) semResultado.hidden = true;
+      if (campo) campo.value = '';
       vai({ ambito: estado.ambito, densidade: estado.densidade }, 'municipio', campo || seloDoPais);
     });
   }
@@ -460,8 +485,14 @@
   if (mapa && tela && pontos.length) {
     var nome = document.querySelector('[data-readout-nome]');
     var sub = document.querySelector('[data-readout-sub]');
-    var dica = document.querySelector('[data-readout-hint]');
+    var preDistrito = document.querySelector('[data-readout-pre]');
+    var dica = document.querySelector('[data-dica-cursor]');
     var teclado = document.querySelector('[data-teclado]');
+
+    /* As duas dicas descrevem o que só é verdade com script: entram `hidden` do
+       servidor e acendem-se aqui. A folha volta a apagá-las abaixo de 640 e na
+       postura de localizador, onde o mapa não escolhe pontos. */
+    if (dica) dica.hidden = false;
 
     var caixa = mapa.viewBox && mapa.viewBox.baseVal;
     var W = caixa && caixa.width ? caixa.width : 600;
@@ -491,14 +522,13 @@
         anel.style.display = 'none';
         if (nome) nome.hidden = true;
         if (sub) sub.hidden = true;
-        if (dica) dica.hidden = false;
+        if (preDistrito) preDistrito.hidden = true;
         return;
       }
       var pt2 = pontos[j];
       anel.setAttribute('cx', pt2.x);
       anel.setAttribute('cy', pt2.y);
       anel.style.display = '';
-      if (dica) dica.hidden = true;
       if (nome) {
         nome.hidden = false;
         nome.textContent = pt2.nome;
@@ -507,6 +537,10 @@
         sub.hidden = false;
         sub.textContent = pt2.distrito;
       }
+      /* A mesma regra do rótulo de âmbito (ISSUES I18), no que o mapa lê em voz
+         alta: prefixo quando o campo da Carta é um distrito, nome de ilha nu
+         quando não é. O prefixo já está escrito; isto só o acende. */
+      if (preDistrito) preDistrito.hidden = pt2.ilha;
     };
 
     var maisPerto = function (px, py) {

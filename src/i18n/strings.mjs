@@ -339,14 +339,26 @@ export const STRINGS = {
         ledeVazioA: 'O ponto marca a posição do concelho na Carta Administrativa, e não cobertura. Quando houver linhas para ',
         ledeVazioB: ', entram aqui com a sua fonte e a sua data de leitura.',
         estadoRotulo: 'Estado das medidas',
+        /* O prefixo do distrito (ISSUES I18, subetapa 2g). A Carta escreve
+           «Beja» e «Ilha do Faial»; a etiqueta de Évora, que vem de
+           `municipios.mjs`, escreve «distrito de Évora». A regra é uma só para
+           os 308: prefixo quando o campo é um distrito, nome de ilha nu quando
+           começa por «Ilha». O prefixo é uma cadeia validada, e o servidor diz
+           em `data-ilha` a qual dos dois casos cada concelho pertence; o script
+           só troca `hidden`. */
+        distritoDe: 'distrito de ',
       },
 
       movel: {
         abrirConcelho: 'Abrir um concelho',
         verRegiao: 'Ver uma região',
         seloDaEscolha: 'Abrir a escolha de concelho',
+        /* A primeira metade desta frase («um toque no mapa devolve os concelhos
+           mais próximos») saiu na 2g: com a caixa vazia a lista é a da prancha
+           (Évora e o concelho escolhido), e a frase prometia o que a página
+           deixou de fazer. O que fica é a metade que continua verdadeira. */
         proximos:
-          'Um toque no mapa devolve os concelhos mais próximos, para escolher. No telemóvel os pontos não são alvos: a pesquisa é o caminho.',
+          'No telemóvel os pontos não são alvos: a pesquisa é o caminho.',
       },
 
       peca: {
@@ -390,6 +402,12 @@ export const STRINGS = {
           'Teclado: Tab até ao mapa, setas para percorrer os municípios vizinhos, Home para voltar a Évora.',
         svgLabel:
           'Mapa de pontos dos municípios de Portugal. Use as setas para percorrer os municípios.',
+        /* O rótulo da camada de fundo do instrumento n.º 2 da v2, relocado com
+           a sua secção (R3) e sem uma palavra mudada. É debaixo dele que a
+           citação inteira da CAOP, a porta do CSV e as duas dicas passam a
+           viver, para que a ficha ao lado do mapa deixe de mandar na altura da
+           cabeça (subetapa 2g, ponto 2). */
+        deepTitulo: 'Método, ressalvas e proveniência',
         trocar: 'trocar de concelho',
         paginaInteira: 'a página inteira, com quem governou',
       },
@@ -1153,14 +1171,17 @@ export const STRINGS = {
         ledeVazioA: 'The point marks where the concelho sits on the official administrative map, and not coverage. When there are rows for ',
         ledeVazioB: ', they will appear here with their source and their reading date.',
         estadoRotulo: 'State of the measures',
+        /* «district of », com o espaço final, como o par português. Os nomes de
+           ilha da Carta ficam em português nas duas edições, como já acontece
+           com «concelho»: são nomes próprios. */
+        distritoDe: 'district of ',
       },
 
       movel: {
         abrirConcelho: 'Open a concelho',
         verRegiao: 'See a region',
         seloDaEscolha: 'Open the concelho chooser',
-        proximos:
-          'Tapping the map returns the nearest concelhos to choose from. On a phone the points are not targets: the search is the way.',
+        proximos: 'On a phone the points are not targets: the search is the way.',
       },
 
       peca: {
@@ -1198,6 +1219,7 @@ export const STRINGS = {
           'Keyboard: Tab to the map, arrow keys to move between neighbouring municipalities, Home to return to Évora.',
         svgLabel:
           'Point map of the municipalities of Portugal. Use the arrow keys to move between municipalities.',
+        deepTitulo: 'Method, caveats and provenance',
         trocar: 'change concelho',
         paginaInteira: 'the whole page, with who governed it',
       },
