@@ -8009,6 +8009,23 @@ quatro campos antigos e **nenhum consumidor**. Não pode dar resultado errado,
 porque ninguém a lê; pode enganar quem a leia. Fica escrito e não se toca, pela
 mesma razão.
 
+#### A fusão
+
+*Escrito a 20.08.2026 pelo lugar de direção, depois da fusão.*
+
+Fundido e posto no ar a 20.08.2026 às 12:12 UTC, pela palavra da direção dada por
+delegação nesse dia («drive all of it», e, para a fusão do bloco das decisões,
+«choose the best options»): `main` avançou em linha reta para `510dda0` e foi
+empurrado; `verify:deploy` fechou às 12:13 UTC (no ar = `origin/main` = `main`);
+as rotas do bloco respondem 200 (a página da linha do aprovado, o documento do
+04, as correções); a porta da cópia arquivada da linha do aprovado abre no
+Internet Archive com HTTP 200; o pacote de desenho foi regenerado (13 cartões)
+e empurrado para o Claude Design. O ramo `republicacao-2026-08-20` está fundido
+e pode ser apagado. O que fica para a direção está na §4.1: a natureza que
+falta ao formato para uma frase da conta corrigida, a norma da cópia arquivada
+contra o marcador, a edição inglesa do 08 por publicar, o `ledger.json` de
+cada estudo ao lado do documento.
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
