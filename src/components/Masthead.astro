@@ -49,16 +49,22 @@ const agenda = routePath('agenda', lang);
  * A NAVEGAÇÃO É UMA LISTA DE CHAVES DE ROTA, E É POR ISSO QUE A DECISÃO CUSTA
  * UMA LINHA (v3, etapa 1d)
  * ---------------------------------------------------------------------------
- * A constituição visual §4 diz sete itens; a decisão (a) do plano §3 pede oito,
- * com «Correções», e espera a palavra da direção. Enquanto ela não chega ficam
- * sete, e o oitavo é ESTA linha: `OITAVO_ITEM = 'correcoes'`. A folha e a
- * medição já contam com ele, medidos a 320, 390 e 1280 com oito itens, para que
- * a decisão não possa partir a composição seja qual for.
+ * A constituição visual §4 dizia sete itens. A direção decidiu **oito** a
+ * 20.08.2026, à noite, e «Correções» entra entre «Método» e «Sobre», que é a
+ * ordem que o rodapé já tinha (Emenda 9; `DECISIONS.md` §1.51; a cópia da
+ * constituição no repositório, `design/especime-v3/direcao.md`, foi emendada no
+ * mesmo commit). O defeito que isto fecha é o segundo dos oito da crítica
+ * cruzada: a página das correções só tinha porta no rodapé e nas páginas.
+ *
+ * A etapa 1d já tinha medido a barra a 320, 390 e 1280 COM oito itens, antes de
+ * a decisão chegar, exactamente para que ela não pudesse partir a composição; e
+ * a etapa 1e pôs a navegação atrás de «Menu» abaixo de 640px, o que tira ao
+ * oitavo item qualquer custo em ecrã estreito.
  *
  * As chaves são as de `routePath()`; o rótulo vem de `s.nav`, e a única que não
  * tem o mesmo nome dos dois lados é a primeira.
  */
-const OITAVO_ITEM = null;
+const OITAVO_ITEM = 'correcoes';
 const ROTAS_NAV = [
   'home',
   'municipios',
