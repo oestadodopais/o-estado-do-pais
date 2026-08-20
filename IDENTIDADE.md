@@ -114,6 +114,14 @@ cor e passa a ter forma: valor antigo riscado a cinzento, valor novo a tinta, e
 a data. As duas fichas saíram de `src/styles/tokens.css` e de todas as regras
 que as usavam.
 
+**A paleta escura é regra provisória, e não proposta.** A direção decidiu-a a
+20.08.2026 com duas condições: os contornos dos marcadores de estado vão na
+tinta do tema, que em escuro é a tinta clara, e a auditoria de contraste inteira
+repete-se no papel escuro exactamente como em claro, âmbar sobre papel incluído.
+Provisória quer dizer revogável depois de a ver no ar, e não por medir: a
+primeira pré-visualização é o seu primeiro teste real, porque nenhuma maqueta da
+v3 desenhou o escuro.
+
 **Cada par usado passa AA em claro e em escuro, medido por um script**, e não a
 olho nem por um número copiado de um racional. `scripts/medir-contraste.mjs` mede
 cada par que a folha de facto usa, nos dois temas; um par que não esteja na sua
