@@ -7152,6 +7152,38 @@ que a leitura acrescentou ao que o diretor lê na pré-visualização é a **pri
 frase da regra 6, ao lado da redação nova do limite que o T4 já lhe tinha posto à
 frente: é a mesma regra, e é o mesmo leitor.
 
+#### A fusão, e o que ficou para a direção
+
+*Escrito a 20.08.2026 pelo lugar de direção, a partir do git e de uma corrida
+nova do `verify:deploy`.*
+
+O bloco foi **fundido e posto no ar na noite de 18.08.2026, pela palavra da
+direção**, depois da pré-visualização protegida do ramo `confianca`: `main`
+avançou em linha reta para `28709e1` (os quarenta commits do bloco, o último
+deles esta entrada) e logo a seguir para `17bd69c`, uma correção ao gerador do
+pacote de desenho (o espécime do selo a tracejado lê-se da primeira página que
+o tiver; o código citado não conta como sintaxe por converter). O
+`verify:deploy` fechou nessa noite e outra vez a 20.08.2026: o que está no ar é
+`17bd69c`, igual a `origin/main` e a `main`. O pacote de desenho foi regenerado
+(13 cartões) e empurrado para o projeto do Claude Design. O ramo `confianca`
+está fundido e pode ser apagado.
+
+A redação nova do limite da regra 6 (T4) **foi para o ar com a fusão** e vale
+enquanto a direção não a revogar. O que ficou para a direção, posto por escrito
+a 20.08.2026 com uma recomendação ao lado de cada item, e por responder nesse
+dia: a licença do conjunto de dados; a licença do instantâneo do PRR e o seu
+alojamento; as duas republicações (07/08 e 04); a **primeira** frase da regra 6
+(achados 7 e 13 da leitura cruzada); e, do lado do motor, as decisões do mapa
+de cobertura. O registo de cada resposta entra na entrada que a construir.
+
+Duas coisas medidas a 20.08.2026 que pesam nessas decisões: o conjunto do PRR
+em dados.gov.pt continuava a declarar `notspecified`, sem ponto de contacto, e
+o recurso tinha rodado para o instantâneo de 2026-08-19; a conferência de saúde
+do motor leu esse instantâneo e as somas de Évora mexeram outra vez desde o de
+2026-08-17 (aprovado 167 372 755,84; pago 86 944 668,69; execução 51,95%). As
+linhas do sítio continuam a dizer o instantâneo de 2026-08-17, com a data à
+vista, e nada disto atravessa sem a reextração sob a V16.
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
