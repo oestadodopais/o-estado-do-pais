@@ -7187,9 +7187,12 @@ vista, e nada disto atravessa sem a reextração sob a V16.
 ### 1.48 A direção decide: a licença do conjunto é CC BY 4.0, e a regra 6 diz o que se faz
 
 **Afecta:** metodo
-**Texto:** metodo 1e2c805da1fb
+**Texto:** metodo 63c2c5cc3a02
 
-*Este registo segue a grafia que §1.38 fixou.*
+*Este registo segue a grafia que §1.38 fixou. O que é citado fica com os
+caracteres que tem, como na §1.47: os dois travessões desta entrada estão dentro
+do nome de fonte que a segunda leitura encontrou, e trocá-los era reportar outro
+defeito que não o que existe.*
 
 A 20.08.2026 a direção recebeu por escrito a lista das decisões desse dia, com a
 recomendação do lugar de direção ao lado de cada uma, e delegou a condução dela.
@@ -7272,6 +7275,40 @@ leitura cruzada, depois. As dez regras são da direção, o diretor lê o Métod
 pré-visualização, e pode revogar esta redação antes da fusão. O que o lugar de
 construção não pode fazer é publicar, sabendo, uma frase que a página ao lado
 desmente.
+
+#### A frase da regra 10, e é a terceira mudança de texto governado do bloco
+
+*Escrito no segundo estádio de correção, depois da segunda leitura cruzada de
+20.08.2026 (achado 1, abaixo).*
+
+A regra 10 lista o que o observatório não faz, e uma das frases dizia «Não
+publica um número sem fonte». Três linhas publicam um número com `[a verificar]`
+no campo `source`, e são as mesmas três da regra 1. É a terceira vez neste bloco
+que a mesma classe de defeito aparece: uma frase absoluta sobre o trabalho da
+casa, escrita quando ela era verdade, ao lado de uma prova que entretanto passou
+a dizer o contrário.
+
+A frase passa a nomear a promessa que a casa cumpre mesmo, que é a linha, e a
+dizer o que acontece quando a fonte falta. Nas duas edições, e sem mais nenhuma
+palavra da regra mudada:
+
+> «Não publica um número sem linha no livro-razão; onde a fonte ainda está por
+> confirmar, a própria linha o diz com o marcador.»
+
+> «It does not publish a figure without a ledger row; where the source is still
+> to be confirmed, the row itself says so with the marker.»
+
+**É proposta do lugar de construção e não decisão tomada**, como o limite da
+regra 1: nasceu da segunda leitura e não estava na lista que a direção delegou a
+20.08. O diretor lê-a na pré-visualização e pode revogá-la antes da fusão.
+
+Fica dito o que isto é, porque três frases da mesma família num bloco só é um
+padrão e não um acaso: o Método foi escrito a 15.08.2026 a descrever um aparelho
+que ainda não tinha o campo `verifications[]`, nem a dívida de proveniência
+medida linha a linha, nem um livro-razão que se descarrega. Cada peça que o
+aparelho ganhou tornou mais exata uma promessa e mais falsa outra. Não há aqui
+nenhuma conferência que apanhe a próxima: o que apanhou estas três foram duas
+leituras de outra família com o contexto cortado, e isso não é um portão.
 
 #### A licença do conjunto: um só campo, e a promessa era mesmo de um só campo
 
@@ -7463,15 +7500,82 @@ do lugar de construção e nasceu desta leitura. As duas dizem a mesma coisa em
 dois sítios diferentes do Método, que é que a promessa vale onde a prova ao lado
 a sustenta e não mais longe.
 
+#### A segunda leitura
+
+*Corrida depois do primeiro estádio de correção, sobre o que ele deixou. Uma
+leitura que só vê o que a anterior mandou mudar não é uma segunda leitura: esta
+recebeu as páginas construídas de novo, e o que encontrou não é o que a primeira
+já tinha encontrado.*
+
+##### Como foi feita
+
+**Codex, outra vez com o contexto cortado**, sobre quatro páginas e três
+ficheiros: as **duas páginas do Método**, que é onde as duas mudanças de texto
+governado do primeiro estádio ficaram; os **dois índices do livro-razão**; o
+`livro-razao.json` e **dois ficheiros de linha**, que é onde o preâmbulo foi
+corrigido.
+
+E **dois estragos plantados**, os dois sobre o que o primeiro estádio construiu:
+o limite novo da regra 1 apagado da edição inglesa, e a contagem da dívida
+rendida como 7 ao lado da regra 1 na edição portuguesa. **Os dois foram
+apanhados.**
+
+##### Os nove achados, e o que ficou de cada um
+
+| # | O achado | O que ficou |
+| --- | --- | --- |
+| 1 | a regra 10 diz «Não publica um número sem fonte» e três linhas publicam um número com o marcador no `source` | **real, e fecha aqui**: é a mesma classe de defeito da regra 1 e da regra 6, e a terceira frase de texto governado do bloco. Acima. |
+| 2 | a regra 1 tem limite na edição portuguesa e não na inglesa | **estrago plantado**, reposto. |
+| 3 | a conta da dívida ao lado da regra 1 não bate com a do resto do sítio | **estrago plantado**, reposto. O portão reconta a chave por conta própria, e é por isso que este estrago não podia sobreviver a uma construção. |
+| 4 | «organismos citados» conta catorze e os organismos nomeados são treze | **real, e fecha aqui**: o `source` de uma linha por confirmar é o próprio marcador, e a contagem punha «[a verificar]» a fazer de instituição. Passa a treze nas duas edições. Abaixo, com a prova das duas cópias. |
+| 5 | travessões espalhados pelo livro-razão | **quase tudo é transcrição, e transcrição não se converte**: estão nos excertos, nos títulos de documentos e nos títulos de trabalhos citados dentro de derivações e de motivos, e a régua da ortografia já os deixa passar por isso mesmo (corre a verde, com os avisos separados dos erros). **Um não é transcrição**: o nome da fonte de `indice-de-divida-limite-legal` é «CICF/IPCA — Anuário Financeiro dos Municípios Portugueses», é campo publicado, rende nas duas páginas dessa linha, e a régua não o apanha. Entra na §4.1 como redação, para a próxima passagem da linha de base. |
+| 6 | `taxa-de-actividade-2025` com grafia anterior ao Acordo | **decidido desde 16.08.2026 (§1.40)**: um id é um endereço, e mudá-lo parte ligações. Fica. |
+| 7 | `taxa-de-cambio-efectiva-real-2025`, o mesmo | **o mesmo, e a mesma decisão** (§1.40, confirmada na §1.42). |
+| 8 | «−34 100» tem um espaço de milhares diferente dos outros valores | **real, e anterior a este bloco**. Conferido: **36** valores levam U+202F e **um** leva o espaço comum, e é `saldo-natural-portugal-2025`. O registo do T4 já o tinha notado, ao escrever a normalização do portão (§1.47, «Dentro do portão, primeira extensão»): os dois espaços são o mesmo separador para quem lê, e o portão trata-os como tal. O que fica é a forma no livro-razão, e entra na §4.1 ao lado das quatro linhas sem a casa decimal, que é a mesma passagem e a mesma correção do lado do motor. |
+| 9 | «52º» onde o Acordo escreve «52.º» | **é a grafia da fonte, transcrita**: está dentro do título do quadro citado no `locator` de `indice-de-divida-limite-legal`, «LIMITE À DÍVIDA TOTAL, LEI 73/2013 (ART. 52º)», que é como o documento o imprime. Corrigir a grafia de uma citação é reescrever o que a fonte diz, e esta casa não o faz. |
+
+Dois achados são estragos plantados, dois fecham aqui, dois entram na §4.1, dois
+estavam decididos há quatro dias e um é a fonte a falar. **Nenhum dos nove era um
+número errado**, e o único que era uma contagem errada (o 4) era a contagem da
+casa sobre si própria, que é a classe que a §10 da constituição manda render e
+nunca escrever.
+
+##### A contagem dos organismos, provada pelas duas cópias
+
+A chave `fontes` vive duas vezes, de propósito: uma em `src/lib/prova.mjs`, que é
+o que a página rende, e outra em `scripts/gate-html.mjs`, que é a cópia própria
+do portão. É essa duplicação que faz do portão uma conferência e não uma
+confirmação, e este defeito serviu para a exercer.
+
+**Mudou-se primeiro a cópia da página, e o portão recusou a construção**, com a
+frase que ele tem para isto:
+
+> «a prova diz que "fontes" é 13 e o portão conta 14 (vista: ledger).»
+
+e, para cada sítio onde o número aparece:
+
+> «o número da prova "fontes" foi renderizado como "13" e o portão escreve-o "14".»
+
+Mudou-se então a cópia do portão, com a mesma exclusão escrita por extenso lá, e
+a construção fecha a verde. As duas cópias importam o marcador do módulo que o
+define (`src/data/marcador.mjs`, pelo reexportador de `ledger.mjs`): **o texto do
+marcador não se escreve à mão em lado nenhum** (§1.40). O que não se partilha é a
+regra, e a regra está escrita nos dois sítios.
+
+O número rendido, lido da construção: **13** na edição portuguesa e **13** na
+inglesa, contra **14** antes.
+
 #### O que fica dito, para não ser descoberto depois
 
 A redação nova da primeira frase da regra 6 é **decisão da direção** e não
-proposta do lugar de construção, ao contrário da do limite da mesma regra, que o
-T4 propôs a 18.08.2026 e que continua a valer enquanto não for revogada, e ao
-contrário do limite novo da regra 1, que nasceu da leitura cruzada deste bloco e
-é proposta também. As três leem-se juntas na pré-visualização. **Duas das dez
-regras mudaram neste bloco**, a 1 e a 6, e nenhuma delas mudou a regra
-propriamente dita: mudou a primeira frase de uma e entrou um limite na outra.
+proposta do lugar de construção. As outras três mudanças de texto governado que
+estão neste ramo são propostas, e cada uma diz de onde veio: o limite da regra 6,
+que o T4 propôs a 18.08.2026 e que continua a valer enquanto não for revogada; o
+limite da regra 1, da primeira leitura cruzada deste bloco; e a frase da regra
+10, da segunda. As quatro leem-se juntas na pré-visualização. **Três das dez
+regras mudaram neste bloco**, a 1, a 6 e a 10, e nenhuma delas mudou o que a
+regra manda fazer: mudou a primeira frase de uma, entrou um limite noutra, e uma
+terceira trocou uma promessa absoluta pela que a casa cumpre mesmo.
 
 A licença cobre o conjunto tal como ele é hoje: 132 linhas, das quais 8 com
 dívida de proveniência e 3 com as somas do PRR ainda com o marcador. Licenciar
@@ -8021,15 +8125,31 @@ republicações**, que reexporta estas linhas com o instantâneo de hoje. Até l
 página diz um valor certo com uma conta velha ao lado, e as duas datas estão à
 vista.
 
-**Quatro linhas guardam o valor sem a casa decimal que a fonte imprime**
-(20.08.2026, §1.48, leitura cruzada, achado 6). `fluxo-de-credito-as-empresas-2025`
-guarda «3», `jovens-nem-2025` guarda «8», `taxa-de-desemprego-2025` e
-`taxa-de-desemprego-mip-2025` guardam «6», e o excerto transcrito de cada uma
-imprime 3.0, 8.0, 6.0 e 6.0. **Nenhum valor está errado**: o que se perdeu foi a
-forma com que a fonte o publica, e uma casa decimal que a fonte escreve diz
-quanta precisão ela declara. São de 12.08.2026, das primeiras linhas semeadas.
-É correção do lado do motor, no `generate_claims`, e vai com a próxima passagem
-da linha de base, não com uma emenda a quatro ficheiros deste lado.
+**Cinco linhas guardam o valor numa forma que não é a da fonte nem a da casa**
+(20.08.2026, §1.48, leituras cruzadas, achados 6 e 8). São duas coisas e uma só
+correção. **Quatro perderam a casa decimal que a fonte imprime**:
+`fluxo-de-credito-as-empresas-2025` guarda «3», `jovens-nem-2025` guarda «8»,
+`taxa-de-desemprego-2025` e `taxa-de-desemprego-mip-2025` guardam «6», e o
+excerto transcrito de cada uma imprime 3.0, 8.0, 6.0 e 6.0. **Uma leva o
+separador de milhares errado**: `saldo-natural-portugal-2025` guarda «−34 100»
+com o espaço comum, e os outros **36** valores agrupados do livro-razão levam
+U+202F. **Nenhum dos cinco valores está errado**: o que se perdeu foi a forma,
+e uma casa decimal que a fonte escreve diz quanta precisão ela declara. As
+quatro primeiras são de 12.08.2026, das linhas semeadas; a quinta já estava
+notada no registo do T4, ao lado da normalização do portão, que trata os dois
+espaços como o mesmo separador (§1.47). É correção do lado do motor, no
+`generate_claims`, e vai toda na próxima passagem da linha de base, não numa
+emenda a cinco ficheiros deste lado.
+
+**O nome de uma fonte leva um travessão, e é campo publicado** (20.08.2026,
+§1.48, segunda leitura, achado 5). O `source` de `indice-de-divida-limite-legal`
+é «CICF/IPCA — Anuário Financeiro dos Municípios Portugueses», rende nas duas
+páginas dessa linha, e a régua da ortografia **não o apanha**: ela corre a verde
+e os travessões que vê estão em transcrição, onde ficam por serem transcrição.
+Este não está. O nome é o da instituição e do anuário, e a redação certa
+escreve-se uma vez, do lado do motor, com a mesma passagem da linha de base do
+item acima. Fica escrito aqui porque uma régua que não apanha uma coisa é
+exatamente a razão de ela precisar de morada.
 
 **A legenda do selo cheio não diz as exceções que são de origem** (20.08.2026,
 §1.48, leitura cruzada, achado 7). O índice do livro-razão promete «Todos os
