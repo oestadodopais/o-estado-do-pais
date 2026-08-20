@@ -496,7 +496,16 @@ e o que eles descrevem entra no ar com a fusão do ramo `decisoes-2026-08-20`.*
   pergunta jurídica, vai com o `legal/counsel-brief.md`, e o pedido de
   esclarecimento ao publicador está escrito e por enviar
   (`legal/rascunhos/2026-08-20-pedido-licenca-prr.md`). Está na §4 do
-  `DECISIONS.md`, com a fase a que pertence. **As outras duas foram decididas a
+  `DECISIONS.md`, com a fase a que pertence. **O que ficou decidido a 20.08.2026**
+  (§1.49) é o que se faz enquanto ela não for respondida: o ficheiro **não se
+  aloja** e **não se pede autorização**; em vez disso cada ficheiro contado abre a
+  porta para uma captura datada do Internet Archive cujo resumo SHA-1 bate certo
+  com os bytes que o motor leu, e a página não abre porta nenhuma quando não bate.
+  **O marcador das três somas fica**, e a razão é a regra do excerto nulo: ela
+  pede a recontagem mecânica na construção, sobre um ficheiro que este sítio
+  serve, e uma cópia de terceiro não a permite. Se a norma deve mudar para
+  aceitar uma captura cujo resumo bate certo é pergunta para a direção, e está na
+  §1.49. **As outras duas foram decididas a
   20.08.2026** (§1.48): a licença do conjunto de dados, que é CC BY 4.0, e a
   primeira frase da regra 6 do Método, que deixou de prometer uma releitura
   anterior à publicação e passou a dizer o que cada linha diz de si. A redação

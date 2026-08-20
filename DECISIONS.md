@@ -7594,6 +7594,312 @@ sítio, e repô-lo é voltar a cruzar do lado do motor (`export_site_rows.py`), 
 cada ficheiro vindos do motor são, byte a byte, o que atravessou. Fica escrito
 aqui para não ser descoberto como novidade na leitura cruzada.
 
+#### A fusão
+
+*Escrita a 2026-08-20 pelo bloco seguinte, que é o da republicação (§1.49), para
+que esta entrada não fique a descrever para sempre um ramo por fundir.*
+
+O bloco foi fundido a **2026-08-20, às 10:46 UTC**, pela palavra da direção dada
+por delegação («choose the best options»). A `main` foi avançada sem confluência
+para **`ad86efc`**, e o `verify:deploy` correu às **10:47 UTC** e disse o que
+tinha de dizer: no ar = `origin/main` = `main`. O pacote de desenho foi
+regenerado, com **13 cartões**, e empurrado para o Claude Design.
+
+O que isto põe no ar é o que está escrito acima: a licença do conjunto de dados,
+a primeira frase da regra 6, o limite novo da regra 1, a frase da regra 10 e o
+preâmbulo dos ficheiros de linha. As três mudanças de texto governado que eram
+**proposta** do lugar de construção continuam a sê-lo, e continuam a poder ser
+revogadas: ir para o ar não as promove a decisão.
+
+### 1.49 A republicação: o instantâneo de 2026-08-19 atravessa, os documentos são republicados, e a cópia arquivada entra
+
+**Afecta:** nenhum
+
+*(Este bloco mexeu no formato do livro-razão, na página da linha, no portão de
+HTML, no manifesto dos documentos e no arquivo, e não mudou uma palavra de
+nenhum texto governado: o Sobre, as dez regras do Método e os dois registos da
+agenda estão como estavam. A `IDENTIDADE.md` ganhou uma frase, e a constituição
+não é texto governado no sentido do `**Afecta:**`: é quem os cita.)*
+
+A primeira metade correu no motor de manhã, e está no `git log` dele
+(`d86289f`, `1634b7b`, `afb8bfb`, `53a0c8f`, `96d57b3`). Esta é a segunda: a
+travessia das sete linhas, a republicação de cinco edições de documento, e a
+cópia arquivada em vez do alojamento.
+
+#### A travessia, e as duas linhas cujo valor não mexeu
+
+`python3 publisher/export_site_rows.py --write`, uma vez, depois de o ensaio
+passar. O ensaio disse «0 nova(s) · 7 alterada(s) · 63 inalterada(s) · registo a
+escrever», e a corrida com `--write` escreveu 70 linhas.
+
+| Linha | Antes (instantâneo 2026-08-17) | Agora (instantâneo 2026-08-19) |
+| --- | --- | --- |
+| `evora-prr-aprovado-2026` | 167 366 755,84 | **167 372 755,84** |
+| `evora-prr-pago-2026` | 84 699 317,63 | **86 944 668,69** |
+| `evora-prr-vencido-aprovado-2026` | 102 618 703,85 | **102 624 703,85** |
+| `evora-prr-execucao-2026` (derivada) | 50,61 | **51,95** |
+| `evora-prr-vencido-quota-2026` (derivada) | 61,31 | **61,32** |
+| `evora-prr-municipio-contratado` | 12 069 012,6 | 12 069 012,6 |
+| `evora-prr-universidade-contratado` | 38 596 975,81 | 38 596 975,81 |
+
+Cinco `atualizacao` tipadas, uma por valor que mexeu, que é o que a V16 exige. Nas
+duas últimas não se escreve entrada nenhuma, e o `computed_over`, o
+`access_date`, o `reference_date` e a `document.edition` mexem na mesma: uma
+releitura é uma leitura nova, e os cinco valores são agora somas sobre os
+ficheiros de 2026-08-19. É a decisão que o T3c já tinha escrito, aplicada outra
+vez.
+
+O `check:cruzamento -- --with-origin` estava vermelho por herança, e a §1.48
+deixou-o assim de propósito. Antes, com código de saída 1:
+
+> «--with-origin: 7 linha(s) já não são a linha do motor que atravessou»
+
+e as sete nomeadas por baixo. Depois, com código de saída 0:
+
+> «cada linha e cada ficheiro vindos do motor são, byte a byte, o que
+> atravessou, e são ainda o que o motor tem.»
+
+#### A frase da conta, e a natureza que não existe
+
+As duas linhas derivadas publicavam a aritmética com algarismos literais, e por
+isso envelheciam a cada reextração: a leitura cruzada apanhou-as a dizer «= 50,36»
+e «= 61,64» ao lado de valores de 50,61 e 61,31 (§1.48, achados 3 e 4). A causa é
+a forma e não o número. As duas passam a dizer a conta por palavras, nas duas
+edições, sem um algarismo:
+
+> «O que já foi pago, a dividir pelo que foi aprovado e atribuído ao concelho,
+> vezes cem.»
+
+> «What has been paid, divided by what was approved and attributed to the
+> concelho, times one hundred.»
+
+e a análoga para o vencido. Os números vêm da expressão `check`, que é
+reavaliada em cada construção e é a única coisa nesta página que não pode
+envelhecer.
+
+**A mudança não leva entrada na história da linha, e isso é um resultado e não
+um esquecimento.** O `BRIEF` pedia que fosse registada «pelo tipo que o
+`ledger/README.md` fixa para uma frase da casa que estava errada sem o valor
+estar», e pedia que, se nenhum servisse, se parasse e se dissesse. Leram-se as
+listas fechadas, dos dois lados, e nenhuma serve:
+
+| A natureza | O que ela diz | Porque não serve |
+| --- | --- | --- |
+| `correcao` | o valor publicado estava **errado** | o valor não estava errado; a frase ao lado dele é que estava |
+| `atualizacao` | o valor estava **certo** e deixou de estar | o valor não mudou por causa desta mudança |
+| `proveniencia` | mudou a maneira de chegar ao valor | exige `field`, de uma lista fechada que é `source`, `source_url`, `document.title`, `document.edition`, `document.locator`, `access_date` e `excerpt`. `derivation` não está lá |
+
+A lista fechada das **afinações de ponteiro**, que se registam no git e aqui e
+não na história da linha, também não a inclui: é `#page=`, a reescrita de um
+`locator`, e aparar ou estender um `excerpt`. As duas listas estão em
+`ledger/README.md` e a segunda está duplicada em `src/data/correcoes.mjs`
+(`CAMPOS_DE_PROVENIENCIA`) e em `publisher/export_site_rows.py`
+(`PROVENANCE_FIELDS`), que é como o motor e o sítio impõem a mesma regra.
+
+Fica onde o README manda ficar o que não é acontecimento da linha: no git e
+neste registo. **E fica a pergunta para a direção**, que é de formato e não se
+toma aqui: ou `derivation` e `derivation_en` entram na lista fechada da
+`proveniencia`, ou esta classe entra por escrito na lista das afinações de
+ponteiro. Enquanto não for respondida, uma frase da casa pode mudar sem que a
+página o diga, e isso está agora escrito em vez de ser descoberto.
+
+#### A cópia arquivada, e o marcador que fica
+
+A direção decidiu a 20.08, por delegação, **não alojar** o ficheiro do PRR nem
+**pedir autorização** ao publicador, e em vez disso dar ao leitor a porta para
+uma captura datada do Internet Archive dos ficheiros sobre que a soma foi feita.
+
+Do lado do motor entrou `publisher/arquivar_instantaneo.py`. Os três endereços
+datados estavam vivos, e o `Content-Length` de cada um batia certo com os bytes
+registados, ao byte. **Antes de qualquer pedido, a API CDX não tinha captura
+nenhuma de nenhum dos três**, o que é o que faz destas três serem desta corrida:
+
+| Ficheiro | Captura | Resumo SHA-1, base32 | |
+| --- | --- | --- | --- |
+| `listagem-de-entidades-prr-20260819.xlsx` | 2026-08-20T11:12:44Z | `CJ33Y2KXX3IMBHPFTS7E6FN4U6JJ7C4R` | bate certo |
+| `listagem-de-projetos-prr-20260819.xlsx` | 2026-08-20T11:14:37Z | `WBSSA2R43EPR5GO6HQPFJFHNMVQOHHRK` | bate certo |
+| `listagem-de-projetos-prr-por-distribuicao-geografica-260819.xlsx` | 2026-08-20T11:11:55Z | `HNHCB4GFT7CZ7UGCBTC6POERSYNXQSLB` | bate certo |
+
+O resumo de cada captura é o que o Internet Archive publica, e foi comparado com
+o SHA-1 dos bytes que o motor leu, **recalculado** sobre a cache HTTP, que nomeia
+os ficheiros pelo resumo do pedido e não pelo do conteúdo. A recalculação foi
+mostrada capaz de discordar antes de ser acreditada: os mesmos bytes menos um dão
+`WS3EZOCW4TFSYEW3P3WEWME3G3VIVUT2` e não `WBSSA2R43EPR5GO6HQPFJFHNMVQOHHRK`.
+
+**O que o Save Page Now responde não é o que ele faz**, e é o achado desta
+corrida. As três capturas existem e as três batem certo; os pedidos responderam
+HTTP 200, 404 e 523. O dos projetos respondeu 523 nas duas tentativas e a captura
+ficou feita na mesma. Por isso o que conta é a leitura pela API CDX e nunca o
+código do pedido, e por isso o passo ganhou um `--apenas`: uma segunda tentativa
+de um ficheiro só, para não voltar a pedir capturas que já existem.
+
+O ficheiro da distribuição geográfica foi arquivado e **não tem lugar no
+manifesto**: nenhuma das cinco somas o nomeia em `computed_over`. Fica dito aqui
+em vez de se lhe inventar um campo.
+
+Do lado do sítio são quatro peças e nenhum portão novo:
+`document.computed_over.files[].archived` entra no formato com `url` https em
+`web.archive.org`, `at` em AAAA-MM-DDTHH:MM:SSZ e `digest_match` booleano, e mais
+nenhuma chave; o exportador leva-o como veio, sem lhe acrescentar conferência
+(as dezasseis não mudam); a página da linha abre uma porta por ficheiro, «cópia
+arquivada pelo Internet Archive» e «copy archived by the Internet Archive», **e
+só quando `digest_match` é verdadeiro**; e o `gate:html` confere as portas contra
+o campo nos dois sentidos, dentro da conferência que já lia o `computed_over`.
+
+Uma recusa **não atravessa**. O motor guarda o que pediu e o que lhe
+responderam; o formato do sítio não tem forma para «recusado», e não a ganha,
+porque a página teria de decidir a cada construção o que mostrar sobre um estado
+que não é dela.
+
+**O MARCADOR DAS TRÊS SOMAS FICA**, e é a parte que interessa. A regra do excerto
+nulo pede a recontagem mecânica na construção, sobre um ficheiro que este sítio
+serve; uma cópia de terceiro não a permite. As três continuam `[a verificar]` e
+continuam a contar para a dívida de proveniência. O que a captura dá é uma coisa
+mais pequena e verdadeira: os bytes que foram contados continuam a poder ser
+pedidos, num sítio que não é o publicador, que os substitui todos os dias.
+
+**A pergunta para a direção**: a norma deve passar a aceitar, como prova
+suficiente para o marcador sair, uma captura de terceiro cujo resumo bate certo
+com os bytes contados? O argumento contra é o que está escrito acima. O
+argumento a favor é que o resumo torna a captura verificável por quem quiser, o
+que é mais do que o publicador dá. Não se decide aqui.
+
+#### Os documentos, e o que cada republicação significa
+
+Cinco edições, pelo caminho que o cabeçalho do `studies-src/manifest.yml`
+documenta. O `normalize-study.mjs` não correu em nenhuma, e a razão está escrita
+no próprio manifesto: estes ficheiros nunca foram embrulhados por um anfitrião,
+não há runtime para retirar, e os bytes brutos são os bytes alojados.
+
+| Edição | Bytes | Resumo | Do commit |
+| --- | --- | --- | --- |
+| 04 pt | 71 761 | `b7d054d2…` | `1634b7b` |
+| 04 en | 68 371 | `30484dfc…` | `1634b7b` |
+| 07 pt | 960 916 | `8f56b58c…` | `afb8bfb` |
+| 07 en | 959 140 | `6d88c0a4…` | `afb8bfb` |
+| 08 pt | 1 059 969 | `ceab4d26…` | `afb8bfb` |
+
+**A razão é diferente em cada uma, e fica dita onde se lê.** No 07 e no 08 é de
+**ponteiro**: os excertos da ilha de recibos ganharam a janela que o extractor
+corrigido produz, nenhum valor mexeu, e o portão das edições do motor é a prova,
+com «306 visible number tokens, unchanged» no 07 e «1118 … unchanged» no 08. No
+04 é **substantiva**: os números da página mudaram com o instantâneo.
+
+**As três do 07 e do 08 deixaram de ser artefactos**, e isso não estava previsto
+no `BRIEF`. O que este sítio servia era a cópia do claude.ai de 12.08, e ela traz
+o documento **duas vezes**: 96 imagens onde o ficheiro do motor tem 48, e o dobro
+dos bytes de script. O texto visível é o mesmo, palavra por palavra, tirando a
+etiqueta `<title>`, que o anfitrião punha no nome do estudo e no ficheiro do motor
+é o h1. O nome no arquivo não muda, porque é o nome do documento e não a etiqueta,
+e é a convenção que as duas edições do 04 já seguiam desde 15.08. O comentário do
+`src/data/studies.mjs` que justificava o título pela etiqueta do artefacto foi
+reescrito, porque deixou de ser verdade no momento em que os bytes mudaram.
+
+**A frase de abertura do 04 mudou com o documento**, e as duas transcrições foram
+relidas dos ficheiros: a abertura passa a nomear a releitura de 2026-08-20, que é
+de onde vêm os valores. O `data-verbatim` compara-as carácter a carácter com o
+que a página rende, e uma transcrição não se atualiza de memória.
+
+As cinco edições dizem **2026-08-20** no campo `updated` do arquivo, que é o campo
+que o ficheiro tem para a última revisão de uma edição. Nenhuma delas tinha data
+nesse campo antes: todas diziam o marcador.
+
+**Fica por publicar a edição inglesa do 08**, que o motor tem e este arquivo não.
+Acrescentá-la é publicar uma edição nova, que é decisão de publicação e não uma
+re-fixação de bytes. Entra na §4.1.
+
+#### Os estragos plantados, cada um reposto e a reposição conferida
+
+Nenhum portão novo: o que se prova é que as conferências que existem fecham sobre
+o campo que nasceu hoje.
+
+| Estrago | O portão, na sua frase |
+| --- | --- |
+| `archived.url` num anfitrião que não é o `web.archive.org` | «"archived.url" é "https://arquivo.pt/wayback/…". Tem de ser um endereço https em web.archive.org: a porta que esta linha abre é a de uma captura do Internet Archive, e um endereço noutro anfitrião é outra coisa com o mesmo nome.» |
+| a porta rendida na construção e o `archived` tirado da linha | «a página de "evora-prr-pago-2026" abre a porta "https://web.archive.org/…" e nenhum ficheiro desta linha declara essa cópia arquivada com o resumo a bater certo.» |
+| um byte trocado a meio de um documento republicado | «"evora-prometido-pago-auditado-2026/pt": os bytes em disco não são os do manifesto. declarado: b7d054d2… em disco: 223d7fd4…» |
+
+Os três fecharam com código de saída 1, o primeiro no `ledger:check`, o segundo
+no `gate:html` e nas duas edições, o terceiro no `check:documentos`. Cada um foi
+reposto do git, o `diff` ficou vazio, o resumo do ficheiro voltou ao que era, e a
+conferência voltou a passar.
+
+**O quarto não é um estrago, é o caso a sério**, e prova-se ao contrário:
+`digest_match: false` numa linha, reconstruída a página, e a porta **não aparece**
+em nenhuma das duas edições (0 portas onde uma linha que bate certo tem 1),
+`gate:html` e `ledger:check` a passarem os dois. A conta do portão desceu de 12
+portas para 10, que são as duas dessa linha. Reposto, e a construção voltou a
+dizer 12.
+
+#### A régua, antes e depois
+
+`node scripts/medir-defeitos.mjs`, corrida sobre a construção de `main`
+(`ad86efc`) e sobre a do ramo, com o mesmo instrumento, na mesma máquina e no
+mesmo dia.
+
+| A conta | `main` `ad86efc` | o ramo |
+| --- | --- | --- |
+| páginas construídas (sem os documentos de estudo) | 307 | 307 |
+| porta de correções | 307 de 307 | 307 de 307 |
+| primeira página: valores sem selo · selos para outra linha | 0 · 0 | 0 · 0 |
+| frases de moldura: distintas · ocorrências | 77 · 2367 | 77 · 2367 |
+| `[descrição em preparação]` | 0 | 0 |
+| linhas com `#page=` | 23 de 132 | 23 de 132 |
+| linhas com recorte | 22 de 132 | 22 de 132 |
+| localizadores internos | 0 | 0 |
+
+**Nenhuma das oito mexeu**, e diz-se em vez de se arredondar. As páginas são as
+mesmas 307 porque não nasceu nem morreu página nenhuma: o que mudou foi o que
+está dentro de cinco delas e o conteúdo de cinco documentos.
+
+**O que mexeu no `dist/prova.json`, e são três chaves:**
+
+| Chave | Antes | Depois | |
+| --- | --- | --- | --- |
+| `prova.atualizacoes` | 7 | 12 | as cinco `atualizacao` das linhas cujo valor mexeu |
+| `prova.revisoes_de_proveniencia` | 20 | 26 | cinco passos de `source_url` e um de `excerpt` |
+| `portao.ligacoes_internas_conferidas` | 10 077 | 10 087 | as cinco entradas novas no índice das correções, nas duas edições |
+
+A conta fecha à mão nas três. **As doze portas para o Internet Archive não entram
+na terceira**, e é por serem externas: a chave conta ligações internas, e a
+conferência das portas arquivadas é outra, com a sua própria contagem, que o
+portão passa a imprimir ao lado das contas sobre ficheiros não alojados («10
+contas sobre ficheiros não alojados (12 com cópia arquivada)»).
+
+#### A cadência da reextração, decidida
+
+**Uma reextração do PRR por mês, com a varredura mensal, e não por dia.** É a
+recomendação que a direção aceitou a 20.08, e a razão é a cadeia de
+`proveniencia` das linhas: o publicador substitui o recurso todos os dias com
+nome e identificador novos, e cada releitura obriga a um passo de `proveniencia`
+sobre `source_url` que vai do endereço datado que o motor leu até à página do
+conjunto. Duas reextrações em três dias puseram seis entradas novas na história
+destas linhas, e a história de uma linha é para quem quer saber se o que leu
+mudou. Ao dia, seriam trinta por mês e enterrariam as correções a sério.
+
+O custo aceite, e escrito para não ser descoberto: **entre reextrações, a página
+diz um valor que já não é a soma do instantâneo servido**, com a data à vista e a
+história da linha a dizer o que mudou. É a mesma escolha que a §1.47 fez, agora
+com um prazo em vez de uma promessa.
+
+#### O que fica dito, para não ser descoberto depois
+
+`src/lib/ledger.mjs` **contém um byte NUL**, no separador com que a conferência
+das reconferências junta os quatro campos de uma entrada, e está lá como byte e
+não como sequência de escape. O separador é legítimo e a
+escolha é boa; o que não é bom é a forma de o escrever. Um ficheiro com um NUL
+faz o `grep` tratá-lo como binário e **não devolver nada, em silêncio**, o que é
+exatamente a maneira de uma busca parecer provar uma ausência. Foi encontrado
+assim, ao procurar `computed_over` no módulo e receber zero linhas de um ficheiro
+que tem 115 ocorrências de `document`. Não se emenda aqui, porque não é deste
+bloco e porque trocar o byte pela sequência de escape é mexer no módulo central
+por uma razão de ergonomia. Entra na §4.1.
+
+`publisher/export_site_rows.py` tem uma constante `COMPUTED_OVER_FIELDS` com os
+quatro campos antigos e **nenhum consumidor**. Não pode dar resultado errado,
+porque ninguém a lê; pode enganar quem a leia. Fica escrito e não se toca, pela
+mesma razão.
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
@@ -8015,18 +8321,18 @@ a razão escrita.
 | --- | --- | --- |
 | ~~`verifications[]`~~ | **Fechado a 18.08.2026 (§1.47, T1).** O campo existe no formato, no validador, no exportador, no portão e na página, e **53 linhas** têm uma reconferência escrita, com 53 entradas e nenhuma divergente. Não se escreve à mão: entra pelo exportador do motor, a partir do registo da releitura cega de 15.08, e pelo `indicators/refresh.py`, no fim de cada corrida das canárias. A página mostra as duas últimas. | Fica que a releitura **não cobre o livro-razão**: 53 linhas de 132. O aparelho existe; o que falta é releitura, e ela entra por onde entrou, que é o motor. |
 | ~~A travessia dos recibos~~ | **Fechado a 18.08.2026 (§1.47, T2).** `document.crop` atravessa por `publisher/` como recurso mais manifesto, os recortes vivem em `public/recortes/` com o resumo dos seus bytes, e **22** das 23 linhas de PDF mostram a linha impressa em «Onde no documento», com «Abrir na página N». Nada de base64 dentro de HTML. | Fica **uma** linha de PDF sem recorte, e as dimensões da imagem, que não existem em campo nenhum: as duas abaixo. |
-| A origem «calculado sobre um ficheiro alojado» | **4 das 7 fecharam a 18.08.2026 (§1.47, T3)**, e são as da CAOP: a licença da DGT foi lida na página da fonte por um agente que não escreveu o bloco (CC BY 4.0, sem partilha nas mesmas condições nem uso não comercial), o extrato contado está em `public/dados/` com o resumo do zip de onde saiu, e o `check:dados` reconta-o a cada construção. **As 3 do PRR não fecharam.** | Não é matéria de construção: o conjunto declara «Licença não especificada» ao lado de um termo da plataforma que diz CC BY 4.0 «exceto se houver uma especificação em contrário». É jurídico, é da direção, e vai com o `legal/counsel-brief.md`. Até lá as três somas ficam com `[a verificar]`, contam para a dívida, e a linha diz sobre que ficheiros foi calculada (`document.computed_over`), que é registo e não prova. |
-| Cópias fixadas das fontes | **Feito onde a licença o permite (§1.47, T3):** os três extratos da CAOP estão alojados, com o resumo do ficheiro da fonte de onde saíram. **Por fazer no resto**, e cada caso tem uma razão lida e não suposta: o PRR espera a decisão da direção (linha acima); o IEFP **não publica termos de utilização** em nenhum dos sete caminhos plausíveis que a leitura cega abriu, e por isso nada do IEFP se aloja. | O município, a DGAL e o INE continuam por ler, um a um. Alojar primeiro e verificar depois continua a ser a ordem errada. |
+| A origem «calculado sobre um ficheiro alojado» | **4 das 7 fecharam a 18.08.2026 (§1.47, T3)**, e são as da CAOP: a licença da DGT foi lida na página da fonte por um agente que não escreveu o bloco (CC BY 4.0, sem partilha nas mesmas condições nem uso não comercial), o extrato contado está em `public/dados/` com o resumo do zip de onde saiu, e o `check:dados` reconta-o a cada construção. **As 3 do PRR não fecharam.** | Não é matéria de construção: o conjunto declara «Licença não especificada» ao lado de um termo da plataforma que diz CC BY 4.0 «exceto se houver uma especificação em contrário». É jurídico, é da direção, e vai com o `legal/counsel-brief.md`. Até lá as três somas ficam com `[a verificar]`, contam para a dívida, e a linha diz sobre que ficheiros foi calculada (`document.computed_over`), que é registo e não prova. **A 20.08.2026 (§1.49) as três ganharam a cópia arquivada**: a direção decidiu não alojar e não pedir autorização, e cada ficheiro contado passa a ter a porta para uma captura datada do Internet Archive cujo resumo SHA-1 bate certo com os bytes que o motor leu. **O marcador fica**, porque a regra do excerto nulo pede a recontagem mecânica na construção sobre um ficheiro que este sítio serve. Fica a pergunta, que é da direção: a norma passa a aceitar uma captura de terceiro cujo resumo bate certo? |
+| Cópias fixadas das fontes | **Feito onde a licença o permite (§1.47, T3):** os três extratos da CAOP estão alojados, com o resumo do ficheiro da fonte de onde saíram. **Por fazer no resto**, e cada caso tem uma razão lida e não suposta: o PRR foi decidido a 20.08.2026 e a resposta é **não se aloja**, com a cópia arquivada de terceiro no lugar (§1.49, linha acima); o IEFP **não publica termos de utilização** em nenhum dos sete caminhos plausíveis que a leitura cega abriu, e por isso nada do IEFP se aloja. | O município, a DGAL e o INE continuam por ler, um a um. Alojar primeiro e verificar depois continua a ser a ordem errada. |
 | ~~`document.kind`~~ | **Fechado a 15.08.2026 (§1.36, item 7 e a revisão cruzada que o seguiu),** e não por este bloco: o campo existe, a página lê-o e a heurística de endereço saiu. Hoje **104** linhas declaram-no; as 28 que não o declaram são as 23 derivadas e da casa, que não têm documento, e as 5 cuja proveniência inteira está por confirmar. O bloco T usou-o e não o criou. | Fechado. |
 | ~~`lastmod` no mapa do sítio~~ | **Fechado a 18.08.2026 (§1.47, T4), e a resposta é «não vem».** O modelo foi construído no papel e medido antes de se escrever a decisão: o Vercel clona a `--depth=10` e não é configurável, e dos 244 ficheiros de entrada versionados os últimos dez commits tocam em 66, pelo que 178 não têm data nenhuma nessa construção; um modelo honesto por página dá a **mesma** data às 264, porque todas dependem das cadeias, da folha e do cabeçalho; e um mapa cometido seria estado escrito, errado no commit seguinte. | As três medições estão em `astro.config.mjs`, ao lado do campo que não se escreve, e não só no registo. |
-| ~~O extractor de citações do motor corta a meio~~ | **Fechado a 18.08.2026 (§1.47, T3).** A regra passou a viver uma só vez, em `core/excerpts.py`: a janela anda até à primeira fronteira de símbolo, e uma fronteira é espaço em branco que não tem um algarismo de cada lado, porque «4 976 172,24» é um símbolo só com dois espaços dentro. **169 excertos** mexeram e nenhum valor mexeu; os seis que chegam ao sítio incluem as três que esta linha nomeava. | Fica o que a regeneração destapou e é decisão de publicação: **338** excertos das quatro edições do 07 e do 08 ficaram fora de passo com o livro-razão do motor. |
-| ~~O PRR: o instantâneo lido já não é servido~~ | **Fechado a 18.08.2026 pelo T3c** (§1.47, «A reextração do PRR»). A reextração correu no motor contra o instantâneo de hoje, que é o de 2026-08-17: três das cinco somas mexeram e duas não, e cada valor que mexeu atravessou com uma `atualizacao` tipada. O que faltava não era o caminho de aquisição: era a **V16** do exportador, sem a qual um valor podia mexer e ser reescrito sem registo nenhum. | Fica o alojamento, que é outra linha desta tabela e espera a decisão da direção sobre a licença; e fica a cópia do estudo 04 que o sítio serve, que é a do instantâneo de 2026-08-03 e cuja republicação é decisão de publicação, como a dos documentos do 07 e do 08. |
+| ~~O extractor de citações do motor corta a meio~~ | **Fechado a 18.08.2026 (§1.47, T3).** A regra passou a viver uma só vez, em `core/excerpts.py`: a janela anda até à primeira fronteira de símbolo, e uma fronteira é espaço em branco que não tem um algarismo de cada lado, porque «4 976 172,24» é um símbolo só com dois espaços dentro. **169 excertos** mexeram e nenhum valor mexeu; os seis que chegam ao sítio incluem as três que esta linha nomeava. | ~~Ficava o que a regeneração destapou: **338** excertos das quatro edições do 07 e do 08 fora de passo com o livro-razão do motor.~~ **Fechado a 20.08.2026 (§1.49):** as quatro edições foram regeneradas no motor e três delas republicadas aqui, que são as que este arquivo publica. |
+| ~~O PRR: o instantâneo lido já não é servido~~ | **Fechado a 18.08.2026 pelo T3c** (§1.47, «A reextração do PRR»). A reextração correu no motor contra o instantâneo de hoje, que é o de 2026-08-17: três das cinco somas mexeram e duas não, e cada valor que mexeu atravessou com uma `atualizacao` tipada. O que faltava não era o caminho de aquisição: era a **V16** do exportador, sem a qual um valor podia mexer e ser reescrito sem registo nenhum. | ~~Ficava o alojamento e a cópia do estudo 04 que o sítio serve.~~ **Os dois fecharam a 20.08.2026 (§1.49):** o alojamento foi decidido (não se aloja; entra a cópia arquivada) e o 04 foi republicado sobre o instantâneo de 2026-08-19, que é o mesmo que as linhas dizem. |
 | A linha do INE que não se conseguiu medir | O `json_indicador` do INE serviu o primeiro pedido e depois devolveu 429 e esgotou o tempo em três tentativas. Não se consegue separar o INE a limitar a nossa sondagem de um bloqueio a quem lê. **Continua por medir a 18.08.2026**, e com companhia: `www.ine.pt` não respondeu a esta máquina em nenhuma das tentativas do bloco T (`curl` esgota o tempo aos 20 s nas duas formas de endereço, reproduzido três vezes). | Fica **por medir**, e não como defeito. Mede-se com um pedido isolado, noutro dia. |
 | A página humana das 8 linhas do INE (`document.url`) | **Aberto a 18.08.2026 (§1.47, T3).** As linhas de série passaram a mostrar a página humana antes do pedido, e ela existe em **42** das 57: 39 do Eurostat, provadas por máquina (a API responde 200 ao código da própria linha e o título vem do índice de conteúdos oficial, guardado no motor com o seu resumo), e 3 das autárquicas. As 8 do INE ficaram sem ela. | Pela mesma razão da linha acima, e é a mesma fonte: uma página que não abre não se confirma. Um campo opcional ausente não é dívida, é a ausência de uma promessa que ninguém fez. Mede-se noutro dia, com o mesmo pedido isolado. |
 | A página humana das autárquicas de 2021 e de 2025 | **Recusa provada, e não dívida** (18.08.2026, §1.47, T3). As duas são aplicações de página única sem território no endereço: a forma estática dá 404, a rota da aplicação devolve a mesma casca a qualquer caminho, e o pacote de 2021 declara duas rotas, nenhum parâmetro de rota e zero ocorrências de `territoryKey`. | Sem ligação profunda para um concelho não há página humana **desta** medição para escrever, e escrever a do país seria escrever outra coisa. Fica escrito para não voltar a ser descoberto. |
 | O recorte de `indice-de-divida-limite-legal` | **Aberto desde 18.08.2026 (§1.47, T2).** É a única das 23 linhas de PDF sem recorte: o `core/pdfproof.py` recusou-a, e a recusa está escrita nas suas próprias palavras («the ledger excerpt names no pinned PDF, no page, no quoted line»). | O PDF está no repositório do motor; o que falta é o excerto da **linha do motor** fixar ficheiro, página e frase. É trabalho na linha do motor, não aqui, e nenhum limiar desce para o obter. |
 | As dimensões intrínsecas do recorte | **Aberto desde 18.08.2026 (§1.47, T2).** O `document.crop` guarda três campos e nenhum deles é o tamanho, por isso a página não reserva espaço para a imagem antes de ela carregar. O custo é o salto de disposição. | Um número escrito de cabeça num atributo seria um número inventado, e a régua da casa não abre exceção para atributos. Fechar isto é um quarto campo no formato, e é decisão de formato que o bloco T não tomou sozinho. |
-| Os recibos dos documentos de estudo, republicados | **Aberto a 18.08.2026 (§1.47, T3 e T3c).** Duas peças, e são a mesma decisão. **(a)** Os quatro documentos publicados do 07 e do 08 embutem os excertos na sua ilha de recibos, e **338** deles (169 × 2 edições) ficaram fora de passo com o livro-razão do motor quando o extrator foi corrigido. **(b)** A cópia do estudo 04 que este sítio serve é a do instantâneo de 2026-08-03, e a linha do livro-razão diz agora o de 2026-08-17; as edições do motor foram regeneradas, os bytes fixados em `studies-src/` não. | Regenerá-los é **republicar** edições cujos bytes o sítio prende por resumo em `studies-src/manifest.yml`, com o seu registo de descarga e o seu rasto. É decisão de publicação e não um passo de construção. Enquanto não for tomada, a página do estudo diz os números de um instantâneo e a linha diz os de outro, cada uma com a sua data à vista e a história da linha a dizer o que mudou. |
+| ~~Os recibos dos documentos de estudo, republicados~~ | **Fechado a 20.08.2026 (§1.49).** Duas peças, e foram a mesma decisão. **(a)** Os quatro documentos publicados do 07 e do 08 embutem os excertos na sua ilha de recibos, e **338** deles (169 × 2 edições) ficaram fora de passo com o livro-razão do motor quando o extrator foi corrigido. **(b)** A cópia do estudo 04 que este sítio serve é a do instantâneo de 2026-08-03, e a linha do livro-razão diz agora o de 2026-08-17; as edições do motor foram regeneradas, os bytes fixados em `studies-src/` não. | **Cinco edições republicadas**, com `origin` e `origin_ref` ao commit do motor. As três do 07 e do 08 deixaram de ser artefactos do claude.ai, que traziam o documento duas vezes. Fica **uma coisa nova**: a edição inglesa do 08, que o motor tem e este arquivo não publica. Acrescentá-la é publicar uma edição nova, e isso é decisão de publicação, não uma re-fixação de bytes. |
 | A licença do conjunto de dados do livro-razão | **Aberto a 18.08.2026 (§1.47, T4).** `/livro-razao.csv`, `/livro-razao.json` e os 132 ficheiros de linha são construídos a cada corrida e **nenhuma página os liga**: `LICENCA` está a `null` e a página do livro-razão diz o estado. | É decisão da direção (recomendada CC BY 4.0, e a recomendação não é a decisão). Um só campo muda no dia em que ela for tomada, e o motivo de dispensa de que a linha da licença precisa já existe, para que esse dia não seja o dia de estreia de um caminho novo. |
 
 **O alojamento do instantâneo do PRR espera uma decisão da direção sobre a
@@ -8120,10 +8426,41 @@ instantâneo de 2026-08-03 e os valores são os do de 2026-08-17: o valor mexeu
 com a `atualizacao` tipada que a V16 obriga, e a prosa ao lado dele não. **É
 anterior a este bloco**, nasceu com a reextração de 18.08.2026 (§1.47, T3c), e
 não se emenda deste lado: a derivação vem do motor com a linha, e reescrevê-la
-aqui era o sítio a escrever o que o motor declara. Fecha com o **bloco das
-republicações**, que reexporta estas linhas com o instantâneo de hoje. Até lá, a
-página diz um valor certo com uma conta velha ao lado, e as duas datas estão à
-vista.
+aqui era o sítio a escrever o que o motor declara. ~~Fecha com o **bloco das
+republicações**, que reexporta estas linhas com o instantâneo de hoje.~~
+**Fechado a 20.08.2026 (§1.49), e não pela via prevista.** Reexportar corrigia os
+algarismos e deixava a forma que os faz envelhecer. As duas frases passam a dizer
+a conta por palavras e sem algarismos, e os números vêm da expressão `check`,
+reavaliada em cada construção. **Fica uma coisa nova, e é de formato**: a mudança
+não leva entrada na história da linha porque nenhuma das três naturezas da lista
+fechada serve para uma frase da casa que estava errada sem o valor estar, e a
+lista dos `field` de uma `proveniencia` não inclui `derivation`. Ou os dois
+campos entram nessa lista, ou esta classe entra por escrito na lista das
+afinações de ponteiro. É decisão da direção, e está na §1.49.
+
+**Uma frase da casa pode mudar sem que a página o diga** (20.08.2026, §1.49). É a
+linha acima vista de cima: `derivation`, `derivation_en` e `note` são prosa da
+casa que a página publica, e o formato das correções não tem natureza para uma
+delas mudar. Nada nesta casa apanha isso, e o que apanhou desta vez foi uma
+leitura cruzada de outra família. Fica escrito porque uma régua que não apanha
+uma coisa é exatamente a razão de ela precisar de morada.
+
+**A edição inglesa do estudo 08 não é publicada** (20.08.2026, §1.49). O motor
+tem as duas edições de «Quinze Anos, Cinco Mandatos» e este arquivo publica só a
+portuguesa. A republicação de 20.08 re-fixou as três edições que o arquivo
+publica, e não acrescentou a quarta: publicar uma edição nova é decisão de
+publicação, não uma re-fixação de bytes, e não estava no pedido.
+
+**Um byte NUL no `src/lib/ledger.mjs` faz o `grep` mentir por omissão**
+(20.08.2026, §1.49). O separador com que a conferência das reconferências junta
+os quatro campos de uma entrada está escrito como byte e não como sequência de
+escape. O ficheiro passa a ser tratado como binário, e uma busca nele devolve
+zero linhas **sem dizer porquê**, que é a forma mais limpa de uma ausência
+parecer provada. É uma linha a mudar, no módulo central do sítio, por uma razão
+de ergonomia e não de correção: vai com o próximo bloco que lhe toque por outro
+motivo. Ao lado dela, e sem urgência nenhuma:
+`publisher/export_site_rows.py` guarda `COMPUTED_OVER_FIELDS` com os quatro
+campos antigos e nenhum consumidor.
 
 **Cinco linhas guardam o valor numa forma que não é a da fonte nem a da casa**
 (20.08.2026, §1.48, leituras cruzadas, achados 6 e 8). São duas coisas e uma só
