@@ -758,7 +758,7 @@ uma linha, «the `82 p` claim». São **seis**: `pib-pc-portugal-2024`,
 linhas com `source_flag: "a)"` (`evora-divida-dgal-2017` e
 `evora-limite-divida-dgal-2017`) que não levam palavra nenhuma, e são o controlo
 negativo que a casa já tinha. A implementação não herdou o erro porque lê a
-linha e não o inventário. ISSUES **I18**.
+linha e não o inventário. ISSUES **I23**.
 
 **Onde a palavra vai, e porque passa em cada conferência**, lidas as funções
 antes de a colocar:
@@ -921,10 +921,10 @@ node scripts/medir-contraste.mjs             → 0 falhas de texto nos dois tema
 10. **A régua do contraste ganhou um resolvedor de `var()`** além do `PARES` que
     o brief me dá: sem ele a régua atirava sobre os tokens derivados. É uma
     régua, não um portão, e não entra em `npm run build`.
-11. **A palavra «provisório» não entra dentro de um `<svg>`** (1f, I17), e os
+11. **A palavra «provisório» não entra dentro de um `<svg>`** (1f, I22), e os
     três usos que isso toca são da etapa 2.
 12. **O inventário do plano §3 nomeia uma linha com a bandeira `p` e há seis**
-    (1f, I18). O código lê a linha, não o inventário.
+    (1f, I23). O código lê a linha, não o inventário.
 13. **A navegação móvel foi medida só em Chromium** (1e). O desenho evita de
     propósito qualquer regra recente no caminho de 1280, e a razão está escrita
     com a medição que a suporta; o Firefox e o Safari não estão nesta máquina.
