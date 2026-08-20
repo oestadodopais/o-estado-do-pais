@@ -437,9 +437,10 @@ rolam dentro da sua caixa, e não empurram a página.
 
 ## 12. Os limites, escritos em vez de contornados
 
-*Redação final do bloco T, 18.08.2026 (`DECISIONS.md` §1.47). O bloco está
-construído no ramo e não fundido: o que se segue descreve o que ele deixa, e não
-o que está no ar.*
+*Redação final do bloco T, 18.08.2026 (`DECISIONS.md` §1.47). O bloco foi
+fundido e está no ar desde a noite de 18.08.2026, pela palavra da direção
+(`main` `28709e1`, `verify:deploy` ✓ a 18.08 e outra vez a 20.08): o que se
+segue descreve o que ele deixa, e é o que está no ar.*
 
 - **O teste 1 do `BRIEF-confianca.md` §6.8 passa em 22 das 132 linhas.** O
   recorte da linha impressa entrou a 18.08.2026 (§1.47, T2): a imagem da linha do
