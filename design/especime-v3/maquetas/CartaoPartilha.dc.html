@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Spectral+SC:wght@600&family=Bitter:wght@400;600;700&display=swap">
+  <style>
+    html, body { margin: 0; background: #F6F7F4; }
+
+  
+  .card{width:1200px;height:630px;background:#F6F7F4;color:#17191B;box-sizing:border-box;
+    font-family:Spectral,Georgia,serif;display:flex;flex-direction:column;justify-content:space-between;
+    padding:56px 64px 48px 64px;border:2px solid #17191B}
+  .top{display:flex;justify-content:space-between;align-items:baseline}
+  .wordmark{font-size:34px;font-weight:500;letter-spacing:-.01em}
+  .eyebrow{font-family:"Spectral SC",Spectral,serif;font-weight:600;font-size:20px;letter-spacing:.05em;
+    text-transform:lowercase;color:#585D5B}
+  .headline{font-size:76px;line-height:1.08;font-weight:500;letter-spacing:-.005em;max-width:16em}
+  .strip{display:flex;gap:34px;align-items:center}
+  .seg{display:inline-flex;align-items:center;gap:7px}
+  .sq{width:30px;height:30px;display:inline-block}
+  .amb{background:#E0A21A;border:2px solid #17191B}
+  .out{border:2px solid #17191B}
+  .lbl{font-family:"Spectral SC",Spectral,serif;font-weight:600;font-size:21px;letter-spacing:.05em;text-transform:lowercase;color:#17191B}
+  .foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #17191B;padding-top:22px}
+  .selo{display:inline-flex;align-items:center;gap:11px;font-family:Bitter,Georgia,serif;font-weight:600;
+    font-size:21px;letter-spacing:.06em;text-transform:uppercase}
+  .selo::before{content:"";width:15px;height:15px;background:#17191B;display:inline-block}
+  .meta{font-family:Bitter,Georgia,serif;font-size:19px;color:#585D5B;font-variant-numeric:tabular-nums lining-nums}
+  </style>
+</helmet>
+<div class="card">
+  <div class="top">
+    <div class="wordmark">O Estado do País</div>
+    <div class="eyebrow">portugal · painel europeu · 2025</div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:34px">
+    <div class="headline">Quatro limiares europeus ultrapassados.</div>
+    <div class="strip">
+      <span class="seg"><span class="sq amb"></span><span class="sq amb"></span><span class="sq amb"></span><span class="sq amb"></span><span class="lbl">fora do limiar</span></span>
+      <span class="seg"><span class="sq out"></span><span class="sq out"></span><span class="sq out"></span><span class="sq out"></span><span class="lbl">sem limiar</span></span>
+    </div>
+  </div>
+  <div class="foot">
+    <span class="selo">cada número tem fonte</span>
+    <span class="meta">oestadodopaís.pt · painel de 2025, lido do Eurostat a 2026-08-12</span>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1200,"height":630}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

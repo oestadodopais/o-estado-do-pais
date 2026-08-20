@@ -160,6 +160,21 @@
         <p class="prosa">{{ ledeNote }}</p>
       </div>
 
+      <sc-if value="{{ instStamp }}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; flex-direction: column; gap: 9px; align-items: flex-start;">
+          <svg viewBox="0 0 600 790" width="150" height="198" style="display: block; overflow: visible;">
+            <rect x="146.8" y="433.6" width="108.5" height="92.9" fill="none" stroke="#D9DDD8" stroke-width="1"></rect>
+            <rect x="14" y="584.9" width="250" height="164.3" fill="none" stroke="#D9DDD8" stroke-width="1"></rect>
+            <sc-for list="{{ pontos }}" as="p" hint-placeholder-count="308">
+              <rect x="{{ p.sx }}" y="{{ p.sy }}" width="{{ p.ss }}" height="{{ p.ss }}" fill="{{ p.fill }}" stroke="#17191B" stroke-width="1"></rect>
+            </sc-for>
+          </svg>
+          <div class="est" style="color: var(--ink);">1/308 municípios com estudo aprofundado publicado</div>
+          <div class="meta">Continente 278 · Açores 19 · Madeira 11 · Total 308 · <span class="pv">[a verificar]</span></div>
+          <div style="display: flex; align-items: center; gap: 10px;"><a class="selo" href="#">fonte</a><span class="meta">DGT, CAOP 2025 · lido a 2026-08-12</span></div>
+          <span class="chipb" onClick="{{ setMunicipioMode }}">▸ Abrir um concelho</span>
+        </div>
+      </sc-if>
 
       <sc-if value="{{ instMap }}" hint-placeholder-val="{{ true }}">
         <div style="display: grid; grid-template-columns: 281px minmax(0, 1fr); column-gap: 20px; align-items: end;">
@@ -174,7 +189,7 @@
           </svg>
           <div style="display: flex; flex-direction: column; gap: 9px; padding-bottom: 4px;">
             <div class="est" style="color: var(--ink);">{{ mapTitle }}</div>
-            <p class="prosa" style="font-size: 13.5px;">Um ponto por município, na posição real do seu centróide. O ponto aceso marca cobertura editorial (tem página), não qualidade nem importância. Aceso: Évora.</p>
+            <p class="prosa" style="font-size: 13.5px;">Um ponto por município, na posição real do seu centróide. Aceso: Évora.</p>
             <div class="meta">Continente 278<br>Açores 19<br>Madeira 11<br>Total 308 · <span class="pv">[a verificar]</span></div>
             <div class="meta">Toque num ponto para abrir o concelho.</div>
             <div style="display: flex; align-items: center; gap: 10px;"><a class="selo" href="#">fonte</a><span class="meta">DGT, CAOP 2025<br>lido a 2026-08-12</span></div>
@@ -395,25 +410,109 @@
   </sc-if>
 
   <sc-if value="{{ tailPais }}" hint-placeholder-val="{{ true }}">
-  <div style="display: flex; flex-direction: column; gap: 0;">
+  <!-- MUNICÍPIOS -->
+  <div style="display: flex; flex-direction: column; gap: 20px;">
     <div class="rule2"></div>
-    <div class="lab" style="padding: 14px 0 6px 0;">As páginas · o resto vive a uma porta</div>
-    <a href="#" style="text-decoration: none; color: var(--ink); display: grid; grid-template-columns: 200px minmax(0, 1fr) auto; gap: 24px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--g3);">
-      <span style="font-size: 21px; font-weight: 500;">Municípios</span>
-      <span class="prosa">1/308 com página · Évora, com quem governou · os restantes 307 marcam a posição</span>
-      <span class="lig">a página inteira →</span>
-    </a>
-    <a href="#" style="text-decoration: none; color: var(--ink); display: grid; grid-template-columns: 200px minmax(0, 1fr) auto; gap: 24px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--g3);">
-      <span style="font-size: 21px; font-weight: 500;">Estudos</span>
-      <span class="prosa">11 trabalhos no arquivo · 15 edições · o mais recente: Évora — Quinze Anos, Cinco Mandatos</span>
-      <span class="lig">todo o arquivo →</span>
-    </a>
-    <a href="#" style="text-decoration: none; color: var(--ink); display: grid; grid-template-columns: 200px minmax(0, 1fr) auto; gap: 24px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--g3);">
-      <span style="font-size: 21px; font-weight: 500;">Agenda</span>
-      <span class="prosa">3 em curso · 1 a seguir · 1 concluído · 0 retirados · nada sai desta lista em silêncio</span>
-      <span class="lig">o que se mede a seguir →</span>
-    </a>
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: end;">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div class="lab">Municípios</div>
+        <h2>Évora</h2>
+        <p style="font-size: 17px; max-width: 64ch;">Esta página mede o município de Évora e mostra de onde vem cada medida. Não interpreta: onde uma fonte não estabelece uma coisa, a página di-lo em vez de a supor.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
+        <a class="lig" href="#">A página inteira, com quem governou →</a>
+        <div class="est neutro">307 municípios sem página ainda</div>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--g3); border-left: 1px solid var(--g3);">
+      <div class="cel">
+        <div class="num" style="font-size: 44px; line-height: 1.05;">58 567</div>
+        <div style="font-size: 17px; font-weight: 500;">População residente</div>
+        <div class="meta">pessoas · 2025 · INE</div>
+        <a class="selo" href="#" style="margin-top: 4px;">fonte</a>
+      </div>
+      <div class="cel">
+        <div class="num" style="font-size: 44px; line-height: 1.05;">105,5</div>
+        <div style="font-size: 17px; font-weight: 500;">Índice de dívida</div>
+        <div class="meta">teto legal 150 · 2024 · calculado, DGAL</div>
+        <a class="selo" href="#" style="margin-top: 4px;">fonte</a>
+      </div>
+      <div class="cel">
+        <div class="num" style="font-size: 44px; line-height: 1.05;">137</div>
+        <div style="font-size: 17px; font-weight: 500;">Prazo médio de pagamento</div>
+        <div class="meta">dias · 2025 · Município de Évora</div>
+        <a class="selo" href="#" style="margin-top: 4px;">fonte</a>
+      </div>
+      <div class="cel">
+        <div class="num" style="font-size: 44px; line-height: 1.05;">61,44%</div>
+        <div style="font-size: 17px; font-weight: 500;">Execução da receita</div>
+        <div class="meta">2025 · Município de Évora</div>
+        <a class="selo" href="#" style="margin-top: 4px;">fonte</a>
+      </div>
+    </div>
   </div>
+
+  <!-- ESTUDOS -->
+  <div style="display: flex; flex-direction: column; gap: 18px;">
+    <div class="rule2"></div>
+    <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px;">
+      <div style="display: flex; align-items: baseline; gap: 16px;">
+        <div class="lab">Estudos</div>
+        <div class="est" style="color: var(--ink);">11 trabalhos no arquivo · 15 edições</div>
+      </div>
+      <a class="lig" href="#">Todo o arquivo →</a>
+    </div>
+    <div style="display: flex; flex-direction: column; border-top: 1px solid var(--g3);">
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) 360px 90px; gap: 28px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--g3);">
+        <div style="font-size: 21px; font-weight: 500; line-height: 1.25;">Évora — Quinze Anos, Cinco Mandatos</div>
+        <p class="prosa">Quinze anos de governo municipal em Évora, ao longo de cinco mandatos.</p>
+        <div class="est neutro" style="text-align: right;">PT</div>
+      </div>
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) 360px 90px; gap: 28px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--g3);">
+        <div style="font-size: 21px; font-weight: 500; line-height: 1.25;">Évora — Os Pelouros, Quem Os Teve, O Que Fizeram</div>
+        <div class="meta">Publicação: 2026-08-12</div>
+        <div class="est neutro" style="text-align: right;">PT</div>
+      </div>
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) 360px 90px; gap: 28px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--g3);">
+        <div style="font-size: 21px; font-weight: 500; line-height: 1.25;">Évora — Prometido, Pago, Auditado 2026</div>
+        <div class="meta">Publicação: 2026-08-04</div>
+        <div class="est neutro" style="text-align: right;">PT · EN</div>
+      </div>
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) 360px 90px; gap: 28px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--g3);">
+        <div style="font-size: 21px; font-weight: 500; line-height: 1.25;">Água Não Faturada</div>
+        <p class="prosa">Água não faturada nos sistemas de abastecimento em Portugal.</p>
+        <div class="est neutro" style="text-align: right;">PT · EN</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AGENDA -->
+  <div style="display: flex; flex-direction: column; gap: 18px;">
+    <div class="rule2"></div>
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: end;">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div class="lab">Agenda</div>
+        <h2>O que se mede a seguir</h2>
+        <div class="est" style="color: var(--ink);">3 em curso · 1 a seguir · 1 concluído · 0 retirados</div>
+      </div>
+      <a class="lig" href="#" style="justify-self: start;">A agenda e o calendário das fontes →</a>
+    </div>
+    <div style="display: flex; flex-direction: column; border-top: 1px solid var(--g3);">
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--g3);">
+        <div style="font-size: 19px; font-weight: 500; line-height: 1.3;">O ficheiro de endividamento de 2025 da DGAL</div>
+        <div class="est neutro">Vigilância · Em curso</div>
+      </div>
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--g3);">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div style="font-size: 19px; font-weight: 500; line-height: 1.3;">As contas de 2026 do Município de Évora</div>
+          <p class="prosa">Apreciação pela Assembleia Municipal entre 2027-04-01 e 2027-04-30.</p>
+        </div>
+        <div class="est neutro">Vigilância · Em curso</div>
+      </div>
+    </div>
+    <p class="prosa" style="max-width: 78ch;">Cada item traz o critério que o pôs aqui, quem o propôs e quem o decidiu. Nada sai desta lista em silêncio.</p>
+  </div>
+
   </sc-if>
 
   <!-- 4.8 PORTA DE CORREÇÕES -->
@@ -656,8 +755,8 @@ class Component extends DCLogic {
     if (scope.kind === "municipio" && scope.id !== EVORA_IDX && !isCustom) stripSegs = [];
     const choosing = mode === "municipio" && scope.kind !== "municipio";
     const instCard = scope.kind === "municipio" && depth !== "relance";
-    const instMap = scope.kind === "pais" || (scope.kind === "municipio" && !instCard) || choosing;
-    const instStamp = false;
+    const instMap = (scope.kind === "municipio" && !instCard) || choosing;
+    const instStamp = scope.kind === "pais" && !choosing;
     const showBand = scope.kind === "regiao";
     const gridStyle = showBand ? "grid-template-columns: minmax(0, 1fr);" : "grid-template-columns: 582px minmax(0, 1fr);";
     const mapTitle = "1/308 municípios com estudo aprofundado publicado";

@@ -1,0 +1,389 @@
+{
+  "ficheiros": [
+    "src/styles/tokens.css"
+  ],
+  "estados": {
+    "claro": [
+      {
+        "par": "ink / paper",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": "body",
+        "valores": [
+          16.67
+        ]
+      },
+      {
+        "par": "ink / paper-2",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": ".aparelho, .caixa-*",
+        "valores": [
+          15.29
+        ]
+      },
+      {
+        "par": "ink / paper-3",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": ".chip[aria-pressed='true']",
+        "valores": [
+          13.73
+        ]
+      },
+      {
+        "par": "muted / paper",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": "90 regras, o aparelho todo",
+        "valores": [
+          6.87
+        ]
+      },
+      {
+        "par": "muted / paper-2",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": ".prov-campo, .aparelho",
+        "valores": [
+          6.3
+        ]
+      },
+      {
+        "par": "muted / paper-3",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": ".compo-n sobre .compo-bar",
+        "valores": [
+          5.66
+        ]
+      },
+      {
+        "par": "oxblood / paper",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": ".registo-titulo, .registo-conta",
+        "valores": [
+          9.38
+        ]
+      },
+      {
+        "par": "oxblood / paper-2",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": ".etiqueta-correcao no aparelho",
+        "valores": [
+          8.6
+        ]
+      },
+      {
+        "par": "oxblood / paper-3",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": ".etiqueta-correcao em fundo 3",
+        "valores": [
+          7.72
+        ]
+      },
+      {
+        "par": "paper / ink",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": ".botao-correcao",
+        "valores": [
+          16.67
+        ]
+      },
+      {
+        "par": "onyellow / yellow",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": ".chip.is-read[aria-pressed='true']",
+        "valores": [
+          8.32
+        ]
+      },
+      {
+        "par": "rule-strong / paper",
+        "tipo": "decoracao",
+        "limiar": 0,
+        "onde": ".regra-sep, o «·» da mobília",
+        "valores": [
+          1.83
+        ]
+      },
+      {
+        "par": "rule / paper",
+        "tipo": "decoracao",
+        "limiar": 0,
+        "onde": "45 fios de arrumação",
+        "valores": [
+          1.29
+        ]
+      },
+      {
+        "par": "rule-strong / paper",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "19 fronteiras de caixa",
+        "valores": [
+          1.83
+        ]
+      },
+      {
+        "par": "axis / paper",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "eixos dos instrumentos; o quadrado a tracejado do selo",
+        "valores": [
+          3.56
+        ]
+      },
+      {
+        "par": "dotcol / paper",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": ".ld-off i, a legenda de portas",
+        "valores": [
+          5.15
+        ]
+      },
+      {
+        "par": "yellow / paper",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": ".ld-on i, as barras de medição",
+        "valores": [
+          2
+        ]
+      },
+      {
+        "par": "yellow / paper-3",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": ".compo-bar i sobre a calha",
+        "valores": [
+          1.65
+        ]
+      },
+      {
+        "par": "muted / paper-3",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": ".compo-bar i, a fronteira desenhada do preenchimento sobre a calha",
+        "valores": [
+          5.66
+        ]
+      },
+      {
+        "par": "focus / paper",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "outline: 2px solid var(--focus)",
+        "valores": [
+          16.67
+        ]
+      },
+      {
+        "par": "focus / paper-2",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "foco dentro do aparelho",
+        "valores": [
+          15.29
+        ]
+      }
+    ],
+    "escuro-sistema": [
+      {
+        "par": "ink / paper",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": "body",
+        "valores": [
+          15.07
+        ]
+      },
+      {
+        "par": "ink / paper-2",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": ".aparelho, .caixa-*",
+        "valores": [
+          14.23
+        ]
+      },
+      {
+        "par": "ink / paper-3",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": ".chip[aria-pressed='true']",
+        "valores": [
+          13.02
+        ]
+      },
+      {
+        "par": "muted / paper",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": "90 regras, o aparelho todo",
+        "valores": [
+          6.64
+        ]
+      },
+      {
+        "par": "muted / paper-2",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": ".prov-campo, .aparelho",
+        "valores": [
+          6.27
+        ]
+      },
+      {
+        "par": "muted / paper-3",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": ".compo-n sobre .compo-bar",
+        "valores": [
+          5.73
+        ]
+      },
+      {
+        "par": "oxblood / paper",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": ".registo-titulo, .registo-conta",
+        "valores": [
+          7.1
+        ]
+      },
+      {
+        "par": "oxblood / paper-2",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": ".etiqueta-correcao no aparelho",
+        "valores": [
+          6.7
+        ]
+      },
+      {
+        "par": "oxblood / paper-3",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": ".etiqueta-correcao em fundo 3",
+        "valores": [
+          6.13
+        ]
+      },
+      {
+        "par": "paper / ink",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": ".botao-correcao",
+        "valores": [
+          15.07
+        ]
+      },
+      {
+        "par": "onyellow / yellow",
+        "tipo": "texto",
+        "limiar": 4.5,
+        "onde": ".chip.is-read[aria-pressed='true']",
+        "valores": [
+          8.32
+        ]
+      },
+      {
+        "par": "rule-strong / paper",
+        "tipo": "decoracao",
+        "limiar": 0,
+        "onde": ".regra-sep, o «·» da mobília",
+        "valores": [
+          1.78
+        ]
+      },
+      {
+        "par": "rule / paper",
+        "tipo": "decoracao",
+        "limiar": 0,
+        "onde": "45 fios de arrumação",
+        "valores": [
+          1.28
+        ]
+      },
+      {
+        "par": "rule-strong / paper",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "19 fronteiras de caixa",
+        "valores": [
+          1.78
+        ]
+      },
+      {
+        "par": "axis / paper",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "eixos dos instrumentos; o quadrado a tracejado do selo",
+        "valores": [
+          3.45
+        ]
+      },
+      {
+        "par": "dotcol / paper",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": ".ld-off i, a legenda de portas",
+        "valores": [
+          5
+        ]
+      },
+      {
+        "par": "yellow / paper",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": ".ld-on i, as barras de medição",
+        "valores": [
+          8.88
+        ]
+      },
+      {
+        "par": "yellow / paper-3",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": ".compo-bar i sobre a calha",
+        "valores": [
+          7.67
+        ]
+      },
+      {
+        "par": "muted / paper-3",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": ".compo-bar i, a fronteira desenhada do preenchimento sobre a calha",
+        "valores": [
+          5.73
+        ]
+      },
+      {
+        "par": "focus / paper",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "outline: 2px solid var(--focus)",
+        "valores": [
+          15.07
+        ]
+      },
+      {
+        "par": "focus / paper-2",
+        "tipo": "interface",
+        "limiar": 3,
+        "onde": "foco dentro do aparelho",
+        "valores": [
+          14.23
+        ]
+      }
+    ]
+  }
+}
