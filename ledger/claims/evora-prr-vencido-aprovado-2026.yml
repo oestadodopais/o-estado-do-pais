@@ -6,31 +6,39 @@
 id: "evora-prr-vencido-aprovado-2026"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "102 618 703,85"
+value: "102 624 703,85"
 unit: "euros"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Estrutura de Missão Recuperar Portugal"
 document:
   title: "Listagem de entidades PRR"
-  edition: "instantâneo 20260817-2035"
+  edition: "instantâneo 20260819-1728"
   locator: null
   kind: "ficheiro"
   computed_over:
     files:
-      - file: "listagem-de-entidades-prr-20260817.xlsx"
-        snapshot_date: "2026-08-17"
-        sha256: "0d5335642a26495dd5cd2b12b1706c0fad6e310701d4f8264143273ba62c69b5"
-        bytes: 44344321
-      - file: "listagem-de-projetos-prr-20260817.xlsx"
-        snapshot_date: "2026-08-17"
-        sha256: "c1e70941e96b55ee111d81ea0b9888c4a37890024cd4d9bde69e40ba27f74fe5"
-        bytes: 40434190
+      - file: "listagem-de-entidades-prr-20260819.xlsx"
+        snapshot_date: "2026-08-19"
+        sha256: "34f6e5b555f5cdbfcdc35535cd3e0e27717c6ad5ef681905d8d7620fffb7fe3b"
+        bytes: 44456372
+        archived:
+          url: "https://web.archive.org/web/20260820111244/https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx"
+          at: "2026-08-20T11:12:44Z"
+          digest_match: true
+      - file: "listagem-de-projetos-prr-20260819.xlsx"
+        snapshot_date: "2026-08-19"
+        sha256: "121122320839671b5e86f114ee24dff5296cc30444327812872510e41b85d6ea"
+        bytes: 40486735
+        archived:
+          url: "https://web.archive.org/web/20260820111437/https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-projetos-2/20260819-172752-d70458cf/listagem-de-projetos-prr-20260819.xlsx"
+          at: "2026-08-20T11:14:37Z"
+          digest_match: true
     column: "valor_contratado"
     filter: "papel_entidade ∈ {Beneficiário Intermediário, Beneficiário Direto} · localizacao_sede = Évora · dt_prevista_conclusao anterior à data do instantâneo · dt_efetiva_conclusao vazia"
 source_url: "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1"
-access_date: "2026-08-18"
-reference_date: "2026-08-17"
+access_date: "2026-08-20"
+reference_date: "2026-08-19"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "[a verificar]"
@@ -79,3 +87,16 @@ corrections:
     new_value: "102 618 703,85"
     reason: "O publicador do PRR substitui o ficheiro e não arquiva o anterior. Esta soma foi refeita sobre o instantâneo de 2026-08-17 (listagem-de-entidades-prr-20260817.xlsx e listagem-de-projetos-prr-20260817.xlsx); a anterior era sobre o instantâneo de 2026-08-03 (listagem-de-entidades-prr-20260803.xlsx e listagem-de-projetos-prr-20260803.xlsx). O valor antigo não estava errado quando foi publicado: media outro instantâneo, e esse já não é servido."
     reason_en: "The PRR publisher replaces the file and archives nothing. This sum was recomputed over the 2026-08-17 snapshot (listagem-de-entidades-prr-20260817.xlsx e listagem-de-projetos-prr-20260817.xlsx); the previous one was over the 2026-08-03 snapshot (listagem-de-entidades-prr-20260803.xlsx e listagem-de-projetos-prr-20260803.xlsx). The old value was not wrong when it was published: it measured a different snapshot, and that one is no longer served."
+  - date: "2026-08-20"
+    kind: "proveniencia"
+    field: "source_url"
+    old_value: "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx"
+    new_value: "https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1"
+    reason: "A reextração de 2026-08-20 leu o instantâneo de 2026-08-19 no endereço datado que o publicador servia nesse dia, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx». Esse endereço é rotativo por desenho: o publicador regenera o recurso com nome datado e identificador novo, e não arquiva o anterior. A linha continua a citar a página do conjunto, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», que é o endereço estável. Este passo não muda o valor publicado; os ficheiros sobre que ele foi calculado ficam identificados pelo resumo dos seus bytes em «calculado sobre»."
+    reason_en: "The 2026-08-20 re-extraction read the 2026-08-19 snapshot at the dated address the publisher was serving that day, «https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx». That address rotates by design: the publisher regenerates the resource with a dated filename and a new identifier, and archives nothing. The row still cites the dataset page, «https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1», which is the stable address. This step does not change the published value; the files it was computed over are identified by the hash of their bytes under «computed over»."
+  - date: "2026-08-20"
+    kind: "atualizacao"
+    old_value: "102 618 703,85"
+    new_value: "102 624 703,85"
+    reason: "O publicador do PRR substitui o ficheiro e não arquiva o anterior. Esta soma foi refeita sobre o instantâneo de 2026-08-19 (listagem-de-entidades-prr-20260819.xlsx e listagem-de-projetos-prr-20260819.xlsx); a anterior era sobre o instantâneo de 2026-08-17 (listagem-de-entidades-prr-20260817.xlsx e listagem-de-projetos-prr-20260817.xlsx). O valor antigo não estava errado quando foi publicado: media outro instantâneo, e esse já não é servido."
+    reason_en: "The PRR publisher replaces the file and archives nothing. This sum was recomputed over the 2026-08-19 snapshot (listagem-de-entidades-prr-20260819.xlsx and listagem-de-projetos-prr-20260819.xlsx); the previous one was over the 2026-08-17 snapshot (listagem-de-entidades-prr-20260817.xlsx and listagem-de-projetos-prr-20260817.xlsx). The old value was not wrong when it was published: it measured a different snapshot, and that one is no longer served."
