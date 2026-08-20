@@ -167,6 +167,8 @@ let recortesConferidos = 0;
 let alojadosConferidos = 0;
 /** Linhas calculadas sobre ficheiros que o sítio não aloja, conferidas. */
 let calculadosConferidos = 0;
+/** Portas para cópias arquivadas, conferidas contra o campo da linha. */
+let arquivadasConferidas = 0;
 /** Páginas humanas de séries conferidas contra o campo da linha. */
 let paginasDeSerieConferidas = 0;
 /**
@@ -2785,6 +2787,42 @@ for (const file of ficheirosHtml(DIST)) {
             `aparece é uma parte da soma que o leitor não pode pedir.`,
         );
       }
+
+      /* A porta para a cópia arquivada, conferida contra o campo, nos dois
+         sentidos. É a mesma disciplina do ficheiro alojado, acima: uma porta
+         que a linha não declara é uma porta para um ficheiro que este sítio não
+         diz ter contado, e um campo que abre porta e não a mostra é um registo
+         que só quem lê o YAML vê. `digest_match` falso não abre porta: a
+         captura existe e não é a dos bytes contados. */
+      const arquivadasEsperadas = calc.files
+        .filter((f) => f.archived?.digest_match === true)
+        .map((f) => f.archived.url);
+      const portasArquivo = body
+        .querySelectorAll('a[href]')
+        .map((el) => decodeEntities(el.getAttribute('href') ?? ''))
+        .filter((h) => h.startsWith('https://web.archive.org/'));
+      for (const destino of portasArquivo) {
+        if (!arquivadasEsperadas.includes(destino)) {
+          err(
+            `a página de "${claimDaPagina.id}" abre a porta "${destino}" e nenhum ficheiro ` +
+              `desta linha declara essa cópia arquivada com o resumo a bater certo.\n` +
+              `      Uma captura só é porta quando "archived.digest_match" é verdadeiro: sem ` +
+              `isso, é uma porta para outro ficheiro.`,
+          );
+        }
+      }
+      for (const esperada of arquivadasEsperadas) {
+        if (!portasArquivo.includes(esperada)) {
+          err(
+            `a linha "${claimDaPagina.id}" tem a cópia arquivada "${esperada}" com o resumo a ` +
+              `bater certo e a página não a oferece.\n      É a única maneira de o leitor ` +
+              `pedir os bytes que foram contados: o publicador substitui o ficheiro todos os ` +
+              `dias e não arquiva o anterior.`,
+          );
+        }
+      }
+      arquivadasConferidas += arquivadasEsperadas.length;
+
       calculadosConferidos++;
     } else if (marcados.length) {
       err(
@@ -3981,7 +4019,8 @@ console.log(
       `${ligacoesConferidas} ligações internas (${ligacoesRelativas} relativas, ` +
       `${ancorasConferidas} âncoras) · ${recortesConferidos} recortes · ` +
       `${alojadosConferidos} ficheiros alojados · ` +
-      `${calculadosConferidos} contas sobre ficheiros não alojados · ` +
+      `${calculadosConferidos} contas sobre ficheiros não alojados ` +
+      `(${arquivadasConferidas} com cópia arquivada) · ` +
       `${paginasDeSerieConferidas} páginas de série · ` +
       `escrito em ${CAMINHO_DA_PROVA}`,
   ),

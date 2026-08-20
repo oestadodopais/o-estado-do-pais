@@ -106,6 +106,10 @@ export const STRINGS = {
         'dados.gov.pt, a licença «Licença não especificada», e redistribuir um ficheiro sem ' +
         'licença dita é uma reutilização que este sítio não pode defender. Fica o resumo de ' +
         'cada ficheiro, para que quem tenha o instantâneo possa refazer a conta.',
+      /* A porta para a cópia que um terceiro guardou do ficheiro contado. Só
+         aparece quando o resumo da captura é o dos bytes que foram contados:
+         uma captura que não bate certo é uma porta para outro ficheiro. */
+      calculadoSobreArquivada: 'cópia arquivada pelo Internet Archive',
       /* A página humana de uma série de dados: a página do indicador, para
          pessoas, antes do pedido exato que a máquina faz. */
       paginaDaSerie: 'Página da série',
@@ -848,6 +852,7 @@ export const STRINGS = {
         'redistributing a file whose licence is not stated is a reuse this site cannot ' +
         'defend. What stays is the hash of each file, so that anybody holding the snapshot ' +
         'can re-make the count.',
+      calculadoSobreArquivada: 'copy archived by the Internet Archive',
       paginaDaSerie: 'Series page',
     },
 
