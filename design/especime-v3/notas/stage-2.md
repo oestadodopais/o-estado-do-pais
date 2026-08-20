@@ -18,7 +18,10 @@ um comando que está escrito ao lado deles.*
 | --- | --- | --- |
 | `b80200f` | 2a | prova, figuras: o lado do limiar declarado, as três chaves do painel, e uma só palavra para a cobertura |
 | `0c1ef02` | 2b | início, cabeça: a linha de comando, a cabeça 2+2, o mapa que respira e a banda da região |
-| *(o commit que contém esta nota)* | 2c | início, painel: as peças nas duas densidades, a régua-espécime, as portas e o instrumento a tinta |
+| `1c0f1b7` | 2c | início, painel: as peças nas duas densidades, a régua-espécime, as portas e o instrumento a tinta |
+| `99a2694` | 2d | início, runtime: o estado no endereço, e um script que só escolhe cadeias já validadas |
+| `d7f7a7e` | 2e | início, telemóvel: o âmbito como destinos, o selo do país como único alvo, e as medidas em filas |
+| *(o commit que contém esta nota completa)* | 2f | réguas: a invariância como conselheiro, a matriz de aceitação e as 64 capturas |
 
 ---
 
@@ -400,10 +403,157 @@ Nenhum destes ficheiros foi tocado por esta etapa.
    é o limite que o portão declara de si próprio.
 6. **As frases de moldura subiram** (§4), e a subida é inteiramente as
    duplicações autorizadas R2 e R6.
-7. **`public/js/convergencia.js` foi tocado** para lhe tirar os quatro literais de
+7. **O `home.instr2.*` inteiro e três chaves de `home.numeros` saíram de
+   `strings.mjs`** na 2f, depois de a régua da invariância os apanhar com o mesmo
+   valor nas duas edições. Estavam duplicados: a etapa 2b copiou-lhes o texto para
+   `inicio.mapa.*` e `inicio.cabeca.ledePais` em vez de mover as chaves, e uma
+   cadeia em dois sítios diverge à primeira alteração. Conferido que nenhuma vista
+   os usava, com um positivo conhecido a provar que o `grep` sabe encontrar.
+8. **`public/js/convergencia.js` foi tocado** para lhe tirar os quatro literais de
    ficha morta. O brief dá-me `InstrumentoConvergencia.astro` e não nomeia o seu
    par de execução; deixar lá `var(--yellow)` era deixar aberto exactamente o
    defeito que a etapa fecha.
+
+---
+
+---
+
+## 8. Subetapa 2d · o tempo de execução
+
+`public/js/inicio.js`, adiado, progressivo, sem dependências.
+
+**O que ele pode fazer**: trocar `hidden`, `open`, `aria-pressed` e
+`aria-current`; escrever o `textContent` de dois `<span data-slot>` com texto
+copiado da ilha da CAOP; juntar duas cadeias que já estão na página para a região
+viva; e mexer no endereço. **O que não faz**: `innerHTML`, texto composto, um
+algarismo.
+
+**As listas fechadas são LIDAS do documento**, e não escritas no script: os
+blocos de cabeça dão os âmbitos com bloco próprio, os pontos do mapa dão os 308
+concelhos. Uma lista escrita no cliente divergiria da do servidor à primeira
+alteração; esta não pode divergir, porque é a mesma.
+
+**O endereço normaliza-se à chegada** com `replaceState`. Cinco valores maus,
+medidos: `ambito=lisboa`, `densidade=fundo`, `ambito=municipio:evora;alert(1)`,
+um `ambito` de 2 000 caracteres, e `regiao:atlantida`. Os cinco caem em País ·
+Relance, o endereço fica «/», e **nenhum é ecoado na página**.
+
+## 9. Subetapa 2e · o telemóvel
+
+O âmbito passa a dois destinos de largura inteira ao lado do selo do país; **o
+selo inteiro é o alvo e nenhum ponto é alvo** (Emenda 3), e um toque devolve os
+oito concelhos mais próximos — que não são botões criados no cliente, são os
+mesmos 308 resultados que o servidor rendeu, com o `hidden` tirado aos oito. As
+oito medidas passam a filas, número primeiro e estado à direita.
+
+**O que não entrou, e porquê**: a régua da convergência como porta de uma linha.
+O destino que a prancha lhe dá é uma âncora na mesma página, e uma porta que abre
+o que está logo abaixo não é uma porta. O instrumento fica e rola dentro da sua
+caixa, como a `IDENTIDADE.md` §11 manda.
+
+## 10. Subetapa 2f · as três réguas
+
+### A matriz de aceitação (plano §13)
+
+`node tests/inicio/matriz.mjs` — Chromium sem cabeça, fora da construção,
+**55 de 55 células passam**.
+
+| célula | prova |
+| --- | --- |
+| estado inicial · País · Relance | pais · relance · 8 peças |
+| manchete do País | «4 limiares europeus ultrapassados.» |
+| ordem do teclado · comando → painel → portas | comando 13 · painel 28 · portas 64 · 83 paragens |
+| cinco mudanças de estado (densidade, modo região, Alentejo, modo município, Évora) | cada uma com endereço, bloco, foco e anúncio |
+| foco volta ao comando, nas cinco | `leitura`, `regiao`, `alentejo`, `municipio`, `evora` |
+| região viva diz a mudança, nas cinco | o rótulo do âmbito e a palavra da densidade |
+| âmbito Alentejo · painel de uma peça | regiao:alentejo · 1 peça |
+| âmbito Évora · painel de oito peças | municipio:evora · 8 peças |
+| para trás, cinco vezes | cada passo repôs o seu estado |
+| para a frente | `/?densidade=leitura` |
+| recarga em cada estado | os cinco endereços repõem o seu bloco e a sua densidade |
+| uma peça abre só a sua | 1 aberta |
+| o comando global abre todas | 8 de 8 |
+| cinco valores inválidos | caem em pais/relance, endereço «/», sem eco |
+| edições pt e en · estado do endereço | regiao:alentejo · leitura, nas duas |
+| a ligação de idioma leva o estado | `/en?ambito=regiao%3Aalentejo&densidade=leitura` |
+| larguras 320 · 390 · 768 · 1280 | `scrollWidth − clientWidth` = 0 nas quatro |
+| tema claro · papel e tinta | papel `rgb(246,247,244)` · tinta `rgb(23,25,27)` |
+| tema claro · o contorno do marcador é a tinta do tema | `rgb(23,25,27)` |
+| tema escuro · papel e tinta | papel `rgb(21,23,26)` · tinta `rgb(236,238,234)` |
+| tema escuro · o contorno do marcador é a tinta do tema | `rgb(236,238,234)` |
+| movimento reduzido | `transition-duration` 1e-05s (o valor que o motor força) |
+| **o selo de cada peça é alvo de 44×44** | **31 de 31 selos de peça · mínimo 100×44** |
+| **nenhum selo dentro de outro alvo** | **0 aninhados em 31** |
+| nenhum par de áreas de toque sobrepostas na peça | 0 pares |
+| **o selo é o maior alvo da peça** | **selo 7 040px² · maior outro 2 415px²** |
+| sem JavaScript · `/` | completo e correcto: 8 peças, 8 valores, 8 selos |
+| sem JavaScript · `/?ambito=regiao:alentejo` | mostra o defeito, com os comandos como ligações que abrem |
+| sem JavaScript · `/?ambito=municipio:beja` | idem |
+| sem JavaScript · `/?densidade=leitura` | idem |
+| sem JavaScript · a nota da densidade está à vista | nas quatro |
+
+**ISSUES I13 fecha-se na primeira página**: os 31 selos das peças têm todos alvo
+de 44×44 ou mais, nenhum está aninhado noutro alvo, e não há um único par de
+áreas sobrepostas. A saída foi a que a etapa 1d escreveu: dar altura à fila.
+
+### A régua da invariância
+
+`node scripts/medir-invariancia.mjs <base> dist` — imprime e não falha.
+
+```
+322 rotas · 15 idênticas em texto · 307 com diferenças
+```
+
+E as 307 dividem-se em três, sem sobra:
+
+| quantas | rotas | diferença |
+| --- | --- | --- |
+| 2 | `/` e `/en/` | **+705 −18**: o conjunto de mudanças desta etapa |
+| 303 | todas as outras páginas | **+1 «Menu»**: o comando da navegação móvel da etapa 1e |
+| 2 | `/municipios/` e `/en/municipalities/` | **+2 −1**: «Menu», mais «tem página» a entrar e «Abrir a página →» a sair — o vocabulário de cobertura (defeito 7) |
+
+As 15 idênticas são as páginas de documento de estudo, que são bytes exactos da
+origem e não levam a mobília do sítio.
+
+`node scripts/medir-invariancia.mjs --chaves` imprime **14 chaves** com o mesmo
+valor nas duas edições. Quatro são desta etapa e as quatro estão em «Identidades
+aceites» de `CHAVES-EN.md`: `inicio.mapa.madeira` e `inicio.mapa.total` (nome
+próprio e palavra igual), `inicio.mapa.coberturaB` («concelho» fica em português
+na edição inglesa, como `municipios.h1` já decidiu) e
+`inicio.cabeca.tituloVazioB` («.», pontuação).
+
+### As duas réguas antigas, depois de tudo
+
+- **Defeitos**: 307 páginas; porta de correcções 307/307; primeira página 0
+  valores sem selo e 0 selos para outra linha; **frases de moldura 94 distintas ·
+  2 405 ocorrências** (77 · 2 367 na base — a subida está explicada no §4);
+  `[descrição em preparação]` 0; linhas com `#page=` 23 de 132; com recorte 22;
+  localizadores internos 0. **Frases de cobertura: 1 distinta por estado e por
+  edição**, nas quatro combinações.
+- **Contraste**: `2026-08-20-etapa-2f-contraste.json` é **idêntico, byte a byte**,
+  ao da etapa 1c. Era o resultado esperado e é a prova de que esta etapa não
+  introduziu um par novo: pinta com as fichas que a etapa 1c já mede, e não
+  escreve um literal de cor em lado nenhum.
+
+### As capturas
+
+**64 ficheiros** em `design/especime-v3/capturas/etapa-2/`, nomeados
+`<estado>-<largura>-<edição>-<tema>.png`: oito estados (País Relance, País
+Leitura breve, Região Alentejo, Évora Relance, Évora Leitura breve, Beja vazio, a
+vista de escolha, e a rendição sem JavaScript) × 1280 e 390 × pt e en × claro e
+escuro. Página inteira, depois de `document.fonts.ready`.
+
+**As capturas escuras são o primeiro teste a sério da proposta escura** (decisão
+f), e a condição que a direcção lhe pôs está medida na matriz: o contorno do
+marcador de estado é a tinta do tema nos dois temas, e vem sempre de uma ficha.
+
+### Uma medição que a captura mudou
+
+Na primeira volta das capturas, a régua do índice de dívida de Évora escrevia o
+rótulo da referência («limite legal») por cima da ponta direita da escala,
+porque um tecto legal É o extremo da sua própria escala. A ponta que a referência
+tapa deixou de se escrever: o que se perde é a repetição, porque o rótulo da
+referência traz o mesmo algarismo com a palavra que o explica.
 
 ---
 
@@ -414,5 +564,8 @@ subagentes e sem delegação. Nenhuma parte desta etapa correu noutro modelo.
 
 **Contagem de fichas:** a única contagem que esta sessão reporta é o orçamento
 que sobra. No fim da subetapa 2c o contador dizia cerca de **14,49 milhões de
-fichas por usar**, de um tecto de 15 milhões, o que põe o gasto das subetapas 2a
-a 2c na ordem das **510 mil fichas**. Não tenho um número exacto e não o invento.
+fichas por usar**, de um tecto de 15 milhões (≈ **510 mil** para as subetapas 2a
+a 2c); no fim da 2f dizia cerca de **14,38 milhões**, ou seja **≈ 620 mil fichas**
+para a etapa inteira. Fica dentro da escala do brief (500 a 700 mil) e abaixo do
+tecto de 850 mil que mandava parar. Não tenho um número exacto e não o invento:
+o que existe é a diferença de dois contadores.

@@ -73,16 +73,25 @@ const Y = 17;
           <line class="regua-valor" x1={(pv / 100) * W} y1="4" x2={(pv / 100) * W} y2="30" />
         </svg>
       </div>
+      {/* A ponta que a referência tapa não se escreve. Quando a referência
+          calha perto de um extremo — e calha, porque um tecto legal É o extremo
+          da sua escala — o seu rótulo e o da ponta escrevem-se um por cima do
+          outro. O que se perde é a repetição: o rótulo da referência traz o
+          mesmo algarismo, com a palavra que o explica. */}
       <div class="regua-escala">
-        <span class="regua-fim" data-nonledger="escala-de-instrumento">{escreve(escala.min)}</span>
+        {(!temRotulo || pr > 18) && (
+          <span class="regua-fim" data-nonledger="escala-de-instrumento">{escreve(escala.min)}</span>
+        )}
         {temRotulo && (
           <span class="regua-ref-rotulo" style={`left:${pr}%`}>
             <slot name="referencia" />
           </span>
         )}
-        <span class="regua-fim regua-fim-dir" data-nonledger="escala-de-instrumento">
-          {escreve(escala.max)}
-        </span>
+        {(!temRotulo || pr < 82) && (
+          <span class="regua-fim regua-fim-dir" data-nonledger="escala-de-instrumento">
+            {escreve(escala.max)}
+          </span>
+        )}
       </div>
     </div>
   )
