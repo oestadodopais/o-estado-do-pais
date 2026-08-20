@@ -91,24 +91,24 @@ edicoes:
     lang: pt
     title: "Évora — Orçamentado, Pago, Devido 2025"
     origin: researchhub
-    origin_ref: "content/07 Évora Municipal Accounts/Évora — Orçamentado, Pago, Devido 2025 (pt-PT).html @ afb8bfbcdb200c6547d3f614c3a3c84d35736019"
+    origin_ref: "content/07 Évora Municipal Accounts/Évora — Orçamentado, Pago, Devido 2025 (pt-PT).html @ addeb8483e97a126f37be2f21ec29b1a0ac21303"
     raw_file: _raw/evora-orcamentado-pago-devido-2025.pt.html
-    fetched_utc: 2026-08-20T11:15:09Z
-    bytes_raw: 960916
-    bytes_normalized: 960916
-    sha256_raw: 8f56b58ceed7970b2eeaa5acf20646e9acb47cebdcb98ba74834a09bb40a1426
-    sha256_normalized: 8f56b58ceed7970b2eeaa5acf20646e9acb47cebdcb98ba74834a09bb40a1426
+    fetched_utc: 2026-08-20T12:07:44Z
+    bytes_raw: 960913
+    bytes_normalized: 960913
+    sha256_raw: e57d4b2639996735798b1632324cc2e1aafb0b9248c2bc2c10a9f6f63d3ba1c2
+    sha256_normalized: e57d4b2639996735798b1632324cc2e1aafb0b9248c2bc2c10a9f6f63d3ba1c2
   - slug: evora-orcamentado-pago-devido-2025
     lang: en
     title: "Évora — Budgeted, Paid, Owed 2025"
     origin: researchhub
-    origin_ref: "content/07 Évora Municipal Accounts/Évora — Budgeted, Paid, Owed 2025.html @ afb8bfbcdb200c6547d3f614c3a3c84d35736019"
+    origin_ref: "content/07 Évora Municipal Accounts/Évora — Budgeted, Paid, Owed 2025.html @ addeb8483e97a126f37be2f21ec29b1a0ac21303"
     raw_file: _raw/evora-orcamentado-pago-devido-2025.en.html
-    fetched_utc: 2026-08-20T11:15:09Z
-    bytes_raw: 959140
-    bytes_normalized: 959140
-    sha256_raw: 6d88c0a422fd206b4893e4afcb4b0c2694115be193ee41fbe658e1ce5fcf5d3f
-    sha256_normalized: 6d88c0a422fd206b4893e4afcb4b0c2694115be193ee41fbe658e1ce5fcf5d3f
+    fetched_utc: 2026-08-20T12:07:44Z
+    bytes_raw: 959137
+    bytes_normalized: 959137
+    sha256_raw: a9bd8eb1d0fe954ef4aee753403177e795ee9a742efe7505771fd885ebb8510b
+    sha256_normalized: a9bd8eb1d0fe954ef4aee753403177e795ee9a742efe7505771fd885ebb8510b
   - slug: onde-esta-a-agua
     lang: pt
     title: "Onde está a água? — a água de Portugal, de onde vem, e o que custaria a autonomia"
@@ -216,21 +216,21 @@ edicoes:
     lang: pt
     title: "Évora — Prometido, Pago, Auditado 2026"
     origin: researchhub
-    origin_ref: "content/04 Évora Public Money/Évora — Prometido, Pago, Auditado 2026 (pt-PT).html @ 1634b7b5821e8737763d982540abf7c964796a5e"
+    origin_ref: "content/04 Évora Public Money/Évora — Prometido, Pago, Auditado 2026 (pt-PT).html @ addeb8483e97a126f37be2f21ec29b1a0ac21303"
     raw_file: _raw/evora-prometido-pago-auditado-2026.pt.html
-    fetched_utc: 2026-08-20T11:15:09Z
-    bytes_raw: 71761
-    bytes_normalized: 71761
-    sha256_raw: b7d054d2abb9592e0f46594746447f1237ca777f99480499caf93ec4c5227337
-    sha256_normalized: b7d054d2abb9592e0f46594746447f1237ca777f99480499caf93ec4c5227337
+    fetched_utc: 2026-08-20T12:07:44Z
+    bytes_raw: 71869
+    bytes_normalized: 71869
+    sha256_raw: 515c231fcf54827f9595435d61db9b60e5f6dca716c3401d4c25aa7b111b374d
+    sha256_normalized: 515c231fcf54827f9595435d61db9b60e5f6dca716c3401d4c25aa7b111b374d
   - slug: evora-prometido-pago-auditado-2026
     lang: en
     title: "Évora — Promised, Paid, Audited 2026"
     origin: researchhub
-    origin_ref: "content/04 Évora Public Money/Évora — Promised, Paid, Audited 2026.html @ 1634b7b5821e8737763d982540abf7c964796a5e"
+    origin_ref: "content/04 Évora Public Money/Évora — Promised, Paid, Audited 2026.html @ addeb8483e97a126f37be2f21ec29b1a0ac21303"
     raw_file: _raw/evora-prometido-pago-auditado-2026.en.html
-    fetched_utc: 2026-08-20T11:15:09Z
-    bytes_raw: 68371
-    bytes_normalized: 68371
-    sha256_raw: 30484dfc26c11d31acff816b5bc340c8ca6e61775fbbd317423ff90028179c2b
-    sha256_normalized: 30484dfc26c11d31acff816b5bc340c8ca6e61775fbbd317423ff90028179c2b
+    fetched_utc: 2026-08-20T12:07:44Z
+    bytes_raw: 68463
+    bytes_normalized: 68463
+    sha256_raw: 931da10a0d623085937c0d0d3b7ee1c8eb734486ae09747b8a554816275a41b0
+    sha256_normalized: 931da10a0d623085937c0d0d3b7ee1c8eb734486ae09747b8a554816275a41b0

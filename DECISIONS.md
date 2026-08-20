@@ -7773,11 +7773,61 @@ não há runtime para retirar, e os bytes brutos são os bytes alojados.
 
 | Edição | Bytes | Resumo | Do commit |
 | --- | --- | --- | --- |
-| 04 pt | 71 761 | `b7d054d2…` | `1634b7b` |
-| 04 en | 68 371 | `30484dfc…` | `1634b7b` |
-| 07 pt | 960 916 | `8f56b58c…` | `afb8bfb` |
-| 07 en | 959 140 | `6d88c0a4…` | `afb8bfb` |
+| 04 pt | 71 869 | `515c231f…` | `addeb84` |
+| 04 en | 68 463 | `931da10a…` | `addeb84` |
+| 07 pt | 960 913 | `e57d4b26…` | `addeb84` |
+| 07 en | 959 137 | `a9bd8eb1…` | `addeb84` |
 | 08 pt | 1 059 969 | `ceab4d26…` | `afb8bfb` |
+
+*(As quatro primeiras foram re-fixadas uma segunda vez, a seguir à leitura
+cruzada, que apanhou duas frases falsas na prosa dos próprios documentos. O 08
+não foi regenerado: nenhuma das duas frases estava lá. Os resumos da primeira
+fixação, que viveram no ramo durante uma hora e nunca foram fundidos, eram
+`b7d054d2…`, `30484dfc…`, `8f56b58c…` e `6d88c0a4…`, dos commits `1634b7b` e
+`afb8bfb`.)*
+
+**As duas correções de prosa que os documentos republicados levam**, porque
+nada se corrige em silêncio:
+
+**A cadência era falsa.** Três frases do 04 e uma do 07 diziam que o publicador
+do PRR substitui o ficheiro por semana. Substitui-o por dia, e os manifestos
+deste motor provam-no com três nomes datados: 20260803, 20260817, 20260819. A
+§1.47 T3 já o tinha registado do lado do sítio, e os documentos continuaram a
+dizer o contrário.
+
+| Antes | Agora |
+| --- | --- |
+| «publishes a full-refresh snapshot every week, with no version history: last week's file is simply gone from the source» | «publishes a full-refresh snapshot every day, with no version history: yesterday's file is simply gone from the source» |
+| «publica um instantâneo com atualização integral a cada semana, sem histórico de versões: o ficheiro da semana anterior desaparece» | «publica um instantâneo com atualização integral a cada dia, sem histórico de versões: o ficheiro do dia anterior desaparece» |
+| «keep the weekly snapshots» · «guardar os instantâneos semanais» | «keep the daily snapshots» · «guardar os instantâneos diários» |
+| «overwrites its own snapshot every week» · «sobrepõe-se ao seu próprio instantâneo a cada semana» | «every day» · «a cada dia» |
+| «That register republishes weekly with no history» · «Esse registo republica-se semanalmente sem histórico» | «republishes daily» · «republica-se diariamente» |
+
+Uma quinta ocorrência não estava na lista da leitura e estava publicada na
+mesma: a `note` das duas linhas do PRR que o 07 carrega do 04 dizia «the PRR
+register republishes weekly», e essa nota viaja **dentro da ilha de recibos**
+dos dois documentos do 07, onde um leitor a abre. Foi corrigida com a mesma
+palavra. As duas linhas não atravessam para o sítio, pelo que nenhum resumo de
+linha cruzada mexeu.
+
+**A abertura do 04 prometia o que a casa não dá.** Dizia, para cada valor, «the
+exact text it was read from». As três somas sobre o registo do PRR não têm texto
+para transcrever, e é a regra da própria casa que o diz: o excerto delas é o
+marcador. A frase passa a prometer o que existe, nas duas edições:
+
+> «with its source URL, its fetch timestamp and the exact text it was read from,
+> **or, for a sum computed over a file, the file, its snapshot date and digest
+> and the arithmetic**.»
+
+> «com o URL da fonte, o carimbo temporal da recolha e o texto exato de onde foi
+> lido, **ou, para uma soma calculada sobre um ficheiro, o ficheiro, a data do
+> seu instantâneo, o seu resumo e a aritmética**.»
+
+**Nenhum algarismo mexeu em nenhuma das duas correções**, e os geradores
+dizem-no eles próprios: o `make_pt.py` do 04 verifica «347 numeric tokens
+verified invariant» e os dois renderizadores do 07 dizem «306 visible number
+tokens, unchanged». O portão do motor passou com a paridade das seis edições
+verde.
 
 **A razão é diferente em cada uma, e fica dita onde se lê.** No 07 e no 08 é de
 **ponteiro**: os excertos da ilha de recibos ganharam a janela que o extractor
@@ -7881,6 +7931,65 @@ O custo aceite, e escrito para não ser descoberto: **entre reextrações, a pá
 diz um valor que já não é a soma do instantâneo servido**, com a data à vista e a
 história da linha a dizer o que mudou. É a mesma escolha que a §1.47 fez, agora
 com um prazo em vez de uma promessa.
+
+#### A leitura cruzada
+
+*Escrita no estádio de correção, depois de a leitura ter corrido. O bloco
+continua construído e não fundido: o que muda aqui é o que a leitura mandou
+mudar, e nada mais.*
+
+##### Como foi feita
+
+Uma leitura de outra família, **Codex, com o contexto cortado**: sem os
+repositórios, sem o `BRIEF`, sem a constituição, sem esta entrada. O que recebeu
+foi o que este bloco põe à frente de um leitor, e mais nada:
+
+- as **cinco páginas de linha do PRR nas duas edições**, que são onde a porta
+  arquivada nasceu e onde os cinco valores mexeram;
+- o **registo das correções**, que é onde as cinco atualizações aparecem;
+- a **página do estudo 04**, que é onde a data de revisão e a frase de abertura
+  mudaram;
+- os documentos **04 PT, 04 EN e 07 PT**, que são três das cinco edições
+  republicadas;
+- os **ficheiros JSON de linha** e o **conjunto de dados**, que é por onde o
+  campo novo viaja como dados e não como porta.
+
+E **cinco estragos plantados**, um de cada natureza que este bloco podia
+produzir.
+
+##### Os estragos: cinco de cinco
+
+| Estrago plantado | Apanhado | Achado |
+| --- | --- | --- |
+| um valor revertido para o instantâneo anterior na página da execução, edição inglesa | **sim** | 1 |
+| um `old_value` falsificado numa entrada da história, edição portuguesa | **sim** | 2 |
+| uma data de instantâneo errada no documento 04 PT | **sim** | 3 |
+| um carimbo de captura que não bate com o da linha | **sim** | 4 |
+| um travessão num rótulo de porta | **sim** | 5 |
+
+Cinco de cinco, e o travessão foi apanhado outra vez, como na segunda leitura da
+§1.48 e ao contrário da de 18.08. Continua a valer o que ficou escrito então:
+uma leitura que apanha não prova que a próxima apanhe, e a régua mecânica é o que
+garante o resultado.
+
+##### Os nove achados, e o que ficou de cada um
+
+| # | O achado | O que ficou |
+| --- | --- | --- |
+| 1 | um valor da execução que não é o do instantâneo declarado | **estrago plantado**, reposto. |
+| 2 | um `old_value` que não é o valor que a linha publicava | **estrago plantado**, reposto. |
+| 3 | uma data de instantâneo errada no documento | **estrago plantado**, reposto. |
+| 4 | o carimbo da captura não bate com o do campo | **estrago plantado**, reposto. |
+| 5 | um travessão num rótulo de porta | **estrago plantado**, reposto. |
+| 6 | os documentos dizem que o PRR publica um instantâneo «a cada semana» | **real, e fecha aqui**: substitui-o por dia, e os manifestos deste motor provam-no. Cinco frases corrigidas nas duas edições, mais a `note` que viaja na ilha de recibos do 07. Acima, com o antes e o depois. |
+| 7 | a abertura do 04 promete, para cada valor, «o texto exato de onde foi lido» | **real, e fecha aqui**: as três somas não têm texto para transcrever, pela regra da própria casa. A frase passa a nomear o que existe para uma soma. Acima. |
+| 8 | os documentos prometem um `ledger.json` «junto a este ficheiro», e no sítio o documento é servido sozinho | **real, e não se emenda aqui.** A frase é verdadeira no motor, onde o ficheiro está mesmo ao lado, e falsa no sítio. Emendá-la seria pôr o documento a descrever o sítio em vez de se descrever a si; alojar o ficheiro é a resposta certa e é um bloco. Entra na §4.1 com a recomendação do lugar de direção. |
+| 9 | o `reason_en` de uma atualização de 18.08 junta dois nomes de ficheiro com «e» | **real, conhecido desde a §1.48 (achado 10), e fica como está.** É a entrada de `evora-prr-vencido-aprovado-2026`. **Uma correção publicada não se reescreve** (`ledger/README.md`): a entrada de 18.08 fica com as palavras com que foi publicada, e as de hoje nasceram certas. |
+
+Cinco achados são estragos plantados, dois fecham aqui, um entra na §4.1 e um
+estava decidido há dois dias. **Nenhum dos nove era um número errado**, e os dois
+que fecham aqui eram frases da casa sobre o seu próprio trabalho, que é a mesma
+família que a §1.48 encontrou três vezes.
 
 #### O que fica dito, para não ser descoberto depois
 
@@ -8444,6 +8553,23 @@ casa que a página publica, e o formato das correções não tem natureza para u
 delas mudar. Nada nesta casa apanha isso, e o que apanhou desta vez foi uma
 leitura cruzada de outra família. Fica escrito porque uma régua que não apanha
 uma coisa é exatamente a razão de ela precisar de morada.
+
+**Os documentos prometem um `ledger.json` «junto a este ficheiro», e no sítio
+não está lá** (20.08.2026, §1.49, leitura cruzada, achado 8). A abertura dos
+documentos do 04 e do 07 diz que cada valor tem uma linha em `ledger.json` junto
+ao ficheiro. **No motor é verdade**, e é onde o documento nasce: o ficheiro está
+mesmo ao lado. **No sítio é falso**: o documento é servido sozinho, e o leitor
+que o procure não o encontra. Emendar a frase seria pôr o documento a descrever o
+sítio em vez de se descrever a si, e o documento é obra citada.
+
+**A recomendação do lugar de direção, e é de produto**: alojar o `ledger.json` de
+cada estudo ao lado do seu documento, como ficheiro companheiro fixado pelo
+resumo, pelo mesmo caminho que o `studies-src/manifest.yml` já usa para os bytes
+do documento. A licença do conjunto, decidida a 20.08 (§1.48), **cobre os dados
+da casa**, que é o que faltava para isto ser possível; os excertos transcritos
+continuam sob os termos de quem os publicou, e a frase do âmbito já o diz. É um
+bloco, não uma emenda: são quinze edições, um campo novo no manifesto e uma porta
+na página do documento.
 
 **A edição inglesa do estudo 08 não é publicada** (20.08.2026, §1.49). O motor
 tem as duas edições de «Quinze Anos, Cinco Mandatos» e este arquivo publica só a
