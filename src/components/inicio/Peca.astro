@@ -54,7 +54,11 @@ const {
   id,
   nome,
   medida,
-  frase,
+  /* `frase` é opcional desde a etapa 2i (achado 6, R4): a peça de uma região
+     não a leva, porque a frase da região é a MANCHETE desse âmbito e estava a
+     render-se duas vezes no mesmo ecrã, com o mesmo valor e o mesmo selo. Sem
+     frase, a peça não escreve um parágrafo vazio. */
+  frase = null,
   limiar = null,
   comparacao = null,
   estado = 'sem',
@@ -100,10 +104,16 @@ const marca = pintado ? estado : 'sem';
     }
   </div>
 
-  <Claim id={id} class="peca-valor" as="div" style={`--peca-corpo:${corpo}px`} />
+  {/* `lang` NÃO É OPCIONAL AQUI (etapa 2i, achado 7). `Claim.astro` tem
+      `lang = 'pt'` por defeito, e a palavra «provisório» sai dele: uma chamada
+      sem língua rendia a palavra portuguesa na edição inglesa, e os seis painéis
+      regionais desta peça eram seis dos sete casos que a leitura cruzada
+      contou. O pedido de falhar em vez de assumir português está na nota, para
+      o dono de `Claim.astro`. */}
+  <Claim id={id} lang={lang} class="peca-valor" as="div" style={`--peca-corpo:${corpo}px`} />
   <p class="peca-unidade"><Frase partes={medida} lang={lang} selos={selosNaMedida} /></p>
   <h3 class="peca-nome">{nome}</h3>
-  <p class="peca-frase"><Frase partes={frase} lang={lang} selos={true} /></p>
+  {frase && <p class="peca-frase"><Frase partes={frase} lang={lang} selos={true} /></p>}
 
   <details class="peca-mais">
     <summary class="peca-abrir">

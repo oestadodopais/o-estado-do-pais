@@ -22,6 +22,24 @@
  * vive dentro de um SVG e de uma ilha de dados; o `slug` é legível porque vive
  * num endereço que alguém copia para uma mensagem. São iguais nas duas edições:
  * o que se traduz é o rótulo, nunca a chave (plano §13).
+ *
+ * ---------------------------------------------------------------------------
+ * O `referencia`: PORTUGAL NÃO É UMA REGIÃO (etapa 2i, achado 5 da leitura cruzada)
+ * ---------------------------------------------------------------------------
+ * Esta lista tem seis leituras porque a régua da convergência as desenha às
+ * seis: as cinco regiões e o país contra o qual elas se leem. Mas o esquema
+ * fechado do endereço (plano §13) tem CINCO regiões — `grande-lisboa`,
+ * `peninsula-de-setubal`, `algarve`, `madeira`, `alentejo` — e Portugal não é
+ * uma delas. O brief da etapa 2 mandou seis fichas, a construção deu-lhes seis
+ * estados, e `?ambito=regiao:portugal` rendia uma cabeça que dizia «Portugal ·
+ * região», que é falso.
+ *
+ * `referencia: true` é um campo DECLARADO, como o `lado` dos limiares: diz que
+ * aquela leitura é a marca de referência da régua e não um âmbito. Quem monta a
+ * lista fechada dos âmbitos lê-o em `src/lib/inicio.mjs`; quem desenha a régua
+ * (a banda e o Instrumento n.º 1) continua a desenhar as seis, porque as seis
+ * estão publicadas. Uma lista escrita à mão noutro sítio divergiria desta à
+ * primeira alteração.
  */
 
 export const REGIOES = [
@@ -33,6 +51,7 @@ export const REGIOES = [
     distancia: 'distancia-portugal-ue27-2024',
     sinal: '−',
     predefinida: true,
+    referencia: true,
     frase: {
       pt: ['Portugal está ', { claim: 'distancia-portugal-ue27-2024' }, ' pontos abaixo da média da UE-27.'],
       en: ['Portugal is ', { claim: 'distancia-portugal-ue27-2024' }, ' points below the EU-27 average.'],

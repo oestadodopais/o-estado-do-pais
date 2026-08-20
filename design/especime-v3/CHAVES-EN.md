@@ -100,6 +100,14 @@ escolha custou algo está dita a razão.
 | **`inicio.mapa.deepTitulo`** | Método, ressalvas e proveniência | Method, caveats and provenance | **não é texto novo**: é `home.instr2.deepTitulo` da v2, relocado com a sua secção (R3) e sem uma palavra mudada. Fica igual, à letra, a `home.instr1.deepTitulo`, e ficava igual na v2 também: os dois instrumentos tinham a sua própria chave com o mesmo rótulo, porque o rótulo nomeia a camada e não o instrumento |
 | **`inicio.movel.proximos`** | Um toque no mapa devolve os concelhos mais próximos, para escolher. No telemóvel os pontos não são alvos: a pesquisa é o caminho. | Tapping the map returns the nearest concelhos to choose from. On a phone the points are not targets: the search is the way. | **cadeia inteira, nas duas edições, tal como a 2e a escreveu.** A 2g aparou-lhe a primeira frase porque a lista de proximidade tinha saído, e uma frase que promete o que a página não faz é pior do que nenhuma; a **2h** repôs o gesto atrás de um toque a sério e a frase com ele. Com dois estados — sem toque, Évora e o concelho escolhido; com toque, os mais próximos —, as duas metades são verdadeiras ao mesmo tempo: os pontos continuam a não ser alvos e o selo inteiro continua a ser um. Não é texto novo: é a cadeia da 2e, restituída sem uma palavra mudada |
 
+**2i · uma cadeia aparada, e nenhuma nova.**
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| **`ambito.regioesMeta`** | As regiões publicadas na régua da convergência. | The regions published on the convergence rule. | **aparada, nas duas edições no mesmo commit.** Era «As seis leituras publicadas…» / «The six readings published…», e a razão da palavra «seis» está escrita na etapa 2b: Portugal estava na fila com as outras cinco. A leitura cruzada de 20.08 mostrou que Portugal **não é uma região** (plano §13 fecha a lista em cinco), a fila passou a cinco pastilhas, e a legenda ficou a contar seis por cima de cinco. Não passou a «cinco»: uma contagem escrita à mão numa legenda volta a ficar errada na primeira mudança da lista, e a régua continua a publicar seis leituras — o que mudou foi quantas delas são um âmbito. A frase deixa de contar e nomeia. Nenhuma palavra nova entrou nesta subetapa |
+
+*(A propriedade `rotuloId` de `Regua.astro` prometia um nome acessível às réguas e nunca era passada; saiu com o `role="img"` que a acompanhava, e as onze réguas — dez, depois de o painel de Portugal sair — passaram a `aria-hidden="true"`. Não é uma cadeia: nenhum texto entrou nem saiu por causa disto.)*
+
 ### Etapa 3
 *(por preencher: `linha.*`, `livro.*`, `municipios.*`, `municipio.*`)*
 

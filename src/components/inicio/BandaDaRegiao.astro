@@ -33,7 +33,12 @@ import { ESCALA } from '../../data/regioes.mjs';
 import { parsePtNumber } from '../../lib/ledger.mjs';
 import Frase from '../Frase.astro';
 
-const { s, lang, regioes, escolhida } = Astro.props;
+/* `regioes` são as SEIS leituras publicadas na régua: as seis desenham-se, as
+   seis têm rótulo e as seis têm selo na legenda. `escolhiveis` são as CINCO que
+   o endereço conhece como âmbito — Portugal é a marca de referência e não uma
+   região (plano §13), e por isso não tem barra: uma barra da referência a ela
+   própria teria largura zero e um estado que não existe. */
+const { s, lang, regioes, escolhiveis = regioes, escolhida } = Astro.props;
 
 const { min, max, datum } = ESCALA;
 const W = 1000;
@@ -107,7 +112,7 @@ const Y_EIXO = 62;
       </g>
 
       {
-        regioes.map((r) => (
+        escolhiveis.map((r) => (
           <g class="banda-barra" data-banda={r.slug} hidden={r.slug !== escolhida}>
             <rect
               x={Math.min(X(datum), X(parsePtNumber(r.linha.value)))}

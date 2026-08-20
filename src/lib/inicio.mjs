@@ -138,7 +138,7 @@ export function concelhos() {
  * ---------------------------------------------------------------------------
  *
  *   ?ambito=pais                    (por defeito, e por isso omitido)
- *   ?ambito=regiao:<slug>           slug de `regioes.mjs`
+ *   ?ambito=regiao:<slug>           slug de `regioes.mjs`, MENOS a referência
  *   ?ambito=municipio:<slug>        slug da Carta Administrativa
  *   ?densidade=relance              (por defeito, e por isso omitido)
  *   ?densidade=leitura
@@ -146,10 +146,20 @@ export function concelhos() {
  * As chaves e os valores são os mesmos nas duas edições: o que se traduz é o
  * rótulo, nunca a chave. Qualquer outro valor resolve para o defeito, sem texto
  * de erro, e o endereço é reescrito para a forma normalizada.
+ *
+ * PORTUGAL NÃO É UMA REGIÃO, e por isso `regiao:portugal` não é um âmbito: cai
+ * no defeito como qualquer outro valor desconhecido. O plano §13 fecha a lista
+ * em cinco, e `regioes.mjs` declara qual das seis leituras da régua é a marca de
+ * referência (`referencia: true`). A lista sai daquele campo, e não de uma
+ * segunda lista escrita aqui, que divergiria à primeira alteração.
  */
 export const AMBITO_POR_DEFEITO = 'pais';
 export const DENSIDADE_POR_DEFEITO = 'relance';
 export const DENSIDADES = ['relance', 'leitura'];
+
+/** As cinco regiões do esquema do endereço. A sexta leitura da régua é Portugal,
+    que é a referência contra a qual elas se leem, e não um âmbito. */
+export const REGIOES_DE_AMBITO = REGIOES.filter((r) => !r.referencia);
 
 export const chaveDaRegiao = (slug) => `regiao:${slug}`;
 export const chaveDoConcelho = (slug) => `municipio:${slug}`;
@@ -158,7 +168,7 @@ export const chaveDoConcelho = (slug) => `municipio:${slug}`;
 export function ambitos() {
   return [
     AMBITO_POR_DEFEITO,
-    ...REGIOES.map((r) => chaveDaRegiao(r.slug)),
+    ...REGIOES_DE_AMBITO.map((r) => chaveDaRegiao(r.slug)),
     ...concelhos().map((c) => chaveDoConcelho(c.slug)),
   ];
 }

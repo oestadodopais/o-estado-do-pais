@@ -1,0 +1,45 @@
+{
+  "a": "/private/tmp/claude-501/-Users-nunosantos/b185e650-e114-4dd4-a233-45407e03b19a/scratchpad/dist-2h",
+  "b": "dist",
+  "rotas": 322,
+  "iguais": 320,
+  "diferencas": [
+    {
+      "rota": "/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 47,
+      "acrescentados": [
+        "As regiões publicadas na régua da convergência.",
+        "O ponto aceso marca cobertura editorial, não qualidade nem importância. Os restantes pontos marcam a posição do município e mais nada."
+      ],
+      "retirados": [
+        "0",
+        "Portugal",
+        "Portugal",
+        "As seis leituras publicadas na régua da convergência.",
+        "sem limiar"
+      ]
+    },
+    {
+      "rota": "/en/",
+      "estado": "difere",
+      "mais": 8,
+      "menos": 53,
+      "acrescentados": [
+        "The regions published on the convergence rule.",
+        "The lit point marks editorial coverage, not quality or importance. The remaining points mark the position of the municipality and nothing else.",
+        "provisional",
+        "provisional",
+        "provisional"
+      ],
+      "retirados": [
+        "0",
+        "Portugal",
+        "Portugal",
+        "The six readings published on the convergence rule.",
+        "no threshold"
+      ]
+    }
+  ]
+}

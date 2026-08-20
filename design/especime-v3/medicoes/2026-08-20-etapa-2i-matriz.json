@@ -1,0 +1,406 @@
+{
+  "celulas": [
+    {
+      "nome": "estado inicial · País · Relance",
+      "passa": true,
+      "prova": "pais · relance · 8 peças"
+    },
+    {
+      "nome": "manchete do País",
+      "passa": true,
+      "prova": "4 limiares europeus ultrapassados."
+    },
+    {
+      "nome": "ordem do teclado · comando → painel → portas",
+      "passa": true,
+      "prova": "comando 14 · painel 31 · portas 67 · 86 paragens"
+    },
+    {
+      "nome": "mudança · densidade → leitura",
+      "passa": true,
+      "prova": "/?densidade=leitura · pais"
+    },
+    {
+      "nome": "foco volta ao comando · densidade → leitura",
+      "passa": true,
+      "prova": "leitura"
+    },
+    {
+      "nome": "região viva diz a mudança · densidade → leitura",
+      "passa": true,
+      "prova": "Portugal · painel europeu · 8 medidas · Leitura breve"
+    },
+    {
+      "nome": "mudança · âmbito → modo região",
+      "passa": true,
+      "prova": "/?densidade=leitura · pais"
+    },
+    {
+      "nome": "foco volta ao comando · âmbito → modo região",
+      "passa": true,
+      "prova": "regiao"
+    },
+    {
+      "nome": "região viva diz a mudança · âmbito → modo região",
+      "passa": true,
+      "prova": "Portugal · painel europeu · 8 medidas · Leitura breve"
+    },
+    {
+      "nome": "mudança · região → Alentejo",
+      "passa": true,
+      "prova": "/?ambito=regiao%3Aalentejo&densidade=leitura · regiao:alentejo"
+    },
+    {
+      "nome": "foco volta ao comando · região → Alentejo",
+      "passa": true,
+      "prova": "alentejo"
+    },
+    {
+      "nome": "região viva diz a mudança · região → Alentejo",
+      "passa": true,
+      "prova": "Alentejo · região · Leitura breve"
+    },
+    {
+      "nome": "mudança · âmbito → modo município",
+      "passa": true,
+      "prova": "/?ambito=regiao%3Aalentejo&densidade=leitura · regiao:alentejo"
+    },
+    {
+      "nome": "foco volta ao comando · âmbito → modo município",
+      "passa": true,
+      "prova": "municipio"
+    },
+    {
+      "nome": "região viva diz a mudança · âmbito → modo município",
+      "passa": true,
+      "prova": "Alentejo · região · Leitura breve"
+    },
+    {
+      "nome": "mudança · concelho → Évora",
+      "passa": true,
+      "prova": "/?ambito=municipio%3Aevora&densidade=leitura · municipio:evora"
+    },
+    {
+      "nome": "foco volta ao comando · concelho → Évora",
+      "passa": true,
+      "prova": "evora"
+    },
+    {
+      "nome": "região viva diz a mudança · concelho → Évora",
+      "passa": true,
+      "prova": "Évora · município · distrito de Évora · Leitura breve"
+    },
+    {
+      "nome": "âmbito Alentejo · painel de uma peça",
+      "passa": true,
+      "prova": "regiao:alentejo · 1 peça"
+    },
+    {
+      "nome": "âmbito Évora · painel de oito peças",
+      "passa": true,
+      "prova": "municipio:evora · 8 peças"
+    },
+    {
+      "nome": "para trás, cinco vezes",
+      "passa": true,
+      "prova": "cada passo repôs o seu estado"
+    },
+    {
+      "nome": "para a frente",
+      "passa": true,
+      "prova": "/?densidade=leitura"
+    },
+    {
+      "nome": "recarga em cada estado",
+      "passa": true,
+      "prova": "/?densidade=leitura → pais · /?densidade=leitura → pais · /?ambito=regiao%3Aalentejo&densidade=leitura → regiao:alentejo · /?ambito=regiao%3Aalentejo&densidade=leitura → regiao:alentejo · /?ambito=municipio%3Aevora&densidade=leitura → municipio:evora"
+    },
+    {
+      "nome": "uma peça abre só a sua",
+      "passa": true,
+      "prova": "1 abertas"
+    },
+    {
+      "nome": "o comando global abre todas",
+      "passa": true,
+      "prova": "8 de 8"
+    },
+    {
+      "nome": "valor inválido · ambito=lisboa",
+      "passa": true,
+      "prova": "caiu em pais/relance, endereço normalizado para \"/\", e o valor não é ecoado na página"
+    },
+    {
+      "nome": "valor inválido · densidade=fundo",
+      "passa": true,
+      "prova": "caiu em pais/relance, endereço normalizado para \"/\", e o valor não é ecoado na página"
+    },
+    {
+      "nome": "valor inválido · ambito com injecção",
+      "passa": true,
+      "prova": "caiu em pais/relance, endereço normalizado para \"/\", e o valor não é ecoado na página"
+    },
+    {
+      "nome": "valor inválido · ambito de 2 000 caracteres",
+      "passa": true,
+      "prova": "caiu em pais/relance, endereço normalizado para \"/\", e o valor não é ecoado na página"
+    },
+    {
+      "nome": "valor inválido · região que não existe",
+      "passa": true,
+      "prova": "caiu em pais/relance, endereço normalizado para \"/\", e o valor não é ecoado na página"
+    },
+    {
+      "nome": "edição pt · estado do endereço",
+      "passa": true,
+      "prova": "regiao:alentejo · leitura"
+    },
+    {
+      "nome": "edição pt · a ligação de idioma leva o estado",
+      "passa": true,
+      "prova": "/en?ambito=regiao%3Aalentejo&densidade=leitura"
+    },
+    {
+      "nome": "edição en · estado do endereço",
+      "passa": true,
+      "prova": "regiao:alentejo · leitura"
+    },
+    {
+      "nome": "edição en · a ligação de idioma leva o estado",
+      "passa": true,
+      "prova": "/?ambito=regiao%3Aalentejo&densidade=leitura"
+    },
+    {
+      "nome": "largura 320 · sem transbordo horizontal",
+      "passa": true,
+      "prova": "scrollWidth − clientWidth = 0"
+    },
+    {
+      "nome": "largura 390 · sem transbordo horizontal",
+      "passa": true,
+      "prova": "scrollWidth − clientWidth = 0"
+    },
+    {
+      "nome": "largura 768 · sem transbordo horizontal",
+      "passa": true,
+      "prova": "scrollWidth − clientWidth = 0"
+    },
+    {
+      "nome": "largura 1280 · sem transbordo horizontal",
+      "passa": true,
+      "prova": "scrollWidth − clientWidth = 0"
+    },
+    {
+      "nome": "tema claro · papel e tinta",
+      "passa": true,
+      "prova": "papel rgb(246, 247, 244) · tinta rgb(23, 25, 27)"
+    },
+    {
+      "nome": "tema claro · o contorno do marcador é a tinta do tema",
+      "passa": true,
+      "prova": "contorno rgb(23, 25, 27)"
+    },
+    {
+      "nome": "tema escuro · papel e tinta",
+      "passa": true,
+      "prova": "papel rgb(21, 23, 26) · tinta rgb(236, 238, 234)"
+    },
+    {
+      "nome": "tema escuro · o contorno do marcador é a tinta do tema",
+      "passa": true,
+      "prova": "contorno rgb(236, 238, 234)"
+    },
+    {
+      "nome": "movimento reduzido · a peça não tem transição",
+      "passa": true,
+      "prova": "transition-duration 1e-05s"
+    },
+    {
+      "nome": "o selo de cada peça é alvo de 44×44",
+      "passa": true,
+      "prova": "22 de 22 selos de peça · mínimo 100×44"
+    },
+    {
+      "nome": "nenhum selo dentro de outro alvo",
+      "passa": true,
+      "prova": "0 aninhados em 22"
+    },
+    {
+      "nome": "nenhum par de áreas de toque sobrepostas na peça",
+      "passa": true,
+      "prova": "0 pares"
+    },
+    {
+      "nome": "o selo é o maior alvo da peça",
+      "passa": true,
+      "prova": "selo 7040px² · maior outro 2415px²"
+    },
+    {
+      "nome": "sem JavaScript · /",
+      "passa": true,
+      "prova": "completo e correcto: 8 peças, 8 valores, 8 selos"
+    },
+    {
+      "nome": "sem JavaScript · a nota da densidade está à vista · /",
+      "passa": true,
+      "prova": "nota visível: true"
+    },
+    {
+      "nome": "sem JavaScript · /?ambito=regiao:alentejo",
+      "passa": true,
+      "prova": "mostra o defeito (pais), com os comandos como ligações que abrem: / · /#convergencia · /municipios · / · /?densidade=leitura"
+    },
+    {
+      "nome": "sem JavaScript · a nota da densidade está à vista · /?ambito=regiao:alentejo",
+      "passa": true,
+      "prova": "nota visível: true"
+    },
+    {
+      "nome": "sem JavaScript · /?ambito=municipio:beja",
+      "passa": true,
+      "prova": "mostra o defeito (pais), com os comandos como ligações que abrem: / · /#convergencia · /municipios · / · /?densidade=leitura"
+    },
+    {
+      "nome": "sem JavaScript · a nota da densidade está à vista · /?ambito=municipio:beja",
+      "passa": true,
+      "prova": "nota visível: true"
+    },
+    {
+      "nome": "sem JavaScript · /?densidade=leitura",
+      "passa": true,
+      "prova": "mostra o defeito (pais), com os comandos como ligações que abrem: / · /#convergencia · /municipios · / · /?densidade=leitura"
+    },
+    {
+      "nome": "sem JavaScript · a nota da densidade está à vista · /?densidade=leitura",
+      "passa": true,
+      "prova": "nota visível: true"
+    },
+    {
+      "nome": "o sinal de tempo do painel só se lê no âmbito País",
+      "passa": true,
+      "prova": "pais true · regiao false · évora false · beja false"
+    },
+    {
+      "nome": "a ficha do mapa é compacta e o aparelho leva a citação, o CSV e as dicas",
+      "passa": true,
+      "prova": "ficha 515px · citação, CSV e dicas na camada do aparelho, fechada · linha de fonte com selo"
+    },
+    {
+      "nome": "largura 768 · a peça aberta ocupa duas colunas",
+      "passa": true,
+      "prova": "régua 673px · grid-column-start «span 2» em 8 peças · transbordo 0"
+    },
+    {
+      "nome": "largura 1280 · a peça aberta ocupa duas colunas",
+      "passa": true,
+      "prova": "régua 502px · grid-column-start «span 2» em 8 peças · transbordo 0"
+    },
+    {
+      "nome": "largura 320 · a régua da convergência é uma porta de palavras",
+      "passa": true,
+      "prova": "porta 284×44, sem alvo dentro e sem alvo à volta, sem algarismos; abre o instrumento"
+    },
+    {
+      "nome": "largura 320 · rótulos do instrumento sem caixas sobrepostas",
+      "passa": true,
+      "prova": "13 rótulos · 0 pares sobrepostos · rola na sua caixa · transbordo 0"
+    },
+    {
+      "nome": "largura 390 · a régua da convergência é uma porta de palavras",
+      "passa": true,
+      "prova": "porta 354×44, sem alvo dentro e sem alvo à volta, sem algarismos; abre o instrumento"
+    },
+    {
+      "nome": "largura 390 · rótulos do instrumento sem caixas sobrepostas",
+      "passa": true,
+      "prova": "13 rótulos · 0 pares sobrepostos · rola na sua caixa · transbordo 0"
+    },
+    {
+      "nome": "secretária · a porta da régua não existe e o instrumento está à vista",
+      "passa": true,
+      "prova": "porta false · corpo true · instrumento true"
+    },
+    {
+      "nome": "largura 1280 · vista de escolha, caixa vazia",
+      "passa": true,
+      "prova": "sem escolha: evora · com Beja escolhida: beja · evora"
+    },
+    {
+      "nome": "largura 390 · vista de escolha, caixa vazia",
+      "passa": true,
+      "prova": "sem escolha: evora · com Beja escolhida: beja · evora"
+    },
+    {
+      "nome": "Évora · o mapa do localizador está dentro do cartão, e o mapa inteiro fica no Relance",
+      "passa": true,
+      "prova": "leitura: localizador 170px dentro do cartão (moldura 1px) · relance: inteiro 281px com ficha · 1 mapa no documento"
+    },
+    {
+      "nome": "o rótulo do distrito segue uma regra só nos 308 (ISSUES I18)",
+      "passa": true,
+      "prova": "Beja «distrito de Beja» · Horta «Ilha do Faial» · Lagoa «Ilha de São Miguel» · Évora traz a sua etiqueta de municipios.mjs"
+    },
+    {
+      "nome": "largura 390 · a lista de proximidade entra com um toque, e só com um",
+      "passa": true,
+      "prova": "sem toque: evora · com toque em (450, 521): alvito · cuba · evora · portel · redondo · reguengos-de-monsaraz · viana-do-alentejo · vidigueira · esperados: alvito · cuba · evora · portel · redondo · reguengos-de-monsaraz · viana-do-alentejo · vidigueira · 8 botões, 0 algarismos · 1 entrada na história · a escrever «bej»: beja · por teclado: evora"
+    },
+    {
+      "nome": "ISSUES I20 · seis estados × quatro larguras sem transbordo, e o rótulo dentro da régua",
+      "passa": true,
+      "prova": "24 de 24 a zero · pais-relance@320:0 · pais-relance@390:0 · pais-relance@768:0 · pais-relance@1280:0 · pais-leitura@320:0 · pais-leitura@390:0 · pais-leitura@768:0 · pais-leitura@1280:0 · regiao-alentejo-leitura@320:0 · regiao-alentejo-leitura@390:0 · regiao-alentejo-leitura@768:0 · regiao-alentejo-leitura@1280:0 · evora-relance@320:0 · evora-relance@390:0 · evora-relance@768:0 · evora-relance@1280:0 · evora-leitura@320:0 · evora-leitura@390:0 · evora-leitura@768:0 · evora-leitura@1280:0 · beja-vazio@320:0 · beja-vazio@390:0 · beja-vazio@768:0 · beja-vazio@1280:0"
+    },
+    {
+      "nome": "ISSUES I21 · «Toque num ponto» só onde o mapa escolhe pontos",
+      "passa": true,
+      "prova": "1280 no âmbito Município true · 390 false · sem script 1280 false e 390 false · 1280 no âmbito País false"
+    },
+    {
+      "nome": "2i·1 · Portugal não é uma região: sem estado, e na régua como referência",
+      "passa": true,
+      "prova": "?ambito=regiao:portugal → pais, endereço «/» · 5 cabeças, 5 painéis e 5 pastilhas de região · banda: 6 pontos e 5 barras, Portugal ponto true · instrumento n.º 1 com Portugal true"
+    },
+    {
+      "nome": "2i·2 · a palavra do provisório segue a edição, nas duas",
+      "passa": true,
+      "prova": "pt {\"provisório\":18} · en {\"provisional\":18}"
+    },
+    {
+      "nome": "2i·3a · os 308 pontos do mapa têm o mesmo tamanho (Emenda 3)",
+      "passa": true,
+      "prova": "308 pontos · 1 tamanho(s): 9×9 · 1 com página"
+    },
+    {
+      "nome": "2i·3b · o ponto escolhido é um anel de tinta, e nunca um enchimento",
+      "passa": true,
+      "prova": "Beja · 1280 · relance: enchimento rgb(246, 247, 244) = papel rgb(246, 247, 244) · ≠ tinta rgb(23, 25, 27) · anel 3 contra 1.2 · Beja · 1280 · leitura (localizador): enchimento rgb(246, 247, 244) = papel rgb(246, 247, 244) · ≠ tinta rgb(23, 25, 27) · anel 3 contra 1.2 · Beja · 390: enchimento rgb(246, 247, 244) = papel rgb(246, 247, 244) · ≠ tinta rgb(23, 25, 27) · anel 3 contra 1.2 · Évora escolhida: enchimento rgb(23, 25, 27) = tinta rgb(23, 25, 27)"
+    },
+    {
+      "nome": "2i·3c · a frase de neutralidade acompanha o mapa em todas as posturas",
+      "passa": true,
+      "prova": "País · inteiro (inteiro): 1 visível, dentro do mapa true · escolha · inteiro (inteiro): 1 visível, dentro do mapa true · Évora · localizador (localizador): 1 visível, dentro do mapa true · Évora · localizador · 390 (localizador): 1 visível, dentro do mapa true · País · 390 (inteiro): 1 visível, dentro do mapa true"
+    },
+    {
+      "nome": "2i·3d · abaixo de 640 nenhum ponto é activável, e a leitura fica",
+      "passa": true,
+      "prova": "390: alvos «none», seta lê «Redondo», Enter → municipio:beja, espaço → municipio:beja · 1280: alvos «all», Enter → municipio:redondo"
+    },
+    {
+      "nome": "2i·5 · o espaço activa os comandos de âmbito e de densidade",
+      "passa": true,
+      "prova": "espaço na densidade → leitura (rolagem 0) · espaço no âmbito → modo regiao · com role=\"button\": âmbito 6/6, densidade 2/2"
+    },
+    {
+      "nome": "2i·5 · nenhuma régua com papel de imagem e sem nome acessível",
+      "passa": true,
+      "prova": "10 réguas · 10 com aria-hidden · 0 com role=\"img\" sem nome · 0 com conteúdo focável dentro"
+    }
+  ],
+  "despejos": {
+    "estado:/?densidade=leitura": "Saltar para o conteúdo\nMenu\nInício\nMunicípios\nEstudos\nLivro-razão\nAgenda\nMétodo\nCorreções\nSobre\nEnglish\nO Estado do País\nPortugal, medido. Cada número tem fonte.\nPainel europeu reconferido a\n2026-08-18\nAgenda:\n4\n0\nÂmbito\nPaís\nRegião\nMunicípio\nDensidade\nRelance\nLeitura breve\nGrande Lisboa\nPenínsula de Setúbal\nAlgarve\nMadeira\nAlentejo\nAs regiões publicadas na régua da convergência.\n8\n4\nfora do limiar\nsem limiar\nO painel de desequilíbrios macroeconómicos e o painel social europeu, com os limiares que as instituições publicam.\nAbrir a escolha de concelho\n→\n→\n100\n50\n135\nUE-27 = 100\n55\n77\n82\n88\n89\n129\n82\nprovisório\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\n129\nprovisório\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\n55\nprovisório\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\n89\nprovisório\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\n88\nprovisório\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\n77\nprovisório\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\nAs regiões não se desenham em pontos de concelho: a régua é o instrumento do âmbito regional. O mapa volta quando o âmbito é um município.\nPortugal · painel europeu · 8 medidas · Leitura breve\nlimiar\n60\n· acima\n89,7\n2025\nDívida pública\nDívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu, e a descer.\nabrir\nfechar\n0\n60\n100\nfora do limiar\no recibo completo está na linha\nLinha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte\nfonte\nlimiar\n35\n· abaixo\n−50,2\n2025\nPosição de investimento internacional\nO que o país tem a haver do exterior menos o que lhe deve: negativo quando deve mais do que tem a haver.\nabrir\nfechar\n−60\n35\n0\nfora do limiar\no recibo completo está na linha\nLinha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte\nfonte\nlimiar\n9\n· acima\n21,3\n2025\nCusto unitário do trabalho\n2024\nabrir\nfechar\n0\n9\n25\nfora do limiar\no recibo completo está na linha\nLinha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte\nfonte\nlimiar\n9\n· acima\n17,6\n2025\nPreços da habitação\n2024\nabrir\nfechar\n0\n9\n20\nfora do limiar\no recibo completo está na linha\nLinha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte\nfonte\nsem limiar\n79,6\n20\n64\n2025\nTaxa de emprego\nIndicador principal do Painel Social Europeu. Está acima da média da União, que é uma posição relativa, não um limiar: muda quando os outros mudam.\nabrir\nfechar\nSem referência publicada: não há barra a desenhar.\nsem limiar\no recibo completo está na linha\nLinha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte\nfonte\nsem limiar\n57,9\n3\n2025\nCrianças em creche\nCrianças com menos de três anos em cuidados formais. É das medidas em que Portugal mais se destaca no painel social.\nabrir\nfechar\nSem referência publicada: não há barra a desenhar.\nsem limiar\no recibo completo está na linha\nLinha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte\nfonte\nsem limiar\n6,1\n18\n24\n2025\nAbandono escolar precoce\nJovens que deixaram a escola com o secundário incompleto e não estão em formação. Era mais de um terço no início do século.\nabrir\nfechar\nSem referência publicada: não há barra a desenhar.\nsem limiar\no recibo completo está na linha\nLinha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte\nfonte\nsem limiar\n6,3\n2025\nSobrecarga do custo da habitação\n40\nabrir\nfechar\nSem referência publicada: não há barra a desenhar.\nsem limiar\no recibo completo está na linha\nLinha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte\nfonte\n2026-08-18\nA régua da convergência\nabrir\nfechar\nn.º 1\nA régua da convergência\n100\nRelance\n82\nprovisório\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\nPortugal\nÍndice · UE-27 = 100\n2024\nPôr na régua\nPortugal\nGrande Lisboa\nPenínsula de Setúbal\nAlgarve\nMadeira\nAlentejo\nTodas as regiões\nRepor\nRégua de convergência: índice de PIB per capita em PPS, UE-27 = 100\nUma escala horizontal com a média da UE-27 marcada em 100. Cada região selecionada aparece como um marcador na régua, com o seu valor.\n50\n60\n70\n80\n90\n100\n110\n120\n130\nUE-27 = 100\n−18 pontos\nPortugal\n82\nLeitura breve\n18\nLinha do livro-razão: calculado · Avaliação Económica Regional de Portugal 2026\nfonte\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\nMétodo, ressalvas e proveniência\nO que o número quer dizer\nO índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27. Um valor abaixo da média significa menos poder de compra por pessoa; um valor acima, mais.\nRessalva\n2024\nDistâncias\nAs diferenças em pontos que a régua desenha são calculadas a partir dos valores publicados. São aritmética sobre esses valores, não valores publicados em si. Cada uma tem a sua própria linha no livro-razão, com a conta explicada.\nOs dados desta régua\nUma linha por região posta na régua: o valor tal como foi publicado, o ano a que se refere, a unidade, o estudo e o id da afirmação no livro-razão. O ficheiro é gerado do livro-razão a cada construção; não é uma cópia mantida à parte.\ndescarregar os dados (CSV) ↓\nProveniência\nAvaliação Económica Regional de Portugal 2026\n82\nprovisório\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\n129\nprovisório\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\n55\nprovisório\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\n89\nprovisório\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\n88\nprovisório\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\n77\nprovisório\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\n2000\n78\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\n2024\nAs páginas · o resto vive a uma porta\nMunicípios\n1\n308\ntem página\na página inteira →\nEstudos\n11\n15\na página inteira →\nAgenda\n4\n0\n1\n0\na página inteira →\nEncontrou um erro\ncorrecoes@oestadodopais.pt\nO registo de correções →\nInício\nMunicípios\nEstudos\nLivro-razão\nAgenda\nMétodo\nCorreções\nSobre\nEnglish",
+    "estado:/?ambito=regiao%3Aalentejo&densidade=leitura": "Saltar para o conteúdo\nMenu\nInício\nMunicípios\nEstudos\nLivro-razão\nAgenda\nMétodo\nCorreções\nSobre\nEnglish\nO Estado do País\nPortugal, medido. Cada número tem fonte.\nPainel europeu reconferido a\n2026-08-18\nAgenda:\n4\n0\nÂmbito\nPaís\nRegião\nMunicípio\nDensidade\nRelance\nLeitura breve\nEscreva o nome do concelho\nÉvora\ntem página\nUm toque no mapa devolve os concelhos mais próximos, para escolher. No telemóvel os pontos não são alvos: a pesquisa é o caminho.\n1\n308\ntem página\nAlentejo · região\n23\nLinha do livro-razão: calculado · Alentejo & Algarve — Economy, Society, Strategy\nfonte\n2000\n22\nLinha do livro-razão: calculado · Alentejo & Algarve — Economy, Society, Strategy\nfonte\nsem limiar\n100\nMadeira\nAçores\nÉvora\n1\n308\ntem página\nO ponto aceso marca cobertura editorial, não qualidade nem importância. Os restantes pontos marcam a posição do município e mais nada.\n308\nLinha do livro-razão: calculado · O Estado do País, apuramento próprio\nfonte\ntrocar de concelho →\n1\n308\ntem página\nO ponto aceso marca cobertura editorial, não qualidade nem importância. Os restantes pontos marcam a posição do município e mais nada.\nContagem verificada nos ficheiros\nContinente\n278\nLinha do livro-razão: O Estado do País, apuramento próprio\nfonte\nAçores\n19\nLinha do livro-razão: O Estado do País, apuramento próprio\nfonte\nMadeira\n11\nLinha do livro-razão: O Estado do País, apuramento próprio\nfonte\nTotal\n308\nLinha do livro-razão: calculado · O Estado do País, apuramento próprio\nfonte\n2025\nLinha do livro-razão: calculado · O Estado do País, apuramento próprio\nfonte\nToque num ponto para escolher o concelho.\nMétodo, ressalvas e proveniência\nCarta Administrativa Oficial de Portugal (CAOP) 2025 Publicação: Direção-Geral do Território (DGT) Distribuição: dados.gov.pt · licença CC-BY Ficheiros: CAOP_Continente_2025-gpkg.zip · CAOP_RAA_2025-gpkg.zip · CAOP_RAM_2025-gpkg.zip (GeoPackage) https://geo2.dgterritorio.gov.pt/caop/ https://dados.gov.pt/datasets/carta-administrativa-oficial-de-portugal-caop2025-continente Acedido a 12 de Agosto de 2026.\ndescarregar os dados (CSV) ↓\nPasse o cursor sobre um ponto para ler o município.\nTeclado: Tab até ao mapa, setas para percorrer os municípios vizinhos, Home para voltar a Évora.\nAbrir a escolha de concelho\n→\n→\nAlentejo · região · Leitura breve\nsem limiar\n77\nprovisório\nÍndice · UE-27 = 100\n2024\nAlentejo\nabrir\nfechar\n0\nUE-27 = 100\nsem limiar\no recibo completo está na linha\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\nEncontrou um erro\ncorrecoes@oestadodopais.pt\nO registo de correções →\nInício\nMunicípios\nEstudos\nLivro-razão\nAgenda\nMétodo\nCorreções\nSobre\nEnglish",
+    "estado:/?ambito=municipio%3Aevora&densidade=leitura": "Saltar para o conteúdo\nMenu\nInício\nMunicípios\nEstudos\nLivro-razão\nAgenda\nMétodo\nCorreções\nSobre\nEnglish\nO Estado do País\nPortugal, medido. Cada número tem fonte.\nPainel europeu reconferido a\n2026-08-18\nAgenda:\n4\n0\nÂmbito\nPaís\nRegião\nMunicípio\nDensidade\nRelance\nLeitura breve\nEscreva o nome do concelho\nÉvora\ntem página\nUm toque no mapa devolve os concelhos mais próximos, para escolher. No telemóvel os pontos não são alvos: a pesquisa é o caminho.\n1\n308\ntem página\nÉvora · município · distrito de Évora\nAs medidas do concelho, cada uma com a sua linha.\ndentro do limiar\nsem limiar\nEsta página mede o município de Évora e mostra de onde vem cada medida. Não interpreta: onde uma fonte não estabelece uma coisa, a página di-lo em vez de a supor.\nMadeira\nAçores\nÉvora\n1\n308\ntem página\nO ponto aceso marca cobertura editorial, não qualidade nem importância. Os restantes pontos marcam a posição do município e mais nada.\n308\nLinha do livro-razão: calculado · O Estado do País, apuramento próprio\nfonte\ntrocar de concelho →\na página inteira, com quem governou →\nMétodo, ressalvas e proveniência\nCarta Administrativa Oficial de Portugal (CAOP) 2025 Publicação: Direção-Geral do Território (DGT) Distribuição: dados.gov.pt · licença CC-BY Ficheiros: CAOP_Continente_2025-gpkg.zip · CAOP_RAA_2025-gpkg.zip · CAOP_RAM_2025-gpkg.zip (GeoPackage) https://geo2.dgterritorio.gov.pt/caop/ https://dados.gov.pt/datasets/carta-administrativa-oficial-de-portugal-caop2025-continente Acedido a 12 de Agosto de 2026.\ndescarregar os dados (CSV) ↓\nPasse o cursor sobre um ponto para ler o município.\nTeclado: Tab até ao mapa, setas para percorrer os municípios vizinhos, Home para voltar a Évora.\nAbrir a escolha de concelho\n→\n→\nÉvora · município · distrito de Évora · Leitura breve\nsem limiar\n58 567\n2025\nPopulação residente\nEstimativa anual do INE para o concelho.\nabrir\nfechar\nSem referência publicada: não há barra a desenhar.\nsem limiar\nÉvora · município\no recibo completo está na linha\nLinha do livro-razão: Évora — Economia, Investidores, Portas Abertas 2026\nfonte\nsem limiar\n111,47\n2023\nPoder de compra por habitante\nPoder de compra per capita, publicado pelo INE para todos os concelhos.\nabrir\nfechar\nSem referência publicada: não há barra a desenhar.\nsem limiar\nÉvora · município\no recibo completo está na linha\nLinha do livro-razão: Évora — Economia, Investidores, Portas Abertas 2026\nfonte\nsem limiar\n1 596\n2024\nDesemprego registado\nInscritos no fim do mês nos serviços de emprego, ficheiro mensal por concelho.\nabrir\nfechar\nSem referência publicada: não há barra a desenhar.\nsem limiar\nÉvora · município\no recibo completo está na linha\nLinha do livro-razão: Évora — Quinze Anos, Cinco Mandatos\nfonte\nsem limiar\n7 907\n2024\nEmpresas sediadas\nSistema de contas integradas das empresas, por concelho da sede.\nabrir\nfechar\nSem referência publicada: não há barra a desenhar.\nsem limiar\nÉvora · município\no recibo completo está na linha\nLinha do livro-razão: Évora — Economia, Investidores, Portas Abertas 2026\nfonte\nsem limiar\n54 681 562\n2024\nDívida total do município\nSérie anual da Direção-Geral das Autarquias Locais, o regulador das contas municipais.\nabrir\nfechar\nSem referência publicada: não há barra a desenhar.\nsem limiar\nÉvora · município\no recibo completo está na linha\nLinha do livro-razão: Évora — Orçamentado, Pago, Devido 2025\nfonte\ndentro do limiar\n105,5\n150\nLinha do livro-razão: Évora — Orçamentado, Pago, Devido 2025\nfonte\n2024\nÍndice de dívida\nCalculado sobre duas colunas do mesmo ficheiro do regulador. A aritmética está na linha.\nabrir\nfechar\n0\nlimite legal\ndentro do limiar\nÉvora · município\no recibo completo está na linha\nLinha do livro-razão: calculado · Évora — Orçamentado, Pago, Devido 2025\nfonte\nsem limiar\n61,44\n2025\nExecução da receita\nReportado pelo município: sai da prestação de contas do próprio, não de um agregador central.\nabrir\nfechar\nSem referência publicada: não há barra a desenhar.\nsem limiar\nÉvora · município\no recibo completo está na linha\nLinha do livro-razão: Évora — Orçamentado, Pago, Devido 2025\nfonte\nsem limiar\n137\n2025\nPrazo médio de pagamento\nReportado pelo município: sai da prestação de contas do próprio, não de um agregador central.\nabrir\nfechar\nSem referência publicada: não há barra a desenhar.\nsem limiar\nÉvora · município\no recibo completo está na linha\nLinha do livro-razão: Évora — Orçamentado, Pago, Devido 2025\nfonte\nEncontrou um erro\ncorrecoes@oestadodopais.pt\nO registo de correções →\nInício\nMunicípios\nEstudos\nLivro-razão\nAgenda\nMétodo\nCorreções\nSobre\nEnglish",
+    "edicao:pt": "Saltar para o conteúdo\nMenu\nInício\nMunicípios\nEstudos\nLivro-razão\nAgenda\nMétodo\nCorreções\nSobre\nEnglish\nO Estado do País\nPortugal, medido. Cada número tem fonte.\nPainel europeu reconferido a\n2026-08-18\nAgenda:\n4\n0\nÂmbito\nPaís\nRegião\nMunicípio\nDensidade\nRelance\nLeitura breve\nGrande Lisboa\nPenínsula de Setúbal\nAlgarve\nMadeira\nAlentejo\nAs regiões publicadas na régua da convergência.\nAlentejo · região\n23\nLinha do livro-razão: calculado · Alentejo & Algarve — Economy, Society, Strategy\nfonte\n2000\n22\nLinha do livro-razão: calculado · Alentejo & Algarve — Economy, Society, Strategy\nfonte\nsem limiar\n100\nAbrir a escolha de concelho\n→\n→\n100\n50\n135\nUE-27 = 100\n55\n77\n82\n88\n89\n129\n82\nprovisório\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\n129\nprovisório\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\n55\nprovisório\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\n89\nprovisório\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\n88\nprovisório\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\n77\nprovisório\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\nAs regiões não se desenham em pontos de concelho: a régua é o instrumento do âmbito regional. O mapa volta quando o âmbito é um município.\nsem limiar\n77\nprovisório\nÍndice · UE-27 = 100\n2024\nAlentejo\nabrir\nfechar\n0\nUE-27 = 100\nsem limiar\no recibo completo está na linha\nLinha do livro-razão: Avaliação Económica Regional de Portugal 2026\nfonte\nEncontrou um erro\ncorrecoes@oestadodopais.pt\nO registo de correções →\nInício\nMunicípios\nEstudos\nLivro-razão\nAgenda\nMétodo\nCorreções\nSobre\nEnglish",
+    "edicao:en": "Skip to content\nMenu\nHome\nMunicipalities\nStudies\nLedger\nAgenda\nMethod\nCorrections\nAbout\nPortuguês\nO Estado do País\nPortugal, medido. Cada número tem fonte.\nEuropean panel re-checked on\n2026-08-18\nAgenda:\n4\n0\nScope\nCountry\nRegion\nMunicipality\nDensity\nAt a glance\nBrief reading\nGreater Lisbon\nSetúbal Peninsula\nAlgarve\nMadeira\nAlentejo\nThe regions published on the convergence rule.\nAlentejo · region\n23\nLedger row: calculated · Alentejo & Algarve — Economy, Society, Strategy\nsource\n2000\n22\nLedger row: calculated · Alentejo & Algarve — Economy, Society, Strategy\nsource\nno threshold\n100\nOpen the concelho chooser\n→\n→\n100\n50\n135\nEU-27 = 100\n55\n77\n82\n88\n89\n129\n82\nprovisional\nLedger row: Avaliação Económica Regional de Portugal 2026\nsource\n129\nprovisional\nLedger row: Avaliação Económica Regional de Portugal 2026\nsource\n55\nprovisional\nLedger row: Avaliação Económica Regional de Portugal 2026\nsource\n89\nprovisional\nLedger row: Avaliação Económica Regional de Portugal 2026\nsource\n88\nprovisional\nLedger row: Avaliação Económica Regional de Portugal 2026\nsource\n77\nprovisional\nLedger row: Avaliação Económica Regional de Portugal 2026\nsource\nRegions are not drawn as concelho points: the rule is the instrument of the regional scope. The map returns when the scope is a municipality.\nno threshold\n77\nprovisional\nIndex · EU-27 = 100\n2024\nAlentejo\nopen\nclose\n0\nEU-27 = 100\nno threshold\nthe full receipt is on the row\nLedger row: Avaliação Económica Regional de Portugal 2026\nsource\nFound an error\ncorrecoes@oestadodopais.pt\nThe corrections log →\nHome\nMunicipalities\nStudies\nLedger\nAgenda\nMethod\nCorrections\nAbout\nPortuguês"
+  }
+}

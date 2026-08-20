@@ -386,7 +386,7 @@
   color: var(--muted);
 }
 
-/* ------------------------------------------------- a camada de fundo do mapa
+/* ------------------------------------------------- a camada do aparelho do mapa
  *
  * Subetapa 2g, ponto 2: a citação inteira da CAOP, a porta do CSV e as duas
  * dicas de uso desceram para aqui, e a ficha ao lado do mapa ficou com a
@@ -394,12 +394,12 @@
  * a ficha que mandava na altura da cabeça, e a cabeça é a primeira coisa que se
  * lê.
  */
-.mapa-fundo {
+.mapa-aparelho {
   grid-column: 1 / -1;
   border-top: 1px solid var(--rule);
   padding-top: 8px;
 }
-.mapa-fundo-sum {
+.mapa-aparelho-sum {
   font-family: var(--f-versal);
   font-size: 12.5px;
   letter-spacing: 0.05em;
@@ -412,17 +412,17 @@
   align-items: center;
   gap: 8px;
 }
-.mapa-fundo-sum::-webkit-details-marker {
+.mapa-aparelho-sum::-webkit-details-marker {
   display: none;
 }
-.mapa-fundo-sum::before {
+.mapa-aparelho-sum::before {
   content: '▸';
   font-size: 10px;
 }
-.mapa-fundo[open] .mapa-fundo-sum::before {
+.mapa-aparelho[open] .mapa-aparelho-sum::before {
   content: '▾';
 }
-.mapa-fundo-corpo {
+.mapa-aparelho-corpo {
   display: flex;
   flex-direction: column;
   gap: 9px;
@@ -469,7 +469,7 @@
   column-gap: 18px;
   align-items: center;
 }
-[data-postura='localizador'] .mapa-fundo {
+[data-postura='localizador'] .mapa-aparelho {
   display: none;
 }
 .mapa-cartao-nome {
@@ -482,6 +482,15 @@
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;
   font-size: 12px;
+  color: var(--muted);
+}
+/* A frase de neutralidade, dentro do cartão (etapa 2i, achado 8). É a mesma
+   cadeia da ficha e o mesmo cinzento (`--muted` é `--g1`, o texto secundário
+   que a etapa 1c já mede); o que muda é o corpo, porque aqui ela acompanha um
+   mapa de 170px e não um de 281px. */
+.mapa-cartao-neutro {
+  font-size: 12px;
+  line-height: 1.45;
   color: var(--muted);
 }
 .mapa-cartao-portas {
@@ -983,14 +992,80 @@ a.porta:hover .porta-abrir {
   display: none;
 }
 
+/* =============================================================================
+ * O APARELHO DO INSTRUMENTO N.º 1 (etapa 2i, achado 9)
+ *
+ * A dobra chamava-se `.deep`, que é a classe da terceira densidade da v2 — a que
+ * a Emenda 2 aposentou. O que a dobra tem lá dentro nunca foi uma densidade: é o
+ * aparelho do instrumento, com o mesmo rótulo que o do mapa.
+ *
+ * Estas seis regras são as de `site.css` (linhas 1073 a 1111), COPIADAS sem
+ * mudar um valor nem uma ficha, porque `site.css` é do construtor A e `.deep`
+ * continua a governar as dobras de `EstudoView` e de `MunicipioView`, que são
+ * das etapas 3 e 4. Quando essas etapas reescreverem as suas dobras, as regras
+ * `.deep` de `site.css` saem com elas — é o mesmo caminho que o bloco de
+ * remapeamento do amarelo já leva (nota da etapa 2c, pedido 1).
+ *
+ * As classes de dentro (`deep-body`, `deep-item`, `deep-k`, `deep-v`) ficam
+ * como estão: as regras que as governam não dependem de `.deep`, são as mesmas
+ * nas três vistas, e forká-las aqui daria três nomes a uma coisa só.
+ * ========================================================================== */
+
+.aparelho {
+  border-top: 1px solid var(--rule);
+  background: var(--paper);
+}
+.aparelho > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 15px clamp(20px, 2.8vw, 32px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.aparelho > summary::-webkit-details-marker {
+  display: none;
+}
+.aparelho > summary::before {
+  content: '';
+  width: 0;
+  height: 0;
+  flex: none;
+  border-left: 5px solid currentColor;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: transform 0.16s ease;
+  transform-origin: 30% 50%;
+}
+.aparelho[open] > summary::before {
+  transform: rotate(90deg);
+}
+.aparelho > summary:hover {
+  background: var(--g3);
+}
+
 /* ------------------------------------------------- as posturas do mapa (2d) */
 
-/* O concelho escolhido é maior, e é a única distinção além da cobertura. */
-.mun-escolhido {
-  fill: var(--ink);
-}
+/* O CONCELHO ESCOLHIDO É UM ESTADO DE INTERACÇÃO, E NUNCA UM ENCHIMENTO
+ * (Emenda 3; etapa 2i, achado 8).
+ *
+ * Enchia-se a tinta, que é exactamente o desenho de «tem página»: escolher Beja
+ * fazia Beja parecer coberta. A escolha passa a ser um ANEL — o mesmo contorno
+ * de tinta, mais grosso —, e o enchimento fica a ser só a cobertura. Assim um
+ * concelho sem página escolhido continua com o miolo em papel, e um concelho com
+ * página escolhido continua cheio: o anel diz «é este», e o enchimento continua
+ * a dizer «tem página». Duas perguntas, duas respostas, e nenhuma a fingir-se da
+ * outra.
+ */
 .mapa-svg .mun-escolhido {
-  stroke-width: 2;
+  stroke-width: 3;
 }
 /* A escolha só existe quando a página está a escolher: fora daí nenhum ponto é
    alvo, e é a Emenda 3 a dizê-lo para o telemóvel e o bom senso a dizê-lo para
