@@ -103,6 +103,14 @@ export const REGRAS = [
         'Every ledger row names the body that produced the value and the document it is printed in. This rule is not enforced by a machine: it is enforced by being in plain sight, row by row, in the public ledger.',
       ],
     },
+    limite: {
+      pt: [
+        'Nem todas as linhas têm já a proveniência completa: a que não tem leva o marcador no campo que falta, e a conta ao lado diz quantas são.',
+      ],
+      en: [
+        'Not every row has its provenance complete yet: one that does not carries the marker in the missing field, and the count beside says how many there are.',
+      ],
+    },
     prova: [
       { chave: 'fontes', rotulo: { pt: 'organismos citados', en: 'bodies cited' } },
       {
@@ -110,6 +118,13 @@ export const REGRAS = [
         rotulo: {
           pt: 'linhas com o tipo de documento declarado',
           en: 'rows with the document kind declared',
+        },
+      },
+      {
+        chave: 'divida',
+        rotulo: {
+          pt: 'linhas com dívida de proveniência',
+          en: 'rows with provenance debt',
         },
       },
     ],
