@@ -1,4 +1,93 @@
 /* ============================================================
+   OS TIPOS, ALOJADOS AQUI (etapa 1b do redesenho v3, DECISIONS §1.50)
+
+   `IDENTIDADE.md` §1: «Só tipos alojados aqui». Nenhum anfitrião de terceiros,
+   nem `fonts.googleapis.com` nem `fonts.gstatic.com`: os ficheiros estão em
+   `public/tipos/`, com a licença ao lado, e são servidos por este sítio.
+
+   Os bytes vieram dos repositórios das próprias famílias, num commit fixado, e
+   foram convertidos para WOFF2 sem subconjunto e sem tirar um glifo. A origem,
+   o commit, o resumo SHA-256 de cada ficheiro e a conferência de que o WOFF2
+   tem os mesmos glifos e a mesma tabela de nomes do TTF de montante estão em
+   `design/especime-v3/TIPOS.md`.
+
+   `font-display: swap`: o texto lê-se com a pilha de recuo enquanto o ficheiro
+   não chega, e nunca fica invisível. As pilhas de recuo estão nas fichas
+   `--f-prosa`, `--f-instr` e `--f-versal`, mais abaixo.
+
+   O nome do ficheiro variável do Bitter traz parênteses retos, que são o nome
+   de montante e não se muda; o endereço escreve-os codificados (`%5B`, `%5D`)
+   para que a folha e o `<link rel="preload">` do `Base.astro` peçam a mesma
+   cadeia, carácter a carácter, e a pré-carga sirva mesmo para alguma coisa.
+   ============================================================ */
+
+@font-face {
+  font-family: 'Spectral';
+  src: url('/tipos/spectral/Spectral-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Spectral';
+  src: url('/tipos/spectral/Spectral-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Spectral';
+  src: url('/tipos/spectral/Spectral-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Spectral';
+  src: url('/tipos/spectral/Spectral-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+/* O 700 existe porque o `<strong>` da prosa o pede sem o pedir: sem esta
+   ficha, o navegador engorda o 400 por conta própria, e uma serifa engordada
+   por máquina não é a mesma letra. */
+@font-face {
+  font-family: 'Spectral';
+  src: url('/tipos/spectral/Spectral-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Spectral SC';
+  src: url('/tipos/spectral-sc/SpectralSC-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Spectral SC';
+  src: url('/tipos/spectral-sc/SpectralSC-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* O Bitter entra como um só ficheiro variável, com o eixo `wght` de 100 a 900
+   declarado: um ficheiro serve todos os pesos do aparelho, e a régua da etapa
+   mede-lhe os tabulares. O itálico do Bitter não entra: nenhuma regra da folha
+   o pede, e um ficheiro que não se usa é peso que o leitor paga por nada. */
+@font-face {
+  font-family: 'Bitter';
+  src: url('/tipos/bitter/Bitter%5Bwght%5D.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================================
    TOKENS — padrão de tema de três estados.
 
    :root nu                       = paleta clara completa

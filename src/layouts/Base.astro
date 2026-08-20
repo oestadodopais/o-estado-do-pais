@@ -72,6 +72,34 @@ const organizationJsonLd = {
          o endereço continua a ser o mesmo, só não é convidado ao índice. */
       noindex && <meta name="robots" content="noindex, follow" />
     }
+    {
+      /* OS DOIS TIPOS DA PRIMEIRA PINTURA (etapa 1b do redesenho v3).
+         Só dois: a prosa (Spectral Regular) e o aparelho (Bitter variável).
+         Os restantes cinco ficheiros chegam quando a folha os pede, com
+         `font-display: swap` a segurar a leitura entretanto. Pré-carregar
+         tudo seria disputar a largura de banda da primeira pintura consigo
+         própria. `crossorigin` é obrigatório mesmo na mesma origem: sem ele o
+         navegador pede o ficheiro duas vezes, porque a pré-carga e o pedido do
+         `@font-face` não seriam o mesmo pedido.
+
+         O endereço é, carácter a carácter, o que `tokens.css` escreve, com os
+         parênteses retos do nome de montante codificados. */
+    }
+    <link
+      rel="preload"
+      href="/tipos/spectral/Spectral-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/tipos/bitter/Bitter%5Bwght%5D.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
     <link rel="canonical" href={canonical} />
     {
       alternates?.map((a) => (

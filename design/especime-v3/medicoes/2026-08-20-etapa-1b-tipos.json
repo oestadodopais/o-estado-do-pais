@@ -1,0 +1,121 @@
+{
+  "tamanhoPx": 100,
+  "cadeias": [
+    "1111111",
+    "0000000"
+  ],
+  "provas": [
+    {
+      "familia": "Bitter",
+      "peso": 400,
+      "prova": "tnum",
+      "comparacao": "normal  contra  tabular-nums",
+      "fichasCasadas": 1,
+      "carregada": true,
+      "tamanhoPx": 100,
+      "larguras": {
+        "1111111 · normal": 284.438,
+        "0000000 · normal": 448.938,
+        "1111111 · tabular-nums": 441,
+        "0000000 · tabular-nums": 441
+      },
+      "veredito": "tabulares reais: a feature alinha o que estava desalinhado"
+    },
+    {
+      "familia": "Bitter",
+      "peso": 600,
+      "prova": "tnum",
+      "comparacao": "normal  contra  tabular-nums",
+      "fichasCasadas": 1,
+      "carregada": true,
+      "tamanhoPx": 100,
+      "larguras": {
+        "1111111 · normal": 296.266,
+        "0000000 · normal": 445.828,
+        "1111111 · tabular-nums": 441,
+        "0000000 · tabular-nums": 441
+      },
+      "veredito": "tabulares reais: a feature alinha o que estava desalinhado"
+    },
+    {
+      "familia": "Bitter",
+      "peso": 400,
+      "prova": "onum",
+      "comparacao": "lining-nums proportional-nums  contra  oldstyle-nums proportional-nums",
+      "fichasCasadas": 1,
+      "carregada": true,
+      "tamanhoPx": 100,
+      "larguras": {
+        "1111111 · lining-nums proportional-nums": 284.438,
+        "0000000 · lining-nums proportional-nums": 448.938,
+        "1111111 · oldstyle-nums proportional-nums": 291.672,
+        "0000000 · oldstyle-nums proportional-nums": 461.078
+      },
+      "veredito": "os antigos existem e entram: a largura muda entre os dois conjuntos proporcionais"
+    },
+    {
+      "familia": "Spectral",
+      "peso": 400,
+      "prova": "tnum",
+      "comparacao": "normal  contra  tabular-nums",
+      "fichasCasadas": 1,
+      "carregada": true,
+      "tamanhoPx": 100,
+      "larguras": {
+        "1111111 · normal": 350,
+        "0000000 · normal": 350,
+        "1111111 · tabular-nums": 350,
+        "0000000 · tabular-nums": 350
+      },
+      "veredito": "as duas cadeias já mediam o mesmo sem a feature (tabulares por defeito)"
+    },
+    {
+      "familia": "Spectral",
+      "peso": 400,
+      "prova": "onum-cego",
+      "comparacao": "normal  contra  oldstyle-nums",
+      "fichasCasadas": 1,
+      "carregada": true,
+      "tamanhoPx": 100,
+      "larguras": {
+        "1111111 · normal": 350,
+        "0000000 · normal": 350,
+        "1111111 · oldstyle-nums": 350,
+        "0000000 · oldstyle-nums": 350
+      },
+      "veredito": "a largura NÃO muda neste par, e não é prova de nada: os dois conjuntos são tabulares e têm a mesma marcha"
+    },
+    {
+      "familia": "Spectral",
+      "peso": 400,
+      "prova": "onum",
+      "comparacao": "lining-nums proportional-nums  contra  oldstyle-nums proportional-nums",
+      "fichasCasadas": 1,
+      "carregada": true,
+      "tamanhoPx": 100,
+      "larguras": {
+        "1111111 · lining-nums proportional-nums": 297.5,
+        "0000000 · lining-nums proportional-nums": 387.813,
+        "1111111 · oldstyle-nums proportional-nums": 285.5,
+        "0000000 · oldstyle-nums proportional-nums": 398
+      },
+      "veredito": "os antigos existem e entram: a largura muda entre os dois conjuntos proporcionais"
+    },
+    {
+      "familia": "Spectral SC",
+      "peso": 400,
+      "prova": "onum",
+      "comparacao": "lining-nums proportional-nums  contra  oldstyle-nums proportional-nums",
+      "fichasCasadas": 1,
+      "carregada": true,
+      "tamanhoPx": 100,
+      "larguras": {
+        "1111111 · lining-nums proportional-nums": 297.5,
+        "0000000 · lining-nums proportional-nums": 387.813,
+        "1111111 · oldstyle-nums proportional-nums": 285.5,
+        "0000000 · oldstyle-nums proportional-nums": 398
+      },
+      "veredito": "os antigos existem e entram: a largura muda entre os dois conjuntos proporcionais"
+    }
+  ]
+}
