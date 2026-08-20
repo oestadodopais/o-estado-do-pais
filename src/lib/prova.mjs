@@ -46,6 +46,7 @@ import {
   loadClaims,
   provenienciaIncompleta,
   entradasDoRegisto,
+  POR_VERIFICAR,
   TIPOS_DE_DOCUMENTO,
 } from './ledger.mjs';
 import { ROUTES, routePath } from './routes.mjs';
@@ -350,7 +351,18 @@ export function prova(lang = 'pt') {
       linhas.filter((c) => (c.attributed_to ?? []).length > 0).length,
       livro,
     ),
-    fontes: k('fontes', new Set(linhas.map((c) => c.source).filter(Boolean)).size, livro),
+    /* Organismos citados, e o marcador não é um organismo.
+       O `source` de uma linha cuja fonte ainda não foi confirmada é o próprio
+       marcador, e contá-lo aqui punha «[a verificar]» a fazer de instituição:
+       a regra 1 rendia catorze organismos citados quando os nomeados são
+       treze. Apanhado pela segunda leitura cruzada de 20.08.2026 (achado 4,
+       `DECISIONS.md` §1.48). A mesma exclusão está na cópia própria do portão,
+       em `scripts/gate-html.mjs`, porque é ele que reconta a chave. */
+    fontes: k(
+      'fontes',
+      new Set(linhas.map((c) => c.source).filter((f) => f && f !== POR_VERIFICAR)).size,
+      livro,
+    ),
     tipos_de_documento: k('tipos_de_documento', claims.size - semTipo, livro, {
       detalhe: { ...porTipo, sem_tipo: semTipo },
     }),
