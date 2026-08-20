@@ -495,6 +495,34 @@ section {
 .claim-com-chip:has(.claim-sufixo) > .src-chip {
   margin-inline-start: 10px;
 }
+/* A PALAVRA DA RESSALVA DA FONTE (decisão (d); etapa 1f).
+
+   Vive ao pé do valor, entre a unidade e o selo, e é mobília: Bitter, minúscula,
+   `--g1` (6,24:1 sobre papel), sem caixa e sem cor. Não compete com o número e
+   não se confunde com o marcador de incerteza do sítio, que é `[a verificar]` e
+   tem a sua própria classe, a sua própria página e outro significado: aquele diz
+   que falta um campo à proveniência, este diz que a FONTE marcou o valor como
+   provisório. Duas coisas diferentes, duas formas diferentes.
+
+   O invólucro deixa de ser `nowrap` quando a palavra entra, para a linha poder
+   partir ANTES dela; o valor e a unidade ficam inteiros, que é o que o `nowrap`
+   existia para garantir. */
+.claim-provisorio {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  margin-left: 5px;
+}
+.claim-com-provisorio {
+  white-space: normal;
+}
+.claim-com-provisorio > .claim-value,
+.claim-com-provisorio > .claim-sufixo {
+  white-space: nowrap;
+}
+
 .claim-sufixo {
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;

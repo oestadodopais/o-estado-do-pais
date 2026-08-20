@@ -27,8 +27,51 @@
  * nada, e DENTRO do mesmo invólucro do selo, que é onde `auditaSelo()` o
  * procura. Só para símbolos que se colam: «euros» e «índice» são palavras e
  * levam o espaço que a frase já lhes dá.
+ *
+ * ---------------------------------------------------------------------------
+ * A PALAVRA «PROVISÓRIO» (decisão (d) da direção, 20.08.2026; etapa 1f)
+ * ---------------------------------------------------------------------------
+ *
+ * Onde a fonte marca o valor como provisório, a página di-lo POR PALAVRAS, ao
+ * pé do número, e em todas as superfícies ao mesmo tempo. O Eurostat marca seis
+ * linhas com `p`, a nota explicava-o na página da linha, e as outras
+ * superfícies mostravam o número como se fosse definitivo. Uma ressalva que só
+ * existe a uma viagem de distância não é uma ressalva.
+ *
+ * A CONDIÇÃO LÊ-SE DA LINHA, e nunca de uma lista escrita à mão: `source_flag`
+ * vem do `getClaim()`, que é o mesmo livro-razão que o portão confere. Hoje são
+ * seis linhas (as seis do PIB per capita de 2024, Portugal e as cinco regiões);
+ * amanhã são as que a fonte marcar, sem ninguém tocar em código. Duas linhas
+ * com `source_flag: "a)"` continuam sem palavra nenhuma, e são o controlo
+ * negativo que a própria casa já tinha.
+ *
+ * ONDE ELA VAI, E PORQUE PASSA NAS CONFERÊNCIAS DO PORTÃO:
+ *
+ *   · FORA do elemento `[data-claim]`. `formaDoValor(textoTranscrito(el))`
+ *     compara a CADEIA dentro desse elemento com o valor do livro-razão, e não
+ *     normaliza letras: uma palavra lá dentro faria as duas diferirem, que é
+ *     exactamente a conferência que o bloco T fechou;
+ *   · FORA do selo. `seloDaLinha()` compara o texto visível do `.src-chip`
+ *     («fonte», mais o marcador quando falta um campo) carácter a carácter, e
+ *     também a cadeia inteira com o texto oculto. Uma palavra dentro do selo
+ *     seria prosa dentro de uma marca que dispensa o varrimento;
+ *   · num `<span>` PRÓPRIO, sem `data-campo` nem `data-correcao`, que são os
+ *     atributos pelos quais o portão compara um campo transcrito da linha. O
+ *     `span` não é a nota da fonte: a nota continua a ser o campo
+ *     `source_flag_note` da página da linha, e o selo continua a ser a porta.
+ *
+ * A ORDEM É: valor, unidade colada, palavra, selo. A ressalva prende-se ao
+ * valor, e a porta fecha a unidade.
+ *
+ * O QUE ELA NÃO FAZ, e fica escrito: dentro de um `<svg>` não entra. Um
+ * `<span>` não é filho legítimo de um `<text>`, e o `<tspan>` que o substituiria
+ * teria de ser posicionado pelo instrumento que o desenha, e não por este
+ * componente. Os três usos com `as="text"` e `as="tspan"` são da etapa 2
+ * (`InstrumentoConvergencia.astro`), e o que fazer com eles é da cadeira: está
+ * na nota da etapa e em ISSUES.
  */
 import { getClaim } from '../lib/ledger.mjs';
+import { t } from '../i18n/strings.mjs';
 import Provenance from './Provenance.astro';
 
 const {
@@ -44,7 +87,12 @@ const {
 } = Astro.props;
 
 const claim = getClaim(id);
+const s = t(lang);
 const Tag = as;
+
+/** As etiquetas de texto de SVG, onde um `<span>` não pode entrar. */
+const TAGS_DE_SVG = new Set(['text', 'tspan', 'textPath']);
+const provisorio = claim.source_flag === 'p' && !TAGS_DE_SVG.has(String(as));
 const estilo = escala
   ? [`--figura-car:${[...String(claim.value)].length}`, style].filter(Boolean).join(';')
   : style;
@@ -52,20 +100,34 @@ const estilo = escala
 
 {
   chip ? (
-    <span class="claim claim-com-chip">
+    <span class:list={['claim', 'claim-com-chip', provisorio && 'claim-com-provisorio']}>
       <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
         {claim.value}
       </Tag>
       {sufixo && <span class="claim-sufixo" set:text={sufixo} />}
+      {provisorio && <span class="claim-provisorio">{s.prov.provisorio}</span>}
       <Provenance id={id} lang={lang} />
     </span>
   ) : sufixo ? (
-    <span class="claim">
+    <span class:list={['claim', provisorio && 'claim-com-provisorio']}>
       <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
         {claim.value}
       </Tag>
       <span class="claim-sufixo" set:text={sufixo} />
+      {provisorio && <span class="claim-provisorio">{s.prov.provisorio}</span>}
     </span>
+  ) : provisorio ? (
+    /* SEM INVÓLUCRO, e o portão foi quem o ensinou. `auditaSelo()` procura o
+       selo no PAI do elemento do valor, e pára aí: embrulhar um valor que não
+       tinha invólucro punha um `<span>` entre ele e o selo que a vista lhe tinha
+       posto ao lado, e cinco valores da primeira página passavam a aparecer «sem
+       selo para a sua própria linha». Um fragmento deixa o pai como estava. */
+    <>
+      <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
+        {claim.value}
+      </Tag>
+      <span class="claim-provisorio">{s.prov.provisorio}</span>
+    </>
   ) : (
     <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
       {claim.value}

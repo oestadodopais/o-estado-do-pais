@@ -29,6 +29,14 @@ Conferido: `assertKeyParity()` atira a cada `t()` e a construção está verde, 
 
 A ficha técnica pública da letra (a linha «A letra» do Método, plano §12) traria cadeias novas nas duas edições, e **não entra nesta etapa**: é texto governado e espera a palavra da direção.
 
+### Etapa 1f
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `prov.provisorio` | provisório | provisional | A ressalva que a fonte publica, dita por palavras ao pé do valor (decisão (d) da direção, 20.08.2026). Rende onde a linha tem `source_flag: "p"`, que hoje são seis linhas e amanhã são as que a fonte marcar. **Não é** o marcador de incerteza do sítio: `[a verificar]` diz que falta um campo à proveniência e fica em português nas duas edições; esta diz que o Eurostat marcou o valor como provisório, e traduz-se. Duas coisas diferentes, duas palavras diferentes, duas formas diferentes. A nota inteira continua a ser o campo `source_flag_note` da página da linha. |
+
+*(A chave `nav.menu` da subetapa 1e está na secção «Etapa 1» acima, com a razão da identidade aceite.)*
+
 ### Etapa 2
 
 **2a · o vocabulário de estado e o de cobertura.** As seis cadeias da proposta da etapa 0 entram tal como foram decididas, sem uma palavra mudada, e passam a viver no topo de `strings.mjs` (e não dentro de `home`), porque a mesma palavra tem de sair igual na primeira página, no índice dos concelhos e na página de um concelho.

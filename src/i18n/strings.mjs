@@ -61,6 +61,11 @@ export const STRINGS = {
          escondida para leitores de ecrã até à v2, e um leitor com vista via só
          um título de estudo em cinzento. */
       selo: 'fonte',
+      /* A ressalva da fonte, dita por palavras ao pé do valor (decisão (d) da
+         direção, 20.08.2026). Não é a nota: a nota é o campo `source_flag_note`
+         da página da linha, e continua lá inteira. Esta é a palavra que viaja
+         com o número para onde quer que ele vá. */
+      provisorio: 'provisório',
       lido: 'Lido a',
       fonte: 'Fonte',
       documento: 'Documento',
@@ -969,6 +974,7 @@ export const STRINGS = {
     prov: {
       calculado: 'calculated',
       selo: 'source',
+      provisorio: 'provisional',
       lido: 'Read on',
       fonte: 'Source',
       documento: 'Document',
