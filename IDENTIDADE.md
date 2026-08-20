@@ -440,7 +440,10 @@ rolam dentro da sua caixa, e não empurram a página.
 *Redação final do bloco T, 18.08.2026 (`DECISIONS.md` §1.47). O bloco foi
 fundido e está no ar desde a noite de 18.08.2026, pela palavra da direção
 (`main` `28709e1`, `verify:deploy` ✓ a 18.08 e outra vez a 20.08): o que se
-segue descreve o que ele deixa, e é o que está no ar.*
+segue descreve o que ele deixa, e é o que está no ar. **Dois pontos foram
+reescritos a 20.08.2026** (§1.48), quando a direção decidiu a licença do
+conjunto de dados: são o do conjunto e o das coisas que ficavam à espera dela,
+e o que eles descrevem entra no ar com a fusão do ramo `decisoes-2026-08-20`.*
 
 - **O teste 1 do `BRIEF-confianca.md` §6.8 passa em 22 das 132 linhas.** O
   recorte da linha impressa entrou a 18.08.2026 (§1.47, T2): a imagem da linha do
@@ -466,11 +469,21 @@ segue descreve o que ele deixa, e é o que está no ar.*
 - **O teste 8 conta-se no portão, não num protótipo.** Os três racionais contaram
   os valores da primeira página de três maneiras (28, 32, 35). A contagem que
   vale é a que o portão faz sobre a construção real.
-- **O conjunto de dados existe e não é oferecido.** `/livro-razao.csv`,
-  `/livro-razao.json` e um ficheiro por linha são construídos a cada corrida, e
-  **nenhuma página os liga**: a licença é decisão da direção e o índice do
-  livro-razão diz esse estado por palavras. Um estado desenhado (§7), e não o
-  marcador (§6): não falta ali uma prova, falta uma decisão.
+- **O conjunto de dados é oferecido, sob a licença que a direção decidiu.**
+  `/livro-razao.csv`, `/livro-razao.json` e um ficheiro por linha continuam a ser
+  construídos a cada corrida, e desde 20.08.2026 (§1.48) as páginas ligam-nos: os
+  dois índices oferecem o CSV e o JSON, cada uma das 264 páginas de linha abre a
+  porta do seu, e a licença fica escrita ao pé dos ficheiros que ela cobre, com a
+  atribuição ao lado. A licença é CC BY 4.0 e um só campo a diz
+  (`src/data/licenca.mjs`); o `check:dados` recusa a construção em que ela esteja
+  decidida e uma das edições não ofereça os ficheiros, e recusa a construção em
+  que ela não esteja e alguma página os ligue. **A licença cobre o que é da
+  casa**, e a página di-lo ao pé dela: a estrutura, os valores da casa, as
+  derivações e as descrições. O que está transcrito de uma fonte continua sob os
+  termos de quem o publicou, porque uma licença nossa não lhe pode tocar. A linha
+  de estado que dizia que a licença aguardava decisão saiu das duas edições: era
+  um estado desenhado (§7) e não o marcador (§6), e o que ali faltava era uma
+  decisão, que já foi tomada.
 - **O mapa do sítio continua sem `lastmod`, e agora com a medida.** O modelo de
   alteração por página foi construído no papel e medido antes de se decidir: a
   construção que publica clona a `--depth=10` e não pode datar 178 dos 244
@@ -478,11 +491,18 @@ segue descreve o que ele deixa, e é o que está no ar.*
   todas dependem das cadeias, da folha e do cabeçalho; e um mapa cometido seria
   estado escrito, que é o que a §10 recusa. As três medições estão em
   `astro.config.mjs`.
-- **Três coisas ficam à espera da direção**, e nenhuma delas é matéria de
-  construção: a licença do conjunto de dados, a licença do instantâneo do PRR
-  (que mantém três somas com o marcador) e a redação nova do limite da regra 6 do
-  Método, que o T4 propõe porque a antiga passou a ser falsa. As três estão na
-  §4 do `DECISIONS.md`, com a fase a que pertencem.
+- **Uma coisa fica à espera da direção**, e não é matéria de construção: a
+  licença do instantâneo do PRR, que mantém três somas com o marcador. É uma
+  pergunta jurídica, vai com o `legal/counsel-brief.md`, e o pedido de
+  esclarecimento ao publicador está escrito e por enviar
+  (`legal/rascunhos/2026-08-20-pedido-licenca-prr.md`). Está na §4 do
+  `DECISIONS.md`, com a fase a que pertence. **As outras duas foram decididas a
+  20.08.2026** (§1.48): a licença do conjunto de dados, que é CC BY 4.0, e a
+  primeira frase da regra 6 do Método, que deixou de prometer uma releitura
+  anterior à publicação e passou a dizer o que cada linha diz de si. A redação
+  nova do **limite** da mesma regra, que o T4 propôs a 18.08.2026 porque a antiga
+  passara a ser falsa, foi para o ar com a fusão desse bloco e vale enquanto não
+  for revogada.
 
 ---
 
