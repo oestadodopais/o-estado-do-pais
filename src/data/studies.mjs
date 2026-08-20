@@ -53,7 +53,12 @@ export const WORKS = [
     id: 'evora-quinze-anos-cinco-mandatos',
     slug: 'evora-quinze-anos-cinco-mandatos',
     subject: 'evora',
-    editions: [{ lang: 'pt', title: 'Évora — Quinze Anos, Cinco Mandatos', date: null, updated: null }],
+    /* Republicado a 2026-08-20 do motor: os excertos da ilha de recibos ganharam
+       a janela que o extractor corrigido produz, e nenhum valor mexeu. A razão é
+       de ponteiro, e a prova é o portão das edições do motor. DECISIONS §1.49. */
+    editions: [
+      { lang: 'pt', title: 'Évora — Quinze Anos, Cinco Mandatos', date: null, updated: '2026-08-20' },
+    ],
     description: {
       pt: 'Quinze anos de governo municipal em Évora, ao longo de cinco mandatos.',
       en: 'Fifteen years of municipal government in Évora, across five terms.',
@@ -75,14 +80,21 @@ export const WORKS = [
     id: 'evora-orcamentado-pago-devido-2025',
     slug: 'evora-orcamentado-pago-devido-2025',
     subject: 'evora',
+    /* Republicado a 2026-08-20 do motor, como o do 08 e pela mesma razão de
+       ponteiro. DECISIONS §1.49. */
     editions: [
-      { lang: 'pt', title: 'Évora — Orçamentado, Pago, Devido 2025', date: null, updated: null },
-      /* O título é o do próprio documento alojado: `<title>Évora — Budgeted,
-         Paid, Owed 2025</title>` em studies-src/…/en.html. Estava aqui sem o
-         «Évora — », e um título literal não se abrevia (15.08.2026, revisão
-         cruzada). O h1 do documento é outra frase — «Évora — what was
-         budgeted, what was paid, and what is owed» — e não é o título. */
-      { lang: 'en', title: 'Évora — Budgeted, Paid, Owed 2025', date: null, updated: null },
+      { lang: 'pt', title: 'Évora — Orçamentado, Pago, Devido 2025', date: null, updated: '2026-08-20' },
+      /* O TÍTULO É O NOME DO DOCUMENTO, e não a sua etiqueta `<title>`.
+         Até 2026-08-20 as duas coisas coincidiam, porque o que estava alojado
+         era o artefacto do claude.ai, cujo `<title>` o anfitrião punha a
+         «Évora — Budgeted, Paid, Owed 2025». O que está alojado agora é o
+         ficheiro do motor, e nele o `<title>` é o h1, «Évora — what was
+         budgeted, what was paid, and what is owed». O nome mantém-se, que é o
+         do próprio ficheiro do motor, e é a mesma convenção que as duas edições
+         de «Prometido, Pago, Auditado» já seguiam desde 15.08.2026. Estava aqui
+         sem o «Évora — », e um título literal não se abrevia (15.08.2026,
+         revisão cruzada). */
+      { lang: 'en', title: 'Évora — Budgeted, Paid, Owed 2025', date: null, updated: '2026-08-20' },
     ],
     description: {
       pt: 'O que foi orçamentado, o que foi pago e o que ficou em dívida no município de Évora.',
@@ -139,8 +151,13 @@ export const WORKS = [
      * por isso `updated` fica a null: não há revisão posterior a registar.
      */
     editions: [
-      { lang: 'pt', title: 'Évora — Prometido, Pago, Auditado 2026', date: '2026-08-04', updated: null },
-      { lang: 'en', title: 'Évora — Promised, Paid, Audited 2026', date: '2026-08-04', updated: null },
+      /* Republicadas a 2026-08-20 do motor, e a razão é SUBSTANTIVA e não de
+         ponteiro: os números da página mudaram com o instantâneo do PRR, que
+         passou de 2026-08-17 para 2026-08-19, e a frase de abertura passou a
+         dizer que o registo do plano de recuperação foi relido a 2026-08-20.
+         DECISIONS §1.49. */
+      { lang: 'pt', title: 'Évora — Prometido, Pago, Auditado 2026', date: '2026-08-04', updated: '2026-08-20' },
+      { lang: 'en', title: 'Évora — Promised, Paid, Audited 2026', date: '2026-08-04', updated: '2026-08-20' },
     ],
     // Nunca foi publicado fora deste sítio: não há endereço externo para dar.
     artifactUrl: null,
@@ -159,8 +176,8 @@ export const WORKS = [
       en: 'estudo-prometido-abertura-en',
     },
     description: {
-      pt: 'Uma leitura transversal de um município português: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado, recolhidos em direto a 2026-08-04.',
-      en: "A cross-vertical reading of one Portuguese municipality: the recovery-plan project register, the public-contracts register and the state auditor's catalogue, all fetched live on 2026-08-04.",
+      pt: 'Uma leitura transversal de um município português: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado, recolhidos em direto a 2026-08-04, e o registo do plano de recuperação relido a 2026-08-20.',
+      en: "A cross-vertical reading of one Portuguese municipality: the recovery-plan project register, the public-contracts register and the state auditor's catalogue, all fetched live on 2026-08-04, and the recovery-plan register read again on 2026-08-20.",
     },
   },
   {

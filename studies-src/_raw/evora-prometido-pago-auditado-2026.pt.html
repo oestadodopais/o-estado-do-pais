@@ -147,7 +147,7 @@ td.has-bar { padding: .3rem .65rem; }
 </head>
 <body>
 <h1>Évora — o que foi prometido, o que foi pago e o que foi auditado</h1>
-<p class="lede"><em>Research Hub. Uma leitura transversal de um município português: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado, recolhidos em direto a 2026-08-04. Cada valor abaixo tem uma linha em <code>ledger.json</code> junto a este ficheiro, com o URL da fonte, o carimbo temporal da recolha e o texto exato de onde foi lido.</em></p>
+<p class="lede"><em>Research Hub. Uma leitura transversal de um município português: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado, recolhidos em direto a 2026-08-04, e o registo do plano de recuperação relido a 2026-08-20. Cada valor abaixo tem uma linha em <code>ledger.json</code> junto a este ficheiro, com o URL da fonte, o carimbo temporal da recolha e o texto exato de onde foi lido.</em></p>
 <p><em>Edição pt-PT, gerada da edição inglesa por <code>Technical Source/make_pt.py</code>; os números são transportados mecanicamente da edição inglesa e reformatados para as convenções pt-PT por um passo determinista do mesmo script.</em></p>
 <hr>
 <h2>Ler esta parte primeiro</h2>
@@ -158,23 +158,23 @@ td.has-bar { padding: .3rem .65rem; }
 <p>Uma coisa que este documento <em>consegue</em> fazer e que uma fonte isolada não consegue: põe lado a lado a promessa, o pagamento e o registo de auditoria de um mesmo sítio. Quando raciocina para além do que uma fonte afirma, a frase diz <strong>(inferência)</strong>.</p>
 <hr>
 <h2>O que foi prometido e o que foi pago</h2>
-<p>O Plano de Recuperação e Resiliência publica um instantâneo com atualização integral a cada semana, sem histórico de versões: o ficheiro da semana anterior desaparece pura e simplesmente da fonte. O instantâneo aqui lido tem a data de referência 2026-08-03.</p>
+<p>O Plano de Recuperação e Resiliência publica um instantâneo com atualização integral a cada semana, sem histórico de versões: o ficheiro da semana anterior desaparece pura e simplesmente da fonte. O instantâneo aqui lido tem a data de referência 2026-08-19.</p>
 <figure class="fig">
 <p class="fig-title">O que foi aprovado e o que foi pago</p>
 <div class="chart bars"><div class="row">
 <div class="lab">Aprovado e atribuído a Évora</div>
 <div class="track"><div class="fill f-approved" style="width:100%"></div></div>
-<div class="val"><strong>€166 639 411</strong></div>
+<div class="val"><strong>€167 372 756</strong></div>
 </div>
 <div class="row">
 <div class="lab">Pago e atribuído a Évora</div>
-<div class="track"><div class="fill f-paid" style="width:50.3557%"></div></div>
-<div class="val"><strong>€83 912 477</strong></div>
-</div></div><div class="tiles"><div class="tile"><span class="tile-v"><strong>50,36 %</strong></span><span class="tile-l">Execução</span></div><div class="tile"><span class="tile-v">2 303</span><span class="tile-l">Localizações de projeto em Évora</span></div><div class="tile"><span class="tile-v">2 259</span><span class="tile-l">das quais exclusivas de Évora</span></div><div class="tile"><span class="tile-v">44</span><span class="tile-l">das quais partilhadas com outros concelhos</span></div></div><figcaption class="fig-src">Fonte: <a href="https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-projetos-2/20260803-182811-d00e842c/listagem-de-projetos-prr-20260803.xlsx" rel="noopener">registo de projetos do PRR, dados.gov.pt</a></figcaption>
+<div class="track"><div class="fill f-paid" style="width:51.9467%"></div></div>
+<div class="val"><strong>€86 944 669</strong></div>
+</div></div><div class="tiles"><div class="tile"><span class="tile-v"><strong>51,95 %</strong></span><span class="tile-l">Execução</span></div><div class="tile"><span class="tile-v">2 311</span><span class="tile-l">Localizações de projeto em Évora</span></div><div class="tile"><span class="tile-v">2 267</span><span class="tile-l">das quais exclusivas de Évora</span></div><div class="tile"><span class="tile-v">44</span><span class="tile-l">das quais partilhadas com outros concelhos</span></div></div><figcaption class="fig-src">Fonte: <a href="https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-projetos-2/20260819-172752-d70458cf/listagem-de-projetos-prr-20260819.xlsx" rel="noopener">registo de projetos do PRR, dados.gov.pt</a></figcaption>
 </figure>
-<p>Ambos os valores são factos com fonte, não estimativas. Vêm da camada de gestores do ficheiro de beneficiários — as linhas <em>Beneficiário Intermediário</em> e <em>Beneficiário Direto</em> —, que dá exatamente uma linha por localização de projeto e transporta tanto o montante aprovado como o montante pago dessa localização. A contagem dessas linhas, 397 634, é exatamente igual à contagem de linhas do ficheiro de distribuição geográfica, que é a verificação estrutural de que a camada decompõe o dinheiro uma vez e uma só vez.</p>
+<p>Ambos os valores são factos com fonte, não estimativas. Vêm da camada de gestores do ficheiro de beneficiários — as linhas <em>Beneficiário Intermediário</em> e <em>Beneficiário Direto</em> —, que dá exatamente uma linha por localização de projeto e transporta tanto o montante aprovado como o montante pago dessa localização. A contagem dessas linhas, 398 747, é exatamente igual à contagem de linhas do ficheiro de distribuição geográfica, que é a verificação estrutural de que a camada decompõe o dinheiro uma vez e uma só vez.</p>
 <p>Um caminho independente para o mesmo valor aprovado — reconstruí-lo a partir da coluna de quota percentual do ficheiro de localizações — fica a €1 169 de distância, o que é arredondamento à quarta casa decimal na quota publicada e mais nada. A outra coluna de quota desse mesmo ficheiro, a que parece ser uma quota de pagamento por localização, <strong>não</strong> é usada: repete em cada linha o rácio de pagamento de todo o projeto, e lê-la como quota inflaciona o valor pago de Évora numa ordem de grandeza. Essa armadilha está documentada neste repositório porque uma versão anterior desta vertical caiu nela.</p>
-<p>A nível nacional, o mesmo critério dá €24 703 018 914 aprovados e €13 740 176 584 pagos em 395 918 projetos, uma taxa de execução de 55,62 %. Évora detém 0,67 % do total nacional aprovado e executa-o <strong>abaixo da taxa nacional</strong>. Uma coisa a saber sobre esse denominador: €3 694 494 765 do total nacional — 14,96 % dele — ficam fora de qualquer concelho, registados como nacionais ou sem localização, pelo que a quota de dinheiro <em>atribuível a um lugar</em> é ligeiramente maior do que o valor acima.</p>
+<p>A nível nacional, o mesmo critério dá €24 491 396 628 aprovados e €14 299 597 753 pagos em 397 030 projetos, uma taxa de execução de 58,39 %. Évora detém 0,68 % do total nacional aprovado e executa-o <strong>abaixo da taxa nacional</strong>. Uma coisa a saber sobre esse denominador: €3 655 353 461 do total nacional — 14,93 % dele — ficam fora de qualquer concelho, registados como nacionais ou sem localização, pelo que a quota de dinheiro <em>atribuível a um lugar</em> é ligeiramente maior do que o valor acima.</p>
 <h3>Onde assenta a promessa</h3>
 <p>Não existe uma coluna de componente no ficheiro de projetos; o componente é o prefixo do código de investimento, e é a única chave disponível. As localizações de projeto de Évora caem em 13 dos 21 componentes do programa.</p>
 <div class="table-shell"><table><thead><tr><th class="lab">Componente</th>
@@ -185,97 +185,97 @@ td.has-bar { padding: .3rem .65rem; }
 <th class="num">Vencidas</th></tr></thead><tbody><tr>
 <td class="lab">C05</td>
 <td class="lab">Investimento e inovação</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:100%"></span><span class="v">48 941 611</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:48.9576%"></span><span class="v">23 960 647</span></span></td>
-<td class="num">72</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:100%"></span><span class="v">49 138 486</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:50.764%"></span><span class="v">24 944 683</span></span></td>
+<td class="num">73</td>
 <td class="num">57</td>
 </tr><tr>
 <td class="lab">C07</td>
 <td class="lab">Infraestruturas</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:60.6521%"></span><span class="v">29 684 101</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:55.4126%"></span><span class="v">27 119 799</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:60.4091%"></span><span class="v">29 684 101</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:59.1411%"></span><span class="v">29 061 019</span></span></td>
 <td class="num">1</td>
 <td class="num">0</td>
 </tr><tr>
 <td class="lab">C02</td>
 <td class="lab">Habitação</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:48.356%"></span><span class="v">23 666 204</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:12.6814%"></span><span class="v">6 206 461</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:48.1623%"></span><span class="v">23 666 204</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:12.6329%"></span><span class="v">6 207 606</span></span></td>
 <td class="num">39</td>
 <td class="num">39</td>
 </tr><tr>
 <td class="lab">C01</td>
 <td class="lab">Serviço Nacional de Saúde</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:35.6924%"></span><span class="v">17 468 445</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:8.4594%"></span><span class="v">4 140 161</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:35.5494%"></span><span class="v">17 468 445</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:8.4255%"></span><span class="v">4 140 161</span></span></td>
 <td class="num">23</td>
 <td class="num">17</td>
 </tr><tr>
 <td class="lab">C06</td>
 <td class="lab">Qualificações e competências</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:34.5036%"></span><span class="v">16 886 594</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:17.5021%"></span><span class="v">8 565 822</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:34.3653%"></span><span class="v">16 886 594</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:17.432%"></span><span class="v">8 565 822</span></span></td>
 <td class="num">704</td>
 <td class="num">28</td>
 </tr><tr>
 <td class="lab">C04</td>
 <td class="lab">Cultura</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:32.092%"></span><span class="v">15 706 355</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:15.1731%"></span><span class="v">7 425 966</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:31.9634%"></span><span class="v">15 706 355</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:15.2883%"></span><span class="v">7 512 458</span></span></td>
 <td class="num">16</td>
 <td class="num">5</td>
 </tr><tr>
 <td class="lab">C16</td>
 <td class="lab">Empresas 4.0</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:8.0047%"></span><span class="v">3 917 642</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:4.4393%"></span><span class="v">2 172 662</span></span></td>
-<td class="num">74</td>
-<td class="num">65</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:7.9849%"></span><span class="v">3 923 642</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:4.4215%"></span><span class="v">2 172 662</span></span></td>
+<td class="num">80</td>
+<td class="num">69</td>
 </tr><tr>
 <td class="lab">C19</td>
 <td class="lab">Administração pública digital</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:7.7931%"></span><span class="v">3 814 079</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:1.9886%"></span><span class="v">973 246</span></span></td>
-<td class="num">19</td>
-<td class="num">15</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:7.822%"></span><span class="v">3 843 588</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:1.9806%"></span><span class="v">973 246</span></span></td>
+<td class="num">20</td>
+<td class="num">14</td>
 </tr><tr>
 <td class="lab">C13</td>
 <td class="lab">Eficiência energética em edifícios</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:5.3774%"></span><span class="v">2 631 788</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:3.0422%"></span><span class="v">1 488 885</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:5.3559%"></span><span class="v">2 631 788</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:3.03%"></span><span class="v">1 488 885</span></span></td>
 <td class="num">1 009</td>
 <td class="num">349</td>
 </tr><tr>
 <td class="lab">C03</td>
 <td class="lab">Respostas sociais</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:3.9894%"></span><span class="v">1 952 486</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:1.8221%"></span><span class="v">891 745</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:4.9929%"></span><span class="v">2 453 446</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:1.8068%"></span><span class="v">887 845</span></span></td>
 <td class="num">31</td>
-<td class="num">25</td>
+<td class="num">24</td>
 </tr><tr>
 <td class="lab">C21</td>
 <td class="lab">REPowerEU</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:2.8614%"></span><span class="v">1 400 432</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:1.1311%"></span><span class="v">553 561</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:2.85%"></span><span class="v">1 400 432</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:1.1265%"></span><span class="v">553 561</span></span></td>
 <td class="num">308</td>
 <td class="num">1</td>
 </tr><tr>
 <td class="lab">C11</td>
 <td class="lab">Descarbonização da indústria</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:0.796%"></span><span class="v">389 587</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:0.6621%"></span><span class="v">324 050</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:0.7928%"></span><span class="v">389 587</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:0.7067%"></span><span class="v">347 250</span></span></td>
 <td class="num">3</td>
 <td class="num">3</td>
 </tr><tr>
 <td class="lab">C08</td>
 <td class="lab">Florestas</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:0.368%"></span><span class="v">180 086</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:0.1828%"></span><span class="v">89 473</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:0.3665%"></span><span class="v">180 086</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:0.1821%"></span><span class="v">89 473</span></span></td>
 <td class="num">4</td>
 <td class="num">2</td>
 </tr></tbody></table></div>
 <p>Os nomes dos componentes vêm do próprio ficheiro de investimentos de quem publica os dados, não de memória.</p>
-<p>Há três coisas nessa tabela que merecem uma pausa. <strong>Investimento e inovação</strong> é o maior bloco isolado de dinheiro aprovado em Évora, e pagou menos de metade dele. <strong>Infraestruturas</strong> chega ao concelho através de uma localização de projeto isolada e é, ainda assim, onde está o maior montante efetivamente pago: um programa rodoviário moveu €27 119 799 através de Évora, mais do que saúde, habitação e cultura juntas (€17 772 588). E uma contagem de localizações não é uma medida de dimensão. A <strong>Eficiência energética em edifícios</strong> tem 1 009 delas para €2 631 788 aprovados, uma média de €2 608 por localização.</p>
+<p>Há três coisas nessa tabela que merecem uma pausa. <strong>Investimento e inovação</strong> é o maior bloco isolado de dinheiro aprovado em Évora, e pagou menos de metade dele. <strong>Infraestruturas</strong> chega ao concelho através de uma localização de projeto isolada e é, ainda assim, onde está o maior montante efetivamente pago: um programa rodoviário moveu €29 061 019 através de Évora, mais do que saúde, habitação e cultura juntas (€17 860 225). E uma contagem de localizações não é uma medida de dimensão. A <strong>Eficiência energética em edifícios</strong> tem 1 009 delas para €2 631 788 aprovados, uma média de €2 608 por localização.</p>
 <h3>As cinco maiores localizações de projeto</h3>
 <div class="table-shell"><table><thead><tr><th class="lab">Investimento</th>
 <th class="lab">Projeto, como a fonte o designa</th>
@@ -286,7 +286,7 @@ td.has-bar { padding: .3rem .65rem; }
 <td class="lab">C07-i02</td>
 <td class="lab">Missing links e Aumento capacidade da Rede - EN14, EN4, IC35, IP2, EN125, EN211, EN344, IP8 (A26), Baião/Ponte Ermida, IP8 (EN121), IP8 (EN259)</td>
 <td class="num has-bar"><span class="cell"><span class="bar" style="width:100%"></span><span class="v">29 684 101</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:91.3614%"></span><span class="v">27 119 799</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:97.901%"></span><span class="v">29 061 019</span></span></td>
 <td class="num">17</td>
 <td class="lab">2026-12-31</td>
 </tr><tr>
@@ -328,55 +328,55 @@ td.has-bar { padding: .3rem .65rem; }
 <th class="num">Pago (€)</th></tr></thead><tbody><tr>
 <td class="lab">Gestores — os organismos que administram e desembolsam</td>
 <td class="num">22</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:100%"></span><span class="v">166 639 411</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:50.3557%"></span><span class="v">83 912 477</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:100%"></span><span class="v">167 372 756</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:51.9467%"></span><span class="v">86 944 669</span></span></td>
 </tr><tr>
 <td class="lab">Beneficiários finais — quem efetivamente o recebeu</td>
-<td class="num">1 820</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:79.9176%"></span><span class="v">133 174 244</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:33.0618%"></span><span class="v">55 093 934</span></span></td>
+<td class="num">1 823</td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:80.0056%"></span><span class="v">133 907 588</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:33.5687%"></span><span class="v">56 184 907</span></span></td>
 </tr></tbody></table></div>
-<p>A camada de beneficiários fica €28 818 543 aquém da camada de gestores no dinheiro pago. Essa diferença não é fuga: é dinheiro em projetos contratados diretamente, que não têm qualquer linha de beneficiário final. A maior parte dela é uma rubrica isolada — os €27 119 799 do programa rodoviário, cujo gestor não aparece em linha alguma de beneficiário final.</p>
-<p>O <strong>IAPMEI - AGÊNCIA PARA A COMPETITIVIDADE E INOVAÇÃO, I.P.</strong> é o maior detentor isolado do dinheiro do PRR aprovado para Évora, com €39 030 811 contratados e €21 352 366 pagos — e é uma agência nacional que encaminha dinheiro, não um beneficiário. Reportá-lo como tal seria falso. A <strong>INFRAESTRUTURAS DE PORTUGAL, S.A.</strong> detém €29 684 101 e recebeu €27 119 799, o maior desembolso isolado do concelho.</p>
+<p>A camada de beneficiários fica €30 759 762 aquém da camada de gestores no dinheiro pago. Essa diferença não é fuga: é dinheiro em projetos contratados diretamente, que não têm qualquer linha de beneficiário final. A maior parte dela é uma rubrica isolada — os €29 061 019 do programa rodoviário, cujo gestor não aparece em linha alguma de beneficiário final.</p>
+<p>O <strong>IAPMEI - AGÊNCIA PARA A COMPETITIVIDADE E INOVAÇÃO, I.P.</strong> é o maior detentor isolado do dinheiro do PRR aprovado para Évora, com €39 036 811 contratados e €21 784 396 pagos — e é uma agência nacional que encaminha dinheiro, não um beneficiário. Reportá-lo como tal seria falso. A <strong>INFRAESTRUTURAS DE PORTUGAL, S.A.</strong> detém €29 684 101 e recebeu €29 061 019, o maior desembolso isolado do concelho.</p>
 <div class="table-shell"><table><thead><tr><th class="lab">Gestor</th>
 <th class="num">Contratado aqui (€)</th>
 <th class="num">Pago aqui (€)</th></tr></thead><tbody><tr>
 <td class="lab">IAPMEI - AGÊNCIA PARA A COMPETITIVIDADE E INOVAÇÃO, I.P.</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:100%"></span><span class="v">39 030 811</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:54.7064%"></span><span class="v">21 352 366</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:100%"></span><span class="v">39 036 811</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:55.8048%"></span><span class="v">21 784 396</span></span></td>
 </tr><tr>
 <td class="lab">INFRAESTRUTURAS DE PORTUGAL, S.A.</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:76.053%"></span><span class="v">29 684 101</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:69.4831%"></span><span class="v">27 119 799</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:76.0413%"></span><span class="v">29 684 101</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:74.4452%"></span><span class="v">29 061 019</span></span></td>
 </tr><tr>
 <td class="lab">INSTITUTO PARA O ENSINO SUPERIOR, I.P.</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:52.2477%"></span><span class="v">20 392 715</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:11.6515%"></span><span class="v">4 547 683</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:52.2397%"></span><span class="v">20 392 715</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:11.6497%"></span><span class="v">4 547 683</span></span></td>
 </tr><tr>
 <td class="lab">ADMINISTRAÇÃO CENTRAL DO SISTEMA DE SAÚDE I.P.</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:45.0736%"></span><span class="v">17 592 594</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:10.9095%"></span><span class="v">4 258 060</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:45.1423%"></span><span class="v">17 622 103</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:10.9078%"></span><span class="v">4 258 060</span></span></td>
 </tr><tr>
 <td class="lab">FUNDO DE SALVAGUARDA DO PATRIMÓNIO CULTURAL</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:37.2888%"></span><span class="v">14 554 114</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:17.3493%"></span><span class="v">6 771 580</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:37.2831%"></span><span class="v">14 554 114</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:17.3467%"></span><span class="v">6 771 580</span></span></td>
 </tr><tr>
 <td class="lab">INSTITUTO DA HABITAÇÃO E DA REABILITAÇÃO URBANA, I.P.</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:29.9239%"></span><span class="v">11 679 527</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:12.8914%"></span><span class="v">5 031 636</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:29.9193%"></span><span class="v">11 679 527</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:12.8924%"></span><span class="v">5 032 781</span></span></td>
 </tr></tbody></table></div>
 <p>Os seis acima são os maiores de 22 organismos da camada de gestores; os outros 16 são agências e fundos nacionais que detêm montantes menores. A fonte devolve 23 linhas e não 22, porque um organismo detém dinheiro de Évora sob dois papéis diferentes — uma contagem de linhas aqui não é uma contagem de organismos.</p>
-<p>Entre os 1 820 beneficiários finais, a universidade é o maior beneficiário final nas duas medidas — contratado e pago. Os sete maiores por montante contratado:</p>
+<p>Entre os 1 823 beneficiários finais, a universidade é o maior beneficiário final nas duas medidas — contratado e pago. Os sete maiores por montante contratado:</p>
 <div class="table-shell"><table><thead><tr><th class="lab">Beneficiário final</th>
 <th class="num">Contratado aqui (€)</th>
 <th class="num">Pago aqui (€)</th>
 <th class="num">Projetos</th></tr></thead><tbody><tr>
-<td class="lab">Universidade de Évora</td>
+<td class="lab">UNIVERSIDADE DE ÉVORA</td>
 <td class="num has-bar"><span class="cell"><span class="bar" style="width:100%"></span><span class="v">38 596 976</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:35.5538%"></span><span class="v">13 722 696</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:36.9614%"></span><span class="v">14 265 996</span></span></td>
 <td class="num">74</td>
 </tr><tr>
-<td class="lab">MUNICÍPIO DE ÉVORA</td>
+<td class="lab">Município de Évora</td>
 <td class="num has-bar"><span class="cell"><span class="bar" style="width:31.2693%"></span><span class="v">12 069 013</span></span></td>
 <td class="num has-bar"><span class="cell"><span class="bar" style="width:5.3044%"></span><span class="v">2 047 336</span></span></td>
 <td class="num">20</td>
@@ -392,9 +392,9 @@ td.has-bar { padding: .3rem .65rem; }
 <td class="num">13</td>
 </tr><tr>
 <td class="lab">HOSPITAL DO ESPÍRITO SANTO DE ÉVORA, E.P.E.</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:19.9947%"></span><span class="v">7 717 353</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:20.0712%"></span><span class="v">7 746 863</span></span></td>
 <td class="num has-bar"><span class="cell"><span class="bar" style="width:1.46%"></span><span class="v">563 527</span></span></td>
-<td class="num">8</td>
+<td class="num">9</td>
 </tr><tr>
 <td class="lab">HABÉVORA - Gestão Habitacional, E.M.</td>
 <td class="num has-bar"><span class="cell"><span class="bar" style="width:18.358%"></span><span class="v">7 085 640</span></span></td>
@@ -403,11 +403,11 @@ td.has-bar { padding: .3rem .65rem; }
 </tr><tr>
 <td class="lab">Património Cultural, IP</td>
 <td class="num has-bar"><span class="cell"><span class="bar" style="width:17.9913%"></span><span class="v">6 944 114</span></span></td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:16.4666%"></span><span class="v">6 355 620</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:16.6907%"></span><span class="v">6 442 113</span></span></td>
 <td class="num">5</td>
 </tr></tbody></table></div>
 <p>O próprio município não é o canal principal do dinheiro do PRR no seu território <em>(inferência, a partir das duas tabelas acima: a câmara aparece na camada de beneficiários com menos contratado do que a universidade, e não aparece de todo na camada de gestores)</em>. Um leitor à procura de «o que a câmara fez com o dinheiro» estaria a olhar para o ator errado na maior parte deste total.</p>
-<p>Existe uma terceira camada, a de fornecedores, com 5 entidades. Não reconcilia com os totais dos projetos e a sua coluna de localização significa outra coisa, pelo que não é usada aqui.</p>
+<p>Existe uma terceira camada, a de fornecedores, com 6 entidades. Não reconcilia com os totais dos projetos e a sua coluna de localização significa outra coisa, pelo que não é usada aqui.</p>
 <hr>
 <h2>O que significa «dentro do prazo» nestes dados, e o que está vencido</h2>
 <div class="table-shell"><table><thead><tr><th class="lab">Estado</th>
@@ -419,13 +419,13 @@ td.has-bar { padding: .3rem .65rem; }
 <td class="num has-bar"><span class="cell"><span class="bar" style="width:15.3633%"></span><span class="v">222</span></span></td>
 </tr><tr>
 <td class="lab">Não concluídas</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:44.0138%"></span><span class="v">636</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:44.5675%"></span><span class="v">644</span></span></td>
 </tr><tr>
 <td class="lab sub">— das quais com a data prevista já passada</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:41.9377%"></span><span class="v">606</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:42.0761%"></span><span class="v">608</span></span></td>
 </tr><tr>
 <td class="lab sub">— das quais ainda dentro do prazo</td>
-<td class="num has-bar"><span class="cell"><span class="bar" style="width:2.0761%"></span><span class="v">30</span></span></td>
+<td class="num has-bar"><span class="cell"><span class="bar" style="width:2.4913%"></span><span class="v">36</span></span></td>
 </tr></tbody></table></div>
 <figure class="fig">
 <p class="fig-title">Conclusões datadas exatamente na data prevista</p>
@@ -435,19 +435,19 @@ td.has-bar { padding: .3rem .65rem; }
 </div>
 <div class="row">
 <div class="lab">Portugal</div>
-<div class="track"><div class="fill f-exact" style="width:71.8985%"></div></div>
-</div></div><p class="fig-note">Quota das localizações contadas como dentro do prazo</p><figcaption class="fig-src">Fonte: <a href="https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-projetos-2/20260803-182811-d00e842c/listagem-de-projetos-prr-20260803.xlsx" rel="noopener">registo de projetos do PRR, dados.gov.pt</a></figcaption>
+<div class="track"><div class="fill f-exact" style="width:71.8899%"></div></div>
+</div></div><p class="fig-note">Quota das localizações contadas como dentro do prazo</p><figcaption class="fig-src">Fonte: <a href="https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-projetos-2/20260819-172752-d70458cf/listagem-de-projetos-prr-20260819.xlsx" rel="noopener">registo de projetos do PRR, dados.gov.pt</a></figcaption>
 </figure>
 <p>O estado é julgado contra a data de referência do próprio instantâneo, e não contra a de hoje, porque é essa a data por que a fonte fala.</p>
 <p>Agora a ressalva que tem de viajar com a primeira linha dessa tabela. 1 011 das 1 445 localizações contadas como dentro do prazo registam uma data de conclusão efetiva que cai <strong>exatamente</strong> na data prevista — 69,97 % delas. Uma diferença modal de zero a essa escala é mais consistente com um campo fechado administrativamente do que com uma entrega observada e datada <em>(inferência)</em>. As restantes 434 localizações registam uma data efetiva anterior à prevista, e a mesma dúvida sobre a forma como estes campos são preenchidos aplica-se também a elas.</p>
-<p>Duas coisas afinam essa leitura, e uma delas impede que seja uma crítica a Évora. Primeiro, 470 dessas coincidências exatas são linhas em que a data de início, a data prevista de conclusão e a data efetiva de conclusão são <strong>o mesmo dia</strong>. Não é possível observar um projeto a começar e a terminar no mesmo dia a essa escala, pelo que essas linhas registam uma convenção de preenchimento e não uma data observada <em>(inferência)</em>. Estão reunidas numa linha de investimento isolada. Segundo, o padrão é nacional e não local: em todo o país, 177 237 de 246 510 localizações dentro do prazo têm o mesmo carimbo de data exata, 71,90 %, ligeiramente acima do valor de Évora. Nada aqui diz que Évora reporta de forma diferente de qualquer outro sítio; diz que as datas de conclusão do registo não podem ser lidas como entrega observada em sítio algum. Portanto, a contagem de localizações dentro do prazo é prova fraca, e citá-la em bruto exageraria a pontualidade por uma margem larga.</p>
-<p>O grupo dos vencidos é o que se lê como promessa quebrada: uma data prevista de conclusão já passada à data do instantâneo, sem data efetiva de conclusão registada. Em Évora são 606 localizações de projeto que transportam €102 711 704 de dinheiro aprovado — 61,64 % de tudo o que foi aprovado para o concelho —, dos quais €40 727 682 foram pagos.</p>
+<p>Duas coisas afinam essa leitura, e uma delas impede que seja uma crítica a Évora. Primeiro, 470 dessas coincidências exatas são linhas em que a data de início, a data prevista de conclusão e a data efetiva de conclusão são <strong>o mesmo dia</strong>. Não é possível observar um projeto a começar e a terminar no mesmo dia a essa escala, pelo que essas linhas registam uma convenção de preenchimento e não uma data observada <em>(inferência)</em>. Estão reunidas numa linha de investimento isolada. Segundo, o padrão é nacional e não local: em todo o país, 177 241 de 246 545 localizações dentro do prazo têm o mesmo carimbo de data exata, 71,89 %, ligeiramente acima do valor de Évora. Nada aqui diz que Évora reporta de forma diferente de qualquer outro sítio; diz que as datas de conclusão do registo não podem ser lidas como entrega observada em sítio algum. Portanto, a contagem de localizações dentro do prazo é prova fraca, e citá-la em bruto exageraria a pontualidade por uma margem larga.</p>
+<p>O grupo dos vencidos é o que se lê como promessa quebrada: uma data prevista de conclusão já passada à data do instantâneo, sem data efetiva de conclusão registada. Em Évora são 608 localizações de projeto que transportam €102 624 704 de dinheiro aprovado — 61,32 % de tudo o que foi aprovado para o concelho —, dos quais €41 693 864 foram pagos.</p>
 <p>Está concentrado. A <strong>Habitação</strong> tem 39 localizações de projeto em Évora, com a data prevista já passada e sem nada registado como entregue: <strong>todas as que existem estão vencidas</strong>. Duas localizações entre as cinco maiores do concelho estão nesse estado e não receberam absolutamente nada — a residência de estudantes, com €7 483 162 aprovados e €0 pagos, e a aquisição de equipamento hospitalar, com €5 314 868 aprovados e €0 pagos.</p>
 <p>Vale a pena nomear esta última com clareza, porque atravessa as duas metades deste documento. O equipamento destina-se ao novo hospital central do Alentejo; o dinheiro está aprovado, a data prevista passou e nada foi desembolsado <em>(inferência: a fonte regista a aprovação, a data e o pagamento, e não diz porquê)</em>.</p>
 <hr>
 <figure class="fig">
 <p class="fig-title">A parcela vencida do valor aprovado</p>
-<div class="chart meters"><div class="meter-row"><div class="meter"><span class="seg s-paid" style="width:24.4406%"></span><span class="seg s-over" style="width:37.1965%"></span><span class="seg s-rest" style="width:38.3629%"></span></div><div class="keys"><span class="key"><i class="sw s-paid"></i>Vencido, pago</span><span class="key"><i class="sw s-over"></i>Vencido, por pagar</span><span class="key"><i class="sw s-rest"></i>Por vencer</span></div></div></div><p class="fig-note">A barra inteira é o valor aprovado para o concelho</p><figcaption class="fig-src">Fonte: <a href="https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-projetos-2/20260803-182811-d00e842c/listagem-de-projetos-prr-20260803.xlsx" rel="noopener">registo de projetos do PRR, dados.gov.pt</a></figcaption>
+<div class="chart meters"><div class="meter-row"><div class="meter"><span class="seg s-paid" style="width:24.9108%"></span><span class="seg s-over" style="width:36.4043%"></span><span class="seg s-rest" style="width:38.6849%"></span></div><div class="keys"><span class="key"><i class="sw s-paid"></i>Vencido, pago</span><span class="key"><i class="sw s-over"></i>Vencido, por pagar</span><span class="key"><i class="sw s-rest"></i>Por vencer</span></div></div></div><p class="fig-note">A barra inteira é o valor aprovado para o concelho</p><figcaption class="fig-src">Fonte: <a href="https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-projetos-2/20260819-172752-d70458cf/listagem-de-projetos-prr-20260819.xlsx" rel="noopener">registo de projetos do PRR, dados.gov.pt</a></figcaption>
 </figure>
 <h2>Contratos públicos, como contexto</h2>
 <p>O Portal BASE é o registo de contratos públicos de Portugal. Está aqui como contexto sobre o mesmo território, não como uma segunda medida do mesmo dinheiro: os apoios do plano de recuperação e os preços de contratos são quantidades diferentes, e este documento nunca as soma.</p>
@@ -520,7 +520,7 @@ td.has-bar { padding: .3rem .65rem; }
 </tr></tbody></table></div>
 <p>As duas primeiras linhas são o mesmo grupo hospitalar sob duas grafias — e há uma terceira na mesma janela que a tabela acima não mostra. Agrupar os 600 registos por organismo em vez de por cadeia de carateres dá 56 organismos adjudicantes, dos quais 5 registam sob mais do que um nome. O hospital responde por 3 dessas grafias e, no conjunto, por <strong>282 contratos no valor de €29 580 141</strong> — o que faz da saúde <strong>a mais ativa entidade adjudicante da janela lida</strong>. A empresa de resíduos regista sob 3 grafias, para 23 contratos. O município regista sob 2, o que dá 45 contratos no valor de €1 975 150 e não os 39 que a sua grafia principal mostra.</p>
 <p>A regra de agrupamento é nossa, não do registo: dobrar acentos, retirar pontuação, retirar a abreviatura final da forma jurídica. Fica declarada para que se possa discordar dela, e está em <code>Technical Source/fetch_base.py</code>. É também deliberadamente conservadora e funde a menos do que devia — a comunidade intermunicipal da tabela acima regista sob o seu acrónimo e, duas vezes, sob o mesmo nome sem ele, o que a regra não junta porque o acrónimo sobrevive à normalização. Em conjunto são 14 contratos no valor de €735 681. O script reporta essa forma em vez de a fundir, porque nada do que aqui está disponível consegue distinguir um prefixo de acrónimo de um organismo genuinamente diferente. Portanto 5 é um piso sobre quantos organismos registam sob mais do que um nome, e não uma contagem. <strong>Um rascunho anterior desta secção fundiu apenas as duas grafias do hospital que conseguia ver e reportou 270 contratos. Um verificador independente encontrou a terceira.</strong> É essa a forma honesta deste registo inteiro: uma contagem por cadeia de carateres parece uma contagem por entidade e não o é.</p>
-<p>Lidas em conjunto, as duas fontes fazem recorrer as mesmas instituições por ordem diferente, e uma delas é fácil de perder. O hospital é a maior entidade adjudicante da janela acima; nos dados do plano de recuperação aparece sob um nome diferente, <strong>HOSPITAL DO ESPÍRITO SANTO DE ÉVORA, E.P.E.</strong>, com €7 717 353 contratados e €563 527 pagos. Uma junção por nomes de entidade entre os dois registos tê-lo-ia perdido <em>(inferência — os dois registos usam nomes diferentes para aquilo que os próprios objetos dos contratos confirmam ser o mesmo organismo; nada em qualquer das fontes afirma que são a mesma entidade)</em>.</p>
+<p>Lidas em conjunto, as duas fontes fazem recorrer as mesmas instituições por ordem diferente, e uma delas é fácil de perder. O hospital é a maior entidade adjudicante da janela acima; nos dados do plano de recuperação aparece sob um nome diferente, <strong>HOSPITAL DO ESPÍRITO SANTO DE ÉVORA, E.P.E.</strong>, com €7 746 863 contratados e €563 527 pagos. Uma junção por nomes de entidade entre os dois registos tê-lo-ia perdido <em>(inferência — os dois registos usam nomes diferentes para aquilo que os próprios objetos dos contratos confirmam ser o mesmo organismo; nada em qualquer das fontes afirma que são a mesma entidade)</em>.</p>
 <hr>
 <h2>O que foi auditado</h2>
 <p><strong>Esta secção diz o que foi auditado e quando. Não diz o que o Tribunal concluiu.</strong> O Tribunal de Contas publica um catálogo — o título e o resumo de cada relatório — e, em separado, os próprios relatórios em PDF. O que foi recolhido é o catálogo: 2 206 documentos em 4 famílias de produtos, de 1997 a 2026. Essas 4 não são tudo o que o Tribunal publica — um limite que este documento mede em vez de mencionar, abaixo. As conclusões estão nos PDF e não foram lidas.</p>
@@ -584,7 +584,7 @@ td.has-bar { padding: .3rem .65rem; }
 <td class="lab">ADMINISTRAÇÃO CENTRAL DO SISTEMA DE SAÚDE I.P.</td>
 <td class="num has-bar"><span class="cell"><span class="bar" style="width:50%"></span><span class="v">3</span></span></td>
 </tr><tr>
-<td class="lab">Universidade de Évora</td>
+<td class="lab">UNIVERSIDADE DE ÉVORA</td>
 <td class="num has-bar"><span class="cell"><span class="bar" style="width:33.3333%"></span><span class="v">2</span></span></td>
 </tr><tr>
 <td class="lab">INFRAESTRUTURAS DE PORTUGAL, S.A.</td>
@@ -617,7 +617,7 @@ td.has-bar { padding: .3rem .65rem; }
 <hr>
 <h2>O que concluir disto</h2>
 <p>Tudo o que está acima é o registo; esta secção é uma leitura dele, acrescentada a pedido do dono e assinada pelo seu autor: foi escrita pelo modelo que montou o documento, e é a parte que vai além do que as fontes afirmam. Cada valor nela repete uma linha do registo de afirmações já impressa acima; as ligações e a ênfase são interpretação, e as frases que interpretam levam o mesmo rótulo <em>(inferência)</em> que o resto do documento usa. Fica do lado de cá da linha que a primeira secção traça — onde assentam o dinheiro e o risco é uma leitura de registos; se alguém geriu bem ou mal exigiria as auditorias que este documento não abre.</p>
-<p><strong>Começar pela fatia que está atrasada, e depois decidir o que valem as datas.</strong> As localizações de projeto vencidas transportam 61,64 % de tudo o que foi aprovado para o concelho, e as datas de conclusão que suavizariam essa leitura são o campo mais frágil do registo: 1 011 das 1 445 localizações dentro do prazo caem exatamente na data prevista. Uma data destas é um toque de teclado; um desembolso é uma transação. Onde os dois tipos de campo discordam, acredite nos pagamentos <em>(inferência)</em>.</p>
+<p><strong>Começar pela fatia que está atrasada, e depois decidir o que valem as datas.</strong> As localizações de projeto vencidas transportam 61,32 % de tudo o que foi aprovado para o concelho, e as datas de conclusão que suavizariam essa leitura são o campo mais frágil do registo: 1 011 das 1 445 localizações dentro do prazo caem exatamente na data prevista. Uma data destas é um toque de teclado; um desembolso é uma transação. Onde os dois tipos de campo discordam, acredite nos pagamentos <em>(inferência)</em>.</p>
 <p><strong>Duas promessas em particular têm a forma de um problema.</strong> A residência de estudantes e a aquisição de equipamento hospitalar estão entre as cinco maiores localizações de projeto do concelho, ambas com a data prevista já passada, e ambas paradas em €0 pagos contra €7 483 162 e €5 314 868 aprovados. Na leitura acima, são estes os sinais de alarme credíveis, porque a coluna dos pagamentos — o campo mais duro — é a que diz que nada se moveu <em>(inferência)</em>.</p>
 <p><strong>O endereço da responsabilização, na maior parte dos casos, não são os paços do concelho.</strong> As tabelas de beneficiários acima já o dizem: a universidade detém €38 596 976 contratados contra €12 069 013 do município, e a camada que administra o dinheiro é feita de agências nacionais. Um leitor que queira ver este total explicado deve dirigir as suas perguntas aos organismos nacionais e à universidade mais vezes do que à câmara <em>(inferência)</em>.</p>
 <p><strong>Os registos são individualmente abertos e coletivamente impossíveis de juntar, e isso é uma constatação, não uma nota de rodapé.</strong> Dentro de um registo, um grupo hospitalar precisou de 3 grafias fundidas antes de aparecer como 282 contratos no valor de €29 580 141; entre registos, o mesmo organismo surge sob nomes que uma junção perderia, e uma pesquisa pelo instituto da habitação devolveu um zero que um verificador teve de expor como falso. A culpa não está em identificadores em falta — o registo da recuperação transporta um número fiscal nas suas linhas de entidades, e o registo de contratos entrega um contrato a contrato — mas em onde eles estão: a pesquisa de contratos devolve nomes sem o número, e o catálogo de auditorias não tem campo de entidade de todo. O trabalho de seguir o dinheiro falha por isso nas costuras entre as fontes antes de falhar dentro de qualquer uma delas <em>(inferência)</em>.</p>
@@ -634,15 +634,15 @@ td.has-bar { padding: .3rem .65rem; }
 <th class="lab">Fonte</th>
 <th class="lab">Tipo</th></tr></thead><tbody><tr>
 <td class="lab">Projetos do PRR</td>
-<td class="lab"><a href="https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-projetos-2/20260803-182811-d00e842c/listagem-de-projetos-prr-20260803.xlsx" rel="noopener">`listagem-de-projetos-prr`</a></td>
+<td class="lab"><a href="https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-projetos-2/20260819-172752-d70458cf/listagem-de-projetos-prr-20260819.xlsx" rel="noopener">`listagem-de-projetos-prr`</a></td>
 <td class="lab">governamental</td>
 </tr><tr>
 <td class="lab">Entidades do PRR</td>
-<td class="lab"><a href="https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260803-182847-df87c78d/listagem-de-entidades-prr-20260803.xlsx" rel="noopener">`listagem-de-entidades-prr`</a></td>
+<td class="lab"><a href="https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx" rel="noopener">`listagem-de-entidades-prr`</a></td>
 <td class="lab">governamental</td>
 </tr><tr>
 <td class="lab">Distribuição geográfica do PRR</td>
-<td class="lab"><a href="https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-localizacoes-1/20260803-182920-231edf37/listagem-de-projetos-prr-por-distribuicao-geografica-260803.xlsx" rel="noopener">`listagem-de-projetos-prr-por-distribuicao-geografica`</a></td>
+<td class="lab"><a href="https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-localizacoes-1/20260819-172839-57171695/listagem-de-projetos-prr-por-distribuicao-geografica-260819.xlsx" rel="noopener">`listagem-de-projetos-prr-por-distribuicao-geografica`</a></td>
 <td class="lab">governamental</td>
 </tr><tr>
 <td class="lab">Contratos públicos</td>

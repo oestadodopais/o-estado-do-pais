@@ -33,16 +33,21 @@ export const VERBATIM = {
     text: `Quem teve cada pelouro da Câmara Municipal de Évora ao longo de cinco mandatos, quanto gastaram as contas do próprio município nas áreas que esses pelouros cobrem, e o que os relatórios dizem que essas áreas fizeram.`,
   },
 
+  /* Relidas dos ficheiros a 2026-08-20, com a republicação do documento: a
+     abertura passou a nomear a releitura do registo do plano de recuperação,
+     que é de onde vêm os valores do instantâneo de 2026-08-19. Uma transcrição
+     não se atualiza de memória; estas foram extraídas do próprio ficheiro
+     alojado, que é o que o `check:documentos` prende ao seu resumo. */
   'estudo-prometido-abertura-pt': {
     lang: 'pt',
     origem: 'Frase de abertura de studies-src/evora-prometido-pago-auditado-2026/pt.html.',
-    text: `Uma leitura transversal de um município português: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado, recolhidos em direto a 2026-08-04.`,
+    text: `Uma leitura transversal de um município português: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado, recolhidos em direto a 2026-08-04, e o registo do plano de recuperação relido a 2026-08-20.`,
   },
 
   'estudo-prometido-abertura-en': {
     lang: 'en',
     origem: 'Opening sentence of studies-src/evora-prometido-pago-auditado-2026/en.html.',
-    text: `A cross-vertical reading of one Portuguese municipality: the recovery-plan project register, the public-contracts register and the state auditor's catalogue, all fetched live on 2026-08-04.`,
+    text: `A cross-vertical reading of one Portuguese municipality: the recovery-plan project register, the public-contracts register and the state auditor's catalogue, all fetched live on 2026-08-04, and the recovery-plan register read again on 2026-08-20.`,
   },
 
   'caop-fonte': {
