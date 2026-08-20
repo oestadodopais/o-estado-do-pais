@@ -1680,7 +1680,15 @@ function contasDoPortao(claims) {
       linhas.filter((c) => (c.attributed_to ?? []).length > 0).length,
       'ledger',
     ),
-    conta('fontes', new Set(linhas.map((c) => c.source).filter(Boolean)).size, 'ledger'),
+    /* O marcador não é um organismo, e a cópia própria do portão diz isso
+       sozinha. `POR_VERIFICAR` vem do módulo do marcador (nunca se escreve o
+       texto à mão, §1.40): o que o portão não partilha é a REGRA, e a regra
+       está escrita aqui. Segunda leitura cruzada de 20.08.2026, achado 4. */
+    conta(
+      'fontes',
+      new Set(linhas.map((c) => c.source).filter((f) => f && f !== POR_VERIFICAR)).size,
+      'ledger',
+    ),
     conta(
       'tipos_de_documento',
       linhas.filter((c) => typeof c.document?.kind === 'string' && c.document.kind !== '').length,
