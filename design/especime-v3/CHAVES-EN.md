@@ -96,4 +96,13 @@ escolha custou algo está dita a razão.
 ## Identidades aceites (PT = EN de propósito)
 Nomes próprios, códigos de série, identificadores de linha, «Eurostat», «INE», «DGAL», «IEFP», «CAOP», «UE-27», «O Estado do País». A régua da invariância imprime todas as chaves cujo valor é igual nas duas línguas; as que não estiverem nesta lista são erro.
 
+- **Etapa 2, quatro identidades novas**, imprimidas por `node scripts/medir-invariancia.mjs --chaves`:
+  `inicio.mapa.madeira` = «Madeira» (nome próprio de um arquipélago) e `inicio.mapa.total` = «Total»
+  (a mesma palavra nas duas línguas, como já era em `home.instr2.total`);
+  `inicio.mapa.coberturaB` = « concelhos · », porque **«concelho» fica em português
+  na edição inglesa** — é a mesma decisão que `municipios.h1` («The concelhos of
+  Portugal») já tomou, e a razão é que «municipality» e «concelho» não são a
+  mesma unidade administrativa em todo o lado; e `inicio.cabeca.tituloVazioB` = «.»,
+  que é pontuação e não uma palavra.
+
 - **`nav.menu` = «Menu» nas duas edições** (etapa 1e). Não é português copiado do inglês nem inglês copiado do português: «menu» entrou no português pelo francês e é a palavra corrente em Portugal para esta coisa exacta, tanto no papel como no ecrã, e nenhuma alternativa portuguesa («opções», «secções», «navegação») diz o que este comando faz sem dizer outra coisa. Escreve-se igual e lê-se igual; o que muda entre as duas edições é o nome acessível do comando, que junta a palavra visível à etiqueta da região («Menu · Navegação principal» / «Menu · Main navigation»), e essa metade é diferente. Se a revisão de voz preferir outra palavra em português, é uma cadeia.

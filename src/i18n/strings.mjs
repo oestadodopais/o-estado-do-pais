@@ -472,9 +472,6 @@ export const STRINGS = {
         'Observatório de dados sobre Portugal. Cada número publicado tem uma linha no livro-razão, com fonte, documento e data de acesso.',
 
       numeros: {
-        eyebrow: 'O país em números verificados',
-        h2: 'Medidas do painel europeu',
-        sub: 'O painel de desequilíbrios macroeconómicos e o painel social europeu, com os limiares que as instituições publicam.',
         /* A linha do limiar de um cartão (IDENTIDADE.md §11). A palavra é
            derivada de dois números que já existem, e não é um número. */
         limiar: 'limiar',
@@ -515,34 +512,6 @@ export const STRINGS = {
           'Sem JavaScript, a régua mostra Portugal. Os comandos acrescentam regiões à mesma régua.',
       },
 
-      instr2: {
-        eyebrow: 'Instrumento',
-        h2: 'O país em pontos',
-        sub: 'Um ponto por município, na posição real do seu centróide. Sem fronteiras desenhadas: a forma do país é o que os dados fazem.',
-        contagemK: 'Contagem verificada nos ficheiros',
-        continente: 'Continente',
-        acores: 'Açores',
-        madeira: 'Madeira',
-        total: 'Total',
-        legendaA: 'Aceso: ',
-        legendaB: ' · ',
-        legendaC: ' estudos aprofundados publicados (dois com edição em inglês). Os restantes ',
-        legendaD: ' pontos marcam a posição do município; não representam cobertura.',
-        readoutHint: 'Passe o cursor sobre um ponto para ler o município.',
-        tecladoHint:
-          'Teclado: Tab até ao mapa, setas para percorrer os municípios vizinhos, Home para voltar a Évora.',
-        svgLabel:
-          'Mapa de pontos dos municípios de Portugal. Use as setas para percorrer os municípios.',
-        deepTitulo: 'Método, ressalvas e proveniência',
-        dadosK: 'Os dados deste mapa',
-        dadosV:
-          'Uma linha por município: nome, distrito ou ilha, região e a posição normalizada que o mapa desenha. O cabeçalho traz a citação da CAOP e a data de acesso, tal como aparecem aqui.',
-        fonteK: 'Coordenadas · fonte',
-        processamentoK: 'Coordenadas · processamento',
-        coberturaK: 'O que o mapa não diz',
-        coberturaV:
-          'O ponto aceso marca cobertura editorial, não qualidade nem importância. Os restantes pontos marcam a posição do município e mais nada.',
-      },
 
       /* O rótulo é o mesmo nos dois instrumentos: a acção é a mesma, e um
          rótulo por instrumento seria duas coisas para manter e nenhuma razão. */
@@ -1277,9 +1246,6 @@ export const STRINGS = {
         'A data observatory on Portugal. Every published figure has a row in the ledger, with source, document and access date.',
 
       numeros: {
-        eyebrow: 'The country in verified figures',
-        h2: 'Measures from the European scoreboard',
-        sub: 'The macroeconomic imbalance scoreboard and the European social scoreboard, with the thresholds the institutions publish.',
         limiar: 'threshold',
         acima: 'above',
         abaixo: 'below',
@@ -1318,34 +1284,6 @@ export const STRINGS = {
           'Without JavaScript, the rule shows Portugal. The controls add regions to the same rule.',
       },
 
-      instr2: {
-        eyebrow: 'Instrument',
-        h2: 'The country in points',
-        sub: 'One point per municipality, at the real position of its centroid. No borders are drawn: the shape of the country is what the data makes.',
-        contagemK: 'Count verified in the files',
-        continente: 'Mainland',
-        acores: 'Azores',
-        madeira: 'Madeira',
-        total: 'Total',
-        legendaA: 'Lit: ',
-        legendaB: ' · ',
-        legendaC: ' in-depth studies published (two with an English edition). The remaining ',
-        legendaD: ' points mark the position of the municipality; they do not represent coverage.',
-        readoutHint: 'Hover over a point to read the municipality.',
-        tecladoHint:
-          'Keyboard: Tab to the map, arrow keys to move between neighbouring municipalities, Home to return to Évora.',
-        svgLabel:
-          'Point map of the municipalities of Portugal. Use the arrow keys to move between municipalities.',
-        deepTitulo: 'Method, caveats and provenance',
-        dadosK: 'The data behind this map',
-        dadosV:
-          'One row per municipality: name, district or island, region and the normalised position the map draws. The header carries the CAOP citation and the access date, exactly as they appear here.',
-        fonteK: 'Coordinates · source',
-        processamentoK: 'Coordinates · processing',
-        coberturaK: 'What the map does not say',
-        coberturaV:
-          'The lit point marks editorial coverage, not quality or importance. The remaining points mark the position of the municipality and nothing else.',
-      },
 
       dadosLink: 'download the data (CSV)',
     },
