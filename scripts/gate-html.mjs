@@ -50,6 +50,7 @@ import {
   POR_VERIFICAR,
 } from '../src/lib/ledger.mjs';
 import { VERBATIM, normalizeWhitespace } from '../src/data/verbatim.mjs';
+import { FIGURAS } from '../src/data/figuras.mjs';
 import { EDITIONS, workById, studyLabel } from '../src/data/studies.mjs';
 import { temLeitura } from '../src/data/leituras.mjs';
 import { tituloDaLinha, descricaoDaLinha } from '../src/lib/livro.mjs';
@@ -1667,7 +1668,36 @@ function contasDoPortao(claims) {
     }
   };
 
+  /**
+   * O PAINEL DA PRIMEIRA PÁGINA, CONTADO AQUI COM A REGRA ESCRITA AQUI.
+   *
+   * `src/lib/estado.mjs` classifica cada medida para a página; este bloco não o
+   * chama. Importar a função punha a mesma regra dos dois lados da comparação e
+   * o portão passava a confirmar `estadoDaMedida()` contra si própria — o
+   * defeito que a §1.24 fechou no campo `study`. O que o portão partilha é a
+   * lista das medidas e o livro-razão; a REGRA está escrita nestas nove linhas,
+   * e um dia em que as duas discordem é um dia em que a construção fecha.
+   *
+   * A convenção é a mesma, e é dita para que a divergência seja de propósito e
+   * não por descuido: `superior` é um teto e estar acima dele é estar fora;
+   * `inferior` é um chão e estar abaixo dele é estar fora; a igualdade conta
+   * como dentro; um limiar sem lado declarado não classifica nada.
+   */
+  const foraDoLimiar = (figura) => {
+    if (!figura.limiar) return false;
+    const linha = claims.get(figura.claim);
+    const v = parsePtNumber(linha?.value);
+    const t = parsePtNumber(`${figura.limiar.sinal ?? ''}${figura.limiar.nl}`);
+    if (v === null || t === null) return false;
+    if (figura.limiar.lado === 'superior') return v > t;
+    if (figura.limiar.lado === 'inferior') return v < t;
+    return false;
+  };
+
   return Object.fromEntries([
+    conta('painel_total', FIGURAS.length, 'ledger'),
+    conta('painel_com_limiar', FIGURAS.filter((f) => Boolean(f.limiar)).length, 'ledger'),
+    conta('painel_fora_do_limiar', FIGURAS.filter(foraDoLimiar).length, 'ledger'),
     conta('afirmacoes', paginasDeLinhaPt, 'dist'),
     conta('indexaveis', indexaveisPt, 'dist'),
     conta('divida', paginasDeLinhaPt - indexaveisPt, 'dist'),

@@ -50,6 +50,8 @@ import {
   TIPOS_DE_DOCUMENTO,
 } from './ledger.mjs';
 import { ROUTES, routePath } from './routes.mjs';
+import { estadoDaMedida } from './estado.mjs';
+import { FIGURAS } from '../data/figuras.mjs';
 import { WORKS, EDITIONS } from '../data/studies.mjs';
 import { temLeitura } from '../data/leituras.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
@@ -273,6 +275,18 @@ const FRASES = {
     pt: 'linhas que creditam o valor a quem consta do documento',
     en: 'rows that credit the value to whoever the document names',
   },
+  painel_total: {
+    pt: 'medidas no painel europeu da primeira página',
+    en: 'measures on the European panel of the front page',
+  },
+  painel_com_limiar: {
+    pt: 'medidas do painel cujo quadro publica um limiar',
+    en: 'panel measures whose scoreboard publishes a threshold',
+  },
+  painel_fora_do_limiar: {
+    pt: 'medidas do painel cujo valor está fora do limiar publicado',
+    en: 'panel measures whose value is outside the published threshold',
+  },
   municipios_com_pagina: {
     pt: 'concelhos com página do observatório construída',
     en: 'concelhos with an observatory page built',
@@ -386,6 +400,32 @@ export function prova(lang = 'pt') {
     estudos: k('estudos', WORKS.length, routePath('estudos', lang)),
     edicoes: k('edicoes', EDITIONS.length, routePath('estudos', lang)),
     leituras: k('leituras', WORKS.filter((w) => temLeitura(w.id)).length, routePath('estudos', lang)),
+
+    /* ---- o painel da primeira página (v3, etapa 2a) ----
+       A manchete da primeira página diz «<n> limiares europeus ultrapassados»,
+       e esse <n> tem de ser um número do próprio sítio, com porta e recontado
+       pelo portão — e não uma palavra escrita à mão que fica errada no dia em
+       que o painel muda. São três chaves e não uma, porque a frase precisa das
+       três parcelas para não mentir por omissão: quantas medidas há, quantas
+       têm limiar publicado, e quantas estão fora dele.
+
+       O estado sai de `estadoDaMedida()`, que compara o valor publicado com o
+       limiar publicado do lado que a linha declara. Nenhum algarismo é gerado
+       aqui: contam-se medidas, não distâncias.
+
+       A porta é a âncora do painel na própria página (IDENTIDADE §10, v2): o
+       que estas três contam vê-se ali mesmo, mais abaixo. */
+    painel_total: k('painel_total', FIGURAS.length, ancora(routePath('home', lang), 'painel')),
+    painel_com_limiar: k(
+      'painel_com_limiar',
+      FIGURAS.filter((f) => f.limiar).length,
+      ancora(routePath('home', lang), 'painel'),
+    ),
+    painel_fora_do_limiar: k(
+      'painel_fora_do_limiar',
+      FIGURAS.filter((f) => estadoDaMedida(claims.get(f.claim), f.limiar) === 'fora').length,
+      ancora(routePath('home', lang), 'painel'),
+    ),
 
     /* ---- a cobertura ---- */
     municipios_com_pagina: k(

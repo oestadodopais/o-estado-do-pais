@@ -280,6 +280,42 @@ export const STRINGS = {
       metodoLink: 'Como isto é feito',
     },
 
+    /**
+     * ------------------------------------------------------------------
+     * O VOCABULÁRIO DE ESTADO E O DE COBERTURA (v3, etapa 2a)
+     * ------------------------------------------------------------------
+     * Duas listas fechadas, decididas uma vez, antes da primeira etapa que as
+     * rende (`design/especime-v3/CHAVES-EN.md`). São a única maneira de o sítio
+     * dizer estas duas coisas, e é por isso que vivem no topo e não dentro de
+     * `home`: a mesma palavra tem de sair igual na primeira página, no índice
+     * dos concelhos e na página de um concelho.
+     *
+     * O ESTADO é a comparação com um limiar publicado (Emenda 1). «fora» e não
+     * «acima»: a posição de investimento internacional ultrapassa o seu limiar
+     * POR BAIXO, porque −35 é um chão, e uma palavra que dissesse «acima»
+     * estaria errada em duas das quatro medidas com limiar.
+     *
+     * `porConfirmar` é a PALAVRA do estado, e não o marcador: o marcador é
+     * `[a verificar]` e fica em português nas duas edições (IDENTIDADE §6).
+     *
+     * A COBERTURA é editorial, e não uma medição: diz se este sítio já
+     * construiu a página de um concelho. Tinha três formulações em uso ao mesmo
+     * tempo (defeito 7); passa a ter duas palavras e mais nenhuma, e cada
+     * rendição leva `data-cobertura="com-pagina|sem-pagina"` para que a régua
+     * `medir-defeitos.mjs` conte quantas cadeias distintas existem por estado.
+     */
+    estado: {
+      foraDoLimiar: 'fora do limiar',
+      dentroDoLimiar: 'dentro do limiar',
+      semLimiar: 'sem limiar',
+      porConfirmar: 'por confirmar',
+    },
+
+    cobertura: {
+      temPagina: 'tem página',
+      semPaginaAinda: 'sem página ainda',
+    },
+
     /** O índice dos concelhos. */
     municipios: {
       metaTitle: 'Municípios · O Estado do País',
@@ -290,8 +326,6 @@ export const STRINGS = {
       lede: 'Todos os concelhos, pela Carta Administrativa Oficial de Portugal.',
       contagemA: 'São ',
       contagemB: ' concelhos. Um tem página do observatório; os restantes ainda não têm, e esta lista di-lo em vez de os esconder.',
-      semPagina: 'sem página ainda',
-      comPagina: 'Abrir a página',
       naoDizK: 'O que este índice não diz',
       naoDizV:
         'Nada sobre o concelho. É uma lista de nomes e de estados: um concelho aparece aqui porque existe na Carta Administrativa, não porque este sítio tenha alguma coisa medida sobre ele.',
@@ -361,9 +395,6 @@ export const STRINGS = {
         eyebrow: 'Instrumento',
         h2: 'O país em pontos',
         sub: 'Um ponto por município, na posição real do seu centróide. Sem fronteiras desenhadas: a forma do país é o que os dados fazem.',
-        coberturaLabel: 'Municípios com estudo aprofundado publicado',
-        legendaAceso: 'Município com estudo publicado',
-        legendaApagado: 'Município sem estudo publicado',
         contagemK: 'Contagem verificada nos ficheiros',
         continente: 'Continente',
         acores: 'Açores',
@@ -985,6 +1016,18 @@ export const STRINGS = {
       metodoLink: 'How this is made',
     },
 
+    estado: {
+      foraDoLimiar: 'outside the threshold',
+      dentroDoLimiar: 'within the threshold',
+      semLimiar: 'no threshold',
+      porConfirmar: 'unconfirmed',
+    },
+
+    cobertura: {
+      temPagina: 'has a page',
+      semPaginaAinda: 'no page yet',
+    },
+
     municipios: {
       metaTitle: 'Municipalities · O Estado do País',
       metaDescription:
@@ -994,8 +1037,6 @@ export const STRINGS = {
       lede: 'Every concelho, from the Carta Administrativa Oficial de Portugal.',
       contagemA: 'There are ',
       contagemB: ' concelhos. One has an observatory page; the rest do not yet, and this list says so rather than hiding them.',
-      semPagina: 'no page yet',
-      comPagina: 'Open the page',
       naoDizK: 'What this index does not say',
       naoDizV:
         'Anything about the concelho. It is a list of names and states: a concelho appears here because it exists in the official administrative map, not because this site has measured anything about it.',
@@ -1054,9 +1095,6 @@ export const STRINGS = {
         eyebrow: 'Instrument',
         h2: 'The country in points',
         sub: 'One point per municipality, at the real position of its centroid. No borders are drawn: the shape of the country is what the data makes.',
-        coberturaLabel: 'Municipalities with a published in-depth study',
-        legendaAceso: 'Municipality with a published study',
-        legendaApagado: 'Municipality without a published study',
         contagemK: 'Count verified in the files',
         continente: 'Mainland',
         acores: 'Azores',
