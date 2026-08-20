@@ -29,6 +29,19 @@ The director's four answers to the critical findings of the Codex critique are c
 
 Each item says the stage that needs it, the recommendation, and what the builder does until the word arrives. Nothing is built around them.
 
+**Decided by the director on 20.08.2026, late evening (his words, recorded here before the stages that need them; routed as stated):**
+
+| # | Decision | Routed to |
+|---|---|---|
+| a | **Eight.** Correções enters the masthead; the constitution's item count is amended in the same commit | builder A, substage 1f (`Masthead.astro` `OITAVO_ITEM`; `direcao.md` «sete» → «oito»; the vault note by the seat, same evening) |
+| b | **Label.** Words only, no glyph, no fifth state; the dashed square keeps its single Método meaning; the vocabulary stays closed | stage 2 (already the parked default: a concelho without a page renders coverage words only; «por ler» never ships) |
+| c | **Yes.** Field-by-field check plus the row's seal as the door | stage 4 (Correções), with the `data-correcao` check extended to require the door, proven on a plant |
+| d | **Yes.** The word «provisório» / «provisional» beside the value wherever `source_flag` is `p`, seal as the door, note as content | builder A, substage 1f (`Claim.astro`, one key pair), so every surface of the inventory renders it at once |
+| e | **Yes.** Phase 1 ships the distance in words only and is described as partial; printed numeric distances are calculated values, each needs its own ledger row, added later as rows, never as unsourced digits | stage 2 (the parked default) and the phase's closing report |
+| f | **Yes, as a provisional rule, with two conditions**: state-marker contours invert to the dark ink `#ECEEEA`, and the full contrast audit re-runs on the dark paper exactly as on light, including amber-on-paper; dark was never designed in the maquetas, so preview n.º 1 is its first real test and the measurements are reported | builder A, substage 1f (the dark block promoted from proposal to provisional rule; contour = `--ink` in both themes; `PARES` re-run in dark with the table in the note); stage 2's report carries the dark screenshots |
+| g | **«A cor» approved as drafted, on one condition**: the corrections register must actually render the struck-through form (valor antigo riscado, novo ao lado) by the time the sentence ships; if that form is not implemented in the same stage, implement it first or cut the correction clause until it is true | stage 4: the Correções form lands before the sentence, in the same stage, and the sentence ships only once the form renders |
+| h | **«A letra» approved with the edit**, verbatim below; confirm the OFL licence file for Spectral SC when vendoring (confirmed by the seat: `public/tipos/spectral-sc/OFL.txt`, SIL OFL 1.1, copied from `productiontype/Spectral@dbc0686`, digest in `TIPOS.md`); ship the sentence only in or after the commit that makes self-hosting live (live on the branch since `7643251`) | stage 4, `metodo.mjs` and its `DECISIONS.md` entry in the same commit |
+
 | # | Decision | Needed by | Recommendation | Parked meanwhile |
 |---|---|---|---|---|
 | a | Masthead: eight items with Correções, or replace one (constitution §4 says seven) | stage 1 | **eight**; amend the constitution's count in the same block (vault note and `direcao.md`, one line) | the nav is built as a list that takes seven or eight items and is measured at 320/390/1280 with eight; the eighth link lands when the word comes (one line of `Masthead.astro`) |
@@ -213,7 +226,9 @@ Proposed home: a short closing entry after the ten rules, in the form the Métod
 
 **A cor** (PT): «A cor aparece só onde a fonte publica um limiar: âmbar quando o valor está fora dele, cobalto quando está dentro. Tudo o resto é tinta e cinzento, e uma correção diz-se pela forma, com o valor antigo riscado e o novo ao lado, nunca por uma cor.» (EN): «Colour appears only where the source publishes a threshold: amber when the value is outside it, cobalt when it is within. Everything else is ink and grey, and a correction is said by form, with the old value struck through and the new one beside it, never by a colour.»
 
-**A letra** (PT): «Os tipos deste sítio são Spectral e Bitter, de licença aberta (SIL Open Font License), alojados aqui e servidos por este sítio, sem anfitriões de terceiros.» (EN): «This site's typefaces are Spectral and Bitter, under an open licence (SIL Open Font License), hosted here and served by this site, with no third-party hosts.» Per Emenda 5 no lineage is claimed; Spectral SC is a weight family of Spectral and is not named separately (the director may want it named).
+**A letra**, the director's verbatim text of 20.08.2026 (it replaces the seat's draft, which did not name Spectral SC): (PT): «Os tipos deste sítio são Spectral, com a sua família de versaletes Spectral SC, e Bitter, de licença aberta (SIL Open Font License), alojados aqui e servidos por este sítio, sem anfitriões de terceiros.» (EN): «This site's typefaces are Spectral, with its small-caps family Spectral SC, and Bitter, under an open licence (SIL Open Font License), hosted here and served by this site, with no third-party hosts.» Per Emenda 5 no lineage is claimed.
+
+**«A cor»** is approved as drafted above, conditional on the corrections register rendering the struck-through form before the sentence ships (decision g).
 
 ## 13. The home's acceptance matrix, and the URL state schema
 
