@@ -182,12 +182,20 @@
 }
 
 /* ============================================================
-   O ESCURO É UMA PROPOSTA, E ESPERA A PALAVRA DA DIREÇÃO.
+   O ESCURO É REGRA PROVISÓRIA, DECIDIDA PELA DIREÇÃO A 20.08.2026, COM DUAS
+   CONDIÇÕES:
 
-   As maquetas da v3 não trazem paleta escura nenhuma e o sítio serve um tema de
-   três estados desde a v2: o escuro tinha de existir, e não podia ser inventado
-   a olho. Estes oito valores são a proposta do plano §3 (f), medida com a mesma
-   fórmula da régua, e MUDAM POR DECISÃO DELE. Duas coisas que a medição obrigou
+     1. os contornos dos marcadores de estado vão na TINTA DO TEMA, que em
+        escuro é `#ECEEEA`. Não é decoração: é o contorno que segura o cobalto
+        no papel escuro, como em claro é ele que segura o âmbar;
+     2. a auditoria de contraste inteira repete-se no papel escuro exactamente
+        como em claro, âmbar sobre papel incluído, e os números são reportados.
+
+   A pré-visualização n.º 1 é o seu primeiro teste real: as maquetas da v3 não
+   trazem paleta escura nenhuma, e o sítio serve um tema de três estados desde a
+   v2. Estes valores foram medidos com a mesma fórmula da régua antes de
+   entrarem, e continuam a ser revogáveis: «provisória» quer dizer que a direção
+   a pode mudar depois de a ver no ar, e não que ninguém a mediu. Duas coisas que a medição obrigou
    e não são gosto: o ocre `#7a5300` falha sobre papel escuro (2,62:1), e por
    isso em escuro a palavra do estado «fora do limiar» é o próprio âmbar (8,00:1);
    o cobalto `#1f4e8c` como palavra fica em 2,16:1 e por isso a palavra «dentro
