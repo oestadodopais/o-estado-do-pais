@@ -7184,6 +7184,181 @@ do motor leu esse instantâneo e as somas de Évora mexeram outra vez desde o de
 linhas do sítio continuam a dizer o instantâneo de 2026-08-17, com a data à
 vista, e nada disto atravessa sem a reextração sob a V16.
 
+### 1.48 A direção decide: a licença do conjunto é CC BY 4.0, e a regra 6 diz o que se faz
+
+**Afecta:** metodo
+**Texto:** metodo 95d4deae431a
+
+*Este registo segue a grafia que §1.38 fixou.*
+
+A 20.08.2026 a direção recebeu por escrito a lista das decisões desse dia, com a
+recomendação do lugar de direção ao lado de cada uma, e delegou a condução dela.
+Duas das cinco tocam texto governado ou estado público e cabem numa só
+pré-visualização: a **primeira** frase da regra 6 do Método e a **licença do
+conjunto de dados** do livro-razão. São as duas que esta entrada regista, e são
+decisões da direção, tomadas por delegação sobre a recomendação. As outras três
+ficam onde estavam: a licença do instantâneo do PRR (com o pedido de
+esclarecimento ao publicador em rascunho, `legal/rascunhos/2026-08-20-pedido-licenca-prr.md`,
+por enviar), as duas republicações do 07/08 e do estudo 04, e o mapa de
+cobertura, que é do motor.
+
+#### A primeira frase da regra 6, que era um absoluto que a própria página desmentia
+
+O T4 reescreveu o **limite** da regra 6 e não lhe tocou na **regra** (§1.47, «A
+regra 6 do Método»). A leitura cruzada do bloco T apanhou o que ficou (achados 7
+e 13): a primeira frase dizia que um número é relido na fonte **antes de ser
+publicado**, e a conta ao lado da mesma regra diz que 53 das 132 linhas têm
+releitura escrita. Uma promessa universal ao lado da prova que a desmente é uma
+frase falsa, e não sai para o ar por ser antiga.
+
+A frase passa a dizer o que se faz, e a dizer onde isso se lê. Nas duas edições,
+e sem mais nenhuma palavra mudada na regra:
+
+> «Os números publicados são relidos na fonte por um caminho diferente e por quem
+> não os escreveu, linha a linha, e cada linha diz se já o foi, quando e com que
+> resultado.»
+
+> «Published figures are read again at the source by a different route and by
+> someone who did not write them, row by row, and each row says whether it has
+> been yet, when and with what result.»
+
+A segunda frase de cada edição é a que já lá estava, palavra por palavra: o
+painel da primeira página reconferido todas as semanas, e a página a dizer
+quando foi a última vez. O mecanismo, o limite e as quatro chaves de prova da
+regra não mudam. As outras nove regras não mudam uma palavra.
+
+Duas coisas que a redação nova faz de propósito. A frase deixa de prometer uma
+ordem («antes de») e passa a descrever um estado que a página prova linha a
+linha, que é o que a §1.31 pede a qualquer frase da casa sobre o seu próprio
+trabalho. E não traz algarismos: o Método é a única página onde nenhum pedaço
+de texto corrido os pode trazer, e a conta que diz **quantas** linhas já foram
+relidas está onde sempre esteve, na prova ao lado.
+
+#### A licença do conjunto: um só campo, e a promessa era mesmo de um só campo
+
+`LICENCA`, em `src/data/licenca.mjs`, passa de `null` aos três campos que o
+próprio ficheiro documenta desde 18.08.2026: `CC BY 4.0`,
+`https://creativecommons.org/licenses/by/4.0/`, e a atribuição «O Estado do
+País, oestadodopaís.pt». Nenhuma outra linha de código mudou para o conjunto
+passar a ser oferecido. O caminho não estreou hoje: foi construído e conferido a
+cada corrida desde 18.08.2026, com a comutação da licença dentro do
+`check:dados`, e por isso hoje não houve nada de novo a ler.
+
+O que a decisão liga, medido sobre a construção e não afirmado:
+
+| | `main` `0068d33` | o ramo |
+| --- | --- | --- |
+| licença, como o `check:dados` a diz | por decidir | CC BY 4.0 |
+| endereços do conjunto ligados de páginas construídas | 0 | 134 |
+| deles, `/livro-razao.csv` e `/livro-razao.json` | 0 | 2, nas duas edições |
+| páginas de linha com a porta do seu JSON | 0 | 264 |
+| a linha de estado no índice do livro-razão | nas duas edições | sai das duas |
+
+**Uma frase nova entra ao pé da licença, e não é texto governado.** Uma licença
+da casa não pode cobrir o que não é da casa: o que está entre aspas no campo
+`excerpt` de uma linha é da fonte, e dizer «CC BY 4.0» sobre um ficheiro que os
+leva era prometer mais do que se pode dar. A frase vive nas cadeias
+(`src/i18n/strings.mjs`, `conjuntoAmbito`) e diz, nas duas edições:
+
+> «A licença cobre o conjunto: a estrutura, os valores da casa, as derivações e
+> as descrições. Os excertos transcritos das fontes continuam sob os termos de
+> quem os publicou.»
+
+> «The licence covers the dataset: its structure, the house values, the
+> derivations and the descriptions. Excerpts transcribed from sources remain
+> under their publishers’ terms.»
+
+O comentário de cabeça do `src/data/licenca.mjs` deixa de falar da decisão no
+futuro e passa a registá-la como tomada, com a data e a porta para aqui. O
+parágrafo que descreve o estado a `null` fica escrito, porque é o estado a que a
+constante volta se a decisão for revogada, e porque é a razão de o caminho ter
+sido construído antes de ser preciso.
+
+#### Os estragos plantados, cada um reposto e a reposição conferida
+
+Nenhum portão novo e nenhuma conferência mudada: as três que este estado precisa
+já existiam e foram provadas no T4. O que se prova aqui é que elas fecham
+**neste** estado.
+
+| Estrago | O portão, na sua frase |
+| --- | --- |
+| com a licença decidida, tirar a ligação do CSV do índice da edição inglesa, na construção (`dist/en/ledger/index.html`), e correr o `check:dados` | «o índice do livro-razão da edição "en" não liga para "/livro-razao.csv". Com licença decidida, o conjunto oferece-se nas duas edições, ou não se oferece.» |
+| correr o `ledger:check` com a regra 6 já reescrita e antes de esta entrada existir | «"metodo": o texto mudou depois da última decisão que o governa, ou a decisão foi registada contra outro texto. §1.47 carimba 4c94508d8ad4 / src/data/metodo.mjs está hoje em 95d4deae431a / Escreva a entrada que regista a mudança, com o resumo de hoje.» |
+| um travessão posto de propósito na frase nova da licença, e `node scripts/ortografia.mjs --verificar` | «1 a reescrever à mão (1 travessão/traço): src/i18n/strings.mjs:533:37», com a linha citada por baixo |
+
+Os três fecharam com código de saída 1. O primeiro foi reposto do ficheiro
+guardado e o resumo SHA-256 do HTML voltou ao que era
+(`0a4d69f8ea3b7e3977d5d50b7530ec3b6815df4b4e280b9343eacfeb6397f822`); o terceiro
+foi reposto e o resumo do `strings.mjs` voltou ao que era
+(`7493bb2255ea7e064a3c52b6307d83848748050f1b46c61c7e4a6f0657a7b357`); nos dois o
+`diff` contra o original ficou vazio e a conferência voltou a passar. O segundo
+repõe-se por esta entrada existir, que é o caminho que a §1.38 fixou.
+
+#### A régua, antes e depois
+
+`node scripts/medir-defeitos.mjs`, corrida sobre a construção de `main`
+(`0068d33`) e sobre a do ramo, com o mesmo instrumento.
+
+**Antes, `main` `0068d33`:**
+
+| A conta | O valor |
+| --- | --- |
+| páginas construídas (sem os documentos de estudo) | 307 |
+| porta de correções | 307 de 307 |
+| primeira página: valores sem selo · selos para outra linha | 0 · 0 |
+| frases de moldura: distintas · ocorrências | 77 · 2367 |
+| `[descrição em preparação]` | 0 |
+| linhas com `#page=` | 23 de 132 |
+| linhas com recorte | 22 de 132 |
+| localizadores internos | 0 |
+
+**Depois, no ramo:**
+
+| A conta | O valor |
+| --- | --- |
+| páginas construídas (sem os documentos de estudo) | 307 |
+| porta de correções | 307 de 307 |
+| primeira página: valores sem selo · selos para outra linha | 0 · 0 |
+| frases de moldura: distintas · ocorrências | 77 · 2367 |
+| `[descrição em preparação]` | 0 |
+| linhas com `#page=` | 23 de 132 |
+| linhas com recorte | 22 de 132 |
+| localizadores internos | 0 |
+
+**A régua não mexeu em nenhuma das oito contas, e isso diz-se em vez de se
+arredondar.** O `BRIEF` deste bloco contava com as frases de moldura a mexer, e
+elas não mexeram. A razão está na definição da própria régua: uma frase de
+moldura é um bloco de texto com **30 ou mais** carácteres que aparece em **mais
+do que uma** página. A porta que entrou em 264 páginas de linha tem vinte
+carácteres em português («Esta linha em JSON →») e dezoito em inglês, e fica
+abaixo do limiar; o bloco que entrou no índice do livro-razão tem trinta e sete
+carácteres mas aparece numa página só por edição. Uma coisa pode ser oferecida
+em 264 páginas sem acrescentar uma palavra de moldura a nenhuma, e foi o que
+aconteceu.
+
+**O que mexeu está no `dist/prova.json`, e é uma chave só:**
+
+| Chave | Antes | Depois |
+| --- | --- | --- |
+| `portao.ligacoes_internas_conferidas` | 9807 | 10075 |
+
+São 268 ligações novas, e a conta fecha à mão: 264 portas de linha, mais o CSV e
+o JSON em cada um dos dois índices. Nenhuma das 28 chaves de `prova` mexeu, e as
+outras oito de `portao` também não: a regra 6 mudou palavras e não números, e o
+conjunto passou a ser oferecido sem mudar uma única contagem do livro-razão.
+
+#### O que fica dito, para não ser descoberto depois
+
+A redação nova da primeira frase é **decisão da direção** e não proposta do lugar
+de construção, ao contrário da do limite, que o T4 propôs a 18.08.2026 e que
+continua a valer enquanto não for revogada. As duas leem-se juntas na
+pré-visualização, e a regra 6 é a única das dez que mudou neste bloco.
+
+A licença cobre o conjunto tal como ele é hoje: 132 linhas, das quais 8 com
+dívida de proveniência e 3 com as somas do PRR ainda com o marcador. Licenciar
+um conjunto não é declarar que ele está fechado, e o índice continua a dizer o
+que não diz.
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
