@@ -1,0 +1,434 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Spectral+SC:wght@400;600&family=Bitter:ital,wght@0,100..900;1,100..900&display=swap">
+  <style>
+    html, body { margin: 0; background: #F6F7F4; }
+    a { color: #17191B; } a:hover { color: #1F4E8C; }
+    :root, .pg { --paper: #F6F7F4; --ink: #17191B; --g1: #585D5B; --g2: #7F8681; --g3: #D9DDD8; --amb: #E0A21A; --ocre: #7A5300; --cob: #1F4E8C; }
+    .pg { box-sizing: border-box; background: var(--paper); color: var(--ink);
+          font-family: "Spectral", Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.55;
+          font-variant-numeric: oldstyle-nums; }
+    .pg * { box-sizing: border-box; }
+    p { margin: 0; }
+    h1, h2 { margin: 0; font-weight: 500; letter-spacing: -0.012em; }
+    .slab { font-family: "Bitter", "Rockwell", Georgia, serif; font-variant-numeric: tabular-nums lining-nums; }
+    .num { font-family: "Bitter", "Rockwell", Georgia, serif; font-variant-numeric: tabular-nums lining-nums; font-weight: 500; letter-spacing: -0.01em; }
+    .lab { font-family: "Spectral SC", "Spectral", Georgia, serif; font-size: 13px; line-height: 1.4; letter-spacing: .05em; text-transform: lowercase; font-weight: 600; color: var(--g1); font-variant-numeric: tabular-nums lining-nums; }
+    .nav { font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; color: var(--ink); }
+    .note { font-family: "Bitter", Georgia, serif; font-size: 11px; line-height: 1.5; letter-spacing: .02em; color: var(--g1); font-variant-numeric: tabular-nums lining-nums; }
+    .small { font-size: 14px; line-height: 1.5; color: var(--g1); }
+    .selo { display: inline-flex; align-items: center; gap: 6px; font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); text-decoration: none; white-space: nowrap; }
+    .selo::before { content: ""; width: 9px; height: 9px; background: var(--ink); display: inline-block; }
+    .selo.pc::before { background: transparent; border: 1px dashed var(--ink); }
+    .av { font-family: "Bitter", Georgia, serif; font-size: 11px; letter-spacing: .04em; color: var(--ink); border: 1px dashed var(--ink); padding: 1px 5px; display: inline-block; line-height: 1.5; font-variant-numeric: tabular-nums lining-nums; }
+    .fora { color: var(--ocre); } .dentro { color: var(--cob); }
+    .hair { border-top: 1px solid var(--g3); }
+    .rule2 { border-top: 2px solid var(--g2); }
+    .rulei { border-top: 1px solid var(--ink); }
+    .lnk { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .gr { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; align-items: start; }
+    .rowf { border-top: 1px solid var(--g3); padding: 15px 0 17px 0; }
+    .med { max-width: 68ch; }
+    .secl { font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; line-height: 1.4; font-variant-numeric: tabular-nums lining-nums; }
+    .cit { border-left: 1px solid var(--g3); padding: 3px 0 3px 16px; font-size: 15px; line-height: 1.5; }
+    .ent { padding: 0 0 14px 0; }
+    .ent:last-child { padding-bottom: 0; }
+    .esv { border-top: 1px solid var(--g3); padding: 13px 0; font-size: 15px; line-height: 1.55; color: var(--g1); }
+    .crt { border-top: 1px solid var(--g3); padding: 14px 0 16px 0; }
+    .crt:first-child { border-top: 0; padding-top: 0; }
+  </style>
+</helmet>
+<div class="pg" style="width: 1280px; min-height: 100vh; padding: 34px 48px 40px 48px; display: flex; flex-direction: column;">
+
+  <!-- CABEÇALHO INTERIOR -->
+  <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; padding-bottom: 12px;">
+    <div style="flex: none; font-size: 24px; line-height: 1.1; font-weight: 500; letter-spacing: -0.01em;">O Estado do País</div>
+    <nav style="flex: 1 1 auto; display: flex; justify-content: center; align-items: baseline; white-space: nowrap;">
+      <a class="nav" href="#">Início</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Municípios</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Estudos</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Livro-razão</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Agenda</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Método</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Sobre</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">English</a>
+    </nav>
+    <div style="flex: none; display: flex; flex-direction: column; align-items: flex-end; gap: 5px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="width: 12px; height: 12px; background: var(--cob); display: inline-block; flex: none;"></span>
+        <span class="slab" style="font-size: 11px; letter-spacing: .08em; text-transform: uppercase; line-height: 1;">Painel europeu reconferido a 2026-08-17</span>
+      </div>
+      <span class="slab" style="font-size: 11px; letter-spacing: .08em; text-transform: uppercase; line-height: 1; color: var(--g1);">Agenda · 3 em curso · 1 a seguir</span>
+    </div>
+  </div>
+  <div class="rulei"></div>
+
+  <!-- TÍTULO -->
+  <div class="gr" style="padding-top: 32px;">
+    <div class="lab" style="padding-top: 12px;">Agenda</div>
+    <div>
+      <h1 style="font-size: 56px; line-height: 1.04;">O que se mede a seguir</h1>
+      <p class="med" style="font-size: 21px; line-height: 1.42; padding-top: 18px;">Cada item traz o critério que o pôs aqui, quem o propôs e quem o decidiu, ou diz o que ainda lhe falta; e traz o registo de cada mudança de estado. Nada sai desta lista em silêncio.</p>
+      <p class="small med" style="padding-top: 12px;">A lista e o calendário são dois registos do motor de investigação, publicados tal como atravessaram.</p>
+    </div>
+  </div>
+
+  <!-- INSTRUMENTO · O QUE ESTÁ EM CADA ESTADO -->
+  <div class="gr" style="padding-top: 40px;">
+    <div class="lab" style="padding-top: 16px;">O que está em cada estado</div>
+    <div style="border-top: 2px solid var(--g2); border-bottom: 1px solid var(--g3); display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;">
+      <div style="padding: 15px 0 17px 0;">
+        <div class="num" style="font-size: 44px; line-height: 1;">3</div>
+        <div class="lab" style="padding-top: 9px;">Em curso</div>
+      </div>
+      <div style="padding: 15px 0 17px 0;">
+        <div class="num" style="font-size: 44px; line-height: 1;">1</div>
+        <div class="lab" style="padding-top: 9px;">A seguir</div>
+      </div>
+      <div style="padding: 15px 0 17px 0;">
+        <div class="num" style="font-size: 44px; line-height: 1;">1</div>
+        <div class="lab" style="padding-top: 9px;">Concluído</div>
+      </div>
+      <div style="padding: 15px 0 17px 0;">
+        <div class="num" style="font-size: 44px; line-height: 1; color: var(--g2);">0</div>
+        <div class="lab" style="padding-top: 9px;">Retirado</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================= EM CURSO ======================= -->
+  <div style="border-top: 1px solid var(--ink); margin-top: 46px; padding-top: 12px; display: flex; align-items: baseline; justify-content: space-between; gap: 24px;">
+    <div class="secl">Em curso · 3</div>
+  </div>
+
+  <!-- FICHA 1 -->
+  <div style="border-top: 2px solid var(--g2); margin-top: 22px;">
+    <div class="gr" style="padding: 14px 0 17px 0;">
+      <div class="lab" style="padding-top: 7px;">Vigilância · Em curso</div>
+      <h2 style="font-size: 26px; line-height: 1.22; max-width: 40ch;">O ficheiro de endividamento de 2025 da DGAL</h2>
+    </div>
+
+    <div class="gr rowf">
+      <div class="lab">Porquê</div>
+      <p class="med">A DGAL não publica calendário e o ficheiro aparece sem aviso; a vigilância mensal é o que existe no lugar de uma data.</p>
+    </div>
+
+    <div class="gr rowf">
+      <div class="lab">Critérios</div>
+      <div class="med">
+        <div class="crt">
+          <div class="lab">Calendário das fontes</div>
+          <p style="font-size: 18px; line-height: 1.45; padding-top: 7px;">Ficheiro «Evolução endividamento total 2025» no Portal Autárquico</p>
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding-top: 11px;">
+            <span class="av">[a verificar]</span>
+            <span class="note">a fonte não publica data</span>
+          </div>
+          <p class="small" style="padding-top: 11px;">O acontecimento no calendário regista que a página não anuncia data nenhuma: onze ficheiros anuais estão lá sem data, e a procura por «calend» não dá nada. A mesma procura encontra «endividamento» na página, por isso a ausência de «calendário» não é falha da procura.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gr rowf">
+      <div></div>
+      <div class="note med" style="text-transform: uppercase; letter-spacing: .06em;">Proposto pelo motor a 2026-08-10 · Decidido pela direção a 2026-08-18 · Entrada no registo 2026-08-16 · Última alteração 2026-08-18</div>
+    </div>
+
+    <div class="gr rowf">
+      <div class="lab">O que mudou</div>
+      <div class="med" style="border-left: 2px solid var(--g2); padding-left: 18px;">
+        <div class="ent">
+          <div class="slab" style="font-size: 13px; letter-spacing: .02em;">2026-08-16 · entrada · passa a Em curso</div>
+          <p class="small" style="padding-top: 5px;">A vigilância existia desde 2026-08-10 mas corria à mão e não deixava rasto. Passa a correr no agente mensal a partir de hoje, e é hoje que entra na agenda.</p>
+        </div>
+        <div class="ent">
+          <div class="slab" style="font-size: 13px; letter-spacing: .02em;">2026-08-18 · alteração · estado mantido: Em curso</div>
+          <p class="small" style="padding-top: 5px;">A direção leu a vigilância e decidiu mantê-la em curso. A decisão fica registada com a data; o estado não muda.</p>
+        </div>
+      </div>
+    </div>
+    <div class="hair"></div>
+  </div>
+
+  <!-- FICHA 2 -->
+  <div style="border-top: 2px solid var(--g2); margin-top: 30px;">
+    <div class="gr" style="padding: 14px 0 17px 0;">
+      <div class="lab" style="padding-top: 7px;">Vigilância · Em curso</div>
+      <h2 style="font-size: 26px; line-height: 1.22; max-width: 40ch;">As contas de 2026 do Município de Évora</h2>
+    </div>
+
+    <div class="gr rowf">
+      <div class="lab">Porquê</div>
+      <p class="med">São as primeiras contas do executivo instalado em 2025, e os dois estudos de Évora deixaram escritas as linhas a conferir quando aparecerem.</p>
+    </div>
+
+    <div class="gr rowf">
+      <div class="lab">Critérios</div>
+      <div class="med">
+        <div class="crt">
+          <div class="lab">Calendário das fontes</div>
+          <p style="font-size: 18px; line-height: 1.45; padding-top: 7px;">Prestação de contas de 2026 do Município de Évora, apreciação pela Assembleia Municipal entre 2027-04-01 e 2027-04-30</p>
+          <p class="small" style="padding-top: 11px;">O que os dois estudos mandam conferir, palavra por palavra, nos documentos alojados aqui.</p>
+          <p class="small" style="padding-top: 11px;">Do estudo dos mandatos de Évora:</p>
+          <div style="display: flex; flex-direction: column; gap: 8px; padding-top: 8px;">
+            <p class="cit">«A taxa de execução de 2026, contra a série descendente que o documento companheiro tabela.»</p>
+            <p class="cit">«Se a fila dos fornecedores vira antes de tudo o resto.»</p>
+            <p class="cit">«As taxas de execução do Rossio de São Brás e da via de acesso ao hospital quando as contas de 2026 aparecerem, contra as dotações que a secção do plano imprime para ambos.»</p>
+            <p class="cit">«Como vota a assembleia municipal essas mesmas contas de 2026, dada a repartição de mandatos acima.»</p>
+          </div>
+          <p class="small" style="padding-top: 12px;">Do estudo das contas de Évora:</p>
+          <div style="padding-top: 8px;">
+            <p class="cit">«o primeiro número a verificar nas contas de 2026 é a taxa de execução, não o total»</p>
+          </div>
+          <div style="padding-top: 16px;">
+            <div class="lab">Documentos alojados</div>
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 5px; padding-top: 7px;">
+              <a class="slab lnk" href="#" style="font-size: 13px;">Évora — Quinze Anos, Cinco Mandatos (edição portuguesa)</a>
+              <a class="slab lnk" href="#" style="font-size: 13px;">Évora — Orçamentado, Pago, Devido 2025 (edição portuguesa)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gr rowf">
+      <div></div>
+      <div class="note med" style="text-transform: uppercase; letter-spacing: .06em;">Proposto pelo motor a 2026-08-10 · Decidido pela direção a 2026-08-18 · Entrada no registo 2026-08-16 · Última alteração 2026-08-18</div>
+    </div>
+
+    <div class="gr rowf">
+      <div class="lab">O que mudou</div>
+      <div class="med" style="border-left: 2px solid var(--g2); padding-left: 18px;">
+        <div class="ent">
+          <div class="slab" style="font-size: 13px; letter-spacing: .02em;">2026-08-16 · entrada · passa a Em curso</div>
+          <p class="small" style="padding-top: 5px;">Entra hoje, com o prazo legal lido no Diário da República e registado no calendário das fontes.</p>
+        </div>
+        <div class="ent">
+          <div class="slab" style="font-size: 13px; letter-spacing: .02em;">2026-08-18 · alteração · estado mantido: Em curso</div>
+          <p class="small" style="padding-top: 5px;">A direção leu a vigilância e decidiu mantê-la em curso. A decisão fica registada com a data; o estado não muda.</p>
+        </div>
+      </div>
+    </div>
+    <div class="hair"></div>
+  </div>
+
+  <!-- FICHA 3 -->
+  <div style="border-top: 2px solid var(--g2); margin-top: 30px;">
+    <div class="gr" style="padding: 14px 0 17px 0;">
+      <div class="lab" style="padding-top: 7px;">Vigilância · Em curso</div>
+      <h2 style="font-size: 26px; line-height: 1.22; max-width: 40ch;">O ano de 2024 sem contas publicadas em Évora</h2>
+    </div>
+
+    <div class="gr rowf">
+      <div class="lab">Porquê</div>
+      <p class="med">O ano não tem dossiê publicado, e o reaparecimento de uma página de 2024 seria notícia por si.</p>
+    </div>
+
+    <div class="gr rowf">
+      <div class="lab">Critérios</div>
+      <div class="med">
+        <div class="crt">
+          <div class="lab">Calendário das fontes</div>
+          <p style="font-size: 18px; line-height: 1.45; padding-top: 7px;">Reaparecimento de uma página de contas de 2024 em cm-evora.pt</p>
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding-top: 11px;">
+            <span class="av">[a verificar]</span>
+            <span class="note">a fonte não publica data</span>
+          </div>
+          <p class="small" style="padding-top: 11px;">O estudo dos mandatos de Évora diz, no documento alojado aqui: «Nunca foi publicado nenhum documento de contas de 2024». É esse o facto que se vigia.</p>
+          <div style="padding-top: 16px;">
+            <div class="lab">Documentos alojados</div>
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 5px; padding-top: 7px;">
+              <a class="slab lnk" href="#" style="font-size: 13px;">Évora — Quinze Anos, Cinco Mandatos (edição portuguesa)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gr rowf">
+      <div></div>
+      <div class="note med" style="text-transform: uppercase; letter-spacing: .06em;">Proposto pelo motor a 2026-08-10 · Decidido pela direção a 2026-08-18 · Entrada no registo 2026-08-16 · Última alteração 2026-08-18</div>
+    </div>
+
+    <div class="gr rowf">
+      <div class="lab">O que mudou</div>
+      <div class="med" style="border-left: 2px solid var(--g2); padding-left: 18px;">
+        <div class="ent">
+          <div class="slab" style="font-size: 13px; letter-spacing: .02em;">2026-08-16 · entrada · passa a Em curso</div>
+          <p class="small" style="padding-top: 5px;">Entra hoje. É a única das três vigilâncias cujo acontecimento não tem prazo nenhum, nem legal nem observado: pode nunca acontecer, e isso também é um resultado.</p>
+        </div>
+        <div class="ent">
+          <div class="slab" style="font-size: 13px; letter-spacing: .02em;">2026-08-18 · alteração · estado mantido: Em curso</div>
+          <p class="small" style="padding-top: 5px;">A direção leu a vigilância e decidiu mantê-la em curso. A decisão fica registada com a data; o estado não muda.</p>
+        </div>
+      </div>
+    </div>
+    <div class="hair"></div>
+  </div>
+
+  <!-- ======================= A SEGUIR ======================= -->
+  <div style="border-top: 1px solid var(--ink); margin-top: 46px; padding-top: 12px;">
+    <div class="secl">A seguir · 1</div>
+  </div>
+
+  <div style="border-top: 2px solid var(--g2); margin-top: 22px;">
+    <div class="gr" style="padding: 14px 0 17px 0;">
+      <div class="lab" style="padding-top: 7px;">Estudo · A seguir</div>
+      <h2 style="font-size: 26px; line-height: 1.22; max-width: 40ch;">Habitação: o que cada instituição mede quando fala de habitação em Portugal</h2>
+    </div>
+
+    <div class="gr rowf">
+      <div class="lab">Porquê</div>
+      <p class="med">Três linhas do livro-razão publicam habitação como indicador de um quadro institucional, e uma delas, o índice de preços, está publicada com um valor acima do limiar que a própria Comissão publica; nenhuma linha do sítio publica hoje o que o Fundo Monetário Internacional, a OCDE ou o Semestre Europeu dizem sobre habitação portuguesa.</p>
+    </div>
+
+    <div class="gr rowf">
+      <div class="lab">Critérios</div>
+      <div class="med">
+
+        <div class="crt">
+          <div class="lab">Quadro institucional</div>
+          <p style="font-size: 18px; line-height: 1.45; padding-top: 7px;">Procedimento relativo aos Desequilíbrios Macroeconómicos, painel principal (Comissão Europeia)</p>
+          <div style="display: flex; align-items: baseline; gap: 14px; padding-top: 12px;">
+            <span class="num" style="font-size: 26px; line-height: 1;">17,6</span>
+            <a class="selo" href="#">fonte</a>
+          </div>
+          <div class="note" style="padding-top: 8px;">Limiar publicado pela Comissão: 9 %</div>
+          <div style="padding-top: 13px;">
+            <div class="lab">Onde está escrito</div>
+            <div style="padding-top: 5px;">
+              <a class="slab lnk" href="#" style="font-size: 13px; line-height: 1.6; display: block; overflow-wrap: anywhere;">https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en</a>
+              <div class="note" style="padding-top: 4px;">Lido a 2026-08-16</div>
+            </div>
+          </div>
+          <div style="border: 1px solid var(--g3); border-left: 3px solid var(--g2); padding: 11px 14px; margin-top: 13px;">
+            <p class="slab" lang="en" style="font-size: 13px; line-height: 1.6;">nominal house price (1-year % change), with a threshold of 9%</p>
+          </div>
+        </div>
+
+        <div class="crt">
+          <div class="lab">Quadro institucional</div>
+          <p style="font-size: 18px; line-height: 1.45; padding-top: 7px;">Painel de Indicadores Sociais (Comissão Europeia)</p>
+          <div style="display: flex; align-items: baseline; gap: 14px; padding-top: 12px;">
+            <span class="num" style="font-size: 26px; line-height: 1;">6,3</span>
+            <a class="selo" href="#">fonte</a>
+          </div>
+          <p class="small" style="padding-top: 11px;">O registo de disponibilidade do motor marca tespm140 com o quadro «SocialSB». A análise de convergência do motor identifica este indicador como armadilha, e a razão é a que a primeira página já diz: a própria Comissão adverte que só se lê ao lado do regime de propriedade, e onde a taxa de proprietários é alta esta medida não vê quem não conseguiu comprar. O sítio não publica hoje a média europeia deste indicador, e por isso a comparação com ela não é feita aqui.</p>
+        </div>
+
+        <div class="crt">
+          <div class="lab">Quadro institucional</div>
+          <p style="font-size: 18px; line-height: 1.45; padding-top: 7px;">Procedimento relativo aos Desequilíbrios Macroeconómicos, indicadores auxiliares (Comissão Europeia)</p>
+          <div style="display: flex; align-items: baseline; gap: 14px; padding-top: 12px;">
+            <span class="num" style="font-size: 20px; line-height: 1;">749,7</span>
+            <a class="selo" href="#">fonte</a>
+          </div>
+          <p class="small" style="padding-top: 11px;">Licenças de construção residencial, um indicador auxiliar do mesmo painel.</p>
+        </div>
+
+        <div style="padding-top: 22px;">
+          <p class="esv">Fundo Monetário Internacional, consulta ao abrigo do Artigo IV · Sem linhas: nenhuma afirmação do livro-razão publica hoje a avaliação do Fundo sobre habitação portuguesa. O quadro fica registado sem linhas em vez de ser omitido, porque a ausência é uma das lacunas que o estudo vai preencher.</p>
+          <p class="esv">OCDE, Estudo Económico de Portugal, Foundations for Growth and Competitiveness, How's Life · Sem linhas, pela mesma razão. É deste quadro que vem a leitura favorável da habitação portuguesa que a pergunta põe frente às outras.</p>
+          <p class="esv" style="border-bottom: 1px solid var(--g3);">Semestre Europeu, relatório por país e recomendações específicas · Sem linhas.</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="hair"></div>
+  </div>
+
+  <!-- ======================= CONCLUÍDO · RETIRADO ======================= -->
+  <div style="border-top: 1px solid var(--ink); margin-top: 46px; padding-top: 12px; display: flex; align-items: baseline; justify-content: space-between; gap: 24px;">
+    <div class="secl">Concluído · 1</div>
+    <a class="nav lnk" href="#">Ver o registo →</a>
+  </div>
+
+  <div style="border-top: 1px solid var(--g3); margin-top: 22px; padding-top: 12px; display: flex; align-items: baseline; justify-content: space-between; gap: 24px;">
+    <div class="secl">Retirado · 0</div>
+    <div class="note">Nenhum item retirado.</div>
+  </div>
+
+  <!-- ======================= CALENDÁRIO DAS FONTES ======================= -->
+  <div class="gr" style="padding-top: 46px;">
+    <div class="lab" style="padding-top: 4px;">Calendário das fontes · três entradas</div>
+    <div>
+      <div style="border-top: 2px solid var(--g2); padding-top: 20px;">
+        <svg viewBox="0 0 924 92" width="924" height="92" style="display: block; overflow: visible;">
+          <text x="756" y="16" font-family="Bitter, Georgia, serif" font-size="12" fill="#17191B" text-anchor="end">Prestação de contas de 2026 do Município de Évora, apreciação pela Assembleia Municipal</text>
+          <text x="756" y="32" font-family="Bitter, Georgia, serif" font-size="11" fill="#585D5B" text-anchor="end">2027-04-01 a 2027-04-30</text>
+          <rect x="672" y="42" width="84" height="12" fill="#17191B"></rect>
+          <line x1="0" y1="62.5" x2="924" y2="62.5" stroke="#17191B" stroke-width="1"></line>
+          <line x1="0.5" y1="62.5" x2="0.5" y2="70" stroke="#D9DDD8" stroke-width="1"></line>
+          <line x1="84.5" y1="62.5" x2="84.5" y2="70" stroke="#D9DDD8" stroke-width="1"></line>
+          <line x1="168.5" y1="62.5" x2="168.5" y2="70" stroke="#D9DDD8" stroke-width="1"></line>
+          <line x1="252.5" y1="62.5" x2="252.5" y2="70" stroke="#D9DDD8" stroke-width="1"></line>
+          <line x1="336.5" y1="62.5" x2="336.5" y2="70" stroke="#D9DDD8" stroke-width="1"></line>
+          <line x1="420.5" y1="62.5" x2="420.5" y2="70" stroke="#D9DDD8" stroke-width="1"></line>
+          <line x1="504.5" y1="62.5" x2="504.5" y2="70" stroke="#D9DDD8" stroke-width="1"></line>
+          <line x1="588.5" y1="62.5" x2="588.5" y2="70" stroke="#D9DDD8" stroke-width="1"></line>
+          <line x1="672.5" y1="62.5" x2="672.5" y2="70" stroke="#D9DDD8" stroke-width="1"></line>
+          <line x1="756.5" y1="62.5" x2="756.5" y2="70" stroke="#D9DDD8" stroke-width="1"></line>
+          <line x1="840.5" y1="62.5" x2="840.5" y2="70" stroke="#D9DDD8" stroke-width="1"></line>
+          <line x1="923.5" y1="62.5" x2="923.5" y2="70" stroke="#D9DDD8" stroke-width="1"></line>
+          <text x="42" y="84" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="middle">2026-08</text>
+          <text x="126" y="84" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="middle">2026-09</text>
+          <text x="210" y="84" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="middle">2026-10</text>
+          <text x="294" y="84" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="middle">2026-11</text>
+          <text x="378" y="84" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="middle">2026-12</text>
+          <text x="462" y="84" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="middle">2027-01</text>
+          <text x="546" y="84" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="middle">2027-02</text>
+          <text x="630" y="84" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="middle">2027-03</text>
+          <text x="714" y="84" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="middle">2027-04</text>
+          <text x="798" y="84" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="middle">2027-05</text>
+          <text x="882" y="84" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="middle">2027-06</text>
+        </svg>
+      </div>
+
+      <div style="padding-top: 24px;">
+        <div style="border-top: 1px solid var(--g3); display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 24px; align-items: baseline; padding: 13px 0;">
+          <p style="font-size: 17px; line-height: 1.5;">Ficheiro «Evolução endividamento total 2025» no Portal Autárquico</p>
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px;">
+            <span class="av">[a verificar]</span>
+            <span class="note">a fonte não publica data</span>
+          </div>
+        </div>
+        <div style="border-top: 1px solid var(--g3); border-bottom: 1px solid var(--g3); display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 24px; align-items: baseline; padding: 13px 0;">
+          <p style="font-size: 17px; line-height: 1.5;">Reaparecimento de uma página de contas de 2024 em cm-evora.pt</p>
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px;">
+            <span class="av">[a verificar]</span>
+            <span class="note">a fonte não publica data</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================= PORTA DE CORREÇÕES ======================= -->
+  <div class="gr" style="border-top: 2px solid var(--g2); margin-top: 46px; padding-top: 14px;">
+    <div class="lab">Encontrou um erro</div>
+    <div class="med">
+      <p style="font-size: 16px; line-height: 1.55;">Escreva para <a class="lnk" href="#">correcoes@oestadodopais.pt</a>. Um erro confirmado entra no registo de correções e na própria linha, com o valor antigo à vista. Nada é apagado.</p>
+      <a class="nav lnk" href="#" style="display: inline-block; margin-top: 11px;">O registo de correções →</a>
+    </div>
+  </div>
+
+  <!-- RODAPÉ -->
+  <div style="padding-top: 46px;">
+    <div class="rulei"></div>
+    <nav style="display: flex; align-items: baseline; white-space: nowrap; padding-top: 13px;">
+      <a class="nav" href="#">Início</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Municípios</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Estudos</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Livro-razão</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Agenda</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Método</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Correções</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Sobre</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">English</a>
+    </nav>
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; padding-top: 12px;">
+      <p style="font-size: 15px; line-height: 1.5; max-width: 62ch;">Produzido maioritariamente por inteligência artificial, com o mínimo de intervenção humana. A direção é de Nuno dos Santos.</p>
+      <p class="note" style="flex: none; text-align: right;">Maqueta · tipos substitutos: Spectral por Parnaso, Bitter por Sebenta · valores publicados a 2026-08-18</p>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1280,"height":5020}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

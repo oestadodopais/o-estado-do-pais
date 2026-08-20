@@ -1,0 +1,432 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Spectral+SC:wght@400;600&family=Bitter:ital,wght@0,100..900;1,100..900&display=swap">
+  <style>
+    html, body { margin: 0; background: #F6F7F4; }
+    a { color: #17191B; } a:hover { color: #1F4E8C; }
+    :root, .pg { --paper: #F6F7F4; --ink: #17191B; --g1: #585D5B; --g2: #7F8681; --g3: #D9DDD8; --amb: #E0A21A; --ocre: #7A5300; --cob: #1F4E8C; }
+    .pg { box-sizing: border-box; background: var(--paper); color: var(--ink);
+          font-family: "Spectral", Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.55;
+          font-variant-numeric: oldstyle-nums; }
+    .pg * { box-sizing: border-box; }
+    p { margin: 0; }
+    h1, h2 { margin: 0; font-weight: 500; letter-spacing: -0.012em; }
+    .slab { font-family: "Bitter", "Rockwell", Georgia, serif; font-variant-numeric: tabular-nums lining-nums; }
+    .num { font-family: "Bitter", "Rockwell", Georgia, serif; font-variant-numeric: tabular-nums lining-nums; font-weight: 500; letter-spacing: -0.01em; }
+    .lab { font-family: "Spectral SC", "Spectral", Georgia, serif; font-size: 13px; line-height: 1.4; letter-spacing: .05em; text-transform: lowercase; font-weight: 600; color: var(--g1); font-variant-numeric: tabular-nums lining-nums; }
+    .nav { font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; color: var(--ink); }
+    .note { font-family: "Bitter", Georgia, serif; font-size: 11px; line-height: 1.5; letter-spacing: .02em; color: var(--g1); font-variant-numeric: tabular-nums lining-nums; }
+    .small { font-size: 14px; line-height: 1.5; color: var(--g1); }
+    .selo { display: inline-flex; align-items: center; gap: 6px; font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); text-decoration: none; white-space: nowrap; }
+    .selo::before { content: ""; width: 9px; height: 9px; background: var(--ink); display: inline-block; }
+    .selo.pc::before { background: transparent; border: 1px dashed var(--ink); }
+    .av { font-family: "Bitter", Georgia, serif; font-size: 11px; letter-spacing: .04em; color: var(--ink); border: 1px dashed var(--ink); padding: 1px 5px; display: inline-block; line-height: 1.5; font-variant-numeric: tabular-nums lining-nums; }
+    .fora { color: var(--ocre); } .dentro { color: var(--cob); }
+    .hair { border-top: 1px solid var(--g3); }
+    .rule2 { border-top: 2px solid var(--g2); }
+    .rulei { border-top: 1px solid var(--ink); }
+    .lnk { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .rc { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; align-items: start; }
+    .med { max-width: 68ch; }
+    .regra { border-top: 1px solid var(--g3); padding: 26px 0 28px 0; }
+    .bloco { border-top: 1px solid var(--g3); margin-top: 15px; padding-top: 11px; }
+    .mec { font-size: 16px; line-height: 1.55; padding-top: 5px; }
+    .lim { font-size: 16px; line-height: 1.55; color: var(--g1); padding-top: 5px; }
+    .prova { font-family: "Bitter", Georgia, serif; font-size: 13px; line-height: 1.6; letter-spacing: .01em; font-variant-numeric: tabular-nums lining-nums; padding-top: 6px; }
+    .iL { font-family: "Bitter", Georgia, serif; font-size: 11px; font-weight: 600; letter-spacing: .9px; fill: #17191B; }
+    .iV { font-family: "Bitter", Georgia, serif; font-size: 28px; font-weight: 500; fill: #17191B; font-variant-numeric: tabular-nums lining-nums; }
+    .iVr { font-family: "Bitter", Georgia, serif; font-size: 22px; font-weight: 500; fill: #17191B; font-variant-numeric: tabular-nums lining-nums; }
+    .iS { font-family: "Bitter", Georgia, serif; font-size: 11px; letter-spacing: .2px; fill: #585D5B; font-variant-numeric: tabular-nums lining-nums; }
+    .iN { font-family: "Bitter", Georgia, serif; font-size: 13px; font-weight: 500; fill: #17191B; font-variant-numeric: tabular-nums lining-nums; }
+    .iP { font-family: "Bitter", Georgia, serif; font-size: 15px; fill: #585D5B; }
+  </style>
+</helmet>
+<div class="pg" style="width: 1280px; min-height: 100vh; padding: 34px 48px 40px 48px; display: flex; flex-direction: column;">
+
+  <!-- CABEÇALHO INTERIOR -->
+  <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; padding-bottom: 12px;">
+    <div style="flex: none; font-size: 24px; line-height: 1.1; font-weight: 500; letter-spacing: -0.01em;">O Estado do País</div>
+    <nav style="flex: 1 1 auto; display: flex; justify-content: center; align-items: baseline; white-space: nowrap;">
+      <a class="nav" href="#">Início</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Municípios</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Estudos</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Livro-razão</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Agenda</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Método</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Sobre</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">English</a>
+    </nav>
+    <div style="flex: none; display: flex; flex-direction: column; align-items: flex-end; gap: 5px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="width: 12px; height: 12px; background: var(--cob); display: inline-block; flex: none;"></span>
+        <span class="slab" style="font-size: 11px; letter-spacing: .08em; text-transform: uppercase; line-height: 1;">Painel europeu reconferido a 2026-08-17</span>
+      </div>
+      <span class="slab" style="font-size: 11px; letter-spacing: .08em; text-transform: uppercase; line-height: 1; color: var(--g1);">Agenda · 3 em curso · 1 a seguir</span>
+    </div>
+  </div>
+  <div class="rulei"></div>
+
+  <!-- TÍTULO -->
+  <div class="rc" style="padding-top: 32px;">
+    <div class="lab" style="padding-top: 12px;">Método</div>
+    <div class="med">
+      <h1 style="font-size: 56px; line-height: 1.02;">Método</h1>
+      <p style="font-size: 22px; line-height: 1.35; color: var(--g1); padding-top: 14px;">Como se procura a independência e o rigor</p>
+    </div>
+  </div>
+
+  <!-- O MECANISMO -->
+  <div class="rule2" style="margin-top: 44px; padding-top: 13px;">
+    <div class="lab">O mecanismo, das fontes ao leitor</div>
+  </div>
+
+  <div style="padding-top: 30px;">
+    <svg viewBox="0 0 1184 400" width="1184" height="400" style="display: block; overflow: visible;">
+
+      <!-- retornos de cima -->
+      <rect x="206.5" y="0.5" width="159" height="95" fill="none" stroke="#17191B" stroke-width="1"></rect>
+      <text class="iL" x="220" y="22">AGENDA</text>
+      <text class="iVr" x="220" y="54">5</text>
+      <text class="iS" x="220" y="72">itens</text>
+
+      <rect x="410.5" y="0.5" width="203" height="95" fill="none" stroke="#17191B" stroke-width="1"></rect>
+      <text class="iL" x="424" y="22">RELEITURA</text>
+      <text class="iVr" x="424" y="54">0</text>
+      <text class="iS" x="424" y="72">registadas</text>
+      <text class="iN" x="518" y="54">2026-08-17</text>
+      <text class="iS" x="518" y="72">reconferido a</text>
+
+      <!-- retorno de baixo -->
+      <rect x="818.5" y="300.5" width="159" height="95" fill="none" stroke="#17191B" stroke-width="1"></rect>
+      <text class="iL" x="832" y="322">CORREÇÕES</text>
+      <text class="iVr" x="832" y="354">3</text>
+      <text class="iS" x="832" y="372">publicadas</text>
+
+      <!-- cadeia de seis caixas -->
+      <rect x="2.5" y="134.5" width="159" height="109" fill="none" stroke="#17191B" stroke-width="1"></rect>
+      <text class="iL" x="16" y="158">FONTES</text>
+      <text class="iV" x="16" y="196">14</text>
+      <text class="iS" x="16" y="216">organismos</text>
+
+      <rect x="206.5" y="134.5" width="159" height="109" fill="none" stroke="#17191B" stroke-width="1"></rect>
+      <text class="iL" x="220" y="158">MOTOR</text>
+      <text class="iV" x="220" y="196">70</text>
+      <text class="iS" x="220" y="216">linhas atravessadas</text>
+
+      <rect x="410.5" y="134.5" width="159" height="109" fill="none" stroke="#17191B" stroke-width="1"></rect>
+      <text class="iL" x="424" y="158">LIVRO-RAZÃO</text>
+      <text class="iV" x="424" y="196">132</text>
+      <text class="iS" x="424" y="216">linhas</text>
+      <text x="424" y="234"><tspan class="iN">12</tspan><tspan class="iS"> · por confirmar</tspan></text>
+
+      <rect x="614.5" y="134.5" width="159" height="109" fill="none" stroke="#17191B" stroke-width="1"></rect>
+      <text class="iL" x="628" y="158">CONSTRUÇÃO</text>
+      <text class="iV" x="628" y="196">23</text>
+      <text class="iS" x="628" y="216">contas refeitas</text>
+
+      <rect x="818.5" y="134.5" width="159" height="109" fill="none" stroke="#17191B" stroke-width="1"></rect>
+      <text class="iL" x="832" y="158">PÁGINA</text>
+      <text class="iV" x="832" y="196">120</text>
+      <text class="iS" x="832" y="216">linhas no mapa do sítio</text>
+
+      <rect x="1022.5" y="134.5" width="159" height="109" fill="none" stroke="#17191B" stroke-width="1"></rect>
+      <text class="iL" x="1036" y="158">LEITOR</text>
+      <text class="iP" x="1036" y="196">não é contado</text>
+
+      <!-- setas da cadeia -->
+      <line x1="165" y1="189" x2="195" y2="189" stroke="#7F8681" stroke-width="2"></line>
+      <polygon points="205,189 195,184 195,194" fill="#7F8681"></polygon>
+      <line x1="369" y1="189" x2="399" y2="189" stroke="#7F8681" stroke-width="2"></line>
+      <polygon points="409,189 399,184 399,194" fill="#7F8681"></polygon>
+      <line x1="573" y1="189" x2="603" y2="189" stroke="#7F8681" stroke-width="2"></line>
+      <polygon points="613,189 603,184 603,194" fill="#7F8681"></polygon>
+      <line x1="777" y1="189" x2="807" y2="189" stroke="#7F8681" stroke-width="2"></line>
+      <polygon points="817,189 807,184 807,194" fill="#7F8681"></polygon>
+      <line x1="981" y1="189" x2="1011" y2="189" stroke="#7F8681" stroke-width="2"></line>
+      <polygon points="1021,189 1011,184 1011,194" fill="#7F8681"></polygon>
+
+      <!-- retorno 1 · agenda entra no motor -->
+      <line x1="286" y1="96" x2="286" y2="124" stroke="#7F8681" stroke-width="2" stroke-dasharray="4 4"></line>
+      <polygon points="286,134 281,124 291,124" fill="#7F8681"></polygon>
+
+      <!-- retorno 2 · releitura entra no livro-razão -->
+      <line x1="490" y1="96" x2="490" y2="124" stroke="#7F8681" stroke-width="2" stroke-dasharray="4 4"></line>
+      <polygon points="490,134 485,124 495,124" fill="#7F8681"></polygon>
+
+      <!-- retorno 3 · a correção do leitor volta ao livro-razão -->
+      <path d="M 1102 244 L 1102 348 L 988 348" fill="none" stroke="#7F8681" stroke-width="2" stroke-dasharray="4 4"></path>
+      <polygon points="978,348 988,343 988,353" fill="#7F8681"></polygon>
+      <path d="M 818 348 L 490 348 L 490 254" fill="none" stroke="#7F8681" stroke-width="2" stroke-dasharray="4 4"></path>
+      <polygon points="490,244 485,254 495,254" fill="#7F8681"></polygon>
+    </svg>
+  </div>
+
+  <div class="rc" style="padding-top: 26px;">
+    <div></div>
+    <div class="med">
+      <p style="font-size: 15px; line-height: 1.6; color: var(--g1);">Uma cadeia de seis passos, da esquerda para a direita: fontes, motor de investigação, livro-razão, construção do sítio, página e leitor. Três retornos entram na cadeia: a agenda alimenta o motor, a releitura alimenta o livro-razão, e a correção escrita pelo leitor volta ao livro-razão. Cada passo mostra os números desta construção.</p>
+      <p style="font-size: 21px; line-height: 1.4; padding-top: 22px;">Um número chega ao leitor só se tem linha, e a linha diz de onde veio.</p>
+    </div>
+  </div>
+
+  <!-- AS DEZ REGRAS -->
+  <div class="rule2" style="margin-top: 46px; padding-top: 13px;">
+    <div class="lab">As dez regras</div>
+  </div>
+
+  <div style="padding-top: 18px;">
+
+    <!-- 1 -->
+    <div class="rc regra">
+      <div>
+        <div class="num" style="font-size: 22px; line-height: 1; color: var(--g2);">1</div>
+        <div style="font-size: 22px; font-weight: 500; line-height: 1.2; padding-top: 9px;">As fontes</div>
+      </div>
+      <div class="med">
+        <p>Só fontes oficiais e autoridades reconhecidas: institutos de estatística, reguladores, tribunais, ministérios, câmaras, universidades e institutos independentes de interesse público, cada uma identificada pelo tipo. Imprensa e agregadores comerciais não são fontes.</p>
+        <div class="bloco">
+          <div class="lab">Mecanismo</div>
+          <p class="mec">Cada linha do livro-razão nomeia o organismo que produziu o valor e o documento onde ele está impresso. Esta regra não é imposta por uma máquina: é imposta por estar à vista, linha a linha, no livro-razão público.</p>
+        </div>
+        <div class="bloco">
+          <div class="lab">Prova</div>
+          <p class="prova">organismos citados: <a class="lnk" href="#">14</a> · linhas com o tipo de documento declarado: <a class="lnk" href="#">104</a></p>
+        </div>
+        <a class="nav lnk" href="#" style="display: inline-block; margin-top: 16px;">Ver o livro-razão →</a>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="rc regra">
+      <div>
+        <div class="num" style="font-size: 22px; line-height: 1; color: var(--g2);">2</div>
+        <div style="font-size: 22px; font-weight: 500; line-height: 1.2; padding-top: 9px;">O motor</div>
+      </div>
+      <div class="med">
+        <p>A investigação corre num motor separado do sítio. É lá que se procura, lê, extrai, calcula e verifica. Cada número sai de lá com a sua origem: o organismo, o documento, a página, o excerto exato, a data da leitura e, quando é calculado, a conta e os números de onde vem.</p>
+        <div class="bloco">
+          <div class="lab">Mecanismo</div>
+          <p class="mec">O sítio não sabe procurar nem calcular: só sabe ler o livro-razão. O que atravessa é conferido à chegada contra o resumo criptográfico de cada linha de origem, e uma linha alterada deste lado faz parar a construção.</p>
+        </div>
+        <div class="bloco">
+          <div class="lab">Prova</div>
+          <p class="prova">linhas atravessadas do motor com registo: <a class="lnk" href="#">70</a> · linhas registadas antes de existir travessia: <a class="lnk" href="#">62</a> · trabalhos com leitura do observatório: <a class="lnk" href="#">5</a></p>
+        </div>
+        <a class="nav lnk" href="#" style="display: inline-block; margin-top: 16px;">Ver o arquivo →</a>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="rc regra">
+      <div>
+        <div class="num" style="font-size: 22px; line-height: 1; color: var(--g2);">3</div>
+        <div style="font-size: 22px; font-weight: 500; line-height: 1.2; padding-top: 9px;">O livro-razão</div>
+      </div>
+      <div class="med">
+        <p>Uma linha por número, com essa origem. O livro-razão é público, linha a linha.</p>
+        <div class="bloco">
+          <div class="lab">Mecanismo</div>
+          <p class="mec">Cada linha tem endereço próprio e página própria, nas duas edições, e o índice de todas é o livro-razão. A construção falha se uma linha ficar sem página: um selo que aponte para o vazio é uma porta que não abre.</p>
+        </div>
+        <div class="bloco">
+          <div class="lab">Prova</div>
+          <p class="prova">linhas publicadas: <a class="lnk" href="#">132</a> · com proveniência completa: <a class="lnk" href="#">120</a></p>
+        </div>
+        <a class="nav lnk" href="#" style="display: inline-block; margin-top: 16px;">Ver o livro-razão →</a>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="rc regra">
+      <div>
+        <div class="num" style="font-size: 22px; line-height: 1; color: var(--g2);">4</div>
+        <div style="font-size: 22px; font-weight: 500; line-height: 1.2; padding-top: 9px;">A construção</div>
+      </div>
+      <div class="med">
+        <p>O sítio é gerado a partir do livro-razão. Um número escrito numa página sem linha própria faz parar a construção; um valor na página diferente do da linha, também. Cada excerto é comparado, carácter a carácter, com o que a linha guarda.</p>
+        <div class="bloco">
+          <div class="lab">Mecanismo</div>
+          <p class="mec">Depois de construído, um varrimento lê todas as páginas e fecha a construção em qualquer algarismo sem origem declarada. Cada origem legítima está escrita numa lista fechada, e nenhuma é uma dispensa: todas comparam o que a página rende com aquilo que ela diz ser.</p>
+        </div>
+        <div class="bloco">
+          <div class="lab">O que isto não apanha</div>
+          <p class="lim">O varrimento vê texto. Um número dentro de um script, um número escrito por extenso ou um número dentro de um atributo passam. E um motivo estrutural declarado é confiança de quem escreve o gabarito: confere-se que o motivo consta da lista fechada, não que o número seja mesmo estrutura.</p>
+        </div>
+        <div class="bloco">
+          <div class="lab">Prova</div>
+          <p class="prova">linhas calculadas: <a class="lnk" href="#">19</a> · contas refeitas nesta construção: <a class="lnk" href="#">23</a></p>
+        </div>
+        <a class="nav lnk" href="#" style="display: inline-block; margin-top: 16px;">A prova desta construção →</a>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="rc regra">
+      <div>
+        <div class="num" style="font-size: 22px; line-height: 1; color: var(--g2);">5</div>
+        <div style="font-size: 22px; font-weight: 500; line-height: 1.2; padding-top: 9px;">O selo</div>
+      </div>
+      <div class="med">
+        <p>Ao lado de cada número há um selo que abre a sua linha: cheio quando a origem está completa, a tracejado quando falta um campo. Um campo em falta escreve-se <span class="av">[a verificar]</span>; a linha diz o que lhe falta e fica fora dos motores de busca até estar completa. Um valor que a fonte marca como provisório é dito por palavras.</p>
+        <div style="display: flex; align-items: center; gap: 28px; padding-top: 14px;">
+          <a class="selo" href="#">fonte</a>
+          <a class="selo pc" href="#">fonte</a>
+        </div>
+        <div class="bloco">
+          <div class="lab">Mecanismo</div>
+          <p class="mec">A construção confere que cada valor tem, ao pé de si, o selo que abre a sua própria linha, e não a de outra. Uma linha incompleta sai sozinha do índice dos motores de busca e do mapa do sítio, e volta sozinha no dia em que o campo for preenchido.</p>
+        </div>
+        <div class="bloco">
+          <div class="lab">O que isto não apanha</div>
+          <p class="lim">O selo prova que o número da página é o da linha, e que a linha diz de onde veio. Não prova que a fonte diga o que a linha guarda: isso é a releitura, e é trabalho de quem não escreveu a linha.</p>
+        </div>
+        <div class="bloco">
+          <div class="lab">Prova</div>
+          <p class="prova">linhas com um campo por confirmar: <a class="lnk" href="#">12</a></p>
+        </div>
+        <a class="nav lnk" href="#" style="display: inline-block; margin-top: 16px;">O que quer dizer este marcador →</a>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="rc regra">
+      <div>
+        <div class="num" style="font-size: 22px; line-height: 1; color: var(--g2);">6</div>
+        <div style="font-size: 22px; font-weight: 500; line-height: 1.2; padding-top: 9px;">A releitura</div>
+      </div>
+      <div class="med">
+        <p>Antes de um número ser publicado, é relido na fonte por um caminho diferente e por quem não o escreveu. O painel da primeira página é reconferido contra a fonte todas as semanas, e a página diz quando foi a última vez.</p>
+        <div class="bloco">
+          <div class="lab">Mecanismo</div>
+          <p class="mec">A data da última reconferência é escrita pelo motor a cada verificação, e o cabeçalho de todas as páginas mostra-a. Quando passa do prazo, o cabeçalho di-lo por palavras, em vez de mostrar uma data que parece fresca.</p>
+        </div>
+        <div class="bloco">
+          <div class="lab">O que isto não apanha</div>
+          <p class="lim">A releitura acontece e ainda não fica escrita na linha: o campo que a guardaria não existe no formato. Enquanto não existir, a conta abaixo é zero, e é zero por isso.</p>
+        </div>
+        <div class="bloco">
+          <div class="lab">Prova</div>
+          <p class="prova">releituras independentes registadas: <a class="lnk" href="#">0</a> · painel reconferido a: <a class="lnk" href="#">2026-08-17</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="rc regra">
+      <div>
+        <div class="num" style="font-size: 22px; line-height: 1; color: var(--g2);">7</div>
+        <div style="font-size: 22px; font-weight: 500; line-height: 1.2; padding-top: 9px;">As correções</div>
+      </div>
+      <div class="med">
+        <p>Públicas, datadas e permanentes, com o valor anterior à vista, em três naturezas: correção (o valor estava errado), atualização (o valor estava certo e o mundo mudou), revisão de proveniência (o valor não mudou; mudou o caminho até à fonte).</p>
+        <div class="bloco">
+          <div class="lab">Mecanismo</div>
+          <p class="mec">Cada entrada é um campo da própria linha, e a construção confere data, natureza, valor antigo, valor novo e motivo contra o livro-razão: reescrever a história de uma correção faz parar a construção. Quem encontrar um erro escreve para <a class="lnk" href="#">correcoes@oestadodopais.pt</a>, e a porta para o fazer está em todas as páginas.</p>
+        </div>
+        <div class="bloco">
+          <div class="lab">Prova</div>
+          <p class="prova">correções: <a class="lnk" href="#">3</a> · atualizações: <a class="lnk" href="#">2</a> · revisões de proveniência: <a class="lnk" href="#">9</a></p>
+        </div>
+        <a class="nav lnk" href="#" style="display: inline-block; margin-top: 16px;">O registo inteiro →</a>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="rc regra">
+      <div>
+        <div class="num" style="font-size: 22px; line-height: 1; color: var(--g2);">8</div>
+        <div style="font-size: 22px; font-weight: 500; line-height: 1.2; padding-top: 9px;">O que se mede a seguir</div>
+      </div>
+      <div class="med">
+        <p>A inteligência artificial propõe o que medir, a partir de critérios declarados: o que os quadros com que as instituições avaliam Portugal apontam como problema, o que as fontes oficiais vão publicar, o que os leitores perguntam ou corrigem. A direção decide. A lista do que está em curso, do que se segue e do porquê é pública, e nada sai dela em silêncio.</p>
+        <div class="bloco">
+          <div class="lab">Mecanismo</div>
+          <p class="mec">A pergunta de um trabalho é fixada e guardada no motor antes da recolha, e a agenda mostra, item a item, o critério que o pôs lá, quem o propôs, quem o decidiu, e cada mudança de estado com a sua data e o seu motivo. Onde não há critério, ou onde não há ainda decisão da direção, a página di-lo.</p>
+        </div>
+        <div class="bloco">
+          <div class="lab">Prova</div>
+          <p class="prova">em curso: <a class="lnk" href="#">3</a> · a seguir: <a class="lnk" href="#">1</a> · concluídos: <a class="lnk" href="#">1</a> · retirados: <a class="lnk" href="#">0</a></p>
+        </div>
+        <a class="nav lnk" href="#" style="display: inline-block; margin-top: 16px;">A agenda inteira →</a>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="rc regra">
+      <div>
+        <div class="num" style="font-size: 22px; line-height: 1; color: var(--g2);">9</div>
+        <div style="font-size: 22px; font-weight: 500; line-height: 1.2; padding-top: 9px;">A intervenção humana</div>
+      </div>
+      <div class="med">
+        <p>A direção é de Nuno dos Santos, que escolhe o que se publica e responde por ele; não escreve números. A autoria por inteligência artificial está declarada no Sobre, e todas as páginas construídas levam a porta para lá.</p>
+        <div class="bloco">
+          <div class="lab">Mecanismo</div>
+          <p class="mec">Um número não entra por uma pessoa nem por um gabarito: entra por uma linha do livro-razão, e por mais lado nenhum. E a construção conta a porta para o Sobre em cada página: uma página sem ela faz parar a construção.</p>
+        </div>
+        <div class="bloco">
+          <div class="lab">Prova</div>
+          <p class="prova">a autoria está dita no Sobre, e a porta para lá está em todas as páginas desta construção</p>
+        </div>
+        <a class="nav lnk" href="#" style="display: inline-block; margin-top: 16px;">Sobre →</a>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="rc regra">
+      <div>
+        <div class="num" style="font-size: 22px; line-height: 1; color: var(--g2);">10</div>
+        <div style="font-size: 22px; font-weight: 500; line-height: 1.2; padding-top: 9px;">O que o observatório não faz</div>
+      </div>
+      <div class="med">
+        <p>Não classifica partidos nem faz médias por partido: regista quem decidiu o quê e o que aconteceu, com o nome tal como consta do documento e o rótulo partidário como facto de registo. Médias por partido sobre territórios que não têm nada em comum são aritmética enganosa. Não publica um número sem fonte. Não corrige em silêncio. Não recebe dinheiro de nenhuma entidade que mede: é financiado pessoalmente pelo diretor, sem publicidade nem financiamento externo.</p>
+        <div class="bloco">
+          <div class="lab">Mecanismo</div>
+          <p class="mec">Não há neste sítio nenhuma ordenação por partido. O crédito de um valor é um campo da sua linha, conferido carácter a carácter na página dessa linha, como qualquer outro campo. As frases sobre o financiamento e sobre a publicidade não têm máquina nenhuma por trás: são regras da casa, como a primeira, e valem por estarem escritas e por quem responde por elas.</p>
+        </div>
+        <div class="bloco">
+          <div class="lab">Prova</div>
+          <p class="prova">valores com crédito atribuído na linha: <a class="lnk" href="#">61</a></p>
+        </div>
+        <a class="nav lnk" href="#" style="display: inline-block; margin-top: 16px;">Ver o livro-razão →</a>
+      </div>
+    </div>
+
+    <!-- 11.ª entrada, sem número -->
+    <div class="rc regra" style="border-bottom: 1px solid var(--g3);">
+      <div class="lab" style="padding-top: 4px;">A letra</div>
+      <div class="med">
+        <p>Os tipos deste sítio são Parnaso e Sebenta, da Feliciano Type (Lisboa), ambos com linhagem declarada no espécime da Fundição Tipográfica Gini, Lisboa, 1938.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PORTA DE CORREÇÕES -->
+  <div class="rc rule2" style="margin-top: 42px; padding-top: 13px;">
+    <div class="lab">Encontrou um erro</div>
+    <div class="med">
+      <p style="font-size: 17px; line-height: 1.55;">Escreva para <a class="lnk" href="#">correcoes@oestadodopais.pt</a>. Um erro confirmado entra no registo de correções e na própria linha, com o valor antigo à vista. Nada é apagado.</p>
+      <a class="nav lnk" href="#" style="display: inline-block; margin-top: 12px;">O registo de correções →</a>
+    </div>
+  </div>
+
+  <!-- RODAPÉ -->
+  <div style="padding-top: 52px;">
+    <div class="rulei"></div>
+    <nav style="display: flex; align-items: baseline; white-space: nowrap; padding-top: 13px;">
+      <a class="nav" href="#">Início</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Municípios</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Estudos</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Livro-razão</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Agenda</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Método</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Correções</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Sobre</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">English</a>
+    </nav>
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; padding-top: 12px;">
+      <p style="font-size: 15px; line-height: 1.5; max-width: 62ch;">Produzido maioritariamente por inteligência artificial, com o mínimo de intervenção humana. A direção é de Nuno dos Santos.</p>
+      <p class="note" style="flex: none; text-align: right;">Maqueta · tipos substitutos: Spectral por Parnaso, Bitter por Sebenta · valores publicados a 2026-08-18</p>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1280,"height":5990}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

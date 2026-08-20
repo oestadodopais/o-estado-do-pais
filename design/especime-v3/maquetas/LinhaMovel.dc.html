@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Spectral+SC:wght@400;600&family=Bitter:ital,wght@0,100..900;1,100..900&display=swap">
+  <style>
+    html, body { margin: 0; background: #F6F7F4; }
+    a { color: #17191B; } a:hover { color: #1F4E8C; }
+    :root, .pg { --paper: #F6F7F4; --ink: #17191B; --g1: #585D5B; --g2: #7F8681; --g3: #D9DDD8; --amb: #E0A21A; --ocre: #7A5300; --cob: #1F4E8C; }
+    .pg { background: var(--paper); color: var(--ink); font-family: "Spectral", Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.55; font-variant-numeric: oldstyle-nums; -webkit-font-smoothing: antialiased; }
+    .pg * { box-sizing: border-box; }
+    p { margin: 0; }
+    .sl { font-family: "Bitter", "Rockwell", Georgia, serif; font-variant-numeric: tabular-nums lining-nums; }
+    .num { font-family: "Bitter", "Rockwell", Georgia, serif; font-variant-numeric: tabular-nums lining-nums; font-weight: 500; letter-spacing: -0.005em; white-space: nowrap; }
+    .lab { font-family: "Spectral SC", "Spectral", Georgia, serif; font-size: 14px; line-height: 1.4; letter-spacing: .05em; text-transform: lowercase; font-weight: 600; color: var(--g1); font-variant-numeric: tabular-nums lining-nums; }
+    .meta { font-family: "Bitter", Georgia, serif; font-size: 12px; line-height: 1.5; letter-spacing: .02em; color: var(--g1); font-variant-numeric: tabular-nums lining-nums; }
+    .mono { font-family: "Bitter", "Rockwell", Georgia, serif; font-size: 15px; line-height: 1.65; font-variant-numeric: tabular-nums lining-nums; overflow-wrap: anywhere; }
+    .val { font-family: "Bitter", Georgia, serif; font-size: 16px; line-height: 1.5; font-variant-numeric: tabular-nums lining-nums; }
+    .nav { display: flex; align-items: center; min-height: 44px; font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; color: var(--ink); }
+    .lig { display: inline-flex; align-items: center; min-height: 44px; font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .selo { display: inline-flex; align-items: center; min-height: 44px; gap: 6px; font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); text-decoration: none; white-space: nowrap; }
+    .selo::before { content: ""; width: 9px; height: 9px; background: var(--ink); display: inline-block; flex: none; }
+    .selo.pc::before { background: transparent; border: 1px dashed var(--ink); }
+    .pv { font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .04em; color: var(--ink); border: 1px dashed var(--ink); padding: 2px 5px; white-space: nowrap; }
+    .rule2 { border-top: 2px solid var(--g2); }
+    .rulei { border-top: 1px solid var(--ink); }
+    .hair { border-top: 1px solid var(--g3); }
+    .campo { display: flex; flex-direction: column; gap: 5px; padding: 13px 0 15px 0; border-top: 1px solid var(--g3); }
+    .prosa { font-size: 15px; line-height: 1.6; color: var(--g1); }
+    .sec { display: flex; flex-direction: column; gap: 12px; }
+  </style>
+</helmet>
+<div class="pg" style="width: 390px; min-height: 100vh; box-sizing: border-box; background: var(--paper); padding: 26px 24px 36px 24px; display: flex; flex-direction: column; gap: 30px;">
+
+  <!-- 4.1 CABEÇALHO INTERIOR, COMPACTO -->
+  <div style="display: flex; flex-direction: column;">
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-bottom: 12px;">
+      <div style="font-size: 26px; font-weight: 500; line-height: 1.1; letter-spacing: -0.01em;">O Estado do País</div>
+      <a class="nav" href="#" style="flex: none;">English</a>
+    </div>
+    <div class="hair"></div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 16px;">
+      <a class="nav" href="#" style="border-bottom: 1px solid var(--g3);">Início</a>
+      <a class="nav" href="#" style="border-bottom: 1px solid var(--g3);">Municípios</a>
+      <a class="nav" href="#" style="border-bottom: 1px solid var(--g3);">Estudos</a>
+      <a class="nav" href="#" style="border-bottom: 1px solid var(--g3);">Livro-razão</a>
+      <a class="nav" href="#" style="border-bottom: 1px solid var(--g3);">Agenda</a>
+      <a class="nav" href="#" style="border-bottom: 1px solid var(--g3);">Método</a>
+      <a class="nav" href="#" style="grid-column: 1 / -1;">Sobre</a>
+    </div>
+    <div class="rulei"></div>
+  </div>
+
+  <!-- SINAL DO TEMPO -->
+  <div style="display: flex; flex-direction: column; gap: 6px;">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="width: 12px; height: 12px; background: var(--cob); display: inline-block; flex: none;"></span>
+      <span class="sl" style="font-size: 12px; letter-spacing: .06em; font-weight: 600;">PAINEL EUROPEU RECONFERIDO A 2026-08-17</span>
+    </div>
+    <div class="lab" style="padding-left: 20px;">AGENDA · 3 EM CURSO · 1 A SEGUIR</div>
+  </div>
+
+  <!-- O VALOR -->
+  <div style="display: flex; flex-direction: column; gap: 4px;">
+    <div class="lab">LINHA DO LIVRO-RAZÃO</div>
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px;">
+      <div class="num" style="font-size: 60px; line-height: 1.05;">89,7</div>
+      <a class="selo" href="#prova">fonte</a>
+    </div>
+    <div class="val">% do PIB</div>
+    <div class="meta" style="letter-spacing: .04em; padding-top: 6px;">divida-publica-2025</div>
+    <p style="font-size: 19px; line-height: 1.45; padding-top: 12px;">Publicado por Eurostat, em General government gross debt (EDP concept), consolidated - annual data (tipsgo10) · lido a 2026-08-12</p>
+  </div>
+
+  <!-- PROVENIÊNCIA -->
+  <div class="sec">
+    <div style="border-top: 2px solid var(--ink); padding-top: 12px;">
+      <div class="lab">PROVENIÊNCIA</div>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <div class="campo">
+        <div class="lab">FONTE</div>
+        <div style="font-size: 17px; line-height: 1.4;">Eurostat</div>
+      </div>
+      <div class="campo">
+        <div class="lab">SÉRIE</div>
+        <div class="sl" style="font-size: 14px; line-height: 1.55;">General government gross debt (EDP concept), consolidated - annual data</div>
+      </div>
+      <div class="campo">
+        <div class="lab">EDIÇÃO</div>
+        <div class="val">tipsgo10</div>
+      </div>
+      <div class="campo">
+        <div class="lab">LIDO A</div>
+        <div class="val">2026-08-12</div>
+      </div>
+      <div class="campo">
+        <div class="lab">DADOS DE</div>
+        <div class="val">2025</div>
+      </div>
+      <div class="campo" style="border-bottom: 1px solid var(--g3);">
+        <div class="lab">ESTUDO</div>
+        <div style="font-size: 16px; line-height: 1.45;">Quadro institucional de indicadores, leitura direta da fonte</div>
+      </div>
+    </div>
+    <div style="border: 1px solid var(--g3); padding: 13px 14px; display: flex; flex-direction: column; gap: 5px;">
+      <div class="lab">ESTADO DA PROVENIÊNCIA</div>
+      <div style="font-size: 17px; line-height: 1.4;">Completa.</div>
+    </div>
+  </div>
+
+  <!-- PROVA -->
+  <div class="sec">
+    <div class="rule2" style="padding-top: 12px;">
+      <div class="lab">PROVA · CAMPO DEVOLVIDO</div>
+    </div>
+    <div id="prova" style="border: 1px solid var(--g3); border-left: 3px solid var(--g2); padding: 13px 14px;">
+      <p class="mono">General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Portugal — 2025: 89.7</p>
+    </div>
+    <p class="prosa">Transcrito da fonte, palavra por palavra.</p>
+  </div>
+
+  <!-- PEDIDO -->
+  <div class="sec">
+    <div class="rule2" style="padding-top: 12px;">
+      <div class="lab">PEDIDO</div>
+    </div>
+    <a class="sl" href="#" style="font-size: 13px; line-height: 1.7; display: block; padding: 8px 0; overflow-wrap: anywhere; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;">https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsgo10?format=JSON&amp;lang=EN&amp;geo=PT&amp;unit=PC_GDP</a>
+  </div>
+
+  <!-- VERIFICAÇÕES -->
+  <div class="sec">
+    <div class="rule2" style="padding-top: 12px;">
+      <div class="lab">VERIFICAÇÕES</div>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <div class="campo">
+        <div class="lab">LIDO A</div>
+        <div class="val">2026-08-12</div>
+      </div>
+      <div class="campo" style="border-bottom: 1px solid var(--g3); gap: 8px;">
+        <div class="lab">RECONFERIDO A</div>
+        <div><span class="pv">[a verificar]</span></div>
+        <a class="lig" href="#" style="align-self: flex-start;">A regra da releitura →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CORREÇÕES DESTA LINHA -->
+  <div class="sec">
+    <div class="rule2" style="padding-top: 12px;">
+      <div class="lab">CORREÇÕES E ATUALIZAÇÕES DESTA LINHA</div>
+    </div>
+    <p style="font-size: 17px; line-height: 1.5;">Esta linha nunca foi corrigida nem atualizada.</p>
+    <div class="lab" style="color: var(--g1);">CORREÇÕES: PÚBLICAS, DATADAS, PERMANENTES</div>
+    <a class="lig" href="#" style="align-self: flex-start;">A política inteira →</a>
+  </div>
+
+  <!-- 4.8 PORTA DE CORREÇÕES -->
+  <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
+    <div class="rule2" style="align-self: stretch;"></div>
+    <div class="lab" style="padding-top: 4px;">ENCONTROU UM ERRO</div>
+    <p style="font-size: 16px; line-height: 1.55;">Escreva para correcoes@oestadodopais.pt. Um erro confirmado entra no registo de correções e na própria linha, com o valor antigo à vista. Nada é apagado.</p>
+    <a class="lig" href="#">O registo de correções →</a>
+  </div>
+
+  <!-- LIGAÇÕES -->
+  <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 2px;">
+    <a class="lig" href="#">Voltar ao livro-razão</a>
+    <a class="lig" href="#">Como isto é feito</a>
+  </div>
+
+  <!-- 4.9 RODAPÉ -->
+  <div style="display: flex; flex-direction: column;">
+    <div class="rulei"></div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 16px;">
+      <a class="nav" href="#" style="border-bottom: 1px solid var(--g3);">Início</a>
+      <a class="nav" href="#" style="border-bottom: 1px solid var(--g3);">Municípios</a>
+      <a class="nav" href="#" style="border-bottom: 1px solid var(--g3);">Estudos</a>
+      <a class="nav" href="#" style="border-bottom: 1px solid var(--g3);">Livro-razão</a>
+      <a class="nav" href="#" style="border-bottom: 1px solid var(--g3);">Agenda</a>
+      <a class="nav" href="#" style="border-bottom: 1px solid var(--g3);">Método</a>
+      <a class="nav" href="#" style="border-bottom: 1px solid var(--g3);">Correções</a>
+      <a class="nav" href="#" style="border-bottom: 1px solid var(--g3);">Sobre</a>
+      <a class="nav" href="#" style="border-bottom: 1px solid var(--g3); grid-column: 1 / -1;">English</a>
+    </div>
+    <p style="font-size: 15px; line-height: 1.5; padding-top: 20px;">Produzido maioritariamente por inteligência artificial, com o mínimo de intervenção humana. A direção é de Nuno dos Santos.</p>
+    <div class="meta" style="text-align: right; padding-top: 20px;">Maqueta · tipos substitutos: Spectral por Parnaso, Bitter por Sebenta · valores publicados a 2026-08-18</div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":390,"height":2945}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

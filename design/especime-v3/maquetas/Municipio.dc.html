@@ -1,0 +1,377 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Spectral+SC:wght@400;600&family=Bitter:ital,wght@0,100..900;1,100..900&display=swap">
+  <style>
+    html, body { margin: 0; background: #F6F7F4; }
+    a { color: #17191B; } a:hover { color: #1F4E8C; }
+    :root, .pg { --paper: #F6F7F4; --ink: #17191B; --g1: #585D5B; --g2: #7F8681; --g3: #D9DDD8; --amb: #E0A21A; --ocre: #7A5300; --cob: #1F4E8C; }
+    .pg { box-sizing: border-box; background: var(--paper); color: var(--ink);
+          font-family: "Spectral", Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.55;
+          font-variant-numeric: oldstyle-nums; }
+    .pg * { box-sizing: border-box; }
+    p { margin: 0; }
+    h1, h2 { margin: 0; font-weight: 500; letter-spacing: -0.012em; }
+    .slab { font-family: "Bitter", "Rockwell", Georgia, serif; font-variant-numeric: tabular-nums lining-nums; }
+    .num { font-family: "Bitter", "Rockwell", Georgia, serif; font-variant-numeric: tabular-nums lining-nums; font-weight: 500; letter-spacing: -0.01em; }
+    .lab { font-family: "Spectral SC", "Spectral", Georgia, serif; font-size: 13px; line-height: 1.4; letter-spacing: .05em; text-transform: lowercase; font-weight: 600; color: var(--g1); font-variant-numeric: tabular-nums lining-nums; }
+    .nav { font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; color: var(--ink); }
+    .note { font-family: "Bitter", Georgia, serif; font-size: 11px; line-height: 1.5; letter-spacing: .02em; color: var(--g1); font-variant-numeric: tabular-nums lining-nums; }
+    .small { font-size: 14px; line-height: 1.5; color: var(--g1); }
+    .selo { display: inline-flex; align-items: center; gap: 6px; font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); text-decoration: none; white-space: nowrap; }
+    .selo::before { content: ""; width: 9px; height: 9px; background: var(--ink); display: inline-block; }
+    .selo.pc::before { background: transparent; border: 1px dashed var(--ink); }
+    .av { font-family: "Bitter", Georgia, serif; font-size: 11px; letter-spacing: .04em; color: var(--ink); border: 1px dashed var(--ink); padding: 1px 5px; display: inline-block; line-height: 1.5; font-variant-numeric: tabular-nums lining-nums; }
+    .fora { color: var(--ocre); } .dentro { color: var(--cob); }
+    .hair { border-top: 1px solid var(--g3); }
+    .rule2 { border-top: 2px solid var(--g2); }
+    .rulei { border-top: 1px solid var(--ink); }
+    .lnk { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .cel { border-right: 1px solid var(--g3); border-bottom: 1px solid var(--g3); padding: 16px 18px; display: flex; flex-direction: column; }
+    .mil { white-space: nowrap; }
+    .frase { border-top: 1px solid var(--g3); padding: 15px 0; font-size: 18px; line-height: 1.62; }
+    .fl { border-top: 1px solid var(--g3); display: grid; grid-template-columns: 200px minmax(0, 1fr) 18px 60px 80px; gap: 16px; align-items: baseline; padding: 12px 0; }
+    .mrow { border-top: 1px solid var(--g3); display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 32px; align-items: baseline; padding: 12px 0; }
+    .sec { border-top: 2px solid var(--g2); display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 32px; align-items: baseline; padding: 13px 0 16px 0; }
+    .apr { border-top: 1px solid var(--g3); padding: 11px 0; }
+  </style>
+</helmet>
+<div class="pg" style="width: 1280px; min-height: 100vh; padding: 34px 48px 40px 48px; display: flex; flex-direction: column;">
+
+  <!-- CABEÇALHO INTERIOR -->
+  <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; padding-bottom: 12px;">
+    <div style="flex: none; font-size: 24px; line-height: 1.1; font-weight: 500; letter-spacing: -0.01em;">O Estado do País</div>
+    <nav style="flex: 1 1 auto; display: flex; justify-content: center; align-items: baseline; white-space: nowrap;">
+      <a class="nav" href="#">Início</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Municípios</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Estudos</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Livro-razão</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Agenda</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Método</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Sobre</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">English</a>
+    </nav>
+    <div style="flex: none; display: flex; flex-direction: column; align-items: flex-end; gap: 5px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="width: 12px; height: 12px; background: var(--cob); display: inline-block; flex: none;"></span>
+        <span class="slab" style="font-size: 11px; letter-spacing: .08em; text-transform: uppercase; line-height: 1;">Painel europeu reconferido a 2026-08-17</span>
+      </div>
+      <span class="slab" style="font-size: 11px; letter-spacing: .08em; text-transform: uppercase; line-height: 1; color: var(--g1);">Agenda · 3 em curso · 1 a seguir</span>
+    </div>
+  </div>
+  <div class="rulei"></div>
+
+  <!-- TÍTULO -->
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 560px; gap: 56px; align-items: end; padding-top: 32px;">
+    <div>
+      <div class="lab">Município</div>
+      <h1 style="font-size: 56px; line-height: 1.02; padding-top: 10px;">Évora</h1>
+      <div class="slab" style="font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--g1); padding-top: 14px;">Distrito de Évora · Alentejo Central</div>
+    </div>
+    <p style="font-size: 17px; line-height: 1.55;">Esta página mede o município de Évora e mostra de onde vem cada medida. Não interpreta: onde uma fonte não estabelece uma coisa, a página di-lo em vez de a supor.</p>
+  </div>
+
+  <!-- RELANCE -->
+  <div style="border-top: 2px solid var(--g2); margin-top: 38px; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 32px; align-items: baseline; padding: 13px 0 20px 0;">
+    <div class="lab">Relance</div>
+    <p style="font-size: 17px; line-height: 1.55; max-width: 78ch;">Oito medidas. Seis vêm de organismos que publicam para todos os concelhos do país; duas só existem porque o próprio município as publica, e cada uma dessas di-lo na sua linha.</p>
+  </div>
+
+  <!-- MOSAICO 4 × 2 -->
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); border-top: 2px solid var(--g2); border-left: 1px solid var(--g3);">
+
+    <div class="cel">
+      <div class="num" style="font-size: 44px; line-height: 1.05; white-space: nowrap;">58 567</div>
+      <div style="font-size: 17px; font-weight: 500; line-height: 1.3; padding-top: 9px;">População residente</div>
+      <div class="note" style="padding-top: 5px;">pessoas · 2025 · INE</div>
+      <p class="small" style="padding-top: 11px;">Estimativa anual do INE para o concelho.</p>
+      <div style="margin-top: auto; padding-top: 14px;"><a class="selo" href="#">fonte</a></div>
+    </div>
+
+    <div class="cel">
+      <div class="num" style="font-size: 44px; line-height: 1.05; white-space: nowrap;">111,47</div>
+      <div style="font-size: 17px; font-weight: 500; line-height: 1.3; padding-top: 9px;">Poder de compra por habitante</div>
+      <div class="note" style="padding-top: 5px;">índice · média nacional = base · 2023 · INE</div>
+      <p class="small" style="padding-top: 11px;">Poder de compra per capita, publicado pelo INE para todos os concelhos.</p>
+      <div style="margin-top: auto; padding-top: 14px;"><a class="selo" href="#">fonte</a></div>
+    </div>
+
+    <div class="cel">
+      <div class="num" style="font-size: 44px; line-height: 1.05; white-space: nowrap;">1 596</div>
+      <div style="font-size: 17px; font-weight: 500; line-height: 1.3; padding-top: 9px;">Desemprego registado</div>
+      <div class="note" style="padding-top: 5px;">pessoas · dezembro de 2024 · IEFP</div>
+      <p class="small" style="padding-top: 11px;">Inscritos no fim do mês nos serviços de emprego, ficheiro mensal por concelho.</p>
+      <div style="margin-top: auto; padding-top: 14px;"><a class="selo" href="#">fonte</a></div>
+    </div>
+
+    <div class="cel">
+      <div class="num" style="font-size: 44px; line-height: 1.05; white-space: nowrap;">7 907</div>
+      <div style="font-size: 17px; font-weight: 500; line-height: 1.3; padding-top: 9px;">Empresas sediadas</div>
+      <div class="note" style="padding-top: 5px;">empresas · 2024 · INE</div>
+      <p class="small" style="padding-top: 11px;">Sistema de contas integradas das empresas, por concelho da sede.</p>
+      <div style="margin-top: auto; padding-top: 14px;"><a class="selo" href="#">fonte</a></div>
+    </div>
+
+    <div class="cel">
+      <div class="num" style="font-size: 44px; line-height: 1.05; white-space: nowrap;">54 681 562</div>
+      <div style="font-size: 17px; font-weight: 500; line-height: 1.3; padding-top: 9px;">Dívida total do município</div>
+      <div class="note" style="padding-top: 5px;">euros · 2024 · DGAL</div>
+      <p class="small" style="padding-top: 11px;">Série anual da Direção-Geral das Autarquias Locais, o regulador das contas municipais.</p>
+      <div style="margin-top: auto; padding-top: 14px;"><a class="selo" href="#">fonte</a></div>
+    </div>
+
+    <div class="cel">
+      <div class="num" style="font-size: 44px; line-height: 1.05; white-space: nowrap;">105,5</div>
+      <div style="font-size: 17px; font-weight: 500; line-height: 1.3; padding-top: 9px;">Índice de dívida</div>
+      <div class="note" style="padding-top: 5px;">percentagem, teto legal = 150 · 2024 · calculado, DGAL</div>
+      <p class="small" style="padding-top: 11px;">Calculado sobre duas colunas do mesmo ficheiro do regulador. A aritmética está na linha.</p>
+      <div style="margin-top: auto; padding-top: 14px;"><a class="selo" href="#">fonte</a></div>
+    </div>
+
+    <div class="cel">
+      <div class="num" style="font-size: 44px; line-height: 1.05; white-space: nowrap;">61,44</div>
+      <div style="font-size: 17px; font-weight: 500; line-height: 1.3; padding-top: 9px;">Execução da receita</div>
+      <div class="note" style="padding-top: 5px;">percentagem do orçamento · 2025 · Município de Évora</div>
+      <p class="small" style="padding-top: 11px;">Reportado pelo município: sai da prestação de contas do próprio, não de um agregador central.</p>
+      <div style="margin-top: auto; padding-top: 14px;"><a class="selo" href="#">fonte</a></div>
+    </div>
+
+    <div class="cel">
+      <div class="num" style="font-size: 44px; line-height: 1.05; white-space: nowrap;">137</div>
+      <div style="font-size: 17px; font-weight: 500; line-height: 1.3; padding-top: 9px;">Prazo médio de pagamento</div>
+      <div class="note" style="padding-top: 5px;">dias · 2025 · Município de Évora</div>
+      <p class="small" style="padding-top: 11px;">Reportado pelo município: sai da prestação de contas do próprio, não de um agregador central.</p>
+      <div style="margin-top: auto; padding-top: 14px;"><a class="selo" href="#">fonte</a></div>
+    </div>
+  </div>
+
+  <!-- CORPO: leitura (1fr) + coluna do aparelho (300px) -->
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 56px; align-items: start; padding-top: 44px;">
+
+    <!-- ================= COLUNA DA LEITURA ================= -->
+    <div>
+
+      <!-- LEITURA BREVE -->
+      <div class="sec">
+        <div class="lab">Leitura breve</div>
+        <p class="small">Uma frase por medida. Todos os números são citações do livro-razão.</p>
+      </div>
+
+      <p class="frase">A população residente subiu de <span class="mil">55 711</span> <a class="selo" href="#">fonte</a> em 2021 para <span class="mil">58 567</span> <a class="selo" href="#">fonte</a> em 2025.</p>
+
+      <p class="frase">O poder de compra por habitante está acima da média nacional, que é a base do índice: 111,47 <a class="selo" href="#">fonte</a> no concelho, enquanto a sua região, o Alentejo Central, está abaixo dessa média, em 93,86 <a class="selo" href="#">fonte</a>.</p>
+
+      <p class="frase">O desemprego registado no fim de dezembro caiu de <span class="mil">3 720</span> <a class="selo" href="#">fonte</a> pessoas em 2013 para <span class="mil">1 596</span> <a class="selo" href="#">fonte</a> em 2024.</p>
+
+      <p class="frase">Estão sediadas no concelho <span class="mil">7 907</span> <a class="selo" href="#">fonte</a> empresas.</p>
+
+      <p class="frase">A execução da receita caiu de 96% <a class="selo" href="#">fonte</a> do orçamento em 2021 para 61,44% <a class="selo" href="#">fonte</a> em 2025.</p>
+
+      <div style="border-top: 1px solid var(--g3); padding: 15px 0 4px 0;">
+        <p style="font-size: 18px; line-height: 1.62;">O índice de dívida do regulador desceu de 242,6% <a class="selo" href="#">fonte</a> em 2014 para 105,5% <a class="selo" href="#">fonte</a> em 2024, nos quatro anos que esta página publica.</p>
+
+        <!-- barras da dívida contra o teto legal -->
+        <div style="display: flex; align-items: flex-start; gap: 28px; padding-top: 24px;">
+          <svg viewBox="0 0 560 240" width="560" height="240" style="display: block; flex: none; overflow: visible;">
+            <rect x="12" y="26" width="96" height="174" fill="#17191B"></rect>
+            <rect x="156" y="69.47" width="96" height="130.53" fill="#17191B"></rect>
+            <rect x="300" y="98.23" width="96" height="101.77" fill="#17191B"></rect>
+            <rect x="444" y="124.33" width="96" height="75.67" fill="#17191B"></rect>
+            <line x1="0" y1="92.42" x2="552" y2="92.42" stroke="#7F8681" stroke-width="2"></line>
+            <text x="552" y="81" font-family="Bitter, Georgia, serif" font-size="11" fill="#585D5B" text-anchor="end">limite legal 150</text>
+            <line x1="0" y1="200.5" x2="552" y2="200.5" stroke="#17191B" stroke-width="1"></line>
+            <text x="60" y="17" font-family="Bitter, Georgia, serif" font-size="15" font-weight="500" fill="#17191B" text-anchor="middle">242,6</text>
+            <text x="204" y="60.47" font-family="Bitter, Georgia, serif" font-size="15" font-weight="500" fill="#17191B" text-anchor="middle">182,0</text>
+            <text x="348" y="89.23" font-family="Bitter, Georgia, serif" font-size="15" font-weight="500" fill="#17191B" text-anchor="middle">141,9</text>
+            <text x="492" y="115.33" font-family="Bitter, Georgia, serif" font-size="15" font-weight="500" fill="#17191B" text-anchor="middle">105,5</text>
+            <text x="60" y="219" font-family="Bitter, Georgia, serif" font-size="11" fill="#585D5B" text-anchor="middle">2014</text>
+            <text x="204" y="219" font-family="Bitter, Georgia, serif" font-size="11" fill="#585D5B" text-anchor="middle">2017</text>
+            <text x="348" y="219" font-family="Bitter, Georgia, serif" font-size="11" fill="#585D5B" text-anchor="middle">2021</text>
+            <text x="492" y="219" font-family="Bitter, Georgia, serif" font-size="11" fill="#585D5B" text-anchor="middle">2024</text>
+          </svg>
+          <div style="flex: 1 1 auto; padding-top: 113px;">
+            <div class="slab dentro" style="font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; line-height: 1.45;">Abaixo do teto legal 150 · −44,5</div>
+          </div>
+        </div>
+      </div>
+      <div class="hair"></div>
+    </div>
+
+    <!-- aparelho · junto da Leitura breve -->
+    <div style="width: 300px;">
+      <div class="lab" style="border-top: 2px solid var(--ink); padding: 11px 0;">Proveniência</div>
+      <p style="font-size: 14px; line-height: 1.55;">Cada valor desta página tem uma linha no livro-razão. O selo ao lado do número é a porta para essa linha, onde estão a fonte, o documento, o sítio exato de onde o valor foi lido, o excerto e o dia em que foi lido. Nenhuma data de leitura é escrita aqui: quem quiser sabê-la, abre a linha.</p>
+    </div>
+
+    <!-- ================= FUNDO ================= -->
+    <div>
+      <div style="border-top: 2px solid var(--g2); padding: 13px 0 0 0;">
+        <div class="lab">Fundo</div>
+      </div>
+
+      <div style="padding-top: 22px;">
+        <h2 style="font-size: 26px; line-height: 1.2;">A última prestação de contas do município</h2>
+        <p class="small" style="padding-top: 9px; max-width: 74ch;">O que o município orçamentou, o que cobrou, o que pagou, e o que dizia dever no fim do ano. São números do próprio município sobre si mesmo: a prestação de contas é dele.</p>
+        <div style="padding-top: 18px;">
+          <div class="fl">
+            <div class="lab">Orçamento corrigido</div>
+            <div class="num" style="font-size: 18px; text-align: right; white-space: nowrap;">109 483 314,95</div>
+            <div class="slab" style="font-size: 14px;">€</div>
+            <div class="note"></div>
+            <div><a class="selo" href="#">fonte</a></div>
+          </div>
+          <div class="fl">
+            <div class="lab">Receita cobrada</div>
+            <div class="num" style="font-size: 18px; text-align: right; white-space: nowrap;">67 263 297,08</div>
+            <div class="slab" style="font-size: 14px;">€</div>
+            <div class="note"></div>
+            <div><a class="selo" href="#">fonte</a></div>
+          </div>
+          <div class="fl">
+            <div class="lab">Despesa paga</div>
+            <div class="num" style="font-size: 18px; text-align: right; white-space: nowrap;">65 565 049,87</div>
+            <div class="slab" style="font-size: 14px;">€</div>
+            <div class="note"></div>
+            <div><a class="selo" href="#">fonte</a></div>
+          </div>
+          <div class="fl">
+            <div class="lab">Dívida total</div>
+            <div class="num" style="font-size: 18px; text-align: right; white-space: nowrap;">54 379 034,55</div>
+            <div class="slab" style="font-size: 14px;">€</div>
+            <div class="note"></div>
+            <div><a class="selo" href="#">fonte</a></div>
+          </div>
+          <div class="fl">
+            <div class="lab">Limite de dívida</div>
+            <div class="num" style="font-size: 18px; text-align: right; white-space: nowrap;">82 571 687,05</div>
+            <div class="slab" style="font-size: 14px;">€</div>
+            <div class="note"></div>
+            <div><a class="selo" href="#">fonte</a></div>
+          </div>
+          <div class="fl" style="border-bottom: 1px solid var(--g3);">
+            <div class="lab">Margem de endividamento</div>
+            <div class="num" style="font-size: 18px; text-align: right; white-space: nowrap;">28 192 652,50</div>
+            <div class="slab" style="font-size: 14px;">€</div>
+            <div class="note"></div>
+            <div><a class="selo" href="#">fonte</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding-top: 34px;">
+        <h2 style="font-size: 26px; line-height: 1.2;">A diferença entre as duas contas da mesma dívida</h2>
+        <p class="small" style="padding-top: 9px; max-width: 74ch;">O regulador e o município publicam a dívida do mesmo ano com uma diferença. A diferença é pequena, e mostra-se porque é o único sítio onde uma voz de fora e a voz do próprio medem a mesma coisa.</p>
+        <div style="padding-top: 18px;">
+          <div class="fl">
+            <div class="lab">O regulador publica</div>
+            <div class="num" style="font-size: 18px; text-align: right; white-space: nowrap;">54 681 562</div>
+            <div class="slab" style="font-size: 14px;">€</div>
+            <div class="note">2024</div>
+            <div><a class="selo" href="#">fonte</a></div>
+          </div>
+          <div class="fl">
+            <div class="lab">O município publica</div>
+            <div class="num" style="font-size: 18px; text-align: right; white-space: nowrap;">54 680 635,58</div>
+            <div class="slab" style="font-size: 14px;">€</div>
+            <div class="note">2024</div>
+            <div><a class="selo" href="#">fonte</a></div>
+          </div>
+          <div class="fl" style="border-bottom: 1px solid var(--g3);">
+            <div class="lab">Diferença</div>
+            <div class="num" style="font-size: 18px; text-align: right; white-space: nowrap;">926</div>
+            <div class="slab" style="font-size: 14px;">€</div>
+            <div class="note"></div>
+            <div><a class="selo" href="#">fonte</a></div>
+          </div>
+        </div>
+        <p class="small" style="padding-top: 10px;">a diferença é publicada arredondada ao euro; os dois valores acima diferem em cêntimos</p>
+      </div>
+    </div>
+
+    <!-- aparelho · junto do Fundo -->
+    <div style="width: 300px;">
+      <div style="border: 1px solid var(--g3); padding: 14px 15px;">
+        <div class="lab">O que esta página não sabe</div>
+        <p style="font-size: 14px; line-height: 1.5; padding-top: 10px;">Não existe medida de desempenho por pessoa. As contas públicas não são cortadas dessa maneira.</p>
+        <p style="font-size: 14px; line-height: 1.5; border-top: 1px solid var(--g3); margin-top: 11px; padding-top: 11px;">A repartição de pelouros do mandato de 2009-2013 não foi estabelecida: o presidente desse mandato, e todos os outros membros dele, não foram identificados.</p>
+        <p style="font-size: 14px; line-height: 1.5; border-top: 1px solid var(--g3); margin-top: 11px; padding-top: 11px;">O nome legal completo do presidente interino de 2013 é <span class="av">[a verificar]</span> nas palavras do próprio trabalho: duas fontes oficiais dão nomes completos diferentes.</p>
+        <a class="nav lnk" href="#" style="display: inline-block; margin-top: 13px;">Método e ressalvas →</a>
+      </div>
+    </div>
+
+    <!-- ================= MANDATOS ================= -->
+    <div>
+      <div style="border-top: 2px solid var(--g2); padding: 13px 0 0 0;">
+        <div class="lab">Mandatos, no tempo</div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 4fr 4fr 4fr 4fr 1.2fr; gap: 2px; padding-top: 24px;">
+        <div style="border-top: 2px solid var(--g2); padding-top: 9px;"><span class="slab" style="font-size: 11px; letter-spacing: .06em;">2009 · PS</span></div>
+        <div style="border-top: 2px solid var(--g2); padding-top: 9px;"><span class="slab" style="font-size: 11px; letter-spacing: .06em;">2013 · CDU</span></div>
+        <div style="border-top: 2px solid var(--g2); padding-top: 9px;"><span class="slab" style="font-size: 11px; letter-spacing: .06em;">2017 · CDU</span></div>
+        <div style="border-top: 2px solid var(--g2); padding-top: 9px;"><span class="slab" style="font-size: 11px; letter-spacing: .06em;">2021 · CDU</span></div>
+        <div style="border-top: 2px dashed var(--g2); padding-top: 9px;"><span class="slab" style="font-size: 11px; letter-spacing: .06em;">2025 · PS</span></div>
+      </div>
+
+      <div style="padding-top: 26px;">
+        <p style="font-size: 19px; line-height: 1.4; font-weight: 500;">2009–2013 · José Ernesto d'Oliveira, depois Manuel Melgão a partir de 2013-05-01 · PS</p>
+        <div style="padding-top: 14px;">
+          <div class="mrow">
+            <div class="lab">Lugares</div>
+            <div class="num" style="font-size: 18px;">3</div>
+          </div>
+          <div class="mrow">
+            <div class="lab">Herdou</div>
+            <div>Antes do primeiro ano de contas legível nesta janela.</div>
+          </div>
+          <div class="mrow">
+            <div class="lab">Decidiu</div>
+            <div><span class="mil">32 166 372,20 €</span> de empréstimo do Programa de Apoio à Economia Local.</div>
+          </div>
+          <div class="mrow" style="border-bottom: 1px solid var(--g3);">
+            <div class="lab">Deixou</div>
+            <div><span class="mil">82 871 522,82 €</span> de dívida total, medidos duas …</div>
+          </div>
+        </div>
+        <p class="note" style="text-transform: uppercase; letter-spacing: .06em; padding-top: 16px;">Abrir cada mandato: <a class="lnk" href="#" style="color: var(--ink);">2009–2013</a> · <a class="lnk" href="#" style="color: var(--ink);">2013–2017</a> · <a class="lnk" href="#" style="color: var(--ink);">2017–2021</a> · <a class="lnk" href="#" style="color: var(--ink);">2021–2025</a> · <a class="lnk" href="#" style="color: var(--ink);">2025– em funções</a></p>
+      </div>
+    </div>
+
+    <!-- aparelho · junto dos Mandatos -->
+    <div style="width: 300px;">
+
+      <!-- porta de correções -->
+      <div style="border-top: 2px solid var(--g2); padding-top: 13px;">
+        <div class="lab">Encontrou um erro</div>
+        <p style="font-size: 14px; line-height: 1.5; padding-top: 7px;">Escreva para <a class="lnk" href="#">correcoes@oestadodopais.pt</a>. Um erro confirmado entra no registo de correções e na própria linha, com o valor antigo à vista. Nada é apagado.</p>
+        <a class="nav lnk" href="#" style="display: inline-block; margin-top: 10px;">O registo de correções →</a>
+      </div>
+
+      <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 9px; padding-top: 22px;">
+        <a class="nav lnk" href="#">Voltar ao mapa dos municípios</a>
+        <a class="nav lnk" href="#">Livro-razão</a>
+        <a class="nav lnk" href="#">Como isto é feito</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RODAPÉ -->
+  <div style="padding-top: 52px;">
+    <div class="rulei"></div>
+    <nav style="display: flex; align-items: baseline; white-space: nowrap; padding-top: 13px;">
+      <a class="nav" href="#">Início</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Municípios</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Estudos</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Livro-razão</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Agenda</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Método</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Correções</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Sobre</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">English</a>
+    </nav>
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; padding-top: 12px;">
+      <p style="font-size: 15px; line-height: 1.5; max-width: 62ch;">Produzido maioritariamente por inteligência artificial, com o mínimo de intervenção humana. A direção é de Nuno dos Santos.</p>
+      <p class="note" style="flex: none; text-align: right;">Maqueta · tipos substitutos: Spectral por Parnaso, Bitter por Sebenta · valores publicados a 2026-08-18</p>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1280,"height":3193}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

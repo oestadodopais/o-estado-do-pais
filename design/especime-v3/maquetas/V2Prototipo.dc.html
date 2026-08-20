@@ -1,0 +1,240 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@200..900&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Bitter:ital,wght@0,100..900;1,100..900&display=swap">
+  <style>
+    html, body { margin: 0; background: #F6F7F4; }
+    a { color: #17191B; } a:hover { color: #1F4E8C; }
+    .p2 { --paper: #F6F7F4; --ink: #17191B; --g1: #585D5B; --g2: #7F8681; --g3: #D9DDD8; --amb: #E0A21A; --ocre: #7A5300; --cob: #1F4E8C;
+          width: 1280px; box-sizing: border-box; background: var(--paper); color: var(--ink);
+          font-family: "Spectral", Georgia, serif; font-size: 16px; line-height: 1.45; }
+    .p2 * { box-sizing: border-box; }
+    .cond { font-family: "Sofia Sans Condensed", "Arial Narrow", sans-serif; }
+    .slab { font-family: "Bitter", Georgia, serif; font-variant-numeric: tabular-nums lining-nums; }
+    .lab { font-family: "Bitter", Georgia, serif; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; }
+    .seg { font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; padding: 8px 14px; border: 1px solid #17191B; cursor: pointer; user-select: none; }
+    .selo { display: inline-flex; align-items: center; gap: 6px; font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: inherit; text-decoration: none; white-space: nowrap; }
+    .selo::before { content: ""; width: 9px; height: 9px; background: currentColor; display: inline-block; }
+    .stamp { display: inline-flex; align-items: center; gap: 8px; border: 2px solid currentColor; padding: 4px 8px; font-family: "Bitter", Georgia, serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    .stamp::before { content: ""; width: 9px; height: 9px; background: currentColor; display: inline-block; }
+    .pill { display: inline-block; border: 2px solid currentColor; padding: 3px 8px; font-family: "Bitter", Georgia, serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    .block { cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; padding: 20px 22px; min-height: 320px; border: 3px solid #F6F7F4; }
+    .num { font-family: "Sofia Sans Condensed", "Arial Narrow", sans-serif; font-weight: 800; font-size: 112px; line-height: .86; letter-spacing: -0.01em; }
+    .open { cursor: pointer; border-top: 2px solid #7F8681; padding: 16px 4px 18px 4px; display: flex; flex-direction: column; gap: 10px; }
+    .row { cursor: pointer; border-bottom: 1px solid #D9DDD8; padding: 12px 4px; display: flex; flex-direction: column; gap: 10px; }
+    .k { font-family: "Bitter", Georgia, serif; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #585D5B; font-weight: 600; }
+    .field { font-family: "Bitter", Georgia, serif; font-size: 13px; }
+  </style>
+</helmet>
+<div class="p2" style="min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- masthead with density dial -->
+  <div style="background: #17191B; color: #F6F7F4; padding: 18px 40px 22px 40px; display: flex; flex-direction: column; gap: 10px;">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div class="lab" style="display: flex; gap: 18px; color: #F6F7F4;"><span>Início</span><span>Municípios</span><span>Estudos</span><span>Livro-razão</span><span>Agenda</span><span>Método</span><span>Sobre</span></div>
+      <div style="display: flex; align-items: center; gap: 0;">
+        <span class="seg" style="{{ segRel }}" onClick="{{ setRelance }}">Relance</span>
+        <span class="seg" style="{{ segLei }}" onClick="{{ setLeitura }}">Leitura breve</span>
+        <span class="seg" style="{{ segFun }}" onClick="{{ setFundo }}">Fundo</span>
+      </div>
+    </div>
+    <div class="cond" style="font-weight: 800; font-size: 150px; line-height: .86; text-transform: uppercase; white-space: nowrap; letter-spacing: -0.005em;">O Estado do País</div>
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <div style="font-style: italic; font-size: 22px; color: #C9CBC5;">Portugal, medido. Cada número tem fonte.</div>
+      <div class="lab" style="display: flex; align-items: center; gap: 10px; color: #F6F7F4;"><span style="width: 12px; height: 12px; background: #1F4E8C; display: inline-block;"></span>Painel europeu reconferido a 2026-08-17 · Agenda · 3 em curso · 1 a seguir</div>
+    </div>
+  </div>
+
+  <!-- hint -->
+  <div style="padding: 18px 40px 6px 40px; display: flex; justify-content: space-between; align-items: baseline; gap: 24px;">
+    <div class="lab" style="color: #585D5B;">O país em números verificados · painel europeu · 2025</div>
+    <div class="field" style="color: #585D5B;">Protótipo: o seletor muda a densidade de todos os blocos; um toque num bloco muda só o dele (relance → leitura breve → fundo → relance).</div>
+  </div>
+
+  <!-- blocks -->
+  <div style="padding: 8px 40px 32px 40px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-flow: row dense; gap: 0 0; align-items: stretch;">
+    <sc-for list="{{ items }}" as="b" hint-placeholder-count="8">
+
+      <sc-if value="{{ b.isRelance }}" hint-placeholder-val="{{ true }}">
+        <div class="block" style="{{ b.blockStyle }}" onClick="{{ b.toggle }}">
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <div class="lab" style="text-align: right;">▸ abrir</div>
+            <div class="num">{{ b.value }}</div>
+          </div>
+          <div>
+            <div class="lab" style="margin-bottom: 8px;">{{ b.unit }} · {{ b.period }}</div>
+            <div class="cond" style="font-weight: 700; font-size: 26px; line-height: 1.05;">{{ b.label }}</div>
+            <div style="font-size: 14px; line-height: 1.35; margin-top: 6px;">{{ b.short }}</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-start;">
+            <span class="pill">{{ b.pill }}</span>
+            <span class="stamp">Eurostat · {{ b.code }}</span>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ b.isLeitura }}" hint-placeholder-val="{{ true }}">
+        <div class="open" style="grid-column: span 2; margin: 8px 12px 8px 4px;" onClick="{{ b.toggle }}">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 10px;"><span style="{{ b.markStyle }}"></span><span style="font-size: 22px; font-weight: 500;">{{ b.label }}</span></div>
+            <div class="slab" style="font-size: 44px; font-weight: 500; line-height: 1;">{{ b.value }}</div>
+          </div>
+          <div class="k">{{ b.unit }} · {{ b.period }} · Eurostat, {{ b.code }} · lido 2026-08-12</div>
+          <div style="position: relative; padding-top: 16px; margin-top: 4px;">
+            <div class="k" style="position: absolute; top: 0; left: 0; font-weight: 400;">{{ b.minLabel }}</div>
+            <div class="k" style="position: absolute; top: 0; right: 0; font-weight: 400;">{{ b.maxLabel }}</div>
+            <div class="k" style="{{ b.limLabelStyle }}">{{ b.limLabel }}</div>
+            <svg viewBox="0 0 600 30" width="100%" height="30" preserveAspectRatio="xMinYMid meet" style="display: block; overflow: visible;">
+              <line x1="0" y1="16" x2="600" y2="16" stroke="#D9DDD8" stroke-width="1"></line>
+              <rect x="{{ b.barX2 }}" y="12" width="{{ b.barW2 }}" height="8" fill="{{ b.barFill }}"></rect>
+              <line x1="{{ b.limX2 }}" y1="2" x2="{{ b.limX2 }}" y2="30" stroke="{{ b.limStroke }}" stroke-width="2"></line>
+              <circle cx="{{ b.valX2 }}" cy="16" r="6.5" fill="{{ b.dotFill }}" stroke="#17191B" stroke-width="{{ b.dotStroke }}"></circle>
+            </svg>
+          </div>
+          <div class="slab" style="{{ b.stateStyle }}">{{ b.state }}</div>
+          <div style="font-size: 16px; line-height: 1.5;">{{ b.short }} <a class="selo" href="#">fonte</a></div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ b.isFundo }}" hint-placeholder-val="{{ true }}">
+        <div class="row" style="grid-column: span 4;" onClick="{{ b.toggle }}">
+          <div style="display: grid; grid-template-columns: minmax(220px, 1.4fr) 84px 300px 210px 64px; gap: 16px; align-items: center;">
+            <div><div style="font-size: 18px; font-weight: 500;">{{ b.label }}</div><div class="k" style="font-weight: 400; letter-spacing: .02em; text-transform: none;">{{ b.unit }} · {{ b.period }} · Eurostat, {{ b.code }}</div></div>
+            <div class="slab" style="font-size: 26px; text-align: right;">{{ b.value }}</div>
+            <div style="position: relative; padding-top: 14px; width: 300px;">
+              <div class="k" style="position: absolute; top: 0; left: 0; font-weight: 400; font-size: 10px;">{{ b.minLabel }}</div>
+              <div class="k" style="position: absolute; top: 0; right: 0; font-weight: 400; font-size: 10px;">{{ b.maxLabel }}</div>
+              <div class="k" style="{{ b.limLabelStyleSm }}">{{ b.limLabel }}</div>
+              <svg viewBox="0 0 300 30" width="300" height="30" style="display: block; overflow: visible;">
+                <line x1="0" y1="16" x2="300" y2="16" stroke="#D9DDD8" stroke-width="1"></line>
+                <rect x="{{ b.barX }}" y="12" width="{{ b.barW }}" height="8" fill="{{ b.barFill }}"></rect>
+                <line x1="{{ b.limX }}" y1="2" x2="{{ b.limX }}" y2="30" stroke="{{ b.limStroke }}" stroke-width="2"></line>
+                <circle cx="{{ b.valX }}" cy="16" r="6.5" fill="{{ b.dotFill }}" stroke="#17191B" stroke-width="{{ b.dotStroke }}"></circle>
+              </svg>
+            </div>
+            <div class="slab" style="{{ b.stateStyle }}">{{ b.state }}</div>
+            <a class="selo" href="#">fonte</a>
+          </div>
+          <div style="border-left: 2px solid #7F8681; margin-left: 4px; padding: 10px 0 4px 16px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 10px 32px;">
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div class="k">▾ recibo desta linha</div>
+              <div style="font-size: 16px;">{{ b.attribution }}</div>
+              <sc-if value="{{ b.hasExcerpt }}" hint-placeholder-val="{{ true }}">
+                <div class="k" style="margin-top: 6px;">Prova · campo devolvido</div>
+                <div class="field" style="border-left: 3px solid #7F8681; padding-left: 10px;">{{ b.excerpt }}</div>
+                <div style="font-size: 13px; color: #585D5B;">Transcrito da fonte, palavra por palavra.</div>
+              </sc-if>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div class="k">Verificações</div>
+              <div class="field">Lido a 2026-08-12 · Reconferido a <span style="border: 1px dashed #17191B; padding: 1px 5px;">[a verificar]</span></div>
+              <div class="k" style="margin-top: 6px;">Correções desta linha</div>
+              <div class="field">Esta linha nunca foi corrigida nem atualizada.</div>
+              <a href="#" class="k" style="color: #17191B; margin-top: 4px;">Ver a linha →</a>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+    </sc-for>
+  </div>
+
+  <div style="padding: 0 40px 24px 40px; display: flex; justify-content: space-between; align-items: baseline;">
+    <div class="field" style="color: #585D5B;">Painel europeu reconferido a 2026-08-17 · ■ = linha do livro-razão · Escreva para correcoes@oestadodopais.pt. Um erro confirmado entra no registo de correções e na própria linha, com o valor antigo à vista. Nada é apagado.</div>
+    <div class="k">Maqueta v2 · protótipo · tipos substitutos: Spectral por Parnaso, Bitter por Sebenta, Sofia Sans Condensed por Grotzec Condensed</div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"densidade":{"editor":"enum","default":"relance","options":["relance","leitura","fundo"],"tsType":"string","section":"Densidade"},"abrir":{"editor":null,"default":-1,"tsType":"number"},"abrirEm":{"editor":null,"default":"fundo","tsType":"string"},"$preview":{"width":1280,"height":1560}}'>
+const BLOCKS = [
+  { label: "Dívida pública", value: "89,7", unit: "% do PIB", period: "2025", code: "tipsgo10", kind: "fora",
+    short: "Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu, e a descer.",
+    pill: "Limiar 60 · acima", state: "▲ ACIMA DO LIMIAR 60 · +29,7", minLabel: "0", maxLabel: "120", hasLimiar: true, limX: 150, limLabel: "limiar 60", valX: 224.25, barX: 0, barW: 224.25,
+    attribution: "Publicado por Eurostat, em General government gross debt (EDP concept), consolidated - annual data (tipsgo10) · lido a 2026-08-12",
+    hasExcerpt: true, excerpt: "General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Portugal — 2025: 89.7" },
+  { label: "Posição de investimento internacional", value: "−50,2", unit: "% do PIB", period: "2025", code: "tipsii10", kind: "fora",
+    short: "O que o país tem a haver do exterior menos o que lhe deve: negativo quando deve mais do que tem a haver.",
+    pill: "Limiar −35 · abaixo", state: "▼ ABAIXO DO LIMIAR −35 · −15,2", minLabel: "−70", maxLabel: "0", hasLimiar: true, limX: 150, limLabel: "limiar −35", valX: 84.9, barX: 84.9, barW: 215.1,
+    attribution: "Publicado por Eurostat, em Net international investment position - annual data (tipsii10) · lido a 2026-08-12", hasExcerpt: false, excerpt: "" },
+  { label: "Custo unitário do trabalho", value: "21,3", unit: "variação em três anos, %", period: "2025", code: "tipslm10", kind: "fora",
+    short: "Custo do trabalho por unidade produzida, por hora trabalhada. A definição por hora é de 2024: antes media-se por pessoa empregada.",
+    pill: "Limiar 9 · acima", state: "▲ ACIMA DO LIMIAR 9 · +12,3", minLabel: "0", maxLabel: "30", hasLimiar: true, limX: 90, limLabel: "limiar 9", valX: 213, barX: 0, barW: 213,
+    attribution: "Publicado por Eurostat, em Nominal unit labour cost per hour worked (tipslm10) · lido a 2026-08-12", hasExcerpt: false, excerpt: "" },
+  { label: "Preços da habitação", value: "17,6", unit: "variação anual, %", period: "2025", code: "tipsho20", kind: "fora",
+    short: "Índice nominal de preços da habitação. O limiar foi ultrapassado em 2024 e o excesso quase duplicou no ano seguinte.",
+    pill: "Limiar 9 · acima", state: "▲ ACIMA DO LIMIAR 9 · +8,6", minLabel: "0", maxLabel: "30", hasLimiar: true, limX: 90, limLabel: "limiar 9", valX: 176, barX: 0, barW: 176,
+    attribution: "Publicado por Eurostat, em House price index, nominal - annual data (tipsho20) · lido a 2026-08-12", hasExcerpt: false, excerpt: "" },
+  { label: "Taxa de emprego", value: "79,6", unit: "% da população dos 20 aos 64 anos", period: "2025", code: "lfsi_emp_a", kind: "dentro",
+    short: "Indicador principal do Painel Social Europeu. Está acima da média da União, que é uma posição relativa, não um limiar: muda quando os outros mudam.",
+    pill: "Acima da média", state: "ACIMA DA MÉDIA UE · SEM LIMIAR", minLabel: "0", maxLabel: "100", hasLimiar: false, limX: 0, limLabel: "", valX: 238.8, barX: 0, barW: 238.8,
+    attribution: "Publicado por Eurostat, em Employment and labour force by sex and age - annual data (lfsi_emp_a) · lido a 2026-08-12", hasExcerpt: false, excerpt: "" },
+  { label: "Crianças em creche", value: "57,9", unit: "% das crianças com menos de 3 anos", period: "2025", code: "tepsr_sp210", kind: "dentro",
+    short: "Crianças com menos de três anos em cuidados formais. É das medidas em que Portugal mais se destaca no painel social.",
+    pill: "Destaque", state: "DESTAQUE NO PAINEL SOCIAL · SEM LIMIAR", minLabel: "0", maxLabel: "100", hasLimiar: false, limX: 0, limLabel: "", valX: 173.7, barX: 0, barW: 173.7,
+    attribution: "Publicado por Eurostat, em Children aged less than 3 years in formal childcare (tepsr_sp210) · lido a 2026-08-12", hasExcerpt: false, excerpt: "" },
+  { label: "Abandono escolar precoce", value: "6,1", unit: "% dos 18 aos 24 anos", period: "2025", code: "edat_lfse_14", kind: "sem",
+    short: "Jovens que deixaram a escola com o secundário incompleto e não estão em formação. Era mais de um terço no início do século.",
+    pill: "Sem limiar", state: "SEM LIMIAR", minLabel: "0", maxLabel: "40", hasLimiar: false, limX: 0, limLabel: "", valX: 45.75, barX: 0, barW: 45.75,
+    attribution: "Publicado por Eurostat, em Early leavers from education and training by labour status (edat_lfse_14) · lido a 2026-08-12", hasExcerpt: false, excerpt: "" },
+  { label: "Sobrecarga do custo da habitação", value: "6,3", unit: "% da população", period: "2025", code: "tespm140", kind: "sem",
+    short: "Proporção que gasta mais de 40% do rendimento disponível em habitação. Está abaixo da média europeia, e a própria Comissão adverte que só se lê ao lado do regime de propriedade. Onde a taxa de proprietários é alta, esta medida não vê quem não conseguiu comprar.",
+    pill: "Ler com cuidado", state: "ABAIXO DA MÉDIA UE · SEM LIMIAR", minLabel: "0", maxLabel: "40", hasLimiar: false, limX: 0, limLabel: "", valX: 47.25, barX: 0, barW: 47.25,
+    attribution: "Publicado por Eurostat, em Housing cost overburden rate (tespm140) · lido a 2026-08-12", hasExcerpt: false, excerpt: "" }
+];
+const NEXT = { relance: "leitura", leitura: "fundo", fundo: "relance" };
+const COLORS = {
+  fora:   { bg: "#E0A21A", fg: "#17191B", dot: "#E0A21A", stroke: 1, word: "#7A5300", bar: "#17191B" },
+  dentro: { bg: "#1F4E8C", fg: "#F6F7F4", dot: "#1F4E8C", stroke: 0, word: "#1F4E8C", bar: "#17191B" },
+  sem:    { bg: "#17191B", fg: "#F6F7F4", dot: "#17191B", stroke: 0, word: "#585D5B", bar: "#7F8681" }
+};
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    const open = {};
+    if (typeof props.abrir === "number" && props.abrir >= 0) { open[props.abrir] = props.abrirEm || "fundo"; }
+    this.state = { depth: null, open: open };
+  }
+  componentDidUpdate(prev) { if (prev.densidade !== this.props.densidade) { this.setState({ depth: null, open: {} }); } }
+  baseDepth() { return this.state.depth || this.props.densidade || "relance"; }
+  setDepth(d) { this.setState({ depth: d, open: {} }); }
+  renderVals() {
+    const depth = this.baseDepth();
+    const open = this.state.open;
+    const seg = (d) => depth === d ? "background: #F6F7F4; color: #17191B; border-color: #F6F7F4;" : "background: transparent; color: #F6F7F4; border-color: #F6F7F4;";
+    const items = BLOCKS.map((b, i) => {
+      const d = open[i] || depth;
+      const c = COLORS[b.kind];
+      return Object.assign({}, b, {
+        isRelance: d === "relance", isLeitura: d === "leitura", isFundo: d === "fundo",
+        blockStyle: "background: " + c.bg + "; color: " + c.fg + ";",
+        markStyle: "width: 14px; height: 14px; display: inline-block; background: " + c.dot + ";",
+        dotFill: c.dot, dotStroke: c.stroke, barFill: c.bar, limStroke: b.hasLimiar ? "#7F8681" : "none",
+        barX2: b.barX * 2, barW2: b.barW * 2, limX2: b.limX * 2, valX2: b.valX * 2,
+        limLabelStyle: b.hasLimiar ? "position: absolute; top: 0; left: " + (b.limX / 3) + "%; transform: translateX(-50%); font-weight: 400;" : "display: none;",
+        limLabelStyleSm: b.hasLimiar ? "position: absolute; top: 0; left: " + (b.limX / 3) + "%; transform: translateX(-50%); font-weight: 400; font-size: 10px;" : "display: none;",
+        stateStyle: "font-size: 12px; font-weight: 600; letter-spacing: .04em; color: " + c.word + ";",
+        toggle: () => this.setState((s) => {
+          const cur = s.open[i] || s.depth || this.props.densidade || "relance";
+          const nx = Object.assign({}, s.open); nx[i] = NEXT[cur];
+          return { open: nx };
+        })
+      });
+    });
+    return {
+      items, depth,
+      segRel: seg("relance"), segLei: seg("leitura"), segFun: seg("fundo"),
+      setRelance: () => this.setDepth("relance"),
+      setLeitura: () => this.setDepth("leitura"),
+      setFundo: () => this.setDepth("fundo")
+    };
+  }
+}
+</script>
+</body>
+</html>

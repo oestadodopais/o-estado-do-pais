@@ -1,0 +1,652 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Spectral+SC:wght@400;600&family=Bitter:ital,wght@0,100..900;1,100..900&family=Sofia+Sans+Condensed:wght@200..900&display=swap">
+  <style>
+    html, body { margin: 0; background: #F6F7F4; }
+    a { color: #17191B; } a:hover { color: #1F4E8C; }
+    :root, .pg { --paper: #F6F7F4; --ink: #17191B; --g1: #585D5B; --g2: #7F8681; --g3: #D9DDD8; --amb: #E0A21A; --ocre: #7A5300; --cob: #1F4E8C; }
+    .pg { background: var(--paper); color: var(--ink); font-family: "Spectral", Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.55; font-variant-numeric: oldstyle-nums; -webkit-font-smoothing: antialiased; }
+    .pg * { box-sizing: border-box; }
+    h1, h2 { margin: 0; font-weight: 500; letter-spacing: -0.005em; }
+    h1 { font-size: 40px; line-height: 1.12; }
+    h2 { font-size: 28px; line-height: 1.18; }
+    p { margin: 0; }
+    .sl { font-family: "Bitter", "Rockwell", Georgia, serif; font-variant-numeric: tabular-nums lining-nums; }
+    .num { font-family: "Bitter", "Rockwell", Georgia, serif; font-variant-numeric: tabular-nums lining-nums; font-weight: 500; letter-spacing: -0.005em; white-space: nowrap; }
+    .lab { font-family: "Bitter", Georgia, serif; font-size: 11px; line-height: 1.45; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; color: var(--g1); font-variant-numeric: tabular-nums lining-nums; }
+    .meta { font-family: "Bitter", Georgia, serif; font-size: 11px; line-height: 1.5; letter-spacing: .02em; color: var(--g1); font-variant-numeric: tabular-nums lining-nums; }
+    .est { font-family: "Bitter", Georgia, serif; font-size: 12px; line-height: 1.32; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; font-variant-numeric: tabular-nums lining-nums; }
+    .nome { font-size: 18px; font-weight: 500; line-height: 1.25; }
+    .nav { font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; color: var(--ink); }
+    .nav:hover { color: var(--cob); }
+    .sep { font-family: "Bitter", Georgia, serif; font-size: 12px; color: var(--g2); }
+    .lig { font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .selo { display: inline-flex; align-items: center; gap: 6px; font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); text-decoration: none; white-space: nowrap; }
+    .selo::before { content: ""; width: 9px; height: 9px; background: var(--ink); display: inline-block; }
+    .selo.pc::before { background: transparent; border: 1px dashed var(--ink); }
+    .pv { font-family: "Bitter", Georgia, serif; font-size: 11px; letter-spacing: .04em; color: var(--ink); border: 1px dashed var(--ink); padding: 1px 5px; white-space: nowrap; }
+    .rule2 { border-top: 2px solid var(--g2); }
+    .rulei { border-top: 1px solid var(--ink); }
+    .hair { border-top: 1px solid var(--g3); }
+    .cel { border-right: 1px solid var(--g3); border-bottom: 1px solid var(--g3); padding: 16px 18px; display: flex; flex-direction: column; gap: 5px; align-items: flex-start; }
+    .chip { font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .04em; border: 1px solid var(--g2); padding: 7px 11px; color: var(--ink); text-decoration: none; display: inline-block; }
+    .chip.on { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+    .fora { color: var(--ocre); }
+    .dentro { color: var(--cob); }
+    .neutro { color: var(--g1); }
+    .g1 { color: var(--g1); }
+    .prosa { font-size: 15px; line-height: 1.55; color: var(--g1); }
+
+    /* v2 · seletor de densidade e bloco aberto */
+    .dens { display: inline-flex; border: 1px solid var(--ink); }
+    .dens a { font-family: "Bitter", Georgia, serif; font-size: 12px; line-height: 1; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; text-decoration: none; color: var(--ink); padding: 7px 11px; }
+    .dens a + a { border-left: 1px solid var(--ink); }
+    .dens a.on { background: var(--ink); color: var(--paper); }
+    .bloco { display: flex; flex-direction: column; gap: 12px; padding: 4px 0 18px 0; border-bottom: 1px solid var(--g3); }
+    .marca { width: 14px; height: 14px; display: inline-block; flex: none; }
+    .marca.fora { background: var(--amb); border: 1px solid var(--ink); }
+    .marca.dentro { background: var(--cob); }
+    .marca.sem { background: var(--ink); }
+    .abre { font-size: 22px; font-weight: 500; line-height: 1.2; }
+    .frase { font-size: 16px; line-height: 1.5; }
+  </style>
+</helmet>
+<div class="pg" style="width: 1280px; min-height: 100vh; box-sizing: border-box; background: var(--paper); padding: 34px 48px 44px 48px; display: flex; flex-direction: column; gap: 34px;">
+
+  <!-- 4.1 CABEÇALHO -->
+  <div style="display: flex; flex-direction: column;">
+    <div style="display: flex; justify-content: space-between; align-items: center; height: 48px; border-bottom: 1px solid var(--g3);">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <a class="nav" href="#">Início</a><span class="sep">·</span>
+        <a class="nav" href="#">Municípios</a><span class="sep">·</span>
+        <a class="nav" href="#">Estudos</a><span class="sep">·</span>
+        <a class="nav" href="#">Livro-razão</a><span class="sep">·</span>
+        <a class="nav" href="#">Agenda</a><span class="sep">·</span>
+        <a class="nav" href="#">Método</a><span class="sep">·</span>
+        <a class="nav" href="#">Sobre</a>
+      </div>
+      <a class="nav" href="#">English</a>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; padding: 26px 0 20px 0;">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-size: 64px; font-weight: 500; line-height: 1; letter-spacing: -0.01em;">O Estado do País</div>
+        <div class="g1" style="font-style: italic; font-size: 18px; line-height: 1.4;">Portugal, medido. Cada número tem fonte.</div>
+      </div>
+      <div style="display: flex; align-items: flex-end; gap: 28px; flex: none; padding-bottom: 4px;">
+        <div class="dens">
+          <a href="#">Relance</a>
+          <a class="on" href="#">Leitura breve</a>
+          <a href="#">Fundo</a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 5px; align-items: flex-start;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="width: 12px; height: 12px; background: var(--cob); display: inline-block; flex: none;"></span>
+            <span class="sl" style="font-size: 11px; letter-spacing: .08em; font-weight: 600;">PAINEL EUROPEU RECONFERIDO A 2026-08-17</span>
+          </div>
+          <div class="lab" style="padding-left: 20px;">AGENDA · 3 EM CURSO · 1 A SEGUIR</div>
+        </div>
+      </div>
+    </div>
+    <div class="rulei"></div>
+  </div>
+
+  <!-- 5.1 LEDE -->
+  <div style="display: flex; flex-direction: column; gap: 16px;">
+    <div class="lab">O país em números verificados · Painel europeu · 2025</div>
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: start;">
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <h1>Quatro limiares europeus ultrapassados.</h1>
+        <p style="font-size: 22px; line-height: 1.4; max-width: 30em;">Dos oito indicadores do painel europeu que este sítio publica, quatro têm limiar da Comissão e os quatro estão fora dele: dívida pública, posição de investimento internacional, custo unitário do trabalho e preços da habitação. Painel de 2025, lido do Eurostat a 2026-08-12.</p>
+      </div>
+      <p class="prosa">O painel de desequilíbrios macroeconómicos e o painel social europeu, com os limiares que as instituições publicam.</p>
+    </div>
+  </div>
+
+  <!-- OS OITO INDICADORES · BLOCOS ABERTOS -->
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <div class="rule2"></div>
+    <div style="display: grid; grid-template-columns: repeat(2, 580px); gap: 24px;">
+
+      <div class="bloco">
+        <div style="display: flex; align-items: baseline; gap: 12px;">
+          <span class="marca fora" style="position: relative; top: 2px;"></span>
+          <div class="abre" style="flex: 1;">Dívida pública</div>
+          <div style="text-align: right;">
+            <div class="num" style="font-size: 44px; line-height: 1;">89,7</div>
+            <div class="lab" style="padding-top: 4px;">% do PIB · 2025</div>
+          </div>
+        </div>
+        <svg viewBox="0 0 580 40" width="100%" height="40" preserveAspectRatio="xMinYMid meet" style="display: block; overflow: visible;">
+          <line x1="0" y1="22" x2="580" y2="22" stroke="#D9DDD8" stroke-width="1"></line>
+          <rect x="0" y="18" width="433.55" height="8" fill="#17191B"></rect>
+          <line x1="290" y1="8" x2="290" y2="36" stroke="#7F8681" stroke-width="2"></line>
+          <circle cx="433.55" cy="22" r="6.5" fill="#E0A21A" stroke="#17191B" stroke-width="1"></circle>
+          <text x="0" y="10" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B">0</text>
+          <text x="290" y="10" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="middle">limiar 60</text>
+          <text x="580" y="10" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="end">120</text>
+        </svg>
+        <div class="est fora">▲ ACIMA DO LIMIAR 60 · +29,7</div>
+        <p class="frase">Acima do limiar do painel europeu, e a descer.</p>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 2px;">
+          <div class="meta">Eurostat · tipsgo10 · lido 2026-08-12</div>
+          <a class="selo" href="#">fonte</a>
+        </div>
+      </div>
+
+      <div class="bloco">
+        <div style="display: flex; align-items: baseline; gap: 12px;">
+          <span class="marca fora" style="position: relative; top: 2px;"></span>
+          <div class="abre" style="flex: 1;">Posição de investimento internacional</div>
+          <div style="text-align: right;">
+            <div class="num" style="font-size: 44px; line-height: 1;">−50,2</div>
+            <div class="lab" style="padding-top: 4px;">% do PIB · 2025</div>
+          </div>
+        </div>
+        <svg viewBox="0 0 580 40" width="100%" height="40" preserveAspectRatio="xMinYMid meet" style="display: block; overflow: visible;">
+          <line x1="0" y1="22" x2="580" y2="22" stroke="#D9DDD8" stroke-width="1"></line>
+          <rect x="164.14" y="18" width="415.86" height="8" fill="#17191B"></rect>
+          <line x1="290" y1="8" x2="290" y2="36" stroke="#7F8681" stroke-width="2"></line>
+          <circle cx="164.14" cy="22" r="6.5" fill="#E0A21A" stroke="#17191B" stroke-width="1"></circle>
+          <text x="0" y="10" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B">−70</text>
+          <text x="290" y="10" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="middle">limiar −35</text>
+          <text x="580" y="10" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="end">0</text>
+        </svg>
+        <div class="est fora">▼ ABAIXO DO LIMIAR −35 · −15,2</div>
+        <p class="frase">O que o país tem a haver do exterior menos o que lhe deve.</p>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 2px;">
+          <div class="meta">Eurostat · tipsii10 · lido 2026-08-12</div>
+          <a class="selo" href="#">fonte</a>
+        </div>
+      </div>
+
+      <div class="bloco">
+        <div style="display: flex; align-items: baseline; gap: 12px;">
+          <span class="marca fora" style="position: relative; top: 2px;"></span>
+          <div class="abre" style="flex: 1;">Custo unitário do trabalho</div>
+          <div style="text-align: right;">
+            <div class="num" style="font-size: 44px; line-height: 1;">21,3</div>
+            <div class="lab" style="padding-top: 4px;">variação em três anos, % · 2025</div>
+          </div>
+        </div>
+        <svg viewBox="0 0 580 40" width="100%" height="40" preserveAspectRatio="xMinYMid meet" style="display: block; overflow: visible;">
+          <line x1="0" y1="22" x2="580" y2="22" stroke="#D9DDD8" stroke-width="1"></line>
+          <rect x="0" y="18" width="411.8" height="8" fill="#17191B"></rect>
+          <line x1="174" y1="8" x2="174" y2="36" stroke="#7F8681" stroke-width="2"></line>
+          <circle cx="411.8" cy="22" r="6.5" fill="#E0A21A" stroke="#17191B" stroke-width="1"></circle>
+          <text x="0" y="10" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B">0</text>
+          <text x="174" y="10" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="middle">limiar 9</text>
+          <text x="580" y="10" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="end">30</text>
+        </svg>
+        <div class="est fora">▲ ACIMA DO LIMIAR 9 · +12,3</div>
+        <p class="frase">Custo do trabalho por unidade produzida, por hora trabalhada.</p>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 2px;">
+          <div class="meta">Eurostat · tipslm10 · lido 2026-08-12</div>
+          <a class="selo" href="#">fonte</a>
+        </div>
+      </div>
+
+      <div class="bloco">
+        <div style="display: flex; align-items: baseline; gap: 12px;">
+          <span class="marca fora" style="position: relative; top: 2px;"></span>
+          <div class="abre" style="flex: 1;">Preços da habitação</div>
+          <div style="text-align: right;">
+            <div class="num" style="font-size: 44px; line-height: 1;">17,6</div>
+            <div class="lab" style="padding-top: 4px;">variação anual, % · 2025</div>
+          </div>
+        </div>
+        <svg viewBox="0 0 580 40" width="100%" height="40" preserveAspectRatio="xMinYMid meet" style="display: block; overflow: visible;">
+          <line x1="0" y1="22" x2="580" y2="22" stroke="#D9DDD8" stroke-width="1"></line>
+          <rect x="0" y="18" width="340.27" height="8" fill="#17191B"></rect>
+          <line x1="174" y1="8" x2="174" y2="36" stroke="#7F8681" stroke-width="2"></line>
+          <circle cx="340.27" cy="22" r="6.5" fill="#E0A21A" stroke="#17191B" stroke-width="1"></circle>
+          <text x="0" y="10" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B">0</text>
+          <text x="174" y="10" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="middle">limiar 9</text>
+          <text x="580" y="10" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="end">30</text>
+        </svg>
+        <div class="est fora">▲ ACIMA DO LIMIAR 9 · +8,6</div>
+        <p class="frase">O limiar foi ultrapassado em 2024 e o excesso quase duplicou no ano seguinte.</p>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 2px;">
+          <div class="meta">Eurostat · tipsho20 · lido 2026-08-12</div>
+          <a class="selo" href="#">fonte</a>
+        </div>
+      </div>
+
+      <div class="bloco">
+        <div style="display: flex; align-items: baseline; gap: 12px;">
+          <span class="marca dentro" style="position: relative; top: 2px;"></span>
+          <div class="abre" style="flex: 1;">Taxa de emprego</div>
+          <div style="text-align: right;">
+            <div class="num" style="font-size: 44px; line-height: 1;">79,6</div>
+            <div class="lab" style="padding-top: 4px;">% da população dos 20 aos 64 anos · 2025</div>
+          </div>
+        </div>
+        <svg viewBox="0 0 580 40" width="100%" height="40" preserveAspectRatio="xMinYMid meet" style="display: block; overflow: visible;">
+          <line x1="0" y1="22" x2="580" y2="22" stroke="#D9DDD8" stroke-width="1"></line>
+          <rect x="0" y="18" width="461.68" height="8" fill="#7F8681"></rect>
+          <circle cx="461.68" cy="22" r="6.5" fill="#1F4E8C"></circle>
+          <text x="0" y="10" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B">0</text>
+          <text x="580" y="10" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="end">100</text>
+        </svg>
+        <div class="est dentro">ACIMA DA MÉDIA UE · SEM LIMIAR</div>
+        <p class="frase">Acima da média da União: uma posição relativa, não um limiar.</p>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 2px;">
+          <div class="meta">Eurostat · lfsi_emp_a · lido 2026-08-12</div>
+          <a class="selo" href="#">fonte</a>
+        </div>
+      </div>
+
+      <div class="bloco">
+        <div style="display: flex; align-items: baseline; gap: 12px;">
+          <span class="marca dentro" style="position: relative; top: 2px;"></span>
+          <div class="abre" style="flex: 1;">Crianças em creche</div>
+          <div style="text-align: right;">
+            <div class="num" style="font-size: 44px; line-height: 1;">57,9</div>
+            <div class="lab" style="padding-top: 4px;">% das crianças com menos de 3 anos · 2025</div>
+          </div>
+        </div>
+        <svg viewBox="0 0 580 40" width="100%" height="40" preserveAspectRatio="xMinYMid meet" style="display: block; overflow: visible;">
+          <line x1="0" y1="22" x2="580" y2="22" stroke="#D9DDD8" stroke-width="1"></line>
+          <rect x="0" y="18" width="335.82" height="8" fill="#7F8681"></rect>
+          <circle cx="335.82" cy="22" r="6.5" fill="#1F4E8C"></circle>
+          <text x="0" y="10" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B">0</text>
+          <text x="580" y="10" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="end">100</text>
+        </svg>
+        <div class="est dentro">DESTAQUE NO PAINEL SOCIAL · SEM LIMIAR</div>
+        <p class="frase">Das medidas em que Portugal mais se destaca no painel social.</p>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 2px;">
+          <div class="meta">Eurostat · tepsr_sp210 · lido 2026-08-12</div>
+          <a class="selo" href="#">fonte</a>
+        </div>
+      </div>
+
+      <div class="bloco">
+        <div style="display: flex; align-items: baseline; gap: 12px;">
+          <span class="marca sem" style="position: relative; top: 2px;"></span>
+          <div class="abre" style="flex: 1;">Abandono escolar precoce</div>
+          <div style="text-align: right;">
+            <div class="num" style="font-size: 44px; line-height: 1;">6,1</div>
+            <div class="lab" style="padding-top: 4px;">% dos 18 aos 24 anos · 2025</div>
+          </div>
+        </div>
+        <svg viewBox="0 0 580 40" width="100%" height="40" preserveAspectRatio="xMinYMid meet" style="display: block; overflow: visible;">
+          <line x1="0" y1="22" x2="580" y2="22" stroke="#D9DDD8" stroke-width="1"></line>
+          <rect x="0" y="18" width="88.45" height="8" fill="#7F8681"></rect>
+          <circle cx="88.45" cy="22" r="6.5" fill="#17191B"></circle>
+          <text x="0" y="10" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B">0</text>
+          <text x="580" y="10" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="end">40</text>
+        </svg>
+        <div class="est neutro">SEM LIMIAR</div>
+        <p class="frase">Era mais de um terço no início do século.</p>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 2px;">
+          <div class="meta">Eurostat · edat_lfse_14 · lido 2026-08-12</div>
+          <a class="selo" href="#">fonte</a>
+        </div>
+      </div>
+
+      <div class="bloco">
+        <div style="display: flex; align-items: baseline; gap: 12px;">
+          <span class="marca sem" style="position: relative; top: 2px;"></span>
+          <div class="abre" style="flex: 1;">Sobrecarga do custo da habitação</div>
+          <div style="text-align: right;">
+            <div class="num" style="font-size: 44px; line-height: 1;">6,3</div>
+            <div class="lab" style="padding-top: 4px;">% da população · 2025</div>
+          </div>
+        </div>
+        <svg viewBox="0 0 580 40" width="100%" height="40" preserveAspectRatio="xMinYMid meet" style="display: block; overflow: visible;">
+          <line x1="0" y1="22" x2="580" y2="22" stroke="#D9DDD8" stroke-width="1"></line>
+          <rect x="0" y="18" width="91.35" height="8" fill="#7F8681"></rect>
+          <circle cx="91.35" cy="22" r="6.5" fill="#17191B"></circle>
+          <text x="0" y="10" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B">0</text>
+          <text x="580" y="10" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="end">40</text>
+        </svg>
+        <div class="est neutro">ABAIXO DA MÉDIA UE · SEM LIMIAR</div>
+        <p class="frase">Abaixo da média europeia, e só se lê ao lado do regime de propriedade.</p>
+        <p class="prosa">A sobrecarga do custo da habitação (6,3) está abaixo da média europeia, e a própria Comissão adverte que só se lê ao lado do regime de propriedade: onde a taxa de proprietários é alta, esta medida não vê quem não conseguiu comprar.</p>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 2px;">
+          <div class="meta">Eurostat · tespm140 · lido 2026-08-12</div>
+          <a class="selo" href="#">fonte</a>
+        </div>
+      </div>
+    </div>
+    <div class="lab" style="text-align: right;">Painel europeu reconferido a 2026-08-17.</div>
+  </div>
+
+  <!-- INSTRUMENTO 1 · RÉGUA DA CONVERGÊNCIA -->
+  <div style="display: flex; flex-direction: column; gap: 22px;">
+    <div class="rule2"></div>
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: start;">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div class="lab">Instrumento n.º 1</div>
+        <h2>A régua da convergência</h2>
+        <p style="font-size: 17px; max-width: 62ch;">PIB per capita em paridades de poder de compra, com a média da <span style="white-space: nowrap;">UE-27</span> fixada em 100. Selecione regiões para as pôr na mesma régua.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-start;">
+        <div style="font-size: 17px; font-weight: 500;">Portugal</div>
+        <div class="num" style="font-size: 44px; line-height: 1.05;">82</div>
+        <div class="meta">índice · UE-27 = 100 · 2024<br>Eurostat, nama_10r_2gdp, lido a 2026-08-13</div>
+        <a class="selo" href="#" style="margin-top: 6px;">fonte</a>
+      </div>
+    </div>
+
+    <svg viewBox="0 0 1000 118" width="100%" height="140" style="display: block; overflow: visible;">
+      <text x="487.5" y="14" font-family="Bitter, Georgia, serif" font-size="10" fill="#585D5B" text-anchor="middle">Algarve 89</text>
+      <text x="625" y="14" font-family="Bitter, Georgia, serif" font-size="10" fill="#585D5B" text-anchor="middle">UE-27 = 100</text>
+      <text x="62.5" y="32" font-family="Bitter, Georgia, serif" font-size="10" fill="#585D5B" text-anchor="middle">Península de Setúbal 55</text>
+      <text x="337.5" y="32" font-family="Bitter, Georgia, serif" font-size="10" fill="#585D5B" text-anchor="middle">Alentejo 77</text>
+      <text x="475" y="32" font-family="Bitter, Georgia, serif" font-size="10" fill="#585D5B" text-anchor="middle">Madeira 88</text>
+      <text x="1000" y="32" font-family="Bitter, Georgia, serif" font-size="10" fill="#585D5B" text-anchor="end">Grande Lisboa 129</text>
+      <line x1="487.5" y1="18" x2="487.5" y2="64" stroke="#D9DDD8" stroke-width="1"></line>
+      <line x1="62.5" y1="36" x2="62.5" y2="64" stroke="#D9DDD8" stroke-width="1"></line>
+      <line x1="337.5" y1="36" x2="337.5" y2="64" stroke="#D9DDD8" stroke-width="1"></line>
+      <line x1="475" y1="36" x2="475" y2="64" stroke="#D9DDD8" stroke-width="1"></line>
+      <line x1="987.5" y1="36" x2="987.5" y2="64" stroke="#D9DDD8" stroke-width="1"></line>
+      <line x1="0" y1="72" x2="1000" y2="72" stroke="#17191B" stroke-width="1"></line>
+      <line x1="0" y1="66" x2="0" y2="78" stroke="#17191B" stroke-width="1"></line>
+      <line x1="1000" y1="66" x2="1000" y2="78" stroke="#17191B" stroke-width="1"></line>
+      <rect x="400" y="68" width="225" height="8" fill="#17191B"></rect>
+      <line x1="625" y1="18" x2="625" y2="92" stroke="#7F8681" stroke-width="2"></line>
+      <circle cx="62.5" cy="72" r="4" fill="#7F8681"></circle>
+      <circle cx="337.5" cy="72" r="4" fill="#7F8681"></circle>
+      <circle cx="475" cy="72" r="4" fill="#7F8681"></circle>
+      <circle cx="487.5" cy="72" r="4" fill="#7F8681"></circle>
+      <circle cx="987.5" cy="72" r="4" fill="#7F8681"></circle>
+      <circle cx="400" cy="72" r="7" fill="#17191B"></circle>
+      <text x="0" y="98" font-family="Bitter, Georgia, serif" font-size="10" fill="#585D5B">50</text>
+      <text x="400" y="99" font-family="Bitter, Georgia, serif" font-size="12" font-weight="600" fill="#17191B" text-anchor="middle">Portugal 82</text>
+      <text x="1000" y="98" font-family="Bitter, Georgia, serif" font-size="10" fill="#585D5B" text-anchor="end">130</text>
+    </svg>
+
+    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+      <a class="chip on" href="#">Grande Lisboa</a>
+      <a class="chip on" href="#">Algarve</a>
+      <a class="chip on" href="#">Madeira</a>
+      <a class="chip on" href="#">Alentejo</a>
+      <a class="chip on" href="#">Península de Setúbal</a>
+    </div>
+
+    <div class="hair"></div>
+
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: start;">
+      <div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;">
+        <p style="font-size: 21px; line-height: 1.4;">Portugal está 18 pontos abaixo da média da <span style="white-space: nowrap;">UE-27</span>.</p>
+        <a class="selo" href="#">fonte</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-start;">
+        <div class="lab">Distância Península de Setúbal · Grande Lisboa</div>
+        <div class="num" style="font-size: 24px;">74</div>
+        <div class="meta">pontos · calculado</div>
+        <a class="selo" href="#" style="margin-top: 4px;">fonte</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSTRUMENTO 2 · O PAÍS EM PONTOS -->
+  <div style="display: flex; flex-direction: column; gap: 22px;">
+    <div class="rule2"></div>
+    <div style="display: grid; grid-template-columns: 460px minmax(0, 1fr); gap: 48px; align-items: start;">
+
+      <svg viewBox="0 0 600 790" width="460" height="606" style="display: block; overflow: visible;">
+        <rect x="146.8" y="433.6" width="108.5" height="92.9" fill="none" stroke="#D9DDD8" stroke-width="1"></rect>
+        <rect x="14" y="584.9" width="250" height="164.3" fill="none" stroke="#D9DDD8" stroke-width="1"></rect>
+        <g fill="#F6F7F4" stroke="#17191B" stroke-width="1" vector-effect="non-scaling-stroke">
+              <circle cx="396.5" cy="251" r="3.2"></circle><circle cx="386.9" cy="236.6" r="3.2"></circle><circle cx="392" cy="267.8" r="3.2"></circle><circle cx="410.3" cy="207.6" r="3.2"></circle><circle cx="374.2" cy="243.9" r="3.2"></circle><circle cx="405.4" cy="196.2" r="3.2"></circle>
+              <circle cx="374.4" cy="199.2" r="3.2"></circle><circle cx="379.2" cy="228.8" r="3.2"></circle><circle cx="385.5" cy="202.7" r="3.2"></circle><circle cx="367.3" cy="248.4" r="3.2"></circle><circle cx="392.1" cy="280.3" r="3.2"></circle><circle cx="369.8" cy="229.3" r="3.2"></circle>
+              <circle cx="389.5" cy="218.6" r="3.2"></circle><circle cx="381.5" cy="259.9" r="3.2"></circle><circle cx="375" cy="214.2" r="3.2"></circle><circle cx="387.4" cy="211.8" r="3.2"></circle><circle cx="400.7" cy="233.5" r="3.2"></circle><circle cx="368.3" cy="259.9" r="3.2"></circle>
+              <circle cx="402.2" cy="219.7" r="3.2"></circle><circle cx="416.4" cy="585.4" r="3.2"></circle><circle cx="426.4" cy="635.5" r="3.2"></circle><circle cx="430.5" cy="542" r="3.2"></circle><circle cx="525.4" cy="553.7" r="3.2"></circle><circle cx="448.3" cy="576.3" r="3.2"></circle>
+              <circle cx="431.8" cy="607.7" r="3.2"></circle><circle cx="442.8" cy="548.3" r="3.2"></circle><circle cx="416.3" cy="561" r="3.2"></circle><circle cx="462.6" cy="614.7" r="3.2"></circle><circle cx="502.9" cy="555.5" r="3.2"></circle><circle cx="379.1" cy="619.5" r="3.2"></circle>
+              <circle cx="406.5" cy="615.5" r="3.2"></circle><circle cx="483.5" cy="579.9" r="3.2"></circle><circle cx="461.6" cy="551.2" r="3.2"></circle><circle cx="401.3" cy="115.2" r="3.2"></circle><circle cx="374.6" cy="130" r="3.2"></circle><circle cx="394.1" cy="129" r="3.2"></circle>
+              <circle cx="438.9" cy="129.5" r="3.2"></circle><circle cx="430.7" cy="147.3" r="3.2"></circle><circle cx="361.7" cy="128.7" r="3.2"></circle><circle cx="420.2" cy="137.6" r="3.2"></circle><circle cx="404.2" cy="139.7" r="3.2"></circle><circle cx="410.2" cy="123.4" r="3.2"></circle>
+              <circle cx="416.1" cy="104" r="3.2"></circle><circle cx="424.5" cy="117.8" r="3.2"></circle><circle cx="386.1" cy="146.4" r="3.2"></circle><circle cx="391.9" cy="111.5" r="3.2"></circle><circle cx="406.1" cy="150.9" r="3.2"></circle><circle cx="535.1" cy="153.9" r="3.2"></circle>
+              <circle cx="555.8" cy="99.9" r="3.2"></circle><circle cx="500.9" cy="169.5" r="3.2"></circle><circle cx="546.5" cy="184.1" r="3.2"></circle><circle cx="539.4" cy="129.1" r="3.2"></circle><circle cx="592" cy="133.3" r="3.2"></circle><circle cx="512.4" cy="133.6" r="3.2"></circle>
+              <circle cx="562.1" cy="156" r="3.2"></circle><circle cx="528.8" cy="176.5" r="3.2"></circle><circle cx="515.1" cy="157.5" r="3.2"></circle><circle cx="575.5" cy="125.6" r="3.2"></circle><circle cx="525.8" cy="92" r="3.2"></circle><circle cx="498.8" cy="283.2" r="3.2"></circle>
+              <circle cx="482.3" cy="342.9" r="3.2"></circle><circle cx="476.4" cy="292.5" r="3.2"></circle><circle cx="484.1" cy="309.5" r="3.2"></circle><circle cx="519.6" cy="337.2" r="3.2"></circle><circle cx="446.8" cy="331.7" r="3.2"></circle><circle cx="517.3" cy="302.6" r="3.2"></circle>
+              <circle cx="448.3" cy="357.5" r="3.2"></circle><circle cx="424.9" cy="346.7" r="3.2"></circle><circle cx="420.6" cy="364.3" r="3.2"></circle><circle cx="466.7" cy="364.6" r="3.2"></circle><circle cx="435.9" cy="296" r="3.2"></circle><circle cx="373.3" cy="280.1" r="3.2"></circle>
+              <circle cx="391.6" cy="297.6" r="3.2"></circle><circle cx="386.5" cy="312.4" r="3.2"></circle><circle cx="356.8" cy="303.6" r="3.2"></circle><circle cx="425.9" cy="311.9" r="3.2"></circle><circle cx="412.5" cy="308.2" r="3.2"></circle><circle cx="362" cy="270.3" r="3.2"></circle>
+              <circle cx="403" cy="311.6" r="3.2"></circle><circle cx="371.3" cy="297.8" r="3.2"></circle><circle cx="447.5" cy="278.4" r="3.2"></circle><circle cx="442.5" cy="314.2" r="3.2"></circle><circle cx="408.8" cy="287.4" r="3.2"></circle><circle cx="399" cy="323.5" r="3.2"></circle>
+              <circle cx="375" cy="316.4" r="3.2"></circle><circle cx="433" cy="282.8" r="3.2"></circle><circle cx="410.4" cy="297.5" r="3.2"></circle><circle cx="493.7" cy="496.4" r="3.2"></circle><circle cx="442.5" cy="475.4" r="3.2"></circle><circle cx="485.4" cy="471.8" r="3.2"></circle>
+              <circle cx="471.5" cy="468.2" r="3.2"></circle><circle cx="406" cy="492.4" r="3.2"></circle><circle cx="425.9" cy="459.1" r="3.2"></circle><circle cx="504.1" cy="532.9" r="3.2"></circle><circle cx="463.6" cy="534.9" r="3.2"></circle><circle cx="473" cy="495.2" r="3.2"></circle>
+              <circle cx="484.6" cy="523.4" r="3.2"></circle><circle cx="385" cy="491.6" r="3.2"></circle><circle cx="422.7" cy="524.8" r="3.2"></circle><circle cx="496.5" cy="477.6" r="3.2"></circle><circle cx="412.1" cy="676.7" r="3.2"></circle><circle cx="467.9" cy="642.1" r="3.2"></circle>
+              <circle cx="357.6" cy="657" r="3.2"></circle><circle cx="480.8" cy="657.5" r="3.2"></circle><circle cx="442.3" cy="686.1" r="3.2"></circle><circle cx="391" cy="677.6" r="3.2"></circle><circle cx="364.6" cy="674.5" r="3.2"></circle><circle cx="430" cy="665.6" r="3.2"></circle>
+              <circle cx="377.7" cy="654.7" r="3.2"></circle><circle cx="452.7" cy="685.3" r="3.2"></circle><circle cx="378.5" cy="669.7" r="3.2"></circle><circle cx="446.1" cy="669.2" r="3.2"></circle><circle cx="401.3" cy="660.2" r="3.2"></circle><circle cx="460.2" cy="665.6" r="3.2"></circle>
+              <circle cx="349.7" cy="682.4" r="3.2"></circle><circle cx="480.6" cy="669.4" r="3.2"></circle><circle cx="479.7" cy="226.3" r="3.2"></circle><circle cx="538.7" cy="246.3" r="3.2"></circle><circle cx="493.5" cy="246.4" r="3.2"></circle><circle cx="534.3" cy="213.2" r="3.2"></circle>
+              <circle cx="482.4" cy="242.8" r="3.2"></circle><circle cx="474.7" cy="261.7" r="3.2"></circle><circle cx="506.9" cy="259.4" r="3.2"></circle><circle cx="480.5" cy="275.6" r="3.2"></circle><circle cx="506.2" cy="206.6" r="3.2"></circle><circle cx="519.9" cy="231.3" r="3.2"></circle>
+              <circle cx="527.3" cy="277.8" r="3.2"></circle><circle cx="461.4" cy="277.3" r="3.2"></circle><circle cx="498.3" cy="225" r="3.2"></circle><circle cx="514.1" cy="191.8" r="3.2"></circle><circle cx="339.4" cy="380.6" r="3.2"></circle><circle cx="396.5" cy="347.3" r="3.2"></circle>
+              <circle cx="392.4" cy="333" r="3.2"></circle><circle cx="361" cy="370.1" r="3.2"></circle><circle cx="323.3" cy="414" r="3.2"></circle><circle cx="330" cy="398.6" r="3.2"></circle><circle cx="415.7" cy="322.2" r="3.2"></circle><circle cx="407.4" cy="334.1" r="3.2"></circle>
+              <circle cx="357.5" cy="351.1" r="3.2"></circle><circle cx="343" cy="351.6" r="3.2"></circle><circle cx="334.2" cy="375.4" r="3.2"></circle><circle cx="320.3" cy="404.1" r="3.2"></circle><circle cx="416.9" cy="332.9" r="3.2"></circle><circle cx="307.8" cy="407.2" r="3.2"></circle>
+              <circle cx="369.4" cy="333.9" r="3.2"></circle><circle cx="356.1" cy="379.9" r="3.2"></circle><circle cx="334.7" cy="437" r="3.2"></circle><circle cx="329.4" cy="452.2" r="3.2"></circle><circle cx="348.4" cy="432.6" r="3.2"></circle><circle cx="332" cy="420.1" r="3.2"></circle>
+              <circle cx="300" cy="483" r="3.2"></circle><circle cx="323.4" cy="481.5" r="3.2"></circle><circle cx="323.9" cy="466.2" r="3.2"></circle><circle cx="312.6" cy="418.6" r="3.2"></circle><circle cx="308.8" cy="453.9" r="3.2"></circle><circle cx="312" cy="484" r="3.2"></circle>
+              <circle cx="304.2" cy="470.9" r="3.2"></circle><circle cx="323.1" cy="449.7" r="3.2"></circle><circle cx="313.5" cy="436.2" r="3.2"></circle><circle cx="340" cy="458.7" r="3.2"></circle><circle cx="316.5" cy="478.7" r="3.2"></circle><circle cx="319.4" cy="474" r="3.2"></circle>
+              <circle cx="460.9" cy="422.8" r="3.2"></circle><circle cx="507.1" cy="434.7" r="3.2"></circle><circle cx="442.8" cy="440.5" r="3.2"></circle><circle cx="525.6" cy="445.9" r="3.2"></circle><circle cx="483.1" cy="391.6" r="3.2"></circle><circle cx="468.5" cy="410.3" r="3.2"></circle>
+              <circle cx="508.5" cy="460.2" r="3.2"></circle><circle cx="470.3" cy="439.7" r="3.2"></circle><circle cx="444.5" cy="394.8" r="3.2"></circle><circle cx="495.6" cy="398.9" r="3.2"></circle><circle cx="488.7" cy="443.2" r="3.2"></circle><circle cx="466.4" cy="384.3" r="3.2"></circle>
+              <circle cx="426.5" cy="425.9" r="3.2"></circle><circle cx="492.1" cy="415.8" r="3.2"></circle><circle cx="459.5" cy="453.9" r="3.2"></circle><circle cx="430.4" cy="163.8" r="3.2"></circle><circle cx="435.5" cy="178.4" r="3.2"></circle><circle cx="415.1" cy="153.8" r="3.2"></circle>
+              <circle cx="388.1" cy="184.6" r="3.2"></circle><circle cx="408.1" cy="162.1" r="3.2"></circle><circle cx="376.7" cy="167.3" r="3.2"></circle><circle cx="419.3" cy="178.7" r="3.2"></circle><circle cx="370" cy="171.4" r="3.2"></circle><circle cx="398" cy="161.7" r="3.2"></circle>
+              <circle cx="396.4" cy="175.4" r="3.2"></circle><circle cx="406.3" cy="179.3" r="3.2"></circle><circle cx="374.9" cy="177.9" r="3.2"></circle><circle cx="365.6" cy="145" r="3.2"></circle><circle cx="391.8" cy="157.6" r="3.2"></circle><circle cx="387" cy="172.2" r="3.2"></circle>
+              <circle cx="368.9" cy="155.4" r="3.2"></circle><circle cx="378.7" cy="189" r="3.2"></circle><circle cx="380" cy="158.8" r="3.2"></circle><circle cx="419.3" cy="396.3" r="3.2"></circle><circle cx="368.3" cy="390.6" r="3.2"></circle><circle cx="378.8" cy="429.5" r="3.2"></circle>
+              <circle cx="379.7" cy="419.3" r="3.2"></circle><circle cx="356.6" cy="465.4" r="3.2"></circle><circle cx="358.7" cy="431.1" r="3.2"></circle><circle cx="398" cy="415.5" r="3.2"></circle><circle cx="406.5" cy="396.4" r="3.2"></circle><circle cx="391.5" cy="456.5" r="3.2"></circle>
+              <circle cx="388.5" cy="391.6" r="3.2"></circle><circle cx="404.1" cy="359.6" r="3.2"></circle><circle cx="385.4" cy="401.8" r="3.2"></circle><circle cx="436.9" cy="374.1" r="3.2"></circle><circle cx="347.9" cy="408.4" r="3.2"></circle><circle cx="368.4" cy="443.3" r="3.2"></circle>
+              <circle cx="364.5" cy="407.4" r="3.2"></circle><circle cx="421.2" cy="379.3" r="3.2"></circle><circle cx="397.3" cy="374.3" r="3.2"></circle><circle cx="381.6" cy="386.5" r="3.2"></circle><circle cx="396" cy="389.4" r="3.2"></circle><circle cx="379.3" cy="363.2" r="3.2"></circle>
+              <circle cx="388.3" cy="526.6" r="3.2"></circle><circle cx="346.6" cy="481.7" r="3.2"></circle><circle cx="320" cy="494" r="3.2"></circle><circle cx="334.2" cy="494.9" r="3.2"></circle><circle cx="378.7" cy="549.1" r="3.2"></circle><circle cx="338.4" cy="491.8" r="3.2"></circle>
+              <circle cx="367.9" cy="482.4" r="3.2"></circle><circle cx="357" cy="496.2" r="3.2"></circle><circle cx="379.9" cy="577.5" r="3.2"></circle><circle cx="328" cy="497.8" r="3.2"></circle><circle cx="327" cy="511.3" r="3.2"></circle><circle cx="349.3" cy="508.7" r="3.2"></circle>
+              <circle cx="359.8" cy="580.9" r="3.2"></circle><circle cx="399.5" cy="82.9" r="3.2"></circle><circle cx="358.6" cy="90" r="3.2"></circle><circle cx="414" cy="63.9" r="3.2"></circle><circle cx="393.5" cy="66.8" r="3.2"></circle><circle cx="379.6" cy="81.9" r="3.2"></circle>
+              <circle cx="404.7" cy="95.3" r="3.2"></circle><circle cx="378.1" cy="101.6" r="3.2"></circle><circle cx="376.3" cy="70.6" r="3.2"></circle><circle cx="361.6" cy="106.8" r="3.2"></circle><circle cx="366.6" cy="81" r="3.2"></circle><circle cx="483.8" cy="159.8" r="3.2"></circle>
+              <circle cx="460" cy="112.1" r="3.2"></circle><circle cx="488.5" cy="102.6" r="3.2"></circle><circle cx="446.8" cy="177.6" r="3.2"></circle><circle cx="444.5" cy="148.9" r="3.2"></circle><circle cx="448.7" cy="99.3" r="3.2"></circle><circle cx="488.1" cy="144.6" r="3.2"></circle>
+              <circle cx="456.7" cy="175.2" r="3.2"></circle><circle cx="453.9" cy="133.5" r="3.2"></circle><circle cx="473" cy="166.4" r="3.2"></circle><circle cx="453.4" cy="169.5" r="3.2"></circle><circle cx="497.7" cy="120.3" r="3.2"></circle><circle cx="470.6" cy="133.3" r="3.2"></circle>
+              <circle cx="459.6" cy="158.8" r="3.2"></circle><circle cx="465.4" cy="186.4" r="3.2"></circle><circle cx="435.6" cy="268.2" r="3.2"></circle><circle cx="440.9" cy="209.6" r="3.2"></circle><circle cx="424.6" cy="194" r="3.2"></circle><circle cx="451.5" cy="188.2" r="3.2"></circle>
+              <circle cx="461.3" cy="249.9" r="3.2"></circle><circle cx="469.1" cy="203.1" r="3.2"></circle><circle cx="410.2" cy="272" r="3.2"></circle><circle cx="447.4" cy="258.5" r="3.2"></circle><circle cx="411.6" cy="236.1" r="3.2"></circle><circle cx="467.5" cy="240.2" r="3.2"></circle>
+              <circle cx="492.5" cy="199.6" r="3.2"></circle><circle cx="440.2" cy="188.8" r="3.2"></circle><circle cx="423.4" cy="274.4" r="3.2"></circle><circle cx="488.4" cy="183.4" r="3.2"></circle><circle cx="425.4" cy="221.8" r="3.2"></circle><circle cx="465.8" cy="227.7" r="3.2"></circle>
+              <circle cx="481.8" cy="209.9" r="3.2"></circle><circle cx="476.2" cy="186.5" r="3.2"></circle><circle cx="457.3" cy="196.7" r="3.2"></circle><circle cx="422.7" cy="256.4" r="3.2"></circle><circle cx="457.2" cy="214.7" r="3.2"></circle><circle cx="443.5" cy="238.1" r="3.2"></circle>
+              <circle cx="421.1" cy="239.7" r="3.2"></circle><circle cx="160.8" cy="493.5" r="3.2"></circle><circle cx="180.5" cy="501.2" r="3.2"></circle><circle cx="189.7" cy="514.4" r="3.2"></circle><circle cx="197.2" cy="496.8" r="3.2"></circle><circle cx="169.2" cy="498.9" r="3.2"></circle>
+              <circle cx="164.2" cy="488.1" r="3.2"></circle><circle cx="175.1" cy="500.5" r="3.2"></circle><circle cx="199.4" cy="506.1" r="3.2"></circle><circle cx="187.4" cy="492.2" r="3.2"></circle><circle cx="177.2" cy="491.5" r="3.2"></circle><circle cx="241.2" cy="459.6" r="3.2"></circle>
+              <circle cx="250" cy="737.1" r="3.2"></circle><circle cx="234.2" cy="701.8" r="3.2"></circle><circle cx="245.7" cy="698.2" r="3.2"></circle><circle cx="227.2" cy="698.4" r="3.2"></circle><circle cx="244.2" cy="700.9" r="3.2"></circle><circle cx="237.1" cy="699.1" r="3.2"></circle>
+              <circle cx="238.4" cy="701.9" r="3.2"></circle><circle cx="172" cy="657.3" r="3.2"></circle><circle cx="175.4" cy="655.5" r="3.2"></circle><circle cx="144.3" cy="641.3" r="3.2"></circle><circle cx="147.8" cy="662.6" r="3.2"></circle><circle cx="139.2" cy="658.5" r="3.2"></circle>
+              <circle cx="136.6" cy="670.2" r="3.2"></circle><circle cx="127.9" cy="667.7" r="3.2"></circle><circle cx="133.2" cy="667.2" r="3.2"></circle><circle cx="119.3" cy="663.4" r="3.2"></circle><circle cx="28" cy="624.3" r="3.2"></circle><circle cx="28.8" cy="621.6" r="3.2"></circle>
+              <circle cx="31.9" cy="610.9" r="3.2"></circle>
+        </g>
+        <circle cx="446.9" cy="506.6" r="9" fill="#17191B"></circle>
+        <text x="430.9" y="512.6" text-anchor="end" font-family="Bitter, Georgia, serif" font-size="18" font-weight="600" fill="#17191B" stroke="#F6F7F4" stroke-width="4" stroke-linejoin="round" paint-order="stroke">Évora</text>
+      </svg>
+
+      <div style="display: flex; flex-direction: column; gap: 22px;">
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div class="lab">Instrumento n.º 2</div>
+          <h2>O país em pontos · 308</h2>
+          <p style="font-size: 17px;">Um ponto por município, na posição real do seu centróide. Sem fronteiras desenhadas: a forma do país é o que os dados fazem.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div class="rulei"></div>
+          <div class="est" style="color: var(--ink);">1/308 municípios com estudo aprofundado publicado</div>
+          <p class="prosa">Aceso: Évora · 5 estudos aprofundados publicados (dois com edição em inglês). Os restantes 307 pontos marcam a posição do município; não representam cobertura.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; border-top: 1px solid var(--g3);">
+          <div style="display: grid; grid-template-columns: minmax(0, 1fr) 56px 64px auto; gap: 12px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--g3);">
+            <div class="lab">Continente</div>
+            <div class="num" style="font-size: 20px; text-align: right;">278</div>
+            <a class="selo pc" href="#">fonte</a>
+            <span class="pv">[a verificar]</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(0, 1fr) 56px 64px auto; gap: 12px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--g3);">
+            <div class="lab">Açores</div>
+            <div class="num" style="font-size: 20px; text-align: right;">19</div>
+            <a class="selo pc" href="#">fonte</a>
+            <span class="pv">[a verificar]</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(0, 1fr) 56px 64px auto; gap: 12px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--g3);">
+            <div class="lab">Madeira</div>
+            <div class="num" style="font-size: 20px; text-align: right;">11</div>
+            <a class="selo pc" href="#">fonte</a>
+            <span class="pv">[a verificar]</span>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(0, 1fr) 56px 64px auto; gap: 12px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--ink);">
+            <div class="lab" style="color: var(--ink);">Total</div>
+            <div class="num" style="font-size: 20px; text-align: right;">308</div>
+            <a class="selo pc" href="#">fonte</a>
+            <span class="pv">[a verificar]</span>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
+          <p class="prosa">Passe o cursor sobre um ponto para ler o município.</p>
+          <div class="meta">Posições: DGT, Carta Administrativa Oficial de Portugal 2025, lido a 2026-08-12.</div>
+          <a class="selo" href="#">fonte</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MUNICÍPIOS -->
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <div class="rule2"></div>
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: end;">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div class="lab">Municípios</div>
+        <h2>Évora</h2>
+        <p style="font-size: 17px; max-width: 64ch;">Esta página mede o município de Évora e mostra de onde vem cada medida. Não interpreta: onde uma fonte não estabelece uma coisa, a página di-lo em vez de a supor.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
+        <a class="lig" href="#">A página inteira, com quem governou →</a>
+        <div class="est neutro">307 municípios sem página ainda</div>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--g3); border-left: 1px solid var(--g3);">
+      <div class="cel">
+        <div class="num" style="font-size: 44px; line-height: 1.05;">58 567</div>
+        <div style="font-size: 17px; font-weight: 500;">População residente</div>
+        <div class="meta">pessoas · 2025 · INE</div>
+        <a class="selo" href="#" style="margin-top: 4px;">fonte</a>
+      </div>
+      <div class="cel">
+        <div class="num" style="font-size: 44px; line-height: 1.05;">105,5</div>
+        <div style="font-size: 17px; font-weight: 500;">Índice de dívida</div>
+        <div class="meta">teto legal 150 · 2024 · calculado, DGAL</div>
+        <a class="selo" href="#" style="margin-top: 4px;">fonte</a>
+      </div>
+      <div class="cel">
+        <div class="num" style="font-size: 44px; line-height: 1.05;">137</div>
+        <div style="font-size: 17px; font-weight: 500;">Prazo médio de pagamento</div>
+        <div class="meta">dias · 2025 · Município de Évora</div>
+        <a class="selo" href="#" style="margin-top: 4px;">fonte</a>
+      </div>
+      <div class="cel">
+        <div class="num" style="font-size: 44px; line-height: 1.05;">61,44%</div>
+        <div style="font-size: 17px; font-weight: 500;">Execução da receita</div>
+        <div class="meta">2025 · Município de Évora</div>
+        <a class="selo" href="#" style="margin-top: 4px;">fonte</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ESTUDOS -->
+  <div style="display: flex; flex-direction: column; gap: 18px;">
+    <div class="rule2"></div>
+    <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px;">
+      <div style="display: flex; align-items: baseline; gap: 16px;">
+        <div class="lab">Estudos</div>
+        <div class="est" style="color: var(--ink);">11 trabalhos no arquivo · 15 edições</div>
+      </div>
+      <a class="lig" href="#">Todo o arquivo →</a>
+    </div>
+    <div style="display: flex; flex-direction: column; border-top: 1px solid var(--g3);">
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) 360px 90px; gap: 28px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--g3);">
+        <div style="font-size: 21px; font-weight: 500; line-height: 1.25;">Évora — Quinze Anos, Cinco Mandatos</div>
+        <p class="prosa">Quinze anos de governo municipal em Évora, ao longo de cinco mandatos.</p>
+        <div class="est neutro" style="text-align: right;">PT</div>
+      </div>
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) 360px 90px; gap: 28px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--g3);">
+        <div style="font-size: 21px; font-weight: 500; line-height: 1.25;">Évora — Os Pelouros, Quem Os Teve, O Que Fizeram</div>
+        <div class="meta">Publicação: 2026-08-12</div>
+        <div class="est neutro" style="text-align: right;">PT</div>
+      </div>
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) 360px 90px; gap: 28px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--g3);">
+        <div style="font-size: 21px; font-weight: 500; line-height: 1.25;">Évora — Prometido, Pago, Auditado 2026</div>
+        <div class="meta">Publicação: 2026-08-04</div>
+        <div class="est neutro" style="text-align: right;">PT · EN</div>
+      </div>
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) 360px 90px; gap: 28px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--g3);">
+        <div style="font-size: 21px; font-weight: 500; line-height: 1.25;">Água Não Faturada</div>
+        <p class="prosa">Água não faturada nos sistemas de abastecimento em Portugal.</p>
+        <div class="est neutro" style="text-align: right;">PT · EN</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AGENDA -->
+  <div style="display: flex; flex-direction: column; gap: 18px;">
+    <div class="rule2"></div>
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: end;">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div class="lab">Agenda</div>
+        <h2>O que se mede a seguir</h2>
+        <div class="est" style="color: var(--ink);">3 em curso · 1 a seguir · 1 concluído · 0 retirados</div>
+      </div>
+      <a class="lig" href="#" style="justify-self: start;">A agenda e o calendário das fontes →</a>
+    </div>
+    <div style="display: flex; flex-direction: column; border-top: 1px solid var(--g3);">
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--g3);">
+        <div style="font-size: 19px; font-weight: 500; line-height: 1.3;">O ficheiro de endividamento de 2025 da DGAL</div>
+        <div class="est neutro">Vigilância · Em curso</div>
+      </div>
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--g3);">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div style="font-size: 19px; font-weight: 500; line-height: 1.3;">As contas de 2026 do Município de Évora</div>
+          <p class="prosa">Apreciação pela Assembleia Municipal entre 2027-04-01 e 2027-04-30.</p>
+        </div>
+        <div class="est neutro">Vigilância · Em curso</div>
+      </div>
+    </div>
+    <p class="prosa" style="max-width: 78ch;">Cada item traz o critério que o pôs aqui, quem o propôs e quem o decidiu. Nada sai desta lista em silêncio.</p>
+  </div>
+
+  <!-- 4.8 PORTA DE CORREÇÕES -->
+  <div style="display: flex; flex-direction: column; gap: 16px;">
+    <div class="rule2"></div>
+    <div style="display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 28px; align-items: start;">
+      <div class="lab">ENCONTROU UM ERRO</div>
+      <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start;">
+        <p style="font-size: 17px; max-width: 74ch;">Escreva para correcoes@oestadodopais.pt. Um erro confirmado entra no registo de correções e na própria linha, com o valor antigo à vista. Nada é apagado.</p>
+        <a class="lig" href="#">O registo de correções →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4.9 RODAPÉ -->
+  <div style="display: flex; flex-direction: column; gap: 16px; padding-top: 6px;">
+    <div class="rulei"></div>
+    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+      <a class="nav" href="#">Início</a><span class="sep">·</span>
+      <a class="nav" href="#">Municípios</a><span class="sep">·</span>
+      <a class="nav" href="#">Estudos</a><span class="sep">·</span>
+      <a class="nav" href="#">Livro-razão</a><span class="sep">·</span>
+      <a class="nav" href="#">Agenda</a><span class="sep">·</span>
+      <a class="nav" href="#">Método</a><span class="sep">·</span>
+      <a class="nav" href="#">Correções</a><span class="sep">·</span>
+      <a class="nav" href="#">Sobre</a><span class="sep">·</span>
+      <a class="nav" href="#">English</a>
+    </div>
+    <div class="hair"></div>
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 48px; align-items: end; padding-top: 4px;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <p style="font-size: 17px; max-width: 72ch;">O Estado do País mede a sociedade portuguesa, no seu contexto interno e na sua posição em relação ao exterior, e mantém dessa medição um registo contínuo, claro e permanente.</p>
+        <p style="font-size: 15px; line-height: 1.5; max-width: 72ch;">Produzido maioritariamente por inteligência artificial, com o mínimo de intervenção humana. A direção é de Nuno dos Santos.</p>
+      </div>
+      <div class="meta" style="text-align: right;">Maqueta v2 · tipos substitutos: Spectral por Parnaso, Bitter por Sebenta, Sofia Sans Condensed por Grotzec Condensed · valores publicados a 2026-08-18</div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1280,"height":4467}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

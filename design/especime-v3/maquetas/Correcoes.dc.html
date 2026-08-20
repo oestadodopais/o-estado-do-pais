@@ -1,0 +1,269 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Spectral+SC:wght@400;600&family=Bitter:ital,wght@0,100..900;1,100..900&display=swap">
+  <style>
+    html, body { margin: 0; background: #F6F7F4; }
+    a { color: #17191B; } a:hover { color: #1F4E8C; }
+    :root, .pg { --paper: #F6F7F4; --ink: #17191B; --g1: #585D5B; --g2: #7F8681; --g3: #D9DDD8; --amb: #E0A21A; --ocre: #7A5300; --cob: #1F4E8C; }
+    .pg { box-sizing: border-box; background: var(--paper); color: var(--ink);
+          font-family: "Spectral", Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.55;
+          font-variant-numeric: oldstyle-nums; }
+    .pg * { box-sizing: border-box; }
+    p { margin: 0; }
+    h1, h2 { margin: 0; font-weight: 500; letter-spacing: -0.012em; }
+    .slab { font-family: "Bitter", "Rockwell", Georgia, serif; font-variant-numeric: tabular-nums lining-nums; }
+    .num { font-family: "Bitter", "Rockwell", Georgia, serif; font-variant-numeric: tabular-nums lining-nums; font-weight: 500; letter-spacing: -0.01em; }
+    .lab { font-family: "Spectral SC", "Spectral", Georgia, serif; font-size: 13px; line-height: 1.4; letter-spacing: .05em; text-transform: lowercase; font-weight: 600; color: var(--g1); font-variant-numeric: tabular-nums lining-nums; }
+    .nav { font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; color: var(--ink); }
+    .note { font-family: "Bitter", Georgia, serif; font-size: 11px; line-height: 1.5; letter-spacing: .02em; color: var(--g1); font-variant-numeric: tabular-nums lining-nums; }
+    .small { font-size: 14px; line-height: 1.5; color: var(--g1); }
+    .selo { display: inline-flex; align-items: center; gap: 6px; font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); text-decoration: none; white-space: nowrap; }
+    .selo::before { content: ""; width: 9px; height: 9px; background: var(--ink); display: inline-block; }
+    .selo.pc::before { background: transparent; border: 1px dashed var(--ink); }
+    .av { font-family: "Bitter", Georgia, serif; font-size: 11px; letter-spacing: .04em; color: var(--ink); border: 1px dashed var(--ink); padding: 1px 5px; display: inline-block; line-height: 1.5; font-variant-numeric: tabular-nums lining-nums; }
+    .fora { color: var(--ocre); } .dentro { color: var(--cob); }
+    .hair { border-top: 1px solid var(--g3); }
+    .rule2 { border-top: 2px solid var(--g2); }
+    .rulei { border-top: 1px solid var(--ink); }
+    .lnk { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .gr { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; align-items: start; }
+    .med { max-width: 68ch; }
+    .nat { border-top: 1px solid var(--g3); display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 24px; align-items: baseline; padding: 12px 0; }
+    .reg { display: grid; grid-template-columns: 96px 108px 108px minmax(0, 1fr) 174px; gap: 20px; align-items: baseline; }
+    .regc { border-top: 1px solid var(--g3); padding: 16px 0 18px 0; }
+    .regh { border-top: 2px solid var(--g2); padding: 9px 0 10px 0; }
+    .vold { font-family: "Bitter", "Rockwell", Georgia, serif; font-variant-numeric: tabular-nums lining-nums; font-weight: 500; font-size: 20px; color: var(--g1); text-decoration: line-through; text-decoration-thickness: 1px; text-align: right; }
+    .vnew { font-family: "Bitter", "Rockwell", Georgia, serif; font-variant-numeric: tabular-nums lining-nums; font-weight: 500; font-size: 20px; color: var(--ink); text-align: right; }
+    .mot { font-size: 15px; line-height: 1.55; }
+    .afr { font-family: "Bitter", Georgia, serif; font-size: 13px; line-height: 1.5; overflow-wrap: anywhere; }
+    .rvl { border-top: 1px solid var(--g3); padding: 9px 0; }
+  </style>
+</helmet>
+<div class="pg" style="width: 1280px; min-height: 100vh; padding: 34px 48px 40px 48px; display: flex; flex-direction: column;">
+
+  <!-- CABEÇALHO INTERIOR -->
+  <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; padding-bottom: 12px;">
+    <div style="flex: none; font-size: 24px; line-height: 1.1; font-weight: 500; letter-spacing: -0.01em;">O Estado do País</div>
+    <nav style="flex: 1 1 auto; display: flex; justify-content: center; align-items: baseline; white-space: nowrap;">
+      <a class="nav" href="#">Início</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Municípios</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Estudos</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Livro-razão</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Agenda</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Método</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Sobre</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">English</a>
+    </nav>
+    <div style="flex: none; display: flex; flex-direction: column; align-items: flex-end; gap: 5px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="width: 12px; height: 12px; background: var(--cob); display: inline-block; flex: none;"></span>
+        <span class="slab" style="font-size: 11px; letter-spacing: .08em; text-transform: uppercase; line-height: 1;">Painel europeu reconferido a 2026-08-17</span>
+      </div>
+      <span class="slab" style="font-size: 11px; letter-spacing: .08em; text-transform: uppercase; line-height: 1; color: var(--g1);">Agenda · 3 em curso · 1 a seguir</span>
+    </div>
+  </div>
+  <div class="rulei"></div>
+
+  <!-- TÍTULO -->
+  <div class="gr" style="padding-top: 32px;">
+    <div class="lab" style="padding-top: 12px;">Correções</div>
+    <div>
+      <h1 style="font-size: 56px; line-height: 1.04;">Correções</h1>
+      <p style="font-size: 22px; line-height: 1.35; color: var(--g1); padding-top: 12px;">O que foi corrigido, e o que mudou</p>
+      <p class="med" style="font-size: 21px; line-height: 1.42; font-style: italic; padding-top: 20px;">Corrigir em silêncio é a forma mais barata de mentir.</p>
+    </div>
+  </div>
+
+  <!-- A POLÍTICA -->
+  <div class="gr" style="border-top: 2px solid var(--g2); margin-top: 40px; padding-top: 14px;">
+    <div class="lab">A política</div>
+    <div class="med">
+      <p>Uma entrada do registo guarda o valor anterior, o valor novo, a data, o motivo e a linha do livro-razão que mudou. Nada é removido: uma entrada corrigida acresce à história daquela linha, não a substitui. São três naturezas, e não se misturam:</p>
+
+      <div style="padding-top: 18px;">
+        <div class="nat">
+          <div class="lab">Correção</div>
+          <p style="font-size: 16px; line-height: 1.5;">O valor publicado estava errado. É uma confissão, e é a razão de o registo existir.</p>
+        </div>
+        <div class="nat">
+          <div class="lab">Atualização</div>
+          <p style="font-size: 16px; line-height: 1.5;">O valor estava certo e deixou de estar, porque aquilo que mede mudou. Não é um erro.</p>
+        </div>
+        <div class="nat" style="border-bottom: 1px solid var(--g3);">
+          <div class="lab">Revisão de proveniência</div>
+          <p style="font-size: 16px; line-height: 1.5;">O valor não mudou; mudou o caminho até à fonte, um endereço por exemplo. Não é erro nem atualização.</p>
+        </div>
+      </div>
+
+      <p style="padding-top: 18px;">Quem encontrar um erro escreve para <a class="lnk" href="#">correcoes@oestadodopais.pt</a>. Um erro confirmado entra no registo com crédito a quem o encontrou, se o desejar.</p>
+      <a class="nav lnk" href="#" style="display: inline-block; margin-top: 13px;">A regra, no Método →</a>
+    </div>
+  </div>
+
+  <!-- ESCREVER UMA CORREÇÃO -->
+  <div class="gr" style="border-top: 1px solid var(--g3); margin-top: 34px; padding-top: 14px;">
+    <div class="lab">Escrever uma correção</div>
+    <div class="med">
+      <div style="border: 1px solid var(--ink); padding: 20px 22px;">
+        <p style="font-size: 16px; line-height: 1.55;">Escreva aqui e o botão abre o seu programa de correio com o texto já dentro. Nada é enviado deste sítio: a mensagem sai de si, para si ficar com uma cópia.</p>
+        <div style="border: 1px solid var(--g2); background: var(--paper); height: 120px; margin-top: 16px;"></div>
+        <div style="display: flex; align-items: center; gap: 18px; padding-top: 16px;">
+          <span class="slab" style="display: inline-flex; align-items: center; background: var(--ink); color: var(--paper); font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 11px 18px; line-height: 1;">Abrir no meu programa de correio</span>
+        </div>
+        <p class="small" style="padding-top: 16px;">Se o botão não abrir nada, o seu computador não tem programa de correio configurado. Nesse caso copie o endereço acima e escreva de onde costuma escrever.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================= O REGISTO ======================= -->
+  <div class="gr" style="border-top: 1px solid var(--ink); margin-top: 46px; padding-top: 14px;">
+    <div class="lab">O registo</div>
+    <div>
+
+      <!-- CORREÇÕES -->
+      <div>
+        <h2 style="font-size: 26px; line-height: 1.2;">Correções</h2>
+        <div style="display: flex; align-items: baseline; gap: 14px; padding-top: 12px;">
+          <span class="num" style="font-size: 26px; line-height: 1;">3</span>
+          <a class="selo" href="#">fonte</a>
+          <span class="lab">correções publicadas</span>
+        </div>
+        <p class="small" style="padding-top: 10px; max-width: 68ch;">Valores que estavam errados. Cada um fica com o valor anterior à vista, datado, e nenhum é removido.</p>
+      </div>
+
+      <div style="padding-top: 20px;">
+        <div class="reg regh">
+          <div class="lab">Data</div>
+          <div class="lab" style="text-align: right;">Valor antigo</div>
+          <div class="lab" style="text-align: right;">Valor novo</div>
+          <div class="lab">Motivo</div>
+          <div class="lab">Afirmação</div>
+        </div>
+
+        <div class="reg regc">
+          <div>
+            <div class="slab" style="font-size: 14px;">2026-08-13</div>
+            <div class="lab" style="padding-top: 5px;">Correção</div>
+          </div>
+          <div class="vold">78,3</div>
+          <div class="vnew">78</div>
+          <p class="mot">O valor publicado trazia uma casa decimal que a fonte não sustenta. Era calculado a partir dos valores absolutos em paridades de poder de compra; o Eurostat publica este índice arredondado à unidade: 78. Passa a publicar-se o índice tal como a fonte o publica.</p>
+          <div><a class="afr lnk" href="#">pib-pc-alentejo-2000</a></div>
+        </div>
+
+        <div class="reg regc">
+          <div>
+            <div class="slab" style="font-size: 14px;">2026-08-13</div>
+            <div class="lab" style="padding-top: 5px;">Correção</div>
+          </div>
+          <div class="vold">77,2</div>
+          <div class="vnew">77</div>
+          <p class="mot">O valor publicado trazia uma casa decimal que a fonte não sustenta. Era calculado a partir dos valores absolutos em paridades de poder de compra; o Eurostat publica este índice arredondado à unidade (77) e marca o valor de 2024 como provisório. Publicar um décimo de ponto sobre um número que a fonte espera rever afirmava uma precisão que não existe. Passa a publicar-se o índice tal como a fonte o publica.</p>
+          <div><a class="afr lnk" href="#">pib-pc-alentejo-2024</a></div>
+        </div>
+
+        <div class="reg regc" style="border-bottom: 1px solid var(--g3);">
+          <div>
+            <div class="slab" style="font-size: 14px;">2026-08-12</div>
+            <div class="lab" style="padding-top: 5px;">Correção</div>
+          </div>
+          <div class="vold">4</div>
+          <div class="vnew">3</div>
+          <p class="mot">O valor 4 vinha do colofão do estudo de identidade e contava a edição inglesa de «Évora — Orçamentado, Pago, Devido 2025» como estudo autónomo. Pela distinção entre trabalho e edição que o arquivo usa, são três estudos, um deles com edição em inglês.</p>
+          <div><a class="afr lnk" href="#">estudos-evora-publicados</a></div>
+        </div>
+      </div>
+
+      <!-- ATUALIZAÇÕES -->
+      <div style="padding-top: 40px;">
+        <h2 style="font-size: 26px; line-height: 1.2;">Atualizações</h2>
+        <p class="small" style="padding-top: 10px; max-width: 68ch;">Valores que estavam certos e deixaram de estar, porque aquilo que medem mudou. Não são erros, e não contam para o número acima.</p>
+      </div>
+
+      <div style="padding-top: 20px;">
+        <div class="reg regh">
+          <div class="lab">Data</div>
+          <div class="lab" style="text-align: right;">Valor antigo</div>
+          <div class="lab" style="text-align: right;">Valor novo</div>
+          <div class="lab">Motivo</div>
+          <div class="lab">Afirmação</div>
+        </div>
+
+        <div class="reg regc">
+          <div>
+            <div class="slab" style="font-size: 14px;">2026-08-15</div>
+            <div class="lab" style="padding-top: 5px;">Atualização</div>
+          </div>
+          <div class="vold">4</div>
+          <div class="vnew">5</div>
+          <p class="mot">Entrou no arquivo «Évora — Prometido, Pago, Auditado 2026», o quinto trabalho cujo objeto é o município de Évora. É o primeiro que não veio de um anfitrião de artefactos: foi produzido no motor de investigação desta casa e atravessou como ficheiro, com as duas edições.</p>
+          <div><a class="afr lnk" href="#">estudos-evora-publicados</a></div>
+        </div>
+
+        <div class="reg regc" style="border-bottom: 1px solid var(--g3);">
+          <div>
+            <div class="slab" style="font-size: 14px;">2026-08-12</div>
+            <div class="lab" style="padding-top: 5px;">Atualização</div>
+          </div>
+          <div class="vold">3</div>
+          <div class="vnew">4</div>
+          <p class="mot">Novo estudo publicado a 2026-08-12: Os Pelouros, Quem Os Teve, O Que Fizeram</p>
+          <div><a class="afr lnk" href="#">estudos-evora-publicados</a></div>
+        </div>
+      </div>
+
+      <!-- REVISÕES DE PROVENIÊNCIA -->
+      <div style="padding-top: 40px;">
+        <h2 style="font-size: 26px; line-height: 1.2;">Revisões de proveniência</h2>
+        <div style="display: flex; align-items: baseline; gap: 14px; padding-top: 12px;">
+          <span class="num" style="font-size: 26px; line-height: 1;">9</span>
+          <span class="lab">revisões de proveniência</span>
+        </div>
+        <p class="small" style="padding-top: 10px; max-width: 68ch;">O valor não mudou; mudou a maneira de lá chegar: uma fonte que muda de endereço, por exemplo. Não são erros nem atualizações, e não se listam aqui uma a uma: são muitas de cada vez e afogariam as correções. Cada linha abaixo leva à sua própria história, onde a revisão está escrita por extenso.</p>
+      </div>
+
+      <div style="padding-top: 20px;">
+        <div class="rvl" style="border-top: 2px solid var(--g2);"><a class="afr lnk" href="#">evora-prr-aprovado-2026</a></div>
+        <div class="rvl"><a class="afr lnk" href="#">evora-prr-municipio-contratado</a></div>
+        <div class="rvl"><a class="afr lnk" href="#">evora-prr-pago-2026</a></div>
+        <div class="rvl"><a class="afr lnk" href="#">evora-prr-universidade-contratado</a></div>
+        <div class="rvl"><a class="afr lnk" href="#">evora-prr-vencido-aprovado-2026</a></div>
+        <div class="rvl"><a class="afr lnk" href="#">municipios-acores-caop-2025</a></div>
+        <div class="rvl"><a class="afr lnk" href="#">municipios-continente-caop-2025</a></div>
+        <div class="rvl"><a class="afr lnk" href="#">municipios-madeira-caop-2025</a></div>
+        <div class="rvl" style="border-bottom: 1px solid var(--g3);"><a class="afr lnk" href="#">municipios-portugal-caop-2025</a></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================= PORTA DE CORREÇÕES ======================= -->
+  <div class="gr" style="border-top: 2px solid var(--g2); margin-top: 46px; padding-top: 14px;">
+    <div class="lab">Encontrou um erro</div>
+    <div class="med">
+      <p style="font-size: 16px; line-height: 1.55;">Escreva para <a class="lnk" href="#">correcoes@oestadodopais.pt</a>. Um erro confirmado entra no registo de correções e na própria linha, com o valor antigo à vista. Nada é apagado.</p>
+      <a class="nav lnk" href="#" style="display: inline-block; margin-top: 11px;">O registo de correções →</a>
+    </div>
+  </div>
+
+  <!-- RODAPÉ -->
+  <div style="padding-top: 46px;">
+    <div class="rulei"></div>
+    <nav style="display: flex; align-items: baseline; white-space: nowrap; padding-top: 13px;">
+      <a class="nav" href="#">Início</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Municípios</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Estudos</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Livro-razão</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Agenda</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Método</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Correções</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Sobre</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">English</a>
+    </nav>
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; padding-top: 12px;">
+      <p style="font-size: 15px; line-height: 1.5; max-width: 62ch;">Produzido maioritariamente por inteligência artificial, com o mínimo de intervenção humana. A direção é de Nuno dos Santos.</p>
+      <p class="note" style="flex: none; text-align: right;">Maqueta · tipos substitutos: Spectral por Parnaso, Bitter por Sebenta · valores publicados a 2026-08-18</p>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1280,"height":3424}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

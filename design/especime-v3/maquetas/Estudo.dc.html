@@ -1,0 +1,283 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Spectral+SC:wght@400;600&family=Bitter:ital,wght@0,100..900;1,100..900&display=swap">
+  <style>
+    html, body { margin: 0; background: #F6F7F4; }
+    a { color: #17191B; } a:hover { color: #1F4E8C; }
+    :root, .pg { --paper: #F6F7F4; --ink: #17191B; --g1: #585D5B; --g2: #7F8681; --g3: #D9DDD8; --amb: #E0A21A; --ocre: #7A5300; --cob: #1F4E8C; }
+    .pg { box-sizing: border-box; background: var(--paper); color: var(--ink);
+          font-family: "Spectral", Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.55;
+          font-variant-numeric: oldstyle-nums; }
+    .pg * { box-sizing: border-box; }
+    p { margin: 0; }
+    h1, h2 { margin: 0; font-weight: 500; letter-spacing: -0.012em; }
+    .slab { font-family: "Bitter", "Rockwell", Georgia, serif; font-variant-numeric: tabular-nums lining-nums; }
+    .num { font-family: "Bitter", "Rockwell", Georgia, serif; font-variant-numeric: tabular-nums lining-nums; font-weight: 500; letter-spacing: -0.01em; }
+    .lab { font-family: "Spectral SC", "Spectral", Georgia, serif; font-size: 13px; line-height: 1.4; letter-spacing: .05em; text-transform: lowercase; font-weight: 600; color: var(--g1); font-variant-numeric: tabular-nums lining-nums; }
+    .nav { font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; color: var(--ink); }
+    .note { font-family: "Bitter", Georgia, serif; font-size: 11px; line-height: 1.5; letter-spacing: .02em; color: var(--g1); font-variant-numeric: tabular-nums lining-nums; }
+    .small { font-size: 14px; line-height: 1.5; color: var(--g1); }
+    .selo { display: inline-flex; align-items: center; gap: 6px; font-family: "Bitter", Georgia, serif; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); text-decoration: none; white-space: nowrap; }
+    .selo::before { content: ""; width: 9px; height: 9px; background: var(--ink); display: inline-block; }
+    .selo.pc::before { background: transparent; border: 1px dashed var(--ink); }
+    .av { font-family: "Bitter", Georgia, serif; font-size: 11px; letter-spacing: .04em; color: var(--ink); border: 1px dashed var(--ink); padding: 1px 5px; display: inline-block; line-height: 1.5; font-variant-numeric: tabular-nums lining-nums; }
+    .fora { color: var(--ocre); } .dentro { color: var(--cob); }
+    .hair { border-top: 1px solid var(--g3); }
+    .rule2 { border-top: 2px solid var(--g2); }
+    .rulei { border-top: 1px solid var(--ink); }
+    .lnk { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .campo { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 32px; padding: 28px 0; align-items: baseline; }
+    .med { max-width: 68ch; }
+    .apr { border-top: 1px solid var(--g3); padding: 11px 0; }
+    .ed { font-family: "Bitter", Georgia, serif; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums lining-nums; }
+    .mil { white-space: nowrap; }
+    .rss { border-top: 1px solid var(--g3); margin-top: 20px; padding-top: 20px; }
+    .est { font-family: "Bitter", Georgia, serif; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; line-height: 1.4; font-variant-numeric: tabular-nums lining-nums; }
+  </style>
+</helmet>
+<div class="pg" style="width: 1280px; min-height: 100vh; padding: 34px 48px 40px 48px; display: flex; flex-direction: column;">
+
+  <!-- CABEÇALHO INTERIOR -->
+  <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; padding-bottom: 12px;">
+    <div style="flex: none; font-size: 24px; line-height: 1.1; font-weight: 500; letter-spacing: -0.01em;">O Estado do País</div>
+    <nav style="flex: 1 1 auto; display: flex; justify-content: center; align-items: baseline; white-space: nowrap;">
+      <a class="nav" href="#">Início</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Municípios</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Estudos</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Livro-razão</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Agenda</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Método</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">Sobre</a><span class="nav" style="color: var(--g2); padding: 0 6px;">·</span><a class="nav" href="#">English</a>
+    </nav>
+    <div style="flex: none; display: flex; flex-direction: column; align-items: flex-end; gap: 5px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="width: 12px; height: 12px; background: var(--cob); display: inline-block; flex: none;"></span>
+        <span class="slab" style="font-size: 11px; letter-spacing: .08em; text-transform: uppercase; line-height: 1;">Painel europeu reconferido a 2026-08-17</span>
+      </div>
+      <span class="slab" style="font-size: 11px; letter-spacing: .08em; text-transform: uppercase; line-height: 1; color: var(--g1);">Agenda · 3 em curso · 1 a seguir</span>
+    </div>
+  </div>
+  <div class="rulei"></div>
+
+  <!-- CORPO: leitura (68ch) + coluna do aparelho (300px) -->
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 56px; align-items: start; padding-top: 30px;">
+
+    <!-- ================= COLUNA DA LEITURA ================= -->
+    <div style="display: flex; flex-direction: column;">
+
+      <!-- TÍTULO -->
+      <div style="display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 32px; align-items: start; padding-bottom: 32px;">
+        <div class="lab" style="padding-top: 12px;">Leitura publicada</div>
+        <div class="med">
+          <h1 style="font-size: 44px; line-height: 1.1;">Évora — Orçamentado, Pago, Devido 2025</h1>
+          <p style="font-size: 21px; line-height: 1.4; color: var(--g1); padding-top: 16px;">O que foi orçamentado, o que foi pago e o que ficou em dívida no município de Évora.</p>
+        </div>
+      </div>
+
+      <div>
+
+        <!-- RELANCE -->
+        <div class="campo rule2">
+          <div class="lab">Relance</div>
+          <div class="med">
+            <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px;">
+              <div>
+                <div style="display: flex; align-items: baseline; gap: 14px;">
+                  <span class="num" style="font-size: 64px; line-height: 1;">61,44</span>
+                  <a class="selo" href="#">fonte</a>
+                </div>
+                <p style="font-size: 17px; line-height: 1.45; padding-top: 12px;">% do orçamento foi de facto cobrado no último ano de contas</p>
+              </div>
+              <div style="border-left: 1px solid var(--g3); padding-left: 32px;">
+                <div style="display: flex; align-items: baseline; gap: 14px;">
+                  <span class="num" style="font-size: 64px; line-height: 1;">96</span>
+                  <a class="selo" href="#">fonte</a>
+                </div>
+                <p style="font-size: 17px; line-height: 1.45; padding-top: 12px;">% quatro anos antes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LEITURA BREVE -->
+        <div class="campo hair">
+          <div class="lab">Leitura breve</div>
+          <div class="med">
+            <div class="lab" style="font-weight: 600;">prosa da casa, assente numa frase do trabalho</div>
+            <p style="font-size: 19px; line-height: 1.6; padding-top: 12px;">O orçamento de Évora afastou-se do dinheiro que chega, e o aperto aparece nas faturas por pagar e na fila de pagamento, não na dívida legal: 137 <a class="selo" href="#">fonte</a> dias para pagar a um fornecedor, e <span class="mil">4 976 172,24</span> <a class="selo" href="#">fonte</a> € em atraso, com a dívida total ainda abaixo do limite.</p>
+            <div style="border-left: 3px solid var(--g3); padding-left: 16px; margin-top: 20px;">
+              <div class="lab">A mesma frase na outra edição</div>
+              <p lang="en" style="font-size: 15px; line-height: 1.6; color: var(--g1); padding-top: 8px;">Évora’s budget has drifted from the money that arrives, and the strain shows in unpaid invoices and the payment queue, not in the legal debt: 137 <a class="selo" href="#">fonte</a> days to pay a supplier, and <span class="mil">4 976 172,24</span> <a class="selo" href="#">fonte</a> € overdue, with total debt still below the limit.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MÉTODO E RESSALVAS -->
+        <div class="campo hair" style="align-items: start;">
+          <div class="lab">Método e ressalvas</div>
+          <div class="med">
+
+            <div>
+              <h2 style="font-size: 22px; line-height: 1.25;">De onde vêm as medidas, e as duas vozes de fora</h2>
+              <p style="padding-top: 10px;">As medidas deste trabalho vêm da prestação de contas do próprio município: o relato da gestão sobre o seu próprio ano. As duas vozes de fora são a opinião assinada do auditor independente e a série anual do regulador, que publica por município e por ano o mesmo conceito legal de dívida, compilado do lado de fora. As duas estão nesta página.</p>
+            </div>
+
+            <div class="rss">
+              <h2 style="font-size: 22px; line-height: 1.25;">Um ano de contas ficou sem assinatura</h2>
+              <p style="padding-top: 10px;">As contas do penúltimo ano foram rejeitadas em votação e nunca foram certificadas.</p>
+              <div style="display: flex; align-items: baseline; gap: 34px; padding-top: 14px;">
+                <div style="display: flex; align-items: baseline; gap: 12px;">
+                  <span class="num" style="font-size: 26px; line-height: 1.2;">2</span>
+                  <a class="selo" href="#">fonte</a>
+                </div>
+                <div style="display: flex; align-items: baseline; gap: 12px;">
+                  <span class="num" style="font-size: 26px; line-height: 1.2;">5</span>
+                  <a class="selo" href="#">fonte</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="rss">
+              <h2 style="font-size: 22px; line-height: 1.25;">A dívida legal, e o limite contra o qual se lê</h2>
+              <p style="padding-top: 10px;">A frase acima diz que a dívida total ficou abaixo do limite. São estes os dois valores: a dívida total no fim do ano, e o limite legal do mesmo ano, ambos da prestação de contas do município.</p>
+              <div style="display: flex; align-items: baseline; gap: 34px; padding-top: 14px;">
+                <div style="display: flex; align-items: baseline; gap: 12px;">
+                  <span class="num mil" style="font-size: 26px; line-height: 1.2;">54 379 034,55</span>
+                  <a class="selo" href="#">fonte</a>
+                </div>
+                <div style="display: flex; align-items: baseline; gap: 12px;">
+                  <span class="num mil" style="font-size: 26px; line-height: 1.2;">82 571 687,05</span>
+                  <a class="selo" href="#">fonte</a>
+                </div>
+              </div>
+              <div style="display: flex; align-items: flex-start; gap: 24px; padding-top: 20px;">
+                <svg viewBox="0 0 300 30" width="300" height="34" style="display: block; flex: none; overflow: visible;">
+                  <line x1="0" y1="16" x2="300" y2="16" stroke="#D9DDD8" stroke-width="1"></line>
+                  <rect x="0" y="12" width="197.57" height="8" fill="#17191B"></rect>
+                  <line x1="300" y1="4" x2="300" y2="28" stroke="#7F8681" stroke-width="2"></line>
+                  <circle cx="197.57" cy="16" r="6.5" fill="#1F4E8C"></circle>
+                  <text x="0" y="6" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B">0</text>
+                  <text x="300" y="6" font-family="Bitter, Georgia, serif" font-size="9" fill="#585D5B" text-anchor="end">limite legal</text>
+                </svg>
+                <div class="est dentro" style="padding-top: 9px;">Abaixo do limite</div>
+              </div>
+            </div>
+
+            <div class="rss">
+              <h2 style="font-size: 22px; line-height: 1.25;">O padrão nacional está atrasado</h2>
+              <p style="padding-top: 10px;">O padrão contra o qual estas contas se comparam está um ano atrás, e o estudo completo que o publica não é público.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="hair"></div>
+      </div>
+    </div>
+
+    <!-- ================= COLUNA DO APARELHO ================= -->
+    <div style="width: 300px; display: flex; flex-direction: column;">
+
+      <div style="border-top: 2px solid var(--ink); padding: 11px 0 0 0;">
+        <div class="lab">O documento original</div>
+        <p style="font-size: 14px; line-height: 1.55; padding-top: 7px;">Alojado aqui na forma exata em que foi publicado, com uma faixa no topo e mais nada.</p>
+        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding-top: 11px; padding-bottom: 13px;">
+          <a class="nav lnk" href="#">Ler o documento →</a>
+          <a class="nav lnk" href="#">Ler o documento · EN →</a>
+        </div>
+      </div>
+
+      <div class="apr">
+        <div class="lab">O concelho de que trata</div>
+        <div style="padding-top: 4px;">Évora</div>
+        <a class="nav lnk" href="#" style="display: inline-block; margin-top: 9px;">A página do município →</a>
+      </div>
+
+      <div class="apr">
+        <div class="lab">Edições</div>
+        <div style="padding-top: 9px;">
+          <div style="display: flex; align-items: baseline; gap: 9px;">
+            <span class="ed" style="flex: none;">PT</span>
+            <span style="font-size: 15px; line-height: 1.4;">Évora — Orçamentado, Pago, Devido 2025</span>
+          </div>
+          <div class="note" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding-top: 8px;">Publicação: <span class="av">[a verificar]</span></div>
+          <div class="note" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding-top: 5px;">Última atualização: <span class="av">[a verificar]</span></div>
+          <a class="nav lnk" href="#" style="display: inline-block; margin-top: 9px;">Ler o documento →</a>
+        </div>
+        <div style="border-top: 1px solid var(--g3); margin-top: 13px; padding-top: 13px;">
+          <div style="display: flex; align-items: baseline; gap: 9px;">
+            <span class="ed" style="flex: none;">EN</span>
+            <span lang="en" style="font-size: 15px; line-height: 1.4;">Évora — Budgeted, Paid, Owed 2025</span>
+          </div>
+          <div class="note" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding-top: 8px;">Publicação: <span class="av">[a verificar]</span></div>
+          <div class="note" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding-top: 5px;">Última atualização: <span class="av">[a verificar]</span></div>
+          <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding-top: 9px;">
+            <a class="nav lnk" href="#">Ver esta edição →</a>
+            <a class="nav lnk" href="#">Ler o documento →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="apr">
+        <div class="lab">Tema</div>
+        <div style="padding-top: 4px;">Évora</div>
+      </div>
+
+      <div class="apr">
+        <div class="lab">Descrições</div>
+        <div style="padding-top: 9px;">
+          <div style="display: flex; align-items: baseline; gap: 9px;">
+            <span class="ed" style="flex: none;">PT</span>
+            <span style="font-size: 15px; line-height: 1.45;">O que foi orçamentado, o que foi pago e o que ficou em dívida no município de Évora.</span>
+          </div>
+          <div class="note" style="padding-top: 6px; padding-left: 27px;">Descrição: reformulação do título</div>
+        </div>
+        <div style="border-top: 1px solid var(--g3); margin-top: 13px; padding-top: 13px;">
+          <div style="display: flex; align-items: baseline; gap: 9px;">
+            <span class="ed" style="flex: none;">EN</span>
+            <span lang="en" style="font-size: 15px; line-height: 1.45;">What was budgeted, what was paid and what was left owing in the municipality of Évora.</span>
+          </div>
+          <div class="note" style="padding-top: 6px; padding-left: 27px;">Descrição: reformulação do título</div>
+        </div>
+      </div>
+
+      <div class="apr" style="border-bottom: 1px solid var(--g3);">
+        <div class="lab">Descarregar</div>
+        <div style="padding-top: 4px;">Sem ficheiros para descarregar.</div>
+      </div>
+
+      <!-- porta de correções -->
+      <div style="border-top: 2px solid var(--g2); padding-top: 13px; margin-top: 22px;">
+        <div class="lab">Encontrou um erro</div>
+        <p style="font-size: 14px; line-height: 1.5; padding-top: 7px;">Escreva para <a class="lnk" href="#">correcoes@oestadodopais.pt</a>. Um erro confirmado entra no registo de correções e na própria linha, com o valor antigo à vista. Nada é apagado.</p>
+        <a class="nav lnk" href="#" style="display: inline-block; margin-top: 10px;">O registo de correções →</a>
+      </div>
+
+      <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 9px; padding-top: 22px;">
+        <a class="nav lnk" href="#">Voltar ao arquivo</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RODAPÉ -->
+  <div style="padding-top: 46px;">
+    <div class="rulei"></div>
+    <nav style="display: flex; align-items: baseline; white-space: nowrap; padding-top: 13px;">
+      <a class="nav" href="#">Início</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Municípios</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Estudos</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Livro-razão</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Agenda</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Método</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Correções</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">Sobre</a><span class="nav" style="color: var(--g2); padding: 0 7px;">·</span><a class="nav" href="#">English</a>
+    </nav>
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; padding-top: 12px;">
+      <p style="font-size: 15px; line-height: 1.5; max-width: 62ch;">Produzido maioritariamente por inteligência artificial, com o mínimo de intervenção humana. A direção é de Nuno dos Santos.</p>
+      <p class="note" style="flex: none; text-align: right;">Maqueta · tipos substitutos: Spectral por Parnaso, Bitter por Sebenta · valores publicados a 2026-08-18</p>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1280,"height":1805}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
