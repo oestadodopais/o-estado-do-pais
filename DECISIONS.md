@@ -7414,14 +7414,15 @@ produzir: um de texto governado, dois de licença, um de porta e um de grafia.
 | Estrago plantado | Apanhado | Achado |
 | --- | --- | --- |
 | a primeira frase da regra 6, na edição inglesa, reposta no absoluto antigo | **sim** | 1 |
-| «CC BY-SA 4.0» no índice da edição portuguesa | **sim** | 5 ou 8 |
-| a licença a `null` dentro do JSON do conjunto | **sim** | 5 ou 8 |
-| a porta do JSON de uma página de linha a apontar para outra linha | **sim** | 5 ou 8 |
+| «CC BY-SA 4.0» no índice da edição portuguesa | **sim** | 5 |
+| a licença a `null` dentro do JSON do conjunto | **sim** | 5 |
+| a porta do JSON de uma página de linha a apontar para outra linha | **sim** | 8 |
 | um travessão na frase nova do âmbito da licença, edição portuguesa | **sim** | 12 |
 
-Os três do meio saíram em dois achados, o 5 com dois e o 8 com um. **Qual deles
-ficou sozinho não está fixado no que chegou a este lugar, e não se escreve o que
-não se sabe.**
+Os três do meio saíram em dois achados: o 5 juntou o rótulo «BY-SA» e o `null`
+do JSON, porque são a mesma contradição vista de dois lados, e o 8 apanhou a
+porta trocada sozinha. O lugar de construção não sabia a repartição e escreveu
+«5 ou 8»; o lugar de direção, que plantou os estragos, fixou-a a 20.08.2026.
 
 O que interessa neste quadro é a última linha. Na leitura de 18.08.2026 o
 travessão plantado **passou** por uma leitura inteira, e ficou escrito que um
