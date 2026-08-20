@@ -124,6 +124,28 @@ attribution requirement?**
 *Our position:* narrower than US fair use; long extracts are the risk, short
 quotes are not. Confidence: low.
 
+**A5.** *(added 2026-08-20)* We compute sums for one municipality over the
+**PRR beneficiaries dataset** published by the Estrutura de Missão Recuperar
+Portugal on dados.gov.pt (`dataset-estrutura-de-missao-prr-entidades-1`). The
+dataset's own licence field reads **«Licença não especificada»**
+(`notspecified`, re-checked 2026-08-20), while the platform's terms of use state
+that data uploaded by State bodies are published under **CC BY 4.0 «exceto se
+houver uma especificação em contrário»**, and the Recuperar Portugal website's
+terms claim all its content as its property with no reuse terms. The publisher
+replaces the single resource every day under a new dated name, so no snapshot
+is archived by the source. **May we host a copy of a dated snapshot (about 110
+MB of XLSX) or an extract of it, so that readers can reproduce our sums, on the
+strength of the platform default? Or does «não especificada» displace the
+default, leaving us with no licence at all?** Until answered, we host nothing
+from it: the three sums stay marked as not reproducible from our site, and the
+rows record only the files' names, dates and SHA-256 digests.
+
+*Our position:* the platform default probably applies to a State body's upload
+with an unfilled field, but «não especificada» is a specification of sorts, and
+the website's property claim points the other way. We will also ask the
+publisher to state the licence in writing, which would moot this. Confidence:
+low.
+
 ### Cluster B — Named individuals and personal data
 *Gates: the governance spine and all stewardship accounting. **The highest-risk cluster.***
 
@@ -247,7 +269,7 @@ measure, but we would like to understand what regime we sit in.
 ## 5. Priority
 
 **Launch-blocking:** D1, D3, C2, and B2.
-**Blocks the next build phase:** A1, A2, B1.
+**Blocks the next build phase:** A1, A2, A5, B1.
 **Can follow:** A3, A4, B3, B4, C1, C3, D2.
 
 ---
@@ -291,6 +313,7 @@ complete** — advice on sources we failed to list is advice we did not buy.
 | Various indicators | **PORDATA** (Fundação Francisco Manuel dos Santos) | **UNRESOLVED.** `pordata.pt/pt/termos-e-condicoes-de-utilizacao` returns **404**; the foundation's general terms and conditions cover its online store and website, not data reuse. No licence located. | ⚠️ **Highest risk — see A1(b)** |
 | *Contas de Gerência* 2003–2024 | **DGAL** | Not yet retrieved. Data exists as XLS/ODS; the analysis is trapped in a Calaméo flipbook. | ⬜ Outstanding |
 | Water storage / reservoir data | **APA / SNIRH** | Not yet retrieved. | ⬜ Outstanding |
+| PRR beneficiaries and project locations (daily XLSX, resource replaced every day) | **Estrutura de Missão Recuperar Portugal**, via dados.gov.pt | Dataset field **«Licença não especificada»** (`notspecified`; re-checked 2026-08-20 on the platform's API, no contact point listed). Platform terms: State bodies' uploads are CC BY 4.0 «exceto se houver uma especificação em contrário». recuperarportugal.gov.pt terms: all content the property of Recuperar Portugal, no reuse terms. | ⚠️ **Unresolved — see A5**; nothing hosted until answered |
 
 **Why the CC BY 4.0 finding matters.** Clause 4 of the 4.0 licence
 ([legal code](https://creativecommons.org/licenses/by/4.0/legalcode.en)) states
@@ -307,3 +330,5 @@ counsel to confirm or correct it.**
 2. Retrieve DGAL and APA/SNIRH terms
 3. Archive a dated copy of every terms page retrieved — terms change, and the
    licence that applied when we extracted is the one that matters
+4. Ask the Estrutura de Missão Recuperar Portugal, in writing, to state the
+   licence of the PRR dataset (A5); a written answer moots the question
