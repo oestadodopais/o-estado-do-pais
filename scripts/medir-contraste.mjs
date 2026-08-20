@@ -46,25 +46,26 @@ const verde = (s) => `\x1b[32m${s}\x1b[0m`;
 const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
 const amarelo = (s) => `\x1b[33m${s}\x1b[0m`;
 
-/* ============================================================ os três estados
+/* ============================================================= as duas paletas
  *
- * O padrão de tema tem três blocos e o ficheiro declara-os por esta ordem:
- * `:root` nu é a paleta clara; o bloco dentro de `@media (prefers-color-scheme:
- * dark)` é o escuro do sistema; `:root[data-theme='dark']` é a escolha
- * explícita. Os dois últimos têm de ter os mesmos valores, e a régua diz-o se
- * não tiverem: um tema que muda conforme a porta por onde se entra não é um
- * tema.
+ * O ficheiro declara duas, por esta ordem: `:root` nu é a paleta clara, que é a
+ * de toda a gente; `:root[data-theme='dark']` é a escura, que é a escolha do
+ * leitor.
+ *
+ * ERAM TRÊS BLOCOS ATÉ 21.08.2026, e a régua tinha uma conferência a mais: o
+ * escuro vinha por duas portas — a preferência do sistema e a escolha explícita
+ * — e os dois blocos tinham de ser iguais ficha a ficha, porque um tema que muda
+ * conforme a porta por onde se entra não é um tema. A Emenda 12 fechou uma das
+ * portas: claro por defeito para todos, independentemente da preferência do
+ * sistema, e o escuro só pelo controlo do cabeçalho. Com uma porta só, não há
+ * dois blocos para comparar; o que a régua mede continua a ser o que a folha de
+ * facto usa, nos dois temas que existem.
  */
 const ESTADOS = [
   { chave: 'claro', titulo: 'claro (:root)', bloco: /:root\s*\{([\s\S]*?)\n\}/ },
   {
-    chave: 'escuro-sistema',
-    titulo: 'escuro do sistema (@media)',
-    bloco: /@media\s*\(prefers-color-scheme:\s*dark\)\s*\{\s*:root:not\(\[data-theme=['"]light['"]\]\)\s*\{([\s\S]*?)\n\s*\}/,
-  },
-  {
-    chave: 'escuro-escolhido',
-    titulo: "escuro escolhido (:root[data-theme='dark'])",
+    chave: 'escuro',
+    titulo: "escuro, à escolha do leitor (:root[data-theme='dark'])",
     bloco: /:root\[data-theme=['"]dark['"]\]\s*\{([\s\S]*?)\n\}/,
   },
 ];
@@ -227,7 +228,7 @@ const relatorio = { ficheiros: ficheiros, estados: {} };
 let falhas = 0;
 let avisos = 0;
 
-for (const estado of ['claro', 'escuro-sistema']) {
+for (const estado of ['claro', 'escuro']) {
   const titulo = ESTADOS.find((e) => e.chave === estado).titulo;
   if (!comoJson) {
     console.log('');
@@ -275,23 +276,23 @@ for (const estado of ['claro', 'escuro-sistema']) {
   }
 }
 
-/* Os dois escuros têm de ser o mesmo escuro. */
+/* Há UM escuro, e ele tem de existir. A conferência de que os dois escuros eram
+   iguais saiu com o segundo bloco (Emenda 12); o que fica é a pergunta que ainda
+   faz sentido, que é se a paleta escura está lá para ser medida. Uma régua que
+   imprimisse «n/d» em vinte e uma linhas e não dissesse porquê seria pior do que
+   não medir. */
 if (!comoJson) {
   console.log('');
   for (const m of medicoes) {
-    const a = m.paleta['escuro-sistema'];
-    const b = m.paleta['escuro-escolhido'];
-    if (!a || !b) {
-      console.log(amarelo(`  ${m.nome}: falta um dos dois blocos escuros.`));
+    const escuro = m.paleta['escuro'];
+    if (!escuro) {
+      console.log(vermelho(`  ${m.nome}: não há bloco :root[data-theme='dark'] para medir.`));
+      falhas += 1;
       continue;
     }
-    const diferentes = Object.keys(a).filter((k) => a[k] !== b[k]);
-    if (diferentes.length) {
-      console.log(vermelho(`  ${m.nome}: os dois escuros divergem em ${diferentes.join(', ')}.`));
-      falhas += 1;
-    } else {
-      console.log(cinza(`  ${m.nome}: os dois blocos escuros são iguais, ficha a ficha.`));
-    }
+    console.log(
+      cinza(`  ${m.nome}: uma paleta escura, à escolha do leitor, com ${Object.keys(escuro).length} fichas.`),
+    );
   }
 
   console.log('');

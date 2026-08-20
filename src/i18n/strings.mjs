@@ -55,6 +55,24 @@ export const STRINGS = {
       agendaRetirado: 'retirado',
     },
 
+    /**
+     * O CONTROLO DO TEMA (Emenda 12, 21.08.2026; DECISIONS §1.52).
+     *
+     * Claro por defeito para todos, independentemente da preferência do
+     * sistema; o leitor pede escuro num controlo do cabeçalho, e a escolha fica
+     * no aparelho dele. As palavras vão em minúsculas porque são as duas metades
+     * de um comando de aparelho, como «abrir»/«fechar», e não títulos.
+     *
+     * `rotulo` é o nome do grupo, e só é ouvido: dois botões que dizem «claro» e
+     * «escuro» sem nada que diga de que é a escolha não dizem nada a quem não
+     * vê o cabeçalho.
+     */
+    tema: {
+      rotulo: 'Tema',
+      claro: 'claro',
+      escuro: 'escuro',
+    },
+
     prov: {
       calculado: 'calculado',
       /* A palavra que o selo escreve, à vista (IDENTIDADE.md §5.4). Esteve
@@ -973,6 +991,12 @@ export const STRINGS = {
       agendaASeguir: 'next',
       agendaConcluido: 'concluded',
       agendaRetirado: 'withdrawn',
+    },
+
+    tema: {
+      rotulo: 'Theme',
+      claro: 'light',
+      escuro: 'dark',
     },
 
     prov: {

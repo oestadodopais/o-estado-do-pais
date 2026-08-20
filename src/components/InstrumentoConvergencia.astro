@@ -206,7 +206,7 @@ for (const r of REGIOES) {
       <g data-gap>
         <rect x={x0} y={RY - 4.5} width={Math.max(x1 - x0, 1)} height="9" fill="var(--ink)" />
         <text x={(x0 + x1) / 2} y={RY + 42} text-anchor="middle" class="gap-label">
-          {inicial.sinal}<Claim id={inicial.distancia_claim} as="tspan" /> {lang === 'pt' ? 'pontos' : 'points'}
+          {inicial.sinal}<Claim id={inicial.distancia_claim} lang={lang} as="tspan" /> {lang === 'pt' ? 'pontos' : 'points'}
         </text>
       </g>
 
@@ -225,7 +225,7 @@ for (const r of REGIOES) {
               outra. A chapa de papel por baixo sobe as mesmas seis unidades
               para não cortar o topo do nome. */}
           <text x={X(inicial.valor)} y={yPatamar - 24} text-anchor="middle" class="mk-name">{inicial.nome}</text>
-          <Claim id={inicial.valor_claim} as="text" class="mk-val" x={X(inicial.valor)} y={yPatamar - 1} text-anchor="middle" />
+          <Claim id={inicial.valor_claim} lang={lang} as="text" class="mk-val" x={X(inicial.valor)} y={yPatamar - 1} text-anchor="middle" />
           <circle cx={X(inicial.valor)} cy={RY} r="5.5" fill="var(--ink)" stroke="var(--paper)" stroke-width="1.5" />
         </g>
       </g>

@@ -181,6 +181,21 @@
     segsDensidade[d].removeAttribute('aria-current');
     activaComEspaco(segsDensidade[d]);
   }
+  /* AS PASTILHAS DAS REGIÕES SÃO BOTÕES, COMO OS OUTROS COMANDOS (ISSUES I25).
+   *
+   * Recebiam `aria-pressed` mais abaixo, em `aplica()`, e continuavam a ser
+   * `<a href>` sem papel de botão — e `aria-pressed` num `<a>` sem papel de
+   * botão não é ARIA válido: um leitor de ecrã pode ignorá-lo, e a pastilha
+   * escolhida deixa de se anunciar como escolhida. São o mesmo comando que os
+   * segmentos de âmbito e de densidade, e passam a ter o mesmo papel e a mesma
+   * tecla. As da pesquisa já eram `<button>` e não precisam de nada.
+   *
+   * O `href` fica, como nos outros: com script é a forma do estado, e sem script
+   * é a ligação que abre a mesma leitura. */
+  for (var r0 = 0; r0 < chips.length; r0++) {
+    chips[r0].setAttribute('role', 'button');
+    activaComEspaco(chips[r0]);
+  }
 
   var estado = leDoEndereco();
   var modoEscolhido = modoDe(estado.ambito);

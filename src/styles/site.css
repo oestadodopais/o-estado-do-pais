@@ -19,8 +19,18 @@
   box-sizing: border-box;
 }
 
+/* `color-scheme` diz ao navegador com que paleta pintar o que ele pinta por si:
+   as barras de deslocamento, os comandos nativos, e o fundo da tela antes de a
+   folha chegar. Dizia `light dark`, que é «segue a preferência do sistema» — e
+   desde a Emenda 12 a preferência do sistema não decide nada aqui: claro por
+   defeito para todos, escuro só à escolha do leitor. Se ficasse `light dark`, um
+   leitor com o sistema em escuro teria a página clara e as barras escuras, sem
+   ter escolhido nada. Passa a seguir o mesmo atributo que a paleta segue. */
 html {
-  color-scheme: light dark;
+  color-scheme: light;
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
 }
 
 body {
@@ -377,14 +387,10 @@ section {
   text-decoration: none;
 }
 
-.method-line {
-  font-family: var(--f-instr);
-  font-variant-numeric: tabular-nums lining-nums;
-  font-size: 11.5px;
-  letter-spacing: 0.045em;
-  color: var(--muted);
-  padding-top: 12px;
-}
+/* A regra `.method-line` saiu a 21.08.2026 com a linha que ela compunha
+   (Emenda 11, DECISIONS §1.52): a linha de método deixou de se render por baixo
+   da marca, e uma regra sem elemento é uma regra que mente sobre o que a folha
+   desenha. */
 
 /* AS DUAS LEITURAS SÃO DE APARELHO, E FICAM A TINTA (v3, Emenda 1).
    O corpo §3 da constituição visual dava-lhes cor (cobalto dentro do prazo,
@@ -413,7 +419,7 @@ section {
 /* O separador entre as DUAS leituras, e só entre elas: com as leituras
    rotuladas há agora spans dentro de spans, e um seletor solto punha um ponto
    médio dentro de cada valor. */
-.masthead-furniture > .leitura:not(:first-child)::before {
+.masthead-furniture > .mob-leitura:not(:first-child)::before {
   content: '· ';
   color: var(--rule-strong);
 }
@@ -423,35 +429,124 @@ section {
    Rótulo e valor, os dois em monoespaçada, cada leitura com a sua porta
    (IDENTIDADE.md §3, v2). O rótulo recua para `--muted` e o valor fica em
    `--ink`: é a diferença que faz uma leitura de aparelho ler-se como leitura
-   e não como uma frase pequena. */
-.leitura {
+   e não como uma frase pequena.
+
+   ---------------------------------------------------------------------------
+   AS DUAS LEITURAS PERDEM A MOLDURA, E A MOLDURA NÃO ERA DELAS (21.08.2026)
+   ---------------------------------------------------------------------------
+   A direção leu a pré-visualização n.º 1 e pediu «as duas leituras do cabeçalho
+   sem molduras». As regras desta secção nunca desenharam moldura nenhuma — e é
+   por isso que a causa vale a pena escrever-se: a classe chamava-se `.leitura`,
+   e mais abaixo nesta mesma folha (a camada «Leitura breve» de um estudo) há
+   outra `.leitura`, com `border: 1px solid var(--rule)` e `background:
+   var(--paper)`. Duas coisas diferentes com um nome só, e a segunda ganhava por
+   vir depois: medido em Chromium sem cabeça, os dois `span` da mobília davam
+   `border-top-style: solid`, `1px`, `rgb(217, 221, 216)`, sobre papel.
+
+   A saída não é apagar a moldura com uma terceira regra: é dar-lhes o nome que
+   é delas. A mobília passa a `.mob-leitura`, e a camada de leitura de um estudo
+   fica com `.leitura`, que é o nome da coisa que ela é. Um `border: 0` por cima
+   deixaria as duas a partilhar o nome, e a próxima regra de uma delas voltava a
+   cair na outra. */
+.mob-leitura {
   display: inline-flex;
   align-items: baseline;
   flex-wrap: wrap;
   gap: 2px 7px;
 }
-.leitura-porta {
+.mob-leitura-porta {
   display: inline-flex;
   align-items: baseline;
   flex-wrap: wrap;
   gap: 2px 7px;
   text-decoration: none;
 }
-.leitura-k {
+.mob-leitura-k {
   color: var(--muted);
   font-weight: 600;
   text-decoration: none;
 }
-.leitura-v {
+.mob-leitura-v {
   color: var(--ink);
   font-variant-numeric: tabular-nums lining-nums;
 }
-.masthead-furniture a.leitura-k:hover,
-.masthead-furniture .leitura-porta:hover .leitura-k {
+.masthead-furniture a.mob-leitura-k:hover,
+.masthead-furniture .mob-leitura-porta:hover .mob-leitura-k {
   color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+/* ------------------------------------------------------- o controlo do tema
+
+   Emenda 12, 21.08.2026 (`DECISIONS.md` §1.52): claro por defeito para todos, e
+   o escuro só por este controlo. Dois botões, com a palavra de cada estado e um
+   fio «·» entre eles — a mesma pontuação que separa as duas leituras nesta
+   mesma linha, e nenhuma moldura, porque o cabeçalho leva um fio e mais nada
+   (`IDENTIDADE.md` §3).
+
+   O ALVO É DE 44×44, e aqui a altura pode ser altura a sério. É a mesma
+   distinção que a etapa 1e escreveu para o comando «Menu» e que o selo não pode
+   ter: um botão de barra é um bloco e crescer não empurra linha nenhuma, ao
+   contrário de uma unidade no meio de uma frase.
+
+   `margin-left: auto` empurra-o para o fim da linha, e por isso ele não leva o
+   «·» que separa as duas leituras: o que o separa delas é o espaço.
+
+   O grupo entra `hidden` do servidor e é o script que o mostra. Uma regra de
+   navegador (`[hidden]` = `display: none`) perde para qualquer selector de
+   classe, e `display: inline-flex` é um selector de classe: sem a linha
+   seguinte, o controlo aparecia sempre, inclusive sem JavaScript, a comandar
+   coisa nenhuma. */
+.tema {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: auto;
+}
+.tema[hidden] {
+  display: none;
+}
+.tema-b {
+  appearance: none;
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 0 10px;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+.tema-b + .tema-b::before {
+  content: '·';
+  color: var(--rule-strong);
+  margin-right: 10px;
+  margin-left: -10px;
+}
+.tema-b[aria-pressed='true'] {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.tema-b:hover {
+  color: var(--ink);
+}
+.tema-b:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+.masthead-compact .tema-b {
+  font-size: 9.5px;
+}
+
 /* A mobília do cabeçalho compacto é a mesma linha, mais discreta: nas páginas
    interiores o sinal de tempo não compete com o conteúdo. */
 .masthead-compact .masthead-furniture {

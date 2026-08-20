@@ -30,7 +30,7 @@ import {
   regiaoDe,
 } from '../data/caop-centroids.mjs';
 import { VERBATIM } from '../data/verbatim.mjs';
-import { SITE_NAME, SITE_HOST_DISPLAY, METHOD_LINE } from '../../site.config.mjs';
+import { SITE_NAME, SITE_HOST_DISPLAY } from '../../site.config.mjs';
 
 /**
  * Onde cada ficheiro é servido. Uma constante só, partilhada pelas ligações das
@@ -55,6 +55,14 @@ function linha(campos) {
 /**
  * Cabeçalho comum: quem publica e onde está o método.
  *
+ * A LINHA DE MÉTODO SAIU a 21.08.2026 (Emenda 11, DECISIONS §1.52). Era a
+ * segunda linha deste preâmbulo e dizia o que o sítio é; a direção decidiu que o
+ * sítio não se explica na mobília, e um cabeçalho de CSV é mobília. O que fica é
+ * quem publica, onde está o método, e o aviso de que o ficheiro é gerado. O
+ * `check:dados` não se mexeu com ela porque não é ela que ele compara: compara o
+ * cabeçalho de COLUNAS, e exige dos comentários a citação da CAOP, a data de
+ * acesso e o caminho das linhas do livro-razão.
+ *
  * A linha «Edição de …» saiu a 16.08.2026 com a própria `EDITION`
  * (DECISIONS §1.39). Não foi substituída por outra data: um ficheiro de dados
  * gerado a cada construção carimbado com a data da construção diria que os
@@ -65,7 +73,6 @@ function linha(campos) {
 function preambulo(titulo) {
   return [
     `# ${SITE_NAME} — ${titulo}`,
-    `# ${METHOD_LINE}`,
     '#',
     `# https://${SITE_HOST_DISPLAY}/metodo`,
     '# Gerado na construção do sítio.',

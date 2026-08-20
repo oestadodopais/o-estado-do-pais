@@ -20,8 +20,18 @@ export const SITE_HOST_UNACCENTED = 'oestadodopais.pt';
 
 export const SITE_NAME = 'O Estado do País';
 
-/** Linha de método. Elemento de identidade: não é traduzida. */
-export const METHOD_LINE = 'Portugal, medido. Cada número tem fonte.';
+/**
+ * A LINHA DE MÉTODO SAIU DAQUI a 21.08.2026 (Emenda 11, DECISIONS §1.52).
+ *
+ * `METHOD_LINE` era uma frase de promessa (o texto está escrito na Emenda 11 da
+ * constituição e na §1.52 das decisões), declarada aqui como elemento de
+ * identidade e não traduzida, e rendia em duas superfícies: por
+ * baixo da marca, em todas as páginas, e no cabeçalho de comentários dos dois
+ * ficheiros CSV descarregáveis. A direção leu a pré-visualização n.º 1 e decidiu
+ * que «o sítio não se explica na mobília»: o que o sítio é está no Sobre e no
+ * Método, que são as páginas que o podem provar. A promessa não desapareceu do
+ * sítio; mudou de casa.
+ */
 
 /**
  * A linha de autoria SAIU daqui a 16.08.2026 (DECISIONS §1.39).
