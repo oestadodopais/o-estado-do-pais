@@ -1,0 +1,3104 @@
+{
+  "a": "/private/tmp/claude-501/-Users-nunosantos/b185e650-e114-4dd4-a233-45407e03b19a/scratchpad/base-77e82eb/dist",
+  "b": "dist",
+  "rotas": 322,
+  "iguais": 15,
+  "diferencas": [
+    {
+      "rota": "/",
+      "estado": "difere",
+      "mais": 706,
+      "menos": 16,
+      "acrescentados": [
+        "Menu",
+        "Municípios",
+        "Estudos",
+        "Agenda",
+        "4"
+      ],
+      "retirados": [
+        "O país em números verificados",
+        "Medidas do painel europeu",
+        "n.º 2",
+        "Um ponto por município, na posição real do seu centróide. Sem fronteiras desenhadas: a forma do país é o que os dados fazem.",
+        "Linha do livro-razão: O Estado do País, apuramento próprio"
+      ]
+    },
+    {
+      "rota": "/404",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/a-verificar/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/agenda/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/correcoes/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/",
+      "estado": "difere",
+      "mais": 706,
+      "menos": 16,
+      "acrescentados": [
+        "Menu",
+        "Municipalities",
+        "Studies",
+        "Agenda",
+        "4"
+      ],
+      "retirados": [
+        "The country in verified figures",
+        "Measures from the European scoreboard",
+        "no. 2",
+        "One point per municipality, at the real position of its centroid. No borders are drawn: the shape of the country is what the data makes.",
+        "Ledger row: O Estado do País, own count"
+      ]
+    },
+    {
+      "rota": "/en/about/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/agenda/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/corrections/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/abandono-escolar-precoce-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/agua-nao-faturada-portugal-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/alentejo-central-poder-de-compra-2023/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/avisos-pt2030-abertos/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/avisos-pt2030-pessoas-singulares/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/ciclo-substituicao-condutas/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/competencias-digitais-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/correcoes-publicadas/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/credito-malparado-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/criancas-em-creche-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/custo-unitario-do-trabalho-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/desempenho-das-exportacoes-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/desemprego-de-longa-duracao-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/despesa-em-id-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/disparidade-de-emprego-entre-sexos-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/distancia-alentejo-ue27-2000/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/distancia-alentejo-ue27-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/distancia-algarve-ue27-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/distancia-grande-lisboa-ue27-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/distancia-madeira-ue27-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/distancia-peninsula-de-setubal-ue27-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/distancia-portugal-ue27-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/distancia-setubal-grande-lisboa-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/divida-das-empresas-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/divida-das-familias-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/divida-publica-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/edicoes-publicadas/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/estudos-evora-publicados/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/estudos-publicados/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-camara-lugares/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-camara-mandatos-cdu-2013/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-camara-mandatos-cdu-2017/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-camara-mandatos-cdu-2021/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-camara-mandatos-ps-2009/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-camara-mandatos-ps-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-concentracao-vab4-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-contas-2024-votos-contra/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-contas-2024-votos-favor/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-desemprego-registado-2013/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-desemprego-registado-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-despesa-paga-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-divergencia-municipio-dgal-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-divida-31-10-2013/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-divida-dgal-2014/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-divida-dgal-2017/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-divida-dgal-2021/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-divida-dgal-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-divida-inicio-mandato-reexpressa/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-divida-total-2017/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-divida-total-2021/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-divida-total-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-divida-total-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-empresas-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-excesso-endividamento-2014/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-excesso-endividamento-2019/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-execucao-da-receita-2021/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-execucao-da-receita-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-executivo-2025-ad/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-executivo-2025-cdu/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-executivo-2025-chega/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-executivo-2025-ps/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-indice-de-divida-2014/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-indice-de-divida-2017/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-indice-de-divida-2021/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-indice-de-divida-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-limite-divida-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-limite-divida-dgal-2014/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-limite-divida-dgal-2017/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-limite-divida-dgal-2021/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-limite-divida-dgal-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-margem-endividamento-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-orcamento-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-pael-emprestimo/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-pagamentos-em-atraso-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-pelouros-2021-presidente/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-pelouros-2021-total/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-pelouros-2021-vice-presidente/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-pelouros-2025-presidente/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-pelouros-2025-total/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-pelouros-2025-vereadora/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-pelouros-2025-vice-presidente/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-poder-de-compra-2023/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-populacao-2021/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-populacao-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-prazo-medio-de-pagamento-2023/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-prazo-medio-de-pagamento-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-prr-aprovado-2026/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-prr-execucao-2026/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-prr-municipio-contratado/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-prr-pago-2026/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-prr-universidade-contratado/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-prr-vencido-aprovado-2026/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-prr-vencido-quota-2026/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-receita-cobrada-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-saneamento-financeiro-2016/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-vab-empresarial-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/fluxo-de-credito-as-empresas-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/fluxo-de-credito-as-familias-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/formacao-bruta-de-capital-fixo-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/independencia-da-justica-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/indice-de-divida-limite-legal/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/indice-de-percepcao-da-corrupcao-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/jovens-nem-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/licencas-de-construcao-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/municipios-acores-caop-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/municipios-com-estudo-aprofundado/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/municipios-continente-caop-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/municipios-madeira-caop-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/municipios-portugal-caop-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/municipios-sem-estudo-aprofundado/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/necessidades-medicas-nao-satisfeitas-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/pib-pc-alentejo-2000/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/pib-pc-alentejo-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/pib-pc-algarve-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/pib-pc-grande-lisboa-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/pib-pc-madeira-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/pib-pc-peninsula-de-setubal-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/pib-pc-portugal-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/pib-real-per-capita-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/portugal-concentracao-vab4-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/posicao-de-investimento-internacional-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/precos-da-habitacao-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/racio-s80-s20-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/risco-de-pobreza-ou-exclusao-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/saldo-da-balanca-corrente-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/saldo-natural-portugal-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/sobrecarga-do-custo-da-habitacao-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/taxa-de-actividade-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/taxa-de-cambio-efectiva-real-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/taxa-de-desemprego-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/taxa-de-desemprego-mip-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/taxa-de-emprego-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/method/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/municipalities/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 1,
+      "acrescentados": [
+        "Menu",
+        "has a page"
+      ],
+      "retirados": [
+        "Open the page →"
+      ]
+    },
+    {
+      "rota": "/en/municipalities/evora/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/studies/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/studies/agua-nao-faturada/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/studies/alentejo-algarve/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/studies/avaliacao-economica-regional-de-portugal-2026/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/studies/evolucao-de-portugal-desde-1981/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/studies/evora-economia-investidores-portas-abertas-2026/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/studies/evora-orcamentado-pago-devido-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/studies/evora-os-pelouros-quem-os-teve-o-que-fizeram/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/studies/evora-quinze-anos-cinco-mandatos/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/studies/onde-esta-a-agua/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/studies/which-door-is-yours/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/to-verify/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/estudos/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/estudos/agua-nao-faturada/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/estudos/alentejo-algarve/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/estudos/avaliacao-economica-regional-de-portugal-2026/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/estudos/evolucao-de-portugal-desde-1981/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/estudos/evora-economia-investidores-portas-abertas-2026/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/estudos/evora-orcamentado-pago-devido-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/estudos/evora-quinze-anos-cinco-mandatos/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/estudos/onde-esta-a-agua/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/estudos/which-door-is-yours/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/abandono-escolar-precoce-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/agua-nao-faturada-portugal-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/alentejo-central-poder-de-compra-2023/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/avisos-pt2030-abertos/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/avisos-pt2030-pessoas-singulares/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/ciclo-substituicao-condutas/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/competencias-digitais-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/correcoes-publicadas/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/credito-malparado-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/criancas-em-creche-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/custo-unitario-do-trabalho-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/desempenho-das-exportacoes-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/desemprego-de-longa-duracao-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/despesa-em-id-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/disparidade-de-emprego-entre-sexos-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/distancia-alentejo-ue27-2000/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/distancia-alentejo-ue27-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/distancia-algarve-ue27-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/distancia-grande-lisboa-ue27-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/distancia-madeira-ue27-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/distancia-peninsula-de-setubal-ue27-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/distancia-portugal-ue27-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/distancia-setubal-grande-lisboa-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/divida-das-empresas-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/divida-das-familias-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/divida-publica-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/edicoes-publicadas/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/estudos-evora-publicados/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/estudos-publicados/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-camara-lugares/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-camara-mandatos-cdu-2013/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-camara-mandatos-cdu-2017/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-camara-mandatos-cdu-2021/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-camara-mandatos-ps-2009/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-camara-mandatos-ps-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-concentracao-vab4-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-contas-2024-votos-contra/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-contas-2024-votos-favor/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-desemprego-registado-2013/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-desemprego-registado-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-despesa-paga-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-divergencia-municipio-dgal-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-divida-31-10-2013/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-divida-dgal-2014/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-divida-dgal-2017/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-divida-dgal-2021/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-divida-dgal-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-divida-inicio-mandato-reexpressa/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-divida-total-2017/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-divida-total-2021/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-divida-total-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-divida-total-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-empresas-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-excesso-endividamento-2014/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-excesso-endividamento-2019/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-execucao-da-receita-2021/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-execucao-da-receita-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-executivo-2025-ad/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-executivo-2025-cdu/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-executivo-2025-chega/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-executivo-2025-ps/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-indice-de-divida-2014/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-indice-de-divida-2017/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-indice-de-divida-2021/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-indice-de-divida-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-limite-divida-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-limite-divida-dgal-2014/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-limite-divida-dgal-2017/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-limite-divida-dgal-2021/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-limite-divida-dgal-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-margem-endividamento-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-orcamento-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-pael-emprestimo/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-pagamentos-em-atraso-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-pelouros-2021-presidente/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-pelouros-2021-total/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-pelouros-2021-vice-presidente/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-pelouros-2025-presidente/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-pelouros-2025-total/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-pelouros-2025-vereadora/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-pelouros-2025-vice-presidente/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-poder-de-compra-2023/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-populacao-2021/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-populacao-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-prazo-medio-de-pagamento-2023/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-prazo-medio-de-pagamento-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-prr-aprovado-2026/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-prr-execucao-2026/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-prr-municipio-contratado/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-prr-pago-2026/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-prr-universidade-contratado/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-prr-vencido-aprovado-2026/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-prr-vencido-quota-2026/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-receita-cobrada-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-saneamento-financeiro-2016/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-vab-empresarial-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/fluxo-de-credito-as-empresas-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/fluxo-de-credito-as-familias-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/formacao-bruta-de-capital-fixo-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/independencia-da-justica-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/indice-de-divida-limite-legal/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/indice-de-percepcao-da-corrupcao-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/jovens-nem-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/licencas-de-construcao-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/municipios-acores-caop-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/municipios-com-estudo-aprofundado/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/municipios-continente-caop-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/municipios-madeira-caop-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/municipios-portugal-caop-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/municipios-sem-estudo-aprofundado/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/necessidades-medicas-nao-satisfeitas-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/pib-pc-alentejo-2000/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/pib-pc-alentejo-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/pib-pc-algarve-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/pib-pc-grande-lisboa-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/pib-pc-madeira-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/pib-pc-peninsula-de-setubal-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/pib-pc-portugal-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/pib-real-per-capita-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/portugal-concentracao-vab4-2024/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/posicao-de-investimento-internacional-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/precos-da-habitacao-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/racio-s80-s20-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/risco-de-pobreza-ou-exclusao-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/saldo-da-balanca-corrente-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/saldo-natural-portugal-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/sobrecarga-do-custo-da-habitacao-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/taxa-de-actividade-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/taxa-de-cambio-efectiva-real-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/taxa-de-desemprego-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/taxa-de-desemprego-mip-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/taxa-de-emprego-2025/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/metodo/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/municipios/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 1,
+      "acrescentados": [
+        "Menu",
+        "tem página"
+      ],
+      "retirados": [
+        "Abrir a página →"
+      ]
+    },
+    {
+      "rota": "/municipios/evora/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/sobre/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 0,
+      "acrescentados": [
+        "Menu"
+      ],
+      "retirados": []
+    }
+  ]
+}

@@ -375,6 +375,7 @@
   color: var(--muted);
 }
 .mapa-fonte,
+.mapa-fonte-curta,
 .mapa-dados,
 .mapa-hint,
 .mapa-leitura {
@@ -384,13 +385,89 @@
   line-height: 1.5;
   color: var(--muted);
 }
-.mapa-cartao {
-  grid-column: 2;
-  border: 1px solid var(--g3);
-  padding: 14px 16px;
+
+/* ------------------------------------------------- a camada de fundo do mapa
+ *
+ * Subetapa 2g, ponto 2: a citação inteira da CAOP, a porta do CSV e as duas
+ * dicas de uso desceram para aqui, e a ficha ao lado do mapa ficou com a
+ * cobertura, a neutralidade, as contagens por parcela e uma linha de fonte. Era
+ * a ficha que mandava na altura da cabeça, e a cabeça é a primeira coisa que se
+ * lê.
+ */
+.mapa-fundo {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--rule);
+  padding-top: 8px;
+}
+.mapa-fundo-sum {
+  font-family: var(--f-versal);
+  font-size: 12.5px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mapa-fundo-sum::-webkit-details-marker {
+  display: none;
+}
+.mapa-fundo-sum::before {
+  content: '▸';
+  font-size: 10px;
+}
+.mapa-fundo[open] .mapa-fundo-sum::before {
+  content: '▾';
+}
+.mapa-fundo-corpo {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 8px 0 4px 0;
+}
+
+/* As duas dicas descrevem o que só é verdade onde o mapa escolhe pontos: na
+   secretária, com o mapa inteiro e com script. O `hidden` do servidor cobre o
+   caso sem script; estas duas regras cobrem o telemóvel e o localizador. */
+[data-postura='localizador'] .mapa-dicas {
+  display: none;
+}
+
+.mapa-cartao-texto {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+/* ------------------------------------------------------ as duas posturas do cartão
+ *
+ * O cartão localizador tem o mapa DENTRO (2g, ponto 6), e por isso não pode
+ * esconder-se por atributo: escondê-lo esconderia o mapa. Quem manda é
+ * `data-postura`.
+ *
+ *   inteiro      o cartão dissolve-se e só a tela se vê, ao lado da ficha;
+ *   localizador  o cartão é a moldura, com a tela pequena à esquerda.
+ */
+[data-postura='inteiro'] .mapa-cartao {
+  display: contents;
+}
+[data-postura='inteiro'] .mapa-cartao-texto {
+  display: none;
+}
+[data-postura='localizador'] .mapa-cartao {
+  grid-column: 1 / -1;
+  border: 1px solid var(--g3);
+  padding: 14px 16px;
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: center;
+}
+[data-postura='localizador'] .mapa-fundo {
+  display: none;
 }
 .mapa-cartao-nome {
   font-size: 19px;
@@ -527,8 +604,10 @@ svg [hidden] {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 14px;
   }
-  .mapa-cartao {
-    grid-column: 1;
+  /* As duas dicas do mapa não se escrevem onde o mapa não escolhe pontos: no
+     telemóvel o selo inteiro é o alvo e nenhum ponto é alvo (Emenda 3). */
+  .mapa-dicas {
+    display: none;
   }
 }
 
@@ -552,6 +631,31 @@ svg [hidden] {
 }
 .painel-um {
   grid-template-columns: minmax(0, 1fr);
+}
+
+/* -----------------------------------------------------------------------------
+ * A PEÇA ABERTA OCUPA DUAS COLUNAS (subetapa 2g, ponto 3)
+ * -----------------------------------------------------------------------------
+ * É a regra da prancha: a peça fechada é um mosaico de uma coluna, a peça aberta
+ * é `grid-column: span 2`, e com as oito abertas a grelha fica 2 × 4. A razão é
+ * medida e não de gosto: numa coluna só, a régua da leitura breve desenhava-se
+ * em 224px a 1280, e uma régua com a escala, o limiar e o valor nesse espaço é
+ * uma régua que não se lê.
+ *
+ * O comando da densidade é um `<details>` DENTRO da peça, e por isso quem tem de
+ * mudar de largura é o antepassado: `:has()` é o único selector que o diz. O
+ * lado seguro de falhar está escolhido — num motor sem `:has()` a peça aberta
+ * fica com a largura de hoje, que é o que já se via, e não com uma coluna
+ * implícita a transbordar a página.
+ *
+ * Abaixo de 640 o painel é uma coluna só e as peças são filas: um `span 2` numa
+ * grelha de uma coluna criaria uma segunda coluna implícita, e com ela a barra
+ * de deslocamento horizontal que a matriz exige que não exista. Por isso a regra
+ * vive acima de 640, e fora de `.painel-um`, que tem uma peça só. */
+@media (min-width: 641px) {
+  .painel:not(.painel-um) .peca:has(.peca-mais[open]) {
+    grid-column: span 2;
+  }
 }
 
 /* A moldura é cinzenta (Emenda 1: o estado vive no marcador, na palavra e na
@@ -847,6 +951,19 @@ a.porta:hover .porta-abrir {
   }
 }
 
+/* =============================================================================
+ * A RÉGUA DA CONVERGÊNCIA COMO PORTA, NO TELEMÓVEL (subetapa 2g, ponto 4)
+ *
+ * Ponto 10a da direcção. Na secretária nada muda: a porta não existe e o corpo
+ * está à vista. Abaixo de 640 a porta aparece, o corpo fecha-se, e o `[open] ~`
+ * do `<details>` abre-o. Uma linha de comando, um selector de irmão, e nenhum
+ * script.
+ * ========================================================================== */
+
+.conv-porta {
+  display: none;
+}
+
 /* ------------------------------------------------- as posturas do mapa (2d) */
 
 /* O concelho escolhido é maior, e é a única distinção além da cobertura. */
@@ -973,7 +1090,85 @@ a.porta:hover .porta-abrir {
   .mapa-tela {
     width: 84px;
   }
+  /* O cartão localizador, no telemóvel: a moldura fica, o mapa lá dentro passa
+     a selo, e os dois empilham-se. Até à 2g o mapa de 170px do localizador
+     desenhava-se por cima das duas linhas de destino, porque a coluna do selo
+     tem 84px e ele estava fora do cartão. */
+  [data-postura='localizador'] .mapa-cartao {
+    grid-row: 2;
+    grid-template-columns: 84px minmax(0, 1fr);
+    column-gap: 12px;
+    padding: 12px 14px;
+  }
+  [data-postura='localizador'] .mapa-tela {
+    width: 84px;
+  }
+  /* E com o mapa dentro do cartão a coluna do selo fica vazia. O selo do país
+     desaparece com ela e os dois destinos ocupam a fila inteira: uma porta
+     invisível por cima de um espaço em branco é uma porta que ninguém vê e que
+     qualquer polegar abre. */
+  [data-postura='localizador'] .movel-selo {
+    display: none;
+  }
+  [data-postura='localizador'] ~ .movel-destinos {
+    grid-column: 1 / -1;
+  }
   .pesquisa-proximos {
+    display: block;
+  }
+
+  /* A porta da régua da convergência. Uma linha, palavras só, alvo de 44px. */
+  .conv-porta {
+    display: block;
+    border-top: 1px solid var(--ink);
+  }
+  .conv-porta-sum {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    padding: 6px 0;
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--f-versal);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .conv-porta-sum::-webkit-details-marker {
+    display: none;
+  }
+  .conv-porta-seta::before {
+    content: '▸';
+    font-size: 11px;
+  }
+  .conv-porta[open] .conv-porta-seta::before {
+    content: '▾';
+  }
+  .conv-porta-nome {
+    flex: 1;
+  }
+  .conv-porta-a,
+  .conv-porta-f {
+    font-family: var(--f-instr);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .conv-porta-f,
+  .conv-porta[open] .conv-porta-a {
+    display: none;
+  }
+  .conv-porta[open] .conv-porta-f {
+    display: inline;
+  }
+  .conv-corpo {
+    display: none;
+  }
+  .conv-porta[open] ~ .conv-corpo {
     display: block;
   }
 

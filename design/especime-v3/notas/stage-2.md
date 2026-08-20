@@ -21,7 +21,8 @@ um comando que está escrito ao lado deles.*
 | `1c0f1b7` | 2c | início, painel: as peças nas duas densidades, a régua-espécime, as portas e o instrumento a tinta |
 | `99a2694` | 2d | início, runtime: o estado no endereço, e um script que só escolhe cadeias já validadas |
 | `d7f7a7e` | 2e | início, telemóvel: o âmbito como destinos, o selo do país como único alvo, e as medidas em filas |
-| *(o commit que contém esta nota completa)* | 2f | réguas: a invariância como conselheiro, a matriz de aceitação e as 64 capturas |
+| `2d34617` | 2f | réguas: a invariância como conselheiro, a matriz de aceitação e as 64 capturas |
+| *(o commit que contém esta nota)* | 2g | início, revisão: as sete correcções do lugar de direcção |
 
 ---
 
@@ -569,3 +570,379 @@ a 2c); no fim da 2f dizia cerca de **14,38 milhões**, ou seja **≈ 620 mil fic
 para a etapa inteira. Fica dentro da escala do brief (500 a 700 mil) e abaixo do
 tecto de 850 mil que mandava parar. Não tenho um número exacto e não o invento:
 o que existe é a diferença de dois contadores.
+---
+
+## 2g · a revisão do lugar de direção
+
+*Construtor B2, **Claude Opus**, sozinho, sem subagentes, 20.08.2026, a partir de
+`d015fec`. Um commit. Nada foi empurrado, nada foi posto no ar, `vercel.json` não
+foi tocado, nenhum ficheiro partilhado (`tokens.css`, `site.css`, `Base.astro`,
+`Masthead.astro`, `SiteFooter.astro`, `Claim.astro`, `Provenance.astro`,
+`Frase.astro`, `PortaDeCorreccoes.astro`) mudou um byte, e nem `src/data/metodo.mjs`
+nem `src/data/sobre.mjs` foram abertos. Nenhum portão novo. Todos os números
+abaixo trazem ao lado o comando que os produziu.*
+
+**Os onze ficheiros que mudaram**, todos da lista da BRIEF-etapa-2 §2:
+`src/views/HomeView.astro`, `src/components/inicio/{Cabeca,MapaRespira,Pesquisa}.astro`,
+`src/components/InstrumentoConvergencia.astro`, `src/styles/inicio.css`,
+`public/js/{inicio,convergencia}.js`, `src/lib/inicio.mjs`, `src/i18n/strings.mjs`,
+`tests/inicio/matriz.mjs`.
+
+### 1 · o sangramento de âmbito
+
+«Painel europeu reconferido a 2026-08-18.» é o sinal de tempo do painel EUROPEU e
+rendia-se debaixo das oito medidas de Évora e debaixo do estado vazio de Beja. A
+linha ganhou `data-so-pais`, que é o mecanismo que a página já tinha para o
+instrumento n.º 1 e para as portas. A âncora `id="numeros"` continua no documento
+em qualquer âmbito, e por isso as duas portas que a prometem — o sinal de tempo
+do cabeçalho e a chave `painel_reconferido_em` — continuam a resolver.
+
+**A varredura das outras cadeias só do País**, medida e não presumida
+(`node /…/medir.mjs`, sobre `dist/`, quatro âmbitos):
+
+| o que é | onde vive | antes | depois |
+| --- | --- | --- | --- |
+| o sinal de tempo do painel | `HomeView`, `#painel` | via-se nos quatro âmbitos | **só no País** |
+| a lede | `Cabeca.astro`, um bloco por âmbito | já trocava com o âmbito | sem mudança |
+| a manchete | idem, nove `h1` e um aceso | já trocava | sem mudança |
+| o rótulo das portas («As páginas · o resto vive a uma porta») | `Portas.astro`, dentro de `[data-so-pais]` | já só no País | sem mudança |
+| o instrumento n.º 1 inteiro | `#convergencia`, `[data-so-pais]` | já só no País | sem mudança |
+
+```
+antes:  (defeito)                 verificacao: "Painel europeu reconferido a 2026-08-18."
+        ?ambito=regiao:alentejo   verificacao: "Painel europeu reconferido a 2026-08-18."
+        ?ambito=municipio:evora   verificacao: "Painel europeu reconferido a 2026-08-18."
+        ?ambito=municipio:beja    verificacao: "Painel europeu reconferido a 2026-08-18."
+depois: (defeito) "Painel europeu reconferido a 2026-08-18." · os outros três: null
+```
+
+### 2 · a ficha do mapa deixa de mandar na altura da cabeça
+
+Saíram da ficha, para uma camada de fundo `<details>` por baixo do mapa: a citação
+inteira da CAOP (`data-verbatim="caop-fonte"`, conferida carácter a carácter como
+sempre), a porta do CSV, e as duas dicas de uso. Ficaram: a linha de cobertura com
+as duas contagens da prova e as suas portas, a frase de neutralidade, as contagens
+por parcela com os seus selos, e **uma linha de fonte compacta** montada dos campos
+da própria linha do livro-razão — `source` · `document.title` · `reference_date`
+(marcado `data-nonledger="data-de-referencia"`, o motivo que já existia) — com o
+selo de `municipios-portugal-caop-2025` na forma de sempre. Nenhuma palavra nova.
+
+O rótulo da camada é `inicio.mapa.deepTitulo`, que é `home.instr2.deepTitulo` da v2
+relocado com a sua secção, sem uma palavra mudada: relocação **R3**, cuja nota foi
+actualizada em `RELOCACOES.md`.
+
+**As duas dicas só existem onde o mapa escolhe pontos.** «Passe o cursor sobre um
+ponto» e «Teclado: Tab até ao mapa» descrevem o que só é verdade na secretária,
+com o mapa inteiro e com script: entram `hidden` do servidor, o script acende-as,
+e a folha volta a apagá-las abaixo de 640 e na postura de localizador. Antes, a do
+cursor rendia-se sempre, inclusive sem JavaScript, onde o mapa não responde a nada.
+
+**Medido** (`node /…/alturas.mjs`, Chromium sem cabeça sobre as duas construções):
+
+| | 2f | 2g |
+| --- | --- | --- |
+| ficha do mapa, 1280 | 820px | **515px** |
+| cabeça (`.cabeca-grelha`), 1280 | 826px | **558px** |
+| ficha do mapa, 390 | 487px | **329px** |
+| página inteira, 1280, Relance | 3 972px | **3 705px** |
+| página inteira, 390, Relance | 4 950px | **3 937px** |
+
+### 3 · a largura da leitura breve
+
+A regra da prancha: `grid-column: span 2` para a peça aberta, uma coluna para as
+fechadas, e com as oito abertas a grelha fica 2 × 4. O comando da densidade é um
+`<details>` DENTRO da peça, e por isso quem muda de largura é o antepassado:
+`.painel:not(.painel-um) .peca:has(.peca-mais[open]) { grid-column: span 2 }`,
+acima de 640 (abaixo o painel é uma coluna só e um `span 2` criaria uma coluna
+implícita). O lado seguro de falhar está escolhido: num motor sem `:has()` a peça
+fica com a largura de hoje.
+
+**Medido** (`node /…/medir.mjs`, `?densidade=leitura`):
+
+| largura | régua antes | régua depois | peça antes | peça depois | transbordo |
+| --- | --- | --- | --- | --- | --- |
+| 768 | 309px | **673px** | 343px | 707px | 0 |
+| 1280 | 224px | **502px** | 258px | 536px | 0 |
+
+Capturas `pais-leitura-*` e `evora-leitura-*` refeitas (as 64 foram refeitas, ver §7).
+
+### 4 · a régua da convergência é uma porta no telemóvel
+
+Abaixo de 640 o instrumento fecha-se atrás de um `<details>` cujo `<summary>` leva
+**palavras e mais nada**: o título do instrumento (`home.instr1.h2`) e o comando
+(`densidade.abrir` / `fechar`). Nenhum valor e nenhum selo lá dentro — um selo
+dentro de um `<summary>` é uma porta dentro de outra porta (Emenda 2). Na
+secretária a porta não existe e o corpo está à vista, como sempre esteve.
+
+**O corpo é irmão do `<details>` e não filho dele**, e é a única decisão de forma
+desta subetapa que não segue o brief à letra. Um `<details>` fechado esconde o que
+tem dentro pelo `::details-content`, e não conheço regra de folha universalmente
+suportada que o volte a mostrar acima de 640; verificá-lo só em Chromium não é
+verificá-lo. Com o corpo ao lado, a folha usa `[open] ~`, que existe em todo o
+lado, e é a mesma mecânica que o pé da peça já usa nesta folha. O que se perde é a
+associação de árvore entre o comando e o que ele abre; o que se ganha é que a
+secretária não depende de um pseudo-elemento que ainda não está em todos os
+motores. Fica dito para a cadeira decidir.
+
+**«120 130» não foi o que eu medi, e o que medi está aqui.** As caixas dos rótulos
+120 e 130 do eixo, a 320 e a 390, não se tocam (`120[527,6..541,6]`,
+`130[595,1..609,1]`, numa tela de 660px que rola dentro da sua caixa). O único par
+de caixas sobrepostas do instrumento era outro, e estava em TODAS as larguras,
+1280 incluída: o nome da região e o seu valor no marcador («Portugal» / «82»),
+encostados por 18 unidades de patamar com corpos de 12,5px e 16px — 0,53px de
+sobreposição a 390. O nome subiu para 24 unidades e a chapa de papel por baixo
+subiu as mesmas seis, no gabarito e no seu par de execução
+(`public/js/convergencia.js`, que desenha os mesmos marcadores quando o leitor põe
+mais regiões na régua).
+
+**Medido** (`node tests/inicio/matriz.mjs`, células novas):
+
+```
+320 · a régua da convergência é uma porta de palavras
+     porta 284×44, sem alvo dentro e sem alvo à volta, sem algarismos; abre o instrumento
+320 · rótulos do instrumento sem caixas sobrepostas
+     13 rótulos · 0 pares sobrepostos · rola na sua caixa · transbordo 0
+390 · a régua da convergência é uma porta de palavras
+     porta 354×44, sem alvo dentro e sem alvo à volta, sem algarismos; abre o instrumento
+390 · rótulos do instrumento sem caixas sobrepostas
+     13 rótulos · 0 pares sobrepostos · rola na sua caixa · transbordo 0
+secretária · a porta da régua não existe e o instrumento está à vista
+     porta false · corpo true · instrumento true
+```
+
+Antes da correcção, a mesma medição a 320 e a 390 dava
+`[["Portugal","82"]]` — um par, em cada largura, e também a 1280.
+
+### 5 · a vista de escolha com a caixa vazia
+
+A regra da prancha (`V3Completo.dc.html`, `renderVals()`, linha 626): com a caixa
+vazia, Évora e o concelho escolhido, se houver um; os outros aparecem quando o
+leitor escrever. Está agora em `inicio.js` (o filtro passou a incluir o escolhido, e
+é chamado sempre que o âmbito muda) e no servidor (`Pesquisa.astro` rende visível
+só quem tem página, que é o caso de arranque da mesma regra, porque a página
+constrói-se no âmbito País).
+
+**A causa do que a revisão viu, e o que ela custa.** Os oito nomes das capturas
+(«Arcos de Valdevez, Caminha, Melgaço…») não eram os oito mais próximos: eram os
+oito PRIMEIROS da Carta, que é o que a ordenação por distância devolve quando a
+geometria degenera e todas as distâncias saem `NaN`. Mas o defeito é o menor dos
+dois problemas: a 2e fazia o selo do país devolver os oito concelhos mais próximos
+do sítio tocado (BRIEF-etapa-2 §7, segunda metade da Emenda 3), e **isso e a regra
+da prancha não podem ser as duas verdade do mesmo estado**, porque as duas
+descrevem a lista com a caixa vazia. Ficou a da prancha, que é a instrução mais
+recente e explícita (2g, ponto 5): o selo do país abre a vista de escolha e põe o
+foco na pesquisa, e a ordenação espacial saiu.
+
+**Uma cadeia mudou por causa disso**, e é a única mudança de texto que não é
+relocação nem chave nova: `inicio.movel.proximos` dizia «Um toque no mapa devolve
+os concelhos mais próximos, para escolher. No telemóvel os pontos não são alvos: a
+pesquisa é o caminho.» A primeira metade passou a descrever o que a página deixou
+de fazer, e saiu; ficou a segunda, que continua verdadeira. Nas duas edições, e
+está em `CHAVES-EN.md`. **É a única coisa desta subetapa que precisa da palavra da
+direcção**, e fica assinalada em vez de decidida.
+
+**Medido:**
+
+```
+1280 · vista de escolha, caixa vazia
+     sem escolha: evora · com Beja escolhida: beja · evora
+390 · vista de escolha, caixa vazia
+     sem escolha: evora · com Beja escolhida: beja · evora
+antes (390): Arcos de Valdevez · Caminha · Melgaço · Monção · Paredes de Coura
+             · Ponte da Barca · Valença · Vila Nova de Cerveira
+```
+
+### 6 · Évora na leitura breve
+
+O mapa pequeno passa a estar DENTRO do cartão localizador, e não ao lado dele. O
+mapa é o mesmo SVG das três posturas — 308 pontos desenham-se uma vez —, e por
+isso é a moldura que se move: na postura `inteiro` o cartão dissolve-se
+(`display: contents`) e só a tela se vê ao lado da ficha; na postura `localizador`
+o cartão volta a ser uma caixa com moldura e a tela é o seu primeiro item. Não é o
+script que troca isto: é `data-postura`, que já existia, lido pela folha. O
+`cartao.hidden` do script saiu, porque esconder o cartão passaria a esconder o
+mapa.
+
+E resolve, de caminho, uma coisa que as capturas da 2e mostravam e ninguém tinha
+medido: a 390, o mapa de 170px do localizador desenhava-se POR CIMA das duas
+linhas «Abrir um concelho» e «Ver uma região», porque a coluna do selo tem 84px e
+ele estava fora do cartão. Agora o cartão inteiro desce para a segunda fila, com o
+mapa a 84px lá dentro, e o selo do país — que ficaria a ser uma porta invisível
+sobre um espaço em branco — desaparece nessa postura.
+
+**Medido:**
+
+```
+Évora · o mapa do localizador está dentro do cartão, e o mapa inteiro fica no Relance
+     leitura: localizador 170px dentro do cartão (moldura 1px) · relance: inteiro 281px
+     com ficha · 1 mapa no documento
+```
+
+### 7 · o rótulo do distrito (ISSUES I18, fechado)
+
+Uma regra para os 308, a da prancha: `distrito de <d>` quando o campo da Carta é um
+distrito, o nome de ilha nu quando começa por «Ilha». A regra decide-se na
+construção (`src/lib/inicio.mjs`, `eIlha()`), cada ponto da ilha da CAOP leva
+`data-ilha`, e o prefixo é um par de cadeias validadas (`inicio.cabeca.distritoDe`,
+«distrito de » / «district of ») que já está escrito na página nas duas edições: o
+script só lhe troca o `hidden`. As duas ranhuras continuam ranhuras. A mesma regra
+vale no que o mapa lê em voz alta, que é o outro sítio onde o campo da Carta se
+rende como etiqueta.
+
+Évora continua a trazer a sua etiqueta de `municipios.mjs` («distrito de Évora»),
+que o ficheiro publica e que esta subetapa não abriu.
+
+**Medido** (30 dos 308 concelhos são de ilha, contados sobre `dist/index.html`:
+`grep -o 'data-ilha="sim"' dist/index.html | wc -l` → 30):
+
+```
+o rótulo do distrito segue uma regra só nos 308 (ISSUES I18)
+     Beja «distrito de Beja» · Horta «Ilha do Faial» · Lagoa «Ilha de São Miguel»
+     · Évora traz a sua etiqueta de municipios.mjs
+```
+
+---
+
+## 2g · as réguas
+
+### A matriz de aceitação
+
+`node tests/inicio/matriz.mjs` — **68 de 68 células passam** (55 da 2f, todas ainda
+verdes, mais 13 novas, uma por correcção e algumas por largura). As 13:
+
+```
+passa  o sinal de tempo do painel só se lê no âmbito País
+       pais true · regiao false · évora false · beja false
+passa  a ficha do mapa é compacta e o fundo leva a citação, o CSV e as dicas
+       ficha 515px · citação, CSV e dicas na camada de fundo, fechada · linha de fonte com selo
+passa  largura 768 · a peça aberta ocupa duas colunas
+       régua 673px · grid-column-start «span 2» em 8 peças · transbordo 0
+passa  largura 1280 · a peça aberta ocupa duas colunas
+       régua 502px · grid-column-start «span 2» em 8 peças · transbordo 0
+passa  largura 320 · a régua da convergência é uma porta de palavras
+passa  largura 320 · rótulos do instrumento sem caixas sobrepostas
+passa  largura 390 · a régua da convergência é uma porta de palavras
+passa  largura 390 · rótulos do instrumento sem caixas sobrepostas
+passa  secretária · a porta da régua não existe e o instrumento está à vista
+passa  largura 1280 · vista de escolha, caixa vazia
+passa  largura 390 · vista de escolha, caixa vazia
+passa  Évora · o mapa do localizador está dentro do cartão, e o mapa inteiro fica no Relance
+passa  o rótulo do distrito segue uma regra só nos 308 (ISSUES I18)
+```
+
+As células da 2f que estas mudanças tocam continuam verdes, e são: as cinco mudanças
+de estado, o foco e o anúncio de cada uma, para trás e para a frente, a recarga em
+cada estado, os cinco valores inválidos, as quatro larguras sem transbordo, os dois
+temas, o movimento reduzido, **o selo de 44×44 em 31 de 31 peças, 0 aninhados, 0
+pares sobrepostos, o selo como maior alvo (7 040px² contra 2 415px²)**, e as quatro
+rendições sem JavaScript.
+
+### O transbordo, estado a estado — e um defeito que NÃO é meu e não fica escondido
+
+`node /…/varrer.mjs dist-2f dist-2g`, seis estados × quatro larguras, nas duas
+construções. **23 das 24 combinações dão zero nas duas.** A que não dá é a mesma
+nas duas:
+
+```
+dist-2f  evora-leitura  320:10 regua-ref-rotulo «limite legal»  |  390:10 …  |  768:0  |  1280:0
+dist-2g  evora-leitura  320:10 regua-ref-rotulo «limite legal»  |  390:10 …  |  768:0  |  1280:0
+```
+
+O rótulo da referência da régua do índice de dívida de Évora («limite legal») sai
+10px para fora da janela a 320 e a 390, porque um tecto legal é o extremo da sua
+própria escala e o rótulo está centrado nele. **Vem da 2c/2f, não desta subetapa,
+não é nenhuma das sete, e não a corrigi**: a instrução desta ronda é fazer as sete
+e nada mais. Fica em `ISSUES.md` como **I20**, com a medição e o remédio de uma
+linha.
+
+### A régua da invariância
+
+`node scripts/medir-invariancia.mjs <2f> <2g>` — o delta exacto desta subetapa,
+com a construção da 2f refeita a partir do mesmo ramo para o efeito:
+
+```
+322 rotas · 320 idênticas em texto · 2 com diferenças
+  /      +10 −1
+  /en/   +10 −1
+```
+
+**Nenhuma outra rota mudou um bloco de texto.** Os dez que entram, um a um
+(`node /…/diffblocos.mjs`):
+
+| bloco que entra | de que correcção |
+| --- | --- |
+| «No telemóvel os pontos não são alvos: a pesquisa é o caminho.» | 5 (a cadeia aparada) |
+| «Direção-Geral do Território (DGT) · Carta Administrativa Oficial de Portugal (CAOP)» | 2 (a linha de fonte) |
+| «2025» | 2 (o `reference_date` da mesma linha) |
+| «fonte» | 2 (o selo da mesma linha) |
+| «Linha do livro-razão: calculado · O Estado do País, apuramento próprio» | 2 (o texto oculto do mesmo selo) |
+| «Método, ressalvas e proveniência» | 2 (o rótulo da camada de fundo, R3) |
+| «A régua da convergência» | 4 (o nome na porta) |
+| «abrir» · «fechar» | 4 (as duas metades do comando da porta) |
+| «distrito de» × 2 | 7 (o rótulo de âmbito e a leitura do mapa) |
+
+E o único que sai: «Um toque no mapa devolve os concelhos mais próximos, para
+escolher. No telemóvel os pontos não são alvos: a pesquisa é o caminho.» (5).
+
+**As correcções 1, 3 e 6 não acrescentam nem tiram um bloco de texto**, e é isso
+que se espera delas: são forma.
+
+Contra a base `77e82eb`, para comparar com a linha da 2f: `/` e `/en/` passam de
+`+705 −18` a `+706 −16`; as outras 305 rotas com diferenças continuam a ser as da
+etapa 1e («Menu») e a do vocabulário de cobertura em `/municipios`.
+
+`node scripts/medir-invariancia.mjs --chaves` imprime **14 chaves** com o mesmo
+valor nas duas edições — o mesmo número da 2f, e nenhuma nova. As três cadeias
+que esta subetapa escreveu têm inglês próprio.
+
+### As duas réguas antigas
+
+- **Defeitos**: `node scripts/medir-defeitos.mjs --json` dá um ficheiro **idêntico,
+  byte a byte**, ao da 2f (`diff` sem saída). 307 páginas; porta de correcções
+  307/307; primeira página 0 valores sem selo e 0 selos para outra linha; frases de
+  moldura 94 distintas · 2 405 ocorrências; cobertura 1 distinta por estado e por
+  edição nas quatro combinações. **Delta: nenhum**, e era o esperado — esta
+  subetapa não move uma frase de uma página para outra.
+- **Contraste**: `2026-08-20-etapa-2g-contraste.json` é **idêntico, byte a byte**,
+  ao da 2f e ao da 1c. Nenhum par novo, nenhum literal de cor.
+
+Guardados em `design/especime-v3/medicoes/2026-08-20-etapa-2g-{defeitos,contraste,matriz,invariancia}.json`.
+
+### As capturas
+
+`node tests/inicio/capturas.mjs` — **as 64 refeitas**, mesmos nomes, mesma pasta.
+Todas mudaram: a cabeça encolheu em todos os estados (2), a porta da régua entra em
+todas as capturas a 390 (4), o sinal de tempo sai de três âmbitos (1), a leitura
+breve muda de grelha (3), a vista de escolha muda de lista (5), Évora muda de
+cartão (6) e Beja muda de rótulo (7).
+
+---
+
+## 2g · o que fica por fazer, e porquê
+
+1. **I20, o transbordo de 10px em Évora na leitura breve** (acima). Vem da 2c, não
+   é das sete, e não lhe toquei.
+2. **I21, «Toque num ponto para escolher o concelho.» no telemóvel.** A dica rende-se
+   sempre que o âmbito é Município, inclusive a 390, onde nenhum ponto é alvo
+   (Emenda 3: o selo inteiro é o alvo). É da mesma família das duas dicas que o
+   ponto 2 mandou fechar, mas o ponto 2 nomeia duas e esta é a terceira. Fica dita.
+3. **A ordenação espacial do selo do país** (ponto 5 acima): saiu, e a razão é que
+   contradiz a regra da prancha para a caixa vazia. É uma chamada da direcção se
+   quiser as duas coisas — teriam de ser estados diferentes, com gestos diferentes.
+4. **A cadeia `inicio.movel.proximos`**, aparada em vez de removida. Chamada
+   editorial, assinalada.
+
+## 2g · quem fez o quê, e quanto custou
+
+**Claude Opus** (construtor B2), num só fio, sem subagentes e sem delegação. Nenhuma
+parte desta subetapa correu noutro modelo.
+
+**Contagem de fichas:** a única contagem honesta é a diferença de dois contadores.
+No início desta subetapa o contador dizia cerca de **14,97 milhões** por usar; no
+commit dizia cerca de **14,64 milhões** — ou seja **≈ 335 mil fichas**. A
+estimativa do brief era 120 a 200 mil, e foi passada: o que a passou foi a
+medição, não a escrita. Sete correcções, treze células novas de matriz, uma
+segunda construção do ramo para ter o delta de invariância exacto em vez de o
+inferir de duas leituras contra a base, uma varredura de seis estados por quatro
+larguras nas duas construções, e 64 capturas refeitas. Não tenho um número exacto
+e não o invento.

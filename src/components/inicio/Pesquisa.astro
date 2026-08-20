@@ -17,10 +17,14 @@
  * pela mesma função que faz o pedaço do endereço (`src/lib/inicio.mjs`). O
  * cliente normaliza só o que o leitor escreveu, que não é texto da página.
  *
- * COM A CAIXA VAZIA, A LISTA NÃO ESTÁ VAZIA. Mostram-se os concelhos que já têm
- * página — hoje um, Évora. Uma vista de escolha que começa em branco não diz a
- * quem chega que há alguma coisa para escolher, e a cobertura deste sítio é
- * precisamente a informação que falta a quem procura.
+ * COM A CAIXA VAZIA, A LISTA NÃO ESTÁ VAZIA, E TAMBÉM NÃO ESTÁ CHEIA. Mostram-se
+ * os concelhos que já têm página — hoje um, Évora — e, quando há um concelho
+ * escolhido, também ele. É a regra da prancha, e a construção do servidor é o
+ * seu caso de arranque: a página constrói-se no âmbito País, onde não há
+ * concelho escolhido, e por isso sai com Évora e mais nada. Uma vista de escolha
+ * que começa em branco não diz a quem chega que há alguma coisa para escolher, e
+ * uma que começa com os oito primeiros nomes da Carta diz que aqueles oito são
+ * especiais, o que não é verdade.
  *
  * SEM JAVASCRIPT NÃO SE VÊ NADA DISTO, e é de propósito: o âmbito «Município»
  * só se atinge com script, e o comando dele leva, sem script, ao índice dos 308

@@ -84,6 +84,14 @@ escolha custou algo está dita a razão.
 
 *(por preencher na subetapa 2e: `inicio.movel.*`)*
 
+**2g · três cadeias, e nenhuma delas é texto novo de raiz.**
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| **`inicio.cabeca.distritoDe`** | **distrito de ** | **district of ** | **chave nova**, e é a que fecha ISSUES I18. O espaço final é parte da cadeia nos dois lados: o prefixo cola-se ao nome que a Carta escreve, e o nome não se toca. Os nomes de ilha ficam em português nas duas edições, como já acontece com «concelho» e pela mesma razão: são nomes próprios da Carta Administrativa, e «island of Faial» não é o nome de nada. Quem decide qual dos dois casos se aplica é o servidor, para os 308, e o script só troca o `hidden` do prefixo |
+| **`inicio.mapa.deepTitulo`** | Método, ressalvas e proveniência | Method, caveats and provenance | **não é texto novo**: é `home.instr2.deepTitulo` da v2, relocado com a sua secção (R3) e sem uma palavra mudada. Fica igual, à letra, a `home.instr1.deepTitulo`, e ficava igual na v2 também: os dois instrumentos tinham a sua própria chave com o mesmo rótulo, porque o rótulo nomeia a camada e não o instrumento |
+| **`inicio.movel.proximos`** | ~~Um toque no mapa devolve os concelhos mais próximos, para escolher.~~ No telemóvel os pontos não são alvos: a pesquisa é o caminho. | ~~Tapping the map returns the nearest concelhos to choose from.~~ On a phone the points are not targets: the search is the way. | **cadeia aparada, nas duas edições.** A primeira frase descrevia a ordenação espacial que a 2g tirou (ponto 5: com a caixa vazia a lista é a da prancha), e uma frase que promete o que a página não faz é pior do que nenhuma. A segunda continua verdadeira e fica. **Chamada editorial: se a direcção quiser outra frase, é uma cadeia** |
+
 ### Etapa 3
 *(por preencher: `linha.*`, `livro.*`, `municipios.*`, `municipio.*`)*
 

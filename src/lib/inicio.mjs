@@ -85,6 +85,25 @@ function slugsDaCarta() {
  * maior — são uma porta que abre o concelho do lado (é a medição da etapa 1d,
  * ISSUES I13, aplicada a um mapa em vez de a uma fila de selos).
  */
+/**
+ * A CARTA ESCREVE DUAS COISAS NO MESMO CAMPO, E A ETIQUETA TEM DE AS DISTINGUIR.
+ *
+ * ISSUES I18, fechado na subetapa 2g. O campo que a CAOP dá a cada concelho é
+ * um distrito («Beja», «Viana do Castelo») ou uma ilha («Ilha do Faial», «Ilha
+ * de São Miguel»), e as duas coisas não se leem da mesma maneira: «distrito de
+ * Beja» é o que se diz, e «distrito de Ilha do Faial» não é português nenhum.
+ *
+ * A regra é a da prancha, e é uma só para os 308: prefixo «distrito de» quando
+ * o campo é um distrito, nome de ilha nu quando começa por «Ilha». Fica
+ * decidida AQUI, na construção, e não no cliente: o que o script faz com ela é
+ * trocar `hidden` a um prefixo que já está escrito na página, nas duas edições.
+ *
+ * A comparação é sobre a primeira palavra do campo, e não sobre uma lista de
+ * nomes: a lista de ilhas de `caop-centroids.mjs` é derivada do mesmo campo, e
+ * conferir uma lista contra a outra seria conferir a Carta contra ela própria.
+ */
+export const eIlha = (distrito) => /^Ilha\b/.test(String(distrito));
+
 export function concelhos() {
   const paginaPorIndice = new Map(MUNICIPIOS_COM_PAGINA.map((m) => [m.caopIndex, m]));
   const slugs = slugsDaCarta();
@@ -92,6 +111,7 @@ export function concelhos() {
     i,
     nome: m[0],
     distrito: DISTRITOS[m[1]],
+    ilha: eIlha(DISTRITOS[m[1]]),
     x: m[2],
     y: m[3],
     slug: slugs[i],

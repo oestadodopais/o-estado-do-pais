@@ -46,10 +46,12 @@
  * principal no telemóvel.
  */
 import Claim from '../Claim.astro';
+import Provenance from '../Provenance.astro';
 import ValorDaProva from '../ValorDaProva.astro';
 import { FRAMES, FIELD_W, FIELD_H } from '../../data/caop-centroids.mjs';
 import { VERBATIM } from '../../data/verbatim.mjs';
 import { DADOS } from '../../lib/dados.mjs';
+import { getClaim } from '../../lib/ledger.mjs';
 import { routePath } from '../../lib/routes.mjs';
 
 const { s, lang, p, concelhos, evora } = Astro.props;
@@ -84,9 +86,41 @@ const parcelas = [
   { rotulo: s.inicio.mapa.acores, claim: 'municipios-acores-caop-2025' },
   { rotulo: s.inicio.mapa.madeira, claim: 'municipios-madeira-caop-2025' },
 ];
+
+/* ---------------------------------------------------------------------------
+ * A LINHA DE FONTE COMPACTA (subetapa 2g, ponto 2)
+ * ---------------------------------------------------------------------------
+ * A ficha ao lado do mapa levava a citação inteira da CAOP — publicação,
+ * distribuição, os três nomes de ficheiro, dois endereços e a data de acesso —
+ * e era ela que mandava na altura da cabeça. A citação desce inteira para a
+ * camada de fundo, onde continua a ser conferida carácter a carácter por
+ * `data-verbatim`, e o que fica ao lado do mapa é UMA linha, montada dos campos
+ * da própria linha do livro-razão: quem publica e o que publicou.
+ *
+ * Nenhuma palavra nova: `source` e `document.title` são a linha, e o ano é o
+ * `reference_date` dela, marcado com o motivo que já existe. A porta é o selo
+ * de sempre, na forma de sempre.
+ */
+const caop = getClaim('municipios-portugal-caop-2025');
 ---
 
 <figure class="mapa" id="mapa" data-instrumento="mapa" data-mapa-raiz data-postura="inteiro">
+  {/* ------------------------------------------------------------------------
+      O CARTÃO LOCALIZADOR TEM O MAPA DENTRO, E NÃO AO LADO (Emenda 3, 2g·6)
+      ------------------------------------------------------------------------
+      Quando um concelho está escolhido e a leitura aprofunda, a prancha desenha
+      UM cartão com moldura, e dentro dele o mapa pequeno à esquerda e o nome, a
+      cobertura, o selo e as duas portas à direita. A construção desenhava a
+      moldura só à volta do texto, com o mapa de fora, e por isso o leitor via
+      dois objectos onde a prancha tem um.
+      O mapa é o mesmo SVG das três posturas — 308 pontos desenham-se uma vez —,
+      e por isso é a moldura que se move e não o mapa: na postura «inteiro» o
+      cartão dissolve-se (`display: contents`) e só a tela se vê, ao lado da
+      ficha; na postura «localizador» o cartão volta a ser uma caixa com
+      moldura, e a tela é o seu primeiro item. Não é o script que troca isto: é
+      `data-postura`, que já existia, lido pela folha.
+      ---------------------------------------------------------------------- */}
+  <div class="mapa-cartao" data-mapa-cartao>
   <div class="mapa-tela" data-mapa-wrap>
     <svg
       class="mapa-svg"
@@ -132,6 +166,7 @@ const parcelas = [
               height={c.lado}
               data-m={c.nome}
               data-d={c.distrito}
+              data-ilha={c.ilha ? 'sim' : null}
               data-caop={c.slug}
             />
           ))
@@ -156,6 +191,33 @@ const parcelas = [
         }
       </g>
     </svg>
+  </div>
+
+    <div class="mapa-cartao-texto">
+      <p class="mapa-cartao-nome">
+        <span data-slot="nome">{evora?.nome}</span>
+      </p>
+      <p class="mapa-cartao-cobertura">
+        <ValorDaProva chave="municipios_com_pagina" item={p.municipios_com_pagina} lang={lang} />
+        {s.inicio.mapa.coberturaA}
+        <ValorDaProva chave="municipios_total" item={p.municipios_total} lang={lang} />
+        {s.inicio.mapa.coberturaB}
+        <span data-cobertura="com-pagina">{s.cobertura.temPagina}</span>
+      </p>
+      <p class="mapa-cartao-selo">
+        <Claim id="municipios-portugal-caop-2025" lang={lang} chip={true} />
+      </p>
+      <p class="mapa-cartao-portas">
+        <a class="lig" href="#pesquisa" data-trocar>{s.inicio.mapa.trocar} →</a>
+        {
+          rotaDeEvora && (
+            <a class="lig" href={rotaDeEvora} data-so-evora hidden>
+              {s.inicio.mapa.paginaInteira} →
+            </a>
+          )
+        }
+      </p>
+    </div>
   </div>
 
   <figcaption class="mapa-ficha" data-mapa-ficha>
@@ -189,47 +251,53 @@ const parcelas = [
       </div>
     </div>
 
-    <p class="mapa-fonte verbatim" data-verbatim="caop-fonte" lang="pt-PT">
-      {VERBATIM['caop-fonte'].text}
-    </p>
-    <p class="mapa-dados">
-      <a class="ligacao-dados" href={DADOS.municipios} download>{s.home.dadosLink} ↓</a>
+    {/* A linha de fonte compacta: quem publica, o que publicou, o ano da
+        edição, e o selo que abre a linha. A citação inteira está na camada de
+        fundo, aqui em baixo. */}
+    <p class="mapa-fonte-curta">
+      {caop.source} · {caop.document.title}{' '}
+      <span data-nonledger="data-de-referencia">{caop.reference_date}</span>{' '}
+      <Provenance id="municipios-portugal-caop-2025" lang={lang} />
     </p>
 
     <p class="mapa-hint" data-hint-escolher>{s.inicio.mapa.escolher}</p>
 
     <div class="mapa-leitura" data-readout aria-live="polite">
-      <span class="readout-hint" data-readout-hint>{s.inicio.mapa.readoutHint}</span>
       <span class="readout-name" data-readout-nome hidden></span>
+      <span class="readout-pre" data-readout-pre hidden>{s.inicio.cabeca.distritoDe}</span>
       <span class="readout-sub" data-readout-sub hidden></span>
     </div>
-    <p class="mapa-hint" data-teclado hidden>{s.inicio.mapa.tecladoHint}</p>
   </figcaption>
 
-  {/* O cartão localizador: a mesma tela, outra moldura e outro texto. */}
-  <div class="mapa-cartao" data-mapa-cartao hidden>
-    <p class="mapa-cartao-nome">
-      <span data-slot="nome">{evora?.nome}</span>
-    </p>
-    <p class="mapa-cartao-cobertura">
-      <ValorDaProva chave="municipios_com_pagina" item={p.municipios_com_pagina} lang={lang} />
-      {s.inicio.mapa.coberturaA}
-      <ValorDaProva chave="municipios_total" item={p.municipios_total} lang={lang} />
-      {s.inicio.mapa.coberturaB}
-      <span data-cobertura="com-pagina">{s.cobertura.temPagina}</span>
-    </p>
-    <p class="mapa-cartao-selo">
-      <Claim id="municipios-portugal-caop-2025" lang={lang} chip={true} />
-    </p>
-    <p class="mapa-cartao-portas">
-      <a class="lig" href="#pesquisa" data-trocar>{s.inicio.mapa.trocar} →</a>
-      {
-        rotaDeEvora && (
-          <a class="lig" href={rotaDeEvora} data-so-evora hidden>
-            {s.inicio.mapa.paginaInteira} →
-          </a>
-        )
-      }
-    </p>
-  </div>
+  {/* ------------------------------------------------------------------------
+      A CAMADA DE FUNDO DO MAPA (subetapa 2g, ponto 2)
+      ------------------------------------------------------------------------
+      O rótulo é o do instrumento n.º 2 da v2, relocado com a sua secção (R3) e
+      sem uma palavra mudada. Debaixo dele: a citação da CAOP inteira, tal como
+      a v2 a publicava e conferida carácter a carácter; a porta do CSV; e as
+      duas dicas de uso do mapa.
+
+      AS DICAS SÓ EXISTEM ONDE O MAPA ESCOLHE PONTOS. «Passe o cursor» e
+      «Teclado: Tab até ao mapa» descrevem o que só é verdade na secretária, com
+      o mapa inteiro e com script: no telemóvel os pontos não são alvos (Emenda
+      3) e sem script o mapa não responde a nada. Por isso as duas entram
+      `hidden`, o script tira-lhes o `hidden`, e a folha volta a escondê-las
+      abaixo de 640 e na postura de localizador. Uma dica que descreve o que a
+      página não faz é uma promessa falhada, e é mais barato não a escrever.
+      ---------------------------------------------------------------------- */}
+  <details class="mapa-fundo" data-mapa-fundo>
+    <summary class="mapa-fundo-sum">{s.inicio.mapa.deepTitulo}</summary>
+    <div class="mapa-fundo-corpo">
+      <p class="mapa-fonte verbatim" data-verbatim="caop-fonte" lang="pt-PT">
+        {VERBATIM['caop-fonte'].text}
+      </p>
+      <p class="mapa-dados">
+        <a class="ligacao-dados" href={DADOS.municipios} download>{s.home.dadosLink} ↓</a>
+      </p>
+      <div class="mapa-dicas" data-dicas>
+        <p class="mapa-hint" data-dica-cursor hidden>{s.inicio.mapa.readoutHint}</p>
+        <p class="mapa-hint" data-teclado hidden>{s.inicio.mapa.tecladoHint}</p>
+      </div>
+    </div>
+  </details>
 </figure>

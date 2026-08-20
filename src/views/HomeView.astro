@@ -168,6 +168,11 @@ const blocos = [
     tipo: 'vazio',
     nome: primeiroSemPagina?.nome ?? '',
     distrito: primeiroSemPagina?.distrito ?? '',
+    /* ISSUES I18: o prefixo «distrito de» rende-se, ou não, conforme o campo
+       da Carta seja um distrito ou uma ilha. O servidor decide-o para o
+       concelho com que a página é construída; o script troca o `hidden` do
+       prefixo quando o leitor escolhe outro. */
+    ilha: primeiroSemPagina?.ilha ?? false,
     estados: [],
   },
 ];
@@ -332,23 +337,66 @@ const blocos = [
     </div>
 
     {/* A âncora `#numeros` é a porta do sinal de tempo do cabeçalho e da chave
-        `painel_reconferido_em` da prova: é aqui que essa data se vê. */}
-    <p class="sec-sub verificacao" id="numeros" data-vencida={verificacao.vencida ? 'sim' : null}>
+        `painel_reconferido_em` da prova: é aqui que essa data se vê.
+
+        E leva `data-so-pais` desde a 2g: a data é a reconferência do PAINEL
+        EUROPEU, e rendia-se por baixo das oito medidas de Évora e por baixo do
+        estado vazio de Beja, onde é uma frase sobre outra coisa. A âncora
+        continua a existir no documento em qualquer âmbito, e por isso as duas
+        portas que a prometem continuam a resolver; o que muda é que só se lê
+        onde o painel que ela data está à vista. */}
+    <p
+      class="sec-sub verificacao"
+      id="numeros"
+      data-so-pais
+      data-vencida={verificacao.vencida ? 'sim' : null}
+    >
       {verificacao.vencida ? s.sinal.vencido : s.sinal.reconferido}{' '}
       <span data-nonledger="data-de-atualizacao">{verificacao.verificadoEm}</span>.
     </p>
   </section>
 
   <!-- ============================ Instrumento n.º 1 · só no âmbito País -->
+  {/* --------------------------------------------------------------------
+      A RÉGUA DA CONVERGÊNCIA É UMA PORTA NO TELEMÓVEL (ponto 10a da direcção)
+      --------------------------------------------------------------------
+      Abaixo de 640 o instrumento fecha-se atrás de uma linha, e a linha é um
+      `<details>` nativo: teclado, estado anunciado pelo navegador, e nada
+      disto precisa de script. O `<summary>` leva PALAVRAS e mais nada — o
+      título do instrumento e o comando —, porque um valor ali dentro seria um
+      número sem porta e um selo ali dentro seria uma porta dentro de outra
+      porta (Emenda 2). O valor e o selo ficam onde sempre estiveram, dentro do
+      instrumento.
+
+      O corpo é IRMÃO do `<details>` e não filho dele, e a razão é medida: um
+      `<details>` fechado esconde o que tem dentro pelo `::details-content`, e
+      não há regra de folha universalmente suportada que o volte a mostrar na
+      secretária. Com o corpo ao lado, a folha faz uma coisa só, com selectores
+      que existem em todo o lado: `[open] ~` mostra, e acima de 640 a porta
+      desaparece e o corpo está sempre à vista. É a mesma mecânica que o pé da
+      peça já usa nesta folha. O que se perde é a associação de árvore entre o
+      comando e o que ele abre; o que se ganha é que a secretária não depende
+      de um pseudo-elemento que ainda não está em todos os motores.
+      -------------------------------------------------------------------- */}
   <section id="convergencia" data-so-pais>
-    <div class="sec-head">
-      <span class="eyebrow">
-        {s.home.instr1.eyebrow} <span data-nonledger="numeracao">{lang === 'pt' ? 'n.º 1' : 'no. 1'}</span>
-      </span>
-      <h2>{s.home.instr1.h2}</h2>
-      <p class="sec-sub"><Frase partes={s.home.instr1.subPartes} lang={lang} /></p>
+    <details class="conv-porta" data-conv-porta>
+      <summary class="conv-porta-sum">
+        <span class="conv-porta-seta" aria-hidden="true"></span>
+        <span class="conv-porta-nome">{s.home.instr1.h2}</span>
+        <span class="conv-porta-a">{s.densidade.abrir}</span>
+        <span class="conv-porta-f">{s.densidade.fechar}</span>
+      </summary>
+    </details>
+    <div class="conv-corpo">
+      <div class="sec-head">
+        <span class="eyebrow">
+          {s.home.instr1.eyebrow} <span data-nonledger="numeracao">{lang === 'pt' ? 'n.º 1' : 'no. 1'}</span>
+        </span>
+        <h2>{s.home.instr1.h2}</h2>
+        <p class="sec-sub"><Frase partes={s.home.instr1.subPartes} lang={lang} /></p>
+      </div>
+      <InstrumentoConvergencia lang={lang} />
     </div>
-    <InstrumentoConvergencia lang={lang} />
   </section>
 
   <!-- ============================ As portas · só no âmbito País -->
