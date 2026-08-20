@@ -1,0 +1,111 @@
+---
+/**
+ * A CABEÇA DA PRIMEIRA PÁGINA — rótulo do âmbito, manchete, fila de estados, lede.
+ *
+ * ---------------------------------------------------------------------------
+ * TODOS OS ÂMBITOS ESTÃO NO HTML, E O SCRIPT SÓ ACENDE UM
+ * ---------------------------------------------------------------------------
+ * É a resposta 3 da direcção à crítica cruzada: **o código de execução escolhe
+ * cadeias já validadas e nunca compõe um número**. Tudo o que a página pode
+ * mostrar em qualquer estado saiu do servidor e passou pelo portão; o script
+ * troca `hidden`, e mais nada.
+ *
+ * São nove blocos: País, as seis leituras da régua da convergência (Portugal
+ * incluído), Évora, e UM bloco para os outros 307 concelhos. O último é o único
+ * que tem texto por preencher, e o que se lhe preenche são dois `<span
+ * data-slot>`: o nome do concelho e o seu distrito ou ilha, copiados com
+ * `textContent` do nó daquele concelho na ilha da CAOP que o mapa já desenhou.
+ * Nenhuma outra cadeia é montada, e nenhum algarismo é escrito.
+ *
+ * NOVE `<h1>` NO DOCUMENTO, OITO DELES `hidden`. É deliberado, e o preço é
+ * conhecido: `hidden` tira o elemento da árvore de acessibilidade, e por isso um
+ * leitor de ecrã encontra sempre exactamente um título de nível 1 — o do âmbito
+ * que está aceso. A alternativa era compor o título no cliente, que é a coisa
+ * que esta página não faz.
+ *
+ * A MANCHETE DO PAÍS TRAZ UMA CONTAGEM, e a contagem é um número do próprio
+ * sítio: `data-prova="painel_fora_do_limiar"`, com a porta para o painel, e não
+ * uma palavra escrita à mão («Quatro»). O portão reconta-a. Como uma contagem
+ * pode ser um ou muitos, há duas frases e o SERVIDOR escolhe a certa; o cliente
+ * não escolhe nada, porque o número não muda depois da construção.
+ */
+import Claim from '../Claim.astro';
+import Frase from '../Frase.astro';
+import ValorDaProva from '../ValorDaProva.astro';
+import FilaDeEstados from './FilaDeEstados.astro';
+
+const { s, lang, p, blocos, ambito } = Astro.props;
+
+/* Uma ou muitas: a frase certa escolhe-se aqui, na construção, com a contagem
+   que o portão vai reconferir. Sem plural inventado no cliente. */
+const fora = p.painel_fora_do_limiar.valor;
+const tituloPais = fora === 1 ? s.inicio.cabeca.tituloPaisUm : s.inicio.cabeca.tituloPaisMuitos;
+---
+
+<div class="cabeca-col">
+  {
+    blocos.map((b) => (
+      <div class="cabeca-bloco" data-cabeca={b.chave} hidden={b.chave !== ambito}>
+        {b.tipo === 'pais' && (
+          <>
+            <p class="cabeca-rotulo">
+              {s.inicio.cabeca.paisA}
+              <ValorDaProva chave="painel_total" item={p.painel_total} lang={lang} />
+              {s.inicio.cabeca.paisB}
+            </p>
+            <h1 class="cabeca-h1">
+              <ValorDaProva
+                chave="painel_fora_do_limiar"
+                item={p.painel_fora_do_limiar}
+                lang={lang}
+              />
+              {tituloPais}
+            </h1>
+            <FilaDeEstados s={s} estados={b.estados} />
+            <p class="cabeca-lede">{s.inicio.cabeca.ledePais}</p>
+          </>
+        )}
+
+        {b.tipo === 'regiao' && (
+          <>
+            <p class="cabeca-rotulo">{b.nome}{s.inicio.cabeca.regiaoSufixo}</p>
+            <h1 class="cabeca-h1"><Frase partes={b.frase} lang={lang} selos={true} /></h1>
+            <FilaDeEstados s={s} estados={b.estados} />
+            <p class="cabeca-lede"><Frase partes={s.inicio.cabeca.ledeRegiaoPartes} lang={lang} /></p>
+          </>
+        )}
+
+        {b.tipo === 'evora' && (
+          <>
+            <p class="cabeca-rotulo">
+              {b.nome}{s.inicio.cabeca.municipioPalavra}{b.distrito}
+            </p>
+            <h1 class="cabeca-h1">{s.inicio.cabeca.tituloEvora}</h1>
+            <FilaDeEstados s={s} estados={b.estados} />
+            <p class="cabeca-lede">{s.municipio.ledeA}{b.nome}{s.municipio.ledeB}</p>
+          </>
+        )}
+
+        {b.tipo === 'vazio' && (
+          <>
+            <p class="cabeca-rotulo">
+              <span data-slot="nome">{b.nome}</span>
+              {s.inicio.cabeca.municipioPalavra}
+              <span data-slot="distrito">{b.distrito}</span>
+            </p>
+            <h1 class="cabeca-h1">
+              {s.inicio.cabeca.tituloVazioA}
+              <span data-slot="nome">{b.nome}</span>
+              {s.inicio.cabeca.tituloVazioB}
+            </h1>
+            <p class="cabeca-lede">
+              {s.inicio.cabeca.ledeVazioA}
+              <span data-slot="nome">{b.nome}</span>
+              {s.inicio.cabeca.ledeVazioB}
+            </p>
+          </>
+        )}
+      </div>
+    ))
+  }
+</div>

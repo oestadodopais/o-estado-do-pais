@@ -1,6 +1,32 @@
 ---
 /**
- * A primeira página. Uma só fonte para as duas edições: recebe `lang` e nada mais.
+ * A PRIMEIRA PÁGINA v3. Uma só fonte para as duas edições: recebe `lang` e nada mais.
+ *
+ * ---------------------------------------------------------------------------
+ * O QUE MUDOU, E A REGRA QUE GOVERNA TUDO O QUE SE SEGUE
+ * ---------------------------------------------------------------------------
+ * A página passou a ter estado: um âmbito (País, uma região, um concelho) e uma
+ * densidade (Relance, Leitura breve), codificados no endereço, porque é o
+ * endereço que se partilha (Emenda 7). E a regra que isso obriga é a resposta 3
+ * da direcção à crítica cruzada:
+ *
+ *   **O CÓDIGO DE EXECUÇÃO ESCOLHE CADEIAS JÁ VALIDADAS E NUNCA COMPÕE UM
+ *   NÚMERO.** Tudo o que a página pode mostrar em qualquer estado saiu deste
+ *   ficheiro, foi construído pelo servidor e passou pelo portão de HTML. O
+ *   script troca `hidden`, `open`, `aria-pressed` e `aria-current`, e escreve o
+ *   `textContent` de dois `<span data-slot>` — o nome e o distrito do concelho
+ *   escolhido, copiados do nó daquele concelho na ilha da CAOP que o mapa
+ *   desenhou. Não há `innerHTML`, não há cadeia montada, não há aritmética que
+ *   produza um algarismo à vista.
+ *
+ * O que isto custa é peso: nove blocos de cabeça, os 308 resultados da pesquisa
+ * e os 308 pontos do mapa saem todos do servidor. O que isto compra é que o
+ * portão vê tudo o que o leitor pode ver — que é a única maneira de a promessa
+ * do sítio continuar de pé quando a página ganha estado.
+ *
+ * SEM JAVASCRIPT a página é o âmbito País em Relance, completa e correcta, e os
+ * comandos são ligações para sítios que existem: `/` para o país,
+ * `/#convergencia` para a leitura regional, `/municipios` para os 308.
  */
 import Base from '../layouts/Base.astro';
 import Masthead from '../components/Masthead.astro';
@@ -8,39 +34,110 @@ import Claim from '../components/Claim.astro';
 import Provenance from '../components/Provenance.astro';
 import Frase from '../components/Frase.astro';
 import InstrumentoConvergencia from '../components/InstrumentoConvergencia.astro';
-import InstrumentoMapa from '../components/InstrumentoMapa.astro';
+import Comando from '../components/inicio/Comando.astro';
+import Cabeca from '../components/inicio/Cabeca.astro';
+import Pesquisa from '../components/inicio/Pesquisa.astro';
+import MapaRespira from '../components/inicio/MapaRespira.astro';
+import BandaDaRegiao from '../components/inicio/BandaDaRegiao.astro';
 import { FIGURAS, comparacaoComOLimiar } from '../data/figuras.mjs';
+import { REGIOES } from '../data/regioes.mjs';
 import { getClaim } from '../lib/ledger.mjs';
-import { estadoDaVerificacao } from '../lib/prova.mjs';
+import { estadoDaMedida, estadoDaRegua } from '../lib/estado.mjs';
+import { concelhos, chaveDaRegiao, chaveDoConcelho } from '../lib/inicio.mjs';
+import { estadoDaVerificacao, prova } from '../lib/prova.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
+import '../styles/inicio.css';
 
 const { lang = 'pt' } = Astro.props;
 const s = t(lang);
 const path = routePath('home', lang);
-
-/**
- * Quando o painel foi reconferido contra a fonte, e se isso já passou do prazo.
- *
- * A conta vive em src/lib/prova.mjs e é a mesma que o cabeçalho de todas as
- * páginas usa. Se a verificação atrasar, a página di-lo por palavras em vez de
- * deixar uma data parecer fresca.
- */
+const p = prova(lang);
 const verificacao = estadoDaVerificacao();
 
-/**
- * O painel, cartão a cartão (v2, IDENTIDADE.md §11).
- *
- * A comparação com o limiar calcula-se aqui, uma vez, e não dentro do gabarito:
- * é prosa da casa gerada de dois números que já existem (o valor publicado da
- * linha e o limiar publicado pelo quadro), e não um número novo. Quando um dos
- * dois lados não é um número simples, `comparacaoComOLimiar` devolve `null` e a
- * célula fica sem a palavra. Nunca com uma palavra inventada.
- */
-const cartoes = FIGURAS.map((f) => ({
-  ...f,
-  comparacao: f.limiar ? comparacaoComOLimiar(getClaim(f.claim), f.limiar) : null,
+const home = routePath('home', lang);
+const hrefs = {
+  pais: home,
+  regiao: `${home}#convergencia`,
+  municipio: routePath('municipios', lang),
+  relance: home,
+  leitura: `${home}?densidade=leitura`,
+};
+
+/* ------------------------------------------------------------------ o painel */
+/* A comparação com o limiar continua a ser calculada aqui, uma vez, como na v2:
+   é prosa da casa gerada de dois números que já existem, e não um número novo. */
+const medidas = FIGURAS.map((f) => {
+  const linha = getClaim(f.claim);
+  return {
+    ...f,
+    linha,
+    estado: estadoDaMedida(linha, f.limiar),
+    comparacao: f.limiar ? comparacaoComOLimiar(linha, f.limiar) : null,
+  };
+});
+
+/* -------------------------------------------------------------- os concelhos */
+const cs = concelhos();
+const evora = cs.find((c) => c.pagina) ?? null;
+const primeiroSemPagina = cs.find((c) => !c.pagina) ?? null;
+
+/* ------------------------------------------------------- as seis leituras da régua */
+const regioesDaBanda = REGIOES.map((r) => ({
+  slug: r.slug,
+  nome: r.nome[lang],
+  valor: r.valor,
+  linha: getClaim(r.valor),
+  frase: r.frase[lang],
 }));
+
+/* ------------------------------------------------------------ Évora, na cabeça */
+/* O estado das oito medidas do concelho: o índice de dívida contra o tecto legal
+   (um limiar formal publicado, e por isso colore), e a posição face a uma média
+   (que não colore, Emenda 1). O resto não tem referência publicada. */
+const estadosDeEvora = evora
+  ? evora.pagina.relance.map((m) => {
+      if (!m.claim) return null;
+      if (m.claim === 'evora-indice-de-divida-2024') {
+        const r = estadoDaRegua(getClaim(m.claim), {
+          valor: getClaim('indice-de-divida-limite-legal').value,
+          lado: 'superior',
+          colore: true,
+        });
+        return r.colore ? r.estado : 'sem';
+      }
+      return 'sem';
+    })
+  : [];
+
+const blocos = [
+  { chave: 'pais', tipo: 'pais', estados: medidas.map((m) => m.estado) },
+  ...regioesDaBanda.map((r) => ({
+    chave: chaveDaRegiao(r.slug),
+    tipo: 'regiao',
+    nome: r.nome,
+    frase: r.frase,
+    estados: ['sem'],
+  })),
+  ...(evora
+    ? [
+        {
+          chave: chaveDoConcelho(evora.slug),
+          tipo: 'evora',
+          nome: evora.pagina.nome[lang] ?? evora.pagina.nome.pt,
+          distrito: evora.pagina.distrito[lang] ?? evora.pagina.distrito.pt,
+          estados: estadosDeEvora,
+        },
+      ]
+    : []),
+  {
+    chave: 'vazio',
+    tipo: 'vazio',
+    nome: primeiroSemPagina?.nome ?? '',
+    distrito: primeiroSemPagina?.distrito ?? '',
+    estados: [],
+  },
+];
 ---
 
 <Base
@@ -51,26 +148,57 @@ const cartoes = FIGURAS.map((f) => ({
 >
   <Masthead slot="masthead" lang={lang} path={path} compact={false} furniture={true} />
 
-  <!-- ============================ O país em números verificados -->
-  <section id="numeros" style="padding-top:clamp(18px,2.4vw,28px)">
-    <div class="sec-head">
-      <span class="eyebrow">{s.home.numeros.eyebrow}</span>
-      <h2>{s.home.numeros.h2}</h2>
-      <p class="sec-sub">{s.home.numeros.sub}</p>
+  <div class="inicio" data-inicio data-ambito="pais" data-densidade="relance">
+    <Comando s={s} hrefs={hrefs} />
+
+    <div class="cmd-sub" data-sub="regiao" hidden>
+      <div class="cmd-chips">
+        {
+          regioesDaBanda.map((r) => (
+            <a
+              class="chipb"
+              href={`${home}?ambito=${chaveDaRegiao(r.slug)}`}
+              data-regiao={r.slug}
+            >
+              {r.nome}
+            </a>
+          ))
+        }
+      </div>
+      <p class="cmd-meta">{s.ambito.regioesMeta}</p>
     </div>
 
+    <div class="cmd-sub" data-sub="municipio" hidden>
+      <Pesquisa s={s} lang={lang} p={p} concelhos={cs} />
+    </div>
+
+    <div class="cabeca-grelha" data-grelha>
+      <Cabeca s={s} lang={lang} p={p} blocos={blocos} ambito="pais" />
+      <div class="cabeca-inst" data-coluna-instrumento>
+        <MapaRespira s={s} lang={lang} p={p} concelhos={cs} evora={evora} />
+      </div>
+    </div>
+
+    <div data-banda-caixa hidden>
+      <BandaDaRegiao s={s} lang={lang} regioes={regioesDaBanda} escolhida={regioesDaBanda[0].slug} />
+    </div>
+
+    {/* A região viva do anúncio: uma só, e sempre com palavras que já estão na
+        página. É aqui que a mudança de âmbito e de densidade se diz a quem não a
+        vê acontecer. */}
+    <p class="vh" role="status" aria-live="polite" data-anuncio></p>
+  </div>
+
+  <!-- ============================ O painel -->
+  <section id="painel">
     <div class="figuras">
       {
-        cartoes.map((f) => (
+        medidas.map((f) => (
           <article class="figura">
             <Claim id={f.claim} class="figura-num" as="div" escala={true} />
             <h3 class="figura-nome">{f.nome[lang]}</h3>
             <p class="figura-medida"><Frase partes={f.medida[lang]} lang={lang} /></p>
             {f.limiar && (
-              /* Uma linha mono, sem barra e sem distância. O limiar continua
-                 debaixo do motivo `limiar-do-quadro`, que é o que declara que
-                 aqueles algarismos não são uma linha do livro-razão; a palavra
-                 ao lado não tem algarismo nenhum. */
               <p class="figura-limiar">
                 <span class="figura-limiar-k">{s.home.numeros.limiar}</span>{' '}
                 <span class="figura-limiar-v">
@@ -89,7 +217,9 @@ const cartoes = FIGURAS.map((f) => ({
       }
     </div>
 
-    <p class="sec-sub verificacao" data-vencida={verificacao.vencida ? 'sim' : null}>
+    {/* A âncora `#numeros` é a porta do sinal de tempo do cabeçalho e da chave
+        `painel_reconferido_em` da prova: é aqui que essa data se vê. */}
+    <p class="sec-sub verificacao" id="numeros" data-vencida={verificacao.vencida ? 'sim' : null}>
       {verificacao.vencida ? s.sinal.vencido : s.sinal.reconferido}{' '}
       <span data-nonledger="data-de-atualizacao">{verificacao.verificadoEm}</span>.
     </p>
@@ -106,25 +236,6 @@ const cartoes = FIGURAS.map((f) => ({
     </div>
     <InstrumentoConvergencia lang={lang} />
   </section>
-
-  <!-- ============================ Instrumento n.º 2 -->
-  <section id="mapa">
-    <div class="sec-head">
-      <span class="eyebrow">
-        {s.home.instr2.eyebrow} <span data-nonledger="numeracao">{lang === 'pt' ? 'n.º 2' : 'no. 2'}</span>
-      </span>
-      <h2>
-        {s.home.instr2.h2} · <Claim id="municipios-portugal-caop-2025" lang={lang} chip={true} />
-      </h2>
-      <p class="sec-sub">{s.home.instr2.sub}</p>
-    </div>
-    <InstrumentoMapa lang={lang} />
-  </section>
-
-  <!-- O colofão «Esta página» saiu a 18.08.2026 (DECISIONS §1.44). Dizia ao
-       leitor que a página não faz pedidos de rede, que tipos usa e qual é a
-       regra do amarelo: comentário de implementação numa página pública, e o
-       BRIEF-confianca §6.3 pede o contrário, mostrar em vez de declarar. A
-       porta das correções volta ao rodapé pelo invólucro, e por isso esta
-       página deixou de passar `portaNoRodape={false}`. -->
 </Base>
+
+<script src="/js/inicio.js" defer is:inline></script>

@@ -1,0 +1,536 @@
+/* =============================================================================
+ * A PRIMEIRA PÁGINA v3 — a folha da vista, e de mais nada.
+ *
+ * Importada por `src/views/HomeView.astro` e por nenhuma outra página. Tudo o
+ * que aqui está governa a cabeça, o mapa, a banda e o painel da primeira
+ * página; a mobília partilhada (cabeçalho, rodapé, selo, tipos, tokens) é de
+ * `tokens.css` e `site.css`, e não se toca daqui.
+ *
+ * REGRAS DA CASA QUE ESTA FOLHA CUMPRE, e que não são de gosto:
+ *
+ *   · nenhum literal de cor. Só fichas de `tokens.css`. Uma cor escrita aqui é
+ *     uma cor que a régua do contraste não mede;
+ *   · Bitter em caixa alta SÓ dentro dos instrumentos (Emenda 5, IDENTIDADE §1
+ *     v3). A linha de comando não é um instrumento: vai em Spectral SC, como a
+ *     navegação do cabeçalho. As maquetas desenham-na em Bitter versalete alto,
+ *     e as maquetas não ganham;
+ *   · a cor é estado, e só estado (Emenda 1). As molduras das peças são
+ *     cinzentas; o âmbar e o cobalto aparecem no marcador e na palavra, e em
+ *     mais lado nenhum;
+ *   · o marcador de estado leva contorno de TINTA nos dois temas (condição da
+ *     direcção à decisão f, 20.08.2026), e o contorno é sempre uma ficha, nunca
+ *     um literal.
+ * ========================================================================== */
+
+/* -----------------------------------------------------------------------------
+ * `hidden` GANHA A QUALQUER REGRA DESTA FOLHA.
+ *
+ * O atributo `hidden` do HTML vale `display: none` por regra do navegador, e uma
+ * regra de navegador perde para qualquer selector de classe. Como quase tudo
+ * nesta folha declara `display`, um `.cabeca-bloco[hidden]` continuava a
+ * desenhar-se: medido na página construída, as nove cabeças e os 308 resultados
+ * da pesquisa apareceram todos ao mesmo tempo. E como `hidden` é o ÚNICO
+ * mecanismo com que o script desta página muda de estado, esta é a linha que faz
+ * o estado existir.
+ * -------------------------------------------------------------------------- */
+.inicio [hidden] {
+  display: none !important;
+}
+
+.inicio {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 26px);
+  padding-top: clamp(14px, 2vw, 22px);
+}
+
+/* ------------------------------------------------------------ linha de comando */
+
+.cmd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.cmd-grupo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cmd-k,
+.cmd-meta,
+.pesquisa-rotulo,
+.banda-k {
+  font-family: var(--f-versal);
+  font-size: 13px;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.cmd-segs {
+  display: inline-flex;
+}
+
+/* O comando escolhido é tinta sobre papel invertido: é a única maneira de dizer
+   «este» sem gastar uma cor de estado numa coisa que não é um estado. */
+.seg {
+  font-family: var(--f-versal);
+  font-size: 13px;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  padding: 8px 12px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  text-decoration: none;
+  background: var(--paper);
+  cursor: pointer;
+}
+.seg + .seg {
+  border-left: none;
+}
+.seg[aria-current='true'],
+.seg[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--paper);
+}
+.seg:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cmd-nota {
+  font-family: var(--f-instr);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.cmd-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cmd-chips {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chipb {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 13px;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  border: 1px solid var(--rule-strong);
+  background: var(--paper);
+  color: var(--ink);
+  padding: 8px 11px;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 34px;
+}
+.chipb:hover {
+  border-color: var(--ink);
+}
+.chipb[aria-current='true'],
+.chipb[aria-pressed='true'] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+/* ------------------------------------------------------------------ pesquisa */
+
+.pesquisa {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.pesquisa-campo {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 15px;
+  padding: 9px 11px;
+  border: 1px solid var(--rule-strong);
+  background: var(--paper);
+  color: var(--ink);
+  width: min(340px, 100%);
+  min-height: 44px;
+}
+.pesquisa-campo:focus {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.pesquisa-res {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pesquisa-item {
+  display: block;
+}
+.pesquisa-cobertura {
+  font-family: var(--f-instr);
+  font-size: 11px;
+  color: var(--muted);
+}
+.chipb[aria-pressed='true'] .pesquisa-cobertura {
+  color: var(--paper);
+}
+.pesquisa-vazio,
+.pesquisa-meta {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------- a cabeça 2+2 */
+
+.cabeca-grelha {
+  display: grid;
+  grid-template-columns: 582px minmax(0, 1fr);
+  column-gap: 20px;
+  align-items: start;
+  padding-top: 6px;
+}
+
+.cabeca-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.cabeca-bloco {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cabeca-rotulo {
+  font-family: var(--f-versal);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.cabeca-h1 {
+  font-size: clamp(28px, 3.2vw, 40px);
+  line-height: 1.12;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  max-width: 16em;
+  margin: 0;
+}
+
+.cabeca-lede {
+  font-size: clamp(16px, 1.4vw, 18px);
+  line-height: 1.5;
+  max-width: 42em;
+}
+
+/* ------------------------------------------------------------ fila de estados */
+
+.fila {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.fila-grupo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.fila-quadrados {
+  display: inline-flex;
+  gap: 4px;
+}
+.sq {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  flex: none;
+}
+/* O contorno é sempre tinta, nos dois temas: em claro segura o âmbar (2,09:1
+   sozinho), em escuro segura o cobalto (2,16:1 sozinho). Ver a nota da etapa 1c. */
+.sq-fora {
+  background: var(--amber);
+  border: 1px solid var(--onamber);
+}
+.sq-dentro {
+  background: var(--cobalt);
+  border: 1px solid var(--ink);
+}
+.sq-sem {
+  background: transparent;
+  border: 1px solid var(--ink);
+}
+.fila-palavra {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+}
+.est-fora {
+  color: var(--ochre);
+}
+.est-dentro {
+  color: var(--cobalt-palavra);
+}
+.est-sem {
+  color: var(--muted);
+}
+
+/* ---------------------------------------------------------------------- mapa */
+
+.mapa {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 281px minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: start;
+}
+.mapa-tela {
+  width: 281px;
+}
+.mapa-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.mapa-moldura {
+  fill: none;
+  stroke: var(--g3);
+  stroke-width: 1;
+}
+.mapa-arq {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 13px;
+  fill: var(--muted);
+}
+/* Os 308 pontos são iguais (Emenda 3). A única distinção é a cobertura. */
+.mun {
+  fill: var(--paper);
+  stroke: var(--ink);
+  stroke-width: 1.2;
+}
+.mun-com-pagina {
+  fill: var(--ink);
+}
+.mun-alvo {
+  fill: transparent;
+  stroke: none;
+  pointer-events: none;
+}
+.mapa-svg:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.mapa-ficha {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.mapa-titulo {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+.mapa-neutro {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.mapa-fonte,
+.mapa-dados,
+.mapa-hint,
+.mapa-leitura {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.mapa-cartao {
+  grid-column: 2;
+  border: 1px solid var(--g3);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mapa-cartao-nome {
+  font-size: 19px;
+  font-weight: 500;
+}
+.mapa-cartao-cobertura,
+.mapa-cartao-selo,
+.mapa-cartao-portas {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  color: var(--muted);
+}
+.mapa-cartao-portas {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+.lig {
+  font-family: var(--f-instr);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------- banda */
+
+.banda {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 1px solid var(--ink);
+  padding-top: 14px;
+}
+.banda-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.banda-eixo {
+  stroke: var(--g3);
+  stroke-width: 1;
+}
+.banda-ponta {
+  stroke: var(--ink);
+  stroke-width: 1;
+}
+.banda-datum {
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+.banda-barra rect {
+  fill: var(--ink);
+}
+.banda-traco {
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+.banda-ponto {
+  fill: var(--g2);
+}
+.banda-ponto.is-escolhido {
+  fill: var(--ink);
+}
+.banda-fim,
+.banda-rotulo,
+.banda-datum-rotulo {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 13px;
+  fill: var(--muted);
+}
+.banda-datum-rotulo {
+  fill: var(--ink);
+}
+.banda-legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  color: var(--muted);
+}
+.banda-nota {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 70ch;
+}
+
+/* Um `hidden` dentro de um SVG não é honrado por todos os motores: a folha
+   escreve-o, para que a troca de estado seja a mesma dos dois lados. */
+svg [hidden] {
+  display: none;
+}
+
+/* A leitura do mapa é uma linha, e não uma caixa: a v2 dava-lhe moldura, e a
+   Emenda 1 tirou as molduras a tudo o que não é peça. */
+.mapa-leitura {
+  min-height: 2.6em;
+}
+.mapa-leitura .readout-name {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ------------------------------------------------------------------ estreito */
+
+@media (max-width: 900px) {
+  .cabeca-grelha {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 22px;
+  }
+  .mapa {
+    grid-template-columns: 170px minmax(0, 1fr);
+  }
+  .mapa-tela {
+    width: 170px;
+  }
+}
+
+/* Abaixo de 640 a ficha deixa de caber ao lado do mapa: o conteúdo mínimo da
+   ficha (a contagem por parcela, com o selo) é mais largo do que a coluna que
+   sobra, e o que transbordava era a página inteira, medido em 400px de
+   `scrollWidth` para 390 de janela. Empilha-se. */
+@media (max-width: 640px) {
+  .mapa {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 14px;
+  }
+  .mapa-cartao {
+    grid-column: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seg,
+  .chipb {
+    transition: none;
+  }
+}
