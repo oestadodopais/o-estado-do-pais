@@ -8026,6 +8026,150 @@ falta ao formato para uma frase da conta corrigida, a norma da cópia arquivada
 contra o marcador, a edição inglesa do 08 por publicar, o `ledger.json` de
 cada estudo ao lado do documento.
 
+### 1.50 O redesenho v3 abre: a letra passa a ser alojada aqui, e a cor passa a ser o par de estados
+
+**Afecta:** nenhum
+
+*(Esta entrada muda a `IDENTIDADE.md` §1 e §2, e a constituição não é texto
+governado no sentido do `**Afecta:**`: é quem os cita, como a §1.49 já escreveu.
+Nenhuma palavra do Sobre, das dez regras do Método ou dos dois registos da
+agenda mexe aqui. As duas linhas que o Método vai precisar de ganhar, a da cor
+e a da letra, estão rascunhadas no plano §12 e não entram enquanto a direção não
+aprovar a frase exata: uma constituição pode mudar de regra num dia, um texto
+governado não muda sem a palavra de quem o assina.)*
+
+#### Onde isto acontece
+
+A fase 1 do redesenho v3 abre no ramo `redesenho-v3`, cortado de `origin/main` =
+`77e82eb`, sem upstream de propósito (um empurrão levanta uma pré-visualização,
+e isso é para fora). O plano é `design/especime-v3/PLANO-redesenho-v3.md`, e o
+que ele obedece está escrito nele por ordem de precedência: as Emendas de
+20.08.2026, o resto da constituição visual v3.1
+(`design/especime-v3/direcao.md`), o estado do repositório, o entreposto do
+bloco anterior, esta constituição, e só depois as maquetas. As maquetas nunca
+ganham.
+
+Esta entrada é a primeira coisa que a fase constrói, e é-o por regra: as duas
+mudanças da `IDENTIDADE.md` são a fundação de tudo o que vem a seguir, e uma
+fundação que se escreve depois da casa não é uma fundação, é uma justificação.
+
+#### O que muda na §1: a letra deixa de ser uma pilha do sistema
+
+A regra de hoje diz «Sem tipos de rede», e o que ela quer dizer, lida com o
+resto do parágrafo, é duas coisas ao mesmo tempo: que nenhuma família se
+descarrega de um anfitrião de terceiros, e que as famílias são pilhas do
+sistema. A primeira metade fica e endurece; a segunda sai.
+
+**Passa a ser «Só tipos alojados aqui».** Nenhum anfitrião de terceiros, nem
+`fonts.googleapis.com`, nem `fonts.gstatic.com`, nem outro: uma família nova
+entra por decisão registada, e fica no repositório, com a sua licença ao lado.
+A razão é a de sempre e não é de gosto: um tipo servido por terceiros é um
+pedido do leitor a uma casa que não é esta, com o que isso diz de quem o lê, e
+é uma dependência que pode mudar de bytes sem ninguém deste lado dar por isso.
+
+**As três famílias e os três papéis, pela Emenda 5** (que resolveu a §2 da
+constituição visual, onde estavam Parnaso e Sebenta, com compra pelo diretor):
+
+| Família | Papel |
+| --- | --- |
+| **Spectral** | a prosa e a marca |
+| **Bitter** | os valores, os rótulos, os eixos e o que é transcrito |
+| **Spectral SC** | os antetítulos editoriais e os rótulos de secção |
+
+Três notas que a regra passa a levar, e cada uma existe porque a alternativa
+convida a um erro:
+
+- **Bitter em caixa alta só dentro dos instrumentos.** É a Emenda 5, literal. A
+  navegação não é um instrumento, e por isso não leva caixa alta de Bitter: leva
+  versaletes de Spectral SC. As maquetas desenham a navegação em caixa alta de
+  Bitter, e as maquetas não ganham.
+- **Algarismos tabulares versais nos instrumentos.** Uma coluna de números que
+  não alinha não é uma coluna, e a comparação que ela convida é falsa. Bitter
+  tem tabulares a sério (`font-variant-numeric: tabular-nums lining-nums`), e a
+  medição está na nota da etapa.
+- **A regra que a v2 escreveu para a monoespaçada muda de letra e não de
+  sentido.** Era «a monoespaçada é a marca de um valor que tem linha no
+  livro-razão». Passa a ser **Bitter**, e continua a entrar sempre pelo
+  `<Claim>`. O que a regra distingue é o mesmo: uma medição de uma data, e não
+  um algarismo de uma letra.
+
+A monoespaçada sai dos três papéis e não sai do sítio: continua a haver texto
+que é código, e ele continua a ser a pilha do sistema declarada na folha. O que
+deixa de existir é a monoespaçada como **voz** de um valor medido.
+
+#### O que muda na §2: um acento de medição dá lugar a um par de estados
+
+A §2 de hoje tem dois acentos, e os dois são significados que o sítio escreve:
+o amarelo é «medição», o oxblood é «erro admitido». A constituição visual v3.1 e
+a Emenda 1 mudam-lhes a natureza: a cor deixa de dizer o que uma coisa **é** e
+passa a dizer em que **estado** ela está, e só onde a fonte publica um limiar
+formal.
+
+**O par de estados.** `--amber` `#E0A21A` no marcador, `--ochre` `#7A5300` na
+palavra, para «fora do limiar»; `--cobalt` `#1F4E8C` para «dentro do limiar».
+Tudo o resto é tinta e cinzento. Uma posição face a uma média, um destaque ou um
+lugar num ordenamento não é um limiar publicado e por isso não leva cor: leva a
+palavra.
+
+**O marcador âmbar leva contorno de tinta, e a razão é uma medição.** Âmbar
+sobre papel mede **2,09:1** (`node scripts/medir-contraste.mjs`, com os valores
+da paleta v3). Um marcador com esse contraste sozinho não é um objeto de
+interface visível; com um contorno de tinta é, e a tinta contra o âmbar mede
+**7,85:1**. É por isso que o contorno existe, e não por desenho. A auditoria
+original da paleta não tinha esta medição, e a Emenda 1 escreveu-a.
+
+**O ocre é a palavra e não o marcador**, porque é o mesmo matiz na intensidade
+que se lê: **6,37:1** sobre papel. O cobalto lê-se e assinala ao mesmo tempo:
+**7,73:1**. E o par âmbar/cobalto distingue-se um do outro por **3,70:1**, no
+eixo amarelo-azul, que é o que a visão sem vermelho-verde separa melhor.
+
+**O amarelo retira-se, como ficha e como significado.** `--yellow` sai de
+`tokens.css` e de todas as regras que o usavam: o município aceso, as barras de
+composição, a barra da distância, o estado lido dos chips, as janelas do
+calendário das fontes. Todas passam a tinta ou a cinzento, pela regra de que os
+instrumentos se desenham a tinta e a cinzento e a cor só entra onde há um
+limiar publicado para comparar.
+
+**O oxblood retira-se, e a correção passa a dizer-se pela forma.** `--oxblood`
+sai de `tokens.css`. O registo de correções deixa de ter cor e passa a ter
+forma: valor antigo riscado a cinzento, valor novo a tinta, e a data. A forma
+de proveniência desses dois valores (se cada par ganha a porta da linha onde a
+história está) está por decidir e é a decisão (c) do plano §3: até à palavra da
+direção, a página das correções fica com a forma que tem, agora debaixo dos
+tokens novos, e nada se inventa à sua frente.
+
+**Não há papel segundo nem terceiro.** `--paper-2` e `--paper-3` saem com o
+resto: a Emenda 1 separa o aparelho com fios e molduras cinzentas, e não com
+painéis tingidos. Um segundo papel seria um valor inventado, sem linha nesta
+constituição.
+
+**O sinal de tempo do cabeçalho fica a tinta.** O corpo §3 da constituição
+visual diz que ele é a única cor do cabeçalho (cobalto dentro do prazo, âmbar em
+atraso); a Emenda 1, que é mais alta, diz que a cor só aparece onde a fonte
+publica um limiar formal, e um prazo interno de reconferência não é um limiar
+publicado por fonte nenhuma. Ganha a Emenda: o sinal de tempo desenha-se a
+tinta e diz o estado por palavras, que é o que ele já faz. Fica assinalado à
+direção como o plano §3 (i) pede: se ele quiser a cor de volta, é uma regra de
+folha de estilos.
+
+#### O que a §8 passa a dizer
+
+A §8 lista as regras de folha de estilos que **ainda não têm conferência de
+máquina** e por isso são promessa e não facto. A lista nomeava `--yellow`; passa
+a nomear as fichas que existem: nenhum literal de cor fora de `tokens.css`,
+`--amber` nunca como cor de texto, `--ochre` e `--cobalt` só como palavra de
+estado, e a caixa alta de Bitter só dentro dos instrumentos. Continuam à espera
+do `gate:identidade`, que é a fase 4 e ainda não existe como script, e continuam
+a segurar-se por atenção.
+
+#### O que esta entrada não faz
+
+Não toca na §5 (o selo), que cita o Método palavra por palavra e cuja citação a
+amarra confere; não escreve as duas linhas do Método; não muda um byte de
+`src/data/metodo.mjs` nem de `src/data/sobre.mjs`; e não abre portão nenhum. A
+paleta escura entra na fase como **proposta medida**, debaixo de um comentário
+que o diz, à espera da decisão (f) do plano.
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
