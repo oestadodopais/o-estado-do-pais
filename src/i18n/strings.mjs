@@ -27,6 +27,9 @@ export const STRINGS = {
       correcoes: 'Correções',
       sobre: 'Sobre',
       saltar: 'Saltar para o conteúdo',
+      /* O comando que abre a navegação no telemóvel. É a mesma palavra nas duas
+         edições, e está na lista de identidades aceites do `CHAVES-EN.md`. */
+      menu: 'Menu',
       /* Os nomes das regiões de navegação. Uma região nomeia-se pelo que é,
          e não pela primeira ligação que tem dentro: as quatro diziam «Início»
          ou «English», e um leitor de ecrã que percorra as regiões de uma
@@ -798,6 +801,7 @@ export const STRINGS = {
       correcoes: 'Corrections',
       sobre: 'About',
       saltar: 'Skip to content',
+      menu: 'Menu',
       rotuloPrincipal: 'Main navigation',
       rotuloRodape: 'Footer navigation',
       rotuloIdioma: 'Language',

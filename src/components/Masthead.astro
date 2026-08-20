@@ -122,7 +122,37 @@ const painel = `${home}#numeros`;
 
 <header>
   <div class="topbar">
-    <nav class="nav" aria-label={s.nav.rotuloPrincipal}>
+    {/* --------------------------------------------------------------------
+        O COMANDO QUE ABRE A NAVEGAÇÃO NO TELEMÓVEL (etapa 1e).
+
+        A 390px a lista de sete itens ocupava três linhas e 157,6px de barra, e
+        empurrava o primeiro valor medido para fora do primeiro ecrã. A prancha
+        móvel resolve-o com «Menu» ao lado da ligação de idioma, e é o que isto
+        faz. Nativo e sem JavaScript: um `<details>` cujo estado a folha lê por
+        `[open]`.
+
+        PORQUE A LISTA FICA FORA DO `<details>`, e não lá dentro. O conteúdo de
+        um `<details>` fechado é escondido pelo próprio navegador, e medi que
+        nenhuma folha o volta a mostrar de maneira portátil: num Chromium 148, a
+        única regra que o revela é `::details-content { content-visibility:
+        visible }`, que é recente e não existe em todos os motores. Se a lista
+        vivesse aqui dentro, num motor sem essa regra ela ficaria escondida
+        TAMBÉM a 1280, que é o desktop inteiro. Com a lista como irmã, o que
+        governa é `[open] ~`, que é um seletor de atributo e um combinador de
+        irmãos: existem desde sempre, em todo o lado. A largura decide qual dos
+        dois desenhos vale, e a 640px para cima o comando desaparece e a lista é
+        sempre visível.
+
+        O NOME ACESSÍVEL COMEÇA PELA PALAVRA QUE SE VÊ. O comando mostra «Menu»
+        e chama-se «Menu · Navegação principal»: a etiqueta invisível não pode
+        SUBSTITUIR a visível, ou quem fala com a página pelo que lê nela pede uma
+        coisa que o comando não atende (WCAG 2.5.3). As duas metades são cadeias
+        que já existem.
+        -------------------------------------------------------------------- */}
+    <details class="nav-menu">
+      <summary aria-label={`${s.nav.menu} · ${s.nav.rotuloPrincipal}`}>{s.nav.menu}</summary>
+    </details>
+    <nav class="nav nav-principal" aria-label={s.nav.rotuloPrincipal}>
       {
         itensNav.map((item) => (
           <a href={item.href} aria-current={atual(item.href)}>
@@ -131,7 +161,7 @@ const painel = `${home}#numeros`;
         ))
       }
     </nav>
-    <nav class="nav" aria-label={s.nav.rotuloIdioma}>
+    <nav class="nav nav-idioma" aria-label={s.nav.rotuloIdioma}>
       <a class="lang" href={outra} hreflang={lang === 'pt' ? 'en' : 'pt-PT'} lang={lang === 'pt' ? 'en' : 'pt-PT'}>
         {s.outraLingua}
       </a>
