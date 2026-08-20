@@ -4,10 +4,13 @@
  * estilos de facto usa.
  *
  * NÃO é um portão: não falha nada e não entra no `npm run build`. É uma fita
- * métrica, como `medir-defeitos.mjs`. `IDENTIDADE.md` §2 diz que os neutros só
- * podem aquecer se cada par usado passar AA em claro e em escuro, «medido por
- * um script no passo de construção, e não a olho nem por um número copiado de
- * um racional»: este é o script, e o número que ele imprime é o que conta.
+ * métrica, como `medir-defeitos.mjs`. `IDENTIDADE.md` §2 diz que cada par usado
+ * passa AA em claro e em escuro, medido por um script e não a olho nem por um
+ * número copiado de um racional: este é o script, e o número que ele imprime é
+ * o que conta. A v2 dizia «no passo de construção» e não era verdade, porque
+ * esta régua nunca esteve dentro do `npm run build`; a v3 corrigiu a frase da
+ * constituição em vez de deixar a régua a citar uma promessa que ninguém
+ * cumpria.
  *
  * O QUE MEDE. Contraste WCAG 2.x (luminância relativa, sRGB), com os limiares
  * da 2.1:
@@ -77,15 +80,40 @@ function lerFichas(css, bloco) {
   return fichas;
 }
 
+/**
+ * Resolve `var(--x)` dentro da própria paleta, até chegar a uma cor.
+ *
+ * Existe desde a v3, e é a régua a seguir a folha: os tokens de papel
+ * (`--rule`, `--muted`, `--axis`, `--focus`, `--onamber`) passaram a ser
+ * DERIVADOS dos três cinzentos e das duas superfícies, para que a folha nomeie
+ * a função e não a cor. Sem isto a régua mediria a cadeia «var(--g3)» e
+ * atirava; com isto mede o que o navegador vai calcular, que é o que interessa.
+ * O escuro resolve contra o escuro, porque a herança já foi feita acima.
+ */
+function resolveVar(fichas) {
+  const out = {};
+  for (const k of Object.keys(fichas)) {
+    let v = fichas[k];
+    for (let i = 0; i < 8; i++) {
+      const m = String(v).trim().match(/^var\(\s*(--[a-z0-9-]+)\s*\)$/i);
+      if (!m) break;
+      if (!(m[1] in fichas)) break;
+      v = fichas[m[1]];
+    }
+    out[k] = v;
+  }
+  return out;
+}
+
 /** A paleta de um ficheiro, nos três estados. O escuro herda o claro. */
 function paleta(caminho) {
   const css = fs.readFileSync(caminho, 'utf8');
   const claro = lerFichas(css, ESTADOS[0].bloco);
   if (!claro) throw new Error(`não encontrei o bloco :root em ${caminho}`);
-  const out = { claro };
+  const out = { claro: resolveVar(claro) };
   for (const e of ESTADOS.slice(1)) {
     const f = lerFichas(css, e.bloco);
-    out[e.chave] = f ? { ...claro, ...f } : null;
+    out[e.chave] = f ? resolveVar({ ...claro, ...f }) : null;
   }
   return out;
 }
@@ -135,33 +163,43 @@ const TIPOS = {
 };
 
 const PARES = [
-  { frente: '--ink', fundo: '--paper', tipo: 'texto', onde: 'body' },
-  { frente: '--ink', fundo: '--paper-2', tipo: 'texto', onde: '.aparelho, .caixa-*' },
-  { frente: '--ink', fundo: '--paper-3', tipo: 'texto', onde: ".chip[aria-pressed='true']" },
-  { frente: '--muted', fundo: '--paper', tipo: 'texto', onde: '90 regras, o aparelho todo' },
-  { frente: '--muted', fundo: '--paper-2', tipo: 'texto', onde: '.prov-campo, .aparelho' },
-  { frente: '--muted', fundo: '--paper-3', tipo: 'texto', onde: '.compo-n sobre .compo-bar' },
-  { frente: '--oxblood', fundo: '--paper', tipo: 'texto', onde: '.registo-titulo, .registo-conta' },
-  { frente: '--oxblood', fundo: '--paper-2', tipo: 'texto', onde: '.etiqueta-correcao no aparelho' },
-  { frente: '--oxblood', fundo: '--paper-3', tipo: 'texto', onde: '.etiqueta-correcao em fundo 3' },
-  { frente: '--paper', fundo: '--ink', tipo: 'texto', onde: '.botao-correcao' },
-  { frente: '--onyellow', fundo: '--yellow', tipo: 'texto', onde: ".chip.is-read[aria-pressed='true']" },
-  { frente: '--rule-strong', fundo: '--paper', tipo: 'decoracao', onde: '.regra-sep, o «·» da mobília' },
-  { frente: '--rule', fundo: '--paper', tipo: 'decoracao', onde: '45 fios de arrumação' },
-  { frente: '--rule-strong', fundo: '--paper', tipo: 'interface', onde: '19 fronteiras de caixa' },
-  { frente: '--axis', fundo: '--paper', tipo: 'interface', onde: 'eixos dos instrumentos; o quadrado a tracejado do selo' },
-  { frente: '--dotcol', fundo: '--paper', tipo: 'interface', onde: '.ld-off i, a legenda de portas' },
-  { frente: '--yellow', fundo: '--paper', tipo: 'interface', onde: '.ld-on i, as barras de medição' },
-  { frente: '--yellow', fundo: '--paper-3', tipo: 'interface', onde: '.compo-bar i sobre a calha' },
-  {
-    frente: '--muted',
-    fundo: '--paper-3',
-    tipo: 'interface',
-    onde: '.compo-bar i, a fronteira desenhada do preenchimento sobre a calha',
-  },
+  /* ---------------------------------------------------------------- texto */
+  { frente: '--ink', fundo: '--paper', tipo: 'texto', onde: 'body, e a marca' },
+  { frente: '--muted', fundo: '--paper', tipo: 'texto', onde: '99 regras, o aparelho todo' },
+  { frente: '--paper', fundo: '--ink', tipo: 'texto', onde: ".botao-correcao, .chip.is-read[aria-pressed='true'], a.src-chip:hover" },
+  { frente: '--ink', fundo: '--g3', tipo: 'texto', onde: '.deep > summary:hover' },
+
+  /* A palavra do estado, os dois lados do par. Ainda não há regra que a
+     escreva: o marcador e a palavra são a régua da etapa 2. Estão aqui porque
+     `IDENTIDADE.md` §2 as fixa como as duas únicas cores do sítio, e um par
+     que não está nesta lista é um par que ninguém mediu. */
+  { frente: '--ochre', fundo: '--paper', tipo: 'texto', onde: 'a palavra «fora do limiar» (IDENTIDADE §2; etapa 2)' },
+  { frente: '--cobalt-palavra', fundo: '--paper', tipo: 'texto', onde: 'a palavra «dentro do limiar» (IDENTIDADE §2; etapa 2)' },
+
+  /* ----------------------------------------------------------- interface */
+  { frente: '--rule-strong', fundo: '--paper', tipo: 'interface', onde: '15 fronteiras de caixa, .mecanismo-caixa, .linha-excerto' },
+  { frente: '--axis', fundo: '--paper', tipo: 'interface', onde: 'eixos dos instrumentos; o quadrado do selo, cheio e a tracejado' },
+  { frente: '--g2', fundo: '--paper', tipo: 'interface', onde: '.ld-off i, .map-svg .mun, a janela de publicação da agenda' },
   { frente: '--focus', fundo: '--paper', tipo: 'interface', onde: 'outline: 2px solid var(--focus)' },
-  { frente: '--focus', fundo: '--paper-2', tipo: 'interface', onde: 'foco dentro do aparelho' },
+  { frente: '--ink', fundo: '--g3', tipo: 'interface', onde: '.compo-bar i sobre a calha' },
+  { frente: '--muted', fundo: '--g3', tipo: 'interface', onde: '.mun-banda-seg, a aresta que separa um mandato do seguinte' },
+  { frente: '--paper', fundo: '--ink', tipo: 'interface', onde: '.ld-on i, o anel de papel que separa o ponto aceso dos vizinhos' },
+
+  /* O par de estados como objeto de interface. O âmbar sobre papel NÃO passa,
+     e é a medição que obriga ao contorno: é ela que está escrita na
+     `IDENTIDADE.md` §2 e na `DECISIONS.md` §1.50. */
+  { frente: '--amber', fundo: '--paper', tipo: 'interface', onde: 'o marcador «fora do limiar», e é por isto que leva contorno (etapa 2)' },
+  { frente: '--onamber', fundo: '--amber', tipo: 'interface', onde: 'o contorno de tinta do marcador âmbar (etapa 2)' },
+  { frente: '--cobalt', fundo: '--paper', tipo: 'interface', onde: 'o marcador «dentro do limiar» (etapa 2)' },
+  { frente: '--ink', fundo: '--cobalt', tipo: 'interface', onde: 'o contorno do marcador cobalto, que em escuro é o que o segura (etapa 2)' },
+  { frente: '--amber', fundo: '--cobalt', tipo: 'interface', onde: 'a distinção entre os dois marcadores, um ao lado do outro' },
+
+  /* --------------------------------------------------------- decoração */
+  { frente: '--rule', fundo: '--paper', tipo: 'decoracao', onde: '51 fios de arrumação e molduras de peça' },
+  { frente: '--g3', fundo: '--paper', tipo: 'decoracao', onde: '.compo-bar (a calha), .placeholder (as riscas)' },
+  { frente: '--rule-strong', fundo: '--paper', tipo: 'decoracao', onde: '.layer-tag::before, .mun-nao-sabe li::before, o «·» da mobília' },
 ];
+
 
 const args = process.argv.slice(2);
 const comoJson = args.includes('--json');
