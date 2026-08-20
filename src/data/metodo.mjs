@@ -293,10 +293,10 @@ export const REGRAS = [
     titulo: { pt: 'A releitura', en: 'The re-reading' },
     regra: {
       pt: [
-        'Antes de um número ser publicado, é relido na fonte por um caminho diferente e por quem não o escreveu. O painel da primeira página é reconferido contra a fonte todas as semanas, e a página diz quando foi a última vez.',
+        'Os números publicados são relidos na fonte por um caminho diferente e por quem não os escreveu, linha a linha, e cada linha diz se já o foi, quando e com que resultado. O painel da primeira página é reconferido contra a fonte todas as semanas, e a página diz quando foi a última vez.',
       ],
       en: [
-        'Before a figure is published, it is read again at the source by a different route and by someone who did not write it. The panel on the front page is re-checked against the source every week, and the page says when the last time was.',
+        'Published figures are read again at the source by a different route and by someone who did not write them, row by row, and each row says whether it has been yet, when and with what result. The panel on the front page is re-checked against the source every week, and the page says when the last time was.',
       ],
     },
     mecanismo: {
