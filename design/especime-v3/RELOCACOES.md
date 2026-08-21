@@ -18,6 +18,7 @@ Estados: **autorizada** (escrita aqui antes da etapa), **feita** (a etapa confir
 | R8 | `/livro-razao/<id>` e `/en/ledger/<id>`: as cinco linhas do Painel Social Europeu que a primeira página não mostrava | `/` e `/en`, a lista compacta do Painel Social Europeu (`#painel-social`): nome, valor, unidade, fonte e selo | `figuras.mjs` (`FIGURAS_SOCIAL`) → `ListaSocial.astro` | País | pt, en | **1 → 1 + 1 por linha e por edição** | `taxa-de-desemprego-2025`, `desemprego-de-longa-duracao-2025`, `jovens-nem-2025`, `risco-de-pobreza-ou-exclusao-2025`, `racio-s80-s20-2025` | 2l | feita · **1 → 1 + 1**, conferido com o mesmo comando. A lista sai do registo do motor (`ResearchHub/indicators/convergence.md`, quadro da §2, coluna «Social SB»), linha a linha, e cada entrada de `figuras.mjs` declara a LINHA do documento que a coloca. **`criancas-em-creche-2025` sai da primeira página** e não entra em nenhuma das duas listas: o documento não a coloca em painel nenhum e o livro-razão não nomeia o Painel Social em ficheiro nenhum (`grep -rin "social scoreboard\|painel social" ledger/claims/` → sem saída, exit 1, com controlo positivo). A sua frase é retirada; a linha continua a ter página e selo, atrás da porta do livro-razão. As três que já lá estavam (`taxa-de-emprego-2025`, `abandono-escolar-precoce-2025`, `sobrecarga-do-custo-da-habitacao-2025`) continuam sob R1, com as suas frases |
 | R9 | `/` e `/en`, a ficha do mapa na cabeça: as três contagens por parcela da CAOP e os seus rótulos | `/municipios` e `/en/municipalities`, uma linha por baixo da cabeça da lista | `MapaRespira.astro` → `MunicipiosView.astro` | País → (a lista dos 308) | pt, en | **1 → 1 por edição** (saiu da primeira página na 2l; entra aqui na 3-0) | `municipios-continente-caop-2025`, `municipios-acores-caop-2025`, `municipios-madeira-caop-2025`, `municipios-portugal-caop-2025` | 3, commit 3-0 | **feita** · 1 → 1 por edição, conferido na construção: `grep -o 'data-claim="municipios-continente-caop-2025"' dist/municipios/index.html \| wc -l` → **1**, o mesmo para as outras duas parcelas e o mesmo em `dist/en/municipalities/index.html`. O rótulo «Contagem verificada nos ficheiros» **não** viaja: é autorreferência e a Emenda 15 tirou-a. A soma (`municipios-portugal-caop-2025`) rende **2 vezes** por edição nesta página, porque a frase da contagem, por cima, já a publicava; a 3c compõe essa frase com as duas chaves da prova e a segunda rendição fica só aqui |
 | R10 | `/` e `/en`, a porta do CSV dos 308 concelhos, na camada por baixo do mapa | `/municipios` e `/en/municipalities`, ao pé da fonte da lista | `MapaRespira.astro` → `MunicipiosView.astro` | País → (a lista dos 308) | pt, en | **1 → 1 + 1 por edição enquanto a porta da primeira página não sair** (ISSUES I34; a saída é de `MapaRespira.astro`, que é do construtor B) | ficheiro `/dados/municipios-308.csv`; sem linha | 3, commit 3-0 | **feita, metade** · a porta entrou em `/municipios` e em `/en/municipalities` (1 por edição, conferido) e a conferência mudou de rota com ela (`PORTA_DOS_DADOS` em `scripts/check-dados.mjs`). A porta da primeira página **continua lá** (1 por edição): `MapaRespira.astro` é do construtor B e o pedido está na nota. Medido que já pode sair: com a linha retirada à mão do componente, construção e `check:dados` verdes (exit 0); reposta, `git diff --stat` do ficheiro vazio |
+| R11 | `/` e `/en`, a ficha do mapa na cabeça: a linha de cobertura «1 de 308 concelhos · tem página» | `/municipios` e `/en/municipalities`, por baixo da lede | `MapaRespira.astro` → `MunicipiosView.astro` | País → (a lista dos 308) | pt, en | **1 → 1 por edição** (saiu da primeira página na 2l, com as chaves `inicio.mapa.coberturaA` e `coberturaB` retiradas; volta aqui com as mesmas palavras em `municipios.coberturaA` e `coberturaB`) | chaves da prova `municipios_com_pagina`, `municipios_total`; vocabulário `cobertura.temPagina` | 3, subetapa 3c | **feita** · 1 → 1 por edição. Substitui a frase que estava aqui («São 308 concelhos. Um tem página do observatório; os restantes ainda não têm, e esta lista di-lo em vez de os esconder.»), que escrevia a primeira contagem por extenso, contra a `IDENTIDADE.md` §10, e acrescentava que a lista não esconde ninguém, que a Emenda 15 tira. As chaves `municipios.contagemA` e `contagemB` saem |
 
 ## Recusadas, ou não relocadas de propósito
 
@@ -33,6 +34,24 @@ Estados: **autorizada** (escrita aqui antes da etapa), **feita** (a etapa confir
 | O quadrado de cobalto do sinal de tempo no cabeçalho | Emenda 1: cor só para limiares publicados |
 
 ## Texto novo (sem rota de origem; entra pelas cadeias, PT e EN no mesmo commit; revisão de voz antes da fusão)
+
+### Etapa 3, subetapa 3c · duas cadeias relocadas, quatro retiradas, uma aparada
+
+*Nenhuma cadeia nova. As duas que entram são as da ficha do mapa da primeira página, com as mesmas palavras (R11).*
+
+| chave | pt | en | o que é |
+|---|---|---|---|
+| `municipios.coberturaA` | ` de ` | ` of ` | **relocada** de `inicio.mapa.coberturaA`, retirada na 2l |
+| `municipios.coberturaB` | ` concelhos · ` | ` concelhos · ` | **relocada** de `inicio.mapa.coberturaB`. Identidade aceite: «concelho» fica em português na edição inglesa, como `municipios.h1` já decidiu |
+
+**Cadeias retiradas** (quatro chaves, nas duas edições):
+
+| chave | o que dizia | porquê |
+|---|---|---|
+| `municipios.contagemA`, `contagemB` | «São » · « concelhos. Um tem página do observatório; os restantes ainda não têm, e esta lista di-lo em vez de os esconder.» | o «Um» era uma contagem escrita à mão (a `IDENTIDADE.md` §10 recusa-as) e a segunda metade era a casa a dizer que é honesta (Emenda 15). A frase passa a levar as duas chaves da prova |
+| `municipios.naoDizK`, `naoDizV` | «O que este índice não diz» · «Nada sobre o concelho. É uma lista de nomes e de estados…» | é a classe que a Emenda 15 nomeia por extenso, «nunca o que não afirmamos» |
+
+**Uma cadeia aparada, e vai assinalada em vez de decidida**: `municipios.metaDescription`, nas duas edições. Perdeu a segunda frase («Os que já têm página do observatório levam a ela; os outros dizem que ainda não têm.» / «Those that already have an observatory page link to it; the others say they do not yet.»), que é a cobertura do próprio sítio, uma das cinco classes da Emenda 15. **Nenhuma palavra mudou**: o que fica é a primeira frase, tal como estava.
 
 ### Etapa 3, subetapa 3b · duas cadeias novas, quatro retiradas
 

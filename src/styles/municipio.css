@@ -47,3 +47,44 @@
 .concelhos-parcela-sep {
   color: var(--g2);
 }
+
+/* -----------------------------------------------------------------------------
+ * A LISTA DOS 308, NA LETRA DA FAMÍLIA (subetapa 3c)
+ * -----------------------------------------------------------------------------
+ * A folha partilhada escreve os rótulos de distrito em Bitter caixa alta, que é
+ * a Emenda 5 e a `IDENTIDADE.md` §1 outra vez: caixa alta de Bitter só dentro de
+ * um instrumento, e uma lista de nomes não é um instrumento. Passam a versaletes
+ * de Spectral SC, como os rótulos da página de linha e do índice do livro-razão:
+ * uma família de páginas, um vocabulário.
+ *
+ * O nome de um concelho é conteúdo e fica na prosa; o estado de cobertura é
+ * vocabulário fechado e fica na letra do instrumento, onde já estava. */
+.concelhos-grupo-k {
+  font-family: var(--f-versal);
+  font-variant-numeric: normal;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  color: var(--ink);
+}
+
+/* A linha da cobertura, com as duas contagens e a palavra do estado. É aparelho e
+   não prosa: letra do instrumento, algarismos tabulares. */
+.concelhos-cobertura {
+  margin-top: 12px;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+/* Cada grupo de distrito é um `<section>`, e a regra global dá aos `<section>`
+   um preenchimento de topo de página inteira (52 a 86px). Aqui são blocos de uma
+   lista, um a seguir ao outro: o intervalo da grelha chega, e o preenchimento
+   herdado abria um vazio de mais de cem píxeis entre distritos. É o mesmo que a
+   `.linha-bloco` já faz na página de linha, pela mesma razão. */
+.concelhos-grupo {
+  padding-top: 0;
+}

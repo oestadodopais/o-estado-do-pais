@@ -175,6 +175,62 @@ as duas regras se cruzam: «when in doubt, list it in the note as an editorial
 call and keep it». Ficam, e a contagem de `/livro-razao` é **2 por edição** em
 vez de 0. Uma redação que separasse as duas partes é uma chamada da direção.
 
+## `/municipios` · `/en/municipalities` (etapa 3, subetapa 3c)
+
+*Trinta dos trinta e três blocos são **nomes de distrito e de ilha**, tal como a
+Carta Administrativa os escreve, e são iguais nas duas edições: são o nome do
+âmbito de cada grupo da lista, que a Emenda 15 chama conteúdo. Os 308 nomes de
+concelho e as suas duas palavras de estado **não entram aqui**: levam
+`data-cobertura`, que é vocabulário declarado, e a régua passou a excluí-los na
+3c (a razão está escrita em `scripts/medir-defeitos.mjs`). Sem essa exclusão, esta
+tabela teria 307 linhas do feitio «Abrantes sem página ainda», que é a lista dos
+concelhos escrita outra vez e não um inventário de frases.*
+
+| classe | texto |
+| --- | --- |
+| conteudo | Aveiro |
+| conteudo | Beja |
+| conteudo | Braga |
+| conteudo | Bragança |
+| conteudo | Castelo Branco |
+| conteudo | Coimbra |
+| conteudo | Every concelho in Portugal, from the official administrative map. |
+| conteudo | Every concelho, from the Carta Administrativa Oficial de Portugal. |
+| conteudo | Faro |
+| conteudo | Guarda |
+| conteudo | Ilha Terceira |
+| conteudo | Ilha da Graciosa |
+| conteudo | Ilha da Madeira |
+| conteudo | Ilha das Flores |
+| conteudo | Ilha de Porto Santo |
+| conteudo | Ilha de Santa Maria |
+| conteudo | Ilha de São Jorge |
+| conteudo | Ilha de São Miguel |
+| conteudo | Ilha do Corvo |
+| conteudo | Ilha do Faial |
+| conteudo | Ilha do Pico |
+| conteudo | Leiria |
+| conteudo | Lisboa |
+| conteudo | Os concelhos de Portugal |
+| conteudo | Portalegre |
+| conteudo | Porto |
+| conteudo | Santarém |
+| conteudo | Setúbal |
+| conteudo | The concelhos of Portugal |
+| conteudo | Todos os concelhos de Portugal, pela Carta Administrativa Oficial. |
+| conteudo | Todos os concelhos, pela Carta Administrativa Oficial de Portugal. |
+| conteudo | Viana do Castelo |
+| conteudo | Vila Real |
+| conteudo | Viseu |
+
+**Autorreferência: 0 nas duas edições.** Saíram, nesta subetapa, «O que este
+índice não diz» e «Nada sobre o concelho. É uma lista de nomes e de estados…»,
+que é a classe que a Emenda 15 nomeia por extenso, e a segunda frase da descrição
+do `<head>` («Os que já têm página do observatório levam a ela; os outros dizem
+que ainda não têm»), que é a cobertura do próprio sítio. A frase da contagem foi
+reescrita para levar as duas chaves da prova, e por isso deixou de escrever «Um»
+por extenso, que a `IDENTIDADE.md` §10 recusa.
+
 ## O que saiu, e para onde
 
 | frase retirada | classe | onde vive agora |

@@ -225,7 +225,27 @@ const blocosDaPorta = new Set();
  */
 const CLASSES = ['conteudo', 'navegacao', 'autorreferencia'];
 const MEDIDA_DECLARADA = '[data-medida-nome],[data-medida-unidade]';
-const ROTAS_DO_INVENTARIO = new Set(['home', 'livro']);
+const ROTAS_DO_INVENTARIO = new Set(['home', 'livro', 'municipios']);
+
+/**
+ * O ESTADO DE COBERTURA É VOCABULÁRIO DECLARADO, E NÃO PROSA DA CASA (etapa 3c).
+ *
+ * `data-cobertura` marca as duas palavras fechadas do sítio, «tem página» e «sem
+ * página ainda», e a medida 7 já as conta por conta própria. A Emenda 15 chama-as
+ * conteúdo por definição («a ausência dita em duas palavras»), e o nome de um
+ * concelho ao lado delas é o nome do âmbito, que a emenda também chama conteúdo.
+ *
+ * Sem esta exclusão, o índice dos concelhos entrava aqui com **307 blocos** do
+ * feitio «Abrantes sem página ainda», um por concelho, e a lista declarada teria
+ * de os enumerar um a um para a contagem fechar. Uma lista assim não é um
+ * inventário de frases da casa: é a lista dos concelhos escrita outra vez.
+ *
+ * Fica **fora** de `ORIGEM_DECLARADA` de propósito: essa constante é partilhada
+ * com a medida 3 («frases de moldura»), que é uma linha de base comparada entre
+ * construções desde a etapa 0, e mudá-la mudaria um número que não é deste
+ * assunto.
+ */
+const COBERTURA_DECLARADA = '[data-cobertura]';
 
 /** A lista declarada: texto normalizado → classe. */
 function leInventario() {
@@ -265,14 +285,15 @@ function textoForaDeComandos(no) {
 function frasesDaCasa(root) {
   const out = [];
   const marcados = new Set();
-  for (const el of root.querySelectorAll(ORIGEM_DECLARADA + ',' + MEDIDA_DECLARADA)) {
+  const DECLARADO = ORIGEM_DECLARADA + ',' + MEDIDA_DECLARADA + ',' + COBERTURA_DECLARADA;
+  for (const el of root.querySelectorAll(DECLARADO)) {
     marcados.add(el);
     for (const d of el.querySelectorAll('*')) marcados.add(d);
   }
   for (const el of root.querySelectorAll(BLOCOS)) {
     if (el.querySelector(BLOCOS)) continue;
     if (marcados.has(el)) continue;
-    if (el.querySelector(ORIGEM_DECLARADA + ',' + MEDIDA_DECLARADA)) continue;
+    if (el.querySelector(DECLARADO)) continue;
     const t = norm(texto(el));
     if (!t) continue;
     /* Uma ligação inteira não é uma frase: é um destino. O teste é sobre o

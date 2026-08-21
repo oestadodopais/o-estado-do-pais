@@ -32,11 +32,13 @@
  */
 import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
+import ValorDaProva from '../components/ValorDaProva.astro';
 import { MUNICIPIOS, DISTRITOS, regiaoDe } from '../data/caop-centroids.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
 import { VERBATIM } from '../data/verbatim.mjs';
 import { DADOS } from '../lib/dados.mjs';
 import { routePath } from '../lib/routes.mjs';
+import { prova } from '../lib/prova.mjs';
 import { t } from '../i18n/strings.mjs';
 import '../styles/municipio.css';
 
@@ -68,6 +70,20 @@ MUNICIPIOS.forEach((m, i) => {
 const comEntradas = grupos.filter((g) => g.entradas.length > 0);
 
 /**
+ * A COBERTURA, PELAS DUAS CHAVES DA PROVA (IDENTIDADE.md §10; relocação R11).
+ *
+ * «1 de 308 concelhos · tem página»: os dois números são contagens do próprio
+ * sítio, entram por `data-prova`, o portão reconta-as por conta própria, e cada
+ * uma leva a sua porta. A frase que estava aqui escrevia o primeiro por extenso
+ * («Um tem página do observatório»), que é o que a §10 recusa, e acrescentava que
+ * a lista não esconde ninguém, que é a casa a falar de si (Emenda 15).
+ *
+ * As palavras entre os números são as da ficha do mapa da primeira página, de
+ * onde a contagem saiu na 2l, sem uma letra mudada.
+ */
+const p = prova(lang);
+
+/**
  * A CONTAGEM POR PARCELAS (Emenda 17; decisão 4 da direção, 21.08.2026; R9).
  *
  * Vivia na ficha do mapa da primeira página, debaixo do rótulo «Contagem
@@ -97,10 +113,12 @@ const parcelas = [
     <span class="eyebrow">{s.municipios.eyebrow}</span>
     <h1 style="margin-top:12px">{s.municipios.h1}</h1>
     <p class="lede" style="margin-top:16px">{s.municipios.lede}</p>
-    <p class="sec-sub" style="margin-top:10px">
-      {s.municipios.contagemA}
-      <Claim id="municipios-portugal-caop-2025" lang={lang} chip={true} />
-      {s.municipios.contagemB}
+    <p class="concelhos-cobertura">
+      <ValorDaProva chave="municipios_com_pagina" item={p.municipios_com_pagina} lang={lang} />
+      {s.municipios.coberturaA}
+      <ValorDaProva chave="municipios_total" item={p.municipios_total} lang={lang} />
+      {s.municipios.coberturaB}
+      <span data-cobertura="com-pagina">{s.cobertura.temPagina}</span>
     </p>
     {/* A contagem por parcelas, numa linha só, por baixo da cabeça da lista.
         Cada parcela leva o seu selo; o separador é o ponto médio da casa. */}
@@ -121,6 +139,14 @@ const parcelas = [
         ))
       }
     </p>
+    {/* A PORTA PARA O MAPA DA PRIMEIRA PÁGINA.
+        O brief da etapa 3 escreve `/?ambito=municipio`, e o esquema de estado da
+        etapa 2 **não aceita esse valor**: `resolveAmbito()` em
+        `public/js/inicio.js` só reconhece `municipio:<slug>` da lista fechada da
+        CAOP, e `municipio` sozinho cai em silêncio no âmbito País. Uma porta que
+        promete um estado que a página não abre é pior do que a que já existe.
+        Fica a âncora do mapa, que é verdadeira; o pedido para o esquema aceitar
+        a vista de escolha está na nota da etapa e em ISSUES. */}
     <p class="rodape-nav" style="margin-top:14px">
       <a href={`${routePath('home', lang)}#mapa`}>{s.municipios.mapaLink}</a>
     </p>
@@ -157,11 +183,13 @@ const parcelas = [
     }
   </div>
 
+  {/* «O QUE ESTE ÍNDICE NÃO DIZ» SAIU (Emenda 15). Dizia «Nada sobre o concelho.
+      É uma lista de nomes e de estados: um concelho aparece aqui porque existe na
+      Carta Administrativa, não porque este sítio tenha alguma coisa medida sobre
+      ele.» — o que não afirmamos, que é a classe que a emenda nomeia por extenso.
+      O que fica é o que a lista é: os nomes, o estado de cada um em duas palavras,
+      a contagem por parcelas, a fonte e o ficheiro. */}
   <div class="prov" style="margin-top:clamp(30px,4vw,44px)">
-    <div class="prov-row">
-      <span class="prov-study">{s.municipios.naoDizK}</span>
-      <span class="prov-vals">{s.municipios.naoDizV}</span>
-    </div>
     <div class="prov-row">
       <span class="prov-study">{s.municipios.fonteK}</span>
       <span class="prov-vals verbatim" data-verbatim="caop-fonte" lang="pt-PT">
