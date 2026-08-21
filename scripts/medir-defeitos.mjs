@@ -234,6 +234,10 @@ const ROTAS_DO_INVENTARIO = new Set([
      medida é a única maneira de isso não voltar. `municipio` é a rota de um
      concelho com página, e hoje há uma. */
   'municipio',
+  /* `/correcoes` entra na subetapa 4a, que é a que reconstrói a forma do
+     registo. A rota não é a casa do método (Emenda 15 isenta o Método, o Sobre e
+     o recibo), e por isso a sua autorreferência conta e vai a zero. */
+  'correcoes',
 ]);
 
 /**

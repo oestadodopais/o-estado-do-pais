@@ -256,6 +256,42 @@ Outside the threshold: government debt, net international investment position,
 unit labour cost and house prices, in 2025.
 ```
 
+### Etapa 4, commit 4-0 · uma chave nova, duas encurtadas, dez retiradas
+
+| chave | pt | en | onde foi usada |
+|---|---|---|---|
+| **`livro.convergenciaK`** | **A régua da convergência, em ficheiro** | **The convergence rule, as a file** | **chave nova**: o rótulo do ficheiro cuja porta desceu da primeira página para o índice do livro-razão (relocação R13) |
+| `livro.seloCheio` · `livro.seloTracejado` | proveniência completa · um campo por confirmar | provenance complete · one field unconfirmed | **encurtadas**: a legenda do selo passa a nomear os dois estados em vez de descrever o glifo desenhado ao lado |
+| `inicio.mapa.svgLabel` | Mapa de pontos dos municípios de Portugal. | Point map of the municipalities of Portugal. | **encurtada**: a instrução de teclado sai do rótulo e fica só em `tecladoHint`, dentro do bloco que só se constrói onde o script que a torna verdadeira está carregado |
+| `municipio.metaDescricaoB` | : população, poder de compra, emprego, empresas, dívida e execução orçamental. | : population, purchasing power, employment, enterprises, debt and budget execution. | **encurtada**: a segunda frase era o método do sítio na descrição do `<head>` |
+
+**Retiradas nas duas edições, e nenhuma substituída:** `livro.grupoCompletasV`,
+`livro.grupoPorConfirmarV`, `municipio.ledeA`, `municipio.ledeB`,
+`municipio.relanceSub`, `municipio.breveSub`, `municipio.tempoBreve`,
+`municipio.tempoAtribuicaoV`, `municipio.estudosV`. A lista com o que cada uma
+dizia e porque saiu está em `RELOCACOES.md`, «Texto novo · Etapa 4, commit 4-0».
+
+### Etapa 4, subetapa 4a · duas chaves novas, as duas para quem ouve a página
+
+| chave | pt | en | onde foi usada |
+|---|---|---|---|
+| **`correcoes.valorAnteriorVh`** | **valor anterior: ** | **previous value: ** | **chave nova**: o prefixo em `.vh` do valor antigo, em cada entrada do registo de correções |
+| **`correcoes.valorNovoVh`** | **valor novo: ** | **new value: ** | **chave nova**: o prefixo em `.vh` do valor novo |
+
+**Porque são duas e não uma.** O brief pede o prefixo do valor antigo, «valor
+anterior» / «previous value», e o do valor novo entra com ele por uma razão
+medida e não por simetria: a forma da correção é o risco, o risco não se ouve, e
+os cabeçalhos de coluna do registo são um `<div>` de `<span>`s que não se associa
+a célula nenhuma. Sem o segundo prefixo, quem ouve uma entrada recebe «valor
+anterior: 78,3 78» — dois números seguidos e nenhuma maneira de saber onde acaba
+o primeiro. Nas atualizações é pior: a seta entre os dois é `aria-hidden`, e sem
+prefixo ouviam-se só os dois algarismos. As duas vão **fora** do elemento marcado
+com `data-correcao-campo`, para que o portão continue a comparar só o valor com o
+do livro-razão.
+
+**Nenhuma outra cadeia da 4a é nova.** O selo escreve `prov.selo` («fonte» /
+«source»), que já existia, e a etiqueta vem do registo dos trabalhos.
+
 ## Identidades aceites (PT = EN de propósito)
 Nomes próprios, códigos de série, identificadores de linha, «Eurostat», «INE», «DGAL», «IEFP», «CAOP», «UE-27», «O Estado do País». A régua da invariância imprime todas as chaves cujo valor é igual nas duas línguas; as que não estiverem nesta lista são erro.
 
