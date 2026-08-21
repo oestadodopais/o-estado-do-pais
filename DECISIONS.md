@@ -9135,6 +9135,38 @@ as quatro são comentários.
 | `/agenda` | 21 distintas · conteúdo 31 · navegação 2 · **autorreferência 0** ✓ |
 | `/en/agenda` | 21 distintas · conteúdo 31 · navegação 2 · **autorreferência 0** ✓ |
 
+### 1.59 O Sobre, a página do marcador e o 404 já estavam na letra da v3, e o 404 deixa de contar o projecto da casa
+
+**Afecta:** nenhum
+
+*(Subetapa 4d do redesenho v3. `src/data/sobre.mjs` **não muda**, e o portão
+continua a compará-lo carácter a carácter com o bloco `data-sobre` que a página
+rende.)*
+
+**O que esta subetapa encontrou, e é o resultado honesto dela:** as três páginas
+já estavam na disposição A, na letra e nos tokens da v3, feitos pelas etapas 1 e
+2 quando a folha inteira mudou. O brief mandava «tipo e tokens só», e não havia
+tipo nem token para mudar. Fica escrito assim em vez de se inventar trabalho.
+
+**Uma cadeia encurtada**, pela regra da direção de 21.08.2026: `erro404.corpo`
+dizia «A ligação pode estar errada, ou a página pode ter mudado de sítio
+**enquanto os estudos são mudados para aqui**» (e a inglesa). A segunda metade
+conta o projecto da casa a quem só quer o caminho de volta. Fica a primeira, e as
+três portas por baixo é que resolvem.
+
+**Um defeito encontrado a fotografar, e registado em vez de improvisado**
+(`ISSUES.md` **I53**): **a edição inglesa não tem página de erro.**
+`src/pages/` tem `404.astro` e mais nada, e um leitor inglês que caia num
+endereço inexistente recebe a página portuguesa. As cadeias inglesas já existem
+(`erro404.*` tem as duas edições); o que falta é a rota. É uma rota nova, o brief
+desta subetapa é «tipo e tokens só», e por isso fica pedido à cadeira.
+
+**Um segundo achado da fotografia, e é do aparelho e não da página:** o servidor
+das capturas pedia `/404` e recebia um corpo vazio, porque `dist/` guarda
+`404.html` e não uma pasta com `index.html` — em produção é o anfitrião que
+devolve esse ficheiro para um caminho desconhecido. A captura saía uma página
+branca. `tests/inicio/capturas.mjs` passa a pedir `/404.html`.
+
 ---
 
 ## 4. O registo dos defeitos e dos adiamentos

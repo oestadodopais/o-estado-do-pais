@@ -69,7 +69,12 @@ const ROTAS_DA_ETAPA_4 = [
   { nome: 'estudos', pt: '/estudos', en: '/en/studies' },
   { nome: 'estudo-agua', pt: '/estudos/agua-nao-faturada', en: '/en/studies/agua-nao-faturada' },
   { nome: 'marcador', pt: '/a-verificar', en: '/en/to-verify' },
-  { nome: 'nao-encontrado', pt: '/404', edicoes: ['pt'] },
+  /* O 404 fotografa-se pelo ficheiro (`/404.html`) e não pelo caminho: o
+     servidor destas capturas serve `dist/` tal e qual, e `/404` não é uma pasta
+     com `index.html`. Em produção é o anfitrião que devolve este ficheiro para
+     um caminho desconhecido; aqui, pedir `/404` devolvia um corpo vazio, e a
+     captura saía uma página branca. */
+  { nome: 'nao-encontrado', pt: '/404.html', edicoes: ['pt'] },
 ];
 
 const DESTINO = ETAPA_4
