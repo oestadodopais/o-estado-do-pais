@@ -18,6 +18,8 @@ DECIDE WITH ME BEFORE THE STAGE THAT NEEDS THEM
 - the English 404 route (a `vercel.json` rule);
 - the studies' voice pass: the diff of what the content records drop and keep comes to me before anything is pinned; the rule is the one of Emenda 15 applied to the document's own voice (about the data stays, about the site or the file goes).
 
+NOT IN SCOPE, BY MY DECISION OF 21.08: discoverability and outreach (Search Console requests, inbound links, messages to municipalities, press or data circles) wait until the content, its organisation and its presentation are settled (the studies' transition, the voice phase, the housing reading page); do not propose them before then. The site is verified open to search engines (no noindex, robots allows, sitemap 200); being found is a later stage.
+
 STOP AND ASK, DO NOT IMPROVISE AROUND: the same five cases as the «luz verde» prompt of 20.08 (a conflict with repo reality, a gate or a standing decision; a value or copy with no row; an editorial call; a new gate; a constitution rule that cannot be met as specified).
 
 REPORTING: as before, at each stage boundary: what shipped, screenshots at 1280 and 390 in both editions where a page changed, gate and ruler status with deltas, EN keys, the ISSUES list, which model ran which part and the tokens. Start by telling me in ten lines what you read, what moved on `main` since `53272ac`, what the Monday refresh did if it has run, and what stage A will commit. Then go.
