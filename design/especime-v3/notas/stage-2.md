@@ -2288,3 +2288,248 @@ matriz inteira quatro vezes, duas varreduras de transbordo de setenta combinaç�
 cada, as alturas do instrumento nas duas construções, 68 capturas da primeira
 página e 32 da etapa 1, e a conta por bloco da invariância. Não tenho um número
 exacto para lá desta diferença, e não o invento.
+
+---
+
+## 2k · as duas correções da segunda leitura cruzada
+
+*Construtor B6, **Claude Opus**, sozinho, sem subagentes, 21.08.2026, a partir de
+`838a12f`. Um commit. Nada foi empurrado, nada foi posto no ar, `vercel.json` não
+foi tocado, nenhum portão novo, nenhuma chave nova, nenhum número inventado. A
+ronda é a triagem da cadeira sobre a segunda leitura do Codex
+(`critica/2026-08-21-codex-segunda-leitura-da-primeira-pagina.md`): dois achados
+reais, o 13 e o 16, e mais nada.*
+
+### (1) Achado 13 · a palavra «provisório» ao pé das cópias desenhadas
+
+**O que estava.** As seis linhas do PIB per capita de 2024 trazem `source_flag:
+"p"`, e a decisão (d) manda a palavra ao lado do valor **em todas as superfícies**.
+`Claim.astro` escreve-a em todas menos uma, e diz porquê no seu próprio cabeçalho:
+dentro de um `<svg>` não entra, porque um `<span>` não é filho legítimo de um
+`<text>`. É o ISSUES **I22**, aberto desde a etapa 1f à espera da cadeira. As
+cópias desenhadas são sete: as seis da banda da região (`as="tspan"`) e a do
+marcador do Instrumento n.º 1 (`as="text"`).
+
+**O que a direção decidiu, e é por isso que isto não é um `<tspan>` novo:** a
+palavra entra **na entrada de legenda de selos daquele valor**, que é onde o selo
+do valor desenhado já vive pela convenção do §1.34 — «um `<a>` dentro de um desenho
+não se lê como porta». A ressalva viaja com a porta.
+
+**Metade já estava feita, e ninguém tinha reparado.** A entrada da legenda da
+banda é um `<Claim … chip>` — um `<Claim>` FORA do desenho —, e um `<Claim>` fora
+do desenho traz a palavra por si. As seis entradas da banda já a levavam. A que
+faltava era a do Instrumento n.º 1, cuja entrada de legenda (`.brief
+[data-brief-chip]`) é **só o selo**: sem valor, e portanto sem `<Claim>` que a
+trouxesse. É a essa entrada que a palavra se junta.
+
+**A condição lê-se da linha**, como em `Claim.astro`: `getClaim(r.valor)
+.source_flag === 'p'`, do mesmo livro-razão que o portão confere, e nunca de uma
+lista escrita à mão. Hoje são seis; amanhã são as que a fonte marcar.
+
+**Onde ela fica, e porque passa nas conferências:** fora do selo (`seloDaLinha()`
+compara o texto visível do `.src-chip` carácter a carácter) e fora de qualquer
+`[data-claim]` (`formaDoValor()` compara a cadeia lá dentro com o valor publicado).
+A ordem é a da casa — valor, unidade colada, palavra, selo —, e aqui, sem valor na
+entrada, fica palavra e depois selo. A classe é a `.claim-provisorio` que já
+existe em `site.css`, sem uma regra nova.
+
+**O script não a compõe.** `convergencia.js` não reconstrói esta legenda:
+`desenhaLeitura()` só troca o `hidden` de cada `[data-brief-chip]`. As seis
+entradas saem do servidor prontas, com a palavra dentro, e a palavra acompanha o
+selo pela mecânica que já os mostrava e escondia. Nenhuma cadeia é montada em
+tempo de execução.
+
+**Medido, antes e depois, nas duas edições** (a construção de referência é um
+`git worktree --detach 838a12f` com `node_modules` ligado e `npm run build`
+verde):
+
+```
+grep -o 'claim-provisorio">[^<]*' dist/index.html    | sort | uniq -c
+grep -o 'claim-provisorio">[^<]*' dist/en/index.html | sort | uniq -c
+
+   838a12f:   18 provisório   ·   18 provisional
+   2k:        24 provisório   ·   24 provisional
+```
+
+E linha a linha, contadas as **entradas de legenda** (a entrada é o elemento da
+legenda que contém o selo daquela linha; conta quando a palavra está nessa entrada,
+fora do selo e fora do `[data-claim]`):
+
+| linha | cópias desenhadas | entradas com a palavra, `838a12f` | entradas com a palavra, 2k |
+| --- | --- | --- | --- |
+| `pib-pc-portugal-2024` | 2 | 1 (banda) | **2** (banda, `.brief`) |
+| `pib-pc-grande-lisboa-2024` | 1 | 1 (banda) | **2** (banda, `.brief`) |
+| `pib-pc-peninsula-de-setubal-2024` | 1 | 1 (banda) | **2** (banda, `.brief`) |
+| `pib-pc-algarve-2024` | 1 | 1 (banda) | **2** (banda, `.brief`) |
+| `pib-pc-madeira-2024` | 1 | 1 (banda) | **2** (banda, `.brief`) |
+| `pib-pc-alentejo-2024` | 1 | 1 (banda) | **2** (banda, `.brief`) |
+
+**Igual nas duas edições, linha a linha.** Portugal tem duas cópias desenhadas
+porque é a região por defeito do Instrumento n.º 1: a banda desenha-a e o marcador
+da régua também. As outras cinco só se desenham na banda, do lado do servidor.
+
+**O controlo negativo está na própria célula da matriz:** a distância da régua
+(`distancia-portugal-ue27-2024`) também é desenhada dentro do `<svg>`, e a fonte
+não a marca. A célula lê as linhas desenhadas do documento, conta 6 provisórias e
+não 7, e é isso que prova que a condição vem do `source_flag` e não de uma lista.
+
+**I22 fica fechado**, e não como ele previa: a palavra continua a NÃO entrar dentro
+do `<svg>`. **I30 fica aberto**, e é um buraco anterior a esta ronda que a palavra
+herdou: «Ver todas» põe seis valores na régua e a legenda continua a mostrar um só
+selo — medido, `desenhados:6 selos:1 palavras:1`. O portão não o vê porque varre
+HTML construído; a saída barata não compõe cadeia nenhuma, mas muda o que a
+legenda mostra, e isso é forma.
+
+### (2) Achado 16 · `aria-controls` nas duas divulgações por irmão
+
+**O que estava.** Dois comandos deste sítio abrem um **irmão** e não o seu próprio
+conteúdo: o «Menu» do cabeçalho, que revela a navegação, e a porta do telemóvel do
+Instrumento n.º 1, que revela o corpo do instrumento. Os dois têm a razão escrita
+onde vivem, e a razão é medida e não de gosto: um `<details>` fechado esconde o que
+tem dentro por `::details-content`, e não há regra de folha portátil que o volte a
+mostrar na secretária; com o corpo ao lado, `[open] ~` chega e existe em todo o
+lado. **Os dois comentários já diziam o que se perdia** — «a associação de árvore
+entre o comando e o que ele abre». O que faltava era o atributo que a repõe.
+
+**O que entra.** `id="nav-principal"` na `<nav>` e `id="convergencia-corpo"` no
+`<div class="conv-corpo">`; `aria-controls` com esse `id` em cada `<summary>`; e um
+`aria-expanded` que acompanha o `open`. O id é do **corpo** e não da secção:
+`#convergencia` é a âncora da secção inteira e duas portas da página já lá levam.
+
+**Medido ANTES de escrito, e é o que decidiu a forma.** Num Chromium 148, o
+`aria-expanded` de um `<summary>` **não manda** no estado que a árvore de
+acessibilidade publica — o `open` do `<details>` manda, nos dois sentidos:
+
+```
+guião de rascunho: três <details> numa página de mentira, lidos por
+Accessibility.getFullAXTree (CDP), no mesmo Chromium da matriz
+
+  A, sem aria,              <details open>      role=DisclosureTriangle expanded=true
+  B, aria-expanded="false", <details open>      role=DisclosureTriangle expanded=true
+  C, aria-expanded="true",  <details> fechado   role=DisclosureTriangle expanded=false
+```
+
+Isto responde à pergunta que decidia se o atributo podia entrar: **um atributo
+parado não mente a quem ouve a página**, porque quem ouve lê o `open`. Mente ao DOM
+e a quem o lê de fora. É por isso que ele existe **e** é acompanhado, e não uma
+coisa sem a outra — e é por isso que a rendição sem JavaScript continua correcta:
+sem script o leitor abre o menu na mesma, o `aria-expanded` fica em `false`, e a
+árvore continua a dizer «aberto». Sem esta medição eu não sabia se o atributo era
+inofensivo ou uma regressão, e escrevi-a antes de escrever a linha.
+
+**Quem o acompanha é `public/js/tema.js`**, e a escolha tem uma razão só: o «Menu»
+está no cabeçalho, o cabeçalho está em **307 páginas**, e `tema.js` é o único
+ficheiro adiado que as 307 carregam. O bloco é genérico e fecha-se sozinho — vale
+para todo o `details > summary[aria-controls]`, e mais nenhum `<summary>` do sítio
+leva esse atributo, porque os outros abrem o que têm dentro e o navegador trata
+deles. Uma terceira divulgação por irmão entra sem uma linha a mais. Corre **antes**
+do controlo do tema, de propósito: o tema desiste quando a página não tem controlo,
+e o cabeçalho tem «Menu» na mesma. **O ficheiro passa a ter duas partes e o nome só
+diz uma; fica em ISSUES como I31**, com o cabeçalho a declarar as duas por extenso
+para que o nome não seja a única coisa que se lê.
+
+**Medido em Chromium sem cabeça, nas duas edições** (célula nova da matriz; a
+390 a célula ABRE os dois a sério, com um toque, e vê o atributo virar e voltar):
+
+| edição | largura | comando | resolve | é irmão | `aria-expanded` | corpo à vista |
+| --- | --- | --- | --- | --- | --- | --- |
+| pt | 390 | `nav-principal` | sim | sim | `false` → `true` → `false` | sim |
+| pt | 390 | `convergencia-corpo` | sim | sim | `false` → `true` → `false` | sim |
+| en | 390 | `nav-principal` | sim | sim | `false` → `true` → `false` | sim |
+| en | 390 | `convergencia-corpo` | sim | sim | `false` → `true` → `false` | sim |
+
+E a 1280, nas duas edições: **comando do menu à vista `false`, navegação à vista
+`true`** — que é o outro desenho da mesma folha, e a prova de que o atributo não
+mudou a composição.
+
+```
+grep -o 'aria-controls="[^"]*"' dist/index.html | sort | uniq -c
+   1 aria-controls="convergencia-corpo"
+   1 aria-controls="nav-principal"
+
+páginas do sítio (as 307 que levam o cabeçalho) com aria-controls ou aria-expanded
+   838a12f: 0        2k: 307 com aria-controls, 2 delas com dois
+```
+
+**A primeira conta que eu escrevi aqui estava errada, e fica corrigida em vez de
+apagada.** Contei `aria-controls|aria-expanded` só em `dist/index.html`, vi zero, e
+ia escrever «zero em todo o `dist`». Em todo o `dist` são **cinco ficheiros**: os
+documentos de estudo (`estudos/*/documento/`, `en/studies/*/document/`), que são
+peças escritas à mão, não levam cabeçalho nenhum e já traziam **1 367
+`aria-expanded="false"`** e oito `aria-controls` antes desta ronda. A conta que
+interessa é a das **307 páginas do sítio**, e essa é zero → 307. O controlo
+positivo do `grep` no mesmo `dist` de referência é `aria-pressed`, que aparece em
+312 ficheiros.
+
+### 2k · as réguas
+
+**A matriz.** `node tests/inicio/matriz.mjs --json
+design/especime-v3/medicoes/2026-08-21-etapa-2k-matriz.json` — **90 de 90 células
+passam** (as 88 da 2j, todas ainda verdes, mais duas novas):
+
+```
+passa  2k · a palavra «provisório» na entrada de legenda de cada cópia desenhada
+passa  2k · as duas divulgações por irmão: aria-controls resolve e aria-expanded acompanha
+```
+
+A célula «2i·2 · a palavra do provisório segue a edição» passa a imprimir
+`pt {"provisório":24} · en {"provisional":24}`, onde a 2j imprimia 18 e 18: ela
+confere que a palavra segue a edição, e não quantas são.
+
+**As duas réguas.** `medir-defeitos.mjs` e `medir-contraste.mjs`, comparados com a
+medição da 2j **como JSON inteiro**: **idênticos, os dois**. Controlo positivo: o
+mesmo comparador contra a medição da 2i diz `false`.
+
+| régua | 2j | 2k |
+| --- | --- | --- |
+| defeitos · frases de moldura | 93 distintas · 2 099 | **93 distintas · 2 099** |
+| defeitos · cobertura (com-pagina / sem-pagina / sem-linha) | 1×6 / 1×307 / 1×8 | **1×6 / 1×307 / 1×8** |
+| defeitos · primeira página, valores sem selo | 0 | **0** |
+| contraste · claro / escuro | 0 falhas / 0 falhas | **0 falhas / 0 falhas** |
+
+Era o esperado, e a razão é que nenhuma das duas correções escreve uma frase: uma
+acrescenta uma palavra de onze caracteres (a régua dos defeitos só conta blocos com
+30 ou mais) e a outra acrescenta atributos, que não são texto.
+
+**A invariância diz o mesmo por outro lado**, e é a medida que prova que o
+cabeçalho partilhado não mexeu em nenhuma página:
+
+```
+node scripts/medir-invariancia.mjs <dist de 838a12f> dist
+  322 rotas · 320 idênticas em texto · 2 com diferenças
+  /     +6 −0    (+ provisório × 6)
+  /en/  +6 −0    (+ provisional × 6)
+```
+
+**Zero blocos removidos, em qualquer rota.** As 305 páginas que ganharam
+`aria-controls` e `id` não mudaram um carácter do que se lê.
+
+Guardadas em `design/especime-v3/medicoes/2026-08-21-etapa-2k-{matriz,defeitos,
+contraste,invariancia}.json`.
+
+**`npm run build` e `npm run verify` verdes** (`verify` sai a 0, com as seis
+conferências a passar: livro-razão, cruzamento, documentos, portão de HTML, dados).
+**`CHAVES-EN.md` não muda**: a chave é a `prov.provisorio` que já existe nas duas
+edições, e nenhuma cadeia nova entrou em `strings.mjs`.
+
+### 2k · o que fica por fazer, e porquê
+
+1. **I30 · a legenda mostra um selo e o desenho pode ter seis valores.** É
+   anterior a esta ronda e a palavra herdou-a. Mudar o que a legenda mostra é
+   forma, e forma é da direção.
+2. **I31 · `tema.js` tem duas partes e o nome só diz uma.** O nome é da cadeira.
+3. **As capturas não foram refeitas.** Não mudou um píxel da composição: a única
+   diferença visível é a palavra «provisório» em seis entradas de legenda do
+   Instrumento n.º 1, e as capturas da 2j continuam a descrever tudo o resto. Fica
+   dito para que a ausência não se leia como esquecimento — se a cadeira as quiser,
+   é `node tests/inicio/capturas.mjs`.
+4. **Os achados que a triagem não deu a esta ronda ficam onde a triagem os pôs**:
+   o desvio dos 84px (17) no registo de desvios, a técnica dos fios (15) para o
+   olho da direção, e os oito de desenho da casa sem alteração nenhuma.
+
+### 2k · quem fez o quê, e quanto custou
+
+**Claude Opus** (construtor B6), num só fio, sem subagentes e sem delegação.
+Nenhuma parte desta ronda correu noutro modelo. A contagem de fichas está no
+relatório da ronda, e é a diferença de dois contadores — não tenho número exacto
+para lá dessa diferença, e não o invento.

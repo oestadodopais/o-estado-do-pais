@@ -257,9 +257,42 @@ for (const r of REGIOES) {
         </p>
       ))
     }
+    {/* --------------------------------------------------------------------
+        A PALAVRA «PROVISÓRIO» AO PÉ DO SELO DO VALOR DESENHADO (2k, achado 13
+        da segunda leitura cruzada; decisão (d) da direção)
+        --------------------------------------------------------------------
+        `Claim.astro` escreve a palavra ao pé do número em todo o lado MENOS
+        dentro de um `<svg>`, onde um `<span>` não é filho legítimo de um
+        `<text>` — está lá dito, e é verdade. O valor desta régua é desenhado
+        (`as="text"`, a marca `mk-val`), e por isso a cópia desenhada saía sem a
+        ressalva que a linha manda viajar com o número.
+
+        A direção decidiu onde ela entra: NA LEGENDA DE SELOS, que é onde o selo
+        do valor desenhado já vive pela convenção do §1.34. A banda da região já
+        o fazia sem ninguém reparar — a entrada da sua legenda é um `<Claim …
+        chip>`, e um `<Claim>` fora de um SVG traz a palavra —; aqui a entrada é
+        só o selo, e é a ela que a palavra se junta.
+
+        A CONDIÇÃO LÊ-SE DA LINHA, como em `Claim.astro`: `source_flag === 'p'`,
+        do `getClaim()` que o portão confere, e nunca de uma lista escrita à mão.
+        Hoje são as seis do PIB per capita; amanhã são as que a fonte marcar.
+
+        FORA DO SELO e fora de qualquer `[data-claim]`: `seloDaLinha()` compara o
+        texto visível do `.src-chip` carácter a carácter, e `formaDoValor()`
+        compara a cadeia dentro do `[data-claim]` com o valor publicado. A ordem é
+        a mesma da casa — palavra, depois selo.
+
+        O SCRIPT NÃO A COMPÕE. `convergencia.js` não reconstrói esta legenda:
+        `desenhaLeitura()` só troca o `hidden` de cada `[data-brief-chip]`. As
+        seis entradas saem do servidor prontas, com a palavra dentro, e a palavra
+        acompanha o selo pela mesma mecânica que já os mostrava e escondia.
+        -------------------------------------------------------------------- */}
     {
       REGIOES.map((r) => (
         <span data-brief-chip={r.id} hidden={r.id !== inicial.id}>
+          {getClaim(r.valor).source_flag === 'p' && (
+            <span class="claim-provisorio">{s.prov.provisorio}</span>
+          )}
           <Provenance id={r.valor} lang={lang} />
         </span>
       ))

@@ -413,17 +413,27 @@ const medidasSemLinha = evora
       peça já usa nesta folha. O que se perde é a associação de árvore entre o
       comando e o que ele abre; o que se ganha é que a secretária não depende
       de um pseudo-elemento que ainda não está em todos os motores.
+
+      O QUE SE PERDIA NA ÁRVORE RECUPERA-SE POR NOME (2k, achado 16 da segunda
+      leitura cruzada). O parágrafo acima já dizia o que faltava; faltava o
+      atributo que o diz. O `<summary>` leva `aria-controls="convergencia-corpo"`
+      — o `id` do irmão que ele abre — e um `aria-expanded` que acompanha o
+      `open`, mantido por `public/js/tema.js`, que é o ficheiro adiado que todas
+      as páginas carregam e onde vive a regra genérica: onde um `<summary>` tem
+      `aria-controls`, o `aria-expanded` segue o `open` do seu `<details>`. O id
+      é do CORPO e não da secção: `#convergencia` é a âncora da secção inteira, e
+      duas portas da página já lá levam.
       -------------------------------------------------------------------- */}
   <section id="convergencia" data-so-pais>
     <details class="conv-porta" data-conv-porta>
-      <summary class="conv-porta-sum">
+      <summary class="conv-porta-sum" aria-controls="convergencia-corpo" aria-expanded="false">
         <span class="conv-porta-seta" aria-hidden="true"></span>
         <span class="conv-porta-nome">{s.home.instr1.h2}</span>
         <span class="conv-porta-a">{s.densidade.abrir}</span>
         <span class="conv-porta-f">{s.densidade.fechar}</span>
       </summary>
     </details>
-    <div class="conv-corpo">
+    <div class="conv-corpo" id="convergencia-corpo">
       <div class="sec-head">
         <span class="eyebrow">
           {s.home.instr1.eyebrow} <span data-nonledger="numeracao">{lang === 'pt' ? 'n.º 1' : 'no. 1'}</span>

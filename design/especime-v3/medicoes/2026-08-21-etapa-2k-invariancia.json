@@ -1,0 +1,36 @@
+{
+  "a": "/private/tmp/claude-501/-Users-nunosantos/b185e650-e114-4dd4-a233-45407e03b19a/scratchpad/base-838a12f/dist",
+  "b": "dist",
+  "rotas": 322,
+  "iguais": 320,
+  "diferencas": [
+    {
+      "rota": "/",
+      "estado": "difere",
+      "mais": 6,
+      "menos": 0,
+      "acrescentados": [
+        "provisório",
+        "provisório",
+        "provisório",
+        "provisório",
+        "provisório"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/",
+      "estado": "difere",
+      "mais": 6,
+      "menos": 0,
+      "acrescentados": [
+        "provisional",
+        "provisional",
+        "provisional",
+        "provisional",
+        "provisional"
+      ],
+      "retirados": []
+    }
+  ]
+}

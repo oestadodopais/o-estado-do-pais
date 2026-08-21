@@ -1,5 +1,45 @@
 /**
- * O CONTROLO DO TEMA (Emenda 12, 21.08.2026; DECISIONS §1.52).
+ * O FICHEIRO ADIADO DA MOBÍLIA PARTILHADA — duas partes, e as duas são de
+ * atributos: o estado das divulgações por irmão, e o controlo do tema.
+ *
+ * Chama-se `tema.js` porque foi o tema que o trouxe (brief da 2j) e é a etiqueta
+ * que `Base.astro` carrega em todas as páginas. Passa a ter uma segunda parte na
+ * 2k, pela razão mais simples: a primeira divulgação por irmão está no cabeçalho,
+ * que existe em todas as páginas, e este é o único ficheiro que todas carregam.
+ * Fica dito em vez de escondido; o nome é da cadeira.
+ *
+ * ---------------------------------------------------------------------------
+ * PARTE 1 · AS DIVULGAÇÕES POR IRMÃO (2k, achado 16 da segunda leitura cruzada)
+ * ---------------------------------------------------------------------------
+ * Dois comandos deste sítio abrem um IRMÃO e não o seu próprio conteúdo: o
+ * «Menu» do cabeçalho, que revela `#nav-principal`, e a porta do telemóvel do
+ * Instrumento n.º 1, que revela `#convergencia-corpo`. Os dois têm a razão
+ * escrita onde vivem: um `<details>` fechado esconde o que tem dentro por
+ * `::details-content`, e não há regra de folha portátil que o volte a mostrar na
+ * secretária; com o corpo ao lado, `[open] ~` chega e existe em todo o lado.
+ *
+ * O preço era a árvore: o `<details>` anuncia-se como um comando que abre e
+ * fecha, e o que ele abre não está lá dentro. `aria-controls` diz qual é, pelo
+ * `id`, e o `aria-expanded` acompanha o `open`. Este bloco é o que o acompanha.
+ *
+ * MEDIDO ANTES DE ESCRITO: num Chromium 148, o `aria-expanded` de um `<summary>`
+ * não manda no estado que a árvore de acessibilidade publica — o `open` do
+ * `<details>` manda, nos dois sentidos, mesmo quando o atributo diz o contrário.
+ * Um atributo parado não mente, portanto, a quem ouve a página; mente ao DOM e a
+ * quem o lê de fora. É por isso que ele existe E é acompanhado, e não uma coisa
+ * sem a outra.
+ *
+ * A REGRA É GENÉRICA E FECHA-SE SOZINHA: vale para todo o `summary[aria-controls]`
+ * que seja de um `<details>`, e mais nenhum `<summary>` do sítio leva esse
+ * atributo — as peças e o aparelho abrem o que têm dentro e o navegador trata
+ * deles. Uma terceira divulgação por irmão entra sem uma linha a mais aqui.
+ *
+ * Corre ANTES do controlo do tema, e é de propósito: o tema desiste quando a
+ * página não tem controlo nenhum, e o cabeçalho tem «Menu» na mesma.
+ *
+ * ---------------------------------------------------------------------------
+ * PARTE 2 · O CONTROLO DO TEMA (Emenda 12, 21.08.2026; DECISIONS §1.52).
+ * ---------------------------------------------------------------------------
  *
  * Claro por defeito para todos, independentemente da preferência do sistema. O
  * escuro é um pedido do leitor, feito neste controlo, e fica no aparelho dele —
@@ -26,6 +66,26 @@
  */
 (function () {
   'use strict';
+
+  /* ------------------------------------------- as divulgações por irmão */
+
+  var divulgacoes = document.querySelectorAll('details > summary[aria-controls]');
+  for (var d = 0; d < divulgacoes.length; d++) {
+    (function (sumario) {
+      var porta = sumario.parentNode;
+      var acompanha = function () {
+        sumario.setAttribute('aria-expanded', porta.open ? 'true' : 'false');
+      };
+      /* O `toggle` chega ao `<details>` e não ao `<summary>`, e chega tanto para
+         um toque como para uma abertura feita por script. Uma leitura à chegada
+         põe o atributo de acordo com o documento que o navegador carregou: uma
+         página restaurada da história pode vir com a porta aberta. */
+      porta.addEventListener('toggle', acompanha);
+      acompanha();
+    })(divulgacoes[d]);
+  }
+
+  /* ------------------------------------------------ o controlo do tema */
 
   var CHAVE = 'tema';
   var ESCURO = 'dark';
