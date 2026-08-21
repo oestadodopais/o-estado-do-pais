@@ -305,12 +305,25 @@
 .mapa {
   margin: 0;
   display: grid;
-  grid-template-columns: minmax(0, 281px);
+  grid-template-columns: minmax(0, 1fr);
   row-gap: 8px;
   align-items: start;
 }
+/* O MAPA ENCHE A COLUNA (etapa 2m, brief §1).
+   Media 281px fixos, escolhidos quando ele tinha a ficha ao lado; com a ficha
+   reduzida a uma linha (Emenda 17) a coluna da direita é dele e mais de nenhum,
+   e a 1280 sobravam-lhe 209px de papel à direita. O campo é um `viewBox`, e por
+   isso encher a coluna é uma linha: a escala sobe, o desenho é o mesmo, e os
+   pontos e os alvos crescem com ela porque estão declarados em unidades do
+   campo. Abaixo de 1024 a cabeça é uma coluna só e o mapa fica no seu tamanho
+   antigo — encher ali seria um mapa de 942px por cima do texto. */
 .mapa-tela {
   width: 281px;
+}
+@media (min-width: 1024px) {
+  .mapa-tela {
+    width: 100%;
+  }
 }
 .mapa-svg {
   display: block;
@@ -339,6 +352,24 @@
   stroke: var(--ink);
   stroke-width: 1.2;
 }
+/* O ANEL DO CURSOR ESTAVA A DESENHAR UM DISCO PRETO (achado da 2m).
+   `public/js/inicio.js` cria um `<circle class="cursor-ring">` para marcar o
+   ponto que o cursor ou o teclado está a ler, e a única regra do sítio para essa
+   classe está em `site.css` debaixo de `.map-svg` — a classe do instrumento da
+   v2, que saiu com a 2b. Sem regra, um `<circle>` sai com o enchimento por
+   defeito do SVG, que é preto sólido: o marcador de leitura contradizia a
+   Emenda 10 («um lugar escolhido é um anel, nunca um preenchimento») desde a
+   subetapa em que o mapa mudou de classe. Medido no navegador, antes e depois.
+   O contorno não escala com o campo: o anel é um marcador de leitura e não uma
+   coisa do território, e a 4× de ampliação um contorno de 1,5 unidades daria
+   um aro de 11px. */
+.mapa-svg .cursor-ring {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
 .mun-alvo {
   fill: transparent;
   stroke: none;
@@ -349,14 +380,56 @@
   outline-offset: 2px;
 }
 
-.mapa-linha {
+.mapa-linha,
+.mapa-rodape {
   min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
+
+/* ------------------------------------------------- a legenda no canto das ilhas
+ *
+ * Emenda 17 posta onde ela cabe (etapa 2m). A legenda ficava POR BAIXO do mapa,
+ * e por baixo do mapa não há nada a dizer: o campo do desenho tem um rectângulo
+ * vazio de 336×104 unidades no canto inferior direito, à direita da moldura dos
+ * Açores (que acaba em x=264) e por baixo do ponto mais a sul do continente
+ * (Faro, y=686,1). A legenda vai para lá.
+ *
+ * A TÉCNICA É UMA CÉLULA PARTILHADA, E NÃO POSIÇÃO ABSOLUTA. A tela e a legenda
+ * ocupam a MESMA célula da grelha; a legenda alinha-se ao fim (o fundo do campo)
+ * e recua 45% da largura, que é o x=270 do campo. Assim ela acompanha a escala
+ * do mapa sem uma medida em píxeis, e a altura da fila continua a ser a do mapa,
+ * porque a legenda é sempre mais baixa. A leitura em voz alta fica na fila de
+ * baixo, que é onde ela estava: o «e nada mais» da instrução.
+ *
+ * Só quando o mapa enche a largura da coluna. Com o mapa a 281px o canto tem
+ * 155px, e uma legenda de três linhas dentro de 44px sairia por cima do Algarve.
+ */
+@media (min-width: 1024px) {
+  /* AS TRÊS DECLARAÇÕES DE COLUNA NÃO SÃO DECORAÇÃO. Sem `grid-column: 1`, dois
+     itens que declaram a MESMA fila e nenhuma coluna não se sobrepõem: a
+     colocação automática dá a cada um a coluna seguinte, e a grelha cria colunas
+     implícitas para os receber. Medido antes de as pôr: `grid-template-columns`
+     saía «590,78px 300px 201,22px» onde a folha declara uma coluna só, e o mapa
+     ficava com 300px dos 1092 que a coluna tinha. */
+  .mapa-tela {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .mapa-linha {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+    margin-left: 45%;
+  }
+  .mapa-rodape {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
 .mapa-linha-fonte,
-.mapa-linha-dados,
 .mapa-hint,
 .mapa-leitura {
   font-family: var(--f-instr);
@@ -385,6 +458,15 @@
   display: contents;
 }
 [data-postura='inteiro'] .mapa-cartao-texto {
+  display: none;
+}
+/* A LEGENDA E A LEITURA NÃO SE VEEM NO CARTÃO LOCALIZADOR, e quem o diz passa a
+   ser a folha (etapa 2m). Era `public/js/inicio.js` que punha `hidden` na ficha
+   quando a postura mudava — e por isso uma página SEM script que rendesse o
+   cartão (a do concelho, ISSUES I45) mostrava a legenda dos 308 por baixo de um
+   localizador. A postura já está no atributo; a folha lê-a. */
+[data-postura='localizador'] .mapa-linha,
+[data-postura='localizador'] .mapa-rodape {
   display: none;
 }
 [data-postura='localizador'] .mapa-cartao {
@@ -1081,6 +1163,101 @@ a.porta:hover .porta-abrir {
   align-items: center;
 }
 
+/* ============================================================================
+ * A VISTA DE ESCOLHA: O MAPA CRESCE PARA SE PODER ESCOLHER (etapa 2m, brief §1)
+ * ============================================================================
+ *
+ * «O mapa expande-se à largura inteira do conteúdo (a coluna de texto colapsa
+ * por cima dele; a pesquisa fica acima do mapa), com o campo à escala em que os
+ * vizinhos mais próximos da costa se separam, os alvos maiores na mesma
+ * proporção e as ilhas proporcionais.»
+ *
+ * O ESTADO TEM ENDEREÇO, E É POR ELE QUE A FOLHA PERGUNTA. `?ambito=municipio`
+ * é a vista de escolha (ISSUES I42, fechado nesta ronda); `municipio:<slug>` é
+ * um concelho escolhido, que é outro estado e não cresce. O selector é de
+ * igualdade exacta, e por isso distingue os dois sem uma classe nova.
+ *
+ * O QUE CRESCE, E O QUE NÃO CRESCE. O campo é um `viewBox`, e por isso tudo o
+ * que está declarado em unidades dele — as posições, as molduras das ilhas, as
+ * áreas de toque — cresce sozinho e na mesma proporção. O que NÃO pode crescer
+ * na mesma proporção é o ponto: a 1092px de largura um raio de 4,5 unidades dá
+ * um disco de 16,4px, e 308 discos de 16,4px num campo onde o par mais próximo
+ * está a 5,1px de distância são uma nódoa e não um território. O raio desce a 2
+ * unidades, que a esta escala são os mesmos 7,3px de diâmetro que o ponto tem na
+ * coluna — o ponto fica do mesmo tamanho e o campo é que se abre debaixo dele.
+ * É essa a conta que separa os vizinhos: dois pontos tocam-se quando estão a
+ * menos de um diâmetro um do outro, e o número de concelhos cujo vizinho mais
+ * próximo está mais perto do que isso cai de 44 para 9.
+ *
+ * O contorno segue o raio pela mesma razão, e a ampliação leva os dois consigo,
+ * porque uma ampliação é uma lente sobre o mesmo desenho e não um segundo
+ * desenho.
+ *
+ * Abaixo de 640 nada disto se aplica: o telemóvel fica como estava (Emenda 3 —
+ * o selo é o alvo, nenhum ponto é alvo, a pesquisa é o caminho).
+ */
+@media (min-width: 641px) {
+  [data-inicio][data-ambito='municipio'] .cabeca-grelha {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  [data-inicio][data-ambito='municipio'] .mapa-tela {
+    width: 100%;
+    grid-column: 1;
+    grid-row: 1;
+  }
+  [data-inicio][data-ambito='municipio'] .mapa-linha {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+    margin-left: 45%;
+  }
+  [data-inicio][data-ambito='municipio'] .mapa-rodape {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  [data-inicio][data-ambito='municipio'] .mapa-svg .mun {
+    r: 2px;
+    stroke-width: 0.6;
+  }
+  [data-inicio][data-ambito='municipio'] .mapa-svg .mun-escolhido {
+    stroke-width: 1.5;
+  }
+  [data-inicio][data-ambito='municipio'] .mapa-fechar {
+    display: inline-flex;
+  }
+  /* A ampliação corre dentro da caixa do mapa: a roda e o beliscão não podem
+     rolar a página por baixo do dedo enquanto ampliam. */
+  [data-inicio][data-ambito='municipio'] .mapa-tela {
+    touch-action: none;
+  }
+}
+
+/* «fechar» — a saída da vista de escolha. Fica no canto superior direito do
+   campo, que é o maior espaço vazio do desenho (o continente começa em x=300 e
+   em y=63,9), e é um alvo de 44px como os outros comandos desta página. */
+.mapa-fechar {
+  display: none;
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: end;
+  align-self: start;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--rule-strong);
+  background: var(--paper);
+  font-family: var(--f-versal);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  z-index: 2;
+}
+.mapa-fechar:hover {
+  border-color: var(--ink);
+}
+
 /* O SELO É O MAIOR ALVO DA PEÇA, e é uma medição e não uma intenção.
  *
  * A área de toque do selo vem de um `::after` posicionado (`site.css`,
@@ -1136,6 +1313,10 @@ a.porta:hover .porta-abrir {
   .mapa-cartao {
     grid-column: 1 / -1;
     grid-row: 2;
+  }
+  .mapa-rodape {
+    grid-column: 1 / -1;
+    grid-row: 3;
   }
   .movel-destinos {
     display: block;

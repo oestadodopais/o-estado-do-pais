@@ -267,6 +267,12 @@ const estadoDaPagina = (p) =>
     ['?ambito=lisboa', 'ambito=lisboa'],
     ['?densidade=fundo', 'densidade=fundo'],
     ['?ambito=municipio:evora;alert(1)', 'ambito com injecção'],
+    /* A VIZINHANÇA DO VALOR NOVO (etapa 2m). `municipio` passou a ser um valor
+       do esquema — a vista de escolha —, e por isso o que interessa medir é que
+       o esquema não alargou com ele: nem o plural, nem o prefixo sem slug, nem
+       um slug que não existe. */
+    ['?ambito=municipios', 'o plural de um valor válido'],
+    ['?ambito=municipio:', 'o prefixo sem concelho'],
     [`?ambito=${'a'.repeat(2000)}`, 'ambito de 2 000 caracteres'],
     ['?ambito=regiao:atlantida', 'região que não existe'],
   ];
@@ -460,7 +466,17 @@ const estadoDaPagina = (p) =>
 
 /* ------------------------------------------------------------- 6. sem JavaScript */
 {
-  for (const q of ['/', '/?ambito=regiao:alentejo', '/?ambito=municipio:beja', '/?densidade=leitura']) {
+  for (const q of [
+    '/',
+    '/?ambito=regiao:alentejo',
+    '/?ambito=municipio:beja',
+    /* O estado novo da etapa 2m entra nesta lista pela mesma razão dos outros:
+       sem script ele mostra o defeito, com os comandos como ligações que abrem.
+       A vista de escolha é uma vista com script, e a página di-lo por não a
+       abrir em vez de a prometer. */
+    '/?ambito=municipio',
+    '/?densidade=leitura',
+  ]) {
     const p = await pagina({ js: false });
     await p.goto(base + q, { waitUntil: 'load' });
     const e = await p.evaluate(() => ({
@@ -733,13 +749,18 @@ for (const largura of [1280, 390]) {
   });
   const relance = await pagina();
   await relance.goto(base + '/?ambito=municipio:evora', { waitUntil: 'networkidle' });
+  /* O MAPA INTEIRO DEIXOU DE TER LARGURA PRÓPRIA (etapa 2m): enche a coluna da
+     cabeça. A célula deixa de comparar com 281 — que era a largura escrita na
+     folha — e passa a comparar com a COLUNA, que é a promessa nova: se um dia a
+     mancha de texto mudar, a célula acompanha em vez de mentir. */
   const r = await relance.evaluate(() => ({
     postura: document.querySelector('[data-mapa-raiz]').getAttribute('data-postura'),
     largura: Math.round(document.querySelector('.mapa-tela').getBoundingClientRect().width),
+    coluna: Math.round(document.querySelector('.cabeca-inst').getBoundingClientRect().width),
     fichaVisivel: document.querySelector('[data-mapa-ficha]').getClientRects().length > 0,
   }));
   conta(
-    'Évora · o mapa do localizador está dentro do cartão, e o mapa inteiro fica no Relance',
+    'Évora · o mapa do localizador está dentro do cartão, e o mapa inteiro enche a coluna no Relance',
     c.postura === 'localizador' &&
       c.dentro &&
       c.largura === 170 &&
@@ -747,9 +768,9 @@ for (const largura of [1280, 390]) {
       parseFloat(c.moldura) > 0 &&
       !c.fichaVisivel &&
       r.postura === 'inteiro' &&
-      r.largura === 281 &&
+      r.largura === r.coluna &&
       r.fichaVisivel,
-    `leitura: ${c.postura} ${c.largura}px dentro do cartão (moldura ${c.moldura}) · relance: ${r.postura} ${r.largura}px com ficha · ${c.mapas} mapa no documento`,
+    `leitura: ${c.postura} ${c.largura}px dentro do cartão (moldura ${c.moldura}) · relance: ${r.postura} ${r.largura}px numa coluna de ${r.coluna}px, com ficha · ${c.mapas} mapa no documento`,
   );
   await p.__contexto.close();
   await relance.__contexto.close();
@@ -1920,15 +1941,311 @@ for (const largura of [1280, 390]) {
   });
   const m = JSON.parse(saida).frases_da_casa;
   const rotas = Object.entries(m.por_rota);
+  /* A CÉLULA PERGUNTA PELA PRIMEIRA PÁGINA, E A RÉGUA PASSOU A MEDIR MAIS ROTAS.
+     A etapa 3 pôs `/livro-razao` e `/municipios` na lista declarada da medida 8,
+     e o índice do livro-razão fica com DUAS frases de autorreferência que a
+     `DECISIONS.md` §4 item AB manda preservar palavra por palavra até à fase da
+     voz (nota da etapa 3, §3.3). A célula exigia zero em todas as rotas medidas,
+     e por isso passou a falhar por uma decisão registada e não por um defeito.
+     O que ela mede agora é o que o seu nome diz: zero na PRIMEIRA PÁGINA, nas
+     duas edições, e nada por classificar em rota nenhuma — que é a condição que
+     obriga alguém a decidir. As outras rotas continuam impressas na prova, para
+     que o número não desapareça de vista. */
+  const daPrimeira = rotas.filter(([rota]) => rota === '/' || rota === '/en');
   conta(
     '2l · Emenda 15 · zero frases de autorreferência na primeira página, nas duas edições',
     m.inventario_existe &&
-      rotas.length === 2 &&
-      rotas.every(([, r]) => r.por_classe.autorreferencia === 0 && r.nao_classificados.length === 0),
+      daPrimeira.length === 2 &&
+      daPrimeira.every(([, r]) => r.por_classe.autorreferencia === 0) &&
+      rotas.every(([, r]) => r.nao_classificados.length === 0),
     rotas
       .map(([rota, r]) => `${rota}: conteúdo ${r.por_classe.conteudo} · navegação ${r.por_classe.navegacao} · autorreferência ${r.por_classe.autorreferencia} · por classificar ${r.nao_classificados.length}`)
       .join(' · '),
   );
+}
+
+/* ============================================================================
+ * (f) A ETAPA 2M · o mapa que enche a coluna e cresce para se escolher nele
+ * ========================================================================== */
+
+/* A distância mínima entre dois centróides, calculada AQUI a partir dos mesmos
+   dados que a página desenha — 2,816 unidades de campo, Lajes das Flores e Santa
+   Cruz das Flores. A matriz não pergunta à página se ela concorda com ela
+   própria: lê o desenho construído e compara com esta conta. */
+const MINIMA_EM_UNIDADES = (() => {
+  const cs = concelhos();
+  let d = Infinity;
+  for (let i = 0; i < cs.length; i++) {
+    for (let j = i + 1; j < cs.length; j++) {
+      const e = Math.hypot(cs[i].x - cs[j].x, cs[i].y - cs[j].y);
+      if (e < d) d = e;
+    }
+  }
+  return d;
+})();
+
+/** O par mais próximo do desenho real, em CSS px. */
+const minimaNoDesenho = () => {
+  const nos = [...document.querySelectorAll('[data-pontos] [data-caop]')].map((n) => {
+    const r = n.getBoundingClientRect();
+    return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+  });
+  let d = Infinity;
+  for (let i = 0; i < nos.length; i++) {
+    for (let j = i + 1; j < nos.length; j++) {
+      const e = Math.hypot(nos[i].x - nos[j].x, nos[i].y - nos[j].y);
+      if (e < d) d = e;
+    }
+  }
+  return d;
+};
+
+/* (f1) O mapa enche a coluna, e a legenda vai para o canto que as ilhas deixam. */
+{
+  const linhas = [];
+  let bem = true;
+  for (const largura of [1024, 1180, 1280, 1440]) {
+    for (const rota of ['/', '/en/']) {
+      const p = await pagina({ largura });
+      await p.goto(base + rota, { waitUntil: 'networkidle' });
+      const m = await p.evaluate(() => {
+        const coluna = document.querySelector('.cabeca-inst').getBoundingClientRect();
+        const tela = document.querySelector('.mapa-tela').getBoundingClientRect();
+        const legenda = document.querySelector('.mapa-linha-fonte').getBoundingClientRect();
+        return {
+          coluna: +coluna.width.toFixed(1),
+          mapa: +tela.width.toFixed(1),
+          altura: +tela.height.toFixed(1),
+          /* A legenda, em UNIDADES DO CAMPO: é assim que a instrução está
+             escrita («à direita da moldura dos Açores, que acaba em x=264; por
+             baixo do ponto mais a sul à direita dela, y=686,1»), e é assim que
+             ela se confere sem depender da largura da página. */
+          legX: +(((legenda.left - tela.left) / tela.width) * 600).toFixed(1),
+          legY: +(((legenda.top - tela.top) / tela.height) * 790).toFixed(1),
+          transbordo: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+        };
+      });
+      const ok =
+        Math.abs(m.mapa - m.coluna) < 1 &&
+        m.legX >= 264 &&
+        m.legY >= 690.6 &&
+        m.transbordo <= 0;
+      if (!ok) bem = false;
+      linhas.push(
+        `${largura}${rota === '/' ? ' pt' : ' en'}: coluna ${m.coluna} · mapa ${m.mapa}×${m.altura} · legenda em x=${m.legX} y=${m.legY} do campo · transbordo ${m.transbordo}`,
+      );
+      await p.__contexto.close();
+    }
+  }
+  conta('2m · o mapa enche a coluna da cabeça, e a legenda vai para o canto das ilhas', bem, linhas.join(' · '));
+}
+
+/* (f2) A vista de escolha: endereço próprio, largura do conteúdo, vizinhos mais
+   separados e alvos maiores. */
+{
+  const linhas = [];
+  let bem = true;
+  for (const largura of [1024, 1280, 1440]) {
+    for (const rota of ['/', '/en/']) {
+      const p = await pagina({ largura });
+      await p.goto(base + rota, { waitUntil: 'networkidle' });
+      const antes = await p.evaluate(minimaNoDesenho);
+      await p.goto(base + rota + '?ambito=municipio', { waitUntil: 'networkidle' });
+      const m = await p.evaluate(() => {
+        const raiz = document.querySelector('[data-inicio]');
+        const conteudo = document.querySelector('[data-grelha]').getBoundingClientRect();
+        const tela = document.querySelector('.mapa-tela').getBoundingClientRect();
+        const alvos = [...document.querySelectorAll('[data-alvos] [data-caop]')].map(
+          (n) => n.getBoundingClientRect().width,
+        );
+        alvos.sort((a, b) => a - b);
+        return {
+          ambito: raiz.getAttribute('data-ambito'),
+          url: location.pathname + location.search,
+          cabeca: document.querySelector('[data-cabeca]:not([hidden])')?.getAttribute('data-cabeca'),
+          painel: document.querySelector('[data-painel]:not([hidden])')?.getAttribute('data-painel'),
+          pesquisaAcima:
+            document.querySelector('[data-sub="municipio"]').getBoundingClientRect().bottom <=
+            tela.top + 1,
+          conteudo: +conteudo.width.toFixed(1),
+          mapa: +tela.width.toFixed(1),
+          alvoMin: +alvos[0].toFixed(1),
+          alvo24: alvos.filter((a) => a >= 24).length,
+          fechar: (() => {
+            const e = document.querySelector('[data-fechar-mapa]');
+            const r = e.getBoundingClientRect();
+            return { visivel: e.getClientRects().length > 0, w: Math.round(r.width), h: Math.round(r.height) };
+          })(),
+          transbordo: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+        };
+      });
+      const depois = await p.evaluate(minimaNoDesenho);
+      const ok =
+        m.ambito === 'municipio' &&
+        /\?ambito=municipio$/.test(m.url) &&
+        m.cabeca === 'pais' &&
+        m.painel === 'pais' &&
+        m.pesquisaAcima &&
+        Math.abs(m.mapa - m.conteudo) < 1 &&
+        depois > antes &&
+        m.alvoMin >= 20 &&
+        m.fechar.visivel &&
+        m.fechar.h >= 44 &&
+        m.transbordo <= 0;
+      if (!ok) bem = false;
+      linhas.push(
+        `${largura}${rota === '/' ? ' pt' : ' en'}: ${m.url} · mapa ${m.mapa} de ${m.conteudo} · mínimo entre pontos ${antes.toFixed(2)}px → ${depois.toFixed(2)}px · alvo mínimo ${m.alvoMin}px, ${m.alvo24} de 308 acima de 24px · fechar ${m.fechar.w}×${m.fechar.h} · transbordo ${m.transbordo}`,
+      );
+      await p.__contexto.close();
+    }
+  }
+  conta(
+    `2m · a vista de escolha abre à largura do conteúdo, e os vizinhos separam-se (mínimo ${MINIMA_EM_UNIDADES.toFixed(3)} unidades de campo)`,
+    bem,
+    linhas.join(' · '),
+  );
+}
+
+/* (f3) A lente: 1× a 4×, o toque duplo repõe, e fora da vista de escolha a roda
+   é da página. */
+{
+  const p = await pagina({ largura: 1280 });
+  await p.goto(base + '/?ambito=municipio', { waitUntil: 'networkidle' });
+  const transforma = () => p.evaluate(() => document.querySelector('[data-campo]').getAttribute('transform'));
+  const escala = async () => {
+    const t = await transforma();
+    const m = /scale\(([\d.]+)\)/.exec(t ?? '');
+    return m ? +(+m[1]).toFixed(3) : 1;
+  };
+  await p.evaluate(() => document.querySelector('.mapa-tela').scrollIntoView({ block: 'start' }));
+  await p.waitForTimeout(80);
+  const sitio = await p.evaluate(() => {
+    const r = document.querySelector('.mapa-tela').getBoundingClientRect();
+    return { x: r.left + r.width / 2, y: Math.max(20, r.top) + 300 };
+  });
+  await p.mouse.move(sitio.x, sitio.y);
+  const partida = await escala();
+  const minimaAntes = await p.evaluate(minimaNoDesenho);
+  for (let i = 0; i < 40; i++) await p.mouse.wheel(0, -100);
+  const tecto = await escala();
+  const minimaNoTecto = await p.evaluate(minimaNoDesenho);
+  /* A LEITURA CONTINUA A DIZER O NOME CERTO DEBAIXO DA LENTE, e é a prova de que
+     a conversão de coordenadas passou a atravessar a transformação em vez de
+     ler o rectângulo cru. Mede-se sobre um concelho concreto: onde é que o
+     desenho o pôs AGORA (o rectângulo do próprio nó já traz a lente aplicada), e
+     o que a página lê quando o cursor lá está. Um sítio escolhido em píxeis do
+     ecrã cairia no mar, que é onde o mapa não tem nada a dizer. */
+  const alvoVisivel = await p.evaluate(() => {
+    for (const n of document.querySelectorAll('[data-pontos] [data-caop]')) {
+      const b = n.getBoundingClientRect();
+      const x = b.left + b.width / 2;
+      const y = b.top + b.height / 2;
+      if (x > 8 && x < innerWidth - 8 && y > 8 && y < innerHeight - 8) {
+        return { x: x, y: y, nome: n.getAttribute('data-m') };
+      }
+    }
+    return null;
+  });
+  await p.mouse.move(alvoVisivel.x, alvoVisivel.y);
+  const leAmpliado = await p.evaluate(() =>
+    document.querySelector('[data-readout-nome]').textContent.trim(),
+  );
+  for (let i = 0; i < 60; i++) await p.mouse.wheel(0, 100);
+  const piso = await escala();
+  for (let i = 0; i < 15; i++) await p.mouse.wheel(0, -100);
+  const meio = await escala();
+  await p.mouse.dblclick(sitio.x, sitio.y);
+  const reposta = await escala();
+  /* Fora da vista de escolha a roda não é apanhada: rola a página. */
+  await p.goto(base + '/', { waitUntil: 'networkidle' });
+  await p.mouse.move(sitio.x, 400);
+  for (let i = 0; i < 5; i++) await p.mouse.wheel(0, 200);
+  await p.waitForTimeout(120);
+  const rolou = await p.evaluate(() => window.scrollY);
+  const semLente = await transforma();
+  conta(
+    '2m · a lente do mapa vai de 1× a 4×, o toque duplo repõe, e no âmbito País a roda é da página',
+    partida === 1 &&
+      tecto === 4 &&
+      piso === 1 &&
+      meio > 1 &&
+      meio < 4 &&
+      reposta === 1 &&
+      minimaNoTecto > minimaAntes * 3.9 &&
+      leAmpliado === alvoVisivel.nome &&
+      rolou > 0 &&
+      semLente === null,
+    `1× → 40 entalhes ${tecto}× (mínimo entre pontos ${minimaAntes.toFixed(2)}px → ${minimaNoTecto.toFixed(2)}px) → 60 para baixo ${piso}× → 15 para cima ${meio}× → toque duplo ${reposta}× · com a lente no tecto, o cursor sobre o ponto de ${alvoVisivel.nome} lê «${leAmpliado}» · no País a roda rolou ${rolou}px e o campo não tem transformação`,
+  );
+  await p.__contexto.close();
+}
+
+/* (f4) A saída da vista de escolha: «fechar», Escape, e o Escape da pesquisa que
+   continua a ser o da pesquisa. */
+{
+  const linhas = [];
+  let bem = true;
+  for (const via of ['fechar', 'escape']) {
+    const p = await pagina({ largura: 1280 });
+    await p.goto(base + '/?ambito=municipio', { waitUntil: 'networkidle' });
+    if (via === 'fechar') await p.locator('[data-fechar-mapa]').click();
+    else await p.keyboard.press('Escape');
+    const e = await p.evaluate(() => ({
+      ambito: document.querySelector('[data-inicio]').getAttribute('data-ambito'),
+      url: location.pathname + location.search,
+      foco: document.activeElement?.getAttribute('data-modo') ?? document.activeElement?.tagName,
+      mapa: Math.round(document.querySelector('.mapa-tela').getBoundingClientRect().width),
+      coluna: Math.round(document.querySelector('.cabeca-inst').getBoundingClientRect().width),
+    }));
+    const ok = e.ambito === 'pais' && e.url === '/' && e.foco === 'municipio' && e.mapa === e.coluna;
+    if (!ok) bem = false;
+    linhas.push(`${via}: ${e.ambito} · «${e.url}» · foco no comando «${e.foco}» · mapa ${e.mapa}px na coluna de ${e.coluna}px`);
+    await p.__contexto.close();
+  }
+  {
+    const p = await pagina({ largura: 1280 });
+    await p.goto(base + '/?ambito=municipio', { waitUntil: 'networkidle' });
+    await p.locator('[data-pesquisa]').fill('beja');
+    await p.locator('[data-pesquisa]').press('Escape');
+    const e = await p.evaluate(() => ({
+      campo: document.querySelector('[data-pesquisa]').value,
+      ambito: document.querySelector('[data-inicio]').getAttribute('data-ambito'),
+    }));
+    const ok = e.campo === '' && e.ambito === 'municipio';
+    if (!ok) bem = false;
+    linhas.push(`Escape na pesquisa: caixa «${e.campo}» e a vista continua em ${e.ambito}`);
+    await p.__contexto.close();
+  }
+  conta('2m · «fechar» e Escape devolvem o mapa à coluna, e o Escape da pesquisa continua a ser o da pesquisa', bem, linhas.join(' · '));
+}
+
+/* (f5) O anel de leitura é um anel, e não um disco (achado da 2m). */
+{
+  const p = await pagina({ largura: 1280 });
+  await p.goto(base + '/', { waitUntil: 'networkidle' });
+  const sitio = await p.evaluate(() => {
+    const b = document.querySelector('.mapa-svg').getBoundingClientRect();
+    return { x: b.left + b.width * 0.74, y: b.top + b.height * 0.64 };
+  });
+  await p.mouse.move(sitio.x, sitio.y);
+  const a = await p.evaluate(() => {
+    const anel = document.querySelector('.cursor-ring');
+    if (!anel) return null;
+    const cs = getComputedStyle(anel);
+    return {
+      fill: cs.fill,
+      stroke: cs.stroke,
+      tinta: getComputedStyle(document.documentElement).getPropertyValue('--ink').trim(),
+      dentroDoCampo: !!anel.closest('[data-campo]'),
+      leitura: document.querySelector('[data-readout-nome]').textContent.trim(),
+    };
+  });
+  conta(
+    '2m · o anel de leitura do mapa é um anel e não um disco (Emenda 10)',
+    !!a && a.fill === 'none' && a.dentroDoCampo && a.leitura.length > 0,
+    a ? `enchimento ${a.fill} · contorno ${a.stroke} · dentro do grupo da lente ${a.dentroDoCampo} · lê «${a.leitura}»` : 'sem anel',
+  );
+  await p.__contexto.close();
 }
 
 await navegador.close();

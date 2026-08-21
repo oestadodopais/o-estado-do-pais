@@ -26,8 +26,21 @@
  * ---------------------------------------------------------------------------
  * O ESQUEMA DO ENDEREÇO É FECHADO, E RESOLVE-SE CONTRA O QUE ESTÁ NA PÁGINA
  * ---------------------------------------------------------------------------
- *   ?ambito=pais | regiao:<slug> | municipio:<slug>     (por defeito: pais)
+ *   ?ambito=pais | municipio | regiao:<slug> | municipio:<slug>
+ *                                                       (por defeito: pais)
  *   ?densidade=relance | leitura                        (por defeito: relance)
+ *
+ * `municipio` SEM DOIS PONTOS É A VISTA DE ESCOLHA (ISSUES I42, fechado na
+ * etapa 2m). Era um modo sem endereço: abria-se por um comando, e por isso não
+ * se podia partilhar, nem recarregar, nem ligar a partir de `/municipios` — que
+ * é exactamente o que a etapa 3 pediu. Passa a ser um estado do esquema, com a
+ * mesma disciplina dos outros: o servidor rende o defeito, o script acende o
+ * estado, e um valor que não esteja na lista cai no defeito em silêncio.
+ *
+ * O QUE A VISTA DE ESCOLHA MOSTRA É O PAÍS, e é por isso que ela não é um âmbito
+ * como os outros: a cabeça, o painel, o instrumento e as portas são os do país,
+ * porque ninguém escolheu nada ainda. O que muda é o mapa, que cresce para se
+ * poder escolher nele, e a pesquisa, que abre por cima dele.
  *
  * As listas fechadas não são escritas aqui: são LIDAS do documento — os blocos
  * de cabeça (`[data-cabeca]`) dão os âmbitos com bloco próprio, e os pontos do
@@ -44,6 +57,7 @@
   if (!raiz) return;
 
   var AMBITO_DEFEITO = 'pais';
+  var AMBITO_ESCOLHA = 'municipio';
   var DENSIDADE_DEFEITO = 'relance';
 
   /* As notas que explicam o que não funciona sem script saem quando há script. */
@@ -93,9 +107,105 @@
     }
   }
 
+  /* ==========================================================================
+   * A AMPLIAÇÃO DO MAPA, NA VISTA DE ESCOLHA (etapa 2m, brief §1)
+   * ==========================================================================
+   *
+   * «Roda do rato e beliscão dentro da caixa do mapa como segundo caminho
+   * (transformação no grupo do SVG, limitada entre 1× e 4×, a leitura e o modelo
+   * de teclado inalterados; o toque duplo repõe).»
+   *
+   * PORQUE É PRECISA, E A CONTA QUE O DIZ. O par de centróides mais próximo da
+   * Carta está a 2,816 unidades de campo um do outro (Lajes das Flores e Santa
+   * Cruz das Flores). Na coluna da cabeça, a 1280, o mapa mede 490px e esse par
+   * fica a 2,3 CSS px; com o mapa à largura do conteúdo, 1092px, fica a 5,1. O
+   * alvo do brief são 16px, e 16px pedem 5,68px por unidade de campo, ou seja um
+   * mapa de 3 410px de largura: não há página que o dê. O que há é uma lente —
+   * a 3,12× o par chega aos 16px, e a 4× aos 20,5.
+   *
+   * É UMA TRANSFORMAÇÃO, E NÃO UM SEGUNDO DESENHO. Um `translate` e um `scale`
+   * num grupo só, que leva consigo as molduras, os 308 pontos e as 308 áreas de
+   * toque. Nada é criado, nada é escrito, nenhum número aparece: é a mesma
+   * classe de operação que a lista de proximidade (uma geometria que decide o
+   * que se vê, e que nunca se lê). O teclado percorre a mesma lista pela mesma
+   * ordem, e a leitura em voz alta diz o mesmo nome.
+   *
+   * O QUE A LENTE NÃO PODE FAZER É DEIXAR VER PAPEL. A translação está presa ao
+   * campo: `tx` entre `w·(1−k)` e 0, e o mesmo em `y`. Com `k` a 1 os dois
+   * limites encostam em zero, e o mapa volta exactamente ao sítio onde estava.
+   */
+  var grupoDoCampo = mapa ? mapa.querySelector('[data-campo]') : null;
+  var AMPLIACAO_MAXIMA = 4;
+  var amp = { k: 1, tx: 0, ty: 0 };
+
+  function medidaDoCampo() {
+    var vb = mapa && mapa.viewBox && mapa.viewBox.baseVal;
+    return { w: vb && vb.width ? vb.width : 600, h: vb && vb.height ? vb.height : 790 };
+  }
+
+  function escreveAmpliacao() {
+    if (!grupoDoCampo) return;
+    if (amp.k === 1 && amp.tx === 0 && amp.ty === 0) {
+      grupoDoCampo.removeAttribute('transform');
+      return;
+    }
+    grupoDoCampo.setAttribute(
+      'transform',
+      'translate(' + amp.tx + ' ' + amp.ty + ') scale(' + amp.k + ')',
+    );
+  }
+
+  function prendeAmpliacao() {
+    var c = medidaDoCampo();
+    amp.tx = Math.max(c.w * (1 - amp.k), Math.min(0, amp.tx));
+    amp.ty = Math.max(c.h * (1 - amp.k), Math.min(0, amp.ty));
+  }
+
+  /* Amplia para `k`, deixando quieto o ponto do campo que está debaixo de
+     (qx, qy) — coordenadas do campo DEPOIS da transformação, que é o que o
+     cursor ou o meio do beliscão dão. */
+  function amplia(k, qx, qy) {
+    if (!grupoDoCampo) return;
+    var novo = Math.max(1, Math.min(AMPLIACAO_MAXIMA, k));
+    if (!isFinite(novo) || novo === amp.k) return;
+    amp.tx = qx - (qx - amp.tx) * (novo / amp.k);
+    amp.ty = qy - (qy - amp.ty) * (novo / amp.k);
+    amp.k = novo;
+    prendeAmpliacao();
+    escreveAmpliacao();
+  }
+
+  function repoeAmpliacao() {
+    if (amp.k === 1 && amp.tx === 0 && amp.ty === 0) return;
+    amp.k = 1;
+    amp.tx = 0;
+    amp.ty = 0;
+    escreveAmpliacao();
+  }
+
+  /* O sítio de um evento, em coordenadas do campo DEPOIS da transformação. */
+  function paraTela(cx, cy) {
+    var r = mapa.getBoundingClientRect();
+    var c = medidaDoCampo();
+    if (!(r.width > 0) || !(r.height > 0)) return null;
+    return { x: ((cx - r.left) / r.width) * c.w, y: ((cy - r.top) / r.height) * c.h };
+  }
+
+  /* E o mesmo sítio em coordenadas do campo ANTES dela, que é o referencial em
+     que os 308 centróides estão escritos. Com a lente por usar, é o mesmo. */
+  function paraCampoDoMapa(cx, cy) {
+    var q = paraTela(cx, cy);
+    if (!q) return null;
+    return { x: (q.x - amp.tx) / amp.k, y: (q.y - amp.ty) / amp.k };
+  }
+
   function resolveAmbito(bruto) {
     if (!bruto) return AMBITO_DEFEITO;
     if (bruto === AMBITO_DEFEITO) return AMBITO_DEFEITO;
+    /* A vista de escolha. Não tem bloco de cabeça próprio (mostra o do país) e
+       por isso não se resolve contra `comBloco`: é um valor do esquema, escrito
+       aqui como `pais` é. */
+    if (bruto === AMBITO_ESCOLHA) return AMBITO_ESCOLHA;
     if (bruto.indexOf('regiao:') === 0) return comBloco[bruto] ? bruto : AMBITO_DEFEITO;
     if (bruto.indexOf('municipio:') === 0) {
       return porSlug[bruto.slice('municipio:'.length)] ? bruto : AMBITO_DEFEITO;
@@ -109,8 +219,15 @@
 
   function modoDe(ambito) {
     if (ambito.indexOf('regiao:') === 0) return 'regiao';
-    if (ambito.indexOf('municipio:') === 0) return 'municipio';
+    if (ambito === AMBITO_ESCOLHA || ambito.indexOf('municipio:') === 0) return 'municipio';
     return 'pais';
+  }
+
+  /* A vista de escolha mostra a página do país: o que ela tem de seu é o mapa
+     grande e a pesquisa. As duas perguntas que se seguem existem para que isso
+     esteja escrito uma vez, e não espalhado por cinco condições. */
+  function eDoPais(ambito) {
+    return ambito === AMBITO_DEFEITO || ambito === AMBITO_ESCOLHA;
   }
 
   /* --------------------------------------------------------------- endereço */
@@ -141,7 +258,6 @@
   var caixaDaBanda = raiz.querySelector('[data-banda-caixa]');
   var gruposDaBanda = raiz.querySelectorAll('[data-banda]');
   var pontosDaBanda = raiz.querySelectorAll('[data-banda-ponto]');
-  var ficha = raiz.querySelector('[data-mapa-ficha]');
   var cartao = raiz.querySelector('[data-mapa-cartao]');
   var soEvora = raiz.querySelector('[data-so-evora]');
   var dicaEscolher = raiz.querySelector('[data-hint-escolher]');
@@ -236,6 +352,7 @@
   }
 
   function chaveDoBloco(ambito) {
+    if (ambito === AMBITO_ESCOLHA) return AMBITO_DEFEITO;
     return comBloco[ambito] ? ambito : 'vazio';
   }
 
@@ -315,8 +432,13 @@
        tem o mapa dentro, e esconder o cartão esconderia o mapa. Quem decide o
        que dele se vê é `data-postura`, lido pela folha — o mesmo atributo que
        já decidia o tamanho da tela. */
+    /* A LEGENDA E A LEITURA DEIXARAM DE SE ESCONDER AQUI (etapa 2m). Era este
+       ficheiro que punha `hidden` na ficha conforme a postura, e por isso uma
+       página sem script que rendesse o cartão localizador mostrava a legenda dos
+       308 por baixo dele. A postura já está no atributo e a folha lê-a
+       (`[data-postura='localizador'] .mapa-linha`); o que sobra aqui é o âmbito
+       região, onde a figura inteira se esconde, e isso continua abaixo. */
     var comCartao = !!ponto && estado.densidade !== 'relance';
-    if (ficha) ficha.hidden = comCartao || mo === 'regiao';
     if (cartao) cartao.hidden = false;
     if (soEvora) soEvora.hidden = !(ponto && ponto.comPagina);
     if (dicaEscolher) dicaEscolher.hidden = mo !== 'municipio';
@@ -329,11 +451,15 @@
       pontos[i8].el.classList.toggle('mun-escolhido', pontos[i8].slug === slug);
     }
 
-    for (var i9 = 0; i9 < soPais.length; i9++) soPais[i9].hidden = ambito !== AMBITO_DEFEITO;
+    for (var i9 = 0; i9 < soPais.length; i9++) soPais[i9].hidden = !eDoPais(ambito);
 
     /* A densidade: o comando global abre ou fecha todas as peças. Um toque numa
        peça muda só a dela, e não mexe nas outras — é a regra da prancha. */
     for (var i10 = 0; i10 < pecas.length; i10++) pecas[i10].open = estado.densidade === 'leitura';
+
+    /* A lente é da vista de escolha, e sai com ela: quem escolhe um concelho, ou
+       fecha a vista, volta a ver o mapa como o encontrou. */
+    if (ambito !== AMBITO_ESCOLHA) repoeAmpliacao();
 
     if (ligacaoDeIdioma && baseDoIdioma !== null) {
       ligacaoDeIdioma.setAttribute('href', baseDoIdioma + pesquisaDe(estado));
@@ -379,10 +505,17 @@
            «voltar» ficava a não fazer nada à primeira. */
         if (botao === seloDoPais) return;
         var modo = botao.getAttribute('data-modo');
-        /* «Região» e «Município» abrem a fila de escolha e não mudam o âmbito:
-           só há âmbito quando há uma região ou um concelho escolhido. «País» é
-           um âmbito e escolhe-se a si próprio. */
-        var novo = modo === 'pais' ? { ambito: AMBITO_DEFEITO, densidade: estado.densidade } : estado;
+        /* «País» é um âmbito e escolhe-se a si próprio. «Município» abre a vista
+           de escolha, que desde a etapa 2m É um estado do esquema e por isso vai
+           ao endereço — mas só quando ainda não há concelho escolhido: com um
+           escolhido, o comando já está premido e carregar nele não pode desfazer
+           a escolha. «Região» continua a ser um modo sem endereço, e fica
+           escrito em ISSUES que só uma das duas filas o ganhou nesta ronda. */
+        var novo = estado;
+        if (modo === 'pais') novo = { ambito: AMBITO_DEFEITO, densidade: estado.densidade };
+        else if (modo === 'municipio' && modoDe(estado.ambito) !== 'municipio') {
+          novo = { ambito: AMBITO_ESCOLHA, densidade: estado.densidade };
+        }
         vai(novo, modo, botao);
       });
     })(segsAmbito[c1]);
@@ -584,11 +717,13 @@
     if (ev.clientX < r.left || ev.clientX > r.right) return null;
     if (ev.clientY < r.top || ev.clientY > r.bottom) return null;
 
-    var vb = mapa.viewBox && mapa.viewBox.baseVal;
-    var LW = vb && vb.width ? vb.width : 600;
-    var LH = vb && vb.height ? vb.height : 790;
-    var px = ((ev.clientX - r.left) / r.width) * LW;
-    var py = ((ev.clientY - r.top) / r.height) * LH;
+    /* A conversão passa pela lente, e não pelo rectângulo cru: com a ampliação
+       por usar dá exactamente o que dava antes, e com ela em uso dá o sítio do
+       campo que está debaixo do dedo — que é o que a ordenação precisa. */
+    var q = paraCampoDoMapa(ev.clientX, ev.clientY);
+    if (!q) return null;
+    var px = q.x;
+    var py = q.y;
     if (!isFinite(px) || !isFinite(py)) return null;
 
     var ordenados = [];
@@ -628,7 +763,8 @@
         proximos = null;
         if (campo) campo.value = '';
       }
-      vai({ ambito: estado.ambito, densidade: estado.densidade }, 'municipio', campo || seloDoPais);
+      var destino = modoDe(estado.ambito) === 'municipio' ? estado.ambito : AMBITO_ESCOLHA;
+      vai({ ambito: destino, densidade: estado.densidade }, 'municipio', campo || seloDoPais);
     });
   }
 
@@ -637,9 +773,52 @@
   if (trocar && campo) {
     trocar.addEventListener('click', function (ev) {
       ev.preventDefault();
-      vai({ ambito: AMBITO_DEFEITO, densidade: estado.densidade }, 'municipio', campo);
+      vai({ ambito: AMBITO_ESCOLHA, densidade: estado.densidade }, 'municipio', campo);
     });
   }
+
+  /* ------------------------------------------------- a saída da vista de escolha
+   *
+   * «`Escape` ou "fechar" devolvem o mapa à coluna.» São dois caminhos para a
+   * mesma coisa, e a coisa é um estado do esquema: voltar ao âmbito País, que é
+   * o que estava antes de a vista abrir.
+   *
+   * O foco vai para o comando «Município», e não para o «País»: é o comando de
+   * onde a vista se abriu e para onde o leitor volta a olhar; o botão de fechar,
+   * esse, deixa de existir no momento em que fecha, e um foco perdido no corpo
+   * do documento manda quem usa teclado ao princípio da página.
+   *
+   * O Escape da caixa de pesquisa continua a limpar a caixa e mais nada: aquele
+   * ouvinte trava a propagação, e por isso este nunca o vê. É a mesma disciplina
+   * de antes, agora com dois significados de Escape na mesma página, cada um no
+   * seu sítio.
+   */
+  var comandoDeMunicipio = raiz.querySelector('.seg[data-modo="municipio"]');
+  var fecharMapa = raiz.querySelector('[data-fechar-mapa]');
+
+  function fechaAEscolha(foco) {
+    if (estado.ambito !== AMBITO_ESCOLHA) return false;
+    vai(
+      { ambito: AMBITO_DEFEITO, densidade: estado.densidade },
+      'pais',
+      foco || comandoDeMunicipio,
+    );
+    return true;
+  }
+
+  if (fecharMapa) {
+    fecharMapa.setAttribute('role', 'button');
+    activaComEspaco(fecharMapa);
+    fecharMapa.addEventListener('click', function (ev) {
+      ev.preventDefault();
+      fechaAEscolha();
+    });
+  }
+
+  document.addEventListener('keydown', function (ev) {
+    if (ev.key !== 'Escape') return;
+    if (fechaAEscolha()) ev.preventDefault();
+  });
 
   window.addEventListener('popstate', function () {
     aplica(leDoEndereco(), null);
@@ -679,9 +858,9 @@
        postura de localizador, onde o mapa não escolhe pontos. */
     if (dica) dica.hidden = false;
 
-    var caixa = mapa.viewBox && mapa.viewBox.baseVal;
-    var W = caixa && caixa.width ? caixa.width : 600;
-    var H = caixa && caixa.height ? caixa.height : 790;
+    /* A medida do campo lê-se em `medidaDoCampo()`, uma vez, ao lado da lente:
+       eram duas cópias da mesma leitura do `viewBox`, e a segunda deixou de ser
+       usada quando a conversão de coordenadas passou a ser a da lente. */
 
     var iComPagina = 0;
     for (var k2 = 0; k2 < pontos.length; k2++) {
@@ -696,7 +875,10 @@
     anel.setAttribute('class', 'cursor-ring');
     anel.setAttribute('r', '9');
     anel.style.display = 'none';
-    mapa.appendChild(anel);
+    /* Dentro do grupo que a lente move, e não à solta no SVG: um anel fora da
+       transformação ficaria a marcar o sítio onde o ponto estava antes de
+       ampliar. */
+    (grupoDoCampo || mapa).appendChild(anel);
 
     var sel = -1;
     var modoTeclado = false;
@@ -744,11 +926,7 @@
     };
 
     var paraCampo = function (ev) {
-      var r = mapa.getBoundingClientRect();
-      return {
-        x: ((ev.clientX - r.left) / r.width) * W,
-        y: ((ev.clientY - r.top) / r.height) * H,
-      };
+      return paraCampoDoMapa(ev.clientX, ev.clientY) || { x: -1e9, y: -1e9 };
     };
 
     mapa.addEventListener('pointermove', function (ev) {
@@ -823,6 +1001,79 @@
         }
       }
       if (melhor2 >= 0) mostra(melhor2);
+    });
+
+    /* --------------------------------------------------------- a lente, ligada
+     *
+     * Os dois gestos vivem na caixa do mapa e só na vista de escolha: fora dela
+     * a roda do rato é da página, e apanhá-la seria roubar o deslocamento a quem
+     * só quer descer. `pontoEAlvo()` fecha a porta ao telemóvel pela mesma
+     * pergunta que já fecha a escolha ponto a ponto — a folha responde, e não
+     * uma largura escrita aqui.
+     */
+    var podeAmpliar = function () {
+      return estado.ambito === AMBITO_ESCOLHA && pontoEAlvo();
+    };
+
+    tela.addEventListener(
+      'wheel',
+      function (ev) {
+        if (!podeAmpliar()) return;
+        ev.preventDefault();
+        var q = paraTela(ev.clientX, ev.clientY);
+        if (!q) return;
+        /* Um passo por entalhe, e o sinal do entalhe é o sentido. O passo é
+           multiplicativo porque a ampliação é: de 1× a 4× são dezanove entalhes
+           para cima, e os mesmos dezanove para baixo. */
+        amplia(amp.k * (ev.deltaY < 0 ? 1.08 : 1 / 1.08), q.x, q.y);
+      },
+      { passive: false },
+    );
+
+    var beliscao = null;
+    var distanciaDosDedos = function (toques) {
+      var dx = toques[0].clientX - toques[1].clientX;
+      var dy = toques[0].clientY - toques[1].clientY;
+      return Math.sqrt(dx * dx + dy * dy);
+    };
+
+    tela.addEventListener(
+      'touchstart',
+      function (ev) {
+        if (!podeAmpliar() || ev.touches.length !== 2) return;
+        var d = distanciaDosDedos(ev.touches);
+        var meio = paraTela(
+          (ev.touches[0].clientX + ev.touches[1].clientX) / 2,
+          (ev.touches[0].clientY + ev.touches[1].clientY) / 2,
+        );
+        if (!(d > 0) || !meio) return;
+        beliscao = { d: d, k: amp.k, q: meio };
+      },
+      { passive: false },
+    );
+
+    tela.addEventListener(
+      'touchmove',
+      function (ev) {
+        if (!beliscao || ev.touches.length !== 2) return;
+        ev.preventDefault();
+        amplia(beliscao.k * (distanciaDosDedos(ev.touches) / beliscao.d), beliscao.q.x, beliscao.q.y);
+      },
+      { passive: false },
+    );
+
+    tela.addEventListener('touchend', function () {
+      beliscao = null;
+    });
+
+    /* O TOQUE DUPLO REPÕE, e o `dblclick` serve os dois aparelhos: o rato
+       dispara-o de origem e o toque duplo também, em todos os motores que este
+       sítio serve. Repor não é ampliar ao contrário: é voltar ao 1× e ao canto
+       de origem de uma vez, que é o que a mão espera de um gesto de desfazer. */
+    tela.addEventListener('dblclick', function (ev) {
+      if (!podeAmpliar()) return;
+      ev.preventDefault();
+      repoeAmpliacao();
     });
 
     tela.addEventListener('focus', function () {
