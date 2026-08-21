@@ -200,6 +200,16 @@ nova. As quatro cadeias desta ronda têm inglês próprio.
 
 **Um par com forma nova, e não é chave nova**: `home.metaDescription`, nas duas edições. Dizia «Observatório de dados sobre Portugal. Cada número publicado tem uma linha no livro-razão, com fonte, documento e data de acesso.» / «A data observatory on Portugal. Every published figure has a row in the ledger, with source, document and access date.» A segunda frase é o método do próprio sítio, que é a classe que a Emenda 15 tira das páginas do leitor, e o `<head>` é superfície pública como o corpo. Passa a **«Portugal nos painéis europeus: os indicadores, os limiares e as fontes.»** / **«Portugal on the European scoreboards: the indicators, the thresholds and the sources.»**, no texto exacto da decisão 1 da direção de 21.08.2026.
 
+### Etapa 3, subetapa 3a
+
+*Três chaves novas, todas em `livro.linha.*`. Nenhuma cadeia sai, e nenhuma muda de forma.*
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `livro.linha.conjuntoK` | O conjunto inteiro | The whole dataset | o rótulo das duas portas do conjunto de dados, ao pé da porta do JSON da própria linha, dentro de «Acesso aos dados». São os mesmos dois ficheiros que o índice do livro-razão oferece, sob a mesma licença; o que muda é a distância |
+| `livro.linha.noutroSitioK` | Esta linha noutro sítio | This row elsewhere | o rótulo do bloco que a `IDENTIDADE.md` §11 pede ao aparelho, a seguir ao acesso aos dados |
+| `livro.linha.noutraEdicao` | Esta linha na edição inglesa | This row in the Portuguese edition | a porta desse bloco, e a única «noutro sítio» que a casa pode provar para todas as 132 linhas sem inventar um índice de superfícies. As duas cadeias nomeiam a edição de destino, e por isso não são a mesma frase traduzida |
+
 ## Identidades aceites (PT = EN de propósito)
 Nomes próprios, códigos de série, identificadores de linha, «Eurostat», «INE», «DGAL», «IEFP», «CAOP», «UE-27», «O Estado do País». A régua da invariância imprime todas as chaves cujo valor é igual nas duas línguas; as que não estiverem nesta lista são erro.
 

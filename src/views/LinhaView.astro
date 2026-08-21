@@ -67,6 +67,8 @@ import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import { LICENCA } from '../data/licenca.mjs';
 import { CONJUNTO } from '../lib/conjunto.mjs';
+import { LANGS } from '../lib/routes.mjs';
+import '../styles/linha.css';
 
 const { lang = 'pt', id } = Astro.props;
 const s = t(lang);
@@ -318,6 +320,42 @@ const temFraseDeAtribuicao = presente(claim.source) && atribuicaoPecas.length > 
    vezes, e é o `href` desta que o portão confere contra `source_url`. */
 const portaNaProva = Boolean(url && paginaDoPdf && paginaDoDocumento);
 const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undefined && !portaNaProva;
+
+/**
+ * ---------------------------------------------------------------------------
+ * A MARCA DE ÁGUA DE UM CAMPO EM FALTA (constituição §4, «O recibo é o boletim»)
+ * ---------------------------------------------------------------------------
+ * O boletim de voto declara o estado do documento por uma marca de água. Aqui a
+ * marca é a do CAMPO que falta, e as suas palavras são as do marcador: a cadeia
+ * `POR_VERIFICAR` de `src/lib/ledger.mjs`, e não uma segunda formulação. «POR
+ * CONFIRMAR» não entra: o sítio tem uma só linguagem de incerteza
+ * (`IDENTIDADE.md` §6; desvio 4 do plano).
+ *
+ * A MARCA É FORMA, O MARCADOR É A PALAVRA. Cada campo em falta continua a render
+ * `[a verificar]` em texto, com a sua marca `data-linha-*`, no sítio onde já
+ * estava, e é essa que o portão confere carácter a carácter. A marca de água vai
+ * `aria-hidden` e não acrescenta uma palavra a quem ouve a página: acrescenta uma
+ * ao que se vê, e é a mesma.
+ *
+ * ONDE ELA ENTRA: no bloco que contém o campo em falta, e em mais lado nenhum.
+ * Um recibo com a marca de água por cima de tudo diria que o documento inteiro
+ * está por confirmar, e não está: o que falta são campos, um a um, e são oito
+ * linhas em 132 que têm algum.
+ */
+const faltaNoExcerto = claim.excerpt === POR_VERIFICAR;
+const faltaNoEndereco = claim.source_url === POR_VERIFICAR;
+const faltaNaFicha = ficha.some((l) => l.valor === POR_VERIFICAR);
+
+/**
+ * A MESMA LINHA NA OUTRA EDIÇÃO (`IDENTIDADE.md` §11, «esta linha noutro sítio»).
+ *
+ * A §11 pede ao aparelho, a seguir ao acesso aos dados, «esta linha noutro
+ * sítio». As superfícies onde um valor rende não estão indexadas em lado nenhum
+ * deste repositório, e escrever essa lista à mão seria inventá-la; o que existe,
+ * para todas as 132 linhas e sem excepção, é a mesma linha na outra edição.
+ * A língua é a que a rota não é.
+ */
+const outraLingua = LANGS.find((l) => l !== lang) ?? null;
 ---
 
 <Base
@@ -392,6 +430,9 @@ const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undef
 
       {/* --------------------------------------------------- iii · a prova */}
       <section class="linha-bloco" aria-labelledby="prova-k" id="prova">
+        {faltaNoExcerto && (
+        <span class="marca-agua" aria-hidden="true" data-marca={POR_VERIFICAR} />
+        )}
         <h2 class="linha-bloco-titulo" id="prova-k">{s.livro.linha.provaK}</h2>
 
         {
@@ -718,6 +759,9 @@ const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undef
       {
         temBlocoDoPedido && (
           <section class="linha-bloco" aria-labelledby="pedido">
+            {faltaNoEndereco && (
+        <span class="marca-agua" aria-hidden="true" data-marca={POR_VERIFICAR} />
+            )}
             <h2 class="linha-bloco-titulo" id="pedido">
               {ehSerieDeDados ? s.prov.pedido : s.prov.endereco}
             </h2>
@@ -833,6 +877,9 @@ const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undef
       {derivada && <p class="aparelho-nota">{s.prov.naoPublicado}</p>}
 
       <dl class="aparelho-ficha">
+        {faltaNaFicha && (
+        <span class="marca-agua" aria-hidden="true" data-marca={POR_VERIFICAR} />
+        )}
         {
           ficha.map((l) => (
             <>
@@ -927,6 +974,33 @@ const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undef
             <span class="linha-campo-k">{s.livro.linha.dadosK}</span>
             <p class="aparelho-nota">
               <a href={CONJUNTO.linha(id)} download>{s.livro.linha.linhaEmJson} →</a>
+            </p>
+            {/* O conjunto inteiro, ao pé da linha. Os mesmos dois ficheiros que o
+                índice do livro-razão oferece, sob a mesma licença: quem confere
+                uma linha muitas vezes quer o conjunto, e a §11 põe «o acesso aos
+                dados» no aparelho e não noutra página. */}
+            <p class="aparelho-nota">
+              {s.livro.linha.conjuntoK}:{' '}
+              <a href={CONJUNTO.csv} download>CSV</a>
+              {' · '}
+              <a href={CONJUNTO.json} download>JSON</a>
+            </p>
+          </div>
+        )
+      }
+
+      {
+        /* ESTA LINHA NOUTRO SÍTIO (IDENTIDADE.md §11). A mesma linha na outra
+           edição, que é o «noutro sítio» que a casa pode provar para todas as
+           linhas. Fica no aparelho porque é a §11 que o pede ali; o cabeçalho
+           faz a mesma viagem para a página inteira, e é mobília. */
+        outraLingua && (
+          <div class="aparelho-bloco">
+            <span class="linha-campo-k">{s.livro.linha.noutroSitioK}</span>
+            <p class="aparelho-nota">
+              <a href={caminhoDaLinha(id, outraLingua)} hreflang={outraLingua}>
+                {s.livro.linha.noutraEdicao} →
+              </a>
             </p>
           </div>
         )

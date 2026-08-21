@@ -777,6 +777,16 @@ export const STRINGS = {
            (IDENTIDADE.md §6). */
         dadosK: 'Acesso aos dados',
         linhaEmJson: 'Esta linha em JSON',
+        /* O conjunto inteiro, ao pé da linha: quem confere uma linha muitas vezes
+           quer o conjunto, e o índice do livro-razão já o oferece. É a mesma
+           licença e são os mesmos ficheiros; o que muda é a distância. */
+        conjuntoK: 'O conjunto inteiro',
+        /* «Esta linha noutro sítio» (IDENTIDADE.md §11; design/DECISAO.md). A
+           mesma linha na outra edição: é o «noutro sítio» que esta casa pode
+           provar para todas as 132 linhas sem inventar um índice de superfícies.
+           O cabeçalho faz a mesma viagem, e é mobília; a §11 pede-a ao aparelho. */
+        noutroSitioK: 'Esta linha noutro sítio',
+        noutraEdicao: 'Esta linha na edição inglesa',
         /* O recibo, v2 (IDENTIDADE.md §11). A frase de atribuição compõe-se
            dos campos que existem; os que não existem não deixam buraco nem
            palavra a mais. */
@@ -1519,6 +1529,9 @@ export const STRINGS = {
         voltar: 'Back to the ledger',
         dadosK: 'Access to the data',
         linhaEmJson: 'This row as JSON',
+        conjuntoK: 'The whole dataset',
+        noutroSitioK: 'This row elsewhere',
+        noutraEdicao: 'This row in the Portuguese edition',
         provaK: 'Proof',
         publicadoPor: 'Published by',
         publicadoEm: 'in',
