@@ -11,7 +11,7 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 import { validateLedger, allClaims, camposPorVerificar, POR_VERIFICAR } from '../src/lib/ledger.mjs';
-import { REGRAS, ABERTURA, LEITURA_BREVE } from '../src/data/metodo.mjs';
+import { REGRAS, ABERTURA, LEITURA_BREVE, FECHO } from '../src/data/metodo.mjs';
 import { SOBRE } from '../src/data/sobre.mjs';
 
 const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
@@ -426,6 +426,15 @@ function achata(s) {
  * Lidas do MÓDULO e não do ficheiro: é o módulo que a página rende, e é ele o
  * texto. Uma citação bate quando é um pedaço de uma destas cadeias — uma regra
  * inteira, ou a frase de dentro dela que a constituição escolheu citar.
+ *
+ * O `FECHO` entra aqui pela I56, e é a MESMA conferência a alcançar mais texto e
+ * não um portão novo (moratória de 2026-08-15). A entrada de fecho do Método —
+ * «A cor» e «A letra», as duas frases que a direção aprovou a 20.08.2026 — é
+ * texto governado exactamente como as dez regras, e enquanto esta função não a
+ * lia a amarra recusava uma citação dela por ela existir: dizia «essa frase não
+ * existe em src/data/metodo.mjs» com a frase a estar lá, e `grep -c` a dar 1. O
+ * objeto entra inteiro e nas duas línguas, pelo mesmo `anda()` que já percorre
+ * os outros três: quem acrescentar uma entrada ao fecho não tem de tocar aqui.
  */
 function cadeiasDoTexto(nome) {
   const out = [];
@@ -434,7 +443,7 @@ function cadeiasDoTexto(nome) {
     else if (Array.isArray(v)) v.forEach(anda);
     else if (v && typeof v === 'object') Object.values(v).forEach(anda);
   };
-  if (nome === 'metodo') anda([REGRAS, ABERTURA, LEITURA_BREVE]);
+  if (nome === 'metodo') anda([REGRAS, ABERTURA, LEITURA_BREVE, FECHO]);
   else if (nome === 'sobre') anda(SOBRE);
   return out;
 }
