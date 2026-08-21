@@ -285,3 +285,32 @@ da direção de 21.08.2026 (`direcao.md`, nota à Emenda 15).
 nos tokens da v3 desde as etapas 1 e 2, e o texto do Sobre não se toca: vive em
 `src/data/sobre.mjs` e o portão compara-o carácter a carácter com o que a página
 rende.
+
+### Etapa 4, subetapa 4e · os Estudos: seis cadeias retiradas, uma encurtada, e duas frases dentro de blocos que ficaram
+
+**Retiradas** (seis chaves de `estudos.*`, nas duas edições):
+
+| chave | o que dizia | porquê |
+|---|---|---|
+| `estudos.stubLede` | «Este estudo ainda não foi mudado para aqui.» / «This study has not been moved here yet.» | repetia em prosa o rótulo de estado que está por cima do título («Rascunho · sem conteúdo») |
+| `estudos.stubExplicacao` | «A migração dos estudos é a fase seguinte do trabalho… Fingir conteúdo seria pior do que não ter nenhum.» | a fase seguinte do projecto e o cuidado da casa |
+| `estudos.migradoLede` | «O documento deste estudo já está alojado aqui. A página do observatório à volta dele ainda não foi escrita.» | idem: o rótulo diz «Documento alojado · página por escrever» |
+| `estudos.migradoExplicacao` | «O que se lê no documento é o estudo tal como foi publicado… Fingir esse conteúdo seria pior do que não ter nenhum.» | idem |
+| `estudos.documentoV` | «Alojado aqui na forma exata em que foi publicado, com uma faixa no topo e mais nada.» | com que cuidado o documento foi alojado. A porta («Ler o documento →») é o que o leitor precisa |
+| `estudos.leituraEstado` | «Leitura publicada» / «Reading published» | a casa a dizer de si que tinha acabado o trabalho, por cima de uma página onde o trabalho está à vista. Os outros dois estados ficam, porque são ausências declaradas |
+
+**Encurtada** (uma chave):
+
+| chave | o que dizia | o que diz | porquê |
+|---|---|---|---|
+| `estudos.stubForaV` | «**Enquanto a migração não chega**, este estudo está publicado noutro sítio. A ligação sai deste domínio.» / «**Until the migration happens**, this study is published elsewhere. The link leaves this domain.» | «A ligação sai deste domínio.» / «The link leaves this domain.» | a primeira metade contava a fase do projecto. A segunda fica e é navegação: avisa que o comando ao lado leva para fora do sítio |
+
+**Duas frases dentro de blocos que ficaram** (`src/data/leituras.mjs`, a nota das
+medidas de `evora-prometido-pago-auditado-2026`):
+
+| o que dizia | porquê |
+|---|---|
+| «… e o selo aparece a tracejado. **Inventar uma frase seria pior do que mostrar a falta.**» / «… and the seal shows dashed. **Inventing a sentence would be worse than showing the gap.**» | **o limite fica, o cuidado sai.** O que fica explica porque é que estes dois valores não têm frase para transcrever e porque é que o selo aparece tracejado — sem isso, quem visse o selo tracejado lia mal o valor ao lado. A última frase é a casa a dizer que fez bem |
+
+`src/data/leituras.mjs` é ficheiro fora da lista da §2 do brief. Foi aberto para
+esta frase e para mais nada, e vai escrito aqui em vez de improvisado.

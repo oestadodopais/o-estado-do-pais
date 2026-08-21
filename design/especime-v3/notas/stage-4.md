@@ -666,7 +666,82 @@ contexto resolve. Fica dito para a cadeira decidir se a classe se separa em duas
 
 ---
 
-## 7. O que fica pedido
+## 7. Subetapa 4e · o arquivo e as páginas de trabalho
+
+`DECISIONS.md` §1.60. **`Afecta: nenhum`**, e a rota do documento alojado não é
+tocada: `check:documentos` continua a provar os bytes de cada ficheiro.
+
+### 7.1 · A caixa às riscas, e o estado dito duas vezes
+
+O item **M** da §4 pedia uma decisão entre mudar a caixa ou mudar o nome, e a
+direção escolheu a forma: as palavras ficam, as riscas saem. A fotografar
+encontrei o resto do defeito, que o item não nomeava: **o estado dizia-se duas
+vezes na mesma página**, no antetítulo por cima do título e outra vez dentro da
+caixa. Tirar as riscas e deixar as duas linhas seria trocar um defeito por outro.
+Fica **uma** vez, no antetítulo. `.placeholder` e `.placeholder-tag` saem de
+`site.css` porque ficaram sem cliente, e a regra `.estudo-estado` que cheguei a
+escrever em `leitura.css` saiu com elas — não chegou ao commit.
+
+### 7.2 · O que saiu, e o que ficou
+
+Seis cadeias retiradas e uma encurtada, em `../RELOCACOES.md` com o antes e o
+depois nas duas edições. As duas que custam mais a ver:
+
+- **«Leitura publicada» sai.** Era a casa a dizer de si que tinha acabado o
+  trabalho, por cima de uma página onde o trabalho está à vista. Os outros dois
+  estados ficam, porque são ausências declaradas;
+- **duas frases saem de dentro de blocos que ficaram** (`src/data/leituras.mjs`).
+  A nota que explica porque é que dois selos aparecem tracejados acabava em
+  «Inventar uma frase seria pior do que mostrar a falta.» O limite fica — sem ele,
+  quem vê o selo tracejado lê mal o valor ao lado —, o cuidado sai. **É a regra a
+  funcionar nos dois sentidos dentro da mesma frase**, e é por isso que não bastou
+  classificar o bloco: classificá-lo como conteúdo fechava a contagem a zero com
+  a frase lá dentro, que era ganhar a régua sem cumprir a regra.
+
+`src/data/leituras.mjs` é ficheiro fora da lista da §2 do brief, aberto para essa
+frase e mais nada.
+
+### 7.3 · A data do arquivo, e a planta que a prova
+
+O índice rende `e.date ?? [a verificar]`, lido do registo e de mais lado nenhum.
+Hoje há três edições com data e doze sem.
+
+**A primeira planta não provava o que era preciso provar**, e vai escrito: pus
+`date: null` numa edição com data e o marcador apareceu — mas essa edição tinha
+`updated: null`, e portanto a planta não dizia nada sobre o `updated` ser lido no
+lugar da data. **A segunda:** `date: null` **e** `updated: '2026-08-12'` na mesma
+edição.
+
+```
+antes:   12 × «Publicação: [a verificar]» · 2 × 2026-08-04 · 1 × 2026-08-12
+planta:  13 × «Publicação: [a verificar]» · 2 × 2026-08-04
+         «2026-08-12» não aparece uma única vez em dist/estudos/index.html
+```
+
+**Revertida** (`git diff --stat src/data/studies.mjs` sem diferenças), e a
+construção volta às doze.
+
+### 7.4 · O inventário
+
+Vinte e quatro rotas — o índice e onze trabalhos, nas duas edições — **todas a
+zero**, e nenhum bloco por classificar. Cento e seis blocos distintos entraram no
+inventário um a um; a esmagadora maioria são nomes de medidas, unidades escritas,
+descrições de trabalhos e as ressalvas dos próprios trabalhos sobre o que as suas
+fontes permitem estabelecer. **As ressalvas ficam todas**, por mais longas que
+sejam: são limites dos dados.
+
+### 7.5 · Um defeito que a etapa criou, e que não escondo
+
+`ISSUES.md` **I54**: a casa passou a ter **dois sinais para a mesma dobra**. O
+`.deep` (a camada de fundo da página de concelho e da página de um trabalho)
+desenha um triângulo que roda ao abrir, e é anterior a esta etapa; as dobras que
+a 4b e a 4c criaram desenham `+` e `−`. A Emenda 10 fecha exactamente esta porta.
+Não unifiquei: o `+`/`−` foi visto pela direção nas capturas da 4b, o triângulo é
+de outro construtor e está em duas páginas, e escolher entre os dois é forma.
+
+---
+
+## 8. O que fica pedido
 
 | # | pedido | a quem |
 |---|---|---|
@@ -678,7 +753,7 @@ contexto resolve. Fica dito para a cadeira decidir se a classe se separa em duas
 
 ---
 
-## 8. Modelo e gasto
+## 9. Modelo e gasto
 
 | | |
 |---|---|

@@ -1645,33 +1645,6 @@ a.src-chip.is-unverified:hover::before {
 .metodo-secao h2 {
   font-size: clamp(19px, 2vw, 23px);
 }
-.placeholder {
-  border: 1px dashed var(--rule-strong);
-  background: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 9px,
-    var(--g3) 9px,
-    var(--g3) 18px
-  );
-  padding: 20px 22px;
-  display: grid;
-  gap: 10px;
-  max-width: 68ch;
-}
-.placeholder-tag {
-  font-family: var(--f-instr);
-  font-variant-numeric: tabular-nums lining-nums;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink);
-  background: var(--paper);
-  border: 1px solid var(--rule-strong);
-  padding: 3px 8px;
-  justify-self: start;
-}
 .placeholder-nota {
   font-size: 14px;
   line-height: 1.55;
