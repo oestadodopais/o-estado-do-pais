@@ -12,6 +12,7 @@ sessão custe uma subetapa. Sem travessões, por escolha deste documento.*
 | (abaixo) | 3-0 | as seis primeiras decisões da direção de 21.08: a descrição da primeira página, as peças sem anel, a porta do CSV, a contagem por parcelas, a nota da medida calculada, I26 e I27 |
 | (abaixo) | 3a | a página de linha como o recibo do boletim: a letra, os rótulos, a ficha como formulário, a marca de água do campo em falta, o acesso ao conjunto e esta linha noutro sítio |
 | (abaixo) | 3b | o índice do livro-razão: a linha-espécime com os mesmos campos pela mesma ordem, as contagens com porta, e a Emenda 15 aplicada à página |
+| (abaixo) | 3c | `/municipios`: a cobertura pelas duas chaves da prova, a lista na letra da família, e a Emenda 15 com a autorreferência a zero |
 
 ---
 
@@ -624,3 +625,85 @@ node scripts/medir-invariancia.mjs <ref df76a5f> dist
 As 270 fecham sem sobra: 264 + 2 + 2 + 2. Os +460 do índice são os dois campos
 novos em 113 das 132 linhas, os seus rótulos, e a linha das contagens; os −3 são
 as três cadeias que a Emenda 15 retirou.
+
+---
+
+## 4. Subetapa 3c · `/municipios`
+
+### 4.1 · A contagem passa a ser contada
+
+A frase da cabeça dizia «São **308** concelhos. Um tem página do observatório; os
+restantes ainda não têm, e esta lista di-lo em vez de os esconder.» Duas coisas
+erradas na mesma frase: o «Um» é uma contagem escrita à mão, que a
+`IDENTIDADE.md` §10 recusa por extenso («Uma contagem escrita à mão fica errada na
+construção seguinte e ninguém dá por isso»), e a segunda metade é a casa a dizer
+que é honesta, que a Emenda 15 tira.
+
+Passa a ser **«1 de 308 concelhos · tem página»**, com os dois números pelas
+chaves da prova que já existiam e que nenhuma página mostrava
+(`municipios_com_pagina`, `municipios_total`), cada uma com a sua porta, e o
+estado pela palavra fechada `cobertura.temPagina`. As duas palavras entre os
+números são as da ficha do mapa da primeira página, relocadas sem uma letra
+mudada (**R11**): saíram de lá na 2l e a Emenda 17 mandou a contagem para aqui.
+
+**Isto fecha o ISSUES I38**: o `<Claim>` da soma saiu da frase e a soma rende
+**uma vez** na página, na linha das parcelas, com o seu selo.
+
+### 4.2 · A Emenda 15, com a autorreferência a zero
+
+| cadeia | o que lhe aconteceu |
+|---|---|
+| `municipios.naoDizK` + `naoDizV` | **saem**: «O que este índice não diz» · «Nada sobre o concelho…» é a classe que a emenda nomeia por extenso |
+| `municipios.metaDescription` | **aparada**, nas duas edições: perdeu «Os que já têm página do observatório levam a ela; os outros dizem que ainda não têm», que é a cobertura do próprio sítio. Nenhuma palavra mudou |
+| `municipios.contagemA` + `contagemB` | **saem** com a frase que as usava (acima) |
+
+```
+frases da casa · /municipios        ... 33 distinta(s) · conteúdo 32 · navegação 1 · autorreferência 0 ✓
+frases da casa · /en/municipalities ... 33 distinta(s) · conteúdo 32 · navegação 1 · autorreferência 0 ✓
+(0 blocos por classificar nas duas)
+```
+
+**Uma alteração à régua, e o que ela move** (ISSUES **I43**). Sem ela, o índice
+entrava aqui com **307 blocos** do feitio «Abrantes sem página ainda», um por
+concelho, e a lista declarada teria de os enumerar um a um: isso não é um
+inventário de frases da casa, é a lista dos concelhos escrita outra vez. A medida
+8 passa a excluir `[data-cobertura]`, que é vocabulário fechado, contado pela
+medida 7 por conta própria, e que a Emenda 15 chama conteúdo por definição («a
+ausência dita em duas palavras»). A exclusão fica **fora** de `ORIGEM_DECLARADA`,
+que é partilhada com a medida 3 e é linha de base desde a etapa 0.
+
+**Move a primeira página, e vai dito**: `conteúdo` desce de 41 para 33 e as
+distintas de 33 para 32, porque as oito peças vazias e a linha de cobertura
+deixaram de contar. **A autorreferência continua em 0**, que é o alvo.
+
+### 4.3 · A lista, na letra da família
+
+Os rótulos de distrito passam de Bitter caixa alta a versaletes de Spectral SC,
+como na página de linha e no índice do livro-razão: uma família de páginas, um
+vocabulário (Emenda 5; ISSUES I15). E cada grupo é um `<section>`, ao qual a regra
+global dá um preenchimento de topo de **página inteira** (52 a 86px): entre dois
+distritos abria-se um vazio de mais de cem píxeis. O preenchimento sai, como já
+sai na `.linha-bloco`, pela mesma razão.
+
+### 4.4 · A porta para o mapa, e o esquema que não a aceita
+
+O brief escreve `/?ambito=municipio` e o esquema de estado da etapa 2 **não aceita
+esse valor**: `resolveAmbito()` só reconhece `municipio:<slug>` da lista fechada da
+CAOP, e `municipio` sozinho cai em silêncio no âmbito País, por desenho. A vista de
+escolha abre-se por um comando que **não muda o âmbito**, e por isso não tem
+endereço.
+
+**Não foi improvisado.** A porta fica a ser a âncora do mapa (`/#mapa`), que é a
+que já existia e é verdadeira; uma porta que promete um estado que a página não
+abre é pior do que nenhuma. O pedido está na §5 e em ISSUES **I42**.
+
+### 4.5 · As réguas da 3c
+
+```
+node tests/municipio/concelhos.mjs   →  4 de 4 células passam
+   308 concelhos em 29 grupos · 1 com página · uma cadeia por estado de cobertura
+   provas municipios_com_pagina=1 · municipios_total=308 · a soma rende 1 vez
+   parcelas 278 · 19 · 11 · 308, cada uma com o selo da sua linha
+   transbordo: 20 de 20 combinações a zero
+node scripts/medir-defeitos.mjs      →  frases de cobertura 1 por estado por edição ✓
+```

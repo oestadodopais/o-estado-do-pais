@@ -503,16 +503,23 @@ export const STRINGS = {
     /** O índice dos concelhos. */
     municipios: {
       metaTitle: 'Municípios · O Estado do País',
-      metaDescription:
-        'Todos os concelhos de Portugal, pela Carta Administrativa Oficial. Os que já têm página do observatório levam a ela; os outros dizem que ainda não têm.',
+      /* A DESCRIÇÃO APARA-SE, e vai assinalada em vez de decidida (Emenda 15).
+         Dizia, a seguir: «Os que já têm página do observatório levam a ela; os
+         outros dizem que ainda não têm.» — a cobertura do próprio sítio, que é
+         uma das cinco classes que a emenda nomeia. Nenhuma palavra mudou: a
+         primeira frase é a que já lá estava. */
+      metaDescription: 'Todos os concelhos de Portugal, pela Carta Administrativa Oficial.',
       eyebrow: 'Municípios',
       h1: 'Os concelhos de Portugal',
       lede: 'Todos os concelhos, pela Carta Administrativa Oficial de Portugal.',
-      contagemA: 'São ',
-      contagemB: ' concelhos. Um tem página do observatório; os restantes ainda não têm, e esta lista di-lo em vez de os esconder.',
-      naoDizK: 'O que este índice não diz',
-      naoDizV:
-        'Nada sobre o concelho. É uma lista de nomes e de estados: um concelho aparece aqui porque existe na Carta Administrativa, não porque este sítio tenha alguma coisa medida sobre ele.',
+      /* A CONTAGEM DA COBERTURA, com as duas chaves da prova (IDENTIDADE.md §10).
+         Dizia «São 308 concelhos. Um tem página do observatório; os restantes
+         ainda não têm, e esta lista di-lo em vez de os esconder.»: o «Um» era uma
+         contagem escrita à mão, que a §10 recusa, e a segunda metade era a casa a
+         dizer que é honesta. As duas palavras que ficam são as da ficha do mapa da
+         primeira página, relocadas sem uma letra mudada (R11). */
+      coberturaA: ' de ',
+      coberturaB: ' concelhos · ',
       fonteK: 'De onde vem a lista',
       mapaLink: 'O mapa dos concelhos',
       /* A CONTAGEM POR PARCELAS (Emenda 17; decisão 4 da direção, 21.08.2026;
@@ -1305,16 +1312,12 @@ export const STRINGS = {
 
     municipios: {
       metaTitle: 'Municipalities · O Estado do País',
-      metaDescription:
-        'Every concelho in Portugal, from the official administrative map. Those that already have an observatory page link to it; the others say they do not yet.',
+      metaDescription: 'Every concelho in Portugal, from the official administrative map.',
       eyebrow: 'Municipalities',
       h1: 'The concelhos of Portugal',
       lede: 'Every concelho, from the Carta Administrativa Oficial de Portugal.',
-      contagemA: 'There are ',
-      contagemB: ' concelhos. One has an observatory page; the rest do not yet, and this list says so rather than hiding them.',
-      naoDizK: 'What this index does not say',
-      naoDizV:
-        'Anything about the concelho. It is a list of names and states: a concelho appears here because it exists in the official administrative map, not because this site has measured anything about it.',
+      coberturaA: ' of ',
+      coberturaB: ' concelhos · ',
       fonteK: 'Where the list comes from',
       mapaLink: 'The map of concelhos',
       parcelaContinente: 'Mainland',
