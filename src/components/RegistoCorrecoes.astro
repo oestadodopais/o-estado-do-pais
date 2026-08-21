@@ -25,12 +25,48 @@
  * O motivo é o único pedaço que muda de língua: `reason` na edição portuguesa,
  * `reason_en` na inglesa. A escolha é feita em motivoDaEntrada(), e o portão
  * confere, em cada edição, o motivo da língua daquela edição.
+ *
+ * ---------------------------------------------------------------------------
+ * V3, SUBETAPA 4a: A PORTA DE CADA ENTRADA É O SELO DA LINHA
+ * ---------------------------------------------------------------------------
+ * É a decisão (c) da direção, de 20.08.2026: a comparação campo a campo contra
+ * o `corrections[]` da própria afirmação fica como está (origem 5, intocada), e
+ * cada entrada **ganha o selo daquela linha como porta**, ao pé do par de
+ * valores, «para que um leitor possa abrir a linha onde a história vive».
+ *
+ * O ID DEIXA DE SER LIGAÇÃO, e é a metade da decisão que se percebe mal se não
+ * for escrita. A entrada tinha já uma porta para a linha — o `<code>` do id,
+ * embrulhado num `<a>`. Duas portas para a mesma linha na mesma entrada não são
+ * duas portas: são a mesma porta dita duas vezes, e a segunda tira sinal à
+ * primeira. O selo é a porta do sítio inteiro (`IDENTIDADE.md` §5), e por isso é
+ * ele que fica; o id fica como o que sempre foi, um identificador transcrito e
+ * conferido pelo portão.
+ *
+ * O PORTÃO PASSA A EXIGI-LO. Cada entrada declara-se com `data-correcao-entrada`
+ * (o id da sua linha) e o portão recusa uma entrada sem `.src-chip` para essa
+ * linha, e uma cuja porta abra outra. Ver `scripts/gate-html.mjs`, no bloco do
+ * registo de correções; duas plantas fecharam a construção antes de isto entrar.
+ *
+ * ---------------------------------------------------------------------------
+ * A FORMA: O VALOR ANTIGO RISCADO, O NOVO AO LADO, E NENHUMA COR
+ * ---------------------------------------------------------------------------
+ * O oxblood saiu de `tokens.css` na etapa 1c, e o que o substitui não é outra
+ * cor: é a forma. O valor antigo vai num `<s>` — o elemento que diz «isto já não
+ * é exacto», e não uma classe que risca — em `--g1`; o novo fica em tinta, ao
+ * lado. É o que a frase «A cor» do Método passa a afirmar, e é por isso que ela
+ * só pode ser escrita depois disto (decisão g, condição da direção).
+ *
+ * O PREFIXO QUE SÓ SE OUVE. Um risco é uma marca visual e não tem leitura: sem
+ * prefixo, quem ouve a página recebe «78,3 78» e nenhuma maneira de saber qual é
+ * qual. Cada valor leva por isso um prefixo em `.vh` («valor anterior: » /
+ * «valor novo: »), **fora** do elemento marcado com `data-correcao-campo`, para
+ * que o portão continue a comparar só o valor com o do livro-razão.
  */
 import { entradasDoRegisto, motivoDaEntrada } from '../lib/ledger.mjs';
 import { KIND_LABELS } from '../data/correcoes.mjs';
-import { caminhoDaLinha } from '../lib/livro.mjs';
 import { prova } from '../lib/prova.mjs';
 import Claim from './Claim.astro';
+import Provenance from './Provenance.astro';
 import ValorDaProva from './ValorDaProva.astro';
 import { t } from '../i18n/strings.mjs';
 
@@ -88,7 +124,7 @@ const palavraRevisoes =
             <span>{s.correcoes.colunaMotivo}</span>
           </div>
           {correcoes.map((e) => (
-            <div class="log-linha">
+            <div class="log-linha" data-correcao-entrada={e.claimId}>
               <span
                 class="log-data"
                 data-correcao-claim={e.claimId}
@@ -97,21 +133,27 @@ const palavraRevisoes =
               >
                 {e.date}
               </span>
-              <span
-                class="log-valor log-valor-antigo"
-                data-correcao-claim={e.claimId}
-                data-correcao-n={String(e.n)}
-                data-correcao-campo="old_value"
-              >
-                {e.old_value}
+              <span class="log-valor log-valor-antigo">
+                <span class="vh">{s.correcoes.valorAnteriorVh}</span>
+                <s
+                  data-correcao-claim={e.claimId}
+                  data-correcao-n={String(e.n)}
+                  data-correcao-campo="old_value"
+                >
+                  {e.old_value}
+                </s>
               </span>
-              <span
-                class="log-valor"
-                data-correcao-claim={e.claimId}
-                data-correcao-n={String(e.n)}
-                data-correcao-campo="new_value"
-              >
-                {e.new_value}
+              <span class="log-valor">
+                <span class="vh">{s.correcoes.valorNovoVh}</span>
+                <span
+                  data-correcao-claim={e.claimId}
+                  data-correcao-n={String(e.n)}
+                  data-correcao-campo="new_value"
+                >
+                  {e.new_value}
+                </span>
+                {/* A PORTA DA ENTRADA, ao pé do par (decisão c). */}
+                <Provenance id={e.claimId} lang={lang} />
               </span>
               <div>
                 <p
@@ -133,15 +175,13 @@ const palavraRevisoes =
                   </span>
                   {' '}
                   {s.correcoes.colunaAfirmacao}:{' '}
-                  <a href={caminhoDaLinha(e.claimId, lang)}>
-                    <code
-                      data-correcao-claim={e.claimId}
-                      data-correcao-n={String(e.n)}
-                      data-correcao-campo="id"
-                    >
-                      {e.claimId}
-                    </code>
-                  </a>
+                  <code
+                    data-correcao-claim={e.claimId}
+                    data-correcao-n={String(e.n)}
+                    data-correcao-campo="id"
+                  >
+                    {e.claimId}
+                  </code>
                 </p>
               </div>
             </div>
@@ -162,7 +202,7 @@ const palavraRevisoes =
 
         <ul class="registo-linhas">
           {atualizacoes.map((e) => (
-            <li class="registo-linha">
+            <li class="registo-linha" data-correcao-entrada={e.claimId}>
               <span
                 class="log-data"
                 data-correcao-claim={e.claimId}
@@ -172,23 +212,28 @@ const palavraRevisoes =
                 {e.date}
               </span>
               <span class="registo-salto">
-                <span
-                  class="log-valor-antigo"
-                  data-correcao-claim={e.claimId}
-                  data-correcao-n={String(e.n)}
-                  data-correcao-campo="old_value"
-                >
-                  {e.old_value}
+                <span class="log-valor-antigo">
+                  <span class="vh">{s.correcoes.valorAnteriorVh}</span>
+                  <s
+                    data-correcao-claim={e.claimId}
+                    data-correcao-n={String(e.n)}
+                    data-correcao-campo="old_value"
+                  >
+                    {e.old_value}
+                  </s>
                 </span>
                 <span aria-hidden="true"> → </span>
-                <span
-                  class="log-valor"
-                  data-correcao-claim={e.claimId}
-                  data-correcao-n={String(e.n)}
-                  data-correcao-campo="new_value"
-                >
-                  {e.new_value}
+                <span class="log-valor">
+                  <span class="vh">{s.correcoes.valorNovoVh}</span>
+                  <span
+                    data-correcao-claim={e.claimId}
+                    data-correcao-n={String(e.n)}
+                    data-correcao-campo="new_value"
+                  >
+                    {e.new_value}
+                  </span>
                 </span>
+                <Provenance id={e.claimId} lang={lang} />
               </span>
               <span
                 class="registo-motivo-curto"
@@ -198,16 +243,14 @@ const palavraRevisoes =
               >
                 {motivoDaEntrada(e, lang)}
               </span>
-              <a href={caminhoDaLinha(e.claimId, lang)}>
-                <code
-                  class="registo-id"
-                  data-correcao-claim={e.claimId}
-                  data-correcao-n={String(e.n)}
-                  data-correcao-campo="id"
-                >
-                  {e.claimId}
-                </code>
-              </a>
+              <code
+                class="registo-id"
+                data-correcao-claim={e.claimId}
+                data-correcao-n={String(e.n)}
+                data-correcao-campo="id"
+              >
+                {e.claimId}
+              </code>
               <span
                 class="vh"
                 data-correcao-claim={e.claimId}
@@ -245,16 +288,15 @@ const palavraRevisoes =
         </p>
         <ul class="registo-proveniencia-linhas">
           {primeiraPorLinha.map((e) => (
-            <li>
-              <a href={caminhoDaLinha(e.claimId, lang)}>
-                <code
-                  data-correcao-claim={e.claimId}
-                  data-correcao-n={String(e.n)}
-                  data-correcao-campo="id"
-                >
-                  {e.claimId}
-                </code>
-              </a>
+            <li data-correcao-entrada={e.claimId}>
+              <code
+                data-correcao-claim={e.claimId}
+                data-correcao-n={String(e.n)}
+                data-correcao-campo="id"
+              >
+                {e.claimId}
+              </code>{' '}
+              <Provenance id={e.claimId} lang={lang} />
             </li>
           ))}
         </ul>

@@ -15,6 +15,7 @@
  *   3. data-nonledger="<motivo>"— contexto estrutural, com motivo em ledger/allowlist.yml.
  *   4. token/padrão em ledger/allowlist.yml — nomes próprios com algarismos.
  *   5. data-correcao-*          — uma entrada do registo de correções, conferida
+ *                                 campo a campo, e com o selo da sua linha por porta
  *                                 campo a campo contra a afirmação.
  *   6. data-linha-*             — um campo de uma linha do livro-razão, na página
  *                                 dessa linha, conferido carácter a carácter
@@ -2412,6 +2413,23 @@ for (const file of ficheirosHtml(DIST)) {
    * edição** — a edição inglesa a mostrar o motivo português falha o build,
    * tal como falha a portuguesa a mostrar o inglês.
    */
+  /**
+   * A ENTRADA A QUE UM CAMPO PERTENCE.
+   *
+   * Sobe até ao primeiro antepassado marcado `data-correcao-entrada`, que é o
+   * elemento que o gabarito declara como sendo UMA entrada do registo. Sem ele
+   * não há onde exigir a porta: os campos são irmãos soltos, e um registo podia
+   * perder o selo de todas as entradas sem que nada fechasse.
+   */
+  const entradaDoRegisto = (el) => {
+    let p = el.parentNode;
+    while (p) {
+      if ('data-correcao-entrada' in (p.attributes ?? {})) return p;
+      p = p.parentNode;
+    }
+    return null;
+  };
+
   const CAMPOS_CORRECAO = {
     date: 'exacto',
     kind: 'natureza',
@@ -2445,6 +2463,33 @@ for (const file of ficheirosHtml(DIST)) {
       continue;
     }
     if (!paginaDoLivro) idsUsados.add(id);
+
+    /* Cada campo vive dentro da entrada que o declara, e a entrada é da linha
+       daquele campo. Sem esta amarra, `data-correcao-entrada` seria opcional e a
+       conferência da porta, mais abaixo, não conferia nada: bastava não pôr a
+       marca.
+
+       FORA DAS PÁGINAS DO LIVRO-RAZÃO, e é a mesma razão de `auditaSelo()`: na
+       página de uma linha, a história daquela linha É a linha, e um selo ali
+       seria uma porta para a divisão onde já se está. A decisão (c) é sobre o
+       REGISTO de correções, que é a página que junta as histórias de linhas
+       diferentes e onde a porta é a única maneira de saber de qual. */
+    const entrada = paginaDoLivro ? null : entradaDoRegisto(el);
+    if (paginaDoLivro) {
+      /* nada a exigir: ver acima */
+    } else if (!entrada) {
+      err(
+        `o campo "${campo}" da correção #${n + 1} de "${id}" está fora de uma entrada declarada.\n` +
+          `      Cada entrada do registo leva data-correcao-entrada="<id da linha>" no elemento que a ` +
+          `embrulha; é nele que o portão exige o selo daquela linha (decisão c, 20.08.2026).`,
+      );
+    } else if (entrada.getAttribute('data-correcao-entrada') !== id) {
+      err(
+        `o campo "${campo}" da correção #${n + 1} de "${id}" está dentro de uma entrada declarada da ` +
+          `linha "${entrada.getAttribute('data-correcao-entrada')}".\n` +
+          `      Uma entrada do registo é de uma linha só: é dela que a porta tem de ser.`,
+      );
+    }
 
     const renderizado = textoTranscrito(el);
     if (campo === 'id') {
@@ -2532,6 +2577,58 @@ for (const file of ficheirosHtml(DIST)) {
           `"${esperado.slice(0, 120)}".`,
       );
     }
+  }
+
+  /**
+   * -------------------------------------------------------------------------
+   * A PORTA DE CADA ENTRADA DO REGISTO — o selo da linha (decisão c, 20.08.2026)
+   * -------------------------------------------------------------------------
+   * «Cada entrada mantém a comparação campo a campo contra o `corrections[]` da
+   * linha e **ganha o selo da linha como porta**, ao pé do par, para que um
+   * leitor possa abrir a linha onde a história vive.»
+   *
+   * A conferência é a mesma de `auditaSelo()` reduzida ao que aqui importa:
+   * dentro da entrada tem de existir uma âncora `.src-chip` cujo `href` seja o
+   * caminho da linha DAQUELA entrada, numa das duas edições. É extensão da
+   * conferência que já existia sobre `data-correcao-*` e não um portão novo: a
+   * marca é a mesma família, o laço é o mesmo, e a moratória de 2026-08-15 fica
+   * respeitada.
+   *
+   * Uma entrada com selo para OUTRA linha não passa, e a mensagem di-lo por
+   * extenso: a etiqueta desse selo pode estar perfeitamente certa — é a etiqueta
+   * da linha que ele abre — e a conferência de `data-nonledger="proveniencia"`,
+   * mais abaixo, deixa-a passar. O que falha é a porta estar noutra parede.
+   */
+  for (const el of body.querySelectorAll('[data-correcao-entrada]')) {
+    const id = el.getAttribute('data-correcao-entrada');
+    if (!claims.has(id)) {
+      err(
+        `uma entrada do registo de correções declara-se da linha "${id}", que não existe no livro-razão.`,
+      );
+      continue;
+    }
+    const alvos = LANGS.map((l) => routePath('linha', l, { slug: id }));
+    if (temChipPara(el, alvos)) continue;
+
+    const outras = [
+      ...new Set(
+        [...(el.querySelectorAll('.src-chip') ?? [])]
+          .map((a) => LINHA_POR_PORTA.get(decodeEntities(a.getAttribute('href') ?? '').split('#')[0]))
+          .filter(Boolean)
+          .map((x) => x.id),
+      ),
+    ];
+    err(
+      `a entrada do registo de correções da linha "${id}" não tem o selo dessa linha por porta.\n` +
+        `      esperava-se <a class="src-chip" href="${routePath('linha', linguaPagina ?? 'pt', { slug: id })}"> ` +
+        `dentro da própria entrada, ao pé do par de valores.\n` +
+        (outras.length
+          ? `      A entrada tem selo, e ele abre a linha "${outras.join('", "')}". Uma porta que abre ` +
+            `outra linha não é a porta desta entrada: quem clica quer a história DESTE valor.\n`
+          : `      A entrada não tem selo nenhum.\n`) +
+        `      É a decisão (c) da direção, de 20.08.2026: a comparação campo a campo fica, e a entrada ` +
+        `ganha a porta.`,
+    );
   }
 
   /* --- os campos de uma linha do livro-razão, na página dessa linha --- */

@@ -216,6 +216,14 @@ quando falta um campo.»* (`metodo`) Então:
    e sem o marcador, que ficam para leitores de ecrã. Este ponto 5 revê o ponto 4
    da v1, que a 16.08.2026 tinha deixado o cabeçalho só com o glifo (§1.37): a
    etiqueta era o que estorvava, e não a palavra.
+6. **No registo de correções a porta é o selo da LINHA, e não o selo de um
+   valor.** Uma entrada do registo mostra dois números — o antigo, riscado, e o
+   novo ao lado — e eles não são duas medições com duas linhas: são dois estados
+   do mesmo valor, e é a linha que guarda os dois na sua história. A porta é uma
+   só, é dessa linha, e fica ao pé do par, para que quem lê a correção possa
+   abrir onde ela está escrita por extenso. É a decisão (c) da direção, de
+   20.08.2026; o portão recusa uma entrada do registo sem ela, e uma cuja porta
+   abra outra linha (subetapa 4a do redesenho v3).
 
 ---
 

@@ -8861,6 +8861,80 @@ provou é um comentário:
 Nenhum portão novo: as duas são a mesma conferência que já existia, sobre a rota
 que a declaração nomeia.
 
+### 1.55 O registo de correções ganha a porta que a decisão (c) pediu, e a correção passa a dizer-se por forma
+
+**Afecta:** nenhum
+
+*(Subetapa 4a do redesenho v3. Nenhuma palavra de `src/data/sobre.mjs` ou de
+`src/data/metodo.mjs` mexe aqui: a frase «A cor» do Método, que afirma esta
+forma, é a subetapa seguinte e não entra sem a palavra da direção sobre o que
+está rendido. Nenhuma linha do livro-razão é escrita, e nenhum valor muda.)*
+
+**A decisão (c), de 20.08.2026:** «Sim. Conferência campo a campo mais o selo da
+linha como porta.» A conferência campo a campo é a origem 5 e fica exactamente
+como estava; o que entra é a porta.
+
+**A porta é o selo, e o id deixa de ser ligação.** Cada entrada do registo — as
+três correções, as doze atualizações e as nove linhas com revisão de proveniência
+— leva agora um `.src-chip` para a sua própria linha, ao pé do par de valores.
+Levava já uma porta, o `<code>` do id embrulhado num `<a>`; duas portas para a
+mesma linha na mesma entrada não são duas portas, são a mesma dita duas vezes, e
+a segunda tira sinal à primeira. O selo é a porta desta casa (`IDENTIDADE.md`
+§5), e por isso é ele que fica. O id fica como identificador transcrito, e
+continua conferido pelo portão contra a própria afirmação.
+
+**`IDENTIDADE.md` §5 ganha o ponto 6**, e diz o que a decisão fixa: no registo de
+correções a porta é o selo da LINHA, e não o selo de um valor. Os dois números de
+uma entrada não são duas medições com duas linhas: são dois estados do mesmo
+valor, e é a linha que guarda os dois. Não é citação de texto governado e não
+leva marca.
+
+**A extensão do portão, e as duas plantas.** `gate-html.mjs`, no bloco que já
+conferia `data-correcao-*`: cada entrada declara-se com
+`data-correcao-entrada="<id>"`, cada campo tem de viver dentro de uma dessas
+entradas e da entrada da sua própria linha, e a entrada tem de conter uma âncora
+`.src-chip` para essa linha. Fora das páginas do livro-razão, e pela mesma razão
+de `auditaSelo()`: na página de uma linha, a história daquela linha é a linha, e
+um selo ali seria uma porta para a divisão onde já se está. Nenhum portão novo —
+é a mesma conferência, o mesmo laço e a mesma família de marcas, pela moratória
+de 2026-08-15.
+
+1. **entrada sem porta** (a chamada do selo sai do grupo das correções) →
+   «a entrada do registo de correções da linha "pib-pc-alentejo-2000" não tem o
+   selo dessa linha por porta. […] A entrada não tem selo nenhum.» Três entradas
+   fechadas, seis erros com as duas edições. Revertida;
+2. **porta para outra linha** (o selo passa a apontar `divida-publica-2025`) →
+   a mesma primeira linha, com «A entrada tem selo, e ele abre a linha
+   "divida-publica-2025". Uma porta que abre outra linha não é a porta desta
+   entrada: quem clica quer a história DESTE valor.» É o caso que nenhuma
+   conferência anterior apanhava: a etiqueta desse selo está certa — é a etiqueta
+   da linha que ele abre — e a conferência de `data-nonledger="proveniencia"`
+   deixava-a passar. O que falha é a porta estar noutra parede. Revertida.
+
+**A forma, e é a condição da decisão (g).** O valor antigo passa a ir num `<s>`,
+que é o elemento que diz «isto já não é exacto», riscado em `--g1` sobre a tinta
+do novo, ao lado. Não é uma cor: o `--oxblood` saiu de `tokens.css` na etapa 1c e
+não é substituído por outro acento. **Um risco não se ouve**, e por isso cada
+valor leva um prefixo em `.vh` — «valor anterior: » / «previous value: » e «valor
+novo: » / «new value: » —, fora do elemento marcado, para que o portão continue a
+comparar só o valor. Renderizado nas duas edições em **15 entradas** com par de
+valores: `grep -o '<s data-correcao' dist/correcoes/index.html | wc -l` → **15**,
+o mesmo em `dist/en/corrections/index.html`; `grep -o 'data-correcao-entrada'` →
+**24** por edição, que são as 3 + 12 + 9.
+
+**A folha da família da leitura nasce aqui** (`src/styles/leitura.css`), importada
+pela vista e não pelo invólucro: uma página que não é desta família não carrega
+uma linha dela. Leva o que a 4a precisa e mais nada; as regras do registo que já
+viviam em `site.css` ficam lá, e esta folha estende-as.
+
+**A rota entra no inventário das frases da casa, e lê 0**, nas duas edições
+(conteúdo 18, navegação 3). A classificação está escrita em
+`design/especime-v3/INVENTARIO-FRASES.md` com a sua razão, e a razão é a mesma
+que o índice do livro-razão já usava: a política de correções é o CONTEÚDO desta
+página, como a linha é o conteúdo do índice, e a Emenda 17 di-lo por escrito («a
+frase da política vive em `/correcoes`»). O que aqui seria autorreferência é uma
+frase sobre outra coisa que o sítio faz, e não existe nenhuma.
+
 ---
 
 ## 4. O registo dos defeitos e dos adiamentos

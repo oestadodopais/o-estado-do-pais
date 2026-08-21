@@ -712,6 +712,17 @@ export const STRINGS = {
       colunaAntigo: 'Valor antigo',
       colunaNovo: 'Valor novo',
       colunaMotivo: 'Motivo',
+      /* OS PREFIXOS QUE SÓ UM LEITOR DE ECRÃ OUVE (subetapa 4a, decisão c).
+         A forma da correção é o valor antigo riscado e o novo ao lado, e um
+         risco não se ouve: sem estes dois prefixos, quem ouve a página recebe
+         dois números seguidos e nenhuma maneira de saber qual é qual. Os
+         cabeçalhos de coluna acima são um `<div>` de `<span>`s e não uma tabela,
+         e por isso não se associam a célula nenhuma; nas atualizações a seta
+         entre os dois valores é `aria-hidden`. Vão FORA do elemento marcado com
+         `data-correcao-campo`, para que o portão continue a comparar só o valor
+         com o do livro-razão. */
+      valorAnteriorVh: 'valor anterior: ',
+      valorNovoVh: 'valor novo: ',
       colunaAfirmacao: 'Afirmação',
 
       caixaNota:
@@ -1496,6 +1507,8 @@ export const STRINGS = {
       colunaAntigo: 'Old value',
       colunaNovo: 'New value',
       colunaMotivo: 'Reason',
+      valorAnteriorVh: 'previous value: ',
+      valorNovoVh: 'new value: ',
       colunaAfirmacao: 'Claim',
 
       caixaNota:

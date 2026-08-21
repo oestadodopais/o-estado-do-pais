@@ -1,0 +1,316 @@
+# Nota da etapa 4 · a família da leitura
+
+*Construtor D (Claude Opus, `claude-opus-5[1m]`). Ramo `redesenho-v3`, a partir de
+`193952e`. Brief: `../briefs/BRIEF-etapa-4.md`, com as quatro decisões da direção
+de 21.08.2026, tarde, na sua §2b. Escrita a cada checkpoint, antes da auditoria,
+para que um corte de sessão custe uma subetapa. Sem travessões, por escolha deste
+documento.*
+
+## 0. Os commits
+
+| commit | subetapa | o quê |
+|---|---|---|
+| `6b7dab8` | 4-0 | as quatro decisões da direção de 21.08, tarde: a legenda do selo, as frases de Évora, o localizador e o aparelho da convergência |
+| (abaixo) | 4a | Correções: o selo da linha como porta de cada entrada, a extensão do portão provada em duas plantas, e a forma riscada em todas as entradas |
+| **por commeter** | 4b | Método: as duas frases governadas, preparadas em `../notas/4b-pendente.patch` e **não commetidas**, à espera da palavra do diretor sobre o que está rendido |
+
+---
+
+## 1. Commit 4-0 · as quatro decisões da direção, antes de qualquer subetapa
+
+`6b7dab8`. Nenhum texto governado mexe: nem `src/data/sobre.mjs` nem
+`src/data/metodo.mjs`. `DECISIONS.md` §1.54.
+
+### 1.1 · A legenda do selo passa a nomear os dois estados
+
+Item **AB** da §4 (leitura cruzada de 20.08, achado 7: «o selo cheio não diz as
+exceções que são de origem»). A legenda dizia o que o glifo é; passa a dizer o
+que o estado é:
+
+| | antes | depois |
+|---|---|---|
+| pt | Quadrado cheio: a proveniência está completa. · Quadrado a tracejado: falta pelo menos um campo, e a linha di-lo. | **proveniência completa** · **um campo por confirmar** |
+| en | Filled square: the provenance is complete. · Dashed square: at least one field is missing, and the row says so. | **provenance complete** · **one field unconfirmed** |
+
+Os dois quadrados continuam desenhados ao lado, um em cada item da lista
+(`.src-chip-amostra`, cheio e tracejado): a decisão escreve a legenda numa linha
+(«■ proveniência completa · □ um campo por confirmar») e a construção mantém os
+dois itens, porque com os quadrados `aria-hidden` uma linha só faria um leitor de
+ecrã ouvir dois nomes sem saber a qual glifo pertence cada um.
+
+**As duas notas de grupo do índice saíram**, e eram as duas únicas frases de
+autorreferência que a régua contava nesta rota: «Todos os campos preenchidos e
+conferidos contra a fonte. O selo é um quadrado cheio.» e «Falta pelo menos um
+campo de proveniência. O campo fica marcado, e nenhum foi preenchido com um valor
+plausível. O selo é um quadrado a tracejado.»
+
+**Medido**, `node scripts/medir-defeitos.mjs`:
+
+| rota | antes | depois |
+|---|---|---|
+| `/livro-razao` | 16 distintas · conteúdo 12 · navegação 2 · **autorreferência 2** | 14 distintas · conteúdo 12 · navegação 2 · **autorreferência 0** ✓ |
+| `/en/ledger` | 16 distintas · conteúdo 12 · navegação 2 · **autorreferência 2** | 14 distintas · conteúdo 12 · navegação 2 · **autorreferência 0** ✓ |
+
+### 1.2 · Évora deixa de se explicar
+
+Itens **Q** («as contagens em palavras da página do município») e **T** («a
+página do município promete "Não interpreta" e escreve frases que interpretam»)
+da §4. Saíram, nas duas edições:
+
+1. a abertura, `municipio.ledeA` + `ledeB` («Esta página mede o município de
+   Évora e mostra de onde vem cada medida. Não interpreta: …»);
+2. as contagens por extenso do Relance, `municipio.relanceSub` («Oito medidas.
+   Seis vêm de organismos…»);
+3. os dois parágrafos por baixo de «Quem responde pelo quê», `municipio.tempoBreve`
+   e `municipio.tempoAtribuicaoV`;
+4. a sub-linha da Leitura breve, `municipio.breveSub` («Uma frase por medida.
+   Todos os números são citações do livro-razão.»);
+5. a nota dos trabalhos, `municipio.estudosV`;
+6. a segunda frase da descrição do `<head>`, `municipio.metaDescricaoB` («Cada
+   valor tem linha no livro-razão, com fonte, documento e data de acesso.»).
+
+Os itens 1 a 3 são os que a decisão nomeia. Os 4 a 6 são a mesma classe e o mesmo
+gesto — a segunda metade do 4 é o trabalho do selo dito outra vez em prosa; o 5
+descreve as páginas do sítio antes de as dar; o 6 tem o precedente exacto do
+commit 3-0, quando a descrição da primeira página foi encurtada pela mesma razão.
+Vão listados um a um em `RELOCACOES.md`, «Texto novo · Etapa 4, commit 4-0».
+
+**«Quem responde pelo quê» fica só como nome da secção, por cima da banda dos
+mandatos**, e isto é uma leitura, escrita aqui em vez de improvisada. A frase
+vivia como `deep-k` de uma entrada da camada de fundo, com dois parágrafos por
+baixo. Retirados os parágrafos, restava um rótulo sem corpo, que a
+`IDENTIDADE.md` §7 chama um estado não desenhado. Das três leituras possíveis da
+frase da decisão — deixar o rótulo vazio; pô-la como `h2` da secção `#tempo`, que
+já se chama «Quem administrou, e o que as contas registaram»; ou pô-la como nome
+da banda — escolhi a terceira: a entrada da camada de fundo sai inteira, e a
+banda dos mandatos passa a ter «Quem responde pelo quê» por cima, no lugar onde
+estava «Mandatos, no tempo», que continua a nomear o desenho no `aria-label` do
+SVG. Se a cadeira quiser outra das três, é uma linha.
+
+**A relocação R6 fecha a 1 → 0.** A frase de abertura tinha sido duplicada para a
+primeira página na etapa 2 (duplicação autorizada), saiu de lá na 2m com a Emenda
+15, e sai daqui agora. Não é uma relocação que falhou: é uma cuja origem e cujo
+destino foram os dois revogados pela mesma emenda, e o registo di-lo em vez de a
+apagar. Medido: `grep -c 'Esta página mede' dist/municipios/evora/index.html` →
+**0**, o mesmo com «This page measures» na edição inglesa.
+
+### 1.3 · A contagem de Évora não fecha a zero, e isso fica escrito
+
+**Este é o único ponto do commit 4-0 em que a construção não cumpre o que o brief
+escreve, e é uma chamada de conteúdo que não é minha.** O brief diz «o inventário
+adiciona `/municipios/evora` e lê 0». A rota entrou; a leitura é:
+
+```
+frases da casa · /municipios/evora ..... 63 distinta(s) · conteúdo 82 · navegação 6 · autorreferência 3  ✗
+frases da casa · /en/municipalities/evora  64 distinta(s) · conteúdo 83 · navegação 6 · autorreferência 3  ✗
+```
+
+Os três blocos, por edição, e onde vivem:
+
+| bloco | onde |
+|---|---|
+| «Nenhuma decisão deste mandato atravessou para o livro-razão com valor próprio. Um campo em branco seria diferente disto: o que falta é a linha, não a decisão.» | `decidiuNota` de um mandato, `src/data/municipios.mjs` |
+| «As decisões desta página vão atribuídas a quem as tomou, com o rótulo da lista que ganhou. Os índices … não vão atribuídos a ninguém: nada do que foi lido fornece o contrafactual que recortaria a parte de um executivo neles.» | entrada de `metodo`, «Um partido é dono das suas decisões, não de uma curva» |
+| «Não existe contrafactual para nenhum índice. Nada do que foi lido permite separar a parte de um executivo neles.» | entrada de `naoSabe` |
+
+**Porque não os cortei.** Os três são conteúdo editorial da etapa 3
+(`DECISIONS.md` §1.40 e §4 item T), nenhum deles está entre os itens que a
+decisão de 21.08 nomeia, e cortá-los é redação e não forma. O primeiro é um
+estado vazio desenhado, e a Emenda 15 manda dizer a ausência em duas palavras — mas
+as duas palavras que a página já tem para isso («Fora do que foi lido.») querem
+dizer outra coisa, e inventar uma terceira formulação seria abrir a segunda
+língua que a `IDENTIDADE.md` §6 fecha. Os outros dois são a ressalva que impede a
+página de ser lida como uma tabela classificativa de partidos, que é a razão de
+existirem. Ficam com a sua classe escrita no inventário e com o pedido em
+`ISSUES.md` **I52**. A régua imprime, não falha: a dívida fica à vista em vez de
+arredondada.
+
+### 1.4 · O localizador de Évora
+
+Achado **13** da quarta leitura cruzada do Codex. Duas coisas, e a segunda é a que
+custa mais a ver:
+
+1. `aria-describedby="mapa-descricao"` era escrito sempre no SVG do mapa, e o
+   bloco que leva esse `id` só se constrói na postura «inteiro» (a primeira
+   página). Na página do concelho, que rende o cartão localizador do servidor, a
+   referência ficava pendurada. Passa a depender da mesma condição, e as duas
+   leem-se a três linhas de distância uma da outra, que é o que impede que voltem
+   a divergir. Medido: `grep -o 'aria-describedby="mapa-descricao"'` → **0** em
+   `dist/municipios/evora/index.html`, **1** em `dist/index.html`;
+2. o rótulo do desenho dizia «Mapa de pontos dos municípios de Portugal. **Use as
+   setas para percorrer os municípios.**» As setas só percorrem alguma coisa onde
+   `inicio.js` está carregado, e a página do concelho carrega `tema.js` e mais
+   nada. A instrução sai do rótulo e continua escrita, uma vez só, em
+   `tecladoHint`, que vive dentro de `#mapa-descricao` e por isso só se constrói
+   onde é verdadeira.
+
+### 1.5 · O aparelho da convergência sai mesmo da primeira página
+
+Achado **7**: `RELOCACOES.md` dizia que o aparelho do Instrumento n.º 1 tinha
+saído da primeira página e a construção ainda lá rendia a porta do CSV. Das duas
+coisas, a direção mandou corrigir a construção.
+
+A porta desce para `/livro-razao`, ao pé do bloco do conjunto de dados, com a
+mesma cadeia (`home.dadosLink`, sem uma palavra mudada) e um rótulo novo que a
+nomeia (`livro.convergenciaK`). A declaração de rota de `check-dados.mjs` desce no
+mesmo commit: `PORTA_DOS_DADOS.convergencia`, de `home` para `livro`. Relocação
+**R13**.
+
+**As duas plantas da conferência mudada**, porque uma declaração que ninguém
+provou é um comentário:
+
+1. a declaração volta a `home` com a porta já em `/livro-razao`:
+   > ✗ a página "/" (edição "pt") não liga para "/dados/convergencia.csv". Os dados por trás de cada instrumento são descarregáveis nas duas edições, ou não são.
+   >
+   > ✗ a página "/en" (edição "en") não liga para "/dados/convergencia.csv". […]
+
+   Revertida;
+2. a porta sai de `/livro-razao` com a declaração já em `livro`:
+   > ✗ a página "/livro-razao" (edição "pt") não liga para "/dados/convergencia.csv". […]
+   >
+   > ✗ a página "/en/ledger" (edição "en") não liga para "/dados/convergencia.csv". […]
+
+   Revertida.
+
+**A frase que diz o que o índice compara fica** na primeira página. Não é
+aparelho: nomeia o que a régua desenha, e sem ela a régua é uma barra sem
+grandeza. Está classificada como conteúdo no inventário desde a etapa 2l. A frase
+de seleção («Selecione regiões para as pôr na mesma régua.») é a instrução do
+instrumento e fica como navegação, também já classificada.
+
+**Medido**: `grep -o 'dados/convergencia.csv' dist/index.html | wc -l` → **0**
+(era 1), o mesmo em `dist/en/index.html`; `dist/livro-razao/index.html` → **1**,
+`dist/en/ledger/index.html` → **1**.
+
+---
+
+## 2. Subetapa 4a · Correções
+
+A decisão **(c)** da direção, de 20.08.2026: «Sim. Conferência campo a campo mais
+o selo da linha como porta.» `DECISIONS.md` §1.55.
+
+### 2.1 · A porta é o selo, e o id deixa de ser ligação
+
+Cada entrada do registo leva agora um `.src-chip` para a sua própria linha, ao pé
+do par de valores: **3** correções, **12** atualizações e **9** linhas na lista
+das revisões de proveniência, **24** entradas por edição.
+
+Cada uma levava já uma porta — o `<code>` do id embrulhado num `<a>` — e ela sai.
+Duas portas para a mesma linha na mesma entrada não são duas portas: são a mesma
+dita duas vezes, e a segunda tira sinal à primeira. O selo é a porta desta casa
+(`IDENTIDADE.md` §5); o id fica como identificador transcrito, e continua
+conferido pelo portão contra a própria afirmação.
+
+`IDENTIDADE.md` §5 ganha o **ponto 6**, que é a frase que o brief pede: no registo
+de correções a porta é o selo da LINHA e não o selo de um valor, porque os dois
+números de uma entrada não são duas medições com duas linhas, são dois estados do
+mesmo valor. Não cita texto governado e por isso não leva marca.
+
+### 2.2 · A extensão do portão, e as duas plantas
+
+`scripts/gate-html.mjs`, dentro do bloco que já conferia `data-correcao-*`.
+Nenhum portão novo: a mesma conferência, o mesmo laço, a mesma família de marcas,
+pela moratória de 2026-08-15.
+
+- cada entrada declara-se com `data-correcao-entrada="<id da linha>"`;
+- cada campo `data-correcao-*` tem de viver dentro de uma entrada declarada, e da
+  entrada da sua própria linha. Sem esta metade, a marca seria opcional e a
+  conferência da porta não conferia nada: bastava não a pôr;
+- a entrada tem de conter uma âncora `.src-chip` cujo `href` seja o caminho da sua
+  linha, numa das duas edições;
+- **fora das páginas do livro-razão**, e pela mesma razão de `auditaSelo()`: na
+  página de uma linha, a história daquela linha é a linha, e um selo ali seria uma
+  porta para a divisão onde já se está. A decisão (c) é sobre o REGISTO, que é a
+  página que junta histórias de linhas diferentes e onde a porta é a única maneira
+  de saber de qual.
+
+**Planta 1 · uma entrada sem porta** (a chamada do selo sai do grupo das
+correções):
+
+```
+✗ a entrada do registo de correções da linha "pib-pc-alentejo-2000" não tem o selo dessa linha por porta.
+      esperava-se <a class="src-chip" href="/livro-razao/pib-pc-alentejo-2000"> dentro da própria entrada, ao pé do par de valores.
+      A entrada não tem selo nenhum.
+      É a decisão (c) da direção, de 20.08.2026: a comparação campo a campo fica, e a entrada ganha a porta.
+```
+
+Três entradas fechadas por edição, seis erros no total. **Revertida.**
+
+**Planta 2 · a porta abre outra linha** (o selo passa a apontar
+`divida-publica-2025`):
+
+```
+✗ a entrada do registo de correções da linha "pib-pc-alentejo-2000" não tem o selo dessa linha por porta.
+      esperava-se <a class="src-chip" href="/livro-razao/pib-pc-alentejo-2000"> dentro da própria entrada, ao pé do par de valores.
+      A entrada tem selo, e ele abre a linha "divida-publica-2025". Uma porta que abre outra linha não é a porta desta entrada: quem clica quer a história DESTE valor.
+      É a decisão (c) da direção, de 20.08.2026: a comparação campo a campo fica, e a entrada ganha a porta.
+```
+
+É o caso que nenhuma conferência anterior apanhava: a etiqueta desse selo está
+**certa** — é a etiqueta da linha que ele abre — e a conferência de
+`data-nonledger="proveniencia"` deixa-a passar. O que falha é a porta estar noutra
+parede. **Revertida**, e o portão volta a fechar a zero (`exit 0`).
+
+### 2.3 · A forma, que é a condição da decisão (g)
+
+O valor antigo passa a ir num `<s>` — o elemento que diz «isto já não é exacto», e
+não uma classe que risca — em `--g1`, com o novo em tinta ao lado, a data e a
+natureza como hoje. Nenhuma cor: o `--oxblood` saiu de `tokens.css` na etapa 1c e
+não é substituído por outro acento.
+
+**Um risco não se ouve.** Cada valor leva um prefixo em `.vh` («valor anterior: »
+/ «previous value: » e «valor novo: » / «new value: »), **fora** do elemento
+marcado com `data-correcao-campo`, para que o portão continue a comparar só o
+valor com o do livro-razão. São duas chaves e não uma, e a razão é medida: os
+cabeçalhos de coluna do registo são um `<div>` de `<span>`s que não se associa a
+célula nenhuma, e nas atualizações a seta entre os dois valores é `aria-hidden` —
+sem o segundo prefixo, quem ouve uma entrada recebe dois números seguidos e
+nenhuma maneira de saber onde acaba o primeiro. O brief pede o prefixo do valor
+antigo; o do novo entra com ele, e vai declarado em `CHAVES-EN.md` como adição.
+
+**Medido**, sobre a construção:
+
+```
+grep -o '<s data-correcao' dist/correcoes/index.html | wc -l          → 15
+grep -o '<s data-correcao' dist/en/corrections/index.html | wc -l     → 15
+grep -o 'data-correcao-entrada' dist/correcoes/index.html | wc -l     → 24
+grep -o 'src-chip' dist/correcoes/index.html | wc -l                  → 53
+```
+
+15 é o número de entradas com par de valores (3 correções + 12 atualizações): **a
+forma rende em todas**, que é a condição que a decisão (g) põe à frase «A cor».
+24 é o total de entradas com porta declarada (15 + as 9 linhas com revisão de
+proveniência).
+
+### 2.4 · A folha da família da leitura
+
+`src/styles/leitura.css` nasce aqui, importada pela vista e não pelo invólucro:
+uma página que não é desta família não carrega uma linha dela. Leva o que a 4a
+precisa e mais nada — o `<s>` e o seu risco, o lugar do selo na célula, e a lista
+das revisões sem o id como ligação. As regras do registo que já viviam em
+`site.css` ficam lá: `site.css` é a folha partilhada e é de outro construtor, e
+esta folha estende-a em vez de a mudar.
+
+### 2.5 · O inventário
+
+`/correcoes` e `/en/corrections` entram e leem **0**:
+
+```
+frases da casa · /correcoes ......... 21 distinta(s) · conteúdo 18 · navegação 3 · autorreferência 0  ✓
+frases da casa · /en/corrections .... 21 distinta(s) · conteúdo 18 · navegação 3 · autorreferência 0  ✓
+```
+
+**A classificação está escrita com a sua razão**, e a razão não é indulgência: a
+política de correções é o CONTEÚDO desta página, tal como a linha do livro-razão é
+o conteúdo do índice — e a régua já classificava assim a lede do índice («Uma
+linha por número publicado. Cada linha guarda o valor…»). A Emenda 17 diz-no por
+escrito: «a frase da política vive em `/correcoes`.» O que aqui seria
+autorreferência é uma frase sobre outra coisa que o sítio faz (o selo, a
+cobertura, a verificação de uma linha), e não existe nenhuma. As duas frases da
+caixa de correções são navegação: dizem como se usa um comando.
+
+---
+
+## 3. Subetapa 4b · preparada e NÃO commetida
+
+*Escrita quando a preparação estiver feita.*

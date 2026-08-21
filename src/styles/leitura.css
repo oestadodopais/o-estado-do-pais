@@ -1,0 +1,77 @@
+/**
+ * A folha da família da leitura — Método, Agenda, Correções, Sobre, Estudos,
+ * a página do marcador e o 404.
+ *
+ * Existe porque estas sete páginas partilham uma disposição (A, rótulo e corpo)
+ * e uma escala de prosa, e porque as regras que elas precisam não pertencem a
+ * `site.css`, que é a folha partilhada e é de outro construtor. Uma regra entra
+ * aqui quando é DESTA família; uma regra que já vive em `site.css` fica lá, e
+ * esta folha só a estende.
+ *
+ * Importa-se pelas vistas que a usam, e não pelo invólucro: uma página que não
+ * é desta família não carrega uma linha disto.
+ *
+ * ---------------------------------------------------------------------------
+ * SUBETAPA 4a · O REGISTO DE CORREÇÕES
+ * ---------------------------------------------------------------------------
+ * A forma de uma correção é a forma e não a cor: o valor antigo riscado em
+ * `--g1`, o valor novo em tinta ao lado, a data, a natureza. O `--oxblood` saiu
+ * de `tokens.css` na etapa 1c e não é substituído por outro acento.
+ */
+
+/* --------------------------------------------------------------------------
+   O VALOR ANTIGO É UM `<s>`, E NÃO UMA CLASSE QUE RISCA
+   --------------------------------------------------------------------------
+   `.log-valor-antigo` já dava `text-decoration: line-through` e `--g1` ao
+   elemento inteiro; o que muda na v3 é que o risco passa a ser dito pelo
+   ELEMENTO, que é o que uma máquina lê. A regra do risco fica no `<s>` e sai do
+   embrulho, para que o prefixo escondido não vá riscado por herança e para que
+   quem ler o HTML veja onde é que a marca está.
+
+   O embrulho continua a dar a cor, porque é ele que ocupa a célula da grelha e
+   é dele que o valor herda. */
+.log-valor-antigo {
+  text-decoration: none;
+}
+.log-valor-antigo s {
+  color: var(--g1);
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--g2);
+}
+
+/* --------------------------------------------------------------------------
+   A PORTA DA ENTRADA, AO PÉ DO PAR
+   --------------------------------------------------------------------------
+   O selo senta-se na linha do valor, sem caixa e sem quebra própria, com um
+   espaço à frente que o separa do número. A área de toque de 44px vem do
+   `::after` de `site.css` e não se toca aqui: o que esta regra faz é dar-lhe
+   lugar na célula, para que ele não fique colado ao algarismo nem caia para uma
+   linha sozinho num ecrã estreito. */
+.log-valor .src-chip,
+.registo-salto .src-chip,
+.registo-proveniencia-linhas .src-chip {
+  margin-left: 8px;
+  font-weight: 400;
+}
+
+/* A célula do valor novo passa a levar duas coisas — o número e a porta — e por
+   isso deixa de ser uma cadeia só: alinha-se pela primeira linha e parte quando
+   não couber, em vez de empurrar a grelha. */
+.log-linha .log-valor,
+.log-linha .log-valor-antigo {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+/* Nas atualizações os dois valores e a porta vivem na mesma linha de prosa: o
+   grupo parte, e a seta (que é `aria-hidden`) fica agarrada ao par. */
+.registo-salto {
+  display: inline;
+}
+
+/* A lista das revisões de proveniência deixa de ter o id como ligação: o id é o
+   identificador, e a porta é o selo ao lado dele. */
+.registo-proveniencia-linhas code {
+  color: var(--muted);
+}

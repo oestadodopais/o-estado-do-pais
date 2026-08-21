@@ -354,6 +354,65 @@ quem escreveu a página.*
 | conteudo | district of Évora · Alentejo Central |
 | conteudo | distrito de Évora · Alentejo Central |
 
+## `/correcoes` · `/en/corrections` (etapa 4, subetapa 4a)
+
+*A rota entra na subetapa que reconstrói a forma do registo. **Nenhum bloco desta
+página é autorreferência, e a razão não é indulgência: é o objecto da página.***
+A Emenda 15 tira de uma página do leitor «nenhuma frase sobre o método, a
+verificação, a honestidade, a cobertura ou as intenções do próprio sítio» — e a
+política de correções é o CONTEÚDO desta página, tal como a linha do livro-razão
+é o conteúdo do índice. É a Emenda 17 que o diz por escrito: «a frase da política
+vive em `/correcoes`.» A régua do índice já classificava assim a sua lede («Uma
+linha por número publicado. Cada linha guarda o valor…»), e é a mesma leitura.*
+
+*O que aqui seria autorreferência é uma frase sobre outra coisa que o sítio faz —
+o selo, a cobertura, a verificação de uma linha — e não existe nenhuma. As duas
+frases da caixa de correções são **navegação**: dizem como se usa um comando, que
+é o que a lista declarada chama navegação.*
+
+| classe | texto |
+| --- | --- |
+| conteudo | 26 provenance revisions |
+| conteudo | 26 revisões de proveniência |
+| conteudo | A política |
+| conteudo | A política de correções deste sítio e o registo de todas: o valor anterior à vista, datado, com o motivo, e nada apagado. |
+| conteudo | An entry in the register holds the previous value, the new value, the date, the reason and the ledger row that changed. Nothing is removed: a corrected entry is added to that row’s history, it does not replace it. There are three kinds, and they are not mixed: |
+| conteudo | Anyone who finds an error writes to correcoes@oestadodopais.pt . A confirmed error enters the register with credit to whoever found it, if they wish. |
+| conteudo | Atualização. O valor estava certo e deixou de estar, porque aquilo que mede mudou. Não é um erro. |
+| conteudo | Atualizações |
+| conteudo | Correcting in silence is the cheapest way of lying. |
+| conteudo | Correction. The published value was wrong. It is a confession, and it is the reason the register exists. |
+| conteudo | Corrections |
+| conteudo | Correção. O valor publicado estava errado. É uma confissão, e é a razão de o registo existir. |
+| conteudo | Correções |
+| conteudo | Corrigir em silêncio é a forma mais barata de mentir. |
+| navegacao | Escreva aqui e o botão abre o seu programa de correio com o texto já dentro. Nada é enviado deste sítio: a mensagem sai de si, para si ficar com uma cópia. |
+| conteudo | Escrever uma correção |
+| navegacao | If the button opens nothing, your computer has no mail program set up. In that case copy the address above and write from wherever you normally write. |
+| conteudo | O que foi corrigido, e o que mudou |
+| conteudo | O registo |
+| conteudo | O valor não mudou; mudou a maneira de lá chegar: uma fonte que muda de endereço, por exemplo. Não são erros nem atualizações, e não se listam aqui uma a uma: são muitas de cada vez e afogariam as correções. Cada linha abaixo leva à sua própria história, onde a revisão está escrita por extenso. |
+| conteudo | Provenance revision. The value did not change; the route to the source did, an address for example. It is neither an error nor an update. |
+| conteudo | Provenance revisions |
+| conteudo | Quem encontrar um erro escreve para correcoes@oestadodopais.pt . Um erro confirmado entra no registo com crédito a quem o encontrou, se o desejar. |
+| conteudo | Revisão de proveniência. O valor não mudou; mudou o caminho até à fonte, um endereço por exemplo. Não é erro nem atualização. |
+| conteudo | Revisões de proveniência |
+| navegacao | Se o botão não abrir nada, o seu computador não tem programa de correio configurado. Nesse caso copie o endereço acima e escreva de onde costuma escrever. |
+| conteudo | The corrections policy of this site and the register of them all: the previous value in plain sight, dated, with the reason, and nothing deleted. |
+| conteudo | The policy |
+| conteudo | The register |
+| conteudo | The value did not change; the way to find it did: a source that moves address, for example. They are neither errors nor updates, and they are not listed one by one here: they come many at a time and would drown the corrections. Each row below leads to its own history, where the revision is written out in full. |
+| conteudo | Uma entrada do registo guarda o valor anterior, o valor novo, a data, o motivo e a linha do livro-razão que mudou. Nada é removido: uma entrada corrigida acresce à história daquela linha, não a substitui. São três naturezas, e não se misturam: |
+| conteudo | Update. The value was right and stopped being so, because what it measures changed. It is not an error. |
+| conteudo | Updates |
+| conteudo | Valores que estavam certos e deixaram de estar, porque aquilo que medem mudou. Não são erros, e não contam para o número acima. |
+| conteudo | Valores que estavam errados. Cada um fica com o valor anterior à vista, datado, e nenhum é removido. |
+| conteudo | Values that were right and stopped being so, because what they measure changed. They are not errors, and they do not count towards the number above. |
+| conteudo | Values that were wrong. Each keeps its previous value in plain sight, dated, and none is removed. |
+| conteudo | What was corrected, and what changed |
+| conteudo | Write a correction |
+| navegacao | Write here and the button opens your own mail program with the text already in it. Nothing is sent from this site: the message leaves from you, so you keep a copy of it. |
+
 ## O que saiu, e para onde
 
 | frase retirada | classe | onde vive agora |
