@@ -138,7 +138,7 @@ nova. As quatro cadeias desta ronda têm inglês próprio.
 *(por preencher: `linha.*`, `livro.*`, `municipios.*`, `municipio.*`)*
 
 ### Etapa 4
-*(por preencher: `metodo.*`, `agenda.*`, `correcoes.*`, `estudos.*`)*
+*(escrita mais abaixo, subetapa a subetapa: commit 4-0, 4a, 4b e 4c.)*
 
 ### Etapa 5
 *(por preencher: `cartao.*`)*
@@ -291,6 +291,30 @@ do livro-razão.
 
 **Nenhuma outra cadeia da 4a é nova.** O selo escreve `prov.selo` («fonte» /
 «source»), que já existia, e a etiqueta vem do registo dos trabalhos.
+
+### Etapa 4, subetapas 4b e 4c
+
+**Subetapa 4a** — duas chaves, e estão escritas acima, na sua própria secção.
+
+**Subetapa 4b · uma chave, e ela chegou aqui um commit tarde.** A 4b criou
+`metodo.sumarioK` («Nesta página» / «On this page»), o rótulo do sumário no cimo
+do Método, e **não a escreveu neste ficheiro no commit em que a criou**, que é o
+que a regra manda. Fica dito assim em vez de ser posto em silêncio na 4c. Na 4c a
+chave mudou de casa (ver a linha abaixo) e é essa a forma em que vive hoje.
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `leitura.sumarioK` | Nesta página | On this page | o rótulo do sumário das páginas da família da leitura. Nasceu na 4b como `metodo.sumarioK`; passou para a família `leitura` na 4c, quando a Agenda precisou das mesmas duas palavras, para que não houvesse duas cópias da mesma cadeia. «On this page» é a forma corrente de um índice interno em inglês editorial, e não uma tradução literal de «Nesta página» |
+
+**Subetapa 4c · nenhuma cadeia nova.** A Agenda **retirou duas** chaves
+(`agenda.lede`, `agenda.origemNota`), **encurtou quatro** e **fundiu duas numa**
+(`agenda.perguntaNotaSelada` + `agenda.perguntaNotaPorSelar` →
+`agenda.perguntaNota`). As encurtadas e a fundida vão em `RELOCACOES.md`, com o
+texto de antes e o de depois nas duas edições. As duas palavras dos estados
+vazios são **«Nenhum até hoje.» / «None to date.»** e **«Sem critério.» / «No
+criterion.»**: nenhuma delas é uma tradução literal da outra («none to date» é a
+forma corrente inglesa; «nenhum até hoje» é a portuguesa), e as duas dizem a
+mesma ausência.
 
 ## Identidades aceites (PT = EN de propósito)
 Nomes próprios, códigos de série, identificadores de linha, «Eurostat», «INE», «DGAL», «IEFP», «CAOP», «UE-27», «O Estado do País». A régua da invariância imprime todas as chaves cujo valor é igual nas duas línguas; as que não estiverem nesta lista são erro.

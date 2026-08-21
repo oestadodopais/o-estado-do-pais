@@ -9079,6 +9079,62 @@ Emenda 15, e na cabeça do inventário com a versão inglesa ao lado.
 `ISSUES.md` I52 fecha. `RELOCACOES.md` regista os dois blocos retirados pelo nome
 do campo, porque não são chaves de `strings.mjs`.
 
+### 1.58 A agenda passa a abrir no sítio, e deixa de explicar o que ela própria faz
+
+**Afecta:** nenhum
+
+*(Subetapa 4c do redesenho v3. Nenhum texto governado, nenhum valor, e **nenhum
+registo tocado**: a lista da agenda e o calendário das fontes atravessaram do
+motor e continuam como atravessaram. O que muda é a mobília da casa à volta
+deles, e a folha.)*
+
+**A página não se explica (Emenda 15, com a regra da direção de 21.08.2026).**
+Saíram duas frases e encurtaram-se quatro, todas em `src/i18n/strings.mjs`,
+família `agenda.*`, nas duas edições, e `RELOCACOES.md` guarda o antes e o
+depois de cada uma. A lede descrevia o aparelho da própria página e prometia que
+«nada sai desta lista em silêncio»; a nota de origem dizia de que motor os dois
+registos vinham e com que cuidado. Cada item traz o critério, o proponente, a
+decisão e o histórico com os seus rótulos à vista: tirar as duas frases não faz
+ninguém ler mal um número, e é esse o teste.
+
+**O que ficou, e porquê ficou.** A nota da pergunta encolheu de duas chaves a
+uma e perdeu a regra da casa, mas **guardou a ressalva sobre o dado**: «O registo
+do motor escreve-se em inglês: o inglês é a forma registada, palavra por palavra,
+e o português acima é a edição portuguesa dessa mesma pergunta.» Sem ela, um
+leitor da edição portuguesa toma a tradução pelo registo. É o outro lado da mesma
+regra: as ressalvas sobre os dados ficam.
+
+**Os dois estados vazios dizem-se em duas palavras**, como a emenda manda:
+«Nenhum até hoje.» / «None to date.» para «Retirado», e «Sem critério.» / «No
+criterion.» para um item sem critérios.
+
+**Abre no sítio (`IDENTIDADE.md` §4).** Um sumário no cimo com os quatro estados
+e o calendário como âncoras, e **cada item passa a ser um cartão que abre**: o
+`<summary>` leva o tipo, o estado e o título, e o aparelho do item fica dentro do
+`<details>`. Sem uma linha de JavaScript, e sem esconder nada do portão — o
+conteúdo de um `<details>` fechado está no documento, e é lá que a conferência
+campo a campo o vai buscar. A primeira de cada secção abre por defeito, como no
+Método. O rótulo do sumário desceu de `metodo.sumarioK` para `leitura.sumarioK`,
+para não haver duas cópias da mesma cadeia.
+
+**O último `var(--yellow)` real do repositório sai** (`ISSUES.md` I12), no
+atributo `fill` das janelas de publicação do eixo do calendário, e passa a
+`var(--g2)`. **A página não muda de aspecto**, e isso está dito porque importa: a
+regra `.agenda-eixo-svg rect` de `site.css` já as pintava de `--g2` desde a etapa
+1c, e uma folha ganha a um atributo de apresentação. A captura do eixo antes e
+depois é a mesma. O que muda é o gabarito deixar de nomear um token que não
+existe; a regra de remapeamento fica sem cliente e sai no mesmo commit, que é o
+que o I12 manda. Medido: `grep -rn "var(--yellow)" src/` dá quatro ocorrências, e
+as quatro são comentários.
+
+**Medido**, `node scripts/medir-defeitos.mjs`, com as rotas `/agenda`,
+`/estudos` e `/estudos/<slug>` a entrar na lista do inventário neste commit:
+
+| rota | depois |
+|---|---|
+| `/agenda` | 21 distintas · conteúdo 31 · navegação 2 · **autorreferência 0** ✓ |
+| `/en/agenda` | 21 distintas · conteúdo 31 · navegação 2 · **autorreferência 0** ✓ |
+
 ---
 
 ## 4. O registo dos defeitos e dos adiamentos

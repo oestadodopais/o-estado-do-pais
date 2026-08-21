@@ -424,6 +424,65 @@ frases da caixa de correções são **navegação**: dizem como se usa um comand
 | conteudo | Write a correction |
 | navegacao | Write here and the button opens your own mail program with the text already in it. Nothing is sent from this site: the message leaves from you, so you keep a copy of it. |
 
+## `/agenda` · `/en/agenda` (etapa 4, subetapa 4c)
+
+*A rota entra na subetapa que reconstrói a página. **Seis frases saíram** e vão
+listadas em `RELOCACOES.md`: a lede, a nota de origem, o parágrafo do estado
+vazio de «Retirado», as duas notas da pergunta (que ficaram numa), o parágrafo do
+item sem critérios e a segunda frase da lede do calendário. O que sobrou é o
+nome de cada estado, o nome de cada campo do item, e três frases que dizem o que
+a coisa é.*
+
+*A frase da pergunta fica, e a razão é a regra: «O registo do motor escreve-se em
+inglês: o inglês é a forma registada, palavra por palavra…». Um leitor da edição
+portuguesa que a não tivesse tomaria a tradução pelo registo, e é isso que a
+regra da direção chama ler mal. As duas palavras dos estados vazios («Nenhum até
+hoje.», «Sem critério.») são a ausência dita como a Emenda 15 manda. «Nesta
+página» é o rótulo do sumário, e é navegação: leva a outro sítio da página.*
+
+| classe | texto |
+| --- | --- |
+| conteudo | A pergunta |
+| conteudo | A seguir |
+| conteudo | Com data publicada pela fonte |
+| conteudo | Concluded |
+| conteudo | Concluído |
+| conteudo | Criteria |
+| conteudo | Critérios |
+| conteudo | Em curso |
+| conteudo | Nenhum até hoje. |
+| navegacao | Nesta página |
+| conteudo | Next |
+| conteudo | No criterion. |
+| conteudo | None to date. |
+| conteudo | O calendário das fontes |
+| conteudo | O calendário, no tempo |
+| conteudo | O que as fontes que este sítio cita publicam a seguir. |
+| conteudo | O que este observatório está a medir, o que se segue, e o critério que pôs lá cada coisa. Com o calendário do que as fontes publicam a seguir. |
+| conteudo | O que está em cada estado |
+| conteudo | O que mudou |
+| conteudo | O que se mede a seguir |
+| conteudo | O registo do motor escreve-se em inglês: o inglês é a forma registada, palavra por palavra, e o português acima é a edição portuguesa dessa mesma pergunta. |
+| navegacao | On this page |
+| conteudo | Porquê |
+| conteudo | Retirado |
+| conteudo | Sem critério. |
+| conteudo | Sem data, porque a fonte não publica nenhuma |
+| conteudo | The calendar, in time |
+| conteudo | The engine’s record is written in English: the English is the registered form, word for word, and the Portuguese edition renders that same question. |
+| conteudo | The question |
+| conteudo | The source calendar |
+| conteudo | Under way |
+| conteudo | What changed |
+| conteudo | What gets measured next |
+| conteudo | What is in each state |
+| conteudo | What the sources this site cites publish next. |
+| conteudo | What this observatory is measuring, what comes next, and the criterion that put each thing there. With the calendar of what the sources publish next. |
+| conteudo | Why |
+| conteudo | With a date the source publishes |
+| conteudo | With no date, because the source publishes none |
+| conteudo | Withdrawn |
+
 ## A reclassificação de 21.08.2026 (direção): **limite dos dados**
 
 | frase | era | é | razão |

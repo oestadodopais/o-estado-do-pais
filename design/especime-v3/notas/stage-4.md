@@ -537,7 +537,86 @@ apagada depois de paga é uma dívida que ninguém soube que existiu.
 
 ---
 
-## 5. O que fica pedido
+## 5. Subetapa 4c · a Agenda
+
+`DECISIONS.md` §1.58. **`Afecta: nenhum`**, e **nenhum registo tocado**: a lista
+e o calendário atravessaram do motor e continuam como atravessaram. O que muda é
+a mobília da casa à volta deles.
+
+### 5.1 · O que saiu, e o que ficou
+
+Seis cadeias, todas em `agenda.*`, nas duas edições, com o antes e o depois em
+`../RELOCACOES.md`. **Duas retiradas** (a lede, a nota de origem) e **quatro
+encurtadas** (o vazio de «Retirado», o item sem critérios, a lede do calendário,
+e as duas notas da pergunta fundidas numa).
+
+**A nota da pergunta é o caso que mostra a regra a funcionar nos dois sentidos.**
+Dizia duas coisas: a regra da casa («nos estudos, a pergunta é selada no motor
+antes de a recolha começar. Esta está selada.») e um facto sobre o texto que o
+leitor tem à frente («o inglês é a forma registada, palavra por palavra»). A
+primeira sai — é diligência, e o estado do registo prévio está na linha logo
+abaixo, com data. A segunda fica: sem ela, quem lê a edição portuguesa toma a
+tradução pelo registo. Ficam as ressalvas sobre os dados; sai o que existe para
+mostrar diligência.
+
+### 5.2 · Abre no sítio
+
+O sumário no cimo (os quatro estados e o calendário, como âncoras que já
+existiam) e **cada item como cartão que abre**: `<summary>` com o tipo, o estado
+e o título; o porquê, os critérios, as datas, a pergunta e o histórico dentro da
+dobra. Sem JavaScript. **O portão não perde nada**: o conteúdo de um `<details>`
+fechado está no documento, e a conferência campo a campo continua a encontrar
+todos os campos (o `npm run build` corre o portão e ficou a zero). A primeira de
+cada secção abre por defeito, como no Método.
+
+O `<article>` continua a ser o elemento que o portão conhece
+(`data-agenda-item`), e a dobra vive dentro dele: é a mesma solução que a 4b deu
+à disposição A do Método, e por isso a folha é a mesma.
+
+### 5.3 · O último `var(--yellow)` real
+
+`ISSUES.md` **I12**, aberto desde a etapa 1. O atributo `fill` das janelas de
+publicação do eixo passa de `var(--yellow)` a `var(--g2)`, e a regra
+`.agenda-eixo-svg rect` de `site.css`, que o remapeava, sai no mesmo commit.
+
+**A página não muda de aspecto, e isto está escrito porque é fácil dizer o
+contrário.** A folha já ganhava ao atributo desde a 1c: as janelas já eram
+cinzentas. Refotografei o eixo antes e depois do commit e a imagem é a mesma
+(`../capturas/etapa-4/agenda-eixo-1280-{pt,en}-claro.png`). O que muda é o
+gabarito deixar de nomear um token que não existe, e uma regra sem cliente sair.
+
+```
+grep -rn "var(--yellow)" src/    → 4 ocorrências, as quatro em comentários
+```
+
+`src/styles/site.css` é ficheiro de outro construtor, e foi aberto para tirar
+essa regra: é o que o I12 manda («o bloco de remapeamento sai com eles»), é uma
+regra que só servia esta vista, e vai escrito aqui em vez de improvisado.
+
+### 5.4 · O inventário
+
+As três rotas da etapa entram na lista (`ROTAS_DO_INVENTARIO`): `/agenda` na 4c,
+`/estudos` e `/estudos/<slug>` na 4e.
+
+```
+frases da casa · /agenda ....... 21 distinta(s) · conteúdo 31 · navegação 2 · autorreferência 0  ✓
+frases da casa · /en/agenda .... 21 distinta(s) · conteúdo 31 · navegação 2 · autorreferência 0  ✓
+```
+
+Vinte blocos por edição, classificados um a um em `../INVENTARIO-FRASES.md`, com
+a razão da classe escrita por cima da tabela. «Nesta página» é navegação; tudo o
+resto é conteúdo, incluindo as duas frases de ausência.
+
+### 5.5 · Uma chave que chegou tarde ao registo
+
+`metodo.sumarioK` nasceu na 4b e **não foi escrita em `../CHAVES-EN.md` no commit
+que a criou**, que é o que a regra do brief manda. Fica dita aqui, e o registo
+recebeu-a na 4c, já com a casa nova (`leitura.sumarioK`). É um defeito do meu
+commit da 4b, não da 4c.
+
+---
+
+## 6. O que fica pedido
 
 | # | pedido | a quem |
 |---|---|---|
@@ -549,7 +628,7 @@ apagada depois de paga é uma dívida que ninguém soube que existiu.
 
 ---
 
-## 6. Modelo e gasto
+## 7. Modelo e gasto
 
 | | |
 |---|---|

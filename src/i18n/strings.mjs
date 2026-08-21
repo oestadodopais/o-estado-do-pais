@@ -175,6 +175,20 @@ export const STRINGS = {
       link: 'O registo de correções',
     },
 
+    /**
+     * A MOBÍLIA DA FAMÍLIA DA LEITURA, uma vez só.
+     *
+     * O sumário no cimo nasceu no Método (subetapa 4b) como `metodo.sumarioK`,
+     * e a Agenda precisou das mesmas duas palavras na 4c. Duas cópias da mesma
+     * cadeia em duas famílias são duas cadeias no dia em que uma mudar, e por
+     * isso a chave desce para aqui, ao pé da folha que estas páginas partilham
+     * (`src/styles/leitura.css`). Nomeia o que a página tem, e não o que a casa
+     * faz.
+     */
+    leitura: {
+      sumarioK: 'Nesta página',
+    },
+
     /** A página que explica o marcador. IDENTIDADE §6 promete-a. */
     /**
      * A agenda e o calendário das fontes.
@@ -189,10 +203,13 @@ export const STRINGS = {
         'O que este observatório está a medir, o que se segue, e o critério que pôs lá cada coisa. Com o calendário do que as fontes publicam a seguir.',
       eyebrow: 'Agenda',
       h1: 'O que se mede a seguir',
-      lede:
-        'Cada item traz o critério que o pôs aqui, quem o propôs e quem o decidiu, ou diz o que ainda lhe falta; e traz o registo de cada mudança de estado. Nada sai desta lista em silêncio.',
-      origemNota:
-        'A lista e o calendário são dois registos do motor de investigação, publicados tal como atravessaram.',
+      /* A LEDE E A NOTA DE ORIGEM SAÍRAM (subetapa 4c, a regra da direção de
+         21.08.2026). A lede descrevia o aparelho da própria página («cada item
+         traz o critério… e traz o registo de cada mudança de estado») e fechava
+         com uma promessa da casa («Nada sai desta lista em silêncio»); a nota
+         dizia de que motor os dois registos vieram e que atravessaram tal e
+         qual. Tirar as duas não faz ninguém ler mal um número: o critério, o
+         proponente e o histórico estão em cada item, com os seus rótulos. */
       estados: {
         em_curso: 'Em curso',
         a_seguir: 'A seguir',
@@ -204,23 +221,25 @@ export const STRINGS = {
          por porta (§10). Uma coluna sem itens desenha-se na mesma. */
       quadroDeEstadosK: 'O que está em cada estado',
       semRegisto: 'sem registo',
-      vazioRetirado:
-        'Nada foi retirado desta agenda até hoje. Quando alguma coisa for, fica aqui, com a data e o motivo: um item não se apaga, muda de estado.',
+      /* A ausência em duas palavras (Emenda 15). O parágrafo que aqui estava
+         explicava a política («um item não se apaga, muda de estado»), que é o
+         que o histórico de cada item mostra ao fazê-lo. */
+      vazioRetirado: 'Nenhum até hoje.',
       tipos: {
         estudo: 'Estudo',
         vigilancia: 'Vigilância',
         pagina: 'Página',
       },
       perguntaK: 'A pergunta',
-      /* Duas frases, e a que sai depende do registo prévio. A primeira frase diz
-         a regra, no plural e sobre os estudos; a segunda diz o estado DESTA. Uma
-         frase que dissesse «a pergunta fica fixada» ao lado de um histórico que
-         diz «não foi selado» punha a página a contradizer-se (revisão cruzada 2,
-         R11), e «o português abaixo» apontava para cima (R12). */
-      perguntaNotaSelada:
-        'Nos estudos, a pergunta é selada no motor antes de a recolha começar. Esta está selada. O registo do motor escreve-se em inglês: o inglês é a forma registada, palavra por palavra, e o português acima é a edição portuguesa dessa mesma pergunta.',
-      perguntaNotaPorSelar:
-        'Nos estudos, a pergunta é selada no motor antes de a recolha começar. Esta está registada e ainda não selada: a direção não a leu. O registo do motor escreve-se em inglês: o inglês é a forma registada, palavra por palavra, e o português acima é a edição portuguesa dessa mesma pergunta.',
+      /* UMA CHAVE, E É UMA RESSALVA SOBRE O DADO (subetapa 4c). Eram duas, e as
+         duas abriam com a regra da casa («a pergunta é selada no motor antes de
+         a recolha começar») e diziam o estado desta — que o registo já diz, com
+         data, na linha `registoPrevio*` logo abaixo. O que fica é a metade que
+         um leitor precisa para não ler mal o que tem à frente: qual dos dois
+         textos é o registado. Tirá-la faria alguém tomar a edição portuguesa
+         pelo registo, que é o teste da direção de 21.08.2026. */
+      perguntaNota:
+        'O registo do motor escreve-se em inglês: o inglês é a forma registada, palavra por palavra, e o português acima é a edição portuguesa dessa mesma pergunta.',
       porqueK: 'Porquê',
       criteriosK: 'Critérios',
       quadroK: 'Quadro institucional',
@@ -228,8 +247,11 @@ export const STRINGS = {
       eventoK: 'Calendário das fontes',
       leitorK: 'Pedido de leitor',
       correcaoK: 'Correção',
-      semCriterios:
-        'Sem critério de nenhum dos quatro tipos. Veio de uma decisão da direção sobre o que faltava ao sítio, e não de um quadro institucional, de um calendário, de um leitor ou de uma correção. A razão está escrita no porquê e no histórico.',
+      /* A ausência em duas palavras (Emenda 15). O parágrafo dizia de onde o
+         item tinha vindo em vez disso, e essa proveniência está nos campos que
+         a levam: «Proposto pelo motor a», «Decidido pela direção a», o porquê e
+         o histórico, cada um com a sua data. */
+      semCriterios: 'Sem critério.',
       verNoCalendario: 'Ver no calendário',
       /* Um tempo esgotado não prova que a fonte não publique calendário. O
          registo distingue as duas coisas e a página diz qual delas é. */
@@ -262,8 +284,10 @@ export const STRINGS = {
          uma mudança de estado onde só houve uma decisão registada. */
       historicoMantem: 'estado mantido:',
       calendarioH2: 'O calendário das fontes',
-      calendarioLede:
-        'O que as fontes que este sítio cita publicam a seguir. Cada data traz o sítio onde está escrita, a data em que foi lida e a frase que a diz.',
+      /* A segunda frase saiu (subetapa 4c): dizia o que cada acontecimento tem
+         por baixo, e cada um tem-no com o seu rótulo à vista. A primeira fica,
+         porque nomeia o que o calendário é. */
+      calendarioLede: 'O que as fontes que este sítio cita publicam a seguir.',
       /* O eixo do tempo do calendário (IDENTIDADE.md §11). As janelas a amarelo,
          porque são marcas de medição; os dias que uma fonte publica como marcas
          no eixo; e a legenda a levar as portas, porque uma âncora dentro de um
@@ -639,9 +663,6 @@ export const STRINGS = {
       mecanismoK: 'Mecanismo',
       provaK: 'Prova',
       limiteK: 'O que isto não apanha',
-      /* O sumário no cimo da página (subetapa 4b): os dez nomes das regras e a
-         entrada de fecho, como âncoras. Nomeia o que a página tem. */
-      sumarioK: 'Nesta página',
 
       /** O instrumento: a cadeia desenhada, com os números de hoje. */
       instrumento: {
@@ -1154,16 +1175,16 @@ export const STRINGS = {
       link: 'The corrections log',
     },
 
+    leitura: {
+      sumarioK: 'On this page',
+    },
+
     agenda: {
       metaTitle: 'Agenda · O Estado do País',
       metaDescription:
         'What this observatory is measuring, what comes next, and the criterion that put each thing there. With the calendar of what the sources publish next.',
       eyebrow: 'Agenda',
       h1: 'What gets measured next',
-      lede:
-        'Each item carries the criterion that put it here, who proposed it and who decided it, or says what it still lacks; and it carries the record of every change of state. Nothing leaves this list in silence.',
-      origemNota:
-        'The list and the calendar are two records from the research engine, published exactly as they crossed.',
       estados: {
         em_curso: 'Under way',
         a_seguir: 'Next',
@@ -1172,18 +1193,15 @@ export const STRINGS = {
       },
       quadroDeEstadosK: 'What is in each state',
       semRegisto: 'no record',
-      vazioRetirado:
-        'Nothing has been withdrawn from this agenda to date. When something is, it stays here, with the date and the reason: an item is not deleted, it changes state.',
+      vazioRetirado: 'None to date.',
       tipos: {
         estudo: 'Study',
         vigilancia: 'Watch',
         pagina: 'Page',
       },
       perguntaK: 'The question',
-      perguntaNotaSelada:
-        'In studies, the question is sealed in the engine before collection begins. This one is sealed. The engine’s record is written in English: the English is the registered form, word for word, and the Portuguese edition renders that same question.',
-      perguntaNotaPorSelar:
-        'In studies, the question is sealed in the engine before collection begins. This one is registered and not yet sealed: the director has not read it. The engine’s record is written in English: the English is the registered form, word for word, and the Portuguese edition renders that same question.',
+      perguntaNota:
+        'The engine’s record is written in English: the English is the registered form, word for word, and the Portuguese edition renders that same question.',
       porqueK: 'Why',
       criteriosK: 'Criteria',
       quadroK: 'Institutional framework',
@@ -1191,8 +1209,7 @@ export const STRINGS = {
       eventoK: 'Source calendar',
       leitorK: 'Reader request',
       correcaoK: 'Correction',
-      semCriterios:
-        'No criterion of any of the four kinds. It came from a direction decision about what the site lacked, and not from an institutional framework, a calendar, a reader or a correction. The reason is written in the why and in the change log.',
+      semCriterios: 'No criterion.',
       verNoCalendario: 'See in the calendar',
       semDataMotivos: {
         nao_publica: 'the source publishes no date',
@@ -1220,8 +1237,7 @@ export const STRINGS = {
       historicoPara: 'moves to',
       historicoMantem: 'state unchanged:',
       calendarioH2: 'The source calendar',
-      calendarioLede:
-        'What the sources this site cites publish next. Each date carries the place where it is written, the date it was read, and the sentence that says it.',
+      calendarioLede: 'What the sources this site cites publish next.',
       eixoK: 'The calendar, in time',
       eixoLegendaK: 'Open each event',
       datadosK: 'With a date the source publishes',
@@ -1440,7 +1456,6 @@ export const STRINGS = {
       mecanismoK: 'Mechanism',
       provaK: 'Proof',
       limiteK: 'What this does not catch',
-      sumarioK: 'On this page',
 
       instrumento: {
         svgTitulo: 'The mechanism, from the sources to the reader',
