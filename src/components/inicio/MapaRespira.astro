@@ -67,9 +67,7 @@
  */
 import Claim from '../Claim.astro';
 import Provenance from '../Provenance.astro';
-import ValorDaProva from '../ValorDaProva.astro';
 import { FRAMES, FIELD_W, FIELD_H } from '../../data/caop-centroids.mjs';
-import { VERBATIM } from '../../data/verbatim.mjs';
 import { DADOS } from '../../lib/dados.mjs';
 import { getClaim } from '../../lib/ledger.mjs';
 import { routePath } from '../../lib/routes.mjs';
@@ -111,25 +109,14 @@ const pontos = concelhos.map((c) => {
 
 const rotaDeEvora = evora?.pagina ? routePath('municipio', lang, { slug: evora.pagina.slug }) : null;
 
-const parcelas = [
-  { rotulo: s.inicio.mapa.continente, claim: 'municipios-continente-caop-2025' },
-  { rotulo: s.inicio.mapa.acores, claim: 'municipios-acores-caop-2025' },
-  { rotulo: s.inicio.mapa.madeira, claim: 'municipios-madeira-caop-2025' },
-];
-
 /* ---------------------------------------------------------------------------
- * A LINHA DE FONTE COMPACTA (subetapa 2g, ponto 2)
+ * A LINHA DA EMENDA 17: «308 concelhos · CAOP 2025 ■ fonte»
  * ---------------------------------------------------------------------------
- * A ficha ao lado do mapa levava a citação inteira da CAOP — publicação,
- * distribuição, os três nomes de ficheiro, dois endereços e a data de acesso —
- * e era ela que mandava na altura da cabeça. A citação desce inteira para a
- * camada do aparelho, onde continua a ser conferida carácter a carácter por
- * `data-verbatim`, e o que fica ao lado do mapa é UMA linha, montada dos campos
- * da própria linha do livro-razão: quem publica e o que publicou.
- *
- * Nenhuma palavra nova: `source` e `document.title` são a linha, e o ano é o
- * `reference_date` dela, marcado com o motivo que já existe. A porta é o selo
- * de sempre, na forma de sempre.
+ * O quadro das três parcelas (Continente, Açores, Madeira) e a linha de fonte
+ * composta saíram com a ficha: a contagem por parcelas vive em `/municipios`, e
+ * o que fica por baixo do mapa é a contagem total, o nome da Carta, o ano da
+ * edição e o selo que abre a linha. O ano é o `reference_date` da própria linha,
+ * marcado com o motivo que já existe.
  */
 const caop = getClaim('municipios-portugal-caop-2025');
 ---
@@ -157,6 +144,7 @@ const caop = getClaim('municipios-portugal-caop-2025');
       viewBox={`0 0 ${FIELD_W} ${FIELD_H}`}
       role="img"
       aria-label={s.inicio.mapa.svgLabel}
+      aria-describedby="mapa-descricao"
       data-mapa
     >
       <g class="mapa-molduras">
@@ -233,20 +221,11 @@ const caop = getClaim('municipios-portugal-caop-2025');
       <p class="mapa-cartao-nome">
         <span data-slot="nome">{evora?.nome}</span>
       </p>
-      <p class="mapa-cartao-cobertura">
-        <ValorDaProva chave="municipios_com_pagina" item={p.municipios_com_pagina} lang={lang} />
-        {s.inicio.mapa.coberturaA}
-        <ValorDaProva chave="municipios_total" item={p.municipios_total} lang={lang} />
-        {s.inicio.mapa.coberturaB}
-        <span data-cobertura="com-pagina">{s.cobertura.temPagina}</span>
-      </p>
-      {/* A NEUTRALIDADE FICA AO PÉ DO MAPA EM TODAS AS POSTURAS (etapa 2i,
-          achado 8). A frase vive na ficha, e na postura de localizador a ficha
-          esconde-se: o mapa continuava lá, com um ponto cheio e um ponto vazio a
-          dizerem uma coisa, e a frase que diz o que essa coisa NÃO é tinha
-          desaparecido. É a mesma cadeia, palavra por palavra, e conta como a
-          mesma relocação (R3). */}
-      <p class="mapa-cartao-neutro">{s.inicio.mapa.posicao}</p>
+      {/* A COBERTURA E A NEUTRALIDADE SAÍRAM (Emenda 15). A primeira era uma
+          frase sobre a cobertura do próprio sítio, que a emenda nomeia; a
+          segunda dizia o que a casa NÃO afirma, que a emenda nomeia também
+          («nunca o que não afirmamos»). O cartão fica com o nome do concelho, o
+          selo da Carta e as duas portas. */}
       <p class="mapa-cartao-selo">
         <Claim id="municipios-portugal-caop-2025" lang={lang} chip={true} />
       </p>
@@ -263,55 +242,62 @@ const caop = getClaim('municipios-portugal-caop-2025');
     </div>
   </div>
 
-  <figcaption class="mapa-ficha" data-mapa-ficha>
-    <p class="mapa-titulo">
-      <ValorDaProva chave="municipios_com_pagina" item={p.municipios_com_pagina} lang={lang} />
-      {s.inicio.mapa.coberturaA}
-      <ValorDaProva chave="municipios_total" item={p.municipios_total} lang={lang} />
-      {s.inicio.mapa.coberturaB}
-      <span data-cobertura="com-pagina">{s.cobertura.temPagina}</span>
-    </p>
+  {/* ------------------------------------------------------------------------
+      UMA LINHA POR BAIXO DO MAPA (Emenda 17, 21.08.2026)
+      ------------------------------------------------------------------------
+      «Por baixo do mapa uma só linha, "308 concelhos · CAOP 2025 ■ fonte"; a
+      contagem por parcelas (278 · 19 · 11) vive em /municipios.» A ficha levava
+      a contagem de cobertura, a frase de neutralidade, o quadro das três
+      parcelas com os seus selos, a linha de fonte composta e três dicas de uso.
+      Fica o que a legenda é: o que a coisa é, e a porta para a sua linha.
 
-    <p class="mapa-neutro">{s.inicio.mapa.posicao}</p>
-
-    <div class="compo">
-      <div class="compo-k">{s.inicio.mapa.contagemK}</div>
-      {
-        parcelas.map((l) => (
-          <div class="compo-row">
-            <span class="compo-l">{l.rotulo}</span>
-            <span class="compo-n">
-              <Claim id={l.claim} lang={lang} chip={true} />
-            </span>
-          </div>
-        ))
-      }
-      <div class="compo-tot">
-        <span class="compo-l">{s.inicio.mapa.total}</span>
-        <span class="compo-n">
-          <Claim id="municipios-portugal-caop-2025" lang={lang} chip={true} />
-        </span>
-      </div>
-    </div>
-
-    {/* A linha de fonte compacta: quem publica, o que publicou, o ano da
-        edição, e o selo que abre a linha. A citação inteira está na camada do
-        aparelho, aqui em baixo. */}
-    <p class="mapa-fonte-curta">
-      {caop.source} · {caop.document.title}{' '}
+      O SELO É O ÚLTIMO ELEMENTO, e não o que `<Claim chip>` faria. `chip` põe o
+      selo colado ao valor («308 ■ fonte concelhos»), e a emenda escreve-o no
+      fim. A conferência do portão continua satisfeita porque procura o selo no
+      PAI do valor, que é este parágrafo.
+      ---------------------------------------------------------------------- */}
+  <figcaption class="mapa-linha" data-mapa-ficha>
+    <p class="mapa-linha-fonte">
+      <Claim id="municipios-portugal-caop-2025" lang={lang} />
+      {s.inicio.mapa.linha}
       <span data-nonledger="data-de-referencia">{caop.reference_date}</span>{' '}
       <Provenance id="municipios-portugal-caop-2025" lang={lang} />
     </p>
 
-    {/* A TERCEIRA DICA SEGUE A REGRA DAS OUTRAS DUAS (ISSUES I21). «Toque num
-        ponto para escolher o concelho» só é verdade onde o mapa escolhe pontos:
-        na secretária, com o mapa inteiro e com script. Rendia-se em qualquer
-        largura no âmbito Município, e a 390 nenhum ponto é alvo — a Emenda 3 diz
-        que o selo inteiro é o alvo, e a folha põe `pointer-events: none` em todos
-        os `.mun-alvo` abaixo de 640. Por isso entra `hidden` (que cobre o caso
-        sem script), o script acende-a só no âmbito Município, e a folha volta a
-        apagá-la abaixo de 640 e na postura de localizador. */}
-    <p class="mapa-hint" data-hint-escolher hidden>{s.inicio.mapa.escolher}</p>
+    {/* --------------------------------------------------------------------
+        A PORTA DO CSV FICA, E FICA DITO PORQUÊ
+        --------------------------------------------------------------------
+        A Emenda 15 manda a camada «Método, ressalvas e proveniência» sair da
+        primeira página, e com ela ia esta porta para `/municipios`. Não vai:
+        `scripts/check-dados.mjs` exige que **as duas edições da primeira
+        página liguem os dois CSV** («Os dados por trás de cada instrumento são
+        descarregáveis nas duas edições, ou não são»), e essa conferência não é
+        desta ronda. A porta fica como o que ela é — uma ligação, não uma frase
+        — e a mudança de casa é um pedido para a etapa 3, escrito em ISSUES.
+        -------------------------------------------------------------------- */}
+    <p class="mapa-linha-dados">
+      <a class="ligacao-dados" href={DADOS.municipios} download>{s.home.dadosLink} ↓</a>
+    </p>
+
+    {/* --------------------------------------------------------------------
+        AS DICAS PASSAM A DESCRIÇÃO DO MAPA, E DEIXAM DE SER LEGENDA
+        --------------------------------------------------------------------
+        Emenda 15: uma legenda nomeia o que a coisa é, e não como se usa. As
+        três frases que descreviam o gesto — o cursor, o teclado, o toque —
+        deixam de se ler ao lado do mapa e passam a ser a DESCRIÇÃO acessível
+        dele, por `aria-describedby`. Quem vê o mapa vê o mapa; quem o ouve
+        continua a saber como o percorrer.
+
+        A disciplina do `hidden` é a mesma de antes (ISSUES I21), e é por isso
+        que elas continuam a entrar escondidas: descrevem o que só é verdade com
+        script, e um elemento `hidden` não entra na árvore nem é anunciado. O
+        script acende-as, como já acendia.
+        -------------------------------------------------------------------- */}
+    <p class="vh mapa-descricao" id="mapa-descricao">
+      <span class="mapa-hint" data-dica-cursor hidden>{s.inicio.mapa.readoutHint}</span>{' '}
+      <span class="mapa-hint" data-teclado hidden>{s.inicio.mapa.tecladoHint}</span>{' '}
+      <span class="mapa-hint" data-hint-escolher hidden>{s.inicio.mapa.escolher}</span>
+    </p>
 
     <div class="mapa-leitura" data-readout aria-live="polite">
       <span class="readout-name" data-readout-nome hidden></span>
@@ -319,36 +305,4 @@ const caop = getClaim('municipios-portugal-caop-2025');
       <span class="readout-sub" data-readout-sub hidden></span>
     </div>
   </figcaption>
-
-  {/* ------------------------------------------------------------------------
-      A CAMADA DO APARELHO DO MAPA (subetapa 2g, ponto 2; renomeada na 2i)
-      ------------------------------------------------------------------------
-      O rótulo é o do instrumento n.º 2 da v2, relocado com a sua secção (R3) e
-      sem uma palavra mudada. Debaixo dele: a citação da CAOP inteira, tal como
-      a v2 a publicava e conferida carácter a carácter; a porta do CSV; e as
-      duas dicas de uso do mapa.
-
-      AS DICAS SÓ EXISTEM ONDE O MAPA ESCOLHE PONTOS. «Passe o cursor» e
-      «Teclado: Tab até ao mapa» descrevem o que só é verdade na secretária, com
-      o mapa inteiro e com script: no telemóvel os pontos não são alvos (Emenda
-      3) e sem script o mapa não responde a nada. Por isso as duas entram
-      `hidden`, o script tira-lhes o `hidden`, e a folha volta a escondê-las
-      abaixo de 640 e na postura de localizador. Uma dica que descreve o que a
-      página não faz é uma promessa falhada, e é mais barato não a escrever.
-      ---------------------------------------------------------------------- */}
-  <details class="mapa-aparelho" data-mapa-aparelho>
-    <summary class="mapa-aparelho-sum">{s.inicio.mapa.deepTitulo}</summary>
-    <div class="mapa-aparelho-corpo">
-      <p class="mapa-fonte verbatim" data-verbatim="caop-fonte" lang="pt-PT">
-        {VERBATIM['caop-fonte'].text}
-      </p>
-      <p class="mapa-dados">
-        <a class="ligacao-dados" href={DADOS.municipios} download>{s.home.dadosLink} ↓</a>
-      </p>
-      <div class="mapa-dicas" data-dicas>
-        <p class="mapa-hint" data-dica-cursor hidden>{s.inicio.mapa.readoutHint}</p>
-        <p class="mapa-hint" data-teclado hidden>{s.inicio.mapa.tecladoHint}</p>
-      </div>
-    </div>
-  </details>
 </figure>

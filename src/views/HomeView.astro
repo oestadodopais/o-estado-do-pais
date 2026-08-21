@@ -35,7 +35,6 @@ import InstrumentoConvergencia from '../components/InstrumentoConvergencia.astro
 import Comando from '../components/inicio/Comando.astro';
 import Peca from '../components/inicio/Peca.astro';
 import Portas from '../components/inicio/Portas.astro';
-import EstadoVazio from '../components/inicio/EstadoVazio.astro';
 import Cabeca from '../components/inicio/Cabeca.astro';
 import Pesquisa from '../components/inicio/Pesquisa.astro';
 import MapaRespira from '../components/inicio/MapaRespira.astro';
@@ -43,7 +42,7 @@ import BandaDaRegiao from '../components/inicio/BandaDaRegiao.astro';
 import ListaSocial from '../components/inicio/ListaSocial.astro';
 import { FIGURAS_PDM, FIGURAS_SOCIAL, comparacaoComOLimiar, ladosDoLimiar } from '../data/figuras.mjs';
 import { REGIOES, ESCALA } from '../data/regioes.mjs';
-import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
+import { getClaim, parsePtNumber, eDerivada } from '../lib/ledger.mjs';
 import { estadoDaMedida, estadoDaRegua } from '../lib/estado.mjs';
 import { concelhos, chaveDaRegiao, chaveDoConcelho, REGIOES_DE_AMBITO } from '../lib/inicio.mjs';
 import { estadoDaVerificacao, prova } from '../lib/prova.mjs';
@@ -123,8 +122,17 @@ const pecasDeEvora = evora
       .filter((m) => m.claim)
       .map((m) => {
         const linha = getClaim(m.claim);
+        /* A NOTA DE UMA MEDIDA CALCULADA NÃO SE RENDE AQUI (Emenda 15). A nota
+           da execução da receita é «Calculado sobre duas colunas do mesmo
+           ficheiro do regulador. A aritmética está na linha.» — uma legenda que
+           explica a nossa conta em vez de nomear a medida, e a emenda nomeia
+           essa classe («qualquer legenda "calculado" que explique em vez de
+           nomear; o rótulo do selo já leva "calculado ·"»). A condição lê-se da
+           LINHA, com `eDerivada()`, e não de uma lista escrita à mão. A nota
+           continua na página de concelho, que é da etapa 3. */
+        const derivada = eDerivada(linha);
         if (m.claim !== 'evora-indice-de-divida-2024') {
-          return { ...m, linha, estado: 'sem', colore: false, regua: null };
+          return { ...m, linha, derivada, estado: 'sem', colore: false, regua: null };
         }
         const tecto = getClaim(TECTO_DA_DIVIDA);
         const r = estadoDaRegua(linha, {
@@ -135,6 +143,7 @@ const pecasDeEvora = evora
         return {
           ...m,
           linha,
+          derivada,
           estado: r.estado ?? 'sem',
           colore: r.colore,
           regua: {
@@ -357,7 +366,7 @@ const medidasSemLinha = evora
               id={m.claim}
               nome={m.nome[lang]}
               medida={m.medida[lang]}
-              frase={m.nota[lang]}
+              frase={m.derivada ? null : m.nota[lang]}
               estado={m.estado}
               colore={m.colore}
               regua={m.regua}
@@ -379,8 +388,15 @@ const medidasSemLinha = evora
         falta em vez de fingir corpo. O que falta são oito medidas, e vêem-se as
         oito.
         ------------------------------------------------------------------ */}
+    {/* A FRASE QUE EXPLICAVA O ESTADO VAZIO SAIU (Emenda 15). Dizia «Nenhuma
+        medida foi lida para <nome>. As fontes que publicam para todos os
+        concelhos do país permitem que as mesmas medidas existam aqui, com a
+        mesma prova, no dia em que forem lidas.» — um parágrafo sobre as
+        intenções do sítio, por cima de oito peças que já dizem, cada uma em duas
+        palavras, o que falta. «A ausência diz-se em duas palavras ("sem linha"),
+        não num parágrafo.» `EstadoVazio.astro` era o único sítio que a rendia, e
+        sai do repositório com ela. */}
     <div class="painel" data-painel="vazio" hidden>
-      <EstadoVazio s={s} nome={primeiroSemPagina?.nome ?? ''} />
       {medidasSemLinha.map((m) => <Peca s={s} vazio={true} nome={m.nome} unidade={m.unidade} />)}
     </div>
 
@@ -396,24 +412,20 @@ const medidasSemLinha = evora
       <ListaSocial s={s} lang={lang} medidas={sociais} porta={routePath('livro', lang)} />
     </div>
 
-    {/* A âncora `#numeros` é a porta do sinal de tempo do cabeçalho e da chave
-        `painel_reconferido_em` da prova: é aqui que essa data se vê.
+    {/* ------------------------------------------------------------------
+        A LINHA DA RECONFERÊNCIA SAIU DA PRIMEIRA PÁGINA (Emenda 15)
+        ------------------------------------------------------------------
+        «Painel europeu reconferido a <data>», por baixo do painel, é uma frase
+        sobre a verificação do próprio sítio — a classe que a emenda nomeia — e
+        era a SEGUNDA cópia dela na mesma página: a mobília do cabeçalho leva-a
+        em todas as páginas, com a mesma cadeia e a mesma conta.
 
-        E leva `data-so-pais` desde a 2g: a data é a reconferência do PAINEL
-        EUROPEU, e rendia-se por baixo das oito medidas de Évora e por baixo do
-        estado vazio de Beja, onde é uma frase sobre outra coisa. A âncora
-        continua a existir no documento em qualquer âmbito, e por isso as duas
-        portas que a prometem continuam a resolver; o que muda é que só se lê
-        onde o painel que ela data está à vista. */}
-    <p
-      class="sec-sub verificacao"
-      id="numeros"
-      data-so-pais
-      data-vencida={verificacao.vencida ? 'sim' : null}
-    >
-      {verificacao.vencida ? s.sinal.vencido : s.sinal.reconferido}{' '}
-      <span data-nonledger="data-de-atualizacao">{verificacao.verificadoEm}</span>.
-    </p>
+        Com ela sai a âncora `#numeros`, e a porta da chave
+        `painel_reconferido_em` passa a ser `#painel`, que é a secção que aquela
+        data cobre. A mudança é em `src/lib/prova.mjs` e na mobília, e as duas
+        superfícies que a rendem — o cabeçalho de 307 páginas e a legenda de
+        portas do instrumento do mecanismo — seguem-na sem uma linha a mais.
+        ------------------------------------------------------------------ */}
   </section>
 
   <!-- ============================ Instrumento n.º 1 · só no âmbito País -->

@@ -50,8 +50,8 @@ const { s, lang, medidas, porta } = Astro.props;
             <Claim id={m.claim} lang={lang} chip={true} />
           </span>
           <span class="social-corpo">
-            <span class="social-nome">{m.nome[lang]}</span>
-            <span class="social-medida">
+            <span class="social-nome" data-medida-nome>{m.nome[lang]}</span>
+            <span class="social-medida" data-medida-unidade>
               <Frase partes={m.medida[lang]} lang={lang} />
               {' · '}
               <span class="social-fonte">{m.linha.source}</span>

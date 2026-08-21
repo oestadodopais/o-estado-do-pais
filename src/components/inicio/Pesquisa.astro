@@ -29,19 +29,17 @@
  * E HÁ UM TERCEIRO ESTADO, QUE É UM GESTO (subetapa 2h, Emenda 3): no telemóvel,
  * já dentro da vista de escolha, um toque no selo do país troca estes botões
  * pelos concelhos mais próximos do sítio tocado — os mesmos botões, os mesmos
- * nomes, o mesmo `hidden` a trocar de sítio. A frase que o explica é a de baixo,
- * `inicio.movel.proximos`, e ela só se lê onde o gesto existe: abaixo de 640,
- * que é onde o selo é o alvo. Nenhuma distância se escreve: a ordenação decide
- * quem se acende e mais nada.
+ * nomes, o mesmo `hidden` a trocar de sítio. Nenhuma distância se escreve: a
+ * ordenação decide quem se acende e mais nada. **A frase que o explicava saiu
+ * com a Emenda 15**: era uma instrução de uso, e o nome acessível do selo já diz
+ * o que ele faz.
  *
  * SEM JAVASCRIPT NÃO SE VÊ NADA DISTO, e é de propósito: o âmbito «Município»
  * só se atinge com script, e o comando dele leva, sem script, ao índice dos 308
  * (`/municipios`), que é uma página inteira com a mesma lista e a mesma
  * cobertura. Uma caixa de pesquisa que não pesquisa é pior do que nenhuma.
  */
-import ValorDaProva from '../ValorDaProva.astro';
-
-const { s, lang, p, concelhos } = Astro.props;
+const { s, concelhos } = Astro.props;
 ---
 
 <div class="pesquisa" id="pesquisa">
@@ -52,7 +50,6 @@ const { s, lang, p, concelhos } = Astro.props;
     type="search"
     autocomplete="off"
     data-pesquisa
-    aria-describedby="pesquisa-meta"
   />
 
   <ul class="pesquisa-res" data-resultados>
@@ -77,14 +74,13 @@ const { s, lang, p, concelhos } = Astro.props;
     }
   </ul>
 
+  {/* DUAS FRASES SAÍRAM (Emenda 15): a que explicava o gesto de proximidade («Um
+      toque no mapa devolve os concelhos mais próximos…») e a que contava a
+      cobertura do sítio («1 de 308 concelhos · tem página»). A primeira é uma
+      instrução de uso, e quem toca no selo já recebe os botões; o nome
+      acessível do selo — «Abrir a escolha de concelho» — continua a dizer o que
+      ele faz. A segunda é a frase de cobertura que a emenda nomeia. Com ela sai
+      o `aria-describedby` do campo, porque a descrição que ele apontava deixou
+      de existir e um `aria-describedby` sem alvo não descreve nada. */}
   <p class="pesquisa-vazio" data-sem-resultado hidden>{s.ambito.pesquisaSemResultado}</p>
-  <p class="pesquisa-proximos">{s.inicio.movel.proximos}</p>
-
-  <p class="pesquisa-meta" id="pesquisa-meta">
-    <ValorDaProva chave="municipios_com_pagina" item={p.municipios_com_pagina} lang={lang} />
-    {s.inicio.mapa.coberturaA}
-    <ValorDaProva chave="municipios_total" item={p.municipios_total} lang={lang} />
-    {s.inicio.mapa.coberturaB}
-    <span data-cobertura="com-pagina">{s.cobertura.temPagina}</span>
-  </p>
 </div>

@@ -16,7 +16,7 @@
  * ---------------------------------------------------------------------------
  * Emenda 2: «o selo nunca fica aninhado dentro de outro alvo». Uma porta metida
  * dentro de outra porta abre a de fora, e quem toca no selo quer a prova e
- * receberia a peça. O selo é o ÚLTIMO elemento da peça, sozinho na sua linha, e
+ * receberia a peça. O selo é o ÚNICO elemento do pé da peça, sozinho na sua linha, e
  * é o maior alvo da peça — que é a saída que a etapa 1d deixou marcada em ISSUES
  * I13: «a saída certa não é encolher a área, é dar altura à fila».
  *
@@ -124,8 +124,8 @@ const simbolo = limiar?.simbolo ?? '%';
   vazio ? (
     <article class="peca peca-vazia" data-medida-vazia>
       <p class="peca-sem-linha" data-cobertura="sem-linha">{s.cobertura.semLinhaAinda}</p>
-      <p class="peca-unidade">{unidade}</p>
-      <h3 class="peca-nome">{nome}</h3>
+      <p class="peca-unidade" data-medida-unidade>{unidade}</p>
+      <h3 class="peca-nome" data-medida-nome>{nome}</h3>
     </article>
   ) : (
 
@@ -174,8 +174,8 @@ const simbolo = limiar?.simbolo ?? '%';
       quando a língua falta (ISSUES I24, fechado). Esta chamada era um dos sete
       lugares que rendiam «provisório» em português na edição inglesa. */}
   <Claim id={id} lang={lang} class="peca-valor" as="div" style={`--peca-corpo:${corpo}`} />
-  <p class="peca-unidade"><Frase partes={medida} lang={lang} selos={selosNaMedida} /></p>
-  <h3 class="peca-nome">{nome}</h3>
+  <p class="peca-unidade" data-medida-unidade><Frase partes={medida} lang={lang} selos={selosNaMedida} /></p>
+  <h3 class="peca-nome" data-medida-nome>{nome}</h3>
   {frase && <p class="peca-frase"><Frase partes={frase} lang={lang} selos={true} /></p>}
 
   <details class="peca-mais">
@@ -224,9 +224,11 @@ const simbolo = limiar?.simbolo ?? '%';
               </Fragment>
             )}
           </Regua>
-        ) : (
-          <p class="peca-sem-regua">{s.inicio.peca.semReferencia}</p>
-        )
+        ) : null
+        /* SEM RÉGUA, NADA (Emenda 15). Dizia «Sem referência publicada: não há
+           barra a desenhar.», que é a casa a explicar porque não desenhou uma
+           coisa. A peça já diz «sem limiar» ao lado do marcador, em duas
+           palavras, que é como a emenda manda dizer uma ausência. */
       }
       {/* A palavra de estado não se repete aqui: está no topo da peça, ao lado
           do marcador, em qualquer densidade. Dizê-la duas vezes na mesma peça
@@ -235,8 +237,10 @@ const simbolo = limiar?.simbolo ?? '%';
     </div>
   </details>
 
+  {/* O PÉ É O SELO, E MAIS NADA (Emenda 15). A linha do recibo — «o recibo
+      completo está na linha» — dizia por palavras o que o selo é, ao lado do
+      selo. O selo é toda a prova que a página mostra. */}
   <p class="peca-pe">
-    <span class="peca-recibo">{s.inicio.peca.recibo}</span>
     <Provenance id={id} lang={lang} />
   </p>
 </article>

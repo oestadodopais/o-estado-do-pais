@@ -117,7 +117,13 @@ const tituloPais = fora === 1 ? s.inicio.cabeca.tituloPaisUm : s.inicio.cabeca.t
               {b.nome}{s.inicio.cabeca.municipioPalavra}{b.distrito}
             </p>
             <h1 class="cabeca-h1">{s.inicio.cabeca.tituloEvora}</h1>
-            <p class="cabeca-lede">{s.municipio.ledeA}{b.nome}{s.municipio.ledeB}</p>
+            {/* A LEDE DE ÉVORA SAIU DA PRIMEIRA PÁGINA (Emenda 15). Dizia «Esta
+                página mede o município de Évora e mostra de onde vem cada
+                medida. Não interpreta: onde uma fonte não estabelece uma coisa,
+                a página di-lo em vez de a supor.» — três frases sobre o método e
+                as intenções do sítio. A cadeia fica em `strings.mjs` porque é a
+                lede da PÁGINA de Évora (`MunicipioView`), que é da etapa 3 e não
+                desta ronda; o que sai é a sua rendição aqui. */}
           </>
         )}
 
@@ -138,11 +144,13 @@ const tituloPais = fora === 1 ? s.inicio.cabeca.tituloPaisUm : s.inicio.cabeca.t
               <span data-slot="nome">{b.nome}</span>
               {s.inicio.cabeca.tituloVazioB}
             </h1>
-            <p class="cabeca-lede">
-              {s.inicio.cabeca.ledeVazioA}
-              <span data-slot="nome">{b.nome}</span>
-              {s.inicio.cabeca.ledeVazioB}
-            </p>
+            {/* A LEDE DO CONCELHO SEM PÁGINA SAIU (Emenda 15). Dizia «O ponto
+                marca a posição do concelho na Carta Administrativa, e não
+                cobertura. Quando houver linhas para <nome>, entram aqui com a
+                sua fonte e a sua data de leitura.» — o que o ponto NÃO marca, e
+                o que o sítio tenciona fazer. A manchete já diz a ausência
+                («Ainda sem linhas para <nome>.») e as oito peças dizem-na medida
+                a medida, em duas palavras cada. */}
           </>
         )}
       </div>

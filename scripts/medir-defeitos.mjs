@@ -17,7 +17,11 @@
  *   5. `#page=` nas linhas do livro-razão;
  *   6. localizadores que nomeiam um artefacto interno (ficheiro, chave JSON);
  *   7. frases de cobertura — quantas cadeias visíveis DISTINTAS o sítio usa
- *      para cada estado de cobertura editorial, por edição (defeito 7).
+ *      para cada estado de cobertura editorial, por edição (defeito 7);
+ *   8. frases da casa — o inventário de todos os blocos de texto da primeira
+ *      página que são prosa da casa, classificados em conteúdo, navegação e
+ *      autorreferência pela lista declarada em
+ *      `design/especime-v3/INVENTARIO-FRASES.md` (Emenda 15).
  *
  * Uso:  node scripts/medir-defeitos.mjs            (imprime)
  *       node scripts/medir-defeitos.mjs --json     (para guardar uma medição)
@@ -154,6 +158,112 @@ const blocosDaPorta = new Set();
  * A edição sai do `<html lang>` da própria página, e não da rota: é o que o
  * leitor recebe.
  */
+/**
+ * 8 — AS FRASES DA CASA (v3, etapa 2l; Emenda 15 de 21.08.2026).
+ *
+ * «Uma página do leitor leva conteúdo (a medida, o valor, a unidade, o período,
+ * o nome da fonte) e navegação. Não leva nenhuma frase sobre o método, a
+ * verificação, a honestidade, a cobertura ou as intenções do próprio sítio.»
+ *
+ * A emenda traz a sua própria medida: «o inventário de todas as frases da casa
+ * na superfície pública, classificadas em conteúdo, navegação e
+ * autorreferência; a terceira classe vai a zero fora do Método, do Sobre e do
+ * recibo, e a régua imprime a contagem para que não volte».
+ *
+ * ---------------------------------------------------------------------------
+ * O QUE CONTA COMO «FRASE DA CASA», DEFINIDO COMO PROGRAMA
+ * ---------------------------------------------------------------------------
+ * Um bloco de texto (a mesma definição da medida 3: um elemento de bloco que
+ * não contém outro) que NÃO seja, nem contenha:
+ *
+ *   · uma origem declarada — `data-claim`, `data-prova`, `data-verbatim`,
+ *     `data-nonledger`, `data-linha-*`, `data-correcao-*`, `data-agenda`. Essas
+ *     são o livro-razão, o próprio sítio contado, ou uma transcrição: não são a
+ *     casa a falar;
+ *   · o NOME de uma medida ou a sua linha de UNIDADE, marcados
+ *     `data-medida-nome` e `data-medida-unidade` no gabarito. São conteúdo por
+ *     definição da emenda, e são marcados em vez de reconhecidos pelo nome da
+ *     classe, para que a régua não dependa de uma folha de estilos;
+ *   · uma LIGAÇÃO DE NAVEGAÇÃO — um bloco cujo texto está todo dentro de um
+ *     `<a>` ou de um `<button>`, ou um bloco que É o rótulo de um comando (um
+ *     `<summary>`). Um destino não é uma frase, e nesta página metade dos
+ *     destinos são botões: o script troca as ligações por botões para que a
+ *     página mude sem recarregar, e a régua tem de ver a mesma coisa que o
+ *     leitor vê — uma coisa em que se carrega.
+ *
+ * O que sobra é a casa a escrever, e cada bloco tem de estar na lista
+ * declarada, com a sua classe. Um bloco que não esteja lá sai na saída como
+ * NÃO CLASSIFICADO, que é o estado que obriga alguém a decidir.
+ *
+ * A régua não falha nada: imprime. O alvo — autorreferência a zero na primeira
+ * página, nas duas edições — é conferido por uma célula da matriz.
+ */
+const CLASSES = ['conteudo', 'navegacao', 'autorreferencia'];
+const MEDIDA_DECLARADA = '[data-medida-nome],[data-medida-unidade]';
+
+/** A lista declarada: texto normalizado → classe. */
+function leInventario() {
+  const ficheiro = path.join(RAIZ, 'design', 'especime-v3', 'INVENTARIO-FRASES.md');
+  const mapa = new Map();
+  if (!fs.existsSync(ficheiro)) return { mapa, ficheiro, existe: false };
+  for (const linha of fs.readFileSync(ficheiro, 'utf8').split('\n')) {
+    const m = linha.match(/^\|\s*(conteudo|navegacao|autorreferencia)\s*\|(.*)\|\s*$/);
+    if (!m) continue;
+    mapa.set(norm(m[2]), m[1]);
+  }
+  return { mapa, ficheiro, existe: true };
+}
+
+const INVENTARIO = leInventario();
+
+/**
+ * Os blocos de prosa da casa de uma página.
+ *
+ * A varredura é a de `blocosDe()`, com duas exclusões a mais: o que está
+ * marcado como nome ou unidade de uma medida, e o que é só uma ligação.
+ */
+/** O texto de um elemento, sem o que está dentro de `<a>` e de `<button>`. */
+function textoForaDeComandos(no) {
+  const partes = [];
+  const anda = (n) => {
+    if (!n) return;
+    if (n.nodeType === NodeType.TEXT_NODE) return void partes.push(n.rawText);
+    const tag = String(n.rawTagName ?? '').toLowerCase();
+    if (tag === 'script' || tag === 'style' || tag === 'a' || tag === 'button') return;
+    for (const f of n.childNodes ?? []) anda(f);
+  };
+  anda(no);
+  return partes.join(' ');
+}
+
+function frasesDaCasa(root) {
+  const out = [];
+  const marcados = new Set();
+  for (const el of root.querySelectorAll(ORIGEM_DECLARADA + ',' + MEDIDA_DECLARADA)) {
+    marcados.add(el);
+    for (const d of el.querySelectorAll('*')) marcados.add(d);
+  }
+  for (const el of root.querySelectorAll(BLOCOS)) {
+    if (el.querySelector(BLOCOS)) continue;
+    if (marcados.has(el)) continue;
+    if (el.querySelector(ORIGEM_DECLARADA + ',' + MEDIDA_DECLARADA)) continue;
+    const t = norm(texto(el));
+    if (!t) continue;
+    /* Uma ligação inteira não é uma frase: é um destino. O teste é sobre o
+       texto que fica FORA das âncoras, e não sobre a etiqueta do elemento. */
+    if (String(el.rawTagName ?? '').toLowerCase() === 'summary') continue;
+    /* O texto que fica FORA das âncoras e dos botões, percorrendo a árvore. Uma
+       subtração de cadeias não serve: dois destinos seguidos dão «a →b →» de um
+       lado e «a → b →» do outro, e o bloco escapava por um espaço. */
+    const foraDeLigacoes = norm(textoForaDeComandos(el));
+    if (!foraDeLigacoes) continue;
+    out.push(t);
+  }
+  return out;
+}
+
+const frasesPorRota = new Map(); // rota → Map(texto → ocorrências)
+
 const coberturaPorEdicao = new Map(); // edição → estado → Map(cadeia → ocorrências)
 function registaCobertura(edicao, estado, cadeia) {
   if (!coberturaPorEdicao.has(edicao)) coberturaPorEdicao.set(edicao, new Map());
@@ -187,6 +297,14 @@ for (const file of ficheiros) {
   for (const porta of portas) for (const b of blocosDe(porta)) blocosDaPorta.add(b);
   for (const b of vistosNestaPagina) {
     paginasPorBloco.set(b, (paginasPorBloco.get(b) ?? 0) + 1);
+  }
+
+  /* 8 — as frases da casa, na primeira página */
+  if (rota?.key === 'home') {
+    const chave = caminho || '/';
+    const conta = frasesPorRota.get(chave) ?? new Map();
+    for (const f of frasesDaCasa(root)) conta.set(f, (conta.get(f) ?? 0) + 1);
+    frasesPorRota.set(chave, conta);
   }
 
   /* 7 — as frases de cobertura */
@@ -286,6 +404,26 @@ for (const [edicao, porEstado] of [...coberturaPorEdicao.entries()].sort()) {
   }
 }
 
+/* As frases da casa, por rota e por classe. */
+const frasesDaCasaPorRota = {};
+for (const [rota, conta] of [...frasesPorRota.entries()].sort()) {
+  const porClasse = Object.fromEntries(CLASSES.map((c) => [c, 0]));
+  const naoClassificados = [];
+  let total = 0;
+  for (const [t, n] of conta) {
+    total += n;
+    const classe = INVENTARIO.mapa.get(t);
+    if (classe) porClasse[classe] += n;
+    else naoClassificados.push(t);
+  }
+  frasesDaCasaPorRota[rota] = {
+    total,
+    distintas: conta.size,
+    por_classe: porClasse,
+    nao_classificados: naoClassificados.sort(),
+  };
+}
+
 const medicao = {
   paginas,
   porta_correccoes: { com: comPorta, sem: semPorta.length },
@@ -305,6 +443,12 @@ const medicao = {
   linhas_com_recorte: comRecorte,
   localizadores_internos: localizadoresInternos.length,
   frases_de_cobertura: cobertura,
+  frases_da_casa: {
+    inventario: path.relative(RAIZ, INVENTARIO.ficheiro),
+    inventario_existe: INVENTARIO.existe,
+    entradas_declaradas: INVENTARIO.mapa.size,
+    por_rota: frasesDaCasaPorRota,
+  },
 };
 
 if (process.argv.includes('--json')) {
@@ -348,6 +492,25 @@ if (!edicoesDeCobertura.length) {
           `${c.ocorrencias} ocorrência(s)` + (bom ? verde('  ✓') : amarelo('  ✗')),
       );
       if (!bom) for (const t of c.cadeias) console.log(cinza(`      · «${t}»`));
+    }
+  }
+}
+console.log('');
+if (!INVENTARIO.existe) {
+  console.log(amarelo(`  frases da casa ............ não há ${path.relative(RAIZ, INVENTARIO.ficheiro)}`));
+} else {
+  console.log(cinza(`  frases da casa · lista declarada com ${INVENTARIO.mapa.size} entrada(s)`));
+  for (const [rota, r] of Object.entries(frasesDaCasaPorRota)) {
+    const zero = r.por_classe.autorreferencia === 0;
+    console.log(
+      `  frases da casa · ${rota} ... ${r.distintas} distinta(s) · ` +
+        `conteúdo ${r.por_classe.conteudo} · navegação ${r.por_classe.navegacao} · ` +
+        `autorreferência ${r.por_classe.autorreferencia}` +
+        (zero ? verde('  ✓') : amarelo('  ✗')),
+    );
+    if (r.nao_classificados.length) {
+      console.log(amarelo(`      ${r.nao_classificados.length} bloco(s) por classificar:`));
+      for (const t of r.nao_classificados) console.log(cinza(`      · «${t}»`));
     }
   }
 }
