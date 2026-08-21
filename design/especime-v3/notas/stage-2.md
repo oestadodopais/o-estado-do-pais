@@ -2533,3 +2533,496 @@ edições, e nenhuma cadeia nova entrou em `strings.mjs`.
 Nenhuma parte desta ronda correu noutro modelo. A contagem de fichas está no
 relatório da ronda, e é a diferença de dois contadores — não tenho número exacto
 para lá dessa diferença, e não o invento.
+
+---
+
+## 2l · a segunda leitura da pré-visualização n.º 1
+
+*Construtor B7, **Claude Opus**, sozinho, sem subagentes e sem delegação,
+21.08.2026, a partir de `8b90241`. Quatro commits. Nada foi empurrado, nada foi
+posto no ar, `vercel.json` não foi tocado, nem `src/data/metodo.mjs` nem
+`src/data/sobre.mjs` foram abertos, nenhuma linha do livro-razão foi escrita,
+nenhum portão novo, nenhum número inventado. Como na 2j e na 2k, um construtor
+tem os ficheiros partilhados E os da primeira página, por decisão da cadeira.
+Todos os números abaixo trazem ao lado o comando que os produziu.*
+
+**Os commits**
+
+| Commit | O quê |
+| --- | --- |
+| `2096884` | registo: as Emendas 15 a 17 da segunda leitura, e a §1.53 com a correção do «13 dos 14» |
+| `608c277` | início, painel: as 13 linhas do Procedimento com o seu estado, e o Painel Social Europeu por baixo |
+| `1cac621` | início, mobília: a página deixa de se explicar, o mapa vai para a direita e a porta das correções encolhe |
+| *(o commit que contém esta nota)* | design/especime-v3: as medições, as capturas e o registo da 2l |
+
+**A construção de referência.** `git worktree add --detach <dir> b79672f`, com
+`node_modules` ligado por symlink e `npm run build` verde. É o estado exacto da
+pré-visualização que a direção leu pela segunda vez.
+
+---
+
+## 2l-1 · o registo
+
+`direcao.md` recebe as **Emendas 15 a 17** verbatim, com a correção que a Emenda
+16 traz dentro. `DECISIONS.md` **§1.53**, `Afecta: nenhum`.
+
+```
+npm run ledger:check
+  amarra das decisões · 16 entrada(s) a partir da §1.38 · 2 texto(s) governado(s)
+  · 1 citação(ões) da constituição conferida(s), de 42 entre «…»
+  ✓ cada texto no ar tem uma decisão registada que o governa
+```
+
+**A correção do lugar de direção fica escrita, e não corrigida em silêncio.** A
+primeira redação dizia «4 dos 13» e «13 dos 14». A diferença não é de estilo:
+«4 dos 13» dá as duas contagens como uma fração do painel da Comissão, e o que o
+livro-razão guarda são 13 linhas que cobrem 11 dos indicadores principais desse
+painel. A manchete que esta ronda constrói diz o que o sítio pode provar —
+quantos limiares o país ultrapassa e quantos cumpre, das linhas que o sítio tem
+— e **não** afirma um total do Procedimento.
+
+**O pedido ao motor** fica em ISSUES **I32**: as linhas do desemprego de longa
+duração e do desemprego jovem como indicadores principais do Procedimento, e a
+identidade do 13.º, a confirmar contra a lista da Comissão **no motor**, onde a
+escolha dos indicadores é feita e registada. Nenhum número foi escrito neste ramo
+por causa disso.
+
+---
+
+## 2l-2 · o painel inteiro, e a lista social
+
+### As 13 linhas, e de onde saem
+
+A lista sai de um comando e não de uma escolha:
+
+```
+grep -l "Limiar do Procedimento" ledger/claims/*.yml | wc -l      → 13
+   controlo: ls ledger/claims/*.yml | wc -l                       → 132
+```
+
+E cada limiar é escrito **como a nota daquela linha o escreve**. As treze, com o
+valor publicado, o limiar tal como a nota o diz, e o estado:
+
+| linha | valor | limiar declarado (da nota) | lado | estado |
+| --- | --- | --- | --- | --- |
+| `divida-publica-2025` | 89,7 | 60% | teto | **fora** |
+| `posicao-de-investimento-internacional-2025` | −50,2 | −35% | chão | **fora** |
+| `custo-unitario-do-trabalho-2025` | 21,3 | +9% (EA) | teto | **fora** |
+| `precos-da-habitacao-2025` | 17,6 | +9% | teto | **fora** |
+| `desempenho-das-exportacoes-2025` | 8,2 | −3% | chão | dentro |
+| `divida-das-empresas-2025` | 64,9 | 85% | teto | dentro |
+| `divida-das-familias-2025` | 53,9 | 55% | teto | dentro |
+| `fluxo-de-credito-as-empresas-2025` | 3 | 13% | teto | dentro |
+| `fluxo-de-credito-as-familias-2025` | 8,6 | 14% | teto | dentro |
+| `saldo-da-balanca-corrente-2025` | 1,4 | −4/+6% | **banda** | dentro |
+| `taxa-de-actividade-2025` | 2,6 | −0,2 pp | chão | dentro |
+| `taxa-de-cambio-efectiva-real-2025` | 2,8 | ±3% (EA) | **banda** | dentro |
+| `taxa-de-desemprego-mip-2025` | 6 | 10% | teto | dentro |
+
+**4 fora, 9 dentro.** É exactamente o que a Emenda 16 escreve, e as duas
+contagens são chaves da prova recontadas pelo portão.
+
+**O limiar da taxa de atividade NÃO está truncado na nota, ao contrário do que o
+brief supunha.** O brief diz «a nota diz "-0."» e manda ler a linha antes de
+escrever o número. A linha carrega-o inteiro:
+
+```
+grep '^note:' ledger/claims/taxa-de-actividade-2025.yml
+  note: "Limiar do Procedimento relativo aos Desequilíbrios Macroeconómicos:
+         -0.2pp. Valor confirmado contra a Comissão Europeia, SWD(2026) 222 …"
+```
+
+Por isso o limiar rende-se como **−0,2**, com o símbolo **pp** que a nota usa, e
+não há pedido ao motor por causa disto. O símbolo é declarado por entrada e nunca
+inferido: doze notas escrevem «%» e esta escreve «pp», e uma regra que assumisse
+a percentagem escreveria «limiar −0,2%» debaixo de uma linha que mede pontos
+percentuais.
+
+**A banda de dois lados.** Duas linhas não têm um lado, têm dois. A leitura da
+declaração vive numa função só, `ladosDoLimiar()`, ao lado da declaração: um teto
+é uma banda sem chão, um chão é uma banda sem teto, e a comparação escreve-se uma
+vez sobre `{ inferior, superior }`. **O portão não a chama**: escreve a sua
+própria leitura e a sua própria comparação, pela razão da §1.24. A régua desenha
+os dois traços e mede a barra à referência **mais próxima** — uma regra mecânica,
+que com uma referência só dá exactamente o que dava antes.
+
+### O Painel Social Europeu, e a linha do documento que coloca cada medida
+
+A Emenda 16 diz «os indicadores que o livro-razão guarda e cujo **registo** nomeia
+esse painel». Qual registo? Medido, e não presumido:
+
+```
+grep -rn -i -e "social scoreboard" -e "painel social" ledger/claims/
+   (sem saída · exit 1)
+   controlo positivo: grep -rc -i "eurostat" ledger/claims/taxa-de-emprego-2025.yml → 5
+```
+
+**Nenhum ficheiro do livro-razão nomeia o Painel Social Europeu.** O registo que
+o coloca é o do motor, `ResearchHub/indicators/convergence.md`, no quadro da §2,
+coluna «Social SB» — lido, não editado. As oito linhas, cada uma com a linha do
+documento que a coloca:
+
+| linha | valor | linha do documento |
+| --- | --- | --- |
+| `taxa-de-emprego-2025` | 79,6 | `convergence.md:60` · «Employment rate \| aux \| ✓ \| …» |
+| `taxa-de-desemprego-2025` | 6 | `convergence.md:59` · «Unemployment rate \| **10%** \| ✓ \| …» |
+| `desemprego-de-longa-duracao-2025` | 2,2 | `convergence.md:61` · «Long-term unemployment \| aux \| ✓ \| …» |
+| `jovens-nem-2025` | 8 | `convergence.md:73` · «NEET \| aux \| ✓ \| …» |
+| `abandono-escolar-precoce-2025` | 6,1 | `convergence.md:74` · «Early leavers from education \| ✓ \| …» |
+| `risco-de-pobreza-ou-exclusao-2025` | 18,6 | `convergence.md:72` · «At-risk-of-poverty or social exclusion \| aux \| ✓ \| …» |
+| `racio-s80-s20-2025` | 4,86 | `convergence.md:71` · «Income inequality (S80/S20 or Gini) \| ✓ \| …» |
+| `sobrecarga-do-custo-da-habitacao-2025` | 6,3 | `convergence.md:70` · «Housing cost overburden / affordability \| ✓ \| …» |
+
+**`criancas-em-creche-2025` sai da primeira página**, e a ausência é a regra a
+funcionar e não um esquecimento: o quadro do motor não tem linha nenhuma de
+cuidados formais para a infância, e «uma linha que o documento não coloca não é
+colocada aqui». Tinha frase na primeira página da v2; a frase é retirada e a
+linha fica atrás da porta do livro-razão, onde continua a ter página e selo.
+Medido: `grep -o 'data-claim="criancas-em-creche-2025"' dist/index.html | wc -l`
+→ **0** (controlo positivo, `divida-publica-2025` → 1).
+
+**A taxa de desemprego aparece nos dois painéis, e é de propósito.** São duas
+linhas distintas do livro-razão, de dois conjuntos do Eurostat (`tipsun20` com o
+limiar do Procedimento, `une_rt_a` sem limiar nenhum), e a linha 59 do documento
+coloca a medida nos dois quadros. A Emenda 16 manda mostrar «os dois painéis como
+as instituições os publicam», e as instituições publicam-na nos dois.
+
+### As frases da lista social: a chamada que o brief me deixou, e a razão
+
+O brief deixa-me decidir se as frases relocadas ficam. **Ficam as três que
+existem**, sempre à vista, por baixo da sua linha. A razão não é de gosto: uma
+das três é a ressalva da própria Comissão sobre a sobrecarga do custo da
+habitação — «só se lê ao lado do regime de propriedade» —, e o documento do motor
+escreve o que acontece sem ela, na §3: «Published naked, it says Portuguese
+housing is fine.» Uma lista compacta que a deixasse cair publicava um número que
+se lê ao contrário. A Emenda 16 enumera o que uma linha **leva**; não proíbe o que
+ela já tinha. As outras cinco não trazem frase, porque nunca tiveram uma.
+
+### A grelha de 13 células, e a última linha
+
+O brief pede que eu diga qual das duas saídas escolhi. **A segunda: uma grelha de
+13 células cuja última linha fica alinhada à esquerda, sem molduras vazias.** A
+`IDENTIDADE.md` §7 diz «uma grelha nunca mostra célula vazia», e o precedente que
+a torna verdadeira já estava nesta grelha desde a 2j: acima de 640 uma peça aberta
+ocupa duas colunas, e o fio foi feito de propósito como uma **sombra à volta de
+cada peça** e não como um fundo por baixo da grelha, «para que onde não há peça
+não haja sombra, e o buraco fique em papel». Uma célula que não existe não se vê;
+o que a §7 proíbe é a moldura de uma célula a fingir que existe, e não há
+molduras.
+
+### As três plantas, e o que o portão disse
+
+Cada uma aplicada, medida e revertida.
+
+**(1) A banda pelo lado superior.** `figuras.mjs`: o teto do saldo da balança
+corrente passa de `+6` a `+1`, com o valor 1,4 a ficar acima da banda.
+`estado.mjs`: a comparação do lado superior deixa de correr quando há dois lados.
+
+```
+npm run build   →  exit 1
+  src/lib/prova.mjs
+    ✗ a prova diz que "painel_fora_do_limiar" é 4 e o portão conta 5 (vista: ledger).
+      Não é um desacordo de rendição: são duas contas da mesma coisa, e discordam.
+    ✗ a prova diz que "painel_dentro_do_limiar" é 9 e o portão conta 8 (vista: ledger).
+  index.html · en/index.html
+    ✗ o número da prova "painel_fora_do_limiar" foi renderizado como "4" e o portão escreve-o "5".
+```
+
+**(2) A banda pelo lado inferior.** `figuras.mjs`: o chão da taxa de câmbio
+efetiva real perde o sinal e passa de `−3` a `+3`, com o valor 2,8 a ficar abaixo
+da banda. `estado.mjs`: a comparação do lado inferior deixa de correr quando há
+dois lados. **A mesma mensagem, com os mesmos números** (4/5 e 9/8).
+
+**(3) `painel_dentro_do_limiar`, com um estado virado.** `prova.mjs`: a contagem
+salta a taxa de desemprego do Procedimento.
+
+```
+npm run build   →  exit 1
+    ✗ a prova diz que "painel_dentro_do_limiar" é 8 e o portão conta 9 (vista: ledger).
+    ✗ o número da prova "painel_dentro_do_limiar" foi renderizado como "8" e o portão escreve-o "9".
+```
+
+**(4) O selo com o texto oculto na forma antiga** (planta da 2l-3, aqui pela
+ordem em que se lê). `Provenance.astro`: o oculto volta a vir à frente da palavra
+e a abrir por «Linha do livro-razão:».
+
+```
+npm run build   →  exit 1
+    ✗ o texto do selo que abre a linha "precos-da-habitacao-2025" não é o que o registo escreve.
+      no registo:  fonte · Quadro institucional de indicadores, leitura direta da fonte
+      renderizado: Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fontefonte
+      Conta o texto oculto: é ele que um leitor de ecrã ouve, e é dentro dele que prosa qualquer escaparia ao varrimento inteiro.
+```
+
+As quatro revertidas, e `npm run build` volta a sair a 0.
+
+---
+
+## 2l-3 · a página deixa de se explicar, e o mapa vai para a direita
+
+### O inventário, que é a medida que a Emenda 15 traz consigo
+
+`scripts/medir-defeitos.mjs` ganha a **oitava medida**. A definição é mecânica e
+está escrita no ficheiro: todo o bloco de texto da primeira página, nas duas
+edições, que não seja nem contenha uma origem declarada, que não seja o nome de
+uma medida nem a sua linha de unidade (`data-medida-nome`,
+`data-medida-unidade`, marcados no gabarito e não reconhecidos por nome de
+classe), e cujo texto não esteja todo dentro de um `<a>` ou de um `<button>`.
+A classificação sai de uma lista declarada, `INVENTARIO-FRASES.md`, e um bloco
+que não esteja nela sai como **por classificar**.
+
+```
+node scripts/medir-defeitos.mjs
+  frases da casa · lista declarada com 62 entrada(s)
+  frases da casa · /   ... 32 distinta(s) · conteúdo 40 · navegação 7 · autorreferência 0  ✓
+  frases da casa · /en ... 32 distinta(s) · conteúdo 40 · navegação 7 · autorreferência 0  ✓
+```
+
+**Zero por classificar, e zero de autorreferência, nas duas edições.** A primeira
+corrida da régua, antes de qualquer subtração, imprimia **384 blocos distintos**
+por edição; a definição das ligações e dos nomes de medida levou-os a 73, e as
+subtrações desta ronda a 32.
+
+**Os botões contam como navegação, e a razão está na régua.** Metade dos destinos
+desta página são `<button>`: o script troca as ligações por botões para que a
+página mude sem recarregar. Uma definição que só olhasse para `<a>` contava os
+308 nomes de concelho da pesquisa como prosa da casa.
+
+**O texto fora das ligações mede-se percorrendo a árvore, e não por subtração de
+cadeias.** A primeira versão subtraía o texto das âncoras ao texto do bloco, e o
+cartão localizador escapava por um espaço: dois destinos seguidos dão «a →b →» de
+um lado e «a → b →» do outro.
+
+### O que saiu, e para onde
+
+A lista inteira, frase a frase, está em `INVENTARIO-FRASES.md`, secção «O que
+saiu, e para onde». O resumo: a linha de cobertura das quatro superfícies onde
+rendia; a frase de neutralidade dos pontos; «Contagem verificada nos ficheiros»
+com o quadro das três parcelas; as **duas** camadas «Método, ressalvas e
+proveniência» (a do mapa e a do Instrumento n.º 1, esta última com cinco itens,
+dos quais três eram a casa a falar de si); «Painel europeu reconferido a …»; «o
+recibo completo está na linha»; «Sem referência publicada: não há barra a
+desenhar.»; a frase do estado vazio; a legenda das portas; a frase do gesto de
+proximidade; a nota da banda; as duas linhas «Sem JavaScript»; a lede de Évora; a
+lede do concelho sem página; e a nota que explicava a conta de uma medida
+calculada.
+
+**Três coisas saíram com elas, e não são frases**: `EstadoVazio.astro` (era o
+único sítio que rendia a frase do estado vazio, e um componente que ninguém rende
+é um desenho a dizer que ainda vale), a âncora `#numeros`, e as regras `.compo*`
+de `site.css` — que nenhuma página construída usa depois desta ronda
+(`grep -rl 'class="compo' dist/` → 0). É a mesma razão que tirou a `.method-line`
+na Emenda 11: uma regra sem elemento mente sobre o que a folha desenha.
+
+**A porta da chave `painel_reconferido_em` passa de `#numeros` a `#painel`**, e a
+mobília segue-a. As duas superfícies que a rendem — o cabeçalho de 307 páginas e
+a legenda de portas do instrumento do mecanismo, em `/metodo` — não precisaram de
+uma linha a mais.
+
+**As dicas do mapa passam a descrição acessível.** As três — o cursor, o teclado,
+o toque — deixam de se ler ao lado do mapa e passam a ser o que `aria-describedby`
+aponta. A disciplina do `hidden` é a mesma de antes (ISSUES I21): descrevem o que
+só é verdade com script, entram escondidas, e o script acende-as. Abaixo de 640 a
+folha tira duas delas da árvore — não há cursor e nenhum ponto é alvo — e deixa a
+do teclado, porque um teclado liga-se a qualquer aparelho.
+
+### O texto oculto do selo
+
+```
+grep -rl "Linha do livro-razão:" dist/                   → 0
+   controlo positivo, a forma nova: grep -c 'class="vh"> ·' dist/index.html → 2
+   e o mesmo grep em design/especime-v3/direcao.md       → 1
+```
+
+**A ordem inverteu-se, e é ela que faz a forma.** A palavra à vista vinha DEPOIS
+do oculto, e quem ouve a página ouve os dois pela ordem do documento. Com a
+palavra à frente, a unidade lê-se «fonte · calculado · <estudo>», que é a forma
+que a Emenda 15 escreve, e o que se vê não muda um píxel: o quadrado é um
+`::before` do próprio `<a>` e o oculto não ocupa espaço. `seloDaLinha()` no portão
+compõe a mesma cadeia pela mesma ordem e compara-a carácter a carácter.
+
+### A porta das correções
+
+```
+grep -rl "Um erro confirmado entra no registo de correções e na própria linha" dist/  → 0
+   controlo positivo, a política em /correcoes: grep -rl "Nada é removido" dist/correcoes/index.html → 1
+```
+
+### O mapa à direita, e a cabeça a 1024
+
+A ficha reduzida a uma linha é o que torna a Emenda 17 possível. A conta que a 2j
+escreveu era esta:
+
+```
+conteúdo a 1024   = 1024 − 2 × 41 de goteira   = 942px
+cabeça 2 colunas  = 582 + 20 + (281 + 18 + ficha)
+```
+
+Sem ficha ao lado do mapa, o mapa deixa de ter vizinho e a coluna que ele precisa
+é a sua própria largura. Medido nas três larguras, nas duas edições (célula nova
+da matriz):
+
+| largura | colunas da cabeça | mapa (esquerda, largura) | transbordo |
+| --- | --- | --- | --- |
+| 1024 | `582px 340,094px` | 643px, 340px | 0 |
+| 1180 | `582px 490px` | 646px, 490px | 0 |
+| 1280 | `582px 490px` | 696px, 490px | 0 |
+
+**Igual nas duas edições, largura a largura.** A regra dos 900, que encolhia o
+mapa para 170px porque a ficha precisava do resto da largura, saiu com a ficha.
+
+---
+
+## 2l · as réguas
+
+### A matriz de aceitação
+
+`node tests/inicio/matriz.mjs --json design/especime-v3/medicoes/2026-08-21-etapa-2l-matriz.json`
+— **97 de 97 células passam** (as 90 da 2k, com sete reescritas, mais cinco
+novas):
+
+```
+passa  2l · a manchete do País leva as duas contagens da Emenda 16
+passa  painel do País com 13 peças (Emenda 16)
+passa  2l · a linha da reconferência saiu da primeira página, e a porta abre o painel
+passa  2l · Emenda 17 · por baixo do mapa uma só linha, com o selo
+passa  2l · Emenda 15 · as dicas do mapa são descrição acessível e não legenda
+passa  2l · Emenda 15 · a neutralidade e a cobertura saíram do mapa, em todas as posturas
+passa  2l · a banda desenha duas referências, e os dois algarismos vão marcados
+passa  2l · Emenda 16 · a lista social tem oito linhas, sem cor e com o selo fora de outro alvo
+passa  2l · Emenda 17 · o texto à esquerda e o mapa à direita, de 1024 para cima
+passa  2l · as chaves novas da prova: a página e o portão dizem o mesmo
+passa  2l · Emenda 15 · zero frases de autorreferência na primeira página, nas duas edições
+```
+
+As provas que interessam, por extenso:
+
+- **a banda**: `saldo-da-balanca-corrente-2025: 2 referências em 2 posições ·
+  «limiar −4/+6%»` e `taxa-de-cambio-efectiva-real-2025: 2 referências em 2
+  posições · «limiar −3/+3%»`;
+- **a lista social**: `8 linhas · 8 valores · selo 52,5×44px · aninhados 0 ·
+  marcadores 0`;
+- **as chaves da prova**: `fora 4/4 · dentro 9/9 · total 13 · social 8`, com o
+  segundo número lido do `prova.json` que o portão escreveu;
+- **a linha do mapa**: `«308 concelhos · CAOP 2025 fonte · calculado · O Estado
+  do País, apuramento próprio» · ficha 77px · camada de aparelho 0 · citação na
+  página 0 · CSV true`;
+- **os selos das peças**: `27 de 27 selos de peça · mínimo 100×44`.
+
+**Sete células mudaram de pergunta com as emendas, e nenhuma foi apagada.** A do
+sinal de tempo media que a linha só se lia no âmbito País; passa a medir que ela
+saiu da página inteira e que a porta abre o painel. A da ficha do mapa media que
+a citação, o CSV e as dicas tinham descido para a camada de aparelho; passa a
+medir que a camada não existe. A da neutralidade media que a frase acompanhava o
+mapa nas cinco posturas; passa a medir a ausência, nas mesmas cinco. As outras
+quatro mudaram só de contagem (8 → 13 peças, 8 → 13 marcadores e palavras).
+
+### A régua da invariância
+
+`node scripts/medir-invariancia.mjs <dist de b79672f> dist`
+
+```
+322 rotas · 15 idênticas em texto · 307 com diferenças
+```
+
+E as 307 dividem-se, sem sobra, em quatro famílias:
+
+| quantas | rotas | diferença | de quê |
+| --- | --- | --- | --- |
+| 2 | `/` e `/en/` | **+192 −182** | o conjunto inteiro desta ronda |
+| 268 | as páginas com selos | **+2 −2** e acima | «Encontrou um erro» → «Encontrou um erro?», mais **um bloco por selo**: «Linha do livro-razão: X» → «· X» |
+| 19 | as páginas sem selos | **+1 −1** | só a porta das correções |
+| 15 | os documentos de estudo | idênticas | bytes exactos da origem, sem a mobília do sítio — o mesmo número desde a 2f |
+
+As maiores são as que têm mais selos: `/livro-razao/` **+133 −133**,
+`/municipios/evora/` **+92 −92**. São o mesmo bloco, uma vez por selo.
+
+**A política das correções não aparece nas contagens, e a razão é da régua.** Os
+blocos da invariância são elementos-folha (`p,li,…,div,span,a,button,label` que
+não contenham outro), e o parágrafo da política tinha um `<a>` lá dentro: nunca
+foi um bloco. A prova de que saiu está no `grep` acima, com o seu controlo
+positivo.
+
+`node scripts/medir-invariancia.mjs --chaves` imprime **15** chaves com o mesmo
+valor nas duas edições, onde a 2j imprimia 14. Entram três
+(`inicio.cabeca.tituloPaisFim`, `inicio.portas.concelhos`, `inicio.mapa.linha`) e
+saem duas (`inicio.mapa.coberturaB`, `inicio.mapa.total`). As três novas estão em
+«Identidades aceites» do `CHAVES-EN.md`.
+
+### As duas réguas antigas
+
+**Defeitos.** `node scripts/medir-defeitos.mjs`:
+
+| medida | 2k | 2l |
+| --- | --- | --- |
+| páginas | 307 | 307 |
+| porta de correcções | 307/307 | 307/307 |
+| primeira página · valores sem selo | 0 | **0** |
+| primeira página · selos para outra linha | 0 | **0** |
+| **frases de moldura** | 93 distintas · 2 099 | **89 distintas · 2 091** |
+| cobertura · com-pagina | 1 distinta × 6 | 1 distinta × **2** |
+| cobertura · sem-pagina | 1 distinta × 307 | 1 distinta × 307 |
+| cobertura · sem-linha | 1 distinta × 8 | 1 distinta × 8 |
+| **frases da casa · autorreferência** | *(não existia)* | **0 e 0** |
+
+**A cobertura desce de 6 para 2 ocorrências**, e as quatro que saíram são as
+quatro superfícies da primeira página onde a linha «1 de 308 concelhos · tem
+página» rendia: a ficha do mapa, o cartão localizador, a meta da pesquisa e a
+porta dos Municípios. As duas que ficam são o índice dos concelhos, uma por
+edição, e **continua a haver uma cadeia distinta por estado e por edição**, que é
+o que esta medida existe para dizer.
+
+**Contraste.** `node scripts/medir-contraste.mjs --json` — **idêntico byte a byte
+ao da 2k**. Era o esperado: esta ronda não introduziu um par de cores. Os quatro
+avisos são os quatro de sempre.
+
+Guardados em
+`design/especime-v3/medicoes/2026-08-21-etapa-2l-{matriz,defeitos,contraste,invariancia}.json`.
+
+### As capturas
+
+`node tests/inicio/capturas.mjs` — **as 68 refeitas**, e `git status` diz que as
+68 mudaram. Mais as **32 da etapa 1**, refeitas por um guião de rascunho com a
+mesma mecânica, porque a porta das correções e o texto oculto do selo mudam em
+todas as páginas — é o mesmo desvio, com a mesma razão, que a 1f e a 2j
+escreveram.
+
+---
+
+## 2l · o que fica por fazer, e porquê
+
+1. **I32 · faltam linhas ao painel do Procedimento, e o 13.º indicador está por
+   confirmar.** Pedido ao motor, escrito por extenso. Nenhum número foi escrito
+   aqui por causa disso.
+2. **I33 · a contagem da CAOP por parcelas não está em `/municipios`.** A Emenda
+   17 manda-a para lá; `MunicipiosView.astro` não é ficheiro desta ronda. Pedido
+   para a etapa 3, com o que é preciso escrito.
+3. **I34 · a porta do CSV não pode sair da primeira página.**
+   `scripts/check-dados.mjs` exige que as duas edições da primeira página liguem
+   os dois ficheiros, com mensagem própria, e essa conferência não é desta ronda.
+   A porta fica como ligação, sem a frase que a explicava. **É a única coisa que
+   a Emenda 15 pede e que esta ronda não fez**, e está escrita em vez de
+   contornada.
+4. **I35 · a nota que explica a conta de uma medida calculada continua em
+   `/municipios/evora`.** A primeira página deixou de a render, pela condição
+   lida da linha (`eDerivada()`); o ficheiro de dados é partilhado com a página
+   de concelho, que é da etapa 3.
+5. **I36 · três chaves da prova não se rendem em página nenhuma**
+   (`painel_total`, `painel_com_limiar`, `painel_social_total`). O portão
+   reconta-as; se a direção as quiser à vista, é forma.
+6. **I28 fecha** com esta ronda: `inicio.mapa.naoDizK` saiu de `strings.mjs` com
+   as outras cadeias do mapa. **I19, I23, I26, I27, I30, I31 continuam abertos** e
+   nenhum é desta ronda.
+7. **A revisão de voz tem 14 nomes de medida novos para ler em inglês**, e estão
+   os catorze em `CHAVES-EN.md`.
+
+## 2l · quem fez o quê, e quanto custou
+
+**Claude Opus** (construtor B7), num só fio, sem subagentes e sem delegação.
+Nenhuma parte desta ronda correu noutro modelo.
+
+**Contagem de fichas:** a única contagem honesta é a diferença de dois
+contadores. No início desta ronda o contador dizia **14 973 160** por usar; no
+momento em que esta nota se fecha dizia **≈ 14 431 000** — ou seja **≈ 542 mil
+fichas**, dentro da escala do brief (400 a 600 mil). Não tenho um número exacto
+para lá desta diferença, e não o invento.

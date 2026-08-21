@@ -143,6 +143,48 @@ nova. As quatro cadeias desta ronda têm inglês próprio.
 ### Etapa 5
 *(por preencher: `cartao.*`)*
 
+### Etapa 2l · a segunda leitura da pré-visualização n.º 1 (Emendas 15 a 17)
+
+**Seis cadeias novas, uma mudada e trinta e três retiradas.** A lista inteira, com o que cada retirada dizia e para onde foi o que ela dizia, está em `RELOCACOES.md`, «Etapa 2, subetapa 2l». Aqui fica o que a revisão de voz tem de ler em inglês.
+
+| chave | pt | en | nota para a revisão de voz |
+|---|---|---|---|
+| `inicio.cabeca.tituloPaisA` | `Portugal ultrapassa ` | `Portugal breaches ` | a manchete da Emenda 16, verbatim do lugar de direção. **Não é tradução livre**: as duas edições foram escritas pelo diretor |
+| `inicio.cabeca.tituloPaisUm` | ` limiar do Procedimento dos Desequilíbrios Macroeconómicos e cumpre ` | ` threshold of the Macroeconomic Imbalance Procedure and meets ` | o singular, escolhido na construção |
+| `inicio.cabeca.tituloPaisMuitos` | ` limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre ` | ` thresholds of the Macroeconomic Imbalance Procedure and meets ` | o plural. «Macroeconomic Imbalance Procedure» é o nome oficial em inglês do Procedimento |
+| `inicio.cabeca.tituloPaisFim` | `.` | `.` | pontuação. Identidade aceite |
+| `inicio.cabeca.ledePaisPartes` | `Fora do limiar: dívida pública, posição de investimento internacional, custo unitário do trabalho e preços da habitação, em ` + `{ ref: '2025' }` + `.` | `Outside the threshold: government debt, net international investment position, unit labour cost and house prices, in ` + `{ ref: '2025' }` + `.` | a lede da Emenda 16, verbatim. O ano é `data-de-referencia` e não prosa |
+| `inicio.cabeca.paisA` | `Portugal · país` | `Portugal · country` | o rótulo do âmbito, na gramática dos outros três. Deixou de contar |
+| `inicio.social.titulo` | `Painel Social Europeu` | `European Social Scoreboard` | o nome que a instituição dá ao painel |
+| `inicio.social.porta` | `O livro-razão` | `The ledger` | a porta para o resto do livro-razão |
+| `inicio.portas.rotulo` | `As páginas` | `The pages` | **só se ouve**: é o nome da região de navegação das três portas |
+| `inicio.portas.concelhos` | ` concelhos` | ` concelhos` | **identidade aceite**, pela mesma razão de `coberturaB`: «concelho» fica em português na edição inglesa |
+| `inicio.mapa.linha` | ` concelhos · CAOP ` | ` concelhos · CAOP ` | **identidade aceite**: «concelhos» pela mesma razão, e «CAOP» é a sigla da Carta |
+| `inicio.banda.svgLabel` | `Régua da convergência: o PIB per capita de cada região contra a média europeia.` | `Convergence rule: GDP per capita of each region against the European average.` | o nome acessível do desenho. Sem algarismos, de propósito: a escala está escrita no rótulo |
+| `porta.k` | `Encontrou um erro?` | `Found an error?` | **mudou**: era «Encontrou um erro» / «Found an error». A Emenda 17 escreve a porta como pergunta |
+| `prov.verLinha` | *(retirada)* | *(retirada)* | o texto oculto do selo passa a «fonte · <estudo>», e a palavra que o abre é a que o selo já escreve à vista. **É a cadeia mais rendida do sítio**: muda em 322 rotas |
+
+**As nove medidas novas do Procedimento e as cinco do Painel Social trazem nome e linha de unidade nas duas edições, e vivem em `src/data/figuras.mjs` e não em `strings.mjs`** — como as oito que já lá estavam, porque são conteúdo da medida e não moldura da casa. A revisão de voz tem de as ler na mesma:
+
+| linha | pt | en |
+|---|---|---|
+| `desempenho-das-exportacoes-2025` | Quota nas exportações | Share of exports |
+| `divida-das-empresas-2025` | Dívida das empresas | Corporate debt |
+| `divida-das-familias-2025` | Dívida das famílias | Household debt |
+| `fluxo-de-credito-as-empresas-2025` | Fluxo de crédito às empresas | Credit flow to corporations |
+| `fluxo-de-credito-as-familias-2025` | Fluxo de crédito às famílias | Credit flow to households |
+| `saldo-da-balanca-corrente-2025` | Saldo da balança corrente | Current account balance |
+| `taxa-de-actividade-2025` | Taxa de atividade | Activity rate |
+| `taxa-de-cambio-efectiva-real-2025` | Taxa de câmbio efetiva real | Real effective exchange rate |
+| `taxa-de-desemprego-mip-2025` | Taxa de desemprego | Unemployment rate |
+| `taxa-de-desemprego-2025` | Taxa de desemprego | Unemployment rate |
+| `desemprego-de-longa-duracao-2025` | Desemprego de longa duração | Long-term unemployment |
+| `jovens-nem-2025` | Jovens sem emprego, escola ou formação | Young people not in employment, education or training |
+| `risco-de-pobreza-ou-exclusao-2025` | Risco de pobreza ou exclusão social | At risk of poverty or social exclusion |
+| `racio-s80-s20-2025` | Desigualdade de rendimento | Income inequality |
+
+**Duas linhas com o mesmo nome, e é de propósito**: `taxa-de-desemprego-mip-2025` e `taxa-de-desemprego-2025` são a mesma medida em dois quadros — o Procedimento publica-lhe um limiar de 10%, o Painel Social não publica nenhum —, e são duas linhas distintas do livro-razão, de dois conjuntos de dados distintos do Eurostat (`tipsun20` e `une_rt_a`). A Emenda 16 manda mostrar «os dois painéis como as instituições os publicam», e as instituições publicam-na nos dois.
+
 ## Identidades aceites (PT = EN de propósito)
 Nomes próprios, códigos de série, identificadores de linha, «Eurostat», «INE», «DGAL», «IEFP», «CAOP», «UE-27», «O Estado do País». A régua da invariância imprime todas as chaves cujo valor é igual nas duas línguas; as que não estiverem nesta lista são erro.
 
@@ -154,5 +196,7 @@ Nomes próprios, códigos de série, identificadores de linha, «Eurostat», «I
   Portugal») já tomou, e a razão é que «municipality» e «concelho» não são a
   mesma unidade administrativa em todo o lado; e `inicio.cabeca.tituloVazioB` = «.»,
   que é pontuação e não uma palavra.
+
+- **Etapa 2l, três identidades novas e duas retiradas.** `node scripts/medir-invariancia.mjs --chaves` imprime **15** chaves com o mesmo valor nas duas edições, onde a 2j imprimia 14. Entram `inicio.cabeca.tituloPaisFim` = «.» (pontuação, como `tituloVazioB`), `inicio.portas.concelhos` = « concelhos» e `inicio.mapa.linha` = « concelhos · CAOP » — as duas pela mesma razão que `coberturaB` tinha, que é «concelho» ficar em português na edição inglesa, mais a sigla da Carta. Saem `inicio.mapa.coberturaB` e `inicio.mapa.total`, com as cadeias que a Emenda 15 retirou.
 
 - **`nav.menu` = «Menu» nas duas edições** (etapa 1e). Não é português copiado do inglês nem inglês copiado do português: «menu» entrou no português pelo francês e é a palavra corrente em Portugal para esta coisa exacta, tanto no papel como no ecrã, e nenhuma alternativa portuguesa («opções», «secções», «navegação») diz o que este comando faz sem dizer outra coisa. Escreve-se igual e lê-se igual; o que muda entre as duas edições é o nome acessível do comando, que junta a palavra visível à etiqueta da região («Menu · Navegação principal» / «Menu · Main navigation»), e essa metade é diferente. Se a revisão de voz preferir outra palavra em português, é uma cadeia.
