@@ -67,8 +67,12 @@
       var el = nos[i];
       var pt = {
         el: el,
-        x: parseFloat(el.getAttribute('x')) + parseFloat(el.getAttribute('width')) / 2,
-        y: parseFloat(el.getAttribute('y')) + parseFloat(el.getAttribute('height')) / 2,
+        /* O centro do ponto. Os 308 passaram de `<rect>` a `<circle>` com a
+           Emenda 10 — o ponto redondo marca um lugar, o quadrado marca prova —,
+           e um círculo diz o centro por `cx`/`cy` em vez de o esconder num canto
+           e numa largura. */
+        x: parseFloat(el.getAttribute('cx')),
+        y: parseFloat(el.getAttribute('cy')),
         nome: el.getAttribute('data-m'),
         distrito: el.getAttribute('data-d') || '',
         /* ISSUES I18: o servidor já decidiu, para cada um dos 308, se o campo
@@ -77,7 +81,12 @@
            página e nenhum prefixo. */
         ilha: el.getAttribute('data-ilha') === 'sim',
         slug: el.getAttribute('data-caop'),
-        comPagina: el.classList.contains('mun-com-pagina'),
+        /* A cobertura vinha da classe que a pintava. Com a Emenda 10 nenhum
+           ponto vem cheio, e uma classe que não pinta nada seria um nome a
+           mentir: o servidor declara-a num atributo de dados, e é ele que se lê.
+           O que isto governa não é desenho nenhum — é a porta «a página inteira,
+           com quem governou», que só existe onde há página. */
+        comPagina: el.getAttribute('data-pagina') === 'sim',
       };
       pontos.push(pt);
       porSlug[pt.slug] = pt;

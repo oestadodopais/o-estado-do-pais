@@ -88,22 +88,34 @@ const despejos = {};
 const conta = (nome, passa, prova) => celulas.push({ nome, passa: !!passa, prova: String(prova) });
 
 /** Uma página nova, com as opções do contexto que a célula pede. */
-async function pagina({ largura = 1280, js = true, tema = null, movimento = null } = {}) {
+async function pagina({
+  largura = 1280,
+  js = true,
+  movimento = null,
+  /* A preferência do SISTEMA. Desde a Emenda 12 (21.08.2026) ela não decide
+     nada: a folha é clara para toda a gente. Continua a poder emular-se, porque
+     é isso que uma das células novas tem de provar. */
+  sistema = 'light',
+  /* A ESCOLHA DO LEITOR, guardada no aparelho: `'dark'`, `'light'` ou nada. */
+  escolhaGuardada = null,
+} = {}) {
   const contexto = await navegador.newContext({
     viewport: { width: largura, height: 900 },
     javaScriptEnabled: js,
     reducedMotion: movimento === 'reduce' ? 'reduce' : 'no-preference',
-    colorScheme: tema === 'escuro' ? 'dark' : 'light',
+    colorScheme: sistema === 'dark' ? 'dark' : 'light',
   });
+  if (escolhaGuardada) {
+    await contexto.addInitScript((v) => {
+      try {
+        localStorage.setItem('tema', v);
+      } catch (e) {
+        /* um aparelho que recusa o armazenamento fica em claro, e a célula vê-o */
+      }
+    }, escolhaGuardada);
+  }
   const p = await contexto.newPage();
   p.__contexto = contexto;
-  if (tema) {
-    await contexto.addInitScript((t) => {
-      document.addEventListener('DOMContentLoaded', () =>
-        document.documentElement.setAttribute('data-theme', t === 'escuro' ? 'dark' : 'light'),
-      );
-    }, tema);
-  }
   return p;
 }
 
@@ -289,7 +301,10 @@ const estadoDaPagina = (p) =>
 
 /* ---------------------------------------------------- 4. larguras, temas, movimento */
 {
-  for (const largura of [320, 390, 768, 1280]) {
+  /* 1024 entrou na varredura a 21.08.2026, por instrução da leitura da
+     pré-visualização n.º 1 — e foi a largura nova que apanhou um defeito de
+     82px (90px na edição inglesa) que nenhuma das outras quatro via. */
+  for (const largura of [320, 390, 768, 1024, 1280]) {
     const p = await pagina({ largura });
     await p.goto(`${base}/`, { waitUntil: 'networkidle' });
     const e = await estadoDaPagina(p);
@@ -300,8 +315,14 @@ const estadoDaPagina = (p) =>
     }
     await p.__contexto.close();
   }
+  /* OS DOIS TEMAS, PELO CAMINHO QUE A EMENDA 12 DEIXOU.
+     O escuro deixou de vir da preferência do sistema: vem do controlo do
+     cabeçalho, e a escolha fica no aparelho do leitor. A célula escreve a
+     escolha em `localStorage` antes de a página correr — que é o estado de quem
+     carregou no botão numa visita anterior — e deixa a guarda do `<head>`
+     aplicá-la. Pôr o atributo à mão mediria a folha; assim mede-se o caminho. */
   for (const tema of ['claro', 'escuro']) {
-    const p = await pagina({ tema });
+    const p = await pagina({ escolhaGuardada: tema === 'escuro' ? 'dark' : 'light' });
     await p.goto(`${base}/`, { waitUntil: 'networkidle' });
     const cores = await p.evaluate(() => {
       const c = getComputedStyle(document.body);
@@ -837,7 +858,7 @@ for (const largura of [1280, 390]) {
   const linhas = [];
   let piores = 0;
   for (const [nome, q] of ESTADOS_DE_TRANSBORDO) {
-    for (const largura of [320, 390, 768, 1280]) {
+    for (const largura of [320, 390, 768, 1024, 1280]) {
       const p = await pagina({ largura });
       await p.goto(base + q, { waitUntil: 'networkidle' });
       const m = await p.evaluate(() => {
@@ -861,7 +882,7 @@ for (const largura of [1280, 390]) {
     }
   }
   conta(
-    'ISSUES I20 · seis estados × quatro larguras sem transbordo, e o rótulo dentro da régua',
+    'ISSUES I20 · seis estados × cinco larguras sem transbordo, e o rótulo dentro da régua',
     piores === 0,
     `${linhas.length - piores} de ${linhas.length} a zero · ${linhas.join(' · ')}`,
   );
@@ -973,43 +994,68 @@ for (const largura of [1280, 390]) {
   await p.__contexto.close();
 }
 
-/* (2i·3a) Os 308 pontos do mapa têm o mesmo tamanho: a cobertura é o enchimento. */
+/* (2i·3a, revista pela Emenda 10) OS 308 PONTOS SÃO CÍRCULOS, DO MESMO TAMANHO,
+ * E NENHUM VEM CHEIO.
+ *
+ * Três coisas numa célula, porque são a mesma regra: o glifo do mapa é o ponto
+ * redondo (o quadrado ficou a marcar prova e estado), o raio é um só para os
+ * 308, e o enchimento saiu — a cobertura diz-se por palavras ao lado do mapa.
+ * A célula lê o `fill` CALCULADO e não a classe: uma classe que já não pinta
+ * nada não prova nada. */
 {
   const p = await pagina();
   await p.goto(`${base}/`, { waitUntil: 'networkidle' });
   const m = await p.evaluate(() => {
     const pontos = [...document.querySelectorAll('[data-pontos] .mun')];
-    const lados = new Set(
-      pontos.map((x) => `${x.getAttribute('width')}×${x.getAttribute('height')}`),
-    );
-    const cheios = pontos.filter((x) => x.classList.contains('mun-com-pagina'));
-    return { n: pontos.length, lados: [...lados], cheios: cheios.length };
+    const etiquetas = new Set(pontos.map((x) => x.tagName.toLowerCase()));
+    const raios = new Set(pontos.map((x) => x.getAttribute('r')));
+    const enchimentos = new Set(pontos.map((x) => getComputedStyle(x).fill));
+    const comPagina = pontos.filter((x) => x.getAttribute('data-pagina') === 'sim');
+    return {
+      n: pontos.length,
+      etiquetas: [...etiquetas],
+      raios: [...raios],
+      enchimentos: [...enchimentos],
+      comPagina: comPagina.length,
+    };
   });
   conta(
-    '2i·3a · os 308 pontos do mapa têm o mesmo tamanho (Emenda 3)',
-    m.n === 308 && m.lados.length === 1 && m.cheios === 1,
-    `${m.n} pontos · ${m.lados.length} tamanho(s): ${m.lados.join(', ')} · ${m.cheios} com página`,
+    '2j·a · os 308 pontos são círculos iguais e nenhum vem cheio (Emendas 3 e 10)',
+    m.n === 308 &&
+      m.etiquetas.length === 1 &&
+      m.etiquetas[0] === 'circle' &&
+      m.raios.length === 1 &&
+      m.enchimentos.length === 1 &&
+      m.enchimentos[0] === 'none' &&
+      m.comPagina === 1,
+    `${m.n} <${m.etiquetas.join('/')}> · 1 raio: ${m.raios.join(', ')} · enchimento ${m.enchimentos.join(', ')} · ${m.comPagina} declarado com página`,
   );
   await p.__contexto.close();
 }
 
-/* (2i·3b) O CONCELHO ESCOLHIDO É UM ANEL, E NUNCA UM ENCHIMENTO.
+/* (2i·3b, revista pela Emenda 10) O CONCELHO ESCOLHIDO É UM ANEL, E NUNCA UM
+ * ENCHIMENTO — E AGORA NENHUM PONTO É UM ENCHIMENTO.
  *
- * A medida não converte cores: compara o enchimento do ponto ESCOLHIDO com o de
- * outro ponto sem página do mesmo documento, que é o papel por definição. Se os
- * dois forem iguais, o escolhido não está cheio; se o escolhido for igual ao de
- * Évora, está a dizer que tem página. */
+ * A medida continua a não converter cores: compara o ponto ESCOLHIDO com outro
+ * ponto qualquer do mesmo documento e com o de Évora, que é o único que a página
+ * declara com página. Os três têm de ter o mesmo enchimento — nenhum — e o mesmo
+ * raio; o que distingue o escolhido é a espessura do contorno, que é o anel. */
 {
   const leituraDoPonto = (p, slug) =>
     p.evaluate((s) => {
       const escolhido = document.querySelector(`[data-pontos] [data-caop="${s}"]`);
       const outroSemPagina = [...document.querySelectorAll('[data-pontos] .mun')].find(
-        (x) => x !== escolhido && !x.classList.contains('mun-com-pagina'),
+        (x) => x !== escolhido && x.getAttribute('data-pagina') !== 'sim',
       );
-      const comPagina = document.querySelector('[data-pontos] .mun-com-pagina');
+      const comPagina = document.querySelector('[data-pontos] [data-pagina="sim"]');
       const est = (el) => {
         const cs = getComputedStyle(el);
-        return { fill: cs.fill, stroke: cs.stroke, largura: parseFloat(cs.strokeWidth) };
+        return {
+          fill: cs.fill,
+          stroke: cs.stroke,
+          largura: parseFloat(cs.strokeWidth),
+          raio: el.getAttribute('r'),
+        };
       };
       return {
         temClasse: escolhido.classList.contains('mun-escolhido'),
@@ -1031,26 +1077,29 @@ for (const largura of [1280, 390]) {
     const r = await leituraDoPonto(p, 'beja');
     const ok =
       r.temClasse &&
-      r.escolhido.fill === r.papel.fill &&
-      r.escolhido.fill !== r.tinta.fill &&
+      r.escolhido.fill === 'none' &&
+      r.papel.fill === 'none' &&
+      r.tinta.fill === 'none' &&
+      r.escolhido.raio === r.papel.raio &&
       r.escolhido.largura > r.papel.largura;
     if (!ok) bem = false;
     linhas.push(
-      `${nome}: enchimento ${r.escolhido.fill} = papel ${r.papel.fill} · ≠ tinta ${r.tinta.fill} · anel ${r.escolhido.largura} contra ${r.papel.largura}`,
+      `${nome}: enchimento ${r.escolhido.fill} (todos ${r.papel.fill}/${r.tinta.fill}) · raio ${r.escolhido.raio} = ${r.papel.raio} · anel ${r.escolhido.largura} contra ${r.papel.largura}`,
     );
     await p.__contexto.close();
   }
-  /* E o contrário: Évora escolhida continua cheia, porque TEM página. */
+  /* E Évora, que é o único concelho com página: escolhida ou não, o ponto é o
+     mesmo dos outros 307. O enchimento deixou de dizer cobertura (Emenda 10). */
   const pe = await pagina();
   await pe.goto(`${base}/?ambito=municipio:evora`, { waitUntil: 'networkidle' });
   const ev = await leituraDoPonto(pe, 'evora');
-  const evoraOk = ev.temClasse && ev.escolhido.fill === ev.tinta.fill;
+  const evoraOk = ev.temClasse && ev.escolhido.fill === 'none' && ev.papel.fill === 'none';
   if (!evoraOk) bem = false;
-  linhas.push(`Évora escolhida: enchimento ${ev.escolhido.fill} = tinta ${ev.tinta.fill}`);
+  linhas.push(`Évora escolhida: enchimento ${ev.escolhido.fill}, como os outros 307`);
   await pe.__contexto.close();
 
   conta(
-    '2i·3b · o ponto escolhido é um anel de tinta, e nunca um enchimento',
+    '2j·a · o ponto escolhido é um anel, e nenhum ponto é um enchimento',
     bem,
     linhas.join(' · '),
   );
@@ -1187,6 +1236,335 @@ for (const largura of [1280, 390]) {
     `${r.n} réguas · ${r.escondidas} com aria-hidden · ${r.papelSemNome} com role="img" sem nome · ${r.focaveisDentro} com conteúdo focável dentro`,
   );
   await p.__contexto.close();
+}
+
+/* =============================================================== ETAPA 2j
+ *
+ * As células da leitura da pré-visualização n.º 1 pela direção: Emendas 10 a 14
+ * e as quatro decisões de forma. Cada uma mede o que a emenda decide, e não o
+ * que a folha escreve.
+ * ====================================================================== */
+
+/* (2j) EMENDA 12 · CLARO POR DEFEITO PARA TODOS, com o sistema em escuro e sem
+ * escolha guardada. É a metade da emenda que a folha sozinha não prova: o bloco
+ * da preferência do sistema saiu de `tokens.css`, e o que esta célula mede é que
+ * um leitor com o sistema em escuro vê a página clara. */
+{
+  const linhas = [];
+  let bem = true;
+  for (const [edicao, rota] of [
+    ['pt', '/'],
+    ['en', '/en'],
+  ]) {
+    const p = await pagina({ sistema: 'dark' });
+    await p.goto(base + rota, { waitUntil: 'networkidle' });
+    const e = await p.evaluate(() => ({
+      atributo: document.documentElement.getAttribute('data-theme'),
+      papel: getComputedStyle(document.body).backgroundColor,
+      guardado: (() => {
+        try {
+          return localStorage.getItem('tema');
+        } catch (x) {
+          return 'erro';
+        }
+      })(),
+      controlo: !!document.querySelector('[data-tema-controlo]:not([hidden])'),
+      premido: [...document.querySelectorAll('.tema-b')]
+        .map((b) => `${b.getAttribute('data-tema')}:${b.getAttribute('aria-pressed')}`)
+        .join(' '),
+    }));
+    const ok =
+      e.atributo === null && e.guardado === null && e.controlo && e.premido === 'light:true dark:false';
+    if (!ok) bem = false;
+    linhas.push(`${edicao}: data-theme ${e.atributo} · papel ${e.papel} · guardado ${e.guardado} · ${e.premido}`);
+    await p.__contexto.close();
+  }
+  conta(
+    '2j · Emenda 12 · claro por defeito, com o sistema em escuro e sem escolha',
+    bem,
+    linhas.join(' · '),
+  );
+}
+
+/* (2j) EMENDA 12 · A ESCOLHA FICA NO APARELHO E SOBREVIVE À RECARGA.
+ * Carrega no botão a sério — não escreve o atributo —, recarrega, e vai a outra
+ * rota do sítio, porque uma preferência de leitura que só valesse numa página
+ * não era uma preferência. Nas duas edições. */
+{
+  const linhas = [];
+  let bem = true;
+  for (const [edicao, rota, outra] of [
+    ['pt', '/', '/metodo'],
+    ['en', '/en', '/en/method'],
+  ]) {
+    const p = await pagina();
+    await p.goto(base + rota, { waitUntil: 'networkidle' });
+    await p.click('.tema-b[data-tema="dark"]');
+    const depois = await p.evaluate(() => ({
+      atributo: document.documentElement.getAttribute('data-theme'),
+      papel: getComputedStyle(document.body).backgroundColor,
+      guardado: localStorage.getItem('tema'),
+      premido: [...document.querySelectorAll('.tema-b')]
+        .map((b) => `${b.getAttribute('data-tema')}:${b.getAttribute('aria-pressed')}`)
+        .join(' '),
+    }));
+    await p.reload({ waitUntil: 'networkidle' });
+    const recarga = await p.evaluate(() => ({
+      atributo: document.documentElement.getAttribute('data-theme'),
+      papel: getComputedStyle(document.body).backgroundColor,
+      premido: [...document.querySelectorAll('.tema-b')]
+        .map((b) => `${b.getAttribute('data-tema')}:${b.getAttribute('aria-pressed')}`)
+        .join(' '),
+    }));
+    await p.goto(base + outra, { waitUntil: 'networkidle' });
+    const noutraRota = await p.evaluate(() => ({
+      atributo: document.documentElement.getAttribute('data-theme'),
+      papel: getComputedStyle(document.body).backgroundColor,
+    }));
+    await p.click('.tema-b[data-tema="light"]');
+    const volta = await p.evaluate(() => ({
+      atributo: document.documentElement.getAttribute('data-theme'),
+      papel: getComputedStyle(document.body).backgroundColor,
+      guardado: localStorage.getItem('tema'),
+    }));
+    const escuro = depois.papel;
+    const ok =
+      depois.atributo === 'dark' &&
+      depois.guardado === 'dark' &&
+      depois.premido === 'light:false dark:true' &&
+      recarga.atributo === 'dark' &&
+      recarga.papel === escuro &&
+      recarga.premido === 'light:false dark:true' &&
+      noutraRota.atributo === 'dark' &&
+      noutraRota.papel === escuro &&
+      volta.atributo === null &&
+      volta.guardado === 'light' &&
+      volta.papel !== escuro;
+    if (!ok) bem = false;
+    linhas.push(
+      `${edicao}: carregou ${depois.papel} (${depois.guardado}) · recarga ${recarga.papel} · ${outra} ${noutraRota.papel} · voltou a claro ${volta.papel} (${volta.guardado})`,
+    );
+    await p.__contexto.close();
+  }
+  conta('2j · Emenda 12 · a escolha do tema persiste, nas duas edições', bem, linhas.join(' · '));
+}
+
+/* (2j) EMENDA 12 · SEM JAVASCRIPT o sítio é claro e o controlo não aparece.
+ * Um comando que não comanda nada é uma promessa falhada: entra `hidden` do
+ * servidor, e é o script que o acende. */
+{
+  const p = await pagina({ js: false, sistema: 'dark' });
+  await p.goto(`${base}/`, { waitUntil: 'networkidle' });
+  const m = await p.evaluate(() => {
+    const g = document.querySelector('[data-tema-controlo]');
+    return {
+      existe: !!g,
+      escondido: g ? g.hasAttribute('hidden') : null,
+      caixa: g ? g.getBoundingClientRect().height : null,
+      atributo: document.documentElement.getAttribute('data-theme'),
+    };
+  });
+  conta(
+    '2j · Emenda 12 · sem JavaScript o controlo do tema não se vê, e a página é clara',
+    m.existe && m.escondido === true && m.caixa === 0 && m.atributo === null,
+    `existe ${m.existe} · hidden ${m.escondido} · altura ${m.caixa} · data-theme ${m.atributo}`,
+  );
+  await p.__contexto.close();
+}
+
+/* (2j) EMENDA 13 · A FILA DE ESTADOS SAIU DA CABEÇA, em todos os âmbitos, e as
+ * contagens ficaram onde a emenda as manda estar: no rótulo e na manchete, por
+ * chave da prova. E cada peça continua com o seu marcador e a sua palavra. */
+{
+  const p = await pagina();
+  await p.goto(`${base}/`, { waitUntil: 'networkidle' });
+  const m = await p.evaluate(() => {
+    const filas = document.querySelectorAll('.fila, [class*="fila-"]');
+    const raiz = document.querySelector('[data-inicio]');
+    const provas = [...document.querySelectorAll('[data-cabeca] [data-prova]')].map((e) =>
+      e.getAttribute('data-prova'),
+    );
+    const painel = document.querySelector('[data-painel="pais"]');
+    const marcadores = painel.querySelectorAll('.peca-topo .sq').length;
+    const palavras = [...painel.querySelectorAll('.peca-limiar')].filter(
+      (e) => e.textContent.trim().length > 0,
+    ).length;
+    return { filas: filas.length, provas: [...new Set(provas)], marcadores, palavras, temRaiz: !!raiz };
+  });
+  conta(
+    '2j · Emenda 13 · a fila de estados saiu da cabeça, e as contagens ficaram',
+    m.filas === 0 && m.provas.includes('painel_total') && m.provas.includes('painel_fora_do_limiar') &&
+      m.marcadores === 8 && m.palavras === 8,
+    `${m.filas} filas · chaves da prova na cabeça: ${m.provas.join(', ')} · ${m.marcadores} marcadores e ${m.palavras} palavras nas peças`,
+  );
+  await p.__contexto.close();
+}
+
+/* (2j) AS PEÇAS SEM CAIXAS, SEPARADAS POR FIOS.
+ * O que se mede não é a aparência: é que nenhuma peça tem moldura (`border-width`
+ * a zero nos quatro lados) e que o intervalo da grelha é de 1px, que é o fio. */
+{
+  const p = await pagina();
+  await p.goto(`${base}/`, { waitUntil: 'networkidle' });
+  const m = await p.evaluate(() => {
+    const painel = document.querySelector('[data-painel="pais"]');
+    const cs = getComputedStyle(painel);
+    const pecas = [...painel.querySelectorAll('.peca')];
+    const molduras = pecas.filter((e) => {
+      const c = getComputedStyle(e);
+      return [c.borderTopWidth, c.borderRightWidth, c.borderBottomWidth, c.borderLeftWidth].some(
+        (v) => parseFloat(v) > 0,
+      );
+    });
+    return {
+      pecas: pecas.length,
+      comMoldura: molduras.length,
+      intervaloCol: cs.columnGap,
+      intervaloLin: cs.rowGap,
+      sombra: pecas[0] ? getComputedStyle(pecas[0]).boxShadow : null,
+    };
+  });
+  conta(
+    '2j · as peças sem caixas, separadas por fios de 1px',
+    m.pecas === 8 && m.comMoldura === 0 && m.intervaloCol === '1px' && m.intervaloLin === '1px' &&
+      /1px/.test(m.sombra ?? ''),
+    `${m.pecas} peças · ${m.comMoldura} com moldura · intervalo ${m.intervaloCol}/${m.intervaloLin} · fio «${m.sombra}»`,
+  );
+  await p.__contexto.close();
+}
+
+/* (2j) OS ALGARISMOS DA PEÇA NÃO PASSAM DE 56px, E NÃO SALTAM.
+ * Cinco larguras, e em cada uma o maior corpo de valor do painel. O tecto é 56;
+ * entre 320 e 1280 a série tem de ser crescente, que é o que prova que a escala
+ * é fluida e não três patamares. */
+{
+  const serie = [];
+  let bem = true;
+  for (const largura of [320, 390, 768, 1024, 1280]) {
+    const p = await pagina({ largura });
+    await p.goto(`${base}/`, { waitUntil: 'networkidle' });
+    const m = await p.evaluate(() => {
+      const corpos = [...document.querySelectorAll('[data-painel="pais"] .peca-valor')].map((e) =>
+        parseFloat(getComputedStyle(e).fontSize),
+      );
+      return { maior: Math.max(...corpos), menor: Math.min(...corpos), n: corpos.length };
+    });
+    if (m.maior > 56.01) bem = false;
+    serie.push({ largura, ...m });
+    await p.__contexto.close();
+  }
+  for (let i = 1; i < serie.length; i++) if (serie[i].maior < serie[i - 1].maior) bem = false;
+  conta(
+    '2j · os algarismos da peça têm tecto de 56px e crescem sem saltos',
+    bem,
+    serie.map((x) => `${x.largura}: ${x.maior.toFixed(1)}px (menor ${x.menor.toFixed(1)})`).join(' · '),
+  );
+}
+
+/* (2j) EMENDA 14 · UM CONCELHO SEM PÁGINA RENDE AS OITO MEDIDAS COMO PEÇAS
+ * VAZIAS. Oito peças, cada uma com o nome e a unidade, as palavras «sem linha
+ * ainda», e NENHUM algarismo, NENHUM selo e NENHUM marcador — que é o que a
+ * emenda pede e o que o portão não pode conferir sozinho, porque um algarismo
+ * numa peça vazia seria um algarismo legítimo em qualquer outro sítio. Nas duas
+ * edições. */
+{
+  const linhas = [];
+  let bem = true;
+  for (const [edicao, rota, palavra] of [
+    ['pt', '/?ambito=municipio:beja', 'sem linha ainda'],
+    ['en', '/en?ambito=municipio:beja', 'no row yet'],
+  ]) {
+    const p = await pagina();
+    await p.goto(base + rota, { waitUntil: 'networkidle' });
+    const m = await p.evaluate(() => {
+      const painel = document.querySelector('[data-painel="vazio"]');
+      const vazias = [...painel.querySelectorAll('.peca-vazia')];
+      const texto = vazias.map((e) => e.textContent.replace(/\s+/g, ' ').trim());
+      return {
+        visivel: !painel.hasAttribute('hidden'),
+        n: vazias.length,
+        algarismos: texto.filter((t) => /[0-9]/.test(t)).length,
+        selos: painel.querySelectorAll('a.src-chip').length,
+        marcadores: painel.querySelectorAll('.sq').length,
+        valores: painel.querySelectorAll('[data-claim]').length,
+        palavras: [...new Set(vazias.map((e) => e.querySelector('[data-cobertura]')?.textContent.trim()))],
+        nomes: vazias.map((e) => e.querySelector('.peca-nome')?.textContent.trim()).filter(Boolean).length,
+        unidades: vazias.map((e) => e.querySelector('.peca-unidade')?.textContent.trim()).filter(Boolean).length,
+        fraseAcima: !!painel.querySelector('.vazio-texto'),
+        ordem:
+          painel.firstElementChild && painel.firstElementChild.classList.contains('vazio-texto'),
+      };
+    });
+    const ok =
+      m.visivel &&
+      m.n === 8 &&
+      m.algarismos === 0 &&
+      m.selos === 0 &&
+      m.marcadores === 0 &&
+      m.valores === 0 &&
+      m.nomes === 8 &&
+      m.unidades === 8 &&
+      m.palavras.length === 1 &&
+      m.palavras[0] === palavra &&
+      m.fraseAcima &&
+      m.ordem;
+    if (!ok) bem = false;
+    linhas.push(
+      `${edicao}: ${m.n} peças vazias · ${m.algarismos} com algarismo · ${m.selos} selos · ${m.marcadores} marcadores · ${m.nomes} nomes · ${m.unidades} unidades · «${m.palavras.join('|')}» · frase por cima ${m.ordem}`,
+    );
+    await p.__contexto.close();
+  }
+  conta('2j · Emenda 14 · Beja rende as oito medidas como peças vazias', bem, linhas.join(' · '));
+}
+
+/* (2j) O INSTRUMENTO N.º 1 É MAIS PEQUENO, E OS RÓTULOS NÃO SE TOCAM.
+ * Cinco larguras. Mede-se a altura da caixa da régua e o corpo do valor do
+ * relance (tecto 56px), e conta-se qualquer par de caixas de rótulo do SVG que
+ * se cruze — que é a medição que a subetapa 2g fez a 320 e a 390 e que agora se
+ * faz também a 768, 1024 e 1280. */
+{
+  const serie = [];
+  let bem = true;
+  for (const largura of [320, 390, 768, 1024, 1280]) {
+    const p = await pagina({ largura });
+    await p.goto(`${base}/`, { waitUntil: 'networkidle' });
+    /* Abaixo de 640 o instrumento está atrás de uma porta de palavras (2g,
+       ponto 4). Uma medição feita com a porta fechada não mede nada: o SVG não
+       tem caixa, e a célula diria «0 pares» sem ter olhado para um único
+       rótulo. Abre-se a porta, que é o que o leitor faz. */
+    const porta = await p.$('[data-conv-porta]');
+    if (porta && (await porta.isVisible())) await porta.evaluate((d) => (d.open = true));
+    const m = await p.evaluate(() => {
+      const svg = document.querySelector('.rule-svg');
+      const glance = document.querySelector('.glance-num');
+      const rotulos = [...svg.querySelectorAll('text')].filter((e) => e.getClientRects().length);
+      let pares = 0;
+      for (let i = 0; i < rotulos.length; i++) {
+        for (let j = i + 1; j < rotulos.length; j++) {
+          const a = rotulos[i].getBoundingClientRect();
+          const b = rotulos[j].getBoundingClientRect();
+          if (a.right > b.left && b.right > a.left && a.bottom > b.top && b.bottom > a.top) pares++;
+        }
+      }
+      return {
+        altura: +svg.getBoundingClientRect().height.toFixed(1),
+        largura: +svg.getBoundingClientRect().width.toFixed(1),
+        relance: +parseFloat(getComputedStyle(glance).fontSize).toFixed(1),
+        rotulos: rotulos.length,
+        pares,
+      };
+    });
+    if (m.pares > 0 || m.relance > 56.01) bem = false;
+    serie.push({ w: largura, ...m });
+    await p.__contexto.close();
+  }
+  conta(
+    '2j · o Instrumento n.º 1 encolheu, e nenhum par de rótulos se cruza',
+    bem,
+    serie
+      .map((x) => `${x.w}: régua ${x.largura}×${x.altura}px · relance ${x.relance}px · ${x.rotulos} rótulos, ${x.pares} pares`)
+      .join(' · '),
+  );
 }
 
 /* --------------------------------------------------------------------- relatório */

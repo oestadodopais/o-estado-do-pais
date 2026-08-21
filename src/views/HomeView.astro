@@ -102,25 +102,6 @@ const leitura = (r) => ({
 const regioesDaBanda = REGIOES.map(leitura);
 const regioesDeAmbito = REGIOES_DE_AMBITO.map(leitura);
 
-/* ------------------------------------------------------------ Évora, na cabeça */
-/* O estado das oito medidas do concelho: o índice de dívida contra o tecto legal
-   (um limiar formal publicado, e por isso colore), e a posição face a uma média
-   (que não colore, Emenda 1). O resto não tem referência publicada. */
-const estadosDeEvora = evora
-  ? evora.pagina.relance.map((m) => {
-      if (!m.claim) return null;
-      if (m.claim === 'evora-indice-de-divida-2024') {
-        const r = estadoDaRegua(getClaim(m.claim), {
-          valor: getClaim('indice-de-divida-limite-legal').value,
-          lado: 'superior',
-          colore: true,
-        });
-        return r.colore ? r.estado : 'sem';
-      }
-      return 'sem';
-    })
-  : [];
-
 /* O tecto legal do índice de dívida é uma linha do livro-razão, e é contra ela
    que a peça de Évora colore: a lei publica o limite, e um limite publicado é um
    limiar formal (Emenda 1). Tudo o resto do concelho fica a tinta. */
@@ -153,14 +134,19 @@ const pecasDeEvora = evora
       })
   : [];
 
+/* OS BLOCOS DA CABEÇA JÁ NÃO LEVAM ESTADOS (Emenda 13, 21.08.2026).
+   Cada bloco trazia a lista dos estados das medidas do seu âmbito, e era ela que
+   a fila de quadrados desenhava. A fila saiu da cabeça: o estado de uma medida
+   diz-se na peça dessa medida, ao lado do valor a que se refere. Com a fila, o
+   campo; sem a fila, nada o lê, e um campo que ninguém lê é um cálculo a fingir
+   que ainda serve. */
 const blocos = [
-  { chave: 'pais', tipo: 'pais', estados: medidas.map((m) => m.estado) },
+  { chave: 'pais', tipo: 'pais' },
   ...regioesDeAmbito.map((r) => ({
     chave: chaveDaRegiao(r.slug),
     tipo: 'regiao',
     nome: r.nome,
     frase: r.frase,
-    estados: ['sem'],
   })),
   ...(evora
     ? [
@@ -169,7 +155,6 @@ const blocos = [
           tipo: 'evora',
           nome: evora.pagina.nome[lang] ?? evora.pagina.nome.pt,
           distrito: evora.pagina.distrito[lang] ?? evora.pagina.distrito.pt,
-          estados: estadosDeEvora,
         },
       ]
     : []),
@@ -183,9 +168,27 @@ const blocos = [
        concelho com que a página é construída; o script troca o `hidden` do
        prefixo quando o leitor escolhe outro. */
     ilha: primeiroSemPagina?.ilha ?? false,
-    estados: [],
   },
 ];
+
+/* ---------------------------------------------- as oito medidas, sem linha
+ *
+ * A DISPOSIÇÃO-PADRÃO MUNICIPAL PARA UM CONCELHO SEM PÁGINA (Emenda 14).
+ * As mesmas oito medidas da página de concelho, pela mesma ordem, cada uma como
+ * uma peça vazia: o nome, a unidade declarada e as palavras «sem linha ainda».
+ * Sem valor, sem selo, sem marcador, e sem um único algarismo.
+ *
+ * A lista é a de `municipios.mjs`, e é a mesma que Évora rende — não uma segunda
+ * lista escrita à mão, que divergiria da primeira no dia em que uma medida
+ * entrasse ou saísse. O que a página diz de um concelho sem página é, medida a
+ * medida, o que ela dirá dele quando houver linhas.
+ */
+const medidasSemLinha = evora
+  ? evora.pagina.relance.map((m) => ({
+      nome: m.nome[lang] ?? m.nome.pt,
+      unidade: m.unidade[lang] ?? m.unidade.pt,
+    }))
+  : [];
 ---
 
 <Base
@@ -354,8 +357,19 @@ const blocos = [
       )
     }
 
-    <div data-painel="vazio" hidden>
-      <EstadoVazio s={s} lang={lang} nome={primeiroSemPagina?.nome ?? ''} />
+    {/* ------------------------------------------------------------------
+        UM CONCELHO SEM PÁGINA RENDE A DISPOSIÇÃO-PADRÃO (Emenda 14)
+        ------------------------------------------------------------------
+        Era uma caixa de estado vazio. Passa a ser a frase que explica o estado,
+        de largura inteira, e por baixo dela as oito medidas do concelho como
+        peças vazias — a mesma grelha, as mesmas células, os mesmos fios. É o que
+        a `IDENTIDADE.md` §7 pede a uma página por escrever: declarar o que lhe
+        falta em vez de fingir corpo. O que falta são oito medidas, e vêem-se as
+        oito.
+        ------------------------------------------------------------------ */}
+    <div class="painel" data-painel="vazio" hidden>
+      <EstadoVazio s={s} nome={primeiroSemPagina?.nome ?? ''} />
+      {medidasSemLinha.map((m) => <Peca s={s} vazio={true} nome={m.nome} unidade={m.unidade} />)}
     </div>
 
     {/* A âncora `#numeros` é a porta do sinal de tempo do cabeçalho e da chave

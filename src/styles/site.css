@@ -935,10 +935,15 @@ a.src-chip.is-unverified:hover::before {
   flex-wrap: wrap;
   padding: clamp(16px, 2vw, 22px) 0 clamp(18px, 2.2vw, 24px);
 }
+/* O VALOR DO RELANCE TEM O MESMO TECTO QUE OS DA PEÇA: 56px (direção,
+   21.08.2026). Era `clamp(56px, 9vw, 88px)`, ou seja o tecto de uma peça era o
+   CHÃO deste, e a 1280 o instrumento abria com o maior algarismo da página. A
+   rampa é a mesma da peça curta — 38px a 320, 56px a 1280 —, para que o sítio
+   tenha uma escala de algarismos e não duas. */
 .glance-num {
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;
-  font-size: clamp(56px, 9vw, 88px);
+  font-size: clamp(38px, 32px + 1.875vw, 56px);
   font-weight: 600;
   line-height: 0.86;
   letter-spacing: -0.045em;
@@ -951,7 +956,7 @@ a.src-chip.is-unverified:hover::before {
   padding-bottom: 5px;
 }
 .glance-name {
-  font-size: 17px;
+  font-size: clamp(15px, 14.3px + 0.21vw, 17px);
   font-weight: 600;
   letter-spacing: -0.01em;
 }

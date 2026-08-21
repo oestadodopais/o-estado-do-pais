@@ -255,23 +255,14 @@
   max-width: 42em;
 }
 
-/* ------------------------------------------------------------ fila de estados */
+/* ------------------------------------------- o marcador de estado, na peça
 
-.fila {
-  display: flex;
-  gap: 26px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.fila-grupo {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.fila-quadrados {
-  display: inline-flex;
-  gap: 4px;
-}
+   A fila de estados da cabeça saiu com a Emenda 13 (21.08.2026), e as suas
+   quatro regras (`.fila`, `.fila-grupo`, `.fila-quadrados`, `.fila-palavra`)
+   saíram com ela. O QUADRADO FICA, porque ele continua a ser o glifo do estado
+   ao pé de um valor (Emenda 10) e é isso que a peça desenha; o que saiu foi o
+   friso que os alinhava longe do número a que se referem. */
+
 .sq {
   width: 15px;
   height: 15px;
@@ -291,12 +282,6 @@
 .sq-sem {
   background: transparent;
   border: 1px solid var(--ink);
-}
-.fila-palavra {
-  font-family: var(--f-instr);
-  font-variant-numeric: tabular-nums lining-nums;
-  font-size: 12px;
-  letter-spacing: 0.03em;
 }
 .est-fora {
   color: var(--ochre);
@@ -337,14 +322,15 @@
   font-size: 13px;
   fill: var(--muted);
 }
-/* Os 308 pontos são iguais (Emenda 3). A única distinção é a cobertura. */
+/* Os 308 pontos são iguais (Emenda 3) e nenhum vem cheio (Emenda 10). O glifo é
+   um círculo, porque o ponto redondo marca um lugar e o quadrado ficou a marcar
+   prova e estado; o enchimento saiu com a cobertura, que passou a dizer-se por
+   palavras ao lado do mapa e na lista. A única coisa que este desenho distingue
+   é o concelho escolhido, e distingue-a com um anel (mais abaixo). */
 .mun {
-  fill: var(--paper);
+  fill: none;
   stroke: var(--ink);
   stroke-width: 1.2;
-}
-.mun-com-pagina {
-  fill: var(--ink);
 }
 .mun-alvo {
   fill: transparent;
@@ -594,11 +580,40 @@ svg [hidden] {
 
 /* ------------------------------------------------------------------ estreito */
 
-@media (max-width: 900px) {
+/* A CABEÇA SÓ FICA EM DUAS COLUNAS ONDE AS DUAS COLUNAS CABEM (medido a 1024,
+ * 21.08.2026).
+ *
+ * A leitura da pré-visualização n.º 1 mandou medir também a 1024, e foi essa
+ * largura que apanhou o defeito: a página transbordava 82px, nos quatro estados
+ * que desenham o mapa inteiro, e nas duas edições. A conta é fechada e não é
+ * uma opinião:
+ *
+ *     conteúdo a 1024  =  1024 − 2 × 41 de goteira      =  942px
+ *     cabeça 2 colunas =  582 + 20 + (281 + 18 + ficha)
+ *     logo a ficha do mapa fica com                        41px
+ *
+ * e a ficha não desce dos 163,6px que a linha «Contagem verificada nos
+ * ficheiros» mede. O que transbordava não era o mapa: era a ficha ao lado dele,
+ * espremida numa coluna de 41px. Medido em Chromium sem cabeça, estado a estado
+ * e largura a largura, na construção anterior e nesta.
+ *
+ * O ponto onde as duas colunas passam a caber é 1180, que é também a largura
+ * máxima da mancha: daí para cima a ficha tem 191px e a grelha 1092px, que é o
+ * que ela já tinha a 1280. Abaixo disso a cabeça é uma coluna só e o mapa fica
+ * com a largura inteira, que é o desenho que a etapa 2b já tinha para o estreito.
+ *
+ * A regra do MAPA fica onde estava, aos 900: entre 900 e 1180 a cabeça é uma
+ * coluna e o mapa inteiro tem 942px de largura disponível para se desenhar ao
+ * lado da sua ficha; encolhê-lo para 170px aí seria resolver um problema que já
+ * não existe. */
+@media (max-width: 1179.98px) {
   .cabeca-grelha {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 22px;
   }
+}
+
+@media (max-width: 900px) {
   .mapa {
     grid-template-columns: 170px minmax(0, 1fr);
   }
@@ -636,10 +651,32 @@ svg [hidden] {
  * O PAINEL, PEÇA A PEÇA
  * ========================================================================= */
 
+/* -----------------------------------------------------------------------------
+ * AS PEÇAS SEM CAIXAS, SEPARADAS POR FIOS (direção, 21.08.2026)
+ * -----------------------------------------------------------------------------
+ * A decisão de forma da leitura da pré-visualização n.º 1: «as peças sem caixas,
+ * separadas por fios (a grelha de células do v2 e das células dos Municípios na
+ * prancha)». Oito molduras cinzentas com 20px de ar entre elas leem-se como oito
+ * cartões a flutuar; uma grelha de células cujos fios se tocam lê-se como uma
+ * tabela, que é o que o painel é.
+ *
+ * O FIO É O INTERVALO, e é aqui que este desenho difere do da v2. A `.figuras` da
+ * v2 faz a mesma coisa com um `gap: 1px` sobre um fundo `--rule`: o intervalo
+ * mostra o fundo, e o fundo é o fio. Funciona enquanto a grelha estiver sempre
+ * cheia — e a desta página não está: acima de 640 uma peça aberta ocupa duas
+ * colunas (subetapa 2g), e uma linha com um buraco mostraria o fundo cinzento
+ * como um rectângulo, que é uma célula a fingir que existe.
+ *
+ * Por isso o fio é uma SOMBRA de 1px à volta de cada peça, e não um fundo: as
+ * sombras de duas peças vizinhas caem na mesma faixa de 1px do intervalo e
+ * desenham UM fio; onde não há peça não há sombra, e o buraco fica em papel. Uma
+ * sombra não ocupa espaço na composição, e por isso nada salta quando a peça
+ * ganha ou perde o fio ao passar o cursor.
+ * ========================================================================== */
 .painel {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px;
+  gap: 1px;
   border-top: 1px solid var(--ink);
   padding-top: 20px;
 }
@@ -672,11 +709,13 @@ svg [hidden] {
   }
 }
 
-/* A moldura é cinzenta (Emenda 1: o estado vive no marcador, na palavra e na
-   régua). Ao passar o cursor engrossa um ponto, e engrossa por dentro, para que
-   a composição não salte. */
+/* O fio é cinzento (Emenda 1: o estado vive no marcador, na palavra e na régua).
+   Ao passar o cursor engrossa um ponto, e engrossa por dentro, para que a
+   composição não salte. */
 .peca {
-  border: 1px solid var(--g3);
+  border: 0;
+  box-shadow: 0 0 0 1px var(--g3);
+  background: var(--paper);
   padding: 14px 16px 16px 16px;
   display: flex;
   flex-direction: column;
@@ -685,7 +724,30 @@ svg [hidden] {
 }
 .peca:hover,
 .peca:focus-within {
-  box-shadow: inset 0 0 0 1px var(--g3);
+  box-shadow: 0 0 0 1px var(--g3), inset 0 0 0 1px var(--g3);
+}
+
+/* A PEÇA VAZIA (Emenda 14): a mesma célula, o mesmo fio, o mesmo espaço. O que
+   falta é o que não existe — o valor, o selo e o marcador —, e no lugar do valor
+   estão as palavras que dizem porquê. Vão em Bitter e em `--muted`, com o corpo
+   de uma palavra de estado e não de um algarismo: uma frase composta no corpo de
+   um valor leria-se como um valor. */
+.peca-sem-linha {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 15px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  padding-top: 4px;
+}
+/* A frase que explica o estado vazio ocupa a largura da grelha e fica por cima
+   das oito peças: é ela que diz o que elas são. Não é uma célula e não leva
+   fio. */
+.painel > .vazio-texto {
+  grid-column: 1 / -1;
+  max-width: 46em;
+  padding-bottom: 14px;
 }
 
 .peca-topo {
@@ -711,11 +773,34 @@ svg [hidden] {
   color: var(--muted);
 }
 
+/* OS ALGARISMOS DA PEÇA, COM TECTO EM 56px E ESCALA FLUIDA (direção, 21.08.2026)
+
+   Eram três patamares escritos em píxeis: 80, 60 e 44, escolhidos na construção
+   pelo número de glifos do valor. O tecto de 80px enchia a célula a 1280 e não
+   cabia a 320, e três saltos entre larguras leem-se como três desenhos.
+
+   O que fica é o mesmo critério — o número de glifos, decidido na construção —
+   com um `clamp()` por classe em vez de um número. Cada `clamp()` é uma recta
+   entre a largura mínima e a máxima do sítio: o mínimo é o corpo a 320px, o
+   máximo é o tecto a 1280px, e entre os dois não há salto nenhum. O maior tecto
+   é 56px, que é o que a direção fixou.
+
+   As três rectas, e os dois pontos de cada uma:
+     curto  (<= 5 glifos)   38px a 320  ->  56px a 1280
+     médio  (<= 7 glifos)   32px a 320  ->  48px a 1280
+     longo  (>  7 glifos)   26px a 320  ->  40px a 1280
+   O termo em `vw` de cada uma é a inclinação da recta: (max - min) / 9,6, porque
+   entre 320 e 1280 vão 960px, ou seja 9,6 unidades de `vw`. */
+.painel {
+  --peca-corpo-curto: clamp(38px, 32px + 1.875vw, 56px);
+  --peca-corpo-medio: clamp(32px, 26.67px + 1.667vw, 48px);
+  --peca-corpo-longo: clamp(26px, 21.33px + 1.458vw, 40px);
+}
 .peca-valor {
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;
   font-weight: 500;
-  font-size: var(--peca-corpo, 44px);
+  font-size: var(--peca-corpo, var(--peca-corpo-longo));
   line-height: 1;
   letter-spacing: -0.005em;
   white-space: nowrap;
@@ -1298,9 +1383,13 @@ a.porta:hover .porta-abrir {
   .painel {
     gap: 0;
   }
+  /* No estreito a peça é uma FILA, e o fio que a separa da seguinte é um fio de
+     baixo e não um anel: um anel à volta de uma fila de largura inteira seria a
+     caixa que a direção mandou tirar. */
   .peca {
     border: none;
     border-bottom: 1px solid var(--g3);
+    box-shadow: none;
     padding: 14px 0 12px 0;
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
@@ -1312,10 +1401,15 @@ a.porta:hover .porta-abrir {
   .peca:focus-within {
     box-shadow: none;
   }
+  /* A fila é de largura inteira, e por isso o corpo do valor não depende do
+     número de glifos: depende da largura da janela, e da mesma maneira que
+     depende acima de 640. A rampa é a da peça curta, travada no valor que ela
+     tem no ponto de quebra — 32 + 1,875 × 6,4 = 44px a 640 — para que a série
+     de 320 a 1280 seja contínua e não tenha um degrau na fronteira. */
   .peca-valor {
     grid-column: 1;
     grid-row: 1;
-    font-size: 44px;
+    font-size: clamp(38px, 32px + 1.875vw, 44px);
   }
   .peca-topo {
     grid-column: 2;
