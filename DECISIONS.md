@@ -9223,6 +9223,59 @@ arquivo (o índice e onze trabalhos, nas duas edições): **autorreferência 0 e
 todas**, e nenhum bloco por classificar — 106 blocos distintos entraram no
 inventário, um a um.
 
+### 1.61 O fecho da etapa 4: as réguas, a invariância contra a construção da 4a, e um defeito da 4c apanhado a 390
+
+**Afecta:** nenhum
+
+*(Subetapa 4f. Uma regra de folha, as capturas e a nota. Nenhum texto, nenhum
+valor.)*
+
+**Um defeito que esta etapa criou e que esta etapa apanhou.** O sumário do Método
+rendia «1As fontes» — sem goma entre o número e o nome — e só no telemóvel. A
+causa foi a 4c: para tirar a coluna do número ao sumário da Agenda escrevi
+`.metodo-sumario-lista li:not([class])`, e as dez regras do Método também são
+`li` sem classe. O selector passa a ser a etiqueta da lista, que é o que
+distingue mesmo as duas listas: o Método numera e escreve `<ol>`, a Agenda não
+numera e escreve `<ul>`. **Uma regra escrita a partir do que o marcador não tem
+apanha tudo o que não o tem**, e é essa a lição.
+
+**As réguas**, todas verdes menos uma, e a uma está explicada:
+
+- `npm run build`, `npm run verify`, `npm run ledger:check` → **0**;
+- `medir-defeitos.mjs` → **36 rotas inventariadas, as 36 a zero de
+  autorreferência, e nenhum bloco por classificar em nenhuma delas**. A lista
+  declarada passou de 267 entradas a 413;
+- `medir-contraste.mjs` → 0 falhas de texto, 4 objetos de interface abaixo de
+  3:1, os mesmos da etapa 1. **Nenhuma cor nova entrou nesta etapa**;
+- `medir-invariancia.mjs --chaves` → **20**, o mesmo número da 2m: a etapa não
+  criou nenhuma identidade PT = EN;
+- `ortografia.mjs` → **1**, e é **anterior a esta etapa**: `tecto` numa
+  comparação de cadeias em `src/components/inicio/Peca.astro`, que corri também
+  na construção da linha de base e falha lá igual. Não é texto publicado (as três
+  ocorrências em `dist/` são o nome de uma classe de CSS) e o ficheiro é de outro
+  construtor. Fica em `ISSUES.md` e na nota em vez de corrigido à socapa.
+
+**A invariância**, contra uma construção de `3a51cb8` (o commit da 4a) num
+`git worktree`:
+
+```
+322 rotas · 293 idênticas em texto · 29 com diferenças
+```
+
+**As 29 são exactamente as rotas que a etapa reconstruiu**, e nenhuma outra: o
+Método e a Agenda nas duas edições, Évora nas duas, o 404, e as vinte e duas
+rotas de trabalho. O índice dos estudos **não** aparece, e está certo: a 4e mexeu
+nas páginas de trabalho e na folha, não numa palavra do índice.
+
+O `+27 −0` do Método está explicado na nota da etapa e foi **recontado com uma
+extracção independente**, porque a régua imprime só cinco linhas por rota e um
+número grande sem nada retirado parece um erro de leitura: 20 são o sumário (os
+dez números e os dez nomes passam a aparecer duas vezes na página) e 7 são a
+entrada de fecho. Nada saiu do Método.
+
+**As capturas:** 38, no tema claro, a 1280 e a 390, nas duas edições, das onze
+rotas e recortes da família da leitura.
+
 ---
 
 ## 4. O registo dos defeitos e dos adiamentos
