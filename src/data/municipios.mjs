@@ -35,6 +35,18 @@ import { INDICE_EVORA } from './caop-centroids.mjs';
  *            vazio desenha-se antes de ser preciso, não depois.
  * `nome`    — o nome da medida, nas duas línguas.
  * `medida`  — a unidade e o ano, em letra monoespaçada, como na primeira página.
+ * `unidade` — a UNIDADE sozinha, sem período e sem figura, nas duas línguas.
+ *            É um campo DECLARADO, e não um recorte da `medida`: existe porque
+ *            a primeira página, num concelho SEM página, rende as mesmas oito
+ *            medidas como peças vazias (Emenda 14, 21.08.2026), e uma peça
+ *            vazia não pode trazer um algarismo. A `medida` traz dois: a data de
+ *            referência (`{ ref: … }`), que é o ano em que ESTE concelho foi
+ *            lido e que para os outros 307 seria inventado, e, no índice de
+ *            dívida, o teto legal (`{ claim: … }`). Recortá-los da `medida` por
+ *            regra dava linhas truncadas («Pessoas · dezembro de», «Percentagem,
+ *            teto legal =»): é a mesma razão pela qual o `lado` de um limiar é
+ *            escrito e não inferido do sinal. As palavras são as da própria
+ *            `medida`, sem uma palavra nova em nenhuma das duas línguas.
  * `nota`    — a linha curta que diz de onde vem a medida. As duas medidas que
  *            só existem porque o próprio município as publica dizem-no aqui.
  *
@@ -42,6 +54,7 @@ import { INDICE_EVORA } from './caop-centroids.mjs';
  *   claim: string|null,
  *   nome: { pt: string, en: string },
  *   medida: { pt: any[], en: any[] },
+ *   unidade: { pt: string, en: string },
  *   nota: { pt: any[], en: any[] },
  * }} Mosaico
  */
@@ -65,6 +78,7 @@ export const MUNICIPIOS_COM_PAGINA = [
         claim: 'evora-populacao-2025',
         nome: { pt: 'População residente', en: 'Resident population' },
         medida: { pt: ['Pessoas · ', { ref: '2025' }], en: ['People · ', { ref: '2025' }] },
+        unidade: { pt: 'Pessoas', en: 'People' },
         nota: {
           pt: ['Estimativa anual do INE para o concelho.'],
           en: ['The statistics institute’s annual estimate for the concelho.'],
@@ -77,6 +91,7 @@ export const MUNICIPIOS_COM_PAGINA = [
           pt: ['Índice · média nacional = base · ', { ref: '2023' }],
           en: ['Index · national average = base · ', { ref: '2023' }],
         },
+        unidade: { pt: 'Índice · média nacional = base', en: 'Index · national average = base' },
         nota: {
           pt: ['Poder de compra per capita, publicado pelo INE para todos os concelhos.'],
           en: ['Purchasing power per capita, published for every concelho.'],
@@ -86,6 +101,7 @@ export const MUNICIPIOS_COM_PAGINA = [
         claim: 'evora-desemprego-registado-2024',
         nome: { pt: 'Desemprego registado', en: 'Registered unemployment' },
         medida: { pt: ['Pessoas · dezembro de ', { ref: '2024' }], en: ['People · December ', { ref: '2024' }] },
+        unidade: { pt: 'Pessoas', en: 'People' },
         nota: {
           pt: ['Inscritos no fim do mês nos serviços de emprego, ficheiro mensal por concelho.'],
           en: ['Registered with the employment service at month end, monthly file by concelho.'],
@@ -95,6 +111,7 @@ export const MUNICIPIOS_COM_PAGINA = [
         claim: 'evora-empresas-2024',
         nome: { pt: 'Empresas sediadas', en: 'Enterprises headquartered' },
         medida: { pt: ['Empresas · ', { ref: '2024' }], en: ['Enterprises · ', { ref: '2024' }] },
+        unidade: { pt: 'Empresas', en: 'Enterprises' },
         nota: {
           pt: ['Sistema de contas integradas das empresas, por concelho da sede.'],
           en: ['Integrated business accounts, by concelho of the registered office.'],
@@ -104,6 +121,7 @@ export const MUNICIPIOS_COM_PAGINA = [
         claim: 'evora-divida-dgal-2024',
         nome: { pt: 'Dívida total do município', en: 'Total municipal debt' },
         medida: { pt: ['Euros · ', { ref: '2024' }], en: ['Euros · ', { ref: '2024' }] },
+        unidade: { pt: 'Euros', en: 'Euros' },
         nota: {
           pt: ['Série anual da Direção-Geral das Autarquias Locais, o regulador das contas municipais.'],
           en: ['The annual series of the local-government directorate, the regulator of municipal accounts.'],
@@ -116,6 +134,10 @@ export const MUNICIPIOS_COM_PAGINA = [
           pt: ['Percentagem, teto legal = ', { claim: 'indice-de-divida-limite-legal' }, ' · ', { ref: '2024' }],
           en: ['Percentage, legal cap = ', { claim: 'indice-de-divida-limite-legal' }, ' · ', { ref: '2024' }],
         },
+        /* Sem «teto legal = 150»: o teto é uma linha do livro-razão, e numa peça
+           vazia um valor com selo diria que ali há prova de alguma coisa sobre
+           este concelho. A unidade é «Percentagem». */
+        unidade: { pt: 'Percentagem', en: 'Percentage' },
         nota: {
           pt: ['Calculado sobre duas colunas do mesmo ficheiro do regulador. A aritmética está na linha.'],
           en: ['Computed from two columns of the same regulator file. The arithmetic is on the row.'],
@@ -128,6 +150,7 @@ export const MUNICIPIOS_COM_PAGINA = [
           pt: ['Percentagem do orçamento · ', { ref: '2025' }],
           en: ['Percentage of the budget · ', { ref: '2025' }],
         },
+        unidade: { pt: 'Percentagem do orçamento', en: 'Percentage of the budget' },
         nota: {
           pt: ['Reportado pelo município: sai da prestação de contas do próprio, não de um agregador central.'],
           en: ['Reported by the municipality: it comes from its own accounts, not from a central aggregator.'],
@@ -137,6 +160,7 @@ export const MUNICIPIOS_COM_PAGINA = [
         claim: 'evora-prazo-medio-de-pagamento-2025',
         nome: { pt: 'Prazo médio de pagamento', en: 'Average payment time' },
         medida: { pt: ['Dias · ', { ref: '2025' }], en: ['Days · ', { ref: '2025' }] },
+        unidade: { pt: 'Dias', en: 'Days' },
         nota: {
           pt: ['Reportado pelo município: sai da prestação de contas do próprio, não de um agregador central.'],
           en: ['Reported by the municipality: it comes from its own accounts, not from a central aggregator.'],

@@ -2,8 +2,10 @@
 /**
  * AS CAPTURAS DA PRIMEIRA PÁGINA, estado a estado.
  *
- * Não mede nada: fotografa. Oito estados × duas larguras × duas edições × dois
+ * Não mede nada: fotografa. Nove estados × duas larguras × duas edições × dois
  * temas, sobre `dist/`, em Chromium sem cabeça e depois de `document.fonts.ready`.
+ * O escuro entra pela escolha guardada no aparelho, que é o único caminho para o
+ * escuro desde a Emenda 12.
  * O nome de cada ficheiro diz o que ele é: `<estado>-<largura>-<edição>-<tema>.png`.
  *
  *   node tests/inicio/capturas.mjs [dir]
@@ -49,7 +51,7 @@ const servidor = http.createServer((req, res) => {
 await new Promise((r) => servidor.listen(0, '127.0.0.1', r));
 const base = `http://127.0.0.1:${servidor.address().port}`;
 
-/* Os oito estados. A vista de escolha não tem endereço próprio — é um modo, e
+/* Os nove estados. A vista de escolha não tem endereço próprio — é um modo, e
    entra por um toque no comando «Município». */
 const ESTADOS = [
   { nome: 'pais-relance', q: '' },
@@ -76,15 +78,23 @@ for (const estado of ESTADOS) {
   for (const largura of estado.larguras ?? [1280, 390]) {
     for (const [edicao, rota] of [['pt', '/'], ['en', '/en']]) {
       for (const tema of ['claro', 'escuro']) {
+        /* O ESCURO ENTRA PELO CAMINHO REAL (Emenda 12, 21.08.2026).
+           Deixou de haver preferência do sistema a decidir o tema: há um
+           controlo no cabeçalho e uma escolha guardada no aparelho do leitor.
+           Escrever a escolha antes de a página correr é exatamente o estado de
+           quem carregou no botão numa visita anterior, e é a guarda do `<head>`
+           que a aplica — o mesmo caminho que a matriz mede. Pôr `data-theme` à
+           mão fotografaria a folha e não o mecanismo. */
         const contexto = await navegador.newContext({
           viewport: { width: largura, height: 900 },
           javaScriptEnabled: estado.js !== false,
-          colorScheme: tema === 'escuro' ? 'dark' : 'light',
         });
         await contexto.addInitScript((t) => {
-          document.addEventListener('DOMContentLoaded', () =>
-            document.documentElement.setAttribute('data-theme', t === 'escuro' ? 'dark' : 'light'),
-          );
+          try {
+            localStorage.setItem('tema', t === 'escuro' ? 'dark' : 'light');
+          } catch (e) {
+            /* sem armazenamento a captura sai clara, e o nome do ficheiro dí-lo-ia */
+          }
         }, tema);
         const p = await contexto.newPage();
         await p.goto(base + rota + estado.q, { waitUntil: 'networkidle' });

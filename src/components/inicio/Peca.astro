@@ -54,6 +54,22 @@ const {
   id,
   nome,
   medida,
+  /* A PEÇA VAZIA (Emenda 14, 21.08.2026). Um concelho sem página passa a render
+     as MESMAS oito medidas da página de concelho, cada uma como uma peça sem
+     linha: o nome da medida, a sua unidade, e as palavras «sem linha ainda» no
+     lugar onde uma peça com linha põe o valor. Sem valor, sem selo (não há linha
+     para abrir) e sem marcador (não há estado para marcar).
+
+     `unidade` é o campo DECLARADO de `municipios.mjs`, e não um recorte da linha
+     «unidade · período»: o período é o ano em que ÉVORA foi lida, e escrevê-lo
+     por baixo de «sem linha ainda» seria inventar uma leitura. É também por isso
+     que uma peça vazia não tem um único algarismo, que é o que o portão confere.
+
+     Uma peça vazia não é um `<details>`: não há segunda densidade de uma coisa
+     que não existe, e um comando «abrir» que abre um espaço vazio é uma porta
+     falsa. */
+  vazio = false,
+  unidade = null,
   /* `frase` é opcional desde a etapa 2i (achado 6, R4): a peça de uma região
      não a leva, porque a frase da região é a MANCHETE desse âmbito e estava a
      render-se duas vezes no mesmo ecrã, com o mesmo valor e o mesmo selo. Sem
@@ -75,15 +91,29 @@ const PALAVRA = {
 };
 const palavra = PALAVRA[estado] ?? null;
 
-/* O corpo do valor por número de glifos, decidido aqui e não por uma regra de
-   folha que adivinhe: até 5 glifos o valor tem 80px, até 7 tem 60px, e daí para
-   cima 44px. É derivado do valor publicado, como o `--figura-car` da v2, e não
-   muda um carácter do que rende. */
-const glifos = [...String(getClaim(id).value)].length;
-const corpo = glifos <= 5 ? 80 : glifos <= 7 ? 60 : 44;
-const pintado = colore && (estado === 'fora' || estado === 'dentro');
+const glifos = vazio ? 0 : [...String(getClaim(id).value)].length;
+/* O CORPO DO VALOR, COM TECTO EM 56px E ESCALA FLUIDA (direção, 21.08.2026).
+   Eram três saltos escritos em píxeis — 80, 60, 44 — e o maior enchia a peça a
+   1280 e transbordava-a a 320. A decisão de forma da leitura da pré-visualização
+   n.º 1 põe o tecto «à volta de 56px» e manda a escala ser fluida. O que fica é
+   um `clamp()` por classe de comprimento: o mínimo é o corpo a 320, o máximo é o
+   tecto, e entre os dois a letra cresce com a largura da janela. Nenhum salto de
+   patamar entre 320 e 1280, e nenhuma peça com um valor maior do que a sua
+   célula. Continua a ser decidido na construção, pelo número de glifos do valor
+   publicado, e não por uma regra de folha que adivinhe. */
+const corpo = glifos <= 5 ? 'var(--peca-corpo-curto)' : glifos <= 7 ? 'var(--peca-corpo-medio)' : 'var(--peca-corpo-longo)';
+const pintado = !vazio && colore && (estado === 'fora' || estado === 'dentro');
 const marca = pintado ? estado : 'sem';
 ---
+
+{
+  vazio ? (
+    <article class="peca peca-vazia" data-medida-vazia>
+      <p class="peca-sem-linha" data-cobertura="sem-linha">{s.cobertura.semLinhaAinda}</p>
+      <p class="peca-unidade">{unidade}</p>
+      <h3 class="peca-nome">{nome}</h3>
+    </article>
+  ) : (
 
 <article class="peca" data-medida={id} data-estado={estado} data-limiar={limiar ? 'sim' : 'nao'}>
   <div class="peca-topo">
@@ -104,13 +134,11 @@ const marca = pintado ? estado : 'sem';
     }
   </div>
 
-  {/* `lang` NÃO É OPCIONAL AQUI (etapa 2i, achado 7). `Claim.astro` tem
-      `lang = 'pt'` por defeito, e a palavra «provisório» sai dele: uma chamada
-      sem língua rendia a palavra portuguesa na edição inglesa, e os seis painéis
-      regionais desta peça eram seis dos sete casos que a leitura cruzada
-      contou. O pedido de falhar em vez de assumir português está na nota, para
-      o dono de `Claim.astro`. */}
-  <Claim id={id} lang={lang} class="peca-valor" as="div" style={`--peca-corpo:${corpo}px`} />
+  {/* `lang` NÃO É OPCIONAL AQUI, e desde 21.08.2026 já não é opcional em lado
+      nenhum: `Claim.astro` deixou de ter «pt» por defeito e a construção pára
+      quando a língua falta (ISSUES I24, fechado). Esta chamada era um dos sete
+      lugares que rendiam «provisório» em português na edição inglesa. */}
+  <Claim id={id} lang={lang} class="peca-valor" as="div" style={`--peca-corpo:${corpo}`} />
   <p class="peca-unidade"><Frase partes={medida} lang={lang} selos={selosNaMedida} /></p>
   <h3 class="peca-nome">{nome}</h3>
   {frase && <p class="peca-frase"><Frase partes={frase} lang={lang} selos={true} /></p>}
@@ -162,3 +190,5 @@ const marca = pintado ? estado : 'sem';
     <Provenance id={id} lang={lang} />
   </p>
 </article>
+  )
+}

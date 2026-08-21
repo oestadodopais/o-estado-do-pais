@@ -1,45 +1,39 @@
 ---
 /**
- * O CONCELHO SEM PÁGINA — o estado vazio, desenhado antes de ser preciso.
+ * O CONCELHO SEM PÁGINA — a frase que explica o estado, e mais nada.
  *
- * IDENTIDADE §7: todo o componente tem de ter desenhado o estado cheio, vazio,
- * parcial e velho, e não só o feliz. 307 dos 308 concelhos estão neste estado, e
- * por isso ele não é uma excepção: é o caso comum.
+ * ---------------------------------------------------------------------------
+ * A CAIXA ENCOLHEU PARA UMA FRASE (Emenda 14, 21.08.2026; DECISIONS §1.52)
+ * ---------------------------------------------------------------------------
+ * Este bloco era a caixa inteira do estado vazio: um título, a frase, a
+ * contagem da CAOP com o seu selo e a citação transcrita da Carta. A direção leu
+ * a pré-visualização n.º 1 e decidiu que um concelho sem página rende a
+ * DISPOSIÇÃO-PADRÃO MUNICIPAL — as mesmas oito medidas da página de concelho,
+ * como peças vazias —, «em vez de uma só caixa de estado vazio».
  *
- * DECISÃO (b) DA DIRECÇÃO, 20.08.2026: um concelho sem página **não renderiza
- * quadrado de estado nenhum** e diz as palavras da cobertura. «Por ler» não é um
- * estado de medição e não entra no vocabulário; o quadrado tracejado está tomado
- * pela regra 5 do Método («falta um campo») e não pode dizer uma segunda coisa.
+ * O que sobra aqui é a frase, e sobra por cima das oito peças, porque é ela que
+ * diz o que elas são. O resto saiu, e cada coisa tem para onde ir:
  *
- * NENHUMA CONTAGEM É COMPOSTA AQUI. A prancha escreve «0 medidas»; este bloco
- * não escreve algarismo nenhum, porque um zero calculado no cliente seria
- * exactamente o número que ninguém pode abrir. O que o bloco diz é o que se
- * sabe: que nenhuma medida foi lida para aquele concelho, e o que é preciso para
- * que passe a haver.
+ *   · o TÍTULO («<nome> · sem página ainda») repetia a manchete que está três
+ *     linhas acima («Ainda sem linhas para <nome>.») e o rótulo de âmbito;
+ *   · a CONTAGEM da CAOP com o selo e a CITAÇÃO transcrita continuam na página,
+ *     na camada de aparelho por baixo do mapa, que é onde a etapa 2g as pôs e
+ *     que se lê em qualquer âmbito. A relocação R3 passa de duas ocorrências da
+ *     citação por edição a uma, e o registo di-lo.
+ *
+ * IDENTIDADE §7 continua a valer, e é ela que esta emenda serve melhor: «uma
+ * página por escrever declara o que lhe falta, em vez de fingir corpo». O que
+ * falta são oito medidas, e agora vêem-se as oito, cada uma a dizer que não tem
+ * linha — em vez de uma caixa a dizer que não há nada.
  *
  * O NOME DO CONCELHO ENTRA POR RANHURA MARCADA (`data-slot`), copiado da ilha da
  * CAOP com `textContent`. É o único texto desta página que o script escreve.
  */
-import Claim from '../Claim.astro';
-import { VERBATIM } from '../../data/verbatim.mjs';
-
-const { s, lang, nome } = Astro.props;
+const { s, nome } = Astro.props;
 ---
 
-<div class="vazio" data-vazio>
-  <p class="vazio-titulo">
-    <span data-slot="nome">{nome}</span> ·{' '}
-    <span data-cobertura="sem-pagina">{s.cobertura.semPaginaAinda}</span>
-  </p>
-  <p class="vazio-texto">
-    {s.inicio.vazio.explicaA}
-    <span data-slot="nome">{nome}</span>
-    {s.inicio.vazio.explicaB}
-  </p>
-  <p class="vazio-caop">
-    <Claim id="municipios-portugal-caop-2025" lang={lang} chip={true} />
-  </p>
-  <p class="vazio-fonte verbatim" data-verbatim="caop-fonte" lang="pt-PT">
-    {VERBATIM['caop-fonte'].text}
-  </p>
-</div>
+<p class="vazio-texto" data-vazio>
+  {s.inicio.vazio.explicaA}
+  <span data-slot="nome">{nome}</span>
+  {s.inicio.vazio.explicaB}
+</p>

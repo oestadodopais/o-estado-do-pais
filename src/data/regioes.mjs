@@ -160,11 +160,31 @@ export const ESCALA = {
 };
 
 /** Geometria do SVG da régua, no mesmo referencial do estudo de identidade. */
+/**
+ * A CAIXA DA RÉGUA ENCOLHEU (direção, 21.08.2026; `DECISIONS.md` §1.52).
+ *
+ * A leitura da pré-visualização n.º 1 pediu «o Instrumento n.º 1 mais pequeno,
+ * com escala fluida». O SVG desenha-se a 100% da largura do seu contentor e a
+ * altura sai da proporção da caixa: encolher a caixa encolhe o instrumento em
+ * TODAS as larguras, sem um salto de patamar e sem uma segunda regra de folha.
+ *
+ * O que se cortou, e o que não se cortou:
+ *   · `altura` 300 -> 262. Os 38 pontos de baixo eram papel: o rótulo mais baixo
+ *     é o da distância, cuja base fica a `eixoY + 42`;
+ *   · `eixoY` 216 -> 206. Fecha dez pontos entre o patamar mais baixo (178) e o
+ *     eixo. O pé do marcador continua a ter 18 pontos de haste, e tudo o que se
+ *     desenha por baixo do eixo — traços, rótulos da escala, rótulo da distância
+ *     — está escrito EM RELAÇÃO a `eixoY`, e por isso desce com ele sem mudar
+ *     uma distância entre si;
+ *   · os `patamares` ficam como estavam. Os 30 pontos entre eles são a medição
+ *     da subetapa 2g, que foi a que separou o nome da região do seu valor; mexer
+ *     neles era desfazer uma correção já medida.
+ */
 export const GEOMETRIA = {
   largura: 980,
-  altura: 300,
+  altura: 262,
   esquerda: 64,
   direita: 916,
-  eixoY: 216,
+  eixoY: 206,
   patamares: [178, 148, 118, 88],
 };

@@ -28,11 +28,31 @@
  * uma palavra escrita à mão («Quatro»). O portão reconta-a. Como uma contagem
  * pode ser um ou muitos, há duas frases e o SERVIDOR escolhe a certa; o cliente
  * não escolhe nada, porque o número não muda depois da construção.
+ *
+ * ---------------------------------------------------------------------------
+ * A FILA DE ESTADOS SAIU DAQUI (Emenda 13, 21.08.2026; DECISIONS §1.52)
+ * ---------------------------------------------------------------------------
+ * A cabeça levava uma fila de quadrados, um por medida, agrupados por estado e
+ * com a palavra ao lado. A direção leu a pré-visualização n.º 1 e decidiu:
+ * «a manchete e a lede levam as contagens (chaves da prova), e cada peça leva o
+ * seu marcador e a sua palavra de estado. Os quadrados alinhados com "fora do
+ * limiar · sem limiar" não se liam.»
+ *
+ * Nenhuma contagem se perdeu, e é o que faz esta emenda ser uma subtracção e não
+ * um corte: o rótulo do âmbito traz `painel_total` («Portugal · painel europeu ·
+ * 8 medidas»), a manchete traz `painel_fora_do_limiar` («4 limiares europeus
+ * ultrapassados.»), e o estado de cada medida continua a ver-se onde ele é da
+ * medida — no marcador e na palavra da sua peça, a poucos centímetros do valor a
+ * que se refere, em vez de num friso à parte que obrigava a contar quadrados
+ * para saber quais.
+ *
+ * `FilaDeEstados.astro` foi retirado do repositório com esta emenda: era o único
+ * sítio que o usava, e um componente que ninguém rende é um desenho a dizer que
+ * ainda vale.
  */
 import Claim from '../Claim.astro';
 import Frase from '../Frase.astro';
 import ValorDaProva from '../ValorDaProva.astro';
-import FilaDeEstados from './FilaDeEstados.astro';
 
 const { s, lang, p, blocos, ambito } = Astro.props;
 
@@ -61,7 +81,6 @@ const tituloPais = fora === 1 ? s.inicio.cabeca.tituloPaisUm : s.inicio.cabeca.t
               />
               {tituloPais}
             </h1>
-            <FilaDeEstados s={s} estados={b.estados} />
             <p class="cabeca-lede">{s.inicio.cabeca.ledePais}</p>
           </>
         )}
@@ -70,7 +89,6 @@ const tituloPais = fora === 1 ? s.inicio.cabeca.tituloPaisUm : s.inicio.cabeca.t
           <>
             <p class="cabeca-rotulo">{b.nome}{s.inicio.cabeca.regiaoSufixo}</p>
             <h1 class="cabeca-h1"><Frase partes={b.frase} lang={lang} selos={true} /></h1>
-            <FilaDeEstados s={s} estados={b.estados} />
             <p class="cabeca-lede"><Frase partes={s.inicio.cabeca.ledeRegiaoPartes} lang={lang} /></p>
           </>
         )}
@@ -81,7 +99,6 @@ const tituloPais = fora === 1 ? s.inicio.cabeca.tituloPaisUm : s.inicio.cabeca.t
               {b.nome}{s.inicio.cabeca.municipioPalavra}{b.distrito}
             </p>
             <h1 class="cabeca-h1">{s.inicio.cabeca.tituloEvora}</h1>
-            <FilaDeEstados s={s} estados={b.estados} />
             <p class="cabeca-lede">{s.municipio.ledeA}{b.nome}{s.municipio.ledeB}</p>
           </>
         )}

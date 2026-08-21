@@ -365,7 +365,6 @@ export const STRINGS = {
         ],
         ledeVazioA: 'O ponto marca a posição do concelho na Carta Administrativa, e não cobertura. Quando houver linhas para ',
         ledeVazioB: ', entram aqui com a sua fonte e a sua data de leitura.',
-        estadoRotulo: 'Estado das medidas',
         /* O prefixo do distrito (ISSUES I18, subetapa 2g). A Carta escreve
            «Beja» e «Ilha do Faial»; a etiqueta de Évora, que vem de
            `municipios.mjs`, escreve «distrito de Évora». A regra é uma só para
@@ -426,8 +425,17 @@ export const STRINGS = {
         madeira: 'Madeira',
         total: 'Total',
         naoDizK: 'O que o mapa não diz',
-        naoDiz:
-          'O ponto aceso marca cobertura editorial, não qualidade nem importância. Os restantes pontos marcam a posição do município e mais nada.',
+        /* A FRASE DE NEUTRALIDADE, REESCRITA PELA EMENDA 10 (21.08.2026).
+           Dizia «O ponto aceso marca cobertura editorial, não qualidade nem
+           importância. Os restantes pontos marcam a posição do município e mais
+           nada.» — e a partir do momento em que nenhum ponto vem aceso, uma
+           frase que começa por nomear «o ponto aceso» descreve um desenho que a
+           página não faz. A cobertura passou a dizer-se por palavras, ao lado do
+           mapa e na lista; o mapa passou a dizer uma coisa só, que é onde cada
+           concelho fica. A frase diz agora essa coisa, e continua a dizer o que
+           ela NÃO é, que era o trabalho da frase antiga. */
+        posicao:
+          'Os pontos são todos iguais e marcam a posição de cada concelho na Carta Administrativa, e mais nada: não marcam cobertura, qualidade nem importância.',
         escolher: 'Toque num ponto para escolher o concelho.',
         readoutHint: 'Passe o cursor sobre um ponto para ler o município.',
         tecladoHint:
@@ -488,6 +496,12 @@ export const STRINGS = {
     cobertura: {
       temPagina: 'tem página',
       semPaginaAinda: 'sem página ainda',
+      /* A terceira palavra da cobertura, e é de outra escala (Emenda 14,
+         21.08.2026). «sem página ainda» é sobre o CONCELHO; esta é sobre uma
+         MEDIDA daquele concelho: a medida existe, a página do concelho ainda
+         não tem uma linha para ela. É o que cada uma das oito peças vazias diz
+         de si, no lugar onde uma peça com linha diz o valor. */
+      semLinhaAinda: 'sem linha ainda',
     },
 
     /** O índice dos concelhos. */
@@ -1209,7 +1223,6 @@ export const STRINGS = {
         ],
         ledeVazioA: 'The point marks where the concelho sits on the official administrative map, and not coverage. When there are rows for ',
         ledeVazioB: ', they will appear here with their source and their reading date.',
-        estadoRotulo: 'State of the measures',
         /* «district of », com o espaço final, como o par português. Os nomes de
            ilha da Carta ficam em português nas duas edições, como já acontece
            com «concelho»: são nomes próprios. */
@@ -1251,8 +1264,8 @@ export const STRINGS = {
         madeira: 'Madeira',
         total: 'Total',
         naoDizK: 'What the map does not say',
-        naoDiz:
-          'The lit point marks editorial coverage, not quality or importance. The remaining points mark the position of the municipality and nothing else.',
+        posicao:
+          'The points are all alike and mark where each concelho sits on the official administrative map, and nothing else: they do not mark coverage, quality or importance.',
         escolher: 'Tap a point to choose the concelho.',
         readoutHint: 'Hover over a point to read the municipality.',
         tecladoHint:
@@ -1284,6 +1297,7 @@ export const STRINGS = {
     cobertura: {
       temPagina: 'has a page',
       semPaginaAinda: 'no page yet',
+      semLinhaAinda: 'no row yet',
     },
 
     municipios: {

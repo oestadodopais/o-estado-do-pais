@@ -3,20 +3,35 @@
  * O MAPA QUE RESPIRA — os 308 concelhos, iguais, num só instrumento.
  *
  * ---------------------------------------------------------------------------
- * A EMENDA 3, E A NEUTRALIDADE DOS PONTOS
+ * UM GLIFO, UM SIGNIFICADO: O MAPA LEVA PONTOS REDONDOS (Emenda 10, 21.08.2026)
  * ---------------------------------------------------------------------------
- * «Nenhum município é destacado por estatuto — nem capital do país, nem capitais
- * de distrito ou região; todos os 308 pontos são iguais, e a única distinção
- * permitida é o estado de cobertura ■/□.» É o que este componente desenha: um
- * quadrado de contorno de tinta por concelho, do MESMO tamanho para os 308, e
- * cheio quando aquele concelho tem página. Não há capital, não há sede de
- * distrito, não há tamanho por população, e não há tamanho por escolha: o
- * concelho escolhido é um estado de interacção e leva um anel de tinta mais
- * grosso, nunca enchimento — um concelho sem página que se enchesse ao ser
- * escolhido estaria a dizer que tem página. A legenda que a Emenda manda pôr ao
- * lado está aqui, e é a frase que já existia na v2 (relocação R3); desde a
- * etapa 2i está TAMBÉM no cartão localizador, porque a ficha que a levava
- * esconde-se nessa postura e a frase não pode desaparecer com ela.
+ * «O quadrado marca prova e estado, ao pé de um valor: o selo e o marcador de
+ * estado; o ponto redondo marca um lugar, nos mapas; um lugar escolhido é um
+ * anel, nunca um preenchimento. Os 308 pontos são iguais e nenhum vem
+ * preenchido por defeito: a cobertura diz-se por palavras ao lado do mapa e na
+ * lista, e não pelo ponto.»
+ *
+ * O que isso muda aqui, e a razão de cada coisa:
+ *
+ *   · o glifo passa de QUADRADO a CÍRCULO. O quadrado é o glifo da prova (o
+ *     selo, ■/□) e o do estado (âmbar, cobalto, contorno); 308 quadrados num
+ *     campo leem-se como trama e não como território, e o mesmo desenho a dizer
+ *     duas coisas em dois sítios é uma língua a menos e não a mais;
+ *   · NENHUM ponto vem cheio, Évora incluída. O enchimento era a cobertura, e um
+ *     glifo de prova a fazer de localizador lia-se como «há um selecionado por
+ *     defeito». A cobertura continua na página, por palavras: a linha «1 de 308
+ *     concelhos tem página» está ao lado do mapa, no cartão e na lista da
+ *     pesquisa;
+ *   · o concelho ESCOLHIDO é um anel — o mesmo contorno, mais grosso —, e nunca
+ *     um enchimento. Era já a regra da etapa 2i, e agora é a única distinção que
+ *     o mapa desenha.
+ *
+ * A EMENDA 3 CONTINUA INTEIRA POR BAIXO DESTA: nenhum município é destacado por
+ * estatuto, nem capital do país nem sede de distrito, e os 308 pontos têm o
+ * mesmo raio. A frase que acompanha o mapa deixou de nomear «o ponto aceso»,
+ * porque não há nenhum aceso: diz agora o que o ponto marca, que é uma posição,
+ * e o que não marca. Está na ficha e no cartão localizador (etapa 2i), para que
+ * não desapareça com a postura.
  *
  * UM SÓ INSTRUMENTO, TRÊS POSTURAS. O mapa não se desenha três vezes: desenha-se
  * uma, e a folha muda-lhe o tamanho e o que está à volta.
@@ -61,12 +76,15 @@ import { routePath } from '../../lib/routes.mjs';
 
 const { s, lang, p, concelhos, evora } = Astro.props;
 
-/* OS 308 PONTOS SÃO DO MESMO TAMANHO (Emenda 3; etapa 2i, achado 8).
-   A construção dava 13 unidades a Évora e 9 aos outros 307, e a Emenda diz que
-   «todos os 308 pontos são iguais, e a única distinção permitida é o estado de
-   cobertura ■/□». Um ponto maior é uma segunda distinção, e diz «importante»
-   onde a página só queria dizer «tem página». A cobertura passa a ser o
-   ENCHIMENTO, e mais nada: □ contorno de tinta em papel, ■ cheio de tinta.
+/* OS 308 PONTOS SÃO DO MESMO TAMANHO (Emenda 3), E TODOS VAZIOS (Emenda 10).
+   O raio é um só para os 308, e o diâmetro é o mesmo lado de 9 unidades que o
+   quadrado tinha: o que muda é a forma do glifo e o enchimento, não a área que
+   ele ocupa no campo. A cobertura saiu do ponto e ficou nas palavras.
+
+   Os ALVOS continuam a ser rectângulos, e isso não é uma incoerência de glifo:
+   um alvo não se vê, não pinta nada e não diz nada — é uma área, e uma área
+   quadrada cobre a vizinhança de um ponto melhor do que um círculo do mesmo
+   raio.
 
    A geometria dos alvos, em unidades do campo. O mapa inteiro desenha-se a
    281px de largura, ou seja 0,468px por unidade de campo; um alvo de 24 CSS px
@@ -76,6 +94,7 @@ const { s, lang, p, concelhos, evora } = Astro.props;
    alvo que ele governa, não o ponto, e baixá-lo com o tamanho de Évora seria
    encolher 308 alvos por causa de um desenho. */
 const LADO = 9;
+const RAIO = LADO / 2;
 const TECTO_DO_ALVO = 25.6;
 const PISO_DO_ALVO = 6.5;
 
@@ -83,9 +102,7 @@ const pontos = concelhos.map((c) => {
   const meio = Math.max(PISO_DO_ALVO, Math.min(TECTO_DO_ALVO, c.alvo));
   return {
     ...c,
-    x0: c.x - LADO / 2,
-    y0: c.y - LADO / 2,
-    lado: LADO,
+    r: RAIO,
     ax: c.x - meio,
     ay: c.y - meio,
     aLado: meio * 2,
@@ -170,16 +187,22 @@ const caop = getClaim('municipios-portugal-caop-2025');
           estado vazio recebem o seu texto, por `textContent` e mais nada. */}
       <g class="mapa-pontos" data-pontos>
         {
+          /* `data-pagina` E NÃO UMA CLASSE. A cobertura era o enchimento, e o
+             script lia-a pela classe que o pintava (`mun-com-pagina`); sem
+             enchimento, uma classe que não pinta nada seria um nome a mentir
+             sobre o que a folha desenha. Passa a ser um atributo de dados, que é
+             o que ela sempre foi: um facto sobre o concelho, que a página diz
+             por palavras e o script usa para saber se há uma página para abrir. */
           pontos.map((c) => (
-            <rect
-              class:list={['mun', c.pagina && 'mun-com-pagina']}
-              x={c.x0}
-              y={c.y0}
-              width={c.lado}
-              height={c.lado}
+            <circle
+              class="mun"
+              cx={c.x}
+              cy={c.y}
+              r={c.r}
               data-m={c.nome}
               data-d={c.distrito}
               data-ilha={c.ilha ? 'sim' : null}
+              data-pagina={c.pagina ? 'sim' : null}
               data-caop={c.slug}
             />
           ))
@@ -223,7 +246,7 @@ const caop = getClaim('municipios-portugal-caop-2025');
           dizerem uma coisa, e a frase que diz o que essa coisa NÃO é tinha
           desaparecido. É a mesma cadeia, palavra por palavra, e conta como a
           mesma relocação (R3). */}
-      <p class="mapa-cartao-neutro">{s.inicio.mapa.naoDiz}</p>
+      <p class="mapa-cartao-neutro">{s.inicio.mapa.posicao}</p>
       <p class="mapa-cartao-selo">
         <Claim id="municipios-portugal-caop-2025" lang={lang} chip={true} />
       </p>
@@ -249,7 +272,7 @@ const caop = getClaim('municipios-portugal-caop-2025');
       <span data-cobertura="com-pagina">{s.cobertura.temPagina}</span>
     </p>
 
-    <p class="mapa-neutro">{s.inicio.mapa.naoDiz}</p>
+    <p class="mapa-neutro">{s.inicio.mapa.posicao}</p>
 
     <div class="compo">
       <div class="compo-k">{s.inicio.mapa.contagemK}</div>
