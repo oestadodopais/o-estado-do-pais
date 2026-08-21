@@ -586,11 +586,29 @@ svg [hidden] {
  * colunas (subetapa 2g), e uma linha com um buraco mostraria o fundo cinzento
  * como um rectângulo, que é uma célula a fingir que existe.
  *
- * Por isso o fio é uma SOMBRA de 1px à volta de cada peça, e não um fundo: as
- * sombras de duas peças vizinhas caem na mesma faixa de 1px do intervalo e
- * desenham UM fio; onde não há peça não há sombra, e o buraco fica em papel. Uma
- * sombra não ocupa espaço na composição, e por isso nada salta quando a peça
- * ganha ou perde o fio ao passar o cursor.
+ * ---------------------------------------------------------------------------
+ * O ANEL SAI, E FICAM AS LINHAS DA GRELHA (direção, 21.08.2026, decisão 2)
+ * ---------------------------------------------------------------------------
+ * A 2j o fio passou a ser uma SOMBRA de 1px à volta de cada peça: as sombras de
+ * duas vizinhas caíam na mesma faixa de 1px do intervalo e desenhavam um fio, e
+ * onde não havia peça não havia sombra. Desenhava também os quatro lados de cada
+ * peça, incluindo a borda de fora da grelha — e a leitura cruzada de 21.08 leu-o
+ * pelo que ele é: «ainda são caixas». A direção decidiu: **fios entre células,
+ * e nenhuma moldura por peça**.
+ *
+ * A sombra fica, e passa a ter LADO. Cada peça desenha o fio à sua DIREITA
+ * (`1px 0`) e por BAIXO (`0 1px`), mais o píxel do canto onde os dois se cruzam
+ * (`1px 1px`), e mais nada: nenhuma peça tem fio em cima nem à esquerda, e por
+ * isso nenhuma peça tem os quatro lados. Um fio entre duas células é desenhado
+ * uma vez, pela que está acima ou à esquerda dele.
+ *
+ * OS FIOS DE FORA CORTAM-SE NO INVÓLUCRO, e é por isso que a regra é robusta.
+ * A última coluna e a última fila desenhariam o fio para fora da grelha; o
+ * `overflow: clip` do `.painel` corta-o, porque a grelha não tem preenchimento
+ * à direita nem em baixo e esse fio cai fora da caixa. A conta não é de índices:
+ * não pergunta «esta peça é a quarta?», que se enganaria assim que uma peça
+ * aberta ocupa duas colunas e a grelha reflui. Pergunta onde a peça ESTÁ, que é
+ * o que a disposição sabe e o selector não.
  * ========================================================================== */
 .painel {
   display: grid;
@@ -598,6 +616,10 @@ svg [hidden] {
   gap: 1px;
   border-top: 1px solid var(--ink);
   padding-top: 20px;
+  /* Corta os fios que caem fora da grelha (a última coluna, a última fila).
+     `clip` e não `hidden`: não cria caixa de deslocamento, e por isso não pode
+     esconder um transbordo em vez de o mostrar. */
+  overflow: clip;
 }
 .painel-um {
   grid-template-columns: minmax(0, 1fr);
@@ -628,22 +650,21 @@ svg [hidden] {
   }
 }
 
-/* O fio é cinzento (Emenda 1: o estado vive no marcador, na palavra e na régua).
-   Ao passar o cursor engrossa um ponto, e engrossa por dentro, para que a
-   composição não salte. */
+/* O fio é cinzento (Emenda 1: o estado vive no marcador, na palavra e na régua),
+   e é da GRELHA e não da peça: direita, baixo, e o píxel do canto. O realce ao
+   passar o cursor saiu com o anel — era o anel a engrossar, e um anel é o que
+   deixou de existir. Com ele saiu a única transição desta folha. */
 .peca {
   border: 0;
-  box-shadow: 0 0 0 1px var(--g3);
+  box-shadow:
+    1px 0 0 0 var(--g3),
+    0 1px 0 0 var(--g3),
+    1px 1px 0 0 var(--g3);
   background: var(--paper);
   padding: 14px 16px 16px 16px;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  transition: box-shadow 120ms ease-out;
-}
-.peca:hover,
-.peca:focus-within {
-  box-shadow: 0 0 0 1px var(--g3), inset 0 0 0 1px var(--g3);
 }
 
 /* A PEÇA VAZIA (Emenda 14): a mesma célula, o mesmo fio, o mesmo espaço. O que
@@ -953,11 +974,10 @@ a.porta:hover .porta-abrir {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .peca {
-    transition: none;
-  }
-}
+/* A `@media (prefers-reduced-motion: reduce)` da peça saiu com a transição que
+   ela desligava: o realce ao passar o cursor era o anel a engrossar, e o anel
+   saiu na decisão 2 de 21.08.2026. A regra global de `site.css` continua onde
+   está, e é ela que governa tudo o que ainda se move. */
 
 /* =============================================================================
  * A RÉGUA DA CONVERGÊNCIA COMO PORTA, NO TELEMÓVEL (subetapa 2g, ponto 4)
@@ -1280,10 +1300,6 @@ a.porta:hover .porta-abrir {
     column-gap: 10px;
     row-gap: 6px;
     align-items: baseline;
-  }
-  .peca:hover,
-  .peca:focus-within {
-    box-shadow: none;
   }
   /* A fila é de largura inteira, e por isso o corpo do valor não depende do
      número de glifos: depende da largura da janela, e da mesma maneira que

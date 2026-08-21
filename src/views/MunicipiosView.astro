@@ -35,8 +35,10 @@ import Claim from '../components/Claim.astro';
 import { MUNICIPIOS, DISTRITOS, regiaoDe } from '../data/caop-centroids.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
 import { VERBATIM } from '../data/verbatim.mjs';
+import { DADOS } from '../lib/dados.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
+import '../styles/municipio.css';
 
 const { lang = 'pt' } = Astro.props;
 const s = t(lang);
@@ -64,6 +66,25 @@ MUNICIPIOS.forEach((m, i) => {
 });
 
 const comEntradas = grupos.filter((g) => g.entradas.length > 0);
+
+/**
+ * A CONTAGEM POR PARCELAS (Emenda 17; decisão 4 da direção, 21.08.2026; R9).
+ *
+ * Vivia na ficha do mapa da primeira página, debaixo do rótulo «Contagem
+ * verificada nos ficheiros» — que é a casa a dizer o que fez, e a Emenda 15
+ * tirou-a de lá com o rótulo. A contagem em si é conteúdo: são quatro linhas do
+ * livro-razão, e a página que as pode publicar é a que lista os 308.
+ *
+ * Cada parcela é um `<Claim … chip>`: o valor da sua linha, e o selo que a abre.
+ * Nada é somado aqui — a soma é a quarta linha, e é do livro-razão como as
+ * outras três. Uma soma feita no gabarito seria um número sem porta.
+ */
+const parcelas = [
+  { rotulo: s.municipios.parcelaContinente, claim: 'municipios-continente-caop-2025' },
+  { rotulo: s.municipios.parcelaAcores, claim: 'municipios-acores-caop-2025' },
+  { rotulo: s.municipios.parcelaMadeira, claim: 'municipios-madeira-caop-2025' },
+  { rotulo: s.municipios.parcelaTotal, claim: 'municipios-portugal-caop-2025' },
+];
 ---
 
 <Base
@@ -80,6 +101,25 @@ const comEntradas = grupos.filter((g) => g.entradas.length > 0);
       {s.municipios.contagemA}
       <Claim id="municipios-portugal-caop-2025" lang={lang} chip={true} />
       {s.municipios.contagemB}
+    </p>
+    {/* A contagem por parcelas, numa linha só, por baixo da cabeça da lista.
+        Cada parcela leva o seu selo; o separador é o ponto médio da casa. */}
+    <p class="concelhos-parcelas">
+      {
+        parcelas.map((l, i) => (
+          <>
+            {/* O separador é irmão da parcela e não filho dela: num contentor
+                flexível um nó de texto só com espaço é descartado, e o ponto
+                médio dentro do grupo colava-se ao rótulo. Fica fora, e o
+                espaçamento é do contentor. */}
+            {i > 0 && <span class="concelhos-parcela-sep" aria-hidden="true">·</span>}
+            <span class="concelhos-parcela">
+              <span class="concelhos-parcela-k">{l.rotulo}</span>
+              <Claim id={l.claim} lang={lang} chip={true} />
+            </span>
+          </>
+        ))
+      }
     </p>
     <p class="rodape-nav" style="margin-top:14px">
       <a href={`${routePath('home', lang)}#mapa`}>{s.municipios.mapaLink}</a>
@@ -126,6 +166,17 @@ const comEntradas = grupos.filter((g) => g.entradas.length > 0);
       <span class="prov-study">{s.municipios.fonteK}</span>
       <span class="prov-vals verbatim" data-verbatim="caop-fonte" lang="pt-PT">
         {VERBATIM['caop-fonte'].text}
+      </span>
+    </div>
+    {/* A PORTA DO CSV DOS 308, que assenta na página que os lista (R10; ISSUES
+        I34). É uma ligação e não uma frase: o que ela abre está no nome do
+        ficheiro e no rótulo, e a promessa dos dados descarregáveis passa a ser
+        conferida aqui — `scripts/check-dados.mjs` declara, ficheiro a ficheiro,
+        em que rota a porta de cada um vive. */}
+    <div class="prov-row">
+      <span class="prov-study">{s.municipios.dadosK}</span>
+      <span class="prov-vals">
+        <a class="ligacao-dados" href={DADOS.municipios} download>{s.municipios.dadosLink} ↓</a>
       </span>
     </div>
   </div>

@@ -515,6 +515,21 @@ export const STRINGS = {
         'Nada sobre o concelho. É uma lista de nomes e de estados: um concelho aparece aqui porque existe na Carta Administrativa, não porque este sítio tenha alguma coisa medida sobre ele.',
       fonteK: 'De onde vem a lista',
       mapaLink: 'O mapa dos concelhos',
+      /* A CONTAGEM POR PARCELAS (Emenda 17; decisão 4 da direção, 21.08.2026;
+         ISSUES I33). Vivia na ficha do mapa da primeira página, com o rótulo
+         «Contagem verificada nos ficheiros», que é a casa a falar de si (Emenda
+         15) e não entra. Os quatro rótulos são nomes de territórios e a palavra
+         que soma: nomeiam o que a contagem é. */
+      parcelaContinente: 'Continente',
+      parcelaAcores: 'Açores',
+      parcelaMadeira: 'Madeira',
+      parcelaTotal: 'Total',
+      /* A porta do CSV dos 308, que sai da primeira página e assenta aqui, que é
+         a página que os lista (ISSUES I34). As palavras da porta são as de
+         `home.dadosLink`, sem uma mudada; o rótulo nomeia o que a coisa é, e não
+         o que a casa fez com ela (Emenda 15). */
+      dadosK: 'A lista em ficheiro',
+      dadosLink: 'descarregar os dados (CSV)',
     },
 
     /**
@@ -528,8 +543,15 @@ export const STRINGS = {
      */
     home: {
       metaTitle: 'O Estado do País · Portugal, medido',
+      /* A DESCRIÇÃO DA PRIMEIRA PÁGINA NOMEIA O QUE ELA TEM (Emenda 15, decisão
+         da direção de 21.08.2026). Dizia «Observatório de dados sobre Portugal.
+         Cada número publicado tem uma linha no livro-razão, com fonte, documento
+         e data de acesso.»: a segunda frase é o método do próprio sítio, que é a
+         classe de frase que a emenda tira das páginas do leitor, e o `<head>` é
+         superfície pública como o corpo. A nova diz os painéis, os indicadores,
+         os limiares e as fontes, que é o que a página mostra. */
       metaDescription:
-        'Observatório de dados sobre Portugal. Cada número publicado tem uma linha no livro-razão, com fonte, documento e data de acesso.',
+        'Portugal nos painéis europeus: os indicadores, os limiares e as fontes.',
 
       numeros: {
         /* A linha do limiar de um cartão (IDENTIDADE.md §11). A palavra é
@@ -1286,12 +1308,18 @@ export const STRINGS = {
         'Anything about the concelho. It is a list of names and states: a concelho appears here because it exists in the official administrative map, not because this site has measured anything about it.',
       fonteK: 'Where the list comes from',
       mapaLink: 'The map of concelhos',
+      parcelaContinente: 'Mainland',
+      parcelaAcores: 'Azores',
+      parcelaMadeira: 'Madeira',
+      parcelaTotal: 'Total',
+      dadosK: 'The list as a file',
+      dadosLink: 'download the data (CSV)',
     },
 
     home: {
       metaTitle: 'O Estado do País · Portugal, measured',
       metaDescription:
-        'A data observatory on Portugal. Every published figure has a row in the ledger, with source, document and access date.',
+        'Portugal on the European scoreboards: the indicators, the thresholds and the sources.',
 
       numeros: {
         limiar: 'threshold',

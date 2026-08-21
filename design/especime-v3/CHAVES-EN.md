@@ -185,6 +185,21 @@ nova. As quatro cadeias desta ronda têm inglês próprio.
 
 **Duas linhas com o mesmo nome, e é de propósito**: `taxa-de-desemprego-mip-2025` e `taxa-de-desemprego-2025` são a mesma medida em dois quadros — o Procedimento publica-lhe um limiar de 10%, o Painel Social não publica nenhum —, e são duas linhas distintas do livro-razão, de dois conjuntos de dados distintos do Eurostat (`tipsun20` e `une_rt_a`). A Emenda 16 manda mostrar «os dois painéis como as instituições os publicam», e as instituições publicam-na nos dois.
 
+### Etapa 3, commit 3-0
+
+*Seis chaves novas, todas na família `municipios.*`, e um par mudado que não é uma chave nova.*
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `municipios.parcelaContinente` | Continente | Mainland | a primeira das três parcelas da CAOP, que a Emenda 17 manda vir da primeira página para `/municipios`. A palavra é a de `inicio.mapa.continente`, retirada na 2l, sem uma letra mudada |
+| `municipios.parcelaAcores` | Açores | Azores | a mesma, de `inicio.mapa.acores` |
+| `municipios.parcelaMadeira` | Madeira | Madeira | a mesma, de `inicio.mapa.madeira`. **Identidade aceite**: nome próprio de um arquipélago, como já era |
+| `municipios.parcelaTotal` | Total | Total | a soma das três, que é a quarta linha do livro-razão e não uma conta do gabarito. **Identidade aceite**: a mesma palavra nas duas línguas, como já era em `inicio.mapa.total` e antes dela em `home.instr2.total` |
+| `municipios.dadosK` | A lista em ficheiro | The list as a file | o rótulo da porta do CSV dos 308, que sai da primeira página (ISSUES I34). Nomeia o que a coisa é, e não o que a casa fez com ela (Emenda 15) |
+| `municipios.dadosLink` | descarregar os dados (CSV) | download the data (CSV) | a porta em si. As palavras são as de `home.dadosLink`, sem uma mudada: é a mesma porta noutra página |
+
+**Um par com forma nova, e não é chave nova**: `home.metaDescription`, nas duas edições. Dizia «Observatório de dados sobre Portugal. Cada número publicado tem uma linha no livro-razão, com fonte, documento e data de acesso.» / «A data observatory on Portugal. Every published figure has a row in the ledger, with source, document and access date.» A segunda frase é o método do próprio sítio, que é a classe que a Emenda 15 tira das páginas do leitor, e o `<head>` é superfície pública como o corpo. Passa a **«Portugal nos painéis europeus: os indicadores, os limiares e as fontes.»** / **«Portugal on the European scoreboards: the indicators, the thresholds and the sources.»**, no texto exacto da decisão 1 da direção de 21.08.2026.
+
 ## Identidades aceites (PT = EN de propósito)
 Nomes próprios, códigos de série, identificadores de linha, «Eurostat», «INE», «DGAL», «IEFP», «CAOP», «UE-27», «O Estado do País». A régua da invariância imprime todas as chaves cujo valor é igual nas duas línguas; as que não estiverem nesta lista são erro.
 
@@ -198,5 +213,7 @@ Nomes próprios, códigos de série, identificadores de linha, «Eurostat», «I
   que é pontuação e não uma palavra.
 
 - **Etapa 2l, três identidades novas e duas retiradas.** `node scripts/medir-invariancia.mjs --chaves` imprime **15** chaves com o mesmo valor nas duas edições, onde a 2j imprimia 14. Entram `inicio.cabeca.tituloPaisFim` = «.» (pontuação, como `tituloVazioB`), `inicio.portas.concelhos` = « concelhos» e `inicio.mapa.linha` = « concelhos · CAOP » — as duas pela mesma razão que `coberturaB` tinha, que é «concelho» ficar em português na edição inglesa, mais a sigla da Carta. Saem `inicio.mapa.coberturaB` e `inicio.mapa.total`, com as cadeias que a Emenda 15 retirou.
+
+- **Etapa 3, commit 3-0, duas identidades novas e nenhuma retirada.** `node scripts/medir-invariancia.mjs --chaves` imprime **17** chaves com o mesmo valor nas duas edições, onde a 2l imprimia 15. Entram `municipios.parcelaMadeira` = «Madeira» e `municipios.parcelaTotal` = «Total», pelas razões que as suas antecessoras em `inicio.mapa.*` já tinham: um nome próprio de arquipélago e uma palavra que se escreve igual nas duas línguas. Nenhuma sai: as duas que a 2l retirou já tinham saído da conta.
 
 - **`nav.menu` = «Menu» nas duas edições** (etapa 1e). Não é português copiado do inglês nem inglês copiado do português: «menu» entrou no português pelo francês e é a palavra corrente em Portugal para esta coisa exacta, tanto no papel como no ecrã, e nenhuma alternativa portuguesa («opções», «secções», «navegação») diz o que este comando faz sem dizer outra coisa. Escreve-se igual e lê-se igual; o que muda entre as duas edições é o nome acessível do comando, que junta a palavra visível à etiqueta da região («Menu · Navegação principal» / «Menu · Main navigation»), e essa metade é diferente. Se a revisão de voz preferir outra palavra em português, é uma cadeia.

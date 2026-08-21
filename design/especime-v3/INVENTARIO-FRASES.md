@@ -6,9 +6,19 @@ pública, classificadas em conteúdo, navegação e autorreferência; a terceira
 classe vai a zero fora do Método, do Sobre e do recibo, e a régua imprime a
 contagem para que não volte».*
 
+*Estendido a 21.08.2026 (etapa 3, commit 3-0, decisão 1 do diretor): a régua
+passa a recolher também a **descrição do `<head>`** de cada rota inventariada. A
+`<meta name="description">` é superfície pública, é escrita pela casa, e a da
+primeira página descrevia o método do sítio enquanto a contagem de
+autorreferência do corpo estava a zero. As rotas inventariadas são uma lista
+declarada em `medir-defeitos.mjs` (`ROTAS_DO_INVENTARIO`), e crescem com as
+etapas: uma rota entra no commit em que a sua página é reconstruída e as suas
+frases são classificadas.*
+
 Esta lista é lida por `scripts/medir-defeitos.mjs` (medida 8). O que a régua
-recolhe é mecânico e está escrito lá: todo o bloco de texto da primeira página,
-nas duas edições, que não seja nem contenha uma origem declarada
+recolhe é mecânico e está escrito lá: todo o bloco de texto de uma rota
+inventariada, nas duas edições, mais a descrição do seu `<head>`, que não seja
+nem contenha uma origem declarada
 (`data-claim`, `data-prova`, `data-verbatim`, `data-nonledger`, …), que não seja
 o nome de uma medida nem a sua linha de unidade (`data-medida-nome`,
 `data-medida-unidade`), e cujo texto não esteja todo dentro de um `<a>` ou de um
@@ -69,6 +79,8 @@ na língua em que é rendida.
 | conteudo | Península de Setúbal · região |
 | conteudo | Poder de compra per capita, publicado pelo INE para todos os concelhos. |
 | conteudo | Portugal breaches 4 thresholds of the Macroeconomic Imbalance Procedure and meets 9 . |
+| conteudo | Portugal nos painéis europeus: os indicadores, os limiares e as fontes. |
+| conteudo | Portugal on the European scoreboards: the indicators, the thresholds and the sources. |
 | conteudo | Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9 . |
 | conteudo | Portugal · country |
 | conteudo | Portugal · país |
@@ -121,3 +133,4 @@ na língua em que é rendida.
 | «O ponto marca a posição do concelho na Carta Administrativa, e não cobertura. Quando houver linhas para <nome>…» | autorreferência | a manchete e as oito peças vazias |
 | «Um erro confirmado entra no registo de correções e na própria linha, com o valor antigo à vista. Nada é apagado.» | autorreferência | `/correcoes`, que já a diz por extenso, com as três naturezas |
 | «Linha do livro-razão: <estudo>» (texto oculto do selo) | autorreferência | encurtou para «fonte · <estudo>» |
+| «Observatório de dados sobre Portugal. Cada número publicado tem uma linha no livro-razão, com fonte, documento e data de acesso.» (descrição do `<head>` da primeira página) | autorreferência | o Método e o recibo de cada linha; a descrição passa a nomear o que a página tem |

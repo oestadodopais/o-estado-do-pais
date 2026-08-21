@@ -1,0 +1,49 @@
+/* =============================================================================
+ * A FAMÍLIA DOS CONCELHOS · `/municipios` e `/municipios/<slug>`
+ * =============================================================================
+ * Folha das duas vistas dos concelhos, importada por elas e por mais lado
+ * nenhum. Nasce na etapa 3, commit 3-0, com a única regra de que esse commit
+ * precisa: a linha da contagem por parcelas da CAOP, que a Emenda 17 manda vir
+ * da primeira página para aqui. As subetapas 3c e 3d enchem-na.
+ *
+ * Nenhum literal de cor: as fichas são as de `src/styles/tokens.css`
+ * (`IDENTIDADE.md` §2), e nenhuma delas é um acento novo.
+ * ========================================================================== */
+
+/* -----------------------------------------------------------------------------
+ * A CONTAGEM POR PARCELAS, NUMA LINHA (Emenda 17; decisão 4 de 21.08.2026)
+ * -----------------------------------------------------------------------------
+ * Quatro pares rótulo + valor, cada valor com o seu selo, separados pelo ponto
+ * médio da casa. É uma linha de aparelho e não prosa: vai na letra do
+ * instrumento, com algarismos tabulares, e quebra por par quando a largura não
+ * chega — `inline-flex` no par para que o rótulo, o valor e o selo nunca se
+ * separem, e `flex-wrap` na linha para que a quebra caia entre pares.
+ *
+ * O separador é `aria-hidden`: quem ouve a página ouve quatro pares, e um ponto
+ * médio lido em voz alta entre eles não é conteúdo. */
+.concelhos-parcelas {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 8px;
+  row-gap: 2px;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.concelhos-parcela {
+  display: inline-flex;
+  align-items: baseline;
+  column-gap: 6px;
+  white-space: nowrap;
+}
+.concelhos-parcela-k {
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+.concelhos-parcela-sep {
+  color: var(--g2);
+}
