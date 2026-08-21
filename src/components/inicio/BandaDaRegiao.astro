@@ -27,6 +27,16 @@
  * OS VALORES DESENHADOS DENTRO DO SVG TÊM A SUA PORTA NA LEGENDA. Um `<a>`
  * dentro de um desenho não se lê como porta (§1.34), e por isso o selo de cada
  * valor vive em `[data-legenda-selos]`, que é onde `auditaSelo()` o procura.
+ *
+ * E A RESSALVA VIAJA COM O SELO. A cópia desenhada de um valor com `source_flag:
+ * "p"` não pode levar a palavra «provisório» ao lado — `Claim.astro` não a
+ * escreve dentro de um `<svg>`, porque um `<span>` não é filho legítimo de um
+ * `<text>`. Ela entra na entrada da legenda, ao pé do selo daquele valor
+ * (decisão (d) da direção; achado 13 da segunda leitura cruzada), e aqui isso já
+ * acontece sem uma linha a mais: a entrada da legenda é um `<Claim … chip>`,
+ * fora do desenho, e um `<Claim>` fora do desenho traz a palavra por si. O
+ * Instrumento n.º 1, cuja entrada de legenda é só o selo, teve de a receber à
+ * mão na subetapa 2k.
  */
 import Claim from '../Claim.astro';
 import { ESCALA } from '../../data/regioes.mjs';

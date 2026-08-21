@@ -1567,6 +1567,160 @@ for (const largura of [1280, 390]) {
   );
 }
 
+/* =============================================================== ETAPA 2k
+ *
+ * As duas correções reais da segunda leitura cruzada, triadas pela cadeira:
+ * a palavra «provisório» ao pé das cópias desenhadas (achado 13) e o
+ * `aria-controls` das duas divulgações por irmão (achado 16).
+ * ====================================================================== */
+
+/* (2k) A PALAVRA AO PÉ DA CÓPIA DESENHADA, NA ENTRADA DE LEGENDA DO SEU SELO.
+ *
+ * Dentro de um `<svg>` a palavra não pode ir ao pé do número (um `<span>` não é
+ * filho de um `<text>`), e a decisão (d) manda-a estar ao pé do valor onde quer
+ * que a fonte marque a linha como provisória. A direção decidiu o lugar: a
+ * entrada da legenda de selos daquele valor, que é onde o selo já vive pela
+ * convenção do §1.34.
+ *
+ * A célula mede na PÁGINA e não no ficheiro: para cada uma das seis linhas com
+ * `source_flag: "p"`, conta as entradas de legenda que levam a palavra, e
+ * confirma que ela está FORA do selo e FORA de qualquer `[data-claim]` — que é o
+ * que faz `seloDaLinha()` e `formaDoValor()` continuarem a bater certo. As seis
+ * linhas são lidas dos próprios `[data-claim]` desenhados, e não escritas aqui. */
+{
+  const linhas = [];
+  let bem = true;
+  for (const [edicao, rota, palavra] of [
+    ['pt', '/', 'provisório'],
+    ['en', '/en', 'provisional'],
+  ]) {
+    const p = await pagina();
+    await p.goto(base + rota, { waitUntil: 'networkidle' });
+    const m = await p.evaluate((palavra) => {
+      const desenhadas = {};
+      for (const el of document.querySelectorAll('[data-claim]')) {
+        if (!el.closest('svg')) continue;
+        const id = el.getAttribute('data-claim');
+        desenhadas[id] = (desenhadas[id] || 0) + 1;
+      }
+      const legendas = [...document.querySelectorAll('[data-legenda-selos]')];
+      const porLinha = {};
+      let foraDoSelo = true;
+      for (const id of Object.keys(desenhadas)) {
+        porLinha[id] = 0;
+        for (const legenda of legendas) {
+          for (const chip of legenda.querySelectorAll('a.src-chip')) {
+            const href = chip.getAttribute('href') || '';
+            if (!href.replace(/\/$/, '').endsWith('/' + id)) continue;
+            let entrada = chip.parentElement;
+            while (entrada && entrada !== legenda && !entrada.querySelector('.claim-provisorio')) {
+              entrada = entrada.parentElement;
+            }
+            const pal = entrada && entrada !== legenda ? entrada.querySelector('.claim-provisorio') : null;
+            if (!pal || pal.textContent.trim() !== palavra) continue;
+            if (pal.closest('a.src-chip') || pal.closest('[data-claim]')) foraDoSelo = false;
+            porLinha[id]++;
+          }
+        }
+      }
+      return { desenhadas, porLinha, foraDoSelo };
+    }, palavra);
+    const ids = Object.keys(m.desenhadas).sort();
+    /* Uma linha desenhada que a fonte NÃO marca como provisória não tem entrada
+       com palavra nenhuma, e é o controlo negativo desta célula: a distância da
+       régua é desenhada e não leva palavra. */
+    const provisorias = ids.filter((id) => m.porLinha[id] > 0);
+    const ok = provisorias.length === 6 && provisorias.every((id) => m.porLinha[id] === 2) && m.foraDoSelo;
+    if (!ok) bem = false;
+    linhas.push(
+      `${edicao}: ${ids.length} linhas desenhadas, ${provisorias.length} provisórias · ` +
+        provisorias.map((id) => `${id}=${m.porLinha[id]}`).join(' ') +
+        ` · fora do selo e do [data-claim]: ${m.foraDoSelo}`,
+    );
+    await p.__contexto.close();
+  }
+  conta('2k · a palavra «provisório» na entrada de legenda de cada cópia desenhada', bem, linhas.join(' · '));
+}
+
+/* (2k) AS DUAS DIVULGAÇÕES POR IRMÃO DIZEM O QUE ABREM.
+ *
+ * O «Menu» do cabeçalho e a porta do telemóvel do Instrumento n.º 1 revelam um
+ * IRMÃO por `[open] ~`, e a razão está escrita nos dois sítios. O que faltava era
+ * o atributo: `aria-controls` com o `id` do irmão, e um `aria-expanded` que
+ * acompanha o `open`.
+ *
+ * A 390 a célula ABRE os dois a sério, com um toque, e vê o atributo virar e
+ * voltar. A 1280 o comando do menu desaparece e a navegação está à vista, que é
+ * o outro desenho da mesma folha. */
+{
+  const linhas = [];
+  let bem = true;
+  for (const [edicao, rota] of [
+    ['pt', '/'],
+    ['en', '/en'],
+  ]) {
+    const p = await pagina({ largura: 390 });
+    await p.goto(base + rota, { waitUntil: 'networkidle' });
+    const alvos = await p.evaluate(() =>
+      [...document.querySelectorAll('details > summary[aria-controls]')].map((sum) => {
+        const id = sum.getAttribute('aria-controls');
+        return {
+          id,
+          resolve: !!document.getElementById(id),
+          irmao: !!(document.getElementById(id) && document.getElementById(id).parentElement === sum.parentElement.parentElement),
+          inicial: sum.getAttribute('aria-expanded'),
+        };
+      }),
+    );
+    const passos = [];
+    for (const alvo of alvos) {
+      const sel = `details > summary[aria-controls="${alvo.id}"]`;
+      await p.locator(sel).click();
+      await p.waitForFunction(
+        (s) => document.querySelector(s).getAttribute('aria-expanded') === 'true',
+        sel,
+        { timeout: 2000 },
+      );
+      const aberto = await p.evaluate(
+        (s) => ({
+          expandido: document.querySelector(s).getAttribute('aria-expanded'),
+          open: document.querySelector(s).parentElement.open,
+          corpoVisivel: !!document
+            .getElementById(document.querySelector(s).getAttribute('aria-controls'))
+            .getClientRects().length,
+        }),
+        sel,
+      );
+      await p.locator(sel).click();
+      await p.waitForFunction(
+        (s) => document.querySelector(s).getAttribute('aria-expanded') === 'false',
+        sel,
+        { timeout: 2000 },
+      );
+      const ok = alvo.resolve && alvo.inicial === 'false' && aberto.expandido === 'true' && aberto.open && aberto.corpoVisivel;
+      if (!ok) bem = false;
+      passos.push(`${alvo.id} resolve:${alvo.resolve} irmão:${alvo.irmao} ${alvo.inicial}→${aberto.expandido} corpo:${aberto.corpoVisivel}`);
+    }
+    if (alvos.length !== 2) bem = false;
+    await p.__contexto.close();
+
+    const q = await pagina({ largura: 1280 });
+    await q.goto(base + rota, { waitUntil: 'networkidle' });
+    const largo = await q.evaluate(() => {
+      const sum = document.querySelector('.nav-menu > summary');
+      const nav = document.getElementById('nav-principal');
+      return {
+        comando: !!sum.getClientRects().length,
+        nav: !!nav.getClientRects().length,
+      };
+    });
+    if (largo.comando || !largo.nav) bem = false;
+    await q.__contexto.close();
+    linhas.push(`${edicao}: 390 · ${passos.join(' · ')} · 1280 · comando à vista:${largo.comando} navegação à vista:${largo.nav}`);
+  }
+  conta('2k · as duas divulgações por irmão: aria-controls resolve e aria-expanded acompanha', bem, linhas.join(' · '));
+}
+
 /* --------------------------------------------------------------------- relatório */
 await navegador.close();
 servidor.close();

@@ -166,11 +166,28 @@ const painel = `${home}#numeros`;
         SUBSTITUIR a visível, ou quem fala com a página pelo que lê nela pede uma
         coisa que o comando não atende (WCAG 2.5.3). As duas metades são cadeias
         que já existem.
+
+        O `aria-controls` DIZ QUAL É O IRMÃO (2k, achado 16 da segunda leitura
+        cruzada). O parágrafo acima diz o que se perde com a lista fora do
+        `<details>`: «a associação de árvore entre o comando e o que ele abre».
+        Perde-se na árvore e recupera-se por nome — `aria-controls` aponta para o
+        `id` da navegação, que é o que este comando abre. O `aria-expanded`
+        acompanha o `open`, e quem o mantém em dia é `public/js/tema.js`, que é o
+        ficheiro adiado que todas as páginas com este cabeçalho já carregam.
+
+        MEDIDO, e por isso escrito: num Chromium 148 o `aria-expanded` de um
+        `<summary>` NÃO manda no estado que a árvore de acessibilidade publica —
+        o `open` do `<details>` manda, nos dois sentidos. Um atributo parado não
+        mente ao leitor de ecrã; mente ao DOM, e é por isso que o script o
+        acompanha em vez de o deixar escrito e esquecido.
         -------------------------------------------------------------------- */}
     <details class="nav-menu">
-      <summary aria-label={`${s.nav.menu} · ${s.nav.rotuloPrincipal}`}>{s.nav.menu}</summary>
+      <summary
+        aria-label={`${s.nav.menu} · ${s.nav.rotuloPrincipal}`}
+        aria-controls="nav-principal"
+        aria-expanded="false">{s.nav.menu}</summary>
     </details>
-    <nav class="nav nav-principal" aria-label={s.nav.rotuloPrincipal}>
+    <nav class="nav nav-principal" id="nav-principal" aria-label={s.nav.rotuloPrincipal}>
       {
         itensNav.map((item) => (
           <a href={item.href} aria-current={atual(item.href)}>
