@@ -133,6 +133,94 @@ export function concelhos() {
 }
 
 /**
+ * ===========================================================================
+ * A LEDE DO PAINEL, CONSTRUÍDA E NÃO ESCRITA (etapa 2m, brief §2)
+ * ===========================================================================
+ *
+ * A manchete do País recontava-se sozinha desde a 2l: as duas contagens são
+ * chaves da prova e o portão reconta-as. A LEDE não. Estava escrita à mão —
+ * «Fora do limiar: dívida pública, posição de investimento internacional, custo
+ * unitário do trabalho e preços da habitação, em 2025.» — e ficava falsa no dia
+ * em que uma quinta medida atravessasse o seu limiar, sem que nada no sítio o
+ * dissesse. A manchete passaria a dizer 5 e a lede continuaria a nomear quatro.
+ *
+ * Passa a ser construída, na CONSTRUÇÃO e nunca no cliente, de três coisas que
+ * já existem e são conferidas:
+ *
+ *   · os NOMES das peças do Procedimento cujo estado é «fora», pela ordem do
+ *     painel, tal como `figuras.mjs` os declara nas duas línguas;
+ *   · as PALAVRAS DE GRAMÁTICA da edição («, », « e » / « and », «, em » /
+ *     «, in », o ponto final), de `strings.mjs`;
+ *   · o ANO, que é o `reference_date` das linhas e sai marcado como qualquer
+ *     data de referência da casa.
+ *
+ * NENHUM ALGARISMO É ESCRITO POR ESTA FUNÇÃO. O único que a frase leva é o ano,
+ * e esse não é composto: é o campo da linha, tal como ele está.
+ *
+ * O ANO SÓ ENTRA SE FOR UM SÓ. As peças trazem cada uma o seu período, e quatro
+ * medidas de anos diferentes não têm um ano comum: nesse dia a frase acaba na
+ * lista, sem «, em …», porque cada peça já diz o seu. Uma frase que escolhesse
+ * um dos anos para representar os quatro estaria a afirmar mais do que sabe.
+ *
+ * O PORTÃO CONTA OS ITENS DA LISTA e compara-os com `painel_fora_do_limiar`,
+ * pela marca `data-prova-lista`. É a mesma disciplina do `data-prova`: duas
+ * contas da mesma coisa, feitas de sítios diferentes, que têm de bater certo.
+ */
+
+/**
+ * O nome de uma medida no meio de uma frase.
+ *
+ * A ÚNICA TRANSFORMAÇÃO QUE A CONSTRUÇÃO FAZ A UM NOME DECLARADO, e vai dita
+ * inteira: a primeira letra desce de caixa. `figuras.mjs` escreve «Dívida
+ * pública» porque é assim que o nome encabeça a peça; a lede escreve-o a seguir
+ * a dois pontos, no meio de uma frase, e é assim que a Emenda 16 a redige nas
+ * duas edições («dívida pública…», «government debt…»). Sem esta linha a frase
+ * construída deixaria de ser a frase escrita, que é o teste de aceitação desta
+ * mudança: hoje, as duas têm de ser a mesma cadeia, carácter a carácter.
+ *
+ * O MODO DE FALHAR ESTÁ NOMEADO: um nome que comece por nome próprio («Eurostat
+ * …») desceria de caixa e ficaria errado. Nenhum dos treze do Procedimento é
+ * assim, e não há regra que o adivinhe — está em ISSUES para que a próxima
+ * medida a entrar seja lida antes de entrar, e não depois.
+ */
+export function nomeEmFrase(nome) {
+  const n = String(nome);
+  return n.charAt(0).toLowerCase() + n.slice(1);
+}
+
+/**
+ * @param {Array} medidas  as peças do painel, já com `estado` e `linha`
+ * @param {object} gramatica  `s.inicio.cabeca.ledePais` da edição
+ * @param {'pt'|'en'} lang
+ * @returns {{ itens: string[], nomes: string[], ano: string|null, cauda: any[] } | null}
+ */
+export function ledeDoPainel(medidas, gramatica, lang) {
+  const fora = medidas.filter((m) => m.estado === 'fora');
+  if (fora.length === 0) return null;
+
+  const nomes = fora.map((m) => nomeEmFrase(m.nome[lang] ?? m.nome.pt));
+
+  /* Os itens já com os separadores pelo meio, para que o gabarito os renda como
+     uma lista de pedaços adjacentes e não tenha de decidir nada: um espaço a
+     mais entre dois pedaços seria um espaço a mais na frase. */
+  const itens = [];
+  nomes.forEach((nome, i) => {
+    if (i > 0) itens.push(i === nomes.length - 1 ? gramatica.ultimo : gramatica.separador);
+    itens.push(nome);
+  });
+
+  const anos = new Set(fora.map((m) => m.linha?.reference_date).filter(Boolean));
+  const ano = anos.size === 1 ? [...anos][0] : null;
+
+  return {
+    itens,
+    nomes,
+    ano,
+    cauda: ano ? [gramatica.ano, { ref: ano }, gramatica.fecha] : [gramatica.fecha],
+  };
+}
+
+/**
  * ---------------------------------------------------------------------------
  * O ESQUEMA FECHADO DO ENDEREÇO (plano §13)
  * ---------------------------------------------------------------------------

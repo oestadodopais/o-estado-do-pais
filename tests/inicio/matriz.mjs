@@ -2248,6 +2248,53 @@ const minimaNoDesenho = () => {
   await p.__contexto.close();
 }
 
+/* (f6) A LEDE DIZ AS MESMAS MEDIDAS QUE O PAINEL MARCA, e pela mesma ordem.
+ *
+ * Duas leituras da MESMA página, e nenhuma delas é a função que compôs a frase:
+ * os nomes das peças cujo `data-estado` é «fora», pela ordem do documento, contra
+ * os nomes que a lede nomeia, partidos pelos separadores da edição. O portão já
+ * compara a CONTAGEM com a chave da prova; o que esta célula acrescenta é que os
+ * nomes são aqueles e não outros quaisquer. */
+{
+  const linhas = [];
+  let bem = true;
+  for (const [rota, edicao, ultimo] of [['/', 'pt', ' e '], ['/en/', 'en', ' and ']]) {
+    const p = await pagina({ largura: 1280 });
+    await p.goto(base + rota, { waitUntil: 'networkidle' });
+    const e = await p.evaluate(() => ({
+      /* As peças do painel do País marcadas «fora», pela ordem do documento. */
+      fora: [...document.querySelectorAll('[data-painel="pais"] .peca[data-estado="fora"]')].map(
+        (a) => a.querySelector('[data-medida-nome]').textContent.trim(),
+      ),
+      lista: document.querySelector('[data-prova-lista]')?.textContent.trim() ?? null,
+      chave: document.querySelector('[data-prova-lista]')?.getAttribute('data-prova-lista') ?? null,
+      manchete: document.querySelector('[data-prova="painel_fora_do_limiar"]')?.textContent.trim(),
+      lede: document.querySelector('.cabeca-lede')?.textContent.trim() ?? null,
+      /* O ano da lede é o único algarismo que a frase escreve, e sai marcado. */
+      ano: document.querySelector('.cabeca-lede [data-nonledger="data-de-referencia"]')?.textContent.trim() ?? null,
+      /* … e tem de ser o período que as próprias peças declaram. */
+      periodos: [...document.querySelectorAll('[data-painel="pais"] .peca[data-estado="fora"]')].map(
+        (a) => a.querySelector('[data-medida-unidade]')?.textContent.trim() ?? '',
+      ),
+    }));
+    const nomes = (e.lista ?? '').split(new RegExp(`,\\s+|${ultimo.replace(/\s/g, '\\s')}`));
+    const esperados = e.fora.map((n) => n.charAt(0).toLowerCase() + n.slice(1));
+    const ok =
+      e.chave === 'painel_fora_do_limiar' &&
+      nomes.length === e.fora.length &&
+      String(e.fora.length) === e.manchete &&
+      nomes.every((n, i) => n === esperados[i]) &&
+      !!e.ano &&
+      e.periodos.every((u) => u.includes(e.ano));
+    if (!ok) bem = false;
+    linhas.push(
+      `${edicao}: manchete ${e.manchete} · lista de ${nomes.length} — «${nomes.join(' | ')}» · peças fora: «${esperados.join(' | ')}» · ano ${e.ano}, em todas as unidades das peças: ${e.periodos.every((u) => u.includes(e.ano))} · lede «${e.lede}»`,
+    );
+    await p.__contexto.close();
+  }
+  conta('2m · a lede nomeia as medidas que o painel marca fora, pela ordem do painel, nas duas edições', bem, linhas.join(' · '));
+}
+
 await navegador.close();
 servidor.close();
 

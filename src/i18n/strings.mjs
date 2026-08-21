@@ -374,11 +374,26 @@ export const STRINGS = {
         /* A LEDE DA EMENDA 16, palavra por palavra. Nomeia as quatro medidas que
            estão fora do limiar, e o ano é o `reference_date` das quatro linhas,
            marcado como data de referência e não escrito como prosa. */
-        ledePaisPartes: [
-          'Fora do limiar: dívida pública, posição de investimento internacional, custo unitário do trabalho e preços da habitação, em ',
-          { ref: '2025' },
-          '.',
-        ],
+        /* A LEDE DO PAÍS DEIXA DE SER UMA FRASE ESCRITA (etapa 2m).
+         *
+         * Era uma cadeia com quatro nomes de medida dentro dela, e ficava falsa
+         * no dia em que uma quinta medida atravessasse o seu limiar — sem que
+         * nada no sítio o dissesse. Passa a ser CONSTRUÍDA, na construção, dos
+         * nomes das peças do Procedimento cujo estado é «fora», pela ordem do
+         * painel, com estas palavras de gramática pelo meio. O portão conta os
+         * itens da lista e compara-os com a chave `painel_fora_do_limiar`, que
+         * é a mesma contagem que a manchete leva.
+         *
+         * Nenhuma destas cadeias traz um algarismo: o único que a frase escreve
+         * é o ano, e esse é o `reference_date` das linhas, marcado como em toda
+         * a casa. Os nomes vêm de `figuras.mjs` e mais de lado nenhum. */
+        ledePais: {
+          abre: 'Fora do limiar: ',
+          separador: ', ',
+          ultimo: ' e ',
+          ano: ', em ',
+          fecha: '.',
+        },
         ledeRegiaoPartes: [
           'PIB per capita em paridades de poder de compra, com a média da UE-27 fixada em ',
           { nl: '100', motivo: 'escala-de-instrumento' },
@@ -1244,11 +1259,13 @@ export const STRINGS = {
         tituloEvora: 'The measures of the concelho, each with its own row.',
         tituloVazioA: 'Still no rows for ',
         tituloVazioB: '.',
-        ledePaisPartes: [
-          'Outside the threshold: government debt, net international investment position, unit labour cost and house prices, in ',
-          { ref: '2025' },
-          '.',
-        ],
+        ledePais: {
+          abre: 'Outside the threshold: ',
+          separador: ', ',
+          ultimo: ' and ',
+          ano: ', in ',
+          fecha: '.',
+        },
         ledeRegiaoPartes: [
           'GDP per capita in purchasing power standards, with the EU-27 average fixed at ',
           { nl: '100', motivo: 'escala-de-instrumento' },

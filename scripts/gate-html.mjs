@@ -201,6 +201,38 @@ let excluidasPorCitacao = 0;
 const ocorrenciasDaProva = [];
 
 /**
+ * ---------------------------------------------------------------------------
+ * UMA CONTAGEM PODE APARECER COMO UMA LISTA DE NOMES, E TAMBÉM SE RECONTA
+ * ---------------------------------------------------------------------------
+ * Extensão do bloco acima (etapa 2m, brief §2). A manchete da primeira página
+ * diz «Portugal ultrapassa 4 limiares», e o 4 é um `data-prova` que o portão
+ * reconta. A LEDE dizia a mesma contagem por extenso — «Fora do limiar: dívida
+ * pública, posição de investimento internacional, custo unitário do trabalho e
+ * preços da habitação» — e essa não era conferida por ninguém: no dia em que
+ * uma quinta medida atravessasse o limiar, a manchete dizia 5 e a lede
+ * continuava a nomear quatro.
+ *
+ * `data-prova-lista="<chave>"` marca o elemento que TEM a lista, e o portão
+ * conta-lhe os itens partindo o texto pelos separadores da edição. É a mesma
+ * disciplina do `data-prova`: não se importa a função que compôs a frase — o
+ * portão parte a cadeia com a sua própria leitura, e as duas contas têm de bater
+ * certo.
+ *
+ * OS SEPARADORES SÃO DECLARADOS, POR EDIÇÃO, e são estes e mais nenhum. Um nome
+ * de medida que trouxesse uma vírgula ou um « e » solto dentro dele partiria em
+ * dois e a contagem fecharia a construção — o que é o modo certo de falhar:
+ * ruidoso e no sítio, em vez de uma lista que se lê mal em silêncio. Nenhum dos
+ * treze nomes do Procedimento tem um, nas duas línguas (medido).
+ */
+const SEPARADORES_DA_LISTA = {
+  pt: /,\s+|\s+e\s+/g,
+  en: /,\s+|\s+and\s+/g,
+};
+
+/** As ocorrências de `data-prova-lista`, conferidas no fim como as outras. */
+const ocorrenciasDaLista = [];
+
+/**
  * Os itens e os acontecimentos que cada edição da página da agenda rendeu.
  *
  * Guardados aqui e conferidos no fim, contra o registo da travessia
@@ -3382,6 +3414,50 @@ for (const file of ficheirosHtml(DIST)) {
     ocorrenciasDaProva.push({ rel, chave, texto: renderizado });
   }
 
+  /* A lista por extenso da mesma contagem. Não é uma origem nova: é a MESMA
+     chave, contada de outra maneira, e por isso o elemento não sai do
+     varrimento de prosa — o que ele tem são nomes de medida e palavras de
+     gramática, sem um algarismo. */
+  for (const el of body.querySelectorAll('[data-prova-lista]')) {
+    const chave = el.getAttribute('data-prova-lista');
+
+    if (!(chave in PROVA)) {
+      err(
+        `data-prova-lista="${chave}" não é uma chave de src/lib/prova.mjs. ` +
+          `Chaves: ${Object.keys(PROVA).join(', ')}.`,
+      );
+      continue;
+    }
+
+    const lingua = linguaPagina ?? 'pt';
+    const separadores = SEPARADORES_DA_LISTA[lingua];
+    if (!separadores) {
+      err(
+        `data-prova-lista="${chave}" está numa página da edição "${lingua}" e o portão não ` +
+          `declara os separadores de lista dessa edição.\n` +
+          `      Uma lista que o portão não sabe partir é uma lista que ele não confere.`,
+      );
+      continue;
+    }
+
+    const renderizado = textoTranscrito(el);
+    const itens = renderizado
+      .split(new RegExp(separadores.source, 'g'))
+      .map((t) => t.trim())
+      .filter((t) => t.length > 0);
+
+    if (itens.length === 0) {
+      err(
+        `data-prova-lista="${chave}" não rende nome nenhum ("${renderizado.slice(0, 60)}").\n` +
+          `      Uma lista vazia não é uma contagem: um estado sem itens diz-se por palavras, ` +
+          `sem marca.`,
+      );
+      continue;
+    }
+
+    ocorrenciasDaLista.push({ rel, chave, itens: itens.length, texto: renderizado });
+  }
+
   for (const el of body.querySelectorAll('[data-verbatim]')) {
     const chave = el.getAttribute('data-verbatim');
     const registado = VERBATIM[chave];
@@ -3857,6 +3933,25 @@ for (const o of ocorrenciasDaProva) {
   }
 }
 
+/* A LISTA POR EXTENSO, contra a mesma conta do portão. A mensagem diz o texto,
+   e não só o número: quem a lê tem de poder ver QUAL o nome que sobra ou falta,
+   sem abrir a página. */
+for (const o of ocorrenciasDaLista) {
+  const esperado = CONTAS[o.chave];
+  if (esperado === undefined || esperado === null) continue; // já dito acima
+  if (o.itens !== esperado) {
+    erros.push({
+      rel: o.rel,
+      msg:
+        `a lista da prova "${o.chave}" nomeia ${o.itens} medida(s) e o portão conta ` +
+        `${String(esperado)}.\n` +
+        `      lista renderizada: «${o.texto.slice(0, 160)}»\n` +
+        `      A contagem e os nomes dizem a mesma coisa. Uma frase que nomeia medidas a mais ou ` +
+        `a menos do que a manchete conta deixou de ser verdadeira.`,
+    });
+  }
+}
+
 /* ------------------------------------------------------------------ relatório */
 
 provaDaOrtografia();
@@ -4072,6 +4167,7 @@ console.log(
   cinza(
     `    prova · ${Object.keys(PROVA).length} chaves reconferidas pelo portão · ` +
       `${ocorrenciasDaProva.length} números marcados nas páginas · ` +
+      `${ocorrenciasDaLista.length} lista(s) de nomes recontada(s) · ` +
       `${ligacoesConferidas} ligações internas (${ligacoesRelativas} relativas, ` +
       `${ancorasConferidas} âncoras) · ${recortesConferidos} recortes · ` +
       `${alojadosConferidos} ficheiros alojados · ` +

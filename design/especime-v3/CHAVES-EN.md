@@ -228,6 +228,34 @@ nova. As quatro cadeias desta ronda têm inglês próprio.
 | `livro.linha.noutroSitioK` | Esta linha noutro sítio | This row elsewhere | o rótulo do bloco que a `IDENTIDADE.md` §11 pede ao aparelho, a seguir ao acesso aos dados |
 | `livro.linha.noutraEdicao` | Esta linha na edição inglesa | This row in the Portuguese edition | a porta desse bloco, e a única «noutro sítio» que a casa pode provar para todas as 132 linhas sem inventar um índice de superfícies. As duas cadeias nomeiam a edição de destino, e por isso não são a mesma frase traduzida |
 
+### Etapa 2m
+
+*A lede do País deixa de ser uma frase escrita e passa a ser construída. Sai
+`inicio.cabeca.ledePaisPartes` (a frase inteira, nas duas edições) e entram as
+cinco palavras de gramática com que ela se monta. **Nenhum nome de medida é
+escrito aqui**: os nomes vêm de `figuras.mjs`, onde já estavam nas duas línguas
+desde a 2l, e a construção só lhes baixa a primeira letra para os pôr no meio da
+frase.*
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `inicio.cabeca.ledePais.abre` | Fora do limiar:&nbsp; | Outside the threshold:&nbsp; | a abertura da lede, com o espaço final. É a primeira metade da frase que a Emenda 16 escreve, palavra por palavra |
+| `inicio.cabeca.ledePais.separador` | ,&nbsp; | ,&nbsp; | a vírgula da lista. Igual nas duas edições, e por isso está em «Identidades aceites» |
+| `inicio.cabeca.ledePais.ultimo` | &nbsp;e&nbsp; | &nbsp;and&nbsp; | a conjunção antes do último nome. É a gramática de lista de cada edição, e a inglesa não leva vírgula antes do «and» porque a redação da Emenda 16 não a leva |
+| `inicio.cabeca.ledePais.ano` | ,&nbsp;em&nbsp; | ,&nbsp;in&nbsp; | o que liga a lista ao ano. Só se rende quando as linhas nomeadas partilham o mesmo `reference_date`; quando não partilham, a frase acaba na lista |
+| `inicio.cabeca.ledePais.fecha` | . | . | o ponto final. Pontuação, como `tituloPaisFim` |
+
+**A frase construída é, hoje, a frase escrita, carácter a carácter**, nas duas
+edições, e é esse o teste de aceitação desta mudança:
+
+```
+Fora do limiar: dívida pública, posição de investimento internacional, custo
+unitário do trabalho e preços da habitação, em 2025.
+
+Outside the threshold: government debt, net international investment position,
+unit labour cost and house prices, in 2025.
+```
+
 ## Identidades aceites (PT = EN de propósito)
 Nomes próprios, códigos de série, identificadores de linha, «Eurostat», «INE», «DGAL», «IEFP», «CAOP», «UE-27», «O Estado do País». A régua da invariância imprime todas as chaves cujo valor é igual nas duas línguas; as que não estiverem nesta lista são erro.
 
@@ -245,5 +273,7 @@ Nomes próprios, códigos de série, identificadores de linha, «Eurostat», «I
 - **Etapa 3, commit 3-0, duas identidades novas e nenhuma retirada.** `node scripts/medir-invariancia.mjs --chaves` imprime **17** chaves com o mesmo valor nas duas edições, onde a 2l imprimia 15. Entram `municipios.parcelaMadeira` = «Madeira» e `municipios.parcelaTotal` = «Total», pelas razões que as suas antecessoras em `inicio.mapa.*` já tinham: um nome próprio de arquipélago e uma palavra que se escreve igual nas duas línguas. Nenhuma sai: as duas que a 2l retirou já tinham saído da conta.
 
 - **Etapa 3, subetapa 3c, uma identidade nova.** `municipios.coberturaB` = « concelhos · », que é a cadeia que `inicio.mapa.coberturaB` levava antes de a Emenda 15 a retirar da primeira página. A razão é a mesma de então, e a mesma de `municipios.h1`: «concelho» não se traduz nesta casa.
+
+- **Etapa 2m, duas identidades novas e nenhuma retirada.** `node scripts/medir-invariancia.mjs --chaves` imprime **20** chaves com o mesmo valor nas duas edições, onde a etapa 3 imprimia 18 (17 no commit 3-0, mais `municipios.coberturaB` na 3c). Entram `inicio.cabeca.ledePais.separador` = «, » e `inicio.cabeca.ledePais.fecha` = «.», que são pontuação e não palavras — a mesma razão de `tituloPaisFim` e `tituloVazioB`. A vírgula da lista é a mesma nas duas línguas; o que muda entre elas é a conjunção, e essa está declarada à parte (`ultimo`, « e » / « and ») exactamente para que não fosse preciso fingir que a pontuação difere.
 
 - **`nav.menu` = «Menu» nas duas edições** (etapa 1e). Não é português copiado do inglês nem inglês copiado do português: «menu» entrou no português pelo francês e é a palavra corrente em Portugal para esta coisa exacta, tanto no papel como no ecrã, e nenhuma alternativa portuguesa («opções», «secções», «navegação») diz o que este comando faz sem dizer outra coisa. Escreve-se igual e lê-se igual; o que muda entre as duas edições é o nome acessível do comando, que junta a palavra visível à etiqueta da região («Menu · Navegação principal» / «Menu · Main navigation»), e essa metade é diferente. Se a revisão de voz preferir outra palavra em português, é uma cadeia.
