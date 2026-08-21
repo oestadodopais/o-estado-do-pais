@@ -75,3 +75,144 @@
 .registo-proveniencia-linhas code {
   color: var(--muted);
 }
+
+/* ==========================================================================
+   SUBETAPA 4b · O MÉTODO: O SUMÁRIO, AS DOBRAS E A ENTRADA DE FECHO
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   O SUMÁRIO
+   --------------------------------------------------------------------------
+   O índice desta página: os dez nomes e a entrada de fecho, cada um a âncora da
+   sua secção. Duas colunas acima de 640px, porque onze destinos numa coluna são
+   uma parede; uma abaixo. O número vai na letra do instrumento e em `--g1`, como
+   o número da regra, e não é um algarismo do sítio: é numeração, e vai marcada. */
+.metodo-sumario {
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: clamp(14px, 2vw, 20px) 0;
+}
+.metodo-sumario-k {
+  font-family: var(--f-instr);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+}
+.metodo-sumario-lista {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px clamp(18px, 3vw, 34px);
+}
+@media (max-width: 640px) {
+  .metodo-sumario-lista {
+    grid-template-columns: 1fr;
+  }
+}
+.metodo-sumario-lista li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.metodo-sumario-n {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  min-width: 1.6em;
+}
+/* A entrada de fecho não tem número, e o lugar dele fica: uma lista cujos itens
+   não alinham não é uma lista. */
+.metodo-sumario-fecho {
+  padding-left: calc(1.6em + 10px);
+}
+
+/* --------------------------------------------------------------------------
+   AS DOBRAS
+   --------------------------------------------------------------------------
+   «Abre no sítio» (`IDENTIDADE.md` §4): a profundidade abre-se nesta página e
+   nunca noutra. Cada regra é um `<details>` e não há JavaScript nenhum.
+
+   A DISPOSIÇÃO A SOBREVIVE À DOBRA, e é o que esta regra existe para fazer: a
+   `.metodo-secao` era a grelha de duas colunas e os seus dois filhos eram a
+   cabeça e o corpo; com o `<details>` pelo meio, o filho passa a ser um só. A
+   grelha desce para o `<details>`, com as mesmas medidas, e a página não muda de
+   disposição por ter ganho um comando. */
+.metodo-secao > .regra-dobra {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: clamp(16px, 3vw, 34px);
+  align-items: start;
+}
+@media (max-width: 780px) {
+  .metodo-secao > .regra-dobra {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* O marcador nativo sai, e o que o substitui é um sinal de tinta à direita do
+   nome: o triângulo do navegador tem o desenho de cada navegador, e esta casa
+   desenha os seus estados. */
+.regra-dobra > summary {
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding-right: 22px;
+}
+.regra-dobra > summary::-webkit-details-marker {
+  display: none;
+}
+.regra-titulo {
+  font-size: clamp(19px, 2vw, 23px);
+  margin: 0;
+}
+.regra-dobra > summary::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-family: var(--f-instr);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--muted);
+}
+.regra-dobra[open] > summary::after {
+  content: '−';
+}
+.regra-dobra > summary:hover::after,
+.regra-dobra > summary:focus-visible::after {
+  color: var(--ink);
+}
+/* Sem foco visível, um comando que só se abre com o rato. */
+.regra-dobra > summary:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   A ENTRADA DE FECHO
+   --------------------------------------------------------------------------
+   Duas linhas rotuladas depois das dez regras. Não dobra: são duas frases, e uma
+   dobra por cima de uma frase é mobília a esconder o que a página fecha a dizer.
+   O rótulo de cada uma usa a coluna de `.regra-linha`, que é a mesma da prova e
+   do mecanismo, para que a página feche na gramática com que se leu. */
+.metodo-fecho .metodo-p {
+  margin: 0;
+}
+.metodo-fecho .regra-linha {
+  margin-top: clamp(16px, 2vw, 22px);
+}
+.metodo-fecho .regra-linha:first-child {
+  margin-top: 0;
+}

@@ -72,6 +72,75 @@ export const LEITURA_BREVE = {
   en: 'A measurement reaches the reader only if it has a row, and the row says where it came from.',
 };
 
+/**
+ * ---------------------------------------------------------------------------
+ * A ENTRADA DE FECHO — duas linhas rotuladas, depois das dez regras
+ * ---------------------------------------------------------------------------
+ * As duas frases são texto do diretor, aprovadas a 20.08.2026 (decisões g e h
+ * do plano do redesenho v3, `design/especime-v3/PLANO-redesenho-v3.md` §12), e
+ * entram no mesmo commit que a entrada do `DECISIONS.md` que as governa, com
+ * `Afecta: metodo` e o resumo deste ficheiro. Não muda um carácter de nenhuma
+ * das duas.
+ *
+ * «A COR» SÓ PODE SER ESCRITA DEPOIS DE A FORMA EXISTIR, e essa é a condição
+ * que o diretor pôs: «aprovada tal como está redigida, com uma condição: o
+ * registo de correções tem de render mesmo a forma riscada até a frase entrar».
+ * O registo rende-a desde a subetapa 4a (`DECISIONS.md` §1.55): o valor antigo
+ * num `<s>` em `--g1`, o novo em tinta ao lado, em quinze de quinze entradas com
+ * par de valores, nas duas edições. A entrada do `DECISIONS.md` di-lo, e a
+ * conferência faz-se pela porta: quem quiser ver a forma abre o registo. Uma
+ * frase a dizer que a prova existe seria a prova dita em vez de dada, e a
+ * direção cortou-a a 21.08.2026.
+ *
+ * «A LETRA» é verbatim do diretor e não reclama linhagem nenhuma (Emenda 5). É
+ * verdadeira no ramo desde `7643251`, que é o commit em que os tipos passaram a
+ * ser servidos daqui; os ficheiros de licença estão em `public/tipos/*∕OFL.txt`
+ * e os seus resumos em `design/especime-v3/TIPOS.md`.
+ *
+ * A FORMA É A DE UMA REGRA, SEM O APARELHO DE UMA: um id para a âncora, um
+ * título, e o texto em pedaços como todo o resto deste ficheiro. Não leva
+ * mecanismo nem prova, porque não é uma regra: é o que a página fecha a dizer.
+ */
+export const FECHO = {
+  id: 'a-forma',
+  titulo: { pt: 'A forma', en: 'The form' },
+  entradas: [
+    {
+      id: 'a-cor',
+      titulo: { pt: 'A cor', en: 'Colour' },
+      texto: {
+        pt: [
+          'A cor aparece só onde a fonte publica um limiar: âmbar quando o valor está fora dele, cobalto quando está dentro. Tudo o resto é tinta e cinzento, e uma correção diz-se pela forma, com o valor antigo riscado e o novo ao lado, nunca por uma cor.',
+        ],
+        en: [
+          'Colour appears only where the source publishes a threshold: amber when the value is outside it, cobalt when it is within. Everything else is ink and grey, and a correction is said by form, with the old value struck through and the new one beside it, never by a colour.',
+        ],
+      },
+      ligacoes: [
+        { rota: 'correcoes', rotulo: { pt: 'O registo de correções', en: 'The corrections register' } },
+      ],
+    },
+    {
+      id: 'a-letra',
+      titulo: { pt: 'A letra', en: 'The type' },
+      texto: {
+        pt: [
+          'Os tipos deste sítio são Spectral, com a sua família de versaletes Spectral SC, e Bitter, de licença aberta (SIL Open Font License), alojados aqui e servidos por este sítio, sem anfitriões de terceiros.',
+        ],
+        en: [
+          /* O apóstrofo é o RETO, e não o tipográfico: é o carácter que o texto
+             verbatim do diretor traz (`PLANO-redesenho-v3.md` §12 e o brief da
+             etapa, os dois com U+0027), e o brief diz «não muda um carácter».
+             Fica assinalado na nota da etapa: se a direção quiser o tipográfico,
+             é uma decisão dela e um carácter. */
+          'This site\'s typefaces are Spectral, with its small-caps family Spectral SC, and Bitter, under an open licence (SIL Open Font License), hosted here and served by this site, with no third-party hosts.',
+        ],
+      },
+      ligacoes: [],
+    },
+  ],
+};
+
 /** O marcador da casa, citado dentro da regra 5. */
 export const MARCADORES = {
   mencaoVerificar: {

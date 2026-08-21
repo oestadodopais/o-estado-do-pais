@@ -31,15 +31,39 @@
  * o fio que faz de porta debaixo de cada número do sítio estavam em
  * `--rule-strong`, que mede 1,83:1 sobre papel. Uma porta que se não vê é uma
  * porta que não existe, e é a mesma correção que a v2 fez ao selo.
+ *
+ * ---------------------------------------------------------------------------
+ * V3, SUBETAPA 4b: O SUMÁRIO, AS DOBRAS, E A ENTRADA DE FECHO
+ * ---------------------------------------------------------------------------
+ * A disposição não muda: continua a A, e o instrumento continua a entrar dentro
+ * da página, a toda a largura. O que muda é como se chega a uma regra.
+ *
+ * O SUMÁRIO, no cimo, com os dez nomes e a entrada de fecho, cada um a âncora da
+ * sua secção. Dez regras com mecanismo, limite e prova fazem uma página que se
+ * percorre e não uma que se consulta; o sumário é o índice dela, e as âncoras já
+ * existiam — o que faltava era a lista.
+ *
+ * AS DOBRAS, e é a regra de «abre no sítio» (`IDENTIDADE.md` §4): a
+ * profundidade abre-se nesta página e nunca noutra. Cada regra é um `<details>`
+ * com o seu nome no `<summary>`; a primeira vem aberta, as restantes fechadas.
+ * Não há JavaScript nenhum: `<details>` é do navegador, o estado é anunciado
+ * nativamente, e uma âncora do sumário para dentro de uma dobra fechada abre-a
+ * (`:target` na folha, e o comportamento nativo dos navegadores que já o fazem).
+ *
+ * A ENTRADA DE FECHO, depois das dez regras, com as duas linhas rotuladas que o
+ * diretor aprovou a 20.08.2026 (decisões g e h). Vêm de `src/data/metodo.mjs`
+ * como dados, não como cadeias desta vista: é texto governado, e a amarra das
+ * decisões carimba o ficheiro onde ele vive.
  */
 import Base from '../layouts/Base.astro';
 import Frase from '../components/Frase.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
 import InstrumentoMecanismo from '../components/InstrumentoMecanismo.astro';
-import { REGRAS, ABERTURA } from '../data/metodo.mjs';
+import { REGRAS, ABERTURA, FECHO } from '../data/metodo.mjs';
 import { prova, CAMINHO_DA_PROVA } from '../lib/prova.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
+import '../styles/leitura.css';
 
 const { lang = 'pt' } = Astro.props;
 const s = t(lang);
@@ -55,6 +79,24 @@ const destino = (l) => (l.prova ? CAMINHO_DA_PROVA : routePath(l.rota, lang));
     <p class="lede" style="margin-top:14px">{ABERTURA[lang]}</p>
   </div>
 
+  {/* ===================================== o sumário: o índice desta página */}
+  <nav class="metodo-sumario" aria-labelledby="sumario" style="margin-top:clamp(22px,3vw,32px)">
+    <h2 class="metodo-sumario-k" id="sumario">{s.metodo.sumarioK}</h2>
+    <ol class="metodo-sumario-lista">
+      {
+        REGRAS.map((r) => (
+          <li>
+            <span class="metodo-sumario-n" data-nonledger="numeracao">{r.n}</span>
+            <a href={`#${r.id}`}>{r.titulo[lang]}</a>
+          </li>
+        ))
+      }
+      <li class="metodo-sumario-fecho">
+        <a href={`#${FECHO.id}`}>{FECHO.titulo[lang]}</a>
+      </li>
+    </ol>
+  </nav>
+
   <!-- ===================================== o mecanismo, desenhado -->
   <div style="margin-top:clamp(26px,3.4vw,40px)">
     <InstrumentoMecanismo lang={lang} />
@@ -63,60 +105,102 @@ const destino = (l) => (l.prova ? CAMINHO_DA_PROVA : routePath(l.rota, lang));
   <!-- ===================================== as dez regras -->
   <div style="margin-top:clamp(24px,3vw,36px)">
     {
-      REGRAS.map((r) => (
+      REGRAS.map((r, i) => (
         <section class="metodo-secao regra" id={r.id}>
-          <div class="regra-cabeca">
-            <span class="regra-n" data-nonledger="numeracao">
-              {r.n}
-            </span>
-            <h2>{r.titulo[lang]}</h2>
-          </div>
+          {/* A DOBRA. O nome da regra é o rótulo do comando, e a coluna de
+              rótulo da disposição A leva o número. A primeira abre por defeito;
+              as outras abrem quando se lhes toca, ou quando a âncora do sumário
+              as escolhe. */}
+          <details class="regra-dobra" open={i === 0}>
+            <summary class="regra-cabeca">
+              <span class="regra-n" data-nonledger="numeracao">
+                {r.n}
+              </span>
+              {/* O nível de cabeçalho não se perde por a regra passar a dobrar:
+                  um `<h2>` é conteúdo válido de um `<summary>`, e é ele que
+                  mantém o sumário de cabeçalhos da página. */}
+              <h2 class="regra-titulo">{r.titulo[lang]}</h2>
+            </summary>
 
-          <div class="metodo-corpo">
-            <p class="metodo-p">
-              <Frase partes={r.regra[lang]} lang={lang} />
-            </p>
-
-            <div class="regra-linha">
-              <span class="regra-k">{s.metodo.mecanismoK}</span>
-              <p class="regra-v">
-                <Frase partes={r.mecanismo[lang]} lang={lang} />
+            <div class="metodo-corpo">
+              <p class="metodo-p">
+                <Frase partes={r.regra[lang]} lang={lang} />
               </p>
-            </div>
 
-            {r.limite && (
               <div class="regra-linha">
-                <span class="regra-k">{s.metodo.limiteK}</span>
+                <span class="regra-k">{s.metodo.mecanismoK}</span>
                 <p class="regra-v">
-                  <Frase partes={r.limite[lang]} lang={lang} />
+                  <Frase partes={r.mecanismo[lang]} lang={lang} />
                 </p>
               </div>
-            )}
 
-            <div class="regra-linha regra-linha-prova">
-              <span class="regra-k">{s.metodo.provaK}</span>
-              <p class="regra-v regra-prova">
-                {r.prova.map((v, i) => (
-                  <span class="regra-prova-item">
-                    {i > 0 && <span class="regra-sep" aria-hidden="true"> · </span>}
-                    {v.rotulo[lang]}:{' '}
-                    <ValorDaProva chave={v.chave} item={p[v.chave]} vazio={v.vazio} lang={lang} />
-                  </span>
-                ))}
-                {r.provaNota && <span class="regra-prova-nota">{r.provaNota[lang]}</span>}
-              </p>
+              {r.limite && (
+                <div class="regra-linha">
+                  <span class="regra-k">{s.metodo.limiteK}</span>
+                  <p class="regra-v">
+                    <Frase partes={r.limite[lang]} lang={lang} />
+                  </p>
+                </div>
+              )}
+
+              <div class="regra-linha regra-linha-prova">
+                <span class="regra-k">{s.metodo.provaK}</span>
+                <p class="regra-v regra-prova">
+                  {r.prova.map((v, i2) => (
+                    <span class="regra-prova-item">
+                      {i2 > 0 && <span class="regra-sep" aria-hidden="true"> · </span>}
+                      {v.rotulo[lang]}:{' '}
+                      <ValorDaProva chave={v.chave} item={p[v.chave]} vazio={v.vazio} lang={lang} />
+                    </span>
+                  ))}
+                  {r.provaNota && <span class="regra-prova-nota">{r.provaNota[lang]}</span>}
+                </p>
+              </div>
+
+              {r.ligacoes.length > 0 && (
+                <p class="regra-portas">
+                  {r.ligacoes.map((l) => (
+                    <a href={destino(l)}>{l.rotulo[lang]} →</a>
+                  ))}
+                </p>
+              )}
             </div>
-
-            {r.ligacoes.length > 0 && (
-              <p class="regra-portas">
-                {r.ligacoes.map((l) => (
-                  <a href={destino(l)}>{l.rotulo[lang]} →</a>
-                ))}
-              </p>
-            )}
-          </div>
+          </details>
         </section>
       ))
     }
   </div>
+
+  {/* ===================================== a entrada de fecho
+      As duas linhas rotuladas que o diretor aprovou a 20.08.2026 (decisões g e
+      h). O texto vem de `src/data/metodo.mjs`, que é o texto governado: esta
+      vista compõe-o e não o escreve. Não leva dobra — são duas frases, e uma
+      dobra por cima de uma frase é mobília a esconder o que a página fecha a
+      dizer. */}
+  <section class="metodo-secao metodo-fecho" id={FECHO.id}>
+    <div class="regra-cabeca">
+      <h2>{FECHO.titulo[lang]}</h2>
+    </div>
+    <div class="metodo-corpo">
+      {
+        FECHO.entradas.map((e) => (
+          <div class="regra-linha" id={e.id}>
+            <span class="regra-k">{e.titulo[lang]}</span>
+            <div class="regra-v">
+              <p class="metodo-p">
+                <Frase partes={e.texto[lang]} lang={lang} />
+              </p>
+              {e.ligacoes.length > 0 && (
+                <p class="regra-portas">
+                  {e.ligacoes.map((l) => (
+                    <a href={destino(l)}>{l.rotulo[lang]} →</a>
+                  ))}
+                </p>
+              )}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
 </Base>

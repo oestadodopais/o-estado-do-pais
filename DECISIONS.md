@@ -8935,6 +8935,102 @@ página, como a linha é o conteúdo do índice, e a Emenda 17 di-lo por escrito
 frase da política vive em `/correcoes`»). O que aqui seria autorreferência é uma
 frase sobre outra coisa que o sítio faz, e não existe nenhuma.
 
+### 1.56 O Método fecha com as duas linhas do diretor: a cor diz-se por estado, e a letra é alojada aqui
+
+**Afecta:** metodo
+
+**Texto:** metodo 3661476ee0c9
+
+*(Subetapa 4b do redesenho v3. É o primeiro commit desde a §1.45 e a §1.46 a
+tocar em `src/data/metodo.mjs`, e por isso traz o resumo novo. `src/data/sobre.mjs`
+não muda, nenhuma linha do livro-razão é escrita, e nenhum valor muda.)*
+
+A direção aprovou as duas frases a **20.08.2026**, como decisões **g** e **h** do
+plano do redesenho v3 (`design/especime-v3/PLANO-redesenho-v3.md` §12 e §3), e
+**a 21.08.2026, à tarde, disse sim ao que estava renderizado**, com um corte: a
+linha de prova por baixo de «A cor» sai, e a porta fica. Elas entram agora,
+palavra por palavra, como uma **entrada de fecho** depois das dez regras, com
+dois rótulos e nas duas edições.
+
+**A cor** (decisão g). Português:
+
+> «A cor aparece só onde a fonte publica um limiar: âmbar quando o valor está
+> fora dele, cobalto quando está dentro. Tudo o resto é tinta e cinzento, e uma
+> correção diz-se pela forma, com o valor antigo riscado e o novo ao lado, nunca
+> por uma cor.»
+
+Inglês:
+
+> «Colour appears only where the source publishes a threshold: amber when the
+> value is outside it, cobalt when it is within. Everything else is ink and grey,
+> and a correction is said by form, with the old value struck through and the new
+> one beside it, never by a colour.»
+
+**A condição da decisão g está cumprida, e é por isso que a frase pode ser
+escrita.** A palavra do diretor foi: aprovada tal como está redigida, «com uma
+condição: o registo de correções tem de render mesmo a forma riscada (valor
+antigo riscado, novo ao lado) quando a frase entrar; se essa forma não estiver
+implementada na mesma etapa, implementa-se primeiro ou corta-se a cláusula da
+correção até ser verdade». A forma foi implementada **primeiro**, na subetapa 4a
+(§1.55): o valor antigo vai num `<s>` em `--g1`, o novo em tinta ao lado, em
+**quinze de quinze** entradas com par de valores, nas duas edições
+(`grep -o '<s data-correcao' dist/correcoes/index.html | wc -l` → 15, o mesmo em
+`dist/en/corrections/index.html`). A subetapa 4a é anterior a este commit, e por
+isso a frase entra depois de a forma existir, e não com a promessa dela.
+
+**O corte da direção, 21.08.2026, tarde.** A entrada de fecho trazia, por baixo
+de «A cor», uma linha em cinzento a dizer onde é que a forma riscada se via («A
+forma riscada está no registo de correções, entrada a entrada, desde antes desta
+frase ser escrita.», e a inglesa). Sai, nas duas edições. **A porta fica** («O
+registo de correções →» / «The corrections register →»): quem lê a afirmação
+abre o registo e vê a forma, que é conferir. A linha era a prova dita em vez de
+dada, e é a mesma classe de frase que a Emenda 15 tira das páginas do leitor; o
+Método é a casa do método e podia tê-la, mas não precisa dela quando a porta
+está ao lado. Nenhuma das quatro cadeias governadas é tocada pelo corte, e o
+resumo desta entrada é o do ficheiro já cortado. Com a linha, o `nota` das
+entradas de fecho deixa de ter uso: sai também do módulo, da vista e da folha,
+porque um campo sem conteúdo é aparelho à espera de ser enchido.
+
+**A letra** (decisão h), o texto verbatim do diretor. Português:
+
+> «Os tipos deste sítio são Spectral, com a sua família de versaletes Spectral
+> SC, e Bitter, de licença aberta (SIL Open Font License), alojados aqui e
+> servidos por este sítio, sem anfitriões de terceiros.»
+
+Inglês:
+
+> «This site's typefaces are Spectral, with its small-caps family Spectral SC,
+> and Bitter, under an open licence (SIL Open Font License), hosted here and
+> served by this site, with no third-party hosts.»
+
+Não muda um carácter, e o apóstrofo da edição inglesa é o **reto** (U+0027), que
+é o que o texto do diretor traz nas duas cópias que o repositório guarda. Fica
+assinalado na nota da etapa: as outras cadeias inglesas desta casa usam o
+tipográfico, e trocá-lo é uma decisão da direção e um carácter. Nenhuma linhagem
+é reclamada, como a Emenda 5 manda. A frase é verdadeira no ramo desde `7643251`,
+que é o commit em que os tipos passaram a ser servidos daqui; os ficheiros de
+licença estão em `public/tipos/*/OFL.txt` e os seus resumos em
+`design/especime-v3/TIPOS.md`.
+
+**A página, à volta delas.** A mesma disposição A, o mesmo instrumento a toda a
+largura, e duas coisas novas: um **sumário** no cimo, com os dez nomes das regras
+e a entrada de fecho como âncoras; e as regras como **dobras** («abre no sítio»,
+`IDENTIDADE.md` §4) — um `<details>` por regra, com o nome no `<summary>`, a
+primeira aberta e as restantes fechadas, o mecanismo, o limite e a prova lá
+dentro, e os contadores `data-prova` com as suas portas. Sem uma linha de
+JavaScript: `<details>` é do navegador e anuncia o seu estado por si. O `<h2>` de
+cada regra passa para dentro do `<summary>`, que é conteúdo válido, para que o
+sumário de cabeçalhos da página não desça de nível.
+
+**A entrada de fecho não dobra.** São duas frases, e uma dobra por cima de uma
+frase é mobília a esconder o que a página fecha a dizer.
+
+**`IDENTIDADE.md` §2 não cita «A cor».** A amarra permite-o agora que a frase
+existe, e a citação seria guardada palavra por palavra; fica por escrever porque
+a §2 já diz a mesma regra pelas suas próprias palavras, e duas redações da mesma
+regra no mesmo ficheiro são duas regras no dia em que uma mudar. É decisão da
+cadeira, e custa três linhas.
+
 ---
 
 ## 4. O registo dos defeitos e dos adiamentos
