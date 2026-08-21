@@ -191,6 +191,102 @@ console.log('');
   );
 }
 
+/* 5 · ÉVORA: as oito medidas pela peça da primeira página, e a única cor é a do
+   tecto legal (Emenda 1). */
+{
+  const p = await pagina();
+  await p.goto(base + EVORA, { waitUntil: 'networkidle' });
+  const m = await p.evaluate(() => {
+    const raiz = getComputedStyle(document.documentElement);
+    const rgb = (hex) => {
+      const h = hex.replace('#', '').trim();
+      const n = parseInt(h.length === 3 ? h.split('').map((c) => c + c).join('') : h, 16);
+      return `rgb(${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255})`;
+    };
+    const cores = {
+      amber: rgb(raiz.getPropertyValue('--amber')),
+      ochre: rgb(raiz.getPropertyValue('--ochre')),
+      cobalt: rgb(raiz.getPropertyValue('--cobalt')),
+    };
+    const pecas = [...document.querySelectorAll('.peca')];
+    const coloridas = [];
+    for (const el of document.querySelectorAll('body *')) {
+      const c = getComputedStyle(el);
+      for (const prop of ['color', 'backgroundColor', 'fill', 'stroke']) {
+        if (Object.values(cores).includes(c[prop])) {
+          coloridas.push(`${el.tagName.toLowerCase()}.${(el.getAttribute('class') || '').split(' ')[0]}:${prop}`);
+        }
+      }
+    }
+    return {
+      pecas: pecas.length,
+      vazias: document.querySelectorAll('.peca-vazia').length,
+      reguas: document.querySelectorAll('.peca .regua').length,
+      estados: [...new Set(pecas.map((e) => e.getAttribute('data-estado')))].sort(),
+      coloridas: [...new Set(coloridas)],
+    };
+  });
+  conta(
+    '3d · as oito medidas pela peça, e a cor só no tecto legal',
+    m.pecas === 8 && m.vazias === 0 && m.reguas === 1 &&
+      m.estados.join(',') === 'dentro,sem' &&
+      m.coloridas.length > 0 &&
+      /* Os únicos objectos com cor de estado são os da peça do índice de dívida:
+         o quadrado do marcador, a palavra de estado e a barra da régua. */
+      m.coloridas.every(
+        (x) => x.startsWith('span.sq') || x.startsWith('span.peca-palavra') || x.startsWith('rect.regua-barra'),
+      ),
+    `${m.pecas} peças (${m.vazias} vazias) · ${m.reguas} régua · estados ${m.estados.join('/')} · ` +
+      `elementos com cor de estado: ${m.coloridas.join(' | ') || '(nenhum)'}`,
+  );
+  await p.__contexto.close();
+}
+
+/* 6 · OS DOIS DESENHOS, NA GRAMÁTICA DA RÉGUA, E NENHUM AMARELO NO GABARITO. */
+{
+  const p = await pagina();
+  await p.goto(base + EVORA, { waitUntil: 'networkidle' });
+  const m = await p.evaluate(() => {
+    /* Um `<line>` sem `fill` declarado computa `rgb(0, 0, 0)`, que não é a cor
+       que ele desenha: o que se lê num traço é o `stroke`. Por etiqueta, e não
+       por adivinha. */
+    const cor = (sel) => {
+      const el = document.querySelector(sel);
+      if (!el) return null;
+      const c = getComputedStyle(el);
+      return el.tagName.toLowerCase() === 'line' ? c.stroke : c.fill;
+    };
+    const largura = (sel) => {
+      const el = document.querySelector(sel);
+      return el ? getComputedStyle(el).strokeWidth : null;
+    };
+    return {
+      distanciaBarra: cor('.mun-distancia-barra'),
+      distanciaValor: cor('.mun-distancia-valor'),
+      distanciaRef: cor('.mun-distancia-ref'),
+      refLargura: largura('.mun-distancia-ref'),
+      valorLargura: largura('.mun-distancia-valor'),
+      serieBarras: document.querySelectorAll('.mun-serie-barra').length,
+      serieValores: document.querySelectorAll('.mun-serie-valor').length,
+      serieRef: cor('.mun-serie-ref'),
+      /* Nenhum atributo de apresentação com cor escrita no gabarito. */
+      fillsEscritos: [...document.querySelectorAll('[fill]')].map((e) => e.getAttribute('fill')),
+    };
+  });
+  conta(
+    '3d · os dois desenhos na gramática da régua, e nenhuma cor escrita no gabarito',
+    m.distanciaBarra && m.distanciaValor && m.distanciaRef &&
+      m.refLargura === '2px' && m.valorLargura === '1px' &&
+      m.serieBarras === 4 && m.serieValores === 4 && m.serieRef &&
+      m.fillsEscritos.every((f) => !/yellow|#/.test(String(f))),
+    `distância: barra ${m.distanciaBarra} · valor ${m.distanciaValor} (${m.valorLargura}) · ` +
+      `referência ${m.distanciaRef} (${m.refLargura}) · série: ${m.serieBarras} barras, ` +
+      `${m.serieValores} valores, referência ${m.serieRef} · fills escritos no gabarito: ` +
+      `${[...new Set(m.fillsEscritos)].join(', ') || '(nenhum)'}`,
+  );
+  await p.__contexto.close();
+}
+
 await nav.close();
 servidor.close();
 

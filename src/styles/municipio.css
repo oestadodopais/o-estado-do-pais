@@ -88,3 +88,39 @@
 .concelhos-grupo {
   padding-top: 0;
 }
+
+/* -----------------------------------------------------------------------------
+ * OS DOIS DESENHOS, NA GRAMÁTICA DA RÉGUA (Emenda 4; ISSUES I12)
+ * -----------------------------------------------------------------------------
+ * Uma gramática, e é a mesma da `Regua.astro` da primeira página: a referência a
+ * tinta e à altura toda, a barra é a distância à referência, o traço fino é o
+ * valor. Os dois desenhos desta página escreviam a cor no atributo `fill` do
+ * gabarito (`var(--yellow)`, de um token que já não existe), e a folha partilhada
+ * remapeava-os para tinta. Com estas regras, o remapeamento de
+ * `.mun-distancia-svg rect` e `.mun-serie-svg rect` fica sem cliente.
+ *
+ * `vector-effect: non-scaling-stroke` porque os dois `<svg>` têm `viewBox` de 720
+ * unidades e desenham-se em larguras muito diferentes: sem ele, um traço de 1
+ * unidade mede meio píxel a 390 e dois a 1280, e a régua deixava de ter espessura
+ * fixa. É a mesma declaração que a régua da primeira página usa. */
+/* A especificidade tem de ganhar ao bloco de remapeamento do amarelo em
+   `site.css` (`.mun-distancia-svg rect`, `.mun-serie-svg rect`, que pintam de
+   tinta), que é do construtor A e sai quando as etapas 2 a 4 acabarem de
+   reescrever os desenhos que ele cobre. Medido: sem o `<svg>` no selector, a
+   barra saía a `--ink` e não a `--g2`. */
+.mun-distancia-svg .mun-distancia-barra,
+.mun-serie-svg .mun-serie-barra {
+  fill: var(--g2);
+}
+.mun-distancia-valor,
+.mun-serie-valor {
+  stroke: var(--ink);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+.mun-distancia-ref,
+.mun-serie-ref {
+  stroke: var(--ink);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}

@@ -36,14 +36,23 @@ import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
 import Provenance from '../components/Provenance.astro';
 import Frase from '../components/Frase.astro';
+import Peca from '../components/inicio/Peca.astro';
 import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import { municipioPorSlug } from '../data/municipios.mjs';
 import { workById, studyLabel } from '../data/studies.mjs';
 import { leituraDe } from '../data/leituras.mjs';
 import { getClaim, parsePtNumber, eDerivada, POR_VERIFICAR } from '../lib/ledger.mjs';
+import { estadoDaRegua } from '../lib/estado.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { canonicalUrl, SITE_NAME, SITE_URL } from '../../site.config.mjs';
 import { t } from '../i18n/strings.mjs';
+/* A folha da primeira página, porque é dela que vêm a peça e a régua. As duas
+   são componentes da etapa 2 e as suas regras vivem só ali; consumi-las sem a
+   folha seria uma peça sem letra e uma régua de altura zero. As fichas do corpo
+   do valor (`--peca-corpo-*`) estão declaradas em `.painel`, e é por isso que as
+   peças desta página vivem dentro de um `.painel`. */
+import '../styles/inicio.css';
+import '../styles/municipio.css';
 
 const { lang = 'pt', slug } = Astro.props;
 const s = t(lang);
@@ -75,6 +84,58 @@ const indicePartes = [
   { claim: D.tecto, sufixo: '%' },
   s.municipio.distanciaIndiceD,
 ];
+
+/**
+ * ---------------------------------------------------------------------------
+ * AS OITO MEDIDAS, PELA PEÇA DA PRIMEIRA PÁGINA (R2, ao contrário)
+ * ---------------------------------------------------------------------------
+ * A relocação R2 levou estes oito registos daqui para a primeira página, e a
+ * peça (`src/components/inicio/Peca.astro`) foi escrita para eles. Voltam a ser
+ * lidos aqui pela mesma peça: as mesmas oito medidas, com a mesma gramática, nas
+ * duas superfícies. Um segundo desenho para os mesmos oito registos era uma
+ * segunda língua para a mesma coisa, que é o que este redesenho existe para
+ * acabar.
+ *
+ * A ÚNICA COR É A DO TECTO LEGAL (Emenda 1). O limite de endividamento é um
+ * limiar publicado por lei, e por isso a peça do índice de dívida colore; o
+ * poder de compra lê-se contra a base 100 do seu índice, que é uma média e não
+ * um limiar, e diz-se por palavras a tinta. Tudo o resto do concelho fica a
+ * tinta e cinzento.
+ *
+ * A CONTA É A MESMA QUE A PRIMEIRA PÁGINA FAZ, E ISSO É DÍVIDA: está escrita
+ * duas vezes, aqui e em `HomeView.astro`, e as duas cópias podem divergir. A
+ * saída é uma função partilhada em `src/lib/inicio.mjs`, que é do construtor B;
+ * o pedido está na nota da etapa e em ISSUES.
+ */
+const TECTO_DA_DIVIDA = 'indice-de-divida-limite-legal';
+const pecas = m.relance
+  .filter((tile) => tile.claim)
+  .map((tile) => {
+    const linha = getClaim(tile.claim);
+    const derivada = eDerivada(linha);
+    if (tile.claim !== D.indice) {
+      return { ...tile, linha, derivada, estado: 'sem', colore: false, regua: null };
+    }
+    const tecto = getClaim(TECTO_DA_DIVIDA);
+    const r = estadoDaRegua(linha, { valor: tecto.value, lado: 'superior', colore: true });
+    return {
+      ...tile,
+      linha,
+      derivada,
+      estado: r.estado ?? 'sem',
+      colore: r.colore,
+      regua: {
+        valor: parsePtNumber(linha.value),
+        referencia: parsePtNumber(tecto.value),
+        rotulo: 'tecto',
+      },
+    };
+  });
+/* As medidas que nenhuma fonte publica para este concelho: a mesma peça, vazia
+   (Emenda 14). Sem número e sem selo, e o que falta diz-se em duas palavras. */
+const pecasVazias = m.relance
+  .filter((tile) => !tile.claim)
+  .map((tile) => ({ nome: tile.nome[lang] ?? tile.nome.pt, unidade: tile.unidade[lang] ?? tile.unidade.pt }));
 
 /* --- os trabalhos sobre o concelho --------------------------------------- */
 const estudos = m.estudos.map((id) => {
@@ -240,34 +301,24 @@ const metodoPath = routePath('metodo', lang);
         não sobre a frase. Amanhã uma medida deixa de ser calculada, e a nota
         volta sozinha.
         --------------------------------------------------------------------- */}
-    <div class="figuras">
+    <div class="painel">
       {
-        m.relance.map((tile) =>
-          tile.claim ? (
-            <article class="figura">
-              <Claim id={tile.claim} lang={lang} class="figura-num" as="div" escala={true} />
-              <h3 class="figura-nome">{tile.nome[lang]}</h3>
-              <p class="figura-medida"><Frase partes={tile.medida[lang]} lang={lang} selos={true} /></p>
-              {!eDerivada(getClaim(tile.claim)) && (
-                <p class="figura-frase"><Frase partes={tile.nota[lang]} lang={lang} /></p>
-              )}
-              <Provenance id={tile.claim} lang={lang} />
-            </article>
-          ) : (
-            /* O estado vazio, desenhado (IDENTIDADE §7). Sem número e sem selo:
-               um selo que não abrisse porta nenhuma tornaria falsa a promessa
-               do Método. O lugar do número leva o único marcador do sítio. */
-            <article class="figura figura-vazia">
-              <div class="figura-num">
-                <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>
-              </div>
-              <h3 class="figura-nome">{tile.nome[lang]}</h3>
-              <p class="figura-medida"><Frase partes={tile.medida[lang]} lang={lang} /></p>
-              <p class="figura-frase">{s.municipio.relanceVazio}</p>
-            </article>
-          ),
-        )
+        pecas.map((tile) => (
+          <Peca
+            s={s}
+            lang={lang}
+            id={tile.claim}
+            nome={tile.nome[lang]}
+            medida={tile.medida[lang]}
+            frase={tile.derivada ? null : tile.nota[lang]}
+            estado={tile.estado}
+            colore={tile.colore}
+            regua={tile.regua}
+            selosNaMedida={true}
+          />
+        ))
       }
+      {pecasVazias.map((tile) => <Peca s={s} vazio={true} nome={tile.nome} unidade={tile.unidade} />)}
     </div>
   </section>
 
@@ -293,10 +344,30 @@ const metodoPath = routePath('metodo', lang);
             role="img"
             aria-label={s.municipio.distanciaK}
           >
-            <!-- a barra é a medição: é para isto que o amarelo existe -->
-            <rect x={G.L} y={G.barY} width={Math.max(xDivida - G.L, 1)} height={G.barH} fill="var(--yellow)" />
+            {/* A GRAMÁTICA DA RÉGUA (Emenda 4, 20.08.2026): a referência a tinta
+                à altura toda, a barra é a DISTÂNCIA à referência, o traço fino é
+                o valor. Era uma barra amarela do zero até ao valor, com a cor
+                escrita no gabarito (`fill="var(--yellow)"`, ISSUES I12): uma
+                barra a encher desde o zero convida a ler o comprimento como
+                grandeza, e a grandeza que importa aqui é a distância ao tecto.
+                Nenhuma cor: um tecto legal é um limiar publicado, mas quem o diz
+                é a palavra de estado da peça, e este desenho é a distância. */}
             <line x1={G.L} y1={G.barY + G.barH} x2={G.R} y2={G.barY + G.barH} stroke="var(--axis)" stroke-width="1" />
-            <line x1={G.R} y1={G.barY - 8} x2={G.R} y2={G.barY + G.barH + 8} stroke="var(--ink)" stroke-width="1.5" />
+            <rect
+              class="mun-distancia-barra"
+              x={xDivida}
+              y={G.barY}
+              width={Math.max(G.R - xDivida, 1)}
+              height={G.barH}
+            />
+            <line
+              class="mun-distancia-valor"
+              x1={xDivida}
+              y1={G.barY - 4}
+              x2={xDivida}
+              y2={G.barY + G.barH + 4}
+            />
+            <line class="mun-distancia-ref" x1={G.R} y1={G.barY - 8} x2={G.R} y2={G.barY + G.barH + 8} />
 
             <text class="tk" x={G.L} y="50" text-anchor="start">{s.municipio.distanciaDivida}</text>
             <Claim id={D.valor} lang={lang} as="text" class="mun-barra-rot" x={G.L} y="66" text-anchor="start" />
@@ -400,21 +471,51 @@ const metodoPath = routePath('metodo', lang);
               role="img"
               aria-label={s.municipio.tempoRelanceK}
             >
-              {/* o tecto legal: a régua contra a qual o índice é lido */}
-              <line x1={SERIE.L} y1={SERIE.yTecto} x2={SERIE.R} y2={SERIE.yTecto} stroke="var(--ink)" stroke-width="1.5" />
+              {/* A MESMA GRAMÁTICA (Emenda 4): o tecto legal é a referência, a
+                  tinta e à altura toda do desenho; a barra de cada ano é a
+                  DISTÂNCIA daquele ano ao tecto; o traço fino é o valor. Eram
+                  barras amarelas do eixo até ao valor, com a cor no gabarito
+                  (ISSUES I12), e o tecto era uma linha entre elas. */}
               <line x1={SERIE.L} y1={SERIE.base} x2={SERIE.R} y2={SERIE.base} stroke="var(--axis)" stroke-width="1" />
               {
                 pontosDaSerie.map((pt) => (
                   <>
-                    {/* a barra é a medição: é para isto que o amarelo existe */}
-                    <rect x={pt.x - 16} y={pt.y} width="32" height={SERIE.base - pt.y} fill="var(--yellow)" />
-                    <Claim id={pt.indice} lang={lang} as="text" class="mun-serie-val" x={pt.x} y={pt.y - 7} text-anchor="middle" />
+                    <rect
+                      class="mun-serie-barra"
+                      x={pt.x - 16}
+                      y={Math.min(pt.y, SERIE.yTecto)}
+                      width="32"
+                      height={Math.max(Math.abs(SERIE.yTecto - pt.y), 1)}
+                    />
+                    <line
+                      class="mun-serie-valor"
+                      x1={pt.x - 20}
+                      y1={pt.y}
+                      x2={pt.x + 20}
+                      y2={pt.y}
+                    />
+                    {/* O rótulo do valor põe-se do lado de FORA da referência:
+                        por cima quando o ano está acima do tecto, por baixo
+                        quando está abaixo. Sempre por cima, um ano abaixo do
+                        tecto escrevia o seu valor em cima do fio da referência. */}
+                    <Claim
+                      id={pt.indice}
+                      lang={lang}
+                      as="text"
+                      class="mun-serie-val"
+                      x={pt.x}
+                      y={pt.y <= SERIE.yTecto ? pt.y - 7 : pt.y + 15}
+                      text-anchor="middle"
+                    />
                     <text class="tk" x={pt.x} y={SERIE.base + 14} text-anchor="middle" data-nonledger="escala-de-instrumento">
                       {pt.ref}
                     </text>
                   </>
                 ))
               }
+              {/* A referência desenha-se por cima das barras, à altura toda do
+                  desenho: é ela que se lê primeiro. */}
+              <line class="mun-serie-ref" x1={SERIE.L} y1={SERIE.yTecto} x2={SERIE.R} y2={SERIE.yTecto} />
               <text class="tk" x={SERIE.R} y={SERIE.yTecto - 6} text-anchor="end">{s.municipio.distanciaTecto}</text>
             </svg>
             <p class="mun-distancia-selos" style="margin-bottom:12px" data-legenda-selos>
@@ -724,8 +825,14 @@ const metodoPath = routePath('metodo', lang);
 
     <!-- ============================================== aparelho: o que a página sabe de si -->
     <aside class="aparelho" aria-labelledby="aparelho">
+      {/* A FRASE DA PROVENIÊNCIA SAIU (Emenda 15, 21.08.2026). Dizia «Cada valor
+          desta página tem uma linha no livro-razão. O selo ao lado do número é a
+          porta para essa linha, onde estão a fonte, o documento… Nenhuma data de
+          leitura é escrita aqui: quem quiser sabê-la, abre a linha.» — o sítio a
+          explicar ao leitor o que o seu próprio selo faz, que é a mesma cadeia
+          que saiu do índice do livro-razão na 3b. O rótulo fica, e o selo de cada
+          valor continua a ser a porta. */}
       <h2 class="aparelho-titulo" id="aparelho">{s.municipio.provenienciaK}</h2>
-      <p class="aparelho-nota">{s.municipio.provenienciaV}</p>
 
       <div class="aparelho-estado">
         <span class="linha-campo-k">{s.municipio.naoSabeK}</span>
