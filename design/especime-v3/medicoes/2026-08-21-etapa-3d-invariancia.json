@@ -1,0 +1,3546 @@
+{
+  "a": "/private/tmp/claude-501/-Users-nunosantos/b185e650-e114-4dd4-a233-45407e03b19a/scratchpad/ref-df76a5f/dist",
+  "b": "dist",
+  "rotas": 322,
+  "iguais": 52,
+  "diferencas": [
+    {
+      "rota": "/en/ledger/",
+      "estado": "difere",
+      "mais": 467,
+      "menos": 3,
+      "acrescentados": [
+        "O Estado do País",
+        "O Estado do País",
+        "O Estado do País",
+        "O Estado do País",
+        "O Estado do País"
+      ],
+      "retirados": [
+        "The provenance seal beside each figure is the door to its row. This is the index of those doors.",
+        "What this index does not say",
+        "Only the figures this site publishes are here. The figures inside the study documents hosted here are not in the ledger: their provenance is the document’s own, on the day it was published. Nor is the ledger a database of series: it holds the reading we cited, not the series it came from."
+      ]
+    },
+    {
+      "rota": "/en/ledger/abandono-escolar-precoce-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/agua-nao-faturada-portugal-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/alentejo-central-poder-de-compra-2023/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/avisos-pt2030-abertos/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/avisos-pt2030-pessoas-singulares/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/ciclo-substituicao-condutas/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/competencias-digitais-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/correcoes-publicadas/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/credito-malparado-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/criancas-em-creche-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/custo-unitario-do-trabalho-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/desempenho-das-exportacoes-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/desemprego-de-longa-duracao-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/despesa-em-id-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/disparidade-de-emprego-entre-sexos-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/distancia-alentejo-ue27-2000/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/distancia-alentejo-ue27-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/distancia-algarve-ue27-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/distancia-grande-lisboa-ue27-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/distancia-madeira-ue27-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/distancia-peninsula-de-setubal-ue27-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/distancia-portugal-ue27-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/distancia-setubal-grande-lisboa-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/divida-das-empresas-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/divida-das-familias-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/divida-publica-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/edicoes-publicadas/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/estudos-evora-publicados/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/estudos-publicados/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-camara-lugares/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-camara-mandatos-cdu-2013/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-camara-mandatos-cdu-2017/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-camara-mandatos-cdu-2021/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-camara-mandatos-ps-2009/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-camara-mandatos-ps-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-concentracao-vab4-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-contas-2024-votos-contra/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-contas-2024-votos-favor/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-desemprego-registado-2013/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-desemprego-registado-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-despesa-paga-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-divergencia-municipio-dgal-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-divida-31-10-2013/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-divida-dgal-2014/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-divida-dgal-2017/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-divida-dgal-2021/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-divida-dgal-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-divida-inicio-mandato-reexpressa/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-divida-total-2017/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-divida-total-2021/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-divida-total-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-divida-total-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-empresas-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-excesso-endividamento-2014/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-excesso-endividamento-2019/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-execucao-da-receita-2021/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-execucao-da-receita-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-executivo-2025-ad/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-executivo-2025-cdu/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-executivo-2025-chega/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-executivo-2025-ps/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-indice-de-divida-2014/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-indice-de-divida-2017/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-indice-de-divida-2021/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-indice-de-divida-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-limite-divida-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-limite-divida-dgal-2014/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-limite-divida-dgal-2017/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-limite-divida-dgal-2021/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-limite-divida-dgal-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-margem-endividamento-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-orcamento-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-pael-emprestimo/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-pagamentos-em-atraso-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-pelouros-2021-presidente/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-pelouros-2021-total/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-pelouros-2021-vice-presidente/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-pelouros-2025-presidente/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-pelouros-2025-total/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-pelouros-2025-vereadora/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-pelouros-2025-vice-presidente/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-poder-de-compra-2023/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-populacao-2021/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-populacao-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-prazo-medio-de-pagamento-2023/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-prazo-medio-de-pagamento-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-prr-aprovado-2026/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-prr-execucao-2026/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-prr-municipio-contratado/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-prr-pago-2026/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-prr-universidade-contratado/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-prr-vencido-aprovado-2026/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-prr-vencido-quota-2026/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-receita-cobrada-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-saneamento-financeiro-2016/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/evora-vab-empresarial-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/fluxo-de-credito-as-empresas-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/fluxo-de-credito-as-familias-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/formacao-bruta-de-capital-fixo-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/independencia-da-justica-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/indice-de-divida-limite-legal/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/indice-de-percepcao-da-corrupcao-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/jovens-nem-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/licencas-de-construcao-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/municipios-acores-caop-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/municipios-com-estudo-aprofundado/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/municipios-continente-caop-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/municipios-madeira-caop-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/municipios-portugal-caop-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/municipios-sem-estudo-aprofundado/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/necessidades-medicas-nao-satisfeitas-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/pib-pc-alentejo-2000/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/pib-pc-alentejo-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/pib-pc-algarve-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/pib-pc-grande-lisboa-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/pib-pc-madeira-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/pib-pc-peninsula-de-setubal-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/pib-pc-portugal-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/pib-real-per-capita-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/portugal-concentracao-vab4-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/posicao-de-investimento-internacional-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/precos-da-habitacao-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/racio-s80-s20-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/risco-de-pobreza-ou-exclusao-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/saldo-da-balanca-corrente-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/saldo-natural-portugal-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/sobrecarga-do-custo-da-habitacao-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/taxa-de-actividade-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/taxa-de-cambio-efectiva-real-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/taxa-de-desemprego-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/taxa-de-desemprego-mip-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/ledger/taxa-de-emprego-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "This row elsewhere",
+        "This row in the Portuguese edition →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/municipalities/",
+      "estado": "difere",
+      "mais": 21,
+      "menos": 2,
+      "acrescentados": [
+        "1",
+        "308",
+        "has a page",
+        "Mainland",
+        "278"
+      ],
+      "retirados": [
+        "What this index does not say",
+        "Anything about the concelho. It is a list of names and states: a concelho appears here because it exists in the official administrative map, not because this site has measured anything about it."
+      ]
+    },
+    {
+      "rota": "/en/municipalities/evora/",
+      "estado": "difere",
+      "mais": 27,
+      "menos": 3,
+      "acrescentados": [
+        "0",
+        "no threshold",
+        "no threshold",
+        "no threshold",
+        "no threshold"
+      ],
+      "retirados": [
+        "Computed from two columns of the same regulator file. The arithmetic is on the row.",
+        "The bar is the total debt the regulator publishes for the concelho; the rule is the legal limit for the same year. The index measures one against the other on a scale whose cap is the permitted value.",
+        "Every value on this page has a ledger row. The seal beside the figure is the door to that row, where the source, the document, the exact place the value was read from, the excerpt and the day it was read all live. No reading date is written here: whoever wants it opens the row."
+      ]
+    },
+    {
+      "rota": "/livro-razao/",
+      "estado": "difere",
+      "mais": 460,
+      "menos": 3,
+      "acrescentados": [
+        "O Estado do País",
+        "O Estado do País",
+        "O Estado do País",
+        "O Estado do País",
+        "O Estado do País"
+      ],
+      "retirados": [
+        "O selo de proveniência junto a cada número é a porta para a sua linha. É este o índice dessas portas.",
+        "O que este índice não diz",
+        "Só estão aqui os números que este sítio publica. Os números dentro dos documentos de estudo alojados aqui não estão no livro-razão: a proveniência deles é a do próprio documento, no dia em que foi publicado. O livro-razão também não é uma base de séries: guarda a leitura que citámos, não a série de onde ela saiu."
+      ]
+    },
+    {
+      "rota": "/livro-razao/abandono-escolar-precoce-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/agua-nao-faturada-portugal-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/alentejo-central-poder-de-compra-2023/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/avisos-pt2030-abertos/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/avisos-pt2030-pessoas-singulares/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/ciclo-substituicao-condutas/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/competencias-digitais-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/correcoes-publicadas/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/credito-malparado-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/criancas-em-creche-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/custo-unitario-do-trabalho-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/desempenho-das-exportacoes-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/desemprego-de-longa-duracao-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/despesa-em-id-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/disparidade-de-emprego-entre-sexos-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/distancia-alentejo-ue27-2000/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/distancia-alentejo-ue27-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/distancia-algarve-ue27-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/distancia-grande-lisboa-ue27-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/distancia-madeira-ue27-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/distancia-peninsula-de-setubal-ue27-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/distancia-portugal-ue27-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/distancia-setubal-grande-lisboa-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/divida-das-empresas-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/divida-das-familias-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/divida-publica-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/edicoes-publicadas/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/estudos-evora-publicados/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/estudos-publicados/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-camara-lugares/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-camara-mandatos-cdu-2013/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-camara-mandatos-cdu-2017/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-camara-mandatos-cdu-2021/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-camara-mandatos-ps-2009/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-camara-mandatos-ps-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-concentracao-vab4-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-contas-2024-votos-contra/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-contas-2024-votos-favor/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-desemprego-registado-2013/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-desemprego-registado-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-despesa-paga-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-divergencia-municipio-dgal-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-divida-31-10-2013/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-divida-dgal-2014/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-divida-dgal-2017/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-divida-dgal-2021/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-divida-dgal-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-divida-inicio-mandato-reexpressa/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-divida-total-2017/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-divida-total-2021/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-divida-total-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-divida-total-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-empresas-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-excesso-endividamento-2014/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-excesso-endividamento-2019/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-execucao-da-receita-2021/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-execucao-da-receita-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-executivo-2025-ad/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-executivo-2025-cdu/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-executivo-2025-chega/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-executivo-2025-ps/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-indice-de-divida-2014/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-indice-de-divida-2017/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-indice-de-divida-2021/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-indice-de-divida-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-limite-divida-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-limite-divida-dgal-2014/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-limite-divida-dgal-2017/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-limite-divida-dgal-2021/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-limite-divida-dgal-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-margem-endividamento-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-orcamento-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-pael-emprestimo/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-pagamentos-em-atraso-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-pelouros-2021-presidente/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-pelouros-2021-total/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-pelouros-2021-vice-presidente/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-pelouros-2025-presidente/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-pelouros-2025-total/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-pelouros-2025-vereadora/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-pelouros-2025-vice-presidente/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-poder-de-compra-2023/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-populacao-2021/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-populacao-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-prazo-medio-de-pagamento-2023/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-prazo-medio-de-pagamento-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-prr-aprovado-2026/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-prr-execucao-2026/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-prr-municipio-contratado/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-prr-pago-2026/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-prr-universidade-contratado/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-prr-vencido-aprovado-2026/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-prr-vencido-quota-2026/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-receita-cobrada-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-saneamento-financeiro-2016/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/evora-vab-empresarial-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/fluxo-de-credito-as-empresas-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/fluxo-de-credito-as-familias-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/formacao-bruta-de-capital-fixo-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/independencia-da-justica-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/indice-de-divida-limite-legal/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/indice-de-percepcao-da-corrupcao-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/jovens-nem-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/licencas-de-construcao-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/municipios-acores-caop-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/municipios-com-estudo-aprofundado/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/municipios-continente-caop-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/municipios-madeira-caop-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/municipios-portugal-caop-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/municipios-sem-estudo-aprofundado/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/necessidades-medicas-nao-satisfeitas-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/pib-pc-alentejo-2000/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/pib-pc-alentejo-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/pib-pc-algarve-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/pib-pc-grande-lisboa-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/pib-pc-madeira-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/pib-pc-peninsula-de-setubal-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/pib-pc-portugal-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/pib-real-per-capita-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/portugal-concentracao-vab4-2024/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/posicao-de-investimento-internacional-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/precos-da-habitacao-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/racio-s80-s20-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/risco-de-pobreza-ou-exclusao-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/saldo-da-balanca-corrente-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/saldo-natural-portugal-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/sobrecarga-do-custo-da-habitacao-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/taxa-de-actividade-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/taxa-de-cambio-efectiva-real-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/taxa-de-desemprego-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/taxa-de-desemprego-mip-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/livro-razao/taxa-de-emprego-2025/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 0,
+      "acrescentados": [
+        "CSV",
+        "JSON",
+        "Esta linha noutro sítio",
+        "Esta linha na edição inglesa →"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/municipios/",
+      "estado": "difere",
+      "mais": 21,
+      "menos": 2,
+      "acrescentados": [
+        "1",
+        "308",
+        "tem página",
+        "Continente",
+        "278"
+      ],
+      "retirados": [
+        "O que este índice não diz",
+        "Nada sobre o concelho. É uma lista de nomes e de estados: um concelho aparece aqui porque existe na Carta Administrativa, não porque este sítio tenha alguma coisa medida sobre ele."
+      ]
+    },
+    {
+      "rota": "/municipios/evora/",
+      "estado": "difere",
+      "mais": 27,
+      "menos": 3,
+      "acrescentados": [
+        "0",
+        "sem limiar",
+        "sem limiar",
+        "sem limiar",
+        "sem limiar"
+      ],
+      "retirados": [
+        "Calculado sobre duas colunas do mesmo ficheiro do regulador. A aritmética está na linha.",
+        "A barra é a dívida total que o regulador publica para o concelho; o fio é o limite legal do mesmo ano. O índice mede uma contra o outro numa escala em que o teto é o valor permitido.",
+        "Cada valor desta página tem uma linha no livro-razão. O selo ao lado do número é a porta para essa linha, onde estão a fonte, o documento, o sítio exato de onde o valor foi lido, o excerto e o dia em que foi lido. Nenhuma data de leitura é escrita aqui: quem quiser sabê-la, abre a linha."
+      ]
+    }
+  ]
+}

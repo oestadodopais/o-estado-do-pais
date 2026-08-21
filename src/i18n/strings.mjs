@@ -837,14 +837,23 @@ export const STRINGS = {
       relanceK: 'Relance',
       relanceSub:
         'Oito medidas. Seis vêm de organismos que publicam para todos os concelhos do país; duas só existem porque o próprio município as publica, e cada uma dessas di-lo na sua linha.',
-      relanceVazio: 'Nenhuma fonte central publica esta medida para este concelho.',
 
       breveK: 'Leitura breve',
       breveSub: 'Uma frase por medida. Todos os números são citações do livro-razão.',
 
       distanciaK: 'A dívida contra o teto legal',
+      /* A LEGENDA SEGUE O DESENHO (Emenda 4, subetapa 3d), e vai assinalada em
+         vez de decidida. Dizia «A barra é a dívida total que o regulador publica
+         para o concelho; o fio é o limite legal do mesmo ano.» — verdade
+         enquanto a barra enchia do zero até ao valor. A emenda fixa uma só
+         gramática de régua para o sítio inteiro: a referência a tinta à altura
+         toda, a barra é a DISTÂNCIA à referência, o traço fino é o valor. Com o
+         desenho novo, a frase antiga passava a descrever uma coisa que a página
+         não desenha, e uma legenda falsa não se publica. O que mudou foram as
+         duas primeiras orações; a terceira, que explica o índice, é a que já
+         estava, palavra por palavra. */
       distanciaLegenda:
-        'A barra é a dívida total que o regulador publica para o concelho; o fio é o limite legal do mesmo ano. O índice mede uma contra o outro numa escala em que o teto é o valor permitido.',
+        'O traço fino é a dívida total que o regulador publica para o concelho; a barra é a distância até ao limite legal do mesmo ano, que é o fio da direita. O índice mede uma contra o outro numa escala em que o teto é o valor permitido.',
       /* Pedaços de uma frase que o gabarito monta com as afirmações DESTE
          município. Nenhum id de afirmação se escreve aqui: isto é a língua,
          não os dados. */
@@ -919,8 +928,6 @@ export const STRINGS = {
       metodoK: 'Método e ressalvas',
       naoSabeK: 'O que esta página não sabe',
       provenienciaK: 'Proveniência',
-      provenienciaV:
-        'Cada valor desta página tem uma linha no livro-razão. O selo ao lado do número é a porta para essa linha, onde estão a fonte, o documento, o sítio exato de onde o valor foi lido, o excerto e o dia em que foi lido. Nenhuma data de leitura é escrita aqui: quem quiser sabê-la, abre a linha.',
       estudosK: 'Os trabalhos sobre este concelho',
       estudosV:
         'Cada um tem a sua página, com a medida que o faz valer a pena, a frase do que concluiu, o método e o documento original quando está alojado aqui.',
@@ -1564,14 +1571,13 @@ export const STRINGS = {
       relanceK: 'At a glance',
       relanceSub:
         'Eight measures. Six come from bodies that publish for every concelho in the country; two exist only because the municipality itself publishes them, and each of those says so on its own line.',
-      relanceVazio: 'No central source publishes this measure for this concelho.',
 
       breveK: 'Brief reading',
       breveSub: 'One sentence per measure. Every figure is a citation from the ledger.',
 
       distanciaK: 'The debt against the legal ceiling',
       distanciaLegenda:
-        'The bar is the total debt the regulator publishes for the concelho; the rule is the legal limit for the same year. The index measures one against the other on a scale whose cap is the permitted value.',
+        'The thin line is the total debt the regulator publishes for the concelho; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value.',
       distanciaIndiceA: 'The index is ',
       distanciaIndiceB: ' in ',
       distanciaIndiceC: ', against a legal cap of ',
@@ -1638,8 +1644,6 @@ export const STRINGS = {
       metodoK: 'Method and caveats',
       naoSabeK: 'What this page does not know',
       provenienciaK: 'Provenance',
-      provenienciaV:
-        'Every value on this page has a ledger row. The seal beside the figure is the door to that row, where the source, the document, the exact place the value was read from, the excerpt and the day it was read all live. No reading date is written here: whoever wants it opens the row.',
       estudosK: 'The works about this concelho',
       estudosV:
         'Each has its own page, with the measure that makes it worth reading, the sentence of what it concluded, the method, and the original document where it is hosted here.',

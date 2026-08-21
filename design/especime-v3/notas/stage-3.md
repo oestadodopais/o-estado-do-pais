@@ -13,6 +13,7 @@ sessão custe uma subetapa. Sem travessões, por escolha deste documento.*
 | (abaixo) | 3a | a página de linha como o recibo do boletim: a letra, os rótulos, a ficha como formulário, a marca de água do campo em falta, o acesso ao conjunto e esta linha noutro sítio |
 | (abaixo) | 3b | o índice do livro-razão: a linha-espécime com os mesmos campos pela mesma ordem, as contagens com porta, e a Emenda 15 aplicada à página |
 | (abaixo) | 3c | `/municipios`: a cobertura pelas duas chaves da prova, a lista na letra da família, e a Emenda 15 com a autorreferência a zero |
+| (abaixo) | 3d | `/municipios/evora`: as oito medidas pela peça da primeira página, os dois desenhos na gramática da régua, e o fim dos dois literais de amarelo (I12) |
 
 ---
 
@@ -707,3 +708,242 @@ node tests/municipio/concelhos.mjs   →  4 de 4 células passam
    transbordo: 20 de 20 combinações a zero
 node scripts/medir-defeitos.mjs      →  frases de cobertura 1 por estado por edição ✓
 ```
+
+---
+
+## 5. Subetapa 3d · `/municipios/evora`
+
+### 5.1 · As oito medidas, pela peça da primeira página
+
+A relocação **R2** levou estes oito registos daqui para a primeira página, e a
+peça (`src/components/inicio/Peca.astro`) foi escrita para eles. Voltam a ser
+lidos aqui pela mesma peça: as mesmas oito medidas, com a mesma gramática, nas
+duas superfícies. Um segundo desenho para os mesmos oito registos era uma segunda
+língua para a mesma coisa.
+
+A vista importa `src/styles/inicio.css`, porque é dela que vêm as regras da peça e
+da régua, e as peças vivem dentro de um `.painel`, porque é aí que estão
+declaradas as três fichas do corpo do valor (`--peca-corpo-*`).
+
+**A única cor é a do tecto legal** (Emenda 1): o limite de endividamento é um
+limiar publicado por lei, e por isso a peça do índice de dívida colore («dentro do
+limiar», cobalto) e leva a régua; o poder de compra lê-se contra a base 100 do seu
+índice, que é uma média, e diz-se por palavras a tinta. Medido em Chromium, sobre
+a página construída, elemento a elemento:
+
+```
+8 peças (0 vazias) · 1 régua · estados dentro/sem
+elementos com cor de estado: span.sq:backgroundColor | rect.regua-barra:fill
+```
+
+Isto é, a cor aparece em três sítios e todos são da peça do índice de dívida: o
+quadrado do marcador, a palavra de estado e a barra da régua.
+
+**Uma dívida que fica escrita** (ISSUES **I44**): a conta que decide o estado e a
+régua está agora em **duas** vistas, aqui e em `HomeView.astro`, e as duas cópias
+podem divergir. A saída é uma função em `src/lib/inicio.mjs`, que é do construtor
+B; escrever uma terceira cópia num ficheiro meu seria trocar duas cópias por três.
+
+### 5.2 · Os dois desenhos, na gramática da régua (ISSUES I12)
+
+A Emenda 4 fixa **uma** gramática para o sítio inteiro: a referência a tinta e à
+altura toda, a barra é a **distância** à referência, o traço fino é o valor,
+nenhuma barra sem referência publicada. Os dois desenhos desta página eram barras
+amarelas a encher desde o zero, com a cor escrita no atributo `fill` do gabarito
+(`var(--yellow)`, de um token aposentado na etapa 1c), e a folha partilhada
+remapeava-as para tinta.
+
+| desenho | antes | depois |
+|---|---|---|
+| a dívida contra o tecto legal | barra amarela do zero ao valor, o tecto como um traço à direita | a referência a tinta (2px) à direita, a barra em `--g2` do valor até ela, o valor como traço fino de tinta (1px) |
+| a série do índice, quatro anos | uma barra amarela por ano, do eixo ao valor | a referência a tinta à largura toda, a barra de cada ano em `--g2` entre o valor e a referência, o valor como traço fino |
+
+Medido:
+
+```
+distância: barra rgb(127, 134, 129) [--g2] · valor rgb(23, 25, 27) [--ink] (1px) · referência rgb(23, 25, 27) (2px)
+série: 4 barras, 4 valores, referência rgb(23, 25, 27)
+fills escritos no gabarito: (nenhum)
+```
+
+**Duas correcções pelo caminho, as duas apanhadas a medir e não a olhar**:
+
+1. a barra saía a tinta e não a `--g2`, porque o bloco de remapeamento de
+   `site.css` (`.mun-distancia-svg rect`) tem mais especificidade do que uma
+   classe. O selector desta folha passou a incluir o `<svg>`. O bloco de
+   remapeamento fica **sem cliente** para estes dois desenhos, e é do construtor A;
+2. o rótulo do valor de um ano **abaixo** do tecto escrevia-se em cima do fio da
+   referência. Passa a pôr-se do lado de fora da referência: por cima quando o ano
+   está acima do tecto, por baixo quando está abaixo.
+
+**E uma legenda que deixou de ser verdadeira** (ISSUES **I46**): «A barra é a
+dívida total que o regulador publica para o concelho; o fio é o limite legal do
+mesmo ano» era verdade enquanto a barra enchia do zero. Com a gramática nova
+descrevia uma coisa que a página não desenha. Reescrevi as duas primeiras orações
+e deixei a terceira palavra por palavra; **a redação final é do lugar de direção**,
+e está no registo das relocações. Uma legenda falsa não se publica, e manter o
+desenho antigo era manter a gramática que a emenda substitui.
+
+### 5.3 · A banda dos mandatos, e o que já estava certo
+
+A banda já estava em `--g3` com contorno em `--muted` e o rótulo do partido como
+registo, com a legenda a levar as portas de cada mandato (a convenção do §1.34: um
+`<a>` dentro de um desenho não se lê como porta). Não se mexeu, e a razão da cor
+está escrita na folha partilhada, medida: `--muted` dá 4,88:1 contra o
+preenchimento, e `--rule-strong` daria 2,71:1.
+
+### 5.4 · A Emenda 15 nesta página, e o conflito que fica por resolver
+
+**Duas cadeias saem**, e nenhuma é chamada de quem constrói:
+
+- `municipio.provenienciaV` («Cada valor desta página tem uma linha no
+  livro-razão. O selo ao lado do número é a porta para essa linha…»), que é a
+  mesma classe que saiu do índice do livro-razão na 3b;
+- `municipio.relanceVazio`, que ficou sem quem a rendesse: a peça vazia da Emenda
+  14 diz «sem linha ainda», em duas palavras, no lugar do valor.
+
+**O inventário desta rota NÃO foi feito, e o alvo de zero é inalcançável sem
+revogar três instruções de preservação.** Medido: `/municipios/evora` tem **70**
+blocos de prosa da casa e `/en/municipalities/evora` tem **71**, e pelo menos três
+famílias deles estão explicitamente preservadas:
+
+| o que | quem o preserva |
+|---|---|
+| a lede «Esta página mede o município de Évora… Não interpreta: …» | `DECISIONS.md` §4, bloco T, item T («"Não interpreta" versus interpreting sentences»): **preservado**, fase da voz |
+| «Oito medidas. Seis vêm de organismos que publicam para todos os concelhos do país; duas só existem porque o próprio município as publica…» | `DECISIONS.md` §4, item Q («As contagens em palavras da página do município»): **preservado**, fase da voz |
+| o aparelho, «O que esta página não sabe» e as suas quatro ressalvas | o brief da etapa 3, §3, 3d: «the apparatus («o que esta página não sabe», the doors) preserved» |
+
+As três são, pela definição da Emenda 15, autorreferência. **Classificá-las e
+publicar a contagem daria um número que não pode descer sem uma decisão da
+direção**, e a rota ficou fora de `ROTAS_DO_INVENTARIO` em vez de entrar com 60
+blocos por classificar e um alvo que não é alcançável. **É o que fica por fazer, e
+está aqui em vez de parecer feito**: a classificação das 121 cadeias e a decisão
+sobre as três famílias preservadas são da ronda seguinte, com o conflito já
+nomeado.
+
+### 5.5 · O cartão localizador não entra, e porquê (ISSUES I45)
+
+O brief pede «the locator card (`MapaRespira.astro`, `localizador`, dots, the
+chosen concelho as a ring) with the CAOP seal in the apparatus». O componente
+**fixa `data-postura="inteiro"`** no gabarito (é `public/js/inicio.js` que a troca)
+e o anel do concelho escolhido é uma classe que o mesmo script aplica. Rendido
+como está, o mapa desta página seria 308 pontos iguais, na postura errada e **sem
+anel**: um localizador que não localiza.
+
+**Não é regressão**: a página não tem mapa nenhum desde a 2b, quando
+`InstrumentoMapa.astro` saiu do repositório. É uma adição por fazer, e o pedido ao
+construtor B é de duas propriedades: `postura` (com `'inteiro'` por defeito) e
+`escolhido` (o slug da CAOP, que põe a classe do anel no servidor). Com elas, o
+cartão e o selo da CAOP no aparelho são quatro linhas nesta vista.
+
+### 5.6 · As réguas da 3d
+
+```
+node tests/municipio/concelhos.mjs   →  6 de 6 células passam
+   transbordo: 20 de 20 combinações (2 páginas × 2 edições × 5 larguras) a zero
+npm run build / npm run verify       →  cinco portões verdes
+```
+
+---
+
+## 6. As réguas da etapa, e a invariância
+
+| régua | base (`df76a5f`) | depois da 3d |
+|---|---|---|
+| páginas construídas | 307 | 307 |
+| porta de correções | 307/307 | 307/307 |
+| primeira página, valores sem selo · selos para outra linha | 0 · 0 | 0 · 0 |
+| frases de moldura | 89 distintas · 2 091 ocorrências | **92 · 2 487** |
+| `[descrição em preparação]` | 0 | 0 |
+| linhas com `#page=` · com recorte | 23 · 22 de 132 | 23 · 22 |
+| localizadores internos | 0 | 0 |
+| frases de cobertura | 1 por estado por edição | 1 por estado por edição |
+| frases da casa · `/` | 32 · 40 · 7 · **0** | 32 · 33 · 7 · **0** |
+| frases da casa · `/livro-razao` | (não medida) | 16 · 12 · 2 · **2** |
+| frases da casa · `/municipios` | (não medida) | 33 · 32 · 1 · **0** |
+| contraste | 0 falhas de texto · 4 objetos de interface abaixo de 3:1 | **igual, sem uma ficha nova** |
+| chaves com PT = EN | 15 | 17 |
+
+**As frases de moldura sobem, e o que se mediu foi isto**: as quatro cadeias novas
+do aparelho do recibo rendem **528 vezes** em `dist/` (132 por cadeia por edição),
+e a mais longa delas, «Esta linha na edição inglesa →», tem exactamente os 30
+carácteres que a medida 3 conta. A decomposição bloco a bloco do resto do
+acréscimo **não foi feita**, e vai dito em vez de suposto.
+
+**A contagem de conteúdo da primeira página desce de 41 para 33**, e é da régua e
+não da página: a medida 8 passou a excluir `[data-cobertura]` na 3c (ISSUES I43).
+A autorreferência continua em 0, que é o alvo.
+
+**A invariância**, contra a construção de referência de `df76a5f` (`git worktree
+add --detach`, `node_modules` por ligação simbólica, `npm run build` verde):
+
+```
+322 rotas · 52 idênticas em texto · 270 com diferenças
+  264 páginas de linha       +4 −0 em todas as 264
+    2 índices do livro-razão  +460 −3 (pt) · +467 −3 (en)
+    2 índices dos concelhos   +21 −2
+    2 páginas de concelho     +27 −3
+```
+
+**As 270 fecham sem sobra**: 264 + 2 + 2 + 2, e são exactamente as quatro famílias
+de páginas desta etapa. **Nenhuma outra rota do sítio mudou uma palavra.**
+
+---
+
+## 7. Pedidos
+
+**Ao construtor B** (a primeira página, os seus componentes, `prova.mjs`,
+`inicio.js`, `inicio.css` a partir da 3a):
+
+1. **`MapaRespira.astro`, linha 279: retirar a porta do CSV dos 308.** A
+   conferência que a segurava mudou de rota no commit 3-0 (ISSUES I34, fechado).
+   Medido: com a linha retirada à mão, `astro build` e `check:dados` saem os dois
+   com 0.
+2. **`MapaRespira.astro`: duas propriedades, `postura` e `escolhido`** (ISSUES
+   I45), para que a página do concelho possa render o cartão localizador com o
+   anel no concelho certo, do servidor e sem script.
+3. **`src/lib/inicio.mjs`: a conta das peças de Évora numa função partilhada**
+   (ISSUES I44). Hoje está escrita em duas vistas.
+4. **`public/js/inicio.js`: `ambito=municipio` como a vista de escolha**, ou o
+   brief passa a escrever `/#mapa` (ISSUES I42). A porta de `/municipios` ficou a
+   ser a âncora do mapa, que é verdadeira.
+5. **`src/lib/prova.mjs`: âncoras nas portas das chaves do índice do livro-razão**
+   (`indexaveis` → `#grupo-completas`, `divida` → `#grupo-por-confirmar`), que é o
+   que a `IDENTIDADE.md` §10 prefere quando o que o número conta se vê na própria
+   página. Hoje a porta é `/livro-razao`, e numa página que É `/livro-razao` isso é
+   uma ligação para o topo dela própria.
+
+**Ao construtor A** (a folha partilhada): quando o bloco de remapeamento do
+amarelo perder o último cliente, as regras `.mun-distancia-svg rect` e
+`.mun-serie-svg rect` já ficaram sem nenhum (subetapa 3d). Resta
+`AgendaView.astro:673`, que é da etapa 4.
+
+**À cadeira**: a medida 8 de `medir-defeitos.mjs` diz que exclui blocos com
+`data-prova` e a constante que ela usa não o faz (ISSUES I41); e a decisão sobre as
+três famílias de frases preservadas de `/municipios/evora` (§5.4) é da direção.
+
+---
+
+## 8. O que fica por fazer, e porquê
+
+| o quê | porquê, e onde está escrito |
+|---|---|
+| **3e**, a subetapa de fecho: as capturas às seis rotas, a 1280 e 390, nas duas edições e nos dois temas | a etapa parou no limite de tokens que o brief fixa («stop at the next commit boundary past 650k with the note written»), e parou **num fim de commit**, com a nota escrita. As réguas todas correram e estão nesta nota; o que falta é a fotografia |
+| **o inventário de `/municipios/evora`** | §5.4: o alvo de zero é inalcançável sem revogar três instruções de preservação (§4 itens Q e T, e o próprio brief). O conflito está nomeado, e a decisão é da direção |
+| **o cartão localizador na página do concelho** | ISSUES I45: precisa de duas propriedades num componente do construtor B. Não é regressão: a página não tem mapa desde a 2b |
+| **as duas frases do índice do livro-razão que ficam em autorreferência** | §3.3: `DECISIONS.md` §4 item AB manda preservá-las palavra por palavra até à fase da voz |
+| **o byte NUL de `src/lib/ledger.mjs`** | ISSUES I37: a etapa não editou aquele ficheiro por outra razão, e o plano só autoriza a correção nesse caso |
+| **a porta do CSV na primeira página** | pedido 1 ao construtor B: o ficheiro é dele |
+
+---
+
+## 9. Quem fez o quê, e quanto custou
+
+Construtor C, **Claude Opus** (`claude-opus-5[1m]`), do princípio ao fim: as cinco
+subetapas construídas, as réguas escritas e corridas, as medições, os registos e
+esta nota. Duas leituras de apoio correram em subagentes (Explore) sobre a
+`DECISIONS.md` §1.47 a §1.49 e §4, e sobre as notas das etapas 1 e 2 com os
+componentes que esta etapa consome; nenhum deles escreveu um byte do repositório.
+
+Cinco commits: `f816e04` (3-0), `0790ba7` (3a), `c6f4d46` (3b), `e02e2fe` (3c) e
+o desta subetapa. A conta de tokens está no relatório da sessão.

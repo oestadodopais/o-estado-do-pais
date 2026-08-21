@@ -35,6 +35,22 @@ Estados: **autorizada** (escrita aqui antes da etapa), **feita** (a etapa confir
 
 ## Texto novo (sem rota de origem; entra pelas cadeias, PT e EN no mesmo commit; revisão de voz antes da fusão)
 
+### Etapa 3, subetapa 3d · nenhuma cadeia nova, três retiradas, uma reescrita
+
+**Cadeias retiradas** (três chaves, nas duas edições):
+
+| chave | o que dizia | porquê |
+|---|---|---|
+| `municipio.provenienciaV` | «Cada valor desta página tem uma linha no livro-razão. O selo ao lado do número é a porta para essa linha…» | o sítio a explicar ao leitor o que o seu próprio selo faz (Emenda 15). É a mesma classe que saiu do índice do livro-razão na 3b. O rótulo «Proveniência» fica, e o selo de cada valor continua a ser a porta |
+| `municipio.relanceVazio` | «Nenhuma fonte central publica esta medida para este concelho.» | ficou sem quem a rendesse quando as medidas passaram a ser peças: a peça vazia da Emenda 14 diz «sem linha ainda», em duas palavras, no lugar do valor |
+
+**Uma cadeia reescrita, e vai assinalada em vez de decidida** (ISSUES **I46**): `municipio.distanciaLegenda`, nas duas edições. A Emenda 4 fixa uma só gramática de régua (a barra é a **distância** à referência, não o valor), e com o desenho novo a frase antiga descrevia uma coisa que a página deixou de desenhar. Uma legenda falsa não se publica; manter o desenho antigo era manter a gramática que a emenda substitui. Mudaram as duas primeiras orações, e a terceira ficou palavra por palavra.
+
+| | antes | depois |
+|---|---|---|
+| pt | «A barra é a dívida total que o regulador publica para o concelho; o fio é o limite legal do mesmo ano. …» | «O traço fino é a dívida total que o regulador publica para o concelho; a barra é a distância até ao limite legal do mesmo ano, que é o fio da direita. …» |
+| en | «The bar is the total debt the regulator publishes for the concelho; the rule is the legal limit for the same year. …» | «The thin line is the total debt the regulator publishes for the concelho; the bar is the distance to the legal limit for the same year, which is the rule on the right. …» |
+
 ### Etapa 3, subetapa 3c · duas cadeias relocadas, quatro retiradas, uma aparada
 
 *Nenhuma cadeia nova. As duas que entram são as da ficha do mapa da primeira página, com as mesmas palavras (R11).*
