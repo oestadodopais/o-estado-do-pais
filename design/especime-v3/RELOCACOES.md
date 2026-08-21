@@ -247,3 +247,30 @@ o `ISSUES.md` **I52**.
 |---|---|---|
 | `mandatos[2017–2021].decidiuNota` | «Nenhuma decisão deste mandato atravessou para o livro-razão com valor próprio. Um campo em branco seria diferente disto: o que falta é a linha, não a decisão.» | a ausência diz-se em duas palavras (Emenda 15). O campo passa a render «sem linha ainda» / «no row yet», que é a cadeia da casa (`s.cobertura.semLinhaAinda`) e não uma terceira formulação |
 | `metodo[«Um partido é dono das suas decisões, não de uma curva»]` | «As decisões desta página vão atribuídas a quem as tomou, com o rótulo da lista que ganhou. Os índices … não vão atribuídos a ninguém: nada do que foi lido fornece o contrafactual que recortaria a parte de um executivo neles.» | é a nota de como a página foi feita. **O limite dos dados que ela também dizia não se perde**: fica em «O que esta página não sabe», na entrada «Não existe contrafactual para nenhum índice…», que é onde ele pertence e que a direção mandou ficar |
+
+### Etapa 4, subetapa 4c · a Agenda: duas cadeias retiradas, quatro encurtadas, uma mudada de família
+
+Todas em `src/i18n/strings.mjs`, família `agenda.*`, nas duas edições. O teste é o
+da direção de 21.08.2026 (`direcao.md`, nota à Emenda 15).
+
+**Retiradas** (duas chaves):
+
+| chave | o que dizia | porquê |
+|---|---|---|
+| `agenda.lede` | «Cada item traz o critério que o pôs aqui, quem o propôs e quem o decidiu, ou diz o que ainda lhe falta; e traz o registo de cada mudança de estado. Nada sai desta lista em silêncio.» | descreve o aparelho da própria página e fecha com uma promessa da casa. Cada item traz esses campos com os seus rótulos à vista |
+| `agenda.origemNota` | «A lista e o calendário são dois registos do motor de investigação, publicados tal como atravessaram.» | de que máquina a página vem e com que cuidado. É diligência: nenhum número se lê pior sem ela |
+
+**Encurtadas** (quatro chaves):
+
+| chave | o que dizia | o que diz | porquê |
+|---|---|---|---|
+| `agenda.vazioRetirado` | «Nada foi retirado desta agenda até hoje. Quando alguma coisa for, fica aqui, com a data e o motivo: um item não se apaga, muda de estado.» | «Nenhum até hoje.» / «None to date.» | a ausência diz-se em duas palavras (Emenda 15). A política que a segunda metade explicava é o que o histórico de cada item mostra ao fazê-la |
+| `agenda.semCriterios` | «Sem critério de nenhum dos quatro tipos. Veio de uma decisão da direção sobre o que faltava ao sítio… A razão está escrita no porquê e no histórico.» | «Sem critério.» / «No criterion.» | idem. A proveniência do item está nos campos que a levam, cada um com a sua data |
+| `agenda.calendarioLede` | «O que as fontes que este sítio cita publicam a seguir. Cada data traz o sítio onde está escrita, a data em que foi lida e a frase que a diz.» | só a primeira frase | a segunda descrevia o aparelho de cada acontecimento, que cada acontecimento tem à vista com os seus rótulos |
+| `agenda.perguntaNotaSelada` + `agenda.perguntaNotaPorSelar` → **`agenda.perguntaNota`** | as duas abriam com «Nos estudos, a pergunta é selada no motor antes de a recolha começar» e diziam o estado desta | «O registo do motor escreve-se em inglês: o inglês é a forma registada, palavra por palavra, e o português acima é a edição portuguesa dessa mesma pergunta.» | **a metade que fica é uma ressalva sobre o dado**, e é o lado da regra que sobrevive: sem ela um leitor toma a tradução pelo registo. A metade que sai é a regra da casa, e o estado do registo prévio está na linha logo abaixo, com data |
+
+**Mudada de família** (uma chave):
+
+| antes | depois | porquê |
+|---|---|---|
+| `metodo.sumarioK` | `leitura.sumarioK` | nasceu na 4b, no Método; a Agenda precisou das mesmas duas palavras na 4c. Duas cópias da mesma cadeia em duas famílias são duas cadeias no dia em que uma mudar. A família nova é a mobília da família da leitura, ao pé da folha que estas páginas partilham |

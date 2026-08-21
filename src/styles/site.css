@@ -1147,11 +1147,6 @@ a.src-chip.is-unverified:hover::before {
 .mun-serie-svg rect {
   fill: var(--ink);
 }
-/* a janela de publicação de uma fonte, no eixo da agenda: uma banda cinzenta,
-   para que a marca do dia, que é de tinta, se leia por cima dela */
-.agenda-eixo-svg rect {
-  fill: var(--g2);
-}
 
 /* camada 2 — leitura breve */
 .brief {

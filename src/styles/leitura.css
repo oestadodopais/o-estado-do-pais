@@ -216,3 +216,63 @@
 .metodo-fecho .regra-linha:first-child {
   margin-top: 0;
 }
+
+/* ==========================================================================
+   SUBETAPA 4c · A AGENDA: O SUMÁRIO, E O ITEM COMO CARTÃO QUE ABRE
+   ========================================================================== */
+
+/* O sumário da Agenda usa as classes do sumário do Método sem uma regra nova: é
+   a mesma peça na mesma folha. O que ele não leva é a coluna do número, porque
+   os estados não são numerados; a lista corre em duas colunas na mesma. */
+.metodo-sumario-lista li:not([class]) {
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   O ITEM COMO CARTÃO QUE ABRE NO SÍTIO
+   --------------------------------------------------------------------------
+   O `<summary>` é o cartão curto: o tipo, o estado e o título. O aparelho do
+   item fica dentro da dobra, e o `<details>` é do navegador, sem uma linha de
+   JavaScript. O `<article>` continua a ser o elemento que o portão conhece
+   (`data-agenda-item`), e a dobra vive dentro dele: a grelha do item desce para
+   a dobra, com o mesmo espaçamento, para que a página não mude de disposição
+   por ter ganho um comando. */
+.agenda-item > .agenda-dobra {
+  display: grid;
+  gap: 14px;
+}
+.agenda-dobra > summary {
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding-right: 22px;
+  display: grid;
+  gap: 6px;
+}
+.agenda-dobra > summary::-webkit-details-marker {
+  display: none;
+}
+/* O mesmo sinal de tinta do Método: `+` fechado, `−` aberto. O triângulo do
+   navegador tem o desenho de cada navegador, e esta casa desenha os seus. */
+.agenda-dobra > summary::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-family: var(--f-instr);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--muted);
+}
+.agenda-dobra[open] > summary::after {
+  content: '−';
+}
+.agenda-dobra > summary:hover::after,
+.agenda-dobra > summary:focus-visible::after {
+  color: var(--ink);
+}
+.agenda-dobra > summary:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}

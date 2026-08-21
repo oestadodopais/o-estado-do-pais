@@ -238,6 +238,12 @@ const ROTAS_DO_INVENTARIO = new Set([
      registo. A rota não é a casa do método (Emenda 15 isenta o Método, o Sobre e
      o recibo), e por isso a sua autorreferência conta e vai a zero. */
   'correcoes',
+  /* `/agenda` entra na subetapa 4c, `/estudos` e `/estudos/<slug>` na 4e. São as
+     páginas de leitura que a Emenda 15 governa e que o brief da etapa 4 manda
+     medir a zero: nenhuma delas é a casa do método. */
+  'agenda',
+  'estudos',
+  'estudo',
 ]);
 
 /**

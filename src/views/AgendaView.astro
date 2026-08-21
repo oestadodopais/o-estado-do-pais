@@ -47,6 +47,7 @@
  */
 import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
+import '../styles/leitura.css';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import { studyLabel } from '../data/studies.mjs';
@@ -212,9 +213,28 @@ const rotuloDoCriterio = (tipo) =>
   <div style="padding-top:clamp(20px,3vw,34px)">
     <span class="eyebrow">{s.agenda.eyebrow}</span>
     <h1 style="margin-top:12px">{s.agenda.h1}</h1>
-    <p class="lede" style="margin-top:14px">{s.agenda.lede}</p>
-    <p class="placeholder-nota" style="margin-top:12px">{s.agenda.origemNota}</p>
   </div>
+
+  {/* ===================================== o sumário: o índice desta página
+      Os quatro estados e o calendário, cada um a âncora da sua secção. As
+      âncoras já existiam (`ancoraDoEstadoDaAgenda`, e a do calendário): o que
+      faltava era a lista. Cada estado leva a sua contagem ao lado, que é a
+      mesma chave da prova do quadro e não um número escrito. */}
+  <nav class="metodo-sumario" aria-labelledby="sumario" style="margin-top:clamp(22px,3vw,32px)">
+    <h2 class="metodo-sumario-k" id="sumario">{s.leitura.sumarioK}</h2>
+    <ul class="metodo-sumario-lista">
+      {
+        quadro.map((c) => (
+          <li>
+            <a href={`#${ancoraDoEstadoDaAgenda(c.estado)}`}>{s.agenda.estados[c.estado]}</a>
+          </li>
+        ))
+      }
+      <li>
+        <a href={`#${ANCORA_DO_CALENDARIO}`}>{s.agenda.calendarioH2}</a>
+      </li>
+    </ul>
+  </nav>
 
   {/* ============================== o quadro de estados, no topo (§7, §11) */}
   <div class="quadro-estados" aria-labelledby="quadro-k">
@@ -253,23 +273,33 @@ const rotuloDoCriterio = (tipo) =>
           </div>
           <div class="metodo-corpo">
             {itens.length === 0 && estado === 'retirado' && (
-              <p class="metodo-p agenda-vazio">{s.agenda.vazioRetirado}</p>
+              <p class="agenda-vazio">{s.agenda.vazioRetirado}</p>
             )}
 
             {/* `data-agenda-item` e `data-agenda-seccao` não são texto: são a
                 estrutura, para o portão poder exigir que TODOS os campos do item
                 estejam renderizados e que o item esteja debaixo da secção do seu
                 estado, lida do DOM e não do registo (revisão cruzada, #5). */}
-            {itens.map((item) => (
+            {itens.map((item, iItem) => (
               <article class="agenda-item" id={`item-${item.id}`} data-agenda-item={item.id}>
-                <p class="agenda-item-eyebrow">
-                  <span class="agenda-tipo">{s.agenda.tipos[item.tipo] ?? item.tipo}</span>
-                  <span class="agenda-estado-marca" data-agenda={`${item.id}.estado`}>
-                    {s.agenda.estados[item.estado]}
-                  </span>
-                </p>
-
-                <h3 class="agenda-titulo" data-agenda={`${item.id}.titulo`}>{ed(item.titulo)}</h3>
+                {/* O ITEM É UM CARTÃO CURTO QUE ABRE NO SÍTIO (`IDENTIDADE.md`
+                    §4). O `<summary>` leva o cartão — o tipo, o estado e o
+                    título —, e o aparelho do item (porquê, critérios, datas,
+                    pergunta, histórico) fica dentro da dobra. Sem uma linha de
+                    JavaScript, e sem esconder nada do portão: o conteúdo de um
+                    `<details>` fechado está no documento, e é lá que a
+                    conferência campo a campo o vai buscar. A primeira de cada
+                    secção abre por defeito, como no Método. */}
+                <details class="agenda-dobra" open={iItem === 0}>
+                  <summary>
+                    <p class="agenda-item-eyebrow">
+                      <span class="agenda-tipo">{s.agenda.tipos[item.tipo] ?? item.tipo}</span>
+                      <span class="agenda-estado-marca" data-agenda={`${item.id}.estado`}>
+                        {s.agenda.estados[item.estado]}
+                      </span>
+                    </p>
+                    <h3 class="agenda-titulo" data-agenda={`${item.id}.titulo`}>{ed(item.titulo)}</h3>
+                  </summary>
 
                 <div class="agenda-bloco">
                   <p class="agenda-k">{s.agenda.porqueK}</p>
@@ -495,11 +525,7 @@ const rotuloDoCriterio = (tipo) =>
                   <div class="agenda-bloco">
                     <p class="agenda-k">{s.agenda.perguntaK}</p>
                     <p class="metodo-p" data-agenda={`${item.id}.pergunta`}>{ed(item.pergunta)}</p>
-                    <p class="agenda-nota">
-                      {item.registo_previo_estado === 'selado'
-                        ? s.agenda.perguntaNotaSelada
-                        : s.agenda.perguntaNotaPorSelar}
-                    </p>
+                    <p class="agenda-nota">{s.agenda.perguntaNota}</p>
                     {/* O ESTADO DO REGISTO PRÉVIO, E NÃO O SEU CAMINHO.
                         Até 16.08.2026 esta linha rendia
                         «content/10 Housing/preregistration.json», que é um
@@ -588,6 +614,7 @@ const rotuloDoCriterio = (tipo) =>
                     ))}
                   </ol>
                 </div>
+                </details>
               </article>
             ))}
           </div>
@@ -660,8 +687,18 @@ const rotuloDoCriterio = (tipo) =>
                 stroke-width="1"
               />
 
-              {/* As janelas de publicação: a amarelo, porque uma janela é a
-                  marca de uma medição de tempo e não uma decoração (§2). */}
+              {/* AS JANELAS DE PUBLICAÇÃO, A CINZENTO DE EIXO (`--g2`).
+                  O atributo dizia `var(--yellow)`, um token que a etapa 1c
+                  retirou de `tokens.css` com o amarelo de medição. A PÁGINA NÃO
+                  MUDA DE ASPECTO por esta linha: `site.css` remapeava
+                  `.agenda-eixo-svg rect` para `--g2` desde a 1c, e uma folha
+                  ganha a um atributo de apresentação. O que muda é o gabarito
+                  deixar de nomear um token morto e a regra de remapeamento
+                  deixar de ter cliente — sai no mesmo commit, que é o que o
+                  `ISSUES.md` I12 manda fazer. A janela é o mesmo cinzento do
+                  eixo, com a altura a dizer que é um intervalo e não um
+                  instante; a cor de estado não entra aqui, porque uma janela de
+                  publicação não é um limiar (Emenda 1). */}
               {noEixo
                 .filter((n) => n.eJanela)
                 .map((n) => (
@@ -670,7 +707,7 @@ const rotuloDoCriterio = (tipo) =>
                     y={EIXO.y - EIXO.alturaJanela / 2}
                     width={n.largura}
                     height={EIXO.alturaJanela}
-                    fill="var(--yellow)"
+                    fill="var(--g2)"
                   />
                 ))}
 

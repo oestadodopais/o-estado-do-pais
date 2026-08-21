@@ -63,6 +63,7 @@ const ROTAS_DA_ETAPA_4 = [
   { nome: 'metodo', pt: '/metodo', en: '/en/method' },
   { nome: 'metodo-fecho', pt: '/metodo', en: '/en/method', recorte: '#a-forma', larguras: [1280] },
   { nome: 'agenda', pt: '/agenda', en: '/en/agenda' },
+  { nome: 'agenda-eixo', pt: '/agenda', en: '/en/agenda', recorte: '.agenda-eixo-caixa', larguras: [1280] },
   { nome: 'correcoes', pt: '/correcoes', en: '/en/corrections' },
   { nome: 'sobre', pt: '/sobre', en: '/en/about' },
   { nome: 'estudos', pt: '/estudos', en: '/en/studies' },
