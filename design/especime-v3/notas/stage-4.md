@@ -489,7 +489,55 @@ decisão da cadeira e custa três linhas.
 
 ---
 
-## 4. O que fica pedido
+## 4. Évora, o que restava · e a regra, escrita uma vez
+
+A direção respondeu ao pedido 3 (o `ISSUES.md` **I52**) a 21.08.2026, à tarde.
+`DECISIONS.md` §1.57. **`Afecta: nenhum`**: nenhum texto governado, nenhum valor.
+
+### 4.1 · Os três blocos
+
+| bloco | decisão | o que ficou |
+|---|---|---|
+| a nota de mandato, `decidiuNota` | as duas palavras da casa ou nada | **«sem linha ainda»** / **«no row yet»**, que é `s.cobertura.semLinhaAinda` — a mesma cadeia com que uma peça vazia da primeira página diz a mesma coisa. Era isto que faltava resolver: não uma terceira formulação, mas a que já existia |
+| a entrada «Um partido é dono das suas decisões, não de uma curva», em «Método e ressalvas» | sai | retirada inteira. É a nota de como a página foi feita |
+| a entrada de «O que esta página não sabe» | fica | fica, e é **reclassificada como conteúdo** no inventário, com a razão **«limite dos dados»** |
+
+O limite dos dados que a segunda também dizia **não se perde**: está na terceira,
+que é onde pertence, e é por isso que cortar a segunda não tira nada ao leitor.
+
+### 4.2 · A régua, antes e depois
+
+`node scripts/medir-defeitos.mjs`:
+
+| rota | antes | depois |
+|---|---|---|
+| `/municipios/evora` | 63 distintas · conteúdo 82 · navegação 6 · **autorreferência 3** | 62 distintas · conteúdo 84 · navegação 6 · **autorreferência 0** ✓ |
+| `/en/municipalities/evora` | 64 distintas · conteúdo 83 · navegação 6 · **autorreferência 3** | 63 distintas · conteúdo 85 · navegação 6 · **autorreferência 0** ✓ |
+
+O conteúdo sobe duas: «sem linha ainda» e «no row yet» entram na conta da rota
+(já estavam classificadas, da primeira página), e as duas frases longas que
+saíram levavam consigo mais do que uma linha da tabela.
+
+### 4.3 · A regra, escrita uma vez
+
+O diretor deu, na mesma tarde, o teste que decide isto sem perguntar caso a caso:
+
+> **Uma frase sobrevive numa página do leitor se a sua remoção fizesse um leitor
+> ler mal um número. Ficam as ressalvas sobre os dados (limites, bandeiras de
+> provisório, definições); sai tudo o que existe para mostrar diligência.**
+
+Está escrita **duas vezes e num sítio só**: em `../direcao.md`, por baixo das
+Emendas, como nota à Emenda 15; e na cabeça de `../INVENTARIO-FRASES.md`, com a
+versão inglesa ao lado, porque é lá que cada classificação se decide. É o teste
+das subetapas 4c a 4e, aplicado sem perguntar.
+
+**A §1.3 desta nota fica como está**, e não se reescreve: dizia que a contagem
+não fechava a zero e porquê, e a decisão que a fechou está aqui. Uma dívida
+apagada depois de paga é uma dívida que ninguém soube que existiu.
+
+---
+
+## 5. O que fica pedido
 
 | # | pedido | a quem |
 |---|---|---|
@@ -501,7 +549,7 @@ decisão da cadeira e custa três linhas.
 
 ---
 
-## 5. Modelo e gasto
+## 6. Modelo e gasto
 
 | | |
 |---|---|

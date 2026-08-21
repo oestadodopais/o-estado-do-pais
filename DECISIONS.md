@@ -9031,6 +9031,54 @@ a §2 já diz a mesma regra pelas suas próprias palavras, e duas redações da 
 regra no mesmo ficheiro são duas regras no dia em que uma mudar. É decisão da
 cadeira, e custa três linhas.
 
+### 1.57 O que resta de autorreferência na página de Évora sai, e o limite dos dados fica
+
+**Afecta:** nenhum
+
+*(Nenhum texto governado, nenhuma linha do livro-razão, nenhum valor: só
+`src/data/municipios.mjs`, que é conteúdo editorial e não texto amarrado, e a
+vista que o rende.)*
+
+A direção respondeu a **21.08.2026, à tarde**, ao pedido 3 da nota da etapa 4 e
+ao `ISSUES.md` **I52**: os três blocos que a régua ainda contava em
+`/municipios/evora` e `/en/municipalities/evora`.
+
+1. **A nota de mandato passa às duas palavras da casa.** «Nenhuma decisão deste
+   mandato atravessou para o livro-razão com valor próprio. Um campo em branco
+   seria diferente disto: o que falta é a linha, não a decisão.» sai. O campo
+   fica vazio e diz **«sem linha ainda»** / **«no row yet»**, que é
+   `s.cobertura.semLinhaAinda`, a mesma cadeia com que uma peça vazia da
+   primeira página diz a mesma coisa. Não é uma terceira formulação: é a que já
+   existia, e era isso que o construtor tinha por resolver.
+2. **A entrada «Um partido é dono das suas decisões, não de uma curva» sai
+   inteira**, da secção «Método e ressalvas». É a nota de como a página foi
+   feita. O limite dos dados que ela também dizia não se perde, porque está
+   escrito no ponto 3.
+3. **A entrada de «O que esta página não sabe» fica** («Não existe contrafactual
+   para nenhum índice. Nada do que foi lido permite separar a parte de um
+   executivo neles.»), e é **reclassificada como conteúdo** no
+   `design/especime-v3/INVENTARIO-FRASES.md`, com a razão **«limite dos dados»**.
+   Não fala do cuidado da casa: diz o que as fontes lidas não permitem
+   estabelecer. Sem ela, a banda dos mandatos ao lado de uma curva de dívida
+   lê-se como uma atribuição, e um leitor lê mal um número.
+
+**A regra que decide isto está agora escrita uma vez**, e não caso a caso
+(direção, mesma tarde): «Uma frase sobrevive numa página do leitor se a sua
+remoção fizesse um leitor ler mal um número. Ficam as ressalvas sobre os dados
+(limites, bandeiras de provisório, definições); sai tudo o que existe para
+mostrar diligência.» Vive em `design/especime-v3/direcao.md`, por baixo da
+Emenda 15, e na cabeça do inventário com a versão inglesa ao lado.
+
+**Medido**, `node scripts/medir-defeitos.mjs`:
+
+| rota | antes | depois |
+|---|---|---|
+| `/municipios/evora` | 63 distintas · conteúdo 82 · navegação 6 · **autorreferência 3** | 62 distintas · conteúdo 84 · navegação 6 · **autorreferência 0** ✓ |
+| `/en/municipalities/evora` | 64 distintas · conteúdo 83 · navegação 6 · **autorreferência 3** | 63 distintas · conteúdo 85 · navegação 6 · **autorreferência 0** ✓ |
+
+`ISSUES.md` I52 fecha. `RELOCACOES.md` regista os dois blocos retirados pelo nome
+do campo, porque não são chaves de `strings.mjs`.
+
 ---
 
 ## 4. O registo dos defeitos e dos adiamentos
