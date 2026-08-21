@@ -437,10 +437,13 @@ export const MUNICIPIOS_COM_PAGINA = [
             { claim: 'evora-divida-total-2017', texto: { pt: '€ de dívida total.', en: '€ of total debt.' } },
           ],
           decidiu: null,
-          decidiuNota: {
-            pt: 'Nenhuma decisão deste mandato atravessou para o livro-razão com valor próprio. Um campo em branco seria diferente disto: o que falta é a linha, não a decisão.',
-            en: 'No decision from this term crossed into the ledger with a value of its own. A blank field would mean something else: what is missing is the row, not the decision.',
-          },
+          /* SEM NOTA, E A AUSÊNCIA DIZ-SE NAS DUAS PALAVRAS DA CASA (direção,
+             21.08.2026, tarde). O parágrafo que aqui estava explicava a
+             diferença entre um campo em branco e uma linha que falta, e isso é
+             a casa a falar de si na página do leitor (Emenda 15). Com `decidiu`
+             a nulo e `decidiuNota` a nulo, a vista rende «sem linha ainda» /
+             «no row yet», que é a mesma cadeia que uma peça vazia usa. */
+          decidiuNota: null,
           deixou: [
             { claim: 'evora-divida-total-2021', texto: { pt: '€ de dívida total.', en: '€ of total debt.' } },
           ],
@@ -610,13 +613,6 @@ export const MUNICIPIOS_COM_PAGINA = [
         v: {
           pt: ['As contagens de pelouros desta página são designações, não despesa. A correspondência entre as contas e os pelouros existe num dos trabalhos, é declarada por ele como sua e não como oficial, e esta página não a usa para atribuir dinheiro a ninguém. Esse trabalho fixa também a regra: descrição, nunca classificações.'],
           en: ['The portfolio counts on this page are designations, not spending. The mapping between the accounts and the portfolios exists in one of the works, is declared by it as its own and not as official, and this page does not use it to attribute money to anyone. That work also sets the rule: description, never scores.'],
-        },
-      },
-      {
-        k: { pt: 'Um partido é dono das suas decisões, não de uma curva', en: 'A party owns its decisions, not a curve' },
-        v: {
-          pt: ['As decisões desta página vão atribuídas a quem as tomou, com o rótulo da lista que ganhou. Os índices (população, emprego, poder de compra, e o próprio índice de dívida) não vão atribuídos a ninguém: nada do que foi lido fornece o contrafactual que recortaria a parte de um executivo neles.'],
-          en: ['The decisions on this page are attributed to whoever took them, with the label of the list that won. The indices (population, employment, purchasing power, and the debt index itself) are attributed to nobody: nothing that was read provides the counterfactual that would carve out an executive’s share of them.'],
         },
       },
       {

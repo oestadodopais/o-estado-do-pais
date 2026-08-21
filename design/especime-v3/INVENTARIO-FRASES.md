@@ -25,6 +25,21 @@ o nome de uma medida nem a sua linha de unidade (`data-medida-nome`,
 `<button>`. Um bloco que não esteja nesta lista sai na saída como **por
 classificar**, que é o estado que obriga alguém a decidir.
 
+## A regra, escrita uma vez (direção, 21.08.2026, tarde)
+
+> **Uma frase sobrevive numa página do leitor se a sua remoção fizesse um leitor
+> ler mal um número. Ficam as ressalvas sobre os dados (limites, bandeiras de
+> provisório, definições); sai tudo o que existe para mostrar diligência.**
+>
+> *A sentence survives on a reader's page if removing it would make a reader read
+> a number wrongly. The caveats about the data stay (limits, provisional flags,
+> definitions); everything that exists to show diligence goes.*
+
+É o teste da Emenda 15, dito em duas linhas, e é o que decide cada classificação
+desta tabela a partir daqui. Uma frase sobre os LIMITES DO QUE A FONTE PUBLICA é
+conteúdo, por mais longa que seja; uma frase sobre o CUIDADO DA CASA sai, por
+mais curta que seja. O mesmo teste está em `direcao.md`, por baixo da Emenda 15.
+
 ## As três classes
 
 - **conteúdo** — o que a coisa medida é: a medida, o valor, a unidade, o
@@ -255,7 +270,6 @@ quem escreveu a página.*
 | conteudo | Accounts of the year before last |
 | conteudo | Antes do primeiro ano de contas legível nesta janela. |
 | conteudo | As contagens de pelouros desta página são designações, não despesa. A correspondência entre as contas e os pelouros existe num dos trabalhos, é declarada por ele como sua e não como oficial, e esta página não a usa para atribuir dinheiro a ninguém. Esse trabalho fixa também a regra: descrição, nunca classificações. |
-| autorreferencia | As decisões desta página vão atribuídas a quem as tomou, com o rótulo da lista que ganhou. Os índices (população, emprego, poder de compra, e o próprio índice de dívida) não vão atribuídos a ninguém: nada do que foi lido fornece o contrafactual que recortaria a parte de um executivo neles. |
 | navegacao | Background |
 | conteudo | Before the first year of accounts readable in this window. |
 | conteudo | Borrowing margin |
@@ -289,13 +303,11 @@ quem escreveu a página.*
 | conteudo | Margem de endividamento |
 | conteudo | Method and caveats |
 | conteudo | Método e ressalvas |
-| autorreferencia | Nenhuma decisão deste mandato atravessou para o livro-razão com valor próprio. Um campo em branco seria diferente disto: o que falta é a linha, não a decisão. |
 | conteudo | Nenhuma fonte publica um produto interno bruto para um concelho, e esta página não fabrica nenhum. O que existe é o registo empresarial: as contas das empresas sediadas no concelho, que creditam toda a atividade de uma empresa ao concelho da sua sede. Não é PIB municipal, e o trabalho sobre a economia escreve porquê nos seus limites: «não capta a administração pública, a maior parte da universidade e do hospital». |
-| autorreferencia | No decision from this term crossed into the ledger with a value of its own. A blank field would mean something else: what is missing is the row, not the decision. |
 | conteudo | No source publishes a gross domestic product for a concelho, and this page manufactures none. What does exist is the business register: the accounts of enterprises headquartered in the concelho, which credit a firm’s whole activity to its head-office concelho. It is not municipal GDP, and the work on the economy writes why in its own limits: «it misses public administration, most of the university and the hospital». |
 | conteudo | Not established. The work on the portfolios says this term «is one line of a map, not a map»: the president of that mandate, and every other member of it, were not identified. |
 | conteudo | Não estabelecido. O trabalho sobre os pelouros diz que este mandato «é uma linha de um mapa, não um mapa»: o presidente desse mandato, e todos os outros membros dele, não foram identificados. |
-| autorreferencia | Não existe contrafactual para nenhum índice. Nada do que foi lido permite separar a parte de um executivo neles. |
+| conteudo | Não existe contrafactual para nenhum índice. Nada do que foi lido permite separar a parte de um executivo neles. |
 | conteudo | Não existe medida de desempenho por pessoa. As contas públicas não são cortadas dessa maneira. |
 | conteudo | O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores. É a lei que o define, não este sítio. |
 | conteudo | O município publica |
@@ -328,7 +340,6 @@ quem escreveu a página.*
 | conteudo | Sobre as contas deste município existem duas vozes que não são a dele: a opinião assinada do auditor independente, e a série anual do regulador, que publica por município e por ano o mesmo conceito legal de dívida que o relatório usa, compilado do lado de fora. As duas estão nesta página. |
 | conteudo | Sobre o plano de recuperação: o trabalho lê o catálogo do tribunal de contas, não as suas auditorias; a janela de contratos é um limite superior sobre um período truncado; e não existe um valor da União Europeia para um município. |
 | conteudo | The debt against the legal ceiling |
-| autorreferencia | The decisions on this page are attributed to whoever took them, with the label of the list that won. The indices (population, employment, purchasing power, and the debt index itself) are attributed to nobody: nothing that was read provides the counterfactual that would carve out an executive’s share of them. |
 | conteudo | The gap between the two accounts of the same debt |
 | conteudo | The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue. The law defines it, not this site. |
 | conteudo | The municipality publishes |
@@ -342,7 +353,7 @@ quem escreveu a página.*
 | conteudo | The regulator’s annual series used on this page begins after this term. |
 | conteudo | The thin line is the total debt the regulator publishes for the concelho; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. |
 | conteudo | The works about this concelho |
-| autorreferencia | There is no counterfactual for any index. Nothing that was read allows an executive’s share of them to be separated out. |
+| conteudo | There is no counterfactual for any index. Nothing that was read allows an executive’s share of them to be separated out. |
 | conteudo | There is no per-person performance measure. Public accounts are not cut that way. |
 | conteudo | Total debt |
 | conteudo | What the municipality budgeted, what it collected, what it paid, and what it said it owed at year end. These are the municipality’s own figures about itself: the accounts are its own. |
@@ -413,6 +424,12 @@ frases da caixa de correções são **navegação**: dizem como se usa um comand
 | conteudo | Write a correction |
 | navegacao | Write here and the button opens your own mail program with the text already in it. Nothing is sent from this site: the message leaves from you, so you keep a copy of it. |
 
+## A reclassificação de 21.08.2026 (direção): **limite dos dados**
+
+| frase | era | é | razão |
+| --- | --- | --- | --- |
+| «Não existe contrafactual para nenhum índice. Nada do que foi lido permite separar a parte de um executivo neles.» / «There is no counterfactual for any index…» (entrada de «O que esta página não sabe», `/municipios/evora`) | autorreferência | **conteúdo** | **limite dos dados**. Não fala do cuidado da casa: diz o que as fontes lidas não permitem estabelecer. Sem ela, a banda dos mandatos ao lado de uma curva de dívida lê-se como uma atribuição, e um leitor lê mal um número. É a metade da regra que fica |
+
 ## O que saiu, e para onde
 
 | frase retirada | classe | onde vive agora |
@@ -448,3 +465,5 @@ frases da caixa de correções são **navegação**: dizem como se usa um comand
 | «É o único marcador de incerteza deste sítio. Aparece onde um campo não foi confirmado contra a fonte. Não é um valor por defeito nem uma estimativa: é a ausência declarada.» (`livro.marcadorV`) | autorreferência | `/a-verificar`, que é a página do marcador; a marca e a porta ficam no índice |
 | «O que este índice não diz» e «Só estão aqui os números que este sítio publica…» (`livro.naoDizK`, `livro.naoDizV`) | autorreferência | retiradas: é a classe que a Emenda 15 nomeia por extenso, «nunca o que não afirmamos» |
 | «Observatório de dados sobre Portugal. Cada número publicado tem uma linha no livro-razão, com fonte, documento e data de acesso.» (descrição do `<head>` da primeira página) | autorreferência | o Método e o recibo de cada linha; a descrição passa a nomear o que a página tem |
+| «Nenhuma decisão deste mandato atravessou para o livro-razão com valor próprio. Um campo em branco seria diferente disto: o que falta é a linha, não a decisão.» (`decidiuNota` de um mandato de Évora) | autorreferência | o campo diz «sem linha ainda» / «no row yet», a cadeia da casa para a ausência (direção, 21.08.2026, tarde) |
+| «As decisões desta página vão atribuídas a quem as tomou… Os índices … não vão atribuídos a ninguém: nada do que foi lido fornece o contrafactual…» (entrada «Um partido é dono das suas decisões, não de uma curva», secção «Método e ressalvas» de `/municipios/evora`) | autorreferência | retirada: é a nota de como a página foi feita. O limite dos dados que ela também dizia fica em «O que esta página não sabe», que é onde ele pertence |

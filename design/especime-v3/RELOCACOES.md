@@ -237,3 +237,13 @@ Preenchido por cada etapa, chave a chave, em `CHAVES-EN.md`. Na etapa 0 sabe-se 
 | `municipio.tempoAtribuicaoV` | «Uma administração responde pelas decisões que tomou. Não responde por um índice… Não há aqui nenhuma tabela classificativa de partidos, e não vai haver.» | idem; «Quem responde pelo quê» fica como nome da secção, por cima da banda dos mandatos |
 | `municipio.estudosV` | «Cada um tem a sua página, com a medida que o faz valer a pena, a frase do que concluiu, o método e o documento original quando está alojado aqui.» | o sítio a descrever as suas próprias páginas antes de as dar |
 
+### Etapa 4, o que resta de Évora · dois blocos retirados, um estado vazio nas palavras da casa
+
+Não são chaves de `strings.mjs`: são campos de `src/data/municipios.mjs`, e por
+isso vão pelo nome do campo. Decisão da direção de 21.08.2026, tarde, que fecha
+o `ISSUES.md` **I52**.
+
+| campo | o que dizia | porquê |
+|---|---|---|
+| `mandatos[2017–2021].decidiuNota` | «Nenhuma decisão deste mandato atravessou para o livro-razão com valor próprio. Um campo em branco seria diferente disto: o que falta é a linha, não a decisão.» | a ausência diz-se em duas palavras (Emenda 15). O campo passa a render «sem linha ainda» / «no row yet», que é a cadeia da casa (`s.cobertura.semLinhaAinda`) e não uma terceira formulação |
+| `metodo[«Um partido é dono das suas decisões, não de uma curva»]` | «As decisões desta página vão atribuídas a quem as tomou, com o rótulo da lista que ganhou. Os índices … não vão atribuídos a ninguém: nada do que foi lido fornece o contrafactual que recortaria a parte de um executivo neles.» | é a nota de como a página foi feita. **O limite dos dados que ela também dizia não se perde**: fica em «O que esta página não sabe», na entrada «Não existe contrafactual para nenhum índice…», que é onde ele pertence e que a direção mandou ficar |

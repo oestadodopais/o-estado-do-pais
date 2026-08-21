@@ -666,7 +666,11 @@ const metodoPath = routePath('metodo', lang);
                             </>
                           ))
                         ) : (
-                          <span class="mun-campo-vazio">{mandato.decidiuNota[lang]}</span>
+                          /* A ausência em duas palavras (Emenda 15, e a decisão
+                             da direção de 21.08.2026, tarde): sem nota própria,
+                             o campo diz «sem linha ainda», a mesma cadeia da
+                             casa que uma peça vazia usa. */
+                          <span class="mun-campo-vazio">{mandato.decidiuNota ? mandato.decidiuNota[lang] : s.cobertura.semLinhaAinda}</span>
                         )}
                       </dd>
 
