@@ -200,6 +200,15 @@ nova. As quatro cadeias desta ronda têm inglês próprio.
 
 **Um par com forma nova, e não é chave nova**: `home.metaDescription`, nas duas edições. Dizia «Observatório de dados sobre Portugal. Cada número publicado tem uma linha no livro-razão, com fonte, documento e data de acesso.» / «A data observatory on Portugal. Every published figure has a row in the ledger, with source, document and access date.» A segunda frase é o método do próprio sítio, que é a classe que a Emenda 15 tira das páginas do leitor, e o `<head>` é superfície pública como o corpo. Passa a **«Portugal nos painéis europeus: os indicadores, os limiares e as fontes.»** / **«Portugal on the European scoreboards: the indicators, the thresholds and the sources.»**, no texto exacto da decisão 1 da direção de 21.08.2026.
 
+### Etapa 3, subetapa 3b
+
+*Duas chaves novas, e quatro retiradas (as retiradas estão em `RELOCACOES.md`).*
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `livro.contaAfirmacoes` | afirmações | claims | a palavra ao lado da chave da prova `afirmacoes`. Não é o número: o número entra por `data-prova` e o portão reconta-o |
+| `livro.contaDerivadas` | calculadas | calculated | a mesma coisa para `derivadas`. «calculadas» e não «derivadas», que é a palavra do formato e não a do leitor; é a mesma palavra que o selo de uma linha derivada já escreve («calculado ·») |
+
 ### Etapa 3, subetapa 3a
 
 *Três chaves novas, todas em `livro.linha.*`. Nenhuma cadeia sai, e nenhuma muda de forma.*

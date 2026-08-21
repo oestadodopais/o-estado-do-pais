@@ -11,6 +11,7 @@ sessão custe uma subetapa. Sem travessões, por escolha deste documento.*
 |---|---|---|
 | (abaixo) | 3-0 | as seis primeiras decisões da direção de 21.08: a descrição da primeira página, as peças sem anel, a porta do CSV, a contagem por parcelas, a nota da medida calculada, I26 e I27 |
 | (abaixo) | 3a | a página de linha como o recibo do boletim: a letra, os rótulos, a ficha como formulário, a marca de água do campo em falta, o acesso ao conjunto e esta linha noutro sítio |
+| (abaixo) | 3b | o índice do livro-razão: a linha-espécime com os mesmos campos pela mesma ordem, as contagens com porta, e a Emenda 15 aplicada à página |
 
 ---
 
@@ -498,3 +499,128 @@ node scripts/medir-invariancia.mjs <ref df76a5f> dist
 ```
 
 As 268 fecham sem sobra: 264 + 2 + 2. Cinco portões verdes.
+
+---
+
+## 3. Subetapa 3b · o índice do livro-razão
+
+### 3.1 · A linha-espécime
+
+O índice mostrava o valor, o id, a unidade e o selo. Faltavam **quem publicou o
+número e quando foi lido**, que é o que separa duas linhas com o mesmo valor. A
+linha passa a ter cinco campos, sempre pela mesma ordem e nas mesmas posições:
+
+> **id · valor com selo · unidade · fonte · lido a**
+
+**Um campo que a linha não tem não se rende**, nem vazio nem com um traço: 19
+linhas são derivadas e não têm fonte nem data de leitura, porque não há documento
+de onde as ler, e o portão recusa uma página que renda um campo que a linha não
+guarda. Medido: duas ordens de campos existem, `id,unit` e
+`id,unit,source,access_date`, e a primeira é um prefixo da segunda, que é o que
+prova que a posição é da pista e não do campo.
+
+**O estado é o selo, e vai dito porquê.** O sexto campo que o brief nomeia é o
+estado da proveniência, e ele já está desenhado duas vezes: no quadrado do selo de
+cada linha e no grupo onde a linha está, com o seu rótulo. Uma terceira rendição,
+palavra a palavra em 132 linhas, seria a mesma coisa dita três vezes. Cada linha
+leva `data-estado`, que é o que uma máquina lê. **É uma chamada, e vai
+assinalada**: se o lugar de direção quiser a palavra em cada linha, o preço é
+retirar os dois grupos, e retirar os dois grupos é retirar as duas cadeias que a
+§4 item AB manda preservar.
+
+Medido: **132 linhas, 132 com o selo da sua própria linha, 132 com `data-estado`**.
+
+### 3.2 · As contagens, com as suas portas
+
+Três chaves da prova que já existem e cuja porta é esta página: `afirmacoes`
+(132) e `derivadas` (19) na cabeça, `indexaveis` (124) e `divida` (8) na cabeça de
+cada grupo. Nenhuma é escrita: o portão reconta-as por conta própria.
+
+**As outras dez chaves cuja porta é esta página contam a releitura e o
+cruzamento** — o registo do que a casa fez —, e vivem no Método, que é onde o
+método vive (Emenda 15). Aqui ficam as que nomeiam o que este índice tem.
+
+**Um pedido ao construtor B** está na §5: a porta destas chaves é `/livro-razao`
+sem fragmento, e por isso numa página que é `/livro-razao` ela é uma ligação para
+o topo da própria página. A `IDENTIDADE.md` §10 prefere a âncora da secção que
+mostra o que o número conta (`#grupo-completas`, `#grupo-por-confirmar`), e isso é
+uma linha de `src/lib/prova.mjs`, que é do construtor B.
+
+### 3.3 · A Emenda 15 aplicada ao índice, e o conflito que fica escrito
+
+O inventário estende-se a `/livro-razao` (`ROTAS_DO_INVENTARIO` ganha `livro`) e
+**as 16 frases da casa da página estão todas classificadas**: 0 por classificar,
+nas duas edições.
+
+**Três saíram**, e nenhuma é chamada de quem constrói: são a classe que a Emenda
+15 nomeia por extenso.
+
+| cadeia | porquê |
+|---|---|
+| `livro.lede2` «O selo de proveniência junto a cada número é a porta para a sua linha. É este o índice dessas portas.» | o sítio a explicar ao leitor o que o seu próprio selo faz |
+| `livro.marcadorV` «É o único marcador de incerteza deste sítio…» | o sítio a falar de si. A marca, o rótulo «O marcador» e a porta para `/a-verificar` ficam |
+| `livro.naoDizK` + `naoDizV` «O que este índice não diz» · «Só estão aqui os números que este sítio publica…» | «uma legenda nomeia o que a coisa é, nunca o que não afirmamos» |
+
+**Duas ficam, e a contagem não chega a zero.** As legendas dos dois grupos
+(«Todos os campos preenchidos e conferidos contra a fonte. O selo é um quadrado
+cheio.» e «Falta pelo menos um campo de proveniência… O selo é um quadrado a
+tracejado.») são as duas cadeias que a `DECISIONS.md` §4 item AB manda preservar
+palavra por palavra até à fase da voz, e cada uma tem uma metade que é conteúdo
+(«O selo é um quadrado cheio», que nomeia o glifo) e uma metade que é a casa a
+falar da sua verificação («conferidos contra a fonte»; «nenhum foi preenchido com
+um valor plausível»). A classe de um bloco é uma só, e a régua lê o bloco inteiro.
+
+**O conflito está escrito e não foi contornado**: a §4 item AB preserva-as e
+assinala-as à direção na pré-visualização n.º 2; a Emenda 15 manda a
+autorreferência a zero; o brief §2b resolve o cruzamento com «when in doubt, list
+it in the note as an editorial call and keep it». Ficam.
+
+```
+node scripts/medir-defeitos.mjs
+  frases da casa · /livro-razao ... 16 distinta(s) · conteúdo 12 · navegação 2 · autorreferência 2 ✗
+  frases da casa · /en/ledger   ... 16 distinta(s) · conteúdo 12 · navegação 2 · autorreferência 2 ✗
+  (0 blocos por classificar em qualquer das duas)
+```
+
+**Uma coisa que as duas réguas vêem de maneira diferente, e vai dita**: a régua
+das frases da casa conta um `<p>` que contém `<span>` como um bloco só; a régua da
+invariância trata `span` como bloco e por isso decompõe o mesmo parágrafo. É por
+isso que a frase do marcador aparece retirada numa e não na outra. As duas
+definições estão escritas nos dois ficheiros, e a que a Emenda 15 nomeia é a
+primeira.
+
+### 3.4 · Sem cor, medido
+
+«O livro-razão não tem limiares.» Medido em Chromium sobre a página construída,
+elemento a elemento, cinco propriedades (`color`, `background-color`,
+`border-top-color`, `fill`, `stroke`) contra as três fichas de estado lidas do
+próprio `:root`:
+
+```
+fichas proibidas rgb(224, 162, 26) · rgb(122, 83, 0) · rgb(31, 78, 140) · ocorrências 0
+```
+
+### 3.5 · Um defeito desta subetapa, apanhado e fechado nela
+
+ISSUES **I40**: os dois campos novos vão num `inline-flex`, e um `inline-flex`
+cujo filho não parta tem a largura da cadeia mais longa. «Secretaria-Geral do
+Ministério da Administração Interna» dava **13px** de transbordo a 320 em
+português e **21px** em inglês, contra **0** na referência. Fechado com
+`flex-wrap: wrap` no grupo e `overflow-wrap: anywhere` no valor; medido depois,
+**10 de 10** combinações a zero.
+
+### 3.6 · As réguas da 3b
+
+```
+node tests/linha/recibo.mjs   →  13 de 13 células passam
+node scripts/medir-invariancia.mjs <ref df76a5f> dist
+   322 rotas · 52 idênticas · 270 com diferenças
+     264 páginas de linha        +4 −0 em todas
+       2 índices do livro-razão  +460 −3 (pt) · +467 −3 (en)
+       2 índices dos concelhos   +21 −0   (do commit 3-0)
+       2 páginas de concelho     +0 −1    (do commit 3-0)
+```
+
+As 270 fecham sem sobra: 264 + 2 + 2 + 2. Os +460 do índice são os dois campos
+novos em 113 das 132 linhas, os seus rótulos, e a linha das contagens; os −3 são
+as três cadeias que a Emenda 15 retirou.

@@ -1,4 +1,4 @@
-# Inventário das frases da casa · primeira página
+# Inventário das frases da casa · rota a rota
 
 *Etapa 2l, 21.08.2026. A Emenda 15 («a página do leitor não se explica») traz a
 sua própria medida: «o inventário de todas as frases da casa na superfície
@@ -110,6 +110,71 @@ na língua em que é rendida.
 | conteudo | Évora · município |
 | conteudo | Évora · município · distrito de Évora |
 
+## `/livro-razao` · `/en/ledger` (etapa 3, subetapa 3b)
+
+*As duas edições partilham a tabela, como acima: uma frase entra uma vez, na
+língua em que é rendida.*
+
+| classe | texto |
+| --- | --- |
+| conteudo | 132 afirmações · 19 calculadas |
+| conteudo | 132 claims · 19 calculated |
+| conteudo | A licença cobre o conjunto: a estrutura, os valores da casa, as derivações e as descrições. Os excertos transcritos das fontes continuam sob os termos de quem os publicou. |
+| conteudo | Com campos por confirmar |
+| conteudo | Complete provenance |
+| navegacao | Descarregar o livro-razão: CSV · JSON |
+| navegacao | Download the ledger: CSV · JSON |
+| autorreferencia | Every field filled in and checked against the source. The seal is a filled square. |
+| conteudo | Every claim published on this site, one row each: the value exactly as published, the source, the document, the address, the access date and the excerpt. |
+| conteudo | Every row, with every published field. |
+| autorreferencia | At least one provenance field is missing. The field is marked as such, and none has been filled in with a plausible value. The seal is a dashed square. |
+| autorreferencia | Falta pelo menos um campo de proveniência. O campo fica marcado, e nenhum foi preenchido com um valor plausível. O selo é um quadrado a tracejado. |
+| conteudo | Dashed square: at least one field is missing, and the row says so. |
+| conteudo | Filled square: the provenance is complete. |
+| conteudo | O livro-razão |
+| conteudo | Os dois estados do selo |
+| conteudo | One row per published figure. Each row holds the value exactly as the source published it, who produced it, the document and edition, the address, the date we read it and a textual excerpt (and, when the figure is calculated by us, the sum spelled out and re-evaluated at every build). |
+| conteudo | Proveniência completa |
+| conteudo | Quadrado a tracejado: falta pelo menos um campo, e a linha di-lo. |
+| conteudo | Quadrado cheio: a proveniência está completa. |
+| conteudo | The ledger |
+| conteudo | The licence covers the dataset: its structure, the house values, the derivations and the descriptions. Excerpts transcribed from sources remain under their publishers’ terms. |
+| conteudo | The two states of the seal |
+| conteudo | Todas as afirmações publicadas neste sítio, uma linha cada: o valor tal como foi publicado, a fonte, o documento, o endereço, a data de acesso e o excerto. |
+| conteudo | Todas as linhas, com todos os campos publicados. |
+| autorreferencia | Todos os campos preenchidos e conferidos contra a fonte. O selo é um quadrado cheio. |
+| conteudo | Uma linha por número publicado. Cada linha guarda o valor tal como a fonte o publicou, quem o produziu, o documento e a edição, o endereço, a data em que o lemos e um excerto textual (e, quando o número é calculado por nós, a conta explicada e reavaliada a cada construção). |
+| conteudo | With fields to confirm |
+| conteudo | [a verificar] |
+| conteudo | [a verificar] (to verify) |
+
+### As quatro que ficam em autorreferência, e porquê
+
+**São duas frases, nas duas edições, e são as duas que a `DECISIONS.md` §4 item
+AB manda preservar palavra por palavra.** São as legendas dos dois grupos de
+linhas:
+
+- «Todos os campos preenchidos e conferidos contra a fonte. O selo é um quadrado
+  cheio.» / «Every field filled in and checked against the source. The seal is a
+  filled square.»
+- «Falta pelo menos um campo de proveniência. O campo fica marcado, e nenhum foi
+  preenchido com um valor plausível. O selo é um quadrado a tracejado.» / «At
+  least one provenance field is missing. The field is marked as such, and none
+  has been filled in with a plausible value. The seal is a dashed square.»
+
+Cada uma tem uma parte que é conteúdo («O selo é um quadrado cheio», que nomeia
+o glifo, e é por isso que o brief da etapa 3 as manda ficar «onde descrevem os
+estados do selo como conteúdo») e uma parte que é a casa a falar da sua própria
+verificação («conferidos contra a fonte»; «nenhum foi preenchido com um valor
+plausível»). A classe de um bloco é uma só, e a régua lê o bloco inteiro.
+
+**O conflito está escrito e não foi contornado.** A §4 item AB preserva-as
+palavra por palavra e assinala-as à direção na pré-visualização n.º 2; a Emenda
+15 manda a autorreferência a zero. O brief da etapa 3 §2b resolve o caso em que
+as duas regras se cruzam: «when in doubt, list it in the note as an editorial
+call and keep it». Ficam, e a contagem de `/livro-razao` é **2 por edição** em
+vez de 0. Uma redação que separasse as duas partes é uma chamada da direção.
+
 ## O que saiu, e para onde
 
 | frase retirada | classe | onde vive agora |
@@ -133,4 +198,7 @@ na língua em que é rendida.
 | «O ponto marca a posição do concelho na Carta Administrativa, e não cobertura. Quando houver linhas para <nome>…» | autorreferência | a manchete e as oito peças vazias |
 | «Um erro confirmado entra no registo de correções e na própria linha, com o valor antigo à vista. Nada é apagado.» | autorreferência | `/correcoes`, que já a diz por extenso, com as três naturezas |
 | «Linha do livro-razão: <estudo>» (texto oculto do selo) | autorreferência | encurtou para «fonte · <estudo>» |
+| «O selo de proveniência junto a cada número é a porta para a sua linha. É este o índice dessas portas.» (`livro.lede2`, a segunda lede do índice) | autorreferência | o selo, que é a porta; a chave saiu de `strings.mjs` nas duas edições |
+| «É o único marcador de incerteza deste sítio. Aparece onde um campo não foi confirmado contra a fonte. Não é um valor por defeito nem uma estimativa: é a ausência declarada.» (`livro.marcadorV`) | autorreferência | `/a-verificar`, que é a página do marcador; a marca e a porta ficam no índice |
+| «O que este índice não diz» e «Só estão aqui os números que este sítio publica…» (`livro.naoDizK`, `livro.naoDizV`) | autorreferência | retiradas: é a classe que a Emenda 15 nomeia por extenso, «nunca o que não afirmamos» |
 | «Observatório de dados sobre Portugal. Cada número publicado tem uma linha no livro-razão, com fonte, documento e data de acesso.» (descrição do `<head>` da primeira página) | autorreferência | o Método e o recibo de cada linha; a descrição passa a nomear o que a página tem |

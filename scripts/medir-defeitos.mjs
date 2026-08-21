@@ -225,7 +225,7 @@ const blocosDaPorta = new Set();
  */
 const CLASSES = ['conteudo', 'navegacao', 'autorreferencia'];
 const MEDIDA_DECLARADA = '[data-medida-nome],[data-medida-unidade]';
-const ROTAS_DO_INVENTARIO = new Set(['home']);
+const ROTAS_DO_INVENTARIO = new Set(['home', 'livro']);
 
 /** A lista declarada: texto normalizado → classe. */
 function leInventario() {

@@ -703,8 +703,6 @@ export const STRINGS = {
       h1: 'O livro-razão',
       lede1:
         'Uma linha por número publicado. Cada linha guarda o valor tal como a fonte o publicou, quem o produziu, o documento e a edição, o endereço, a data em que o lemos e um excerto textual (e, quando o número é calculado por nós, a conta explicada e reavaliada a cada construção).',
-      lede2:
-        'O selo de proveniência junto a cada número é a porta para a sua linha. É este o índice dessas portas.',
       grupoCompletasK: 'Proveniência completa',
       grupoCompletasV:
         'Todos os campos preenchidos e conferidos contra a fonte. O selo é um quadrado cheio.',
@@ -714,16 +712,17 @@ export const STRINGS = {
       colunaValor: 'Valor',
       colunaAfirmacao: 'Afirmação',
       colunaSelo: 'Proveniência',
+      /* As contagens deste índice, pelas chaves da prova que já existem
+         (`src/lib/prova.mjs`). São números do próprio sítio (IDENTIDADE.md §10):
+         entram por `data-prova`, o portão reconta-os por conta própria, e cada um
+         leva a sua porta. As palavras ao lado nomeiam o que é contado. */
+      contaAfirmacoes: 'afirmações',
+      contaDerivadas: 'calculadas',
       seloK: 'Os dois estados do selo',
       seloCheio: 'Quadrado cheio: a proveniência está completa.',
       seloTracejado: 'Quadrado a tracejado: falta pelo menos um campo, e a linha di-lo.',
       marcadorK: 'O marcador',
-      marcadorV:
-        'É o único marcador de incerteza deste sítio. Aparece onde um campo não foi confirmado contra a fonte. Não é um valor por defeito nem uma estimativa: é a ausência declarada.',
       marcadorGloss: '',
-      naoDizK: 'O que este índice não diz',
-      naoDizV:
-        'Só estão aqui os números que este sítio publica. Os números dentro dos documentos de estudo alojados aqui não estão no livro-razão: a proveniência deles é a do próprio documento, no dia em que foi publicado. O livro-razão também não é uma base de séries: guarda a leitura que citámos, não a série de onde ela saiu.',
       metodoLink: 'Como isto é feito',
 
       /* O conjunto de dados (bloco T, T4). Com a licença por decidir, o bloco
@@ -1467,8 +1466,6 @@ export const STRINGS = {
       h1: 'The ledger',
       lede1:
         'One row per published figure. Each row holds the value exactly as the source published it, who produced it, the document and edition, the address, the date we read it and a textual excerpt (and, when the figure is calculated by us, the sum spelled out and re-evaluated at every build).',
-      lede2:
-        'The provenance seal beside each figure is the door to its row. This is the index of those doors.',
       grupoCompletasK: 'Complete provenance',
       grupoCompletasV:
         'Every field filled in and checked against the source. The seal is a filled square.',
@@ -1478,16 +1475,13 @@ export const STRINGS = {
       colunaValor: 'Value',
       colunaAfirmacao: 'Claim',
       colunaSelo: 'Provenance',
+      contaAfirmacoes: 'claims',
+      contaDerivadas: 'calculated',
       seloK: 'The two states of the seal',
       seloCheio: 'Filled square: the provenance is complete.',
       seloTracejado: 'Dashed square: at least one field is missing, and the row says so.',
       marcadorK: 'The marker',
-      marcadorV:
-        'It is the only uncertainty marker on this site. It appears where a field has not been confirmed against the source. It is not a default or an estimate: it is a declared absence. The marker is kept in Portuguese, as in the original.',
       marcadorGloss: 'to verify',
-      naoDizK: 'What this index does not say',
-      naoDizV:
-        'Only the figures this site publishes are here. The figures inside the study documents hosted here are not in the ledger: their provenance is the document’s own, on the day it was published. Nor is the ledger a database of series: it holds the reading we cited, not the series it came from.',
       metodoLink: 'How this is made',
 
       conjuntoK: 'The ledger as a dataset',
