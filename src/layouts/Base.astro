@@ -8,6 +8,7 @@
  */
 import { SITE_NAME, SITE_URL, canonicalUrl } from '../../site.config.mjs';
 import { alternatesFor, normalizePath } from '../lib/routes.mjs';
+import { DIMENSOES, cartaoDaPagina, urlDoCartao } from '../lib/cartoes.mjs';
 import { t } from '../i18n/strings.mjs';
 import Masthead from '../components/Masthead.astro';
 import SiteFooter from '../components/SiteFooter.astro';
@@ -56,6 +57,29 @@ const organizationJsonLd = {
   name: SITE_NAME,
   url: SITE_URL,
 };
+
+/**
+ * ---------------------------------------------------------------------------
+ * O CARTÃO DE PARTILHA DESTA PÁGINA (etapa 5)
+ * ---------------------------------------------------------------------------
+ * NADA disto é escrito à mão, e é a condição da direção: o endereço do cartão
+ * sai de `cartaoDaPagina()`, que decide, do CAMINHO desta página e da sua
+ * edição, qual é o cartão dela; e as medidas saem de `DIMENSOES`, que é a mesma
+ * lista que o passo de construção usa para os desenhar. Uma etiqueta `og:image`
+ * com um endereço datilografado seria um endereço que ninguém confere.
+ *
+ * O portão de HTML relê estas quatro linhas em todas as páginas construídas e
+ * exige que nomeiem o cartão da rota certa e da edição certa, que o ficheiro
+ * exista em `dist/` e que o resumo dele bata certo com o registo do cartão.
+ *
+ * Uma rota sem cartão próprio (a fase 1 dá cartão próprio à primeira página e
+ * às páginas de linha) leva o cartão da primeira página da sua edição, e o
+ * registo desse cartão diz que rotas é que ele cobre.
+ */
+const cartao = cartaoDaPagina(path, lang);
+const [DIM_OG, DIM_TWITTER] = DIMENSOES;
+const cartaoOg = urlDoCartao({ ...cartao, ...DIM_OG });
+const cartaoTwitter = urlDoCartao({ ...cartao, ...DIM_TWITTER });
 
 ---
 
@@ -139,6 +163,11 @@ const organizationJsonLd = {
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content={lang === 'pt' ? 'pt_PT' : 'en_GB'} />
+    <meta property="og:image" content={cartaoOg} />
+    <meta property="og:image:width" content={String(DIM_OG.largura)} />
+    <meta property="og:image:height" content={String(DIM_OG.altura)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={cartaoTwitter} />
 
     <script
       type="application/ld+json"
