@@ -28,11 +28,24 @@ const argv = process.argv.slice(2);
  * tirá-la aqui. Não é a primeira página, e por isso não são estados: são ROTAS,
  * sem gesto nenhum pelo meio, a 1280 e a 390, nas duas edições e no tema claro.
  *
+ * A ETAPA 4 usa o mesmo segundo modo, com a sua lista e mais uma coisa: um
+ * RECORTE. A entrada de fecho do Método é o que a subetapa 4b entrega, e uma
+ * fotografia da página inteira a 1280 mostra-a com dois dedos de altura. Uma
+ * rota pode por isso declarar `recorte`, que é o selector do que se fotografa;
+ * a página é sempre carregada inteira, e o que muda é o rectângulo.
+ *
  *   node tests/inicio/capturas.mjs                as nove estados da primeira página
  *   node tests/inicio/capturas.mjs --etapa-3      as seis rotas da etapa 3
+ *   node tests/inicio/capturas.mjs --etapa-4      as rotas da família da leitura
  *   node tests/inicio/capturas.mjs <dir>          as da primeira página, noutro sítio
  */
 const ETAPA_3 = argv.includes('--etapa-3');
+const ETAPA_4 = argv.includes('--etapa-4');
+/* `--so=<nome>[,<nome>]` corre só as rotas nomeadas do segundo modo. Serve para
+   refotografar o que uma subetapa mexeu sem refotografar o que ela não mexeu:
+   uma captura de uma página ainda por reconstruir é uma captura que vai mentir
+   até ao fecho da etapa. */
+const SO = (argv.find((a) => a.startsWith('--so=')) ?? '').slice(5).split(',').filter(Boolean);
 const ROTAS_DA_ETAPA_3 = [
   { nome: 'livro-razao-indice', pt: '/livro-razao', en: '/en/ledger' },
   { nome: 'linha-divida-publica', pt: '/livro-razao/divida-publica-2025', en: '/en/ledger/divida-publica-2025' },
@@ -42,9 +55,27 @@ const ROTAS_DA_ETAPA_3 = [
   { nome: 'municipios-evora', pt: '/municipios/evora', en: '/en/municipalities/evora' },
 ];
 
-const DESTINO = ETAPA_3
-  ? path.join(RAIZ, 'design', 'especime-v3', 'capturas', 'etapa-3')
-  : (argv.find((a) => !a.startsWith('--')) ?? path.join(RAIZ, 'design', 'especime-v3', 'capturas', 'etapa-2'));
+/* AS ROTAS DA ETAPA 4: a família da leitura, como o brief da etapa a lista.
+   O 404 é uma rota só, e não duas: o sítio tem uma página de erro (`/404`) e a
+   edição inglesa não tem a sua — está declarado assim em `src/pages/`, e uma
+   captura de uma rota que não existe seria uma captura de outra página. */
+const ROTAS_DA_ETAPA_4 = [
+  { nome: 'metodo', pt: '/metodo', en: '/en/method' },
+  { nome: 'metodo-fecho', pt: '/metodo', en: '/en/method', recorte: '#a-forma', larguras: [1280] },
+  { nome: 'agenda', pt: '/agenda', en: '/en/agenda' },
+  { nome: 'correcoes', pt: '/correcoes', en: '/en/corrections' },
+  { nome: 'sobre', pt: '/sobre', en: '/en/about' },
+  { nome: 'estudos', pt: '/estudos', en: '/en/studies' },
+  { nome: 'estudo-agua', pt: '/estudos/agua-nao-faturada', en: '/en/studies/agua-nao-faturada' },
+  { nome: 'marcador', pt: '/a-verificar', en: '/en/to-verify' },
+  { nome: 'nao-encontrado', pt: '/404', edicoes: ['pt'] },
+];
+
+const DESTINO = ETAPA_4
+  ? path.join(RAIZ, 'design', 'especime-v3', 'capturas', 'etapa-4')
+  : ETAPA_3
+    ? path.join(RAIZ, 'design', 'especime-v3', 'capturas', 'etapa-3')
+    : (argv.find((a) => !a.startsWith('--')) ?? path.join(RAIZ, 'design', 'especime-v3', 'capturas', 'etapa-2'));
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -107,10 +138,17 @@ fs.mkdirSync(DESTINO, { recursive: true });
 const navegador = await chromium.launch({ headless: true });
 let feitas = 0;
 
-if (ETAPA_3) {
-  for (const rota of ROTAS_DA_ETAPA_3) {
-    for (const largura of [1280, 390]) {
-      for (const edicao of ['pt', 'en']) {
+if (ETAPA_3 || ETAPA_4) {
+  const lista = (ETAPA_4 ? ROTAS_DA_ETAPA_4 : ROTAS_DA_ETAPA_3).filter(
+    (r) => SO.length === 0 || SO.includes(r.nome),
+  );
+  if (SO.length > 0 && lista.length === 0) {
+    console.error(`\n  nenhuma rota chamada ${SO.join(', ')} neste modo.\n`);
+    process.exit(1);
+  }
+  for (const rota of lista) {
+    for (const largura of rota.larguras ?? [1280, 390]) {
+      for (const edicao of rota.edicoes ?? ['pt', 'en']) {
         const contexto = await navegador.newContext({ viewport: { width: largura, height: 900 } });
         /* Claro, e por escolha guardada como em toda a parte: é o defeito da
            Emenda 12 e o brief pede só o claro para estas seis. */
@@ -124,10 +162,17 @@ if (ETAPA_3) {
         const p = await contexto.newPage();
         await p.goto(base + rota[edicao], { waitUntil: 'networkidle' });
         await p.evaluate(() => document.fonts.ready);
-        await p.screenshot({
-          path: path.join(DESTINO, `${rota.nome}-${largura}-${edicao}-claro.png`),
-          fullPage: true,
-        });
+        const ficheiro = path.join(DESTINO, `${rota.nome}-${largura}-${edicao}-claro.png`);
+        /* O recorte fotografa um pedaço da página, e não outra página: o alvo é
+           trazido à janela e o rectângulo é o dele. Se o selector não existir, a
+           captura falha em vez de sair uma página inteira com o nome errado. */
+        if (rota.recorte) {
+          const alvo = p.locator(rota.recorte);
+          await alvo.scrollIntoViewIfNeeded();
+          await alvo.screenshot({ path: ficheiro });
+        } else {
+          await p.screenshot({ path: ficheiro, fullPage: true });
+        }
         feitas++;
         await contexto.close();
       }

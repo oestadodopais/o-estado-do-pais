@@ -12,7 +12,7 @@ documento.*
 |---|---|---|
 | `6b7dab8` | 4-0 | as quatro decisões da direção de 21.08, tarde: a legenda do selo, as frases de Évora, o localizador e o aparelho da convergência |
 | (abaixo) | 4a | Correções: o selo da linha como porta de cada entrada, a extensão do portão provada em duas plantas, e a forma riscada em todas as entradas |
-| **por commeter** | 4b | Método: as duas frases governadas, preparadas em `../notas/4b-pendente.patch` e **não commetidas**, à espera da palavra do diretor sobre o que está rendido |
+| (abaixo) | 4b | Método: as duas frases governadas entram com o sim do diretor de 21.08, tarde, e a linha de prova da cor sai; a porta fica |
 
 ---
 
@@ -311,6 +311,200 @@ caixa de correções são navegação: dizem como se usa um comando.
 
 ---
 
-## 3. Subetapa 4b · preparada e NÃO commetida
+## 3. Subetapa 4b · o Método, com o sim do diretor e um corte
 
-*Escrita quando a preparação estiver feita.*
+**O diretor viu as frases renderizadas e disse que sim, a 21.08.2026 à tarde**,
+com um corte: a linha de prova por baixo de «A cor» sai, e a porta fica. A
+subetapa estava preparada e não commetida em `4b-pendente.patch`, à espera dessa
+palavra; o remendo foi aplicado, cortado e commetido, e **o ficheiro do remendo
+foi apagado no mesmo commit**, porque o seu conteúdo passou a ser o commit.
+
+### 3.0 · O corte, e o que ele tira
+
+Saem, nas duas edições: «A forma riscada está no registo de correções, entrada a
+entrada, desde antes desta frase ser escrita.» e «The struck-through form is in
+the corrections register, entry by entry, from before this sentence was
+written.» **Fica a porta**, «O registo de correções →» / «The corrections
+register →»: quem lê a afirmação abre o registo e vê a forma, e isso é conferir.
+A linha era a prova dita em vez de dada.
+
+Com a linha, o campo `nota` das entradas de fecho ficou sem uso, e **sai
+também** — do módulo, da vista (`{e.nota && …}`) e da folha
+(`.metodo-fecho-nota`). Um campo de dados sem conteúdo é aparelho à espera de
+ser enchido, e a próxima pessoa que o encontrasse enchia-o.
+
+**As quatro cadeias governadas não são tocadas pelo corte**, e continuam a bater
+com o brief carácter a carácter: cada uma aparece **uma vez** em
+`../briefs/BRIEF-etapa-4.md`, exactamente como está no módulo (conferido por
+programa, contra o ficheiro do brief, depois do corte).
+
+### 3.1 · O que o remendo leva
+
+| ficheiro | o quê |
+|---|---|
+| `src/data/metodo.mjs` | `FECHO`: a entrada de fecho, com as duas linhas rotuladas nas duas edições, a nota da condição de «A cor» e a porta para o registo |
+| `src/views/MetodoView.astro` | o sumário no cimo, as dez regras como dobras, e a entrada de fecho depois delas |
+| `src/styles/leitura.css` | o sumário, as dobras (com a disposição A a sobreviver ao `<details>`) e a entrada de fecho |
+| `src/i18n/strings.mjs` | `metodo.sumarioK`, uma chave nas duas edições |
+| `DECISIONS.md` | a entrada §1.56, com `**Afecta:** metodo` e `**Texto:** metodo 3661476ee0c9` |
+| `design/especime-v3/notas/stage-4.md` | esta secção |
+
+Mais um, que o remendo não trazia: `tests/inicio/capturas.mjs`, com o modo
+`--etapa-4` (adiante, §3.5).
+
+**A linha da amarra**, recalculada depois do corte:
+
+```
+**Texto:** metodo 3661476ee0c9
+```
+
+É o resumo de `src/data/metodo.mjs` como este commit o deixa: os doze primeiros
+hex do SHA-256 do ficheiro com as mudanças de linha normalizadas, calculado como
+`resumoDoTexto()` em `scripts/check-ledger.mjs` o calcula. O do remendo era
+`b97508921ef3`, e caducou com o corte — se o ficheiro for tocado outra vez, o
+resumo muda e a amarra fecha o build, que é para isso que ela existe.
+
+### 3.2 · As duas frases, tal como renderizam
+
+Extraídas da construção, do bloco `#a-forma` das duas páginas, sem uma
+transformação:
+
+**`/metodo`**
+
+> **A cor** — A cor aparece só onde a fonte publica um limiar: âmbar quando o
+> valor está fora dele, cobalto quando está dentro. Tudo o resto é tinta e
+> cinzento, e uma correção diz-se pela forma, com o valor antigo riscado e o novo
+> ao lado, nunca por uma cor.
+>
+> O registo de correções →
+>
+> **A letra** — Os tipos deste sítio são Spectral, com a sua família de
+> versaletes Spectral SC, e Bitter, de licença aberta (SIL Open Font License),
+> alojados aqui e servidos por este sítio, sem anfitriões de terceiros.
+
+**`/en/method`**
+
+> **Colour** — Colour appears only where the source publishes a threshold: amber
+> when the value is outside it, cobalt when it is within. Everything else is ink
+> and grey, and a correction is said by form, with the old value struck through
+> and the new one beside it, never by a colour.
+>
+> The corrections register →
+>
+> **The type** — This site's typefaces are Spectral, with its small-caps family
+> Spectral SC, and Bitter, under an open licence (SIL Open Font License), hosted
+> here and served by this site, with no third-party hosts.
+
+**As quatro cadeias batem com o brief carácter a carácter**, conferido por
+programa contra `../briefs/BRIEF-etapa-4.md`: cada uma aparece **uma vez** no
+brief, exactamente como está no módulo.
+
+### 3.3 · O apóstrofo reto, assinalado e não decidido
+
+A edição inglesa de «A letra» escreve **This site's**, com o apóstrofo **reto**
+(U+0027). É o carácter que o texto do diretor traz nas duas cópias que o
+repositório guarda — o brief da etapa e a §12 do plano —, e o brief diz «não muda
+um carácter». As outras cadeias inglesas desta casa usam o tipográfico (’):
+«municipality’s», «executive’s», «publishers’». **Não o troquei**, e fica aqui em
+vez de ser resolvido em silêncio: se a direção quiser o tipográfico, é a decisão
+dela e um carácter no módulo, com um resumo novo na amarra.
+
+### 3.4 · A página, à volta das duas frases
+
+**O sumário**, no cimo, entre a lede e o instrumento: os dez nomes das regras e a
+entrada de fecho, cada um a âncora da sua secção, em duas colunas acima de 640px.
+As âncoras já existiam — o que faltava era a lista. `metodo.sumarioK` é a única
+cadeia nova («Nesta página» / «On this page»), e nomeia o que a página tem.
+
+**As dobras**: um `<details>` por regra, com o nome no `<summary>`, a primeira
+aberta e as restantes fechadas, o mecanismo, o limite e a prova lá dentro, e os
+contadores `data-prova` com as suas portas. **Sem uma linha de JavaScript.** Três
+coisas que isto obrigou a resolver, e vão escritas:
+
+1. **a disposição A sobrevive à dobra.** `.metodo-secao` era a grelha de duas
+   colunas e os seus dois filhos eram a cabeça e o corpo; com o `<details>` pelo
+   meio o filho passa a ser um só. A grelha desce para o `<details>`, com as
+   mesmas medidas e o mesmo ponto de quebra;
+2. **o nível de cabeçalho não desce.** O `<h2>` de cada regra passa para dentro
+   do `<summary>`, que é conteúdo válido para uma só etiqueta de cabeçalho, e o
+   sumário de cabeçalhos da página fica como estava;
+3. **o marcador nativo sai** e o que o substitui é um sinal de tinta à direita do
+   nome, `+` fechado e `−` aberto, com estado de foco visível. O triângulo do
+   navegador tem o desenho de cada navegador.
+
+**Uma limitação, dita:** uma âncora do sumário leva ao topo da secção da regra e
+não abre a dobra — o `id` fica na `<section>`, que é o endereço público que já
+existia, e o `<details>` está dentro dela. Quem chega vê o nome da regra e abre-a.
+Mudar o `id` de sítio faria os navegadores que expandem uma dobra pelo fragmento
+fazê-lo, e mudaria um endereço público (`#correcoes` é citado no Método e no
+`DECISIONS.md` §1.29): não vale a troca sem a palavra da cadeira.
+
+**A entrada de fecho não dobra.** São duas frases, e uma dobra por cima de uma
+frase é mobília a esconder o que a página fecha a dizer.
+
+### 3.5 · O que ficou verde, as capturas, e o modo que as tira
+
+```
+npm run build        exit 0
+npm run verify       exit 0
+npm run ledger:check exit 0   (19 entradas a partir da §1.38, 2 textos governados)
+```
+
+**`tests/inicio/capturas.mjs` ganha o modo `--etapa-4`**, e é um ficheiro fora da
+lista da §2 do brief: vai escrito aqui em vez de ser improvisado. A alternativa
+era um programa de rascunho fora do repositório, e então o comando que tirou as
+capturas não existiria em lado nenhum. O precedente é o modo `--etapa-3`, posto
+no mesmo ficheiro pela etapa anterior; o modo novo é declarativo (uma lista de
+rotas) e não muda uma linha do que os outros modos fazem. Traz duas coisas que a
+etapa 3 não precisava:
+
+- **`recorte`**, o selector do que se fotografa. A entrada de fecho é o que a 4b
+  entrega, e numa página inteira a 1280 ela tem dois dedos de altura. Se o
+  selector não existir, a captura falha em vez de sair uma página inteira com o
+  nome de um recorte;
+- **`--so=<nome>`**, para refotografar só o que uma subetapa mexeu. Uma captura
+  de uma página ainda por reconstruir mente até ao fecho da etapa.
+
+O 404 é uma rota só, e não duas: `src/pages/` tem `404.astro` e a edição inglesa
+não tem a sua.
+
+```
+node tests/inicio/capturas.mjs --etapa-4 --so=metodo-fecho     → 2 capturas
+```
+
+| captura | o quê |
+|---|---|
+| `../capturas/etapa-4/metodo-fecho-1280-pt-claro.png` | a entrada de fecho, `/metodo`, 1280, **refeita depois do corte** |
+| `../capturas/etapa-4/metodo-fecho-1280-en-claro.png` | a entrada de fecho, `/en/method`, 1280, **refeita depois do corte** |
+| `../capturas/etapa-4/metodo-1280-pt-claro.png` | a página inteira, `/metodo`, 1280 (antes do corte; refeita no fecho da etapa) |
+| `../capturas/etapa-4/metodo-1280-en-claro.png` | a página inteira, `/en/method`, 1280 (idem) |
+
+### 3.6 · `IDENTIDADE.md` §2 não cita «A cor»
+
+A amarra permite-o agora que a frase existe, e a citação seria guardada palavra
+por palavra com a marca (`metodo`). Fica **por escrever**, e a razão está na
+entrada: a §2 já diz a mesma regra pelas suas próprias palavras, e duas redações
+da mesma regra no mesmo ficheiro são duas regras no dia em que uma mudar. É
+decisão da cadeira e custa três linhas.
+
+---
+
+## 4. O que fica pedido
+
+| # | pedido | a quem |
+|---|---|---|
+| 1 | ~~A palavra do diretor sobre as duas frases renderizadas~~ **Respondido a 21.08.2026, tarde: sim, com o corte da linha de prova da cor.** Feito na 4b | direção |
+| 2 | **O apóstrofo reto de «This site's»** (§3.3): fica como o diretor o escreveu; se quiser o tipográfico, é um carácter | direção |
+| 3 | ~~Os três blocos de autorreferência de `/municipios/evora`~~ **Respondido a 21.08.2026, tarde.** Feito na subetapa a seguir (§4 abaixo) | direção, cadeira |
+| 4 | **A leitura de «Quem responde pelo quê»** (§1.2): das três possíveis, escolhi a que põe a frase por cima da banda dos mandatos. Se a cadeira quiser outra, é uma linha | cadeira |
+| 5 | **`IDENTIDADE.md` §2 a citar «A cor»** com a marca, se a cadeira quiser a amarra a guardá-la (§3.6) | cadeira |
+
+---
+
+## 5. Modelo e gasto
+
+| | |
+|---|---|
+| modelo | Claude Opus, `claude-opus-5[1m]` |
+| commits | `6b7dab8` (4-0), `3a51cb8` (4a) |
+| preparado e não commetido | 4b, em `4b-pendente.patch` |

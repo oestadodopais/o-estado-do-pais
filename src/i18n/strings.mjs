@@ -639,6 +639,9 @@ export const STRINGS = {
       mecanismoK: 'Mecanismo',
       provaK: 'Prova',
       limiteK: 'O que isto não apanha',
+      /* O sumário no cimo da página (subetapa 4b): os dez nomes das regras e a
+         entrada de fecho, como âncoras. Nomeia o que a página tem. */
+      sumarioK: 'Nesta página',
 
       /** O instrumento: a cadeia desenhada, com os números de hoje. */
       instrumento: {
@@ -1437,6 +1440,7 @@ export const STRINGS = {
       mecanismoK: 'Mechanism',
       provaK: 'Proof',
       limiteK: 'What this does not catch',
+      sumarioK: 'On this page',
 
       instrumento: {
         svgTitulo: 'The mechanism, from the sources to the reader',
