@@ -591,3 +591,121 @@ chave.
 | ficheiros abertos fora da lista do brief, e porquê | `src/lib/inicio.mjs` (uma palavra, a outra ponta da comparação da §1.1), `src/styles/inicio.css` e `src/styles/leitura.css` (a folha do sinal de dobra, que o brief dá como «a folha do glifo de divulgação»), `tipos-cartao/` (novo; os cinco tipos derivados e as duas licenças) |
 | plantas provadas e revertidas | quatro, §8 |
 | o que ficou por fazer, e é do brief | a citação de «A cor» na `IDENTIDADE.md` §2 (§1.4), com a mensagem do portão que a impede |
+
+---
+
+## 6 · I56 · a amarra passa a ler o `FECHO`, e a citação de «A cor» entra na §2
+
+*Construtor F (Claude Opus, `claude-opus-5[1m]`). Ramo `redesenho-v3`, a partir de
+`41161d6`. Fecha o pedido n.º 1 da §10, que é a ponta que a §1.4 deixou medida e
+não improvisada. A §1.4 e a §10 ficam como foram escritas: são o registo do
+checkpoint, e reescrevê-las apagaria a razão pela qual isto existe.*
+
+**O remendo é um identificador, e é a MESMA conferência a alcançar mais texto.**
+`cadeiasDoTexto()`, em `scripts/check-ledger.mjs`, andava
+`[REGRAS, ABERTURA, LEITURA_BREVE]` e passa a andar
+`[REGRAS, ABERTURA, LEITURA_BREVE, FECHO]`. O `FECHO` entra **inteiro e nas duas
+línguas**, pelo mesmo `anda()` recursivo que já percorria os outros três: quem
+acrescentar uma entrada à entrada de fecho do Método não tem de voltar a este
+ficheiro. **Nenhum portão novo** (moratória de 2026-08-15), nenhuma marca nova,
+nenhum vocabulário novo, nenhuma mensagem nova — a que recusa as duas plantas
+abaixo é a que já lá estava, palavra por palavra.
+
+**A citação entrou.** A `IDENTIDADE.md` §2 fecha agora com a frase «A cor» do
+Método, entre «…» e com a marca (`metodo`) logo a seguir, pela convenção da §8.
+Está no fim da §2 e não no princípio: a secção é a forma da regra, e a frase
+citada é a mesma regra dita ao leitor — as duas metades, o limiar e a correção
+pela forma, que é exactamente o que os dois parágrafos anteriores explicam.
+
+### Planta 1 · uma palavra trocada dentro da citação
+
+«âmbar» → «ocre», dentro das aspas, e mais nada. É a classe de defeito para que
+a amarra existe: a citação que estava certa e deixou de estar.
+
+```
+$ npm run ledger:check                                                  exit 1
+
+  amarra das decisões · 24 entrada(s) a partir da §1.38 · 2 texto(s)
+  governado(s) · 2 citação(ões) da constituição conferida(s), de 43 entre «…»
+
+  A AMARRA DAS DECISÕES NÃO FECHA · 1 erro(s):
+
+    ✗ IDENTIDADE.md cita, como sendo do "metodo":
+        «A cor aparece só onde a fonte publica um limiar: ocre quando o valor
+         está fora dele, cobalto quando está dentro. Tudo o resto é tinta e
+         cinzento, e uma correção diz-se pela forma, com o valor antigo riscado
+         e o novo ao lado, nunca por uma cor.»
+        e essa frase não existe em src/data/metodo.mjs.
+        Ou o texto governado mudou e a citação ficou para trás, ou a citação
+        nunca foi essa. A constituição cita palavra por palavra, ou não cita.
+
+  Uma mudança de rumo não sai em silêncio (direção, 2026-08-15).
+```
+
+Revertida a palavra, o portão volta a exit 0 — e a citação da §2 é, achatada,
+**carácter a carácter** a cadeia do módulo:
+
+```
+$ node -e "import('./src/data/metodo.mjs').then(m=>{const a=m.FECHO.entradas
+  .find(e=>e.id==='a-cor').texto.pt[0];const t=require('fs')
+  .readFileSync('IDENTIDADE.md','utf8');const c=t.match(/«A cor aparece[^»]*»/)[0]
+  .slice(1,-1).replace(/\s+/g,' ').trim();
+  console.log('idêntica:',c===a,'·',a.length,'caracteres')})"
+
+idêntica: true · 244 caracteres
+```
+
+### Planta 2 · uma frase que não existe em lado nenhum do Método
+
+Uma frase plausível, com a marca (`metodo`), a dizer uma coisa que o Método
+nunca disse. `grep -c "A cor de um mapa nunca diz o estado de um valor"
+src/data/metodo.mjs` dá **0**.
+
+```
+$ npm run ledger:check                                                  exit 1
+
+  A AMARRA DAS DECISÕES NÃO FECHA · 1 erro(s):
+
+    ✗ IDENTIDADE.md cita, como sendo do "metodo":
+        «A cor de um mapa nunca diz o estado de um valor, e uma legenda não é
+         uma medição.»
+        e essa frase não existe em src/data/metodo.mjs.
+        Ou o texto governado mudou e a citação ficou para trás, ou a citação
+        nunca foi essa. A constituição cita palavra por palavra, ou não cita.
+```
+
+Revertida — a frase saiu inteira da §2 —, o portão volta a exit 0.
+
+**O que as duas plantas provam, e o que não provam.** Provam que uma citação
+**marcada** tem de existir no texto que nomeia, e que o `FECHO` é agora um desses
+textos. Não provam nada sobre uma frase que nasça já diferente e **sem** marca:
+esse é o limite que a cabeça do bloco escreve, e continua a ser de quem escreve.
+
+### As réguas, com a árvore final
+
+```
+npm run build                             exit 0
+npm run verify                            exit 0
+npm run ledger:check                      exit 0
+node scripts/ortografia.mjs --verificar   exit 0
+```
+
+```
+  amarra das decisões · 24 entrada(s) a partir da §1.38 · 2 texto(s)
+  governado(s) · 2 citação(ões) da constituição conferida(s), de 43 entre «…»
+  ✓ cada texto no ar tem uma decisão registada que o governa, e cada frase que
+    a constituição lhe cita está lá.
+```
+
+**As citações conferidas passam de 1 para 2**, de 43 entre «…» — a §5 (a regra 5
+do Método) e a §2 (a entrada «A cor» do fecho). As restantes 41 não trazem
+marca, e o que a amarra confirma delas é o que ela pode confirmar: nenhuma, das
+que têm 40 caracteres ou mais, bate contra uma cadeia do Método ou do Sobre —
+agora que o `FECHO` também é lido. Abaixo desse limite não são conferidas, por
+serem termos entre aspas e não frases (`CITACAO_MINIMA`).
+
+**Modelo e gasto**: Claude Opus, `claude-opus-5[1m]`, do princípio ao fim; nenhum
+sub-agente. Ficheiros tocados: `scripts/check-ledger.mjs` (o identificador e o
+comentário que diz porquê), `IDENTIDADE.md` (a §2), `design/especime-v3/ISSUES.md`
+(I56) e esta nota. Nenhum ficheiro de texto governado, nenhuma vista, nenhuma
+linha do livro-razão, nenhum número novo.

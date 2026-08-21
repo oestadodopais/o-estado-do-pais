@@ -133,6 +133,15 @@ cada par que a folha de facto usa, nos dois temas; um par que não esteja na sua
 lista é um par que ninguém mediu. Os números de hoje estão em
 `design/especime-v3/notas/stage-1.md`, os da v2 em `DECISIONS.md` §1.43.
 
+**A regra que esta secção é, o Método diz-a ao leitor na sua entrada de fecho**, e
+diz as duas metades de uma vez, o limiar e a correção: *«A cor aparece só onde a
+fonte publica um limiar: âmbar quando o valor está fora dele, cobalto quando está
+dentro. Tudo o resto é tinta e cinzento, e uma correção diz-se pela forma, com o
+valor antigo riscado e o novo ao lado, nunca por uma cor.»* (`metodo`) A frase é
+pública e esta secção é a sua forma; a amarra das decisões prende uma à outra,
+palavra por palavra contra `src/data/metodo.mjs`, para que a citação não possa
+envelhecer calada no dia em que o Método mudar (§8).
+
 ---
 
 ## 3. As três disposições, e nenhuma quarta
