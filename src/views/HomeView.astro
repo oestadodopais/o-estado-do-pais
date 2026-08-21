@@ -44,7 +44,13 @@ import { FIGURAS_PDM, FIGURAS_SOCIAL, comparacaoComOLimiar, ladosDoLimiar } from
 import { REGIOES, ESCALA } from '../data/regioes.mjs';
 import { getClaim, parsePtNumber, eDerivada } from '../lib/ledger.mjs';
 import { estadoDaMedida, estadoDaRegua } from '../lib/estado.mjs';
-import { concelhos, chaveDaRegiao, chaveDoConcelho, REGIOES_DE_AMBITO } from '../lib/inicio.mjs';
+import {
+  concelhos,
+  chaveDaRegiao,
+  chaveDoConcelho,
+  ledeDoPainel,
+  REGIOES_DE_AMBITO,
+} from '../lib/inicio.mjs';
 import { estadoDaVerificacao, prova } from '../lib/prova.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -85,6 +91,20 @@ const medidas = FIGURAS_PDM.map((f) => {
     referencias: refs,
   };
 });
+
+/* ------------------------------------------------------------------- a lede
+ *
+ * A lede do País deixa de ser uma frase escrita e passa a ser construída dos
+ * nomes das medidas cujo estado é «fora» (etapa 2m, brief §2). Constrói-se aqui,
+ * uma vez, com as mesmas `medidas` que o painel rende: se a lista mudar, mudam
+ * as duas ao mesmo tempo, porque são a mesma lista.
+ *
+ * `null` quando nenhuma medida está fora do limiar, e a cabeça não rende lede
+ * nenhuma nesse dia: uma frase que abre «Fora do limiar:» e não nomeia nada não
+ * é uma frase. Qual é a forma desse estado é decisão da direção, e está escrita
+ * na nota e em ISSUES em vez de inventada aqui.
+ */
+const lede = ledeDoPainel(medidas, s.inicio.cabeca.ledePais, lang);
 
 /* O Painel Social Europeu: a lista da Emenda 16, com a linha de cada medida. */
 const sociais = FIGURAS_SOCIAL.map((f) => ({ ...f, linha: getClaim(f.claim) }));
@@ -245,7 +265,7 @@ const medidasSemLinha = evora
     </div>
 
     <div class="cabeca-grelha" data-grelha>
-      <Cabeca s={s} lang={lang} p={p} blocos={blocos} ambito="pais" />
+      <Cabeca s={s} lang={lang} p={p} blocos={blocos} ambito="pais" lede={lede} />
       <div class="cabeca-inst" data-coluna-instrumento>
         <MapaRespira s={s} lang={lang} p={p} concelhos={cs} evora={evora} />
 

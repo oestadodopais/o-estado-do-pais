@@ -67,7 +67,7 @@ import Claim from '../Claim.astro';
 import Frase from '../Frase.astro';
 import ValorDaProva from '../ValorDaProva.astro';
 
-const { s, lang, p, blocos, ambito } = Astro.props;
+const { s, lang, p, blocos, ambito, lede } = Astro.props;
 
 /* Uma ou muitas: a frase certa escolhe-se aqui, na construção, com a contagem
    que o portão vai reconferir. Sem plural inventado no cliente. */
@@ -97,9 +97,24 @@ const tituloPais = fora === 1 ? s.inicio.cabeca.tituloPaisUm : s.inicio.cabeca.t
               />
               {s.inicio.cabeca.tituloPaisFim}
             </h1>
-            <p class="cabeca-lede">
-              <Frase partes={s.inicio.cabeca.ledePaisPartes} lang={lang} />
-            </p>
+            {/* A LEDE É CONSTRUÍDA (etapa 2m). Ver `ledeDoPainel()` em
+                `src/lib/inicio.mjs`: os nomes das peças fora do limiar, pela
+                ordem do painel, com as palavras de gramática da edição, e o ano
+                só quando as linhas partilham um.
+
+                O `<p>` VAI NUMA LINHA SÓ, e não é descuido de formatação: entre
+                dois pedaços de um gabarito, uma mudança de linha é um espaço no
+                HTML, e um espaço a mais antes de uma vírgula é uma frase mal
+                escrita. Os itens vêm já com os separadores pelo meio, num
+                arranjo, para que o gabarito não tenha de os intercalar.
+
+                `data-prova-lista` é a marca que o portão lê: parte o texto
+                pelos separadores que conhece, conta os itens e compara-os com
+                `painel_fora_do_limiar`. A marca fica só à volta da LISTA — o
+                «Fora do limiar: » e o «, em 2025.» não são itens dela. */}
+            {lede && (
+              <p class="cabeca-lede">{s.inicio.cabeca.ledePais.abre}<span data-prova-lista="painel_fora_do_limiar">{lede.itens}</span><Frase partes={lede.cauda} lang={lang} /></p>
+            )}
           </>
         )}
 
