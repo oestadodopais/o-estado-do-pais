@@ -319,13 +319,20 @@ for (const [rota, onde] of ligacoes) {
  * correr, e é o que impede que a porta desapareça em silêncio: um ficheiro sem
  * rota declarada fecha a construção, em vez de deixar de ser conferido.
  *
- * A régua da convergência continua na primeira página, e por isso o seu CSV
- * continua a ser exigido lá. Uma porta a mais noutra página não é um erro: o que
- * esta conferência impõe é o mínimo, e a conferência de cima já garante que
- * nenhuma ligação `/dados/…` aponta para um ficheiro que não foi construído.
+ * Uma porta a mais noutra página não é um erro: o que esta conferência impõe é o
+ * mínimo, e a conferência de cima já garante que nenhuma ligação `/dados/…`
+ * aponta para um ficheiro que não foi construído.
+ *
+ * **21.08.2026, commit 4-0:** a porta do CSV da convergência desce da primeira
+ * página para `/livro-razao`, ao pé do bloco do conjunto de dados (relocação
+ * R13). O registo de relocações já dizia que o aparelho do Instrumento n.º 1
+ * tinha saído da primeira página e a construção ainda rendia esta porta lá; a
+ * direção decidiu qual das duas coisas se corrige. A declaração desce no mesmo
+ * commit que a porta: é isso que faz a conferência seguir o desenho em vez de o
+ * travar.
  */
 const PORTA_DOS_DADOS = {
-  convergencia: 'home',
+  convergencia: 'livro',
   municipios: 'municipios',
 };
 

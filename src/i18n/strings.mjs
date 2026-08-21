@@ -440,8 +440,16 @@ export const STRINGS = {
         readoutHint: 'Passe o cursor sobre um ponto para ler o município.',
         tecladoHint:
           'Teclado: Tab até ao mapa, setas para percorrer os municípios vizinhos, Home para voltar a Évora.',
-        svgLabel:
-          'Mapa de pontos dos municípios de Portugal. Use as setas para percorrer os municípios.',
+        /* A INSTRUÇÃO DE TECLADO SAIU DO RÓTULO (commit 4-0, 21.08.2026).
+           Dizia «Mapa de pontos dos municípios de Portugal. Use as setas para
+           percorrer os municípios.» — e as setas só percorrem alguma coisa onde
+           o script da primeira página está carregado. A página do concelho
+           carrega `tema.js` e mais nada, e prometia a um leitor de ecrã um
+           comando que ali não existe (achado 13 da quarta leitura do Codex). O
+           rótulo passa a nomear o que o desenho é; a instrução continua escrita,
+           uma vez só, em `tecladoHint`, que vive dentro de `#mapa-descricao` e
+           só se constrói na postura inteira. */
+        svgLabel: 'Mapa de pontos dos municípios de Portugal.',
         trocar: 'trocar de concelho',
         paginaInteira: 'a página inteira, com quem governou',
       },
@@ -725,12 +733,16 @@ export const STRINGS = {
       h1: 'O livro-razão',
       lede1:
         'Uma linha por número publicado. Cada linha guarda o valor tal como a fonte o publicou, quem o produziu, o documento e a edição, o endereço, a data em que o lemos e um excerto textual (e, quando o número é calculado por nós, a conta explicada e reavaliada a cada construção).',
+      /* AS DUAS NOTAS DE GRUPO SAÍRAM (decisão da direção, 21.08.2026, tarde).
+         Diziam «Todos os campos preenchidos e conferidos contra a fonte. O selo
+         é um quadrado cheio.» e «Falta pelo menos um campo de proveniência. O
+         campo fica marcado, e nenhum foi preenchido com um valor plausível. O
+         selo é um quadrado a tracejado.» — as duas únicas frases de
+         autorreferência que o inventário contava nesta rota: a casa a dizer o
+         que fez e a explicar o seu próprio selo. O nome do grupo diz o estado, e
+         o estado é o que a página tem para dizer. */
       grupoCompletasK: 'Proveniência completa',
-      grupoCompletasV:
-        'Todos os campos preenchidos e conferidos contra a fonte. O selo é um quadrado cheio.',
       grupoPorConfirmarK: 'Com campos por confirmar',
-      grupoPorConfirmarV:
-        'Falta pelo menos um campo de proveniência. O campo fica marcado, e nenhum foi preenchido com um valor plausível. O selo é um quadrado a tracejado.',
       colunaValor: 'Valor',
       colunaAfirmacao: 'Afirmação',
       colunaSelo: 'Proveniência',
@@ -740,9 +752,15 @@ export const STRINGS = {
          leva a sua porta. As palavras ao lado nomeiam o que é contado. */
       contaAfirmacoes: 'afirmações',
       contaDerivadas: 'calculadas',
+      /* A LEGENDA DO SELO PASSA A NOMEAR OS ESTADOS (direção, 21.08.2026).
+         Dizia «Quadrado cheio: a proveniência está completa.» e «Quadrado a
+         tracejado: falta pelo menos um campo, e a linha di-lo.» — duas frases a
+         descrever o glifo que está desenhado ao lado. Uma legenda nomeia o que a
+         coisa é (Emenda 15): o quadrado desenha-se, e o que fica escrito é o
+         nome do estado. */
       seloK: 'Os dois estados do selo',
-      seloCheio: 'Quadrado cheio: a proveniência está completa.',
-      seloTracejado: 'Quadrado a tracejado: falta pelo menos um campo, e a linha di-lo.',
+      seloCheio: 'proveniência completa',
+      seloTracejado: 'um campo por confirmar',
       marcadorK: 'O marcador',
       marcadorGloss: '',
       metodoLink: 'Como isto é feito',
@@ -750,6 +768,9 @@ export const STRINGS = {
       /* O conjunto de dados (bloco T, T4). Com a licença por decidir, o bloco
          diz o estado e não oferece ficheiro nenhum; com ela decidida, oferece
          os dois e escreve a licença ao lado. Ver src/data/licenca.mjs. */
+      /* O rótulo do ficheiro da régua da convergência, cuja porta desceu da
+         primeira página na relocação R13. Nomeia o que a coisa é, e mais nada. */
+      convergenciaK: 'A régua da convergência, em ficheiro',
       conjuntoK: 'O livro-razão como conjunto de dados',
       conjuntoEstado: 'Conjunto de dados preparado; a licença aguarda decisão da direção.',
       conjuntoV: 'Todas as linhas, com todos os campos publicados.',
@@ -842,19 +863,26 @@ export const STRINGS = {
          tolera aí as cadeias que calcula do registo. Compõem-se com o nome do
          concelho, que não tem nenhum. */
       metaCauda: 'o município, medido · O Estado do País',
+      /* A DESCRIÇÃO DO `<head>` PERDE A SEGUNDA FRASE (commit 4-0). Dizia ainda
+         «Cada valor tem linha no livro-razão, com fonte, documento e data de
+         acesso.» — o método do sítio escrito na descrição, que é superfície
+         pública e é medida pela mesma régua desde o commit 3-0 (decisão 1 do
+         diretor). O que fica nomeia o que a página traz. */
       metaDescricaoA: 'O que as fontes publicam sobre o município de ',
       metaDescricaoB:
-        ': população, poder de compra, emprego, empresas, dívida e execução orçamental. Cada valor tem linha no livro-razão, com fonte, documento e data de acesso.',
-      ledeA: 'Esta página mede o município de ',
-      ledeB:
-        ' e mostra de onde vem cada medida. Não interpreta: onde uma fonte não estabelece uma coisa, a página di-lo em vez de a supor.',
-
+        ': população, poder de compra, emprego, empresas, dívida e execução orçamental.',
+      /* A ABERTURA E AS CONTAGENS POR EXTENSO SAÍRAM (direção, 21.08.2026,
+         tarde; Emenda 15 e `DECISIONS.md` §4 item Q). Eram «Esta página mede o
+         município de <nome> e mostra de onde vem cada medida. Não interpreta:
+         onde uma fonte não estabelece uma coisa, a página di-lo em vez de a
+         supor.» e «Oito medidas. Seis vêm de organismos que publicam para todos
+         os concelhos do país; duas só existem porque o próprio município as
+         publica, e cada uma dessas di-lo na sua linha.» A primeira é a página a
+         declarar o que faz; a segunda escreve duas contagens à mão, contra a
+         `IDENTIDADE.md` §10, e explica a cobertura, contra a emenda. */
       relanceK: 'Relance',
-      relanceSub:
-        'Oito medidas. Seis vêm de organismos que publicam para todos os concelhos do país; duas só existem porque o próprio município as publica, e cada uma dessas di-lo na sua linha.',
 
       breveK: 'Leitura breve',
-      breveSub: 'Uma frase por medida. Todos os números são citações do livro-razão.',
 
       distanciaK: 'A dívida contra o teto legal',
       /* A LEGENDA SEGUE O DESENHO (Emenda 4, subetapa 3d), e vai assinalada em
@@ -915,8 +943,6 @@ export const STRINGS = {
       tempoBandaK: 'Mandatos, no tempo',
       tempoBandaLegendaK: 'Abrir cada mandato',
       tempoRelanceK: 'Índice de dívida, do primeiro ano legível ao último',
-      tempoBreve:
-        'Cinco administrações, contadas como foram instaladas e não como foram eleitas. As decisões vão atribuídas a quem as tomou, com o rótulo da lista que ganhou; os índices não vão atribuídos a ninguém.',
       tempoInstalado: 'instalado a',
       tempoLugares: 'Lugares',
       tempoHerdou: 'Herdou',
@@ -936,16 +962,15 @@ export const STRINGS = {
         { ref: '2013' },
         ' aparecem as duas: a que foi reportada no fim do mandato e a que um relatório posterior reexpressou. Escolher uma em silêncio seria esconder que a diferença existe.',
       ],
+      /* Fica só como nome da secção, por cima da banda dos mandatos (direção,
+         21.08.2026, tarde). O parágrafo que levava por baixo saiu com a Emenda
+         15. */
       tempoAtribuicaoK: 'Quem responde pelo quê',
-      tempoAtribuicaoV:
-        'Uma administração responde pelas decisões que tomou. Não responde por um índice: nada do que foi lido permite separar a parte de um executivo na população, no emprego ou no poder de compra do concelho. Por isso as decisões levam nome e lista, e os índices não levam nenhum. Não há aqui nenhuma tabela classificativa de partidos, e não vai haver.',
 
       metodoK: 'Método e ressalvas',
       naoSabeK: 'O que esta página não sabe',
       provenienciaK: 'Proveniência',
       estudosK: 'Os trabalhos sobre este concelho',
-      estudosV:
-        'Cada um tem a sua página, com a medida que o faz valer a pena, a frase do que concluiu, o método e o documento original quando está alojado aqui.',
       estudoLink: 'Abrir a leitura',
 
       voltarMapa: 'Voltar ao mapa dos municípios',
@@ -1301,8 +1326,7 @@ export const STRINGS = {
         readoutHint: 'Hover over a point to read the municipality.',
         tecladoHint:
           'Keyboard: Tab to the map, arrow keys to move between neighbouring municipalities, Home to return to Évora.',
-        svgLabel:
-          'Point map of the municipalities of Portugal. Use the arrow keys to move between municipalities.',
+        svgLabel: 'Point map of the municipalities of Portugal.',
         trocar: 'change concelho',
         paginaInteira: 'the whole page, with who governed it',
       },
@@ -1494,23 +1518,20 @@ export const STRINGS = {
       lede1:
         'One row per published figure. Each row holds the value exactly as the source published it, who produced it, the document and edition, the address, the date we read it and a textual excerpt (and, when the figure is calculated by us, the sum spelled out and re-evaluated at every build).',
       grupoCompletasK: 'Complete provenance',
-      grupoCompletasV:
-        'Every field filled in and checked against the source. The seal is a filled square.',
       grupoPorConfirmarK: 'With fields to confirm',
-      grupoPorConfirmarV:
-        'At least one provenance field is missing. The field is marked as such, and none has been filled in with a plausible value. The seal is a dashed square.',
       colunaValor: 'Value',
       colunaAfirmacao: 'Claim',
       colunaSelo: 'Provenance',
       contaAfirmacoes: 'claims',
       contaDerivadas: 'calculated',
       seloK: 'The two states of the seal',
-      seloCheio: 'Filled square: the provenance is complete.',
-      seloTracejado: 'Dashed square: at least one field is missing, and the row says so.',
+      seloCheio: 'provenance complete',
+      seloTracejado: 'one field unconfirmed',
       marcadorK: 'The marker',
       marcadorGloss: 'to verify',
       metodoLink: 'How this is made',
 
+      convergenciaK: 'The convergence rule, as a file',
       conjuntoK: 'The ledger as a dataset',
       conjuntoEstado: 'Dataset prepared; the licence awaits the director’s decision.',
       conjuntoV: 'Every row, with every published field.',
@@ -1580,17 +1601,10 @@ export const STRINGS = {
       metaCauda: 'the municipality, measured · O Estado do País',
       metaDescricaoA: 'What the sources publish about the municipality of ',
       metaDescricaoB:
-        ': population, purchasing power, employment, enterprises, debt and budget execution. Every value has a ledger row, with source, document and access date.',
-      ledeA: 'This page measures the municipality of ',
-      ledeB:
-        ' and shows where each measure comes from. It does not interpret: where a source does not establish something, the page says so rather than assume it.',
-
+        ': population, purchasing power, employment, enterprises, debt and budget execution.',
       relanceK: 'At a glance',
-      relanceSub:
-        'Eight measures. Six come from bodies that publish for every concelho in the country; two exist only because the municipality itself publishes them, and each of those says so on its own line.',
 
       breveK: 'Brief reading',
-      breveSub: 'One sentence per measure. Every figure is a citation from the ledger.',
 
       distanciaK: 'The debt against the legal ceiling',
       distanciaLegenda:
@@ -1633,8 +1647,6 @@ export const STRINGS = {
       tempoBandaK: 'Terms, in time',
       tempoBandaLegendaK: 'Open each term',
       tempoRelanceK: 'Debt index, from the first readable year to the last',
-      tempoBreve:
-        'Five administrations, counted as they were installed and not as they were elected. Decisions are attributed to whoever took them, with the label of the list that won; indices are attributed to nobody.',
       tempoInstalado: 'installed on',
       tempoLugares: 'Seats',
       tempoHerdou: 'Inherited',
@@ -1655,15 +1667,11 @@ export const STRINGS = {
         ' both appear: the one reported at the end of the term and the one a later report restated. Choosing one silently would hide that the difference exists.',
       ],
       tempoAtribuicaoK: 'Who answers for what',
-      tempoAtribuicaoV:
-        'An administration answers for the decisions it took. It does not answer for an index: nothing that was read allows an executive’s share of the concelho’s population, employment or purchasing power to be carved out. So decisions carry a name and a list, and indices carry neither. There is no party league table here, and there will not be one.',
 
       metodoK: 'Method and caveats',
       naoSabeK: 'What this page does not know',
       provenienciaK: 'Provenance',
       estudosK: 'The works about this concelho',
-      estudosV:
-        'Each has its own page, with the measure that makes it worth reading, the sentence of what it concluded, the method, and the original document where it is hosted here.',
       estudoLink: 'Open the reading',
 
       voltarMapa: 'Back to the map of municipalities',

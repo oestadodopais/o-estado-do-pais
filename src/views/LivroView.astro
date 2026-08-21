@@ -27,6 +27,7 @@ import { t } from '../i18n/strings.mjs';
 import { prova } from '../lib/prova.mjs';
 import { LICENCA } from '../data/licenca.mjs';
 import { CONJUNTO } from '../lib/conjunto.mjs';
+import { DADOS } from '../lib/dados.mjs';
 import '../styles/linha.css';
 
 const { lang = 'pt' } = Astro.props;
@@ -55,14 +56,12 @@ const grupos = [
   {
     id: 'completas',
     k: s.livro.grupoCompletasK,
-    v: s.livro.grupoCompletasV,
     chave: 'indexaveis',
     linhas: completas,
   },
   {
     id: 'por-confirmar',
     k: s.livro.grupoPorConfirmarK,
-    v: s.livro.grupoPorConfirmarV,
     chave: 'divida',
     linhas: porConfirmar,
   },
@@ -126,7 +125,11 @@ const grupos = [
             <p class="livro-contas">
               <ValorDaProva chave={g.chave} item={p[g.chave]} lang={lang} />
             </p>
-            <p class="linha-nota">{g.v}</p>
+            {/* A NOTA DO GRUPO SAIU (direção, 21.08.2026, tarde). Eram as duas
+                frases de autorreferência que esta rota ainda contava: a casa a
+                dizer que conferiu campo a campo, e a explicar o seu próprio
+                selo. O nome do grupo é o estado, e a contagem por baixo dele diz
+                quantas linhas o têm. */}
 
             <div class="livro-lista">
               {g.linhas.map((c) => (
@@ -261,6 +264,28 @@ const grupos = [
             <p class="aparelho-nota">{s.livro.conjuntoEstado}</p>
           )
         }
+      </div>
+
+      {
+        /**
+         * A PORTA DO CSV DA CONVERGÊNCIA, VINDA DA PRIMEIRA PÁGINA (relocação
+         * R13, 21.08.2026).
+         *
+         * `RELOCACOES.md` dizia que o aparelho do Instrumento n.º 1 tinha saído
+         * da primeira página, e a construção ainda lá rendia a porta deste
+         * ficheiro (leitura cruzada do Codex, achado 7). A direção decidiu qual
+         * das duas coisas se corrige: a porta desce para aqui, ao pé do bloco do
+         * conjunto de dados, que é onde os ficheiros deste sítio vivem, e a
+         * declaração de rota de `scripts/check-dados.mjs` desce com ela, no mesmo
+         * commit. A ligação é a mesma cadeia da primeira página, sem uma palavra
+         * mudada; o que é novo é o rótulo, que nomeia de que ficheiro se trata.
+         */
+      }
+      <div class="aparelho-bloco">
+        <span class="linha-campo-k">{s.livro.convergenciaK}</span>
+        <p class="livro-conjunto-portas">
+          <a class="ligacao-dados" href={DADOS.convergencia} download>{s.home.dadosLink} ↓</a>
+        </p>
       </div>
 
       {/* «O QUE ESTE ÍNDICE NÃO DIZ» SAIU (Emenda 15). É a classe que a emenda

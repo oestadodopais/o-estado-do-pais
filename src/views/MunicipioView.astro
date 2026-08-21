@@ -246,7 +246,13 @@ const metodoPath = routePath('metodo', lang);
     <span class="eyebrow">{s.municipio.eyebrow}</span>
     <h1>{nome}</h1>
     <p class="municipio-sub">{m.distrito[lang] ?? m.distrito.pt} · {m.regiao[lang] ?? m.regiao.pt}</p>
-    <p class="lede">{s.municipio.ledeA}{nome}{s.municipio.ledeB}</p>
+    {/* A ABERTURA SAIU (direção, 21.08.2026, tarde; Emenda 15). Dizia «Esta
+        página mede o município de Évora e mostra de onde vem cada medida. Não
+        interpreta: onde uma fonte não estabelece uma coisa, a página di-lo em
+        vez de a supor.» — três orações sobre o método e as intenções do sítio,
+        que é a classe que a emenda tira das páginas do leitor. Saiu da primeira
+        página na etapa 2m; sai daqui agora, e a relocação R6 fecha a zero. O que
+        a página mede lê-se nas oito medidas. */}
   </div>
 
   <!-- ===================================================== CAMADA 1 — RELANCE -->
@@ -257,7 +263,14 @@ const metodoPath = routePath('metodo', lang);
           cabeçalhos saltava de h1 para h3. O nível passa a existir; o desenho
           é o mesmo, medido. */}
       <h2 class="eyebrow" id="relance-k">{s.municipio.relanceK}</h2>
-      <p class="sec-sub">{s.municipio.relanceSub}</p>
+      {/* AS CONTAGENS POR EXTENSO SAÍRAM (direção, 21.08.2026, tarde;
+          `DECISIONS.md` §4 item Q). Diziam «Oito medidas. Seis vêm de organismos
+          que publicam para todos os concelhos do país; duas só existem porque o
+          próprio município as publica, e cada uma dessas di-lo na sua linha.» —
+          contagens escritas à mão, que a `IDENTIDADE.md` §10 proíbe, e a casa a
+          explicar a sua própria cobertura, que a Emenda 15 proíbe. Cada medida
+          que só existe porque o município a publica continua a dizê-lo na sua
+          linha, que é onde essa ressalva é verdade. */}
     </div>
 
     {/* ---------------------------------------------------------------------
@@ -307,7 +320,11 @@ const metodoPath = routePath('metodo', lang);
       <!-- ============================================ CAMADA 2 — LEITURA BREVE -->
       <section class="linha-bloco" aria-labelledby="breve">
         <h2 class="linha-bloco-titulo" id="breve">{s.municipio.breveK}</h2>
-        <p class="linha-nota">{s.municipio.breveSub}</p>
+        {/* A SUB-LINHA DA LEITURA BREVE SAIU (Emenda 15; mesma decisão de
+            21.08.2026 que tirou a do Relance). Dizia «Uma frase por medida.
+            Todos os números são citações do livro-razão.» — a segunda metade é o
+            trabalho do selo, dito outra vez em prosa, e a primeira descreve a
+            forma da secção em vez de dizer o que ela mede. */}
         {
           m.leitura.map((frase) => (
             <p class="deep-v"><Frase partes={frase[lang]} lang={lang} selos={true} /></p>
@@ -503,7 +520,15 @@ const metodoPath = routePath('metodo', lang);
 
             {/* --------------------------------------------------- a banda */}
             <div class="mun-banda">
-              <p class="layer-tag">{s.municipio.tempoBandaK}</p>
+              {/* O NOME DA BANDA É AGORA «QUEM RESPONDE PELO QUÊ» (direção,
+                  21.08.2026, tarde). A frase vivia por baixo, na camada de
+                  fundo, a encabeçar dois parágrafos que declaravam o que o sítio
+                  atribui e o que se recusa a atribuir; os dois saíram com a
+                  Emenda 15 e a frase fica onde a decisão a manda ficar: como
+                  nome da secção, por cima da banda dos mandatos, que é a peça de
+                  que ela fala. «Mandatos, no tempo» continua a nomear o desenho
+                  para quem o ouve, no `aria-label` do próprio SVG. */}
+              <p class="layer-tag">{s.municipio.tempoAtribuicaoK}</p>
               <svg
                 class="mun-banda-svg"
                 viewBox={`0 0 ${BANDA.W} ${BANDA.H}`}
@@ -749,11 +774,19 @@ const metodoPath = routePath('metodo', lang);
                 </p>
                 <p class="deep-v">{s.municipio.tempoExcessoV}</p>
               </div>
-              <div class="deep-item">
-                <div class="deep-k">{s.municipio.tempoAtribuicaoK}</div>
-                <p class="deep-v">{s.municipio.tempoBreve}</p>
-                <p class="deep-v">{s.municipio.tempoAtribuicaoV}</p>
-              </div>
+              {/* A ENTRADA «QUEM RESPONDE PELO QUÊ» SAIU DA CAMADA DE FUNDO
+                  (direção, 21.08.2026, tarde; Emenda 15). Levava dois parágrafos
+                  e os dois eram a casa a falar de si: «Cinco administrações,
+                  contadas como foram instaladas e não como foram eleitas. As
+                  decisões vão atribuídas a quem as tomou…» e «Uma administração
+                  responde pelas decisões que tomou. Não responde por um índice:
+                  nada do que foi lido permite separar a parte de um executivo…
+                  Não há aqui nenhuma tabela classificativa de partidos, e não vai
+                  haver.» O que os dois prometiam está feito no desenho: as
+                  decisões levam nome e lista na banda, os índices não levam
+                  nenhum, e não há tabela nenhuma que os ordene. O nome subiu para
+                  cima da banda; um rótulo sem corpo não é um estado desenhado
+                  (IDENTIDADE.md §7), e por isso a entrada não fica vazia: sai. */}
             </div>
           </details>
         </div>
@@ -777,7 +810,11 @@ const metodoPath = routePath('metodo', lang);
       <!-- ================================================ os trabalhos do concelho -->
       <section class="linha-bloco" aria-labelledby="trabalhos">
         <h2 class="linha-bloco-titulo" id="trabalhos">{s.municipio.estudosK}</h2>
-        <p class="linha-nota">{s.municipio.estudosV}</p>
+        {/* A NOTA DOS TRABALHOS SAIU (Emenda 15). Dizia «Cada um tem a sua
+            página, com a medida que o faz valer a pena, a frase do que concluiu,
+            o método e o documento original quando está alojado aqui.» — o sítio a
+            descrever as suas próprias páginas antes de as dar. Cada cartão leva o
+            título do trabalho, a sua frase e a porta. */}
         <div class="mun-estudos">
           {
             estudos.map((e) => (

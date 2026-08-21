@@ -124,25 +124,21 @@ língua em que é rendida.*
 | conteudo | Complete provenance |
 | navegacao | Descarregar o livro-razão: CSV · JSON |
 | navegacao | Download the ledger: CSV · JSON |
-| autorreferencia | Every field filled in and checked against the source. The seal is a filled square. |
 | conteudo | Every claim published on this site, one row each: the value exactly as published, the source, the document, the address, the access date and the excerpt. |
 | conteudo | Every row, with every published field. |
-| autorreferencia | At least one provenance field is missing. The field is marked as such, and none has been filled in with a plausible value. The seal is a dashed square. |
-| autorreferencia | Falta pelo menos um campo de proveniência. O campo fica marcado, e nenhum foi preenchido com um valor plausível. O selo é um quadrado a tracejado. |
-| conteudo | Dashed square: at least one field is missing, and the row says so. |
-| conteudo | Filled square: the provenance is complete. |
 | conteudo | O livro-razão |
+| conteudo | one field unconfirmed |
+| conteudo | provenance complete |
+| conteudo | proveniência completa |
+| conteudo | um campo por confirmar |
 | conteudo | Os dois estados do selo |
 | conteudo | One row per published figure. Each row holds the value exactly as the source published it, who produced it, the document and edition, the address, the date we read it and a textual excerpt (and, when the figure is calculated by us, the sum spelled out and re-evaluated at every build). |
 | conteudo | Proveniência completa |
-| conteudo | Quadrado a tracejado: falta pelo menos um campo, e a linha di-lo. |
-| conteudo | Quadrado cheio: a proveniência está completa. |
 | conteudo | The ledger |
 | conteudo | The licence covers the dataset: its structure, the house values, the derivations and the descriptions. Excerpts transcribed from sources remain under their publishers’ terms. |
 | conteudo | The two states of the seal |
 | conteudo | Todas as afirmações publicadas neste sítio, uma linha cada: o valor tal como foi publicado, a fonte, o documento, o endereço, a data de acesso e o excerto. |
 | conteudo | Todas as linhas, com todos os campos publicados. |
-| autorreferencia | Todos os campos preenchidos e conferidos contra a fonte. O selo é um quadrado cheio. |
 | conteudo | Uma linha por número publicado. Cada linha guarda o valor tal como a fonte o publicou, quem o produziu, o documento e a edição, o endereço, a data em que o lemos e um excerto textual (e, quando o número é calculado por nós, a conta explicada e reavaliada a cada construção). |
 | conteudo | With fields to confirm |
 | conteudo | [a verificar] |
@@ -231,10 +227,145 @@ que ainda não têm»), que é a cobertura do próprio sítio. A frase da contag
 reescrita para levar as duas chaves da prova, e por isso deixou de escrever «Um»
 por extenso, que a `IDENTIDADE.md` §10 recusa.
 
+## `/municipios/evora` · `/en/municipalities/evora` (etapa 4, commit 4-0)
+
+*A rota entra com as decisões da direção de 21.08.2026, tarde: saíram a abertura
+(«Esta página mede o município de Évora… Não interpreta: …»), as contagens por
+extenso do Relance («Oito medidas. Seis vêm de organismos…»), os dois parágrafos
+por baixo de «Quem responde pelo quê» — que fica só como nome da secção, por cima
+da banda dos mandatos —, a sub-linha da Leitura breve, a nota dos trabalhos e a
+segunda frase da descrição do `<head>`.*
+
+***A contagem não fecha a zero, e fica escrita em vez de arredondada.*** *Três
+blocos distintos por edição continuam a ser a casa a falar de si, e os três vivem
+em `metodo`, `naoSabe` e nas notas de mandato de `src/data/municipios.mjs`, que
+são conteúdo editorial da etapa 3 e não estão entre os itens que a decisão de
+21.08 nomeou. Estão listados abaixo com a sua classe, e o pedido está em
+`ISSUES.md` (I52): são uma chamada de conteúdo, não de forma, e pedem a palavra de
+quem escreveu a página.*
+
+| classe | texto |
+| --- | --- |
+| conteudo | A diferença entre as duas contas da mesma dívida |
+| conteudo | A dívida contra o teto legal |
+| conteudo | A execução da receita e o prazo médio de pagamento são lidos da prestação de contas do próprio município: a sua linha no livro-razão nomeia esse documento e a página onde estão. As duas vozes de fora sobre estas contas são a opinião assinada do auditor e a série anual do regulador, e as duas estão nesta página. |
+| conteudo | A série anual do regulador ainda não chegou a este mandato. |
+| conteudo | A série anual do regulador usada nesta página começa depois deste mandato. |
+| conteudo | A última prestação de contas do município |
+| conteudo | Accounts of the year before last |
+| conteudo | Antes do primeiro ano de contas legível nesta janela. |
+| conteudo | As contagens de pelouros desta página são designações, não despesa. A correspondência entre as contas e os pelouros existe num dos trabalhos, é declarada por ele como sua e não como oficial, e esta página não a usa para atribuir dinheiro a ninguém. Esse trabalho fixa também a regra: descrição, nunca classificações. |
+| autorreferencia | As decisões desta página vão atribuídas a quem as tomou, com o rótulo da lista que ganhou. Os índices (população, emprego, poder de compra, e o próprio índice de dívida) não vão atribuídos a ninguém: nada do que foi lido fornece o contrafactual que recortaria a parte de um executivo neles. |
+| navegacao | Background |
+| conteudo | Before the first year of accounts readable in this window. |
+| conteudo | Borrowing margin |
+| conteudo | Contas do penúltimo ano |
+| conteudo | Corrected budget |
+| conteudo | Debt limit |
+| conteudo | Decided |
+| conteudo | Decidiu |
+| conteudo | Deixou |
+| conteudo | Despesa paga |
+| conteudo | Diferença |
+| conteudo | Difference |
+| conteudo | Dívida total |
+| conteudo | Economia, investidores e portas abertas no município de Évora. |
+| conteudo | Economy, investors and open doors in the municipality of Évora. |
+| conteudo | Em funções. |
+| conteudo | Executive installed |
+| conteudo | Executivo instalado |
+| conteudo | Expenditure paid |
+| conteudo | Fifteen years of municipal government in Évora, across five terms. |
+| conteudo | Fora do que foi lido. |
+| conteudo | Fora do que foi lido: as capturas que sustentam a repartição de pelouros começam no mandato seguinte. |
+| navegacao | Fundo |
+| conteudo | Herdou |
+| conteudo | How far the debt exceeded the legal limit, in the first and the last year in which the report publishes it as a positive figure. After that the table turns negative, and a negative there is no longer excess but borrowing capacity, so this page stops here. |
+| conteudo | In office. |
+| conteudo | Inherited |
+| conteudo | Left |
+| conteudo | Limite de dívida |
+| conteudo | Lugares |
+| conteudo | Margem de endividamento |
+| conteudo | Method and caveats |
+| conteudo | Método e ressalvas |
+| autorreferencia | Nenhuma decisão deste mandato atravessou para o livro-razão com valor próprio. Um campo em branco seria diferente disto: o que falta é a linha, não a decisão. |
+| conteudo | Nenhuma fonte publica um produto interno bruto para um concelho, e esta página não fabrica nenhum. O que existe é o registo empresarial: as contas das empresas sediadas no concelho, que creditam toda a atividade de uma empresa ao concelho da sua sede. Não é PIB municipal, e o trabalho sobre a economia escreve porquê nos seus limites: «não capta a administração pública, a maior parte da universidade e do hospital». |
+| autorreferencia | No decision from this term crossed into the ledger with a value of its own. A blank field would mean something else: what is missing is the row, not the decision. |
+| conteudo | No source publishes a gross domestic product for a concelho, and this page manufactures none. What does exist is the business register: the accounts of enterprises headquartered in the concelho, which credit a firm’s whole activity to its head-office concelho. It is not municipal GDP, and the work on the economy writes why in its own limits: «it misses public administration, most of the university and the hospital». |
+| conteudo | Not established. The work on the portfolios says this term «is one line of a map, not a map»: the president of that mandate, and every other member of it, were not identified. |
+| conteudo | Não estabelecido. O trabalho sobre os pelouros diz que este mandato «é uma linha de um mapa, não um mapa»: o presidente desse mandato, e todos os outros membros dele, não foram identificados. |
+| autorreferencia | Não existe contrafactual para nenhum índice. Nada do que foi lido permite separar a parte de um executivo neles. |
+| conteudo | Não existe medida de desempenho por pessoa. As contas públicas não são cortadas dessa maneira. |
+| conteudo | O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores. É a lei que o define, não este sítio. |
+| conteudo | O município publica |
+| conteudo | O que a dívida excedia o limite legal, no primeiro e no último ano em que o relatório o publica como um valor positivo. Depois disso o quadro passa a números negativos, que já não são excesso mas capacidade de endividamento, e por isso esta página para aqui. |
+| conteudo | O que as fontes publicam sobre o município de Évora: população, poder de compra, emprego, empresas, dívida e execução orçamental. |
+| conteudo | O que foi orçamentado, o que foi pago e o que ficou em dívida no município de Évora. |
+| conteudo | O que o município orçamentou, o que cobrou, o que pagou, e o que dizia dever no fim do ano. São números do próprio município sobre si mesmo: a prestação de contas é dele. |
+| conteudo | O regulador |
+| conteudo | O regulador e o município publicam a dívida do mesmo ano com uma diferença. A diferença é pequena, e mostra-se porque é o único sítio onde uma voz de fora e a voz do próprio medem a mesma coisa. |
+| conteudo | O regulador publica |
+| conteudo | O traço fino é a dívida total que o regulador publica para o concelho; a barra é a distância até ao limite legal do mesmo ano, que é o fio da direita. O índice mede uma contra o outro numa escala em que o teto é o valor permitido. |
+| conteudo | On the recovery plan: the work reads the state auditor’s catalogue, not its audits; the contracts window is an upper bound on a truncated period; and no European Union figure exists for a municipality. |
+| conteudo | On this municipality’s accounts there are two voices that are not its own: the independent auditor’s signed opinion, and the regulator’s annual series, which publishes per municipality and per year the same legal debt concept the report uses, compiled from outside. Both are on this page. |
+| conteudo | Orçamento corrigido |
+| conteudo | Os totais do plano de recuperação que aparecem na leitura desse trabalho são somas sobre o registo público, atribuídas ao concelho por esse registo. Do dinheiro contratado no concelho, a universidade tem mais do que o município, e a camada que administra o dinheiro é feita de organismos nacionais. Que daí resulte que o endereço da responsabilização não são os paços do concelho é a conclusão assinada desse trabalho, e está na página dele. |
+| conteudo | Os trabalhos sobre este concelho |
+| conteudo | Outside what was read. |
+| conteudo | Outside what was read: the captures behind the portfolio split begin with the next term. |
+| conteudo | Pelouros |
+| conteudo | Portfolios |
+| conteudo | Provenance |
+| conteudo | Proveniência |
+| conteudo | Quem administrou, e o que as contas registaram |
+| conteudo | Quem responde pelo quê |
+| conteudo | Quinze anos de governo municipal em Évora, ao longo de cinco mandatos. |
+| conteudo | Receita cobrada |
+| conteudo | Revenue collected |
+| conteudo | Revenue execution and the average payment time are read from the municipality’s own accounts: their ledger rows name that document and the page they sit on. The two outside voices on these accounts are the auditor’s signed opinion and the regulator’s annual series, and both are on this page. |
+| conteudo | Seats |
+| conteudo | Sobre as contas deste município existem duas vozes que não são a dele: a opinião assinada do auditor independente, e a série anual do regulador, que publica por município e por ano o mesmo conceito legal de dívida que o relatório usa, compilado do lado de fora. As duas estão nesta página. |
+| conteudo | Sobre o plano de recuperação: o trabalho lê o catálogo do tribunal de contas, não as suas auditorias; a janela de contratos é um limite superior sobre um período truncado; e não existe um valor da União Europeia para um município. |
+| conteudo | The debt against the legal ceiling |
+| autorreferencia | The decisions on this page are attributed to whoever took them, with the label of the list that won. The indices (population, employment, purchasing power, and the debt index itself) are attributed to nobody: nothing that was read provides the counterfactual that would carve out an executive’s share of them. |
+| conteudo | The gap between the two accounts of the same debt |
+| conteudo | The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue. The law defines it, not this site. |
+| conteudo | The municipality publishes |
+| conteudo | The municipality’s latest accounts |
+| conteudo | The portfolio counts on this page are designations, not spending. The mapping between the accounts and the portfolios exists in one of the works, is declared by it as its own and not as official, and this page does not use it to attribute money to anyone. That work also sets the rule: description, never scores. |
+| conteudo | The recovery-plan totals that appear in that work’s reading are sums over the public register, attributed to the concelho by that register. Of the money contracted in the concelho, the university holds more than the municipality, and the layer that administers the money is made of national bodies. That this makes the accountability address something other than the town hall is that work’s own signed conclusion, and it sits on its page. |
+| conteudo | The regulator |
+| conteudo | The regulator and the municipality publish the same year’s debt with a difference between them. The difference is small, and it is shown because it is the only place where an outside voice and the municipality’s own voice measure the same thing. |
+| conteudo | The regulator publishes |
+| conteudo | The regulator’s annual series has not yet reached this term. |
+| conteudo | The regulator’s annual series used on this page begins after this term. |
+| conteudo | The thin line is the total debt the regulator publishes for the concelho; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. |
+| conteudo | The works about this concelho |
+| autorreferencia | There is no counterfactual for any index. Nothing that was read allows an executive’s share of them to be separated out. |
+| conteudo | There is no per-person performance measure. Public accounts are not cut that way. |
+| conteudo | Total debt |
+| conteudo | What the municipality budgeted, what it collected, what it paid, and what it said it owed at year end. These are the municipality’s own figures about itself: the accounts are its own. |
+| conteudo | What the sources publish about the municipality of Évora: population, purchasing power, employment, enterprises, debt and budget execution. |
+| conteudo | What was budgeted, what was paid and what was left owing in the municipality of Évora. |
+| conteudo | Who answers for what |
+| conteudo | Who governed, and what the accounts recorded |
+| conteudo | Who held each portfolio of the Câmara Municipal de Évora across five terms, how much the municipality’s own accounts spent in the areas those portfolios cover, and what the reports say those areas did. |
+| conteudo | district of Évora · Alentejo Central |
+| conteudo | distrito de Évora · Alentejo Central |
+
 ## O que saiu, e para onde
 
 | frase retirada | classe | onde vive agora |
 | --- | --- | --- |
+| «Todos os campos preenchidos e conferidos contra a fonte. O selo é um quadrado cheio.» e «Falta pelo menos um campo de proveniência… O selo é um quadrado a tracejado.» (`livro.grupoCompletasV`, `livro.grupoPorConfirmarV`) | autorreferência | retiradas: o nome do grupo é o estado, e a contagem por baixo dele diz quantas linhas o têm (direção, 21.08.2026, tarde) |
+| «Quadrado cheio: a proveniência está completa.» e «Quadrado a tracejado: falta pelo menos um campo, e a linha di-lo.» (a legenda do selo, `/livro-razao`) | conteúdo | encolheram para os nomes dos dois estados, «proveniência completa» e «um campo por confirmar», ao lado dos quadrados que já estavam desenhados |
+| «Oito medidas. Seis vêm de organismos que publicam para todos os concelhos do país; duas só existem porque o próprio município as publica…» (`municipio.relanceSub`) | autorreferência | retirada: contagens por extenso (IDENTIDADE.md §10) e cobertura explicada; cada medida do próprio município di-lo na sua linha |
+| «Uma frase por medida. Todos os números são citações do livro-razão.» (`municipio.breveSub`) | autorreferência | retirada: a segunda metade é o trabalho do selo |
+| «Cinco administrações, contadas como foram instaladas e não como foram eleitas…» e «Uma administração responde pelas decisões que tomou. Não responde por um índice… Não há aqui nenhuma tabela classificativa de partidos, e não vai haver.» (`municipio.tempoBreve`, `municipio.tempoAtribuicaoV`) | autorreferência | retiradas; «Quem responde pelo quê» fica como nome da secção, por cima da banda dos mandatos |
+| «Cada um tem a sua página, com a medida que o faz valer a pena, a frase do que concluiu, o método e o documento original quando está alojado aqui.» (`municipio.estudosV`) | autorreferência | retirada: cada cartão leva o título do trabalho, a sua frase e a porta |
+| «Cada valor tem linha no livro-razão, com fonte, documento e data de acesso.» (segunda frase da descrição do `<head>` de um concelho) | autorreferência | o Método e o recibo de cada linha; a descrição passa a nomear o que a página tem |
+| «Mapa de pontos dos municípios de Portugal. **Use as setas para percorrer os municípios.**» (`inicio.mapa.svgLabel`) | autorreferência | a instrução fica só em `tecladoHint`, dentro de `#mapa-descricao`, que só se constrói onde o script que a torna verdadeira está carregado |
 | «1 de 308 concelhos · tem página» (ficha do mapa, cartão localizador, pesquisa, porta dos Municípios) | autorreferência | `/municipios`, que é a página que a conta |
 | «Os pontos são todos iguais e marcam a posição de cada concelho na Carta Administrativa, e mais nada: não marcam cobertura, qualidade nem importância.» | autorreferência | retirada: diz o que não afirmamos |
 | «Contagem verificada nos ficheiros» e o quadro das três parcelas | autorreferência | a contagem por parcelas vive em `/municipios` (pedido para a etapa 3) |

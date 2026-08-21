@@ -225,7 +225,16 @@ const blocosDaPorta = new Set();
  */
 const CLASSES = ['conteudo', 'navegacao', 'autorreferencia'];
 const MEDIDA_DECLARADA = '[data-medida-nome],[data-medida-unidade]';
-const ROTAS_DO_INVENTARIO = new Set(['home', 'livro', 'municipios']);
+const ROTAS_DO_INVENTARIO = new Set([
+  'home',
+  'livro',
+  'municipios',
+  /* Évora entra no commit 4-0: a decisão da direção de 21.08.2026 tirou-lhe a
+     abertura, as contagens por extenso e o parágrafo de atribuição, e uma rota
+     medida é a única maneira de isso não voltar. `municipio` é a rota de um
+     concelho com página, e hoje há uma. */
+  'municipio',
+]);
 
 /**
  * O ESTADO DE COBERTURA É VOCABULÁRIO DECLARADO, E NÃO PROSA DA CASA (etapa 3c).
