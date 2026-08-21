@@ -874,11 +874,29 @@ svg [hidden] {
 .peca-abrir::-webkit-details-marker {
   display: none;
 }
+/* O MESMO SINAL DE DOBRA DE TODA A CASA (ISSUES I54, commit 5-0).
+
+   Desenhava `▸` fechado e `▴` aberto — dois glifos do tipo, e um deles a
+   apontar para cima, que é uma terceira direcção num sítio onde a dobra já
+   rodava. Passa a ser, carácter a carácter, a declaração do `.aparelho` aqui em
+   baixo e do `.deep` de `site.css`: triângulo de bordos, rotação de 90° ao
+   abrir. `display: inline-block` porque aqui o pseudo-elemento é conteúdo de um
+   `<span>` e não filho de uma caixa flexível — sem ele os bordos de cima e de
+   baixo de uma caixa em linha não desenham triângulo nenhum. */
 .peca-seta::before {
-  content: '\25B8';
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  border-left: 5px solid currentColor;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: transform 0.16s ease;
+  transform-origin: 30% 50%;
 }
 .peca-mais[open] .peca-seta::before {
-  content: '\25B4';
+  transform: rotate(90deg);
 }
 .peca-abrir-f,
 .peca-mais[open] .peca-abrir-a {
@@ -1411,12 +1429,23 @@ a.porta:hover .porta-abrir {
   .conv-porta-sum::-webkit-details-marker {
     display: none;
   }
+  /* O mesmo sinal de dobra da casa (I54, commit 5-0): era `▸`/`▾` do tipo, e
+     passa a ser o triângulo de bordos que roda, como o da peça e o do
+     `.aparelho`. */
   .conv-porta-seta::before {
-    content: '▸';
-    font-size: 11px;
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 0;
+    border-left: 5px solid currentColor;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    transition: transform 0.16s ease;
+    transform-origin: 30% 50%;
   }
   .conv-porta[open] .conv-porta-seta::before {
-    content: '▾';
+    transform: rotate(90deg);
   }
   .conv-porta-nome {
     flex: 1;
