@@ -1302,19 +1302,26 @@ a.porta:hover .porta-abrir {
     position: relative;
     align-items: start;
   }
-  .mapa {
+  /* A COLOCAÇÃO NA GRELHA É DA PRIMEIRA PÁGINA, E DIZ-SE (etapa 2m).
+     Estas quatro regras dissolvem a `<figure>` do mapa para que a tela, a
+     legenda e o cartão sejam itens da grelha de `.cabeca-inst`. Fora dessa
+     grelha não querem dizer nada — e pior: na página do concelho, que passou a
+     render o cartão (ISSUES I45), `grid-row: 2` empurrava-o para debaixo do
+     título do aparelho, com o título a parecer a legenda do cartão. Ficam
+     presas a `[data-inicio]`, que é a raiz da primeira página. */
+  [data-inicio] .mapa {
     display: contents;
   }
-  .mapa-tela {
+  [data-inicio] .mapa-tela {
     grid-column: 1;
     grid-row: 1;
   }
-  .mapa-linha,
-  .mapa-cartao {
+  [data-inicio] .mapa-linha,
+  [data-inicio] .mapa-cartao {
     grid-column: 1 / -1;
     grid-row: 2;
   }
-  .mapa-rodape {
+  [data-inicio] .mapa-rodape {
     grid-column: 1 / -1;
     grid-row: 3;
   }
@@ -1363,10 +1370,12 @@ a.porta:hover .porta-abrir {
      desenhava-se por cima das duas linhas de destino, porque a coluna do selo
      tem 84px e ele estava fora do cartão. */
   [data-postura='localizador'] .mapa-cartao {
-    grid-row: 2;
     grid-template-columns: 84px minmax(0, 1fr);
     column-gap: 12px;
     padding: 12px 14px;
+  }
+  [data-inicio] [data-postura='localizador'] .mapa-cartao {
+    grid-row: 2;
   }
   [data-postura='localizador'] .mapa-tela {
     width: 84px;

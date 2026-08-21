@@ -18,7 +18,33 @@ import { chromium } from 'playwright';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = path.join(RAIZ, 'dist');
-const DESTINO = process.argv[2] ?? path.join(RAIZ, 'design', 'especime-v3', 'capturas', 'etapa-2');
+const argv = process.argv.slice(2);
+
+/* ---------------------------------------------------------------------------
+ * O SEGUNDO MODO: AS ROTAS DA ETAPA 3 (etapa 2m)
+ * ---------------------------------------------------------------------------
+ * A etapa 3 parou no limite de fichas com a nota escrita e as réguas corridas,
+ * e o que lhe faltou foi a fotografia (a sua subetapa 3e). O brief da 2m manda
+ * tirá-la aqui. Não é a primeira página, e por isso não são estados: são ROTAS,
+ * sem gesto nenhum pelo meio, a 1280 e a 390, nas duas edições e no tema claro.
+ *
+ *   node tests/inicio/capturas.mjs                as nove estados da primeira página
+ *   node tests/inicio/capturas.mjs --etapa-3      as seis rotas da etapa 3
+ *   node tests/inicio/capturas.mjs <dir>          as da primeira página, noutro sítio
+ */
+const ETAPA_3 = argv.includes('--etapa-3');
+const ROTAS_DA_ETAPA_3 = [
+  { nome: 'livro-razao-indice', pt: '/livro-razao', en: '/en/ledger' },
+  { nome: 'linha-divida-publica', pt: '/livro-razao/divida-publica-2025', en: '/en/ledger/divida-publica-2025' },
+  { nome: 'linha-evora-indice-de-divida', pt: '/livro-razao/evora-indice-de-divida-2024', en: '/en/ledger/evora-indice-de-divida-2024' },
+  { nome: 'linha-avisos-pt2030', pt: '/livro-razao/avisos-pt2030-abertos', en: '/en/ledger/avisos-pt2030-abertos' },
+  { nome: 'municipios-indice', pt: '/municipios', en: '/en/municipalities' },
+  { nome: 'municipios-evora', pt: '/municipios/evora', en: '/en/municipalities/evora' },
+];
+
+const DESTINO = ETAPA_3
+  ? path.join(RAIZ, 'design', 'especime-v3', 'capturas', 'etapa-3')
+  : (argv.find((a) => !a.startsWith('--')) ?? path.join(RAIZ, 'design', 'especime-v3', 'capturas', 'etapa-2'));
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -51,28 +77,67 @@ const servidor = http.createServer((req, res) => {
 await new Promise((r) => servidor.listen(0, '127.0.0.1', r));
 const base = `http://127.0.0.1:${servidor.address().port}`;
 
-/* Os nove estados. A vista de escolha não tem endereço próprio — é um modo, e
-   entra por um toque no comando «Município». */
+/* Os nove estados. A VISTA DE ESCOLHA JÁ TEM ENDEREÇO (etapa 2m, ISSUES I42):
+   era um modo que só se abria por um toque no comando «Município», e passa a ser
+   `?ambito=municipio`. A captura entra por lá, como as outras, e o gesto deixa
+   de ser preciso — o que sobra do toque é o estado da proximidade, que continua
+   a ser um gesto e por isso continua a ter o seu. */
 const ESTADOS = [
-  { nome: 'pais-relance', q: '' },
+  /* O País nas quatro larguras do brief da 2m: é o mapa que muda com elas. */
+  { nome: 'pais-relance', q: '', larguras: [1440, 1280, 1024, 390] },
   { nome: 'pais-leitura', q: '?densidade=leitura' },
   { nome: 'regiao-alentejo', q: '?ambito=regiao:alentejo' },
   { nome: 'evora-relance', q: '?ambito=municipio:evora' },
   { nome: 'evora-leitura', q: '?ambito=municipio:evora&densidade=leitura' },
   { nome: 'beja-vazio', q: '?ambito=municipio:beja' },
-  { nome: 'escolha', q: '', clicar: '[data-modo="municipio"]' },
+  /* A vista de escolha a 1024 e a 1440 além das duas de sempre: é a largura que
+     manda no mapa desta vista (etapa 2m), e uma captura só a 1280 não mostrava
+     nem o mínimo nem o máximo do que ele faz. */
+  { nome: 'escolha', q: '?ambito=municipio', larguras: [1440, 1280, 1024, 390] },
   /* A vista de escolha DEPOIS do gesto da Emenda 3 (subetapa 2h): um toque no
      selo abre a vista, um segundo toque, num sítio concreto do mapa, troca os
      botões pelos concelhos mais próximos desse sítio. Só existe no telemóvel,
      porque só lá o selo é o alvo — a 1280 os pontos são alvos e o gesto é
      outro —, e por isso este estado declara a sua largura. */
-  { nome: 'escolha-proxima', q: '', clicar: '[data-modo="municipio"]', tocarNoSelo: true, larguras: [390] },
+  { nome: 'escolha-proxima', q: '?ambito=municipio', tocarNoSelo: true, larguras: [390] },
   { nome: 'pais-sem-js', q: '', js: false },
 ];
 
 fs.mkdirSync(DESTINO, { recursive: true });
 const navegador = await chromium.launch({ headless: true });
 let feitas = 0;
+
+if (ETAPA_3) {
+  for (const rota of ROTAS_DA_ETAPA_3) {
+    for (const largura of [1280, 390]) {
+      for (const edicao of ['pt', 'en']) {
+        const contexto = await navegador.newContext({ viewport: { width: largura, height: 900 } });
+        /* Claro, e por escolha guardada como em toda a parte: é o defeito da
+           Emenda 12 e o brief pede só o claro para estas seis. */
+        await contexto.addInitScript(() => {
+          try {
+            localStorage.setItem('tema', 'light');
+          } catch (e) {
+            /* sem armazenamento a página sai clara à mesma */
+          }
+        });
+        const p = await contexto.newPage();
+        await p.goto(base + rota[edicao], { waitUntil: 'networkidle' });
+        await p.evaluate(() => document.fonts.ready);
+        await p.screenshot({
+          path: path.join(DESTINO, `${rota.nome}-${largura}-${edicao}-claro.png`),
+          fullPage: true,
+        });
+        feitas++;
+        await contexto.close();
+      }
+    }
+  }
+  await navegador.close();
+  servidor.close();
+  console.log(`\n  ${feitas} capturas em ${path.relative(RAIZ, DESTINO)}\n`);
+  process.exit(0);
+}
 
 for (const estado of ESTADOS) {
   for (const largura of estado.larguras ?? [1280, 390]) {

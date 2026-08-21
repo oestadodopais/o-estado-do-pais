@@ -20,6 +20,8 @@
 import { MUNICIPIOS, DISTRITOS } from '../data/caop-centroids.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
 import { REGIOES } from '../data/regioes.mjs';
+import { getClaim, parsePtNumber, eDerivada } from './ledger.mjs';
+import { estadoDaRegua } from './estado.mjs';
 
 /**
  * O nome de um concelho, sem acentos e em caixa baixa.
@@ -130,6 +132,63 @@ export function concelhos() {
     c.alvo = Number.isFinite(d2) ? Math.sqrt(d2) / 2 : 0;
   }
   return base;
+}
+
+/**
+ * ===========================================================================
+ * AS PEÇAS DE UM CONCELHO, NUMA CONTA SÓ (ISSUES I44, etapa 2m)
+ * ===========================================================================
+ *
+ * A mesma conta estava escrita duas vezes — em `HomeView.astro` e em
+ * `MunicipioView.astro` —, e as duas cópias faziam o mesmo mapeamento dos oito
+ * registos de `municipios.mjs` para as propriedades da peça: ler a linha,
+ * `eDerivada()` para decidir se a nota se rende, e, só para o índice de dívida,
+ * `estadoDaRegua()` contra o tecto legal com `colore: true`. Duas cópias que
+ * podiam divergir no dia em que uma mudasse, e o pedido da etapa 3 é este.
+ *
+ * A CONTA GENERALIZA-SE AO PASSAR PARA AQUI, e é uma correcção e não um efeito
+ * secundário: a cópia da primeira página comparava o `claim` com a cadeia
+ * `'evora-indice-de-divida-2024'`, escrita à mão. A regra não é sobre Évora — é
+ * sobre a medida que o concelho declara em `distancia.indice`, com o tecto que
+ * ele declara em `distancia.tecto`. Para Évora dá exactamente o mesmo; para o
+ * segundo concelho a ganhar página, dá o certo em vez do de Évora.
+ *
+ * A ÚNICA COR É A DO TECTO LEGAL (Emenda 1): o limite de endividamento é um
+ * limiar publicado por lei, e por isso a peça do índice colore; tudo o resto do
+ * concelho fica a tinta.
+ *
+ * @param {object} municipio  o registo de `municipios.mjs`
+ */
+export function pecasDoConcelho(municipio) {
+  const alvo = municipio.distancia;
+  return municipio.relance
+    .filter((medida) => medida.claim)
+    .map((medida) => {
+      const linha = getClaim(medida.claim);
+      /* A NOTA DE UMA MEDIDA CALCULADA LÊ-SE DA LINHA (Emenda 15, commit 3-0), e
+         nunca de uma lista escrita à mão: amanhã uma medida deixa de ser
+         calculada e a nota volta sozinha. Quem decide o que fazer com esta
+         resposta é a vista — a primeira página não rende a nota de uma medida
+         derivada, a página do concelho também não. */
+      const derivada = eDerivada(linha);
+      if (medida.claim !== alvo.indice) {
+        return { ...medida, linha, derivada, estado: 'sem', colore: false, regua: null };
+      }
+      const tecto = getClaim(alvo.tecto);
+      const r = estadoDaRegua(linha, { valor: tecto.value, lado: 'superior', colore: true });
+      return {
+        ...medida,
+        linha,
+        derivada,
+        estado: r.estado ?? 'sem',
+        colore: r.colore,
+        regua: {
+          valor: parsePtNumber(linha.value),
+          referencia: parsePtNumber(tecto.value),
+          rotulo: 'tecto',
+        },
+      };
+    });
 }
 
 /**
