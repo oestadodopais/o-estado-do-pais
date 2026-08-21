@@ -34,6 +34,33 @@ Estados: **autorizada** (escrita aqui antes da etapa), **feita** (a etapa confir
 
 ## Texto novo (sem rota de origem; entra pelas cadeias, PT e EN no mesmo commit; revisão de voz antes da fusão)
 
+### Etapa 3, subetapa 3b · duas cadeias novas, quatro retiradas
+
+*Nenhuma relocação. As duas novas nomeiam o que as contagens deste índice contam; as quatro retiradas saem pela Emenda 15, que é regra da direção e não chamada de quem constrói.*
+
+**Cadeias novas** (duas, nas duas edições):
+
+| chave | pt | en | onde |
+|---|---|---|---|
+| `livro.contaAfirmacoes` | afirmações | claims | ao lado da chave da prova `afirmacoes`, na cabeça do índice |
+| `livro.contaDerivadas` | calculadas | calculated | ao lado da chave da prova `derivadas`, na mesma linha |
+
+**Cadeias retiradas** (quatro chaves, nas duas edições, no mesmo commit):
+
+| chave | o que dizia | para onde foi |
+|---|---|---|
+| `livro.lede2` | «O selo de proveniência junto a cada número é a porta para a sua linha. É este o índice dessas portas.» | o selo, que é a porta. É o sítio a explicar ao leitor o que o seu próprio selo faz (Emenda 15) |
+| `livro.marcadorV` | «É o único marcador de incerteza deste sítio. Aparece onde um campo não foi confirmado contra a fonte…» | `/a-verificar`, que é a página do marcador. A marca e a porta ficam no índice, e o rótulo «O marcador» também |
+| `livro.naoDizK`, `livro.naoDizV` | «O que este índice não diz» · «Só estão aqui os números que este sítio publica…» | retiradas: é a classe que a Emenda 15 nomeia por extenso, «nunca o que não afirmamos» |
+
+**As duas legendas dos grupos ficam, e o conflito está escrito.** «Todos os campos
+preenchidos e conferidos contra a fonte…» e «Falta pelo menos um campo de
+proveniência…» são as duas cadeias que a `DECISIONS.md` §4 item AB manda preservar
+palavra por palavra até à fase da voz, e cada uma tem uma metade que é a casa a
+falar da sua verificação. A régua classifica-as em autorreferência, e a contagem
+de `/livro-razao` fica em **2 por edição** em vez de 0. Ver `INVENTARIO-FRASES.md`,
+«As quatro que ficam em autorreferência, e porquê».
+
 ### Etapa 3, subetapa 3a · três cadeias novas, nenhuma retirada
 
 *Nenhuma relocação: as três cadeias não têm rota de origem, e por isso são texto novo, com o seu inglês no mesmo commit e a revisão de voz pela frente.*

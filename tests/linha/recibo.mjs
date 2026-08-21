@@ -342,6 +342,144 @@ console.log('');
   );
 }
 
+/* ===========================================================================
+ * O ÍNDICE DO LIVRO-RAZÃO (subetapa 3b)
+ * ======================================================================== */
+
+const INDICE = '/livro-razao';
+
+/* 8 · A LINHA-ESPÉCIME: os mesmos campos, sempre pela mesma ordem, e um selo
+   por linha, para a sua própria linha. */
+{
+  const p = await pagina();
+  await p.goto(base + INDICE, { waitUntil: 'networkidle' });
+  const m = await p.evaluate(() => {
+    const itens = [...document.querySelectorAll('.livro-item')];
+    const forma = (el) => {
+      const id = el.querySelector('.livro-item-id')?.getAttribute('data-linha-claim');
+      const campos = [...el.querySelectorAll('[data-linha-campo]')].map((e) =>
+        e.getAttribute('data-linha-campo'),
+      );
+      const selos = [...el.querySelectorAll('.src-chip')].map((a) => a.getAttribute('href'));
+      return { id, campos: campos.join(','), selos };
+    };
+    const formas = itens.map(forma);
+    return {
+      n: itens.length,
+      /* Cada linha leva exactamente um selo, e é o da sua própria linha. */
+      seloProprio: formas.filter((f) => f.selos.length === 1 && f.selos[0] === `/livro-razao/${f.id}`)
+        .length,
+      /* As ordens de campos que existem: um campo que a linha não tem não se
+         rende, por isso há mais do que uma, e todas têm de ser um PREFIXO da
+         ordem completa. */
+      ordens: [...new Set(formas.map((f) => f.campos))].sort(),
+      comEstado: itens.filter((e) => e.getAttribute('data-estado')).length,
+    };
+  });
+  const COMPLETA_ORDEM = 'id,unit,source,access_date';
+  const prefixos = m.ordens.every((o) => COMPLETA_ORDEM.startsWith(o));
+  conta(
+    '3b · a linha-espécime: os mesmos campos pela mesma ordem, um selo por linha',
+    m.n === 132 && m.seloProprio === 132 && m.comEstado === 132 && prefixos,
+    `${m.n} linhas · ${m.seloProprio} com o selo da própria linha · ${m.comEstado} com data-estado · ` +
+      `ordens: ${m.ordens.map((o) => `«${o}»`).join(' | ')}`,
+  );
+  await p.__contexto.close();
+}
+
+/* 9 · SEM COR: o livro-razão não tem limiares. */
+{
+  const p = await pagina();
+  await p.goto(base + INDICE, { waitUntil: 'networkidle' });
+  const m = await p.evaluate(() => {
+    const raiz = getComputedStyle(document.documentElement);
+    const fichas = ['--amber', '--ochre', '--cobalt'].map((k) => raiz.getPropertyValue(k).trim());
+    /* De «#e0a21a» para «rgb(224, 162, 26)», que é o que o motor devolve. */
+    const rgb = (hex) => {
+      const h = hex.replace('#', '');
+      const n = parseInt(h.length === 3 ? h.split('').map((c) => c + c).join('') : h, 16);
+      return `rgb(${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255})`;
+    };
+    const proibidas = new Set(fichas.map(rgb));
+    const achados = [];
+    for (const el of document.querySelectorAll('body *')) {
+      const c = getComputedStyle(el);
+      for (const prop of ['color', 'backgroundColor', 'borderTopColor', 'fill', 'stroke']) {
+        const v = c[prop];
+        if (proibidas.has(v)) achados.push(`${el.tagName.toLowerCase()}.${el.className} ${prop}=${v}`);
+      }
+    }
+    return { proibidas: [...proibidas], achados: [...new Set(achados)] };
+  });
+  conta(
+    '3b · sem cor: o livro-razão não tem limiares',
+    m.achados.length === 0,
+    `fichas proibidas ${m.proibidas.join(' · ')} · ocorrências ${m.achados.length}` +
+      (m.achados.length ? `: ${m.achados.slice(0, 4).join(' | ')}` : ''),
+  );
+  await p.__contexto.close();
+}
+
+/* 10 · A LEGENDA COM OS DOIS ESTADOS LADO A LADO, E AS PORTAS DO CONJUNTO. */
+{
+  const p = await pagina();
+  await p.goto(base + INDICE, { waitUntil: 'networkidle' });
+  const m = await p.evaluate(() => {
+    const amostras = [...document.querySelectorAll('.aparelho .src-chip-amostra')];
+    const portas = [...document.querySelectorAll('.aparelho a[href]')].map((a) =>
+      a.getAttribute('href'),
+    );
+    /* Só as do CORPO desta página: a mobília do cabeçalho leva as suas, e não
+       são deste índice. */
+    const provas = [...document.querySelectorAll('main [data-prova], .linha [data-prova], .linha-cabeca [data-prova]')].map((e) => [
+      e.getAttribute('data-prova'),
+      e.textContent.trim(),
+      e.getAttribute('href'),
+    ]);
+    return {
+      cheio: amostras.filter((e) => !e.classList.contains('is-unverified')).length,
+      tracejado: amostras.filter((e) => e.classList.contains('is-unverified')).length,
+      csv: portas.includes('/livro-razao.csv'),
+      json: portas.includes('/livro-razao.json'),
+      licenca: portas.some((h) => h.startsWith('https://creativecommons.org/licenses/by/4.0')),
+      provas,
+    };
+  });
+  conta(
+    '3b · os dois estados do selo lado a lado, o conjunto com a sua licença, e as contagens com porta',
+    m.cheio === 1 && m.tracejado === 1 && m.csv && m.json && m.licenca &&
+      m.provas.length === 4 && m.provas.every(([, , href]) => href),
+    `amostras cheio ${m.cheio} · tracejado ${m.tracejado} · CSV ${m.csv} · JSON ${m.json} · ` +
+      `licença ${m.licenca} · contagens ${m.provas.map(([k, v]) => `${k}=${v}`).join(' · ')}`,
+  );
+  await p.__contexto.close();
+}
+
+/* 11 · O TRANSBORDO DO ÍNDICE, cinco larguras, duas edições. */
+{
+  const linhas = [];
+  let mau = 0;
+  for (const largura of [320, 390, 768, 1024, 1280]) {
+    const p = await pagina(largura);
+    for (const rota of [INDICE, '/en/ledger']) {
+      await p.goto(base + rota, { waitUntil: 'networkidle' });
+      const t = await p.evaluate(
+        () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      );
+      if (t !== 0) {
+        mau += 1;
+        linhas.push(`${rota} @${largura}: ${t}px`);
+      }
+    }
+    await p.__contexto.close();
+  }
+  conta(
+    '3b · transbordo 0 no índice, 2 edições × 5 larguras',
+    mau === 0,
+    mau === 0 ? '10 de 10 combinações a zero' : linhas.join(' · '),
+  );
+}
+
 await nav.close();
 servidor.close();
 

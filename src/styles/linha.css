@@ -240,3 +240,77 @@
     padding-bottom: 8px;
   }
 }
+
+/* =============================================================================
+ * O ÍNDICE DO LIVRO-RAZÃO · a linha-espécime
+ * =============================================================================
+ * A mesma folha, porque é a mesma família de páginas e o mesmo vocabulário: os
+ * rótulos em versaletes, os fios de `--g3`, Bitter no que é transcrito. O que
+ * segue é só o que a linha do índice acrescenta.
+ *
+ * A LINHA É UM ESPÉCIME: os mesmos campos, sempre na mesma posição, e só o valor
+ * muda. Duas pistas — o valor com o seu selo à esquerda, o resto à direita — e,
+ * dentro da segunda, o id numa linha e os campos noutra. Um campo que a linha
+ * não tem não deixa buraco: a posição é da pista, não do campo.
+ * ========================================================================== */
+
+/* A pista do valor cresce para caber o valor E o selo, que agora vivem juntos:
+   antes era o valor sozinho em 9ch, e um selo ao lado partia para a linha
+   seguinte em cada entrada. */
+.livro-item {
+  grid-template-columns: minmax(0, 22ch) minmax(0, 1fr);
+}
+.livro-item-valor {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 8px;
+}
+/* Os campos da linha: unidade, fonte, lido a. Vão na letra do instrumento,
+   pequenos, com o rótulo em cinzento e o valor em tinta, e quebram por campo e
+   nunca a meio de um. */
+.livro-item-meta {
+  min-width: 0;
+  gap: 2px 16px;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+/* O CAMPO QUEBRA DENTRO DE SI, e não empurra a página. Um `inline-flex` cujo
+   filho não parta tem a largura da cadeia mais longa: «Secretaria-Geral do
+   Ministério da Administração Interna» dava 13px de transbordo a 320 na edição
+   portuguesa e 21px na inglesa, contra 0 na construção de referência. O rótulo e
+   o valor continuam no mesmo grupo; o que muda é que o grupo pode partir em duas
+   linhas, e o valor pode partir dentro de si. */
+.livro-item-campo {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 5px;
+  min-width: 0;
+}
+.livro-item-campo .campo-valor,
+.livro-item-campo .campo-por-verificar {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.livro-item-k {
+  font-family: var(--f-versal);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  color: var(--muted);
+}
+
+/* As contagens deste índice: números do próprio sítio, com a sua porta. Vão numa
+   linha só, fora da prosa, para que a régua das frases da casa continue a ver a
+   prosa como prosa e a contagem como o que ela é. */
+.livro-contas {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
