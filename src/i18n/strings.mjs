@@ -1023,27 +1023,33 @@ export const STRINGS = {
       dataLabel: 'Publicação',
       lingua: 'Língua',
       verEstudo: 'Página do estudo',
-      stubLede: 'Este estudo ainda não foi mudado para aqui.',
-      stubExplicacao:
-        'A migração dos estudos é a fase seguinte do trabalho. Até lá, esta página existe para fixar o endereço e nada mais: não há aqui um resumo, nem uma versão curta, nem números do estudo. Fingir conteúdo seria pior do que não ter nenhum.',
+      /* AS DUAS FRASES DO ESTADO SAÍRAM (subetapa 4e, a regra da direção de
+         21.08.2026). O estado desta página diz-se no seu rótulo, que está três
+         linhas abaixo («Rascunho · sem conteúdo»): a lede repetia-o em prosa e a
+         explicação contava a fase seguinte do projecto e o cuidado da casa
+         («Fingir conteúdo seria pior do que não ter nenhum»). Nenhuma das duas
+         faz ninguém ler melhor um número, e o rótulo é a ausência dita em duas
+         palavras, que é o que a Emenda 15 manda. */
       stubEdicoes: 'Edições',
       stubVoltar: 'Voltar ao arquivo',
       stubEstado: 'Rascunho · sem conteúdo',
       stubForaK: 'Publicado fora deste sítio',
-      stubForaV: 'Enquanto a migração não chega, este estudo está publicado noutro sítio. A ligação sai deste domínio.',
+      /* A primeira metade saiu: contava a fase do projecto. A segunda FICA, e
+         não é diligência — é o aviso de que o comando ao lado leva o leitor para
+         fora deste sítio, que é a única coisa que ele precisa de saber antes de
+         carregar. */
+      stubForaV: 'A ligação sai deste domínio.',
       stubForaLink: 'Abrir o estudo',
 
       /* Estudo com o documento já alojado aqui, mas com a página do
          observatório ainda por escrever. É um estado a sério, e diz-se. */
       migradoEstado: 'Documento alojado · página por escrever',
-      migradoLede: 'O documento deste estudo já está alojado aqui. A página do observatório à volta dele ainda não foi escrita.',
-      migradoExplicacao:
-        'O que se lê no documento é o estudo tal como foi publicado: não foi reescrito, resumido nem atualizado para caber aqui. O que falta é a página do observatório: a leitura curta, os números do estudo ligados ao livro-razão e a proveniência de cada um. Fingir esse conteúdo seria pior do que não ter nenhum.',
-
 
       /* Trabalho com leitura do observatório escrita (src/data/leituras.mjs).
          É este o estado que levanta o noindex — ver DECISIONS §1.35. */
-      leituraEstado: 'Leitura publicada',
+      /* `leituraEstado` saiu na 4e: era a casa a dizer de si que tinha acabado
+         o trabalho, por cima de uma página onde o trabalho está à vista. Os
+         outros dois estados ficam porque são ausências declaradas. */
       leituraRelanceK: 'Relance',
       leituraBreveK: 'Leitura breve',
       leituraBreveRotulo: 'Leitura breve · prosa da casa, assente numa frase do trabalho',
@@ -1053,7 +1059,9 @@ export const STRINGS = {
       municipioLink: 'A página do município',
 
       documentoK: 'O documento original',
-      documentoV: 'Alojado aqui na forma exata em que foi publicado, com uma faixa no topo e mais nada.',
+      /* `documentoV` saiu: dizia com que cuidado o documento foi alojado. A
+         porta («Ler o documento →») é o que o leitor precisa, e a faixa que o
+         documento leva no topo vê-se quando ele abre. */
       documentoVazio: 'O documento deste estudo ainda não foi alojado aqui.',
       documentoLink: 'Ler o documento',
       /* Vai dentro da faixa, no topo do documento. Sem algarismos: é regra do
@@ -1724,23 +1732,15 @@ export const STRINGS = {
       dataLabel: 'Published',
       lingua: 'Language',
       verEstudo: 'Study page',
-      stubLede: 'This study has not been moved here yet.',
-      stubExplicacao:
-        'Migrating the studies is the next phase of the work. Until then, this page exists to hold the address and nothing else: there is no summary here, no short version, no figures from the study. Faking content would be worse than having none.',
       stubEdicoes: 'Editions',
       stubVoltar: 'Back to the archive',
       stubEstado: 'Draft · no content',
       stubForaK: 'Published outside this site',
-      stubForaV: 'Until the migration happens, this study is published elsewhere. The link leaves this domain.',
+      stubForaV: 'The link leaves this domain.',
       stubForaLink: 'Open the study',
 
       migradoEstado: 'Document hosted · page not yet written',
-      migradoLede: 'The document for this study is already hosted here. The observatory page around it has not been written yet.',
-      migradoExplicacao:
-        'What you read in the document is the study exactly as it was published: it has not been rewritten, shortened or updated to fit here. What is missing is the observatory page: the short reading, the study’s figures tied to the ledger and the provenance of each one. Faking that content would be worse than having none.',
 
-
-      leituraEstado: 'Reading published',
       leituraRelanceK: 'At a glance',
       leituraBreveK: 'Brief reading',
       leituraBreveRotulo: 'Brief reading · house prose, resting on a sentence of the study',
@@ -1750,7 +1750,6 @@ export const STRINGS = {
       municipioLink: 'The municipality page',
 
       documentoK: 'The original document',
-      documentoV: 'Hosted here in the exact form in which it was published, with a banner at the top and nothing else.',
       documentoVazio: 'The document for this study has not been hosted here yet.',
       documentoLink: 'Read the document',
       documentoFaixa: 'Study document, exactly as published',

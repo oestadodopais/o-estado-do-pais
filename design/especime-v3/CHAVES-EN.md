@@ -316,6 +316,11 @@ criterion.»**: nenhuma delas é uma tradução literal da outra («none to date
 forma corrente inglesa; «nenhum até hoje» é a portuguesa), e as duas dizem a
 mesma ausência.
 
+**Subetapas 4d e 4e · nenhuma cadeia nova.** A 4d encurtou uma (`erro404.corpo`)
+e a 4e retirou seis e encurtou uma, todas em `estudos.*`; o antes e o depois de
+cada uma, nas duas edições, está em `RELOCACOES.md`. **Nada de novo entrou em
+`strings.mjs` na etapa 4 além de `leitura.sumarioK`.**
+
 ## Identidades aceites (PT = EN de propósito)
 Nomes próprios, códigos de série, identificadores de linha, «Eurostat», «INE», «DGAL», «IEFP», «CAOP», «UE-27», «O Estado do País». A régua da invariância imprime todas as chaves cujo valor é igual nas duas línguas; as que não estiverem nesta lista são erro.
 

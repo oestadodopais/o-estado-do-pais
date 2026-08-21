@@ -45,17 +45,24 @@ export const LEITURAS = {
     /* §6.1 do plano: estas linhas atravessaram com o excerto por confirmar, e
        a página tem de dizer porquê, por palavras, nas duas línguas. O selo ao
        lado delas está a tracejado — é o mesmo marcador, e não uma segunda
-       linguagem de incerteza (IDENTIDADE §5.2, §6). */
+       linguagem de incerteza (IDENTIDADE §5.2, §6).
+
+       A ÚLTIMA FRASE SAIU na subetapa 4e (a regra da direção de 21.08.2026):
+       dizia «Inventar uma frase seria pior do que mostrar a falta», e isso é o
+       cuidado da casa, não um limite do dado. O que fica é o limite: porque é
+       que estes dois valores não têm frase para transcrever, e porque é que o
+       selo aparece a tracejado. Sem isso, quem visse o selo tracejado lia mal o
+       valor ao lado. */
     medidasNota: {
       pt: [
         'Estes dois valores são somas sobre o registo público inteiro do plano de recuperação, não uma linha de um documento. Não há nenhuma frase para transcrever, e por isso o excerto da linha está ',
         { marcador: 'a verificar', gloss: 'to verify' },
-        ' e o selo aparece a tracejado. Inventar uma frase seria pior do que mostrar a falta.',
+        ' e o selo aparece a tracejado.',
       ],
       en: [
         'These two values are sums over the whole public register of the recovery plan, not a line in a document. There is no sentence to transcribe, so the row’s excerpt reads ',
         { marcador: 'a verificar', gloss: 'to verify' },
-        ' and the seal shows dashed. Inventing a sentence would be worse than showing the gap.',
+        ' and the seal shows dashed.',
       ],
     },
     /* Reescrita a 15.08.2026, segunda revisão cruzada. Dizia «a maior parte do

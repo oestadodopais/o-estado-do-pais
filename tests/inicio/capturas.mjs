@@ -68,6 +68,10 @@ const ROTAS_DA_ETAPA_4 = [
   { nome: 'sobre', pt: '/sobre', en: '/en/about' },
   { nome: 'estudos', pt: '/estudos', en: '/en/studies' },
   { nome: 'estudo-agua', pt: '/estudos/agua-nao-faturada', en: '/en/studies/agua-nao-faturada' },
+  /* Uma página de trabalho COM leitura publicada, para que o conjunto mostre os
+     dois estados que a página tem: `agua-nao-faturada` é a de documento alojado
+     sem leitura, e esta é a das três camadas. */
+  { nome: 'estudo-leitura', pt: '/estudos/evora-prometido-pago-auditado-2026', en: '/en/studies/evora-prometido-pago-auditado-2026' },
   { nome: 'marcador', pt: '/a-verificar', en: '/en/to-verify' },
   /* O 404 fotografa-se pelo ficheiro (`/404.html`) e não pelo caminho: o
      servidor destas capturas serve `dist/` tal e qual, e `/404` não é uma pasta

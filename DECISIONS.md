@@ -9167,6 +9167,62 @@ das capturas pedia `/404` e recebia um corpo vazio, porque `dist/` guarda
 devolve esse ficheiro para um caminho desconhecido. A captura saía uma página
 branca. `tests/inicio/capturas.mjs` passa a pedir `/404.html`.
 
+### 1.60 O arquivo e as páginas de trabalho: a caixa às riscas sai, o estado diz-se uma vez, e a data é a do registo
+
+**Afecta:** nenhum
+
+*(Subetapa 4e do redesenho v3. Nenhum texto governado, nenhum valor, e **a rota
+do documento alojado não é tocada**: `check:documentos` continua a provar os
+bytes de cada ficheiro.)*
+
+**A caixa às riscas sai, e as palavras ficam** (§4, item **M**, que a direção
+fechou pela forma). O estado editorial de uma página de trabalho dizia-se **duas
+vezes**: no antetítulo, por cima do título, e outra vez num tracejado com fundo
+às riscas por baixo da descrição. As riscas são o vocabulário do espécime, que a
+v2 reserva para uma ausência de **dados** — aqui não falta um dado, falta um
+texto. Fica **uma** vez, no antetítulo. `.placeholder` e `.placeholder-tag` saem
+de `site.css`, porque ficaram sem cliente.
+
+**O estado com a leitura publicada deixa de existir.** «Leitura publicada» era a
+casa a dizer de si que tinha acabado o trabalho, por cima de uma página onde o
+trabalho está à vista. Os outros dois ficam, porque são ausências declaradas, que
+é o que a Emenda 15 manda dizer.
+
+**Seis cadeias retiradas e uma encurtada** (`RELOCACOES.md`), pela regra da
+direção de 21.08.2026: as duas ledes de estado e as duas explicações que
+contavam a fase seguinte do projecto e fechavam com «fingir conteúdo seria pior
+do que não ter nenhum»; a frase que dizia com que cuidado o documento foi
+alojado; e a primeira metade do aviso do estudo publicado fora, cuja segunda
+metade — «A ligação sai deste domínio.» — fica, porque é navegação.
+
+**Duas frases dentro de blocos que ficaram** (`src/data/leituras.mjs`): a nota
+que explica porque é que dois selos desta casa aparecem tracejados perdeu o seu
+fecho, «Inventar uma frase seria pior do que mostrar a falta.» O limite fica — sem
+ele, quem vê o selo tracejado lê mal o valor ao lado —, o cuidado sai. É a regra
+a funcionar nos dois sentidos dentro da mesma frase.
+
+**A data do arquivo é a do registo, e a planta prova-o.** O índice rende
+`e.date ?? [a verificar]`, lido de `src/data/studies.mjs` e de mais lado nenhum.
+Hoje há **três** edições com data e **doze** sem, e as doze rendem o marcador.
+A planta: numa edição com data (`evora-os-pelouros…`, `2026-08-12`) pus
+`date: null` **e** `updated: '2026-08-12'`, e reconstruí:
+
+```
+antes:   12 × «Publicação: [a verificar]» · 2 × 2026-08-04 · 1 × 2026-08-12
+planta:  13 × «Publicação: [a verificar]» · 2 × 2026-08-04
+         «2026-08-12» não aparece uma única vez em dist/estudos/index.html
+```
+
+O marcador rende, e **o `updated` não é lido no lugar da data** — que era a
+segunda metade do que havia para provar, e a primeira planta (só `date: null`,
+com `updated` já a nulo) não a provava. **Revertida**, e a construção volta às
+doze.
+
+**Medido**, `node scripts/medir-defeitos.mjs`, com as vinte e quatro rotas do
+arquivo (o índice e onze trabalhos, nas duas edições): **autorreferência 0 em
+todas**, e nenhum bloco por classificar — 106 blocos distintos entraram no
+inventário, um a um.
+
 ---
 
 ## 4. O registo dos defeitos e dos adiamentos

@@ -78,21 +78,14 @@ const municipioPath = municipio ? routePath('municipio', lang, { slug: municipio
 
 /* Três estados, e a página diz sempre em qual está: por migrar, documento
    alojado sem leitura, e leitura publicada. Nenhum finge ser outro.
-   Com a leitura publicada, o estado é só o estado: as duas frases que
-   descreviam a própria página («este trabalho já tem a leitura do
-   observatório: a medida, a frase, o método…» e a nota sobre a prosa da casa)
-   saíram — o leitor está a olhar para as secções que elas enumeravam. */
-const estado = leitura
-  ? s.estudos.leituraEstado
-  : migrado
-    ? s.estudos.migradoEstado
-    : s.estudos.stubEstado;
-const estadoLede = leitura ? null : migrado ? s.estudos.migradoLede : s.estudos.stubLede;
-const estadoExplicacao = leitura
-  ? null
-  : migrado
-    ? s.estudos.migradoExplicacao
-    : s.estudos.stubExplicacao;
+
+   O ESTADO É SÓ O ESTADO (subetapa 4e, a regra da direção de 21.08.2026). Com a
+   leitura publicada as duas frases que descreviam a própria página já tinham
+   saído; agora saem também as dos outros dois estados. A lede repetia em prosa
+   o que o rótulo diz em quatro palavras, e a explicação contava a fase seguinte
+   do projecto e o cuidado da casa. O rótulo fica, e é a ausência dita em duas
+   palavras. */
+const estado = leitura ? null : migrado ? s.estudos.migradoEstado : s.estudos.stubEstado;
 
 /* Uma descrição que ainda não existe mostra-se com o marcador único do sítio,
    na sua classe — e não com uma segunda formulação em texto simples, que era o
@@ -142,8 +135,21 @@ const jsonld = {
   noindex={!leitura}
   portaNoRodape={false}
 >
+  {/* ======================================= o estado da página
+      A CAIXA ÀS RISCAS SAIU E AS PALAVRAS FICARAM (`DECISIONS.md` §4, item M).
+      O estado editorial de uma página do arquivo dizia-se duas vezes: aqui, no
+      antetítulo, e outra vez num tracejado com fundo às riscas por baixo da
+      descrição. As riscas são o vocabulário do espécime, e o espécime é para
+      uma ausência de DADOS, não para o estado de um texto; e uma coisa dita
+      duas vezes na mesma página é dita mal. Fica UMA vez, no antetítulo, que é
+      onde o leitor a lê antes do título.
+
+      E COM A LEITURA PUBLICADA NÃO HÁ ESTADO NENHUM. «Leitura publicada» era a
+      casa a dizer de si que tinha acabado o trabalho, por cima de uma página
+      onde o trabalho está à vista. Os outros dois ficam porque são ausências
+      declaradas, que é o que a Emenda 15 manda dizer. */}
   <div style="padding-top:clamp(20px,3vw,34px)">
-    <span class="eyebrow">{estado}</span>
+    {estado && <span class="eyebrow">{estado}</span>}
     <h1 style="margin-top:12px" data-nonledger="titulo-de-estudo">{principal.title}</h1>
     <p class="lede" style="margin-top:16px">
       {
@@ -225,20 +231,12 @@ const jsonld = {
   }
 
   <div class="estudo-blocos">
-    <!-- ======================================= o estado da migração -->
-    <div class="placeholder">
-      <span class="placeholder-tag">{estado}</span>
-      {estadoLede && <p class="lede" style="font-size:16px">{estadoLede}</p>}
-      {estadoExplicacao && <p class="placeholder-nota">{estadoExplicacao}</p>}
-    </div>
-
     <!-- ======================================= o documento original -->
     <div class="log-vazio">
       <div class="log-vazio-k">{s.estudos.documentoK}</div>
       {
         migrado ? (
           <>
-            <p class="log-vazio-v">{s.estudos.documentoV}</p>
             <p class="estudo-accoes">
               {documentoDaqui && (
                 <a class="ligacao-dados" href={documentoDaqui.rota}>
