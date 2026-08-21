@@ -246,6 +246,8 @@ Build green; rulers and the advisor before and after each stage; a context-starv
 
 On the director's word («let's do it»), the branch was pushed (`git push -u origin redesenho-v3`, 32 commits on `77e82eb`, HEAD `a5d512e`) and Vercel raised the protected preview in 25 s: `https://o-estado-do-pais-git-redesenho-v3-nunos-projects-b945a519.vercel.app` (deployment `o-estado-do-pais-g991r7e9p`, target preview, answers 302 to the login). Before it: the Codex read (`critica/2026-08-20-codex-leitura-da-primeira-pagina.md`, 4 of 5 plants, 3 real defects and 4 worth fixing, all closed in 2i), the acceptance matrix 79/79 on the final build, five gates green, `main` unmoved since the base. Open at the preview: ISSUES I24, I25, I13/I14; the director's judgement on the `--g3` frames and on the dark palette as provisional rule. Nothing merged.
 
+**Preview n.º 1, updated 21.08.2026, 02:04 BST**, same address, from HEAD `e6c8c55` (deployment `o-estado-do-pais-ggbaene88`, 29 s): the director's reading applied (rounds 2j and 2k; Emendas 10 to 14; the second Codex read, 4 of 5 plants, its two real gaps closed). Matrix 90/90. Open for the director at this reading: whether the hairline grid of pieces reads as he asked (Codex read the 1px-shadow technique as «still boxes»); ISSUES I26 (`IDENTIDADE.md` §2 still describes the dark palette as before Emenda 12, builder A's file), I27 (`Provenance.astro` keeps the `lang='pt'` default that I24 closed in `Claim.astro`), I28, I30, I31, all small, for stage 3's opening.
+
 ## 15. Deviations register
 
 1. No catálogo/dossiê block, placeholder or door on the home (phase 2 parked).
