@@ -1661,3 +1661,630 @@ que esta nota se fecha dizia cerca de **14,68 milhões** — ou seja **≈ 290 m
 fichas**, dentro da escala do brief (150 a 250 mil) mais o que a medição custou:
 a matriz inteira três vezes, 68 capturas, duas construções e a conta por bloco da
 invariância. Não tenho um número exacto para lá desta diferença, e não o invento.
+
+---
+
+## 2j · a leitura da pré-visualização n.º 1
+
+*Construtor B5, **Claude Opus**, sozinho, sem subagentes, 21.08.2026, a partir de
+`3c1c078`. Três commits. Nada foi empurrado, nada foi posto no ar, `vercel.json`
+não foi tocado, nem `src/data/metodo.mjs` nem `src/data/sobre.mjs` foram abertos,
+nenhum portão novo, nenhum número inventado. Esta ronda é a única em que um
+construtor tem os ficheiros partilhados E os da primeira página, por decisão da
+cadeira, porque mais ninguém está a escrever. Todos os números abaixo trazem ao
+lado o comando que os produziu.*
+
+**Os commits**
+
+| Commit | O quê |
+| --- | --- |
+| `4766aa1` | registo, cabeçalho, tema: as Emendas 10 a 14, a linha de método fora, e o escuro à escolha do leitor |
+| `1a658fc` | início, pontos e peças: o mapa em pontos, a fila fora da cabeça, as peças sem caixas e as oito medidas de um concelho sem página |
+| *(o commit que contém esta nota)* | design/especime-v3: o registo da leitura da pré-visualização n.º 1 |
+
+**A construção de referência.** `git worktree add --detach <dir> 0a8274b`, com
+`node_modules` ligado por symlink, e `npm run build` verde. É o estado exacto da
+pré-visualização que a direção leu. Fica dito, porque muda a leitura das réguas:
+`git diff --stat 0a8274b HEAD` no início desta ronda dava **dois ficheiros, os
+dois de `design/`** (o plano e o brief da 2j), e por isso a construção de
+`0a8274b` e a de `3c1c078` são a mesma — a referência é exacta e não aproximada.
+
+---
+
+## 2j-1 · o registo, o cabeçalho e o tema
+
+### O registo
+
+`direcao.md` recebe as **Emendas 10 a 14** verbatim, a seguir à Emenda 9, com o
+parágrafo das quatro decisões de forma. `DECISIONS.md` **§1.52**, `Afecta:
+nenhum`.
+
+```
+npm run ledger:check
+  amarra das decisões · 15 entrada(s) a partir da §1.38 · 2 texto(s) governado(s)
+  · 1 citação(ões) da constituição conferida(s), de 42 entre «…»
+  ✓ cada texto no ar tem uma decisão registada que o governa
+```
+
+A entrada diz por extenso duas coisas que não são óbvias:
+
+1. **a §1.9 («Não há botão de tema») fica DECIDIDA e não revogada.** A própria
+   §1.9 acaba em «é meia dúzia de linhas quando o director quiser», e a Emenda 12
+   é esse dia. O que mudou não foi a §1.9 estar errada: foi a página, que passou
+   a ter estado e a servir um script adiado;
+2. **a linha de método é cópia de identidade e não texto governado**, e por isso
+   sai sem tocar na amarra. Vivia em `site.config.mjs` — o ficheiro do domínio, do
+   nome e da edição —, declarada «elemento de identidade: não é traduzida», e
+   nenhuma entrada anterior a governa.
+
+### (a) A linha de método sai
+
+Saiu das duas superfícies onde rendia: por baixo da marca em todas as páginas
+(`Masthead.astro`) e no preâmbulo de comentários dos dois CSV descarregáveis
+(`src/lib/dados.mjs`). A constante saiu com elas, porque nada mais a lia, e a
+regra `.method-line` saiu de `site.css` porque uma regra sem elemento mente sobre
+o que a folha desenha.
+
+**`scripts/check-dados.mjs` foi lido antes de a linha sair**, como o brief manda,
+e o que ele compara é isto: o cabeçalho de **colunas** de cada CSV
+(`municipio,distrito,regiao,x,y` e `regiao,valor,ano,unidade,estudo,afirmacao`), e
+nos **comentários** três coisas — a citação da CAOP, a data de acesso, e o caminho
+`ledger/claims/`. Nenhuma das três é a linha de método. **O cabeçalho e a
+conferência não tinham de se mover juntos**, e o `check:dados` passou sem uma
+alteração.
+
+```
+grep -rn "Cada número tem fonte" src scripts site.config.mjs
+   (sem saída · exit=1)
+   controlo positivo, o mesmo grep em design/especime-v3/direcao.md:
+   design/especime-v3/direcao.md   (exit=0)
+
+grep -r "Cada número tem fonte" dist/ | wc -l        → 0
+   controlo positivo: grep -rl "O Estado do País" dist/index.html | wc -l → 1
+```
+
+### (b) O tema
+
+**Claro por defeito para todos.** O bloco de consulta da preferência do sistema
+saiu de `tokens.css`; a paleta escura vive só em `:root[data-theme='dark']`.
+
+```
+grep -c "prefers-color-scheme" src/styles/tokens.css        → 0
+   controlo positivo: o mesmo grep em DECISIONS.md          → 3
+   e no CSS construído: grep -rc … dist/_astro/*.css        → 0
+```
+
+*(O controlo positivo era, à primeira corrida, o próprio `medir-contraste.mjs`,
+que trazia duas ocorrências no `ESTADOS`; deixou de servir quando esta mesma ronda
+lhe reescreveu o bloco. Fica o `DECISIONS.md`, que guarda a decisão antiga e por
+isso continua a ter a cadeia.)*
+
+`color-scheme` deixou de dizer `light dark` e passa a seguir o mesmo atributo:
+sem isso, um leitor com o sistema em escuro ficava com a página clara e as barras
+de deslocamento escuras, sem ter escolhido nada.
+
+**O controlo** são dois botões «claro · escuro» na mobília do cabeçalho, com
+`aria-pressed` e um nome de grupo que só se ouve (`tema.rotulo`). Dois botões e
+não um interruptor: um interruptor com uma etiqueta só obriga quem o ouve a
+adivinhar o que é o não-premido. Entra `hidden` do servidor e é
+`public/js/tema.js` que o acende — a mesma regra que a primeira página aplica às
+dicas do mapa desde ISSUES I21, e a razão é a mesma: um comando que não comanda
+nada é uma promessa falhada.
+
+**A guarda contra o pisca** é uma linha inline no `<head>` do `Base.astro`, e é a
+única coisa em todo o sítio que escreve `data-theme`: compara a chave com UMA
+cadeia e, se não bater certo, não faz nada. Um ficheiro adiado corre depois de a
+página pintar, e quem pediu escuro veria a página clara primeiro.
+
+**Medido em Chromium sem cabeça, nas duas edições** (guião de rascunho; as mesmas
+medidas entraram na matriz como três células):
+
+| caso | `data-theme` | papel | guardado |
+| --- | --- | --- | --- |
+| sistema em escuro, sem escolha | *(nenhum)* | `rgb(246,247,244)` | *(nada)* |
+| carregou «escuro» | `dark` | `rgb(21,23,26)` | `dark` |
+| recarregou | `dark` | `rgb(21,23,26)` | `dark` |
+| foi a `/metodo` (`/en/method`) | `dark` | `rgb(21,23,26)` | `dark` |
+| carregou «claro» | *(nenhum)* | `rgb(246,247,244)` | `light` |
+| sem JavaScript, sistema em escuro | *(nenhum)* | claro | *(nada)*, e o controlo fica `hidden` |
+
+As seis linhas dão o mesmo nas duas edições, e o `aria-pressed` acompanha
+(`light:true dark:false` → `light:false dark:true` → e de volta).
+
+**A régua do contraste aprendeu que há duas paletas e não três.** O `ESTADOS`
+esperava o bloco da preferência do sistema e teria impresso «n/d» em vinte e uma
+linhas sem dizer porquê. Passa a medir `:root` e `:root[data-theme='dark']`, e a
+conferência «os dois escuros são iguais ficha a ficha» saiu com o segundo bloco —
+não há dois para comparar. O que ficou no lugar dela é a pergunta que ainda faz
+sentido: se a paleta escura existe para ser medida.
+
+```
+node scripts/medir-contraste.mjs
+  claro (:root) ................. 0 falhas de texto
+  escuro, à escolha do leitor ... 0 falhas de texto
+  src/styles/tokens.css: uma paleta escura, à escolha do leitor, com 22 fichas.
+  src/styles/tokens.css: 0 falhas de texto · 4 objeto(s) de interface abaixo de 3:1
+```
+
+Os quatro avisos são os quatro de sempre, e são dois pares simétricos: o contorno
+que não faz falta ao âmbar em claro e o cobalto que só se lê pelo contorno, e o
+mesmo par ao contrário em escuro. **Comparado par a par com a medição da 2i: zero
+diferenças nas duas paletas.** O ficheiro JSON não é byte a byte igual, e a razão
+é honesta: a chave do estado passou de `escuro-sistema` a `escuro`, porque o bloco
+mudou de sítio.
+
+### (c) As duas leituras do cabeçalho, e a moldura que não era delas
+
+A direção pediu «as duas leituras do cabeçalho sem molduras». As regras da mobília
+nunca desenharam moldura nenhuma — e é por isso que a causa vale a pena
+escrever-se. A classe chamava-se `.leitura`, e mais abaixo na mesma folha há
+**outra `.leitura`**, a camada «Leitura breve» de um estudo (`EstudoView.astro`),
+com `border: 1px solid var(--rule)` e fundo de papel. Duas coisas diferentes com
+um nome só, e a segunda ganhava por vir depois.
+
+**Medido antes**, com `getComputedStyle` sobre os dois `span` da mobília:
+`border-top-style: solid`, `1px`, `rgb(217, 221, 216)`, fundo `rgb(246,247,244)`.
+**Depois**: `none`, `0px`, fundo `rgba(0,0,0,0)`.
+
+A saída não foi apagar a moldura com uma terceira regra: foi dar-lhes o nome que é
+delas. A mobília passa a `.mob-leitura`. Um `border: 0` por cima deixava as duas a
+partilhar o nome, e a regra seguinte de uma delas voltava a cair na outra.
+
+**O cabeçalho às cinco larguras, com o controlo novo** (Chromium sem cabeça,
+depois de `document.fonts.ready`; a coluna «mobília» é a altura da linha do sinal
+de tempo):
+
+| rota | largura | cabeçalho | mobília | transbordo | linha de método | controlo |
+| --- | --- | --- | --- | --- | --- | --- |
+| `/` | 320 | 283,7px | 106,4px | 0 | não | à vista |
+| `/` | 390 | 258,5px | 81,2px | 0 | não | à vista |
+| `/` | 768 | 296,8px | 56px | 0 | não | à vista |
+| `/` | 1024 | 292,4px | 56px | 0 | não | à vista |
+| `/` | 1280 | 299,1px | 56px | 0 | não | à vista |
+| `/livro-razao/divida-publica-2025` | 320 | 213,1px | 74,2px | 0 | não | à vista |
+| `/livro-razao/divida-publica-2025` | 390 | 213,1px | 74,2px | 0 | não | à vista |
+| `/livro-razao/divida-publica-2025` | 768 | 227px | 53px | 0 | não | à vista |
+| `/livro-razao/divida-publica-2025` | 1024 | 208,3px | 53px | 0 | não | à vista |
+| `/livro-razao/divida-publica-2025` | 1280 | 208,8px | 53px | 0 | não | à vista |
+
+**O alvo do controlo: «claro» 49,7 × 44 px e «escuro» 62,5 × 44 px** na primeira
+página; 44 × 44 e 53,7 × 44 na página de linha, onde o cabeçalho é compacto e a
+letra é menor. **Os dois passam os 44 × 44 nas duas rotas e nas cinco larguras.**
+Aqui a altura pode ser altura a sério, ao contrário do selo: um botão de barra é
+um bloco, e crescer não empurra linha nenhuma — é a mesma distinção que a etapa 1e
+escreveu para o comando «Menu».
+
+**As 32 capturas da etapa 1 foram refeitas, e não as 16 que o brief nomeia.** O
+brief pede `inicio-*` e `linha-*`; a mobília é de todas as páginas, e uma pasta
+onde o mesmo cabeçalho tem a linha de método numa página e não a tem noutra não é
+registo de nada. É o mesmo desvio, com a mesma razão, que a subetapa 1f escreveu.
+`git status` diz que **as 32 mudaram**. O escuro entra pelo caminho real: a
+escolha guardada no aparelho, e a guarda do `<head>` a aplicá-la.
+
+### (d) ISSUES I24, fechado · a língua deixa de ter defeito
+
+`Claim.astro` tinha `const { lang = 'pt' } = Astro.props`, e uma chamada sem
+língua rendia «provisório» na edição inglesa. Passa a atirar, com o `id` da linha
+na mensagem, como as mensagens do portão.
+
+**Oito chamadas não passavam a língua, e a construção apanhou-as uma a uma.** Não
+foi um `grep`: **duas delas nenhum `grep` deste repositório encontrava**, porque a
+linha continha `lang === 'pt'` noutro sítio e qualquer varredura por «linhas com
+`<Claim` e sem `lang`» as excluía. É exatamente o argumento que a entrada I24
+fazia — «um defeito que se apanha por `grep` na edição inglesa é um defeito que o
+portão devia apanhar por construção» —, e a diferença mediu-se aqui.
+
+| ficheiro | chamadas |
+| --- | --- |
+| `src/components/inicio/BandaDaRegiao.astro` | 1 |
+| `src/components/InstrumentoConvergencia.astro` | 2 *(uma delas invisível ao `grep`)* |
+| `src/views/EstudoView.astro` | 1 |
+| `src/views/MunicipioView.astro` | 4 |
+
+**Cinco das oito estão em vistas que não são desta ronda**, e isso fica dito em
+vez de escondido: `EstudoView.astro` e `MunicipioView.astro` são das etapas 4 e 3,
+e a lista de ficheiros desta ronda não as inclui. O brief da 2j manda, na alínea
+(d), «correr a construção para provar que todas as chamadas a passam, e se alguma
+não passar, corrigir a chamada e dizer qual» — é o que está feito. A alteração é
+`lang={lang}` e mais nada: nenhum outro byte dessas vistas mudou, e a rendição
+portuguesa é idêntica. **Se a cadeira preferir o contrário, são cinco atributos a
+tirar e o I24 volta a abrir.**
+
+```
+grep -o 'claim-provisorio">[^<]*' dist/en/index.html | sort | uniq -c
+     18 claim-provisorio">provisional
+grep -o 'claim-provisorio">[^<]*' dist/index.html | sort | uniq -c
+     18 claim-provisorio">provisório
+```
+
+Sem mudança contra a 2i, e é o esperado: os sete lugares já estavam corrigidos. O
+que mudou foi a armadilha.
+
+### (e) ISSUES I25, fechado
+
+As pastilhas das regiões passam a `role="button"` no mesmo laço onde os segmentos
+de âmbito e de densidade o recebem, e ganham a tecla de espaço com o
+`activaComEspaco()` que já existia. Duas linhas, como a entrada previa. A célula
+«2i·5» da matriz continua verde: `com role="button": âmbito 6/6, densidade 2/2`.
+
+---
+
+## 2j-2 · a primeira página
+
+### (a) Emenda 10 · o mapa leva pontos
+
+Os 308 concelhos passam de `<rect>` a `<circle>`, com um raio só, e **nenhum vem
+cheio**. O enchimento era a cobertura; a cobertura continua na página por
+palavras, ao lado do mapa, no cartão localizador e na lista da pesquisa. O
+concelho escolhido é o anel que a 2i já tinha desenhado, e passa a ser a única
+distinção que o mapa faz.
+
+**A classe que pintava a cobertura saiu**, e o que fica é `data-pagina`. O script
+lia `mun-com-pagina` para saber se havia página para abrir; sem enchimento, uma
+classe que não pinta nada seria um nome a mentir sobre o que a folha desenha.
+
+**Os alvos continuam rectângulos, e não é incoerência de glifo**: um alvo não se
+vê, não pinta nada e não diz nada — é uma área, e uma área quadrada cobre a
+vizinhança de um ponto melhor do que um círculo do mesmo raio.
+
+```
+node tests/inicio/matriz.mjs   (célula «2j·a», os pontos)
+   308 <circle> · 1 raio: 4.5 · enchimento none · 1 declarado com página
+
+node tests/inicio/matriz.mjs   (célula «2j·a», o anel)
+   Beja · 1280 · relance:  enchimento none (todos none/none) · raio 4.5 = 4.5 · anel 3 contra 1,2
+   Beja · 1280 · leitura (localizador): idem
+   Beja · 390:  idem
+   Évora escolhida: enchimento none, como os outros 307
+```
+
+**«A cobertura e as suas legendas de quadrado saem» — e os quadrados da legenda já
+não existiam antes desta ronda.** Conferido no `dist`: nem `.ld-on`/`.ld-off` (a
+legenda do instrumento n.º 2 da v2) nem um único glifo `■`/`□` literal aparecem na
+primeira página; o controlo positivo é o mesmo `grep` a encontrar quatro `■` em
+`direcao.md`. A legenda de cobertura passou a ser as duas palavras do vocabulário
+`cobertura.*` na subetapa 2a. **O que esta ronda tirou foi o enchimento.**
+
+**A frase de neutralidade.** Nomeava «o ponto aceso», e a partir do momento em que
+nenhum ponto vem aceso descrevia um desenho que a página não faz. Cadeia nova nas
+duas edições (`inicio.mapa.posicao`), a antiga retirada, as duas listadas em
+«Texto novo» e em `CHAVES-EN.md`. Continua em 2 ocorrências por edição — a ficha e
+o cartão localizador —, como a 2i a deixou, e a célula «2i·3c» continua a dar 1
+visível em cada uma das cinco posturas medidas.
+
+**`InstrumentoMapa.astro` não existe**, e o brief manda aplicar-lhe a mesma regra.
+Saiu na subetapa 2b, com `public/js/mapa.js` (`git log --diff-filter=D` →
+`0c1ef02`), e nenhuma vista o importa: `grep -rn "InstrumentoMapa\|js/mapa.js"
+src/ public/ tests/ scripts/` dá **uma linha**, um comentário em `site.css:1115`.
+O mapa da página de concelho, quando a etapa 3 o desenhar, herda a regra de
+`MapaRespira.astro`, que é o único mapa do sítio. Fica em ISSUES como **I29**.
+
+### (b) Emenda 13 · a fila de estados sai da cabeça
+
+`FilaDeEstados.astro` foi **retirado do repositório**: era o único sítio que o
+usava, e um componente que ninguém rende é um desenho a dizer que ainda vale. Com
+ele saiu o campo `estados` dos blocos da cabeça e a chave
+`inicio.cabeca.estadoRotulo`, nas duas edições.
+
+**Nenhuma contagem se perdeu**, e é isso que faz disto uma subtração e não um
+corte: o rótulo do âmbito traz `painel_total` («Portugal · painel europeu · 8
+medidas»), a manchete traz `painel_fora_do_limiar` («4 limiares europeus
+ultrapassados.»), e o estado de cada medida continua onde ele é da medida.
+
+```
+node tests/inicio/matriz.mjs   (célula «Emenda 13»)
+   0 filas · chaves da prova na cabeça: painel_total, painel_fora_do_limiar
+   · 8 marcadores e 8 palavras nas peças
+```
+
+**`painel_com_limiar` continua sem se render em lado nenhum**, e isso é anterior a
+esta ronda: `grep -o 'data-prova="[a-z_]*"' dist/index.html | sort | uniq -c` não
+o listava antes nem lista agora. O portão reconta-o na mesma.
+
+### (c) As peças sem caixas, e os algarismos com tecto
+
+Oito molduras cinzentas com 20px de ar liam-se como oito cartões a flutuar.
+Passam a células de uma grelha, separadas por um fio de 1px.
+
+**O fio é uma SOMBRA à volta de cada peça, e não um fundo por baixo da grelha**, e
+a razão é medida e não de gosto. A `.figuras` da v2 — a grelha que a direção
+nomeia como modelo — faz o fio com `gap: 1px` sobre um fundo `--rule`, e isso
+funciona enquanto a grelha estiver sempre cheia. A desta página não está: acima de
+640 uma peça aberta ocupa duas colunas (subetapa 2g, ponto 3), e uma linha com um
+buraco mostraria o fundo cinzento como um rectângulo, que é uma célula a fingir que
+existe. Com a sombra, as duas peças vizinhas caem na mesma faixa de 1px e desenham
+UM fio; onde não há peça não há sombra, e o buraco fica em papel.
+
+```
+node tests/inicio/matriz.mjs   (célula «as peças sem caixas»)
+   8 peças · 0 com moldura · intervalo 1px/1px · fio «rgb(217, 221, 216) 0px 0px 0px 1px»
+```
+
+**Os algarismos.** Eram três patamares escritos em píxeis — 80, 60, 44 —, e o
+maior enchia a célula a 1280. Passam a três `clamp()`, um por classe de
+comprimento, escolhida na construção pelo número de glifos do valor publicado,
+como sempre foi. Cada `clamp()` é uma recta entre 320 e 1280: 38→56, 32→48, 26→40.
+No estreito a peça é uma fila de largura inteira e o corpo deixa de depender do
+número de glifos: é a rampa da peça curta, travada nos 44px que ela vale no ponto
+de quebra, para que a série de 320 a 1280 não tenha degrau.
+
+```
+node tests/inicio/matriz.mjs   (célula «tecto de 56px»)
+   320: 38,0px · 390: 39,3px · 768: 46,4px · 1024: 51,2px · 1280: 56,0px
+```
+
+### (d) O Instrumento n.º 1 mais pequeno
+
+O valor do relance tinha `clamp(56px, 9vw, 88px)`: **o tecto de uma peça era o
+chão dele**. Passa à mesma rampa da peça curta e acaba nos 56px, para que o sítio
+tenha uma escala de algarismos e não duas.
+
+A caixa da régua encolhe de 300 para 262 pontos, com o eixo a subir dez (216 →
+206). Tudo o que se desenha por baixo do eixo está escrito EM RELAÇÃO a ele e
+desce junto, sem mudar uma distância; os patamares ficam como estavam, porque os
+30 pontos entre eles são a medição da 2g que separou o nome da região do seu
+valor. O SVG desenha-se a 100% da largura do contentor e a altura sai da proporção
+da caixa: encolher a caixa encolhe o instrumento em **todas** as larguras, sem um
+salto de patamar e sem uma segunda regra de folha.
+
+**Medido nas cinco larguras, na construção de `0a8274b` e nesta:**
+
+| largura | régua, antes | régua, depois | secção, antes | secção, depois | relance, antes | relance, depois |
+| --- | --- | --- | --- | --- | --- | --- |
+| 320 | 660 × 202px | **660 × 176,4px** | 1 192,5px | **1 148,3px** | 56px | **38px** |
+| 390 | 660 × 202px | **660 × 176,4px** | 1 081,3px | **1 038,3px** | 56px | **39,3px** |
+| 768 | 704,6 × 215,7px | **704,6 × 188,4px** | 864,7px | **828,2px** | 69,1px | **46,4px** |
+| 1024 | 940,1 × 287,8px | **940,1 × 251,3px** | 1 015,8px | **954,8px** | 88px | **51,2px** |
+| 1280 | 1 090 × 333,7px | **1 090 × 291,4px** | 1 052px | **986px** | 88px | **56px** |
+
+**13 rótulos e 0 pares de caixas sobrepostas nas cinco larguras.** A célula abre a
+porta do telemóvel antes de medir: abaixo de 640 o instrumento está atrás de um
+`<details>` (subetapa 2g, ponto 4), e uma medição com a porta fechada diria «0
+pares» sem ter olhado para um único rótulo — a primeira versão desta célula fez
+exatamente isso, e imprimiu «régua 0×0px · 0 rótulos», que é uma ausência a
+fingir-se de resultado.
+
+### (e) Emenda 14 · as oito medidas de um concelho sem página
+
+A caixa de estado vazio encolhe para a frase que explica o estado, de largura
+inteira, e por baixo dela entram as **oito medidas de `municipios.mjs` como peças
+vazias**: nome, unidade e «sem linha ainda», sem valor, sem selo e sem marcador.
+Uma peça vazia não é um `<details>`: não há segunda densidade de uma coisa que não
+existe.
+
+**`municipios.mjs` ganha um campo declarado, `unidade`**, e a razão é a mesma do
+`lado` de um limiar e do `referencia` de uma região: não se infere. A linha
+«unidade · período» que a página de concelho rende traz **dois algarismos** que
+numa peça vazia seriam inventados — a data de referência, que é o ano em que
+**Évora** foi lida e que para os outros 307 não existe, e, no índice de dívida, o
+teto legal. E recortá-los por regra dava linhas truncadas: «Pessoas · dezembro
+de», «Percentagem, teto legal =». As palavras do campo novo são as da própria
+`medida`, nas duas edições, sem uma palavra nova.
+
+```
+node tests/inicio/matriz.mjs   (célula «Emenda 14»)
+   pt: 8 peças vazias · 0 com algarismo · 0 selos · 0 marcadores · 8 nomes
+       · 8 unidades · «sem linha ainda» · frase por cima true
+   en: 8 peças vazias · 0 com algarismo · 0 selos · 0 marcadores · 8 nomes
+       · 8 unidades · «no row yet» · frase por cima true
+```
+
+**O que saiu da caixa, e para onde foi.** O título («<nome> · sem página ainda»)
+repetia a manchete que está três linhas acima e o rótulo de âmbito. A contagem da
+CAOP com o seu selo e a citação transcrita continuam na página, na camada de
+aparelho por baixo do mapa, que se lê em qualquer âmbito. **A relocação R3 passa
+de duas ocorrências da citação por edição a uma**, e o registo di-lo:
+
+```
+grep -o 'data-verbatim="caop-fonte"' dist/index.html | wc -l      → 1   (era 2)
+grep -o 'data-verbatim="caop-fonte"' dist/en/index.html | wc -l   → 1   (era 2)
+grep -o 'mapa-fonte-curta' dist/index.html | wc -l                → 1   (sem mudança)
+```
+
+### O transbordo a 1024, que vem de antes e não desta ronda
+
+A largura nova que o brief mandou medir apanhou um defeito que as outras quatro
+não viam. A conta é fechada:
+
+```
+conteúdo a 1024   = 1024 − 2 × 41 de goteira            = 942px
+cabeça 2 colunas  = 582 + 20 + (281 + 18 + ficha)
+logo a ficha do mapa fica com                             41,1px
+```
+
+e a ficha não desce dos **163,6px** que a linha «Contagem verificada nos
+ficheiros» mede. O que transbordava não era o mapa: era a ficha ao lado dele.
+
+**Medido nas duas construções, sete estados × duas edições × cinco larguras:**
+
+```
+node …/transbordo.mjs <dist de 0a8274b>   → 8 de 70 combinações transbordam
+   pais-relance, pais-leitura, evora-relance e beja-vazio, a 1024, nas duas edições
+   82px em português · 90px em inglês · culpados: .compo-k, .compo-row, .compo-n
+node …/transbordo.mjs <dist desta ronda>  → 0 de 70
+```
+
+A cabeça só fica em duas colunas a partir de **1180**, que é a largura da mancha:
+daí para cima a ficha tem 191px. A regra do MAPA fica nos 900, porque entre 900 e
+1180 a cabeça é uma coluna e o mapa tem os 942px inteiros para se desenhar ao lado
+da sua ficha.
+
+**Isto vem da 2b e não desta ronda**, e está medido nas duas construções para que
+não se leia como uma regressão que eu fechei: era um defeito que só uma quinta
+largura via, e a leitura da direção mandou-a medir.
+
+---
+
+## 2j · as réguas
+
+### A matriz de aceitação
+
+`node tests/inicio/matriz.mjs --json design/especime-v3/medicoes/2026-08-21-etapa-2j-matriz.json`
+— **88 de 88 células passam** (as 79 da 2i, todas ainda verdes, mais nove novas):
+
+```
+passa  2j·a · os 308 pontos são círculos iguais e nenhum vem cheio (Emendas 3 e 10)
+passa  2j·a · o ponto escolhido é um anel, e nenhum ponto é um enchimento
+passa  2j · Emenda 12 · claro por defeito, com o sistema em escuro e sem escolha
+passa  2j · Emenda 12 · a escolha do tema persiste, nas duas edições
+passa  2j · Emenda 12 · sem JavaScript o controlo do tema não se vê, e a página é clara
+passa  2j · Emenda 13 · a fila de estados saiu da cabeça, e as contagens ficaram
+passa  2j · as peças sem caixas, separadas por fios de 1px
+passa  2j · os algarismos da peça têm tecto de 56px e crescem sem saltos
+passa  2j · Emenda 14 · Beja rende as oito medidas como peças vazias
+passa  2j · o Instrumento n.º 1 encolheu, e nenhum par de rótulos se cruza
+```
+
+*(São dez linhas para nove células novas porque as duas primeiras são as células
+«2i·3a» e «2i·3b» reescritas: mesma medida, gramática nova, e por isso mudaram de
+nome.)*
+
+**Duas células antigas mudaram de número sem mudar de medida:** a varredura do
+transbordo passou de quatro larguras a cinco (`30 de 30 a zero`, era `24 de 24`), e
+a varredura simples das larguras ganhou 1024. **Os dois temas continuam medidos**,
+agora pelo caminho da Emenda 12: a célula escreve a escolha em `localStorage`
+antes de a página correr, que é o estado de quem carregou no botão numa visita
+anterior, e deixa a guarda do `<head>` aplicá-la. Pôr `data-theme` à mão mediria a
+folha; assim mede-se o mecanismo.
+
+### A régua da invariância
+
+`node scripts/medir-invariancia.mjs <dist de 0a8274b> dist`
+
+```
+322 rotas · 15 idênticas em texto · 307 com diferenças
+```
+
+E as 307 dividem-se em duas, sem sobra:
+
+| quantas | rotas | diferença |
+| --- | --- | --- |
+| 305 | todas as outras páginas | **+2 −1**: entram «claro» e «escuro», sai «Portugal, medido. Cada número tem fonte.» |
+| 2 | `/` e `/en/` | **+28 −18** |
+
+As 15 idênticas são as páginas de documento de estudo, que são bytes exactos da
+origem e não levam a mobília do sítio — o mesmo número da 2f, da 2g, da 2h e da
+2i.
+
+**Os 28 que entram e os 18 que saem na primeira página, bloco a bloco** (guião de
+rascunho com a mesma normalização da régua, porque a régua guarda os cinco
+primeiros de cada lado e eu queria a lista inteira):
+
+| entram | de quê |
+| --- | --- |
+| 8 × «sem linha ainda» | Emenda 14, as oito peças vazias |
+| 8 nomes de medida + 8 unidades (7 cadeias distintas: «Pessoas» duas vezes) | Emenda 14, as mesmas peças |
+| 2 × «Os pontos são todos iguais…» | Emenda 10, a frase nova, na ficha e no cartão |
+| «claro» · «escuro» | Emenda 12, o controlo |
+
+| saem | de quê |
+| --- | --- |
+| 7 × «sem limiar», 1 × «fora do limiar», 1 × «dentro do limiar» | Emenda 13, as palavras da fila (País 1+1, cinco regiões 1 cada, Évora 1+1) |
+| 2 × «O ponto aceso marca cobertura editorial…» | Emenda 10, a frase antiga |
+| «Portugal, medido. Cada número tem fonte.» | Emenda 11 |
+| «Águeda», «308», «fonte», «Linha do livro-razão: calculado · …», a citação da CAOP, «sem página ainda» | Emenda 14, o que a caixa de estado vazio levava: o nome no título (o concelho com que a página se constrói é Águeda), a contagem da CAOP com o seu selo e o seu texto oculto, a citação transcrita e a palavra da cobertura |
+
+Na edição inglesa a lista é a mesma, cadeia a cadeia.
+
+`node scripts/medir-invariancia.mjs --chaves` imprime **14 chaves** com o mesmo
+valor nas duas edições — o mesmo número da 2f, 2g, 2h e 2i, e **nenhuma nova**: as
+quatro cadeias desta ronda têm inglês próprio.
+
+### As duas réguas antigas
+
+**Defeitos.** `node scripts/medir-defeitos.mjs`, sobre a mesma construção que o
+portão varre:
+
+| medida | `0a8274b` | 2j |
+| --- | --- | --- |
+| páginas | 307 | 307 |
+| porta de correcções | 307/307 | 307/307 |
+| primeira página · valores sem selo | 0 | 0 |
+| primeira página · selos para outra linha | 0 | 0 |
+| **frases de moldura** | **94 distintas · 2 405** | **93 distintas · 2 099** |
+| `[descrição em preparação]` | 0 | 0 |
+| linhas com `#page=` | 23 de 132 | 23 de 132 |
+| linhas com recorte | 22 de 132 | 22 de 132 |
+| localizadores internos | 0 | 0 |
+| cobertura · com-pagina | 1 distinta × 6 | 1 distinta × 6 |
+| cobertura · sem-pagina | 1 distinta × 308 | 1 distinta × **307** |
+| cobertura · **sem-linha** | *(não existia)* | **1 distinta × 8** |
+
+**As frases de moldura desceram, e a descida tem duas parcelas e não uma.**
+Comparadas as duas listas inteiras, como multiconjuntos de (texto, contagem):
+
+```
+só na referência:  −307  «Portugal, medido. Cada número tem fonte.»
+                   −2    «Purchasing power per inhabitant»
+só agora:          +3    «Purchasing power per inhabitant»
+soma: 2405 → 2099
+```
+
+A primeira parcela é a Emenda 11: uma frase distinta, em 307 páginas. A segunda é
+a Emenda 14, e explica-se por um limite da própria régua: ela só conta blocos com
+**30 caracteres ou mais** (`medir-defeitos.mjs`, linha 114), e das dezasseis
+cadeias de nome de medida — oito por edição — **«Purchasing power per inhabitant»
+é a única com 30**. As outras quinze passam a render-se duas vezes na primeira
+página e a régua não as vê. Fica dito, porque a alternativa era escrever «a régua
+desceu 306» e deixar o 1 por explicar.
+
+**A cobertura «sem-pagina» desce de 308 para 307 ocorrências**: a que saiu é o
+título da caixa de estado vazio da primeira página, que a Emenda 14 retirou. As
+307 restantes são o índice dos concelhos.
+
+**Contraste.** `node scripts/medir-contraste.mjs --json`. **Idêntico par a par
+nas duas paletas** contra o da 2i (18 pares distintos, 0 diferenças em claro, 0 em
+escuro). O ficheiro não é byte a byte igual porque a chave do estado mudou de
+nome, e isso está dito acima.
+
+Guardados em
+`design/especime-v3/medicoes/2026-08-21-etapa-2j-{matriz,defeitos,contraste,invariancia}.json`.
+
+### As capturas
+
+`node tests/inicio/capturas.mjs` — **as 68 refeitas**, mesmos nomes, mesma pasta,
+e `git status` diz que as 68 mudaram. Era o esperado: o cabeçalho mudou em todas,
+os pontos do mapa mudaram de forma e de enchimento, a fila saiu da cabeça, as
+peças perderam as caixas, os algarismos mudaram de corpo, o instrumento encolheu e
+o estado de Beja mudou de desenho. Mais as **32 da etapa 1**, pela mobília.
+
+---
+
+## 2j · o que fica por fazer, e porquê
+
+1. **I26 · `IDENTIDADE.md` §2 descreve a paleta escura como era antes da Emenda
+   12.** É de propriedade: o brief da 2j dá-me a `IDENTIDADE.md` para ler e não
+   para escrever, e a §2 é do construtor A desde a etapa 1. A alteração é um
+   parágrafo, e está escrita na entrada.
+2. **I27 · `Provenance.astro` tem a mesma armadilha que o I24 fechou em
+   `Claim.astro`** (`lang = 'pt'` por defeito). Hoje não morde, porque quem o
+   chama sem língua é o próprio `Claim.astro`, que já a exige. Não lhe toquei: o
+   brief nomeia um ficheiro, e fazer o segundo por analogia é fazer sem medir.
+3. **I28 · `inicio.mapa.naoDizK` não é rendida por ninguém**, e veio com a
+   relocação R3. Retirá-la muda uma contagem do registo, e isso é do lugar de
+   direção.
+4. **I29 · `InstrumentoMapa.astro` não existe.** Ver acima.
+5. **Cinco chamadas de `<Claim>` em `EstudoView.astro` e `MunicipioView.astro`
+   ganharam `lang={lang}`**, e essas vistas não estão na lista de ficheiros desta
+   ronda. Sem elas o I24 não fechava e a construção não passava. Está dito na
+   alínea (d) e na entrada de ISSUES, com o que é preciso para desfazer.
+6. **A goteira decide o ponto de quebra da cabeça.** A 1180 a ficha do mapa tem
+   191px e a sua linha mais larga mede 163,6px: 27,4px de folga. Se a etapa 3 ou a
+   revisão de voz encurtarem a linha «Contagem verificada nos ficheiros», a cabeça
+   volta a caber em duas colunas mais cedo, e o 1180 pode descer. Fica dito para
+   que ninguém o mude sem voltar a medir.
+7. **I19** continua aberto, e continua a ser da fase da voz.
+
+## 2j · quem fez o quê, e quanto custou
+
+**Claude Opus** (construtor B5), num só fio, sem subagentes e sem delegação.
+Nenhuma parte desta ronda correu noutro modelo.
+
+**Contagem de fichas:** a única contagem honesta é a diferença de dois contadores.
+No início desta ronda o contador dizia **14 973 347** por usar; no momento em que
+esta nota se fecha dizia **14 466 932** — ou seja **≈ 506 mil fichas**, acima da
+escala do brief (300 a 450 mil), e o que a passou foi a medição: a
+matriz inteira quatro vezes, duas varreduras de transbordo de setenta combinações
+cada, as alturas do instrumento nas duas construções, 68 capturas da primeira
+página e 32 da etapa 1, e a conta por bloco da invariância. Não tenho um número
+exacto para lá desta diferença, e não o invento.

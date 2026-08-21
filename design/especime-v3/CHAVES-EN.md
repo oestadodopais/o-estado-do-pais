@@ -108,6 +108,32 @@ escolha custou algo está dita a razão.
 
 *(A propriedade `rotuloId` de `Regua.astro` prometia um nome acessível às réguas e nunca era passada; saiu com o `role="img"` que a acompanhava, e as onze réguas — dez, depois de o painel de Portugal sair — passaram a `aria-hidden="true"`. Não é uma cadeia: nenhum texto entrou nem saiu por causa disto.)*
 
+### Etapa 2j
+
+**Quatro cadeias novas, duas retiradas.** A leitura da pré-visualização n.º 1 pela
+direção (21.08.2026; `DECISIONS.md` §1.52) trouxe as Emendas 10 a 14. Três delas
+não pedem uma palavra nova — os pontos do mapa, a fila de estados e as caixas das
+peças são forma —, e as que pedem estão aqui.
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| **`tema.rotulo`** | **Tema** | **Theme** | O nome do grupo dos dois botões do tema. Só é ouvido: quem não vê o cabeçalho recebe duas palavras soltas e não sabe de que é a escolha |
+| **`tema.claro`** | **claro** | **light** | Em minúsculas nas duas edições: são as duas metades de um comando de aparelho, como `densidade.abrir`/`fechar`, e não títulos. O inglês não é «clear»: o par é o par de temas, e em inglês um tema claro é «light» |
+| **`tema.escuro`** | **escuro** | **dark** | O mesmo. É também, à letra, o valor que se guarda no aparelho do leitor — mas a cadeia visível e o valor guardado são duas coisas: o valor é `'dark'` nas duas edições, e a palavra segue a edição |
+| **`cobertura.semLinhaAinda`** | **sem linha ainda** | **no row yet** | A terceira palavra da cobertura, e é de outra escala. «sem página ainda» é sobre o CONCELHO; esta é sobre uma MEDIDA daquele concelho: a medida existe, a página ainda não tem uma linha para ela. «row» e não «entry» ou «record», porque «linha» é a palavra que o sítio inteiro usa para uma linha do livro-razão, e é ela que o selo abre |
+| **`inicio.mapa.posicao`** | Os pontos são todos iguais e marcam a posição de cada concelho na Carta Administrativa, e mais nada: não marcam cobertura, qualidade nem importância. | The points are all alike and mark where each concelho sits on the official administrative map, and nothing else: they do not mark coverage, quality or importance. | **cadeia nova, e não uma relocação.** Substitui `inicio.mapa.naoDiz`, que a Emenda 10 tornou falsa: a antiga começava por «O ponto aceso», e desde esta ronda nenhum ponto vem aceso. O inglês diz «where each concelho sits on the official administrative map» e não «its position on the CAOP», pela mesma razão que a antiga o dizia: a sigla não é um nome que se leia em inglês, e a Carta é o que ela é. «concelho» fica em português, como já acontece em `municipios.h1` e em `inicio.mapa.coberturaB` |
+
+**Saíram duas chaves, nas duas edições:** `inicio.cabeca.estadoRotulo` («Estado das
+medidas» / «State of the measures»), que era o nome do grupo da fila de estados
+que a Emenda 13 retirou da cabeça; e `inicio.mapa.naoDiz`, substituída pela de
+cima. Saiu também `METHOD_LINE`, que não é uma chave de `strings.mjs` mas era
+texto público: vivia em `site.config.mjs`, declarada como identidade e não
+traduzida, e a Emenda 11 mandou-a sair da mobília.
+
+`node scripts/medir-invariancia.mjs --chaves` imprime **14 chaves** com o mesmo
+valor nas duas edições — o mesmo número da 2f, da 2g, da 2h e da 2i, e nenhuma
+nova. As quatro cadeias desta ronda têm inglês próprio.
+
 ### Etapa 3
 *(por preencher: `linha.*`, `livro.*`, `municipios.*`, `municipio.*`)*
 
