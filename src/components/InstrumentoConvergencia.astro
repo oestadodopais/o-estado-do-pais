@@ -31,7 +31,6 @@
  * dono da folha.
  */
 import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
-import { DADOS } from '../lib/dados.mjs';
 import { REGIOES, ESCALA, GEOMETRIA } from '../data/regioes.mjs';
 import { studyLabel } from '../data/studies.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -335,14 +334,20 @@ for (const r of REGIOES) {
       falta: os selos dos valores desenhados vivem em `.brief`
       (`data-legenda-selos`), que é onde o portão os procura.
 
-      A PORTA DO CSV FICA, pela mesma razão da do mapa:
-      `scripts/check-dados.mjs` exige que as duas edições da primeira página
-      liguem os dois ficheiros. Fica como ligação, sem a frase que a explicava.
+      A PORTA DO CSV DESCE PARA O LIVRO-RAZÃO (21.08.2026, relocação R13).
+      Ficava aqui porque `scripts/check-dados.mjs` exigia que as duas edições da
+      PRIMEIRA PÁGINA ligassem os dois ficheiros. O commit 3-0 mudou essa
+      conferência de objecto — a rota de cada ficheiro passou a ser uma
+      declaração —, e o registo de relocações já dizia que o aparelho deste
+      instrumento tinha saído daqui enquanto a porta continuava a render
+      (leitura cruzada do Codex de 21.08, achado 7). A direção decidiu qual dos
+      dois se corrige: a porta desce para `/livro-razao`, ao pé do bloco do
+      conjunto de dados, e a declaração de rota desce no mesmo commit.
+
+      O QUE FICA É A FRASE QUE DIZ O QUE O ÍNDICE É. Não é aparelho: nomeia a
+      coisa que a régua desenha, e sem ela a régua é uma barra sem grandeza.
       ---------------------------------------------------------------------- */}
   <p class="conv-significado">{s.home.instr1.significadoV}</p>
-  <p class="conv-dados">
-    <a class="ligacao-dados" href={DADOS.convergencia} download>{s.home.dadosLink} ↓</a>
-  </p>
 
   <script type="application/json" data-ledger-json data-dados="convergencia" set:html={ilhaJson} />
 </div>

@@ -8784,6 +8784,83 @@ fácil, não para tornar o desonesto impossível.
   ficheiros idênticos byte a byte, e o comprimento bate certo com a contagem que
   a própria ferramenta registou da resposta HTTP.
 
+### 1.54 O commit 4-0: a legenda do selo passa a nomear estados, Évora deixa de se explicar, o localizador deixa de prometer teclas, e o CSV da convergência desce para o livro-razão
+
+**Afecta:** nenhum
+
+*(Nenhuma palavra de `src/data/sobre.mjs` ou de `src/data/metodo.mjs` mexe aqui,
+nenhuma linha do livro-razão é escrita, e nenhum valor muda. O que muda é a
+composição de quatro superfícies, uma declaração de rota de conferência e a
+classificação de duas rotas no inventário das frases da casa.)*
+
+A 21.08.2026, à tarde, a direção decidiu quatro coisas sobre o que a quarta
+leitura cruzada do Codex tinha encontrado nos interiores, e este commit abre a
+etapa 4 com elas, antes de qualquer subetapa. As quatro são de forma e de
+registo; nenhuma é de texto governado.
+
+**1 · A legenda do selo nomeia os estados, e as duas notas de grupo saem**
+(`src/views/LivroView.astro`, `strings.mjs` `livro.*`). Fecha o item AB da §4. A
+legenda dizia «Quadrado cheio: a proveniência está completa.» e «Quadrado a
+tracejado: falta pelo menos um campo, e a linha di-lo.»; passa a «■ proveniência
+completa · □ um campo por confirmar» e «■ provenance complete · □ one field
+unconfirmed». As duas notas de grupo do índice («Todos os campos preenchidos e
+conferidos contra a fonte. O selo é um quadrado cheio.» e «Falta pelo menos um
+campo de proveniência… O selo é um quadrado a tracejado.») retiram-se: eram as
+duas únicas frases de autorreferência que a régua contava nesta rota. Medido:
+`/livro-razao` e `/en/ledger` passam de **autorreferência 2** para **0**, com
+conteúdo 12 e navegação 2 em cada edição.
+
+**2 · A página de Évora deixa de se explicar** (`src/views/MunicipioView.astro`,
+`src/data/municipios.mjs`, `strings.mjs` `municipio.*`). Fecha os itens Q e T da
+§4. Saem a abertura («Esta página mede o município de Évora e mostra de onde vem
+cada medida. Não interpreta: …»), as contagens por extenso do Relance («Oito
+medidas. Seis vêm de organismos…»), os dois parágrafos por baixo de «Quem
+responde pelo quê» — que fica só como nome da secção, por cima da banda dos
+mandatos —, a sub-linha da Leitura breve, a nota dos trabalhos e a segunda frase
+da descrição do `<head>`. A relocação **R6** fecha a **1 → 0**: a frase de
+abertura tinha sido duplicada para a primeira página na etapa 2, saiu de lá na
+2m, e sai daqui agora. A rota `/municipios/evora` entra em `ROTAS_DO_INVENTARIO`.
+**A contagem não fecha a zero e isso fica escrito**: três blocos por edição
+continuam a ser a casa a falar de si, os três em conteúdo editorial da etapa 3
+(`metodo`, `naoSabe` e uma nota de mandato de `municipios.mjs`), e nenhum deles
+está entre os itens que a decisão nomeou. Cortá-los é chamada de redação e está
+pedido em `design/especime-v3/ISSUES.md` I52.
+
+**3 · O localizador de Évora deixa de apontar para uma descrição que não existe**
+(`src/components/inicio/MapaRespira.astro`, `strings.mjs` `inicio.mapa.svgLabel`).
+Achado 13 da quarta leitura. `aria-describedby="mapa-descricao"` era escrito
+sempre e o bloco com esse `id` só se constrói na postura «inteiro»: na página do
+concelho a referência ficava pendurada. Passa a depender da mesma condição. E o
+rótulo do desenho perde a instrução de teclado («Use as setas para percorrer os
+municípios.»), que só é verdadeira onde o script da primeira página está
+carregado; a instrução continua escrita, uma vez só, em `tecladoHint`, dentro do
+bloco que só ali se constrói.
+
+**4 · O aparelho da convergência sai mesmo da primeira página, e o registo passa
+a ser verdade** (`src/components/InstrumentoConvergencia.astro`,
+`src/views/LivroView.astro`, `scripts/check-dados.mjs`). Achado 7 da quarta
+leitura: `RELOCACOES.md` dizia que o aparelho do Instrumento n.º 1 tinha saído da
+primeira página e a construção ainda lá rendia a porta do CSV. Das duas coisas,
+corrige-se a construção. A porta desce para `/livro-razao`, ao pé do bloco do
+conjunto de dados, com a mesma cadeia da primeira página e um rótulo novo que a
+nomeia; a declaração de rota de `check-dados.mjs` desce com ela no mesmo commit
+(`PORTA_DOS_DADOS.convergencia`, de `home` para `livro`). Relocação **R13**. A
+frase que diz o que o índice compara **fica** na primeira página: é conteúdo, e
+nomeia o que a régua desenha. A frase de seleção fica como navegação.
+
+**As duas plantas da conferência mudada**, porque uma declaração que ninguém
+provou é um comentário:
+
+1. a declaração volta a `home` com a porta já em `/livro-razao` →
+   «a página "/" (edição "pt") não liga para "/dados/convergencia.csv"», e o
+   mesmo para `/en`. Revertida;
+2. a porta sai de `/livro-razao` com a declaração já em `livro` →
+   «a página "/livro-razao" (edição "pt") não liga para "/dados/convergencia.csv"»,
+   e o mesmo para `/en/ledger`. Revertida.
+
+Nenhum portão novo: as duas são a mesma conferência que já existia, sobre a rota
+que a declaração nomeia.
+
 ---
 
 ## 4. O registo dos defeitos e dos adiamentos
@@ -8904,7 +8981,7 @@ como script.
 | As afirmações da prosa da primeira página que a página não sustenta | Sete afirmações em seis das oito células, nas duas edições, com as palavras exactas na tabela da §1.44: «e a descer», «o excesso quase duplicou no ano seguinte», «Está acima da média da União», «É das medidas em que Portugal mais se destaca no painel social», «Era mais de um terço no início do século», «Está abaixo da média europeia» e a advertência atribuída à Comissão sem porta. Mais uma de outra natureza, a mudança de definição do custo unitário do trabalho, que é uma afirmação sobre a metodologia da fonte. Nenhuma é falsa, e por isso nenhuma foi corrigida aqui; todas afirmam uma tendência, uma comparação ou uma atribuição que nenhuma linha **daquela página** prova. | Uma delas foi corrigida neste bloco, e foi a única que estava **errada** (a definição da posição de investimento, com o sinal ao contrário). Estas estão por provar, que é outra coisa: a saída é o portão da prosa, que aprende a exigir de uma frase da casa o mesmo que já exige de um algarismo, e isso é a fase 4. Apagá-las à mão agora deixaria a regra por escrever e a próxima frase a entrar pela mesma porta. |
 | O nome acessível de vários selos dentro da mesma legenda | Na legenda do instrumento n.º 1 há **catorze** selos e **três** nomes acessíveis distintos: seis «Linha do livro-razão: calculado · Avaliação Económica Regional de Portugal 2026 fonte», seis o mesmo sem «calculado», e dois de «Alentejo & Algarve». Quem ouve a lista de ligações ouve catorze portas com três nomes. | Distingui-los obriga o texto oculto de cada selo a levar a linha que ele abre, e obriga a conferência (4) da conferência da `proveniencia` em `scripts/gate-html.mjs`, a que compara o texto inteiro do selo com `seloDaLinha(id, lang).inteiro`, a aprender a forma nova. É desenho de conferência e não uma afinação de gabarito. |
 | O estado «lido» das fichas da régua não tem equivalente para quem não vê | `aria-pressed` segue a região estar **na régua** e `is-read` segue a região **que está a ser lida**. O segundo é só visual: o parágrafo da leitura breve só é região viva na região com que a página foi construída, e as outras trocam de `hidden` sem anunciar nada. | É comportamento de um instrumento com JavaScript, e a saída certa não é óbvia: ou a leitura breve passa a região viva única, ou o estado entra no nome da própria ficha. As duas mudam o que um leitor de ecrã ouve a cada toque, e isso é decisão de desenho. Encontrado ao conferir a observação da revisão sobre `aria-pressed`, que já estava feita (§1.44, G). |
-| As contagens em palavras da página do município | «Oito medidas. Seis vêm de organismos que publicam para todos os concelhos do país; duas só existem porque o próprio município as publica, e cada uma dessas di-lo na sua linha.» Em inglês, «Eight measures. Six come from bodies that publish for every concelho in the country; two exist only because the municipality itself publishes them, and each of those says so on its own line.» As três contagens não vêm de contar nada: são estado escrito, e se uma medida entrar ou sair na página a frase fica errada sem que nada feche. | A régua dos algarismos não vê palavras, e é isso que faz esta classe escapar inteira. Fechá-la é uma de duas coisas, e as duas são desenho: ou a frase passa a derivar das medidas que a página rende, e então precisa de porta como qualquer contagem do próprio sítio (§10), ou o portão da prosa aprende a exigir prova de uma contagem escrita por extenso. Encontrada na segunda leitura cruzada da v2 (§1.44). |
+| As contagens em palavras da página do município | «Oito medidas. Seis vêm de organismos que publicam para todos os concelhos do país; duas só existem porque o próprio município as publica, e cada uma dessas di-lo na sua linha.» Em inglês, «Eight measures. Six come from bodies that publish for every concelho in the country; two exist only because the municipality itself publishes them, and each of those says so on its own line.» As três contagens não vêm de contar nada: são estado escrito, e se uma medida entrar ou sair na página a frase fica errada sem que nada feche. | A régua dos algarismos não vê palavras, e é isso que faz esta classe escapar inteira. Fechá-la é uma de duas coisas, e as duas são desenho: ou a frase passa a derivar das medidas que a página rende, e então precisa de porta como qualquer contagem do próprio sítio (§10), ou o portão da prosa aprende a exigir prova de uma contagem escrita por extenso. Encontrada na segunda leitura cruzada da v2 (§1.44). **Fechado no commit 4-0 do redesenho v3 (21.08.2026), e por retirada e não por conferência.** A direção decidiu que a frase sai: as contagens por extenso não têm porta e não se recontam, e a Emenda 15 tira da página do leitor a explicação da sua própria cobertura. Cada medida que só existe porque o município a publica continua a dizê-lo na sua linha do livro-razão, que é onde essa ressalva é conferível. A rota `/municipios/evora` entra no inventário das frases da casa no mesmo commit. |
 | As citações de fonte em inglês sem língua declarada | Numa página `pt-PT`, o excerto de `divida-publica-2025` rende «General government gross debt (EDP concept), consolidated - annual data …» sem `lang="en"`, e o mesmo vale para o `source` e o `document.title` de qualquer fonte estrangeira. Quem ouve a página ouve inglês lido à portuguesa. | O registo **não tem campo de língua por campo**: nenhuma das 132 linhas diz em que língua está o seu excerto. Pôr o atributo a olho seria adivinhar, e adivinhar bem nas 132 de hoje não impede a 133.ª de entrar sem ele. É trabalho do motor primeiro, e só depois do sítio e do portão. Encontrada na segunda leitura cruzada da v2 (§1.44). |
 | ~~O portão compara os algarismos do valor, e não a cadeia~~ | **Fechado a 18.08.2026 (§1.47, T4).** Um `data-claim` passa a comparar a **cadeia** renderizada com o valor da linha, com a cópia própria do portão da normalização: o menos tipográfico e o ASCII são o mesmo sinal, os quatro espaços de milhares são o mesmo separador, o espaço em branco do HTML não é conteúdo, e mais nada. A vírgula decimal e a **presença** do sinal não se normalizam. Os dois estragos que esta linha nomeava fecham: «96%» onde a linha diz «96», e o menos apagado na posição de investimento, agora na própria primeira página e não só no `<head>` da página de linha. | As três respostas que faltavam foram medidas em vez de decididas: a corrida inteira passa sem um falso positivo, com **16** valores desenhados dentro de um `<svg>`, **32** com a escala `--figura-car` e **36** com o símbolo da unidade colado ao lado. A escala é um atributo e não toca no texto; o sufixo está fora do elemento desde a v2, e esta conferência é o que garante que continua fora. Não foi preciso esperar pelo `gate:identidade`. |
 
@@ -8915,7 +8992,7 @@ da página de linha: um é registo do motor, o outro é redação.
 | Item | O que está por fazer | Porque não foi feito aqui |
 | --- | --- | --- |
 | O prazo de apreciação das contas está no grupo da data publicada pela fonte | O calendário das fontes põe «Prestação de contas de 2026 do Município de Évora, apreciação pela Assembleia Municipal entre 2027-04-01 e 2027-04-30» em **«Com data publicada pela fonte»**, e a nota do próprio acontecimento diz duas coisas que o desmentem: «O prazo é o da apreciação, não o da publicação», e que as alterações à lei posteriores a 2018 não foram conferidas, porque a versão consolidada em `diariodarepublica.pt` devolve a casca «JavaScript is required» a `curl` e ao WebFetch. Conferido na construção de 18.08.2026: `evora-contas-2026` está mesmo nesse grupo, com os outros sete. | O acontecimento é um **registo de calendário do motor**, escrito no bloco da agenda (§1.40), e o grupo em que ele cai é lido de um campo desse registo. Reclassificá-lo do lado do sítio era o sítio a escrever o que o motor declara, que é exatamente a fronteira que a §1.31 fixou. A saída é uma de duas, e as duas são de formato: ou o registo ganha maneira de dizer «prazo legal» ao lado de «data publicada pela fonte», ou o acontecimento sai do calendário até a fonte publicar uma data. Encontrado pela leitura cruzada do bloco T (§1.47, achado 12). |
-| A página do município promete «Não interpreta» e escreve frases que interpretam | A abertura diz «Não interpreta: onde uma fonte não estabelece uma coisa, a página di-lo em vez de a supor», e a mesma página escreve «Quem responde pelo quê», «Um partido é dono das suas decisões, não de uma curva» e «A diferença é pequena». As quatro estão na construção de 18.08.2026, nas duas edições. Nenhuma delas é falsa, e nenhuma atribui um número a ninguém: o que elas são é juízo editorial, e a promessa da abertura é absoluta. | Ou a página interpreta e a abertura di-lo, ou não interpreta e as frases mudam. As duas são redação, e é a mesma classe que a §1.44 já deixou aberta para o portão da prosa: a régua dos algarismos não vê palavras. Emendar as três frases à mão sem decidir a regra deixava a quarta a entrar pela mesma porta, e ainda por cima numa página cuja prosa a fase da voz vai ler inteira. Encontrada pela leitura cruzada do bloco T (§1.47, achado 16). |
+| A página do município promete «Não interpreta» e escreve frases que interpretam | A abertura diz «Não interpreta: onde uma fonte não estabelece uma coisa, a página di-lo em vez de a supor», e a mesma página escreve «Quem responde pelo quê», «Um partido é dono das suas decisões, não de uma curva» e «A diferença é pequena». As quatro estão na construção de 18.08.2026, nas duas edições. Nenhuma delas é falsa, e nenhuma atribui um número a ninguém: o que elas são é juízo editorial, e a promessa da abertura é absoluta. | Ou a página interpreta e a abertura di-lo, ou não interpreta e as frases mudam. As duas são redação, e é a mesma classe que a §1.44 já deixou aberta para o portão da prosa: a régua dos algarismos não vê palavras. Emendar as três frases à mão sem decidir a regra deixava a quarta a entrar pela mesma porta, e ainda por cima numa página cuja prosa a fase da voz vai ler inteira. Encontrada pela leitura cruzada do bloco T (§1.47, achado 16). **Fechado no commit 4-0 do redesenho v3 (21.08.2026), pelo primeiro dos dois caminhos que este item nomeava.** A promessa absoluta sai: a abertura inteira («Esta página mede o município de Évora e mostra de onde vem cada medida. Não interpreta: …») foi retirada por decisão da direção, e com ela os dois parágrafos de «Quem responde pelo quê», que ficam como nome de secção por cima da banda dos mandatos. As frases que restam continuam a ser juízo editorial e continuam a ser matéria da fase da voz — o que deixa de existir é a promessa que elas contradiziam. Três blocos continuam a ler-se como autorreferência na régua e estão registados em `ISSUES.md` I52 do ramo. |
 
 ~~**Fase 1 · a redacção do Método sobre os números do próprio sítio**~~
 (18.08.2026, §1.44). **Fechado a 18.08.2026 pela §1.45 e pela §1.46.** O Método
@@ -9031,6 +9108,16 @@ legenda é que promete mais do que a categoria significa. É redação de duas
 cadeias do índice, nas duas edições, e é da fase da voz: fica com o achado 16 da
 leitura do bloco T, pela mesma razão de não se emendar prosa no mesmo estádio em
 que se lhe descobre o alcance.
+
+**Fechado no commit 4-0 do redesenho v3 (21.08.2026), por decisão da direção.** A
+legenda deixa de descrever o glifo e passa a nomear os dois estados: «■
+proveniência completa · □ um campo por confirmar», «■ provenance complete · □ one
+field unconfirmed». Um nome de estado não promete uma conferência, e por isso a
+categoria deixa de dizer mais do que significa. Com ela saíram as duas notas de
+grupo do índice («Todos os campos preenchidos e conferidos contra a fonte…» e
+«Falta pelo menos um campo de proveniência…»), que eram as duas únicas frases de
+autorreferência que a régua contava em `/livro-razao` e `/en/ledger`: as duas
+rotas passam a ler **0**.
 
 ### 4.2 O que continua aberto de antes, e não mudou neste bloco
 

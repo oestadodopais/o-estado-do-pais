@@ -193,6 +193,19 @@ const caop = getClaim('municipios-portugal-caop-2025');
       moldura, e a tela é o seu primeiro item. Não é o script que troca isto: é
       `data-postura`, que já existia, lido pela folha.
       ---------------------------------------------------------------------- */}
+  {/* --------------------------------------------------------------------------
+      A DESCRIÇÃO SÓ SE APONTA ONDE ELA EXISTE (commit 4-0, 21.08.2026)
+      --------------------------------------------------------------------------
+      `aria-describedby="mapa-descricao"` era escrito sempre, e o bloco que leva
+      esse `id` só se constrói na postura «inteiro» (a primeira página). Na
+      página do concelho, que rende o cartão localizador do servidor, a
+      referência ficava pendurada: um leitor de ecrã pedia a descrição e não
+      havia nenhuma. É o achado 13 da quarta leitura cruzada do Codex.
+
+      A postura decide, e é a mesma condição que já governa `#mapa-descricao` por
+      baixo — as duas leem-se juntas, e é isso que impede que voltem a
+      divergir.
+      -------------------------------------------------------------------------- */}
   <div class="mapa-cartao" data-mapa-cartao>
   <div class="mapa-tela" data-mapa-wrap>
     <svg
@@ -200,7 +213,7 @@ const caop = getClaim('municipios-portugal-caop-2025');
       viewBox={`0 0 ${FIELD_W} ${FIELD_H}`}
       role="img"
       aria-label={s.inicio.mapa.svgLabel}
-      aria-describedby="mapa-descricao"
+      {...(postura === 'inteiro' ? { 'aria-describedby': 'mapa-descricao' } : {})}
       data-mapa
     >
     {/* ------------------------------------------------------------------
