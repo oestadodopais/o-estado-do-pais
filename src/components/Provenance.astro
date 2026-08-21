@@ -67,7 +67,34 @@ import { caminhoDaLinha } from '../lib/livro.mjs';
 import { studyLabel } from '../data/studies.mjs';
 import { t } from '../i18n/strings.mjs';
 
-const { id, lang = 'pt', ancora = null } = Astro.props;
+const { id, lang, ancora = null } = Astro.props;
+
+/**
+ * A LÍNGUA É OBRIGATÓRIA, E A CONSTRUÇÃO PÁRA QUANDO FALTA (ISSUES I27).
+ *
+ * É a armadilha que o I24 fechou em `Claim.astro` a 21.08.2026, no componente do
+ * lado. Aqui ela não mordia ainda: quem chamava este componente sem língua era o
+ * próprio `Claim.astro`, que já a exige. Mas o selo escreve TRÊS coisas que
+ * dependem da edição — a palavra à vista («fonte» / «source»), o texto oculto e
+ * o `title`, os três compostos de `t(lang)` e de `studyLabel(id, lang)` — e o
+ * portão compara as três com a sua própria composição, na língua da PÁGINA. Uma
+ * chamada sem língua numa página inglesa escrevia «fonte» debaixo de um
+ * `<html lang="en">`, e o defeito só aparecia depois de construir.
+ *
+ * As etapas 3 e 4 escrevem dezenas de chamadas destas. A mensagem nomeia o `id`
+ * da linha, como as do portão e como a de `Claim.astro`, para que quem a lê
+ * saiba qual das chamadas é. É uma excepção na construção e não uma conferência
+ * nova: nenhum portão aprendeu nada, e o que muda é que uma chamada incompleta
+ * deixa de ter um caminho silencioso.
+ */
+if (!lang) {
+  throw new Error(
+    `<Provenance id="${id}"> sem "lang". A língua é obrigatória: sem ela, o selo ` +
+      `escreveria a palavra «fonte» e o texto oculto em português na edição inglesa ` +
+      `(ISSUES I27). Passe lang={lang} na chamada.`,
+  );
+}
+
 const s = t(lang);
 const claim = getClaim(id);
 

@@ -18,7 +18,7 @@
  *      das coordenadas — um ficheiro editado à mão não passa;
  *   4. `convergencia.csv` tem uma linha por região activa da régua, e cada
  *      linha bate certo, campo a campo, com a afirmação que ela própria nomeia;
- *   5. as duas edições da primeira página ligam para os dois ficheiros, e
+ *   5. as duas edições da página DE CADA FICHEIRO ligam para o seu ficheiro, e
  *      nenhuma ligação /dados/… aponta para um ficheiro que não foi construído;
  *   6. cada linha com `document.hosted` é RECONTADA sobre o ficheiro que a
  *      construção pôs em dist/: o número de linhas de dados é o valor que a
@@ -302,19 +302,59 @@ for (const [rota, onde] of ligacoes) {
   }
 }
 
-/* As duas edições da primeira página têm de oferecer os dois instrumentos. */
-for (const lang of ['pt', 'en']) {
-  const rota = routePath('home', lang);
-  const ficheiro = path.join(DIST, rota === '/' ? 'index.html' : rota.replace(/^\//, '') + '/index.html');
-  if (!fs.existsSync(ficheiro)) {
-    err(`não encontrei a primeira página da edição "${lang}" em ${ficheiro}.`);
+/**
+ * ---------------------------------------------------------------------------
+ * ONDE A PORTA DE CADA FICHEIRO VIVE, E PORQUE É UMA DECLARAÇÃO (21.08.2026)
+ * ---------------------------------------------------------------------------
+ * Até aqui esta conferência exigia que **a primeira página** ligasse os dois
+ * ficheiros, porque era lá que os dois instrumentos viviam. A Emenda 15 tirou da
+ * primeira página a camada de aparelho do mapa, e a porta do CSV dos 308 ia com
+ * ela; a Emenda 17 mandou a contagem por parcelas da CAOP para `/municipios`. A
+ * porta segue a lista que o ficheiro publica: quem quer os 308 em ficheiro está
+ * na página dos 308, e não na primeira (ISSUES I34; decisão 3 da direção).
+ *
+ * A promessa não afrouxa: continua a ser «nas duas edições, ou não são». O que
+ * muda é que a rota deixa de estar escrita dentro do laço e passa a ser uma
+ * DECLARAÇÃO, ficheiro a ficheiro. Uma declaração é o que se pode ler antes de
+ * correr, e é o que impede que a porta desapareça em silêncio: um ficheiro sem
+ * rota declarada fecha a construção, em vez de deixar de ser conferido.
+ *
+ * A régua da convergência continua na primeira página, e por isso o seu CSV
+ * continua a ser exigido lá. Uma porta a mais noutra página não é um erro: o que
+ * esta conferência impõe é o mínimo, e a conferência de cima já garante que
+ * nenhuma ligação `/dados/…` aponta para um ficheiro que não foi construído.
+ */
+const PORTA_DOS_DADOS = {
+  convergencia: 'home',
+  municipios: 'municipios',
+};
+
+/** O ficheiro construído de uma rota. `/` é `index.html`; o resto é `<rota>/index.html`. */
+function ficheiroDaRota(rota) {
+  return path.join(DIST, rota === '/' ? 'index.html' : rota.replace(/^\//, '') + '/index.html');
+}
+
+for (const [chave, alvo] of Object.entries(DADOS)) {
+  const destino = PORTA_DOS_DADOS[chave];
+  if (!destino) {
+    err(
+      `o ficheiro "${alvo}" não declara em que rota vive a sua porta (PORTA_DOS_DADOS, ` +
+        `scripts/check-dados.mjs). Um ficheiro que ninguém oferece é um ficheiro que ninguém ` +
+        `pediu: declare a rota, ou não o construa.`,
+    );
     continue;
   }
-  const html = fs.readFileSync(ficheiro, 'utf8');
-  for (const alvo of Object.values(DADOS)) {
+  for (const lang of ['pt', 'en']) {
+    const rota = routePath(destino, lang);
+    const ficheiro = ficheiroDaRota(rota);
+    if (!fs.existsSync(ficheiro)) {
+      err(`não encontrei a página "${rota}" da edição "${lang}" em ${ficheiro}.`);
+      continue;
+    }
+    const html = fs.readFileSync(ficheiro, 'utf8');
     if (!html.includes(`href="${alvo}"`)) {
       err(
-        `a primeira página da edição "${lang}" não liga para "${alvo}". ` +
+        `a página "${rota}" (edição "${lang}") não liga para "${alvo}". ` +
           `Os dados por trás de cada instrumento são descarregáveis nas duas edições, ou não são.`,
       );
     }

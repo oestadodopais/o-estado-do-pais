@@ -120,7 +120,12 @@ tinta do tema, que em escuro é a tinta clara, e a auditoria de contraste inteir
 repete-se no papel escuro exactamente como em claro, âmbar sobre papel incluído.
 Provisória quer dizer revogável depois de a ver no ar, e não por medir: a
 primeira pré-visualização é o seu primeiro teste real, porque nenhuma maqueta da
-v3 desenhou o escuro.
+v3 desenhou o escuro. **A Emenda 12, de 21.08.2026, é o que essa provisão passou
+a ser**: as duas condições ficam de pé, o escuro deixa de se ler da preferência
+do sistema e passa a ser um pedido do leitor, feito no controlo do cabeçalho e
+guardado no aparelho dele, e o bloco que consultava essa preferência saiu de
+`src/styles/tokens.css`, onde `:root[data-theme='dark']` é hoje o único caminho
+para o papel escuro (`DECISIONS.md` §1.52).
 
 **Cada par usado passa AA em claro e em escuro, medido por um script**, e não a
 olho nem por um número copiado de um racional. `scripts/medir-contraste.mjs` mede

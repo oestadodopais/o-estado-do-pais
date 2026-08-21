@@ -40,7 +40,7 @@ import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import { municipioPorSlug } from '../data/municipios.mjs';
 import { workById, studyLabel } from '../data/studies.mjs';
 import { leituraDe } from '../data/leituras.mjs';
-import { getClaim, parsePtNumber, POR_VERIFICAR } from '../lib/ledger.mjs';
+import { getClaim, parsePtNumber, eDerivada, POR_VERIFICAR } from '../lib/ledger.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { canonicalUrl, SITE_NAME, SITE_URL } from '../../site.config.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -220,6 +220,26 @@ const metodoPath = routePath('metodo', lang);
       <p class="sec-sub">{s.municipio.relanceSub}</p>
     </div>
 
+    {/* ---------------------------------------------------------------------
+        A NOTA DE UMA MEDIDA CALCULADA SAI DA PÁGINA (Emenda 15; decisão 5 da
+        direção, 21.08.2026; ISSUES I35)
+        ---------------------------------------------------------------------
+        «Calculado sobre duas colunas do mesmo ficheiro do regulador. A
+        aritmética está na linha.» é a nota do índice de dívida em
+        `src/data/municipios.mjs`. Explica o que a casa fez em vez de nomear a
+        medida, e o que ela promete já está em dois sítios que a página abre: o
+        rótulo do selo, que numa linha derivada escreve «calculado ·», e o
+        recibo dessa linha, onde a aritmética está escrita e é reavaliada a
+        cada construção.
+
+        A CONDIÇÃO LÊ-SE DA LINHA, e nunca de uma lista escrita à mão:
+        `eDerivada()` sobre a linha do livro-razão. É a mesma regra que a
+        primeira página aplica desde a 2l (`HomeView.astro`, `m.derivada`), e é
+        por isso que a cadeia continua onde está: retirá-la do ficheiro de dados
+        mudaria as duas superfícies de uma vez, e a condição é sobre a linha e
+        não sobre a frase. Amanhã uma medida deixa de ser calculada, e a nota
+        volta sozinha.
+        --------------------------------------------------------------------- */}
     <div class="figuras">
       {
         m.relance.map((tile) =>
@@ -228,7 +248,9 @@ const metodoPath = routePath('metodo', lang);
               <Claim id={tile.claim} lang={lang} class="figura-num" as="div" escala={true} />
               <h3 class="figura-nome">{tile.nome[lang]}</h3>
               <p class="figura-medida"><Frase partes={tile.medida[lang]} lang={lang} selos={true} /></p>
-              <p class="figura-frase"><Frase partes={tile.nota[lang]} lang={lang} /></p>
+              {!eDerivada(getClaim(tile.claim)) && (
+                <p class="figura-frase"><Frase partes={tile.nota[lang]} lang={lang} /></p>
+              )}
               <Provenance id={tile.claim} lang={lang} />
             </article>
           ) : (

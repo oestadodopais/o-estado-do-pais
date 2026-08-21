@@ -1,0 +1,556 @@
+{
+  "paginas": 307,
+  "porta_correccoes": {
+    "com": 307,
+    "sem": 0
+  },
+  "primeira_pagina": {
+    "sem_selo": 0,
+    "selo_para_outra_linha": 0
+  },
+  "frases_de_moldura": {
+    "distintas": 89,
+    "ocorrencias": 2091,
+    "na_porta_de_correccoes": 307,
+    "sem_a_porta": 1784
+  },
+  "primeira_pagina_distintas": {
+    "sem_selo": 0,
+    "selo_para_outra_linha": 0
+  },
+  "marcador_retirado": {
+    "ocorrencias": 0,
+    "paginas": 0
+  },
+  "linhas_com_page": 23,
+  "linhas_com_recorte": 22,
+  "localizadores_internos": 0,
+  "frases_de_cobertura": {
+    "en": {
+      "com-pagina": {
+        "distintas": 1,
+        "ocorrencias": 2,
+        "cadeias": [
+          "has a page"
+        ]
+      },
+      "sem-linha": {
+        "distintas": 1,
+        "ocorrencias": 8,
+        "cadeias": [
+          "no row yet"
+        ]
+      },
+      "sem-pagina": {
+        "distintas": 1,
+        "ocorrencias": 307,
+        "cadeias": [
+          "no page yet"
+        ]
+      }
+    },
+    "pt-PT": {
+      "com-pagina": {
+        "distintas": 1,
+        "ocorrencias": 2,
+        "cadeias": [
+          "tem página"
+        ]
+      },
+      "sem-linha": {
+        "distintas": 1,
+        "ocorrencias": 8,
+        "cadeias": [
+          "sem linha ainda"
+        ]
+      },
+      "sem-pagina": {
+        "distintas": 1,
+        "ocorrencias": 307,
+        "cadeias": [
+          "sem página ainda"
+        ]
+      }
+    }
+  },
+  "frases_da_casa": {
+    "inventario": "design/especime-v3/INVENTARIO-FRASES.md",
+    "inventario_existe": true,
+    "entradas_declaradas": 64,
+    "por_rota": {
+      "/": {
+        "total": 48,
+        "distintas": 33,
+        "por_classe": {
+          "conteudo": 41,
+          "navegacao": 7,
+          "autorreferencia": 0
+        },
+        "nao_classificados": []
+      },
+      "/en": {
+        "total": 48,
+        "distintas": 33,
+        "por_classe": {
+          "conteudo": 41,
+          "navegacao": 7,
+          "autorreferencia": 0
+        },
+        "nao_classificados": []
+      }
+    }
+  },
+  "detalhe": {
+    "sem_porta": [],
+    "front_sem_selo": [],
+    "front_selo_errado": [],
+    "localizadores_internos": [],
+    "molduras": [
+      {
+        "n": 154,
+        "paginas": 154,
+        "texto": "Encontrou um erro? correcoes@oestadodopais.pt · O registo de correções →"
+      },
+      {
+        "n": 153,
+        "paginas": 153,
+        "texto": "Found an error? correcoes@oestadodopais.pt · The corrections log →"
+      },
+      {
+        "n": 132,
+        "paginas": 132,
+        "texto": "Corrections and updates to this row"
+      },
+      {
+        "n": 132,
+        "paginas": 132,
+        "texto": "Corrections: public, dated, permanent The whole policy →"
+      },
+      {
+        "n": 132,
+        "paginas": 132,
+        "texto": "Back to the ledger How this is made"
+      },
+      {
+        "n": 132,
+        "paginas": 132,
+        "texto": "Correções e atualizações desta linha"
+      },
+      {
+        "n": 132,
+        "paginas": 132,
+        "texto": "Correções: públicas, datadas, permanentes A política inteira →"
+      },
+      {
+        "n": 132,
+        "paginas": 132,
+        "texto": "Voltar ao livro-razão Como isto é feito"
+      },
+      {
+        "n": 118,
+        "paginas": 118,
+        "texto": "This row has never been corrected or updated."
+      },
+      {
+        "n": 118,
+        "paginas": 118,
+        "texto": "Esta linha nunca foi corrigida nem atualizada."
+      },
+      {
+        "n": 97,
+        "paginas": 97,
+        "texto": "Transcribed from the source, word for word."
+      },
+      {
+        "n": 97,
+        "paginas": 97,
+        "texto": "Transcrito da fonte, palavra por palavra."
+      },
+      {
+        "n": 79,
+        "paginas": 79,
+        "texto": "[a verificar] The re-reading rule →"
+      },
+      {
+        "n": 79,
+        "paginas": 79,
+        "texto": "[a verificar] A regra da releitura →"
+      },
+      {
+        "n": 30,
+        "paginas": 10,
+        "texto": "Description: restatement of the title"
+      },
+      {
+        "n": 30,
+        "paginas": 10,
+        "texto": "Descrição: reformulação do título"
+      },
+      {
+        "n": 23,
+        "paginas": 23,
+        "texto": "The same sum as an expression."
+      },
+      {
+        "n": 19,
+        "paginas": 19,
+        "texto": "This row quotes no sentence: the value is calculated from other rows, and the documentary proof is theirs."
+      },
+      {
+        "n": 19,
+        "paginas": 19,
+        "texto": "Calculated value, not published"
+      },
+      {
+        "n": 19,
+        "paginas": 19,
+        "texto": "Esta linha não cita nenhuma frase: o valor é calculado a partir de outras linhas, e a prova documental é a delas."
+      },
+      {
+        "n": 19,
+        "paginas": 19,
+        "texto": "Valor calculado, não publicado"
+      },
+      {
+        "n": 11,
+        "paginas": 11,
+        "texto": "Hosted here in the exact form in which it was published, with a banner at the top and nothing else."
+      },
+      {
+        "n": 11,
+        "paginas": 11,
+        "texto": "Alojado aqui na forma exata em que foi publicado, com uma faixa no topo e mais nada."
+      },
+      {
+        "n": 11,
+        "paginas": 11,
+        "texto": "Sem ficheiros para descarregar."
+      },
+      {
+        "n": 10,
+        "paginas": 10,
+        "texto": "O que quer dizer este marcador →"
+      },
+      {
+        "n": 8,
+        "paginas": 8,
+        "texto": "The marked fields have not been confirmed against the source. The published value does not change because of it; what is missing is the documentary pr"
+      },
+      {
+        "n": 8,
+        "paginas": 8,
+        "texto": "Os campos assinalados não foram confirmados contra a fonte. O valor publicado não muda por isso; o que falta é a prova documental, e enquanto faltar a"
+      },
+      {
+        "n": 6,
+        "paginas": 6,
+        "texto": "The document for this study is already hosted here. The observatory page around it has not been written yet."
+      },
+      {
+        "n": 6,
+        "paginas": 6,
+        "texto": "What you read in the document is the study exactly as it was published: it has not been rewritten, shortened or updated to fit here. What is missing i"
+      },
+      {
+        "n": 6,
+        "paginas": 6,
+        "texto": "O documento deste estudo já está alojado aqui. A página do observatório à volta dele ainda não foi escrita."
+      },
+      {
+        "n": 6,
+        "paginas": 6,
+        "texto": "O que se lê no documento é o estudo tal como foi publicado: não foi reescrito, resumido nem atualizado para caber aqui. O que falta é a página do obse"
+      },
+      {
+        "n": 6,
+        "paginas": 3,
+        "texto": "Descrição: frase de abertura do documento"
+      },
+      {
+        "n": 5,
+        "paginas": 5,
+        "texto": "This row quotes no sentence because there is none to quote: the value is a count of this publication&#39;s own record, re-evaluated every time the sit"
+      },
+      {
+        "n": 5,
+        "paginas": 5,
+        "texto": "This site does not host these files. The dataset they came from declares, on dados.gov.pt, the licence &quot;Licença não especificada&quot; (licence n"
+      },
+      {
+        "n": 5,
+        "paginas": 5,
+        "texto": "Brief reading · house prose, resting on a sentence of the study"
+      },
+      {
+        "n": 5,
+        "paginas": 5,
+        "texto": "The same sentence in the other edition"
+      },
+      {
+        "n": 5,
+        "paginas": 3,
+        "texto": "Description: opening sentence of the document"
+      },
+      {
+        "n": 5,
+        "paginas": 5,
+        "texto": "Leitura breve · prosa da casa, assente numa frase do trabalho"
+      },
+      {
+        "n": 5,
+        "paginas": 5,
+        "texto": "Esta linha não cita nenhuma frase porque não há nenhuma para citar: o valor é uma contagem do próprio registo desta casa, e é reavaliado a cada constr"
+      },
+      {
+        "n": 5,
+        "paginas": 5,
+        "texto": "Este sítio não aloja estes ficheiros. O conjunto de onde vieram declara, em dados.gov.pt, a licença «Licença não especificada», e redistribuir um fich"
+      },
+      {
+        "n": 4,
+        "paginas": 2,
+        "texto": "Reported by the municipality: it comes from its own accounts, not from a central aggregator."
+      },
+      {
+        "n": 4,
+        "paginas": 3,
+        "texto": "What was budgeted, what was paid and what was left owing in the municipality of Évora."
+      },
+      {
+        "n": 4,
+        "paginas": 3,
+        "texto": "O que foi orçamentado, o que foi pago e o que ficou em dívida no município de Évora."
+      },
+      {
+        "n": 4,
+        "paginas": 2,
+        "texto": "Reportado pelo município: sai da prestação de contas do próprio, não de um agregador central."
+      },
+      {
+        "n": 3,
+        "paginas": 2,
+        "texto": "Purchasing power per inhabitant"
+      },
+      {
+        "n": 3,
+        "paginas": 3,
+        "texto": "This row quotes no sentence because the source publishes none: the value is the line count of the file this site hosts, above, and it is re-counted at"
+      },
+      {
+        "n": 3,
+        "paginas": 3,
+        "texto": "Economy, investors and open doors in the municipality of Évora."
+      },
+      {
+        "n": 3,
+        "paginas": 3,
+        "texto": "Fifteen years of municipal government in Évora, across five terms."
+      },
+      {
+        "n": 3,
+        "paginas": 3,
+        "texto": "Who held each portfolio of the Câmara Municipal de Évora across five terms, how much the municipality’s own accounts spent in the areas those portfoli"
+      },
+      {
+        "n": 3,
+        "paginas": 2,
+        "texto": "Non-revenue water in Portugal’s public supply systems."
+      },
+      {
+        "n": 3,
+        "paginas": 2,
+        "texto": "Água não faturada nos sistemas de abastecimento em Portugal."
+      },
+      {
+        "n": 3,
+        "paginas": 3,
+        "texto": "Economia, investidores e portas abertas no município de Évora."
+      },
+      {
+        "n": 3,
+        "paginas": 3,
+        "texto": "Quinze anos de governo municipal em Évora, ao longo de cinco mandatos."
+      },
+      {
+        "n": 3,
+        "paginas": 3,
+        "texto": "Esta linha não cita nenhuma frase porque a fonte não publica nenhuma: o valor é a contagem das linhas do ficheiro que este sítio aloja, acima, e é rec"
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "The statistics institute’s annual estimate for the concelho."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "Purchasing power per capita, published for every concelho."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "Registered with the employment service at month end, monthly file by concelho."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "Integrated business accounts, by concelho of the registered office."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "The annual series of the local-government directorate, the regulator of municipal accounts."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "PT Água não faturada nos sistemas de abastecimento em Portugal."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "EN Non-revenue water in Portugal’s public supply systems."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "Economy, society and strategy in the Alentejo and the Algarve."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "PT Economia, sociedade e estratégia no Alentejo e no Algarve."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "EN Economy, society and strategy in the Alentejo and the Algarve."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "Economic assessment of Portugal’s regions."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "PT Avaliação económica das regiões de Portugal."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "EN Economic assessment of Portugal’s regions."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "Long series on the country’s evolution."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "PT Séries longas sobre a evolução do país."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "EN Long series on the country’s evolution."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "PT Economia, investidores e portas abertas no município de Évora."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "EN Economy, investors and open doors in the municipality of Évora."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "PT O que foi orçamentado, o que foi pago e o que ficou em dívida no município de Évora."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "EN What was budgeted, what was paid and what was left owing in the municipality of Évora."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "EN Who held each portfolio of the Câmara Municipal de Évora across five terms, how much the municipality’s own accounts spent in the areas those portf"
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "Description: house translation of the document’s opening sentence"
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "PT Quinze anos de governo municipal em Évora, ao longo de cinco mandatos."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "EN Fifteen years of municipal government in Évora, across five terms."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "PT Financiamento público em Portugal."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "EN Public funding in Portugal."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "Economia, sociedade e estratégia no Alentejo e no Algarve."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "Avaliação económica das regiões de Portugal."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "Séries longas sobre a evolução do país."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "Financiamento público em Portugal."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "Estimativa anual do INE para o concelho."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "Poder de compra per capita, publicado pelo INE para todos os concelhos."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "Inscritos no fim do mês nos serviços de emprego, ficheiro mensal por concelho."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "Sistema de contas integradas das empresas, por concelho da sede."
+      },
+      {
+        "n": 2,
+        "paginas": 2,
+        "texto": "Série anual da Direção-Geral das Autarquias Locais, o regulador das contas municipais."
+      }
+    ]
+  }
+}

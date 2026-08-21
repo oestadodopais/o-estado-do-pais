@@ -1,0 +1,56 @@
+{
+  "a": "/private/tmp/claude-501/-Users-nunosantos/b185e650-e114-4dd4-a233-45407e03b19a/scratchpad/ref-df76a5f/dist",
+  "b": "dist",
+  "rotas": 322,
+  "iguais": 318,
+  "diferencas": [
+    {
+      "rota": "/en/municipalities/",
+      "estado": "difere",
+      "mais": 21,
+      "menos": 0,
+      "acrescentados": [
+        "308",
+        "source",
+        "source",
+        "source",
+        "source"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/en/municipalities/evora/",
+      "estado": "difere",
+      "mais": 0,
+      "menos": 1,
+      "acrescentados": [],
+      "retirados": [
+        "Computed from two columns of the same regulator file. The arithmetic is on the row."
+      ]
+    },
+    {
+      "rota": "/municipios/",
+      "estado": "difere",
+      "mais": 21,
+      "menos": 0,
+      "acrescentados": [
+        "308",
+        "fonte",
+        "fonte",
+        "fonte",
+        "fonte"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/municipios/evora/",
+      "estado": "difere",
+      "mais": 0,
+      "menos": 1,
+      "acrescentados": [],
+      "retirados": [
+        "Calculado sobre duas colunas do mesmo ficheiro do regulador. A aritmética está na linha."
+      ]
+    }
+  ]
+}

@@ -18,10 +18,10 @@
  *   6. localizadores que nomeiam um artefacto interno (ficheiro, chave JSON);
  *   7. frases de cobertura — quantas cadeias visíveis DISTINTAS o sítio usa
  *      para cada estado de cobertura editorial, por edição (defeito 7);
- *   8. frases da casa — o inventário de todos os blocos de texto da primeira
- *      página que são prosa da casa, classificados em conteúdo, navegação e
- *      autorreferência pela lista declarada em
- *      `design/especime-v3/INVENTARIO-FRASES.md` (Emenda 15).
+ *   8. frases da casa — o inventário de todos os blocos de texto de uma rota
+ *      inventariada que são prosa da casa, mais a DESCRIÇÃO do seu `<head>`,
+ *      classificados em conteúdo, navegação e autorreferência pela lista
+ *      declarada em `design/especime-v3/INVENTARIO-FRASES.md` (Emenda 15).
  *
  * Uso:  node scripts/medir-defeitos.mjs            (imprime)
  *       node scripts/medir-defeitos.mjs --json     (para guardar uma medição)
@@ -198,8 +198,34 @@ const blocosDaPorta = new Set();
  * A régua não falha nada: imprime. O alvo — autorreferência a zero na primeira
  * página, nas duas edições — é conferido por uma célula da matriz.
  */
+/**
+ * ---------------------------------------------------------------------------
+ * A DESCRIÇÃO DO `<head>` CONTA, E CONTA PELA MESMA RÉGUA (direção, 21.08.2026)
+ * ---------------------------------------------------------------------------
+ * A `<meta name="description">` é superfície pública: é o que um motor de busca
+ * e um cartão de partilha citam, e é escrita pela casa como qualquer outro
+ * bloco. Ficava de fora desta medida porque a varredura é sobre o `<body>`, e a
+ * primeira página descrevia-se a si própria («Cada número publicado tem uma
+ * linha no livro-razão…») com a contagem de autorreferência a zero.
+ *
+ * Entra como um bloco só, com o texto que o atributo `content` leva, e é
+ * classificada na mesma lista. Numa página de linha o `<head>` é COMPOSTO da
+ * linha (`src/lib/livro.mjs`, e o portão recompõe-o) e não é prosa da casa: por
+ * isso esta medida corre sobre um conjunto declarado de rotas, e não sobre as
+ * 307 páginas.
+ *
+ * ---------------------------------------------------------------------------
+ * AS ROTAS INVENTARIADAS, E PORQUE SÃO UMA LISTA
+ * ---------------------------------------------------------------------------
+ * A Emenda 15 põe a autorreferência a zero «fora do Método, do Sobre e do
+ * recibo». O inventário cresce com as etapas: uma rota entra aqui no commit em
+ * que a sua página é reconstruída e as suas frases são classificadas. Uma rota
+ * que não esteja nesta lista não é medida — e isso está escrito, em vez de
+ * parecer um zero.
+ */
 const CLASSES = ['conteudo', 'navegacao', 'autorreferencia'];
 const MEDIDA_DECLARADA = '[data-medida-nome],[data-medida-unidade]';
+const ROTAS_DO_INVENTARIO = new Set(['home']);
 
 /** A lista declarada: texto normalizado → classe. */
 function leInventario() {
@@ -299,11 +325,15 @@ for (const file of ficheiros) {
     paginasPorBloco.set(b, (paginasPorBloco.get(b) ?? 0) + 1);
   }
 
-  /* 8 — as frases da casa, na primeira página */
-  if (rota?.key === 'home') {
+  /* 8 — as frases da casa, nas rotas inventariadas: o corpo e a descrição */
+  if (rota && ROTAS_DO_INVENTARIO.has(rota.key)) {
     const chave = caminho || '/';
     const conta = frasesPorRota.get(chave) ?? new Map();
     for (const f of frasesDaCasa(root)) conta.set(f, (conta.get(f) ?? 0) + 1);
+    const descricao = norm(
+      root.querySelector('head meta[name="description"]')?.getAttribute('content') ?? '',
+    );
+    if (descricao) conta.set(descricao, (conta.get(descricao) ?? 0) + 1);
     frasesPorRota.set(chave, conta);
   }
 
