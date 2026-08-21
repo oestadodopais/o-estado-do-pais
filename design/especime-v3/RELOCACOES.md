@@ -14,6 +14,8 @@ Estados: **autorizada** (escrita aqui antes da etapa), **feita** (a etapa confir
 | R4 | `/` e `/en`, secção `#convergencia` (Instrumento n.º 1): a frase de cada região e as distâncias | `/` e `/en`, a banda da região (âmbito Região) e o Instrumento n.º 1 no âmbito País | `regioes.mjs` → `BandaDaRegiao.astro`, `InstrumentoConvergencia.astro` | País, Região | pt, en | **2 por região por edição** (a manchete do âmbito Região e o instrumento n.º 1); a de Portugal, 1 | `pib-pc-portugal-2024`, `pib-pc-grande-lisboa-2024`, `pib-pc-peninsula-de-setubal-2024`, `pib-pc-algarve-2024`, `pib-pc-madeira-2024`, `pib-pc-alentejo-2024`, **`pib-pc-alentejo-2000`**; `distancia-portugal-ue27-2024`, `distancia-grande-lisboa-ue27-2024`, `distancia-peninsula-de-setubal-ue27-2024`, `distancia-algarve-ue27-2024`, `distancia-madeira-ue27-2024`, `distancia-alentejo-ue27-2024`, **`distancia-alentejo-ue27-2000`**, `distancia-setubal-grande-lisboa-2024` | 2 | feita · **recontada na 2i, e a contagem antiga estava errada em dois sítios.** Estava «6 → 6 + 1 por região»; a construção dava **três** ocorrências por região e por edição — a manchete do âmbito, a PEÇA do painel regional (que recebia a mesma frase) e o instrumento n.º 1. A duplicação da peça foi **removida** e não autorizada: a frase da região é a manchete daquele âmbito, e a peça repetia-a logo por baixo, com o mesmo valor e o mesmo selo, no mesmo ecrã. É chamada de forma, e está escrita na nota. Medido depois: `grep -o 'O Alentejo está' dist/index.html \| wc -l` → **2** (era 3), e o mesmo para as outras quatro regiões; `grep -o 'Portugal está' dist/index.html \| wc -l` → **1**, porque Portugal deixou de ter âmbito e de ter manchete (achado 5). **Duas linhas que faltavam à lista**, e que o instrumento rende: `distancia-alentejo-ue27-2000` (2 por edição, na manchete do Alentejo e na frase do instrumento) e `pib-pc-alentejo-2000` (1, na proveniência por estudo do aparelho do instrumento) |
 | R5 | `/` e `/en`: os textos das secções Municípios, Estudos e Agenda da página v2 | cortados: as portas de uma linha levam só contagens com porta; os textos vivem nas páginas próprias | `HomeView.astro` → `Portas.astro` | País | pt, en | 1 → 0 por edição | chaves `municipios_com_pagina`, `municipios_total`, `estudos`, `edicoes`, `agenda_em_curso`, `agenda_a_seguir`, `agenda_concluido`, `agenda_retirado` | 2 | feita · 1 → 0 por edição; as três portas levam só contagens com porta |
 | R6 | `/municipios/evora`: a frase de abertura («Esta página mede o município de Évora e mostra de onde vem cada medida. Não interpreta: …») | `/` no âmbito Município = Évora, como lede | `municipios.mjs` → `Cabeca.astro` | Município (Évora) | pt, en | 1 → 1 + 1 (duplicação autorizada) | sem número | 2 | feita · 1 → 1 + 1; a frase passa a aparecer na primeira página e na página do município, e a régua dos defeitos conta-a como frase de moldura em 2 páginas |
+| R7 | `/livro-razao/<id>` e `/en/ledger/<id>`: as nove linhas do Procedimento dos Desequilíbrios Macroeconómicos que a primeira página não mostrava | `/` e `/en`, o painel (`#painel`), como peças com marcador, palavra de estado, linha de limiar, valor, unidade e selo | `figuras.mjs` (`FIGURAS_PDM`) → `Peca.astro` | País | pt, en | **1 → 1 + 1 por linha e por edição** (a linha do livro-razão continua a existir; a primeira página passa a ser uma segunda superfície do mesmo valor) | `desempenho-das-exportacoes-2025`, `divida-das-empresas-2025`, `divida-das-familias-2025`, `fluxo-de-credito-as-empresas-2025`, `fluxo-de-credito-as-familias-2025`, `saldo-da-balanca-corrente-2025`, `taxa-de-actividade-2025`, `taxa-de-cambio-efectiva-real-2025`, `taxa-de-desemprego-mip-2025` | 2l | feita · **1 → 1 + 1**, conferido linha a linha na construção (`grep -o 'data-claim="<id>"' dist/index.html \| wc -l` → 1 para cada uma das nove, o mesmo em `dist/en/index.html`). **Nenhuma frase se move**: as nove peças levam nome, valor, unidade, estado e selo, e mais nada — a Emenda 16 não lhes dá frase, e escrever uma seria texto novo sem origem. As quatro que já lá estavam continuam sob R1, com as suas frases |
+| R8 | `/livro-razao/<id>` e `/en/ledger/<id>`: as cinco linhas do Painel Social Europeu que a primeira página não mostrava | `/` e `/en`, a lista compacta do Painel Social Europeu (`#painel-social`): nome, valor, unidade, fonte e selo | `figuras.mjs` (`FIGURAS_SOCIAL`) → `ListaSocial.astro` | País | pt, en | **1 → 1 + 1 por linha e por edição** | `taxa-de-desemprego-2025`, `desemprego-de-longa-duracao-2025`, `jovens-nem-2025`, `risco-de-pobreza-ou-exclusao-2025`, `racio-s80-s20-2025` | 2l | feita · **1 → 1 + 1**, conferido com o mesmo comando. A lista sai do registo do motor (`ResearchHub/indicators/convergence.md`, quadro da §2, coluna «Social SB»), linha a linha, e cada entrada de `figuras.mjs` declara a LINHA do documento que a coloca. **`criancas-em-creche-2025` sai da primeira página** e não entra em nenhuma das duas listas: o documento não a coloca em painel nenhum e o livro-razão não nomeia o Painel Social em ficheiro nenhum (`grep -rin "social scoreboard\|painel social" ledger/claims/` → sem saída, exit 1, com controlo positivo). A sua frase é retirada; a linha continua a ter página e selo, atrás da porta do livro-razão. As três que já lá estavam (`taxa-de-emprego-2025`, `abandono-escolar-precoce-2025`, `sobrecarga-do-custo-da-habitacao-2025`) continuam sob R1, com as suas frases |
 
 ## Recusadas, ou não relocadas de propósito
 
@@ -29,6 +31,52 @@ Estados: **autorizada** (escrita aqui antes da etapa), **feita** (a etapa confir
 | O quadrado de cobalto do sinal de tempo no cabeçalho | Emenda 1: cor só para limiares publicados |
 
 ## Texto novo (sem rota de origem; entra pelas cadeias, PT e EN no mesmo commit; revisão de voz antes da fusão)
+
+### Etapa 2, subetapa 2l · duas cadeias novas, trinta e três retiradas, e uma que muda de forma
+
+*A Emenda 15 é uma subtração, e por isso esta secção é sobretudo uma lista do que saiu. Cada cadeia retirada tem escrito para onde foi o que ela dizia; a lista inteira, com a classe de cada frase que FICOU, está em `INVENTARIO-FRASES.md`.*
+
+**Cadeias novas** (duas, as duas nomes):
+
+| chave | pt | en | onde |
+|---|---|---|---|
+| `inicio.social.titulo` | Painel Social Europeu | European Social Scoreboard | o título da lista compacta (Emenda 16). É o nome que a instituição lhe dá |
+| `inicio.social.porta` | O livro-razão | The ledger | a porta para o resto do livro-razão, por baixo da lista |
+| `inicio.portas.concelhos` | ` concelhos` | ` concelhos` | a contagem da porta dos Municípios, que passa de cobertura a tamanho. Identidade aceite |
+| `inicio.portas.rotulo` | As páginas | The pages | o nome da região de navegação das três portas. **Só se ouve**: a legenda visível saiu |
+| `inicio.mapa.linha` | ` concelhos · CAOP ` | ` concelhos · CAOP ` | a linha da Emenda 17, por baixo do mapa. Identidade aceite |
+| `inicio.banda.svgLabel` | Régua da convergência: o PIB per capita de cada região contra a média europeia. | Convergence rule: GDP per capita of each region against the European average. | o nome acessível do desenho da banda, no lugar da frase que a Emenda 15 retirou |
+
+*(São seis e não duas: quatro delas são substituições de cadeias retiradas, e entram na coluna da esquerda da tabela seguinte.)*
+
+**Cadeias com forma nova** (uma):
+
+| chave | antes | depois | porquê |
+|---|---|---|---|
+| `porta.k` | Encontrou um erro / Found an error | Encontrou um erro? / Found an error? | a Emenda 17 escreve a porta como uma pergunta, e a pergunta é a porta inteira |
+
+**Cadeias retiradas** (as chaves saíram de `strings.mjs`, nas duas edições, no mesmo commit):
+
+| chave | o que dizia | para onde foi |
+|---|---|---|
+| `prov.verLinha` | «Linha do livro-razão» | o texto oculto do selo passa a abrir pela palavra que ele já escreve à vista: «fonte · <estudo>» |
+| `porta.v`, `porta.w` | «Escreva para …» / «Um erro confirmado entra no registo de correções e na própria linha, com o valor antigo à vista. Nada é apagado.» | `/correcoes`, que diz a política inteira com as três naturezas |
+| `densidade.semJs` | «Sem JavaScript, este comando não muda a página inteira…» | retirada: sem script os comandos continuam a ser ligações que abrem, e cada peça continua a abrir-se sozinha |
+| `inicio.cabeca.paisB`, `ledePais` | « medidas» / a lede antiga do painel | a manchete e a lede da Emenda 16 |
+| `inicio.movel.proximos` | «Um toque no mapa devolve os concelhos mais próximos…» | o nome acessível do selo do país, que já diz o que ele faz |
+| `inicio.peca.recibo` | «o recibo completo está na linha» | o selo, que é a porta |
+| `inicio.peca.semReferencia` | «Sem referência publicada: não há barra a desenhar.» | a peça diz «sem limiar», em duas palavras |
+| `inicio.portas.k` | «As páginas · o resto vive a uma porta» | `inicio.portas.rotulo`, que só se ouve |
+| `inicio.vazio.explicaA`, `explicaB` | «Nenhuma medida foi lida para <nome>. As fontes que publicam…» | as oito peças vazias, cada uma com «sem linha ainda» |
+| `inicio.mapa.coberturaA`, `coberturaB` | « de » / « concelhos · » | a linha de cobertura saiu das quatro superfícies onde rendia |
+| `inicio.mapa.contagemK`, `continente`, `total` | «Contagem verificada nos ficheiros», «Continente», «Total» | a contagem por parcelas vive em `/municipios` (pedido para a etapa 3) |
+| `inicio.mapa.naoDizK` | «O que o mapa não diz» | **fecha o ISSUES I28**: não era rendida por ninguém desde a R3 |
+| `inicio.mapa.posicao` | a frase de neutralidade dos pontos | retirada: diz o que não afirmamos |
+| `inicio.mapa.deepTitulo` | «Método, ressalvas e proveniência» | o Método, e o recibo de cada linha |
+| `inicio.banda.naoSeDesenham` | «As regiões não se desenham em pontos de concelho…» | `inicio.banda.svgLabel`, que nomeia o desenho em vez de o justificar |
+| `home.instr1.deepTitulo`, `dadosK`, `dadosV`, `significadoK`, `ressalvaK`, `ressalvaPartes`, `distanciasK`, `distanciasV`, `provenienciaK`, `semJs` | a camada de aparelho do Instrumento n.º 1, inteira | o Método; a ressalva do provisório viaja com o valor desde a 2k; os selos dos valores desenhados vivem em `.brief` |
+
+**A frase de Évora e a do concelho sem página não saem de `strings.mjs`**, e a razão está escrita nos componentes: `municipio.ledeA`/`ledeB` é a lede da PÁGINA de Évora (`MunicipioView`, etapa 3) e `inicio.cabeca.ledeVazioA`/`ledeVazioB` continua a ser cadeia validada da casa. O que saiu foi a rendição das duas na primeira página.
 
 ### Etapa 2, subetapa 2j · quatro cadeias novas, duas retiradas, e uma frase da mobília que sai do sítio
 

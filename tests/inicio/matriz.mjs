@@ -167,7 +167,22 @@ const estadoDaPagina = (p) =>
   await p.goto(`${base}/`, { waitUntil: 'networkidle' });
   const inicial = await estadoDaPagina(p);
   conta('estado inicial · País · Relance', inicial.ambito === 'pais' && inicial.densidade === 'relance', `${inicial.ambito} · ${inicial.densidade} · ${inicial.pecas} peças`);
-  conta('manchete do País', /limiares europeus/.test(inicial.h1 ?? ''), inicial.h1);
+  /* A MANCHETE DA EMENDA 16: duas contagens, e o nome do Procedimento por
+     extenso. A célula lê o texto e as duas chaves da prova que o compõem. */
+  const manchete = await p.evaluate(() => {
+    const h1 = document.querySelector('[data-cabeca]:not([hidden]) h1');
+    return {
+      texto: h1.textContent.replace(/\s+/g, ' ').trim(),
+      provas: [...h1.querySelectorAll('[data-prova]')].map((e) => e.getAttribute('data-prova')),
+    };
+  });
+  conta(
+    '2l · a manchete do País leva as duas contagens da Emenda 16',
+    /Procedimento dos Desequil|Macroeconomic Imbalance Procedure/.test(manchete.texto) &&
+      manchete.provas.join(',') === 'painel_fora_do_limiar,painel_dentro_do_limiar',
+    `${manchete.texto} · ${manchete.provas.join(' + ')}`,
+  );
+  conta('painel do País com 13 peças (Emenda 16)', inicial.pecas === 13, `${inicial.pecas} peças`);
 
   /* Ordem do teclado: da linha de comando até às portas, sem saltos para trás. */
   const ordem = await p.evaluate(() => {
@@ -455,10 +470,10 @@ const estadoDaPagina = (p) =>
       valores: document.querySelectorAll('[data-painel]:not([hidden]) [data-claim]').length,
       selos: document.querySelectorAll('[data-painel]:not([hidden]) a.src-chip').length,
       ligacoes: [...document.querySelectorAll('[data-comando] a')].map((a) => a.getAttribute('href')),
-      nota: document.querySelector('[data-sem-js]')?.hidden === false,
+      nota: document.querySelector('[data-sem-js]') ? true : false,
       transbordo: document.documentElement.scrollWidth - document.documentElement.clientWidth,
     }));
-    const completo = e.bloco === 'pais' && e.painel === 'pais' && e.pecas === 8 && e.selos >= 8;
+    const completo = e.bloco === 'pais' && e.painel === 'pais' && e.pecas === 13 && e.selos >= 13;
     conta(
       `sem JavaScript · ${q}`,
       completo && e.ligacoes.every(Boolean) && e.transbordo <= 0,
@@ -466,7 +481,11 @@ const estadoDaPagina = (p) =>
         ? `completo e correcto: ${e.pecas} peças, ${e.valores} valores, ${e.selos} selos`
         : `mostra o defeito (${e.bloco}), com os comandos como ligações que abrem: ${e.ligacoes.join(' · ')}`,
     );
-    conta(`sem JavaScript · a nota da densidade está à vista · ${q}`, e.nota, `nota visível: ${e.nota}`);
+    /* A NOTA «SEM JAVASCRIPT» SAIU (Emenda 15). A célula deixa de exigir que ela
+       esteja à vista e passa a exigir o contrário: que não exista, e que o que
+       ela descrevia continue verdadeiro — os comandos são ligações que abrem, e
+       o painel rende-se inteiro. As duas condições estão na célula acima. */
+    conta(`sem JavaScript · nenhuma nota de mecânica · ${q}`, e.nota === false, `nota no documento: ${e.nota !== false}`);
     await p.__contexto.close();
   }
 }
@@ -479,55 +498,75 @@ const estadoDaPagina = (p) =>
 
 /* (1) O sinal de tempo do painel europeu não se lê fora do âmbito País. */
 {
+  /* A CÉLULA MUDA DE PERGUNTA COM A EMENDA 15. Media que a linha «Painel
+     europeu reconferido a …» só se lia no âmbito País; a emenda tirou-a da
+     primeira página inteira, porque a mobília do cabeçalho já a leva em todas as
+     páginas. O que a célula mede agora é isso: zero na primeira página, uma no
+     cabeçalho, e a porta da chave a resolver para o painel. */
   const p = await pagina();
-  const lidos = [];
-  for (const q of ['/', '/?ambito=regiao:alentejo', '/?ambito=municipio:evora', '/?ambito=municipio:beja']) {
-    await p.goto(base + q, { waitUntil: 'networkidle' });
-    lidos.push(
-      await p.evaluate(() => {
-        const v = document.querySelector('.verificacao');
-        return v && v.getClientRects().length > 0;
-      }),
-    );
-  }
+  await p.goto(base + '/', { waitUntil: 'networkidle' });
+  /* O sinal de tempo da mobília não é uma chave da prova: é a mesma data,
+     marcada `data-nonledger="data-de-atualizacao"`, com a porta do painel. A
+     chave `painel_reconferido_em` rende-se no Método, e a sua porta é a mesma. */
+  const sinal = await p.evaluate(() => ({
+    naPagina: document.querySelectorAll('.verificacao').length,
+    naMobilia: document.querySelectorAll('header [data-sinal-de-tempo] .mob-leitura-porta .mob-leitura-v').length,
+    porta: document.querySelector('header [data-sinal-de-tempo] .mob-leitura-porta')?.getAttribute('href') ?? null,
+    ancora: !!document.querySelector('#painel'),
+  }));
   conta(
-    'o sinal de tempo do painel só se lê no âmbito País',
-    lidos[0] === true && lidos.slice(1).every((x) => x === false),
-    `pais ${lidos[0]} · regiao ${lidos[1]} · évora ${lidos[2]} · beja ${lidos[3]}`,
+    '2l · a linha da reconferência saiu da primeira página, e a porta abre o painel',
+    sinal.naPagina === 0 && sinal.naMobilia === 1 && /#painel$/.test(sinal.porta ?? '') && sinal.ancora,
+    `na página ${sinal.naPagina} · na mobília ${sinal.naMobilia} · porta ${sinal.porta}`,
   );
   await p.__contexto.close();
 }
 
-/* (2) A ficha do mapa deixou de levar a citação, a porta do CSV e as dicas. */
+/* (2) A FICHA DO MAPA É UMA LINHA (Emenda 17), e a camada de aparelho saiu
+   (Emenda 15). A célula mudou de pergunta com as emendas: media que a citação, o
+   CSV e as dicas tinham descido para a camada do aparelho; agora mede que a
+   camada não existe, que a citação saiu da primeira página, que a linha é a da
+   emenda com o seu selo, e que as dicas passaram a descrição acessível do mapa.
+   A PORTA DO CSV fica, e a célula di-lo: `scripts/check-dados.mjs` exige que as
+   duas edições da primeira página liguem os dois ficheiros. */
 {
   const p = await pagina();
   await p.goto(base + '/', { waitUntil: 'networkidle' });
   const f = await p.evaluate(() => {
     const ficha = document.querySelector('[data-mapa-ficha]');
-    const aparelho = document.querySelector('[data-mapa-aparelho]');
+    const svg = document.querySelector('[data-mapa]');
+    const descrito = svg.getAttribute('aria-describedby');
+    const desc = descrito ? document.getElementById(descrito) : null;
     return {
       alturaDaFicha: Math.round(ficha.getBoundingClientRect().height),
-      citacaoNaFicha: !!ficha.querySelector('[data-verbatim]'),
-      csvNaFicha: !!ficha.querySelector('.ligacao-dados'),
-      dicasNaFicha: !!ficha.querySelector('[data-dica-cursor], [data-teclado]'),
-      citacaoNoAparelho: !!aparelho.querySelector('[data-verbatim]'),
-      csvNoAparelho: !!aparelho.querySelector('.ligacao-dados'),
-      dicasNoAparelho: aparelho.querySelectorAll('[data-dica-cursor], [data-teclado]').length,
-      fonteCurta: !!ficha.querySelector('.mapa-fonte-curta a.src-chip'),
-      aparelhoFechado: !aparelho.open,
+      aparelho: document.querySelectorAll('[data-mapa-aparelho]').length,
+      citacaoNaPagina: document.querySelectorAll('[data-verbatim="caop-fonte"]').length,
+      linha: ficha.querySelector('.mapa-linha-fonte')?.textContent.replace(/\s+/g, ' ').trim() ?? null,
+      seloNaLinha: !!ficha.querySelector('.mapa-linha-fonte a.src-chip'),
+      valorNaLinha: ficha.querySelector('.mapa-linha-fonte [data-claim]')?.getAttribute('data-claim') ?? null,
+      csv: !!ficha.querySelector('.ligacao-dados'),
+      /* «Visível» aqui é «fora de um recorte `.vh`»: um elemento dentro de um
+         `.vh` continua a ter caixa (é assim que ele fica na árvore de
+         acessibilidade e fora do ecrã), e medir a caixa dizia o contrário do que
+         o leitor vê. */
+      dicasVisiveis: [...ficha.querySelectorAll('.mapa-hint')].filter((e) => !e.closest('.vh')).length,
+      dicasNaDescricao: desc ? desc.querySelectorAll('.mapa-hint').length : 0,
+      descricaoOculta: desc ? getComputedStyle(desc).position === 'absolute' : false,
     };
   });
   conta(
-    'a ficha do mapa é compacta e o aparelho leva a citação, o CSV e as dicas',
-    !f.citacaoNaFicha &&
-      !f.csvNaFicha &&
-      !f.dicasNaFicha &&
-      f.citacaoNoAparelho &&
-      f.csvNoAparelho &&
-      f.dicasNoAparelho === 2 &&
-      f.fonteCurta &&
-      f.aparelhoFechado,
-    `ficha ${f.alturaDaFicha}px · citação, CSV e dicas na camada do aparelho, fechada · linha de fonte com selo`,
+    '2l · Emenda 17 · por baixo do mapa uma só linha, com o selo',
+    f.aparelho === 0 &&
+      f.citacaoNaPagina === 0 &&
+      f.seloNaLinha &&
+      f.valorNaLinha === 'municipios-portugal-caop-2025' &&
+      /CAOP/.test(f.linha ?? ''),
+    `«${f.linha}» · ficha ${f.alturaDaFicha}px · camada de aparelho ${f.aparelho} · citação na página ${f.citacaoNaPagina} · CSV ${f.csv}`,
+  );
+  conta(
+    '2l · Emenda 15 · as dicas do mapa são descrição acessível e não legenda',
+    f.dicasVisiveis === 0 && f.dicasNaDescricao === 3 && f.descricaoOculta,
+    `${f.dicasVisiveis} visíveis · ${f.dicasNaDescricao} na descrição · oculta ${f.descricaoOculta}`,
   );
   await p.__contexto.close();
 }
@@ -548,7 +587,7 @@ for (const largura of [768, 1280]) {
     return {
       reguas,
       colunas,
-      span: colunas.length === 8 && colunas.every((c) => c === 'span 2'),
+      span: colunas.length === 13 && colunas.every((c) => c === 'span 2'),
       transbordo: document.documentElement.scrollWidth - document.documentElement.clientWidth,
     };
   });
@@ -1107,6 +1146,12 @@ for (const largura of [1280, 390]) {
 
 /* (2i·3c) A frase de neutralidade fica ao pé do mapa em todas as posturas. */
 {
+  /* A CÉLULA 2i·3c MUDA DE PERGUNTA COM A EMENDA 15. Media que a frase de
+     neutralidade («os pontos são todos iguais e marcam a posição…, não marcam
+     cobertura, qualidade nem importância») acompanhava o mapa nas cinco
+     posturas. A emenda tirou-a: «uma legenda nomeia o que a coisa é … nunca o
+     que não afirmamos». O que a célula mede agora é a ausência, nas mesmas
+     cinco posturas, e que a linha da Emenda 17 está lá em vez dela. */
   const linhas = [];
   let bem = true;
   for (const [rota, largura, nome] of [
@@ -1120,24 +1165,19 @@ for (const largura of [1280, 390]) {
     await p.goto(base + rota, { waitUntil: 'networkidle' });
     const r = await p.evaluate(() => {
       const figura = document.querySelector('[data-mapa-raiz]');
-      const frase = document.querySelector('.mapa-neutro').textContent.trim();
-      const todas = [...document.querySelectorAll('.mapa-neutro, .mapa-cartao-neutro')];
-      const visiveis = todas.filter((e) => e.getClientRects().length > 0);
       return {
         postura: figura.getAttribute('data-postura'),
-        frase,
-        visiveis: visiveis.length,
-        iguais: visiveis.every((e) => e.textContent.trim() === frase),
-        dentroDoMapa: visiveis.every((e) => !!e.closest('[data-mapa-raiz]')),
+        neutras: document.querySelectorAll('.mapa-neutro, .mapa-cartao-neutro').length,
+        cobertura: document.querySelectorAll('.mapa-titulo, .mapa-cartao-cobertura').length,
       };
     });
-    const ok = r.visiveis === 1 && r.iguais && r.dentroDoMapa;
+    const ok = r.neutras === 0 && r.cobertura === 0;
     if (!ok) bem = false;
-    linhas.push(`${nome} (${r.postura}): ${r.visiveis} visível, dentro do mapa ${r.dentroDoMapa}`);
+    linhas.push(`${nome} (${r.postura}): ${r.neutras} neutras, ${r.cobertura} de cobertura`);
     await p.__contexto.close();
   }
   conta(
-    '2i·3c · a frase de neutralidade acompanha o mapa em todas as posturas',
+    '2l · Emenda 15 · a neutralidade e a cobertura saíram do mapa, em todas as posturas',
     bem,
     linhas.join(' · '),
   );
@@ -1386,15 +1426,20 @@ for (const largura of [1280, 390]) {
     );
     const painel = document.querySelector('[data-painel="pais"]');
     const marcadores = painel.querySelectorAll('.peca-topo .sq').length;
-    const palavras = [...painel.querySelectorAll('.peca-limiar')].filter(
+    /* A PALAVRA DE ESTADO PASSOU AO TOPO DA PEÇA (etapa 2l). Vivia na linha do
+       limiar quando não havia limiar, e no fecho da leitura breve quando havia;
+       com treze peças a comparar, está sempre ao lado do marcador. */
+    const palavras = [...painel.querySelectorAll('.peca-topo .peca-palavra')].filter(
       (e) => e.textContent.trim().length > 0,
     ).length;
     return { filas: filas.length, provas: [...new Set(provas)], marcadores, palavras, temRaiz: !!raiz };
   });
   conta(
     '2j · Emenda 13 · a fila de estados saiu da cabeça, e as contagens ficaram',
-    m.filas === 0 && m.provas.includes('painel_total') && m.provas.includes('painel_fora_do_limiar') &&
-      m.marcadores === 8 && m.palavras === 8,
+    m.filas === 0 &&
+      m.provas.includes('painel_fora_do_limiar') &&
+      m.provas.includes('painel_dentro_do_limiar') &&
+      m.marcadores === 13 && m.palavras === 13,
     `${m.filas} filas · chaves da prova na cabeça: ${m.provas.join(', ')} · ${m.marcadores} marcadores e ${m.palavras} palavras nas peças`,
   );
   await p.__contexto.close();
@@ -1426,7 +1471,7 @@ for (const largura of [1280, 390]) {
   });
   conta(
     '2j · as peças sem caixas, separadas por fios de 1px',
-    m.pecas === 8 && m.comMoldura === 0 && m.intervaloCol === '1px' && m.intervaloLin === '1px' &&
+    m.pecas === 13 && m.comMoldura === 0 && m.intervaloCol === '1px' && m.intervaloLin === '1px' &&
       /1px/.test(m.sombra ?? ''),
     `${m.pecas} peças · ${m.comMoldura} com moldura · intervalo ${m.intervaloCol}/${m.intervaloLin} · fio «${m.sombra}»`,
   );
@@ -1490,9 +1535,10 @@ for (const largura of [1280, 390]) {
         palavras: [...new Set(vazias.map((e) => e.querySelector('[data-cobertura]')?.textContent.trim()))],
         nomes: vazias.map((e) => e.querySelector('.peca-nome')?.textContent.trim()).filter(Boolean).length,
         unidades: vazias.map((e) => e.querySelector('.peca-unidade')?.textContent.trim()).filter(Boolean).length,
+        /* A frase que explicava o estado vazio saiu com a Emenda 15: as oito
+           peças dizem-no, cada uma em duas palavras. */
         fraseAcima: !!painel.querySelector('.vazio-texto'),
-        ordem:
-          painel.firstElementChild && painel.firstElementChild.classList.contains('vazio-texto'),
+        ordem: !!painel.firstElementChild && painel.firstElementChild.classList.contains('peca-vazia'),
       };
     });
     const ok =
@@ -1506,11 +1552,11 @@ for (const largura of [1280, 390]) {
       m.unidades === 8 &&
       m.palavras.length === 1 &&
       m.palavras[0] === palavra &&
-      m.fraseAcima &&
+      m.fraseAcima === false &&
       m.ordem;
     if (!ok) bem = false;
     linhas.push(
-      `${edicao}: ${m.n} peças vazias · ${m.algarismos} com algarismo · ${m.selos} selos · ${m.marcadores} marcadores · ${m.nomes} nomes · ${m.unidades} unidades · «${m.palavras.join('|')}» · frase por cima ${m.ordem}`,
+      `${edicao}: ${m.n} peças vazias · ${m.algarismos} com algarismo · ${m.selos} selos · ${m.marcadores} marcadores · ${m.nomes} nomes · ${m.unidades} unidades · «${m.palavras.join('|')}» · frase por cima ${m.fraseAcima} · primeira célula é peça ${m.ordem}`,
     );
     await p.__contexto.close();
   }
@@ -1722,6 +1768,169 @@ for (const largura of [1280, 390]) {
 }
 
 /* --------------------------------------------------------------------- relatório */
+/* ============================================================================
+ * 2l · A SEGUNDA LEITURA DA PRÉ-VISUALIZAÇÃO N.º 1 (Emendas 15 a 17)
+ * ========================================================================= */
+
+/* (a) As duas bandas desenham DUAS referências, e a régua não transborda. */
+{
+  const p = await pagina();
+  await p.goto(base + '/?densidade=leitura', { waitUntil: 'networkidle' });
+  const b = await p.evaluate(() => {
+    const alvo = ['saldo-da-balanca-corrente-2025', 'taxa-de-cambio-efectiva-real-2025'];
+    return alvo.map((id) => {
+      const peca = document.querySelector(`[data-medida="${id}"]`);
+      const svg = peca.querySelector('.regua-svg');
+      const refs = [...svg.querySelectorAll('.regua-ref')];
+      const xs = refs.map((r) => Number(r.getAttribute('x1')));
+      const linha = peca.querySelector('.peca-limiar').textContent.replace(/\s+/g, ' ').trim();
+      const algarismos = [...peca.querySelectorAll('.peca-limiar [data-nonledger="limiar-do-quadro"]')].map(
+        (e) => e.textContent.trim(),
+      );
+      return {
+        id,
+        refs: refs.length,
+        distintas: new Set(xs).size,
+        dentroDaCaixa: xs.every((x) => x >= 0 && x <= 600),
+        linha,
+        algarismos,
+        estado: peca.getAttribute('data-estado'),
+      };
+    });
+  });
+  conta(
+    '2l · a banda desenha duas referências, e os dois algarismos vão marcados',
+    b.every((r) => r.refs === 2 && r.distintas === 2 && r.dentroDaCaixa && r.algarismos.length === 2 && r.estado === 'dentro'),
+    b.map((r) => `${r.id}: ${r.refs} referências em ${r.distintas} posições · «${r.linha}»`).join(' · '),
+  );
+  await p.__contexto.close();
+}
+
+/* (b) O Painel Social Europeu: oito linhas, sem cor, com o selo fora de
+   qualquer outro alvo e com área de toque de 44px. */
+{
+  const p = await pagina();
+  await p.goto(base + '/', { waitUntil: 'networkidle' });
+  const soc = await p.evaluate(() => {
+    const lista = [...document.querySelectorAll('.social-linha')];
+    const selos = lista.map((l) => {
+      const a = l.querySelector('a.src-chip');
+      if (!a) return null;
+      const depois = getComputedStyle(a, '::after');
+      const r = a.getBoundingClientRect();
+      /* A mesma medição da célula dos selos da peça: a caixa do elemento e a da
+         área de toque, e fica a maior das duas. */
+      const largura = Math.max(r.width, parseFloat(depois.width) || 0, parseFloat(depois.minWidth) || 0);
+      const altura = Math.max(r.height, parseFloat(depois.height) || 0);
+      let aninhado = null;
+      for (let no = a.parentElement; no; no = no.parentElement) {
+        const t = no.tagName.toLowerCase();
+        if (t === 'a' || t === 'button' || t === 'summary') { aninhado = t; break; }
+      }
+      return { largura: +largura.toFixed(1), altura: +altura.toFixed(1), aninhado };
+    });
+    return {
+      n: lista.length,
+      semSelo: selos.filter((x) => x === null).length,
+      aninhados: selos.filter((x) => x && x.aninhado !== null).length,
+      pequenos: selos.filter((x) => x && (x.altura < 44 || x.largura < 44)).length,
+      marcadores: document.querySelectorAll('.social-linha .sq').length,
+      palavras: document.querySelectorAll('.social-linha .peca-palavra, .social-linha .peca-estado').length,
+      valores: document.querySelectorAll('.social-linha [data-claim]').length,
+      medida: selos[0],
+    };
+  });
+  conta(
+    '2l · Emenda 16 · a lista social tem oito linhas, sem cor e com o selo fora de outro alvo',
+    soc.n === 8 && soc.semSelo === 0 && soc.aninhados === 0 && soc.pequenos === 0 &&
+      soc.marcadores === 0 && soc.palavras === 0 && soc.valores === 8,
+    `${soc.n} linhas · ${soc.valores} valores · selo ${soc.medida?.largura}×${soc.medida?.altura}px · aninhados ${soc.aninhados} · marcadores ${soc.marcadores}`,
+  );
+  await p.__contexto.close();
+}
+
+/* (c) Emenda 17: a cabeça em duas colunas a partir de 1024, sem transbordo. */
+{
+  const linhas = [];
+  let bem = true;
+  for (const largura of [1024, 1180, 1280]) {
+    for (const rota of ['/', '/en/']) {
+      const p = await pagina({ largura });
+      await p.goto(base + rota, { waitUntil: 'networkidle' });
+      const m = await p.evaluate(() => {
+        const grelha = document.querySelector('[data-grelha]');
+        const cs = getComputedStyle(grelha);
+        const texto = document.querySelector('.cabeca-col').getBoundingClientRect();
+        const mapa = document.querySelector('[data-mapa-raiz]').getBoundingClientRect();
+        return {
+          colunas: cs.gridTemplateColumns,
+          duas: cs.gridTemplateColumns.split(' ').length === 2,
+          textoEsquerda: Math.round(texto.left),
+          mapaEsquerda: Math.round(mapa.left),
+          mapaLargura: Math.round(mapa.width),
+          transbordo: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+        };
+      });
+      const ok = m.duas && m.mapaEsquerda > m.textoEsquerda && m.transbordo <= 0;
+      if (!ok) bem = false;
+      linhas.push(`${largura}${rota === '/' ? ' pt' : ' en'}: ${m.colunas} · mapa a ${m.mapaEsquerda}px (${m.mapaLargura}px) · transbordo ${m.transbordo}`);
+      await p.__contexto.close();
+    }
+  }
+  conta('2l · Emenda 17 · o texto à esquerda e o mapa à direita, de 1024 para cima', bem, linhas.join(' · '));
+}
+
+/* (d) As duas chaves novas da prova rendem-se e batem certo com o `prova.json`
+   que o portão escreveu. A célula não recalcula nada: compara o que a página
+   escreve com o que o portão gravou, que são duas contas independentes. */
+{
+  const p = await pagina();
+  await p.goto(base + '/', { waitUntil: 'networkidle' });
+  const provaJson = await p.evaluate(async () => (await fetch('/prova.json')).json());
+  const na = await p.evaluate(() =>
+    [...document.querySelectorAll('[data-prova]')].map((e) => [
+      e.getAttribute('data-prova'),
+      e.textContent.trim(),
+    ]),
+  );
+  const mapa = Object.fromEntries(na);
+  const chaves = provaJson.prova;
+  const valor = (k) => (chaves[k]?.valor ?? chaves[k]);
+  conta(
+    '2l · as chaves novas da prova: a página e o portão dizem o mesmo',
+    String(valor('painel_dentro_do_limiar')) === mapa.painel_dentro_do_limiar &&
+      String(valor('painel_fora_do_limiar')) === mapa.painel_fora_do_limiar &&
+      String(valor('painel_total')) === '13' &&
+      String(valor('painel_social_total')) === '8',
+    `fora ${mapa.painel_fora_do_limiar}/${valor('painel_fora_do_limiar')} · dentro ${mapa.painel_dentro_do_limiar}/${valor('painel_dentro_do_limiar')} · total ${valor('painel_total')} · social ${valor('painel_social_total')}`,
+  );
+  await p.__contexto.close();
+}
+
+/* (e) O inventário das frases da casa: autorreferência a zero, nas duas
+   edições. A conta é a da régua `medir-defeitos.mjs`, lida do seu JSON: a
+   matriz não a refaz, porque duas implementações da mesma definição diriam a
+   mesma coisa por construção. O que a matriz garante é que o alvo é conferido a
+   cada corrida e não só quando alguém se lembra de correr a régua. */
+{
+  const { execFileSync } = await import('node:child_process');
+  const saida = execFileSync(process.execPath, [path.join(RAIZ, 'scripts', 'medir-defeitos.mjs'), '--json'], {
+    encoding: 'utf8',
+    maxBuffer: 64 * 1024 * 1024,
+  });
+  const m = JSON.parse(saida).frases_da_casa;
+  const rotas = Object.entries(m.por_rota);
+  conta(
+    '2l · Emenda 15 · zero frases de autorreferência na primeira página, nas duas edições',
+    m.inventario_existe &&
+      rotas.length === 2 &&
+      rotas.every(([, r]) => r.por_classe.autorreferencia === 0 && r.nao_classificados.length === 0),
+    rotas
+      .map(([rota, r]) => `${rota}: conteúdo ${r.por_classe.conteudo} · navegação ${r.por_classe.navegacao} · autorreferência ${r.por_classe.autorreferencia} · por classificar ${r.nao_classificados.length}`)
+      .join(' · '),
+  );
+}
+
 await navegador.close();
 servidor.close();
 

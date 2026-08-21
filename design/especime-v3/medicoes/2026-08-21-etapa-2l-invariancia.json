@@ -1,0 +1,4376 @@
+{
+  "a": "/private/tmp/claude-501/-Users-nunosantos/b185e650-e114-4dd4-a233-45407e03b19a/scratchpad/ref-b79672f/dist",
+  "b": "dist",
+  "rotas": 322,
+  "iguais": 15,
+  "diferencas": [
+    {
+      "rota": "/",
+      "estado": "difere",
+      "mais": 192,
+      "menos": 182,
+      "acrescentados": [
+        "4",
+        "4",
+        "4",
+        "0",
+        "0"
+      ],
+      "retirados": [
+        "2026-08-18",
+        "Sem JavaScript, este comando não muda a página inteira: cada medida abre-se na sua própria linha.",
+        "Madeira",
+        "Águeda",
+        "Águeda"
+      ]
+    },
+    {
+      "rota": "/404",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 1,
+      "acrescentados": [
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/a-verificar/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 1,
+      "acrescentados": [
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/agenda/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 4,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/correcoes/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "Encontrou um erro?",
+        "· O Estado do País, apuramento próprio"
+      ],
+      "retirados": [
+        "Encontrou um erro",
+        "Linha do livro-razão: O Estado do País, apuramento próprio"
+      ]
+    },
+    {
+      "rota": "/en/",
+      "estado": "difere",
+      "mais": 192,
+      "menos": 182,
+      "acrescentados": [
+        "4",
+        "4",
+        "4",
+        "0",
+        "0"
+      ],
+      "retirados": [
+        "2026-08-18",
+        "Without JavaScript this control does not change the whole page: each measure opens on its own row.",
+        "Madeira",
+        "Águeda",
+        "Águeda"
+      ]
+    },
+    {
+      "rota": "/en/about/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 1,
+      "acrescentados": [
+        "Found an error?"
+      ],
+      "retirados": [
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/agenda/",
+      "estado": "difere",
+      "mais": 4,
+      "menos": 4,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "· Institutional indicator framework, read directly from source",
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/corrections/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "Found an error?",
+        "· O Estado do País, own count"
+      ],
+      "retirados": [
+        "Found an error",
+        "Ledger row: O Estado do País, own count"
+      ]
+    },
+    {
+      "rota": "/en/ledger/",
+      "estado": "difere",
+      "mais": 133,
+      "menos": 133,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "· Institutional indicator framework, read directly from source",
+        "· Institutional indicator framework, read directly from source",
+        "· Institutional indicator framework, read directly from source",
+        "· Institutional indicator framework, read directly from source"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Ledger row: Institutional indicator framework, read directly from source"
+      ]
+    },
+    {
+      "rota": "/en/ledger/abandono-escolar-precoce-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/agua-nao-faturada-portugal-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Água Não Faturada",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Água Não Faturada",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/alentejo-central-poder-de-compra-2023/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/avisos-pt2030-abertos/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Which Door Is Yours — public funding in Portugal, August 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Which Door Is Yours — public funding in Portugal, August 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/avisos-pt2030-pessoas-singulares/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Which Door Is Yours — public funding in Portugal, August 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Which Door Is Yours — public funding in Portugal, August 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/ciclo-substituicao-condutas/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Água Não Faturada",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Água Não Faturada",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/competencias-digitais-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/correcoes-publicadas/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· O Estado do País, own count",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: O Estado do País, own count",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/credito-malparado-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/criancas-em-creche-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/custo-unitario-do-trabalho-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/desempenho-das-exportacoes-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/desemprego-de-longa-duracao-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/despesa-em-id-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/disparidade-de-emprego-entre-sexos-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/distancia-alentejo-ue27-2000/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculated · Alentejo &amp; Algarve — Economy, Society, Strategy",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: calculated · Alentejo &amp; Algarve — Economy, Society, Strategy",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/distancia-alentejo-ue27-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculated · Alentejo &amp; Algarve — Economy, Society, Strategy",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: calculated · Alentejo &amp; Algarve — Economy, Society, Strategy",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/distancia-algarve-ue27-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculated · Avaliação Económica Regional de Portugal 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: calculated · Avaliação Económica Regional de Portugal 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/distancia-grande-lisboa-ue27-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculated · Avaliação Económica Regional de Portugal 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: calculated · Avaliação Económica Regional de Portugal 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/distancia-madeira-ue27-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculated · Avaliação Económica Regional de Portugal 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: calculated · Avaliação Económica Regional de Portugal 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/distancia-peninsula-de-setubal-ue27-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculated · Avaliação Económica Regional de Portugal 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: calculated · Avaliação Económica Regional de Portugal 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/distancia-portugal-ue27-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculated · Avaliação Económica Regional de Portugal 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: calculated · Avaliação Económica Regional de Portugal 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/distancia-setubal-grande-lisboa-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculated · Avaliação Económica Regional de Portugal 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: calculated · Avaliação Económica Regional de Portugal 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/divida-das-empresas-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/divida-das-familias-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/divida-publica-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/edicoes-publicadas/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· O Estado do País, own count",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: O Estado do País, own count",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/estudos-evora-publicados/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· O Estado do País, own count",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: O Estado do País, own count",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/estudos-publicados/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· O Estado do País, own count",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: O Estado do País, own count",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-camara-lugares/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-camara-mandatos-cdu-2013/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-camara-mandatos-cdu-2017/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-camara-mandatos-cdu-2021/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-camara-mandatos-ps-2009/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-camara-mandatos-ps-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-concentracao-vab4-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-contas-2024-votos-contra/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-contas-2024-votos-favor/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-desemprego-registado-2013/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-desemprego-registado-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-despesa-paga-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-divergencia-municipio-dgal-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculated · Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: calculated · Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-divida-31-10-2013/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-divida-dgal-2014/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-divida-dgal-2017/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-divida-dgal-2021/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-divida-dgal-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-divida-inicio-mandato-reexpressa/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-divida-total-2017/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-divida-total-2021/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-divida-total-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-divida-total-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-empresas-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-excesso-endividamento-2014/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-excesso-endividamento-2019/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-execucao-da-receita-2021/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-execucao-da-receita-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-executivo-2025-ad/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-executivo-2025-cdu/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-executivo-2025-chega/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-executivo-2025-ps/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-indice-de-divida-2014/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculated · Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: calculated · Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-indice-de-divida-2017/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculated · Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: calculated · Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-indice-de-divida-2021/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculated · Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: calculated · Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-indice-de-divida-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculated · Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: calculated · Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-limite-divida-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-limite-divida-dgal-2014/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-limite-divida-dgal-2017/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-limite-divida-dgal-2021/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-limite-divida-dgal-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-margem-endividamento-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-orcamento-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-pael-emprestimo/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-pagamentos-em-atraso-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-pelouros-2021-presidente/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-pelouros-2021-total/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculated · Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: calculated · Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-pelouros-2021-vice-presidente/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-pelouros-2025-presidente/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-pelouros-2025-total/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculated · Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: calculated · Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-pelouros-2025-vereadora/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-pelouros-2025-vice-presidente/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-poder-de-compra-2023/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-populacao-2021/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-populacao-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-prazo-medio-de-pagamento-2023/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-prazo-medio-de-pagamento-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-prr-aprovado-2026/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Promised, Paid, Audited 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Promised, Paid, Audited 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-prr-execucao-2026/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculated · Évora — Promised, Paid, Audited 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: calculated · Évora — Promised, Paid, Audited 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-prr-municipio-contratado/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Promised, Paid, Audited 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Promised, Paid, Audited 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-prr-pago-2026/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Promised, Paid, Audited 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Promised, Paid, Audited 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-prr-universidade-contratado/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Promised, Paid, Audited 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Promised, Paid, Audited 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-prr-vencido-aprovado-2026/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Promised, Paid, Audited 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Promised, Paid, Audited 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-prr-vencido-quota-2026/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculated · Évora — Promised, Paid, Audited 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: calculated · Évora — Promised, Paid, Audited 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-receita-cobrada-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-saneamento-financeiro-2016/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Quinze Anos, Cinco Mandatos",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/evora-vab-empresarial-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/fluxo-de-credito-as-empresas-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/fluxo-de-credito-as-familias-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/formacao-bruta-de-capital-fixo-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/independencia-da-justica-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/indice-de-divida-limite-legal/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/indice-de-percepcao-da-corrupcao-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/jovens-nem-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/licencas-de-construcao-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/municipios-acores-caop-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· O Estado do País, own count",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: O Estado do País, own count",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/municipios-com-estudo-aprofundado/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· O Estado do País, own count",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: O Estado do País, own count",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/municipios-continente-caop-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· O Estado do País, own count",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: O Estado do País, own count",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/municipios-madeira-caop-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· O Estado do País, own count",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: O Estado do País, own count",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/municipios-portugal-caop-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculated · O Estado do País, own count",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: calculated · O Estado do País, own count",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/municipios-sem-estudo-aprofundado/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculated · O Estado do País, own count",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: calculated · O Estado do País, own count",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/necessidades-medicas-nao-satisfeitas-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/pib-pc-alentejo-2000/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Avaliação Económica Regional de Portugal 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Avaliação Económica Regional de Portugal 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/pib-pc-alentejo-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Avaliação Económica Regional de Portugal 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Avaliação Económica Regional de Portugal 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/pib-pc-algarve-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Avaliação Económica Regional de Portugal 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Avaliação Económica Regional de Portugal 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/pib-pc-grande-lisboa-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Avaliação Económica Regional de Portugal 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Avaliação Económica Regional de Portugal 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/pib-pc-madeira-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Avaliação Económica Regional de Portugal 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Avaliação Económica Regional de Portugal 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/pib-pc-peninsula-de-setubal-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Avaliação Económica Regional de Portugal 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Avaliação Económica Regional de Portugal 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/pib-pc-portugal-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Avaliação Económica Regional de Portugal 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Avaliação Económica Regional de Portugal 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/pib-real-per-capita-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/portugal-concentracao-vab4-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/posicao-de-investimento-internacional-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/precos-da-habitacao-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/racio-s80-s20-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/risco-de-pobreza-ou-exclusao-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/saldo-da-balanca-corrente-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/saldo-natural-portugal-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Evolução de Portugal desde 1981",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Evolução de Portugal desde 1981",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/sobrecarga-do-custo-da-habitacao-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/taxa-de-actividade-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/taxa-de-cambio-efectiva-real-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/taxa-de-desemprego-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/taxa-de-desemprego-mip-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/ledger/taxa-de-emprego-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Institutional indicator framework, read directly from source",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: Institutional indicator framework, read directly from source",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/method/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 1,
+      "acrescentados": [
+        "Found an error?"
+      ],
+      "retirados": [
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/municipalities/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculated · O Estado do País, own count",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: calculated · O Estado do País, own count",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/municipalities/evora/",
+      "estado": "difere",
+      "mais": 92,
+      "menos": 92,
+      "acrescentados": [
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "· Évora — Economia, Investidores, Portas Abertas 2026"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Ledger row: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Ledger row: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Ledger row: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Ledger row: Évora — Economia, Investidores, Portas Abertas 2026"
+      ]
+    },
+    {
+      "rota": "/en/studies/",
+      "estado": "difere",
+      "mais": 3,
+      "menos": 3,
+      "acrescentados": [
+        "· O Estado do País, own count",
+        "· O Estado do País, own count",
+        "Found an error?"
+      ],
+      "retirados": [
+        "Ledger row: O Estado do País, own count",
+        "Ledger row: O Estado do País, own count",
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/studies/agua-nao-faturada/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 1,
+      "acrescentados": [
+        "Found an error?"
+      ],
+      "retirados": [
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/studies/alentejo-algarve/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 1,
+      "acrescentados": [
+        "Found an error?"
+      ],
+      "retirados": [
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/studies/avaliacao-economica-regional-de-portugal-2026/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 1,
+      "acrescentados": [
+        "Found an error?"
+      ],
+      "retirados": [
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/studies/evolucao-de-portugal-desde-1981/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 1,
+      "acrescentados": [
+        "Found an error?"
+      ],
+      "retirados": [
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/studies/evora-economia-investidores-portas-abertas-2026/",
+      "estado": "difere",
+      "mais": 14,
+      "menos": 14,
+      "acrescentados": [
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "· Évora — Economia, Investidores, Portas Abertas 2026"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Ledger row: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Ledger row: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Ledger row: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Ledger row: Évora — Economia, Investidores, Portas Abertas 2026"
+      ]
+    },
+    {
+      "rota": "/en/studies/evora-orcamentado-pago-devido-2025/",
+      "estado": "difere",
+      "mais": 11,
+      "menos": 11,
+      "acrescentados": [
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "· Évora — Budgeted, Paid, Owed 2025",
+        "· Évora — Budgeted, Paid, Owed 2025"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025",
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025"
+      ]
+    },
+    {
+      "rota": "/en/studies/evora-os-pelouros-quem-os-teve-o-que-fizeram/",
+      "estado": "difere",
+      "mais": 12,
+      "menos": 12,
+      "acrescentados": [
+        "· calculated · Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "· calculated · Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "· Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "· Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "· Évora — Os Pelouros, Quem Os Teve, O Que Fizeram"
+      ],
+      "retirados": [
+        "Ledger row: calculated · Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Ledger row: calculated · Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Ledger row: Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Ledger row: Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Ledger row: Évora — Os Pelouros, Quem Os Teve, O Que Fizeram"
+      ]
+    },
+    {
+      "rota": "/en/studies/evora-prometido-pago-auditado-2026/",
+      "estado": "difere",
+      "mais": 14,
+      "menos": 14,
+      "acrescentados": [
+        "· Évora — Promised, Paid, Audited 2026",
+        "· Évora — Promised, Paid, Audited 2026",
+        "· Évora — Promised, Paid, Audited 2026",
+        "· Évora — Promised, Paid, Audited 2026",
+        "· Évora — Promised, Paid, Audited 2026"
+      ],
+      "retirados": [
+        "Ledger row: Évora — Promised, Paid, Audited 2026",
+        "Ledger row: Évora — Promised, Paid, Audited 2026",
+        "Ledger row: Évora — Promised, Paid, Audited 2026",
+        "Ledger row: Évora — Promised, Paid, Audited 2026",
+        "Ledger row: Évora — Promised, Paid, Audited 2026"
+      ]
+    },
+    {
+      "rota": "/en/studies/evora-quinze-anos-cinco-mandatos/",
+      "estado": "difere",
+      "mais": 11,
+      "menos": 11,
+      "acrescentados": [
+        "· calculated · Évora — Budgeted, Paid, Owed 2025",
+        "· calculated · Évora — Budgeted, Paid, Owed 2025",
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "· Évora — Quinze Anos, Cinco Mandatos"
+      ],
+      "retirados": [
+        "Ledger row: calculated · Évora — Budgeted, Paid, Owed 2025",
+        "Ledger row: calculated · Évora — Budgeted, Paid, Owed 2025",
+        "Ledger row: Évora — Quinze Anos, Cinco Mandatos",
+        "Ledger row: Évora — Quinze Anos, Cinco Mandatos",
+        "Ledger row: Évora — Budgeted, Paid, Owed 2025"
+      ]
+    },
+    {
+      "rota": "/en/studies/onde-esta-a-agua/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 1,
+      "acrescentados": [
+        "Found an error?"
+      ],
+      "retirados": [
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/studies/which-door-is-yours/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 1,
+      "acrescentados": [
+        "Found an error?"
+      ],
+      "retirados": [
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/en/to-verify/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 1,
+      "acrescentados": [
+        "Found an error?"
+      ],
+      "retirados": [
+        "Found an error"
+      ]
+    },
+    {
+      "rota": "/estudos/",
+      "estado": "difere",
+      "mais": 3,
+      "menos": 3,
+      "acrescentados": [
+        "· O Estado do País, apuramento próprio",
+        "· O Estado do País, apuramento próprio",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: O Estado do País, apuramento próprio",
+        "Linha do livro-razão: O Estado do País, apuramento próprio",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/estudos/agua-nao-faturada/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 1,
+      "acrescentados": [
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/estudos/alentejo-algarve/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 1,
+      "acrescentados": [
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/estudos/avaliacao-economica-regional-de-portugal-2026/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 1,
+      "acrescentados": [
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/estudos/evolucao-de-portugal-desde-1981/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 1,
+      "acrescentados": [
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/estudos/evora-economia-investidores-portas-abertas-2026/",
+      "estado": "difere",
+      "mais": 14,
+      "menos": 14,
+      "acrescentados": [
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "· Évora — Economia, Investidores, Portas Abertas 2026"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Linha do livro-razão: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Linha do livro-razão: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Linha do livro-razão: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Linha do livro-razão: Évora — Economia, Investidores, Portas Abertas 2026"
+      ]
+    },
+    {
+      "rota": "/estudos/evora-orcamentado-pago-devido-2025/",
+      "estado": "difere",
+      "mais": 11,
+      "menos": 11,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "· Évora — Orçamentado, Pago, Devido 2025"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025"
+      ]
+    },
+    {
+      "rota": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/",
+      "estado": "difere",
+      "mais": 12,
+      "menos": 12,
+      "acrescentados": [
+        "· calculado · Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "· calculado · Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "· Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "· Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "· Évora — Os Pelouros, Quem Os Teve, O Que Fizeram"
+      ],
+      "retirados": [
+        "Linha do livro-razão: calculado · Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Linha do livro-razão: calculado · Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Linha do livro-razão: Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Linha do livro-razão: Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Linha do livro-razão: Évora — Os Pelouros, Quem Os Teve, O Que Fizeram"
+      ]
+    },
+    {
+      "rota": "/estudos/evora-prometido-pago-auditado-2026/",
+      "estado": "difere",
+      "mais": 14,
+      "menos": 14,
+      "acrescentados": [
+        "· Évora — Prometido, Pago, Auditado 2026",
+        "· Évora — Prometido, Pago, Auditado 2026",
+        "· Évora — Prometido, Pago, Auditado 2026",
+        "· Évora — Prometido, Pago, Auditado 2026",
+        "· Évora — Prometido, Pago, Auditado 2026"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Prometido, Pago, Auditado 2026",
+        "Linha do livro-razão: Évora — Prometido, Pago, Auditado 2026",
+        "Linha do livro-razão: Évora — Prometido, Pago, Auditado 2026",
+        "Linha do livro-razão: Évora — Prometido, Pago, Auditado 2026",
+        "Linha do livro-razão: Évora — Prometido, Pago, Auditado 2026"
+      ]
+    },
+    {
+      "rota": "/estudos/evora-quinze-anos-cinco-mandatos/",
+      "estado": "difere",
+      "mais": 11,
+      "menos": 11,
+      "acrescentados": [
+        "· calculado · Évora — Orçamentado, Pago, Devido 2025",
+        "· calculado · Évora — Orçamentado, Pago, Devido 2025",
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "· Évora — Quinze Anos, Cinco Mandatos"
+      ],
+      "retirados": [
+        "Linha do livro-razão: calculado · Évora — Orçamentado, Pago, Devido 2025",
+        "Linha do livro-razão: calculado · Évora — Orçamentado, Pago, Devido 2025",
+        "Linha do livro-razão: Évora — Quinze Anos, Cinco Mandatos",
+        "Linha do livro-razão: Évora — Quinze Anos, Cinco Mandatos",
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025"
+      ]
+    },
+    {
+      "rota": "/estudos/onde-esta-a-agua/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 1,
+      "acrescentados": [
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/estudos/which-door-is-yours/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 1,
+      "acrescentados": [
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/",
+      "estado": "difere",
+      "mais": 133,
+      "menos": 133,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "· Quadro institucional de indicadores, leitura direta da fonte"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte"
+      ]
+    },
+    {
+      "rota": "/livro-razao/abandono-escolar-precoce-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/agua-nao-faturada-portugal-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Água Não Faturada",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Água Não Faturada",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/alentejo-central-poder-de-compra-2023/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/avisos-pt2030-abertos/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Which Door Is Yours — public funding in Portugal, August 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Which Door Is Yours — public funding in Portugal, August 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/avisos-pt2030-pessoas-singulares/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Which Door Is Yours — public funding in Portugal, August 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Which Door Is Yours — public funding in Portugal, August 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/ciclo-substituicao-condutas/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Água Não Faturada",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Água Não Faturada",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/competencias-digitais-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/correcoes-publicadas/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· O Estado do País, apuramento próprio",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: O Estado do País, apuramento próprio",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/credito-malparado-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/criancas-em-creche-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/custo-unitario-do-trabalho-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/desempenho-das-exportacoes-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/desemprego-de-longa-duracao-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/despesa-em-id-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/disparidade-de-emprego-entre-sexos-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/distancia-alentejo-ue27-2000/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculado · Alentejo &amp; Algarve — Economy, Society, Strategy",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: calculado · Alentejo &amp; Algarve — Economy, Society, Strategy",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/distancia-alentejo-ue27-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculado · Alentejo &amp; Algarve — Economy, Society, Strategy",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: calculado · Alentejo &amp; Algarve — Economy, Society, Strategy",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/distancia-algarve-ue27-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculado · Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: calculado · Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/distancia-grande-lisboa-ue27-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculado · Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: calculado · Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/distancia-madeira-ue27-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculado · Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: calculado · Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/distancia-peninsula-de-setubal-ue27-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculado · Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: calculado · Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/distancia-portugal-ue27-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculado · Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: calculado · Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/distancia-setubal-grande-lisboa-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculado · Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: calculado · Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/divida-das-empresas-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/divida-das-familias-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/divida-publica-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/edicoes-publicadas/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· O Estado do País, apuramento próprio",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: O Estado do País, apuramento próprio",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/estudos-evora-publicados/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· O Estado do País, apuramento próprio",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: O Estado do País, apuramento próprio",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/estudos-publicados/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· O Estado do País, apuramento próprio",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: O Estado do País, apuramento próprio",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-camara-lugares/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-camara-mandatos-cdu-2013/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-camara-mandatos-cdu-2017/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-camara-mandatos-cdu-2021/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-camara-mandatos-ps-2009/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-camara-mandatos-ps-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-concentracao-vab4-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-contas-2024-votos-contra/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-contas-2024-votos-favor/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-desemprego-registado-2013/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-desemprego-registado-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-despesa-paga-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-divergencia-municipio-dgal-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculado · Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: calculado · Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-divida-31-10-2013/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-divida-dgal-2014/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-divida-dgal-2017/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-divida-dgal-2021/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-divida-dgal-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-divida-inicio-mandato-reexpressa/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-divida-total-2017/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-divida-total-2021/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-divida-total-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-divida-total-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-empresas-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-excesso-endividamento-2014/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-excesso-endividamento-2019/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-execucao-da-receita-2021/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-execucao-da-receita-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-executivo-2025-ad/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-executivo-2025-cdu/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-executivo-2025-chega/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-executivo-2025-ps/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-indice-de-divida-2014/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculado · Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: calculado · Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-indice-de-divida-2017/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculado · Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: calculado · Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-indice-de-divida-2021/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculado · Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: calculado · Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-indice-de-divida-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculado · Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: calculado · Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-limite-divida-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-limite-divida-dgal-2014/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-limite-divida-dgal-2017/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-limite-divida-dgal-2021/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-limite-divida-dgal-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-margem-endividamento-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-orcamento-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-pael-emprestimo/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-pagamentos-em-atraso-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-pelouros-2021-presidente/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-pelouros-2021-total/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculado · Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: calculado · Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-pelouros-2021-vice-presidente/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-pelouros-2025-presidente/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-pelouros-2025-total/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculado · Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: calculado · Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-pelouros-2025-vereadora/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-pelouros-2025-vice-presidente/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Os Pelouros, Quem Os Teve, O Que Fizeram",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-poder-de-compra-2023/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-populacao-2021/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-populacao-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-prazo-medio-de-pagamento-2023/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-prazo-medio-de-pagamento-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-prr-aprovado-2026/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Prometido, Pago, Auditado 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Prometido, Pago, Auditado 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-prr-execucao-2026/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculado · Évora — Prometido, Pago, Auditado 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: calculado · Évora — Prometido, Pago, Auditado 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-prr-municipio-contratado/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Prometido, Pago, Auditado 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Prometido, Pago, Auditado 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-prr-pago-2026/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Prometido, Pago, Auditado 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Prometido, Pago, Auditado 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-prr-universidade-contratado/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Prometido, Pago, Auditado 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Prometido, Pago, Auditado 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-prr-vencido-aprovado-2026/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Prometido, Pago, Auditado 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Prometido, Pago, Auditado 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-prr-vencido-quota-2026/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculado · Évora — Prometido, Pago, Auditado 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: calculado · Évora — Prometido, Pago, Auditado 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-receita-cobrada-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-saneamento-financeiro-2016/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Quinze Anos, Cinco Mandatos",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/evora-vab-empresarial-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/fluxo-de-credito-as-empresas-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/fluxo-de-credito-as-familias-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/formacao-bruta-de-capital-fixo-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/independencia-da-justica-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/indice-de-divida-limite-legal/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Orçamentado, Pago, Devido 2025",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/indice-de-percepcao-da-corrupcao-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/jovens-nem-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/licencas-de-construcao-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/municipios-acores-caop-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· O Estado do País, apuramento próprio",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: O Estado do País, apuramento próprio",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/municipios-com-estudo-aprofundado/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· O Estado do País, apuramento próprio",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: O Estado do País, apuramento próprio",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/municipios-continente-caop-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· O Estado do País, apuramento próprio",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: O Estado do País, apuramento próprio",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/municipios-madeira-caop-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· O Estado do País, apuramento próprio",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: O Estado do País, apuramento próprio",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/municipios-portugal-caop-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculado · O Estado do País, apuramento próprio",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: calculado · O Estado do País, apuramento próprio",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/municipios-sem-estudo-aprofundado/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculado · O Estado do País, apuramento próprio",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: calculado · O Estado do País, apuramento próprio",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/necessidades-medicas-nao-satisfeitas-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/pib-pc-alentejo-2000/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/pib-pc-alentejo-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/pib-pc-algarve-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/pib-pc-grande-lisboa-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/pib-pc-madeira-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/pib-pc-peninsula-de-setubal-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/pib-pc-portugal-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Avaliação Económica Regional de Portugal 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/pib-real-per-capita-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/portugal-concentracao-vab4-2024/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/posicao-de-investimento-internacional-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/precos-da-habitacao-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/racio-s80-s20-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/risco-de-pobreza-ou-exclusao-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/saldo-da-balanca-corrente-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/saldo-natural-portugal-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Evolução de Portugal desde 1981",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Evolução de Portugal desde 1981",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/sobrecarga-do-custo-da-habitacao-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/taxa-de-actividade-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/taxa-de-cambio-efectiva-real-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/taxa-de-desemprego-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/taxa-de-desemprego-mip-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/livro-razao/taxa-de-emprego-2025/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Quadro institucional de indicadores, leitura direta da fonte",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/metodo/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 1,
+      "acrescentados": [
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/municipios/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 2,
+      "acrescentados": [
+        "· calculado · O Estado do País, apuramento próprio",
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Linha do livro-razão: calculado · O Estado do País, apuramento próprio",
+        "Encontrou um erro"
+      ]
+    },
+    {
+      "rota": "/municipios/evora/",
+      "estado": "difere",
+      "mais": 92,
+      "menos": 92,
+      "acrescentados": [
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "· Évora — Economia, Investidores, Portas Abertas 2026",
+        "· Évora — Economia, Investidores, Portas Abertas 2026"
+      ],
+      "retirados": [
+        "Linha do livro-razão: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Linha do livro-razão: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Linha do livro-razão: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Linha do livro-razão: Évora — Economia, Investidores, Portas Abertas 2026",
+        "Linha do livro-razão: Évora — Economia, Investidores, Portas Abertas 2026"
+      ]
+    },
+    {
+      "rota": "/sobre/",
+      "estado": "difere",
+      "mais": 1,
+      "menos": 1,
+      "acrescentados": [
+        "Encontrou um erro?"
+      ],
+      "retirados": [
+        "Encontrou um erro"
+      ]
+    }
+  ]
+}
