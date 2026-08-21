@@ -140,8 +140,41 @@ nova. As quatro cadeias desta ronda têm inglês próprio.
 ### Etapa 4
 *(escrita mais abaixo, subetapa a subetapa: commit 4-0, 4a, 4b e 4c.)*
 
-### Etapa 5
-*(por preencher: `cartao.*`)*
+### Etapa 5 · **nenhuma chave nova, e é o resultado e não uma omissão**
+
+A etapa 5 construiu os 532 cartões de partilha e **não acrescentou uma única
+cadeia** ao `src/i18n/strings.mjs`. Não havia família `cartao.*` a preencher: um
+cartão que precisasse de palavras próprias estaria a dizer, a quem o vê fora do
+sítio, uma coisa que a página não diz — e a §5 do plano proíbe exactamente isso
+(«nunca uma cadeia escrita à mão»).
+
+O cartão diz-se todo com chaves que já existiam, e as duas edições saem da mesma
+chamada a `t(lang)`:
+
+| o que o cartão mostra | chave, e de onde ela já vinha |
+|---|---|
+| a marca | `SITE_NAME` de `site.config.mjs`, que não é traduzida (está nas «Identidades aceites») |
+| a sobrancelha da primeira página | `inicio.cabeca.paisA` · «Portugal · país» / «Portugal · country» |
+| a sobrancelha de uma página de linha | `livro.linha.eyebrow` · «Linha do livro-razão» / «Ledger row» |
+| a manchete da primeira página | `inicio.cabeca.tituloPaisA` + `tituloPaisUm`/`tituloPaisMuitos` + `tituloPaisFim`, com as duas contagens da prova pelo meio, como `Cabeca.astro` as compõe |
+| as palavras de estado | `estado.foraDoLimiar`, `estado.dentroDoLimiar`, `estado.semLimiar` · o vocabulário fechado |
+| o pé de uma página de linha | `prov.fonte` («Fonte» / «Source») e `prov.lido` («Lido a» / «Read on») |
+| o pé da primeira página | `sinal.reconferido` · «Painel europeu reconferido a» / «European panel re-checked on» |
+| a manchete de uma página de linha | nenhuma chave: é `valorComUnidade(claim)`, o valor e a unidade da própria linha |
+
+**O que a revisão de voz tem de ler**, e é o único ponto novo: o versalete do
+cartão é desenhado em minúsculas, porque em SVG não há `text-transform` e a
+Spectral SC desenha os versaletes nas minúsculas. A cópia registada é a
+minúscula («linha do livro-razão», «ledger row», «outside the threshold»), e é
+essa a cadeia que o portão confere. Nenhuma palavra muda; muda a caixa, como já
+mudava na folha de estilos.
+
+**A largura das duas edições não é a mesma, e isso mudou o desenho.** «outside
+the threshold» e «within the threshold» são mais compridas do que «fora do
+limiar» e «dentro do limiar»: na primeira rendição a fila de estados da edição
+inglesa saía pela margem fora. A fila passa a quebrar em duas linhas quando não
+cabe numa — o desenho é o mesmo nas duas edições, o que muda é onde ele parte.
+Está medido na nota da etapa, §5.
 
 ### Etapa 2l · a segunda leitura da pré-visualização n.º 1 (Emendas 15 a 17)
 
