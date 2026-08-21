@@ -223,8 +223,14 @@
 
 /* O sumário da Agenda usa as classes do sumário do Método sem uma regra nova: é
    a mesma peça na mesma folha. O que ele não leva é a coluna do número, porque
-   os estados não são numerados; a lista corre em duas colunas na mesma. */
-.metodo-sumario-lista li:not([class]) {
+   os estados não são numerados, e por isso o item não é uma caixa flexível de
+   duas partes: é uma linha.
+
+   O SELECTOR É A ETIQUETA DA LISTA, e não «um `li` sem classe»: as dez regras do
+   Método também são `li` sem classe, e `:not([class])` apagava-lhes a goma entre
+   o número e o nome — «1As fontes». O Método numera e escreve `<ol>`; a Agenda
+   não numera e escreve `<ul>`. */
+ul.metodo-sumario-lista li {
   display: block;
 }
 

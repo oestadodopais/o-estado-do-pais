@@ -741,7 +741,122 @@ de outro construtor e está em duas páginas, e escolher entre os dois é forma.
 
 ---
 
-## 8. O que fica pedido
+## 8. Subetapa 4f · o fecho
+
+### 8.1 · Um defeito da 4c, apanhado a fotografar a 390
+
+O sumário do Método rendia **«1As fontes»**, sem goma entre o número e o nome, e
+só no telemóvel. A causa foi minha, na 4c: para tirar a coluna do número ao
+sumário da Agenda escrevi `.metodo-sumario-lista li:not([class])`, e as dez
+regras do Método também são `li` sem classe — a regra apanhou-as e desligou-lhes
+a caixa flexível. O selector passa a ser a etiqueta da lista, que é o que
+distingue mesmo as duas: **o Método numera e escreve `<ol>`, a Agenda não numera
+e escreve `<ul>`**.
+
+Vai escrito aqui porque é a lição e não o erro: uma regra escrita a partir do que
+o marcador **não tem** apanha tudo o que não o tem.
+
+### 8.2 · As réguas
+
+```
+npm run build         exit 0
+npm run verify        exit 0
+npm run ledger:check  exit 0   (24 entradas a partir da §1.38, 2 textos governados)
+node scripts/medir-defeitos.mjs      exit 0
+node scripts/medir-contraste.mjs     exit 0
+node scripts/medir-tipos.mjs         exit 0
+node scripts/medir-invariancia.mjs --chaves   → 20 chaves iguais nas duas edições
+node scripts/ortografia.mjs          exit 1   (ver 8.4)
+```
+
+**O inventário**, `medir-defeitos.mjs`: **36 rotas inventariadas, as 36 a zero de
+autorreferência, e nenhum bloco por classificar em nenhuma delas.** A lista
+declarada tem 413 entradas, onde a etapa 3 a deixou com 267. A etapa entrou com
+`/agenda`, `/estudos` e as vinte e duas rotas de trabalho.
+
+**O contraste**, `medir-contraste.mjs`: 0 falhas de texto, 4 objetos de interface
+abaixo de 3:1, os mesmos da etapa 1 e nenhum desta. Nenhuma cor nova entrou na
+etapa 4: a única mudança de cor foi um `fill` que passou a nomear o cinzento que
+a folha já pintava.
+
+**As chaves**, `medir-invariancia.mjs --chaves`: **20**, o mesmo número da 2m.
+A etapa não criou nenhuma identidade nova — `leitura.sumarioK` é «Nesta página» /
+«On this page», que são cadeias diferentes.
+
+### 8.3 · A invariância, contra a construção da 4a
+
+Construção da linha de base num `git worktree` em `3a51cb8` (o commit da 4a),
+comparada com a de agora:
+
+```
+322 rotas · 293 idênticas em texto · 29 com diferenças
+```
+
+**As 29 são exactamente as rotas que a etapa reconstruiu**, e nenhuma outra:
+
+| rota(s) | o quê |
+|---|---|
+| `/metodo`, `/en/method` | `+27 −0` |
+| `/agenda`, `/en/agenda` | `+10 −6` |
+| `/municipios/evora`, `/en/municipalities/evora` | `+1 −3` |
+| `/404` | `+1 −1` |
+| as 22 rotas de trabalho (11 × 2 edições) | `+0 −4`, `+0 −3` ou `+1 −4` |
+
+**O `+27 −0` do Método vale a explicação**, porque um número grande sem nada
+retirado parece um erro de leitura. A régua imprime só cinco linhas por rota, e
+por isso recontei o diferencial inteiro com uma extracção própria, que dá o mesmo
+27: **20** são o sumário (os dez números e os dez nomes das regras passam a
+aparecer **duas** vezes na página, e a régua conta ocorrências) e **7** são a
+entrada de fecho («A forma» duas vezes, «A cor» e a sua frase, a porta, «A letra»
+e a sua frase). **Nada saiu do Método**, e é isso que o `−0` diz.
+
+**O `/estudos` e o `/en/studies` não aparecem na lista**, e está certo: a 4e
+mexeu nas páginas de trabalho e na folha, e não numa palavra do índice.
+
+### 8.4 · A régua da ortografia falha, e não é desta etapa
+
+`node scripts/ortografia.mjs` sai a **1**, com uma forma fora da grafia da casa:
+
+```
+src/components/inicio/Peca.astro:216:32  tecto → teto
+    … {regua.rotulo === 'tecto' && ( <Fragment slot="refer…
+```
+
+**Corri a mesma régua na construção da linha de base** (`3a51cb8`) e ela falha lá
+exactamente da mesma maneira: é anterior a esta etapa. É uma comparação de
+cadeias dentro de um componente da primeira página, que é de outro construtor, e
+**não é texto publicado**: `grep -o tecto dist/` dá três ficheiros, e os três são
+o nome de uma classe de CSS (`mun-tecto-rot`), nunca uma palavra que um leitor
+veja. A régua não entra no `npm run build`. Fica escrita aqui em vez de corrigida
+à socapa num ficheiro que não é meu.
+
+### 8.5 · As capturas
+
+`node tests/inicio/capturas.mjs --etapa-4` → **38 capturas** em
+`../capturas/etapa-4/`, todas no tema claro, a 1280 e a 390, nas duas edições:
+
+| rota | ficheiro |
+|---|---|
+| `/metodo` · `/en/method` | `metodo-{1280,390}-{pt,en}-claro.png` |
+| a entrada de fecho, recorte | `metodo-fecho-1280-{pt,en}-claro.png` |
+| `/agenda` · `/en/agenda` | `agenda-{1280,390}-{pt,en}-claro.png` |
+| o eixo do calendário, recorte | `agenda-eixo-1280-{pt,en}-claro.png` |
+| `/correcoes` · `/en/corrections` | `correcoes-{1280,390}-{pt,en}-claro.png` |
+| `/sobre` · `/en/about` | `sobre-{1280,390}-{pt,en}-claro.png` |
+| `/estudos` · `/en/studies` | `estudos-{1280,390}-{pt,en}-claro.png` |
+| `/estudos/agua-nao-faturada` (documento alojado, página por escrever) | `estudo-agua-{1280,390}-{pt,en}-claro.png` |
+| `/estudos/evora-prometido-pago-auditado-2026` (leitura publicada) | `estudo-leitura-{1280,390}-{pt,en}-claro.png` |
+| `/a-verificar` · `/en/to-verify` | `marcador-{1280,390}-{pt,en}-claro.png` |
+| `/404` (uma edição só) | `nao-encontrado-{1280,390}-pt-claro.png` |
+
+Duas coisas que a lista do brief não tinha e que entraram com razão: o **recorte**
+da entrada de fecho e do eixo, porque numa página inteira a 1280 as duas peças da
+etapa medem dois dedos; e a **segunda página de trabalho**, porque a página tem
+dois estados e uma captura só mostrava um.
+
+---
+
+## 9. O que fica pedido
 
 | # | pedido | a quem |
 |---|---|---|
@@ -750,13 +865,22 @@ de outro construtor e está em duas páginas, e escolher entre os dois é forma.
 | 3 | ~~Os três blocos de autorreferência de `/municipios/evora`~~ **Respondido a 21.08.2026, tarde.** Feito na subetapa a seguir (§4 abaixo) | direção, cadeira |
 | 4 | **A leitura de «Quem responde pelo quê»** (§1.2): das três possíveis, escolhi a que põe a frase por cima da banda dos mandatos. Se a cadeira quiser outra, é uma linha | cadeira |
 | 5 | **`IDENTIDADE.md` §2 a citar «A cor»** com a marca, se a cadeira quiser a amarra a guardá-la (§3.6) | cadeira |
+| 6 | **A edição inglesa não tem página de erro** (`ISSUES.md` I53, §6.3): as cadeias já existem em `erro404.*`, o que falta é a rota. Um ficheiro de página e uma declaração | cadeira |
+| 7 | **Dois sinais para a mesma dobra** (`ISSUES.md` I54, §7.5): o triângulo do `.deep` e o `+`/`−` das dobras novas. A Emenda 10 fecha esta porta, e escolher entre os dois é forma | cadeira |
+| 8 | **As duas portas do fim da página do marcador** (§6.4) rendem sem fio e em cinzento, porque `.rodape-nav` é do rodapé. Se a classe se separar em duas, é uma regra | cadeira |
+| 9 | **`ortografia.mjs` falha, e é anterior a esta etapa** (§8.4): `tecto` numa comparação de cadeias em `src/components/inicio/Peca.astro`, que não é meu e não é texto publicado | construtor A |
 
 ---
 
-## 9. Modelo e gasto
+## 10. Modelo e gasto
 
 | | |
 |---|---|
 | modelo | Claude Opus, `claude-opus-5[1m]` |
-| commits | `6b7dab8` (4-0), `3a51cb8` (4a) |
-| preparado e não commetido | 4b, em `4b-pendente.patch` |
+| commits | `6b7dab8` (4-0), `3a51cb8` (4a), `66a2866` (4b), `0e0b274` (Évora, I52), `156b256` (4c), `ecd14f7` (4d), `1fec8f8` (4e), e o do fecho |
+| ficheiros abertos fora da lista da §2 do brief, e porquê | `tests/inicio/capturas.mjs` (o modo `--etapa-4`, §5.5 do brief não o previa; precedente do modo `--etapa-3`), `src/styles/site.css` (a regra `.agenda-eixo-svg rect` e as duas do `.placeholder`, que ficaram sem cliente — é o que o I12 e o item M mandam), `src/data/leituras.mjs` (uma frase, §7.2), `src/data/municipios.mjs` e `src/views/MunicipioView.astro` (a decisão da direção sobre Évora, §4), `src/i18n/strings.mjs` famílias `livro.*` e `municipio.*` no commit 4-0 |
+| plantas provadas e revertidas | duas na 4a (a porta do selo), duas no commit 4-0 (a porta do CSV), duas na 4e (a data do arquivo, e a primeira não provava o que era preciso) |
+
+**O que esta etapa deixou por fazer, e é do brief:** nada da §3. As cinco
+subetapas e o fecho estão commetidas. O que fica são os nove pedidos da §9, que
+são decisões e não construção.
