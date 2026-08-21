@@ -40,7 +40,8 @@ import Cabeca from '../components/inicio/Cabeca.astro';
 import Pesquisa from '../components/inicio/Pesquisa.astro';
 import MapaRespira from '../components/inicio/MapaRespira.astro';
 import BandaDaRegiao from '../components/inicio/BandaDaRegiao.astro';
-import { FIGURAS, comparacaoComOLimiar } from '../data/figuras.mjs';
+import ListaSocial from '../components/inicio/ListaSocial.astro';
+import { FIGURAS_PDM, FIGURAS_SOCIAL, comparacaoComOLimiar, ladosDoLimiar } from '../data/figuras.mjs';
 import { REGIOES, ESCALA } from '../data/regioes.mjs';
 import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { estadoDaMedida, estadoDaRegua } from '../lib/estado.mjs';
@@ -68,15 +69,26 @@ const hrefs = {
 /* ------------------------------------------------------------------ o painel */
 /* A comparação com o limiar continua a ser calculada aqui, uma vez, como na v2:
    é prosa da casa gerada de dois números que já existem, e não um número novo. */
-const medidas = FIGURAS.map((f) => {
+const medidas = FIGURAS_PDM.map((f) => {
   const linha = getClaim(f.claim);
+  /* A REFERÊNCIA DA RÉGUA SÃO OS LADOS DECLARADOS, um ou dois. Uma banda dá dois
+     números e a régua desenha dois traços; um teto ou um chão dá um. A leitura
+     da declaração é a de `ladosDoLimiar()`, e não há aqui uma segunda. */
+  const lados = f.limiar ? ladosDoLimiar(f.limiar) : null;
+  const refs = lados
+    ? [lados.inferior, lados.superior].filter((l) => l !== null).map((l) => parsePtNumber(l))
+    : [];
   return {
     ...f,
     linha,
     estado: estadoDaMedida(linha, f.limiar),
     comparacao: f.limiar ? comparacaoComOLimiar(linha, f.limiar) : null,
+    referencias: refs,
   };
 });
+
+/* O Painel Social Europeu: a lista da Emenda 16, com a linha de cada medida. */
+const sociais = FIGURAS_SOCIAL.map((f) => ({ ...f, linha: getClaim(f.claim) }));
 
 /* -------------------------------------------------------------- os concelhos */
 const cs = concelhos();
@@ -288,15 +300,15 @@ const medidasSemLinha = evora
             id={f.claim}
             nome={f.nome[lang]}
             medida={f.medida[lang]}
-            frase={f.frase[lang]}
+            frase={f.frase?.[lang] ?? null}
             limiar={f.limiar}
             comparacao={f.comparacao}
             estado={f.estado ?? 'sem'}
             regua={
-              f.limiar
+              f.referencias.length
                 ? {
                     valor: parsePtNumber(f.linha.value),
-                    referencia: parsePtNumber(`${f.limiar.sinal ?? ''}${f.limiar.nl}`),
+                    referencia: f.referencias.length > 1 ? f.referencias : f.referencias[0],
                     rotulo: 'limiar',
                   }
                 : null
@@ -370,6 +382,18 @@ const medidasSemLinha = evora
     <div class="painel" data-painel="vazio" hidden>
       <EstadoVazio s={s} nome={primeiroSemPagina?.nome ?? ''} />
       {medidasSemLinha.map((m) => <Peca s={s} vazio={true} nome={m.nome} unidade={m.unidade} />)}
+    </div>
+
+    {/* ------------------------------------------------------------------
+        O PAINEL SOCIAL EUROPEU (Emenda 16), e a porta para o resto
+        ------------------------------------------------------------------
+        Por baixo do painel do Procedimento, e só no âmbito País: os dois
+        painéis são de Portugal, e uma região ou um concelho não têm nem um nem
+        outro. `data-so-pais` é a mesma marca que o instrumento e as portas já
+        usam, e o script trata dela.
+        ------------------------------------------------------------------ */}
+    <div data-so-pais>
+      <ListaSocial s={s} lang={lang} medidas={sociais} porta={routePath('livro', lang)} />
     </div>
 
     {/* A âncora `#numeros` é a porta do sinal de tempo do cabeçalho e da chave

@@ -23,6 +23,7 @@
  */
 
 import { parsePtNumber } from './ledger.mjs';
+import { ladosDoLimiar } from '../data/figuras.mjs';
 
 /**
  * O estado de uma medida do painel contra o limiar que o quadro publica.
@@ -47,15 +48,40 @@ import { parsePtNumber } from './ledger.mjs';
  * possível e a resposta é `null`: inferir «negativo, logo chão» acertaria na
  * posição de investimento internacional e erraria na primeira linha negativa
  * com teto que o painel viesse a ganhar.
+ *
+ * ---------------------------------------------------------------------------
+ * A BANDA DE DOIS LADOS (etapa 2l, Emenda 16)
+ * ---------------------------------------------------------------------------
+ * Duas das treze linhas do Procedimento não têm um lado: têm dois. O saldo da
+ * balança corrente publica «-4/+6%» e a taxa de câmbio efetiva real publica
+ * «+/-3%», e as duas notas escrevem os dois lados. Estar DENTRO é estar entre
+ * eles; estar fora é passar um dos dois, e a regra é a mesma dos dois lados
+ * (a igualdade continua a contar como dentro, pela mesma razão de sempre).
+ *
+ * A leitura da declaração vive numa função só, `ladosDoLimiar()`, ao lado da
+ * declaração: um teto é uma banda sem chão, um chão é uma banda sem teto, e
+ * escrever a comparação uma vez sobre `{ inferior, superior }` é o que faz com
+ * que uma banda não seja um caso especial com regras próprias. Uma banda a que
+ * falte um dos lados por engano cai no caso de um lado só e não em silêncio.
+ *
+ * O PORTÃO NÃO CHAMA ISTO. `scripts/gate-html.mjs` escreve a sua própria
+ * leitura da declaração e a sua própria comparação, pela razão que a §1.24
+ * fixou: importar a função punha a mesma regra dos dois lados da conta.
  */
 export function estadoDaMedida(claim, limiar) {
   if (!limiar) return 'sem';
   const valor = parsePtNumber(claim?.value);
-  const alvo = parsePtNumber(`${limiar.sinal ?? ''}${limiar.nl}`);
-  if (valor === null || alvo === null) return null;
-  if (limiar.lado === 'superior') return valor > alvo ? 'fora' : 'dentro';
-  if (limiar.lado === 'inferior') return valor < alvo ? 'fora' : 'dentro';
-  return null;
+  if (valor === null) return null;
+  const lados = ladosDoLimiar(limiar);
+  if (!lados) return null;
+  const inferior = lados.inferior === null ? null : parsePtNumber(lados.inferior);
+  const superior = lados.superior === null ? null : parsePtNumber(lados.superior);
+  if (lados.inferior !== null && inferior === null) return null;
+  if (lados.superior !== null && superior === null) return null;
+  if (inferior === null && superior === null) return null;
+  if (superior !== null && valor > superior) return 'fora';
+  if (inferior !== null && valor < inferior) return 'fora';
+  return 'dentro';
 }
 
 /**
@@ -130,9 +156,15 @@ export function estadoDaRegua(claim, referencia) {
  * pela mesma função de escrita da casa.
  */
 export function escalaDaRegua(valor, referencia) {
-  if (valor === null || referencia === null) return null;
-  const lo = Math.min(0, valor, referencia);
-  const hi = Math.max(0, valor, referencia);
+  if (valor === null || referencia === null || referencia === undefined) return null;
+  /* UMA REFERÊNCIA OU DUAS (etapa 2l). Uma banda tem dois lados publicados, e a
+     escala tem de conter os dois: passa-se um array, e o resto da regra não
+     muda uma linha. Um array com um `null` lá dentro é uma referência a meio,
+     e não se desenha. */
+  const refs = (Array.isArray(referencia) ? referencia : [referencia]).filter((r) => r !== undefined);
+  if (!refs.length || refs.some((r) => r === null || !Number.isFinite(r))) return null;
+  const lo = Math.min(0, valor, ...refs);
+  const hi = Math.max(0, valor, ...refs);
   const amplitude = hi - lo;
   if (!(amplitude > 0)) return null;
 

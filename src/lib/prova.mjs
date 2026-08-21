@@ -51,7 +51,7 @@ import {
 } from './ledger.mjs';
 import { ROUTES, routePath } from './routes.mjs';
 import { estadoDaMedida } from './estado.mjs';
-import { FIGURAS } from '../data/figuras.mjs';
+import { FIGURAS_PDM, FIGURAS_SOCIAL } from '../data/figuras.mjs';
 import { WORKS, EDITIONS } from '../data/studies.mjs';
 import { temLeitura } from '../data/leituras.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
@@ -287,6 +287,14 @@ const FRASES = {
     pt: 'medidas do painel cujo valor está fora do limiar publicado',
     en: 'panel measures whose value is outside the published threshold',
   },
+  painel_dentro_do_limiar: {
+    pt: 'medidas do painel cujo valor está dentro do limiar publicado',
+    en: 'panel measures whose value is inside the published threshold',
+  },
+  painel_social_total: {
+    pt: 'medidas do Painel Social Europeu que o livro-razão guarda',
+    en: 'European Social Scoreboard measures the ledger holds',
+  },
   municipios_com_pagina: {
     pt: 'concelhos com página do observatório construída',
     en: 'concelhos with an observatory page built',
@@ -415,16 +423,35 @@ export function prova(lang = 'pt') {
 
        A porta é a âncora do painel na própria página (IDENTIDADE §10, v2): o
        que estas três contam vê-se ali mesmo, mais abaixo. */
-    painel_total: k('painel_total', FIGURAS.length, ancora(routePath('home', lang), 'painel')),
+    painel_total: k('painel_total', FIGURAS_PDM.length, ancora(routePath('home', lang), 'painel')),
     painel_com_limiar: k(
       'painel_com_limiar',
-      FIGURAS.filter((f) => f.limiar).length,
+      FIGURAS_PDM.filter((f) => f.limiar).length,
       ancora(routePath('home', lang), 'painel'),
     ),
     painel_fora_do_limiar: k(
       'painel_fora_do_limiar',
-      FIGURAS.filter((f) => estadoDaMedida(claims.get(f.claim), f.limiar) === 'fora').length,
+      FIGURAS_PDM.filter((f) => estadoDaMedida(claims.get(f.claim), f.limiar) === 'fora').length,
       ancora(routePath('home', lang), 'painel'),
+    ),
+    /* A OUTRA METADE DA MANCHETE (Emenda 16). «Portugal ultrapassa 4 limiares
+       … e cumpre 9»: as duas contagens são chaves da prova, e nenhuma das duas
+       é a diferença da outra escrita à mão. Uma medida cujo estado não se pode
+       calcular não entra em nenhuma das duas, e a soma das duas pode ser menor
+       do que `painel_total` — o que é a resposta certa, e é a razão de haver
+       três chaves e não duas. */
+    painel_dentro_do_limiar: k(
+      'painel_dentro_do_limiar',
+      FIGURAS_PDM.filter((f) => estadoDaMedida(claims.get(f.claim), f.limiar) === 'dentro').length,
+      ancora(routePath('home', lang), 'painel'),
+    ),
+    /* O Painel Social Europeu tem lista própria, e a sua porta é a lista. Sem
+       limiares publicados não há estado a contar: conta-se quantas medidas
+       dele o livro-razão guarda, e mais nada. */
+    painel_social_total: k(
+      'painel_social_total',
+      FIGURAS_SOCIAL.length,
+      ancora(routePath('home', lang), 'painel-social'),
     ),
 
     /* ---- a cobertura ---- */

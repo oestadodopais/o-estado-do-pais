@@ -104,6 +104,20 @@ const glifos = vazio ? 0 : [...String(getClaim(id).value)].length;
 const corpo = glifos <= 5 ? 'var(--peca-corpo-curto)' : glifos <= 7 ? 'var(--peca-corpo-medio)' : 'var(--peca-corpo-longo)';
 const pintado = !vazio && colore && (estado === 'fora' || estado === 'dentro');
 const marca = pintado ? estado : 'sem';
+
+/* ---------------------------------------------------------------------------
+ * A LINHA DO LIMIAR, COM UM LADO OU COM DOIS (etapa 2l, Emenda 16)
+ * ---------------------------------------------------------------------------
+ * Onze das treze linhas do Procedimento publicam um limiar de um lado; duas
+ * publicam uma banda, e a nota escreve-a com os dois («-4/+6%», «+/-3%»). A
+ * linha lê a declaração e mais nada: o sinal e a barra são pontuação, os
+ * algarismos vão os dois debaixo do motivo `limiar-do-quadro` que a v2 já lhes
+ * dá, e o SÍMBOLO é o que a entrada declara — doze notas escrevem «%» e a da
+ * taxa de atividade escreve «pp», e escrever «%» debaixo de uma linha que mede
+ * pontos percentuais seria a página a mudar a unidade da fonte.
+ */
+const banda = Boolean(limiar && (limiar.inferior || limiar.superior));
+const simbolo = limiar?.simbolo ?? '%';
 ---
 
 {
@@ -116,23 +130,44 @@ const marca = pintado ? estado : 'sem';
   ) : (
 
 <article class="peca" data-medida={id} data-estado={estado} data-limiar={limiar ? 'sim' : 'nao'}>
+  {/* O MARCADOR E A PALAVRA DE ESTADO, SEMPRE (Emenda 13, alargada pela 16).
+      A palavra vivia no fecho da leitura breve quando havia limiar, e no topo
+      quando não havia: uma peça fechada com limiar dizia «limiar 60% · acima» e
+      não dizia «fora do limiar», que é a palavra do vocabulário decidido. Com
+      treze peças a comparar, a palavra passa a estar sempre ao lado do
+      marcador, e a linha do limiar passa a ser o que ela é — a referência
+      publicada, com a direcção. */}
   <div class="peca-topo">
     <span class={`sq sq-${marca}`} aria-hidden="true"></span>
-    {
-      limiar ? (
-        <span class:list={['peca-limiar', pintado && `est-${estado}`]}>
-          <span class="peca-limiar-k">{s.home.numeros.limiar}</span>{' '}
-          <span class="peca-limiar-v">
-            {limiar.sinal ?? ''}
-            <span data-nonledger="limiar-do-quadro">{limiar.nl}</span>%
-          </span>
-          {comparacao && <span> · {s.home.numeros[comparacao]}</span>}
-        </span>
-      ) : (
-        <span class:list={['peca-limiar', pintado && `est-${estado}`]}>{palavra}</span>
-      )
-    }
+    {palavra && (
+      <span class:list={['peca-palavra', pintado && `est-${estado}`]}>{palavra}</span>
+    )}
   </div>
+  {
+    limiar && (
+      <p class="peca-limiar">
+        <span class="peca-limiar-k">{s.home.numeros.limiar}</span>{' '}
+        <span class="peca-limiar-v">
+          {banda ? (
+            <>
+              {limiar.inferior.sinal ?? ''}
+              <span data-nonledger="limiar-do-quadro">{limiar.inferior.nl}</span>/
+              {limiar.superior.sinal ?? ''}
+              <span data-nonledger="limiar-do-quadro">{limiar.superior.nl}</span>
+              {simbolo}
+            </>
+          ) : (
+            <>
+              {limiar.sinal ?? ''}
+              <span data-nonledger="limiar-do-quadro">{limiar.nl}</span>
+              {simbolo}
+            </>
+          )}
+        </span>
+        {comparacao && <span> · {s.home.numeros[comparacao]}</span>}
+      </p>
+    )
+  }
 
   {/* `lang` NÃO É OPCIONAL AQUI, e desde 21.08.2026 já não é opcional em lado
       nenhum: `Claim.astro` deixou de ter «pt» por defeito e a construção pára
@@ -161,8 +196,21 @@ const marca = pintado ? estado : 'sem';
             {regua.rotulo === 'limiar' && limiar && (
               <Fragment slot="referencia">
                 {s.home.numeros.limiar}{' '}
-                {limiar.sinal ?? ''}
-                <span data-nonledger="limiar-do-quadro">{limiar.nl}</span>%
+                {banda ? (
+                  <>
+                    {limiar.inferior.sinal ?? ''}
+                    <span data-nonledger="limiar-do-quadro">{limiar.inferior.nl}</span>/
+                    {limiar.superior.sinal ?? ''}
+                    <span data-nonledger="limiar-do-quadro">{limiar.superior.nl}</span>
+                    {simbolo}
+                  </>
+                ) : (
+                  <>
+                    {limiar.sinal ?? ''}
+                    <span data-nonledger="limiar-do-quadro">{limiar.nl}</span>
+                    {simbolo}
+                  </>
+                )}
               </Fragment>
             )}
             {regua.rotulo === 'tecto' && (
@@ -180,7 +228,9 @@ const marca = pintado ? estado : 'sem';
           <p class="peca-sem-regua">{s.inicio.peca.semReferencia}</p>
         )
       }
-      {palavra && <p class:list={['peca-estado', pintado && `est-${estado}`]}>{palavra}</p>}
+      {/* A palavra de estado não se repete aqui: está no topo da peça, ao lado
+          do marcador, em qualquer densidade. Dizê-la duas vezes na mesma peça
+          aberta era a mesma coisa escrita a dois centímetros de distância. */}
       {ambito && <p class="peca-ambito">{ambito}</p>}
     </div>
   </details>
