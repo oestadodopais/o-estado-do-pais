@@ -8337,6 +8337,85 @@ acrescenta nem retira uma linha do livro-razão, e não muda um valor. As cadeia
 novas entram nas duas edições no mesmo commit, como sempre, e ficam listadas em
 `design/especime-v3/CHAVES-EN.md` para a revisão de voz.
 
+### 1.53 A segunda leitura da pré-visualização n.º 1: a página deixa de se explicar, o painel passa a ser o painel inteiro, e o mapa vai para a direita
+
+**Afecta:** nenhum
+
+*(Esta entrada regista uma segunda leitura da direção e implementa-a em ficheiros
+que não são texto governado: a mobília partilhada, a primeira página, as réguas
+e a cópia da constituição no repositório. Nenhuma palavra de `src/data/sobre.mjs`
+ou de `src/data/metodo.mjs` mexe aqui, nenhuma linha do livro-razão é escrita, e
+nenhum valor muda.)*
+
+A 21.08.2026, de manhã, a direção leu outra vez a pré-visualização n.º 1 e a
+constituição visual ganhou as **Emendas 15 a 17**. A cópia da constituição no
+repositório (`design/especime-v3/direcao.md`) recebe-as verbatim no mesmo commit
+desta entrada, com a correção que a Emenda 16 traz dentro.
+
+#### As três emendas
+
+| # | O que decide |
+| --- | --- |
+| 15 | **A página do leitor não se explica.** Uma página do leitor leva conteúdo e navegação, e nenhuma frase sobre o método, a verificação, a honestidade, a cobertura ou as intenções do sítio. Uma legenda nomeia o que a coisa é, nunca o que fizemos nem o que não afirmamos. A ausência diz-se em duas palavras. O texto oculto do selo encurta para «fonte · <estudo>». A medida é um inventário de todas as frases da casa, classificadas em conteúdo, navegação e autorreferência, com a terceira classe a zero fora do Método, do Sobre e do recibo |
+| 16 | **O painel da primeira página é o painel inteiro.** As 13 linhas do livro-razão com limiar publicado do Procedimento dos Desequilíbrios Macroeconómicos, cada uma com o seu estado; a manchete leva as duas contagens sem afirmar um total do Procedimento. O Painel Social Europeu entra como lista compacta por baixo, sem cor porque não tem limiares; o resto do livro-razão fica atrás de uma porta |
+| 17 | **O mapa na primeira página.** Texto à esquerda e mapa à direita acima de 1024; por baixo do mapa uma só linha; a contagem por parcelas vive em `/municipios`. A porta das correções reduz-se ao endereço e à porta do registo |
+
+#### A correção que a Emenda 16 traz dentro, e porque fica escrita
+
+A primeira redação do lugar de direção dizia «4 dos 13» e «13 dos 14». **Estava
+errada**, e a direção corrigiu-a na mesma madrugada contra a página da Comissão.
+Fica escrita porque a diferença não é de estilo: «4 dos 13» dá as duas contagens
+como uma fração do painel da Comissão, e o que o livro-razão guarda são 13 linhas
+que cobrem 11 dos indicadores principais desse painel. A manchete que esta ronda
+constrói diz o que o sítio pode provar — quantos limiares o país ultrapassa e
+quantos cumpre, das linhas que o sítio tem — e **não** afirma um total do
+Procedimento.
+
+As 13 linhas são as que declaram o limiar na sua própria nota, e a lista sai de
+um comando e não de uma escolha:
+
+```
+grep -l "Limiar do Procedimento" ledger/claims/*.yml | wc -l      → 13
+   (controlo: ls ledger/claims/*.yml | wc -l                      → 132)
+```
+
+Portugal está **fora** em 4 e **dentro** em 9, e as duas contagens são chaves da
+prova recontadas pelo portão (`painel_fora_do_limiar`, `painel_dentro_do_limiar`).
+
+#### O pedido ao motor
+
+Duas coisas ficam por fazer **no motor** e não neste ramo, e a Emenda 16 nomeia
+as duas:
+
+1. **as linhas que faltam ao painel** — o desemprego de longa duração e o
+   desemprego jovem como indicadores principais do Procedimento. O livro-razão
+   tem `desemprego-de-longa-duracao-2025`, e a sua nota não declara limiar do
+   Procedimento; a do desemprego jovem não existe;
+2. **a identidade do 13.º indicador principal** do painel da Comissão, a
+   confirmar contra a lista dela, no motor, onde a escolha dos indicadores é
+   feita e registada (`ResearchHub/indicators/convergence.md`) — e não aqui.
+
+Ficam em `design/especime-v3/ISSUES.md`, e nenhum número foi escrito neste ramo
+por causa delas.
+
+#### O que esta ronda constrói
+
+`src/data/figuras.mjs` passa a declarar **duas listas com o quadro nomeado por
+entrada**: as 13 do Procedimento e as do Painel Social Europeu que o registo do
+motor coloca nesse painel. `src/lib/estado.mjs` aprende a **banda** de dois
+lados, que duas das 13 linhas têm. A prova ganha `painel_dentro_do_limiar` e
+`painel_social_total`, as duas recontadas pelo portão. A primeira página perde
+todas as frases em que falava de si própria, o mapa vai para a direita com uma
+linha só por baixo, a porta das correções encolhe, e o texto oculto do selo passa
+à forma da Emenda 15. A régua `scripts/medir-defeitos.mjs` ganha o inventário das
+frases da casa, classificado por uma lista declarada em
+`design/especime-v3/INVENTARIO-FRASES.md`.
+
+**O que esta entrada não faz.** Não muda uma palavra do Método nem do Sobre, não
+acrescenta nem retira uma linha do livro-razão, não muda um valor, e não abre um
+portão novo: o que o portão aprende são extensões de conferências que já existem,
+cada uma provada num estrago plantado e revertido.
+
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
