@@ -1074,8 +1074,11 @@ export const STRINGS = {
       metaTitle: 'Página não encontrada · O Estado do País',
       metaDescription: 'Não existe nada neste endereço.',
       h1: 'Não existe nada neste endereço.',
-      corpo:
-        'A ligação pode estar errada, ou a página pode ter mudado de sítio enquanto os estudos são mudados para aqui.',
+      /* A segunda metade saiu (subetapa 4d, a regra da direção de 21.08.2026):
+         «enquanto os estudos são mudados para aqui» é o sítio a contar o seu
+         próprio projecto a quem só quer o caminho de volta. O que fica é o que
+         explica o endereço vazio, e as três portas por baixo é que resolvem. */
+      corpo: 'A ligação pode estar errada, ou a página pode ter mudado de sítio.',
       inicio: 'Ir para o início',
       estudos: 'Ver os estudos',
       metodo: 'Ler o método',
@@ -1766,8 +1769,7 @@ export const STRINGS = {
       metaTitle: 'Page not found · O Estado do País',
       metaDescription: 'There is nothing at this address.',
       h1: 'There is nothing at this address.',
-      corpo:
-        'The link may be wrong, or the page may have moved while the studies are being brought over.',
+      corpo: 'The link may be wrong, or the page may have moved.',
       inicio: 'Go to the home page',
       estudos: 'See the studies',
       metodo: 'Read the method',

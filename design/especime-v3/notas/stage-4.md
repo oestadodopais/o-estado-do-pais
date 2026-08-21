@@ -616,7 +616,57 @@ commit da 4b, não da 4c.
 
 ---
 
-## 6. O que fica pedido
+## 6. Subetapa 4d · o Sobre, o marcador e o 404
+
+`DECISIONS.md` §1.59. **`Afecta: nenhum`**, e `src/data/sobre.mjs` não é tocado.
+
+### 6.1 · O resultado honesto: não havia o que mudar
+
+O brief pedia «tipo e tokens só». Fui ver, página a página, e as três já estavam
+na disposição A, na letra e nos tokens da v3: as etapas 1 e 2 mudaram a folha
+inteira, e estas páginas vivem de `.metodo-secao`, `.lede`, `.eyebrow` e dos
+tokens de `tokens.css`, que já lá tinham passado. Nenhum literal de cor, nenhuma
+pilha de sistema, nenhum token aposentado. **Não inventei trabalho para a
+subetapa ter conteúdo.**
+
+O Sobre continua com o seu bloco `data-sobre`, que o portão compara carácter a
+carácter com `src/data/sobre.mjs` (`npm run verify` a zero, com o portão a
+correr).
+
+### 6.2 · Uma cadeia encurtada
+
+`erro404.corpo`, pela regra da direção. Dizia «…ou a página pode ter mudado de
+sítio **enquanto os estudos são mudados para aqui**»; a segunda metade conta o
+projecto da casa a quem só quer o caminho de volta. Em `../RELOCACOES.md`.
+
+### 6.3 · Dois achados da fotografia
+
+1. **`ISSUES.md` I53, e é uma rota que falta:** a edição inglesa não tem página
+   de erro. `src/pages/` tem `404.astro` e mais nada, e um leitor inglês que caia
+   num endereço inexistente recebe a página portuguesa, com o título e as três
+   portas em português; a troca de edição no cabeçalho aponta para `/en/404`, que
+   não existe e devolve o mesmo ficheiro. As cadeias inglesas já existem em
+   `erro404.*`. Não a fiz: é uma rota nova, e o brief desta subetapa é «tipo e
+   tokens só». Pedido à cadeira;
+2. **o aparelho das capturas pedia uma pasta que não existe.** `/404` devolvia um
+   corpo vazio e a captura saía branca, porque `dist/` guarda `404.html` e não
+   `404/index.html` — em produção é o anfitrião que serve esse ficheiro para um
+   caminho desconhecido. A rota da captura passa a `/404.html`. **A primeira
+   captura branca não era um defeito da página**, e teria sido fácil escrevê-lo
+   como se fosse.
+
+### 6.4 · Uma coisa observada e não mudada
+
+As duas portas do fim da página do marcador («Ver as linhas que o trazem», «Como
+isto é feito») rendem em `.rodape-nav`, que não põe fio nenhum por baixo e as
+escreve em `--muted`: leem-se como rótulos e não como portas. **Não mexi**, e a
+razão é que `.rodape-nav` é uma classe partilhada por seis vistas e pelo rodapé,
+é de outro construtor, e no rodapé — onde é uma fila inteira de ligações — o
+contexto resolve. Fica dito para a cadeira decidir se a classe se separa em duas.
+
+---
+
+## 7. O que fica pedido
 
 | # | pedido | a quem |
 |---|---|---|
@@ -628,7 +678,7 @@ commit da 4b, não da 4c.
 
 ---
 
-## 7. Modelo e gasto
+## 8. Modelo e gasto
 
 | | |
 |---|---|

@@ -274,3 +274,14 @@ da direção de 21.08.2026 (`direcao.md`, nota à Emenda 15).
 | antes | depois | porquê |
 |---|---|---|
 | `metodo.sumarioK` | `leitura.sumarioK` | nasceu na 4b, no Método; a Agenda precisou das mesmas duas palavras na 4c. Duas cópias da mesma cadeia em duas famílias são duas cadeias no dia em que uma mudar. A família nova é a mobília da família da leitura, ao pé da folha que estas páginas partilham |
+
+### Etapa 4, subetapa 4d · uma cadeia encurtada
+
+| chave | o que dizia | o que diz | porquê |
+|---|---|---|---|
+| `erro404.corpo` | «A ligação pode estar errada, ou a página pode ter mudado de sítio **enquanto os estudos são mudados para aqui**.» / «The link may be wrong, or the page may have moved **while the studies are being brought over**.» | «A ligação pode estar errada, ou a página pode ter mudado de sítio.» / «The link may be wrong, or the page may have moved.» | a segunda metade contava o projecto da casa a quem só queria o caminho de volta. O que fica explica o endereço vazio, e as três portas por baixo é que resolvem |
+
+**Nada mais mudou na 4d.** O Sobre e a página do marcador já estavam na letra e
+nos tokens da v3 desde as etapas 1 e 2, e o texto do Sobre não se toca: vive em
+`src/data/sobre.mjs` e o portão compara-o carácter a carácter com o que a página
+rende.
