@@ -3026,3 +3026,549 @@ contadores. No início desta ronda o contador dizia **14 973 160** por usar; no
 momento em que esta nota se fecha dizia **≈ 14 431 000** — ou seja **≈ 542 mil
 fichas**, dentro da escala do brief (400 a 600 mil). Não tenho um número exacto
 para lá desta diferença, e não o invento.
+
+---
+
+## 2m · a terceira leitura da primeira página: o mapa que enche e cresce, a lede que se mantém verdadeira
+
+*Construtor B8, **Claude Opus** (`claude-opus-5[1m]`), sozinho, sem subagentes e
+sem delegação, 21.08.2026, a partir de `44eecb2`. Três commits. Nada foi
+empurrado, nada foi posto no ar, `vercel.json` não foi tocado, nem
+`src/data/metodo.mjs` nem `src/data/sobre.mjs` foram abertos, nenhuma linha do
+livro-razão foi escrita, nenhum portão novo, nenhum número inventado. Todos os
+números abaixo trazem ao lado o comando que os produziu.*
+
+**Os commits**
+
+| Commit | O quê |
+| --- | --- |
+| `b825251` | início, mapa: enche a coluna da cabeça, cresce para se escolher nele e ganha lente |
+| `ac1696b` | início, lede: os nomes saem do painel, e o portão reconta a lista |
+| *(o commit que contém esta nota)* | início, pedidos da etapa 3: a conta partilhada, o cartão localizador, as capturas e o registo |
+
+**A construção de referência.** `git worktree add --detach <dir> 44eecb2`, com
+`node_modules` por ligação simbólica e `npm run build` verde. É o estado do ramo
+no fim da etapa 3.
+
+---
+
+## 2m-1 · o mapa enche a coluna, e a legenda vai para o canto das ilhas
+
+### O que estava, e a conta que o diz
+
+A Emenda 17 pôs o mapa à direita na 2l, e ele ficou com os **281px** que tinha
+quando ainda levava uma ficha ao lado. A coluna da direita é dele desde então:
+a 1280 tem 490px, e sobravam-lhe 209px de papel.
+
+O campo é um `viewBox` de 600×790, e por isso encher a coluna é uma linha de
+folha. O que cresce com ele cresce sozinho e na mesma proporção, porque está
+declarado em unidades do campo: as posições dos 308 pontos, as molduras das
+ilhas, e as 308 áreas de toque.
+
+```
+node tests/inicio/matriz.mjs      célula «2m · o mapa enche a coluna da cabeça,
+                                  e a legenda vai para o canto das ilhas»
+```
+
+| largura | coluna | mapa | legenda (unidades do campo) | transbordo |
+| --- | --- | --- | --- | --- |
+| 1024 | 340,1px | **340,1 × 447,8** | x=270 · y=725,6 | 0 |
+| 1180 | 490px | **490 × 645,2** | x=270 · y=767,7 | 0 |
+| 1280 | 490px | **490 × 645,2** | x=270 · y=767,7 | 0 |
+| 1440 | 490px | **490 × 645,2** | x=270 · y=767,7 | 0 |
+
+**Igual nas duas edições, largura a largura.** A coluna não cresce de 1280 para
+1440 porque o `.wrap` do sítio tem `max-width: 1180px` e a goteira satura em
+44px: o conteúdo é 1092px nas duas.
+
+### A legenda vai para o canto, e o canto é uma medição
+
+«A linha "308 concelhos · CAOP 2025 ■ fonte" (e nada mais) fica à direita das
+ilhas, no espaço que elas deixam.» O espaço não é uma impressão:
+
+```
+node design/especime-v3/medicoes/2026-08-21-etapa-2m-distancias.mjs
+  o canto que as ilhas deixam:
+    a moldura dos Açores acaba em x=264
+    o ponto mais a sul à direita dela: y=686.1
+    sobra 336×104 unidades
+```
+
+A folha põe a legenda lá com uma **célula de grelha partilhada** — a tela e a
+legenda na mesma célula, a legenda alinhada ao fim e recuada 45% da largura, que
+é o x=270 do campo — e não com posição absoluta. Assim ela acompanha a escala do
+mapa sem uma medida em píxeis, e a altura da fila continua a ser a do mapa.
+
+**A leitura em voz alta e a descrição acessível saíram da legenda**, e é o «e
+nada mais» da instrução: o que fica no canto é a legenda, e o que o mapa lê
+enquanto o cursor anda por cima continua por baixo dele, num bloco à parte com a
+mesma disciplina de `hidden` de antes.
+
+**Um defeito de grelha, apanhado a medir e não a olhar.** A primeira versão
+punha a tela e a legenda na mesma fila sem lhes dizer a coluna, e a colocação
+automática deu a cada uma a coluna seguinte:
+
+```
+antes de `grid-column: 1`:  grid-template-columns: 590,78px 300px 201,22px
+                            (o mapa com 300px numa coluna de 1092)
+depois:                     grid-template-columns: 1092px
+```
+
+Uma folha que declara uma coluna e o navegador que responde com três é a razão
+pela qual esta ronda mediu o `grid-template-columns` computado e não só a
+captura.
+
+### A vista de escolha cresce, e os vizinhos separam-se
+
+```
+node tests/inicio/matriz.mjs   célula «2m · a vista de escolha abre à largura do
+                               conteúdo, e os vizinhos separam-se (mínimo 2.816
+                               unidades de campo)»
+```
+
+| largura | mapa | mínimo centro-a-centro, antes → depois | alvo mínimo | alvos ≥ 24px |
+| --- | --- | --- | --- | --- |
+| 1024 | 942,1 de 942,1 | 1,60px → **4,42px** | 20,4px | 113 de 308 |
+| 1280 | 1092 de 1092 | 2,30px → **5,13px** | 23,7px | **160 de 308** |
+| 1440 | 1092 de 1092 | 2,30px → **5,13px** | 23,7px | 160 de 308 |
+
+**O alvo do brief são 16px, e não são alcançáveis por escala nenhuma.** O par
+mais próximo da Carta está a 2,816 unidades de campo — **Lajes das Flores e
+Santa Cruz das Flores**, nos Açores, e não «a área de Lisboa» como o comentário
+do componente dizia desde a 2b (1,41 é a METADE dessa distância, que é o `alvo`
+de cada um dos dois pontos; o comentário foi corrigido). 16px pedem 5,68px por
+unidade, ou seja um mapa de **3 410px** de largura. Fica dito em vez de
+contornado, e é por isso que há lente.
+
+**O raio do ponto desce a 2 unidades na vista de escolha, e isso é o que separa
+os vizinhos.** A 1092px de largura um raio de 4,5 unidades dá um disco de
+16,4px, e 308 discos de 16,4px num campo onde o par mais próximo está a 5,1px
+são uma nódoa. Com 2 unidades o ponto fica com os mesmos 7,3px de diâmetro que
+tem na coluna, e o campo é que se abre debaixo dele:
+
+```
+node design/especime-v3/medicoes/2026-08-21-etapa-2m-distancias.mjs
+  quantos concelhos têm o vizinho mais próximo a menos de um diâmetro de ponto:
+    raio 4,5 unidades (a coluna da cabeça): 44 de 308
+    raio 2 unidades (a vista de escolha):    9 de 308
+```
+
+### A lente
+
+```
+node tests/inicio/matriz.mjs   célula «2m · a lente do mapa vai de 1× a 4×, o
+                               toque duplo repõe, e no âmbito País a roda é da
+                               página»
+
+  1× → 40 entalhes 4× (mínimo entre pontos 5.13px → 20.50px) → 60 para baixo 1×
+     → 15 para cima 3.172× → toque duplo 1× · com a lente no tecto, o cursor
+     sobre o ponto de Aveiro lê «Aveiro» · no País a roda rolou 1000px e o campo
+     não tem transformação
+```
+
+É uma transformação (`translate` + `scale`) num grupo só, que leva consigo as
+molduras, os 308 pontos e as 308 áreas de toque. **Nada é criado, nada é escrito,
+nenhum número aparece**: é a mesma classe de operação que a lista de proximidade
+já era. A translação está presa ao campo (`tx` entre `w·(1−k)` e 0), e com `k` a
+1 os dois limites encostam em zero e o atributo é retirado.
+
+**A leitura em voz alta continua a dizer o nome certo debaixo da lente**, e é a
+prova de que a conversão de coordenadas passou a atravessar a transformação em
+vez de ler o rectângulo cru. Aos **3,17×** o par mais próximo chega aos 16,3px,
+que é o alvo do brief; ao tecto de 4× chega aos 20,5.
+
+### A saída, e o Escape que já existia
+
+```
+node tests/inicio/matriz.mjs   célula «2m · "fechar" e Escape devolvem o mapa à
+                               coluna, e o Escape da pesquisa continua a ser o da
+                               pesquisa»
+
+  fechar: pais · «/» · foco no comando «Município» · mapa 490px na coluna de 490px
+  escape: pais · «/» · foco no comando «Município» · mapa 490px na coluna de 490px
+  Escape na pesquisa: caixa «» e a vista continua em municipio
+```
+
+O rótulo é a cadeia que já existia (`densidade.fechar`, PT «fechar» / EN
+«close»), como o brief manda: **esta ronda não escreve texto novo nenhum**.
+
+### Um defeito achado pelo caminho, e fechado
+
+`public/js/inicio.js` cria um `<circle class="cursor-ring">` para marcar o ponto
+que o cursor ou o teclado está a ler. A única regra do sítio para essa classe
+está em `site.css` debaixo de `.map-svg` — a classe do instrumento da v2, que
+saiu com a subetapa 2b. Sem regra, um `<circle>` sai com o enchimento por defeito
+do SVG, que é **preto sólido**: desde a 2b o marcador de leitura era um disco, e
+a Emenda 10 diz «um lugar escolhido é um anel, nunca um preenchimento».
+
+```
+node tests/inicio/matriz.mjs   célula «2m · o anel de leitura do mapa é um anel e
+                               não um disco (Emenda 10)»
+  enchimento none · contorno rgb(23, 25, 27) · dentro do grupo da lente true · lê «Évora»
+```
+
+---
+
+## 2m-2 · a lede constrói-se, e o portão reconta a lista
+
+A manchete recontava-se desde a 2l; a lede não. «Fora do limiar: dívida pública,
+posição de investimento internacional, custo unitário do trabalho e preços da
+habitação, em 2025.» estava escrita à mão, e no dia em que uma quinta medida
+atravessasse o seu limiar a manchete passava a dizer 5 e a lede continuava a
+nomear quatro — sem que nada no sítio o dissesse.
+
+**A frase construída é hoje a frase escrita, carácter a carácter**, e é esse o
+teste de aceitação:
+
+```
+grep -o '<p class="cabeca-lede">.*</p>' dist/index.html
+  Fora do limiar: <span data-prova-lista="painel_fora_do_limiar">dívida pública,
+  posição de investimento internacional, custo unitário do trabalho e preços da
+  habitação</span>, em <span data-nonledger="data-de-referencia">2025</span>.
+
+grep -o '<p class="cabeca-lede">.*</p>' dist/en/index.html
+  Outside the threshold: <span data-prova-lista="painel_fora_do_limiar">government
+  debt, net international investment position, unit labour cost and house
+  prices</span>, in <span data-nonledger="data-de-referencia">2025</span>.
+```
+
+Os nomes são os de `figuras.mjs`, nas duas línguas, das peças cujo estado é
+«fora», **pela ordem do painel**; as palavras de gramática são cinco chaves novas
+(`inicio.cabeca.ledePais.*`), e a frase inteira que lá estava sai. O ano é o
+`reference_date` das linhas e **só entra se for um só**: quatro medidas de anos
+diferentes não têm um ano comum, e cada peça já diz o seu.
+
+**A única transformação que a construção faz a um nome declarado** é baixar-lhe a
+inicial, para o pôr no meio da frase. Vai dita, e o modo de falhar (um nome que
+comece por nome próprio) fica em **ISSUES I47** em vez de descoberto depois.
+
+### A extensão do portão, e as duas plantas
+
+`data-prova-lista="<chave>"` marca o elemento que tem a lista. O portão parte-lhe
+o texto pelos separadores que **ele próprio declara** por edição (`, ` e ` e ` em
+português, `, ` e ` and ` em inglês), conta os itens e compara-os com a chave. É a
+disciplina do `data-prova`: duas contas da mesma coisa, feitas de sítios
+diferentes.
+
+```
+npm run build
+  prova · 33 chaves reconferidas pelo portão · 720 números marcados nas páginas ·
+  2 lista(s) de nomes recontada(s) · …
+```
+
+**(1) Um nome a menos.** `ledeDoPainel()` corta a lista no terceiro.
+
+```
+npm run build   →  exit 1
+  index.html
+    ✗ a lista da prova "painel_fora_do_limiar" nomeia 3 medida(s) e o portão conta 4.
+      lista renderizada: «dívida pública, posição de investimento internacional e custo unitário do trabalho»
+      A contagem e os nomes dizem a mesma coisa. Uma frase que nomeia medidas a mais ou a menos do que a manchete conta deixou de ser verdadeira.
+  en/index.html
+    ✗ a lista da prova "painel_fora_do_limiar" nomeia 3 medida(s) e o portão conta 4.
+      lista renderizada: «government debt, net international investment position and unit labour cost»
+```
+
+**(2) Um nome a mais.** A primeira medida dentro do limiar entra na lista.
+
+```
+npm run build   →  exit 1
+  index.html
+    ✗ a lista da prova "painel_fora_do_limiar" nomeia 5 medida(s) e o portão conta 4.
+      lista renderizada: «dívida pública, posição de investimento internacional, custo unitário do trabalho, preços da habitação e quota nas exportações»
+  en/index.html
+    ✗ a lista da prova "painel_fora_do_limiar" nomeia 5 medida(s) e o portão conta 4.
+      lista renderizada: «government debt, net international investment position, unit labour cost, house prices and share of exports»
+```
+
+As duas revertidas, e `npm run build` volta a sair a 0.
+
+### As outras frases que nomeiam um estado ou uma contagem em prosa
+
+O brief manda procurá-las no inventário. Procuradas, com um varrimento de todos
+os blocos de texto da primeira página nas duas edições contra uma lista de
+palavras de estado (`acima`, `abaixo`, `ultrapass`, `limiar`, `cumpre`, `fora
+do`, `dentro do`, `apenas`, `nenhum`, `todos`… e as inglesas). **Dez frases
+distintas nomeiam um estado em prosa**, e nenhuma delas é uma contagem:
+
+| onde | frase | reconta-se? |
+| --- | --- | --- |
+| `figuras.mjs`, dívida pública | «Está acima do limiar do painel europeu, e a descer.» | **não** — e o estado que ela afirma está calculado a dois centímetros dela, na palavra da peça e na linha do limiar |
+| `figuras.mjs`, preços da habitação | «O limiar foi ultrapassado em 2024 e o excesso quase duplicou no ano seguinte.» | **não** — e afirma um estado de 2024 e uma comparação de dois anos, que o livro-razão não guarda como linha |
+| `figuras.mjs`, taxa de emprego | «Está acima da média da União, que é uma posição relativa, não um limiar…» | **não pode** — a média da União não é uma linha do livro-razão |
+| `figuras.mjs`, sobrecarga do custo da habitação | «Está abaixo da média europeia, e a própria Comissão adverte…» | **não pode**, pela mesma razão |
+| `regioes.mjs`, as cinco regiões e Portugal | «A Grande Lisboa está 29 pontos acima da média da UE-27.» e as outras cinco | **não pode**, pela mesma razão; e `regioes.mjs` não é ficheiro desta ronda |
+
+O que se reconta a cada construção, e por isso **não** está nesta lista: a
+manchete (duas chaves da prova), a palavra de estado de cada peça
+(`estadoDaMedida()`), a linha do limiar de cada peça
+(`comparacaoComOLimiar()`), as escalas das réguas, e as contagens das portas.
+
+**Nenhuma das dez foi tocada, e a razão está escrita em ISSUES I49**: reescrevê-
+las é redação, que é do lugar de direção, e a relocação R1 manda a frase inteira
+viajar sem mudar uma palavra. Para as duas do limiar há uma saída mecânica que
+não toca em copy — um campo declarado por entrada e uma conferência no portão
+que o compare com `estadoDaMedida()` — e **não a escrevi porque o brief autoriza
+uma extensão do portão e não duas**. Fica proposta, com a forma escrita.
+
+---
+
+## 2m-3 · os pedidos da etapa 3
+
+### A porta do CSV sai (ISSUES I34, fechado)
+
+```
+npm run build     →  exit 0   (inclui `check:dados`)
+npm run check:dados
+  dados descarregáveis · 2 ficheiros · 5 endereços ligados
+  ✓ os ficheiros existem, batem certo com as origens e estão ligados nas duas edições.
+```
+
+**A declaração de rota não teve de mudar, e por isso não há planta.** O brief
+pede uma «se a declaração da rota do CSV tiver de mudar»; o commit 3-0 já a tinha
+mudado (`PORTA_DOS_DADOS = { convergencia: 'home', municipios: 'municipios' }`) e
+a promessa continua a ser «nas duas edições, ou não são». A régua da invariância
+imprime a linha a sair: `− descarregar os dados (CSV) ↓` em `/` e `− download the
+data (CSV) ↓` em `/en/`. Relocação **R10 fechada**.
+
+### `postura` e `escolhido`, e o cartão localizador (ISSUES I45, fechado)
+
+`MapaRespira.astro` ganha duas propriedades: `postura` (`'inteiro'` por defeito)
+e `escolhido` (o slug da Carta, que põe a classe do anel **no servidor**).
+
+**A linha da chamada em `MunicipioView.astro`** — que é o ficheiro da etapa 3, e
+por isso vai nomeada — é a primeira coisa dentro de `<aside class="aparelho">`,
+antes do `<h2 class="aparelho-titulo">`:
+
+```astro
+<MapaRespira s={s} lang={lang} concelhos={concelhos()} postura="localizador" escolhido={slug} />
+```
+
+Medido em Chromium sobre a construção real:
+
+```
+/municipios/evora  1280 · postura localizador · cartão 300×254 · anel 3px em 1 de 308
+                          · legenda dos 308 visível: false · transbordo 0
+/municipios/evora   390 · postura localizador · cartão 354×137 · transbordo 0
+```
+
+**Três coisas saíram com a chamada, e vão ditas:**
+
+1. **A legenda e a leitura passam a construir-se só na postura inteira.** A folha
+   já as escondia no cartão, mas escondidas continuavam a ser bytes: a página do
+   concelho levava a contagem dos 308 com o seu selo — uma **segunda** rendição
+   da mesma linha na mesma página — e a descrição de três gestos que ali não
+   existem. Medido: a régua dos defeitos passava de **92 · 2487** para **94 ·
+   2491** com elas, e as duas cadeias novas eram exactamente as descrições do
+   mapa; sem elas, **92 · 2487, igual à construção de referência**.
+2. **O botão «fechar» segue a mesma regra**, pela mesma razão: fora da primeira
+   página não há vista de escolha para fechar.
+3. **As regras de colocação em grelha do telemóvel ficaram presas a
+   `[data-inicio]`.** Fora da grelha da primeira página, `grid-row: 2` empurrava
+   o cartão para debaixo do título do aparelho, e o título passava a parecer a
+   legenda do cartão. Apanhado na captura a 390 e corrigido na folha, que é onde
+   estava o erro.
+
+Relocação **R12**: `municipios-portugal-caop-2025` ganha uma superfície na página
+do concelho (1 → 1 + 1 por edição, conferido com `grep -o … | wc -l` → 1 em cada).
+
+### A conta das peças de Évora, numa função só (ISSUES I44, fechado)
+
+`pecasDoConcelho()` em `src/lib/inicio.mjs`, chamada por `HomeView.astro` e por
+`MunicipioView.astro`. **A conta generalizou-se ao passar, e é uma correcção e
+não um efeito secundário**: a cópia da primeira página comparava o `claim` com a
+cadeia `'evora-indice-de-divida-2024'`, escrita à mão; a função lê a medida que o
+concelho declara em `distancia.indice`, com o tecto que ele declara em
+`distancia.tecto`. Para Évora dá exactamente o mesmo, e a régua da
+invariância prova-o: as únicas diferenças de texto que ela imprime nas quatro
+rotas afectadas são a lede, o «fechar» e a porta do CSV (na primeira página) e os
+seis blocos do cartão (nas páginas de Évora) — **nenhuma peça mudou uma
+palavra**. Para o segundo concelho a ganhar página, a função dá o certo em vez do
+de Évora.
+
+### `?ambito=municipio` é um estado do esquema (ISSUES I42, fechado)
+
+A vista de escolha era um modo sem endereço: abria-se por um comando, e por isso
+não se podia partilhar, nem recarregar, nem ligar a partir de `/municipios`.
+Passa a ser um valor do esquema, com a mesma disciplina dos outros — o servidor
+rende o defeito, o script acende o estado, e um valor que não esteja na lista cai
+no defeito em silêncio.
+
+O que ela mostra **é o País**: a cabeça, o painel, o instrumento e as portas são
+os do país, porque ninguém escolheu nada ainda. O que muda é o mapa, que cresce,
+e a pesquisa, que abre por cima dele. As três condições que isso obriga estão
+escritas uma vez (`eDoPais()`, `chaveDoBloco()`, `modoDe()`).
+
+**A vizinhança do valor foi medida**, para que se saiba que o esquema não alargou
+com ele: `?ambito=municipios` (o plural), `?ambito=municipio:` (o prefixo sem
+concelho), `?ambito=municipio:evora;alert(1)`, `?ambito=lisboa`,
+`?densidade=fundo`, `?ambito=regiao:atlantida` e um valor de 2 000 caracteres —
+os sete caem no defeito, com o endereço normalizado para `/` e sem eco do valor
+na página (sete células da matriz).
+
+**A frase exacta para a `PLANO-redesenho-v3.md` §13, que é da cadeira** (o
+ficheiro não é desta ronda). A linha actual começa por «**Schema (closed)**:
+`?ambito=pais` (default, omitted) | `regiao:<id>` …». Passa a:
+
+> **Schema (closed)**: `?ambito=pais` (default, omitted) | `municipio` (the
+> choosing view: Município mode with no concelho chosen; added in stage 2m so
+> `/municipios` can link to it, ISSUES I42) | `regiao:<id>` with id ∈
+> {`grande-lisboa`, `peninsula-de-setubal`, `algarve`, `madeira`, `alentejo`} …
+
+**Fica um pedido a quem tiver `/municipios`**: a porta daquela página é hoje
+`/#mapa`, que é verdadeira mas menos do que podia ser; com o estado a existir,
+pode passar a `/?ambito=municipio`. `MunicipiosView.astro` é da etapa 3.
+
+**E fica um assinalado, não improvisado** (ISSUES I51): a fila de escolha de
+**região** continua sem endereço. O brief pede `municipio` e só esse; a simetria
+custa duas linhas e é decisão da cadeira.
+
+---
+
+## 2m · as réguas
+
+### A matriz de aceitação
+
+`node tests/inicio/matriz.mjs --json design/especime-v3/medicoes/2026-08-21-etapa-2m-matriz.json`
+— **107 de 107 células passam**. A conta fecha: as **97** da 2l, mais **6**
+novas, mais **4** que vêm de duas listas alargadas (dois valores inválidos novos,
+que dão uma célula cada; e uma rota sem JavaScript nova, que dá duas). Duas das
+97 foram reescritas, e nenhuma foi apagada:
+
+```
+passa  2m · o mapa enche a coluna da cabeça, e a legenda vai para o canto das ilhas
+passa  2m · a vista de escolha abre à largura do conteúdo, e os vizinhos separam-se
+passa  2m · a lente do mapa vai de 1× a 4×, o toque duplo repõe, e no âmbito País a roda é da página
+passa  2m · «fechar» e Escape devolvem o mapa à coluna, e o Escape da pesquisa continua a ser o da pesquisa
+passa  2m · o anel de leitura do mapa é um anel e não um disco (Emenda 10)
+passa  2m · a lede nomeia as medidas que o painel marca fora, pela ordem do painel, nas duas edições
+```
+
+**Duas células mudaram de pergunta, e nenhuma foi apagada.**
+
+1. **«Évora · o mapa do localizador está dentro do cartão…»** comparava a largura
+   do mapa inteiro com **281**, que era o número escrito na folha. Passa a
+   comparar com a **coluna**: se um dia a mancha de texto mudar, a célula
+   acompanha em vez de mentir.
+2. **«2l · Emenda 15 · zero frases de autorreferência na primeira página»** exigia
+   zero em **todas** as rotas medidas, e a etapa 3 pôs `/livro-razao` na lista
+   declarada da régua — onde a `DECISIONS.md` §4 item AB manda preservar duas
+   frases até à fase da voz. **A célula falhava desde a etapa 3, por uma decisão
+   registada e não por um defeito.** Passa a medir o que o seu nome diz: zero na
+   primeira página, nas duas edições, e nada por classificar em rota nenhuma. As
+   outras rotas continuam impressas na prova.
+
+**Duas listas alargaram-se**: a dos valores inválidos ganha o plural
+(`?ambito=municipios`) e o prefixo sem concelho (`?ambito=municipio:`), uma
+célula cada; e a do render sem JavaScript ganha `/?ambito=municipio`, que dá duas
+(a rota e a nota de mecânica que não pode existir).
+
+### A régua da invariância
+
+`node scripts/medir-invariancia.mjs <dist de 44eecb2> dist`
+
+```
+322 rotas · 318 idênticas em texto · 4 com diferenças
+
+  /                          +2 −1   + a lista da lede · + «fechar» · − a porta do CSV
+  /en/                       +2 −1   o mesmo, na edição inglesa
+  /municipios/evora/         +6 −0   o cartão localizador inteiro
+  /en/municipalities/evora/  +6 −0   o mesmo
+```
+
+**As quatro fecham sem sobra, e nenhuma outra rota do sítio mudou uma palavra.**
+A lista da lede aparece como bloco novo porque passou a ser um elemento próprio
+(`[data-prova-lista]`), que é o que o portão conta; a frase que se lê é a mesma.
+
+`node scripts/medir-invariancia.mjs --chaves` imprime **20** chaves com o mesmo
+valor nas duas edições, onde a etapa 3 imprimia 18. Entram as duas de pontuação
+da lede (`separador` e `fecha`), e estão em «Identidades aceites» do
+`CHAVES-EN.md`.
+
+### As duas réguas antigas
+
+**Defeitos.** `node scripts/medir-defeitos.mjs`:
+
+| medida | 44eecb2 (fim da etapa 3) | 2m |
+| --- | --- | --- |
+| páginas | 307 | 307 |
+| porta de correcções | 307/307 | 307/307 |
+| primeira página · valores sem selo · selos para outra linha | 0 · 0 | **0 · 0** |
+| frases de moldura | 92 distintas · 2 487 | **92 · 2 487** |
+| frases de cobertura | 1 por estado por edição | 1 por estado por edição |
+| frases da casa · `/` | 32 distintas · 33 · 7 · **0** | **32 · 33 · 7 · 0** |
+| frases da casa · `/en` | 32 distintas · 33 · 7 · **0** | **32 · 33 · 7 · 0** |
+| frases da casa · por classificar | 0 em todas as rotas | 0 em todas as rotas |
+
+**As frases de moldura não mexeram, e é uma medição e não um acaso**: a primeira
+corrida desta ronda dava 94 · 2 491, e as duas cadeias a mais eram as descrições
+do mapa a render-se na página do concelho. Com a legenda e a leitura presas à
+postura inteira, a conta volta ao número da construção de referência. «fechar» e
+«close» não entram na conta, e a razão é a definição da medida e não uma
+dispensa: a medida 3 conta «blocos de texto com 30 ou mais carácteres que
+aparecem em mais do que uma página», e «fechar» tem seis carácteres e rende-se
+numa página só.
+
+**Contraste.** `node scripts/medir-contraste.mjs --json` — **idêntico byte a byte
+ao da subetapa 3d**. Esta ronda não introduziu um par de cores: o anel do cursor
+usa `--ink`, que já está medido. Os quatro avisos são os quatro de sempre.
+
+Guardados em
+`design/especime-v3/medicoes/2026-08-21-etapa-2m-{matriz,defeitos,contraste,invariancia}.json`,
+mais o guião das distâncias, que é uma régua e não uma medição guardada.
+
+### As capturas
+
+```
+node tests/inicio/capturas.mjs            →  84 capturas em capturas/etapa-2
+node tests/inicio/capturas.mjs --etapa-3  →  24 capturas em capturas/etapa-3
+```
+
+As da primeira página passam de 68 a **84**: o País e a vista de escolha ganham
+1024 e 1440 além de 1280 e 390, porque é a largura que manda no mapa das duas. A
+vista de escolha deixa de entrar por um toque no comando e passa a entrar pelo
+seu endereço.
+
+As 24 da **etapa 3** são a subetapa 3e que aquela etapa não chegou a fazer: as
+seis rotas (`/livro-razao`, três páginas de linha, `/municipios`,
+`/municipios/evora`) a 1280 e 390, nas duas edições, no tema claro.
+
+---
+
+## 2m · o que fica por fazer, e porquê
+
+1. **I47 · a inicial minúscula da lede** tem um modo de falhar nomeado antes de
+   acontecer: um nome de medida que comece por nome próprio.
+2. **I48 · a lede desaparece se nenhuma medida estiver fora do limiar**, e a
+   forma desse estado é do lugar de direção. Não inventei a frase.
+3. **I49 · dez frases nomeiam um estado em prosa e não se reconferem.** A lista
+   está acima, e a saída mecânica para duas delas está escrita.
+4. **I50 · o cartão localizador publica «308 ■ fonte» sem substantivo**, agora em
+   duas superfícies. É forma, e a cadeia que serve já existe.
+5. **I51 · a fila de escolha de região continua sem endereço.**
+6. **Um pedido a quem tiver `/municipios`**: a porta pode passar de `/#mapa` a
+   `/?ambito=municipio`.
+7. **Um pedido à cadeira**: a linha do esquema da `PLANO-redesenho-v3.md` §13,
+   com a frase exacta escrita acima.
+8. **A altura do mapa na vista de escolha é 1 437px a 1280**, e vai dita porque é
+   a consequência de encher a largura do conteúdo com um campo de 600×790: a
+   vista pede duas rolagens. É o que o brief manda («expands to the full content
+   width»), medido e não escondido; se a direção quiser um tecto de altura, é uma
+   linha de folha e uma decisão dela.
+9. **I19, I23, I26, I27, I30, I31, I32, I33, I35, I36, I37, I38, I40, I41, I43 e
+   I46 continuam como estavam**, e nenhum é desta ronda.
+
+## 2m · quem fez o quê, e quanto custou
+
+**Claude Opus** (`claude-opus-5[1m]`), construtor B8, num só fio, sem subagentes
+e sem delegação. Nenhuma parte desta ronda correu noutro modelo.
+
+**Contagem de fichas:** a única contagem honesta é a diferença de dois
+contadores. No início desta ronda o contador dizia **14 973 190** por usar; no
+momento em que esta nota se fecha dizia **≈ 14 520 000** — ou seja **≈ 453 mil
+fichas**, **acima** da escala do brief (250 a 350 mil), e vai dito com a razão em
+vez de arredondado: o que a levou para lá foram três coisas que tiveram de ser
+medidas duas vezes por defeitos apanhados a medir e não a olhar — a grelha que
+respondia com três colunas onde a folha declara uma, a descrição do mapa a
+render-se numa página onde não é verdade, e a célula da lente com o cursor a
+cair no mar. Não tenho um número exacto para lá desta diferença, e não o invento.

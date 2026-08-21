@@ -175,7 +175,9 @@ const caop = getClaim('municipios-portugal-caop-2025');
       escreve texto novo nenhum. O `href` é o endereço do estado a que ele
       volta, como todos os comandos desta página: sem script, uma ligação que
       abre; com script, o mesmo caminho de `vai()`, com o foco devolvido. */}
-  <a class="mapa-fechar" href={routePath('home', lang)} data-fechar-mapa>{s.densidade.fechar}</a>
+  {postura === 'inteiro' && (
+    <a class="mapa-fechar" href={routePath('home', lang)} data-fechar-mapa>{s.densidade.fechar}</a>
+  )}
   {/* ------------------------------------------------------------------------
       O CARTÃO LOCALIZADOR TEM O MAPA DENTRO, E NÃO AO LADO (Emenda 3, 2g·6)
       ------------------------------------------------------------------------
@@ -341,6 +343,15 @@ const caop = getClaim('municipios-portugal-caop-2025');
       mesmo `<figcaption>`; passam a ser um bloco à parte, com a mesma
       disciplina de `hidden` de antes.
       ---------------------------------------------------------------------- */}
+  {/* A LEGENDA E A LEITURA SÓ SE CONSTROEM NA POSTURA INTEIRA (etapa 2m).
+      A folha já as escondia no cartão localizador, mas escondidas continuavam a
+      ser bytes: na página do concelho, que rende o cartão do servidor e não tem
+      script, o documento levava a contagem dos 308 com o seu selo (uma segunda
+      rendição da mesma linha na mesma página) e a descrição de três gestos que
+      ali não existem. A primeira página constrói-se sempre em `inteiro` e é o
+      script que lhe troca a postura, por isso não perde nada: o que sai é o que
+      nunca foi verdade fora dela. */}
+  {postura === 'inteiro' && (
   <figcaption class="mapa-linha" data-mapa-ficha>
     <p class="mapa-linha-fonte">
       <Claim id="municipios-portugal-caop-2025" lang={lang} />
@@ -363,7 +374,9 @@ const caop = getClaim('municipios-portugal-caop-2025');
         (`npm run check:dados`).
         -------------------------------------------------------------------- */}
   </figcaption>
+  )}
 
+  {postura === 'inteiro' && (
   <div class="mapa-rodape" data-mapa-rodape>
     {/* --------------------------------------------------------------------
         AS DICAS PASSAM A DESCRIÇÃO DO MAPA, E DEIXAM DE SER LEGENDA
@@ -391,4 +404,5 @@ const caop = getClaim('municipios-portugal-caop-2025');
       <span class="readout-sub" data-readout-sub hidden></span>
     </div>
   </div>
+  )}
 </figure>

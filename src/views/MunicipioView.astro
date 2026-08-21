@@ -37,12 +37,13 @@ import Claim from '../components/Claim.astro';
 import Provenance from '../components/Provenance.astro';
 import Frase from '../components/Frase.astro';
 import Peca from '../components/inicio/Peca.astro';
+import MapaRespira from '../components/inicio/MapaRespira.astro';
 import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import { municipioPorSlug } from '../data/municipios.mjs';
 import { workById, studyLabel } from '../data/studies.mjs';
 import { leituraDe } from '../data/leituras.mjs';
-import { getClaim, parsePtNumber, eDerivada, POR_VERIFICAR } from '../lib/ledger.mjs';
-import { estadoDaRegua } from '../lib/estado.mjs';
+import { getClaim, parsePtNumber, POR_VERIFICAR } from '../lib/ledger.mjs';
+import { concelhos, pecasDoConcelho } from '../lib/inicio.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { canonicalUrl, SITE_NAME, SITE_URL } from '../../site.config.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -102,35 +103,13 @@ const indicePartes = [
  * um limiar, e diz-se por palavras a tinta. Tudo o resto do concelho fica a
  * tinta e cinzento.
  *
- * A CONTA É A MESMA QUE A PRIMEIRA PÁGINA FAZ, E ISSO É DÍVIDA: está escrita
- * duas vezes, aqui e em `HomeView.astro`, e as duas cópias podem divergir. A
- * saída é uma função partilhada em `src/lib/inicio.mjs`, que é do construtor B;
- * o pedido está na nota da etapa e em ISSUES.
+ * A CONTA É UMA SÓ, E VIVE EM `src/lib/inicio.mjs` (ISSUES I44, fechado na etapa
+ * 2m). Estava escrita duas vezes, aqui e em `HomeView.astro`; as duas vistas
+ * chamam agora a mesma função, e ela lê a medida que o concelho declara em
+ * `distancia.indice` em vez de comparar com uma cadeia de Évora escrita à mão.
  */
-const TECTO_DA_DIVIDA = 'indice-de-divida-limite-legal';
-const pecas = m.relance
-  .filter((tile) => tile.claim)
-  .map((tile) => {
-    const linha = getClaim(tile.claim);
-    const derivada = eDerivada(linha);
-    if (tile.claim !== D.indice) {
-      return { ...tile, linha, derivada, estado: 'sem', colore: false, regua: null };
-    }
-    const tecto = getClaim(TECTO_DA_DIVIDA);
-    const r = estadoDaRegua(linha, { valor: tecto.value, lado: 'superior', colore: true });
-    return {
-      ...tile,
-      linha,
-      derivada,
-      estado: r.estado ?? 'sem',
-      colore: r.colore,
-      regua: {
-        valor: parsePtNumber(linha.value),
-        referencia: parsePtNumber(tecto.value),
-        rotulo: 'tecto',
-      },
-    };
-  });
+const pecas = pecasDoConcelho(m);
+
 /* As medidas que nenhuma fonte publica para este concelho: a mesma peça, vazia
    (Emenda 14). Sem número e sem selo, e o que falta diz-se em duas palavras. */
 const pecasVazias = m.relance
@@ -832,6 +811,27 @@ const metodoPath = routePath('metodo', lang);
           explicar ao leitor o que o seu próprio selo faz, que é a mesma cadeia
           que saiu do índice do livro-razão na 3b. O rótulo fica, e o selo de cada
           valor continua a ser a porta. */}
+      {/* ------------------------------------------------------------------
+          O CARTÃO LOCALIZADOR (ISSUES I45, fechado na etapa 2m)
+          ------------------------------------------------------------------
+          Uma chamada, e o mapa da primeira página rende-se aqui na postura de
+          localizador, com o anel no concelho desta página — do SERVIDOR e sem
+          script, que é o que esta página tem. As duas propriedades novas são de
+          `MapaRespira.astro` (`postura` e `escolhido`), e a folha faz o resto:
+          na postura de localizador a legenda dos 308 e a leitura em voz alta
+          não se desenham, e o que fica é o cartão com o mapa pequeno, o nome do
+          concelho, o selo da Carta e a porta para trocar de concelho.
+
+          A porta «a página inteira, com quem governou» continua escondida, e é
+          a resposta certa: esta É a página inteira. */}
+      <MapaRespira
+        s={s}
+        lang={lang}
+        concelhos={concelhos()}
+        postura="localizador"
+        escolhido={slug}
+      />
+
       <h2 class="aparelho-titulo" id="aparelho">{s.municipio.provenienciaK}</h2>
 
       <div class="aparelho-estado">

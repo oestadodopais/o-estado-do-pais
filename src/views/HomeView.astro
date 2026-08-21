@@ -42,13 +42,14 @@ import BandaDaRegiao from '../components/inicio/BandaDaRegiao.astro';
 import ListaSocial from '../components/inicio/ListaSocial.astro';
 import { FIGURAS_PDM, FIGURAS_SOCIAL, comparacaoComOLimiar, ladosDoLimiar } from '../data/figuras.mjs';
 import { REGIOES, ESCALA } from '../data/regioes.mjs';
-import { getClaim, parsePtNumber, eDerivada } from '../lib/ledger.mjs';
-import { estadoDaMedida, estadoDaRegua } from '../lib/estado.mjs';
+import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
+import { estadoDaMedida } from '../lib/estado.mjs';
 import {
   concelhos,
   chaveDaRegiao,
   chaveDoConcelho,
   ledeDoPainel,
+  pecasDoConcelho,
   REGIOES_DE_AMBITO,
 } from '../lib/inicio.mjs';
 import { estadoDaVerificacao, prova } from '../lib/prova.mjs';
@@ -133,47 +134,14 @@ const leitura = (r) => ({
 const regioesDaBanda = REGIOES.map(leitura);
 const regioesDeAmbito = REGIOES_DE_AMBITO.map(leitura);
 
-/* O tecto legal do índice de dívida é uma linha do livro-razão, e é contra ela
-   que a peça de Évora colore: a lei publica o limite, e um limite publicado é um
-   limiar formal (Emenda 1). Tudo o resto do concelho fica a tinta. */
-const TECTO_DA_DIVIDA = 'indice-de-divida-limite-legal';
-const pecasDeEvora = evora
-  ? evora.pagina.relance
-      .filter((m) => m.claim)
-      .map((m) => {
-        const linha = getClaim(m.claim);
-        /* A NOTA DE UMA MEDIDA CALCULADA NÃO SE RENDE AQUI (Emenda 15). A nota
-           da execução da receita é «Calculado sobre duas colunas do mesmo
-           ficheiro do regulador. A aritmética está na linha.» — uma legenda que
-           explica a nossa conta em vez de nomear a medida, e a emenda nomeia
-           essa classe («qualquer legenda "calculado" que explique em vez de
-           nomear; o rótulo do selo já leva "calculado ·"»). A condição lê-se da
-           LINHA, com `eDerivada()`, e não de uma lista escrita à mão. A nota
-           continua na página de concelho, que é da etapa 3. */
-        const derivada = eDerivada(linha);
-        if (m.claim !== 'evora-indice-de-divida-2024') {
-          return { ...m, linha, derivada, estado: 'sem', colore: false, regua: null };
-        }
-        const tecto = getClaim(TECTO_DA_DIVIDA);
-        const r = estadoDaRegua(linha, {
-          valor: tecto.value,
-          lado: 'superior',
-          colore: true,
-        });
-        return {
-          ...m,
-          linha,
-          derivada,
-          estado: r.estado ?? 'sem',
-          colore: r.colore,
-          regua: {
-            valor: parsePtNumber(linha.value),
-            referencia: parsePtNumber(tecto.value),
-            rotulo: 'tecto',
-          },
-        };
-      })
-  : [];
+/* AS PEÇAS DE ÉVORA SAEM DE UMA CONTA SÓ (ISSUES I44, fechado na etapa 2m).
+   A conta estava escrita aqui e outra vez em `MunicipioView.astro`, e as duas
+   podiam divergir. Passa a viver em `src/lib/inicio.mjs`, que é a canalização
+   desta página, e as duas vistas chamam-na. O que ela decide — a nota de uma
+   medida derivada, a cor do índice de dívida contra o tecto legal — está lá
+   escrito, e a comparação deixou de ser com uma cadeia de Évora escrita à mão
+   para passar a ser com a medida que o concelho declara. */
+const pecasDeEvora = evora ? pecasDoConcelho(evora.pagina) : [];
 
 /* OS BLOCOS DA CABEÇA JÁ NÃO LEVAM ESTADOS (Emenda 13, 21.08.2026).
    Cada bloco trazia a lista dos estados das medidas do seu âmbito, e era ela que

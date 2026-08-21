@@ -1,0 +1,62 @@
+{
+  "a": "/private/tmp/claude-501/-Users-nunosantos/b185e650-e114-4dd4-a233-45407e03b19a/scratchpad/base-44eecb2/dist",
+  "b": "/Users/nunosantos/Instruments/OEstadoDoPais/dist",
+  "rotas": 322,
+  "iguais": 318,
+  "diferencas": [
+    {
+      "rota": "/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 1,
+      "acrescentados": [
+        "dívida pública, posição de investimento internacional, custo unitário do trabalho e preços da habitação",
+        "fechar"
+      ],
+      "retirados": [
+        "descarregar os dados (CSV) ↓"
+      ]
+    },
+    {
+      "rota": "/en/",
+      "estado": "difere",
+      "mais": 2,
+      "menos": 1,
+      "acrescentados": [
+        "government debt, net international investment position, unit labour cost and house prices",
+        "close"
+      ],
+      "retirados": [
+        "download the data (CSV) ↓"
+      ]
+    },
+    {
+      "rota": "/en/municipalities/evora/",
+      "estado": "difere",
+      "mais": 6,
+      "menos": 0,
+      "acrescentados": [
+        "Évora",
+        "source",
+        "Madeira Azores",
+        "308",
+        "· calculated · O Estado do País, own count"
+      ],
+      "retirados": []
+    },
+    {
+      "rota": "/municipios/evora/",
+      "estado": "difere",
+      "mais": 6,
+      "menos": 0,
+      "acrescentados": [
+        "Évora",
+        "fonte",
+        "Madeira Açores",
+        "308",
+        "· calculado · O Estado do País, apuramento próprio"
+      ],
+      "retirados": []
+    }
+  ]
+}
