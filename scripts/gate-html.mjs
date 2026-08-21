@@ -29,6 +29,18 @@
  *                                 calendário das fontes, na página da agenda,
  *                                 comparado carácter a carácter contra o
  *                                 registo que atravessou (§1.40).
+ *
+ * E, desde a etapa 5 do redesenho v3, uma conferência que não é sobre o HTML de
+ * uma página mas sobre a imagem que ela oferece a quem a partilha:
+ *
+ *   9. os CARTÕES DE PARTILHA. Cada página tem de nomear, em `og:image` e em
+ *      `twitter:image`, o cartão da SUA rota e da SUA edição; cada cartão
+ *      escreveu um registo em `dist/cartoes/` com a cópia visível e a origem de
+ *      cada valor; e o portão relê esse registo, recalcula cada valor do
+ *      livro-razão ou da prova, compara-o como CADEIA pela regra do `data-claim`,
+ *      confere que a cópia visível não tem um algarismo que não seja um desses
+ *      valores, e mede as dimensões do PNG no próprio ficheiro. Não é um portão
+ *      novo: é este, a olhar para outra superfície do mesmo sítio.
  */
 
 import crypto from 'node:crypto';
@@ -55,10 +67,16 @@ import { FIGURAS_PDM, FIGURAS_SOCIAL } from '../src/data/figuras.mjs';
 import { EDITIONS, workById, studyLabel } from '../src/data/studies.mjs';
 import { temLeitura } from '../src/data/leituras.mjs';
 import { tituloDaLinha, descricaoDaLinha } from '../src/lib/livro.mjs';
-import { matchPath, routePath, HREFLANG, LANGS } from '../src/lib/routes.mjs';
+import { matchPath, routePath, HREFLANG, LANGS, PRIMARY_LANG } from '../src/lib/routes.mjs';
+import {
+  DIMENSOES as MEDIDAS_DO_CARTAO,
+  PASTA as PASTA_DOS_CARTOES,
+  cartaoDaPagina,
+  nomeDoCartao,
+} from '../src/lib/cartoes.mjs';
 import { documentoDaEdicao, documentoServido } from '../src/lib/documentos.mjs';
 import { renderizacoesAceites } from '../src/data/correcoes.mjs';
-import { SITE_HOST, SITE_NAME } from '../site.config.mjs';
+import { SITE_HOST, SITE_NAME, canonicalUrl } from '../site.config.mjs';
 import { ENDERECO_CORRECOES } from '../src/data/metodo.mjs';
 import { SOBRE } from '../src/data/sobre.mjs';
 import { VERIFICACAO } from '../src/data/verificacao.mjs';
@@ -1930,6 +1948,30 @@ function ficheirosHtml(dir) {
   return out;
 }
 
+/* ---------------------------------------------------------------- os cartões */
+
+const DIR_DOS_CARTOES = path.join(DIST, PASTA_DOS_CARTOES);
+
+/** Os registos dos cartões, lidos uma vez e guardados pelo nome do PNG. */
+const REGISTOS_DOS_CARTOES = new Map();
+if (fs.existsSync(DIR_DOS_CARTOES)) {
+  for (const nome of fs.readdirSync(DIR_DOS_CARTOES)) {
+    if (!nome.endsWith('.json')) continue;
+    let registo;
+    try {
+      registo = JSON.parse(fs.readFileSync(path.join(DIR_DOS_CARTOES, nome), 'utf8'));
+    } catch (e) {
+      erros.push({ rel: `dist/${PASTA_DOS_CARTOES}/${nome}`, msg: `registo ilegível: ${e.message}` });
+      continue;
+    }
+    REGISTOS_DOS_CARTOES.set(nome.replace(/\.json$/, '.png'), registo);
+  }
+}
+const registoDoCartao = (nomePng) => REGISTOS_DOS_CARTOES.get(nomePng) ?? null;
+
+/** Os cartões que alguma página nomeou. Um cartão que ninguém nomeia é um aviso. */
+const cartoesUsados = new Set();
+
 /* ------------------------------------------------------------------ varrimento */
 
 for (const file of ficheirosHtml(DIST)) {
@@ -2143,6 +2185,78 @@ for (const file of ficheirosHtml(DIST)) {
         );
       }
       textoHead = textoHead.split(esperado).join(' ');
+    }
+  }
+
+  /* --------------------------------------------------------------------
+     2b. O CARTÃO DE PARTILHA DESTA PÁGINA (etapa 5)
+     --------------------------------------------------------------------
+     Uma imagem de partilha é a única superfície da casa que viaja sem a
+     página: quem a vê não tem o livro-razão ao lado nem um selo em que
+     clicar. Por isso as etiquetas não podem ser escritas à mão e não podem
+     apontar para um ficheiro que não exista.
+
+     O QUE ESTA CONFERÊNCIA PROVA, e o que não prova. O endereço esperado é
+     composto pela mesma função que o `Base.astro` chama (`cartaoDaPagina()`),
+     e por isso esta parte não prova que a REGRA de escolha esteja certa — é o
+     mesmo limite honesto do `tituloDaLinha()` mais acima. O que ela prova é
+     tudo o resto, e é o que apanha um cartão trocado: que o ficheiro existe,
+     que o REGISTO desse ficheiro declara a rota e a edição desta página, e
+     que o resumo do PNG bate certo com o que o registo diz. Um cartão da
+     edição errada tem, no seu registo, a edição errada escrita, e é aí que
+     ele cai — mesmo que a função de escolha esteja plantada.
+     -------------------------------------------------------------------- */
+  if (rota?.key !== 'documento') {
+    const linguaDoCartao = linguaPagina ?? rota?.lang ?? PRIMARY_LANG;
+    const escolha = cartaoDaPagina(caminho, linguaDoCartao);
+    const etiquetas = [
+      { onde: 'og:image', selector: 'head meta[property="og:image"]', medida: MEDIDAS_DO_CARTAO[0] },
+      { onde: 'twitter:image', selector: 'head meta[name="twitter:image"]', medida: MEDIDAS_DO_CARTAO[1] },
+    ];
+    for (const { onde, selector, medida } of etiquetas) {
+      const nome = nomeDoCartao({ ...escolha, ...medida });
+      const esperado = canonicalUrl(`/${PASTA_DOS_CARTOES}/${nome}`);
+      const lido = decodeEntities(
+        root.querySelector(selector)?.getAttribute('content') ?? '',
+      );
+      if (lido !== esperado) {
+        err(
+          `o <meta ${onde}> desta página não nomeia o cartão da sua rota e da sua edição.\n` +
+            `      esperado:   ${esperado}\n` +
+            `      construído: ${lido || '(nenhum)'}`,
+        );
+        continue;
+      }
+      const registo = registoDoCartao(nome);
+      if (!registo) {
+        err(
+          `o <meta ${onde}> nomeia "${nome}" e não há registo desse cartão em ` +
+            `dist/${PASTA_DOS_CARTOES}/. Um cartão que não foi construído é um endereço morto ` +
+            `em todos os sítios onde esta página for partilhada.`,
+        );
+        continue;
+      }
+      if (registo.edicao !== linguaDoCartao) {
+        err(
+          `o <meta ${onde}> desta página, que é da edição "${linguaDoCartao}", nomeia um cartão ` +
+            `cujo registo diz ser da edição "${registo.edicao}".`,
+        );
+      }
+      const rotaEsperada = escolha.rota;
+      if (normalizaCaminho(registo.rota) !== normalizaCaminho(rotaEsperada)) {
+        err(
+          `o <meta ${onde}> nomeia um cartão cujo registo diz ser da rota "${registo.rota}", ` +
+            `e esta página precisa do cartão de "${rotaEsperada}".`,
+        );
+      }
+      if (!(registo.cobre ?? []).includes(caminho)) {
+        err(
+          `o cartão "${nome}" não declara cobrir esta página. O registo lista ` +
+            `${(registo.cobre ?? []).length} rota(s), e "${caminho}" não é uma delas: ou a página ` +
+            `é nova depois de os cartões terem sido desenhados, ou a escolha do cartão mudou.`,
+        );
+      }
+      cartoesUsados.add(nome);
     }
   }
 
@@ -4049,6 +4163,200 @@ for (const o of ocorrenciasDaLista) {
   }
 }
 
+/* =============================================================================
+ * OS CARTÕES DE PARTILHA, REGISTO A REGISTO (etapa 5)
+ * =============================================================================
+ *
+ * Acima confere-se que cada PÁGINA nomeia o cartão certo. Aqui confere-se o
+ * CARTÃO: que o ficheiro é o que o registo diz, que mede o que diz medir, e que
+ * cada número que ele mostra vem de uma linha do livro-razão ou de uma chave da
+ * prova — recalculado aqui, do disco, e comparado como CADEIA pela mesma regra
+ * do `data-claim` (`formaDoValor`).
+ *
+ * A CONFERÊNCIA MAIS DURA É A DOS ALGARISMOS DA CÓPIA. Um cartão pode dizer
+ * palavras; não pode mostrar um algarismo que ninguém consiga reconduzir a uma
+ * origem. Tira-se da cópia visível, do mais comprido para o mais curto, cada
+ * valor declarado, e o que sobrar não pode ter um algarismo. É a versão para
+ * píxeis da regra que governa o resto do sítio: nenhum algarismo sem
+ * proveniência.
+ *
+ * Não é um portão novo. É este portão a olhar para a superfície que ele ainda
+ * não olhava.
+ */
+
+/** As dimensões reais de um PNG, lidas do cabeçalho IHDR do próprio ficheiro. */
+function medidasDoPng(buf) {
+  if (buf.length < 24) return null;
+  if (buf.readUInt32BE(0) !== 0x89504e47 || buf.readUInt32BE(4) !== 0x0d0a1a0a) return null;
+  if (buf.toString('latin1', 12, 16) !== 'IHDR') return null;
+  return { largura: buf.readUInt32BE(16), altura: buf.readUInt32BE(20) };
+}
+
+let cartoesConferidos = 0;
+let valoresDeCartao = 0;
+
+if (REGISTOS_DOS_CARTOES.size === 0) {
+  erros.push({
+    rel: `dist/${PASTA_DOS_CARTOES}/`,
+    msg:
+      'não há um único cartão de partilha construído. O passo `npm run cartoes` corre entre o ' +
+      '`astro build` e este portão; sem ele, todas as páginas apontam `og:image` para ficheiros ' +
+      'que não existem.',
+  });
+}
+
+for (const [nomePng, registo] of REGISTOS_DOS_CARTOES) {
+  const rel = `dist/${PASTA_DOS_CARTOES}/${nomePng}`;
+  const errC = (msg) => erros.push({ rel, msg });
+  cartoesConferidos++;
+
+  /* 1 — o ficheiro existe e é o que o registo diz que é. */
+  const ficheiro = path.join(DIR_DOS_CARTOES, nomePng);
+  if (!fs.existsSync(ficheiro)) {
+    errC('há um registo de cartão e não há o PNG dele.');
+    continue;
+  }
+  const bytes = fs.readFileSync(ficheiro);
+  const resumo = `sha256:${crypto.createHash('sha256').update(bytes).digest('hex')}`;
+  if (resumo !== registo.resumo) {
+    errC(
+      `o resumo do PNG não é o que o registo declara.\n` +
+        `      registo:  ${registo.resumo}\n` +
+        `      ficheiro: ${resumo}`,
+    );
+  }
+
+  /* 2 — as dimensões, medidas no ficheiro, contra o registo E contra o nome. */
+  const medido = medidasDoPng(bytes);
+  const noNome = nomePng.match(/\.(\d+)x(\d+)\.png$/);
+  if (!medido) {
+    errC('o ficheiro não é um PNG legível: não tem cabeçalho IHDR.');
+  } else if (
+    medido.largura !== registo.dimensoes?.largura ||
+    medido.altura !== registo.dimensoes?.altura
+  ) {
+    errC(
+      `as dimensões do PNG não são as do registo.\n` +
+        `      registo:  ${registo.dimensoes?.largura}×${registo.dimensoes?.altura}\n` +
+        `      ficheiro: ${medido.largura}×${medido.altura}`,
+    );
+  } else if (
+    !noNome ||
+    Number(noNome[1]) !== medido.largura ||
+    Number(noNome[2]) !== medido.altura
+  ) {
+    errC(
+      `o nome do ficheiro diz ${noNome ? `${noNome[1]}×${noNome[2]}` : '(nada)'} e o PNG mede ` +
+        `${medido.largura}×${medido.altura}. O nome é o que a página nomeia: um nome que mente ` +
+        `sobre a medida serve uma imagem do tamanho errado a quem a partilha.`,
+    );
+  }
+
+  /* 3 — a rota e a edição do registo batem certo com o nome do ficheiro. */
+  const nomeEsperado = nomeDoCartao({
+    rota: registo.rota,
+    lang: registo.edicao,
+    largura: registo.dimensoes?.largura,
+    altura: registo.dimensoes?.altura,
+    extensao: 'png',
+  });
+  if (nomeEsperado !== nomePng) {
+    errC(
+      `o registo diz rota "${registo.rota}" e edição "${registo.edicao}", que dão o nome ` +
+        `"${nomeEsperado}", e o ficheiro chama-se "${nomePng}".`,
+    );
+  }
+  if (!LANGS.includes(registo.edicao)) {
+    errC(`a edição declarada, "${registo.edicao}", não é uma das edições do sítio.`);
+  }
+  if ((registo.cobre ?? []).length === 0) {
+    errC('este cartão não cobre rota nenhuma: foi desenhado para ninguém.');
+  }
+
+  /* 4 — cada valor, recalculado da sua origem e comparado como cadeia. */
+  for (const v of registo.valores ?? []) {
+    valoresDeCartao++;
+    if (v.origem === 'linha') {
+      const claim = claims.get(v.linha);
+      if (!claim) {
+        errC(`o valor "${v.texto}" diz vir da linha "${v.linha}", que não está no livro-razão.`);
+        continue;
+      }
+      const doDisco = claim[v.campo];
+      if (doDisco === undefined || doDisco === null) {
+        errC(`o valor "${v.texto}" diz vir do campo "${v.campo}" de "${v.linha}", que está vazio.`);
+        continue;
+      }
+      if (formaDoValor(String(doDisco)) !== formaDoValor(v.texto)) {
+        errC(
+          `um valor do cartão não é o da sua linha.\n` +
+            `      cartão:      "${v.texto}"\n` +
+            `      ${v.linha}.${v.campo}: "${String(doDisco)}"\n` +
+            `      Um cartão viaja sem a página: um número velho nele fica velho para sempre.`,
+        );
+      }
+      if ((v.unidade ?? null) !== (claim.unit ?? null)) {
+        errC(
+          `o valor "${v.texto}" viaja com a unidade "${v.unidade ?? '(nenhuma)'}" e a linha ` +
+            `"${v.linha}" tem "${claim.unit ?? '(nenhuma)'}".`,
+        );
+      }
+      if ((v.periodo ?? null) !== (claim.reference_date ?? null)) {
+        errC(
+          `o valor "${v.texto}" viaja com o período "${v.periodo ?? '(nenhum)'}" e a linha ` +
+            `"${v.linha}" tem "${claim.reference_date ?? '(nenhum)'}".`,
+        );
+      }
+    } else if (v.origem === 'prova') {
+      const contado = CONTAS[v.chave];
+      if (contado === undefined) {
+        errC(`o valor "${v.texto}" diz vir da chave da prova "${v.chave}", que o portão não conta.`);
+        continue;
+      }
+      if (String(contado) !== String(v.texto)) {
+        errC(
+          `um valor do cartão não é o que o portão conta.\n` +
+            `      cartão: "${v.texto}"\n` +
+            `      portão: "${String(contado)}" (chave "${v.chave}")`,
+        );
+      }
+    } else {
+      errC(`o valor "${v.texto}" não declara origem conhecida ("${v.origem}").`);
+    }
+  }
+
+  /* 5 — nenhum algarismo na cópia visível que não seja um dos valores. */
+  let sobra = (registo.copia ?? []).join(' · ');
+  const declarados = [...(registo.valores ?? [])]
+    .map((v) => String(v.texto))
+    .sort((a, b) => b.length - a.length);
+  for (const t of declarados) sobra = sobra.split(t).join(' ');
+  const orfaos = sobra.match(/\d/g);
+  if (orfaos) {
+    errC(
+      `a cópia visível do cartão tem algarismos sem origem ("${orfaos.join('')}").\n` +
+        `      o que sobra depois de tirar os valores declarados: «${sobra.replace(/\s+/g, ' ').trim().slice(0, 160)}»\n` +
+        `      Um algarismo num cartão tem de vir de uma linha ou de uma chave da prova.`,
+    );
+  }
+
+  /* 6 — a fila de quadrados, recontada pelo portão. */
+  if (registo.quadrados) {
+    const fora = CONTAS.painel_fora_do_limiar;
+    const dentro = CONTAS.painel_dentro_do_limiar;
+    const sem = CONTAS.painel_total - fora - dentro;
+    const meu = { fora, dentro, sem };
+    for (const chave of ['fora', 'dentro', 'sem']) {
+      if (registo.quadrados[chave] !== meu[chave]) {
+        errC(
+          `a fila de estados do cartão desenha ${registo.quadrados[chave]} quadrado(s) ` +
+            `"${chave}" e o portão conta ${meu[chave]}.`,
+        );
+      }
+    }
+  }
+}
+
 /* ------------------------------------------------------------------ relatório */
 
 provaDaOrtografia();
@@ -4271,6 +4579,8 @@ console.log(
       `${calculadosConferidos} contas sobre ficheiros não alojados ` +
       `(${arquivadasConferidas} com cópia arquivada) · ` +
       `${paginasDeSerieConferidas} páginas de série · ` +
+      `${cartoesConferidos} cartões de partilha (${valoresDeCartao} valores recalculados, ` +
+      `${cartoesUsados.size} nomeados por páginas) · ` +
       `escrito em ${CAMINHO_DA_PROVA}`,
   ),
 );
