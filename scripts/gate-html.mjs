@@ -50,7 +50,7 @@ import {
   POR_VERIFICAR,
 } from '../src/lib/ledger.mjs';
 import { VERBATIM, normalizeWhitespace } from '../src/data/verbatim.mjs';
-import { FIGURAS } from '../src/data/figuras.mjs';
+import { FIGURAS_PDM, FIGURAS_SOCIAL } from '../src/data/figuras.mjs';
 import { EDITIONS, workById, studyLabel } from '../src/data/studies.mjs';
 import { temLeitura } from '../src/data/leituras.mjs';
 import { tituloDaLinha, descricaoDaLinha } from '../src/lib/livro.mjs';
@@ -1680,24 +1680,50 @@ function contasDoPortao(claims) {
    *
    * A convenção é a mesma, e é dita para que a divergência seja de propósito e
    * não por descuido: `superior` é um teto e estar acima dele é estar fora;
-   * `inferior` é um chão e estar abaixo dele é estar fora; a igualdade conta
-   * como dentro; um limiar sem lado declarado não classifica nada.
+   * `inferior` é um chão e estar abaixo dele é estar fora; **dois lados
+   * declarados são uma banda, e estar dentro é estar entre eles**; a igualdade
+   * conta como dentro; um limiar sem lado declarado não classifica nada.
    */
-  const foraDoLimiar = (figura) => {
-    if (!figura.limiar) return false;
-    const linha = claims.get(figura.claim);
-    const v = parsePtNumber(linha?.value);
-    const t = parsePtNumber(`${figura.limiar.sinal ?? ''}${figura.limiar.nl}`);
-    if (v === null || t === null) return false;
-    if (figura.limiar.lado === 'superior') return v > t;
-    if (figura.limiar.lado === 'inferior') return v < t;
-    return false;
+  /* A LEITURA DA DECLARAÇÃO É DO PORTÃO, e não a de `ladosDoLimiar()`. Uma
+     banda de dois lados (o saldo da balança corrente, a taxa de câmbio efetiva
+     real) declara `inferior` e `superior`; um teto declara `lado: 'superior'`;
+     um chão, `lado: 'inferior'`. Importar a função que a casa usa punha a
+     mesma leitura dos dois lados da conta, que é o defeito que a §1.24 fechou.
+     Devolve `null` onde não há comparação possível, e um `null` não conta para
+     nenhuma das duas contagens. */
+  const doisLados = (limiar) => {
+    if (!limiar) return null;
+    const numero = (l) => (l ? parsePtNumber(`${l.sinal === '−' ? '−' : ''}${l.nl}`) : null);
+    if (limiar.inferior || limiar.superior) {
+      return { inf: numero(limiar.inferior), sup: numero(limiar.superior) };
+    }
+    const um = parsePtNumber(`${limiar.sinal ?? ''}${limiar.nl}`);
+    if (limiar.lado === 'superior') return { inf: null, sup: um };
+    if (limiar.lado === 'inferior') return { inf: um, sup: null };
+    return null;
+  };
+  const estadoDaFigura = (figura) => {
+    if (!figura.limiar) return 'sem';
+    const v = parsePtNumber(claims.get(figura.claim)?.value);
+    if (v === null) return null;
+    const l = doisLados(figura.limiar);
+    if (!l) return null;
+    if (l.inf === null && l.sup === null) return null;
+    if (l.sup !== null && v > l.sup) return 'fora';
+    if (l.inf !== null && v < l.inf) return 'fora';
+    return 'dentro';
   };
 
   return Object.fromEntries([
-    conta('painel_total', FIGURAS.length, 'ledger'),
-    conta('painel_com_limiar', FIGURAS.filter((f) => Boolean(f.limiar)).length, 'ledger'),
-    conta('painel_fora_do_limiar', FIGURAS.filter(foraDoLimiar).length, 'ledger'),
+    conta('painel_total', FIGURAS_PDM.length, 'ledger'),
+    conta('painel_com_limiar', FIGURAS_PDM.filter((f) => Boolean(f.limiar)).length, 'ledger'),
+    conta('painel_fora_do_limiar', FIGURAS_PDM.filter((f) => estadoDaFigura(f) === 'fora').length, 'ledger'),
+    conta(
+      'painel_dentro_do_limiar',
+      FIGURAS_PDM.filter((f) => estadoDaFigura(f) === 'dentro').length,
+      'ledger',
+    ),
+    conta('painel_social_total', FIGURAS_SOCIAL.length, 'ledger'),
     conta('afirmacoes', paginasDeLinhaPt, 'dist'),
     conta('indexaveis', indexaveisPt, 'dist'),
     conta('divida', paginasDeLinhaPt - indexaveisPt, 'dist'),

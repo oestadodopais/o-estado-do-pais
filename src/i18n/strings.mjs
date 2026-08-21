@@ -346,18 +346,37 @@ export const STRINGS = {
 
     inicio: {
       cabeca: {
-        paisA: 'Portugal · painel europeu · ',
-        paisB: ' medidas',
+        /* O rótulo do âmbito País, na gramática dos outros três: nome e âmbito,
+           e mais nada. Levava a contagem do painel («painel europeu · 8
+           medidas»), e a Emenda 16 tornou-a ambígua — a página passou a ter DOIS
+           painéis, e um número ao lado de «painel europeu» diria o do primeiro
+           como se fosse o dos dois. As contagens que a página precisa de dizer
+           estão na manchete, e são as duas que a Emenda 16 escreve. */
+        paisA: 'Portugal · país',
         regiaoSufixo: ' · região',
         municipioSufixo: ' · município',
         municipioPalavra: ' · município · ',
-        tituloPaisUm: ' limiar europeu ultrapassado.',
-        tituloPaisMuitos: ' limiares europeus ultrapassados.',
+        /* A MANCHETE DA EMENDA 16, palavra por palavra do lugar de direção:
+           «Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios
+           Macroeconómicos e cumpre 9.» As duas contagens são chaves da prova, e
+           a frase parte-se onde elas entram. O singular e o plural do primeiro
+           são escolhidos na construção, com a contagem que o portão reconta; o
+           segundo não tem substantivo a seguir e serve os dois. */
+        tituloPaisA: 'Portugal ultrapassa ',
+        tituloPaisUm: ' limiar do Procedimento dos Desequilíbrios Macroeconómicos e cumpre ',
+        tituloPaisMuitos: ' limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre ',
+        tituloPaisFim: '.',
         tituloEvora: 'As medidas do concelho, cada uma com a sua linha.',
         tituloVazioA: 'Ainda sem linhas para ',
         tituloVazioB: '.',
-        ledePais:
-          'O painel de desequilíbrios macroeconómicos e o painel social europeu, com os limiares que as instituições publicam.',
+        /* A LEDE DA EMENDA 16, palavra por palavra. Nomeia as quatro medidas que
+           estão fora do limiar, e o ano é o `reference_date` das quatro linhas,
+           marcado como data de referência e não escrito como prosa. */
+        ledePaisPartes: [
+          'Fora do limiar: dívida pública, posição de investimento internacional, custo unitário do trabalho e preços da habitação, em ',
+          { ref: '2025' },
+          '.',
+        ],
         ledeRegiaoPartes: [
           'PIB per capita em paridades de poder de compra, com a média da UE-27 fixada em ',
           { nl: '100', motivo: 'escala-de-instrumento' },
@@ -459,6 +478,18 @@ export const STRINGS = {
         ],
         naoSeDesenham:
           'As regiões não se desenham em pontos de concelho: a régua é o instrumento do âmbito regional. O mapa volta quando o âmbito é um município.',
+      },
+
+      /**
+       * O PAINEL SOCIAL EUROPEU (Emenda 16, 21.08.2026).
+       *
+       * Duas cadeias, e as duas são nomes: o do painel, que é como a instituição
+       * lhe chama, e o do livro-razão, que é a porta por onde sai o resto das
+       * medidas. Nenhuma das duas diz o que a casa fez nem o que a casa promete.
+       */
+      social: {
+        titulo: 'Painel Social Europeu',
+        porta: 'O livro-razão',
       },
     },
 
@@ -1204,18 +1235,22 @@ export const STRINGS = {
 
     inicio: {
       cabeca: {
-        paisA: 'Portugal · European panel · ',
-        paisB: ' measures',
+        paisA: 'Portugal · country',
         regiaoSufixo: ' · region',
         municipioSufixo: ' · municipality',
         municipioPalavra: ' · municipality · ',
-        tituloPaisUm: ' European threshold breached.',
-        tituloPaisMuitos: ' European thresholds breached.',
+        tituloPaisA: 'Portugal breaches ',
+        tituloPaisUm: ' threshold of the Macroeconomic Imbalance Procedure and meets ',
+        tituloPaisMuitos: ' thresholds of the Macroeconomic Imbalance Procedure and meets ',
+        tituloPaisFim: '.',
         tituloEvora: 'The measures of the concelho, each with its own row.',
         tituloVazioA: 'Still no rows for ',
         tituloVazioB: '.',
-        ledePais:
-          'The macroeconomic imbalance scoreboard and the European social scoreboard, with the thresholds the institutions publish.',
+        ledePaisPartes: [
+          'Outside the threshold: government debt, net international investment position, unit labour cost and house prices, in ',
+          { ref: '2025' },
+          '.',
+        ],
         ledeRegiaoPartes: [
           'GDP per capita in purchasing power standards, with the EU-27 average fixed at ',
           { nl: '100', motivo: 'escala-de-instrumento' },
@@ -1284,6 +1319,11 @@ export const STRINGS = {
         ],
         naoSeDesenham:
           'Regions are not drawn as concelho points: the rule is the instrument of the regional scope. The map returns when the scope is a municipality.',
+      },
+
+      social: {
+        titulo: 'European Social Scoreboard',
+        porta: 'The ledger',
       },
     },
 

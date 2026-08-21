@@ -1,0 +1,75 @@
+---
+/**
+ * O PAINEL SOCIAL EUROPEU — uma lista compacta, sem cor (Emenda 16, 21.08.2026).
+ *
+ * ---------------------------------------------------------------------------
+ * PORQUE É UMA LISTA E NÃO PEÇAS
+ * ---------------------------------------------------------------------------
+ * «O Painel Social Europeu entra como lista compacta por baixo (nome, valor,
+ * unidade, fonte, selo; **sem cor, porque não tem limiares**).» Uma peça do
+ * painel do Procedimento tem marcador, palavra de estado e régua, e as três
+ * dizem a mesma coisa: de que lado de um limiar publicado está o valor. O
+ * Painel Social não publica limiar nenhum — classifica pela posição na
+ * distribuição dos Estados-Membros do ano —, e desenhar-lhe uma peça igual era
+ * prometer uma comparação que a fonte não faz (Emenda 1, e `convergence.md` §5:
+ * «Thresholds … None fixed anywhere»).
+ *
+ * Uma linha leva, por esta ordem: o valor com o seu selo, o nome da medida, a
+ * unidade e o período, e o nome de quem publica. Nenhuma cor, nenhum marcador,
+ * nenhuma palavra de estado.
+ *
+ * ---------------------------------------------------------------------------
+ * AS FRASES QUE FICAM, E PORQUÊ
+ * ---------------------------------------------------------------------------
+ * Três das oito linhas trazem a frase que já tinham na primeira página da v2
+ * (relocação R1). A Emenda 16 enumera o que uma linha LEVA, e não proíbe o que
+ * ela já tinha; e uma das três é a ressalva da própria Comissão sobre a
+ * sobrecarga do custo da habitação — a medida «só se lê ao lado do regime de
+ * propriedade». O documento do motor escreve o que acontece sem ela: «Published
+ * naked, it says Portuguese housing is fine.» Uma lista compacta que a deixasse
+ * cair publicava um número que se lê ao contrário. As outras cinco não trazem
+ * frase, porque nunca tiveram uma: nome, valor, unidade, fonte e selo.
+ *
+ * As frases são sobre a MEDIDA e não sobre o sítio, e é por isso que a Emenda 15
+ * não lhes toca: dizem o que a coisa é, e não o que a casa fez.
+ */
+import Claim from '../Claim.astro';
+import Frase from '../Frase.astro';
+
+const { s, lang, medidas, porta } = Astro.props;
+---
+
+<section class="social" id="painel-social">
+  <h2 class="social-titulo">{s.inicio.social.titulo}</h2>
+
+  <ul class="social-lista">
+    {
+      medidas.map((m) => (
+        <li class="social-linha" data-social={m.claim}>
+          <span class="social-valor">
+            <Claim id={m.claim} lang={lang} chip={true} />
+          </span>
+          <span class="social-corpo">
+            <span class="social-nome">{m.nome[lang]}</span>
+            <span class="social-medida">
+              <Frase partes={m.medida[lang]} lang={lang} />
+              {' · '}
+              <span class="social-fonte">{m.linha.source}</span>
+            </span>
+            {m.frase && (
+              <span class="social-frase">
+                <Frase partes={m.frase[lang]} lang={lang} selos={true} />
+              </span>
+            )}
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+
+  {/* O resto do livro-razão fica atrás de uma porta (Emenda 16). Uma linha, um
+      destino, e nenhuma legenda a explicar o que está do outro lado. */}
+  <p class="social-porta">
+    <a class="lig" href={porta}>{s.inicio.social.porta} →</a>
+  </p>
+</section>

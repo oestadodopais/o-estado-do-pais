@@ -760,6 +760,7 @@ svg [hidden] {
   height: 12px;
 }
 .peca-limiar,
+.peca-palavra,
 .peca-estado,
 .peca-ambito {
   font-family: var(--f-instr);
@@ -771,6 +772,18 @@ svg [hidden] {
 }
 .peca-limiar-k {
   color: var(--muted);
+}
+
+/* A LINHA DO LIMIAR É UMA LINHA (etapa 2l). Vivia dentro do `.peca-topo`, ao
+   lado do marcador, porque era ela ou a palavra de estado; com as duas na peça,
+   a palavra fica ao lado do marcador — que é o que ela nomeia — e o limiar
+   desce para a sua própria linha, onde uma banda de dois lados cabe sem
+   partir. */
+.peca-limiar {
+  margin: 0;
+}
+.peca-palavra {
+  letter-spacing: 0.03em;
 }
 
 /* OS ALGARISMOS DA PEÇA, COM TECTO EM 56px E ESCALA FLUIDA (direção, 21.08.2026)
@@ -1438,5 +1451,113 @@ a.porta:hover .porta-abrir {
   }
   .porta {
     padding: 16px 0;
+  }
+}
+
+/* ============================================================================
+ * O PAINEL SOCIAL EUROPEU — a lista compacta (Emenda 16, 21.08.2026)
+ * ============================================================================
+ *
+ * SEM COR, PORQUE NÃO TEM LIMIARES. Nenhum marcador, nenhuma palavra de estado,
+ * nenhum âmbar e nenhum cobalto: o que aqui se desenha é tinta e cinzento, que
+ * é o que a Emenda 1 manda desenhar onde não há referência formal publicada.
+ *
+ * A GRELHA É DE DUAS COLUNAS E NÃO DE QUATRO. Uma linha é um valor e o que ele
+ * é; o valor alinha-se à direita numa coluna estreita e tabular, para que oito
+ * algarismos de larguras diferentes façam uma coluna e não uma serra. O fio
+ * entre linhas é o mesmo `--g3` das peças, e pela mesma razão: isto é uma
+ * tabela, e uma tabela lê-se por linhas.
+ */
+.social {
+  margin-top: 34px;
+  border-top: 1px solid var(--ink);
+  padding-top: 18px;
+}
+
+.social-titulo {
+  font-family: var(--f-versal);
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+.social-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-linha {
+  display: grid;
+  grid-template-columns: 5.5em minmax(0, 1fr);
+  column-gap: 16px;
+  align-items: baseline;
+  padding: 10px 0;
+  border-top: 1px solid var(--g3);
+}
+.social-linha:first-child {
+  border-top: 0;
+}
+
+.social-valor {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 19px;
+  text-align: right;
+  /* O selo desce para baixo do valor: na sua própria linha ele é o maior alvo
+     da linha, e não fica encostado ao algarismo. */
+  display: block;
+}
+.social-valor .claim-com-chip {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: baseline;
+  gap: 0 6px;
+}
+
+.social-corpo {
+  display: block;
+}
+
+.social-nome {
+  display: block;
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.social-medida {
+  display: block;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.social-frase {
+  display: block;
+  font-size: 15px;
+  line-height: 1.45;
+  max-width: 46em;
+  margin-top: 6px;
+}
+
+.social-porta {
+  margin-top: 14px;
+}
+
+@media (max-width: 640px) {
+  .social-linha {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 2px;
+  }
+  .social-valor {
+    text-align: left;
+  }
+  .social-valor .claim-com-chip {
+    justify-content: flex-start;
   }
 }

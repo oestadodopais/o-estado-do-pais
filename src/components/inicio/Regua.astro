@@ -29,13 +29,32 @@ import { escalaDaRegua, posicaoNaRegua } from '../../lib/estado.mjs';
 
 const { valor, referencia, estado = 'sem', colore = false } = Astro.props;
 
+/* ---------------------------------------------------------------------------
+ * UMA REFERÊNCIA OU DUAS: A BANDA (etapa 2l, Emenda 16)
+ * ---------------------------------------------------------------------------
+ * Duas das treze linhas do Procedimento publicam uma BANDA e não um limiar: o
+ * saldo da balança corrente («-4/+6%») e a taxa de câmbio efetiva real
+ * («+/-3%»). A gramática da Emenda 4 não muda por causa disso — continua a ser
+ * referência a tinta à altura toda, barra = distância à referência, traço fino
+ * no valor —, e o que muda é que a referência são DOIS traços em vez de um.
+ *
+ * A BARRA MEDE A DISTÂNCIA À REFERÊNCIA MAIS PRÓXIMA, e a regra é mecânica e
+ * não uma escolha da casa: numa banda, o lado que o valor tem à frente é o que
+ * ele passaria primeiro. Com uma referência só, a regra dá exactamente o que dá
+ * hoje, porque a mais próxima é a única. Nenhuma distância é escrita: a barra
+ * mostra-a, e a palavra de estado nomeia-a.
+ */
+const refs = (Array.isArray(referencia) ? referencia : [referencia]).filter(
+  (r) => r !== null && r !== undefined && Number.isFinite(r),
+);
+
 /* O rótulo da referência entra por ranhura, e não por propriedade: é MARCAÇÃO —
    a palavra «limiar», o sinal, e o algarismo debaixo do motivo
    `limiar-do-quadro`. Passá-lo como cadeia obrigaria a montar «limiar 60%» num
    texto sem marca, que é exactamente o que o portão existe para recusar. */
 const temRotulo = Astro.slots.has('referencia');
 
-const escala = escalaDaRegua(valor, referencia);
+const escala = refs.length ? escalaDaRegua(valor, refs) : null;
 
 /* A escrita da casa para um número de escala: vírgula decimal e sinal de menos
    verdadeiro. Não formata nenhuma medição — só as pontas da própria régua. */
@@ -45,7 +64,17 @@ const escreve = (n) => {
 };
 
 const pv = escala ? posicaoNaRegua(valor, escala) : null;
-const pr = escala ? posicaoNaRegua(referencia, escala) : null;
+/* As posições das referências, pela ordem em que vêm; e a que a barra usa, que
+   é a da referência mais próxima do valor. */
+const prs = escala ? refs.map((r) => posicaoNaRegua(r, escala)) : [];
+const maisProxima = refs.length
+  ? refs.reduce((a, b) => (Math.abs(valor - b) < Math.abs(valor - a) ? b : a))
+  : null;
+const pr = escala && maisProxima !== null ? posicaoNaRegua(maisProxima, escala) : null;
+/* O rótulo de uma banda nomeia os DOIS lados, e por isso senta-se entre eles;
+   com uma referência só, senta-se nela, como sempre. */
+const prRotulo =
+  prs.length > 1 ? prs.reduce((a, b) => a + b, 0) / prs.length : pr;
 const W = 600;
 const Y = 17;
 
@@ -64,7 +93,7 @@ const Y = 17;
  * escreve (18 e 82, abaixo): onde o rótulo da referência tapa a ponta, a ponta
  * não se escreve e o rótulo ocupa-lhe o lugar.
  */
-const ponta = pr === null ? null : pr >= 82 ? 'dir' : pr <= 18 ? 'esq' : null;
+const ponta = prRotulo === null ? null : prRotulo >= 82 ? 'dir' : prRotulo <= 18 ? 'esq' : null;
 ---
 
 {
@@ -101,7 +130,9 @@ const ponta = pr === null ? null : pr >= 82 ? 'dir' : pr <= 18 ? 'esq' : null;
             width={Math.max((Math.abs(pv - pr) / 100) * W, 1)}
             height="8"
           />
-          <line class="regua-ref" x1={(pr / 100) * W} y1="0" x2={(pr / 100) * W} y2="34" />
+          {prs.map((q) => (
+            <line class="regua-ref" x1={(q / 100) * W} y1="0" x2={(q / 100) * W} y2="34" />
+          ))}
           <line class="regua-valor" x1={(pv / 100) * W} y1="4" x2={(pv / 100) * W} y2="30" />
         </svg>
       </div>
@@ -111,19 +142,19 @@ const ponta = pr === null ? null : pr >= 82 ? 'dir' : pr <= 18 ? 'esq' : null;
           outro. O que se perde é a repetição: o rótulo da referência traz o
           mesmo algarismo, com a palavra que o explica. */}
       <div class="regua-escala">
-        {(!temRotulo || pr > 18) && (
+        {(!temRotulo || prRotulo > 18) && (
           <span class="regua-fim" data-nonledger="escala-de-instrumento">{escreve(escala.min)}</span>
         )}
         {temRotulo && (
           <span
             class="regua-ref-rotulo"
             data-ponta={ponta}
-            style={ponta ? undefined : `left:${pr}%`}
+            style={ponta ? undefined : `left:${prRotulo}%`}
           >
             <slot name="referencia" />
           </span>
         )}
-        {(!temRotulo || pr < 82) && (
+        {(!temRotulo || prRotulo < 82) && (
           <span class="regua-fim regua-fim-dir" data-nonledger="escala-de-instrumento">
             {escreve(escala.max)}
           </span>

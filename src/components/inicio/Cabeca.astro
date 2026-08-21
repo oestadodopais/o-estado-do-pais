@@ -23,11 +23,24 @@
  * que está aceso. A alternativa era compor o título no cliente, que é a coisa
  * que esta página não faz.
  *
- * A MANCHETE DO PAÍS TRAZ UMA CONTAGEM, e a contagem é um número do próprio
- * sítio: `data-prova="painel_fora_do_limiar"`, com a porta para o painel, e não
- * uma palavra escrita à mão («Quatro»). O portão reconta-a. Como uma contagem
- * pode ser um ou muitos, há duas frases e o SERVIDOR escolhe a certa; o cliente
- * não escolhe nada, porque o número não muda depois da construção.
+ * A MANCHETE DO PAÍS TRAZ DUAS CONTAGENS (Emenda 16, 21.08.2026), e as duas são
+ * números do próprio sítio: `painel_fora_do_limiar` e `painel_dentro_do_limiar`,
+ * cada um com a porta para o painel, e nenhum escrito à mão («Quatro»). O portão
+ * reconta os dois. A frase é a do lugar de direção, palavra por palavra —
+ * «Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios
+ * Macroeconómicos e cumpre 9.» —, e diz o que o sítio pode provar: quantos
+ * limiares o país ultrapassa e quantos cumpre, das linhas que o sítio tem. NÃO
+ * afirma um total do Procedimento, e é por isso que não diz «4 dos 13».
+ *
+ * Como uma contagem pode ser um ou muitos, há duas frases para a primeira e o
+ * SERVIDOR escolhe a certa; o cliente não escolhe nada, porque o número não muda
+ * depois da construção. A segunda contagem não tem substantivo a seguir e serve
+ * o singular e o plural com uma cadeia só.
+ *
+ * O RÓTULO DO ÂMBITO DEIXOU DE CONTAR. Dizia «Portugal · painel europeu · 8
+ * medidas», e com dois painéis na página um número ao lado de «painel europeu»
+ * diria o do primeiro como se fosse o dos dois. Passa a ser o nome e o âmbito,
+ * na gramática dos outros três blocos.
  *
  * ---------------------------------------------------------------------------
  * A FILA DE ESTADOS SAIU DAQUI (Emenda 13, 21.08.2026; DECISIONS §1.52)
@@ -68,20 +81,25 @@ const tituloPais = fora === 1 ? s.inicio.cabeca.tituloPaisUm : s.inicio.cabeca.t
       <div class="cabeca-bloco" data-cabeca={b.chave} hidden={b.chave !== ambito}>
         {b.tipo === 'pais' && (
           <>
-            <p class="cabeca-rotulo">
-              {s.inicio.cabeca.paisA}
-              <ValorDaProva chave="painel_total" item={p.painel_total} lang={lang} />
-              {s.inicio.cabeca.paisB}
-            </p>
+            <p class="cabeca-rotulo">{s.inicio.cabeca.paisA}</p>
             <h1 class="cabeca-h1">
+              {s.inicio.cabeca.tituloPaisA}
               <ValorDaProva
                 chave="painel_fora_do_limiar"
                 item={p.painel_fora_do_limiar}
                 lang={lang}
               />
               {tituloPais}
+              <ValorDaProva
+                chave="painel_dentro_do_limiar"
+                item={p.painel_dentro_do_limiar}
+                lang={lang}
+              />
+              {s.inicio.cabeca.tituloPaisFim}
             </h1>
-            <p class="cabeca-lede">{s.inicio.cabeca.ledePais}</p>
+            <p class="cabeca-lede">
+              <Frase partes={s.inicio.cabeca.ledePaisPartes} lang={lang} />
+            </p>
           </>
         )}
 
