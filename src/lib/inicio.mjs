@@ -185,7 +185,14 @@ export function pecasDoConcelho(municipio) {
         regua: {
           valor: parsePtNumber(linha.value),
           referencia: parsePtNumber(tecto.value),
-          rotulo: 'tecto',
+          /* «teto» e não «tecto» (commit 5-0). O rótulo não se rende — quem se
+             rende é `s.municipio.distanciaTecto` —, mas a cadeia atravessa para
+             `Peca.astro`, que a compara escrita por extenso, e um `.astro` é
+             superfície pública para `scripts/ortografia.mjs`. A régua da
+             ortografia fechava a construção com uma ocorrência (a comparação em
+             `Peca.astro:216`), e era o pedido 9 da etapa 4. As duas pontas da
+             comparação mudam juntas ou a régua do concelho fica sem rótulo. */
+          rotulo: 'teto',
         },
       };
     });

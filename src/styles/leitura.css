@@ -160,9 +160,31 @@
   }
 }
 
-/* O marcador nativo sai, e o que o substitui é um sinal de tinta à direita do
-   nome: o triângulo do navegador tem o desenho de cada navegador, e esta casa
-   desenha os seus estados. */
+/* --------------------------------------------------------------------------
+   UM SÓ SINAL DE DOBRA NO SÍTIO INTEIRO (ISSUES I54, commit 5-0)
+   --------------------------------------------------------------------------
+   O marcador nativo sai — cada navegador desenha o seu — e o que o substitui é
+   o MESMO sinal que as outras dobras da casa já desenhavam: o triângulo de
+   tinta que roda 90° ao abrir (`.deep` em `site.css`, `.aparelho` em
+   `inicio.css`, `.nav-menu` em `site.css`). As dobras que as subetapas 4b e 4c
+   criaram desenhavam `+` fechado e `−` aberto, e a casa ficou com dois sinais
+   para o mesmo gesto — exactamente a porta que a Emenda 10 fecha («um glifo, um
+   significado»).
+
+   A GEOMETRIA É COPIADA À LETRA das outras três, e não aproximada: bordo
+   esquerdo de 5px em `currentColor`, bordos de cima e de baixo de 4px
+   transparentes, rotação de 90° com origem a 30% 50% e a mesma transição de
+   0,16s. O que muda em relação a elas é o SÍTIO (à direita do nome, porque este
+   `<summary>` é um título de regra e não um rótulo de aparelho) e a COR de
+   repouso, que fica no cinzento que a 4b escolheu e passa a tinta ao apontar —
+   é a mesma decisão de ênfase da 4b, e o cinzento não é cor no sentido da
+   IDENTIDADE §2.
+
+   O `top` é dado em `em` do próprio pseudo-elemento: a 16px com entrelinha de
+   1,2 a caixa da linha mede 19,2px e o triângulo mede 8px, e 0,35em = 5,6px
+   é exactamente o que os centra um no outro. Nada disto depende do tamanho do
+   título, que é fluido.
+   -------------------------------------------------------------------------- */
 .regra-dobra > summary {
   cursor: pointer;
   list-style: none;
@@ -177,18 +199,23 @@
   margin: 0;
 }
 .regra-dobra > summary::after {
-  content: '+';
+  content: '';
   position: absolute;
   right: 0;
-  top: 0;
-  font-family: var(--f-instr);
+  top: 0.35em;
   font-size: 16px;
-  font-weight: 600;
   line-height: 1.2;
+  width: 0;
+  height: 0;
   color: var(--muted);
+  border-left: 5px solid currentColor;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: transform 0.16s ease;
+  transform-origin: 30% 50%;
 }
 .regra-dobra[open] > summary::after {
-  content: '−';
+  transform: rotate(90deg);
 }
 .regra-dobra > summary:hover::after,
 .regra-dobra > summary:focus-visible::after {
@@ -258,21 +285,27 @@ ul.metodo-sumario-lista li {
 .agenda-dobra > summary::-webkit-details-marker {
   display: none;
 }
-/* O mesmo sinal de tinta do Método: `+` fechado, `−` aberto. O triângulo do
-   navegador tem o desenho de cada navegador, e esta casa desenha os seus. */
+/* O mesmo sinal do Método, que passou a ser o mesmo do sítio inteiro (I54,
+   commit 5-0): o triângulo que roda ao abrir. A declaração é, linha a linha, a
+   do `.regra-dobra` acima — se um dia mudar, mudam as duas. */
 .agenda-dobra > summary::after {
-  content: '+';
+  content: '';
   position: absolute;
   right: 0;
-  top: 0;
-  font-family: var(--f-instr);
+  top: 0.35em;
   font-size: 16px;
-  font-weight: 600;
   line-height: 1.2;
+  width: 0;
+  height: 0;
   color: var(--muted);
+  border-left: 5px solid currentColor;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: transform 0.16s ease;
+  transform-origin: 30% 50%;
 }
 .agenda-dobra[open] > summary::after {
-  content: '−';
+  transform: rotate(90deg);
 }
 .agenda-dobra > summary:hover::after,
 .agenda-dobra > summary:focus-visible::after {
