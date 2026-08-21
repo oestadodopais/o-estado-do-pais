@@ -34,6 +34,18 @@ Estados: **autorizada** (escrita aqui antes da etapa), **feita** (a etapa confir
 
 ## Texto novo (sem rota de origem; entra pelas cadeias, PT e EN no mesmo commit; revisão de voz antes da fusão)
 
+### Etapa 3, subetapa 3a · três cadeias novas, nenhuma retirada
+
+*Nenhuma relocação: as três cadeias não têm rota de origem, e por isso são texto novo, com o seu inglês no mesmo commit e a revisão de voz pela frente.*
+
+| chave | pt | en | onde |
+|---|---|---|---|
+| `livro.linha.conjuntoK` | O conjunto inteiro | The whole dataset | o rótulo das duas portas do conjunto, dentro de «Acesso aos dados» no aparelho do recibo (`IDENTIDADE.md` §11, «o acesso aos dados») |
+| `livro.linha.noutroSitioK` | Esta linha noutro sítio | This row elsewhere | o rótulo do bloco que a §11 pede a seguir ao acesso aos dados |
+| `livro.linha.noutraEdicao` | Esta linha na edição inglesa | This row in the Portuguese edition | a porta desse bloco |
+
+**Uma chamada editorial, assinalada em vez de decidida.** A §11 e o `design/DECISAO.md` escrevem «esta linha noutro sítio» e não dizem que sítio é. As superfícies onde um valor rende não estão indexadas em lado nenhum deste repositório, e escrever essa lista à mão seria inventá-la; o que existe, para todas as 132 linhas, é a mesma linha na outra edição, e é isso que a subetapa 3a rende. O cabeçalho faz a mesma viagem para a página inteira, e é mobília; a §11 pede-a ao aparelho. **Se o lugar de direção quiser em vez disso o índice das páginas que citam a linha, é um pedido ao motor e não uma cadeia.**
+
 ### Etapa 2, subetapa 2l · duas cadeias novas, trinta e três retiradas, e uma que muda de forma
 
 *A Emenda 15 é uma subtração, e por isso esta secção é sobretudo uma lista do que saiu. Cada cadeia retirada tem escrito para onde foi o que ela dizia; a lista inteira, com a classe de cada frase que FICOU, está em `INVENTARIO-FRASES.md`.*

@@ -1,0 +1,242 @@
+/* =============================================================================
+ * A PÁGINA DE LINHA · o recibo, no vocabulário do boletim
+ * =============================================================================
+ * Folha da página de uma linha do livro-razão, importada por `LinhaView.astro` e
+ * por mais lado nenhum. Entra depois de `site.css` no documento construído, e
+ * por isso o que aqui está com a mesma especificidade ganha.
+ *
+ * O que ela faz, e nada mais: dá ao recibo o vocabulário que a constituição lhe
+ * fixa (`direcao.md` §4 «O recibo é o boletim»; `IDENTIDADE.md` §11 «A página de
+ * linha é um recibo, e esta é a ordem»):
+ *
+ *   · FILETES FINOS. Os fios são `--g3` (que é o que `--rule` já resolve) e não
+ *     mudam de peso de bloco para bloco. Um fio mais grosso é um destaque, e o
+ *     recibo não destaca: enumera;
+ *   · OS MESMOS RÓTULOS SEMPRE NA MESMA POSIÇÃO, e numa só forma. A folha
+ *     partilhada escrevia-os em quatro tamanhos (10, 10,5, 9,5 e 10px) e em três
+ *     espaçamentos; aqui são um só desenho, e a única diferença que fica é a que
+ *     tem significado: o rótulo de um BLOCO é tinta, o rótulo de um CAMPO é
+ *     cinzento;
+ *   · VERSALETES DE SPECTRAL SC NOS RÓTULOS, e não Bitter em caixa alta. É a
+ *     Emenda 5 de 20.08.2026 e a `IDENTIDADE.md` §1: «Bitter em caixa alta só
+ *     dentro dos instrumentos», e uma página de linha não é um instrumento. É a
+ *     parte do ISSUES I15 que pertence a esta família de páginas;
+ *   · BITTER PARA O QUE É TRANSCRITO E PARA O QUE É IDENTIFICADOR (§11 e §1): o
+ *     excerto, o campo devolvido, os endereços, os nomes de ficheiro, os resumos,
+ *     as colunas e os filtros, os campos da ficha. Spectral fica com a prosa da
+ *     casa: a frase de atribuição, as notas, a derivação por palavras. A
+ *     distinção é a de §1, e é o produto: o que a fonte escreveu tem uma letra, o
+ *     que a casa escreve tem outra;
+ *   · A MARCA DE ÁGUA de um campo em falta (mais abaixo).
+ *
+ * Sem cor nova (`IDENTIDADE.md` §2): nenhum literal, e nenhuma ficha que não seja
+ * já de `tokens.css`.
+ * ========================================================================== */
+
+/* -----------------------------------------------------------------------------
+ * 1 · OS RÓTULOS, NUMA SÓ FORMA
+ * -------------------------------------------------------------------------- */
+.linha-bloco-titulo,
+.linha-campo-k,
+.aparelho-titulo,
+.aparelho-ficha dt,
+.linha-verificacoes dt {
+  font-family: var(--f-versal);
+  font-variant-numeric: normal;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+}
+/* O rótulo de um bloco é tinta; o de um campo é cinzento. É a única hierarquia
+   do recibo, e diz o que é secção e o que é linha da secção. */
+.linha-bloco-titulo,
+.aparelho-titulo {
+  color: var(--ink);
+}
+.linha-campo-k,
+.aparelho-ficha dt,
+.linha-verificacoes dt {
+  color: var(--muted);
+}
+
+/* -----------------------------------------------------------------------------
+ * 2 · A LETRA DO QUE É TRANSCRITO E DO QUE É IDENTIFICADOR
+ * -----------------------------------------------------------------------------
+ * O excerto é a linha impressa copiada palavra por palavra: é a fonte a falar, e
+ * leva a letra do instrumento. Estava em Spectral, que é a letra da casa, e um
+ * leitor não tinha como distinguir a frase transcrita da frase escrita aqui. */
+.linha-excerto,
+.linha-pedido,
+.linha-pagina-serie,
+.linha-porta-documento,
+.linha-alojado-ficheiro,
+.linha-alojado-licenca,
+.linha-alojado-origem,
+.linha-calculado-lista,
+.linha-calculado-conta,
+.aparelho-ficha dd {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.linha-excerto {
+  font-size: 14.5px;
+  line-height: 1.62;
+}
+.aparelho-ficha dd {
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+/* A prosa da casa fica em Spectral, e vai dito para que a regra não se leia como
+   «o recibo inteiro é Bitter»: a frase de atribuição, as notas e a derivação por
+   palavras são escritas aqui e continuam na letra da casa. */
+.linha-atribuicao,
+.linha-nota,
+.linha-derivacao,
+.aparelho-nota {
+  font-family: var(--f-prosa);
+}
+
+/* -----------------------------------------------------------------------------
+ * 3 · A FICHA DO APARELHO COMO FORMULÁRIO
+ * -----------------------------------------------------------------------------
+ * Rótulo por cima, valor por baixo, e um filete fino entre campos: é o impresso
+ * oficial, e é o que faz a coluna ler-se como uma ficha e não como uma lista de
+ * parágrafos. O primeiro campo não leva fio, porque o fio do topo do aparelho já
+ * está lá. */
+.aparelho-ficha {
+  gap: 0;
+}
+.aparelho-ficha dt {
+  padding-top: 10px;
+  border-top: 1px solid var(--rule);
+}
+.aparelho-ficha dt:first-of-type {
+  padding-top: 0;
+  border-top: 0;
+}
+.aparelho-ficha dd {
+  margin: 2px 0 10px;
+}
+.aparelho-ficha dd:last-of-type {
+  margin-bottom: 0;
+}
+
+/* -----------------------------------------------------------------------------
+ * 4 · A MARCA DE ÁGUA DE UM CAMPO EM FALTA
+ * -----------------------------------------------------------------------------
+ * «O recibo é o boletim» (§4 da constituição): o boletim de voto declara o
+ * estado do documento por uma marca de água. Aqui a marca de água é a do campo
+ * que falta, e as suas palavras são as do MARCADOR — `[a verificar]`, a cadeia
+ * `POR_VERIFICAR` de `src/lib/ledger.mjs` —, nunca «POR CONFIRMAR»: o sítio tem
+ * uma só linguagem de incerteza (`IDENTIDADE.md` §6; desvio 4 do plano).
+ *
+ * A MARCA DE ÁGUA É FORMA, E O MARCADOR É A PALAVRA. O marcador continua rendido
+ * em texto, no campo, exactamente onde já estava e com a mesma marca de campo que
+ * o portão confere. A marca de água está `aria-hidden` e não é lida por ninguém:
+ * quem ouve a página ouve o marcador, uma vez, no sítio certo.
+ *
+ * DESENHA-SE A CONTORNO E NÃO A CHEIO, e é uma medição e não um gosto: `--g2`
+ * cheio por trás de texto a tinta é um fundo, e um fundo debaixo de uma prova
+ * torna a prova mais difícil de ler, que é o contrário do que o recibo existe
+ * para fazer. A contorno, a marca é peso de fio (`IDENTIDADE.md` §2: «distingue-se
+ * com peso de fio»), o par medido continua a ser `--g2` sobre papel, que já está
+ * na lista de `scripts/medir-contraste.mjs` como decoração, e nenhum par novo
+ * entra sem ser medido.
+ *
+ * O BLOCO INTEIRO VIVE DENTRO DE UM `@supports`, e é de propósito: onde o motor
+ * não souber desenhar o contorno, **nada se desenha**, e não se perde nada, porque
+ * o que a marca de água diz já está dito por palavras no campo. Uma forma que
+ * falha em silêncio é aceitável quando o significado não depende dela. */
+@supports (-webkit-text-stroke: 1px currentColor) {
+  .linha-bloco,
+  .aparelho-estado-incompleto,
+  .aparelho-ficha {
+    position: relative;
+  }
+  /* A CAIXA CORTA, E O QUE RODA É O TEXTO. A primeira versão rodava a caixa,
+     que tem o tamanho do bloco: os cantos de uma caixa rodada saem para fora
+     dela, e o `overflow: hidden` da própria caixa não os apanha porque a
+     transformação aplica-se depois do corte. Media-se 23px de transbordo a 320,
+     22px a 390 e 2px a 768 na linha com marcador, nas duas edições, contra 0 na
+     construção de referência. A caixa fica quieta e corta; o texto roda dentro
+     dela, num pseudo-elemento, e o corte passa a apanhá-lo.
+
+     O TEXTO CONTINUA A SER A CADEIA DO MARCADOR: vem de `data-marca`, que a
+     vista escreve de `POR_VERIFICAR`, e não de uma cadeia escrita na folha. */
+  .marca-agua {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+  }
+  .marca-agua::before {
+    content: attr(data-marca);
+    font-family: var(--f-instr);
+    font-size: clamp(26px, 3.4vw, 40px);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    white-space: nowrap;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--g2);
+    transform: rotate(-14deg);
+  }
+  /* O conteúdo do bloco fica por cima da marca, e não ao lado dela. */
+  .linha-bloco > *:not(.marca-agua),
+  .aparelho-estado-incompleto > *:not(.marca-agua),
+  .aparelho-ficha > *:not(.marca-agua) {
+    position: relative;
+    z-index: 1;
+  }
+  /* Na coluna do aparelho a marca é mais pequena, porque a coluna tem 300px e
+     uma marca do tamanho da do corpo sairia da caixa e seria cortada a meio. */
+  .aparelho .marca-agua::before {
+    font-size: 22px;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+ * 5 · TELEMÓVEL, 390 (`IDENTIDADE.md` §11 «Móvel»)
+ * -----------------------------------------------------------------------------
+ * Uma coisa por linha, e o valor, o título e o selo num só grupo visível, para
+ * que a porta nunca se separe do número que abre. O grupo é a cabeça: a
+ * sobrancelha, o valor com a unidade, o selo e o id, com o espaço apertado para
+ * que os quatro caibam no mesmo ecrã.
+ *
+ * O recorte rola dentro da sua caixa e não empurra a página: a imagem já é
+ * `width: 100%`, e o que falta é a caixa não deixar passar nada. */
+@media (max-width: 640px) {
+  .linha-cabeca {
+    gap: 6px;
+  }
+  .linha-valor {
+    gap: 4px 10px;
+  }
+  .linha-recorte {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  /* A tabela das verificações passa a uma coluna: «Lido a» por cima do dia, como
+     no impresso. Duas colunas em 390 deixam a segunda com 180px e a porta de
+     repetir a leitura parte-se a meio. */
+  .linha-verificacoes {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px 0;
+  }
+  .linha-verificacoes dt {
+    padding-top: 10px;
+    border-top: 1px solid var(--rule);
+  }
+  .linha-verificacoes dt:first-of-type {
+    padding-top: 0;
+    border-top: 0;
+  }
+  .linha-verificacoes dd {
+    padding-bottom: 8px;
+  }
+}

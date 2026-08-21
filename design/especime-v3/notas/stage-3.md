@@ -10,6 +10,7 @@ sessão custe uma subetapa. Sem travessões, por escolha deste documento.*
 | commit | subetapa | o quê |
 |---|---|---|
 | (abaixo) | 3-0 | as seis primeiras decisões da direção de 21.08: a descrição da primeira página, as peças sem anel, a porta do CSV, a contagem por parcelas, a nota da medida calculada, I26 e I27 |
+| (abaixo) | 3a | a página de linha como o recibo do boletim: a letra, os rótulos, a ficha como formulário, a marca de água do campo em falta, o acesso ao conjunto e esta linha noutro sítio |
 
 ---
 
@@ -328,3 +329,172 @@ estão medidas acima, cada uma pelo seu instrumento.
   `--peca-corpo-*` são declaradas em `.painel`. Uma subetapa que consuma esses
   componentes fora da primeira página tem de resolver isso, e não por cópia. Fica
   escrito aqui antes de a 3d chegar lá.
+
+---
+
+## 2. Subetapa 3a · a página de linha como o recibo
+
+O brief manda a disposição B, a ordem da `IDENTIDADE.md` §11, o vocabulário do
+boletim, a marca de água de um campo em falta, e **todas as portas de hoje
+preservadas**. A ordem e a disposição já eram as da §11 antes desta subetapa: o
+que ela faz é a FORMA, duas portas que a §11 pede ao aparelho e não estavam, e a
+marca de água.
+
+### 2.1 · O que já estava certo, e foi medido em vez de suposto
+
+A ordem do recibo, lida do documento construído
+(`tests/linha/recibo.mjs`, célula «3a · a ordem do recibo é a da §11»):
+
+```
+valor → selo → id → atribuicao → serie → prova → pedido → verificacoes → historico
+```
+
+A disposição é a B desde a v2 (`site.css`: `grid-template-columns: minmax(0, 68ch) 300px`),
+e não se mexeu.
+
+### 2.2 · A forma: `src/styles/linha.css`
+
+Folha nova, importada por `LinhaView.astro` e por mais lado nenhum. Entra depois
+de `site.css` no documento construído, e por isso o que lá está com a mesma
+especificidade ganha. Nenhuma regra de `site.css` foi tocada: o ficheiro é do
+construtor A.
+
+**Os rótulos passam a versaletes de Spectral SC.** A folha partilhada escrevia-os
+em Bitter caixa alta, contra a Emenda 5 e a `IDENTIDADE.md` §1 («Bitter em caixa
+alta só dentro dos instrumentos», e uma página de linha não é um instrumento), e
+em quatro tamanhos diferentes para a mesma coisa (10, 10,5, 9,5 e 10px). Passam a
+um só desenho, com a única diferença que tem significado: o rótulo de um BLOCO é
+tinta, o de um CAMPO é cinzento. É a parte do ISSUES **I15** que pertence a esta
+família de páginas.
+
+**A letra do que é transcrito.** O excerto, o campo devolvido, os endereços, os
+nomes de ficheiro, os resumos, as colunas, os filtros e os campos da ficha passam
+a Bitter; a prosa da casa (a frase de atribuição, as notas, a derivação por
+palavras) fica em Spectral. É a `IDENTIDADE.md` §1 e a §11, e é o produto: o que a
+fonte escreveu tem uma letra, o que a casa escreve tem outra. O excerto estava em
+Spectral, e um leitor não tinha como os distinguir.
+
+**A ficha do aparelho como formulário**: rótulo por cima, valor por baixo, filete
+fino de `--g3` entre campos. É o impresso oficial, e é o que faz a coluna ler-se
+como uma ficha e não como uma lista de parágrafos.
+
+**Medido no motor** (`tests/linha/recibo.mjs`, célula «3a · a letra»):
+
+```
+rótulos Spectral SC/Spectral SC/Spectral SC/Spectral SC
+transcrito Bitter/Bitter/Bitter/Bitter
+prosa Spectral/Spectral
+Bitter em caixa alta fora de instrumento: 0
+```
+
+### 2.3 · A marca de água de um campo em falta
+
+«O recibo é o boletim»: o boletim de voto declara o estado do documento por uma
+marca de água. Aqui a marca é a do CAMPO que falta, e as suas palavras são as do
+marcador, a cadeia `POR_VERIFICAR` de `src/lib/ledger.mjs`. **«POR CONFIRMAR» não
+entra**: o sítio tem uma só linguagem de incerteza (`IDENTIDADE.md` §6; desvio 4
+do plano).
+
+**A marca é forma, o marcador é a palavra.** Cada campo em falta continua a render
+`[a verificar]` em texto, com a sua marca `data-linha-*`, no sítio onde já estava,
+e é essa que o portão confere carácter a carácter. A marca de água está
+`aria-hidden` e não acrescenta uma palavra a quem ouve a página. Medido na linha
+com marcador: **3 marcas de água e 9 marcadores em texto**; na linha completa,
+**0 e 0**.
+
+**Desenha-se a contorno e não a cheio**, e é uma medição e não um gosto: `--g2`
+cheio por trás de texto a tinta é um fundo, e um fundo debaixo de uma prova torna
+a prova mais difícil de ler. A contorno, a marca é peso de fio
+(`IDENTIDADE.md` §2), e o par medido continua a ser `--g2` sobre papel, que já
+está na lista de `scripts/medir-contraste.mjs` como decoração: **nenhum par novo
+entra sem ser medido**, e nenhum entrou.
+
+**O bloco inteiro vive dentro de um `@supports (-webkit-text-stroke: …)`**, de
+propósito: onde o motor não souber desenhar o contorno, nada se desenha, e não se
+perde nada, porque o que a marca de água diz já está dito por palavras no campo.
+
+**Ela entra no bloco que contém o campo em falta, e em mais lado nenhum.** Uma
+marca por cima do recibo inteiro diria que o documento inteiro está por confirmar,
+e não está: o que falta são campos, um a um, em 8 linhas de 132.
+
+**Um defeito desta subetapa, apanhado e fechado nela** (ISSUES **I39**): a
+primeira versão rodava a CAIXA da marca, e os cantos de uma caixa rodada saem para
+fora dela sem o `overflow: hidden` os apanhar, porque a transformação se aplica
+depois do corte. Medido: **23px** de transbordo a 320, **22px** a 390, **2px** a
+768 na linha com marcador, nas duas edições, contra **0** na construção de
+referência. A caixa fica quieta e corta; o que roda é o texto, num `::before` cujo
+conteúdo vem de `data-marca`. Medido depois: **30 de 30** combinações a zero.
+
+### 2.4 · As duas portas que a §11 pede ao aparelho e não estavam
+
+**«O acesso aos dados» ganha o conjunto.** Tinha a porta do JSON da própria linha;
+passa a ter também o CSV e o JSON do conjunto inteiro, os mesmos dois ficheiros
+que o índice do livro-razão oferece e sob a mesma licença. Quem confere uma linha
+muitas vezes quer o conjunto, e a §11 põe «o acesso aos dados» no aparelho.
+
+**«Esta linha noutro sítio»**, que é o que a §11 e o `design/DECISAO.md` escrevem
+a seguir. **É uma chamada editorial, e vai assinalada em vez de decidida**: os dois
+documentos não dizem que sítio é, as superfícies onde um valor rende não estão
+indexadas em lado nenhum deste repositório, e escrever essa lista à mão seria
+inventá-la. O que existe, para todas as 132 linhas e sem excepção, é a mesma linha
+na outra edição, e é isso que rende. Se o lugar de direção quiser em vez disso o
+índice das páginas que citam a linha, é um pedido ao motor e não uma cadeia.
+
+### 2.5 · O telemóvel, 390
+
+Uma coisa por linha, e o valor, o selo e o id num só grupo visível. Medido:
+**grupo de 91px**, o selo por baixo do valor, os três dentro da janela, a cabeça a
+354px. A tabela das verificações passa a uma coluna com filete entre campos: a
+duas colunas, a segunda ficava com 180px e a porta de repetir a leitura partia-se
+a meio. O recorte cabe na sua caixa: **caixa 354px, imagem 354px, transbordo 0**.
+
+### 2.6 · As portas do recibo, uma a uma
+
+**O que o portão prova, e prova a cada construção** (`gate:html`, `check:dados`,
+`ledger:check`; as mensagens de estrago plantado estão em `DECISIONS.md` §1.47):
+
+| porta ou bloco | o que o portão exige |
+|---|---|
+| o recorte com «Abrir na página N» | a imagem só na página da sua linha, o nome `recortes/<id>.webp`, os bytes contra o resumo da linha, a legenda com `document.crop.page`, e **uma linha que tem recorte tem de o mostrar** |
+| o ficheiro alojado, a licença e a atribuição | a porta obrigatória onde o campo existe e proibida onde não existe, e os três campos escritos |
+| `document.computed_over` | a coluna, o filtro e **todos** os ficheiros nomeados |
+| as cópias arquivadas dentro de «Calculado sobre» | nos dois sentidos, e **só** quando `archived.digest_match` é verdadeiro |
+| a página humana da série | obrigatória onde `document.url` existe |
+| as verificações | o conjunto rendido são as duas mais recentes, pela ordem, com os atributos crus e os rótulos contra a cópia própria do portão |
+| o `<head>` composto da linha | `<title>`, `<meta name="description">`, `og:title` e `og:description` recompostos do livro-razão e comparados |
+| o selo do valor de cabeça | âncora com o `href` da própria linha, e a etiqueta é a daquela linha |
+| a porta das correções | exactamente **uma** por página construída |
+| toda a ligação interna | resolvida contra `dist/`, e a âncora existe no destino |
+
+**O que o portão NÃO prova, e por isso foi medido sobre `dist/`**, nas 264 páginas
+de linha:
+
+| porta | medição |
+|---|---|
+| «Esta linha em JSON», a do próprio ficheiro da linha | **264 de 264** |
+| as duas portas do conjunto (CSV e JSON) | **264 de 264** |
+| «Esta linha noutro sítio», a outra edição | **264 de 264** |
+| a porta da página do marcador, só nas incompletas | **16**, que são as 8 linhas incompletas nas duas edições |
+| a porta das correções, uma por página | **264 de 264** (e o portão conta a mesma coisa por outro caminho) |
+| o bloco do histórico da linha | **264 de 264** |
+| o selo de cabeça como âncora `#prova` | **264 de 264** |
+| o alvo do selo de cabeça | **52,5 × 44px**, sem antepassado que seja `<a>` ou `<button>` |
+
+**E a prova mais forte de que nada saiu**: a régua da invariância contra a
+construção de referência dá, nas 264 páginas de linha, **+4 −0 em todas as 264**.
+Nada foi retirado de nenhuma; o que entrou são as quatro cadeias novas do
+aparelho (`CSV`, `JSON`, «Esta linha noutro sítio», «Esta linha na edição inglesa
+→», e os seus pares ingleses).
+
+### 2.7 · As réguas da 3a
+
+```
+node tests/linha/recibo.mjs   →  9 de 9 células passam
+node scripts/medir-invariancia.mjs <ref df76a5f> dist
+   322 rotas · 54 idênticas · 268 com diferenças
+     264 páginas de linha        +4 −0 em todas
+       2 índices dos concelhos   +21 −0   (do commit 3-0)
+       2 páginas de concelho     +0 −1    (do commit 3-0)
+```
+
+As 268 fecham sem sobra: 264 + 2 + 2. Cinco portões verdes.
