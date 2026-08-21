@@ -98,7 +98,6 @@ export const STRINGS = {
       estudo: 'Estudo',
       afirmacao: 'Afirmação',
       naoPublicado: 'Valor calculado, não publicado',
-      verLinha: 'Linha do livro-razão',
       /* Quando o endereço da linha é um ponto de acesso de dados e não um
          documento. Uma série não é um documento, um pedido não é um endereço
          de leitura, e o que a resposta traz é um campo — não uma frase que se
@@ -161,10 +160,18 @@ export const STRINGS = {
      * escrito para o sítio onde o leitor está mais perto de um erro, e é esse
      * o sítio onde tem de estar em todo o lado. Ver DECISIONS §1.36, item 1.
      */
+    /**
+     * A PORTA DAS CORREÇÕES, REDUZIDA (Emenda 17, 21.08.2026).
+     *
+     * «A porta das correções reduz-se a "Encontrou um erro?
+     * correcoes@oestadodopais.pt · O registo de correções →"; a frase da
+     * política vive em /correcoes.» A frase que saiu — «Um erro confirmado entra
+     * no registo de correções e na própria linha, com o valor antigo à vista.
+     * Nada é apagado.» — era a política do sítio dita em 307 páginas, e a página
+     * das correções di-la inteira, com as três naturezas e o registo.
+     */
     porta: {
-      k: 'Encontrou um erro',
-      v: 'Escreva para ',
-      w: '. Um erro confirmado entra no registo de correções e na própria linha, com o valor antigo à vista. Nada é apagado.',
+      k: 'Encontrou um erro?',
       link: 'O registo de correções',
     },
 
@@ -337,11 +344,6 @@ export const STRINGS = {
       leitura: 'Leitura breve',
       abrir: 'abrir',
       fechar: 'fechar',
-      /* Sem JavaScript o comando de densidade não muda a página inteira, e a
-         página di-lo em vez de deixar um comando a não fazer nada. Cada medida
-         continua a abrir-se sozinha, porque a peça é um `<details>` nativo. */
-      semJs:
-        'Sem JavaScript, este comando não muda a página inteira: cada medida abre-se na sua própria linha.',
     },
 
     inicio: {
@@ -398,75 +400,33 @@ export const STRINGS = {
         abrirConcelho: 'Abrir um concelho',
         verRegiao: 'Ver uma região',
         seloDaEscolha: 'Abrir a escolha de concelho',
-        /* A frase inteira voltou na 2h, porque o gesto voltou. A 2g aparou-lhe a
-           primeira metade («um toque no mapa devolve os concelhos mais
-           próximos») por ela prometer o que a página tinha deixado de fazer: a
-           lista de proximidade e a regra da caixa vazia estavam a descrever o
-           MESMO estado, e ficou a da prancha. A 2h separa os dois estados — sem
-           toque, Évora e o concelho escolhido; depois de um toque no selo, os
-           mais próximos do sítio tocado —, e com dois estados as duas metades da
-           frase são verdadeiras ao mesmo tempo: os pontos continuam a não ser
-           alvos, e o mapa inteiro continua a ser um. */
-        proximos:
-          'Um toque no mapa devolve os concelhos mais próximos, para escolher. No telemóvel os pontos não são alvos: a pesquisa é o caminho.',
-      },
-
-      peca: {
-        /* A linha do limiar da peça é a da célula da v2, movida sem mudar uma
-           palavra (relocação R1): «limiar 60% · acima». O algarismo continua
-           debaixo do motivo `limiar-do-quadro` e a palavra continua a ser
-           derivada de dois números que já existem. */
-        recibo: 'o recibo completo está na linha',
-        semReferencia: 'Sem referência publicada: não há barra a desenhar.',
       },
 
       portas: {
-        k: 'As páginas · o resto vive a uma porta',
+        /* O nome da região de navegação, e só se ouve. A legenda visível («As
+           páginas · o resto vive a uma porta») saiu com a Emenda 15: três portas
+           de uma linha cada não precisam de uma frase a dizer que são portas. */
+        rotulo: 'As páginas',
         abrir: 'a página inteira',
+        concelhos: ' concelhos',
         estudosA: ' trabalhos · ',
         estudosB: ' edições',
       },
 
-      vazio: {
-        explicaA: 'Nenhuma medida foi lida para ',
-        explicaB:
-          '. As fontes que publicam para todos os concelhos do país permitem que as mesmas medidas existam aqui, com a mesma prova, no dia em que forem lidas.',
-      },
-
       mapa: {
-        /* «<n> de <total> concelhos · tem página». As duas contagens entram por
-           `data-prova`, e a palavra de cobertura é uma das duas do vocabulário. */
-        coberturaA: ' de ',
-        coberturaB: ' concelhos · ',
-        contagemK: 'Contagem verificada nos ficheiros',
-        continente: 'Continente',
+        /* A LINHA DA EMENDA 17, por baixo do mapa: «308 concelhos · CAOP 2025 ■
+           fonte». Nomeia o que a coisa é — a contagem, a Carta e o ano —, e mais
+           nada. «Contagem verificada nos ficheiros» era o que a casa fez, e saiu
+           com a Emenda 15. */
+        linha: ' concelhos · CAOP ',
         acores: 'Açores',
         madeira: 'Madeira',
-        total: 'Total',
-        naoDizK: 'O que o mapa não diz',
-        /* A FRASE DE NEUTRALIDADE, REESCRITA PELA EMENDA 10 (21.08.2026).
-           Dizia «O ponto aceso marca cobertura editorial, não qualidade nem
-           importância. Os restantes pontos marcam a posição do município e mais
-           nada.» — e a partir do momento em que nenhum ponto vem aceso, uma
-           frase que começa por nomear «o ponto aceso» descreve um desenho que a
-           página não faz. A cobertura passou a dizer-se por palavras, ao lado do
-           mapa e na lista; o mapa passou a dizer uma coisa só, que é onde cada
-           concelho fica. A frase diz agora essa coisa, e continua a dizer o que
-           ela NÃO é, que era o trabalho da frase antiga. */
-        posicao:
-          'Os pontos são todos iguais e marcam a posição de cada concelho na Carta Administrativa, e mais nada: não marcam cobertura, qualidade nem importância.',
         escolher: 'Toque num ponto para escolher o concelho.',
         readoutHint: 'Passe o cursor sobre um ponto para ler o município.',
         tecladoHint:
           'Teclado: Tab até ao mapa, setas para percorrer os municípios vizinhos, Home para voltar a Évora.',
         svgLabel:
           'Mapa de pontos dos municípios de Portugal. Use as setas para percorrer os municípios.',
-        /* O rótulo da camada de fundo do instrumento n.º 2 da v2, relocado com
-           a sua secção (R3) e sem uma palavra mudada. É debaixo dele que a
-           citação inteira da CAOP, a porta do CSV e as duas dicas passam a
-           viver, para que a ficha ao lado do mapa deixe de mandar na altura da
-           cabeça (subetapa 2g, ponto 2). */
-        deepTitulo: 'Método, ressalvas e proveniência',
         trocar: 'trocar de concelho',
         paginaInteira: 'a página inteira, com quem governou',
       },
@@ -476,8 +436,13 @@ export const STRINGS = {
           'A régua da convergência · UE-27 = ',
           { nl: '100', motivo: 'escala-de-instrumento' },
         ],
-        naoSeDesenham:
-          'As regiões não se desenham em pontos de concelho: a régua é o instrumento do âmbito regional. O mapa volta quando o âmbito é um município.',
+        /* O nome acessível do desenho. Era a frase «As regiões não se desenham
+           em pontos de concelho…», que a Emenda 15 retirou por ser a casa a
+           explicar o desenho; um `role="img"` sem nome é uma imagem que um
+           leitor de ecrã anuncia sem saber dizer o que é. O nome diz o que a
+           coisa é, e não porque é assim. Sem algarismos: a escala está escrita
+           no rótulo, que é onde ela é conferida. */
+        svgLabel: 'Régua da convergência: o PIB per capita de cada região contra a média europeia.',
       },
 
       /**
@@ -590,21 +555,14 @@ export const STRINGS = {
         svgTitulo: 'Régua de convergência: índice de PIB per capita em PPS, UE-27 = 100',
         svgDescricao:
           'Uma escala horizontal com a média da UE-27 marcada em 100. Cada região selecionada aparece como um marcador na régua, com o seu valor.',
-        deepTitulo: 'Método, ressalvas e proveniência',
-        dadosK: 'Os dados desta régua',
-        dadosV:
-          'Uma linha por região posta na régua: o valor tal como foi publicado, o ano a que se refere, a unidade, o estudo e o id da afirmação no livro-razão. O ficheiro é gerado do livro-razão a cada construção; não é uma cópia mantida à parte.',
-        significadoK: 'O que o número quer dizer',
+        /* A dobra «Método, ressalvas e proveniência» saiu com a Emenda 15, e
+           com ela nove cadeias: o seu título, «Os dados desta régua» e a frase
+           que dizia que o ficheiro é gerado a cada construção, «O que o número
+           quer dizer», «Ressalva», «Distâncias» e a sua frase, «Proveniência», e
+           a linha «Sem JavaScript, a régua mostra Portugal». Fica a frase que
+           diz o que o índice compara, que é o que a régua É. */
         significadoV:
           'O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27. Um valor abaixo da média significa menos poder de compra por pessoa; um valor acima, mais.',
-        ressalvaK: 'Ressalva',
-        ressalvaPartes: ['O valor de ', { ref: '2024' }, ' para Portugal é provisório.'],
-        distanciasK: 'Distâncias',
-        distanciasV:
-          'As diferenças em pontos que a régua desenha são calculadas a partir dos valores publicados. São aritmética sobre esses valores, não valores publicados em si. Cada uma tem a sua própria linha no livro-razão, com a conta explicada.',
-        provenienciaK: 'Proveniência',
-        semJs:
-          'Sem JavaScript, a régua mostra Portugal. Os comandos acrescentam regiões à mesma régua.',
       },
 
 
@@ -1062,7 +1020,6 @@ export const STRINGS = {
       estudo: 'Study',
       afirmacao: 'Claim',
       naoPublicado: 'Calculated value, not published',
-      verLinha: 'Ledger row',
       serie: 'Series',
       pedido: 'Request',
       campoDevolvido: 'Field returned',
@@ -1094,9 +1051,7 @@ export const STRINGS = {
     },
 
     porta: {
-      k: 'Found an error',
-      v: 'Write to ',
-      w: '. A confirmed error enters the corrections log and the row itself, with the old value still visible. Nothing is deleted.',
+      k: 'Found an error?',
       link: 'The corrections log',
     },
 
@@ -1229,8 +1184,6 @@ export const STRINGS = {
       leitura: 'Brief reading',
       abrir: 'open',
       fechar: 'close',
-      semJs:
-        'Without JavaScript this control does not change the whole page: each measure opens on its own row.',
     },
 
     inicio: {
@@ -1268,46 +1221,26 @@ export const STRINGS = {
         abrirConcelho: 'Open a concelho',
         verRegiao: 'See a region',
         seloDaEscolha: 'Open the concelho chooser',
-        proximos:
-          'Tapping the map returns the nearest concelhos to choose from. On a phone the points are not targets: the search is the way.',
-      },
-
-      peca: {
-        recibo: 'the full receipt is on the row',
-        semReferencia: 'No published reference: there is no bar to draw.',
       },
 
       portas: {
-        k: 'The pages · the rest is one door away',
+        rotulo: 'The pages',
         abrir: 'the whole page',
+        concelhos: ' concelhos',
         estudosA: ' works · ',
         estudosB: ' editions',
       },
 
-      vazio: {
-        explicaA: 'No measure has been read for ',
-        explicaB:
-          '. The bodies that publish for every concelho in the country make it possible for the same measures to exist here, with the same proof, the day they are read.',
-      },
-
       mapa: {
-        coberturaA: ' of ',
-        coberturaB: ' concelhos · ',
-        contagemK: 'Count verified in the files',
-        continente: 'Mainland',
+        linha: ' concelhos · CAOP ',
         acores: 'Azores',
         madeira: 'Madeira',
-        total: 'Total',
-        naoDizK: 'What the map does not say',
-        posicao:
-          'The points are all alike and mark where each concelho sits on the official administrative map, and nothing else: they do not mark coverage, quality or importance.',
         escolher: 'Tap a point to choose the concelho.',
         readoutHint: 'Hover over a point to read the municipality.',
         tecladoHint:
           'Keyboard: Tab to the map, arrow keys to move between neighbouring municipalities, Home to return to Évora.',
         svgLabel:
           'Point map of the municipalities of Portugal. Use the arrow keys to move between municipalities.',
-        deepTitulo: 'Method, caveats and provenance',
         trocar: 'change concelho',
         paginaInteira: 'the whole page, with who governed it',
       },
@@ -1317,8 +1250,7 @@ export const STRINGS = {
           'The convergence rule · EU-27 = ',
           { nl: '100', motivo: 'escala-de-instrumento' },
         ],
-        naoSeDesenham:
-          'Regions are not drawn as concelho points: the rule is the instrument of the regional scope. The map returns when the scope is a municipality.',
+        svgLabel: 'Convergence rule: GDP per capita of each region against the European average.',
       },
 
       social: {
@@ -1383,21 +1315,8 @@ export const STRINGS = {
         svgTitulo: 'Convergence rule: GDP per capita index in PPS, EU-27 = 100',
         svgDescricao:
           'A horizontal scale with the EU-27 average marked at 100. Each selected region appears as a marker on the rule, with its value.',
-        deepTitulo: 'Method, caveats and provenance',
-        dadosK: 'The data behind this rule',
-        dadosV:
-          'One row per region placed on the rule: the value exactly as published, the year it refers to, the unit, the study and the id of the ledger row. The file is generated from the ledger at every build; it is not a copy kept on the side.',
-        significadoK: 'What the figure means',
         significadoV:
           'The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 average. A value below the average means less purchasing power per person; a value above it, more.',
-        ressalvaK: 'Caveat',
-        ressalvaPartes: ['The ', { ref: '2024' }, ' value for Portugal is provisional.'],
-        distanciasK: 'Distances',
-        distanciasV:
-          'The point differences the rule draws are calculated from the published values. They are arithmetic on those values, not published values themselves. Each has its own ledger row, with the sum spelled out.',
-        provenienciaK: 'Provenance',
-        semJs:
-          'Without JavaScript, the rule shows Portugal. The controls add regions to the same rule.',
       },
 
 

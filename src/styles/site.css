@@ -732,7 +732,6 @@ a.src-chip::after {
    nestes sete lugares a área é a unidade, e a nota da etapa diz quantos selos
    ficam por alargar e onde. Medido depois desta regra: zero pares de áreas
    sobrepostas em `/`, `/livro-razao/divida-publica-2025` e `/municipios/evora`. */
-.compo-n a.src-chip::after,
 .figura a.src-chip::after,
 .glance a.src-chip::after,
 .brief-text a.src-chip::after,
@@ -1304,68 +1303,7 @@ a.src-chip.is-unverified:hover::before {
   gap: 22px;
   align-content: start;
 }
-.compo {
-  display: grid;
-  gap: 9px;
-}
-.compo-k {
-  font-family: var(--f-instr);
-  font-variant-numeric: tabular-nums lining-nums;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--muted);
-  padding-bottom: 3px;
-}
-.compo-row,
-.compo-tot {
-  display: grid;
-  grid-template-columns: 9ch 1fr 4ch;
-  gap: 10px;
-  align-items: center;
-}
-.compo-l {
-  font-family: var(--f-instr);
-  font-variant-numeric: tabular-nums lining-nums;
-  font-size: 11px;
-  color: var(--muted);
-  letter-spacing: 0.02em;
-}
 /* A calha é cinzenta, o preenchimento é tinta. */
-.compo-bar {
-  display: block;
-  height: 7px;
-  background: var(--g3);
-}
-/* A ARESTA DESENHADA DEIXOU DE SER PRECISA, e é o resultado da mudança de cor.
-   Na v2 o preenchimento era amarelo sobre a calha e media 1,65:1: quem lia a
-   barra lia uma coisa só, até onde ia o amarelo, e 1,65:1 não chega para isso.
-   A saída era desenhar-lhe a aresta direita a `--muted`. Agora o preenchimento
-   é tinta sobre uma calha de `--g3` e mede 12,84:1: a aresta seria uma linha
-   escura dentro de um bloco escuro. O par medido está na lista da régua. */
-.compo-bar i {
-  display: block;
-  height: 100%;
-  background: var(--ink);
-}
-.compo-n {
-  font-family: var(--f-instr);
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--ink);
-  font-variant-numeric: tabular-nums lining-nums;
-  text-align: right;
-}
-.compo-tot {
-  border-top: 1px solid var(--rule);
-  padding-top: 8px;
-  margin-top: 1px;
-}
-.compo-tot .compo-l {
-  color: var(--ink);
-}
-
 .cover-num {
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;
@@ -3863,14 +3801,10 @@ a.quadro-estados-col:hover .quadro-estados-e {
    A regra `flex-wrap: wrap` que vivia aqui governava a caixa flexível que ele
    já não é, e uma regra que não governa nada engana quem a lê. */
 
-/* AS BARRAS DE COMPOSIÇÃO, a 390px. A coluna do número tinha 4ch, que chega
-   para «308» e não chega para «308 · fonte · [a verificar]»: o selo saía da
-   célula e levava a página com ele. Num ecrã estreito a coluna do número passa
-   a ter a largura de que precisa, e é a barra que encolhe. */
-@media (max-width: 560px) {
-  .compo-row,
-  .compo-tot {
-    grid-template-columns: minmax(0, 7ch) minmax(0, 1fr) auto;
-    gap: 8px;
-  }
-}
+/* AS BARRAS DE COMPOSIÇÃO SAÍRAM DA FOLHA (etapa 2l). Desenhavam o quadro das
+   três parcelas da CAOP, ao lado do mapa da primeira página, e a Emenda 17
+   mandou essa contagem para `/municipios`: nenhuma página construída rende hoje
+   um `.compo` (conferido no `dist`, com controlo positivo). Uma regra sem
+   elemento mente sobre o que a folha desenha, e é a mesma razão que tirou a
+   `.method-line` na Emenda 11. Quando `/municipios` desenhar as parcelas, a
+   etapa 3 escreve as regras que precisar. */

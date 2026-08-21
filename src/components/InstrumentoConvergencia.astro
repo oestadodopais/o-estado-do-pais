@@ -297,7 +297,6 @@ for (const r of REGIOES) {
         </span>
       ))
     }
-    <p class="map-hint" data-sem-js>{s.home.instr1.semJs}</p>
   </div>
 
   {/* --------------------------------------------------------------------
@@ -317,53 +316,33 @@ for (const r of REGIOES) {
       precisamente por isso — renomeá-las aqui daria três nomes à mesma coisa em
       três vistas, e o nome a mudar era o da dobra.
       -------------------------------------------------------------------- */}
-  <details class="aparelho">
-    <summary>{s.home.instr1.deepTitulo}</summary>
-    <div class="deep-body">
-      <div class="deep-item">
-        <div class="deep-k">{s.home.instr1.significadoK}</div>
-        <p class="deep-v">{s.home.instr1.significadoV}</p>
-      </div>
-      <div class="deep-item">
-        <div class="deep-k">{s.home.instr1.ressalvaK}</div>
-        <p class="deep-v"><Frase partes={s.home.instr1.ressalvaPartes} lang={lang} /></p>
-      </div>
-      <div class="deep-item">
-        <div class="deep-k">{s.home.instr1.distanciasK}</div>
-        <p class="deep-v">{s.home.instr1.distanciasV}</p>
-      </div>
-      <div class="deep-item">
-        <div class="deep-k">{s.home.instr1.dadosK}</div>
-        <p class="deep-v">{s.home.instr1.dadosV}</p>
-        <p><a class="ligacao-dados" href={DADOS.convergencia} download>{s.home.dadosLink} ↓</a></p>
-      </div>
-      <div class="deep-item">
-        <div class="deep-k">{s.home.instr1.provenienciaK}</div>
-        <div class="prov">
-          {
-            [...porEstudo.entries()].map(([estudo, linhas]) => (
-              <div class="prov-row">
-                <span class="prov-study" data-nonledger="proveniencia">{studyLabel(estudo, lang)}</span>
-                <span class="prov-vals">
-                  {linhas.map((l, i) => (
-                    <>
-                      {i > 0 ? ' · ' : ''}
-                      {l.nome} <Claim id={l.claimId} lang={lang} chip={true} />
-                      {l.historico ? <> (<span data-nonledger="data-de-referencia">2000</span>: <Claim id={l.historico} lang={lang} chip={true} />)</> : null}
-                    </>
-                  ))}
-                  {' · '}
-                  {lang === 'pt' ? 'PIB per capita vs UE-27, PPS, dados de ' : 'GDP per capita vs EU-27, PPS, data for '}
-                  <span data-nonledger="data-de-referencia">2024</span>
-                  {lang === 'pt' ? ', provisório' : ', provisional'}
-                </span>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </div>
-  </details>
+  {/* ------------------------------------------------------------------------
+      A CAMADA DE APARELHO SAIU (Emenda 15, 21.08.2026)
+      ------------------------------------------------------------------------
+      «Revoga … as legendas de aparelho nas páginas de leitura.» A dobra
+      chamava-se «Método, ressalvas e proveniência» e levava cinco itens. Três
+      eram a casa a falar de si: «Distâncias» («as diferenças que a régua desenha
+      são calculadas a partir dos valores publicados…»), «Os dados desta régua»
+      («o ficheiro é gerado do livro-razão a cada construção; não é uma cópia
+      mantida à parte») e a linha «Sem JavaScript, a régua mostra Portugal». O
+      método vive no Método; o recibo de cada valor vive na sua linha, e o selo
+      é a porta.
+
+      O que fica é o que a régua É: a frase que diz o que o índice compara. A
+      ressalva do valor provisório não se perde — desde a 2k a palavra
+      «provisório» viaja ao lado de cada valor marcado pela fonte, na entrada de
+      legenda daquele valor. A legenda de proveniência da dobra também não faz
+      falta: os selos dos valores desenhados vivem em `.brief`
+      (`data-legenda-selos`), que é onde o portão os procura.
+
+      A PORTA DO CSV FICA, pela mesma razão da do mapa:
+      `scripts/check-dados.mjs` exige que as duas edições da primeira página
+      liguem os dois ficheiros. Fica como ligação, sem a frase que a explicava.
+      ---------------------------------------------------------------------- */}
+  <p class="conv-significado">{s.home.instr1.significadoV}</p>
+  <p class="conv-dados">
+    <a class="ligacao-dados" href={DADOS.convergencia} download>{s.home.dadosLink} ↓</a>
+  </p>
 
   <script type="application/json" data-ledger-json data-dados="convergencia" set:html={ilhaJson} />
 </div>

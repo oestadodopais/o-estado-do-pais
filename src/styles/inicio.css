@@ -295,11 +295,18 @@
 
 /* ---------------------------------------------------------------------- mapa */
 
+/* O MAPA À DIREITA, E UMA LINHA POR BAIXO (Emenda 17, 21.08.2026).
+   Era uma grelha de duas colunas — o mapa e a sua ficha ao lado — e era a ficha
+   que mandava na largura: a 1024 sobravam-lhe 41px e a página transbordava 82.
+   Com a ficha reduzida a uma linha, o mapa deixa de ter vizinho e a coluna que
+   ele precisa é a sua própria largura, 281px. É isso que deixa a cabeça caber
+   em duas colunas a partir de 1024, como a emenda manda, e não a partir de
+   1180. */
 .mapa {
   margin: 0;
   display: grid;
-  grid-template-columns: 281px minmax(0, 1fr);
-  column-gap: 18px;
+  grid-template-columns: minmax(0, 281px);
+  row-gap: 8px;
   align-items: start;
 }
 .mapa-tela {
@@ -342,27 +349,14 @@
   outline-offset: 2px;
 }
 
-.mapa-ficha {
+.mapa-linha {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 4px;
 }
-.mapa-titulo {
-  font-family: var(--f-instr);
-  font-variant-numeric: tabular-nums lining-nums;
-  font-size: 13px;
-  letter-spacing: 0.02em;
-  color: var(--ink);
-}
-.mapa-neutro {
-  font-size: 13.5px;
-  line-height: 1.5;
-  color: var(--muted);
-}
-.mapa-fonte,
-.mapa-fonte-curta,
-.mapa-dados,
+.mapa-linha-fonte,
+.mapa-linha-dados,
 .mapa-hint,
 .mapa-leitura {
   font-family: var(--f-instr);
@@ -370,59 +364,6 @@
   font-size: 11.5px;
   line-height: 1.5;
   color: var(--muted);
-}
-
-/* ------------------------------------------------- a camada do aparelho do mapa
- *
- * Subetapa 2g, ponto 2: a citação inteira da CAOP, a porta do CSV e as duas
- * dicas de uso desceram para aqui, e a ficha ao lado do mapa ficou com a
- * cobertura, a neutralidade, as contagens por parcela e uma linha de fonte. Era
- * a ficha que mandava na altura da cabeça, e a cabeça é a primeira coisa que se
- * lê.
- */
-.mapa-aparelho {
-  grid-column: 1 / -1;
-  border-top: 1px solid var(--rule);
-  padding-top: 8px;
-}
-.mapa-aparelho-sum {
-  font-family: var(--f-versal);
-  font-size: 12.5px;
-  letter-spacing: 0.05em;
-  font-weight: 600;
-  color: var(--ink);
-  cursor: pointer;
-  list-style: none;
-  min-height: 28px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.mapa-aparelho-sum::-webkit-details-marker {
-  display: none;
-}
-.mapa-aparelho-sum::before {
-  content: '▸';
-  font-size: 10px;
-}
-.mapa-aparelho[open] .mapa-aparelho-sum::before {
-  content: '▾';
-}
-.mapa-aparelho-corpo {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-  padding: 8px 0 4px 0;
-}
-
-/* As TRÊS dicas descrevem o que só é verdade onde o mapa escolhe pontos: na
-   secretária, com o mapa inteiro e com script. O `hidden` do servidor cobre o
-   caso sem script; estas duas regras cobrem o telemóvel e o localizador. A
-   terceira — «Toque num ponto para escolher o concelho» — juntou-se-lhes na
-   subetapa 2h, e é ISSUES I21. */
-[data-postura='localizador'] .mapa-dicas,
-[data-postura='localizador'] .mapa-hint[data-hint-escolher] {
-  display: none;
 }
 
 .mapa-cartao-texto {
@@ -455,14 +396,10 @@
   column-gap: 18px;
   align-items: center;
 }
-[data-postura='localizador'] .mapa-aparelho {
-  display: none;
-}
 .mapa-cartao-nome {
   font-size: 19px;
   font-weight: 500;
 }
-.mapa-cartao-cobertura,
 .mapa-cartao-selo,
 .mapa-cartao-portas {
   font-family: var(--f-instr);
@@ -474,11 +411,6 @@
    cadeia da ficha e o mesmo cinzento (`--muted` é `--g1`, o texto secundário
    que a etapa 1c já mede); o que muda é o corpo, porque aqui ela acompanha um
    mapa de 170px e não um de 281px. */
-.mapa-cartao-neutro {
-  font-size: 12px;
-  line-height: 1.45;
-  color: var(--muted);
-}
 .mapa-cartao-portas {
   display: flex;
   flex-direction: column;
@@ -555,12 +487,6 @@
   font-size: 12px;
   color: var(--muted);
 }
-.banda-nota {
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--muted);
-  max-width: 70ch;
-}
 
 /* Um `hidden` dentro de um SVG não é honrado por todos os motores: a folha
    escreve-o, para que a troca de estado seja a mesma dos dois lados. */
@@ -606,36 +532,29 @@ svg [hidden] {
  * coluna e o mapa inteiro tem 942px de largura disponível para se desenhar ao
  * lado da sua ficha; encolhê-lo para 170px aí seria resolver um problema que já
  * não existe. */
-@media (max-width: 1179.98px) {
+@media (max-width: 1023.98px) {
   .cabeca-grelha {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 22px;
   }
 }
 
-@media (max-width: 900px) {
-  .mapa {
-    grid-template-columns: 170px minmax(0, 1fr);
-  }
-  .mapa-tela {
-    width: 170px;
-  }
-}
+/* A REGRA DOS 900 SAIU COM A FICHA. Encolhia o mapa para 170px porque a ficha
+   precisava do resto da largura; sem ficha ao lado, o mapa fica nos seus 281px
+   em qualquer largura acima de 640. */
 
-/* Abaixo de 640 a ficha deixa de caber ao lado do mapa: o conteúdo mínimo da
-   ficha (a contagem por parcela, com o selo) é mais largo do que a coluna que
-   sobra, e o que transbordava era a página inteira, medido em 400px de
-   `scrollWidth` para 390 de janela. Empilha-se. */
+/* Abaixo de 640 o mapa toma a largura toda da coluna, como o resto da cabeça. */
 @media (max-width: 640px) {
   .mapa {
     grid-template-columns: minmax(0, 1fr);
-    row-gap: 14px;
+    row-gap: 8px;
   }
-  /* As três dicas do mapa não se escrevem onde o mapa não escolhe pontos: no
-     telemóvel o selo inteiro é o alvo e nenhum ponto é alvo (Emenda 3). A
-     terceira é ISSUES I21, e entrou na subetapa 2h. */
-  .mapa-dicas,
-  .mapa-hint[data-hint-escolher] {
+  /* Duas das três dicas descrevem gestos que abaixo de 640 não existem: não há
+     cursor, e nenhum ponto é alvo (Emenda 3). Ficam fora da árvore, e com elas
+     fora da descrição do mapa. A do TECLADO fica: um teclado liga-se a qualquer
+     aparelho, e o mapa continua a responder-lhe. */
+  .mapa-descricao .mapa-hint[data-dica-cursor],
+  .mapa-descricao .mapa-hint[data-hint-escolher] {
     display: none;
   }
 }
@@ -741,15 +660,6 @@ svg [hidden] {
   color: var(--muted);
   padding-top: 4px;
 }
-/* A frase que explica o estado vazio ocupa a largura da grelha e fica por cima
-   das oito peças: é ela que diz o que elas são. Não é uma célula e não leva
-   fio. */
-.painel > .vazio-texto {
-  grid-column: 1 / -1;
-  max-width: 46em;
-  padding-bottom: 14px;
-}
-
 .peca-topo {
   display: flex;
   align-items: center;
@@ -880,14 +790,9 @@ svg [hidden] {
   gap: 10px;
   padding-top: 8px;
 }
-.peca-sem-regua {
-  font-family: var(--f-instr);
-  font-size: 11.5px;
-  color: var(--muted);
-}
 
-/* O pé: o selo, sozinho na sua linha e sem nada à volta que seja alvo. Aberta a
-   peça, o pé ganha à frente as palavras do recibo. */
+/* O pé: o selo, sozinho na sua linha e sem nada à volta que seja alvo. A linha
+   do recibo saiu com a Emenda 15. */
 .peca-pe {
   margin-top: auto;
   padding-top: 8px;
@@ -895,15 +800,6 @@ svg [hidden] {
   align-items: baseline;
   gap: 8px;
   flex-wrap: wrap;
-}
-.peca-recibo {
-  display: none;
-  font-family: var(--f-instr);
-  font-size: 11.5px;
-  color: var(--muted);
-}
-.peca-mais[open] ~ .peca-pe .peca-recibo {
-  display: inline;
 }
 
 /* --------------------------------------------------------------------- régua */
@@ -996,11 +892,6 @@ svg [hidden] {
   letter-spacing: 0.03em;
   color: var(--ink);
 }
-.vazio-texto {
-  font-size: 17px;
-  line-height: 1.5;
-  max-width: 70ch;
-}
 .vazio-caop,
 .vazio-fonte {
   font-family: var(--f-instr);
@@ -1017,15 +908,6 @@ svg [hidden] {
   flex-direction: column;
   border-top: 2px solid var(--g2);
   margin-top: clamp(22px, 3vw, 34px);
-}
-.portas-k {
-  font-family: var(--f-versal);
-  font-size: 13px;
-  letter-spacing: 0.05em;
-  text-transform: lowercase;
-  font-weight: 600;
-  color: var(--muted);
-  padding: 14px 0 6px 0;
 }
 .porta {
   display: grid;
@@ -1209,13 +1091,6 @@ a.porta:hover .porta-abrir {
 .movel-destinos {
   display: none;
 }
-.pesquisa-proximos {
-  display: none;
-  font-family: var(--f-instr);
-  font-size: 11.5px;
-  line-height: 1.5;
-  color: var(--muted);
-}
 
 @media (max-width: 640px) {
   /* O âmbito como destinos, e o selo do país como único alvo do mapa. */
@@ -1237,7 +1112,7 @@ a.porta:hover .porta-abrir {
     grid-column: 1;
     grid-row: 1;
   }
-  .mapa-ficha,
+  .mapa-linha,
   .mapa-cartao {
     grid-column: 1 / -1;
     grid-row: 2;
@@ -1305,10 +1180,6 @@ a.porta:hover .porta-abrir {
   [data-postura='localizador'] ~ .movel-destinos {
     grid-column: 1 / -1;
   }
-  .pesquisa-proximos {
-    display: block;
-  }
-
   /* A porta da régua da convergência. Uma linha, palavras só, alvo de 44px. */
   .conv-porta {
     display: block;

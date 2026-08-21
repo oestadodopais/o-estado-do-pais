@@ -41,21 +41,25 @@ const agenda = [
 const temAgenda = agenda.every((a) => p[a.chave].valor !== null);
 ---
 
-<nav class="portas" aria-label={s.inicio.portas.k}>
-  <p class="portas-k">{s.inicio.portas.k}</p>
+<nav class="portas" aria-label={s.inicio.portas.rotulo}>
+  {/* A LEGENDA DAS PORTAS SAIU (Emenda 15). «As páginas · o resto vive a uma
+      porta» era a casa a explicar o desenho: três linhas, cada uma com o nome de
+      uma página e um destino, não precisam de uma frase a dizer que são portas.
+      O nome da região de navegação fica, porque um leitor de ecrã que percorra
+      as regiões precisa de saber qual é esta. */}
 
+  {/* A CONTAGEM DE COBERTURA SAIU DESTA PORTA (Emenda 15). Dizia «1 de 308
+      concelhos · tem página», que é uma frase sobre a cobertura do próprio
+      sítio — a classe que a emenda nomeia. Fica o TAMANHO do que está do outro
+      lado, que é o que uma porta diz: 308 concelhos. As duas contagens de
+      cobertura continuam em `/municipios`, que é a página que elas contam. */}
   <a class="porta" href={rotas.municipios}>
     <span class="porta-nome">{s.nav.municipios}</span>
     <span class="porta-conta">
-      <span data-prova="municipios_com_pagina" title={p.municipios_com_pagina.origem}>
-        {p.municipios_com_pagina.valor}
-      </span>
-      {s.inicio.mapa.coberturaA}
       <span data-prova="municipios_total" title={p.municipios_total.origem}>
         {p.municipios_total.valor}
       </span>
-      {s.inicio.mapa.coberturaB}
-      <span data-cobertura="com-pagina">{s.cobertura.temPagina}</span>
+      {s.inicio.portas.concelhos}
     </span>
     <span class="lig porta-abrir">{s.inicio.portas.abrir} →</span>
   </a>

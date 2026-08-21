@@ -481,7 +481,12 @@ export function prova(lang = 'pt') {
     painel_reconferido_em: k(
       'painel_reconferido_em',
       verificacao.verificadoEm,
-      ancora(routePath('home', lang), 'numeros'),
+      /* A PORTA PASSA DE `#numeros` A `#painel` (Emenda 15, 21.08.2026). A
+         primeira página tinha, por baixo do painel, uma linha que repetia a
+         data que a mobília já diz em todas as páginas; a emenda tirou-a, e com
+         ela a âncora. O que esta data cobre é o painel, e é para o painel que
+         ela abre. */
+      ancora(routePath('home', lang), 'painel'),
       { vencida: verificacao.vencida, dias: verificacao.dias },
     ),
 

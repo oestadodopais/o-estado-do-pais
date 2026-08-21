@@ -93,7 +93,28 @@ const etiqueta = `${derivada ? `${s.prov.calculado} · ` : ''}${estudo}`;
   data-selo-etiqueta={etiqueta}
   title={etiqueta}
 >
-  <span class="vh">{s.prov.verLinha}: {etiqueta}</span>
+  {/* ------------------------------------------------------------------------
+      O TEXTO OCULTO ENCURTA, E MUDA DE LUGAR (Emenda 15, 21.08.2026)
+      ------------------------------------------------------------------------
+      «O texto oculto do selo, para leitores de ecrã, encurta para "fonte ·
+      <estudo>".» Dizia «Linha do livro-razão: calculado · <estudo>», e quem
+      ouvia a página ouvia, em cada selo, uma frase da casa a explicar o que o
+      selo é — que é exactamente a classe de frase que esta emenda tira das
+      páginas do leitor.
+
+      A ORDEM INVERTE-SE, e é ela que faz a forma. A palavra à vista («fonte»)
+      vinha DEPOIS do oculto, e um leitor de ecrã ouvia os dois pela ordem do
+      documento: o oculto primeiro. Com a palavra à frente, a unidade inteira
+      lê-se «fonte · <estudo>», que é a forma que a emenda escreve, e o que se
+      vê não muda um píxel: o quadrado é um `::before` do próprio `<a>` e o
+      oculto não ocupa espaço.
+
+      `seloDaLinha()` no portão compõe a mesma cadeia pela mesma ordem e
+      compara-a carácter a carácter; a chave `prov.verLinha` sai das duas
+      edições, porque a palavra que abre o texto oculto passa a ser a mesma que
+      o selo já escreve à vista.
+      ---------------------------------------------------------------------- */}
   <span class="src-chip-texto">{s.prov.selo}</span>
+  <span class="vh"> · {etiqueta}</span>
   {incompleta && <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>}
 </a>

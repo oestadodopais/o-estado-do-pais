@@ -1423,7 +1423,7 @@ function auditaSelo(el, id, lang, err) {
  *
  * Lidas dos dois componentes que põem a marca, e de mais lado nenhum:
  *
- *   src/components/Provenance.astro       «<verLinha>: [calculado · ]<trabalho>[<marcador>]»
+ *   src/components/Provenance.astro       «<selo> · [calculado · ]<trabalho>[<marcador>]»
  *   src/components/InstrumentoConvergencia.astro  «<trabalho>»
  *
  * O nome do trabalho vem de `studyLabel()`, que é o registo. Isto NÃO é o
@@ -1485,7 +1485,7 @@ function seloDaLinha(id, lang) {
     etiqueta,
     palavra: s.prov.selo,
     visivel: normalizeWhitespace(`${s.prov.selo}${marcador}`),
-    inteiro: normalizeWhitespace(`${s.prov.verLinha}: ${etiqueta}${s.prov.selo}${marcador}`),
+    inteiro: normalizeWhitespace(`${s.prov.selo} · ${etiqueta}${marcador}`),
   };
 }
 

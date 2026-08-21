@@ -8,8 +8,13 @@
  * publicação que promete que nada é apagado tem de pôr a porta onde o erro é
  * visto, e não numa página que é preciso ir procurar.
  *
- * O texto é o da página de Évora, palavra por palavra, e não foi reescrito
- * aqui: uma porta que muda de palavras de página para página é outra porta.
+ * UMA LINHA, E NÃO UM PARÁGRAFO (Emenda 17, 21.08.2026). A porta levava a
+ * política inteira — «Um erro confirmado entra no registo de correções e na
+ * própria linha, com o valor antigo à vista. Nada é apagado.» — repetida em 307
+ * páginas. A emenda reduz a porta ao que ela é: a pergunta, o endereço para
+ * onde se escreve e a porta do registo. A política continua escrita por
+ * extenso, com as três naturezas, em `/correcoes`, que é a página que ela
+ * governa.
  *
  * `data-porta-correccoes` é a marca que o portão de HTML conta: **exactamente
  * uma por página construída** (ver scripts/gate-html.mjs). O endereço vem de
@@ -28,11 +33,10 @@ const registoPath = routePath('correcoes', lang);
 ---
 
 <div class:list={['porta-correccoes', klass]} data-porta-correccoes>
-  <span class="linha-campo-k">{s.porta.k}</span>
-  <p class="aparelho-nota">
-    {s.porta.v}
+  <p class="porta-correccoes-linha">
+    <span class="linha-campo-k">{s.porta.k}</span>{' '}
     <a class="ligacao-email" href={`mailto:${ENDERECO_CORRECOES}`}>{ENDERECO_CORRECOES}</a>
-    {s.porta.w}
+    {' · '}
+    <a href={registoPath}>{s.porta.link} →</a>
   </p>
-  <p><a href={registoPath}>{s.porta.link} →</a></p>
 </div>

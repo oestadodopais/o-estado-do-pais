@@ -81,7 +81,7 @@ const Y_EIXO = 62;
   </div>
 
   <div class="banda-tela">
-    <svg class="banda-svg" viewBox={`0 0 ${W} 104`} role="img" aria-label={s.inicio.banda.naoSeDesenham}>
+    <svg class="banda-svg" viewBox={`0 0 ${W} 104`} role="img" aria-label={s.inicio.banda.svgLabel}>
       <g class="banda-escala" data-nonledger="escala-de-instrumento">
         <line x1="0" y1={Y_EIXO} x2={W} y2={Y_EIXO} class="banda-eixo" />
         <line x1="0" y1={Y_EIXO - 6} x2="0" y2={Y_EIXO + 6} class="banda-ponta" />
@@ -155,5 +155,8 @@ const Y_EIXO = 62;
     }
   </div>
 
-  <p class="banda-nota">{s.inicio.banda.naoSeDesenham}</p>
+  {/* A NOTA SAIU (Emenda 15). «As regiões não se desenham em pontos de concelho:
+      a régua é o instrumento do âmbito regional. O mapa volta quando o âmbito é
+      um município.» era a casa a explicar a sua própria escolha de desenho. O
+      que a régua é diz-se no rótulo dela e no nome acessível do desenho. */}
 </div>
