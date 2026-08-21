@@ -249,6 +249,10 @@ On the director's word («let's do it»), the branch was pushed (`git push -u or
 
 **Preview n.º 1, updated 21.08.2026, 02:04 BST**, same address, from HEAD `e6c8c55` (deployment `o-estado-do-pais-ggbaene88`, 29 s): the director's reading applied (rounds 2j and 2k; Emendas 10 to 14; the second Codex read, 4 of 5 plants, its two real gaps closed). Matrix 90/90. Open for the director at this reading: whether the hairline grid of pieces reads as he asked (Codex read the 1px-shadow technique as «still boxes»); ISSUES I26 (`IDENTIDADE.md` §2 still describes the dark palette as before Emenda 12, builder A's file), I27 (`Provenance.astro` keeps the `lang='pt'` default that I24 closed in `Claim.astro`), I28, I30, I31, all small, for stage 3's opening.
 
+## 14b. Merge · 21.08.2026, 20:20 BST
+
+On the director's word of 21.08 («let's do it and if all looks good to you we can merge», after stage 5), the phase closed: stages 3, 4 and 5 verified from the tree; the whole-branch Codex read (`critica/2026-08-21-codex-leitura-final-do-ramo.md`, 5 of 5 plants, no new defect); I56 closed (`ef7832a`: the tether reads the Método's closing entry, two plants); Vercel's own preview build of the branch green with the cards (532 in 11,4 s on its image); `main` fast-forwarded `77e82eb` → `ef7832a` (351 files), pushed, production deployed, `npm run verify:deploy` ✓. **Not done at the merge**: the design bundle (`scripts/design-bundle.mjs` still looks for the v2 Fundo layer and stops) and DesignSync; both go to the next round with `README.md`'s identity section (I16). Open after the phase: ISSUES I13/I14 (inline seals of the v2 instrument below 44px), I32 and I60 (engine asks), I53 (EN 404 route), I57/I58/I59 (cards: font copy size, no OCR, PNG size), the voice-phase items of `DECISIONS.md` §4 that Emenda 15 did not reach (frame phrases 92 distinct against the ≤ 12 target).
+
 ## 15. Deviations register
 
 1. No catálogo/dossiê block, placeholder or door on the home (phase 2 parked).
