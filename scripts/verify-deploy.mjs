@@ -25,11 +25,24 @@
  * `HEAD` continua impresso, porque saber onde se está é útil; o que ele já não
  * faz é decidir.
  *
+ * DESDE 22.08.2026 CONFERE TAMBÉM O QUE O SERVIDOR RESPONDE (ISSUES I53,
+ * segunda forma). O `vercel.json` passou a ser um só sistema de encaminhamento,
+ * `routes`, porque um bloco `routes` presente faz a Vercel ignorar o bloco
+ * `headers` (medido na pré-visualização n.º 3 a 22.08). Uma ordem errada dentro
+ * de `routes` não parte a construção nem o portão do HTML: parte o que o
+ * visitante recebe, e isso só se vê no ar. Por isso as invariantes moram aqui,
+ * ao lado da única outra pergunta que fala com o sítio publicado.
+ *
  * Uso:  node scripts/verify-deploy.mjs [--host <dominio>] [--ref <git-ref>]
  *                                      [--branch <ramo-local>]
+ *
+ * `--host` com o alias de uma pré-visualização corre as invariantes de
+ * cabeçalho, de erro e de índice contra essa pré-visualização: é assim que se
+ * prova que esta conferência sabe falhar. Os três 308 de anfitrião não se movem
+ * com `--host`, porque os anfitriões que redireccionam são os que são.
  */
 import { execFileSync } from 'node:child_process';
-import { SITE_HOST } from '../site.config.mjs';
+import { SITE_HOST, SITE_HOST_UNACCENTED } from '../site.config.mjs';
 
 const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
 const verde = (s) => `\x1b[32m${s}\x1b[0m`;
@@ -124,6 +137,120 @@ if (local && esperado && local !== esperado) {
       `      Foi assim que o sítio ficou para trás duas vezes a 2026-08-13.`,
   );
 }
+
+/**
+ * AS INVARIANTES DE PRODUÇÃO (ISSUES I53, segunda forma, 22.08.2026).
+ *
+ * Perguntas ao servidor, cada uma com o observado ao lado do esperado. Não
+ * substituem nenhuma das de cima: acrescentam-se, e qualquer falha traz o mesmo
+ * código de saída, porque um sítio que serve o que deve a partir do commit
+ * errado, ou o commit certo sem os cabeçalhos, está igualmente por lançar.
+ *
+ * NENHUMA SEGUE UM REDIRECCIONAMENTO (`redirect: 'manual'`). A resposta que se
+ * lê é a primeira, que é a que se está a afirmar: um 308 conferido pelo seu
+ * destino não prova o 308, prova o destino.
+ */
+const CABECALHOS_DA_CASA = {
+  'x-content-type-options': 'nosniff',
+  'referrer-policy': 'strict-origin-when-cross-origin',
+  'x-frame-options': 'SAMEORIGIN',
+  'strict-transport-security': 'max-age=15552000',
+  'permissions-policy': 'camera=(), microphone=(), geolocation=()',
+};
+
+/* O alias da Vercel leva `noindex` para não concorrer com o domínio canónico
+   nos motores de busca (README §Deploy, DECISIONS §1.24). Está escrito por
+   extenso, e não lido do `vercel.json`, de propósito: uma conferência que lesse
+   o ficheiro provaria que ele concorda consigo próprio, e não que o servidor faz
+   o que se lhe pediu. O mesmo vale para os cinco cabeçalhos acima. */
+const ALIAS_VERCEL = 'o-estado-do-pais.vercel.app';
+
+const mostrar = (v) => (v == null ? '(ausente)' : `«${v}»`);
+
+function conferir(rotulo, observado, esperado) {
+  const bate = observado === esperado;
+  console.log(
+    `    ${bate ? verde('✓') : vermelho('✗')} ${rotulo.padEnd(42)} ` +
+      cinza(`observado ${mostrar(observado)} · esperado ${mostrar(esperado)}`),
+  );
+  if (!bate) {
+    erros.push(`${rotulo}: observado ${mostrar(observado)}, esperado ${mostrar(esperado)}.`);
+  }
+}
+
+async function ler(endereco, { comCorpo = false } = {}) {
+  try {
+    const res = await fetch(endereco, {
+      method: comCorpo ? 'GET' : 'HEAD',
+      redirect: 'manual',
+      headers: { 'cache-control': 'no-cache', pragma: 'no-cache' },
+    });
+    return {
+      estado: res.status,
+      cabecalho: (k) => res.headers.get(k),
+      corpo: comCorpo ? await res.text() : '',
+    };
+  } catch (e) {
+    /* Uma resposta que não houve não é uma resposta em branco: fica registada
+       como erro, e as perguntas desta página falham a seguir por si próprias. */
+    erros.push(`não foi possível ler ${endereco}: ${e.message}`);
+    return { estado: null, cabecalho: () => null, corpo: '' };
+  }
+}
+
+/* A língua declarada pela página servida: é o que distingue a página de erro da
+   casa da página genérica do alojamento, e uma edição da outra. */
+const lingua = (corpo) => corpo.match(/<html[^>]*\slang="([^"]*)"/i)?.[1] ?? null;
+
+console.log(cinza(`  as invariantes de produção · ${host}`));
+
+/* (a) os cinco cabeçalhos da casa, em duas famílias de página. */
+for (const caminho of ['/', '/en/ledger']) {
+  const r = await ler(`https://${host}${caminho}`);
+  conferir(`${caminho} responde`, r.estado, 200);
+  for (const [chave, valor] of Object.entries(CABECALHOS_DA_CASA)) {
+    conferir(`${caminho} ${chave}`, r.cabecalho(chave), valor);
+  }
+}
+
+/* (b) o escudo do alias: `noindex` no alias, e nada no domínio canónico. */
+const respostaAlias = await ler(`https://${ALIAS_VERCEL}/`);
+conferir(`${ALIAS_VERCEL} x-robots-tag`, respostaAlias.cabecalho('x-robots-tag'), 'noindex');
+const respostaCanonica = await ler(`https://${host}/`);
+conferir(`${host} x-robots-tag`, respostaCanonica.cabecalho('x-robots-tag'), null);
+
+/* (c) os três 308 de anfitrião. Os anfitriões saem do `site.config.mjs` e não do
+   `--host`: são estes que redireccionam, e uma pré-visualização não tem nada a
+   dizer sobre eles. */
+for (const anfitriao of [SITE_HOST_UNACCENTED, `www.${SITE_HOST_UNACCENTED}`, `www.${SITE_HOST}`]) {
+  const r = await ler(`https://${anfitriao}/x`);
+  conferir(`${anfitriao}/x estado`, r.estado, 308);
+  conferir(`${anfitriao}/x location`, r.cabecalho('location'), `https://${SITE_HOST}/x`);
+}
+
+/* (d) um endereço inexistente recebe a página de erro da SUA edição. É a
+   pergunta que a I53 abriu, e a única que produção reprova enquanto este ramo
+   não for fundido. */
+const inexistenteEn = await ler(`https://${host}/en/nao-existe`, { comCorpo: true });
+conferir('/en/nao-existe estado', inexistenteEn.estado, 404);
+conferir('/en/nao-existe lang', lingua(inexistenteEn.corpo), 'en');
+const inexistentePt = await ler(`https://${host}/nao-existe`, { comCorpo: true });
+conferir('/nao-existe estado', inexistentePt.estado, 404);
+conferir('/nao-existe lang', lingua(inexistentePt.corpo), 'pt-PT');
+
+/* (e) as duas páginas de erro existem, cada uma na sua língua. A inglesa é uma
+   página como as outras (200, alcançável pela troca de edição da portuguesa); a
+   portuguesa é o `404.html` que a Vercel serve quando nada mais bate, e por isso
+   responde 404 ao seu próprio endereço: medido na pré-visualização n.º 3 e em
+   produção a 22.08. */
+const paginaEn = await ler(`https://${host}/en/404`, { comCorpo: true });
+conferir('/en/404 estado', paginaEn.estado, 200);
+conferir('/en/404 lang', lingua(paginaEn.corpo), 'en');
+const paginaPt = await ler(`https://${host}/404`, { comCorpo: true });
+conferir('/404 estado', paginaPt.estado, 404);
+conferir('/404 lang', lingua(paginaPt.corpo), 'pt-PT');
+
+console.log();
 
 if (erros.length) {
   console.log(vermelho(`  NÃO CONFERE — ${erros.length} problema(s):`));

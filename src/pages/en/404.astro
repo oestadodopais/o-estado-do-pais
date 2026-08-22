@@ -2,16 +2,28 @@
 /**
  * A página de erro da edição inglesa (ISSUES I53; DECISIONS §1.62, decisão 1).
  *
- * A Vercel serve um só `404.html` para tudo o que não existe. A regra de
- * encaminhamento que serviria esta página com 404 a `/en/(.*)` (`routes`, depois
- * da fase do sistema de ficheiros) foi construída e provada na pré-visualização
- * n.º 3 de 22.08, e RETIRADA no mesmo dia: com um bloco `routes` presente, a
- * Vercel deixou de aplicar o bloco `headers` (os cinco cabeçalhos de segurança
- * desapareceram das respostas, medido contra a pré-visualização anterior, sem
- * `routes`, que os trazia todos). Até a direção decidir outra forma (ISSUES
- * I53), esta página existe em `/en/404`, alcançável pela troca de edição da
- * página de erro portuguesa, e um endereço inglês inexistente continua a
- * receber o `404.html` português. A vista é a mesma; muda a língua.
+ * A Vercel serve um só `404.html` para tudo o que não existe, por isso um 404
+ * por edição é uma regra de encaminhamento e não um ficheiro a mais. A regra
+ * está em `vercel.json`: `{ "src": "/en/(.*)", "status": 404, "dest":
+ * "/en/404/index.html" }`, depois de `{ "handle": "filesystem" }`, para que um
+ * endereço inglês que exista continue a ser servido e só caia aqui o que não
+ * existe.
+ *
+ * A PRIMEIRA FORMA DESSA REGRA CUSTOU OS CABEÇALHOS DA CASA. A pré-visualização
+ * n.º 3, a 22.08, serviu o 404 inglês como prometido e mostrou na mesma leitura
+ * que, com um bloco `routes` presente, a Vercel deixa de aplicar o bloco
+ * `headers`: os cinco cabeçalhos de segurança desapareceram das respostas. O
+ * bloco saiu no mesmo dia e a forma voltou à direção, que escolheu a segunda: o
+ * `vercel.json` inteiro passa a `routes`, um só sistema de encaminhamento, com
+ * os cinco cabeçalhos, o `noindex` do alias e os três 308 de anfitrião escritos
+ * como rotas com `continue`. Nada fica em `headers` nem em `redirects` para ser
+ * ignorado.
+ *
+ * Esta página é uma página como as outras: responde 200 em `/en/404` e é
+ * alcançável pela troca de edição da página de erro portuguesa. A vista é a
+ * mesma; muda a língua. Quem afirma tudo isto depois de cada publicação é
+ * `scripts/verify-deploy.mjs`, que confere no ar os cabeçalhos, os três 308 e
+ * as duas páginas de erro, e sai com código != 0 a qualquer falha.
  */
 import NaoEncontradoView from '../../views/NaoEncontradoView.astro';
 ---
