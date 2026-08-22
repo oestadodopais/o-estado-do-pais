@@ -1191,6 +1191,20 @@ a.src-chip.is-unverified:hover::before {
 .rule-svg .mk circle {
   stroke: var(--paper);
 }
+/* A ÁREA DE TOQUE DO MARCADOR TEM DE FICAR TRANSPARENTE, E A REGRA DE CIMA NÃO
+   CHEGAVA. `convergencia.js` desenha o `rect.mk-hit` em ÚLTIMO lugar dentro do
+   grupo do marcador, por cima do nome, do valor e do ponto. A regra de remapeio
+   `.rule-svg .mk rect { fill: var(--paper) }` (etapa 1c, `7650aed`), escrita
+   para a chapa por baixo do rótulo, apanha também este rect e ganha-lhe por
+   especificidade (0,2,1 contra 0,2,0): a área de toque pintava-se de papel e
+   tapava o marcador inteiro, no sítio no ar desde a fusão de 21.08. Medido em
+   Chromium com janela e sem cabeça (ISSUES I61): o `fill` calculado do
+   `.mk-hit` era `rgb(246, 247, 244)`. Esta regra tem a mesma especificidade
+   (0,2,1, com a classe do próprio rect) e vem DEPOIS da outra, que é o que
+   decide entre iguais. */
+.rule-svg .mk rect.mk-hit {
+  fill: transparent;
+}
 /* a chapa por baixo do rótulo do concelho aceso, no mapa */
 .map-svg [data-aceso] rect {
   fill: var(--paper);
