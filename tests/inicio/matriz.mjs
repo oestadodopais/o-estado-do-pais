@@ -2295,6 +2295,142 @@ const minimaNoDesenho = () => {
   conta('2m · a lede nomeia as medidas que o painel marca fora, pela ordem do painel, nas duas edições', bem, linhas.join(' · '));
 }
 
+/* ============================================================================
+ * PÓS-FUSÃO A2 · O SELO DO INSTRUMENTO N.º 1, ALVO E ANINHO (ISSUES I13)
+ * ============================================================================
+ * A §5 desta matriz mede `.peca` e mais nada: os 31 selos das peças fecharam o
+ * I13 no painel, e o instrumento ficou de fora porque a etapa 2 ainda não lhe
+ * tinha tocado. Toca agora, e as três perguntas são as mesmas: o alvo tem 44×44,
+ * nenhum selo está dentro de outro alvo, nenhum par de áreas se sobrepõe.
+ *
+ * A REGIÃO DO INSTRUMENTO NÃO ESTÁ NO ESQUEMA DO ENDEREÇO. `?ambito=regiao:…`
+ * é o âmbito da PÁGINA, e o que ele troca é o cabeçalho e o painel;
+ * `convergencia.js` guarda a região lida do instrumento em memória e não a
+ * escreve em lado nenhum que se possa pedir por endereço. Por isso esta secção
+ * conduz o instrumento como um leitor o conduz: carrega em «repor» e depois no
+ * comando da região, e mede os seis estados um a um. É a única maneira honesta
+ * de os alcançar, e fica dito para que ninguém procure o parâmetro que não há.
+ *
+ * A QUARTA CÉLULA É A DA EXCEPÇÃO, e existe para que ela não possa alargar-se
+ * em silêncio. O selo da FRASE da leitura breve fica com a área da unidade, e a
+ * razão está medida em `site.css`, ao pé da lista: duas das seis frases levam
+ * dois selos dentro da mesma frase, a entrelinha é de 27,65px, e dar-lhes 44px
+ * de área punha-os a sobrepor-se entre os 416 e os 632 de largura. A célula
+ * exige que os selos abaixo de 44 sejam exactamente esses e mais nenhum.
+ *
+ * DUAS LARGURAS: 1280, que é a desta matriz, e 390, onde o instrumento vive
+ * atrás de uma porta que esta secção abre. Um leitor abre-a, e o que está atrás
+ * dela tem de estar tão certo como o que está à vista.
+ * ========================================================================= */
+{
+  const medeInstrumento = (p) =>
+    p.evaluate(() => {
+      const raiz = document.querySelector('#convergencia');
+      const visivel = (e) =>
+        !e.closest('[hidden]') && e.offsetParent !== null && e.getBoundingClientRect().width > 0;
+      /* A mesma caixa da §5: a área do selo vem do `::after` da folha, e a de
+         qualquer outro alvo é a sua caixa, nunca menos de 44. */
+      const caixa = (e) => {
+        const r = e.getBoundingClientRect();
+        const d = e.matches('a.src-chip') ? getComputedStyle(e, '::after') : null;
+        const w = d
+          ? Math.max(r.width, parseFloat(d.width) || 0, parseFloat(d.minWidth) || 0)
+          : Math.max(r.width, 44);
+        const h = d ? Math.max(r.height, parseFloat(d.height) || 0) : Math.max(r.height, 44);
+        const cx = r.left + r.width / 2;
+        const cy = r.top + r.height / 2;
+        return { w, h, x1: cx - w / 2, x2: cx + w / 2, y1: cy - h / 2, y2: cy + h / 2 };
+      };
+      const selos = [...raiz.querySelectorAll('a.src-chip')].filter(visivel).map((a) => {
+        const c = caixa(a);
+        let aninhado = null;
+        for (let no = a.parentElement; no; no = no.parentElement) {
+          const t = no.tagName.toLowerCase();
+          if (t === 'a' || t === 'button' || t === 'summary') {
+            aninhado = t;
+            break;
+          }
+        }
+        return { frase: !!a.closest('.brief-text'), w: +c.w.toFixed(1), h: +c.h.toFixed(1), aninhado };
+      });
+      const alvos = [...raiz.querySelectorAll('a,button,summary')].filter(visivel).map(caixa);
+      let pares = 0;
+      for (let i = 0; i < alvos.length; i++) {
+        for (let j = i + 1; j < alvos.length; j++) {
+          const a = alvos[i];
+          const b = alvos[j];
+          if (a.x1 < b.x2 && b.x1 < a.x2 && a.y1 < b.y2 && b.y1 < a.y2) pares++;
+        }
+      }
+      return { selos, alvos: alvos.length, pares };
+    });
+
+  for (const { largura, porta } of [
+    { largura: 1280, porta: false },
+    { largura: 390, porta: true },
+  ]) {
+    const medidas = [];
+    for (const [edicao, rota] of [
+      ['pt', '/'],
+      ['en', '/en/'],
+    ]) {
+      const p = await pagina({ largura });
+      await p.goto(base + rota, { waitUntil: 'networkidle' });
+      if (porta) {
+        await p.evaluate(() => {
+          for (const d of document.querySelectorAll('details.conv-porta')) d.open = true;
+        });
+      }
+      await p.waitForSelector('#convergencia [data-regiao-chip]', { state: 'attached' });
+      const estados = await p.$$eval('#convergencia [data-regiao-chip]', (bs) =>
+        bs.map((b) => b.getAttribute('data-regiao-chip')),
+      );
+      for (const id of estados) {
+        await p.click('#convergencia [data-accao="repor"]');
+        await p.click(`#convergencia [data-regiao-chip="${id}"]`);
+        /* O rato sai de cima do comando: `convergencia.js` acende a região por
+           cima da qual ele está, e uma medição não se faz com o rato pousado. */
+        await p.mouse.move(0, 0);
+        medidas.push({ edicao, estado: id, ...(await medeInstrumento(p)) });
+      }
+      await p.__contexto.close();
+    }
+
+    const estados = medidas.map((m) => `${m.edicao}:${m.estado}`).join(' ');
+    const todos = medidas.flatMap((m) => m.selos);
+    const daFrase = todos.filter((s) => s.frase);
+    const foraDaFrase = todos.filter((s) => !s.frase);
+    const com44 = foraDaFrase.filter((s) => s.w >= 44 && s.h >= 44).length;
+    conta(
+      `I13 · o selo do instrumento n.º 1 é alvo de 44×44, fora da frase · ${largura}`,
+      foraDaFrase.length > 0 && com44 === foraDaFrase.length,
+      `${com44} de ${foraDaFrase.length} selos (relance e legenda) em ${medidas.length} estados · mínimo ${Math.min(
+        ...foraDaFrase.map((s) => s.w),
+      )}×${Math.min(...foraDaFrase.map((s) => s.h))} · ${estados}`,
+    );
+    const aninhados = todos.filter((s) => s.aninhado).length;
+    conta(
+      `I13 · nenhum selo do instrumento n.º 1 dentro de outro alvo · ${largura}`,
+      todos.length > 0 && aninhados === 0,
+      `${aninhados} aninhados em ${todos.length} selos medidos`,
+    );
+    const pares = medidas.reduce((a, m) => a + m.pares, 0);
+    conta(
+      `I13 · nenhum par de áreas de toque sobrepostas no instrumento n.º 1 · ${largura}`,
+      medidas.length > 0 && pares === 0,
+      `${pares} pares em ${medidas.reduce((a, m) => a + m.alvos, 0)} alvos medidos, nos ${medidas.length} estados`,
+    );
+    const abaixo = todos.filter((s) => s.w < 44 || s.h < 44);
+    conta(
+      `I13 · a excepção medida do instrumento n.º 1 é o selo da frase, e só ele · ${largura}`,
+      daFrase.length > 0 && abaixo.length === daFrase.length && abaixo.every((s) => s.frase),
+      `${abaixo.length} selos abaixo de 44, ${abaixo.filter((s) => s.frase).length} deles em .brief-text · a frase tem ${daFrase.length} selos, com ${Math.min(
+        ...daFrase.map((s) => s.h),
+      )}px de altura de área`,
+    );
+  }
+}
+
 await navegador.close();
 servidor.close();
 
