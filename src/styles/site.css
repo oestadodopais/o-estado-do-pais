@@ -728,17 +728,63 @@ a.src-chip::after {
 
    A saída certa não é encolher a área: é dar altura à fila. As filas são a
    primeira página (etapa 2, e o plano §13 pede exactamente isto, «o selo como o
-   maior alvo de cada fila, >= 44px») e a página do município (etapa 3). Até lá,
-   nestes sete lugares a área é a unidade, e a nota da etapa diz quantos selos
-   ficam por alargar e onde. Medido depois desta regra: zero pares de áreas
-   sobrepostas em `/`, `/livro-razao/divida-publica-2025` e `/municipios/evora`. */
-.figura a.src-chip::after,
-.glance a.src-chip::after,
+   maior alvo de cada fila, >= 44px») e a página do município (etapa 3).
+
+   A LISTA ERA DE SETE E PASSA A QUATRO (pós-fusão A2, ISSUES I13 e I14). Cada
+   um dos sete foi conferido contra as 322 páginas construídas, com
+   `node-html-parser` a correr `querySelectorAll` em todas elas e com
+   `a.src-chip` como controlo positivo (1034 selos em 288 páginas). Três saem por
+   não terem cliente nenhum:
+
+   · `.figura` acertava em zero elementos: a classe não existe em nenhuma página
+     construída, e no código-fonte só sobrevive `.figura-nome`. Uma excepção que
+     não tem elemento não protege nada.
+   · `.prov-vals` tem 4 elementos em duas páginas (`/municipios` e a sua edição
+     inglesa) e zero selos lá dentro: a fila que os tinha saiu da primeira página
+     em `1cac621`, e o que fica é uma linha de texto e uma porta de descarga, que
+     não é um selo. É a ISSUES I14, fechada por remoção.
+   · `.linha-verificacoes` tem 264 elementos em 264 páginas e zero selos lá
+     dentro. A regra nunca chegou a aplicar-se.
+
+   Um quarto estreita-se, e dois ficam com a medição que os prende. O relance da
+   PRIMEIRA PÁGINA passa a levar a área inteira, que é a etapa 2 a cumprir-se, e
+   é essa a correcção que este commit entrega.
+
+   `.glance` estreita-se em vez de sair, porque a classe também é do relance da
+   página do município: ali os dois selos do «de → até» quebram de linha a 390, e
+   duas áreas de 44px a 33,8px uma da outra sobrepõem-se por 10,2. Essa fila é da
+   etapa 3, e não se estraga uma página que ainda não foi arrumada para arrumar
+   outra. Fica presa a `[data-instrumento='mandatos']`, que é o instrumento dela.
+
+   `.brief-text` FICA, E É UMA EXCEPÇÃO MEDIDA, não um esquecimento. A frase da
+   leitura breve não é uma fila: é prosa corrida, e duas das seis frases levam
+   dois selos dentro da mesma frase (Península de Setúbal e Alentejo). A
+   entrelinha da frase é de 27,65px, e por isso dois selos em linhas seguidas
+   ficam sempre a 27,6px um do outro: duas áreas de 44px a essa distância
+   sobrepõem-se por 16,4 na vertical, e tocam-se sempre que as duas colunas
+   também se cruzam. Varrida a rampa de 320 a 1440 de 2 em 2, nas duas edições,
+   as bandas em que isso acontece são estas:
+
+       pt · Península de Setúbal   434 a 512
+       pt · Alentejo               534 a 632
+       en · Setúbal Peninsula      416 a 534
+       en · Alentejo               478 a 616
+
+   A 1280, a 1024 e a 390 não se tocam, e por isso a medição de uma largura só
+   não chega para fechar isto: dar-lhes a área faria uma porta que abre a linha
+   do vizinho entre os 416 e os 632. A saída para uma fila é dar-lhe altura; a
+   saída para esta seria levar a entrelinha da frase de 27,65px para 44px, que é
+   mudar a composição da leitura, e essa é uma decisão da direcção e não desta
+   folha. Até ela, o selo da frase tem a área da unidade e a porta continua a
+   abrir a linha certa.
+
+   Medido depois desta regra, em Chromium sem cabeça, nas duas edições e a 1280,
+   1024 e 390, nos seis estados de região: zero pares de áreas sobrepostas em
+   `#convergencia`. */
+[data-instrumento='mandatos'] .glance a.src-chip::after,
 .brief-text a.src-chip::after,
-.prov-vals a.src-chip::after,
 .mun-campos a.src-chip::after,
-.linha-bloco .deep-v a.src-chip::after,
-.linha-verificacoes a.src-chip::after {
+.linha-bloco .deep-v a.src-chip::after {
   width: 100%;
   min-width: 0;
   height: 100%;
@@ -970,10 +1016,17 @@ a.src-chip.is-unverified:hover::before {
 }
 
 /* comandos */
+/* A FOLGA ENTRE FILAS É DE 12px E NÃO DE 8, e é uma medição (pós-fusão A2).
+   Acima de 640 os oito comandos cabem numa fila e a folga de fila não faz nada.
+   A 390 quebram em quatro, e medido: o comando tem 34px de altura, com 8px de
+   folga a fila anda de 42 em 42, e o alvo de 44px de um comando entra 2px no do
+   comando de baixo. Duas áreas sobrepostas não são um alvo maior: a de baixo
+   apanha o clique da de cima, que é a mesma coisa que a lista de excepção acima
+   diz dos selos. Com 12px a fila anda de 46 em 46 e sobra folga. */
 .controls {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 12px 8px;
   align-items: center;
   padding: 0 0 clamp(16px, 2vw, 22px);
 }
@@ -1162,6 +1215,13 @@ a.src-chip.is-unverified:hover::before {
   letter-spacing: -0.008em;
   max-width: 70ch;
 }
+/* A FILA DA LEGENDA NÃO GANHOU FOLGA, E DIZ-SE PORQUÊ (pós-fusão A2).
+   Medido: entre o centro do selo da última linha da frase e o centro do selo da
+   legenda há 34,1px. O da legenda já tem 44px de área; se o da frase os
+   ganhasse, as duas áreas sobrepunham-se por 9,9, e a saída seria 12px de folga
+   em cima da legenda (34,1 passa a 46,1, e sobram 2,1). Enquanto a frase for a
+   excepção medida da lista acima, essa folga não corrige nada, e uma folga que
+   não corrige nada é decoração. Fica medida aqui para o dia em que fizer falta. */
 
 /* camada 3 — fundo */
 .deep {
