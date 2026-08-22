@@ -577,3 +577,317 @@ diagnóstico, e as quatro capturas de A2.7 mostram-no.
 | `npm run typecheck` | `exit 0` |
 | `node scripts/ortografia.mjs --verificar` | `exit 0` |
 | `grep -c prov-vals dist/index.html` | `0` (controlo positivo no mesmo ficheiro: `grep -c src-chip dist/index.html` dá `2`) |
+
+---
+
+## A3 · os PNG dos cartões em paleta exacta, sem dependência nova (ISSUES I59)
+
+*Construtor A3 (Claude Opus, `claude-opus-5[1m]`). Brief:
+`../briefs/BRIEF-pos-fusao-A3.md`. Todas as medições nesta máquina, sobre um
+`npm run build` fresco de `e19c1dc`, e cada uma com o comando ao lado dela.*
+
+### A3.0 · o que este commit faz, em quatro linhas
+
+1. Os 532 PNG dos cartões passam de RGBA (tipo de cor 6) a **paleta indexada
+   exacta** (tipo de cor 3, profundidade 8), escrita por um codificador da casa
+   de trinta linhas sobre `node:zlib`. **Nenhuma dependência nova, de espécie
+   nenhuma.**
+2. Não é quantização. Os cartões têm no máximo **118 cores** e nem um píxel
+   translúcido, e por isso a paleta é a lista das cores que lá estão: os píxeis
+   do ficheiro são, cor por cor, os que o rasterizador desenhou.
+3. **20 064 037 → 8 874 864 bytes**, e o passo `cartoes` de **5,91 s para
+   5,39 s**. Mais pequeno e mais rápido ao mesmo tempo.
+4. Uma prova, fora da construção, descodifica cada PNG escrito e compara-o byte
+   a byte com o RGBA da mesma passagem: **532 de 532 iguais**. Três plantas
+   postas e revertidas.
+
+O portão não mudou uma linha. A folha, as páginas e o desenho também não: o
+mesmo SVG, o mesmo rasterizador, as mesmas cores das fichas.
+
+### A3.1 · porque é que não havia dependência a trazer
+
+A ficha I59 supunha que uma paleta indexada era «outra dependência de
+construção». Não é, e a razão é o formato. Um PNG indexado são cinco coisas: a
+assinatura, o `IHDR`, um `PLTE`, um `IDAT` e o `IEND`, com um CRC-32 por pedaço.
+O deflate do `IDAT` é `zlib.deflateSync`, e o CRC-32 é `zlib.crc32`, ambos do
+`node:zlib` (a documentação do Node dá o `crc32` como «Added in: v22.2.0,
+v20.15.0»; esta máquina corre `node -v` → `v22.23.1`). Não há aqui algoritmo
+nenhum a inventar. O ficheiro é
+`scripts/png-paleta.mjs`, importa `node:zlib` e mais nada.
+
+A entrada é o RGBA cru do rasterizador. Está nos tipos, e foi lido antes de ser
+usado (`node_modules/@resvg/resvg-js/index.d.ts`):
+
+```
+export class RenderedImage {
+  /** Write the image data to Buffer */
+  asPng(): Buffer
+  /** Get the RGBA pixels of the image */
+  get pixels(): Buffer
+  ...
+}
+```
+
+E conferido à corrida, e não só na declaração, porque o nome não é o conteúdo:
+
+```
+$ node -e "const {Resvg}=require('@resvg/resvg-js');
+  const i=new Resvg('<svg …width=\"4\" height=\"2\"><rect …fill=\"#123456\"/></svg>').render();
+  console.log(i.width,i.height,Buffer.isBuffer(i.pixels),i.pixels.length,[...i.pixels.slice(0,8)])"
+4 2 true 32 [ 18, 52, 86, 255, 18, 52, 86, 255 ]
+```
+
+`0x12 0x34 0x56` com alfa 255: são os RGBA, em ordem de leitura, quatro bytes
+por píxel. O `sharp` não entra: está em `node_modules` como pacote transitivo do
+Astro, não é dependência desta casa, e não é importado em lado nenhum do
+repositório (`grep -rn sharp src scripts tests package.json` dá **uma** linha, e
+é o comentário de `png-paleta.mjs` a dizer isto mesmo; controlo positivo, o
+mesmo `grep` com `resvg`, dá três). `package.json` e `package-lock.json` não
+foram tocados: `git diff --stat` nos dois é vazio.
+
+**A recusa é parte do desenho.** O codificador não aproxima nada por sua conta.
+Ao primeiro píxel com alfa abaixo de 255, ou à cor 257, devolve a razão e nenhum
+byte; o rasterizador volta ao `asPng()` para esse cartão e o registo passa a
+dizer `"codificacao": "rgba"`. Nesta construção não aconteceu a nenhum:
+
+```
+  paleta · 532 de 532 PNG em paleta exacta (tipo de cor 3), no máximo 118 cores
+  num cartão · 0 em RGBA
+```
+
+Entre **57 e 118 cores** por cartão: **528 abaixo de 100 e quatro a 118**, que
+são as duas primeiras páginas nos dois papéis (`inicio.pt` e `en.en`, a
+1200×630 e a 1200×600). São exactamente os quatro cartões que levam a fila de
+quadrados: os 532 registos com `quadrados` não nulo são esses quatro e mais
+nenhum. O mínimo, 57, é
+`livro-razao-taxa-de-emprego-2025.pt.1200x630`. É a mesma contagem que o lugar
+de direção mediu por outro caminho antes de escrever o brief (118 de máximo,
+528 abaixo de 100, quatro acima), com uma correcção: o máximo não é de um
+cartão, é de quatro empatados.
+
+### A3.2 · o nível do deflate, que é uma medição e não um defeito da biblioteca
+
+Os mesmos 532 cartões, o mesmo desenho, a mesma paleta, só a mudar o que se
+passa ao `deflateSync`:
+
+| o que se passa ao deflate | passo `cartoes` | os 532 PNG |
+|---|---|---|
+| (RGBA, como era antes) | 5,9 s | 20 064 037 |
+| `{ level: 9, strategy: Z_RLE }` | 4,4 s | 9 953 494 |
+| `{ level: 6 }` | 5,2 s | 8 987 164 |
+| **`{ level: 7 }`** | **5,3 s** | **8 874 864** |
+| `{ level: 8 }` | 7,6 s | 8 471 596 |
+| `{ level: 9, strategy: Z_FILTERED }` | 13,5 s | 8 125 109 |
+| `{ level: 9 }` | 13,4 s | 8 021 832 |
+| `{ level: 9, memLevel: 9 }` | 13,5 s | 8 021 832 |
+
+O 7 é o ponto onde o passo fica mais pequeno E mais rápido do que era em RGBA.
+Do 7 para o 9 poupam-se mais 853 032 bytes e paga-se o dobro do tempo do passo,
+em todas as construções, por ficheiros que só se descarregam quando um sítio de
+partilha os vai buscar. A tabela está escrita ao lado da opção, em
+`png-paleta.mjs`, para que mudar de ideias seja mudar um número e não repetir a
+medição.
+
+Uma nota de honestidade sobre a estimativa do brief: a primeira página
+re-codificada por uma biblioteca dava «cerca de 26 KB». O codificador da casa dá
+**27 034** bytes no nível 7 e **24 872** no nível 9, ou seja, no nível 9 o
+codificador da casa fica abaixo da estimativa feita com a biblioteca. E a
+estimativa de «cerca de um quinto do peso» para o total não se confirmou: um
+quinto seriam 4 012 807 bytes e o que se mede são 8 874 864, que é 44%. A conta
+antiga era optimista; a poupança real é de 55,8% e chega.
+
+### A3.3 · os tamanhos e os tempos, antes e depois
+
+Antes = `npm run cartoes` com `scripts/cartoes.mjs` em `e19c1dc`; depois = o
+mesmo comando com este commit, sobre o mesmo `dist/` de `astro build`. As
+contagens de bytes são um `fs.statSync` sobre os 532 ficheiros, e não um `du`.
+
+| | antes | depois | |
+|---|---|---|---|
+| os 532 PNG, total | 20 064 037 | **8 874 864** | menos 11 189 173, menos 55,8% |
+| média por cartão | 37 714,4 | **16 682,1** | menos 21 032,3 |
+| o maior (`inicio.pt.1200x630.png`) | 62 554 | **27 034** | menos 56,8% |
+| o menor (`en-ledger-evora-pelouros-2025-total.en.1200x600.png`) | 27 476 | **11 942** | menos 56,5% |
+| os 532 registos, total | 987 492 | 1 009 840 | mais 22 348, pelos dois campos novos |
+| `du -sk dist/cartoes` | 22 800 KB | **11 896 KB** | menos 47,8% |
+| `du -sk dist` | 37 852 KB | **26 948 KB** | menos 28,8% |
+| `design-system/07-cartoes.html` | 334 847 | **215 467** | menos 35,7%, três cartões embutidos em base64 |
+| tipo de cor no `IHDR` (byte 25) | 6 | 3 | profundidade 8 nos dois |
+
+O tempo, três corridas seguidas de cada lado, com o `time` do `zsh`:
+
+```
+antes    npm run cartoes  4.22s user 1.68s system 99% cpu  5.914 total
+         npm run cartoes  4.22s user 1.67s system 99% cpu  5.937 total
+         npm run cartoes  4.24s user 1.69s system 100% cpu 5.925 total
+
+depois   npm run cartoes  3.53s user 1.79s system 98% cpu  5.406 total
+         npm run cartoes  3.55s user 1.77s system 99% cpu  5.353 total
+         npm run cartoes  3.57s user 1.79s system 99% cpu  5.400 total
+```
+
+Média de **5,925 s para 5,386 s**, menos 0,54 s (9%). O passo faz mais trabalho
+(percorre os 756 000 píxeis de um cartão de 1200×630 a construir a paleta) e
+mesmo assim demora menos, porque o deflate no nível 7 sobre 756 630 bytes de
+índices (630 linhas de 1201, com o byte de filtro) custa menos do que o
+`asPng()` do rasterizador sobre 3 024 000 bytes de RGBA. A
+construção inteira, uma corrida de cada: **13,545 s → 12,852 s**.
+
+**O tempo na Vercel não se mede daqui.** Nenhuma construção da Vercel correu com
+isto, pela mesma razão que a etapa 5 escreveu na §4: o ramo alimenta uma
+pré-visualização protegida e este construtor não empurra. Lê-se depois do
+próximo `deploy`, não se adivinha agora.
+
+### A3.4 · a prova de igualdade dos píxeis, e o que ela não prova
+
+```
+$ node scripts/provar-cartoes-paleta.mjs
+  cartões · 266 cartões × 2 medidas = 532 PNG e 532 registos · 8.46 MB · …
+  paleta · 532 de 532 PNG em paleta exacta (tipo de cor 3), no máximo 118 cores
+  num cartão · 0 em RGBA
+  ✓ 532 de 532 PNG em paleta descodificados e iguais, píxel a píxel, ao RGBA que
+    o rasterizador desenhou na mesma passagem.
+$ echo $?
+0
+```
+
+**Como corre, e porquê assim.** A comparação tem de ser com o RGBA da MESMA
+passagem, e das duas hipóteses do brief tomou-se a segunda: `cartoes.mjs` ganha
+a bandeira `--provar`, guarda o RGBA do cartão que acabou de desenhar, relê do
+disco o PNG que acabou de escrever, e chama o descodificador de
+`provar-cartoes-paleta.mjs`. A primeira hipótese (redesenhar o SVG dentro da
+prova) obrigava a importar o `cartoes.mjs`, que apaga `dist/cartoes/` mal é
+importado. `provar-cartoes-paleta.mjs` é as duas coisas: o descodificador, e o
+comando que corre a bandeira. **Fora da construção**: o `npm run build` não o
+conhece e o descodificador só é importado quando `--provar` está lá.
+
+**O descodificador não confia em nada.** Infla o `IDAT`, confere o CRC-32 de
+cada pedaço, recusa qualquer byte de filtro diferente de zero, recusa outro tipo
+de cor, outra profundidade, entrelaçamento, um `tRNS`, um índice fora do `PLTE`,
+e só depois mapeia índice a índice pelo `PLTE`. Uma prova que aceitasse variantes
+não provava nada sobre esta.
+
+**O que NÃO prova, e é a distinção que mantém o I58 aberto.** Isto compara os
+píxeis do ficheiro com os píxeis do rasterizador. Não lê o que lá está escrito.
+Quem desenhasse no cartão uma cadeia diferente da que regista teria aqui 532 de
+532 iguais na mesma, porque os dois lados da comparação viriam do mesmo desenho
+errado. O portão continua a conferir o registo e não os píxeis, e nada nesta
+prova o muda. **I58 fica como está**, palavra por palavra.
+
+### A3.5 · as três plantas
+
+Cada uma foi posta, corrida e revertida, e a reversão conferida com um `diff`
+contra a cópia de antes da planta (as duas primeiras) e com uma nova corrida
+verde (a terceira).
+
+**Planta 1 · um índice de paleta trocado no `IDAT` antes de escrever.**
+`indices[500000] ^= 1` no cartão português da dívida pública, a 1200×630, ANTES
+do deflate, para que o CRC do pedaço fique válido: é um PNG bem formado com um
+píxel errado, que é exactamente o caso que a prova existe para apanhar.
+
+```
+CARTÕES — os píxeis de livro-razao-divida-publica-2025.pt.1200x630.png não são
+os do rasterizador.
+  o primeiro píxel diferente é o 500000 (800, 416): o rasterizador desenhou
+  #f6f7f4 e o ficheiro tem #17191b
+exit 1
+```
+
+**Planta 2 · um byte do `PLTE` trocado.** `paleta[7] ^= 0x20`, que é o verde da
+terceira entrada da paleta, no mesmo cartão e também antes do CRC. Um só byte da
+tabela de cores, e o que muda é toda a superfície pintada com aquela entrada:
+
+```
+CARTÕES — os píxeis de livro-razao-divida-publica-2025.pt.1200x630.png não são
+os do rasterizador.
+  o primeiro píxel diferente é o 68578 (178, 57): o rasterizador desenhou
+  #b1b2b1 e o ficheiro tem #b192b1
+exit 1
+```
+
+`0xb2 ^ 0x20 = 0x92`: a planta nomeia-se a si própria no valor.
+
+**Planta 3 · o resumo de um cartão editado no seu registo**, que é uma planta do
+portão que já existia, repetida para mostrar que nada se mexeu. Trocado o último
+carácter do `resumo` no `.json` do mesmo cartão, e `npm run gate:html`:
+
+```
+dist/cartoes/livro-razao-divida-publica-2025.pt.1200x630.png
+  ✗ o resumo do PNG não é o que o registo declara.
+    registo:  sha256:fbfc7062670791f82f8e623c9f07a13810cf01ee629020ac7b5b69cf5265c3da
+    ficheiro: sha256:fbfc7062670791f82f8e623c9f07a13810cf01ee629020ac7b5b69cf5265c3d8
+exit 1
+```
+
+É a mesma mensagem da etapa 5 §8. **O portão não mudou uma linha**, e não
+precisava: lê o `IHDR` nos bytes 16 a 24 (largura e altura), que estão no mesmo
+sítio no tipo de cor 3, e o tipo de cor mora no byte 25, que ele não lê. As
+dimensões, o resumo, os valores recalculados, a fila de quadrados e a regra dos
+algarismos sem origem continuam todos a passar: `532 cartões de partilha (2964
+valores recalculados, 532 nomeados por páginas)`, o mesmo número de antes.
+
+### A3.6 · quem mais lê estes PNG
+
+O cartão é um `og:image`, e por isso o formato tem de ser lido por quem não somos
+nós. **O tipo de cor 3 é PNG desde a primeira versão do formato.** Conferido na
+origem e não de memória, a RFC 2083 (*PNG Specification Version 1.0*, Março de
+1997): «Color Type 3: Allowed Bit Depths are 1,2,4,8. Interpretation: Each pixel
+is a palette index; a PLTE chunk must appear», e «Decoders must support all legal
+combinations of bit depth and color type».
+
+Três leitores independentes do nosso, a ler os ficheiros escritos:
+
+| leitor | o que diz |
+|---|---|
+| `file(1)` | `PNG image data, 1200 x 630, 8-bit colormap, non-interlaced` |
+| `sips` (ImageIO da macOS) | `pixelWidth 1200`, `pixelHeight 630`, `format png`, `bitsPerSample 8`, `samplesPerPixel 3`, `exit 0` |
+| Chromium sem cabeça (`playwright`, que já é devDependency) | descodifica o PNG e devolve os píxeis; o RGBA que ele lê é **igual byte a byte** ao que o descodificador da casa lê, em três cartões, incluindo o de 118 cores |
+
+A terceira é a que interessa, porque fecha o círculo: sem ela, a prova da §A3.4
+seria o codificador da casa a ser conferido pelo descodificador da casa. O
+guião do Chromium é de rascunho e não entrou no repositório.
+
+**E o que não está verificado, que se diz e não se disfarça:** nenhum sítio de
+partilha foi ensaiado com estes ficheiros. Não se afirma aqui que o Facebook, o
+X, o LinkedIn ou o WhatsApp os leem. O que se afirma é o que está medido em
+cima: é PNG 1.0 legítimo, e três descodificadores que não são nossos leem-no.
+
+### A3.7 · o registo, e os dois campos novos
+
+Cada `.json` ganha `"codificacao"` («paleta» ou «rgba») e `"cores"`. O registo do
+cartão português da dívida pública, que a etapa 5 §6 reproduz por inteiro, muda
+nestas quatro linhas e em mais nenhuma:
+
+```json
+  "resumo": "sha256:fbfc7062670791f82f8e623c9f07a13810cf01ee629020ac7b5b69cf5265c3d8",
+  "bytes": 15477,
+  "codificacao": "paleta",
+  "cores": 87,
+```
+
+Este cartão pesava **34 433** bytes em RGBA e pesa **15 477** em paleta, menos
+55,1%. O `34433` é, ao byte, o número que a etapa 5 §6 já registava: o desenho
+não mudou, mudou a arrumação dos bytes. E o resumo do ficheiro repete-se
+entre corridas (`sha256:…5265c3d8`, conferido em duas construções separadas
+desta sessão), o que era preciso, porque o `design-bundle.mjs` embute o PNG e
+confere o resumo contra o registo escrito ao lado dele.
+
+**Nenhum portão os confere, e é de propósito.** Não são uma conferência, são a
+arrumação dos bytes escrita ao lado deles, para que um cartão que caia para RGBA
+se veja no registo e não só na balança. Se algum dia um cartão passar das 256
+cores, o passo `cartoes` imprime a linha da recusa com o nome do cartão e o
+píxel onde ela aconteceu, e o registo desse cartão diz `"rgba"`.
+
+### A3.8 · as réguas
+
+| comando | saída |
+|---|---|
+| `npm run build` (os cinco portões) | verde, `exit 0`, 12,852 s |
+| `node scripts/provar-cartoes-paleta.mjs` | `532 de 532 … iguais, píxel a píxel`, `exit 0` |
+| `npm run verify` | `exit 0` |
+| `npm run typecheck` | `exit 0` |
+| `node scripts/ortografia.mjs --verificar` | `exit 0`, «a superfície pública está numa grafia só» |
+| `node scripts/design-bundle.mjs` | `exit 0`, 20 cartões, 11 ficheiros de letra (os resumos dos PNG continuam a bater certo com os registos) |
+| `git diff --stat package.json package-lock.json` | vazio: nenhuma dependência entrou |
+| `git status --porcelain` | cinco caminhos e mais nenhum: os dois ficheiros novos (`scripts/png-paleta.mjs`, `scripts/provar-cartoes-paleta.mjs`), `scripts/cartoes.mjs`, o `ISSUES.md` e esta nota |
+| travessões (longo ou curto) na prosa deste construtor | zero. Varridas as linhas adicionadas do `git diff` do commit (790 linhas de diff, controlo positivo nas linhas de contexto, que dá 1): há **duas** ocorrências e as duas estão dentro de transcrições literais do terminal, na cadeia que o `morre()` de `cartoes.mjs` já imprimia antes desta ronda. Uma transcrição copia-se, não se reescreve |

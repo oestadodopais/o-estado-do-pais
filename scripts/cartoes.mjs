@@ -39,6 +39,21 @@
  * registo que o portão relê, e é por ele que um cartão pode ser conferido sem
  * ninguém ter de ler píxeis.
  *
+ * Regista também `codificacao` («paleta» ou «rgba») e `cores`. Nenhum portão as
+ * confere: não são uma conferência, são a arrumação dos bytes escrita ao lado
+ * deles, para que um cartão em RGBA se veja no registo e não só na balança.
+ *
+ * ---------------------------------------------------------------------------
+ * OS BYTES
+ * ---------------------------------------------------------------------------
+ * O PNG sai em paleta indexada (tipo de cor 3) pelo codificador da casa,
+ * `png-paleta.mjs`, e não pelo `asPng()` do rasterizador. Não é uma
+ * quantização: os cartões têm no máximo 118 cores e nem um píxel translúcido, e
+ * por isso os píxeis do ficheiro são, cor por cor, os que o rasterizador
+ * desenhou. Se algum cartão passar das 256 cores ou trouxer alfa, o codificador
+ * recusa, este ficheiro volta ao `asPng()` e o registo diz «rgba». A prova de
+ * igualdade corre-se com `node scripts/provar-cartoes-paleta.mjs`.
+ *
  * Os cartões vivem em `dist/` e mais lado nenhum. Não se commetem.
  */
 
@@ -57,6 +72,7 @@ import {
   nomeDoCartao,
 } from '../src/lib/cartoes.mjs';
 import { matchPath } from '../src/lib/routes.mjs';
+import { codificaPaleta } from './png-paleta.mjs';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
 const RAIZ = path.resolve(AQUI, '..');
@@ -74,6 +90,17 @@ function morre(msg) {
 }
 
 if (!fs.existsSync(DIST)) morre('não existe dist/. Corra o build primeiro.');
+
+/**
+ * `--provar` guarda o RGBA de cada cartão para o comparar com o PNG escrito.
+ *
+ * NÃO faz parte da construção: o `npm run cartoes` corre sem a bandeira, e o
+ * descodificador só é importado quando ela está lá. Quem a corre é
+ * `provar-cartoes-paleta.mjs`, que é onde está escrito o que a prova prova e o
+ * que ela não prova.
+ */
+const PROVAR = process.argv.includes('--provar');
+const { compara } = PROVAR ? await import('./provar-cartoes-paleta.mjs') : { compara: null };
 
 /* ------------------------------------------------------------ o rasterizador */
 
@@ -553,11 +580,17 @@ const cartoes = cartoesAConstruir(rotas);
 
 let escritos = 0;
 let bytes = 0;
+let emPaleta = 0;
+let maisCores = 0;
+let provados = 0;
+const recusas = [];
 for (const cartao of cartoes) {
   const modelo = modeloDoCartao(cartao);
   for (const dim of DIMENSOES) {
     const { svg, copia } = desenha(modelo, dim);
-    const png = new Resvg(svg, OPCOES_DO_TIPO).render().asPng();
+    const imagem = new Resvg(svg, OPCOES_DO_TIPO).render();
+    const paleta = codificaPaleta(imagem.pixels, imagem.width, imagem.height);
+    const png = paleta.bytes ?? imagem.asPng();
 
     const nomePng = nomeDoCartao({
       rota: cartao.rota,
@@ -578,6 +611,8 @@ for (const cartao of cartoes) {
       ficheiro: `/${PASTA}/${nomePng}`,
       resumo: `sha256:${crypto.createHash('sha256').update(png).digest('hex')}`,
       bytes: png.length,
+      codificacao: paleta.bytes ? 'paleta' : 'rgba',
+      cores: paleta.cores,
       copia,
       valores: modelo.valores,
       quadrados: modelo.quadrados,
@@ -586,6 +621,25 @@ for (const cartao of cartoes) {
     fs.writeFileSync(path.join(destino, nomeJson), JSON.stringify(registo, null, 2) + '\n');
     escritos++;
     bytes += png.length;
+    if (paleta.bytes) {
+      emPaleta++;
+      if (paleta.cores > maisCores) maisCores = paleta.cores;
+    } else {
+      recusas.push(`${nomePng}: ${paleta.recusa}`);
+    }
+
+    /* A prova, quando pedida: o RGBA desta passagem ainda está em memória, e o
+       PNG acabou de ser escrito. Ver `provar-cartoes-paleta.mjs`. */
+    if (PROVAR && paleta.bytes) {
+      const r = compara(
+        fs.readFileSync(path.join(destino, nomePng)),
+        imagem.pixels,
+        imagem.width,
+        imagem.height,
+      );
+      if (r.igual) provados++;
+      else morre(`os píxeis de ${nomePng} não são os do rasterizador.\n  ${r.motivo}`);
+    }
   }
 }
 
@@ -596,4 +650,19 @@ console.log(
       `${(bytes / 1024 / 1024).toFixed(2)} MB · ${medidas.size} medições de texto · ${segundos}s`,
   ),
 );
+console.log(
+  cinza(
+    `  paleta · ${emPaleta} de ${escritos} PNG em paleta exacta (tipo de cor 3), ` +
+      `no máximo ${maisCores} cores num cartão · ${recusas.length} em RGBA`,
+  ),
+);
+/* Uma recusa não fecha a construção: o cartão sai em RGBA, que é o que saía
+   antes, e o registo diz «rgba». O que ela não pode é passar despercebida. */
+for (const r of recusas) console.log(cinza(`    · em RGBA por recusa da paleta: ${r}`));
+if (PROVAR) {
+  console.log(
+    `  ${verde('✓')} ${provados} de ${emPaleta} PNG em paleta descodificados e iguais, píxel a ` +
+      `píxel, ao RGBA que o rasterizador desenhou na mesma passagem.`,
+  );
+}
 console.log(`  ${verde('✓')} os cartões estão em dist/${PASTA}/, e o portão vai conferi-los.\n`);
