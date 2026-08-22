@@ -467,13 +467,13 @@ As rotas são processadas por ordem, e a ordem é o programa:
 3. **os três 308 de anfitrião**, uma rota cada: `www.xn--oestadodopas-2fb.pt`,
    `oestadodopais.pt` e `www.oestadodopais.pt` respondem `308` com
    `Location: https://xn--oestadodopas-2fb.pt/$1`. A resposta termina aí;
-4. **a sonda, que é temporária**: duas rotas presas ao anfitrião da
-   pré-visualização deste ramo, `/sonda-308` (308 para `/`) e um `X-Sonda: host`
-   com `continue`. Existem para provar numa pré-visualização o que só produção
+4. *(a 22.08.2026 houve aqui duas sondas temporárias, presas ao anfitrião da
+   pré-visualização do ramo `pos-fusao-v3`: `/sonda-308` e um `X-Sonda: host`
+   com `continue`, para provar numa pré-visualização o que só produção
    exercitaria: que `has` de anfitrião selecciona, que `status` mais `Location`
    redirecciona, e que um cabeçalho condicionado ao anfitrião com `continue` é
-   mesmo aplicado. **Saem num commit próprio antes da fusão**, e quem quiser
-   saber se já saíram faz `grep -i sonda vercel.json`;
+   mesmo aplicado. Provaram-no e saíram no commit `a3b9d1d`; a leitura está em
+   `design/especime-v3/notas/pos-fusao.md`, §I53);*
 5. `{ "handle": "filesystem" }`, a fase que serve o que existe em `dist/`. Está
    marcado como deprecated na referência e continua suportado: é a forma da
    própria base de conhecimento da Vercel para um 404 à medida;

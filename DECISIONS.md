@@ -9315,6 +9315,16 @@ qualquer página de erro; os cartões inferem a edição do prefixo). A forma do
 404 inglês volta à direção, com três opções na ISSUES I53 e a recomendação de
 deixar o encaminhamento como está.
 
+**E a segunda forma, no mesmo dia, com o «go» do diretor:** o `vercel.json`
+inteiro em `routes` (os cinco cabeçalhos com `continue`, o `noindex` do alias
+condicionado ao anfitrião, os três 308 de anfitrião com `Location`, a fase do
+sistema de ficheiros, o 404 inglês), provado na pré-visualização com duas
+sondas presas ao anfitrião da pré-visualização (um 308 e um cabeçalho
+condicionado) e relido sem elas; `verify:deploy` passa a afirmar em produção,
+depois de cada deploy, os cinco cabeçalhos, o `noindex` do alias, os três 308
+com o `Location` exacto e as duas páginas de erro. I53 fecha (`c5515d2`,
+`a3b9d1d`).
+
 **Adenda de 22.08, a segunda forma da decisão 1.** Lida a queda da primeira
 forma, a direção disse «go» à recomendação do lugar de direção: o `vercel.json`
 inteiro passa a `routes`, um só sistema de encaminhamento, com os cinco
