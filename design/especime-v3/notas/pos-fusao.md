@@ -933,3 +933,385 @@ Capturas: o Instrumento n.º 1 com o marcador a pintar, 1280 e 390, pt e en (`ca
 | A2, os selos do instrumento | Claude Opus | ≈ 264k |
 | A3, os PNG em paleta | Claude Opus | ≈ 186k |
 | briefs, sonda, verificações, I61, fecho | Claude Fable 5 (lugar de direção) | não contado pelo CLI nesta sessão; `[verify]` |
+
+---
+
+## B1 · a faixa dos documentos alojados passa à mobília v3 (ISSUES I11)
+
+*Construtor B1 (Claude Opus, `claude-opus-5[1m]`). Brief:
+`../briefs/BRIEF-pos-fusao-B1.md`. Corrido sobre `npm run build` fresco, no ramo
+`pos-fusao-v3` a partir de `cabca1c`. **Nenhum byte de `studies-src/` nem do
+manifesto foi tocado**, e há duas provas disso ao fundo. Todos os números desta
+secção vêm de um comando que está escrito ao lado deles.*
+
+### B1.0 · o que este commit faz, em cinco linhas
+
+1. A faixa que vai por cima de cada documento alojado deixa de escrever a sua
+   própria folha em literais da v2 e passa a **ler** a folha da casa na
+   construção: paleta, pilhas de tipos e as duas fichas `@font-face` de
+   `tokens.css`, composição da marca e da sobrancelha de `site.css`. É o I11, e
+   fecha-se por leitura e não por retipagem.
+2. A faixa passa a papel e tinta, com a marca em Spectral no corpo da cabeça
+   interior e o rótulo em versaletes de Spectral SC. Sem tema escuro, e a
+   ausência é uma decisão (Emenda 12).
+3. **A linha de autoria sai da faixa** (Emendas 11 e 15) e **a porta do Sobre
+   fica** (regra 9 do Método). A leitura vai assinalada ao diretor em B1.7.
+4. `estudos.documentoFaixa` muda de texto nas duas edições, e é a única cadeia
+   tocada. Fica em `../CHAVES-EN.md` para a revisão de voz.
+5. **Os documentos não mudam um byte**, o contrato do portão não muda, e as três
+   conferências que o brief manda replantar continuam a fechar a construção.
+
+### B1.1 · a faixa, antes e depois
+
+**Antes** (`git show HEAD:src/lib/documentos.mjs`, edição portuguesa, 1608
+carácteres; a inglesa tem 1607):
+
+```html
+<div data-oedp-faixa><style>[data-oedp-faixa]{box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 18px;margin:0;padding:9px 20px;border:0;border-bottom:1px solid #3a4049;background:#16181b;color:#eaecf0;font-family:ui-monospace,'SF Mono',SFMono-Regular,Menlo,Monaco,'Cascadia Mono','Roboto Mono',Consolas,monospace;font-size:11px;font-weight:400;font-style:normal;line-height:1.5;letter-spacing:.05em;text-align:left;text-transform:none;position:relative;width:auto;max-width:none;min-height:0}
+[data-oedp-faixa] a{color:#fafbfc;background:none;border:0;padding:0;text-decoration:none;font-weight:inherit}
+[data-oedp-faixa] a:hover{text-decoration:underline;text-underline-offset:3px}
+[data-oedp-faixa] a:focus-visible{outline:2px solid #fafbfc;outline-offset:3px}
+[data-oedp-faixa] span{background:none;border:0;padding:0;margin:0}
+[data-oedp-marca]{font-family:'Iowan Old Style','Palatino','Palatino Linotype','Book Antiqua','URW Palladio L',Georgia,'Times New Roman',serif;font-size:17px;letter-spacing:-.01em;line-height:1.2}
+[data-oedp-nota],[data-oedp-autoria]{color:#969ca6}
+[data-oedp-voltar]{margin-left:auto}
+@media (max-width:640px){[data-oedp-voltar]{margin-left:0}}</style><a data-oedp-marca href="/estudos/evora-orcamentado-pago-devido-2025">O Estado do País</a><span data-oedp-nota>Documento do estudo, tal como foi publicado</span><span data-oedp-autoria lang="pt-PT">Escrito por IA, dirigido por uma pessoa.</span><a data-oedp-sobre href="/sobre">Sobre</a><a data-oedp-voltar href="/estudos/evora-orcamentado-pago-devido-2025">Voltar à página do estudo ↑</a></div>
+```
+
+**Depois** (2183 carácteres em português, 2176 em inglês; nada aqui foi escrito à
+mão, e B1.2 diz de onde saiu cada peça):
+
+```html
+<div data-oedp-faixa lang="pt-PT" aria-label="Documento do estudo · edição de registo"><style>@font-face{font-family: 'Spectral'; src: url('/tipos/spectral/Spectral-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap;}
+@font-face{font-family: 'Spectral SC'; src: url('/tipos/spectral-sc/SpectralSC-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap;}
+[data-oedp-faixa]{--oedp-f-prosa:'Spectral', Georgia, 'Times New Roman', serif;--oedp-f-versal:'Spectral SC', 'Spectral', Georgia, 'Times New Roman', serif;--oedp-g1:#585d5b;--oedp-ink:#17191b;--oedp-muted:var(--oedp-g1);--oedp-paper:#f6f7f4;box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 18px;margin:0;padding:9px 20px;line-height:1.5;border:0;border-bottom:1px solid var(--oedp-ink);background:var(--oedp-paper);color:var(--oedp-ink);font-family:var(--oedp-f-prosa);font-size:13px}
+[data-oedp-faixa] *{box-sizing:border-box}
+[data-oedp-faixa] a{color:var(--oedp-ink);background:none;border:0;padding:0;text-decoration:none;text-underline-offset:3px}
+[data-oedp-faixa] a:hover{text-decoration:underline}
+[data-oedp-faixa] a:focus-visible{outline:2px solid var(--oedp-ink);outline-offset:3px}
+[data-oedp-faixa] span{background:none;border:0;padding:0;margin:0}
+[data-oedp-faixa] [data-oedp-marca]{font-family:var(--oedp-f-prosa);font-size:clamp(24px, 3.4vw, 34px);font-weight:400;line-height:1.04;letter-spacing:-0.014em;font-feature-settings:'kern' 1, 'liga' 1;color:var(--oedp-ink)}
+[data-oedp-faixa] [data-oedp-rotulo]{font-family:var(--oedp-f-versal);font-size:13px;font-weight:400;letter-spacing:0.05em;text-transform:lowercase;color:var(--oedp-muted)}
+[data-oedp-faixa] [data-oedp-voltar]{margin-left:auto}
+@media (max-width:640px){[data-oedp-faixa] [data-oedp-voltar]{margin-left:0;flex-basis:100%}}</style><a data-oedp-marca href="/estudos/evora-orcamentado-pago-devido-2025">O Estado do País</a><span data-oedp-rotulo>Documento do estudo · edição de registo</span><a data-oedp-sobre href="/sobre">Sobre</a><a data-oedp-voltar href="/estudos/evora-orcamentado-pago-devido-2025">Voltar à página do estudo ↑</a></div>
+```
+
+O documento servido cresce **575 carácteres** em português e **569** em inglês, e
+é tudo faixa: o corpo do documento é o mesmo ficheiro, carácter a carácter, e o
+portão confere-o dos dois lados da igualdade.
+
+Três diferenças de markup, além da folha: `data-oedp-nota` passa a
+`data-oedp-rotulo` (deixou de ser uma nota e passou a ser um rótulo; nenhum
+outro ficheiro do repositório nomeava o atributo antigo, conferido por `grep`),
+`data-oedp-autoria` desaparece com a frase que carregava, e o `<div>` ganha
+`lang` da edição e `aria-label` do rótulo.
+
+### B1.2 · o que é lido, e de onde
+
+`estiloDaFaixa()`, em `src/lib/documentos.mjs`, corre uma vez por construção e
+morre se pedir uma coisa que a folha já não tem. O que ela lê:
+
+| de | o quê | valor de hoje |
+|---|---|---|
+| `tokens.css` `:root` | `--paper` | `#f6f7f4` |
+| `tokens.css` `:root` | `--ink` | `#17191b` |
+| `tokens.css` `:root` | `--g1` | `#585d5b` |
+| `tokens.css` `:root` | `--g3` | `#d9ddd8` (conferido; ver B1.4) |
+| `tokens.css` `:root` | `--muted` | `var(--g1)`, e traz o cinzento atrás |
+| `tokens.css` `:root` | `--f-prosa` | `'Spectral', Georgia, 'Times New Roman', serif` |
+| `tokens.css` `:root` | `--f-versal` | `'Spectral SC', 'Spectral', Georgia, 'Times New Roman', serif` |
+| `tokens.css` `@font-face` | Spectral 400 normal | `/tipos/spectral/Spectral-Regular.woff2`, `font-display: swap` |
+| `tokens.css` `@font-face` | Spectral SC 400 normal | `/tipos/spectral-sc/SpectralSC-Regular.woff2`, `font-display: swap` |
+| `site.css` `.wordmark` | `font-family` · `font-weight` · `line-height` · `letter-spacing` · `font-feature-settings` · `color` | `var(--f-prosa)` · `400` · `1.04` · `-0.014em` · `'kern' 1, 'liga' 1` · `var(--ink)` |
+| `site.css` `.masthead-compact .wordmark` | `font-size` | `clamp(24px, 3.4vw, 34px)` |
+| `site.css` `.eyebrow` | `font-family` · `font-size` · `letter-spacing` · `text-transform` · `color` | `var(--f-versal)` · `13px` · `0.05em` · `lowercase` · `var(--muted)` |
+
+**As fichas entram na faixa com o prefixo `--oedp-`, e não é enfeite.** Os quinze
+documentos alojados declaram `--ink` no seu próprio CSS e nove declaram também
+`--paper`. Uma faixa que escrevesse `var(--paper)` apanhava o papel do documento:
+em «Évora, orçamentado, pago, devido» esse papel é `#FAFBF9` com o sistema em
+claro e `#12181B` com o sistema em escuro, medido no DOM da página construída.
+Com o prefixo, o que a faixa pede é o que a faixa declara, e o resto do documento
+não a alcança.
+
+Quais fichas se declaram não é uma lista escrita: o parser varre o CSS que
+compôs, apura os `var(--oedp-…)` que ele pede, fecha-se sobre eles (`--muted`
+puxa `--g1`) e morre se algum não existir no `:root`. Uma ficha que ninguém use
+não é escrita.
+
+**A letra do rótulo é Regular e a sobrancelha da casa é 600, e a diferença é
+deliberada.** A faixa leva as fichas `@font-face` de exactamente duas letras, e
+uma terceira era peso que o leitor de um documento pagava por nada. Pedir 600 sem
+a ficha de 600 seria pedir ao navegador que engordasse o 400 por conta própria,
+que é o que a ficha de Spectral 700 em `tokens.css` existe para impedir. **Fica
+assinalado ao lugar de direção:** se a sobrancelha da faixa tiver de ser a mesma
+letra que a das páginas, é uma terceira ficha `@font-face` e uma palavra em
+`PESO_DO_ROTULO`, não é uma etapa.
+
+**Os tipos são pedidos, e a promessa muda de palavra sem mudar de sentido.** A
+v2 dizia «nenhum pedido de rede» e usava pilhas do sistema. A faixa passa a pedir
+dois WOFF2 a `/tipos/…`, que é o mesmo anfitrião que serve o documento. A
+conferência do portão procura `//` e continua a dar zero:
+
+```
+node -e "…as quatro expressões de verificaDocumento() sobre a faixa…"
+  faixa v3, cargas de fora: 0
+  controlo positivo (a mesma faixa com //fonts.gstatic.com): 1
+```
+
+### B1.3 · o contraste, medido
+
+Com a aritmética de `scripts/medir-contraste.mjs` (WCAG 2.x, linhas 128 a 152)
+sobre as fichas lidas de `tokens.css`:
+
+| o quê | par | razão |
+|---|---|---|
+| a marca, a porta do Sobre, a porta de volta | `--ink` sobre `--paper` | **16,39:1** |
+| o rótulo | `--g1` sobre `--paper` | **6,24:1** |
+| o fio, se fosse de `--g3` (não é; ver B1.4) | `--g3` sobre `--paper` | 1,28:1 |
+
+Os dois primeiros passam AA e AAA para texto normal. O terceiro é decoração pela
+régua da casa, e é exactamente por isso que não serve para o que a faixa precisa.
+
+### B1.4 · o fio é de tinta e não de `--g3`, e foi a medição que o decidiu
+
+O brief escreve as duas coisas: «a 1px `--g3` rule under the banner» na forma, e
+«the paper band with its ink rule, which reads against the documents» na razão.
+Não podem ser as duas, e a medição escolhe.
+
+A v2 fazia a banda escura «para se ler contra qualquer fundo». Isso deixa de ser
+possível: a página de um documento não carrega `public/js/tema.js`, e por isso a
+escolha do leitor não é conhecida ali; pela Emenda 12 o sítio é claro para todos
+até essa escolha. A faixa é de papel. **E papel sobre papel não se vê:**
+
+| | o papel da faixa contra o fundo do documento |
+|---|---|
+| com o sistema em claro, que é o caso por defeito | de **1,01:1** (`agua-nao-faturada`) a **1,08:1** (`which-door-is-yours`) |
+| com o sistema em escuro, nos documentos que o seguem | de **15,45:1** a **18,09:1** |
+
+Medido nos quinze, com o fundo pintado lido do DOM da página construída. Em claro
+a superfície da faixa é indistinguível da do documento, e o que resta para dizer
+«daqui para baixo o documento não é meu» é o fio. Um fio de `--g3` mede 1,28:1
+sobre papel: não desenha fronteira nenhuma. Um fio de tinta mede 16,39:1.
+
+**O fio vai a tinta**, pela mesma razão pela qual o contorno do marcador âmbar é
+uma medição e não desenho (`IDENTIDADE.md` §2). A espessura, 1px, é a que a faixa
+já tinha na v2 e a que o aparelho da primeira página usa (`inicio.css`, quatro
+regras `border-top: 1px solid var(--ink)`). **Assinalado ao lugar de direção:
+voltar à hairline de `--g3` é uma palavra em `documentos.mjs`, e a medição fica
+aqui para que a escolha seja informada.**
+
+### B1.5 · a folha do documento dentro da faixa, medida nos quinze
+
+O brief manda medir no documento 04 em português, que é o de folha mais pesada
+(`evolucao-de-portugal-desde-1981/pt.html`, 22 849 carácteres de `<style>`,
+quase o dobro do segundo), e num inglês. Foi medido **nos quinze, a 1280 e a
+390**: para cada documento, o estilo calculado dos cinco elementos da faixa na
+página construída contra o mesmo markup numa página de controlo servida da mesma
+origem e à mesma largura. Toda a propriedade que difere é uma fuga.
+
+| propriedade | documentos afectados, antes | depois |
+|---|---|---|
+| `box-sizing` | 14 de 15 (`* { box-sizing: border-box }`) | 0 |
+| `text-underline-offset` | 6 de 15 (`a { text-underline-offset: 2px }` ou `3px`) | 0 |
+| `color-scheme` | 15 de 15 | 15 de 15, e sem efeito |
+
+As duas primeiras repõem-se com duas declarações: `[data-oedp-faixa] *{box-sizing:border-box}`
+e `text-underline-offset:3px` na regra base de `a`, que era o que só a regra de
+`:hover` tinha. **As nove declarações defensivas que a v2 trazia** (`position`,
+`width`, `max-width`, `min-height`, `text-align`, `text-transform`, `font-style`,
+`font-weight`, `letter-spacing` no contentor) **não entraram, porque a medição não
+as pediu**: nenhum dos quinze documentos as faz entrar. Uma isolação sem fuga é
+uma linha que ninguém pode desmentir.
+
+**O `color-scheme` fica, e foi medido sem efeito.** É herdado do `:root` do
+documento (`light` ou `light dark`). A prova é directa: forçar
+`color-scheme: normal` na faixa, com o sistema em escuro, dá uma captura da banda
+**byte a byte igual** à da faixa com o valor herdado (`0788808f721ed1fd` nas
+duas). Nenhuma propriedade padrão dos cinco elementos e nenhuma caixa muda entre
+claro e escuro; o que muda são as fichas do próprio documento (`--paper`,
+`--ink`, `--rule`, `--accent`, dezasseis ao todo), que a faixa não usa.
+
+Duas notas de método, porque uma medição sem controlo não é uma medição:
+
+* **A captura é estável.** Três corridas em claro dão o mesmo `sha256`
+  (`e95bcb74d915d20e`), duas em escuro dão o mesmo (`0788808f721ed1fd`).
+* **A medição veria um efeito se houvesse um.** Posto um `<input>` dentro da
+  faixa, que o navegador pinta com o esquema, claro e escuro passam a dar capturas
+  diferentes (`bbbb534ea18e4545` contra `c28f7668daaee7c1`).
+
+E a diferença de píxeis entre claro e escuro, que existe, **não está na faixa**:
+a banda tem 77,859375px de altura, e as duas últimas linhas de píxeis são a borda
+fraccionária a misturar-se com o fundo do próprio documento. Recortada a captura
+sem essas duas linhas, claro e escuro dão o mesmo `sha256`
+(`26aaddd2f278a156`).
+
+### B1.6 · a banda, antes e depois, nos quinze
+
+A faixa entra logo a seguir ao `<body>`, e por isso vive dentro da caixa que o
+documento der ao seu corpo. **Sete dos quinze põem `max-width` no `<body>`**, seis
+a `48rem` e um a `46rem`, e neles a banda não sangra até à margem: é a mesma
+condição da v2, e não se corrige sem tocar no documento.
+
+| largura | a banda hoje | a banda na v2 |
+|---|---|---|
+| 1280, os oito de corpo livre | 1280,0 × **54,4** | 1280,0 × 40,5 |
+| 1280, os seis de `max-width: 48rem` | 728,0 × **77,9** | 728,0 × 61,0 |
+| 1280, `avaliacao-economica…`, de `46rem` | 736,0 × **77,9** | 736,0 × 61,0 |
+| 390, os quatro ingleses de corpo livre | 390,0 × **91,0** | 390,0 × 100,9 |
+| 390, os quatro portugueses de corpo livre | 390,0 × **114,5** | 390,0 × 100,9 |
+| 390, os seis de `48rem` | 361,2 × **114,5** | 361,2 × 100,9 |
+| 390, `avaliacao-economica…` | 350,0 × **134,0** | 350,0 × 100,9 |
+
+A banda cresce em altura onde a marca cresce, e encolhe a 390 nas edições
+inglesas, onde o rótulo é mais curto e uma linha a menos chega. Nos seis de corpo
+estreito a fila quebra a 1280 e não só abaixo de 640: a porta de volta cai para a
+segunda linha, encostada à direita, que é a forma que a regra de `margin-left:auto`
+lhe dá em qualquer caso.
+
+### B1.7 · a linha de autoria sai, a porta do Sobre fica
+
+**A leitura, e vai assinalada ao diretor.** As palavras do diretor para esta
+faixa são «wordmark, "documento do estudo", a porta de volta, nada sobre o
+sítio». O lugar de direção leu «nada sobre o sítio» como as Emendas 11 e 15: o
+que sai é a **frase** sobre a casa, não a porta.
+
+* **Sai** «Escrito por IA, dirigido por uma pessoa.» (a constante
+  `AUTHORSHIP_LINE`, e o comentário que a justificava). Pelo teste da Emenda 15,
+  escrito uma vez pelo diretor, uma frase sobrevive numa página se a sua remoção
+  fizesse um leitor ler mal um número. Esta não é uma ressalva sobre os dados do
+  documento: é o sítio a dizer o que é, em mobília, por cima de obra citada. Sai.
+* **Fica** a porta `Sobre` / `About`. A regra 9 do Método é texto governado e diz
+  «todas as páginas construídas levam a porta para lá»; o portão confere-a nesta
+  faixa e em mais lado nenhum, porque o ramo dos documentos devolve antes da
+  conferência geral. Uma porta é navegação, e a autoria continua dita onde pode
+  ser provada, que é o Sobre.
+
+**Se o diretor quiser a porta fora também, é mudança de texto governado (a regra
+9 do Método) e a sua palavra vem primeiro; a planta de B1.8 mostra o que o portão
+faz nesse dia.** Não é uma linha de código: é a regra 9 e a conferência que a
+serve.
+
+**Uma coisa que não se mede daqui.** O `<div>` da faixa leva `lang` da edição e
+`aria-label` com o rótulo, como o brief pede. Na árvore de acessibilidade do
+Chromium o nome está lá e o nó não é ignorado (`role=generic`,
+`name="Documento do estudo · edição de registo"`, medido por CDP na página
+construída). O que **não** foi verificado é se um leitor de ecrã anuncia o nome
+de um `generic`: a ARIA desaconselha nomear esse papel, e nenhum leitor de ecrã
+foi corrido nesta sessão. Com `role="group"` o nome fica num papel que a norma
+manda nomear, ao custo de o leitor ouvir o rótulo duas vezes, porque ele também
+está visível. **Fica ao lugar de direção: é um atributo.**
+
+### B1.8 · as plantas, provadas e revertidas
+
+O contrato do portão não muda. As três conferências que o brief manda replantar,
+cada uma com a sua mensagem e cada uma reposta a seguir:
+
+**1 · um algarismo no texto da faixa.** Acrescentado ` 2026` ao rótulo em
+`faixa()`, `npm run build` sai a **1**, com quinze erros, um por documento:
+
+```
+  O PORTÃO DE HTML FECHOU — 15 erro(s):
+  en/studies/agua-nao-faturada/document/index.html
+    ✗ a faixa do observatório tem algarismos no texto ("2026"): "O Estado do País Study document · edition of record 2026 About Back to the study page ↑".
+      O corpo do documento está dispensado do varrimento porque é obra citada. A faixa é nossa, e por isso não pode trazer números nenhuns.
+```
+
+**2 · a porta do Sobre retirada.** Apagada a linha do `<a data-oedp-sobre>` em
+`faixa()`, `npm run build` sai a **1**, com quinze erros:
+
+```
+  O PORTÃO DE HTML FECHOU — 15 erro(s):
+  en/studies/agua-nao-faturada/document/index.html
+    ✗ a faixa do observatório não tem ligação para "/en/about".
+      A autoria deste sítio está dita no Sobre, e todas as páginas construídas levam lá. Num documento a porta vai na faixa: o corpo é obra citada e não se lhe acrescenta nada (src/lib/documentos.mjs).
+```
+
+**3 · um byte mudado num documento alojado.** Em
+`studies-src/evora-orcamentado-pago-devido-2025/pt.html`, o byte 12295 passou de
+`L` a `l` («Leia esta parte primeiro»). O portão dos documentos sai a **1**, e diz
+os dois resumos:
+
+```
+    ✗ "evora-orcamentado-pago-devido-2025/pt": os bytes em disco não são os do manifesto.
+      declarado: e57d4b2639996735798b1632324cc2e1aafb0b9248c2bc2c10a9f6f63d3ba1c2
+      em disco:  13cfaf4c4745e7cfbd579ad4184deedd06ba921af901449751c1e3b63e74d81a
+      Um documento alojado é obra citada: se mudou, mudou por engano. Reponha-o a
+      partir de studies-src/_raw/evora-orcamentado-pago-devido-2025.pt.html com scripts/normalize-study.mjs, ou
+      declare a nova versão no manifesto — e diga porquê.
+```
+
+Com o byte ainda mudado e a construção feita dos bytes originais, `npm run gate:html`
+sai a **1** com a conferência 4, que é a que prova que o construído é a origem
+mais a faixa e nada mais:
+
+```
+  estudos/evora-orcamentado-pago-devido-2025/documento/index.html
+    ✗ o documento construído não é o documento de origem mais a faixa.
+      origem:     studies-src/evora-orcamentado-pago-devido-2025/pt.html
+      construído: 959758 carácteres · origem + faixa: 959758
+      Um documento de estudo é alojado intacto: acrescenta-se-lhe a faixa e mais nada.
+```
+
+Notar o que essa mensagem mostra: **os dois lados têm o mesmo comprimento**. A
+igualdade é carácter a carácter e não de tamanho, e um byte trocado por outro do
+mesmo tamanho não passa.
+
+**Reposto.** `shasum -a 256` do ficheiro volta a
+`e57d4b2639996735798b1632324cc2e1aafb0b9248c2bc2c10a9f6f63d3ba1c2`, que é o do
+manifesto; `git status --porcelain studies-src/` imprime nada e
+`node scripts/check-documentos.mjs` sai a 0.
+
+**Mais três plantas, no parser, que o brief não pediu e que a regra do valor
+lido pede.** Uma leitura que adivinha é pior do que um literal, porque um literal
+pelo menos vê-se. Cada uma corrida à parte e reposta:
+
+| a planta | o que a construção diz |
+|---|---|
+| `--paper` renomeado para `--papel` em `tokens.css` | `documentos: \`--paper\` já não existe no \`:root\` de \`src/styles/tokens.css\`.` |
+| a ficha `@font-face` de Spectral SC retirada | `documentos: não encontrei em \`src/styles/tokens.css\` a ficha @font-face de "Spectral SC" 400 normal.` |
+| `.masthead-compact .wordmark` sem `font-size` | `documentos: \`.masthead-compact .wordmark\` (\`src/styles/site.css\`) já não declara \`font-size\`.` |
+
+`git status --porcelain src/styles/` imprime nada depois das três.
+
+### B1.9 · as capturas
+
+Oito ficheiros em `../capturas/pos-fusao/`, a 1280 e a 390, nas duas edições, com
+`deviceScaleFactor: 2`, `colorScheme: 'light'` e depois de `document.fonts.ready`,
+sobre `/estudos/evora-orcamentado-pago-devido-2025/documento` e a sua edição
+inglesa, topo da página:
+
+* `2026-08-22-b1-faixa-{1280,390}-{pt,en}.png`, a faixa de hoje;
+* `2026-08-22-b1-faixa-antes-{1280,390}-{pt,en}.png`, a mesma página com a faixa
+  da v2 reposta no lugar por `outerHTML`, para que o antes e o depois sejam a
+  mesma fotografia com uma coisa mudada. O módulo da v2 saiu de
+  `git show HEAD:src/lib/documentos.mjs`, com os dois rótulos antigos fixados.
+
+O andaime foi uma chamada de `playwright` à parte, com o mesmo padrão de servidor
+estático de `tests/inicio/capturas.mjs`, e foi apagado; o que fica são as
+imagens e os números desta nota.
+
+### B1.10 · o que fica ao lugar de direção, desta secção
+
+1. **A leitura de «nada sobre o sítio»** (B1.7): sai a frase, fica a porta. Se o
+   diretor quiser a porta fora, é a regra 9 do Método a mudar.
+2. **O fio a tinta em vez da hairline de `--g3`** (B1.4), decidido pela medição
+   contra a letra do brief. Uma palavra desfá-lo.
+3. **O par novo de `estudos.documentoFaixa`** (`../CHAVES-EN.md`), à revisão de
+   voz. Uma palavra mudada é uma cadeia.
+4. **O peso do rótulo**, 400 e não os 600 da sobrancelha das páginas (B1.2),
+   porque a faixa carrega uma ficha por letra.
+5. **O `aria-label` num `<div>` sem papel** (B1.7): o nome está na árvore do
+   Chromium, e não foi verificado com leitor de ecrã.
+
+### B1.11 · as réguas
+
+| comando | saída |
+|---|---|
+| `npm run build` (os cinco portões) | verde, `exit 0` · «322 páginas · 15 documento(s) de estudo, conferidos contra a origem» |
+| `npm run typecheck` | `exit 0` |
+| `node scripts/ortografia.mjs --verificar` | `exit 0` · «a superfície pública está numa grafia só» |
+| `node scripts/check-documentos.mjs` | `exit 0` · «cada documento alojado é, byte a byte, o que o manifesto declara» |
+| `git status --porcelain studies-src/` | nada (controlo positivo: com a planta 3 no lugar, imprimia a linha do ficheiro) |
+| `grep -c "Iowan\|ui-monospace\|SF Mono" src/lib/documentos.mjs` | `0` (controlo positivo: o mesmo `grep` em `git show HEAD:` dá `2`) |
+| `grep -n "#[0-9a-fA-F]\{3,6\}\b" src/lib/documentos.mjs` | nada (controlo positivo: em `git show HEAD:` dá cinco cores, `#16181b` `#3a4049` `#969ca6` `#eaecf0` `#fafbfc`) |
