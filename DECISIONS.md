@@ -9278,6 +9278,31 @@ rotas e recortes da família da leitura.
 
 ---
 
+### 1.62 A ronda pós-fusão, 22.08: a direção decide as cinco pendências por recomendação do lugar de direção
+
+**Afecta:** nenhum
+
+*(Esta entrada regista decisões da direção e o que cada uma muda em ficheiros que
+não são texto governado. Nenhuma palavra de `src/data/sobre.mjs` ou de
+`src/data/metodo.mjs` mexe aqui, nenhuma linha do livro-razão é escrita, e
+nenhum valor muda.)*
+
+A 22.08.2026, sobre os relatórios da etapa A e de B1 do ramo `pos-fusao-v3`
+(`design/especime-v3/notas/pos-fusao.md`), o diretor respondeu às cinco
+pendências com uma frase: «let's follow your recommendation». As cinco, e o que
+cada uma faz:
+
+| # | Pendência | Decisão | Onde |
+| --- | --- | --- | --- |
+| 1 | **I53, a página de erro da edição inglesa.** A Vercel serve um só `404.html`; um 404 por edição é uma regra de encaminhamento | **`routes` com `status: 404`** depois de `{ "handle": "filesystem" }`, a forma da base de conhecimento da Vercel (`handle` está marcado como deprecated e suportado; a referência de `vercel.json`, lida a 22.08, diz que `routes` coexiste com `headers` e `redirects`); provada numa pré-visualização antes de `main`. A alternativa por `rewrites` serviria a página inglesa com 200, um 404 disfarçado, e fica recusada | `src/pages/en/404.astro`, `src/lib/routes.mjs`, `vercel.json` |
+| 2 | **A Emenda 16 e a I32.** A frase «as 13 linhas cobrem 11 deles … faltam pelo menos o desemprego de longa duração e o desemprego jovem» | **Corrigida com nota datada** sob a Emenda 16 (cofre e `direcao.md`): a página da Comissão, lida no HTML a 22.08, enumera 13 indicadores principais e as 13 linhas do livro-razão correspondem-lhes uma a uma, com os mesmos limiares. O painel é 13 de 13. I32 fechada; o pedido C1 ao motor retirado. A manchete nunca afirmou um total, e não muda | `design/especime-v3/direcao.md`, `ISSUES.md`, `PEDIDOS-AO-MOTOR-2026-08-22.md` |
+| 3 | **O selo da frase da Leitura breve do Instrumento n.º 1** (A2): duas das seis frases levam dois selos em linhas adjacentes de 27,65px, e 44px de área sobrepõem-se por 16,4px | **A excepção medida fica.** É um selo em linha de prosa, à altura da linha como a constituição o põe (§4 «Selo»), e está na matriz como célula própria. A entrelinha a 44px mudaria a composição da leitura breve por um alvo | `tests/inicio/matriz.mjs`, `site.css` (a excepção `.brief-text` na lista) |
+| 4 | **O rótulo da faixa dos documentos** (B1): «Documento do estudo · edição de registo» / «Study document · edition of record», Spectral SC 400 | **Aprovado como está.** A chave `estudos.documentoFaixa` fica com este par, registado em `CHAVES-EN.md` | `src/i18n/strings.mjs` |
+| 5 | **A pré-visualização n.º 3** do ramo | **Sim**: o ramo é empurrado para a Vercel levantar a pré-visualização protegida, onde a regra do 404 é provada; a fusão continua a esperar a palavra do diretor depois de a ver | `git push -u origin pos-fusao-v3` |
+
+**O que a entrada não faz.** Não muda uma palavra do Método nem do Sobre, não
+escreve uma linha do livro-razão, e não funde nada: a fusão é a palavra seguinte.
+
 ## 4. O registo dos defeitos e dos adiamentos
 
 **Defeito registado 2026-08-16 (00:10), encontrado pela direcção no sítio no ar — RESOLVIDO na mesma noite (§1.37, no ar em `4217232`):** os selos acrescentados a 15.08 aos valores do cabeçalho da primeira página (308 · 11 · 15) rendem no cabeçalho com o rótulo inteiro do estudo («O Estado do País — apuramento próprio») e, no caso da contagem CAOP, com o marcador «[a verificar]» ao lado. Certo pela regra (todo o valor tem selo, para a sua linha), errado naquele sítio: no cabeçalho o selo deve ser só o glifo, com o rótulo apenas para leitores de ecrã. **Primeiro item do bloco V**, junto com a saída de «Edição de …», da introdução justificativa da primeira página e de «Estes indicadores não são escolha nossa…» (voz). Sem alteração ao portão: o selo continua ao pé do valor e a apontar para a linha própria.
