@@ -259,7 +259,8 @@ ficheiros, e os dois são **gerados na construção**, nunca escritos à mão:
 | `/dados/convergencia.csv` | uma linha por região da régua: valor tal como publicado, ano, unidade, estudo e **o id da afirmação** | do livro-razão |
 | `/dados/municipios-308.csv` | uma linha por município: nome, distrito ou ilha, região e a posição normalizada | de `src/data/caop-centroids.mjs`, com a citação da CAOP e a data de acesso no cabeçalho |
 
-Cada instrumento da primeira página tem a ligação na sua camada Fundo, nas duas
+A ligação de cada ficheiro está no índice que o publica: a régua da convergência
+no índice do livro-razão, os 308 concelhos no índice dos municípios, nas duas
 edições. Os dois ficheiros são gerados por [`src/lib/dados.mjs`](src/lib/dados.mjs)
 e servidos por endpoints em `src/pages/dados/`.
 
@@ -358,24 +359,66 @@ src/
   pages/livro-razao.*     o livro-razão como conjunto de dados (CSV e JSON), e
   pages/livro-razao/[slug].json.js  um ficheiro por linha
   pages/**/documento/     o documento de um estudo, servido tal como está
-  styles/                 tokens.css (tema de três estados) + site.css
+  styles/                 tokens.css (os @font-face, a paleta e as fichas) + site.css;
+                          mais uma folha por família de página: inicio, leitura,
+                          linha, municipio, importadas pela vista que as usa
 
 public/js/                enriquecimento progressivo, vanilla, sem empacotar
 ```
 
 ## Identidade
 
-Portada do estudo de identidade v2 aprovado, sem alterar valores.
+A regra é [`IDENTIDADE.md`](IDENTIDADE.md), na sua v3; as Emendas de 20 e
+21.08.2026 que a governam estão em
+[`design/especime-v3/direcao.md`](design/especime-v3/direcao.md). Isto é o
+resumo, e onde os dois discordarem ganha o `IDENTIDADE.md`.
 
-- **Tema de três estados**: `:root` nu com a paleta clara completa;
-  `@media (prefers-color-scheme: dark)` protegido por
-  `:root:not([data-theme="light"])`; `:root[data-theme="dark"]` explícito, para
-  que uma escolha ganhe nos dois sentidos.
-- **Três tipos, três funções, sem sobreposição**: Iowan Old Style só em marcas,
-  Avenir Next só em prosa, SF Mono em todos os números e rótulos. Tudo pilhas
-  de sistema — **a página não faz nenhum pedido de rede**.
-- **O amarelo `#E8A80C` nunca é texto.** Só marca medição: barras, pontos
-  acesos, o chip da região que está a ser lida.
+- **Três tipos, três funções, sem sobreposição** (§1): **Spectral** na prosa e
+  na marca, **Bitter** nos valores medidos, rótulos, eixos e no que é
+  transcrito, **Spectral SC** nos antetítulos e rótulos de secção. Bitter em
+  caixa alta só dentro dos instrumentos (Emenda 5); algarismos tabulares
+  versais em todo o valor e em toda a régua.
+- **Só tipos alojados aqui** (§1, `DECISIONS.md` §1.50). Nenhum anfitrião de
+  terceiros: nem `fonts.googleapis.com`, nem `fonts.gstatic.com`, nem outro. Os
+  oito WOFF2 estão em `public/tipos/`, com o `OFL.txt` da família ao lado (SIL
+  Open Font License 1.1); a origem, o commit fixado e o resumo SHA-256 de cada
+  ficheiro estão em
+  [`design/especime-v3/TIPOS.md`](design/especime-v3/TIPOS.md). As pilhas de
+  sistema ficam, e só como recuo declarado na folha para o caso de um ficheiro
+  não chegar.
+- **A cor é o estado, e só o estado** (§2, Emenda 1). Aparece só onde a fonte
+  publica um limiar formal: `--amber` `#e0a21a` no marcador do valor que está
+  **fora** do limiar, com contorno de tinta, e `--ochre` `#7a5300` na palavra;
+  `--cobalt` `#1f4e8c` no marcador e na palavra do que está **dentro**. «Sem
+  limiar» e «por confirmar» não levam cor nenhuma: dizem-se por palavras e por
+  forma. Tudo o resto é `--paper`, `--ink` e os três cinzentos, e um tipo de
+  página novo não ganha uma cor.
+- **O contorno do marcador âmbar é uma medição, não desenho.** Âmbar sobre
+  papel claro mede 2,09:1, que não chega para um objecto de interface, e a
+  tinta contra o âmbar mede 7,85:1. `node scripts/medir-contraste.mjs` mede
+  cada par que a folha de facto usa, nos dois temas; um par que não esteja na
+  lista dessa régua é um par que ninguém mediu.
+- **Claro para toda a gente** (Emenda 12, `DECISIONS.md` §1.52),
+  independentemente da preferência do sistema, com um controlo «claro · escuro»
+  no cabeçalho e a escolha guardada no aparelho do leitor.
+  `:root[data-theme="dark"]` é hoje o único caminho para o papel escuro; o
+  bloco que consultava `prefers-color-scheme` saiu de `tokens.css`.
+- **O selo é a porta** (§5). Ao lado de cada medição, um quadrado mais a
+  palavra «fonte», e a unidade compacta inteira é a ligação para a linha do
+  livro-razão: cheio quando a proveniência está completa, a tracejado quando
+  falta um campo. No registo de correcções a porta é o selo da **linha**, e não
+  o de um valor.
+- **Uma correcção tem forma, e não tem cor** (§2): valor antigo riscado a
+  cinzento, valor novo a tinta ao lado, e a data.
+- **Duas cores saíram, e não foi por gosto** (`DECISIONS.md` §1.50): o amarelo
+  da medição (`--yellow`) e o oxblood do erro admitido (`--oxblood`). Com elas
+  saíram `--paper-2` e `--paper-3`, porque o aparelho se separa com fios e
+  molduras cinzentas e não com painéis tingidos.
+
+O retrato desenhável desta identidade sai de
+[`scripts/design-bundle.mjs`](scripts/design-bundle.mjs), que lê `dist/` e as
+folhas e escreve `design-system/` (gerado, fora do git e fora do `npm run
+build`).
 
 ## SEO
 
