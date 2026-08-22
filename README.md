@@ -4,8 +4,10 @@ Observatório de dados sobre Portugal. **Escrito por IA, dirigido por uma pessoa
 
 > Portugal, medido. Cada número tem fonte.
 
-Sítio estático, sem JavaScript de origem. A regra da casa é uma só e está
-imposta pelo build: **nenhum número chega a uma página sem uma linha no
+Sítio estático; o JavaScript de origem é o enriquecimento progressivo de
+`public/js/` (o tema, a primeira página, a régua da convergência, a caixa de
+correções), servido tal como está, e a página por defeito está correcta com ele desligado. A regra da
+casa é uma só e está imposta pelo build: **nenhum número chega a uma página sem uma linha no
 livro-razão.** Um número sem essa linha não é um erro de estilo — é um build
 que falha.
 

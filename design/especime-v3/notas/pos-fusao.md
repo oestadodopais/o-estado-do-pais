@@ -891,3 +891,45 @@ píxel onde ela aconteceu, e o registo desse cartão diz `"rgba"`.
 | `git diff --stat package.json package-lock.json` | vazio: nenhuma dependência entrou |
 | `git status --porcelain` | cinco caminhos e mais nenhum: os dois ficheiros novos (`scripts/png-paleta.mjs`, `scripts/provar-cartoes-paleta.mjs`), `scripts/cartoes.mjs`, o `ISSUES.md` e esta nota |
 | travessões (longo ou curto) na prosa deste construtor | zero. Varridas as linhas adicionadas do `git diff` do commit (790 linhas de diff, controlo positivo nas linhas de contexto, que dá 1): há **duas** ocorrências e as duas estão dentro de transcrições literais do terminal, na cadeia que o `morre()` de `cartoes.mjs` já imprimia antes desta ronda. Uma transcrição copia-se, não se reescreve |
+
+---
+
+## A · fecho da etapa, pelo lugar de direção (Claude Fable 5)
+
+### O que o fecho traz, além dos três commits dos construtores
+
+**I61, o marcador do Instrumento n.º 1 que não pintava.** O construtor A2 deixou a observação («não pinta em Chromium sem cabeça; não verificado com janela»). Reproduzido em Chrome com janela sobre a construção local servida por `astro preview`: o nome da região, o valor «82» e o ponto não aparecem, e ficam só dois fios cinzentos onde o rótulo devia estar. Diagnóstico, lido no DOM e na folha: o grupo `.mk` tem cinco filhos por esta ordem, `rect` (a chapa), `text.mk-name`, `text.mk-val`, `circle`, `rect.mk-hit`; o último é a área de toque, e o seu `fill` calculado era `rgb(246, 247, 244)`, o papel. A regra `.rule-svg .mk-hit { fill: transparent }` (`site.css:1158`) perde para `.rule-svg .mk rect { fill: var(--paper) }` (`site.css:1188`, etapa 1c, `7650aed`) por especificidade, 0,2,0 contra 0,2,1. O CSS servido em produção traz as duas regras por esta ordem (`curl https://xn--oestadodopas-2fb.pt/_astro/Base.KO2lSj4k.css | grep -o '\.rule-svg \.mk rect{[^}]*}\|\.rule-svg \.mk-hit{[^}]*}'` → `.rule-svg .mk-hit{fill:#0000}` e `.rule-svg .mk rect{fill:var(--paper)}`), por isso o defeito está no ar desde a fusão de 21.08. A correção é uma regra com a mesma especificidade, depois da outra: `.rule-svg .mk rect.mk-hit { fill: transparent }`.
+
+Prova, em Chromium sem cabeça, `/` e `/en` a 1280, antes (a folha de `5366dd1`, por `git stash`) e depois:
+
+| | `fill` calculado de `.mk-hit` | píxeis escuros na caixa do «82» (22×22 com 4px de margem, 900 píxeis) |
+|---|---|---|
+| antes | `rgb(246, 247, 244)` | 0 (pt) · 0 (en) |
+| depois | `rgba(0, 0, 0, 0)` | 116 (pt) · 116 (en) |
+
+O guião (servidor local sobre `dist/`, `document.fonts.ready`, `scrollIntoView`, recorte da caixa de `.mk-val`, contagem de píxeis com as três componentes abaixo de 100) correu nas duas construções e foi apagado; o que fica é a tabela.
+
+**O `README.md`, linha 7.** Dizia «Sítio estático, sem JavaScript de origem», e `dist/js/` serve quatro ficheiros (`public/js/convergencia.js`, `correcoes.js`, `inicio.js`, `tema.js`). Passa a dizer o que é: o JavaScript de origem é o enriquecimento progressivo de `public/js/`, servido tal como está, e a página por defeito está correcta com ele desligado (a matriz de aceitação mede-o, secção 6). Assinalado por A1; cópia do lugar de direção.
+
+**O DesignSync.** Feito a 22.08 depois de A1, com a sonda dos tipos antes dele (§1 do brief A1): `finalize_plan` com `*.html`, `README.md`, `tipos/**/*` a escrever e `08-pagina-municipio.html`, `09-pagina-metodo.html` a apagar; `write_files` 32, `delete_files` 2. O projecto «O Estado do País» ficou com 28 páginas; `06-estados` e `10-pagina-primeira` abertos no painel, a render em Spectral, Spectral SC e Bitter sem reserva. Os ficheiros `_ds_*` do próprio painel não foram tocados.
+
+### Réguas e capturas do fecho
+
+`npm run build` ✓ (cinco portões, 12,9 s) · `npm run typecheck` 0 · `ortografia.mjs --verificar` 0 · `medir-defeitos.mjs`: 307 páginas, porta de correcções 307/307, primeira página 0 valores sem selo e 0 selos para outra linha, **frases de moldura 86 distintas · 2 441 ocorrências**, autorreferência 0 nas rotas inventariadas; `medir-contraste.mjs`: 0 falhas de texto, 4 pares de interface abaixo de 3:1 (os mesmos). **Deltas contra a base `8440781`, construída num worktree e medida com as mesmas réguas: nenhum.** A base já media 86 · 2 441 (o «92 · 2 487» do estado de `main` de 21.08 é de uma contagem anterior ao fecho do ramo, e fica assinalado como tal). Nenhum valor e nenhuma contagem moveu; nenhuma chave EN entrou nesta etapa.
+
+Capturas: o Instrumento n.º 1 com o marcador a pintar, 1280 e 390, pt e en (`capturas/pos-fusao/2026-08-22-fecho-a-instrumento-*.png`), além das quatro de A2. Uma observação de forma, vista na captura e deixada para a ronda de notas do diretor: na fila da Leitura breve do instrumento, «provisório» cola-se ao quadrado do selo sem espaço.
+
+### O que fica à palavra do diretor, desta etapa
+
+1. **A excepção medida do selo da Leitura breve** (A2): duas das seis frases citam duas linhas e levam dois selos em linhas adjacentes (entrelinha 27,65px); 44px de área sobrepõem-se por 16,4px. A única saída medida é a entrelinha a 44px, que muda a composição da leitura breve. Recomendação do lugar de direção: aceitar a excepção, que é um selo em linha de prosa, à altura da linha como a constituição o põe, e está registada na matriz.
+2. **A Emenda 16, a I32 e o pedido C1 ao motor**: a página da Comissão, lida a 22.08, dá 13 indicadores principais e as 13 linhas do livro-razão cobrem-nos um a um (`PEDIDOS-AO-MOTOR-2026-08-22.md`, C1). O painel já é 13 de 13. Corrige-se com a sua palavra: uma nota datada na constituição, a I32 fechada, o pedido retirado.
+3. **I53**, o 404 inglês: `routes` com `status: 404` depois de `{ "handle": "filesystem" }` (a forma da base de conhecimento da Vercel; `handle` está marcado como deprecated mas suportado, e a referência de `vercel.json` diz hoje que `routes` coexiste com `headers` e `redirects`), ou `rewrites` com resposta 200, ou deixar como está.
+
+### Modelo e gasto da etapa A
+
+| parte | modelo | tokens (aproximados, pelo relatório de cada um) |
+|---|---|---|
+| A1, o pacote de desenho e o README | Claude Opus (`claude-opus-5[1m]`) | ≈ 404k |
+| A2, os selos do instrumento | Claude Opus | ≈ 264k |
+| A3, os PNG em paleta | Claude Opus | ≈ 186k |
+| briefs, sonda, verificações, I61, fecho | Claude Fable 5 (lugar de direção) | não contado pelo CLI nesta sessão; `[verify]` |
