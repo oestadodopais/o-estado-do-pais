@@ -1,0 +1,24 @@
+# BRIEF · pós-fusão A3 · os PNG dos cartões em paleta exacta, sem dependência nova (ISSUES I59)
+
+*For the A3 builder (Claude Opus), 22.08.2026, branch `pos-fusao-v3`, after A2's commit. Managing seat: Claude Fable 5. Read first: `../ISSUES.md` I59, I58; `scripts/cartoes.mjs` (the renderer; line 560 `render().asPng()`, 570 the write, 579 the digest, 586 the record); `scripts/gate-html.mjs` from line 4187 (the IHDR read and the per-card checks: digest, dimensions, values); `../notas/stage-5.md` §4 (the rasteriser and Vercel), §6 (the record), §7 and §8 (the gate's plants). No em dashes in anything you write.*
+
+## 0 · What the seat measured (22.08, over `dist/cartoes/` of `8440781`)
+
+All **532** PNG: **at most 118 distinct colours per card** (528 cards under 100, 4 between 100 and 149; the maximum is `en.en.1200x600.png`), **every pixel opaque** (alpha 255 everywhere). Total 20 064 037 bytes. The home card `inicio.pt.1200x630.png` is 62 554 bytes as RGBA; re-encoded as an 8-bit palette PNG it is about 26 KB (measured with a library the repo will not adopt). The director's condition in the prompt: «a palette encoder if it adds no risk, else record why not».
+
+## 1 · The decision this brief makes, and its reason
+
+**An exact palette, in-house, no dependency.** Because every card has ≤ 256 colours and no transparency, an indexed PNG (colour type 3, bit depth 8, one `PLTE` with the card's own colours, no `tRNS`) carries **bit-identical pixels**: no quantisation, no dithering, nothing lossy, so the digits on the card are the digits the rasteriser drew. The encoder is PNG's own format written with `node:zlib` (deflate) and a CRC-32 (thirty lines): signature, `IHDR`, `PLTE`, `IDAT` (filter byte 0 on every row, indices one byte per pixel), `IEND`. No `sharp` (present in `node_modules` only as a transitive package of Astro; not a dependency of this repo and not to become one), no `pngquant`, nothing native.
+
+Input: `@resvg/resvg-js`'s rendered image exposes the raw RGBA (`render()` returns an image with `.pixels`, `.width`, `.height` as well as `.asPng()`; read its typings in `node_modules/@resvg/resvg-js/index.d.ts` and confirm the field names before using them). Build the palette from the pixels in first-seen order; **if a card ever has more than 256 colours or a pixel with alpha under 255, the encoder refuses and the renderer falls back to `asPng()` for that card and writes `codificacao: "rgba"` in the record**; otherwise `codificacao: "paleta"` and the number of colours. The gate reads the IHDR for width and height (bytes 16 to 24) and those do not move; the digest in the record is of the bytes written, as today.
+
+## 2 · Proof, in the note, from a command
+
+1. **Equality of pixels.** A proof script (`scripts/provar-cartoes-paleta.mjs`, outside the build, Node only) inflates each written PNG's `IDAT`, strips the filter byte per row (all zero, refuse otherwise), maps indices through `PLTE`, and compares the result byte for byte with the RGBA the rasteriser produced for the same SVG in the same run (render again in the proof, or keep the RGBA in memory through a `--provar` flag of `cartoes.mjs`; say which). 532 of 532 equal, printed.
+2. **Two plants, each caught and reverted:** (a) one palette index changed in one IDAT before writing (a pixel of another colour) → the proof script names the card and the first differing pixel; (b) one byte of `PLTE` changed → the same. And one plant of the existing gate, re-run to show nothing moved: a card digest edited in its record → `gate:html` fails as in stage 5 §8.
+3. **Sizes and time:** the 532 before and after in bytes (total and mean), and the `cartoes` step's wall-clock before and after (`time npm run cartoes`), both on this machine; the Vercel time is read after the next deploy, not guessed.
+4. **The readers:** the card is an `og:image`; say in one line that colour-type-3 PNG is PNG 1.0 baseline and list nothing you have not verified; if you want to claim a platform reads it, cite its page or leave the claim out.
+
+## 3 · Records and exit
+
+`../ISSUES.md` I59 closed with the numbers; I58 unchanged (the gate still reads the record, not the pixels; this proof compares pixels to the rasteriser's own, which is a different thing, and the note says so). `../notas/pos-fusao.md` §A3. Five gates green (`npm run build`), `node scripts/ortografia.mjs --verificar` at 0. One commit, Portuguese message in the house's voice, trailers `Co-Authored-By: Claude Opus <noreply@anthropic.com>` and `Claude-Session: <your session URL>`. Report in at most 30 lines: sizes before/after, time before/after, 532/532 equal, the plants' messages, the commit, model and tokens. Rough scale: 150k to 250k tokens. Stop and ask if the raw pixel field of resvg is not available in 2.6.2 (then the answer is «record why not», not a decoder dependency), or if any card exceeds 256 colours in your run.
