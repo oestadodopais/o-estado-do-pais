@@ -2,11 +2,16 @@
 /**
  * A página de erro da edição inglesa (ISSUES I53; DECISIONS §1.62, decisão 1).
  *
- * A Vercel serve um só `404.html` para tudo o que não existe, e por isso esta
- * página só chega a um leitor por uma regra de encaminhamento: em `vercel.json`,
- * depois da fase do sistema de ficheiros, `/en/(.*)` responde 404 com
- * `/en/404/index.html`. Sem essa regra este ficheiro é só uma página que existe
- * em `/en/404`. A vista é a mesma da edição portuguesa; muda a língua.
+ * A Vercel serve um só `404.html` para tudo o que não existe. A regra de
+ * encaminhamento que serviria esta página com 404 a `/en/(.*)` (`routes`, depois
+ * da fase do sistema de ficheiros) foi construída e provada na pré-visualização
+ * n.º 3 de 22.08, e RETIRADA no mesmo dia: com um bloco `routes` presente, a
+ * Vercel deixou de aplicar o bloco `headers` (os cinco cabeçalhos de segurança
+ * desapareceram das respostas, medido contra a pré-visualização anterior, sem
+ * `routes`, que os trazia todos). Até a direção decidir outra forma (ISSUES
+ * I53), esta página existe em `/en/404`, alcançável pela troca de edição da
+ * página de erro portuguesa, e um endereço inglês inexistente continua a
+ * receber o `404.html` português. A vista é a mesma; muda a língua.
  */
 import NaoEncontradoView from '../../views/NaoEncontradoView.astro';
 ---
