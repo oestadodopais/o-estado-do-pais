@@ -26,6 +26,10 @@ As 13 linhas do livro-razão (`grep -l "Limiar do Procedimento" ledger/claims/*.
 
 Um documento alojado traz a ilha `rcpt-data` **duas vezes** (606 KB cada, o mesmo id duas vezes) nos bytes originais do motor. Os bytes fixados não se tocam do lado do sítio; a correção é no gerador do motor, e o documento volta pelo bloco de republicação. Qual documento, conferido a 22.08: `grep -c 'id="rcpt-data"' studies-src/*/*.html` dá **2** só em `evora-os-pelouros-quem-os-teve-o-que-fizeram/pt.html` (o estudo 09, edição pt-PT; os outros 14 ficheiros dão 1). No motor é `content/09 Évora Pelouros/`. Com o B2 feito, esta ilha deixa de ser servida pelo sítio, e o pedido passa a ser só de higiene do motor.
 
+## C3 · Uma conjunção portuguesa numa `reason_en` (ISSUES I63)
+
+`ledger/claims/evora-prr-vencido-aprovado-2026.yml`, entrada da história de 18.08 (linha 89 no sítio): «…recomputed over the 2026-08-17 snapshot (listagem-de-entidades-prr-20260817.xlsx e listagem-de-projetos-prr-20260817.xlsx)…». O «e» é português; a entrada seguinte da mesma linha (20.08) escreve «and». Achado da leitura cruzada de 22.08. Corrige-se na fonte da entrada (o exportador ou o registo de onde ele a lê), nunca no ficheiro do sítio, e atravessa com a próxima passagem das linhas.
+
 ## Ordem e dependências
 
-C1 está suspenso à palavra do diretor (a verificação de 22.08 diz que não há linha em falta); C2 é pequeno; B2 é o bloco, plan-gated. O sítio fica à espera de B2 para a parte 3 (o renderizador e a extensão do `check:documentos`); até lá a faixa dos documentos está na v3 (B1, neste ramo) e os documentos são servidos como estão.
+C1 está suspenso à palavra do diretor (a verificação de 22.08 diz que não há linha em falta); C2 e C3 são pequenos; B2 é o bloco, plan-gated. O sítio fica à espera de B2 para a parte 3 (o renderizador e a extensão do `check:documentos`); até lá a faixa dos documentos está na v3 (B1, neste ramo) e os documentos são servidos como estão.

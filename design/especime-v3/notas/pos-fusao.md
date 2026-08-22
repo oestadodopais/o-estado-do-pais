@@ -1315,3 +1315,13 @@ imagens e os números desta nota.
 | `git status --porcelain studies-src/` | nada (controlo positivo: com a planta 3 no lugar, imprimia a linha do ficheiro) |
 | `grep -c "Iowan\|ui-monospace\|SF Mono" src/lib/documentos.mjs` | `0` (controlo positivo: o mesmo `grep` em `git show HEAD:` dá `2`) |
 | `grep -n "#[0-9a-fA-F]\{3,6\}\b" src/lib/documentos.mjs` | nada (controlo positivo: em `git show HEAD:` dá cinco cores, `#16181b` `#3a4049` `#969ca6` `#eaecf0` `#fafbfc`) |
+
+---
+
+## B1 · fecho, e a leitura cruzada da ronda (lugar de direção, Claude Fable 5)
+
+**B1 revisto na captura** (`capturas/pos-fusao/2026-08-22-b1-faixa-1280-pt.png`): marca em Spectral, rótulo em Spectral SC, a porta Sobre e a porta de regresso, nenhuma frase sobre o sítio; o fio de tinta por baixo lê-se contra o documento claro. Uma observação de forma para a ronda de notas do diretor: a 1280 a porta de regresso dobra para uma segunda linha dentro da coluna do documento. O desvio do construtor (fio de tinta em vez de `--g3`, por medição: 1,01 a 1,08:1 do papel da faixa contra os fundos dos 15 documentos) fica aceite pelo lugar de direção, e a razão é a medição dele.
+
+**A leitura cruzada** (`critica/2026-08-22-codex-leitura-pos-fusao-A-B1.md`): Codex, sem contexto, sobre a construção em `b6e1bef`, com o pacote de desenho dentro do pacote pela primeira vez; **cinco plantas de cinco** (um valor de linha numa página, um registo de cartão desfasado, a frase de autoria reposta numa faixa, um literal de cor v2 num cartão, a regra I61 removida da folha servida, esta última com o diagnóstico certo). Dois achados reais, nenhum desta ronda: **I62** (três frases da casa no instrumento dos mandatos de Évora que a régua do inventário não vê por construção; régua e voz) e **I63** (um «e» português numa `reason_en` escrita pelo exportador; pedido C3 ao motor). Um dissenso registado (as etiquetas das páginas de estudo, classificadas como conteúdo pela direção na 4e). Nenhum ficheiro do sítio mudou por causa da leitura.
+
+**Modelo e gasto de B1 e do fecho:** B1 Claude Opus (`claude-opus-5[1m]`) ≈ 300k; a leitura Codex `gpt-5.6-sol` xhigh (o CLI não imprimiu a contagem nesta corrida; `[verify]`); o fecho, Claude Fable 5.
