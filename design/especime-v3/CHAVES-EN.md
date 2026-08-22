@@ -354,6 +354,32 @@ e a 4e retirou seis e encurtou uma, todas em `estudos.*`; o antes e o depois de
 cada uma, nas duas edições, está em `RELOCACOES.md`. **Nada de novo entrou em
 `strings.mjs` na etapa 4 além de `leitura.sumarioK`.**
 
+### Ronda pós-fusão, construtor B1 · nenhuma chave nova, uma reescrita nas duas edições
+
+A faixa dos documentos alojados passou à mobília v3 (ISSUES I11) sem criar uma
+única chave: `estudos.documentoFaixa` muda de texto, `estudos.documentoVoltar`
+fica como está, e a linha de autoria da faixa saiu do código e não era uma chave
+(era a constante `AUTHORSHIP_LINE` de `src/lib/documentos.mjs`).
+
+| chave | pt (antes) | pt (agora) | en (antes) | en (agora) |
+|---|---|---|---|---|
+| `estudos.documentoFaixa` | Documento do estudo, tal como foi publicado | **Documento do estudo · edição de registo** | Study document, exactly as published | **Study document · edition of record** |
+
+**A razão, e o que fica à revisão de voz.** O par é proposta do lugar de direção
+para o «edition of record» do diretor, e está escrito no brief da B1. O que ele
+troca é uma frase por um rótulo: «tal como foi publicado» descreve o cuidado com
+que a casa alojou a obra, e é autorreferência de mobília no sentido da Emenda 15;
+«edição de registo» nomeia o que a coisa é, que é o que uma legenda faz. A forma
+com ponto meio é a da sobrancelha da casa, e o texto entra em caixa normal porque
+o Spectral SC desenha as versaletes (`text-transform: lowercase`, como `.eyebrow`).
+O `aria-label` da faixa é esta mesma cadeia, na caixa em que está escrita, para
+que quem ouve a página ouça a faixa nomeada uma vez.
+
+O inglês foi pensado e não copiado: «edition of record» é a expressão do diretor,
+e «study document» mantém-se do par anterior. **Se a revisão de voz mudar uma
+palavra, é uma cadeia e não uma etapa** (`assertKeyParity()` não vê valores, e por
+isso esta linha existe).
+
 ## Identidades aceites (PT = EN de propósito)
 Nomes próprios, códigos de série, identificadores de linha, «Eurostat», «INE», «DGAL», «IEFP», «CAOP», «UE-27», «O Estado do País». A régua da invariância imprime todas as chaves cujo valor é igual nas duas línguas; as que não estiverem nesta lista são erro.
 

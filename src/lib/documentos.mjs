@@ -14,10 +14,15 @@
  *   ****  da faixa.                                                           ****
  *
  * O que a faixa é: a marca do observatório, ligada de volta à página do estudo,
- * uma nota a dizer o que o leitor está a ver, e a linha de autoria da casa. CSS
- * embebido, nenhum pedido de rede, e — regra imposta pelo portão — **nenhum
- * algarismo no seu texto**. A faixa é moldura; os algarismos que o leitor vir
- * abaixo dela são do documento, não nossos.
+ * o rótulo que diz o que o leitor está a ver, a porta para o Sobre e a porta de
+ * volta. CSS embebido, nenhum pedido para fora deste domínio, e (regra imposta
+ * pelo portão) **nenhum algarismo no seu texto**. A faixa é moldura; os
+ * algarismos que o leitor vir abaixo dela são do documento, não nossos.
+ *
+ * Desde 22.08.2026 a faixa é a mobília v3, e nenhum dos seus valores é escrito
+ * aqui: as cores, as pilhas de tipos e os dois `@font-face` saem de
+ * `src/styles/tokens.css`, e a composição da marca e do rótulo sai de
+ * `src/styles/site.css`, lidas na construção. Ver `estiloDaFaixa()`.
  *
  * COMO SE PÕE UM DOCUMENTO NO SÍTIO (o processo inteiro):
  *
@@ -38,30 +43,6 @@ import { WORKS, workById } from '../data/studies.mjs';
 import { routePath, LANGS } from './routes.mjs';
 import { SITE_NAME } from '../../site.config.mjs';
 
-/**
- * A linha de autoria da faixa do observatório.
- *
- * Vivia em `site.config.mjs` e era obrigatória no rodapé de todas as páginas.
- * Saiu de lá a 16.08.2026 (DECISIONS §1.39): a autoria do sítio passou a ter
- * casa própria, o Sobre, e todas as páginas levam a porta para lá.
- *
- * AQUI ELA FICA, e é outra coisa: um documento de estudo é obra JÁ PUBLICADA,
- * alojada intacta, e a faixa por cima dele é a única coisa nossa naquele
- * ficheiro. Sem esta linha, quem chega a um documento por um motor de busca
- * não tem, naquela página, nada que diga quem o alojou nem como foi feito. O
- * documento não tem o nosso rodapé e não pode ter: é conferido carácter a
- * carácter contra a origem mais a faixa.
- *
- * E DESDE 16.08.2026 A FAIXA LEVA TAMBÉM A PORTA PARA O SOBRE. A regra 9 do
- * Método diz que «todas as páginas construídas levam a porta para lá», e havia
- * quinze páginas construídas onde ela não estava: as dos documentos, que o
- * portão dispensava antes de chegar a essa conferência (revisão cruzada, #4).
- * A faixa é markup nosso e não entra na comparação com a origem: entra no
- * `esperado` que o portão recalcula, dos dois lados da igualdade. Pô-la aqui
- * fecha a diferença entre o que a regra promete e o que o sítio faz, sem tocar
- * num único byte do documento.
- */
-const AUTHORSHIP_LINE = 'Escrito por IA, dirigido por uma pessoa.';
 import { t } from '../i18n/strings.mjs';
 
 /** O nome do ficheiro de cada edição, dentro de `studies-src/<slug>/`. */
@@ -185,48 +166,337 @@ function texto(s) {
   return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
+/* ------------------------------------------------- a folha da casa, na faixa */
+
 /**
- * O CSS da faixa.
+ * A FAIXA NÃO ESCREVE UM VALOR DE RAIZ (v3, 22.08.2026; ISSUES I11).
  *
- * Auto-contido e sem um único pedido de rede: pilhas de tipos do sistema, como
- * em todo o sítio. Selectores por atributo, com o prefixo `oedp-`, para não
- * colidirem com o que quer que o documento tenha.
+ * Até aqui esta folha era a única superfície do sítio fora da letra da
+ * constituição: pilhas de tipos do sistema em literal, e duas cores escritas à
+ * mão. Passa a ler tudo o que usa, na construção:
  *
- * A faixa é escura em qualquer tema — não segue o `prefers-color-scheme` do
- * leitor. É deliberado: o documento por baixo tem o fundo que tiver, e uma
- * moldura que muda de cor com o tema podia desaparecer contra ele. Esta lê-se
- * sempre, e diz sempre a mesma coisa: daqui para baixo, o documento não é meu.
+ *   `src/styles/tokens.css`   a paleta clara do `:root` (`--paper`, `--ink`,
+ *                             `--g1`, `--g3`), as pilhas de recuo (`--f-prosa`,
+ *                             `--f-versal`) e as duas fichas `@font-face` das
+ *                             letras que a faixa de facto usa;
+ *   `src/styles/site.css`     a composição da marca (`.wordmark`, com o corpo
+ *                             da cabeça interior de `.masthead-compact
+ *                             .wordmark`) e a da sobrancelha (`.eyebrow`).
  *
- * O amarelo da casa não aparece aqui. O amarelo marca medição; isto é mobília.
+ * Se uma ficha mudar de nome, o parser morre e a construção pára: é essa a
+ * diferença entre ler e copiar. O que aqui se escreve é a FORMA da faixa (uma
+ * linha, caixa flexível, a porta de volta à direita), e nunca um valor da casa.
+ *
+ * OS TIPOS SÃO PEDIDOS A ESTE DOMÍNIO, e a promessa muda de palavra sem mudar
+ * de sentido: era «nenhum pedido de rede», passa a «nenhum pedido para fora
+ * deste domínio». Os dois `@font-face` apontam para `/tipos/…`, que é o mesmo
+ * anfitrião que serve o documento, e a conferência do portão (que procura `//`)
+ * continua a dar zero. `font-display: swap` vem das fichas e é conferido aqui:
+ * enquanto o ficheiro não chega, lê-se pela pilha de recuo.
  */
-const CSS_FAIXA = `
-[data-oedp-faixa]{box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 18px;margin:0;padding:9px 20px;border:0;border-bottom:1px solid #3a4049;background:#16181b;color:#eaecf0;font-family:ui-monospace,'SF Mono',SFMono-Regular,Menlo,Monaco,'Cascadia Mono','Roboto Mono',Consolas,monospace;font-size:11px;font-weight:400;font-style:normal;line-height:1.5;letter-spacing:.05em;text-align:left;text-transform:none;position:relative;width:auto;max-width:none;min-height:0}
-[data-oedp-faixa] a{color:#fafbfc;background:none;border:0;padding:0;text-decoration:none;font-weight:inherit}
-[data-oedp-faixa] a:hover{text-decoration:underline;text-underline-offset:3px}
-[data-oedp-faixa] a:focus-visible{outline:2px solid #fafbfc;outline-offset:3px}
-[data-oedp-faixa] span{background:none;border:0;padding:0;margin:0}
-[data-oedp-marca]{font-family:'Iowan Old Style','Palatino','Palatino Linotype','Book Antiqua','URW Palladio L',Georgia,'Times New Roman',serif;font-size:17px;letter-spacing:-.01em;line-height:1.2}
-[data-oedp-nota],[data-oedp-autoria]{color:#969ca6}
-[data-oedp-voltar]{margin-left:auto}
-@media (max-width:640px){[data-oedp-voltar]{margin-left:0}}
-`.trim();
+const FOLHA_TOKENS = 'src/styles/tokens.css';
+const FOLHA_SITE = 'src/styles/site.css';
+
+/**
+ * O PESO DO RÓTULO, e porque é que não é o da sobrancelha da casa.
+ *
+ * `.eyebrow` compõe-se em Spectral SC 600, e a faixa leva só a ficha Regular
+ * dessa família: uma terceira letra é peso que o leitor de um documento paga
+ * por nada. Pedir 600 sem a ficha de 600 seria pedir ao navegador que engordasse
+ * o 400 por conta própria, que é exactamente o que a ficha de Spectral 700 em
+ * `tokens.css` existe para impedir. O rótulo fica no peso da letra que a faixa
+ * carrega, e o resto da forma da sobrancelha (corpo, entreletra, versaletes,
+ * cor) é lido dela.
+ */
+const PESO_DO_ROTULO = '400';
+
+function morre(porque) {
+  throw new Error(
+    `documentos: ${porque}\n` +
+      `      A faixa não escreve um valor de raiz: lê as cores, as letras e a composição da\n` +
+      `      folha da casa, na construção. Se a folha mudou, muda-se aqui o NOME que se lhe\n` +
+      `      pede, e nunca o valor.`,
+  );
+}
+
+/**
+ * Onde está um ficheiro do repositório, visto de dentro da construção.
+ * A mesma subida de `encontraOrigem()`, e pela mesma razão.
+ */
+function encontraNoRepositorio(relativo) {
+  const candidatos = [];
+  const subir = (inicio) => {
+    let dir = inicio;
+    for (let i = 0; i < 8; i++) {
+      candidatos.push(path.join(dir, relativo));
+      const acima = path.dirname(dir);
+      if (acima === dir) break;
+      dir = acima;
+    }
+  };
+  subir(process.cwd());
+  subir(path.dirname(fileURLToPath(import.meta.url)));
+  for (const c of candidatos) {
+    try {
+      if (fs.statSync(c).isFile()) return c;
+    } catch {
+      /* segue */
+    }
+  }
+  return morre(`não encontrei \`${relativo}\` a subir de ${process.cwd()}.`);
+}
+
+const semComentarios = (css) => css.replace(/\/\*[\s\S]*?\*\//g, '');
+
+/** Os nomes de ficha de um bloco de CSS passam ao prefixo da faixa, e mais nada. */
+const comPrefixo = (valor) => valor.replace(/var\(\s*--([a-z0-9-]+)\s*\)/g, 'var(--oedp-$1)');
+
+/** As fichas de um bloco: `--nome` para valor, tal como estão escritas. */
+function fichasDe(bloco) {
+  const mapa = new Map();
+  for (const [, nome, valor] of bloco.matchAll(/--([a-z0-9-]+)\s*:\s*([^;]+);/g)) {
+    mapa.set(nome, valor.trim());
+  }
+  return mapa;
+}
+
+/** O corpo de uma regra, pelo selector exacto e não por um que o contenha. */
+function regraDe(css, selector, onde) {
+  const escapado = selector.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const m = css.match(new RegExp(`(?:^|\\})\\s*${escapado}\\s*\\{([^{}]*)\\}`));
+  if (!m) morre(`não encontrei a regra \`${selector}\` em \`${onde}\`.`);
+  return m[1];
+}
+
+/** Uma declaração de uma regra, com os nomes de ficha já prefixados. */
+function declaracaoDe(bloco, propriedade, selector, onde) {
+  const m = bloco.match(new RegExp(`(?:^|;)\\s*${propriedade}\\s*:\\s*([^;]+)`));
+  if (!m) morre(`\`${selector}\` (\`${onde}\`) já não declara \`${propriedade}\`.`);
+  return comPrefixo(m[1].trim());
+}
+
+/**
+ * A ficha `@font-face` de uma letra, lida e não reescrita.
+ *
+ * O endereço do ficheiro sai da própria ficha: retipá-lo era abrir a porta a
+ * uma faixa que pede uma letra que já não está no sítio.
+ */
+function faceDe(css, familia, peso, onde) {
+  for (const m of css.matchAll(/@font-face\s*\{([^{}]*)\}/g)) {
+    const corpo = m[1].replace(/\s+/g, ' ').trim();
+    if ((corpo.match(/font-family\s*:\s*'([^']+)'/) ?? [])[1] !== familia) continue;
+    if ((corpo.match(/font-weight\s*:\s*([^;]+)/) ?? [])[1]?.trim() !== peso) continue;
+    if ((corpo.match(/font-style\s*:\s*([^;]+)/) ?? [])[1]?.trim() !== 'normal') continue;
+    if (!/font-display\s*:\s*swap/.test(corpo)) {
+      morre(`a ficha @font-face de "${familia}" ${peso} em \`${onde}\` já não diz \`swap\`.`);
+    }
+    if (/\/\//.test(corpo)) {
+      morre(`a ficha @font-face de "${familia}" ${peso} em \`${onde}\` aponta para fora do domínio.`);
+    }
+    return `@font-face{${corpo}}`;
+  }
+  return morre(`não encontrei em \`${onde}\` a ficha @font-face de "${familia}" ${peso} normal.`);
+}
+
+/**
+ * As fichas que a faixa precisa de declarar, apuradas do que ela de facto pede.
+ *
+ * Fecha-se sobre si própria: `--muted` é `var(--g1)` em `tokens.css`, e por isso
+ * pedir a cor da sobrancelha traz o cinzento atrás. Uma ficha pedida que o
+ * `:root` não declara pára a construção.
+ */
+function fichasNecessarias(css, raiz) {
+  const necessarias = new Map();
+  const porVer = [...css.matchAll(/var\(\s*--oedp-([a-z0-9-]+)\s*\)/g)].map((m) => m[1]);
+  while (porVer.length) {
+    const nome = porVer.pop();
+    if (necessarias.has(nome)) continue;
+    if (!raiz.has(nome)) {
+      morre(`a faixa pede \`--${nome}\` e o \`:root\` de \`${FOLHA_TOKENS}\` não o declara.`);
+    }
+    const valor = comPrefixo(raiz.get(nome));
+    necessarias.set(nome, valor);
+    for (const m of valor.matchAll(/var\(\s*--oedp-([a-z0-9-]+)\s*\)/g)) porVer.push(m[1]);
+  }
+  return necessarias;
+}
+
+const declaracoes = (pares) => pares.map(([p, v]) => `${p}:${v}`).join(';');
+
+let ESTILO = null;
+
+/**
+ * O CSS da faixa, composto uma vez por construção.
+ *
+ * Selectores por atributo, com o prefixo `oedp-`, para não colidirem com o que
+ * quer que o documento tenha; as fichas também, porque um documento pode
+ * declarar `--paper` e `--ink` no seu próprio `:root` e declara (o de
+ * «Évora, orçamentado, pago, devido» declara os dois).
+ *
+ * A FAIXA É DE PAPEL, E NÃO SEGUE TEMA NENHUM. A v2 fazia-a escura em qualquer
+ * tema, para «se ler contra qualquer fundo». A razão mudou de forma: a página
+ * de um documento não carrega `public/js/tema.js`, e por isso a escolha do
+ * leitor não é conhecida ali; pela Emenda 12 o sítio é claro para todos até essa
+ * escolha; e o papel com o seu fio de tinta lê-se contra os documentos escuros
+ * tão bem como a banda escura se lia contra os claros. Não há variante escura,
+ * e a sua ausência é uma decisão e não um esquecimento.
+ */
+function estiloDaFaixa() {
+  if (ESTILO) return ESTILO;
+
+  const tokens = semComentarios(fs.readFileSync(encontraNoRepositorio(FOLHA_TOKENS), 'utf8'));
+  const site = semComentarios(fs.readFileSync(encontraNoRepositorio(FOLHA_SITE), 'utf8'));
+
+  /* A paleta da faixa, pelo brief: `--paper`, `--ink`, `--g1` e `--g3`. Três
+     estão em uso (o cinzento entra pelo `--muted` da sobrancelha); a quarta é
+     conferida na mesma, porque o fio passou à tinta com a medição e a hairline
+     de `--g3` fica a uma palavra de distância. Uma ficha que desapareça de
+     `tokens.css` pára a construção, esteja ou não a ser usada hoje. */
+  const raiz = fichasDe(regraDe(tokens, ':root', FOLHA_TOKENS));
+  for (const nome of ['paper', 'ink', 'g1', 'g3']) {
+    if (!raiz.has(nome)) morre(`\`--${nome}\` já não existe no \`:root\` de \`${FOLHA_TOKENS}\`.`);
+  }
+
+  const marca = regraDe(site, '.wordmark', FOLHA_SITE);
+  const marcaCompacta = regraDe(site, '.masthead-compact .wordmark', FOLHA_SITE);
+  const sobrancelha = regraDe(site, '.eyebrow', FOLHA_SITE);
+  const daMarca = (p) => declaracaoDe(marca, p, '.wordmark', FOLHA_SITE);
+  const daSobrancelha = (p) => declaracaoDe(sobrancelha, p, '.eyebrow', FOLHA_SITE);
+
+  const corpo = [
+    /* A FORMA: uma linha, em caixa flexível, com a porta de volta à direita e,
+       abaixo de 640px, em linha própria. Estes são os números da faixa, e os
+       únicos escritos aqui: a v2 tinha-os todos e não mudam com a mobília. O
+       único número novo em toda a folha é o `flex-basis: 100%` da regra de baixo
+       de 640px, que é o que põe a porta de volta em linha própria. */
+    ['box-sizing', 'border-box'],
+    ['display', 'flex'],
+    ['flex-wrap', 'wrap'],
+    ['align-items', 'baseline'],
+    ['gap', '4px 18px'],
+    ['margin', '0'],
+    ['padding', '9px 20px'],
+    ['line-height', '1.5'],
+    /* PAPEL, TINTA, E UM FIO DE TINTA POR BAIXO. Nenhuma cor: a cor da casa é o
+       estado de um valor contra um limiar publicado, e isto é mobília.
+
+       O FIO É DE TINTA E NÃO DE `--g3`, E FOI A MEDIÇÃO QUE O DECIDIU. O brief
+       da B1 escreve as duas coisas: «a 1px `--g3` rule under the banner» na
+       forma, e «the paper band with its ink rule, which reads against the
+       documents» na razão. Medidos os quinze documentos alojados: em claro, que
+       é o que a Emenda 12 fixa para todos, o papel da faixa contra o fundo do
+       documento mede de 1,01:1 a 1,08:1, e um fio de `--g3` sobre papel mede
+       1,28:1. Com esse fio, a fronteira entre a moldura da casa e a obra citada
+       não existe para quem a tem de ver. Tinta sobre papel mede 16,39:1, e é
+       ela que desenha a fronteira, pela mesma razão que o contorno do marcador
+       âmbar é uma medição e não desenho (`IDENTIDADE.md` §2). 1px é o fio que a
+       faixa já tinha na v2, e é o do aparelho da primeira página
+       (`inicio.css`). Assinalado ao lugar de direção: voltar à hairline é uma
+       palavra. */
+    ['border', '0'],
+    ['border-bottom', `1px solid var(--oedp-ink)`],
+    ['background', 'var(--oedp-paper)'],
+    ['color', 'var(--oedp-ink)'],
+    /* A letra da prosa, no corpo da sobrancelha: é a mobília da faixa, e a
+       mobília não cresce. */
+    ['font-family', daMarca('font-family')],
+    ['font-size', daSobrancelha('font-size')],
+  ];
+
+  const regras = [
+    faceDe(tokens, 'Spectral', daMarca('font-weight'), FOLHA_TOKENS),
+    faceDe(tokens, 'Spectral SC', PESO_DO_ROTULO, FOLHA_TOKENS),
+    `[data-oedp-faixa]{@@fichas@@${declaracoes(corpo)}}`,
+    /* A ISOLAÇÃO QUE A MEDIÇÃO PEDIU, E SÓ ELA.
+       Comparado o estilo calculado dos cinco elementos da faixa em cada um dos
+       quinze documentos alojados, a 1280 e a 390, contra o mesmo markup numa
+       página de controlo, entram três propriedades da folha do documento:
+       `box-sizing` (14 dos 15), `text-underline-offset` (6) e `color-scheme`
+       (15). As duas primeiras repõem-se aqui; a terceira é herdada do `:root`
+       do documento e foi medida sem efeito nenhum sobre a faixa, que declara o
+       fundo, a tinta e o fio. Ver `notas/pos-fusao.md` §B1. */
+    `[data-oedp-faixa] *{box-sizing:border-box}`,
+    `[data-oedp-faixa] a{${declaracoes([
+      ['color', 'var(--oedp-ink)'],
+      ['background', 'none'],
+      ['border', '0'],
+      ['padding', '0'],
+      ['text-decoration', 'none'],
+      ['text-underline-offset', '3px'],
+    ])}}`,
+    `[data-oedp-faixa] a:hover{text-decoration:underline}`,
+    `[data-oedp-faixa] a:focus-visible{outline:2px solid var(--oedp-ink);outline-offset:3px}`,
+    `[data-oedp-faixa] span{background:none;border:0;padding:0;margin:0}`,
+    /* A marca e o rótulo depois das regras de `a` e de `span`, e com a mesma
+       especificidade: o que ganha é a ordem, e é a que aqui está escrita. */
+    `[data-oedp-faixa] [data-oedp-marca]{${declaracoes([
+      ['font-family', daMarca('font-family')],
+      ['font-size', declaracaoDe(marcaCompacta, 'font-size', '.masthead-compact .wordmark', FOLHA_SITE)],
+      ['font-weight', daMarca('font-weight')],
+      ['line-height', daMarca('line-height')],
+      ['letter-spacing', daMarca('letter-spacing')],
+      ['font-feature-settings', daMarca('font-feature-settings')],
+      ['color', daMarca('color')],
+    ])}}`,
+    `[data-oedp-faixa] [data-oedp-rotulo]{${declaracoes([
+      ['font-family', daSobrancelha('font-family')],
+      ['font-size', daSobrancelha('font-size')],
+      ['font-weight', PESO_DO_ROTULO],
+      ['letter-spacing', daSobrancelha('letter-spacing')],
+      ['text-transform', daSobrancelha('text-transform')],
+      ['color', daSobrancelha('color')],
+    ])}}`,
+    `[data-oedp-faixa] [data-oedp-voltar]{margin-left:auto}`,
+    `@media (max-width:640px){[data-oedp-faixa] [data-oedp-voltar]{margin-left:0;flex-basis:100%}}`,
+  ].join('\n');
+
+  const fichas = fichasNecessarias(regras, raiz);
+  ESTILO = regras.replace(
+    '@@fichas@@',
+    [...fichas]
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([nome, valor]) => `--oedp-${nome}:${valor}`)
+      .join(';') + ';',
+  );
+  return ESTILO;
+}
 
 /**
  * A faixa, para um estudo e uma língua.
  *
- * NENHUM ALGARISMO no texto — o portão de HTML confere-o, e é essa regra que
+ * NENHUM ALGARISMO no texto: o portão de HTML confere-o, e é essa regra que
  * permite dispensar o corpo do documento do varrimento sem abrir uma porta.
  * Os algarismos do CSS são estilo, não texto, e o portão não os conta.
+ *
+ * O QUE A FAIXA DIZ, E O QUE DEIXOU DE DIZER (22.08.2026).
+ *
+ * A linha de autoria («Escrito por IA, dirigido por uma pessoa.») saiu daqui. É
+ * a Emenda 11 lida à letra, «o sítio não se explica na mobília», com o teste da
+ * Emenda 15: uma frase sobrevive se a sua remoção fizesse um leitor ler mal um
+ * número, e esta é autorreferência, não ressalva. O que ela dizia continua dito
+ * onde pode ser provado, no Sobre.
+ *
+ * A PORTA PARA O SOBRE FICA, e não é a mesma coisa. A regra 9 do Método é texto
+ * governado e diz que «todas as páginas construídas levam a porta para lá»; o
+ * portão confere-a nesta faixa, porque o ramo dos documentos devolve antes da
+ * conferência geral (`gate-html.mjs`, «A PORTA PARA O SOBRE, TAMBÉM AQUI»). Uma
+ * porta é navegação, uma frase sobre a casa é mobília a explicar-se: sai a
+ * segunda e fica a primeira. A faixa é markup nosso e não entra na comparação
+ * com a origem: entra no `esperado` que o portão recalcula, dos dois lados da
+ * igualdade, e por isso nada disto toca num byte do documento.
+ *
+ * O `lang` da faixa é o da edição, e o `aria-label` é o rótulo: assim quem ouve
+ * a página ouve a faixa nomeada, e não uma tira de ligações sem dono.
  */
 export function faixa(slug, lang) {
   const s = t(lang);
   const destino = routePath('estudo', lang, { slug });
+  const rotulo = s.estudos.documentoFaixa;
   return [
-    '<div data-oedp-faixa>',
-    `<style>${CSS_FAIXA}</style>`,
+    `<div data-oedp-faixa lang="${atributo(s.lang)}" aria-label="${atributo(rotulo)}">`,
+    `<style>${estiloDaFaixa()}</style>`,
     `<a data-oedp-marca href="${atributo(destino)}">${texto(SITE_NAME)}</a>`,
-    `<span data-oedp-nota>${texto(s.estudos.documentoFaixa)}</span>`,
-    `<span data-oedp-autoria lang="pt-PT">${texto(AUTHORSHIP_LINE)}</span>`,
+    `<span data-oedp-rotulo>${texto(rotulo)}</span>`,
     `<a data-oedp-sobre href="${atributo(routePath('sobre', lang))}">${texto(s.nav.sobre)}</a>`,
     `<a data-oedp-voltar href="${atributo(destino)}">${texto(s.estudos.documentoVoltar)} ↑</a>`,
     '</div>',

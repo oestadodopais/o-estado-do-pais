@@ -1066,7 +1066,7 @@ export const STRINGS = {
       documentoLink: 'Ler o documento',
       /* Vai dentro da faixa, no topo do documento. Sem algarismos: é regra do
          portão, e a razão dela está em src/lib/documentos.mjs. */
-      documentoFaixa: 'Documento do estudo, tal como foi publicado',
+      documentoFaixa: 'Documento do estudo · edição de registo',
       documentoVoltar: 'Voltar à página do estudo',
 
       edicaoIrma: 'Ver esta edição',
@@ -1752,7 +1752,7 @@ export const STRINGS = {
       documentoK: 'The original document',
       documentoVazio: 'The document for this study has not been hosted here yet.',
       documentoLink: 'Read the document',
-      documentoFaixa: 'Study document, exactly as published',
+      documentoFaixa: 'Study document · edition of record',
       documentoVoltar: 'Back to the study page',
 
       edicaoIrma: 'See this edition',
