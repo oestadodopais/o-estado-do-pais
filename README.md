@@ -86,9 +86,11 @@ para o `site` do Astro, para os URLs canónicos, para os pares hreflang, para o
 sitemap, para o JSON-LD e para o `robots.txt`. A forma punycode não é escrita à
 mão: é derivada pela `URL` do Node, que aplica IDNA.
 
-**`oestadodopais.pt`** (sem acento) faz **301** para o canónico. Isso é
-configuração de DNS/Vercel, não código — não há nada neste repositório que o
-faça, e não deve haver.
+**`oestadodopais.pt`** (sem acento) e as duas formas com `www.` fazem **308**
+para o canónico. As três rotas estão declaradas no `vercel.json` e são
+conferidas no ar por `verify:deploy` (ver [Deploy](#deploy)). O DNS aponta os
+domínios à Vercel; o nome continua escrito uma só vez, em `site.config.mjs`, e é
+de lá que a conferência deriva os três anfitriões.
 
 ## Esquema de URLs
 
@@ -432,21 +434,83 @@ mesma tabela de rotas · `robots.txt` gerado da mesma constante de domínio.
 
 ## Deploy
 
-Ligado desde 12.08.2026, em [Vercel](https://vercel.com):
+Ligado desde 12.08.2026, em [Vercel](https://vercel.com). Saída estática:
+serve-se `dist/` e mais nada.
 
-- saída estática — serve-se `dist/` e mais nada;
-- `oestadodopais.pt`, `www.` de ambas as formas → **308** → `oestadodopaís.pt`
-  (DNS/Vercel, conferido no ar);
-- **indexação aberta desde 13.08.2026.** O escudo de pré-lançamento
-  (`X-Robots-Tag: noindex` em todos os endereços) foi retirado do domínio
-  canónico e mantido no alias `*.vercel.app`, para que o alias não concorra com
-  o domínio nos motores de busca. As páginas que não se oferecem ao índice
-  continuam a dizê-lo na sua própria marca `<meta name="robots">`, que é lida do
-  livro-razão e conferida pelo portão — ver DECISIONS §1.24;
-- os URLs não têm barra final; conferir que o alojamento serve `/metodo` e
-  `/metodo/` sem redireccionamento em cadeia;
-- `public/js/*.js` é servido tal como está no repositório, sem empacotamento,
-  de propósito: o ficheiro que se lê é o ficheiro que corre.
+### O `vercel.json` é um só sistema de encaminhamento
+
+Desde 22.08.2026 o ficheiro tem duas chaves, `$schema` e `routes`, e mais nada.
+Não é gosto, é uma medição. A pré-visualização n.º 3 desse dia levou um bloco
+`routes` (a regra do 404 inglês) ao lado do bloco `headers` que já lá estava, e
+a Vercel deixou de aplicar o `headers`: os cinco cabeçalhos de segurança
+desapareceram das respostas, com a pré-visualização anterior, sem `routes`, a
+trazê-los todos como controlo. A referência do `vercel.json` diz que os blocos
+coexistem; a 22.08 o serviço não fazia isso. Um bloco ignorado em silêncio é
+pior do que um bloco que não existe, por isso tudo passou para `routes` e nada
+ficou em `headers`, `redirects` ou `rewrites` (ISSUES I53, DECISIONS §1.62).
+
+As rotas são processadas por ordem, e a ordem é o programa:
+
+1. **os cinco cabeçalhos de segurança**, em todas as respostas:
+   `X-Content-Type-Options: nosniff`, `Referrer-Policy:
+   strict-origin-when-cross-origin`, `X-Frame-Options: SAMEORIGIN`,
+   `Strict-Transport-Security: max-age=15552000` e `Permissions-Policy:
+   camera=(), microphone=(), geolocation=()`. Leva `continue: true`, por isso
+   acrescenta e não termina;
+2. **o escudo do alias**: `X-Robots-Tag: noindex` quando o anfitrião é
+   `o-estado-do-pais.vercel.app`, também com `continue`. **Indexação aberta
+   desde 13.08.2026**: o escudo foi retirado do domínio canónico e mantido no
+   alias, para que o alias não concorra com o domínio nos motores de busca. As
+   páginas que não se oferecem ao índice continuam a dizê-lo na sua própria
+   marca `<meta name="robots">`, lida do livro-razão e conferida pelo portão
+   (DECISIONS §1.24);
+3. **os três 308 de anfitrião**, uma rota cada: `www.xn--oestadodopas-2fb.pt`,
+   `oestadodopais.pt` e `www.oestadodopais.pt` respondem `308` com
+   `Location: https://xn--oestadodopas-2fb.pt/$1`. A resposta termina aí;
+4. **a sonda, que é temporária**: duas rotas presas ao anfitrião da
+   pré-visualização deste ramo, `/sonda-308` (308 para `/`) e um `X-Sonda: host`
+   com `continue`. Existem para provar numa pré-visualização o que só produção
+   exercitaria: que `has` de anfitrião selecciona, que `status` mais `Location`
+   redirecciona, e que um cabeçalho condicionado ao anfitrião com `continue` é
+   mesmo aplicado. **Saem num commit próprio antes da fusão**, e quem quiser
+   saber se já saíram faz `grep -i sonda vercel.json`;
+5. `{ "handle": "filesystem" }`, a fase que serve o que existe em `dist/`. Está
+   marcado como deprecated na referência e continua suportado: é a forma da
+   própria base de conhecimento da Vercel para um 404 à medida;
+6. **o 404 da edição inglesa**: um `/en/(.*)` que não bateu em nada responde
+   `404` com `dist/en/404/index.html`. É a razão de tudo isto (ISSUES I53).
+
+O 404 português não precisa de rota nenhuma: a Vercel serve o `404.html` da raiz
+a tudo o que não bate em mais nada. É isso que leva `/nao-existe` e
+`/estudos/nao-existe` à página portuguesa, e é isso que faz `/404` responder 404
+ao seu próprio endereço, enquanto `/en/404` responde 200 por ser uma página como
+as outras.
+
+Duas coisas que não mudaram: os URLs não têm barra final, e convém conferir que
+o alojamento serve `/metodo` e `/metodo/` sem redireccionamento em cadeia;
+`public/js/*.js` é servido tal como está no repositório, sem empacotamento, de
+propósito, para que o ficheiro que se lê seja o ficheiro que corre.
+
+### O que confere isto depois de cada publicação
+
+`npm run verify:deploy` deixou de perguntar só pelo commit que está no ar.
+Pergunta também, contra o sítio publicado:
+
+- os cinco cabeçalhos, com o valor exacto, em `/` e em `/en/ledger`;
+- `X-Robots-Tag: noindex` presente no alias e **ausente** no domínio canónico;
+- os três 308, com o `Location` exacto;
+- um endereço inexistente a receber a página de erro da **sua** edição:
+  `/en/nao-existe` em `en`, `/nao-existe` em `pt-PT`;
+- as duas páginas de erro no sítio: `/en/404` a 200 em inglês, `/404` a 404 em
+  português.
+
+Cada pergunta imprime o observado ao lado do esperado, e uma falha qualquer sai
+com código != 0. **Nenhuma segue um redireccionamento** (`redirect: 'manual'`):
+um 308 conferido pelo seu destino não prova o 308, prova o destino. Para ver a
+conferência falhar, aponte-se-lhe uma pré-visualização protegida,
+`npm run verify:deploy -- --host <alias>.vercel.app`: ela responde 302 à entrada
+da Vercel e reprova tudo o que depende do anfitrião, deixando passar só os três
+308, que são de anfitriões fixos.
 
 ## O que falta
 

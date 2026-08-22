@@ -1335,3 +1335,111 @@ Três ficheiros de sítio e dois de conferência. `src/pages/en/404.astro` rende
 **A prova na pré-visualização n.º 3, e o que ela encontrou.** `git push -u origin pos-fusao-v3` às 15:2x BST; deployment `o-estado-do-pais-3khe147lw`, pronto em 39 s, alias `o-estado-do-pais-git-pos-fusao-v3-nunos-projects-b945a519.vercel.app`. A pré-visualização responde 302 para a entrada da Vercel a quem não tem sessão, por isso a leitura foi feita no Chrome do diretor, por `fetch` de dentro da página (mesma origem): `/en/nope` → 404 · `en` · «Page not found»; `/en/nope/deeper` → 404 · en; `/nope` → 404 · `pt-PT`; `/en/ledger` → 200; `/en` → 200; `/404` → 404; `/estudos/nao-existe` → 404 · pt; `/en/404` → 200 (a página existe). **E os cabeçalhos:** `x-frame-options`, `x-content-type-options`, `referrer-policy`, `permissions-policy` **ausentes** em `/en/nope` e em `/en/ledger`; presentes só `strict-transport-security` (o da Vercel) e `x-robots-tag` (o da pré-visualização). Controlo na pré-visualização de `redesenho-v3`, sem `routes`, ainda no ar: os seis presentes em `/en/ledger`. Produção (`curl -sI`) traz os cinco da casa. Conclusão: **com `routes` presente a Vercel ignora o bloco `headers`**, e a frase da referência («You can use `routes` alongside `rewrites`, `redirects`, `headers`…») não descreve o que o serviço faz a 22.08. O bloco `routes` saiu; a decisão 1 da §1.62 volta à direção com três formas (ISSUES I53).
 
 **A pré-visualização n.º 3, actualizada de `9d586de`** (deployment `o-estado-do-pais-layta615e`, 40 s): no Chrome do diretor, `/en/ledger` 200 · `/en/nope` 404 (página portuguesa, como em `main`) · `/en/404` 200 · um documento alojado 200 · uma página de linha 200, **os quatro cabeçalhos da casa presentes em todas** (4/4), `version.json` a carimbar `9d586de`, `ref` `pos-fusao-v3`, `env` `preview`. O pacote de desenho foi reenviado ao projecto do Claude Design depois da correção à Emenda 16 (21 ficheiros escritos; o cartão 06 cita a correção).
+
+### I53, segunda forma · o `vercel.json` inteiro em `routes` (construtor, Claude Opus, `claude-opus-5[1m]`)
+
+**O que este commit faz, em cinco linhas.** O `vercel.json` fica com duas
+chaves, `$schema` e `routes`. Os cinco cabeçalhos de segurança, o `noindex` do
+alias e os três 308 de anfitrião deixam de ser `headers` e `redirects` e passam
+a rotas, pela ordem em que têm de correr. Duas rotas de sonda, presas ao
+anfitrião da pré-visualização deste ramo, provam o mecanismo onde ele pode ser
+lido, e saem num commit próprio antes da fusão. `scripts/verify-deploy.mjs`
+ganha as invariantes de produção, que são a parte que fica para sempre. O
+comentário de `src/pages/en/404.astro` e o `README.md` §Deploy passam a
+descrever o estado novo.
+
+**Os valores foram carregados, não escritos.** A regra da casa para esta
+mudança era não retranscrever um único valor de memória, e a prova é uma
+comparação automática entre `git show HEAD:vercel.json` e o ficheiro novo, não
+uma leitura à vista:
+
+| O que | Velho | Novo | |
+| --- | --- | --- | --- |
+| `X-Content-Type-Options` | `nosniff` | `nosniff` | igual |
+| `Referrer-Policy` | `strict-origin-when-cross-origin` | `strict-origin-when-cross-origin` | igual |
+| `X-Frame-Options` | `SAMEORIGIN` | `SAMEORIGIN` | igual |
+| `Strict-Transport-Security` | `max-age=15552000` | `max-age=15552000` | igual |
+| `Permissions-Policy` | `camera=(), microphone=(), geolocation=()` | `camera=(), microphone=(), geolocation=()` | igual |
+| contagem de cabeçalhos | 5 | 5 | igual |
+| anfitrião do alias | `o-estado-do-pais.vercel.app` | `o-estado-do-pais.vercel.app` | igual |
+| cabeçalho do alias | `X-Robots-Tag: noindex` | `X-Robots-Tag: noindex` | igual |
+| 308 (1.º) | `www.xn--oestadodopas-2fb.pt` → `https://xn--oestadodopas-2fb.pt/$1`, `permanent: true` | mesmo anfitrião, mesmo `Location`, `status: 308` | igual |
+| 308 (2.º) | `oestadodopais.pt` → `https://xn--oestadodopas-2fb.pt/$1`, `permanent: true` | mesmo anfitrião, mesmo `Location`, `status: 308` | igual |
+| 308 (3.º) | `www.oestadodopais.pt` → `https://xn--oestadodopas-2fb.pt/$1`, `permanent: true` | mesmo anfitrião, mesmo `Location`, `status: 308` | igual |
+| `$schema` | `https://openapi.vercel.sh/vercel.json` | o mesmo | igual |
+| chaves de topo | `$schema`, `headers`, `redirects` | `$schema`, `routes` | `headers` e `redirects` desaparecem, sem sobras |
+
+A ordem das três rotas de 308 é a ordem do ficheiro velho, e não a ordem em que
+o encomendante as listou: são anfitriões disjuntos, nenhuma pode roubar a outra,
+e manter a ordem antiga torna a comparação legível.
+
+**A ordem das rotas, que é o programa.** (1) os cinco cabeçalhos em `/(.*)` com
+`continue: true`; (2) o `noindex` do alias, condicionado ao anfitrião, também
+com `continue`; (3), (4) e (5) os três 308 de anfitrião, que terminam a
+resposta; (6) e (7) as duas sondas do anfitrião da pré-visualização;
+(8) `{ "handle": "filesystem" }`; (9) `{ "src": "/en/(.*)", "status": 404,
+"dest": "/en/404/index.html" }`. O 404 português não leva rota nenhuma: a Vercel
+serve o `404.html` da raiz a tudo o que não bate em mais nada, e é por isso que
+`/404` responde 404 ao seu próprio endereço enquanto `/en/404` responde 200.
+
+**As invariantes de produção, e uma escolha que vale a pena escrever.** As
+perguntas novas vivem no `verify-deploy.mjs`, depois das que já lá estavam e sem
+tocar em nenhuma: os cinco cabeçalhos com o valor exacto em `/` e em
+`/en/ledger`; o `noindex` presente em `o-estado-do-pais.vercel.app` e ausente no
+canónico; os três 308 com o `Location` exacto; a página de erro da edição certa
+em `/en/nao-existe` e em `/nao-existe`; e as duas páginas de erro no sítio. Cada
+uma imprime o observado ao lado do esperado, e todas correm com
+`redirect: 'manual'`, porque um 308 conferido pelo seu destino não prova o 308,
+prova o destino. Os cinco cabeçalhos e o anfitrião do alias estão escritos por
+extenso no script e não lidos do `vercel.json`: uma conferência que lesse o
+ficheiro provaria que ele concorda consigo próprio. Os três anfitriões de
+redireccionamento saem do `site.config.mjs` (`SITE_HOST`, `SITE_HOST_UNACCENTED`
+e as duas formas com `www.`), que é onde o domínio está escrito uma só vez.
+
+Duas divergências do encomendado, ambas por medição. **A primeira:** o brief
+pedia uma opção `--anfitriao` «se o script não tiver nenhuma»; tem, chama-se
+`--host`, e as outras duas opções do script também são inglesas (`--ref`,
+`--branch`). Não se acrescentou um segundo nome para a mesma coisa. **A
+segunda:** o brief pede que se confira que `/404` «existe». Medido a 22.08, em
+produção e na pré-visualização n.º 3, `/404` responde **404**, porque é o
+`404.html` que a Vercel serve quando nada mais bate. Exigir 200 seria exigir uma
+coisa que nunca foi verdade, por isso o que se confere é 404 mais
+`<html lang="pt-PT">`, que distingue a página da casa da página genérica do
+alojamento. `/en/404` é que é uma página como as outras, e essa exige 200 mais
+`lang="en"`.
+
+**As duas corridas.** Contra produção, hoje, `node scripts/verify-deploy.mjs`:
+**25 conferências passam, 3 falham**, saída 1. As três são o 404 inglês, e são o
+ponto: `/en/nao-existe lang` observado `pt-PT` e esperado `en`; `/en/404 estado`
+observado 404 e esperado 200; `/en/404 lang` observado `pt-PT` e esperado `en`.
+Produção é `main`, que ainda não tem a página inglesa nem a regra. Tudo o resto
+está verde no ar: os cinco cabeçalhos nas duas páginas, o `noindex` no alias e
+ausente no canónico, os três 308 com o `Location` exacto, `/nao-existe` a 404 em
+`pt-PT` e `/404` a 404 em `pt-PT`.
+
+Contra a pré-visualização protegida deste ramo, como negativo conhecido,
+`node scripts/verify-deploy.mjs --host o-estado-do-pais-git-pos-fusao-v3-nunos-projects-b945a519.vercel.app`:
+**22 problemas**, saída 1. O alias responde 302 para a entrada da Vercel a quem
+não tem sessão, e a conferência lê isso tal como é: `/` e `/en/ledger` a 302 e
+não a 200, os cabeçalhos da casa ausentes ou diferentes (`x-frame-options: DENY`
+e `strict-transport-security: max-age=63072000; includeSubDomains; preload`, que
+são os da entrada da Vercel e não os nossos), as quatro páginas de erro a 302 sem
+`<html lang>` para ler, e o `x-robots-tag` presente onde se pedia ausente. Os
+três 308 passam, e é suposto: são anfitriões fixos, não se movem com `--host`, e
+a nota do script diz isso. O `version.json` também falha, pela mesma razão. Uma
+conferência que não soubesse falhar não valeria nada, e esta sabe.
+
+**O que fica por fazer, e por quem.** O commit não é empurrado: o lugar de
+direção empurra, lê a pré-visualização no Chrome do diretor (os cabeçalhos em
+cinco famílias de página, as duas páginas de erro, `/sonda-308` a dar 308 com
+`Location: /`, e o `X-Sonda` presente), preenche a I53 com o que leu, e só então
+as duas rotas de sonda saem num segundo commit. `grep -i sonda vercel.json` é o
+que diz se já saíram.
+
+**Réguas deste commit.** `python3 -c "import json; json.load(...)"` sobre o
+`vercel.json`: válido. `npm run build`: os cinco portões verdes. `npm run
+typecheck`: 0. `node scripts/ortografia.mjs --verificar`: 0. Nenhum valor,
+nenhuma cadeia e nenhuma página mudaram: o que mudou foi o ficheiro de
+encaminhamento, uma conferência de rede, um comentário e a documentação.
+
+**Modelo e gasto:** Claude Opus (`claude-opus-5[1m]`), ≈ 130k tokens.
