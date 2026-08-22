@@ -1352,6 +1352,7 @@ ${umaRegua(banda, 'duas referências na mesma escala; dentro é estar entre elas
     <div class="ds-mostra">${cabeca}</div>
     <p class="ds-nota"><code class="ds-mono">dist/index.html</code>, o bloco do âmbito País. As duas contagens são chaves da prova (<code class="ds-mono">painel_fora_do_limiar</code> e <code class="ds-mono">painel_dentro_do_limiar</code>), calculadas na construção e reconferidas pelo portão; a lede nomeia as medidas que estão fora. Hoje o painel rende ${foraN} fora e ${dentroN} dentro, contados nesta corrida sobre a página construída.</p>
     <p class="ds-nota">Emenda 16, de 21.08.2026: «${emLinha(EMENDA('**O painel da primeira página é o painel inteiro'))}»</p>
+    <p class="ds-nota">E a sua correção, de 22.08.2026: «${emLinha(EMENDA('**Correção à Emenda 16'))}»</p>
   </section>
 
   <section class="ds-bloco">
