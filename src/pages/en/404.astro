@@ -1,0 +1,13 @@
+---
+/**
+ * A página de erro da edição inglesa (ISSUES I53; DECISIONS §1.62, decisão 1).
+ *
+ * A Vercel serve um só `404.html` para tudo o que não existe, e por isso esta
+ * página só chega a um leitor por uma regra de encaminhamento: em `vercel.json`,
+ * depois da fase do sistema de ficheiros, `/en/(.*)` responde 404 com
+ * `/en/404/index.html`. Sem essa regra este ficheiro é só uma página que existe
+ * em `/en/404`. A vista é a mesma da edição portuguesa; muda a língua.
+ */
+import NaoEncontradoView from '../../views/NaoEncontradoView.astro';
+---
+<NaoEncontradoView lang="en" />
