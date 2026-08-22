@@ -60,7 +60,13 @@ export default defineConfig({
        * @returns {boolean} true se a página entra no sitemap.
        */
       filter: (page) => {
-        const hit = matchPath(pathFromUrl(page));
+        const caminho = pathFromUrl(page);
+        /* As páginas de erro das duas edições ficam fora: a Vercel serve-as a
+           quem pede um endereço que não existe, e um sitemap não oferece uma
+           ausência. O @astrojs/sitemap só exclui por si o `/404` da raiz; o
+           `/en/404` (ISSUES I53) passaria sem esta linha, e passou uma vez. */
+        if (/(^|\/)404$/.test(caminho)) return false;
+        const hit = matchPath(caminho);
         if (hit?.key === 'documento') return false;
         if (hit?.key === 'estudo') {
           const work = WORKS.find((w) => w.slug === hit.params.slug);

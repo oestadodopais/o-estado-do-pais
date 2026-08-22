@@ -562,7 +562,12 @@ function rotasConstruidas() {
           '/' + rel.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
         const rota = matchPath(caminho);
         if (rota?.key === 'documento') continue; // obra alojada, sem cabeçalho da casa
-        out.push({ caminho, lang: rota?.lang ?? 'pt' });
+        /* Uma página fora da tabela de rotas (as de erro, `/404` e `/en/404`)
+           tem a edição no seu prefixo, e o cartão que a cobre é o da primeira
+           página dessa edição: sem esta linha o `/en/404` caía no cartão
+           português e o portão recusava-o (ISSUES I53). */
+        const lang = rota?.lang ?? (caminho === '/en' || caminho.startsWith('/en/') ? 'en' : 'pt');
+        out.push({ caminho, lang });
       }
     }
   };

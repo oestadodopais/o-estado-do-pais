@@ -56,5 +56,9 @@
       "destination": "https://xn--oestadodopas-2fb.pt/$1",
       "permanent": true
     }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/en/(.*)", "status": 404, "dest": "/en/404/index.html" }
   ]
 }
