@@ -36,28 +36,6 @@
       "status": 308,
       "headers": { "Location": "https://xn--oestadodopas-2fb.pt/$1" }
     },
-    {
-      "src": "/sonda-308",
-      "has": [
-        {
-          "type": "host",
-          "value": "o-estado-do-pais-git-pos-fusao-v3-nunos-projects-b945a519.vercel.app"
-        }
-      ],
-      "status": 308,
-      "headers": { "Location": "/" }
-    },
-    {
-      "src": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "o-estado-do-pais-git-pos-fusao-v3-nunos-projects-b945a519.vercel.app"
-        }
-      ],
-      "headers": { "X-Sonda": "host" },
-      "continue": true
-    },
     { "handle": "filesystem" },
     { "src": "/en/(.*)", "status": 404, "dest": "/en/404/index.html" }
   ]
