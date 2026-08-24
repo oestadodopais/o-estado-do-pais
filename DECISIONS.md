@@ -9334,6 +9334,29 @@ passa a ser conferido no ar a cada publicação: `verify:deploy` exige agora os
 cabeçalhos, os 308 e as duas páginas de erro, e reprova hoje em três pontos, os
 três do 404 inglês, que é o que esta ronda vai fundir.
 
+### 1.63 O Método explica o marcador «(inferência)», que as páginas de leitura vão imprimir
+
+**Afecta:** metodo
+
+**Texto:** metodo 932f7444b1e0
+
+A regra 9 («A intervenção humana») ganha uma frase no fim, nas duas línguas,
+decidida pelo diretor a **24.08.2026** («as recommended») sobre a §6.4 da
+`design/especime-v3/ESTIMATIVA-PARTE3-2026-08-24.md`:
+
+> «Nos documentos de estudo, uma frase marcada «(inferência)» é a leitura que o
+> modelo faz dos números com fonte, e não uma constatação com fonte em si mesma.»
+
+A razão: a passagem de voz do motor cortou dos registos de conteúdo a frase que
+explicava o marcador dentro de cada documento, com uma condição escrita nos
+próprios ficheiros de operações (a divulgação de autoria de IA tem de viver no
+Sobre ou no Método, senão a frase volta). O Sobre e a regra 9 já declaravam a
+autoria; o que nenhuma página explicava era o marcador concreto, que aparece 53
+vezes nas oito edições com registo. Diz «o modelo» e não um nome de modelo,
+porque o Método não nomeia modelos em lado nenhum. A frase entra na `regra` e
+não no `limite`, porque é uma definição; não leva algarismos; e esta entrada é
+o registo que a amarra das decisões exige para o resumo novo.
+
 ## 4. O registo dos defeitos e dos adiamentos
 
 **Defeito registado 2026-08-16 (00:10), encontrado pela direcção no sítio no ar — RESOLVIDO na mesma noite (§1.37, no ar em `4217232`):** os selos acrescentados a 15.08 aos valores do cabeçalho da primeira página (308 · 11 · 15) rendem no cabeçalho com o rótulo inteiro do estudo («O Estado do País — apuramento próprio») e, no caso da contagem CAOP, com o marcador «[a verificar]» ao lado. Certo pela regra (todo o valor tem selo, para a sua linha), errado naquele sítio: no cabeçalho o selo deve ser só o glifo, com o rótulo apenas para leitores de ecrã. **Primeiro item do bloco V**, junto com a saída de «Edição de …», da introdução justificativa da primeira página e de «Estes indicadores não são escolha nossa…» (voz). Sem alteração ao portão: o selo continua ao pé do valor e a apontar para a linha própria.
