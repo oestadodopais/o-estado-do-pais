@@ -105,7 +105,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "16e65882e8c86251ceae62968a6631c7d0272127eada6b6828c646f9b983d04a",
       "rh_id": "clc-2024-votos-contra",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 0
     },
@@ -117,7 +117,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1716a67511449ff1b33c5c604856c8f6dc8aa450676d46b40e9997a0d4b79270",
       "rh_id": "clc-2024-votos-favor",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 0
     },
@@ -151,7 +151,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "da9099a2f9c057059f03e15756ef790cb85b9b8bf36f4d2448a4119a18941bfc",
       "rh_id": "despesa-paga-2025",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 0
     },
@@ -162,7 +162,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5505602e957439c6de8e989c5f0b6a44f7d9f32770e805e2bcf90cd1dca2a78a",
       "rh_id": "dgal-report-residual-2024",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 0
     },
@@ -185,7 +185,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ea4140b50b0413e9a58da0c25f7dbff2e08575b62a03b3b6b7d9c866689441ab",
       "rh_id": "dgal-divida-2014",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 1
     },
@@ -196,7 +196,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1b357d12429e660089e2c9c160b7ddc2fdc014248333e19034c90ef122af644d",
       "rh_id": "dgal-divida-2017",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 1
     },
@@ -207,7 +207,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4c919fda99782ec61fe8b9077b3621f5a58638856fa03f9992df4729f6404933",
       "rh_id": "dgal-divida-2021",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 1
     },
@@ -218,7 +218,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f37a7bb113e79cd3c8779dfe276d138f6ebce284336b90f89a08bee9fb5621bc",
       "rh_id": "dgal-divida-2024",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 1
     },
@@ -266,7 +266,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1011a2e376c21617760daef51b2b83f9579889d541285736f35533557a30eb48",
       "rh_id": "divida-total-2024",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 0
     },
@@ -278,7 +278,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8cd5242b3c7961588bc9e373e20d43462f779e83ad0c056a5bfe4e9a1dfd3c09",
       "rh_id": "divida-total-2025",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 1
     },
@@ -325,7 +325,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a6dce40ad55277b88ccc68394d93305eb4d3235f8a19b163154a735c2248c220",
       "rh_id": "exec-2021-pct",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 0
     },
@@ -337,7 +337,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f35ef48913eaefb60149fda89f544a8e53ff2f4d90da09b4df42ad7acea1779e",
       "rh_id": "receita-exec-pct",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 1
     },
@@ -392,7 +392,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "83b5e574ae93005cb794a135ecb06d581fafeed19daa2fb77d56f0274bbf9674",
       "rh_id": "evora-indice-2014",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 0
     },
@@ -403,7 +403,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "712a8af78d50cc426f05b37c8e1a775e8b8d760191fa640a107e3c61983cb1c8",
       "rh_id": "evora-indice-2017",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 0
     },
@@ -414,7 +414,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "410a1b511305f22dd0ff2251c30a5c1352667b2d9f93bb81504d4dcb7ea785b9",
       "rh_id": "evora-indice-2021",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 0
     },
@@ -425,7 +425,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "56875d412285a9fab5a1df8d79f09fd347a1f53a9a64a63488b73472161cba8c",
       "rh_id": "evora-indice-2024",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 0
     },
@@ -437,7 +437,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2a12c2a54c8a744f6a273cb00b0c6a9e7f52f4f6d1124096e49d6a35f406e12c",
       "rh_id": "limite-divida-2025",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 1
     },
@@ -448,7 +448,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "621cd24161e6f583843382165c041b6f8f881c15cbd3985f98e5f1b544b46a25",
       "rh_id": "dgal-limite-2014",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 1
     },
@@ -459,7 +459,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4b2761ff05ce00ba36a7f8621419edc266e0df6de6660974e2618d12c6793bdc",
       "rh_id": "dgal-limite-2017",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 1
     },
@@ -470,7 +470,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ae9bb14b56fb707f47f4fefb07a357de2117c118468914c12465b550267c886b",
       "rh_id": "dgal-limite-2021",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 1
     },
@@ -481,7 +481,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ecada2e09c73b67a7992a792510875ef30a1d48eae1aa44186fb290cd6ff39c7",
       "rh_id": "dgal-limite-2024",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 1
     },
@@ -493,7 +493,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "dd55618f23ff9229bbd69d2c12ce9e0d8a980316c31db3c34f6aa37c7ffc2dfd",
       "rh_id": "margem-endividamento-2025",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 0
     },
@@ -505,7 +505,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f3eb11a1690550f1849220dd1fa511f9a5487e73c67f317d41a698f5fe76f443",
       "rh_id": "om-2025-corrigido",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 0
     },
@@ -529,7 +529,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f2541f6199f7a22dbde9f7c688cb0142db2b62e5ff3c3c02697ddf9278a32069",
       "rh_id": "atrasos-2025",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 1
     },
@@ -651,7 +651,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3e1cc8b66ac96b24ea6beae811b8cc0492f2237596db77c1cbf1e1a9e725d84c",
       "rh_id": "pmp-2023",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 1
     },
@@ -663,7 +663,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "44adaedf2d5ff7740709b968985f69f0061b95418f9c6756ef021c02cfaf831b",
       "rh_id": "pmp-2025",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 1
     },
@@ -724,8 +724,8 @@
     },
     "evora-prr-vencido-aprovado-2026": {
       "corrections_at_export": 6,
-      "exported_at": "2026-08-20",
-      "exported_row_sha256": "b9908136b8a7b271cf61490330012921e183938f5aa890c64ac15ff8526c3efe",
+      "exported_at": "2026-08-24",
+      "exported_row_sha256": "dbd20aef161dc71e8237711bf0d02f15c78466d8439e9bb25a2ae986826cb6da",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5b4d5634258e73011125ffacc0dae25402f13392668d4befafe8d4688df03197",
       "rh_id": "prr-overdue-approved",
@@ -752,7 +752,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0a177197ac7a8f957a2e41aabbcf4dd104ec563312a1f9ee24286ad938a7e138",
       "rh_id": "receita-cobrada-2025",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 0
     },
@@ -786,7 +786,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b426fd76d4c56e7c1aa1155aa51be588abfb24305ae492eaed4f8c9967276aa6",
       "rh_id": "anuario-indice-permitido",
-      "rh_ledger_sha256": "46527351c2a9c3c406a6ae3108a7a2a97c43fc412fa82563f906bc67ffca21fd",
+      "rh_ledger_sha256": "bca1015fb0034cc9eeaef8f0069d8dd761ebf13909513c9f572eb8b143e068fc",
       "rh_study": "07 Évora Municipal Accounts",
       "verifications_at_export": 0
     },
