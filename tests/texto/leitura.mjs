@@ -16,7 +16,8 @@
  *      passar para baixo do corpo no móvel;
  *   2. a letra: Bitter tabular em toda a figura, Spectral na prosa da frase;
  *   3. o selo colado à sua figura, e o alvo de toque;
- *   4. o transbordo horizontal a 320, 390, 768, 1024 e 1280;
+ *   4. o transbordo horizontal a 320, 390, 768, 1024 e 1280, nas OITO edições
+ *      que têm registo (a lista sai do registo de travessia, não daqui);
  *   5. as tabelas a rolarem dentro da sua caixa, e não a empurrarem a página;
  *   6. a ligação mais longa do 03 pt (o endereço como etiqueta) a quebrar.
  *
@@ -80,7 +81,27 @@ async function pagina(largura = 1280) {
 
 const O04 = '/estudos/evora-prometido-pago-auditado-2026/texto';
 const O03 = '/estudos/avaliacao-economica-regional-de-portugal-2026/texto';
-const O08 = '/estudos/evora-quinze-anos-cinco-mandatos/texto';
+
+/**
+ * AS OITO, e não três: a medida 4 (o transbordo) corre sobre todas as edições
+ * que têm registo, e a lista sai do registo de travessia em vez de estar escrita
+ * aqui. Uma lista escrita à mão fica desactualizada na travessia seguinte, e uma
+ * régua que meça três de oito diz menos do que parece dizer. Os endereços são a
+ * forma da rota `texto`/`text`, que é a única coisa que esta régua sabe de cor.
+ */
+const AS_OITO = Object.keys(
+  JSON.parse(fs.readFileSync(path.join(RAIZ, 'registos', 'manifest.json'), 'utf8')).registos,
+)
+  .sort()
+  .map((chave) => {
+    const corte = chave.lastIndexOf('/');
+    const slug = chave.slice(0, corte);
+    const lang = chave.slice(corte + 1);
+    return {
+      chave,
+      rota: lang === 'pt' ? `/estudos/${slug}/texto` : `/en/studies/${slug}/text`,
+    };
+  });
 
 console.log('');
 console.log(cinza('  a régua da página de leitura · o documento composto do registo'));
@@ -156,14 +177,18 @@ console.log('');
   await p.__contexto.close();
 }
 
-/* 4 · O TRANSBORDO, nas cinco larguras. */
-for (const rota of [O04, O03, O08]) {
+/* 4 · O TRANSBORDO, nas cinco larguras e nas OITO edições. */
+for (const { chave, rota } of AS_OITO) {
   for (const largura of [320, 390, 768, 1024, 1280]) {
     const p = await pagina(largura);
     await p.goto(base + rota, { waitUntil: 'networkidle' });
     const m = await p.evaluate(() => ({
       documento: document.documentElement.scrollWidth,
       janela: window.innerWidth,
+      caixas: document.querySelectorAll('.texto-tabela').length,
+      rolam: [...document.querySelectorAll('.texto-tabela')].filter(
+        (c) => c.scrollWidth > c.clientWidth + 1,
+      ).length,
       pior: (() => {
         let pior = null;
         for (const el of document.querySelectorAll('body *')) {
@@ -176,9 +201,9 @@ for (const rota of [O04, O03, O08]) {
       })(),
     }));
     conta(
-      `${rota.split('/')[2].slice(0, 22)} a ${largura}: a página não rola de lado`,
+      `${chave} a ${largura}: a página não rola de lado`,
       m.documento <= m.janela + 1,
-      `documento ${m.documento}px · janela ${m.janela}px${m.pior ? ` · o mais à direita: ${m.pior.quem} a ${m.pior.direita}px` : ''}`,
+      `documento ${m.documento}px · janela ${m.janela}px · ${m.rolam}/${m.caixas} caixa(s) de tabela rolam${m.pior ? ` · o mais à direita: ${m.pior.quem} a ${m.pior.direita}px` : ''}`,
     );
     await p.__contexto.close();
   }
