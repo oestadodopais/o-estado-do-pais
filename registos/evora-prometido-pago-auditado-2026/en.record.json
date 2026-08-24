@@ -1,0 +1,6951 @@
+{
+ "blocks": [
+  {
+   "figures": [],
+   "i": 0,
+   "kind": "heading",
+   "level": 1,
+   "text": "Évora — what was promised, what was paid, and what was audited"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 246,
+     "kind": "em",
+     "start": 0
+    }
+   ],
+   "figures": [],
+   "i": 1,
+   "kind": "paragraph",
+   "text": "A cross-vertical reading of one Portuguese municipality: the recovery-plan project register, the public-contracts register and the state auditor's catalogue, all fetched live on 2026-08-04, and the recovery-plan register read again on 2026-08-20."
+  },
+  {
+   "i": 2,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 3,
+   "kind": "heading",
+   "level": 2,
+   "text": "Read this part first"
+  },
+  {
+   "figures": [],
+   "i": 4,
+   "kind": "paragraph",
+   "text": "Three limits govern everything that follows."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 65,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 203,
+     "kind": "em",
+     "start": 159
+    },
+    {
+     "end": 256,
+     "kind": "strong",
+     "start": 229
+    }
+   ],
+   "figures": [
+    {
+     "end": 378,
+     "others": [
+      "comp-c08-locations"
+     ],
+     "printed": "4",
+     "row": "tc-families",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 377,
+     "value": "4"
+    }
+   ],
+   "i": 5,
+   "kind": "paragraph",
+   "text": "The audit section reads the Tribunal's catalogue, not its audits. What was fetched is the title and abstract of each published document. That is enough to say what was audited, when, and where to read it. It is not enough to say what the Tribunal concluded — the findings, the recommendations and the euro amounts are inside the PDFs, and nothing here opens one. It also reads 4 of the Tribunal's product families rather than all of them, which turns out to matter enough that the section measures the cost instead of mentioning it."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 62,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [
+    {
+     "end": 87,
+     "printed": "24 436",
+     "row": "base-alltime-evora",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 81,
+     "value": "24 436"
+    },
+    {
+     "end": 147,
+     "printed": "600",
+     "row": "base-returned",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 144,
+     "value": "600"
+    }
+   ],
+   "i": 6,
+   "kind": "paragraph",
+   "text": "The contracts section is an upper bound on a truncated window. Portal BASE holds 24 436 contracts for the concelho of Évora. This document read 600 of them — the most recently published ones, spanning 2026-05-08 to 2026-08-04. The rest were not read. A contract carried out across several municipalities is returned by each of their filters at its full value, so a concelho contract total is an upper bound and concelho totals must never be added together."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 85,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [
+    {
+     "end": 168,
+     "others": [
+      "comp-c11-overdue",
+      "base-place-checks",
+      "base-ulsac-spellings",
+      "base-gesamb-spellings",
+      "tcq-iapmei",
+      "tcq-administracao-central-do-sistema-de-saude"
+     ],
+     "printed": "3",
+     "row": "comp-c11-locations",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 167,
+     "value": "3"
+    }
+   ],
+   "i": 7,
+   "kind": "paragraph",
+   "text": "There is no EU figure for a municipality, and this document does not manufacture one. The finest geography the EU's project-level data reaches for Portugal is the NUTS3 region. That is a null, established by probe rather than asserted."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 27,
+     "kind": "em",
+     "start": 24
+    },
+    {
+     "end": 216,
+     "kind": "strong",
+     "start": 205
+    }
+   ],
+   "figures": [],
+   "i": 8,
+   "kind": "paragraph",
+   "text": "One thing this document can do that a single source cannot: it puts the promise, the payment and the audit record of one place side by side. Where it reasons beyond what a source states, the sentence says (inference)."
+  },
+  {
+   "i": 9,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 10,
+   "kind": "heading",
+   "level": 2,
+   "text": "What was promised, and what was paid"
+  },
+  {
+   "figures": [],
+   "i": 11,
+   "kind": "paragraph",
+   "text": "The Plano de Recuperação e Resiliência publishes a full-refresh snapshot every day, with no version history: yesterday's file is simply gone from the source. The snapshot read here carries the reference date 2026-08-19."
+  },
+  {
+   "i": 12,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "text": "Approved and attributed to Évora"
+     },
+     {
+      "emphasis": [
+       {
+        "end": 12,
+        "kind": "strong",
+        "start": 0
+       }
+      ],
+      "figures": [
+       {
+        "end": 12,
+        "printed": "167 372 756",
+        "row": "prr-approved-evora",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 1,
+        "value": "167 372 756"
+       }
+      ],
+      "text": "€167 372 756"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Paid and attributed to Évora"
+     },
+     {
+      "emphasis": [
+       {
+        "end": 11,
+        "kind": "strong",
+        "start": 0
+       }
+      ],
+      "figures": [
+       {
+        "end": 11,
+        "printed": "86 944 669",
+        "row": "prr-paid-evora",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 1,
+        "value": "86 944 669"
+       }
+      ],
+      "text": "€86 944 669"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Executed"
+     },
+     {
+      "emphasis": [
+       {
+        "end": 6,
+        "kind": "strong",
+        "start": 0
+       }
+      ],
+      "figures": [
+       {
+        "end": 5,
+        "printed": "51.95",
+        "row": "prr-execution-evora",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "51.95"
+       }
+      ],
+      "text": "51.95%"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Project-locations in Évora"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "2 311",
+        "row": "prr-locations-evora",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2 311"
+       }
+      ],
+      "text": "2 311"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "of which exclusive to Évora"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "2 267",
+        "row": "prr-single-concelho-projects",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2 267"
+       }
+      ],
+      "text": "2 267"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "of which shared with other concelhos"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "44",
+        "row": "prr-shared-projects",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "44"
+       }
+      ],
+      "text": "44"
+     }
+    ]
+   ]
+  },
+  {
+   "emphasis": [
+    {
+     "end": 138,
+     "kind": "em",
+     "start": 112
+    },
+    {
+     "end": 162,
+     "kind": "em",
+     "start": 143
+    }
+   ],
+   "figures": [
+    {
+     "end": 320,
+     "others": [
+      "prr-location-rows"
+     ],
+     "printed": "398 747",
+     "row": "prr-manager-rows",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 313,
+     "value": "398 747"
+    }
+   ],
+   "i": 13,
+   "kind": "paragraph",
+   "text": "Both figures are sourced facts, not estimates. They come from the manager layer of the beneficiaries file — the Beneficiário Intermediário and Beneficiário Direto rows — which gives exactly one row per project-location and carries both the approved and the paid amount for that location. The count of those rows, 398 747, equals the row count of the geographic distribution file exactly, which is the structural check that the layer decomposes the money once and only once."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 315,
+     "kind": "strong",
+     "start": 312
+    }
+   ],
+   "figures": [
+    {
+     "end": 134,
+     "printed": "1 169",
+     "row": "prr-crosscheck-delta",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 129,
+     "value": "1 169"
+    }
+   ],
+   "i": 14,
+   "kind": "paragraph",
+   "text": "An independent route to the same approved figure — rebuilding it from the percentage share column in the locations file — lands €1 169 away, which is four-decimal rounding in the published share and nothing else. The other share column in that same file, the one that looks like a per-location payment share, is not used: it repeats the project-wide payment ratio on every row, and reading it as a share inflates Évora's paid figure by an order of magnitude."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 224,
+     "kind": "strong",
+     "start": 201
+    },
+    {
+     "end": 429,
+     "kind": "em",
+     "start": 411
+    }
+   ],
+   "figures": [
+    {
+     "end": 47,
+     "printed": "24 491 396 628",
+     "row": "prr-national-approved",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 33,
+     "value": "24 491 396 628"
+    },
+    {
+     "end": 76,
+     "printed": "14 299 597 753",
+     "row": "prr-national-paid",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 62,
+     "value": "14 299 597 753"
+    },
+    {
+     "end": 96,
+     "printed": "397 030",
+     "row": "prr-national-projects",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 89,
+     "value": "397 030"
+    },
+    {
+     "end": 133,
+     "printed": "58.39",
+     "row": "prr-national-execution",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 128,
+     "value": "58.39"
+    },
+    {
+     "end": 152,
+     "printed": "0.68",
+     "row": "prr-evora-share-national",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 148,
+     "value": "0.68"
+    },
+    {
+     "end": 282,
+     "printed": "3 655 353 461",
+     "row": "prr-unallocated-approved",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 269,
+     "value": "3 655 353 461"
+    },
+    {
+     "end": 312,
+     "printed": "14.93",
+     "row": "prr-unallocated-share",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 307,
+     "value": "14.93"
+    }
+   ],
+   "i": 15,
+   "kind": "paragraph",
+   "text": "Nationally the same basis gives €24 491 396 628 approved and €14 299 597 753 paid across 397 030 projects, an execution rate of 58.39%. Évora holds 0.68% of the national approved total and executes it below the national rate. One thing to know about that denominator: €3 655 353 461 of the national total — 14.93% of it — belongs to no concelho at all, recorded as national or with no location, so the share of place-attributable money is slightly larger than the figure above."
+  },
+  {
+   "figures": [],
+   "i": 16,
+   "kind": "heading",
+   "level": 3,
+   "text": "Where the promise sits"
+  },
+  {
+   "figures": [
+    {
+     "end": 176,
+     "others": [
+      "comp-count",
+      "tc-thematic-body-mentions"
+     ],
+     "printed": "13",
+     "row": "fin-arsalentejo-projects",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 174,
+     "value": "13"
+    },
+    {
+     "end": 198,
+     "others": [
+      "base-gesamb-contracts",
+      "tc-report-21-2019"
+     ],
+     "printed": "21",
+     "row": "prr-components-total",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 196,
+     "value": "21"
+    }
+   ],
+   "i": 17,
+   "kind": "paragraph",
+   "text": "There is no component column in the projects file; the component is the prefix of the investment code, and it is the only key available. Évora's project locations fall under 13 of the programme's 21 components."
+  },
+  {
+   "i": 18,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Component"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Name"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Approved (€)"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Paid (€)"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Locations"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Overdue"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "fin-patrimonio-projects",
+         "base-multi-spelling-entities",
+         "tc-evora-name-mention"
+        ],
+        "printed": "05",
+        "row": "comp-c04-overdue",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 1,
+        "value": "5"
+       }
+      ],
+      "text": "C05"
+     },
+     {
+      "figures": [],
+      "text": "Investimento e inovação"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "49 138 486",
+        "row": "comp-c05-approved",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "49 138 486"
+       }
+      ],
+      "text": "49 138 486"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "24 944 683",
+        "row": "comp-c05-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "24 944 683"
+       }
+      ],
+      "text": "24 944 683"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "73",
+        "row": "comp-c05-locations",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "73"
+       }
+      ],
+      "text": "73"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "57",
+        "row": "comp-c05-overdue",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "57"
+       }
+      ],
+      "text": "57"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "tcq-divino-espirito-santo"
+        ],
+        "printed": "07",
+        "row": "tc-gap-vec",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "7"
+       }
+      ],
+      "text": "C07"
+     },
+     {
+      "figures": [],
+      "text": "Infraestruturas"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "others": [
+         "proj-ip-c07-approved",
+         "mgr-ip-contracted",
+         "mgrall-00"
+        ],
+        "printed": "29 684 101",
+        "row": "comp-c07-approved",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "29 684 101"
+       }
+      ],
+      "text": "29 684 101"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "others": [
+         "proj-ip-c07-paid",
+         "mgr-ip-paid",
+         "mgrallpaid-00"
+        ],
+        "printed": "29 061 019",
+        "row": "comp-c07-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "29 061 019"
+       }
+      ],
+      "text": "29 061 019"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "comp-c21-overdue",
+         "proj-malagueira-locations",
+         "proj-castris-locations",
+         "proj-hospital-equip-locations",
+         "fin-geosat-projects",
+         "tc-gap-vic",
+         "tc-evora-entity-match",
+         "tc-report-1-2008",
+         "tcq-infraestruturas-de-portugal",
+         "tcq-administracao-regional-de-saude-do-alentejo",
+         "tcq-universidade-do-evora",
+         "tcq-espirito-santo-evora"
+        ],
+        "printed": "1",
+        "row": "comp-c07-locations",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1"
+       }
+      ],
+      "text": "1"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "proj-malagueira-paid",
+         "proj-hospital-equip-paid",
+         "base-invalid-id-returns",
+         "tc-evora-freguesia-match",
+         "tc-evora-longer-municipality-only",
+         "tcq-instituto-da-habitacao-e-da-reabilitacao-urbana",
+         "tcq-gesamb",
+         "tcq-instituto-do-emprego-e-formacao-profissional",
+         "tcq-fundo-ambiental",
+         "tcq-alentejo-central",
+         "tc-evora-risks"
+        ],
+        "printed": "0",
+        "row": "comp-c07-overdue",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "0"
+       }
+      ],
+      "text": "0"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "base-municipio-spellings",
+         "tc-gap-auditoria",
+         "tc-report-2-2012",
+         "tcq-universidade-de-evora",
+         "tcq-ihru",
+         "tc-fifth-family-evora"
+        ],
+        "printed": "02",
+        "row": "comp-c08-overdue",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 1,
+        "value": "2"
+       }
+      ],
+      "text": "C02"
+     },
+     {
+      "figures": [],
+      "text": "Habitação"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "23 666 204",
+        "row": "comp-c02-approved",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "23 666 204"
+       }
+      ],
+      "text": "23 666 204"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "6 207 606",
+        "row": "comp-c02-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6 207 606"
+       }
+      ],
+      "text": "6 207 606"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "comp-c02-overdue",
+         "base-municipio-contracts",
+         "base-evora2027-contracts"
+        ],
+        "printed": "39",
+        "row": "comp-c02-locations",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "39"
+       }
+      ],
+      "text": "39"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "comp-c02-overdue",
+         "base-municipio-contracts",
+         "base-evora2027-contracts"
+        ],
+        "printed": "39",
+        "row": "comp-c02-locations",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "39"
+       }
+      ],
+      "text": "39"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "comp-c07-locations",
+         "comp-c21-overdue",
+         "proj-malagueira-locations",
+         "proj-castris-locations",
+         "proj-hospital-equip-locations",
+         "fin-geosat-projects",
+         "tc-gap-vic",
+         "tc-evora-entity-match",
+         "tc-report-1-2008",
+         "tcq-infraestruturas-de-portugal",
+         "tcq-universidade-do-evora",
+         "tcq-espirito-santo-evora"
+        ],
+        "printed": "01",
+        "row": "tcq-administracao-regional-de-saude-do-alentejo",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 1,
+        "value": "1"
+       }
+      ],
+      "text": "C01"
+     },
+     {
+      "figures": [],
+      "text": "Serviço Nacional de Saúde"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "17 468 445",
+        "row": "comp-c01-approved",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "17 468 445"
+       }
+      ],
+      "text": "17 468 445"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "4 140 161",
+        "row": "comp-c01-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "4 140 161"
+       }
+      ],
+      "text": "4 140 161"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "prr-managers-count",
+         "base-gesamb-group-contracts"
+        ],
+        "printed": "23",
+        "row": "comp-c01-locations",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "23"
+       }
+      ],
+      "text": "23"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "proj-ip-c07-locations"
+        ],
+        "printed": "17",
+        "row": "comp-c01-overdue",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "17"
+       }
+      ],
+      "text": "17"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "tc-evora-matches",
+         "tcq-alentejo"
+        ],
+        "printed": "06",
+        "row": "prr-suppliers-count",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 1,
+        "value": "6"
+       }
+      ],
+      "text": "C06"
+     },
+     {
+      "figures": [],
+      "text": "Qualificações e competências"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "16 886 594",
+        "row": "comp-c06-approved",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "16 886 594"
+       }
+      ],
+      "text": "16 886 594"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "8 565 822",
+        "row": "comp-c06-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "8 565 822"
+       }
+      ],
+      "text": "8 565 822"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "704",
+        "row": "comp-c06-locations",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "704"
+       }
+      ],
+      "text": "704"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "28",
+        "row": "comp-c06-overdue",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "28"
+       }
+      ],
+      "text": "28"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "tc-families"
+        ],
+        "printed": "04",
+        "row": "comp-c08-locations",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 1,
+        "value": "4"
+       }
+      ],
+      "text": "C04"
+     },
+     {
+      "figures": [],
+      "text": "Cultura"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "15 706 355",
+        "row": "comp-c04-approved",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "15 706 355"
+       }
+      ],
+      "text": "15 706 355"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "7 512 458",
+        "row": "comp-c04-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "7 512 458"
+       }
+      ],
+      "text": "7 512 458"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "prr-managers-remaining",
+         "tc-report-16-2018"
+        ],
+        "printed": "16",
+        "row": "comp-c04-locations",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "16"
+       }
+      ],
+      "text": "16"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "fin-patrimonio-projects",
+         "base-multi-spelling-entities",
+         "tc-evora-name-mention"
+        ],
+        "printed": "5",
+        "row": "comp-c04-overdue",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "5"
+       }
+      ],
+      "text": "5"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "prr-managers-remaining",
+         "tc-report-16-2018"
+        ],
+        "printed": "16",
+        "row": "comp-c04-locations",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 1,
+        "value": "16"
+       }
+      ],
+      "text": "C16"
+     },
+     {
+      "figures": [
+       {
+        "end": 12,
+        "others": [
+         "tc-families"
+        ],
+        "printed": "4.0",
+        "row": "comp-c08-locations",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 9,
+        "value": "4"
+       }
+      ],
+      "text": "Empresas 4.0"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "3 923 642",
+        "row": "comp-c16-approved",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3 923 642"
+       }
+      ],
+      "text": "3 923 642"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "2 172 662",
+        "row": "comp-c16-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2 172 662"
+       }
+      ],
+      "text": "2 172 662"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "80",
+        "row": "comp-c16-locations",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "80"
+       }
+      ],
+      "text": "80"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "69",
+        "row": "comp-c16-overdue",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "69"
+       }
+      ],
+      "text": "69"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "19",
+        "row": "proj-newspace-locations",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "19"
+       }
+      ],
+      "text": "C19"
+     },
+     {
+      "figures": [],
+      "text": "Administração pública digital"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "3 843 588",
+        "row": "comp-c19-approved",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3 843 588"
+       }
+      ],
+      "text": "3 843 588"
+     },
+     {
+      "figures": [
+       {
+        "end": 7,
+        "printed": "973 246",
+        "row": "comp-c19-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "973 246"
+       }
+      ],
+      "text": "973 246"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "fin-municipio-projects",
+         "tc-report-20-2008"
+        ],
+        "printed": "20",
+        "row": "comp-c19-locations",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "20"
+       }
+      ],
+      "text": "20"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "base-undermerge-contracts",
+         "tc-report-14-2018",
+         "ine-alentejo-central-municipalities"
+        ],
+        "printed": "14",
+        "row": "comp-c19-overdue",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "14"
+       }
+      ],
+      "text": "14"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "fin-arsalentejo-projects",
+         "tc-thematic-body-mentions"
+        ],
+        "printed": "13",
+        "row": "comp-count",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 1,
+        "value": "13"
+       }
+      ],
+      "text": "C13"
+     },
+     {
+      "figures": [],
+      "text": "Eficiência energética em edifícios"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "2 631 788",
+        "row": "comp-c13-approved",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2 631 788"
+       }
+      ],
+      "text": "2 631 788"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "1 488 885",
+        "row": "comp-c13-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1 488 885"
+       }
+      ],
+      "text": "1 488 885"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "1 009",
+        "row": "comp-c13-locations",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1 009"
+       }
+      ],
+      "text": "1 009"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "349",
+        "row": "comp-c13-overdue",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "349"
+       }
+      ],
+      "text": "349"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "comp-c11-overdue",
+         "base-place-checks",
+         "base-ulsac-spellings",
+         "base-gesamb-spellings",
+         "tcq-iapmei",
+         "tcq-administracao-central-do-sistema-de-saude"
+        ],
+        "printed": "03",
+        "row": "comp-c11-locations",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 1,
+        "value": "3"
+       }
+      ],
+      "text": "C03"
+     },
+     {
+      "figures": [],
+      "text": "Respostas sociais"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "2 453 446",
+        "row": "comp-c03-approved",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2 453 446"
+       }
+      ],
+      "text": "2 453 446"
+     },
+     {
+      "figures": [
+       {
+        "end": 7,
+        "printed": "887 845",
+        "row": "comp-c03-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "887 845"
+       }
+      ],
+      "text": "887 845"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "31",
+        "row": "comp-c03-locations",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "31"
+       }
+      ],
+      "text": "31"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "24",
+        "row": "comp-c03-overdue",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "24"
+       }
+      ],
+      "text": "24"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "base-gesamb-contracts",
+         "tc-report-21-2019"
+        ],
+        "printed": "21",
+        "row": "prr-components-total",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 1,
+        "value": "21"
+       }
+      ],
+      "text": "C21"
+     },
+     {
+      "figures": [],
+      "text": "REPowerEU"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "1 400 432",
+        "row": "comp-c21-approved",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1 400 432"
+       }
+      ],
+      "text": "1 400 432"
+     },
+     {
+      "figures": [
+       {
+        "end": 7,
+        "printed": "553 561",
+        "row": "comp-c21-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "553 561"
+       }
+      ],
+      "text": "553 561"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "tc-gazetteer-municipalities"
+        ],
+        "printed": "308",
+        "row": "comp-c21-locations",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "308"
+       }
+      ],
+      "text": "308"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "comp-c07-locations",
+         "proj-malagueira-locations",
+         "proj-castris-locations",
+         "proj-hospital-equip-locations",
+         "fin-geosat-projects",
+         "tc-gap-vic",
+         "tc-evora-entity-match",
+         "tc-report-1-2008",
+         "tcq-infraestruturas-de-portugal",
+         "tcq-administracao-regional-de-saude-do-alentejo",
+         "tcq-universidade-do-evora",
+         "tcq-espirito-santo-evora"
+        ],
+        "printed": "1",
+        "row": "comp-c21-overdue",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1"
+       }
+      ],
+      "text": "1"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "C11"
+     },
+     {
+      "figures": [],
+      "text": "Descarbonização da indústria"
+     },
+     {
+      "figures": [
+       {
+        "end": 7,
+        "printed": "389 587",
+        "row": "comp-c11-approved",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "389 587"
+       }
+      ],
+      "text": "389 587"
+     },
+     {
+      "figures": [
+       {
+        "end": 7,
+        "printed": "347 250",
+        "row": "comp-c11-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "347 250"
+       }
+      ],
+      "text": "347 250"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "comp-c11-overdue",
+         "base-place-checks",
+         "base-ulsac-spellings",
+         "base-gesamb-spellings",
+         "tcq-iapmei",
+         "tcq-administracao-central-do-sistema-de-saude"
+        ],
+        "printed": "3",
+        "row": "comp-c11-locations",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3"
+       }
+      ],
+      "text": "3"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "comp-c11-overdue",
+         "base-place-checks",
+         "base-ulsac-spellings",
+         "base-gesamb-spellings",
+         "tcq-iapmei",
+         "tcq-administracao-central-do-sistema-de-saude"
+        ],
+        "printed": "3",
+        "row": "comp-c11-locations",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3"
+       }
+      ],
+      "text": "3"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "tcq-espirito-santo"
+        ],
+        "printed": "08",
+        "row": "fin-habevora-projects",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 1,
+        "value": "8"
+       }
+      ],
+      "text": "C08"
+     },
+     {
+      "figures": [],
+      "text": "Florestas"
+     },
+     {
+      "figures": [
+       {
+        "end": 7,
+        "printed": "180 086",
+        "row": "comp-c08-approved",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "180 086"
+       }
+      ],
+      "text": "180 086"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "89 473",
+        "row": "comp-c08-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "89 473"
+       }
+      ],
+      "text": "89 473"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "tc-families"
+        ],
+        "printed": "4",
+        "row": "comp-c08-locations",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "4"
+       }
+      ],
+      "text": "4"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "base-municipio-spellings",
+         "tc-gap-auditoria",
+         "tc-report-2-2012",
+         "tcq-universidade-de-evora",
+         "tcq-ihru",
+         "tc-fifth-family-evora"
+        ],
+        "printed": "2",
+        "row": "comp-c08-overdue",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2"
+       }
+      ],
+      "text": "2"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 19,
+   "kind": "paragraph",
+   "text": "Component names come from the publisher's own investments file, not from memory."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 72,
+     "kind": "strong",
+     "start": 49
+    },
+    {
+     "end": 182,
+     "kind": "strong",
+     "start": 167
+    },
+    {
+     "end": 508,
+     "kind": "strong",
+     "start": 474
+    }
+   ],
+   "figures": [
+    {
+     "end": 345,
+     "others": [
+      "comp-c07-paid",
+      "mgr-ip-paid",
+      "mgrallpaid-00"
+     ],
+     "printed": "29 061 019",
+     "row": "proj-ip-c07-paid",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 335,
+     "value": "29 061 019"
+    },
+    {
+     "end": 420,
+     "printed": "17 860 225",
+     "row": "comp-health-housing-culture-paid",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 410,
+     "value": "17 860 225"
+    },
+    {
+     "end": 518,
+     "printed": "1 009",
+     "row": "comp-c13-locations",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 513,
+     "value": "1 009"
+    },
+    {
+     "end": 541,
+     "printed": "2 631 788",
+     "row": "comp-c13-approved",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 532,
+     "value": "2 631 788"
+    },
+    {
+     "end": 572,
+     "printed": "2 608",
+     "row": "comp-c13-avg",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 567,
+     "value": "2 608"
+    }
+   ],
+   "i": 20,
+   "kind": "paragraph",
+   "text": "Three things in that table are worth pausing on. Investimento e inovação is the largest single block of approved money in Évora, and it has paid out under half of it. Infraestruturas reaches the concelho through a single project-location, and that is nevertheless where the most money actually paid sits: one road programme has moved €29 061 019 through Évora, more than health, housing and culture together (€17 860 225). And a count of locations is not a measure of size. Eficiência energética em edifícios has 1 009 of them for €2 631 788 approved, an average of €2 608 per location."
+  },
+  {
+   "figures": [],
+   "i": 21,
+   "kind": "heading",
+   "level": 3,
+   "text": "The five largest project-locations"
+  },
+  {
+   "i": 22,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Investment"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Project, as the source names it"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Approved here (€)"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Paid here (€)"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Concelhos"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Planned completion"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "tcq-divino-espirito-santo"
+        ],
+        "printed": "07",
+        "row": "tc-gap-vec",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "7"
+       },
+       {
+        "end": 7,
+        "others": [
+         "base-municipio-spellings",
+         "tc-gap-auditoria",
+         "tc-report-2-2012",
+         "tcq-universidade-de-evora",
+         "tcq-ihru",
+         "tc-fifth-family-evora"
+        ],
+        "printed": "02",
+        "row": "comp-c08-overdue",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 5,
+        "value": "2"
+       }
+      ],
+      "text": "C07-i02"
+     },
+     {
+      "figures": [
+       {
+        "end": 49,
+        "others": [
+         "base-undermerge-contracts",
+         "tc-report-14-2018",
+         "ine-alentejo-central-municipalities"
+        ],
+        "printed": "14",
+        "row": "comp-c19-overdue",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 47,
+        "value": "14"
+       },
+       {
+        "end": 54,
+        "others": [
+         "tc-families"
+        ],
+        "printed": "4",
+        "row": "comp-c08-locations",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 53,
+        "value": "4"
+       },
+       {
+        "end": 65,
+        "others": [
+         "base-municipio-spellings",
+         "tc-gap-auditoria",
+         "tc-report-2-2012",
+         "tcq-universidade-de-evora",
+         "tcq-ihru",
+         "tc-fifth-family-evora"
+        ],
+        "printed": "2",
+        "row": "comp-c08-overdue",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 64,
+        "value": "2"
+       },
+       {
+        "end": 91,
+        "others": [
+         "tcq-espirito-santo"
+        ],
+        "printed": "8",
+        "row": "fin-habevora-projects",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 90,
+        "value": "8"
+       },
+       {
+        "end": 122,
+        "others": [
+         "tcq-espirito-santo"
+        ],
+        "printed": "8",
+        "row": "fin-habevora-projects",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 121,
+        "value": "8"
+       },
+       {
+        "end": 135,
+        "others": [
+         "tcq-espirito-santo"
+        ],
+        "printed": "8",
+        "row": "fin-habevora-projects",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 134,
+        "value": "8"
+       }
+      ],
+      "text": "Missing links e Aumento capacidade da Rede - EN14, EN4, IC35, IP2, EN125, EN211, EN344, IP8 (A26), Baião/Ponte Ermida, IP8 (EN121), IP8 (EN259)"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "others": [
+         "comp-c07-approved",
+         "mgr-ip-contracted",
+         "mgrall-00"
+        ],
+        "printed": "29 684 101",
+        "row": "proj-ip-c07-approved",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "29 684 101"
+       }
+      ],
+      "text": "29 684 101"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "others": [
+         "comp-c07-paid",
+         "mgr-ip-paid",
+         "mgrallpaid-00"
+        ],
+        "printed": "29 061 019",
+        "row": "proj-ip-c07-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "29 061 019"
+       }
+      ],
+      "text": "29 061 019"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "comp-c01-overdue"
+        ],
+        "printed": "17",
+        "row": "proj-ip-c07-locations",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "17"
+       }
+      ],
+      "text": "17"
+     },
+     {
+      "figures": [],
+      "text": "2026-12-31"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "fin-patrimonio-projects",
+         "base-multi-spelling-entities",
+         "tc-evora-name-mention"
+        ],
+        "printed": "05",
+        "row": "comp-c04-overdue",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 1,
+        "value": "5"
+       }
+      ],
+      "text": "C05-i01.01"
+     },
+     {
+      "figures": [],
+      "text": "New Space Portugal"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "9 792 916",
+        "row": "proj-newspace-approved",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "9 792 916"
+       }
+      ],
+      "text": "9 792 916"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "4 075 659",
+        "row": "proj-newspace-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "4 075 659"
+       }
+      ],
+      "text": "4 075 659"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "19",
+        "row": "proj-newspace-locations",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "19"
+       }
+      ],
+      "text": "19"
+     },
+     {
+      "figures": [],
+      "text": "2026-06-30"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "base-municipio-spellings",
+         "tc-gap-auditoria",
+         "tc-report-2-2012",
+         "tcq-universidade-de-evora",
+         "tcq-ihru",
+         "tc-fifth-family-evora"
+        ],
+        "printed": "02",
+        "row": "comp-c08-overdue",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 1,
+        "value": "2"
+       },
+       {
+        "end": 7,
+        "others": [
+         "tc-evora-matches",
+         "tcq-alentejo"
+        ],
+        "printed": "06",
+        "row": "prr-suppliers-count",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 5,
+        "value": "6"
+       }
+      ],
+      "text": "C02-i06"
+     },
+     {
+      "figures": [],
+      "text": "Residência da Malagueira"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "7 483 162",
+        "row": "proj-malagueira-approved",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "7 483 162"
+       }
+      ],
+      "text": "7 483 162"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "comp-c07-overdue",
+         "proj-hospital-equip-paid",
+         "base-invalid-id-returns",
+         "tc-evora-freguesia-match",
+         "tc-evora-longer-municipality-only",
+         "tcq-instituto-da-habitacao-e-da-reabilitacao-urbana",
+         "tcq-gesamb",
+         "tcq-instituto-do-emprego-e-formacao-profissional",
+         "tcq-fundo-ambiental",
+         "tcq-alentejo-central",
+         "tc-evora-risks"
+        ],
+        "printed": "0",
+        "row": "proj-malagueira-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "0"
+       }
+      ],
+      "text": "0"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "comp-c07-locations",
+         "comp-c21-overdue",
+         "proj-castris-locations",
+         "proj-hospital-equip-locations",
+         "fin-geosat-projects",
+         "tc-gap-vic",
+         "tc-evora-entity-match",
+         "tc-report-1-2008",
+         "tcq-infraestruturas-de-portugal",
+         "tcq-administracao-regional-de-saude-do-alentejo",
+         "tcq-universidade-do-evora",
+         "tcq-espirito-santo-evora"
+        ],
+        "printed": "1",
+        "row": "proj-malagueira-locations",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1"
+       }
+      ],
+      "text": "1"
+     },
+     {
+      "figures": [],
+      "text": "2026-03-30"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "tc-families"
+        ],
+        "printed": "04",
+        "row": "comp-c08-locations",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 1,
+        "value": "4"
+       },
+       {
+        "end": 7,
+        "others": [
+         "base-municipio-spellings",
+         "tc-gap-auditoria",
+         "tc-report-2-2012",
+         "tcq-universidade-de-evora",
+         "tcq-ihru",
+         "tc-fifth-family-evora"
+        ],
+        "printed": "02",
+        "row": "comp-c08-overdue",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 5,
+        "value": "2"
+       }
+      ],
+      "text": "C04-i02"
+     },
+     {
+      "figures": [],
+      "text": "Mosteiro de São Bento de Cástris"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "6 000 000",
+        "row": "proj-castris-approved",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6 000 000"
+       }
+      ],
+      "text": "6 000 000"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "5 700 000",
+        "row": "proj-castris-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "5 700 000"
+       }
+      ],
+      "text": "5 700 000"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "comp-c07-locations",
+         "comp-c21-overdue",
+         "proj-malagueira-locations",
+         "proj-hospital-equip-locations",
+         "fin-geosat-projects",
+         "tc-gap-vic",
+         "tc-evora-entity-match",
+         "tc-report-1-2008",
+         "tcq-infraestruturas-de-portugal",
+         "tcq-administracao-regional-de-saude-do-alentejo",
+         "tcq-universidade-do-evora",
+         "tcq-espirito-santo-evora"
+        ],
+        "printed": "1",
+        "row": "proj-castris-locations",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1"
+       }
+      ],
+      "text": "1"
+     },
+     {
+      "figures": [],
+      "text": "2026-08-31"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "comp-c07-locations",
+         "comp-c21-overdue",
+         "proj-malagueira-locations",
+         "proj-castris-locations",
+         "fin-geosat-projects",
+         "tc-gap-vic",
+         "tc-evora-entity-match",
+         "tc-report-1-2008",
+         "tcq-infraestruturas-de-portugal",
+         "tcq-administracao-regional-de-saude-do-alentejo",
+         "tcq-universidade-do-evora",
+         "tcq-espirito-santo-evora"
+        ],
+        "printed": "01",
+        "row": "proj-hospital-equip-locations",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "1"
+       },
+       {
+        "end": 7,
+        "printed": "10",
+        "row": "tc-gap-total",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 5,
+        "value": "10"
+       }
+      ],
+      "text": "C01-i10"
+     },
+     {
+      "figures": [],
+      "text": "Aquisição de equipamento médico pesado (EMP) de tecnologia avançada a instalar no novo Hospital Central do Alentejo"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "5 314 868",
+        "row": "proj-hospital-equip-approved",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "5 314 868"
+       }
+      ],
+      "text": "5 314 868"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "comp-c07-overdue",
+         "proj-malagueira-paid",
+         "proj-hospital-equip-paid",
+         "base-invalid-id-returns",
+         "tc-evora-freguesia-match",
+         "tc-evora-longer-municipality-only",
+         "tcq-instituto-da-habitacao-e-da-reabilitacao-urbana",
+         "tcq-gesamb",
+         "tcq-instituto-do-emprego-e-formacao-profissional",
+         "tcq-fundo-ambiental",
+         "tc-evora-risks"
+        ],
+        "printed": "0",
+        "row": "tcq-alentejo-central",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "0"
+       }
+      ],
+      "text": "0"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "comp-c07-locations",
+         "comp-c21-overdue",
+         "proj-malagueira-locations",
+         "proj-castris-locations",
+         "fin-geosat-projects",
+         "tc-gap-vic",
+         "tc-evora-entity-match",
+         "tc-report-1-2008",
+         "tcq-infraestruturas-de-portugal",
+         "tcq-administracao-regional-de-saude-do-alentejo",
+         "tcq-universidade-do-evora",
+         "tcq-espirito-santo-evora"
+        ],
+        "printed": "1",
+        "row": "proj-hospital-equip-locations",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1"
+       }
+      ],
+      "text": "1"
+     },
+     {
+      "figures": [],
+      "text": "2026-03-31"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [
+    {
+     "end": 131,
+     "others": [
+      "comp-c01-overdue"
+     ],
+     "printed": "17",
+     "row": "proj-ip-c07-locations",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 129,
+     "value": "17"
+    },
+    {
+     "end": 182,
+     "printed": "19",
+     "row": "proj-newspace-locations",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 180,
+     "value": "19"
+    }
+   ],
+   "i": 23,
+   "kind": "paragraph",
+   "text": "The \"concelhos\" column is the reason a municipal figure needs care: the road programme at the top of that table is spread across 17 municipalities and the research alliance across 19. What appears in Évora's total is the Évora share of each, taken from the beneficiaries file rather than apportioned."
+  },
+  {
+   "i": 24,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 25,
+   "kind": "heading",
+   "level": 2,
+   "text": "Who holds the money, and who receives it"
+  },
+  {
+   "figures": [],
+   "i": 26,
+   "kind": "paragraph",
+   "text": "The same euros can be counted through two different layers, and the two must never be added together: the recipient layer is a second view of the same money, not a component of it. It is also not a complete view, and the shortfall is explained below."
+  },
+  {
+   "i": 27,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Layer"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Entities"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Contracted (€)"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Paid (€)"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Managers — the bodies that administer and disburse"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "22",
+        "row": "prr-managers-distinct",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "22"
+       }
+      ],
+      "text": "22"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "167 372 756",
+        "row": "prr-approved-evora",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "167 372 756"
+       }
+      ],
+      "text": "167 372 756"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "86 944 669",
+        "row": "prr-paid-evora",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "86 944 669"
+       }
+      ],
+      "text": "86 944 669"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Final recipients — who actually received it"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "1 823",
+        "row": "prr-finals-count",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1 823"
+       }
+      ],
+      "text": "1 823"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "133 907 588",
+        "row": "prr-finals-contracted",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "133 907 588"
+       }
+      ],
+      "text": "133 907 588"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "56 184 907",
+        "row": "prr-finals-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "56 184 907"
+       }
+      ],
+      "text": "56 184 907"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [
+    {
+     "end": 37,
+     "printed": "30 759 762",
+     "row": "prr-layer-gap-paid",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 27,
+     "value": "30 759 762"
+    },
+    {
+     "end": 252,
+     "others": [
+      "proj-ip-c07-paid",
+      "mgr-ip-paid",
+      "mgrallpaid-00"
+     ],
+     "printed": "29 061 019",
+     "row": "comp-c07-paid",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 242,
+     "value": "29 061 019"
+    }
+   ],
+   "i": 28,
+   "kind": "paragraph",
+   "text": "The recipient layer falls €30 759 762 short of the manager layer on money paid. That gap is not leakage: it is money on projects contracted directly, which carry no final-beneficiary row at all. Most of it is one item — the road programme's €29 061 019, whose manager appears in no final-recipient row."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 56,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 301,
+     "kind": "strong",
+     "start": 268
+    }
+   ],
+   "figures": [
+    {
+     "end": 130,
+     "others": [
+      "mgrall-01"
+     ],
+     "printed": "39 036 811",
+     "row": "mgr-iapmei-contracted",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 120,
+     "value": "39 036 811"
+    },
+    {
+     "end": 157,
+     "others": [
+      "mgrallpaid-01"
+     ],
+     "printed": "21 784 396",
+     "row": "mgr-iapmei-paid",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 147,
+     "value": "21 784 396"
+    },
+    {
+     "end": 319,
+     "others": [
+      "comp-c07-approved",
+      "proj-ip-c07-approved",
+      "mgrall-00"
+     ],
+     "printed": "29 684 101",
+     "row": "mgr-ip-contracted",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 309,
+     "value": "29 684 101"
+    },
+    {
+     "end": 349,
+     "others": [
+      "comp-c07-paid",
+      "mgr-ip-paid",
+      "mgrallpaid-00"
+     ],
+     "printed": "29 061 019",
+     "row": "proj-ip-c07-paid",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 339,
+     "value": "29 061 019"
+    }
+   ],
+   "i": 29,
+   "kind": "paragraph",
+   "text": "IAPMEI - AGÊNCIA PARA A COMPETITIVIDADE E INOVAÇÃO, I.P. is the largest single holder of Évora's approved PRR money at €39 036 811 contracted and €21 784 396 paid — and it is a national agency that passes money on, not a recipient. Reporting it as one would be false. INFRAESTRUTURAS DE PORTUGAL, S.A. holds €29 684 101 and has been paid €29 061 019, the single largest disbursement in the concelho."
+  },
+  {
+   "i": 30,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Manager"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Contracted here (€)"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Paid here (€)"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "IAPMEI - AGÊNCIA PARA A COMPETITIVIDADE E INOVAÇÃO, I.P."
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "others": [
+         "mgrall-01"
+        ],
+        "printed": "39 036 811",
+        "row": "mgr-iapmei-contracted",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "39 036 811"
+       }
+      ],
+      "text": "39 036 811"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "others": [
+         "mgrallpaid-01"
+        ],
+        "printed": "21 784 396",
+        "row": "mgr-iapmei-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "21 784 396"
+       }
+      ],
+      "text": "21 784 396"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "INFRAESTRUTURAS DE PORTUGAL, S.A."
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "others": [
+         "comp-c07-approved",
+         "proj-ip-c07-approved",
+         "mgrall-00"
+        ],
+        "printed": "29 684 101",
+        "row": "mgr-ip-contracted",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "29 684 101"
+       }
+      ],
+      "text": "29 684 101"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "others": [
+         "comp-c07-paid",
+         "proj-ip-c07-paid",
+         "mgr-ip-paid"
+        ],
+        "printed": "29 061 019",
+        "row": "mgrallpaid-00",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "29 061 019"
+       }
+      ],
+      "text": "29 061 019"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "INSTITUTO PARA O ENSINO SUPERIOR, I.P."
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "others": [
+         "mgrall-04"
+        ],
+        "printed": "20 392 715",
+        "row": "mgr-ies-contracted",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "20 392 715"
+       }
+      ],
+      "text": "20 392 715"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "others": [
+         "mgr-ies-paid"
+        ],
+        "printed": "4 547 683",
+        "row": "mgrallpaid-04",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "4 547 683"
+       }
+      ],
+      "text": "4 547 683"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "ADMINISTRAÇÃO CENTRAL DO SISTEMA DE SAÚDE I.P."
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "others": [
+         "mgrall-05"
+        ],
+        "printed": "17 622 103",
+        "row": "mgr-acss-contracted",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "17 622 103"
+       }
+      ],
+      "text": "17 622 103"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "others": [
+         "mgr-acss-paid"
+        ],
+        "printed": "4 258 060",
+        "row": "mgrallpaid-05",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "4 258 060"
+       }
+      ],
+      "text": "4 258 060"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "FUNDO DE SALVAGUARDA DO PATRIMÓNIO CULTURAL"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "others": [
+         "mgrall-02"
+        ],
+        "printed": "14 554 114",
+        "row": "mgr-fscp-contracted",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "14 554 114"
+       }
+      ],
+      "text": "14 554 114"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "others": [
+         "mgr-fscp-paid"
+        ],
+        "printed": "6 771 580",
+        "row": "mgrallpaid-02",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6 771 580"
+       }
+      ],
+      "text": "6 771 580"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "INSTITUTO DA HABITAÇÃO E DA REABILITAÇÃO URBANA, I.P."
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "others": [
+         "mgrall-03"
+        ],
+        "printed": "11 679 527",
+        "row": "mgr-ihru-contracted",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "11 679 527"
+       }
+      ],
+      "text": "11 679 527"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "others": [
+         "mgr-ihru-paid"
+        ],
+        "printed": "5 032 781",
+        "row": "mgrallpaid-03",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "5 032 781"
+       }
+      ],
+      "text": "5 032 781"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [
+    {
+     "end": 35,
+     "printed": "22",
+     "row": "prr-managers-distinct",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 33,
+     "value": "22"
+    },
+    {
+     "end": 70,
+     "others": [
+      "comp-c04-locations",
+      "tc-report-16-2018"
+     ],
+     "printed": "16",
+     "row": "prr-managers-remaining",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 68,
+     "value": "16"
+    },
+    {
+     "end": 149,
+     "others": [
+      "comp-c01-locations",
+      "base-gesamb-group-contracts"
+     ],
+     "printed": "23",
+     "row": "prr-managers-count",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 147,
+     "value": "23"
+    },
+    {
+     "end": 169,
+     "printed": "22",
+     "row": "prr-managers-distinct",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 167,
+     "value": "22"
+    }
+   ],
+   "i": 31,
+   "kind": "paragraph",
+   "text": "The six above are the largest of 22 manager-layer bodies; the other 16 are national agencies and funds holding smaller amounts. The source returns 23 rows rather than 22, because one body holds Évora money under two different roles — a count of rows here is not a count of bodies."
+  },
+  {
+   "figures": [
+    {
+     "end": 15,
+     "printed": "1 823",
+     "row": "prr-finals-count",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 10,
+     "value": "1 823"
+    }
+   ],
+   "i": 32,
+   "kind": "paragraph",
+   "text": "Among the 1 823 final recipients, the university is the largest final recipient on both measures — contracted and paid. The seven largest by amount contracted:"
+  },
+  {
+   "i": 33,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Final recipient"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Contracted here (€)"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Paid here (€)"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Projects"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "UNIVERSIDADE DE ÉVORA"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "others": [
+         "fin-max-contracted"
+        ],
+        "printed": "38 596 976",
+        "row": "fin-uevora-contracted",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "38 596 976"
+       }
+      ],
+      "text": "38 596 976"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "others": [
+         "fin-uevora-paid"
+        ],
+        "printed": "14 265 996",
+        "row": "fin-max-paid",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "14 265 996"
+       }
+      ],
+      "text": "14 265 996"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "74",
+        "row": "fin-uevora-projects",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "74"
+       }
+      ],
+      "text": "74"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Município de Évora"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "12 069 013",
+        "row": "fin-municipio-contracted",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "12 069 013"
+       }
+      ],
+      "text": "12 069 013"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "2 047 336",
+        "row": "fin-municipio-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2 047 336"
+       }
+      ],
+      "text": "2 047 336"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "comp-c19-locations",
+         "tc-report-20-2008"
+        ],
+        "printed": "20",
+        "row": "fin-municipio-projects",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "20"
+       }
+      ],
+      "text": "20"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "GEO SAT, LDA"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "9 415 524",
+        "row": "fin-geosat-contracted",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "9 415 524"
+       }
+      ],
+      "text": "9 415 524"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "3 736 498",
+        "row": "fin-geosat-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3 736 498"
+       }
+      ],
+      "text": "3 736 498"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "comp-c07-locations",
+         "comp-c21-overdue",
+         "proj-malagueira-locations",
+         "proj-castris-locations",
+         "proj-hospital-equip-locations",
+         "fin-geosat-projects",
+         "tc-gap-vic",
+         "tc-evora-entity-match",
+         "tc-report-1-2008",
+         "tcq-infraestruturas-de-portugal",
+         "tcq-administracao-regional-de-saude-do-alentejo",
+         "tcq-universidade-do-evora"
+        ],
+        "printed": "1",
+        "row": "tcq-espirito-santo-evora",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1"
+       }
+      ],
+      "text": "1"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "ADMINISTRAÇÃO REGIONAL DE SAUDE DO ALENTEJO, I.P."
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "8 898 604",
+        "row": "fin-arsalentejo-contracted",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "8 898 604"
+       }
+      ],
+      "text": "8 898 604"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "3 380 106",
+        "row": "fin-arsalentejo-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3 380 106"
+       }
+      ],
+      "text": "3 380 106"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "fin-arsalentejo-projects",
+         "tc-thematic-body-mentions"
+        ],
+        "printed": "13",
+        "row": "comp-count",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "13"
+       }
+      ],
+      "text": "13"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "HOSPITAL DO ESPÍRITO SANTO DE ÉVORA, E.P.E."
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "7 746 863",
+        "row": "fin-hospital-contracted",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "7 746 863"
+       }
+      ],
+      "text": "7 746 863"
+     },
+     {
+      "figures": [
+       {
+        "end": 7,
+        "printed": "563 527",
+        "row": "fin-hospital-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "563 527"
+       }
+      ],
+      "text": "563 527"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "printed": "9",
+        "row": "fin-hospital-projects",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "9"
+       }
+      ],
+      "text": "9"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "HABÉVORA - Gestão Habitacional, E.M."
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "7 085 640",
+        "row": "fin-habevora-contracted",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "7 085 640"
+       }
+      ],
+      "text": "7 085 640"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "3 614 261",
+        "row": "fin-habevora-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3 614 261"
+       }
+      ],
+      "text": "3 614 261"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "tcq-espirito-santo"
+        ],
+        "printed": "8",
+        "row": "fin-habevora-projects",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "8"
+       }
+      ],
+      "text": "8"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Património Cultural, IP"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "6 944 114",
+        "row": "fin-patrimonio-contracted",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6 944 114"
+       }
+      ],
+      "text": "6 944 114"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "6 442 113",
+        "row": "fin-patrimonio-paid",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6 442 113"
+       }
+      ],
+      "text": "6 442 113"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "comp-c04-overdue",
+         "base-multi-spelling-entities",
+         "tc-evora-name-mention"
+        ],
+        "printed": "5",
+        "row": "fin-patrimonio-projects",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "5"
+       }
+      ],
+      "text": "5"
+     }
+    ]
+   ]
+  },
+  {
+   "emphasis": [
+    {
+     "end": 242,
+     "kind": "em",
+     "start": 83
+    }
+   ],
+   "figures": [],
+   "i": 34,
+   "kind": "paragraph",
+   "text": "The municipality itself is not the main channel for PRR money in its own territory (inference, from the two tables above: the câmara appears in the recipient layer with less contracted than the university, and not at all in the manager layer). A reader looking for \"what the council did with the money\" would be looking at the wrong actor for most of this total."
+  },
+  {
+   "figures": [
+    {
+     "end": 39,
+     "others": [
+      "tc-evora-matches",
+      "tcq-alentejo"
+     ],
+     "printed": "6",
+     "row": "prr-suppliers-count",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 38,
+     "value": "6"
+    }
+   ],
+   "i": 35,
+   "kind": "paragraph",
+   "text": "A third layer, suppliers, exists with 6 entities. It does not reconcile to project totals and its location column means something different, so it is not used here."
+  },
+  {
+   "i": 36,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 37,
+   "kind": "heading",
+   "level": 2,
+   "text": "What \"on time\" means in this data, and what is overdue"
+  },
+  {
+   "i": 38,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Status"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Project-locations"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Completed on or before the planned date"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "1 445",
+        "row": "prr-ontime-evora",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1 445"
+       }
+      ],
+      "text": "1 445"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Completed late"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "222",
+        "row": "prr-late-evora",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "222"
+       }
+      ],
+      "text": "222"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Not completed"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "644",
+        "row": "prr-notcompleted-evora",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "644"
+       }
+      ],
+      "text": "644"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "— of which the planned date has passed"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "608",
+        "row": "prr-overdue-evora",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "608"
+       }
+      ],
+      "text": "608"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "— of which still within schedule"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "36",
+        "row": "prr-notyetdue-evora",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "36"
+       }
+      ],
+      "text": "36"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 39,
+   "kind": "paragraph",
+   "text": "Status is judged against the snapshot's own reference date, not today's, because that is the date the source speaks for."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 164,
+     "kind": "strong",
+     "start": 157
+    },
+    {
+     "end": 365,
+     "kind": "em",
+     "start": 354
+    }
+   ],
+   "figures": [
+    {
+     "end": 73,
+     "printed": "1 011",
+     "row": "prr-ontime-exactdate",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 68,
+     "value": "1 011"
+    },
+    {
+     "end": 86,
+     "printed": "1 445",
+     "row": "prr-ontime-evora",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 81,
+     "value": "1 445"
+    },
+    {
+     "end": 192,
+     "printed": "69.97",
+     "row": "prr-exactdate-share",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 187,
+     "value": "69.97"
+    },
+    {
+     "end": 384,
+     "printed": "434",
+     "row": "prr-ontime-early",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 381,
+     "value": "434"
+    }
+   ],
+   "i": 40,
+   "kind": "paragraph",
+   "text": "Now the caveat that has to travel with the first row of that table. 1 011 of the 1 445 locations counted as on time record an actual completion date falling exactly on the planned date — 69.97% of them. A modal difference of zero at that scale is more consistent with a field being closed out administratively than with delivery being observed and dated (inference). The remaining 434 locations record an actual date earlier than the planned one, and the same doubt about how these fields are filled applies to them too."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 230,
+     "kind": "strong",
+     "start": 214
+    },
+    {
+     "end": 389,
+     "kind": "em",
+     "start": 378
+    }
+   ],
+   "figures": [
+    {
+     "end": 96,
+     "printed": "470",
+     "row": "prr-evora-zero-duration",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 93,
+     "value": "470"
+    },
+    {
+     "end": 506,
+     "printed": "177 241",
+     "row": "prr-national-exact",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 499,
+     "value": "177 241"
+    },
+    {
+     "end": 517,
+     "printed": "246 545",
+     "row": "prr-national-ontime",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 510,
+     "value": "246 545"
+    },
+    {
+     "end": 574,
+     "printed": "71.89",
+     "row": "prr-national-exact-share",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 569,
+     "value": "71.89"
+    }
+   ],
+   "i": 41,
+   "kind": "paragraph",
+   "text": "Two things sharpen that reading, and one of them stops it being a criticism of Évora. First, 470 of those exact matches are rows where the start date, the planned completion date and the actual completion date are all the same day. A project cannot be observed to begin and finish on one date at that scale, so those rows record a filing convention rather than an observed date (inference). All of them sit in a single investment line. Second, the pattern is national, not local: across the country 177 241 of 246 545 on-time locations carry the same exact-date stamp, 71.89%, which is slightly higher than Évora's. Nothing here says Évora reports differently from anywhere else; it says the register's completion dates cannot be read as observed delivery anywhere. So the on-time count is soft evidence, and quoting it bare would overstate punctuality by a wide margin."
+  },
+  {
+   "figures": [
+    {
+     "end": 185,
+     "printed": "608",
+     "row": "prr-overdue-evora",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 182,
+     "value": "608"
+    },
+    {
+     "end": 225,
+     "printed": "102 624 704",
+     "row": "prr-overdue-approved",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 214,
+     "value": "102 624 704"
+    },
+    {
+     "end": 251,
+     "printed": "61.32",
+     "row": "prr-overdue-approved-share",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 246,
+     "value": "61.32"
+    },
+    {
+     "end": 315,
+     "printed": "41 693 864",
+     "row": "prr-overdue-paid",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 305,
+     "value": "41 693 864"
+    }
+   ],
+   "i": 42,
+   "kind": "paragraph",
+   "text": "The overdue group is the one that reads as a broken promise: a planned completion date already passed at the snapshot date, with no actual completion date recorded. In Évora that is 608 project-locations carrying €102 624 704 of approved money — 61.32% of everything approved for the concelho — of which €41 693 864 has been paid."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 29,
+     "kind": "strong",
+     "start": 20
+    },
+    {
+     "end": 162,
+     "kind": "strong",
+     "start": 137
+    }
+   ],
+   "figures": [
+    {
+     "end": 36,
+     "others": [
+      "comp-c02-overdue",
+      "base-municipio-contracts",
+      "base-evora2027-contracts"
+     ],
+     "printed": "39",
+     "row": "comp-c02-locations",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 34,
+     "value": "39"
+    },
+    {
+     "end": 310,
+     "printed": "7 483 162",
+     "row": "proj-malagueira-approved",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 301,
+     "value": "7 483 162"
+    },
+    {
+     "end": 326,
+     "others": [
+      "comp-c07-overdue",
+      "proj-malagueira-paid",
+      "base-invalid-id-returns",
+      "tc-evora-freguesia-match",
+      "tc-evora-longer-municipality-only",
+      "tcq-instituto-da-habitacao-e-da-reabilitacao-urbana",
+      "tcq-gesamb",
+      "tcq-instituto-do-emprego-e-formacao-profissional",
+      "tcq-fundo-ambiental",
+      "tcq-alentejo-central",
+      "tc-evora-risks"
+     ],
+     "printed": "0",
+     "row": "proj-hospital-equip-paid",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 325,
+     "value": "0"
+    },
+    {
+     "end": 382,
+     "printed": "5 314 868",
+     "row": "proj-hospital-equip-approved",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 373,
+     "value": "5 314 868"
+    },
+    {
+     "end": 398,
+     "others": [
+      "comp-c07-overdue",
+      "proj-malagueira-paid",
+      "base-invalid-id-returns",
+      "tc-evora-freguesia-match",
+      "tc-evora-longer-municipality-only",
+      "tcq-instituto-da-habitacao-e-da-reabilitacao-urbana",
+      "tcq-gesamb",
+      "tcq-instituto-do-emprego-e-formacao-profissional",
+      "tcq-fundo-ambiental",
+      "tcq-alentejo-central",
+      "tc-evora-risks"
+     ],
+     "printed": "0",
+     "row": "proj-hospital-equip-paid",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 397,
+     "value": "0"
+    }
+   ],
+   "i": 43,
+   "kind": "paragraph",
+   "text": "It is concentrated. Habitação has 39 project-locations in Évora, all of them past their planned date with nothing recorded as delivered: every one of them overdue. Two of the five largest project-locations in the concelho are in that state and have received nothing at all — the student residence at €7 483 162 approved and €0 paid, and the hospital equipment purchase at €5 314 868 approved and €0 paid."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 317,
+     "kind": "em",
+     "start": 237
+    }
+   ],
+   "figures": [],
+   "i": 44,
+   "kind": "paragraph",
+   "text": "That last one is worth naming plainly, because it crosses the two halves of this document. The equipment is for the new central hospital of the Alentejo; the money is approved, the planned date has passed, and nothing has been disbursed (inference: the source records approval, date and payment, and does not say why)."
+  },
+  {
+   "i": 45,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 46,
+   "kind": "heading",
+   "level": 2,
+   "text": "Public contracts, as context"
+  },
+  {
+   "figures": [],
+   "i": 47,
+   "kind": "paragraph",
+   "text": "Portal BASE is Portugal's public contracts register. It is included here as context on the same territory, not as a second measure of the same money: recovery-plan grants and contract prices are different quantities, and this document never adds them."
+  },
+  {
+   "i": 48,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "text": "Contracts on record for the concelho, all periods"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "24 436",
+        "row": "base-alltime-evora",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "24 436"
+       }
+      ],
+      "text": "24 436"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Read for this document"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "600",
+        "row": "base-returned",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "600"
+       }
+      ],
+      "text": "600"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Published between"
+     },
+     {
+      "figures": [],
+      "text": "2026-05-08 and 2026-08-04"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Sum of initial contractual prices, records read"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "58 501 280",
+        "row": "base-sum-returned",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "58 501 280"
+       }
+      ],
+      "text": "€58 501 280"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [
+    {
+     "end": 94,
+     "printed": "600",
+     "row": "base-returned",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 91,
+     "value": "600"
+    }
+   ],
+   "i": 49,
+   "kind": "paragraph",
+   "text": "That sum is an upper bound on a truncated window and nothing more. The fetch stopped after 600 records because the register has an undocumented firewall that IP-bans on volume, and the server caps a page at far fewer rows than it is asked for; reading the concelho's full history would take on the order of a thousand requests and trigger the ban long before finishing."
+  },
+  {
+   "figures": [
+    {
+     "end": 81,
+     "printed": "2 390 229",
+     "row": "base-national-total",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 72,
+     "value": "2 390 229"
+    },
+    {
+     "end": 130,
+     "printed": "24 436",
+     "row": "base-alltime-evora",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 124,
+     "value": "24 436"
+    },
+    {
+     "end": 201,
+     "others": [
+      "comp-c07-overdue",
+      "proj-malagueira-paid",
+      "proj-hospital-equip-paid",
+      "tc-evora-freguesia-match",
+      "tc-evora-longer-municipality-only",
+      "tcq-instituto-da-habitacao-e-da-reabilitacao-urbana",
+      "tcq-gesamb",
+      "tcq-instituto-do-emprego-e-formacao-profissional",
+      "tcq-fundo-ambiental",
+      "tcq-alentejo-central",
+      "tc-evora-risks"
+     ],
+     "printed": "0",
+     "row": "base-invalid-id-returns",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 200,
+     "value": "0"
+    },
+    {
+     "end": 243,
+     "others": [
+      "comp-c11-locations",
+      "comp-c11-overdue",
+      "base-ulsac-spellings",
+      "base-gesamb-spellings",
+      "tcq-iapmei",
+      "tcq-administracao-central-do-sistema-de-saude"
+     ],
+     "printed": "3",
+     "row": "base-place-checks",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 242,
+     "value": "3"
+    }
+   ],
+   "i": 50,
+   "kind": "paragraph",
+   "text": "The filter was proved rather than trusted. The national total stands at 2 390 229 contracts and the concelho filter returns 24 436, so it restricts; a deliberately invalid concelho identifier returns 0 rows, so it does not fail open; and the 3 largest contracts read were checked against their own execution-place field, which exists only on the per-contract endpoint. All three read «Portugal, Évora, Évora»."
+  },
+  {
+   "figures": [],
+   "i": 51,
+   "kind": "paragraph",
+   "text": "The largest contracts in the window read:"
+  },
+  {
+   "i": 52,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Initial price (€)"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Contracting entity"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Contractor"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Object"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "13 500 435",
+        "row": "base-contract-largest",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "13 500 435"
+       }
+      ],
+      "text": "13 500 435"
+     },
+     {
+      "figures": [],
+      "text": "Unidade Local de Saúde do Alentejo Central, EPE"
+     },
+     {
+      "figures": [],
+      "text": "ATRYS PORTUGAL CENTRO MÉDICO AVANÇADO, S.A."
+     },
+     {
+      "figures": [],
+      "text": "Concessão de exploração da Unidade de Radioncologia da ULSAC, E.P.E"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "12 599 145",
+        "row": "base-contract-second",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "12 599 145"
+       }
+      ],
+      "text": "12 599 145"
+     },
+     {
+      "figures": [],
+      "text": "GESAMB - Gestão Ambiental e de Resíduos, EIM"
+     },
+     {
+      "figures": [],
+      "text": "Painhas, SA; E.R.I., Engenharia, SA; PA RESIDEL - Optimização Energética de Resíduos, S.A."
+     },
+     {
+      "figures": [],
+      "text": "Concurso Público Internacional para a Empreitada de \"Centro de Triagem Automático de Embalagens\""
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "4 931 605",
+        "row": "base-contract-third",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "4 931 605"
+       }
+      ],
+      "text": "4 931 605"
+     },
+     {
+      "figures": [],
+      "text": "Unidade Local de Saúde do Alentejo Central, E.P.E"
+     },
+     {
+      "figures": [],
+      "text": "ITAU - Instituto Técnico de Alimentação Humana, S.A."
+     },
+     {
+      "figures": [],
+      "text": "Prestação de Serviço - Alimentação II"
+     }
+    ]
+   ]
+  },
+  {
+   "emphasis": [
+    {
+     "end": 84,
+     "kind": "strong",
+     "start": 40
+    }
+   ],
+   "figures": [],
+   "i": 53,
+   "kind": "paragraph",
+   "text": "And the entities doing the contracting. Each row below is one spelling, not one body — that distinction turns out to matter more than anything else in this section:"
+  },
+  {
+   "i": 54,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Contracting entity"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Contracts"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Sum of initial prices (€)"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Unidade Local de Saúde do Alentejo Central, EPE"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "60",
+        "row": "base-ulsac-a-contracts",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "60"
+       }
+      ],
+      "text": "60"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "16 661 537",
+        "row": "base-ulsac-a-sum",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "16 661 537"
+       }
+      ],
+      "text": "16 661 537"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Unidade Local de Saúde do Alentejo Central, E.P.E"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "210",
+        "row": "base-ulsac-b-contracts",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "210"
+       }
+      ],
+      "text": "210"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "12 742 940",
+        "row": "base-ulsac-b-sum",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "12 742 940"
+       }
+      ],
+      "text": "12 742 940"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "GESAMB - Gestão Ambiental e de Resíduos, EIM"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "prr-components-total",
+         "tc-report-21-2019"
+        ],
+        "printed": "21",
+        "row": "base-gesamb-contracts",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "21"
+       }
+      ],
+      "text": "21"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "13 596 490",
+        "row": "base-gesamb-sum",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "13 596 490"
+       }
+      ],
+      "text": "13 596 490"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Universidade de Évora"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "62",
+        "row": "base-uevora-contracts",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "62"
+       }
+      ],
+      "text": "62"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "2 277 839",
+        "row": "base-uevora-sum",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2 277 839"
+       }
+      ],
+      "text": "2 277 839"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Associação Évora 2027"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "comp-c02-locations",
+         "comp-c02-overdue",
+         "base-municipio-contracts"
+        ],
+        "printed": "39",
+        "row": "base-evora2027-contracts",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "39"
+       }
+      ],
+      "text": "39"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "1 997 619",
+        "row": "base-evora2027-sum",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1 997 619"
+       }
+      ],
+      "text": "1 997 619"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Município de Évora"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "comp-c02-locations",
+         "comp-c02-overdue",
+         "base-evora2027-contracts"
+        ],
+        "printed": "39",
+        "row": "base-municipio-contracts",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "39"
+       }
+      ],
+      "text": "39"
+     },
+     {
+      "figures": [
+       {
+        "end": 9,
+        "printed": "1 757 442",
+        "row": "base-municipio-sum",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1 757 442"
+       }
+      ],
+      "text": "1 757 442"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "CIMAC - Comunidade Intermunicipal do Alentejo Central"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "12",
+        "row": "base-cimac-contracts",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "12"
+       }
+      ],
+      "text": "12"
+     },
+     {
+      "figures": [
+       {
+        "end": 7,
+        "printed": "599 781",
+        "row": "base-cimac-sum",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "599 781"
+       }
+      ],
+      "text": "599 781"
+     }
+    ]
+   ]
+  },
+  {
+   "emphasis": [
+    {
+     "end": 370,
+     "kind": "strong",
+     "start": 339
+    },
+    {
+     "end": 445,
+     "kind": "strong",
+     "start": 392
+    }
+   ],
+   "figures": [
+    {
+     "end": 161,
+     "printed": "600",
+     "row": "base-returned",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 158,
+     "value": "600"
+    },
+    {
+     "end": 208,
+     "printed": "56",
+     "row": "base-entities-in-window",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 206,
+     "value": "56"
+    },
+    {
+     "end": 239,
+     "others": [
+      "comp-c04-overdue",
+      "fin-patrimonio-projects",
+      "tc-evora-name-mention"
+     ],
+     "printed": "5",
+     "row": "base-multi-spelling-entities",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 238,
+     "value": "5"
+    },
+    {
+     "end": 298,
+     "others": [
+      "comp-c11-locations",
+      "comp-c11-overdue",
+      "base-place-checks",
+      "base-gesamb-spellings",
+      "tcq-iapmei",
+      "tcq-administracao-central-do-sistema-de-saude"
+     ],
+     "printed": "3",
+     "row": "base-ulsac-spellings",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 297,
+     "value": "3"
+    },
+    {
+     "end": 342,
+     "printed": "282",
+     "row": "base-ulsac-group-contracts",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 339,
+     "value": "282"
+    },
+    {
+     "end": 370,
+     "printed": "29 580 141",
+     "row": "base-ulsac-group-sum",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 360,
+     "value": "29 580 141"
+    },
+    {
+     "end": 478,
+     "others": [
+      "comp-c11-locations",
+      "comp-c11-overdue",
+      "base-place-checks",
+      "base-gesamb-spellings",
+      "tcq-iapmei",
+      "tcq-administracao-central-do-sistema-de-saude"
+     ],
+     "printed": "3",
+     "row": "base-ulsac-spellings",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 477,
+     "value": "3"
+    },
+    {
+     "end": 495,
+     "others": [
+      "comp-c01-locations",
+      "prr-managers-count"
+     ],
+     "printed": "23",
+     "row": "base-gesamb-group-contracts",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 493,
+     "value": "23"
+    },
+    {
+     "end": 537,
+     "others": [
+      "comp-c08-overdue",
+      "tc-gap-auditoria",
+      "tc-report-2-2012",
+      "tcq-universidade-de-evora",
+      "tcq-ihru",
+      "tc-fifth-family-evora"
+     ],
+     "printed": "2",
+     "row": "base-municipio-spellings",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 536,
+     "value": "2"
+    },
+    {
+     "end": 548,
+     "printed": "45",
+     "row": "base-municipio-group-contracts",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 546,
+     "value": "45"
+    },
+    {
+     "end": 575,
+     "printed": "1 975 150",
+     "row": "base-municipio-group-sum",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 566,
+     "value": "1 975 150"
+    },
+    {
+     "end": 594,
+     "others": [
+      "comp-c02-locations",
+      "comp-c02-overdue",
+      "base-evora2027-contracts"
+     ],
+     "printed": "39",
+     "row": "base-municipio-contracts",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 592,
+     "value": "39"
+    }
+   ],
+   "i": 55,
+   "kind": "paragraph",
+   "text": "The first two rows are the same hospital group under two spellings — and there is a third in the same window that the table above does not show. Grouping the 600 records by body rather than by string gives 56 contracting bodies, of which 5 file under more than one name. The hospital accounts for 3 of those spellings and, taken together, 282 contracts worth €29 580 141 — which makes health the most active contracting entity in the window read. The waste utility files under 3 spellings for 23 contracts. The municipality files under 2, giving 45 contracts worth €1 975 150 rather than the 39 its main spelling shows."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 751,
+     "kind": "strong",
+     "start": 639
+    }
+   ],
+   "figures": [
+    {
+     "end": 392,
+     "others": [
+      "comp-c19-overdue",
+      "tc-report-14-2018",
+      "ine-alentejo-central-municipalities"
+     ],
+     "printed": "14",
+     "row": "base-undermerge-contracts",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 390,
+     "value": "14"
+    },
+    {
+     "end": 417,
+     "printed": "735 681",
+     "row": "base-undermerge-sum",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 410,
+     "value": "735 681"
+    },
+    {
+     "end": 564,
+     "others": [
+      "comp-c04-overdue",
+      "fin-patrimonio-projects",
+      "tc-evora-name-mention"
+     ],
+     "printed": "5",
+     "row": "base-multi-spelling-entities",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 563,
+     "value": "5"
+    },
+    {
+     "end": 740,
+     "printed": "270",
+     "row": "base-ulsac-combined-contracts",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 737,
+     "value": "270"
+    }
+   ],
+   "i": 56,
+   "kind": "paragraph",
+   "text": "The grouping rule is ours, not the register's: fold accents, drop punctuation, drop the trailing legal-form abbreviation. It is also deliberately conservative, and it under-merges — the intermunicipal community in the table above files under its acronym and, twice, under the same name without it, which the rule does not join because the acronym survives normalisation. Together those are 14 contracts worth €735 681. That shape is reported rather than merged, because nothing available here can distinguish an acronym prefix from a genuinely different body. So 5 is a floor on how many bodies file under more than one name, not a count. An earlier draft of this section merged only the two hospital spellings it could see and reported 270 contracts. That is the honest shape of this whole register: a per-string count looks like a per-entity count and is not one."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 284,
+     "kind": "strong",
+     "start": 241
+    },
+    {
+     "end": 576,
+     "kind": "em",
+     "start": 401
+    }
+   ],
+   "figures": [
+    {
+     "end": 301,
+     "printed": "7 746 863",
+     "row": "fin-hospital-contracted",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 292,
+     "value": "7 746 863"
+    },
+    {
+     "end": 325,
+     "printed": "563 527",
+     "row": "fin-hospital-paid",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 318,
+     "value": "563 527"
+    }
+   ],
+   "i": 57,
+   "kind": "paragraph",
+   "text": "Read across the two sources, the same institutions recur in a different order, and one of them is easy to lose. The hospital is the largest contracting entity in the window above; in the recovery-plan data it appears under a different name, HOSPITAL DO ESPÍRITO SANTO DE ÉVORA, E.P.E., with €7 746 863 contracted and €563 527 paid. A join on entity names across the two registers would have missed it (inference — the two registers use different names for what the contract objects themselves confirm is one body; nothing in either source states that they are the same entity)."
+  },
+  {
+   "i": 58,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 59,
+   "kind": "heading",
+   "level": 2,
+   "text": "What was audited"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 85,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [
+    {
+     "end": 260,
+     "printed": "2 206",
+     "row": "tc-corpus-documents",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 255,
+     "value": "2 206"
+    },
+    {
+     "end": 279,
+     "others": [
+      "comp-c08-locations"
+     ],
+     "printed": "4",
+     "row": "tc-families",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 278,
+     "value": "4"
+    },
+    {
+     "end": 311,
+     "printed": "1997",
+     "row": "tc-year-min",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 307,
+     "value": "1997"
+    },
+    {
+     "end": 319,
+     "printed": "2026",
+     "row": "tc-year-max",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 315,
+     "value": "2026"
+    },
+    {
+     "end": 328,
+     "others": [
+      "comp-c08-locations"
+     ],
+     "printed": "4",
+     "row": "tc-families",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 327,
+     "value": "4"
+    }
+   ],
+   "i": 60,
+   "kind": "paragraph",
+   "text": "This section says what was audited and when. It does not say what the Tribunal found. The Tribunal de Contas publishes a catalogue — the title and abstract of each report — and separately the reports themselves as PDFs. What was fetched is the catalogue: 2 206 documents across 4 product families, spanning 1997 to 2026. Those 4 are not everything the Tribunal publishes — a limit this document measures rather than mentions, below. The conclusions are in the PDFs and were not read."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 404,
+     "kind": "strong",
+     "start": 363
+    }
+   ],
+   "figures": [
+    {
+     "end": 324,
+     "others": [
+      "comp-c08-locations"
+     ],
+     "printed": "4",
+     "row": "tc-families",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 323,
+     "value": "4"
+    },
+    {
+     "end": 336,
+     "others": [
+      "prr-suppliers-count",
+      "tcq-alentejo"
+     ],
+     "printed": "6",
+     "row": "tc-evora-matches",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 335,
+     "value": "6"
+    }
+   ],
+   "i": 61,
+   "kind": "paragraph",
+   "text": "Place, in this source, is free text. There is no entity field, no concelho field, no NUTS field: a municipality reaches an audit only as words in a sentence. So matching is string matching, and every match below carries a confidence tier and the source's own words, because the bare count would be misleading. Across these 4 families, 6 documents name Évora, and only one is about the municipality itself — a count that the end of this section shows to be a floor, not a total."
+  },
+  {
+   "i": 62,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Year"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Report"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Tier"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "What the Tribunal's own catalogue says"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "tc-year-14-2018"
+        ],
+        "printed": "2018",
+        "row": "tc-year-16-2018",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2018"
+       }
+      ],
+      "text": "2018"
+     },
+     {
+      "figures": [
+       {
+        "end": 16,
+        "others": [
+         "comp-c04-locations",
+         "prr-managers-remaining"
+        ],
+        "printed": "16",
+        "row": "tc-report-16-2018",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 14,
+        "value": "16"
+       },
+       {
+        "end": 21,
+        "others": [
+         "tc-year-14-2018"
+        ],
+        "printed": "2018",
+        "row": "tc-year-16-2018",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 17,
+        "value": "2018"
+       }
+      ],
+      "links": [
+       {
+        "end": 21,
+        "href": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosVerificacaoInternaContas/Documents/2018/vic-dgtc-rel016-2018-2s.pdf",
+        "start": 0
+       }
+      ],
+      "text": "Relatório N.º 16/2018"
+     },
+     {
+      "figures": [],
+      "text": "município/câmara"
+     },
+     {
+      "figures": [],
+      "text": "Município de Évora - Gerência de 2016"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "2019",
+        "row": "tc-year-21-2019",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2019"
+       }
+      ],
+      "text": "2019"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "comp-c08-overdue",
+         "base-municipio-spellings",
+         "tc-gap-auditoria",
+         "tc-report-2-2012",
+         "tcq-universidade-de-evora",
+         "tcq-ihru"
+        ],
+        "printed": "2",
+        "row": "tc-fifth-family-evora",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2"
+       },
+       {
+        "end": 25,
+        "others": [
+         "prr-components-total",
+         "base-gesamb-contracts"
+        ],
+        "printed": "21",
+        "row": "tc-report-21-2019",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 23,
+        "value": "21"
+       },
+       {
+        "end": 30,
+        "printed": "2019",
+        "row": "tc-year-21-2019",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 26,
+        "value": "2019"
+       }
+      ],
+      "links": [
+       {
+        "end": 30,
+        "href": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2019/rel021-2019-2s.pdf",
+        "start": 0
+       }
+      ],
+      "text": "2ª Secção Relatório nº 21/2019"
+     },
+     {
+      "figures": [],
+      "text": "bare mention"
+     },
+     {
+      "figures": [],
+      "text": "Auditoria de conformidade à nomeação e atribuição de remunerações acessórias e suplementos a pessoal dirigente no Hospital do Espírito Santo de Évora, EPE"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "tc-year-16-2018"
+        ],
+        "printed": "2018",
+        "row": "tc-year-14-2018",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2018"
+       }
+      ],
+      "text": "2018"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "comp-c08-overdue",
+         "base-municipio-spellings",
+         "tc-gap-auditoria",
+         "tc-report-2-2012",
+         "tcq-ihru",
+         "tc-fifth-family-evora"
+        ],
+        "printed": "2",
+        "row": "tcq-universidade-de-evora",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2"
+       },
+       {
+        "end": 25,
+        "others": [
+         "comp-c19-overdue",
+         "base-undermerge-contracts",
+         "ine-alentejo-central-municipalities"
+        ],
+        "printed": "14",
+        "row": "tc-report-14-2018",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 23,
+        "value": "14"
+       },
+       {
+        "end": 30,
+        "others": [
+         "tc-year-16-2018"
+        ],
+        "printed": "2018",
+        "row": "tc-year-14-2018",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 26,
+        "value": "2018"
+       }
+      ],
+      "links": [
+       {
+        "end": 30,
+        "href": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2018/rel014-2018-2s.pdf",
+        "start": 0
+       }
+      ],
+      "text": "2ª Secção Relatório nº 14/2018"
+     },
+     {
+      "figures": [],
+      "text": "bare mention"
+     },
+     {
+      "figures": [],
+      "text": "Auditoria integrada. Universidade de Évora. Fundação Luís de Molina. ZEA - Zona de Experimentação Agrícola, Sociedade Unipessoal, Lda."
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "2012",
+        "row": "tc-year-2-2012",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2012"
+       }
+      ],
+      "text": "2012"
+     },
+     {
+      "figures": [
+       {
+        "end": 27,
+        "others": [
+         "comp-c08-overdue",
+         "base-municipio-spellings",
+         "tc-gap-auditoria",
+         "tcq-universidade-de-evora",
+         "tcq-ihru",
+         "tc-fifth-family-evora"
+        ],
+        "printed": "2",
+        "row": "tc-report-2-2012",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 26,
+        "value": "2"
+       },
+       {
+        "end": 32,
+        "printed": "2012",
+        "row": "tc-year-2-2012",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 28,
+        "value": "2012"
+       },
+       {
+        "end": 36,
+        "others": [
+         "comp-c07-locations",
+         "comp-c21-overdue",
+         "proj-malagueira-locations",
+         "proj-castris-locations",
+         "proj-hospital-equip-locations",
+         "fin-geosat-projects",
+         "tc-gap-vic",
+         "tc-evora-entity-match",
+         "tc-report-1-2008",
+         "tcq-infraestruturas-de-portugal",
+         "tcq-administracao-regional-de-saude-do-alentejo",
+         "tcq-universidade-do-evora"
+        ],
+        "printed": "1",
+        "row": "tcq-espirito-santo-evora",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 35,
+        "value": "1"
+       }
+      ],
+      "links": [
+       {
+        "end": 44,
+        "href": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2012/rel002-2012-1s.pdf",
+        "start": 0
+       }
+      ],
+      "text": "Relatório de Auditoria nº 2/2012 - 1ª Secção"
+     },
+     {
+      "figures": [],
+      "text": "bare mention"
+     },
+     {
+      "figures": [],
+      "text": "Acção de fiscalização concomitante ao ex-Instituto dos Museus e da Conservação no âmbito da empreitada \"Museu de Évora - Remodelação e Valorização\""
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "tc-year-1-2008"
+        ],
+        "printed": "2008",
+        "row": "tc-year-20-2008",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2008"
+       }
+      ],
+      "text": "2008"
+     },
+     {
+      "figures": [
+       {
+        "end": 28,
+        "others": [
+         "comp-c19-locations",
+         "fin-municipio-projects"
+        ],
+        "printed": "20",
+        "row": "tc-report-20-2008",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 26,
+        "value": "20"
+       },
+       {
+        "end": 33,
+        "others": [
+         "tc-year-1-2008"
+        ],
+        "printed": "2008",
+        "row": "tc-year-20-2008",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 29,
+        "value": "2008"
+       },
+       {
+        "end": 37,
+        "others": [
+         "comp-c08-overdue",
+         "base-municipio-spellings",
+         "tc-gap-auditoria",
+         "tc-report-2-2012",
+         "tcq-ihru",
+         "tc-fifth-family-evora"
+        ],
+        "printed": "2",
+        "row": "tcq-universidade-de-evora",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 36,
+        "value": "2"
+       }
+      ],
+      "links": [
+       {
+        "end": 46,
+        "href": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2008/rel020-2008-2s.pdf",
+        "start": 0
+       }
+      ],
+      "text": "Relatório de Auditoria nº 20/2008 - 2 ª Secção"
+     },
+     {
+      "figures": [],
+      "text": "bare mention"
+     },
+     {
+      "figures": [],
+      "text": "Universidade do Évora - Aquisição de Bens e Serviços (Exercício de 2005)."
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "tc-year-20-2008"
+        ],
+        "printed": "2008",
+        "row": "tc-year-1-2008",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2008"
+       }
+      ],
+      "text": "2008"
+     },
+     {
+      "figures": [
+       {
+        "end": 22,
+        "others": [
+         "comp-c07-locations",
+         "comp-c21-overdue",
+         "proj-malagueira-locations",
+         "proj-castris-locations",
+         "proj-hospital-equip-locations",
+         "fin-geosat-projects",
+         "tc-gap-vic",
+         "tc-evora-entity-match",
+         "tc-report-1-2008",
+         "tcq-infraestruturas-de-portugal",
+         "tcq-administracao-regional-de-saude-do-alentejo",
+         "tcq-espirito-santo-evora"
+        ],
+        "printed": "1",
+        "row": "tcq-universidade-do-evora",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 21,
+        "value": "1"
+       },
+       {
+        "end": 27,
+        "others": [
+         "tc-year-20-2008"
+        ],
+        "printed": "2008",
+        "row": "tc-year-1-2008",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 23,
+        "value": "2008"
+       },
+       {
+        "end": 31,
+        "others": [
+         "comp-c08-overdue",
+         "base-municipio-spellings",
+         "tc-gap-auditoria",
+         "tc-report-2-2012",
+         "tcq-ihru",
+         "tc-fifth-family-evora"
+        ],
+        "printed": "2",
+        "row": "tcq-universidade-de-evora",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 30,
+        "value": "2"
+       }
+      ],
+      "links": [
+       {
+        "end": 39,
+        "href": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2008/relsi001-2008-2s.pdf",
+        "start": 0
+       }
+      ],
+      "text": "Relatório Síntese nº 1/2008 - 2ª Secção"
+     },
+     {
+      "figures": [],
+      "text": "bare mention"
+     },
+     {
+      "figures": [],
+      "text": "Universidade do Algarve, Universidade da Beira Interior, Universidade de Évora, Universidade de Trás-os-Montes e Alto Douro - Aquisição de Bens e Serviços (Exercício de 2005)"
+     }
+    ]
+   ]
+  },
+  {
+   "emphasis": [
+    {
+     "end": 130,
+     "kind": "strong",
+     "start": 88
+    },
+    {
+     "end": 209,
+     "kind": "em",
+     "start": 197
+    }
+   ],
+   "figures": [
+    {
+     "end": 133,
+     "others": [
+      "comp-c07-locations",
+      "comp-c21-overdue",
+      "proj-malagueira-locations",
+      "proj-castris-locations",
+      "proj-hospital-equip-locations",
+      "fin-geosat-projects",
+      "tc-gap-vic",
+      "tc-report-1-2008",
+      "tcq-infraestruturas-de-portugal",
+      "tcq-administracao-regional-de-saude-do-alentejo",
+      "tcq-universidade-do-evora",
+      "tcq-espirito-santo-evora"
+     ],
+     "printed": "1",
+     "row": "tc-evora-entity-match",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 132,
+     "value": "1"
+    },
+    {
+     "end": 216,
+     "others": [
+      "comp-c04-overdue",
+      "fin-patrimonio-projects",
+      "base-multi-spelling-entities"
+     ],
+     "printed": "5",
+     "row": "tc-evora-name-mention",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 215,
+     "value": "5"
+    },
+    {
+     "end": 268,
+     "others": [
+      "comp-c07-overdue",
+      "proj-malagueira-paid",
+      "proj-hospital-equip-paid",
+      "base-invalid-id-returns",
+      "tc-evora-freguesia-match",
+      "tcq-instituto-da-habitacao-e-da-reabilitacao-urbana",
+      "tcq-gesamb",
+      "tcq-instituto-do-emprego-e-formacao-profissional",
+      "tcq-fundo-ambiental",
+      "tcq-alentejo-central",
+      "tc-evora-risks"
+     ],
+     "printed": "0",
+     "row": "tc-evora-longer-municipality-only",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 267,
+     "value": "0"
+    },
+    {
+     "end": 359,
+     "others": [
+      "prr-suppliers-count",
+      "tcq-alentejo"
+     ],
+     "printed": "6",
+     "row": "tc-evora-matches",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 358,
+     "value": "6"
+    },
+    {
+     "end": 398,
+     "others": [
+      "prr-suppliers-count",
+      "tcq-alentejo"
+     ],
+     "printed": "6",
+     "row": "tc-evora-matches",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 397,
+     "value": "6"
+    },
+    {
+     "end": 427,
+     "others": [
+      "comp-c04-overdue",
+      "fin-patrimonio-projects",
+      "base-multi-spelling-entities"
+     ],
+     "printed": "5",
+     "row": "tc-evora-name-mention",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 426,
+     "value": "5"
+    }
+   ],
+   "i": 63,
+   "kind": "paragraph",
+   "text": "The tiers are not decoration. The matcher distinguishes four of them, and these matches fall into two of the four confidence tiers: 1 document where the name follows a municipal designator such as Município de, and 5 where it is a bare mention. The parish tier holds 0 of them, and so does the tier for names belonging to a longer municipality. Reported as \"6 audits of Évora\", the count would be 6 times the truth: the other 5 are the university on its own account twice, a sector report covering four universities, the hospital, and a museum works contract."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 148,
+     "kind": "em",
+     "start": 105
+    }
+   ],
+   "figures": [],
+   "i": 64,
+   "kind": "paragraph",
+   "text": "The one municipal document is not filed among the Tribunal's audit reports at all: its product family is Relatórios de Verificação Interna de Contas, the internal verification of a body's accounts for one financial year. Its subject is «Município de Évora - Gerência de 2016». What that instrument concludes, and how it differs in depth from an audit, is not something this document can tell you — the catalogue records the family and the title, and nothing more."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 22,
+     "kind": "strong",
+     "start": 9
+    },
+    {
+     "end": 315,
+     "kind": "strong",
+     "start": 252
+    }
+   ],
+   "figures": [
+    {
+     "end": 31,
+     "printed": "2019",
+     "row": "tc-year-21-2019",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 27,
+     "value": "2019"
+    }
+   ],
+   "i": 65,
+   "kind": "paragraph",
+   "text": "There is nothing since the 2019 report in these four families that names Évora — a search over the whole corpus, not just the six rows above. It is tempting to read that as the auditor's record not covering the years in which the recovery money moved. That reading is wrong, and this document's own probes show why. They are set out in the next section, because they are the most important thing in it."
+  },
+  {
+   "figures": [],
+   "i": 66,
+   "kind": "heading",
+   "level": 3,
+   "text": "Why a silence here is not a silence"
+  },
+  {
+   "figures": [],
+   "i": 67,
+   "kind": "paragraph",
+   "text": "Two blind spots, both measured rather than assumed."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 48,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 156,
+     "kind": "em",
+     "start": 111
+    }
+   ],
+   "figures": [
+    {
+     "end": 161,
+     "printed": "192",
+     "row": "tc-fifth-family-documents",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 158,
+     "value": "192"
+    },
+    {
+     "end": 184,
+     "others": [
+      "comp-c08-overdue",
+      "base-municipio-spellings",
+      "tc-gap-auditoria",
+      "tc-report-2-2012",
+      "tcq-universidade-de-evora",
+      "tcq-ihru"
+     ],
+     "printed": "2",
+     "row": "tc-fifth-family-evora",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 183,
+     "value": "2"
+    }
+   ],
+   "i": 68,
+   "kind": "paragraph",
+   "text": "The four families are not the Tribunal's output. They are four of the product families it publishes. A fifth — Relatórios de Apuramento de Responsabilidades, 192 documents — contains 2 reports whose subject is the Município de Évora itself:"
+  },
+  {
+   "i": 69,
+   "items": [
+    {
+     "figures": [
+      {
+       "end": 14,
+       "others": [
+        "comp-c07-locations",
+        "comp-c21-overdue",
+        "proj-malagueira-locations",
+        "proj-castris-locations",
+        "proj-hospital-equip-locations",
+        "fin-geosat-projects",
+        "tc-gap-vic",
+        "tc-evora-entity-match",
+        "tc-report-1-2008",
+        "tcq-infraestruturas-de-portugal",
+        "tcq-administracao-regional-de-saude-do-alentejo",
+        "tcq-universidade-do-evora"
+       ],
+       "printed": "1",
+       "row": "tcq-espirito-santo-evora",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 13,
+       "value": "1"
+      },
+      {
+       "end": 23,
+       "others": [
+        "comp-c07-locations",
+        "comp-c21-overdue",
+        "proj-malagueira-locations",
+        "proj-castris-locations",
+        "proj-hospital-equip-locations",
+        "fin-geosat-projects",
+        "tc-gap-vic",
+        "tc-evora-entity-match",
+        "tc-report-1-2008",
+        "tcq-infraestruturas-de-portugal",
+        "tcq-administracao-regional-de-saude-do-alentejo",
+        "tcq-universidade-do-evora"
+       ],
+       "printed": "1",
+       "row": "tcq-espirito-santo-evora",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 22,
+       "value": "1"
+      }
+     ],
+     "links": [
+      {
+       "end": 31,
+       "href": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosApuramentoResponsabilidades/Documents/2016/arf-dgtc-rel001-2016-1s.pdf",
+       "start": 0
+      }
+     ],
+     "text": "Relatório nº 1/2016 - 1ª Secção — «Auditoria ao Município de Évora para o apuramento de responsabilidade financeira sancionatória identificada no âmbito do contrato de abertura de crédito na modalidade de “curto prazo” outorgado com o Millennium BCP»"
+    },
+    {
+     "figures": [
+      {
+       "end": 14,
+       "others": [
+        "tcq-espirito-santo"
+       ],
+       "printed": "8",
+       "row": "fin-habevora-projects",
+       "source_digest_kind": "api-viva",
+       "source_sha256": null,
+       "start": 13,
+       "value": "8"
+      },
+      {
+       "end": 86,
+       "others": [
+        "comp-c07-locations",
+        "comp-c21-overdue",
+        "proj-malagueira-locations",
+        "proj-castris-locations",
+        "proj-hospital-equip-locations",
+        "fin-geosat-projects",
+        "tc-gap-vic",
+        "tc-evora-entity-match",
+        "tc-report-1-2008",
+        "tcq-infraestruturas-de-portugal",
+        "tcq-administracao-regional-de-saude-do-alentejo",
+        "tcq-universidade-do-evora"
+       ],
+       "printed": "1",
+       "row": "tcq-espirito-santo-evora",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 85,
+       "value": "1"
+      }
+     ],
+     "links": [
+      {
+       "end": 25,
+       "href": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosApuramentoResponsabilidades/Documents/2013/arf-dgtc-rel008-2013-1s.pdf",
+       "start": 0
+      }
+     ],
+     "text": "Relatório nº 8/2013 - ARF — «Contrato de empreitada “Conceção/Construção da Escola EB1/JI dos Canaviais” celebrado entre o Município de Évora e o Consórcio “Ecociaf – Construção Civil e Obras Públicas, Lda. e Certar – Sociedade de Construções, S.A.” (Processo de fiscalização Prévia nº 1968/2009)»"
+    }
+   ],
+   "kind": "list",
+   "ordered": false
+  },
+  {
+   "figures": [],
+   "i": 70,
+   "kind": "paragraph",
+   "text": "So the true count of catalogued Tribunal documents about this municipality is at least three, not one, and the four-family search cannot see two of them."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 51,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 310,
+     "kind": "em",
+     "start": 304
+    }
+   ],
+   "figures": [
+    {
+     "end": 210,
+     "others": [
+      "comp-count",
+      "fin-arsalentejo-projects"
+     ],
+     "printed": "13",
+     "row": "tc-thematic-body-mentions",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 208,
+     "value": "13"
+    }
+   ],
+   "i": 71,
+   "kind": "paragraph",
+   "links": [
+    {
+     "end": 232,
+     "href": "https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2022/rel005-2022-2s.pdf",
+     "start": 208
+    }
+   ],
+   "text": "The catalogue indexes abstracts, not report bodies. A thematic audit of how mainland municipalities fund their fire brigades carries no mention of Évora in its catalogue entry at all — and names the concelho 13 times in its own text, including its position in the Tribunal's own tables. That report sits inside a family this document searched. The search still could not find it."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 150,
+     "kind": "strong",
+     "start": 42
+    }
+   ],
+   "figures": [
+    {
+     "end": 112,
+     "printed": "2019",
+     "row": "tc-year-21-2019",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 108,
+     "value": "2019"
+    }
+   ],
+   "i": 72,
+   "kind": "paragraph",
+   "text": "The honest statement is therefore narrow: in the four families this document reads, nothing published after 2019 names Évora in its title or abstract. Anything stronger — that Évora has not been examined, that the recovery years went unaudited — is refuted by the two probes above."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 136,
+     "kind": "strong",
+     "start": 107
+    }
+   ],
+   "figures": [
+    {
+     "end": 68,
+     "others": [
+      "comp-c07-overdue",
+      "proj-malagueira-paid",
+      "proj-hospital-equip-paid",
+      "base-invalid-id-returns",
+      "tc-evora-freguesia-match",
+      "tcq-instituto-da-habitacao-e-da-reabilitacao-urbana",
+      "tcq-gesamb",
+      "tcq-instituto-do-emprego-e-formacao-profissional",
+      "tcq-fundo-ambiental",
+      "tcq-alentejo-central",
+      "tc-evora-risks"
+     ],
+     "printed": "0",
+     "row": "tc-evora-longer-municipality-only",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 67,
+     "value": "0"
+    },
+    {
+     "end": 358,
+     "others": [
+      "comp-c21-locations"
+     ],
+     "printed": "308",
+     "row": "tc-gazetteer-municipalities",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 355,
+     "value": "308"
+    }
+   ],
+   "i": 73,
+   "kind": "paragraph",
+   "text": "Évora is an unusually clean name to search for: the matcher raises 0 structural risks against it, that is, no structural over-match risk. It is not one of the two Portuguese municipality names that belong to two places at once, and it is not a whole word inside a longer municipality's name. The gazetteer used to establish that is INE's own live list of 308 municipalities. Names that fail those tests behave very differently — a search for \"Guarda\" in this catalogue returns the national guard, not the city."
+  },
+  {
+   "figures": [],
+   "i": 74,
+   "kind": "heading",
+   "level": 3,
+   "text": "The money side's names, in the audit catalogue"
+  },
+  {
+   "figures": [],
+   "i": 75,
+   "kind": "paragraph",
+   "text": "The bodies holding Évora's PRR money and signing its contracts were searched by name in the same catalogue. This is the only join the source allows, and it is a join on words."
+  },
+  {
+   "i": 76,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Searched"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Documents naming it"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "IAPMEI - AGÊNCIA PARA A COMPETITIVIDADE E INOVAÇÃO, I.P."
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "comp-c11-locations",
+         "comp-c11-overdue",
+         "base-place-checks",
+         "base-ulsac-spellings",
+         "base-gesamb-spellings",
+         "tcq-administracao-central-do-sistema-de-saude"
+        ],
+        "printed": "3",
+        "row": "tcq-iapmei",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3"
+       }
+      ],
+      "text": "3"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "ADMINISTRAÇÃO CENTRAL DO SISTEMA DE SAÚDE I.P."
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "comp-c11-locations",
+         "comp-c11-overdue",
+         "base-place-checks",
+         "base-ulsac-spellings",
+         "base-gesamb-spellings",
+         "tcq-iapmei"
+        ],
+        "printed": "3",
+        "row": "tcq-administracao-central-do-sistema-de-saude",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3"
+       }
+      ],
+      "text": "3"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "UNIVERSIDADE DE ÉVORA"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "comp-c08-overdue",
+         "base-municipio-spellings",
+         "tc-gap-auditoria",
+         "tc-report-2-2012",
+         "tcq-ihru",
+         "tc-fifth-family-evora"
+        ],
+        "printed": "2",
+        "row": "tcq-universidade-de-evora",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2"
+       }
+      ],
+      "text": "2"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "INFRAESTRUTURAS DE PORTUGAL, S.A."
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "comp-c07-locations",
+         "comp-c21-overdue",
+         "proj-malagueira-locations",
+         "proj-castris-locations",
+         "proj-hospital-equip-locations",
+         "fin-geosat-projects",
+         "tc-gap-vic",
+         "tc-evora-entity-match",
+         "tc-report-1-2008",
+         "tcq-administracao-regional-de-saude-do-alentejo",
+         "tcq-universidade-do-evora",
+         "tcq-espirito-santo-evora"
+        ],
+        "printed": "1",
+        "row": "tcq-infraestruturas-de-portugal",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1"
+       }
+      ],
+      "text": "1"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "ADMINISTRAÇÃO REGIONAL DE SAUDE DO ALENTEJO, I.P."
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "comp-c07-locations",
+         "comp-c21-overdue",
+         "proj-malagueira-locations",
+         "proj-castris-locations",
+         "proj-hospital-equip-locations",
+         "fin-geosat-projects",
+         "tc-gap-vic",
+         "tc-evora-entity-match",
+         "tc-report-1-2008",
+         "tcq-infraestruturas-de-portugal",
+         "tcq-universidade-do-evora",
+         "tcq-espirito-santo-evora"
+        ],
+        "printed": "1",
+        "row": "tcq-administracao-regional-de-saude-do-alentejo",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1"
+       }
+      ],
+      "text": "1"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "INSTITUTO DA HABITAÇÃO E DA REABILITAÇÃO URBANA, I.P."
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "comp-c07-overdue",
+         "proj-malagueira-paid",
+         "proj-hospital-equip-paid",
+         "base-invalid-id-returns",
+         "tc-evora-freguesia-match",
+         "tc-evora-longer-municipality-only",
+         "tcq-gesamb",
+         "tcq-instituto-do-emprego-e-formacao-profissional",
+         "tcq-fundo-ambiental",
+         "tcq-alentejo-central",
+         "tc-evora-risks"
+        ],
+        "printed": "0",
+        "row": "tcq-instituto-da-habitacao-e-da-reabilitacao-urbana",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "0"
+       }
+      ],
+      "text": "0"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "the same body, searched as IHRU"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "comp-c08-overdue",
+         "base-municipio-spellings",
+         "tc-gap-auditoria",
+         "tc-report-2-2012",
+         "tcq-universidade-de-evora",
+         "tc-fifth-family-evora"
+        ],
+        "printed": "2",
+        "row": "tcq-ihru",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2"
+       }
+      ],
+      "text": "2"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "GESAMB - Gestão Ambiental e de Resíduos, EIM"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "comp-c07-overdue",
+         "proj-malagueira-paid",
+         "proj-hospital-equip-paid",
+         "base-invalid-id-returns",
+         "tc-evora-freguesia-match",
+         "tc-evora-longer-municipality-only",
+         "tcq-instituto-da-habitacao-e-da-reabilitacao-urbana",
+         "tcq-instituto-do-emprego-e-formacao-profissional",
+         "tcq-fundo-ambiental",
+         "tcq-alentejo-central",
+         "tc-evora-risks"
+        ],
+        "printed": "0",
+        "row": "tcq-gesamb",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "0"
+       }
+      ],
+      "text": "0"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Alentejo, as a word"
+     },
+     {
+      "figures": [
+       {
+        "end": 1,
+        "others": [
+         "prr-suppliers-count",
+         "tc-evora-matches"
+        ],
+        "printed": "6",
+        "row": "tcq-alentejo",
+        "source_digest_kind": "raw-sem-manifesto",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6"
+       }
+      ],
+      "text": "6"
+     }
+    ]
+   ]
+  },
+  {
+   "emphasis": [
+    {
+     "end": 280,
+     "kind": "em",
+     "start": 236
+    }
+   ],
+   "figures": [
+    {
+     "end": 172,
+     "others": [
+      "comp-c07-overdue",
+      "proj-malagueira-paid",
+      "proj-hospital-equip-paid",
+      "base-invalid-id-returns",
+      "tc-evora-freguesia-match",
+      "tc-evora-longer-municipality-only",
+      "tcq-gesamb",
+      "tcq-instituto-do-emprego-e-formacao-profissional",
+      "tcq-fundo-ambiental",
+      "tcq-alentejo-central",
+      "tc-evora-risks"
+     ],
+     "printed": "0",
+     "row": "tcq-instituto-da-habitacao-e-da-reabilitacao-urbana",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 171,
+     "value": "0"
+    },
+    {
+     "end": 213,
+     "others": [
+      "comp-c08-overdue",
+      "base-municipio-spellings",
+      "tc-gap-auditoria",
+      "tc-report-2-2012",
+      "tcq-ihru",
+      "tc-fifth-family-evora"
+     ],
+     "printed": "2",
+     "row": "tcq-universidade-de-evora",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 212,
+     "value": "2"
+    },
+    {
+     "end": 495,
+     "others": [
+      "tc-year-1-2008"
+     ],
+     "printed": "2008",
+     "row": "tc-year-20-2008",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 491,
+     "value": "2008"
+    },
+    {
+     "end": 619,
+     "others": [
+      "comp-c08-overdue",
+      "base-municipio-spellings",
+      "tc-gap-auditoria",
+      "tc-report-2-2012",
+      "tcq-ihru",
+      "tc-fifth-family-evora"
+     ],
+     "printed": "2",
+     "row": "tcq-universidade-de-evora",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 618,
+     "value": "2"
+    }
+   ],
+   "i": 77,
+   "kind": "paragraph",
+   "text": "The housing institute is in that table twice, and it is the most instructive row in this document. Searched under the name the recovery-plan register gives it, it returns 0. Searched under its acronym it returns 2 — the Tribunal writes Instituto de Habitação e Reabilitação Urbana, without the two «da»s the other register uses, so an exact-token match sees two different bodies. The first number is a false zero. The same fragility runs the other way in the table above: the Tribunal's own 2008 abstract writes «Universidade do Évora», which the university's correct name does not match, so the university's count of 2 is itself one short of the documents that name it."
+  },
+  {
+   "figures": [
+    {
+     "end": 276,
+     "printed": "10",
+     "row": "tc-gap-total",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 274,
+     "value": "10"
+    },
+    {
+     "end": 293,
+     "others": [
+      "comp-c08-overdue",
+      "base-municipio-spellings",
+      "tc-gap-auditoria",
+      "tcq-universidade-de-evora",
+      "tcq-ihru",
+      "tc-fifth-family-evora"
+     ],
+     "printed": "2",
+     "row": "tc-report-2-2012",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 292,
+     "value": "2"
+    },
+    {
+     "end": 325,
+     "others": [
+      "tc-gap-vec"
+     ],
+     "printed": "7",
+     "row": "tcq-divino-espirito-santo",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 324,
+     "value": "7"
+    },
+    {
+     "end": 368,
+     "others": [
+      "comp-c07-locations",
+      "comp-c21-overdue",
+      "proj-malagueira-locations",
+      "proj-castris-locations",
+      "proj-hospital-equip-locations",
+      "fin-geosat-projects",
+      "tc-gap-vic",
+      "tc-evora-entity-match",
+      "tcq-infraestruturas-de-portugal",
+      "tcq-administracao-regional-de-saude-do-alentejo",
+      "tcq-universidade-do-evora",
+      "tcq-espirito-santo-evora"
+     ],
+     "printed": "1",
+     "row": "tc-report-1-2008",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 367,
+     "value": "1"
+    }
+   ],
+   "i": 78,
+   "kind": "paragraph",
+   "text": "A zero in that table is therefore a weak signal, three times over. A name may be spelled differently, as here. The abstract may simply not name the body even when the report is about it, and the libraries themselves report holding more items than the interface hands back — 10 rows in total: 2 in the audit-reports library, 7 in external verification of accounts and 1 in internal verification, with the cause not established and paging failing to recover them. A nil result here means \"not found in the catalogue by this method\", never \"not audited\"."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 224,
+     "kind": "strong",
+     "start": 177
+    }
+   ],
+   "figures": [
+    {
+     "end": 145,
+     "others": [
+      "fin-habevora-projects"
+     ],
+     "printed": "8",
+     "row": "tcq-espirito-santo",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 144,
+     "value": "8"
+    },
+    {
+     "end": 167,
+     "others": [
+      "tc-gap-vec"
+     ],
+     "printed": "7",
+     "row": "tcq-divino-espirito-santo",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 166,
+     "value": "7"
+    }
+   ],
+   "i": 79,
+   "kind": "paragraph",
+   "text": "One over-match is worth showing because it is the same failure mode in reverse. Searching the hospital's name fragment \"Espírito Santo\" returns 8 documents, of which 7 name the Hospital Divino Espírito Santo de Ponta Delgada — a different hospital, in the Azores. The words matched; the subject did not. Only one of the eight is the Évora hospital."
+  },
+  {
+   "i": 80,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 81,
+   "kind": "heading",
+   "level": 2,
+   "text": "What the EU data cannot tell you"
+  },
+  {
+   "figures": [],
+   "i": 82,
+   "kind": "paragraph",
+   "text": "There is no EU figure for the concelho of Évora. Not \"we could not find one\" — the granularity does not exist in the source."
+  },
+  {
+   "figures": [
+    {
+     "end": 71,
+     "others": [
+      "eu-kohesio-projects"
+     ],
+     "printed": "2 569",
+     "row": "eu-kohesio-period-rows",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 66,
+     "value": "2 569"
+    },
+    {
+     "end": 93,
+     "others": [
+      "comp-c11-locations",
+      "comp-c11-overdue",
+      "base-place-checks",
+      "base-ulsac-spellings",
+      "base-gesamb-spellings",
+      "tcq-iapmei"
+     ],
+     "printed": "3",
+     "row": "tcq-administracao-central-do-sistema-de-saude",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 92,
+     "value": "3"
+    },
+    {
+     "end": 161,
+     "others": [
+      "eu-kohesio-projects"
+     ],
+     "printed": "2 569",
+     "row": "eu-kohesio-period-rows",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 156,
+     "value": "2 569"
+    }
+   ],
+   "i": 83,
+   "kind": "paragraph",
+   "text": "The probes, for the record. The EU's project-level dataset places 2 569 projects in the NUTS3 region containing Évora, which it names Alentejo Central. All 2 569 of them carry the programming period 2014-2020 — an earlier funding cycle, and a different instrument from the recovery plan whose figures open this document. Putting the two side by side would be comparing different things. The dataset has no concelho field, and for Portugal the postal code is empty on every row."
+  },
+  {
+   "figures": [
+    {
+     "end": 78,
+     "others": [
+      "comp-c19-overdue",
+      "base-undermerge-contracts",
+      "tc-report-14-2018"
+     ],
+     "printed": "14",
+     "row": "ine-alentejo-central-municipalities",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 76,
+     "value": "14"
+    }
+   ],
+   "i": 84,
+   "kind": "paragraph",
+   "text": "The size of the aggregation problem is the point. Alentejo Central contains 14 municipalities, per INE's own geographic dimension: Alandroal, Arraiolos, Borba, Estremoz, Montemor-o-Novo, Mora, Mourão, Portel, Redondo, Reguengos de Monsaraz, Vendas Novas, Viana do Alentejo, Vila Viçosa, Évora. A figure for that region is a figure for all of them."
+  },
+  {
+   "figures": [
+    {
+     "end": 86,
+     "printed": "25",
+     "row": "ine-nuts3-entries",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 84,
+     "value": "25"
+    },
+    {
+     "end": 92,
+     "others": [
+      "comp-c11-locations",
+      "comp-c11-overdue",
+      "base-place-checks",
+      "base-ulsac-spellings",
+      "base-gesamb-spellings",
+      "tcq-iapmei"
+     ],
+     "printed": "3",
+     "row": "tcq-administracao-central-do-sistema-de-saude",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 91,
+     "value": "3"
+    }
+   ],
+   "i": 85,
+   "kind": "paragraph",
+   "text": "A codes footnote: PRR publishes the older NUTS vintage — the same dimension carries 25 NUTS3 entries — while the EU project data uses a newer one. Both call the region Alentejo Central; the codes are not interchangeable, and passing one to the other returns zero rows with a perfectly healthy HTTP status."
+  },
+  {
+   "i": 86,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 87,
+   "kind": "heading",
+   "level": 2,
+   "text": "What to make of it"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 410,
+     "kind": "em",
+     "start": 399
+    }
+   ],
+   "figures": [],
+   "i": 88,
+   "kind": "paragraph",
+   "text": "Everything above is the record; this section is a reading of it, added at the owner's request and signed by its author: it was written by the model that assembled the document, and it is the part that goes past what the sources state. Every figure in it repeats a ledger row already printed above; the connections and the emphasis are interpretation, and the sentences that interpret carry the same (inference) label the rest of the document uses. It stays on this side of the line the first section draws — where the money and the risk sit is a reading of registers; whether anyone managed well or badly would need the audits this document does not open."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 72,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 453,
+     "kind": "em",
+     "start": 442
+    }
+   ],
+   "figures": [
+    {
+     "end": 110,
+     "printed": "61.32",
+     "row": "prr-overdue-approved-share",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 105,
+     "value": "61.32"
+    },
+    {
+     "end": 248,
+     "printed": "1 011",
+     "row": "prr-ontime-exactdate",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 243,
+     "value": "1 011"
+    },
+    {
+     "end": 261,
+     "printed": "1 445",
+     "row": "prr-ontime-evora",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 256,
+     "value": "1 445"
+    }
+   ],
+   "i": 89,
+   "kind": "paragraph",
+   "text": "Start with the share that is late, then decide what the dates are worth. Overdue project-locations carry 61.32% of everything approved for the concelho, and the completion dates that would soften that reading are the register's weakest field: 1 011 of the 1 445 on-time locations land exactly on their planned date. A date like that is a keystroke; a disbursement is a transaction. Where the two kinds of field disagree, believe the payments (inference)."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 53,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 432,
+     "kind": "em",
+     "start": 421
+    }
+   ],
+   "figures": [
+    {
+     "end": 229,
+     "others": [
+      "comp-c07-overdue",
+      "proj-malagueira-paid",
+      "base-invalid-id-returns",
+      "tc-evora-freguesia-match",
+      "tc-evora-longer-municipality-only",
+      "tcq-instituto-da-habitacao-e-da-reabilitacao-urbana",
+      "tcq-gesamb",
+      "tcq-instituto-do-emprego-e-formacao-profissional",
+      "tcq-fundo-ambiental",
+      "tcq-alentejo-central",
+      "tc-evora-risks"
+     ],
+     "printed": "0",
+     "row": "proj-hospital-equip-paid",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 228,
+     "value": "0"
+    },
+    {
+     "end": 253,
+     "printed": "7 483 162",
+     "row": "proj-malagueira-approved",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 244,
+     "value": "7 483 162"
+    },
+    {
+     "end": 268,
+     "printed": "5 314 868",
+     "row": "proj-hospital-equip-approved",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 259,
+     "value": "5 314 868"
+    }
+   ],
+   "i": 90,
+   "kind": "paragraph",
+   "text": "Two promises in particular have the shape of trouble. The student residence and the hospital equipment purchase are among the five largest project-locations in the concelho, both are past their planned dates, and both stand at €0 paid against €7 483 162 and €5 314 868 approved. Under the reading above these are the credible red flags, because the payment column — the harder field — is the one saying nothing has moved (inference)."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 55,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 404,
+     "kind": "em",
+     "start": 393
+    }
+   ],
+   "figures": [
+    {
+     "end": 131,
+     "others": [
+      "fin-uevora-contracted"
+     ],
+     "printed": "38 596 976",
+     "row": "fin-max-contracted",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 121,
+     "value": "38 596 976"
+    },
+    {
+     "end": 181,
+     "printed": "12 069 013",
+     "row": "fin-municipio-contracted",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 171,
+     "value": "12 069 013"
+    }
+   ],
+   "i": 91,
+   "kind": "paragraph",
+   "text": "The accountability address is mostly not the town hall. The recipient tables above already say it: the university holds €38 596 976 contracted against the municipality's €12 069 013, and the layer that administers the money is made of national agencies. A reader who wants this total explained should be putting questions to national bodies and to the university more often than to the câmara (inference)."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 103,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 819,
+     "kind": "em",
+     "start": 808
+    }
+   ],
+   "figures": [
+    {
+     "end": 150,
+     "others": [
+      "comp-c11-locations",
+      "comp-c11-overdue",
+      "base-place-checks",
+      "base-gesamb-spellings",
+      "tcq-iapmei",
+      "tcq-administracao-central-do-sistema-de-saude"
+     ],
+     "printed": "3",
+     "row": "base-ulsac-spellings",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 149,
+     "value": "3"
+    },
+    {
+     "end": 200,
+     "printed": "282",
+     "row": "base-ulsac-group-contracts",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 197,
+     "value": "282"
+    },
+    {
+     "end": 228,
+     "printed": "29 580 141",
+     "row": "base-ulsac-group-sum",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 218,
+     "value": "29 580 141"
+    }
+   ],
+   "i": 92,
+   "kind": "paragraph",
+   "text": "The registers are individually open and collectively unjoinable, and that is a finding, not a footnote. Inside one register, a hospital group needed 3 spellings folded together before it showed as 282 contracts worth €29 580 141; across registers, the same body appears under names a join would miss, and a search for the housing institute returned a zero that a verifier had to expose as false. The blame does not sit on missing identifiers — the recovery register carries a tax number on its entity rows, and the contracts register surrenders one contract by contract — but on where they sit: the contracts search returns names without the number, and the audit catalogue has no entity field at all. Follow-the-money work therefore fails at the seams between sources before it fails inside any one of them (inference)."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 67,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 619,
+     "kind": "em",
+     "start": 608
+    }
+   ],
+   "figures": [
+    {
+     "end": 123,
+     "printed": "2019",
+     "row": "tc-year-21-2019",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 119,
+     "value": "2019"
+    },
+    {
+     "end": 348,
+     "others": [
+      "comp-c08-overdue",
+      "base-municipio-spellings",
+      "tc-gap-auditoria",
+      "tc-report-2-2012",
+      "tcq-universidade-de-evora",
+      "tcq-ihru"
+     ],
+     "printed": "2",
+     "row": "tc-fifth-family-evora",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 347,
+     "value": "2"
+    }
+   ],
+   "i": 93,
+   "kind": "paragraph",
+   "text": "The searchable audit trail is thinnest where the money is thickest. In the four families read, nothing published after 2019 names Évora in its title or abstract — and those are the years in which the recovery money moved. The document's own probes forbid the strong reading: the catalogue cannot see inside report bodies, and a fifth family holds 2 reports on the municipality that the four-family search cannot reach. What survives is the practical point: a citizen who goes looking for an examination of those years will not find it through this catalogue's search, whatever may in fact have been examined (inference)."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 66,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 534,
+     "kind": "em",
+     "start": 523
+    }
+   ],
+   "figures": [
+    {
+     "end": 400,
+     "printed": "2019",
+     "row": "tc-year-21-2019",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 396,
+     "value": "2019"
+    }
+   ],
+   "i": 94,
+   "kind": "paragraph",
+   "text": "If this document earns a sequel, the data says point it at health. The equipment for the new central hospital of the Alentejo sits approved and undisbursed past its date. In the contracts window, the health group stands as the most active contracting entity in the window read once its spellings are folded together. In the audit table above, hospital care in the concelho last appears through a 2019 report on managers' pay. Money, delivery risk and a thin searchable trail concentrate in the same corner of the same town (inference)."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 66,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 559,
+     "kind": "em",
+     "start": 548
+    }
+   ],
+   "figures": [],
+   "i": 95,
+   "kind": "paragraph",
+   "text": "What would turn this reading into knowledge is short and concrete. Read the Tribunal PDFs this document links, which is where conclusions actually live; put the council's own accounts against DGAL's municipal-finance data, which the next section names as the missing source; and keep the daily snapshots, because the register erases its own history and a trend will exist where these observations accumulate. Until then the honest landing is the one this section has tried to give: not a verdict, but a map of where verdicts should be sought first (inference)."
+  },
+  {
+   "i": 96,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 97,
+   "kind": "heading",
+   "level": 2,
+   "text": "What this document does not answer"
+  },
+  {
+   "i": 98,
+   "items": [
+    {
+     "emphasis": [
+      {
+       "end": 44,
+       "kind": "strong",
+       "start": 0
+      }
+     ],
+     "figures": [],
+     "text": "Whether Évora's public money was well spent. Nothing here reads an audit's findings. The Tribunal's conclusions exist; they were not fetched."
+    },
+    {
+     "emphasis": [
+      {
+       "end": 41,
+       "kind": "strong",
+       "start": 0
+      }
+     ],
+     "figures": [],
+     "text": "How much the Tribunal has examined Évora. This document searched four product families by title and abstract, and can name a floor, not a total. Two of its own probes show the floor is well below the truth."
+    },
+    {
+     "emphasis": [
+      {
+       "end": 37,
+       "kind": "strong",
+       "start": 0
+      }
+     ],
+     "figures": [],
+     "text": "Why the overdue projects are overdue. The source records approval, dates and payment. It does not record reasons."
+    },
+    {
+     "emphasis": [
+      {
+       "end": 28,
+       "kind": "strong",
+       "start": 0
+      }
+     ],
+     "figures": [],
+     "text": "What the council itself did. Most of this money moves through national agencies and other public bodies. A council-level accounting question needs DGAL's municipal finance data, which this document does not use."
+    },
+    {
+     "emphasis": [
+      {
+       "end": 47,
+       "kind": "strong",
+       "start": 0
+      }
+     ],
+     "figures": [],
+     "text": "How Évora compares with a similar municipality. Contract totals cannot be compared across concelhos without double-counting multi-place contracts, and the PRR comparison would be a separate exercise."
+    },
+    {
+     "emphasis": [
+      {
+       "end": 23,
+       "kind": "strong",
+       "start": 0
+      }
+     ],
+     "figures": [
+      {
+       "end": 130,
+       "printed": "2026",
+       "row": "tc-year-max",
+       "source_digest_kind": "api-viva",
+       "source_sha256": null,
+       "start": 126,
+       "value": "2026"
+      }
+     ],
+     "text": "What changed over time. The recovery plan overwrites its own snapshot every day. The observations recorded here start in July 2026, so a trend does not exist yet — only the beginning of one."
+    }
+   ],
+   "kind": "list",
+   "ordered": false
+  },
+  {
+   "i": 99,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 100,
+   "kind": "paragraph",
+   "text": "Everything was fetched live for this document."
+  },
+  {
+   "i": 101,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "What"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Source"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Type"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "PRR projects"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 26,
+        "href": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-projetos-2/20260819-172752-d70458cf/listagem-de-projetos-prr-20260819.xlsx",
+        "start": 0
+       }
+      ],
+      "text": "`listagem-de-projetos-prr`"
+     },
+     {
+      "figures": [],
+      "text": "government"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "PRR entities"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 27,
+        "href": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-172815-0c601eed/listagem-de-entidades-prr-20260819.xlsx",
+        "start": 0
+       }
+      ],
+      "text": "`listagem-de-entidades-prr`"
+     },
+     {
+      "figures": [],
+      "text": "government"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "PRR geographic distribution"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 54,
+        "href": "https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-localizacoes-1/20260819-172839-57171695/listagem-de-projetos-prr-por-distribuicao-geografica-260819.xlsx",
+        "start": 0
+       }
+      ],
+      "text": "`listagem-de-projetos-prr-por-distribuicao-geografica`"
+     },
+     {
+      "figures": [],
+      "text": "government"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Public contracts"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 11,
+        "href": "https://www.base.gov.pt/Base4/pt/pesquisa/",
+        "start": 0
+       }
+      ],
+      "text": "Portal BASE"
+     },
+     {
+      "figures": [],
+      "text": "government"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Audit catalogue"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 18,
+        "href": "https://www.tcontas.pt/pt-pt/ProdutosTC",
+        "start": 0
+       }
+      ],
+      "text": "Tribunal de Contas"
+     },
+     {
+      "figures": [],
+      "text": "government"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Municipality list"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 3,
+        "href": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0008564&lang=PT",
+        "start": 0
+       }
+      ],
+      "text": "INE"
+     },
+     {
+      "figures": [],
+      "text": "government"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "EU project data"
+     },
+     {
+      "figures": [],
+      "links": [
+       {
+        "end": 45,
+        "href": "https://cohesiondata.ec.europa.eu/",
+        "start": 0
+       }
+      ],
+      "text": "Kohesio, via the EU Cohesion Open Data portal"
+     },
+     {
+      "figures": [],
+      "text": "intergovernmental"
+     }
+    ]
+   ]
+  }
+ ],
+ "edition": "Évora — Promised, Paid, Audited 2026",
+ "lang": "en",
+ "ledger": "ledger.json",
+ "prova": "render-sem-graficos",
+ "schema": "oedp/registo-de-conteudo/1",
+ "source": "Technical Source/make_html.py (render de Évora — Promised, Paid, Audited 2026.md, charts=False)",
+ "title": "Évora — what was promised, what was paid, and what was audited"
+}

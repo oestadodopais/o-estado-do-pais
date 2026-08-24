@@ -1,0 +1,3407 @@
+{
+ "blocks": [
+  {
+   "figures": [],
+   "i": 0,
+   "kind": "heading",
+   "level": 1,
+   "text": "Évora — what was budgeted, what was paid, and what is owed"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 185,
+     "kind": "em",
+     "start": 0
+    }
+   ],
+   "figures": [],
+   "i": 1,
+   "kind": "paragraph",
+   "text": "The Município de Évora's own 2025 accounts, read cover to cover and set against the state regulator's independent debt series and the national yardstick, all fetched live on 2026-08-10."
+  },
+  {
+   "i": 2,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 3,
+   "kind": "heading",
+   "level": 2,
+   "text": "Read this part first"
+  },
+  {
+   "figures": [],
+   "i": 4,
+   "kind": "paragraph",
+   "text": "Four limits govern everything that follows."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 62,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [],
+   "i": 5,
+   "kind": "paragraph",
+   "text": "Most of this document is the municipality reporting on itself. The Prestação de Contas is management's account of the year. It is detailed, internally consistent and externally audited — but it is one voice. Two outside voices exist and both are here: the independent auditor's signed opinion (the Certificação Legal das Contas), and DGAL — the Direção-Geral das Autarquias Locais — which publishes, per municipality and per year, the same legal debt concept the report uses, compiled on the regulator's side."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 22,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [
+    {
+     "end": 60,
+     "printed": "109 483 315",
+     "row": "om-2025-corrigido",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 49,
+     "value": "109 483 315"
+    },
+    {
+     "end": 125,
+     "printed": "67 263 297",
+     "row": "receita-cobrada-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 115,
+     "value": "67 263 297"
+    }
+   ],
+   "i": 6,
+   "kind": "paragraph",
+   "text": "A budget is not money. Évora's 2025 budget says €109 483 315 after revisions; the money that actually arrived was €67 263 297. Every budget figure in this document is labelled as a budget figure, and the execution rate travels beside it. Reading the budget as spending is the single easiest way to be wrong about a municipality, and the gap here is not small."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 39,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [
+    {
+     "end": 147,
+     "printed": "2",
+     "row": "clc-2024-votos-favor",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 146,
+     "value": "2"
+    },
+    {
+     "end": 166,
+     "others": [
+      "evora2027-receita-prevista"
+     ],
+     "printed": "5",
+     "row": "clc-2024-votos-contra",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 165,
+     "value": "5"
+    }
+   ],
+   "i": 7,
+   "kind": "paragraph",
+   "text": "The 2024 accounts were never certified. The auditor's 2025 opinion records that the previous year's accounts were rejected by the Câmara itself — 2 votes in favour, 5 against, in the meeting of 2025-05-28 — which forced a Declaration of Impossibility of Legal Certification for 2024. The 2024 comparatives quoted below are therefore the ones printed in the 2025 report, and they carry that history. The vote sits months before the October 2025 local elections; this document records the fact and the dates and draws no political conclusion from them."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 76,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [],
+   "i": 8,
+   "kind": "paragraph",
+   "text": "The national yardstick is one year behind, and its full study is not public. The Anuário Financeiro dos Municípios Portugueses 2024 — an academic publication (CICF/IPCA, with the accountants' order), not a government source — openly publishes only its conclusions presentation, and its national debt table stops at accounts year 2023. DGAL's per-municipality file reaches 2024. The two are never mixed in one sentence below without their years attached."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 257,
+     "kind": "strong",
+     "start": 246
+    }
+   ],
+   "figures": [],
+   "i": 9,
+   "kind": "paragraph",
+   "text": "One thing this document can do that the accounts alone cannot: it puts the municipality's own numbers, the regulator's independent series and the national distribution side by side. Where it reasons beyond what a source states, the sentence says (inference)."
+  },
+  {
+   "i": 10,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 11,
+   "kind": "heading",
+   "level": 2,
+   "text": "The year in four numbers"
+  },
+  {
+   "i": 12,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "​"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Budget for 2025, after revisions​"
+     },
+     {
+      "emphasis": [
+       {
+        "end": 12,
+        "kind": "strong",
+        "start": 0
+       }
+      ],
+      "figures": [
+       {
+        "end": 12,
+        "printed": "109 483 315",
+        "row": "om-2025-corrigido",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "109 483 315"
+       }
+      ],
+      "text": "€109 483 315​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Revenue actually collected​"
+     },
+     {
+      "emphasis": [
+       {
+        "end": 11,
+        "kind": "strong",
+        "start": 0
+       }
+      ],
+      "figures": [
+       {
+        "end": 11,
+        "printed": "67 263 297",
+        "row": "receita-cobrada-2025",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "67 263 297"
+       },
+       {
+        "end": 19,
+        "printed": "61.44",
+        "row": "receita-exec-pct",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 14,
+        "value": "61.44"
+       }
+      ],
+      "text": "€67 263 297 — 61.44% of the budget​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Payments actually made​"
+     },
+     {
+      "emphasis": [
+       {
+        "end": 11,
+        "kind": "strong",
+        "start": 0
+       }
+      ],
+      "figures": [
+       {
+        "end": 11,
+        "printed": "65 565 050",
+        "row": "despesa-paga-2025",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "65 565 050"
+       },
+       {
+        "end": 19,
+        "printed": "59.89",
+        "row": "despesa-exec-pct",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 14,
+        "value": "59.89"
+       }
+      ],
+      "text": "€65 565 050 — 59.89% of the budget​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Total debt of budgetary operations at 31 December​"
+     },
+     {
+      "emphasis": [
+       {
+        "end": 11,
+        "kind": "strong",
+        "start": 0
+       }
+      ],
+      "figures": [
+       {
+        "end": 11,
+        "printed": "54 379 035",
+        "row": "divida-total-2025",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "54 379 035"
+       }
+      ],
+      "text": "€54 379 035​"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 13,
+   "kind": "paragraph",
+   "text": "The rest of the document is the story of how those four numbers relate."
+  },
+  {
+   "i": 14,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 15,
+   "kind": "heading",
+   "level": 2,
+   "text": "The budget, and what actually arrived"
+  },
+  {
+   "figures": [
+    {
+     "end": 40,
+     "printed": "104 000 000",
+     "row": "om-2025-inicial",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 29,
+     "value": "104 000 000"
+    },
+    {
+     "end": 124,
+     "printed": "1 997 375",
+     "row": "om-2025-saldo-integrado",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 115,
+     "value": "1 997 375"
+    },
+    {
+     "end": 149,
+     "printed": "3 485 940",
+     "row": "evora2027-gop-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 140,
+     "value": "3 485 940"
+    },
+    {
+     "end": 215,
+     "printed": "5 483 315",
+     "row": "om-2025-modificativas",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 206,
+     "value": "5 483 315"
+    },
+    {
+     "end": 232,
+     "printed": "109 483 315",
+     "row": "om-2025-corrigido",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 221,
+     "value": "109 483 315"
+    }
+   ],
+   "i": 16,
+   "kind": "paragraph",
+   "text": "The initial 2025 budget was €104 000 000. One modifying revision — folding in the prior year's closing balance of €1 997 375 and budgeting €3 485 940 for the PRR-financed \"Évora 2027\" works — raised it by €5 483 315, to €109 483 315."
+  },
+  {
+   "figures": [
+    {
+     "end": 25,
+     "printed": "67 263 297",
+     "row": "receita-cobrada-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 15,
+     "value": "67 263 297"
+    },
+    {
+     "end": 66,
+     "printed": "61.44",
+     "row": "receita-exec-pct",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 61,
+     "value": "61.44"
+    }
+   ],
+   "i": 17,
+   "kind": "paragraph",
+   "text": "Against that, €67 263 297 was collected. The execution rate, 61.44%, is the lowest in the report's own recital of recent years, and since 2021 the direction is one-way:"
+  },
+  {
+   "i": 18,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Year​"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Revenue execution​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2018​"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "86",
+        "row": "exec-2018-pct",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "86"
+       }
+      ],
+      "text": "86%​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2019​"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "85",
+        "row": "exec-2019-pct",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "85"
+       }
+      ],
+      "text": "85%​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2020​"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "exec-2022-pct"
+        ],
+        "printed": "84",
+        "row": "exec-2020-pct",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "84"
+       }
+      ],
+      "text": "84%​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2021​"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "96",
+        "row": "exec-2021-pct",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "96"
+       }
+      ],
+      "text": "96%​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2022​"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "exec-2020-pct"
+        ],
+        "printed": "84",
+        "row": "exec-2022-pct",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "84"
+       }
+      ],
+      "text": "84%​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2023​"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "76",
+        "row": "exec-2023-pct",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "76"
+       }
+      ],
+      "text": "76%​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2024​"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "70",
+        "row": "exec-2024-pct",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "70"
+       }
+      ],
+      "text": "70%​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2025​"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "61.44",
+        "row": "receita-exec-pct",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "61.44"
+       }
+      ],
+      "text": "61.44%​"
+     }
+    ]
+   ]
+  },
+  {
+   "emphasis": [
+    {
+     "end": 673,
+     "kind": "strong",
+     "start": 589
+    }
+   ],
+   "figures": [
+    {
+     "end": 89,
+     "others": [
+      "clc-2024-votos-contra"
+     ],
+     "printed": "5",
+     "row": "evora2027-receita-prevista",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 88,
+     "value": "5"
+    },
+    {
+     "end": 193,
+     "printed": "5 013 000",
+     "row": "hospital-protocolo-orc",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 184,
+     "value": "5 013 000"
+    },
+    {
+     "end": 392,
+     "printed": "1 087 287",
+     "row": "cofinanciados-capital-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 383,
+     "value": "1 087 287"
+    },
+    {
+     "end": 423,
+     "printed": "11.58",
+     "row": "cofinanciados-capital-pct",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 418,
+     "value": "11.58"
+    }
+   ],
+   "i": 19,
+   "kind": "paragraph",
+   "text": "Two absences explain much of the 2025 gap, and the report names both. A revenue line of 5 million euros for \"Évora 2027\" saw no execution in the year. A technical-cooperation line of €5 013 000 — five million euros of it the protocol for road access to the new central Alentejo hospital — also saw none. Transfers from co-financed projects were budgeted at many times what arrived: €1 087 287 came in, an execution of 11.58% on that line. Budgeting money that outside bodies have not yet committed, and then not receiving it, is the recurring mechanism behind the falling execution series (inference from the three lines above; the report states each line, not the pattern)."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 344,
+     "kind": "strong",
+     "start": 296
+    }
+   ],
+   "figures": [
+    {
+     "end": 161,
+     "printed": "48.1",
+     "row": "exec-2015-pct-companion",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 157,
+     "value": "48.1"
+    }
+   ],
+   "i": 20,
+   "kind": "paragraph",
+   "text": "One scope note, added after the fifteen-year companion document was built: this recital's window opens in 2018. The companion reaches back to 2015 and finds 48.1% there — a deeper trough, in the year after the bailout instalments — so execution collapses have followed Évora's debt crises before (inference; the figure is the 2015 report's own)."
+  },
+  {
+   "figures": [
+    {
+     "end": 31,
+     "printed": "2 381 077",
+     "row": "saldo-gerencia-2026",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 22,
+     "value": "2 381 077"
+    }
+   ],
+   "i": 21,
+   "kind": "paragraph",
+   "text": "The year closed with €2 381 077 in hand to carry into 2026."
+  },
+  {
+   "i": 22,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 23,
+   "kind": "heading",
+   "level": 2,
+   "text": "Where the money came from"
+  },
+  {
+   "figures": [
+    {
+     "end": 88,
+     "printed": "58 217 063",
+     "row": "rec-correntes-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 78,
+     "value": "58 217 063"
+    },
+    {
+     "end": 111,
+     "printed": "67.53",
+     "row": "rec-correntes-pct",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 106,
+     "value": "67.53"
+    }
+   ],
+   "i": 24,
+   "kind": "paragraph",
+   "text": "Current revenue — the money that funds the running of the municipality — was €58 217 063, an execution of 67.53% of its budget line. Its composition is the structural fact of Évora's finances:"
+  },
+  {
+   "i": 25,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Current revenue, 2025​"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Collected​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Current transfers received​"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "27 553 504",
+        "row": "transf-correntes-2025",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "27 553 504"
+       }
+      ],
+      "text": "€27 553 504​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Direct taxes​"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "15 395 084",
+        "row": "impostos-diretos-2025",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "15 395 084"
+       }
+      ],
+      "text": "€15 395 084​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Sales of goods and services​"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "8 375 707",
+        "row": "venda-bens-servicos-2025",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "8 375 707"
+       }
+      ],
+      "text": "€8 375 707​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Property income​"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "3 630 477",
+        "row": "rendimentos-propriedade-2025",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "3 630 477"
+       }
+      ],
+      "text": "€3 630 477​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Fees, fines and penalties​"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "3 106 718",
+        "row": "taxas-multas-2025",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "3 106 718"
+       }
+      ],
+      "text": "€3 106 718​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Other current revenue​"
+     },
+     {
+      "figures": [
+       {
+        "end": 8,
+        "printed": "155 573",
+        "row": "outras-rec-correntes-exec",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "155 573"
+       }
+      ],
+      "text": "€155 573​"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [
+    {
+     "end": 82,
+     "printed": "47",
+     "row": "transf-correntes-share",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 80,
+     "value": "47"
+    },
+    {
+     "end": 180,
+     "printed": "50",
+     "row": "transf-oe-despesa-share",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 178,
+     "value": "50"
+    },
+    {
+     "end": 227,
+     "printed": "43",
+     "row": "transf-oe-despesa-share-2022",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 225,
+     "value": "43"
+    }
+   ],
+   "i": 26,
+   "kind": "paragraph",
+   "text": "The report's own words: an \"excessive dependence\" on State transfers, which are 47% of current revenue. Across the whole of the accounts, transfers from the State budget covered 50% of total spending in 2025 — the figure was 43% in 2022, dipped in 2023, and has risen each year since."
+  },
+  {
+   "figures": [],
+   "i": 27,
+   "kind": "paragraph",
+   "text": "The four municipal taxes, for scale:"
+  },
+  {
+   "i": 28,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Tax, 2025​"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Collected​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "IMT (property transactions)​"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "6 104 915",
+        "row": "imt-2025",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "6 104 915"
+       }
+      ],
+      "text": "€6 104 915​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "IMI (property ownership)​"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "5 975 274",
+        "row": "imi-2025",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "5 975 274"
+       }
+      ],
+      "text": "€5 975 274​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "IUC (vehicle circulation)​"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "1 719 462",
+        "row": "iuc-2025",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "1 719 462"
+       }
+      ],
+      "text": "€1 719 462​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Derrama (surcharge on corporate profit)​"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "1 595 433",
+        "row": "derrama-2025",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "1 595 433"
+       }
+      ],
+      "text": "€1 595 433​"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [
+    {
+     "end": 136,
+     "printed": "19 427 778",
+     "row": "outras-rec-correntes-orc",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 126,
+     "value": "19 427 778"
+    },
+    {
+     "end": 168,
+     "printed": "155 573",
+     "row": "outras-rec-correntes-exec",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 161,
+     "value": "155 573"
+    }
+   ],
+   "i": 29,
+   "kind": "paragraph",
+   "text": "The \"other current revenue\" line deserves its own sentence, because it is where the budget-versus-money gap is most extreme: €19 427 778 was budgeted there and €155 573 arrived — the report explains the line as the place where inherited debt had to be accommodated in the budget's arithmetic."
+  },
+  {
+   "figures": [
+    {
+     "end": 30,
+     "printed": "7 041 207",
+     "row": "rec-capital-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 21,
+     "value": "7 041 207"
+    },
+    {
+     "end": 54,
+     "printed": "33.09",
+     "row": "rec-capital-pct",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 49,
+     "value": "33.09"
+    },
+    {
+     "end": 92,
+     "printed": "5 018 370",
+     "row": "transf-estado-capital-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 83,
+     "value": "5 018 370"
+    },
+    {
+     "end": 131,
+     "printed": "1 087 287",
+     "row": "cofinanciados-capital-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 122,
+     "value": "1 087 287"
+    },
+    {
+     "end": 171,
+     "printed": "759 313",
+     "row": "emprestimo-utilizado-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 164,
+     "value": "759 313"
+    }
+   ],
+   "i": 30,
+   "kind": "paragraph",
+   "text": "Capital revenue was €7 041 207 — an execution of 33.09% of its budget. Inside it: €5 018 370 of State capital transfers, €1 087 287 from co-financed projects, and €759 313 drawn from the investment loan signed in 2023 and cleared by the Tribunal de Contas in 2024."
+  },
+  {
+   "i": 31,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 32,
+   "kind": "heading",
+   "level": 2,
+   "text": "Where it went"
+  },
+  {
+   "figures": [
+    {
+     "end": 32,
+     "printed": "54 575 386",
+     "row": "desp-correntes-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 22,
+     "value": "54 575 386"
+    },
+    {
+     "end": 55,
+     "printed": "70.64",
+     "row": "desp-correntes-exec-pct",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 50,
+     "value": "70.64"
+    },
+    {
+     "end": 74,
+     "printed": "56",
+     "row": "pessoal-share-correntes",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 72,
+     "value": "56"
+    },
+    {
+     "end": 83,
+     "printed": "34",
+     "row": "bens-servicos-share",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 81,
+     "value": "34"
+    }
+   ],
+   "i": 33,
+   "kind": "paragraph",
+   "text": "Current spending was €54 575 386, an execution of 70.64%. Two lines are 56% plus 34% of it:"
+  },
+  {
+   "i": 34,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Current spending, 2025​"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Paid​"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Execution​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Personnel​"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "30 438 432",
+        "row": "pessoal-2025",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "30 438 432"
+       }
+      ],
+      "text": "€30 438 432​"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "96.55",
+        "row": "pessoal-exec-pct",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "96.55"
+       }
+      ],
+      "text": "96.55%​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Goods and services​"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "18 216 727",
+        "row": "bens-servicos-2025",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "18 216 727"
+       }
+      ],
+      "text": "€18 216 727​"
+     },
+     {
+      "figures": [],
+      "text": "—​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Current transfers made​"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "3 437 557",
+        "row": "transf-correntes-pagas-2025",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "3 437 557"
+       }
+      ],
+      "text": "€3 437 557​"
+     },
+     {
+      "figures": [],
+      "text": "—​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Interest and similar charges​"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "1 264 081",
+        "row": "juros-pagos-2025",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "1 264 081"
+       }
+      ],
+      "text": "€1 264 081​"
+     },
+     {
+      "figures": [],
+      "text": "—​"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [
+    {
+     "end": 27,
+     "printed": "96.55",
+     "row": "pessoal-exec-pct",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 22,
+     "value": "96.55"
+    }
+   ],
+   "i": 35,
+   "kind": "paragraph",
+   "text": "Personnel executes at 96.55% because salaries are paid whether or not the rest of the budget happens; it is the incompressible core of the accounts. The goods-and-services line is where the large running contracts live — bulk water, sanitation, waste, public lighting — and it is also where the unpaid bills accumulate, which the debt section returns to."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 644,
+     "kind": "strong",
+     "start": 580
+    }
+   ],
+   "figures": [
+    {
+     "end": 32,
+     "printed": "10 989 664",
+     "row": "desp-capital-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 22,
+     "value": "10 989 664"
+    },
+    {
+     "end": 56,
+     "printed": "34.10",
+     "row": "desp-capital-exec-pct",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 51,
+     "value": "34.10"
+    },
+    {
+     "end": 139,
+     "printed": "24 159 745",
+     "row": "invest-orcado-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 129,
+     "value": "24 159 745"
+    },
+    {
+     "end": 214,
+     "printed": "5 104 307",
+     "row": "invest-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 205,
+     "value": "5 104 307"
+    },
+    {
+     "end": 238,
+     "printed": "21.13",
+     "row": "invest-exec-pct",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 233,
+     "value": "21.13"
+    },
+    {
+     "end": 357,
+     "printed": "4 308 783",
+     "row": "amortizacoes-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 348,
+     "value": "4 308 783"
+    },
+    {
+     "end": 395,
+     "printed": "93.64",
+     "row": "amortizacoes-exec-pct",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 390,
+     "value": "93.64"
+    }
+   ],
+   "i": 36,
+   "kind": "paragraph",
+   "text": "Capital spending was €10 989 664 — an execution of 34.10% — and its composition is the sharpest single fact in the accounts: of €24 159 745 budgeted for investment proper, the municipality managed to pay €5 104 307 — an execution of 21.13%. The report blames delays in PRR-expected projects and public tenders that attracted no bidders. Meanwhile €4 308 783 went out in loan repayments, at 93.64% of that budget line — the debt was serviced almost exactly as planned while investment ran at a fifth of its plan. Loan repayment is the one line of capital spending that cannot slip (inference; the report prints both rates without comparing them)."
+  },
+  {
+   "figures": [
+    {
+     "end": 18,
+     "printed": "25.7",
+     "row": "compromissos-transitar",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 14,
+     "value": "25.7"
+    },
+    {
+     "end": 75,
+     "printed": "14.6",
+     "row": "compromissos-faturados",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 71,
+     "value": "14.6"
+    }
+   ],
+   "i": 37,
+   "kind": "paragraph",
+   "text": "At year end, €25.7 million of commitments carried into 2026, of which €14.6 million were already invoiced and awaiting payment."
+  },
+  {
+   "i": 38,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 39,
+   "kind": "heading",
+   "level": 2,
+   "text": "What the plan bought"
+  },
+  {
+   "figures": [
+    {
+     "end": 123,
+     "printed": "27 369 083",
+     "row": "gop-total-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 113,
+     "value": "27 369 083"
+    },
+    {
+     "end": 144,
+     "printed": "11 050 691",
+     "row": "ppi-total-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 134,
+     "value": "11 050 691"
+    },
+    {
+     "end": 180,
+     "printed": "16 318 392",
+     "row": "amr-total-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 170,
+     "value": "16 318 392"
+    }
+   ],
+   "i": 40,
+   "kind": "paragraph",
+   "text": "The Grandes Opções do Plano — the plan layer of the accounts, investment plus the flagged activities — paid out €27 369 083 in 2025: €11 050 691 of investment (PPI) and €16 318 392 of plan-relevant current activity (AMR)."
+  },
+  {
+   "i": 41,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "By function​"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Paid​"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Share​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Social functions​"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "13 171 579",
+        "row": "gop-sociais",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "13 171 579"
+       }
+      ],
+      "text": "€13 171 579​"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "48",
+        "row": "gop-sociais-share",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "48"
+       }
+      ],
+      "text": "48%​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Other functions (mostly debt operations)​"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "5 941 090",
+        "row": "gop-outras",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "5 941 090"
+       }
+      ],
+      "text": "€5 941 090​"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "pmp-2023"
+        ],
+        "printed": "22",
+        "row": "gop-outras-share",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "22"
+       }
+      ],
+      "text": "22%​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "General functions​"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "5 113 983",
+        "row": "gop-gerais",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "5 113 983"
+       }
+      ],
+      "text": "€5 113 983​"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "19",
+        "row": "gop-gerais-share",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "19"
+       }
+      ],
+      "text": "19%​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Economic functions​"
+     },
+     {
+      "figures": [
+       {
+        "end": 10,
+        "printed": "3 142 431",
+        "row": "gop-economicas",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "3 142 431"
+       }
+      ],
+      "text": "€3 142 431​"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "11",
+        "row": "gop-economicas-share",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "11"
+       }
+      ],
+      "text": "11%​"
+     }
+    ]
+   ]
+  },
+  {
+   "emphasis": [
+    {
+     "end": 477,
+     "kind": "strong",
+     "start": 416
+    }
+   ],
+   "figures": [
+    {
+     "end": 101,
+     "printed": "9 034 569",
+     "row": "gop-habitacao",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 92,
+     "value": "9 034 569"
+    },
+    {
+     "end": 114,
+     "others": [
+      "pmp-delta"
+     ],
+     "printed": "33",
+     "row": "gop-habitacao-share",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 112,
+     "value": "33"
+    },
+    {
+     "end": 166,
+     "printed": "4 365 266",
+     "row": "gop-divida",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 157,
+     "value": "4 365 266"
+    },
+    {
+     "end": 204,
+     "printed": "1 735 315",
+     "row": "gop-educacao",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 195,
+     "value": "1 735 315"
+    },
+    {
+     "end": 272,
+     "printed": "1 782 427",
+     "row": "gop-cultura",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 263,
+     "value": "1 782 427"
+    }
+   ],
+   "i": 42,
+   "kind": "paragraph",
+   "text": "Inside the social block, housing and collective services — water, sanitation, waste — took €9 034 569, which is 33% of the whole plan. Debt operations took €4 365 266. Education's plan line was €1 735 315; the cultural, recreational and religious services line, €1 782 427. A city whose plan-money goes first to water, waste and debt service is a city paying for its infrastructure and its past before its ambitions (inference; the shares are the source's, the reading is ours)."
+  },
+  {
+   "i": 43,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 44,
+   "kind": "heading",
+   "level": 2,
+   "text": "The debt, in three layers"
+  },
+  {
+   "figures": [],
+   "i": 45,
+   "kind": "heading",
+   "level": 3,
+   "text": "Suppliers: the layer that is growing"
+  },
+  {
+   "figures": [
+    {
+     "end": 43,
+     "printed": "19 821 418",
+     "row": "div-fornecedores-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 33,
+     "value": "19 821 418"
+    },
+    {
+     "end": 59,
+     "printed": "3 674 532",
+     "row": "div-fornecedores-var",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 50,
+     "value": "3 674 532"
+    },
+    {
+     "end": 78,
+     "printed": "22.76",
+     "row": "div-fornecedores-var-pct",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 73,
+     "value": "22.76"
+    },
+    {
+     "end": 165,
+     "printed": "6 478 008",
+     "row": "fornecedores-corrente-2024",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 156,
+     "value": "6 478 008"
+    },
+    {
+     "end": 180,
+     "printed": "11 025 289",
+     "row": "fornecedores-corrente-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 170,
+     "value": "11 025 289"
+    },
+    {
+     "end": 210,
+     "printed": "70.20",
+     "row": "fornecedores-corrente-var-pct",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 205,
+     "value": "70.20"
+    },
+    {
+     "end": 452,
+     "printed": "5 642 725",
+     "row": "ard-bei-nao-corrente",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 443,
+     "value": "5 642 725"
+    },
+    {
+     "end": 587,
+     "printed": "3 153 404",
+     "row": "fornecedores-invest-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 578,
+     "value": "3 153 404"
+    }
+   ],
+   "i": 46,
+   "kind": "paragraph",
+   "text": "Debt to suppliers ended 2025 at €19 821 418 — up €3 674 532 on the year, 22.76%. The layer to watch is inside it: ordinary current supplier debt went from €6 478 008 to €11 025 289 in one year — a rise of 70.20%. The report attributes it, in its own words, to the financial difficulties the municipality has felt especially since 2023. A quarter of that current debt is the monthly water invoice to Águas do Vale do Tejo alone. Beside it sit €5 642 725 of old water debt, restructured into two long-dated repayment plans whose creditor is now the European Investment Bank, and €3 153 404 owed to investment suppliers."
+  },
+  {
+   "figures": [
+    {
+     "end": 95,
+     "printed": "137",
+     "row": "pmp-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 92,
+     "value": "137"
+    },
+    {
+     "end": 108,
+     "others": [
+      "gop-habitacao-share"
+     ],
+     "printed": "33",
+     "row": "pmp-delta",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 106,
+     "value": "33"
+    }
+   ],
+   "i": 47,
+   "kind": "paragraph",
+   "text": "Two hard numbers measure the strain. The average time Évora takes to pay a supplier reached 137 days — up 33 days in a year, and the series is worth printing whole:"
+  },
+  {
+   "i": 48,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Year​"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Average payment time (days)​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2022​"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "69",
+        "row": "pmp-2022",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "69"
+       }
+      ],
+      "text": "69​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2023​"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "gop-outras-share"
+        ],
+        "printed": "22",
+        "row": "pmp-2023",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "22"
+       }
+      ],
+      "text": "22​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2024​"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "104",
+        "row": "pmp-2024",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "104"
+       }
+      ],
+      "text": "104​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2025​"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "137",
+        "row": "pmp-2025",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 0,
+        "value": "137"
+       }
+      ],
+      "text": "137​"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [
+    {
+     "end": 113,
+     "printed": "4 976 172",
+     "row": "atrasos-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 104,
+     "value": "4 976 172"
+    }
+   ],
+   "i": 49,
+   "kind": "paragraph",
+   "text": "And for the second consecutive year the accounts close with formal arrears — pagamentos em atraso — of €4 976 172."
+  },
+  {
+   "figures": [],
+   "i": 50,
+   "kind": "heading",
+   "level": 3,
+   "text": "Banks: the layer that is legacy"
+  },
+  {
+   "figures": [
+    {
+     "end": 60,
+     "printed": "29 418 657",
+     "row": "emprestimos-mlp-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 50,
+     "value": "29 418 657"
+    },
+    {
+     "end": 77,
+     "printed": "3 549 470",
+     "row": "emprestimos-mlp-var",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 68,
+     "value": "3 549 470"
+    },
+    {
+     "end": 161,
+     "printed": "49",
+     "row": "emp-pael-share",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 159,
+     "value": "49"
+    },
+    {
+     "end": 253,
+     "printed": "42",
+     "row": "emp-saneamento-share",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 251,
+     "value": "42"
+    },
+    {
+     "end": 352,
+     "printed": "91",
+     "row": "emp-legacy-share",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 350,
+     "value": "91"
+    },
+    {
+     "end": 373,
+     "printed": "6",
+     "row": "emp-invest-share",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 372,
+     "value": "6"
+    },
+    {
+     "end": 432,
+     "printed": "5 365 896",
+     "row": "servico-divida-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 423,
+     "value": "5 365 896"
+    },
+    {
+     "end": 453,
+     "printed": "4 308 783",
+     "row": "amortizacoes-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 444,
+     "value": "4 308 783"
+    },
+    {
+     "end": 481,
+     "printed": "1 057 113",
+     "row": "juros-mlp-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 472,
+     "value": "1 057 113"
+    }
+   ],
+   "i": 51,
+   "kind": "paragraph",
+   "text": "Medium and long-term bank debt ended the year at €29 418 657, down €3 549 470 on the year, across seven loans and three banks. Its composition is its history: 49% refinances debt from the PAEL — the state's municipal financial-support programme — and 42% is the 2016 financial-recovery (saneamento financeiro) loan. Together the rescue-era loans are 91% of the bank debt; 6% funds new investment. Servicing all of it cost €5 365 896 in 2025 — €4 308 783 of principal and €1 057 113 of interest."
+  },
+  {
+   "figures": [],
+   "i": 52,
+   "kind": "heading",
+   "level": 3,
+   "text": "The total, against the legal ceiling"
+  },
+  {
+   "figures": [
+    {
+     "end": 104,
+     "printed": "54 379 035",
+     "row": "divida-total-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 94,
+     "value": "54 379 035"
+    },
+    {
+     "end": 117,
+     "printed": "54 261 280",
+     "row": "divida-municipio-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 107,
+     "value": "54 261 280"
+    },
+    {
+     "end": 150,
+     "printed": "117 754",
+     "row": "divida-participadas-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 143,
+     "value": "117 754"
+    },
+    {
+     "end": 330,
+     "printed": "82 571 687",
+     "row": "limite-divida-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 320,
+     "value": "82 571 687"
+    },
+    {
+     "end": 359,
+     "printed": "55 047 791",
+     "row": "media-receita-3anos",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 349,
+     "value": "55 047 791"
+    },
+    {
+     "end": 408,
+     "printed": "28 192 653",
+     "row": "margem-endividamento-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 398,
+     "value": "28 192 653"
+    }
+   ],
+   "i": 53,
+   "kind": "paragraph",
+   "text": "The legal measure — total debt of budgetary operations under Lei n.º 73/2013 — ended 2025 at €54 379 035: €54 261 280 the municipality's own, €117 754 its share of associated entities. The law caps that total at one and a half times the average net current revenue of the previous three years — for Évora, a ceiling of €82 571 687 on an average of €55 047 791 — so 2025 closes in compliance, with €28 192 653 of headroom."
+  },
+  {
+   "i": 54,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Year end​"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Total debt (report's series)​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2022​"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "53 488 434",
+        "row": "divida-total-2022",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "53 488 434"
+       }
+      ],
+      "text": "€53 488 434​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2023​"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "50 432 431",
+        "row": "divida-total-2023",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "50 432 431"
+       }
+      ],
+      "text": "€50 432 431​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2024​"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "54 680 636",
+        "row": "divida-total-2024",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "54 680 636"
+       }
+      ],
+      "text": "€54 680 636​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2025​"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "54 379 035",
+        "row": "divida-total-2025",
+        "source_digest_kind": "pdf-sem-resumo",
+        "source_sha256": null,
+        "start": 1,
+        "value": "54 379 035"
+       }
+      ],
+      "text": "€54 379 035​"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 55,
+   "kind": "paragraph",
+   "text": "Compliance today is the end of a much longer story, and the report's own four-year window cannot show it. The regulator's series can."
+  },
+  {
+   "i": 56,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 57,
+   "kind": "heading",
+   "level": 2,
+   "text": "The independent check"
+  },
+  {
+   "figures": [
+    {
+     "end": 304,
+     "printed": "150",
+     "row": "anuario-indice-permitido",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 301,
+     "value": "150"
+    }
+   ],
+   "i": 58,
+   "kind": "paragraph",
+   "text": "DGAL publishes the same art. 52.º debt total, per municipality, from its own collection. Eleven annual files were fetched and Évora's row read from each. Beside each figure: the debt index — the debt as a percentage of the three-year revenue average that defines the legal limit, where the ceiling is 150%."
+  },
+  {
+   "i": 59,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Accounts year​"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Total debt (DGAL)​"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Debt index​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2014​"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "77 961 663",
+        "row": "dgal-divida-2014",
+        "source_digest_em": "07 Évora Municipal Accounts/Technical Source/raw/pdfs/dgal_divida_2014.pdf",
+        "source_sha256": "76c10536ad896887d57609d677fc64dafa307ceb26775b4d4a1407cd7e7f43ca",
+        "source_sha256_prefix": "76c10536ad896887",
+        "start": 1,
+        "value": "77 961 663"
+       }
+      ],
+      "text": "€77 961 663​"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "242.6",
+        "row": "evora-indice-2014",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "242.6"
+       }
+      ],
+      "text": "242.6%​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2015​"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "77 698 527",
+        "row": "dgal-divida-2015",
+        "source_digest_em": "07 Évora Municipal Accounts/Technical Source/raw/pdfs/dgal_divida_2015.pdf",
+        "source_sha256": "6bac735fbee73358d8c7179c4f0ec9dd93f4f83036cf9184526583eb12c39f16",
+        "source_sha256_prefix": "6bac735fbee73358",
+        "start": 1,
+        "value": "77 698 527"
+       }
+      ],
+      "text": "€77 698 527​"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "228.2",
+        "row": "evora-indice-2015",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "228.2"
+       }
+      ],
+      "text": "228.2%​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2016​"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "74 760 717",
+        "row": "dgal-divida-2016",
+        "source_digest_em": "07 Évora Municipal Accounts/Technical Source/raw/pdfs/dgal_divida_2016.pdf",
+        "source_sha256": "cd69fd20a742353444f14886071b0ac3bcf8f610d0d7d59249ad7f03c79a4cb7",
+        "source_sha256_prefix": "cd69fd20a7423534",
+        "start": 1,
+        "value": "74 760 717"
+       }
+      ],
+      "text": "€74 760 717​"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "208.3",
+        "row": "evora-indice-2016",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "208.3"
+       }
+      ],
+      "text": "208.3%​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2017​"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "69 826 899",
+        "row": "dgal-divida-2017",
+        "source_digest_em": "07 Évora Municipal Accounts/Technical Source/raw/pdfs/dgal_divida_2017.pdf",
+        "source_sha256": "241c04d834f76bf7dc538a4b15600850fc8a983f1f96c199e9a4e6dfb4ff009c",
+        "source_sha256_prefix": "241c04d834f76bf7",
+        "start": 1,
+        "value": "69 826 899"
+       }
+      ],
+      "text": "€69 826 899​"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "182.0",
+        "row": "evora-indice-2017",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "182.0"
+       }
+      ],
+      "text": "182.0%​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2018​"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "66 243 125",
+        "row": "dgal-divida-2018",
+        "source_digest_em": "07 Évora Municipal Accounts/Technical Source/raw/pdfs/dgal_divida_2018.pdf",
+        "source_sha256": "e4e28670ea9e51db58b05f45bbc7cc669d7e1296e781770d8d4f0bda0e538971",
+        "source_sha256_prefix": "e4e28670ea9e51db",
+        "start": 1,
+        "value": "66 243 125"
+       }
+      ],
+      "text": "€66 243 125​"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "165.7",
+        "row": "evora-indice-2018",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "165.7"
+       }
+      ],
+      "text": "165.7%​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2019​"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "64 390 566",
+        "row": "dgal-divida-2019",
+        "source_digest_em": "07 Évora Municipal Accounts/Technical Source/raw/pdfs/dgal_divida_2019.pdf",
+        "source_sha256": "f607f0c8749b91f9b6476190435200cfe59959753438f025b9ef8ac1bfed4fcd",
+        "source_sha256_prefix": "f607f0c8749b91f9",
+        "start": 1,
+        "value": "64 390 566"
+       }
+      ],
+      "text": "€64 390 566​"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "152.8",
+        "row": "evora-indice-2019",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "152.8"
+       }
+      ],
+      "text": "152.8%​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2020​"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "64 827 142",
+        "row": "dgal-divida-2020",
+        "source_digest_em": "07 Évora Municipal Accounts/Technical Source/raw/pdfs/dgal_divida_2020.pdf",
+        "source_sha256": "b899782c02fc5f8756a4e79e40bc72286d6c29d824b49750618a51f2b5944ae1",
+        "source_sha256_prefix": "b899782c02fc5f87",
+        "start": 1,
+        "value": "64 827 142"
+       }
+      ],
+      "text": "€64 827 142​"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "148.6",
+        "row": "evora-indice-2020",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "148.6"
+       }
+      ],
+      "text": "148.6%​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2021​"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "61 737 315",
+        "row": "dgal-divida-2021",
+        "source_digest_em": "07 Évora Municipal Accounts/Technical Source/raw/pdfs/dgal_divida_2021.pdf",
+        "source_sha256": "6d3669ac26d971f952cfcd0ed233235ab109c84ab4c62e941ea5f9a13ff14b83",
+        "source_sha256_prefix": "6d3669ac26d971f9",
+        "start": 1,
+        "value": "61 737 315"
+       }
+      ],
+      "text": "€61 737 315​"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "141.9",
+        "row": "evora-indice-2021",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "141.9"
+       }
+      ],
+      "text": "141.9%​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2022​"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "58 379 210",
+        "row": "dgal-divida-2022",
+        "source_digest_em": "07 Évora Municipal Accounts/Technical Source/raw/pdfs/dgal_divida_2022.pdf",
+        "source_sha256": "2f2dcbf2df9c55e8bc6dfb7f52accc25c29d2599c4b0cb8c5e2951af8af012bf",
+        "source_sha256_prefix": "2f2dcbf2df9c55e8",
+        "start": 1,
+        "value": "58 379 210"
+       }
+      ],
+      "text": "€58 379 210​"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "130.3",
+        "row": "evora-indice-2022",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "130.3"
+       }
+      ],
+      "text": "130.3%​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2023​"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "55 862 259",
+        "row": "dgal-divida-2023",
+        "source_digest_em": "07 Évora Municipal Accounts/Technical Source/raw/pdfs/dgal_divida_2023.pdf",
+        "source_sha256": "67574c44145df6730559adbd60b23e91560d28635a30083d32bba41a050a4354",
+        "source_sha256_prefix": "67574c44145df673",
+        "start": 1,
+        "value": "55 862 259"
+       }
+      ],
+      "text": "€55 862 259​"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "118.1",
+        "row": "evora-indice-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "118.1"
+       }
+      ],
+      "text": "118.1%​"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "2024​"
+     },
+     {
+      "figures": [
+       {
+        "end": 11,
+        "printed": "54 681 562",
+        "row": "dgal-divida-2024",
+        "source_digest_em": "07 Évora Municipal Accounts/Technical Source/raw/pdfs/dgal_divida_2024.pdf",
+        "source_sha256": "f1d25a157b876584e96828a81b32d01d8b94d0b1b670f967659497d4e1938373",
+        "source_sha256_prefix": "f1d25a157b876584",
+        "start": 1,
+        "value": "54 681 562"
+       }
+      ],
+      "text": "€54 681 562​"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "105.5",
+        "row": "evora-indice-2024",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "105.5"
+       }
+      ],
+      "text": "105.5%​"
+     }
+    ]
+   ]
+  },
+  {
+   "emphasis": [
+    {
+     "end": 619,
+     "kind": "strong",
+     "start": 557
+    }
+   ],
+   "figures": [
+    {
+     "end": 124,
+     "printed": "242.6",
+     "row": "evora-indice-2014",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 119,
+     "value": "242.6"
+    },
+    {
+     "end": 413,
+     "printed": "21.13",
+     "row": "invest-exec-pct",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 408,
+     "value": "21.13"
+    },
+    {
+     "end": 491,
+     "printed": "28 192 653",
+     "row": "margem-endividamento-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 481,
+     "value": "28 192 653"
+    }
+   ],
+   "i": 60,
+   "kind": "paragraph",
+   "text": "Read down the index column: Évora spent the middle of the last decade far above the legal ceiling — the index opens at 242.6% — and crossed back under it only in 2020. The index falls in every year of the table, even in 2020 when the euro amount itself ticked up — revenue grew faster. Ten years of paying down the rescue debt is the context for every number in this document: for why investment executes at 21.13%, for why the plan's money goes to debt operations, and for why a €28 192 653 margin is a genuine achievement rather than an accounting nicety (inference; the table is the source's, the connection is ours)."
+  },
+  {
+   "figures": [],
+   "i": 61,
+   "kind": "paragraph",
+   "text": "Two more things the regulator's file supports, both computed over its own rows and recorded as derivations in the ledger:"
+  },
+  {
+   "i": 62,
+   "items": [
+    {
+     "figures": [
+      {
+       "end": 78,
+       "printed": "926",
+       "row": "dgal-report-residual-2024",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 75,
+       "value": "926"
+      },
+      {
+       "end": 233,
+       "printed": "77 764 656",
+       "row": "dgal-limite-2024",
+       "source_digest_em": "07 Évora Municipal Accounts/Technical Source/raw/pdfs/dgal_divida_2024.pdf",
+       "source_sha256": "f1d25a157b876584e96828a81b32d01d8b94d0b1b670f967659497d4e1938373",
+       "source_sha256_prefix": "f1d25a157b876584",
+       "start": 223,
+       "value": "77 764 656"
+      }
+     ],
+     "text": "Against the municipality's own 2024 figure, DGAL's 2024 figure differs by €926 — on a debt of fifty-four million, the two tellings agree to within a thousand euros. DGAL's file also carries its own 2024 ceiling for Évora, €77 764 656, on the same legal formula."
+    },
+    {
+     "figures": [
+      {
+       "end": 14,
+       "printed": "308",
+       "row": "municipios-total",
+       "source_digest_kind": "raw-sem-manifesto",
+       "source_sha256": null,
+       "start": 11,
+       "value": "308"
+      },
+      {
+       "end": 86,
+       "printed": "21",
+       "row": "evora-rank-2024",
+       "source_digest_kind": "raw-sem-manifesto",
+       "source_sha256": null,
+       "start": 84,
+       "value": "21"
+      },
+      {
+       "end": 146,
+       "printed": "23",
+       "row": "municipios-over100-2024",
+       "source_digest_kind": "raw-sem-manifesto",
+       "source_sha256": null,
+       "start": 144,
+       "value": "23"
+      }
+     ],
+     "text": "Across all 308 municipalities in the 2024 file, Évora's debt index sits at position 21 counted from the most indebted, and Évora is one of only 23 municipalities whose debt still exceeds their revenue average at all."
+    }
+   ],
+   "kind": "list",
+   "ordered": false
+  },
+  {
+   "figures": [
+    {
+     "end": 211,
+     "printed": "39.8",
+     "row": "anuario-indice-nacional-2023",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 207,
+     "value": "39.8"
+    },
+    {
+     "end": 227,
+     "printed": "12",
+     "row": "anuario-excederam-2023",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 225,
+     "value": "12"
+    }
+   ],
+   "i": 63,
+   "kind": "paragraph",
+   "text": "The national yardstick makes the same point from the other direction: the Anuário Financeiro's presentation — academic, not government, and for accounts year 2023 — puts the national municipal debt index at 39.8%, and counts 12 municipalities over the legal limit in 2023, a list on which Évora does not appear. Évora is legal, and it is also one of the most indebted municipalities in Portugal relative to its revenue. Both are true, and this document declines to print one without the other."
+  },
+  {
+   "i": 64,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 65,
+   "kind": "heading",
+   "level": 2,
+   "text": "What the auditor signed — and what could not be signed"
+  },
+  {
+   "figures": [
+    {
+     "end": 531,
+     "printed": "2.8",
+     "row": "clc-credores-nao-corrente",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 528,
+     "value": "2.8"
+    }
+   ],
+   "i": 66,
+   "kind": "paragraph",
+   "text": "The Certificação Legal das Contas for 2025, signed 2026-04-17 by Marques, Cruz & Associados, SROC, is a clean opinion: the financial statements present the municipality's position truly and appropriately, and the budgetary statements comply with public-accounting norms. It carries emphases — matters flagged without qualifying the opinion: a bank reconciliation clean-up begun in 2025 and due to finish in 2026; the de-recognition of the low-voltage electricity-grid concession assets under a 2025 accounting instruction; some 2.8 million euros of creditor balances that are in substance non-current; and the existence of the arrears the debt section already quantified."
+  },
+  {
+   "figures": [
+    {
+     "end": 152,
+     "printed": "2",
+     "row": "clc-2024-votos-favor",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 151,
+     "value": "2"
+    },
+    {
+     "end": 171,
+     "others": [
+      "evora2027-receita-prevista"
+     ],
+     "printed": "5",
+     "row": "clc-2024-votos-contra",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 170,
+     "value": "5"
+    }
+   ],
+   "i": 67,
+   "kind": "paragraph",
+   "text": "Under \"other matters\" sits the sentence with the longest shadow: the proposal for the 2024 accounts was rejected in the Câmara meeting of 2025-05-28 — 2 votes in favour, 5 against — and the auditor therefore issued a Declaration of Impossibility of Legal Certification for 2024. A year of this municipality's accounts exists without an external signature. The 2025 opinion being clean means the books recovered their external witness; it does not certify 2024 retroactively, and nothing in this document treats the 2024 comparatives as if it did."
+  },
+  {
+   "i": 68,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 69,
+   "kind": "heading",
+   "level": 2,
+   "text": "The books, briefly"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 564,
+     "kind": "strong",
+     "start": 553
+    }
+   ],
+   "figures": [
+    {
+     "end": 90,
+     "printed": "212 967 096",
+     "row": "ativo-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 79,
+     "value": "212 967 096"
+    },
+    {
+     "end": 121,
+     "printed": "63 735 757",
+     "row": "passivo-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 111,
+     "value": "63 735 757"
+    },
+    {
+     "end": 145,
+     "printed": "149 231 339",
+     "row": "patrimonio-liquido-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 134,
+     "value": "149 231 339"
+    },
+    {
+     "end": 196,
+     "printed": "2 443 292",
+     "row": "resultado-liquido-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 187,
+     "value": "2 443 292"
+    },
+    {
+     "end": 226,
+     "printed": "4 591 039",
+     "row": "resultado-liquido-2024",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 217,
+     "value": "4 591 039"
+    },
+    {
+     "end": 328,
+     "printed": "6 248 696",
+     "row": "ebitda-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 319,
+     "value": "6 248 696"
+    },
+    {
+     "end": 366,
+     "printed": "68 276 720",
+     "row": "rendimentos-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 356,
+     "value": "68 276 720"
+    },
+    {
+     "end": 386,
+     "printed": "70 720 012",
+     "row": "gastos-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 376,
+     "value": "70 720 012"
+    }
+   ],
+   "i": 70,
+   "kind": "paragraph",
+   "text": "For completeness, the accrual picture behind the cash story. Total assets are €212 967 096; total liabilities €63 735 757; net worth €149 231 339. The year's accrual result is a loss of €2 443 292, against a loss of €4 591 039 the year before — nearly halved. Before depreciation and financing the year is positive by €6 248 696. Total accrual income was €68 276 720 against €70 720 012 of expense. The municipal balance sheet is solvent many times over on paper; the pressure in these accounts has never been about net worth, it is about cash and time (inference)."
+  },
+  {
+   "figures": [
+    {
+     "end": 142,
+     "printed": "6 151 351",
+     "row": "equilibrio-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 133,
+     "value": "6 151 351"
+    }
+   ],
+   "i": 71,
+   "kind": "paragraph",
+   "text": "The budget-balance rule of the finance law — current revenue must cover current spending plus average loan repayment — is met, with €6 151 351 to spare, as it has been in each year of the report's four-year window."
+  },
+  {
+   "i": 72,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 73,
+   "kind": "heading",
+   "level": 2,
+   "text": "The money promised from outside"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 61,
+     "kind": "em",
+     "start": 25
+    }
+   ],
+   "figures": [
+    {
+     "end": 175,
+     "printed": "167 372 756",
+     "row": "prr-approved-evora-0804",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 164,
+     "value": "167 372 756"
+    },
+    {
+     "end": 194,
+     "printed": "86 944 669",
+     "row": "prr-paid-evora-0804",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 184,
+     "value": "86 944 669"
+    }
+   ],
+   "i": 74,
+   "kind": "paragraph",
+   "text": "The companion document — Évora — Promised, Paid, Audited 2026 — read the recovery-plan register on 2026-08-04: approved money attributed to the concelho of Évora, €167 372 756; paid, €86 944 669. That register republishes daily with no history, so those figures are that snapshot's, and are carried here with their original provenance."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 627,
+     "kind": "strong",
+     "start": 568
+    }
+   ],
+   "figures": [
+    {
+     "end": 82,
+     "printed": "1 087 287",
+     "row": "cofinanciados-capital-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 73,
+     "value": "1 087 287"
+    }
+   ],
+   "i": 75,
+   "kind": "paragraph",
+   "text": "Set against them, from these accounts: the municipality itself received €1 087 287 in co-financed capital transfers in all of 2025. The distance between a hundred-and-sixty-million-euro promise to the place and a one-million-euro arrival at the town hall is the single most clarifying join these two documents produce. The PRR money attributed to Évora overwhelmingly flows through entities other than the municipality — the university, the health service, housing bodies, national agencies — and the part that is the Câmara's to spend has, so far, mostly not arrived (inference; each figure is sourced above, the join is ours)."
+  },
+  {
+   "i": 76,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 77,
+   "kind": "heading",
+   "level": 2,
+   "text": "What 2026 says it will do"
+  },
+  {
+   "figures": [
+    {
+     "end": 48,
+     "printed": "110 840 577",
+     "row": "om-2026-total",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 37,
+     "value": "110 840 577"
+    },
+    {
+     "end": 102,
+     "printed": "3 984 060",
+     "row": "evora2027-gop-2026",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 93,
+     "value": "3 984 060"
+    }
+   ],
+   "i": 78,
+   "kind": "paragraph",
+   "text": "The budget in force for 2026 totals €110 840 577 — larger again than 2025's. Inside it sits €3 984 060 for the \"Évora 2027\" works. Whether 2026's execution extends the falling series in this document's first table is the first thing to check when the 2026 accounts appear, roughly in the spring of 2027."
+  },
+  {
+   "i": 79,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 80,
+   "kind": "heading",
+   "level": 2,
+   "text": "What to make of it"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 410,
+     "kind": "strong",
+     "start": 399
+    }
+   ],
+   "figures": [],
+   "i": 81,
+   "kind": "paragraph",
+   "text": "Everything above is the record; this section is a reading of it, added at the owner's request and signed by its author: it was written by the model that assembled the document, and it is the part that goes past what the sources state. Every figure in it repeats a ledger row already printed above; the connections and the emphasis are interpretation, and the sentences that interpret carry the same (inference) label the rest of the document uses."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 26,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [
+    {
+     "end": 54,
+     "printed": "109 483 315",
+     "row": "om-2025-corrigido",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 43,
+     "value": "109 483 315"
+    },
+    {
+     "end": 77,
+     "printed": "67 263 297",
+     "row": "receita-cobrada-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 67,
+     "value": "67 263 297"
+    },
+    {
+     "end": 99,
+     "printed": "65 565 050",
+     "row": "despesa-paga-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 89,
+     "value": "65 565 050"
+    },
+    {
+     "end": 333,
+     "printed": "54 379 035",
+     "row": "divida-total-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 323,
+     "value": "54 379 035"
+    },
+    {
+     "end": 551,
+     "printed": "137",
+     "row": "pmp-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 548,
+     "value": "137"
+    }
+   ],
+   "i": 82,
+   "kind": "paragraph",
+   "text": "The year in one paragraph. Évora budgeted €109 483 315, collected €67 263 297, and paid €65 565 050. Half of what it spends arrives from the State; more than half of what it spends itself is wages. It invested about a fifth of what it planned, serviced its rescue-era bank debt almost exactly on schedule, and closed with €54 379 035 of total debt — legal, with room to spare, for a municipality that spent the middle of the last decade far above the legal ceiling. The strain shows somewhere else entirely: in the unpaid supplier invoices and the 137-day payment queue."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 66,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 499,
+     "kind": "strong",
+     "start": 488
+    }
+   ],
+   "figures": [
+    {
+     "end": 94,
+     "printed": "96",
+     "row": "exec-2021-pct",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 92,
+     "value": "96"
+    },
+    {
+     "end": 104,
+     "printed": "61.44",
+     "row": "receita-exec-pct",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 99,
+     "value": "61.44"
+    },
+    {
+     "end": 350,
+     "printed": "110 840 577",
+     "row": "om-2026-total",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 339,
+     "value": "110 840 577"
+    }
+   ],
+   "i": 83,
+   "kind": "paragraph",
+   "text": "The budget is a forecast of hopes; the execution rate is the fact. The rate has fallen from 96% to 61.44% in four years, and the mechanism is visible in the record: money from outside — recovery-plan works, the hospital protocol — is budgeted before anyone else has committed it, and then does not arrive. So the size of the 2026 budget, €110 840 577, larger again, predicts very little by itself; the first number worth checking in the 2026 accounts is the execution rate, not the total (inference)."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 41,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 548,
+     "kind": "strong",
+     "start": 537
+    }
+   ],
+   "figures": [
+    {
+     "end": 109,
+     "printed": "242.6",
+     "row": "evora-indice-2014",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 104,
+     "value": "242.6"
+    },
+    {
+     "end": 119,
+     "printed": "105.5",
+     "row": "evora-indice-2024",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 114,
+     "value": "105.5"
+    },
+    {
+     "end": 221,
+     "printed": "70.20",
+     "row": "fornecedores-corrente-var-pct",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 216,
+     "value": "70.20"
+    },
+    {
+     "end": 295,
+     "printed": "137",
+     "row": "pmp-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 292,
+     "value": "137"
+    },
+    {
+     "end": 323,
+     "printed": "4 976 172",
+     "row": "atrasos-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 314,
+     "value": "4 976 172"
+    }
+   ],
+   "i": 84,
+   "kind": "paragraph",
+   "text": "Two debts, moving in opposite directions. The bank layer falls on schedule — the regulator's index runs 242.6% to 105.5% across eleven years, a genuinely disciplined decade. The supplier layer is doing the opposite: 70.20% growth in the ordinary supplier line in one year, a payment queue of 137 days, arrears of €4 976 172 for the second year running. Read together, part of the room to keep amortising the past is being taken from the patience of present suppliers — the composition of the debt is worsening even while its total falls (inference)."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 33,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 231,
+     "kind": "strong",
+     "start": 220
+    },
+    {
+     "end": 593,
+     "kind": "strong",
+     "start": 582
+    }
+   ],
+   "figures": [
+    {
+     "end": 57,
+     "printed": "96.55",
+     "row": "pessoal-exec-pct",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 52,
+     "value": "96.55"
+    },
+    {
+     "end": 84,
+     "printed": "93.64",
+     "row": "amortizacoes-exec-pct",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 79,
+     "value": "93.64"
+    },
+    {
+     "end": 106,
+     "printed": "21.13",
+     "row": "invest-exec-pct",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 101,
+     "value": "21.13"
+    },
+    {
+     "end": 380,
+     "printed": "167 372 756",
+     "row": "prr-approved-evora-0804",
+     "source_digest_kind": "raw-sem-manifesto",
+     "source_sha256": null,
+     "start": 369,
+     "value": "167 372 756"
+    },
+    {
+     "end": 442,
+     "printed": "1 087 287",
+     "row": "cofinanciados-capital-2025",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 433,
+     "value": "1 087 287"
+    }
+   ],
+   "i": 85,
+   "kind": "paragraph",
+   "text": "Investment is the shock absorber. Wages executed at 96.55%, loan repayments at 93.64%, investment at 21.13%. The first two are contractual; when revenue disappoints, the investment line is where the disappointment lands (inference). Meanwhile the investment that carries Évora's name is mostly being made by hands other than the Câmara's: the recovery plan attributes €167 372 756 to the place, and the municipality itself received €1 087 287 of co-financed capital in the year. The town hall is, for now, closer to a spectator than a builder of the investment named after its city (inference)."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 49,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [
+    {
+     "end": 83,
+     "printed": "2",
+     "row": "clc-2024-votos-favor",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 82,
+     "value": "2"
+    },
+    {
+     "end": 88,
+     "others": [
+      "evora2027-receita-prevista"
+     ],
+     "printed": "5",
+     "row": "clc-2024-votos-contra",
+     "source_digest_kind": "pdf-sem-resumo",
+     "source_sha256": null,
+     "start": 87,
+     "value": "5"
+    }
+   ],
+   "i": 86,
+   "kind": "paragraph",
+   "text": "The unsigned year is the governance fact to keep. The 2024 accounts were rejected 2 to 5 and exist without external certification. The clean 2025 opinion restores the external witness going forward; it cannot restore it backward, and every multi-year table in this document inherits that asterisk on its 2024 column."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 19,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [],
+   "i": 87,
+   "kind": "paragraph",
+   "text": "What to watch next."
+  },
+  {
+   "i": 88,
+   "items": [
+    {
+     "figures": [],
+     "text": "The 2026 execution rate, when the accounts appear around spring 2027 — does the falling series break?"
+    },
+    {
+     "figures": [
+      {
+       "end": 61,
+       "printed": "3 984 060",
+       "row": "evora2027-gop-2026",
+       "source_digest_kind": "pdf-sem-resumo",
+       "source_sha256": null,
+       "start": 52,
+       "value": "3 984 060"
+      }
+     ],
+     "text": "Whether the \"Évora 2027\" money budgeted for 2026 — €3 984 060 — actually lands, after 2025's zero."
+    },
+    {
+     "figures": [],
+     "text": "The supplier line and the payment queue: the first sign of genuine easing would be those two turning before anything else does."
+    },
+    {
+     "emphasis": [
+      {
+       "end": 202,
+       "kind": "strong",
+       "start": 191
+      }
+     ],
+     "figures": [
+      {
+       "end": 48,
+       "printed": "105.5",
+       "row": "evora-indice-2024",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 43,
+       "value": "105.5"
+      }
+     ],
+     "text": "DGAL's next file: the 2024 index stands at 105.5%, and every year of the series stands above the revenue average — the index falling through that line would be the true end of the rescue era (inference)."
+    }
+   ],
+   "kind": "list",
+   "ordered": false
+  },
+  {
+   "i": 89,
+   "kind": "rule"
+  },
+  {
+   "i": 90,
+   "items": [
+    {
+     "emphasis": [
+      {
+       "end": 24,
+       "kind": "strong",
+       "start": 0
+      },
+      {
+       "end": 63,
+       "kind": "strong",
+       "start": 29
+      }
+     ],
+     "figures": [],
+     "text": "Prestação de Contas 2025 and Certificação Legal das Contas 2025, Câmara Municipal de Évora — the accounts and the auditor's opinion."
+    },
+    {
+     "emphasis": [
+      {
+       "end": 40,
+       "kind": "strong",
+       "start": 0
+      }
+     ],
+     "figures": [],
+     "text": "Grandes Opções do Plano e Orçamento 2026, Câmara Municipal de Évora — the budget in force."
+    },
+    {
+     "emphasis": [
+      {
+       "end": 45,
+       "kind": "strong",
+       "start": 0
+      }
+     ],
+     "figures": [],
+     "text": "Evolução do endividamento total por município, DGAL, eleven annual files, accounts years 2014–2024 — the regulator's independent debt series. The pre-2014 files use a different legal debt concept and were not read."
+    },
+    {
+     "emphasis": [
+      {
+       "end": 50,
+       "kind": "strong",
+       "start": 0
+      }
+     ],
+     "figures": [],
+     "text": "Anuário Financeiro dos Municípios Portugueses 2024 — conclusions presentation only, hosted by OCC; an academic source, labelled as such wherever it appears. The full study is not openly published."
+    }
+   ],
+   "kind": "list",
+   "ordered": false
+  }
+ ],
+ "edition": "Évora — Budgeted, Paid, Owed 2025",
+ "lang": "en",
+ "ledger": "ledger.json",
+ "prova": "edicao-html",
+ "schema": "oedp/registo-de-conteudo/1",
+ "source": "Évora — Budgeted, Paid, Owed 2025.html",
+ "title": "Évora — what was budgeted, what was paid, and what is owed"
+}
