@@ -507,7 +507,9 @@ foi tocado.*
 | repositório | commit | o quê |
 |---|---|---|
 | sítio | `60f8cd8` | a porta a seguir à ligação: `registo-html.mjs`, `TextoView.astro`, `texto.css`, a chave `estudos.textoPortaDaLinha`, o L6 do portão, o C6 do `check:cadeia`, as duas chaves na vista `dist`, e as duas contagens da prosa nos dois comentários do código |
-| sítio | (este) | o registo: a subsecção na `DECISIONS.md` §1.64, as duas contagens da prosa na §1.64 e na §2.2 item 9, a tabela de vistas da §2.2 item 7, a `CHAVES-EN.md`, esta nota e a `ISSUES.md` (I67 e I68) |
+| sítio | `bda37e8` | o registo: a subsecção na `DECISIONS.md` §1.64, as duas contagens da prosa na §1.64 e na §2.2 item 9, a tabela de vistas da §2.2 item 7, a `CHAVES-EN.md`, esta nota e a `ISSUES.md` (I67 e I68) |
+| sítio | `ca39135` | as onze frases desta ronda que levavam travessão passam a parênteses, dois pontos ou vírgula, sem uma palavra mudada |
+| sítio | (este) | esta tabela, com os três commits acima |
 
 ### O achado, medido antes e depois
 
