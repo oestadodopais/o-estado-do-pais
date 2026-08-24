@@ -143,6 +143,41 @@
 .texto-figura-porta:focus-visible {
   text-decoration-color: var(--ink);
 }
+
+/* A PORTA QUE VAI A SEGUIR A UMA LIGAÇÃO DO DOCUMENTO.
+ *
+ * Onde a figura está dentro de uma ligação do próprio documento, ela não pode
+ * ser a âncora (uma âncora não aninha noutra) e a porta vai a seguir à ligação,
+ * como o selo. A âncora não tem texto: o glifo é daqui, e por isso não entra na
+ * leitura do olho nem na comparação da unidade.
+ *
+ * O ALVO É A CAIXA DA PRÓPRIA PORTA, e não uma área posicionada de 44px como a
+ * do selo. A razão está medida na `site.css`, ao lado da área do selo: duas
+ * áreas de 44px a 13px uma da outra sobrepõem-se, e uma área sobreposta não é
+ * um alvo maior — é uma porta que abre a linha do vizinho. As portas de uma
+ * mesma ligação ficam encostadas (o bloco 62 do 04 tem células com três), e por
+ * isso cada uma leva uma caixa própria de 24px, que é o mínimo da 2.5.8 e não
+ * se sobrepõe à seguinte. Onde a entrelinha é menor do que isso (as tabelas), a
+ * linha cresce para a caber, que é o preço honesto de um alvo a sério. */
+.texto-figura-porta-apos {
+  display: inline-block;
+  width: 24px;
+  line-height: 24px;
+  text-align: center;
+  vertical-align: baseline;
+  color: inherit;
+  text-decoration: none;
+}
+.texto-figura-porta-apos::after {
+  content: '→';
+  font-family: var(--f-instr);
+  font-size: 12px;
+  color: var(--g2);
+}
+.texto-figura-porta-apos:hover::after,
+.texto-figura-porta-apos:focus-visible::after {
+  color: var(--ink);
+}
 /* O selo colado à figura não se cola ao olho: o afastamento é da folha, e não
    de um nó de texto no gabarito (o contrato da nona origem proíbe-o). */
 .texto-artigo .src-chip {

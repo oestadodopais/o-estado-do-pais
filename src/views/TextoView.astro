@@ -5,8 +5,10 @@
  *
  * NÃO É UMA COMPOSIÇÃO DA CASA, É UMA TRANSCRIÇÃO. A restrição que manda está
  * medida na §0.3 do plano da parte 3: das 2 601 figuras das oito edições com
- * registo, 2 396 não têm linha no livro-razão deste sítio, e das 196 que têm,
- * 119 imprimem no documento uma cadeia diferente da que a linha guarda. Uma
+ * registo, 2 405 não têm linha no livro-razão deste sítio (9 delas de linhas
+ * que o motor excluiu da travessia, com a razão escrita no seu manifesto), e
+ * das 196 que têm, 119 imprimem no documento uma cadeia diferente da que a
+ * linha guarda. Uma
  * página que pusesse cada algarismo dentro de um `<Claim>` ou não teria `id`
  * nenhum para lhe dar, ou imprimiria uma cadeia que o documento não imprime — e
  * deixaria de ser o documento. Por isso cada algarismo entra pela nona origem,
@@ -68,7 +70,12 @@ const path = routePath('texto', lang, { slug });
    manifesto dos registos que diz de que estudo do motor esta edição é. */
 const linhaDoSitio = linhaDoSitioDoEstudo(entrada.rh_study);
 
-const pecas = pecasDoCorpo({ registo, chave, linhaDoSitio });
+const pecas = pecasDoCorpo({
+  registo,
+  chave,
+  linhaDoSitio,
+  rotuloDaPorta: s.estudos.textoPortaDaLinha,
+});
 const linhas = linhasDoDocumento(registo, chave, linhaDoSitio);
 const contas = contasDoRegisto(registo, chave, linhaDoSitio);
 

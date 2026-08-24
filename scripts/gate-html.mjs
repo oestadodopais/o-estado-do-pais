@@ -373,9 +373,19 @@ let paginasDeTexto = 0;
  * AS MARCAS DAS PÁGINAS DE LEITURA, CONTADAS NO `dist/` E MAIS NADA
  * ---------------------------------------------------------------------------
  *
- * Quatro das oito chaves `registos_*` contam-se aqui, sobre o que foi
- * construído: as páginas de leitura que existem, as marcas
- * `data-registo-bloco`, as marcas `data-registo` e os selos colados às figuras.
+ * SEIS das oito chaves `registos_*` contam-se aqui, sobre o que foi construído:
+ * as páginas de leitura que existem, as marcas `data-registo-bloco`, as marcas
+ * `data-registo`, os selos colados às figuras, e as saídas que nomeiam a linha
+ * do motor de cada figura.
+ *
+ * **`registos_resolvidos` e `registos_por_resolver` passaram para aqui a
+ * 24.08.2026** (ronda de correções 1), e a razão é uma coisa que mudou na
+ * página: até então, as 42 figuras que estão dentro de uma ligação do documento
+ * não tinham saída nenhuma — a porta estava só na entrada da linha —, e o
+ * `dist/` não sabia nomear a linha do motor que as resolve. Com a porta a ir
+ * imediatamente depois da ligação, cada figura tem no `dist/` uma saída que
+ * nomeia a sua linha, e as duas chaves deixaram a vista `registos` (uma segunda
+ * leitura dos mesmos ficheiros) pela vista `dist` (o que foi construído).
  *
  * **Não é o passeio do `verificaTexto()`, e é de propósito.** Aquele percorre o
  * registo e vai buscar à página o que o registo diz que lá deve estar; este
@@ -383,7 +393,7 @@ let paginasDeTexto = 0;
  * passeio, um erro nele contava-se a si próprio, e a comparação com
  * `src/lib/prova.mjs` deixava de ser entre dois pontos de observação.
  */
-const MARCAS_DO_TEXTO = { paginas: 0, blocos: 0, figuras: 0, selos: 0 };
+const MARCAS_DO_TEXTO = { paginas: 0, blocos: 0, figuras: 0, selos: 0, portas: 0, portasSemLinha: 0 };
 
 function contaAsMarcasDoTexto(root) {
   const artigo = root.querySelector('[data-registo-edicao]');
@@ -395,6 +405,15 @@ function contaAsMarcasDoTexto(root) {
      sempre ao lado de uma figura com linha do sítio (o L6 confere-o um a um);
      contá-los é contar essas figuras, sem lhes perguntar a linha. */
   MARCAS_DO_TEXTO.selos += artigo.querySelectorAll('a.src-chip').length;
+  /* As portas do corpo transcrito, as duas formas: a figura que é ela própria a
+     âncora, e a que vai a seguir a uma ligação do documento. Uma porta que abre
+     `#linha-` e mais nada é uma figura cuja linha do motor está vazia — é o que
+     o `check:cadeia` nomeia no passo 2, contado aqui pelo lado da página. */
+  for (const porta of artigo.querySelectorAll('a[href^="#linha-"]')) {
+    const href = decodeEntities(porta.getAttribute('href') ?? '');
+    if (href === '#linha-') MARCAS_DO_TEXTO.portasSemLinha++;
+    else MARCAS_DO_TEXTO.portas++;
+  }
 }
 
 /* ------------------------------------------------------------------ auxiliares */
@@ -881,8 +900,9 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
  * casa a partir do REGISTO DE CONTEÚDO que o motor escreve, e de mais nada. Não
  * é uma composição da casa: é uma **transcrição de um documento fixado**, e a
  * §0.3 do plano da parte 3 mediu porquê — das 2 601 figuras das oito edições,
- * 2 396 não têm linha no livro-razão deste sítio, e das 196 que têm, 119
- * imprimem no documento uma cadeia diferente da que a linha guarda.
+ * 2 405 não têm linha no livro-razão deste sítio (9 delas de linhas que o motor
+ * excluiu da travessia, com a razão escrita no seu manifesto), e das 196 que
+ * têm, 119 imprimem no documento uma cadeia diferente da que a linha guarda.
  *
  * Por isso cada algarismo entra pela NONA ORIGEM, `data-registo`, com a forma da
  * oitava: o portão compara o texto renderizado com o `printed` daquela figura,
@@ -990,10 +1010,44 @@ function irmaoColado(el) {
   return { irmao: null, texto: null };
 }
 
+/** As classes de um elemento, como lista. */
+const classesDe = (n) => String(n?.getAttribute?.('class') ?? '').split(/\s+/);
+
 const eSelo = (n) =>
+  n && String(n.rawTagName ?? '').toLowerCase() === 'a' && classesDe(n).includes('src-chip');
+
+/**
+ * A porta que vai a seguir a uma ligação do documento: a saída de uma figura
+ * que está dentro de uma ligação e por isso não pode ser ela própria a âncora.
+ * Não tem texto — o glifo é da folha —, e por isso é invisível à leitura do
+ * olho e à comparação da unidade.
+ */
+const ePortaAposALigacao = (n) =>
   n &&
   String(n.rawTagName ?? '').toLowerCase() === 'a' &&
-  String(n.getAttribute('class') ?? '').split(/\s+/).includes('src-chip');
+  classesDe(n).includes('texto-figura-porta-apos');
+
+/**
+ * Os elementos irmãos COLADOS a este, em ordem, e o primeiro nó de texto que os
+ * interrompe. Uma ligação do documento pode ter várias figuras lá dentro, e as
+ * suas saídas vêm todas a seguir a ela, na ordem das figuras: é esta corrida que
+ * o L6 percorre para saber qual saída é de qual figura.
+ */
+function irmaosColados(el) {
+  const pai = el?.parentNode;
+  if (!pai) return { irmaos: [], texto: null };
+  const filhos = pai.childNodes ?? [];
+  const irmaos = [];
+  for (let k = filhos.indexOf(el) + 1; k < filhos.length; k++) {
+    const n = filhos[k];
+    if (n.nodeType === NodeType.TEXT_NODE) {
+      if (n.rawText === '') continue;
+      return { irmaos, texto: n.rawText };
+    }
+    if (n.nodeType === NodeType.ELEMENT_NODE) irmaos.push(n);
+  }
+  return { irmaos, texto: null };
+}
 
 function verificaTexto({ rota, root, err }) {
   const { slug } = rota.params;
@@ -1204,7 +1258,23 @@ function verificaTexto({ rota, root, err }) {
       const enfaseRendida = [];
       const ligacoesRendidas = [];
       const figurasRendidas = [];
+      const portasRendidas = [];
       for (const e of elementos) {
+        /* A PORTA QUE VAI A SEGUIR A UMA LIGAÇÃO é a saída de uma figura, e não
+           uma ligação do documento: não tem texto nenhum, e por isso não pode
+           entrar na comparação dos intervalos do L3 (um intervalo vazio não
+           existe no registo). É conferida no L6, figura a figura. */
+        if (e.tag === 'a' && classesDe(e.el).includes('texto-figura-porta-apos')) {
+          if (e.fim > e.inicio) {
+            err(
+              `L6 ${marcaDaUnidade}: a porta que vai a seguir a uma ligação do documento tem ` +
+                `texto lá dentro, e não pode ter: o texto de uma unidade é o do documento, e o ` +
+                `glifo desta porta é da folha de estilos.`,
+            );
+          }
+          portasRendidas.push({ ...e, href: decodeEntities(e.el.getAttribute('href') ?? '') });
+          continue;
+        }
         const marcaDaFigura = decodeEntities(e.el.getAttribute('data-registo') ?? '');
         if (marcaDaFigura) {
           figurasRendidas.push({ ...e, marca: marcaDaFigura });
@@ -1267,6 +1337,28 @@ function verificaTexto({ rota, root, err }) {
             `${figurasDoRegisto.length}.`,
         );
       }
+
+      /* As figuras que cada ligação do documento contém, na ordem do documento.
+         É por esta lista que o L6 sabe qual das saídas coladas à ligação é a
+         desta figura: uma por figura, na ordem das figuras. */
+      const figurasDaLigacao = new Map();
+      for (const r of figurasRendidas) {
+        let n = r.el.parentNode;
+        r.ligacao = null;
+        while (n && n !== alvo) {
+          if (String(n.rawTagName ?? '').toLowerCase() === 'a' && !ePortaAposALigacao(n)) {
+            r.ligacao = n;
+            break;
+          }
+          n = n.parentNode;
+        }
+        if (!r.ligacao) continue;
+        if (!figurasDaLigacao.has(r.ligacao)) figurasDaLigacao.set(r.ligacao, []);
+        figurasDaLigacao.get(r.ligacao).push(r);
+      }
+      /** As portas desta unidade que já foram casadas com a sua figura. */
+      const portasCasadas = new Set();
+
       for (const rendida of figurasRendidas) {
         figurasNaPagina++;
         const sufixo = rendida.marca.startsWith(`${marcaDaUnidade}.`)
@@ -1322,15 +1414,22 @@ function verificaTexto({ rota, root, err }) {
           registoDaLinha.impressos.push(figura.printed);
         }
 
-        const dentroDeLigacao = (() => {
-          let n = rendida.el.parentNode;
-          while (n && n !== alvo) {
-            if (String(n.rawTagName ?? '').toLowerCase() === 'a') return n;
-            n = n.parentNode;
-          }
-          return null;
-        })();
-        const { irmao, texto: textoColado } = irmaoColado(dentroDeLigacao ?? rendida.el);
+        /* A SAÍDA DESTA FIGURA, E ONDE ELA TEM DE ESTAR.
+           Fora de uma ligação do documento, colada à própria figura. Dentro de
+           uma ligação, a seguir à ligação e na ordem das figuras: a k-ésima
+           saída colada à ligação é a da k-ésima figura que ela contém, selos e
+           portas intercalados. */
+        const dentroDeLigacao = rendida.ligacao;
+        let irmao = null;
+        let textoColado = null;
+        if (dentroDeLigacao) {
+          const k = (figurasDaLigacao.get(dentroDeLigacao) ?? []).indexOf(rendida);
+          const { irmaos, texto } = irmaosColados(dentroDeLigacao);
+          irmao = irmaos[k] ?? null;
+          textoColado = irmao === null ? texto : null;
+        } else {
+          ({ irmao, texto: textoColado } = irmaoColado(rendida.el));
+        }
 
         if (siteId) {
           const portas = LANGS.map((l) => routePath('linha', l, { slug: siteId }));
@@ -1361,18 +1460,54 @@ function verificaTexto({ rota, root, err }) {
           }
           const eAncora = String(rendida.el.rawTagName ?? '').toLowerCase() === 'a';
           const destino = `#linha-${figura.row}`;
-          if (eAncora) {
+          if (dentroDeLigacao) {
+            /* A PORTA VAI IMEDIATAMENTE DEPOIS DA LIGAÇÃO, e é a gémea da regra
+               do selo: uma âncora não aninha noutra, a ligação do documento
+               manda sobre o seu texto, e a IDENTIDADE.md §5.3 e §10 não abrem
+               exceção — onde aparece um valor, aparece a porta. */
+            if (!ePortaAposALigacao(irmao)) {
+              err(
+                `L6 ${rendida.marca}: a figura está dentro de uma ligação do documento e não tem ` +
+                  `a porta a seguir à ligação` +
+                  (textoColado !== null
+                    ? `: depois da ligação vem o nó de texto ${JSON.stringify(textoColado)}.`
+                    : '.') +
+                  ` Uma âncora não aninha noutra, e por isso a porta desta figura vai imediatamente ` +
+                  `depois da ligação, como o selo (IDENTIDADE.md §5.3 e §10).`,
+              );
+            } else {
+              portasCasadas.add(irmao);
+              const href = decodeEntities(irmao.getAttribute('href') ?? '');
+              if (href !== destino) {
+                err(
+                  `L6 ${rendida.marca}: a porta que vai a seguir à ligação abre "${href}" e a ` +
+                    `linha desta figura é "${figura.row}", cuja entrada é "${destino}".`,
+                );
+              }
+            }
+          } else if (eAncora) {
             const href = decodeEntities(rendida.el.getAttribute('href') ?? '');
             if (href !== destino) {
               err(`L6 ${rendida.marca}: a porta da figura abre "${href}" e devia abrir "${destino}".`);
             }
-          } else if (!dentroDeLigacao) {
+          } else {
             err(
               `L6 ${rendida.marca}: a figura não tem linha no livro-razão e não tem porta nenhuma. ` +
                 `Sem selo e sem porta, o algarismo não tem para onde levar o leitor.`,
             );
           }
         }
+      }
+
+      /* O outro sentido: uma porta a seguir a uma ligação que não é a saída de
+         figura nenhuma. Sem isto, uma porta a mais abria a entrada de uma linha
+         que este sítio da página não cita. */
+      for (const porta of portasRendidas) {
+        if (portasCasadas.has(porta.el)) continue;
+        err(
+          `L6 ${marcaDaUnidade}: esta unidade tem uma porta a seguir a uma ligação do documento ` +
+            `que abre "${porta.href}" e não é a saída de nenhuma das figuras dessa ligação.`,
+        );
       }
     }
   }
@@ -2405,7 +2540,11 @@ function provaDaOrtografia() {
  *              (parte 3, P3): os resumos de origem de uma figura não existem no
  *              `dist/` — a página transcreve o documento, não a proveniência de
  *              cada linha do motor — e por isso não há segundo ponto de
- *              observação para eles.
+ *              observação para eles. **Eram quatro chaves e são duas** desde a
+ *              ronda de correções 1 do mesmo dia: com a porta a ir a seguir a
+ *              uma ligação do documento, cada figura passou a ter no `dist/`
+ *              uma saída que nomeia a sua linha do motor, e `registos_resolvidos`
+ *              e `registos_por_resolver` passaram à vista `dist`.
  *   'modulo'   o mesmo módulo dos dois lados (a data da verificação, o endereço
  *              das correções). A conta é a mesma; o que fica conferido é que a
  *              página rendeu o que o módulo diz, e mais nada.
@@ -2456,24 +2595,30 @@ function contasDoPortao(claims) {
   /**
    * OS REGISTOS DE CONTEÚDO, LIDOS OUTRA VEZ COM O LEITOR DESTE PORTÃO.
    *
-   * Quatro das oito chaves `registos_*` não têm segundo ponto de observação: o
-   * resumo de origem de uma figura, e a linha do motor que a resolve, não estão
-   * no `dist/` — a página de leitura transcreve o DOCUMENTO, e a proveniência de
-   * cada linha do motor vive no registo. Estas quatro são por isso uma segunda
-   * implementação sobre os mesmos ficheiros, com a vista `registos`, que é a
-   * mesma disciplina (e a mesma força) da vista `ledger`.
+   * DUAS das oito chaves `registos_*` não têm segundo ponto de observação: o
+   * resumo de origem de uma figura não está no `dist/` — a página de leitura
+   * transcreve o DOCUMENTO, e a proveniência de cada linha do motor vive no
+   * registo. Estas duas são por isso uma segunda implementação sobre os mesmos
+   * ficheiros, com a vista `registos`, que é a mesma disciplina (e a mesma
+   * força) da vista `ledger`.
    *
-   * As outras quatro contam-se no `dist/`, em `contaAsMarcasDoTexto()`.
+   * **Eram quatro até 24.08.2026** (ronda de correções 1): a linha do motor que
+   * resolve uma figura também não estava no `dist/` enquanto as 42 figuras
+   * dentro de uma ligação do documento ficavam sem saída própria. Com a porta a
+   * ir imediatamente depois da ligação, cada figura passou a ter no `dist/` uma
+   * saída que nomeia a sua linha, e `registos_resolvidos` e
+   * `registos_por_resolver` passaram a contar-se lá, em
+   * `contaAsMarcasDoTexto()`.
+   *
+   * As outras seis contam-se no `dist/`.
    */
-  const dosRegistos = { resolvidos: 0, por_resolver: 0, com_resumo: 0, sem_resumo: 0 };
+  const dosRegistos = { com_resumo: 0, sem_resumo: 0 };
   for (const chave of Object.keys(TRAVESSIA_DOS_REGISTOS ?? {})) {
     const corte = chave.lastIndexOf('/');
     const registo = registoDoPortao(chave.slice(0, corte), chave.slice(corte + 1));
     for (const bloco of registo?.blocks ?? []) {
       for (const { unidade } of unidadesDoRegisto(bloco)) {
         for (const figura of unidade.figures ?? []) {
-          if (figura.row) dosRegistos.resolvidos++;
-          else dosRegistos.por_resolver++;
           if (/^[0-9a-f]{64}$/.test(String(figura.source_sha256 ?? ''))) dosRegistos.com_resumo++;
           else if (MOTIVOS_DO_REGISTO.has(figura.source_digest_kind)) dosRegistos.sem_resumo++;
         }
@@ -2645,16 +2790,20 @@ function contasDoPortao(claims) {
     conta('revisoes_de_proveniencia', porNatureza.proveniencia, 'ledger'),
     conta('endereco_correcoes', ENDERECO_CORRECOES, 'modulo'),
     /* AS OITO CHAVES DOS REGISTOS DE CONTEÚDO (parte 3, P3).
-       Quatro sobre o `dist/` construído e quatro numa segunda leitura dos
-       ficheiros de `registos/`. Nenhuma página as rende hoje: o que a
-       comparação A confere é que as duas contas da mesma coisa dão o mesmo
-       número, e a comparação B fica sem trabalho até haver um `data-prova` para
-       elas. Ver `DECISIONS.md` §1.64, P3. */
+       Seis sobre o `dist/` construído e duas numa segunda leitura dos ficheiros
+       de `registos/`. Nenhuma página as rende hoje: o que a comparação A
+       confere é que as duas contas da mesma coisa dão o mesmo número, e a
+       comparação B fica sem trabalho até haver um `data-prova` para elas. Ver
+       `DECISIONS.md` §1.64, P3 e a ronda de correções 1. */
     conta('registos_edicoes', MARCAS_DO_TEXTO.paginas, 'dist'),
     conta('registos_blocos', MARCAS_DO_TEXTO.blocos, 'dist'),
     conta('registos_algarismos', MARCAS_DO_TEXTO.figuras, 'dist'),
-    conta('registos_resolvidos', dosRegistos.resolvidos, 'registos'),
-    conta('registos_por_resolver', dosRegistos.por_resolver, 'registos'),
+    /* Uma figura resolvida é uma figura com uma saída que nomeia a sua linha do
+       motor: o selo, que só existe onde há linha do sítio e, com ela, linha do
+       motor; ou a porta, que abre a entrada dessa linha. Uma porta que abre
+       `#linha-` e mais nada é a figura cuja linha do motor está vazia. */
+    conta('registos_resolvidos', MARCAS_DO_TEXTO.selos + MARCAS_DO_TEXTO.portas, 'dist'),
+    conta('registos_por_resolver', MARCAS_DO_TEXTO.portasSemLinha, 'dist'),
     conta('registos_com_linha_do_sitio', MARCAS_DO_TEXTO.selos, 'dist'),
     conta('registos_com_resumo_de_origem', dosRegistos.com_resumo, 'registos'),
     conta('registos_sem_resumo_de_origem', dosRegistos.sem_resumo, 'registos'),

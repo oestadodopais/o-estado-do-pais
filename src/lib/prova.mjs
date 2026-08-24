@@ -191,9 +191,12 @@ const RESUMO_DE_ORIGEM = /^[0-9a-f]{64}$/;
  * A leitura é a de `src/lib/registos.mjs` e a estrutura de um bloco é a de
  * `src/lib/registo-html.mjs`: as duas são o lado das páginas, e uma terceira
  * cópia da mesma travessia só podia sair de passo com o que a página rende. O
- * PORTÃO é que não passa por aqui — reconta as oito por conta própria, quatro
- * sobre o `dist/` construído e quatro numa segunda leitura destes mesmos
+ * PORTÃO é que não passa por aqui — reconta as oito por conta própria, seis
+ * sobre o `dist/` construído e duas numa segunda leitura destes mesmos
  * ficheiros, e isso está declarado chave a chave em `scripts/gate-html.mjs`.
+ * (Eram quatro e quatro até 24.08.2026: com a porta a ir a seguir a uma ligação
+ * do documento, `registos_resolvidos` e `registos_por_resolver` passaram a
+ * poder contar-se no `dist/`.)
  *
  * Memoizado porque `prova()` é chamada uma vez por página construída: sem isto,
  * os oito registos (1,4 MB) eram lidos e analisados trezentas e quarenta vezes.
