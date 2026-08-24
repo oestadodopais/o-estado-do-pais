@@ -73,18 +73,21 @@ edicoes:
     bytes_normalized: 1059969
     sha256_raw: ceab4d26ceedf9aa20aa7864271354b4e66847fa617a2b561cc887644c39970a
     sha256_normalized: ceab4d26ceedf9aa20aa7864271354b4e66847fa617a2b561cc887644c39970a
+  # Republicada a 2026-08-24 do motor (estimativa da parte 3, pergunta 7): o
+  # texto alojado era igual ao da edição do motor, medido carácter a carácter,
+  # e a troca é só de proveniência de bytes, para que o D5 da parte 3 possa
+  # amarrar o registo de conteúdo aos bytes alojados.
   - slug: evora-economia-investidores-portas-abertas-2026
     lang: pt
     title: "Évora — Economia, Investidores, Portas Abertas 2026"
-    artifact_url: https://claude.ai/code/artifact/7f725a61-beca-4b02-ac03-046ca4eb050a
+    origin: researchhub
+    origin_ref: "content/06 Évora Economy/Évora — Economia, Investidores, Portas Abertas 2026 (pt-PT).html @ 5faeb63f2c581178ff12d4a042df6d9cf09c96b5"
     raw_file: _raw/evora-economia-investidores-portas-abertas-2026.pt.html
-    fetched_utc: 2026-08-12T13:50:30Z
-    via: transcript-extraction
-    bytes_raw: 43765
-    bytes_runtime_removed: 17141
-    bytes_normalized: 26624
-    sha256_raw: 0ef4c8364ea5d1fadc1329024280b36aecd14048232ae58592d04114ec285f16
-    sha256_normalized: 645432bc291f49c8793a6014c2ffeb18fcf252abf48b958643304df7f90c6c67
+    fetched_utc: 2026-08-24T15:06:41Z
+    bytes_raw: 26480
+    bytes_normalized: 26480
+    sha256_raw: 10b0adc0633cfda598a7261519ef5d12bf712beeee3cccb5da8d784cb5ceebc7
+    sha256_normalized: 10b0adc0633cfda598a7261519ef5d12bf712beeee3cccb5da8d784cb5ceebc7
   # Republicadas a 2026-08-20 do motor, e deixaram de ser artefactos, pela mesma
   # razão da linha do 08. Ver DECISIONS §1.49.
   - slug: evora-orcamentado-pago-devido-2025
