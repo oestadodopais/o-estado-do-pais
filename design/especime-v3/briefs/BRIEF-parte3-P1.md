@@ -35,7 +35,7 @@ As quatro edições do motor sem edição alojada (03 en, 06 en, 08 en, 09 en) *
 
 **Os ficheiros do motor:** os doze registos, os doze `.cortes.json` e os seis manifestos estão limpos no git em `cbaf7ca` (o último toque foi `e365672`), todos `estado: fixado`, e os resumos em disco batem 12/12 (registo e cortes). O motor tem ficheiros alheios por commitar (`content/11 Seguranca Social/*`, `indicators/*.json`, um `.maintenance-locks/*`): **não são nossos, não se tocam, não se commitam.**
 
-**Contagens do âmbito:** 829 blocos, 2 601 figuras, 46 ligações (03 pt 7, 04 pt 16, 04 en 16, as outras cinco a zero), iguais às do plano depois do P0.
+**Contagens do âmbito:** 829 blocos, 2 601 figuras, 39 ligações (03 pt 7, 04 pt 16, 04 en 16, as outras cinco a zero; as 46 do P0 do motor contam também as 7 do 03 en, que não atravessa), iguais às do plano depois do P0. *(Corrigido pelo lugar de direção depois da M2: dizia 46.)*
 
 ## 3 · Lado do motor: o exportador (a única peça do motor que esta sessão constrói)
 

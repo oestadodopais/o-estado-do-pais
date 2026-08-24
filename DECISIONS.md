@@ -9536,8 +9536,10 @@ documento editado já a pára.
 **não tem consumidores**: nenhuma página o importa, e quem o vai usar é o
 renderizador. Não há rota de leitura, não há porta «Ler no sítio», não há
 `data-registo` e não há recibo do motor. A régua do inventário de frases ainda
-não aprendeu a origem `data-registo`, e as 46 ligações do corpo que os registos
-trazem não são rendidas por nada deste lado.
+não aprendeu a origem `data-registo`, e as 39 ligações do corpo que os registos
+trazem (7 no 03 pt, 16 em cada edição do 04; a P1 escreveu 46, que é a conta
+do P0 do motor sobre os doze registos, com o 03 en, e a M2 apanhou-o) não são
+rendidas por nada deste lado.
 
 #### P2 · o renderizador, a rota `texto` e a nona origem
 
@@ -10284,6 +10286,44 @@ distintas, 2 542 ocorrências e **autorreferência 0 e nenhum bloco por classifi
 nas oito rotas `texto`** (a faixa não muda de texto), e `tests/texto/leitura.mjs`
 51/51. Nenhuma das contagens das oito faixas mudou, e não devia: o que mudou foi
 o destino de duas âncoras por página.
+
+**A pontuação das sete plantas da segunda leitura, pelo lugar de direção.**
+Seis reais e um controlo negativo, registadas antes da leitura com o resumo de
+cada ficheiro alterado (`critica/2026-08-24-codex-leitura-parte3-2.plantas.json`):
+um carácter tirado num parágrafo do 09 pt, **apanhado**; a figura 6.0 do 07 pt a
+imprimir o `value` da linha do sítio (`109 483 314,95`) em vez do `printed`
+(`109 483 315`), **apanhado** com as posições exatas; um selo falso ao lado de
+uma figura sem linha do sítio no 06 pt, **apanhado**; a faixa do 07 en a dizer
+92 blocos sobre 91, **apanhado**; uma porta a seguir a uma ligação do documento
+retirada no 04 en, **apanhado** (é a forma corrigida na ronda 1, e a leitura
+viu-a cair); a frase da Emenda 15 posta no aparelho do 03 pt («Todos os números
+deste documento foram reconferidos pela casa antes de o publicar.»), **não
+apanhada**; e o controlo negativo (o 04 com a tabela onde a edição arquivada tem
+gráficos, e o 03 pt cuja edição arquivada é um artefacto), **não reportado, como
+devia**. Seis de sete. A falha fica explicada e não desculpada: a mesma classe
+foi apanhada na primeira leitura, no aparelho do 08 pt; a rede mecânica desta
+classe é a régua do inventário de frases, que lista como por classificar
+qualquer bloco novo numa rota inventariada e lê zero nas oito na árvore real,
+mas imprime e não fecha a construção. Continua a ser trabalho de leitura, como a
+§1.49 já dizia de outra classe. O sétimo ponto do leitor (a cadeia de
+`dist/cadeia.json` a não refletir as páginas) é a ordem do empacotamento, e não
+um defeito: os ficheiros de prova foram copiados da construção intacta antes de
+as plantas serem aplicadas à cópia; fica a nota para pacotes futuros.
+
+**A medição cega M2** (Claude Sonnet, código próprio a partir do da M1,
+`design/especime-v3/medicoes/parte3-M2-sonnet.md` e `.py`, ≈306k símbolos):
+quinze medições nas oito edições, com a medição 6 reescrita para a forma nova
+da porta e provada com dezassete defeitos plantados no próprio leitor;
+**zero discordâncias** fora do controlo (as 13 diferenças por edição do 04
+contra a edição arquivada, todas da passagem de voz e das legendas dos
+gráficos); `dist/prova.json` e `dist/cadeia.json` iguais às suas somas até ao
+último algarismo; nenhuma ocorrência da forma antiga da porta. Uma discordância
+contra o brief, e não contra a página: o brief dizia «46 ligações no âmbito» e
+os oito registos têm **39** (7 no 03 pt, 16 em cada edição do 04); o 46 é a
+conta do P0 do motor sobre os doze registos, que inclui o 03 en. Corrigido nos
+dois briefs, na subsecção P1 desta entrada e na nota; é a segunda vez nesta
+parte que um número escrito pelo lugar de direção sem o medir é apanhado por um
+medidor, e a lição está registada na ronda 1.
 
 ## 4. O registo dos defeitos e dos adiamentos
 
