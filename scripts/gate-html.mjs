@@ -5181,7 +5181,10 @@ console.log(
   cinza(
     `  portão de HTML · ${ficheiros} páginas · ${idsUsados.size}/${claims.size} afirmações citadas ` +
       `fora do livro-razão · ${linhasConstruidas.size} páginas de linha` +
-      (documentos ? ` · ${documentos} documento(s) de estudo, conferidos contra a origem` : ''),
+      (documentos ? ` · ${documentos} documento(s) de estudo, conferidos contra a origem` : '') +
+      (paginasDeTexto
+        ? ` · ${paginasDeTexto} página(s) de leitura, conferidas contra o seu registo de conteúdo`
+        : ''),
   ),
 );
 console.log(
