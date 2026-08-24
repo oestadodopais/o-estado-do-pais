@@ -25,7 +25,9 @@
  *   CADEIA DO MOTOR (2 405 figuras, medido)
  *     resumo de origem → linha do motor → posição no registo
  *       → a marca `data-registo` na página → a porta, que abre a entrada em
- *         «As linhas deste documento»
+ *         «As linhas deste documento» (a própria figura é a âncora; dentro de
+ *         uma ligação do documento, onde uma âncora não aninha noutra, a porta
+ *         vai imediatamente depois da ligação, como o selo)
  *
  * **2 405 e não 2 396**, e a diferença diz-se: o plano §4.1 escreve 2 396, que
  * são estas menos as 9 figuras cujas linhas do motor o manifesto de travessia do
@@ -226,30 +228,53 @@ function textoImpresso(el) {
 
 /** O nó de elemento seguinte, sem saltar por cima de texto: a regra do colado. */
 function irmaoColado(el) {
+  return irmaosColados(el)[0] ?? null;
+}
+
+/**
+ * Os elementos irmãos COLADOS a este, em ordem, até ao primeiro nó de texto.
+ *
+ * Uma ligação do documento pode ter várias figuras lá dentro, e as saídas de
+ * todas vêm a seguir a ela, na ordem das figuras: a k-ésima saída colada à
+ * ligação é a da k-ésima figura que ela contém, selos e portas intercalados.
+ */
+function irmaosColados(el) {
   const pai = el?.parentNode;
-  if (!pai) return null;
+  if (!pai) return [];
   const filhos = pai.childNodes ?? [];
+  const irmaos = [];
   for (let k = filhos.indexOf(el) + 1; k < filhos.length; k++) {
     const n = filhos[k];
     if (n.nodeType === 3) {
       if (n.rawText === '') continue;
-      return null;
+      return irmaos;
     }
-    if (n.nodeType === 1) return n;
+    if (n.nodeType === 1) irmaos.push(n);
   }
-  return null;
+  return irmaos;
 }
 
+const temClasse = (n, classe) =>
+  Boolean(n) && String(n.getAttribute?.('class') ?? '').split(/\s+/).includes(classe);
+
 const eSelo = (n) =>
+  Boolean(n) && String(n.rawTagName ?? '').toLowerCase() === 'a' && temClasse(n, 'src-chip');
+
+/**
+ * A porta que vai a seguir a uma ligação do documento: a saída de uma figura que
+ * está dentro de uma ligação e por isso não pode ser ela própria a âncora. Não
+ * tem texto: o glifo é da folha de estilos.
+ */
+const ePortaAposALigacao = (n) =>
   Boolean(n) &&
   String(n.rawTagName ?? '').toLowerCase() === 'a' &&
-  String(n.getAttribute('class') ?? '').split(/\s+/).includes('src-chip');
+  temClasse(n, 'texto-figura-porta-apos');
 
 /** A ligação do próprio documento que contém esta figura, se houver alguma. */
 function ligacaoDoDocumento(el, artigo) {
   let n = el.parentNode;
   while (n && n !== artigo) {
-    if (String(n.rawTagName ?? '').toLowerCase() === 'a') return n;
+    if (String(n.rawTagName ?? '').toLowerCase() === 'a' && !ePortaAposALigacao(n)) return n;
     n = n.parentNode;
   }
   return null;
@@ -518,12 +543,28 @@ for (const chave of chaves) {
         /* ------------------------------------------------------- passo 6 ---
            A saída. Com linha do sítio, o selo colado, que abre a página dessa
            linha; sem linha do sítio, a porta para a entrada em «As linhas deste
-           documento» (ou, dentro de uma ligação do documento, só a entrada, que
-           uma âncora dentro de outra não é markup). Sem linha do motor não há
-           saída nenhuma a exigir: o passo 2 já fechou. */
+           documento». Sem linha do motor não há saída nenhuma a exigir: o passo
+           2 já fechou.
+
+           DENTRO DE UMA LIGAÇÃO DO DOCUMENTO, A SAÍDA VAI A SEGUIR À LIGAÇÃO,
+           e é a gémea da regra do selo: uma âncora não aninha noutra, e por isso
+           nem o selo nem a porta podem ficar dentro da ligação. A ordem é a das
+           figuras — a k-ésima saída colada à ligação é a da k-ésima figura que
+           ela contém —, e a posição lê-se da própria página, para que uma marca
+           em falta não desalinhe as saídas das figuras seguintes. Até 24.08.2026
+           este passo aceitava, dentro de uma ligação, só a entrada da linha; a
+           primeira leitura cruzada mostrou que isso deixava 42 figuras sem porta
+           própria, e a ronda de correções 1 fechou-o. */
         if (!figura.row) continue;
         const dentroDeLigacao = ligacaoDoDocumento(el, artigo);
-        const irmao = irmaoColado(dentroDeLigacao ?? el);
+        let irmao;
+        if (dentroDeLigacao) {
+          const naLigacao = dentroDeLigacao.querySelectorAll('[data-registo]');
+          const k = naLigacao.indexOf(el);
+          irmao = irmaosColados(dentroDeLigacao)[k] ?? null;
+        } else {
+          irmao = irmaoColado(el);
+        }
         if (siteId) {
           if (!eSelo(irmao)) {
             err(
@@ -545,7 +586,23 @@ for (const chave of chaves) {
             );
           }
           const destino = `#linha-${figura.row}`;
-          if (!dentroDeLigacao) {
+          if (dentroDeLigacao) {
+            if (!ePortaAposALigacao(irmao)) {
+              err(
+                `C6 ${marca}: a figura está dentro de uma ligação do documento e não tem a porta ` +
+                  `a seguir à ligação, que é a saída da cadeia do motor onde uma âncora não pode ` +
+                  `aninhar noutra.`,
+              );
+            } else {
+              const href = atributo(irmao, 'href');
+              if (href !== destino) {
+                err(
+                  `C6 ${marca}: a porta que vai a seguir à ligação abre "${href}" e a entrada ` +
+                    `desta figura é "${destino}".`,
+                );
+              }
+            }
+          } else {
             const eAncora = String(el.rawTagName ?? '').toLowerCase() === 'a';
             const href = atributo(el, 'href');
             if (!eAncora || href !== destino) {

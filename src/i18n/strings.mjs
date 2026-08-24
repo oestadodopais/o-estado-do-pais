@@ -1085,6 +1085,13 @@ export const STRINGS = {
       textoImpressoK: 'como este documento o imprime',
       textoOrigemK: 'resumo de origem',
       textoLinhaDoLivro: 'linha do livro-razão',
+      /* O nome acessível da porta que vai a seguir a uma ligação do documento,
+         onde a figura não pode ser ela própria uma âncora. Rende-se em
+         `aria-label`, com o identificador da linha do motor a seguir: a porta
+         não tem texto, e sem nome nenhum um leitor de ecrã anunciava uma
+         ligação vazia. As mesmas palavras do rótulo do campo, porque é a mesma
+         coisa que a porta abre. */
+      textoPortaDaLinha: 'linha do motor',
       textoRegistoK: 'O registo de conteúdo',
       textoContaBlocos: 'blocos',
       textoContaAlgarismos: 'algarismos',
@@ -1784,6 +1791,7 @@ export const STRINGS = {
       textoImpressoK: 'as this document prints it',
       textoOrigemK: 'source digest',
       textoLinhaDoLivro: 'ledger row',
+      textoPortaDaLinha: 'engine row',
       textoRegistoK: 'The content record',
       textoContaBlocos: 'blocks',
       textoContaAlgarismos: 'figures',

@@ -248,6 +248,30 @@ function acumulador() {
   };
 }
 
+/**
+ * A PORTA DE UMA FIGURA QUE ESTÁ DENTRO DE UMA LIGAÇÃO DO DOCUMENTO.
+ *
+ * Vai imediatamente depois da ligação, uma por figura sem linha do sítio, na
+ * ordem das figuras. É a gémea da regra do selo, e existe pela mesma razão: uma
+ * âncora não aninha noutra, a ligação do documento manda sobre o seu texto, e a
+ * `IDENTIDADE.md` §5.3 e §10 não abrem exceção — onde aparece um valor, aparece
+ * a porta. A forma direta (a própria figura ser a âncora) continua a valer fora
+ * de ligações, que é onde ela é possível.
+ *
+ * **SEM NÓ DE TEXTO LÁ DENTRO**, e é o que a torna invisível à comparação da
+ * unidade: a leitura do olho não junta nada de um elemento de linha vazio (o
+ * intervalo só se grava quando `pedacos.length` cresce), e por isso o texto da
+ * unidade continua a ser, carácter a carácter, o do registo. O glifo é da folha
+ * (`::after`), o nome acessível é o `aria-label`, e nenhum dos dois é texto do
+ * documento.
+ */
+function portaAposALigacao(row, ctx) {
+  return (
+    `<a class="texto-figura-porta-apos" href="#linha-${escapaAtributo(row)}" ` +
+    `aria-label="${escapaAtributo(`${ctx.rotuloDaPorta}: ${row}`)}"></a>`
+  );
+}
+
 function abreIntervalo(no, saida, ctx) {
   if (no.tipo === 'ligacao') {
     saida.html(`<a class="texto-ligacao" href="${escapaAtributo(no.href)}" rel="noopener">`);
@@ -267,7 +291,8 @@ function abreIntervalo(no, saida, ctx) {
   }
   /* Sem linha do sítio: a porta para a sua entrada em «As linhas deste
      documento». Dentro de uma ligação do documento não pode haver uma segunda
-     âncora, e por isso a porta fica só na entrada da linha. */
+     âncora aninhada, e por isso a porta vai IMEDIATAMENTE DEPOIS da ligação,
+     que é a mesma saída que o selo já usa (`fechaIntervalo`). */
   if (ctx.dentroDeLigacao > 0) {
     saida.html(`<span class="texto-figura"${marca}>`);
     return;
@@ -280,7 +305,14 @@ function abreIntervalo(no, saida, ctx) {
 function fechaIntervalo(no, saida, ctx) {
   if (no.tipo === 'ligacao') {
     saida.html('</a>');
-    for (const id of no.selosPendentes ?? []) saida.selo(id);
+    /* AS SAÍDAS DAS FIGURAS QUE ESTA LIGAÇÃO CONTÉM, NA ORDEM DAS FIGURAS.
+       Uma por figura, selos e portas intercalados, sem um nó de texto pelo
+       meio: é o que as conferências L6 e C6 percorrem para saber qual saída é
+       de qual figura. */
+    for (const saidaPendente of no.saidasPendentes ?? []) {
+      if (saidaPendente.selo !== undefined) saida.selo(saidaPendente.selo);
+      else saida.html(portaAposALigacao(saidaPendente.porta, ctx));
+    }
     return;
   }
   if (no.tipo === 'enfase') {
@@ -294,11 +326,18 @@ function fechaIntervalo(no, saida, ctx) {
     /* O selo nunca fica dentro de uma ligação nem de outro alvo (Emenda 2):
        numa figura dentro de uma ligação do documento, vai imediatamente depois
        de a ligação fechar. */
-    if (ctx.ligacaoAberta) (ctx.ligacaoAberta.selosPendentes ??= []).push(siteId);
+    if (ctx.ligacaoAberta) (ctx.ligacaoAberta.saidasPendentes ??= []).push({ selo: siteId });
     else saida.selo(siteId);
     return;
   }
-  saida.html(ctx.dentroDeLigacao > 0 ? '</span>' : '</a>');
+  if (ctx.dentroDeLigacao > 0) {
+    saida.html('</span>');
+    /* A porta, pela mesma regra do selo: uma âncora não aninha noutra, e a
+       saída vai imediatamente depois da ligação. */
+    (ctx.ligacaoAberta.saidasPendentes ??= []).push({ porta: no.figura.row });
+    return;
+  }
+  saida.html('</a>');
 }
 
 function escreveNo(no, texto, saida, ctx) {
@@ -337,12 +376,24 @@ const atributosDaUnidade = (marca) => ` data-registo-unidade="${escapaAtributo(m
  * As peças do corpo transcrito de uma edição: os blocos do registo, na ordem do
  * registo, e mais nada.
  *
- * @param {{registo: object, chave: string, linhaDoSitio: (row: string) => (string|null)}} args
+ * `rotuloDaPorta` é o nome acessível da porta que vai a seguir a uma ligação do
+ * documento, na língua da edição (`estudos.textoPortaDaLinha`). É pedido aqui e
+ * não importado: este módulo não sabe línguas, e a vista já as sabe. Sem ele
+ * a construção pára, porque uma porta sem nome é uma ligação que um leitor de
+ * ecrã anuncia vazia.
+ *
+ * @param {{registo: object, chave: string, linhaDoSitio: (row: string) => (string|null), rotuloDaPorta: string}} args
  * @returns {({html: string}|{selo: string})[]}
  */
-export function pecasDoCorpo({ registo, chave, linhaDoSitio }) {
+export function pecasDoCorpo({ registo, chave, linhaDoSitio, rotuloDaPorta }) {
+  if (typeof rotuloDaPorta !== 'string' || rotuloDaPorta === '') {
+    throw new FalhaDoRegisto(
+      'pecasDoCorpo: falta o "rotuloDaPorta", que é o nome acessível da porta que vai a seguir a ' +
+        'uma ligação do documento. Uma porta sem nome é uma ligação vazia para quem a ouve.',
+    );
+  }
   const saida = acumulador();
-  const ctx = { linhaDoSitio, dentroDeLigacao: 0, ligacaoAberta: null };
+  const ctx = { linhaDoSitio, rotuloDaPorta, dentroDeLigacao: 0, ligacaoAberta: null };
 
   registo.blocks.forEach((bloco, indice) => {
     if (bloco.i !== indice) {
