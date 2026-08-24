@@ -1,0 +1,72 @@
+{
+ "escrito_por": "lugar de direção (Claude Fable 5), antes da segunda leitura",
+ "construcao": "180148c",
+ "plantas": [
+  {
+   "planta": "P1",
+   "ficheiro": "dist/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/texto/index.html",
+   "o_que": "um carácter tirado num parágrafo do 09 pt (bloco 4)",
+   "deve_apanhar": "a divergência contra o registo (L2)",
+   "sha256_antes": "0a6b2d1d55334396179d2fa00e4c3eab3d487d2ed425dc9927313b559fb7bcb0",
+   "sha256_depois": "62278ed7f3eb789f0f748039e78a10180130fbebfddd408c2335912f67a95f85",
+   "antes": "Oito limites governam tudo o que se segue.",
+   "depois": "Oito limite governam tudo o que se segue."
+  },
+  {
+   "planta": "P2",
+   "ficheiro": "dist/estudos/evora-orcamentado-pago-devido-2025/texto/index.html",
+   "o_que": "a figura 6.0 do 07 pt (com selo) imprime o value da linha do sítio (109 483 314,95, com espaços finos) em vez do printed do documento (109 483 315)",
+   "deve_apanhar": "o valor do documento trocado pelo do livro-razão (L4)",
+   "sha256_antes": "70ffc522f9d8d2d4018cafc36a92f52f40f6a5071a2bdd2d95f8ca426be83da9",
+   "sha256_depois": "e435446434feb94440a51b7558c6b968185762868d32a85b0572861109b53c4f",
+   "antes": "data-registo=\"evora-orcamentado-pago-devido-2025/pt#6.0\">109 483 315</span>",
+   "depois": "data-registo=\"evora-orcamentado-pago-devido-2025/pt#6.0\">109 483 314,95</span>"
+  },
+  {
+   "planta": "P3",
+   "ficheiro": "dist/estudos/evora-economia-investidores-portas-abertas-2026/texto/index.html",
+   "o_que": "um selo ao lado da figura 4.0.0 do 06 pt, que não tem linha do sítio (a linha do motor p3-class-indiv não está no registo de travessia); a porta retirada",
+   "deve_apanhar": "a linha prometida que não existe (L6)",
+   "sha256_antes": "946d5a7e30f98ebfb6fbd31f1f2d80845671423fa705e3bdc3c7b9736d4d6745",
+   "sha256_depois": "bb851a4ac0382266dbfff60cac33eba90cf765341c4b10c496b451b443bbc694",
+   "antes": "<a class=\"texto-figura texto-figura-porta\" href=\"#linha-p3-class-indiv\" data-registo=\"evora-economia-investidores-portas-abertas-2026/pt#4.0.0\">1</a>",
+   "depois": "<span class=\"texto-figura\" data-registo=\"evora-economia-investidores-portas-abertas-2026/pt#4.0.0\">1</span><a class=\"src-chip\" href=\"/livro-razao/evora-camara-lugares\" data-nonledger=\"proveniencia\" da"
+  },
+  {
+   "planta": "P4",
+   "ficheiro": "dist/en/studies/evora-orcamentado-pago-devido-2025/text/index.html",
+   "o_que": "a faixa do 07 en diz 92 blocos, e a página tem 91",
+   "deve_apanhar": "a contagem escrita à mão (L5)",
+   "sha256_antes": "61786b64eb60ce367519690a8e6fa699eccec5cf7b86e17d4bff9b79fabd511c",
+   "sha256_depois": "ec116b40776429dbf7b000bbb73ebc0a8d06d9aae57641573d70a44a76b82e0e",
+   "antes": "data-registo-conta=\"evora-orcamentado-pago-devido-2025/en=blocos\">91</a> blocks",
+   "depois": "data-registo-conta=\"evora-orcamentado-pago-devido-2025/en=blocos\">92</a> blocks"
+  },
+  {
+   "planta": "P5",
+   "ficheiro": "dist/estudos/avaliacao-economica-regional-de-portugal-2026/texto/index.html",
+   "o_que": "uma frase sobre a verificação da casa acrescentada ao aparelho do 03 pt",
+   "deve_apanhar": "a Emenda 15 (autorreferência numa página do leitor)",
+   "sha256_antes": "1e5c629af97f1eab15d5fa77894ec1d56b8296ed4b4c9132cd352646dcd3d542",
+   "sha256_depois": "0a0bcc3a283f7d5ec7c8b9cb6caf8daa35e2be98c50c20861e335a45404fdad4",
+   "antes": "<h2 class=\"aparelho-titulo\">O registo de conteúdo</h2>",
+   "depois": "<h2 class=\"aparelho-titulo\">O registo de conteúdo</h2><p class=\"texto-origem\">Todos os números deste documento foram reconferidos pela casa antes de o publicar.</p>"
+  },
+  {
+   "planta": "P6",
+   "ficheiro": "dist/estudos/evora-prometido-pago-auditado-2026/texto/index.html",
+   "o_que": "controlo negativo: a página do 04 com a tabela (bloco 12) onde a edição arquivada tem gráficos, intacta; e o 03 pt cuja edição arquivada é um artefacto e não os bytes do motor, intacto",
+   "deve_apanhar": "NÃO deve ser reportada; se for, o pacote não explicou o desenho"
+  },
+  {
+   "planta": "P7",
+   "ficheiro": "dist/en/studies/evora-prometido-pago-auditado-2026/text/index.html",
+   "o_que": "uma porta a seguir a uma ligação do documento retirada no 04 en (a figura tc-report-16-2018 fica dentro da ligação sem saída)",
+   "deve_apanhar": "a figura dentro de uma ligação sem porta nem selo (L6, C6)",
+   "sha256_antes": "5e6d18cf33ad2597b1210202bd71a82390c974523dd940f4671ef9504819bf25",
+   "sha256_depois": "7f34333b59d07fb78040a5c9b7f9824e65e082bdbba6471556fcd158b6714314",
+   "antes": "</a><a class=\"texto-figura-porta-apos\" href=\"#linha-tc-report-16-2018\" aria-label=\"engine row: tc-report-16-2018\"></a>",
+   "depois": "</a>"
+  }
+ ]
+}
