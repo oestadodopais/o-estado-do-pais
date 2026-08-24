@@ -1,0 +1,62 @@
+{
+ "escrito_por": "lugar de direção (Claude Fable 5), 24.08.2026, antes da leitura",
+ "construcao": "7626a2a",
+ "plantas": [
+  {
+   "planta": "P1",
+   "ficheiro": "dist/estudos/evora-quinze-anos-cinco-mandatos/texto/index.html",
+   "o_que": "um carácter tirado num parágrafo do 08 pt (bloco 4)",
+   "deve_apanhar": "a divergência contra o registo (L2)",
+   "sha256_antes": "a1b41b5b790d5e4bb49cbe013cb5035069216af701f46c62d1b57f3da0cd0e79",
+   "sha256_depois": "3c6f9be8304f9928d8fb8b25753d39f363af85dc4b17fa6d53c79edb20dd4e8e",
+   "antes": "Sete limites governam tudo o que se segue.",
+   "depois": "Sete limite governam tudo o que se segue."
+  },
+  {
+   "planta": "P2",
+   "ficheiro": "dist/estudos/evora-prometido-pago-auditado-2026/texto/index.html",
+   "o_que": "a figura 12.0.1.0 do 04 pt imprime o value da linha do sítio em vez do printed do documento",
+   "deve_apanhar": "o valor do documento trocado pelo do livro-razão (L4)",
+   "sha256_antes": "bc160fb56034f03008ee3eaf5313510919656824ef14cfe2ae0582ea4989bb6b",
+   "sha256_depois": "1b8a1aa45bf82a660ef6c720b1487b9c1b20e3d7eb799b3854aac57a6917fdad",
+   "antes": "data-registo=\"evora-prometido-pago-auditado-2026/pt#12.0.1.0\">167 372 756</span>",
+   "depois": "data-registo=\"evora-prometido-pago-auditado-2026/pt#12.0.1.0\">167 372 755,84</span>"
+  },
+  {
+   "planta": "P3",
+   "ficheiro": "dist/estudos/evora-prometido-pago-auditado-2026/texto/index.html",
+   "o_que": "um selo ao lado da figura 5.0 do 04 pt, que não tem linha do sítio (a linha do motor tc-families não está no registo de travessia); a porta para a entrada retirada",
+   "deve_apanhar": "a linha prometida que não existe (L6)",
+   "sha256_antes": "1b8a1aa45bf82a660ef6c720b1487b9c1b20e3d7eb799b3854aac57a6917fdad",
+   "sha256_depois": "82a0c26e5d3b21e3c59c06b27d87d6627801170978cacf349afdfdfc927fd118",
+   "antes": "<a class=\"texto-figura texto-figura-porta\" href=\"#linha-tc-families\" data-registo=\"evora-prometido-pago-auditado-2026/pt#5.0\">4</a>",
+   "depois": "<span class=\"texto-figura\" data-registo=\"evora-prometido-pago-auditado-2026/pt#5.0\">4</span><a class=\"src-chip\" href=\"/livro-razao/evora-camara-lugares\" data-no"
+  },
+  {
+   "planta": "P4",
+   "ficheiro": "dist/en/studies/evora-prometido-pago-auditado-2026/text/index.html",
+   "o_que": "a faixa do 04 en diz 103 blocos, e a página tem 102",
+   "deve_apanhar": "a contagem escrita à mão (L5)",
+   "sha256_antes": "17e2265838f8adfbf07469d5f814e219888d13314a648ec2b43be69969999ae5",
+   "sha256_depois": "08178990c17aa1ae8e0f475023de792a33597c753b8a44cecf9a65ca069966c3",
+   "antes": "data-registo-conta=\"evora-prometido-pago-auditado-2026/en=blocos\">102</a> blocks",
+   "depois": "data-registo-conta=\"evora-prometido-pago-auditado-2026/en=blocos\">103</a> blocks"
+  },
+  {
+   "planta": "P5",
+   "ficheiro": "dist/estudos/evora-quinze-anos-cinco-mandatos/texto/index.html",
+   "o_que": "uma frase sobre a verificação da casa acrescentada ao aparelho do 08 pt",
+   "deve_apanhar": "a Emenda 15 (autorreferência numa página do leitor)",
+   "sha256_antes": "3c6f9be8304f9928d8fb8b25753d39f363af85dc4b17fa6d53c79edb20dd4e8e",
+   "sha256_depois": "2f43a4b9fc689fe06279d022560ac84fc252e5542e839cca2b7851ac3a24c8b7",
+   "antes": "<h2 class=\"aparelho-titulo\">O registo de conteúdo</h2>",
+   "depois": "<h2 class=\"aparelho-titulo\">O registo de conteúdo</h2><p class=\"texto-origem\">Cada número desta página foi verificado pela casa contra a sua fonte.</p>"
+  },
+  {
+   "planta": "P6",
+   "ficheiro": "dist/estudos/evora-prometido-pago-auditado-2026/texto/index.html",
+   "o_que": "controlo negativo: a página do 04 com a tabela (bloco 12) onde a edição arquivada tem gráficos, intacta",
+   "deve_apanhar": "NÃO deve ser reportada; se for, o pacote não explicou o desenho"
+  }
+ ]
+}
