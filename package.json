@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run ledger:check && npm run check:cruzamento && npm run check:documentos && astro build && npm run stamp:version && npm run cartoes && npm run gate:html && npm run check:dados",
+    "build": "npm run ledger:check && npm run check:cruzamento && npm run check:documentos && astro build && npm run stamp:version && npm run cartoes && npm run gate:html && npm run check:cadeia && npm run check:dados",
     "preview": "astro preview",
     "astro": "astro",
     "ledger:check": "node scripts/check-ledger.mjs",
@@ -18,10 +18,11 @@
     "check:dados": "node scripts/check-dados.mjs",
     "check:cruzamento": "node scripts/check-cruzamento.mjs",
     "check:documentos": "node scripts/check-documentos.mjs",
+    "check:cadeia": "node scripts/check-cadeia.mjs",
     "stamp:version": "node scripts/stamp-version.mjs",
     "verify:deploy": "node scripts/verify-deploy.mjs",
     "typecheck": "tsc -p tsconfig.check.json",
-    "verify": "npm run ledger:check && npm run check:cruzamento && npm run check:documentos && npm run gate:html && npm run check:dados"
+    "verify": "npm run ledger:check && npm run check:cruzamento && npm run check:documentos && npm run gate:html && npm run check:cadeia && npm run check:dados"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",
