@@ -1030,3 +1030,120 @@ acrescenta página nenhuma nem chave nenhuma, e não devia.
 * **As oito chaves continuam sem entrar nas listas `prova` do Método**, à espera
   da palavra do diretor: é texto governado.
 * **`noindex` e fora do mapa do sítio** nas oito, por contrato desta sessão.
+
+---
+
+## Correções 2 · a porta das contagens é o corpo, depois da segunda leitura cruzada
+
+*Construída a 24.08.2026 pelo construtor (Claude Opus 5, `claude-opus-5[1m]`) no
+ramo `parte3-2026-08-24`, sobre a P4 e a ronda de correções 1, a partir de
+`5fb1911`. O brief é `briefs/BRIEF-parte3-correcoes-2.md`, escrito pelo lugar de
+direção depois da segunda leitura cruzada
+(`critica/2026-08-24-codex-leitura-parte3-2.md`, Medium 6). O registo é a
+`DECISIONS.md` §1.64, subsecção «A medição cega M2 e a segunda leitura cruzada».
+O motor não foi tocado, e nenhum texto governado.*
+
+### Os commits
+
+| repositório | commit | o quê |
+|---|---|---|
+| sítio | `38f594b` | as três contagens da faixa abrem `#documento`: `TextoView.astro` e o L5 do portão em `scripts/gate-html.mjs` |
+| sítio | (este) | o registo: a subsecção da `DECISIONS.md` §1.64 e esta secção |
+
+### O achado, medido nas oito
+
+Leitor próprio sobre o `dist/` construído (só `node-html-parser`, um programa
+fora do repositório). As colunas são: as figuras marcadas do corpo, as entradas
+que «As linhas deste documento» tem, os selos do corpo, e as portas de linha do
+livro-razão que essa secção abre.
+
+| edição | figuras | entradas na secção | selos | portas do livro na secção |
+|---|---:|---:|---:|---:|
+| 03 pt | 411 | 246 | 0 | 0 |
+| 04 en | 326 | 218 | 11 | 7 |
+| 04 pt | 326 | 212 | 12 | 7 |
+| 06 pt | 171 | 132 | 10 | 8 |
+| 07 en | 194 | 153 | 52 | 25 |
+| 07 pt | 194 | 153 | 52 | 25 |
+| 08 pt | 682 | 521 | 49 | 16 |
+| 09 pt | 297 | 253 | 10 | 7 |
+| **âmbito** | **2 601** | **1 888** | **196** | **95** |
+
+As duas colunas da esquerda são o defeito: a contagem «algarismos» abria a
+secção, e a secção tem uma entrada por linha do motor distinta. As duas da
+direita são o mesmo defeito na outra contagem: 196 selos levavam a 95 portas.
+Nenhum destes números mudou com a correção, e não devia: o que mudou foi o
+destino de duas âncoras por página. Os totais batem com as chaves da prova
+(`registos_algarismos` 2 601 e `registos_com_linha_do_sitio` 196), e as 95 portas
+são 95 páginas de linha distintas, de 63 linhas do livro-razão contadas nas duas
+línguas: o mesmo número que o pacote da segunda leitura levava.
+
+O que as três contagens contam vê-se no corpo, uma marca por ocorrência.
+Recontado no 07 pt, cuja faixa diz «92 blocos · 194 algarismos · 52 com linha do
+livro-razão»: 92 `data-registo-bloco`, 194 `data-registo` e 52 selos
+(`a.src-chip`), dentro do `<article id="documento">`.
+
+### Os dois estragos plantados
+
+Um por cada metade da conferência nova, cada um numa cópia alterada em `dist/`,
+com o resumo dos bytes registado antes, o portão a fechar com **exit 1**, o
+ficheiro reposto e conferido pelo resumo, e `git status --porcelain` limpo.
+
+| | o estrago | fecha | queixas | exit |
+|---|---|---|---:|---:|
+| 1 | a conta dos algarismos do 07 pt a abrir `#linhas-do-documento` | L5 | 1 | 1 |
+| 2 | o corpo do 06 pt sem `id="documento"` | L5 · e a conferência das ligações internas, três vezes | 4 | 1 |
+| 3 | **controlo:** a construção inteira, intacta | nada | 0 | 0 |
+
+A frase do estrago 1, verbatim:
+
+```
+L5 evora-orcamentado-pago-devido-2025/pt=algarismos: a porta da contagem abre "#linhas-do-documento" e tem de abrir "#documento". As três contam OCORRÊNCIAS no corpo (blocos, figuras marcadas e selos), e é no corpo que elas se veem, uma marca por cada; "#linhas-do-documento" agrega numa entrada por linha do motor DISTINTA e por isso não mostra o que o número conta (IDENTIDADE.md §10).
+```
+
+A do estrago 2, e as três que já existiam:
+
+```
+L5 evora-economia-investidores-portas-abertas-2026/pt: a página não tem o corpo com id="documento", que é a porta das três contagens da faixa.
+a ligação interna "#documento" aponta para a âncora "#documento", que não existe em "/estudos/evora-economia-investidores-portas-abertas-2026/texto".
+```
+
+A segunda metade **já tinha rede** antes desta ronda, e fica dito: a conferência
+das ligações internas do portão apanha uma âncora que não resolve, em qualquer
+página. A linha do L5 fica na mesma porque nomeia o papel da âncora e não só a
+sua existência, e é isso que faz a queixa legível sem abrir a `IDENTIDADE.md`.
+Os resumos SHA-256, antes e depois de repor: o 07 pt
+`fc5ab395ce38a2ab…` e o 06 pt `42ef5dbde9896986…`, iguais nos dois momentos.
+
+### As corridas verdes
+
+```
+npm run build                      exit 0 · 342 páginas · 41 chaves da prova · 8 páginas de leitura
+npm run verify                     exit 0
+npm run typecheck                  exit 0
+npm run gate:html                  exit 0 (controlo, antes e depois das duas plantas)
+node scripts/provar-eyetext.mjs    exit 0 · 157 conferências
+node scripts/medir-defeitos.mjs    exit 0 · 91 frases distintas · 2 542 ocorrências · autorreferência 0 nas oito rotas `texto`
+node tests/texto/leitura.mjs       51/51
+```
+
+Nas oito rotas `texto`/`text` o medidor lê **9 frases de moldura distintas, 1 de
+navegação, 0 de autorreferência e 0 blocos por classificar**, os mesmos números
+da P4: a faixa não muda de texto, só de destino. As 342 páginas e as 41 chaves
+também não mudaram.
+
+### O que fica por fazer
+
+* **A M2** (a medição cega sobre as oito) estava a correr enquanto esta ronda se
+  fez, e a sua pontuação e a das sete plantas da segunda leitura entram na mesma
+  subsecção da §1.64, pela mão do lugar de direção.
+* **A planta P5 da segunda leitura não foi apanhada** (uma frase sobre a
+  verificação da casa no aparelho do 03 pt), e a triagem explica o que se sabe:
+  a régua do inventário de frases imprime e não fecha a construção, e por isso
+  esta classe continua a ser trabalho de leitura.
+* **O empacotamento das leituras futuras** planta antes de copiar os ficheiros
+  de prova, ou diz no `README.md` que eles são da construção intacta: foi essa
+  ordem que produziu a crítica 7, que não é defeito do sítio.
+* **A I66** continua aberta de propósito, a **I67** e a **I68** não mexeram, e as
+  oito chaves continuam sem entrar nas listas `prova` do Método, que é texto
+  governado.
