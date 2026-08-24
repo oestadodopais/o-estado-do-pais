@@ -956,7 +956,11 @@ registo com o último título da leitura do olho da edição arquivada:
 | 09 pt | 137 «O que concluir disto» | 144 «Método, e como verificar este documento» | **17** · 12 |
 
 **O 07 en tem exatamente a mesma forma do 07 pt** e faltava na lista. As
-afetadas são seis: 04 pt, 04 en, 07 pt, 07 en, 08 pt e 09 pt. **O 03 pt e o 06 pt
+afetadas são seis: 04 pt, 04 en, 07 pt, 07 en, 08 pt e 09 pt. **E foi omissão de
+contagem, não de método:** medido também pelo caminho que a I65 diz ter usado (os
+ficheiros de operações), as seis têm cada uma exatamente um corte da família
+`inventario-cego` cujo «antes» é o título do Método, e o 03 pt e o 06 pt não têm
+nenhum. Os dois caminhos dão a mesma lista de seis. **O 03 pt e o 06 pt
 não são afetados**, e agora está medido em vez de presumido: nessas duas o último
 título é o mesmo bloco dos dois lados. A I65 fica corrigida na `ISSUES.md`; a
 causa e as duas saídas não mudam, e continuam do lado do motor.

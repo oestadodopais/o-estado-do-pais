@@ -10191,9 +10191,13 @@ código.**
    sem título existe no 04 pt, no 04 en, no 07 pt, **no 07 en**, no 08 pt e no 09
    pt; o 07 en tem exatamente a forma do 07 pt («Method, and how to check this
    document» no bloco 90 da edição arquivada, e o último título do registo no
-   bloco 80, com dez blocos por baixo) e faltava na lista. **O 03 pt e o 06 pt
-   não são afetados**, e agora está medido em vez de presumido: nessas duas o
-   último título é o mesmo bloco dos dois lados. A causa e as duas saídas não
+   bloco 80, com dez blocos por baixo) e faltava na lista. **Foi omissão de
+   contagem e não de método:** medido também pelo caminho que a I65 diz ter usado
+   (os ficheiros de operações), as seis têm cada uma exatamente um corte da
+   família `inventario-cego` cujo «antes» é o título do Método, e os dois
+   caminhos dão a mesma lista. **O 03 pt e o 06 pt não são afetados**, e agora
+   está medido em vez de presumido: nessas duas o último título é o mesmo bloco
+   dos dois lados, e nenhum dos seus ficheiros de operações nomeia o título. A causa e as duas saídas não
    mudam, e continuam do lado do motor.
 2. **A I66 recontada nas oito, com as duas definições separadas.** Dos 196 selos
    do âmbito, **130 não fecham a sua unidade** (depois deles ainda vem texto do
