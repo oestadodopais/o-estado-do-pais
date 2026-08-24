@@ -10229,6 +10229,62 @@ continuam sem entrar nas listas `prova` do Método, à espera da palavra do
 diretor, porque é texto governado. E as oito páginas continuam com `noindex` e
 fora do mapa do sítio, por contrato desta sessão.
 
+#### A medição cega M2 e a segunda leitura cruzada
+
+A segunda leitura cruzada (`design/especime-v3/critica/2026-08-24-codex-leitura-parte3-2.md`)
+correu num leitor sem contexto (Codex CLI, `gpt-5.6-sol`, sem rede, fora dos
+repositórios) sobre a construção `180148c`, sobre as **oito** páginas de leitura
+e com sete plantas registadas antes da leitura. A pontuação das plantas e a M2
+ficam adiante nesta subsecção; o que se segue é o defeito real e a sua correção.
+
+**O defeito real (a Medium 6): a porta de uma contagem levava a uma agregação.**
+Na faixa do aparelho de cada página de leitura («92 blocos · 194 algarismos · 52
+com linha do livro-razão», no 07 pt) as duas últimas contagens abriam «As linhas
+deste documento». Essa secção tem uma entrada por linha do motor **distinta**, e
+as contagens contam **ocorrências**: no 03 pt, 411 figuras levavam a 246
+entradas; no par 07, 194 figuras levavam a 153, e as 52 figuras com selo levavam
+a 25 portas de linha do livro-razão. No âmbito das oito, **2 601 figuras levavam
+a 1 888 entradas, e 196 selos a 95 portas** (recontado nas páginas construídas,
+por leitor próprio). A regra da `IDENTIDADE.md` §10 é que a porta de um número do
+próprio sítio leva onde se vê o que ele conta, e o que estes três números contam
+vê-se no corpo, uma marca por ocorrência: no 07 pt, 92 marcas
+`data-registo-bloco`, 194 marcas `data-registo` e 52 selos, que são exatamente as
+três contagens da faixa.
+
+**A correção.** As três contagens abrem `#documento`, o `<article>` do corpo.
+Nada mais muda na faixa: os mesmos números, o mesmo texto, as mesmas oito
+páginas. A secção «As linhas deste documento» fica onde estava e continua a ser a
+porta de cada figura sem linha no livro-razão, uma a uma, pela âncora
+`#linha-<row>`; o que deixa de existir é a porta de uma **contagem** para uma
+agregação.
+
+**A conferência.** O L5 do portão passa a exigir que cada uma das três marcas
+`data-registo-conta` seja uma âncora com `href="#documento"` e que `#documento`
+resolva na própria página, e a mensagem diz porquê. **Dois estragos plantados**,
+um por cada metade da conferência, cada um numa cópia em `dist/`, com o resumo do
+ficheiro registado antes, a conferência a fechar com **exit 1**, o ficheiro
+reposto e conferido pelo resumo, e `git status --porcelain` limpo:
+
+* **1 · a conta dos algarismos do 07 pt a abrir `#linhas-do-documento`**, que é a
+  forma exata do defeito. Uma queixa, e mais nenhuma:
+  `L5 evora-orcamentado-pago-devido-2025/pt=algarismos: a porta da contagem abre "#linhas-do-documento" e tem de abrir "#documento". As três contam OCORRÊNCIAS no corpo (blocos, figuras marcadas e selos), e é no corpo que elas se veem, uma marca por cada; "#linhas-do-documento" agrega numa entrada por linha do motor DISTINTA e por isso não mostra o que o número conta (IDENTIDADE.md §10).`
+* **2 · o corpo do 06 pt sem `id="documento"`**, que é a porta a não resolver:
+  `L5 evora-economia-investidores-portas-abertas-2026/pt: a página não tem o corpo com id="documento", que é a porta das três contagens da faixa.`
+  Esta metade **já tinha rede**, e vale registar: na mesma corrida a conferência
+  das ligações internas do portão queixa-se três vezes, uma por contagem («a
+  ligação interna "#documento" aponta para a âncora "#documento", que não existe
+  em "/estudos/evora-economia-investidores-portas-abertas-2026/texto"»). A linha
+  do L5 fica na mesma porque nomeia o papel da âncora, e não só a sua existência:
+  quem lê a queixa sabe que é a porta das contagens que caiu.
+
+**As corridas.** `npm run build` exit 0 (342 páginas, 41 chaves da prova, 8
+páginas de leitura), `npm run verify` exit 0, `npm run typecheck` exit 0,
+`provar-eyetext` exit 0 (157 conferências), `medir-defeitos` exit 0 com 91 frases
+distintas, 2 542 ocorrências e **autorreferência 0 e nenhum bloco por classificar
+nas oito rotas `texto`** (a faixa não muda de texto), e `tests/texto/leitura.mjs`
+51/51. Nenhuma das contagens das oito faixas mudou, e não devia: o que mudou foi
+o destino de duas âncoras por página.
+
 ## 4. O registo dos defeitos e dos adiamentos
 
 **Defeito registado 2026-08-16 (00:10), encontrado pela direcção no sítio no ar — RESOLVIDO na mesma noite (§1.37, no ar em `4217232`):** os selos acrescentados a 15.08 aos valores do cabeçalho da primeira página (308 · 11 · 15) rendem no cabeçalho com o rótulo inteiro do estudo («O Estado do País — apuramento próprio») e, no caso da contagem CAOP, com o marcador «[a verificar]» ao lado. Certo pela regra (todo o valor tem selo, para a sua linha), errado naquele sítio: no cabeçalho o selo deve ser só o glifo, com o rótulo apenas para leitores de ecrã. **Primeiro item do bloco V**, junto com a saída de «Edição de …», da introdução justificativa da primeira página e de «Estes indicadores não são escolha nossa…» (voz). Sem alteração ao portão: o selo continua ao pé do valor e a apontar para a linha própria.
