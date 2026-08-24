@@ -51,7 +51,12 @@ Requer Node ≥ 22.12 (exigência do Astro 7).
    portão faz da mesma coisa (`IDENTIDADE.md` §10, `DECISIONS.md` §1.39); e cada
    campo marcado `data-agenda` comparado, carácter a carácter, com o registo da
    agenda que atravessou do motor, mais a contagem do que a página rende contra
-   a do registo da travessia (`DECISIONS.md` §1.40). No fim, escreve
+   a do registo da travessia (`DECISIONS.md` §1.40). Nas páginas de leitura
+   (`/estudos/<slug>/texto`) corre ainda um ramo próprio com sete conferências,
+   L1 a L7: a sequência de blocos, o texto de cada unidade pela leitura do olho,
+   os intervalos de ênfase e as ligações, o `printed` de cada figura — nunca o
+   `value` —, as contagens, o selo de quem tem linha e a porta de quem não tem, e
+   os `<th>` (`DECISIONS.md` §1.64 e §2.2 item 9). No fim, escreve
    `dist/prova.json` e relê-o;
 7. `check:dados` — os ficheiros de dados descarregáveis existem e batem certo
    com as suas origens.
@@ -104,6 +109,7 @@ de lá que a conferência deriva os três anfitriões.
 | Correções         | `/correcoes`          | `/en/corrections`         |
 | Arquivo           | `/estudos`            | `/en/studies`             |
 | Estudo            | `/estudos/<slug>`     | `/en/studies/<slug>`      |
+| Texto             | `/estudos/<slug>/texto` | `/en/studies/<slug>/text` |
 | Documento         | `/estudos/<slug>/documento` | `/en/studies/<slug>/document` |
 | Municípios        | `/municipios`         | `/en/municipalities`      |
 | Município         | `/municipios/<slug>`  | `/en/municipalities/<slug>` |
@@ -197,7 +203,16 @@ todo o mecanismo:
 | | O que é | Quem o escreve | Regra de algarismos |
 | --- | --- | --- | --- |
 | `/estudos/<slug>` | a **página do observatório** sobre o trabalho | nós, hoje | livro-razão, como qualquer página |
+| `/estudos/<slug>/texto` | o **documento**, composto no gabarito da casa a partir do registo de conteúdo do motor | o documento, e o gabarito compõe-o | a nona origem: cada algarismo comparado com o `printed` da sua figura no registo, carácter a carácter |
 | `/estudos/<slug>/documento` | o **trabalho**, tal como foi publicado | o documento, no dia em que foi publicado | dispensado: obra citada, com proveniência própria |
+
+A página de leitura existe **só onde há registo de conteúdo** — hoje oito
+edições, seis portuguesas e duas inglesas — e a diferença diz-se pela porta que
+falta na página do estudo, não por uma frase. É uma **transcrição de um
+documento fixado**: nada é reformatado, nem números, nem espaços, nem
+travessões, e o portão compara-a com o registo unidade a unidade. Nesta sessão
+leva `noindex` e fica fora do mapa do sítio; a decisão de a indexar é da sessão
+de UX.
 
 A página do estudo diz o que se sabe do trabalho — título, descrições nas duas
 línguas, tema, edições com data de publicação e de última actualização, o estado
@@ -351,6 +366,8 @@ scripts/
   check-dados.mjs         depois do build: os CSV e o conjunto de dados existem, batem
                           certo com as origens, e o conjunto só se liga sob licença
   ortografia.mjs          a passagem da ortografia, nos dois sentidos (à mão, não no build)
+  provar-eyetext.mjs      as duas provas da leitura do olho do lado do sítio: contra os
+                          registos do motor, e o conhecido-positivo (fora do build)
 
 src/
   lib/ledger.mjs          carrega, valida e serve o livro-razão
@@ -361,6 +378,9 @@ src/
   lib/dados.mjs           gera os CSV descarregáveis a partir das mesmas origens
   lib/documentos.mjs      descobre os documentos de estudo e põe-lhes a faixa
   lib/registos.mjs        lê os registos de conteúdo que atravessaram do motor
+  lib/registo-html.mjs    o renderizador: do registo para as peças da página de leitura
+  lib/eyetext.mjs         a leitura do olho, portada do motor: o texto bloco a bloco
+  lib/cruzamento.mjs      da linha do motor para a linha deste livro-razão, ao contrário
   i18n/strings.mjs        as palavras, nas duas línguas, com paridade imposta
   data/
     caop-centroids.mjs    as 308 posições, transcritas da CAOP 2025
@@ -378,9 +398,10 @@ src/
   pages/livro-razao.*     o livro-razão como conjunto de dados (CSV e JSON), e
   pages/livro-razao/[slug].json.js  um ficheiro por linha
   pages/**/documento/     o documento de um estudo, servido tal como está
+  pages/**/texto/         o documento de um estudo, composto do seu registo de conteúdo
   styles/                 tokens.css (os @font-face, a paleta e as fichas) + site.css;
                           mais uma folha por família de página: inicio, leitura,
-                          linha, municipio, importadas pela vista que as usa
+                          linha, municipio, texto, importadas pela vista que as usa
 
 public/js/                enriquecimento progressivo, vanilla, sem empacotar
 ```

@@ -66,6 +66,13 @@ provisório.» está **certo** com duas letras: o 18 é uma medição e sai a Bi
 o 2024 é uma data e fica em Spectral, na letra da frase. A letra distingue-os, e
 essa distinção é o produto.
 
+**E o caso da página de leitura, que é a mesma regra num documento transcrito.**
+Numa página que transcreve um documento fixado, os algarismos são os que o
+documento imprime, sem uma reformatação: toda a figura que o registo marca vai a
+Bitter tabular, porque é um valor com linha, a do motor; uma data, um ano ou um
+código que o registo não marca como figura fica na letra da frase (decisão do
+diretor de 24.08.2026, `DECISIONS.md` §1.64).
+
 **A escala da leitura, desde a v2.** A prosa das camadas de leitura passa a 17 a
 18px de base, com entrelinha entre 1,55 e 1,6 (`design/DECISAO.md` escreve 1,55;
 a de hoje é 1,6 sobre 16px, e a entrelinha absoluta não desce). Cresce onde se
@@ -211,7 +218,10 @@ quando falta um campo.»* (`metodo`) Então:
 3. **Onde aparece um valor, aparece o selo. Sem exceção de página.** Inclui o
    valor de cabeça na sua própria página de linha, onde o selo é uma âncora para
    a própria linha: estar já na página certa não dispensa a porta, dispensa a
-   viagem (`design/DECISAO.md`, «abertura do recibo»).
+   viagem (`design/DECISAO.md`, «abertura do recibo»). Numa página de leitura, uma
+   figura com linha deste livro-razão leva o selo; uma figura que só tem linha do
+   motor leva a porta para as linhas do documento, e nunca o selo, pela regra de
+   §10 (decisão do diretor de 24.08.2026, `DECISIONS.md` §1.64).
 4. **O selo escreve «fonte».** Quadrado, cheio ou a tracejado, mais a palavra
    «fonte» sublinhada; **a unidade compacta inteira é a ligação**, com alvo de
    toque suficiente. A palavra existia escondida para leitores de ecrã e um

@@ -8450,7 +8450,7 @@ ficheiro da linha: é uma leitura do `source_url` — o `#page=N` — feita pelo
 portão com a **sua própria cópia** da regra, para que ele confira a linha e não
 o gabarito. A razão é a mesma do separador de `attributed_to` (§1.31).
 
-### 2.2 As oito origens legítimas de um algarismo numa página
+### 2.2 As nove origens legítimas de um algarismo numa página
 
 1. `data-claim="<id>"` — veio do livro-razão. O portão confere que os algarismos
    renderizados são os do valor publicado. `<Claim/>` põe esta marca sozinho.
@@ -8580,6 +8580,55 @@ o gabarito. A razão é a mesma do separador de `attributed_to` (§1.31).
    - **a secção é lida do DOM.** A secção de estado onde o item está é lida a
      subir na página (`data-agenda-seccao`), e não calculada do registo: um
      item debaixo do cabeçalho errado com o rótulo certo passava.
+
+9. `data-registo*` — **o registo de conteúdo do motor, na página que o
+   transcreve**. É a origem 8 aplicada a um registo de outra natureza: ali um
+   campo do registo da agenda na página da agenda, aqui o texto de um documento
+   fixado na página de leitura desse documento (`/estudos/<slug>/texto`). São
+   quatro marcas, e todas são comparadas:
+
+   - `data-registo-edicao="<slug>/<lingua>"`, uma vez, no `<article>` que
+     contém o corpo transcrito: é o localizador da página, e tem de ser uma
+     entrada de `registos/manifest.json` e a da própria rota;
+   - `data-registo-bloco="<b>"`, em cada elemento de bloco do corpo: a
+     sequência (índice, género, nível, `ordered`, contagem de itens, de linhas e
+     de células) é a do registo, sem um bloco a mais nem a menos;
+   - `data-registo-unidade="<slug>/<lingua>#<b>[.<i>|.<r>.<c>]"`, em cada
+     unidade com texto: o texto pela **leitura do olho** é, carácter a carácter,
+     o `text` da unidade. A marca dispensa o varrimento de algarismos e o da
+     ortografia **da mesma maneira que `data-verbatim`** — porque é comparada, e
+     porque a grafia de um documento transcrito não é da casa;
+   - `data-registo="<slug>/<lingua>#<b>[…].<f>"`, à volta dos caracteres de uma
+     figura: o texto é o `printed` da figura, carácter a carácter e **nunca o
+     `value`**, e as posições `start`/`end` batem com o texto da unidade.
+
+   Mais duas marcas da mesma família, com a mesma disciplina:
+   `data-registo-linha="<slug>/<lingua>@<row>.<campo>"` para os campos de «As
+   linhas deste documento» (`valor`, `impresso`, `origem`), e
+   `data-registo-conta="<slug>/<lingua>=<conta>"` para as três contagens da
+   faixa, que o portão reconta do registo em disco e do registo de travessia das
+   linhas, e que levam porta como um `data-prova`.
+
+   **Não é uma dispensa** — é comparação, e a coisa contra a qual compara é um
+   ficheiro fixado por resumo que o D1 do `check:documentos` já conferiu. **A
+   marca só vale na rota `texto`**, pela mesma disciplina das origens 6 e 8:
+   noutra página seria uma segunda porta para pôr o texto de um registo em prosa
+   corrente, e o portão fecha a construção onde a encontrar.
+
+   **A razão de existir, medida e não afirmada.** Das 2 601 figuras das oito
+   edições com registo, 2 396 não têm linha no livro-razão deste sítio, e das
+   196 que têm, 119 imprimem no documento uma cadeia diferente da que a linha
+   guarda. Pôr cada algarismo dentro de um `<Claim>` ou não teria `id` nenhum
+   para lhe dar, ou imprimiria uma cadeia que o documento não imprime. A página
+   de leitura é uma **transcrição de um documento fixado**, não uma composição
+   da casa, e a origem do algarismo é o registo, que é a coisa que a página está
+   a transcrever. Ver §1.64.
+
+   O portão lê o manifesto, o registo e o registo de travessia das linhas com o
+   **seu próprio leitor**, e não importa `src/lib/registos.mjs`,
+   `registo-html.mjs` nem `cruzamento.mjs`. Importa `src/lib/eyetext.mjs`, que é
+   a leitura e não o gabarito, e que é provada à parte contra os registos do
+   motor (`node scripts/provar-eyetext.mjs`).
 
 As ilhas de dados `<script type="application/json" data-ledger-json>` têm regra
 própria: cada número precisa de um irmão `<x>_claim`, e é conferido contra o
@@ -9480,6 +9529,190 @@ renderizador. Não há rota de leitura, não há porta «Ler no sítio», não h
 `data-registo` e não há recibo do motor. A régua do inventário de frases ainda
 não aprendeu a origem `data-registo`, e as 46 ligações do corpo que os registos
 trazem não são rendidas por nada deste lado.
+
+#### P2 · o renderizador, a rota `texto` e a nona origem
+
+**A página.** Uma rota nova, `/estudos/<slug>/texto` e
+`/en/studies/<slug>/text`, compõe no gabarito da casa o documento inteiro de
+cada edição com registo, a partir do registo fixado e de mais nada. Só existem
+as páginas que têm registo: o `getStaticPaths` sai de `todosOsRegistos()` e não
+de `WORKS`, e por isso são **oito**, seis portuguesas e duas inglesas. A rota
+chama-se `texto`/`text` e não `leitura`/`reading` pela decisão 6 do diretor de
+24.08: «Leitura» colide com «Leitura breve». A edição arquivada em `/documento`
+não muda um byte, e nenhum endereço muda: é acrescento puro.
+
+**Medida contra a constituição, sem prancha nova** (decisão 11). Disposição B
+(§3): corpo e coluna do aparelho na **mesma grelha da página de linha e da
+página de concelho**, medida no motor a 1280 — `544px 300px` com 51,2px de
+intervalo, dentro do invólucro de 1180. A cabeça interior compacta e o rodapé
+das outras páginas interiores. A folha nova é `src/styles/texto.css`, importada
+só pela vista, sem um literal de cor e sem uma ficha que não seja já de
+`tokens.css`. A prosa do corpo a 19px sobre 1,6, que é a escala da leitura da
+§1. **Toda a figura do registo vai em Bitter tabular**, porque é um valor com
+linha, a do motor; uma data, um ano ou um código que o registo não marca como
+figura fica na letra da frase. Nenhuma cor. A Emenda 15 aplica-se à mobília: a
+autorreferência da rota é **zero**, nas oito páginas e nas duas edições.
+
+**O contrato de marcação** é a nona origem, e está escrito por extenso na §2.2.
+Quatro regras sem exceção: dentro de uma unidade só entra texto do registo e a
+mobília do selo; uma figura com linha do sítio leva o selo colado e uma sem
+linha leva a porta para a sua entrada em «As linhas deste documento», nunca o
+selo; a partição é uma só, sobre a união das fronteiras de todos os intervalos,
+com aninhamento por contenção e uma paragem da construção num cruzamento
+parcial; e **nada é reformatado** — nem números, nem espaços, nem travessões,
+nem aspas.
+
+**«As linhas deste documento»**, a porta das figuras sem linha do livro-razão.
+Uma entrada por linha do motor citada, na ordem da primeira citação, com quatro
+campos e mais nenhum: a linha do motor, o valor como a linha o guarda, como este
+documento o imprime, e o resumo de origem (os 64 hexadecimais, ou o motivo da
+lista fechada do motor, sem tradução, porque é um valor do formato e não prosa).
+Sem glifo de selo: os dois estados do selo são «origem completa» e «falta um
+campo», e uma linha que não é deste livro-razão não é nenhum dos dois. **Medido:
+1 888 entradas nas oito páginas**, 212 no 04 pt. Uma linha que TAMBÉM tenha
+linha do sítio leva na entrada a porta para `/livro-razao/<id>`, que é a mesma
+porta que o selo já abre, aqui na forma longa.
+
+**A leitura do olho, portada e provada.** `src/lib/eyetext.mjs` é o porte de
+`ResearchHub/core/eyetext.py` sobre `node-html-parser`, com as quatro regras e o
+mesmo passeio de blocos, e **uma extensão declarada e uma só**: os elementos
+`.src-chip` são saltados inteiros, porque o selo é a única mobília com texto que
+entra numa unidade. As duas provas correm em `node scripts/provar-eyetext.mjs`,
+**157 conferências**:
+
+* **contra o motor**, nas cinco edições cujos bytes alojados são os do motor e
+  cuja prova é `edicao-html` (06 pt, 07 pt, 07 en, 08 pt, 09 pt): 581 blocos
+  lidos, **2 614 unidades iguais carácter a carácter**, com os géneros, os
+  níveis e os `header` a bater. **A ressalva é medida e é o que faz esta prova
+  ser honesta:** o registo não é a leitura do olho da edição, é
+  `transform(eyetext(edição))`, onde `transform` são as operações da passagem de
+  voz que viajam ao lado dele. Nos 41 blocos que a voz editou e nos 11 que
+  apagou a igualdade não pode valer, e as 54 unidades desses blocos ficam
+  isentas — provadas pelo outro caminho: a frase que a voz diz ter tirado está
+  na leitura e não está no registo, e a que a substituiu está no registo. Sem
+  esta ressalva, a prova que o brief desenhou falhava em quatro das cinco
+  edições por exigir que a passagem de voz não tivesse acontecido;
+* **conhecido-positivo**, na forma do `core/eyetext_test.py`: as formas cuja
+  resposta certa não está em dúvida, a recusa de um `<li>` fora de lista e de
+  uma célula fora de linha, e dois estragos plantados numa cópia em memória de
+  um registo real — um bloco deitado fora e um espaço fantasma numa junta
+  apertada. **Medido**: a 07 pt tem 20 juntas apertadas e **zero** imprimem um
+  espaço. Com um estrago plantado no próprio leitor (os pedaços juntos com um
+  espaço, que é a leitura da casa), a prova fecha com código 1 e nomeia seis
+  conferências; reposto, volta a 0.
+
+**As sete conferências, dentro do `gate:html`.** Um ramo próprio,
+`verificaTexto()`, chamado quando `rota?.key === 'texto'`, **antes** da
+conferência geral e sem a dispensar: a página continua a ser varrida como
+qualquer outra. Cada uma provada contra um estrago plantado numa cópia em
+`dist/`, com o resumo registado antes e o ficheiro reposto e conferido depois;
+cada planta fechou com **exit 1** e a frase entre crases é a que o portão
+imprimiu:
+
+* **L1** a sequência de blocos é a do registo (índice, género, nível, `ordered`,
+  contagens). Estrago: um bloco `rule` deitado fora.
+  `L1 evora-prometido-pago-auditado-2026/pt: a página rende 101 blocos e o registo tem 102.`
+* **L2** o texto de cada unidade pela leitura do olho é, carácter a carácter, o
+  do registo. Estragos: um carácter mudado num parágrafo do 08 pt, e um espaço
+  antes de um ponto final na junta apertada de um `<em>` do 04 pt.
+  `L2 evora-quinze-anos-cinco-mandatos/pt#4: o texto rendido não é o do registo.`
+* **L3** cada intervalo de `emphasis[]` e de `links[]` cobre exatamente os
+  caracteres que declara. Estrago: um intervalo `strong` deslocado um carácter.
+  `L3 evora-prometido-pago-auditado-2026/pt#5: os intervalos de ênfase rendidos não são os do registo.`
+* **L4** cada figura tem a sua marca, o texto dentro dela é o `printed`, a marca
+  resolve numa figura do registo, as posições batem, e nenhuma marca
+  `data-registo*` existe fora da rota `texto`. Estragos: imprimir o `value`
+  (`51.95`) em vez do `printed` (`51,95`); uma figura sem marca; uma marca numa
+  página de estudo.
+  `L4 evora-prometido-pago-auditado-2026/pt#12.2.1.0: a figura imprime "51.95" e o registo diz que este documento imprime "51,95" (imprimiu o "value" da linha, e não o "printed" do documento: a página de leitura é o documento, não a composição da casa).`
+  `L4 evora-prometido-pago-auditado-2026/pt#12.2.1: a página rende 0 figuras e o registo tem 1.`
+  `data-registo="evora-prometido-pago-auditado-2026/pt#12.0.1.0" numa página que não é a de leitura de uma edição.`
+* **L5** as figuras da página são tantas quantas `referencias` no manifesto, os
+  blocos tantos quantos `blocos`, e as três `data-registo-conta` batem com a
+  recontagem do portão. Estrago: a faixa com «102 blocos» trocado por «103».
+  `L5 evora-prometido-pago-auditado-2026/pt=blocos: a faixa diz "103" e o portão reconta 102 do registo em disco.`
+* **L6** cada figura com linha do sítio tem selo colado e o selo abre essa
+  linha; cada figura sem linha tem a porta; nenhuma figura sem linha tem selo;
+  cada entrada de «As linhas» bate com as figuras dessa linha. Estrago: um selo
+  ao lado de uma figura sem linha do sítio.
+  `L6 evora-prometido-pago-auditado-2026/pt#5.0: a figura NÃO tem linha no livro-razão deste sítio e leva um selo ao lado.`
+* **L7** `<th>` exatamente onde o registo tem `header: true`. Estrago: uma
+  célula de cabeçalho rendida como corpo.
+  `L7 evora-prometido-pago-auditado-2026/pt#62.0.0: a célula é <td> e o registo diz header: true.`
+
+**Uma decisão de desenho do portão que vale a linha:** um texto divergente não
+pára a unidade. Trocar o `printed` de uma figura pelo `value` da linha muda o
+texto da unidade **também**, e uma conferência que parasse no L2 nunca chegava a
+dizer porquê. O L2 fecha, e as conferências que não dependem das posições
+continuam a correr.
+
+**Os três controlos negativos.**
+
+* **o 04 rendido com a tabela onde a edição arquivada tem gráficos: zero
+  queixas.** **Medido:** a edição arquivada tem 4 regiões de gráfico (`<figure>`
+  com legenda) e 12 tabelas; a página de leitura tem 13 tabelas e zero regiões
+  de gráfico, e o bloco 12 é a tabela que o primeiro gráfico substitui, com as
+  suas três linhas de dinheiro. **É o desenho a funcionar**: a comparação é
+  contra o registo, e não contra a edição arquivada;
+* **uma figura cujo `printed` é igual ao `value` passa.** **Medido:** 301 das
+  326 figuras do 04 pt imprimem exatamente o `value` da sua linha do motor, e
+  nenhuma delas levanta uma queixa;
+* **os oito registos intactos dão zero queixas nas oito páginas**, e a
+  construção inteira fica verde.
+
+**A régua do inventário de frases aprendeu a origem ANTES de contar a página.**
+`ORIGEM_DECLARADA` ganhou `[data-registo]`, `[data-registo-unidade]`,
+`[data-registo-linha]` e `[data-registo-conta]`, e `ROTAS_DO_INVENTARIO` ganhou
+`texto`. **Medido, e é a razão de a lição vir primeiro:** com as oito páginas
+construídas e a régua por ensinar, a contagem de frases de moldura do sítio
+saltava de **90 distintas e 2 530 ocorrências** para **148 e 3 051**, com
+resumos de origem, nomes de entidades e títulos de relatórios do Tribunal de
+Contas a contarem como moldura da casa; com a lição, fica em **91 e 2 542**, e o
+único acrescento é o par de portas «Ler o documento → Ler no sítio →» da página
+do estudo. As oito rotas novas entram no `INVENTARIO-FRASES.md` com **sete
+blocos distintos por edição**, todos conteúdo, e **autorreferência zero**;
+nenhuma outra rota mexeu.
+
+**A ausência diz-se pela porta que falta** (decisão 9). A página do estudo de
+uma edição com registo ganha «Ler no sítio →» ao lado de «Ler o documento →»; a
+de uma edição sem registo não ganha nada, e nenhuma frase explica porquê.
+
+**`noindex` e fora do mapa do sítio, nesta sessão**, por contrato da sessão: as
+páginas ficam visíveis nos seus endereços e ligadas da página de cada estudo, e
+**a decisão de as indexar é da sessão de UX**. O filtro do `astro.config.mjs`
+exclui `hit?.key === 'texto'`, com o comentário a dizer que é essa linha que sai
+no dia em que a decisão for tomada.
+
+**Três coisas que o brief não podia prever, e que ficam ditas.**
+
+1. **A rota `texto` é a primeira do sítio que não existe nas duas edições.** Há
+   registo para seis edições portuguesas e duas inglesas; um par hreflang para
+   uma página que não foi construída é uma porta que não abre, e o portão
+   apanhou-o. `Base.astro` ganhou duas props opcionais (`alternativas` e
+   `caminhoDaOutraLingua`), que a vista preenche: as alternativas são as línguas
+   que têm registo, e o comando de língua leva à irmã quando ela existe e à
+   página do estudo na outra edição quando não existe.
+2. **`identificador-tecnico` passou a ser texto citado para o varrimento da
+   ortografia** (`NONLEDGER_CITADO`, ao lado de `titulo-de-estudo` e de
+   `proveniencia`). O `origin_ref` de um registo é o caminho de um ficheiro do
+   motor mais o commit de onde saiu, e o travessão que ele traz é do **nome do
+   ficheiro**: a §9 da constituição diz que o que é transcrito nunca se
+   converte, e um nome de ficheiro que se reescrevesse deixava de poder ser
+   copiado.
+3. **O título de uma página de leitura é o bloco 0 do seu registo**, e entra nas
+   `CADEIAS_HEAD` do portão pela mesma razão que as citações: no `<head>` não há
+   onde pendurar a marca, e a cadeia exata do registo é a mesma prova por outro
+   caminho. O portão lê os registos do disco e retira do `<head>` exatamente
+   essas cadeias; um título que não seja o do registo não é retirado e o
+   varrimento apanha-o.
+
+**O que fica por fazer, e é da P3 em diante.** Não há chaves novas em
+`src/lib/prova.mjs`: as oito contagens do sítio inteiro (`registos_edicoes`,
+`registos_blocos`, `registos_algarismos`, …) e o `check:cadeia` são a P3, e a
+faixa de cada página conta por si, com a recontagem do portão contra o registo em
+disco. As páginas ficam fora do mapa do sítio e com `noindex` até a sessão de UX
+decidir. E a leitura cruzada do Codex sobre este par, com as seis plantas da §7
+do plano, ainda não correu.
 
 ## 4. O registo dos defeitos e dos adiamentos
 
