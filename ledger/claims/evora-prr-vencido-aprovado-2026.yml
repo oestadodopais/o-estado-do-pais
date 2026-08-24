@@ -86,7 +86,7 @@ corrections:
     old_value: "102 711 703,85"
     new_value: "102 618 703,85"
     reason: "O publicador do PRR substitui o ficheiro e não arquiva o anterior. Esta soma foi refeita sobre o instantâneo de 2026-08-17 (listagem-de-entidades-prr-20260817.xlsx e listagem-de-projetos-prr-20260817.xlsx); a anterior era sobre o instantâneo de 2026-08-03 (listagem-de-entidades-prr-20260803.xlsx e listagem-de-projetos-prr-20260803.xlsx). O valor antigo não estava errado quando foi publicado: media outro instantâneo, e esse já não é servido."
-    reason_en: "The PRR publisher replaces the file and archives nothing. This sum was recomputed over the 2026-08-17 snapshot (listagem-de-entidades-prr-20260817.xlsx e listagem-de-projetos-prr-20260817.xlsx); the previous one was over the 2026-08-03 snapshot (listagem-de-entidades-prr-20260803.xlsx e listagem-de-projetos-prr-20260803.xlsx). The old value was not wrong when it was published: it measured a different snapshot, and that one is no longer served."
+    reason_en: "The PRR publisher replaces the file and archives nothing. This sum was recomputed over the 2026-08-17 snapshot (listagem-de-entidades-prr-20260817.xlsx and listagem-de-projetos-prr-20260817.xlsx); the previous one was over the 2026-08-03 snapshot (listagem-de-entidades-prr-20260803.xlsx and listagem-de-projetos-prr-20260803.xlsx). The old value was not wrong when it was published: it measured a different snapshot, and that one is no longer served."
   - date: "2026-08-20"
     kind: "proveniencia"
     field: "source_url"
