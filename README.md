@@ -36,7 +36,9 @@ Requer Node ≥ 22.12 (exigência do Astro 7).
    investigação é, byte a byte, o que atravessou, e as invariantes da agenda são
    reconferidas deste lado (ver [«Linhas cruzadas»](ledger/README.md));
 3. `check:documentos` — cada documento de estudo alojado é, byte a byte, o que o
-   manifesto declara;
+   manifesto declara, **e cada registo de conteúdo que atravessou do motor** é,
+   byte a byte, o que o registo de travessia declara (ver
+   [`registos/README.md`](registos/README.md));
 4. `astro build` — se um gabarito citar uma afirmação que não existe, o build atira;
 5. `stamp:version` — carimba em `dist/version.json` o commit de que a construção saiu;
 6. `gate:html` — varre `dist/` à procura de algarismos sem proveniência, e
@@ -316,6 +318,13 @@ ortografia/
   formas.yml              as formas e a autoridade que as sustenta; uma lista, dois usos
   restantes.yml           o que fica por converter, rota a rota, com o motivo
 
+registos/
+  <slug>/<lg>.record.json o registo de conteúdo de uma edição, tal como o motor o escreveu
+  <slug>/<lg>.cortes.json as operações da passagem de voz que o fizeram
+  manifest.json           o registo de travessia: o que atravessou, de que ficheiro e commit,
+                          com os dois resumos de cada ficheiro
+  README.md               ficheiro gerado, quem o escreve e as seis conferências
+
 studies-src/
   <slug>/pt.html          o documento original de um estudo, alojado intacto
   <slug>/en.html          a edição inglesa do mesmo
@@ -325,7 +334,12 @@ studies-src/
 
 scripts/
   check-ledger.mjs        antes do build: completude e aritmética
-  check-documentos.mjs    antes do build: os documentos alojados contra o manifesto
+  check-documentos.mjs    antes do build: os documentos alojados contra o manifesto, e os
+                          registos de conteúdo contra o registo de travessia (D1 a D6: o
+                          resumo de cada registo e de cada ficheiro de operações, nenhum
+                          ficheiro sem entrada, o slug e a língua contra o arquivo, o
+                          registo contra os bytes do documento alojado, e as contagens de
+                          blocos e de referências recontadas)
   normalize-study.mjs     a função pura que separa o documento do invólucro do anfitrião
   verify-fetch.mjs        para quem vem de fora: uma descarga nova contra o que está alojado
   extract-from-transcript.mjs  recurso: os bytes de uma descarga que não escreveu ficheiro
@@ -346,6 +360,7 @@ src/
   lib/routes.mjs          a tabela de rotas (navegação, hreflang, sitemap)
   lib/dados.mjs           gera os CSV descarregáveis a partir das mesmas origens
   lib/documentos.mjs      descobre os documentos de estudo e põe-lhes a faixa
+  lib/registos.mjs        lê os registos de conteúdo que atravessaram do motor
   i18n/strings.mjs        as palavras, nas duas línguas, com paridade imposta
   data/
     caop-centroids.mjs    as 308 posições, transcritas da CAOP 2025

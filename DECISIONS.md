@@ -9357,6 +9357,130 @@ porque o Método não nomeia modelos em lado nenhum. A frase entra na `regra` e
 não no `limite`, porque é uma definição; não leva algarismos; e esta entrada é
 o registo que a amarra das decisões exige para o resumo novo.
 
+### 1.64 A parte 3: as páginas de leitura constroem-se dos registos de conteúdo do motor
+
+**Afecta:** nenhum
+
+A parte 3 é o bloco em que este sítio deixa de servir só os bytes de um estudo e
+passa a compor a sua página de leitura a partir do **registo de conteúdo** que o
+motor de investigação escreve por edição: o texto partido em blocos, com cada
+algarismo ligado à linha do livro-razão do motor que o bate. O plano é a
+`design/especime-v3/ESTIMATIVA-PARTE3-2026-08-24.md`, e as onze decisões que o
+diretor deu sobre ele a 24.08.2026 estão em
+`design/especime-v3/ESTADO-DO-MAIN-2026-08-24.md`; nenhuma se reabre aqui. A
+restrição medida que manda no desenho é a §0.3 do plano: 2 396 das 2 601 figuras
+do âmbito não têm linha no livro-razão deste sítio, e das 196 que têm, 119
+imprimem no documento uma cadeia diferente da que a linha guarda. A página de
+leitura é por isso uma **transcrição de um documento fixado** e não uma
+composição da casa. Esta entrada cresce por etapa: a P1 é a travessia, e a P2 a
+P4 entram abaixo à medida que forem feitas.
+
+#### P1 · a travessia
+
+**O que atravessou, e de onde.** Oito edições, que são as edições alojadas neste
+sítio para as quais o motor tem registo: `avaliacao-economica-regional-de-portugal-2026`
+pt, `evora-prometido-pago-auditado-2026` pt e en, `evora-economia-investidores-portas-abertas-2026`
+pt, `evora-orcamentado-pago-devido-2025` pt e en, `evora-quinze-anos-cinco-mandatos`
+pt e `evora-os-pelouros-quem-os-teve-o-que-fizeram` pt. São 829 blocos e 2 601
+referências, medidos. As quatro edições do motor sem edição alojada (03 en, 06
+en, 08 en, 09 en) não atravessam, e a corrida do exportador nomeia cada uma em
+voz alta em vez de as deixar cair em silêncio. A décima sexta edição do sítio,
+`penalizacoes-por-reforma-antecipada-2026`, está fora do âmbito por decisão do
+diretor, e hoje não tem registo no motor.
+
+Quem escreve é `ResearchHub/publisher/export_records_site.py` (commit `d64a4d2`
+do motor), e nada em `registos/` se edita à mão. É a **terceira travessia** desta
+casa e não inventa forma nenhuma: segue o padrão da segunda, as linhas do
+livro-razão de `ledger/cruzamentos/`, e não o da primeira, os bytes de um
+documento em `studies-src/`. Um registo é conteúdo com resumo, como uma linha, e
+não bytes servidos, como um documento. A pasta fica na raiz, ao lado das outras
+duas: pô-la dentro de `studies-src/` pararia a construção, porque o leitor dessa
+pasta atira ao ver um ficheiro que não seja `pt.html` ou `en.html`, e `ledger/` é
+o livro-razão, onde um registo de conteúdo não é uma afirmação.
+
+**A forma do manifesto.** `registos/manifest.json`, uma entrada por
+`slug/lingua`, com o estudo, a edição e a língua do lado do motor; o `origin_ref`
+com ficheiro e commit; os dois resumos do registo e os dois do ficheiro de
+operações; o resumo dos bytes do `records.manifest.json` do estudo; o nome e o
+resumo da edição HTML que o motor prova; o `estado` e o `fixado_em` do motor; as
+contagens de blocos e de referências; a `prova`; e o `exported_at`, que quer
+dizer «quando estes bytes mudaram pela última vez» e por isso é mantido quando
+nenhum resumo mexeu. **Serem dois resumos e não um é o ponto**, e é a mesma
+assimetria que `ledger/cruzamentos/` já usa: o de origem prova que o ficheiro é o
+do motor, e confere-se contra o manifesto do estudo; o exportado prova que
+ninguém lhe tocou depois de chegar, e confere-se sem o motor estar presente, que
+é a única forma de o construtor remoto o poder conferir.
+
+**As seis conferências**, no `scripts/check-documentos.mjs`, com a mesma
+severidade das três dos documentos alojados, e cada uma provada contra um estrago
+plantado antes de contar. A frase entre crases é a que o portão imprimiu com o
+estrago posto; cada planta fechou com **exit 1** e foi revertida a seguir, com o
+portão a voltar a exit 0 e o `git status` limpo:
+
+* **D1** cada entrada tem ficheiro e o resumo dos bytes é o
+  `exported_record_sha256`, e é também o `origin_record_sha256`, porque o
+  ficheiro atravessa byte a byte e dois resumos diferentes entre si são um
+  manifesto a mentir. Estrago: um carácter editado num registo.
+  `D1 registos["evora-quinze-anos-cinco-mandatos/pt"]: os bytes de registos/evora-quinze-anos-cinco-mandatos/pt.record.json não são os que atravessaram.`
+* **D2** nenhum ficheiro em `registos/`, fora o `manifest.json` e o `README.md`,
+  sem entrada no manifesto. Estrago: uma pasta com um slug enganado.
+  `D2: existe registos/um-slug-enganado/pt.record.json e o registo de travessia não o nomeia.`
+* **D3** o ficheiro de operações da passagem de voz existe e bate com o
+  `exported_cortes_sha256`. Estrago: apagá-lo.
+  `D3 registos["evora-orcamentado-pago-devido-2025/pt"]: falta registos/evora-orcamentado-pago-devido-2025/pt.cortes.json, que são as operações da passagem de voz que fizeram este registo.`
+* **D4** o `slug` é um trabalho de `src/data/studies.mjs` e a língua é uma edição
+  declarada desse trabalho. Estrago: o manifesto a declarar uma edição que o
+  arquivo não tem.
+  `D4 registos["evora-quinze-anos-cinco-mandatos/en"]: o trabalho "evora-quinze-anos-cinco-mandatos" não tem edição "en" no arquivo.`
+* **D5** quando os bytes alojados vieram do motor, o `edicao_html_sha256` do
+  registo é o `sha256_normalized` que o `studies-src/manifest.yml` declara.
+  Estrago: um resumo trocado.
+  `D5 registos["evora-quinze-anos-cinco-mandatos/pt"]: o registo e os bytes alojados são de versões diferentes do documento.`
+* **D6** os blocos e as referências que o manifesto promete são recontados sobre
+  o ficheiro, unidade a unidade, e um género de bloco que o portão não saiba
+  percorrer pára a construção em vez de ser somado como zero. Estrago: 325
+  prometidas sobre um registo com 326.
+  `D6 registos["evora-prometido-pago-auditado-2026/pt"]: o manifesto promete 325 referência(s) e o registo tem 326.`
+
+O portão lê o manifesto com o seu próprio leitor e não importa
+`src/lib/registos.mjs`, porque uma conferência que usasse o código das páginas
+confirmava-se a si própria; corre sem rede e sem o motor em disco, que é o que a
+construção remota da Vercel exige. A comparação com o lado da origem é o modo
+`--with-origin`, fora do `npm run build` pela mesma razão que o do
+`check-cruzamento.mjs`, e que diz que não correu, sem falhar, quando o motor não
+está.
+
+**A exceção do D5, e a razão medida.** O D5 corre em sete das oito edições e bate
+nas sete. Não corre para `avaliacao-economica-regional-de-portugal-2026` pt: os
+bytes que este sítio aloja são um artefacto do claude.ai, e a edição que o motor
+prova é o `Technical Source/artifact_pt.html`, que não é um ficheiro HTML
+auto-contido (medido a 24.08: sem `head` e sem `body`) e que este sítio não
+aloja. Para essa edição nada prova que a página de leitura e a edição arquivada
+sejam o mesmo documento, e por isso **o portão di-lo em voz alta a cada
+construção**, com o ficheiro nomeado, em vez de o resolver por omissão. É a
+decisão 7 do diretor de 24.08 aplicada; dar ao 03 uma edição completa é decisão
+futura do motor. Nota de rigor: o brief desta etapa escreveu «seis» edições com
+origem `researchhub` e a sua própria tabela listava sete; a medição contra o
+`studies-src/manifest.yml` dá **sete**, e é o número que ficou.
+
+**O ciclo de re-travessia**, quando o motor refaz um registo, são cinco passos e
+nenhum à mão: `export_records.py --write` no motor e commit; `export_records_site.py
+--write`, que recusa se a árvore do motor estiver suja, porque um commit que não
+contém os bytes que atravessaram não é proveniência; `check:documentos` a recusar
+a construção enquanto os resumos não baterem dos dois lados; a travessia dos
+bytes do documento pelo caminho de sempre, se o `.html` mudou, até o D5 voltar a
+bater; e o bloco de republicação da §1.49 por inteiro, com leitura cruzada e a
+palavra do diretor antes de fundir. **Não há reconstrução automática nem
+sincronização, e é deliberado:** um registo velho pára a construção, como um
+documento editado já a pára.
+
+**O que fica por fazer, e é da P2 em diante.** O `src/lib/registos.mjs` existe e
+**não tem consumidores**: nenhuma página o importa, e quem o vai usar é o
+renderizador. Não há rota de leitura, não há porta «Ler no sítio», não há
+`data-registo` e não há recibo do motor. A régua do inventário de frases ainda
+não aprendeu a origem `data-registo`, e as 46 ligações do corpo que os registos
+trazem não são rendidas por nada deste lado.
+
 ## 4. O registo dos defeitos e dos adiamentos
 
 **Defeito registado 2026-08-16 (00:10), encontrado pela direcção no sítio no ar — RESOLVIDO na mesma noite (§1.37, no ar em `4217232`):** os selos acrescentados a 15.08 aos valores do cabeçalho da primeira página (308 · 11 · 15) rendem no cabeçalho com o rótulo inteiro do estudo («O Estado do País — apuramento próprio») e, no caso da contagem CAOP, com o marcador «[a verificar]» ao lado. Certo pela regra (todo o valor tem selo, para a sua linha), errado naquele sítio: no cabeçalho o selo deve ser só o glifo, com o rótulo apenas para leitores de ecrã. **Primeiro item do bloco V**, junto com a saída de «Edição de …», da introdução justificativa da primeira página e de «Estes indicadores não são escolha nossa…» (voz). Sem alteração ao portão: o selo continua ao pé do valor e a apontar para a linha própria.
