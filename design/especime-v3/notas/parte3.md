@@ -352,3 +352,120 @@ não mudaram: as chaves novas são da P3.
 * **A I65 e a I66** ficam abertas e escritas: o troço sem título que a passagem
   de voz deixou em cinco das oito páginas, e o selo entre a figura e o resto do
   texto da unidade.
+
+---
+
+## P3 · o `check:cadeia` e as oito chaves na prova
+
+*Construída a 24.08.2026 pelo construtor (Claude Opus 5, `claude-opus-5[1m]`) no
+ramo `parte3-2026-08-24`, sobre a P2, a partir de `7626a2a`. O brief é
+`briefs/BRIEF-parte3-P3.md`; o plano é a `ESTIMATIVA-PARTE3-2026-08-24.md` §4 e
+§0.3; as onze decisões do diretor estão em `ESTADO-DO-MAIN-2026-08-24.md` e
+nenhuma se reabriu. O registo da etapa é a `DECISIONS.md` §1.64, subsecção P3.
+O motor não foi tocado: esteve em leitura, e só para confirmar o que o seu
+manifesto de travessia declara `excluded`.*
+
+### Os commits
+
+| repositório | commit | o quê |
+|---|---|---|
+| sítio | `a79fb93` | `scripts/check-cadeia.mjs`, as oito chaves em `src/lib/prova.mjs`, as oito recontagens e a vista `registos` no `scripts/gate-html.mjs`, o passo no `package.json` |
+| sítio | `1b32984` | a marca sai da lista quando é figura e uma figura sem linha do motor não pára a travessia; o `OEDP_REGISTOS_DIR` no `scripts/check-documentos.mjs` |
+| sítio | (este) | o registo: a subsecção P3 na `DECISIONS.md` §1.64, a contagem das vistas na §2.2, o `README.md` e esta nota |
+
+### O guião, corrido inteiro
+
+`node scripts/check-cadeia.mjs` · **exit 0**.
+
+```
+  03 pt ·  55 blocos · 411 algarismos ·  0 completas · 411 do motor · 0 por resolver ·   0 com resumo de origem · 411 com motivo
+  06 pt ·  53 blocos · 171 algarismos · 10 completas · 161 do motor · 0 por resolver ·   0 com resumo de origem · 171 com motivo
+  07 en ·  91 blocos · 194 algarismos · 52 completas · 142 do motor · 0 por resolver ·  12 com resumo de origem · 182 com motivo
+  07 pt ·  92 blocos · 194 algarismos · 52 completas · 142 do motor · 0 por resolver ·  12 com resumo de origem · 182 com motivo
+  09 pt · 155 blocos · 297 algarismos · 10 completas · 287 do motor · 0 por resolver · 208 com resumo de origem ·  89 com motivo
+  04 en · 102 blocos · 326 algarismos · 11 completas · 315 do motor · 0 por resolver ·   0 com resumo de origem · 326 com motivo
+  04 pt · 102 blocos · 326 algarismos · 12 completas · 314 do motor · 0 por resolver ·   0 com resumo de origem · 326 com motivo
+  08 pt · 179 blocos · 682 algarismos · 49 completas · 633 do motor · 0 por resolver · 278 com resumo de origem · 404 com motivo
+
+  as oito chaves da prova, contadas aqui:
+    registos_edicoes                    8
+    registos_blocos                   829
+    registos_algarismos              2601
+    registos_resolvidos              2601
+    registos_por_resolver               0
+    registos_com_linha_do_sitio       196
+    registos_com_resumo_de_origem     510
+    registos_sem_resumo_de_origem    2091
+
+  das 196 figuras com linha do sítio, 77 imprimem o valor que a linha guarda e 119 imprimem outra cadeia.
+
+  ✓ cada algarismo das páginas de leitura chega ao fim da sua cadeia: 196 até ao selo, 2405 até à entrada do motor.
+```
+
+*(as linhas do guião saem sem alinhamento de colunas; aqui vão alinhadas para se
+lerem em coluna, e os números são os que o comando imprimiu.)*
+
+Os oito totais batem, número a número, com os que o plano §4.2 mediu, e com o
+que o portão reconta em `dist/prova.json`. A ordem das edições é a do registo de
+travessia (`slug/lingua`), que é a de todos os outros portões desta casa, e não
+a do número do estudo do motor.
+
+### As três diferenças em relação ao brief, medidas
+
+| | o brief | medido | porquê |
+|---|---|---|---|
+| a linha de exemplo do 04 pt | «63 com resumo de origem · 263 com motivo» | **0 com resumo · 326 com motivo** | a soma é a mesma (326) e a repartição não: nenhuma figura do 04 traz `source_sha256`. Medido nas oito edições, as figuras com resumo repartem-se 0 · 0 · 12 · 12 · 208 · 0 · 0 · 278, e nenhuma edição dá 63 |
+| a cadeia do motor | 2 396 figuras (plano §4.1) | **2 405** | 2 601 menos as 196 com linha do sítio. As 9 de diferença são as figuras cujas linhas o manifesto do MOTOR declara `excluded`; deste lado não se distinguem, porque o `ledger/cruzamentos/evora.json` só traz `rows` e as entradas `excluded` do motor nomeiam padrões em prosa |
+| a §0.3 | 119 das 196 divergem | **119 divergem, 77 iguais** | recontado pelo guião a cada construção, contra `ledger/claims/<id>.yml` |
+
+### Os sete estragos plantados
+
+Cada um com o resumo do ficheiro registado antes, a conferência a fechar com
+**exit 1**, o ficheiro reposto e conferido pelo resumo, e `git status
+--porcelain` limpo. As frases estão na `DECISIONS.md` §1.64, subsecção P3.
+
+| | o estrago | fecha | exit |
+|---|---|---|---:|
+| 1a | uma marca `data-registo` na página com uma coordenada que não é figura nenhuma | L4 + `check:cadeia` C5, nos dois sentidos | 1 |
+| 1b | numa cópia do registo com o manifesto refeito, uma figura com `row` vazia | `check:cadeia` C2, com `registos_por_resolver` 1 · e o L6 do portão | 1 |
+| 2 | na mesma cópia, uma figura sem resumo e sem motivo, e outra com um motivo fora dos cinco | `check:cadeia` C1, duas vezes | 1 |
+| 3a | a faixa do 04 pt com «326 algarismos» trocado por «327» | L5 | 1 |
+| 3b | uma marca `data-registo` a mais, que muda o total do sítio | a comparação da prova: «a prova diz que "registos_algarismos" é 2601 e o portão conta 2602 (vista: dist)» | 1 |
+| 4 | `167 372 756` trocado pelo `value` da linha, `167 372 755,84` | L4 + `check:cadeia` C5 | 1 |
+| 5 | um selo ao lado de uma figura sem linha do sítio | L6 + `check:cadeia` C6 | 1 |
+
+**O controlo que vale a etapa inteira:** nas duas plantas de cópia (1b e 2), o
+`check:documentos` corrido sobre a cópia dá **exit 0**. O manifesto da cópia foi
+refeito, os bytes batem, e o portão que prende bytes não tem nada a dizer. É o
+`check:cadeia` que apanha o estrago. Um resumo prende bytes; não prende sentido.
+
+O estrago 3 do brief tinha dois fechos escritos («a recontagem do portão (P2,
+L5) e a comparação de `dist/prova.json`») e a faixa sozinha só fecha o primeiro:
+a faixa é uma `data-registo-conta` de UMA edição, e as oito chaves são totais do
+sítio que nenhuma página rende. O 3b é a metade que faltava, plantada onde ela
+existe: no total, e não na faixa.
+
+### As corridas verdes
+
+```
+npm run build                      exit 0 · 342 páginas · 41 chaves da prova · 8 páginas de leitura
+npm run verify                     exit 0
+npm run typecheck                  exit 0
+node scripts/check-cadeia.mjs      exit 0 · 8 edições · 2 601 algarismos
+node scripts/provar-eyetext.mjs    exit 0 · 157 conferências
+```
+
+As 342 páginas não mudaram: a P3 não acrescenta nenhuma. As chaves da prova
+passam de 33 a 41, e a repartição por vista fica **dist 16 · ledger 18 ·
+registos 4 · modulo 3**.
+
+### O que fica por fazer, e é da P4 em diante
+
+* **As oito chaves esperam a decisão do diretor sobre o Método.** Existem, saem
+  na prova e são recontadas; nenhuma página as rende. Entrarem nas listas
+  `prova` de uma regra é uma edição de `src/data/metodo.mjs`, que é texto
+  governado.
+* **As oito edições sem registo** continuam sem cadeia, porque não têm registo:
+  é a P4.
+* **A leitura cruzada do Codex** sobre a P2 e a P3, com as plantas da §7 do
+  plano, continua por correr.
