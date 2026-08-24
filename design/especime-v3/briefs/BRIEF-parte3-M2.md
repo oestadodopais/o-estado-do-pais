@@ -27,7 +27,7 @@ Uma figura **sem** linha do sítio que está **dentro de uma ligação do própr
 
 13. **A prova do sítio:** `dist/prova.json` (na cópia congelada) tem as oito chaves `registos_*`; compara cada uma com a tua própria soma sobre as oito edições: `registos_edicoes` (páginas de leitura que existem), `registos_blocos` (blocos), `registos_algarismos` (figuras), `registos_resolvidos` (figuras com `row` não vazia e com selo ou porta ou entrada), `registos_por_resolver` (as outras; tem de ser 0), `registos_com_linha_do_sitio` (figuras com selo certo), `registos_com_resumo_de_origem` (figuras cujo `source_sha256` tem 64 hexadecimais), `registos_sem_resumo_de_origem` (as outras, com motivo).
 14. **`dist/cadeia.json`:** os totais por edição desse ficheiro contra os teus.
-15. **As ligações do documento:** para cada `links[]` do registo (46 no âmbito: 7 no 03 pt, 16 em cada edição do 04, 0 nas outras), a página tem um `<a href="…">` com esse endereço exato e a etiqueta `text[start:end]`; no 03 pt, as etiquetas que são o próprio URL (até 283 caracteres) estão inteiras no texto rendido.
+15. **As ligações do documento:** para cada `links[]` do registo (39 no âmbito: 7 no 03 pt, 16 em cada edição do 04, 0 nas outras; o brief dizia 46, que é a conta do motor sobre os doze registos, e a M2 apanhou-o), a página tem um `<a href="…">` com esse endereço exato e a etiqueta `text[start:end]`; no 03 pt, as etiquetas que são o próprio URL (até 283 caracteres) estão inteiras no texto rendido.
 
 ## 3 · O relatório
 

@@ -141,8 +141,9 @@ acrescenta página nenhuma, e não devia.
 * **A régua do inventário de frases não aprendeu a origem `data-registo`.** Está
   na nota da estimativa e continua por fazer; se contar os blocos de prosa
   transcrita como frases da casa, a contagem de autorreferência salta.
-* **As 46 ligações do corpo atravessaram dentro dos registos** (7 por edição do
-  03, 16 por edição do 04), e nada do lado do sítio as rende ainda.
+* **As 39 ligações do corpo atravessaram dentro dos registos** (7 no 03 pt, 16
+  por edição do 04; esta nota dizia 46, que é a conta do motor sobre os doze
+  registos com o 03 en, e a M2 apanhou-o), e nada do lado do sítio as rende ainda.
 
 ---
 
