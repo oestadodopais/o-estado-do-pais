@@ -636,7 +636,9 @@ da forma, que o brief §2.7 manda estender de três edições para as oito.*
 | repositório | commit | o quê |
 |---|---|---|
 | sítio | `f77f123` | a régua `tests/texto/leitura.mjs` passa a medir o transbordo nas oito, com a lista a sair do registo de travessia |
-| sítio | (este) | o registo: a subsecção P4 na `DECISIONS.md` §1.64, esta nota e a `ISSUES.md` (a I65 recontada) |
+| sítio | `e7922ab` | o registo: a subsecção P4 na `DECISIONS.md` §1.64, esta nota e a `ISSUES.md` (a I65 recontada e a I66 recontada) |
+| sítio | `5f8fe32` | a I65 são seis por omissão de contagem e não por diferença de método: a segunda medição, pelos ficheiros de operações, dá a mesma lista |
+| sítio | (este) | esta tabela, com os três commits acima |
 
 ### A tabela das oito, com as quatro fontes de cada contagem
 
