@@ -44,12 +44,28 @@ const {
    * Uma por página, sempre: é o que o portão de HTML conta.
    */
   portaNoRodape = true,
+  /**
+   * OS PARES DE LÍNGUA, QUANDO A ROTA NÃO EXISTE NAS DUAS.
+   *
+   * Quase todas as rotas deste sítio existem nas duas edições, e por isso os
+   * pares saem da tabela de rotas. A rota `texto` é a primeira que não existe
+   * sempre nas duas: só há página de leitura onde há registo de conteúdo, e
+   * dos oito registos, seis são portugueses e dois ingleses. Declarar um par
+   * hreflang para uma página que não foi construída seria uma porta que não
+   * abre, e o portão apanha-o.
+   *
+   * Quem sabe se a irmã existe é a vista; por isso a vista passa a lista de
+   * alternativas, na forma que `alternatesFor()` devolve, e o caminho que o
+   * comando de língua deve abrir. Sem estas duas props nada muda.
+   */
+  alternativas = null,
+  caminhoDaOutraLingua = null,
 } = Astro.props;
 
 const s = t(lang);
 const path = normalizePath(pathProp ?? Astro.url.pathname);
 const canonical = canonicalUrl(path);
-const alternates = alternatesFor(path);
+const alternates = alternativas ?? alternatesFor(path);
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
@@ -181,7 +197,13 @@ const cartaoTwitter = urlDoCartao({ ...cartao, ...DIM_TWITTER });
 
     <div class="wrap">
       <slot name="masthead">
-        <Masthead lang={lang} path={path} compact={mastheadCompact} furniture={furniture} />
+        <Masthead
+          lang={lang}
+          path={path}
+          compact={mastheadCompact}
+          furniture={furniture}
+          outraLingua={caminhoDaOutraLingua}
+        />
       </slot>
 
       <main id="conteudo">
@@ -190,7 +212,7 @@ const cartaoTwitter = urlDoCartao({ ...cartao, ...DIM_TWITTER });
 
       {portaNoRodape && <PortaDeCorreccoes lang={lang} class="porta-correccoes-rodape" />}
 
-      <SiteFooter lang={lang} path={path} />
+      <SiteFooter lang={lang} path={path} outraLingua={caminhoDaOutraLingua} />
     </div>
 
     {

@@ -68,6 +68,15 @@ export default defineConfig({
         if (/(^|\/)404$/.test(caminho)) return false;
         const hit = matchPath(caminho);
         if (hit?.key === 'documento') return false;
+        /* As páginas de leitura (`/estudos/:slug/texto`) ficam fora do mapa do
+           sítio NESTA SESSÃO, e levam `noindex`, por contrato da sessão que as
+           construiu: são oito páginas novas com o texto inteiro de documentos
+           que já estão alojados noutro endereço, e **a decisão de as indexar é
+           da sessão de UX**, não desta. Ficam visíveis nos seus endereços e
+           ligadas da página de cada estudo; o que não fazem é convidar-se
+           sozinhas ao índice. No dia em que a decisão for tomada, é esta linha
+           que sai, com o `noindex` de `TextoView.astro` ao lado dela. */
+        if (hit?.key === 'texto') return false;
         if (hit?.key === 'estudo') {
           const work = WORKS.find((w) => w.slug === hit.params.slug);
           return work ? temLeitura(work.id) : false;

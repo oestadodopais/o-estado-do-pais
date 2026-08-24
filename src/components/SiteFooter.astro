@@ -34,10 +34,12 @@
 import { routePath, otherLanguagePath, normalizePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 
-const { lang = 'pt', path } = Astro.props;
+const { lang = 'pt', path, outraLingua = null } = Astro.props;
 const s = t(lang);
 const aqui = normalizePath(path ?? Astro.url.pathname);
-const outra = otherLanguagePath(aqui, lang);
+/* Escrito, quando a rota não existe nas duas edições (a página de leitura).
+   Sem ele, o caminho sai da tabela de rotas, como sempre. */
+const outra = outraLingua ?? otherLanguagePath(aqui, lang);
 
 const secoes = [
   ['home', s.nav.inicio],

@@ -29,6 +29,13 @@
  *                                 calendário das fontes, na página da agenda,
  *                                 comparado carácter a carácter contra o
  *                                 registo que atravessou (§1.40).
+ *   9. data-registo*            — o registo de conteúdo do motor, na página que
+ *                                 o transcreve (`/estudos/<slug>/texto`). São
+ *                                 quatro marcas e todas são comparadas: a
+ *                                 edição, a sequência de blocos, o texto de
+ *                                 cada unidade pela leitura do olho, e o
+ *                                 `printed` de cada figura — nunca o `value`.
+ *                                 Ver verificaTexto() e DECISIONS §1.64.
  *
  * E, desde a etapa 5 do redesenho v3, uma conferência que não é sobre o HTML de
  * uma página mas sobre a imagem que ela oferece a quem a partilha:
@@ -75,6 +82,7 @@ import {
   nomeDoCartao,
 } from '../src/lib/cartoes.mjs';
 import { documentoDaEdicao, documentoServido } from '../src/lib/documentos.mjs';
+import { leBlocos, Texto } from '../src/lib/eyetext.mjs';
 import { renderizacoesAceites } from '../src/data/correcoes.mjs';
 import { SITE_HOST, SITE_NAME, canonicalUrl } from '../site.config.mjs';
 import { ENDERECO_CORRECOES } from '../src/data/metodo.mjs';
@@ -147,8 +155,69 @@ const PATTERNS = (allow.patterns ?? []).map((p) => ({
  * caminho. Uma frase que não esteja em `verbatim.mjs` continua a fechar o
  * portão.
  */
+const DIR_DOS_REGISTOS = path.join(ROOT, 'registos');
+
+/** O separador de uma lista numa cadeia só. O portão tem a sua própria cópia. */
+const SEPARADOR_DO_REGISTO = ' · ';
+
+/** Os cinco motivos da lista fechada do motor (publisher/REGISTOS.md). */
+const MOTIVOS_DO_REGISTO = new Set([
+  'derivado',
+  'api-viva',
+  'raw-sem-manifesto',
+  'pdf-sem-resumo',
+  'portal-estatico',
+]);
+
+const TRAVESSIA_DOS_REGISTOS = (() => {
+  try {
+    const doc = JSON.parse(fs.readFileSync(path.join(DIR_DOS_REGISTOS, 'manifest.json'), 'utf8'));
+    return doc?.registos ?? null;
+  } catch {
+    return null;
+  }
+})();
+
+const REGISTOS_LIDOS = new Map();
+function registoDoPortao(slug, lang) {
+  const chave = `${slug}/${lang}`;
+  if (REGISTOS_LIDOS.has(chave)) return REGISTOS_LIDOS.get(chave);
+  let registo = null;
+  try {
+    registo = JSON.parse(
+      fs.readFileSync(path.join(DIR_DOS_REGISTOS, slug, `${lang}.record.json`), 'utf8'),
+    );
+  } catch {
+    registo = null;
+  }
+  REGISTOS_LIDOS.set(chave, registo);
+  return registo;
+}
+
+/**
+ * O TÍTULO DE UMA PÁGINA DE LEITURA É O BLOCO 0 DO SEU REGISTO, e entra aqui
+ * pela mesma razão que as citações: no `<head>` não há onde pendurar a marca, e
+ * a cadeia exata do registo é a mesma prova por outro caminho. O portão lê os
+ * registos do disco com o seu próprio leitor e retira do `<head>` exatamente
+ * essas cadeias; um título que não seja o do registo não é retirado e o
+ * varrimento apanha-o. **Medido**: das oito, duas trazem algarismos no título do
+ * documento e nenhuma delas coincide com um título de edição do arquivo.
+ */
+const TITULOS_DOS_REGISTOS = (() => {
+  const saida = [];
+  for (const chave of Object.keys(TRAVESSIA_DOS_REGISTOS ?? {})) {
+    const slug = chave.slice(0, chave.lastIndexOf('/'));
+    const lang = chave.slice(chave.lastIndexOf('/') + 1);
+    const registo = registoDoPortao(slug, lang);
+    const titulo = registo?.blocks?.[0]?.text;
+    if (titulo) saida.push(titulo);
+  }
+  return saida;
+})();
+
 const CADEIAS_HEAD = [
   ...EDITIONS.map((e) => e.title),
+  ...TITULOS_DOS_REGISTOS,
   ...Object.values(VERBATIM).map((v) => v.text),
   SITE_NAME,
 ].sort(
@@ -285,6 +354,8 @@ for (const r of restantesCru.restantes ?? []) {
   });
 }
 let ocorrenciasRestantes = 0;
+/** Quantas páginas de leitura o varrimento viu. Entra no relatório do portão. */
+let paginasDeTexto = 0;
 
 /* ------------------------------------------------------------------ auxiliares */
 
@@ -489,7 +560,17 @@ function textoVisivel(el) {
  * do lado da fonte, com `node scripts/ortografia.mjs --verificar`.
  */
 const TAGS_CITADAS = new Set(['blockquote', 'q', 'cite', 'script', 'style', 'template']);
-const NONLEDGER_CITADO = new Set(['titulo-de-estudo', 'proveniencia']);
+/**
+ * `identificador-tecnico` entrou aqui a 24.08.2026, com a página de leitura: o
+ * `origin_ref` de um registo de conteúdo é o caminho de um ficheiro do motor
+ * mais o commit de onde ele saiu («content/04 Évora Public Money/Évora —
+ * Prometido, Pago, Auditado 2026 (pt-PT).record.json @ …»), e o travessão que
+ * ele traz é do NOME DO FICHEIRO. A §9 da constituição diz que o que é
+ * transcrito nunca se converte, e um nome de ficheiro que se reescrevesse
+ * deixava de poder ser copiado. É a mesma razão do `titulo-de-estudo`, que já
+ * cá estava.
+ */
+const NONLEDGER_CITADO = new Set(['titulo-de-estudo', 'proveniencia', 'identificador-tecnico']);
 
 function eCitado(no) {
   const tag = String(no.rawTagName ?? '').toLowerCase();
@@ -497,6 +578,12 @@ function eCitado(no) {
   const attrs = no.attributes ?? {};
   if ('data-verbatim' in attrs) return true;
   if ('data-linha-campo' in attrs) return true;
+  /* Uma unidade da página de leitura é o texto de um documento fixado, e é
+     comparada carácter a carácter com ele (a nona origem, L2). A grafia dela
+     não é da casa: converter um travessão que o documento imprime seria a
+     página a deixar de ser o documento. É a mesma isenção do `data-verbatim`,
+     pela mesma razão e com a mesma comparação por trás. */
+  if ('data-registo-unidade' in attrs) return true;
   return NONLEDGER_CITADO.has(attrs['data-nonledger'] ?? '');
 }
 
@@ -742,6 +829,655 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
         `      Um documento de estudo tem de ser auto-contido. Ligações para fora são ` +
         `legítimas; pedidos de rede não.`,
     );
+  }
+}
+
+/**
+ * ---------------------------------------------------------------------------
+ * A PÁGINA DE LEITURA — a nona origem, e as sete conferências L1 a L7.
+ * ---------------------------------------------------------------------------
+ *
+ * `/estudos/<slug>/texto` é o documento de um estudo composto no gabarito da
+ * casa a partir do REGISTO DE CONTEÚDO que o motor escreve, e de mais nada. Não
+ * é uma composição da casa: é uma **transcrição de um documento fixado**, e a
+ * §0.3 do plano da parte 3 mediu porquê — das 2 601 figuras das oito edições,
+ * 2 396 não têm linha no livro-razão deste sítio, e das 196 que têm, 119
+ * imprimem no documento uma cadeia diferente da que a linha guarda.
+ *
+ * Por isso cada algarismo entra pela NONA ORIGEM, `data-registo`, com a forma da
+ * oitava: o portão compara o texto renderizado com o `printed` daquela figura,
+ * carácter a carácter, e a marca **só vale nesta rota**. Não é uma dispensa — é
+ * comparação, e a coisa contra a qual compara é um ficheiro fixado por resumo
+ * que o D1 do `check:documentos` já conferiu.
+ *
+ * O QUE ESTE RAMO NÃO FAZ: não dispensa a página do resto do varrimento. A
+ * página continua a ser varrida como qualquer outra (a porta para o Sobre, a
+ * porta das correções, as ligações internas, os cartões, o `data-nonledger`); o
+ * que muda é que o corpo transcrito tem a sua própria origem, conferida aqui.
+ *
+ * O PORTÃO TEM O SEU PRÓPRIO LEITOR do manifesto, do registo e do registo de
+ * travessia das linhas: não importa `src/lib/registos.mjs`, `registo-html.mjs`
+ * nem `cruzamento.mjs`, porque uma conferência que usasse o código das páginas
+ * confirmava-se a si própria. Importa `src/lib/eyetext.mjs`, que é a LEITURA e
+ * não o gabarito, e que é provada à parte contra os registos do motor
+ * (`node scripts/provar-eyetext.mjs`).
+ */
+
+/**
+ * `"<rh_study> <rh_id>" → <id da linha do sítio>`, lido do registo de travessia
+ * das linhas com o leitor do portão. É por ele que uma figura do motor se liga a
+ * uma linha deste livro-razão, e é o `row` escolhido que decide, nunca `others`.
+ */
+const LINHA_DO_SITIO = new Map();
+{
+  const dir = path.join(ROOT, 'ledger', 'cruzamentos');
+  if (fs.existsSync(dir)) {
+    for (const ficheiro of fs.readdirSync(dir).sort()) {
+      if (!ficheiro.endsWith('.json')) continue;
+      let doc;
+      try {
+        doc = JSON.parse(fs.readFileSync(path.join(dir, ficheiro), 'utf8'));
+      } catch {
+        continue;
+      }
+      for (const [siteId, linha] of Object.entries(doc?.rows ?? {})) {
+        if (linha?.rh_study && linha?.rh_id) LINHA_DO_SITIO.set(`${linha.rh_study} ${linha.rh_id}`, siteId);
+      }
+    }
+  }
+}
+
+/** As unidades de um bloco do registo, com a coordenada da sua marca. */
+function unidadesDoRegisto(bloco) {
+  if (bloco.kind === 'heading' || bloco.kind === 'paragraph') return [{ unidade: bloco, coordenada: '' }];
+  if (bloco.kind === 'list') return (bloco.items ?? []).map((u, i) => ({ unidade: u, coordenada: `.${i}` }));
+  if (bloco.kind === 'table') {
+    const saida = [];
+    (bloco.rows ?? []).forEach((linha, r) => {
+      linha.forEach((celula, c) => saida.push({ unidade: celula, coordenada: `.${r}.${c}` }));
+    });
+    return saida;
+  }
+  return [];
+}
+
+/**
+ * O passeio do portão dentro de uma unidade: os pedaços de texto pela ordem em
+ * que o leitor os vê, e o intervalo de pedaços de cada elemento.
+ *
+ * Existe porque a comparação precisa de saber ONDE, no texto da unidade, está
+ * cada elemento — e a leitura do olho devolve o texto, não a identidade dos
+ * elementos. Salta `.src-chip` inteiro, que é a única extensão declarada da
+ * leitura, e o texto que não é texto (`script`, `style`). O resultado é
+ * conferido contra a leitura de `src/lib/eyetext.mjs` em cada unidade: se os
+ * dois passeios divergirem, a conferência fecha em vez de acreditar neste.
+ */
+function pedacosDaUnidade(el) {
+  const pedacos = [];
+  const elementos = [];
+  const anda = (n) => {
+    if (!n) return;
+    if (n.nodeType === NodeType.TEXT_NODE) {
+      pedacos.push(n.text);
+      return;
+    }
+    if (n.nodeType !== NodeType.ELEMENT_NODE) return;
+    const tag = String(n.rawTagName ?? '').toLowerCase();
+    const classes = String(n.getAttribute('class') ?? '').split(/\s+/);
+    if (classes.includes('src-chip')) return;
+    const inicio = pedacos.length;
+    if (tag !== 'script' && tag !== 'style') for (const filho of n.childNodes ?? []) anda(filho);
+    elementos.push({ el: n, tag, inicio, fim: pedacos.length });
+  };
+  for (const filho of el.childNodes ?? []) anda(filho);
+  return { pedacos, elementos };
+}
+
+/** O nó de elemento seguinte, sem saltar por cima de texto: é a regra do colado. */
+function irmaoColado(el) {
+  const pai = el.parentNode;
+  if (!pai) return { irmao: null, texto: null };
+  const filhos = pai.childNodes ?? [];
+  const i = filhos.indexOf(el);
+  for (let k = i + 1; k < filhos.length; k++) {
+    const n = filhos[k];
+    if (n.nodeType === NodeType.TEXT_NODE) {
+      if (n.rawText === '') continue;
+      return { irmao: null, texto: n.rawText };
+    }
+    if (n.nodeType === NodeType.ELEMENT_NODE) return { irmao: n, texto: null };
+  }
+  return { irmao: null, texto: null };
+}
+
+const eSelo = (n) =>
+  n &&
+  String(n.rawTagName ?? '').toLowerCase() === 'a' &&
+  String(n.getAttribute('class') ?? '').split(/\s+/).includes('src-chip');
+
+function verificaTexto({ rota, rel, root, err }) {
+  const { slug } = rota.params;
+  const lang = rota.lang;
+  const chave = `${slug}/${lang}`;
+
+  if (!TRAVESSIA_DOS_REGISTOS) {
+    err(
+      `há uma página de leitura para "${chave}" e não consegui ler registos/manifest.json. ` +
+        `Escreve-o o exportador do motor: python3 publisher/export_records_site.py --write.`,
+    );
+    return;
+  }
+  const entrada = TRAVESSIA_DOS_REGISTOS[chave];
+  if (!entrada) {
+    err(
+      `L1 ${chave}: há uma página de leitura para uma edição que o registo de travessia não ` +
+        `declara. Só existem páginas de leitura para as edições com registo de conteúdo.`,
+    );
+    return;
+  }
+  const registo = registoDoPortao(slug, lang);
+  if (!registo) {
+    err(`L1 ${chave}: o registo de travessia declara esta edição e não consegui ler o seu registo.`);
+    return;
+  }
+
+  const artigos = root.querySelectorAll('[data-registo-edicao]');
+  if (artigos.length !== 1) {
+    err(
+      `L1 ${chave}: a página tem ${artigos.length} elementos com data-registo-edicao, e tem de ` +
+        `ter exatamente um: é o localizador do corpo transcrito.`,
+    );
+    return;
+  }
+  const artigo = artigos[0];
+  const declarada = decodeEntities(artigo.getAttribute('data-registo-edicao') ?? '');
+  if (declarada !== chave) {
+    err(
+      `L1: o corpo transcrito desta página declara data-registo-edicao="${declarada}" e a rota é ` +
+        `de "${chave}".`,
+    );
+    return;
+  }
+
+  const linhaDoSitio = (row) => LINHA_DO_SITIO.get(`${entrada.rh_study} ${row}`) ?? null;
+
+  /* ---------------------------------------------------------------- L1 ---
+     A sequência de blocos: índice, género, nível, ordenação e contagens. */
+  const blocosNaPagina = artigo.querySelectorAll('[data-registo-bloco]');
+  if (blocosNaPagina.length !== registo.blocks.length) {
+    err(
+      `L1 ${chave}: a página rende ${blocosNaPagina.length} blocos e o registo tem ` +
+        `${registo.blocks.length}.`,
+    );
+    return;
+  }
+
+  const TAG_DO_GENERO = { paragraph: 'p', rule: 'hr', table: 'table' };
+  let figurasNaPagina = 0;
+  const figurasPorLinha = new Map();
+
+  for (let b = 0; b < registo.blocks.length; b++) {
+    const bloco = registo.blocks[b];
+    const el = blocosNaPagina[b];
+    const marca = decodeEntities(el.getAttribute('data-registo-bloco') ?? '');
+    const tag = String(el.rawTagName ?? '').toLowerCase();
+    if (marca !== String(bloco.i)) {
+      err(`L1 ${chave}: o bloco na posição ${b} declara data-registo-bloco="${marca}" e o registo diz "${bloco.i}".`);
+      continue;
+    }
+    const esperada =
+      bloco.kind === 'heading'
+        ? `h${bloco.level}`
+        : bloco.kind === 'list'
+          ? bloco.ordered
+            ? 'ol'
+            : 'ul'
+          : TAG_DO_GENERO[bloco.kind];
+    if (tag !== esperada) {
+      err(
+        `L1 ${chave} bloco ${bloco.i}: rendido como <${tag}> e o registo diz "${bloco.kind}"` +
+          `${bloco.kind === 'heading' ? ` de nível ${bloco.level}` : ''}, que se rende <${esperada}>.`,
+      );
+      continue;
+    }
+
+    /* As unidades da página, na ordem do documento, pela estrutura do género. */
+    let unidadesNaPagina;
+    if (bloco.kind === 'rule') unidadesNaPagina = [];
+    else if (bloco.kind === 'heading' || bloco.kind === 'paragraph') unidadesNaPagina = [el];
+    else if (bloco.kind === 'list') unidadesNaPagina = el.querySelectorAll('li');
+    else {
+      unidadesNaPagina = [];
+      const linhasDaTabela = el.querySelectorAll('tr');
+      if (linhasDaTabela.length !== (bloco.rows ?? []).length) {
+        err(
+          `L1 ${chave} bloco ${bloco.i}: a tabela rende ${linhasDaTabela.length} linhas e o ` +
+            `registo tem ${(bloco.rows ?? []).length}.`,
+        );
+        continue;
+      }
+      let mau = false;
+      linhasDaTabela.forEach((tr, r) => {
+        const celulas = tr.querySelectorAll('td, th');
+        if (celulas.length !== bloco.rows[r].length) {
+          err(
+            `L1 ${chave} bloco ${bloco.i} linha ${r}: a página rende ${celulas.length} células e o ` +
+              `registo tem ${bloco.rows[r].length}.`,
+          );
+          mau = true;
+          return;
+        }
+        for (const c of celulas) unidadesNaPagina.push(c);
+      });
+      if (mau) continue;
+    }
+
+    const unidadesDoBloco = unidadesDoRegisto(bloco);
+    if (unidadesNaPagina.length !== unidadesDoBloco.length) {
+      err(
+        `L1 ${chave} bloco ${bloco.i}: a página rende ${unidadesNaPagina.length} unidades e o ` +
+          `registo tem ${unidadesDoBloco.length}.`,
+      );
+      continue;
+    }
+
+    for (let u = 0; u < unidadesDoBloco.length; u++) {
+      const { unidade, coordenada } = unidadesDoBloco[u];
+      const alvo = unidadesNaPagina[u];
+      const marcaDaUnidade = `${chave}#${bloco.i}${coordenada}`;
+      const declaradaUnidade = decodeEntities(alvo.getAttribute('data-registo-unidade') ?? '');
+      if (declaradaUnidade !== marcaDaUnidade) {
+        err(
+          `L2 ${chave}: a unidade do bloco ${bloco.i} na posição ${u} declara ` +
+            `data-registo-unidade="${declaradaUnidade || '(nenhuma)'}" e devia declarar ` +
+            `"${marcaDaUnidade}".`,
+        );
+        continue;
+      }
+
+      /* ------------------------------------------------------------ L7 ---
+         `<th>` exatamente onde o registo tem `header: true`. */
+      if (bloco.kind === 'table') {
+        const eCabecalho = String(alvo.rawTagName ?? '').toLowerCase() === 'th';
+        if (eCabecalho !== Boolean(unidade.header)) {
+          err(
+            `L7 ${marcaDaUnidade}: a célula é <${eCabecalho ? 'th' : 'td'}> e o registo diz ` +
+              `header: ${Boolean(unidade.header)}.`,
+          );
+        }
+      }
+
+      /* ------------------------------------------------------------ L2 ---
+         O texto pela leitura do olho, carácter a carácter. */
+      let lidos;
+      try {
+        lidos = leBlocos(`<p>${alvo.innerHTML}</p>`);
+      } catch (erro) {
+        err(`L2 ${marcaDaUnidade}: a leitura do olho recusou esta unidade: ${erro.message}`);
+        continue;
+      }
+      if (lidos.length !== 1 || lidos[0].kind !== 'paragraph') {
+        err(
+          `L2 ${marcaDaUnidade}: a unidade rende ${lidos.length} bloco(s) para a leitura do olho, ` +
+            `e uma unidade é um bloco só. Um elemento de bloco dentro de uma unidade parte o texto.`,
+        );
+        continue;
+      }
+      const textoLido = new Texto(lidos[0].unidade).texto;
+      const textoDoRegisto = String(unidade.text ?? '');
+      /**
+       * O TEXTO DIVERGENTE NÃO PÁRA A UNIDADE, e a razão vale a linha: trocar o
+       * `printed` de uma figura pelo `value` da linha muda o texto da unidade
+       * TAMBÉM, e uma conferência que parasse no L2 nunca chegava a dizer
+       * porquê. O L2 fecha, e as conferências que não dependem das posições
+       * continuam a correr; as que dependem (o L3 e a metade das coordenadas do
+       * L4) ficam de fora, porque comparar posições contra outro texto seria
+       * inventar uma segunda queixa a partir da primeira.
+       */
+      const textoDivergente = textoLido !== textoDoRegisto;
+      if (textoDivergente) {
+        err(
+          `L2 ${marcaDaUnidade}: o texto rendido não é o do registo.\n` +
+            `      no registo:  ${JSON.stringify(textoDoRegisto).slice(0, 170)}\n` +
+            `      renderizado: ${JSON.stringify(textoLido).slice(0, 170)}`,
+        );
+      }
+
+      /* O passeio do portão, e a guarda que o prende à leitura provada. */
+      const { pedacos, elementos } = pedacosDaUnidade(alvo);
+      const texto = new Texto({ pedacos, intervalos: [] });
+      if (texto.texto !== textoLido) {
+        err(
+          `L2 ${marcaDaUnidade}: o passeio deste portão e a leitura do olho não dão o mesmo texto. ` +
+            `Uma das duas leituras está errada, e a conferência pára aqui em vez de escolher.`,
+        );
+        continue;
+      }
+      const emTexto = (e) =>
+        e.fim > e.inicio ? texto.intervaloDePedacos(e.inicio, e.fim) : [null, null];
+
+      /* ------------------------------------------------- L3, L4, L6 ---
+         Cada elemento dentro da unidade é uma de três coisas: uma figura, um
+         intervalo de ênfase, ou uma ligação do documento. Mais nada nossa
+         entra numa unidade: o único elemento com texto próprio permitido é o
+         selo, e o passeio salta-o por regra declarada. */
+      const enfaseRendida = [];
+      const ligacoesRendidas = [];
+      const figurasRendidas = [];
+      for (const e of elementos) {
+        const marcaDaFigura = decodeEntities(e.el.getAttribute('data-registo') ?? '');
+        if (marcaDaFigura) {
+          figurasRendidas.push({ ...e, marca: marcaDaFigura });
+          continue;
+        }
+        if (e.tag === 'strong' || e.tag === 'em' || e.tag === 'code') {
+          const [inicio, fim] = emTexto(e);
+          enfaseRendida.push({ kind: e.tag, start: inicio, end: fim });
+          continue;
+        }
+        if (e.tag === 'a') {
+          const [inicio, fim] = emTexto(e);
+          ligacoesRendidas.push({
+            start: inicio,
+            end: fim,
+            href: decodeEntities(e.el.getAttribute('href') ?? ''),
+          });
+          continue;
+        }
+        err(
+          `L2 ${marcaDaUnidade}: a unidade tem um <${e.tag}> que não é uma figura, nem uma ênfase, ` +
+            `nem uma ligação do documento. Dentro de uma unidade só entra texto do registo e o selo.`,
+        );
+      }
+
+      const emOrdem = (a, b) => a.start - b.start || a.end - b.end;
+      const enfaseDoRegisto = (unidade.emphasis ?? []).map((x) => ({
+        kind: x.kind,
+        start: x.start,
+        end: x.end,
+      }));
+      const ligacoesDoRegisto = (unidade.links ?? []).map((x) => ({
+        start: x.start,
+        end: x.end,
+        href: x.href,
+      }));
+      const comoCadeia = (lista) => JSON.stringify(lista.slice().sort(emOrdem));
+      if (!textoDivergente && comoCadeia(enfaseRendida) !== comoCadeia(enfaseDoRegisto)) {
+        err(
+          `L3 ${marcaDaUnidade}: os intervalos de ênfase rendidos não são os do registo.\n` +
+            `      no registo:  ${comoCadeia(enfaseDoRegisto).slice(0, 200)}\n` +
+            `      renderizado: ${comoCadeia(enfaseRendida).slice(0, 200)}`,
+        );
+      }
+      if (!textoDivergente && comoCadeia(ligacoesRendidas) !== comoCadeia(ligacoesDoRegisto)) {
+        err(
+          `L3 ${marcaDaUnidade}: as ligações rendidas não são as do registo.\n` +
+            `      no registo:  ${comoCadeia(ligacoesDoRegisto).slice(0, 220)}\n` +
+            `      renderizado: ${comoCadeia(ligacoesRendidas).slice(0, 220)}`,
+        );
+      }
+
+      /* ------------------------------------------------------------ L4 ---
+         Cada figura tem a sua marca, o texto dentro dela é o `printed`, a
+         marca resolve numa figura do registo, e as posições batem. */
+      const figurasDoRegisto = unidade.figures ?? [];
+      if (figurasRendidas.length !== figurasDoRegisto.length) {
+        err(
+          `L4 ${marcaDaUnidade}: a página rende ${figurasRendidas.length} figuras e o registo tem ` +
+            `${figurasDoRegisto.length}.`,
+        );
+      }
+      for (const rendida of figurasRendidas) {
+        figurasNaPagina++;
+        const sufixo = rendida.marca.startsWith(`${marcaDaUnidade}.`)
+          ? rendida.marca.slice(marcaDaUnidade.length + 1)
+          : null;
+        const f = sufixo !== null && /^\d+$/.test(sufixo) ? Number(sufixo) : -1;
+        const figura = figurasDoRegisto[f];
+        if (!figura) {
+          err(
+            `L4 ${marcaDaUnidade}: a marca data-registo="${rendida.marca}" não resolve numa figura ` +
+              `desta unidade do registo.`,
+          );
+          continue;
+        }
+        const impresso = new Texto({
+          pedacos: pedacosDaUnidade(rendida.el).pedacos,
+          intervalos: [],
+        }).texto;
+        if (impresso !== figura.printed) {
+          err(
+            `L4 ${rendida.marca}: a figura imprime ${JSON.stringify(impresso)} e o registo diz que ` +
+              `este documento imprime ${JSON.stringify(figura.printed)}` +
+              (impresso === figura.value
+                ? ` (imprimiu o "value" da linha, e não o "printed" do documento: a página de ` +
+                  `leitura é o documento, não a composição da casa).`
+                : '.'),
+          );
+        }
+        const [inicio, fim] = emTexto(rendida);
+        if (!textoDivergente && (inicio !== figura.start || fim !== figura.end)) {
+          err(
+            `L4 ${rendida.marca}: a figura cobre [${inicio}, ${fim}) no texto da unidade e o ` +
+              `registo diz [${figura.start}, ${figura.end}).`,
+          );
+        }
+
+        /* --------------------------------------------------------- L6 ---
+           O selo é do livro-razão e de mais nada. Uma figura com linha do
+           sítio leva o selo colado; uma sem linha leva a porta e nunca o selo.
+        */
+        const siteId = linhaDoSitio(figura.row);
+        if (!figurasPorLinha.has(figura.row)) {
+          figurasPorLinha.set(figura.row, {
+            row: figura.row,
+            valor: figura.value,
+            impressos: [],
+            origem: figura.source_sha256 ?? figura.source_digest_kind ?? null,
+            siteId,
+          });
+        }
+        const registoDaLinha = figurasPorLinha.get(figura.row);
+        if (!registoDaLinha.impressos.includes(figura.printed)) {
+          registoDaLinha.impressos.push(figura.printed);
+        }
+
+        const dentroDeLigacao = (() => {
+          let n = rendida.el.parentNode;
+          while (n && n !== alvo) {
+            if (String(n.rawTagName ?? '').toLowerCase() === 'a') return n;
+            n = n.parentNode;
+          }
+          return null;
+        })();
+        const { irmao, texto: textoColado } = irmaoColado(dentroDeLigacao ?? rendida.el);
+
+        if (siteId) {
+          const portas = LANGS.map((l) => routePath('linha', l, { slug: siteId }));
+          if (!eSelo(irmao)) {
+            err(
+              `L6 ${rendida.marca}: a figura tem linha no livro-razão ("${siteId}") e não tem selo ` +
+                `colado a seguir` +
+                (textoColado !== null
+                  ? `: entre a figura e o que vem a seguir há um nó de texto ${JSON.stringify(textoColado)}.`
+                  : '.'),
+            );
+          } else {
+            const porta = decodeEntities(irmao.getAttribute('href') ?? '');
+            if (!portas.includes(porta)) {
+              err(
+                `L6 ${rendida.marca}: o selo ao lado desta figura abre "${porta}" e a linha desta ` +
+                  `figura é "${siteId}".`,
+              );
+            }
+          }
+        } else {
+          if (eSelo(irmao)) {
+            err(
+              `L6 ${rendida.marca}: a figura NÃO tem linha no livro-razão deste sítio e leva um ` +
+                `selo ao lado. Um selo ao lado de um valor sem linha promete uma linha que não ` +
+                `existe (IDENTIDADE.md §10).`,
+            );
+          }
+          const eAncora = String(rendida.el.rawTagName ?? '').toLowerCase() === 'a';
+          const destino = `#linha-${figura.row}`;
+          if (eAncora) {
+            const href = decodeEntities(rendida.el.getAttribute('href') ?? '');
+            if (href !== destino) {
+              err(`L6 ${rendida.marca}: a porta da figura abre "${href}" e devia abrir "${destino}".`);
+            }
+          } else if (!dentroDeLigacao) {
+            err(
+              `L6 ${rendida.marca}: a figura não tem linha no livro-razão e não tem porta nenhuma. ` +
+                `Sem selo e sem porta, o algarismo não tem para onde levar o leitor.`,
+            );
+          }
+        }
+      }
+    }
+  }
+
+  /* ------------------------------------------------------------------ L6 ---
+     «As linhas deste documento»: uma entrada por linha citada, na ordem da
+     primeira citação, e cada campo igual ao que as figuras dessa linha dizem. */
+  const seccao = root.querySelector('#linhas-do-documento');
+  if (!seccao) {
+    err(`L6 ${chave}: a página não tem a secção "As linhas deste documento" (id="linhas-do-documento").`);
+  } else {
+    const entradas = seccao.querySelectorAll('[id^="linha-"]');
+    const esperadas = [...figurasPorLinha.values()];
+    if (entradas.length !== esperadas.length) {
+      err(
+        `L6 ${chave}: "As linhas deste documento" tem ${entradas.length} entradas e o documento ` +
+          `cita ${esperadas.length} linhas do motor.`,
+      );
+    }
+    const porId = new Map();
+    for (const e of entradas) porId.set(decodeEntities(e.getAttribute('id') ?? ''), e);
+    esperadas.forEach((linha, i) => {
+      const entradaNaPagina = porId.get(`linha-${linha.row}`);
+      if (!entradaNaPagina) {
+        err(`L6 ${chave}: a linha do motor "${linha.row}" é citada e não tem entrada em "As linhas deste documento".`);
+        return;
+      }
+      if (entradas[i] !== entradaNaPagina) {
+        err(
+          `L6 ${chave}: a entrada da linha "${linha.row}" está na posição ${entradas.indexOf(entradaNaPagina)} ` +
+            `e a primeira citação desta linha é a ${i}. A ordem é a da primeira citação.`,
+        );
+      }
+      const campos = {
+        valor: linha.valor,
+        impresso: linha.impressos.join(SEPARADOR_DO_REGISTO),
+        origem: linha.origem,
+      };
+      for (const [campo, esperado] of Object.entries(campos)) {
+        const marca = `${chave}@${linha.row}.${campo}`;
+        const el = entradaNaPagina.querySelector(`[data-registo-linha="${marca}"]`);
+        if (!el) {
+          err(`L6 ${chave}: a entrada da linha "${linha.row}" não tem o campo data-registo-linha="${marca}".`);
+          continue;
+        }
+        const rendido = textoTranscrito(el);
+        if (rendido !== String(esperado)) {
+          err(
+            `L6 ${marca}: o campo rendido não é o do registo.\n` +
+              `      no registo:  ${JSON.stringify(esperado).slice(0, 150)}\n` +
+              `      renderizado: ${JSON.stringify(rendido).slice(0, 150)}`,
+          );
+        }
+        if (campo === 'origem') {
+          const eResumo = /^[0-9a-f]{64}$/.test(String(esperado));
+          if (!eResumo && !MOTIVOS_DO_REGISTO.has(String(esperado))) {
+            err(
+              `L6 ${marca}: o resumo de origem não é 64 hexadecimais nem um dos cinco motivos da ` +
+                `lista fechada do motor: "${esperado}".`,
+            );
+          }
+        }
+      }
+      if (linha.siteId) {
+        const portas = LANGS.map((l) => routePath('linha', l, { slug: linha.siteId }));
+        const abre = (entradaNaPagina.querySelectorAll('a[href]') ?? []).some((a) =>
+          portas.includes(decodeEntities(a.getAttribute('href') ?? '')),
+        );
+        if (!abre) {
+          err(
+            `L6 ${chave}: a linha "${linha.row}" também tem linha no livro-razão ("${linha.siteId}") ` +
+              `e a sua entrada não abre essa porta.`,
+          );
+        }
+      }
+    });
+  }
+
+  /* ------------------------------------------------------------------ L5 ---
+     As contagens: as do manifesto, e as três da faixa, recontadas aqui. */
+  if (figurasNaPagina !== entrada.referencias) {
+    err(
+      `L5 ${chave}: a página rende ${figurasNaPagina} figuras e o registo de travessia promete ` +
+        `${entrada.referencias} referências.`,
+    );
+  }
+  if (registo.blocks.length !== entrada.blocos) {
+    err(
+      `L5 ${chave}: o registo tem ${registo.blocks.length} blocos e o registo de travessia promete ` +
+        `${entrada.blocos}.`,
+    );
+  }
+  /* A recontagem do portão, do registo em disco e do registo de travessia das
+     linhas. `com_linha_do_sitio` conta FIGURAS e não linhas do motor: é o que a
+     faixa diz e é o que o leitor conta ao ver os selos na página. */
+  const contasDoTexto = { blocos: registo.blocks.length, algarismos: 0, com_linha_do_sitio: 0 };
+  for (const bloco of registo.blocks) {
+    for (const { unidade } of unidadesDoRegisto(bloco)) {
+      for (const figura of unidade.figures ?? []) {
+        contasDoTexto.algarismos++;
+        if (linhaDoSitio(figura.row)) contasDoTexto.com_linha_do_sitio++;
+      }
+    }
+  }
+  const naFaixa = root.querySelectorAll('[data-registo-conta]');
+  if (naFaixa.length !== 3) {
+    err(
+      `L5 ${chave}: a página tem ${naFaixa.length} marcas data-registo-conta e a faixa tem três ` +
+        `contagens: blocos, algarismos e com linha do livro-razão.`,
+    );
+  }
+  const vistas = new Set();
+  for (const el of naFaixa) {
+    const declaradaConta = decodeEntities(el.getAttribute('data-registo-conta') ?? '');
+    const igual = declaradaConta.indexOf('=');
+    const daEdicao = igual > 0 ? declaradaConta.slice(0, igual) : '';
+    const nome = igual > 0 ? declaradaConta.slice(igual + 1) : '';
+    if (daEdicao !== chave) {
+      err(`L5: data-registo-conta="${declaradaConta}" não é desta edição, que é "${chave}".`);
+      continue;
+    }
+    if (!(nome in contasDoTexto)) {
+      err(
+        `L5 ${chave}: data-registo-conta="${declaradaConta}" não é uma das três contagens ` +
+          `(${Object.keys(contasDoTexto).join(', ')}).`,
+      );
+      continue;
+    }
+    vistas.add(nome);
+    const rendido = textoTranscrito(el);
+    if (rendido !== String(contasDoTexto[nome])) {
+      err(
+        `L5 ${declaradaConta}: a faixa diz "${rendido}" e o portão reconta ${contasDoTexto[nome]} ` +
+          `do registo em disco. Uma contagem escrita à mão fica errada na construção seguinte.`,
+      );
+    }
+    if (String(el.rawTagName ?? '').toLowerCase() !== 'a' || !el.getAttribute('href')) {
+      err(
+        `L5 ${declaradaConta}: a contagem não tem porta. Um número do próprio sítio leva sempre a ` +
+          `porta para onde se vê o que ele conta (IDENTIDADE.md §10).`,
+      );
+    }
+  }
+  for (const nome of Object.keys(contasDoTexto)) {
+    if (!vistas.has(nome)) err(`L5 ${chave}: a faixa não rende a contagem "${nome}".`);
   }
 }
 
@@ -2008,6 +2744,14 @@ for (const file of ficheirosHtml(DIST)) {
     continue;
   }
 
+  /* --- 0b. a página de leitura: as sete conferências, ANTES do resto ------
+     e sem dispensar nada. Ao contrário do documento alojado, esta página é
+     nossa: continua a ser varrida por inteiro a seguir. */
+  if (rota?.key === 'texto') {
+    paginasDeTexto++;
+    verificaTexto({ rota, rel, root, err });
+  }
+
   /* As páginas do próprio livro-razão: o índice e a página de cada linha. */
   const paginaDoLivro = rota?.key === 'linha' || rota?.key === 'livro';
   let claimDaPagina = null;
@@ -3227,6 +3971,31 @@ for (const file of ficheirosHtml(DIST)) {
           );
         }
       }
+    }
+  }
+
+  /* --- o registo de conteúdo, na página de leitura (origem 9) -------------
+     As quatro marcas saem do varrimento dos algarismos e do da ortografia
+     porque foram TODAS comparadas em `verificaTexto()`, carácter a carácter,
+     contra um ficheiro fixado por resumo. Aqui fica a outra metade da regra: a
+     marca **só vale nesta rota**. Noutra página seria uma segunda porta para
+     pôr texto de um registo em prosa corrente, que é a mesma disciplina das
+     origens 6 e 8. */
+  for (const el of body.querySelectorAll(
+    '[data-registo-edicao], [data-registo-bloco], [data-registo-unidade], [data-registo], ' +
+      '[data-registo-linha], [data-registo-conta]',
+  )) {
+    aRemover.push(el);
+    if (rota?.key !== 'texto') {
+      const qual = ['data-registo-edicao', 'data-registo-bloco', 'data-registo-unidade',
+        'data-registo', 'data-registo-linha', 'data-registo-conta']
+        .find((m) => m in (el.attributes ?? {}));
+      err(
+        `${qual}="${decodeEntities(el.getAttribute(qual) ?? '')}" numa página que não é a de ` +
+          `leitura de uma edição. Esta marca é a nona origem, e é do registo de conteúdo na página ` +
+          `que o transcreve.\n` +
+          `      Noutra página: um valor entra por <Claim id="…"/>, e uma citação por data-verbatim.`,
+      );
     }
   }
 

@@ -65,6 +65,21 @@ export const ROUTES = {
   estudo: { pt: '/estudos/:slug', en: '/en/studies/:slug' },
   documento: { pt: '/estudos/:slug/documento', en: '/en/studies/:slug/document' },
   /**
+   * `texto` é o documento do estudo composto no gabarito da casa, a partir do
+   * registo de conteúdo que o motor escreve e de mais nada. Não é uma leitura
+   * da casa sobre o trabalho — isso é a página do estudo: é uma **transcrição
+   * de um documento fixado**, e cada algarismo dela entra pela nona origem,
+   * `data-registo`, comparada carácter a carácter com o registo.
+   *
+   * Só existem as páginas que têm registo: o `getStaticPaths` sai de
+   * `todosOsRegistos()` e não de `WORKS`, porque uma leitura sem registo não
+   * tem o que renderizar. Chama-se `texto`/`text` e não `leitura`/`reading` por
+   * decisão do diretor de 24.08.2026 (a sexta das onze): «Leitura» colide com
+   * «Leitura breve», que é uma das duas densidades da Emenda 2 e um rótulo
+   * visível na página do estudo. Ver DECISIONS §1.64.
+   */
+  texto: { pt: '/estudos/:slug/texto', en: '/en/studies/:slug/text' },
+  /**
    * O índice dos concelhos. Existe porque o tipo de página do município é para
    * os 308 e só um tem página: sem índice, os outros 307 não têm endereço
    * nenhum e `/municipios` devolvia 404 — a porta mais óbvia do sítio, fechada

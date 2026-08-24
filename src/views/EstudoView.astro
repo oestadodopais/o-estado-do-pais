@@ -39,6 +39,7 @@ import { workById, POR_VERIFICAR, subjectLabel } from '../data/studies.mjs';
 import { leituraDe } from '../data/leituras.mjs';
 import { municipioPorSlug } from '../data/municipios.mjs';
 import { documentosDoEstudo } from '../lib/documentos.mjs';
+import { temRegisto } from '../lib/registos.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { canonicalUrl, SITE_NAME, SITE_URL } from '../../site.config.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -56,11 +57,23 @@ const documentos = documentosDoEstudo(slug);
 const documentoDaqui = documentos.find((d) => d.lang === lang) ?? null;
 const migrado = documentos.length > 0;
 
-/** A ficha de uma edição: a sua página, o seu documento, as suas datas. */
+/**
+ * A PORTA DA PÁGINA DE LEITURA, e a ausência dita pela porta que falta.
+ *
+ * Uma edição com registo de conteúdo tem o documento composto no sítio, em
+ * `/estudos/<slug>/texto`; uma sem registo não tem, e a diferença diz-se por
+ * ausência e não por uma frase (decisão 9 do diretor de 24.08.2026, e a Emenda
+ * 15: «a ausência diz-se em duas palavras, não num parágrafo»). Nenhuma linha
+ * desta página explica porque é que umas têm e outras não.
+ */
+const textoDaqui = temRegisto(slug, lang) ? routePath('texto', lang, { slug }) : null;
+
+/** A ficha de uma edição: a sua página, o seu documento, o seu texto, as datas. */
 const edicoes = work.editions.map((e) => ({
   ...e,
   paginaDaEdicao: routePath('estudo', e.lang, { slug }),
   documento: documentos.find((d) => d.lang === e.lang) ?? null,
+  texto: temRegisto(slug, e.lang) ? routePath('texto', e.lang, { slug }) : null,
 }));
 
 const tema = subjectLabel(work.subject, lang);
@@ -243,6 +256,11 @@ const jsonld = {
                   {s.estudos.documentoLink} →
                 </a>
               )}
+              {textoDaqui && (
+                <a class="ligacao-dados" href={textoDaqui}>
+                  {s.estudos.textoLink} →
+                </a>
+              )}
               {documentos
                 .filter((d) => d.lang !== lang)
                 .map((d) => (
@@ -316,6 +334,11 @@ const jsonld = {
               {e.documento && (
                 <a href={e.documento.rota} hreflang={e.lang === 'pt' ? 'pt-PT' : 'en'}>
                   {s.estudos.documentoLink} →
+                </a>
+              )}
+              {e.texto && (
+                <a href={e.texto} hreflang={e.lang === 'pt' ? 'pt-PT' : 'en'}>
+                  {s.estudos.textoLink} →
                 </a>
               )}
             </div>

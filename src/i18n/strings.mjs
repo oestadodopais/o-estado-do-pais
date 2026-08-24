@@ -1069,6 +1069,27 @@ export const STRINGS = {
       documentoFaixa: 'Documento do estudo · edição de registo',
       documentoVoltar: 'Voltar à página do estudo',
 
+      /* ------------------------------------------------------------------
+         A PÁGINA DE LEITURA (`/estudos/<slug>/texto`), parte 3 P2.
+         ------------------------------------------------------------------
+         O antetítulo diz o que a coisa é e nada mais, na forma paralela ao
+         rótulo da faixa do documento arquivado: as duas superfícies servem o
+         mesmo documento, uma composta aqui e a outra byte a byte.
+         Os rótulos de «As linhas deste documento» nomeiam campos, e nenhum
+         deles fala do método, da verificação ou da casa (Emenda 15). */
+      textoEyebrow: 'Documento do estudo · texto',
+      textoLink: 'Ler no sítio',
+      textoLinhasK: 'As linhas deste documento',
+      textoLinhaK: 'linha do motor',
+      textoValorK: 'o valor como a linha o guarda',
+      textoImpressoK: 'como este documento o imprime',
+      textoOrigemK: 'resumo de origem',
+      textoLinhaDoLivro: 'linha do livro-razão',
+      textoRegistoK: 'O registo de conteúdo',
+      textoContaBlocos: 'blocos',
+      textoContaAlgarismos: 'algarismos',
+      textoContaComLinha: 'com linha do livro-razão',
+
       edicaoIrma: 'Ver esta edição',
       atualizadoLabel: 'Última atualização',
       temaK: 'Tema',
@@ -1754,6 +1775,19 @@ export const STRINGS = {
       documentoLink: 'Read the document',
       documentoFaixa: 'Study document · edition of record',
       documentoVoltar: 'Back to the study page',
+
+      textoEyebrow: 'Study document · text',
+      textoLink: 'Read on the site',
+      textoLinhasK: 'The rows of this document',
+      textoLinhaK: 'engine row',
+      textoValorK: 'the value as the row keeps it',
+      textoImpressoK: 'as this document prints it',
+      textoOrigemK: 'source digest',
+      textoLinhaDoLivro: 'ledger row',
+      textoRegistoK: 'The content record',
+      textoContaBlocos: 'blocks',
+      textoContaAlgarismos: 'figures',
+      textoContaComLinha: 'with a ledger row',
 
       edicaoIrma: 'See this edition',
       atualizadoLabel: 'Last updated',

@@ -1,0 +1,21 @@
+---
+/**
+ * `/en/studies/<slug>/text` — a irmã inglesa da página de leitura.
+ *
+ * Só as edições inglesas com registo: hoje duas (o 04 e o 07). A página do
+ * estudo em inglês existe para os doze trabalhos e cai para a edição
+ * portuguesa quando não há inglesa; esta não herda esse comportamento, porque
+ * transcrever um documento noutra língua seria dizer que ele existe nesta.
+ */
+import TextoView from '../../../../views/TextoView.astro';
+import { todosOsRegistos } from '../../../../lib/registos.mjs';
+
+export function getStaticPaths() {
+  return todosOsRegistos()
+    .filter((r) => r.lang === 'en')
+    .map((r) => ({ params: { slug: r.slug } }));
+}
+
+const { slug } = Astro.params;
+---
+<TextoView lang="en" slug={slug} />

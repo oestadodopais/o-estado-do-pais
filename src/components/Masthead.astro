@@ -49,7 +49,7 @@ import { estadoDaVerificacao, prova } from '../lib/prova.mjs';
 import ValorDaProva from './ValorDaProva.astro';
 import { t } from '../i18n/strings.mjs';
 
-const { lang = 'pt', path, compact = false, furniture = false } = Astro.props;
+const { lang = 'pt', path, compact = false, furniture = false, outraLingua = null } = Astro.props;
 const s = t(lang);
 const aqui = normalizePath(path ?? Astro.url.pathname);
 
@@ -119,7 +119,10 @@ const itensNav = ROTAS_NAV.map((chave) => ({
  * JavaScript continuar a ser correcta.
  */
 const naHome = normalizePath(home) === aqui;
-const outra = `${otherLanguagePath(aqui, lang)}${naHome ? Astro.url.search : ''}`;
+/* `outraLingua` chega escrito quando a rota não existe nas duas edições: é o
+   caso da página de leitura, que só existe onde há registo de conteúdo. Sem ele
+   o caminho sai da tabela de rotas, como sempre. */
+const outra = `${outraLingua ?? otherLanguagePath(aqui, lang)}${naHome ? Astro.url.search : ''}`;
 
 const atual = (p) => (normalizePath(p) === aqui ? 'page' : undefined);
 const NomeTag = compact ? 'p' : 'h1';

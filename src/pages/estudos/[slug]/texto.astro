@@ -1,0 +1,22 @@
+---
+/**
+ * `/estudos/<slug>/texto` — o documento do estudo, composto do registo.
+ *
+ * O `getStaticPaths` sai de `todosOsRegistos()` e **não** de `WORKS`: só
+ * existem as páginas que têm registo de conteúdo, porque uma leitura sem
+ * registo não tem o que renderizar. Uma edição sem registo não ganha página
+ * nenhuma, e a diferença diz-se pela porta que falta na página do estudo
+ * (decisão 9 do diretor de 24.08.2026).
+ */
+import TextoView from '../../../views/TextoView.astro';
+import { todosOsRegistos } from '../../../lib/registos.mjs';
+
+export function getStaticPaths() {
+  return todosOsRegistos()
+    .filter((r) => r.lang === 'pt')
+    .map((r) => ({ params: { slug: r.slug } }));
+}
+
+const { slug } = Astro.params;
+---
+<TextoView lang="pt" slug={slug} />
