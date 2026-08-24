@@ -1,0 +1,118 @@
+{
+ "edicao": "06 pt",
+ "espaco_de_coordenadas": "b/f do rascunho classificar.py (md_blocks sobre o .md, texto com marcas markdown). Em S2 cada entrada é reancorada no record.json por correspondência verbatim do texto sem marcas; uma entrada que não ancore uma e uma só vez pára a ferramenta.",
+ "esquema": "oedp/passagem-de-voz/operacoes/1",
+ "estado": "FIXADO. Cinco estratos, todos com a palavra do diretor de 24.08: os cortes e as substituições de S1; as reescritas L1 sob a regra aprovada; as propostas do inventário cego; as famílias C1 a C5 das duas leituras cruzadas do Codex, com as emendas do assento; e as quatro operações de coerência da revisão do delta, aprovadas sobre o delta consolidado. Este ficheiro é o operativo: vive ao lado do registo que descreve, e o manifesto do estudo nomeia-o pelo seu resumo.",
+ "operacoes": [
+  {
+   "antes_no_registo": "API JSON do INE (códigos de indicador e URLs exatos no livro-razão ao lado deste documento), lida a 2026-08-10; o retrato de 2026-08-07 do registo de projetos do PRR através do servidor `pt-public-money` deste repositório, a partir dos próprios ficheiros XLSX do registo no dados.gov.pt; a API viva de avisos do Portugal 2030, paginada por inteiro; o Registo de Acesso a Fundos de 2026-08-08 para a elegibilidade verbatim; Diário da República, CohesionData/Kohesio da UE, CORDIS, BEI e as páginas das próprias entidades gestoras para as afirmações de investimento e de portas de financiamento — cada uma com URL, data de acesso e excerto verbatim no `ledger.json`.",
+   "b": 52,
+   "b_no_registo": 52,
+   "estrato": "S1·aprovado",
+   "f": 0,
+   "f_no_registo": 0,
+   "familia": "F2",
+   "figuras": [],
+   "frases_no_registo": 1,
+   "op": "corte",
+   "texto": "API JSON do INE (códigos de indicador e URLs exatos no livro-razão ao lado deste documento), lida a 2026-08-10; o retrato de 2026-08-07 do registo de projetos do PRR através do servidor `pt-public-money` deste repositório, a partir dos próprios ficheiros XLSX do registo no dados.gov.pt; a API viva de avisos do Portugal 2030, paginada por inteiro; o Registo de Acesso a Fundos de 2026-08-08 para a elegibilidade verbatim; Diário da República, CohesionData/Kohesio da UE, CORDIS, BEI e as páginas das próprias entidades gestoras para as afirmações de investimento e de portas de financiamento — cada uma com URL, data de acesso e excerto verbatim no `ledger.json`.",
+   "unidade": null
+  },
+  {
+   "antes_no_registo": "A construção: scripts de recolha em `Technical Source/` → `raw/` → `build_ledger.py` → esta página via `build_doc.py`, com portões de reconciliação, atribuição, asserção, prosa e sanidade, e verificação registada em `Technical Source/VERIFICATION.md`.",
+   "b": 52,
+   "b_no_registo": 52,
+   "estrato": "S1·aprovado",
+   "f": 2,
+   "f_no_registo": 2,
+   "familia": "F4",
+   "figuras": [],
+   "frases_no_registo": 1,
+   "op": "corte",
+   "texto": "A construção: scripts de recolha em `Technical Source/` → `raw/` → `build_ledger.py` → esta página via `build_doc.py`, com portões de reconciliação, atribuição, asserção, prosa e sanidade, e verificação registada em `Technical Source/VERIFICATION.md`.",
+   "unidade": null
+  },
+  {
+   "antes_no_registo": "Ninguém consolidou o dinheiro da Évora 2027, o que normalmente significa que ninguém consolidou também a sua contratação. As peças oficiais em registo — 2 000 000 euros de semente do Estado, 1 750 000 euros do ALT2030, um envelope de candidatura de 25 milhões de euros — não somam um orçamento de programa, e os contratos da associação correm pelo Portal BASE, onde o documento companheiro já acompanha o concelho.",
+   "b": 47,
+   "b_no_registo": 47,
+   "estrato": "S2·L1·regra-aprovada",
+   "f": 1,
+   "f_no_registo": 1,
+   "familia": "L1",
+   "figuras": [
+    [
+     "2 000 000",
+     "e2027-state-initial"
+    ],
+    [
+     "1 750 000",
+     "e2027-alt2030"
+    ],
+    [
+     "25",
+     "e2027-envelope"
+    ]
+   ],
+   "frases_no_registo": 2,
+   "op": "nenhuma",
+   "origem": "limitrofes-L1.md 06 pt b47 f1",
+   "razao": "Não há referência ao repositório nesta frase: o companheiro é nomeado sem dizer onde vive. Nenhuma edição, e a frase fica como está. É a frase das peças oficiais da Évora 2027, que carrega três algarismos do livro (e2027-state-initial, e2027-alt2030, e2027-envelope); o que a apanhou foi a palavra «companheiro» noutra oração.",
+   "texto": "Ninguém consolidou o dinheiro da Évora 2027, o que normalmente significa que ninguém consolidou também a sua contratação.** As peças oficiais em registo — 2 000 000 euros de semente do Estado, 1 750 000 euros do ALT2030, um envelope de candidatura de 25 milhões de euros — não somam um orçamento de programa, e os contratos da associação correm pelo Portal BASE, onde o documento companheiro já acompanha o concelho.",
+   "unidade": null
+  },
+  {
+   "antes_no_registo": "Cada número desta página é substituído a partir de um livro-razão de afirmações no momento da construção — nenhum número foi escrito à mão.",
+   "b": 1,
+   "b_no_registo": 1,
+   "estrato": "S2·inventário-cego·aprovado-24.08",
+   "f": 3,
+   "f_no_registo": 3,
+   "familia": "inventario-cego",
+   "figuras": [],
+   "frases_no_registo": 1,
+   "op": "corte",
+   "origem": "inventario-cego-S2",
+   "pendente": "aprovado pelo diretor a 24.08",
+   "razao": "diligência de construção; escapou à rede por dizer «livro-razão de afirmações» sem «ledger.json»",
+   "texto": "Cada número desta página é substituído a partir de um livro-razão de afirmações no momento da construção — nenhum número foi escrito à mão.",
+   "unidade": null
+  },
+  {
+   "antes_no_registo": "A leitura completa promessa-versus-pagamento, incluindo porque é que «em prazo» nesse registo é pouco exigente, é o documento companheiro Évora — Prometido, Pago, Auditado 2026 neste repositório.",
+   "b": 27,
+   "b_no_registo": 27,
+   "estrato": "S3·famílias-leituras·aprovado-24.08",
+   "f": 2,
+   "f_no_registo": 2,
+   "familia": "C3",
+   "figuras": [],
+   "frases_no_registo": 1,
+   "op": "corte",
+   "origem": "leituras-codex-C3",
+   "pendente": "aprovado pelo diretor a 24.08",
+   "razao": "navegação pura para o documento companheiro Supera a operação anterior sobre a mesma frase, que o LEITURAS-CODEX.md anota como colisão e que a palavra do diretor de 24.08 resolve a favor do corte.",
+   "ronda": 3,
+   "texto": "A leitura completa promessa-versus-pagamento, incluindo porque é que «em prazo» nesse registo é pouco exigente, é o documento companheiro Évora — Prometido, Pago, Auditado 2026 neste repositório.",
+   "unidade": null
+  },
+  {
+   "antes_no_registo": "O que se procurou e não se encontrou.",
+   "b": 28,
+   "b_no_registo": 28,
+   "estrato": "S3·famílias-leituras·aprovado-24.08",
+   "f": 0,
+   "f_no_registo": 0,
+   "familia": "C4",
+   "figuras": [],
+   "frases_no_registo": 1,
+   "op": "corte",
+   "origem": "leituras-codex-C4",
+   "pendente": "aprovado pelo diretor a 24.08",
+   "razao": "rótulo «o que se procurou e não se achou»",
+   "ronda": 3,
+   "texto": "O que se procurou e não se encontrou.",
+   "unidade": null
+  }
+ ]
+}

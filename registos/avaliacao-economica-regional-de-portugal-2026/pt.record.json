@@ -1,0 +1,7657 @@
+{
+ "blocks": [
+  {
+   "figures": [],
+   "i": 0,
+   "kind": "heading",
+   "level": 1,
+   "text": "Portugal — Avaliação Económica Regional, Agosto de 2026"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 5,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 85,
+     "kind": "strong",
+     "start": 77
+    },
+    {
+     "end": 100,
+     "kind": "strong",
+     "start": 93
+    }
+   ],
+   "figures": [],
+   "i": 1,
+   "kind": "paragraph",
+   "text": "Data: Agosto de 2026 (recolhas a 2026-08-03, carimbos temporais no registo). Regiões: NUTS2. Fontes: apenas INE (API JSON) e Eurostat."
+  },
+  {
+   "i": 2,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 3,
+   "kind": "heading",
+   "level": 2,
+   "text": "Limitações e estado de verificação — ler primeiro"
+  },
+  {
+   "i": 4,
+   "items": [
+    {
+     "emphasis": [
+      {
+       "end": 13,
+       "kind": "strong",
+       "start": 0
+      },
+      {
+       "end": 84,
+       "kind": "strong",
+       "start": 75
+      },
+      {
+       "end": 200,
+       "kind": "strong",
+       "start": 191
+      }
+     ],
+     "figures": [
+      {
+       "end": 203,
+       "others": [
+        "unemp-PT15-2019"
+       ],
+       "printed": "7",
+       "row": "gdp-idx-delta-PT11",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 202,
+       "value": "7"
+      }
+     ],
+     "text": "Versões NUTS. Tanto o Eurostat como o INE servem Portugal na classificação NUTS 2024 (9 regiões NUTS2). Cada tabela indica a sua versão. Uma tabela (a série longa de ganhos) existe apenas em NUTS 2013 (7 regiões) e é mantida separada; as duas não podem ser comparadas região a região."
+    },
+    {
+     "emphasis": [
+      {
+       "end": 47,
+       "kind": "strong",
+       "start": 0
+      },
+      {
+       "end": 97,
+       "kind": "code",
+       "start": 96
+      }
+     ],
+     "figures": [],
+     "text": "Todos os valores de PIB de 2024 são provisórios — o Eurostat serve-os com o indicador de estado p."
+    },
+    {
+     "emphasis": [
+      {
+       "end": 31,
+       "kind": "strong",
+       "start": 0
+      },
+      {
+       "end": 228,
+       "kind": "strong",
+       "start": 138
+      },
+      {
+       "end": 357,
+       "kind": "strong",
+       "start": 353
+      },
+      {
+       "end": 488,
+       "kind": "strong",
+       "start": 466
+      }
+     ],
+     "figures": [],
+     "text": "O que não existe ao nível NUTS2 (ausências verificadas, não lacunas a preencher): as séries regionais do inquérito ao emprego do Eurostat não têm valores anteriores a 2019 para as cinco regiões cujos limites mudaram na NUTS 2024 (Centro, Oeste e Vale do Tejo, Grande Lisboa, Península de Setúbal, Alentejo); o indicador de ganhos em NUTS-2024 começa em 2021 (os seus próprios metadados: primeiro período 2021); o indicador de poder de compra do INE em NUTS 2024 tem uma única edição, 2023 (primeiro período = último período = 2023). Nenhuma estimativa é usada em parte alguma para preencher estas lacunas."
+    }
+   ],
+   "kind": "list",
+   "ordered": false
+  },
+  {
+   "i": 5,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 6,
+   "kind": "heading",
+   "level": 2,
+   "text": "Síntese"
+  },
+  {
+   "i": 7,
+   "items": [
+    {
+     "emphasis": [
+      {
+       "end": 44,
+       "kind": "strong",
+       "start": 42
+      },
+      {
+       "end": 103,
+       "kind": "strong",
+       "start": 101
+      },
+      {
+       "end": 148,
+       "kind": "strong",
+       "start": 146
+      }
+     ],
+     "figures": [
+      {
+       "end": 44,
+       "printed": "82",
+       "row": "gdp-idx-PT-2024",
+       "source_digest_kind": "api-viva",
+       "source_sha256": null,
+       "start": 42,
+       "value": "82"
+      },
+      {
+       "end": 64,
+       "others": [
+        "gva-share-K-N-PT1B-2023",
+        "gva-share-K-N-EU27_2020-2023"
+       ],
+       "printed": "27",
+       "row": "gva-share-B-E-PT19-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 62,
+       "value": "27.0"
+      },
+      {
+       "end": 103,
+       "others": [
+        "gdp-idx-PT-2013",
+        "emp-PT1D-2019"
+       ],
+       "printed": "77",
+       "row": "gdp-idx-PT1C-2024",
+       "source_digest_kind": "api-viva",
+       "source_sha256": null,
+       "start": 101,
+       "value": "77"
+      },
+      {
+       "end": 148,
+       "others": [
+        "gdp-idx-delta-PT",
+        "gva-share-F-PT1D-2023",
+        "unemp-PT19-2025"
+       ],
+       "printed": "5",
+       "row": "gdp-idx-delta-PT19",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 147,
+       "value": "5"
+      }
+     ],
+     "text": "O PIB per capita de Portugal situou-se em 82 % da média da UE-27 em PPS em 2024 (provisório), face a 77 em 2013. A convergência é real mas lenta: +5 pontos em onze anos."
+    },
+    {
+     "emphasis": [
+      {
+       "end": 56,
+       "kind": "strong",
+       "start": 0
+      },
+      {
+       "end": 62,
+       "kind": "strong",
+       "start": 59
+      },
+      {
+       "end": 127,
+       "kind": "strong",
+       "start": 125
+      },
+      {
+       "end": 143,
+       "kind": "strong",
+       "start": 141
+      },
+      {
+       "end": 367,
+       "kind": "em",
+       "start": 208
+      }
+     ],
+     "figures": [
+      {
+       "end": 56,
+       "others": [
+        "gva-share-K-N-PT1B-2023",
+        "gva-share-K-N-EU27_2020-2023"
+       ],
+       "printed": "27",
+       "row": "gva-share-B-E-PT19-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 54,
+       "value": "27.0"
+      },
+      {
+       "end": 62,
+       "printed": "129",
+       "row": "gdp-idx-PT1A-2024",
+       "source_digest_kind": "api-viva",
+       "source_sha256": null,
+       "start": 59,
+       "value": "129"
+      },
+      {
+       "end": 127,
+       "printed": "55",
+       "row": "gdp-idx-PT1B-2024",
+       "source_digest_kind": "api-viva",
+       "source_sha256": null,
+       "start": 125,
+       "value": "55"
+      },
+      {
+       "end": 143,
+       "others": [
+        "gdp-idx-PT30-2013"
+       ],
+       "printed": "74",
+       "row": "gdp-spread-2024",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 141,
+       "value": "74"
+      }
+     ],
+     "text": "A Grande Lisboa é a única região acima da média da UE-27 — 129 em 2024. A região mais fraca, a Península de Setúbal, está em 55: um fosso de 74 pontos dentro do antigo limite de uma única área metropolitana. (inferência: a divisão de 2024 da antiga região de Lisboa em Grande Lisboa e Península de Setúbal expõe um fosso que a classificação anterior diluía na média.)"
+    },
+    {
+     "emphasis": [
+      {
+       "end": 78,
+       "kind": "strong",
+       "start": 75
+      },
+      {
+       "end": 93,
+       "kind": "strong",
+       "start": 91
+      },
+      {
+       "end": 106,
+       "kind": "strong",
+       "start": 103
+      },
+      {
+       "end": 114,
+       "kind": "strong",
+       "start": 112
+      },
+      {
+       "end": 219,
+       "kind": "strong",
+       "start": 217
+      }
+     ],
+     "figures": [
+      {
+       "end": 78,
+       "printed": "13",
+       "row": "gdp-idx-delta-PT15",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 76,
+       "value": "13"
+      },
+      {
+       "end": 93,
+       "printed": "89",
+       "row": "gdp-idx-PT15-2024",
+       "source_digest_kind": "api-viva",
+       "source_sha256": null,
+       "start": 91,
+       "value": "89"
+      },
+      {
+       "end": 106,
+       "others": [
+        "emp-decade-delta-PT15"
+       ],
+       "printed": "14",
+       "row": "gdp-idx-delta-PT30",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 104,
+       "value": "14"
+      },
+      {
+       "end": 114,
+       "printed": "88",
+       "row": "gdp-idx-PT30-2024",
+       "source_digest_kind": "api-viva",
+       "source_sha256": null,
+       "start": 112,
+       "value": "88"
+      },
+      {
+       "end": 219,
+       "others": [
+        "gdp-idx-delta-PT1B"
+       ],
+       "printed": "1",
+       "row": "gdp-idx-delta-PT1D",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 218,
+       "value": "1"
+      }
+     ],
+     "text": "A convergência mais rápida da década está nas regiões de turismo — Algarve +13 pontos para 89, Madeira +14 para 88. A mais lenta está no continente fora de Lisboa: Oeste e Vale do Tejo e Península de Setúbal ganharam +1 ponto cada."
+    },
+    {
+     "emphasis": [
+      {
+       "end": 78,
+       "kind": "strong",
+       "start": 74
+      },
+      {
+       "end": 124,
+       "kind": "strong",
+       "start": 120
+      },
+      {
+       "end": 152,
+       "kind": "strong",
+       "start": 128
+      },
+      {
+       "end": 194,
+       "kind": "strong",
+       "start": 191
+      },
+      {
+       "end": 235,
+       "kind": "strong",
+       "start": 231
+      }
+     ],
+     "figures": [
+      {
+       "end": 67,
+       "others": [
+        "gdp-idx-PT1D-2013"
+       ],
+       "printed": "64",
+       "row": "gdp-idx-PT11-2013",
+       "source_digest_kind": "api-viva",
+       "source_sha256": null,
+       "start": 65,
+       "value": "64"
+      },
+      {
+       "end": 78,
+       "printed": "79,6",
+       "row": "emp-PT-2025",
+       "source_digest_kind": "api-viva",
+       "source_sha256": null,
+       "start": 74,
+       "value": "79.6"
+      },
+      {
+       "end": 118,
+       "others": [
+        "gva-share-K-N-PT1B-2023",
+        "gva-share-K-N-EU27_2020-2023"
+       ],
+       "printed": "27",
+       "row": "gva-share-B-E-PT19-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 116,
+       "value": "27.0"
+      },
+      {
+       "end": 124,
+       "others": [
+        "emp-PT-2019"
+       ],
+       "printed": "76,1",
+       "row": "emp-EU27_2020-2025",
+       "source_digest_kind": "api-viva",
+       "source_sha256": null,
+       "start": 120,
+       "value": "76.1"
+      },
+      {
+       "end": 194,
+       "others": [
+        "gdp-idx-delta-PT1C",
+        "unemp-EU27_2020-2025"
+       ],
+       "printed": "6,0",
+       "row": "unemp-PT-2025",
+       "source_digest_kind": "api-viva",
+       "source_sha256": null,
+       "start": 191,
+       "value": "6.0"
+      },
+      {
+       "end": 235,
+       "others": [
+        "gva-share-C-EU27_2020-2023"
+       ],
+       "printed": "16,5",
+       "row": "unemp-PT-2013",
+       "source_digest_kind": "api-viva",
+       "source_sha256": null,
+       "start": 231,
+       "value": "16.5"
+      }
+     ],
+     "text": "O trabalho é o ponto forte de Portugal: a taxa de emprego dos 20–64 anos (79,6 % em 2025) está acima da média da UE-27 (76,1 %) em todas as nove regiões, e o desemprego iguala a média da UE (6,0 %). Há uma década, o desemprego era 16,5 % a nível nacional."
+    },
+    {
+     "emphasis": [
+      {
+       "end": 86,
+       "kind": "strong",
+       "start": 80
+      },
+      {
+       "end": 124,
+       "kind": "strong",
+       "start": 118
+      },
+      {
+       "end": 186,
+       "kind": "strong",
+       "start": 180
+      },
+      {
+       "end": 266,
+       "kind": "em",
+       "start": 254
+      }
+     ],
+     "figures": [
+      {
+       "end": 86,
+       "printed": "1576,0",
+       "row": "earn-PT-2024",
+       "source_digest_kind": "api-viva",
+       "source_sha256": null,
+       "start": 80,
+       "value": "1576.0"
+      },
+      {
+       "end": 124,
+       "printed": "1935,7",
+       "row": "earn-PT1A-2024",
+       "source_digest_kind": "api-viva",
+       "source_sha256": null,
+       "start": 118,
+       "value": "1935.7"
+      },
+      {
+       "end": 186,
+       "printed": "1320,2",
+       "row": "earn-PT15-2024",
+       "source_digest_kind": "api-viva",
+       "source_sha256": null,
+       "start": 180,
+       "value": "1320.2"
+      }
+     ],
+     "text": "Os ganhos contam a história oposta à do emprego: o ganho bruto médio mensal foi 1576,0 € em 2024; só a Grande Lisboa (1935,7 €) excede o valor nacional, com o Algarve no mínimo, a 1320,2 € — emprego alto, salários baixos, em todo o lado fora da capital. (inferência)"
+    },
+    {
+     "emphasis": [
+      {
+       "end": 143,
+       "kind": "strong",
+       "start": 137
+      },
+      {
+       "end": 180,
+       "kind": "strong",
+       "start": 175
+      },
+      {
+       "end": 223,
+       "kind": "strong",
+       "start": 221
+      },
+      {
+       "end": 241,
+       "kind": "strong",
+       "start": 239
+      },
+      {
+       "end": 401,
+       "kind": "em",
+       "start": 250
+      }
+     ],
+     "figures": [
+      {
+       "end": 143,
+       "printed": "127,58",
+       "row": "ipc-PT1A-2023",
+       "source_digest_kind": "api-viva",
+       "source_sha256": null,
+       "start": 137,
+       "value": "127.58"
+      },
+      {
+       "end": 180,
+       "printed": "87,62",
+       "row": "ipc-PT20-2023",
+       "source_digest_kind": "api-viva",
+       "source_sha256": null,
+       "start": 175,
+       "value": "87.62"
+      },
+      {
+       "end": 196,
+       "others": [
+        "gdp-idx-EU27_2020-2024",
+        "gdp-idx-EU27_2020-2013",
+        "eu27-scale"
+       ],
+       "printed": "100",
+       "row": "ipc-PT-2023",
+       "source_digest_kind": "api-viva",
+       "source_sha256": null,
+       "start": 193,
+       "value": "100.00"
+      },
+      {
+       "end": 223,
+       "printed": "40",
+       "row": "ipc-spread-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 221,
+       "value": "40"
+      },
+      {
+       "end": 241,
+       "others": [
+        "gdp-spread-2024"
+       ],
+       "printed": "74",
+       "row": "gdp-idx-PT30-2013",
+       "source_digest_kind": "api-viva",
+       "source_sha256": null,
+       "start": 239,
+       "value": "74"
+      },
+      {
+       "end": 379,
+       "printed": "55",
+       "row": "gdp-idx-PT1B-2024",
+       "source_digest_kind": "api-viva",
+       "source_sha256": null,
+       "start": 377,
+       "value": "55"
+      },
+      {
+       "end": 399,
+       "printed": "99,35",
+       "row": "ipc-PT1B-2023",
+       "source_digest_kind": "api-viva",
+       "source_sha256": null,
+       "start": 394,
+       "value": "99.35"
+      }
+     ],
+     "text": "O índice de poder de compra do INE (2023) diz que o fosso do lado do consumo é mais estreito do que o do lado da produção: Grande Lisboa 127,58 contra um mínimo dos Açores de 87,62 (Portugal = 100) — um fosso de cerca de 40 pontos, contra 74 no PIB. (inferência: os movimentos pendulares e as transferências deslocam rendimento através do Tejo; a Península de Setúbal produz a 55 mas consome a 99,35.)"
+    }
+   ],
+   "kind": "list",
+   "ordered": false
+  },
+  {
+   "i": 8,
+   "kind": "rule"
+  },
+  {
+   "figures": [],
+   "i": 9,
+   "kind": "heading",
+   "level": 2,
+   "text": "PIB per capita — nível, distância à UE e uma década de movimento"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 10,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [
+    {
+     "end": 144,
+     "others": [
+      "gva-share-K-N-PT1B-2023",
+      "gva-share-K-N-EU27_2020-2023"
+     ],
+     "printed": "27",
+     "row": "gva-share-B-E-PT19-2023",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 142,
+     "value": "27.0"
+    },
+    {
+     "end": 150,
+     "others": [
+      "gdp-idx-EU27_2020-2013",
+      "ipc-PT-2023",
+      "eu27-scale"
+     ],
+     "printed": "100",
+     "row": "gdp-idx-EU27_2020-2024",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 147,
+     "value": "100"
+    }
+   ],
+   "i": 10,
+   "kind": "paragraph",
+   "text": "NUTS 2024. Valores de 2024 provisórios. PPS = Paridade de Poder de Compra Padrão («Purchasing Power Standard», na designação do Eurostat), UE-27 = 100."
+  },
+  {
+   "i": 11,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Região"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "PIB/cap 2024 (€)"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "PIB/cap 2024 (PPS)"
+     },
+     {
+      "figures": [
+       {
+        "end": 18,
+        "others": [
+         "gva-share-K-N-PT1B-2023",
+         "gva-share-K-N-EU27_2020-2023"
+        ],
+        "printed": "27",
+        "row": "gva-share-B-E-PT19-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 16,
+        "value": "27.0"
+       },
+       {
+        "end": 24,
+        "others": [
+         "gdp-idx-EU27_2020-2013",
+         "ipc-PT-2023",
+         "eu27-scale"
+        ],
+        "printed": "100",
+        "row": "gdp-idx-EU27_2020-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 21,
+        "value": "100"
+       }
+      ],
+      "header": true,
+      "text": "Índice 2024 (UE-27 = 100)"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Índice 2013"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Δ 2013–2024 (p.p.)"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Norte"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "23 300",
+        "row": "gdp-eur-PT11-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "23 300"
+       }
+      ],
+      "text": "23 300"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "28 300",
+        "row": "gdp-pps-PT11-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "28 300"
+       }
+      ],
+      "text": "28 300"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "gdp-idx-PT19-2024",
+         "gdp-idx-PT1C-2013"
+        ],
+        "printed": "71",
+        "row": "gdp-idx-PT11-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "71"
+       }
+      ],
+      "text": "71"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "gdp-idx-PT1D-2013"
+        ],
+        "printed": "64",
+        "row": "gdp-idx-PT11-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "64"
+       }
+      ],
+      "text": "64"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "unemp-PT15-2019"
+        ],
+        "printed": "7",
+        "row": "gdp-idx-delta-PT11",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "7"
+       }
+      ],
+      "text": "+7"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Centro"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "23 200",
+        "row": "gdp-eur-PT19-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "23 200"
+       }
+      ],
+      "text": "23 200"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "28 200",
+        "row": "gdp-pps-PT19-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "28 200"
+       }
+      ],
+      "text": "28 200"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "gdp-idx-PT19-2024",
+         "gdp-idx-PT1C-2013"
+        ],
+        "printed": "71",
+        "row": "gdp-idx-PT11-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "71"
+       }
+      ],
+      "text": "71"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "66",
+        "row": "gdp-idx-PT19-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "66"
+       }
+      ],
+      "text": "66"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "gdp-idx-delta-PT",
+         "gva-share-F-PT1D-2023",
+         "unemp-PT19-2025"
+        ],
+        "printed": "5",
+        "row": "gdp-idx-delta-PT19",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "5"
+       }
+      ],
+      "text": "+5"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Oeste e Vale do Tejo"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "21 200",
+        "row": "gdp-eur-PT1D-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "21 200"
+       }
+      ],
+      "text": "21 200"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "25 800",
+        "row": "gdp-pps-PT1D-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "25 800"
+       }
+      ],
+      "text": "25 800"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "65",
+        "row": "gdp-idx-PT1D-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "65"
+       }
+      ],
+      "text": "65"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "gdp-idx-PT1D-2013"
+        ],
+        "printed": "64",
+        "row": "gdp-idx-PT11-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "64"
+       }
+      ],
+      "text": "64"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "gdp-idx-delta-PT1B"
+        ],
+        "printed": "1",
+        "row": "gdp-idx-delta-PT1D",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "1"
+       }
+      ],
+      "text": "+1"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Grande Lisboa"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "42 300",
+        "row": "gdp-eur-PT1A-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "42 300"
+       }
+      ],
+      "text": "42 300"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "51 500",
+        "row": "gdp-pps-PT1A-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "51 500"
+       }
+      ],
+      "text": "51 500"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "129",
+        "row": "gdp-idx-PT1A-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "129"
+       }
+      ],
+      "text": "129"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "125",
+        "row": "gdp-idx-PT1A-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "125"
+       }
+      ],
+      "text": "125"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "gdp-idx-delta-PT20"
+        ],
+        "printed": "4",
+        "row": "gdp-idx-delta-PT1A",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "4"
+       }
+      ],
+      "text": "+4"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Península de Setúbal"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "18 200",
+        "row": "gdp-eur-PT1B-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "18 200"
+       }
+      ],
+      "text": "18 200"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "22 100",
+        "row": "gdp-pps-PT1B-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "22 100"
+       }
+      ],
+      "text": "22 100"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "55",
+        "row": "gdp-idx-PT1B-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "55"
+       }
+      ],
+      "text": "55"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "54",
+        "row": "gdp-idx-PT1B-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "54"
+       }
+      ],
+      "text": "54"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "gdp-idx-delta-PT1B"
+        ],
+        "printed": "1",
+        "row": "gdp-idx-delta-PT1D",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "1"
+       }
+      ],
+      "text": "+1"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Alentejo"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "25 300",
+        "row": "gdp-eur-PT1C-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "25 300"
+       }
+      ],
+      "text": "25 300"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "30 800",
+        "row": "gdp-pps-PT1C-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "30 800"
+       }
+      ],
+      "text": "30 800"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "gdp-idx-PT-2013",
+         "emp-PT1D-2019"
+        ],
+        "printed": "77",
+        "row": "gdp-idx-PT1C-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "77"
+       }
+      ],
+      "text": "77"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "gdp-idx-PT19-2024",
+         "gdp-idx-PT1C-2013"
+        ],
+        "printed": "71",
+        "row": "gdp-idx-PT11-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "71"
+       }
+      ],
+      "text": "71"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "unemp-PT-2025",
+         "unemp-EU27_2020-2025"
+        ],
+        "printed": "6",
+        "row": "gdp-idx-delta-PT1C",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "6"
+       }
+      ],
+      "text": "+6"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Algarve"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "29 300",
+        "row": "gdp-eur-PT15-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "29 300"
+       }
+      ],
+      "text": "29 300"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "35 600",
+        "row": "gdp-pps-PT15-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "35 600"
+       }
+      ],
+      "text": "35 600"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "89",
+        "row": "gdp-idx-PT15-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "89"
+       }
+      ],
+      "text": "89"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "76",
+        "row": "gdp-idx-PT15-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "76"
+       }
+      ],
+      "text": "76"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "13",
+        "row": "gdp-idx-delta-PT15",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "13"
+       }
+      ],
+      "text": "+13"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Açores"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "23 800",
+        "row": "gdp-eur-PT20-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "23 800"
+       }
+      ],
+      "text": "23 800"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "others": [
+         "gdp-eur-PT30-2024"
+        ],
+        "printed": "29 000",
+        "row": "gdp-pps-PT20-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "29 000"
+       }
+      ],
+      "text": "29 000"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "73",
+        "row": "gdp-idx-PT20-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "73"
+       }
+      ],
+      "text": "73"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "69",
+        "row": "gdp-idx-PT20-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "69"
+       }
+      ],
+      "text": "69"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "gdp-idx-delta-PT20"
+        ],
+        "printed": "4",
+        "row": "gdp-idx-delta-PT1A",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "4"
+       }
+      ],
+      "text": "+4"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Madeira"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "others": [
+         "gdp-eur-PT30-2024"
+        ],
+        "printed": "29 000",
+        "row": "gdp-pps-PT20-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "29 000"
+       }
+      ],
+      "text": "29 000"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "35 300",
+        "row": "gdp-pps-PT30-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "35 300"
+       }
+      ],
+      "text": "35 300"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "88",
+        "row": "gdp-idx-PT30-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "88"
+       }
+      ],
+      "text": "88"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "gdp-spread-2024"
+        ],
+        "printed": "74",
+        "row": "gdp-idx-PT30-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "74"
+       }
+      ],
+      "text": "74"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "emp-decade-delta-PT15"
+        ],
+        "printed": "14",
+        "row": "gdp-idx-delta-PT30",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "14"
+       }
+      ],
+      "text": "+14"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Portugal"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "27 100",
+        "row": "gdp-eur-PT-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "27 100"
+       }
+      ],
+      "text": "27 100"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "32 900",
+        "row": "gdp-pps-PT-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "32 900"
+       }
+      ],
+      "text": "32 900"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "printed": "82",
+        "row": "gdp-idx-PT-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "82"
+       }
+      ],
+      "text": "82"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "gdp-idx-PT-2013",
+         "emp-PT1D-2019"
+        ],
+        "printed": "77",
+        "row": "gdp-idx-PT1C-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "77"
+       }
+      ],
+      "text": "77"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "gdp-idx-delta-PT",
+         "gva-share-F-PT1D-2023",
+         "unemp-PT19-2025"
+        ],
+        "printed": "5",
+        "row": "gdp-idx-delta-PT19",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "5"
+       }
+      ],
+      "text": "+5"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 5,
+        "others": [
+         "gva-share-K-N-PT1B-2023",
+         "gva-share-K-N-EU27_2020-2023"
+        ],
+        "printed": "27",
+        "row": "gva-share-B-E-PT19-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 3,
+        "value": "27.0"
+       }
+      ],
+      "text": "UE-27"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "others": [
+         "gdp-pps-EU27_2020-2024"
+        ],
+        "printed": "39 900",
+        "row": "gdp-eur-EU27_2020-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "39 900"
+       }
+      ],
+      "text": "39 900"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "others": [
+         "gdp-pps-EU27_2020-2024"
+        ],
+        "printed": "39 900",
+        "row": "gdp-eur-EU27_2020-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "39 900"
+       }
+      ],
+      "text": "39 900"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gdp-idx-EU27_2020-2013",
+         "ipc-PT-2023",
+         "eu27-scale"
+        ],
+        "printed": "100",
+        "row": "gdp-idx-EU27_2020-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "100"
+       }
+      ],
+      "text": "100"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gdp-idx-EU27_2020-2013",
+         "ipc-PT-2023",
+         "eu27-scale"
+        ],
+        "printed": "100",
+        "row": "gdp-idx-EU27_2020-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "100"
+       }
+      ],
+      "text": "100"
+     },
+     {
+      "figures": [
+       {
+        "end": 2,
+        "others": [
+         "unemp-delta-PT1D"
+        ],
+        "printed": "0",
+        "row": "gdp-idx-delta-EU27_2020",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "0"
+       }
+      ],
+      "text": "+0"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [
+    {
+     "end": 63,
+     "printed": "10",
+     "row": "gva-total-PT1C-2023",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 61,
+     "value": "10.0"
+    }
+   ],
+   "i": 12,
+   "kind": "paragraph",
+   "links": [
+    {
+     "end": 375,
+     "href": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10r_2gdp?format=JSON&lang=EN&unit=EUR_HAB&unit=PPS_EU27_2020_HAB&unit=PPS_HAB_EU27_2020&geo=PT11&geo=PT15&geo=PT19&geo=PT1A&geo=PT1B&geo=PT1C&geo=PT1D&geo=PT20&geo=PT30&geo=PT&geo=EU27_2020&sinceTimePeriod=2013",
+     "start": 92
+    }
+   ],
+   "text": "Fonte: Eurostat (intergovernamental), conjunto de dados nama_10r_2gdp, obtido a 2026-08-03. https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10r_2gdp?format=JSON&lang=EN&unit=EUR_HAB&unit=PPS_EU27_2020_HAB&unit=PPS_HAB_EU27_2020&geo=PT11&geo=PT15&geo=PT19&geo=PT1A&geo=PT1B&geo=PT1C&geo=PT1D&geo=PT20&geo=PT30&geo=PT&geo=EU27_2020&sinceTimePeriod=2013"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 23,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 42,
+     "kind": "strong",
+     "start": 40
+    },
+    {
+     "end": 130,
+     "kind": "strong",
+     "start": 124
+    },
+    {
+     "end": 146,
+     "kind": "strong",
+     "start": 140
+    }
+   ],
+   "figures": [
+    {
+     "end": 42,
+     "printed": "82",
+     "row": "gdp-idx-PT-2024",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 40,
+     "value": "82"
+    },
+    {
+     "end": 62,
+     "others": [
+      "gva-share-K-N-PT1B-2023",
+      "gva-share-K-N-EU27_2020-2023"
+     ],
+     "printed": "27",
+     "row": "gva-share-B-E-PT19-2023",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 60,
+     "value": "27.0"
+    },
+    {
+     "end": 130,
+     "printed": "27 100",
+     "row": "gdp-eur-PT-2024",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 124,
+     "value": "27 100"
+    },
+    {
+     "end": 146,
+     "others": [
+      "gdp-eur-EU27_2020-2024"
+     ],
+     "printed": "39 900",
+     "row": "gdp-pps-EU27_2020-2024",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 140,
+     "value": "39 900"
+    }
+   ],
+   "i": 13,
+   "kind": "paragraph",
+   "text": "Nível e distância à UE. Portugal produz 82 % da média da UE-27 por habitante em PPS; em euros nominais a distância é maior (27 100 € contra 39 900 €). Oito das nove regiões estão abaixo da média da UE."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 10,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 13,
+     "kind": "strong",
+     "start": 11
+    },
+    {
+     "end": 59,
+     "kind": "strong",
+     "start": 56
+    },
+    {
+     "end": 88,
+     "kind": "strong",
+     "start": 86
+    },
+    {
+     "end": 540,
+     "kind": "em",
+     "start": 91
+    }
+   ],
+   "figures": [
+    {
+     "end": 13,
+     "others": [
+      "gdp-idx-PT30-2013"
+     ],
+     "printed": "74",
+     "row": "gdp-spread-2024",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 11,
+     "value": "74"
+    },
+    {
+     "end": 59,
+     "printed": "129",
+     "row": "gdp-idx-PT1A-2024",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 56,
+     "value": "129"
+    },
+    {
+     "end": 88,
+     "printed": "55",
+     "row": "gdp-idx-PT1B-2024",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 86,
+     "value": "55"
+    },
+    {
+     "end": 377,
+     "printed": "129",
+     "row": "gdp-idx-PT1A-2024",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 374,
+     "value": "129"
+    }
+   ],
+   "i": 14,
+   "kind": "paragraph",
+   "text": "Amplitude. 74 pontos de índice separam a Grande Lisboa (129) da Península de Setúbal (55). (inferência: este é o fosso mais largo da tabela por construção da nova classificação — a antiga Área Metropolitana de Lisboa diluía as duas margens do Tejo num único valor; a NUTS 2024 mostra pela primeira vez, em separado, o prémio da capital e a fraqueza da sua coroa pendular. O 129 da Grande Lisboa não deve ser lido como «Lisboa ficou mais rica do que os antigos números da AML mostravam» — é a mesma economia medida num limite mais estreito.)"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 8,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 189,
+     "kind": "strong",
+     "start": 186
+    },
+    {
+     "end": 202,
+     "kind": "strong",
+     "start": 199
+    },
+    {
+     "end": 370,
+     "kind": "em",
+     "start": 301
+    },
+    {
+     "end": 429,
+     "kind": "strong",
+     "start": 427
+    },
+    {
+     "end": 442,
+     "kind": "strong",
+     "start": 440
+    },
+    {
+     "end": 453,
+     "kind": "strong",
+     "start": 451
+    },
+    {
+     "end": 522,
+     "kind": "strong",
+     "start": 520
+    },
+    {
+     "end": 547,
+     "kind": "strong",
+     "start": 545
+    }
+   ],
+   "figures": [
+    {
+     "end": 189,
+     "printed": "13",
+     "row": "gdp-idx-delta-PT15",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 187,
+     "value": "13"
+    },
+    {
+     "end": 202,
+     "others": [
+      "emp-decade-delta-PT15"
+     ],
+     "printed": "14",
+     "row": "gdp-idx-delta-PT30",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 200,
+     "value": "14"
+    },
+    {
+     "end": 429,
+     "others": [
+      "unemp-PT15-2019"
+     ],
+     "printed": "7",
+     "row": "gdp-idx-delta-PT11",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 428,
+     "value": "7"
+    },
+    {
+     "end": 442,
+     "others": [
+      "gdp-idx-delta-PT1C",
+      "unemp-PT-2025"
+     ],
+     "printed": "6",
+     "row": "unemp-EU27_2020-2025",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 441,
+     "value": "6.0"
+    },
+    {
+     "end": 453,
+     "others": [
+      "gdp-idx-delta-PT",
+      "gva-share-F-PT1D-2023",
+      "unemp-PT19-2025"
+     ],
+     "printed": "5",
+     "row": "gdp-idx-delta-PT19",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 452,
+     "value": "5"
+    },
+    {
+     "end": 522,
+     "others": [
+      "gdp-idx-delta-PT1B"
+     ],
+     "printed": "1",
+     "row": "gdp-idx-delta-PT1D",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 521,
+     "value": "1"
+    },
+    {
+     "end": 547,
+     "others": [
+      "gdp-idx-delta-PT1B"
+     ],
+     "printed": "1",
+     "row": "gdp-idx-delta-PT1D",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 546,
+     "value": "1"
+    }
+   ],
+   "i": 15,
+   "kind": "paragraph",
+   "text": "Direção. Todas as regiões convergiram ou mantiveram a posição em 2013–2024; nenhuma recuou. O movimento é desigual: as duas regiões dominadas pelo turismo ganharam dois dígitos (Algarve +13, Madeira +14 — ambas tinham caído a fundo em 2020 e recuperaram para lá da posição pré-pandemia na mesma série (inferência a partir dos anos intermédios do mesmo conjunto de dados)), o continente norte e centro ganhou com solidez (Norte +7, Alentejo +6, Centro +5), e a coroa em torno de Lisboa mal se moveu (Oeste e Vale do Tejo +1, Península de Setúbal +1)."
+  },
+  {
+   "figures": [],
+   "i": 16,
+   "kind": "heading",
+   "level": 2,
+   "text": "De que é feita cada economia regional — VAB por setor, 2023"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 10,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [],
+   "i": 17,
+   "kind": "paragraph",
+   "text": "NUTS 2024. Quotas do valor acrescentado bruto a preços correntes, %; calculadas a partir dos valores em milhões de euros do Eurostat (derivações no registo de afirmações)."
+  },
+  {
+   "i": 18,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Região"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Agricultura (A)"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Indústria (B–E)"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "da qual transformadora (C)"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Construção (F)"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Comércio, transportes, turismo, TIC (G–J)"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Financeiras, imobiliário, serviços às empresas (K–N)"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Setor público e outros (O–U)"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "VAB total (mil M€)"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Norte"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "1,6",
+        "row": "gva-share-A-PT11-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1.6"
+       }
+      ],
+      "text": "1,6"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "gva-share-K-N-PT11-2023"
+        ],
+        "printed": "24,1",
+        "row": "gva-share-B-E-PT11-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "24.1"
+       }
+      ],
+      "text": "24,1"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "20,6",
+        "row": "gva-share-C-PT11-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "20.6"
+       }
+      ],
+      "text": "20,6"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-F-PT15-2023",
+         "gva-share-F-PT30-2023",
+         "gva-total-PT30-2023"
+        ],
+        "printed": "6,1",
+        "row": "gva-share-F-PT11-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6.1"
+       }
+      ],
+      "text": "6,1"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "24,5",
+        "row": "gva-share-G-J-PT11-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "24.5"
+       }
+      ],
+      "text": "24,5"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "gva-share-K-N-PT11-2023"
+        ],
+        "printed": "24,1",
+        "row": "gva-share-B-E-PT11-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "24.1"
+       }
+      ],
+      "text": "24,1"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "19,7",
+        "row": "gva-share-O-U-PT11-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "19.7"
+       }
+      ],
+      "text": "19,7"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "69,7",
+        "row": "gva-total-PT11-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "69.7"
+       }
+      ],
+      "text": "69,7"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Centro"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-F-PT1A-2023"
+        ],
+        "printed": "3,3",
+        "row": "gva-share-A-PT19-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3.3"
+       }
+      ],
+      "text": "3,3"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "gva-share-K-N-PT1B-2023",
+         "gva-share-K-N-EU27_2020-2023"
+        ],
+        "printed": "27,0",
+        "row": "gva-share-B-E-PT19-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "27.0"
+       }
+      ],
+      "text": "27,0"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "23,5",
+        "row": "gva-share-C-PT19-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "23.5"
+       }
+      ],
+      "text": "23,5"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-F-PT1B-2023",
+         "emp-delta-PT1C",
+         "unemp-PT30-2025",
+         "unemp-decade-delta-EU27_2020"
+        ],
+        "printed": "5,4",
+        "row": "gva-share-F-PT19-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "5.4"
+       }
+      ],
+      "text": "5,4"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "22,4",
+        "row": "gva-share-G-J-PT19-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "22.4"
+       }
+      ],
+      "text": "22,4"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "19,8",
+        "row": "gva-share-K-N-PT19-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "19.8"
+       }
+      ],
+      "text": "19,8"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "22,1",
+        "row": "gva-share-O-U-PT19-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "22.1"
+       }
+      ],
+      "text": "22,1"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "32,4",
+        "row": "gva-total-PT19-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "32.4"
+       }
+      ],
+      "text": "32,4"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Oeste e Vale do Tejo"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "7,3",
+        "row": "gva-share-A-PT1D-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "7.3"
+       }
+      ],
+      "text": "7,3"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "20,8",
+        "row": "gva-share-B-E-PT1D-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "20.8"
+       }
+      ],
+      "text": "20,8"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "unemp-PT15-2013"
+        ],
+        "printed": "17,1",
+        "row": "gva-share-C-PT1D-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "17.1"
+       }
+      ],
+      "text": "17,1"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gdp-idx-delta-PT19",
+         "gdp-idx-delta-PT",
+         "unemp-PT19-2025"
+        ],
+        "printed": "5,0",
+        "row": "gva-share-F-PT1D-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "5.0"
+       }
+      ],
+      "text": "5,0"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "27,7",
+        "row": "gva-share-G-J-PT1D-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "27.7"
+       }
+      ],
+      "text": "27,7"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "20,1",
+        "row": "gva-share-K-N-PT1D-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "20.1"
+       }
+      ],
+      "text": "20,1"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "19,1",
+        "row": "gva-share-O-U-PT1D-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "19.1"
+       }
+      ],
+      "text": "19,1"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "14,9",
+        "row": "gva-total-PT1D-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "14.9"
+       }
+      ],
+      "text": "14,9"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Grande Lisboa"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "0,2",
+        "row": "gva-share-A-PT1A-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "0.2"
+       }
+      ],
+      "text": "0,2"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "6,8",
+        "row": "gva-share-B-E-PT1A-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6.8"
+       }
+      ],
+      "text": "6,8"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-B-E-PT30-2023",
+         "unemp-PT15-2025"
+        ],
+        "printed": "5,7",
+        "row": "gva-share-C-PT1A-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "5.7"
+       }
+      ],
+      "text": "5,7"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-F-PT1A-2023"
+        ],
+        "printed": "3,3",
+        "row": "gva-share-A-PT19-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3.3"
+       }
+      ],
+      "text": "3,3"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "32,7",
+        "row": "gva-share-G-J-PT1A-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "32.7"
+       }
+      ],
+      "text": "32,7"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "37,2",
+        "row": "gva-share-K-N-PT1A-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "37.2"
+       }
+      ],
+      "text": "37,2"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "gva-share-G-J-PT1C-2023"
+        ],
+        "printed": "19,9",
+        "row": "gva-share-O-U-PT1A-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "19.9"
+       }
+      ],
+      "text": "19,9"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "73,7",
+        "row": "gva-total-PT1A-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "73.7"
+       }
+      ],
+      "text": "73,7"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Península de Setúbal"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-A-EU27_2020-2023",
+         "emp-delta-PT1D"
+        ],
+        "printed": "1,8",
+        "row": "gva-share-A-PT1B-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1.8"
+       }
+      ],
+      "text": "1,8"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "unemp-PT20-2013"
+        ],
+        "printed": "16,8",
+        "row": "gva-share-B-E-PT1B-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "16.8"
+       }
+      ],
+      "text": "16,8"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "14,5",
+        "row": "gva-share-C-PT1B-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "14.5"
+       }
+      ],
+      "text": "14,5"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-F-PT1B-2023",
+         "emp-delta-PT1C",
+         "unemp-PT30-2025",
+         "unemp-decade-delta-EU27_2020"
+        ],
+        "printed": "5,4",
+        "row": "gva-share-F-PT19-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "5.4"
+       }
+      ],
+      "text": "5,4"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "24,6",
+        "row": "gva-share-G-J-PT1B-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "24.6"
+       }
+      ],
+      "text": "24,6"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "gva-share-K-N-PT1B-2023",
+         "gva-share-K-N-EU27_2020-2023"
+        ],
+        "printed": "27,0",
+        "row": "gva-share-B-E-PT19-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "27.0"
+       }
+      ],
+      "text": "27,0"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "24,4",
+        "row": "gva-share-O-U-PT1B-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "24.4"
+       }
+      ],
+      "text": "24,4"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "12,4",
+        "row": "gva-total-PT1B-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "12.4"
+       }
+      ],
+      "text": "12,4"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Alentejo"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "13,7",
+        "row": "gva-share-A-PT1C-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "13.7"
+       }
+      ],
+      "text": "13,7"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "21,0",
+        "row": "gva-share-B-E-PT1C-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "21.0"
+       }
+      ],
+      "text": "21,0"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "14,6",
+        "row": "gva-share-C-PT1C-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "14.6"
+       }
+      ],
+      "text": "14,6"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "4,4",
+        "row": "gva-share-F-PT1C-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "4.4"
+       }
+      ],
+      "text": "4,4"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "gva-share-G-J-PT1C-2023"
+        ],
+        "printed": "19,9",
+        "row": "gva-share-O-U-PT1A-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "19.9"
+       }
+      ],
+      "text": "19,9"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "17,6",
+        "row": "gva-share-K-N-PT1C-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "17.6"
+       }
+      ],
+      "text": "17,6"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "23,4",
+        "row": "gva-share-O-U-PT1C-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "23.4"
+       }
+      ],
+      "text": "23,4"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "10,0",
+        "row": "gva-total-PT1C-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "10.0"
+       }
+      ],
+      "text": "10,0"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Algarve"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "3,7",
+        "row": "gva-share-A-PT15-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "3.7"
+       }
+      ],
+      "text": "3,7"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "4,5",
+        "row": "gva-share-B-E-PT15-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "4.5"
+       }
+      ],
+      "text": "4,5"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "2,3",
+        "row": "gva-share-C-PT15-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2.3"
+       }
+      ],
+      "text": "2,3"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-F-PT15-2023",
+         "gva-share-F-PT30-2023",
+         "gva-total-PT30-2023"
+        ],
+        "printed": "6,1",
+        "row": "gva-share-F-PT11-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6.1"
+       }
+      ],
+      "text": "6,1"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "41,6",
+        "row": "gva-share-G-J-PT15-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "41.6"
+       }
+      ],
+      "text": "41,6"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "25,6",
+        "row": "gva-share-K-N-PT15-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "25.6"
+       }
+      ],
+      "text": "25,6"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "18,5",
+        "row": "gva-share-O-U-PT15-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "18.5"
+       }
+      ],
+      "text": "18,5"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "11,5",
+        "row": "gva-total-PT15-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "11.5"
+       }
+      ],
+      "text": "11,5"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Açores"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "unemp-PT11-2025"
+        ],
+        "printed": "6,3",
+        "row": "gva-share-A-PT20-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6.3"
+       }
+      ],
+      "text": "6,3"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "7,9",
+        "row": "gva-share-B-E-PT20-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "7.9"
+       }
+      ],
+      "text": "7,9"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-F-PT20-2023",
+         "gva-total-PT20-2023"
+        ],
+        "printed": "4,7",
+        "row": "gva-share-C-PT20-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "4.7"
+       }
+      ],
+      "text": "4,7"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-F-PT20-2023",
+         "gva-total-PT20-2023"
+        ],
+        "printed": "4,7",
+        "row": "gva-share-C-PT20-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "4.7"
+       }
+      ],
+      "text": "4,7"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "28,6",
+        "row": "gva-share-G-J-PT20-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "28.6"
+       }
+      ],
+      "text": "28,6"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "18,7",
+        "row": "gva-share-K-N-PT20-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "18.7"
+       }
+      ],
+      "text": "18,7"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "33,8",
+        "row": "gva-share-O-U-PT20-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "33.8"
+       }
+      ],
+      "text": "33,8"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-F-PT20-2023",
+         "gva-total-PT20-2023"
+        ],
+        "printed": "4,7",
+        "row": "gva-share-C-PT20-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "4.7"
+       }
+      ],
+      "text": "4,7"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Madeira"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "unemp-delta-PT30"
+        ],
+        "printed": "1,5",
+        "row": "gva-share-A-PT30-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1.5"
+       }
+      ],
+      "text": "1,5"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-B-E-PT30-2023",
+         "unemp-PT15-2025"
+        ],
+        "printed": "5,7",
+        "row": "gva-share-C-PT1A-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "5.7"
+       }
+      ],
+      "text": "5,7"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-A-PT-2023"
+        ],
+        "printed": "2,5",
+        "row": "gva-share-C-PT30-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2.5"
+       }
+      ],
+      "text": "2,5"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-F-PT15-2023",
+         "gva-share-F-PT30-2023",
+         "gva-total-PT30-2023"
+        ],
+        "printed": "6,1",
+        "row": "gva-share-F-PT11-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6.1"
+       }
+      ],
+      "text": "6,1"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "38,1",
+        "row": "gva-share-G-J-PT30-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "38.1"
+       }
+      ],
+      "text": "38,1"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "21,2",
+        "row": "gva-share-K-N-PT30-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "21.2"
+       }
+      ],
+      "text": "21,2"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "27,3",
+        "row": "gva-share-O-U-PT30-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "27.3"
+       }
+      ],
+      "text": "27,3"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-F-PT15-2023",
+         "gva-share-F-PT30-2023",
+         "gva-total-PT30-2023"
+        ],
+        "printed": "6,1",
+        "row": "gva-share-F-PT11-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6.1"
+       }
+      ],
+      "text": "6,1"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Portugal"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-A-PT-2023"
+        ],
+        "printed": "2,5",
+        "row": "gva-share-C-PT30-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "2.5"
+       }
+      ],
+      "text": "2,5"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "16,6",
+        "row": "gva-share-B-E-PT-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "16.6"
+       }
+      ],
+      "text": "16,6"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "13,9",
+        "row": "gva-share-C-PT-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "13.9"
+       }
+      ],
+      "text": "13,9"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "unemp-PT19-2019",
+         "unemp-PT20-2025"
+        ],
+        "printed": "4,9",
+        "row": "gva-share-F-PT-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "4.9"
+       }
+      ],
+      "text": "4,9"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "28,0",
+        "row": "gva-share-G-J-PT-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "28.0"
+       }
+      ],
+      "text": "28,0"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "27,1",
+        "row": "gva-share-K-N-PT-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "27.1"
+       }
+      ],
+      "text": "27,1"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "20,9",
+        "row": "gva-share-O-U-PT-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "20.9"
+       }
+      ],
+      "text": "20,9"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "235,6",
+        "row": "gva-total-PT-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "235.6"
+       }
+      ],
+      "text": "235,6"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 5,
+        "others": [
+         "gva-share-K-N-PT1B-2023",
+         "gva-share-K-N-EU27_2020-2023"
+        ],
+        "printed": "27",
+        "row": "gva-share-B-E-PT19-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 3,
+        "value": "27.0"
+       }
+      ],
+      "text": "UE-27"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-A-EU27_2020-2023",
+         "emp-delta-PT1D"
+        ],
+        "printed": "1,8",
+        "row": "gva-share-A-PT1B-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1.8"
+       }
+      ],
+      "text": "1,8"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "20,2",
+        "row": "gva-share-B-E-EU27_2020-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "20.2"
+       }
+      ],
+      "text": "20,2"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "unemp-PT-2013"
+        ],
+        "printed": "16,5",
+        "row": "gva-share-C-EU27_2020-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "16.5"
+       }
+      ],
+      "text": "16,5"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "emp-delta-PT20",
+         "unemp-PT1C-2025"
+        ],
+        "printed": "5,5",
+        "row": "gva-share-F-EU27_2020-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "5.5"
+       }
+      ],
+      "text": "5,5"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "24,2",
+        "row": "gva-share-G-J-EU27_2020-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "24.2"
+       }
+      ],
+      "text": "24,2"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "gva-share-K-N-PT1B-2023",
+         "gva-share-K-N-EU27_2020-2023"
+        ],
+        "printed": "27,0",
+        "row": "gva-share-B-E-PT19-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "27.0"
+       }
+      ],
+      "text": "27,0"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "21,3",
+        "row": "gva-share-O-U-EU27_2020-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "21.3"
+       }
+      ],
+      "text": "21,3"
+     },
+     {
+      "figures": [
+       {
+        "end": 8,
+        "printed": "15 595,2",
+        "row": "gva-total-EU27_2020-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "15595.2"
+       }
+      ],
+      "text": "15 595,2"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [
+    {
+     "end": 63,
+     "printed": "10",
+     "row": "gva-total-PT1C-2023",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 61,
+     "value": "10.0"
+    },
+    {
+     "end": 66,
+     "printed": "3",
+     "row": "emp-delta-EU27_2020",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 65,
+     "value": "3.0"
+    }
+   ],
+   "i": 19,
+   "kind": "paragraph",
+   "links": [
+    {
+     "end": 338,
+     "href": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10r_3gva?format=JSON&lang=EN&unit=CP_MEUR&geo=PT11&geo=PT15&geo=PT19&geo=PT1A&geo=PT1B&geo=PT1C&geo=PT1D&geo=PT20&geo=PT30&geo=PT&geo=EU27_2020&time=2013&time=2022&time=2023",
+     "start": 92
+    }
+   ],
+   "text": "Fonte: Eurostat (intergovernamental), conjunto de dados nama_10r_3gva, obtido a 2026-08-03. https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10r_3gva?format=JSON&lang=EN&unit=CP_MEUR&geo=PT11&geo=PT15&geo=PT19&geo=PT1A&geo=PT1B&geo=PT1C&geo=PT1D&geo=PT20&geo=PT30&geo=PT&geo=EU27_2020&time=2013&time=2022&time=2023"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 68,
+     "kind": "em",
+     "start": 56
+    }
+   ],
+   "figures": [],
+   "i": 20,
+   "kind": "paragraph",
+   "text": "As nove regiões são quatro tipos diferentes de economia (inferência):"
+  },
+  {
+   "i": 21,
+   "items": [
+    {
+     "emphasis": [
+      {
+       "end": 27,
+       "kind": "strong",
+       "start": 0
+      },
+      {
+       "end": 81,
+       "kind": "strong",
+       "start": 77
+      },
+      {
+       "end": 110,
+       "kind": "strong",
+       "start": 106
+      },
+      {
+       "end": 160,
+       "kind": "strong",
+       "start": 156
+      },
+      {
+       "end": 167,
+       "kind": "strong",
+       "start": 163
+      },
+      {
+       "end": 217,
+       "kind": "strong",
+       "start": 213
+      },
+      {
+       "end": 278,
+       "kind": "strong",
+       "start": 274
+      },
+      {
+       "end": 312,
+       "kind": "strong",
+       "start": 308
+      },
+      {
+       "end": 347,
+       "kind": "strong",
+       "start": 343
+      },
+      {
+       "end": 592,
+       "kind": "em",
+       "start": 405
+      }
+     ],
+     "figures": [
+      {
+       "end": 81,
+       "others": [
+        "gva-share-K-N-PT1B-2023",
+        "gva-share-K-N-EU27_2020-2023"
+       ],
+       "printed": "27,0",
+       "row": "gva-share-B-E-PT19-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 77,
+       "value": "27.0"
+      },
+      {
+       "end": 110,
+       "printed": "23,5",
+       "row": "gva-share-C-PT19-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 106,
+       "value": "23.5"
+      },
+      {
+       "end": 160,
+       "others": [
+        "gva-share-K-N-PT11-2023"
+       ],
+       "printed": "24,1",
+       "row": "gva-share-B-E-PT11-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 156,
+       "value": "24.1"
+      },
+      {
+       "end": 167,
+       "printed": "20,6",
+       "row": "gva-share-C-PT11-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 163,
+       "value": "20.6"
+      },
+      {
+       "end": 211,
+       "others": [
+        "gva-share-K-N-PT1B-2023",
+        "gva-share-K-N-EU27_2020-2023"
+       ],
+       "printed": "27",
+       "row": "gva-share-B-E-PT19-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 209,
+       "value": "27.0"
+      },
+      {
+       "end": 217,
+       "printed": "20,2",
+       "row": "gva-share-B-E-EU27_2020-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 213,
+       "value": "20.2"
+      },
+      {
+       "end": 278,
+       "printed": "21,0",
+       "row": "gva-share-B-E-PT1C-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 274,
+       "value": "21.0"
+      },
+      {
+       "end": 312,
+       "printed": "20,8",
+       "row": "gva-share-B-E-PT1D-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 308,
+       "value": "20.8"
+      },
+      {
+       "end": 347,
+       "printed": "16,6",
+       "row": "gva-share-B-E-PT-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 343,
+       "value": "16.6"
+      }
+     ],
+     "text": "Norte e centro industriais. O Centro é a região mais industrial de Portugal (27,0 % de indústria, da qual 23,5 de transformadora) e o Norte vem logo atrás (24,1 / 20,6) — ambos acima da quota industrial da UE-27 (20,2 %), como também estão, por margem estreita, o Alentejo (21,0 %) e o Oeste e Vale do Tejo (20,8 %). Portugal no seu conjunto (16,6 %) é marcadamente menos industrial do que a média da UE. (Corrigido a 2026-08-03, em auditoria pós-publicação: o texto anterior dizia «mais nada no país está» — as próprias linhas do Alentejo e do Oeste e Vale do Tejo na tabela contradizem-no.)"
+    },
+    {
+     "emphasis": [
+      {
+       "end": 24,
+       "kind": "strong",
+       "start": 0
+      },
+      {
+       "end": 93,
+       "kind": "strong",
+       "start": 89
+      },
+      {
+       "end": 151,
+       "kind": "strong",
+       "start": 147
+      },
+      {
+       "end": 178,
+       "kind": "strong",
+       "start": 175
+      },
+      {
+       "end": 268,
+       "kind": "strong",
+       "start": 264
+      },
+      {
+       "end": 284,
+       "kind": "strong",
+       "start": 279
+      }
+     ],
+     "figures": [
+      {
+       "end": 93,
+       "printed": "37,2",
+       "row": "gva-share-K-N-PT1A-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 89,
+       "value": "37.2"
+      },
+      {
+       "end": 151,
+       "printed": "32,7",
+       "row": "gva-share-G-J-PT1A-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 147,
+       "value": "32.7"
+      },
+      {
+       "end": 178,
+       "printed": "6,8",
+       "row": "gva-share-B-E-PT1A-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 175,
+       "value": "6.8"
+      },
+      {
+       "end": 268,
+       "printed": "73,7",
+       "row": "gva-total-PT1A-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 264,
+       "value": "73.7"
+      },
+      {
+       "end": 284,
+       "printed": "235,6",
+       "row": "gva-total-PT-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 279,
+       "value": "235.6"
+      }
+     ],
+     "text": "Uma capital de serviços. A Grande Lisboa é finanças, imobiliário e serviços às empresas (37,2 %, o máximo nacional) mais comércio/transportes/TIC (32,7 %), com a indústria em 6,8 % — o perfil de um polo metropolitano de serviços, e quase um terço do VAB nacional (73,7 mil M€ de 235,6 mil M€)."
+    },
+    {
+     "emphasis": [
+      {
+       "end": 26,
+       "kind": "strong",
+       "start": 0
+      },
+      {
+       "end": 49,
+       "kind": "strong",
+       "start": 45
+      },
+      {
+       "end": 175,
+       "kind": "strong",
+       "start": 171
+      },
+      {
+       "end": 227,
+       "kind": "strong",
+       "start": 223
+      }
+     ],
+     "figures": [
+      {
+       "end": 49,
+       "printed": "41,6",
+       "row": "gva-share-G-J-PT15-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 45,
+       "value": "41.6"
+      },
+      {
+       "end": 175,
+       "printed": "38,1",
+       "row": "gva-share-G-J-PT30-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 171,
+       "value": "38.1"
+      },
+      {
+       "end": 227,
+       "printed": "33,8",
+       "row": "gva-share-O-U-PT20-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 223,
+       "value": "33.8"
+      }
+     ],
+     "text": "Costas e ilhas de turismo. O Algarve assenta 41,6 % em comércio, transportes, alojamento e TIC — a região mais dependente de um único setor em toda a tabela — e a Madeira 38,1 %. Os Açores apoiam-se antes no setor público (33,8 %, o máximo nacional)."
+    },
+    {
+     "emphasis": [
+      {
+       "end": 18,
+       "kind": "strong",
+       "start": 0
+      },
+      {
+       "end": 53,
+       "kind": "strong",
+       "start": 49
+      },
+      {
+       "end": 88,
+       "kind": "strong",
+       "start": 85
+      },
+      {
+       "end": 152,
+       "kind": "strong",
+       "start": 149
+      },
+      {
+       "end": 172,
+       "kind": "strong",
+       "start": 169
+      }
+     ],
+     "figures": [
+      {
+       "end": 53,
+       "printed": "13,7",
+       "row": "gva-share-A-PT1C-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 49,
+       "value": "13.7"
+      },
+      {
+       "end": 88,
+       "others": [
+        "gva-share-A-EU27_2020-2023",
+        "emp-delta-PT1D"
+       ],
+       "printed": "1,8",
+       "row": "gva-share-A-PT1B-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 85,
+       "value": "1.8"
+      },
+      {
+       "end": 152,
+       "printed": "7,3",
+       "row": "gva-share-A-PT1D-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 149,
+       "value": "7.3"
+      },
+      {
+       "end": 172,
+       "others": [
+        "unemp-PT11-2025"
+       ],
+       "printed": "6,3",
+       "row": "gva-share-A-PT20-2023",
+       "source_digest_kind": "derivado",
+       "source_sha256": null,
+       "start": 169,
+       "value": "6.3"
+      }
+     ],
+     "text": "Interior agrícola. A quota agrícola do Alentejo, 13,7 %, é sete vezes a média da UE (1,8 %) e a mais alta do país; seguem-se o Oeste e Vale do Tejo (7,3 %) e os Açores (6,3 %)."
+    }
+   ],
+   "kind": "list",
+   "ordered": false
+  },
+  {
+   "figures": [],
+   "i": 22,
+   "kind": "heading",
+   "level": 2,
+   "text": "Mercado de trabalho — emprego e desemprego"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 10,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [
+    {
+     "end": 32,
+     "others": [
+      "gdp-idx-PT1D-2013"
+     ],
+     "printed": "64",
+     "row": "gdp-idx-PT11-2013",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 30,
+     "value": "64"
+    },
+    {
+     "end": 64,
+     "printed": "15",
+     "row": "emp-decade-delta-PT11",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 62,
+     "value": "15.0"
+    },
+    {
+     "end": 67,
+     "others": [
+      "gdp-idx-PT30-2013"
+     ],
+     "printed": "74",
+     "row": "gdp-spread-2024",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 65,
+     "value": "74"
+    }
+   ],
+   "i": 23,
+   "kind": "paragraph",
+   "text": "NUTS 2024. Taxa de emprego 20–64 anos (%), taxa de desemprego 15–74 anos (%). As séries regionais das cinco regiões com limites alterados começam em 2019 (ver Limitações); a visão da década existe apenas para as quatro regiões sem alteração e para os agregados nacional/UE."
+  },
+  {
+   "figures": [],
+   "i": 24,
+   "kind": "heading",
+   "level": 3,
+   "text": "Taxa de emprego, 2019 → 2025"
+  },
+  {
+   "i": 25,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Região"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "2019"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "2025"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Δ 2019–2025 (p.p.)"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Norte"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "74,3",
+        "row": "emp-PT11-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "74.3"
+       }
+      ],
+      "text": "74,3"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "78,2",
+        "row": "emp-PT11-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "78.2"
+       }
+      ],
+      "text": "78,2"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "3,9",
+        "row": "emp-delta-PT11",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "3.9"
+       }
+      ],
+      "text": "+3,9"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Centro"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "77,1",
+        "row": "emp-PT19-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "77.1"
+       }
+      ],
+      "text": "77,1"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "80,5",
+        "row": "emp-PT19-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "80.5"
+       }
+      ],
+      "text": "80,5"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "emp-delta-PT1A"
+        ],
+        "printed": "3,4",
+        "row": "emp-delta-PT19",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "3.4"
+       }
+      ],
+      "text": "+3,4"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Oeste e Vale do Tejo"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "gdp-idx-PT1C-2024",
+         "gdp-idx-PT-2013"
+        ],
+        "printed": "77,0",
+        "row": "emp-PT1D-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "77.0"
+       }
+      ],
+      "text": "77,0"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "78,8",
+        "row": "emp-PT1D-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "78.8"
+       }
+      ],
+      "text": "78,8"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "gva-share-A-PT1B-2023",
+         "gva-share-A-EU27_2020-2023"
+        ],
+        "printed": "1,8",
+        "row": "emp-delta-PT1D",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "1.8"
+       }
+      ],
+      "text": "+1,8"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Grande Lisboa"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "78,5",
+        "row": "emp-PT1A-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "78.5"
+       }
+      ],
+      "text": "78,5"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "81,9",
+        "row": "emp-PT1A-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "81.9"
+       }
+      ],
+      "text": "81,9"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "emp-delta-PT1A"
+        ],
+        "printed": "3,4",
+        "row": "emp-delta-PT19",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "3.4"
+       }
+      ],
+      "text": "+3,4"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Península de Setúbal"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "76,8",
+        "row": "emp-PT1B-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "76.8"
+       }
+      ],
+      "text": "76,8"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "79,9",
+        "row": "emp-PT1B-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "79.9"
+       }
+      ],
+      "text": "79,9"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "3,1",
+        "row": "emp-delta-PT1B",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "3.1"
+       }
+      ],
+      "text": "+3,1"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Alentejo"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "74,8",
+        "row": "emp-PT1C-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "74.8"
+       }
+      ],
+      "text": "74,8"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "80,2",
+        "row": "emp-PT1C-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "80.2"
+       }
+      ],
+      "text": "80,2"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "gva-share-F-PT19-2023",
+         "gva-share-F-PT1B-2023",
+         "emp-delta-PT1C",
+         "unemp-decade-delta-EU27_2020"
+        ],
+        "printed": "5,4",
+        "row": "unemp-PT30-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 1,
+        "value": "5.4"
+       }
+      ],
+      "text": "+5,4"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Algarve"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "77,9",
+        "row": "emp-PT15-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "77.9"
+       }
+      ],
+      "text": "77,9"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "80,6",
+        "row": "emp-PT15-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "80.6"
+       }
+      ],
+      "text": "80,6"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "2,7",
+        "row": "emp-delta-PT15",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "2.7"
+       }
+      ],
+      "text": "+2,7"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Açores"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "71,2",
+        "row": "emp-PT20-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "71.2"
+       }
+      ],
+      "text": "71,2"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "76,7",
+        "row": "emp-PT20-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "76.7"
+       }
+      ],
+      "text": "76,7"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "gva-share-F-EU27_2020-2023",
+         "emp-delta-PT20"
+        ],
+        "printed": "5,5",
+        "row": "unemp-PT1C-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 1,
+        "value": "5.5"
+       }
+      ],
+      "text": "+5,5"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Madeira"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "73,6",
+        "row": "emp-PT30-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "73.6"
+       }
+      ],
+      "text": "73,6"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "77,2",
+        "row": "emp-PT30-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "77.2"
+       }
+      ],
+      "text": "77,2"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "3,6",
+        "row": "emp-delta-PT30",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "3.6"
+       }
+      ],
+      "text": "+3,6"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Portugal"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "emp-EU27_2020-2025"
+        ],
+        "printed": "76,1",
+        "row": "emp-PT-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "76.1"
+       }
+      ],
+      "text": "76,1"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "79,6",
+        "row": "emp-PT-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "79.6"
+       }
+      ],
+      "text": "79,6"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "3,5",
+        "row": "emp-delta-PT",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "3.5"
+       }
+      ],
+      "text": "+3,5"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 5,
+        "others": [
+         "gva-share-K-N-PT1B-2023",
+         "gva-share-K-N-EU27_2020-2023"
+        ],
+        "printed": "27",
+        "row": "gva-share-B-E-PT19-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 3,
+        "value": "27.0"
+       }
+      ],
+      "text": "UE-27"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "73,1",
+        "row": "emp-EU27_2020-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "73.1"
+       }
+      ],
+      "text": "73,1"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "emp-EU27_2020-2025"
+        ],
+        "printed": "76,1",
+        "row": "emp-PT-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "76.1"
+       }
+      ],
+      "text": "76,1"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "3,0",
+        "row": "emp-delta-EU27_2020",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "3.0"
+       }
+      ],
+      "text": "+3,0"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 26,
+   "kind": "heading",
+   "level": 3,
+   "text": "Taxa de emprego, visão da década (apenas regiões sem alteração de limites)"
+  },
+  {
+   "i": 27,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Região"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "2013"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "2025"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Δ 2013–2025 (p.p.)"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Norte"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "63,2",
+        "row": "emp-PT11-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "63.2"
+       }
+      ],
+      "text": "63,2"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "78,2",
+        "row": "emp-PT11-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "78.2"
+       }
+      ],
+      "text": "78,2"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "15,0",
+        "row": "emp-decade-delta-PT11",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "15.0"
+       }
+      ],
+      "text": "+15,0"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Algarve"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "66,6",
+        "row": "emp-PT15-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "66.6"
+       }
+      ],
+      "text": "66,6"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "80,6",
+        "row": "emp-PT15-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "80.6"
+       }
+      ],
+      "text": "80,6"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "others": [
+         "emp-decade-delta-PT15"
+        ],
+        "printed": "14,0",
+        "row": "gdp-idx-delta-PT30",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "14"
+       }
+      ],
+      "text": "+14,0"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Açores"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "61,0",
+        "row": "emp-PT20-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "61.0"
+       }
+      ],
+      "text": "61,0"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "76,7",
+        "row": "emp-PT20-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "76.7"
+       }
+      ],
+      "text": "76,7"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "15,7",
+        "row": "emp-decade-delta-PT20",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "15.7"
+       }
+      ],
+      "text": "+15,7"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Madeira"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "62,0",
+        "row": "emp-PT30-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "62.0"
+       }
+      ],
+      "text": "62,0"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "77,2",
+        "row": "emp-PT30-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "77.2"
+       }
+      ],
+      "text": "77,2"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "15,2",
+        "row": "emp-decade-delta-PT30",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "15.2"
+       }
+      ],
+      "text": "+15,2"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Portugal"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "65,3",
+        "row": "emp-PT-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "65.3"
+       }
+      ],
+      "text": "65,3"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "79,6",
+        "row": "emp-PT-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "79.6"
+       }
+      ],
+      "text": "79,6"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "14,3",
+        "row": "emp-decade-delta-PT",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "14.3"
+       }
+      ],
+      "text": "+14,3"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 5,
+        "others": [
+         "gva-share-K-N-PT1B-2023",
+         "gva-share-K-N-EU27_2020-2023"
+        ],
+        "printed": "27",
+        "row": "gva-share-B-E-PT19-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 3,
+        "value": "27.0"
+       }
+      ],
+      "text": "UE-27"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "67,4",
+        "row": "emp-EU27_2020-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "67.4"
+       }
+      ],
+      "text": "67,4"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "emp-EU27_2020-2025"
+        ],
+        "printed": "76,1",
+        "row": "emp-PT-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "76.1"
+       }
+      ],
+      "text": "76,1"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "8,7",
+        "row": "emp-decade-delta-EU27_2020",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "8.7"
+       }
+      ],
+      "text": "+8,7"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [
+    {
+     "end": 94,
+     "others": [
+      "gdp-idx-PT1D-2013"
+     ],
+     "printed": "64",
+     "row": "gdp-idx-PT11-2013",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 92,
+     "value": "64"
+    }
+   ],
+   "i": 28,
+   "kind": "paragraph",
+   "links": [
+    {
+     "end": 370,
+     "href": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfst_r_lfe2emprt?format=JSON&lang=EN&sex=T&age=Y20-64&unit=PC&geo=PT11&geo=PT15&geo=PT19&geo=PT1A&geo=PT1B&geo=PT1C&geo=PT1D&geo=PT20&geo=PT30&geo=PT&geo=EU27_2020&sinceTimePeriod=2013",
+     "start": 118
+    }
+   ],
+   "text": "Fonte: Eurostat (intergovernamental), conjunto de dados lfst_r_lfe2emprt (sexo T, idades 20–64), obtido a 2026-08-03. https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfst_r_lfe2emprt?format=JSON&lang=EN&sex=T&age=Y20-64&unit=PC&geo=PT11&geo=PT15&geo=PT19&geo=PT1A&geo=PT1B&geo=PT1C&geo=PT1D&geo=PT20&geo=PT30&geo=PT&geo=EU27_2020&sinceTimePeriod=2013"
+  },
+  {
+   "figures": [],
+   "i": 29,
+   "kind": "heading",
+   "level": 3,
+   "text": "Taxa de desemprego, 2019 → 2025"
+  },
+  {
+   "i": 30,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Região"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "2019"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "2025"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Δ 2019–2025 (p.p.)"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Norte"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "unemp-PT1A-2019",
+         "unemp-EU27_2020-2019"
+        ],
+        "printed": "6,7",
+        "row": "unemp-PT11-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6.7"
+       }
+      ],
+      "text": "6,7"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-A-PT20-2023"
+        ],
+        "printed": "6,3",
+        "row": "unemp-PT11-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6.3"
+       }
+      ],
+      "text": "6,3"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "0,4",
+        "row": "unemp-delta-PT11",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "0.4"
+       }
+      ],
+      "text": "−0,4"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Centro"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-F-PT-2023",
+         "unemp-PT20-2025"
+        ],
+        "printed": "4,9",
+        "row": "unemp-PT19-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "4.9"
+       }
+      ],
+      "text": "4,9"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gdp-idx-delta-PT19",
+         "gdp-idx-delta-PT",
+         "gva-share-F-PT1D-2023"
+        ],
+        "printed": "5,0",
+        "row": "unemp-PT19-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "5.0"
+       }
+      ],
+      "text": "5,0"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "0,1",
+        "row": "unemp-delta-PT19",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "0.1"
+       }
+      ],
+      "text": "+0,1"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Oeste e Vale do Tejo"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "unemp-PT1D-2025"
+        ],
+        "printed": "5,2",
+        "row": "unemp-PT1D-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "5.2"
+       }
+      ],
+      "text": "5,2"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "unemp-PT1D-2025"
+        ],
+        "printed": "5,2",
+        "row": "unemp-PT1D-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "5.2"
+       }
+      ],
+      "text": "5,2"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "gdp-idx-delta-EU27_2020"
+        ],
+        "printed": "0,0",
+        "row": "unemp-delta-PT1D",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "0.0"
+       }
+      ],
+      "text": "+0,0"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Grande Lisboa"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "unemp-PT1A-2019",
+         "unemp-EU27_2020-2019"
+        ],
+        "printed": "6,7",
+        "row": "unemp-PT11-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6.7"
+       }
+      ],
+      "text": "6,7"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "6,4",
+        "row": "unemp-PT1A-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6.4"
+       }
+      ],
+      "text": "6,4"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "unemp-delta-PT1B"
+        ],
+        "printed": "0,3",
+        "row": "unemp-delta-PT1A",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "0.3"
+       }
+      ],
+      "text": "−0,3"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Península de Setúbal"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "8,3",
+        "row": "unemp-PT1B-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "8.3"
+       }
+      ],
+      "text": "8,3"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "8,0",
+        "row": "unemp-PT1B-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "8.0"
+       }
+      ],
+      "text": "8,0"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "unemp-delta-PT1B"
+        ],
+        "printed": "0,3",
+        "row": "unemp-delta-PT1A",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "0.3"
+       }
+      ],
+      "text": "−0,3"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Alentejo"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "7,2",
+        "row": "unemp-PT1C-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "7.2"
+       }
+      ],
+      "text": "7,2"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-F-EU27_2020-2023",
+         "emp-delta-PT20"
+        ],
+        "printed": "5,5",
+        "row": "unemp-PT1C-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "5.5"
+       }
+      ],
+      "text": "5,5"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "1,7",
+        "row": "unemp-delta-PT1C",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "1.7"
+       }
+      ],
+      "text": "−1,7"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Algarve"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gdp-idx-delta-PT11"
+        ],
+        "printed": "7,0",
+        "row": "unemp-PT15-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "7.0"
+       }
+      ],
+      "text": "7,0"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-C-PT1A-2023",
+         "gva-share-B-E-PT30-2023"
+        ],
+        "printed": "5,7",
+        "row": "unemp-PT15-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "5.7"
+       }
+      ],
+      "text": "5,7"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "1,3",
+        "row": "unemp-delta-PT15",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "1.3"
+       }
+      ],
+      "text": "−1,3"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Açores"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "7,7",
+        "row": "unemp-PT20-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "7.7"
+       }
+      ],
+      "text": "7,7"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-F-PT-2023",
+         "unemp-PT20-2025"
+        ],
+        "printed": "4,9",
+        "row": "unemp-PT19-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "4.9"
+       }
+      ],
+      "text": "4,9"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "2,8",
+        "row": "unemp-delta-PT20",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "2.8"
+       }
+      ],
+      "text": "−2,8"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Madeira"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "6,9",
+        "row": "unemp-PT30-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6.9"
+       }
+      ],
+      "text": "6,9"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-F-PT19-2023",
+         "gva-share-F-PT1B-2023",
+         "emp-delta-PT1C",
+         "unemp-decade-delta-EU27_2020"
+        ],
+        "printed": "5,4",
+        "row": "unemp-PT30-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "5.4"
+       }
+      ],
+      "text": "5,4"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "gva-share-A-PT30-2023"
+        ],
+        "printed": "1,5",
+        "row": "unemp-delta-PT30",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "1.5"
+       }
+      ],
+      "text": "−1,5"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Portugal"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "printed": "6,5",
+        "row": "unemp-PT-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6.5"
+       }
+      ],
+      "text": "6,5"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gdp-idx-delta-PT1C",
+         "unemp-EU27_2020-2025"
+        ],
+        "printed": "6,0",
+        "row": "unemp-PT-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6.0"
+       }
+      ],
+      "text": "6,0"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "0,5",
+        "row": "unemp-delta-PT",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "0.5"
+       }
+      ],
+      "text": "−0,5"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 5,
+        "others": [
+         "gva-share-K-N-PT1B-2023",
+         "gva-share-K-N-EU27_2020-2023"
+        ],
+        "printed": "27",
+        "row": "gva-share-B-E-PT19-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 3,
+        "value": "27.0"
+       }
+      ],
+      "text": "UE-27"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "unemp-PT1A-2019",
+         "unemp-EU27_2020-2019"
+        ],
+        "printed": "6,7",
+        "row": "unemp-PT11-2019",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6.7"
+       }
+      ],
+      "text": "6,7"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gdp-idx-delta-PT1C",
+         "unemp-EU27_2020-2025"
+        ],
+        "printed": "6,0",
+        "row": "unemp-PT-2025",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6.0"
+       }
+      ],
+      "text": "6,0"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "0,7",
+        "row": "unemp-delta-EU27_2020",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "0.7"
+       }
+      ],
+      "text": "−0,7"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 31,
+   "kind": "heading",
+   "level": 3,
+   "text": "Taxa de desemprego, visão da década (apenas regiões sem alteração de limites)"
+  },
+  {
+   "i": 32,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Região"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "2013"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "2025"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "Δ 2013–2025 (p.p.)"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Norte"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "17,5",
+        "row": "unemp-PT11-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "17.5"
+       }
+      ],
+      "text": "17,5"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "unemp-PT11-2025"
+        ],
+        "printed": "6,3",
+        "row": "gva-share-A-PT20-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6.3"
+       }
+      ],
+      "text": "6,3"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "11,2",
+        "row": "unemp-decade-delta-PT11",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "11.2"
+       }
+      ],
+      "text": "−11,2"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Algarve"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "unemp-PT15-2013"
+        ],
+        "printed": "17,1",
+        "row": "gva-share-C-PT1D-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "17.1"
+       }
+      ],
+      "text": "17,1"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-B-E-PT30-2023",
+         "unemp-PT15-2025"
+        ],
+        "printed": "5,7",
+        "row": "gva-share-C-PT1A-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "5.7"
+       }
+      ],
+      "text": "5,7"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "others": [
+         "unemp-EU27_2020-2013"
+        ],
+        "printed": "11,4",
+        "row": "unemp-decade-delta-PT15",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "11.4"
+       }
+      ],
+      "text": "−11,4"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Açores"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "unemp-PT20-2013"
+        ],
+        "printed": "16,8",
+        "row": "gva-share-B-E-PT1B-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "16.8"
+       }
+      ],
+      "text": "16,8"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "unemp-PT19-2019",
+         "unemp-PT20-2025"
+        ],
+        "printed": "4,9",
+        "row": "gva-share-F-PT-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "4.9"
+       }
+      ],
+      "text": "4,9"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "11,9",
+        "row": "unemp-decade-delta-PT20",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "11.9"
+       }
+      ],
+      "text": "−11,9"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Madeira"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "printed": "18,0",
+        "row": "unemp-PT30-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "18.0"
+       }
+      ],
+      "text": "18,0"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "gva-share-F-PT1B-2023",
+         "emp-delta-PT1C",
+         "unemp-PT30-2025",
+         "unemp-decade-delta-EU27_2020"
+        ],
+        "printed": "5,4",
+        "row": "gva-share-F-PT19-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "5.4"
+       }
+      ],
+      "text": "5,4"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "12,6",
+        "row": "unemp-decade-delta-PT30",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "12.6"
+       }
+      ],
+      "text": "−12,6"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Portugal"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "unemp-PT-2013"
+        ],
+        "printed": "16,5",
+        "row": "gva-share-C-EU27_2020-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "16.5"
+       }
+      ],
+      "text": "16,5"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "unemp-PT-2025",
+         "unemp-EU27_2020-2025"
+        ],
+        "printed": "6,0",
+        "row": "gdp-idx-delta-PT1C",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6"
+       }
+      ],
+      "text": "6,0"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "10,5",
+        "row": "unemp-decade-delta-PT",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "10.5"
+       }
+      ],
+      "text": "−10,5"
+     }
+    ],
+    [
+     {
+      "figures": [
+       {
+        "end": 5,
+        "others": [
+         "gva-share-K-N-PT1B-2023",
+         "gva-share-K-N-EU27_2020-2023"
+        ],
+        "printed": "27",
+        "row": "gva-share-B-E-PT19-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 3,
+        "value": "27.0"
+       }
+      ],
+      "text": "UE-27"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "unemp-EU27_2020-2013"
+        ],
+        "printed": "11,4",
+        "row": "unemp-decade-delta-PT15",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "11.4"
+       }
+      ],
+      "text": "11,4"
+     },
+     {
+      "figures": [
+       {
+        "end": 3,
+        "others": [
+         "unemp-PT-2025",
+         "unemp-EU27_2020-2025"
+        ],
+        "printed": "6,0",
+        "row": "gdp-idx-delta-PT1C",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 0,
+        "value": "6"
+       }
+      ],
+      "text": "6,0"
+     },
+     {
+      "figures": [
+       {
+        "end": 4,
+        "others": [
+         "gva-share-F-PT1B-2023",
+         "emp-delta-PT1C",
+         "unemp-PT30-2025",
+         "unemp-decade-delta-EU27_2020"
+        ],
+        "printed": "5,4",
+        "row": "gva-share-F-PT19-2023",
+        "source_digest_kind": "derivado",
+        "source_sha256": null,
+        "start": 1,
+        "value": "5.4"
+       }
+      ],
+      "text": "−5,4"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [
+    {
+     "end": 67,
+     "printed": "3",
+     "row": "emp-delta-EU27_2020",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 66,
+     "value": "3.0"
+    },
+    {
+     "end": 88,
+     "printed": "15",
+     "row": "emp-decade-delta-PT11",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 86,
+     "value": "15.0"
+    },
+    {
+     "end": 91,
+     "others": [
+      "gdp-spread-2024"
+     ],
+     "printed": "74",
+     "row": "gdp-idx-PT30-2013",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 89,
+     "value": "74"
+    }
+   ],
+   "i": 33,
+   "kind": "paragraph",
+   "links": [
+    {
+     "end": 378,
+     "href": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfst_r_lfu3rt?format=JSON&lang=EN&sex=T&age=Y15-74&unit=PC&isced11=TOTAL&geo=PT11&geo=PT15&geo=PT19&geo=PT1A&geo=PT1B&geo=PT1C&geo=PT1D&geo=PT20&geo=PT30&geo=PT&geo=EU27_2020&sinceTimePeriod=2013",
+     "start": 115
+    }
+   ],
+   "text": "Fonte: Eurostat (intergovernamental), conjunto de dados lfst_r_lfu3rt (sexo T, idades 15–74), obtido a 2026-08-03. https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfst_r_lfu3rt?format=JSON&lang=EN&sex=T&age=Y15-74&unit=PC&isced11=TOTAL&geo=PT11&geo=PT15&geo=PT19&geo=PT1A&geo=PT1B&geo=PT1C&geo=PT1D&geo=PT20&geo=PT30&geo=PT&geo=EU27_2020&sinceTimePeriod=2013"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 23,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 71,
+     "kind": "strong",
+     "start": 67
+    },
+    {
+     "end": 109,
+     "kind": "strong",
+     "start": 105
+    },
+    {
+     "end": 187,
+     "kind": "strong",
+     "start": 183
+    },
+    {
+     "end": 220,
+     "kind": "strong",
+     "start": 217
+    }
+   ],
+   "figures": [
+    {
+     "end": 71,
+     "printed": "79,6",
+     "row": "emp-PT-2025",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 67,
+     "value": "79.6"
+    },
+    {
+     "end": 103,
+     "others": [
+      "gva-share-K-N-PT1B-2023",
+      "gva-share-K-N-EU27_2020-2023"
+     ],
+     "printed": "27",
+     "row": "gva-share-B-E-PT19-2023",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 101,
+     "value": "27.0"
+    },
+    {
+     "end": 109,
+     "others": [
+      "emp-EU27_2020-2025"
+     ],
+     "printed": "76,1",
+     "row": "emp-PT-2019",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 105,
+     "value": "76.1"
+    },
+    {
+     "end": 187,
+     "printed": "76,7",
+     "row": "emp-PT20-2025",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 183,
+     "value": "76.7"
+    },
+    {
+     "end": 220,
+     "others": [
+      "unemp-PT-2025",
+      "unemp-EU27_2020-2025"
+     ],
+     "printed": "6,0",
+     "row": "gdp-idx-delta-PT1C",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 217,
+     "value": "6"
+    }
+   ],
+   "i": 34,
+   "kind": "paragraph",
+   "text": "Nível e distância à UE. É aqui que Portugal se destaca: o emprego (79,6 %) está acima da média da UE-27 (76,1 %) em absolutamente todas as regiões — mesmo a mais fraca, os Açores com 76,7 %, fica acima. O desemprego (6,0 %) iguala exatamente a média da UE."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 10,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 119,
+     "kind": "strong",
+     "start": 115
+    },
+    {
+     "end": 140,
+     "kind": "strong",
+     "start": 136
+    },
+    {
+     "end": 181,
+     "kind": "strong",
+     "start": 178
+    },
+    {
+     "end": 208,
+     "kind": "strong",
+     "start": 205
+    }
+   ],
+   "figures": [
+    {
+     "end": 119,
+     "printed": "76,7",
+     "row": "emp-PT20-2025",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 115,
+     "value": "76.7"
+    },
+    {
+     "end": 140,
+     "printed": "81,9",
+     "row": "emp-PT1A-2025",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 136,
+     "value": "81.9"
+    },
+    {
+     "end": 181,
+     "others": [
+      "unemp-PT19-2019",
+      "unemp-PT20-2025"
+     ],
+     "printed": "4,9",
+     "row": "gva-share-F-PT-2023",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 178,
+     "value": "4.9"
+    },
+    {
+     "end": 208,
+     "printed": "8,0",
+     "row": "unemp-PT1B-2025",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 205,
+     "value": "8.0"
+    }
+   ],
+   "i": 35,
+   "kind": "paragraph",
+   "text": "Amplitude. A dispersão regional é pequena em comparação com o PIB: o emprego abrange cerca de cinco pontos (Açores 76,7 a Grande Lisboa 81,9), o desemprego cerca de três (Açores 4,9 a Península de Setúbal 8,0 — Setúbal de novo a entrada continental mais fraca)."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 8,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 99,
+     "kind": "strong",
+     "start": 95
+    },
+    {
+     "end": 110,
+     "kind": "strong",
+     "start": 107
+    },
+    {
+     "end": 119,
+     "kind": "strong",
+     "start": 115
+    },
+    {
+     "end": 138,
+     "kind": "strong",
+     "start": 135
+    },
+    {
+     "end": 170,
+     "kind": "strong",
+     "start": 165
+    },
+    {
+     "end": 189,
+     "kind": "strong",
+     "start": 185
+    },
+    {
+     "end": 442,
+     "kind": "em",
+     "start": 197
+    }
+   ],
+   "figures": [
+    {
+     "end": 99,
+     "others": [
+      "gva-share-C-EU27_2020-2023"
+     ],
+     "printed": "16,5",
+     "row": "unemp-PT-2013",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 95,
+     "value": "16.5"
+    },
+    {
+     "end": 110,
+     "others": [
+      "unemp-PT-2025",
+      "unemp-EU27_2020-2025"
+     ],
+     "printed": "6,0",
+     "row": "gdp-idx-delta-PT1C",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 107,
+     "value": "6"
+    },
+    {
+     "end": 119,
+     "printed": "10,5",
+     "row": "unemp-decade-delta-PT",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 115,
+     "value": "10.5"
+    },
+    {
+     "end": 138,
+     "others": [
+      "gva-share-F-PT19-2023",
+      "gva-share-F-PT1B-2023",
+      "emp-delta-PT1C",
+      "unemp-PT30-2025"
+     ],
+     "printed": "5,4",
+     "row": "unemp-decade-delta-EU27_2020",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 135,
+     "value": "5.4"
+    },
+    {
+     "end": 170,
+     "printed": "14,3",
+     "row": "emp-decade-delta-PT",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 166,
+     "value": "14.3"
+    },
+    {
+     "end": 189,
+     "printed": "8,7",
+     "row": "emp-decade-delta-EU27_2020",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 186,
+     "value": "8.7"
+    }
+   ],
+   "i": 36,
+   "kind": "paragraph",
+   "text": "Direção. O movimento da década é dramático onde pode ser medido: o desemprego nacional caiu de 16,5 % para 6,0 % (−10,5 pontos contra −5,4 da UE), e o emprego subiu +14,3 pontos contra +8,7 da UE. (inferência: o ano-base 2013 é o fundo da crise das dívidas soberanas, pelo que os números da década favorecem Portugal; o painel 2019→2025 é a leitura mais limpa, e continua a mostrar Portugal a melhorar ligeiramente mais depressa do que a UE.)"
+  },
+  {
+   "figures": [],
+   "i": 37,
+   "kind": "heading",
+   "level": 2,
+   "text": "Ganho médio mensal"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 10,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [],
+   "i": 38,
+   "kind": "paragraph",
+   "text": "NUTS 2024. Ganho médio mensal, €, trabalhadores por conta de outrem a tempo completo com remuneração completa declarada (Quadros de Pessoal, MTSSS/GEP, publicado pelo INE). Valores nominais. A série NUTS-2024 começa em 2021."
+  },
+  {
+   "i": 39,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Região"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "2021 (€)"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "2024 (€)"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Norte"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1187,2",
+        "row": "earn-PT11-2021",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1187.2"
+       }
+      ],
+      "text": "1187,2"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1474,7",
+        "row": "earn-PT11-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1474.7"
+       }
+      ],
+      "text": "1474,7"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Centro"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1157,6",
+        "row": "earn-PT19-2021",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1157.6"
+       }
+      ],
+      "text": "1157,6"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1410,9",
+        "row": "earn-PT19-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1410.9"
+       }
+      ],
+      "text": "1410,9"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Oeste e Vale do Tejo"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1115,6",
+        "row": "earn-PT1D-2021",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1115.6"
+       }
+      ],
+      "text": "1115,6"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1346,6",
+        "row": "earn-PT1D-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1346.6"
+       }
+      ],
+      "text": "1346,6"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Grande Lisboa"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1609,1",
+        "row": "earn-PT1A-2021",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1609.1"
+       }
+      ],
+      "text": "1609,1"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1935,7",
+        "row": "earn-PT1A-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1935.7"
+       }
+      ],
+      "text": "1935,7"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Península de Setúbal"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1296,7",
+        "row": "earn-PT1B-2021",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1296.7"
+       }
+      ],
+      "text": "1296,7"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1545,4",
+        "row": "earn-PT1B-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1545.4"
+       }
+      ],
+      "text": "1545,4"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Alentejo"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1171,2",
+        "row": "earn-PT1C-2021",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1171.2"
+       }
+      ],
+      "text": "1171,2"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1409,5",
+        "row": "earn-PT1C-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1409.5"
+       }
+      ],
+      "text": "1409,5"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Algarve"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1106,3",
+        "row": "earn-PT15-2021",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1106.3"
+       }
+      ],
+      "text": "1106,3"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1320,2",
+        "row": "earn-PT15-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1320.2"
+       }
+      ],
+      "text": "1320,2"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Açores"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1126,1",
+        "row": "earn-PT20-2021",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1126.1"
+       }
+      ],
+      "text": "1126,1"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1431,9",
+        "row": "earn-PT20-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1431.9"
+       }
+      ],
+      "text": "1431,9"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Madeira"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1212,4",
+        "row": "earn-PT30-2021",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1212.4"
+       }
+      ],
+      "text": "1212,4"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1406,8",
+        "row": "earn-PT30-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1406.8"
+       }
+      ],
+      "text": "1406,8"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Portugal"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1289,5",
+        "row": "earn-PT-2021",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1289.5"
+       }
+      ],
+      "text": "1289,5"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1576,0",
+        "row": "earn-PT-2024",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1576.0"
+       }
+      ],
+      "text": "1576,0"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 40,
+   "kind": "paragraph",
+   "links": [
+    {
+     "end": 201,
+     "href": "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0012656&Dim1=S7A2021%2CS7A2024&lang=PT",
+     "start": 102
+    }
+   ],
+   "text": "Fonte: INE (governo; dados do MTSSS/GEP, Quadros de Pessoal), indicador 0012656, obtido a 2026-08-03. https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0012656&Dim1=S7A2021%2CS7A2024&lang=PT"
+  },
+  {
+   "figures": [],
+   "i": 41,
+   "kind": "heading",
+   "level": 3,
+   "text": "Contexto da década — limites NUTS 2013, tabela separada, não misturar"
+  },
+  {
+   "i": 42,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Região (NUTS 2013)"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "2013 (€)"
+     },
+     {
+      "figures": [],
+      "header": true,
+      "text": "2022 (€)"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Norte"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "963,4",
+        "row": "earn13-11-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "963.4"
+       }
+      ],
+      "text": "963,4"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1253,5",
+        "row": "earn13-11-2022",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1253.5"
+       }
+      ],
+      "text": "1253,5"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Centro"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "940,4",
+        "row": "earn13-16-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "940.4"
+       }
+      ],
+      "text": "940,4"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1204,2",
+        "row": "earn13-16-2022",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1204.2"
+       }
+      ],
+      "text": "1204,2"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Área Metropolitana de Lisboa"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1383,6",
+        "row": "earn13-17-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1383.6"
+       }
+      ],
+      "text": "1383,6"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1655,6",
+        "row": "earn13-17-2022",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1655.6"
+       }
+      ],
+      "text": "1655,6"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Alentejo"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "994,1",
+        "row": "earn13-18-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "994.1"
+       }
+      ],
+      "text": "994,1"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1209,2",
+        "row": "earn13-18-2022",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1209.2"
+       }
+      ],
+      "text": "1209,2"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Algarve"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "931,0",
+        "row": "earn13-15-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "931.0"
+       }
+      ],
+      "text": "931,0"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1150,8",
+        "row": "earn13-15-2022",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1150.8"
+       }
+      ],
+      "text": "1150,8"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Açores"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "979,2",
+        "row": "earn13-20-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "979.2"
+       }
+      ],
+      "text": "979,2"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1191,1",
+        "row": "earn13-20-2022",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1191.1"
+       }
+      ],
+      "text": "1191,1"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Madeira"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1067,9",
+        "row": "earn13-30-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1067.9"
+       }
+      ],
+      "text": "1067,9"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1244,1",
+        "row": "earn13-30-2022",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1244.1"
+       }
+      ],
+      "text": "1244,1"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Portugal"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1091,3",
+        "row": "earn13-PT-2013",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1091.3"
+       }
+      ],
+      "text": "1091,3"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "1362,4",
+        "row": "earn13-PT-2022",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "1362.4"
+       }
+      ],
+      "text": "1362,4"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 43,
+   "kind": "paragraph",
+   "links": [
+    {
+     "end": 213,
+     "href": "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0009047&Dim1=S7A2013%2CS7A2022&lang=PT",
+     "start": 114
+    }
+   ],
+   "text": "Fonte: INE (governo; dados do MTSSS/GEP, Quadros de Pessoal), indicador 0009047 (NUTS 2013), obtido a 2026-08-03. https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0009047&Dim1=S7A2013%2CS7A2022&lang=PT"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 18,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 45,
+     "kind": "strong",
+     "start": 39
+    },
+    {
+     "end": 85,
+     "kind": "strong",
+     "start": 79
+    },
+    {
+     "end": 120,
+     "kind": "strong",
+     "start": 114
+    },
+    {
+     "end": 266,
+     "kind": "em",
+     "start": 254
+    }
+   ],
+   "figures": [
+    {
+     "end": 45,
+     "printed": "1935,7",
+     "row": "earn-PT1A-2024",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 39,
+     "value": "1935.7"
+    },
+    {
+     "end": 85,
+     "printed": "1576,0",
+     "row": "earn-PT-2024",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 79,
+     "value": "1576.0"
+    },
+    {
+     "end": 120,
+     "printed": "1320,2",
+     "row": "earn-PT15-2024",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 114,
+     "value": "1320.2"
+    }
+   ],
+   "i": 44,
+   "kind": "paragraph",
+   "text": "Nível e amplitude. Só a Grande Lisboa (1935,7 €) paga acima da média nacional (1576,0 €). O piso é o Algarve, com 1320,2 € — a região com uma das taxas de emprego mais altas paga os salários mais baixos, que é a cara de uma economia de serviços sazonais (inferência). O prémio de Lisboa vem de longe: já é o padrão na tabela de 2013 em NUTS-2013."
+  },
+  {
+   "emphasis": [
+    {
+     "end": 8,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 363,
+     "kind": "em",
+     "start": 287
+    }
+   ],
+   "figures": [],
+   "i": 45,
+   "kind": "paragraph",
+   "text": "Direção. Os ganhos subiram fortemente em termos nominais em todas as regiões, em ambas as séries. São valores nominais: nenhum deflator é aplicado aqui, e a janela 2021–2024 contém o surto inflacionista, pelo que o crescimento real é materialmente inferior ao que o salto nominal sugere (inferência; não existe deflator regional em nenhuma das fontes a este grão)."
+  },
+  {
+   "figures": [],
+   "i": 46,
+   "kind": "heading",
+   "level": 2,
+   "text": "Poder de compra — o índice do lado do consumo do INE, 2023"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 10,
+     "kind": "strong",
+     "start": 0
+    }
+   ],
+   "figures": [
+    {
+     "end": 53,
+     "others": [
+      "gdp-idx-EU27_2020-2013",
+      "ipc-PT-2023",
+      "eu27-scale"
+     ],
+     "printed": "100",
+     "row": "gdp-idx-EU27_2020-2024",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 50,
+     "value": "100"
+    }
+   ],
+   "i": 47,
+   "kind": "paragraph",
+   "text": "NUTS 2024. Poder de compra per capita, Portugal = 100. Bienal; 2023 é a única edição nesta classificação."
+  },
+  {
+   "i": 48,
+   "kind": "table",
+   "rows": [
+    [
+     {
+      "figures": [],
+      "header": true,
+      "text": "Região"
+     },
+     {
+      "figures": [
+       {
+        "end": 47,
+        "others": [
+         "gdp-idx-EU27_2020-2024",
+         "gdp-idx-EU27_2020-2013",
+         "eu27-scale"
+        ],
+        "printed": "100",
+        "row": "ipc-PT-2023",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 44,
+        "value": "100.00"
+       }
+      ],
+      "header": true,
+      "text": "Poder de compra per capita 2023 (Portugal = 100)"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Norte"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "94,45",
+        "row": "ipc-PT11-2023",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "94.45"
+       }
+      ],
+      "text": "94,45"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Centro"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "90,00",
+        "row": "ipc-PT19-2023",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "90.00"
+       }
+      ],
+      "text": "90,00"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Oeste e Vale do Tejo"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "89,85",
+        "row": "ipc-PT1D-2023",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "89.85"
+       }
+      ],
+      "text": "89,85"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Grande Lisboa"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "printed": "127,58",
+        "row": "ipc-PT1A-2023",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "127.58"
+       }
+      ],
+      "text": "127,58"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Península de Setúbal"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "99,35",
+        "row": "ipc-PT1B-2023",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "99.35"
+       }
+      ],
+      "text": "99,35"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Alentejo"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "90,17",
+        "row": "ipc-PT1C-2023",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "90.17"
+       }
+      ],
+      "text": "90,17"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Algarve"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "97,07",
+        "row": "ipc-PT15-2023",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "97.07"
+       }
+      ],
+      "text": "97,07"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Açores"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "87,62",
+        "row": "ipc-PT20-2023",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "87.62"
+       }
+      ],
+      "text": "87,62"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Madeira"
+     },
+     {
+      "figures": [
+       {
+        "end": 5,
+        "printed": "88,12",
+        "row": "ipc-PT30-2023",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "88.12"
+       }
+      ],
+      "text": "88,12"
+     }
+    ],
+    [
+     {
+      "figures": [],
+      "text": "Portugal"
+     },
+     {
+      "figures": [
+       {
+        "end": 6,
+        "others": [
+         "gdp-idx-EU27_2020-2024",
+         "gdp-idx-EU27_2020-2013",
+         "eu27-scale"
+        ],
+        "printed": "100,00",
+        "row": "ipc-PT-2023",
+        "source_digest_kind": "api-viva",
+        "source_sha256": null,
+        "start": 0,
+        "value": "100.00"
+       }
+      ],
+      "text": "100,00"
+     }
+    ]
+   ]
+  },
+  {
+   "figures": [],
+   "i": 49,
+   "kind": "paragraph",
+   "links": [
+    {
+     "end": 193,
+     "href": "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014580&Dim1=S7A2023&lang=PT",
+     "start": 104
+    }
+   ],
+   "text": "Fonte: INE (governo), Estudo sobre o poder de compra concelhio, indicador 0014580, obtido a 2026-08-03. https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014580&Dim1=S7A2023&lang=PT"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 18,
+     "kind": "strong",
+     "start": 0
+    },
+    {
+     "end": 42,
+     "kind": "strong",
+     "start": 36
+    },
+    {
+     "end": 129,
+     "kind": "strong",
+     "start": 124
+    },
+    {
+     "end": 144,
+     "kind": "strong",
+     "start": 139
+    },
+    {
+     "end": 176,
+     "kind": "strong",
+     "start": 174
+    },
+    {
+     "end": 220,
+     "kind": "strong",
+     "start": 218
+    },
+    {
+     "end": 314,
+     "kind": "strong",
+     "start": 309
+    },
+    {
+     "end": 339,
+     "kind": "strong",
+     "start": 337
+    },
+    {
+     "end": 621,
+     "kind": "em",
+     "start": 358
+    }
+   ],
+   "figures": [
+    {
+     "end": 42,
+     "printed": "127,58",
+     "row": "ipc-PT1A-2023",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 36,
+     "value": "127.58"
+    },
+    {
+     "end": 129,
+     "printed": "87,62",
+     "row": "ipc-PT20-2023",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 124,
+     "value": "87.62"
+    },
+    {
+     "end": 144,
+     "printed": "88,12",
+     "row": "ipc-PT30-2023",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 139,
+     "value": "88.12"
+    },
+    {
+     "end": 176,
+     "printed": "40",
+     "row": "ipc-spread-2023",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 174,
+     "value": "40"
+    },
+    {
+     "end": 220,
+     "others": [
+      "gdp-spread-2024"
+     ],
+     "printed": "74",
+     "row": "gdp-idx-PT30-2013",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 218,
+     "value": "74"
+    },
+    {
+     "end": 314,
+     "printed": "99,35",
+     "row": "ipc-PT1B-2023",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 309,
+     "value": "99.35"
+    },
+    {
+     "end": 339,
+     "printed": "55",
+     "row": "gdp-idx-PT1B-2024",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 337,
+     "value": "55"
+    }
+   ],
+   "i": 50,
+   "kind": "paragraph",
+   "text": "Nível e amplitude. A Grande Lisboa (127,58) é de novo a única região acima da linha nacional, e as ilhas são o piso (Açores 87,62, Madeira 88,12). Mas a amplitude — cerca de 40 pontos — é muito mais estreita do que os 74 pontos do PIB, e a ordenação muda: a Península de Setúbal está quase na média nacional (99,35) apesar de produzir a 55 % da média da UE. (inferência: o poder de compra segue onde as pessoas vivem e ganham, o PIB segue onde trabalham; a península de Setúbal é a cunha pendular mais nítida do país. A posição das ilhas também se inverte — meio da tabela em PIB por habitante, fundo em poder de compra.)"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 67,
+     "kind": "em",
+     "start": 23
+    }
+   ],
+   "figures": [],
+   "i": 51,
+   "kind": "heading",
+   "level": 2,
+   "text": "Lendo tudo em conjunto (avaliação — inferência do princípio ao fim)"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 224,
+     "kind": "strong",
+     "start": 156
+    },
+    {
+     "end": 294,
+     "kind": "strong",
+     "start": 291
+    },
+    {
+     "end": 344,
+     "kind": "strong",
+     "start": 342
+    },
+    {
+     "end": 347,
+     "kind": "strong",
+     "start": 345
+    },
+    {
+     "end": 393,
+     "kind": "strong",
+     "start": 391
+    },
+    {
+     "end": 595,
+     "kind": "strong",
+     "start": 593
+    },
+    {
+     "end": 627,
+     "kind": "strong",
+     "start": 623
+    },
+    {
+     "end": 678,
+     "kind": "strong",
+     "start": 672
+    },
+    {
+     "end": 1422,
+     "kind": "em",
+     "start": 1191
+    }
+   ],
+   "figures": [
+    {
+     "end": 294,
+     "printed": "129",
+     "row": "gdp-idx-PT1A-2024",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 291,
+     "value": "129"
+    },
+    {
+     "end": 344,
+     "printed": "55",
+     "row": "gdp-idx-PT1B-2024",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 342,
+     "value": "55"
+    },
+    {
+     "end": 347,
+     "printed": "89",
+     "row": "gdp-idx-PT15-2024",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 345,
+     "value": "89"
+    },
+    {
+     "end": 393,
+     "others": [
+      "gdp-idx-delta-PT",
+      "gva-share-F-PT1D-2023",
+      "unemp-PT19-2025"
+     ],
+     "printed": "5",
+     "row": "gdp-idx-delta-PT19",
+     "source_digest_kind": "derivado",
+     "source_sha256": null,
+     "start": 392,
+     "value": "5"
+    },
+    {
+     "end": 595,
+     "printed": "89",
+     "row": "gdp-idx-PT15-2024",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 593,
+     "value": "89"
+    },
+    {
+     "end": 627,
+     "printed": "80,6",
+     "row": "emp-PT15-2025",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 623,
+     "value": "80.6"
+    },
+    {
+     "end": 678,
+     "printed": "1320,2",
+     "row": "earn-PT15-2024",
+     "source_digest_kind": "api-viva",
+     "source_sha256": null,
+     "start": 672,
+     "value": "1320.2"
+    }
+   ],
+   "i": 52,
+   "kind": "paragraph",
+   "text": "O problema regional de Portugal em 2026 não é o emprego — todas as regiões batem a média da UE — e é só em parte a clássica divisão litoral/interior. É que apenas uma região gera produto e salários ao nível da média europeia, e a mudança de classificação torna-o visível: a Grande Lisboa em 129 contra um país que, de resto, se estende entre 55–89. A convergência com a UE está a acontecer (+5 pontos nacionais em onze anos) mas está a ser desproporcionadamente puxada pelo ressalto das regiões de turismo, as mesmas regiões com os salários mais baixos — o Algarve combina um índice de PIB de 89 com uma taxa de emprego de 80,6 % e os ganhos mais baixos das nove regiões (1320,2 €). O norte e o centro industriais convergem com constância mas de níveis baixos; a coroa em torno de Lisboa (Oeste e Vale do Tejo, Península de Setúbal) é a parte estagnada do mapa do lado da produção, ainda que o poder de compra do lado do consumo aí esteja perto da média nacional. Se a pergunta é «onde é que os fossos estão a fechar», a resposta honesta destes cinco indicadores é: com a UE, devagar; entre regiões portuguesas, quase nada no produto — a composição da amplitude muda, mas a sua largura não. (Corrigido a 2026-08-03, por indicação do leitor: «os ganhos mais baixos do país» sobreavaliava o âmbito da afirmação — este relatório mede as nove regiões — e a sequência de vírgulas tornava a frase fácil de ler mal; reformulada.)"
+  },
+  {
+   "i": 53,
+   "kind": "rule"
+  },
+  {
+   "emphasis": [
+    {
+     "end": 86,
+     "kind": "em",
+     "start": 0
+    }
+   ],
+   "figures": [],
+   "i": 54,
+   "kind": "paragraph",
+   "text": "Fontes não governamentais são rotuladas em cada tabela (Eurostat: intergovernamental)."
+  }
+ ],
+ "edition": "Avaliação Económica Regional de Portugal 2026 (pt-PT)",
+ "lang": "pt-PT",
+ "ledger": "ledger.json",
+ "prova": "edicao-html",
+ "schema": "oedp/registo-de-conteudo/1",
+ "source": "Technical Source/artifact_pt.html",
+ "title": "Avaliação Económica Regional de Portugal 2026"
+}
