@@ -154,7 +154,7 @@
  * O ALVO É A CAIXA DA PRÓPRIA PORTA, e não uma área posicionada de 44px como a
  * do selo. A razão está medida na `site.css`, ao lado da área do selo: duas
  * áreas de 44px a 13px uma da outra sobrepõem-se, e uma área sobreposta não é
- * um alvo maior — é uma porta que abre a linha do vizinho. As portas de uma
+ * um alvo maior, é uma porta que abre a linha do vizinho. As portas de uma
  * mesma ligação ficam encostadas (o bloco 62 do 04 tem células com três), e por
  * isso cada uma leva uma caixa própria de 24px, que é o mínimo da 2.5.8 e não
  * se sobrepõe à seguinte. Onde a entrelinha é menor do que isso (as tabelas), a

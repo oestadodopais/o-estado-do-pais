@@ -9944,9 +9944,9 @@ manda o selo para depois da ligação quando a figura está dentro dela: **a por
 vai imediatamente depois da ligação**, uma âncora por figura sem linha do sítio
 que a ligação contém, na ordem das figuras, com selos e portas intercalados. A
 âncora é `<a class="texto-figura-porta-apos" href="#linha-<row>" aria-label="<rótulo>: <row>">`
-**sem nó de texto** — a leitura do olho não junta nada de um elemento de linha
+**sem nó de texto** (a leitura do olho não junta nada de um elemento de linha
 vazio, e por isso o texto da unidade continua a ser, carácter a carácter, o do
-registo — com o glifo pela folha (`::after`, a seta, na letra do instrumento, em
+registo), com o glifo pela folha (`::after`, a seta, na letra do instrumento, em
 `--g2`) e o nome acessível pela chave nova `estudos.textoPortaDaLinha` («linha do
 motor» / «engine row») mais o identificador da linha.
 
@@ -9961,8 +9961,8 @@ autorreferência zero nas oito rotas.
 **O alvo de toque, medido e não afirmado.** A porta é uma caixa própria de 24px,
 e não uma área posicionada de 44px como a do selo: as portas de uma mesma
 ligação ficam encostadas (o bloco 62 do 04 tem células com três), e duas áreas de
-44px a 13px uma da outra sobrepõem-se — a lição que a `site.css` já escreveu ao
-lado da área do selo, «uma área sobreposta não é um alvo maior, é uma porta que
+44px a 13px uma da outra sobrepõem-se, que é a lição que a `site.css` já
+escreveu ao lado da área do selo, «uma área sobreposta não é um alvo maior, é uma porta que
 abre a linha do vizinho». Medido em Chromium sem cabeça, nas duas edições do 04,
 a 1280 e a 390: **24 × 24 a 24 × 25 px, e zero pares sobrepostos**. O custo está
 medido também: nas células da tabela do bloco 62, cuja entrelinha é 19,6px, a

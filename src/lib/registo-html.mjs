@@ -254,7 +254,7 @@ function acumulador() {
  * Vai imediatamente depois da ligação, uma por figura sem linha do sítio, na
  * ordem das figuras. É a gémea da regra do selo, e existe pela mesma razão: uma
  * âncora não aninha noutra, a ligação do documento manda sobre o seu texto, e a
- * `IDENTIDADE.md` §5.3 e §10 não abrem exceção — onde aparece um valor, aparece
+ * `IDENTIDADE.md` §5.3 e §10 não abrem exceção: onde aparece um valor, aparece
  * a porta. A forma direta (a própria figura ser a âncora) continua a valer fora
  * de ligações, que é onde ela é possível.
  *
