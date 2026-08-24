@@ -41,3 +41,7 @@ verifications:
     path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi180?format=JSON&lang=EN&geo=PT&sex=T"
     result: "igual"
     by: "painel-semanal"
+  - date: "2026-08-24"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi180?format=JSON&lang=EN&geo=PT&sex=T"
+    result: "igual"
+    by: "painel-semanal"

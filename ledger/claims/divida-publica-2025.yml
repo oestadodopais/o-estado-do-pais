@@ -41,3 +41,7 @@ verifications:
     path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsgo10?format=JSON&lang=EN&geo=PT&unit=PC_GDP"
     result: "igual"
     by: "painel-semanal"
+  - date: "2026-08-24"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsgo10?format=JSON&lang=EN&geo=PT&unit=PC_GDP"
+    result: "igual"
+    by: "painel-semanal"
