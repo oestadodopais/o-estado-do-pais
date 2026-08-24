@@ -489,3 +489,131 @@ exigi-la, e `registos_resolvidos` e `registos_por_resolver` podem passar à vist
   é a P4.
 * **A leitura cruzada do Codex** sobre a P2 e a P3, com as plantas da §7 do
   plano, continua por correr.
+
+---
+
+## Correções 1 · a porta a seguir à ligação, depois da M1 e da primeira leitura cruzada
+
+*Construída a 24.08.2026 pelo construtor (Claude Opus 5, `claude-opus-5[1m]`) no
+ramo `parte3-2026-08-24`, sobre a P3, a partir de `8f9ca95`. O brief é
+`briefs/BRIEF-parte3-correcoes-1.md`, escrito pelo lugar de direção depois da
+medição cega M1 (`medicoes/parte3-M1-sonnet.md`) e da primeira leitura cruzada
+(`critica/2026-08-24-codex-leitura-parte3-1.md`). O registo é a `DECISIONS.md`
+§1.64, subsecção «A medição cega M1 e a primeira leitura cruzada». O motor não
+foi tocado.*
+
+### Os commits
+
+| repositório | commit | o quê |
+|---|---|---|
+| sítio | `60f8cd8` | a porta a seguir à ligação: `registo-html.mjs`, `TextoView.astro`, `texto.css`, a chave `estudos.textoPortaDaLinha`, o L6 do portão, o C6 do `check:cadeia`, as duas chaves na vista `dist`, e as duas contagens da prosa nos dois comentários do código |
+| sítio | (este) | o registo: a subsecção na `DECISIONS.md` §1.64, as duas contagens da prosa na §1.64 e na §2.2 item 9, a tabela de vistas da §2.2 item 7, a `CHAVES-EN.md`, esta nota e a `ISSUES.md` (I67 e I68) |
+
+### O achado, medido antes e depois
+
+`node medir-portas.mjs` sobre o `dist/` construído (leitor próprio, só
+`node-html-parser`), nas oito páginas de leitura:
+
+| edição | figuras | dentro de uma ligação | portas a seguir à ligação, antes | depois |
+|---|---:|---:|---:|---:|
+| 03 pt | 411 | 0 | 0 | 0 |
+| 04 en | 326 | **21** | 0 | **21** |
+| 04 pt | 326 | **21** | 0 | **21** |
+| 06 pt | 171 | 0 | 0 | 0 |
+| 07 en | 194 | 0 | 0 | 0 |
+| 07 pt | 194 | 0 | 0 | 0 |
+| 08 pt | 682 | 0 | 0 | 0 |
+| 09 pt | 297 | 0 | 0 | 0 |
+| **âmbito** | **2 601** | **42** | **0** | **42** |
+
+As coordenadas são as 21 que a P3 nomeou, iguais nas duas edições do 04:
+`#62.1.1.0` a `#62.6.1.2` (17), `#69.0.0`, `#69.0.1`, `#69.1.0` e `#71.0`. As
+portas do corpo transcrito passam de 2 363 para **2 405**, e os selos ficam em
+**196**: 2 405 + 196 = 2 601, que é toda a figura do âmbito com saída própria.
+
+A forma rendida, verbatim de `dist/estudos/evora-prometido-pago-auditado-2026/texto/index.html`
+(uma ligação com três figuras, e as três portas na ordem das figuras):
+
+```html
+<a class="texto-ligacao" href="https://www.tcontas.pt/…/rel021-2019-2s.pdf" rel="noopener"><span
+class="texto-figura" data-registo="…pt#62.2.1.0">2</span>ª Secção Relatório nº <span
+class="texto-figura" data-registo="…pt#62.2.1.1">21</span>/<span
+class="texto-figura" data-registo="…pt#62.2.1.2">2019</span></a><a
+class="texto-figura-porta-apos" href="#linha-tc-fifth-family-evora" aria-label="linha do motor: tc-fifth-family-evora"></a><a
+class="texto-figura-porta-apos" href="#linha-tc-report-21-2019" aria-label="linha do motor: tc-report-21-2019"></a><a
+class="texto-figura-porta-apos" href="#linha-tc-year-21-2019" aria-label="linha do motor: tc-year-21-2019"></a>
+```
+
+### O alvo de toque e o seu custo, medidos
+
+`node medir-alvo.mjs` e `node medir-custo.mjs`, Chromium sem cabeça sobre o
+`dist/` servido, nas duas edições do 04, a 1280 e a 390:
+
+| medida | 1280 | 390 |
+|---|---|---|
+| caixa da porta | 24 × 24 a 24 × 25 px | 24 × 24 a 24 × 25 px |
+| pares de áreas sobrepostas | **0** | **0** |
+| tabela do bloco 62, sem a caixa → com a caixa | 594,1 → 697,1 px (+103,1) | 1 298,3 → 1 331,2 px (+32,9) |
+| parágrafo do bloco 71 (prosa) | 244,1 → 244,1 px (**+0,0**) | 308,0 → 308,0 px (**+0,0**) |
+
+A caixa de 24px e não a área de 44px do selo: as portas de uma ligação ficam
+encostadas, e duas áreas de 44px a 13px uma da outra sobrepõem-se. É a lição
+medida que a `site.css` já escreveu ao lado da área do selo. O custo em altura
+está na `ISSUES.md` I68, com a alternativa.
+
+### Os quatro estragos plantados
+
+Cada um numa cópia alterada em `dist/`, com o resumo dos bytes registado antes,
+a conferência a fechar com **exit 1**, o ficheiro reposto e conferido pelo
+resumo, e `git status --porcelain` limpo. As frases estão na `DECISIONS.md`
+§1.64, subsecção da ronda.
+
+| | o estrago | fecha | exit |
+|---|---|---|---:|
+| 1 | uma figura dentro de uma ligação sem a porta a seguir (`#71.0`) | L6 · C6 · **e a prova**: «"registos_resolvidos" é 2601 e o portão conta 2600 (vista: dist)» | 1 |
+| 2 | duas portas trocadas de ordem numa ligação com três figuras (`#62.2.1.0` e `.1`) | L6 (duas queixas) · C6 (duas queixas) | 1 |
+| 3 | uma porta a mais, que não é a saída de figura nenhuma | L6, no outro sentido | 1 |
+| 4 | o glifo escrito no gabarito, dentro da porta | L6 (porta com texto) + L2 | 1 |
+| 5 | **controlo:** a construção inteira, intacta | nada | 0 |
+
+O estrago 1 é o que prova a mudança de vista: a mesma planta que fecha o L6
+fecha também a comparação da prova, e isso só acontece porque
+`registos_resolvidos` passou a contar-se no `dist/`. Antes desta ronda, contava
+figuras nos ficheiros do registo e uma porta que faltasse na página não lhe
+mexia.
+
+### As duas contagens da prosa
+
+* **2 396 → 2 405**, nos quatro sítios que o diziam: o comentário do
+  `scripts/gate-html.mjs`, o da `src/views/TextoView.astro`, a `DECISIONS.md`
+  §1.64 e a §2.2 item 9. São 2 601 menos as 196 com linha do sítio; as 9 de
+  diferença são as figuras cujas linhas o manifesto do **motor** declara
+  `excluded`, e deste lado não se distinguem (`ISSUES.md` I67).
+* **A linha de guião do brief da P3** («63 com resumo de origem · 263 com
+  motivo») era ilustrativa e estava errada: o medido para o 04 pt é **0 e 326**.
+  Não havia nada a corrigir no código; fica como lição na `DECISIONS.md`.
+
+### As corridas verdes
+
+```
+npm run build                      exit 0 · 342 páginas · 41 chaves da prova · 8 páginas de leitura
+npm run verify                     exit 0
+npm run typecheck                  exit 0
+node scripts/provar-eyetext.mjs    exit 0 · 157 conferências
+node scripts/medir-defeitos.mjs    91 frases distintas · 2 542 ocorrências · autorreferência 0 nas oito rotas `texto`
+node scripts/check-cadeia.mjs      exit 0 · 8 edições · 2 601 algarismos · 196 até ao selo, 2 405 até à entrada
+```
+
+As 342 páginas não mudaram, e as 41 chaves também não: o que mudou foi a
+repartição por vista, de **dist 16 · ledger 18 · registos 4 · modulo 3** para
+**dist 18 · ledger 18 · registos 2 · modulo 3**.
+
+### O que fica por fazer
+
+* **A M2** mede a forma nova da porta (a medição 6 da M1 aceitou a antiga,
+  porque o brief dela a dava como legítima) e reconta as duas chaves na vista
+  nova.
+* **A leitura cruzada do Codex** sobre a P2 e a P3, com as plantas da §7 do
+  plano, continua por correr.
+* **A I66** (o selo que cai entre a figura e o resto da unidade) continua aberta
+  de propósito, e a I68 (a altura das linhas das tabelas) é para a sessão de UX.
