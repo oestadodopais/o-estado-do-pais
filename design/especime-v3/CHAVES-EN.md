@@ -380,6 +380,43 @@ e «study document» mantém-se do par anterior. **Se a revisão de voz mudar um
 palavra, é uma cadeia e não uma etapa** (`assertKeyParity()` não vê valores, e por
 isso esta linha existe).
 
+## Parte 3 · P2 · a página de leitura (`/estudos/<slug>/texto`)
+
+*Treze chaves novas, todas em `estudos.*`, no commit que constrói a rota. A voz
+é a mesma da faixa do documento arquivado: **os rótulos nomeiam o que a coisa é,
+e mais nada** (Emenda 15). Nenhuma delas fala do método, da verificação ou da
+casa, e a rota lê autorreferência **0** nas oito páginas e nas duas edições.*
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `estudos.textoEyebrow` | Documento do estudo · texto | Study document · text | A forma paralela ao rótulo da faixa do documento arquivado, `documentoFaixa` («Documento do estudo · edição de registo» / «Study document · edition of record»): as duas superfícies servem o mesmo documento, uma composta aqui e a outra byte a byte, e o antetítulo diz qual é qual. O separador é o ponto médio da casa |
+| `estudos.textoLink` | Ler no sítio | Read on the site | A porta, na página do estudo, ao lado de «Ler o documento →» / «Read the document →». **«no sítio» e não «aqui»**: o par que a distingue é o documento alojado, e o que muda entre os dois é onde o documento é composto, não onde o leitor está. A seta é do gabarito, como em `documentoLink` |
+| `estudos.textoLinhasK` | As linhas deste documento | The rows of this document | O nome da secção. «linha» é a palavra da casa para uma entrada do livro-razão, e aqui são as linhas do **motor** que o documento cita; o rótulo do campo, uma linha abaixo, di-lo por extenso |
+| `estudos.textoLinhaK` | linha do motor | engine row | O rótulo do campo. «motor» é como esta casa chama ao ResearchHub em português, e «engine» é a palavra que o inglês do repositório já usa |
+| `estudos.textoValorK` | o valor como a linha o guarda | the value as the row keeps it | Longo de propósito: o par com o rótulo seguinte é a única coisa que explica, sem uma frase, porque é que dois campos mostram números diferentes para a mesma linha |
+| `estudos.textoImpressoK` | como este documento o imprime | as this document prints it | O outro lado do par. «este documento» e não «a página»: quem imprime é o documento, e a página transcreve-o |
+| `estudos.textoOrigemK` | resumo de origem | source digest | «resumo» é a palavra da casa para um `sha256` (o `linha-alojado-resumo` da página de linha já a usa); «digest» é a palavra do formato do motor. O VALOR deste campo **não se traduz**: os 64 hexadecimais são um resumo, e `derivado`, `api-viva`, `raw-sem-manifesto`, `pdf-sem-resumo` e `portal-estatico` são valores de uma lista fechada do formato, não prosa |
+| `estudos.textoLinhaDoLivro` | linha do livro-razão | ledger row | A porta longa, na entrada de uma linha que também atravessou para este livro-razão. É a mesma porta que o selo abre; a diferença é que aqui ela leva a palavra |
+| `estudos.textoRegistoK` | O registo de conteúdo | The content record | O rótulo do bloco do aparelho que mostra o `origin_ref` e o resumo do registo. É o nome que o `publisher/REGISTOS.md` do motor dá à coisa, e o que a `DECISIONS.md` §1.64 já usa |
+| `estudos.textoContaBlocos` | blocos | blocks | A palavra da faixa, a seguir ao número. Singular e plural não se distinguem: as oito edições têm 53 blocos ou mais |
+| `estudos.textoContaAlgarismos` | algarismos | figures | **«figures» e não «digits»**: o que se conta são as referências do registo (`figures[]`), que são valores e não dígitos. Em português «algarismos» é a palavra que a `IDENTIDADE.md` §10 já usa para a mesma coisa |
+| `estudos.textoContaComLinha` | com linha do livro-razão | with a ledger row | O terceiro troço da faixa. Diz quantas das figuras têm linha NESTE livro-razão, que é o que decide se levam selo |
+
+**Identidades: nenhuma.** As treze cadeias diferem entre as duas edições.
+
+**As palavras da faixa não entram no inventário de frases**, e a razão é a mesma
+das outras origens declaradas: os três números vão marcados
+`data-registo-conta`, que o portão reconta do registo em disco, e a régua exclui
+um bloco que contenha uma origem declarada. Está escrito na secção da rota, no
+`INVENTARIO-FRASES.md`.
+
+O inglês foi pensado e não copiado, e as duas escolhas que mais o mostram são
+«figures» (contra «digits») e «the value as the row keeps it» (contra «the
+row's value»): a primeira nomeia o que o formato conta, a segunda mantém o par
+com «as this document prints it», que é onde a divergência se lê. **Se a revisão
+de voz mudar uma palavra, é uma cadeia e não uma etapa** (`assertKeyParity()`
+não vê valores, e por isso esta linha existe).
+
 ## Identidades aceites (PT = EN de propósito)
 Nomes próprios, códigos de série, identificadores de linha, «Eurostat», «INE», «DGAL», «IEFP», «CAOP», «UE-27», «O Estado do País». A régua da invariância imprime todas as chaves cujo valor é igual nas duas línguas; as que não estiverem nesta lista são erro.
 

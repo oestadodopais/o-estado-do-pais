@@ -143,3 +143,198 @@ acrescenta página nenhuma, e não devia.
   transcrita como frases da casa, a contagem de autorreferência salta.
 * **As 46 ligações do corpo atravessaram dentro dos registos** (7 por edição do
   03, 16 por edição do 04), e nada do lado do sítio as rende ainda.
+
+---
+
+## P2 · o renderizador, a rota `texto` e a nona origem
+
+*Construída a 24.08.2026 pelo construtor (Claude Opus 5) no ramo
+`parte3-2026-08-24`, sobre a P1. O brief é
+`briefs/BRIEF-parte3-P2.md`; o plano é a `ESTIMATIVA-PARTE3-2026-08-24.md` §2, §3
+e §5; as onze decisões do diretor estão em `ESTADO-DO-MAIN-2026-08-24.md` e
+nenhuma se reabriu. O registo da etapa é a `DECISIONS.md` §1.64, subsecção P2, e
+a nona origem é a `DECISIONS.md` §2.2 item 9.*
+
+### As duas provas da leitura do olho
+
+`node scripts/provar-eyetext.mjs` · **157 conferências, exit 0**.
+
+```
+evora-economia-investidores-portas-abertas-2026/pt   53 blocos lidos ·  53 no registo ·  104 unidades iguais ·  4 isentas em  4 bloco(s) editado(s) · 0 apagado(s)
+evora-orcamentado-pago-devido-2025/en                94 blocos lidos ·  91 no registo ·  206 unidades iguais ·  7 isentas em  4 bloco(s) editado(s) · 3 apagado(s)
+evora-orcamentado-pago-devido-2025/pt                95 blocos lidos ·  92 no registo ·  207 unidades iguais ·  7 isentas em  4 bloco(s) editado(s) · 3 apagado(s)
+evora-os-pelouros-quem-os-teve-o-que-fizeram/pt     157 blocos lidos · 155 no registo · 1095 unidades iguais · 17 isentas em 17 bloco(s) editado(s) · 2 apagado(s)
+evora-quinze-anos-cinco-mandatos/pt                 182 blocos lidos · 179 no registo · 1002 unidades iguais · 19 isentas em 12 bloco(s) editado(s) · 3 apagado(s)
+juntas apertadas na 07 pt                            20 · 0 imprimem um espaço
+
+5 edições · 581 blocos lidos · 2668 unidades · 2614 iguais carácter a carácter · 54 isentas
+113 operações da passagem de voz: 41 blocos editados e 11 apagados
+```
+
+**A ressalva que o brief não podia prever, e que faz esta prova ser honesta.** O
+brief §5 pedia que a leitura de `studies-src/<slug>/<lingua>.html` desse, unidade
+a unidade, exatamente os `text` do registo. **Medido: não dá, e não pode dar.**
+O registo não é a leitura do olho da edição alojada: é
+`transform(eyetext(edição))`, onde `transform` são as 113 operações da passagem
+de voz que o diretor aprovou e que viajam ao lado do registo em
+`<lingua>.cortes.json` (o D3 prende-lhes os bytes). Nos 41 blocos que a voz
+editou e nos 11 que apagou por inteiro, a leitura e o registo **têm** de
+divergir. Exigir igualdade ali seria exigir que a passagem de voz não tivesse
+acontecido, e a prova falhava em quatro das cinco edições.
+
+O que a prova faz em vez disso: compara carácter a carácter os blocos que
+nenhuma operação tocou (2 614 unidades), e prova os outros **pelo outro
+caminho** — a frase que a voz declara ter tirado está na leitura e não está no
+registo, e a que a substituiu está no registo. O alinhamento é por TEXTO e não
+por coordenadas: as coordenadas do ficheiro de operações são do rascunho e de
+estados intermédios (medido: o 07 pt tem operações com `b_no_registo` 92, 93 e
+94 sobre um registo de 92 blocos), e um alinhamento por índice saía de passo à
+primeira operação que apaga um bloco.
+
+**O conhecido-positivo**, na forma do `core/eyetext_test.py`: as doze formas
+cuja resposta certa não está em dúvida, a recusa de um `<li>` fora de lista e de
+uma célula fora de linha, o endereço a ficar na âncora que o trouxe, o mapa do
+aperto, e dois estragos plantados numa cópia em memória de um registo real (um
+bloco deitado fora, um espaço fantasma numa junta apertada). Com um estrago
+plantado no PRÓPRIO leitor — os pedaços juntos com um espaço, que é a leitura do
+`visible_text` da casa — a prova fecha com **exit 1** e nomeia seis
+conferências, entre elas «uma fronteira de linha dentro de uma palavra: leu
+["a ."], esperava ["a."]» e «a leitura imprime 2 espaço(s) fantasma numa junta
+apertada, e tem de imprimir zero»; reposto o ficheiro, volta a **exit 0**.
+
+### Os dez estragos plantados e os três controlos
+
+Cada um numa cópia alterada em `dist/`, com o resumo dos bytes registado antes,
+a conferência a fechar com o seu próprio nome e **exit 1**, e o ficheiro reposto
+e conferido pelo resumo. As frases estão na `DECISIONS.md` §1.64, subsecção P2.
+
+| | o estrago | fecha | exit |
+|---|---|---|---:|
+| 1 | um carácter mudado num parágrafo do 08 pt | L2 | 1 |
+| 2 | um espaço antes de um ponto final, na junta apertada de um `<em>` do 04 pt | L2 | 1 |
+| 3 | um bloco `rule` deitado fora | L1 | 1 |
+| 4 | um intervalo `strong` deslocado um carácter | L3 | 1 |
+| 5 | uma figura a imprimir o `value` (`51.95`) em vez do `printed` (`51,95`) | L2 + L4 | 1 |
+| 6 | uma figura sem `data-registo` | L2 + L4 | 1 |
+| 7 | uma célula `header` rendida como célula de corpo | L7 | 1 |
+| 8 | uma figura sem linha do sítio com um selo ao lado | L6 | 1 |
+| 9 | a faixa com «102 blocos» trocado por «103 blocos» | L5 | 1 |
+| 10 | uma marca `data-registo` numa página de estudo | a nona origem, fora da rota | 1 |
+| 11 | **controlo:** o 04 com a tabela onde a edição arquivada tem gráficos | nada | 0 |
+| 12 | **controlo:** uma figura cujo `printed` é igual ao `value` | nada | 0 |
+| 13 | **controlo:** os oito registos intactos, a construção inteira | nada | 0 |
+
+O controlo 11, medido: a edição arquivada do 04 pt tem **4 regiões de gráfico**
+(`<figure>` com legenda) e 12 tabelas; a página de leitura tem **13 tabelas** e
+zero regiões de gráfico, e o bloco 12 é a tabela que o primeiro gráfico
+substitui. O controlo 12: **301 das 326** figuras do 04 pt imprimem exatamente o
+`value` da sua linha do motor.
+
+### A régua do inventário de frases, antes e depois
+
+| | frases de moldura | rota `texto` |
+|---|---|---|
+| antes da etapa (318 páginas, a construção da P1) | **90 distintas · 2 530 ocorrências** | a rota não existia |
+| com as oito páginas e a régua POR ensinar | **148 distintas · 3 051 ocorrências** | não medida |
+| com as oito páginas e a régua ensinada | **91 distintas · 2 542 ocorrências** | 9 distintas · **autorreferência 0** |
+
+As 57 frases distintas que a lição tira da conta são resumos de origem de 64
+hexadecimais, nomes de entidades adjudicantes e títulos de relatórios do
+Tribunal de Contas: o documento a falar, contado como moldura da casa. O único
+acrescento real é «Ler o documento → Ler no sítio →», que é o par de portas da
+página do estudo, em 4 páginas.
+
+Nas oito rotas novas o inventário lê **7 blocos por classificar → 0**, com as
+catorze cadeias (sete por edição) classificadas em `INVENTARIO-FRASES.md`. As
+seis rotas que já tinham blocos por classificar antes (`/estudos`,
+`/en/studies`, as duas do livro-razão e as duas do estudo das pensões) continuam
+com os mesmos, e **nenhuma outra rota mexeu**.
+
+### As medidas de forma, a 1280 e a 390
+
+`node tests/texto/leitura.mjs` · **26/26**.
+
+* **1280**: a grelha é `544px 300px` com 51,2px de intervalo, dentro do
+  invólucro de 1180 — **exatamente a mesma** de `/livro-razao/<id>` e de
+  `/municipios/evora`, medida nas três na mesma corrida. A prosa do corpo a
+  19px/30,4px. A figura em Bitter com `tabular-nums lining-nums`, a frase em
+  Spectral, a mesma tinta nas duas;
+* **o selo**: colado à figura sem um nó de texto pelo meio (4px de afastamento,
+  dados pela folha), na linha da figura, e nunca dentro de outro alvo;
+* **transbordo**: a 320, 390, 768, 1024 e 1280, nas três edições medidas (04 pt,
+  03 pt, 08 pt), `document.scrollWidth` é igual a `window.innerWidth`. A 320 e a
+  390 há elementos mais largos do que a janela (uma `TABLE` a 552px no 04, a
+  738px no 03), e **rolam dentro da sua caixa**: 3 das 13 caixas do 04 pt rolam
+  a 390;
+* **390**: a coluna do aparelho passa para baixo do corpo; a etiqueta mais longa
+  do 03 pt (**283 caracteres**, o próprio endereço) quebra em 8 linhas por
+  `overflow-wrap: anywhere` e cabe.
+
+### A leitura do 04 pt contra a edição arquivada
+
+Lida de alto a baixo, com a edição arquivada ao lado. O que se vê:
+
+* **102 blocos**, 414 unidades marcadas, **326 figuras**: um `h1`, 9 `h2`, 4
+  `h3`, 63 parágrafos, 10 filetes, 13 tabelas (41 `th`, 288 `td`) e 2 listas. A
+  sequência de títulos e de tabelas é a mesma da edição arquivada, na mesma
+  ordem;
+* **a tabela no lugar dos gráficos**: o bloco 12 é a tabela de seis linhas
+  («Aprovado e atribuído a Évora · €167 372 756», «Pago · €86 944 669»,
+  «Execução · 51,95 %», e as três contagens de localizações) onde a edição
+  arquivada desenha o primeiro dos seus quatro gráficos. **É o desenho, não um
+  defeito**;
+* **as ligações do documento vivas**: 16 âncoras no corpo, todas com
+  `rel="noopener"`, das quais **10 para `tcontas.pt`** (as fichas dos relatórios
+  do Tribunal de Contas), 3 para `dados.gov.pt`, 1 para `base.gov.pt`, 1 para
+  `ine.pt` e 1 para `cohesiondata.ec.europa.eu`. **Nota de rigor:** o brief e o
+  plano dizem «as dezasseis ligações do Tribunal de Contas»; medidas, são
+  dezasseis ligações no corpo e dez delas do Tribunal;
+* **os doze selos**: 12 figuras têm linha neste livro-razão, e cada uma leva o
+  selo colado, com o quadrado a tracejado onde a linha tem um campo por
+  confirmar. As 12 resolvem em **7 linhas distintas**, e as 7 entradas dessas
+  linhas em «As linhas deste documento» levam a porta longa para
+  `/livro-razao/<id>`;
+* **as portas das outras figuras**: das 326, **293** são âncoras
+  `#linha-<row>` para a sua entrada; **21** são figuras dentro de uma ligação do
+  documento e ficam em `<span>` sem uma segunda âncora, com a porta na entrada
+  da linha (medido: **nenhuma** figura dentro de uma ligação tem linha do sítio,
+  nas oito edições);
+* **«As linhas deste documento»**: 212 entradas, 636 campos marcados. A entrada
+  de `prr-execution-evora` mostra a divergência a preto no branco: «o valor como
+  a linha o guarda 51.95» e «como este documento o imprime 51,95». A de
+  `comp-c11-locations` mostra duas formas impressas da mesma linha, «3 · 03»;
+* **a faixa**: «102 blocos · 326 algarismos · 12 com linha do livro-razão», com
+  os três números recontados pelo portão e cada um com a sua porta;
+* **o marcador `(inferência)`** aparece 11 vezes, e o Método já o explica
+  (§1.63). Nada a fazer aqui;
+* **o fim**: a página acaba com a frase «Tudo foi recolhido em direto para este
+  documento.» e a tabela das oito fontes, **sem o título** «Método, e onde o
+  verificar» que a edição arquivada tem por cima. É a passagem de voz, que
+  cortou o título e deixou o corpo da secção. Fica na **I65**.
+
+### As corridas verdes
+
+```
+npm run build                      exit 0 · 342 páginas · 33 chaves da prova · 16 documentos · 548 cartões
+npm run typecheck                  exit 0
+node scripts/provar-eyetext.mjs    exit 0 · 157 conferências
+node tests/texto/leitura.mjs       26/26
+node scripts/medir-defeitos.mjs    exit 0 · rota `texto` com autorreferência 0 nas oito páginas
+```
+
+As 342 páginas são as 334 da P1 mais as oito de leitura. As 33 chaves da prova
+não mudaram: as chaves novas são da P3.
+
+### O que fica por fazer, e é da P3 em diante
+
+* **Nenhuma chave nova em `src/lib/prova.mjs`.** As oito contagens do sítio
+  inteiro e o `check:cadeia` são a P3; a faixa de cada página conta por si, com
+  a recontagem do portão contra o registo em disco.
+* **`noindex` e fora do mapa do sítio**, por contrato desta sessão. A decisão de
+  indexar é da sessão de UX, e é uma linha do `astro.config.mjs` mais o
+  `noindex` da vista.
+* **A leitura cruzada do Codex** sobre este par, com as seis plantas da §7 do
+  plano, ainda não correu.
+* **A I65 e a I66** ficam abertas e escritas: o troço sem título que a passagem
+  de voz deixou em cinco das oito páginas, e o selo entre a figura e o resto do
+  texto da unidade.
