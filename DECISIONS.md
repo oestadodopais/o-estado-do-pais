@@ -9815,6 +9815,20 @@ ligação era mais fraca do que o rótulo `dist` promete. `registos_resolvidos` 
 `registos_por_resolver` contam-se por isso sobre os ficheiros, com o rótulo que
 diz a verdade sobre a sua força.
 
+**E isto é a mesma coisa que a primeira leitura cruzada encontrou**, por outro
+caminho e sem contexto: a High 3 de
+`design/especime-v3/critica/2026-08-24-codex-leitura-parte3-1.md` diz que as
+figuras dentro de uma ligação do documento ficaram sem porta própria, o lugar de
+direção deu-lhe razão pela letra da `IDENTIDADE.md` §5.3 e §10, e a correção já
+está decidida: a porta vai imediatamente a seguir à ligação, como o selo já vai.
+**Medido nas páginas construídas: são 21 por edição do 04 e 42 no âmbito** (as
+outras seis edições não têm figuras dentro de ligações), e as coordenadas são
+`#62.1.1.0` a `#62.6.1.2` (17, e não 18 como o relatório escreveu: a linha 1 da
+tabela tem duas figuras e as linhas 2 a 6 têm três), mais `#69.0.0`, `#69.0.1`,
+`#69.1.0` e `#71.0`. No dia em que a porta entrar, o passo 6 do `check:cadeia`
+passa a exigi-la, e estas duas chaves podem passar à vista `dist`: cada figura
+passará a ter, no `dist/`, uma saída que nomeia a sua linha do motor.
+
 **As chaves NÃO entram nas listas `prova` do Método nesta sessão, e é uma
 decisão do lugar de direção com razão escrita.** `src/data/metodo.mjs` é texto
 governado: a página rende-o carácter a carácter e a amarra das decisões prende o

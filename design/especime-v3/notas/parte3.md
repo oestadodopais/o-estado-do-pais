@@ -459,6 +459,26 @@ As 342 páginas não mudaram: a P3 não acrescenta nenhuma. As chaves da prova
 passam de 33 a 41, e a repartição por vista fica **dist 16 · ledger 18 ·
 registos 4 · modulo 3**.
 
+### O encontro com a primeira leitura cruzada
+
+A leitura cruzada do Codex (`5039858`, sobre a construção `7626a2a`) correu
+enquanto esta etapa se construía, e a sua High 3 é a mesma coisa que a escolha
+da vista destas duas chaves: **as figuras dentro de uma ligação do documento não
+têm porta própria.** Duas medições independentes, uma sobre o `dist/` a contar
+saídas e outra a ler as páginas sem contexto, deram no mesmo sítio.
+
+O número exato, medido nas páginas construídas: **21 por edição do 04, 42 no
+âmbito**, e não 22 e 44. O relatório conta 18 figuras no bloco 62 e são 17, que
+é o que a tabela tem (a linha 1 tem duas células com figura e as linhas 2 a 6
+têm três). As coordenadas são `#62.1.1.0` a `#62.6.1.2`, `#69.0.0`, `#69.0.1`,
+`#69.1.0` e `#71.0`, iguais nas duas edições do 04. As outras seis edições não
+têm figuras dentro de ligações.
+
+A correção («a porta vai imediatamente a seguir à ligação») é da ronda de
+correções e não desta etapa. Quando entrar, o passo 6 do `check:cadeia` passa a
+exigi-la, e `registos_resolvidos` e `registos_por_resolver` podem passar à vista
+`dist`.
+
 ### O que fica por fazer, e é da P4 em diante
 
 * **As oito chaves esperam a decisão do diretor sobre o Método.** Existem, saem
