@@ -8519,14 +8519,18 @@ o gabarito. A razão é a mesma do separador de `attributed_to` (§1.31).
    sua conta contra os algarismos que a página rendeu.
 
    O ponto de observação do portão é o `dist/` construído. Das **quarenta e uma**
-   chaves de hoje (medido a 24.08.2026), dezasseis contam-se lá (as páginas de
-   linha que existem, quais levam `noindex`, as páginas de estudo e de
-   município, o mapa do sítio, o ficheiro dos concelhos, as marcas das páginas
-   de leitura); dezoito são uma **segunda leitura** dos mesmos ficheiros do
-   livro-razão, com código próprio; **quatro são a mesma segunda leitura sobre os
-   registos de conteúdo do motor**, e a sua vista chama-se `registos` por isso
-   (§1.64, P3); e três leem o mesmo módulo dos dois lados, e nessas o que fica
-   conferido é que a página rendeu o que o módulo diz, e mais nada. Cada chave
+   chaves de hoje (medido a 24.08.2026, depois da ronda de correções 1 da parte
+   3), dezoito contam-se lá (as páginas de linha que existem, quais levam
+   `noindex`, as páginas de estudo e de município, o mapa do sítio, o ficheiro
+   dos concelhos, as marcas e as saídas das páginas de leitura); dezoito são uma
+   **segunda leitura** dos mesmos ficheiros do livro-razão, com código próprio;
+   **duas são a mesma segunda leitura sobre os registos de conteúdo do motor**,
+   e a sua vista chama-se `registos` por isso (§1.64, P3); e três leem o mesmo
+   módulo dos dois lados, e nessas o que fica conferido é que a página rendeu o
+   que o módulo diz, e mais nada. As duas que mudaram de `registos` para `dist`
+   nessa ronda são `registos_resolvidos` e `registos_por_resolver`: com a porta
+   a ir imediatamente depois de uma ligação do documento, cada figura passou a
+   ter no `dist/` uma saída que nomeia a sua linha do motor. Cada chave
    escreve a sua vista em `dist/prova.json`, para que a fraqueza de uma vista
    `modulo` não passe por força de uma vista `dist`.
 
@@ -8619,9 +8623,10 @@ o gabarito. A razão é a mesma do separador de `attributed_to` (§1.31).
    corrente, e o portão fecha a construção onde a encontrar.
 
    **A razão de existir, medida e não afirmada.** Das 2 601 figuras das oito
-   edições com registo, 2 396 não têm linha no livro-razão deste sítio, e das
-   196 que têm, 119 imprimem no documento uma cadeia diferente da que a linha
-   guarda. Pôr cada algarismo dentro de um `<Claim>` ou não teria `id` nenhum
+   edições com registo, 2 405 não têm linha no livro-razão deste sítio (9 delas
+   de linhas que o motor excluiu da travessia, com a razão escrita no seu
+   manifesto), e das 196 que têm, 119 imprimem no documento uma cadeia diferente
+   da que a linha guarda. Pôr cada algarismo dentro de um `<Claim>` ou não teria `id` nenhum
    para lhe dar, ou imprimiria uma cadeia que o documento não imprime. A página
    de leitura é uma **transcrição de um documento fixado**, não uma composição
    da casa, e a origem do algarismo é o registo, que é a coisa que a página está
@@ -9420,11 +9425,12 @@ algarismo ligado à linha do livro-razão do motor que o bate. O plano é a
 `design/especime-v3/ESTIMATIVA-PARTE3-2026-08-24.md`, e as onze decisões que o
 diretor deu sobre ele a 24.08.2026 estão em
 `design/especime-v3/ESTADO-DO-MAIN-2026-08-24.md`; nenhuma se reabre aqui. A
-restrição medida que manda no desenho é a §0.3 do plano: 2 396 das 2 601 figuras
-do âmbito não têm linha no livro-razão deste sítio, e das 196 que têm, 119
-imprimem no documento uma cadeia diferente da que a linha guarda. A página de
-leitura é por isso uma **transcrição de um documento fixado** e não uma
-composição da casa. Esta entrada cresce por etapa: a P1 é a travessia, e a P2 a
+restrição medida que manda no desenho é a §0.3 do plano: 2 405 das 2 601 figuras
+do âmbito não têm linha no livro-razão deste sítio (9 delas de linhas que o
+motor excluiu da travessia, com a razão escrita no seu manifesto), e das 196 que
+têm, 119 imprimem no documento uma cadeia diferente da que a linha guarda. A
+página de leitura é por isso uma **transcrição de um documento fixado** e não
+uma composição da casa. Esta entrada cresce por etapa: a P1 é a travessia, e a P2 a
 P4 entram abaixo à medida que forem feitas.
 
 #### P1 · a travessia
@@ -9795,8 +9801,8 @@ força e a mesma disciplina da vista `ledger`.
 | `registos_edicoes` | 8 | `dist` | páginas com `data-registo-edicao` construídas |
 | `registos_blocos` | 829 | `dist` | marcas `data-registo-bloco` |
 | `registos_algarismos` | 2 601 | `dist` | marcas `data-registo` |
-| `registos_resolvidos` | 2 601 | `registos` | figuras com `row` não vazia |
-| `registos_por_resolver` | 0 | `registos` | figuras com `row` vazia |
+| `registos_resolvidos` | 2 601 | `dist` | saídas que nomeiam a linha do motor: o selo, ou a porta `#linha-<row>` |
+| `registos_por_resolver` | 0 | `dist` | portas que abrem `#linha-` e mais nada |
 | `registos_com_linha_do_sitio` | 196 | `dist` | selos colados dentro do corpo transcrito |
 | `registos_com_resumo_de_origem` | 510 | `registos` | figuras com resumo de 64 hexadecimais |
 | `registos_sem_resumo_de_origem` | 2 091 | `registos` | figuras com motivo da lista fechada |
@@ -9806,14 +9812,19 @@ Os oito valores batem, número a número, com os que o plano §4.2 mediu. As dua
 sem motivo não entra em nenhuma das duas, e é o `check:cadeia` que a nomeia, no
 passo 1.
 
-**Porque é que duas delas não se contam no `dist/`, e é medido:** 42 das 2 601
-figuras estão dentro de uma ligação do documento e não têm porta própria nem
-selo (medido nas oito páginas construídas: 2 363 com porta, 196 com selo, 42 sem
-nenhum dos dois). Para essas, o `dist/` não sabe nomear a linha do motor que as
-resolve, e uma conta que as desse por resolvidas por estarem dentro de uma
-ligação era mais fraca do que o rótulo `dist` promete. `registos_resolvidos` e
-`registos_por_resolver` contam-se por isso sobre os ficheiros, com o rótulo que
-diz a verdade sobre a sua força.
+**Porque é que duas delas não se contavam no `dist/`, e é medido:** 42 das 2 601
+figuras estavam dentro de uma ligação do documento e não tinham porta própria
+nem selo (medido nas oito páginas construídas a 24.08: 2 363 com porta, 196 com
+selo, 42 sem nenhum dos dois). Para essas, o `dist/` não sabia nomear a linha do
+motor que as resolve, e uma conta que as desse por resolvidas por estarem dentro
+de uma ligação era mais fraca do que o rótulo `dist` promete.
+`registos_resolvidos` e `registos_por_resolver` contaram-se por isso sobre os
+ficheiros, com o rótulo que dizia a verdade sobre a sua força. **A ronda de
+correções 1, no mesmo dia, fechou isto:** a porta passou a ir imediatamente
+depois da ligação, as 42 figuras ganharam saída própria (2 405 portas e 196
+selos, recontados nas páginas construídas), e as duas chaves passaram à vista
+`dist`, com o mesmo valor e um ponto de observação a sério. A subsecção seguinte
+tem a medição e as plantas.
 
 **E isto é a mesma coisa que a primeira leitura cruzada encontrou**, por outro
 caminho e sem contexto: a High 3 de
@@ -9825,9 +9836,10 @@ está decidida: a porta vai imediatamente a seguir à ligação, como o selo já
 outras seis edições não têm figuras dentro de ligações), e as coordenadas são
 `#62.1.1.0` a `#62.6.1.2` (17, e não 18 como o relatório escreveu: a linha 1 da
 tabela tem duas figuras e as linhas 2 a 6 têm três), mais `#69.0.0`, `#69.0.1`,
-`#69.1.0` e `#71.0`. No dia em que a porta entrar, o passo 6 do `check:cadeia`
-passa a exigi-la, e estas duas chaves podem passar à vista `dist`: cada figura
-passará a ter, no `dist/`, uma saída que nomeia a sua linha do motor.
+`#69.1.0` e `#71.0`. **Esse dia foi o mesmo:** a ronda de correções 1 pôs a
+porta, o passo 6 do `check:cadeia` passou a exigi-la, e as duas chaves passaram
+à vista `dist`, porque cada figura passou a ter no `dist/` uma saída que nomeia
+a sua linha do motor.
 
 **As chaves NÃO entram nas listas `prova` do Método nesta sessão, e é uma
 decisão do lugar de direção com razão escrita.** `src/data/metodo.mjs` é texto
@@ -9897,6 +9909,132 @@ cobertas; as outras oito páginas do arquivo não têm registo e por isso não t
 cadeia. As chaves esperam a decisão do diretor sobre o Método. E a leitura
 cruzada do Codex sobre a P2 e a P3, com as plantas da §7 do plano, continua por
 correr.
+
+#### A medição cega M1 e a primeira leitura cruzada
+
+Duas leituras independentes correram sobre esta parte antes de ela ser fundida,
+e esta subsecção é o que saiu delas: a triagem, o único defeito real, a correção
+com os seus estragos plantados, e o que não é defeito, escrito com a razão. Um
+achado que a triagem rejeita fica escrito na mesma; nada se corrige em silêncio.
+
+**A primeira leitura cruzada** (`design/especime-v3/critica/2026-08-24-codex-leitura-parte3-1.md`)
+correu num leitor sem contexto (Codex CLI, `gpt-5.6-sol`, sem rede, fora dos
+repositórios) sobre a construção `7626a2a`, com **seis plantas registadas antes
+da leitura**, cinco reais e um controlo negativo:
+
+| planta | o quê | apanhada? |
+|---|---|---|
+| P1 | um carácter tirado num parágrafo do 08 pt (bloco 4) | **sim** (Medium 1) |
+| P2 | a figura 12.0.1.0 do 04 pt imprime o `value` da linha em vez do `printed` do documento | **sim** (High 1) |
+| P3 | um selo ao lado da figura 5.0 do 04 pt, que não tem linha do sítio | **sim** (High 2) |
+| P4 | a faixa do 04 en diz 103 blocos e a página tem 102 | **sim** (Medium 2) |
+| P5 | uma frase sobre a verificação da casa acrescentada ao aparelho do 08 pt | **sim** (Medium 3) |
+| P6 | **controlo negativo:** a página do 04 com a tabela onde a edição arquivada tem gráficos, intacta | **não reportada**, como devia |
+
+Cinco de cinco, e o controlo limpo. As cinco críticas correspondentes são as
+cinco plantas, e o repositório nunca as teve. **Fica uma crítica que não é
+planta, e é real.**
+
+**O defeito real, e a correção (a High 3).** As figuras que estão dentro de uma
+ligação do próprio documento ficaram em `<span data-registo>` sem porta própria,
+com a porta só na entrada de «As linhas deste documento». Foi uma escolha do
+brief da P2, e o leitor tem razão pela letra da `IDENTIDADE.md` §5.3 e §10: onde
+aparece um valor, aparece a porta. **A saída é a gémea da regra do selo**, que já
+manda o selo para depois da ligação quando a figura está dentro dela: **a porta
+vai imediatamente depois da ligação**, uma âncora por figura sem linha do sítio
+que a ligação contém, na ordem das figuras, com selos e portas intercalados. A
+âncora é `<a class="texto-figura-porta-apos" href="#linha-<row>" aria-label="<rótulo>: <row>">`
+**sem nó de texto** — a leitura do olho não junta nada de um elemento de linha
+vazio, e por isso o texto da unidade continua a ser, carácter a carácter, o do
+registo — com o glifo pela folha (`::after`, a seta, na letra do instrumento, em
+`--g2`) e o nome acessível pela chave nova `estudos.textoPortaDaLinha` («linha do
+motor» / «engine row») mais o identificador da linha.
+
+**A medida.** 21 ocorrências por edição do 04 e **42 no âmbito**, zero nas outras
+seis edições, recontadas nas páginas construídas antes e depois: 42 figuras
+dentro de ligações, 0 portas a seguir a ligações antes, **42 depois**. O leitor
+tinha contado 22 e 44; a P3 mediu 21 e 42, e as coordenadas são as que a P3
+nomeia. A régua do inventário de frases não mexe (a âncora não tem texto): **91
+frases distintas e 2 542 ocorrências**, os mesmos números da P2, e
+autorreferência zero nas oito rotas.
+
+**O alvo de toque, medido e não afirmado.** A porta é uma caixa própria de 24px,
+e não uma área posicionada de 44px como a do selo: as portas de uma mesma
+ligação ficam encostadas (o bloco 62 do 04 tem células com três), e duas áreas de
+44px a 13px uma da outra sobrepõem-se — a lição que a `site.css` já escreveu ao
+lado da área do selo, «uma área sobreposta não é um alvo maior, é uma porta que
+abre a linha do vizinho». Medido em Chromium sem cabeça, nas duas edições do 04,
+a 1280 e a 390: **24 × 24 a 24 × 25 px, e zero pares sobrepostos**. O custo está
+medido também: nas células da tabela do bloco 62, cuja entrelinha é 19,6px, a
+linha cresce para caber a caixa, e a tabela passa de 594,1 para 697,1px a 1280 e
+de 1 298,3 para 1 331,2px a 390; **na prosa o custo é zero**, porque a caixa cabe
+na entrelinha de 30,4px. Dar altura à fila é a saída que a `site.css` prescreve;
+a alternativa (a porta com o tamanho da unidade dentro das tabelas) fica escrita
+na `ISSUES.md` I68, para a sessão de UX.
+
+**O que mudou nas conferências.** O L6 do portão passa a exigir, para cada figura
+sem linha do sítio dentro de uma ligação, a porta imediatamente depois da
+ligação, na ordem das figuras, e continua a aceitar a forma direta fora de
+ligações; passa a recusar uma porta que não seja a saída de nenhuma figura da
+ligação, e uma porta com texto lá dentro. O passo 6 do `check:cadeia` exige o
+mesmo para dar a cadeia do motor por resolvida. **Quatro estragos plantados**,
+cada um numa cópia em `dist/`, com o resumo do ficheiro registado antes, a
+conferência a fechar com **exit 1**, o ficheiro reposto e conferido pelo resumo, e
+`git status --porcelain` limpo:
+
+* **1 · uma figura dentro de uma ligação sem a porta a seguir.** Fecha nos três
+  sítios, e o terceiro é a prova de que a vista nova tem dentes:
+  `L6 evora-prometido-pago-auditado-2026/pt#71.0: a figura está dentro de uma ligação do documento e não tem a porta a seguir à ligação: depois da ligação vem o nó de texto ", incluindo a sua posição nas tabelas do próprio Tribunal. Esse relatório está ".`
+  `C6 evora-prometido-pago-auditado-2026/pt#71.0: a figura está dentro de uma ligação do documento e não tem a porta a seguir à ligação, que é a saída da cadeia do motor onde uma âncora não pode aninhar noutra.`
+  `a prova diz que "registos_resolvidos" é 2601 e o portão conta 2600 (vista: dist).`
+* **2 · duas portas trocadas de ordem numa ligação com três figuras**, que é uma
+  porta a abrir a entrada de outra linha:
+  `L6 evora-prometido-pago-auditado-2026/pt#62.2.1.0: a porta que vai a seguir à ligação abre "#linha-tc-report-21-2019" e a linha desta figura é "tc-fifth-family-evora", cuja entrada é "#linha-tc-fifth-family-evora".`
+  `C6 evora-prometido-pago-auditado-2026/pt#62.2.1.0: a porta que vai a seguir à ligação abre "#linha-tc-report-21-2019" e a entrada desta figura é "#linha-tc-fifth-family-evora".`
+* **3 · uma porta a mais**, que não é a saída de figura nenhuma:
+  `L6 evora-prometido-pago-auditado-2026/pt#71: esta unidade tem uma porta a seguir a uma ligação do documento que abre "#linha-tc-families" e não é a saída de nenhuma das figuras dessa ligação.`
+* **4 · texto dentro da porta**, que é o glifo escrito no gabarito em vez da folha:
+  `L6 evora-prometido-pago-auditado-2026/pt#71: a porta que vai a seguir a uma ligação do documento tem texto lá dentro, e não pode ter: o texto de uma unidade é o do documento, e o glifo desta porta é da folha de estilos.`
+  `L2 evora-prometido-pago-auditado-2026/pt#71: o texto rendido não é o do registo.`
+
+**A medição cega M1 não encontrou defeito nenhum, e isso não foi de graça.** O
+medidor (Claude Sonnet, programa próprio em Python, sem importar nada do sítio)
+mediu as doze medições do seu brief nas três edições do exemplar e deu **zero
+discordâncias em onze delas**; a medição 9, que é o controlo contra a edição
+arquivada, deu as 13 diferenças por edição do 04 que o desenho prevê (a passagem
+de voz e as legendas dos gráficos), listadas e não julgadas. **Nenhuma falsa
+alarme**: o leitor do medidor foi provado com 21 defeitos plantados à mão, um por
+função de comparação, e apanhou os 21. **A medição 6 aceitou a forma «figura
+dentro de uma ligação, com entrada»** porque o brief dela a dava como legítima;
+a M2, depois desta ronda, mede a forma nova.
+
+Duas observações do medidor, para registar e não corrigir: o âmbito da medição 9
+ficou pelos blocos dentro do `<article>` (inferido pelo medidor, e é a leitura
+certa: a mobília do aparelho não é corpo do documento); e um quinto balde que o
+medidor acrescentou à medição 6 («sem linha, sem porta nem entrada») deu zero nas
+três edições.
+
+**Duas contagens da prosa, corrigidas.** «2 396 não têm linha no livro-razão
+deste sítio» estava escrito em quatro sítios (um comentário no `gate-html.mjs`,
+outro na `TextoView.astro`, a §1.64 acima e a §2.2 item 9) e o número certo deste
+lado da fronteira é **2 405** (2 601 menos as 196 com linha do sítio). O plano
+contou 2 396 porque tirou as 9 figuras cujas linhas o manifesto de travessia **do
+motor** declara `excluded` com razão escrita; essas 9 também não têm linha deste
+lado, e deste lado não se distinguem das outras (a razão está na P3, e a dívida
+do lado do motor na `ISSUES.md` I67). Os quatro sítios passam a dizer 2 405, com
+a razão entre parênteses.
+
+E uma lição sobre briefs, que fica escrita porque custou uma medição a desfazer:
+**a linha de guião de exemplo do brief da P3 («63 com resumo de origem · 263 com
+motivo») era um número ilustrativo do lugar de direção, e estava errado**; o
+medido para o 04 pt é **0 com resumo de origem e 326 com motivo**, e nenhuma das
+oito edições dá 63. Não havia nada a corrigir no código. Um brief não escreve
+números que não mediu.
+
+**O que fica.** A M2 mede a forma nova da porta e reconta as duas chaves na vista
+nova. A leitura cruzada do Codex sobre a P2 e a P3 com as plantas da §7 do plano
+continua por correr, e a I66 (o selo que cai a meio de uma unidade) continua
+aberta de propósito.
 
 ## 4. O registo dos defeitos e dos adiamentos
 

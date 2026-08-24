@@ -417,6 +417,25 @@ com «as this document prints it», que é onde a divergência se lê. **Se a re
 de voz mudar uma palavra, é uma cadeia e não uma etapa** (`assertKeyParity()`
 não vê valores, e por isso esta linha existe).
 
+## Parte 3 · correções 1 · a porta que vai a seguir a uma ligação do documento
+
+*Uma chave nova, em `estudos.*`, na ronda de correções da parte 3. É o nome
+acessível da porta que a `DECISIONS.md` §1.64 descreve: onde uma figura está
+dentro de uma ligação do próprio documento, a porta vai imediatamente depois da
+ligação e não tem texto nenhum (o glifo é da folha), e por isso o nome dela é um
+`aria-label`.*
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `estudos.textoPortaDaLinha` | linha do motor | engine row | As mesmas palavras de `estudos.textoLinhaK`, e é chave própria de propósito: aquela é o **rótulo de um campo** na secção «As linhas deste documento», e esta é o **nome de uma porta** que só quem ouve a página encontra. Uma revisão de voz pode querer mudar uma sem mudar a outra, e com uma chave só isso deixava de ser possível. O valor rende-se com o identificador da linha do motor a seguir, separado por dois pontos: `aria-label="linha do motor: tc-report-16-2018"` / `aria-label="engine row: tc-report-16-2018"`. O identificador **não se traduz**, pela mesma razão do valor do campo «resumo de origem»: é um identificador do formato do motor, e não prosa |
+
+**Identidades: nenhuma.** As duas cadeias diferem entre as duas edições.
+
+**A porta não entra no inventário de frases**, e não é por dispensa: a régua
+conta blocos de texto, e a âncora não tem texto nenhum. Medido depois da ronda:
+**91 frases distintas e 2 542 ocorrências** em todo o sítio, os mesmos números de
+antes dela, e autorreferência **0** nas oito rotas `texto`.
+
 ## Identidades aceites (PT = EN de propósito)
 Nomes próprios, códigos de série, identificadores de linha, «Eurostat», «INE», «DGAL», «IEFP», «CAOP», «UE-27», «O Estado do País». A régua da invariância imprime todas as chaves cujo valor é igual nas duas línguas; as que não estiverem nesta lista são erro.
 
