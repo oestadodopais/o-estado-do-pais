@@ -21,12 +21,13 @@ npm run dev        # servidor de desenvolvimento
 npm run build      # verifica o livro-razão, constrói, e varre o HTML construído
 npm run preview    # serve dist/ como será servido em produção
 npm run verify     # só as verificações, sobre um dist/ já construído
+npm run check:cadeia   # a cadeia de cada algarismo das páginas de leitura
 npm run verify:deploy  # confere o que está NO AR contra origin/main
 ```
 
 Requer Node ≥ 22.12 (exigência do Astro 7).
 
-`npm run build` são sete passos encadeados, e qualquer um deles pára tudo:
+`npm run build` são oito passos encadeados, e qualquer um deles pára tudo:
 
 1. `ledger:check`: o livro-razão está completo e a aritmética bate certo, e
    toda a entrada do `DECISIONS.md` a partir da §1.38 declara que texto governa,
@@ -58,7 +59,15 @@ Requer Node ≥ 22.12 (exigência do Astro 7).
    `value` —, as contagens, o selo de quem tem linha e a porta de quem não tem, e
    os `<th>` (`DECISIONS.md` §1.64 e §2.2 item 9). No fim, escreve
    `dist/prova.json` e relê-o;
-7. `check:dados` — os ficheiros de dados descarregáveis existem e batem certo
+7. `check:cadeia` — por edição com registo de conteúdo, percorre a cadeia de
+   cada algarismo da página de leitura até onde ela chega: o resumo de origem do
+   documento, a linha do motor, a linha do livro-razão deste sítio quando
+   existe, a posição no registo, a marca `data-registo` na página construída e a
+   saída (o selo, ou a porta para a entrada em «As linhas deste documento»). Diz
+   qual das duas formas cada algarismo tem, completa ou do motor, recusa a
+   construção quando não tem nenhuma, e escreve `dist/cadeia.json` com as oito
+   contagens e as contagens por edição (`DECISIONS.md` §1.64, P3);
+8. `check:dados` — os ficheiros de dados descarregáveis existem e batem certo
    com as suas origens.
 
 `check:cruzamento` corre **sem rede e sem o motor presente** — o construtor é

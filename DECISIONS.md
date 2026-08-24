@@ -8518,11 +8518,14 @@ o gabarito. A razão é a mesma do separador de `attributed_to` (§1.31).
    conta própria**, e faz duas comparações: a sua conta contra a da prova, e a
    sua conta contra os algarismos que a página rendeu.
 
-   O ponto de observação do portão é o `dist/` construído. Nove chaves contam-se
-   lá (as páginas de linha que existem, quais levam `noindex`, as páginas de
-   estudo e de município, o mapa do sítio, o ficheiro dos concelhos); onze são
-   uma **segunda leitura** dos mesmos ficheiros do livro-razão, com código
-   próprio; e três leem o mesmo módulo dos dois lados, e nessas o que fica
+   O ponto de observação do portão é o `dist/` construído. Das **quarenta e uma**
+   chaves de hoje (medido a 24.08.2026), dezasseis contam-se lá (as páginas de
+   linha que existem, quais levam `noindex`, as páginas de estudo e de
+   município, o mapa do sítio, o ficheiro dos concelhos, as marcas das páginas
+   de leitura); dezoito são uma **segunda leitura** dos mesmos ficheiros do
+   livro-razão, com código próprio; **quatro são a mesma segunda leitura sobre os
+   registos de conteúdo do motor**, e a sua vista chama-se `registos` por isso
+   (§1.64, P3); e três leem o mesmo módulo dos dois lados, e nessas o que fica
    conferido é que a página rendeu o que o módulo diz, e mais nada. Cada chave
    escreve a sua vista em `dist/prova.json`, para que a fraqueza de uma vista
    `modulo` não passe por força de uma vista `dist`.
@@ -9713,6 +9716,173 @@ faixa de cada página conta por si, com a recontagem do portão contra o registo
 disco. As páginas ficam fora do mapa do sítio e com `noindex` até a sessão de UX
 decidir. E a leitura cruzada do Codex sobre este par, com as seis plantas da §7
 do plano, ainda não correu.
+
+#### P3 · o `check:cadeia` e as oito chaves
+
+**O guião.** `scripts/check-cadeia.mjs`, `npm run check:cadeia`, dentro do
+`build` e do `verify` logo a seguir ao `gate:html`, porque lê o `dist/`
+construído. É o B4a do contrato do motor. Corre sem rede e sem o motor em disco,
+lê com o seu próprio leitor (não importa `registos.mjs`, `registo-html.mjs` nem
+`cruzamento.mjs`; importa `routes.mjs`, que é a tabela de endereços da casa e não
+a coisa que se prova) e escreve `dist/cadeia.json` com os totais e os totais por
+edição, e mais nada.
+
+**As duas formas da cadeia, e o guião diz as duas em vez de fingir uma.** A §0.3
+do plano mediu a restrição que manda: das 2 601 figuras das oito edições, só 196
+têm linha no livro-razão deste sítio.
+
+* **cadeia completa** (196 figuras, medido): resumo de origem · linha do motor ·
+  linha do sítio · posição no registo · a marca `data-registo` na página · o
+  selo, que abre a página dessa linha;
+* **cadeia do motor** (2 405 figuras, medido): resumo de origem · linha do motor
+  · posição no registo · a marca `data-registo` na página · a porta, que abre a
+  entrada em «As linhas deste documento»;
+* **sem nenhuma das duas**: erro, e fecha a construção.
+
+**2 405 e não 2 396, e a diferença regista-se.** O plano §4.1 escreve 2 396 para
+a cadeia do motor, que são estas menos as 9 figuras cujas linhas o manifesto de
+travessia do MOTOR declara `excluded` com razão escrita. Deste lado da fronteira
+essas 9 não se distinguem das outras: o `ledger/cruzamentos/evora.json` não traz
+lista de excluídas (medido: só `rows`, 70 entradas), e as entradas `excluded` do
+motor nomeiam padrões de linha em prosa («xw-* (14 linhas)»), que não se
+resolvem em identificadores deste lado. Uma figura sem linha do sítio segue a
+cadeia do motor, seja qual for a razão de não a ter. As oito chaves não mudam
+com isto, e nenhuma delas conta 2 396.
+
+**O que o guião exige, figura a figura.** Seis passos, e cada um tem a sua
+queixa própria (`C1` a `C6`, C de cadeia):
+
+1. **o resumo de origem**, que é o R7 do motor lido deste lado: `source_sha256`
+   com 64 hexadecimais minúsculos e `source_digest_em` presente, **ou**
+   `source_sha256: null` com `source_digest_kind` de um dos cinco da lista
+   fechada, e nunca os dois;
+2. **a linha do motor**: `figures[].row` não vazia;
+3. **a linha do sítio, se houver**: `(rh_study, row)` no registo de travessia
+   das linhas; quando há, `ledger/claims/<site_id>.yml` existe e declara um
+   `value`;
+4. **a posição no registo**: o bloco, a unidade, o índice da figura, e
+   `text[start:end]` igual ao `printed`, contado em **pontos de código**, que é
+   como o motor os conta;
+5. **a marca na página rendida**, nos dois sentidos: cada figura tem a sua
+   marca, com o `printed` lá dentro, e cada marca da página é figura de alguma
+   coordenada do registo;
+6. **a saída**: com linha do sítio, o selo colado cujo `href` é a página dessa
+   linha; sem linha do sítio, a porta `#linha-<row>` e a entrada existente em
+   «As linhas deste documento» (ou, dentro de uma ligação do documento, só a
+   entrada, porque uma âncora dentro de outra não é markup).
+
+Um passo que falhe não pára a figura onde os passos seguintes ainda tenham
+sentido: uma figura sem linha do motor continua a ter o seu texto e a sua marca
+conferidos, e só os passos 3 e 6, que pedem a linha, ficam calados. Inventar
+uma segunda queixa a partir da primeira era dizer duas coisas sobre um erro só.
+
+**A linha de guião, por edição**, com a etiqueta do motor («04 pt» é o estudo
+`04 Évora Public Money` na edição portuguesa deste sítio):
+
+```
+  04 pt · 102 blocos · 326 algarismos · 12 completas · 314 do motor · 0 por resolver · 0 com resumo de origem · 326 com motivo
+```
+
+**As oito chaves, com as vistas.** Entram em `src/lib/prova.mjs` como totais do
+sítio, com frase bilingue e a porta do arquivo (`routePath('estudos', lang)`),
+e o portão reconta cada uma por conta própria. A vista `registos` é nova, e
+declara-se ao lado das outras três em `gate-html.mjs` e no cabeçalho de
+`dist/prova.json`: é a segunda leitura dos ficheiros de `registos/`, com a mesma
+força e a mesma disciplina da vista `ledger`.
+
+| chave | valor | vista | de onde o portão a conta |
+|---|---:|---|---|
+| `registos_edicoes` | 8 | `dist` | páginas com `data-registo-edicao` construídas |
+| `registos_blocos` | 829 | `dist` | marcas `data-registo-bloco` |
+| `registos_algarismos` | 2 601 | `dist` | marcas `data-registo` |
+| `registos_resolvidos` | 2 601 | `registos` | figuras com `row` não vazia |
+| `registos_por_resolver` | 0 | `registos` | figuras com `row` vazia |
+| `registos_com_linha_do_sitio` | 196 | `dist` | selos colados dentro do corpo transcrito |
+| `registos_com_resumo_de_origem` | 510 | `registos` | figuras com resumo de 64 hexadecimais |
+| `registos_sem_resumo_de_origem` | 2 091 | `registos` | figuras com motivo da lista fechada |
+
+Os oito valores batem, número a número, com os que o plano §4.2 mediu. As duas
+últimas não somam necessariamente `registos_algarismos`: uma figura sem resumo e
+sem motivo não entra em nenhuma das duas, e é o `check:cadeia` que a nomeia, no
+passo 1.
+
+**Porque é que duas delas não se contam no `dist/`, e é medido:** 42 das 2 601
+figuras estão dentro de uma ligação do documento e não têm porta própria nem
+selo (medido nas oito páginas construídas: 2 363 com porta, 196 com selo, 42 sem
+nenhum dos dois). Para essas, o `dist/` não sabe nomear a linha do motor que as
+resolve, e uma conta que as desse por resolvidas por estarem dentro de uma
+ligação era mais fraca do que o rótulo `dist` promete. `registos_resolvidos` e
+`registos_por_resolver` contam-se por isso sobre os ficheiros, com o rótulo que
+diz a verdade sobre a sua força.
+
+**As chaves NÃO entram nas listas `prova` do Método nesta sessão, e é uma
+decisão do lugar de direção com razão escrita.** `src/data/metodo.mjs` é texto
+governado: a página rende-o carácter a carácter e a amarra das decisões prende o
+seu resumo. Acrescentar rótulos novos à prova de uma regra é uma edição de texto
+governado, e essa é decisão do diretor. As oito existem em `prova.mjs`, saem em
+`dist/prova.json` com a sua vista, são recontadas pelo portão, e a sua porta é o
+arquivo, de onde cada leitura se abre. **Nenhuma página as rende hoje**, e por
+isso a comparação B do portão (a conta contra os algarismos que a página rendeu)
+fica sem trabalho até haver um `data-prova` para elas. O que o diretor pode
+decidir depois: quais das oito entram na prova de que regra do Método, e se a
+faixa de cada página passa a citá-las.
+
+**`OEDP_REGISTOS_DIR` passa a valer em três sítios**: já valia em
+`src/lib/registos.mjs`, e passa a valer no `gate-html.mjs`, no
+`check-cadeia.mjs` e no `check-documentos.mjs`. Existe para uma coisa só, e é o
+que a regra da casa exige de uma conferência: provar que ela fecha sobre um
+estrago **sem tocar num byte de `registos/`**. E serve para provar o contrário,
+que é o achado desta etapa: uma cópia do registo com o manifesto refeito passa o
+`check:documentos` com **exit 0**, byte a byte, e é o `check:cadeia` que apanha o
+que lhe fizeram por dentro. Um resumo prende bytes; não prende sentido.
+
+**Os cinco estragos plantados**, cada um com o resumo do ficheiro registado
+antes, a corrida a fechar com **exit 1**, o ficheiro reposto e conferido pelo
+resumo, e `git status --porcelain` limpo. A frase entre crases é a que a
+conferência imprimiu:
+
+* **1a · um algarismo sem linha, do lado da página.** Uma marca `data-registo`
+  na página construída com uma coordenada que não é figura nenhuma.
+  `L4 evora-prometido-pago-auditado-2026/pt#12.0.1: a marca data-registo="evora-prometido-pago-auditado-2026/pt#12.0.1.7" não resolve numa figura desta unidade do registo.`
+  `C5 evora-prometido-pago-auditado-2026/pt#12.0.1.7: a página rende esta marca data-registo e o registo não tem figura nenhuma nessa coordenada.`
+* **1b · um algarismo sem linha, do lado do registo.** Numa cópia com o
+  manifesto refeito, a figura `#5.0` com `row` vazia. O `check:documentos` sobre
+  a cópia dá **exit 0**; o guião conta `registos_por_resolver` **1** e fecha.
+  `C2 evora-prometido-pago-auditado-2026/pt#5.0: a figura não tem linha do motor (o campo "row" está vazio), e sem ela o algarismo não tem nada que o bata.`
+  O portão, sobre a mesma cópia, fecha pelo outro lado:
+  `L6 evora-prometido-pago-auditado-2026/pt#5.0: a porta da figura abre "#linha-tc-families" e devia abrir "#linha-".`
+* **2 · uma linha sem resumo de origem.** Na mesma forma de cópia, uma figura
+  com `source_sha256: null` e sem motivo, e outra com um motivo fora dos cinco.
+  O `check:documentos` sobre a cópia dá **exit 0**.
+  `C1 evora-prometido-pago-auditado-2026/pt#5.0: a figura não traz resumo de origem nem motivo. O formato do motor exige um dos dois, e sem nenhum a cadeia não tem princípio.`
+  `C1 evora-prometido-pago-auditado-2026/pt#12.0.1.0: o motivo "portal-inventado" não é um dos cinco da lista fechada do motor (portal-estatico, pdf-sem-resumo, raw-sem-manifesto, derivado, api-viva).`
+* **3a · uma contagem escrita à mão.** A faixa do 04 pt com «326 algarismos»
+  trocado por «327».
+  `L5 evora-prometido-pago-auditado-2026/pt=algarismos: a faixa diz "327" e o portão reconta 326 do registo em disco. Uma contagem escrita à mão fica errada na construção seguinte.`
+* **3b · a mesma contagem, do lado da prova.** Uma marca `data-registo` a mais
+  na página, que muda o total do sítio e põe as duas contas a discordar. É a
+  metade do estrago 3 que a faixa sozinha não podia provar, e a razão está
+  medida: a faixa é uma `data-registo-conta` de uma edição, e as oito chaves são
+  totais do sítio que nenhuma página rende.
+  `a prova diz que "registos_algarismos" é 2601 e o portão conta 2602 (vista: dist).`
+* **4 · um valor do sítio no lugar do valor do documento.** `167 372 756`
+  trocado por `167 372 755,84`, que é o `value` da linha `evora-prr-aprovado-2026`.
+  `L4 evora-prometido-pago-auditado-2026/pt#12.0.1.0: a figura imprime "167 372 755,84" e o registo diz que este documento imprime "167 372 756".`
+  `C5 evora-prometido-pago-auditado-2026/pt#12.0.1.0: a marca da página imprime "167 372 755,84" e o registo diz que este documento imprime "167 372 756".`
+* **5 · um selo ao lado de uma figura sem linha do sítio.**
+  `L6 evora-prometido-pago-auditado-2026/pt#5.0: a figura NÃO tem linha no livro-razão deste sítio e leva um selo ao lado. Um selo ao lado de um valor sem linha promete uma linha que não existe (IDENTIDADE.md §10).`
+  `C6 evora-prometido-pago-auditado-2026/pt#5.0: a figura NÃO tem linha no livro-razão deste sítio e leva um selo ao lado, que promete uma linha que não existe.`
+
+**A §0.3 recontada pelo guião, e não é erro nenhum:** das 196 figuras com linha
+do sítio, **77 imprimem o valor que a linha guarda e 119 imprimem outra cadeia**.
+É a medição que decidiu esta página, e o guião di-la a cada construção em vez de
+a deixar envelhecer num documento de plano.
+
+**O que fica por fazer, e é da P4 em diante.** As oito edições do âmbito estão
+cobertas; as outras oito páginas do arquivo não têm registo e por isso não têm
+cadeia. As chaves esperam a decisão do diretor sobre o Método. E a leitura
+cruzada do Codex sobre a P2 e a P3, com as plantas da §7 do plano, continua por
+correr.
 
 ## 4. O registo dos defeitos e dos adiamentos
 
