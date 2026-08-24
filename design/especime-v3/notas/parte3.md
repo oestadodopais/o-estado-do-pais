@@ -155,6 +155,20 @@ e §5; as onze decisões do diretor estão em `ESTADO-DO-MAIN-2026-08-24.md` e
 nenhuma se reabriu. O registo da etapa é a `DECISIONS.md` §1.64, subsecção P2, e
 a nona origem é a `DECISIONS.md` §2.2 item 9.*
 
+### Os commits
+
+| repositório | commit | o quê |
+|---|---|---|
+| sítio | `581d9dd` | `src/lib/eyetext.mjs`, a leitura do olho portada, e `scripts/provar-eyetext.mjs`, as suas duas provas |
+| sítio | `056a797` | a rota `texto`: o renderizador, a vista, as duas páginas, a folha, as sete conferências no portão, a régua e o inventário |
+| sítio | `95c65c4` | o registo: a nona origem na §2.2, a subsecção P2 na §1.64, as duas frases da `IDENTIDADE.md`, as chaves, esta nota, o `README.md` e as duas ISSUES |
+| sítio | `d1f3a1b` | o relatório do portão passa a nomear as oito páginas de leitura conferidas |
+| sítio | (este) | a lista dos commits nesta nota |
+
+O motor não foi tocado nesta etapa: está em leitura, e o que dele se usa são os
+registos que a P1 atravessou e o `core/eyetext.py` como referência de
+comportamento.
+
 ### As duas provas da leitura do olho
 
 `node scripts/provar-eyetext.mjs` · **157 conferências, exit 0**.
