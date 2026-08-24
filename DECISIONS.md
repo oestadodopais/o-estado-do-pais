@@ -10325,6 +10325,34 @@ dois briefs, na subsecção P1 desta entrada e na nota; é a segunda vez nesta
 parte que um número escrito pelo lugar de direção sem o medir é apanhado por um
 medidor, e a lição está registada na ronda 1.
 
+#### A fusão
+
+*Escrito a 24.08.2026 pelo lugar de direção, depois da fusão.*
+
+Fundido e posto no ar a 24.08.2026 às 21:59 UTC, pela palavra do diretor dada
+por escrito no prompt desta sessão (o contrato de autonomia: «if ALL gates are
+green, both Codex reads are scored with every plant caught or the miss
+explained, and zero findings remain unresolved: merge to main, push,
+verify:deploy»): as três condições estavam cumpridas na construção `3e87b2f`
+(a construção inteira verde, com `check:cadeia` dentro; a primeira leitura 5
+de 5 e a segunda 6 de 7 com a falha explicada acima; os dois achados reais
+corrigidos com as suas plantas, e o sétimo ponto da segunda leitura explicado
+como ordem de empacotamento). `main` avançou em linha reta de `8d724f2` para
+`3e87b2f` (28 commits, 69 ficheiros) e foi empurrado; a Vercel construiu às
+21:59:54 UTC; `verify:deploy` fechou verde com as invariantes de produção
+todas verdes (os cabeçalhos, o `noindex` do alias, os três 308, as duas páginas
+de erro). No ar, conferido por leitura direta: as oito páginas de leitura
+respondem 200 com `<meta name="robots" content="noindex, follow">`, nenhuma
+está no mapa do sítio, a página do estudo do 04 traz a porta «Ler no sítio →»,
+e a faixa do 04 pt diz 102 · 326 · 12. A nota de estado é
+`design/especime-v3/ESTADO-DO-MAIN-2026-08-24-parte3.md`, e segue com esta
+subsecção no commit seguinte à fusão. O motor ficou com `d64a4d2` (o
+exportador) e `ce8c36e` (o `NEXT.md`), portão PASS nos dois. O ramo
+`parte3-2026-08-24` está fundido e pode ser apagado. Nenhuma das três paragens
+do contrato foi acionada: nenhum achado contradisse as onze decisões, nenhum
+texto governado foi tocado (as oito chaves ficaram fora do Método por isso), e
+nenhuma leitura disse que o desenho estava errado.
+
 ## 4. O registo dos defeitos e dos adiamentos
 
 **Defeito registado 2026-08-16 (00:10), encontrado pela direcção no sítio no ar — RESOLVIDO na mesma noite (§1.37, no ar em `4217232`):** os selos acrescentados a 15.08 aos valores do cabeçalho da primeira página (308 · 11 · 15) rendem no cabeçalho com o rótulo inteiro do estudo («O Estado do País — apuramento próprio») e, no caso da contagem CAOP, com o marcador «[a verificar]» ao lado. Certo pela regra (todo o valor tem selo, para a sua linha), errado naquele sítio: no cabeçalho o selo deve ser só o glifo, com o rótulo apenas para leitores de ecrã. **Primeiro item do bloco V**, junto com a saída de «Edição de …», da introdução justificativa da primeira página e de «Estes indicadores não são escolha nossa…» (voz). Sem alteração ao portão: o selo continua ao pé do valor e a apontar para a linha própria.
