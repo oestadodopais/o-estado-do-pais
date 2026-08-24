@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Penalizações por Reforma Antecipada em Portugal</title>
+<style>
+:root{
+  --tinta:#1b1a17; --tinta-fraca:#57534e; --tinta-tenue:#78716c;
+  --papel:#fdfcfa; --papel-caixa:#f5f2ed; --risco:#e2ddd5;
+  --medida:#a16207; --erro:#7f1d1d; --realce:#fef9ec;
+  --serif:Charter,"Bitstream Charter","Sitka Text",Cambria,Georgia,serif;
+  --sans:"Segoe UI",Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --tinta:#ece9e4; --tinta-fraca:#b5aea5; --tinta-tenue:#8d867d;
+    --papel:#16150f; --papel-caixa:#201e18; --risco:#33302a;
+    --medida:#d9a441; --erro:#e07a7a; --realce:#241f14;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--papel); color:var(--tinta);
+  font-family:var(--serif); font-size:19px; line-height:1.62;
+  font-kerning:normal; text-rendering:optimizeLegibility;
+}
+.folha{max-width:44rem; margin:0 auto; padding:4rem 1.5rem 6rem}
+header.cabeca{border-bottom:2px solid var(--tinta); padding-bottom:1.6rem; margin-bottom:2.4rem}
+.sobretitulo{
+  font-family:var(--sans); font-size:.72rem; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--tinta-tenue); margin:0 0 1rem
+}
+h1{font-size:2.1rem; line-height:1.2; margin:0 0 .9rem; font-weight:600; letter-spacing:-.01em}
+.chamada{font-size:1.06rem; color:var(--tinta-fraca); margin:0; line-height:1.55}
+h2{
+  font-family:var(--sans); font-size:1.02rem; font-weight:650; letter-spacing:.01em;
+  margin:3.2rem 0 1rem; padding-bottom:.4rem; border-bottom:1px solid var(--risco)
+}
+h3{font-family:var(--sans); font-size:.92rem; font-weight:650; margin:2.2rem 0 .7rem}
+p{margin:0 0 1.15rem}
+.abertura{font-size:1.12rem; line-height:1.58}
+strong{font-weight:650}
+.numero{font-variant-numeric:tabular-nums; font-weight:650; color:var(--medida)}
+blockquote{
+  margin:1.6rem 0; padding:.2rem 0 .2rem 1.4rem;
+  border-left:3px solid var(--risco); color:var(--tinta-fraca); font-size:.97rem
+}
+blockquote p:last-child{margin-bottom:0}
+.tabela-caixa{overflow-x:auto; margin:1.8rem 0}
+table{border-collapse:collapse; width:100%; font-family:var(--sans); font-size:.85rem}
+caption{
+  caption-side:top; text-align:left; font-family:var(--sans); font-size:.78rem;
+  color:var(--tinta-tenue); padding-bottom:.7rem; line-height:1.45
+}
+th,td{padding:.6rem .7rem; border-bottom:1px solid var(--risco); text-align:right}
+th:first-child,td:first-child{text-align:left}
+thead th{
+  font-size:.72rem; letter-spacing:.05em; text-transform:uppercase;
+  color:var(--tinta-tenue); font-weight:600; border-bottom:1.5px solid var(--tinta-fraca);
+  vertical-align:bottom
+}
+tbody td{font-variant-numeric:tabular-nums}
+tr.destaque td{background:var(--realce)}
+tr.destaque td:first-child{font-weight:650}
+td.medida{color:var(--medida); font-weight:650}
+.caixa{
+  background:var(--papel-caixa); border:1px solid var(--risco);
+  border-radius:4px; padding:1.3rem 1.5rem; margin:2rem 0
+}
+.caixa p:last-child{margin-bottom:0}
+.caixa h3{margin-top:0}
+.metodo{font-size:.88rem; color:var(--tinta-fraca); line-height:1.6}
+.metodo h2{color:var(--tinta)}
+.metodo code{font-family:var(--mono); font-size:.82em; background:var(--papel-caixa); padding:.1em .35em; border-radius:3px}
+footer.pe{margin-top:4rem; padding-top:1.4rem; border-top:1px solid var(--risco);
+  font-family:var(--sans); font-size:.78rem; color:var(--tinta-tenue); line-height:1.6}
+@media (max-width:640px){
+  body{font-size:17px}
+  .folha{padding:2.5rem 1.1rem 4rem}
+  h1{font-size:1.6rem}
+}
+@media print{
+  body{background:#fff; color:#000; font-size:11pt}
+  .folha{max-width:none; padding:0}
+  h2{break-after:avoid} table{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<article class="folha">
+
+<header class="cabeca">
+  <p class="sobretitulo">Segurança Social · Reforma antecipada</p>
+  <h1>Penalizações por Reforma Antecipada em Portugal</h1>
+  <p class="chamada">O que a lei cobra a quem se reforma mais cedo, o que seria atuarialmente
+  neutro, e a distância entre as duas coisas. Uma leitura do capítulo 8 do relatório do Grupo de
+  Trabalho para a Reforma da Segurança Social.</p>
+</header>
+
+<p class="abertura">Em junho de 2026, o Grupo de Trabalho para a Reforma da Segurança Social
+calculou qual seria a penalização atuarialmente correta por antecipar a reforma em Portugal. O
+cálculo está no capítulo 8 do relatório, ocupa dezanove páginas, e chegou a um número: para quem se
+reforma um ano antes da idade pessoal de reforma, a redução justa da pensão é de
+<span class="numero">8,2%</span>.</p>
+
+<p>A lei portuguesa aplica, à mesma decisão, <span class="numero">6,0%</span> ou
+<span class="numero">22,6%</span>, consoante a porta por onde o trabalhador entra.</p>
+
+<p>Este resultado não foi noticiado. O relatório foi apresentado a 18 de agosto, o Governo declarou
+o dossiê fechado a 20, e a discussão pública fixou-se no défice e na privatização. O capítulo 8
+ficou por ler.</p>
+
+<h2>Três números para a mesma decisão</h2>
+
+<p>A penalização legal por reforma antecipada tem duas peças. A primeira é uma redução de 0,5% por
+cada mês de antecipação, o que dá 6% por ano. A segunda é o fator de sustentabilidade, fixado para
+2026 em 0,8237, que corta 17,63% do montante estatutário de uma só vez.</p>
+
+<p>Quando as duas se aplicam em conjunto, multiplicam-se. O relatório escreve a regra assim, na
+página 234:</p>
+
+<blockquote><p><em>F</em><sub>x</sub><sup>legal</sup> = <em>FS</em> (1 &minus; 0,005 <em>M</em><sub>x</sub>)</p></blockquote>
+
+<div class="tabela-caixa">
+<table>
+<caption>Redução acumulada da pensão inicial, por anos de antecipação face à idade pessoal de
+reforma. A coluna do meio é o cálculo do próprio relatório sobre o que seria atuarialmente neutro,
+no caso geral, ou seja, contando também as contribuições que o trabalhador deixa de fazer e os
+direitos que deixa de formar.</caption>
+<thead>
+<tr><th>Anos de antecipação</th><th>Legal, sem o fator</th><th>Atuarialmente neutra</th><th>Legal, com o fator</th></tr>
+</thead>
+<tbody>
+<tr class="destaque"><td>1</td><td>6,0%</td><td class="medida">8,2%</td><td class="medida">22,6%</td></tr>
+<tr><td>2</td><td>12,0%</td><td>15,7%</td><td>27,5%</td></tr>
+<tr><td>3</td><td>18,0%</td><td>22,5%</td><td>32,5%</td></tr>
+<tr><td>4</td><td>24,0%</td><td>28,7%</td><td>37,4%</td></tr>
+<tr><td>5</td><td>30,0%</td><td>34,4%</td><td>42,3%</td></tr>
+<tr><td>6</td><td>36,0%</td><td>39,6%</td><td>47,3%</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Lidas em conjunto, as três colunas dizem uma coisa que nenhuma delas diz sozinha: <strong>a
+penalização legal quase nunca coincide com o custo atuarial, e falha nos dois sentidos.</strong></p>
+
+<p>Sem o fator de sustentabilidade, a penalização é sempre inferior à neutra. Quem se reforma um ano
+mais cedo por esta via paga 6,0% quando o custo é 8,2%, ou seja, cerca de três quartos do devido.</p>
+
+<p>Com o fator de sustentabilidade, a penalização de um ano é de 22,6% contra os 8,2% neutros. É
+<strong>2,75 vezes</strong> o valor justo, uma diferença de 14,4 pontos percentuais na pensão
+inicial, para o resto da vida.</p>
+
+<h2>A distorção é maior para quem se antecipa menos</h2>
+
+<p>O detalhe que torna esta regra invulgar é a sua forma. O fator de sustentabilidade é um corte
+único de 17,63%, não uma taxa anual. Aplica-se por inteiro a quem antecipa um mês e a quem antecipa
+seis anos.</p>
+
+<p>O efeito é que a penalização legal se afasta mais do valor justo quanto <strong>menor</strong>
+for a antecipação.</p>
+
+<div class="tabela-caixa">
+<table>
+<caption>Excesso da penalização legal com fator de sustentabilidade sobre o valor atuarialmente
+neutro, em pontos percentuais.</caption>
+<thead><tr><th>Anos de antecipação</th><th>Excesso sobre o neutro</th><th>Múltiplo do neutro</th></tr></thead>
+<tbody>
+<tr class="destaque"><td>1</td><td class="medida">+14,4 pontos</td><td class="medida">2,75&times;</td></tr>
+<tr><td>2</td><td>+11,8 pontos</td><td>1,75&times;</td></tr>
+<tr><td>3</td><td>+10,0 pontos</td><td>1,44&times;</td></tr>
+<tr><td>4</td><td>+8,7 pontos</td><td>1,30&times;</td></tr>
+<tr><td>5</td><td>+7,9 pontos</td><td>1,23&times;</td></tr>
+<tr><td>6</td><td>+7,7 pontos</td><td>1,19&times;</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Quem sai um ano antes é penalizado em 2,75 vezes o custo que impõe ao sistema. Quem sai seis anos
+antes é penalizado em 1,19 vezes. A regra é mais dura com quem se desvia menos.</p>
+
+<h2>De onde vem o 8,2%</h2>
+
+<p>O número neutro não é uma opinião. Resulta de uma condição de equivalência: um ajustamento é
+marginalmente neutro quando o trabalhador fica financeiramente indiferente, em valor atual esperado,
+entre reformar-se agora ou daqui a um ano.</p>
+
+<p>O relatório calcula-o com as tábuas completas de mortalidade da população portuguesa publicadas
+pelo INE para o triénio 2023-2025, uma taxa de desconto e de atualização das pensões de 2% ao ano,
+uma taxa contributiva de 26,94% correspondente ao custo técnico das eventualidades velhice, morte e
+invalidez, e um trabalhador representativo com idade pessoal de reforma aos 66 anos.</p>
+
+<p>O cálculo é feito em duas versões. Na primeira, isola-se o efeito puro de começar a receber mais
+cedo: os decréscimos neutros ficam entre 5,8% e 6,8% ao ano, e a penalização legal de 6% aproxima-se
+da neutralidade. Na segunda, contam-se também as contribuições perdidas e os direitos não formados:
+os decréscimos neutros sobem para 7,9% a 8,2% ao ano sobre o fator, e 9,0% a 9,3% sobre a pensão
+total. É esta segunda versão, a que corresponde ao custo efetivo para as contas públicas, que dá os
+8,2% do primeiro ano.</p>
+
+<h2>Sobre quem cai</h2>
+
+<p>O fator de sustentabilidade não se aplica a toda a gente que se reforma antes do tempo. Nasceu
+como ajustamento geral às novas pensões de velhice e deixou de o ser. O relatório descreve a
+mudança, na página 259:</p>
+
+<blockquote><p>«A evolução legislativa posterior do mecanismo … transformou um instrumento geral de
+adaptação demográfica numa penalização selectiva, aplicável apenas a quem se reforma antecipadamente
+e não beneficia de um regime especial.»</p></blockquote>
+
+<p>E de novo, na página 263:</p>
+
+<blockquote><p>«o mecanismo actual incide apenas sobre quem acede antecipadamente à pensão e não se
+enquadra nas excepções legais.»</p></blockquote>
+
+<p>As exceções acumularam-se por diplomas sucessivos: carreiras muito longas, flexibilização aos 60
+anos com 40 de carreira, profissões de desgaste rápido, invalidez. Quem cabe numa delas escapa ao
+fator. Quem não cabe, paga-o inteiro.</p>
+
+<p>O resultado é que a penalização mais pesada do sistema recai sobre uma categoria residual,
+definida por não pertencer a nenhuma das categorias protegidas.</p>
+
+<h2>O mesmo risco, contado duas vezes</h2>
+
+<p>A crítica técnica do relatório é mais dura do que a aritmética.</p>
+
+<p>A idade normal de acesso à pensão já está indexada à esperança média de vida aos 65 anos. Sobe
+quando a longevidade sobe. Esse é, por construção, o mecanismo pelo qual o sistema absorve o risco
+demográfico.</p>
+
+<p>O fator de sustentabilidade mede a mesma coisa, a esperança média de vida aos 65 anos, e volta a
+descontá-la, agora diretamente sobre o valor da pensão. O relatório escreve, na página 263:</p>
+
+<blockquote><p>«uma parte dos encargos associados ao aumento da longevidade já é incorporada na
+fórmula de benefício definido através da subida da idade normal de acesso à pensão de velhice. A
+aplicação adicional do factor de sustentabilidade às pensões antecipadas pode, assim, voltar a
+captar o mesmo risco demográfico»</p></blockquote>
+
+<p>Há ainda um segundo problema, que atinge sempre os mesmos. A fórmula usa a esperança média de
+vida, uma estatística agregada. Não distingue coortes, nem incorpora a estrutura completa da
+mortalidade por idade, nem reconhece que a longevidade não se distribui por igual. O relatório é
+explícito sobre quem paga a diferença:</p>
+
+<blockquote><p>«Trabalhadores com carreiras longas, baixos salários, maior desgaste físico ou menor
+esperança de vida efectiva podem, assim, ser penalizados»</p></blockquote>
+
+<p>Por outras palavras: o corte é calibrado por uma longevidade média que uma parte dos penalizados
+não vai viver.</p>
+
+<h2>Do outro lado, o mesmo desalinhamento</h2>
+
+<p>O relatório aplica o mesmo teste às bonificações por reforma diferida, e encontra o problema
+simétrico.</p>
+
+<p>As bonificações legais dependem da carreira contributiva e não da idade a que se difere: 0,33%
+por mês para carreiras de 15 a 24 anos, 0,50% para 25 a 34, 0,65% para 35 a 39 e 1,00% para 40 ou
+mais. Ao ano, isto dá 3,96%, 6,00%, 7,80% e 12,00%.</p>
+
+<p>Os incrementos atuarialmente neutros situam-se entre 9,1% e 11,2% no caso geral. Ou seja, para
+carreiras curtas e intermédias, adiar a reforma é mal pago. Para carreiras de 40 anos ou mais, os
+12% podem exceder o valor neutro, mas essa vantagem esbarra num teto: no regime geral a pensão
+bonificada não pode ultrapassar 92% da melhor remuneração de referência, e na Caixa Geral de
+Aposentações 90% da última remuneração mensal. Perto do teto, meses adicionais de trabalho podem
+deixar de aumentar a pensão.</p>
+
+<h2>O que o relatório propõe</h2>
+
+<p>Num regime de contas nocionais, o problema desaparece por construção: a neutralidade passa a
+estar no divisor atuarial e as penalizações e bonificações deixam de existir como parâmetros
+autónomos.</p>
+
+<p>Mantendo-se o regime atual, o relatório recomenda três coisas. Publicar uma tabela de fatores
+atuariais de referência, com hipóteses explícitas sobre mortalidade, desconto, indexação e formação
+de direitos. Substituir a acumulação opaca entre penalização mensal e fator de sustentabilidade por
+um fator integrado, que mostre em separado a componente de neutralidade atuarial e a componente de
+sustentabilidade financeira. E indexar as bonificações também à idade efetiva de diferimento, e não
+só à carreira.</p>
+
+<div class="caixa">
+<p>O princípio que o relatório enuncia é simples de verificar e não está em vigor: quando a
+penalização legal for mais severa do que a neutra, a diferença deve ser declarada como medida de
+consolidação financeira; quando for mais favorável, deve ser reconhecida como subsidiação
+implícita.</p>
+<p>Hoje não é declarada nem reconhecida. É apenas cobrada.</p>
+</div>
+
+<section class="metodo">
+<h2>Método</h2>
+
+<p>Todos os valores são do relatório <em>Reformar as Pensões em Portugal: Por um Sistema Sustentável,
+Adequado e Justo — um Contrato entre Gerações</em>, do Grupo de Trabalho para a Reforma da Segurança
+Social, instituído pelo Despacho n.º 1452/2025 e alterado pelo Despacho n.º 3519/2025, publicado
+pelo Ministério do Trabalho, Solidariedade e Segurança Social em junho de 2026. O ficheiro está
+espelhado byte a byte, com o resumo SHA-256
+<code>555936bdc750f66826c4919fab5d288e0b726a76e72f224ba655c82390381366</code>.</p>
+
+<p>A tabela das três colunas junta dois cálculos que o relatório apresenta em sítios diferentes. As
+colunas com e sem fator de sustentabilidade são a Figura 8.1, página 227 do texto impresso. A coluna
+neutra é a Figura 8.4, página 234, lida como redução cumulativa, isto é, 100% menos o fator de
+ajustamento por idade de reforma, com idade pessoal de reforma aos 66 anos. Ambas usam a mesma base
+e a mesma convenção cumulativa.</p>
+
+<p>Conferimos a aritmética do relatório antes de a reproduzir. Para um ano de antecipação,
+1 &minus; (0,8237 &times; 0,94) = 22,57%, que o relatório arredonda para 22,6%. As seis colunas da
+Figura 8.1 reproduzem-se exatamente a partir do fator de 0,8237 e da penalização de 0,5% ao mês. As
+reduções cumulativas da Figura 8.4 confirmam-se como o complemento dos fatores de ajustamento
+publicados.</p>
+
+<p>O múltiplo de 2,75 vezes é 22,6 dividido por 8,2. O excesso em pontos percentuais é a subtração
+direta. <strong>Nenhum destes dois números aparece no relatório: são derivados por nós a partir dos
+seus</strong>, e estão assinalados como tal no livro-razão.</p>
+
+<p>Uma nota sobre o alcance. O fator de sustentabilidade não se aplica a todas as reformas
+antecipadas, e o relatório é claro quanto a isso. A comparação acima vale para quem se reforma
+antecipadamente sem se enquadrar nas exceções legais. Não sabemos quantas pessoas estão nessa
+situação: o relatório assinala, no capítulo 12, que não existe base administrativa completa sobre
+beneficiários, idades efetivas de acesso e valores médios por regime. Essa contagem é, ela própria,
+uma pergunta por responder.</p>
+
+<p>As citações do relatório ficam na grafia em que foram escritas. A prosa desta casa segue o Acordo
+Ortográfico de 1990, tal como se aplica em Portugal.</p>
+</section>
+
+<footer class="pe">
+<p>O Estado do País · Penalizações por Reforma Antecipada em Portugal</p>
+</footer>
+
+</article>
+</body>
+</html>

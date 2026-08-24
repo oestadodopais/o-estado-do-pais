@@ -1,0 +1,34 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# Escrito à mão a partir do relatório do Grupo de Trabalho para a Reforma da
+# Segurança Social (MTSSS, Junho de 2026). O documento está espelhado byte a
+# byte em ResearchHub, content/11 Seguranca Social/source/, com o resumo
+# SHA-256 555936bdc750f66826c4919fab5d288e0b726a76e72f224ba655c82390381366.
+
+id: "penalizacao-antecipacao-um-ano-neutra"
+
+value: "8,2"
+unit: "%"
+
+source: "Grupo de Trabalho para a Reforma da Segurança Social"
+document:
+  title: "Reformar as Pensões em Portugal: Por um Sistema Sustentável, Adequado e Justo — um Contrato entre Gerações"
+  edition: "Relatório final, Junho de 2026"
+  locator: "Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, Figura 8.4"
+  page: 273
+  kind: "pdf"
+source_url: "https://www.dgcp.mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef#page=273"
+access_date: "2026-08-24"
+reference_date: "2026"
+
+excerpt: "Fonte: Cálculos próprios considerando o efeito da antecipação da idade de reforma face aos 66 anos no esforço contributivo e no acréscimo de direitos sobre o sistema de pensões, i.e., K_x != 0 e B_x+1 != B_x."
+
+derivation: null
+derivation_en: null
+derived_from: []
+check: null
+
+study: "penalizacoes-por-reforma-antecipada-2026"
+note: "Redução cumulativa actuarialmente neutra para um ano de antecipação, caso geral, lida da Figura 8.4 como o complemento do factor de ajustamento aos 65 anos (100% - 91,8% = 8,2%), com idade pessoal de reforma aos 66. Caso geral significa que conta também as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Pressupostos na p. 233: tábuas completas do INE para o triénio 2023-2025, taxa de desconto e de actualização das pensões de 2% ao ano, taxa contributiva de 26,94%. O relatório chama-lhe uma estimativa preliminar. O localizador e a âncora do endereço usam a página física do PDF (273); a página impressa no rodapé do relatório é a 234, porque o documento tem 39 páginas de rosto antes de a numeração impressa começar."
+
+corrections: []

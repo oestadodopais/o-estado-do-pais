@@ -234,3 +234,14 @@ edicoes:
     bytes_normalized: 68463
     sha256_raw: 931da10a0d623085937c0d0d3b7ee1c8eb734486ae09747b8a554816275a41b0
     sha256_normalized: 931da10a0d623085937c0d0d3b7ee1c8eb734486ae09747b8a554816275a41b0
+  - slug: penalizacoes-por-reforma-antecipada-2026
+    lang: pt
+    title: "Penalizações por Reforma Antecipada em Portugal"
+    origin: researchhub
+    origin_ref: "content/11 Seguranca Social/Penalizações por Reforma Antecipada em Portugal (pt-PT).html @ 7c0b24700d76cb3a67442f2495178212169c7586"
+    raw_file: _raw/penalizacoes-por-reforma-antecipada-2026.pt.html
+    fetched_utc: 2026-08-24T10:32:50Z
+    bytes_raw: 17263
+    bytes_normalized: 17263
+    sha256_raw: 96565bc0c3db3294e5ce983ff22de8ccffb2bb9ab399dd86c8d082df732463f2
+    sha256_normalized: 96565bc0c3db3294e5ce983ff22de8ccffb2bb9ab399dd86c8d082df732463f2

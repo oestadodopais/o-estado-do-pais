@@ -1,0 +1,34 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# Escrito à mão a partir do relatório do Grupo de Trabalho para a Reforma da
+# Segurança Social (MTSSS, Junho de 2026). O documento está espelhado byte a
+# byte em ResearchHub, content/11 Seguranca Social/source/, com o resumo
+# SHA-256 555936bdc750f66826c4919fab5d288e0b726a76e72f224ba655c82390381366.
+
+id: "factor-sustentabilidade-2026"
+
+value: "0,8237"
+unit: "factor"
+
+source: "Grupo de Trabalho para a Reforma da Segurança Social"
+document:
+  title: "Reformar as Pensões em Portugal: Por um Sistema Sustentável, Adequado e Justo — um Contrato entre Gerações"
+  edition: "Relatório final, Junho de 2026"
+  locator: "Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 265"
+  page: 265
+  kind: "pdf"
+source_url: "https://www.dgcp.mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef#page=265"
+access_date: "2026-08-24"
+reference_date: "2026"
+
+excerpt: "Para as pensões de velhice iniciadas em 2026 às quais seja aplicável o factor de sustentabilidade, este factor é de 0,8237, correspondendo a uma redução de 17,63% do montante estatutário da pensão."
+
+derivation: null
+derivation_en: null
+derived_from: []
+check: null
+
+study: "penalizacoes-por-reforma-antecipada-2026"
+note: "Fixado pela Portaria n.º 476/2025/1, de 29 de Dezembro. É um corte único sobre o montante estatutário, não uma taxa anual: aplica-se por inteiro a um mês e a seis anos de antecipação. A página impressa é a 226; a página física do PDF é a 265, porque o documento tem 39 páginas de rosto antes da numeração impressa."
+
+corrections: []

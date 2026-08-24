@@ -4,17 +4,17 @@
 id: "edicoes-publicadas"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "15"
+value: "16"
 unit: "edições"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "O Estado do País"
 document:
   title: "Arquivo de estudos"
-  edition: "15.08.2026"
+  edition: "24.08.2026"
 source_url: null
-access_date: "2026-08-15"
-reference_date: "2026-08-15"
+access_date: "2026-08-24"
+reference_date: "2026-08-24"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: null

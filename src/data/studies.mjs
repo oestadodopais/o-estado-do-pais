@@ -258,6 +258,25 @@ export const WORKS = [
       en: 'Long series on the country’s evolution.',
     },
   },
+  {
+    /* A data de publicação fica por decidir pela direção: o trabalho está
+       construído e conferido, mas não foi publicado. `date: null` diz isso, e
+       não se escreve nele a data em que o ficheiro entrou no repositório. */
+    id: 'penalizacoes-por-reforma-antecipada-2026',
+    slug: 'penalizacoes-por-reforma-antecipada-2026',
+    editions: [
+      {
+        lang: 'pt',
+        title: 'Penalizações por Reforma Antecipada em Portugal',
+        date: null,
+        updated: null,
+      },
+    ],
+    description: {
+      pt: 'O que a lei cobra por antecipar a reforma, e o que seria atuarialmente neutro.',
+      en: 'What the law charges for retiring early, and what would be actuarially neutral.',
+    },
+  },
 ];
 
 /**

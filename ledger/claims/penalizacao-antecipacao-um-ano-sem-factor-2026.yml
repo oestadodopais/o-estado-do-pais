@@ -1,0 +1,34 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# Escrito à mão a partir do relatório do Grupo de Trabalho para a Reforma da
+# Segurança Social (MTSSS, Junho de 2026). O documento está espelhado byte a
+# byte em ResearchHub, content/11 Seguranca Social/source/, com o resumo
+# SHA-256 555936bdc750f66826c4919fab5d288e0b726a76e72f224ba655c82390381366.
+
+id: "penalizacao-antecipacao-um-ano-sem-factor-2026"
+
+value: "6,0"
+unit: "%"
+
+source: "Grupo de Trabalho para a Reforma da Segurança Social"
+document:
+  title: "Reformar as Pensões em Portugal: Por um Sistema Sustentável, Adequado e Justo — um Contrato entre Gerações"
+  edition: "Relatório final, Junho de 2026"
+  locator: "Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 266, Figura 8.1"
+  page: 266
+  kind: "pdf"
+source_url: "https://www.dgcp.mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef#page=266"
+access_date: "2026-08-24"
+reference_date: "2026"
+
+excerpt: "Sem aplicação do factor de sustentabilidade, a penalização resulta apenas da redução de 0,5% por mês, passando de 6,0% para um ano de antecipação para 36,0% no caso de seis anos de antecipação."
+
+derivation: null
+derivation_en: null
+derived_from: []
+check: null
+
+study: "penalizacoes-por-reforma-antecipada-2026"
+note: "Redução acumulada da pensão, um ano de antecipação, para quem se enquadra numa das excepções legais que afastam o factor de sustentabilidade. O factor não se aplica uniformemente: carreiras muito longas, flexibilização aos 60 anos com 40 de carreira, profissões de desgaste rápido e invalidez estão fora. O localizador e a âncora do endereço usam a página física do PDF (266); a página impressa no rodapé do relatório é a 227, porque o documento tem 39 páginas de rosto antes de a numeração impressa começar."
+
+corrections: []
