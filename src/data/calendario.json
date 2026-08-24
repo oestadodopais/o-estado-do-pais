@@ -3,7 +3,7 @@
   "exportado_em": null,
   "ficheiro": "indicators/calendar.json",
   "repositorio": "ResearchHub",
-  "sha256_origem": "ef616e453f81c444705bc512719b14c826b5d055867ff96636be294fcdff49e8"
+  "sha256_origem": "136cf8969a4192d8138b9b2e57ccb7953018ece8b91c207d53e118a39ddefede"
  },
  "eventos": [
   {
@@ -416,8 +416,8 @@
    },
    "marcador": null,
    "nota": {
-    "en": "The window is the one the law fixes. The text quoted is article 76 as it stands in the republication annexed to Lei n.º 51/2018 of 16 August (Diário da República, 1st series, no. 157, pp. 4109 to 4147), and it is word for word the same as the 2013 original (Lei n.º 73/2013, 1st series, no. 169, pp. 5499 to 5519, also read today). Amendments after 2018 were not checked: the consolidated version on diariodarepublica.pt returns the 'JavaScript is required' shell to both curl and WebFetch, and the engine had already recorded it.",
-    "pt": "A janela é a que a lei fixa. O texto citado é o do artigo 76.º na republicação anexa à Lei n.º 51/2018, de 16 de agosto (Diário da República, 1.ª série, n.º 157, pp. 4109 a 4147), e é palavra por palavra o mesmo do original de 2013 (Lei n.º 73/2013, 1.ª série, n.º 169, pp. 5499 a 5519, também lido hoje). Alterações posteriores a 2018 não foram conferidas: a versão consolidada em diariodarepublica.pt devolve a casca «JavaScript is required» tanto a curl como ao WebFetch, e o motor já o tinha registado."
+    "en": "The window is the one the law fixes. The text quoted is article 76 as it stands in the republication annexed to Lei n.º 51/2018, published in the Diário da República, 1st series, no. 157, pp. 4109 to 4147, and it is word for word the same as the 2013 original (Lei n.º 73/2013, 1st series, no. 169, pp. 5499 to 5519, also read today). Amendments after 2018 were not checked: the consolidated version on diariodarepublica.pt returns the 'JavaScript is required' shell to both curl and WebFetch, and the engine had already recorded it.",
+    "pt": "A janela é a que a lei fixa. O texto citado é o do artigo 76.º na republicação anexa à Lei n.º 51/2018, publicada no Diário da República, 1.ª série, n.º 157, pp. 4109 a 4147, e é palavra por palavra o mesmo do original de 2013 (Lei n.º 73/2013, 1.ª série, n.º 169, pp. 5499 a 5519, também lido hoje). Alterações posteriores a 2018 não foram conferidas: a versão consolidada em diariodarepublica.pt devolve a casca «JavaScript is required» tanto a curl como ao WebFetch, e o motor já o tinha registado."
    },
    "origem_da_data": {
     "acedido_em": "2026-08-16",

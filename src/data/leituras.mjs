@@ -471,6 +471,110 @@ export const LEITURAS = {
       },
     ],
   },
+
+  /* ----------------------------------------------------------------- 11 */
+  'penalizacoes-por-reforma-antecipada-2026': {
+    medidas: [
+      {
+        claim: 'penalizacao-antecipacao-um-ano-neutra',
+        nome: {
+          pt: ['de redução da pensão seria atuarialmente neutro, por um ano de antecipação'],
+          en: ['pension reduction would be actuarially neutral, for one year of anticipation'],
+        },
+      },
+      {
+        claim: 'penalizacao-antecipacao-um-ano-com-factor-2026',
+        nome: {
+          pt: ['é o que a lei corta a quem não cabe numa das exceções'],
+          en: ['is what the law cuts from those who fall outside the exceptions'],
+        },
+      },
+    ],
+    medidasNota: {
+      pt: [
+        'A quem cabe numa das exceções que afastam o fator de sustentabilidade, a lei corta menos do que o valor neutro. As duas medidas acima são os dois extremos da mesma decisão.',
+      ],
+      en: [
+        'For those who fall within one of the exceptions that set the sustainability factor aside, the law cuts less than the neutral figure. The two measures above are the two ends of the same decision.',
+      ],
+    },
+    frase: {
+      pt: [
+        'A penalização por antecipar a reforma um ano é de ',
+        { claim: 'penalizacao-antecipacao-um-ano-sem-factor-2026' },
+        ' ou de ',
+        { claim: 'penalizacao-antecipacao-um-ano-com-factor-2026' },
+        ', consoante a porta por onde o trabalhador entra, quando o valor atuarialmente neutro calculado pelo próprio relatório é de ',
+        { claim: 'penalizacao-antecipacao-um-ano-neutra' },
+        ': a lei falha nos dois sentidos, e é mais dura com quem se desvia menos.',
+      ],
+      en: [
+        'The penalty for retiring one year early is ',
+        { claim: 'penalizacao-antecipacao-um-ano-sem-factor-2026' },
+        ' or ',
+        { claim: 'penalizacao-antecipacao-um-ano-com-factor-2026' },
+        ', depending on which door the worker comes through, when the actuarially neutral figure calculated by the report itself is ',
+        { claim: 'penalizacao-antecipacao-um-ano-neutra' },
+        ': the law misses in both directions, and is harshest on those who deviate least.',
+      ],
+    },
+    origem: {
+      onde: 'content/11 Seguranca Social/Penalizações por Reforma Antecipada em Portugal (pt-PT).html:110, :148, :183',
+      pt: 'Consoante a porta por onde o trabalhador entra. · A penalização legal quase nunca coincide com o custo atuarial, e falha nos dois sentidos. · A regra é mais dura com quem se desvia menos.',
+      en: 'Depending on which door the worker comes through. · The legal penalty almost never matches the actuarial cost, and misses in both directions. · The rule is harshest on those who deviate least.',
+    },
+    metodo: [
+      {
+        k: {
+          pt: 'O fator não cai sobre todos',
+          en: 'The factor does not fall on everyone',
+        },
+        v: {
+          pt: [
+            'O fator de sustentabilidade deixou de ser um ajustamento geral e passou a incidir apenas sobre quem se reforma antecipadamente e não se enquadra nas exceções legais: carreiras muito longas, flexibilização aos ',
+            { nl: '60', motivo: 'limiar-do-quadro' },
+            ' anos com ',
+            { nl: '40', motivo: 'limiar-do-quadro' },
+            ' de carreira, profissões de desgaste rápido, invalidez. Quem cabe numa delas escapa-lhe. Quantas pessoas ficam de fora das exceções não se sabe, e o trabalho di-lo: o próprio relatório assinala que não existe base administrativa completa sobre beneficiários e idades efetivas de acesso por regime.',
+          ],
+          en: [
+            'The sustainability factor stopped being a general adjustment and now falls only on those who retire early and do not fall within the legal exceptions: very long careers, flexibility at ',
+            { nl: '60', motivo: 'limiar-do-quadro' },
+            ' with ',
+            { nl: '40', motivo: 'limiar-do-quadro' },
+            ' years of contributions, arduous occupations, invalidity. Anyone who fits one of them escapes it. How many people fall outside the exceptions is not known, and the study says so: the report itself records that there is no complete administrative base on beneficiaries and effective ages of access by scheme.',
+          ],
+        },
+        valores: [
+          'penalizacao-antecipacao-um-ano-sem-factor-2026',
+          'penalizacao-antecipacao-um-ano-com-factor-2026',
+        ],
+      },
+      {
+        k: {
+          pt: 'A comparação junta duas figuras do relatório',
+          en: 'The comparison joins two figures from the report',
+        },
+        v: {
+          pt: [
+            'As penalizações legais e o valor neutro vêm de duas figuras diferentes do relatório, a figura ',
+            { nl: '8.1', motivo: 'numeracao' },
+            ' e a figura ',
+            { nl: '8.4', motivo: 'numeracao' },
+            ', lidas na mesma base e na mesma convenção cumulativa. A aritmética foi reproduzida antes de ser citada: o corte de um ano sai exatamente do fator de sustentabilidade abaixo, multiplicado pela penalização mensal. O múltiplo entre a penalização legal e a neutra é derivado por esta casa a partir dos números do relatório, e não consta dele.',
+          ],
+          en: [
+            'The legal penalties and the neutral figure come from two different figures in the report, figure ',
+            { nl: '8.1', motivo: 'numeracao' },
+            ' and figure ',
+            { nl: '8.4', motivo: 'numeracao' },
+            ', read on the same base and the same cumulative convention. The arithmetic was reproduced before being cited: the one-year cut follows exactly from the sustainability factor below, multiplied by the monthly penalty. The ratio between the legal penalty and the neutral one is derived by this house from the report’s figures, and does not appear in it.',
+          ],
+        },
+        valores: ['factor-sustentabilidade-2026'],
+      },
+    ],
+  },
 };
 
 /**
