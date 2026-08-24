@@ -381,7 +381,7 @@ let paginasDeTexto = 0;
  * **`registos_resolvidos` e `registos_por_resolver` passaram para aqui a
  * 24.08.2026** (ronda de correções 1), e a razão é uma coisa que mudou na
  * página: até então, as 42 figuras que estão dentro de uma ligação do documento
- * não tinham saída nenhuma — a porta estava só na entrada da linha —, e o
+ * não tinham saída nenhuma (a porta estava só na entrada da linha), e o
  * `dist/` não sabia nomear a linha do motor que as resolve. Com a porta a ir
  * imediatamente depois da ligação, cada figura tem no `dist/` uma saída que
  * nomeia a sua linha, e as duas chaves deixaram a vista `registos` (uma segunda
@@ -407,7 +407,7 @@ function contaAsMarcasDoTexto(root) {
   MARCAS_DO_TEXTO.selos += artigo.querySelectorAll('a.src-chip').length;
   /* As portas do corpo transcrito, as duas formas: a figura que é ela própria a
      âncora, e a que vai a seguir a uma ligação do documento. Uma porta que abre
-     `#linha-` e mais nada é uma figura cuja linha do motor está vazia — é o que
+     `#linha-` e mais nada é uma figura cuja linha do motor está vazia, e é o que
      o `check:cadeia` nomeia no passo 2, contado aqui pelo lado da página. */
   for (const porta of artigo.querySelectorAll('a[href^="#linha-"]')) {
     const href = decodeEntities(porta.getAttribute('href') ?? '');
@@ -1019,7 +1019,7 @@ const eSelo = (n) =>
 /**
  * A porta que vai a seguir a uma ligação do documento: a saída de uma figura
  * que está dentro de uma ligação e por isso não pode ser ela própria a âncora.
- * Não tem texto — o glifo é da folha —, e por isso é invisível à leitura do
+ * Não tem texto (o glifo é da folha), e por isso é invisível à leitura do
  * olho e à comparação da unidade.
  */
 const ePortaAposALigacao = (n) =>
@@ -1464,7 +1464,7 @@ function verificaTexto({ rota, root, err }) {
             /* A PORTA VAI IMEDIATAMENTE DEPOIS DA LIGAÇÃO, e é a gémea da regra
                do selo: uma âncora não aninha noutra, a ligação do documento
                manda sobre o seu texto, e a IDENTIDADE.md §5.3 e §10 não abrem
-               exceção — onde aparece um valor, aparece a porta. */
+               exceção: onde aparece um valor, aparece a porta. */
             if (!ePortaAposALigacao(irmao)) {
               err(
                 `L6 ${rendida.marca}: a figura está dentro de uma ligação do documento e não tem ` +
@@ -2596,7 +2596,7 @@ function contasDoPortao(claims) {
    * OS REGISTOS DE CONTEÚDO, LIDOS OUTRA VEZ COM O LEITOR DESTE PORTÃO.
    *
    * DUAS das oito chaves `registos_*` não têm segundo ponto de observação: o
-   * resumo de origem de uma figura não está no `dist/` — a página de leitura
+   * resumo de origem de uma figura não está no `dist/`: a página de leitura
    * transcreve o DOCUMENTO, e a proveniência de cada linha do motor vive no
    * registo. Estas duas são por isso uma segunda implementação sobre os mesmos
    * ficheiros, com a vista `registos`, que é a mesma disciplina (e a mesma

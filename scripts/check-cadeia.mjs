@@ -549,8 +549,8 @@ for (const chave of chaves) {
            DENTRO DE UMA LIGAÇÃO DO DOCUMENTO, A SAÍDA VAI A SEGUIR À LIGAÇÃO,
            e é a gémea da regra do selo: uma âncora não aninha noutra, e por isso
            nem o selo nem a porta podem ficar dentro da ligação. A ordem é a das
-           figuras — a k-ésima saída colada à ligação é a da k-ésima figura que
-           ela contém —, e a posição lê-se da própria página, para que uma marca
+           figuras (a k-ésima saída colada à ligação é a da k-ésima figura que
+           ela contém), e a posição lê-se da própria página, para que uma marca
            em falta não desalinhe as saídas das figuras seguintes. Até 24.08.2026
            este passo aceitava, dentro de uma ligação, só a entrada da linha; a
            primeira leitura cruzada mostrou que isso deixava 42 figuras sem porta
