@@ -23,7 +23,8 @@ caracteres que têm.*
 | sítio | `15063b2` | `registos/`: os oito registos, os oito ficheiros de operações, o `manifest.json` e o `README.md` |
 | sítio | `4e8981b` | as seis conferências D1 a D6 e o modo `--with-origin` no `scripts/check-documentos.mjs` |
 | sítio | `23385a1` | `src/lib/registos.mjs`, o leitor, para a P2 usar |
-| sítio | (este) | o registo: `DECISIONS.md` §1.64, o `README.md`, esta nota e a `ISSUES.md` |
+| sítio | `b61fa96` | o registo: `DECISIONS.md` §1.64, o `README.md`, esta nota e a `ISSUES.md` |
+| sítio | (este) | o relatório do portão passa a nomear os oito registos, um por linha, com o veredicto do D5 na cauda; as seis plantas repetidas sobre o portão mudado |
 
 ### O que atravessou, medido
 
@@ -112,6 +113,11 @@ escrito e o sítio real nunca é lido nem escrito.
 8. a cópia limpa passa, com o D5 dito edição a edição.
 
 ### As corridas verdes
+
+As seis plantas foram corridas **duas vezes**, e a segunda vez sobre o portão
+com o relatório mudado: uma conferência que mudou de código e não voltou a
+fechar sobre o seu estrago é uma conferência por provar. As frases e os exits são
+os mesmos nas duas corridas.
 
 ```
 motor   python3 -m core.gate                              PASS (74 s), com o export_records_site_test na lista

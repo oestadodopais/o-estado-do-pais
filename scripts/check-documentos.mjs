@@ -289,9 +289,10 @@ if (!entradasDoRegisto || typeof entradasDoRegisto !== 'object') {
 
 /** Os ficheiros que o manifesto promete, para o D2 saber o que é órfão. */
 const prometidos = new Set([MANIFESTO_REGISTOS]);
-/** As exceções do D5, nomeadas no relatório e nunca em silêncio. */
-const d5Excecoes = [];
+/** Uma linha de relatório por registo, com o veredicto do D5 na cauda. */
+const linhasDosRegistos = [];
 let d5Correu = 0;
+let d5NaoCorre = 0;
 
 for (const [chave, e] of Object.entries(entradasDoRegisto)) {
   const corte = chave.lastIndexOf('/');
@@ -378,12 +379,15 @@ for (const [chave, e] of Object.entries(entradasDoRegisto)) {
      alguém sabe porque não são. Sem isto, o motor republica um `.html`, o sítio
      recebe os bytes novos e o registo fica velho em silêncio. */
   const documento = porChave.get(chave);
+  let veredictoD5;
   if (!documento) {
     err(
       `D5 ${onde}: não há linha nenhuma para "${chave}" em studies-src/manifest.yml. Um ` +
         `registo de conteúdo de um documento que este sítio não aloja é uma página de ` +
         `leitura sem o documento de que é leitura.`,
     );
+    veredictoD5 = 'o D5 não pôde correr: o sítio não aloja este documento';
+    d5NaoCorre += 1;
   } else if (documento.origin === 'researchhub') {
     if (e.edicao_html_sha256 !== documento.sha256_normalized) {
       err(
@@ -393,15 +397,23 @@ for (const [chave, e] of Object.entries(entradasDoRegisto)) {
           `      Ou o motor republicou o .html e o registo ficou velho, ou o contrário. O\n` +
           `      remédio está em publisher/REGISTOS.md, «O ciclo de re-travessia».`,
       );
+      veredictoD5 = 'o D5 correu e NÃO bateu';
     } else {
-      d5Correu += 1;
+      veredictoD5 = 'o D5 correu e bate';
     }
+    d5Correu += 1;
   } else {
-    d5Excecoes.push(
-      `"${chave}": o D5 não corre: os bytes alojados são um artefacto do claude.ai e a ` +
-        `edição que o motor prova é «${e.edicao_html}», que o sítio não aloja (DECISIONS §1.64)`,
-    );
+    /* A exceção dita por extenso, e a cada construção. Um campo enterrado num
+       manifesto é uma nota de rodapé; dito aqui, é uma coisa que quem constrói
+       vê e pode ir conferir. */
+    veredictoD5 =
+      `o D5 não corre: os bytes alojados são um artefacto do claude.ai e a edição que o ` +
+      `motor prova é «${e.edicao_html}», que o sítio não aloja (DECISIONS §1.64)`;
+    d5NaoCorre += 1;
   }
+  linhasDosRegistos.push(
+    `"${chave}" · ${e.blocos} bloco(s) · ${e.referencias} referência(s) · ${veredictoD5}`,
+  );
 
   /* D6 — o manifesto promete contagens, e as contagens recontam-se aqui. Um
      manifesto que promete 326 referências sobre um registo com 325 é um
@@ -562,10 +574,10 @@ const nRegistos = Object.keys(entradasDoRegisto).length;
 console.log(
   cinza(
     `  registos de conteúdo · ${nRegistos} atravessado(s) · ` +
-      `D5 correu em ${d5Correu} e não corre em ${d5Excecoes.length}`,
+      `D5 correu em ${d5Correu} e não corre em ${d5NaoCorre}`,
   ),
 );
-for (const excecao of d5Excecoes) console.log(cinza(`    · ${excecao}`));
+for (const linha of linhasDosRegistos) console.log(cinza(`    · ${linha}`));
 if (comOrigem) {
   console.log(
     cinza(
