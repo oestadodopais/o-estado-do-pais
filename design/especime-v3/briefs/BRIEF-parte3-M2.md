@@ -19,6 +19,10 @@ A mesma medição da M1 (`BRIEF-parte3-M1.md`, que lês inteiro e segues), agora
 
 As doze medições da M1, por edição, com a tabela por edição e a soma das oito.
 
+## 1b · Uma regra mudou depois da M1, e a medição 6 segue-a
+
+Uma figura **sem** linha do sítio que está **dentro de uma ligação do próprio documento** já não fica sem porta própria: leva, **imediatamente depois da ligação**, uma âncora `<a class="texto-figura-porta-apos" href="#linha-<row>">` sem texto (o glifo é da folha), uma por figura sem linha do sítio que a ligação contém, pela ordem das figuras. Uma figura **com** linha do sítio dentro de uma ligação leva o selo depois da ligação, como antes. Na medição 6, «figura sem linha com porta» passa a exigir uma destas duas formas: a própria figura é a âncora (fora de ligações), ou a âncora vem a seguir à ligação que a contém; a forma antiga (só a entrada em «As linhas deste documento») conta como **sem porta** e é discordância.
+
 ## 2 · As três medições novas
 
 13. **A prova do sítio:** `dist/prova.json` (na cópia congelada) tem as oito chaves `registos_*`; compara cada uma com a tua própria soma sobre as oito edições: `registos_edicoes` (páginas de leitura que existem), `registos_blocos` (blocos), `registos_algarismos` (figuras), `registos_resolvidos` (figuras com `row` não vazia e com selo ou porta ou entrada), `registos_por_resolver` (as outras; tem de ser 0), `registos_com_linha_do_sitio` (figuras com selo certo), `registos_com_resumo_de_origem` (figuras cujo `source_sha256` tem 64 hexadecimais), `registos_sem_resumo_de_origem` (as outras, com motivo).
