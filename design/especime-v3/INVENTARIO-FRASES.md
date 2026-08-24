@@ -614,6 +614,46 @@ e por isso conteúdo.*
 | conteudo | € efetivamente pagos |
 | conteudo | € of gross value added by enterprises headquartered in the concelho |
 
+## `/estudos/<slug>/texto` · `/en/studies/<slug>/text` (parte 3, P2)
+
+*Oito rotas (seis edições portuguesas e duas inglesas), e **sete blocos
+distintos por edição**. É a rota mais magra do inventário, e é assim de
+propósito: **o corpo desta página é um documento, não a casa**. Os 829 blocos de
+prosa de estudo que ela rende não entram aqui porque não são frases da casa — a
+régua aprendeu a nona origem (`data-registo`, `data-registo-unidade`,
+`data-registo-linha`, `data-registo-conta`) antes de contar estas páginas, pela
+mesma razão que já sabia `data-verbatim` e `data-agenda`. **Medido**: sem essa
+lição, a contagem de frases de moldura do sítio saltava de 90 para 148 distintas
+e de 2 530 para 3 051 ocorrências, com resumos de origem, nomes de entidades e
+títulos de relatórios do Tribunal de Contas a contarem como moldura da casa; com
+ela, fica em 91 e 2 542, e o único acrescento é o par de portas «Ler o documento
+→ Ler no sítio →» da página do estudo.*
+
+*As sete são rótulos: um antetítulo não entra (a régua conta blocos de texto e o
+antetítulo é um `<span>`), os quatro campos de «As linhas deste documento»
+nomeiam campos, e os três títulos nomeiam secções. **Autorreferência: zero**,
+nas oito páginas e nas duas edições. As palavras da faixa das contagens («blocos
+· algarismos · com linha do livro-razão») também não entram, e a razão é a mesma
+das outras origens declaradas: a faixa está dentro de `data-registo-conta`, que o
+portão reconta do registo em disco.*
+
+| classe | texto |
+| --- | --- |
+| conteudo | As linhas deste documento |
+| conteudo | O documento original |
+| conteudo | O registo de conteúdo |
+| conteudo | The content record |
+| conteudo | The original document |
+| conteudo | The rows of this document |
+| conteudo | as this document prints it |
+| conteudo | como este documento o imprime |
+| conteudo | engine row |
+| conteudo | linha do motor |
+| conteudo | o valor como a linha o guarda |
+| conteudo | resumo de origem |
+| conteudo | source digest |
+| conteudo | the value as the row keeps it |
+
 ## A reclassificação de 21.08.2026 (direção): **limite dos dados**
 
 | frase | era | é | razão |

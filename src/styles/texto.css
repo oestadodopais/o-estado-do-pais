@@ -1,0 +1,296 @@
+/* =============================================================================
+ * A PÁGINA DE LEITURA · o documento composto do registo
+ * =============================================================================
+ * Folha da rota `texto`, importada por `TextoView.astro` e por mais lado
+ * nenhum. Entra depois de `site.css` no documento construído, e por isso o que
+ * aqui está com a mesma especificidade ganha.
+ *
+ * NENHUM LITERAL DE COR e nenhuma ficha que não seja já de `tokens.css`
+ * (`IDENTIDADE.md` §2, «não há acento novo»): um tipo de página novo não ganha
+ * uma cor. O que distingue o que é transcrito do que é da casa é a LETRA, que é
+ * a distinção da §1 e é o produto.
+ *
+ * A REGRA DA LETRA, LIDA PARA ESTE CASO (`IDENTIDADE.md` §1). Bitter é a marca
+ * de um valor com linha; numa página de leitura toda a figura do registo é um
+ * valor com linha — a do motor — e vai a Bitter tabular. Uma data, um ano ou um
+ * código que o registo não marca como figura fica na letra da frase, porque não
+ * é figura de linha nenhuma. Nenhuma cor, nem para uma nem para outra.
+ *
+ * O QUE NÃO SE REFORMATA, e é a regra que manda nesta folha: nada. O espaço dos
+ * milhares é o que o documento imprime, a vírgula decimal é a que ele imprime, e
+ * a folha não tem uma única regra que mude um carácter. Onde uma cadeia é longa
+ * de mais para a coluna, quebra-se (`overflow-wrap`), nunca se corta.
+ * ========================================================================== */
+
+/* -----------------------------------------------------------------------------
+ * 1 · A CABEÇA E A DISPOSIÇÃO B
+ * -------------------------------------------------------------------------- */
+.texto-cabeca {
+  padding-top: clamp(20px, 3vw, 34px);
+}
+
+/* Disposição B (`IDENTIDADE.md` §3): corpo a 68ch, coluna do aparelho a 300px.
+   É a mesma grelha da página de linha e da página de concelho, e por isso os
+   mesmos números: uma quarta disposição não se inventa. */
+.texto {
+  margin-top: clamp(18px, 2.4vw, 26px);
+  display: grid;
+  grid-template-columns: minmax(0, 68ch) 300px;
+  gap: clamp(24px, 4vw, 52px);
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .texto {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+}
+.texto-corpo {
+  display: grid;
+  gap: clamp(26px, 3.4vw, 38px);
+  min-width: 0;
+}
+/* O `min-width: 0` da coluna não chega: um item de grelha tem `min-width: auto`,
+   e uma cadeia que não parte levaria a coluna inteira com ela por cima do
+   aparelho. É a mesma linha que a página de linha já tem, pela mesma razão. */
+.texto-corpo > * {
+  min-width: 0;
+}
+
+/* -----------------------------------------------------------------------------
+ * 2 · O CORPO TRANSCRITO
+ * -------------------------------------------------------------------------- */
+.texto-artigo {
+  min-width: 0;
+}
+.texto-artigo > * + * {
+  margin-top: 1.1em;
+}
+.texto-artigo h1 {
+  margin-top: 12px;
+  font-size: clamp(30px, 3.6vw, 40px);
+  line-height: 1.14;
+  letter-spacing: -0.015em;
+}
+/* SEM FILETE NOSSO POR CIMA DE UM TÍTULO. O documento traz os seus filetes onde
+   os quer (`rule`, 10 no 04 pt), e quase todos vêm imediatamente antes de um
+   título de nível 2: um `border-top` aqui desenhava um segundo fio colado ao
+   primeiro. A página transcreve, e isso vale também para os fios. */
+.texto-artigo h2 {
+  margin-top: 1.9em;
+  font-size: clamp(21px, 2.2vw, 25px);
+  line-height: 1.24;
+}
+.texto-artigo h3 {
+  margin-top: 1.6em;
+  font-size: 18px;
+  line-height: 1.3;
+}
+.texto-artigo h4 {
+  margin-top: 1.4em;
+  font-size: 16px;
+  line-height: 1.35;
+}
+/* A escala da leitura da §1: 19px sobre 1,6, que é onde se lê a sério. */
+.texto-artigo p,
+.texto-artigo li {
+  font-family: var(--f-prosa);
+  font-size: 19px;
+  line-height: 1.6;
+}
+.texto-artigo hr {
+  margin: 2em 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+}
+.texto-lista {
+  padding-left: 1.2em;
+  display: grid;
+  gap: 0.5em;
+}
+.texto-lista li {
+  padding-left: 0.15em;
+}
+
+/* As ligações do documento. A etiqueta é a que o documento imprime, e as sete
+   ligações do 03 pt levam o próprio endereço por etiqueta (283 caracteres na
+   mais longa, medido): quebram, não se cortam. Cortar seria a página a decidir
+   o que o documento diz. */
+.texto-ligacao {
+  overflow-wrap: anywhere;
+}
+
+/* -----------------------------------------------------------------------------
+ * 3 · AS FIGURAS
+ * -----------------------------------------------------------------------------
+ * A classe chama-se `texto-figura` e não `figura` porque `.figura` já é a PEÇA
+ * do painel da primeira página (`site.css`), com moldura, enchimento e um
+ * algarismo a 52px. Uma figura do registo herdava a peça inteira dentro de uma
+ * célula de tabela, e a página lia-se como um painel de caixas. O nome não é o
+ * conteúdo: uma classe nova nasce com o prefixo da sua folha. */
+.texto-figura {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+/* A porta de uma figura sem linha do livro-razão: é uma ligação, e vê-se que é.
+   O sublinhado é o da casa; nenhuma cor, porque a cor é do limiar (§2). */
+.texto-figura-porta {
+  color: inherit;
+  text-decoration-color: var(--g2);
+  text-underline-offset: 0.16em;
+}
+.texto-figura-porta:hover,
+.texto-figura-porta:focus-visible {
+  text-decoration-color: var(--ink);
+}
+/* O selo colado à figura não se cola ao olho: o afastamento é da folha, e não
+   de um nó de texto no gabarito (o contrato da nona origem proíbe-o). */
+.texto-artigo .src-chip {
+  margin-left: 0.35em;
+}
+
+/* -----------------------------------------------------------------------------
+ * 4 · AS TABELAS
+ * -----------------------------------------------------------------------------
+ * A tabela é conteúdo e não instrumento: sem cor de estado, sem zebra, filetes
+ * de `--rule`. Rola dentro da sua caixa (`IDENTIDADE.md` §11, «os instrumentos
+ * rolam dentro da sua caixa, e não empurram a página»); a caixa é uma `<div>`
+ * que não é bloco para a leitura do olho. */
+.texto-tabela {
+  overflow-x: auto;
+}
+.texto-artigo table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+.texto-artigo th,
+.texto-artigo td {
+  padding: 7px 10px 7px 0;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  vertical-align: top;
+}
+.texto-artigo th {
+  font-weight: 600;
+  border-bottom-color: var(--rule-strong);
+}
+.texto-artigo table .texto-figura {
+  white-space: nowrap;
+}
+
+/* -----------------------------------------------------------------------------
+ * 5 · AS LINHAS DESTE DOCUMENTO
+ * -----------------------------------------------------------------------------
+ * Uma entrada por linha do motor citada, com quatro campos e mais nenhum, na
+ * forma de ficha do impresso oficial que a página de linha já usa: rótulo por
+ * cima, valor por baixo, um filete fino entre campos. Sem glifo de selo: os dois
+ * estados do selo são «origem completa» e «falta um campo», e uma linha que não
+ * é do livro-razão deste sítio não é nenhum dos dois. */
+.texto-linhas {
+  padding-top: 18px;
+  border-top: 1.5px solid var(--ink);
+}
+.texto-linhas-titulo {
+  font-family: var(--f-versal);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+}
+.texto-linhas-lista {
+  margin-top: 14px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0;
+}
+.texto-linha {
+  padding: 12px 0;
+  border-top: 1px solid var(--rule);
+}
+.texto-linha:first-child {
+  border-top: 0;
+}
+.texto-linha-campos {
+  margin: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 15em) minmax(0, 1fr);
+  gap: 2px 14px;
+}
+.texto-linha-campos dt {
+  font-family: var(--f-versal);
+  font-variant-numeric: normal;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  color: var(--muted);
+}
+.texto-linha-campos dd {
+  margin: 0;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+.texto-linha-campos dd code {
+  font-family: inherit;
+  font-size: inherit;
+}
+.texto-linha-porta {
+  margin-top: 6px;
+  font-size: 12.5px;
+}
+@media (max-width: 560px) {
+  .texto-linha-campos {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .texto-linha-campos dd {
+    margin-bottom: 6px;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+ * 6 · O APARELHO
+ * -------------------------------------------------------------------------- */
+.texto-faixa {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.texto-conta {
+  color: var(--ink);
+  font-weight: 600;
+}
+.texto-origem {
+  font-family: var(--f-instr);
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+/* -----------------------------------------------------------------------------
+ * 7 · MÓVEL
+ * -----------------------------------------------------------------------------
+ * Uma coisa por linha, a coluna do aparelho por baixo do corpo, e a 390px
+ * nenhuma página rola de lado: as tabelas rolam na sua caixa e as ligações do
+ * documento quebram. */
+@media (max-width: 560px) {
+  .texto-artigo p,
+  .texto-artigo li {
+    font-size: 17.5px;
+  }
+  .texto-artigo h1 {
+    font-size: 27px;
+  }
+}

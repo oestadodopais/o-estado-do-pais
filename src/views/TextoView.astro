@@ -1,0 +1,242 @@
+---
+/**
+ * A página de leitura de uma edição: o documento inteiro, composto no gabarito
+ * da casa a partir do registo de conteúdo do motor e de mais nada.
+ *
+ * NÃO É UMA COMPOSIÇÃO DA CASA, É UMA TRANSCRIÇÃO. A restrição que manda está
+ * medida na §0.3 do plano da parte 3: das 2 601 figuras das oito edições com
+ * registo, 2 396 não têm linha no livro-razão deste sítio, e das 196 que têm,
+ * 119 imprimem no documento uma cadeia diferente da que a linha guarda. Uma
+ * página que pusesse cada algarismo dentro de um `<Claim>` ou não teria `id`
+ * nenhum para lhe dar, ou imprimiria uma cadeia que o documento não imprime — e
+ * deixaria de ser o documento. Por isso cada algarismo entra pela nona origem,
+ * `data-registo`, que o portão compara com o `printed` da figura, carácter a
+ * carácter, contra um ficheiro que o D1 já prendeu por resumo.
+ *
+ * AS TRÊS SUPERFÍCIES DE UM ESTUDO, e cada uma diz o que é:
+ *
+ *   /estudos/<slug>            a página do observatório sobre o trabalho
+ *   /estudos/<slug>/texto      ESTA: o documento, composto do registo
+ *   /estudos/<slug>/documento  a edição de registo, byte a byte, com a faixa
+ *
+ * A DISPOSIÇÃO É A B (`IDENTIDADE.md` §3): corpo a 68ch, coluna do aparelho a
+ * 300px, a cabeça interior compacta e o rodapé das outras páginas interiores.
+ * Sem prancha nova: é a decisão 11 do diretor de 24.08.2026, e o que a página
+ * herda são as peças que a v3 já fixou, medidas contra a constituição.
+ *
+ * A EMENDA 15 APLICA-SE À MOBÍLIA, e o corpo transcrito é o documento: nenhuma
+ * frase desta página fala do método, da verificação, da honestidade ou da
+ * cobertura. Os rótulos nomeiam o que a coisa é.
+ *
+ * `noindex` E FORA DO MAPA DO SÍTIO nesta sessão, por contrato da sessão: as
+ * páginas ficam visíveis nos seus endereços, e a decisão de as indexar é da
+ * sessão de UX. Ver `astro.config.mjs`.
+ */
+import Base from '../layouts/Base.astro';
+import Provenance from '../components/Provenance.astro';
+import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
+import { workById } from '../data/studies.mjs';
+import { registoDaEdicao, manifestoDosRegistos, temRegisto } from '../lib/registos.mjs';
+import { pecasDoCorpo, linhasDoDocumento, contasDoRegisto } from '../lib/registo-html.mjs';
+import { linhaDoSitioDoEstudo } from '../lib/cruzamento.mjs';
+import { caminhoDaLinha } from '../lib/livro.mjs';
+import { routePath, HREFLANG, LANGS, PRIMARY_LANG } from '../lib/routes.mjs';
+import { canonicalUrl, SITE_NAME, SITE_URL } from '../../site.config.mjs';
+import { t } from '../i18n/strings.mjs';
+
+import '../styles/texto.css';
+
+const { lang = 'pt', slug } = Astro.props;
+const s = t(lang);
+
+const work = workById(slug);
+if (!work) throw new Error(`texto: estudo desconhecido: "${slug}"`);
+
+const registo = registoDaEdicao(slug, lang);
+if (!registo) {
+  throw new Error(
+    `texto: não há registo de conteúdo para "${slug}/${lang}". Esta rota só existe para as ` +
+      `edições que o registo de travessia declara (registos/manifest.json).`,
+  );
+}
+const entrada = manifestoDosRegistos().registos[`${slug}/${lang}`];
+const chave = `${slug}/${lang}`;
+const path = routePath('texto', lang, { slug });
+
+/* Que linha do motor tem linha no livro-razão deste sítio. A resposta sai do
+   registo de travessia das linhas (`ledger/cruzamentos/`), e é o `rh_study` do
+   manifesto dos registos que diz de que estudo do motor esta edição é. */
+const linhaDoSitio = linhaDoSitioDoEstudo(entrada.rh_study);
+
+const pecas = pecasDoCorpo({ registo, chave, linhaDoSitio });
+const linhas = linhasDoDocumento(registo, chave, linhaDoSitio);
+const contas = contasDoRegisto(registo, chave, linhaDoSitio);
+
+/* O título do documento é o bloco 0 do registo, que é o seu título de nível 1.
+   O `<title>` da página é esse texto mais o nome do sítio; a descrição é a do
+   trabalho, que já é prosa aprovada. */
+const tituloDoDocumento = registo.blocks[0]?.text ?? '';
+
+const documentoPath = routePath('documento', lang, { slug });
+const estudoPath = routePath('estudo', lang, { slug });
+
+/**
+ * A PRIMEIRA ROTA DO SÍTIO QUE NÃO EXISTE SEMPRE NAS DUAS EDIÇÕES.
+ *
+ * Há registo de conteúdo para seis edições portuguesas e duas inglesas; onde
+ * não há registo não há página, e um par hreflang para uma página que não foi
+ * construída é uma porta que não abre. Por isso as alternativas desta página
+ * são as línguas que TÊM registo, e o comando de língua leva à irmã quando ela
+ * existe e à página do estudo na outra edição quando não existe, que é a coisa
+ * mais próxima que existe nessa língua.
+ */
+const linguasComTexto = LANGS.filter((l) => temRegisto(slug, l));
+const alternativas = linguasComTexto.map((l) => ({
+  lang: l,
+  hreflang: HREFLANG[l],
+  path: routePath('texto', l, { slug }),
+}));
+const primaria = alternativas.find((a) => a.lang === PRIMARY_LANG);
+if (primaria) alternativas.push({ ...primaria, hreflang: 'x-default' });
+
+const outraLingua = LANGS.find((l) => l !== lang);
+const caminhoDaOutraLingua = temRegisto(slug, outraLingua)
+  ? routePath('texto', outraLingua, { slug })
+  : routePath('estudo', outraLingua, { slug });
+
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: tituloDoDocumento,
+  inLanguage: lang === 'pt' ? 'pt-PT' : 'en',
+  url: canonicalUrl(path),
+  isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+  publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+};
+
+/** A marca de uma das três contagens da faixa. */
+const conta = (nome) => `${chave}=${nome}`;
+---
+
+<Base
+  lang={lang}
+  path={path}
+  title={`${tituloDoDocumento} · ${SITE_NAME}`}
+  description={work.description[lang]}
+  jsonld={jsonld}
+  noindex={true}
+  portaNoRodape={false}
+  alternativas={alternativas}
+  caminhoDaOutraLingua={caminhoDaOutraLingua}
+>
+  <div class="texto-cabeca">
+    <span class="eyebrow">{s.estudos.textoEyebrow}</span>
+  </div>
+
+  <div class="texto">
+    <div class="texto-corpo">
+      {/* ================================================= o documento inteiro
+          Exatamente os blocos do registo, na ordem do registo, e mais nada. As
+          peças vêm de `registo-html.mjs`, que é puro; o selo é sempre o
+          componente `<Provenance>` e nunca uma cópia do seu markup, e entra
+          colado à figura, sem um nó de texto de nenhum dos lados. */}
+      <article id="documento" class="texto-artigo" data-registo-edicao={chave}>
+        {
+          pecas.map((peca) =>
+            peca.selo !== undefined ? (
+              <Provenance id={peca.selo} lang={lang} />
+            ) : (
+              <Fragment set:html={peca.html} />
+            ),
+          )
+        }
+      </article>
+
+      {/* ============================================ as linhas deste documento
+          Uma entrada por linha do motor citada, na ordem da primeira citação,
+          com quatro campos e mais nenhum. É a porta das figuras que não têm
+          linha no livro-razão deste sítio: pôr-lhes um selo seria prometer uma
+          linha que não existe (`IDENTIDADE.md` §10), e a porta é a saída que a
+          mesma secção já prescreve. */}
+      <section id="linhas-do-documento" class="texto-linhas" aria-labelledby="linhas-do-documento-k">
+        <h2 id="linhas-do-documento-k" class="texto-linhas-titulo">{s.estudos.textoLinhasK}</h2>
+        <ul class="texto-linhas-lista">
+          {
+            linhas.map((linha) => (
+              <li class="texto-linha" id={`linha-${linha.row}`}>
+                <dl class="texto-linha-campos">
+                  <dt>{s.estudos.textoLinhaK}</dt>
+                  <dd>
+                    <code data-nonledger="identificador-tecnico">{linha.row}</code>
+                  </dd>
+                  <dt>{s.estudos.textoValorK}</dt>
+                  <dd data-registo-linha={`${chave}@${linha.row}.valor`}>{linha.valor}</dd>
+                  <dt>{s.estudos.textoImpressoK}</dt>
+                  <dd data-registo-linha={`${chave}@${linha.row}.impresso`}>{linha.impresso}</dd>
+                  <dt>{s.estudos.textoOrigemK}</dt>
+                  <dd
+                    class="texto-linha-origem"
+                    data-registo-linha={`${chave}@${linha.row}.origem`}
+                  >
+                    {linha.origem}
+                  </dd>
+                </dl>
+                {linha.siteId && (
+                  <p class="texto-linha-porta">
+                    <a href={caminhoDaLinha(linha.siteId, lang)}>{s.estudos.textoLinhaDoLivro} →</a>
+                  </p>
+                )}
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </div>
+
+    {/* ==================================================== o aparelho, a 300px */}
+    <aside class="aparelho" aria-labelledby="aparelho">
+      <div class="aparelho-bloco">
+        <h2 class="aparelho-titulo" id="aparelho">{s.estudos.documentoK}</h2>
+        <p>
+          <a class="ligacao-dados" href={documentoPath}>{s.estudos.documentoLink} →</a>
+        </p>
+      </div>
+
+      {/* A faixa das contagens: recontadas pelo portão, nunca escritas
+          (`IDENTIDADE.md` §10), e cada uma com a sua porta, que é a âncora da
+          secção desta página onde se vê o que ela conta. */}
+      <p class="texto-faixa">
+        <a class="texto-conta" href="#documento" data-registo-conta={conta('blocos')}>
+          {contas.blocos}
+        </a>{' '}
+        {s.estudos.textoContaBlocos} ·{' '}
+        <a class="texto-conta" href="#linhas-do-documento" data-registo-conta={conta('algarismos')}>
+          {contas.algarismos}
+        </a>{' '}
+        {s.estudos.textoContaAlgarismos} ·{' '}
+        <a
+          class="texto-conta"
+          href="#linhas-do-documento"
+          data-registo-conta={conta('com_linha_do_sitio')}
+        >
+          {contas.com_linha_do_sitio}
+        </a>{' '}
+        {s.estudos.textoContaComLinha}
+      </p>
+
+      <div class="aparelho-bloco">
+        <h2 class="aparelho-titulo">{s.estudos.textoRegistoK}</h2>
+        <p class="texto-origem" data-nonledger="identificador-tecnico">{entrada.origin_ref}</p>
+        <p class="texto-origem" data-nonledger="identificador-tecnico">
+          {entrada.exported_record_sha256}
+        </p>
+      </div>
+
+      <PortaDeCorreccoes lang={lang} class="aparelho-bloco" />
+
+      <p class="rodape-nav aparelho-saidas">
+        <a href={estudoPath}>{s.estudos.documentoVoltar}</a>
+      </p>
+    </aside>
+  </div>
+</Base>

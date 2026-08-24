@@ -100,8 +100,21 @@ const SECCIONADORES = new Set(['section', 'article', 'aside', 'details', 'main',
  * são comparáveis entre si e com mais nada.
  */
 const BLOCOS = 'p,li,dd,dt,h1,h2,h3,h4,figcaption,summary,blockquote,td,th,caption';
+/**
+ * `data-registo*` entrou a 24.08.2026 com as páginas de leitura, e pela mesma
+ * razão de todas as outras: **um documento transcrito não é a casa a falar**.
+ * O corpo de uma página de leitura são os blocos de um documento fixado, com
+ * cada algarismo comparado carácter a carácter com o registo de conteúdo do
+ * motor; contá-los como frases da casa mediria a coisa errada, e faria a
+ * contagem de moldura saltar 829 blocos de prosa de estudo de uma vez. As
+ * quatro marcas entram juntas porque as quatro são a mesma origem, vista em
+ * quatro sítios: o corpo (`data-registo-unidade` e `data-registo`), as linhas
+ * do documento (`data-registo-linha`) e a faixa (`data-registo-conta`). Quem
+ * comparar duas construções tem de correr esta régua nas duas.
+ */
 const ORIGEM_DECLARADA =
-  '[data-claim],[data-linha-claim],[data-correcao-claim],[data-verbatim],[data-nonledger],[data-agenda]';
+  '[data-claim],[data-linha-claim],[data-correcao-claim],[data-verbatim],[data-nonledger],' +
+  '[data-agenda],[data-registo],[data-registo-unidade],[data-registo-linha],[data-registo-conta]';
 
 function blocosDe(root) {
   const out = [];
@@ -244,6 +257,11 @@ const ROTAS_DO_INVENTARIO = new Set([
   'agenda',
   'estudos',
   'estudo',
+  /* `/estudos/<slug>/texto` entra na P2 da parte 3, que é a etapa que a
+     constrói. A rota é uma página do leitor como as outras, e a sua
+     autorreferência vai a zero: o que ela mostra é um documento, e a mobília à
+     volta dele nomeia o que a coisa é. */
+  'texto',
 ]);
 
 /**
