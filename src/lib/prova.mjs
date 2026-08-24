@@ -51,6 +51,8 @@ import {
 } from './ledger.mjs';
 import { ROUTES, routePath } from './routes.mjs';
 import { estadoDaMedida } from './estado.mjs';
+import { todosOsRegistos, registoDaEdicao } from './registos.mjs';
+import { unidadesDoBloco, MOTIVOS_SEM_RESUMO } from './registo-html.mjs';
 import { FIGURAS_PDM, FIGURAS_SOCIAL } from '../data/figuras.mjs';
 import { WORKS, EDITIONS } from '../data/studies.mjs';
 import { temLeitura } from '../data/leituras.mjs';
@@ -146,19 +148,102 @@ export function agenda() {
   }
 }
 
-/** As linhas que atravessaram do motor, contadas no registo da travessia. */
+/**
+ * As linhas que atravessaram do motor, contadas no registo da travessia.
+ *
+ * Devolve também o mapa `"<rh_study> <rh_id>" → <id da linha do sítio>`, que é a
+ * mesma leitura ao contrário: é por ele que uma figura de um registo de conteúdo
+ * sabe se tem linha neste livro-razão. Uma leitura só para as duas perguntas,
+ * porque são o mesmo ficheiro e a segunda passagem só podia divergir da
+ * primeira.
+ */
 function linhasCruzadas() {
   const dir = path.join(RAIZ, 'ledger', 'cruzamentos');
   let total = 0;
   let ficheiros = 0;
-  if (!fs.existsSync(dir)) return { total, ficheiros };
+  const doMotor = new Map();
+  if (!fs.existsSync(dir)) return { total, ficheiros, doMotor };
   for (const f of fs.readdirSync(dir)) {
     if (!f.endsWith('.json')) continue;
     const manifesto = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
+    for (const [siteId, linha] of Object.entries(manifesto?.rows ?? {})) {
+      if (linha?.rh_study && linha?.rh_id) doMotor.set(`${linha.rh_study} ${linha.rh_id}`, siteId);
+    }
     total += Object.keys(manifesto?.rows ?? {}).length;
     ficheiros++;
   }
-  return { total, ficheiros };
+  return { total, ficheiros, doMotor };
+}
+
+/** Um resumo de origem: 64 hexadecimais minúsculos, e mais nada. */
+const RESUMO_DE_ORIGEM = /^[0-9a-f]{64}$/;
+
+/**
+ * ---------------------------------------------------------------------------
+ * OS REGISTOS DE CONTEÚDO, CONTADOS UMA VEZ POR CONSTRUÇÃO
+ * ---------------------------------------------------------------------------
+ *
+ * As oito chaves `registos_*` são **totais do sítio**, e não contagens por
+ * edição: a faixa de cada página de leitura já conta a sua edição, com a sua
+ * marca `data-registo-conta` e a recontagem do portão contra o registo em disco
+ * (`DECISIONS.md` §1.64, P2). Aqui conta-se o sítio inteiro.
+ *
+ * A leitura é a de `src/lib/registos.mjs` e a estrutura de um bloco é a de
+ * `src/lib/registo-html.mjs`: as duas são o lado das páginas, e uma terceira
+ * cópia da mesma travessia só podia sair de passo com o que a página rende. O
+ * PORTÃO é que não passa por aqui — reconta as oito por conta própria, quatro
+ * sobre o `dist/` construído e quatro numa segunda leitura destes mesmos
+ * ficheiros, e isso está declarado chave a chave em `scripts/gate-html.mjs`.
+ *
+ * Memoizado porque `prova()` é chamada uma vez por página construída: sem isto,
+ * os oito registos (1,4 MB) eram lidos e analisados trezentas e quarenta vezes.
+ */
+let CONTAS_DOS_REGISTOS = null;
+function contagensDosRegistos(doMotor) {
+  if (CONTAS_DOS_REGISTOS) return CONTAS_DOS_REGISTOS;
+  const c = {
+    edicoes: 0,
+    blocos: 0,
+    algarismos: 0,
+    resolvidos: 0,
+    por_resolver: 0,
+    com_linha_do_sitio: 0,
+    com_resumo_de_origem: 0,
+    sem_resumo_de_origem: 0,
+    motivos: {},
+  };
+  for (const motivo of MOTIVOS_SEM_RESUMO) c.motivos[motivo] = 0;
+  for (const { slug, lang, entrada } of todosOsRegistos()) {
+    const registo = registoDaEdicao(slug, lang);
+    if (!registo) continue;
+    c.edicoes++;
+    c.blocos += registo.blocks.length;
+    for (const bloco of registo.blocks) {
+      for (const { unidade } of unidadesDoBloco(bloco)) {
+        for (const figura of unidade.figures ?? []) {
+          c.algarismos++;
+          if (figura.row) {
+            c.resolvidos++;
+            if (doMotor.has(`${entrada.rh_study} ${figura.row}`)) c.com_linha_do_sitio++;
+          } else {
+            c.por_resolver++;
+          }
+          if (RESUMO_DE_ORIGEM.test(String(figura.source_sha256 ?? ''))) {
+            c.com_resumo_de_origem++;
+          } else if (MOTIVOS_SEM_RESUMO.has(figura.source_digest_kind)) {
+            c.sem_resumo_de_origem++;
+            c.motivos[figura.source_digest_kind]++;
+          }
+          /* Uma figura sem resumo E sem motivo da lista fechada não entra em
+             nenhuma das duas contagens, e é de propósito: a soma das duas
+             deixa de dar o total, que é o sinal. Quem a nomeia, com a edição e
+             a coordenada, é o `scripts/check-cadeia.mjs`, no passo 1. */
+        }
+      }
+    }
+  }
+  CONTAS_DOS_REGISTOS = c;
+  return c;
 }
 
 /**
@@ -319,6 +404,38 @@ const FRASES = {
     pt: 'o endereço para onde se escreve, numa origem só',
     en: 'the address to write to, from a single source',
   },
+  registos_edicoes: {
+    pt: 'edições com registo de conteúdo atravessado do motor',
+    en: 'editions with a content record crossed from the engine',
+  },
+  registos_blocos: {
+    pt: 'blocos de texto nos registos de conteúdo, um por elemento do documento',
+    en: 'text blocks in the content records, one per document element',
+  },
+  registos_algarismos: {
+    pt: 'figuras assinaladas nos registos de conteúdo, uma por algarismo transcrito',
+    en: 'figures marked in the content records, one per transcribed number',
+  },
+  registos_resolvidos: {
+    pt: 'figuras com linha do motor que as resolve',
+    en: 'figures with an engine row that resolves them',
+  },
+  registos_por_resolver: {
+    pt: 'figuras sem linha do motor nenhuma',
+    en: 'figures with no engine row at all',
+  },
+  registos_com_linha_do_sitio: {
+    pt: 'figuras que também têm linha no livro-razão deste sítio',
+    en: 'figures that also have a row in this site ledger',
+  },
+  registos_com_resumo_de_origem: {
+    pt: 'figuras cuja linha traz o resumo de 64 hexadecimais do documento de origem',
+    en: 'figures whose row carries the 64 hex digest of the source document',
+  },
+  registos_sem_resumo_de_origem: {
+    pt: 'figuras cuja linha traz, em vez do resumo, um motivo da lista fechada do motor',
+    en: 'figures whose row carries, instead of the digest, a reason from the engine closed list',
+  },
 };
 
 /**
@@ -337,6 +454,7 @@ export function prova(lang = 'pt') {
     Array.isArray(c.verifications) ? c.verifications : [],
   );
   const cruzadas = linhasCruzadas();
+  const registos = contagensDosRegistos(cruzadas.doMotor);
   const verificacao = estadoDaVerificacao();
   const ag = agenda();
 
@@ -507,6 +625,45 @@ export function prova(lang = 'pt') {
       ancora(routePath('correcoes', lang), 'registo'),
     ),
     endereco_correcoes: k('endereco_correcoes', ENDERECO_CORRECOES, routePath('correcoes', lang)),
+
+    /* ---- os registos de conteúdo do motor (parte 3, P3) ----
+       Oito totais do sítio sobre a matéria-prima das páginas de leitura. A
+       porta é o arquivo, que é de onde cada leitura se abre: não há hoje
+       nenhuma página que os renda, e por isso nenhuma frase do Método os cita.
+       Acrescentar um rótulo à prova de uma regra é uma edição de `metodo.mjs`,
+       que é texto governado, e essa é decisão do diretor. Ver §1.64, P3.
+
+       As duas últimas não somam necessariamente `registos_algarismos`: uma
+       figura sem resumo e sem motivo da lista fechada não entra em nenhuma, e
+       é o `check:cadeia` que a nomeia. */
+    registos_edicoes: k('registos_edicoes', registos.edicoes, routePath('estudos', lang)),
+    registos_blocos: k('registos_blocos', registos.blocos, routePath('estudos', lang)),
+    registos_algarismos: k('registos_algarismos', registos.algarismos, routePath('estudos', lang)),
+    registos_resolvidos: k('registos_resolvidos', registos.resolvidos, routePath('estudos', lang)),
+    registos_por_resolver: k(
+      'registos_por_resolver',
+      registos.por_resolver,
+      routePath('estudos', lang),
+    ),
+    registos_com_linha_do_sitio: k(
+      'registos_com_linha_do_sitio',
+      registos.com_linha_do_sitio,
+      routePath('estudos', lang),
+    ),
+    registos_com_resumo_de_origem: k(
+      'registos_com_resumo_de_origem',
+      registos.com_resumo_de_origem,
+      routePath('estudos', lang),
+    ),
+    registos_sem_resumo_de_origem: k(
+      'registos_sem_resumo_de_origem',
+      registos.sem_resumo_de_origem,
+      routePath('estudos', lang),
+      /* Os motivos, um a um: sem o detalhe, «2 091 sem resumo» lê-se como uma
+         falha de proveniência, e o que ela é são cinco razões declaradas pelo
+         motor, cada uma com o seu nome. */
+      { detalhe: { ...registos.motivos } },
+    ),
 
     /* ---- a agenda: existe quando o ficheiro existe, e não antes ---- */
     agenda_total: k('agenda', ag ? ag.total : null, portaDaAgenda(lang)),

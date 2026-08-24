@@ -155,7 +155,18 @@ const PATTERNS = (allow.patterns ?? []).map((p) => ({
  * caminho. Uma frase que não esteja em `verbatim.mjs` continua a fechar o
  * portão.
  */
-const DIR_DOS_REGISTOS = path.join(ROOT, 'registos');
+/**
+ * A pasta dos registos de conteúdo, com a mesma convenção de
+ * `src/lib/registos.mjs`: `OEDP_REGISTOS_DIR` aponta para outra pasta.
+ *
+ * Existe para uma coisa só, e é a que a regra 14 exige: **plantar um estrago
+ * num registo sem tocar num byte de `registos/`**. Uma figura com a linha do
+ * motor apagada, ou com o resumo de origem tirado, escreve-se numa CÓPIA da
+ * pasta, e o portão e o `check:cadeia` leem-na com esta variável. Sem ela, a
+ * única maneira de provar essas duas conferências era editar o que o motor
+ * atravessou, que é a coisa que a P1 fechou por resumo.
+ */
+const DIR_DOS_REGISTOS = process.env.OEDP_REGISTOS_DIR ?? path.join(ROOT, 'registos');
 
 /** O separador de uma lista numa cadeia só. O portão tem a sua própria cópia. */
 const SEPARADOR_DO_REGISTO = ' · ';
@@ -356,6 +367,35 @@ for (const r of restantesCru.restantes ?? []) {
 let ocorrenciasRestantes = 0;
 /** Quantas páginas de leitura o varrimento viu. Entra no relatório do portão. */
 let paginasDeTexto = 0;
+
+/**
+ * ---------------------------------------------------------------------------
+ * AS MARCAS DAS PÁGINAS DE LEITURA, CONTADAS NO `dist/` E MAIS NADA
+ * ---------------------------------------------------------------------------
+ *
+ * Quatro das oito chaves `registos_*` contam-se aqui, sobre o que foi
+ * construído: as páginas de leitura que existem, as marcas
+ * `data-registo-bloco`, as marcas `data-registo` e os selos colados às figuras.
+ *
+ * **Não é o passeio do `verificaTexto()`, e é de propósito.** Aquele percorre o
+ * registo e vai buscar à página o que o registo diz que lá deve estar; este
+ * conta o que a página TEM, sem perguntar ao registo. Se fossem o mesmo
+ * passeio, um erro nele contava-se a si próprio, e a comparação com
+ * `src/lib/prova.mjs` deixava de ser entre dois pontos de observação.
+ */
+const MARCAS_DO_TEXTO = { paginas: 0, blocos: 0, figuras: 0, selos: 0 };
+
+function contaAsMarcasDoTexto(root) {
+  const artigo = root.querySelector('[data-registo-edicao]');
+  if (!artigo) return;
+  MARCAS_DO_TEXTO.paginas++;
+  MARCAS_DO_TEXTO.blocos += artigo.querySelectorAll('[data-registo-bloco]').length;
+  MARCAS_DO_TEXTO.figuras += artigo.querySelectorAll('[data-registo]').length;
+  /* Dentro do corpo transcrito o selo é a única mobília com texto, e vai
+     sempre ao lado de uma figura com linha do sítio (o L6 confere-o um a um);
+     contá-los é contar essas figuras, sem lhes perguntar a linha. */
+  MARCAS_DO_TEXTO.selos += artigo.querySelectorAll('a.src-chip').length;
+}
 
 /* ------------------------------------------------------------------ auxiliares */
 
@@ -955,7 +995,7 @@ const eSelo = (n) =>
   String(n.rawTagName ?? '').toLowerCase() === 'a' &&
   String(n.getAttribute('class') ?? '').split(/\s+/).includes('src-chip');
 
-function verificaTexto({ rota, rel, root, err }) {
+function verificaTexto({ rota, root, err }) {
   const { slug } = rota.params;
   const lang = rota.lang;
   const chave = `${slug}/${lang}`;
@@ -2357,6 +2397,15 @@ function provaDaOrtografia() {
  *   'ledger'   segunda leitura dos mesmos ficheiros do livro-razão. Apanha um
  *              erro de qualquer um dos dois lados; não apanha um livro-razão
  *              errado, que é trabalho da verificação contra a fonte.
+ *   'registos' segunda leitura dos ficheiros de `registos/`, com o leitor deste
+ *              portão. A mesma força da vista `ledger`, sobre a outra pasta que
+ *              atravessa do motor: apanha um erro de qualquer um dos dois lados
+ *              e não apanha um registo errado, que é o que o D1 prende por
+ *              resumo. Entrou a 24.08.2026 com as oito chaves `registos_*`
+ *              (parte 3, P3): os resumos de origem de uma figura não existem no
+ *              `dist/` — a página transcreve o documento, não a proveniência de
+ *              cada linha do motor — e por isso não há segundo ponto de
+ *              observação para eles.
  *   'modulo'   o mesmo módulo dos dois lados (a data da verificação, o endereço
  *              das correções). A conta é a mesma; o que fica conferido é que a
  *              página rendeu o que o módulo diz, e mais nada.
@@ -2401,6 +2450,34 @@ function contasDoPortao(claims) {
       if (!f.endsWith('.json')) continue;
       const manifesto = JSON.parse(fs.readFileSync(path.join(dirCruzamentos, f), 'utf8'));
       cruzadas += Object.keys(manifesto?.rows ?? {}).length;
+    }
+  }
+
+  /**
+   * OS REGISTOS DE CONTEÚDO, LIDOS OUTRA VEZ COM O LEITOR DESTE PORTÃO.
+   *
+   * Quatro das oito chaves `registos_*` não têm segundo ponto de observação: o
+   * resumo de origem de uma figura, e a linha do motor que a resolve, não estão
+   * no `dist/` — a página de leitura transcreve o DOCUMENTO, e a proveniência de
+   * cada linha do motor vive no registo. Estas quatro são por isso uma segunda
+   * implementação sobre os mesmos ficheiros, com a vista `registos`, que é a
+   * mesma disciplina (e a mesma força) da vista `ledger`.
+   *
+   * As outras quatro contam-se no `dist/`, em `contaAsMarcasDoTexto()`.
+   */
+  const dosRegistos = { resolvidos: 0, por_resolver: 0, com_resumo: 0, sem_resumo: 0 };
+  for (const chave of Object.keys(TRAVESSIA_DOS_REGISTOS ?? {})) {
+    const corte = chave.lastIndexOf('/');
+    const registo = registoDoPortao(chave.slice(0, corte), chave.slice(corte + 1));
+    for (const bloco of registo?.blocks ?? []) {
+      for (const { unidade } of unidadesDoRegisto(bloco)) {
+        for (const figura of unidade.figures ?? []) {
+          if (figura.row) dosRegistos.resolvidos++;
+          else dosRegistos.por_resolver++;
+          if (/^[0-9a-f]{64}$/.test(String(figura.source_sha256 ?? ''))) dosRegistos.com_resumo++;
+          else if (MOTIVOS_DO_REGISTO.has(figura.source_digest_kind)) dosRegistos.sem_resumo++;
+        }
+      }
     }
   }
 
@@ -2567,6 +2644,20 @@ function contasDoPortao(claims) {
     conta('atualizacoes', porNatureza.atualizacao, 'ledger'),
     conta('revisoes_de_proveniencia', porNatureza.proveniencia, 'ledger'),
     conta('endereco_correcoes', ENDERECO_CORRECOES, 'modulo'),
+    /* AS OITO CHAVES DOS REGISTOS DE CONTEÚDO (parte 3, P3).
+       Quatro sobre o `dist/` construído e quatro numa segunda leitura dos
+       ficheiros de `registos/`. Nenhuma página as rende hoje: o que a
+       comparação A confere é que as duas contas da mesma coisa dão o mesmo
+       número, e a comparação B fica sem trabalho até haver um `data-prova` para
+       elas. Ver `DECISIONS.md` §1.64, P3. */
+    conta('registos_edicoes', MARCAS_DO_TEXTO.paginas, 'dist'),
+    conta('registos_blocos', MARCAS_DO_TEXTO.blocos, 'dist'),
+    conta('registos_algarismos', MARCAS_DO_TEXTO.figuras, 'dist'),
+    conta('registos_resolvidos', dosRegistos.resolvidos, 'registos'),
+    conta('registos_por_resolver', dosRegistos.por_resolver, 'registos'),
+    conta('registos_com_linha_do_sitio', MARCAS_DO_TEXTO.selos, 'dist'),
+    conta('registos_com_resumo_de_origem', dosRegistos.com_resumo, 'registos'),
+    conta('registos_sem_resumo_de_origem', dosRegistos.sem_resumo, 'registos'),
     conta('agenda_total', agendaTotal, 'dist'),
     conta('agenda_em_curso', porEstadoDaAgenda('em_curso'), 'dist'),
     conta('agenda_a_seguir', porEstadoDaAgenda('a_seguir'), 'dist'),
@@ -2749,7 +2840,8 @@ for (const file of ficheirosHtml(DIST)) {
      nossa: continua a ser varrida por inteiro a seguir. */
   if (rota?.key === 'texto') {
     paginasDeTexto++;
-    verificaTexto({ rota, rel, root, err });
+    contaAsMarcasDoTexto(root);
+    verificaTexto({ rota, root, err });
   }
 
   /* As páginas do próprio livro-razão: o índice e a página de cada linha. */
@@ -5250,8 +5342,9 @@ const documentoDaProva = {
     'A prova desta construção. FICHEIRO GERADO por scripts/gate-html.mjs, no fim',
     'de um varrimento sem erros. Cada chave de `prova` traz o valor e a vista de',
     'onde o portão a recontou: dist (o que foi construído), ledger (segunda',
-    'leitura dos mesmos ficheiros do livro-razão) ou modulo (o mesmo módulo dos',
-    'dois lados). Ver DECISIONS.md §1.39 e §2.2, origem 7.',
+    'leitura dos mesmos ficheiros do livro-razão), registos (segunda leitura dos',
+    'registos de conteúdo do motor) ou modulo (o mesmo módulo dos dois lados).',
+    'Ver DECISIONS.md §1.39, §1.64 e §2.2, origem 7.',
   ],
   commit: versao?.commit ?? null,
   construido_em: versao?.construido_em ?? null,
