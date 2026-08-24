@@ -619,3 +619,408 @@ repartição por vista, de **dist 16 · ledger 18 · registos 4 · modulo 3** pa
   plano, continua por correr.
 * **A I66** (o selo que cai entre a figura e o resto da unidade) continua aberta
   de propósito, e a I68 (a altura das linhas das tabelas) é para a sessão de UX.
+
+---
+
+## P4 · as oito edições, lidas uma a uma
+
+*Construída a 24.08.2026 pelo construtor (Claude Opus 5, `claude-opus-5[1m]`) no
+ramo `parte3-2026-08-24`, sobre a ronda de correções 1, a partir de `dbdedc2`. O
+brief é `briefs/BRIEF-parte3-P4.md`. O registo é a `DECISIONS.md` §1.64,
+subsecção «P4 · as oito edições». O motor não foi tocado. Nenhum código do sítio
+foi escrito: a única mudança de ficheiros versionados fora do registo é a régua
+da forma, que o brief §2.7 manda estender de três edições para as oito.*
+
+### Os commits
+
+| repositório | commit | o quê |
+|---|---|---|
+| sítio | `f77f123` | a régua `tests/texto/leitura.mjs` passa a medir o transbordo nas oito, com a lista a sair do registo de travessia |
+| sítio | (este) | o registo: a subsecção P4 na `DECISIONS.md` §1.64, esta nota e a `ISSUES.md` (a I65 recontada) |
+
+### A tabela das oito, com as quatro fontes de cada contagem
+
+Cada linha tem a contagem em quatro sítios independentes: a **faixa** que a
+página imprime (`data-registo-conta`), a **página** recontada por um leitor
+próprio (só `node-html-parser`, nada de `src/`), o **manifesto** de travessia, e
+o `dist/cadeia.json`. As quatro batem nas oito edições.
+
+| ed. | blocos | algarismos | com linha do sítio | portas | portas após ligação | entradas em «As linhas» |
+|---|---:|---:|---:|---:|---:|---:|
+| 03 pt | 55 | 411 | 0 | 411 | 0 | 246 |
+| 04 en | 102 | 326 | 11 | 294 | 21 | 218 |
+| 04 pt | 102 | 326 | 12 | 293 | 21 | 212 |
+| 06 pt | 53 | 171 | 10 | 161 | 0 | 132 |
+| 07 en | 91 | 194 | 52 | 142 | 0 | 153 |
+| 07 pt | 92 | 194 | 52 | 142 | 0 | 153 |
+| 08 pt | 179 | 682 | 49 | 633 | 0 | 521 |
+| 09 pt | 155 | 297 | 10 | 287 | 0 | 253 |
+| **soma** | **829** | **2 601** | **196** | **2 363** | **42** | **1 888** |
+
+`2 363 + 42 = 2 405` portas, e `2 405 + 196 = 2 601`: toda a figura do âmbito tem
+saída própria. A soma das oito contra as oito chaves de `dist/prova.json`, com o
+`dist/cadeia.json` pelo meio:
+
+| chave | soma das oito, recontada da página | `dist/cadeia.json` | `dist/prova.json` |
+|---|---:|---:|---:|
+| `registos_edicoes` | 8 | 8 | 8 |
+| `registos_blocos` | 829 | 829 | 829 |
+| `registos_algarismos` | 2 601 | 2 601 | 2 601 |
+| `registos_resolvidos` | 2 601 | 2 601 | 2 601 |
+| `registos_por_resolver` | 0 | 0 | 0 |
+| `registos_com_linha_do_sitio` | 196 | 196 | 196 |
+| `registos_com_resumo_de_origem` | (vista `registos`) | 510 | 510 |
+| `registos_sem_resumo_de_origem` | (vista `registos`) | 2 091 | 2 091 |
+
+**8 de 8 edições com as quatro fontes a bater; 6 de 6 chaves recontáveis da
+página a bater com a cadeia e com a prova.** As duas últimas contam-se sobre os
+ficheiros do registo e não sobre a página, e por isso não se recontam aqui: é a
+vista `registos`, e é o que o rótulo promete.
+
+### O 03 pt, lido
+
+**A forma.** 55 blocos: 1 `h1`, 8 `h2`, 5 `h3`, 25 parágrafos, 4 filetes, 3
+listas (13 itens) e 9 tabelas (39 `th`, 375 `td`), 466 unidades, 411 figuras. É a
+edição com mais figuras por bloco do âmbito (7,5 contra 3,8 do 08 pt), e a única
+sem um único selo: **nenhuma das suas 411 figuras tem linha no livro-razão deste
+sítio**, e as 246 entradas de «As linhas deste documento» não levam nenhuma porta
+para `/livro-razao/`. A faixa di-lo em números: «55 blocos · 411 algarismos · **0**
+com linha do livro-razão». **A ausência diz-se pela contagem, e nenhuma frase a
+explica** (decisão 9, Emenda 15).
+
+**As 7 ligações com o endereço por etiqueta.** Medidas em Chromium sem cabeça,
+uma a uma, nos blocos 12, 19, 28, 33, 40, 43 e 49. Nas sete a etiqueta é
+exatamente o `href`, carácter a carácter, e nas sete a `overflow-wrap` calculada
+é `anywhere`:
+
+| bloco | caracteres | a 1280 (corpo 544px) | a 390 (corpo 354px) |
+|---|---:|---|---|
+| 12 | **283** | 541px em 6 linhas | 352px em **8 linhas** |
+| 19 | 246 | 544px em 6 linhas | 354px em 7 linhas |
+| 28 | 252 | 541px em 5 linhas | 354px em 7 linhas |
+| 33 | 263 | 541px em 5 linhas | 354px em 8 linhas |
+| 40 | 99 | 508px em 2 linhas | 352px em 4 linhas |
+| 43 | 99 | 511px em 2 linhas | 352px em 4 linhas |
+| 49 | 89 | 420px em 2 linhas | 352px em 4 linhas |
+
+**Zero das sete transbordam a janela**, nas duas larguras. A etiqueta mais longa
+cabe porque quebra dentro da palavra, que é o que a `overflow-wrap: anywhere` da
+`texto.css` existe para fazer.
+
+**O D5 não corre, e não há nota nenhuma na página a dizê-lo.** Medido: as três
+páginas do 03 pt (a do estudo, a de leitura e a da edição arquivada) não contêm
+as cadeias «D5», «artefacto», «claude.ai», «artifact_pt» nem «não corre» (a
+mesma busca encontra «As linhas deste documento» e «texto-figura-porta» nas
+mesmas páginas, pelo que a busca funciona). Quem o diz é o **portão, a cada
+construção**: «o D5 não corre: os bytes alojados são um artefacto do claude.ai e
+a edição que o motor prova é "Technical Source/artifact_pt.html", que o sítio não
+aloja». É a leitura certa da Emenda 15: a autorreferência do sítio não entra na
+página do leitor, e a conferência que falta não é assunto do documento. **A
+página do estudo tem as duas portas**, «Ler o documento →» e «Ler no sítio →»,
+como qualquer outra edição com registo.
+
+### A resposta medida à pergunta 7 do plano (o 03 pt)
+
+A pergunta era: para o 03 pt, os bytes alojados são um artefacto do claude.ai e
+não os do motor, pelo que **nada prova** que a página de leitura e a edição
+arquivada sejam o mesmo documento. Fica dito e segue, ou a edição atravessa
+primeiro? A decisão 7 do diretor foi «fica, com a razão medida». Esta é a razão
+medida.
+
+**Primeiro, o que continua a ser verdade.** Os dois resumos são de ficheiros
+diferentes, e nenhuma cadeia de resumos os liga:
+
+| | ficheiro | resumo |
+|---|---|---|
+| o que o sítio aloja | `studies-src/avaliacao-economica-regional-de-portugal-2026/pt.html`, 37 676 bytes, artefacto de `claude.ai/code/artifact/ec1cdb39…`, com 17 141 bytes de runtime retirados | `fbb9d960ed183c77…` |
+| o que o motor prova | `Technical Source/artifact_pt.html` | `e671f319888a33f1…` |
+
+O D5 compara o `edicao_html_sha256` do registo com o `sha256_normalized` do
+`studies-src/manifest.yml`; aqui são dois ficheiros distintos e a comparação não
+tem sentido. **Isso não muda com esta medição, e não se contorna.**
+
+**Segundo, o que se pode medir mesmo assim.** O que ninguém tinha feito é ler a
+edição arquivada com a leitura do olho e compará-la com o registo, unidade a
+unidade. Fiz isso por dois caminhos independentes:
+
+1. **Com a máquina da própria casa.** O `scripts/provar-eyetext.mjs` salta o 03 pt
+   de propósito (`bytesDoMotor()` é falso). Corri uma **cópia** do guião numa pasta
+   temporária, com uma única linha mudada (a que salta), sem tocar no ficheiro do
+   repositório. O resultado, na mesma forma das outras cinco linhas:
+
+   ```
+   avaliacao-economica-regional-de-portugal-2026/pt   55 blocos lidos · 55 no registo
+   · 461 unidades iguais · 5 isentas em 3 bloco(s) editado(s) · 0 apagado(s)
+   ```
+
+   A comparação passa. A única queixa da cópia é a guarda de âmbito do próprio
+   guião («esta prova corre sobre 5 edições e correu sobre 6»), que é a linha que
+   existe justamente para ninguém alargar o âmbito em silêncio.
+
+2. **Com um alinhador próprio**, escrito para esta etapa, que não partilha código
+   com o guião: `difflib.SequenceMatcher` sobre a lista achatada dos textos de
+   unidade, nunca por índice. **469 unidades lidas da edição arquivada, 466 no
+   registo, 464 iguais carácter a carácter, 5 diferentes.** As duas contas não são
+   a mesma porque os denominadores não são o mesmo (a casa conta do lado do
+   registo e isenta o bloco editado inteiro; este conta do lado da leitura), e
+   ambas dão a mesma imagem.
+
+**Terceiro, e é o que responde à pergunta: as 5 diferenças são, todas, a passagem
+de voz.** O ficheiro de operações do 03 pt tem **10 operações, e as dez são
+cortes**. Aplicando cada corte ao texto lido, o resultado é, carácter a carácter,
+o texto do registo: **diferenças por explicar, zero**. Os três blocos são:
+
+* **bloco 1** (a linha de proveniência): a leitura tem, a mais, «Registo de
+  afirmações (claims ledger): …» e «Edição: pt-PT, gerada da edição inglesa por
+  …», que são dois cortes declarados;
+* **bloco 4** (a lista dos limites): a leitura tem 6 itens e o registo 3; os 3
+  itens a mais são, verbatim, três cortes da família C4;
+* **bloco 54** (a linha final de método): a leitura tem quatro frases e o registo
+  fica com uma; as três que saem são quatro cortes declarados.
+
+**A calibração, para o «zero» não ser de graça.** O mesmo alinhador próprio,
+corrido sobre o 06 pt, dá **104 iguais e 4 diferentes**, que são exatamente os
+números que o `provar-eyetext.mjs` imprime para o 06 pt («104 unidades iguais · 4
+isentas»). Duas ferramentas sem código comum, o mesmo resultado na edição cujos
+bytes o D5 prende.
+
+**A resposta honesta, então:** *nada prova* que os dois sejam o mesmo documento,
+porque não há cadeia de resumos, e isso continua verdade. *Medido*, a edição
+arquivada e o registo têm o mesmo número de blocos (55), na mesma ordem, com os
+mesmos géneros e níveis, e **461 das 466 unidades do registo são a edição
+arquivada carácter a carácter**; as 5 que não são estão em 3 blocos e são as
+frases que a passagem de voz declara ter cortado. É a mesma relação que o D5
+prova nas outras sete, estabelecida por leitura em vez de por resumo: **uma
+evidência forte e não uma prova**, e a diferença entre as duas é que esta não
+apanha uma republicação futura do artefacto, e o D5 apanharia.
+
+### O 06 pt, lido
+
+**O D5 corre e bate.** `origin: researchhub`; o `edicao_html_sha256` do registo e
+o `sha256_normalized` do arquivo são o mesmo `10b0adc0633cfda5…`, e o portão
+imprime «o D5 correu e bate» a cada construção. É a edição republicada a 24.08
+(§1.49 e a decisão 7).
+
+**A forma.** 53 blocos: 1 `h1`, 9 `h2`, 2 `h3`, 38 parágrafos, **zero filetes**,
+1 lista ordenada (6 itens) e 2 tabelas (7 `th`, 45 `td`), 108 unidades, 171
+figuras, 10 com selo. **Zero ligações do documento**, e por isso zero portas a
+seguir a uma ligação. As 132 entradas de «As linhas» levam 8 portas para o
+livro-razão. É a edição mais leve do âmbito (158 509 bytes construídos).
+
+**A medida que o brief pediu: diferem só na passagem de voz.** O ficheiro de
+operações tem 6 entradas, das quais **5 são operações reais (todas cortes) e 1 é
+`nenhuma`**, que é o exemplo escrito de uma frase que a regra L1 examinou e
+deixou como estava. Medido pelo alinhador próprio: **53 blocos dos dois lados,
+104 das 108 unidades iguais carácter a carácter, 4 diferentes, e as 4 explicadas
+por inteiro pelos cortes. Diferenças por explicar: zero.** Os quatro blocos são o
+1 (a linha de proveniência), o 27 e o 28 (a frase da leitura completa e o título
+de secção «O que se procurou e não se encontrou.») e o 52 (a linha final de
+fontes). Não há uma única diferença que não seja voz.
+
+### O par 07, lido
+
+**O comando de língua leva à irmã, nas duas.** A página pt tem «English →
+`/en/studies/evora-orcamentado-pago-devido-2025/text`» e a en tem «Português →
+`/estudos/evora-orcamentado-pago-devido-2025/texto`». As duas declaram os mesmos
+três `hreflang`: `pt-PT`, `en` e `x-default`. É o único par bilingue destas cinco
+leituras, e é o segundo do âmbito.
+
+**As duas edições apontam para as mesmas linhas.** Medido nas páginas
+construídas:
+
+| | 07 pt | 07 en | só num lado |
+|---|---:|---:|---|
+| figuras | 194 | 194 | |
+| entradas em «As linhas» | 153 | 153 | **nenhuma** |
+| linhas do motor distintas | 153 | 153 | **nenhuma** |
+| selos no corpo | 52 | 52 | **nenhum** |
+| linhas do sítio que os selos abrem | 25 | 25 | **nenhuma** |
+| linhas com a porta longa para o livro | 25 | 25 | **nenhuma** |
+| portas do corpo | 142 | 142 | |
+| linhas do motor que as portas abrem | 128 | 128 | **nenhuma** |
+
+E mais do que os conjuntos: **os 52 selos aparecem no corpo pela mesma ordem nas
+duas edições**, resolvidos pelo `site_id`. O caminho difere, e tem de diferir:
+`/livro-razao/evora-orcamento-2025` do lado pt e `/en/ledger/evora-orcamento-2025`
+do lado en. **O `site_id` é o mesmo nas 25**, que é o que o brief mandava medir.
+
+**A única diferença estrutural do par é editorial:** o pt tem 92 blocos e o en
+tem 91. O bloco a mais é o `62` do pt, um parágrafo sem figura nenhuma («Mais
+duas coisas que o ficheiro do regulador sustenta, ambas calculadas sobre as suas
+próprias linhas e registadas como derivações no ledger:»). É uma diferença entre
+as duas redações, não uma falha de travessia, e por isso as contagens de figuras
+são iguais e as de blocos não.
+
+**O contraste com o par 04, medido de propósito:** o 04 **não** é simétrico. 212
+entradas de «As linhas» no pt contra 218 no en, e 12 selos no pt contra 11 no en.
+O selo que falta no en é exatamente `evora-prr-universidade-contratado`, a linha
+que a M1 já tinha explicado: aparece duas vezes no corpo do 04 pt e uma no do 04
+en. As linhas do sítio distintas são 7 nos dois. **O par 07 é o par apertado; o
+par 04 é o par com divergência editorial**, e as duas coisas estão certas.
+
+### O 09 pt, lido
+
+**A forma.** 155 blocos: 1 `h1`, 7 `h2`, 16 `h3`, **10 `h4`** (é a única edição do
+âmbito com quatro níveis de título), 85 parágrafos, 9 filetes, 3 listas (11
+itens) e 24 tabelas (121 `th`, 861 `td`), 1 112 unidades, 297 figuras, 10 com
+selo. 253 entradas de «As linhas», 7 com porta para o livro-razão. O corpo é
+sobretudo painéis por titular: um `h4` com o nome, um parágrafo que descreve a
+pasta, uma tabela de linhas das contas, e um parágrafo que **recusa** ler a
+tabela como medida da pessoa («Nada no quadro acima mede a pessoa nomeada no topo
+deste painel»), repetido em cada painel.
+
+**Os dois marcadores de glifo, conferidos.** O registo declara `markers` em
+exatamente duas figuras, e as duas com a adaga:
+
+| coordenada | linha do motor | `printed` | `value` |
+|---|---|---|---|
+| `#103.2` | `act-2018-5-utentes` | `75 207` | `75 207†` |
+| `#124.0` | `act-2023-1-alunos` | `420` | `420†` |
+
+Na página construída há **exatamente 2 adagas dentro do `<article>`, e zero
+dentro de um elemento `.texto-figura`**. A marcação é
+`<a class="texto-figura texto-figura-porta" href="#linha-act-2018-5-utentes" …>75 207</a>†`:
+a âncora fecha **antes** do glifo, que fica um nó de texto irmão, do documento.
+A figura não o engole, e por isso o `printed` da figura e o texto rendido batem
+carácter a carácter (é o L4 do portão que o exige, e passa). A entrada em «As
+linhas» mostra a distinção a preto no branco: «o valor como a linha o guarda
+75 207†» e «como este documento o imprime 75 207». E o próprio documento explica
+o glifo na frase a seguir («valor com adaga: …»), que é prosa do documento e não
+mobília da casa.
+
+**Alargado às oito, porque era barato:** 67 figuras com marcador no âmbito, **65
+no 08 pt** (37 com `*` e 28 com `†`) e 2 no 09 pt; as outras seis edições têm
+zero. **Zero glifos dentro de um elemento de figura, nas oito.** A deteção foi
+provada antes de se acreditar no zero: sobre um fragmento com o glifo dentro da
+âncora dá 1, e sobre o fragmento com ele fora dá 0.
+
+### O móvel, a régua estendida de três para oito
+
+O brief §2.7 pedia a régua da forma «corrida sobre as oito, ou estendida a elas
+se só media três». Media três (04 pt, 03 pt, 08 pt) na medida do transbordo, e as
+outras cinco nunca tinham sido medidas a nenhuma largura. A mudança é uma só, e é
+de dados e não de lógica: **a lista das rotas passa a sair do
+`registos/manifest.json`** em vez de estar escrita no ficheiro, porque uma lista
+escrita à mão fica desactualizada na travessia seguinte. A medida ganhou também,
+na sua linha de prova, quantas caixas de tabela rolam a cada largura.
+
+`node tests/texto/leitura.mjs` · **51/51** (eram 26/26). **Transbordo zero nas
+oito edições, nas cinco larguras** (320, 390, 768, 1024, 1280):
+`document.documentElement.scrollWidth` é igual a `window.innerWidth` nas 40
+corridas. As tabelas largas rolam dentro da sua caixa, e a 390 é assim que se
+reparte:
+
+| ed. | caixas de tabela | rolam a 390 |
+|---|---:|---:|
+| 03 pt | 9 | 1 |
+| 04 en | 13 | 3 |
+| 04 pt | 13 | 3 |
+| 06 pt | 2 | 0 |
+| 07 en | 9 | 0 |
+| 07 pt | 9 | 0 |
+| 08 pt | 29 | 2 |
+| 09 pt | 24 | **16** |
+
+O 09 pt é a edição que mais exercita a caixa de rolamento (16 das 24 tabelas
+rolam a 390), e nenhuma delas empurra a página. Nota medida: no 08 pt **uma**
+caixa continua a rolar a 1280, que é a tabela mais larga do âmbito; rola dentro
+de si, e a página não rola de lado.
+
+**A régua não é um portão** (imprime e sai sempre com 0), mas uma medida alargada
+que nunca falhou não vale nada, e por isso fechou sobre um estrago plantado:
+
+| o estrago | resumo antes | resultado |
+|---|---|---|
+| o `<article>` do **06 pt** com `style="width:2400px"` na cópia em `dist/` | `946d5a7e30f98ebf…` | **46/51**, com as cinco larguras do 06 pt a vermelho |
+| reposto | `946d5a7e30f98ebf…` (igual) | **51/51** |
+
+O 06 pt foi escolhido de propósito: é uma das cinco edições que a régua **não**
+media antes, e por isso a planta prova a extensão e não o que já existia.
+
+### Duas coisas que a leitura das oito encontrou no registo, e não no código
+
+**1 · A I65 são seis edições, e não cinco.** A I65 escreveu «cinco das oito
+páginas de leitura acabam num troço sem título» e nomeou o 04 pt, o 04 en, o 07
+pt, o 08 pt e o 09 pt. Medido agora nas oito, comparando o último título do
+registo com o último título da leitura do olho da edição arquivada:
+
+| ed. | último título no registo | último título na edição arquivada | blocos depois dele (registo · arquivada) |
+|---|---|---|---|
+| 03 pt | 51 «Lendo tudo em conjunto…» | 51, o mesmo | 3 · 3 |
+| 06 pt | 51 «Fontes e método» | 51, o mesmo | 1 · 1 |
+| 04 pt | 97 «O que este documento não responde» | 129 «Método, e onde o verificar» | 4 · 4 |
+| 04 en | 97 «What this document does not answer» | 128 «Method, and where to check it» | 4 · 4 |
+| 07 pt | 81 «O que concluir disto» | 91 «Método, e como verificar este documento» | **10** · 3 |
+| 07 en | 80 «What to make of it» | 90 «Method, and how to check this document» | **10** · 3 |
+| 08 pt | 166 «O que concluir disto» | 175 «Método, e como verificar este documento» | **12** · 6 |
+| 09 pt | 137 «O que concluir disto» | 144 «Método, e como verificar este documento» | **17** · 12 |
+
+**O 07 en tem exatamente a mesma forma do 07 pt** e faltava na lista. As
+afetadas são seis: 04 pt, 04 en, 07 pt, 07 en, 08 pt e 09 pt. **O 03 pt e o 06 pt
+não são afetados**, e agora está medido em vez de presumido: nessas duas o último
+título é o mesmo bloco dos dois lados. A I65 fica corrigida na `ISSUES.md`; a
+causa e as duas saídas não mudam, e continuam do lado do motor.
+
+**2 · A I66 recontada nas oito, com as duas definições ditas por extenso.** A I66
+foi medida no 04 pt («4 das 12 figuras com selo»). Estendida ao âmbito, com as
+duas definições separadas porque dão números muito diferentes:
+
+| ed. | selos | (a) não fecham a unidade | (b) caem entre o algarismo e o símbolo da sua unidade |
+|---|---:|---:|---:|
+| 03 pt | 0 | 0 | 0 |
+| 04 en | 11 | 5 | 3 |
+| 04 pt | 12 | 6 | 3 |
+| 06 pt | 10 | 10 | 2 |
+| 07 en | 52 | 42 | 12 |
+| 07 pt | 52 | 42 | 12 |
+| 08 pt | 49 | 22 | 0 |
+| 09 pt | 10 | 3 | 0 |
+| **âmbito** | **196** | **130** | **32** |
+
+A (a) é «depois do selo ainda vem texto do documento nesta unidade», e é o
+universo. A (b) é a forma que a I66 descreve, «51,95 ■ %»: o que vem logo a
+seguir ao selo é o símbolo da unidade. A I66 registou 4 no 04 pt e a minha
+definição estrita dá 3 (`#12.2.1`, `#42` e `#89`, os três com « %» a seguir); a
+diferença é de **definição e não de página**, e o caso que a I66 nomeia está lá.
+O achado desta leitura é que o par 07 é onde a forma mais aparece (12 por edição,
+de 52 selos), e que o 08 pt e o 09 pt não a têm de todo. Fica na I66, que
+continua aberta de propósito.
+
+### Uma coisa que a leitura confirmou, e vale registar
+
+O marcador `(inferência)` aparece **53 vezes no âmbito**: 03 pt 3, 04 pt 11, 04
+en 11, 06 pt 0, 07 pt 8, 07 en 8, 08 pt 8, 09 pt 4. São, número a número, as 53
+que a §6.3 da estimativa mediu do lado do motor, antes de existir página nenhuma.
+A regra 9 do Método explica o marcador nas duas línguas desde a §1.63, e por isso
+não há nada a fazer em nenhuma das oito.
+
+### As corridas verdes
+
+```
+npm run build                      exit 0 · 342 páginas · 41 chaves da prova · 8 páginas de leitura
+npm run verify                     exit 0
+npm run typecheck                  exit 0
+node scripts/check-documentos.mjs  exit 0 · 8 atravessados · D5 correu em 7 e não corre em 1
+node scripts/check-cadeia.mjs      exit 0 · 8 edições · 2 601 algarismos · 196 até ao selo, 2 405 até à entrada
+node scripts/provar-eyetext.mjs    exit 0 · 157 conferências
+node scripts/medir-defeitos.mjs    exit 0 · 91 frases distintas · 2 542 ocorrências · autorreferência 0 nas oito rotas `texto`
+node tests/texto/leitura.mjs       51/51 (eram 26/26)
+```
+
+Nas oito rotas `texto`/`text` o medidor de defeitos lê **9 frases de moldura
+distintas, 1 de navegação, 0 de autorreferência e 0 blocos por classificar**, e
+nenhuma outra rota mexeu. As 342 páginas e as 41 chaves são as mesmas: a P4 não
+acrescenta página nenhuma nem chave nenhuma, e não devia.
+
+### O que fica por fazer
+
+* **A M2** (a medição cega sobre as oito, com a forma nova da porta) continua por
+  correr, e é dela a recontagem das duas chaves na vista nova.
+* **A segunda leitura cruzada do Codex**, sobre as oito e antes de fundir, com as
+  plantas da §7 do plano, continua por correr. É a que conta.
+* **A I65 é do motor** e fica aberta com seis edições em vez de cinco; a **I66**
+  fica aberta de propósito, agora com a contagem das oito; a **I67** (as nove
+  linhas que o motor exclui) e a **I68** (a altura das filas) não mexeram.
+* **As oito chaves continuam sem entrar nas listas `prova` do Método**, à espera
+  da palavra do diretor: é texto governado.
+* **`noindex` e fora do mapa do sítio** nas oito, por contrato desta sessão.
