@@ -79,7 +79,18 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..');
 const SRC = path.join(ROOT, 'studies-src');
 const MANIFESTO = path.join(SRC, 'manifest.yml');
-const REGISTOS = path.join(ROOT, 'registos');
+/**
+ * A pasta dos registos de conteúdo, com a mesma convenção de
+ * `src/lib/registos.mjs`, do `gate-html.mjs` e do `check-cadeia.mjs`:
+ * `OEDP_REGISTOS_DIR` aponta a leitura para outra pasta.
+ *
+ * Serve para uma coisa só, e é o que a regra da casa exige de uma conferência:
+ * **provar que ela fecha sobre um estrago sem tocar num byte de `registos/`**. E
+ * serve, com a mesma variável, para provar o contrário — que uma cópia com o
+ * manifesto refeito passa aqui, byte a byte, e é o `check:cadeia` que apanha o
+ * que lhe fizeram por dentro. Um resumo prende bytes; não prende sentido.
+ */
+const REGISTOS = process.env.OEDP_REGISTOS_DIR ?? path.join(ROOT, 'registos');
 const MANIFESTO_REGISTOS = path.join(REGISTOS, 'manifest.json');
 /** O que vive em `registos/` e não é um registo. */
 const NAO_SAO_REGISTOS = new Set(['manifest.json', 'README.md']);

@@ -378,6 +378,13 @@ for (const chave of chaves) {
         conta.algarismos++;
         totais.registos_algarismos++;
 
+        /* A marca da página sai da lista aqui, e não no passo 5: uma figura que
+           tropece num passo anterior continua a ser uma figura desta
+           coordenada, e deixá-la na lista fazia o passo 5 queixar-se ao
+           contrário, de uma marca a mais que a página não inventou. */
+        const el = marcasDaPagina.get(marca) ?? null;
+        marcasDaPagina.delete(marca);
+
         /* ------------------------------------------------------- passo 1 ---
            O resumo de origem: o resumo dos bytes do documento de onde a linha
            saiu, OU o motivo de não haver um. É o R7 do motor lido deste lado, e
@@ -429,14 +436,19 @@ for (const chave of chaves) {
           );
           conta.por_resolver++;
           totais.registos_por_resolver++;
-          continue;
+        } else {
+          totais.registos_resolvidos++;
         }
-        totais.registos_resolvidos++;
 
         /* ------------------------------------------------------- passo 3 ---
            A linha do sítio, se houver. É o registo de travessia das linhas que
-           responde, e é ele que decide qual das duas formas a cadeia tem. */
-        const siteId = DO_MOTOR.get(`${entrada.rh_study} ${figura.row}`) ?? null;
+           responde, e é ele que decide qual das duas formas a cadeia tem. Sem
+           linha do motor não há esta pergunta: o passo 2 já disse o que há a
+           dizer, e inventar aqui uma segunda queixa a partir da primeira não
+           acrescentava nada. */
+        const siteId = figura.row
+          ? (DO_MOTOR.get(`${entrada.rh_study} ${figura.row}`) ?? null)
+          : null;
         if (siteId) {
           const linha = linhaDoLivro(siteId);
           if (!linha) {
@@ -456,7 +468,7 @@ for (const chave of chaves) {
           }
           conta.completas++;
           totais.registos_com_linha_do_sitio++;
-        } else {
+        } else if (figura.row) {
           conta.do_motor++;
         }
 
@@ -488,7 +500,6 @@ for (const chave of chaves) {
 
         /* ------------------------------------------------------- passo 5 ---
            A marca na página rendida, com o `printed` lá dentro. */
-        const el = marcasDaPagina.get(marca);
         if (!el) {
           err(
             `C5 ${marca}: a página construída não tem nenhuma marca data-registo com esta ` +
@@ -496,7 +507,6 @@ for (const chave of chaves) {
           );
           continue;
         }
-        marcasDaPagina.delete(marca);
         const impresso = textoImpresso(el);
         if (impresso !== figura.printed) {
           err(
@@ -509,7 +519,9 @@ for (const chave of chaves) {
            A saída. Com linha do sítio, o selo colado, que abre a página dessa
            linha; sem linha do sítio, a porta para a entrada em «As linhas deste
            documento» (ou, dentro de uma ligação do documento, só a entrada, que
-           uma âncora dentro de outra não é markup). */
+           uma âncora dentro de outra não é markup). Sem linha do motor não há
+           saída nenhuma a exigir: o passo 2 já fechou. */
+        if (!figura.row) continue;
         const dentroDeLigacao = ligacaoDoDocumento(el, artigo);
         const irmao = irmaoColado(dentroDeLigacao ?? el);
         if (siteId) {
