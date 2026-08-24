@@ -1587,7 +1587,8 @@ function verificaTexto({ rota, root, err }) {
   }
 
   /* ------------------------------------------------------------------ L5 ---
-     As contagens: as do manifesto, e as três da faixa, recontadas aqui. */
+     As contagens: as do manifesto, e as três da faixa, recontadas aqui, cada
+     uma com a porta do corpo. */
   if (figurasNaPagina !== entrada.referencias) {
     err(
       `L5 ${chave}: a página rende ${figurasNaPagina} figuras e o registo de travessia promete ` +
@@ -1619,6 +1620,17 @@ function verificaTexto({ rota, root, err }) {
         `contagens: blocos, algarismos e com linha do livro-razão.`,
     );
   }
+  /* A porta das três contagens é a mesma e é o corpo: `#documento`, o
+     `<article>` desta página, onde cada bloco, cada figura marcada e cada selo
+     estão à vista, uma marca por ocorrência. Conferida aqui na própria página,
+     porque uma porta que não resolve não é porta nenhuma. */
+  const portaDoCorpo = '#documento';
+  if (!root.querySelector(portaDoCorpo)) {
+    err(
+      `L5 ${chave}: a página não tem o corpo com id="documento", que é a porta das três contagens ` +
+        `da faixa.`,
+    );
+  }
   const vistas = new Set();
   for (const el of naFaixa) {
     const declaradaConta = decodeEntities(el.getAttribute('data-registo-conta') ?? '');
@@ -1644,10 +1656,19 @@ function verificaTexto({ rota, root, err }) {
           `do registo em disco. Uma contagem escrita à mão fica errada na construção seguinte.`,
       );
     }
-    if (String(el.rawTagName ?? '').toLowerCase() !== 'a' || !el.getAttribute('href')) {
+    const porta = decodeEntities(el.getAttribute('href') ?? '');
+    if (String(el.rawTagName ?? '').toLowerCase() !== 'a' || porta === '') {
       err(
         `L5 ${declaradaConta}: a contagem não tem porta. Um número do próprio sítio leva sempre a ` +
           `porta para onde se vê o que ele conta (IDENTIDADE.md §10).`,
+      );
+    } else if (porta !== portaDoCorpo) {
+      err(
+        `L5 ${declaradaConta}: a porta da contagem abre "${porta}" e tem de abrir ` +
+          `"${portaDoCorpo}". As três contam OCORRÊNCIAS no corpo (blocos, figuras marcadas e ` +
+          `selos), e é no corpo que elas se veem, uma marca por cada; "#linhas-do-documento" ` +
+          `agrega numa entrada por linha do motor DISTINTA e por isso não mostra o que o número ` +
+          `conta (IDENTIDADE.md §10).`,
       );
     }
   }

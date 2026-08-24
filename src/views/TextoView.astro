@@ -210,22 +210,25 @@ const conta = (nome) => `${chave}=${nome}`;
       </div>
 
       {/* A faixa das contagens: recontadas pelo portão, nunca escritas
-          (`IDENTIDADE.md` §10), e cada uma com a sua porta, que é a âncora da
-          secção desta página onde se vê o que ela conta. */}
+          (`IDENTIDADE.md` §10), e as três com a mesma porta, que é o corpo:
+          `#documento`, o `<article>` desta página, onde cada bloco, cada figura
+          marcada e cada selo estão à vista, uma marca por ocorrência.
+
+          Até 24.08.2026 as duas últimas abriam «As linhas deste documento», e
+          isso levava o leitor a uma agregação: essa secção tem uma entrada por
+          linha do motor DISTINTA, e as contagens contam OCORRÊNCIAS. Ver a
+          `DECISIONS.md` §1.64, subsecção da M2 e da segunda leitura cruzada,
+          para os números medidos. O L5 do portão exige agora esta porta. */}
       <p class="texto-faixa">
         <a class="texto-conta" href="#documento" data-registo-conta={conta('blocos')}>
           {contas.blocos}
         </a>{' '}
         {s.estudos.textoContaBlocos} ·{' '}
-        <a class="texto-conta" href="#linhas-do-documento" data-registo-conta={conta('algarismos')}>
+        <a class="texto-conta" href="#documento" data-registo-conta={conta('algarismos')}>
           {contas.algarismos}
         </a>{' '}
         {s.estudos.textoContaAlgarismos} ·{' '}
-        <a
-          class="texto-conta"
-          href="#linhas-do-documento"
-          data-registo-conta={conta('com_linha_do_sitio')}
-        >
+        <a class="texto-conta" href="#documento" data-registo-conta={conta('com_linha_do_sitio')}>
           {contas.com_linha_do_sitio}
         </a>{' '}
         {s.estudos.textoContaComLinha}
