@@ -197,17 +197,22 @@ edicoes:
     bytes_normalized: 148692
     sha256_raw: b952bbbb770e617500bfe4017ef87c936717c11ab94bab71e8d6533418aa1a56
     sha256_normalized: 65e8f398951b27277d90c495b46a99c3097b539e71d2ad89d61c67f6b65de801
+  # Republicado a 2026-08-24 do motor (ISSUES I60): a cópia que este sítio
+  # servia era a do artefacto de 12.08, cujo empacotador reemitiu a ilha
+  # `rcpt-data` duas vezes; o ficheiro do motor traz uma, e regenerá-lo no
+  # motor reproduz os bytes fixados. Sem anfitrião, sem runtime — os dois
+  # resumos são iguais porque os bytes são os mesmos.
   - slug: evora-os-pelouros-quem-os-teve-o-que-fizeram
     lang: pt
     title: "Évora — Os Pelouros, Quem Os Teve, O Que Fizeram"
-    artifact_url: https://claude.ai/code/artifact/fe9876aa-e778-4519-bc9a-5f2fa199b29a
+    origin: researchhub
+    origin_ref: "content/09 Évora Pelouros/Évora — Os Pelouros, Quem Os Teve, O Que Fizeram (pt-PT).html @ 42578647d01979df0b15af1b4de64f31ffe81022"
     raw_file: _raw/evora-os-pelouros-quem-os-teve-o-que-fizeram.pt.html
-    fetched_utc: 2026-08-12T13:55:43Z
-    bytes_raw: 1403020
-    bytes_runtime_removed: 17141
-    bytes_normalized: 1385879
-    sha256_raw: a14d0fd60a4215395f15a20d5e3045ed54d38e55f05003d8173b4161755d5319
-    sha256_normalized: dd65c649bf7f90d3d529855792c9f94f2b502f1420e647bd1971d71e5b61263d
+    fetched_utc: 2026-08-24T14:06:18Z
+    bytes_raw: 770294
+    bytes_normalized: 770294
+    sha256_raw: 5b7706fd9f2a0cb05000472c554fc323e6222b9eb591c81918bc4ed91c935725
+    sha256_normalized: 5b7706fd9f2a0cb05000472c554fc323e6222b9eb591c81918bc4ed91c935725
   # Os dois primeiros documentos que não são artefactos: vieram do motor de
   # investigação, onde foram produzidos e verificados, e atravessaram como
   # ficheiros. Sem anfitrião, sem runtime, sem normalização — os dois resumos
