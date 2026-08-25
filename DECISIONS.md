@@ -10622,6 +10622,13 @@ bloco) e das leituras de contexto, e fica dita como lição para a próxima
 estimativa. Sonnet (M3) ≈465k. Codex 364 109, orçamento próprio. O lugar de
 direção não é mensurável de dentro.
 
+**A fusão.** Fundido e posto no ar a 25.08.2026 pela palavra do diretor
+(«let's merge»): `main` avançou em linha reta de `cb133d5` para `90f458a` (25
+commits), empurrado, a Vercel construiu, `verify:deploy` fechou verde, e as
+superfícies mudadas foram lidas no ar (a frase de identidade nas duas edições,
+a primeira página sem a régua, a pesquisa em `/municipios`, a dobra na página de
+leitura, «128 de 136», a página de erro da casa). O ramo foi apagado.
+
 **O que fica para depois, dito por extenso:** os textos dentro dos desenhos
 (146 elementos entre 3,7 e 6,6 px a 390, nos instrumentos: é redesenho das
 escalas, decisão do diretor); as duas leituras do cabeçalho a quebrar em duas
