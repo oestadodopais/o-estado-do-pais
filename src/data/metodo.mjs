@@ -241,6 +241,32 @@ export const REGRAS = [
           en: 'rows recorded before any crossing existed',
         },
       },
+      /* As páginas de leitura (parte 3, 24.08.2026): o sítio compõe o documento
+         de cada edição a partir do registo de conteúdo do motor, e cada
+         algarismo dessas páginas chega com a sua linha do motor. Três das oito
+         chaves da parte 3 provam esta regra; as outras cinco são detalhe e
+         ficam em prova.json (decisão do diretor de 25.08.2026, §1.65). */
+      {
+        chave: 'registos_edicoes',
+        rotulo: {
+          pt: 'edições com página de leitura construída do registo do motor',
+          en: 'editions with a reading page built from the engine record',
+        },
+      },
+      {
+        chave: 'registos_algarismos',
+        rotulo: {
+          pt: 'algarismos nas páginas de leitura, cada um com linha do motor',
+          en: 'figures on the reading pages, each with an engine row',
+        },
+      },
+      {
+        chave: 'registos_com_linha_do_sitio',
+        rotulo: {
+          pt: 'algarismos nas páginas de leitura com linha também neste livro-razão',
+          en: 'figures on the reading pages with a row in this ledger too',
+        },
+      },
       {
         chave: 'leituras',
         rotulo: {

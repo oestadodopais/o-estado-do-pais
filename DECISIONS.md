@@ -8415,7 +8415,6 @@ frases da casa, classificado por uma lista declarada em
 acrescenta nem retira uma linha do livro-razão, não muda um valor, e não abre um
 portão novo: o que o portão aprende são extensões de conferências que já existem,
 cada uma provada num estrago plantado e revertido.
-
 ## 2. Como funciona o portão, e o que ele não vê
 
 ### 2.1 Os três portões
@@ -10352,6 +10351,31 @@ exportador) e `ce8c36e` (o `NEXT.md`), portão PASS nos dois. O ramo
 do contrato foi acionada: nenhum achado contradisse as onze decisões, nenhum
 texto governado foi tocado (as oito chaves ficaram fora do Método por isso), e
 nenhuma leitura disse que o desenho estava errado.
+
+### 1.65 A regra 2 do Método passa a provar-se com as páginas de leitura
+
+**Afecta:** metodo
+
+**Texto:** metodo e327c482c6db
+
+Decisão do diretor a **25.08.2026** («let's do the ones you think we should
+do»), por recomendação do lugar de direção: três das oito chaves `registos_*`
+da parte 3 (§1.64) entram na lista `prova` da regra 2, «O motor», que é a
+regra que elas provam (cada algarismo de uma página de leitura chega com a sua
+linha do motor, e o sítio compõe o documento a partir do registo que
+atravessou): `registos_edicoes` («edições com página de leitura construída do
+registo do motor»), `registos_algarismos` («algarismos nas páginas de leitura,
+cada um com linha do motor») e `registos_com_linha_do_sitio` («algarismos nas
+páginas de leitura com linha também neste livro-razão»). As outras cinco
+(`registos_blocos`, `registos_resolvidos`, `registos_por_resolver`,
+`registos_com_resumo_de_origem`, `registos_sem_resumo_de_origem`) são detalhe
+da cadeia e ficam em `dist/prova.json`, recontadas pelo portão e rendidas por
+nenhuma página. Os três rótulos não levam algarismos, como o cabeçalho do
+ficheiro exige; a porta das três é o arquivo, de onde cada leitura se abre; e
+com esta entrada a comparação B do portão (a conta do portão contra os
+algarismos rendidos) passa a ter trabalho nestas chaves, que até aqui só
+existiam na prova. Esta entrada é o registo que a amarra das decisões exige
+para o resumo novo do texto.
 
 ## 4. O registo dos defeitos e dos adiamentos
 

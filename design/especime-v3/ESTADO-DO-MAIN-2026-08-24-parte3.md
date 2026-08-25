@@ -72,9 +72,10 @@ subsecção «A fusão» da §1.64 seguem no commit seguinte. Nada por commitar.
 1. **Indexar as páginas de leitura** (tirar o `noindex`, entrar no mapa do
    sítio): uma linha, depois de as ver. Há cinco capturas em
    `design/especime-v3/capturas/parte3/`.
-2. **As oito chaves `registos_*` no Método:** existem na prova e nenhuma página
-   as rende; pô-las na lista `prova` de uma regra (a 2, «O motor», é a
-   natural) é edição de texto governado, e é sua.
+2. ~~**As oito chaves `registos_*` no Método**~~ **Feito a 25.08.2026 pela
+   palavra do diretor (§1.65):** três das oito (`registos_edicoes`,
+   `registos_algarismos`, `registos_com_linha_do_sitio`) entraram na prova da
+   regra 2, «O motor»; as outras cinco ficam em `dist/prova.json` como detalhe.
 3. **I66**, o selo entre a figura e o símbolo da unidade («51,95 ■ fonte %»),
    32 casos nas oito edições: forma, para a sessão de UX, com as duas definições
    contadas no registo.
