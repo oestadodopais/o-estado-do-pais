@@ -762,3 +762,30 @@ esquecimento:** o índice «Nesta página» da página de leitura não entra, po
 cada entrada dele é um título transcrito do registo, com a marca
 `data-registo-indice` que a régua já conta como origem declarada; e o comando
 «Subir ↑» também não, porque o seu texto está todo dentro de um `<a>`.
+
+## Passo C das correções de UX · 25.08.2026
+
+*O passo C acrescentou **uma** frase da casa, e ela é o nome de uma secção do
+índice dos concelhos (item C4, decisão 5 do diretor). As outras três correções
+do passo não acrescentaram nenhuma: o item C1 moveu um índice que já estava
+inventariado, o C2 mexeu numa folha de estilos, e o C3 trocou o ponto de código
+de um separador dentro de um valor do livro-razão, que não é prosa da casa.*
+
+| classe | frase |
+|---|---|
+| conteudo | Com página |
+| conteudo | With a page |
+
+**Porque é conteúdo.** É o nome do grupo de uma lista, como «Beja» ou «Ilha do
+Faial» são o nome dos outros grupos da mesma página: diz por que critério
+aquelas entradas estão juntas. As duas palavras do estado de cada entrada, «tem
+página» e «sem página ainda», não mudaram e continuam a entrar pela marca
+`data-cobertura`, que a régua exclui desta tabela e conta na medida 7.
+
+**O que o passo C NÃO acrescentou, e é uma leitura e não um esquecimento:** o
+rótulo da caixa de pesquisa («Escreva o nome do concelho») é um `<label>`, que
+não é um bloco desta varredura; o estado vazio da pesquisa («Nenhum concelho com
+esse nome.») já estava classificado como navegação pela primeira página, e a
+tabela é por texto e não por rota; e os 308 resultados não entram, porque cada
+um é um nome de concelho com a marca `data-cobertura` ao lado, que é a mesma
+exclusão que a subetapa 3c escreveu para a lista por distritos.
