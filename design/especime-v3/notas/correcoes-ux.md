@@ -264,3 +264,150 @@ concelho, no telemóvel, é a da ficha do mapa, que está ao lado e é uma fila.
 **Uma célula de `tests/linha/recibo.mjs` falha, e é anterior a este bloco:** a
 3b espera 132 linhas do livro-razão e há 136. Nem `ledger/` nem essa expectativa
 foram tocados aqui.
+
+---
+
+## C · o que a leitura cruzada dos blocos A e B apanhou
+
+*Construtor (Claude Opus 5, `claude-opus-5[1m]`). Mesmo ramo, a partir do bloco B
+em `5f60f9a`. Contrato: `../briefs/BRIEF-correcoes-ux-C.md`, com a leitura do
+Codex e a triagem do lugar de direção por trás
+(`../critica/2026-08-25-codex-leitura-correcoes.md`). Sem travessões nesta prosa;
+o ponto médio é o separador. **Todos os números desta secção vêm de um comando
+que está escrito ao lado deles.***
+
+### C.0 · Os comandos que dão os números
+
+```
+npm run build                                          (342 páginas, 41 chaves da prova)
+npm run verify · npm run typecheck
+node tests/texto/correcoes-c.mjs                       (9 réguas, sai com 0)
+node tests/municipio/correcoes-c.mjs                   (12 réguas, sai com 0)
+node tests/*/correcoes-c.mjs --capturas <dir> --json <ficheiro>
+node tests/inicio/correcoes-a.mjs                      (32/32)
+node tests/texto/correcoes-b.mjs                       (19/19)
+node tests/linha/correcoes-b.mjs                       (32/32)
+node tests/inicio/matriz.mjs                           (92/92)
+node tests/texto/leitura.mjs                           (51/51)
+node scripts/medir-defeitos.mjs                        (zero blocos por classificar)
+```
+
+**A linha de base do item C2 é outra construção, e está escrita:** `main` em
+`cb133d5`, construída numa árvore de trabalho separada, servida a par com a deste
+ramo. É o estado **antes do bloco B**, que é contra o que o brief manda medir o
+C2 («volta a caber dez entradas onde cabiam dez»).
+
+As capturas estão em `../capturas/ux-2026-08-25/correcoes-c/`, em JPEG a escala
+2, a 390 e a 1280. `antes-` é este ramo antes do passo C;
+`antes-do-bloco-b-` é a construção de `main`, e existe só para as duas do item
+C2.
+
+### C.1 · O que se mediu, antes e depois
+
+Telemóvel: WebKit com `devices['iPhone 13']` (390 × 664), `deviceScaleFactor: 1`.
+Computador: Chromium a 1280 × 800.
+
+| medida | antes | depois |
+|---|---|---|
+| topo do `<h1>` do documento, leitura do 04, 390 | 734,1 px · **110,6 %** de um ecrã de 664 | **293,3 px · 44,2 %** (o alvo é 45 %, 298,8 px) |
+| a banda do índice, 390 | 468,8 px, aberta, por cima do título | **46 px**, dobra fechada, por cima do título |
+| o índice a 1280 | na coluna do corpo, em x = 94 | **na coluna do aparelho, em x = 689,2**, com o aparelho 22 px abaixo dele |
+| o `<h1>` a 1280 | a 637,3 px, debaixo do índice | **a 301,5 px, no topo do corpo** (12 px abaixo dele) |
+| a porta da dobra do índice, 390 | não existia | **354 × 44 px** |
+| índice do Método, 390 · altura | 349,5 px antes do bloco B · **586 px** depois dele | **338 px** (en: 360,5) |
+| índice do Método, 390 · entradas no primeiro ecrã | 10 antes do bloco B · **7** depois dele | **11 de 11** |
+| índice da agenda, 390 · altura | 190 px antes do bloco B · **299,8 px** depois dele | **199,8 px** |
+| índice da agenda, 390 · entradas no primeiro ecrã | 5 · 5 | **5 de 5** |
+| alvos do índice abaixo de 44 px, 390, nas duas edições | 0 | **0** (o menor mede 62,3 × 44,0) |
+| pares de áreas sobrepostas dentro do índice | 0 | **0** |
+| separador dos milhares num `[data-claim]`, nas 342 páginas | **274 valores com U+202F**, 0 com U+00A0 | **274 com U+00A0**, 0 com U+202F |
+| largura do separador, «167 372 755,84», WebKit a 28 px | **1,64 px** (um algarismo mede 16,65) | **4,25 px** |
+| largura do separador, Chromium a 40 px | 6,53 px (um algarismo mede 23,80) | 6,06 px |
+| campo de pesquisa em `/municipios`, 390 | não existia | **a 421,5 px de 664, 340 × 44 px, dentro do primeiro ecrã** (en: 454,5) |
+| resultados da pesquisa em `/municipios` | nenhum | **308**, 1 com página à vista e 307 escondidos |
+| «evora» escrito na caixa | (não havia caixa) | **1 resultado: Évora [tem página] → `/municipios/evora`** |
+| «beja» escrito na caixa | (não havia caixa) | **1 resultado: Beja [sem página ainda], sem porta** |
+| a primeira secção da lista dos concelhos | «Aveiro» | **«Com página»**, com «Aveiro» a seguir |
+| altura de `/municipios`, 390 | 13 234 px | 13 489 px |
+| chaves da prova reconferidas pelo portão | 41 | **41** |
+| páginas construídas | 342 | **342** |
+
+### C.2 · A prova de cada item, vista vermelha e verde
+
+`node tests/texto/correcoes-c.mjs` (9 réguas, C1 e C3) e
+`node tests/municipio/correcoes-c.mjs` (12 réguas, C2 e C4) saem com 0 quando
+todas passam e com 1 quando alguma falha. Cada item foi visto **vermelho** com um
+estrago plantado, construído e medido, e **verde** depois de reposto da cópia.
+
+| item | o estrago plantado | o que a régua disse (saída 1) |
+|---|---|---|
+| C1 | a dobra do índice volta a abrir por defeito | `h1 a 718,3px de 664 (108,2%) · dobra fechada false` |
+| C1 | a colocação na grelha sai da folha | `índice em x=94 · corpo em x=689,2 · aparelho em x=94 y=38510,8 · à direita do corpo false · aparelho a 38135,2px do fim do índice` |
+| C2 | a lista volta a uma coluna no telemóvel | `7 de 11 entradas dentro dos 664px · índice 586px` |
+| C2 | a forma (a) do brief: área por pseudo-elemento, sem altura de fila | `11 de 11 entradas · índice 349,5px · pares sobrepostos: 10 · As fontes × O motor [56×16]` |
+| C2 | a entrada do índice perde os 44 px | `alvos abaixo de 44px: 8 (o menor mede 62,3×22,5)` |
+| C3 | o separador volta a U+202F | `0 com U+00A0 · 274 com U+202F` e, a 390, `U+00A0 = 4,25px · U+202F = 1,64px` |
+| C4 | a pesquisa perde a função do destino | `«evora» → Évora [com-pagina] → sem porta · «beja» → Beja [null] → sem porta` |
+| C4 | a pesquisa e a secção vão para o fim da página | `campo a 12 856,5px de 664, dentro false` e `a primeira é «Aveiro»` |
+| C4 | o bloco da pesquisa perde o `hidden` | `bloco com hidden: false` |
+
+**O estrago do C3 não fecha o PORTÃO, e é essa a razão de ser da sua régua.** A
+`formaDoValor()` da §1.47 (T4) leva U+202F, U+00A0 e U+2009 ao mesmo U+0020: com
+o separador antigo a construção continua verde nas 342 páginas, e a única coisa
+que muda é o que se lê. Um item cuja correção o portão não distingue precisa de
+uma régua que a distinga, e é a que mede a largura do carácter no navegador.
+
+**Uma régua anterior mudou de expectativa.** A célula «a 1280 a página é a
+disposição B» de `tests/texto/leitura.mjs` perguntava se o aparelho começava à
+mesma altura do corpo. Com o índice por cima dele, começa 108 px mais abaixo.
+A pergunta passa a ser a que define a disposição B, a segunda coluna ao lado do
+corpo e não por baixo dele, e foi vista vermelha com o mesmo estrago que fechou
+o C1 a 1280: `o corpo acaba em x=989 e o aparelho começa em x=94`.
+
+### C.3 · A dobra que não se abre por folha de estilo, e a medição que mentiu
+
+A forma bonita do C1 seria uma dobra fechada no telemóvel e aberta no computador.
+Ela não existe, e a maneira como isso se soube é a lição.
+
+A primeira sonda escreveu um `<details>` fechado com
+`details:not([open]) > .conteudo { display: grid }` e leu
+`getBoundingClientRect()`: **60 px de altura, `display: grid`, `visibility:
+visible`**, nos dois motores. Parecia funcionar. A segunda sonda pintou o
+conteúdo de preto, pôs um controlo preto ao lado e tirou uma captura: **uma banda
+só**, nos dois motores. O conteúdo tem caixa e não tem tinta.
+
+É a regra 15 apanhada em direto, a caixa não é o píxel, e é a razão pela qual a
+dobra do índice é fechada nas duas larguras, com a razão escrita na folha e no
+gabarito em vez de ficar por dizer.
+
+### C.4 · O que fica medido e não fechado
+
+**O índice do Método em inglês mede 360,5 px, contra 338 na edição portuguesa**,
+porque duas entradas quebram em duas linhas dentro da sua coluna de 170 px. As
+onze cabem no primeiro ecrã nas duas edições, e o tecto que a régua impõe, que é a
+altura de antes do bloco B mais uma fila, dá-lhe 39 px de folga. Uma linha que
+quebra dentro de uma célula de índice não é um defeito medido; se vier a ser,
+a saída é o corpo da entrada e não a coluna, e isso é desenho.
+
+**O índice da agenda mede 199,8 px, contra 190 antes do bloco B.** São 9,8 px a
+mais, e são o preço dos 44 px de alvo em três filas em vez de cinco. As cinco
+entradas cabem no primeiro ecrã, que é o que o brief manda medir.
+
+**A dobra do índice da leitura é fechada também no computador**, onde a coluna do
+aparelho tinha espaço para a mostrar aberta. É o preço de não haver maneira de
+abrir um `<details>` por folha de estilo, e está medido na C.3. A saída, se a
+direção a quiser, é uma linha de JavaScript, e esta rota não tem nenhuma.
+
+**A pesquisa de `/municipios` não existe sem script.** É a regra que a peça já
+escrevia («uma caixa de pesquisa que não pesquisa é pior do que nenhuma»), e o
+custo é que quem chega sem JavaScript vê a página que já existia: a lista dos 308
+por distritos, inteira, com a secção «Com página» à cabeça. A secção e a lista são
+servidor puro, e por isso a correção do índice morto vale nas duas condições.
+
+**`tests/texto/leitura.mjs` não sai com 1 quando uma célula falha:** imprime
+`50/51` e sai com 0. É anterior a este passo e não foi tocado aqui; fica escrito
+porque uma régua que não muda o código de saída não trava nada.
+
+**A célula 3b de `tests/linha/recibo.mjs` continua a falhar**, e é anterior ao
+bloco B: espera 132 linhas do livro-razão e há 136. Nem `ledger/` nem essa
+expectativa foram tocados aqui.
