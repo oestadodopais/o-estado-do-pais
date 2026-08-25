@@ -10413,6 +10413,150 @@ O bloco A é a primeira página e a navegação. Onze itens, cada um com a sua r
 
 **As células da matriz que perderam objecto.** `tests/inicio/matriz.mjs` mediu, até 25.08, coisas que este bloco tirou da primeira página: a porta do telemóvel da régua, a lista de proximidade do selo do mapa, os quatro selos do Instrumento n.º 1 (ISSUES I13) e a palavra «provisório» ao pé das cópias desenhadas. As células saíram, cada uma com a razão no seu lugar e com o sítio onde a medição passa a viver; as que mediam um comando que mudou de nome medem o comando que ficou. A matriz passa de 115 para 92 células, com a mesma falha que já tinha antes deste bloco (blocos por classificar em `/estudos`, `/livro-razao` e `/estudos/penalizacoes-por-reforma-antecipada-2026`, que são rotas do bloco B).
 
+
+#### O bloco B: os estudos, o livro-razão e as páginas de leitura
+
+Dez itens, com as réguas em `tests/texto/correcoes-b.mjs` (B1 a B6, 19 réguas) e
+`tests/linha/correcoes-b.mjs` (B7 a B10, 32 réguas), cada uma vista vermelha com
+um estrago plantado e verde depois de reposta; os números do antes e do depois
+estão em `design/especime-v3/notas/correcoes-ux.md` §B.
+
+**B1 · o índice dos estudos, uma linha por trabalho** (achado C9). Eram 16 linhas
+para 12 trabalhos, com quatro pares PT/EN de título e destino repetidos, e a
+página a dizer «12 trabalhos · 16 edições» por cima disso. Passa a haver uma
+linha por trabalho, com as edições como **portas** dentro da linha (o badge PT ou
+EN abre a página do trabalho nessa língua), a data e o estado ditos uma vez. **O
+rótulo «Descrição: reformulação do título» e os dois irmãos saíram**, aqui e na
+página do trabalho: é o sítio a descrever a sua própria descrição, que é a classe
+que a Emenda 18(e) tira da página do leitor. As três chaves saíram de
+`strings.mjs` nas duas edições; a transcrição continua conferida por
+`data-verbatim`, carácter a carácter, que é onde ela é prova e não frase.
+
+**B2 · a leitura no sítio é o caminho por defeito** (Codex 10, achado C4). «Ler
+no sítio →» passa a ser a primeira porta da página do trabalho e das fichas das
+edições; «Ler o documento →» vem a seguir, com o rótulo «A edição de registo, tal
+como foi publicada.», que nomeia o que a coisa é. **A faixa da edição arquivada
+ganha a porta da leitura no sítio**, e o portão ganha a conferência dela: a faixa
+é markup nosso e é conferida campo a campo, e a regra é a mesma da página do
+estudo — onde há registo de conteúdo há página, onde não há não há porta.
+
+**B3 · «As linhas deste documento» dobra-se no fim do artigo** (decisão 8 da
+auditoria). A secção passa para dentro de um `<details>` fechado por defeito, com
+a porta única no fim do artigo, e o aparelho técnico do registo (o `origin_ref` e
+o resumo dos bytes) vem da coluna do aparelho para dentro da dobra. **A marcação
+não muda**: as 212 entradas, as portas de cada figura, o L6 e o C6 percorrem a
+mesma cadeia; o que muda é o contentor. Medido: a página de leitura do 04 passa
+de 74 050 para 30 377 px a 390 (de 111,5 para 45,7 ecrãs) e de 47 137 para
+23 689 px a 1280. **A navegação por fragmento abre a dobra, e foi medida em vez
+de suposta**, nas duas famílias de motores (WebKit e Chromium), ao clique numa
+porta de figura e em carga direta do endereço com fragmento: o algoritmo que
+revela os antepassados `details` existe nos dois, e não foi preciso script
+nenhum.
+
+**B4 · um índice nas páginas de leitura** (achado D1). «Nesta página», com os
+títulos de nível 2 do registo como âncoras, na forma que a agenda já tem, e um
+comando «Subir ↑» fixo no fim do ecrã abaixo de 640. Nenhum dos dois entra no
+`<article>`. **O índice é transcrição e entra pela nona origem:** seis dos
+títulos das oito edições trazem um ano escrito, e um índice em prosa da casa
+punha algarismos na página sem origem nenhuma. A marca é `data-registo-indice` e
+a conferência é a **L8** do `gate:html`, que compara contagem, ordem, texto
+carácter a carácter e o destino de cada âncora contra o mesmo registo. Os títulos
+do corpo ganharam `id="bloco-<i>"`, que é a coordenada que o `data-registo-bloco`
+já declara e não uma cadeia derivada do texto.
+
+**B5 · o marcador abre a sua explicação** (achado C7). `.marcador` passa a ser
+uma ligação para `/a-verificar` · `/en/to-verify` onde quer que renda, com o
+mesmo texto e a mesma classe (`IDENTIDADE.md` §6). **Uma exceção, e é a
+constituição:** dentro do selo o marcador continua a ser um `<span>`, porque a
+§5.4 fixa que a unidade inteira é a porta, num só `<a>`, e a Emenda 2 proíbe uma
+porta dentro de outra. Medido nas 342 páginas construídas: 420 marcadores, 354
+com porta, 66 dentro do selo, **zero âncoras aninhadas dentro de outra âncora**.
+
+**B6 · «concelho» em inglês** (achado C12, Codex 13). A interface inglesa deixa
+de usar a palavra portuguesa: 18 chaves de `strings.mjs` e 25 ocorrências da
+prosa da casa em `municipios.mjs` e `leituras.mjs`. «Concelho» fica onde é o nome
+de uma coisa portuguesa citada — o título de um trabalho, o nome «Carta
+Administrativa Oficial de Portugal», o título de um documento da fonte («SIE ·
+Desemprego registado por concelhos»), o corpo de uma edição arquivada — e onde é
+um campo do livro-razão, que vem do motor com a linha e não se reescreve deste
+lado (§1.31). **Onde a tradução criou ambiguidade, ela foi desfeita:** o inglês
+já usava «municipality» para o município como instituição, e duas frases passaram
+a dizer «council» onde falam da câmara.
+
+**B7 · os números com denominador, e os identificadores como identificadores**
+(achado C13). No livro-razão, «Proveniência completa · 128» passa a «128 de 136
+linhas com proveniência completa» (e «8 de 136 linhas com campos por confirmar»),
+numa frase só e não em duas metades que não se liam sozinhas; as duas contagens
+são chaves da prova e o rótulo é palavras. **A metade da página de linha ficou
+dentro do que a §11 fixa, e isso é uma escolha dita:** a §11 fixa a ordem do
+recibo e nomeia o id à cabeça e o endereço no corpo; movê-los para a coluna do
+aparelho mudava essa ordem. O que a auditoria pediu — os identificadores como
+identificadores — fecha no lugar que a ordem lhes dá: o id ganha o rótulo
+«identificador», na letra dos rótulos do aparelho. **Medido antes de mexer:** o
+endereço já estava em Bitter, com `overflow-wrap: anywhere`, a quebrar em três
+linhas sem transbordar.
+
+**B8 · «sem limiar» diz-se por palavras** (achado C14). Uma peça cujo estado é
+«sem limiar» deixa de levar o quadrado vazio: a `IDENTIDADE.md` §2 e a §3 da
+`direcao.md` dizem que sem limiar não há cor e o estado se diz por palavras, e o
+quadrado vazio lia-se como o quadrado tracejado do selo — «falta um campo» — ao
+lado de 58 567 pessoas. O glifo fica nos dois estados com limiar publicado.
+Medido: 12 peças em `/` e 7 em `/municipios/evora` perdem o quadrado, 22 mantêm o
+seu. **O cartão de partilha não mexeu, e foi medido:** a fila de estados do
+cartão da primeira página conta `sem: 0`, e o grupo nunca se desenha.
+
+**B9 · o par «242,6 → 105,5» e os rótulos do gráfico** (achados C2 e D9). O par
+passa a ser uma fila de dois grupos que não quebram por dentro, com a seta a
+viajar com o segundo valor: quando cabe é uma linha (1024), quando não cabe são
+duas com a seta a abrir a segunda (390 e 1280), e nunca há uma seta pendurada no
+fim de uma linha. Com a fila arrumada, **a exceção que a folha tinha escrita para
+os dois selos deste par saiu**, e as suas áreas voltam a 44 px sem se cruzarem.
+**Nos rótulos do gráfico, os quatro do mesmo lado não são possíveis, e está
+medido:** com os quatro por cima, o de 105,5 ficaria entre y = 47,7 e y = 61,5 e
+o fio da referência está em y = 49,59 — o rótulo atravessava a referência, que a
+Emenda 4 faz o elemento que se lê primeiro; com os quatro por baixo, o de 242,6
+caía em cima da sua própria barra. Fica a segunda forma que o brief abre: **a
+regra escrita** («o rótulo põe-se do lado de fora da referência»), como função
+nomeada na vista, como atributo no HTML e como régua que confere o lado de cada
+um, a não travessia da referência e a não sobreposição entre eles. A descrição da
+auditoria — «um rótulo por baixo do eixo e três por cima» — não é o que o desenho
+faz: os quatro estão acima do eixo, e o que muda entre eles é o lado da
+referência, dois de cada.
+
+**B10 · os alvos de toque e o texto do telemóvel.** O chão de 12 px do bloco A
+estende-se às nove rotas deste, pela mesma técnica e pelo nome de cada classe
+medida: **860 elementos de texto abaixo de 12 px passam a zero**. O maior grupo
+explica porque é que a rota `home` media zero e as outras não: a mobília do
+cabeçalho **compacto** desce para 9,5 px nas páginas interiores, e o bloco A não
+lhe tocou porque na primeira página ela não existe. Nos alvos, a técnica é a do
+A10 e não se inventa uma segunda: onde o alvo está sozinho ou numa fila, ganha
+altura de fila; onde é uma porta dentro de prosa corrida, fica com a área da sua
+linha, porque dar-lhe 44 px punha-a por cima da porta da linha de cima — a regra
+da casa («uma área sobreposta não é um alvo maior, é uma porta que abre a linha
+do vizinho»), que é também a isenção que a 2.5.8 das WCAG faz a um alvo dentro de
+uma frase. Medido nas 18 células: **zero alvos abaixo de 44 px fora da exceção,
+zero áreas sobrepostas, zero texto abaixo de 12 px**.
+
+**A régua das sobreposições foi corrigida, e a correção é do instrumento e não da
+página.** O bloco A comparou as caixas de delimitação de dois alvos; num
+parágrafo, uma ligação que quebra em três linhas tem uma caixa que cobre a
+largura toda e as três linhas, e duas ligações seguidas aparecem sempre
+sobrepostas sem que nenhum dedo as consiga tocar às duas (medido: 38 pares na
+agenda, 29 no Método, quase todos falsos). A régua deste bloco compara a caixa de
+CADA LINHA do elemento mais a caixa do `::after`, e foi provada no caso conhecido
+que o B9 fechou.
+
+**O que fica medido e não fechado**, com os números na nota: o texto dentro dos
+desenhos (146 elementos entre 3,7 e 6,6 px lidos, que é redesenhar as escalas de
+quatro instrumentos e é decisão do diretor), os 1 196 alvos dentro de prosa
+corrida, os cinco alvos da mobília por rota que o bloco A já tinha medido, e uma
+célula de `tests/linha/recibo.mjs` que espera 132 linhas do livro-razão e
+encontra 136, anterior a este bloco.
+
+**O que este bloco NÃO mexeu:** nenhum byte de `registos/` nem de `studies-src/`;
+nenhum texto governado; o texto dos documentos (I69, do motor); a voz da agenda
+(C11); o nome «Leitura breve» (D5); a pesquisa do livro-razão (D8); a
+constituição.
 ## 4. O registo dos defeitos e dos adiamentos
 
 **Defeito registado 2026-08-16 (00:10), encontrado pela direcção no sítio no ar — RESOLVIDO na mesma noite (§1.37, no ar em `4217232`):** os selos acrescentados a 15.08 aos valores do cabeçalho da primeira página (308 · 11 · 15) rendem no cabeçalho com o rótulo inteiro do estudo («O Estado do País — apuramento próprio») e, no caso da contagem CAOP, com o marcador «[a verificar]» ao lado. Certo pela regra (todo o valor tem selo, para a sua linha), errado naquele sítio: no cabeçalho o selo deve ser só o glifo, com o rótulo apenas para leitores de ecrã. **Primeiro item do bloco V**, junto com a saída de «Edição de …», da introdução justificativa da primeira página e de «Estes indicadores não são escolha nossa…» (voz). Sem alteração ao portão: o selo continua ao pé do valor e a apontar para a linha própria.
