@@ -25,6 +25,14 @@
 * Os treze indicadores do painel europeu vêm empilhados, um cartão por indicador, cada um com o valor grande, a palavra de estado, o limiar, a descrição, o nome, um «Abrir» e um «Fonte»: é a maior parte do rolar. A régua da convergência é uma faixa de 354 × 30 px por cartão.
 * A página de Évora tem 11 365 px de altura no telemóvel.
 
+## 2b · As duas capturas do telemóvel do diretor (25.08, 10:31), e o que mostram
+
+Guardadas em `design/especime-v3/capturas/ux-2026-08-25/` (`diretor-telemovel-inicio.jpg`, `diretor-telemovel-regua.jpg`).
+
+* **A primeira página, no Relance:** o comando de densidade, a manchete «Portugal ultrapassa 4 limiares … e cumpre 9.», a lede, e depois o mapa como um selo minúsculo à esquerda dos dois botões «Abrir um concelho →» e «Ver uma região →», a linha «308 concelhos · CAOP 2025 ■ fonte», e a seguir **um vazio de quase um ecrã** antes do primeiro cartão do painel («89,7 · fora do limiar»). O vazio não está no desenho de nenhuma prancha; é a auditoria que diz de onde vem.
+* **Depois de tocar num dos botões** (o endereço passa a `?ambito=municipio…`): o selo do mapa desaparece, ficam os dois botões, e por baixo abre «A régua da convergência · UE-27 = 100» com as seis leituras (Portugal 82, Grande Lisboa 129, Península de Setúbal 55, Algarve 89, Madeira 88, Alentejo 77, todas «provisório ■ fonte»). **Na régua, os rótulos sobrepõem-se** («Portugal 82», «Madeira 88» e «Algarve 89» uns por cima dos outros, a 390 px): a régua é ilegível exatamente onde devia ser lida.
+* **O que os dois botões são, lido no código e não adivinhado** (`src/views/HomeView.astro`, `public/js/inicio.js`): os dois são ligações com `data-modo`; com script, «Abrir um concelho →» põe a primeira página no modo de escolha de concelho (a pesquisa e a lista de proximidade) e «Ver uma região →» salta para a régua (`#convergencia`); sem script, levam a `/municipios` e à régua. O diretor viu um que não faz nada e outro que abre uma coisa pouco útil; reproduzir isso num telemóvel real, e não em emulação, é o primeiro item da auditoria.
+
 ## 3 · O método proposto (à espera da palavra do diretor)
 
 1. **A auditoria de UI e UX**, em duas leituras que não se conhecem: o lugar de direção a percorrer o sítio inteiro no telemóvel e no desktop, página a página, com capturas, e a escrever o que um utilizador encontra (o que funciona, o que não funciona, o que não se percebe), sem ler o código primeiro; e uma leitura de outra família (Codex), a partir das mesmas capturas e das páginas, com a pergunta «o que percebe um leitor que chega aqui pela primeira vez, e o que não percebe». As duas juntam-se numa lista ordenada por gravidade, com o que é bloqueante, o que é confuso e o que é apenas feio.
