@@ -262,19 +262,52 @@ const caop = getClaim('municipios-portugal-caop-2025');
              sobre o que a folha desenha. Passa a ser um atributo de dados, que é
              o que ela sempre foi: um facto sobre o concelho, que a página diz
              por palavras e o script usa para saber se há uma página para abrir. */
-          pontos.map((c) => (
-            <circle
-              class={c.slug === escolhido ? 'mun mun-escolhido' : 'mun'}
-              cx={c.x}
-              cy={c.y}
-              r={c.r}
-              data-m={c.nome}
-              data-d={c.distrito}
-              data-ilha={c.ilha ? 'sim' : null}
-              data-pagina={c.pagina ? 'sim' : null}
-              data-caop={c.slug}
-            />
-          ))
+          pontos.map((c) => {
+            const ponto = (
+              <circle
+                class={c.slug === escolhido ? 'mun mun-escolhido' : 'mun'}
+                cx={c.x}
+                cy={c.y}
+                r={c.r}
+                data-m={c.nome}
+                data-d={c.distrito}
+                data-ilha={c.ilha ? 'sim' : null}
+                data-pagina={c.pagina ? 'sim' : null}
+                data-caop={c.slug}
+              />
+            );
+            /* ----------------------------------------------------------------
+               UM PONTO COM PÁGINA É UMA LIGAÇÃO (bloco A, item A5)
+               ----------------------------------------------------------------
+               O mapa sabia o destino e não o oferecia: os círculos traziam
+               `data-caop` e o de Évora `data-pagina="sim"`, e o `svg` não tinha
+               uma única ligação, o cursor sobre ele era `auto` e o clique não
+               mudava endereço nem conteúdo (achado B3). Cada ponto que tenha
+               página passa a render dentro de um `<a href>` para a sua página,
+               com um `<title>` que diz o nome — que é o que dá o cursor, o
+               destino na barra do navegador e a paragem do Tab.
+
+               A EMENDA 10 CONTINUA INTEIRA: o desenho do ponto não muda. O
+               raio, o glifo, o traço e o enchimento são os dos outros 307; o
+               que a ligação acrescenta não se vê, e a cobertura continua a
+               dizer-se por palavras ao lado do mapa. Um ponto maior, ou cheio,
+               por ter página, seria a distinção que a emenda proíbe.
+
+               O `<title>` é o NOME DA CARTA, que já está no `data-m` do mesmo
+               ponto: não há aqui uma segunda lista de nomes. */
+            return c.pagina ? (
+              <a
+                class="mun-porta"
+                href={routePath('municipio', lang, { slug: c.pagina.slug })}
+                data-mun-porta={c.slug}
+              >
+                <title>{c.nome}</title>
+                {ponto}
+              </a>
+            ) : (
+              ponto
+            );
+          })
         }
       </g>
 
@@ -411,8 +444,22 @@ const caop = getClaim('municipios-portugal-caop-2025');
       <span class="mapa-hint" data-hint-escolher hidden>{s.inicio.mapa.escolher}</span>
     </p>
 
+    {/* --------------------------------------------------------------------
+        O NOME GANHA O ESPAÇO QUE LHE FALTAVA (bloco A, item A6)
+        --------------------------------------------------------------------
+        A leitura do mapa saía «Évoradistrito de Évora»: os três `span` são
+        `display: inline` e entre o nome e o resto não havia nem um espaço nem
+        um separador (achado C3). Passa a levar o separador da casa, o ponto
+        médio, entre o nome e o que vem a seguir — «Évora · distrito de Évora».
+
+        O separador é `aria-hidden` e tem o `hidden` do nome: entra e sai com
+        ele, porque um ponto médio sozinho, sem nome de um lado, não separa
+        nada. Quem ouve a página ouve o nome e o distrito, com a pausa que o
+        `<span>` já lhe dava.
+        -------------------------------------------------------------------- */}
     <div class="mapa-leitura" data-readout aria-live="polite">
       <span class="readout-name" data-readout-nome hidden></span>
+      <span class="readout-sep" data-readout-sep aria-hidden="true" hidden> · </span>
       <span class="readout-pre" data-readout-pre hidden>{s.inicio.cabeca.distritoDe}</span>
       <span class="readout-sub" data-readout-sub hidden></span>
     </div>

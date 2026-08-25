@@ -47,6 +47,7 @@ import { SITE_NAME } from '../../site.config.mjs';
 import { routePath, otherLanguagePath, normalizePath } from '../lib/routes.mjs';
 import { estadoDaVerificacao, prova } from '../lib/prova.mjs';
 import ValorDaProva from './ValorDaProva.astro';
+import ControloDeTema from './ControloDeTema.astro';
 import { t } from '../i18n/strings.mjs';
 
 const { lang = 'pt', path, compact = false, furniture = false, outraLingua = null } = Astro.props;
@@ -200,6 +201,13 @@ const painel = `${home}#painel`;
           </a>
         ))
       }
+      {/* O comando de tema, dentro do menu, abaixo de 640px (bloco A, item A7).
+          A razão está em `ControloDeTema.astro`: é a fila mais alta da mobília,
+          e dentro do menu deixa de custar essa fila ao ecrã de entrada. Acima de
+          640 esta cópia não se desenha, e a da mobília fica onde a Emenda 12 a
+          pôs. Só onde há mobília: uma página sem as duas leituras também não tem
+          o comando do tema. */}
+      {furniture && <ControloDeTema s={s} onde="menu" />}
     </nav>
     <nav class="nav nav-idioma" aria-label={s.nav.rotuloIdioma}>
       <a class="lang" href={outra} hreflang={lang === 'pt' ? 'en' : 'pt-PT'} lang={lang === 'pt' ? 'en' : 'pt-PT'}>
@@ -212,6 +220,30 @@ const painel = `${home}#painel`;
     <NomeTag class="wordmark">
       {compact ? <a href={home}>{SITE_NAME}</a> : SITE_NAME}
     </NomeTag>
+
+    {/* ------------------------------------------------------------------
+        A FRASE DE IDENTIDADE (Emenda 18, 25.08.2026)
+        ------------------------------------------------------------------
+        «O sítio tem um nome e uma frase de identidade, "Um observatório de
+        Portugal." e, na edição inglesa, "An observatory of Portugal.", por
+        baixo da marca NA PRIMEIRA PÁGINA e em mais lado nenhum; a frase nomeia
+        o que o sítio é e não diz quem o faz nem como (isso vive no Sobre e no
+        Método).»
+
+        A CONDIÇÃO É `naHome`, e não uma propriedade nova: a primeira página é a
+        única rota que o cabeçalho já sabe reconhecer, porque é a única onde a
+        ligação de idioma leva o estado consigo. Uma segunda maneira de
+        perguntar a mesma coisa divergiria da primeira.
+
+        A EMENDA 11 CONTINUA DE PÉ ONDE ELA VALE: a linha de método («Portugal,
+        medido. Cada número tem fonte.») não volta, nem aqui nem no rodapé do
+        cartão de partilha. Isto não é método, é o nome da coisa dito por
+        extenso: sem verbo sobre o que a casa faz, sem autoria, sem porta, sem
+        algarismo, sem selo. A régua do inventário classifica-a como o nome da
+        publicação — navegação, como a marca —, e a rota `home` continua com
+        autorreferência a zero.
+        ------------------------------------------------------------------ */}
+    {!compact && naHome && <p class="masthead-identidade">{s.identidade}</p>}
 
     {
       furniture && (
@@ -267,29 +299,12 @@ const painel = `${home}#painel`;
               para o escuro desde que o bloco da preferência do sistema saiu de
               `tokens.css`.
 
-              DOIS BOTÕES, E NÃO UM INTERRUPTOR. Um interruptor com uma etiqueta
-              só («escuro», premido ou não) obriga quem o ouve a saber o que é o
-              não-premido; dois botões com `aria-pressed` dizem os dois estados
-              pelo nome, e é a mesma forma que os comandos de âmbito e de
-              densidade da primeira página já têm. O nome do grupo é `tema.rotulo`
-              e só é ouvido: duas palavras soltas não dizem de que é a escolha.
-
-              ENTRA `hidden` DO SERVIDOR, E O SCRIPT ACENDE-O. Sem JavaScript o
-              sítio é claro e este controlo não existe — é a mesma regra que a
-              primeira página já aplica às dicas do mapa (ISSUES I21): um comando
-              que não comanda nada é uma promessa falhada, e é mais barato não o
-              desenhar. O `aria-pressed` que sai da construção é o do estado sem
-              escolha, que é claro; `public/js/tema.js` corrige-o à chegada, antes
-              de o mostrar.
+              O QUE ELE ERA ESTÁ AGORA EM `ControloDeTema.astro` — dois botões e
+              não um interruptor, o nome do grupo só ouvido, e `hidden` do
+              servidor —, porque abaixo de 640 ele passou a ter um segundo lugar,
+              dentro do menu (bloco A, item A7). Esta é a cópia do computador.
               -------------------------------------------------------------- */}
-          <div class="tema" role="group" aria-label={s.tema.rotulo} data-tema-controlo hidden>
-            <button type="button" class="tema-b" data-tema="light" aria-pressed="true">
-              {s.tema.claro}
-            </button>
-            <button type="button" class="tema-b" data-tema="dark" aria-pressed="false">
-              {s.tema.escuro}
-            </button>
-          </div>
+          <ControloDeTema s={s} onde="mobilia" />
         </div>
       )
     }

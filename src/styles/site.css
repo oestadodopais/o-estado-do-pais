@@ -178,8 +178,26 @@ p {
   margin: 0;
 }
 
+/* ---------------------------------------------------------------------------
+ * O AR ENTRE DUAS SECÇÕES (correções de UX, bloco A, item A8)
+ * ---------------------------------------------------------------------------
+ * Era `clamp(52px, 7vw, 86px)`, e era a causa medida do vazio que o diretor
+ * fotografou: entre a linha «308 concelhos · CAOP 2025 ■ fonte» e o primeiro
+ * cartão do painel havia uma banda de cor uniforme de 96px a 390 e de 125px a
+ * 1280 (achado D7), e na página de Évora a mesma conta empurrava os quatro
+ * primeiros valores para lá da margem inferior do primeiro ecrã.
+ *
+ * A banda não era uma soma de acidentes: era este número, mais a fila vazia que
+ * a leitura do mapa reservava. Baixa para um tecto de 44px, que é o alvo medido
+ * do item A8 — nenhuma banda de cor uniforme acima de 48px entre dois blocos de
+ * conteúdo, medida nos pixéis da captura como o leitor-utilizador a mediu.
+ *
+ * A SEPARAÇÃO NÃO SE PERDE, porque não era o ar que a fazia: `.sec-head` leva um
+ * fio por cima e 20px por baixo dele, e o painel leva o seu. O que sai é o papel
+ * em branco entre o fim de um bloco e o fio do seguinte.
+ */
 section {
-  padding-top: clamp(52px, 7vw, 86px);
+  padding-top: clamp(30px, 3.2vw, 44px);
 }
 
 .sec-head {
@@ -387,6 +405,26 @@ section {
   text-decoration: none;
 }
 
+/* ---------------------------------------------------------------------------
+ * A FRASE DE IDENTIDADE, POR BAIXO DA MARCA (Emenda 18, 25.08.2026)
+ * ---------------------------------------------------------------------------
+ * «Um observatório de Portugal.» / «An observatory of Portugal.», só na primeira
+ * página. Na letra da PROSA, porque é uma frase e não uma leitura de aparelho, e
+ * no corpo da mobília, porque é a marca que manda no cabeçalho e uma segunda voz
+ * grande por baixo dela seriam duas marcas. Uma linha, sem porta e sem
+ * algarismo.
+ *
+ * O `margin-top` é pequeno de propósito: a frase pertence à marca, e não à
+ * mobília que vem por baixo do fio. */
+.masthead-identidade {
+  margin: 6px 0 0;
+  font-family: var(--f-prosa);
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+}
+
 /* A regra `.method-line` saiu a 21.08.2026 com a linha que ela compunha
    (Emenda 11, DECISIONS §1.52): a linha de método deixou de se render por baixo
    da marca, e uma regra sem elemento é uma regra que mente sobre o que a folha
@@ -497,6 +535,10 @@ section {
    classe, e `display: inline-flex` é um selector de classe: sem a linha
    seguinte, o controlo aparecia sempre, inclusive sem JavaScript, a comandar
    coisa nenhuma. */
+/* O CONTROLO DO TEMA TEM DOIS LUGARES, UM POR LARGURA (bloco A, item A7).
+   O da mobília, por baixo da marca, é o do computador; o de dentro do menu é o
+   do telemóvel. Cada largura apaga o do outro lado: em cada uma há um comando, e
+   um só, e um `display: none` tira-o também da árvore de acessibilidade. */
 .tema {
   display: inline-flex;
   align-items: center;
@@ -505,6 +547,19 @@ section {
 }
 .tema[hidden] {
   display: none;
+}
+.tema-no-menu {
+  display: none;
+  margin-left: 0;
+}
+@media (max-width: 640px) {
+  .masthead-furniture > .tema {
+    display: none;
+  }
+  .tema-no-menu:not([hidden]) {
+    display: inline-flex;
+    width: 100%;
+  }
 }
 .tema-b {
   appearance: none;
@@ -3850,3 +3905,162 @@ a.quadro-estados-col:hover .quadro-estados-e {
    elemento mente sobre o que a folha desenha, e é a mesma razão que tirou a
    `.method-line` na Emenda 11. Quando `/municipios` desenhar as parcelas, a
    etapa 3 escreve as regras que precisar. */
+
+
+/* ============================================================================
+ * AS CORREÇÕES DE UX DE 25.08.2026 · BLOCO A · o que é do cabeçalho e do que
+ * o dedo alcança. As três regras deste bloco que valem em todo o sítio, e não
+ * só na primeira página: a cabeça mais baixa no telemóvel (A7), o chão de 12px
+ * do texto no telemóvel (A9) e as áreas de toque (A10).
+ * ========================================================================= */
+
+/* ----------------------------------------------------------------------------
+ * A7 · A CABEÇA MAIS BAIXA NO TELEMÓVEL
+ * ----------------------------------------------------------------------------
+ * A auditoria mediu: a mobília mede 213px em todas as páginas e 259px na
+ * primeira, e o primeiro título de conteúdo aparece entre 233 e 266px, 0,35 a
+ * 0,40 ecrãs (achado D6). O que a decisão manda, abaixo de 640: a marca numa
+ * linha, as duas leituras em corpo de mobília, o comando de tema dentro do menu.
+ *
+ * A LEITURA NÃO SAI (IDENTIDADE §3: «debaixo dele, duas leituras rotuladas e
+ * ligadas»): as duas continuam lá, com o seu rótulo e a sua porta. O que encolhe
+ * é o papel à volta delas — as goteiras da marca, o ar por cima do fio da
+ * mobília e a fila que o comando do tema ocupava.
+ *
+ * AS DUAS LEITURAS NUMA LINHA SÓ NÃO CABEM A 390, e a conta está escrita para
+ * quem a quiser refazer: «Painel europeu reconferido a» mede 170px, a data 74, o
+ * rótulo «Agenda:» 47 e as contagens 129, o que com as goteiras dá 460px de
+ * texto numa coluna de 354. Ficam na mesma FILA, que é o que esta folha
+ * governa, e quebram em duas linhas onde o ecrã as obriga; encurtá-las seria
+ * escrever cópia nova, e a cópia é do diretor.
+ * ------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .topbar {
+    padding-top: 8px;
+  }
+  .masthead {
+    padding: 16px 0 12px;
+  }
+  .masthead-furniture {
+    margin-top: 12px;
+    padding-top: 8px;
+    gap: 4px 14px;
+  }
+  /* A frase de identidade encosta-se à marca, como no computador, e não ganha
+     ar próprio num ecrã em que cada pixel do topo custa uma linha de conteúdo. */
+  .masthead-identidade {
+    margin-top: 4px;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * A9 · O CHÃO DE 12 px NO TELEMÓVEL
+ * ----------------------------------------------------------------------------
+ * A auditoria contou texto de 9,5 a 11px em toda a parte, e 10 na primeira
+ * página (achado D4). «A mobília não cresce» é regra do computador; num
+ * telemóvel 9,5px não se lê. O chão vale abaixo de 640 e mais nada muda acima:
+ * as regras estão aqui pelo nome de cada classe medida, e não por um seletor
+ * universal, porque um `*` levantaria também o que já está certo e mudaria a
+ * composição de coisas que ninguém mediu.
+ *
+ * O bloco A responde pela rota `home`; as classes desta lista que também vivem
+ * noutras rotas sobem com ela, porque a folha é uma só e uma regra por rota
+ * seria a mesma medida escrita duas vezes.
+ * ------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .linha-campo-k,
+  .badge,
+  .agenda-k,
+  .regra-k,
+  .mecanismo-legenda-k,
+  .mono,
+  .glance-unit,
+  .ligacao-dados,
+  .marcador {
+    font-size: 12px;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * A10 · AS ÁREAS DE TOQUE, PELA TÉCNICA QUE O SELO JÁ USA
+ * ----------------------------------------------------------------------------
+ * PRIMEIRO O QUE SE MEDIU, porque o item pedia a medição antes da correção: o
+ * selo `a.src-chip` JÁ TEM 44px de área efetiva na primeira página. O
+ * leitor-utilizador mediu a caixa do elemento (52 × 14px) e não o `::after`
+ * posicionado que a etapa 1 lhe deu; medida a área efetiva, com o `::after`
+ * contado, os 22 selos da primeira página estão todos acima de 44 e nenhum se
+ * sobrepõe ao vizinho. Não se mexe neles.
+ *
+ * O QUE FALTAVA ERAM OS NÚMEROS DO PRÓPRIO SÍTIO E TRÊS PORTAS. `a.prova-valor`
+ * — os algarismos sublinhados da manchete e das portas — media 8 × 16px. Ganha a
+ * mesma técnica: um `::after` absoluto e centrado, 44px nos dois eixos, que
+ * alarga o que se toca sem alargar o que se compõe.
+ *
+ * E A REGRA DA CASA CONTRA AS ÁREAS SOBREPOSTAS FICA DE PÉ: «uma área sobreposta
+ * não é um alvo maior, é uma porta que abre a linha do vizinho». Onde duas
+ * portas pequenas se seguem numa fila — o nome, a contagem e «a página inteira»
+ * de cada porta da primeira página —, a saída é dar ALTURA à fila, e é o que a
+ * folha da primeira página faz. Aqui ficam as áreas; lá fica a altura.
+ * ------------------------------------------------------------------------- */
+.prova-valor {
+  position: relative;
+}
+a.prova-valor::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  min-width: 44px;
+  height: 44px;
+}
+/* A MOBÍLIA DO CABEÇALHO É A EXCEÇÃO MEDIDA, e é escrita como a do `.brief-text`
+   foi: as duas leituras e as duas contagens da agenda vivem em duas linhas de
+   19px, a 25px de distância uma da outra, e as áreas de 44px cruzam-se por 19px
+   na vertical e por 44 na horizontal (medido a 390, nas duas edições). Dar-lhes
+   altura de fila resolveria a sobreposição e devolveria à cabeça os 50px que o
+   item A7 acabou de lhe tirar, que é o defeito que a auditoria mandou fechar.
+   Ficam com a área da sua própria linha, e a porta continua a abrir a coisa
+   certa. */
+.masthead-furniture a.prova-valor::after {
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* A PORTA DAS CORREÇÕES, NO TELEMÓVEL: duas ligações que a 390 caem em linhas
+   seguidas, a 19px uma da outra. Dar-lhes 44px de altura dentro de um parágrafo
+   corrido fazia as duas caixas cruzarem-se por 33,6px — medido —, porque uma
+   caixa de 44px numa linha de 19 transborda para a linha de baixo.
+
+   A saída é a da IDENTIDADE §11 («Móvel: uma coisa por linha»): a linha da porta
+   passa a ser uma caixa flexível que quebra, e uma quebra de caixa flexível
+   coloca a fila seguinte POR BAIXO da mais alta da anterior, em vez de a deixar
+   sobrepor-se. As duas ligações ganham a altura, e o ponto médio continua onde
+   estava — no documento e à vista. */
+@media (max-width: 640px) {
+  .porta-correccoes-linha {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 7px;
+  }
+  .porta-correccoes-linha .ligacao-email,
+  .porta-correccoes-linha > a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
+/* E o alvo da navegação do rodapé ganha também a LARGURA: `min-height` sozinho
+   deixava «Home», na edição inglesa, com 42,3px de largura. A regra vive na
+   mesma `@media (pointer: coarse)` que já lhe dá a altura, e por isso não muda
+   nada em cursor. */
+@media (pointer: coarse) {
+  .nav a,
+  .rodape-nav a {
+    min-width: 44px;
+  }
+}

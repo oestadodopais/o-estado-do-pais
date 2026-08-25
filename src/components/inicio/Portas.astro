@@ -80,10 +80,18 @@ const temAgenda = agenda.every((a) => p[a.chave].valor !== null);
       <div class="porta porta-agenda">
         <a class="porta-nome" href={rotas.agenda}>{s.nav.agenda}</a>
         <span class="porta-conta">
+          {/* Cada contagem é um ALVO, e por isso cada entrada é um grupo com
+              folga própria (bloco A, item A10): a 390, na edição inglesa, duas
+              contagens ficavam a 40px de distância e as suas áreas de 44px
+              cruzavam-se por 3,8px. Uma área sobreposta não é um alvo maior — é
+              uma porta que abre a linha do vizinho. O `<span>` não muda o texto
+              nem a ordem: só dá à entrada uma caixa onde a folga cabe. */}
           {agenda.map((a, i) => (
             <>
               {i > 0 && ' · '}
-              <ValorDaProva chave={a.chave} item={p[a.chave]} lang={lang} /> {a.palavra}
+              <span class="porta-conta-item">
+                <ValorDaProva chave={a.chave} item={p[a.chave]} lang={lang} /> {a.palavra}
+              </span>
             </>
           ))}
         </span>

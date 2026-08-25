@@ -91,8 +91,20 @@
   var ESCURO = 'dark';
   var CLARO = 'light';
 
-  var grupo = document.querySelector('[data-tema-controlo]');
-  if (!grupo) return;
+  /* --------------------------------------------------------------------------
+   * TODOS OS CONTROLOS, E NÃO O PRIMEIRO (bloco A das correções de UX, item A7)
+   * --------------------------------------------------------------------------
+   * Era `querySelector`, porque o cabeçalho tinha um controlo só. Desde a
+   * correção da cabeça no telemóvel tem DOIS — o da mobília, por baixo da marca,
+   * e o de dentro do menu —, e cada largura apaga o do outro lado com uma
+   * `@media`. Servir o primeiro deixaria o outro `hidden` para sempre, porque é
+   * este ficheiro que lhe tira o `hidden`, e o telemóvel ficava sem comando.
+   *
+   * O que muda é só o número: a leitura da chave é uma, o estado do documento é
+   * um, e os dois controlos dizem sempre a mesma coisa porque `aplica()` escreve
+   * em todos de uma vez. */
+  var grupos = document.querySelectorAll('[data-tema-controlo]');
+  if (!grupos.length) return;
 
   /* `localStorage` atira em vez de devolver nada quando o aparelho o recusa (um
      separador privado de alguns motores, uma política de terceiros). Ler e
@@ -119,7 +131,7 @@
     var escuro = tema === ESCURO;
     if (escuro) raiz.setAttribute('data-theme', ESCURO);
     else raiz.removeAttribute('data-theme');
-    var botoes = grupo.querySelectorAll('[data-tema]');
+    var botoes = document.querySelectorAll('[data-tema-controlo] [data-tema]');
     for (var i = 0; i < botoes.length; i++) {
       var qual = botoes[i].getAttribute('data-tema');
       botoes[i].setAttribute('aria-pressed', qual === (escuro ? ESCURO : CLARO) ? 'true' : 'false');
@@ -132,14 +144,17 @@
      vezes à mesma chave é uma maneira de as duas respostas divergirem. */
   aplica(raiz.getAttribute('data-theme') === ESCURO || le() === ESCURO ? ESCURO : CLARO, false);
 
-  grupo.addEventListener('click', function (ev) {
-    var botao = ev.target && ev.target.closest ? ev.target.closest('[data-tema]') : null;
-    if (!botao || !grupo.contains(botao)) return;
-    aplica(botao.getAttribute('data-tema') === ESCURO ? ESCURO : CLARO, true);
-  });
-
-  /* Só agora se mostra: até aqui o controlo podia estar a dizer o estado errado,
-     e um comando que pisca do estado errado para o certo é pior do que um que
-     aparece já certo. */
-  grupo.hidden = false;
+  for (var g = 0; g < grupos.length; g++) {
+    (function (grupo) {
+      grupo.addEventListener('click', function (ev) {
+        var botao = ev.target && ev.target.closest ? ev.target.closest('[data-tema]') : null;
+        if (!botao || !grupo.contains(botao)) return;
+        aplica(botao.getAttribute('data-tema') === ESCURO ? ESCURO : CLARO, true);
+      });
+      /* Só agora se mostra: até aqui o controlo podia estar a dizer o estado
+         errado, e um comando que pisca do estado errado para o certo é pior do
+         que um que aparece já certo. */
+      grupo.hidden = false;
+    })(grupos[g]);
+  }
 })();
