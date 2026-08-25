@@ -436,6 +436,17 @@ conta blocos de texto, e a âncora não tem texto nenhum. Medido depois da ronda
 **91 frases distintas e 2 542 ocorrências** em todo o sítio, os mesmos números de
 antes dela, e autorreferência **0** nas oito rotas `texto`.
 
+### Correções de UX de 25.08.2026, bloco A · uma chave nova e um rótulo mudado
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| **`identidade`** | **Um observatório de Portugal.** | **An observatory of Portugal.** | **Chave nova (Emenda 18, item A11).** As palavras são do diretor, nas duas edições, e entram tal como ele as escreveu: não se compõem, não se encurtam e não se traduzem uma da outra. Rende-se por baixo da marca **na primeira página e em mais lado nenhum**, na letra da prosa e no corpo da mobília. É o nome da publicação dito por extenso, e é por isso que o inventário a classifica em navegação: não fala do método, da verificação nem das intenções da casa. A chave vive na raiz de `strings.mjs`, ao lado de `outraLingua`, e não dentro de `inicio`, porque é do sítio e não da primeira página, mesmo que hoje só ela a renda |
+| `ambito.municipio` | **Concelho** (era «Município») | Municipality (sem mudança) | **Rótulo mudado, item A2.** É a palavra que o resto da primeira página já usa: a pesquisa diz «Escreva o nome do concelho» e a legenda do mapa diz «308 concelhos». Um comando que chama à mesma coisa outro nome faz o leitor procurar duas coisas. **A edição inglesa fica como está**, e é uma escolha e não um esquecimento: «concelho» por traduzir na interface inglesa é o achado C12 da auditoria, que é do bloco B e tem de ser decidido de uma vez para todas as superfícies (a pesquisa, o índice dos 308, a página do concelho), e não meia decisão neste comando |
+
+**Duas chaves ficaram sem superfície, e ficam escritas.** `ambito.regiao` («Região» / «Region») e `ambito.regioesMeta` saíram do comando com a terceira posição (item A2), e as três de `inicio.movel` («Abrir um concelho», «Ver uma região», «Abrir a escolha de concelho») saíram com os destinos do telemóvel e com o selo do mapa (itens A2 e A4). Nenhuma se apaga: a primeira volta ao comando com a página das regiões, e as outras voltam com o mapa por distritos que a Emenda 3 desenha para o telemóvel. A razão está escrita ao lado de cada uma em `src/i18n/strings.mjs`.
+
+**Identidades: nenhuma nova.** As duas cadeias de `identidade` diferem entre as duas edições, como devem.
+
 ## Identidades aceites (PT = EN de propósito)
 Nomes próprios, códigos de série, identificadores de linha, «Eurostat», «INE», «DGAL», «IEFP», «CAOP», «UE-27», «O Estado do País». A régua da invariância imprime todas as chaves cujo valor é igual nas duas línguas; as que não estiverem nesta lista são erro.
 
