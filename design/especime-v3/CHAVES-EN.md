@@ -468,3 +468,66 @@ Nomes próprios, códigos de série, identificadores de linha, «Eurostat», «I
 - **Etapa 2m, duas identidades novas e nenhuma retirada.** `node scripts/medir-invariancia.mjs --chaves` imprime **20** chaves com o mesmo valor nas duas edições, onde a etapa 3 imprimia 18 (17 no commit 3-0, mais `municipios.coberturaB` na 3c). Entram `inicio.cabeca.ledePais.separador` = «, » e `inicio.cabeca.ledePais.fecha` = «.», que são pontuação e não palavras — a mesma razão de `tituloPaisFim` e `tituloVazioB`. A vírgula da lista é a mesma nas duas línguas; o que muda entre elas é a conjunção, e essa está declarada à parte (`ultimo`, « e » / « and ») exactamente para que não fosse preciso fingir que a pontuação difere.
 
 - **`nav.menu` = «Menu» nas duas edições** (etapa 1e). Não é português copiado do inglês nem inglês copiado do português: «menu» entrou no português pelo francês e é a palavra corrente em Portugal para esta coisa exacta, tanto no papel como no ecrã, e nenhuma alternativa portuguesa («opções», «secções», «navegação») diz o que este comando faz sem dizer outra coisa. Escreve-se igual e lê-se igual; o que muda entre as duas edições é o nome acessível do comando, que junta a palavra visível à etiqueta da região («Menu · Navegação principal» / «Menu · Main navigation»), e essa metade é diferente. Se a revisão de voz preferir outra palavra em português, é uma cadeia.
+
+### Correções de UX · bloco B (25.08.2026)
+
+**Chaves novas.**
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `estudos.documentoNota` | A edição de registo, tal como foi publicada. | The record edition, as it was published. | item B2. Nomeia o que a coisa é, e não porque se deve confiar nela: a Emenda 15 permite uma legenda que nomeia e proíbe uma que se justifica |
+| `estudos.textoSubir` | Subir | Back to top | item B4. O comando fixo do telemóvel. Em inglês a forma corrente é a longa, e não «Up»: um comando de uma palavra que não diz para onde não é o mesmo comando |
+| `livro.contaDe` | de | of | item B7. A preposição do denominador, «128 **de** 136 linhas» |
+| `livro.grupoCompletasFrase` | linhas com proveniência completa | rows with complete provenance | item B7 |
+| `livro.grupoPorConfirmarFrase` | linhas com campos por confirmar | rows with fields to confirm | item B7 |
+| `livro.linha.identificadorK` | identificador | identifier | item B7. O rótulo do id da linha, na letra dos rótulos do aparelho |
+
+**Chaves retiradas, nas duas edições.**
+
+| chave | porquê |
+|---|---|
+| `estudos.descricaoRotulo` · `estudos.descricaoDoDocumentoRotulo` · `estudos.descricaoTraduzidaRotulo` | item B1. Diziam ao leitor o que a descrição era («reformulação do título», «frase de abertura do documento», «tradução da casa»), que é o sítio a descrever a sua própria descrição. A transcrição continua conferida por `data-verbatim` |
+| `livro.grupoCompletasK` · `livro.grupoPorConfirmarK` | item B7. O nome do estado por cima de um número solto era a mesma coisa em duas metades que não se liam sozinhas; o título do grupo passa a ser a frase inteira |
+
+**«Concelho» sai da interface inglesa (item B6, achado C12).** Dezoito chaves de
+`strings.mjs` e vinte e cinco ocorrências da prosa da casa em
+`src/data/municipios.mjs` e `src/data/leituras.mjs`. A regra é a do brief:
+«municipality» na interface, e «concelho» só onde é o nome de uma coisa
+portuguesa citada.
+
+| chave | en, antes | en, agora |
+|---|---|---|
+| `ambito.pesquisaRotulo` | Type the name of the concelho | Type the name of the municipality |
+| `ambito.pesquisaSemResultado` | No concelho by that name. | No municipality by that name. |
+| `inicio.cabeca.tituloEvora` | The measures of the concelho, each with its own row. | The measures of the municipality, each with its own row. |
+| `inicio.cabeca.ledeVazioA` | …where the concelho sits… | …where the municipality sits… |
+| `inicio.movel.abrirConcelho` | Open a concelho | Open a municipality |
+| `inicio.movel.seloDaEscolha` | Open the concelho chooser | Open the municipality chooser |
+| `inicio.portas.concelhos` | ` concelhos` | ` municipalities` |
+| `inicio.mapa.linha` | ` concelhos · CAOP ` | ` municipalities · CAOP ` |
+| `inicio.mapa.escolher` | Tap a point to choose the concelho. | Tap a point to choose the municipality. |
+| `inicio.mapa.trocar` | change concelho | change municipality |
+| `municipios.metaDescription` | Every concelho in Portugal… | Every municipality in Portugal… |
+| `municipios.h1` | The concelhos of Portugal | The municipalities of Portugal |
+| `municipios.lede` | Every concelho, from the Carta Administrativa… | Every municipality, from the Carta Administrativa… |
+| `municipios.coberturaB` | ` concelhos · ` | ` municipalities · ` |
+| `municipios.mapaLink` | The map of concelhos | The map of municipalities |
+| `municipio.distanciaLegenda` | …the regulator publishes for the concelho… | …the regulator publishes for the municipality… |
+| `municipio.estudosK` | The works about this concelho | The works about this municipality |
+| `estudos.municipioK` | The concelho it is about | The municipality it is about |
+
+**O que fica em «concelho», e é uma leitura e não um esquecimento:** o título de
+um trabalho; o nome próprio «Carta Administrativa Oficial de Portugal»; o título
+de um documento da fonte, como «SIE · Desemprego registado por concelhos», que é
+um campo do livro-razão; o corpo de uma edição arquivada, que é obra citada
+alojada byte a byte; e a prosa das correções que o motor escreve com a linha
+(`reason_en`), que reescrever deste lado era o sítio a escrever o que o motor
+declara (`DECISIONS.md` §1.31).
+
+**Uma ambiguidade que a tradução criou, e que foi desfeita.** O inglês já usava
+«municipality» para o município como INSTITUIÇÃO; com «concelho» a passar a
+«municipality» para o TERRITÓRIO, duas frases ficaram a dizer «the university
+holds more contracted money in this municipality than the municipality». As duas
+passam a dizer «council» onde falam da câmara, que é a palavra que o mesmo
+ficheiro já usava («Recovery-plan money is attributed by the register, not by the
+council»).
