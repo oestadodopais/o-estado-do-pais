@@ -20,6 +20,7 @@ import Claim from '../components/Claim.astro';
 import Provenance from '../components/Provenance.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
+import Marcador from '../components/Marcador.astro';
 import { allClaims, provenienciaIncompleta, POR_VERIFICAR } from '../lib/ledger.mjs';
 import { caminhoDoLivro } from '../lib/livro.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -52,16 +53,31 @@ const porConfirmar = todas.filter((c) => provenienciaIncompleta(c));
  */
 const p = prova(lang);
 
+/**
+ * OS DOIS GRUPOS, E O NÚMERO COM DENOMINADOR (bloco B, item B7; achado C13).
+ *
+ * O título dizia «Proveniência completa» e por baixo dele estava «128», sem
+ * unidade e sem denominador: 128 de quê, e em quantas? As duas leituras
+ * apanharam o mesmo. O título do grupo passa a ser a frase inteira — «128 de
+ * 136 linhas com proveniência completa» —, e é uma frase e não duas: o nome do
+ * estado dito por cima de um número solto era a mesma coisa escrita em dois
+ * sítios, e nenhuma das duas metades se lia sozinha.
+ *
+ * NENHUM ALGARISMO ESCRITO À MÃO. As duas contagens são chaves da prova
+ * (`indexaveis` e `divida` para o numerador, `afirmacoes` para o denominador),
+ * que o portão reconta por conta própria a cada construção; o que é novo é o
+ * rótulo, que é palavras (`IDENTIDADE.md` §10).
+ */
 const grupos = [
   {
     id: 'completas',
-    k: s.livro.grupoCompletasK,
+    frase: s.livro.grupoCompletasFrase,
     chave: 'indexaveis',
     linhas: completas,
   },
   {
     id: 'por-confirmar',
-    k: s.livro.grupoPorConfirmarK,
+    frase: s.livro.grupoPorConfirmarFrase,
     chave: 'divida',
     linhas: porConfirmar,
   },
@@ -121,10 +137,12 @@ const grupos = [
       {
         grupos.map((g) => (
           <section class="linha-bloco" aria-labelledby={`grupo-${g.id}`}>
-            <h2 class="linha-bloco-titulo" id={`grupo-${g.id}`}>{g.k}</h2>
-            <p class="livro-contas">
+            <h2 class="linha-bloco-titulo livro-grupo-k" id={`grupo-${g.id}`}>
               <ValorDaProva chave={g.chave} item={p[g.chave]} lang={lang} />
-            </p>
+              {' '}{s.livro.contaDe}{' '}
+              <ValorDaProva chave="afirmacoes" item={p.afirmacoes} lang={lang} />
+              {' '}{g.frase}
+            </h2>
             {/* A NOTA DO GRUPO SAIU (direção, 21.08.2026, tarde). Eram as duas
                 frases de autorreferência que esta rota ainda contava: a casa a
                 dizer que conferiu campo a campo, e a explicar o seu próprio
@@ -202,7 +220,7 @@ const grupos = [
       <div class="aparelho-bloco">
         <span class="linha-campo-k">{s.livro.marcadorK}</span>
         <p class="aparelho-nota">
-          <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>
+          <Marcador lang={lang} />
           {lang !== 'pt' && s.livro.marcadorGloss && (
             <span class="marcador-gloss"> ({s.livro.marcadorGloss})</span>
           )}

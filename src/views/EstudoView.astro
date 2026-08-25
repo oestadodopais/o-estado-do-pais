@@ -33,6 +33,7 @@
 import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
 import Provenance from '../components/Provenance.astro';
+import Marcador from '../components/Marcador.astro';
 import Frase from '../components/Frase.astro';
 import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import { workById, POR_VERIFICAR, subjectLabel } from '../data/studies.mjs';
@@ -107,20 +108,17 @@ const descricaoPt = work.description.pt;
 const descricaoEn = work.description.en;
 
 /**
- * O que a descrição É, por edição, e o rótulo que o diz.
+ * O RÓTULO DA DESCRIÇÃO SAIU (bloco B, item B1; achado C9).
  *
- * Três casos e não dois: a frase de abertura do documento, transcrita e
- * conferida contra o ficheiro; uma tradução da casa dessa frase, onde o
- * documento não tem edição naquela língua; e, por omissão, a reformulação do
- * título (§1.7). Um rótulo que dissesse «frase de abertura» sobre uma tradução
- * seria a mesma afirmação por conferir que este bloco veio corrigir (§1.40).
+ * Dizia o que a descrição É — «reformulação do título», «frase de abertura do
+ * documento», «tradução da casa da frase de abertura» —, e isso é o sítio a
+ * descrever a sua própria descrição, que é a classe de frase que a Emenda 18(e)
+ * tira da página do leitor: «nada existe para mostrar diligência». O que a
+ * afirmação sustentava continua sustentado onde é conferível: uma descrição
+ * transcrita leva `data-verbatim`, e o portão compara-a carácter a carácter com
+ * `src/data/verbatim.mjs`. O campo `descricaoDoDocumento` do registo dos
+ * trabalhos fica, porque é ele que decide se há transcrição para conferir.
  */
-const rotuloDaDescricao = (edicao) => {
-  const tipo = work.descricaoDoDocumento?.[edicao] ?? null;
-  if (tipo === 'verbatim') return s.estudos.descricaoDoDocumentoRotulo;
-  if (tipo === 'traducao') return s.estudos.descricaoTraduzidaRotulo;
-  return s.estudos.descricaoRotulo;
-};
 const descricaoAqui = work.description[lang];
 
 /* Fica "Draft" enquanto a PÁGINA não tiver conteúdo — mesmo com o documento já
@@ -167,7 +165,7 @@ const jsonld = {
     <p class="lede" style="margin-top:16px">
       {
         descricaoAqui === POR_VERIFICAR ? (
-          <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>
+          <Marcador lang={lang} />
         ) : work.verbatimDaAbertura?.[lang] ? (
           <span data-verbatim={work.verbatimDaAbertura[lang]}>{descricaoAqui}</span>
         ) : (
@@ -250,15 +248,22 @@ const jsonld = {
       {
         migrado ? (
           <>
+            {/* A LEITURA NO SÍTIO VEM PRIMEIRO (bloco B, item B2; Codex 10).
+                Os dois destinos estavam pela ordem em que foram construídos, e
+                o leitor de outra família não soube a diferença entre eles antes
+                de abrir os dois: escolheu «Ler o documento» e caiu na edição de
+                registo, que abre com o vocabulário da produção. A porta
+                principal passa a ser a leitura composta no sítio; a edição
+                arquivada vem a seguir, com o rótulo a dizer o que é. */}
             <p class="estudo-accoes">
+              {textoDaqui && (
+                <a class="ligacao-dados estudo-accao-principal" href={textoDaqui}>
+                  {s.estudos.textoLink} →
+                </a>
+              )}
               {documentoDaqui && (
                 <a class="ligacao-dados" href={documentoDaqui.rota}>
                   {s.estudos.documentoLink} →
-                </a>
-              )}
-              {textoDaqui && (
-                <a class="ligacao-dados" href={textoDaqui}>
-                  {s.estudos.textoLink} →
                 </a>
               )}
               {documentos
@@ -269,6 +274,11 @@ const jsonld = {
                   </a>
                 ))}
             </p>
+            {/* O rótulo NOMEIA a coisa e não a justifica (Emenda 15: «uma
+                legenda nomeia o que a coisa é»). */}
+            {documentos.length > 0 && (
+              <p class="estudo-accao-nota">{s.estudos.documentoNota}</p>
+            )}
           </>
         ) : (
           <p class="log-vazio-v">{s.estudos.documentoVazio}</p>
@@ -320,25 +330,27 @@ const jsonld = {
                   texto simples e passava despercebido. */}
               <span data-nonledger="data-de-publicacao">
                 {s.estudos.dataLabel}:{' '}
-                {e.date ?? <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>}
+                {e.date ?? <Marcador lang={lang} />}
               </span>
               <span data-nonledger="data-de-atualizacao">
                 {s.estudos.atualizadoLabel}:{' '}
-                {e.updated ?? <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>}
+                {e.updated ?? <Marcador lang={lang} />}
               </span>
               {e.lang !== lang && (
                 <a href={e.paginaDaEdicao} hreflang={e.lang === 'pt' ? 'pt-PT' : 'en'}>
                   {s.estudos.edicaoIrma} →
                 </a>
               )}
-              {e.documento && (
-                <a href={e.documento.rota} hreflang={e.lang === 'pt' ? 'pt-PT' : 'en'}>
-                  {s.estudos.documentoLink} →
-                </a>
-              )}
+              {/* A MESMA ORDEM DA CABEÇA (bloco B, item B2): a leitura no sítio
+                  primeiro, a edição de registo a seguir. */}
               {e.texto && (
                 <a href={e.texto} hreflang={e.lang === 'pt' ? 'pt-PT' : 'en'}>
                   {s.estudos.textoLink} →
+                </a>
+              )}
+              {e.documento && (
+                <a href={e.documento.rota} hreflang={e.lang === 'pt' ? 'pt-PT' : 'en'}>
+                  {s.estudos.documentoLink} →
                 </a>
               )}
             </div>
@@ -356,25 +368,23 @@ const jsonld = {
       <p class="estudo-descricao" lang="pt-PT">
         <span class="estudo-descricao-lingua">PT</span>{' '}
         {descricaoPt === POR_VERIFICAR ? (
-          <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>
+          <Marcador lang={lang} />
         ) : work.verbatimDaAbertura?.pt ? (
           <span data-verbatim={work.verbatimDaAbertura.pt}>{descricaoPt}</span>
         ) : (
           descricaoPt
         )}
       </p>
-      <p class="log-vazio-k">{rotuloDaDescricao('pt')}</p>
       <p class="estudo-descricao" lang="en">
         <span class="estudo-descricao-lingua">EN</span>{' '}
         {descricaoEn === POR_VERIFICAR ? (
-          <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>
+          <Marcador lang={lang} />
         ) : work.verbatimDaAbertura?.en ? (
           <span data-verbatim={work.verbatimDaAbertura.en}>{descricaoEn}</span>
         ) : (
           descricaoEn
         )}
       </p>
-      <p class="log-vazio-k">{rotuloDaDescricao('en')}</p>
     </div>
 
     <!-- ======================================= descargas -->

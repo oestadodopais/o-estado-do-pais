@@ -315,3 +315,14 @@ ul.metodo-sumario-lista li {
   outline: 2px solid var(--ink);
   outline-offset: 3px;
 }
+
+
+/* ----------------------------------------------------------------------------
+ * B10 · O CHÃO DE 12 px, a parte desta folha
+ * ------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .metodo-sumario-k,
+  .metodo-sumario-n {
+    font-size: 12px;
+  }
+}

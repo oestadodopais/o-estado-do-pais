@@ -81,7 +81,7 @@ export const MUNICIPIOS_COM_PAGINA = [
         unidade: { pt: 'Pessoas', en: 'People' },
         nota: {
           pt: ['Estimativa anual do INE para o concelho.'],
-          en: ['The statistics institute’s annual estimate for the concelho.'],
+          en: ['The statistics institute’s annual estimate for the municipality.'],
         },
       },
       {
@@ -94,7 +94,7 @@ export const MUNICIPIOS_COM_PAGINA = [
         unidade: { pt: 'Índice · média nacional = base', en: 'Index · national average = base' },
         nota: {
           pt: ['Poder de compra per capita, publicado pelo INE para todos os concelhos.'],
-          en: ['Purchasing power per capita, published for every concelho.'],
+          en: ['Purchasing power per capita, published for every municipality.'],
         },
       },
       {
@@ -104,7 +104,7 @@ export const MUNICIPIOS_COM_PAGINA = [
         unidade: { pt: 'Pessoas', en: 'People' },
         nota: {
           pt: ['Inscritos no fim do mês nos serviços de emprego, ficheiro mensal por concelho.'],
-          en: ['Registered with the employment service at month end, monthly file by concelho.'],
+          en: ['Registered with the employment service at month end, monthly file by municipality.'],
         },
       },
       {
@@ -114,7 +114,7 @@ export const MUNICIPIOS_COM_PAGINA = [
         unidade: { pt: 'Empresas', en: 'Enterprises' },
         nota: {
           pt: ['Sistema de contas integradas das empresas, por concelho da sede.'],
-          en: ['Integrated business accounts, by concelho of the registered office.'],
+          en: ['Integrated business accounts, by municipality of the registered office.'],
         },
       },
       {
@@ -205,7 +205,7 @@ export const MUNICIPIOS_COM_PAGINA = [
         en: [
           'Purchasing power per inhabitant is above the national average, which is the base of the index: ',
           { claim: 'evora-poder-de-compra-2023' },
-          ' in the concelho, while its region, the Alentejo Central, is below that average, at ',
+          ' in the municipality, while its region, the Alentejo Central, is below that average, at ',
           { claim: 'alentejo-central-poder-de-compra-2023' },
           '.',
         ],
@@ -236,7 +236,7 @@ export const MUNICIPIOS_COM_PAGINA = [
       },
       {
         pt: ['Estão sediadas no concelho ', { claim: 'evora-empresas-2024' }, ' empresas.'],
-        en: ['There are ', { claim: 'evora-empresas-2024' }, ' enterprises headquartered in the concelho.'],
+        en: ['There are ', { claim: 'evora-empresas-2024' }, ' enterprises headquartered in the municipality.'],
       },
       {
         pt: [
@@ -576,7 +576,7 @@ export const MUNICIPIOS_COM_PAGINA = [
         k: { pt: 'Não existe PIB municipal', en: 'There is no municipal GDP' },
         v: {
           pt: ['Nenhuma fonte publica um produto interno bruto para um concelho, e esta página não fabrica nenhum. O que existe é o registo empresarial: as contas das empresas sediadas no concelho, que creditam toda a atividade de uma empresa ao concelho da sua sede. Não é PIB municipal, e o trabalho sobre a economia escreve porquê nos seus limites: «não capta a administração pública, a maior parte da universidade e do hospital».'],
-          en: ['No source publishes a gross domestic product for a concelho, and this page manufactures none. What does exist is the business register: the accounts of enterprises headquartered in the concelho, which credit a firm’s whole activity to its head-office concelho. It is not municipal GDP, and the work on the economy writes why in its own limits: «it misses public administration, most of the university and the hospital».'],
+          en: ['No source publishes a gross domestic product for a municipality, and this page manufactures none. What does exist is the business register: the accounts of enterprises headquartered in the municipality, which credit a firm’s whole activity to its head-office municipality. It is not municipal GDP, and the work on the economy writes why in its own limits: «it misses public administration, most of the university and the hospital».'],
         },
       },
       {
@@ -619,7 +619,7 @@ export const MUNICIPIOS_COM_PAGINA = [
         k: { pt: 'O dinheiro do plano de recuperação é atribuído pelo registo, não pela câmara', en: 'Recovery-plan money is attributed by the register, not by the council' },
         v: {
           pt: ['Os totais do plano de recuperação que aparecem na leitura desse trabalho são somas sobre o registo público, atribuídas ao concelho por esse registo. Do dinheiro contratado no concelho, a universidade tem mais do que o município, e a camada que administra o dinheiro é feita de organismos nacionais. Que daí resulte que o endereço da responsabilização não são os paços do concelho é a conclusão assinada desse trabalho, e está na página dele.'],
-          en: ['The recovery-plan totals that appear in that work’s reading are sums over the public register, attributed to the concelho by that register. Of the money contracted in the concelho, the university holds more than the municipality, and the layer that administers the money is made of national bodies. That this makes the accountability address something other than the town hall is that work’s own signed conclusion, and it sits on its page.'],
+          en: ['The recovery-plan totals that appear in that work’s reading are sums over the public register, attributed to the municipality by that register. Of the money contracted in the municipality, the university holds more than the council, and the layer that administers the money is made of national bodies. That this makes the accountability address something other than the town hall is that work’s own signed conclusion, and it sits on its page.'],
         },
       },
     ],

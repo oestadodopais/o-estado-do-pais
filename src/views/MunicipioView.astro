@@ -160,6 +160,31 @@ const maxIndice = Math.max(
   ...serieAnos.map((r) => parsePtNumber(getClaim(r.indice).value)),
 );
 const alturaDe = (v) => SERIE.base - (v / maxIndice) * (SERIE.base - SERIE.topo);
+
+/**
+ * ---------------------------------------------------------------------------
+ * A REGRA DO RÓTULO DO VALOR, ESCRITA (bloco B, item B9; achado D9)
+ * ---------------------------------------------------------------------------
+ * **O rótulo de um ano põe-se do lado de FORA da referência: por cima do traço
+ * do valor quando o ano está acima do teto, por baixo quando está abaixo.**
+ *
+ * A auditoria pediu «os quatro rótulos do mesmo lado da barra, ou a regra
+ * escrita de quando um vai por baixo», e o mesmo lado não é possível: medido no
+ * desenho de hoje, com os quatro rótulos por cima do seu traço, o de 105,5
+ * ficaria entre y = 47,7 e y = 61,5 e o fio da referência está em y = 49,59 —
+ * o rótulo atravessava a referência, que a Emenda 4 faz o elemento que se lê
+ * primeiro («referência a tinta à altura toda»). Com os quatro por baixo, o de
+ * 242,6 caía em cima da sua própria barra, que vai de y = 16 a y = 49,6.
+ *
+ * Fica a regra, e fica medida: `tests/municipio/correcoes-b.mjs` confere, para
+ * cada ano, que o rótulo está do lado de fora que lhe toca, que nenhum rótulo
+ * cruza o fio da referência, e que dois rótulos nunca se sobrepõem. O que a
+ * auditoria descreveu — «um rótulo por baixo do eixo e três por cima» — não é o
+ * que o desenho faz: os quatro estão acima do eixo (y = 104), e o que muda
+ * entre eles é o lado da REFERÊNCIA (y = 49,59), dois de cada.
+ */
+const ladoDoRotulo = (y) => (y <= SERIE.yTecto ? 'acima' : 'abaixo');
+const yDoRotulo = (y) => (ladoDoRotulo(y) === 'acima' ? y - 7 : y + 15);
 const pontosDaSerie = serieAnos.map((r, i) => ({
   ...r,
   x: SERIE.L + ((i + 0.5) / serieAnos.length) * (SERIE.R - SERIE.L),
@@ -440,10 +465,27 @@ const metodoPath = routePath('metodo', lang);
           <div class="instr-top">
             <!-- CAMADA 1 do instrumento -->
             <p class="layer-tag">{s.municipio.relanceK}</p>
+            {/* O PAR «242,6 → 105,5» (bloco B, item B9; achado C2).
+                A 390 e a 1280 o par não cabe numa linha, e o que se via era a
+                seta pendurada no fim da primeira linha (medido: a seta a
+                x = 208,1 de uma coluna de 312, o segundo valor a começar outra
+                vez em x = 39) com os dois valores encostados, a 33,8px um do
+                outro. A 1024 cabia, e cabe.
+
+                A saída é a da `IDENTIDADE.md` §11, «Móvel: uma coisa por linha.
+                O valor, o título e o selo ficam num só grupo visível»: cada
+                valor e o seu selo passam a ser um grupo que não quebra, a seta
+                entra no grupo do segundo valor, e a fila quebra ENTRE os
+                grupos. Quando cabe, é uma linha; quando não cabe, são duas, com
+                a seta a abrir a segunda e nenhum valor separado do seu selo. */}
             <div class="glance">
-              <div class="glance-num">
-                <Claim id={m.tempo.relance.de} lang={lang} chip={true} /> →{' '}
-                <Claim id={m.tempo.relance.ate} lang={lang} chip={true} />
+              <div class="glance-num glance-par">
+                <span class="glance-par-lado">
+                  <Claim id={m.tempo.relance.de} lang={lang} chip={true} />
+                </span>
+                <span class="glance-par-lado">
+                  → <Claim id={m.tempo.relance.ate} lang={lang} chip={true} />
+                </span>
               </div>
               <div class="glance-meta">
                 <div class="glance-name">{s.municipio.tempoRelanceK}</div>
@@ -490,18 +532,20 @@ const metodoPath = routePath('metodo', lang);
                       x2={pt.x + 20}
                       y2={pt.y}
                     />
-                    {/* O rótulo do valor põe-se do lado de FORA da referência:
-                        por cima quando o ano está acima do tecto, por baixo
-                        quando está abaixo. Sempre por cima, um ano abaixo do
-                        tecto escrevia o seu valor em cima do fio da referência. */}
+                    {/* A regra do lado do rótulo está escrita por extenso em
+                        `ladoDoRotulo`, no cabeçalho desta vista, com a medição
+                        que mostra porque é que os quatro não podem ir todos do
+                        mesmo lado. `data-rotulo-lado` põe-na no HTML, para que
+                        a régua a leia em vez de a recalcular. */}
                     <Claim
                       id={pt.indice}
                       lang={lang}
                       as="text"
                       class="mun-serie-val"
                       x={pt.x}
-                      y={pt.y <= SERIE.yTecto ? pt.y - 7 : pt.y + 15}
+                      y={yDoRotulo(pt.y)}
                       text-anchor="middle"
+                      data-rotulo-lado={ladoDoRotulo(pt.y)}
                     />
                     <text class="tk" x={pt.x} y={SERIE.base + 14} text-anchor="middle" data-nonledger="escala-de-instrumento">
                       {pt.ref}

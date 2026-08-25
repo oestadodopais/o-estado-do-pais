@@ -809,8 +809,15 @@ export const STRINGS = {
          autorreferência que o inventário contava nesta rota: a casa a dizer o
          que fez e a explicar o seu próprio selo. O nome do grupo diz o estado, e
          o estado é o que a página tem para dizer. */
-      grupoCompletasK: 'Proveniência completa',
-      grupoPorConfirmarK: 'Com campos por confirmar',
+      /* O TÍTULO DE CADA GRUPO É A FRASE INTEIRA (bloco B, item B7; achado
+         C13). Era o nome do estado com um número solto por baixo, «Proveniência
+         completa · 128»; passa a «128 de 136 linhas com proveniência completa»,
+         com as duas contagens a virem de chaves da prova. As duas chaves
+         antigas, `grupoCompletasK` e `grupoPorConfirmarK`, saíram com a forma
+         que as pedia. */
+      contaDe: 'de',
+      grupoCompletasFrase: 'linhas com proveniência completa',
+      grupoPorConfirmarFrase: 'linhas com campos por confirmar',
       colunaValor: 'Valor',
       colunaAfirmacao: 'Afirmação',
       colunaSelo: 'Proveniência',
@@ -851,6 +858,10 @@ export const STRINGS = {
       linha: {
         eyebrow: 'Linha do livro-razão',
         aparelhoK: 'Proveniência',
+        /* O RÓTULO DO IDENTIFICADOR (bloco B, item B7; achado C13). O id da
+           linha rendia-se solto por baixo do valor, e as duas leituras leram-no
+           como «o identificador da máquina» sem saber o que era. */
+        identificadorK: 'identificador',
         excertoNota: 'Transcrito da fonte, palavra por palavra.',
         excertoPorConfirmar: 'O excerto textual desta linha ainda não foi transcrito da fonte.',
         excertoDerivada:
@@ -1050,9 +1061,13 @@ export const STRINGS = {
       h1: 'Estudos',
       lede: 'O arquivo do observatório: cada estudo publicado, com as suas edições, datas e estado de migração. O que ainda não vive aqui está ligado onde vive.',
       aviso: 'Datas de publicação por confirmar.',
-      descricaoRotulo: 'Descrição: reformulação do título',
-      descricaoDoDocumentoRotulo: 'Descrição: frase de abertura do documento',
-      descricaoTraduzidaRotulo: 'Descrição: tradução da casa da frase de abertura do documento',
+      /* AS TRÊS CHAVES DO RÓTULO DA DESCRIÇÃO SAÍRAM (bloco B, item B1;
+         achado C9). `descricaoRotulo`, `descricaoDoDocumentoRotulo` e
+         `descricaoTraduzidaRotulo` diziam ao leitor o que a descrição era —
+         «reformulação do título», «frase de abertura do documento», «tradução
+         da casa» —, e isso é o sítio a descrever a sua própria descrição
+         (Emenda 18(e)). A transcrição continua conferida por `data-verbatim`,
+         que é onde a afirmação é prova e não frase. */
       dataLabel: 'Publicação',
       lingua: 'Língua',
       verEstudo: 'Página do estudo',
@@ -1097,6 +1112,11 @@ export const STRINGS = {
          documento leva no topo vê-se quando ele abre. */
       documentoVazio: 'O documento deste estudo ainda não foi alojado aqui.',
       documentoLink: 'Ler o documento',
+      /* O RÓTULO DA EDIÇÃO ARQUIVADA (bloco B, item B2). Nomeia o que a coisa
+         é, e não porque se deve confiar nela: a Emenda 15 permite uma legenda
+         que nomeia («Concelhos, CAOP 2025») e proíbe uma que se justifica. Vai
+         por baixo das duas portas, porque é a segunda que ele descreve. */
+      documentoNota: 'A edição de registo, tal como foi publicada.',
       /* Vai dentro da faixa, no topo do documento. Sem algarismos: é regra do
          portão, e a razão dela está em src/lib/documentos.mjs. */
       documentoFaixa: 'Documento do estudo · edição de registo',
@@ -1126,6 +1146,10 @@ export const STRINGS = {
          coisa que a porta abre. */
       textoPortaDaLinha: 'linha do motor',
       textoRegistoK: 'O registo de conteúdo',
+      /* O comando fixo do telemóvel, no fim do ecrã (bloco B, item B4). Duas
+         páginas de leitura medem 111 e 243 ecrãs a 390: sem ele, voltar ao
+         princípio é rolar tudo outra vez. */
+      textoSubir: 'Subir',
       textoContaBlocos: 'blocos',
       textoContaAlgarismos: 'algarismos',
       textoContaComLinha: 'com linha do livro-razão',
@@ -1365,8 +1389,8 @@ export const STRINGS = {
       regiao: 'Region',
       municipio: 'Municipality',
       regioesMeta: 'The regions published on the convergence rule.',
-      pesquisaRotulo: 'Type the name of the concelho',
-      pesquisaSemResultado: 'No concelho by that name.',
+      pesquisaRotulo: 'Type the name of the municipality',
+      pesquisaSemResultado: 'No municipality by that name.',
     },
 
     densidade: {
@@ -1387,7 +1411,7 @@ export const STRINGS = {
         tituloPaisUm: ' threshold of the Macroeconomic Imbalance Procedure and meets ',
         tituloPaisMuitos: ' thresholds of the Macroeconomic Imbalance Procedure and meets ',
         tituloPaisFim: '.',
-        tituloEvora: 'The measures of the concelho, each with its own row.',
+        tituloEvora: 'The measures of the municipality, each with its own row.',
         tituloVazioA: 'Still no rows for ',
         tituloVazioB: '.',
         ledePais: {
@@ -1402,38 +1426,42 @@ export const STRINGS = {
           { nl: '100', motivo: 'escala-de-instrumento' },
           '.',
         ],
-        ledeVazioA: 'The point marks where the concelho sits on the official administrative map, and not coverage. When there are rows for ',
+        ledeVazioA: 'The point marks where the municipality sits on the official administrative map, and not coverage. When there are rows for ',
         ledeVazioB: ', they will appear here with their source and their reading date.',
         /* «district of », com o espaço final, como o par português. Os nomes de
-           ilha da Carta ficam em português nas duas edições, como já acontece
-           com «concelho»: são nomes próprios. */
+           ilha da Carta ficam em português nas duas edições: são nomes
+           próprios. A palavra «concelho» deixou de ser um deles na interface
+           inglesa a 25.08.2026 (bloco B, item B6; achado C12): «concelho» fica
+           só onde é o nome de uma coisa portuguesa citada — o título de um
+           trabalho, um excerto de fonte, o nome «Carta Administrativa Oficial
+           de Portugal» —, e a interface diz «municipality». */
         distritoDe: 'district of ',
       },
 
       movel: {
-        abrirConcelho: 'Open a concelho',
+        abrirConcelho: 'Open a municipality',
         verRegiao: 'See a region',
-        seloDaEscolha: 'Open the concelho chooser',
+        seloDaEscolha: 'Open the municipality chooser',
       },
 
       portas: {
         rotulo: 'The pages',
         abrir: 'the whole page',
-        concelhos: ' concelhos',
+        concelhos: ' municipalities',
         estudosA: ' works · ',
         estudosB: ' editions',
       },
 
       mapa: {
-        linha: ' concelhos · CAOP ',
+        linha: ' municipalities · CAOP ',
         acores: 'Azores',
         madeira: 'Madeira',
-        escolher: 'Tap a point to choose the concelho.',
+        escolher: 'Tap a point to choose the municipality.',
         readoutHint: 'Hover over a point to read the municipality.',
         tecladoHint:
           'Keyboard: Tab to the map, arrow keys to move between neighbouring municipalities, Home to return to Évora.',
         svgLabel: 'Point map of the municipalities of Portugal.',
-        trocar: 'change concelho',
+        trocar: 'change municipality',
         paginaInteira: 'the whole page, with who governed it',
       },
 
@@ -1466,14 +1494,14 @@ export const STRINGS = {
 
     municipios: {
       metaTitle: 'Municipalities · O Estado do País',
-      metaDescription: 'Every concelho in Portugal, from the official administrative map.',
+      metaDescription: 'Every municipality in Portugal, from the official administrative map.',
       eyebrow: 'Municipalities',
-      h1: 'The concelhos of Portugal',
-      lede: 'Every concelho, from the Carta Administrativa Oficial de Portugal.',
+      h1: 'The municipalities of Portugal',
+      lede: 'Every municipality, from the Carta Administrativa Oficial de Portugal.',
       coberturaA: ' of ',
-      coberturaB: ' concelhos · ',
+      coberturaB: ' municipalities · ',
       fonteK: 'Where the list comes from',
-      mapaLink: 'The map of concelhos',
+      mapaLink: 'The map of municipalities',
       parcelaContinente: 'Mainland',
       parcelaAcores: 'Azores',
       parcelaMadeira: 'Madeira',
@@ -1625,8 +1653,9 @@ export const STRINGS = {
       h1: 'The ledger',
       lede1:
         'One row per published figure. Each row holds the value exactly as the source published it, who produced it, the document and edition, the address, the date we read it and a textual excerpt (and, when the figure is calculated by us, the sum spelled out and re-evaluated at every build).',
-      grupoCompletasK: 'Complete provenance',
-      grupoPorConfirmarK: 'With fields to confirm',
+      contaDe: 'of',
+      grupoCompletasFrase: 'rows with complete provenance',
+      grupoPorConfirmarFrase: 'rows with fields to confirm',
       colunaValor: 'Value',
       colunaAfirmacao: 'Claim',
       colunaSelo: 'Provenance',
@@ -1652,6 +1681,7 @@ export const STRINGS = {
       linha: {
         eyebrow: 'Ledger row',
         aparelhoK: 'Provenance',
+        identificadorK: 'identifier',
         excertoNota: 'Transcribed from the source, word for word.',
         excertoPorConfirmar: 'The textual excerpt for this row has not been transcribed from the source yet.',
         excertoDerivada:
@@ -1716,7 +1746,7 @@ export const STRINGS = {
 
       distanciaK: 'The debt against the legal ceiling',
       distanciaLegenda:
-        'The thin line is the total debt the regulator publishes for the concelho; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value.',
+        'The thin line is the total debt the regulator publishes for the municipality; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value.',
       distanciaIndiceA: 'The index is ',
       distanciaIndiceB: ' in ',
       distanciaIndiceC: ', against a legal cap of ',
@@ -1779,7 +1809,7 @@ export const STRINGS = {
       metodoK: 'Method and caveats',
       naoSabeK: 'What this page does not know',
       provenienciaK: 'Provenance',
-      estudosK: 'The works about this concelho',
+      estudosK: 'The works about this municipality',
       estudoLink: 'Open the reading',
 
       voltarMapa: 'Back to the map of municipalities',
@@ -1791,9 +1821,6 @@ export const STRINGS = {
       h1: 'Studies',
       lede: 'The observatory’s archive: every published study, with its editions, dates and migration state. What does not live here yet is linked where it lives.',
       aviso: 'Publication dates not yet confirmed.',
-      descricaoRotulo: 'Description: restatement of the title',
-      descricaoDoDocumentoRotulo: 'Description: opening sentence of the document',
-      descricaoTraduzidaRotulo: 'Description: house translation of the document’s opening sentence',
       dataLabel: 'Published',
       lingua: 'Language',
       verEstudo: 'Study page',
@@ -1811,12 +1838,13 @@ export const STRINGS = {
       leituraBreveRotulo: 'Brief reading · house prose, resting on a sentence of the study',
       leituraFundoK: 'Method and caveats',
       leituraOutraLingua: 'The same sentence in the other edition',
-      municipioK: 'The concelho it is about',
+      municipioK: 'The municipality it is about',
       municipioLink: 'The municipality page',
 
       documentoK: 'The original document',
       documentoVazio: 'The document for this study has not been hosted here yet.',
       documentoLink: 'Read the document',
+      documentoNota: 'The record edition, as it was published.',
       documentoFaixa: 'Study document · edition of record',
       documentoVoltar: 'Back to the study page',
 
@@ -1830,6 +1858,7 @@ export const STRINGS = {
       textoLinhaDoLivro: 'ledger row',
       textoPortaDaLinha: 'engine row',
       textoRegistoK: 'The content record',
+      textoSubir: 'Back to top',
       textoContaBlocos: 'blocks',
       textoContaAlgarismos: 'figures',
       textoContaComLinha: 'with a ledger row',

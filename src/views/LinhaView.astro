@@ -46,6 +46,7 @@ import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
 import Provenance from '../components/Provenance.astro';
+import Marcador from '../components/Marcador.astro';
 import HistoricoDaLinha from '../components/HistoricoDaLinha.astro';
 import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import {
@@ -386,7 +387,19 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
     <p class="linha-selo">
       <Provenance id={id} lang={lang} ancora="#prova" />
     </p>
+    {/* O IDENTIFICADOR, COM O SEU RÓTULO (bloco B, item B7; achado C13).
+        As duas leituras encontraram-no como texto solto por baixo do valor: um
+        `divida-publica-2025` sem nada que dissesse o que era. Ganha o rótulo do
+        campo, na mesma forma dos rótulos do aparelho.
+
+        NÃO SAI DA CABEÇA, e a razão é a constituição: a `IDENTIDADE.md` §11 fixa
+        a ordem do recibo e o primeiro campo dessa ordem é «o valor com o seu
+        próprio selo, a unidade e o id». Movê-lo para a coluna do aparelho era
+        mudar a ordem que a §11 fixa, e a §11 nomeia o que o aparelho leva sem o
+        incluir. O que a auditoria pediu — «os identificadores como
+        identificadores» — fecha aqui, no lugar que a ordem lhe dá. */}
     <p class="linha-id">
+      <span class="linha-id-k">{s.livro.linha.identificadorK}</span>{' '}
       <code data-linha-claim={id} data-linha-campo="id">{claim.id}</code>
     </p>
   </div>
@@ -811,7 +824,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
               <>
                 <dt>{s.livro.linha.reconferidoK}</dt>
                 <dd>
-                  <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>{' '}
+                  <Marcador lang={lang} />{' '}
                   <a href={`${routePath('metodo', lang)}#releitura`}>
                     {s.livro.linha.releituraPorta} →
                   </a>

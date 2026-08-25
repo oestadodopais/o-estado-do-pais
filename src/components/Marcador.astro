@@ -1,0 +1,52 @@
+---
+/**
+ * O MARCADOR DE INCERTEZA, COM A PORTA DA SUA PÁGINA.
+ *
+ * ---------------------------------------------------------------------------
+ * Um marcador: `[a verificar]`. Uma classe: `.marcador`. Uma página que o
+ * explica: `/a-verificar` · `/en/to-verify` (`IDENTIDADE.md` §6).
+ * ---------------------------------------------------------------------------
+ *
+ * A §6 fixa as três coisas desde 15.08.2026, e faltava a quarta, que é a que a
+ * auditoria de 25.08 mediu (achado C7): a página que o explica não tinha porta
+ * de lado nenhum onde o marcador aparece. Os dois leitores viram o mesmo — o
+ * marcador ao lado do maior número de um estudo lia-se como dúvida sobre o
+ * número, e a explicação de que o que falta é um campo da proveniência vive
+ * noutra página. «Um marcador público que não é explicado em lado nenhum é pior
+ * do que não marcar»: a §6 já o dizia, e a porta é o que faltava para ele o
+ * deixar de ser.
+ *
+ * O TEXTO E A CLASSE NÃO MUDAM. A cadeia é `POR_VERIFICAR` de
+ * `src/lib/ledger.mjs`, e mais nenhuma; a classe é `.marcador`, e mais nenhuma;
+ * a língua é `pt-PT` nas duas edições, porque o marcador fica em português nas
+ * duas (decisão da página do marcador, `CHAVES-EN.md`). O que se acrescenta é
+ * `<a href>` no lugar de `<span>`.
+ *
+ * ---------------------------------------------------------------------------
+ * DENTRO DO SELO NÃO, E A RAZÃO É A CONSTITUIÇÃO
+ * ---------------------------------------------------------------------------
+ * `IDENTIDADE.md` §5.4: «A UNIDADE INTEIRA É A PORTA. Um só `<a>`: quadrado,
+ * palavra e, quando a proveniência está incompleta, o marcador.» E a Emenda 2:
+ * «O selo nunca fica aninhado dentro de outro alvo.» Uma âncora dentro de outra
+ * âncora é markup que nenhum navegador aninha, e o que ela faria era partir a
+ * porta do selo em duas — o leitor que quisesse a linha recebia a página do
+ * marcador. Por isso `Provenance.astro` continua a render o marcador como
+ * `<span class="marcador">` dentro do seu `<a>`, e é o selo que leva à linha,
+ * onde o campo em falta está dito com o seu motivo e com a porta para aqui.
+ *
+ * Este componente é para todos os outros sítios: o índice do arquivo, a página
+ * de um trabalho, o índice do livro-razão, a agenda, o Método, a página de um
+ * concelho.
+ */
+import { POR_VERIFICAR } from '../lib/ledger.mjs';
+import { routePath } from '../lib/routes.mjs';
+
+const { lang = 'pt', class: classe = null } = Astro.props;
+
+if (!lang) {
+  throw new Error('<Marcador> sem "lang". A porta é `/a-verificar` ou `/en/to-verify`.');
+}
+const porta = routePath('marcador', lang);
+---
+
+<a class:list={['marcador', classe]} href={porta} lang="pt-PT">{POR_VERIFICAR}</a>

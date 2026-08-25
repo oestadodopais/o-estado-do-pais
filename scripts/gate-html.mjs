@@ -189,6 +189,16 @@ const TRAVESSIA_DOS_REGISTOS = (() => {
   }
 })();
 
+/**
+ * O portão tem o SEU leitor do registo de travessia, e é por ele que sabe se
+ * uma edição tem página de leitura. Não importa `src/lib/registos.mjs`, pela
+ * mesma razão de sempre: uma conferência que usasse o código das páginas
+ * confirmava-se a si própria.
+ */
+function temRegistoNoPortao(slug, lang) {
+  return Boolean(TRAVESSIA_DOS_REGISTOS && TRAVESSIA_DOS_REGISTOS[`${slug}/${lang}`]);
+}
+
 const REGISTOS_LIDOS = new Map();
 function registoDoPortao(slug, lang) {
   const chave = `${slug}/${lang}`;
@@ -643,6 +653,9 @@ function eCitado(no) {
      página a deixar de ser o documento. É a mesma isenção do `data-verbatim`,
      pela mesma razão e com a mesma comparação por trás. */
   if ('data-registo-unidade' in attrs) return true;
+  /* Uma entrada do índice «Nesta página» é o título de um bloco do mesmo
+     registo, comparado carácter a carácter no L8. Mesma razão, mesma isenção. */
+  if ('data-registo-indice' in attrs) return true;
   return NONLEDGER_CITADO.has(attrs['data-nonledger'] ?? '');
 }
 
@@ -860,6 +873,35 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
         `      A autoria deste sítio está dita no Sobre, e todas as páginas construídas levam ` +
         `lá. Num documento a porta vai na faixa: o corpo é obra citada e não se lhe acrescenta ` +
         `nada (src/lib/documentos.mjs).`,
+    );
+  }
+
+  /**
+   * A PORTA DA LEITURA NO SÍTIO, quando ela existe (bloco B, item B2).
+   *
+   * A faixa é markup nosso e por isso é conferida campo a campo; esta é a
+   * conferência do campo novo. A regra é a mesma que a página do estudo segue:
+   * onde há registo de conteúdo há página de leitura e a porta rende-se; onde
+   * não há, não há porta nenhuma, e uma porta a mais seria uma que dá 404.
+   */
+  const portaDoTexto = temRegistoNoPortao(slug, lang) ? routePath('texto', lang, { slug }) : null;
+  const aDoTexto = faixa.querySelector('[data-oedp-texto]');
+  if (portaDoTexto && !aDoTexto) {
+    err(
+      `a faixa do observatório não tem a porta da leitura no sítio.\n` +
+        `      esperava-se um <a data-oedp-texto href="${portaDoTexto}">.\n` +
+        `      Esta edição tem registo de conteúdo e por isso tem página de leitura: quem chega ` +
+        `à edição de registo tem de poder ir para lá (bloco B, item B2).`,
+    );
+  } else if (!portaDoTexto && aDoTexto) {
+    err(
+      `a faixa do observatório tem a porta da leitura no sítio e esta edição não tem registo ` +
+        `de conteúdo: a porta abriria uma página que não é construída.`,
+    );
+  } else if (portaDoTexto && decodeEntities(aDoTexto.getAttribute('href') ?? '') !== portaDoTexto) {
+    err(
+      `a porta da leitura no sítio abre "${aDoTexto.getAttribute('href')}" e devia abrir ` +
+        `"${portaDoTexto}", a página de leitura desta edição.`,
     );
   }
 
@@ -1584,6 +1626,70 @@ function verificaTexto({ rota, root, err }) {
         }
       }
     });
+  }
+
+  /* ------------------------------------------------------------------ L8 ---
+     «Nesta página»: o índice do documento (bloco B, item B4).
+
+     O índice é uma TRANSCRIÇÃO dos títulos de nível 2 do registo, e por isso
+     entra pela nona origem e é comparado aqui, como o corpo: mesma contagem,
+     mesma ordem, mesmo texto carácter a carácter, e cada âncora a abrir o
+     bloco que ela nomeia. Sem esta comparação, a marca seria uma dispensa: seis
+     dos títulos das oito edições trazem um ano escrito, e os algarismos deles
+     sairiam do varrimento sem nada por trás. */
+  {
+    const titulosDoRegisto = registo.blocks.filter(
+      (b) => b.kind === 'heading' && Number(b.level) === 2,
+    );
+    const entradas = root.querySelectorAll('[data-registo-indice]');
+    if (entradas.length !== titulosDoRegisto.length) {
+      err(
+        `L8 ${chave}: o índice «Nesta página» tem ${entradas.length} entradas e o registo tem ` +
+          `${titulosDoRegisto.length} títulos de nível 2.`,
+      );
+    } else {
+      titulosDoRegisto.forEach((bloco, i) => {
+        const el = entradas[i];
+        const marca = decodeEntities(el.getAttribute('data-registo-indice') ?? '');
+        const esperada = `${chave}#${bloco.i}`;
+        if (marca !== esperada) {
+          err(
+            `L8 ${chave}: a entrada ${i} do índice declara data-registo-indice="${marca}" e o ` +
+              `título de nível 2 nessa posição é o bloco ${bloco.i} ("${esperada}").`,
+          );
+          return;
+        }
+        const rendido = textoTranscrito(el);
+        if (rendido !== String(bloco.text ?? '')) {
+          err(
+            `L8 ${esperada}: a entrada do índice não é o título do registo.
+` +
+              `      no registo:  ${JSON.stringify(String(bloco.text ?? '')).slice(0, 150)}
+` +
+              `      renderizado: ${JSON.stringify(rendido).slice(0, 150)}`,
+          );
+        }
+        const href = decodeEntities(el.getAttribute('href') ?? '');
+        if (href !== `#bloco-${bloco.i}`) {
+          err(
+            `L8 ${esperada}: a entrada do índice abre "${href}" e o bloco que ela nomeia é ` +
+              `"#bloco-${bloco.i}".`,
+          );
+        }
+        const destino = artigo.querySelector(`#bloco-${bloco.i}`);
+        if (!destino) {
+          err(
+            `L8 ${esperada}: o índice abre "#bloco-${bloco.i}" e não há nenhum bloco com esse id ` +
+              `dentro do corpo transcrito.`,
+          );
+        } else if (decodeEntities(destino.getAttribute('data-registo-bloco') ?? '') !== String(bloco.i)) {
+          err(
+            `L8 ${esperada}: o elemento com id="#bloco-${bloco.i}" não é o bloco ${bloco.i} do ` +
+              `registo.`,
+          );
+        }
+      });
+    }
   }
 
   /* ------------------------------------------------------------------ L5 ---
@@ -4245,12 +4351,12 @@ for (const file of ficheirosHtml(DIST)) {
      origens 6 e 8. */
   for (const el of body.querySelectorAll(
     '[data-registo-edicao], [data-registo-bloco], [data-registo-unidade], [data-registo], ' +
-      '[data-registo-linha], [data-registo-conta]',
+      '[data-registo-linha], [data-registo-conta], [data-registo-indice]',
   )) {
     aRemover.push(el);
     if (rota?.key !== 'texto') {
       const qual = ['data-registo-edicao', 'data-registo-bloco', 'data-registo-unidade',
-        'data-registo', 'data-registo-linha', 'data-registo-conta']
+        'data-registo', 'data-registo-linha', 'data-registo-conta', 'data-registo-indice']
         .find((m) => m in (el.attributes ?? {}));
       err(
         `${qual}="${decodeEntities(el.getAttribute(qual) ?? '')}" numa página que não é a de ` +

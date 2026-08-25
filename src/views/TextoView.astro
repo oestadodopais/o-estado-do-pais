@@ -39,7 +39,12 @@ import Provenance from '../components/Provenance.astro';
 import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import { workById } from '../data/studies.mjs';
 import { registoDaEdicao, manifestoDosRegistos, temRegisto } from '../lib/registos.mjs';
-import { pecasDoCorpo, linhasDoDocumento, contasDoRegisto } from '../lib/registo-html.mjs';
+import {
+  pecasDoCorpo,
+  linhasDoDocumento,
+  contasDoRegisto,
+  titulosDoDocumento,
+} from '../lib/registo-html.mjs';
 import { linhaDoSitioDoEstudo } from '../lib/cruzamento.mjs';
 import { caminhoDaLinha } from '../lib/livro.mjs';
 import { routePath, HREFLANG, LANGS, PRIMARY_LANG } from '../lib/routes.mjs';
@@ -78,6 +83,7 @@ const pecas = pecasDoCorpo({
 });
 const linhas = linhasDoDocumento(registo, chave, linhaDoSitio);
 const contas = contasDoRegisto(registo, chave, linhaDoSitio);
+const titulos = titulosDoDocumento(registo);
 
 /* O título do documento é o bloco 0 do registo, que é o seu título de nível 1.
    O `<title>` da página é esse texto mais o nome do sítio; a descrição é a do
@@ -142,6 +148,32 @@ const conta = (nome) => `${chave}=${nome}`;
 
   <div class="texto">
     <div class="texto-corpo">
+      {/* ===================================================== NESTA PÁGINA
+          O índice do documento (bloco B, item B4; achado D1): os títulos de
+          nível 2 do registo, cada um a âncora do seu bloco. É a forma que a
+          agenda e o Método já têm, e vive FORA do `<article>`, porque o portão
+          compara o corpo com o registo bloco a bloco e a mobília não é corpo.
+
+          O TEXTO É TRANSCRIÇÃO, e por isso entra pela nona origem com uma marca
+          própria: `data-registo-indice`, que o L8 compara carácter a carácter
+          com o mesmo bloco do mesmo registo. Seis dos títulos das oito edições
+          trazem um ano escrito, e um índice em prosa da casa punha algarismos
+          na página sem origem nenhuma. */}
+      {titulos.length > 0 && (
+        <nav class="texto-indice" id="texto-indice" aria-labelledby="texto-indice-k">
+          <h2 class="texto-indice-k" id="texto-indice-k">{s.leitura.sumarioK}</h2>
+          <ul class="texto-indice-lista">
+            {titulos.map((titulo) => (
+              <li>
+                <a href={`#bloco-${titulo.i}`} data-registo-indice={`${chave}#${titulo.i}`}>
+                  {titulo.texto}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+
       {/* ================================================= o documento inteiro
           Exatamente os blocos do registo, na ordem do registo, e mais nada. As
           peças vêm de `registo-html.mjs`, que é puro; o selo é sempre o
@@ -164,7 +196,29 @@ const conta = (nome) => `${chave}=${nome}`;
           com quatro campos e mais nenhum. É a porta das figuras que não têm
           linha no livro-razão deste sítio: pôr-lhes um selo seria prometer uma
           linha que não existe (`IDENTIDADE.md` §10), e a porta é a saída que a
-          mesma secção já prescreve. */}
+          mesma secção já prescreve.
+
+          ------------------------------------------------------------------
+          A SECÇÃO DOBRA-SE NO FIM DO ARTIGO (bloco B, item B3; decisão 8 da
+          auditoria de 25.08, achados C10 e D1)
+          ------------------------------------------------------------------
+          A leitura de outra família mediu o que ela custava: depois de «O que
+          este documento não responde», o artigo continuava por centenas de
+          entradas técnicas, e não se sabia onde o argumento público acabava. O
+          desenho da parte 3 fica inteiro — as portas de cada figura continuam a
+          abrir a sua entrada, as marcas não mudam, o L6 e o C6 continuam a
+          percorrer a mesma cadeia —; o que muda é o CONTENTOR: um `<details>`
+          fechado por defeito, com a porta única no fim do artigo, que é a forma
+          que o Método já usa e que não leva uma linha de JavaScript.
+
+          A NAVEGAÇÃO POR FRAGMENTO ABRE A DOBRA nos motores atuais (o algoritmo
+          que revela os antepassados `details`), e está medido nas duas famílias
+          em `tests/texto/correcoes-b.mjs`. */}
+      <details class="texto-dobra" id="linhas-do-documento-dobra">
+      <summary class="texto-dobra-porta">
+        <span class="texto-dobra-seta" aria-hidden="true"></span>
+        <span>{s.estudos.textoLinhasK} →</span>
+      </summary>
       <section id="linhas-do-documento" class="texto-linhas" aria-labelledby="linhas-do-documento-k">
         <h2 id="linhas-do-documento-k" class="texto-linhas-titulo">{s.estudos.textoLinhasK}</h2>
         <ul class="texto-linhas-lista">
@@ -198,6 +252,21 @@ const conta = (nome) => `${chave}=${nome}`;
           }
         </ul>
       </section>
+
+      {/* O APARELHO TÉCNICO DO REGISTO, DENTRO DA DOBRA (item B3). O
+          `origin_ref` e o resumo dos bytes exportados dizem de que ficheiro do
+          motor este documento saiu; estavam na coluna do aparelho, ao lado do
+          artigo, onde o leitor de outra família os encontrou antes do assunto.
+          Vêm para aqui, que é o sítio onde a mesma pergunta se responde: quem
+          quer conferir abre a dobra e tem as linhas e a origem no mesmo lugar. */}
+      <div class="texto-registo">
+        <h3 class="texto-registo-k">{s.estudos.textoRegistoK}</h3>
+        <p class="texto-origem" data-nonledger="identificador-tecnico">{entrada.origin_ref}</p>
+        <p class="texto-origem" data-nonledger="identificador-tecnico">
+          {entrada.exported_record_sha256}
+        </p>
+      </div>
+      </details>
     </div>
 
     {/* ==================================================== o aparelho, a 300px */}
@@ -234,14 +303,6 @@ const conta = (nome) => `${chave}=${nome}`;
         {s.estudos.textoContaComLinha}
       </p>
 
-      <div class="aparelho-bloco">
-        <h2 class="aparelho-titulo">{s.estudos.textoRegistoK}</h2>
-        <p class="texto-origem" data-nonledger="identificador-tecnico">{entrada.origin_ref}</p>
-        <p class="texto-origem" data-nonledger="identificador-tecnico">
-          {entrada.exported_record_sha256}
-        </p>
-      </div>
-
       <PortaDeCorreccoes lang={lang} class="aparelho-bloco" />
 
       <p class="rodape-nav aparelho-saidas">
@@ -249,4 +310,11 @@ const conta = (nome) => `${chave}=${nome}`;
       </p>
     </aside>
   </div>
+
+  {/* SUBIR (item B4). Fixo no fim do ecrã abaixo de 640, e em mais lado nenhum:
+      no computador a coluna do aparelho está sempre à vista e a página tem
+      metade da altura. Abre o índice, que é o topo do corpo e o sítio de onde
+      se salta para qualquer secção. É mobília, e por isso vive fora do
+      `<article>`, como o índice. */}
+  <a class="texto-subir" href="#texto-indice">{s.estudos.textoSubir} ↑</a>
 </Base>

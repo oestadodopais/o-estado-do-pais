@@ -16,6 +16,7 @@
  */
 import { POR_VERIFICAR } from '../lib/ledger.mjs';
 import { t } from '../i18n/strings.mjs';
+import { routePath } from '../lib/routes.mjs';
 
 const { id, campo, valor, lang = 'pt', class: klass = '', originalPt = false } = Astro.props;
 const s = t(lang);
@@ -26,9 +27,20 @@ const gloss = lang !== 'pt' ? s.livro.marcadorGloss : '';
 {
   porVerificar ? (
     <span class="campo-por-verificar">
-      <span class="marcador" lang="pt-PT" data-linha-claim={id} data-linha-campo={campo}>
+      {/* O MARCADOR É A PORTA DA SUA PÁGINA (bloco B, item B5; achado C7).
+          A marca `data-linha-*` não muda de sítio: continua neste elemento, e é
+          o texto DELE que o portão compara com o campo da linha. O que muda é o
+          elemento, de `<span>` para `<a href>`, com a classe e a cadeia iguais
+          (`IDENTIDADE.md` §6: uma linguagem, uma classe, uma página). */}
+      <a
+        class="marcador"
+        href={routePath('marcador', lang)}
+        lang="pt-PT"
+        data-linha-claim={id}
+        data-linha-campo={campo}
+      >
         {valor}
-      </span>
+      </a>
       {gloss && <span class="marcador-gloss"> ({gloss})</span>}
     </span>
   ) : (

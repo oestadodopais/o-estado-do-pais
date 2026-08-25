@@ -41,6 +41,7 @@ import { fileURLToPath } from 'node:url';
 
 import { WORKS, workById } from '../data/studies.mjs';
 import { routePath, LANGS } from './routes.mjs';
+import { temRegisto } from './registos.mjs';
 import { SITE_NAME } from '../../site.config.mjs';
 
 import { t } from '../i18n/strings.mjs';
@@ -492,11 +493,26 @@ export function faixa(slug, lang) {
   const s = t(lang);
   const destino = routePath('estudo', lang, { slug });
   const rotulo = s.estudos.documentoFaixa;
+  /**
+   * A PORTA DA LEITURA NO SÍTIO (bloco B, item B2; achado C4 e Codex 10).
+   *
+   * Quem escolhe «Ler o documento →» cai aqui e encontra a edição de registo,
+   * que é outra letra, outra cabeça e o vocabulário da produção antes do
+   * assunto. A faixa dizia de onde voltar e não dizia que o mesmo documento
+   * existe composto no sítio. Passa a dizê-lo, quando existe: há registo de
+   * conteúdo para oito edições, e onde não há não há página — a porta não se
+   * rende, pela mesma regra da página do estudo («a ausência diz-se por
+   * ausência, não por uma frase»).
+   */
+  const rotaDoTexto = temRegisto(slug, lang) ? routePath('texto', lang, { slug }) : null;
   return [
     `<div data-oedp-faixa lang="${atributo(s.lang)}" aria-label="${atributo(rotulo)}">`,
     `<style>${estiloDaFaixa()}</style>`,
     `<a data-oedp-marca href="${atributo(destino)}">${texto(SITE_NAME)}</a>`,
     `<span data-oedp-rotulo>${texto(rotulo)}</span>`,
+    ...(rotaDoTexto
+      ? [`<a data-oedp-texto href="${atributo(rotaDoTexto)}">${texto(s.estudos.textoLink)} →</a>`]
+      : []),
     `<a data-oedp-sobre href="${atributo(routePath('sobre', lang))}">${texto(s.nav.sobre)}</a>`,
     `<a data-oedp-voltar href="${atributo(destino)}">${texto(s.estudos.documentoVoltar)} ↑</a>`,
     '</div>',
