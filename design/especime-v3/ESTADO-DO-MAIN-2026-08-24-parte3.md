@@ -69,9 +69,15 @@ subsecção «A fusão» da §1.64 seguem no commit seguinte. Nada por commitar.
 
 ## O que fica para o diretor e para a sessão de UX
 
-1. **Indexar as páginas de leitura** (tirar o `noindex`, entrar no mapa do
-   sítio): uma linha, depois de as ver. Há cinco capturas em
-   `design/especime-v3/capturas/parte3/`.
+1. **Indexar as páginas de leitura**: **decidido a 25.08.2026 pelo diretor,
+   depois de ver a do 04 pt no ar: não por agora.** Não é por estas páginas: o
+   sítio inteiro tem coisas por acertar, e a indexação espera por ele. Quando
+   for, é uma linha em `astro.config.mjs` e o `noindex` da vista.
+9. **Uma segunda passagem de voz nos documentos (I69), pedida pelo diretor a
+   25.08:** os documentos transcritos ainda se explicam («Ler esta parte
+   primeiro»; «um município português» onde devia estar «Évora»; explicações a
+   toda a hora). É do motor, corte a corte com a sua palavra, e a re-travessia
+   é automática.
 2. ~~**As oito chaves `registos_*` no Método**~~ **Feito a 25.08.2026 pela
    palavra do diretor (§1.65):** três das oito (`registos_edicoes`,
    `registos_algarismos`, `registos_com_linha_do_sitio`) entraram na prova da
