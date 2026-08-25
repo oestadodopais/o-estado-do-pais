@@ -84,9 +84,11 @@
    O SUMÁRIO
    --------------------------------------------------------------------------
    O índice desta página: os dez nomes e a entrada de fecho, cada um a âncora da
-   sua secção. Duas colunas acima de 640px, porque onze destinos numa coluna são
-   uma parede; uma abaixo. O número vai na letra do instrumento e em `--g1`, como
-   o número da regra, e não é um algarismo do sítio: é numeração, e vai marcada. */
+   sua secção. Duas colunas em qualquer largura, porque onze destinos numa coluna
+   são uma parede, e desde que cada destino leva 44px de alvo (bloco B, item
+   B10) a parede numa coluna mede 586px a 390, que é quase um ecrã. O número vai
+   na letra do instrumento e em `--g1`, como o número da regra, e não é um
+   algarismo do sítio: é numeração, e vai marcada. */
 .metodo-sumario {
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
@@ -109,11 +111,12 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 6px clamp(18px, 3vw, 34px);
 }
-@media (max-width: 640px) {
-  .metodo-sumario-lista {
-    grid-template-columns: 1fr;
-  }
-}
+/* A REGRA DE UMA COLUNA ABAIXO DE 640 SAIU a 25.08.2026 (passo C, item C2). A
+   razão escrita aqui era que «onze destinos numa coluna são uma parede»; com os
+   44px de alvo que o bloco B lhes deu, a parede numa coluna passou a ser de
+   586px e a mostrar sete das onze entradas. As duas colunas descem-na a 338 e
+   põem as onze no primeiro ecrã. Os números, as duas formas medidas e o que
+   cada uma custou estão no bloco C2, no fim desta folha. */
 .metodo-sumario-lista li {
   display: flex;
   align-items: baseline;
@@ -324,5 +327,54 @@ ul.metodo-sumario-lista li {
   .metodo-sumario-k,
   .metodo-sumario-n {
     font-size: 12px;
+  }
+}
+
+
+/* ----------------------------------------------------------------------------
+ * C2 · O ÍNDICE VOLTA A CABER NO PRIMEIRO ECRÃ (leitura do Codex M2)
+ * ----------------------------------------------------------------------------
+ * O bloco B deu 44px de ALTURA DE FILA a cada entrada destes dois índices, e a
+ * fila já tinha 6px de goma: o passo passou de 28,5px para 50px e o índice do
+ * Método, que cabia inteiro no primeiro ecrã, passou a mostrar sete das onze
+ * entradas. MEDIDO, a 390, na construção de `main` e na deste ramo:
+ *
+ *                          main (antes do bloco B)   depois do bloco B
+ *   passo de uma entrada            28,5px                  50px
+ *   altura do índice do Método      349,5px                586px
+ *   entradas no primeiro ecrã         10                     7
+ *
+ * AS DUAS FORMAS QUE O BRIEF PROPÔS FORAM MEDIDAS, E NENHUMA CHEGA SOZINHA:
+ *
+ *   (a) a área de 44px por pseudo-elemento posicionado, sem altura de fila:
+ *       devolve o passo de 28,5px e as onze entradas ao primeiro ecrã, e
+ *       levanta **10 pares de áreas sobrepostas**, de 56 × 16px cada, porque
+ *       duas áreas de 44px a 28,5px uma da outra cruzam-se por 15,5. É a regra
+ *       que esta casa já escreveu duas vezes: «uma área sobreposta não é um
+ *       alvo maior, é uma porta que abre a linha do vizinho»;
+ *   (b) os 44px sem a goma que se lhes soma: dá um passo de 44px, que é oito
+ *       entradas no primeiro ecrã e não dez.
+ *
+ * O QUE FECHA É A TERCEIRA, e é a que a peça já usa acima de 640: DUAS COLUNAS.
+ * Onze destinos numa coluna eram «uma parede» quando cada um media 22,5px; com
+ * 44px são uma parede maior. Em duas colunas as onze entradas ocupam seis filas
+ * e a altura do índice desce abaixo da que tinha antes do bloco B, sem tocar na
+ * altura de nenhum alvo:
+ *
+ *   Método pt   338,0px · 11 de 11 entradas no primeiro ecrã · 0 pares sobrepostos
+ *   Método en   360,5px · 11 de 11 · 0 pares
+ *   Agenda pt   199,8px ·  5 de 5  · 0 pares
+ *   Agenda en   199,8px ·  5 de 5  · 0 pares
+ *
+ * A goma de 6px FICA: é ela que separa duas filas de alvos que se tocariam de
+ * outro modo, e a conta acima já a inclui.
+ *
+ * AS DUAS COLUNAS ESTÃO NA REGRA DE BASE, lá em cima, que era já a de acima de
+ * 640: o que saiu foi a excepção de uma coluna. O que fica aqui é a goma entre
+ * as colunas, mais estreita no telemóvel, porque a coluna de 354px repartida em
+ * duas dá 170px a cada entrada e a mais comprida do Método mede 140,8. */
+@media (max-width: 640px) {
+  .metodo-sumario-lista {
+    column-gap: 14px;
   }
 }
