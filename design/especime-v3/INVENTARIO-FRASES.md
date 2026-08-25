@@ -52,6 +52,15 @@ mais curta que seja. O mesmo teste está em `direcao.md`, por baixo da Emenda 15
 - **autorreferência** — o método, a verificação, a honestidade, a cobertura ou
   as intenções do próprio sítio. **Zero na primeira página**, nas duas edições.
 
+**A frase de identidade é NAVEGAÇÃO (Emenda 18, 25.08.2026).** «Um observatório
+de Portugal.» e «An observatory of Portugal.», por baixo da marca e só na
+primeira página, entram na segunda classe pela razão que a emenda escreve: a
+frase de identidade nomeia o que o sítio é, como o nome da publicação, e não diz
+como ele trabalha nem porque se deve confiar nele. O teste da Emenda 15 continua
+a valer sobre ela: não é o método, não é a verificação, não é a cobertura, não é
+uma intenção. A rota `home` continua a ler autorreferência 0, e é a régua que o
+imprime.
+
 ## As frases que ficaram, e porquê
 
 A coluna do texto é a cadeia normalizada, tal como a régua a lê (espaços
@@ -61,6 +70,7 @@ na língua em que é rendida.
 | classe | texto |
 | --- | --- |
 | conteudo | A régua da convergência |
+| navegacao | An observatory of Portugal. |
 | conteudo | Ainda sem linhas para Águeda . |
 | conteudo | Alentejo · region |
 | conteudo | Alentejo · região |
@@ -154,6 +164,7 @@ língua em que é rendida.*
 | conteudo | The two states of the seal |
 | conteudo | Todas as afirmações publicadas neste sítio, uma linha cada: o valor tal como foi publicado, a fonte, o documento, o endereço, a data de acesso e o excerto. |
 | conteudo | Todas as linhas, com todos os campos publicados. |
+| navegacao | Um observatório de Portugal. |
 | conteudo | Uma linha por número publicado. Cada linha guarda o valor tal como a fonte o publicou, quem o produziu, o documento e a edição, o endereço, a data em que o lemos e um excerto textual (e, quando o número é calculado por nós, a conta explicada e reavaliada a cada construção). |
 | conteudo | With fields to confirm |
 | conteudo | [a verificar] |

@@ -203,12 +203,19 @@ const estadoDaPagina = (p) =>
     `comando ${ordem.comando} · painel ${ordem.painel} · portas ${ordem.portas} · ${ordem.total} paragens`,
   );
 
-  /* Cinco mudanças de estado, cada uma com foco e anúncio. */
+  /* AS MUDANÇAS DE ESTADO PASSAM DE CINCO A TRÊS (correções de UX, bloco A,
+     itens A2 e A3, 25.08.2026). Os dois passos que saíram — «âmbito → modo
+     região» e «região → Alentejo» — pediam um comando que já não existe: a
+     terceira posição do comando de âmbito saiu com a régua da convergência, e
+     volta quando houver a página das regiões. O ESTADO fica, e é medido mais
+     abaixo, onde a matriz lê `?ambito=regiao:alentejo` do endereço: é isso que a
+     Emenda 7 promete a um endereço partilhado, e é isso que continua verdadeiro.
+     O foco no comando de «Concelho» passou a ir para o CAMPO da pesquisa (item
+     A1), e a célula do foco mede o que ela sempre mediu: que ele não se perde no
+     corpo do documento. */
   const passos = [
     ['[data-densidade="leitura"]', 'densidade → leitura'],
-    ['[data-modo="regiao"]', 'âmbito → modo região'],
-    ['[data-regiao="alentejo"]', 'região → Alentejo'],
-    ['[data-modo="municipio"]', 'âmbito → modo município'],
+    ['[data-modo="municipio"]', 'âmbito → modo concelho'],
     ['[data-escolher="evora"]', 'concelho → Évora'],
   ];
   const historia = [];
@@ -217,13 +224,12 @@ const estadoDaPagina = (p) =>
     const e = await estadoDaPagina(p);
     historia.push(e);
     conta(`mudança · ${nome}`, true, `${e.url} · ${e.bloco}`);
-    conta(`foco volta ao comando · ${nome}`, e.focado !== null && e.focado !== 'BODY', e.focado);
+    conta(`foco não se perde no corpo · ${nome}`, e.focado !== null && e.focado !== 'BODY', e.focado);
     conta(`região viva diz a mudança · ${nome}`, e.anuncio.length > 0, e.anuncio);
     despejos[`estado:${e.url}`] = e.texto;
   }
 
-  conta('âmbito Alentejo · painel de uma peça', historia[2].painel === 'regiao:alentejo' && historia[2].pecas === 1, `${historia[2].painel} · ${historia[2].pecas} peça`);
-  conta('âmbito Évora · painel de oito peças', historia[4].painel === 'municipio:evora' && historia[4].pecas === 8, `${historia[4].painel} · ${historia[4].pecas} peças`);
+  conta('âmbito Évora · painel de oito peças', historia[2].painel === 'municipio:evora' && historia[2].pecas === 8, `${historia[2].painel} · ${historia[2].pecas} peças`);
 
   /* Andar para trás cinco vezes e para a frente outra vez. */
   let ok = true;
@@ -615,87 +621,19 @@ for (const largura of [768, 1280]) {
   await p.__contexto.close();
 }
 
-/* (4) A régua da convergência é uma porta abaixo de 640, e a porta é palavras. */
-for (const largura of [320, 390]) {
-  const p = await pagina({ largura });
-  await p.goto(base + '/', { waitUntil: 'networkidle' });
-  const fechado = await p.evaluate(() => {
-    const vis = (e) => !!e && e.getClientRects().length > 0;
-    const s = document.querySelector('.conv-porta-sum');
-    const b = s.getBoundingClientRect();
-    return {
-      porta: vis(document.querySelector('.conv-porta')),
-      corpo: vis(document.querySelector('.conv-corpo')),
-      alvo: `${Math.round(b.width)}×${Math.round(b.height)}`,
-      altoQb: b.height >= 44,
-      /* «palavras só»: nenhuma porta, nenhum selo e nenhum algarismo dentro do
-         `<summary>`, e o `<summary>` fora de qualquer outro alvo (Emenda 2). */
-      alvosDentro: s.querySelectorAll('a, button, summary, .src-chip, [data-claim]').length,
-      aninhado: !!s.parentElement.closest('a, button, summary'),
-      algarismos: /[0-9]/.test(s.textContent),
-    };
-  });
-  await p.locator('.conv-porta-sum').click();
-  const aberto = await p.evaluate(() => {
-    const svg = document.querySelector('.rule-svg');
-    const caixas = [...svg.querySelectorAll('text, tspan')]
-      .filter((e) => e.getClientRects().length && e.textContent.trim())
-      .map((e) => e.getBoundingClientRect());
-    let pares = 0;
-    for (let i = 0; i < caixas.length; i++) {
-      for (let j = i + 1; j < caixas.length; j++) {
-        const a = caixas[i];
-        const b = caixas[j];
-        if (a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom) pares++;
-      }
-    }
-    const cx = document.querySelector('.svg-scroll');
-    return {
-      corpo: document.querySelector('.conv-corpo').getClientRects().length > 0,
-      rotulos: caixas.length,
-      pares,
-      rola: cx.scrollWidth > cx.clientWidth,
-      transbordo: document.documentElement.scrollWidth - document.documentElement.clientWidth,
-    };
-  });
-  conta(
-    `largura ${largura} · a régua da convergência é uma porta de palavras`,
-    fechado.porta &&
-      !fechado.corpo &&
-      fechado.altoQb &&
-      fechado.alvosDentro === 0 &&
-      !fechado.aninhado &&
-      !fechado.algarismos &&
-      aberto.corpo,
-    `porta ${fechado.alvo}, sem alvo dentro e sem alvo à volta, sem algarismos; abre o instrumento`,
-  );
-  conta(
-    `largura ${largura} · rótulos do instrumento sem caixas sobrepostas`,
-    aberto.pares === 0 && aberto.rola && aberto.transbordo <= 0,
-    `${aberto.rotulos} rótulos · ${aberto.pares} pares sobrepostos · rola na sua caixa · transbordo ${aberto.transbordo}`,
-  );
-  await p.__contexto.close();
-}
-
-/* (4b) Na secretária nada muda: a porta não existe e o instrumento está à vista. */
-{
-  const p = await pagina({ largura: 1280 });
-  await p.goto(base + '/', { waitUntil: 'networkidle' });
-  const d = await p.evaluate(() => {
-    const vis = (e) => !!e && e.getClientRects().length > 0;
-    return {
-      porta: vis(document.querySelector('.conv-porta')),
-      corpo: vis(document.querySelector('.conv-corpo')),
-      instrumento: vis(document.querySelector('.rule-svg')),
-    };
-  });
-  conta(
-    'secretária · a porta da régua não existe e o instrumento está à vista',
-    !d.porta && d.corpo && d.instrumento,
-    `porta ${d.porta} · corpo ${d.corpo} · instrumento ${d.instrumento}`,
-  );
-  await p.__contexto.close();
-}
+/* (4) e (4b) SAÍRAM COM A RÉGUA DA CONVERGÊNCIA (correções de UX, bloco A, item
+ * A3, 25.08.2026). Mediam a porta do telemóvel do Instrumento n.º 1 — que ela é
+ * de palavras, que abre o instrumento, que os rótulos não se sobrepõem lá dentro
+ * e que na secretária a porta não existe. O instrumento deixou de ser rendido em
+ * `/` por decisão do diretor (Emenda 18: «a régua da convergência sai da primeira
+ * página até haver a página das regiões»), e uma célula sem objecto não mede
+ * nada: passa por acidente ou falha por acidente.
+ *
+ * O componente, a folha e as chaves da prova ficam no repositório. Quando a
+ * página das regiões o render, estas duas células voltam com ela, e voltam para
+ * lá — a matriz da primeira página não é o sítio de uma coisa que já não está na
+ * primeira página. As chaves da prova continuam reconferidas pelo portão a cada
+ * construção, e `tests/inicio/correcoes-a.mjs` mede que elas não saíram. */
 
 /* (5) A vista de escolha com a caixa vazia: Évora, e o escolhido se houver um.
  *
@@ -818,88 +756,27 @@ for (const largura of [1280, 390]) {
  * SUBETAPA 2h · a proximidade, e duas arestas
  * ======================================================================== */
 
-/* (2h·1) A LISTA DE PROXIMIDADE ENTRA COM UM TOQUE A SÉRIO, E SÓ COM UM.
+/* (2h·1) SAIU COM O SELO DO MAPA NO TELEMÓVEL (correções de UX, bloco A, item
+ * A4, 25.08.2026). Media a lista de proximidade: que ela entrava com um toque a
+ * sério e só com um, que a ordenação da página batia certo com a que este
+ * ficheiro calcula sobre os centróides, que os botões não traziam algarismos e
+ * que uma activação por teclado não era um toque.
  *
- * A célula compara o que a página acende com o que ESTE ficheiro calcula, do seu
- * lado, sobre `caop-centroids.mjs`: se as duas listas baterem certo, a ordenação
- * do cliente é a ordenação dos centróides e não a ordem da Carta a fingir-se de
- * proximidade (que foi o defeito que a 2g apanhou). Mede também o que a lista
- * NÃO tem — algarismos —, e que uma activação por teclado não é um toque. */
-{
-  const p = await pagina({ largura: 390 });
-  await p.goto(base + '/', { waitUntil: 'networkidle' });
-
-  const acesos = () =>
-    p.evaluate(() =>
-      [...document.querySelectorAll('.pesquisa-item')]
-        .filter((e) => e.getClientRects().length)
-        .map((e) => ({
-          slug: e.querySelector('[data-escolher]').getAttribute('data-escolher'),
-          texto: e.textContent.replace(/\s+/g, ' ').trim(),
-          etiqueta: e.querySelector('[data-escolher]').tagName,
-        })),
-    );
-
-  /* O primeiro toque vem do âmbito País: é a porta, e não o gesto. */
-  await p.locator('.movel-selo').click();
-  const semToque = await acesos();
-  const historiaAntes = await p.evaluate(() => history.length);
-
-  /* O segundo é o gesto, num sítio concreto do selo. O selo cobre o mapa
-     exactamente, e por isso o sítio tocado lê-se do rectângulo do mapa. */
-  await p.locator('.movel-selo').scrollIntoViewIfNeeded();
-  const r = await p.evaluate(() => {
-    const b = document.querySelector('[data-mapa]').getBoundingClientRect();
-    return { left: b.left, top: b.top, w: b.width, h: b.height };
-  });
-  const cx = r.left + r.w * 0.75;
-  const cy = r.top + r.h * 0.66;
-  await p.mouse.click(cx, cy);
-  const comToque = await acesos();
-  const historiaDepois = await p.evaluate(() => history.length);
-
-  const px = ((cx - r.left) / r.w) * FIELD_W;
-  const py = ((cy - r.top) / r.h) * FIELD_H;
-  const esperados = concelhos()
-    .map((c) => ({ slug: c.slug, d: (c.x - px) ** 2 + (c.y - py) ** 2 }))
-    .sort((a, b) => a.d - b.d)
-    .slice(0, 8)
-    .map((c) => c.slug)
-    .sort();
-  const obtidos = comToque.map((c) => c.slug).sort();
-
-  /* Escrever desfaz o toque; limpar a caixa devolve a regra da caixa vazia. */
-  await p.locator('[data-pesquisa]').fill('bej');
-  const escrito = await acesos();
-  await p.locator('[data-pesquisa]').fill('');
-  const limpo = await acesos();
-
-  /* E a activação por teclado não é um toque: `detail` 0 não tem sítio nenhum. */
-  await p.goto(base + '/', { waitUntil: 'networkidle' });
-  await p.locator('.movel-selo').click();
-  await p.evaluate(() => document.querySelector('.movel-selo').focus());
-  await p.keyboard.press('Enter');
-  const porTeclado = await acesos();
-
-  conta(
-    'largura 390 · a lista de proximidade entra com um toque, e só com um',
-    semToque.length === 1 &&
-      semToque[0].slug === 'evora' &&
-      obtidos.length === 8 &&
-      obtidos.join('|') === esperados.join('|') &&
-      comToque.every((c) => c.etiqueta === 'BUTTON') &&
-      !comToque.some((c) => /[0-9]/.test(c.texto)) &&
-      historiaDepois === historiaAntes + 1 &&
-      escrito.length === 1 &&
-      escrito[0].slug === 'beja' &&
-      limpo.length === 1 &&
-      limpo[0].slug === 'evora' &&
-      porTeclado.length === 1 &&
-      porTeclado[0].slug === 'evora',
-    `sem toque: ${semToque.map((c) => c.slug).join(' · ')} · com toque em (${px.toFixed(0)}, ${py.toFixed(0)}): ${obtidos.join(' · ')} · esperados: ${esperados.join(' · ')} · ${comToque.length} botões, 0 algarismos · 1 entrada na história · a escrever «bej»: ${escrito.map((c) => c.slug).join(' · ')} · por teclado: ${porTeclado.map((c) => c.slug).join(' · ')}`,
-  );
-  await p.__contexto.close();
-}
+ * O gesto vivia no selo do país, que é o rectângulo invisível por cima do mapa a
+ * 390. Abaixo de 640 o mapa deixou de se render (decisão do diretor de 25.08,
+ * Emenda 18: enquanto os concelhos não tiverem página, o selo sai do telemóvel e
+ * a escolha é a pesquisa à vista), e com ele saíram o selo, o gesto e o ramo de
+ * `public/js/inicio.js` que os servia. Uma célula que espera um elemento que a
+ * página já não desenha não mede a página: mede a espera.
+ *
+ * O que a substitui, e onde: `tests/inicio/correcoes-a.mjs` mede que abaixo de
+ * 640 o mapa não se rende (zero pontos com caixa), que a pesquisa fica à vista
+ * logo por baixo da lede, e que o comando «Concelho» a revela dentro do ecrã com
+ * o foco no campo. A lista de proximidade volta com o mapa por distritos, que é
+ * a forma do telemóvel que a Emenda 3 desenha, e a célula volta com ela.
+ *
+ * A importação de `concelhos()` e do campo da CAOP fica no topo deste ficheiro:
+ * é dela que a célula (2m) da vista de escolha continua a viver. */
 
 /* (2h·2) ISSUES I20 · o rótulo da referência da régua fica dentro da caixa.
  *
@@ -986,7 +863,14 @@ for (const largura of [1280, 390]) {
  * ETAPA 2i · as células da leitura cruzada
  * ========================================================================== */
 
-/* (2i·1) Portugal não é uma região, e a régua continua a ter as seis leituras. */
+/* (2i·1) Portugal não é uma região, e o endereço de uma região continua a
+ * resolver (correções de UX, bloco A, itens A2 e A3: a régua saiu da página, o
+ * ESTADO ficou, porque é endereço partilhável — Emenda 7).
+ *
+ * O que a célula media da banda — seis pontos, cinco barras, Portugal como
+ * referência — não tem objecto em `/` desde 25.08. O que ela continua a medir é
+ * o que continua verdadeiro: `?ambito=regiao:portugal` cai no defeito, e as
+ * cinco regiões que são âmbito têm bloco de cabeça e painel próprios. */
 {
   const p = await pagina();
   await p.goto(`${base}/?ambito=regiao:portugal`, { waitUntil: 'networkidle' });
@@ -999,27 +883,27 @@ for (const largura of [1280, 390]) {
     return {
       cabecas: chaves('[data-cabeca]', 'data-cabeca'),
       paineis: chaves('[data-painel]', 'data-painel'),
+      banda: document.querySelectorAll('[data-banda-ponto]').length,
       pastilhas: document.querySelectorAll('[data-regiao]').length,
-      pontosDaBanda: document.querySelectorAll('[data-banda-ponto]').length,
-      barrasDaBanda: document.querySelectorAll('[data-banda]').length,
-      portugalNaBanda: !!document.querySelector('[data-banda-ponto="portugal"]'),
-      portugalNaLegenda: document.body.textContent.indexOf('Portugal') >= 0,
-      portugalNoInstrumento: !!document.querySelector('[data-regiao-chip="pt"]'),
     };
   });
+  const alentejo = await pagina();
+  await alentejo.goto(`${base}/?ambito=regiao:alentejo`, { waitUntil: 'networkidle' });
+  const eA = await estadoDaPagina(alentejo);
   conta(
-    '2i·1 · Portugal não é uma região: sem estado, e na régua como referência',
+    '2i·1 · Portugal não é uma região, e o endereço de uma região continua a resolver',
     e.ambito === 'pais' &&
       e.url === '/' &&
       c.cabecas.length === 5 &&
       c.paineis.length === 5 &&
-      c.pastilhas === 5 &&
-      c.pontosDaBanda === 6 &&
-      c.barrasDaBanda === 5 &&
-      c.portugalNaBanda &&
-      c.portugalNoInstrumento,
-    `?ambito=regiao:portugal → ${e.ambito}, endereço «${e.url}» · ${c.cabecas.length} cabeças, ${c.paineis.length} painéis e ${c.pastilhas} pastilhas de região · banda: ${c.pontosDaBanda} pontos e ${c.barrasDaBanda} barras, Portugal ponto ${c.portugalNaBanda} · instrumento n.º 1 com Portugal ${c.portugalNoInstrumento}`,
+      c.banda === 0 &&
+      c.pastilhas === 0 &&
+      eA.ambito === 'regiao:alentejo' &&
+      eA.painel === 'regiao:alentejo' &&
+      eA.pecas === 1,
+    `?ambito=regiao:portugal → ${e.ambito}, endereço «${e.url}» · ${c.cabecas.length} cabeças e ${c.paineis.length} painéis de região · banda e pastilhas fora da página (${c.banda} pontos, ${c.pastilhas} pastilhas) · ?ambito=regiao:alentejo → ${eA.painel} com ${eA.pecas} peça`,
   );
+  await alentejo.__contexto.close();
   await p.__contexto.close();
 }
 
@@ -1227,15 +1111,22 @@ for (const largura of [1280, 390]) {
   };
   const estreito = await sonda(390);
   const largo = await sonda(1280);
+  /* A LEITURA POR TECLADO DEIXOU DE EXISTIR A 390, E É O QUE SE ESPERA (bloco A,
+     item A4): abaixo de 640 o mapa não se rende, e um mapa que não se desenha
+     não tem ponto nenhum para as setas percorrerem. A célula continua a medir o
+     que a Emenda 3 promete e o que o achado 8d fechou — que nenhum ponto é
+     activável a 390, nem pelo dedo nem pelo Enter nem pelo espaço — e passa a
+     medir também que a leitura por teclado é EXACTAMENTE do computador. */
   conta(
-    '2i·3d · abaixo de 640 nenhum ponto é activável, e a leitura fica',
+    '2i·3d · abaixo de 640 nenhum ponto é activável, e a leitura é do computador',
     estreito.alvos === 'none' &&
       estreito.depoisDoEnter === 'municipio:beja' &&
       estreito.depoisDoEspaco === 'municipio:beja' &&
-      estreito.leitura.length > 0 &&
+      estreito.leitura.length === 0 &&
       largo.alvos !== 'none' &&
+      largo.leitura.length > 0 &&
       largo.depoisDoEnter !== 'municipio:beja',
-    `390: alvos «${estreito.alvos}», seta lê «${estreito.leitura}», Enter → ${estreito.depoisDoEnter}, espaço → ${estreito.depoisDoEspaco} · 1280: alvos «${largo.alvos}», Enter → ${largo.depoisDoEnter}`,
+    `390: alvos «${estreito.alvos}», mapa não rendido e a seta lê «${estreito.leitura}», Enter → ${estreito.depoisDoEnter}, espaço → ${estreito.depoisDoEspaco} · 1280: alvos «${largo.alvos}», seta lê «${largo.leitura}», Enter → ${largo.depoisDoEnter}`,
   );
 }
 
@@ -1247,7 +1138,10 @@ for (const largura of [1280, 390]) {
   await p.keyboard.press('Space');
   const a = await estadoDaPagina(p);
   const rolou = await p.evaluate(() => window.scrollY);
-  await p.focus('[data-modo="regiao"]');
+  /* O comando que se prova aqui passou a ser o de «Concelho»: a terceira posição
+     do âmbito saiu com a régua (bloco A, itens A2 e A3), e o que a célula mede é
+     que o espaço activa um comando de âmbito, seja ele qual for. */
+  await p.focus('[data-modo="municipio"]');
   await p.keyboard.press('Space');
   const b = await estadoDaPagina(p);
   /* Os comandos são os DESCENDENTES de `[data-inicio]`: a própria raiz leva
@@ -1265,7 +1159,7 @@ for (const largura of [1280, 390]) {
   conta(
     '2i·5 · o espaço activa os comandos de âmbito e de densidade',
     a.densidade === 'leitura' &&
-      b.modo === 'regiao' &&
+      b.modo === 'municipio' &&
       rolou === 0 &&
       todosBotoes(papeis.ambito) &&
       todosBotoes(papeis.densidade),
@@ -1330,7 +1224,12 @@ for (const largura of [1280, 390]) {
         }
       })(),
       controlo: !!document.querySelector('[data-tema-controlo]:not([hidden])'),
+      /* O CONTROLO DO TEMA TEM DUAS RENDIÇÕES DESDE 25.08 (bloco A, item A7):
+         uma na mobília, para o computador, e outra dentro do menu, para o
+         telemóvel; cada largura apaga a do outro lado. O que se lê é o controlo
+         que está À VISTA, que é o que o leitor tem à mão. */
       premido: [...document.querySelectorAll('.tema-b')]
+        .filter((b) => b.getClientRects().length > 0)
         .map((b) => `${b.getAttribute('data-tema')}:${b.getAttribute('aria-pressed')}`)
         .join(' '),
     }));
@@ -1360,12 +1259,17 @@ for (const largura of [1280, 390]) {
   ]) {
     const p = await pagina();
     await p.goto(base + rota, { waitUntil: 'networkidle' });
-    await p.click('.tema-b[data-tema="dark"]');
+    await p.click('.tema-b[data-tema="dark"]:visible');
     const depois = await p.evaluate(() => ({
       atributo: document.documentElement.getAttribute('data-theme'),
       papel: getComputedStyle(document.body).backgroundColor,
       guardado: localStorage.getItem('tema'),
+      /* O CONTROLO DO TEMA TEM DUAS RENDIÇÕES DESDE 25.08 (bloco A, item A7):
+         uma na mobília, para o computador, e outra dentro do menu, para o
+         telemóvel; cada largura apaga a do outro lado. O que se lê é o controlo
+         que está À VISTA, que é o que o leitor tem à mão. */
       premido: [...document.querySelectorAll('.tema-b')]
+        .filter((b) => b.getClientRects().length > 0)
         .map((b) => `${b.getAttribute('data-tema')}:${b.getAttribute('aria-pressed')}`)
         .join(' '),
     }));
@@ -1373,7 +1277,12 @@ for (const largura of [1280, 390]) {
     const recarga = await p.evaluate(() => ({
       atributo: document.documentElement.getAttribute('data-theme'),
       papel: getComputedStyle(document.body).backgroundColor,
+      /* O CONTROLO DO TEMA TEM DUAS RENDIÇÕES DESDE 25.08 (bloco A, item A7):
+         uma na mobília, para o computador, e outra dentro do menu, para o
+         telemóvel; cada largura apaga a do outro lado. O que se lê é o controlo
+         que está À VISTA, que é o que o leitor tem à mão. */
       premido: [...document.querySelectorAll('.tema-b')]
+        .filter((b) => b.getClientRects().length > 0)
         .map((b) => `${b.getAttribute('data-tema')}:${b.getAttribute('aria-pressed')}`)
         .join(' '),
     }));
@@ -1382,7 +1291,7 @@ for (const largura of [1280, 390]) {
       atributo: document.documentElement.getAttribute('data-theme'),
       papel: getComputedStyle(document.body).backgroundColor,
     }));
-    await p.click('.tema-b[data-tema="light"]');
+    await p.click('.tema-b[data-tema="light"]:visible');
     const volta = await p.evaluate(() => ({
       atributo: document.documentElement.getAttribute('data-theme'),
       papel: getComputedStyle(document.body).backgroundColor,
@@ -1584,55 +1493,12 @@ for (const largura of [1280, 390]) {
   conta('2j · Emenda 14 · Beja rende as oito medidas como peças vazias', bem, linhas.join(' · '));
 }
 
-/* (2j) O INSTRUMENTO N.º 1 É MAIS PEQUENO, E OS RÓTULOS NÃO SE TOCAM.
- * Cinco larguras. Mede-se a altura da caixa da régua e o corpo do valor do
- * relance (tecto 56px), e conta-se qualquer par de caixas de rótulo do SVG que
- * se cruze — que é a medição que a subetapa 2g fez a 320 e a 390 e que agora se
- * faz também a 768, 1024 e 1280. */
-{
-  const serie = [];
-  let bem = true;
-  for (const largura of [320, 390, 768, 1024, 1280]) {
-    const p = await pagina({ largura });
-    await p.goto(`${base}/`, { waitUntil: 'networkidle' });
-    /* Abaixo de 640 o instrumento está atrás de uma porta de palavras (2g,
-       ponto 4). Uma medição feita com a porta fechada não mede nada: o SVG não
-       tem caixa, e a célula diria «0 pares» sem ter olhado para um único
-       rótulo. Abre-se a porta, que é o que o leitor faz. */
-    const porta = await p.$('[data-conv-porta]');
-    if (porta && (await porta.isVisible())) await porta.evaluate((d) => (d.open = true));
-    const m = await p.evaluate(() => {
-      const svg = document.querySelector('.rule-svg');
-      const glance = document.querySelector('.glance-num');
-      const rotulos = [...svg.querySelectorAll('text')].filter((e) => e.getClientRects().length);
-      let pares = 0;
-      for (let i = 0; i < rotulos.length; i++) {
-        for (let j = i + 1; j < rotulos.length; j++) {
-          const a = rotulos[i].getBoundingClientRect();
-          const b = rotulos[j].getBoundingClientRect();
-          if (a.right > b.left && b.right > a.left && a.bottom > b.top && b.bottom > a.top) pares++;
-        }
-      }
-      return {
-        altura: +svg.getBoundingClientRect().height.toFixed(1),
-        largura: +svg.getBoundingClientRect().width.toFixed(1),
-        relance: +parseFloat(getComputedStyle(glance).fontSize).toFixed(1),
-        rotulos: rotulos.length,
-        pares,
-      };
-    });
-    if (m.pares > 0 || m.relance > 56.01) bem = false;
-    serie.push({ w: largura, ...m });
-    await p.__contexto.close();
-  }
-  conta(
-    '2j · o Instrumento n.º 1 encolheu, e nenhum par de rótulos se cruza',
-    bem,
-    serie
-      .map((x) => `${x.w}: régua ${x.largura}×${x.altura}px · relance ${x.relance}px · ${x.rotulos} rótulos, ${x.pares} pares`)
-      .join(' · '),
-  );
-}
+/* (2j) SAIU COM O INSTRUMENTO N.º 1 (correções de UX, bloco A, item A3,
+ * 25.08.2026). Media a altura da régua da convergência e os pares de rótulos
+ * cruzados em cinco larguras, com a porta do telemóvel aberta. O instrumento
+ * deixou de ser rendido em `/`, e a célula volta com ele, na matriz da página
+ * das regiões. O corpo do valor do relance (tecto de 56px) continua medido nas
+ * peças do painel, mais abaixo. */
 
 /* =============================================================== ETAPA 2k
  *
@@ -1641,77 +1507,26 @@ for (const largura of [1280, 390]) {
  * `aria-controls` das duas divulgações por irmão (achado 16).
  * ====================================================================== */
 
-/* (2k) A PALAVRA AO PÉ DA CÓPIA DESENHADA, NA ENTRADA DE LEGENDA DO SEU SELO.
+/* (2k) A PALAVRA AO PÉ DA CÓPIA DESENHADA — SAIU COM AS DUAS RÉGUAS (correções
+ * de UX, bloco A, itens A2 e A3, 25.08.2026).
  *
- * Dentro de um `<svg>` a palavra não pode ir ao pé do número (um `<span>` não é
- * filho de um `<text>`), e a decisão (d) manda-a estar ao pé do valor onde quer
- * que a fonte marque a linha como provisória. A direção decidiu o lugar: a
- * entrada da legenda de selos daquele valor, que é onde o selo já vive pela
- * convenção do §1.34.
+ * A célula media, na página, que cada uma das seis linhas com `source_flag: "p"`
+ * desenhadas dentro de um `<svg>` levava a palavra «provisório» na entrada de
+ * legenda do seu selo, fora do selo e fora de qualquer `[data-claim]`. As cópias
+ * desenhadas da primeira página eram as da banda da região e as do Instrumento
+ * n.º 1: as duas deixaram de ser rendidas em `/`, e a primeira página não desenha
+ * hoje um único valor dentro de um `<svg>` — medido, e é por isso que a célula
+ * dava «0 linhas desenhadas, 0 provisórias», que é um zero por ausência de
+ * objecto e não um achado.
  *
- * A célula mede na PÁGINA e não no ficheiro: para cada uma das seis linhas com
- * `source_flag: "p"`, conta as entradas de legenda que levam a palavra, e
- * confirma que ela está FORA do selo e FORA de qualquer `[data-claim]` — que é o
- * que faz `seloDaLinha()` e `formaDoValor()` continuarem a bater certo. As seis
- * linhas são lidas dos próprios `[data-claim]` desenhados, e não escritas aqui. */
-{
-  const linhas = [];
-  let bem = true;
-  for (const [edicao, rota, palavra] of [
-    ['pt', '/', 'provisório'],
-    ['en', '/en', 'provisional'],
-  ]) {
-    const p = await pagina();
-    await p.goto(base + rota, { waitUntil: 'networkidle' });
-    const m = await p.evaluate((palavra) => {
-      const desenhadas = {};
-      for (const el of document.querySelectorAll('[data-claim]')) {
-        if (!el.closest('svg')) continue;
-        const id = el.getAttribute('data-claim');
-        desenhadas[id] = (desenhadas[id] || 0) + 1;
-      }
-      const legendas = [...document.querySelectorAll('[data-legenda-selos]')];
-      const porLinha = {};
-      let foraDoSelo = true;
-      for (const id of Object.keys(desenhadas)) {
-        porLinha[id] = 0;
-        for (const legenda of legendas) {
-          for (const chip of legenda.querySelectorAll('a.src-chip')) {
-            const href = chip.getAttribute('href') || '';
-            if (!href.replace(/\/$/, '').endsWith('/' + id)) continue;
-            let entrada = chip.parentElement;
-            while (entrada && entrada !== legenda && !entrada.querySelector('.claim-provisorio')) {
-              entrada = entrada.parentElement;
-            }
-            const pal = entrada && entrada !== legenda ? entrada.querySelector('.claim-provisorio') : null;
-            if (!pal || pal.textContent.trim() !== palavra) continue;
-            if (pal.closest('a.src-chip') || pal.closest('[data-claim]')) foraDoSelo = false;
-            porLinha[id]++;
-          }
-        }
-      }
-      return { desenhadas, porLinha, foraDoSelo };
-    }, palavra);
-    const ids = Object.keys(m.desenhadas).sort();
-    /* Uma linha desenhada que a fonte NÃO marca como provisória não tem entrada
-       com palavra nenhuma, e é o controlo negativo desta célula: a distância da
-       régua é desenhada e não leva palavra. */
-    const provisorias = ids.filter((id) => m.porLinha[id] > 0);
-    const ok = provisorias.length === 6 && provisorias.every((id) => m.porLinha[id] === 2) && m.foraDoSelo;
-    if (!ok) bem = false;
-    linhas.push(
-      `${edicao}: ${ids.length} linhas desenhadas, ${provisorias.length} provisórias · ` +
-        provisorias.map((id) => `${id}=${m.porLinha[id]}`).join(' ') +
-        ` · fora do selo e do [data-claim]: ${m.foraDoSelo}`,
-    );
-    await p.__contexto.close();
-  }
-  conta('2k · a palavra «provisório» na entrada de legenda de cada cópia desenhada', bem, linhas.join(' · '));
-}
+ * A decisão (d) da direção e o mecanismo de `Claim.astro` ficam inteiros, e a
+ * palavra continua a render-se onde há linhas provisórias. A célula volta com a
+ * página que voltar a desenhar valores dentro de um desenho.
+ */
 
-/* (2k) AS DUAS DIVULGAÇÕES POR IRMÃO DIZEM O QUE ABREM.
+/* (2k) AS DIVULGAÇÕES POR IRMÃO DIZEM O QUE ABREM.
  *
- * O «Menu» do cabeçalho e a porta do telemóvel do Instrumento n.º 1 revelam um
+ * O «Menu» do cabeçalho e a porta do telemóvel do Instrumento n.º 1 revelavam um
  * IRMÃO por `[open] ~`, e a razão está escrita nos dois sítios. O que faltava era
  * o atributo: `aria-controls` com o `id` do irmão, e um `aria-expanded` que
  * acompanha o `open`.
@@ -1768,7 +1583,12 @@ for (const largura of [1280, 390]) {
       if (!ok) bem = false;
       passos.push(`${alvo.id} resolve:${alvo.resolve} irmão:${alvo.irmao} ${alvo.inicial}→${aberto.expandido} corpo:${aberto.corpoVisivel}`);
     }
-    if (alvos.length !== 2) bem = false;
+    /* ERA UMA DIVULGAÇÃO POR IRMÃO E PASSOU A SER OUTRA (bloco A, item A3): o
+       «Menu» do cabeçalho fica, e a porta do telemóvel do Instrumento n.º 1 saiu
+       com o instrumento. A regra de `public/js/tema.js` é genérica — vale para
+       todo o `summary[aria-controls]` — e por isso a célula conta o que a página
+       tem, e exige que TODAS resolvam e acompanhem. */
+    if (alvos.length !== 1) bem = false;
     await p.__contexto.close();
 
     const q = await pagina({ largura: 1280 });
@@ -1785,7 +1605,7 @@ for (const largura of [1280, 390]) {
     await q.__contexto.close();
     linhas.push(`${edicao}: 390 · ${passos.join(' · ')} · 1280 · comando à vista:${largo.comando} navegação à vista:${largo.nav}`);
   }
-  conta('2k · as duas divulgações por irmão: aria-controls resolve e aria-expanded acompanha', bem, linhas.join(' · '));
+  conta('2k · as divulgações por irmão: aria-controls resolve e aria-expanded acompanha', bem, linhas.join(' · '));
 }
 
 /* --------------------------------------------------------------------- relatório */
@@ -2064,8 +1884,12 @@ const minimaNoDesenho = () => {
           url: location.pathname + location.search,
           cabeca: document.querySelector('[data-cabeca]:not([hidden])')?.getAttribute('data-cabeca'),
           painel: document.querySelector('[data-painel]:not([hidden])')?.getAttribute('data-painel'),
+          /* A pesquisa deixou de ser um `[data-sub]` que o script acendia: é um
+             bloco governado pela folha pelo `data-modo` da raiz (bloco A, itens
+             A1 e A4). O que se mede continua a ser o mesmo — que ela abre ACIMA
+             do mapa na vista de escolha. */
           pesquisaAcima:
-            document.querySelector('[data-sub="municipio"]').getBoundingClientRect().bottom <=
+            document.querySelector('[data-pesquisa-bloco]').getBoundingClientRect().bottom <=
             tela.top + 1,
           conteudo: +conteudo.width.toFixed(1),
           mapa: +tela.width.toFixed(1),
@@ -2296,140 +2120,22 @@ const minimaNoDesenho = () => {
 }
 
 /* ============================================================================
- * PÓS-FUSÃO A2 · O SELO DO INSTRUMENTO N.º 1, ALVO E ANINHO (ISSUES I13)
+ * PÓS-FUSÃO A2 · O SELO DO INSTRUMENTO N.º 1 (ISSUES I13) — SAIU COM ELE
  * ============================================================================
- * A §5 desta matriz mede `.peca` e mais nada: os 31 selos das peças fecharam o
- * I13 no painel, e o instrumento ficou de fora porque a etapa 2 ainda não lhe
- * tinha tocado. Toca agora, e as três perguntas são as mesmas: o alvo tem 44×44,
- * nenhum selo está dentro de outro alvo, nenhum par de áreas se sobrepõe.
+ * As quatro células mediam os selos do Instrumento n.º 1 nos seus seis estados,
+ * a 1280 e a 390: que o alvo tem 44×44, que nenhum selo está dentro de outro
+ * alvo, que nenhum par de áreas se sobrepõe, e que a única excepção medida é o
+ * selo da frase da leitura breve. O instrumento deixou de ser rendido em `/`
+ * (correções de UX, bloco A, item A3, por decisão do diretor de 25.08), e com
+ * ele saiu da primeira página tudo o que estas células conduziam: a região do
+ * instrumento, o comando «repor» e a frase da leitura breve.
  *
- * A REGIÃO DO INSTRUMENTO NÃO ESTÁ NO ESQUEMA DO ENDEREÇO. `?ambito=regiao:…`
- * é o âmbito da PÁGINA, e o que ele troca é o cabeçalho e o painel;
- * `convergencia.js` guarda a região lida do instrumento em memória e não a
- * escreve em lado nenhum que se possa pedir por endereço. Por isso esta secção
- * conduz o instrumento como um leitor o conduz: carrega em «repor» e depois no
- * comando da região, e mede os seis estados um a um. É a única maneira honesta
- * de os alcançar, e fica dito para que ninguém procure o parâmetro que não há.
- *
- * A QUARTA CÉLULA É A DA EXCEPÇÃO, e existe para que ela não possa alargar-se
- * em silêncio. O selo da FRASE da leitura breve fica com a área da unidade, e a
- * razão está medida em `site.css`, ao pé da lista: duas das seis frases levam
- * dois selos dentro da mesma frase, a entrelinha é de 27,65px, e dar-lhes 44px
- * de área punha-os a sobrepor-se entre os 416 e os 632 de largura. A célula
- * exige que os selos abaixo de 44 sejam exactamente esses e mais nenhum.
- *
- * DUAS LARGURAS: 1280, que é a desta matriz, e 390, onde o instrumento vive
- * atrás de uma porta que esta secção abre. Um leitor abre-a, e o que está atrás
- * dela tem de estar tão certo como o que está à vista.
+ * O I13 CONTINUA MEDIDO ONDE ELE VIVE: os selos das peças do painel estão na §5
+ * desta matriz, e `tests/inicio/correcoes-a.mjs` mede a área efetiva de todos os
+ * selos da primeira página nas duas edições, a 390. A excepção do `.brief-text`
+ * continua escrita em `site.css`, com a sua medição, à espera da página que
+ * voltar a render a frase.
  * ========================================================================= */
-{
-  const medeInstrumento = (p) =>
-    p.evaluate(() => {
-      const raiz = document.querySelector('#convergencia');
-      const visivel = (e) =>
-        !e.closest('[hidden]') && e.offsetParent !== null && e.getBoundingClientRect().width > 0;
-      /* A mesma caixa da §5: a área do selo vem do `::after` da folha, e a de
-         qualquer outro alvo é a sua caixa, nunca menos de 44. */
-      const caixa = (e) => {
-        const r = e.getBoundingClientRect();
-        const d = e.matches('a.src-chip') ? getComputedStyle(e, '::after') : null;
-        const w = d
-          ? Math.max(r.width, parseFloat(d.width) || 0, parseFloat(d.minWidth) || 0)
-          : Math.max(r.width, 44);
-        const h = d ? Math.max(r.height, parseFloat(d.height) || 0) : Math.max(r.height, 44);
-        const cx = r.left + r.width / 2;
-        const cy = r.top + r.height / 2;
-        return { w, h, x1: cx - w / 2, x2: cx + w / 2, y1: cy - h / 2, y2: cy + h / 2 };
-      };
-      const selos = [...raiz.querySelectorAll('a.src-chip')].filter(visivel).map((a) => {
-        const c = caixa(a);
-        let aninhado = null;
-        for (let no = a.parentElement; no; no = no.parentElement) {
-          const t = no.tagName.toLowerCase();
-          if (t === 'a' || t === 'button' || t === 'summary') {
-            aninhado = t;
-            break;
-          }
-        }
-        return { frase: !!a.closest('.brief-text'), w: +c.w.toFixed(1), h: +c.h.toFixed(1), aninhado };
-      });
-      const alvos = [...raiz.querySelectorAll('a,button,summary')].filter(visivel).map(caixa);
-      let pares = 0;
-      for (let i = 0; i < alvos.length; i++) {
-        for (let j = i + 1; j < alvos.length; j++) {
-          const a = alvos[i];
-          const b = alvos[j];
-          if (a.x1 < b.x2 && b.x1 < a.x2 && a.y1 < b.y2 && b.y1 < a.y2) pares++;
-        }
-      }
-      return { selos, alvos: alvos.length, pares };
-    });
-
-  for (const { largura, porta } of [
-    { largura: 1280, porta: false },
-    { largura: 390, porta: true },
-  ]) {
-    const medidas = [];
-    for (const [edicao, rota] of [
-      ['pt', '/'],
-      ['en', '/en/'],
-    ]) {
-      const p = await pagina({ largura });
-      await p.goto(base + rota, { waitUntil: 'networkidle' });
-      if (porta) {
-        await p.evaluate(() => {
-          for (const d of document.querySelectorAll('details.conv-porta')) d.open = true;
-        });
-      }
-      await p.waitForSelector('#convergencia [data-regiao-chip]', { state: 'attached' });
-      const estados = await p.$$eval('#convergencia [data-regiao-chip]', (bs) =>
-        bs.map((b) => b.getAttribute('data-regiao-chip')),
-      );
-      for (const id of estados) {
-        await p.click('#convergencia [data-accao="repor"]');
-        await p.click(`#convergencia [data-regiao-chip="${id}"]`);
-        /* O rato sai de cima do comando: `convergencia.js` acende a região por
-           cima da qual ele está, e uma medição não se faz com o rato pousado. */
-        await p.mouse.move(0, 0);
-        medidas.push({ edicao, estado: id, ...(await medeInstrumento(p)) });
-      }
-      await p.__contexto.close();
-    }
-
-    const estados = medidas.map((m) => `${m.edicao}:${m.estado}`).join(' ');
-    const todos = medidas.flatMap((m) => m.selos);
-    const daFrase = todos.filter((s) => s.frase);
-    const foraDaFrase = todos.filter((s) => !s.frase);
-    const com44 = foraDaFrase.filter((s) => s.w >= 44 && s.h >= 44).length;
-    conta(
-      `I13 · o selo do instrumento n.º 1 é alvo de 44×44, fora da frase · ${largura}`,
-      foraDaFrase.length > 0 && com44 === foraDaFrase.length,
-      `${com44} de ${foraDaFrase.length} selos (relance e legenda) em ${medidas.length} estados · mínimo ${Math.min(
-        ...foraDaFrase.map((s) => s.w),
-      )}×${Math.min(...foraDaFrase.map((s) => s.h))} · ${estados}`,
-    );
-    const aninhados = todos.filter((s) => s.aninhado).length;
-    conta(
-      `I13 · nenhum selo do instrumento n.º 1 dentro de outro alvo · ${largura}`,
-      todos.length > 0 && aninhados === 0,
-      `${aninhados} aninhados em ${todos.length} selos medidos`,
-    );
-    const pares = medidas.reduce((a, m) => a + m.pares, 0);
-    conta(
-      `I13 · nenhum par de áreas de toque sobrepostas no instrumento n.º 1 · ${largura}`,
-      medidas.length > 0 && pares === 0,
-      `${pares} pares em ${medidas.reduce((a, m) => a + m.alvos, 0)} alvos medidos, nos ${medidas.length} estados`,
-    );
-    const abaixo = todos.filter((s) => s.w < 44 || s.h < 44);
-    conta(
-      `I13 · a excepção medida do instrumento n.º 1 é o selo da frase, e só ele · ${largura}`,
-      daFrase.length > 0 && abaixo.length === daFrase.length && abaixo.every((s) => s.frase),
-      `${abaixo.length} selos abaixo de 44, ${abaixo.filter((s) => s.frase).length} deles em .brief-text · a frase tem ${daFrase.length} selos, com ${Math.min(
-        ...daFrase.map((s) => s.h),
-      )}px de altura de área`,
-    );
-  }
-}
 
 await navegador.close();
 servidor.close();
