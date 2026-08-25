@@ -10578,6 +10578,65 @@ A 25.08 o lugar de direção correu o Codex sobre as construções de antes e de
 
 **O que este passo NÃO mexeu:** a rota «Região» e a sua régua não voltam (é a decisão 3 do diretor, e o dissenso do Codex fica registado aqui); o 404 no ar é o da Vercel, provado pelo `verify:deploy`, e o que a leitura viu foi o servidor de ficheiros do lugar de direção; a frase de identidade não muda (Emenda 18), e a ambiguidade do inglês «of Portugal» vai ao diretor; o texto do documento arquivado é I69, do motor; a pesquisa do livro-razão é bloco próprio (D8). Nenhum byte de `registos/`, de `studies-src/`, de `src/data/metodo.mjs` ou de `src/data/sobre.mjs`.
 
+#### O fecho do bloco: as duas verificações, a triagem, e o custo
+
+*Escrito a 25.08.2026 pelo lugar de direção, antes da fusão.*
+
+Os três passos (A, B e C) foram verificados por dois leitores que não os
+construíram nem se leram um ao outro. **A medição cega M3** (Claude Sonnet,
+`medicoes/correcoes-ux-M3-sonnet.md`, ≈465k): 52 visitas em treze rotas e duas
+larguras, o sítio no ar como «antes» e a construção congelada `e95c545` como
+«depois», os quatro detetores provados nos casos conhecidos antes de qualquer
+zero, três defeitos do próprio leitor apanhados e corrigidos antes de confiar
+nos números (o texto para leitores de ecrã contado como sobreposição, as dobras
+fechadas contadas como pintadas, as capturas em pixéis de aparelho). As páginas
+de leitura medidas 59 a 69 por cento mais curtas; o comando do concelho a pôr a
+pesquisa dentro do ecrã com o foco; o mapa sem caixa no telemóvel; a régua
+ausente de `/`; «concelho» a zero na interface inglesa; a régua do inventário a
+zero de autorreferência nas 34 rotas. **Dois desacordos com os construtores,
+resolvidos nos bytes pelo lugar de direção:** o detetor do item 7c não viu a
+ligação do ponto de Évora, que está no `svg` da construção medida (uma âncora
+para `/municipios/evora`, verificada no HTML); e o «defeito» dos rótulos do
+gráfico dos mandatos é a descrição errada da auditoria, como o bloco B tinha
+medido (dois de cada lado da referência, e a regra escrita).
+
+**A leitura do Codex** (`critica/2026-08-25-codex-leitura-correcoes.md`,
+364 109 símbolos, orçamento próprio): catorze itens dados como corrigidos, sete
+como parcialmente sustentados pelo pacote (o leitor não tinha os testes nem a
+fonte para reproduzir as medições), e três «regressões», das quais **duas não
+são do sítio**: a saída da rota «Região» é a decisão 3 do diretor (dissenso
+registado), e o 404 cru é o servidor de captura do lugar de direção (a Vercel
+serve o `404.html`, provado pelo `verify:deploy`). **Os quatro achados reais**
+(o índice antes do título na página de leitura; as listas do Método e da agenda
+mais compridas no telemóvel, uma regressão do bloco B; os milhares invisíveis em
+Bitter; a pesquisa no topo dos concelhos) fecharam no passo C. O que a leitura
+pede contra a Emenda 18 (quem faz o sítio e porque confiar, na primeira página)
+fica como dissenso; a nota sobre o inglês («of Portugal» pode ler-se como
+afiliação) vai ao diretor.
+
+**O custo, como reportado.** Opus (construtor): bloco A ≈530k, bloco B ≈673k,
+passo C ≈416k, ≈1,6M em três corridas, **contra os 250k a 350k que o lugar de
+direção tinha estimado para o bloco inteiro**; a diferença é das provas (cada
+item visto vermelho e verde com a sua régua, 30 a 40 corridas do Playwright por
+bloco) e das leituras de contexto, e fica dita como lição para a próxima
+estimativa. Sonnet (M3) ≈465k. Codex 364 109, orçamento próprio. O lugar de
+direção não é mensurável de dentro.
+
+**O que fica para depois, dito por extenso:** os textos dentro dos desenhos
+(146 elementos entre 3,7 e 6,6 px a 390, nos instrumentos: é redesenho das
+escalas, decisão do diretor); as duas leituras do cabeçalho a quebrar em duas
+linhas a 390 (precisam de texto mais curto, do diretor); quatro alvos da mobília
+do cabeçalho e os alvos dentro de prosa corrida com a área da sua linha
+(exceções medidas); o índice das páginas de leitura dobrado também no computador
+(abri-lo sem uma linha de JavaScript não é possível; a rota não tem script);
+«O mapa dos concelhos» como título sem mapa em `/municipios`; as duas réguas
+anteriores a este bloco que não fecham (`tests/texto/leitura.mjs` sai com 0
+mesmo com uma célula vermelha; `tests/linha/recibo.mjs` 3b espera 132 linhas e
+há 136); a página das regiões, com a régua completa; a pesquisa do livro-razão;
+as duas frases de contexto do painel e a dobra dos nove dentro do limiar
+(decisão 4, à espera das palavras do diretor); a página de cada concelho
+(decisão 5); as áreas de governo (decisão 6); o mapa por distritos (decisão 1).
+
 ## 4. O registo dos defeitos e dos adiamentos
 
 **Defeito registado 2026-08-16 (00:10), encontrado pela direcção no sítio no ar — RESOLVIDO na mesma noite (§1.37, no ar em `4217232`):** os selos acrescentados a 15.08 aos valores do cabeçalho da primeira página (308 · 11 · 15) rendem no cabeçalho com o rótulo inteiro do estudo («O Estado do País — apuramento próprio») e, no caso da contagem CAOP, com o marcador «[a verificar]» ao lado. Certo pela regra (todo o valor tem selo, para a sua linha), errado naquele sítio: no cabeçalho o selo deve ser só o glifo, com o rótulo apenas para leitores de ecrã. **Primeiro item do bloco V**, junto com a saída de «Edição de …», da introdução justificativa da primeira página e de «Estes indicadores não são escolha nossa…» (voz). Sem alteração ao portão: o selo continua ao pé do valor e a apontar para a linha própria.
