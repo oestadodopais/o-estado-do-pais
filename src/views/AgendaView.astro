@@ -360,13 +360,14 @@ const rotuloDoCriterio = (tipo) =>
                                   class="agenda-sem-data"
                                   data-agenda-sem-data={evento.motivo_sem_data}
                                 >
-                                  <span
+                                  <a
                                     class="marcador"
+                                    href={routePath('marcador', lang)}
                                     lang="pt-PT"
                                     data-agenda={`evento:${evento.id}.marcador`}
                                   >
                                     {evento.marcador}
-                                  </span>{' '}
+                                  </a>{' '}
                                   {motivoSemData(evento)}
                                 </span>
                               )}
@@ -885,9 +886,14 @@ const rotuloDoCriterio = (tipo) =>
             <li class="agenda-evento" id={ancoraDoEvento(evento.id)}>
               <p class="agenda-evento-cabeca">
                 <span class="agenda-sem-data" data-agenda-sem-data={evento.motivo_sem_data}>
-                  <span class="marcador" lang="pt-PT" data-agenda={`evento:${evento.id}.marcador`}>
+                  <a
+                    class="marcador"
+                    href={routePath('marcador', lang)}
+                    lang="pt-PT"
+                    data-agenda={`evento:${evento.id}.marcador`}
+                  >
                     {evento.marcador}
-                  </span>{' '}
+                  </a>{' '}
                   {motivoSemData(evento)}
                 </span>
                 <span class="agenda-evento-fonte" data-agenda={`evento:${evento.id}.fonte`}>

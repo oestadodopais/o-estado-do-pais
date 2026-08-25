@@ -137,8 +137,23 @@ const simbolo = limiar?.simbolo ?? '%';
       treze peças a comparar, a palavra passa a estar sempre ao lado do
       marcador, e a linha do limiar passa a ser o que ela é — a referência
       publicada, com a direcção. */}
+  {/* SEM LIMIAR, NENHUM QUADRADO (bloco B, item B8; achado C14).
+      `IDENTIDADE.md` §2 e `direcao.md` §3: «Sem limiar · tinta e cinzento
+      (nenhuma cor; o estado é "não há referência publicada" e diz-se por
+      palavras)». O quadrado vazio ao lado de «sem limiar» era um glifo a fazer
+      o trabalho da palavra, e um leitor leu-o como o quadrado tracejado do
+      selo — «avaliação incompleta» — ao lado de 58 567 pessoas. O glifo fica
+      onde ele diz alguma coisa que a palavra não diz: nos dois estados com
+      limiar publicado. Onde não há limiar fica a palavra, que é o que a
+      constituição manda.
+
+      O TESTE É O ESTADO, e não a cor: uma peça com estado e sem cor — o poder
+      de compra contra «Portugal = 100», que é uma média e não um limiar
+      (Emenda 1) — continua com o quadrado de contorno que sempre teve, porque
+      ali há uma referência publicada e o estado diz de que lado dela o valor
+      está. O que sai é o quadrado das peças cujo estado É «sem limiar». */}
   <div class="peca-topo">
-    <span class={`sq sq-${marca}`} aria-hidden="true"></span>
+    {estado !== 'sem' && <span class={`sq sq-${marca}`} aria-hidden="true"></span>}
     {palavra && (
       <span class:list={['peca-palavra', pintado && `est-${estado}`]}>{palavra}</span>
     )}

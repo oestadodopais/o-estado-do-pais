@@ -836,7 +836,14 @@ a.src-chip::after {
    Medido depois desta regra, em Chromium sem cabeça, nas duas edições e a 1280,
    1024 e 390, nos seis estados de região: zero pares de áreas sobrepostas em
    `#convergencia`. */
-[data-instrumento='mandatos'] .glance a.src-chip::after,
+/* `[data-instrumento='mandatos'] .glance a.src-chip::after` SAIU a 25.08.2026
+   (bloco B, item B9). A razão escrita aqui era que «os dois selos do "de → até"
+   quebram de linha a 390, e duas áreas de 44px a 33,8px uma da outra
+   sobrepõem-se por 10,2. Essa fila é da etapa 3, e não se estraga uma página
+   que ainda não foi arrumada para arrumar outra.» A fila foi arrumada: o par é
+   agora uma fila que quebra entre os dois grupos, com `row-gap`, e a distância
+   entre os dois selos passou a dar para as duas áreas inteiras. Medido nas duas
+   edições, a 390, 1024 e 1280: zero pares sobrepostos. */
 .brief-text a.src-chip::after,
 .mun-campos a.src-chip::after,
 .linha-bloco .deep-v a.src-chip::after {
@@ -1040,6 +1047,22 @@ a.src-chip.is-unverified:hover::before {
    CHÃO deste, e a 1280 o instrumento abria com o maior algarismo da página. A
    rampa é a mesma da peça curta — 38px a 320, 56px a 1280 —, para que o sítio
    tenha uma escala de algarismos e não duas. */
+/* O PAR DE VALORES DO RELANCE (bloco B, item B9). Dois grupos que não quebram
+   por dentro, e uma fila que quebra entre eles: a seta viaja com o segundo
+   valor e nunca fica pendurada no fim da primeira linha. O `row-gap` é o que
+   separa as duas áreas de toque dos dois selos quando a fila quebra, e está
+   medido: sem ele os dois selos ficam a 33,8px um do outro e duas áreas de 44px
+   cruzam-se por 10,2px. */
+.glance-par {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.28em;
+  row-gap: 16px;
+}
+.glance-par-lado {
+  white-space: nowrap;
+}
 .glance-num {
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;
@@ -1664,9 +1687,49 @@ a.src-chip.is-unverified:hover::before {
   align-items: center;
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: var(--muted);
+}
+/* O ESTADO DO TRABALHO, DITO UMA VEZ (bloco B, item B1). É a mesma palavra que
+   a página do trabalho põe no antetítulo, e vem da mesma leitura: sem leitura
+   escrita e sem documento, rascunho; com documento e sem leitura, «documento
+   alojado · página por escrever»; com leitura, nada, porque o trabalho está à
+   vista. */
+.arquivo-estado {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 8px;
+}
+/* AS EDIÇÕES SÃO PORTAS, e não linhas repetidas. O badge fica com a forma que
+   já tinha; o que ganha é o `href`, o alvo de fila e a sublinha ao passar. */
+.arquivo-edicoes {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+a.badge-porta {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 44px;
+  min-width: 44px;
+  justify-content: center;
+}
+a.badge-porta:hover {
+  border-color: var(--ink);
+  text-decoration: underline;
+}
+.arquivo-edicao-data {
+  font-weight: 400;
+  letter-spacing: 0.06em;
   color: var(--muted);
 }
 .badge {
@@ -1693,6 +1756,23 @@ a.src-chip.is-unverified:hover::before {
   flex-wrap: wrap;
   gap: 8px 22px;
   margin-top: 2px;
+}
+/* A PORTA PRINCIPAL É A DA LEITURA NO SÍTIO (bloco B, item B2). Não muda de
+   cor nem ganha caixa: ganha o peso da letra, que é o que esta casa usa para
+   dizer «esta primeiro» sem inventar um botão. */
+.estudo-accao-principal {
+  font-weight: 600;
+}
+/* O rótulo da edição arquivada: nomeia o que a coisa é, na letra do
+   instrumento, por baixo das portas. */
+.estudo-accao-nota {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--muted);
+  margin-top: 6px;
+  max-width: 62ch;
 }
 .edicao {
   border-top: 1px solid var(--rule);
@@ -2314,6 +2394,16 @@ a.src-chip.is-unverified:hover::before {
 .linha-id code {
   font-family: inherit;
   overflow-wrap: anywhere;
+  color: var(--ink);
+}
+/* O rótulo do identificador (bloco B, item B7): a mesma forma dos rótulos do
+   aparelho, para que o campo se leia como campo. */
+.linha-id-k {
+  font-family: var(--f-versal);
+  font-variant-numeric: normal;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
 }
 
 /* O excerto: a prova. Levanta-se do fundo e cita-se sem aspas de enfeite —
@@ -4063,4 +4153,231 @@ a.prova-valor::after {
   .rodape-nav a {
     min-width: 44px;
   }
+}
+
+
+/* ----------------------------------------------------------------------------
+ * B10 · O CHÃO DE 12 px NAS ROTAS DO BLOCO B
+ * ----------------------------------------------------------------------------
+ * A A9 fez o chão na rota `home`, pelo nome de cada classe medida. Este bloco
+ * faz o mesmo para as nove rotas do bloco B — `estudos`, `estudo`, `texto`,
+ * `livro`, `linha`, `municipio`, `agenda`, `metodo`, `correcoes` —, e a lista é
+ * outra vez o que foi MEDIDO a 390 num iPhone 13 real emulado, e não o que
+ * parece pequeno: cada seletor aqui aparecia na contagem com o seu corpo ao
+ * lado. A regra vale abaixo de 640 e mais nada muda acima.
+ *
+ * A MOBÍLIA COMPACTA ERA O MAIOR GRUPO, e explica porque é que a `home` mediu
+ * zero e as outras não: `.masthead-compact .masthead-furniture` baixa a
+ * mobília para 9,5px nas páginas interiores, e a A9 não lhe tocou porque na
+ * primeira página ela não existe. São 54 ocorrências, 6 por rota.
+ *
+ * O QUE NÃO ENTRA, e está medido em vez de esquecido: o texto DENTRO dos
+ * desenhos (`<text>` e `<tspan>` de um `<svg>` com `viewBox`). Ali o corpo
+ * declarado está em unidades de utilizador e o que se lê é `corpo × escala`:
+ * a 390 as marcas de escala rendem-se entre 3,7px e 6,6px, e pô-las a 12px
+ * lidos obrigaria a multiplicar o corpo por dois e meio dentro de cada
+ * instrumento, o que é redesenhar as escalas do eixo da agenda, do mecanismo do
+ * Método, da banda dos mandatos e das duas séries do concelho. É desenho, e é
+ * do diretor. Fica contado na régua, ao lado do juízo.
+ * ------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  /* a mobília do cabeçalho compacto */
+  .masthead-compact .masthead-furniture {
+    font-size: 12px;
+  }
+  /* o marcador dentro do selo */
+  .src-chip .marcador,
+  .marcador-gloss,
+  .claim-provisorio {
+    font-size: 12px;
+  }
+  /* o arquivo e a página de um trabalho */
+  .log-vazio-k,
+  .edicao-meta,
+  .estudo-descricao-lingua,
+  .estudos-contagens .claim-value,
+  .layer-tag,
+  .deep-k,
+  .deep summary,
+  .details-deep summary {
+    font-size: 12px;
+  }
+  /* o livro-razão e a página de uma linha */
+  .livro-item-unidade,
+  .linha-bloco-titulo,
+  .aparelho-titulo,
+  .linha-id,
+  .linha-verificacao,
+  .linha-verificacoes dt,
+  .linha-verificacoes dd,
+  .linha-verificacoes dd a {
+    font-size: 12px;
+  }
+  /* a página de um concelho */
+  .municipio-sub,
+  .mun-campos dt,
+  .mun-campos dd,
+  .mun-mandato-lista,
+  .mun-mandato-instalado,
+  .mun-selo-rot,
+  .mun-banda-porta {
+    font-size: 12px;
+  }
+  /* a agenda */
+  .agenda-k-inline,
+  .agenda-afecta,
+  .agenda-afecta a,
+  .agenda-evento-fonte,
+  .agenda-criterio-tipo,
+  .agenda-historico-tipo,
+  .quadro-estados-k,
+  .quadro-estados-e {
+    font-size: 12px;
+  }
+  /* o Método */
+  .mecanismo-legenda,
+  .mecanismo-legenda a,
+  .regra-portas,
+  .regra-portas a {
+    font-size: 12px;
+  }
+  /* as correções */
+  .log-data,
+  .registo-id,
+  .log-afirmacao code,
+  .etiqueta-kind,
+  .botao-correcao,
+  .registo-conta,
+  .registo-conta .claim-value,
+  .registo-conta .prova-valor {
+    font-size: 12px;
+  }
+}
+
+
+/* ----------------------------------------------------------------------------
+ * B10 · OS ALVOS DE TOQUE NAS ROTAS DO BLOCO B
+ * ----------------------------------------------------------------------------
+ * A técnica é a da A10, e não se inventa uma segunda: onde o alvo está sozinho
+ * ou numa fila, dá-se-lhe ALTURA DE FILA (44px de caixa); onde ele é uma porta
+ * dentro de prosa corrida, fica com a área da sua própria linha, e a razão é a
+ * regra da casa — «uma área sobreposta não é um alvo maior, é uma porta que
+ * abre a linha do vizinho» —, escrita ao lado da medição na nota do bloco.
+ *
+ * A REGRA VALE EM TOQUE, e por isso vive em `@media (pointer: coarse)`, como a
+ * do rodapé: num rato de precisão 19px é um alvo, e alargar tudo em cursor
+ * mudaria a composição de nove rotas sem nenhum defeito medido por trás.
+ * ------------------------------------------------------------------------- */
+@media (pointer: coarse) {
+  /* o índice do arquivo: o título do trabalho, as edições e a data */
+  .arquivo-titulo a,
+  .arquivo-meta > span,
+  .arquivo-meta a,
+  /* A FICHA DE UMA EDIÇÃO FICA COM A ÁREA DA SUA LINHA, e é uma exceção medida:
+     com 44px, a caixa da porta «Ler o documento →» sobe 12px e cruza-se com o
+     selo da linha de cima por 123 × 7px. É a mesma regra do `.brief-text` — uma
+     área sobreposta é uma porta que abre a linha do vizinho. */
+  /* o concelho: a legenda da banda e as portas dos trabalhos */
+  .mun-banda-porta,
+  .mun-estudo a.ligacao-dados,
+  /* a agenda: a legenda do eixo */
+  .agenda-eixo-porta,
+  /* o livro-razão: as portas do conjunto de dados */
+  .livro-conjunto-portas a,
+  /* a página de uma linha: a porta de repetir a leitura */
+  .linha-verificacao a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  /* As dobras: um `<summary>` é o alvo da dobra inteira.
+     `.regra-cabeca` NÃO ENTRA, e é uma exceção medida: a dobra de uma regra do
+     Método e a linha da prova dessa regra partilham a fila da disposição A, e
+     com 44px a caixa do `<summary>` cresce 22px para dentro da linha da prova —
+     13 pares medidos. O `<summary>` já é um alvo de 354px, que é a linha toda;
+     o que lhe falta é altura, e dá-la custa uma porta que abre a do vizinho.
+     Fica com a sua altura, e a razão está aqui e na régua. */
+  .agenda-item summary,
+  .deep > summary,
+  details.deep summary {
+    min-height: 44px;
+  }
+
+  /* O marcador, onde ele está numa fila e não dentro de prosa: no índice do
+     arquivo e na cabeça de um acontecimento da agenda. Dentro de um parágrafo
+     fica com a área da sua linha, pela regra da sobreposição. */
+  .arquivo-meta .marcador,
+  .agenda-evento-cabeca .marcador {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
+
+/* ----------------------------------------------------------------------------
+ * B10 · SEGUNDA RONDA, DEPOIS DE MEDIR
+ * ----------------------------------------------------------------------------
+ * A primeira ronda deu altura de fila; a medição a seguir mostrou duas coisas
+ * que faltavam, e as duas estão aqui com o número que as trouxe.
+ *
+ * (a) MAIS FILAS. As portas do estudo, as do aparelho, a porta da página da
+ *     série, o índice do Método e da agenda, e o botão das correções: todas
+ *     sozinhas na sua linha, todas abaixo de 44px.
+ *
+ * (b) A NEUTRALIZAÇÃO DO `::after` EM PROSA CORRIDA. Onde um selo ou um número
+ *     do sítio vive dentro de uma frase, a área de 44px sai da sua linha e cai
+ *     em cima da porta da linha de cima: medido, 25 pares no Método e 4 na
+ *     página de um trabalho. A regra da casa é a que a folha já escreve para o
+ *     `.brief-text` — «uma área sobreposta não é um alvo maior, é uma porta que
+ *     abre a linha do vizinho» —, e é também a isenção que a 2.5.8 das WCAG faz
+ *     a um alvo dentro de uma frase. Estas classes juntam-se à lista.
+ * ------------------------------------------------------------------------- */
+@media (pointer: coarse) {
+  .estudo-accoes a,
+  .aparelho-bloco p > a,
+  .estudo-blocos .log-vazio p > a,
+  .linha-pagina-serie a,
+  .metodo-sumario-lista a,
+  .mun-nao-sabe .marcador,
+  .botao-correcao {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  /* Uma entrada de índice curta («2025», «Method») media 31,9px de largura. */
+  .metodo-sumario-lista a {
+    min-width: 44px;
+    justify-content: flex-start;
+  }
+  /* O PONTO DO MAPA NÃO É ALVO NO TELEMÓVEL (Emenda 3: «no telemóvel os 308
+     pontos nunca são alvos»). O bloco A pôs o ponto com página dentro de um
+     `<a>` para o computador (item A5), e na página de um concelho o mapa
+     continua a render-se abaixo de 640: ali o ponto media 2,5 × 2,5px, que é
+     uma âncora que nenhum dedo acerta. Abaixo de 640 deixa de aceitar o toque,
+     e o Tab continua a chegar lá — a regra é de dedo, e um teclado não tem o
+     problema dos 44px. A porta do concelho, no telemóvel, é a da ficha do mapa,
+     que está ao lado e é uma fila. */
+  .mun-porta {
+    pointer-events: none;
+  }
+  /* Duas contagens em duas linhas seguidas, cada uma com o seu selo: a fila
+     ganha a distância que as duas áreas precisam, em vez de as deixar cruzar. */
+  .estudos-contagens {
+    row-gap: 26px;
+  }
+}
+.leitura-frase a.src-chip::after,
+.leitura-frase-outra a.src-chip::after,
+.deep-v a.src-chip::after,
+.texto-artigo a.src-chip::after,
+.mun-distancia-legenda a.src-chip::after,
+.mapa-cartao-texto a.src-chip::after,
+.registo-proveniencia-linhas a.src-chip::after,
+.regra-prova a.prova-valor::after,
+.livro-grupo-k a.prova-valor::after {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
 }

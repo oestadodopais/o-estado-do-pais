@@ -22,6 +22,7 @@
  *                                   na origem; na edição inglesa leva glosa.
  */
 import Claim from './Claim.astro';
+import { routePath } from '../lib/routes.mjs';
 
 /**
  * `selos` — todo o `{ claim: … }` desta frase sai com o seu selo ao lado.
@@ -51,7 +52,9 @@ const { partes, lang = 'pt', selos = false } = Astro.props;
     if (parte.marcador)
       return (
         <>
-          <span class="marcador" lang="pt-PT">[{parte.marcador}]</span>
+          {/* B5: o marcador leva a porta da sua página, e o texto e a classe
+              não mudam (`IDENTIDADE.md` §6). */}
+          <a class="marcador" href={routePath('marcador', lang)} lang="pt-PT">[{parte.marcador}]</a>
           {lang !== 'pt' && parte.gloss && (
             <span class="marcador-gloss"> ({parte.gloss})</span>
           )}

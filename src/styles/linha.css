@@ -314,3 +314,26 @@
   letter-spacing: 0.02em;
   color: var(--muted);
 }
+
+
+/* ----------------------------------------------------------------------------
+ * B10 · O CHÃO DE 12 px, a parte desta folha
+ * ----------------------------------------------------------------------------
+ * `.campo-valor` é declarado aqui a 12px e a `.livro-item-unidade` desce-o a 10
+ * no índice; as 458 ocorrências de 11px vinham de `.livro-item-meta`. A regra
+ * vive nesta folha, e não em `site.css`, porque é aqui que o corpo é decidido e
+ * uma regra do outro lado do pacote perdia por ordem.
+ * ------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .campo-valor,
+  .linha-verificacao,
+  .linha-verificacao a,
+  .linha-verificacoes dt,
+  .linha-verificacoes dd,
+  .livro-item-meta,
+  .livro-item-meta .campo-valor,
+  .livro-item-id,
+  .livro-item-k {
+    font-size: 12px;
+  }
+}

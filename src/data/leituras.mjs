@@ -34,7 +34,7 @@ export const LEITURAS = {
         claim: 'evora-prr-aprovado-2026',
         nome: {
           pt: ['€ aprovados e atribuídos ao concelho pelo registo do plano de recuperação'],
-          en: ['€ approved and attributed to the concelho by the recovery-plan register'],
+          en: ['€ approved and attributed to the municipality by the recovery-plan register'],
         },
       },
       {
@@ -84,11 +84,11 @@ export const LEITURAS = {
         ' paga.',
       ],
       en: [
-        'Of the recovery-plan money contracted in the concelho, the university holds more than the council: ',
+        'Of the recovery-plan money contracted in the municipality, the university holds more than the council: ',
         { claim: 'evora-prr-universidade-contratado' },
         ' € against ',
         { claim: 'evora-prr-municipio-contratado' },
-        ' €. Of the sum approved for the concelho, ',
+        ' €. Of the sum approved for the municipality, ',
         { claim: 'evora-prr-vencido-quota-2026', sufixo: '%' },
         ' is overdue against ',
         { claim: 'evora-prr-execucao-2026', sufixo: '%' },
@@ -105,7 +105,7 @@ export const LEITURAS = {
         k: { pt: 'O que o trabalho conclui daí', en: 'What the work concludes from that' },
         v: {
           pt: ['A universidade tem mais dinheiro contratado neste concelho do que o município, e a camada que administra o dinheiro é feita de organismos nacionais. O trabalho conclui daí que «o endereço da responsabilização, na maior parte dos casos, não são os paços do concelho», é a leitura dele, assinada, e não uma contagem: um leitor que queira este total explicado deve dirigir as perguntas aos organismos nacionais e à universidade mais vezes do que à câmara.'],
-          en: ['The university holds more contracted money in this concelho than the municipality, and the layer that administers the money is made of national bodies. The work concludes from that that «the accountability address is mostly not the town hall», its own signed reading, not a count: a reader who wants this total explained should put questions to national bodies and to the university more often than to the council.'],
+          en: ['The university holds more contracted money in this municipality than the council, and the layer that administers the money is made of national bodies. The work concludes from that that «the accountability address is mostly not the town hall», its own signed reading, not a count: a reader who wants this total explained should put questions to national bodies and to the university more often than to the council.'],
         },
         valores: ['evora-prr-universidade-contratado', 'evora-prr-municipio-contratado'],
       },
@@ -135,7 +135,7 @@ export const LEITURAS = {
         claim: 'evora-vab-empresarial-2024',
         nome: {
           pt: ['€ de valor acrescentado bruto das empresas sediadas no concelho'],
-          en: ['€ of gross value added by enterprises headquartered in the concelho'],
+          en: ['€ of gross value added by enterprises headquartered in the municipality'],
         },
       },
       {
@@ -166,7 +166,7 @@ export const LEITURAS = {
         { claim: 'alentejo-central-poder-de-compra-2023' },
         '; and its enterprise economy is concentrated in few hands: four enterprises hold ',
         { claim: 'evora-concentracao-vab4-2024', sufixo: '%' },
-        ' of the concelho’s value added, against ',
+        ' of the municipality’s value added, against ',
         { claim: 'portugal-concentracao-vab4-2024', sufixo: '%' },
         ' nationally.',
       ],
@@ -174,22 +174,22 @@ export const LEITURAS = {
     origem: {
       onde: 'content/06 Évora Economy/Évora — Economia, Investidores, Portas Abertas 2026 (pt-PT).md:20, :44',
       pt: 'A própria cidade está acima da média nacional no único indicador que existe ao nível do concelho: o índice de poder de compra do INE de 2023 põe Évora em 111,5 (Portugal = 100), com a sua região em 93,9. · A concentração é o facto estrutural. As quatro maiores empresas detêm 21,5% de todo o VAB empresarial do concelho.',
-      en: 'The city itself sits above the national average on the one indicator that exists at concelho level: INE’s 2023 purchasing-power index puts Évora at 111.5 (Portugal = 100), while its own region stands at 93.9.',
+      en: 'The city itself sits above the national average on the one indicator that exists at municipality level: INE’s 2023 purchasing-power index puts Évora at 111.5 (Portugal = 100), while its own region stands at 93.9.',
     },
     metodo: [
       {
         k: { pt: 'Isto não é PIB municipal', en: 'This is not municipal GDP' },
         v: {
           pt: ['Não existe PIB da cidade, e o trabalho não inventa nenhum. O que existe ao nível do concelho é o registo empresarial: as contas das empresas sediadas no concelho, que creditam toda a atividade de uma empresa ao concelho da sua sede. Não é PIB municipal, e o próprio trabalho escreve porquê nos seus limites: «não capta a administração pública, a maior parte da universidade e do hospital».'],
-          en: ['There is no GDP figure for the city, and the work invents none. What exists at concelho level is the business register: the accounts of enterprises headquartered in the concelho, which credit a firm’s whole activity to its head-office concelho. It is not municipal GDP, and the study itself writes why in its own limits: «it misses public administration, most of the university and the hospital».'],
+          en: ['There is no GDP figure for the city, and the work invents none. What exists at municipality level is the business register: the accounts of enterprises headquartered in the municipality, which credit a firm’s whole activity to its head-office municipality. It is not municipal GDP, and the study itself writes why in its own limits: «it misses public administration, most of the university and the hospital».'],
         },
         valores: [],
       },
       {
-        k: { pt: 'A única medida que existe ao nível do concelho', en: 'The one measure that exists at concelho level' },
+        k: { pt: 'A única medida que existe ao nível do concelho', en: 'The one measure that exists at municipality level' },
         v: {
           pt: ['O índice de poder de compra do INE é o único indicador que existe para um concelho, e é o que sustenta a primeira metade da frase acima: o concelho de um lado da média nacional, a sua região do outro. A média nacional é a base do índice.'],
-          en: ['The statistics institute’s purchasing-power index is the one indicator that exists for a concelho, and it is what carries the first half of the sentence above: the concelho on one side of the national average, its region on the other. The national average is the base of the index.'],
+          en: ['The statistics institute’s purchasing-power index is the one indicator that exists for a municipality, and it is what carries the first half of the sentence above: the municipality on one side of the national average, its region on the other. The national average is the base of the index.'],
         },
         valores: ['evora-poder-de-compra-2023', 'alentejo-central-poder-de-compra-2023'],
       },
@@ -197,7 +197,7 @@ export const LEITURAS = {
         k: { pt: 'A comparação com o país', en: 'The comparison with the country' },
         v: {
           pt: ['A mesma medida de concentração, para Portugal inteiro, é a que dá escala à do concelho.'],
-          en: ['The same concentration measure, for Portugal as a whole, is what gives the concelho figure its scale.'],
+          en: ['The same concentration measure, for Portugal as a whole, is what gives the municipality figure its scale.'],
         },
         valores: ['portugal-concentracao-vab4-2024'],
       },

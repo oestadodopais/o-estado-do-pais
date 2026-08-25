@@ -1,22 +1,75 @@
 ---
 /**
- * O arquivo. Lista as edições publicadas — as edições PT e EN do mesmo
- * trabalho aparecem em separado, porque são documentos distintos e é assim
- * que o leitor as procura. Cada uma leva à página do trabalho.
+ * O arquivo. UMA LINHA POR TRABALHO, com as suas edições como portas dentro da
+ * linha (correções de UX, bloco B, item B1; achado C9 da auditoria de 25.08).
  *
- * Títulos: literais. Datas: nenhuma está confirmada. Descrições: reformulações
- * do título, à espera do director. O aviso no topo di-lo por palavras.
+ * ATÉ 25.08.2026 ERA UMA LINHA POR EDIÇÃO, e o leitor de outra família contou o
+ * que isso lhe fazia: a página dizia «12 trabalhos · 16 edições» e mostrava 16
+ * linhas, quatro delas pares PT/EN com o mesmo destino e a mesma descrição, sem
+ * nada que dissesse que eram o mesmo trabalho. Passa a haver uma linha por
+ * trabalho: o título, a descrição, o estado, a data, e as edições como badges
+ * que são portas para a página do trabalho na sua língua.
+ *
+ * O RÓTULO DA DESCRIÇÃO SAIU. «Descrição: reformulação do título» e os dois
+ * irmãos («frase de abertura do documento», «tradução da casa …») eram o sítio a
+ * descrever a sua própria descrição, que é o que a Emenda 18(e) tira da página
+ * do leitor. A `data-verbatim` não precisa dele para nada: o que ela exige é
+ * igualdade carácter a carácter com o registo das citações, e essa amarra
+ * continua inteira.
+ *
+ * Títulos: literais. Datas: as do arquivo, e nenhuma está confirmada. O aviso
+ * no topo di-lo por palavras.
  */
 import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
-import { EDITIONS } from '../data/studies.mjs';
-import { POR_VERIFICAR } from '../data/studies.mjs';
+import Marcador from '../components/Marcador.astro';
+import { WORKS, POR_VERIFICAR } from '../data/studies.mjs';
+import { leituraDe } from '../data/leituras.mjs';
+import { documentosDoEstudo } from '../lib/documentos.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 
 const { lang = 'pt' } = Astro.props;
 const s = t(lang);
 const path = routePath('estudos', lang);
+
+/**
+ * UM TRABALHO, COMO A LINHA O MOSTRA.
+ *
+ * O título é o da edição desta língua quando ela existe, e o da primeira edição
+ * quando não existe: um título literal não se traduz, e a página não inventa
+ * um para uma língua em que o trabalho não foi publicado.
+ *
+ * A DATA DIZ-SE UMA VEZ QUANDO É UMA SÓ. Se as edições de um trabalho declaram
+ * a mesma data (e «nenhuma» é uma data igual às outras), a linha di-la uma vez;
+ * se declaram datas diferentes, cada edição leva a sua ao lado do seu badge,
+ * porque juntar duas datas numa era escrever uma que o arquivo não guarda.
+ *
+ * O ESTADO É O MESMO QUE A PÁGINA DO TRABALHO DIZ, lido da mesma maneira: sem
+ * leitura escrita e sem documento alojado é rascunho; com documento e sem
+ * leitura é «documento alojado, página por escrever»; com leitura não há estado
+ * nenhum, porque o trabalho está à vista.
+ */
+const trabalhos = WORKS.map((w) => {
+  const principal = w.editions.find((e) => e.lang === lang) ?? w.editions[0];
+  const datas = [...new Set(w.editions.map((e) => e.date ?? null))];
+  const migrado = documentosDoEstudo(w.slug).length > 0;
+  const leitura = leituraDe(w.id);
+  return {
+    work: w,
+    titulo: principal.title,
+    descricao: w.description[lang],
+    verbatim: w.verbatimDaAbertura?.[lang] ?? null,
+    edicoes: w.editions.map((e) => ({
+      lang: e.lang,
+      date: e.date ?? null,
+      pagina: routePath('estudo', e.lang, { slug: w.slug }),
+    })),
+    dataUnica: datas.length === 1 ? datas[0] : null,
+    umaSoData: datas.length === 1,
+    estado: leitura ? null : migrado ? s.estudos.migradoEstado : s.estudos.stubEstado,
+  };
+});
 ---
 
 <Base lang={lang} path={path} title={s.estudos.metaTitle} description={s.estudos.metaDescription}>
@@ -43,36 +96,54 @@ const path = routePath('estudos', lang);
 
     <div class="arquivo">
       {
-        EDITIONS.map((e) => (
+        trabalhos.map((tr) => (
           <article class="arquivo-item">
             <div>
               <h2 class="arquivo-titulo">
-                <a href={routePath('estudo', lang, { slug: e.slug })} data-nonledger="titulo-de-estudo">
-                  {e.title}
+                <a
+                  href={routePath('estudo', lang, { slug: tr.work.slug })}
+                  data-nonledger="titulo-de-estudo"
+                >
+                  {tr.titulo}
                 </a>
               </h2>
               <p class="arquivo-desc">
-                {e.description[lang] === POR_VERIFICAR ? (
-                  <span class="marcador" lang="pt-PT">{POR_VERIFICAR}</span>
-                ) : e.verbatimDaAbertura?.[lang] ? (
-                  <span data-verbatim={e.verbatimDaAbertura[lang]}>{e.description[lang]}</span>
+                {tr.descricao === POR_VERIFICAR ? (
+                  <Marcador lang={lang} />
+                ) : tr.verbatim ? (
+                  <span data-verbatim={tr.verbatim}>{tr.descricao}</span>
                 ) : (
-                  e.description[lang]
+                  tr.descricao
                 )}
               </p>
-              <p class="log-vazio-k">
-                {e.descricaoDoDocumento?.[lang] === 'verbatim'
-                  ? s.estudos.descricaoDoDocumentoRotulo
-                  : e.descricaoDoDocumento?.[lang] === 'traducao'
-                    ? s.estudos.descricaoTraduzidaRotulo
-                    : s.estudos.descricaoRotulo}
-              </p>
+              {tr.estado && <p class="arquivo-estado">{tr.estado}</p>}
             </div>
             <div class="arquivo-meta">
-              <span class="badge">{e.lang.toUpperCase()}</span>
-              <span data-nonledger="data-de-publicacao">
-                {s.estudos.dataLabel}: {e.date ?? POR_VERIFICAR}
+              {/* AS EDIÇÕES SÃO PORTAS, e não linhas repetidas: cada badge abre
+                  a página do trabalho na sua língua, que é a superfície que
+                  essa edição tem. */}
+              <span class="arquivo-edicoes">
+                {tr.edicoes.map((e) => (
+                  <a
+                    class="badge badge-porta"
+                    href={e.pagina}
+                    hreflang={e.lang === 'pt' ? 'pt-PT' : 'en'}
+                  >
+                    {e.lang.toUpperCase()}
+                    {!tr.umaSoData && (
+                      <span class="arquivo-edicao-data" data-nonledger="data-de-publicacao">
+                        {e.date ?? POR_VERIFICAR}
+                      </span>
+                    )}
+                  </a>
+                ))}
               </span>
+              {tr.umaSoData && (
+                <span data-nonledger="data-de-publicacao">
+                  {s.estudos.dataLabel}:{' '}
+                  {tr.dataUnica ?? <Marcador lang={lang} />}
+                </span>
+              )}
             </div>
           </article>
         ))

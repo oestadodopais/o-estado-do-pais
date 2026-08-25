@@ -293,6 +293,144 @@
 }
 
 /* -----------------------------------------------------------------------------
+ * 5b · A DOBRA DAS LINHAS, E O ÍNDICE (bloco B, itens B3 e B4)
+ * -----------------------------------------------------------------------------
+ * A DOBRA. A porta única no fim do artigo, fechada por defeito, na forma que o
+ * Método já usa: um `<details>` do navegador, sem uma linha de JavaScript. A
+ * seta é a mesma peça da peça da primeira página, escrita aqui porque esta
+ * folha não importa aquela.
+ * -------------------------------------------------------------------------- */
+.texto-dobra {
+  border-top: 1.5px solid var(--ink);
+}
+.texto-dobra-porta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 0;
+  min-height: 44px;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--f-versal);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+.texto-dobra-porta::-webkit-details-marker {
+  display: none;
+}
+.texto-dobra-porta:hover span:last-child {
+  text-decoration: underline;
+}
+.texto-dobra-seta {
+  width: 0;
+  height: 0;
+  flex: none;
+  border-left: 5px solid var(--muted);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: transform 0.12s ease;
+}
+.texto-dobra[open] .texto-dobra-seta {
+  transform: rotate(90deg);
+}
+/* Aberta, a secção não repete o fio da porta: a dobra já o tem. */
+.texto-dobra[open] .texto-linhas {
+  border-top: 0;
+  padding-top: 6px;
+}
+/* O aparelho do registo, dentro da dobra e depois das linhas. */
+.texto-registo {
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+}
+.texto-registo-k {
+  font-family: var(--f-versal);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+/* O ÍNDICE. A forma que a agenda e o Método já têm (`.metodo-sumario` em
+   `leitura.css`): dois fios, o rótulo em versaletes e a lista em duas colunas
+   acima de 640px. Escrita aqui, e não importada, porque esta rota não carrega a
+   folha da leitura e uma folha inteira por uma peça é peso na página mais longa
+   do sítio. */
+.texto-indice {
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: clamp(14px, 2vw, 20px) 0;
+}
+.texto-indice-k {
+  font-family: var(--f-instr);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+}
+.texto-indice-lista {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px clamp(18px, 3vw, 34px);
+}
+@media (max-width: 640px) {
+  .texto-indice-lista {
+    grid-template-columns: 1fr;
+  }
+}
+.texto-indice-lista li {
+  font-size: 15px;
+  line-height: 1.5;
+}
+.texto-indice-lista a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+/* SUBIR. Fixo no fim do ecrã abaixo de 640px, e em mais lado nenhum: no
+   computador a coluna do aparelho está sempre à vista. O alvo é de 44px nos
+   dois eixos, e o comando fica encostado à direita, fora da coluna de leitura,
+   para não se cruzar com nenhuma porta do texto. */
+.texto-subir {
+  display: none;
+}
+@media (max-width: 640px) {
+  .texto-subir {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    z-index: 5;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 12px;
+    background: var(--paper);
+    border: 1px solid var(--rule-strong);
+    color: var(--ink);
+    font-family: var(--f-instr);
+    font-variant-numeric: tabular-nums lining-nums;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+}
+
+/* -----------------------------------------------------------------------------
  * 6 · O APARELHO
  * -------------------------------------------------------------------------- */
 .texto-faixa {
@@ -327,5 +465,36 @@
   }
   .texto-artigo h1 {
     font-size: 27px;
+  }
+}
+
+
+/* ----------------------------------------------------------------------------
+ * B10 · O CHÃO DE 12 px, a parte desta folha
+ * ------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .texto-origem,
+  .texto-registo-k {
+    font-size: 12px;
+  }
+}
+
+
+/* ----------------------------------------------------------------------------
+ * B10 · OS ALVOS DE TOQUE, a parte desta folha
+ * ----------------------------------------------------------------------------
+ * A porta da linha do livro-razão, na entrada de «As linhas deste documento»,
+ * está sozinha na sua linha e leva altura de fila. As portas das figuras, essas,
+ * vivem DENTRO do texto transcrito, a 21px e a 30px de entrelinha: dar-lhes
+ * 44px punha cada uma por cima da porta da linha de cima, e o que se ganhava num
+ * dedo perdia-se noutro. Ficam com a área da sua linha, com a contagem escrita
+ * na nota do bloco.
+ * ------------------------------------------------------------------------- */
+@media (pointer: coarse) {
+  .texto-linha-porta a,
+  .texto-dobra-porta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
   }
 }

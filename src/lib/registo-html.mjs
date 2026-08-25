@@ -147,6 +147,22 @@ export function linhasDoDocumento(registo, chave, linhaDoSitio) {
   return [...porRow.values()].map((e) => ({ ...e, impresso: e.impressos.join(SEPARADOR) }));
 }
 
+/**
+ * OS TÍTULOS DE NÍVEL 2 DO REGISTO — o índice «Nesta página» (item B4).
+ *
+ * Devolve, na ordem do documento, o índice do bloco e o seu texto tal como o
+ * registo o guarda. A vista não reescreve nada: o texto entra na página com a
+ * marca `data-registo-indice`, que o portão compara carácter a carácter com
+ * este mesmo bloco (L8). Seis dos títulos das oito edições trazem um ano nas
+ * palavras, e é por isso que o índice tem de entrar por uma origem conferida e
+ * não por prosa da casa.
+ */
+export function titulosDoDocumento(registo) {
+  return registo.blocks
+    .filter((b) => b.kind === 'heading' && Number(b.level) === 2)
+    .map((b) => ({ i: b.i, texto: String(b.text ?? '') }));
+}
+
 /** As três contagens da faixa do aparelho, recontadas do registo. */
 export function contasDoRegisto(registo, chave, linhaDoSitio) {
   let algarismos = 0;
@@ -411,7 +427,12 @@ export function pecasDoCorpo({ registo, chave, linhaDoSitio, rotuloDaPorta }) {
     }
     if (bloco.kind === 'heading') {
       const nivel = Math.min(Math.max(Number(bloco.level) || 1, 1), 6);
-      saida.html(`<h${nivel}${marcaDoBloco}${atributosDaUnidade(base)}>`);
+      /* O ID DE UM TÍTULO É O SEU ÍNDICE DE BLOCO, e não uma cadeia derivada do
+         texto (bloco B, item B4). É o que o índice «Nesta página» abre, e é a
+         mesma coordenada que o `data-registo-bloco` já declara: um id feito do
+         texto mudaria no dia em que o documento mudasse uma palavra, e uma
+         âncora partilhada que muda é uma âncora partida. */
+      saida.html(`<h${nivel} id="bloco-${bloco.i}"${marcaDoBloco}${atributosDaUnidade(base)}>`);
       escreveUnidade(bloco, base, saida, ctx);
       saida.html(`</h${nivel}>`);
       return;
