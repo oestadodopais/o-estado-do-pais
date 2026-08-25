@@ -117,11 +117,44 @@ const claim = getClaim(id);
 const s = t(lang);
 const Tag = as;
 
+/**
+ * ---------------------------------------------------------------------------
+ * O SEPARADOR DOS MILHARES SAI EM U+00A0 (item C3, leitura do Codex L1)
+ * ---------------------------------------------------------------------------
+ *
+ * O livro-razão guarda os milhares com U+202F, o espaço fino inquebrável, e até
+ * aqui a página imprimia-o tal e qual. MEDIDO no valor de cabeça do 04, com a
+ * letra e o corpo que a página lhe dá:
+ *
+ *   WebKit, 28px Bitter    U+202F = 1,64px   U+00A0 = 4,25px   algarismo = 16,65px
+ *   Chromium, 40px Bitter  U+202F = 6,53px   U+00A0 = 6,06px   algarismo = 23,80px
+ *
+ * Bitter não desenha U+202F: no WebKit o carácter cai num recurso que o rende a
+ * um décimo de um algarismo, e «167 372 755,84» lê-se como uma corrida de
+ * algarismos, que foi o que a leitura de fora viu. U+00A0 é o mesmo separador
+ * escrito noutro ponto de código, e a letra desenha-o à largura de um espaço.
+ *
+ * MUDA O PONTO DE CÓDIGO DO SEPARADOR E MAIS NADA. Os 36 valores do livro-razão
+ * que levam U+202F usam-no só entre algarismos (conferido, ficheiro a ficheiro):
+ * nenhuma outra parte da cadeia é tocada, e o número de caracteres é o mesmo,
+ * que é o que `--figura-car` conta.
+ *
+ * PORQUE PASSA NO PORTÃO, e é a conferência que manda: `formaDoValor()` compara
+ * a CADEIA dentro do `[data-claim]` com a do livro-razão depois de levar U+202F,
+ * U+00A0 e U+2009 ao mesmo U+0020: «o mesmo separador escrito noutro ponto de
+ * código é o mesmo separador» (§1.47, T4). O gabarito continua a não formatar
+ * nada: não arredonda, não agrupa, não acrescenta um símbolo. Se a normalização
+ * mudasse, esta linha cairia com ela, e é assim que se quer.
+ */
+/* Os dois pontos de código vão escritos, e não como caracteres invisíveis: um
+   separador que se lê no ficheiro é um separador que se pode conferir. */
+const valor = String(claim.value).replace(/\u202F/g, '\u00A0');
+
 /** As etiquetas de texto de SVG, onde um `<span>` não pode entrar. */
 const TAGS_DE_SVG = new Set(['text', 'tspan', 'textPath']);
 const provisorio = claim.source_flag === 'p' && !TAGS_DE_SVG.has(String(as));
 const estilo = escala
-  ? [`--figura-car:${[...String(claim.value)].length}`, style].filter(Boolean).join(';')
+  ? [`--figura-car:${[...valor].length}`, style].filter(Boolean).join(';')
   : style;
 ---
 
@@ -129,7 +162,7 @@ const estilo = escala
   chip ? (
     <span class:list={['claim', 'claim-com-chip', provisorio && 'claim-com-provisorio']}>
       <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
-        {claim.value}
+        {valor}
       </Tag>
       {sufixo && <span class="claim-sufixo" set:text={sufixo} />}
       {provisorio && <span class="claim-provisorio">{s.prov.provisorio}</span>}
@@ -138,7 +171,7 @@ const estilo = escala
   ) : sufixo ? (
     <span class:list={['claim', provisorio && 'claim-com-provisorio']}>
       <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
-        {claim.value}
+        {valor}
       </Tag>
       <span class="claim-sufixo" set:text={sufixo} />
       {provisorio && <span class="claim-provisorio">{s.prov.provisorio}</span>}
@@ -151,13 +184,13 @@ const estilo = escala
        selo para a sua própria linha». Um fragmento deixa o pai como estava. */
     <>
       <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
-        {claim.value}
+        {valor}
       </Tag>
       <span class="claim-provisorio">{s.prov.provisorio}</span>
     </>
   ) : (
     <Tag class:list={['claim-value', klass]} data-claim={id} style={estilo} {...rest}>
-      {claim.value}
+      {valor}
     </Tag>
   )
 }

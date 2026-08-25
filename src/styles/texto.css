@@ -32,17 +32,61 @@
 /* Disposição B (`IDENTIDADE.md` §3): corpo a 68ch, coluna do aparelho a 300px.
    É a mesma grelha da página de linha e da página de concelho, e por isso os
    mesmos números: uma quarta disposição não se inventa. */
+/* A GRELHA TEM TRÊS PEÇAS DESDE O PASSO C (item C1), e a ordem no documento é a
+   ordem do telemóvel: o índice dobrado, o corpo, o aparelho. A 1280 a segunda
+   coluna leva o índice na primeira fila e o aparelho na segunda, e o corpo
+   atravessa as duas, e é assim que o índice chega ao topo do aparelho sem ser
+   escrito duas vezes na página (um segundo índice daria ao L8 dezoito entradas
+   para nove títulos).
+
+   A FILA NÃO LEVA GOMA, e a distância entre o índice e o aparelho é do índice:
+   com `row-gap`, uma edição sem títulos de nível 2, que não há hoje e o
+   gabarito prevê, deixava a primeira fila vazia e empurrava o aparelho meia
+   dúzia de dezenas de píxeis para baixo do corpo. */
 .texto {
   margin-top: clamp(18px, 2.4vw, 26px);
   display: grid;
   grid-template-columns: minmax(0, 68ch) 300px;
-  gap: clamp(24px, 4vw, 52px);
+  grid-template-rows: auto 1fr;
+  column-gap: clamp(24px, 4vw, 52px);
+  row-gap: 0;
   align-items: start;
+}
+.texto > .texto-indice {
+  grid-column: 2;
+  grid-row: 1;
+  margin-bottom: 22px;
+}
+.texto > .texto-corpo {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+.texto > .aparelho {
+  grid-column: 2;
+  grid-row: 2;
 }
 @media (max-width: 900px) {
   .texto {
     grid-template-columns: minmax(0, 1fr);
-    gap: 30px;
+    grid-template-rows: none;
+    /* 20px e não 30: numa coluna a primeira fila é o índice, e o que separa uma
+       porta dobrada do título que vem a seguir não é a goteira de uma coluna
+       inteira. Cada píxel aqui é um píxel do primeiro ecrã (item C1). */
+    row-gap: 20px;
+    column-gap: 30px;
+  }
+  /* Uma coluna: a ordem é a do documento, e as três peças voltam ao fluxo. */
+  .texto > .texto-indice,
+  .texto > .texto-corpo,
+  .texto > .aparelho {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .texto > .texto-indice {
+    margin-bottom: 0;
+    /* A banda do índice É a porta: a altura dela já é a da fila, e o enchimento
+       da peça vinha somar-se a ela. Ver a conta do item C1 na nota do passo. */
+    padding: 0;
   }
 }
 .texto-corpo {
@@ -360,11 +404,51 @@
    `leitura.css`): dois fios, o rótulo em versaletes e a lista em duas colunas
    acima de 640px. Escrita aqui, e não importada, porque esta rota não carrega a
    folha da leitura e uma folha inteira por uma peça é peso na página mais longa
-   do sítio. */
+   do sítio.
+
+   DESDE O PASSO C (item C1) A LISTA VIVE DENTRO DE UMA DOBRA, e a porta da
+   dobra é o rótulo. A peça continua a ser a mesma: os dois fios, o rótulo em
+   versaletes, a lista por baixo. O que muda é que a lista só se desenha depois
+   de alguém a pedir, e a 390 o `<h1>` do documento passa a ser a primeira coisa
+   a seguir ao antetítulo. */
 .texto-indice {
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
   padding: clamp(14px, 2vw, 20px) 0;
+}
+/* A PORTA DA DOBRA, na forma de `.texto-dobra-porta`: a seta é um
+   pseudo-elemento e não um `<span>`, porque um `<summary>` só aceita conteúdo
+   de frase OU um título, e aqui leva o título que a peça já tinha. */
+.texto-indice-porta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* ALTURA DE FILA EM QUALQUER APONTADOR, e não só em toque: a porta é o alvo
+     da dobra inteira, e a técnica é a que o bloco B escreveu para os alvos que
+     estão sozinhos numa fila. É também o que dá a esta banda a sua altura no
+     telemóvel, onde a peça deixa de ter enchimento próprio. */
+  min-height: 44px;
+  cursor: pointer;
+  list-style: none;
+}
+.texto-indice-porta::-webkit-details-marker {
+  display: none;
+}
+.texto-indice-porta::before {
+  content: '';
+  width: 0;
+  height: 0;
+  flex: none;
+  border-left: 5px solid var(--muted);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: transform 0.12s ease;
+}
+.texto-indice-dobra[open] .texto-indice-porta::before {
+  transform: rotate(90deg);
+}
+.texto-indice-porta:hover .texto-indice-k {
+  text-decoration: underline;
 }
 .texto-indice-k {
   font-family: var(--f-instr);
@@ -382,6 +466,12 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2px clamp(18px, 3vw, 34px);
+}
+/* No aparelho a coluna mede 300px: as duas colunas do índice ficariam a 130. */
+@media (min-width: 901px) {
+  .texto-indice-lista {
+    grid-template-columns: 1fr;
+  }
 }
 @media (max-width: 640px) {
   .texto-indice-lista {
@@ -465,6 +555,15 @@
   }
   .texto-artigo h1 {
     font-size: 27px;
+  }
+}
+/* O TÍTULO DO DOCUMENTO NÃO LEVA GOMA POR CIMA NUMA COLUNA (item C1). Os 12px
+   existiam para o afastar do topo da coluna quando ele era a primeira coisa
+   dela; numa coluna, o que está por cima é a dobra do índice, com o seu fio e
+   os 20px da fila. */
+@media (max-width: 900px) {
+  .texto-artigo h1 {
+    margin-top: 0;
   }
 }
 

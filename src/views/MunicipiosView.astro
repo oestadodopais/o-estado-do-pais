@@ -33,6 +33,8 @@
 import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
+import Pesquisa from '../components/inicio/Pesquisa.astro';
+import { concelhos as concelhosDaCarta } from '../lib/inicio.mjs';
 import { MUNICIPIOS, DISTRITOS, regiaoDe } from '../data/caop-centroids.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
 import { VERBATIM } from '../data/verbatim.mjs';
@@ -101,6 +103,36 @@ const parcelas = [
   { rotulo: s.municipios.parcelaMadeira, claim: 'municipios-madeira-caop-2025' },
   { rotulo: s.municipios.parcelaTotal, claim: 'municipios-portugal-caop-2025' },
 ];
+
+/**
+ * ===========================================================================
+ * A PESQUISA, E A SECÇÃO «COM PÁGINA» (passo C, item C4; decisão 5 do diretor)
+ * ===========================================================================
+ *
+ * A leitura de fora chamou a esta página «um directório quase todo morto»: 308
+ * nomes, um deles com página, e nenhuma maneira de chegar a esse um sem varrer
+ * a lista. As duas correções são as que a decisão 5 pede, aplicadas ao índice:
+ *
+ *   · a PESQUISA que a primeira página já tem, no topo, e é a mesma peça
+ *     (`components/inicio/Pesquisa.astro`) com a mesma lista de resultados;
+ *   · os concelhos COM PÁGINA primeiro, numa secção com nome, com a lista
+ *     inteira por distritos por baixo, como está.
+ *
+ * A LISTA DOS RESULTADOS É A DA CARTA, e é a mesma função que a primeira página
+ * chama: `concelhos()` devolve os 308 na ordem da Carta, com o nome, o `slug` e
+ * o pedaço sem acentos por que a pesquisa compara. Uma segunda lista escrita
+ * aqui divergiria da primeira à primeira alteração.
+ *
+ * UM RESULTADO É UMA LIGAÇÃO, e não um botão: nesta página um resultado abre a
+ * página do concelho, e isso é uma porta que funciona sem script nenhum. Os 307
+ * sem página saem sem porta, com as duas palavras do estado.
+ */
+const resultados = concelhosDaCarta();
+const destinoDoConcelho = (c) =>
+  c.pagina ? routePath('municipio', lang, { slug: c.pagina.slug }) : null;
+
+/** Os que têm página, na ordem da Carta, para a secção que os lista primeiro. */
+const comPagina = resultados.filter((c) => c.pagina);
 ---
 
 <Base
@@ -120,6 +152,22 @@ const parcelas = [
       {s.municipios.coberturaB}
       <span data-cobertura="com-pagina">{s.cobertura.temPagina}</span>
     </p>
+
+    {/* A PESQUISA, LOGO A SEGUIR À COBERTURA (item C4).
+        Vem antes da contagem por parcelas porque é o caminho e a contagem é a
+        legenda: a 390 o campo tem de estar no primeiro ecrã, e é aí que ele
+        cabe.
+
+        A CAIXA CHEGA COM O SCRIPT, E SÓ COM ELE. Sem script a pesquisa não
+        pesquisa, porque os resultados estão na página e o que os acende é
+        `public/js/municipios.js`, e a regra da casa já está escrita na peça:
+        «uma caixa de pesquisa que não pesquisa é pior do que nenhuma». Sem
+        script esta página é a que era: a lista dos 308 por distritos, inteira,
+        com a porta de Évora dentro dela. */}
+    <div class="concelhos-pesquisa" data-pesquisa-bloco hidden>
+      <Pesquisa s={s} concelhos={resultados} destino={destinoDoConcelho} />
+    </div>
+
     {/* A contagem por parcelas, numa linha só, por baixo da cabeça da lista.
         Cada parcela leva o seu selo; o separador é o ponto médio da casa. */}
     <p class="concelhos-parcelas">
@@ -150,6 +198,30 @@ const parcelas = [
     <p class="rodape-nav" style="margin-top:14px">
       <a href={`${routePath('home', lang)}#mapa`}>{s.municipios.mapaLink}</a>
     </p>
+  </div>
+
+  {/* OS CONCELHOS COM PÁGINA, PRIMEIRO (item C4). Uma secção com o mesmo
+      desenho de um grupo de distrito, e as mesmas duas palavras de estado: o
+      que muda é o critério do grupo, que aqui é a cobertura e ali é a Carta. A
+      lista inteira por distritos fica por baixo, como está, e Évora aparece nas
+      duas, porque é a mesma porta, e escondê-la do seu distrito seria mentir sobre
+      onde ela fica. */}
+  <div class="concelhos concelhos-primeiro">
+    <section class="concelhos-grupo" aria-labelledby="com-pagina">
+      <h2 class="concelhos-grupo-k" id="com-pagina">{s.municipios.comPaginaK}</h2>
+      <ul class="concelhos-lista">
+        {comPagina.map((c) => (
+          <li class="concelho concelho-com-pagina">
+            <a href={routePath('municipio', lang, { slug: c.pagina.slug })}>
+              {c.pagina.nome[lang] ?? c.pagina.nome.pt}
+            </a>
+            <span class="concelho-estado">
+              <span data-cobertura="com-pagina">{s.cobertura.temPagina}</span> →
+            </span>
+          </li>
+        ))}
+      </ul>
+    </section>
   </div>
 
   <div class="concelhos">
@@ -208,4 +280,9 @@ const parcelas = [
       </span>
     </div>
   </div>
+
+  {/* O SCRIPT DESTA PÁGINA, e é o que acende a caixa e filtra os resultados que
+      o servidor já escreveu. Nada compõe texto, nada escreve um algarismo: a
+      regra é a mesma de `public/js/inicio.js`, e está escrita lá. */}
+  <script src="/js/municipios.js" defer is:inline></script>
 </Base>

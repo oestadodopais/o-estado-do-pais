@@ -38,8 +38,29 @@
  * só se atinge com script, e o comando dele leva, sem script, ao índice dos 308
  * (`/municipios`), que é uma página inteira com a mesma lista e a mesma
  * cobertura. Uma caixa de pesquisa que não pesquisa é pior do que nenhuma.
+ *
+ * ---------------------------------------------------------------------------
+ * A MESMA PEÇA SERVE O ÍNDICE DOS 308 (passo C, item C4; decisão 5 do diretor)
+ * ---------------------------------------------------------------------------
+ * `/municipios` abre com esta pesquisa, e é a MESMA: a mesma caixa, a mesma
+ * lista de 308 resultados já rendidos, as mesmas duas palavras de cobertura, o
+ * mesmo `data-normal`. Uma segunda pesquisa, escrita ao lado desta, seria uma
+ * segunda lista de nomes para o portão conferir e duas peças para divergirem.
+ *
+ * O QUE MUDA É O QUE UM RESULTADO FAZ, e muda porque as duas páginas fazem
+ * coisas diferentes: na primeira página um resultado ESCOLHE um âmbito, e por
+ * isso é um botão que o script apanha; no índice um resultado ABRE a página do
+ * concelho, e por isso é uma ligação, que funciona sem script nenhum.
+ *
+ * OS 307 SEM PÁGINA NÃO SÃO PORTAS, e essa é a parte honesta: um resultado sem
+ * página é o nome e as duas palavras do estado, como a linha que a lista por
+ * distritos já lhe dá. Escondê-los da pesquisa era pior: quem escrevesse
+ * «Beja» leria «Nenhum concelho com esse nome.», que é falso.
+ *
+ * `destino` é a função que decide, e vem de quem chama: sem ela, a peça é a da
+ * primeira página, botão a botão, sem uma diferença.
  */
-const { s, concelhos } = Astro.props;
+const { s, concelhos, destino = null } = Astro.props;
 ---
 
 <div class="pesquisa" id="pesquisa">
@@ -61,14 +82,32 @@ const { s, concelhos } = Astro.props;
           data-tem-pagina={c.pagina ? 'sim' : null}
           hidden={!c.pagina}
         >
-          <button type="button" class="chipb" data-escolher={c.slug}>
-            <span class="pesquisa-nome">{c.nome}</span>
-            {c.pagina && (
-              <span class="pesquisa-cobertura" data-cobertura="com-pagina">
-                {s.cobertura.temPagina}
+          {destino ? (
+            destino(c) ? (
+              <a class="chipb" href={destino(c)}>
+                <span class="pesquisa-nome">{c.nome}</span>
+                <span class="pesquisa-cobertura" data-cobertura="com-pagina">
+                  {s.cobertura.temPagina}
+                </span>
+              </a>
+            ) : (
+              <span class="chipb chipb-inerte">
+                <span class="pesquisa-nome">{c.nome}</span>
+                <span class="pesquisa-cobertura" data-cobertura="sem-pagina">
+                  {s.cobertura.semPaginaAinda}
+                </span>
               </span>
-            )}
-          </button>
+            )
+          ) : (
+            <button type="button" class="chipb" data-escolher={c.slug}>
+              <span class="pesquisa-nome">{c.nome}</span>
+              {c.pagina && (
+                <span class="pesquisa-cobertura" data-cobertura="com-pagina">
+                  {s.cobertura.temPagina}
+                </span>
+              )}
+            </button>
+          )}
         </li>
       ))
     }

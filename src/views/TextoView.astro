@@ -147,21 +147,50 @@ const conta = (nome) => `${chave}=${nome}`;
   </div>
 
   <div class="texto">
-    <div class="texto-corpo">
-      {/* ===================================================== NESTA PÁGINA
-          O índice do documento (bloco B, item B4; achado D1): os títulos de
-          nível 2 do registo, cada um a âncora do seu bloco. É a forma que a
-          agenda e o Método já têm, e vive FORA do `<article>`, porque o portão
-          compara o corpo com o registo bloco a bloco e a mobília não é corpo.
+    {/* ===================================================== NESTA PÁGINA
+        O índice do documento (bloco B, item B4; achado D1): os títulos de
+        nível 2 do registo, cada um a âncora do seu bloco. É a forma que a
+        agenda e o Método já têm, e vive FORA do `<article>`, porque o portão
+        compara o corpo com o registo bloco a bloco e a mobília não é corpo.
 
-          O TEXTO É TRANSCRIÇÃO, e por isso entra pela nona origem com uma marca
-          própria: `data-registo-indice`, que o L8 compara carácter a carácter
-          com o mesmo bloco do mesmo registo. Seis dos títulos das oito edições
-          trazem um ano escrito, e um índice em prosa da casa punha algarismos
-          na página sem origem nenhuma. */}
-      {titulos.length > 0 && (
-        <nav class="texto-indice" id="texto-indice" aria-labelledby="texto-indice-k">
-          <h2 class="texto-indice-k" id="texto-indice-k">{s.leitura.sumarioK}</h2>
+        O TEXTO É TRANSCRIÇÃO, e por isso entra pela nona origem com uma marca
+        própria: `data-registo-indice`, que o L8 compara carácter a carácter
+        com o mesmo bloco do mesmo registo. Seis dos títulos das oito edições
+        trazem um ano escrito, e um índice em prosa da casa punha algarismos
+        na página sem origem nenhuma.
+
+        ------------------------------------------------------------------
+        O ÍNDICE SAI DE CIMA DO TÍTULO (passo C, item C1; leitura do Codex M1)
+        ------------------------------------------------------------------
+        O bloco B pôs este índice no topo da coluna do corpo, e a 390 isso
+        empurrava o `<h1>` do documento para os 734px de uma janela de 664:
+        quem seguia «Ler no sítio →» chegava a uma página que não dizia que
+        documento tinha aberto. MEDIDO antes e depois, e os números estão na
+        nota do passo.
+
+        A FORMA É UMA DOBRA, e é a que a secção das linhas já usa: um
+        `<details>` fechado por defeito, sem uma linha de JavaScript. A 390 a
+        dobra fica ACIMA do artigo, e o que se lê a seguir ao antetítulo é o
+        título e a lede; a 1280 o índice muda de coluna e vai para o topo do
+        aparelho, antes de «O documento original».
+
+        A DOBRA É FECHADA NAS DUAS LARGURAS, e é uma escolha medida e não um
+        esquecimento. A saída bonita seria fechá-la só no telemóvel, e ela não
+        existe: um `<details>` fechado não se abre por folha de estilo.
+        Provado nos dois motores, com pixéis e não com caixas: a régua diz que
+        `getBoundingClientRect()` devolve 60px e a captura mostra a banda
+        apagada nos dois. Fica a dobra da casa, igual nas duas larguras.
+
+        A ORDEM NO DOCUMENTO é índice, corpo, aparelho, que é a ordem em que se
+        lê a 390. A 1280 a folha põe o índice e o aparelho na segunda coluna,
+        pela grelha e sem duplicar um único nó: um segundo índice daria ao L8
+        dezoito entradas para nove títulos. */}
+    {titulos.length > 0 && (
+      <nav class="texto-indice" id="texto-indice" aria-labelledby="texto-indice-k">
+        <details class="texto-indice-dobra">
+          <summary class="texto-indice-porta">
+            <h2 class="texto-indice-k" id="texto-indice-k">{s.leitura.sumarioK}</h2>
+          </summary>
           <ul class="texto-indice-lista">
             {titulos.map((titulo) => (
               <li>
@@ -171,9 +200,11 @@ const conta = (nome) => `${chave}=${nome}`;
               </li>
             ))}
           </ul>
-        </nav>
-      )}
+        </details>
+      </nav>
+    )}
 
+    <div class="texto-corpo">
       {/* ================================================= o documento inteiro
           Exatamente os blocos do registo, na ordem do registo, e mais nada. As
           peças vêm de `registo-html.mjs`, que é puro; o selo é sempre o

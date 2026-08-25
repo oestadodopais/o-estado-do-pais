@@ -124,3 +124,22 @@
   stroke-width: 2;
   vector-effect: non-scaling-stroke;
 }
+
+
+/* -----------------------------------------------------------------------------
+ * C4 · A PESQUISA NO TOPO DO ÍNDICE, E A SECÇÃO DOS QUE TÊM PÁGINA
+ * -----------------------------------------------------------------------------
+ * A peça da pesquisa vive em `site.css`, que é a folha que as duas rotas com
+ * pesquisa carregam. O que é desta página é onde ela se senta: logo a seguir à
+ * linha de cobertura, com o ar de uma peça e não de um parágrafo.
+ * -------------------------------------------------------------------------- */
+.concelhos-pesquisa {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+}
+/* A secção dos que têm página encosta-se à lista, e não abre um vão novo: é a
+   primeira fila da mesma lista, com outro critério de grupo. */
+.concelhos-primeiro {
+  margin-bottom: clamp(18px, 2.4vw, 26px);
+}

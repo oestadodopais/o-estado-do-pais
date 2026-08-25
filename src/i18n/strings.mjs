@@ -602,6 +602,13 @@ export const STRINGS = {
       coberturaB: ' concelhos · ',
       fonteK: 'De onde vem a lista',
       mapaLink: 'O mapa dos concelhos',
+      /* O TÍTULO DA PRIMEIRA SECÇÃO DA LISTA (passo C, item C4; decisão 5 do
+         diretor). Os concelhos com página vêm primeiro, debaixo de um nome que
+         diz o que a secção tem; a lista inteira por distritos fica por baixo,
+         como está. As duas palavras do estado, «tem página» e «sem página
+         ainda», não mudam e continuam a ser as de `s.cobertura`: esta é o nome
+         de uma secção, e é por isso que é uma cadeia própria. */
+      comPaginaK: 'Com página',
       /* A CONTAGEM POR PARCELAS (Emenda 17; decisão 4 da direção, 21.08.2026;
          ISSUES I33). Vivia na ficha do mapa da primeira página, com o rótulo
          «Contagem verificada nos ficheiros», que é a casa a falar de si (Emenda
@@ -1502,6 +1509,7 @@ export const STRINGS = {
       coberturaB: ' municipalities · ',
       fonteK: 'Where the list comes from',
       mapaLink: 'The map of municipalities',
+      comPaginaK: 'With a page',
       parcelaContinente: 'Mainland',
       parcelaAcores: 'Azores',
       parcelaMadeira: 'Madeira',
