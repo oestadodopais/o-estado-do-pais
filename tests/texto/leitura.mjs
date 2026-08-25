@@ -121,11 +121,25 @@ console.log('');
       colunas: getComputedStyle(grelha).gridTemplateColumns,
       corpo: Math.round(corpo.getBoundingClientRect().width),
       aparelho: Math.round(aparelho.getBoundingClientRect().width),
-      aparelhoAoLado: Math.round(aparelho.getBoundingClientRect().top) <= Math.round(corpo.getBoundingClientRect().top),
+      /* «AO LADO» PASSOU A LER-SE À LETRA (passo C, item C1, 25.08.2026).
+         Até aqui esta linha perguntava se o aparelho COMEÇAVA à mesma altura do
+         corpo, ou acima. Deixou de ser a mesma pergunta: o item C1 pôs o índice
+         da página no topo da segunda coluna, antes de «O documento original»,
+         e por isso o aparelho começa mais abaixo do que o corpo — 397,5px
+         contra 289,5px, medido. A disposição B continua a ser a disposição B, e
+         o que a define é a segunda coluna estar AO LADO do corpo e não por
+         baixo dele: é isso que se pergunta agora, com a esquerda do aparelho a
+         começar onde o corpo acaba e o seu topo dentro da altura do corpo. */
+      aparelhoAoLado:
+        Math.round(aparelho.getBoundingClientRect().left) >=
+          Math.round(corpo.getBoundingClientRect().right) &&
+        aparelho.getBoundingClientRect().top < corpo.getBoundingClientRect().bottom,
+      aparelhoEsq: Math.round(aparelho.getBoundingClientRect().left),
+      corpoDir: Math.round(corpo.getBoundingClientRect().right),
       prosa: getComputedStyle(par).fontSize + ' / ' + getComputedStyle(par).lineHeight,
     };
   });
-  conta('a 1280 a página é a disposição B, com a coluna do aparelho ao lado do corpo', m.aparelhoAoLado && m.aparelho >= 290 && m.aparelho <= 310, `corpo ${m.corpo}px · aparelho ${m.aparelho}px · grid ${m.colunas}`);
+  conta('a 1280 a página é a disposição B, com a coluna do aparelho ao lado do corpo', m.aparelhoAoLado && m.aparelho >= 290 && m.aparelho <= 310, `corpo ${m.corpo}px · aparelho ${m.aparelho}px · o corpo acaba em x=${m.corpoDir} e o aparelho começa em x=${m.aparelhoEsq} · grid ${m.colunas}`);
   conta('a prosa do corpo é a escala da leitura (19px, entrelinha 1,6)', m.prosa.startsWith('19px'), m.prosa);
   await p.__contexto.close();
 }
