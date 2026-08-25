@@ -348,7 +348,15 @@ for (const edicao of ['pt', 'en']) {
   );
 
   /* -------------------------------------------------- A1 · o comando põe a pesquisa à vista */
-  await p.tap('[data-comando] [data-modo="municipio"]');
+  /* O toque pode não chegar a acontecer — um estrago que volte a esconder o
+     comando no telemóvel deixa-o invisível —, e nesse caso a régua tem de dizer
+     o que mediu em vez de rebentar: uma exceção aqui levaria consigo o relatório
+     das outras trinta e uma. O `catch` fica com o motivo, e a célula falha com
+     ele à vista. */
+  const toque = await p
+    .tap('[data-comando] [data-modo="municipio"]', { timeout: 5000 })
+    .then(() => 'tocado')
+    .catch((e) => `sem toque: ${String(e.message).split('\n')[0]}`);
   await p.waitForTimeout(250);
   const a1 = await p.evaluate(() => {
     const el = document.querySelector('#pesquisa');
@@ -365,8 +373,8 @@ for (const edicao of ['pt', 'en']) {
   });
   conta(
     `A1 · «Concelho» revela a pesquisa dentro do ecrã, com o foco no campo · 390 ${edicao}`,
-    a1.dentro && a1.foco === 'pesquisa-concelho' && a1.anuncio.length > 0,
-    `topo ${a1.topo} de ${a1.ecra} (dentro: ${a1.dentro}) · foco «${a1.foco}» · anúncio «${a1.anuncio}» · endereço «${a1.endereco}»`,
+    toque === 'tocado' && a1.dentro && a1.foco === 'pesquisa-concelho' && a1.anuncio.length > 0,
+    `${toque} · topo ${a1.topo} de ${a1.ecra} (dentro: ${a1.dentro}) · foco «${a1.foco}» · anúncio «${a1.anuncio}» · endereço «${a1.endereco}»`,
   );
   if (edicao === 'pt') medidas.a1 = a1;
 
@@ -576,11 +584,18 @@ for (const edicao of ['pt', 'en']) {
     const porta = document.querySelector('.mun-porta');
     return { indice: porta ? foco.indexOf(porta) : -1, total: foco.length };
   });
-  await p.evaluate(() => document.querySelector('.mun-porta').focus());
-  const focado = await p.evaluate(() => ({
-    classe: document.activeElement ? document.activeElement.getAttribute('class') : null,
-    href: document.activeElement ? document.activeElement.getAttribute('href') : null,
-  }));
+  /* A porta pode não existir — é isso que um estrago plantado faz —, e a régua
+     tem de dizer o que mediu em vez de rebentar. */
+  const focado = await p.evaluate(() => {
+    const porta = document.querySelector('.mun-porta');
+    if (!porta) return { classe: null, href: null, existe: false };
+    porta.focus();
+    return {
+      classe: document.activeElement ? document.activeElement.getAttribute('class') : null,
+      href: document.activeElement ? document.activeElement.getAttribute('href') : null,
+      existe: true,
+    };
+  });
   conta(
     `A5 · o leitor de teclado chega ao ponto com página · 1280 ${edicao}`,
     tab.indice >= 0 && focado.classe === 'mun-porta' && focado.href === destino,
@@ -590,12 +605,15 @@ for (const edicao of ['pt', 'en']) {
   /* -------------------------------------------------- A6 · o nome ao passar o rato */
   const sitio = await p.evaluate(() => {
     const c = document.querySelector('circle.mun[data-pagina="sim"]');
+    if (!c) return null;
     const r = c.getBoundingClientRect();
     return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
   });
-  await p.mouse.move(sitio.x - 40, sitio.y - 40);
-  await p.mouse.move(sitio.x, sitio.y);
-  await p.waitForTimeout(200);
+  if (sitio) {
+    await p.mouse.move(sitio.x - 40, sitio.y - 40);
+    await p.mouse.move(sitio.x, sitio.y);
+    await p.waitForTimeout(200);
+  }
   const a6 = await p.evaluate(() => {
     const l = document.querySelector('[data-readout]');
     const visivel = [...l.children].filter((c) => !c.hidden);
