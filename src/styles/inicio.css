@@ -118,10 +118,30 @@
   color: var(--muted);
 }
 
-.cmd-sub {
-  display: flex;
+/* ---------------------------------------------------------------------------
+ * A PESQUISA É GOVERNADA PELA FOLHA (bloco A, itens A1, A2 e A4)
+ * ---------------------------------------------------------------------------
+ * Era um `.cmd-sub[data-sub="municipio"]` a quem o script tirava o `hidden`
+ * quando o âmbito passava a «município». Abaixo de 640 isso deixou de servir: o
+ * mapa sai do telemóvel e a pesquisa passa a ser O caminho para o concelho, à
+ * vista em qualquer estado.
+ *
+ * Quem decide é o `data-modo` que a raiz já carrega, lido aqui — a mesma técnica
+ * de `data-postura` no mapa. Acima de 640 a pesquisa só se vê no modo
+ * «concelho»; abaixo de 640 vê-se sempre. Um `[hidden]` escrito pelo script não
+ * se deixaria reabrir por uma regra de largura, e a página tem de servir as duas
+ * sem uma segunda cópia do 640 dentro do JavaScript.
+ *
+ * `.cmd-sub` saiu com a fila das regiões, que era o outro painel deste
+ * mecanismo: uma regra sem elemento mente sobre o que a folha desenha.
+ */
+.pesquisa-bloco {
+  display: none;
   flex-direction: column;
   gap: 10px;
+}
+[data-inicio][data-modo='municipio'] .pesquisa-bloco {
+  display: flex;
 }
 
 .cmd-chips {
@@ -352,6 +372,25 @@
   stroke: var(--ink);
   stroke-width: 1.2;
 }
+/* ---------------------------------------------------------------------------
+ * A LIGAÇÃO DO PONTO COM PÁGINA (bloco A, item A5)
+ * ---------------------------------------------------------------------------
+ * O que ela dá é o CURSOR e o destino; o que ela não dá é desenho nenhum. A
+ * Emenda 10 fixa que os 308 pontos são iguais e nenhum vem preenchido: um ponto
+ * maior, ou cheio, por ter página, seria a distinção que ela proíbe. Por isso a
+ * âncora não pinta, não sublinha e não muda o traço do círculo que tem dentro —
+ * herda `fill: none` e deixa o `.mun` desenhar-se como os outros 307.
+ *
+ * O anel de foco é do teclado e não do desenho: quem chega ao ponto pelo Tab tem
+ * de ver onde chegou, e esse é o único momento em que a ligação se vê.
+ */
+.mun-porta {
+  cursor: pointer;
+}
+.mun-porta:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
 /* O ANEL DO CURSOR ESTAVA A DESENHAR UM DISCO PRETO (achado da 2m).
    `public/js/inicio.js` cria um `<circle class="cursor-ring">` para marcar o
    ponto que o cursor ou o teclado está a ler, e a única regra do sítio para essa
@@ -423,9 +462,32 @@
     align-self: end;
     margin-left: 45%;
   }
+  /* -------------------------------------------------------------------------
+     A LEITURA DO MAPA SAI DA COLUNA E FICA POR CIMA DO AR QUE JÁ LÁ ESTAVA
+     (bloco A, item A8)
+     -------------------------------------------------------------------------
+     Ela é a caixa que diz o nome do concelho por baixo do cursor, e entra vazia:
+     reservava 2,6em de altura para que o nome, ao aparecer, não empurrasse o
+     painel. Medido a 1280: essas 29,8px, mais os 8 da goteira da figura, mais o
+     ar da secção seguinte, faziam a banda de cor uniforme de 80px entre a linha
+     «308 concelhos» e o primeiro cartão — o vazio que o diretor fotografou, e
+     que a esta altura já era só isto.
+
+     Passa a estar FORA DO FLUXO, encostada ao fundo do mapa: ocupa o ar que a
+     secção seguinte já tem por cima de si, em vez de o somar. O que se ganha é
+     a banda; o que não se perde é a razão da reserva — a caixa continua a ter a
+     sua altura, e nada se move quando o nome aparece, porque nada depende dela.
+     A caixa fica exatamente onde estava à vista: por baixo do mapa, que é onde o
+     leitor está a olhar.
+     ------------------------------------------------------------------------- */
+  .mapa {
+    position: relative;
+  }
   .mapa-rodape {
-    grid-column: 1;
-    grid-row: 2;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
   }
 }
 
@@ -584,6 +646,14 @@ svg [hidden] {
 .mapa-leitura .readout-name {
   color: var(--ink);
   font-weight: 600;
+}
+/* O separador da casa entre o nome e o distrito (bloco A, item A6). O ponto
+   médio é o separador desta casa, e o que ele fecha é «Évoradistrito de Évora»:
+   os três `span` são em linha e entre o nome e o resto não havia nem um espaço.
+   Vai em `--muted`, como o resto da leitura, para que o nome continue a ser a
+   única coisa a tinta. */
+.mapa-leitura .readout-sep {
+  color: var(--muted);
 }
 
 /* ------------------------------------------------------------------ estreito */
@@ -1303,111 +1373,93 @@ a.porta:hover .porta-abrir {
  * instrumentos rolam dentro da sua caixa, e não empurram a página.»
  * ========================================================================= */
 
-.movel-destinos {
-  display: none;
-}
-
 @media (max-width: 640px) {
-  /* O âmbito como destinos, e o selo do país como único alvo do mapa. */
-  /* O selo do país e os dois destinos partilham uma fila; a ficha do mapa desce
-     para baixo dos dois. `display: contents` dissolve a `<figure>` para que a
-     tela e a ficha sejam elas próprias itens desta grelha. */
-  .cabeca-inst {
-    display: grid;
-    grid-template-columns: 84px minmax(0, 1fr);
-    column-gap: 14px;
-    row-gap: 14px;
-    position: relative;
-    align-items: start;
+  /* -------------------------------------------------------------------------
+     A4 · O MAPA SAI DO TELEMÓVEL, E A PESQUISA FICA NO SEU LUGAR
+     -------------------------------------------------------------------------
+     Medido na auditoria de 25.08: o mapa rende a 84 × 111px, os 308 pontos com
+     1,26px de diâmetro a 4,27px uns dos outros, e tocar num ponto, no meio do
+     mapa ou em Évora não muda nada (achado B2). Um selo que não se lê nem se usa
+     não é um instrumento: é uma mancha a ocupar o primeiro ecrã.
+
+     Decisão do diretor de 25.08 (Emenda 18): enquanto os concelhos não tiverem
+     página, o selo do mapa sai do telemóvel e a escolha do concelho é a pesquisa
+     à vista. Substitui a forma do telemóvel da Emenda 3 até lá.
+
+     «NÃO SE RENDE» É `display: none` NA TELA E NO RODAPÉ, e não uma condição do
+     servidor: uma construção estática serve o mesmo HTML às duas larguras, e
+     nenhuma largura é conhecida quando ele se escreve. O que se mede é o que
+     conta — abaixo de 640 o `svg` não tem caixa, os 308 pontos não têm caixa,
+     nada disto é alvo e nada disto está na árvore de acessibilidade.
+
+     A LINHA «308 concelhos · CAOP 2025 ■ fonte» FICA, ao pé da pesquisa: é a
+     legenda do que a pesquisa escolhe, e é onde vive o selo da Carta.
+     ------------------------------------------------------------------------- */
+  [data-inicio] .mapa-tela,
+  [data-inicio] .mapa-rodape,
+  [data-inicio] .mapa-fechar {
+    display: none;
   }
-  /* A COLOCAÇÃO NA GRELHA É DA PRIMEIRA PÁGINA, E DIZ-SE (etapa 2m).
-     Estas quatro regras dissolvem a `<figure>` do mapa para que a tela, a
-     legenda e o cartão sejam itens da grelha de `.cabeca-inst`. Fora dessa
-     grelha não querem dizer nada — e pior: na página do concelho, que passou a
-     render o cartão (ISSUES I45), `grid-row: 2` empurrava-o para debaixo do
-     título do aparelho, com o título a parecer a legenda do cartão. Ficam
-     presas a `[data-inicio]`, que é a raiz da primeira página. */
+  /* A `<figure>` dissolve-se: o que dela fica é a legenda, e uma figura com uma
+     legenda e nenhuma figura não é uma figura — é uma linha. */
   [data-inicio] .mapa {
     display: contents;
   }
-  [data-inicio] .mapa-tela {
-    grid-column: 1;
-    grid-row: 1;
-  }
-  [data-inicio] .mapa-linha,
-  [data-inicio] .mapa-cartao {
-    grid-column: 1 / -1;
-    grid-row: 2;
-  }
-  [data-inicio] .mapa-rodape {
-    grid-column: 1 / -1;
-    grid-row: 3;
-  }
-  .movel-destinos {
+  [data-inicio] .cabeca-inst {
     display: block;
-    grid-column: 2;
-    grid-row: 1;
   }
-  .movel-linhas {
+  /* O cartão localizador vive na página do concelho, e ali o mapa continua a
+     desenhar-se: esta regra é da primeira página e só dela. */
+  [data-inicio] [data-postura='localizador'] .mapa-cartao {
+    display: none;
+  }
+
+  /* -------------------------------------------------------------------------
+     A ORDEM DA COLUNA NO TELEMÓVEL (itens A4 e A7)
+     -------------------------------------------------------------------------
+     A cabeça primeiro (o rótulo do âmbito, a manchete e a lede), o comando a
+     seguir, e logo por baixo a pesquisa com a linha dos 308. É a ordem que o
+     item A4 escreve — «no seu lugar, logo por baixo da lede, a pesquisa de
+     concelho» — e é a que faz o objetivo medido do item A7 fechar: com a linha
+     de comando por cima da manchete, a manchete começava a 415,9px num ecrã de
+     664, e não há corte de goteira que a traga aos 40%.
+
+     `.inicio` já é uma coluna flexível; o que isto faz é numerar-lhe os itens. A
+     `.cabeca-grelha` dissolve-se para que a sua coluna de texto e a sua coluna
+     de instrumento sejam itens desta mesma coluna e possam ser numeradas com os
+     outros. Acima de 640 nada disto existe e a ordem é a do documento, que é a
+     do computador: o comando em cima, como a barra sempre esteve.
+     ------------------------------------------------------------------------- */
+  [data-inicio] .cabeca-grelha {
+    display: contents;
+  }
+  [data-inicio] .cabeca-col {
+    order: 1;
+  }
+  [data-inicio] .cmd {
+    order: 2;
+  }
+  [data-inicio] .pesquisa-bloco {
+    order: 3;
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: stretch;
   }
-  .movel-destino {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 44px;
-    padding: 0 14px;
-    border: 1px solid var(--rule-strong);
-    font-family: var(--f-versal);
-    font-size: 13px;
-    letter-spacing: 0.05em;
-    font-weight: 600;
-    color: var(--ink);
-    text-decoration: none;
+  [data-inicio] .cabeca-inst {
+    order: 4;
   }
-  /* O selo do país: o alvo é o rectângulo inteiro do mapa, e não um ponto. */
-  .movel-selo {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 84px;
-    height: 111px;
-    z-index: 2;
+
+  /* A linha dos 308 encosta-se à pesquisa em vez de flutuar: é a legenda dela. */
+  [data-inicio] .mapa-linha {
+    margin-top: -4px;
   }
+
+  /* Nenhum ponto é alvo, e continua a ser a Emenda 3 a dizê-lo. Com o mapa fora
+     do ecrã a regra é redundante para o dedo e não é para o teclado, que é
+     exatamente a razão pela qual `public/js/inicio.js` a lê em vez de escrever
+     uma segunda cópia do 640. */
   .mun-alvo {
     pointer-events: none !important;
   }
-  .mapa-tela {
-    width: 84px;
-  }
-  /* O cartão localizador, no telemóvel: a moldura fica, o mapa lá dentro passa
-     a selo, e os dois empilham-se. Até à 2g o mapa de 170px do localizador
-     desenhava-se por cima das duas linhas de destino, porque a coluna do selo
-     tem 84px e ele estava fora do cartão. */
-  [data-postura='localizador'] .mapa-cartao {
-    grid-template-columns: 84px minmax(0, 1fr);
-    column-gap: 12px;
-    padding: 12px 14px;
-  }
-  [data-inicio] [data-postura='localizador'] .mapa-cartao {
-    grid-row: 2;
-  }
-  [data-postura='localizador'] .mapa-tela {
-    width: 84px;
-  }
-  /* E com o mapa dentro do cartão a coluna do selo fica vazia. O selo do país
-     desaparece com ela e os dois destinos ocupam a fila inteira: uma porta
-     invisível por cima de um espaço em branco é uma porta que ninguém vê e que
-     qualquer polegar abre. */
-  [data-postura='localizador'] .movel-selo {
-    display: none;
-  }
-  [data-postura='localizador'] ~ .movel-destinos {
-    grid-column: 1 / -1;
-  }
+
   /* A porta da régua da convergência. Uma linha, palavras só, alvo de 44px. */
   .conv-porta {
     display: block;
@@ -1474,22 +1526,32 @@ a.porta:hover .porta-abrir {
     display: block;
   }
 
-  /* A linha de comando fica só com a densidade, em dois estados de largura
-     inteira; o âmbito são os destinos acima. */
+  /* -------------------------------------------------------------------------
+     A2 · O MESMO COMANDO NAS DUAS LARGURAS
+     -------------------------------------------------------------------------
+     `.cmd-grupo:first-child { display: none }` era o âmbito a desaparecer do
+     telemóvel: o mesmo mecanismo tinha duas caras, com nomes diferentes, e a do
+     telemóvel escondia que existia um terceiro estado (achado C5). Volta, com as
+     duas posições que o comando tem agora, e as duas filas ficam com o rótulo em
+     LINHA com os seus botões — não empilhado por cima deles. São 24px por fila
+     que a cabeça devolve ao conteúdo, e o rótulo continua a ler-se e a nomear o
+     grupo.
+     ------------------------------------------------------------------------- */
   .cmd {
     flex-direction: column;
     align-items: stretch;
-    gap: 12px;
-  }
-  .cmd-grupo:first-child {
-    display: none;
+    gap: 10px;
   }
   .cmd-grupo {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 6px;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  .cmd-k {
+    flex: none;
   }
   .cmd-segs {
+    flex: 1;
     display: flex;
   }
   .seg {
@@ -1665,5 +1727,85 @@ a.porta:hover .porta-abrir {
   }
   .social-valor .claim-com-chip {
     justify-content: flex-start;
+  }
+}
+
+
+/* ============================================================================
+ * AS CORREÇÕES DE UX DE 25.08.2026 · BLOCO A · o que é só da primeira página
+ * ========================================================================= */
+
+/* ----------------------------------------------------------------------------
+ * A9 · O CHÃO DE 12 px, NAS CLASSES DESTA PÁGINA
+ * ----------------------------------------------------------------------------
+ * Medido a 390 na rota `home`, antes: 51 elementos de texto abaixo de 12px — a
+ * escala das réguas das peças a 11px, as unidades e a legenda do mapa a 11,5, e
+ * a etiqueta da porta das correções a 10. Nada disto muda acima de 640: «a
+ * mobília não cresce» é regra do computador, e num telemóvel 9,5px não se lê.
+ * ------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .regua-escala,
+  .peca-unidade,
+  .mapa-linha-fonte,
+  .mapa-hint,
+  .mapa-leitura,
+  .pesquisa-cobertura,
+  .pesquisa-vazio,
+  .pesquisa-meta,
+  .cmd-nota,
+  .social-unidade,
+  .lig {
+    font-size: 12px;
+  }
+}
+
+/* A fila de resultados da pesquisa é agora o caminho principal para o concelho
+   no telemóvel (item A4), e cada resultado é um alvo de dedo: 44px de altura,
+   como o `.seg` e o `.tema-b`. Medido antes: 127,5 × 34,9px. */
+@media (max-width: 640px) {
+  .pesquisa-res .chipb {
+    min-height: 44px;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * A10 · A ALTURA DAS FILAS, ONDE A ÁREA NÃO CABE
+ * ----------------------------------------------------------------------------
+ * As áreas de 44px de `a.prova-valor` estão em `site.css`. O que falta é o que a
+ * casa já escreveu uma vez, na regra dos selos empilhados: «a saída certa não é
+ * encolher a área: é dar altura à fila».
+ *
+ * Medido a 390, com as áreas de 44px por hipótese: dentro de cada porta da
+ * primeira página o nome, a contagem e «a página inteira →» ficam a 26 e a 19px
+ * uns dos outros, e as três áreas cruzavam-se. Com cada uma das três filas a
+ * 44px de altura, as áreas deixam de se tocar e as três passam a ser alvos. É a
+ * mesma medida que o `.seg` e o `.tema-b` já têm.
+ *
+ * `.lig` da lista social («O livro-razão →») está sozinho na sua fila e por isso
+ * chega-lhe a altura.
+ * ------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .porta-nome,
+  .porta-conta,
+  .porta-abrir,
+  .social-porta .lig {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  /* A folga entre duas contagens da agenda, medida: sem ela, «0 next» e «1
+     completed» ficavam a 40px e as áreas de 44 cruzavam-se por 3,8px. */
+  .porta-conta {
+    flex-wrap: wrap;
+  }
+  .porta-conta-item {
+    display: inline-block;
+    padding-right: 6px;
+  }
+  /* A porta inteira é uma ligação nos dois primeiros casos, e a fila do nome já
+     lhe dá a altura; o que estas três regras fazem é dar altura às filas de
+     DENTRO, que é onde as portas pequenas da agenda vivem. */
+  .porta {
+    padding: 8px 0;
   }
 }

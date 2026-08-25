@@ -17,6 +17,21 @@ export const STRINGS = {
     outraLingua: 'English',
     outraLinguaCodigo: 'EN',
 
+    /* -----------------------------------------------------------------------
+     * A FRASE DE IDENTIDADE (Emenda 18, 25.08.2026)
+     * -----------------------------------------------------------------------
+     * «O sítio tem um nome e uma frase de identidade, por baixo da marca na
+     * primeira página e em mais lado nenhum; a frase nomeia o que o sítio é e
+     * não diz quem o faz nem como.» São as palavras do diretor, e não se
+     * compõem aqui: entram tal como ele as escreveu, nas duas edições.
+     *
+     * É o nome da publicação dito por extenso, e é por isso que o inventário a
+     * classifica em NAVEGAÇÃO e não em autorreferência: não fala do método, da
+     * verificação nem das intenções da casa (Emenda 15), fala do que a coisa é.
+     * Não leva porta, não leva algarismo, não leva selo.
+     */
+    identidade: 'Um observatório de Portugal.',
+
     nav: {
       inicio: 'Início',
       municipios: 'Municípios',
@@ -349,8 +364,20 @@ export const STRINGS = {
     ambito: {
       rotulo: 'Âmbito',
       pais: 'País',
+      /* «Região» SAI DO COMANDO POR AGORA (correções de UX, bloco A, item A2).
+         O estado `?ambito=regiao:<slug>` continua a resolver, porque é endereço
+         partilhável (Emenda 7), e rende a leitura da região que já existe; o que
+         sai é a terceira posição do comando, enquanto não houver a página das
+         regiões. A cadeia fica aqui, com esta nota, porque volta ao comando no
+         dia em que essa página existir. */
       regiao: 'Região',
-      municipio: 'Município',
+      /* «CONCELHO» E NÃO «MUNICÍPIO» (bloco A, item A2). É a palavra que o resto
+         da primeira página já usa — a pesquisa diz «Escreva o nome do concelho»,
+         a legenda do mapa diz «308 concelhos» —, e um comando que chama à mesma
+         coisa outro nome faz o leitor procurar duas coisas. Na edição inglesa
+         fica «Municipality»: «concelho» por traduzir na interface inglesa é um
+         defeito à parte (C12), e é do bloco B. */
+      municipio: 'Concelho',
       /* A meta da fila das regiões. Dizia «as seis leituras» porque a etapa 2
          rendia seis pastilhas, com Portugal entre elas; a leitura cruzada de
          20.08 mostrou que Portugal não é uma região, e a fila passou a cinco
@@ -435,6 +462,12 @@ export const STRINGS = {
         distritoDe: 'distrito de ',
       },
 
+      /* AS TRÊS CADEIAS DO TELEMÓVEL FICAM SEM SUPERFÍCIE (bloco A, itens A2 e
+         A4). Os dois destinos («Abrir um concelho →», «Ver uma região →») foram
+         substituídos pelo comando único das duas larguras, e o selo do país saiu
+         com o mapa, que abaixo de 640 deixa de se render enquanto os concelhos
+         não tiverem página. As cadeias ficam, e a razão é a Emenda 3: a forma do
+         telemóvel que elas nomeiam volta com o mapa por distritos. */
       movel: {
         abrirConcelho: 'Abrir um concelho',
         verRegiao: 'Ver uma região',
@@ -1126,6 +1159,10 @@ export const STRINGS = {
     langNome: 'English',
     outraLingua: 'Português',
     outraLinguaCodigo: 'PT',
+
+    /* A frase de identidade da Emenda 18, na edição inglesa, nas palavras do
+       diretor: «An observatory of Portugal.» */
+    identidade: 'An observatory of Portugal.',
 
     nav: {
       inicio: 'Home',

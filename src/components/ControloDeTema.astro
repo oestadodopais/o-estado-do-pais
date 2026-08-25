@@ -1,0 +1,48 @@
+---
+/**
+ * O CONTROLO DO TEMA — «claro · escuro» —, escrito uma vez e rendido em dois
+ * sítios do mesmo cabeçalho.
+ *
+ * ---------------------------------------------------------------------------
+ * PORQUE É QUE ELE PASSA A TER DOIS LUGARES (correções de UX, bloco A, item A7)
+ * ---------------------------------------------------------------------------
+ * A auditoria de 25.08 mediu a mobília do cabeçalho no telemóvel: 213px em
+ * todas as páginas e 259px na primeira, com o primeiro título de conteúdo a
+ * 0,35 ecrãs (achado D6). A decisão do lugar de direção, abaixo de 640px, é «a
+ * marca numa linha, as duas leituras numa só linha em corpo de mobília, o
+ * comando de tema dentro do menu». O comando mede 44px de altura, que é o alvo
+ * de toque que ele tem de ter, e é a fila mais alta da mobília: dentro do menu
+ * ele deixa de custar essa fila ao ecrã de entrada e continua a uma toque de
+ * distância.
+ *
+ * DUAS RENDIÇÕES, E NÃO UMA QUE SE MOVE. O lugar do telemóvel é dentro de
+ * `<nav id="nav-principal">`, que o «Menu» abre; o lugar do computador é a
+ * mobília, por baixo da marca. Os dois vivem em ramos diferentes da árvore, e
+ * nenhuma folha move um elemento de um ramo para o outro. É a mesma disciplina
+ * que a primeira página já usa nos quatro painéis: tudo o que o leitor pode ver
+ * está no documento, e a folha acende um. Cada cópia é apagada pela `@media` da
+ * outra largura, e um elemento com `display: none` não está na árvore de
+ * acessibilidade: em cada largura há um comando, e um só.
+ *
+ * `public/js/tema.js` passou a servir TODOS os controlos que encontrar
+ * (`querySelectorAll`), e não o primeiro: com dois no documento, servir o
+ * primeiro deixaria o do telemóvel escondido para sempre, porque é o script que
+ * lhe tira o `hidden`.
+ *
+ * ENTRA `hidden` DO SERVIDOR, como entrava. Sem JavaScript o sítio é claro e
+ * este comando não existe — um comando que não comanda nada é uma promessa
+ * falhada, e é mais barato não o desenhar.
+ */
+const { s, onde } = Astro.props;
+---
+
+<div
+  class:list={['tema', onde === 'menu' && 'tema-no-menu']}
+  role="group"
+  aria-label={s.tema.rotulo}
+  data-tema-controlo
+  hidden
+>
+  <button type="button" class="tema-b" data-tema="light" aria-pressed="true">{s.tema.claro}</button>
+  <button type="button" class="tema-b" data-tema="dark" aria-pressed="false">{s.tema.escuro}</button>
+</div>

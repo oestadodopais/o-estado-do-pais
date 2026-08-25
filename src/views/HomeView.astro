@@ -25,23 +25,20 @@
  * do sítio continuar de pé quando a página ganha estado.
  *
  * SEM JAVASCRIPT a página é o âmbito País em Relance, completa e correcta, e os
- * comandos são ligações para sítios que existem: `/` para o país,
- * `/#convergencia` para a leitura regional, `/municipios` para os 308.
+ * comandos são ligações para sítios que existem: `/` para o país e
+ * `/municipios` para os 308.
  */
 import Base from '../layouts/Base.astro';
 import Masthead from '../components/Masthead.astro';
-import Frase from '../components/Frase.astro';
-import InstrumentoConvergencia from '../components/InstrumentoConvergencia.astro';
 import Comando from '../components/inicio/Comando.astro';
 import Peca from '../components/inicio/Peca.astro';
 import Portas from '../components/inicio/Portas.astro';
 import Cabeca from '../components/inicio/Cabeca.astro';
 import Pesquisa from '../components/inicio/Pesquisa.astro';
 import MapaRespira from '../components/inicio/MapaRespira.astro';
-import BandaDaRegiao from '../components/inicio/BandaDaRegiao.astro';
 import ListaSocial from '../components/inicio/ListaSocial.astro';
 import { FIGURAS_PDM, FIGURAS_SOCIAL, comparacaoComOLimiar, ladosDoLimiar } from '../data/figuras.mjs';
-import { REGIOES, ESCALA } from '../data/regioes.mjs';
+import { ESCALA } from '../data/regioes.mjs';
 import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
 import {
@@ -64,9 +61,11 @@ const p = prova(lang);
 const verificacao = estadoDaVerificacao();
 
 const home = routePath('home', lang);
+/* Os destinos sem script. `regiao` saiu com a terceira posição do comando (item
+   A2): o seu destino era `#convergencia`, que é a âncora da secção que saiu da
+   página, e um comando cujo destino não existe é pior do que nenhum. */
 const hrefs = {
   pais: home,
-  regiao: `${home}#convergencia`,
   municipio: routePath('municipios', lang),
   relance: home,
   leitura: `${home}?densidade=leitura`,
@@ -131,7 +130,10 @@ const leitura = (r) => ({
   linha: getClaim(r.valor),
   frase: r.frase[lang],
 });
-const regioesDaBanda = REGIOES.map(leitura);
+/* A lista das SEIS leituras saiu com a banda (item A3): quem a desenhava era
+   `BandaDaRegiao`, e a régua já não se rende aqui. Fica a lista do ÂMBITO, que
+   é a das cinco regiões com bloco de cabeça e painel próprios — o que um
+   endereço `?ambito=regiao:<slug>` continua a resolver. */
 const regioesDeAmbito = REGIOES_DE_AMBITO.map(leitura);
 
 /* AS PEÇAS DE ÉVORA SAEM DE UMA CONTA SÓ (ISSUES I44, fechado na etapa 2m).
@@ -211,24 +213,28 @@ const medidasSemLinha = evora
   <div class="inicio" data-inicio data-ambito="pais" data-densidade="relance">
     <Comando s={s} hrefs={hrefs} />
 
-    <div class="cmd-sub" data-sub="regiao" hidden>
-      <div class="cmd-chips">
-        {
-          regioesDeAmbito.map((r) => (
-            <a
-              class="chipb"
-              href={`${home}?ambito=${chaveDaRegiao(r.slug)}`}
-              data-regiao={r.slug}
-            >
-              {r.nome}
-            </a>
-          ))
-        }
-      </div>
-      <p class="cmd-meta">{s.ambito.regioesMeta}</p>
-    </div>
+    {/* ----------------------------------------------------------------------
+        A PESQUISA DEIXA DE SER UM PAINEL QUE ABRE (bloco A, itens A1, A2 e A4)
+        ----------------------------------------------------------------------
+        Era `<div class="cmd-sub" data-sub="municipio" hidden>`, e quem lhe tirava
+        o `hidden` era o script, quando o âmbito passava a «município». Abaixo de
+        640 isso deixou de servir: com o mapa fora do telemóvel (item A4), a
+        pesquisa é o caminho para o concelho e tem de estar à VISTA, em qualquer
+        estado, logo por baixo da lede.
 
-    <div class="cmd-sub" data-sub="municipio" hidden>
+        Quem decide agora é a FOLHA, pelo `data-modo` que a raiz já carrega — a
+        mesma técnica de `data-postura` no mapa (etapa 2m): acima de 640 a
+        pesquisa só se vê no modo «município»; abaixo de 640 vê-se sempre. O
+        atributo `hidden` sai daqui porque um `[hidden]` não se deixa reabrir por
+        uma regra de largura, e uma segunda cópia do 640 dentro do script
+        divergiria da primeira no dia em que a folha mudasse.
+
+        A FILA DAS REGIÕES SAIU COM O COMANDO «REGIÃO» (item A2). Era o painel
+        que esse comando abria; sem comando, era um painel sem porta. O estado
+        `?ambito=regiao:<slug>` continua a resolver e a render a leitura da
+        região, que é o que a Emenda 7 promete a um endereço partilhado.
+        ---------------------------------------------------------------------- */}
+    <div class="pesquisa-bloco" data-pesquisa-bloco>
       <Pesquisa s={s} lang={lang} p={p} concelhos={cs} />
     </div>
 
@@ -238,45 +244,29 @@ const medidasSemLinha = evora
         <MapaRespira s={s} lang={lang} p={p} concelhos={cs} evora={evora} />
 
         {/* ----------------------------------------------------------------
-            O ÂMBITO COMO DESTINOS, NO TELEMÓVEL (Emenda 3, subetapa 2e)
+            OS DOIS DESTINOS DO TELEMÓVEL SAÍRAM (bloco A, itens A2 e A4)
             ----------------------------------------------------------------
-            Num ecrã estreito o âmbito deixa de ser um interruptor de três
-            posições e passa a ser duas linhas inteiras, ao lado do selo do
-            país. **O selo inteiro é o alvo, e nenhum ponto é alvo**: 308
-            pontos num mapa de 84px são textura, e um deles sob o polegar é
-            uma porta que abre o concelho errado.
+            «Abrir um concelho →» e «Ver uma região →», ao lado do selo do mapa,
+            eram a cara móvel do comando de âmbito, com outros nomes e outra
+            forma (achado C5), e o primeiro rolava a página para lá do que
+            abria (achado B1). Os dois foram substituídos pelo comando único das
+            duas larguras. O selo do país saiu com eles: abaixo de 640 o mapa
+            deixa de se render, e uma porta invisível por cima de um espaço em
+            branco é uma porta que ninguém vê e que qualquer polegar abre.
 
-            São os mesmos `data-modo` da linha de comando, e por isso o mesmo
-            ouvinte os serve; sem script, levam ao índice dos 308 e à régua da
-            convergência, que existem os dois.
+            A Emenda 3 continua de pé por baixo desta correção: no telemóvel os
+            308 pontos nunca são alvos, e a pesquisa é o caminho principal. O que
+            muda é que a pesquisa deixou de estar atrás de um comando.
             ---------------------------------------------------------------- */}
-        <div class="movel-destinos">
-          <a class="movel-selo" href={routePath('municipios', lang)} data-modo="municipio">
-            <span class="vh">{s.inicio.movel.seloDaEscolha}</span>
-          </a>
-          <div class="movel-linhas">
-            <a class="movel-destino" href={routePath('municipios', lang)} data-modo="municipio">
-              {s.inicio.movel.abrirConcelho} <span aria-hidden="true">→</span>
-            </a>
-            <a class="movel-destino" href={`${home}#convergencia`} data-modo="regiao">
-              {s.inicio.movel.verRegiao} <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
 
-    {/* A banda desenha as SEIS leituras (a régua é uma só, e Portugal é a marca
-        de referência), mas só as CINCO regiões têm barra e podem ser escolhidas. */}
-    <div data-banda-caixa hidden>
-      <BandaDaRegiao
-        s={s}
-        lang={lang}
-        regioes={regioesDaBanda}
-        escolhiveis={regioesDeAmbito}
-        escolhida={regioesDeAmbito[0].slug}
-      />
-    </div>
+    {/* A REGUA DA REGIÃO SAIU DA PRIMEIRA PÁGINA (bloco A, itens A2 e A3).
+        A banda desenhava as seis leituras da convergência no âmbito «região»,
+        e era o que o comando «Ver uma região →» abria: os rótulos sobrepunham-se
+        a 390 exatamente no estado em que o comando prometia levar (achado B4).
+        O componente fica no repositório, com a sua folha e as suas linhas, para
+        a página das regiões que se segue; o que sai é a sua rendição em `/`. */}
 
     {/* A região viva do anúncio: uma só, e sempre com palavras que já estão na
         página. É aqui que a mudança de âmbito e de densidade se diz a quem não a
@@ -416,58 +406,30 @@ const medidasSemLinha = evora
         ------------------------------------------------------------------ */}
   </section>
 
-  <!-- ============================ Instrumento n.º 1 · só no âmbito País -->
-  {/* --------------------------------------------------------------------
-      A RÉGUA DA CONVERGÊNCIA É UMA PORTA NO TELEMÓVEL (ponto 10a da direcção)
-      --------------------------------------------------------------------
-      Abaixo de 640 o instrumento fecha-se atrás de uma linha, e a linha é um
-      `<details>` nativo: teclado, estado anunciado pelo navegador, e nada
-      disto precisa de script. O `<summary>` leva PALAVRAS e mais nada — o
-      título do instrumento e o comando —, porque um valor ali dentro seria um
-      número sem porta e um selo ali dentro seria uma porta dentro de outra
-      porta (Emenda 2). O valor e o selo ficam onde sempre estiveram, dentro do
-      instrumento.
+  {/* ----------------------------------------------------------------------
+      O INSTRUMENTO N.º 1 SAI DA PRIMEIRA PÁGINA (bloco A, item A3)
+      ----------------------------------------------------------------------
+      A régua da convergência respondia a «como está cada região face à média
+      europeia», e é a única leitura regional que o sítio tem. A auditoria de
+      25.08 mediu-a: seis leituras, todas «provisório», fechada numa dobra no
+      estado de entrada e ilegível a 390 no único estado em que o comando a
+      mostrava (achado B4). A decisão do diretor é a forma A da §3.3: sai da
+      primeira página até haver a página das regiões.
 
-      O corpo é IRMÃO do `<details>` e não filho dele, e a razão é medida: um
-      `<details>` fechado esconde o que tem dentro pelo `::details-content`, e
-      não há regra de folha universalmente suportada que o volte a mostrar na
-      secretária. Com o corpo ao lado, a folha faz uma coisa só, com selectores
-      que existem em todo o lado: `[open] ~` mostra, e acima de 640 a porta
-      desaparece e o corpo está sempre à vista. É a mesma mecânica que o pé da
-      peça já usa nesta folha. O que se perde é a associação de árvore entre o
-      comando e o que ele abre; o que se ganha é que a secretária não depende
-      de um pseudo-elemento que ainda não está em todos os motores.
+      NADA SE APAGA. `src/components/InstrumentoConvergencia.astro`, a sua folha,
+      as linhas do livro-razão que ele desenha, as chaves da prova que ele
+      rendia e a marca `data-nonledger="escala-de-instrumento"` ficam onde estão,
+      para a página que se segue. O que sai é a rendição em `/`: a secção
+      `#convergencia`, a sua porta de telemóvel e o corpo que ela abria.
 
-      O QUE SE PERDIA NA ÁRVORE RECUPERA-SE POR NOME (2k, achado 16 da segunda
-      leitura cruzada). O parágrafo acima já dizia o que faltava; faltava o
-      atributo que o diz. O `<summary>` leva `aria-controls="convergencia-corpo"`
-      — o `id` do irmão que ele abre — e um `aria-expanded` que acompanha o
-      `open`, mantido por `public/js/tema.js`, que é o ficheiro adiado que todas
-      as páginas carregam e onde vive a regra genérica: onde um `<summary>` tem
-      `aria-controls`, o `aria-expanded` segue o `open` do seu `<details>`. O id
-      é do CORPO e não da secção: `#convergencia` é a âncora da secção inteira, e
-      duas portas da página já lá levam.
-      -------------------------------------------------------------------- */}
-  <section id="convergencia" data-so-pais>
-    <details class="conv-porta" data-conv-porta>
-      <summary class="conv-porta-sum" aria-controls="convergencia-corpo" aria-expanded="false">
-        <span class="conv-porta-seta" aria-hidden="true"></span>
-        <span class="conv-porta-nome">{s.home.instr1.h2}</span>
-        <span class="conv-porta-a">{s.densidade.abrir}</span>
-        <span class="conv-porta-f">{s.densidade.fechar}</span>
-      </summary>
-    </details>
-    <div class="conv-corpo" id="convergencia-corpo">
-      <div class="sec-head">
-        <span class="eyebrow">
-          {s.home.instr1.eyebrow} <span data-nonledger="numeracao">{lang === 'pt' ? 'n.º 1' : 'no. 1'}</span>
-        </span>
-        <h2>{s.home.instr1.h2}</h2>
-        <p class="sec-sub"><Frase partes={s.home.instr1.subPartes} lang={lang} /></p>
-      </div>
-      <InstrumentoConvergencia lang={lang} />
-    </div>
-  </section>
+      AS CHAVES DA PROVA CONTINUAM CONFERIDAS, e isto foi lido no portão e não
+      assumido: `scripts/gate-html.mjs` percorre `Object.entries(PROVA)` e exige
+      que ele saiba CONTAR cada chave, não que alguma página a renda («a chave
+      existe na prova e o portão não a sabe contar»). Uma chave que nenhuma
+      página rende continua reconferida contra a sua segunda conta; o que o
+      portão confere na página é o contrário — um `data-prova` renderizado que
+      não bata certo com a conta dele.
+      ---------------------------------------------------------------------- */}
 
   <!-- ============================ As portas · só no âmbito País -->
   <div data-so-pais>

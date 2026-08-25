@@ -250,14 +250,16 @@
 
   /* ---------------------------------------------------------- os comandos */
 
+  /* AS QUATRO LISTAS QUE SAÍRAM COM A RÉGUA E COM O COMANDO «REGIÃO» (bloco A,
+     itens A2 e A3): `[data-sub]` (os painéis que o comando abria — a pesquisa
+     deixou de ser um deles e passou a ser governada pela folha), `[data-regiao]`
+     (as pastilhas das cinco regiões), `[data-banda-caixa]`, `[data-banda]` e
+     `[data-banda-ponto]` (a régua da convergência em largura inteira). Nenhuma
+     tinha elemento depois desta ronda, e uma lista vazia com ouvintes por cima é
+     um mecanismo a fingir que ainda serve. */
   var segsAmbito = raiz.querySelectorAll('[data-modo]');
   var segsDensidade = raiz.querySelectorAll('[data-densidade]');
-  var subs = raiz.querySelectorAll('[data-sub]');
-  var chips = raiz.querySelectorAll('[data-regiao]');
   var escolhas = raiz.querySelectorAll('[data-escolher]');
-  var caixaDaBanda = raiz.querySelector('[data-banda-caixa]');
-  var gruposDaBanda = raiz.querySelectorAll('[data-banda]');
-  var pontosDaBanda = raiz.querySelectorAll('[data-banda-ponto]');
   var cartao = raiz.querySelector('[data-mapa-cartao]');
   var soEvora = raiz.querySelector('[data-so-evora]');
   var dicaEscolher = raiz.querySelector('[data-hint-escolher]');
@@ -266,7 +268,6 @@
   var pecas = document.querySelectorAll('.peca-mais');
   var campo = raiz.querySelector('[data-pesquisa]');
   var semResultado = raiz.querySelector('[data-sem-resultado]');
-  var seloDoPais = raiz.querySelector('.movel-selo');
   var ligacaoDeIdioma = document.querySelector('a.lang');
   var baseDoIdioma = ligacaoDeIdioma ? ligacaoDeIdioma.getAttribute('href').split('?')[0] : null;
 
@@ -306,22 +307,6 @@
     segsDensidade[d].removeAttribute('aria-current');
     activaComEspaco(segsDensidade[d]);
   }
-  /* AS PASTILHAS DAS REGIÕES SÃO BOTÕES, COMO OS OUTROS COMANDOS (ISSUES I25).
-   *
-   * Recebiam `aria-pressed` mais abaixo, em `aplica()`, e continuavam a ser
-   * `<a href>` sem papel de botão — e `aria-pressed` num `<a>` sem papel de
-   * botão não é ARIA válido: um leitor de ecrã pode ignorá-lo, e a pastilha
-   * escolhida deixa de se anunciar como escolhida. São o mesmo comando que os
-   * segmentos de âmbito e de densidade, e passam a ter o mesmo papel e a mesma
-   * tecla. As da pesquisa já eram `<button>` e não precisam de nada.
-   *
-   * O `href` fica, como nos outros: com script é a forma do estado, e sem script
-   * é a ligação que abre a mesma leitura. */
-  for (var r0 = 0; r0 < chips.length; r0++) {
-    chips[r0].setAttribute('role', 'button');
-    activaComEspaco(chips[r0]);
-  }
-
   var estado = leDoEndereco();
   var modoEscolhido = modoDe(estado.ambito);
 
@@ -330,20 +315,10 @@
      fazer nada, e ganha corpo mais abaixo se houver caixa de pesquisa. */
   var filtra = function () {};
 
-  /* --------------------------------------------------------- a proximidade
-   *
-   * `proximos` é a lista de concelhos mais próximos do sítio onde o leitor tocou
-   * no selo do país, ou `null` enquanto ninguém tocou. Não vive no endereço: um
-   * toque não é um estado partilhável, e uma recarga volta à regra da caixa
-   * vazia, que é o que a página sabe dizer sem o dedo de ninguém.
-   *
-   * É uma ORDENAÇÃO sobre os centróides que o servidor já desenhou, e uma
-   * ordenação não é uma figura: nenhuma distância se escreve, nenhum número
-   * aparece, e os botões que se acendem são os mesmos 308 que o servidor rendeu.
-   * A regra da fase mantém-se inteira — o script escolhe cadeias já validadas.
-   */
+  /* O tecto da fila de resultados: oito, e a ordem é a da Carta. A lista de
+     proximidade, que era o terceiro estado desta fila, saiu com o selo do mapa
+     no telemóvel (item A4) — a razão está escrita mais abaixo, onde ela vivia. */
   var MAX_RESULTADOS = 8;
-  var proximos = null;
 
   function mostraSo(lista, atributo, chave) {
     for (var k = 0; k < lista.length; k++) {
@@ -377,13 +352,17 @@
         segsDensidade[i2].getAttribute('data-densidade') === estado.densidade ? 'true' : 'false',
       );
     }
-    for (var i3 = 0; i3 < subs.length; i3++) {
-      subs[i3].hidden = subs[i3].getAttribute('data-sub') !== mo;
-    }
+    /* A PESQUISA JÁ NÃO SE ACENDE AQUI (bloco A, itens A1 e A4). Era um
+       `[data-sub]` que este ciclo abria e fechava conforme o modo; quem a mostra
+       passa a ser a folha, pelo `data-modo` que acabou de ser escrito na raiz —
+       acima de 640 só no modo «concelho», abaixo de 640 sempre, porque com o
+       mapa fora do telemóvel a pesquisa É o caminho para o concelho. Um
+       `[hidden]` escrito aqui não se deixaria reabrir por uma regra de largura, e
+       uma segunda cópia do 640 dentro deste ficheiro divergiria da folha no dia
+       em que ela mudasse. */
 
     var slug = ambito.indexOf('municipio:') === 0 ? ambito.slice('municipio:'.length) : null;
     var ponto = slug ? porSlug[slug] : null;
-    var regiao = ambito.indexOf('regiao:') === 0 ? ambito.slice('regiao:'.length) : null;
 
     /* Os dois `data-slot`: o nome e o distrito daquele concelho, copiados do nó
        que o servidor escreveu. É o único texto que este ficheiro põe à vista. */
@@ -402,27 +381,11 @@
     mostraSo(blocos, 'data-cabeca', chave);
     mostraSo(paineis, 'data-painel', chave);
 
-    for (var i4 = 0; i4 < chips.length; i4++) {
-      chips[i4].setAttribute(
-        'aria-pressed',
-        chips[i4].getAttribute('data-regiao') === regiao ? 'true' : 'false',
-      );
-    }
     for (var i5 = 0; i5 < escolhas.length; i5++) {
       escolhas[i5].setAttribute(
         'aria-pressed',
         escolhas[i5].getAttribute('data-escolher') === slug ? 'true' : 'false',
       );
-    }
-
-    if (caixaDaBanda) caixaDaBanda.hidden = mo !== 'regiao';
-    for (var i6 = 0; i6 < gruposDaBanda.length; i6++) {
-      gruposDaBanda[i6].hidden = gruposDaBanda[i6].getAttribute('data-banda') !== regiao;
-    }
-    for (var i7 = 0; i7 < pontosDaBanda.length; i7++) {
-      var eEste = pontosDaBanda[i7].getAttribute('data-banda-ponto') === regiao;
-      pontosDaBanda[i7].classList.toggle('is-escolhido', eEste);
-      pontosDaBanda[i7].setAttribute('r', eEste ? '6' : '3.5');
     }
 
     /* A postura do mapa. Ficha inteira no País e na escolha; cartão localizador
@@ -442,9 +405,16 @@
     if (cartao) cartao.hidden = false;
     if (soEvora) soEvora.hidden = !(ponto && ponto.comPagina);
     if (dicaEscolher) dicaEscolher.hidden = mo !== 'municipio';
+    /* O MAPA NUNCA DESAPARECE AO MUDAR DE ESTADO (bloco A, achado C1). Tocar em
+       «Ver uma região →» apagava o mapa (`figura.hidden = mo === 'regiao'`): o
+       leitor perdia, no mesmo gesto, a referência que acabara de usar para se
+       orientar. O comando «Região» saiu (item A2) e a régua saiu com ele (item
+       A3); o que fica escrito é a regra, e não a sua ausência por acidente — a
+       figura não se esconde por âmbito nenhum. O que muda com o estado é a
+       POSTURA, que é o que a Emenda 3 desenha. */
     var figura = raiz.querySelector('[data-mapa-raiz]');
     if (figura) {
-      figura.hidden = mo === 'regiao';
+      figura.hidden = false;
       figura.setAttribute('data-postura', comCartao ? 'localizador' : 'inteiro');
     }
     for (var i8 = 0; i8 < pontos.length; i8++) {
@@ -481,6 +451,12 @@
     anuncio.textContent = partes.join(' · ');
   }
 
+  /* O bloco inteiro da pesquisa, que é o que tem de ficar dentro do ecrã: o
+     rótulo, a caixa e a fila de resultados. O foco vai para a caixa; o que se
+     leva ao ecrã é a coisa toda, porque uma caixa à vista com o rótulo cortado
+     por cima é meia resposta. */
+  var blocoDaPesquisa = raiz.querySelector('#pesquisa');
+
   function vai(estadoNovo, modo, foco) {
     aplica(estadoNovo, modo);
     history.pushState(
@@ -490,6 +466,25 @@
     );
     anuncia();
     if (foco && foco.focus) foco.focus();
+    /* ----------------------------------------------------------------------
+       E O QUE O FOCO REVELA FICA DENTRO DO ECRÃ (item A1, achado B1)
+       ----------------------------------------------------------------------
+       `focus()` sozinho leva ao ecrã o elemento focado, e o navegador escolhe
+       quanto rola: no telemóvel isso deixava a caixa à vista e o rótulo e a
+       fila de resultados de fora. `scrollIntoView({block:'nearest'})` sobre o
+       BLOCO faz a conta certa — rola o mínimo para que ele caiba —, e não faz
+       nada quando ele já está inteiro no ecrã, que é o caso do computador.
+
+       Sem `behavior`, o rolamento é instantâneo e respeita quem pediu menos
+       movimento; a página não tem nenhuma animação de rolagem. */
+    if (
+      modoEscolhido === 'municipio' &&
+      blocoDaPesquisa &&
+      blocoDaPesquisa.scrollIntoView &&
+      foco === campo
+    ) {
+      blocoDaPesquisa.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    }
   }
 
   /* ------------------------------------------------------------- os ouvintes */
@@ -498,25 +493,32 @@
     (function (botao) {
       botao.addEventListener('click', function (ev) {
         ev.preventDefault();
-        /* O selo do país é um `[data-modo]` como os outros — leva o mesmo
-           `aria-pressed` —, mas tem ouvinte próprio, porque um toque nele é
-           também um sítio no mapa. Sem esta guarda o mesmo toque passava duas
-           vezes por `vai()` e escrevia duas entradas iguais na história: o
-           «voltar» ficava a não fazer nada à primeira. */
-        if (botao === seloDoPais) return;
         var modo = botao.getAttribute('data-modo');
-        /* «País» é um âmbito e escolhe-se a si próprio. «Município» abre a vista
+        /* «País» é um âmbito e escolhe-se a si próprio. «Concelho» abre a vista
            de escolha, que desde a etapa 2m É um estado do esquema e por isso vai
            ao endereço — mas só quando ainda não há concelho escolhido: com um
            escolhido, o comando já está premido e carregar nele não pode desfazer
-           a escolha. «Região» continua a ser um modo sem endereço, e fica
-           escrito em ISSUES que só uma das duas filas o ganhou nesta ronda. */
+           a escolha. */
         var novo = estado;
         if (modo === 'pais') novo = { ambito: AMBITO_DEFEITO, densidade: estado.densidade };
         else if (modo === 'municipio' && modoDe(estado.ambito) !== 'municipio') {
           novo = { ambito: AMBITO_ESCOLHA, densidade: estado.densidade };
         }
-        vai(novo, modo, botao);
+        /* ------------------------------------------------------------------
+           O COMANDO PÕE A PESQUISA À VISTA, E NÃO ROLA PARA LÁ DELA (item A1)
+           ------------------------------------------------------------------
+           O foco ia para o BOTÃO que acabara de ser premido, e o navegador
+           rolava a página até ele. No telemóvel a pesquisa abre ACIMA do sítio
+           onde o comando estava a seguir ao toque, e o resultado medido era
+           este: a pesquisa aparecia em y = −131 do ecrã, `visivel: false`, e o
+           leitor via a mesma coisa que via antes, com um anel de foco (achado
+           B1). O comando abria a coisa certa e rolava para lá dela.
+
+           Quem escolhe um concelho passa a receber o foco no CAMPO, que é a
+           coisa que ele acabou de pedir, e `vai()` leva-o ao ecrã. Nos outros
+           modos o foco continua no comando, que é onde o leitor está a olhar.
+           ------------------------------------------------------------------ */
+        vai(novo, modo, modo === 'municipio' && campo ? campo : botao);
       });
     })(segsAmbito[c1]);
   }
@@ -532,19 +534,6 @@
         );
       });
     })(segsDensidade[c2]);
-  }
-
-  for (var c3 = 0; c3 < chips.length; c3++) {
-    (function (chip) {
-      chip.addEventListener('click', function (ev) {
-        ev.preventDefault();
-        vai(
-          { ambito: 'regiao:' + chip.getAttribute('data-regiao'), densidade: estado.densidade },
-          'regiao',
-          chip,
-        );
-      });
-    })(chips[c3]);
   }
 
   for (var c4 = 0; c4 < escolhas.length; c4++) {
@@ -572,16 +561,14 @@
    * pediu diz que aqueles oito são especiais, e não são: são os primeiros da
    * Carta.
    *
-   * E A LISTA DE PROXIMIDADE É O TERCEIRO ESTADO (subetapa 2h, Emenda 3). São
-   * três, e cada um tem o seu gesto:
+   * SÃO DOIS ESTADOS, E O TERCEIRO SAIU COM O SELO DO MAPA (item A4):
    *
    *   caixa escrita     os que casam com o que está escrito
-   *   toque no selo     os mais próximos do sítio tocado, no telemóvel
-   *   nem uma coisa     Évora e o concelho escolhido
+   *   caixa vazia       os concelhos com página, e o concelho escolhido
    *
-   * A 2g tinha os dois últimos a descrever o MESMO estado — a caixa vazia — e
-   * por isso teve de escolher entre eles; a 2h separa-os pelo gesto, e nenhum
-   * dos dois precisa de deixar de ser verdade.
+   * O terceiro era a lista de proximidade da subetapa 2h — um toque no selo do
+   * mapa devolvia os concelhos mais próximos do sítio tocado. O selo saiu com o
+   * mapa do telemóvel, e nenhuma outra superfície alcançava aquele gesto.
    */
   if (campo) {
     var itens = raiz.querySelectorAll('.pesquisa-item');
@@ -598,17 +585,14 @@
           : null;
       var vistos = 0;
       for (var j = 0; j < itens.length; j++) {
-        /* Caixa com texto: os oito primeiros que casam. Caixa vazia depois de um
-           toque no selo: os mais próximos do sítio tocado. Caixa vazia e sem
-           toque: os concelhos que têm página, que é o que o servidor já rendeu,
-           mais o concelho escolhido, se houver um. */
+        /* Caixa com texto: os oito primeiros que casam. Caixa vazia: os
+           concelhos que têm página, que é o que o servidor já rendeu, mais o
+           concelho escolhido, se houver um. */
         var botaoDoItem = itens[j].querySelector('[data-escolher]');
         var slugDoItem = botaoDoItem ? botaoDoItem.getAttribute('data-escolher') : null;
         var casa;
         if (q.length > 0) {
           casa = itens[j].getAttribute('data-normal').indexOf(q) >= 0;
-        } else if (proximos) {
-          casa = slugDoItem !== null && proximos[slugDoItem] === true;
         } else {
           casa =
             itens[j].hasAttribute('data-tem-pagina') ||
@@ -620,16 +604,12 @@
       }
       if (semResultado) semResultado.hidden = !(q.length > 0 && vistos === 0);
     };
-    /* Escrever desfaz o toque: a lista volta a ser a da caixa, que é o caminho
-       principal da Emenda 3. O Escape, que limpa a caixa, desfá-lo também. */
     campo.addEventListener('input', function () {
-      proximos = null;
       filtra();
     });
     campo.addEventListener('keydown', function (ev) {
       if (ev.key !== 'Escape') return;
       campo.value = '';
-      proximos = null;
       filtra();
       ev.stopPropagation();
     });
@@ -677,96 +657,24 @@
     }
   }
 
-  /* --------------------------------------------------- o selo do país, no telemóvel
+  /* --------------------------------------------------- o selo do país saiu
    *
-   * Emenda 3: no telemóvel o mapa não é seletor ponto a ponto — o selo inteiro é
-   * o alvo, e nenhum ponto é alvo —, e «na escolha, um toque no mapa devolve os
-   * concelhos mais próximos como botões (lista de proximidade sobre os centróides
-   * CAOP)».
+   * O SELO DO MAPA SAIU DO TELEMÓVEL, E A LISTA DE PROXIMIDADE COM ELE (bloco A,
+   * item A4; decisão do diretor de 25.08, Emenda 18). Abaixo de 640 o mapa
+   * deixa de se render — 84px de largura e 308 pontos de 1,26px não são um
+   * instrumento, são uma mancha — e no seu lugar fica a pesquisa, à vista. O
+   * selo era o rectângulo invisível por cima do mapa; sem mapa, era uma porta
+   * por cima de papel em branco.
    *
-   * O SELO FAZ DUAS COISAS, E QUEM DECIDE QUAL DELAS É O ESTADO EM QUE ELE É
-   * TOCADO. Vindo de fora, é a porta: abre a vista de escolha e põe o foco na
-   * caixa, que é o caminho principal. Já dentro da vista, é o gesto: devolve os
-   * concelhos mais próximos do sítio tocado, como botões, sem número nenhum à
-   * vista.
-   *
-   * PORQUE É QUE ISTO SAIU NA 2g E VOLTA AGORA. A 2e tinha a lista de
-   * proximidade a responder pela caixa vazia, e a regra da prancha para a caixa
-   * vazia é outra (Évora e o concelho escolhido): as duas descreviam o mesmo
-   * estado, e a 2g escolheu uma. O que estava mal era o defeito — sem toque
-   * nenhum, a ordenação saía do canto do campo e devolvia os oito PRIMEIROS da
-   * Carta («Arcos de Valdevez, Caminha, Melgaço…») —, e o defeito era o defeito,
-   * não a funcionalidade. A 2h separa os dois estados pelo gesto e põe a
-   * ordenação atrás de um toque a sério, com as guardas de `maisProximosDe()`.
+   * A LISTA DE PROXIMIDADE ERA O GESTO DESSE SELO, e mais nada a alcançava: um
+   * toque dentro do mapa ordenava os 308 centróides pela distância ao sítio
+   * tocado e acendia os oito primeiros. Sem o selo não há gesto, e um ramo de
+   * código que nenhuma superfície alcança é um mecanismo a fingir que ainda
+   * serve. Sai com ele — `maisProximosDe()`, o estado `proximos` e o terceiro
+   * caso de `filtra()` —, e volta com a forma que a Emenda 3 desenha para o
+   * telemóvel: o mapa por distritos, que cresce ao toque. Fica escrito aqui para
+   * que quem a repuser saiba que ela existiu e porque saiu.
    */
-  function maisProximosDe(ev) {
-    if (!mapa || !pontos.length) return null;
-
-    /* UM TOQUE, E NÃO UMA ACTIVAÇÃO POR TECLADO. Um `click` vindo do Enter ou do
-       espaço traz `detail` 0 e coordenadas 0, e uma lista de proximidade tirada
-       do canto do campo é exactamente o defeito que a 2g apanhou. Sem toque,
-       nenhuma lista: o selo fica a ser só a porta. */
-    if (!ev || !ev.detail) return null;
-
-    var r = mapa.getBoundingClientRect();
-    if (!(r.width > 0) || !(r.height > 0)) return null;
-
-    /* O toque tem de cair DENTRO do mapa. O selo cobre-o exactamente, e se um
-       dia deixar de o cobrir é melhor não devolver lista nenhuma do que devolver
-       a de um sítio onde ninguém pôs o dedo. */
-    if (ev.clientX < r.left || ev.clientX > r.right) return null;
-    if (ev.clientY < r.top || ev.clientY > r.bottom) return null;
-
-    /* A conversão passa pela lente, e não pelo rectângulo cru: com a ampliação
-       por usar dá exactamente o que dava antes, e com ela em uso dá o sítio do
-       campo que está debaixo do dedo — que é o que a ordenação precisa. */
-    var q = paraCampoDoMapa(ev.clientX, ev.clientY);
-    if (!q) return null;
-    var px = q.x;
-    var py = q.y;
-    if (!isFinite(px) || !isFinite(py)) return null;
-
-    var ordenados = [];
-    for (var q3 = 0; q3 < pontos.length; q3++) {
-      var dx3 = pontos[q3].x - px;
-      var dy3 = pontos[q3].y - py;
-      var dd3 = dx3 * dx3 + dy3 * dy3;
-      /* Uma distância que não é um número não é uma ordenação: é a ordem da
-         Carta a fingir-se de proximidade. Nesse caso não há lista nenhuma. */
-      if (!isFinite(dd3)) return null;
-      ordenados.push({ slug: pontos[q3].slug, d: dd3 });
-    }
-    ordenados.sort(function (x, y) {
-      return x.d - y.d;
-    });
-
-    var perto = {};
-    for (var z = 0; z < ordenados.length && z < MAX_RESULTADOS; z++) perto[ordenados[z].slug] = true;
-    return perto;
-  }
-
-  if (seloDoPais) {
-    seloDoPais.addEventListener('click', function (ev) {
-      ev.preventDefault();
-      if (modoEscolhido === 'municipio') {
-        /* Já na vista de escolha: o gesto. Se as guardas recusarem — activação
-           por teclado, geometria degenerada, toque fora do mapa —, a lista fica
-           como estava, e a vista continua a ser o que era. */
-        var perto = maisProximosDe(ev);
-        if (perto) {
-          proximos = perto;
-          if (campo) campo.value = '';
-        }
-      } else {
-        /* Vindo de fora: a porta. A caixa limpa-se e a lista volta à regra da
-           caixa vazia, que é o que se vê ao chegar. */
-        proximos = null;
-        if (campo) campo.value = '';
-      }
-      var destino = modoDe(estado.ambito) === 'municipio' ? estado.ambito : AMBITO_ESCOLHA;
-      vai({ ambito: destino, densidade: estado.densidade }, 'municipio', campo || seloDoPais);
-    });
-  }
 
   /* «trocar de concelho» leva de volta à fila de escolha, e o foco vai com ele. */
   var trocar = raiz.querySelector('[data-trocar]');
@@ -850,6 +758,9 @@
     var nome = document.querySelector('[data-readout-nome]');
     var sub = document.querySelector('[data-readout-sub]');
     var preDistrito = document.querySelector('[data-readout-pre]');
+    /* O separador da casa entre o nome e o resto (bloco A, item A6). Entra e sai
+       com o nome: um ponto médio sem nome de um lado não separa nada. */
+    var separador = document.querySelector('[data-readout-sep]');
     var dica = document.querySelector('[data-dica-cursor]');
     var teclado = document.querySelector('[data-teclado]');
 
@@ -888,6 +799,7 @@
       if (j < 0) {
         anel.style.display = 'none';
         if (nome) nome.hidden = true;
+        if (separador) separador.hidden = true;
         if (sub) sub.hidden = true;
         if (preDistrito) preDistrito.hidden = true;
         return;
@@ -900,6 +812,7 @@
         nome.hidden = false;
         nome.textContent = pt2.nome;
       }
+      if (separador) separador.hidden = false;
       if (sub) {
         sub.hidden = false;
         sub.textContent = pt2.distrito;

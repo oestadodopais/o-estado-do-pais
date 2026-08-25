@@ -5,20 +5,18 @@
  * ---------------------------------------------------------------------------
  * SÃO LIGAÇÕES, E NÃO BOTÕES, ATÉ HAVER JAVASCRIPT
  * ---------------------------------------------------------------------------
- * Um botão sem JavaScript é um comando que não atende. Estes cinco comandos
+ * Um botão sem JavaScript é um comando que não atende. Estes quatro comandos
  * saem do servidor como `<a href>` para um destino que existe e que faz sentido
  * sem script nenhum:
  *
  *   País        →  `/`                a própria primeira página, no seu defeito
- *   Região      →  `/#convergencia`   a régua da convergência, que É a leitura
- *                                     regional desta página quando não há estado
- *   Município   →  `/municipios`      o índice dos 308, com a sua cobertura
+ *   Concelho    →  `/municipios`      o índice dos 308, com a sua cobertura
  *   Relance     →  `/`                o defeito
  *   Leitura breve → `/?densidade=leitura`
  *
  * Quando o script assume, reescreve o `href` para a forma do estado
  * (`/?ambito=…`), acrescenta `role="button"` e `aria-pressed`, e passa a mudar a
- * página sem a recarregar. Até lá, e para quem nunca tiver script, os cinco
+ * página sem a recarregar. Até lá, e para quem nunca tiver script, os quatro
  * levam a alguma parte: é a diferença entre um comando degradado e um comando
  * partido.
  *
@@ -32,9 +30,26 @@
  */
 const { s, hrefs } = Astro.props;
 
+/* ---------------------------------------------------------------------------
+ * UM COMANDO, NAS DUAS LARGURAS, COM DUAS POSIÇÕES (bloco A, itens A2 e A3)
+ * ---------------------------------------------------------------------------
+ * Eram três posições no computador («País · Região · Município») e dois botões
+ * de outra forma e com outros nomes no telemóvel, ao lado do mapa: o mesmo
+ * mecanismo com duas caras, e a do telemóvel a esconder que existia um terceiro
+ * estado (achado C5 da auditoria de 25.08). Passa a ser este, e só este, nas
+ * duas larguras; a folha muda-lhe o lugar na coluna e mais nada.
+ *
+ * «REGIÃO» SAI POR AGORA, e sai por uma razão de conteúdo e não de desenho: a
+ * leitura regional desta página era a régua da convergência, que sai da primeira
+ * página até haver a página das regiões (item A3). O estado continua a resolver
+ * — `?ambito=regiao:<slug>` é endereço partilhável (Emenda 7) e rende a leitura
+ * da região que já existe —, e a posição volta ao comando com essa página.
+ *
+ * Sem script as duas escolhas continuam a ser ligações para sítios que existem:
+ * `/` para o país e `/municipios` para os 308.
+ */
 const AMBITOS = [
   { chave: 'pais', rotulo: s.ambito.pais, href: hrefs.pais },
-  { chave: 'regiao', rotulo: s.ambito.regiao, href: hrefs.regiao },
   { chave: 'municipio', rotulo: s.ambito.municipio, href: hrefs.municipio },
 ];
 const DENSIDADES = [
