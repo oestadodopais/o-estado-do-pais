@@ -447,10 +447,19 @@ const INDICE = '/livro-razao';
   });
   conta(
     '3b · os dois estados do selo lado a lado, o conjunto com a sua licença, e as contagens com porta',
+    /* AS CHAVES DISTINTAS, E NÃO O NÚMERO DE MARCAS (bloco B, item B7). Eram
+       quatro marcas para quatro chaves; com o denominador do título de cada
+       grupo — «128 de 136 linhas com proveniência completa» — a chave
+       `afirmacoes` passa a render-se três vezes na mesma página, e é a mesma
+       contagem. O que esta célula julga é o que sempre julgou: que as chaves
+       são estas quatro e que toda a marca tem porta. */
     m.cheio === 1 && m.tracejado === 1 && m.csv && m.json && m.licenca &&
-      m.provas.length === 4 && m.provas.every(([, , href]) => href),
+      [...new Set(m.provas.map(([k]) => k))].sort().join(',') ===
+        'afirmacoes,derivadas,divida,indexaveis' &&
+      m.provas.every(([, , href]) => href),
     `amostras cheio ${m.cheio} · tracejado ${m.tracejado} · CSV ${m.csv} · JSON ${m.json} · ` +
-      `licença ${m.licenca} · contagens ${m.provas.map(([k, v]) => `${k}=${v}`).join(' · ')}`,
+      `licença ${m.licenca} · ${m.provas.length} marcas de ${new Set(m.provas.map(([k]) => k)).size} chaves ` +
+      `· contagens ${m.provas.map(([k, v]) => `${k}=${v}`).join(' · ')}`,
   );
   await p.__contexto.close();
 }

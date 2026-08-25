@@ -88,14 +88,14 @@ na língua em que é rendida.
 | conteudo | General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold, and falling. |
 | conteudo | Grande Lisboa · região |
 | conteudo | Greater Lisbon · region |
-| navegacao | Hover over a point to read the municipality. Keyboard: Tab to the map, arrow keys to move between neighbouring municipalities, Home to return to Évora. Tap a point to choose the concelho. |
+| navegacao | Hover over a point to read the municipality. Keyboard: Tab to the map, arrow keys to move between neighbouring municipalities, Home to return to Évora. Tap a point to choose the municipality. |
 | conteudo | Inscritos no fim do mês nos serviços de emprego, ficheiro mensal por concelho. |
-| conteudo | Integrated business accounts, by concelho of the registered office. |
+| conteudo | Integrated business accounts, by municipality of the registered office. |
 | navegacao | Leitura breve |
 | conteudo | Madeira · region |
 | conteudo | Madeira · região |
 | navegacao | Nenhum concelho com esse nome. |
-| navegacao | No concelho by that name. |
+| navegacao | No municipality by that name. |
 | navegacao | O Estado do País |
 | conteudo | O que o país tem a haver do exterior menos o que lhe deve: negativo quando deve mais do que tem a haver. |
 | conteudo | O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27. Um valor abaixo da média significa menos poder de compra por pessoa; um valor acima, mais. |
@@ -109,8 +109,8 @@ na língua em que é rendida.
 | conteudo | Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9 . |
 | conteudo | Portugal · country |
 | conteudo | Portugal · país |
-| conteudo | Purchasing power per capita, published for every concelho. |
-| conteudo | Registered with the employment service at month end, monthly file by concelho. |
+| conteudo | Purchasing power per capita, published for every municipality. |
+| conteudo | Registered with the employment service at month end, monthly file by municipality. |
 | navegacao | Relance |
 | conteudo | Reportado pelo município: sai da prestação de contas do próprio, não de um agregador central. |
 | conteudo | Reported by the municipality: it comes from its own accounts, not from a central aggregator. |
@@ -121,9 +121,9 @@ na língua em que é rendida.
 | conteudo | The annual series of the local-government directorate, the regulator of municipal accounts. |
 | conteudo | The convergence rule |
 | conteudo | The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 average. A value below the average means less purchasing power per person; a value above it, more. |
-| conteudo | The measures of the concelho, each with its own row. |
+| conteudo | The measures of the municipality, each with its own row. |
 | navegacao | The regions published on the convergence rule. |
-| conteudo | The statistics institute’s annual estimate for the concelho. |
+| conteudo | The statistics institute’s annual estimate for the municipality. |
 | conteudo | What the country is owed from abroad minus what it owes abroad: negative when it owes more than it is owed. |
 | conteudo | no row yet |
 | conteudo | sem linha ainda |
@@ -216,8 +216,8 @@ concelhos escrita outra vez e não um inventário de frases.*
 | conteudo | Bragança |
 | conteudo | Castelo Branco |
 | conteudo | Coimbra |
-| conteudo | Every concelho in Portugal, from the official administrative map. |
-| conteudo | Every concelho, from the Carta Administrativa Oficial de Portugal. |
+| conteudo | Every municipality in Portugal, from the official administrative map. |
+| conteudo | Every municipality, from the Carta Administrativa Oficial de Portugal. |
 | conteudo | Faro |
 | conteudo | Guarda |
 | conteudo | Ilha Terceira |
@@ -238,7 +238,7 @@ concelhos escrita outra vez e não um inventário de frases.*
 | conteudo | Porto |
 | conteudo | Santarém |
 | conteudo | Setúbal |
-| conteudo | The concelhos of Portugal |
+| conteudo | The municipalities of Portugal |
 | conteudo | Todos os concelhos de Portugal, pela Carta Administrativa Oficial. |
 | conteudo | Todos os concelhos, pela Carta Administrativa Oficial de Portugal. |
 | conteudo | Viana do Castelo |
@@ -708,3 +708,57 @@ portão reconta do registo em disco.*
 | «Observatório de dados sobre Portugal. Cada número publicado tem uma linha no livro-razão, com fonte, documento e data de acesso.» (descrição do `<head>` da primeira página) | autorreferência | o Método e o recibo de cada linha; a descrição passa a nomear o que a página tem |
 | «Nenhuma decisão deste mandato atravessou para o livro-razão com valor próprio. Um campo em branco seria diferente disto: o que falta é a linha, não a decisão.» (`decidiuNota` de um mandato de Évora) | autorreferência | o campo diz «sem linha ainda» / «no row yet», a cadeia da casa para a ausência (direção, 21.08.2026, tarde) |
 | «As decisões desta página vão atribuídas a quem as tomou… Os índices … não vão atribuídos a ninguém: nada do que foi lido fornece o contrafactual…» (entrada «Um partido é dono das suas decisões, não de uma curva», secção «Método e ressalvas» de `/municipios/evora`) | autorreferência | retirada: é a nota de como a página foi feita. O limite dos dados que ela também dizia fica em «O que esta página não sabe», que é onde ele pertence |
+
+
+## Bloco B das correções de UX · 25.08.2026
+
+*As frases que este bloco criou ou mudou, com a classe e a razão. As entradas
+inglesas do item B6 não são novas: são as mesmas de sempre com «concelho»
+traduzido, e foram alteradas na tabela da sua rota, em vez de duplicadas aqui.*
+
+**As três que o bloco A deixou por classificar, e que são desta rota** (a §1.66
+nomeia-as): a contagem do índice do livro-razão, e as duas frases da leitura do
+trabalho das penalizações. Entram aqui, que é o bloco a que pertencem.
+
+| classe | frase |
+|---|---|
+| conteudo | 136 afirmações · 19 calculadas |
+| conteudo | 136 claims · 19 calculated |
+| conteudo | 128 de 136 linhas com proveniência completa |
+| conteudo | 128 of 136 rows with complete provenance |
+| conteudo | 8 de 136 linhas com campos por confirmar |
+| conteudo | 8 of 136 rows with fields to confirm |
+| conteudo | A edição de registo, tal como foi publicada. |
+| conteudo | The record edition, as it was published. |
+| conteudo | O que a lei cobra por antecipar a reforma, e o que seria atuarialmente neutro. |
+| conteudo | What the law charges for retiring early, and what would be actuarially neutral. |
+| conteudo | PT O que a lei cobra por antecipar a reforma, e o que seria atuarialmente neutro. |
+| conteudo | EN What the law charges for retiring early, and what would be actuarially neutral. |
+| conteudo | A quem cabe numa das exceções que afastam o fator de sustentabilidade, a lei corta menos do que o valor neutro. As duas medidas acima são os dois extremos da mesma decisão. |
+| conteudo | For those who fall within one of the exceptions that set the sustainability factor aside, the law cuts less than the neutral figure. The two measures above are the two ends of the same decision. |
+| conteudo | é o que a lei corta a quem não cabe numa das exceções |
+| conteudo | is what the law cuts from those who fall outside the exceptions |
+| conteudo | de redução da pensão seria atuarialmente neutro, por um ano de antecipação |
+| conteudo | pension reduction would be actuarially neutral, for one year of anticipation |
+
+**As frases inglesas da página de um concelho e das leituras que o item B6
+mudou**, e que a régua lê como blocos novos porque o texto mudou:
+
+| classe | frase |
+|---|---|
+| conteudo | € approved and attributed to the municipality by the recovery-plan register |
+| conteudo | € of gross value added by enterprises headquartered in the municipality |
+| conteudo | The works about this municipality |
+| conteudo | The same concentration measure, for Portugal as a whole, is what gives the municipality figure its scale. |
+| conteudo | The thin line is the total debt the regulator publishes for the municipality; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. |
+| conteudo | No source publishes a gross domestic product for a municipality, and this page manufactures none. What does exist is the business register: the accounts of enterprises headquartered in the municipality, which credit a firm’s whole activity to its head-office municipality. It is not municipal GDP, and the work on the economy writes why in its own limits: «it misses public administration, most of the university and the hospital». |
+| conteudo | There is no GDP figure for the city, and the work invents none. What exists at municipality level is the business register: the accounts of enterprises headquartered in the municipality, which credit a firm’s whole activity to its head-office municipality. It is not municipal GDP, and the study itself writes why in its own limits: «it misses public administration, most of the university and the hospital». |
+| conteudo | The recovery-plan totals that appear in that work’s reading are sums over the public register, attributed to the municipality by that register. Of the money contracted in the municipality, the university holds more than the council, and the layer that administers the money is made of national bodies. That this makes the accountability address something other than the town hall is that work’s own signed conclusion, and it sits on its page. |
+| conteudo | The university holds more contracted money in this municipality than the council, and the layer that administers the money is made of national bodies. The work concludes from that that «the accountability address is mostly not the town hall», its own signed reading, not a count: a reader who wants this total explained should put questions to national bodies and to the university more often than to the council. |
+| conteudo | The statistics institute’s purchasing-power index is the one indicator that exists for a municipality, and it is what carries the first half of the sentence above: the municipality on one side of the national average, its region on the other. The national average is the base of the index. |
+
+**O que este bloco NÃO acrescentou ao inventário, e é uma leitura e não um
+esquecimento:** o índice «Nesta página» da página de leitura não entra, porque
+cada entrada dele é um título transcrito do registo, com a marca
+`data-registo-indice` que a régua já conta como origem declarada; e o comando
+«Subir ↑» também não, porque o seu texto está todo dentro de um `<a>`.
