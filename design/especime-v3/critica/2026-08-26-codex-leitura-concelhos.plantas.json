@@ -1,0 +1,41 @@
+{
+ "registado_em": "2026-08-26",
+ "seed": 20260826,
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "paginas/municipio-chaves.html",
+   "descricao": "the population of chaves on the page has its last digit changed to 1 (no longer the row value 38 014)",
+   "sha256_antes": "e74fb6b00fe78120f0e3e76d696b7709cfbfffc28ce5068231fda9d334220b31",
+   "sha256_depois": "15372631695518d1fddc9de7356adfff82b1937ff5f3d2bda012b2a1ef018493"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "linhas/tabuaco-poder-de-compra-2023.yml",
+   "descricao": "the excerpt of tabuaco-poder-de-compra-2023 no longer contains the value 63,53",
+   "sha256_antes": "17a2b285821451cf4448042087a42e5f17c14dc0f90f8c81ad3c968eca880190",
+   "sha256_depois": "bd85dcf9f97e7ff0e1cad3538e298116534c1d143e86eba34758dc83b87eeff5"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "paginas/municipio-chaves.html",
+   "descricao": "a tile of chaves shows «1 234» where the page said «sem linha ainda» (no row, no source)",
+   "sha256_antes": "15372631695518d1fddc9de7356adfff82b1937ff5f3d2bda012b2a1ef018493",
+   "sha256_depois": "5ca9cbd27bf70be70ef43edef2a07ae443bfa26dd7a359ebf9eacbbca9fc09bc"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "paginas/en-municipality-beja.html",
+   "descricao": "the English page of beja carries the Portuguese label «Empresas não financeiras»",
+   "sha256_antes": "a8cf18fec697d7beaa8715d4b4ba6335c4db06ad241dc98124144d1e9e1e937b",
+   "sha256_depois": "f72fbf7f6c5724ef28aa147c06f69a11b9afca6abff77bf10957a95d2790f856"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "paginas/municipio-celorico-de-basto.html",
+   "descricao": "a sentence on celorico-de-basto explaining the site's own diligence",
+   "sha256_antes": "d7c8fb8b604e8d70e7296365472f67dc1049e94ef22da3058a8059a407667b8f",
+   "sha256_depois": "f0a88bd2424f29e4cba9bf3a35d37f68db49df1fae4c1c046fabcb3866ec8f69"
+  }
+ ]
+}
