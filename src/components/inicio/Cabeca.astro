@@ -10,14 +10,19 @@
  * mostrar em qualquer estado saiu do servidor e passou pelo portão; o script
  * troca `hidden`, e mais nada.
  *
- * São nove blocos: País, as seis leituras da régua da convergência (Portugal
- * incluído), Évora, e UM bloco para os outros 307 concelhos. O último é o único
- * que tem texto por preencher, e o que se lhe preenche são dois `<span
- * data-slot>`: o nome do concelho e o seu distrito ou ilha, copiados com
- * `textContent` do nó daquele concelho na ilha da CAOP que o mapa já desenhou.
- * Nenhuma outra cadeia é montada, e nenhum algarismo é escrito.
+ * SÃO SEIS BLOCOS DESDE A EMENDA 19a (26.08.2026): País e as cinco regiões de
+ * âmbito. Eram oito, e os dois que saíram eram os do concelho: o de Évora, que
+ * repetia a cabeça da página dela dentro da primeira página, e o do concelho sem
+ * linhas, «Ainda sem linhas para <nome>», com os dois `<span data-slot>` que o
+ * script preenchia. O diretor decidiu a 26.08 que um concelho vive na sua página
+ * e só lá; com os estados `?ambito=municipio:<slug>` fora do esquema, nenhum dos
+ * dois blocos tinha estado que o acendesse.
  *
- * NOVE `<h1>` NO DOCUMENTO, OITO DELES `hidden`. É deliberado, e o preço é
+ * Com eles saiu o único texto por preencher que esta página tinha, e por isso
+ * saiu também o único caminho por onde o script escrevia `textContent` à vista.
+ * Nenhuma cadeia é montada, e nenhum algarismo é escrito.
+ *
+ * SEIS `<h1>` NO DOCUMENTO, CINCO DELES `hidden`. É deliberado, e o preço é
  * conhecido: `hidden` tira o elemento da árvore de acessibilidade, e por isso um
  * leitor de ecrã encontra sempre exactamente um título de nível 1 — o do âmbito
  * que está aceso. A alternativa era compor o título no cliente, que é a coisa
@@ -126,48 +131,14 @@ const tituloPais = fora === 1 ? s.inicio.cabeca.tituloPaisUm : s.inicio.cabeca.t
           </>
         )}
 
-        {b.tipo === 'evora' && (
-          <>
-            <p class="cabeca-rotulo">
-              {b.nome}{s.inicio.cabeca.municipioPalavra}{b.distrito}
-            </p>
-            <h1 class="cabeca-h1">{s.inicio.cabeca.tituloEvora}</h1>
-            {/* A LEDE DE ÉVORA SAIU DA PRIMEIRA PÁGINA (Emenda 15). Dizia «Esta
-                página mede o município de Évora e mostra de onde vem cada
-                medida. Não interpreta: onde uma fonte não estabelece uma coisa,
-                a página di-lo em vez de a supor.» — três frases sobre o método e
-                as intenções do sítio. A cadeia fica em `strings.mjs` porque é a
-                lede da PÁGINA de Évora (`MunicipioView`), que é da etapa 3 e não
-                desta ronda; o que sai é a sua rendição aqui. */}
-          </>
-        )}
-
-        {b.tipo === 'vazio' && (
-          <>
-            {/* O prefixo do distrito é uma cadeia validada que já está na
-                página, e o script só lhe troca o `hidden` conforme o concelho
-                escolhido seja de um distrito ou de uma ilha (ISSUES I18). Não
-                se compõe texto: escolhe-se entre um prefixo escrito e nenhum. */}
-            <p class="cabeca-rotulo">
-              <span data-slot="nome">{b.nome}</span>
-              {s.inicio.cabeca.municipioPalavra}
-              <span data-prefixo-distrito hidden={b.ilha}>{s.inicio.cabeca.distritoDe}</span>
-              <span data-slot="distrito">{b.distrito}</span>
-            </p>
-            <h1 class="cabeca-h1">
-              {s.inicio.cabeca.tituloVazioA}
-              <span data-slot="nome">{b.nome}</span>
-              {s.inicio.cabeca.tituloVazioB}
-            </h1>
-            {/* A LEDE DO CONCELHO SEM PÁGINA SAIU (Emenda 15). Dizia «O ponto
-                marca a posição do concelho na Carta Administrativa, e não
-                cobertura. Quando houver linhas para <nome>, entram aqui com a
-                sua fonte e a sua data de leitura.» — o que o ponto NÃO marca, e
-                o que o sítio tenciona fazer. A manchete já diz a ausência
-                («Ainda sem linhas para <nome>.») e as oito peças dizem-na medida
-                a medida, em duas palavras cada. */}
-          </>
-        )}
+        {/* OS BLOCOS DE CONCELHO SAÍRAM (Emenda 19a, 26.08.2026). Eram dois:
+            `evora`, com o rótulo «Évora · município · distrito de Évora» e a
+            manchete «As medidas do concelho, cada uma com a sua linha.», que era
+            a cabeça de `/municipios/evora` rendida outra vez aqui; e `vazio`,
+            com «Ainda sem linhas para <nome>» e os dois `data-slot` que o script
+            preenchia com o nome e o distrito do concelho escolhido. As cadeias
+            dos dois saíram de `strings.mjs` nas duas edições, com o registo em
+            `CHAVES-EN.md`. O que fica é o país e as cinco regiões. */}
       </div>
     ))
   }

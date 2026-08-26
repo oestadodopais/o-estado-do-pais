@@ -67,30 +67,53 @@ A coluna do texto é a cadeia normalizada, tal como a régua a lê (espaços
 colapsados). As duas edições partilham a mesma tabela: uma frase entra uma vez,
 na língua em que é rendida.
 
+**A tabela perdeu 25 das suas 65 linhas com a Emenda 19 (26.08.2026), e nenhuma
+saiu por ser autorreferência.** Saíram porque a vista de escolha da primeira
+página saiu inteira, e com ela os estados `?ambito=municipio:<slug>`: a primeira
+página deixou de ter blocos de concelho. Contam-se assim:
+
+* **dez deixaram de ser rendidas em rota nenhuma** e saíram do ficheiro: a
+  manchete e o rótulo do bloco do concelho sem linhas («Ainda sem linhas para
+  Águeda .», «Águeda · município · distrito de Aveiro» e as gémeas inglesas), a
+  manchete e o rótulo do bloco de Évora («As medidas do concelho, cada uma com a
+  sua linha.», «Évora · município · distrito de Évora» e as gémeas), e «Évora ·
+  município» e «Évora · municipality», que eram o âmbito das peças daquele
+  painel;
+* **quinze mudaram de rota, e estão agora na tabela de `/municipios/evora`**: as
+  notas das oito medidas do concelho nas duas edições, «Évora», e as duas
+  palavras da ausência («sem linha ainda» e «no row yet»). Não saíram do sítio:
+  saíram da PRIMEIRA PÁGINA, onde eram uma segunda rendição da página do
+  concelho, e continuam a ler-se na página dele;
+* **duas mudaram de texto**, e são a descrição acessível do mapa nas duas
+  edições: perderam a terceira frase, «Toque num ponto para escolher o
+  concelho.», que descrevia um gesto que a página deixou de fazer. Um ponto com
+  página é uma ligação, e um destino diz-se na ligação e no seu `<title>`.
+
+«fechar» e «trocar de concelho» não estão nesta contagem, e a razão é a
+definição: um bloco cujo texto é todo ele uma ligação ou um botão não é uma frase
+da casa (`textoForaDeComandos` em `scripts/medir-defeitos.mjs`), e nunca entrou
+nesta tabela. «fechar» deixou de se render; «trocar de concelho» rende-se onde o
+cartão localizador vive, na página do concelho, e leva ao índice dos 308.
+
 | classe | texto |
 | --- | --- |
 | conteudo | A régua da convergência |
 | navegacao | An observatory of Portugal. |
-| conteudo | Ainda sem linhas para Águeda . |
 | conteudo | Alentejo · region |
 | conteudo | Alentejo · região |
 | conteudo | Algarve · region |
 | conteudo | Algarve · região |
-| conteudo | As medidas do concelho, cada uma com a sua linha. |
 | navegacao | As regiões publicadas na régua da convergência. |
 | navegacao | At a glance |
 | navegacao | Brief reading |
 | conteudo | Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu, e a descer. |
 | navegacao | Encontrou um erro? correcoes@oestadodopais.pt · O registo de correções → |
-| conteudo | Estimativa anual do INE para o concelho. |
 | conteudo | European Social Scoreboard |
 | navegacao | Found an error? correcoes@oestadodopais.pt · The corrections log → |
 | conteudo | General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold, and falling. |
 | conteudo | Grande Lisboa · região |
 | conteudo | Greater Lisbon · region |
-| navegacao | Hover over a point to read the municipality. Keyboard: Tab to the map, arrow keys to move between neighbouring municipalities, Home to return to Évora. Tap a point to choose the municipality. |
-| conteudo | Inscritos no fim do mês nos serviços de emprego, ficheiro mensal por concelho. |
-| conteudo | Integrated business accounts, by municipality of the registered office. |
+| navegacao | Hover over a point to read the municipality. Keyboard: Tab to the map, arrow keys to move between neighbouring municipalities, Home to return to Évora. |
 | navegacao | Leitura breve |
 | conteudo | Madeira · region |
 | conteudo | Madeira · região |
@@ -100,40 +123,20 @@ na língua em que é rendida.
 | conteudo | O que o país tem a haver do exterior menos o que lhe deve: negativo quando deve mais do que tem a haver. |
 | conteudo | O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27. Um valor abaixo da média significa menos poder de compra por pessoa; um valor acima, mais. |
 | conteudo | Painel Social Europeu |
-| navegacao | Passe o cursor sobre um ponto para ler o município. Teclado: Tab até ao mapa, setas para percorrer os municípios vizinhos, Home para voltar a Évora. Toque num ponto para escolher o concelho. |
+| navegacao | Passe o cursor sobre um ponto para ler o município. Teclado: Tab até ao mapa, setas para percorrer os municípios vizinhos, Home para voltar a Évora. |
 | conteudo | Península de Setúbal · região |
-| conteudo | Poder de compra per capita, publicado pelo INE para todos os concelhos. |
 | conteudo | Portugal breaches 4 thresholds of the Macroeconomic Imbalance Procedure and meets 9 . |
 | conteudo | Portugal nos painéis europeus: os indicadores, os limiares e as fontes. |
 | conteudo | Portugal on the European scoreboards: the indicators, the thresholds and the sources. |
 | conteudo | Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9 . |
 | conteudo | Portugal · country |
 | conteudo | Portugal · país |
-| conteudo | Purchasing power per capita, published for every municipality. |
-| conteudo | Registered with the employment service at month end, monthly file by municipality. |
 | navegacao | Relance |
-| conteudo | Reportado pelo município: sai da prestação de contas do próprio, não de um agregador central. |
-| conteudo | Reported by the municipality: it comes from its own accounts, not from a central aggregator. |
 | conteudo | Setúbal Peninsula · region |
-| conteudo | Sistema de contas integradas das empresas, por concelho da sede. |
-| conteudo | Still no rows for Águeda . |
-| conteudo | Série anual da Direção-Geral das Autarquias Locais, o regulador das contas municipais. |
-| conteudo | The annual series of the local-government directorate, the regulator of municipal accounts. |
 | conteudo | The convergence rule |
 | conteudo | The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 average. A value below the average means less purchasing power per person; a value above it, more. |
-| conteudo | The measures of the municipality, each with its own row. |
 | navegacao | The regions published on the convergence rule. |
-| conteudo | The statistics institute’s annual estimate for the municipality. |
 | conteudo | What the country is owed from abroad minus what it owes abroad: negative when it owes more than it is owed. |
-| conteudo | no row yet |
-| conteudo | sem linha ainda |
-| conteudo | Águeda · municipality · district of Aveiro |
-| conteudo | Águeda · município · distrito de Aveiro |
-| conteudo | Évora |
-| conteudo | Évora · municipality |
-| conteudo | Évora · municipality · district of Évora |
-| conteudo | Évora · município |
-| conteudo | Évora · município · distrito de Évora |
 
 ## `/livro-razao` · `/en/ledger` (etapa 3, subetapa 3b)
 
@@ -297,6 +300,7 @@ quem escreveu a página.*
 | conteudo | Economia, investidores e portas abertas no município de Évora. |
 | conteudo | Economy, investors and open doors in the municipality of Évora. |
 | conteudo | Em funções. |
+| conteudo | Estimativa anual do INE para o concelho. |
 | conteudo | Executive installed |
 | conteudo | Executivo instalado |
 | conteudo | Expenditure paid |
@@ -308,6 +312,8 @@ quem escreveu a página.*
 | conteudo | How far the debt exceeded the legal limit, in the first and the last year in which the report publishes it as a positive figure. After that the table turns negative, and a negative there is no longer excess but borrowing capacity, so this page stops here. |
 | conteudo | In office. |
 | conteudo | Inherited |
+| conteudo | Inscritos no fim do mês nos serviços de emprego, ficheiro mensal por concelho. |
+| conteudo | Integrated business accounts, by municipality of the registered office. |
 | conteudo | Left |
 | conteudo | Limite de dívida |
 | conteudo | Lugares |
@@ -338,18 +344,26 @@ quem escreveu a página.*
 | conteudo | Outside what was read. |
 | conteudo | Outside what was read: the captures behind the portfolio split begin with the next term. |
 | conteudo | Pelouros |
+| conteudo | Poder de compra per capita, publicado pelo INE para todos os concelhos. |
 | conteudo | Portfolios |
 | conteudo | Provenance |
 | conteudo | Proveniência |
+| conteudo | Purchasing power per capita, published for every municipality. |
 | conteudo | Quem administrou, e o que as contas registaram |
 | conteudo | Quem responde pelo quê |
 | conteudo | Quinze anos de governo municipal em Évora, ao longo de cinco mandatos. |
 | conteudo | Receita cobrada |
+| conteudo | Registered with the employment service at month end, monthly file by municipality. |
+| conteudo | Reportado pelo município: sai da prestação de contas do próprio, não de um agregador central. |
+| conteudo | Reported by the municipality: it comes from its own accounts, not from a central aggregator. |
 | conteudo | Revenue collected |
 | conteudo | Revenue execution and the average payment time are read from the municipality’s own accounts: their ledger rows name that document and the page they sit on. The two outside voices on these accounts are the auditor’s signed opinion and the regulator’s annual series, and both are on this page. |
 | conteudo | Seats |
+| conteudo | Sistema de contas integradas das empresas, por concelho da sede. |
 | conteudo | Sobre as contas deste município existem duas vozes que não são a dele: a opinião assinada do auditor independente, e a série anual do regulador, que publica por município e por ano o mesmo conceito legal de dívida que o relatório usa, compilado do lado de fora. As duas estão nesta página. |
 | conteudo | Sobre o plano de recuperação: o trabalho lê o catálogo do tribunal de contas, não as suas auditorias; a janela de contratos é um limite superior sobre um período truncado; e não existe um valor da União Europeia para um município. |
+| conteudo | Série anual da Direção-Geral das Autarquias Locais, o regulador das contas municipais. |
+| conteudo | The annual series of the local-government directorate, the regulator of municipal accounts. |
 | conteudo | The debt against the legal ceiling |
 | conteudo | The gap between the two accounts of the same debt |
 | conteudo | The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue. The law defines it, not this site. |
@@ -362,6 +376,7 @@ quem escreveu a página.*
 | conteudo | The regulator publishes |
 | conteudo | The regulator’s annual series has not yet reached this term. |
 | conteudo | The regulator’s annual series used on this page begins after this term. |
+| conteudo | The statistics institute’s annual estimate for the municipality. |
 | conteudo | The thin line is the total debt the regulator publishes for the concelho; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. |
 | conteudo | The works about this concelho |
 | conteudo | There is no counterfactual for any index. Nothing that was read allows an executive’s share of them to be separated out. |
@@ -375,6 +390,9 @@ quem escreveu a página.*
 | conteudo | Who held each portfolio of the Câmara Municipal de Évora across five terms, how much the municipality’s own accounts spent in the areas those portfolios cover, and what the reports say those areas did. |
 | conteudo | district of Évora · Alentejo Central |
 | conteudo | distrito de Évora · Alentejo Central |
+| conteudo | no row yet |
+| conteudo | sem linha ainda |
+| conteudo | Évora |
 
 ## `/correcoes` · `/en/corrections` (etapa 4, subetapa 4a)
 

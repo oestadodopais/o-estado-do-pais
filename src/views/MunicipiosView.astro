@@ -188,13 +188,13 @@ const comPagina = resultados.filter((c) => c.pagina);
       }
     </p>
     {/* A PORTA PARA O MAPA DA PRIMEIRA PÁGINA.
-        O brief da etapa 3 escreve `/?ambito=municipio`, e o esquema de estado da
-        etapa 2 **não aceita esse valor**: `resolveAmbito()` em
-        `public/js/inicio.js` só reconhece `municipio:<slug>` da lista fechada da
-        CAOP, e `municipio` sozinho cai em silêncio no âmbito País. Uma porta que
-        promete um estado que a página não abre é pior do que a que já existe.
-        Fica a âncora do mapa, que é verdadeira; o pedido para o esquema aceitar
-        a vista de escolha está na nota da etapa e em ISSUES. */}
+        A âncora `/#mapa` é o destino certo, e passou por três respostas até o
+        ser. O brief da etapa 3 escrevia `/?ambito=municipio`, que o esquema de
+        então não aceitava (ISSUES I42); a etapa 2m fez desse valor a vista de
+        escolha, e a porta podia ter passado a apontar para lá; a Emenda 19b
+        fechou a vista, e o que resta em `/?ambito=municipio` é a pesquisa
+        aberta, que é a mesma pesquisa que esta página já tem por cima. O que
+        `/#mapa` promete é o mapa, e é o mapa que ele abre. */}
     <p class="rodape-nav" style="margin-top:14px">
       <a href={`${routePath('home', lang)}#mapa`}>{s.municipios.mapaLink}</a>
     </p>

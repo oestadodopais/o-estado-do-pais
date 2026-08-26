@@ -26,21 +26,27 @@
  * ---------------------------------------------------------------------------
  * O ESQUEMA DO ENDEREÇO É FECHADO, E RESOLVE-SE CONTRA O QUE ESTÁ NA PÁGINA
  * ---------------------------------------------------------------------------
- *   ?ambito=pais | municipio | regiao:<slug> | municipio:<slug>
- *                                                       (por defeito: pais)
+ *   ?ambito=pais | municipio | regiao:<slug>            (por defeito: pais)
  *   ?densidade=relance | leitura                        (por defeito: relance)
  *
- * `municipio` SEM DOIS PONTOS É A VISTA DE ESCOLHA (ISSUES I42, fechado na
- * etapa 2m). Era um modo sem endereço: abria-se por um comando, e por isso não
- * se podia partilhar, nem recarregar, nem ligar a partir de `/municipios` — que
- * é exactamente o que a etapa 3 pediu. Passa a ser um estado do esquema, com a
- * mesma disciplina dos outros: o servidor rende o defeito, o script acende o
- * estado, e um valor que não esteja na lista cai no defeito em silêncio.
+ * `municipio` TEM UM SÓ SIGNIFICADO: A PESQUISA ESTÁ ABERTA (Emenda 19, 26.08).
+ * Foi a vista de escolha da etapa 2m, e nessa vista o mapa crescia à largura do
+ * conteúdo, a roda do rato ampliava-o e um ponto escolhia um concelho dentro da
+ * primeira página. O diretor viu a vista no computador a 26.08 e decidiu: um
+ * concelho vive na sua página e só lá, e o mapa da primeira página é navegação.
+ * A vista sai inteira; o estado fica, com o significado que lhe resta, que é o
+ * do comando «Concelho»: a pesquisa aberta por baixo dele, nas duas larguras.
  *
- * O QUE A VISTA DE ESCOLHA MOSTRA É O PAÍS, e é por isso que ela não é um âmbito
- * como os outros: a cabeça, o painel, o instrumento e as portas são os do país,
- * porque ninguém escolheu nada ainda. O que muda é o mapa, que cresce para se
- * poder escolher nele, e a pesquisa, que abre por cima dele.
+ * OS ESTADOS `municipio:<slug>` DEIXARAM DE EXISTIR (Emenda 19a). Um endereço
+ * antigo continua a abrir alguma coisa, que é o que a Emenda 7 promete: o script
+ * reencaminha-o para a página do concelho quando ela existe, e para o índice dos
+ * 308 quando não existe. Os dois destinos são LIDOS do documento, e não montados
+ * aqui: a página do concelho é o `href` da ligação daquele ponto, o índice é o
+ * `href` do comando «Concelho».
+ *
+ * O QUE O ESTADO `municipio` MOSTRA É O PAÍS: a cabeça, o painel, o instrumento
+ * e as portas são os do país, porque ninguém escolheu nada. O que muda é a
+ * pesquisa, que se abre, e o foco, que vai para o campo.
  *
  * As listas fechadas não são escritas aqui: são LIDAS do documento — os blocos
  * de cabeça (`[data-cabeca]`) dão os âmbitos com bloco próprio, e os pontos do
@@ -57,7 +63,10 @@
   if (!raiz) return;
 
   var AMBITO_DEFEITO = 'pais';
-  var AMBITO_ESCOLHA = 'municipio';
+  /* O estado da pesquisa aberta. O valor do endereço continua a ser `municipio`,
+     porque é um endereço partilhado e a Emenda 7 não o deixa mudar de nome; o
+     que mudou foi o que ele significa (Emenda 19c). */
+  var AMBITO_PESQUISA = 'municipio';
   var DENSIDADE_DEFEITO = 'relance';
 
   /* As notas que explicam o que não funciona sem script saem quando há script. */
@@ -108,108 +117,84 @@
   }
 
   /* ==========================================================================
-   * A AMPLIAÇÃO DO MAPA, NA VISTA DE ESCOLHA (etapa 2m, brief §1)
+   * A LENTE SAIU COM A VISTA DE ESCOLHA (Emenda 19b, 26.08.2026)
    * ==========================================================================
    *
-   * «Roda do rato e beliscão dentro da caixa do mapa como segundo caminho
-   * (transformação no grupo do SVG, limitada entre 1× e 4×, a leitura e o modelo
-   * de teclado inalterados; o toque duplo repõe).»
+   * Havia aqui uma ampliação por roda do rato e por beliscão, presa ao estado
+   * `?ambito=municipio`: uma transformação num grupo do SVG, de 1× a 4×, com o
+   * toque duplo a repor. Existia porque o mapa era o instrumento de ESCOLHA de
+   * um concelho, e os 308 pontos são demasiado juntos para se escolher um deles
+   * a essa escala (o par mais próximo da Carta está a 2,816 unidades de campo,
+   * que na coluna são 2,3 CSS px).
    *
-   * PORQUE É PRECISA, E A CONTA QUE O DIZ. O par de centróides mais próximo da
-   * Carta está a 2,816 unidades de campo um do outro (Lajes das Flores e Santa
-   * Cruz das Flores). Na coluna da cabeça, a 1280, o mapa mede 490px e esse par
-   * fica a 2,3 CSS px; com o mapa à largura do conteúdo, 1092px, fica a 5,1. O
-   * alvo do brief são 16px, e 16px pedem 5,68px por unidade de campo, ou seja um
-   * mapa de 3 410px de largura: não há página que o dê. O que há é uma lente —
-   * a 3,12× o par chega aos 16px, e a 4× aos 20,5.
+   * Com as páginas dos 308 decididas (decisão 5B de 25.08) o mapa deixou de
+   * escolher: um ponto com página é uma ligação para a página dele, e mais nada
+   * acontece num ponto. O mecanismo perdeu o trabalho, e sai em vez de se afinar.
+   * O que ele custava, medido a 26.08 no sítio no ar: a roda do rato sobre o
+   * mapa deixava de rolar a página (cinco entalhes para baixo, `scrollY` na
+   * mesma), que é tirar à página o gesto mais comum que ela tem.
    *
-   * É UMA TRANSFORMAÇÃO, E NÃO UM SEGUNDO DESENHO. Um `translate` e um `scale`
-   * num grupo só, que leva consigo as molduras, os 308 pontos e as 308 áreas de
-   * toque. Nada é criado, nada é escrito, nenhum número aparece: é a mesma
-   * classe de operação que a lista de proximidade (uma geometria que decide o
-   * que se vê, e que nunca se lê). O teclado percorre a mesma lista pela mesma
-   * ordem, e a leitura em voz alta diz o mesmo nome.
-   *
-   * O QUE A LENTE NÃO PODE FAZER É DEIXAR VER PAPEL. A translação está presa ao
-   * campo: `tx` entre `w·(1−k)` e 0, e o mesmo em `y`. Com `k` a 1 os dois
-   * limites encostam em zero, e o mapa volta exactamente ao sítio onde estava.
+   * O que fica é a conversão de coordenadas, que a leitura ponto a ponto precisa
+   * e que a lente tornava complicada: sem transformação, o sítio de um evento em
+   * unidades do campo é uma regra de três sobre o rectângulo do `svg`.
    */
-  var grupoDoCampo = mapa ? mapa.querySelector('[data-campo]') : null;
-  var AMPLIACAO_MAXIMA = 4;
-  var amp = { k: 1, tx: 0, ty: 0 };
-
   function medidaDoCampo() {
     var vb = mapa && mapa.viewBox && mapa.viewBox.baseVal;
     return { w: vb && vb.width ? vb.width : 600, h: vb && vb.height ? vb.height : 790 };
   }
 
-  function escreveAmpliacao() {
-    if (!grupoDoCampo) return;
-    if (amp.k === 1 && amp.tx === 0 && amp.ty === 0) {
-      grupoDoCampo.removeAttribute('transform');
-      return;
-    }
-    grupoDoCampo.setAttribute(
-      'transform',
-      'translate(' + amp.tx + ' ' + amp.ty + ') scale(' + amp.k + ')',
-    );
-  }
-
-  function prendeAmpliacao() {
-    var c = medidaDoCampo();
-    amp.tx = Math.max(c.w * (1 - amp.k), Math.min(0, amp.tx));
-    amp.ty = Math.max(c.h * (1 - amp.k), Math.min(0, amp.ty));
-  }
-
-  /* Amplia para `k`, deixando quieto o ponto do campo que está debaixo de
-     (qx, qy) — coordenadas do campo DEPOIS da transformação, que é o que o
-     cursor ou o meio do beliscão dão. */
-  function amplia(k, qx, qy) {
-    if (!grupoDoCampo) return;
-    var novo = Math.max(1, Math.min(AMPLIACAO_MAXIMA, k));
-    if (!isFinite(novo) || novo === amp.k) return;
-    amp.tx = qx - (qx - amp.tx) * (novo / amp.k);
-    amp.ty = qy - (qy - amp.ty) * (novo / amp.k);
-    amp.k = novo;
-    prendeAmpliacao();
-    escreveAmpliacao();
-  }
-
-  function repoeAmpliacao() {
-    if (amp.k === 1 && amp.tx === 0 && amp.ty === 0) return;
-    amp.k = 1;
-    amp.tx = 0;
-    amp.ty = 0;
-    escreveAmpliacao();
-  }
-
-  /* O sítio de um evento, em coordenadas do campo DEPOIS da transformação. */
-  function paraTela(cx, cy) {
+  /* O sítio de um evento, em coordenadas do campo, que é o referencial em que os
+     308 centróides estão escritos. */
+  function paraCampoDoMapa(cx, cy) {
     var r = mapa.getBoundingClientRect();
     var c = medidaDoCampo();
     if (!(r.width > 0) || !(r.height > 0)) return null;
     return { x: ((cx - r.left) / r.width) * c.w, y: ((cy - r.top) / r.height) * c.h };
   }
 
-  /* E o mesmo sítio em coordenadas do campo ANTES dela, que é o referencial em
-     que os 308 centróides estão escritos. Com a lente por usar, é o mesmo. */
-  function paraCampoDoMapa(cx, cy) {
-    var q = paraTela(cx, cy);
-    if (!q) return null;
-    return { x: (q.x - amp.tx) / amp.k, y: (q.y - amp.ty) / amp.k };
+  /* ----------------------------------------- os endereços antigos, e para onde vão
+   *
+   * `?ambito=municipio:<slug>` era um estado partilhável, e a Emenda 7 diz que o
+   * que era partilhável continua a abrir alguma coisa. Abre a página do concelho
+   * quando ela existe, e o índice dos 308 quando não existe (Emenda 19a).
+   *
+   * OS DOIS DESTINOS SÃO LIDOS DO DOCUMENTO. A página do concelho é o `href` da
+   * ligação que o servidor pôs naquele ponto do mapa; o índice é o `href` do
+   * comando «Concelho», que é o destino dele sem script. Um endereço montado
+   * aqui teria de saber a rota de cada edição, e divergiria da do servidor no dia
+   * em que ela mudasse.
+   *
+   * `location.replace` e não `assign`: o estado antigo não fica na história, para
+   * que o botão de voltar não devolva o leitor a um endereço que já não existe. */
+  function portaDoPonto(slug) {
+    var a = mapa ? mapa.querySelector('[data-mun-porta="' + slug + '"]') : null;
+    return a ? a.getAttribute('href') : null;
+  }
+
+  function indiceDosConcelhos() {
+    var seg = raiz.querySelector('[data-modo="municipio"]');
+    return seg ? seg.getAttribute('href') : null;
+  }
+
+  function reencaminhaEstadoAntigo() {
+    var bruto = new URLSearchParams(location.search).get('ambito');
+    if (!bruto || bruto.indexOf('municipio:') !== 0) return false;
+    var pt = porSlug[bruto.slice('municipio:'.length)];
+    if (!pt) return false;
+    var destino = pt.comPagina ? portaDoPonto(pt.slug) : indiceDosConcelhos();
+    if (!destino) return false;
+    location.replace(destino);
+    return true;
   }
 
   function resolveAmbito(bruto) {
     if (!bruto) return AMBITO_DEFEITO;
     if (bruto === AMBITO_DEFEITO) return AMBITO_DEFEITO;
-    /* A vista de escolha. Não tem bloco de cabeça próprio (mostra o do país) e
+    /* A pesquisa aberta. Não tem bloco de cabeça próprio (mostra o do país) e
        por isso não se resolve contra `comBloco`: é um valor do esquema, escrito
        aqui como `pais` é. */
-    if (bruto === AMBITO_ESCOLHA) return AMBITO_ESCOLHA;
+    if (bruto === AMBITO_PESQUISA) return AMBITO_PESQUISA;
     if (bruto.indexOf('regiao:') === 0) return comBloco[bruto] ? bruto : AMBITO_DEFEITO;
-    if (bruto.indexOf('municipio:') === 0) {
-      return porSlug[bruto.slice('municipio:'.length)] ? bruto : AMBITO_DEFEITO;
-    }
     return AMBITO_DEFEITO;
   }
 
@@ -219,15 +204,15 @@
 
   function modoDe(ambito) {
     if (ambito.indexOf('regiao:') === 0) return 'regiao';
-    if (ambito === AMBITO_ESCOLHA || ambito.indexOf('municipio:') === 0) return 'municipio';
+    if (ambito === AMBITO_PESQUISA) return 'municipio';
     return 'pais';
   }
 
-  /* A vista de escolha mostra a página do país: o que ela tem de seu é o mapa
-     grande e a pesquisa. As duas perguntas que se seguem existem para que isso
-     esteja escrito uma vez, e não espalhado por cinco condições. */
+  /* Com a pesquisa aberta a página continua a ser a do país: o que ela tem de
+     seu é a pesquisa. A pergunta está escrita uma vez, e não espalhada por cinco
+     condições. */
   function eDoPais(ambito) {
-    return ambito === AMBITO_DEFEITO || ambito === AMBITO_ESCOLHA;
+    return ambito === AMBITO_DEFEITO || ambito === AMBITO_PESQUISA;
   }
 
   /* --------------------------------------------------------------- endereço */
@@ -257,12 +242,15 @@
      `[data-banda-ponto]` (a régua da convergência em largura inteira). Nenhuma
      tinha elemento depois desta ronda, e uma lista vazia com ouvintes por cima é
      um mecanismo a fingir que ainda serve. */
+  /* AS SEIS LISTAS QUE SAÍRAM COM A VISTA DE ESCOLHA (Emenda 19): `[data-escolher]`
+     (os botões da pesquisa, que passaram a ser as portas das páginas dos
+     concelhos, como já eram em `/municipios`), `[data-mapa-cartao]` (o cartão
+     nunca esteve escondido nesta página, e a linha que o desescondia não fazia
+     nada), `[data-so-evora]` e `[data-trocar]` (as duas portas do cartão
+     localizador, que vive na página do concelho), `[data-hint-escolher]` (a dica
+     de escolher um ponto) e `[data-fechar-mapa]`. */
   var segsAmbito = raiz.querySelectorAll('[data-modo]');
   var segsDensidade = raiz.querySelectorAll('[data-densidade]');
-  var escolhas = raiz.querySelectorAll('[data-escolher]');
-  var cartao = raiz.querySelector('[data-mapa-cartao]');
-  var soEvora = raiz.querySelector('[data-so-evora]');
-  var dicaEscolher = raiz.querySelector('[data-hint-escolher]');
   var anuncio = raiz.querySelector('[data-anuncio]');
   var soPais = document.querySelectorAll('[data-so-pais]');
   var pecas = document.querySelectorAll('.peca-mais');
@@ -326,9 +314,12 @@
     }
   }
 
+  /* O BLOCO DE CABEÇA DE CADA ESTADO. O bloco `vazio` saiu com a Emenda 19a (era
+     o do concelho sem linhas, e um concelho já não se abre aqui), e por isso o
+     defeito deixa de ser ele e passa a ser o país: um estado sem bloco próprio
+     mostra o do país, que é o que a página é. */
   function chaveDoBloco(ambito) {
-    if (ambito === AMBITO_ESCOLHA) return AMBITO_DEFEITO;
-    return comBloco[ambito] ? ambito : 'vazio';
+    return comBloco[ambito] ? ambito : AMBITO_DEFEITO;
   }
 
   function aplica(estadoNovo, modo) {
@@ -361,64 +352,21 @@
        uma segunda cópia do 640 dentro deste ficheiro divergiria da folha no dia
        em que ela mudasse. */
 
-    var slug = ambito.indexOf('municipio:') === 0 ? ambito.slice('municipio:'.length) : null;
-    var ponto = slug ? porSlug[slug] : null;
-
-    /* Os dois `data-slot`: o nome e o distrito daquele concelho, copiados do nó
-       que o servidor escreveu. É o único texto que este ficheiro põe à vista. */
-    if (ponto) {
-      var slotsNome = document.querySelectorAll('[data-slot="nome"]');
-      for (var s1 = 0; s1 < slotsNome.length; s1++) slotsNome[s1].textContent = ponto.nome;
-      var slotsDist = document.querySelectorAll('[data-slot="distrito"]');
-      for (var s2 = 0; s2 < slotsDist.length; s2++) slotsDist[s2].textContent = ponto.distrito;
-      /* E o prefixo «distrito de», que não é escrito aqui: está na página nas
-         duas edições e o que isto faz é acendê-lo ou apagá-lo. */
-      var prefixos = document.querySelectorAll('[data-prefixo-distrito]');
-      for (var s3 = 0; s3 < prefixos.length; s3++) prefixos[s3].hidden = ponto.ilha;
-    }
-
     var chave = chaveDoBloco(ambito);
     mostraSo(blocos, 'data-cabeca', chave);
     mostraSo(paineis, 'data-painel', chave);
 
-    for (var i5 = 0; i5 < escolhas.length; i5++) {
-      escolhas[i5].setAttribute(
-        'aria-pressed',
-        escolhas[i5].getAttribute('data-escolher') === slug ? 'true' : 'false',
-      );
-    }
-
-    /* A postura do mapa. Ficha inteira no País e na escolha; cartão localizador
-       quando um concelho está escolhido e a leitura aprofunda (Emenda 3).
-
-       O cartão já NÃO se esconde por atributo: desde a 2g ele é a moldura que
-       tem o mapa dentro, e esconder o cartão esconderia o mapa. Quem decide o
-       que dele se vê é `data-postura`, lido pela folha — o mesmo atributo que
-       já decidia o tamanho da tela. */
-    /* A LEGENDA E A LEITURA DEIXARAM DE SE ESCONDER AQUI (etapa 2m). Era este
-       ficheiro que punha `hidden` na ficha conforme a postura, e por isso uma
-       página sem script que rendesse o cartão localizador mostrava a legenda dos
-       308 por baixo dele. A postura já está no atributo e a folha lê-a
-       (`[data-postura='localizador'] .mapa-linha`); o que sobra aqui é o âmbito
-       região, onde a figura inteira se esconde, e isso continua abaixo. */
-    var comCartao = !!ponto && estado.densidade !== 'relance';
-    if (cartao) cartao.hidden = false;
-    if (soEvora) soEvora.hidden = !(ponto && ponto.comPagina);
-    if (dicaEscolher) dicaEscolher.hidden = mo !== 'municipio';
-    /* O MAPA NUNCA DESAPARECE AO MUDAR DE ESTADO (bloco A, achado C1). Tocar em
-       «Ver uma região →» apagava o mapa (`figura.hidden = mo === 'regiao'`): o
-       leitor perdia, no mesmo gesto, a referência que acabara de usar para se
-       orientar. O comando «Região» saiu (item A2) e a régua saiu com ele (item
-       A3); o que fica escrito é a regra, e não a sua ausência por acidente — a
-       figura não se esconde por âmbito nenhum. O que muda com o estado é a
-       POSTURA, que é o que a Emenda 3 desenha. */
+    /* A POSTURA DO MAPA NA PRIMEIRA PÁGINA É UMA SÓ (Emenda 19d). O cartão
+       localizador era a postura de um concelho escolhido, e um concelho já não
+       se escolhe aqui: ele vive na página do concelho, onde o servidor o rende
+       (`MunicipioView`, com `postura="localizador"`). A figura fica sempre
+       inteira, e continua a não se esconder por âmbito nenhum (bloco A, achado
+       C1: tocar num comando não pode apagar a referência que o leitor acabou de
+       usar para se orientar). */
     var figura = raiz.querySelector('[data-mapa-raiz]');
     if (figura) {
       figura.hidden = false;
-      figura.setAttribute('data-postura', comCartao ? 'localizador' : 'inteiro');
-    }
-    for (var i8 = 0; i8 < pontos.length; i8++) {
-      pontos[i8].el.classList.toggle('mun-escolhido', pontos[i8].slug === slug);
+      figura.setAttribute('data-postura', 'inteiro');
     }
 
     for (var i9 = 0; i9 < soPais.length; i9++) soPais[i9].hidden = !eDoPais(ambito);
@@ -426,10 +374,6 @@
     /* A densidade: o comando global abre ou fecha todas as peças. Um toque numa
        peça muda só a dela, e não mexe nas outras — é a regra da prancha. */
     for (var i10 = 0; i10 < pecas.length; i10++) pecas[i10].open = estado.densidade === 'leitura';
-
-    /* A lente é da vista de escolha, e sai com ela: quem escolhe um concelho, ou
-       fecha a vista, volta a ver o mapa como o encontrou. */
-    if (ambito !== AMBITO_ESCOLHA) repoeAmpliacao();
 
     if (ligacaoDeIdioma && baseDoIdioma !== null) {
       ligacaoDeIdioma.setAttribute('href', baseDoIdioma + pesquisaDe(estado));
@@ -494,15 +438,15 @@
       botao.addEventListener('click', function (ev) {
         ev.preventDefault();
         var modo = botao.getAttribute('data-modo');
-        /* «País» é um âmbito e escolhe-se a si próprio. «Concelho» abre a vista
-           de escolha, que desde a etapa 2m É um estado do esquema e por isso vai
-           ao endereço — mas só quando ainda não há concelho escolhido: com um
-           escolhido, o comando já está premido e carregar nele não pode desfazer
-           a escolha. */
+        /* «País» fecha a pesquisa e volta ao defeito. «Concelho» abre a pesquisa,
+           que é um estado do esquema e por isso vai ao endereço (Emenda 19c). Os
+           dois são a mesma linha, nas duas larguras: acima de 640 a folha mostra
+           a pesquisa pelo `data-modo` da raiz, abaixo de 640 ela está sempre à
+           vista e o que o comando faz é levar o foco ao campo (item A1). */
         var novo = estado;
         if (modo === 'pais') novo = { ambito: AMBITO_DEFEITO, densidade: estado.densidade };
-        else if (modo === 'municipio' && modoDe(estado.ambito) !== 'municipio') {
-          novo = { ambito: AMBITO_ESCOLHA, densidade: estado.densidade };
+        else if (modo === 'municipio') {
+          novo = { ambito: AMBITO_PESQUISA, densidade: estado.densidade };
         }
         /* ------------------------------------------------------------------
            O COMANDO PÕE A PESQUISA À VISTA, E NÃO ROLA PARA LÁ DELA (item A1)
@@ -536,39 +480,29 @@
     })(segsDensidade[c2]);
   }
 
-  for (var c4 = 0; c4 < escolhas.length; c4++) {
-    (function (botao) {
-      botao.addEventListener('click', function (ev) {
-        ev.preventDefault();
-        vai(
-          { ambito: 'municipio:' + botao.getAttribute('data-escolher'), densidade: estado.densidade },
-          'municipio',
-          botao,
-        );
-      });
-    })(escolhas[c4]);
-  }
-
   /* --------------------------------------------------------------- a pesquisa
    *
    * Os resultados já estão na página e o que isto faz é tirar-lhes o `hidden`.
    * Oito, no máximo, e a ordem é a da Carta.
    *
    * A REGRA DA CAIXA VAZIA É A DA PRANCHA (subetapa 2g, ponto 5): com a caixa
-   * vazia mostram-se os concelhos que têm página — hoje um, Évora — e, se
-   * houver um concelho escolhido, também ele. Os outros aparecem quando o
-   * leitor escrever. Uma vista de escolha que abre com oito nomes que ninguém
-   * pediu diz que aqueles oito são especiais, e não são: são os primeiros da
-   * Carta.
+   * vazia mostram-se os concelhos que têm página, hoje um, Évora. Os outros
+   * aparecem quando o leitor escrever. Uma pesquisa que abre com oito nomes que
+   * ninguém pediu diz que aqueles oito são especiais, e não são: são os
+   * primeiros da Carta.
    *
-   * SÃO DOIS ESTADOS, E O TERCEIRO SAIU COM O SELO DO MAPA (item A4):
+   * SÃO DOIS ESTADOS, E OS OUTROS DOIS SAÍRAM:
    *
    *   caixa escrita     os que casam com o que está escrito
-   *   caixa vazia       os concelhos com página, e o concelho escolhido
+   *   caixa vazia       os concelhos com página
    *
-   * O terceiro era a lista de proximidade da subetapa 2h — um toque no selo do
-   * mapa devolvia os concelhos mais próximos do sítio tocado. O selo saiu com o
-   * mapa do telemóvel, e nenhuma outra superfície alcançava aquele gesto.
+   * O terceiro era a lista de proximidade da subetapa 2h (um toque no selo do
+   * mapa devolvia os concelhos mais próximos do sítio tocado), e saiu com o mapa
+   * do telemóvel no item A4. O quarto era o concelho ESCOLHIDO, que a caixa
+   * vazia mostrava ao lado dos que têm página: com a Emenda 19a não há concelho
+   * escolhido na primeira página, e o que um resultado faz é abrir a página do
+   * concelho, ou dizer que ela ainda não existe, exactamente como em
+   * `/municipios`.
    */
   if (campo) {
     var itens = raiz.querySelectorAll('.pesquisa-item');
@@ -579,25 +513,14 @@
         .replace(/[\u0300-\u036f]/g, '')
         .toLowerCase()
         .trim();
-      var escolhido =
-        estado.ambito.indexOf('municipio:') === 0
-          ? estado.ambito.slice('municipio:'.length)
-          : null;
       var vistos = 0;
       for (var j = 0; j < itens.length; j++) {
         /* Caixa com texto: os oito primeiros que casam. Caixa vazia: os
-           concelhos que têm página, que é o que o servidor já rendeu, mais o
-           concelho escolhido, se houver um. */
-        var botaoDoItem = itens[j].querySelector('[data-escolher]');
-        var slugDoItem = botaoDoItem ? botaoDoItem.getAttribute('data-escolher') : null;
-        var casa;
-        if (q.length > 0) {
-          casa = itens[j].getAttribute('data-normal').indexOf(q) >= 0;
-        } else {
-          casa =
-            itens[j].hasAttribute('data-tem-pagina') ||
-            (escolhido !== null && slugDoItem === escolhido);
-        }
+           concelhos que têm página, que é o que o servidor já rendeu. */
+        var casa =
+          q.length > 0
+            ? itens[j].getAttribute('data-normal').indexOf(q) >= 0
+            : itens[j].hasAttribute('data-tem-pagina');
         var mostrar = casa && vistos < MAX;
         itens[j].hidden = !mostrar;
         if (mostrar) vistos++;
@@ -615,129 +538,51 @@
     });
   }
 
-  /* ------------------------------------------------- um ponto é um alvo, aqui?
+  /* --------------------------------- o mapa deixou de escolher (Emenda 19b)
    *
-   * Emenda 3: abaixo de 640 o SELO INTEIRO é o alvo e nenhum ponto é alvo. A
-   * folha di-lo com `pointer-events: none !important` em todos os `.mun-alvo`, e
-   * isso trava o rato e o dedo — mas não travava o teclado, que escolhia um
-   * concelho ponto a ponto a 390, onde nenhum outro gesto o consegue (etapa 2i,
-   * achado 8d).
+   * VIVIAM AQUI TRÊS MECANISMOS, E OS TRÊS SAÍRAM COM A VISTA DE ESCOLHA:
    *
-   * A pergunta faz-se À FOLHA e não a uma largura escrita aqui. O 640 vive numa
-   * `@media`, e uma segunda cópia dele neste ficheiro divergiria da primeira no
-   * dia em que a folha mudasse — é a mesma razão pela qual as listas fechadas
-   * são lidas do documento. O que se lê é a resposta da folha para o estado em
-   * que a página está, e essa resposta já inclui o âmbito, porque é o âmbito que
-   * acende os alvos.
+   *   `pontoEAlvo()`      perguntava à folha se um ponto era alvo naquele estado
+   *                       e naquela largura, para que o teclado não escolhesse um
+   *                       concelho que nenhum outro gesto alcança (achado 8d);
+   *   os 308 ouvintes de clique nas áreas de toque, que escolhiam o concelho;
+   *   `[data-trocar]`, «trocar de concelho», que voltava à fila de escolha.
    *
-   * Falha do lado seguro: sem folha carregada o valor é `auto`, e a página fica
-   * com o comportamento que tinha. */
-  var alvoDeReferencia = mapa ? mapa.querySelector('[data-alvos] [data-caop]') : null;
-
-  function pontoEAlvo() {
-    if (!alvoDeReferencia || !window.getComputedStyle) return false;
-    return window.getComputedStyle(alvoDeReferencia).pointerEvents !== 'none';
-  }
-
-  /* Um toque no mapa escolhe o concelho mais próximo, e só quando a página está
-     a escolher: fora daí os pontos não são alvos. */
-  if (mapa) {
-    var alvos = mapa.querySelectorAll('[data-alvos] [data-caop]');
-    for (var c5 = 0; c5 < alvos.length; c5++) {
-      (function (alvo) {
-        alvo.addEventListener('click', function () {
-          if (modoEscolhido !== 'municipio' || !pontoEAlvo()) return;
-          vai(
-            { ambito: 'municipio:' + alvo.getAttribute('data-caop'), densidade: estado.densidade },
-            'municipio',
-            tela,
-          );
-        });
-      })(alvos[c5]);
-    }
-  }
-
-  /* --------------------------------------------------- o selo do país saiu
+   * Com a Emenda 19b um ponto com página é uma LIGAÇÃO, que o servidor rende, e
+   * um ponto sem página não responde a nada: não há estado que acenda alvos, e a
+   * pergunta da folha deixou de ter resposta para dar. As 308 áreas de toque
+   * saíram do SVG (`MapaRespira.astro`), porque nada as ouvia; o que fica a
+   * apanhar o clique é o próprio ponto, dentro da sua ligação.
    *
-   * O SELO DO MAPA SAIU DO TELEMÓVEL, E A LISTA DE PROXIMIDADE COM ELE (bloco A,
-   * item A4; decisão do diretor de 25.08, Emenda 18). Abaixo de 640 o mapa
-   * deixa de se render — 84px de largura e 308 pontos de 1,26px não são um
-   * instrumento, são uma mancha — e no seu lugar fica a pesquisa, à vista. O
-   * selo era o rectângulo invisível por cima do mapa; sem mapa, era uma porta
-   * por cima de papel em branco.
+   * `[data-trocar]` continua a existir na PÁGINA DO CONCELHO, que é onde o cartão
+   * localizador vive (Emenda 19d), e ali é uma ligação para o índice dos 308, que
+   * funciona sem script nenhum. Esta página não a rende, e por isso não a ouve.
    *
-   * A LISTA DE PROXIMIDADE ERA O GESTO DESSE SELO, e mais nada a alcançava: um
-   * toque dentro do mapa ordenava os 308 centróides pela distância ao sítio
-   * tocado e acendia os oito primeiros. Sem o selo não há gesto, e um ramo de
-   * código que nenhuma superfície alcança é um mecanismo a fingir que ainda
-   * serve. Sai com ele — `maisProximosDe()`, o estado `proximos` e o terceiro
-   * caso de `filtra()` —, e volta com a forma que a Emenda 3 desenha para o
-   * telemóvel: o mapa por distritos, que cresce ao toque. Fica escrito aqui para
-   * que quem a repuser saiba que ela existiu e porque saiu.
+   * A SAÍDA DA VISTA SAIU COM A VISTA. Eram dois caminhos, «fechar» e Escape,
+   * para voltar ao âmbito País; com o mapa a não crescer, não há de onde sair. O
+   * Escape da caixa de pesquisa continua a limpar a caixa, e é agora o único
+   * Escape desta página, o que dispensa o ouvinte do documento e a travagem de
+   * propagação que o mantinha longe dele.
    */
-
-  /* «trocar de concelho» leva de volta à fila de escolha, e o foco vai com ele. */
-  var trocar = raiz.querySelector('[data-trocar]');
-  if (trocar && campo) {
-    trocar.addEventListener('click', function (ev) {
-      ev.preventDefault();
-      vai({ ambito: AMBITO_ESCOLHA, densidade: estado.densidade }, 'municipio', campo);
-    });
-  }
-
-  /* ------------------------------------------------- a saída da vista de escolha
-   *
-   * «`Escape` ou "fechar" devolvem o mapa à coluna.» São dois caminhos para a
-   * mesma coisa, e a coisa é um estado do esquema: voltar ao âmbito País, que é
-   * o que estava antes de a vista abrir.
-   *
-   * O foco vai para o comando «Município», e não para o «País»: é o comando de
-   * onde a vista se abriu e para onde o leitor volta a olhar; o botão de fechar,
-   * esse, deixa de existir no momento em que fecha, e um foco perdido no corpo
-   * do documento manda quem usa teclado ao princípio da página.
-   *
-   * O Escape da caixa de pesquisa continua a limpar a caixa e mais nada: aquele
-   * ouvinte trava a propagação, e por isso este nunca o vê. É a mesma disciplina
-   * de antes, agora com dois significados de Escape na mesma página, cada um no
-   * seu sítio.
-   */
-  var comandoDeMunicipio = raiz.querySelector('.seg[data-modo="municipio"]');
-  var fecharMapa = raiz.querySelector('[data-fechar-mapa]');
-
-  function fechaAEscolha(foco) {
-    if (estado.ambito !== AMBITO_ESCOLHA) return false;
-    vai(
-      { ambito: AMBITO_DEFEITO, densidade: estado.densidade },
-      'pais',
-      foco || comandoDeMunicipio,
-    );
-    return true;
-  }
-
-  if (fecharMapa) {
-    fecharMapa.setAttribute('role', 'button');
-    activaComEspaco(fecharMapa);
-    fecharMapa.addEventListener('click', function (ev) {
-      ev.preventDefault();
-      fechaAEscolha();
-    });
-  }
-
-  document.addEventListener('keydown', function (ev) {
-    if (ev.key !== 'Escape') return;
-    if (fechaAEscolha()) ev.preventDefault();
-  });
 
   window.addEventListener('popstate', function () {
+    /* Um endereço antigo pode voltar pela história (um marcador, ou o botão de
+       voltar de uma visita anterior), e vai para onde a Emenda 19a o manda. */
+    if (reencaminhaEstadoAntigo()) return;
     aplica(leDoEndereco(), null);
     anuncia();
   });
 
   /* --------------------------------------------------------------- o arranque
    *
-   * O endereço é normalizado à chegada, com `replaceState`: um valor inválido ou
-   * desconhecido não fica escrito na barra a fingir que existe, e um valor por
-   * defeito não fica escrito a repetir o que o defeito já diz. */
+   * Primeiro os endereços antigos: um `?ambito=municipio:<slug>` não se
+   * normaliza, muda de página (Emenda 19a), e nada do que vem a seguir tem de
+   * correr para uma página que está a sair.
+   *
+   * O resto do endereço é normalizado à chegada, com `replaceState`: um valor
+   * inválido ou desconhecido não fica escrito na barra a fingir que existe, e um
+   * valor por defeito não fica escrito a repetir o que o defeito já diz. */
+  if (reencaminhaEstadoAntigo()) return;
   aplica(estado, null);
   var normalizado = location.pathname + pesquisaDe(estado) + location.hash;
   if (normalizado !== location.pathname + location.search + location.hash) {
@@ -766,12 +611,10 @@
 
     /* As duas dicas descrevem o que só é verdade com script: entram `hidden` do
        servidor e acendem-se aqui. A folha volta a apagá-las abaixo de 640 e na
-       postura de localizador, onde o mapa não escolhe pontos. */
+       postura de localizador, onde o mapa não lê pontos. A terceira, «Toque num
+       ponto para escolher o concelho», saiu com a escolha (Emenda 19b): descrevia
+       um gesto que a página deixou de fazer. */
     if (dica) dica.hidden = false;
-
-    /* A medida do campo lê-se em `medidaDoCampo()`, uma vez, ao lado da lente:
-       eram duas cópias da mesma leitura do `viewBox`, e a segunda deixou de ser
-       usada quando a conversão de coordenadas passou a ser a da lente. */
 
     var iComPagina = 0;
     for (var k2 = 0; k2 < pontos.length; k2++) {
@@ -786,10 +629,10 @@
     anel.setAttribute('class', 'cursor-ring');
     anel.setAttribute('r', '9');
     anel.style.display = 'none';
-    /* Dentro do grupo que a lente move, e não à solta no SVG: um anel fora da
-       transformação ficaria a marcar o sítio onde o ponto estava antes de
-       ampliar. */
-    (grupoDoCampo || mapa).appendChild(anel);
+    /* No SVG, ao lado dos pontos: com a lente fora (Emenda 19b) não há
+       transformação de que o anel se pudesse separar, e o grupo que ela movia
+       saiu com ela. */
+    mapa.appendChild(anel);
 
     var sel = -1;
     var modoTeclado = false;
@@ -868,18 +711,22 @@
 
     tela.addEventListener('keydown', function (ev) {
       if (ev.key === 'Enter' || ev.key === ' ') {
-        /* A LEITURA FICA, A ESCOLHA NÃO (etapa 2i, achado 8d). Onde nenhum ponto
-           é alvo — no telemóvel, e na postura de localizador — as setas continuam
-           a percorrer o mapa e a dizer o nome do concelho em voz alta, que é
-           leitura e não escolha; o que não pode acontecer é o Enter ou o espaço
-           escolherem um ponto que nenhum outro gesto alcança. */
-        if (modoEscolhido !== 'municipio' || !pontoEAlvo() || sel < 0) return;
+        /* O ENTER ABRE A PÁGINA DO PONTO, QUANDO ELE TEM UMA (Emenda 19b).
+           As setas continuam a ser o «passar o rato» do teclado: percorrem o mapa
+           e dizem o nome do concelho em voz alta, que é leitura. O que muda com a
+           Emenda 19 é o que o Enter faz no fim dessa leitura: escolhia um
+           concelho dentro desta página, e passa a abrir a página dele. Num ponto
+           sem página não faz nada, que é o que o mapa promete.
+
+           A PORTA É A QUE O SERVIDOR RENDEU, e não um endereço montado aqui:
+           `porta.click()` segue a mesma ligação que o rato segue, com o mesmo
+           destino e a mesma edição. O espaço vale como o Enter, que é a promessa
+           do papel de aplicação da tela (etapa 2i, achado 16). */
+        if (sel < 0 || !pontos[sel].comPagina) return;
+        var porta = mapa.querySelector('[data-mun-porta="' + pontos[sel].slug + '"]');
+        if (!porta) return;
         ev.preventDefault();
-        vai(
-          { ambito: 'municipio:' + pontos[sel].slug, densidade: estado.densidade },
-          'municipio',
-          tela,
-        );
+        porta.click();
         return;
       }
       if (ev.key === 'Home') {
@@ -916,78 +763,19 @@
       if (melhor2 >= 0) mostra(melhor2);
     });
 
-    /* --------------------------------------------------------- a lente, ligada
+    /* ------------------------------------------------ a lente, desligada e fora
      *
-     * Os dois gestos vivem na caixa do mapa e só na vista de escolha: fora dela
-     * a roda do rato é da página, e apanhá-la seria roubar o deslocamento a quem
-     * só quer descer. `pontoEAlvo()` fecha a porta ao telemóvel pela mesma
-     * pergunta que já fecha a escolha ponto a ponto — a folha responde, e não
-     * uma largura escrita aqui.
+     * Estavam aqui cinco ouvintes na caixa do mapa: `wheel`, `touchstart`,
+     * `touchmove`, `touchend` e `dblclick`, todos guardados por `podeAmpliar()`,
+     * que era «estamos na vista de escolha e os pontos são alvos». Faziam a
+     * ampliação de 1× a 4× e a reposição por toque duplo.
+     *
+     * Saem inteiros com a Emenda 19b. O `wheel` era o que mais custava: com
+     * `preventDefault` dentro da caixa, a roda do rato sobre o mapa deixava de
+     * rolar a página, e o leitor que só queria descer ficava preso num mapa a
+     * crescer. A caixa do mapa volta a ser uma caixa como as outras, e a roda
+     * volta a ser da página.
      */
-    var podeAmpliar = function () {
-      return estado.ambito === AMBITO_ESCOLHA && pontoEAlvo();
-    };
-
-    tela.addEventListener(
-      'wheel',
-      function (ev) {
-        if (!podeAmpliar()) return;
-        ev.preventDefault();
-        var q = paraTela(ev.clientX, ev.clientY);
-        if (!q) return;
-        /* Um passo por entalhe, e o sinal do entalhe é o sentido. O passo é
-           multiplicativo porque a ampliação é: de 1× a 4× são dezanove entalhes
-           para cima, e os mesmos dezanove para baixo. */
-        amplia(amp.k * (ev.deltaY < 0 ? 1.08 : 1 / 1.08), q.x, q.y);
-      },
-      { passive: false },
-    );
-
-    var beliscao = null;
-    var distanciaDosDedos = function (toques) {
-      var dx = toques[0].clientX - toques[1].clientX;
-      var dy = toques[0].clientY - toques[1].clientY;
-      return Math.sqrt(dx * dx + dy * dy);
-    };
-
-    tela.addEventListener(
-      'touchstart',
-      function (ev) {
-        if (!podeAmpliar() || ev.touches.length !== 2) return;
-        var d = distanciaDosDedos(ev.touches);
-        var meio = paraTela(
-          (ev.touches[0].clientX + ev.touches[1].clientX) / 2,
-          (ev.touches[0].clientY + ev.touches[1].clientY) / 2,
-        );
-        if (!(d > 0) || !meio) return;
-        beliscao = { d: d, k: amp.k, q: meio };
-      },
-      { passive: false },
-    );
-
-    tela.addEventListener(
-      'touchmove',
-      function (ev) {
-        if (!beliscao || ev.touches.length !== 2) return;
-        ev.preventDefault();
-        amplia(beliscao.k * (distanciaDosDedos(ev.touches) / beliscao.d), beliscao.q.x, beliscao.q.y);
-      },
-      { passive: false },
-    );
-
-    tela.addEventListener('touchend', function () {
-      beliscao = null;
-    });
-
-    /* O TOQUE DUPLO REPÕE, e o `dblclick` serve os dois aparelhos: o rato
-       dispara-o de origem e o toque duplo também, em todos os motores que este
-       sítio serve. Repor não é ampliar ao contrário: é voltar ao 1× e ao canto
-       de origem de uma vez, que é o que a mão espera de um gesto de desfazer. */
-    tela.addEventListener('dblclick', function (ev) {
-      if (!podeAmpliar()) return;
-      ev.preventDefault();
-      repoeAmpliacao();
-    });
 
     tela.addEventListener('focus', function () {
       modoTeclado = true;

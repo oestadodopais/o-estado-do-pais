@@ -340,10 +340,20 @@
   vector-effect: non-scaling-stroke;
   pointer-events: none;
 }
-.mun-alvo {
-  fill: transparent;
-  stroke: none;
-  pointer-events: none;
+/* O PONTO DE UMA LIGAÇÃO APANHA O CLIQUE NO DISCO INTEIRO (Emenda 19b).
+ *
+ * As 308 áreas de toque saíram do SVG com a escolha (`MapaRespira.astro`), e o
+ * que fica a apanhar o clique é o ponto dentro da sua ligação. Um `<circle>` com
+ * `fill: none` só recebe eventos onde está PINTADO, que são os 1,2px do traço:
+ * medido a 26.08 sobre `main`, um clique no centro do ponto de Évora atravessava
+ * o miolo e caía no `svg`, e a ligação não abria. `pointer-events: all` faz do
+ * disco inteiro o alvo sem pintar um pixel, que é o que a Emenda 10 exige.
+ *
+ * O alvo assim mede 7,35 × 7,35px na coluna, e não 44: é o tamanho do ponto. A
+ * Emenda 19e diz o que fazer com isso, e não é aumentar o ponto: é a pesquisa,
+ * até haver o mapa por distritos (ISSUES I70). */
+.mun-porta .mun {
+  pointer-events: all;
 }
 .mapa-svg:focus-visible {
   outline: 2px solid var(--focus);
@@ -632,12 +642,12 @@ svg [hidden] {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 8px;
   }
-  /* Duas das três dicas descrevem gestos que abaixo de 640 não existem: não há
-     cursor, e nenhum ponto é alvo (Emenda 3). Ficam fora da árvore, e com elas
-     fora da descrição do mapa. A do TECLADO fica: um teclado liga-se a qualquer
-     aparelho, e o mapa continua a responder-lhe. */
-  .mapa-descricao .mapa-hint[data-dica-cursor],
-  .mapa-descricao .mapa-hint[data-hint-escolher] {
+  /* A dica do cursor descreve um gesto que abaixo de 640 não existe: não há
+     cursor. Fica fora da árvore, e com ela fora da descrição do mapa. A do
+     TECLADO fica: um teclado liga-se a qualquer aparelho, e o mapa continua a
+     responder-lhe. A terceira, a de escolher um ponto, saiu com a escolha
+     (Emenda 19b) e já não há regra que a apague. */
+  .mapa-descricao .mapa-hint[data-dica-cursor] {
     display: none;
   }
 }
@@ -1168,13 +1178,6 @@ a.porta:hover .porta-abrir {
 .mapa-svg .mun-escolhido {
   stroke-width: 3;
 }
-/* A escolha só existe quando a página está a escolher: fora daí nenhum ponto é
-   alvo, e é a Emenda 3 a dizê-lo para o telemóvel e o bom senso a dizê-lo para
-   o resto. */
-[data-inicio][data-modo='municipio'] .mun-alvo {
-  pointer-events: all;
-  cursor: pointer;
-}
 [data-postura='localizador'] .mapa-tela {
   width: 170px;
 }
@@ -1183,99 +1186,29 @@ a.porta:hover .porta-abrir {
 }
 
 /* ============================================================================
- * A VISTA DE ESCOLHA: O MAPA CRESCE PARA SE PODER ESCOLHER (etapa 2m, brief §1)
+ * A VISTA DE ESCOLHA SAIU (Emenda 19b, 26.08.2026)
  * ============================================================================
  *
- * «O mapa expande-se à largura inteira do conteúdo (a coluna de texto colapsa
- * por cima dele; a pesquisa fica acima do mapa), com o campo à escala em que os
- * vizinhos mais próximos da costa se separam, os alvos maiores na mesma
- * proporção e as ilhas proporcionais.»
+ * Viviam aqui nove regras, todas presas a `[data-inicio][data-ambito='municipio']`
+ * dentro de `@media (min-width: 641px)`: a coluna de texto colapsava, a tela do
+ * mapa passava a 100% da largura do conteúdo (1 092px a 1280), a legenda e o
+ * rodapé mudavam de célula, o raio do ponto descia a 2px para que o campo maior
+ * não desse 308 discos de 16,4px, «fechar» aparecia, e a tela ganhava
+ * `touch-action: none` para que a ampliação não rolasse a página por baixo do
+ * dedo. E fora da `@media` ficava `.mapa-fechar`, o comando de sair.
  *
- * O ESTADO TEM ENDEREÇO, E É POR ELE QUE A FOLHA PERGUNTA. `?ambito=municipio`
- * é a vista de escolha (ISSUES I42, fechado nesta ronda); `municipio:<slug>` é
- * um concelho escolhido, que é outro estado e não cresce. O selector é de
- * igualdade exacta, e por isso distingue os dois sem uma classe nova.
+ * Saem todas. O diretor viu a vista no computador a 26.08 («uma vista que sai do
+ * lugar e da escala, em que a roda do rato só faz crescer o mapa e a página
+ * continua a mostrar o país») e decidiu que o mapa da primeira página é
+ * navegação: um ponto com página é uma ligação, e o mapa nunca cresce, nunca
+ * amplia e nunca toma a roda do rato à página. `?ambito=municipio` continua a
+ * existir com um só significado, «a pesquisa está aberta», e esse significado
+ * já está escrito noutro sítio desta folha, em `.pesquisa-bloco`.
  *
- * O QUE CRESCE, E O QUE NÃO CRESCE. O campo é um `viewBox`, e por isso tudo o
- * que está declarado em unidades dele — as posições, as molduras das ilhas, as
- * áreas de toque — cresce sozinho e na mesma proporção. O que NÃO pode crescer
- * na mesma proporção é o ponto: a 1092px de largura um raio de 4,5 unidades dá
- * um disco de 16,4px, e 308 discos de 16,4px num campo onde o par mais próximo
- * está a 5,1px de distância são uma nódoa e não um território. O raio desce a 2
- * unidades, que a esta escala são os mesmos 7,3px de diâmetro que o ponto tem na
- * coluna — o ponto fica do mesmo tamanho e o campo é que se abre debaixo dele.
- * É essa a conta que separa os vizinhos: dois pontos tocam-se quando estão a
- * menos de um diâmetro um do outro, e o número de concelhos cujo vizinho mais
- * próximo está mais perto do que isso cai de 44 para 9.
- *
- * O contorno segue o raio pela mesma razão, e a ampliação leva os dois consigo,
- * porque uma ampliação é uma lente sobre o mesmo desenho e não um segundo
- * desenho.
- *
- * Abaixo de 640 nada disto se aplica: o telemóvel fica como estava (Emenda 3 —
- * o selo é o alvo, nenhum ponto é alvo, a pesquisa é o caminho).
+ * O mapa mede o mesmo nos dois estados, e é isso que a régua
+ * `tests/inicio/mapa-navegacao.mjs` mede: 490px a 1280, no país e com a pesquisa
+ * aberta.
  */
-@media (min-width: 641px) {
-  [data-inicio][data-ambito='municipio'] .cabeca-grelha {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  [data-inicio][data-ambito='municipio'] .mapa-tela {
-    width: 100%;
-    grid-column: 1;
-    grid-row: 1;
-  }
-  [data-inicio][data-ambito='municipio'] .mapa-linha {
-    grid-column: 1;
-    grid-row: 1;
-    align-self: end;
-    margin-left: 45%;
-  }
-  [data-inicio][data-ambito='municipio'] .mapa-rodape {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  [data-inicio][data-ambito='municipio'] .mapa-svg .mun {
-    r: 2px;
-    stroke-width: 0.6;
-  }
-  [data-inicio][data-ambito='municipio'] .mapa-svg .mun-escolhido {
-    stroke-width: 1.5;
-  }
-  [data-inicio][data-ambito='municipio'] .mapa-fechar {
-    display: inline-flex;
-  }
-  /* A ampliação corre dentro da caixa do mapa: a roda e o beliscão não podem
-     rolar a página por baixo do dedo enquanto ampliam. */
-  [data-inicio][data-ambito='municipio'] .mapa-tela {
-    touch-action: none;
-  }
-}
-
-/* «fechar» — a saída da vista de escolha. Fica no canto superior direito do
-   campo, que é o maior espaço vazio do desenho (o continente começa em x=300 e
-   em y=63,9), e é um alvo de 44px como os outros comandos desta página. */
-.mapa-fechar {
-  display: none;
-  grid-column: 1;
-  grid-row: 1;
-  justify-self: end;
-  align-self: start;
-  align-items: center;
-  min-height: 44px;
-  padding: 0 14px;
-  border: 1px solid var(--rule-strong);
-  background: var(--paper);
-  font-family: var(--f-versal);
-  font-size: 13px;
-  letter-spacing: 0.05em;
-  font-weight: 600;
-  color: var(--ink);
-  text-decoration: none;
-  z-index: 2;
-}
-.mapa-fechar:hover {
-  border-color: var(--ink);
-}
 
 /* O SELO É O MAIOR ALVO DA PEÇA, e é uma medição e não uma intenção.
  *
@@ -1327,8 +1260,7 @@ a.porta:hover .porta-abrir {
      legenda do que a pesquisa escolhe, e é onde vive o selo da Carta.
      ------------------------------------------------------------------------- */
   [data-inicio] .mapa-tela,
-  [data-inicio] .mapa-rodape,
-  [data-inicio] .mapa-fechar {
+  [data-inicio] .mapa-rodape {
     display: none;
   }
   /* A `<figure>` dissolve-se: o que dela fica é a legenda, e uma figura com uma
@@ -1383,13 +1315,12 @@ a.porta:hover .porta-abrir {
     margin-top: -4px;
   }
 
-  /* Nenhum ponto é alvo, e continua a ser a Emenda 3 a dizê-lo. Com o mapa fora
-     do ecrã a regra é redundante para o dedo e não é para o teclado, que é
-     exatamente a razão pela qual `public/js/inicio.js` a lê em vez de escrever
-     uma segunda cópia do 640. */
-  .mun-alvo {
-    pointer-events: none !important;
-  }
+  /* A REGRA DOS ALVOS SAIU COM ELES (Emenda 19b). Dizia `pointer-events: none
+     !important` nos 308 rectângulos de toque, porque abaixo de 640 nenhum ponto
+     é alvo (Emenda 3), e `public/js/inicio.js` lia-a para saber se o teclado
+     podia escolher. Não há rectângulos, não há escolha, e o mapa inteiro não se
+     rende nesta largura: a tela é `display: none` acima, e um ponto dentro de
+     uma caixa que não existe não é alvo de nada. */
 
   /* A porta da régua da convergência. Uma linha, palavras só, alvo de 44px. */
   .conv-porta {

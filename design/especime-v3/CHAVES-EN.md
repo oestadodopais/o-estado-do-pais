@@ -531,3 +531,30 @@ holds more contracted money in this municipality than the municipality». As dua
 passam a dizer «council» onde falam da câmara, que é a palavra que o mesmo
 ficheiro já usava («Recovery-plan money is attributed by the register, not by the
 council»).
+
+## Emenda 19 · o mapa da primeira página é navegação (26.08.2026)
+
+**Nenhuma chave nova, nas duas edições. Nove chaves retiradas, e uma porta com
+outro destino.** A vista de escolha da primeira página saiu inteira e com ela os
+estados `?ambito=municipio:<slug>`; as cadeias que saem são as dos dois blocos de
+concelho da cabeça, a dica de escolher um ponto no mapa e a segunda porta do
+cartão localizador. Nenhuma delas tinha superfície depois da emenda, e uma cadeia
+sem superfície é uma promessa que ninguém pode ler.
+
+| chave | pt | en | porquê sai |
+|---|---|---|---|
+| `inicio.cabeca.municipioSufixo` | ` · município` | ` · municipality` | era o âmbito das peças do painel de Évora na primeira página; esse painel saiu (Emenda 19a) e a página do concelho não o usa |
+| `inicio.cabeca.municipioPalavra` | ` · município · ` | ` · municipality · ` | o rótulo dos dois blocos de concelho da cabeça |
+| `inicio.cabeca.tituloEvora` | As medidas do concelho, cada uma com a sua linha. | The measures of the municipality, each with its own row. | a manchete do bloco de Évora, que era a cabeça de `/municipios/evora` rendida outra vez na primeira página |
+| `inicio.cabeca.tituloVazioA` · `inicio.cabeca.tituloVazioB` | «Ainda sem linhas para » · «.» | «Still no rows for » · «.» | a manchete do bloco do concelho sem linhas |
+| `inicio.cabeca.ledeVazioA` · `inicio.cabeca.ledeVazioB` | «O ponto marca a posição do concelho na Carta Administrativa, e não cobertura. Quando houver linhas para » · «, entram aqui com a sua fonte e a sua data de leitura.» | «The point marks where the municipality sits on the official administrative map, and not coverage. When there are rows for » · «, they will appear here with their source and their reading date.» | a lede do mesmo bloco. Já não se rendia desde a Emenda 15, que a tirou da página; sai agora com o bloco, porque é dele |
+| `inicio.mapa.escolher` | Toque num ponto para escolher o concelho. | Tap a point to choose the municipality. | a terceira frase da descrição acessível do mapa. Descrevia a escolha, que saiu: um ponto com página é uma ligação, e um destino diz-se na ligação e no seu `<title>` |
+| `inicio.mapa.paginaInteira` | a página inteira, com quem governou | the whole page, with who governed it | a segunda porta do cartão localizador, escondida do servidor e acesa pelo script quando o concelho escolhido tinha página. Sem concelho escolhido nunca acendia; e onde o cartão se rende, na página do concelho, ela apontava para a página em que já se está |
+
+**As que ficam, e onde.** `inicio.mapa.trocar` («trocar de concelho» /
+«change municipality») fica: rende-se no cartão localizador, que vive na página
+do concelho, e o seu destino passa de `/?ambito=municipio` para o índice dos 308
+(`/municipios` · `/en/municipalities`). `densidade.fechar` («fechar» / «close»)
+fica: era o rótulo do comando de sair da vista, que saiu, mas a peça do painel
+rende-a desde a etapa 2. `inicio.cabeca.distritoDe` fica: é o prefixo do distrito
+na leitura em voz alta do mapa.
