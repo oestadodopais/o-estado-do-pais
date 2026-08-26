@@ -11306,3 +11306,49 @@ reescrita para medir a regra e não a forma do ficheiro de teste: varre as 307
 páginas. Os seis estragos plantados, as medidas e os códigos de saída estão em
 `design/especime-v3/notas/concelhos.md` §P2 dados; as capturas com dados em
 `design/especime-v3/capturas/concelhos-2026-08-26/dados/`.
+
+#### P2, a leitura de fora
+
+Seis itens da leitura de olhos frescos, decididos pelo diretor a 26.08.2026.
+**A nota das empresas deixa de afirmar o que a verificação das fontes não
+confirmou:** o INE não diz «sede», diz «Localização geográfica», e o que está
+provado é que cada empresa é imputada a um único concelho. As outras duas
+superfícies vivas da mesma afirmação, as duas na página de Évora, foram
+corrigidas; ficaram por tocar as que relatam o que o trabalho 06 escreve, porque
+são leituras dele e não afirmações da casa sobre a série do INE.
+
+**A etiqueta de cobertura só se rende se houver outro estado de que se
+distinga.** Eram 617 «tem página» iguais no índice dos 308 e 616 no do
+livro-razão dos concelhos, com a linha de cobertura em cima já a dizer o estado
+do todo. As cadeias e a marca ficam, e voltam sozinhas no dia em que um concelho
+não tiver página: medido nos dois estados.
+
+**A legenda da dívida nomeia a lei e pára.** «É a lei que o define, não este
+sítio.» rendia-se em 616 páginas; é o sítio a falar de si. **E a Direção-Geral
+das Autarquias Locais deixa de ser chamada «o regulador»**: é a direção-geral que
+publica os dados das contas dos municípios.
+
+**O cartão localizador localiza e não navega.** Rendia 308 ligações dentro de um
+SVG com `role="img"`, em cada uma das 616 páginas de concelho, com alvos de
+4,5px de raio: a tecnologia de apoio pode achatar o que está dentro de uma
+imagem. A regra N4 fica onde ela é, na primeira página, cujo SVG passa a
+`role="group"`. Medido no `dist/` inteiro: zero ligações dentro de um
+`role="img"`, e as ligações internas conferidas a caírem de 427 298 para
+237 570.
+
+**Duas coisas que a régua não apanhava, e apanha agora.** A célula da
+autorreferência pedia zero na PRIMEIRA PÁGINA e «nada por classificar» em rota
+nenhuma: uma frase de autorreferência DECLARADA numa página de concelho passava
+pelas duas peneiras, e foi assim que a frase da legenda viveu em 616 páginas.
+Passa a exigir zero nas 1 278 rotas medidas. E uma frase CORRIGIDA não pode
+continuar declarada no inventário: plantadas de volta, a nota da sede e a que
+chamava «regulador» à DGAL não fecharam coisa nenhuma, porque estavam
+declaradas. As treze entradas saíram da lista.
+
+**A escala depois destes seis:** 268,08 s, 6 406 páginas, 386 MB.
+
+**Uma colisão de duas mãos na mesma árvore.** Com os seis itens construídos e
+ainda por cometer, outro agente correu `git checkout` sobre doze ficheiros que
+julgava serem de um script seu, e eram estes. Custou uma construção e cerca de
+vinte minutos; o trabalho foi refeito do relatório, cadeia a cadeia. Cada item
+passa a ser cometido assim que fica verde.

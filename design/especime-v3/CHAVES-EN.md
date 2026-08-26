@@ -608,3 +608,27 @@ línguas ao lado dos ids, como o resto daquele ficheiro:
 | nota da medida 8 | Lista anual da Direção-Geral das Autarquias Locais, o regulador das contas municipais. | The annual list of the local-government directorate, the regulator of municipal accounts. |
 | nome da medida 4 | Empresas não financeiras | Non-financial enterprises |
 | etiqueta de um concelho gerado | distrito de \<nome\> | district of \<nome\> |
+
+## Bloco dos 308 concelhos · a leitura de fora (E7 a E12), 26.08.2026
+
+**Nenhuma chave nova.** Os seis itens mudaram o TEXTO de cadeias que já existiam,
+nas duas edições, e uma delas encurtou. Ficam aqui as duas edições de cada uma,
+lado a lado, que é para o que este ficheiro serve.
+
+| onde | pt | en |
+|---|---|---|
+| nota da medida 4 (E7) | Sistema de contas integradas das empresas; cada empresa conta num único concelho. | Integrated business accounts; each enterprise counts in a single municipality. |
+| leitura breve de Évora (E7) | O concelho tem N empresas não financeiras. | The municipality has N non-financial enterprises. |
+| ressalva do método (E7) | …as contas das empresas do concelho, que creditam toda a atividade de uma empresa a um único concelho. | …the accounts of the municipality’s enterprises, which credit a firm’s whole activity to a single municipality. |
+| `municipio.distanciaLei` (E10) | O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores. | The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue. |
+| nota da medida 5 (E11) | Série anual da Direção-Geral das Autarquias Locais, que publica os dados das contas dos municípios. Exclui dívidas não orçamentais e exceções legais. | The annual series of the local-government directorate, which publishes the municipalities’ accounts data. Excludes non-budgetary debt and legal exceptions. |
+| nota da medida 6 (E11) | Calculado sobre duas colunas do mesmo ficheiro da Direção-Geral das Autarquias Locais. A aritmética está na linha. | Computed from two columns of the same local-government directorate file. The arithmetic is on the row. |
+| nota da medida 8 (E11) | Lista anual da Direção-Geral das Autarquias Locais, que publica os dados das contas dos municípios. | The annual list of the local-government directorate, which publishes the municipalities’ accounts data. |
+| `municipio.distanciaLegenda` (E11) | O traço fino é a dívida total que a Direção-Geral das Autarquias Locais publica para o concelho… | The thin line is the total debt the local-government directorate publishes for the municipality… |
+| `municipio.contasDivergenciaRegulador` (E11) | A Direção-Geral publica | The directorate-general publishes |
+| `municipio.tempoRegulador` (E11) | A Direção-Geral | The directorate-general |
+| `municipio.tempoSerieA` (E11) | O índice de dívida da Direção-Geral desceu de | The directorate-general’s debt index fell from |
+
+**A que saiu**, e fica declarada como autorreferência no `INVENTARIO-FRASES.md`
+para que repô-la feche a construção: «É a lei que o define, não este sítio.» /
+«The law defines it, not this site.»
