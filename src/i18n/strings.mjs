@@ -1066,7 +1066,7 @@ export const STRINGS = {
       contasPrazoMedioUnidade: 'dias',
       contasDivergenciaK: 'A diferença entre as duas contas da mesma dívida',
       contasDivergenciaV:
-        'A Direção-Geral das Autarquias Locais e o município publicam a dívida do mesmo ano com uma diferença. A diferença é pequena, e mostra-se porque é o único sítio onde uma voz de fora e a voz do próprio medem a mesma coisa.',
+        'A Direção-Geral das Autarquias Locais e o município publicam a dívida do mesmo ano com uma diferença. A diferença é pequena.',
       contasDivergenciaRegulador: 'A Direção-Geral publica',
       contasDivergenciaMunicipio: 'O município publica',
       contasDivergenciaDiferenca: 'Diferença',
@@ -1099,7 +1099,7 @@ export const STRINGS = {
       tempoEmFuncoes: 'em funções',
       tempoExcessoK: 'O excesso sobre o teto legal',
       tempoExcessoV:
-        'O que a dívida excedia o limite legal, no primeiro e no último ano em que o relatório o publica como um valor positivo. Depois disso o quadro passa a números negativos, que já não são excesso mas capacidade de endividamento, e por isso esta página para aqui.',
+        'O que a dívida excedia o limite legal, no primeiro e no último ano em que o relatório o publica como um valor positivo. Depois disso o quadro passa a números negativos, que já não são excesso mas capacidade de endividamento.',
       tempoFundoK: 'Como esta linha do tempo é feita',
       tempoFundoPartes: [
         'Os períodos são os das administrações tal como foram instaladas, e as datas de instalação vêm do trabalho sobre os quinze anos. Cada valor tem linha no livro-razão. As duas dívidas herdadas em ',
@@ -1164,8 +1164,14 @@ export const STRINGS = {
          o trabalho, por cima de uma página onde o trabalho está à vista. Os
          outros dois estados ficam porque são ausências declaradas. */
       leituraRelanceK: 'Relance',
+      /* O RÓTULO DA CAMADA (decisão do diretor, 26.08.2026). Dizia «Leitura
+         breve · prosa da casa, assente numa frase do trabalho»: a página a
+         explicar de que género é o texto que traz e em que é que ele assenta,
+         que é a classe que a Emenda 15 tira da página do leitor. O rótulo passa
+         a nomear a camada e mais nada; a proveniência de cada frase vive no selo
+         que ela leva e na linha a que o selo abre. `leituraBreveRotulo` saiu, e
+         o gabarito passou a ler esta chave, que já existia e não se rendia. */
       leituraBreveK: 'Leitura breve',
-      leituraBreveRotulo: 'Leitura breve · prosa da casa, assente numa frase do trabalho',
       leituraFundoK: 'Método e ressalvas',
       leituraOutraLingua: 'A mesma frase na outra edição',
       municipioK: 'O concelho de que trata',
@@ -1853,7 +1859,7 @@ export const STRINGS = {
       contasPrazoMedioUnidade: 'days',
       contasDivergenciaK: 'The gap between the two accounts of the same debt',
       contasDivergenciaV:
-        'The local-government directorate and the municipality publish the same year’s debt with a difference between them. The difference is small, and it is shown because it is the only place where an outside voice and the municipality’s own voice measure the same thing.',
+        'The local-government directorate and the municipality publish the same year’s debt with a difference between them. The difference is small.',
       contasDivergenciaRegulador: 'The directorate-general publishes',
       contasDivergenciaMunicipio: 'The municipality publishes',
       contasDivergenciaDiferenca: 'Difference',
@@ -1881,7 +1887,7 @@ export const STRINGS = {
       tempoEmFuncoes: 'in office',
       tempoExcessoK: 'The excess over the legal ceiling',
       tempoExcessoV:
-        'How far the debt exceeded the legal limit, in the first and the last year in which the report publishes it as a positive figure. After that the table turns negative, and a negative there is no longer excess but borrowing capacity, so this page stops here.',
+        'How far the debt exceeded the legal limit, in the first and the last year in which the report publishes it as a positive figure. After that the table turns negative, and a negative there is no longer excess but borrowing capacity.',
       tempoFundoK: 'How this timeline is made',
       tempoFundoPartes: [
         'The periods are those of the administrations as they were installed, and the installation dates come from the study of the fifteen years. Every value has a ledger row. The two debts inherited in ',
@@ -1919,7 +1925,6 @@ export const STRINGS = {
 
       leituraRelanceK: 'At a glance',
       leituraBreveK: 'Brief reading',
-      leituraBreveRotulo: 'Brief reading · house prose, resting on a sentence of the study',
       leituraFundoK: 'Method and caveats',
       leituraOutraLingua: 'The same sentence in the other edition',
       municipioK: 'The municipality it is about',

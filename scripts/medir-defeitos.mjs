@@ -22,6 +22,9 @@
  *      inventariada que são prosa da casa, mais a DESCRIÇÃO do seu `<head>`,
  *      classificados em conteúdo, navegação e autorreferência pela lista
  *      declarada em `design/especime-v3/INVENTARIO-FRASES.md` (Emenda 15).
+ *   9. o tripwire da voz · os mesmos blocos, passados pela lista fechada de
+ *      marcadores de `design/especime-v3/VOZ-MARCADORES.md`, DECLARADOS OU NÃO.
+ *      A medida 8 acredita em quem escreveu a frase; esta não.
  *
  * Uso:  node scripts/medir-defeitos.mjs            (imprime)
  *       node scripts/medir-defeitos.mjs --json     (para guardar uma medição)
@@ -34,6 +37,7 @@ import { parse, NodeType } from 'node-html-parser';
 
 import { loadClaims } from '../src/lib/ledger.mjs';
 import { matchPath, routePath } from '../src/lib/routes.mjs';
+import { leMarcadores, analisa, FICHEIRO_DOS_MARCADORES } from './voz.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -530,6 +534,27 @@ for (const [edicao, porEstado] of [...coberturaPorEdicao.entries()].sort()) {
 }
 
 /* As frases da casa, por rota e por classe. */
+/**
+ * 9 · O TRIPWIRE DA VOZ (bloco «A grelha da voz», 26.08.2026).
+ *
+ * A medida 8 classifica uma frase pela DECLARAÇÃO de quem a escreveu, e foi por
+ * isso que «É a lei que o define, não este sítio.» viveu declarada como conteúdo
+ * em 616 páginas. Esta medida não acredita na declaração: passa cada bloco pela
+ * lista fechada de marcadores de `VOZ-MARCADORES.md` e diz quais morderam.
+ *
+ * Uma frase JÁ DECLARADA como autorreferência não entra nos achados, e não porque
+ * seja aceitável, mas porque a medida 8 já a conta, e o `check:voz` fecha a
+ * construção por essa contagem. Duas mensagens para o mesmo defeito seriam duas
+ * coisas para corrigir onde há uma.
+ *
+ * A régua continua a não fechar nada: imprime, e escreve no JSON. Quem fecha é
+ * `npm run check:voz`.
+ */
+const VOZ = leMarcadores(RAIZ);
+const achadosDaVoz = [];
+const frasesVarridas = new Set();
+let ocorrenciasVarridas = 0;
+
 const frasesDaCasaPorRota = {};
 for (const [rota, conta] of [...frasesPorRota.entries()].sort()) {
   const porClasse = Object.fromEntries(CLASSES.map((c) => [c, 0]));
@@ -540,6 +565,11 @@ for (const [rota, conta] of [...frasesPorRota.entries()].sort()) {
     const classe = INVENTARIO.mapa.get(t);
     if (classe) porClasse[classe] += n;
     else naoClassificados.push(t);
+    frasesVarridas.add(t);
+    ocorrenciasVarridas += n;
+    if (classe === 'autorreferencia') continue;
+    const mordeu = analisa(t, rota, VOZ);
+    if (mordeu.length) achadosDaVoz.push({ rota, marcadores: mordeu, classe: classe ?? null, texto: t });
   }
   frasesDaCasaPorRota[rota] = {
     total,
@@ -548,6 +578,28 @@ for (const [rota, conta] of [...frasesPorRota.entries()].sort()) {
     nao_classificados: naoClassificados.sort(),
   };
 }
+
+/* Um achado é uma FRASE, e não uma frase vezes as rotas em que se rende: a
+   legenda da dívida vivia em 616 páginas e é um defeito, não 616. As rotas vão
+   ao lado, contadas, com a primeira pelo nome. */
+const achadosPorFrase = new Map();
+for (const a of achadosDaVoz) {
+  const chave = a.texto;
+  if (!achadosPorFrase.has(chave)) {
+    achadosPorFrase.set(chave, { texto: a.texto, marcadores: a.marcadores, classe: a.classe, rotas: [] });
+  }
+  achadosPorFrase.get(chave).rotas.push(a.rota);
+}
+const achados = [...achadosPorFrase.values()].map((a) => ({
+  texto: a.texto,
+  marcadores: a.marcadores,
+  classe: a.classe,
+  rotas: a.rotas.length,
+  rota: a.rotas[0],
+}));
+const excecoesPorUsar = VOZ.excecoes
+  .filter((e) => e.tipo !== 'registo' && e.usos === 0)
+  .map((e) => e.alvos[0]);
 
 const medicao = {
   paginas,
@@ -573,6 +625,17 @@ const medicao = {
     inventario_existe: INVENTARIO.existe,
     entradas_declaradas: INVENTARIO.mapa.size,
     por_rota: frasesDaCasaPorRota,
+  },
+  voz: {
+    ficheiro: FICHEIRO_DOS_MARCADORES,
+    erros: VOZ.erros,
+    marcadores: VOZ.marcadores.length,
+    excecoes: VOZ.excecoes.length,
+    excecoes_de_registo: VOZ.excecoes.filter((e) => e.tipo === 'registo').length,
+    excecoes_por_usar: excecoesPorUsar,
+    frases_varridas: frasesVarridas.size,
+    ocorrencias_varridas: ocorrenciasVarridas,
+    achados,
   },
 };
 
@@ -657,6 +720,26 @@ if (!INVENTARIO.existe) {
       console.log(amarelo(`      ${r.nao_classificados.length} bloco(s) por classificar:`));
       for (const t of r.nao_classificados) console.log(cinza(`      · «${t}»`));
     }
+  }
+}
+console.log('');
+if (VOZ.erros.length) {
+  console.log(amarelo(`  tripwire da voz ........... ${VOZ.erros.length} erro(s) no ficheiro dos marcadores`));
+  for (const e of VOZ.erros) console.log(cinza('      · ' + e));
+} else {
+  const zero = achados.length === 0;
+  console.log(
+    `  tripwire da voz ........... ${VOZ.marcadores.length} marcadores · ${VOZ.excecoes.length} exceções · ` +
+      `${frasesVarridas.size} frases distintas (${ocorrenciasVarridas} ocorrências em ${Object.keys(frasesDaCasaPorRota).length} rotas) · ` +
+      `${achados.length} achado(s)` + (zero ? verde('  ✓') : amarelo('  ✗')),
+  );
+  for (const a of achados) {
+    console.log(amarelo(`      · [${a.marcadores.join(' · ')}] ${a.rota}${a.rotas > 1 ? ` (+${a.rotas - 1} rotas)` : ''}`));
+    console.log(cinza(`        «${a.texto.slice(0, 160)}»`));
+  }
+  if (excecoesPorUsar.length) {
+    console.log(cinza(`      ${excecoesPorUsar.length} exceção(ões) por exercer:`));
+    for (const e of excecoesPorUsar) console.log(cinza(`        · «${e.slice(0, 100)}»`));
   }
 }
 console.log('');

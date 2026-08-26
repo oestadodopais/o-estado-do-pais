@@ -338,8 +338,8 @@ const EVORA = {
           ],
           regulador: null,
           reguladorNota: {
-            pt: 'A série anual da Direção-Geral das Autarquias Locais usada nesta página começa depois deste mandato.',
-            en: 'The local-government directorate’s annual series used on this page begins after this term.',
+            pt: 'A série anual da Direção-Geral das Autarquias Locais começa depois deste mandato.',
+            en: 'The local-government directorate’s annual series begins after this term.',
           },
           pelouros: null,
           pelourosNota: {
@@ -539,15 +539,15 @@ const EVORA = {
       {
         k: { pt: 'Não existe PIB municipal', en: 'There is no municipal GDP' },
         v: {
-          pt: ['Nenhuma fonte publica um produto interno bruto para um concelho, e esta página não fabrica nenhum. O que existe é o registo empresarial: as contas das empresas do concelho, que creditam toda a atividade de uma empresa a um único concelho. Não é PIB municipal, e o trabalho sobre a economia escreve porquê nos seus limites: «não capta a administração pública, a maior parte da universidade e do hospital».'],
-          en: ['No source publishes a gross domestic product for a municipality, and this page manufactures none. What does exist is the business register: the accounts of the municipality’s enterprises, which credit a firm’s whole activity to a single municipality. It is not municipal GDP, and the work on the economy writes why in its own limits: «it misses public administration, most of the university and the hospital».'],
+          pt: ['Nenhuma fonte publica um produto interno bruto para um concelho. O que existe é o registo empresarial: as contas das empresas do concelho, que creditam toda a atividade de uma empresa a um único concelho. Não é PIB municipal, e o trabalho sobre a economia escreve porquê nos seus limites: «não capta a administração pública, a maior parte da universidade e do hospital».'],
+          en: ['No source publishes a gross domestic product for a municipality. What does exist is the business register: the accounts of the municipality’s enterprises, which credit a firm’s whole activity to a single municipality. It is not municipal GDP, and the work on the economy writes why in its own limits: «it misses public administration, most of the university and the hospital».'],
         },
       },
       {
         k: { pt: 'Duas das oito medidas são o município a falar de si', en: 'Two of the eight measures are the municipality speaking about itself' },
         v: {
-          pt: ['A execução da receita e o prazo médio de pagamento são lidos da prestação de contas do próprio município: a sua linha no livro-razão nomeia esse documento e a página onde estão. As duas vozes de fora sobre estas contas são a opinião assinada do auditor e a série anual da Direção-Geral das Autarquias Locais, e as duas estão nesta página.'],
-          en: ['Revenue execution and the average payment time are read from the municipality’s own accounts: their ledger rows name that document and the page they sit on. The two outside voices on these accounts are the auditor’s signed opinion and the local-government directorate’s annual series, and both are on this page.'],
+          pt: ['A execução da receita e o prazo médio de pagamento são lidos da prestação de contas do próprio município. As duas vozes de fora sobre estas contas são a opinião assinada do auditor e a série anual da Direção-Geral das Autarquias Locais.'],
+          en: ['Revenue execution and the average payment time are read from the municipality’s own accounts. The two outside voices on these accounts are the auditor’s signed opinion and the local-government directorate’s annual series.'],
         },
       },
       {
@@ -568,15 +568,15 @@ const EVORA = {
       {
         k: { pt: 'Duas vozes de fora, não uma', en: 'Two outside voices, not one' },
         v: {
-          pt: ['Sobre as contas deste município existem duas vozes que não são a dele: a opinião assinada do auditor independente, e a série anual da Direção-Geral das Autarquias Locais, que publica por município e por ano o mesmo conceito legal de dívida que o relatório usa, compilada do lado de fora. As duas estão nesta página.'],
-          en: ['On this municipality’s accounts there are two voices that are not its own: the independent auditor’s signed opinion, and the local-government directorate’s annual series, which publishes per municipality and per year the same legal debt concept the report uses, compiled from outside. Both are on this page.'],
+          pt: ['Sobre as contas deste município existem duas vozes que não são a dele: a opinião assinada do auditor independente, e a série anual da Direção-Geral das Autarquias Locais, que publica por município e por ano o mesmo conceito legal de dívida que o relatório usa, compilada do lado de fora.'],
+          en: ['On this municipality’s accounts there are two voices that are not its own: the independent auditor’s signed opinion, and the local-government directorate’s annual series, which publishes per municipality and per year the same legal debt concept the report uses, compiled from outside.'],
         },
       },
       {
         k: { pt: 'Nenhuma fonte publica dinheiro por pelouro', en: 'No source publishes money per portfolio' },
         v: {
-          pt: ['As contagens de pelouros desta página são designações, não despesa. A correspondência entre as contas e os pelouros existe num dos trabalhos, é declarada por ele como sua e não como oficial, e esta página não a usa para atribuir dinheiro a ninguém. Esse trabalho fixa também a regra: descrição, nunca classificações.'],
-          en: ['The portfolio counts on this page are designations, not spending. The mapping between the accounts and the portfolios exists in one of the works, is declared by it as its own and not as official, and this page does not use it to attribute money to anyone. That work also sets the rule: description, never scores.'],
+          pt: ['As contagens de pelouros são designações, não despesa. A correspondência entre as contas e os pelouros existe num dos trabalhos, e é declarada por ele como sua e não como oficial. Esse trabalho fixa também a regra: descrição, nunca classificações.'],
+          en: ['The portfolio counts are designations, not spending. The mapping between the accounts and the portfolios exists in one of the works, and is declared by it as its own and not as official. That work also sets the rule: description, never scores.'],
         },
       },
       {
