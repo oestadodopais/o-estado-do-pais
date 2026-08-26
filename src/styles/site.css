@@ -4521,4 +4521,28 @@ a.prova-valor::after {
   .pesquisa-res .chipb {
     min-height: 44px;
   }
+  /* A FILA DEIXA AR POR BAIXO (bloco dos 308, P2). Cada resultado é um alvo de
+     44px, e com um concelho com página a fila tinha um resultado só: o último
+     não encostava a nada. Com os 308, a fila mostra oito, e a área de toque do
+     último passava a cruzar por 1,0px o selo da secção seguinte — medido a 390
+     pela régua A10, que é a que conta pares sobrepostos. Um par sobreposto é uma
+     porta que abre o destino do vizinho (ISSUES I13), e a saída é a mesma da
+     etapa 1d: dar espaço à fila em vez de encolher o alvo. */
+  .pesquisa-res {
+    margin-bottom: 10px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * A DISPOSIÇÃO B SEM CORPO (bloco dos 308, P2)
+ * ---------------------------------------------------------------------------
+ * A página de um concelho sem trabalho publicado não tem leitura breve, contas,
+ * linha do tempo, método nem trabalhos: a coluna do corpo fica sem nada, e
+ * 68ch de vazio ao lado de um cartão de 300px é uma célula vazia numa grelha
+ * (IDENTIDADE §7). A vista deixa de render essa coluna, e a grelha passa a ter
+ * uma pista só, com a largura do aparelho: o cartão localizador e as saídas
+ * seguem as oito peças, em vez de flutuarem à direita de um vão.
+ */
+.municipio-so-aparelho {
+  grid-template-columns: minmax(0, 340px);
 }

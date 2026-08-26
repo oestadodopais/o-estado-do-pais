@@ -48,3 +48,24 @@ export function contagens() {
 }
 
 export const INDICE_EVORA = MUNICIPIOS.findIndex((m) => m[0] === "Évora");
+
+/**
+ * A CARTA ESCREVE DUAS COISAS NO MESMO CAMPO, E A ETIQUETA TEM DE AS DISTINGUIR.
+ *
+ * ISSUES I18, fechado na subetapa 2g. O campo que a CAOP dá a cada concelho é um
+ * distrito («Beja», «Viana do Castelo») ou uma ilha («Ilha do Faial», «Ilha de
+ * São Miguel»), e as duas coisas não se leem da mesma maneira: «distrito de
+ * Beja» é o que se diz, e «distrito de Ilha do Faial» não é português nenhum.
+ *
+ * A comparação é sobre a primeira palavra do campo, e não sobre uma lista de
+ * nomes: a lista de ilhas deste ficheiro é derivada do mesmo campo, e conferir
+ * uma lista contra a outra seria conferir a Carta contra ela própria.
+ *
+ * VIVE AQUI, e não em `src/lib/inicio.mjs`, desde o bloco dos 308 (P2): a
+ * entrada de um concelho gerado precisa da regra para escrever a sua etiqueta, e
+ * `src/data/concelhos.mjs` não pode importar de `src/lib/inicio.mjs`, que importa
+ * `src/data/municipios.mjs`, que importa `src/data/concelhos.mjs`. A regra é uma
+ * leitura do campo da Carta, e o sítio da leitura de um campo da Carta é o
+ * ficheiro da Carta. `src/lib/inicio.mjs` reexporta-a, sem uma letra mudada.
+ */
+export const eIlha = (distrito) => /^Ilha\b/.test(String(distrito));

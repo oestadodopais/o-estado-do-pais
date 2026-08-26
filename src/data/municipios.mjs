@@ -11,11 +11,20 @@
  * preciso um número há `{ claim: … }`, onde é preciso uma data de referência há
  * `{ ref: … }` (ver src/components/Frase.astro).
  *
- * PORQUE É UMA LISTA E NÃO UM FICHEIRO POR MUNICÍPIO. Hoje há um só concelho
- * com trabalho aprofundado publicado — Évora. A forma desta lista é a que os
- * 308 vão usar: seis das oito medidas do relance vêm de agregadores centrais
- * que publicam para todos os concelhos. As outras duas não (ver `relance`
- * abaixo), e é por isso que o mosaico tem um estado vazio desenhado.
+ * ---------------------------------------------------------------------------
+ * A LISTA COMPÕE-SE: UMA ENTRADA ESCRITA À MÃO, E 308 GERADAS (bloco dos 308, P2)
+ * ---------------------------------------------------------------------------
+ * Évora é o único concelho com trabalho aprofundado publicado, e a sua entrada
+ * continua escrita aqui: as camadas que só ela tem (a leitura breve, as contas
+ * do município, a linha do tempo das administrações, o método, as ressalvas e os
+ * trabalhos) não existem em mais nenhum concelho, e não se geram de nada.
+ *
+ * As outras entradas vêm do ficheiro que o motor escreve, por
+ * `src/data/concelhos.mjs`. Uma entrada gerada tem as oito peças, a distância
+ * desenhada quando as duas linhas existem, e mais nada — e a vista rende só o
+ * que existe. Ninguém escreve 308 entradas à mão, e os rótulos, unidades e
+ * períodos das oito medidas estão escritos uma vez, em `concelhos.mjs`, e valem
+ * para os 308 e para Évora.
  *
  * NADA AQUI É UMA REESCRITA DE UM ESTUDO. As ressalvas do fundo são a mesma
  * coisa que os estudos imprimem nos seus próprios limites, e a frase de origem
@@ -24,9 +33,10 @@
  */
 
 import { INDICE_EVORA } from './caop-centroids.mjs';
+import { relanceDoConcelho, entradasGeradas } from './concelhos.mjs';
 
 /**
- * Um mosaico do relance.
+ * Um mosaico do relance, como `relanceDoConcelho()` o compõe.
  *
  * `claim`  — a afirmação do livro-razão, ou `null` quando nenhuma fonte
  *            publica esta medida para este concelho. Um mosaico com `null`
@@ -36,31 +46,23 @@ import { INDICE_EVORA } from './caop-centroids.mjs';
  * `nome`    — o nome da medida, nas duas línguas.
  * `medida`  — a unidade e o ano, em letra monoespaçada, como na primeira página.
  * `unidade` — a UNIDADE sozinha, sem período e sem figura, nas duas línguas.
- *            É um campo DECLARADO, e não um recorte da `medida`: existe porque
- *            a primeira página, num concelho SEM página, rende as mesmas oito
- *            medidas como peças vazias (Emenda 14, 21.08.2026), e uma peça
- *            vazia não pode trazer um algarismo. A `medida` traz dois: a data de
- *            referência (`{ ref: … }`), que é o ano em que ESTE concelho foi
- *            lido e que para os outros 307 seria inventado, e, no índice de
- *            dívida, o teto legal (`{ claim: … }`). Recortá-los da `medida` por
- *            regra dava linhas truncadas («Pessoas · dezembro de», «Percentagem,
- *            teto legal =»): é a mesma razão pela qual o `lado` de um limiar é
- *            escrito e não inferido do sinal. As palavras são as da própria
- *            `medida`, sem uma palavra nova em nenhuma das duas línguas.
- * `nota`    — a linha curta que diz de onde vem a medida. As duas medidas que
- *            só existem porque o próprio município as publica dizem-no aqui.
+ *            É um campo DECLARADO, e não um recorte da `medida`: uma peça vazia
+ *            não pode trazer um algarismo, e a `medida` traz dois — a data de
+ *            referência (`{ ref: … }`) e, no índice de dívida, o teto legal
+ *            (`{ claim: … }`). Recortá-los da `medida` por regra dava linhas
+ *            truncadas («Pessoas · dezembro de», «Percentagem, teto legal =»).
+ * `nota`    — a linha curta que diz de onde vem a medida.
  *
  * @typedef {{
  *   claim: string|null,
  *   nome: { pt: string, en: string },
  *   medida: { pt: any[], en: any[] },
  *   unidade: { pt: string, en: string },
- *   nota: { pt: any[], en: any[] },
+ *   nota: { pt: any[], en: any[] }|null,
  * }} Mosaico
  */
 
-export const MUNICIPIOS_COM_PAGINA = [
-  {
+const EVORA = {
     slug: 'evora',
     nome: { pt: 'Évora', en: 'Évora' },
     distrito: { pt: 'distrito de Évora', en: 'district of Évora' },
@@ -72,101 +74,39 @@ export const MUNICIPIOS_COM_PAGINA = [
        guarda nome, distrito e posição, e mais nada. Escrever um código de
        memória seria inventá-lo. */
 
-    /* ---------------------------------------------------- camada 1 — relance */
-    relance: [
+    /* ---------------------------------------------------- camada 1 — relance
+     *
+     * AS OITO MEDIDAS SÃO AS DA CASA, E ÉVORA LÊ-AS DA MESMA DECLARAÇÃO QUE OS
+     * OUTROS 307 (bloco dos 308, P2; decisões D2, D3 e D5 do diretor de
+     * 26.08.2026). Os rótulos estavam escritos aqui, dentro da entrada de
+     * Évora; passam a vir de `MEDIDAS_DO_CONCELHO`, porque a mesma peça em 308
+     * páginas tem de medir a mesma coisa e chamar-se o mesmo nome.
+     *
+     * O QUE ÉVORA DECLARA DE SEU são os ids das suas linhas e a data de
+     * referência do desemprego, que a sua linha mede em dezembro de 2024 e o
+     * ficheiro do motor mede em dezembro de 2025.
+     *
+     * DUAS PEÇAS FICAM VAZIAS, e é a decisão D2. A execução da receita não tem
+     * fonte central desde 2019; o prazo médio de pagamento tem a lista anual do
+     * regulador, e nela Évora está «N.d.» a 31 de dezembro de 2025. As duas
+     * linhas que Évora lia das suas próprias contas descem para a camada das
+     * contas desta página, com os seus selos: comparar 137 dias de Évora, lidos
+     * da prestação de contas dela, com 5 dias de Lisboa, lidos do regulador, é
+     * pôr duas definições debaixo do mesmo nome.
+     */
+    relance: relanceDoConcelho(
       {
-        claim: 'evora-populacao-2025',
-        nome: { pt: 'População residente', en: 'Resident population' },
-        medida: { pt: ['Pessoas · ', { ref: '2025' }], en: ['People · ', { ref: '2025' }] },
-        unidade: { pt: 'Pessoas', en: 'People' },
-        nota: {
-          pt: ['Estimativa anual do INE para o concelho.'],
-          en: ['The statistics institute’s annual estimate for the municipality.'],
-        },
+        populacao: 'evora-populacao-2025',
+        poderDeCompra: 'evora-poder-de-compra-2023',
+        desempregoRegistado: 'evora-desemprego-registado-2024',
+        empresas: 'evora-empresas-2024',
+        divida: 'evora-divida-dgal-2024',
+        indice: 'evora-indice-de-divida-2024',
+        execucaoDaReceita: null,
+        pmp: null,
       },
-      {
-        claim: 'evora-poder-de-compra-2023',
-        nome: { pt: 'Poder de compra por habitante', en: 'Purchasing power per inhabitant' },
-        medida: {
-          pt: ['Índice · média nacional = base · ', { ref: '2023' }],
-          en: ['Index · national average = base · ', { ref: '2023' }],
-        },
-        unidade: { pt: 'Índice · média nacional = base', en: 'Index · national average = base' },
-        nota: {
-          pt: ['Poder de compra per capita, publicado pelo INE para todos os concelhos.'],
-          en: ['Purchasing power per capita, published for every municipality.'],
-        },
-      },
-      {
-        claim: 'evora-desemprego-registado-2024',
-        nome: { pt: 'Desemprego registado', en: 'Registered unemployment' },
-        medida: { pt: ['Pessoas · dezembro de ', { ref: '2024' }], en: ['People · December ', { ref: '2024' }] },
-        unidade: { pt: 'Pessoas', en: 'People' },
-        nota: {
-          pt: ['Inscritos no fim do mês nos serviços de emprego, ficheiro mensal por concelho.'],
-          en: ['Registered with the employment service at month end, monthly file by municipality.'],
-        },
-      },
-      {
-        claim: 'evora-empresas-2024',
-        nome: { pt: 'Empresas sediadas', en: 'Enterprises headquartered' },
-        medida: { pt: ['Empresas · ', { ref: '2024' }], en: ['Enterprises · ', { ref: '2024' }] },
-        unidade: { pt: 'Empresas', en: 'Enterprises' },
-        nota: {
-          pt: ['Sistema de contas integradas das empresas, por concelho da sede.'],
-          en: ['Integrated business accounts, by municipality of the registered office.'],
-        },
-      },
-      {
-        claim: 'evora-divida-dgal-2024',
-        nome: { pt: 'Dívida total do município', en: 'Total municipal debt' },
-        medida: { pt: ['Euros · ', { ref: '2024' }], en: ['Euros · ', { ref: '2024' }] },
-        unidade: { pt: 'Euros', en: 'Euros' },
-        nota: {
-          pt: ['Série anual da Direção-Geral das Autarquias Locais, o regulador das contas municipais.'],
-          en: ['The annual series of the local-government directorate, the regulator of municipal accounts.'],
-        },
-      },
-      {
-        claim: 'evora-indice-de-divida-2024',
-        nome: { pt: 'Índice de dívida', en: 'Debt index' },
-        medida: {
-          pt: ['Percentagem, teto legal = ', { claim: 'indice-de-divida-limite-legal' }, ' · ', { ref: '2024' }],
-          en: ['Percentage, legal cap = ', { claim: 'indice-de-divida-limite-legal' }, ' · ', { ref: '2024' }],
-        },
-        /* Sem «teto legal = 150»: o teto é uma linha do livro-razão, e numa peça
-           vazia um valor com selo diria que ali há prova de alguma coisa sobre
-           este concelho. A unidade é «Percentagem». */
-        unidade: { pt: 'Percentagem', en: 'Percentage' },
-        nota: {
-          pt: ['Calculado sobre duas colunas do mesmo ficheiro do regulador. A aritmética está na linha.'],
-          en: ['Computed from two columns of the same regulator file. The arithmetic is on the row.'],
-        },
-      },
-      {
-        claim: 'evora-execucao-da-receita-2025',
-        nome: { pt: 'Execução da receita', en: 'Revenue execution' },
-        medida: {
-          pt: ['Percentagem do orçamento · ', { ref: '2025' }],
-          en: ['Percentage of the budget · ', { ref: '2025' }],
-        },
-        unidade: { pt: 'Percentagem do orçamento', en: 'Percentage of the budget' },
-        nota: {
-          pt: ['Reportado pelo município: sai da prestação de contas do próprio, não de um agregador central.'],
-          en: ['Reported by the municipality: it comes from its own accounts, not from a central aggregator.'],
-        },
-      },
-      {
-        claim: 'evora-prazo-medio-de-pagamento-2025',
-        nome: { pt: 'Prazo médio de pagamento', en: 'Average payment time' },
-        medida: { pt: ['Dias · ', { ref: '2025' }], en: ['Days · ', { ref: '2025' }] },
-        unidade: { pt: 'Dias', en: 'Days' },
-        nota: {
-          pt: ['Reportado pelo município: sai da prestação de contas do próprio, não de um agregador central.'],
-          en: ['Reported by the municipality: it comes from its own accounts, not from a central aggregator.'],
-        },
-      },
-    ],
+      { desempregoRegistado: '2024' },
+    ),
 
     /* ---------------------------------------------- camada 2 — leitura breve */
     leitura: [
@@ -317,6 +257,15 @@ export const MUNICIPIOS_COM_PAGINA = [
       reguladorAnterior: 'evora-divida-dgal-2024',
       municipioAnterior: 'evora-divida-total-2024',
       divergencia: 'evora-divergencia-municipio-dgal-2024',
+      /* AS DUAS MEDIDAS QUE O MUNICÍPIO LÊ DE SI PRÓPRIO (decisão D2 do diretor,
+         26.08.2026). Estavam nas peças 7 e 8 do relance, onde a mesma peça, nas
+         308 páginas, tem de medir a mesma coisa: os 137 dias que Évora lê da sua
+         prestação de contas e os 5 dias que o regulador publica para Lisboa não
+         são a mesma medida, e o leitor não tinha como o saber. Descem para aqui,
+         que é a camada onde esta página já publica o que o município diz de si,
+         com os seus selos e sem um valor mudado. */
+      execucaoDaReceita: 'evora-execucao-da-receita-2025',
+      prazoMedioDePagamento: 'evora-prazo-medio-de-pagamento-2025',
     },
 
     /* -------------------------------- a linha do tempo das administrações §1.3
@@ -711,8 +660,22 @@ export const MUNICIPIOS_COM_PAGINA = [
       'evora-quinze-anos-cinco-mandatos',
       'evora-os-pelouros-quem-os-teve-o-que-fizeram',
     ],
-  },
-];
+};
+
+/**
+ * A LISTA, COMPOSTA E NÃO ESCRITA.
+ *
+ * A entrada escrita à mão vem primeiro, e as geradas a seguir, pela ordem do
+ * ficheiro do motor, que é a ordem da Carta. Um concelho que o motor exporte e
+ * que já tenha entrada à mão não entra duas vezes: a escrita à mão ganha, porque
+ * é a que tem as camadas que o ficheiro do motor não sabe escrever.
+ *
+ * Enquanto o motor não escrever o ficheiro, esta lista tem uma entrada. Isso é
+ * o estado honesto e não uma falha: o repositório não leva um ficheiro gerado
+ * sem dados, e as réguas constroem as 308 páginas com o ficheiro de teste, que
+ * vive fora de `src/data/`.
+ */
+export const MUNICIPIOS_COM_PAGINA = [EVORA, ...entradasGeradas([EVORA.slug])];
 
 /** O município deste slug, ou null. */
 export function municipioPorSlug(slug) {

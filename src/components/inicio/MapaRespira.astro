@@ -306,7 +306,10 @@ const caop = getClaim('municipios-portugal-caop-2025');
           da primeira página escrevia o nome do concelho escolhido, e não há
           concelho escolhido na primeira página: quem rende este cartão é a
           página do concelho, e o nome vem do servidor, como o resto dela. */}
-      <p class="mapa-cartao-nome">{escolha?.nome}</p>
+      {/* O nome do concelho escolhido vai declarado como lugar (bloco dos 308,
+          P2): é o nome da coisa, transcrito da Carta, e não prosa da casa. Sem
+          isso, o inventário de frases ganhava 308 entradas, uma por nome. */}
+      <p class="mapa-cartao-nome" data-lugar>{escolha?.nome}</p>
       {/* A COBERTURA E A NEUTRALIDADE SAÍRAM (Emenda 15). A primeira era uma
           frase sobre a cobertura do próprio sítio, que a emenda nomeia; a
           segunda dizia o que a casa NÃO afirma, que a emenda nomeia também
