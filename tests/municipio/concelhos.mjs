@@ -106,6 +106,7 @@ console.log('');
       comPagina: document.querySelectorAll('.concelho-com-pagina').length,
       portaEvora: [...document.querySelectorAll('.concelho a[href]')].map((a) => a.getAttribute('href')),
       cadeias: Object.fromEntries(Object.entries(porEstado).map(([k, v]) => [k, [...v]])),
+      etiquetas: cobertura.length,
     };
   });
   /* A CÉLULA DEIXA DE ASSUMIR «UM EM 308» (bloco dos 308, P2). Media
@@ -116,15 +117,23 @@ console.log('');
      tem uma cadeia só. A contagem imprime-se, para se ler o que ela é.
      A secção «Com página» à parte saiu, e a régua conta os grupos: são os 29
      distritos e ilhas da Carta, e mais nenhum. */
+  /* A ETIQUETA DE ESTADO SÓ SE RENDE SE A LISTA DISTINGUIR (item E8, P2). Eram
+     308 «tem página» iguais numa lista de 308, e a linha de cobertura em cima já
+     diz o estado do todo com as suas duas contagens. A régua exige a etiqueta
+     exactamente quando há dois estados: nenhuma com cobertura total, uma por
+     linha quando algum concelho não tem página. */
+  const distingue = m.comPagina > 0 && m.comPagina < m.n;
   conta(
-    '3c · os 308 concelhos, uma cadeia por estado de cobertura, e uma porta por concelho com página',
+    '3c · os 308 concelhos, a etiqueta de estado só onde ela distingue, e uma porta por concelho com página',
     m.n === 308 &&
       m.grupos === 29 &&
+      m.etiquetas === (distingue ? m.n : 0) &&
       m.portaEvora.length === m.comPagina &&
       m.portaEvora.every((h) => h.startsWith('/municipios/')) &&
       m.portaEvora.includes('/municipios/evora') === m.comPagina > 0 &&
       Object.values(m.cadeias).every((v) => v.length === 1),
     `${m.n} concelhos em ${m.grupos} grupos · ${m.comPagina} com página · ${m.portaEvora.length} porta(s) · ` +
+      `a lista distingue: ${distingue}, e rende ${m.etiquetas} etiqueta(s) de estado · ` +
       `cadeias ${JSON.stringify(m.cadeias)}`,
   );
   await p.__contexto.close();
@@ -605,6 +614,55 @@ console.log('');
       `${indice.aninhadas} aninhada(s), ${indice.linhasDoIndice} linhas listadas`,
   );
   await p.__contexto.close();
+}
+
+/* 10 · NENHUMA LIGAÇÃO DENTRO DE UM `role="img"` (item E12, P2).
+
+   `role="img"` diz «isto é uma imagem», e a tecnologia de apoio pode achatar o
+   que está dentro: os descendentes deixam de ser alcançáveis um a um. Uma
+   ligação lá dentro é uma porta que pode desaparecer para quem não a vê. O mapa
+   da primeira página tem 308 ligações por regra (N4) e passa a declarar-se
+   `role="group"`, que leva nome acessível e não esconde o que tem dentro; o
+   cartão localizador da página do concelho não tem ligação nenhuma e continua a
+   ser o que é, uma imagem.
+
+   A régua é sobre o `dist/` INTEIRO e não sobre duas páginas: a marca pode
+   aparecer em qualquer gabarito, e é isso que se recusa. Corre sobre os
+   ficheiros, sem navegador. */
+{
+  const maus = [];
+  let svgs = 0;
+  const varre = (dir) => {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, e.name);
+      if (e.isDirectory()) varre(full);
+      else if (e.name.endsWith('.html')) {
+        const html = fs.readFileSync(full, 'utf8');
+        let i = 0;
+        for (;;) {
+          const abre = html.indexOf('<svg', i);
+          if (abre === -1) break;
+          const fimDaEtiqueta = html.indexOf('>', abre);
+          const fecha = html.indexOf('</svg>', fimDaEtiqueta);
+          if (fimDaEtiqueta === -1 || fecha === -1) break;
+          svgs += 1;
+          const etiqueta = html.slice(abre, fimDaEtiqueta + 1);
+          const dentro = html.slice(fimDaEtiqueta + 1, fecha);
+          if (/role="img"/.test(etiqueta) && /<a[\s>]/.test(dentro)) {
+            maus.push(`${path.relative(DIST, full)} (${(dentro.match(/<a[\s>]/g) ?? []).length} ligação(ões))`);
+          }
+          i = fecha + 6;
+        }
+      }
+    }
+  };
+  varre(DIST);
+  conta(
+    'P2 · nenhuma ligação dentro de um elemento com role="img", em todo o dist/',
+    maus.length === 0,
+    `${svgs} SVG percorridos · ${maus.length} com role="img" a conter uma ligação` +
+      `${maus.length ? `: ${maus.slice(0, 3).join(', ')}` : ''}`,
+  );
 }
 
 await nav.close();

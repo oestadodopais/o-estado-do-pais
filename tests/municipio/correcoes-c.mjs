@@ -318,6 +318,12 @@ for (const edicao of ['pt', 'en']) {
 
   /* Escrever um nome acende o concelho certo, e o que ele faz depende de ter
      página: Évora abre a sua, Beja diz que ainda não tem e não é porta. */
+  /* A ETIQUETA DE ESTADO SÓ SE RENDE SE A LISTA DISTINGUIR (item E8, P2). A
+     régua lê da própria página se há dois estados, e exige a etiqueta
+     exactamente quando há. */
+  const distingue = await p.evaluate(() =>
+    [...document.querySelectorAll('.pesquisa-item')].some((li) => !li.hasAttribute('data-tem-pagina')),
+  );
   const escritos = {};
   for (const [chave, texto] of [['evora', 'evora'], ['beja', 'beja']]) {
     await p.fill('#pesquisa-concelho', '');
@@ -342,18 +348,21 @@ for (const edicao of ['pt', 'en']) {
      equivalência: um resultado é porta SE E SÓ SE o seu estado diz «com-pagina»,
      e o destino é a página do seu concelho. Vale nos dois casos escritos e vale
      para qualquer cobertura. */
-  const coerente = (r, slug) =>
-    r.estado === 'com-pagina'
-      ? r.porta === (edicao === 'pt' ? `/municipios/${slug}` : `/en/municipalities/${slug}`)
-      : r.estado === 'sem-pagina' && r.porta === null;
+  const daRota = (slug) => (edicao === 'pt' ? `/municipios/${slug}` : `/en/municipalities/${slug}`);
+  const coerente = (r, slug) => {
+    const temPagina = r.porta === daRota(slug);
+    if (!temPagina && r.porta !== null) return false;
+    if (!distingue) return r.estado === null;
+    return r.estado === (temPagina ? 'com-pagina' : 'sem-pagina');
+  };
   conta(
     `C4 · escrever um nome acende o concelho, e é porta se e só se tem página · 390 ${edicao}`,
     evora.length === 1 &&
-      evora[0].estado === 'com-pagina' &&
       evora[0].porta === destino &&
+      coerente(evora[0], 'evora') &&
       beja.length === 1 &&
       coerente(beja[0], 'beja'),
-    `«evora» → ${evora.length} resultado(s): ${evora.map((r) => `${r.nome} [${r.estado}] → ${r.porta ?? 'sem porta'}`).join(', ')} · «beja» → ${beja.length} resultado(s): ${beja.map((r) => `${r.nome} [${r.estado}] → ${r.porta ?? 'sem porta'}`).join(', ')}`,
+    `a lista distingue: ${distingue} · «evora» → ${evora.length} resultado(s): ${evora.map((r) => `${r.nome} [${r.estado ?? 'sem etiqueta'}] → ${r.porta ?? 'sem porta'}`).join(', ')} · «beja» → ${beja.length} resultado(s): ${beja.map((r) => `${r.nome} [${r.estado ?? 'sem etiqueta'}] → ${r.porta ?? 'sem porta'}`).join(', ')}`,
   );
   if (edicao === 'pt') medidas.c4_escritos = escritos;
 
