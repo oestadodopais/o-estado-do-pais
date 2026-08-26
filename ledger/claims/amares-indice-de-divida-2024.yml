@@ -1,0 +1,37 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "amares-indice-de-divida-2024"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "30,9"
+unit: "% (limite legal = 150)"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2024"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "4 833 735 ÷ 23 445 197 × 150 = 30,9. O limite legal é 1,5 vezes a média da receita corrente líquida dos três anos anteriores (art. 52.º da Lei n.º 73/2013), e o índice mede a dívida contra esse limite numa escala em que o teto é 150."
+derivation_en: "4 833 735 ÷ 23 445 197 × 150 = 30.9. The legal ceiling is 1.5 times the three-year average of net current revenue (art. 52.º, Lei n.º 73/2013), and the index measures debt against that ceiling on a scale whose cap is 150."
+derived_from:
+  - "amares-divida-dgal-2024"
+  - "amares-limite-divida-dgal-2024"
+  - "indice-de-divida-limite-legal"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( amares-divida-dgal-2024 / amares-limite-divida-dgal-2024 * indice-de-divida-limite-legal , 1 )"
+
+study: "concelhos-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] 4 833 735 ÷ 23 445 197 × 150 = 30,9. O limite legal é 1,5 vezes a média da receita corrente líquida dos três anos anteriores (art. 52.º da Lei n.º 73/2013), e o índice mede a dívida contra esse limite numa escala em que o teto é 150. · [note do motor] derived from amares-divida-dgal-2024 and amares-limite-divida-dgal-2024; DICO 0301 · Cruzado de ResearchHub content/12 Concelhos · amares-indice-de-divida-2024."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

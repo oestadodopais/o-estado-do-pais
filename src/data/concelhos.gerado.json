@@ -1,0 +1,5546 @@
+[
+ {
+  "caopIndex": 0,
+  "dico": "0101",
+  "distritoOuIlha": "Aveiro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "agueda-desemprego-registado-2025-12",
+   "divida": "agueda-divida-dgal-2024",
+   "empresas": "agueda-empresas-2024",
+   "indice": "agueda-indice-de-divida-2024",
+   "limite": "agueda-limite-divida-dgal-2024",
+   "pmp": "agueda-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "agueda-poder-de-compra-2023",
+   "populacao": "agueda-populacao-2025"
+  },
+  "nome": "Águeda",
+  "slug": "agueda"
+ },
+ {
+  "caopIndex": 1,
+  "dico": "0102",
+  "distritoOuIlha": "Aveiro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "albergaria-a-velha-desemprego-registado-2025-12",
+   "divida": "albergaria-a-velha-divida-dgal-2024",
+   "empresas": "albergaria-a-velha-empresas-2024",
+   "indice": "albergaria-a-velha-indice-de-divida-2024",
+   "limite": "albergaria-a-velha-limite-divida-dgal-2024",
+   "pmp": "albergaria-a-velha-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "albergaria-a-velha-poder-de-compra-2023",
+   "populacao": "albergaria-a-velha-populacao-2025"
+  },
+  "nome": "Albergaria-a-Velha",
+  "slug": "albergaria-a-velha"
+ },
+ {
+  "caopIndex": 2,
+  "dico": "0103",
+  "distritoOuIlha": "Aveiro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "anadia-desemprego-registado-2025-12",
+   "divida": "anadia-divida-dgal-2024",
+   "empresas": "anadia-empresas-2024",
+   "indice": "anadia-indice-de-divida-2024",
+   "limite": "anadia-limite-divida-dgal-2024",
+   "pmp": "anadia-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "anadia-poder-de-compra-2023",
+   "populacao": "anadia-populacao-2025"
+  },
+  "nome": "Anadia",
+  "slug": "anadia"
+ },
+ {
+  "caopIndex": 3,
+  "dico": "0104",
+  "distritoOuIlha": "Aveiro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "arouca-desemprego-registado-2025-12",
+   "divida": "arouca-divida-dgal-2024",
+   "empresas": "arouca-empresas-2024",
+   "indice": "arouca-indice-de-divida-2024",
+   "limite": "arouca-limite-divida-dgal-2024",
+   "pmp": "arouca-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "arouca-poder-de-compra-2023",
+   "populacao": "arouca-populacao-2025"
+  },
+  "nome": "Arouca",
+  "slug": "arouca"
+ },
+ {
+  "caopIndex": 4,
+  "dico": "0105",
+  "distritoOuIlha": "Aveiro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "aveiro-desemprego-registado-2025-12",
+   "divida": "aveiro-divida-dgal-2024",
+   "empresas": "aveiro-empresas-2024",
+   "indice": "aveiro-indice-de-divida-2024",
+   "limite": "aveiro-limite-divida-dgal-2024",
+   "pmp": "aveiro-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "aveiro-poder-de-compra-2023",
+   "populacao": "aveiro-populacao-2025"
+  },
+  "nome": "Aveiro",
+  "slug": "aveiro"
+ },
+ {
+  "caopIndex": 5,
+  "dico": "0106",
+  "distritoOuIlha": "Aveiro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "castelo-de-paiva-desemprego-registado-2025-12",
+   "divida": "castelo-de-paiva-divida-dgal-2024",
+   "empresas": "castelo-de-paiva-empresas-2024",
+   "indice": "castelo-de-paiva-indice-de-divida-2024",
+   "limite": "castelo-de-paiva-limite-divida-dgal-2024",
+   "pmp": "castelo-de-paiva-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "castelo-de-paiva-poder-de-compra-2023",
+   "populacao": "castelo-de-paiva-populacao-2025"
+  },
+  "nome": "Castelo de Paiva",
+  "slug": "castelo-de-paiva"
+ },
+ {
+  "caopIndex": 6,
+  "dico": "0107",
+  "distritoOuIlha": "Aveiro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "espinho-desemprego-registado-2025-12",
+   "divida": "espinho-divida-dgal-2024",
+   "empresas": "espinho-empresas-2024",
+   "indice": "espinho-indice-de-divida-2024",
+   "limite": "espinho-limite-divida-dgal-2024",
+   "pmp": "espinho-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "espinho-poder-de-compra-2023",
+   "populacao": "espinho-populacao-2025"
+  },
+  "nome": "Espinho",
+  "slug": "espinho"
+ },
+ {
+  "caopIndex": 7,
+  "dico": "0108",
+  "distritoOuIlha": "Aveiro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "estarreja-desemprego-registado-2025-12",
+   "divida": "estarreja-divida-dgal-2024",
+   "empresas": "estarreja-empresas-2024",
+   "indice": "estarreja-indice-de-divida-2024",
+   "limite": "estarreja-limite-divida-dgal-2024",
+   "pmp": "estarreja-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "estarreja-poder-de-compra-2023",
+   "populacao": "estarreja-populacao-2025"
+  },
+  "nome": "Estarreja",
+  "slug": "estarreja"
+ },
+ {
+  "caopIndex": 8,
+  "dico": "0109",
+  "distritoOuIlha": "Aveiro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "santa-maria-da-feira-desemprego-registado-2025-12",
+   "divida": "santa-maria-da-feira-divida-dgal-2024",
+   "empresas": "santa-maria-da-feira-empresas-2024",
+   "indice": "santa-maria-da-feira-indice-de-divida-2024",
+   "limite": "santa-maria-da-feira-limite-divida-dgal-2024",
+   "pmp": "santa-maria-da-feira-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "santa-maria-da-feira-poder-de-compra-2023",
+   "populacao": "santa-maria-da-feira-populacao-2025"
+  },
+  "nome": "Santa Maria da Feira",
+  "slug": "santa-maria-da-feira"
+ },
+ {
+  "caopIndex": 9,
+  "dico": "0110",
+  "distritoOuIlha": "Aveiro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "ilhavo-desemprego-registado-2025-12",
+   "divida": "ilhavo-divida-dgal-2024",
+   "empresas": "ilhavo-empresas-2024",
+   "indice": "ilhavo-indice-de-divida-2024",
+   "limite": "ilhavo-limite-divida-dgal-2024",
+   "pmp": "ilhavo-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "ilhavo-poder-de-compra-2023",
+   "populacao": "ilhavo-populacao-2025"
+  },
+  "nome": "Ílhavo",
+  "slug": "ilhavo"
+ },
+ {
+  "caopIndex": 10,
+  "dico": "0111",
+  "distritoOuIlha": "Aveiro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "mealhada-desemprego-registado-2025-12",
+   "divida": "mealhada-divida-dgal-2024",
+   "empresas": "mealhada-empresas-2024",
+   "indice": "mealhada-indice-de-divida-2024",
+   "limite": "mealhada-limite-divida-dgal-2024",
+   "pmp": "mealhada-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "mealhada-poder-de-compra-2023",
+   "populacao": "mealhada-populacao-2025"
+  },
+  "nome": "Mealhada",
+  "slug": "mealhada"
+ },
+ {
+  "caopIndex": 11,
+  "dico": "0112",
+  "distritoOuIlha": "Aveiro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "murtosa-desemprego-registado-2025-12",
+   "divida": "murtosa-divida-dgal-2024",
+   "empresas": "murtosa-empresas-2024",
+   "indice": "murtosa-indice-de-divida-2024",
+   "limite": "murtosa-limite-divida-dgal-2024",
+   "pmp": "murtosa-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "murtosa-poder-de-compra-2023",
+   "populacao": "murtosa-populacao-2025"
+  },
+  "nome": "Murtosa",
+  "slug": "murtosa"
+ },
+ {
+  "caopIndex": 12,
+  "dico": "0113",
+  "distritoOuIlha": "Aveiro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "oliveira-de-azemeis-desemprego-registado-2025-12",
+   "divida": "oliveira-de-azemeis-divida-dgal-2024",
+   "empresas": "oliveira-de-azemeis-empresas-2024",
+   "indice": "oliveira-de-azemeis-indice-de-divida-2024",
+   "limite": "oliveira-de-azemeis-limite-divida-dgal-2024",
+   "pmp": "oliveira-de-azemeis-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "oliveira-de-azemeis-poder-de-compra-2023",
+   "populacao": "oliveira-de-azemeis-populacao-2025"
+  },
+  "nome": "Oliveira de Azeméis",
+  "slug": "oliveira-de-azemeis"
+ },
+ {
+  "caopIndex": 13,
+  "dico": "0114",
+  "distritoOuIlha": "Aveiro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "oliveira-do-bairro-desemprego-registado-2025-12",
+   "divida": "oliveira-do-bairro-divida-dgal-2024",
+   "empresas": "oliveira-do-bairro-empresas-2024",
+   "indice": "oliveira-do-bairro-indice-de-divida-2024",
+   "limite": "oliveira-do-bairro-limite-divida-dgal-2024",
+   "pmp": "oliveira-do-bairro-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "oliveira-do-bairro-poder-de-compra-2023",
+   "populacao": "oliveira-do-bairro-populacao-2025"
+  },
+  "nome": "Oliveira do Bairro",
+  "slug": "oliveira-do-bairro"
+ },
+ {
+  "caopIndex": 14,
+  "dico": "0115",
+  "distritoOuIlha": "Aveiro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "ovar-desemprego-registado-2025-12",
+   "divida": "ovar-divida-dgal-2024",
+   "empresas": "ovar-empresas-2024",
+   "indice": "ovar-indice-de-divida-2024",
+   "limite": "ovar-limite-divida-dgal-2024",
+   "pmp": "ovar-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "ovar-poder-de-compra-2023",
+   "populacao": "ovar-populacao-2025"
+  },
+  "nome": "Ovar",
+  "slug": "ovar"
+ },
+ {
+  "caopIndex": 15,
+  "dico": "0116",
+  "distritoOuIlha": "Aveiro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "sao-joao-da-madeira-desemprego-registado-2025-12",
+   "divida": "sao-joao-da-madeira-divida-dgal-2024",
+   "empresas": "sao-joao-da-madeira-empresas-2024",
+   "indice": "sao-joao-da-madeira-indice-de-divida-2024",
+   "limite": "sao-joao-da-madeira-limite-divida-dgal-2024",
+   "pmp": "sao-joao-da-madeira-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "sao-joao-da-madeira-poder-de-compra-2023",
+   "populacao": "sao-joao-da-madeira-populacao-2025"
+  },
+  "nome": "São João da Madeira",
+  "slug": "sao-joao-da-madeira"
+ },
+ {
+  "caopIndex": 16,
+  "dico": "0117",
+  "distritoOuIlha": "Aveiro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "sever-do-vouga-desemprego-registado-2025-12",
+   "divida": "sever-do-vouga-divida-dgal-2024",
+   "empresas": "sever-do-vouga-empresas-2024",
+   "indice": "sever-do-vouga-indice-de-divida-2024",
+   "limite": "sever-do-vouga-limite-divida-dgal-2024",
+   "pmp": "sever-do-vouga-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "sever-do-vouga-poder-de-compra-2023",
+   "populacao": "sever-do-vouga-populacao-2025"
+  },
+  "nome": "Sever do Vouga",
+  "slug": "sever-do-vouga"
+ },
+ {
+  "caopIndex": 17,
+  "dico": "0118",
+  "distritoOuIlha": "Aveiro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vagos-desemprego-registado-2025-12",
+   "divida": "vagos-divida-dgal-2024",
+   "empresas": "vagos-empresas-2024",
+   "indice": "vagos-indice-de-divida-2024",
+   "limite": "vagos-limite-divida-dgal-2024",
+   "pmp": "vagos-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vagos-poder-de-compra-2023",
+   "populacao": "vagos-populacao-2025"
+  },
+  "nome": "Vagos",
+  "slug": "vagos"
+ },
+ {
+  "caopIndex": 18,
+  "dico": "0119",
+  "distritoOuIlha": "Aveiro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vale-de-cambra-desemprego-registado-2025-12",
+   "divida": "vale-de-cambra-divida-dgal-2024",
+   "empresas": "vale-de-cambra-empresas-2024",
+   "indice": "vale-de-cambra-indice-de-divida-2024",
+   "limite": "vale-de-cambra-limite-divida-dgal-2024",
+   "pmp": "vale-de-cambra-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vale-de-cambra-poder-de-compra-2023",
+   "populacao": "vale-de-cambra-populacao-2025"
+  },
+  "nome": "Vale de Cambra",
+  "slug": "vale-de-cambra"
+ },
+ {
+  "caopIndex": 19,
+  "dico": "0201",
+  "distritoOuIlha": "Beja",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "aljustrel-desemprego-registado-2025-12",
+   "divida": "aljustrel-divida-dgal-2024",
+   "empresas": "aljustrel-empresas-2024",
+   "indice": "aljustrel-indice-de-divida-2024",
+   "limite": "aljustrel-limite-divida-dgal-2024",
+   "pmp": null,
+   "poderDeCompra": "aljustrel-poder-de-compra-2023",
+   "populacao": "aljustrel-populacao-2025"
+  },
+  "nome": "Aljustrel",
+  "slug": "aljustrel"
+ },
+ {
+  "caopIndex": 20,
+  "dico": "0202",
+  "distritoOuIlha": "Beja",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "almodovar-desemprego-registado-2025-12",
+   "divida": "almodovar-divida-dgal-2024",
+   "empresas": "almodovar-empresas-2024",
+   "indice": "almodovar-indice-de-divida-2024",
+   "limite": "almodovar-limite-divida-dgal-2024",
+   "pmp": "almodovar-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "almodovar-poder-de-compra-2023",
+   "populacao": "almodovar-populacao-2025"
+  },
+  "nome": "Almodôvar",
+  "slug": "almodovar"
+ },
+ {
+  "caopIndex": 21,
+  "dico": "0203",
+  "distritoOuIlha": "Beja",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "alvito-desemprego-registado-2025-12",
+   "divida": "alvito-divida-dgal-2024",
+   "empresas": "alvito-empresas-2024",
+   "indice": "alvito-indice-de-divida-2024",
+   "limite": "alvito-limite-divida-dgal-2024",
+   "pmp": "alvito-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "alvito-poder-de-compra-2023",
+   "populacao": "alvito-populacao-2025"
+  },
+  "nome": "Alvito",
+  "slug": "alvito"
+ },
+ {
+  "caopIndex": 22,
+  "dico": "0204",
+  "distritoOuIlha": "Beja",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "barrancos-desemprego-registado-2025-12",
+   "divida": "barrancos-divida-dgal-2024",
+   "empresas": "barrancos-empresas-2024",
+   "indice": "barrancos-indice-de-divida-2024",
+   "limite": "barrancos-limite-divida-dgal-2024",
+   "pmp": "barrancos-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "barrancos-poder-de-compra-2023",
+   "populacao": "barrancos-populacao-2025"
+  },
+  "nome": "Barrancos",
+  "slug": "barrancos"
+ },
+ {
+  "caopIndex": 23,
+  "dico": "0205",
+  "distritoOuIlha": "Beja",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "beja-desemprego-registado-2025-12",
+   "divida": "beja-divida-dgal-2024",
+   "empresas": "beja-empresas-2024",
+   "indice": "beja-indice-de-divida-2024",
+   "limite": "beja-limite-divida-dgal-2024",
+   "pmp": "beja-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "beja-poder-de-compra-2023",
+   "populacao": "beja-populacao-2025"
+  },
+  "nome": "Beja",
+  "slug": "beja"
+ },
+ {
+  "caopIndex": 24,
+  "dico": "0206",
+  "distritoOuIlha": "Beja",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "castro-verde-desemprego-registado-2025-12",
+   "divida": "castro-verde-divida-dgal-2024",
+   "empresas": "castro-verde-empresas-2024",
+   "indice": "castro-verde-indice-de-divida-2024",
+   "limite": "castro-verde-limite-divida-dgal-2024",
+   "pmp": "castro-verde-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "castro-verde-poder-de-compra-2023",
+   "populacao": "castro-verde-populacao-2025"
+  },
+  "nome": "Castro Verde",
+  "slug": "castro-verde"
+ },
+ {
+  "caopIndex": 25,
+  "dico": "0207",
+  "distritoOuIlha": "Beja",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "cuba-desemprego-registado-2025-12",
+   "divida": "cuba-divida-dgal-2024",
+   "empresas": "cuba-empresas-2024",
+   "indice": "cuba-indice-de-divida-2024",
+   "limite": "cuba-limite-divida-dgal-2024",
+   "pmp": "cuba-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "cuba-poder-de-compra-2023",
+   "populacao": "cuba-populacao-2025"
+  },
+  "nome": "Cuba",
+  "slug": "cuba"
+ },
+ {
+  "caopIndex": 26,
+  "dico": "0208",
+  "distritoOuIlha": "Beja",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "ferreira-do-alentejo-desemprego-registado-2025-12",
+   "divida": "ferreira-do-alentejo-divida-dgal-2024",
+   "empresas": "ferreira-do-alentejo-empresas-2024",
+   "indice": "ferreira-do-alentejo-indice-de-divida-2024",
+   "limite": "ferreira-do-alentejo-limite-divida-dgal-2024",
+   "pmp": "ferreira-do-alentejo-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "ferreira-do-alentejo-poder-de-compra-2023",
+   "populacao": "ferreira-do-alentejo-populacao-2025"
+  },
+  "nome": "Ferreira do Alentejo",
+  "slug": "ferreira-do-alentejo"
+ },
+ {
+  "caopIndex": 27,
+  "dico": "0209",
+  "distritoOuIlha": "Beja",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "mertola-desemprego-registado-2025-12",
+   "divida": "mertola-divida-dgal-2024",
+   "empresas": "mertola-empresas-2024",
+   "indice": "mertola-indice-de-divida-2024",
+   "limite": "mertola-limite-divida-dgal-2024",
+   "pmp": "mertola-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "mertola-poder-de-compra-2023",
+   "populacao": "mertola-populacao-2025"
+  },
+  "nome": "Mértola",
+  "slug": "mertola"
+ },
+ {
+  "caopIndex": 28,
+  "dico": "0210",
+  "distritoOuIlha": "Beja",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "moura-desemprego-registado-2025-12",
+   "divida": "moura-divida-dgal-2024",
+   "empresas": "moura-empresas-2024",
+   "indice": "moura-indice-de-divida-2024",
+   "limite": "moura-limite-divida-dgal-2024",
+   "pmp": "moura-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "moura-poder-de-compra-2023",
+   "populacao": "moura-populacao-2025"
+  },
+  "nome": "Moura",
+  "slug": "moura"
+ },
+ {
+  "caopIndex": 29,
+  "dico": "0211",
+  "distritoOuIlha": "Beja",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "odemira-desemprego-registado-2025-12",
+   "divida": "odemira-divida-dgal-2024",
+   "empresas": "odemira-empresas-2024",
+   "indice": "odemira-indice-de-divida-2024",
+   "limite": "odemira-limite-divida-dgal-2024",
+   "pmp": "odemira-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "odemira-poder-de-compra-2023",
+   "populacao": "odemira-populacao-2025"
+  },
+  "nome": "Odemira",
+  "slug": "odemira"
+ },
+ {
+  "caopIndex": 30,
+  "dico": "0212",
+  "distritoOuIlha": "Beja",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "ourique-desemprego-registado-2025-12",
+   "divida": "ourique-divida-dgal-2024",
+   "empresas": "ourique-empresas-2024",
+   "indice": "ourique-indice-de-divida-2024",
+   "limite": "ourique-limite-divida-dgal-2024",
+   "pmp": "ourique-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "ourique-poder-de-compra-2023",
+   "populacao": "ourique-populacao-2025"
+  },
+  "nome": "Ourique",
+  "slug": "ourique"
+ },
+ {
+  "caopIndex": 31,
+  "dico": "0213",
+  "distritoOuIlha": "Beja",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "serpa-desemprego-registado-2025-12",
+   "divida": "serpa-divida-dgal-2024",
+   "empresas": "serpa-empresas-2024",
+   "indice": "serpa-indice-de-divida-2024",
+   "limite": "serpa-limite-divida-dgal-2024",
+   "pmp": "serpa-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "serpa-poder-de-compra-2023",
+   "populacao": "serpa-populacao-2025"
+  },
+  "nome": "Serpa",
+  "slug": "serpa"
+ },
+ {
+  "caopIndex": 32,
+  "dico": "0214",
+  "distritoOuIlha": "Beja",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vidigueira-desemprego-registado-2025-12",
+   "divida": "vidigueira-divida-dgal-2024",
+   "empresas": "vidigueira-empresas-2024",
+   "indice": "vidigueira-indice-de-divida-2024",
+   "limite": "vidigueira-limite-divida-dgal-2024",
+   "pmp": "vidigueira-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vidigueira-poder-de-compra-2023",
+   "populacao": "vidigueira-populacao-2025"
+  },
+  "nome": "Vidigueira",
+  "slug": "vidigueira"
+ },
+ {
+  "caopIndex": 33,
+  "dico": "0301",
+  "distritoOuIlha": "Braga",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "amares-desemprego-registado-2025-12",
+   "divida": "amares-divida-dgal-2024",
+   "empresas": "amares-empresas-2024",
+   "indice": "amares-indice-de-divida-2024",
+   "limite": "amares-limite-divida-dgal-2024",
+   "pmp": "amares-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "amares-poder-de-compra-2023",
+   "populacao": "amares-populacao-2025"
+  },
+  "nome": "Amares",
+  "slug": "amares"
+ },
+ {
+  "caopIndex": 34,
+  "dico": "0302",
+  "distritoOuIlha": "Braga",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "barcelos-desemprego-registado-2025-12",
+   "divida": "barcelos-divida-dgal-2024",
+   "empresas": "barcelos-empresas-2024",
+   "indice": "barcelos-indice-de-divida-2024",
+   "limite": "barcelos-limite-divida-dgal-2024",
+   "pmp": "barcelos-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "barcelos-poder-de-compra-2023",
+   "populacao": "barcelos-populacao-2025"
+  },
+  "nome": "Barcelos",
+  "slug": "barcelos"
+ },
+ {
+  "caopIndex": 35,
+  "dico": "0303",
+  "distritoOuIlha": "Braga",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "braga-desemprego-registado-2025-12",
+   "divida": "braga-divida-dgal-2024",
+   "empresas": "braga-empresas-2024",
+   "indice": "braga-indice-de-divida-2024",
+   "limite": "braga-limite-divida-dgal-2024",
+   "pmp": "braga-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "braga-poder-de-compra-2023",
+   "populacao": "braga-populacao-2025"
+  },
+  "nome": "Braga",
+  "slug": "braga"
+ },
+ {
+  "caopIndex": 36,
+  "dico": "0304",
+  "distritoOuIlha": "Braga",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "cabeceiras-de-basto-desemprego-registado-2025-12",
+   "divida": "cabeceiras-de-basto-divida-dgal-2024",
+   "empresas": "cabeceiras-de-basto-empresas-2024",
+   "indice": "cabeceiras-de-basto-indice-de-divida-2024",
+   "limite": "cabeceiras-de-basto-limite-divida-dgal-2024",
+   "pmp": "cabeceiras-de-basto-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "cabeceiras-de-basto-poder-de-compra-2023",
+   "populacao": "cabeceiras-de-basto-populacao-2025"
+  },
+  "nome": "Cabeceiras de Basto",
+  "slug": "cabeceiras-de-basto"
+ },
+ {
+  "caopIndex": 37,
+  "dico": "0305",
+  "distritoOuIlha": "Braga",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "celorico-de-basto-desemprego-registado-2025-12",
+   "divida": "celorico-de-basto-divida-dgal-2024",
+   "empresas": "celorico-de-basto-empresas-2024",
+   "indice": "celorico-de-basto-indice-de-divida-2024",
+   "limite": "celorico-de-basto-limite-divida-dgal-2024",
+   "pmp": "celorico-de-basto-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "celorico-de-basto-poder-de-compra-2023",
+   "populacao": "celorico-de-basto-populacao-2025"
+  },
+  "nome": "Celorico de Basto",
+  "slug": "celorico-de-basto"
+ },
+ {
+  "caopIndex": 38,
+  "dico": "0306",
+  "distritoOuIlha": "Braga",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "esposende-desemprego-registado-2025-12",
+   "divida": "esposende-divida-dgal-2024",
+   "empresas": "esposende-empresas-2024",
+   "indice": "esposende-indice-de-divida-2024",
+   "limite": "esposende-limite-divida-dgal-2024",
+   "pmp": "esposende-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "esposende-poder-de-compra-2023",
+   "populacao": "esposende-populacao-2025"
+  },
+  "nome": "Esposende",
+  "slug": "esposende"
+ },
+ {
+  "caopIndex": 39,
+  "dico": "0307",
+  "distritoOuIlha": "Braga",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "fafe-desemprego-registado-2025-12",
+   "divida": "fafe-divida-dgal-2024",
+   "empresas": "fafe-empresas-2024",
+   "indice": "fafe-indice-de-divida-2024",
+   "limite": "fafe-limite-divida-dgal-2024",
+   "pmp": "fafe-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "fafe-poder-de-compra-2023",
+   "populacao": "fafe-populacao-2025"
+  },
+  "nome": "Fafe",
+  "slug": "fafe"
+ },
+ {
+  "caopIndex": 40,
+  "dico": "0308",
+  "distritoOuIlha": "Braga",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "guimaraes-desemprego-registado-2025-12",
+   "divida": "guimaraes-divida-dgal-2024",
+   "empresas": "guimaraes-empresas-2024",
+   "indice": "guimaraes-indice-de-divida-2024",
+   "limite": "guimaraes-limite-divida-dgal-2024",
+   "pmp": "guimaraes-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "guimaraes-poder-de-compra-2023",
+   "populacao": "guimaraes-populacao-2025"
+  },
+  "nome": "Guimarães",
+  "slug": "guimaraes"
+ },
+ {
+  "caopIndex": 41,
+  "dico": "0309",
+  "distritoOuIlha": "Braga",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "povoa-de-lanhoso-desemprego-registado-2025-12",
+   "divida": "povoa-de-lanhoso-divida-dgal-2024",
+   "empresas": "povoa-de-lanhoso-empresas-2024",
+   "indice": "povoa-de-lanhoso-indice-de-divida-2024",
+   "limite": "povoa-de-lanhoso-limite-divida-dgal-2024",
+   "pmp": "povoa-de-lanhoso-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "povoa-de-lanhoso-poder-de-compra-2023",
+   "populacao": "povoa-de-lanhoso-populacao-2025"
+  },
+  "nome": "Póvoa de Lanhoso",
+  "slug": "povoa-de-lanhoso"
+ },
+ {
+  "caopIndex": 42,
+  "dico": "0310",
+  "distritoOuIlha": "Braga",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "terras-de-bouro-desemprego-registado-2025-12",
+   "divida": "terras-de-bouro-divida-dgal-2024",
+   "empresas": "terras-de-bouro-empresas-2024",
+   "indice": "terras-de-bouro-indice-de-divida-2024",
+   "limite": "terras-de-bouro-limite-divida-dgal-2024",
+   "pmp": "terras-de-bouro-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "terras-de-bouro-poder-de-compra-2023",
+   "populacao": "terras-de-bouro-populacao-2025"
+  },
+  "nome": "Terras de Bouro",
+  "slug": "terras-de-bouro"
+ },
+ {
+  "caopIndex": 43,
+  "dico": "0311",
+  "distritoOuIlha": "Braga",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vieira-do-minho-desemprego-registado-2025-12",
+   "divida": "vieira-do-minho-divida-dgal-2024",
+   "empresas": "vieira-do-minho-empresas-2024",
+   "indice": "vieira-do-minho-indice-de-divida-2024",
+   "limite": "vieira-do-minho-limite-divida-dgal-2024",
+   "pmp": "vieira-do-minho-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vieira-do-minho-poder-de-compra-2023",
+   "populacao": "vieira-do-minho-populacao-2025"
+  },
+  "nome": "Vieira do Minho",
+  "slug": "vieira-do-minho"
+ },
+ {
+  "caopIndex": 44,
+  "dico": "0312",
+  "distritoOuIlha": "Braga",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vila-nova-de-famalicao-desemprego-registado-2025-12",
+   "divida": "vila-nova-de-famalicao-divida-dgal-2024",
+   "empresas": "vila-nova-de-famalicao-empresas-2024",
+   "indice": "vila-nova-de-famalicao-indice-de-divida-2024",
+   "limite": "vila-nova-de-famalicao-limite-divida-dgal-2024",
+   "pmp": "vila-nova-de-famalicao-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vila-nova-de-famalicao-poder-de-compra-2023",
+   "populacao": "vila-nova-de-famalicao-populacao-2025"
+  },
+  "nome": "Vila Nova de Famalicão",
+  "slug": "vila-nova-de-famalicao"
+ },
+ {
+  "caopIndex": 45,
+  "dico": "0313",
+  "distritoOuIlha": "Braga",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vila-verde-desemprego-registado-2025-12",
+   "divida": "vila-verde-divida-dgal-2024",
+   "empresas": "vila-verde-empresas-2024",
+   "indice": "vila-verde-indice-de-divida-2024",
+   "limite": "vila-verde-limite-divida-dgal-2024",
+   "pmp": "vila-verde-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vila-verde-poder-de-compra-2023",
+   "populacao": "vila-verde-populacao-2025"
+  },
+  "nome": "Vila Verde",
+  "slug": "vila-verde"
+ },
+ {
+  "caopIndex": 46,
+  "dico": "0314",
+  "distritoOuIlha": "Braga",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vizela-desemprego-registado-2025-12",
+   "divida": "vizela-divida-dgal-2024",
+   "empresas": "vizela-empresas-2024",
+   "indice": "vizela-indice-de-divida-2024",
+   "limite": "vizela-limite-divida-dgal-2024",
+   "pmp": "vizela-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vizela-poder-de-compra-2023",
+   "populacao": "vizela-populacao-2025"
+  },
+  "nome": "Vizela",
+  "slug": "vizela"
+ },
+ {
+  "caopIndex": 47,
+  "dico": "0401",
+  "distritoOuIlha": "Bragança",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "alfandega-da-fe-desemprego-registado-2025-12",
+   "divida": "alfandega-da-fe-divida-dgal-2024",
+   "empresas": "alfandega-da-fe-empresas-2024",
+   "indice": "alfandega-da-fe-indice-de-divida-2024",
+   "limite": "alfandega-da-fe-limite-divida-dgal-2024",
+   "pmp": "alfandega-da-fe-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "alfandega-da-fe-poder-de-compra-2023",
+   "populacao": "alfandega-da-fe-populacao-2025"
+  },
+  "nome": "Alfândega da Fé",
+  "slug": "alfandega-da-fe"
+ },
+ {
+  "caopIndex": 48,
+  "dico": "0402",
+  "distritoOuIlha": "Bragança",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "braganca-desemprego-registado-2025-12",
+   "divida": "braganca-divida-dgal-2024",
+   "empresas": "braganca-empresas-2024",
+   "indice": "braganca-indice-de-divida-2024",
+   "limite": "braganca-limite-divida-dgal-2024",
+   "pmp": "braganca-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "braganca-poder-de-compra-2023",
+   "populacao": "braganca-populacao-2025"
+  },
+  "nome": "Bragança",
+  "slug": "braganca"
+ },
+ {
+  "caopIndex": 49,
+  "dico": "0403",
+  "distritoOuIlha": "Bragança",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "carrazeda-de-ansiaes-desemprego-registado-2025-12",
+   "divida": "carrazeda-de-ansiaes-divida-dgal-2024",
+   "empresas": "carrazeda-de-ansiaes-empresas-2024",
+   "indice": "carrazeda-de-ansiaes-indice-de-divida-2024",
+   "limite": "carrazeda-de-ansiaes-limite-divida-dgal-2024",
+   "pmp": "carrazeda-de-ansiaes-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "carrazeda-de-ansiaes-poder-de-compra-2023",
+   "populacao": "carrazeda-de-ansiaes-populacao-2025"
+  },
+  "nome": "Carrazeda de Ansiães",
+  "slug": "carrazeda-de-ansiaes"
+ },
+ {
+  "caopIndex": 50,
+  "dico": "0404",
+  "distritoOuIlha": "Bragança",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "freixo-de-espada-a-cinta-desemprego-registado-2025-12",
+   "divida": "freixo-de-espada-a-cinta-divida-dgal-2024",
+   "empresas": "freixo-de-espada-a-cinta-empresas-2024",
+   "indice": "freixo-de-espada-a-cinta-indice-de-divida-2024",
+   "limite": "freixo-de-espada-a-cinta-limite-divida-dgal-2024",
+   "pmp": "freixo-de-espada-a-cinta-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "freixo-de-espada-a-cinta-poder-de-compra-2023",
+   "populacao": "freixo-de-espada-a-cinta-populacao-2025"
+  },
+  "nome": "Freixo de Espada à Cinta",
+  "slug": "freixo-de-espada-a-cinta"
+ },
+ {
+  "caopIndex": 51,
+  "dico": "0405",
+  "distritoOuIlha": "Bragança",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "macedo-de-cavaleiros-desemprego-registado-2025-12",
+   "divida": "macedo-de-cavaleiros-divida-dgal-2024",
+   "empresas": "macedo-de-cavaleiros-empresas-2024",
+   "indice": "macedo-de-cavaleiros-indice-de-divida-2024",
+   "limite": "macedo-de-cavaleiros-limite-divida-dgal-2024",
+   "pmp": "macedo-de-cavaleiros-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "macedo-de-cavaleiros-poder-de-compra-2023",
+   "populacao": "macedo-de-cavaleiros-populacao-2025"
+  },
+  "nome": "Macedo de Cavaleiros",
+  "slug": "macedo-de-cavaleiros"
+ },
+ {
+  "caopIndex": 52,
+  "dico": "0406",
+  "distritoOuIlha": "Bragança",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "miranda-do-douro-desemprego-registado-2025-12",
+   "divida": "miranda-do-douro-divida-dgal-2024",
+   "empresas": "miranda-do-douro-empresas-2024",
+   "indice": "miranda-do-douro-indice-de-divida-2024",
+   "limite": "miranda-do-douro-limite-divida-dgal-2024",
+   "pmp": "miranda-do-douro-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "miranda-do-douro-poder-de-compra-2023",
+   "populacao": "miranda-do-douro-populacao-2025"
+  },
+  "nome": "Miranda do Douro",
+  "slug": "miranda-do-douro"
+ },
+ {
+  "caopIndex": 53,
+  "dico": "0407",
+  "distritoOuIlha": "Bragança",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "mirandela-desemprego-registado-2025-12",
+   "divida": "mirandela-divida-dgal-2024",
+   "empresas": "mirandela-empresas-2024",
+   "indice": "mirandela-indice-de-divida-2024",
+   "limite": "mirandela-limite-divida-dgal-2024",
+   "pmp": "mirandela-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "mirandela-poder-de-compra-2023",
+   "populacao": "mirandela-populacao-2025"
+  },
+  "nome": "Mirandela",
+  "slug": "mirandela"
+ },
+ {
+  "caopIndex": 54,
+  "dico": "0408",
+  "distritoOuIlha": "Bragança",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "mogadouro-desemprego-registado-2025-12",
+   "divida": "mogadouro-divida-dgal-2024",
+   "empresas": "mogadouro-empresas-2024",
+   "indice": "mogadouro-indice-de-divida-2024",
+   "limite": "mogadouro-limite-divida-dgal-2024",
+   "pmp": "mogadouro-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "mogadouro-poder-de-compra-2023",
+   "populacao": "mogadouro-populacao-2025"
+  },
+  "nome": "Mogadouro",
+  "slug": "mogadouro"
+ },
+ {
+  "caopIndex": 55,
+  "dico": "0409",
+  "distritoOuIlha": "Bragança",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "torre-de-moncorvo-desemprego-registado-2025-12",
+   "divida": "torre-de-moncorvo-divida-dgal-2024",
+   "empresas": "torre-de-moncorvo-empresas-2024",
+   "indice": "torre-de-moncorvo-indice-de-divida-2024",
+   "limite": "torre-de-moncorvo-limite-divida-dgal-2024",
+   "pmp": "torre-de-moncorvo-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "torre-de-moncorvo-poder-de-compra-2023",
+   "populacao": "torre-de-moncorvo-populacao-2025"
+  },
+  "nome": "Torre de Moncorvo",
+  "slug": "torre-de-moncorvo"
+ },
+ {
+  "caopIndex": 56,
+  "dico": "0410",
+  "distritoOuIlha": "Bragança",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vila-flor-desemprego-registado-2025-12",
+   "divida": "vila-flor-divida-dgal-2024",
+   "empresas": "vila-flor-empresas-2024",
+   "indice": "vila-flor-indice-de-divida-2024",
+   "limite": "vila-flor-limite-divida-dgal-2024",
+   "pmp": "vila-flor-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vila-flor-poder-de-compra-2023",
+   "populacao": "vila-flor-populacao-2025"
+  },
+  "nome": "Vila Flor",
+  "slug": "vila-flor"
+ },
+ {
+  "caopIndex": 57,
+  "dico": "0411",
+  "distritoOuIlha": "Bragança",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vimioso-desemprego-registado-2025-12",
+   "divida": "vimioso-divida-dgal-2024",
+   "empresas": "vimioso-empresas-2024",
+   "indice": "vimioso-indice-de-divida-2024",
+   "limite": "vimioso-limite-divida-dgal-2024",
+   "pmp": "vimioso-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vimioso-poder-de-compra-2023",
+   "populacao": "vimioso-populacao-2025"
+  },
+  "nome": "Vimioso",
+  "slug": "vimioso"
+ },
+ {
+  "caopIndex": 58,
+  "dico": "0412",
+  "distritoOuIlha": "Bragança",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vinhais-desemprego-registado-2025-12",
+   "divida": "vinhais-divida-dgal-2024",
+   "empresas": "vinhais-empresas-2024",
+   "indice": "vinhais-indice-de-divida-2024",
+   "limite": "vinhais-limite-divida-dgal-2024",
+   "pmp": "vinhais-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vinhais-poder-de-compra-2023",
+   "populacao": "vinhais-populacao-2025"
+  },
+  "nome": "Vinhais",
+  "slug": "vinhais"
+ },
+ {
+  "caopIndex": 59,
+  "dico": "0501",
+  "distritoOuIlha": "Castelo Branco",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "belmonte-desemprego-registado-2025-12",
+   "divida": "belmonte-divida-dgal-2024",
+   "empresas": "belmonte-empresas-2024",
+   "indice": "belmonte-indice-de-divida-2024",
+   "limite": "belmonte-limite-divida-dgal-2024",
+   "pmp": "belmonte-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "belmonte-poder-de-compra-2023",
+   "populacao": "belmonte-populacao-2025"
+  },
+  "nome": "Belmonte",
+  "slug": "belmonte"
+ },
+ {
+  "caopIndex": 60,
+  "dico": "0502",
+  "distritoOuIlha": "Castelo Branco",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "castelo-branco-desemprego-registado-2025-12",
+   "divida": "castelo-branco-divida-dgal-2024",
+   "empresas": "castelo-branco-empresas-2024",
+   "indice": "castelo-branco-indice-de-divida-2024",
+   "limite": "castelo-branco-limite-divida-dgal-2024",
+   "pmp": "castelo-branco-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "castelo-branco-poder-de-compra-2023",
+   "populacao": "castelo-branco-populacao-2025"
+  },
+  "nome": "Castelo Branco",
+  "slug": "castelo-branco"
+ },
+ {
+  "caopIndex": 61,
+  "dico": "0503",
+  "distritoOuIlha": "Castelo Branco",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "covilha-desemprego-registado-2025-12",
+   "divida": "covilha-divida-dgal-2024",
+   "empresas": "covilha-empresas-2024",
+   "indice": "covilha-indice-de-divida-2024",
+   "limite": "covilha-limite-divida-dgal-2024",
+   "pmp": "covilha-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "covilha-poder-de-compra-2023",
+   "populacao": "covilha-populacao-2025"
+  },
+  "nome": "Covilhã",
+  "slug": "covilha"
+ },
+ {
+  "caopIndex": 62,
+  "dico": "0504",
+  "distritoOuIlha": "Castelo Branco",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "fundao-desemprego-registado-2025-12",
+   "divida": "fundao-divida-dgal-2024",
+   "empresas": "fundao-empresas-2024",
+   "indice": "fundao-indice-de-divida-2024",
+   "limite": "fundao-limite-divida-dgal-2024",
+   "pmp": "fundao-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "fundao-poder-de-compra-2023",
+   "populacao": "fundao-populacao-2025"
+  },
+  "nome": "Fundão",
+  "slug": "fundao"
+ },
+ {
+  "caopIndex": 63,
+  "dico": "0505",
+  "distritoOuIlha": "Castelo Branco",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "idanha-a-nova-desemprego-registado-2025-12",
+   "divida": "idanha-a-nova-divida-dgal-2024",
+   "empresas": "idanha-a-nova-empresas-2024",
+   "indice": "idanha-a-nova-indice-de-divida-2024",
+   "limite": "idanha-a-nova-limite-divida-dgal-2024",
+   "pmp": "idanha-a-nova-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "idanha-a-nova-poder-de-compra-2023",
+   "populacao": "idanha-a-nova-populacao-2025"
+  },
+  "nome": "Idanha-a-Nova",
+  "slug": "idanha-a-nova"
+ },
+ {
+  "caopIndex": 64,
+  "dico": "0506",
+  "distritoOuIlha": "Castelo Branco",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "oleiros-desemprego-registado-2025-12",
+   "divida": "oleiros-divida-dgal-2024",
+   "empresas": "oleiros-empresas-2024",
+   "indice": "oleiros-indice-de-divida-2024",
+   "limite": "oleiros-limite-divida-dgal-2024",
+   "pmp": "oleiros-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "oleiros-poder-de-compra-2023",
+   "populacao": "oleiros-populacao-2025"
+  },
+  "nome": "Oleiros",
+  "slug": "oleiros"
+ },
+ {
+  "caopIndex": 65,
+  "dico": "0507",
+  "distritoOuIlha": "Castelo Branco",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "penamacor-desemprego-registado-2025-12",
+   "divida": "penamacor-divida-dgal-2024",
+   "empresas": "penamacor-empresas-2024",
+   "indice": "penamacor-indice-de-divida-2024",
+   "limite": "penamacor-limite-divida-dgal-2024",
+   "pmp": "penamacor-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "penamacor-poder-de-compra-2023",
+   "populacao": "penamacor-populacao-2025"
+  },
+  "nome": "Penamacor",
+  "slug": "penamacor"
+ },
+ {
+  "caopIndex": 66,
+  "dico": "0508",
+  "distritoOuIlha": "Castelo Branco",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "proenca-a-nova-desemprego-registado-2025-12",
+   "divida": "proenca-a-nova-divida-dgal-2024",
+   "empresas": "proenca-a-nova-empresas-2024",
+   "indice": "proenca-a-nova-indice-de-divida-2024",
+   "limite": "proenca-a-nova-limite-divida-dgal-2024",
+   "pmp": "proenca-a-nova-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "proenca-a-nova-poder-de-compra-2023",
+   "populacao": "proenca-a-nova-populacao-2025"
+  },
+  "nome": "Proença-a-Nova",
+  "slug": "proenca-a-nova"
+ },
+ {
+  "caopIndex": 67,
+  "dico": "0509",
+  "distritoOuIlha": "Castelo Branco",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "serta-desemprego-registado-2025-12",
+   "divida": "serta-divida-dgal-2024",
+   "empresas": "serta-empresas-2024",
+   "indice": "serta-indice-de-divida-2024",
+   "limite": "serta-limite-divida-dgal-2024",
+   "pmp": "serta-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "serta-poder-de-compra-2023",
+   "populacao": "serta-populacao-2025"
+  },
+  "nome": "Sertã",
+  "slug": "serta"
+ },
+ {
+  "caopIndex": 68,
+  "dico": "0510",
+  "distritoOuIlha": "Castelo Branco",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vila-de-rei-desemprego-registado-2025-12",
+   "divida": "vila-de-rei-divida-dgal-2024",
+   "empresas": "vila-de-rei-empresas-2024",
+   "indice": "vila-de-rei-indice-de-divida-2024",
+   "limite": "vila-de-rei-limite-divida-dgal-2024",
+   "pmp": "vila-de-rei-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vila-de-rei-poder-de-compra-2023",
+   "populacao": "vila-de-rei-populacao-2025"
+  },
+  "nome": "Vila de Rei",
+  "slug": "vila-de-rei"
+ },
+ {
+  "caopIndex": 69,
+  "dico": "0511",
+  "distritoOuIlha": "Castelo Branco",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vila-velha-de-rodao-desemprego-registado-2025-12",
+   "divida": "vila-velha-de-rodao-divida-dgal-2024",
+   "empresas": "vila-velha-de-rodao-empresas-2024",
+   "indice": "vila-velha-de-rodao-indice-de-divida-2024",
+   "limite": "vila-velha-de-rodao-limite-divida-dgal-2024",
+   "pmp": "vila-velha-de-rodao-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vila-velha-de-rodao-poder-de-compra-2023",
+   "populacao": "vila-velha-de-rodao-populacao-2025"
+  },
+  "nome": "Vila Velha de Ródão",
+  "slug": "vila-velha-de-rodao"
+ },
+ {
+  "caopIndex": 70,
+  "dico": "0601",
+  "distritoOuIlha": "Coimbra",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "arganil-desemprego-registado-2025-12",
+   "divida": "arganil-divida-dgal-2024",
+   "empresas": "arganil-empresas-2024",
+   "indice": "arganil-indice-de-divida-2024",
+   "limite": "arganil-limite-divida-dgal-2024",
+   "pmp": "arganil-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "arganil-poder-de-compra-2023",
+   "populacao": "arganil-populacao-2025"
+  },
+  "nome": "Arganil",
+  "slug": "arganil"
+ },
+ {
+  "caopIndex": 71,
+  "dico": "0602",
+  "distritoOuIlha": "Coimbra",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "cantanhede-desemprego-registado-2025-12",
+   "divida": "cantanhede-divida-dgal-2024",
+   "empresas": "cantanhede-empresas-2024",
+   "indice": "cantanhede-indice-de-divida-2024",
+   "limite": "cantanhede-limite-divida-dgal-2024",
+   "pmp": "cantanhede-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "cantanhede-poder-de-compra-2023",
+   "populacao": "cantanhede-populacao-2025"
+  },
+  "nome": "Cantanhede",
+  "slug": "cantanhede"
+ },
+ {
+  "caopIndex": 72,
+  "dico": "0603",
+  "distritoOuIlha": "Coimbra",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "coimbra-desemprego-registado-2025-12",
+   "divida": "coimbra-divida-dgal-2024",
+   "empresas": "coimbra-empresas-2024",
+   "indice": "coimbra-indice-de-divida-2024",
+   "limite": "coimbra-limite-divida-dgal-2024",
+   "pmp": "coimbra-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "coimbra-poder-de-compra-2023",
+   "populacao": "coimbra-populacao-2025"
+  },
+  "nome": "Coimbra",
+  "slug": "coimbra"
+ },
+ {
+  "caopIndex": 73,
+  "dico": "0604",
+  "distritoOuIlha": "Coimbra",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "condeixa-a-nova-desemprego-registado-2025-12",
+   "divida": "condeixa-a-nova-divida-dgal-2024",
+   "empresas": "condeixa-a-nova-empresas-2024",
+   "indice": "condeixa-a-nova-indice-de-divida-2024",
+   "limite": "condeixa-a-nova-limite-divida-dgal-2024",
+   "pmp": "condeixa-a-nova-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "condeixa-a-nova-poder-de-compra-2023",
+   "populacao": "condeixa-a-nova-populacao-2025"
+  },
+  "nome": "Condeixa-a-Nova",
+  "slug": "condeixa-a-nova"
+ },
+ {
+  "caopIndex": 74,
+  "dico": "0605",
+  "distritoOuIlha": "Coimbra",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "figueira-da-foz-desemprego-registado-2025-12",
+   "divida": "figueira-da-foz-divida-dgal-2024",
+   "empresas": "figueira-da-foz-empresas-2024",
+   "indice": "figueira-da-foz-indice-de-divida-2024",
+   "limite": "figueira-da-foz-limite-divida-dgal-2024",
+   "pmp": "figueira-da-foz-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "figueira-da-foz-poder-de-compra-2023",
+   "populacao": "figueira-da-foz-populacao-2025"
+  },
+  "nome": "Figueira da Foz",
+  "slug": "figueira-da-foz"
+ },
+ {
+  "caopIndex": 75,
+  "dico": "0606",
+  "distritoOuIlha": "Coimbra",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "gois-desemprego-registado-2025-12",
+   "divida": "gois-divida-dgal-2024",
+   "empresas": "gois-empresas-2024",
+   "indice": "gois-indice-de-divida-2024",
+   "limite": "gois-limite-divida-dgal-2024",
+   "pmp": "gois-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "gois-poder-de-compra-2023",
+   "populacao": "gois-populacao-2025"
+  },
+  "nome": "Góis",
+  "slug": "gois"
+ },
+ {
+  "caopIndex": 76,
+  "dico": "0607",
+  "distritoOuIlha": "Coimbra",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "lousa-desemprego-registado-2025-12",
+   "divida": "lousa-divida-dgal-2024",
+   "empresas": "lousa-empresas-2024",
+   "indice": "lousa-indice-de-divida-2024",
+   "limite": "lousa-limite-divida-dgal-2024",
+   "pmp": "lousa-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "lousa-poder-de-compra-2023",
+   "populacao": "lousa-populacao-2025"
+  },
+  "nome": "Lousã",
+  "slug": "lousa"
+ },
+ {
+  "caopIndex": 77,
+  "dico": "0608",
+  "distritoOuIlha": "Coimbra",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "mira-desemprego-registado-2025-12",
+   "divida": "mira-divida-dgal-2024",
+   "empresas": "mira-empresas-2024",
+   "indice": "mira-indice-de-divida-2024",
+   "limite": "mira-limite-divida-dgal-2024",
+   "pmp": "mira-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "mira-poder-de-compra-2023",
+   "populacao": "mira-populacao-2025"
+  },
+  "nome": "Mira",
+  "slug": "mira"
+ },
+ {
+  "caopIndex": 78,
+  "dico": "0609",
+  "distritoOuIlha": "Coimbra",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "miranda-do-corvo-desemprego-registado-2025-12",
+   "divida": "miranda-do-corvo-divida-dgal-2024",
+   "empresas": "miranda-do-corvo-empresas-2024",
+   "indice": "miranda-do-corvo-indice-de-divida-2024",
+   "limite": "miranda-do-corvo-limite-divida-dgal-2024",
+   "pmp": "miranda-do-corvo-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "miranda-do-corvo-poder-de-compra-2023",
+   "populacao": "miranda-do-corvo-populacao-2025"
+  },
+  "nome": "Miranda do Corvo",
+  "slug": "miranda-do-corvo"
+ },
+ {
+  "caopIndex": 79,
+  "dico": "0610",
+  "distritoOuIlha": "Coimbra",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "montemor-o-velho-desemprego-registado-2025-12",
+   "divida": "montemor-o-velho-divida-dgal-2024",
+   "empresas": "montemor-o-velho-empresas-2024",
+   "indice": "montemor-o-velho-indice-de-divida-2024",
+   "limite": "montemor-o-velho-limite-divida-dgal-2024",
+   "pmp": "montemor-o-velho-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "montemor-o-velho-poder-de-compra-2023",
+   "populacao": "montemor-o-velho-populacao-2025"
+  },
+  "nome": "Montemor-o-Velho",
+  "slug": "montemor-o-velho"
+ },
+ {
+  "caopIndex": 80,
+  "dico": "0611",
+  "distritoOuIlha": "Coimbra",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "oliveira-do-hospital-desemprego-registado-2025-12",
+   "divida": "oliveira-do-hospital-divida-dgal-2024",
+   "empresas": "oliveira-do-hospital-empresas-2024",
+   "indice": "oliveira-do-hospital-indice-de-divida-2024",
+   "limite": "oliveira-do-hospital-limite-divida-dgal-2024",
+   "pmp": "oliveira-do-hospital-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "oliveira-do-hospital-poder-de-compra-2023",
+   "populacao": "oliveira-do-hospital-populacao-2025"
+  },
+  "nome": "Oliveira do Hospital",
+  "slug": "oliveira-do-hospital"
+ },
+ {
+  "caopIndex": 81,
+  "dico": "0612",
+  "distritoOuIlha": "Coimbra",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "pampilhosa-da-serra-desemprego-registado-2025-12",
+   "divida": "pampilhosa-da-serra-divida-dgal-2024",
+   "empresas": "pampilhosa-da-serra-empresas-2024",
+   "indice": "pampilhosa-da-serra-indice-de-divida-2024",
+   "limite": "pampilhosa-da-serra-limite-divida-dgal-2024",
+   "pmp": "pampilhosa-da-serra-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "pampilhosa-da-serra-poder-de-compra-2023",
+   "populacao": "pampilhosa-da-serra-populacao-2025"
+  },
+  "nome": "Pampilhosa da Serra",
+  "slug": "pampilhosa-da-serra"
+ },
+ {
+  "caopIndex": 82,
+  "dico": "0613",
+  "distritoOuIlha": "Coimbra",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "penacova-desemprego-registado-2025-12",
+   "divida": "penacova-divida-dgal-2024",
+   "empresas": "penacova-empresas-2024",
+   "indice": "penacova-indice-de-divida-2024",
+   "limite": "penacova-limite-divida-dgal-2024",
+   "pmp": "penacova-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "penacova-poder-de-compra-2023",
+   "populacao": "penacova-populacao-2025"
+  },
+  "nome": "Penacova",
+  "slug": "penacova"
+ },
+ {
+  "caopIndex": 83,
+  "dico": "0614",
+  "distritoOuIlha": "Coimbra",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "penela-desemprego-registado-2025-12",
+   "divida": "penela-divida-dgal-2024",
+   "empresas": "penela-empresas-2024",
+   "indice": "penela-indice-de-divida-2024",
+   "limite": "penela-limite-divida-dgal-2024",
+   "pmp": "penela-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "penela-poder-de-compra-2023",
+   "populacao": "penela-populacao-2025"
+  },
+  "nome": "Penela",
+  "slug": "penela"
+ },
+ {
+  "caopIndex": 84,
+  "dico": "0615",
+  "distritoOuIlha": "Coimbra",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "soure-desemprego-registado-2025-12",
+   "divida": "soure-divida-dgal-2024",
+   "empresas": "soure-empresas-2024",
+   "indice": "soure-indice-de-divida-2024",
+   "limite": "soure-limite-divida-dgal-2024",
+   "pmp": "soure-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "soure-poder-de-compra-2023",
+   "populacao": "soure-populacao-2025"
+  },
+  "nome": "Soure",
+  "slug": "soure"
+ },
+ {
+  "caopIndex": 85,
+  "dico": "0616",
+  "distritoOuIlha": "Coimbra",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "tabua-desemprego-registado-2025-12",
+   "divida": "tabua-divida-dgal-2024",
+   "empresas": "tabua-empresas-2024",
+   "indice": "tabua-indice-de-divida-2024",
+   "limite": "tabua-limite-divida-dgal-2024",
+   "pmp": "tabua-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "tabua-poder-de-compra-2023",
+   "populacao": "tabua-populacao-2025"
+  },
+  "nome": "Tábua",
+  "slug": "tabua"
+ },
+ {
+  "caopIndex": 86,
+  "dico": "0617",
+  "distritoOuIlha": "Coimbra",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vila-nova-de-poiares-desemprego-registado-2025-12",
+   "divida": "vila-nova-de-poiares-divida-dgal-2024",
+   "empresas": "vila-nova-de-poiares-empresas-2024",
+   "indice": "vila-nova-de-poiares-indice-de-divida-2024",
+   "limite": "vila-nova-de-poiares-limite-divida-dgal-2024",
+   "pmp": "vila-nova-de-poiares-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vila-nova-de-poiares-poder-de-compra-2023",
+   "populacao": "vila-nova-de-poiares-populacao-2025"
+  },
+  "nome": "Vila Nova de Poiares",
+  "slug": "vila-nova-de-poiares"
+ },
+ {
+  "caopIndex": 87,
+  "dico": "0701",
+  "distritoOuIlha": "Évora",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "alandroal-desemprego-registado-2025-12",
+   "divida": "alandroal-divida-dgal-2024",
+   "empresas": "alandroal-empresas-2024",
+   "indice": "alandroal-indice-de-divida-2024",
+   "limite": "alandroal-limite-divida-dgal-2024",
+   "pmp": "alandroal-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "alandroal-poder-de-compra-2023",
+   "populacao": "alandroal-populacao-2025"
+  },
+  "nome": "Alandroal",
+  "slug": "alandroal"
+ },
+ {
+  "caopIndex": 88,
+  "dico": "0702",
+  "distritoOuIlha": "Évora",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "arraiolos-desemprego-registado-2025-12",
+   "divida": "arraiolos-divida-dgal-2024",
+   "empresas": "arraiolos-empresas-2024",
+   "indice": "arraiolos-indice-de-divida-2024",
+   "limite": "arraiolos-limite-divida-dgal-2024",
+   "pmp": "arraiolos-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "arraiolos-poder-de-compra-2023",
+   "populacao": "arraiolos-populacao-2025"
+  },
+  "nome": "Arraiolos",
+  "slug": "arraiolos"
+ },
+ {
+  "caopIndex": 89,
+  "dico": "0703",
+  "distritoOuIlha": "Évora",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "borba-desemprego-registado-2025-12",
+   "divida": "borba-divida-dgal-2024",
+   "empresas": "borba-empresas-2024",
+   "indice": "borba-indice-de-divida-2024",
+   "limite": "borba-limite-divida-dgal-2024",
+   "pmp": "borba-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "borba-poder-de-compra-2023",
+   "populacao": "borba-populacao-2025"
+  },
+  "nome": "Borba",
+  "slug": "borba"
+ },
+ {
+  "caopIndex": 90,
+  "dico": "0704",
+  "distritoOuIlha": "Évora",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "estremoz-desemprego-registado-2025-12",
+   "divida": "estremoz-divida-dgal-2024",
+   "empresas": "estremoz-empresas-2024",
+   "indice": "estremoz-indice-de-divida-2024",
+   "limite": "estremoz-limite-divida-dgal-2024",
+   "pmp": "estremoz-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "estremoz-poder-de-compra-2023",
+   "populacao": "estremoz-populacao-2025"
+  },
+  "nome": "Estremoz",
+  "slug": "estremoz"
+ },
+ {
+  "caopIndex": 91,
+  "dico": "0705",
+  "distritoOuIlha": "Évora",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "evora-desemprego-registado-2025-12",
+   "divida": "evora-divida-dgal-2024",
+   "empresas": "evora-empresas-2024",
+   "indice": "evora-indice-de-divida-2024",
+   "limite": "evora-limite-divida-dgal-2024",
+   "pmp": null,
+   "poderDeCompra": "evora-poder-de-compra-2023",
+   "populacao": "evora-populacao-2025"
+  },
+  "nome": "Évora",
+  "slug": "evora"
+ },
+ {
+  "caopIndex": 92,
+  "dico": "0706",
+  "distritoOuIlha": "Évora",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "montemor-o-novo-desemprego-registado-2025-12",
+   "divida": "montemor-o-novo-divida-dgal-2024",
+   "empresas": "montemor-o-novo-empresas-2024",
+   "indice": "montemor-o-novo-indice-de-divida-2024",
+   "limite": "montemor-o-novo-limite-divida-dgal-2024",
+   "pmp": "montemor-o-novo-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "montemor-o-novo-poder-de-compra-2023",
+   "populacao": "montemor-o-novo-populacao-2025"
+  },
+  "nome": "Montemor-o-Novo",
+  "slug": "montemor-o-novo"
+ },
+ {
+  "caopIndex": 93,
+  "dico": "0707",
+  "distritoOuIlha": "Évora",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "mora-desemprego-registado-2025-12",
+   "divida": "mora-divida-dgal-2024",
+   "empresas": "mora-empresas-2024",
+   "indice": "mora-indice-de-divida-2024",
+   "limite": "mora-limite-divida-dgal-2024",
+   "pmp": "mora-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "mora-poder-de-compra-2023",
+   "populacao": "mora-populacao-2025"
+  },
+  "nome": "Mora",
+  "slug": "mora"
+ },
+ {
+  "caopIndex": 94,
+  "dico": "0708",
+  "distritoOuIlha": "Évora",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "mourao-desemprego-registado-2025-12",
+   "divida": "mourao-divida-dgal-2024",
+   "empresas": "mourao-empresas-2024",
+   "indice": "mourao-indice-de-divida-2024",
+   "limite": "mourao-limite-divida-dgal-2024",
+   "pmp": "mourao-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "mourao-poder-de-compra-2023",
+   "populacao": "mourao-populacao-2025"
+  },
+  "nome": "Mourão",
+  "slug": "mourao"
+ },
+ {
+  "caopIndex": 95,
+  "dico": "0709",
+  "distritoOuIlha": "Évora",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "portel-desemprego-registado-2025-12",
+   "divida": "portel-divida-dgal-2024",
+   "empresas": "portel-empresas-2024",
+   "indice": "portel-indice-de-divida-2024",
+   "limite": "portel-limite-divida-dgal-2024",
+   "pmp": "portel-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "portel-poder-de-compra-2023",
+   "populacao": "portel-populacao-2025"
+  },
+  "nome": "Portel",
+  "slug": "portel"
+ },
+ {
+  "caopIndex": 96,
+  "dico": "0710",
+  "distritoOuIlha": "Évora",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "redondo-desemprego-registado-2025-12",
+   "divida": "redondo-divida-dgal-2024",
+   "empresas": "redondo-empresas-2024",
+   "indice": "redondo-indice-de-divida-2024",
+   "limite": "redondo-limite-divida-dgal-2024",
+   "pmp": "redondo-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "redondo-poder-de-compra-2023",
+   "populacao": "redondo-populacao-2025"
+  },
+  "nome": "Redondo",
+  "slug": "redondo"
+ },
+ {
+  "caopIndex": 97,
+  "dico": "0711",
+  "distritoOuIlha": "Évora",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "reguengos-de-monsaraz-desemprego-registado-2025-12",
+   "divida": "reguengos-de-monsaraz-divida-dgal-2024",
+   "empresas": "reguengos-de-monsaraz-empresas-2024",
+   "indice": "reguengos-de-monsaraz-indice-de-divida-2024",
+   "limite": "reguengos-de-monsaraz-limite-divida-dgal-2024",
+   "pmp": "reguengos-de-monsaraz-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "reguengos-de-monsaraz-poder-de-compra-2023",
+   "populacao": "reguengos-de-monsaraz-populacao-2025"
+  },
+  "nome": "Reguengos de Monsaraz",
+  "slug": "reguengos-de-monsaraz"
+ },
+ {
+  "caopIndex": 98,
+  "dico": "0712",
+  "distritoOuIlha": "Évora",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vendas-novas-desemprego-registado-2025-12",
+   "divida": "vendas-novas-divida-dgal-2024",
+   "empresas": "vendas-novas-empresas-2024",
+   "indice": "vendas-novas-indice-de-divida-2024",
+   "limite": "vendas-novas-limite-divida-dgal-2024",
+   "pmp": "vendas-novas-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vendas-novas-poder-de-compra-2023",
+   "populacao": "vendas-novas-populacao-2025"
+  },
+  "nome": "Vendas Novas",
+  "slug": "vendas-novas"
+ },
+ {
+  "caopIndex": 99,
+  "dico": "0713",
+  "distritoOuIlha": "Évora",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "viana-do-alentejo-desemprego-registado-2025-12",
+   "divida": "viana-do-alentejo-divida-dgal-2024",
+   "empresas": "viana-do-alentejo-empresas-2024",
+   "indice": "viana-do-alentejo-indice-de-divida-2024",
+   "limite": "viana-do-alentejo-limite-divida-dgal-2024",
+   "pmp": "viana-do-alentejo-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "viana-do-alentejo-poder-de-compra-2023",
+   "populacao": "viana-do-alentejo-populacao-2025"
+  },
+  "nome": "Viana do Alentejo",
+  "slug": "viana-do-alentejo"
+ },
+ {
+  "caopIndex": 100,
+  "dico": "0714",
+  "distritoOuIlha": "Évora",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vila-vicosa-desemprego-registado-2025-12",
+   "divida": "vila-vicosa-divida-dgal-2024",
+   "empresas": "vila-vicosa-empresas-2024",
+   "indice": "vila-vicosa-indice-de-divida-2024",
+   "limite": "vila-vicosa-limite-divida-dgal-2024",
+   "pmp": "vila-vicosa-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vila-vicosa-poder-de-compra-2023",
+   "populacao": "vila-vicosa-populacao-2025"
+  },
+  "nome": "Vila Viçosa",
+  "slug": "vila-vicosa"
+ },
+ {
+  "caopIndex": 101,
+  "dico": "0801",
+  "distritoOuIlha": "Faro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "albufeira-desemprego-registado-2025-12",
+   "divida": "albufeira-divida-dgal-2024",
+   "empresas": "albufeira-empresas-2024",
+   "indice": "albufeira-indice-de-divida-2024",
+   "limite": "albufeira-limite-divida-dgal-2024",
+   "pmp": "albufeira-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "albufeira-poder-de-compra-2023",
+   "populacao": "albufeira-populacao-2025"
+  },
+  "nome": "Albufeira",
+  "slug": "albufeira"
+ },
+ {
+  "caopIndex": 102,
+  "dico": "0802",
+  "distritoOuIlha": "Faro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "alcoutim-desemprego-registado-2025-12",
+   "divida": "alcoutim-divida-dgal-2024",
+   "empresas": "alcoutim-empresas-2024",
+   "indice": "alcoutim-indice-de-divida-2024",
+   "limite": "alcoutim-limite-divida-dgal-2024",
+   "pmp": "alcoutim-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "alcoutim-poder-de-compra-2023",
+   "populacao": "alcoutim-populacao-2025"
+  },
+  "nome": "Alcoutim",
+  "slug": "alcoutim"
+ },
+ {
+  "caopIndex": 103,
+  "dico": "0803",
+  "distritoOuIlha": "Faro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "aljezur-desemprego-registado-2025-12",
+   "divida": "aljezur-divida-dgal-2024",
+   "empresas": "aljezur-empresas-2024",
+   "indice": "aljezur-indice-de-divida-2024",
+   "limite": "aljezur-limite-divida-dgal-2024",
+   "pmp": null,
+   "poderDeCompra": "aljezur-poder-de-compra-2023",
+   "populacao": "aljezur-populacao-2025"
+  },
+  "nome": "Aljezur",
+  "slug": "aljezur"
+ },
+ {
+  "caopIndex": 104,
+  "dico": "0804",
+  "distritoOuIlha": "Faro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "castro-marim-desemprego-registado-2025-12",
+   "divida": "castro-marim-divida-dgal-2024",
+   "empresas": "castro-marim-empresas-2024",
+   "indice": "castro-marim-indice-de-divida-2024",
+   "limite": "castro-marim-limite-divida-dgal-2024",
+   "pmp": "castro-marim-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "castro-marim-poder-de-compra-2023",
+   "populacao": "castro-marim-populacao-2025"
+  },
+  "nome": "Castro Marim",
+  "slug": "castro-marim"
+ },
+ {
+  "caopIndex": 105,
+  "dico": "0805",
+  "distritoOuIlha": "Faro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "faro-desemprego-registado-2025-12",
+   "divida": "faro-divida-dgal-2024",
+   "empresas": "faro-empresas-2024",
+   "indice": "faro-indice-de-divida-2024",
+   "limite": "faro-limite-divida-dgal-2024",
+   "pmp": "faro-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "faro-poder-de-compra-2023",
+   "populacao": "faro-populacao-2025"
+  },
+  "nome": "Faro",
+  "slug": "faro"
+ },
+ {
+  "caopIndex": 106,
+  "dico": "0806",
+  "distritoOuIlha": "Faro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "lagoa-faro-desemprego-registado-2025-12",
+   "divida": "lagoa-faro-divida-dgal-2024",
+   "empresas": "lagoa-faro-empresas-2024",
+   "indice": "lagoa-faro-indice-de-divida-2024",
+   "limite": "lagoa-faro-limite-divida-dgal-2024",
+   "pmp": "lagoa-faro-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "lagoa-faro-poder-de-compra-2023",
+   "populacao": "lagoa-faro-populacao-2025"
+  },
+  "nome": "Lagoa",
+  "slug": "lagoa-faro"
+ },
+ {
+  "caopIndex": 107,
+  "dico": "0807",
+  "distritoOuIlha": "Faro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "lagos-desemprego-registado-2025-12",
+   "divida": "lagos-divida-dgal-2024",
+   "empresas": "lagos-empresas-2024",
+   "indice": "lagos-indice-de-divida-2024",
+   "limite": "lagos-limite-divida-dgal-2024",
+   "pmp": "lagos-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "lagos-poder-de-compra-2023",
+   "populacao": "lagos-populacao-2025"
+  },
+  "nome": "Lagos",
+  "slug": "lagos"
+ },
+ {
+  "caopIndex": 108,
+  "dico": "0808",
+  "distritoOuIlha": "Faro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "loule-desemprego-registado-2025-12",
+   "divida": "loule-divida-dgal-2024",
+   "empresas": "loule-empresas-2024",
+   "indice": "loule-indice-de-divida-2024",
+   "limite": "loule-limite-divida-dgal-2024",
+   "pmp": "loule-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "loule-poder-de-compra-2023",
+   "populacao": "loule-populacao-2025"
+  },
+  "nome": "Loulé",
+  "slug": "loule"
+ },
+ {
+  "caopIndex": 109,
+  "dico": "0809",
+  "distritoOuIlha": "Faro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "monchique-desemprego-registado-2025-12",
+   "divida": "monchique-divida-dgal-2024",
+   "empresas": "monchique-empresas-2024",
+   "indice": "monchique-indice-de-divida-2024",
+   "limite": "monchique-limite-divida-dgal-2024",
+   "pmp": "monchique-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "monchique-poder-de-compra-2023",
+   "populacao": "monchique-populacao-2025"
+  },
+  "nome": "Monchique",
+  "slug": "monchique"
+ },
+ {
+  "caopIndex": 110,
+  "dico": "0810",
+  "distritoOuIlha": "Faro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "olhao-desemprego-registado-2025-12",
+   "divida": "olhao-divida-dgal-2024",
+   "empresas": "olhao-empresas-2024",
+   "indice": "olhao-indice-de-divida-2024",
+   "limite": "olhao-limite-divida-dgal-2024",
+   "pmp": "olhao-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "olhao-poder-de-compra-2023",
+   "populacao": "olhao-populacao-2025"
+  },
+  "nome": "Olhão",
+  "slug": "olhao"
+ },
+ {
+  "caopIndex": 111,
+  "dico": "0811",
+  "distritoOuIlha": "Faro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "portimao-desemprego-registado-2025-12",
+   "divida": "portimao-divida-dgal-2024",
+   "empresas": "portimao-empresas-2024",
+   "indice": "portimao-indice-de-divida-2024",
+   "limite": "portimao-limite-divida-dgal-2024",
+   "pmp": "portimao-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "portimao-poder-de-compra-2023",
+   "populacao": "portimao-populacao-2025"
+  },
+  "nome": "Portimão",
+  "slug": "portimao"
+ },
+ {
+  "caopIndex": 112,
+  "dico": "0812",
+  "distritoOuIlha": "Faro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "sao-bras-de-alportel-desemprego-registado-2025-12",
+   "divida": "sao-bras-de-alportel-divida-dgal-2024",
+   "empresas": "sao-bras-de-alportel-empresas-2024",
+   "indice": "sao-bras-de-alportel-indice-de-divida-2024",
+   "limite": "sao-bras-de-alportel-limite-divida-dgal-2024",
+   "pmp": "sao-bras-de-alportel-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "sao-bras-de-alportel-poder-de-compra-2023",
+   "populacao": "sao-bras-de-alportel-populacao-2025"
+  },
+  "nome": "São Brás de Alportel",
+  "slug": "sao-bras-de-alportel"
+ },
+ {
+  "caopIndex": 113,
+  "dico": "0813",
+  "distritoOuIlha": "Faro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "silves-desemprego-registado-2025-12",
+   "divida": "silves-divida-dgal-2024",
+   "empresas": "silves-empresas-2024",
+   "indice": "silves-indice-de-divida-2024",
+   "limite": "silves-limite-divida-dgal-2024",
+   "pmp": "silves-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "silves-poder-de-compra-2023",
+   "populacao": "silves-populacao-2025"
+  },
+  "nome": "Silves",
+  "slug": "silves"
+ },
+ {
+  "caopIndex": 114,
+  "dico": "0814",
+  "distritoOuIlha": "Faro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "tavira-desemprego-registado-2025-12",
+   "divida": "tavira-divida-dgal-2024",
+   "empresas": "tavira-empresas-2024",
+   "indice": "tavira-indice-de-divida-2024",
+   "limite": "tavira-limite-divida-dgal-2024",
+   "pmp": "tavira-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "tavira-poder-de-compra-2023",
+   "populacao": "tavira-populacao-2025"
+  },
+  "nome": "Tavira",
+  "slug": "tavira"
+ },
+ {
+  "caopIndex": 115,
+  "dico": "0815",
+  "distritoOuIlha": "Faro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vila-do-bispo-desemprego-registado-2025-12",
+   "divida": "vila-do-bispo-divida-dgal-2024",
+   "empresas": "vila-do-bispo-empresas-2024",
+   "indice": "vila-do-bispo-indice-de-divida-2024",
+   "limite": "vila-do-bispo-limite-divida-dgal-2024",
+   "pmp": "vila-do-bispo-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vila-do-bispo-poder-de-compra-2023",
+   "populacao": "vila-do-bispo-populacao-2025"
+  },
+  "nome": "Vila do Bispo",
+  "slug": "vila-do-bispo"
+ },
+ {
+  "caopIndex": 116,
+  "dico": "0816",
+  "distritoOuIlha": "Faro",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vila-real-de-santo-antonio-desemprego-registado-2025-12",
+   "divida": "vila-real-de-santo-antonio-divida-dgal-2024",
+   "empresas": "vila-real-de-santo-antonio-empresas-2024",
+   "indice": "vila-real-de-santo-antonio-indice-de-divida-2024",
+   "limite": "vila-real-de-santo-antonio-limite-divida-dgal-2024",
+   "pmp": "vila-real-de-santo-antonio-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vila-real-de-santo-antonio-poder-de-compra-2023",
+   "populacao": "vila-real-de-santo-antonio-populacao-2025"
+  },
+  "nome": "Vila Real de Santo António",
+  "slug": "vila-real-de-santo-antonio"
+ },
+ {
+  "caopIndex": 117,
+  "dico": "0901",
+  "distritoOuIlha": "Guarda",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "aguiar-da-beira-desemprego-registado-2025-12",
+   "divida": "aguiar-da-beira-divida-dgal-2024",
+   "empresas": "aguiar-da-beira-empresas-2024",
+   "indice": "aguiar-da-beira-indice-de-divida-2024",
+   "limite": "aguiar-da-beira-limite-divida-dgal-2024",
+   "pmp": "aguiar-da-beira-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "aguiar-da-beira-poder-de-compra-2023",
+   "populacao": "aguiar-da-beira-populacao-2025"
+  },
+  "nome": "Aguiar da Beira",
+  "slug": "aguiar-da-beira"
+ },
+ {
+  "caopIndex": 118,
+  "dico": "0902",
+  "distritoOuIlha": "Guarda",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "almeida-desemprego-registado-2025-12",
+   "divida": "almeida-divida-dgal-2024",
+   "empresas": "almeida-empresas-2024",
+   "indice": "almeida-indice-de-divida-2024",
+   "limite": "almeida-limite-divida-dgal-2024",
+   "pmp": "almeida-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "almeida-poder-de-compra-2023",
+   "populacao": "almeida-populacao-2025"
+  },
+  "nome": "Almeida",
+  "slug": "almeida"
+ },
+ {
+  "caopIndex": 119,
+  "dico": "0903",
+  "distritoOuIlha": "Guarda",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "celorico-da-beira-desemprego-registado-2025-12",
+   "divida": "celorico-da-beira-divida-dgal-2024",
+   "empresas": "celorico-da-beira-empresas-2024",
+   "indice": "celorico-da-beira-indice-de-divida-2024",
+   "limite": "celorico-da-beira-limite-divida-dgal-2024",
+   "pmp": "celorico-da-beira-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "celorico-da-beira-poder-de-compra-2023",
+   "populacao": "celorico-da-beira-populacao-2025"
+  },
+  "nome": "Celorico da Beira",
+  "slug": "celorico-da-beira"
+ },
+ {
+  "caopIndex": 120,
+  "dico": "0904",
+  "distritoOuIlha": "Guarda",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "figueira-de-castelo-rodrigo-desemprego-registado-2025-12",
+   "divida": "figueira-de-castelo-rodrigo-divida-dgal-2024",
+   "empresas": "figueira-de-castelo-rodrigo-empresas-2024",
+   "indice": "figueira-de-castelo-rodrigo-indice-de-divida-2024",
+   "limite": "figueira-de-castelo-rodrigo-limite-divida-dgal-2024",
+   "pmp": "figueira-de-castelo-rodrigo-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "figueira-de-castelo-rodrigo-poder-de-compra-2023",
+   "populacao": "figueira-de-castelo-rodrigo-populacao-2025"
+  },
+  "nome": "Figueira de Castelo Rodrigo",
+  "slug": "figueira-de-castelo-rodrigo"
+ },
+ {
+  "caopIndex": 121,
+  "dico": "0905",
+  "distritoOuIlha": "Guarda",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "fornos-de-algodres-desemprego-registado-2025-12",
+   "divida": "fornos-de-algodres-divida-dgal-2024",
+   "empresas": "fornos-de-algodres-empresas-2024",
+   "indice": "fornos-de-algodres-indice-de-divida-2024",
+   "limite": "fornos-de-algodres-limite-divida-dgal-2024",
+   "pmp": "fornos-de-algodres-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "fornos-de-algodres-poder-de-compra-2023",
+   "populacao": "fornos-de-algodres-populacao-2025"
+  },
+  "nome": "Fornos de Algodres",
+  "slug": "fornos-de-algodres"
+ },
+ {
+  "caopIndex": 122,
+  "dico": "0906",
+  "distritoOuIlha": "Guarda",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "gouveia-desemprego-registado-2025-12",
+   "divida": "gouveia-divida-dgal-2024",
+   "empresas": "gouveia-empresas-2024",
+   "indice": "gouveia-indice-de-divida-2024",
+   "limite": "gouveia-limite-divida-dgal-2024",
+   "pmp": "gouveia-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "gouveia-poder-de-compra-2023",
+   "populacao": "gouveia-populacao-2025"
+  },
+  "nome": "Gouveia",
+  "slug": "gouveia"
+ },
+ {
+  "caopIndex": 123,
+  "dico": "0907",
+  "distritoOuIlha": "Guarda",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "guarda-desemprego-registado-2025-12",
+   "divida": "guarda-divida-dgal-2024",
+   "empresas": "guarda-empresas-2024",
+   "indice": "guarda-indice-de-divida-2024",
+   "limite": "guarda-limite-divida-dgal-2024",
+   "pmp": "guarda-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "guarda-poder-de-compra-2023",
+   "populacao": "guarda-populacao-2025"
+  },
+  "nome": "Guarda",
+  "slug": "guarda"
+ },
+ {
+  "caopIndex": 124,
+  "dico": "0908",
+  "distritoOuIlha": "Guarda",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "manteigas-desemprego-registado-2025-12",
+   "divida": "manteigas-divida-dgal-2024",
+   "empresas": "manteigas-empresas-2024",
+   "indice": "manteigas-indice-de-divida-2024",
+   "limite": "manteigas-limite-divida-dgal-2024",
+   "pmp": "manteigas-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "manteigas-poder-de-compra-2023",
+   "populacao": "manteigas-populacao-2025"
+  },
+  "nome": "Manteigas",
+  "slug": "manteigas"
+ },
+ {
+  "caopIndex": 125,
+  "dico": "0909",
+  "distritoOuIlha": "Guarda",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "meda-desemprego-registado-2025-12",
+   "divida": "meda-divida-dgal-2024",
+   "empresas": "meda-empresas-2024",
+   "indice": "meda-indice-de-divida-2024",
+   "limite": "meda-limite-divida-dgal-2024",
+   "pmp": "meda-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "meda-poder-de-compra-2023",
+   "populacao": "meda-populacao-2025"
+  },
+  "nome": "Mêda",
+  "slug": "meda"
+ },
+ {
+  "caopIndex": 126,
+  "dico": "0910",
+  "distritoOuIlha": "Guarda",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "pinhel-desemprego-registado-2025-12",
+   "divida": "pinhel-divida-dgal-2024",
+   "empresas": "pinhel-empresas-2024",
+   "indice": "pinhel-indice-de-divida-2024",
+   "limite": "pinhel-limite-divida-dgal-2024",
+   "pmp": "pinhel-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "pinhel-poder-de-compra-2023",
+   "populacao": "pinhel-populacao-2025"
+  },
+  "nome": "Pinhel",
+  "slug": "pinhel"
+ },
+ {
+  "caopIndex": 127,
+  "dico": "0911",
+  "distritoOuIlha": "Guarda",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "sabugal-desemprego-registado-2025-12",
+   "divida": "sabugal-divida-dgal-2024",
+   "empresas": "sabugal-empresas-2024",
+   "indice": "sabugal-indice-de-divida-2024",
+   "limite": "sabugal-limite-divida-dgal-2024",
+   "pmp": "sabugal-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "sabugal-poder-de-compra-2023",
+   "populacao": "sabugal-populacao-2025"
+  },
+  "nome": "Sabugal",
+  "slug": "sabugal"
+ },
+ {
+  "caopIndex": 128,
+  "dico": "0912",
+  "distritoOuIlha": "Guarda",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "seia-desemprego-registado-2025-12",
+   "divida": "seia-divida-dgal-2024",
+   "empresas": "seia-empresas-2024",
+   "indice": "seia-indice-de-divida-2024",
+   "limite": "seia-limite-divida-dgal-2024",
+   "pmp": "seia-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "seia-poder-de-compra-2023",
+   "populacao": "seia-populacao-2025"
+  },
+  "nome": "Seia",
+  "slug": "seia"
+ },
+ {
+  "caopIndex": 129,
+  "dico": "0913",
+  "distritoOuIlha": "Guarda",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "trancoso-desemprego-registado-2025-12",
+   "divida": "trancoso-divida-dgal-2024",
+   "empresas": "trancoso-empresas-2024",
+   "indice": "trancoso-indice-de-divida-2024",
+   "limite": "trancoso-limite-divida-dgal-2024",
+   "pmp": null,
+   "poderDeCompra": "trancoso-poder-de-compra-2023",
+   "populacao": "trancoso-populacao-2025"
+  },
+  "nome": "Trancoso",
+  "slug": "trancoso"
+ },
+ {
+  "caopIndex": 130,
+  "dico": "0914",
+  "distritoOuIlha": "Guarda",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vila-nova-de-foz-coa-desemprego-registado-2025-12",
+   "divida": "vila-nova-de-foz-coa-divida-dgal-2024",
+   "empresas": "vila-nova-de-foz-coa-empresas-2024",
+   "indice": "vila-nova-de-foz-coa-indice-de-divida-2024",
+   "limite": "vila-nova-de-foz-coa-limite-divida-dgal-2024",
+   "pmp": "vila-nova-de-foz-coa-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vila-nova-de-foz-coa-poder-de-compra-2023",
+   "populacao": "vila-nova-de-foz-coa-populacao-2025"
+  },
+  "nome": "Vila Nova de Foz Côa",
+  "slug": "vila-nova-de-foz-coa"
+ },
+ {
+  "caopIndex": 131,
+  "dico": "1001",
+  "distritoOuIlha": "Leiria",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "alcobaca-desemprego-registado-2025-12",
+   "divida": "alcobaca-divida-dgal-2024",
+   "empresas": "alcobaca-empresas-2024",
+   "indice": "alcobaca-indice-de-divida-2024",
+   "limite": "alcobaca-limite-divida-dgal-2024",
+   "pmp": "alcobaca-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "alcobaca-poder-de-compra-2023",
+   "populacao": "alcobaca-populacao-2025"
+  },
+  "nome": "Alcobaça",
+  "slug": "alcobaca"
+ },
+ {
+  "caopIndex": 132,
+  "dico": "1002",
+  "distritoOuIlha": "Leiria",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "alvaiazere-desemprego-registado-2025-12",
+   "divida": "alvaiazere-divida-dgal-2024",
+   "empresas": "alvaiazere-empresas-2024",
+   "indice": "alvaiazere-indice-de-divida-2024",
+   "limite": "alvaiazere-limite-divida-dgal-2024",
+   "pmp": "alvaiazere-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "alvaiazere-poder-de-compra-2023",
+   "populacao": "alvaiazere-populacao-2025"
+  },
+  "nome": "Alvaiázere",
+  "slug": "alvaiazere"
+ },
+ {
+  "caopIndex": 133,
+  "dico": "1003",
+  "distritoOuIlha": "Leiria",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "ansiao-desemprego-registado-2025-12",
+   "divida": "ansiao-divida-dgal-2024",
+   "empresas": "ansiao-empresas-2024",
+   "indice": "ansiao-indice-de-divida-2024",
+   "limite": "ansiao-limite-divida-dgal-2024",
+   "pmp": "ansiao-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "ansiao-poder-de-compra-2023",
+   "populacao": "ansiao-populacao-2025"
+  },
+  "nome": "Ansião",
+  "slug": "ansiao"
+ },
+ {
+  "caopIndex": 134,
+  "dico": "1004",
+  "distritoOuIlha": "Leiria",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "batalha-desemprego-registado-2025-12",
+   "divida": "batalha-divida-dgal-2024",
+   "empresas": "batalha-empresas-2024",
+   "indice": "batalha-indice-de-divida-2024",
+   "limite": "batalha-limite-divida-dgal-2024",
+   "pmp": null,
+   "poderDeCompra": "batalha-poder-de-compra-2023",
+   "populacao": "batalha-populacao-2025"
+  },
+  "nome": "Batalha",
+  "slug": "batalha"
+ },
+ {
+  "caopIndex": 135,
+  "dico": "1005",
+  "distritoOuIlha": "Leiria",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "bombarral-desemprego-registado-2025-12",
+   "divida": "bombarral-divida-dgal-2024",
+   "empresas": "bombarral-empresas-2024",
+   "indice": "bombarral-indice-de-divida-2024",
+   "limite": "bombarral-limite-divida-dgal-2024",
+   "pmp": "bombarral-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "bombarral-poder-de-compra-2023",
+   "populacao": "bombarral-populacao-2025"
+  },
+  "nome": "Bombarral",
+  "slug": "bombarral"
+ },
+ {
+  "caopIndex": 136,
+  "dico": "1006",
+  "distritoOuIlha": "Leiria",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "caldas-da-rainha-desemprego-registado-2025-12",
+   "divida": "caldas-da-rainha-divida-dgal-2024",
+   "empresas": "caldas-da-rainha-empresas-2024",
+   "indice": "caldas-da-rainha-indice-de-divida-2024",
+   "limite": "caldas-da-rainha-limite-divida-dgal-2024",
+   "pmp": "caldas-da-rainha-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "caldas-da-rainha-poder-de-compra-2023",
+   "populacao": "caldas-da-rainha-populacao-2025"
+  },
+  "nome": "Caldas da Rainha",
+  "slug": "caldas-da-rainha"
+ },
+ {
+  "caopIndex": 137,
+  "dico": "1007",
+  "distritoOuIlha": "Leiria",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "castanheira-de-pera-desemprego-registado-2025-12",
+   "divida": "castanheira-de-pera-divida-dgal-2024",
+   "empresas": "castanheira-de-pera-empresas-2024",
+   "indice": "castanheira-de-pera-indice-de-divida-2024",
+   "limite": "castanheira-de-pera-limite-divida-dgal-2024",
+   "pmp": "castanheira-de-pera-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "castanheira-de-pera-poder-de-compra-2023",
+   "populacao": "castanheira-de-pera-populacao-2025"
+  },
+  "nome": "Castanheira de Pêra",
+  "slug": "castanheira-de-pera"
+ },
+ {
+  "caopIndex": 138,
+  "dico": "1008",
+  "distritoOuIlha": "Leiria",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "figueiro-dos-vinhos-desemprego-registado-2025-12",
+   "divida": "figueiro-dos-vinhos-divida-dgal-2024",
+   "empresas": "figueiro-dos-vinhos-empresas-2024",
+   "indice": "figueiro-dos-vinhos-indice-de-divida-2024",
+   "limite": "figueiro-dos-vinhos-limite-divida-dgal-2024",
+   "pmp": "figueiro-dos-vinhos-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "figueiro-dos-vinhos-poder-de-compra-2023",
+   "populacao": "figueiro-dos-vinhos-populacao-2025"
+  },
+  "nome": "Figueiró dos Vinhos",
+  "slug": "figueiro-dos-vinhos"
+ },
+ {
+  "caopIndex": 139,
+  "dico": "1009",
+  "distritoOuIlha": "Leiria",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "leiria-desemprego-registado-2025-12",
+   "divida": "leiria-divida-dgal-2024",
+   "empresas": "leiria-empresas-2024",
+   "indice": "leiria-indice-de-divida-2024",
+   "limite": "leiria-limite-divida-dgal-2024",
+   "pmp": "leiria-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "leiria-poder-de-compra-2023",
+   "populacao": "leiria-populacao-2025"
+  },
+  "nome": "Leiria",
+  "slug": "leiria"
+ },
+ {
+  "caopIndex": 140,
+  "dico": "1010",
+  "distritoOuIlha": "Leiria",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "marinha-grande-desemprego-registado-2025-12",
+   "divida": "marinha-grande-divida-dgal-2024",
+   "empresas": "marinha-grande-empresas-2024",
+   "indice": "marinha-grande-indice-de-divida-2024",
+   "limite": "marinha-grande-limite-divida-dgal-2024",
+   "pmp": "marinha-grande-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "marinha-grande-poder-de-compra-2023",
+   "populacao": "marinha-grande-populacao-2025"
+  },
+  "nome": "Marinha Grande",
+  "slug": "marinha-grande"
+ },
+ {
+  "caopIndex": 141,
+  "dico": "1011",
+  "distritoOuIlha": "Leiria",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "nazare-desemprego-registado-2025-12",
+   "divida": "nazare-divida-dgal-2024",
+   "empresas": "nazare-empresas-2024",
+   "indice": "nazare-indice-de-divida-2024",
+   "limite": "nazare-limite-divida-dgal-2024",
+   "pmp": "nazare-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "nazare-poder-de-compra-2023",
+   "populacao": "nazare-populacao-2025"
+  },
+  "nome": "Nazaré",
+  "slug": "nazare"
+ },
+ {
+  "caopIndex": 142,
+  "dico": "1012",
+  "distritoOuIlha": "Leiria",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "obidos-desemprego-registado-2025-12",
+   "divida": "obidos-divida-dgal-2024",
+   "empresas": "obidos-empresas-2024",
+   "indice": "obidos-indice-de-divida-2024",
+   "limite": "obidos-limite-divida-dgal-2024",
+   "pmp": "obidos-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "obidos-poder-de-compra-2023",
+   "populacao": "obidos-populacao-2025"
+  },
+  "nome": "Óbidos",
+  "slug": "obidos"
+ },
+ {
+  "caopIndex": 143,
+  "dico": "1013",
+  "distritoOuIlha": "Leiria",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "pedrogao-grande-desemprego-registado-2025-12",
+   "divida": "pedrogao-grande-divida-dgal-2024",
+   "empresas": "pedrogao-grande-empresas-2024",
+   "indice": "pedrogao-grande-indice-de-divida-2024",
+   "limite": "pedrogao-grande-limite-divida-dgal-2024",
+   "pmp": null,
+   "poderDeCompra": "pedrogao-grande-poder-de-compra-2023",
+   "populacao": "pedrogao-grande-populacao-2025"
+  },
+  "nome": "Pedrógão Grande",
+  "slug": "pedrogao-grande"
+ },
+ {
+  "caopIndex": 144,
+  "dico": "1014",
+  "distritoOuIlha": "Leiria",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "peniche-desemprego-registado-2025-12",
+   "divida": "peniche-divida-dgal-2024",
+   "empresas": "peniche-empresas-2024",
+   "indice": "peniche-indice-de-divida-2024",
+   "limite": "peniche-limite-divida-dgal-2024",
+   "pmp": "peniche-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "peniche-poder-de-compra-2023",
+   "populacao": "peniche-populacao-2025"
+  },
+  "nome": "Peniche",
+  "slug": "peniche"
+ },
+ {
+  "caopIndex": 145,
+  "dico": "1015",
+  "distritoOuIlha": "Leiria",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "pombal-desemprego-registado-2025-12",
+   "divida": "pombal-divida-dgal-2024",
+   "empresas": "pombal-empresas-2024",
+   "indice": "pombal-indice-de-divida-2024",
+   "limite": "pombal-limite-divida-dgal-2024",
+   "pmp": "pombal-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "pombal-poder-de-compra-2023",
+   "populacao": "pombal-populacao-2025"
+  },
+  "nome": "Pombal",
+  "slug": "pombal"
+ },
+ {
+  "caopIndex": 146,
+  "dico": "1016",
+  "distritoOuIlha": "Leiria",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "porto-de-mos-desemprego-registado-2025-12",
+   "divida": "porto-de-mos-divida-dgal-2024",
+   "empresas": "porto-de-mos-empresas-2024",
+   "indice": "porto-de-mos-indice-de-divida-2024",
+   "limite": "porto-de-mos-limite-divida-dgal-2024",
+   "pmp": "porto-de-mos-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "porto-de-mos-poder-de-compra-2023",
+   "populacao": "porto-de-mos-populacao-2025"
+  },
+  "nome": "Porto de Mós",
+  "slug": "porto-de-mos"
+ },
+ {
+  "caopIndex": 147,
+  "dico": "1101",
+  "distritoOuIlha": "Lisboa",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "alenquer-desemprego-registado-2025-12",
+   "divida": "alenquer-divida-dgal-2024",
+   "empresas": "alenquer-empresas-2024",
+   "indice": "alenquer-indice-de-divida-2024",
+   "limite": "alenquer-limite-divida-dgal-2024",
+   "pmp": "alenquer-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "alenquer-poder-de-compra-2023",
+   "populacao": "alenquer-populacao-2025"
+  },
+  "nome": "Alenquer",
+  "slug": "alenquer"
+ },
+ {
+  "caopIndex": 148,
+  "dico": "1102",
+  "distritoOuIlha": "Lisboa",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "arruda-dos-vinhos-desemprego-registado-2025-12",
+   "divida": "arruda-dos-vinhos-divida-dgal-2024",
+   "empresas": "arruda-dos-vinhos-empresas-2024",
+   "indice": "arruda-dos-vinhos-indice-de-divida-2024",
+   "limite": "arruda-dos-vinhos-limite-divida-dgal-2024",
+   "pmp": "arruda-dos-vinhos-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "arruda-dos-vinhos-poder-de-compra-2023",
+   "populacao": "arruda-dos-vinhos-populacao-2025"
+  },
+  "nome": "Arruda dos Vinhos",
+  "slug": "arruda-dos-vinhos"
+ },
+ {
+  "caopIndex": 149,
+  "dico": "1103",
+  "distritoOuIlha": "Lisboa",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "azambuja-desemprego-registado-2025-12",
+   "divida": "azambuja-divida-dgal-2024",
+   "empresas": "azambuja-empresas-2024",
+   "indice": "azambuja-indice-de-divida-2024",
+   "limite": "azambuja-limite-divida-dgal-2024",
+   "pmp": "azambuja-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "azambuja-poder-de-compra-2023",
+   "populacao": "azambuja-populacao-2025"
+  },
+  "nome": "Azambuja",
+  "slug": "azambuja"
+ },
+ {
+  "caopIndex": 150,
+  "dico": "1104",
+  "distritoOuIlha": "Lisboa",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "cadaval-desemprego-registado-2025-12",
+   "divida": "cadaval-divida-dgal-2024",
+   "empresas": "cadaval-empresas-2024",
+   "indice": "cadaval-indice-de-divida-2024",
+   "limite": "cadaval-limite-divida-dgal-2024",
+   "pmp": "cadaval-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "cadaval-poder-de-compra-2023",
+   "populacao": "cadaval-populacao-2025"
+  },
+  "nome": "Cadaval",
+  "slug": "cadaval"
+ },
+ {
+  "caopIndex": 151,
+  "dico": "1105",
+  "distritoOuIlha": "Lisboa",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "cascais-desemprego-registado-2025-12",
+   "divida": "cascais-divida-dgal-2024",
+   "empresas": "cascais-empresas-2024",
+   "indice": "cascais-indice-de-divida-2024",
+   "limite": "cascais-limite-divida-dgal-2024",
+   "pmp": "cascais-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "cascais-poder-de-compra-2023",
+   "populacao": "cascais-populacao-2025"
+  },
+  "nome": "Cascais",
+  "slug": "cascais"
+ },
+ {
+  "caopIndex": 152,
+  "dico": "1106",
+  "distritoOuIlha": "Lisboa",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "lisboa-desemprego-registado-2025-12",
+   "divida": "lisboa-divida-dgal-2024",
+   "empresas": "lisboa-empresas-2024",
+   "indice": "lisboa-indice-de-divida-2024",
+   "limite": "lisboa-limite-divida-dgal-2024",
+   "pmp": "lisboa-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "lisboa-poder-de-compra-2023",
+   "populacao": "lisboa-populacao-2025"
+  },
+  "nome": "Lisboa",
+  "slug": "lisboa"
+ },
+ {
+  "caopIndex": 153,
+  "dico": "1107",
+  "distritoOuIlha": "Lisboa",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "loures-desemprego-registado-2025-12",
+   "divida": "loures-divida-dgal-2024",
+   "empresas": "loures-empresas-2024",
+   "indice": "loures-indice-de-divida-2024",
+   "limite": "loures-limite-divida-dgal-2024",
+   "pmp": "loures-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "loures-poder-de-compra-2023",
+   "populacao": "loures-populacao-2025"
+  },
+  "nome": "Loures",
+  "slug": "loures"
+ },
+ {
+  "caopIndex": 154,
+  "dico": "1108",
+  "distritoOuIlha": "Lisboa",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "lourinha-desemprego-registado-2025-12",
+   "divida": "lourinha-divida-dgal-2024",
+   "empresas": "lourinha-empresas-2024",
+   "indice": "lourinha-indice-de-divida-2024",
+   "limite": "lourinha-limite-divida-dgal-2024",
+   "pmp": "lourinha-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "lourinha-poder-de-compra-2023",
+   "populacao": "lourinha-populacao-2025"
+  },
+  "nome": "Lourinhã",
+  "slug": "lourinha"
+ },
+ {
+  "caopIndex": 155,
+  "dico": "1109",
+  "distritoOuIlha": "Lisboa",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "mafra-desemprego-registado-2025-12",
+   "divida": "mafra-divida-dgal-2024",
+   "empresas": "mafra-empresas-2024",
+   "indice": "mafra-indice-de-divida-2024",
+   "limite": "mafra-limite-divida-dgal-2024",
+   "pmp": "mafra-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "mafra-poder-de-compra-2023",
+   "populacao": "mafra-populacao-2025"
+  },
+  "nome": "Mafra",
+  "slug": "mafra"
+ },
+ {
+  "caopIndex": 156,
+  "dico": "1110",
+  "distritoOuIlha": "Lisboa",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "oeiras-desemprego-registado-2025-12",
+   "divida": "oeiras-divida-dgal-2024",
+   "empresas": "oeiras-empresas-2024",
+   "indice": "oeiras-indice-de-divida-2024",
+   "limite": "oeiras-limite-divida-dgal-2024",
+   "pmp": "oeiras-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "oeiras-poder-de-compra-2023",
+   "populacao": "oeiras-populacao-2025"
+  },
+  "nome": "Oeiras",
+  "slug": "oeiras"
+ },
+ {
+  "caopIndex": 157,
+  "dico": "1111",
+  "distritoOuIlha": "Lisboa",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "sintra-desemprego-registado-2025-12",
+   "divida": "sintra-divida-dgal-2024",
+   "empresas": "sintra-empresas-2024",
+   "indice": "sintra-indice-de-divida-2024",
+   "limite": "sintra-limite-divida-dgal-2024",
+   "pmp": "sintra-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "sintra-poder-de-compra-2023",
+   "populacao": "sintra-populacao-2025"
+  },
+  "nome": "Sintra",
+  "slug": "sintra"
+ },
+ {
+  "caopIndex": 158,
+  "dico": "1112",
+  "distritoOuIlha": "Lisboa",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "sobral-de-monte-agraco-desemprego-registado-2025-12",
+   "divida": "sobral-de-monte-agraco-divida-dgal-2024",
+   "empresas": "sobral-de-monte-agraco-empresas-2024",
+   "indice": "sobral-de-monte-agraco-indice-de-divida-2024",
+   "limite": "sobral-de-monte-agraco-limite-divida-dgal-2024",
+   "pmp": "sobral-de-monte-agraco-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "sobral-de-monte-agraco-poder-de-compra-2023",
+   "populacao": "sobral-de-monte-agraco-populacao-2025"
+  },
+  "nome": "Sobral de Monte Agraço",
+  "slug": "sobral-de-monte-agraco"
+ },
+ {
+  "caopIndex": 159,
+  "dico": "1113",
+  "distritoOuIlha": "Lisboa",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "torres-vedras-desemprego-registado-2025-12",
+   "divida": "torres-vedras-divida-dgal-2024",
+   "empresas": "torres-vedras-empresas-2024",
+   "indice": "torres-vedras-indice-de-divida-2024",
+   "limite": "torres-vedras-limite-divida-dgal-2024",
+   "pmp": "torres-vedras-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "torres-vedras-poder-de-compra-2023",
+   "populacao": "torres-vedras-populacao-2025"
+  },
+  "nome": "Torres Vedras",
+  "slug": "torres-vedras"
+ },
+ {
+  "caopIndex": 160,
+  "dico": "1114",
+  "distritoOuIlha": "Lisboa",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vila-franca-de-xira-desemprego-registado-2025-12",
+   "divida": "vila-franca-de-xira-divida-dgal-2024",
+   "empresas": "vila-franca-de-xira-empresas-2024",
+   "indice": "vila-franca-de-xira-indice-de-divida-2024",
+   "limite": "vila-franca-de-xira-limite-divida-dgal-2024",
+   "pmp": "vila-franca-de-xira-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vila-franca-de-xira-poder-de-compra-2023",
+   "populacao": "vila-franca-de-xira-populacao-2025"
+  },
+  "nome": "Vila Franca de Xira",
+  "slug": "vila-franca-de-xira"
+ },
+ {
+  "caopIndex": 161,
+  "dico": "1115",
+  "distritoOuIlha": "Lisboa",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "amadora-desemprego-registado-2025-12",
+   "divida": "amadora-divida-dgal-2024",
+   "empresas": "amadora-empresas-2024",
+   "indice": "amadora-indice-de-divida-2024",
+   "limite": "amadora-limite-divida-dgal-2024",
+   "pmp": "amadora-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "amadora-poder-de-compra-2023",
+   "populacao": "amadora-populacao-2025"
+  },
+  "nome": "Amadora",
+  "slug": "amadora"
+ },
+ {
+  "caopIndex": 162,
+  "dico": "1116",
+  "distritoOuIlha": "Lisboa",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "odivelas-desemprego-registado-2025-12",
+   "divida": "odivelas-divida-dgal-2024",
+   "empresas": "odivelas-empresas-2024",
+   "indice": "odivelas-indice-de-divida-2024",
+   "limite": "odivelas-limite-divida-dgal-2024",
+   "pmp": "odivelas-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "odivelas-poder-de-compra-2023",
+   "populacao": "odivelas-populacao-2025"
+  },
+  "nome": "Odivelas",
+  "slug": "odivelas"
+ },
+ {
+  "caopIndex": 163,
+  "dico": "1201",
+  "distritoOuIlha": "Portalegre",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "alter-do-chao-desemprego-registado-2025-12",
+   "divida": "alter-do-chao-divida-dgal-2024",
+   "empresas": "alter-do-chao-empresas-2024",
+   "indice": "alter-do-chao-indice-de-divida-2024",
+   "limite": "alter-do-chao-limite-divida-dgal-2024",
+   "pmp": "alter-do-chao-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "alter-do-chao-poder-de-compra-2023",
+   "populacao": "alter-do-chao-populacao-2025"
+  },
+  "nome": "Alter do Chão",
+  "slug": "alter-do-chao"
+ },
+ {
+  "caopIndex": 164,
+  "dico": "1202",
+  "distritoOuIlha": "Portalegre",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "arronches-desemprego-registado-2025-12",
+   "divida": "arronches-divida-dgal-2024",
+   "empresas": "arronches-empresas-2024",
+   "indice": "arronches-indice-de-divida-2024",
+   "limite": "arronches-limite-divida-dgal-2024",
+   "pmp": "arronches-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "arronches-poder-de-compra-2023",
+   "populacao": "arronches-populacao-2025"
+  },
+  "nome": "Arronches",
+  "slug": "arronches"
+ },
+ {
+  "caopIndex": 165,
+  "dico": "1203",
+  "distritoOuIlha": "Portalegre",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "avis-desemprego-registado-2025-12",
+   "divida": "avis-divida-dgal-2024",
+   "empresas": "avis-empresas-2024",
+   "indice": "avis-indice-de-divida-2024",
+   "limite": "avis-limite-divida-dgal-2024",
+   "pmp": "avis-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "avis-poder-de-compra-2023",
+   "populacao": "avis-populacao-2025"
+  },
+  "nome": "Avis",
+  "slug": "avis"
+ },
+ {
+  "caopIndex": 166,
+  "dico": "1204",
+  "distritoOuIlha": "Portalegre",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "campo-maior-desemprego-registado-2025-12",
+   "divida": "campo-maior-divida-dgal-2024",
+   "empresas": "campo-maior-empresas-2024",
+   "indice": "campo-maior-indice-de-divida-2024",
+   "limite": "campo-maior-limite-divida-dgal-2024",
+   "pmp": "campo-maior-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "campo-maior-poder-de-compra-2023",
+   "populacao": "campo-maior-populacao-2025"
+  },
+  "nome": "Campo Maior",
+  "slug": "campo-maior"
+ },
+ {
+  "caopIndex": 167,
+  "dico": "1205",
+  "distritoOuIlha": "Portalegre",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "castelo-de-vide-desemprego-registado-2025-12",
+   "divida": "castelo-de-vide-divida-dgal-2024",
+   "empresas": "castelo-de-vide-empresas-2024",
+   "indice": "castelo-de-vide-indice-de-divida-2024",
+   "limite": "castelo-de-vide-limite-divida-dgal-2024",
+   "pmp": "castelo-de-vide-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "castelo-de-vide-poder-de-compra-2023",
+   "populacao": "castelo-de-vide-populacao-2025"
+  },
+  "nome": "Castelo de Vide",
+  "slug": "castelo-de-vide"
+ },
+ {
+  "caopIndex": 168,
+  "dico": "1206",
+  "distritoOuIlha": "Portalegre",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "crato-desemprego-registado-2025-12",
+   "divida": "crato-divida-dgal-2024",
+   "empresas": "crato-empresas-2024",
+   "indice": "crato-indice-de-divida-2024",
+   "limite": "crato-limite-divida-dgal-2024",
+   "pmp": "crato-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "crato-poder-de-compra-2023",
+   "populacao": "crato-populacao-2025"
+  },
+  "nome": "Crato",
+  "slug": "crato"
+ },
+ {
+  "caopIndex": 169,
+  "dico": "1207",
+  "distritoOuIlha": "Portalegre",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "elvas-desemprego-registado-2025-12",
+   "divida": "elvas-divida-dgal-2024",
+   "empresas": "elvas-empresas-2024",
+   "indice": "elvas-indice-de-divida-2024",
+   "limite": "elvas-limite-divida-dgal-2024",
+   "pmp": "elvas-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "elvas-poder-de-compra-2023",
+   "populacao": "elvas-populacao-2025"
+  },
+  "nome": "Elvas",
+  "slug": "elvas"
+ },
+ {
+  "caopIndex": 170,
+  "dico": "1208",
+  "distritoOuIlha": "Portalegre",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "fronteira-desemprego-registado-2025-12",
+   "divida": "fronteira-divida-dgal-2024",
+   "empresas": "fronteira-empresas-2024",
+   "indice": "fronteira-indice-de-divida-2024",
+   "limite": "fronteira-limite-divida-dgal-2024",
+   "pmp": "fronteira-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "fronteira-poder-de-compra-2023",
+   "populacao": "fronteira-populacao-2025"
+  },
+  "nome": "Fronteira",
+  "slug": "fronteira"
+ },
+ {
+  "caopIndex": 171,
+  "dico": "1209",
+  "distritoOuIlha": "Portalegre",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "gaviao-desemprego-registado-2025-12",
+   "divida": "gaviao-divida-dgal-2024",
+   "empresas": "gaviao-empresas-2024",
+   "indice": "gaviao-indice-de-divida-2024",
+   "limite": "gaviao-limite-divida-dgal-2024",
+   "pmp": "gaviao-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "gaviao-poder-de-compra-2023",
+   "populacao": "gaviao-populacao-2025"
+  },
+  "nome": "Gavião",
+  "slug": "gaviao"
+ },
+ {
+  "caopIndex": 172,
+  "dico": "1210",
+  "distritoOuIlha": "Portalegre",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "marvao-desemprego-registado-2025-12",
+   "divida": "marvao-divida-dgal-2024",
+   "empresas": "marvao-empresas-2024",
+   "indice": "marvao-indice-de-divida-2024",
+   "limite": "marvao-limite-divida-dgal-2024",
+   "pmp": "marvao-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "marvao-poder-de-compra-2023",
+   "populacao": "marvao-populacao-2025"
+  },
+  "nome": "Marvão",
+  "slug": "marvao"
+ },
+ {
+  "caopIndex": 173,
+  "dico": "1211",
+  "distritoOuIlha": "Portalegre",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "monforte-desemprego-registado-2025-12",
+   "divida": "monforte-divida-dgal-2024",
+   "empresas": "monforte-empresas-2024",
+   "indice": "monforte-indice-de-divida-2024",
+   "limite": "monforte-limite-divida-dgal-2024",
+   "pmp": "monforte-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "monforte-poder-de-compra-2023",
+   "populacao": "monforte-populacao-2025"
+  },
+  "nome": "Monforte",
+  "slug": "monforte"
+ },
+ {
+  "caopIndex": 174,
+  "dico": "1212",
+  "distritoOuIlha": "Portalegre",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "nisa-desemprego-registado-2025-12",
+   "divida": "nisa-divida-dgal-2024",
+   "empresas": "nisa-empresas-2024",
+   "indice": "nisa-indice-de-divida-2024",
+   "limite": "nisa-limite-divida-dgal-2024",
+   "pmp": "nisa-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "nisa-poder-de-compra-2023",
+   "populacao": "nisa-populacao-2025"
+  },
+  "nome": "Nisa",
+  "slug": "nisa"
+ },
+ {
+  "caopIndex": 175,
+  "dico": "1213",
+  "distritoOuIlha": "Portalegre",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "ponte-de-sor-desemprego-registado-2025-12",
+   "divida": "ponte-de-sor-divida-dgal-2024",
+   "empresas": "ponte-de-sor-empresas-2024",
+   "indice": "ponte-de-sor-indice-de-divida-2024",
+   "limite": "ponte-de-sor-limite-divida-dgal-2024",
+   "pmp": "ponte-de-sor-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "ponte-de-sor-poder-de-compra-2023",
+   "populacao": "ponte-de-sor-populacao-2025"
+  },
+  "nome": "Ponte de Sor",
+  "slug": "ponte-de-sor"
+ },
+ {
+  "caopIndex": 176,
+  "dico": "1214",
+  "distritoOuIlha": "Portalegre",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "portalegre-desemprego-registado-2025-12",
+   "divida": "portalegre-divida-dgal-2024",
+   "empresas": "portalegre-empresas-2024",
+   "indice": "portalegre-indice-de-divida-2024",
+   "limite": "portalegre-limite-divida-dgal-2024",
+   "pmp": "portalegre-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "portalegre-poder-de-compra-2023",
+   "populacao": "portalegre-populacao-2025"
+  },
+  "nome": "Portalegre",
+  "slug": "portalegre"
+ },
+ {
+  "caopIndex": 177,
+  "dico": "1215",
+  "distritoOuIlha": "Portalegre",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "sousel-desemprego-registado-2025-12",
+   "divida": "sousel-divida-dgal-2024",
+   "empresas": "sousel-empresas-2024",
+   "indice": "sousel-indice-de-divida-2024",
+   "limite": "sousel-limite-divida-dgal-2024",
+   "pmp": "sousel-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "sousel-poder-de-compra-2023",
+   "populacao": "sousel-populacao-2025"
+  },
+  "nome": "Sousel",
+  "slug": "sousel"
+ },
+ {
+  "caopIndex": 178,
+  "dico": "1301",
+  "distritoOuIlha": "Porto",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "amarante-desemprego-registado-2025-12",
+   "divida": "amarante-divida-dgal-2024",
+   "empresas": "amarante-empresas-2024",
+   "indice": "amarante-indice-de-divida-2024",
+   "limite": "amarante-limite-divida-dgal-2024",
+   "pmp": "amarante-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "amarante-poder-de-compra-2023",
+   "populacao": "amarante-populacao-2025"
+  },
+  "nome": "Amarante",
+  "slug": "amarante"
+ },
+ {
+  "caopIndex": 179,
+  "dico": "1302",
+  "distritoOuIlha": "Porto",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "baiao-desemprego-registado-2025-12",
+   "divida": "baiao-divida-dgal-2024",
+   "empresas": "baiao-empresas-2024",
+   "indice": "baiao-indice-de-divida-2024",
+   "limite": "baiao-limite-divida-dgal-2024",
+   "pmp": "baiao-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "baiao-poder-de-compra-2023",
+   "populacao": "baiao-populacao-2025"
+  },
+  "nome": "Baião",
+  "slug": "baiao"
+ },
+ {
+  "caopIndex": 180,
+  "dico": "1303",
+  "distritoOuIlha": "Porto",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "felgueiras-desemprego-registado-2025-12",
+   "divida": "felgueiras-divida-dgal-2024",
+   "empresas": "felgueiras-empresas-2024",
+   "indice": "felgueiras-indice-de-divida-2024",
+   "limite": "felgueiras-limite-divida-dgal-2024",
+   "pmp": "felgueiras-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "felgueiras-poder-de-compra-2023",
+   "populacao": "felgueiras-populacao-2025"
+  },
+  "nome": "Felgueiras",
+  "slug": "felgueiras"
+ },
+ {
+  "caopIndex": 181,
+  "dico": "1304",
+  "distritoOuIlha": "Porto",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "gondomar-desemprego-registado-2025-12",
+   "divida": "gondomar-divida-dgal-2024",
+   "empresas": "gondomar-empresas-2024",
+   "indice": "gondomar-indice-de-divida-2024",
+   "limite": "gondomar-limite-divida-dgal-2024",
+   "pmp": "gondomar-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "gondomar-poder-de-compra-2023",
+   "populacao": "gondomar-populacao-2025"
+  },
+  "nome": "Gondomar",
+  "slug": "gondomar"
+ },
+ {
+  "caopIndex": 182,
+  "dico": "1305",
+  "distritoOuIlha": "Porto",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "lousada-desemprego-registado-2025-12",
+   "divida": "lousada-divida-dgal-2024",
+   "empresas": "lousada-empresas-2024",
+   "indice": "lousada-indice-de-divida-2024",
+   "limite": "lousada-limite-divida-dgal-2024",
+   "pmp": "lousada-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "lousada-poder-de-compra-2023",
+   "populacao": "lousada-populacao-2025"
+  },
+  "nome": "Lousada",
+  "slug": "lousada"
+ },
+ {
+  "caopIndex": 183,
+  "dico": "1306",
+  "distritoOuIlha": "Porto",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "maia-desemprego-registado-2025-12",
+   "divida": "maia-divida-dgal-2024",
+   "empresas": "maia-empresas-2024",
+   "indice": "maia-indice-de-divida-2024",
+   "limite": "maia-limite-divida-dgal-2024",
+   "pmp": "maia-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "maia-poder-de-compra-2023",
+   "populacao": "maia-populacao-2025"
+  },
+  "nome": "Maia",
+  "slug": "maia"
+ },
+ {
+  "caopIndex": 184,
+  "dico": "1307",
+  "distritoOuIlha": "Porto",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "marco-de-canaveses-desemprego-registado-2025-12",
+   "divida": "marco-de-canaveses-divida-dgal-2024",
+   "empresas": "marco-de-canaveses-empresas-2024",
+   "indice": "marco-de-canaveses-indice-de-divida-2024",
+   "limite": "marco-de-canaveses-limite-divida-dgal-2024",
+   "pmp": "marco-de-canaveses-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "marco-de-canaveses-poder-de-compra-2023",
+   "populacao": "marco-de-canaveses-populacao-2025"
+  },
+  "nome": "Marco de Canaveses",
+  "slug": "marco-de-canaveses"
+ },
+ {
+  "caopIndex": 185,
+  "dico": "1308",
+  "distritoOuIlha": "Porto",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "matosinhos-desemprego-registado-2025-12",
+   "divida": "matosinhos-divida-dgal-2024",
+   "empresas": "matosinhos-empresas-2024",
+   "indice": "matosinhos-indice-de-divida-2024",
+   "limite": "matosinhos-limite-divida-dgal-2024",
+   "pmp": "matosinhos-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "matosinhos-poder-de-compra-2023",
+   "populacao": "matosinhos-populacao-2025"
+  },
+  "nome": "Matosinhos",
+  "slug": "matosinhos"
+ },
+ {
+  "caopIndex": 186,
+  "dico": "1309",
+  "distritoOuIlha": "Porto",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "pacos-de-ferreira-desemprego-registado-2025-12",
+   "divida": "pacos-de-ferreira-divida-dgal-2024",
+   "empresas": "pacos-de-ferreira-empresas-2024",
+   "indice": "pacos-de-ferreira-indice-de-divida-2024",
+   "limite": "pacos-de-ferreira-limite-divida-dgal-2024",
+   "pmp": "pacos-de-ferreira-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "pacos-de-ferreira-poder-de-compra-2023",
+   "populacao": "pacos-de-ferreira-populacao-2025"
+  },
+  "nome": "Paços de Ferreira",
+  "slug": "pacos-de-ferreira"
+ },
+ {
+  "caopIndex": 187,
+  "dico": "1310",
+  "distritoOuIlha": "Porto",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "paredes-desemprego-registado-2025-12",
+   "divida": "paredes-divida-dgal-2024",
+   "empresas": "paredes-empresas-2024",
+   "indice": "paredes-indice-de-divida-2024",
+   "limite": "paredes-limite-divida-dgal-2024",
+   "pmp": "paredes-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "paredes-poder-de-compra-2023",
+   "populacao": "paredes-populacao-2025"
+  },
+  "nome": "Paredes",
+  "slug": "paredes"
+ },
+ {
+  "caopIndex": 188,
+  "dico": "1311",
+  "distritoOuIlha": "Porto",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "penafiel-desemprego-registado-2025-12",
+   "divida": "penafiel-divida-dgal-2024",
+   "empresas": "penafiel-empresas-2024",
+   "indice": "penafiel-indice-de-divida-2024",
+   "limite": "penafiel-limite-divida-dgal-2024",
+   "pmp": "penafiel-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "penafiel-poder-de-compra-2023",
+   "populacao": "penafiel-populacao-2025"
+  },
+  "nome": "Penafiel",
+  "slug": "penafiel"
+ },
+ {
+  "caopIndex": 189,
+  "dico": "1312",
+  "distritoOuIlha": "Porto",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "porto-desemprego-registado-2025-12",
+   "divida": "porto-divida-dgal-2024",
+   "empresas": "porto-empresas-2024",
+   "indice": "porto-indice-de-divida-2024",
+   "limite": "porto-limite-divida-dgal-2024",
+   "pmp": "porto-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "porto-poder-de-compra-2023",
+   "populacao": "porto-populacao-2025"
+  },
+  "nome": "Porto",
+  "slug": "porto"
+ },
+ {
+  "caopIndex": 190,
+  "dico": "1313",
+  "distritoOuIlha": "Porto",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "povoa-de-varzim-desemprego-registado-2025-12",
+   "divida": "povoa-de-varzim-divida-dgal-2024",
+   "empresas": "povoa-de-varzim-empresas-2024",
+   "indice": "povoa-de-varzim-indice-de-divida-2024",
+   "limite": "povoa-de-varzim-limite-divida-dgal-2024",
+   "pmp": "povoa-de-varzim-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "povoa-de-varzim-poder-de-compra-2023",
+   "populacao": "povoa-de-varzim-populacao-2025"
+  },
+  "nome": "Póvoa de Varzim",
+  "slug": "povoa-de-varzim"
+ },
+ {
+  "caopIndex": 191,
+  "dico": "1314",
+  "distritoOuIlha": "Porto",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "santo-tirso-desemprego-registado-2025-12",
+   "divida": "santo-tirso-divida-dgal-2024",
+   "empresas": "santo-tirso-empresas-2024",
+   "indice": "santo-tirso-indice-de-divida-2024",
+   "limite": "santo-tirso-limite-divida-dgal-2024",
+   "pmp": "santo-tirso-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "santo-tirso-poder-de-compra-2023",
+   "populacao": "santo-tirso-populacao-2025"
+  },
+  "nome": "Santo Tirso",
+  "slug": "santo-tirso"
+ },
+ {
+  "caopIndex": 192,
+  "dico": "1315",
+  "distritoOuIlha": "Porto",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "valongo-desemprego-registado-2025-12",
+   "divida": "valongo-divida-dgal-2024",
+   "empresas": "valongo-empresas-2024",
+   "indice": "valongo-indice-de-divida-2024",
+   "limite": "valongo-limite-divida-dgal-2024",
+   "pmp": "valongo-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "valongo-poder-de-compra-2023",
+   "populacao": "valongo-populacao-2025"
+  },
+  "nome": "Valongo",
+  "slug": "valongo"
+ },
+ {
+  "caopIndex": 193,
+  "dico": "1316",
+  "distritoOuIlha": "Porto",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vila-do-conde-desemprego-registado-2025-12",
+   "divida": "vila-do-conde-divida-dgal-2024",
+   "empresas": "vila-do-conde-empresas-2024",
+   "indice": "vila-do-conde-indice-de-divida-2024",
+   "limite": "vila-do-conde-limite-divida-dgal-2024",
+   "pmp": "vila-do-conde-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vila-do-conde-poder-de-compra-2023",
+   "populacao": "vila-do-conde-populacao-2025"
+  },
+  "nome": "Vila do Conde",
+  "slug": "vila-do-conde"
+ },
+ {
+  "caopIndex": 194,
+  "dico": "1317",
+  "distritoOuIlha": "Porto",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vila-nova-de-gaia-desemprego-registado-2025-12",
+   "divida": "vila-nova-de-gaia-divida-dgal-2024",
+   "empresas": "vila-nova-de-gaia-empresas-2024",
+   "indice": "vila-nova-de-gaia-indice-de-divida-2024",
+   "limite": "vila-nova-de-gaia-limite-divida-dgal-2024",
+   "pmp": "vila-nova-de-gaia-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vila-nova-de-gaia-poder-de-compra-2023",
+   "populacao": "vila-nova-de-gaia-populacao-2025"
+  },
+  "nome": "Vila Nova de Gaia",
+  "slug": "vila-nova-de-gaia"
+ },
+ {
+  "caopIndex": 195,
+  "dico": "1318",
+  "distritoOuIlha": "Porto",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "trofa-desemprego-registado-2025-12",
+   "divida": "trofa-divida-dgal-2024",
+   "empresas": "trofa-empresas-2024",
+   "indice": "trofa-indice-de-divida-2024",
+   "limite": "trofa-limite-divida-dgal-2024",
+   "pmp": "trofa-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "trofa-poder-de-compra-2023",
+   "populacao": "trofa-populacao-2025"
+  },
+  "nome": "Trofa",
+  "slug": "trofa"
+ },
+ {
+  "caopIndex": 196,
+  "dico": "1401",
+  "distritoOuIlha": "Santarém",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "abrantes-desemprego-registado-2025-12",
+   "divida": "abrantes-divida-dgal-2024",
+   "empresas": "abrantes-empresas-2024",
+   "indice": "abrantes-indice-de-divida-2024",
+   "limite": "abrantes-limite-divida-dgal-2024",
+   "pmp": "abrantes-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "abrantes-poder-de-compra-2023",
+   "populacao": "abrantes-populacao-2025"
+  },
+  "nome": "Abrantes",
+  "slug": "abrantes"
+ },
+ {
+  "caopIndex": 197,
+  "dico": "1402",
+  "distritoOuIlha": "Santarém",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "alcanena-desemprego-registado-2025-12",
+   "divida": "alcanena-divida-dgal-2024",
+   "empresas": "alcanena-empresas-2024",
+   "indice": "alcanena-indice-de-divida-2024",
+   "limite": "alcanena-limite-divida-dgal-2024",
+   "pmp": "alcanena-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "alcanena-poder-de-compra-2023",
+   "populacao": "alcanena-populacao-2025"
+  },
+  "nome": "Alcanena",
+  "slug": "alcanena"
+ },
+ {
+  "caopIndex": 198,
+  "dico": "1403",
+  "distritoOuIlha": "Santarém",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "almeirim-desemprego-registado-2025-12",
+   "divida": "almeirim-divida-dgal-2024",
+   "empresas": "almeirim-empresas-2024",
+   "indice": "almeirim-indice-de-divida-2024",
+   "limite": "almeirim-limite-divida-dgal-2024",
+   "pmp": "almeirim-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "almeirim-poder-de-compra-2023",
+   "populacao": "almeirim-populacao-2025"
+  },
+  "nome": "Almeirim",
+  "slug": "almeirim"
+ },
+ {
+  "caopIndex": 199,
+  "dico": "1404",
+  "distritoOuIlha": "Santarém",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "alpiarca-desemprego-registado-2025-12",
+   "divida": "alpiarca-divida-dgal-2024",
+   "empresas": "alpiarca-empresas-2024",
+   "indice": "alpiarca-indice-de-divida-2024",
+   "limite": "alpiarca-limite-divida-dgal-2024",
+   "pmp": "alpiarca-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "alpiarca-poder-de-compra-2023",
+   "populacao": "alpiarca-populacao-2025"
+  },
+  "nome": "Alpiarça",
+  "slug": "alpiarca"
+ },
+ {
+  "caopIndex": 200,
+  "dico": "1405",
+  "distritoOuIlha": "Santarém",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "benavente-desemprego-registado-2025-12",
+   "divida": "benavente-divida-dgal-2024",
+   "empresas": "benavente-empresas-2024",
+   "indice": "benavente-indice-de-divida-2024",
+   "limite": "benavente-limite-divida-dgal-2024",
+   "pmp": "benavente-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "benavente-poder-de-compra-2023",
+   "populacao": "benavente-populacao-2025"
+  },
+  "nome": "Benavente",
+  "slug": "benavente"
+ },
+ {
+  "caopIndex": 201,
+  "dico": "1406",
+  "distritoOuIlha": "Santarém",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "cartaxo-desemprego-registado-2025-12",
+   "divida": "cartaxo-divida-dgal-2024",
+   "empresas": "cartaxo-empresas-2024",
+   "indice": "cartaxo-indice-de-divida-2024",
+   "limite": "cartaxo-limite-divida-dgal-2024",
+   "pmp": "cartaxo-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "cartaxo-poder-de-compra-2023",
+   "populacao": "cartaxo-populacao-2025"
+  },
+  "nome": "Cartaxo",
+  "slug": "cartaxo"
+ },
+ {
+  "caopIndex": 202,
+  "dico": "1407",
+  "distritoOuIlha": "Santarém",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "chamusca-desemprego-registado-2025-12",
+   "divida": "chamusca-divida-dgal-2024",
+   "empresas": "chamusca-empresas-2024",
+   "indice": "chamusca-indice-de-divida-2024",
+   "limite": "chamusca-limite-divida-dgal-2024",
+   "pmp": "chamusca-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "chamusca-poder-de-compra-2023",
+   "populacao": "chamusca-populacao-2025"
+  },
+  "nome": "Chamusca",
+  "slug": "chamusca"
+ },
+ {
+  "caopIndex": 203,
+  "dico": "1408",
+  "distritoOuIlha": "Santarém",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "constancia-desemprego-registado-2025-12",
+   "divida": "constancia-divida-dgal-2024",
+   "empresas": "constancia-empresas-2024",
+   "indice": "constancia-indice-de-divida-2024",
+   "limite": "constancia-limite-divida-dgal-2024",
+   "pmp": "constancia-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "constancia-poder-de-compra-2023",
+   "populacao": "constancia-populacao-2025"
+  },
+  "nome": "Constância",
+  "slug": "constancia"
+ },
+ {
+  "caopIndex": 204,
+  "dico": "1409",
+  "distritoOuIlha": "Santarém",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "coruche-desemprego-registado-2025-12",
+   "divida": "coruche-divida-dgal-2024",
+   "empresas": "coruche-empresas-2024",
+   "indice": "coruche-indice-de-divida-2024",
+   "limite": "coruche-limite-divida-dgal-2024",
+   "pmp": "coruche-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "coruche-poder-de-compra-2023",
+   "populacao": "coruche-populacao-2025"
+  },
+  "nome": "Coruche",
+  "slug": "coruche"
+ },
+ {
+  "caopIndex": 205,
+  "dico": "1410",
+  "distritoOuIlha": "Santarém",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "entroncamento-desemprego-registado-2025-12",
+   "divida": "entroncamento-divida-dgal-2024",
+   "empresas": "entroncamento-empresas-2024",
+   "indice": "entroncamento-indice-de-divida-2024",
+   "limite": "entroncamento-limite-divida-dgal-2024",
+   "pmp": "entroncamento-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "entroncamento-poder-de-compra-2023",
+   "populacao": "entroncamento-populacao-2025"
+  },
+  "nome": "Entroncamento",
+  "slug": "entroncamento"
+ },
+ {
+  "caopIndex": 206,
+  "dico": "1411",
+  "distritoOuIlha": "Santarém",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "ferreira-do-zezere-desemprego-registado-2025-12",
+   "divida": "ferreira-do-zezere-divida-dgal-2024",
+   "empresas": "ferreira-do-zezere-empresas-2024",
+   "indice": "ferreira-do-zezere-indice-de-divida-2024",
+   "limite": "ferreira-do-zezere-limite-divida-dgal-2024",
+   "pmp": "ferreira-do-zezere-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "ferreira-do-zezere-poder-de-compra-2023",
+   "populacao": "ferreira-do-zezere-populacao-2025"
+  },
+  "nome": "Ferreira do Zêzere",
+  "slug": "ferreira-do-zezere"
+ },
+ {
+  "caopIndex": 207,
+  "dico": "1412",
+  "distritoOuIlha": "Santarém",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "golega-desemprego-registado-2025-12",
+   "divida": "golega-divida-dgal-2024",
+   "empresas": "golega-empresas-2024",
+   "indice": "golega-indice-de-divida-2024",
+   "limite": "golega-limite-divida-dgal-2024",
+   "pmp": "golega-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "golega-poder-de-compra-2023",
+   "populacao": "golega-populacao-2025"
+  },
+  "nome": "Golegã",
+  "slug": "golega"
+ },
+ {
+  "caopIndex": 208,
+  "dico": "1413",
+  "distritoOuIlha": "Santarém",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "macao-desemprego-registado-2025-12",
+   "divida": "macao-divida-dgal-2024",
+   "empresas": "macao-empresas-2024",
+   "indice": "macao-indice-de-divida-2024",
+   "limite": "macao-limite-divida-dgal-2024",
+   "pmp": "macao-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "macao-poder-de-compra-2023",
+   "populacao": "macao-populacao-2025"
+  },
+  "nome": "Mação",
+  "slug": "macao"
+ },
+ {
+  "caopIndex": 209,
+  "dico": "1414",
+  "distritoOuIlha": "Santarém",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "rio-maior-desemprego-registado-2025-12",
+   "divida": "rio-maior-divida-dgal-2024",
+   "empresas": "rio-maior-empresas-2024",
+   "indice": "rio-maior-indice-de-divida-2024",
+   "limite": "rio-maior-limite-divida-dgal-2024",
+   "pmp": "rio-maior-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "rio-maior-poder-de-compra-2023",
+   "populacao": "rio-maior-populacao-2025"
+  },
+  "nome": "Rio Maior",
+  "slug": "rio-maior"
+ },
+ {
+  "caopIndex": 210,
+  "dico": "1415",
+  "distritoOuIlha": "Santarém",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "salvaterra-de-magos-desemprego-registado-2025-12",
+   "divida": "salvaterra-de-magos-divida-dgal-2024",
+   "empresas": "salvaterra-de-magos-empresas-2024",
+   "indice": "salvaterra-de-magos-indice-de-divida-2024",
+   "limite": "salvaterra-de-magos-limite-divida-dgal-2024",
+   "pmp": "salvaterra-de-magos-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "salvaterra-de-magos-poder-de-compra-2023",
+   "populacao": "salvaterra-de-magos-populacao-2025"
+  },
+  "nome": "Salvaterra de Magos",
+  "slug": "salvaterra-de-magos"
+ },
+ {
+  "caopIndex": 211,
+  "dico": "1416",
+  "distritoOuIlha": "Santarém",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "santarem-desemprego-registado-2025-12",
+   "divida": "santarem-divida-dgal-2024",
+   "empresas": "santarem-empresas-2024",
+   "indice": "santarem-indice-de-divida-2024",
+   "limite": "santarem-limite-divida-dgal-2024",
+   "pmp": "santarem-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "santarem-poder-de-compra-2023",
+   "populacao": "santarem-populacao-2025"
+  },
+  "nome": "Santarém",
+  "slug": "santarem"
+ },
+ {
+  "caopIndex": 212,
+  "dico": "1417",
+  "distritoOuIlha": "Santarém",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "sardoal-desemprego-registado-2025-12",
+   "divida": "sardoal-divida-dgal-2024",
+   "empresas": "sardoal-empresas-2024",
+   "indice": "sardoal-indice-de-divida-2024",
+   "limite": "sardoal-limite-divida-dgal-2024",
+   "pmp": "sardoal-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "sardoal-poder-de-compra-2023",
+   "populacao": "sardoal-populacao-2025"
+  },
+  "nome": "Sardoal",
+  "slug": "sardoal"
+ },
+ {
+  "caopIndex": 213,
+  "dico": "1418",
+  "distritoOuIlha": "Santarém",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "tomar-desemprego-registado-2025-12",
+   "divida": "tomar-divida-dgal-2024",
+   "empresas": "tomar-empresas-2024",
+   "indice": "tomar-indice-de-divida-2024",
+   "limite": "tomar-limite-divida-dgal-2024",
+   "pmp": "tomar-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "tomar-poder-de-compra-2023",
+   "populacao": "tomar-populacao-2025"
+  },
+  "nome": "Tomar",
+  "slug": "tomar"
+ },
+ {
+  "caopIndex": 214,
+  "dico": "1419",
+  "distritoOuIlha": "Santarém",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "torres-novas-desemprego-registado-2025-12",
+   "divida": "torres-novas-divida-dgal-2024",
+   "empresas": "torres-novas-empresas-2024",
+   "indice": "torres-novas-indice-de-divida-2024",
+   "limite": "torres-novas-limite-divida-dgal-2024",
+   "pmp": "torres-novas-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "torres-novas-poder-de-compra-2023",
+   "populacao": "torres-novas-populacao-2025"
+  },
+  "nome": "Torres Novas",
+  "slug": "torres-novas"
+ },
+ {
+  "caopIndex": 215,
+  "dico": "1420",
+  "distritoOuIlha": "Santarém",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vila-nova-da-barquinha-desemprego-registado-2025-12",
+   "divida": "vila-nova-da-barquinha-divida-dgal-2024",
+   "empresas": "vila-nova-da-barquinha-empresas-2024",
+   "indice": "vila-nova-da-barquinha-indice-de-divida-2024",
+   "limite": "vila-nova-da-barquinha-limite-divida-dgal-2024",
+   "pmp": "vila-nova-da-barquinha-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vila-nova-da-barquinha-poder-de-compra-2023",
+   "populacao": "vila-nova-da-barquinha-populacao-2025"
+  },
+  "nome": "Vila Nova da Barquinha",
+  "slug": "vila-nova-da-barquinha"
+ },
+ {
+  "caopIndex": 216,
+  "dico": "1421",
+  "distritoOuIlha": "Santarém",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "ourem-desemprego-registado-2025-12",
+   "divida": "ourem-divida-dgal-2024",
+   "empresas": "ourem-empresas-2024",
+   "indice": "ourem-indice-de-divida-2024",
+   "limite": "ourem-limite-divida-dgal-2024",
+   "pmp": "ourem-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "ourem-poder-de-compra-2023",
+   "populacao": "ourem-populacao-2025"
+  },
+  "nome": "Ourém",
+  "slug": "ourem"
+ },
+ {
+  "caopIndex": 217,
+  "dico": "1501",
+  "distritoOuIlha": "Setúbal",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "alcacer-do-sal-desemprego-registado-2025-12",
+   "divida": "alcacer-do-sal-divida-dgal-2024",
+   "empresas": "alcacer-do-sal-empresas-2024",
+   "indice": "alcacer-do-sal-indice-de-divida-2024",
+   "limite": "alcacer-do-sal-limite-divida-dgal-2024",
+   "pmp": "alcacer-do-sal-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "alcacer-do-sal-poder-de-compra-2023",
+   "populacao": "alcacer-do-sal-populacao-2025"
+  },
+  "nome": "Alcácer do Sal",
+  "slug": "alcacer-do-sal"
+ },
+ {
+  "caopIndex": 218,
+  "dico": "1502",
+  "distritoOuIlha": "Setúbal",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "alcochete-desemprego-registado-2025-12",
+   "divida": "alcochete-divida-dgal-2024",
+   "empresas": "alcochete-empresas-2024",
+   "indice": "alcochete-indice-de-divida-2024",
+   "limite": "alcochete-limite-divida-dgal-2024",
+   "pmp": "alcochete-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "alcochete-poder-de-compra-2023",
+   "populacao": "alcochete-populacao-2025"
+  },
+  "nome": "Alcochete",
+  "slug": "alcochete"
+ },
+ {
+  "caopIndex": 219,
+  "dico": "1503",
+  "distritoOuIlha": "Setúbal",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "almada-desemprego-registado-2025-12",
+   "divida": "almada-divida-dgal-2024",
+   "empresas": "almada-empresas-2024",
+   "indice": "almada-indice-de-divida-2024",
+   "limite": "almada-limite-divida-dgal-2024",
+   "pmp": null,
+   "poderDeCompra": "almada-poder-de-compra-2023",
+   "populacao": "almada-populacao-2025"
+  },
+  "nome": "Almada",
+  "slug": "almada"
+ },
+ {
+  "caopIndex": 220,
+  "dico": "1504",
+  "distritoOuIlha": "Setúbal",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "barreiro-desemprego-registado-2025-12",
+   "divida": "barreiro-divida-dgal-2024",
+   "empresas": "barreiro-empresas-2024",
+   "indice": "barreiro-indice-de-divida-2024",
+   "limite": "barreiro-limite-divida-dgal-2024",
+   "pmp": "barreiro-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "barreiro-poder-de-compra-2023",
+   "populacao": "barreiro-populacao-2025"
+  },
+  "nome": "Barreiro",
+  "slug": "barreiro"
+ },
+ {
+  "caopIndex": 221,
+  "dico": "1505",
+  "distritoOuIlha": "Setúbal",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "grandola-desemprego-registado-2025-12",
+   "divida": "grandola-divida-dgal-2024",
+   "empresas": "grandola-empresas-2024",
+   "indice": "grandola-indice-de-divida-2024",
+   "limite": "grandola-limite-divida-dgal-2024",
+   "pmp": "grandola-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "grandola-poder-de-compra-2023",
+   "populacao": "grandola-populacao-2025"
+  },
+  "nome": "Grândola",
+  "slug": "grandola"
+ },
+ {
+  "caopIndex": 222,
+  "dico": "1506",
+  "distritoOuIlha": "Setúbal",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "moita-desemprego-registado-2025-12",
+   "divida": "moita-divida-dgal-2024",
+   "empresas": "moita-empresas-2024",
+   "indice": "moita-indice-de-divida-2024",
+   "limite": "moita-limite-divida-dgal-2024",
+   "pmp": "moita-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "moita-poder-de-compra-2023",
+   "populacao": "moita-populacao-2025"
+  },
+  "nome": "Moita",
+  "slug": "moita"
+ },
+ {
+  "caopIndex": 223,
+  "dico": "1507",
+  "distritoOuIlha": "Setúbal",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "montijo-desemprego-registado-2025-12",
+   "divida": "montijo-divida-dgal-2024",
+   "empresas": "montijo-empresas-2024",
+   "indice": "montijo-indice-de-divida-2024",
+   "limite": "montijo-limite-divida-dgal-2024",
+   "pmp": "montijo-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "montijo-poder-de-compra-2023",
+   "populacao": "montijo-populacao-2025"
+  },
+  "nome": "Montijo",
+  "slug": "montijo"
+ },
+ {
+  "caopIndex": 224,
+  "dico": "1508",
+  "distritoOuIlha": "Setúbal",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "palmela-desemprego-registado-2025-12",
+   "divida": "palmela-divida-dgal-2024",
+   "empresas": "palmela-empresas-2024",
+   "indice": "palmela-indice-de-divida-2024",
+   "limite": "palmela-limite-divida-dgal-2024",
+   "pmp": "palmela-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "palmela-poder-de-compra-2023",
+   "populacao": "palmela-populacao-2025"
+  },
+  "nome": "Palmela",
+  "slug": "palmela"
+ },
+ {
+  "caopIndex": 225,
+  "dico": "1509",
+  "distritoOuIlha": "Setúbal",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "santiago-do-cacem-desemprego-registado-2025-12",
+   "divida": "santiago-do-cacem-divida-dgal-2024",
+   "empresas": "santiago-do-cacem-empresas-2024",
+   "indice": "santiago-do-cacem-indice-de-divida-2024",
+   "limite": "santiago-do-cacem-limite-divida-dgal-2024",
+   "pmp": "santiago-do-cacem-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "santiago-do-cacem-poder-de-compra-2023",
+   "populacao": "santiago-do-cacem-populacao-2025"
+  },
+  "nome": "Santiago do Cacém",
+  "slug": "santiago-do-cacem"
+ },
+ {
+  "caopIndex": 226,
+  "dico": "1510",
+  "distritoOuIlha": "Setúbal",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "seixal-desemprego-registado-2025-12",
+   "divida": "seixal-divida-dgal-2024",
+   "empresas": "seixal-empresas-2024",
+   "indice": "seixal-indice-de-divida-2024",
+   "limite": "seixal-limite-divida-dgal-2024",
+   "pmp": "seixal-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "seixal-poder-de-compra-2023",
+   "populacao": "seixal-populacao-2025"
+  },
+  "nome": "Seixal",
+  "slug": "seixal"
+ },
+ {
+  "caopIndex": 227,
+  "dico": "1511",
+  "distritoOuIlha": "Setúbal",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "sesimbra-desemprego-registado-2025-12",
+   "divida": "sesimbra-divida-dgal-2024",
+   "empresas": "sesimbra-empresas-2024",
+   "indice": "sesimbra-indice-de-divida-2024",
+   "limite": "sesimbra-limite-divida-dgal-2024",
+   "pmp": "sesimbra-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "sesimbra-poder-de-compra-2023",
+   "populacao": "sesimbra-populacao-2025"
+  },
+  "nome": "Sesimbra",
+  "slug": "sesimbra"
+ },
+ {
+  "caopIndex": 228,
+  "dico": "1512",
+  "distritoOuIlha": "Setúbal",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "setubal-desemprego-registado-2025-12",
+   "divida": "setubal-divida-dgal-2024",
+   "empresas": "setubal-empresas-2024",
+   "indice": "setubal-indice-de-divida-2024",
+   "limite": "setubal-limite-divida-dgal-2024",
+   "pmp": "setubal-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "setubal-poder-de-compra-2023",
+   "populacao": "setubal-populacao-2025"
+  },
+  "nome": "Setúbal",
+  "slug": "setubal"
+ },
+ {
+  "caopIndex": 229,
+  "dico": "1513",
+  "distritoOuIlha": "Setúbal",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "sines-desemprego-registado-2025-12",
+   "divida": "sines-divida-dgal-2024",
+   "empresas": "sines-empresas-2024",
+   "indice": "sines-indice-de-divida-2024",
+   "limite": "sines-limite-divida-dgal-2024",
+   "pmp": "sines-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "sines-poder-de-compra-2023",
+   "populacao": "sines-populacao-2025"
+  },
+  "nome": "Sines",
+  "slug": "sines"
+ },
+ {
+  "caopIndex": 230,
+  "dico": "1601",
+  "distritoOuIlha": "Viana do Castelo",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "arcos-de-valdevez-desemprego-registado-2025-12",
+   "divida": "arcos-de-valdevez-divida-dgal-2024",
+   "empresas": "arcos-de-valdevez-empresas-2024",
+   "indice": "arcos-de-valdevez-indice-de-divida-2024",
+   "limite": "arcos-de-valdevez-limite-divida-dgal-2024",
+   "pmp": "arcos-de-valdevez-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "arcos-de-valdevez-poder-de-compra-2023",
+   "populacao": "arcos-de-valdevez-populacao-2025"
+  },
+  "nome": "Arcos de Valdevez",
+  "slug": "arcos-de-valdevez"
+ },
+ {
+  "caopIndex": 231,
+  "dico": "1602",
+  "distritoOuIlha": "Viana do Castelo",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "caminha-desemprego-registado-2025-12",
+   "divida": "caminha-divida-dgal-2024",
+   "empresas": "caminha-empresas-2024",
+   "indice": "caminha-indice-de-divida-2024",
+   "limite": "caminha-limite-divida-dgal-2024",
+   "pmp": "caminha-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "caminha-poder-de-compra-2023",
+   "populacao": "caminha-populacao-2025"
+  },
+  "nome": "Caminha",
+  "slug": "caminha"
+ },
+ {
+  "caopIndex": 232,
+  "dico": "1603",
+  "distritoOuIlha": "Viana do Castelo",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "melgaco-desemprego-registado-2025-12",
+   "divida": "melgaco-divida-dgal-2024",
+   "empresas": "melgaco-empresas-2024",
+   "indice": "melgaco-indice-de-divida-2024",
+   "limite": "melgaco-limite-divida-dgal-2024",
+   "pmp": "melgaco-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "melgaco-poder-de-compra-2023",
+   "populacao": "melgaco-populacao-2025"
+  },
+  "nome": "Melgaço",
+  "slug": "melgaco"
+ },
+ {
+  "caopIndex": 233,
+  "dico": "1604",
+  "distritoOuIlha": "Viana do Castelo",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "moncao-desemprego-registado-2025-12",
+   "divida": "moncao-divida-dgal-2024",
+   "empresas": "moncao-empresas-2024",
+   "indice": "moncao-indice-de-divida-2024",
+   "limite": "moncao-limite-divida-dgal-2024",
+   "pmp": "moncao-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "moncao-poder-de-compra-2023",
+   "populacao": "moncao-populacao-2025"
+  },
+  "nome": "Monção",
+  "slug": "moncao"
+ },
+ {
+  "caopIndex": 234,
+  "dico": "1605",
+  "distritoOuIlha": "Viana do Castelo",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "paredes-de-coura-desemprego-registado-2025-12",
+   "divida": "paredes-de-coura-divida-dgal-2024",
+   "empresas": "paredes-de-coura-empresas-2024",
+   "indice": "paredes-de-coura-indice-de-divida-2024",
+   "limite": "paredes-de-coura-limite-divida-dgal-2024",
+   "pmp": "paredes-de-coura-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "paredes-de-coura-poder-de-compra-2023",
+   "populacao": "paredes-de-coura-populacao-2025"
+  },
+  "nome": "Paredes de Coura",
+  "slug": "paredes-de-coura"
+ },
+ {
+  "caopIndex": 235,
+  "dico": "1606",
+  "distritoOuIlha": "Viana do Castelo",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "ponte-da-barca-desemprego-registado-2025-12",
+   "divida": "ponte-da-barca-divida-dgal-2024",
+   "empresas": "ponte-da-barca-empresas-2024",
+   "indice": "ponte-da-barca-indice-de-divida-2024",
+   "limite": "ponte-da-barca-limite-divida-dgal-2024",
+   "pmp": "ponte-da-barca-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "ponte-da-barca-poder-de-compra-2023",
+   "populacao": "ponte-da-barca-populacao-2025"
+  },
+  "nome": "Ponte da Barca",
+  "slug": "ponte-da-barca"
+ },
+ {
+  "caopIndex": 236,
+  "dico": "1607",
+  "distritoOuIlha": "Viana do Castelo",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "ponte-de-lima-desemprego-registado-2025-12",
+   "divida": "ponte-de-lima-divida-dgal-2024",
+   "empresas": "ponte-de-lima-empresas-2024",
+   "indice": "ponte-de-lima-indice-de-divida-2024",
+   "limite": "ponte-de-lima-limite-divida-dgal-2024",
+   "pmp": "ponte-de-lima-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "ponte-de-lima-poder-de-compra-2023",
+   "populacao": "ponte-de-lima-populacao-2025"
+  },
+  "nome": "Ponte de Lima",
+  "slug": "ponte-de-lima"
+ },
+ {
+  "caopIndex": 237,
+  "dico": "1608",
+  "distritoOuIlha": "Viana do Castelo",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "valenca-desemprego-registado-2025-12",
+   "divida": "valenca-divida-dgal-2024",
+   "empresas": "valenca-empresas-2024",
+   "indice": "valenca-indice-de-divida-2024",
+   "limite": "valenca-limite-divida-dgal-2024",
+   "pmp": "valenca-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "valenca-poder-de-compra-2023",
+   "populacao": "valenca-populacao-2025"
+  },
+  "nome": "Valença",
+  "slug": "valenca"
+ },
+ {
+  "caopIndex": 238,
+  "dico": "1609",
+  "distritoOuIlha": "Viana do Castelo",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "viana-do-castelo-desemprego-registado-2025-12",
+   "divida": "viana-do-castelo-divida-dgal-2024",
+   "empresas": "viana-do-castelo-empresas-2024",
+   "indice": "viana-do-castelo-indice-de-divida-2024",
+   "limite": "viana-do-castelo-limite-divida-dgal-2024",
+   "pmp": "viana-do-castelo-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "viana-do-castelo-poder-de-compra-2023",
+   "populacao": "viana-do-castelo-populacao-2025"
+  },
+  "nome": "Viana do Castelo",
+  "slug": "viana-do-castelo"
+ },
+ {
+  "caopIndex": 239,
+  "dico": "1610",
+  "distritoOuIlha": "Viana do Castelo",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vila-nova-de-cerveira-desemprego-registado-2025-12",
+   "divida": "vila-nova-de-cerveira-divida-dgal-2024",
+   "empresas": "vila-nova-de-cerveira-empresas-2024",
+   "indice": "vila-nova-de-cerveira-indice-de-divida-2024",
+   "limite": "vila-nova-de-cerveira-limite-divida-dgal-2024",
+   "pmp": "vila-nova-de-cerveira-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vila-nova-de-cerveira-poder-de-compra-2023",
+   "populacao": "vila-nova-de-cerveira-populacao-2025"
+  },
+  "nome": "Vila Nova de Cerveira",
+  "slug": "vila-nova-de-cerveira"
+ },
+ {
+  "caopIndex": 240,
+  "dico": "1701",
+  "distritoOuIlha": "Vila Real",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "alijo-desemprego-registado-2025-12",
+   "divida": "alijo-divida-dgal-2024",
+   "empresas": "alijo-empresas-2024",
+   "indice": "alijo-indice-de-divida-2024",
+   "limite": "alijo-limite-divida-dgal-2024",
+   "pmp": "alijo-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "alijo-poder-de-compra-2023",
+   "populacao": "alijo-populacao-2025"
+  },
+  "nome": "Alijó",
+  "slug": "alijo"
+ },
+ {
+  "caopIndex": 241,
+  "dico": "1702",
+  "distritoOuIlha": "Vila Real",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "boticas-desemprego-registado-2025-12",
+   "divida": "boticas-divida-dgal-2024",
+   "empresas": "boticas-empresas-2024",
+   "indice": "boticas-indice-de-divida-2024",
+   "limite": "boticas-limite-divida-dgal-2024",
+   "pmp": "boticas-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "boticas-poder-de-compra-2023",
+   "populacao": "boticas-populacao-2025"
+  },
+  "nome": "Boticas",
+  "slug": "boticas"
+ },
+ {
+  "caopIndex": 242,
+  "dico": "1703",
+  "distritoOuIlha": "Vila Real",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "chaves-desemprego-registado-2025-12",
+   "divida": "chaves-divida-dgal-2024",
+   "empresas": "chaves-empresas-2024",
+   "indice": "chaves-indice-de-divida-2024",
+   "limite": "chaves-limite-divida-dgal-2024",
+   "pmp": "chaves-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "chaves-poder-de-compra-2023",
+   "populacao": "chaves-populacao-2025"
+  },
+  "nome": "Chaves",
+  "slug": "chaves"
+ },
+ {
+  "caopIndex": 243,
+  "dico": "1704",
+  "distritoOuIlha": "Vila Real",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "mesao-frio-desemprego-registado-2025-12",
+   "divida": "mesao-frio-divida-dgal-2024",
+   "empresas": "mesao-frio-empresas-2024",
+   "indice": "mesao-frio-indice-de-divida-2024",
+   "limite": "mesao-frio-limite-divida-dgal-2024",
+   "pmp": "mesao-frio-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "mesao-frio-poder-de-compra-2023",
+   "populacao": "mesao-frio-populacao-2025"
+  },
+  "nome": "Mesão Frio",
+  "slug": "mesao-frio"
+ },
+ {
+  "caopIndex": 244,
+  "dico": "1705",
+  "distritoOuIlha": "Vila Real",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "mondim-de-basto-desemprego-registado-2025-12",
+   "divida": "mondim-de-basto-divida-dgal-2024",
+   "empresas": "mondim-de-basto-empresas-2024",
+   "indice": "mondim-de-basto-indice-de-divida-2024",
+   "limite": "mondim-de-basto-limite-divida-dgal-2024",
+   "pmp": "mondim-de-basto-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "mondim-de-basto-poder-de-compra-2023",
+   "populacao": "mondim-de-basto-populacao-2025"
+  },
+  "nome": "Mondim de Basto",
+  "slug": "mondim-de-basto"
+ },
+ {
+  "caopIndex": 245,
+  "dico": "1706",
+  "distritoOuIlha": "Vila Real",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "montalegre-desemprego-registado-2025-12",
+   "divida": "montalegre-divida-dgal-2024",
+   "empresas": "montalegre-empresas-2024",
+   "indice": "montalegre-indice-de-divida-2024",
+   "limite": "montalegre-limite-divida-dgal-2024",
+   "pmp": "montalegre-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "montalegre-poder-de-compra-2023",
+   "populacao": "montalegre-populacao-2025"
+  },
+  "nome": "Montalegre",
+  "slug": "montalegre"
+ },
+ {
+  "caopIndex": 246,
+  "dico": "1707",
+  "distritoOuIlha": "Vila Real",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "murca-desemprego-registado-2025-12",
+   "divida": "murca-divida-dgal-2024",
+   "empresas": "murca-empresas-2024",
+   "indice": "murca-indice-de-divida-2024",
+   "limite": "murca-limite-divida-dgal-2024",
+   "pmp": "murca-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "murca-poder-de-compra-2023",
+   "populacao": "murca-populacao-2025"
+  },
+  "nome": "Murça",
+  "slug": "murca"
+ },
+ {
+  "caopIndex": 247,
+  "dico": "1708",
+  "distritoOuIlha": "Vila Real",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "peso-da-regua-desemprego-registado-2025-12",
+   "divida": "peso-da-regua-divida-dgal-2024",
+   "empresas": "peso-da-regua-empresas-2024",
+   "indice": "peso-da-regua-indice-de-divida-2024",
+   "limite": "peso-da-regua-limite-divida-dgal-2024",
+   "pmp": "peso-da-regua-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "peso-da-regua-poder-de-compra-2023",
+   "populacao": "peso-da-regua-populacao-2025"
+  },
+  "nome": "Peso da Régua",
+  "slug": "peso-da-regua"
+ },
+ {
+  "caopIndex": 248,
+  "dico": "1709",
+  "distritoOuIlha": "Vila Real",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "ribeira-de-pena-desemprego-registado-2025-12",
+   "divida": "ribeira-de-pena-divida-dgal-2024",
+   "empresas": "ribeira-de-pena-empresas-2024",
+   "indice": "ribeira-de-pena-indice-de-divida-2024",
+   "limite": "ribeira-de-pena-limite-divida-dgal-2024",
+   "pmp": "ribeira-de-pena-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "ribeira-de-pena-poder-de-compra-2023",
+   "populacao": "ribeira-de-pena-populacao-2025"
+  },
+  "nome": "Ribeira de Pena",
+  "slug": "ribeira-de-pena"
+ },
+ {
+  "caopIndex": 249,
+  "dico": "1710",
+  "distritoOuIlha": "Vila Real",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "sabrosa-desemprego-registado-2025-12",
+   "divida": "sabrosa-divida-dgal-2024",
+   "empresas": "sabrosa-empresas-2024",
+   "indice": "sabrosa-indice-de-divida-2024",
+   "limite": "sabrosa-limite-divida-dgal-2024",
+   "pmp": "sabrosa-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "sabrosa-poder-de-compra-2023",
+   "populacao": "sabrosa-populacao-2025"
+  },
+  "nome": "Sabrosa",
+  "slug": "sabrosa"
+ },
+ {
+  "caopIndex": 250,
+  "dico": "1711",
+  "distritoOuIlha": "Vila Real",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "santa-marta-de-penaguiao-desemprego-registado-2025-12",
+   "divida": "santa-marta-de-penaguiao-divida-dgal-2024",
+   "empresas": "santa-marta-de-penaguiao-empresas-2024",
+   "indice": "santa-marta-de-penaguiao-indice-de-divida-2024",
+   "limite": "santa-marta-de-penaguiao-limite-divida-dgal-2024",
+   "pmp": "santa-marta-de-penaguiao-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "santa-marta-de-penaguiao-poder-de-compra-2023",
+   "populacao": "santa-marta-de-penaguiao-populacao-2025"
+  },
+  "nome": "Santa Marta de Penaguião",
+  "slug": "santa-marta-de-penaguiao"
+ },
+ {
+  "caopIndex": 251,
+  "dico": "1712",
+  "distritoOuIlha": "Vila Real",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "valpacos-desemprego-registado-2025-12",
+   "divida": "valpacos-divida-dgal-2024",
+   "empresas": "valpacos-empresas-2024",
+   "indice": "valpacos-indice-de-divida-2024",
+   "limite": "valpacos-limite-divida-dgal-2024",
+   "pmp": "valpacos-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "valpacos-poder-de-compra-2023",
+   "populacao": "valpacos-populacao-2025"
+  },
+  "nome": "Valpaços",
+  "slug": "valpacos"
+ },
+ {
+  "caopIndex": 252,
+  "dico": "1713",
+  "distritoOuIlha": "Vila Real",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vila-pouca-de-aguiar-desemprego-registado-2025-12",
+   "divida": "vila-pouca-de-aguiar-divida-dgal-2024",
+   "empresas": "vila-pouca-de-aguiar-empresas-2024",
+   "indice": "vila-pouca-de-aguiar-indice-de-divida-2024",
+   "limite": "vila-pouca-de-aguiar-limite-divida-dgal-2024",
+   "pmp": "vila-pouca-de-aguiar-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vila-pouca-de-aguiar-poder-de-compra-2023",
+   "populacao": "vila-pouca-de-aguiar-populacao-2025"
+  },
+  "nome": "Vila Pouca de Aguiar",
+  "slug": "vila-pouca-de-aguiar"
+ },
+ {
+  "caopIndex": 253,
+  "dico": "1714",
+  "distritoOuIlha": "Vila Real",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vila-real-desemprego-registado-2025-12",
+   "divida": "vila-real-divida-dgal-2024",
+   "empresas": "vila-real-empresas-2024",
+   "indice": "vila-real-indice-de-divida-2024",
+   "limite": "vila-real-limite-divida-dgal-2024",
+   "pmp": "vila-real-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vila-real-poder-de-compra-2023",
+   "populacao": "vila-real-populacao-2025"
+  },
+  "nome": "Vila Real",
+  "slug": "vila-real"
+ },
+ {
+  "caopIndex": 254,
+  "dico": "1801",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "armamar-desemprego-registado-2025-12",
+   "divida": "armamar-divida-dgal-2024",
+   "empresas": "armamar-empresas-2024",
+   "indice": "armamar-indice-de-divida-2024",
+   "limite": "armamar-limite-divida-dgal-2024",
+   "pmp": "armamar-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "armamar-poder-de-compra-2023",
+   "populacao": "armamar-populacao-2025"
+  },
+  "nome": "Armamar",
+  "slug": "armamar"
+ },
+ {
+  "caopIndex": 255,
+  "dico": "1802",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "carregal-do-sal-desemprego-registado-2025-12",
+   "divida": "carregal-do-sal-divida-dgal-2024",
+   "empresas": "carregal-do-sal-empresas-2024",
+   "indice": "carregal-do-sal-indice-de-divida-2024",
+   "limite": "carregal-do-sal-limite-divida-dgal-2024",
+   "pmp": "carregal-do-sal-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "carregal-do-sal-poder-de-compra-2023",
+   "populacao": "carregal-do-sal-populacao-2025"
+  },
+  "nome": "Carregal do Sal",
+  "slug": "carregal-do-sal"
+ },
+ {
+  "caopIndex": 256,
+  "dico": "1803",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "castro-daire-desemprego-registado-2025-12",
+   "divida": "castro-daire-divida-dgal-2024",
+   "empresas": "castro-daire-empresas-2024",
+   "indice": "castro-daire-indice-de-divida-2024",
+   "limite": "castro-daire-limite-divida-dgal-2024",
+   "pmp": "castro-daire-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "castro-daire-poder-de-compra-2023",
+   "populacao": "castro-daire-populacao-2025"
+  },
+  "nome": "Castro Daire",
+  "slug": "castro-daire"
+ },
+ {
+  "caopIndex": 257,
+  "dico": "1804",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "cinfaes-desemprego-registado-2025-12",
+   "divida": "cinfaes-divida-dgal-2024",
+   "empresas": "cinfaes-empresas-2024",
+   "indice": "cinfaes-indice-de-divida-2024",
+   "limite": "cinfaes-limite-divida-dgal-2024",
+   "pmp": "cinfaes-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "cinfaes-poder-de-compra-2023",
+   "populacao": "cinfaes-populacao-2025"
+  },
+  "nome": "Cinfães",
+  "slug": "cinfaes"
+ },
+ {
+  "caopIndex": 258,
+  "dico": "1805",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "lamego-desemprego-registado-2025-12",
+   "divida": "lamego-divida-dgal-2024",
+   "empresas": "lamego-empresas-2024",
+   "indice": "lamego-indice-de-divida-2024",
+   "limite": "lamego-limite-divida-dgal-2024",
+   "pmp": "lamego-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "lamego-poder-de-compra-2023",
+   "populacao": "lamego-populacao-2025"
+  },
+  "nome": "Lamego",
+  "slug": "lamego"
+ },
+ {
+  "caopIndex": 259,
+  "dico": "1806",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "mangualde-desemprego-registado-2025-12",
+   "divida": "mangualde-divida-dgal-2024",
+   "empresas": "mangualde-empresas-2024",
+   "indice": "mangualde-indice-de-divida-2024",
+   "limite": "mangualde-limite-divida-dgal-2024",
+   "pmp": "mangualde-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "mangualde-poder-de-compra-2023",
+   "populacao": "mangualde-populacao-2025"
+  },
+  "nome": "Mangualde",
+  "slug": "mangualde"
+ },
+ {
+  "caopIndex": 260,
+  "dico": "1807",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "moimenta-da-beira-desemprego-registado-2025-12",
+   "divida": "moimenta-da-beira-divida-dgal-2024",
+   "empresas": "moimenta-da-beira-empresas-2024",
+   "indice": "moimenta-da-beira-indice-de-divida-2024",
+   "limite": "moimenta-da-beira-limite-divida-dgal-2024",
+   "pmp": null,
+   "poderDeCompra": "moimenta-da-beira-poder-de-compra-2023",
+   "populacao": "moimenta-da-beira-populacao-2025"
+  },
+  "nome": "Moimenta da Beira",
+  "slug": "moimenta-da-beira"
+ },
+ {
+  "caopIndex": 261,
+  "dico": "1808",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "mortagua-desemprego-registado-2025-12",
+   "divida": "mortagua-divida-dgal-2024",
+   "empresas": "mortagua-empresas-2024",
+   "indice": "mortagua-indice-de-divida-2024",
+   "limite": "mortagua-limite-divida-dgal-2024",
+   "pmp": "mortagua-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "mortagua-poder-de-compra-2023",
+   "populacao": "mortagua-populacao-2025"
+  },
+  "nome": "Mortágua",
+  "slug": "mortagua"
+ },
+ {
+  "caopIndex": 262,
+  "dico": "1809",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "nelas-desemprego-registado-2025-12",
+   "divida": "nelas-divida-dgal-2024",
+   "empresas": "nelas-empresas-2024",
+   "indice": "nelas-indice-de-divida-2024",
+   "limite": "nelas-limite-divida-dgal-2024",
+   "pmp": "nelas-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "nelas-poder-de-compra-2023",
+   "populacao": "nelas-populacao-2025"
+  },
+  "nome": "Nelas",
+  "slug": "nelas"
+ },
+ {
+  "caopIndex": 263,
+  "dico": "1810",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "oliveira-de-frades-desemprego-registado-2025-12",
+   "divida": "oliveira-de-frades-divida-dgal-2024",
+   "empresas": "oliveira-de-frades-empresas-2024",
+   "indice": "oliveira-de-frades-indice-de-divida-2024",
+   "limite": "oliveira-de-frades-limite-divida-dgal-2024",
+   "pmp": "oliveira-de-frades-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "oliveira-de-frades-poder-de-compra-2023",
+   "populacao": "oliveira-de-frades-populacao-2025"
+  },
+  "nome": "Oliveira de Frades",
+  "slug": "oliveira-de-frades"
+ },
+ {
+  "caopIndex": 264,
+  "dico": "1811",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "penalva-do-castelo-desemprego-registado-2025-12",
+   "divida": "penalva-do-castelo-divida-dgal-2024",
+   "empresas": "penalva-do-castelo-empresas-2024",
+   "indice": "penalva-do-castelo-indice-de-divida-2024",
+   "limite": "penalva-do-castelo-limite-divida-dgal-2024",
+   "pmp": "penalva-do-castelo-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "penalva-do-castelo-poder-de-compra-2023",
+   "populacao": "penalva-do-castelo-populacao-2025"
+  },
+  "nome": "Penalva do Castelo",
+  "slug": "penalva-do-castelo"
+ },
+ {
+  "caopIndex": 265,
+  "dico": "1812",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "penedono-desemprego-registado-2025-12",
+   "divida": null,
+   "empresas": "penedono-empresas-2024",
+   "indice": null,
+   "limite": null,
+   "pmp": null,
+   "poderDeCompra": "penedono-poder-de-compra-2023",
+   "populacao": "penedono-populacao-2025"
+  },
+  "nome": "Penedono",
+  "slug": "penedono"
+ },
+ {
+  "caopIndex": 266,
+  "dico": "1813",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "resende-desemprego-registado-2025-12",
+   "divida": "resende-divida-dgal-2024",
+   "empresas": "resende-empresas-2024",
+   "indice": "resende-indice-de-divida-2024",
+   "limite": "resende-limite-divida-dgal-2024",
+   "pmp": "resende-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "resende-poder-de-compra-2023",
+   "populacao": "resende-populacao-2025"
+  },
+  "nome": "Resende",
+  "slug": "resende"
+ },
+ {
+  "caopIndex": 267,
+  "dico": "1814",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "santa-comba-dao-desemprego-registado-2025-12",
+   "divida": "santa-comba-dao-divida-dgal-2024",
+   "empresas": "santa-comba-dao-empresas-2024",
+   "indice": "santa-comba-dao-indice-de-divida-2024",
+   "limite": "santa-comba-dao-limite-divida-dgal-2024",
+   "pmp": "santa-comba-dao-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "santa-comba-dao-poder-de-compra-2023",
+   "populacao": "santa-comba-dao-populacao-2025"
+  },
+  "nome": "Santa Comba Dão",
+  "slug": "santa-comba-dao"
+ },
+ {
+  "caopIndex": 268,
+  "dico": "1815",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "sao-joao-da-pesqueira-desemprego-registado-2025-12",
+   "divida": "sao-joao-da-pesqueira-divida-dgal-2024",
+   "empresas": "sao-joao-da-pesqueira-empresas-2024",
+   "indice": "sao-joao-da-pesqueira-indice-de-divida-2024",
+   "limite": "sao-joao-da-pesqueira-limite-divida-dgal-2024",
+   "pmp": "sao-joao-da-pesqueira-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "sao-joao-da-pesqueira-poder-de-compra-2023",
+   "populacao": "sao-joao-da-pesqueira-populacao-2025"
+  },
+  "nome": "São João da Pesqueira",
+  "slug": "sao-joao-da-pesqueira"
+ },
+ {
+  "caopIndex": 269,
+  "dico": "1816",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "sao-pedro-do-sul-desemprego-registado-2025-12",
+   "divida": "sao-pedro-do-sul-divida-dgal-2024",
+   "empresas": "sao-pedro-do-sul-empresas-2024",
+   "indice": "sao-pedro-do-sul-indice-de-divida-2024",
+   "limite": "sao-pedro-do-sul-limite-divida-dgal-2024",
+   "pmp": "sao-pedro-do-sul-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "sao-pedro-do-sul-poder-de-compra-2023",
+   "populacao": "sao-pedro-do-sul-populacao-2025"
+  },
+  "nome": "São Pedro do Sul",
+  "slug": "sao-pedro-do-sul"
+ },
+ {
+  "caopIndex": 270,
+  "dico": "1817",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "satao-desemprego-registado-2025-12",
+   "divida": "satao-divida-dgal-2024",
+   "empresas": "satao-empresas-2024",
+   "indice": "satao-indice-de-divida-2024",
+   "limite": "satao-limite-divida-dgal-2024",
+   "pmp": "satao-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "satao-poder-de-compra-2023",
+   "populacao": "satao-populacao-2025"
+  },
+  "nome": "Sátão",
+  "slug": "satao"
+ },
+ {
+  "caopIndex": 271,
+  "dico": "1818",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "sernancelhe-desemprego-registado-2025-12",
+   "divida": "sernancelhe-divida-dgal-2024",
+   "empresas": "sernancelhe-empresas-2024",
+   "indice": "sernancelhe-indice-de-divida-2024",
+   "limite": "sernancelhe-limite-divida-dgal-2024",
+   "pmp": "sernancelhe-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "sernancelhe-poder-de-compra-2023",
+   "populacao": "sernancelhe-populacao-2025"
+  },
+  "nome": "Sernancelhe",
+  "slug": "sernancelhe"
+ },
+ {
+  "caopIndex": 272,
+  "dico": "1819",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "tabuaco-desemprego-registado-2025-12",
+   "divida": "tabuaco-divida-dgal-2024",
+   "empresas": "tabuaco-empresas-2024",
+   "indice": "tabuaco-indice-de-divida-2024",
+   "limite": "tabuaco-limite-divida-dgal-2024",
+   "pmp": "tabuaco-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "tabuaco-poder-de-compra-2023",
+   "populacao": "tabuaco-populacao-2025"
+  },
+  "nome": "Tabuaço",
+  "slug": "tabuaco"
+ },
+ {
+  "caopIndex": 273,
+  "dico": "1820",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "tarouca-desemprego-registado-2025-12",
+   "divida": "tarouca-divida-dgal-2024",
+   "empresas": "tarouca-empresas-2024",
+   "indice": "tarouca-indice-de-divida-2024",
+   "limite": "tarouca-limite-divida-dgal-2024",
+   "pmp": "tarouca-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "tarouca-poder-de-compra-2023",
+   "populacao": "tarouca-populacao-2025"
+  },
+  "nome": "Tarouca",
+  "slug": "tarouca"
+ },
+ {
+  "caopIndex": 274,
+  "dico": "1821",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "tondela-desemprego-registado-2025-12",
+   "divida": "tondela-divida-dgal-2024",
+   "empresas": "tondela-empresas-2024",
+   "indice": "tondela-indice-de-divida-2024",
+   "limite": "tondela-limite-divida-dgal-2024",
+   "pmp": "tondela-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "tondela-poder-de-compra-2023",
+   "populacao": "tondela-populacao-2025"
+  },
+  "nome": "Tondela",
+  "slug": "tondela"
+ },
+ {
+  "caopIndex": 275,
+  "dico": "1822",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vila-nova-de-paiva-desemprego-registado-2025-12",
+   "divida": "vila-nova-de-paiva-divida-dgal-2024",
+   "empresas": "vila-nova-de-paiva-empresas-2024",
+   "indice": "vila-nova-de-paiva-indice-de-divida-2024",
+   "limite": "vila-nova-de-paiva-limite-divida-dgal-2024",
+   "pmp": "vila-nova-de-paiva-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vila-nova-de-paiva-poder-de-compra-2023",
+   "populacao": "vila-nova-de-paiva-populacao-2025"
+  },
+  "nome": "Vila Nova de Paiva",
+  "slug": "vila-nova-de-paiva"
+ },
+ {
+  "caopIndex": 276,
+  "dico": "1823",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "viseu-desemprego-registado-2025-12",
+   "divida": "viseu-divida-dgal-2024",
+   "empresas": "viseu-empresas-2024",
+   "indice": "viseu-indice-de-divida-2024",
+   "limite": "viseu-limite-divida-dgal-2024",
+   "pmp": "viseu-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "viseu-poder-de-compra-2023",
+   "populacao": "viseu-populacao-2025"
+  },
+  "nome": "Viseu",
+  "slug": "viseu"
+ },
+ {
+  "caopIndex": 277,
+  "dico": "1824",
+  "distritoOuIlha": "Viseu",
+  "ilha": false,
+  "linhas": {
+   "desempregoRegistado": "vouzela-desemprego-registado-2025-12",
+   "divida": "vouzela-divida-dgal-2024",
+   "empresas": "vouzela-empresas-2024",
+   "indice": "vouzela-indice-de-divida-2024",
+   "limite": "vouzela-limite-divida-dgal-2024",
+   "pmp": "vouzela-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vouzela-poder-de-compra-2023",
+   "populacao": "vouzela-populacao-2025"
+  },
+  "nome": "Vouzela",
+  "slug": "vouzela"
+ },
+ {
+  "caopIndex": 278,
+  "dico": "3101",
+  "distritoOuIlha": "Ilha da Madeira",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "calheta-divida-dgal-2024",
+   "empresas": "calheta-empresas-2024",
+   "indice": "calheta-indice-de-divida-2024",
+   "limite": "calheta-limite-divida-dgal-2024",
+   "pmp": "calheta-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "calheta-poder-de-compra-2023",
+   "populacao": "calheta-populacao-2025"
+  },
+  "nome": "Calheta",
+  "slug": "calheta"
+ },
+ {
+  "caopIndex": 279,
+  "dico": "3102",
+  "distritoOuIlha": "Ilha da Madeira",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "camara-de-lobos-divida-dgal-2024",
+   "empresas": "camara-de-lobos-empresas-2024",
+   "indice": "camara-de-lobos-indice-de-divida-2024",
+   "limite": "camara-de-lobos-limite-divida-dgal-2024",
+   "pmp": "camara-de-lobos-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "camara-de-lobos-poder-de-compra-2023",
+   "populacao": "camara-de-lobos-populacao-2025"
+  },
+  "nome": "Câmara de Lobos",
+  "slug": "camara-de-lobos"
+ },
+ {
+  "caopIndex": 280,
+  "dico": "3103",
+  "distritoOuIlha": "Ilha da Madeira",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "funchal-divida-dgal-2024",
+   "empresas": "funchal-empresas-2024",
+   "indice": "funchal-indice-de-divida-2024",
+   "limite": "funchal-limite-divida-dgal-2024",
+   "pmp": "funchal-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "funchal-poder-de-compra-2023",
+   "populacao": "funchal-populacao-2025"
+  },
+  "nome": "Funchal",
+  "slug": "funchal"
+ },
+ {
+  "caopIndex": 281,
+  "dico": "3104",
+  "distritoOuIlha": "Ilha da Madeira",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "machico-divida-dgal-2024",
+   "empresas": "machico-empresas-2024",
+   "indice": "machico-indice-de-divida-2024",
+   "limite": "machico-limite-divida-dgal-2024",
+   "pmp": "machico-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "machico-poder-de-compra-2023",
+   "populacao": "machico-populacao-2025"
+  },
+  "nome": "Machico",
+  "slug": "machico"
+ },
+ {
+  "caopIndex": 282,
+  "dico": "3105",
+  "distritoOuIlha": "Ilha da Madeira",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "ponta-do-sol-divida-dgal-2024",
+   "empresas": "ponta-do-sol-empresas-2024",
+   "indice": "ponta-do-sol-indice-de-divida-2024",
+   "limite": "ponta-do-sol-limite-divida-dgal-2024",
+   "pmp": "ponta-do-sol-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "ponta-do-sol-poder-de-compra-2023",
+   "populacao": "ponta-do-sol-populacao-2025"
+  },
+  "nome": "Ponta do Sol",
+  "slug": "ponta-do-sol"
+ },
+ {
+  "caopIndex": 283,
+  "dico": "3106",
+  "distritoOuIlha": "Ilha da Madeira",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "porto-moniz-divida-dgal-2024",
+   "empresas": "porto-moniz-empresas-2024",
+   "indice": "porto-moniz-indice-de-divida-2024",
+   "limite": "porto-moniz-limite-divida-dgal-2024",
+   "pmp": "porto-moniz-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "porto-moniz-poder-de-compra-2023",
+   "populacao": "porto-moniz-populacao-2025"
+  },
+  "nome": "Porto Moniz",
+  "slug": "porto-moniz"
+ },
+ {
+  "caopIndex": 284,
+  "dico": "3107",
+  "distritoOuIlha": "Ilha da Madeira",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "ribeira-brava-divida-dgal-2024",
+   "empresas": "ribeira-brava-empresas-2024",
+   "indice": "ribeira-brava-indice-de-divida-2024",
+   "limite": "ribeira-brava-limite-divida-dgal-2024",
+   "pmp": "ribeira-brava-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "ribeira-brava-poder-de-compra-2023",
+   "populacao": "ribeira-brava-populacao-2025"
+  },
+  "nome": "Ribeira Brava",
+  "slug": "ribeira-brava"
+ },
+ {
+  "caopIndex": 285,
+  "dico": "3108",
+  "distritoOuIlha": "Ilha da Madeira",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "santa-cruz-divida-dgal-2024",
+   "empresas": "santa-cruz-empresas-2024",
+   "indice": "santa-cruz-indice-de-divida-2024",
+   "limite": "santa-cruz-limite-divida-dgal-2024",
+   "pmp": "santa-cruz-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "santa-cruz-poder-de-compra-2023",
+   "populacao": "santa-cruz-populacao-2025"
+  },
+  "nome": "Santa Cruz",
+  "slug": "santa-cruz"
+ },
+ {
+  "caopIndex": 286,
+  "dico": "3109",
+  "distritoOuIlha": "Ilha da Madeira",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "santana-divida-dgal-2024",
+   "empresas": "santana-empresas-2024",
+   "indice": "santana-indice-de-divida-2024",
+   "limite": "santana-limite-divida-dgal-2024",
+   "pmp": "santana-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "santana-poder-de-compra-2023",
+   "populacao": "santana-populacao-2025"
+  },
+  "nome": "Santana",
+  "slug": "santana"
+ },
+ {
+  "caopIndex": 287,
+  "dico": "3110",
+  "distritoOuIlha": "Ilha da Madeira",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "sao-vicente-divida-dgal-2024",
+   "empresas": "sao-vicente-empresas-2024",
+   "indice": "sao-vicente-indice-de-divida-2024",
+   "limite": "sao-vicente-limite-divida-dgal-2024",
+   "pmp": "sao-vicente-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "sao-vicente-poder-de-compra-2023",
+   "populacao": "sao-vicente-populacao-2025"
+  },
+  "nome": "São Vicente",
+  "slug": "sao-vicente"
+ },
+ {
+  "caopIndex": 288,
+  "dico": "3201",
+  "distritoOuIlha": "Ilha de Porto Santo",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "porto-santo-divida-dgal-2024",
+   "empresas": "porto-santo-empresas-2024",
+   "indice": "porto-santo-indice-de-divida-2024",
+   "limite": "porto-santo-limite-divida-dgal-2024",
+   "pmp": "porto-santo-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "porto-santo-poder-de-compra-2023",
+   "populacao": "porto-santo-populacao-2025"
+  },
+  "nome": "Porto Santo",
+  "slug": "porto-santo"
+ },
+ {
+  "caopIndex": 289,
+  "dico": "4101",
+  "distritoOuIlha": "Ilha de Santa Maria",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "vila-do-porto-divida-dgal-2024",
+   "empresas": "vila-do-porto-empresas-2024",
+   "indice": "vila-do-porto-indice-de-divida-2024",
+   "limite": "vila-do-porto-limite-divida-dgal-2024",
+   "pmp": "vila-do-porto-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vila-do-porto-poder-de-compra-2023",
+   "populacao": "vila-do-porto-populacao-2025"
+  },
+  "nome": "Vila do Porto",
+  "slug": "vila-do-porto"
+ },
+ {
+  "caopIndex": 290,
+  "dico": "4201",
+  "distritoOuIlha": "Ilha de São Miguel",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "lagoa-ilha-de-sao-miguel-divida-dgal-2024",
+   "empresas": "lagoa-ilha-de-sao-miguel-empresas-2024",
+   "indice": "lagoa-ilha-de-sao-miguel-indice-de-divida-2024",
+   "limite": "lagoa-ilha-de-sao-miguel-limite-divida-dgal-2024",
+   "pmp": "lagoa-ilha-de-sao-miguel-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "lagoa-ilha-de-sao-miguel-poder-de-compra-2023",
+   "populacao": "lagoa-ilha-de-sao-miguel-populacao-2025"
+  },
+  "nome": "Lagoa",
+  "slug": "lagoa-ilha-de-sao-miguel"
+ },
+ {
+  "caopIndex": 291,
+  "dico": "4202",
+  "distritoOuIlha": "Ilha de São Miguel",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "nordeste-divida-dgal-2024",
+   "empresas": "nordeste-empresas-2024",
+   "indice": "nordeste-indice-de-divida-2024",
+   "limite": "nordeste-limite-divida-dgal-2024",
+   "pmp": "nordeste-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "nordeste-poder-de-compra-2023",
+   "populacao": "nordeste-populacao-2025"
+  },
+  "nome": "Nordeste",
+  "slug": "nordeste"
+ },
+ {
+  "caopIndex": 292,
+  "dico": "4203",
+  "distritoOuIlha": "Ilha de São Miguel",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "ponta-delgada-divida-dgal-2024",
+   "empresas": "ponta-delgada-empresas-2024",
+   "indice": "ponta-delgada-indice-de-divida-2024",
+   "limite": "ponta-delgada-limite-divida-dgal-2024",
+   "pmp": "ponta-delgada-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "ponta-delgada-poder-de-compra-2023",
+   "populacao": "ponta-delgada-populacao-2025"
+  },
+  "nome": "Ponta Delgada",
+  "slug": "ponta-delgada"
+ },
+ {
+  "caopIndex": 293,
+  "dico": "4204",
+  "distritoOuIlha": "Ilha de São Miguel",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "povoacao-divida-dgal-2024",
+   "empresas": "povoacao-empresas-2024",
+   "indice": "povoacao-indice-de-divida-2024",
+   "limite": "povoacao-limite-divida-dgal-2024",
+   "pmp": "povoacao-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "povoacao-poder-de-compra-2023",
+   "populacao": "povoacao-populacao-2025"
+  },
+  "nome": "Povoação",
+  "slug": "povoacao"
+ },
+ {
+  "caopIndex": 294,
+  "dico": "4205",
+  "distritoOuIlha": "Ilha de São Miguel",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "ribeira-grande-divida-dgal-2024",
+   "empresas": "ribeira-grande-empresas-2024",
+   "indice": "ribeira-grande-indice-de-divida-2024",
+   "limite": "ribeira-grande-limite-divida-dgal-2024",
+   "pmp": "ribeira-grande-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "ribeira-grande-poder-de-compra-2023",
+   "populacao": "ribeira-grande-populacao-2025"
+  },
+  "nome": "Ribeira Grande",
+  "slug": "ribeira-grande"
+ },
+ {
+  "caopIndex": 295,
+  "dico": "4206",
+  "distritoOuIlha": "Ilha de São Miguel",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "vila-franca-do-campo-divida-dgal-2024",
+   "empresas": "vila-franca-do-campo-empresas-2024",
+   "indice": "vila-franca-do-campo-indice-de-divida-2024",
+   "limite": "vila-franca-do-campo-limite-divida-dgal-2024",
+   "pmp": "vila-franca-do-campo-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "vila-franca-do-campo-poder-de-compra-2023",
+   "populacao": "vila-franca-do-campo-populacao-2025"
+  },
+  "nome": "Vila Franca do Campo",
+  "slug": "vila-franca-do-campo"
+ },
+ {
+  "caopIndex": 296,
+  "dico": "4301",
+  "distritoOuIlha": "Ilha Terceira",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "angra-do-heroismo-divida-dgal-2024",
+   "empresas": "angra-do-heroismo-empresas-2024",
+   "indice": "angra-do-heroismo-indice-de-divida-2024",
+   "limite": "angra-do-heroismo-limite-divida-dgal-2024",
+   "pmp": "angra-do-heroismo-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "angra-do-heroismo-poder-de-compra-2023",
+   "populacao": "angra-do-heroismo-populacao-2025"
+  },
+  "nome": "Angra do Heroísmo",
+  "slug": "angra-do-heroismo"
+ },
+ {
+  "caopIndex": 297,
+  "dico": "4302",
+  "distritoOuIlha": "Ilha Terceira",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "praia-da-vitoria-divida-dgal-2024",
+   "empresas": "praia-da-vitoria-empresas-2024",
+   "indice": "praia-da-vitoria-indice-de-divida-2024",
+   "limite": "praia-da-vitoria-limite-divida-dgal-2024",
+   "pmp": "praia-da-vitoria-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "praia-da-vitoria-poder-de-compra-2023",
+   "populacao": "praia-da-vitoria-populacao-2025"
+  },
+  "nome": "Praia da Vitória",
+  "slug": "praia-da-vitoria"
+ },
+ {
+  "caopIndex": 298,
+  "dico": "4401",
+  "distritoOuIlha": "Ilha da Graciosa",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "santa-cruz-da-graciosa-divida-dgal-2024",
+   "empresas": "santa-cruz-da-graciosa-empresas-2024",
+   "indice": "santa-cruz-da-graciosa-indice-de-divida-2024",
+   "limite": "santa-cruz-da-graciosa-limite-divida-dgal-2024",
+   "pmp": "santa-cruz-da-graciosa-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "santa-cruz-da-graciosa-poder-de-compra-2023",
+   "populacao": "santa-cruz-da-graciosa-populacao-2025"
+  },
+  "nome": "Santa Cruz da Graciosa",
+  "slug": "santa-cruz-da-graciosa"
+ },
+ {
+  "caopIndex": 299,
+  "dico": "4501",
+  "distritoOuIlha": "Ilha de São Jorge",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "calheta-de-sao-jorge-divida-dgal-2024",
+   "empresas": "calheta-de-sao-jorge-empresas-2024",
+   "indice": "calheta-de-sao-jorge-indice-de-divida-2024",
+   "limite": "calheta-de-sao-jorge-limite-divida-dgal-2024",
+   "pmp": "calheta-de-sao-jorge-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "calheta-de-sao-jorge-poder-de-compra-2023",
+   "populacao": "calheta-de-sao-jorge-populacao-2025"
+  },
+  "nome": "Calheta de São Jorge",
+  "slug": "calheta-de-sao-jorge"
+ },
+ {
+  "caopIndex": 300,
+  "dico": "4502",
+  "distritoOuIlha": "Ilha de São Jorge",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "velas-divida-dgal-2024",
+   "empresas": "velas-empresas-2024",
+   "indice": "velas-indice-de-divida-2024",
+   "limite": "velas-limite-divida-dgal-2024",
+   "pmp": "velas-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "velas-poder-de-compra-2023",
+   "populacao": "velas-populacao-2025"
+  },
+  "nome": "Velas",
+  "slug": "velas"
+ },
+ {
+  "caopIndex": 301,
+  "dico": "4601",
+  "distritoOuIlha": "Ilha do Pico",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "lajes-do-pico-divida-dgal-2024",
+   "empresas": "lajes-do-pico-empresas-2024",
+   "indice": "lajes-do-pico-indice-de-divida-2024",
+   "limite": "lajes-do-pico-limite-divida-dgal-2024",
+   "pmp": "lajes-do-pico-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "lajes-do-pico-poder-de-compra-2023",
+   "populacao": "lajes-do-pico-populacao-2025"
+  },
+  "nome": "Lajes do Pico",
+  "slug": "lajes-do-pico"
+ },
+ {
+  "caopIndex": 302,
+  "dico": "4602",
+  "distritoOuIlha": "Ilha do Pico",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "madalena-divida-dgal-2024",
+   "empresas": "madalena-empresas-2024",
+   "indice": "madalena-indice-de-divida-2024",
+   "limite": "madalena-limite-divida-dgal-2024",
+   "pmp": "madalena-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "madalena-poder-de-compra-2023",
+   "populacao": "madalena-populacao-2025"
+  },
+  "nome": "Madalena",
+  "slug": "madalena"
+ },
+ {
+  "caopIndex": 303,
+  "dico": "4603",
+  "distritoOuIlha": "Ilha do Pico",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "sao-roque-do-pico-divida-dgal-2024",
+   "empresas": "sao-roque-do-pico-empresas-2024",
+   "indice": "sao-roque-do-pico-indice-de-divida-2024",
+   "limite": "sao-roque-do-pico-limite-divida-dgal-2024",
+   "pmp": "sao-roque-do-pico-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "sao-roque-do-pico-poder-de-compra-2023",
+   "populacao": "sao-roque-do-pico-populacao-2025"
+  },
+  "nome": "São Roque do Pico",
+  "slug": "sao-roque-do-pico"
+ },
+ {
+  "caopIndex": 304,
+  "dico": "4701",
+  "distritoOuIlha": "Ilha do Faial",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "horta-divida-dgal-2024",
+   "empresas": "horta-empresas-2024",
+   "indice": "horta-indice-de-divida-2024",
+   "limite": "horta-limite-divida-dgal-2024",
+   "pmp": "horta-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "horta-poder-de-compra-2023",
+   "populacao": "horta-populacao-2025"
+  },
+  "nome": "Horta",
+  "slug": "horta"
+ },
+ {
+  "caopIndex": 305,
+  "dico": "4801",
+  "distritoOuIlha": "Ilha das Flores",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "lajes-das-flores-divida-dgal-2024",
+   "empresas": "lajes-das-flores-empresas-2024",
+   "indice": "lajes-das-flores-indice-de-divida-2024",
+   "limite": "lajes-das-flores-limite-divida-dgal-2024",
+   "pmp": "lajes-das-flores-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "lajes-das-flores-poder-de-compra-2023",
+   "populacao": "lajes-das-flores-populacao-2025"
+  },
+  "nome": "Lajes das Flores",
+  "slug": "lajes-das-flores"
+ },
+ {
+  "caopIndex": 306,
+  "dico": "4802",
+  "distritoOuIlha": "Ilha das Flores",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "santa-cruz-das-flores-divida-dgal-2024",
+   "empresas": "santa-cruz-das-flores-empresas-2024",
+   "indice": "santa-cruz-das-flores-indice-de-divida-2024",
+   "limite": "santa-cruz-das-flores-limite-divida-dgal-2024",
+   "pmp": "santa-cruz-das-flores-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "santa-cruz-das-flores-poder-de-compra-2023",
+   "populacao": "santa-cruz-das-flores-populacao-2025"
+  },
+  "nome": "Santa Cruz das Flores",
+  "slug": "santa-cruz-das-flores"
+ },
+ {
+  "caopIndex": 307,
+  "dico": "4901",
+  "distritoOuIlha": "Ilha do Corvo",
+  "ilha": true,
+  "linhas": {
+   "desempregoRegistado": null,
+   "divida": "corvo-divida-dgal-2024",
+   "empresas": "corvo-empresas-2024",
+   "indice": "corvo-indice-de-divida-2024",
+   "limite": "corvo-limite-divida-dgal-2024",
+   "pmp": "corvo-prazo-medio-de-pagamento-2025-12",
+   "poderDeCompra": "corvo-poder-de-compra-2023",
+   "populacao": "corvo-populacao-2025"
+  },
+  "nome": "Corvo",
+  "slug": "corvo"
+ }
+]
