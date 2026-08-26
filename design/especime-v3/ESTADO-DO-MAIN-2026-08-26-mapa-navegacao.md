@@ -1,6 +1,6 @@
 # O estado de `main` depois do bloco do mapa como navegação (26.08.2026)
 
-*Escrito pelo lugar de direção (Claude Fable 5). O ramo `mapa-navegacao-2026-08-26` saiu de `main` `b1e9004` e está verde: construção, `verify`, `typecheck`, `provar-eyetext`, `check-cadeia`, a régua nova (11 de 11), a matriz (86 de 86), `correcoes-a` (32 de 32), o inventário (`home` a autorreferência 0). Medido às cegas (Sonnet, M4) e lido de olhos frescos (Codex, 4 de 4 plantas). A Emenda 19 é a regra; a §1.67 do `DECISIONS.md` é o registo.*
+*Escrito pelo lugar de direção (Claude Fable 5). O ramo `mapa-navegacao-2026-08-26` saiu de `main` `b1e9004` e está verde: construção, `verify`, `typecheck`, `provar-eyetext`, `check-cadeia`, a régua nova (11 de 11), a matriz (86 de 86), `correcoes-a` (32 de 32), o inventário (`home` a autorreferência 0). Medido às cegas (Sonnet, M4) e lido de olhos frescos (Codex, 4 de 4 plantas). A Emenda 19 é a regra; a §1.67 do `DECISIONS.md` é o registo. **Fundido em `main` `7e9c072` a 26.08, empurrado, `verify:deploy` ✓, lido no ar com navegador real.***
 
 ## O que muda no ar
 
