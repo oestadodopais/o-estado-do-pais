@@ -380,7 +380,15 @@ const INDICE = '/livro-razao';
   const prefixos = m.ordens.every((o) => COMPLETA_ORDEM.startsWith(o));
   conta(
     '3b · a linha-espécime: os mesmos campos pela mesma ordem, um selo por linha',
-    m.n === 132 && m.seloProprio === 132 && m.comEstado === 132 && prefixos,
+    /* A CONTAGEM LÊ-SE, E NÃO SE FIXA (bloco dos 308, P2). A célula pedia
+       `m.n === 132`, que era o tamanho do livro-razão no dia em que nasceu: com
+       136 linhas ficava vermelha por o livro ter crescido, que é a falha
+       anterior registada na §1.66. E desde a decisão D6 esta lista deixa de
+       mostrar as linhas dos concelhos, por isso o seu tamanho já nem é o do
+       livro-razão. O que a célula julga é o que o seu nome diz: cada linha
+       LISTADA tem o selo da sua própria linha e o seu estado, e os campos vêm
+       sempre pela mesma ordem. O número imprime-se, para se ler o que ele é. */
+    m.n > 0 && m.seloProprio === m.n && m.comEstado === m.n && prefixos,
     `${m.n} linhas · ${m.seloProprio} com o selo da própria linha · ${m.comEstado} com data-estado · ` +
       `ordens: ${m.ordens.map((o) => `«${o}»`).join(' | ')}`,
   );
@@ -454,8 +462,13 @@ const INDICE = '/livro-razao';
        contagem. O que esta célula julga é o que sempre julgou: que as chaves
        são estas quatro e que toda a marca tem porta. */
     m.cheio === 1 && m.tracejado === 1 && m.csv && m.json && m.licenca &&
+      /* A CHAVE `concelhos_linhas` ENTRA COM A DECISÃO D6 (26.08.2026): é a
+         contagem das linhas que saíram desta lista para a página do conjunto, e
+         é ela que explica a diferença entre o que o livro-razão guarda e o que
+         este índice mostra. Como as outras quatro, tem porta e é recontada
+         pelo portão. */
       [...new Set(m.provas.map(([k]) => k))].sort().join(',') ===
-        'afirmacoes,derivadas,divida,indexaveis' &&
+        'afirmacoes,concelhos_linhas,derivadas,divida,indexaveis' &&
       m.provas.every(([, , href]) => href),
     `amostras cheio ${m.cheio} · tracejado ${m.tracejado} · CSV ${m.csv} · JSON ${m.json} · ` +
       `licença ${m.licenca} · ${m.provas.length} marcas de ${new Set(m.provas.map(([k]) => k)).size} chaves ` +

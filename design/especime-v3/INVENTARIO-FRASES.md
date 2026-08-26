@@ -807,3 +807,34 @@ esse nome.») já estava classificado como navegação pela primeira página, e 
 tabela é por texto e não por rota; e os 308 resultados não entram, porque cada
 um é um nome de concelho com a marca `data-cobertura` ao lado, que é a mesma
 exclusão que a subetapa 3c escreveu para a lista por distritos.
+
+## Bloco dos 308 concelhos (P2, 26.08.2026)
+
+*As entradas que este bloco acrescenta: os dois rótulos das medidas que desceram das peças para a camada das contas de Évora (decisão D2), a nota da dívida com a coluna que usa (D3), a nota do prazo médio lido do regulador, e a página do conjunto do livro-razão (D6) com a sua porta no índice. As duas linhas com contagem levam o número de hoje, como as outras deste ficheiro: quando as linhas dos concelhos chegarem, mudam com elas.*
+
+| classe | texto |
+| --- | --- |
+| conteudo | Execução da receita |
+| conteudo | Prazo médio de pagamento |
+| conteudo | Revenue execution |
+| conteudo | Average payment time |
+| conteudo | Série anual da Direção-Geral das Autarquias Locais, o regulador das contas municipais. Exclui dívidas não orçamentais e exceções legais. |
+| conteudo | The annual series of the local-government directorate, the regulator of municipal accounts. Excludes non-budgetary debt and legal exceptions. |
+| conteudo | Lista anual da Direção-Geral das Autarquias Locais, o regulador das contas municipais. |
+| conteudo | The annual list of the local-government directorate, the regulator of municipal accounts. |
+| conteudo | 136 afirmações · 19 calculadas · 0 linhas de concelhos |
+| conteudo | 136 claims · 19 calculated · 0 municipality rows |
+| conteudo | Uma linha por medida e por concelho, com o valor tal como a fonte o publicou, a unidade, quem o produziu e a data em que foi lido. |
+| conteudo | One row per measure and per municipality, with the value as the source published it, the unit, who produced it and the date it was read. |
+| conteudo | As linhas do livro-razão com as medidas que as fontes centrais publicam para cada concelho, uma linha cada. |
+| conteudo | The ledger rows with the measures central sources publish for each municipality, one row each. |
+| conteudo | Ainda não há linhas deste estudo no livro-razão. |
+| conteudo | There are no rows of this study in the ledger yet. |
+| conteudo | Linhas sem concelho declarado |
+| conteudo | Rows with no municipality declared |
+| conteudo | O que as fontes publicam sobre o município de <lugar>: população, poder de compra, emprego, empresas, dívida e execução orçamental. |
+| conteudo | What the sources publish about the municipality of <lugar>: population, purchasing power, employment, enterprises, debt and budget execution. |
+| conteudo | Concelhos: as medidas centrais |
+| conteudo | Municipalities: the central measures |
+| conteudo | 0 linhas · 0 concelhos · 0 com proveniência completa |
+| conteudo | 0 rows · 0 municipalities · 0 with complete provenance |
