@@ -11251,21 +11251,52 @@ que a decisão D2 recusa, e a linha nova ficava sem concelho que a declarasse. A
 de 2024 continua citada na leitura breve, que é a frase que mede a queda desde
 2013.
 
-**A escala, com os dados, do zero:** **261,53 s**, **5 790 páginas**, **399 MB**,
-28 820 ficheiros, 410 054 ligações internas conferidas. Dois terços do tempo e
-mais de metade do disco são os **cartões de partilha**: 10 212 PNG, 224 MB, 101 s
-do passo `cartoes`, um por página de linha vezes duas medidas. Não é a página do
-concelho nem a do conjunto que faz a escala; é o cartão, e a pergunta de forma é
-se uma página de linha precisa dele.
+**A escala, com os dados e na forma final, do zero:** **269,84 s**, **6 406
+páginas**, **406 MB**, 29 436 ficheiros, 427 298 ligações internas conferidas. Metade do tempo e
+mais de metade do disco são os **cartões de partilha**: 10 212 PNG, 224 MB,
+102,6 s do passo `cartoes`, um por página de linha vezes duas medidas. Não é a
+página do concelho nem a do livro-razão que faz a escala; é o cartão.
 
-**A página do conjunto tem 227 008 px de altura a 1280** (352 735 px a 390), com
-308 grupos e 2 416 linhas: o motor de captura não a fotografa inteira. A decisão
-D6 tirou essas linhas do índice principal porque 2 500 numa página não se leem, e
-a página do conjunto reproduz o mesmo problema dentro de si, uma ordem de
-grandeza pior. A pesquisa leva à âncora de cada concelho, que é o caminho
-desenhado, e ninguém rola 227 000 px. **É decisão de forma e fica com a direção**
-(paginar por distrito, dobrar cada grupo, ou uma página por concelho); a §5 do
-plano manda decidir a forma antes de continuar, e não depois de construída.
+**A página do conjunto tinha 227 008 px de altura a 1280** (352 735 px a 390),
+com 308 grupos e 2 416 linhas: o motor de captura não a fotografava inteira. A
+decisão D6 tirou essas linhas do índice principal porque 2 500 numa página não se
+leem, e a página do conjunto reproduzia o mesmo problema dentro de si.
+
+**Decidido pelo diretor no mesmo dia: uma página de livro-razão por concelho.**
+`/livro-razao/concelhos/<slug>` · `/en/ledger/municipalities/<slug>`, com as
+linhas desse concelho na linha-espécime da casa, cada uma com o seu selo e a
+porta para a sua página de linha, o nome do concelho como título e sem mapa (um
+cartão localizador aqui punha os 308 pontos e as suas âncoras em mais 616 páginas
+sem nada a fazer). `/livro-razao/concelhos` passa a ser o ÍNDICE dos 308: a
+pesquisa, com destino na página de livro-razão do concelho; as três contagens do
+conjunto, que continuam a ser chaves da prova; e a lista por distrito, uma linha
+por concelho, na ordem da Carta. A porta da página do concelho para o livro-razão
+aponta para a página de livro-razão dele. Medido depois: o índice mede 10 751 px
+a 1280 e a página de Bragança 1 449 px, com as suas oito linhas.
+
+**A linha de um concelho não leva a sua contagem**, e a razão é a regra da casa.
+«Bragança · 8 linhas» é um número do próprio sítio, e a `IDENTIDADE.md` §10 exige
+que ele entre por `data-prova`, com porta e com o portão a recontá-lo: seriam 308
+chaves na tabela da prova ou 308 algarismos sem porta, e nenhum motivo de
+`data-nonledger` descreve uma contagem. A lista dá o nome, a porta e o estado em
+duas palavras; quantas linhas cada concelho tem lê-se na página dele.
+
+**Os cartões de partilha ficam em todas as páginas, páginas de linha incluídas**
+(diretor, contra a página de limites da Vercel lida no dia): o passo de construção
+pode levar 45 minutos em qualquer plano e não há limite superior para os ficheiros
+de saída criados durante uma construção; os limites de 100 MB / 1 GB e de 15 000
+ficheiros são das cargas de código pela linha de comandos e não de uma construção
+disparada pelo Git. **224 MB e 102,6 s são o custo medido da regra**, e ficam
+escritos como isso.
+
+**As três correções de Évora não geram entradas no registo de correções**
+(diretor, mesmo dia). O registo é dos VALORES e da PROVENIÊNCIA de uma linha, e é
+isso que as suas três naturezas sabem escrever: `correcao` e `atualizacao` movem o
+número, `proveniencia` move um dos sete campos de proveniência. Nas três
+correções, o valor e a proveniência estavam certos e não mudaram: o que mudou foi
+o rótulo que o sítio dá à medida e a disposição da página. Ficam registadas aqui,
+que é onde uma decisão de forma se regista, e a porta estreita que as recusava
+estava certa.
 
 A régua ganha a célula que faltava, e é a que teria apanhado o defeito de cima:
 **as entradas que o módulo dá e as páginas que a construção escreveu, contadas

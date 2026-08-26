@@ -189,40 +189,48 @@ A regra escrita no próprio portão é sobre a MESMA página: «um valor que tem
 
 ### 10 · A escala, com os dados
 
-Construção do zero, na mesma máquina.
+Construção do zero, na mesma máquina. A coluna «com os dados» é a da forma final, com o índice dos concelhos e as 308 páginas de livro-razão por baixo dele.
 
 | | com o ficheiro de teste | **com os dados** |
 |---|---|---|
-| `npm run build` | 22,92 s | **261,53 s** |
-| páginas | 958 | **5 790** |
-| `dist/` | 83 MB | **399 MB** |
-| ficheiros em `dist/` | 2 244 | **28 820** |
+| `npm run build` | 22,92 s | **269,84 s** |
+| páginas | 958 | **6 406** |
+| `dist/` | 83 MB | **406 MB** |
+| ficheiros em `dist/` | 2 244 | **29 436** |
 | linhas no livro-razão | 136 | **2 552** |
 | páginas de linha | 272 | **5 104** |
-| ligações internas conferidas | 225 756 | **410 054** |
-| números marcados nas páginas | 2 008 | **11 672** |
+| ligações internas conferidas | 225 756 | **427 298** |
+| números marcados nas páginas | 2 008 | **12 904** |
 | cartões de partilha | 548 | **10 212** |
 
-**Onde vai o tempo:** `astro build` 126 s, `cartoes` 101 s, e os seis portões repartem os restantes ~34 s. **Onde vai o tamanho:** `dist/cartoes` **224 MB dos 399**, com 10 212 PNG (o passo diz 165,29 MB de imagem; o resto é o registo JSON de cada cartão e o arredondamento do disco). As 616 páginas de concelho ocupam 60 MB e as 5 104 páginas de linha 96 MB.
+**Onde vai o tempo:** `astro build` ~130 s, `cartoes` 102,6 s, e os seis portões repartem os restantes ~37 s. **Onde vai o tamanho:** `dist/cartoes` **224 MB dos 406**, com 10 212 PNG (o passo diz 165,29 MB de imagem; o resto é o registo JSON de cada cartão e o arredondamento do disco).
 
-**A conta que a direção pediu que fosse medida antes de continuar:** dois terços do tempo e mais de metade do disco são os cartões de partilha, um por página de linha × duas medidas. Não é a página do concelho nem a do conjunto que faz a escala; é o cartão. Se houver limite a apertar, é aí que ele aperta primeiro, e a pergunta de forma é se uma página de linha precisa de cartão de partilha.
+**Os cartões ficam, e a decisão está tomada** (diretor, 26.08.2026, contra a página de limites da Vercel lida no dia): o passo de construção pode levar 45 minutos em qualquer plano, e não há limite superior para os ficheiros de saída criados durante uma construção; os limites de 100 MB / 1 GB e de 15 000 ficheiros são das cargas de código pela linha de comandos, e não de uma construção disparada pelo Git. **224 MB e 102,6 s são, portanto, o custo medido da regra**, e não um problema: cada página de linha tem o seu cartão de partilha, como todas as outras.
 
-### 11 · A página do conjunto tem 227 008 px
+### 11 · A página do conjunto passou a ser um índice, e cada concelho ganhou a sua
 
-Medido: `/livro-razao/concelhos` tem **227 008 px de altura a 1280** e **352 735 px a 390**, com 308 grupos e 2 416 linhas. O motor de captura não consegue fotografá-la inteira, e as capturas dela são de ecrã e não de página.
+Medido antes: `/livro-razao/concelhos` tinha 2 416 linhas, **227 008 px de altura a 1280** e 352 735 px a 390, e o motor de captura não a fotografava inteira. A decisão D6 tinha tirado essas linhas do índice principal porque 2 500 numa página não se leem, e o problema reapareceu dentro da página que existia para o resolver.
 
-A decisão D6 tirou 2 416 linhas de um índice porque «136 linhas numa página são legíveis e 2 500 não são». A página do conjunto resolve o problema do índice principal e reproduz o mesmo problema dentro de si, uma ordem de grandeza pior. O caminho desenhado funciona (a pesquisa leva à âncora do concelho, e cada grupo tem oito linhas), mas ninguém rola 227 000 px. **É uma decisão de forma e fica para a direção:** paginar por distrito, dobrar cada grupo num `details`, ou uma página por concelho. Não a tomei, porque a §5 do plano diz que a forma se decide antes de continuar e não depois de construída.
+**Decisão do diretor a 26.08.2026:** uma página de livro-razão por concelho, `/livro-razao/concelhos/<slug>` · `/en/ledger/municipalities/<slug>`, com as linhas desse concelho na linha-espécime da casa, cada uma com o seu selo e a porta para a sua página de linha, o nome do concelho como título e sem mapa. `/livro-razao/concelhos` passa a ser o índice dos 308: a pesquisa (destino: a página de livro-razão do concelho), as três contagens do conjunto, e a lista por distrito com uma linha por concelho. A porta da página do concelho para o livro-razão aponta para a página de livro-razão dele.
+
+Medido depois: o índice mede **10 751 px a 1280** e a página de Bragança **1 449 px**, com as suas oito linhas.
+
+**A linha de um concelho não leva a sua contagem, e a razão é a regra da casa.** «Bragança · 8 linhas» é um número do próprio sítio, e a `IDENTIDADE.md` §10 exige que um número do próprio sítio entre por `data-prova`, com a sua porta e com o portão a recontá-lo. Seriam 308 números na lista: ou 308 chaves na tabela da prova, ou 308 algarismos sem porta, que é o que o portão fecha (fechou, com um só «308» dentro do título deste estudo). Nenhum dos motivos de `data-nonledger` descreve uma contagem. O que a lista dá é o nome, a porta e o estado em duas palavras; quantas linhas cada concelho tem lê-se na página dele, contando-as. As três contagens do conjunto ficam onde têm porta, no topo do índice.
+
+### 11b · O registo de correções fica sem entradas, e é decisão
+
+**Decisão do diretor a 26.08.2026: nenhuma das três.** O registo de correções é dos VALORES e da PROVENIÊNCIA de uma linha, e é isso que o mecanismo da casa sabe escrever: a natureza `correcao` e a `atualizacao` movem o número, a `proveniencia` move um dos sete campos de proveniência. Nas três correções de Évora, o valor e a proveniência das linhas estavam certos e não mudaram: o que mudou foi o RÓTULO que o sítio dá à medida e a DISPOSIÇÃO da página. Não são entradas do registo, e a `DECISIONS.md` §1.68 é onde ficam registadas. A medição que mostrava que o mecanismo as recusava fica escrita acima, e passa a ser a razão pela qual não se forçou: a porta estreita estava certa.
 
 ### 12 · O que ficou verde, com os códigos de saída
 
-Com os dados presentes, tudo do zero:
+Com os dados presentes, tudo do zero, na forma final:
 
 | comando | saída | o que diz |
 |---|---|---|
-| `npm run build` | 0 | 261,53 s · 5 790 páginas · 399 MB |
+| `npm run build` | 0 | 269,84 s · 6 406 páginas · 406 MB · 29 436 ficheiros |
 | `npm run verify` | 0 | |
 | `npm run typecheck` | 0 | |
-| `node scripts/provar-eyetext.mjs` | 0 | 157 conferências · 2 614 unidades iguais carácter a carácter |
+| `node scripts/provar-eyetext.mjs` | 0 | 157 conferências |
 | `node scripts/check-cadeia.mjs` | 0 | 196 até ao selo, 2 405 até à entrada do motor |
 | `node scripts/medir-defeitos.mjs` | 0 | **0 blocos por classificar** |
 | `tests/municipio/concelhos.mjs` | 0 | 11 de 11 |
@@ -238,7 +246,7 @@ Com os dados presentes, tudo do zero:
 
 **`tests/inicio/capturas.mjs` corre com um argumento, e sem ele reescreve as capturas da etapa 2.** Corrido sem argumento, escreveu por cima de 56 ficheiros indexados e criou 16 novos; foram repostos com `git checkout` e apagados. Fica dito para não se repetir.
 
-**A célula que «não tinha objecto» tem-no agora.** Era a do concelho sem estudos: com uma página de concelho construída não havia segunda página para medir. Com os dados há 307, e ela corre. Estava escrita contra o ficheiro de teste (oito peças vazias, nenhum algarismo, nenhuma secção) e foi reescrita para medir a REGRA, que vale nas duas coberturas, e a varrer as 307.
+**A célula que «não tinha objecto» tem-no agora.** Era a do concelho sem estudos: com uma página de concelho construída não havia segunda para medir. Com os dados há 307, e ela corre. Estava escrita contra o ficheiro de teste (oito peças vazias, nenhum algarismo, nenhuma secção) e foi reescrita para medir a REGRA, que vale nas duas coberturas, e a varrer as 307.
 
 ### 13 · Os estragos plantados, vistos vermelhos
 
@@ -249,7 +257,9 @@ Com os dados presentes, tudo do zero:
 | a prosa da agenda volta a comparar com o livro-razão inteiro | `scripts/gate-html.mjs` | o portão · os 12 falsos positivos voltam |
 | o valor de uma linha que a agenda rende, metido na prosa da agenda | `dist/agenda/index.html` | o portão · «"17,6" é o valor da linha "precos-da-habitacao-2025"» |
 | a camada das contas rende-se num concelho sem contas | `dist/municipios/agueda/index.html` | a régua dos concelhos e a célula nova da matriz |
-| uma linha do estudo apagada de dentro do seu grupo | `dist/livro-razao/concelhos/index.html` | `P2 · a página do conjunto` · 2 415 linhas para 2 416 declaradas |
+| uma linha do estudo apagada de dentro do seu grupo | `dist/livro-razao/concelhos/index.html` | a célula do conjunto · 2 415 linhas para 2 416 declaradas |
+| uma das oito linhas de Bragança apagada da página dela | `dist/livro-razao/concelhos/braganca/index.html` | `P2 · o índice dos concelhos` · a soma das 308 páginas dá 2 415 para 2 416 declaradas |
+| a linha de Bragança no índice a apontar para uma página que não existe | `dist/livro-razao/concelhos/index.html` | `P2 · o índice dos concelhos` · «1 porta(s) sem página» |
 
 Os quatro últimos são plantados no `dist/`, que é o que o portão e as réguas medem, e repostos a seguir; os dois primeiros no código, com o ficheiro reposto de uma cópia.
 
@@ -264,5 +274,6 @@ Os quatro últimos são plantados no `dist/`, que é o que o portão e as régua
 | `penedono-*` | o concelho que a DGAL dá como «N.d.»: população, poder de compra, desemprego e empresas cheios, e quatro peças vazias, sem a dívida desenhada |
 | `evora-*` | Évora, com as suas camadas e o desemprego agora em dezembro de 2025 |
 | `livro-indice-*` | o índice do livro-razão, que continua a listar 136 linhas |
-| `livro-concelhos-topo-*` · `livro-concelhos-grupo-*` | a página do conjunto, de ECRÃ e não de página inteira, porque tem 227 008 px |
+| `livro-concelhos-indice-*` | o índice dos concelhos no livro-razão, 10 751 px a 1280 |
+| `livro-concelho-braganca-*` | a página de livro-razão de um concelho, 1 449 px a 1280, com as suas oito linhas |
 | `linha-braganca-divida-*` | o recibo de uma linha da DGAL, com a sua proveniência |
