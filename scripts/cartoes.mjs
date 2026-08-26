@@ -547,6 +547,39 @@ function desenha(modelo, dim) {
   return { svg, copia };
 }
 
+/* ------------------------------------------------------- a medida da memória */
+
+/**
+ * O `rss` do processo, de 500 em 500 cartões, atrás de uma variável de ambiente.
+ *
+ * NÃO é decoração. A construção da Vercel foi morta com o código 137 neste
+ * passo, e 137 é falta de memória: o que decide se um passo cabe numa máquina de
+ * construção não é o número de ficheiros que ele escreve, é a curva que ele
+ * desenha enquanto os escreve. Uma curva plana diz «cabe em qualquer máquina, a
+ * qualquer escala»; uma curva a subir diz «há aqui uma coisa que não se larga», e
+ * essa é um defeito mesmo que hoje ninguém a note.
+ *
+ * Fora da variável, este passo escreve exactamente o que escrevia. A medição
+ * corre-se com `OEDP_CARTOES_MEMORIA=1 node scripts/cartoes.mjs`, e as duas
+ * curvas medidas estão em `DECISIONS.md` §1.68, «A correção dos cartões».
+ */
+const MEDE_A_MEMORIA = process.env.OEDP_CARTOES_MEMORIA === '1';
+const CARTOES_POR_MEDIDA = 500;
+
+const emMb = (b) => (b / 1024 / 1024).toFixed(1).padStart(6);
+
+function medeAMemoria(quantos) {
+  if (!MEDE_A_MEMORIA) return;
+  const m = process.memoryUsage();
+  console.log(
+    cinza(
+      `    memória · ${String(quantos).padStart(5)} PNG · rss ${emMb(m.rss)} MB · ` +
+        `monte ${emMb(m.heapUsed)} MB · fora do monte ${emMb(m.external)} MB · ` +
+        `${medidas.size} medições de texto`,
+    ),
+  );
+}
+
 /* ------------------------------------------------------------------ a corrida */
 
 /** As rotas construídas, lidas de `dist/`: é o que decide que cartão cobre o quê. */
@@ -589,6 +622,7 @@ let emPaleta = 0;
 let maisCores = 0;
 let provados = 0;
 const recusas = [];
+medeAMemoria(0);
 for (const cartao of cartoes) {
   const modelo = modeloDoCartao(cartao);
   for (const dim of DIMENSOES) {
@@ -625,6 +659,7 @@ for (const cartao of cartoes) {
     };
     fs.writeFileSync(path.join(destino, nomeJson), JSON.stringify(registo, null, 2) + '\n');
     escritos++;
+    if (escritos % CARTOES_POR_MEDIDA === 0) medeAMemoria(escritos);
     bytes += png.length;
     if (paleta.bytes) {
       emPaleta++;
@@ -647,6 +682,8 @@ for (const cartao of cartoes) {
     }
   }
 }
+
+medeAMemoria(escritos);
 
 const segundos = ((Date.now() - inicio) / 1000).toFixed(1);
 console.log(
