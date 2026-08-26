@@ -831,8 +831,6 @@ exclusão que a subetapa 3c escreveu para a lista por distritos.
 | conteudo | One row per measure and per municipality, with the value as the source published it, the unit, who produced it and the date it was read. |
 | conteudo | As linhas do livro-razão com as medidas que as fontes centrais publicam para cada concelho, uma linha cada. |
 | conteudo | The ledger rows with the measures central sources publish for each municipality, one row each. |
-| conteudo | Ainda não há linhas deste estudo no livro-razão. |
-| conteudo | There are no rows of this study in the ledger yet. |
 | conteudo | Linhas sem concelho declarado |
 | conteudo | Rows with no municipality declared |
 | conteudo | O que as fontes publicam sobre o município de <lugar>: população, poder de compra, emprego, empresas, dívida e execução orçamental. |
@@ -872,6 +870,8 @@ exclusão que a subetapa 3c escreveu para a lista por distritos.
 | conteudo | The local-government directorate’s annual series has not yet reached this term. |
 | conteudo | The local-government directorate’s annual series used on this page begins after this term. |
 | conteudo | The thin line is the total debt the local-government directorate publishes for the municipality; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. |
+| conteudo | Sem linhas ainda. |
+| conteudo | No rows yet. |
 | conteudo | A referência do estudo |
 | conteudo | The study’s reference |
 | conteudo | 2552 afirmações · 325 calculadas · 2417 linhas de concelhos |
