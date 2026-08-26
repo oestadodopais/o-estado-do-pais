@@ -61,7 +61,14 @@
  * que aceitasse não a receber voltaria a ter dois feitios, e o segundo não teria
  * quem o rendesse.
  */
+import { coberturaDistingue } from '../../lib/inicio.mjs';
+
 const { s, concelhos, destino } = Astro.props;
+
+/* A ETIQUETA DE COBERTURA SÓ SE RENDE SE A LISTA DISTINGUIR (item E8). Com os
+   308 concelhos a terem página, «tem página» repetia-se 308 vezes e não separava
+   nada; a regra está escrita em `coberturaDistingue()`. */
+const distingue = coberturaDistingue(concelhos);
 ---
 
 <div class="pesquisa" id="pesquisa">
@@ -86,16 +93,20 @@ const { s, concelhos, destino } = Astro.props;
           {destino(c) ? (
             <a class="chipb" href={destino(c)}>
               <span class="pesquisa-nome">{c.nome}</span>
-              <span class="pesquisa-cobertura" data-cobertura="com-pagina">
-                {s.cobertura.temPagina}
-              </span>
+              {distingue && (
+                <span class="pesquisa-cobertura" data-cobertura="com-pagina">
+                  {s.cobertura.temPagina}
+                </span>
+              )}
             </a>
           ) : (
             <span class="chipb chipb-inerte">
               <span class="pesquisa-nome">{c.nome}</span>
-              <span class="pesquisa-cobertura" data-cobertura="sem-pagina">
-                {s.cobertura.semPaginaAinda}
-              </span>
+              {distingue && (
+                <span class="pesquisa-cobertura" data-cobertura="sem-pagina">
+                  {s.cobertura.semPaginaAinda}
+                </span>
+              )}
             </span>
           )}
         </li>

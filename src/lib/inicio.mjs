@@ -112,6 +112,42 @@ export function slugsDaCarta() {
 export { eIlha } from '../data/caop-centroids.mjs';
 import { eIlha } from '../data/caop-centroids.mjs';
 
+/**
+ * ===========================================================================
+ * UMA PALAVRA DE ESTADO SÓ DIZ ALGUMA COISA SE HOUVER OUTRO ESTADO (item E8)
+ * ===========================================================================
+ *
+ * O índice dos 308 rendia «tem página» em cada uma das 308 linhas, mais uma por
+ * cada resultado da pesquisa: 617 etiquetas iguais numa página, e 616 na do
+ * livro-razão dos concelhos. Enquanto um concelho em 308 tinha página, a
+ * etiqueta era a informação toda; com os 308 construídos, ela diz o mesmo em
+ * todas as linhas, e a linha de cobertura, em cima, já o diz uma vez com as suas
+ * duas contagens.
+ *
+ * É a `IDENTIDADE.md` §7 lida ao contrário: um estado desenha-se quando há outro
+ * estado de que se distinga. Esta função responde a essa pergunta sobre uma
+ * lista, e as três superfícies que rendem a etiqueta chamam-lhe todas a mesma: o
+ * índice dos 308, o índice do livro-razão dos concelhos, e a pesquisa que as
+ * duas partilham com a primeira página.
+ *
+ * AS CADEIAS E A MARCA FICAM. No dia em que um concelho não tiver página, a
+ * lista volta a distinguir e as etiquetas voltam sozinhas, com as mesmas
+ * palavras e o mesmo `data-cobertura`. Não se apagou vocabulário: deixou de se
+ * render uma palavra que não separa nada.
+ *
+ * @param {Array<{pagina: unknown}>} lista
+ */
+export function coberturaDistingue(lista) {
+  let com = false;
+  let sem = false;
+  for (const c of lista) {
+    if (c.pagina) com = true;
+    else sem = true;
+    if (com && sem) return true;
+  }
+  return false;
+}
+
 export function concelhos() {
   const paginaPorIndice = new Map(MUNICIPIOS_COM_PAGINA.map((m) => [m.caopIndex, m]));
   const slugs = slugsDaCarta();

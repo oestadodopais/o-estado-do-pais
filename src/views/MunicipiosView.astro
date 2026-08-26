@@ -34,7 +34,7 @@ import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
 import Pesquisa from '../components/inicio/Pesquisa.astro';
-import { concelhos as concelhosDaCarta } from '../lib/inicio.mjs';
+import { concelhos as concelhosDaCarta, coberturaDistingue } from '../lib/inicio.mjs';
 import { MUNICIPIOS, DISTRITOS, regiaoDe } from '../data/caop-centroids.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
 import { VERBATIM } from '../data/verbatim.mjs';
@@ -130,6 +130,13 @@ const parcelas = [
 const resultados = concelhosDaCarta();
 const destinoDoConcelho = (c) =>
   c.pagina ? routePath('municipio', lang, { slug: c.pagina.slug }) : null;
+
+/* A ETIQUETA DE ESTADO DE CADA LINHA SÓ SE RENDE SE A LISTA DISTINGUIR (item E8,
+   P2). Eram 308 «tem página» nesta lista, mais uma por resultado da pesquisa:
+   617 etiquetas iguais numa página, e a linha de cobertura em cima já diz o
+   estado do todo com as suas duas contagens. A linha de cobertura fica; o que
+   sai é a repetição. Ver `coberturaDistingue()`. */
+const distingue = coberturaDistingue(resultados);
 ---
 
 <Base
@@ -215,19 +222,28 @@ const destinoDoConcelho = (c) =>
             {g.entradas.map((e) =>
               e.pagina ? (
                 <li class="concelho concelho-com-pagina">
+                  {/* A SETA ENTRA NA PORTA (item E8). Ficava fora dela, ao pé da
+                      etiqueta de estado; sem a etiqueta, o que ficava fora da
+                      ligação era uma seta sozinha, e o inventário de frases
+                      passava a ter 307 blocos do feitio «Abrantes →». A seta é
+                      parte do destino e vai com ele. */}
                   <a href={routePath('municipio', lang, { slug: e.pagina.slug })}>
-                    {e.pagina.nome[lang] ?? e.pagina.nome.pt}
+                    {e.pagina.nome[lang] ?? e.pagina.nome.pt} →
                   </a>
-                  <span class="concelho-estado">
-                    <span data-cobertura="com-pagina">{s.cobertura.temPagina}</span> →
-                  </span>
+                  {distingue && (
+                    <span class="concelho-estado">
+                      <span data-cobertura="com-pagina">{s.cobertura.temPagina}</span>
+                    </span>
+                  )}
                 </li>
               ) : (
                 <li class="concelho">
                   <span class="concelho-nome">{e.nome}</span>
-                  <span class="concelho-estado" data-cobertura="sem-pagina">
-                    {s.cobertura.semPaginaAinda}
-                  </span>
+                  {distingue && (
+                    <span class="concelho-estado" data-cobertura="sem-pagina">
+                      {s.cobertura.semPaginaAinda}
+                    </span>
+                  )}
                 </li>
               ),
             )}
