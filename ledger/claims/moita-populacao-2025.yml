@@ -1,0 +1,42 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "moita-populacao-2025"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "78 541"
+unit: "pessoas"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "INE"
+document:
+  title: "População residente (N.º) por Local de residência (NUTS - 2024), Sexo e Grupo etário (Por ciclos de vida); Anual - INE, Estimativas anuais da população residente"
+  edition: "indicador 0012917"
+  locator: "INE, indicador 0012917, Moita (código 1B01506), dados de 2025"
+  kind: "serie"
+source_url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0012917&Dim1=S7A2025&lang=PT"
+access_date: "2026-08-26"
+reference_date: "2025"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "{ \"geocod\" : \"1B01506\", \"geodsg\" : \"Moita\", \"dim_3\" : \"T\", \"dim_3_t\" : \"HM\", \"dim_4\" : \"T\", \"dim_4_t\" : \"Total\", \"ind_string\" : \"78 541\", \"valor\" : \"78541\" }"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+# A quem o valor é creditado. Lista de entidades, ou campo nenhum.
+attributed_to:
+  - "INE"
+
+study: "concelhos-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] INE 0012917, Dados[\"2025\"], geocod 1B01506; DICO 1506, Moita (Setúbal) · Cruzado de ResearchHub content/12 Concelhos · moita-populacao-2025."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []
