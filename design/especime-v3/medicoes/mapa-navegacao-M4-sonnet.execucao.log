@@ -1,0 +1,80 @@
+
+═══ preparação ═══
+  antes  (main, http://localhost:4612) <- /private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/dist-antes-mapa
+  depois (ramo, http://localhost:4611) <- /private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/dist-mapa-depois
+  porto 4611 livre. a iniciar: python3 -m http.server 4611  (cwd=/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/dist-mapa-depois)
+  servidor pronto em http://localhost:4611
+  porto 4612 livre. a iniciar: python3 -m http.server 4612  (cwd=/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/dist-antes-mapa)
+  servidor pronto em http://localhost:4612
+
+═══ 1 · O mapa não cresce ═══
+  [1280px | A_pais] antes svg={"w":490,"h":645} fechar=1 dataCampo=1  ->  depois svg={"w":490,"h":645} fechar=0 dataCampo=0
+  [1280px | B_municipio_url] antes svg={"w":1092,"h":1438} fechar=1 dataCampo=1  ->  depois svg={"w":490,"h":645} fechar=0 dataCampo=0
+  [1280px | C_concelho_clique] antes svg={"w":1092,"h":1438} fechar=1 dataCampo=1  ->  depois svg={"w":490,"h":645} fechar=0 dataCampo=0
+  [2000px | A_pais] antes svg={"w":490,"h":645} fechar=1 dataCampo=1  ->  depois svg={"w":490,"h":645} fechar=0 dataCampo=0
+  [2000px | B_municipio_url] antes svg={"w":1092,"h":1438} fechar=1 dataCampo=1  ->  depois svg={"w":490,"h":645} fechar=0 dataCampo=0
+  [2000px | C_concelho_clique] antes svg={"w":1092,"h":1438} fechar=1 dataCampo=1  ->  depois svg={"w":490,"h":645} fechar=0 dataCampo=0
+  [caso conhecido] item1.mapaCresce (svg box + .mapa-fechar em /?ambito=municipio, 1280, antes): esperado=svg ≈ 1092×1438 px e .mapa-fechar existe | observado={"svgBox":{"w":1092,"h":1438},"mapaFecharCount":1} | vermelho=SIM
+  [discordância] Emenda 19(c) · "não muda o mapa, a cabeça nem o painel; a página continua a ser a do país" @ / (depois de clicar em «Concelho», 1280px, depois): mapa/cabeça/painel confirmados inalterados (ver tabela do item 1), mas o endereço muda de "/" para "/?ambito=municipio" e a raiz passa a ter data-ambito="municipio" (era "pais") -- não se decide aqui se isto viola "a página continua a ser a do país"; regista-se com os dois valores para o lugar de direção julgar.
+  [discordância] Emenda 19(c) · "não muda o mapa, a cabeça nem o painel; a página continua a ser a do país" @ / (depois de clicar em «Concelho», 2000px, depois): mapa/cabeça/painel confirmados inalterados (ver tabela do item 1), mas o endereço muda de "/" para "/?ambito=municipio" e a raiz passa a ter data-ambito="municipio" (era "pais") -- não se decide aqui se isto viola "a página continua a ser a do país"; regista-se com os dois valores para o lugar de direção julgar.
+
+═══ 2 · A roda é da página ═══
+  [falso alarme] primeira tentativa do caso conhecido do item 2 (antes): usar o centro do boundingBox do svg (sem o levar antes para dentro do ecrã) dá um ponto fora do viewport quando o mapa cresce para 1438px de altura num ecrã de 800px (y≈1525 quando o viewport só tem 800px); document.elementFromPoint nesse ponto devolve null, a roda não acerta em nada, e 5x para baixo faziam scroll normal (parecendo que a página "não estava presa") e 5x para cima não escreviam nenhum transform (parecendo que não havia zoom) -- as DUAS metades do caso conhecido liam falso, não porque o mapa antigo não prendesse a roda, mas porque o rato nunca esteve sobre o mapa. Corrigido com scrollIntoViewIfNeeded() + um ponto dentro do elemento E do viewport (ver safeHoverPoint); confirmado com o site no ar e com o motor webkit também, antes de aceitar a correção.
+  [1280px] antes: moveu-pagina-ao-descer=false transforms-apos-subir=1  |  depois: moveu-pagina-ao-descer=true transforms-apos-subir=0
+  [2000px] antes: moveu-pagina-ao-descer=false transforms-apos-subir=1  |  depois: moveu-pagina-ao-descer=true transforms-apos-subir=0
+  [caso conhecido] item2.rodaMapa (scrollY + transform em [data-campo], antes, 1280, após Concelho): esperado=scrollY inalterado ao descer 5x; scale(1.47…) escrito em [data-campo] ao subir 5x | observado={"paginaMoveuAoDescer":false,"amostraTransformAposSubir":[{"tag":"g","cls":null,"computed":"matrix(1.46933, 0, 0, 1.46933, -140.798, -185.435)","attr":"translate(-140.79842304000005 -185.4349561817321) scale(1.4693280768000003)"}]} | vermelho=SIM
+
+═══ 3 · Os endereços antigos ═══
+  /?ambito=municipio:evora -> antes: url=/?ambito=municipio%3Aevora ambito=municipio:evora  |  depois: url=/municipios/evora/ ambito=null
+  /?ambito=municipio:braganca -> antes: url=/?ambito=municipio%3Abraganca ambito=municipio:braganca  |  depois: url=/municipios/ ambito=null
+  /?ambito=regiao:alentejo -> antes: url=/?ambito=regiao%3Aalentejo ambito=regiao:alentejo  |  depois: url=/?ambito=regiao%3Aalentejo ambito=regiao:alentejo
+  /?ambito=lixo -> antes: url=/ ambito=pais  |  depois: url=/ ambito=pais
+
+═══ 4 · Os pontos ═══
+  [falso alarme] primeira tentativa do caso conhecido do item 4 (clique em Bragança, antes): clicar no ponto de Bragança a partir de / simples (sem passar por «Concelho» / /?ambito=municipio primeiro) não muda nada em "antes" -- não porque o clique não funcione, mas porque a mesma pequena vista de / não responde a cliques em nenhum ponto (nem Évora, que também não navegou). A frase do brief para este caso conhecido situa-o explicitamente em "/?ambito=municipio"; corrigido para arrancar desse estado, o que fez o endereço mudar como esperado. A leitura a partir de / simples ficou no relatório como achado sobre o "antes", não como falha do detetor.
+  [caso conhecido] item4.cliqueBraganca (deteção de mudança de endereço ao clicar num ponto sem página, antes, a partir de /?ambito=municipio): esperado=clicar em Bragança muda o endereço para .../?ambito=municipio:braganca | observado={"urlDepois":"/?ambito=municipio%3Abraganca","urlMudou":true} | vermelho=SIM
+  [Emenda 19(e)] pontos com vizinho a menos de 1 diâmetro: 44 (emenda diz 44) | os 8 exemplos nomeados estão todos no conjunto: true
+  {"cliqueEvora_partindoDePais_antes":{"arranque":"/","existeElemento":true,"urlAntes":"/","urlDepois":"/","urlMudou":false,"ambitoAntes":"pais","ambitoDepois":"pais","ambitoMudou":false,"cabecaTextoAntes":["Portugal · país"],"cabecaTextoDepois":["Portugal · país"]},"cliqueEvora_partindoDePais_depois":{"arranque":"/","existeElemento":true,"urlAntes":"/","urlDepois":"/municipios/evora/","urlMudou":true,"ambitoAntes":"pais","ambitoDepois":null,"ambitoMudou":true,"cabecaTextoAntes":["Portugal · país"],"cabecaTextoDepois":"Évora"},"cliqueBraganca_partindoDePais_antes":{"arranque":"/","existeElemento":true,"urlAntes":"/","urlDepois":"/","urlMudou":false,"ambitoAntes":"pais","ambitoDepois":"pais","ambitoMudou":false,"cabecaTextoAntes":["Portugal · país"],"cabecaTextoDepois":["Portugal · país"]},"cliqueBraganca_partindoDePais_depois":{"arranque":"/","existeElemento":true,"urlAntes":"/","urlDepois":"/","urlMudou":false,"ambitoAntes":"pais","ambitoDepois":"pais","ambitoMudou":false,"cabecaTextoAntes":["Portugal · país"],"cabecaTextoDepois":["Portugal · país"]},"cliqueEvora_partindoDoEstadoExpandido_antes":{"arranque":"/?ambito=municipio","existeElemento":true,"urlAntes":"/?ambito=municipio","urlDepois":"/?ambito=municipio%3Aevora","urlMudou":true,"ambitoAntes":"municipio","ambitoDepois":"municipio:evora","ambitoMudou":true,"cabecaTextoAntes":["Portugal · país"],"cabecaTextoDepois":["Évora · município · distrito de Évora"]},"cliqueBraganca_partindoDoEstadoExpandido_antes":{"arranque":"/?ambito=municipio","existeElemento":true,"urlAntes":"/?ambito=municipio","urlDepois":"/?ambito=municipio%3Abraganca","urlMudou":true,"ambitoAntes":"municipio","ambitoDepois":"municipio:braganca","ambitoMudou":true,"cabecaTextoAntes":["Portugal · país"],"cabecaTextoDepois":["Bragança · município · distrito de Bragança"]},"contagemPontos_antes":{"pontosComPagina":1,"circulosDentroDeA":1,"totalCirculos":616},"contagemPontos_depois":{"pontosComPagina":1,"circulosDentroDeA":1,"totalCirculos":308},"hov
+
+═══ 5 · O teclado ═══
+  [falso alarme] primeira tentativa da exploração por setas (item 5, depois): o seletor 'a.mun-porta[href*="evora"], a[href*="/municipios/evora"]' apanha também a ligação homónima da lista de pesquisa (a.chipb[href="/municipios/evora"]), que existe no DOM mas está escondida até o comando «Concelho» ser ativado; em "depois" essa ligação vem primeiro na ordem do DOM, .first() ficava com ela, e scrollIntoViewIfNeeded esgotava os 30s à espera que um elemento escondido ficasse visível. Não aconteceu em "antes" só porque aí não há lista de pesquisa equivalente em /. Corrigido para o seletor específico do ponto do mapa (a.mun-porta), sem ambiguidade com a pesquisa.
+  {"tab_semAtivar_antes":{"stops":6,"found":true,"elemento":{"tag":"a","id":null,"cls":"mun-porta","href":"/municipios/evora"},"readoutAoChegarPeloTeclado":"Évora · distrito de Évora"},"tab_aposAtivar_antes":{"stops":6,"found":true,"elemento":{"tag":"a","id":null,"cls":"mun-porta","href":"/municipios/evora"},"readoutAoChegarPeloTeclado":"Évora · distrito de Évora"},"enterNaLigacaoEvora_antes":{"urlFinal":"/municipios/evora/"},"tab_semAtivar_depois":{"stops":6,"found":true,"elemento":{"tag":"a","id":null,"cls":"mun-porta","href":"/municipios/evora"},"readoutAoChegarPeloTeclado":"Évora · distrito de Évora"},"tab_aposAtivar_depois":{"stops":1,"found":true,"elemento":{"tag":"A","id":null,"cls":"chipb","href":"/municipios/evora"},"readoutAoChegarPeloTeclado":" · distrito de "},"enterNaLigacaoEvora_depois":{"urlFinal":"/municipios/evora/"},"setasNoMapa_antes":{"existeAlvoFocavel":true,"focoAntes":{"tag":"a","id":null,"cls":"mun-porta","href":"/municipios/evora"},"focoAposArrowRight":{"tag":"a","id":null,"cls":"mun-porta","href":"/municipios/evora"},"focoMoveu":false,"readoutAntes":" · distrito de ","readoutDepoisArrowRight":"Évora · distrito de Évora"},"setasNoMapa_depois":{"existeAlvoFocavel":true,"focoAntes":{"tag":"a","id":null,"cls":"mun-porta","href":"/municipios/evora"},"focoAposArrowRight":{"tag":"a","id":null,"cls":"mun-porta","href":"/municipios/evora"},"focoMoveu":false,"readoutAntes":" · distrito de ","readoutDepoisArrowRight":"Évora · distrito de Évora"}}
+
+═══ 6 · O telemóvel (iPhone 13) ═══
+  antes: svgCountDOM=1 renderizado=false | dentroDoEcra=true focoNoCampo=true
+  depois: svgCountDOM=1 renderizado=false | dentroDoEcra=true focoNoCampo=true
+
+═══ 7 · As cadeias ═══
+  [index.html] mapa-fechar: antes=1 depois=0 | fechar-comando: antes=1 depois=0
+  [en/index.html] mapa-fechar: antes=1 depois=0 | fechar-comando: antes=0 depois=0
+  [caso conhecido] item7.stringBans (contagem de substrings em dist/index.html, antes): esperado=data-painel="vazio" ocorre pelo menos 1 vez em index.html (antes) | observado={"data-painel=\"vazio\"":1} | vermelho=SIM
+  [falso alarme] busca ingénua por substring "fechar" em index.html (depois): uma busca literal por ">fechar<" encontra 18 ocorrências em "depois", todas dentro de <span class="peca-abrir-f">fechar</span> (o alternador abrir/fechar de cada peça de medida, não tocado por esta emenda); confirmado por contagem isolada de "peca-abrir-f\">fechar<" = 18; o rótulo de comando ".mapa-fechar" está mesmo a 0.
+
+═══ 8 · O que mais mudou ═══
+  ficheiros comuns: 1627 | só em antes: 1 | só em depois: 1 | diferentes: 7
+    DIFERE: en/index.html (antes 219246B -> depois 171769B)
+    DIFERE: en/municipalities/evora/index.html (antes 165546B -> depois 118490B)
+    DIFERE: index.html (antes 219404B -> depois 173613B)
+    DIFERE: js/inicio.js (antes 43360B -> depois 36640B)
+    DIFERE: municipios/evora/index.html (antes 166782B -> depois 119721B)
+    DIFERE: prova.json (antes 4060B -> depois 4060B)
+    DIFERE: version.json (antes 199B -> depois 199B)
+    SÓ EM ANTES: _astro/inicio.BqPeczyd.css
+    SÓ EM DEPOIS: _astro/inicio.CYmXWYkV.css
+  [caso conhecido] item8.marcaDeVersaoDentroDasPaginas (ausência): esperado=version.json difere sempre (instrução do brief) -- confirmado abaixo | observado={"version.json difere":true} | vermelho=SIM
+  [discordância] item 8 (§1.8 do brief) · "o esperado é /, /en/ e, se o construtor mexeu na nota, /municipios e /en/municipalities" @ en/municipalities/evora/index.html: bytes diferentes entre antes e depois (antes 165546B, depois 118490B) e não está na lista de páginas esperadas ["index.html","en/index.html"]
+  [discordância] item 8 (§1.8 do brief) · "o esperado é /, /en/ e, se o construtor mexeu na nota, /municipios e /en/municipalities" @ municipios/evora/index.html: bytes diferentes entre antes e depois (antes 166782B, depois 119721B) e não está na lista de páginas esperadas ["index.html","en/index.html"]
+  nota: 2 ficheiro(s) não-HTML também diferem (fora do âmbito de "página", reportados por transparência): js/inicio.js, prova.json
+
+═══ 9 · A página do concelho (Évora) ═══
+  [municipios/evora/index.html] pré-aparelho idêntico=true peças iguais=true (antes 8 / depois 8) porta antes(/?ambito=municipio)=true porta depois(/municipios)=true Δbytes=-47061
+  [en/municipalities/evora/index.html] pré-aparelho idêntico=true peças iguais=true (antes 8 / depois 8) porta antes(/en?ambito=municipio)=true porta depois(/en/municipalities)=true Δbytes=-47056
+  [discordância] item 9 (§1.9 do brief) · "a porta do cartão... é a única diferença esperada fora da marca de versão" @ municipios/evora/index.html, dentro de <aside class="aparelho">: medido: 308 <rect class="mun-alvo"> + 1 grupo(s) <g data-campo> desaparecem de "antes"; "depois" tem 307 <circle class="mun"> onde "antes" não tinha nenhum; data-slot="nome" (1× em antes) desaparece. A parte anterior ao aparelho (as oito peças de medida) é byte a byte idêntica (confirmado acima), mas a secção do mapa localizador muda muito mais do que só a porta do cartão.
+
+═══ 10 · A régua do inventário ═══
+  rota home (/): autorreferência=0  blocos por classificar=0  (16 distintas = 11 conteúdo + 5 navegação + 0 autorreferência)
+
+═══ resumo ═══
+  casos conhecidos provados: 5 (vermelho confirmado: 5)
+  falsos alarmes documentados: 4
+  discordâncias registadas: 5
