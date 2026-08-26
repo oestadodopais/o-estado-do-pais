@@ -98,21 +98,30 @@ export const MEDIDAS_DO_CONCELHO = [
     /* O RÓTULO CORRIGIDO (decisão D5 do diretor, 26.08.2026). Dizia «Empresas
        sediadas», e a série do INE chama-se «empresas não financeiras»: os 308
        valores somam 1 576 606, que é a linha «empresas não financeiras» do
-       destaque do INE de 11.12.2025, e não o total. «Sediadas» não é vocabulário
-       do INE. O que está provado, e continua dito na nota, é que cada empresa
-       conta num único concelho, o da sede. */
+       destaque do INE de 11.12.2025, e não o total.
+
+       «SEDE» TAMBÉM NÃO É VOCABULÁRIO DO INE, e a nota dizia-o. A verificação
+       das fontes (`medicoes/fontes-308-2026-08-26.md`, medida 4, ressalva 3 e o
+       primeiro item da lista do que não foi verificado) mediu-o: a palavra não
+       ocorre em nenhum dos 13 084 indicadores do catálogo, o INE diz
+       «Localização geográfica», e a única ocorrência de «Morada da sede da
+       empresa» na nota metodológica está numa lista de variáveis de um serviço
+       de listagens de sociedades, de janeiro de 2014, e não na metodologia de
+       imputação geográfica. O que ESTÁ provado é que cada empresa é imputada a
+       um único concelho: os 308 somam exactamente o total nacional. Que esse
+       concelho seja o da sede é `[verify]`, e a nota deixa de o afirmar. */
     chave: 'empresas',
     nome: { pt: 'Empresas não financeiras', en: 'Non-financial enterprises' },
     unidade: { pt: 'Empresas', en: 'Enterprises' },
     prefixo: { pt: '', en: '' },
     ref: '2024',
     nota: {
-      pt: ['Sistema de contas integradas das empresas, por concelho da sede.'],
-      en: ['Integrated business accounts, by municipality of the registered office.'],
+      pt: ['Sistema de contas integradas das empresas; cada empresa conta num único concelho.'],
+      en: ['Integrated business accounts; each enterprise counts in a single municipality.'],
     },
   },
   {
-    /* A COLUNA DITA (decisão D3 do diretor, 26.08.2026). O ficheiro do regulador
+    /* A COLUNA DITA (decisão D3 do diretor, 26.08.2026). O ficheiro da DGAL
        publica duas colunas de dívida total: uma que inclui as dívidas não
        orçamentais, as exceções e o FAM, e outra que as exclui. É a segunda que a
        lei compara com o limite, e é a que esta medida usa nos 308 e em Évora. A
@@ -125,10 +134,10 @@ export const MEDIDAS_DO_CONCELHO = [
     ref: '2024',
     nota: {
       pt: [
-        'Série anual da Direção-Geral das Autarquias Locais, o regulador das contas municipais. Exclui dívidas não orçamentais e exceções legais.',
+        'Série anual da Direção-Geral das Autarquias Locais, que publica os dados das contas dos municípios. Exclui dívidas não orçamentais e exceções legais.',
       ],
       en: [
-        'The annual series of the local-government directorate, the regulator of municipal accounts. Excludes non-budgetary debt and legal exceptions.',
+        'The annual series of the local-government directorate, which publishes the municipalities’ accounts data. Excludes non-budgetary debt and legal exceptions.',
       ],
     },
   },
@@ -144,8 +153,8 @@ export const MEDIDAS_DO_CONCELHO = [
     tecto: 'indice-de-divida-limite-legal',
     tectoTexto: { pt: ', teto legal = ', en: ', legal cap = ' },
     nota: {
-      pt: ['Calculado sobre duas colunas do mesmo ficheiro do regulador. A aritmética está na linha.'],
-      en: ['Computed from two columns of the same regulator file. The arithmetic is on the row.'],
+      pt: ['Calculado sobre duas colunas do mesmo ficheiro da Direção-Geral das Autarquias Locais. A aritmética está na linha.'],
+      en: ['Computed from two columns of the same local-government directorate file. The arithmetic is on the row.'],
     },
   },
   {
@@ -169,8 +178,8 @@ export const MEDIDAS_DO_CONCELHO = [
     prefixo: { pt: 'dezembro de ', en: 'December ' },
     ref: '2025',
     nota: {
-      pt: ['Lista anual da Direção-Geral das Autarquias Locais, o regulador das contas municipais.'],
-      en: ['The annual list of the local-government directorate, the regulator of municipal accounts.'],
+      pt: ['Lista anual da Direção-Geral das Autarquias Locais, que publica os dados das contas dos municípios.'],
+      en: ['The annual list of the local-government directorate, which publishes the municipalities’ accounts data.'],
     },
   },
 ];

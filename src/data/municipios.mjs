@@ -186,8 +186,12 @@ const EVORA = {
         ],
       },
       {
-        pt: ['Estão sediadas no concelho ', { claim: 'evora-empresas-2024' }, ' empresas.'],
-        en: ['There are ', { claim: 'evora-empresas-2024' }, ' enterprises headquartered in the municipality.'],
+        /* «SEDIADAS» SAIU (item E7, P2; verificação das fontes, medida 4,
+           ressalva 3). A frase cita uma linha do SCIE do INE, e o INE não diz
+           «sede»: diz «Localização geográfica». O que está provado é que cada
+           empresa é imputada a um único concelho. */
+        pt: ['O concelho tem ', { claim: 'evora-empresas-2024' }, ' empresas não financeiras.'],
+        en: ['The municipality has ', { claim: 'evora-empresas-2024' }, ' non-financial enterprises.'],
       },
       {
         pt: [
@@ -334,8 +338,8 @@ const EVORA = {
           ],
           regulador: null,
           reguladorNota: {
-            pt: 'A série anual do regulador usada nesta página começa depois deste mandato.',
-            en: 'The regulator’s annual series used on this page begins after this term.',
+            pt: 'A série anual da Direção-Geral das Autarquias Locais usada nesta página começa depois deste mandato.',
+            en: 'The local-government directorate’s annual series used on this page begins after this term.',
           },
           pelouros: null,
           pelourosNota: {
@@ -490,8 +494,8 @@ const EVORA = {
           deixouNota: { pt: 'Em funções.', en: 'In office.' },
           regulador: null,
           reguladorNota: {
-            pt: 'A série anual do regulador ainda não chegou a este mandato.',
-            en: 'The regulator’s annual series has not yet reached this term.',
+            pt: 'A série anual da Direção-Geral das Autarquias Locais ainda não chegou a este mandato.',
+            en: 'The local-government directorate’s annual series has not yet reached this term.',
           },
           pelouros: {
             total: 'evora-pelouros-2025-total',
@@ -535,15 +539,15 @@ const EVORA = {
       {
         k: { pt: 'Não existe PIB municipal', en: 'There is no municipal GDP' },
         v: {
-          pt: ['Nenhuma fonte publica um produto interno bruto para um concelho, e esta página não fabrica nenhum. O que existe é o registo empresarial: as contas das empresas sediadas no concelho, que creditam toda a atividade de uma empresa ao concelho da sua sede. Não é PIB municipal, e o trabalho sobre a economia escreve porquê nos seus limites: «não capta a administração pública, a maior parte da universidade e do hospital».'],
-          en: ['No source publishes a gross domestic product for a municipality, and this page manufactures none. What does exist is the business register: the accounts of enterprises headquartered in the municipality, which credit a firm’s whole activity to its head-office municipality. It is not municipal GDP, and the work on the economy writes why in its own limits: «it misses public administration, most of the university and the hospital».'],
+          pt: ['Nenhuma fonte publica um produto interno bruto para um concelho, e esta página não fabrica nenhum. O que existe é o registo empresarial: as contas das empresas do concelho, que creditam toda a atividade de uma empresa a um único concelho. Não é PIB municipal, e o trabalho sobre a economia escreve porquê nos seus limites: «não capta a administração pública, a maior parte da universidade e do hospital».'],
+          en: ['No source publishes a gross domestic product for a municipality, and this page manufactures none. What does exist is the business register: the accounts of the municipality’s enterprises, which credit a firm’s whole activity to a single municipality. It is not municipal GDP, and the work on the economy writes why in its own limits: «it misses public administration, most of the university and the hospital».'],
         },
       },
       {
         k: { pt: 'Duas das oito medidas são o município a falar de si', en: 'Two of the eight measures are the municipality speaking about itself' },
         v: {
-          pt: ['A execução da receita e o prazo médio de pagamento são lidos da prestação de contas do próprio município: a sua linha no livro-razão nomeia esse documento e a página onde estão. As duas vozes de fora sobre estas contas são a opinião assinada do auditor e a série anual do regulador, e as duas estão nesta página.'],
-          en: ['Revenue execution and the average payment time are read from the municipality’s own accounts: their ledger rows name that document and the page they sit on. The two outside voices on these accounts are the auditor’s signed opinion and the regulator’s annual series, and both are on this page.'],
+          pt: ['A execução da receita e o prazo médio de pagamento são lidos da prestação de contas do próprio município: a sua linha no livro-razão nomeia esse documento e a página onde estão. As duas vozes de fora sobre estas contas são a opinião assinada do auditor e a série anual da Direção-Geral das Autarquias Locais, e as duas estão nesta página.'],
+          en: ['Revenue execution and the average payment time are read from the municipality’s own accounts: their ledger rows name that document and the page they sit on. The two outside voices on these accounts are the auditor’s signed opinion and the local-government directorate’s annual series, and both are on this page.'],
         },
       },
       {
@@ -564,8 +568,8 @@ const EVORA = {
       {
         k: { pt: 'Duas vozes de fora, não uma', en: 'Two outside voices, not one' },
         v: {
-          pt: ['Sobre as contas deste município existem duas vozes que não são a dele: a opinião assinada do auditor independente, e a série anual do regulador, que publica por município e por ano o mesmo conceito legal de dívida que o relatório usa, compilado do lado de fora. As duas estão nesta página.'],
-          en: ['On this municipality’s accounts there are two voices that are not its own: the independent auditor’s signed opinion, and the regulator’s annual series, which publishes per municipality and per year the same legal debt concept the report uses, compiled from outside. Both are on this page.'],
+          pt: ['Sobre as contas deste município existem duas vozes que não são a dele: a opinião assinada do auditor independente, e a série anual da Direção-Geral das Autarquias Locais, que publica por município e por ano o mesmo conceito legal de dívida que o relatório usa, compilada do lado de fora. As duas estão nesta página.'],
+          en: ['On this municipality’s accounts there are two voices that are not its own: the independent auditor’s signed opinion, and the local-government directorate’s annual series, which publishes per municipality and per year the same legal debt concept the report uses, compiled from outside. Both are on this page.'],
         },
       },
       {
@@ -635,7 +639,7 @@ const EVORA = {
       },
       {
         pt: [
-          'Os valores do regulador para ',
+          'Os valores da Direção-Geral das Autarquias Locais para ',
           { ref: '2017' },
           ' e ',
           { ref: '2021' },
@@ -646,7 +650,7 @@ const EVORA = {
           '), ditas na linha de cada um.',
         ],
         en: [
-          'The regulator’s values for ',
+          'The local-government directorate’s values for ',
           { ref: '2017' },
           ' and ',
           { ref: '2021' },
