@@ -57,6 +57,7 @@ import { FIGURAS_PDM, FIGURAS_SOCIAL } from '../data/figuras.mjs';
 import { WORKS, EDITIONS } from '../data/studies.mjs';
 import { temLeitura } from '../data/leituras.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
+import { contagensDosConcelhos } from './livro-concelhos.mjs';
 import { MUNICIPIOS } from '../data/caop-centroids.mjs';
 import { VERIFICACAO } from '../data/verificacao.mjs';
 import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
@@ -387,6 +388,18 @@ const FRASES = {
     pt: 'concelhos com página do observatório construída',
     en: 'concelhos with an observatory page built',
   },
+  concelhos_linhas: {
+    pt: 'linhas do livro-razão do estudo dos concelhos',
+    en: 'ledger rows of the municipalities study',
+  },
+  concelhos_no_livro: {
+    pt: 'concelhos com pelo menos uma linha desse estudo',
+    en: 'municipalities with at least one row of that study',
+  },
+  concelhos_linhas_completas: {
+    pt: 'linhas desse estudo sem nenhum campo de proveniência por confirmar',
+    en: 'rows of that study with no provenance field left to confirm',
+  },
   municipios_total: {
     pt: 'concelhos no ficheiro de coordenadas da Carta Administrativa',
     en: 'concelhos in the coordinates file of the official administrative map',
@@ -459,6 +472,7 @@ export function prova(lang = 'pt') {
   const cruzadas = linhasCruzadas();
   const registos = contagensDosRegistos(cruzadas.doMotor);
   const verificacao = estadoDaVerificacao();
+  const dosConcelhos = contagensDosConcelhos();
   const ag = agenda();
 
   const porTipo = {};
@@ -582,6 +596,24 @@ export function prova(lang = 'pt') {
       routePath('municipios', lang),
     ),
     municipios_total: k('municipios_total', MUNICIPIOS.length, routePath('municipios', lang)),
+
+    /* ---- o livro-razão do conjunto dos concelhos (decisão D6, 26.08.2026) ----
+       As três contagens que a página do conjunto escreve. Nenhuma é um número
+       da casa escrito à mão: as três saem das linhas que o livro-razão tem, e o
+       portão reconta-as por conta própria. Enquanto o exportador do motor não
+       correr, as três são zero — e zero é a resposta certa, não um estado por
+       desenhar: a página rende-se vazia e a contagem di-lo. */
+    concelhos_linhas: k('concelhos_linhas', dosConcelhos.linhas, routePath('livroConcelhos', lang)),
+    concelhos_no_livro: k(
+      'concelhos_no_livro',
+      dosConcelhos.concelhos,
+      routePath('livroConcelhos', lang),
+    ),
+    concelhos_linhas_completas: k(
+      'concelhos_linhas_completas',
+      dosConcelhos.completas,
+      routePath('livroConcelhos', lang),
+    ),
 
     /* ---- a releitura ----
        O campo `verifications[]` entrou a 18.08.2026 (DECISIONS §1.47). Estas

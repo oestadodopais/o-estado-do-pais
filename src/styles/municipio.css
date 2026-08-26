@@ -138,8 +138,7 @@
   padding-top: 16px;
   border-top: 1px solid var(--rule);
 }
-/* A secção dos que têm página encosta-se à lista, e não abre um vão novo: é a
-   primeira fila da mesma lista, com outro critério de grupo. */
-.concelhos-primeiro {
-  margin-bottom: clamp(18px, 2.4vw, 26px);
-}
+/* A REGRA DE `.concelhos-primeiro` SAIU com a secção que a usava (bloco dos
+   308, P2): a lista dos que têm página era a lista inteira repetida por cima da
+   lista inteira, e uma folha que continuasse a vestir um elemento que ninguém
+   rende é uma regra que ninguém apaga no dia seguinte. */

@@ -2764,6 +2764,19 @@ function contasDoPortao(claims) {
     municipiosNoCsv = Math.max(0, linhasCsv.length - 1); // menos o cabeçalho
   }
 
+  /* AS LINHAS DOS CONCELHOS, contadas do lado do livro-razão, e os grupos da
+     página do conjunto, contados do lado do `dist/`. São dois pontos de
+     observação diferentes de propósito: uma linha que exista e não seja
+     agrupada por nenhum concelho não aparece na segunda conta, e é isso que a
+     comparação com `concelhos_no_livro` da prova apanha. */
+  const linhasDosConcelhos = linhas.filter((c) => c.study === 'concelhos-2026');
+  let gruposDeConcelho = null;
+  const paginaDosConcelhos = path.join(DIST, 'livro-razao', 'concelhos', 'index.html');
+  if (fs.existsSync(paginaDosConcelhos)) {
+    const html = fs.readFileSync(paginaDosConcelhos, 'utf8');
+    gruposDeConcelho = (html.match(/data-concelho-grupo=/g) ?? []).length;
+  }
+
   /* Os trabalhos com leitura escrita: são os únicos `estudo` que entram no mapa
      do sítio, pelo mesmo filtro que a página usa para levantar o `noindex`. */
   let leiturasNoMapa = null;
@@ -2898,6 +2911,17 @@ function contasDoPortao(claims) {
     conta('leituras', leiturasNoMapa, 'dist'),
     conta('municipios_com_pagina', (paginasPorRota.get('pt:municipio') ?? 0), 'dist'),
     conta('municipios_total', municipiosNoCsv, 'dist'),
+    /* AS TRÊS CHAVES DA PÁGINA DO CONJUNTO DOS CONCELHOS (decisão D6,
+       26.08.2026). Duas contam-se no livro-razão que este portão leu por conta
+       própria; a dos concelhos conta-se na página construída, que é o outro
+       ponto de observação. */
+    conta('concelhos_linhas', linhasDosConcelhos.length, 'ledger'),
+    conta('concelhos_no_livro', gruposDeConcelho, 'dist'),
+    conta(
+      'concelhos_linhas_completas',
+      linhasDosConcelhos.filter((c) => !provenienciaIncompleta(c)).length,
+      'ledger',
+    ),
     /* As reconferências, contadas aqui e não por prova(): é a segunda
        implementação sobre os mesmos ficheiros, como as correções. */
     conta('releituras_registadas', releituras.length, 'ledger'),
