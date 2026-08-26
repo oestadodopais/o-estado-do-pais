@@ -277,3 +277,63 @@ Os quatro últimos são plantados no `dist/`, que é o que o portão e as régua
 | `livro-concelhos-indice-*` | o índice dos concelhos no livro-razão, 10 751 px a 1280 |
 | `livro-concelho-braganca-*` | a página de livro-razão de um concelho, 1 449 px a 1280, com as suas oito linhas |
 | `linha-braganca-divida-*` | o recibo de uma linha da DGAL, com a sua proveniência |
+
+---
+
+## P2 · a leitura de fora (itens E7 a E12)
+
+*A leitura de olhos frescos do Codex sobre a construção congelada, mais as duas ressalvas do lugar de direção. Seis itens; um deles pára e volta ao motor.*
+
+### 15 · O que se corrigiu
+
+**E7 · a nota das empresas afirmava o que a verificação não confirmou.** Dizia «Sistema de contas integradas das empresas, por concelho da sede.» A verificação das fontes mediu-o e disse o contrário: a palavra «sede» não ocorre em nenhum dos 13 084 indicadores do catálogo do INE, o INE diz «Localização geográfica», e a única ocorrência de «Morada da sede da empresa» na nota metodológica está numa lista de variáveis de um serviço de listagens de sociedades, de janeiro de 2014, e não na metodologia de imputação geográfica. O que está provado é que cada empresa é imputada a um único concelho: os 308 somam exactamente o total nacional. A nota passa a dizer isso e nada mais. A busca por «sede» e «registered office» em todo o repositório deu mais duas superfícies vivas da mesma afirmação, as duas na página de Évora, e as duas foram corrigidas. Ficaram por tocar as que relatam o que o TRABALHO 06 escreve (`src/data/leituras.mjs`, ancorado à sua frase de origem, e a citação dele dentro da ressalva do método): são leituras de um trabalho, não afirmações da casa sobre a série do INE.
+
+**E8 · 617 etiquetas iguais.** «tem página» rendia-se em cada uma das 308 linhas do índice, mais uma por resultado da pesquisa, e a linha de cobertura em cima já diz o estado do todo com as suas duas contagens. Uma palavra de estado só diz alguma coisa se houver outro estado de que se distinga, que é a `IDENTIDADE.md` §7 lida ao contrário. As cadeias e a marca ficam: medido nos dois estados, com os 308 dá zero etiquetas, e com um concelho de fora do ficheiro dá 617 outra vez. A seta entrou na porta, porque sem a etiqueta o que ficava fora da ligação era uma seta sozinha, e o inventário passava a ter 307 blocos «Abrantes →».
+
+**E10 · a legenda da dívida falava do sítio.** «É a lei que o define, não este sítio.», em 616 páginas. Fica a lei, o artigo e a conta que ele manda fazer.
+
+**E11 · a DGAL não é um regulador.** É a direção-geral que publica os dados das contas dos municípios. Corrigido nas três notas das medidas dos 308 e em toda a prosa da casa que a nomeava assim. Fica «reguladores» em `src/data/metodo.mjs`, que é uma classe de fontes e não a DGAL.
+
+**E12 · 308 ligações dentro de um `role="img"`.** O cartão localizador rendia o mapa inteiro com cada ponto com página dentro de uma ligação, num SVG que se declara imagem: a tecnologia de apoio pode achatar o que está dentro de uma imagem, e os alvos são círculos de 4,5px de raio. O cartão localiza e não navega, e a regra N4 fica onde ela é: na primeira página, cujo SVG passa a `role="group"`. Medido no `dist/` inteiro: 1 947 SVG, zero com `role="img"` a conter uma ligação. Efeito lateral medido: as ligações internas conferidas caem de 427 298 para 237 570, e o `dist/` de 406 MB para 386 MB.
+
+### 16 · O que a régua não apanhava, e apanha agora
+
+**A célula da autorreferência olhava para duas rotas.** Pedia zero na PRIMEIRA PÁGINA e «nada por classificar» em rota nenhuma. Uma frase de autorreferência DECLARADA numa página de concelho passava pelas duas peneiras: declarada, e por isso não «por classificar»; fora da primeira página, e por isso não contada. Foi assim que a frase do E10 viveu em 616 páginas. Passa a exigir autorreferência zero em todas as **1 278** rotas medidas.
+
+**Uma frase corrigida não pode continuar declarada.** O inventário guarda as duas leituras de uma contagem lado a lado, e isso é certo: uma contagem volta a ser o que era no dia em que o livro-razão encolher. Uma frase corrigida é outra coisa. Plantadas de volta a nota da sede e a que chamava «regulador» à DGAL, **nenhuma das duas fechou coisa nenhuma**: estavam declaradas. As treze entradas das frases que os itens E7 e E11 corrigiram saíram da lista, e repô-las passa a ser um bloco por classificar. Medido nas duas.
+
+### 17 · Os estragos plantados, vistos vermelhos
+
+| estrago | o que o apanhou |
+|---|---|
+| uma etiqueta «tem página» forçada numa linha, com os 308 a terem página | a régua dos concelhos, célula 1 |
+| um concelho fora do ficheiro dos 308, para ver a etiqueta voltar | a mesma célula, do outro lado: 617 etiquetas |
+| a frase «É a lei que o define, não este sítio.» reposta numa página | a matriz · «autorreferência > 0 em 1: /municipios/braganca» |
+| a nota da sede reposta | a matriz · «por classificar em 1 rota(s)», depois de a entrada sair do inventário |
+| «o regulador das contas municipais» reposto | a mesma célula, pela mesma razão |
+| uma ligação plantada dentro do SVG do cartão localizador | a célula nova do `role="img"`, sobre o `dist/` inteiro |
+
+### 18 · A corrida completa, com os dados
+
+| comando | saída | o que diz |
+|---|---|---|
+| `npm run build` | 0 | **268,08 s** · **6 406 páginas** · **386 MB** · 29 436 ficheiros |
+| `npm run verify` | 0 | |
+| `npm run typecheck` | 0 | |
+| `node scripts/provar-eyetext.mjs` | 0 | |
+| `node scripts/check-cadeia.mjs` | 0 | |
+| `node scripts/medir-defeitos.mjs` | 0 | 0 blocos por classificar, 1 278 rotas |
+| `tests/municipio/concelhos.mjs` | 0 | 12 de 12 |
+| `tests/municipio/correcoes-c.mjs` | 0 | 12 de 12 |
+| `tests/inicio/matriz.mjs` | 0 | 87 de 87 |
+| `tests/inicio/mapa-navegacao.mjs` | 0 | 11 de 11 |
+| `tests/inicio/correcoes-a.mjs` | 0 | 32 de 32 |
+| `tests/linha/recibo.mjs` | 0 | 13 de 13 |
+| `tests/linha/correcoes-b.mjs` | 0 | 32 de 32 |
+| `tests/texto/correcoes-b.mjs` | 0 | 19 de 19 |
+| `tests/texto/correcoes-c.mjs` | 0 | 9 de 9 |
+| `tests/texto/leitura.mjs` | 0 | 51/51 |
+
+### 19 · Uma colisão de duas mãos na mesma árvore
+
+Às 19:20, com os itens E7 a E12 construídos e ainda por cometer, outro agente correu `git checkout` sobre doze ficheiros que julgava serem de um script seu. Eram as alterações destes seis itens: `INVENTARIO-FRASES.md`, `MapaRespira.astro`, `Pesquisa.astro`, `concelhos.mjs`, `municipios.mjs`, `strings.mjs`, `inicio.mjs`, `LivroConcelhosView.astro`, `MunicipiosView.astro`, e as três réguas. Os ficheiros novos, por indexar, não foram tocados. **Custou uma construção e cerca de vinte minutos**, porque o trabalho estava escrito e foi refeito do próprio relatório, cadeia a cadeia. Desde então cada item é cometido assim que fica verde, e há cópia de salvaguarda de cada ficheiro editado no rascunho, para que um repetir custe um item e não seis.
