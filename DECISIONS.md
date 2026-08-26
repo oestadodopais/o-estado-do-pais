@@ -11201,3 +11201,77 @@ três estão corrigidas e medidas.
 Os números, os comandos que os deram e os estragos plantados estão em
 `design/especime-v3/notas/concelhos.md`, §P2; as capturas do antes e do depois em
 `design/especime-v3/capturas/concelhos-2026-08-26/`.
+
+#### P2, os dados
+
+O exportador do motor escreveu 2 416 linhas em `ledger/claims/`, o registo da
+travessia em `ledger/cruzamentos/concelhos.json` e o ficheiro dos 308 em
+`src/data/concelhos.gerado.json`. Com eles presentes, a construção fechou com
+4 846 erros, e por baixo deles havia **um** defeito.
+
+**O ficheiro existia e a construção não o via.** `src/data/concelhos.mjs`
+procurava-o por um caminho relativo ao próprio módulo, e na construção o módulo é
+empacotado: o caminho passava a apontar para o pacote. `getStaticPaths` escrevia
+uma página de concelho e nada do lado do Astro fechava a construção. A regra
+está escrita, com todas as letras, no cabeçalho de `src/lib/prova.mjs` desde a
+primeira corrida dele, e o construtor não a seguiu. **Não apareceu no P2
+(estrutura) porque a cobertura dos 308 foi sempre construída com
+`CONCELHOS_GERADO`, um caminho absoluto que não passa por ali:** o caminho por
+omissão nunca foi exercido com um ficheiro a existir. Quem o apanhou foi o
+portão, com as duas contas de uma chave da prova, que é para o que elas existem:
+a prova, que corre em Node, dizia 308 e 307; a vista `dist`, que conta o que foi
+construído, dizia 1 e 0. Os outros 4 832 erros eram consequência.
+
+**Três decisões mais, cada uma com a sua medição.**
+
+(a) **A página do conjunto é uma página do livro-razão**, e o portão passa a
+sabê-lo. `data-linha-*` é a marca de um campo do livro-razão e valia em duas
+rotas; a página do conjunto lista as linhas do estudo com a mesma
+linha-espécime, os mesmos campos e o selo da própria linha em cada uma, e é para
+lá que essas linhas saíram do índice principal. A rota entra na lista. O que a
+guarda protege continua protegido.
+
+(b) **A prosa da agenda passa a comparar-se com as linhas que a própria página
+cita.** A regra recusa um número da prosa cuja sequência de algarismos seja a de
+um valor do livro-razão, e a regra escrita no portão é sobre a MESMA página. A
+implementação comparava com o livro-razão inteiro, e com 2 552 linhas deixou de
+distinguir coisa nenhuma: doze paragens, todas lidas uma a uma, nenhuma uma
+medição. «9» é o limiar de preços da habitação que a Comissão publica e é o
+prazo de pagamento de Alijó; «222» é o número do documento SWD(2026) 222 e é o
+índice de dívida de Salvaterra de Magos; «2022» é um ano e é o número de
+empresas de Coruche; «76» é o artigo 76.º e é o desemprego de Barrancos. Com o
+estreitamento, a regra continua a morder onde foi escrita para morder, e isso foi
+medido: metido na prosa o valor de uma linha que a agenda rende com selo, o
+portão fecha a construção.
+
+(c) **Évora lê a linha do desemprego que o motor escreveu.** A entrada à mão
+apontava para dezembro de 2024 e o exportador escreveu dezembro de 2025 com os
+outros 277 do continente: a mesma peça media dois períodos diferentes, que é o
+que a decisão D2 recusa, e a linha nova ficava sem concelho que a declarasse. A
+de 2024 continua citada na leitura breve, que é a frase que mede a queda desde
+2013.
+
+**A escala, com os dados, do zero:** **261,53 s**, **5 790 páginas**, **399 MB**,
+28 820 ficheiros, 410 054 ligações internas conferidas. Dois terços do tempo e
+mais de metade do disco são os **cartões de partilha**: 10 212 PNG, 224 MB, 101 s
+do passo `cartoes`, um por página de linha vezes duas medidas. Não é a página do
+concelho nem a do conjunto que faz a escala; é o cartão, e a pergunta de forma é
+se uma página de linha precisa dele.
+
+**A página do conjunto tem 227 008 px de altura a 1280** (352 735 px a 390), com
+308 grupos e 2 416 linhas: o motor de captura não a fotografa inteira. A decisão
+D6 tirou essas linhas do índice principal porque 2 500 numa página não se leem, e
+a página do conjunto reproduz o mesmo problema dentro de si, uma ordem de
+grandeza pior. A pesquisa leva à âncora de cada concelho, que é o caminho
+desenhado, e ninguém rola 227 000 px. **É decisão de forma e fica com a direção**
+(paginar por distrito, dobrar cada grupo, ou uma página por concelho); a §5 do
+plano manda decidir a forma antes de continuar, e não depois de construída.
+
+A régua ganha a célula que faltava, e é a que teria apanhado o defeito de cima:
+**as entradas que o módulo dá e as páginas que a construção escreveu, contadas
+dos dois lados**. A matriz ganha a célula «concelho sem estudos» que o plano §3.5
+nomeia. A célula do concelho sem estudos deixou de estar «sem objecto» e foi
+reescrita para medir a regra e não a forma do ficheiro de teste: varre as 307
+páginas. Os seis estragos plantados, as medidas e os códigos de saída estão em
+`design/especime-v3/notas/concelhos.md` §P2 dados; as capturas com dados em
+`design/especime-v3/capturas/concelhos-2026-08-26/dados/`.

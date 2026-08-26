@@ -150,3 +150,119 @@ O «antes» de Évora mede 7 603 px de altura a 1280 e o «depois» 7 692 px: os
 * **A régua do concelho sem estudos salta** quando só há uma página de concelho construída, e diz o comando que lhe dá objecto. Não passa nem falha: uma célula que passasse sem medir era pior.
 * **A leitura do Codex** sobre um pacote de dez páginas de concelho e a página do conjunto, que o plano §3.5 põe neste passo.
 * **O I70** (44 dos 308 pontos com vizinho a menos de um diâmetro) continua aberto, e o caminho das zonas densas continua a ser a pesquisa.
+
+---
+
+## P2 · os dados
+
+*Escrito a 26.08.2026, depois de o exportador do motor ter escrito na árvore de trabalho deste ramo: 2 416 ficheiros novos em `ledger/claims/`, `ledger/cruzamentos/concelhos.json` e `src/data/concelhos.gerado.json` (308 objetos, 2 422 ids, 42 a `null`). Os três ficam por indexar; quem os comete é o lugar de direção. Os números desta secção vêm de uma construção do zero com os dados presentes.*
+
+### 8 · O defeito que só os dados mostraram
+
+A construção do lugar de direção fechou com **4 846 erros**, e por baixo deles havia **um** defeito.
+
+`src/data/concelhos.mjs` procurava `concelhos.gerado.json` por um caminho relativo ao próprio módulo, `new URL('./concelhos.gerado.json', import.meta.url)`. **Na construção o módulo é empacotado**, e um caminho relativo ao módulo passa a apontar para o pacote: o ficheiro existia e o Astro não o via. `entradasGeradas()` devolvia lista vazia, o `getStaticPaths` escrevia UMA página de concelho, e nada do lado do Astro fechava a construção. A regra estava escrita, com todas as letras, no cabeçalho de `src/lib/prova.mjs` desde a primeira corrida dele, e eu não a segui.
+
+**Porque não foi apanhado no P2 (estrutura):** a cobertura dos 308 foi sempre construída com `CONCELHOS_GERADO=<ficheiro>`, que é um caminho absoluto e não passa por ali. O caminho por omissão nunca foi exercido com um ficheiro a existir.
+
+Quem o apanhou foi o portão, com as duas contas de uma chave da prova: a prova, que corre em Node e via o ficheiro, dizia 308 concelhos com página e 307 no livro-razão; a vista `dist`, que conta o que foi construído, dizia 1 e 0. É exactamente para isso que uma chave tem duas contas. Os outros 4 832 erros eram consequência: com um concelho declarado, as 2 416 linhas do estudo caíam todas no grupo dos não declarados da página do conjunto, e o portão recusava-lhes a marca.
+
+O caminho passa a ser procurado a subir, como `encontraLivroRazao()` e `prova.mjs` já faziam. E a régua ganha a célula que faltava: **as entradas que o módulo dá e as páginas que a construção escreveu, contadas dos dois lados.**
+
+### 9 · Os outros três, e o que foi decidido em cada um
+
+**(a) A página do conjunto é uma página do livro-razão, e o portão não o sabia.** `data-linha-*` é a marca de um campo do livro-razão, e o portão aceitava-a em duas rotas: `linha` e `livro`. A página do conjunto lista as linhas do estudo com a mesma linha-espécime, os mesmos campos e o selo da própria linha em cada uma: é um índice do livro-razão, e é para lá que essas linhas saíram do índice principal. **A rota entra na lista.** A alternativa (a página renderizar as linhas noutra forma) não existe: a forma já é a do índice; o que faltava era o portão saber que aquela rota é do livro-razão. O que a guarda protege continua protegido: `data-linha-*` continua proibido em qualquer página que não seja do livro-razão.
+
+**(b) A prosa da agenda deixou de distinguir coisa nenhuma.** A regra recusa um número da prosa da agenda cuja sequência de algarismos seja a de um valor do livro-razão, e existe para apanhar «uma medição sem selo». Comparada com o livro-razão INTEIRO, e com 2 552 linhas, o espaço dos valores passou a cobrir quase todos os inteiros pequenos: a agenda fechou a construção doze vezes, e as doze foram lidas uma a uma e nenhuma era uma medição.
+
+| o que a prosa diz | com que linha colidia |
+|---|---|
+| `9`, o limiar de preços da habitação que a Comissão publica, com excerto e endereço | o prazo médio de pagamento de Alijó |
+| `222`, o número do documento SWD(2026) 222 | o índice de dívida de Salvaterra de Magos |
+| `2022`, um ano numa lista de datas de publicação | as empresas de Coruche |
+| `76`, o artigo 76.º da lei | o desemprego registado de Barrancos |
+| `20`, um dia numa data | o prazo médio de pagamento de Cascais |
+
+A regra escrita no próprio portão é sobre a MESMA página: «um valor que tem linha e selo noutro sítio da mesma página». A implementação era mais larga do que a regra que serve. **Passa a comparar com as linhas que a própria página cita com `<Claim/>`.** O que a regra existe para apanhar continua apanhado, e foi medido: metido na prosa da agenda o valor de uma linha que a agenda rende com selo, o portão fecha a construção com a mesma mensagem, sobre a mesma linha que o comentário do portão dá como exemplo desde que foi escrito.
+
+**(c) Évora passa a ler a linha do desemprego que o motor escreveu.** O exportador escreveu `evora-desemprego-registado-2025-12` com os outros 277 do continente. A entrada à mão continuava a apontar para `evora-desemprego-registado-2024`, e isso punha a mesma peça a medir dezembro de 2024 em Évora e dezembro de 2025 nos outros, que é o que a decisão D2 recusa, e deixava a linha nova sem concelho que a declarasse. A linha de 2024 não desaparece: continua citada na leitura breve, que é a frase que mede a queda de 2013 para 2024. Com isto, `concelhos_no_livro` passa de 307 para **308** e as linhas sem concelho declarado passam a **zero**.
+
+### 10 · A escala, com os dados
+
+Construção do zero, na mesma máquina.
+
+| | com o ficheiro de teste | **com os dados** |
+|---|---|---|
+| `npm run build` | 22,92 s | **261,53 s** |
+| páginas | 958 | **5 790** |
+| `dist/` | 83 MB | **399 MB** |
+| ficheiros em `dist/` | 2 244 | **28 820** |
+| linhas no livro-razão | 136 | **2 552** |
+| páginas de linha | 272 | **5 104** |
+| ligações internas conferidas | 225 756 | **410 054** |
+| números marcados nas páginas | 2 008 | **11 672** |
+| cartões de partilha | 548 | **10 212** |
+
+**Onde vai o tempo:** `astro build` 126 s, `cartoes` 101 s, e os seis portões repartem os restantes ~34 s. **Onde vai o tamanho:** `dist/cartoes` **224 MB dos 399**, com 10 212 PNG (o passo diz 165,29 MB de imagem; o resto é o registo JSON de cada cartão e o arredondamento do disco). As 616 páginas de concelho ocupam 60 MB e as 5 104 páginas de linha 96 MB.
+
+**A conta que a direção pediu que fosse medida antes de continuar:** dois terços do tempo e mais de metade do disco são os cartões de partilha, um por página de linha × duas medidas. Não é a página do concelho nem a do conjunto que faz a escala; é o cartão. Se houver limite a apertar, é aí que ele aperta primeiro, e a pergunta de forma é se uma página de linha precisa de cartão de partilha.
+
+### 11 · A página do conjunto tem 227 008 px
+
+Medido: `/livro-razao/concelhos` tem **227 008 px de altura a 1280** e **352 735 px a 390**, com 308 grupos e 2 416 linhas. O motor de captura não consegue fotografá-la inteira, e as capturas dela são de ecrã e não de página.
+
+A decisão D6 tirou 2 416 linhas de um índice porque «136 linhas numa página são legíveis e 2 500 não são». A página do conjunto resolve o problema do índice principal e reproduz o mesmo problema dentro de si, uma ordem de grandeza pior. O caminho desenhado funciona (a pesquisa leva à âncora do concelho, e cada grupo tem oito linhas), mas ninguém rola 227 000 px. **É uma decisão de forma e fica para a direção:** paginar por distrito, dobrar cada grupo num `details`, ou uma página por concelho. Não a tomei, porque a §5 do plano diz que a forma se decide antes de continuar e não depois de construída.
+
+### 12 · O que ficou verde, com os códigos de saída
+
+Com os dados presentes, tudo do zero:
+
+| comando | saída | o que diz |
+|---|---|---|
+| `npm run build` | 0 | 261,53 s · 5 790 páginas · 399 MB |
+| `npm run verify` | 0 | |
+| `npm run typecheck` | 0 | |
+| `node scripts/provar-eyetext.mjs` | 0 | 157 conferências · 2 614 unidades iguais carácter a carácter |
+| `node scripts/check-cadeia.mjs` | 0 | 196 até ao selo, 2 405 até à entrada do motor |
+| `node scripts/medir-defeitos.mjs` | 0 | **0 blocos por classificar** |
+| `tests/municipio/concelhos.mjs` | 0 | 11 de 11 |
+| `tests/municipio/correcoes-c.mjs` | 0 | 12 de 12 |
+| `tests/inicio/matriz.mjs` | 0 | 87 de 87 |
+| `tests/inicio/mapa-navegacao.mjs` | 0 | 11 de 11 |
+| `tests/inicio/correcoes-a.mjs` | 0 | 32 de 32 |
+| `tests/linha/recibo.mjs` | 0 | 13 de 13 |
+| `tests/linha/correcoes-b.mjs` | 0 | 32 de 32 |
+| `tests/texto/correcoes-b.mjs` | 0 | 19 de 19 |
+| `tests/texto/correcoes-c.mjs` | 0 | 9 de 9 |
+| `tests/texto/leitura.mjs` | 0 | 51/51 |
+
+**`tests/inicio/capturas.mjs` corre com um argumento, e sem ele reescreve as capturas da etapa 2.** Corrido sem argumento, escreveu por cima de 56 ficheiros indexados e criou 16 novos; foram repostos com `git checkout` e apagados. Fica dito para não se repetir.
+
+**A célula que «não tinha objecto» tem-no agora.** Era a do concelho sem estudos: com uma página de concelho construída não havia segunda página para medir. Com os dados há 307, e ela corre. Estava escrita contra o ficheiro de teste (oito peças vazias, nenhum algarismo, nenhuma secção) e foi reescrita para medir a REGRA, que vale nas duas coberturas, e a varrer as 307.
+
+### 13 · Os estragos plantados, vistos vermelhos
+
+| estrago | onde | o que o apanhou |
+|---|---|---|
+| o caminho volta a ser relativo ao módulo, e reconstrói-se | `src/data/concelhos.mjs` | `P2 · as entradas do módulo e as páginas construídas` · «o módulo dá 308 entrada(s), a construção escreveu 1 página(s)» |
+| a página do conjunto deixa de ser uma página do livro-razão | `scripts/gate-html.mjs` | o portão · 18 104 erros de `data-linha-claim` |
+| a prosa da agenda volta a comparar com o livro-razão inteiro | `scripts/gate-html.mjs` | o portão · os 12 falsos positivos voltam |
+| o valor de uma linha que a agenda rende, metido na prosa da agenda | `dist/agenda/index.html` | o portão · «"17,6" é o valor da linha "precos-da-habitacao-2025"» |
+| a camada das contas rende-se num concelho sem contas | `dist/municipios/agueda/index.html` | a régua dos concelhos e a célula nova da matriz |
+| uma linha do estudo apagada de dentro do seu grupo | `dist/livro-razao/concelhos/index.html` | `P2 · a página do conjunto` · 2 415 linhas para 2 416 declaradas |
+
+Os quatro últimos são plantados no `dist/`, que é o que o portão e as réguas medem, e repostos a seguir; os dois primeiros no código, com o ficheiro reposto de uma cópia.
+
+### 14 · As capturas com dados
+
+`../capturas/concelhos-2026-08-26/dados/`, a 390 e a 1280:
+
+| ficheiro | o quê |
+|---|---|
+| `lisboa-*` · `braganca-*` | um concelho grande e um do interior, sete peças cheias e a execução vazia |
+| `corvo-*` | uma ilha: sem desemprego registado, que o IEFP não publica fora do continente |
+| `penedono-*` | o concelho que a DGAL dá como «N.d.»: população, poder de compra, desemprego e empresas cheios, e quatro peças vazias, sem a dívida desenhada |
+| `evora-*` | Évora, com as suas camadas e o desemprego agora em dezembro de 2025 |
+| `livro-indice-*` | o índice do livro-razão, que continua a listar 136 linhas |
+| `livro-concelhos-topo-*` · `livro-concelhos-grupo-*` | a página do conjunto, de ECRÃ e não de página inteira, porque tem 227 008 px |
+| `linha-braganca-divida-*` | o recibo de uma linha da DGAL, com a sua proveniência |
