@@ -22,6 +22,7 @@ import CampoDaLinha from '../components/CampoDaLinha.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
 import Marcador from '../components/Marcador.astro';
 import { allClaims, provenienciaIncompleta, POR_VERIFICAR } from '../lib/ledger.mjs';
+import { ESTUDO_DOS_CONCELHOS } from '../lib/livro-concelhos.mjs';
 import { caminhoDoLivro } from '../lib/livro.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -35,9 +36,22 @@ const { lang = 'pt' } = Astro.props;
 const s = t(lang);
 const path = caminhoDoLivro(lang);
 
+/**
+ * AS LINHAS DOS CONCELHOS SAEM DESTE ÍNDICE (decisão D6 do diretor, 26.08.2026).
+ *
+ * Não saem do livro-razão: saem desta LISTA. As páginas de linha continuam a ser
+ * geradas para todas, o CSV e o JSON continuam a incluir todas, e as contagens
+ * do cabeçalho — as afirmações e as calculadas — continuam a contar todas,
+ * porque contam o que o livro-razão guarda e não o que esta página lista. O que
+ * muda é a lista: com as medidas dos 308 concelhos, ela passava de 136 entradas
+ * para cerca de 2 570, e uma lista de 2 570 entradas não é um índice. Elas têm
+ * página própria, com pesquisa por concelho, e a porta para ela está mais abaixo.
+ */
 const todas = allClaims();
-const completas = todas.filter((c) => !provenienciaIncompleta(c));
-const porConfirmar = todas.filter((c) => provenienciaIncompleta(c));
+const dosConcelhos = todas.filter((c) => c.study === ESTUDO_DOS_CONCELHOS);
+const listadas = todas.filter((c) => c.study !== ESTUDO_DOS_CONCELHOS);
+const completas = listadas.filter((c) => !provenienciaIncompleta(c));
+const porConfirmar = listadas.filter((c) => provenienciaIncompleta(c));
 
 /**
  * AS CONTAGENS DESTE ÍNDICE (IDENTIDADE.md §10; `src/lib/prova.mjs`).
@@ -128,6 +142,27 @@ const grupos = [
       {' · '}
       <ValorDaProva chave="derivadas" item={p.derivadas} lang={lang} />
       {' '}{s.livro.contaDerivadas}
+      {' · '}
+      <ValorDaProva chave="concelhos_linhas" item={p.concelhos_linhas} lang={lang} />
+      {' '}{s.livro.contaConcelhos}
+    </p>
+    {/* A PORTA DA PÁGINA DO CONJUNTO DOS CONCELHOS (decisão D6, 26.08.2026).
+        Fica aqui, por baixo das contagens do índice e por cima dos grupos,
+        porque é ela que explica a diferença entre o que o livro-razão guarda e o
+        que esta lista mostra: as linhas dos concelhos existem, têm página de
+        linha, entram no CSV e no JSON, e estão listadas na página que esta porta
+        abre.
+
+        A CONTAGEM SUBIU PARA A LINHA DAS CONTAGENS, E A PORTA FICOU SOZINHA NA
+        SUA. Duas coisas obrigaram-no, e as duas foram medidas. A primeira: um
+        `<ValorDaProva>` É uma ligação, e metê-lo dentro do `<a>` da porta punha
+        uma âncora dentro de outra, que a Emenda 2 proíbe. A segunda: mesmo
+        irmãs, as duas ligações ficavam a um espaço uma da outra na mesma fila, e
+        a régua B10 mediu as suas áreas de toque sobrepostas — que é uma porta a
+        abrir o destino do vizinho (ISSUES I13). A contagem é uma contagem do
+        livro-razão e vai com as outras; a porta é uma porta e leva a sua fila. */}
+    <p class="rodape-nav" style="margin-top:10px">
+      <a href={routePath('livroConcelhos', lang)}>{s.livro.concelhosPorta} →</a>
     </p>
   </div>
 

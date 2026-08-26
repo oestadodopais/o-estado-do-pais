@@ -318,6 +318,34 @@ export const INTERNAL_SOURCES = [
       en: 'Institutional indicator framework, read directly from source',
     },
   },
+  {
+    /**
+     * OS 308 CONCELHOS (bloco dos 308, contrato §1 com o motor).
+     *
+     * Também não é um apuramento próprio: as medidas são as que o INE, a DGAL e
+     * o IEFP publicam por concelho, lidas directamente na fonte, e a
+     * proveniência de cada linha diz qual. Entra aqui, e não em `WORKS`, porque
+     * `WORKS` é o ARQUIVO — trabalhos com documento publicado, edições, data e
+     * página própria em `/estudos`. Este não tem documento nenhum: é o
+     * identificador que o campo `study` de cada uma das linhas dos concelhos
+     * traz, e a sua superfície é a página do conjunto em `/livro-razao/concelhos`.
+     * Metê-lo em `WORKS` punha no arquivo um trabalho sem texto e mudava as
+     * contagens `estudos_no_arquivo` e `edicoes_no_arquivo`, que são a
+     * aritmética de outras linhas do livro-razão.
+     */
+    id: 'concelhos-2026',
+    /* O TÍTULO NÃO LEVA A CONTAGEM, E FOI O PORTÃO QUE O DECIDIU. O brief
+       propunha «Concelhos: as medidas centrais dos 308», «ou melhor»: o «308» é
+       um algarismo do próprio sítio numa cadeia sem porta, e a IDENTIDADE §10
+       exige que um número da casa entre por `data-prova`, com quem o reconte.
+       O portão fechou a construção nas duas edições, com o título dentro do
+       `<h1>` da página do conjunto e dentro de cada selo. A contagem vive onde
+       tem porta, na linha das três chaves da prova, por baixo do título. */
+    label: {
+      pt: 'Concelhos: as medidas centrais',
+      en: 'Municipalities: the central measures',
+    },
+  },
 ];
 
 /** Todas as edições, em lista plana — é isto que o arquivo mostra. */

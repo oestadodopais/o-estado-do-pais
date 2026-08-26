@@ -1,0 +1,239 @@
+---
+/**
+ * O LIVRO-RAZÃO DO CONJUNTO DOS CONCELHOS — `/livro-razao/concelhos`.
+ *
+ * ---------------------------------------------------------------------------
+ * PORQUE É UMA PÁGINA À PARTE (decisão D6 do diretor, 26.08.2026)
+ * ---------------------------------------------------------------------------
+ * O índice do livro-razão lista todas as linhas numa página, e com as medidas
+ * dos 308 concelhos passaria de 136 entradas para cerca de 2 570. Uma lista de
+ * 2 570 entradas não é um índice: é um ficheiro, e o ficheiro já existe, em CSV
+ * e em JSON. As linhas do estudo dos concelhos saem do índice principal para
+ * aqui; o índice principal leva a porta desta página, e o CSV e o JSON
+ * continuam a incluir tudo. O que muda é por onde se chega, não o que existe.
+ *
+ * ---------------------------------------------------------------------------
+ * A PESQUISA É A DA CASA, E É A MESMA PEÇA
+ * ---------------------------------------------------------------------------
+ * `components/inicio/Pesquisa.astro`, com a mesma caixa, a mesma lista de 308
+ * resultados já rendidos pelo servidor e as mesmas duas palavras de cobertura.
+ * O que muda é o DESTINO de um resultado: aqui, a âncora do grupo daquele
+ * concelho nesta mesma página. Uma segunda pesquisa escrita ao lado desta seria
+ * uma segunda lista de nomes para o portão conferir.
+ *
+ * Sem script a caixa não se rende, e é a regra escrita na peça: uma caixa de
+ * pesquisa que não pesquisa é pior do que nenhuma. Sem script, esta página é a
+ * lista por concelho, inteira, com as suas âncoras.
+ *
+ * ---------------------------------------------------------------------------
+ * AS CONTAGENS SÃO CHAVES DA PROVA, E COMEÇAM EM ZERO
+ * ---------------------------------------------------------------------------
+ * «N linhas · N concelhos · N com proveniência completa»: as três entram por
+ * `data-prova`, o portão reconta-as por conta própria e cada uma leva a sua
+ * porta. Enquanto o exportador do motor não escrever as linhas, as três são
+ * zero e a página rende-se vazia — que é o estado desenhado (IDENTIDADE §7) e
+ * não uma página por escrever: a lista diz que não tem linhas, e a contagem
+ * di-lo pelo número.
+ */
+import Base from '../layouts/Base.astro';
+import Claim from '../components/Claim.astro';
+import CampoDaLinha from '../components/CampoDaLinha.astro';
+import ValorDaProva from '../components/ValorDaProva.astro';
+import Pesquisa from '../components/inicio/Pesquisa.astro';
+import { linhasDosConcelhos, ESTUDO_DOS_CONCELHOS } from '../lib/livro-concelhos.mjs';
+import { provenienciaIncompleta } from '../lib/ledger.mjs';
+import { concelhos as concelhosDaCarta } from '../lib/inicio.mjs';
+import { studyLabel } from '../data/studies.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { prova } from '../lib/prova.mjs';
+import { t } from '../i18n/strings.mjs';
+import '../styles/linha.css';
+import '../styles/municipio.css';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+const p = prova(lang);
+const path = routePath('livroConcelhos', lang);
+
+const { grupos, naoDeclaradas } = linhasDosConcelhos();
+
+/** A âncora do grupo de um concelho: o seu slug, e mais nada. */
+const ancoraDoConcelho = (slug) => `concelho-${slug}`;
+
+/* Os concelhos que têm grupo nesta página, para a pesquisa saber o que abrir. A
+   lista é a da Carta, a mesma que a primeira página e o índice dos 308 usam; o
+   que muda de página para página é o destino, e é a função que o decide. */
+const comGrupo = new Set(grupos.map((g) => g.slug));
+const resultados = concelhosDaCarta().map((c) => ({
+  ...c,
+  /* `pagina` é o que a peça lê para decidir se um resultado é porta. Nesta
+     página a pergunta não é «tem página?» mas «tem linhas aqui?», e é essa que
+     tem de ser respondida: um resultado que abrisse uma âncora inexistente era
+     uma porta falsa. */
+  pagina: comGrupo.has(c.slug) ? c.pagina : null,
+}));
+const destinoDoConcelho = (c) => (comGrupo.has(c.slug) ? `#${ancoraDoConcelho(c.slug)}` : null);
+---
+
+<Base
+  lang={lang}
+  path={path}
+  title={s.livroConcelhos.metaTitle}
+  description={s.livroConcelhos.metaDescription}
+>
+  <div class="linha-cabeca">
+    <span class="eyebrow">{s.livro.eyebrow}</span>
+    <h1>{studyLabel(ESTUDO_DOS_CONCELHOS, lang)}</h1>
+    <p class="lede" style="margin-top:16px">{s.livroConcelhos.lede}</p>
+    <p class="livro-contas">
+      <ValorDaProva chave="concelhos_linhas" item={p.concelhos_linhas} lang={lang} />
+      {' '}{s.livroConcelhos.contaLinhas}
+      {' · '}
+      <ValorDaProva chave="concelhos_no_livro" item={p.concelhos_no_livro} lang={lang} />
+      {' '}{s.livroConcelhos.contaConcelhos}
+      {' · '}
+      <ValorDaProva
+        chave="concelhos_linhas_completas"
+        item={p.concelhos_linhas_completas}
+        lang={lang}
+      />
+      {' '}{s.livroConcelhos.contaCompletas}
+    </p>
+  </div>
+
+  <div class="linha">
+    <div class="linha-corpo">
+      <div class="concelhos-pesquisa" data-pesquisa-bloco hidden>
+        <Pesquisa s={s} concelhos={resultados} destino={destinoDoConcelho} />
+      </div>
+
+      {
+        grupos.length === 0 ? (
+          /* O ESTADO VAZIO, DESENHADO (IDENTIDADE §7). Nem uma caixa em branco
+             nem uma página que não existe: a lista diz que ainda não tem linhas,
+             e a contagem por cima di-lo pelo número. */
+          <p class="log-vazio-v">{s.livroConcelhos.vazioV}</p>
+        ) : (
+          grupos.map((g) => (
+            <section
+              class="linha-bloco"
+              id={ancoraDoConcelho(g.slug)}
+              data-concelho-grupo={g.slug}
+              aria-labelledby={`k-${ancoraDoConcelho(g.slug)}`}
+            >
+              <h2 class="linha-bloco-titulo livro-grupo-k" id={`k-${ancoraDoConcelho(g.slug)}`}>
+                <a href={routePath('municipio', lang, { slug: g.slug })}>
+                  {g.nome[lang] ?? g.nome.pt}
+                </a>
+              </h2>
+              <div class="livro-lista">
+                {g.linhas.map((c) => (
+                  <div
+                    class="livro-item"
+                    data-estado={provenienciaIncompleta(c) ? 'por-confirmar' : 'completa'}
+                  >
+                    {/* A mesma linha-espécime do índice principal: os mesmos
+                        campos, sempre pela mesma ordem e sempre nas mesmas
+                        posições. Um campo que a linha não tem não se rende. */}
+                    <span class="livro-item-valor">
+                      <Claim id={c.id} lang={lang} as="span" class="livro-item-num" chip={true} />
+                    </span>
+                    <div class="livro-item-corpo">
+                      <code class="livro-item-id" data-linha-claim={c.id} data-linha-campo="id">
+                        {c.id}
+                      </code>
+                      <div class="livro-item-meta">
+                        <CampoDaLinha
+                          id={c.id}
+                          campo="unit"
+                          valor={c.unit}
+                          lang={lang}
+                          class="livro-item-unidade"
+                          originalPt={true}
+                        />
+                        {c.source !== null && c.source !== undefined && (
+                          <span class="livro-item-campo">
+                            <span class="livro-item-k">{s.prov.fonte}</span>{' '}
+                            <CampoDaLinha id={c.id} campo="source" valor={c.source} lang={lang} />
+                          </span>
+                        )}
+                        {c.access_date !== null && c.access_date !== undefined && (
+                          <span class="livro-item-campo">
+                            <span class="livro-item-k">{s.prov.lido}</span>{' '}
+                            <CampoDaLinha
+                              id={c.id}
+                              campo="access_date"
+                              valor={c.access_date}
+                              lang={lang}
+                            />
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          ))
+        )
+      }
+
+      {/* AS LINHAS QUE NENHUM CONCELHO DECLARA (IDENTIDADE §7). Uma linha deste
+          estudo cujo id não conste da entrada de nenhum concelho existe e não
+          tem grupo: em vez de desaparecer da página, fica aqui, contada. É a
+          medida exacta do que o exportador escreveu e o sítio ainda não lê. */}
+      {naoDeclaradas.length > 0 && (
+        <section class="linha-bloco" aria-labelledby="nao-declaradas">
+          <h2 class="linha-bloco-titulo livro-grupo-k" id="nao-declaradas">
+            {s.livroConcelhos.naoDeclaradasK}
+          </h2>
+          <div class="livro-lista">
+            {naoDeclaradas.map((c) => (
+              <div
+                class="livro-item"
+                data-estado={provenienciaIncompleta(c) ? 'por-confirmar' : 'completa'}
+              >
+                <span class="livro-item-valor">
+                  <Claim id={c.id} lang={lang} as="span" class="livro-item-num" chip={true} />
+                </span>
+                <div class="livro-item-corpo">
+                  <code class="livro-item-id" data-linha-claim={c.id} data-linha-campo="id">
+                    {c.id}
+                  </code>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+    </div>
+
+    <aside class="aparelho" aria-labelledby="aparelho">
+      <h2 class="aparelho-titulo" id="aparelho">{s.livro.seloK}</h2>
+      <ul class="aparelho-selos">
+        <li>
+          <span class="src-chip src-chip-amostra" aria-hidden="true"></span>
+          <span>{s.livro.seloCheio}</span>
+        </li>
+        <li>
+          <span class="src-chip src-chip-amostra is-unverified" aria-hidden="true"></span>
+          <span>{s.livro.seloTracejado}</span>
+        </li>
+      </ul>
+
+      {/* O CONJUNTO DE DADOS NÃO SE REPETE AQUI, e é decisão. Ele leva TUDO — a
+          separação destas páginas é de leitura e não de conteúdo — e o bloco que
+          o oferece tem dois estados, com licença decidida e sem ela. Dois blocos
+          a dizer a mesma coisa em dois estados são dois sítios para divergirem;
+          o bloco fica no índice, e a porta de volta a ele é a primeira saída. */}
+
+      <p class="rodape-nav aparelho-saidas">
+        <a href={routePath('livro', lang)}>{s.livroConcelhos.voltarLivro}</a>
+        <a href={routePath('municipios', lang)}>{s.livroConcelhos.indiceLink}</a>
+        <a href={`${routePath('metodo', lang)}#livro-razao`}>{s.livro.metodoLink}</a>
+      </p>
+    </aside>
+  </div>
+
+  <script src="/js/municipios.js" defer is:inline></script>
+</Base>

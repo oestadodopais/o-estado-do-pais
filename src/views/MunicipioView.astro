@@ -1064,9 +1064,14 @@ const metodoPath = routePath('metodo', lang);
 
       <PortaDeCorreccoes lang={lang} class="aparelho-bloco" />
 
+      {/* AS SAÍDAS (E1 do bloco dos 308). A segunda passa a abrir a página do
+          CONJUNTO dos concelhos, e não o índice do livro-razão inteiro: é lá que
+          estão as linhas de que esta página é feita, com a pesquisa por concelho
+          e a lista por concelho. Quem quiser o livro-razão inteiro chega lá dessa
+          página, que é a primeira saída dela. */}
       <p class="rodape-nav aparelho-saidas">
         <a href={routePath('municipios', lang)}>{s.municipio.voltarMapa}</a>
-        <a href={routePath('livro', lang)}>{s.livro.eyebrow}</a>
+        <a href={routePath('livroConcelhos', lang)}>{s.livro.eyebrow}</a>
         <a href={`${metodoPath}#livro-razao`}>{s.livro.metodoLink}</a>
       </p>
     </aside>

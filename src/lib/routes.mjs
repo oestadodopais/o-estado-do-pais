@@ -98,6 +98,22 @@ export const ROUTES = {
    */
   agenda: { pt: '/agenda', en: '/en/agenda' },
   livro: { pt: '/livro-razao', en: '/en/ledger' },
+  /**
+   * O LIVRO-RAZÃO DO CONJUNTO DOS CONCELHOS (decisão D6 do diretor, 26.08.2026).
+   *
+   * O índice do livro-razão rende todas as linhas numa página. Com as linhas dos
+   * 308 concelhos, essa página passaria de 136 para cerca de 2 570 entradas, e
+   * uma lista de 2 570 entradas não é um índice: é um ficheiro. As linhas do
+   * estudo dos concelhos saem para aqui, com a pesquisa por concelho e a lista
+   * por concelho; o índice principal fica com as dos outros estudos e leva a
+   * porta para esta página. As páginas de linha, o CSV e o JSON continuam a
+   * incluir tudo: o que muda é por onde se chega, não o que existe.
+   *
+   * É uma rota LITERAL, e `matchPath()` resolve as literais antes das que têm
+   * parâmetro — sem isso, `/livro-razao/concelhos` casaria com `linha` e o
+   * portão pedia-lhe o recibo de uma afirmação chamada «concelhos».
+   */
+  livroConcelhos: { pt: '/livro-razao/concelhos', en: '/en/ledger/municipalities' },
   linha: { pt: '/livro-razao/:slug', en: '/en/ledger/:slug' },
   /**
    * A página do marcador. IDENTIDADE §6 promete «uma página que o explica» e

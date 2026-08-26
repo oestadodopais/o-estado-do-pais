@@ -130,9 +130,6 @@ const parcelas = [
 const resultados = concelhosDaCarta();
 const destinoDoConcelho = (c) =>
   c.pagina ? routePath('municipio', lang, { slug: c.pagina.slug }) : null;
-
-/** Os que têm página, na ordem da Carta, para a secção que os lista primeiro. */
-const comPagina = resultados.filter((c) => c.pagina);
 ---
 
 <Base
@@ -200,30 +197,15 @@ const comPagina = resultados.filter((c) => c.pagina);
     </p>
   </div>
 
-  {/* OS CONCELHOS COM PÁGINA, PRIMEIRO (item C4). Uma secção com o mesmo
-      desenho de um grupo de distrito, e as mesmas duas palavras de estado: o
-      que muda é o critério do grupo, que aqui é a cobertura e ali é a Carta. A
-      lista inteira por distritos fica por baixo, como está, e Évora aparece nas
-      duas, porque é a mesma porta, e escondê-la do seu distrito seria mentir sobre
-      onde ela fica. */}
-  <div class="concelhos concelhos-primeiro">
-    <section class="concelhos-grupo" aria-labelledby="com-pagina">
-      <h2 class="concelhos-grupo-k" id="com-pagina">{s.municipios.comPaginaK}</h2>
-      <ul class="concelhos-lista">
-        {comPagina.map((c) => (
-          <li class="concelho concelho-com-pagina">
-            <a href={routePath('municipio', lang, { slug: c.pagina.slug })}>
-              {c.pagina.nome[lang] ?? c.pagina.nome.pt}
-            </a>
-            <span class="concelho-estado">
-              <span data-cobertura="com-pagina">{s.cobertura.temPagina}</span> →
-            </span>
-          </li>
-        ))}
-      </ul>
-    </section>
-  </div>
-
+  {/* A SECÇÃO «COM PÁGINA» SAIU (bloco dos 308, P2). Existia desde o item C4
+      porque um concelho em 308 tinha página e a lista era «um directório quase
+      todo morto»: sem ela, chegar a esse um era varrer 308 nomes. Com os 308
+      construídos, uma secção que repete a lista inteira por cima da lista
+      inteira deixa de separar coisa nenhuma — passava a ser a mesma lista duas
+      vezes, com dois títulos e o dobro das portas. O que fica é o índice: a
+      pesquisa em cima, a linha de cobertura com as suas duas contagens, e a
+      lista por distrito, que é a ordem da Carta. As duas palavras de estado
+      ficam onde sempre estiveram, na linha de cada concelho. */}
   <div class="concelhos">
     {
       comEntradas.map((g) => (
