@@ -91,6 +91,33 @@ export function linhasDosConcelhos() {
  *               confirmar. É a mesma conta do índice principal, sobre este
  *               subconjunto.
  */
+/**
+ * As linhas de UM concelho, na ordem em que a entrada dele as declara.
+ *
+ * A ordem não é a alfabética do id: é a das oito medidas da Emenda 14, mais o
+ * limite da dívida no fim, que é a referência da peça do índice. A página do
+ * concelho mostra as medidas por essa ordem, e a página do livro-razão dele
+ * mostra as linhas pela mesma: são a mesma coisa vista de dois lados.
+ *
+ * @param {object} municipio  o registo de `municipios.mjs`
+ */
+export function linhasDeUmConcelho(municipio) {
+  const doEstudo = new Map(
+    allClaims()
+      .filter((c) => c.study === ESTUDO_DOS_CONCELHOS)
+      .map((c) => [c.id, c]),
+  );
+  const vistas = new Set();
+  const linhas = [];
+  for (const id of idsDoConcelho(municipio)) {
+    const linha = doEstudo.get(id);
+    if (!linha || vistas.has(id)) continue;
+    vistas.add(id);
+    linhas.push(linha);
+  }
+  return linhas;
+}
+
 export function contagensDosConcelhos() {
   const { linhas, grupos, completas } = linhasDosConcelhos();
   return { linhas: linhas.length, concelhos: grupos.length, completas };

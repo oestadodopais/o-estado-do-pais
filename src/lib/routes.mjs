@@ -114,6 +114,22 @@ export const ROUTES = {
    * portão pedia-lhe o recibo de uma afirmação chamada «concelhos».
    */
   livroConcelhos: { pt: '/livro-razao/concelhos', en: '/en/ledger/municipalities' },
+  /**
+   * A PÁGINA DO LIVRO-RAZÃO DE UM CONCELHO (decisão do diretor, 26.08.2026).
+   *
+   * A página do conjunto era uma só, com as 2 416 linhas do estudo: medida, tinha
+   * 227 008 px de altura a 1280, e a decisão D6 tinha tirado essas linhas do
+   * índice principal precisamente porque 2 500 linhas numa página não se leem.
+   * Passa a haver uma página por concelho, com as linhas desse concelho, e
+   * `/livro-razao/concelhos` passa a ser o índice dos 308.
+   *
+   * O gabarito tem DOIS segmentos depois de `/livro-razao/`, e por isso não
+   * colide com `linha`, cujo `:slug` casa com um segmento e mais nada.
+   */
+  livroConcelho: {
+    pt: '/livro-razao/concelhos/:slug',
+    en: '/en/ledger/municipalities/:slug',
+  },
   linha: { pt: '/livro-razao/:slug', en: '/en/ledger/:slug' },
   /**
    * A página do marcador. IDENTIDADE §6 promete «uma página que o explica» e
