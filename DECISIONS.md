@@ -10644,6 +10644,116 @@ as duas frases de contexto do painel e a dobra dos nove dentro do limiar
 (decisão 4, à espera das palavras do diretor); a página de cada concelho
 (decisão 5); as áreas de governo (decisão 6); o mapa por distritos (decisão 1).
 
+### 1.67 O mapa da primeira página é navegação: a retirada da vista de escolha
+
+**Afecta:** nenhum
+
+Decisão do diretor a **26.08.2026**, depois de ver o mapa da primeira página no
+computador: **«so let's do this»**, sobre a proposta de tirar a vista de escolha
+inteira. As palavras com que ele descreveu o que viu estão na Emenda 19 de
+`design/especime-v3/direcao.md`: «um ponto em que se carrega e não acontece nada;
+uma vista que sai do lugar e da escala, em que a roda do rato só faz crescer o
+mapa e a página continua a mostrar o país».
+
+A emenda fixa a regra em cinco alíneas: (a) um concelho vive na sua página e só
+lá, e os estados `?ambito=municipio:<slug>` deixam de existir; (b) o mapa da
+primeira página é navegação e mais nada; (c) «Concelho» abre a pesquisa nas duas
+larguras e não muda o mapa, a cabeça nem o painel; (d) o cartão localizador fica
+na página do concelho; (e) nas zonas densas a ligação num ponto não chega, e o
+caminho é a pesquisa até haver o mapa por distritos.
+
+A razão de sair em vez de se afinar está escrita na emenda e é uma conta de
+trabalho: a vista, o crescimento e a lente eram o mecanismo para escolher um
+concelho dentro da primeira página quando nenhum concelho tinha página; com as
+páginas dos 308 decididas (decisão 5B de 25.08), o mecanismo já não tem trabalho.
+
+Seis itens, com as provas em `tests/inicio/mapa-navegacao.mjs` (onze réguas, cada
+uma vista vermelha com um estrago plantado e verde depois de reposto). Os números
+do antes e do depois estão em `design/especime-v3/notas/mapa-navegacao.md`, e as
+capturas em `design/especime-v3/capturas/mapa-navegacao-2026-08-26/`.
+
+**N1 · os estados `municipio:<slug>` saem do esquema.** O esquema fica
+`?ambito=pais | municipio | regiao:<slug>` e `?densidade=relance | leitura`. Um
+endereço antigo continua a abrir alguma coisa, que é o que a Emenda 7 promete:
+`location.replace` para a página do concelho quando o ponto tem
+`data-pagina="sim"`, e para o índice dos 308 quando não tem. Os dois destinos são
+LIDOS do documento (o `href` da ligação daquele ponto, e o `href` do comando
+«Concelho»), e não montados no cliente. Medido nas duas edições:
+`/?ambito=municipio:evora` abre `/municipios/evora` e `/en?ambito=municipio:evora`
+abre `/en/municipalities/evora`; `municipio:braganca` abre `/municipios` e
+`/en/municipalities`; um slug que não existe e o prefixo nu continuam a cair no
+defeito em silêncio. Com o estado saem os dois blocos de cabeça de concelho, os
+dois painéis (o de Évora, que era a página dele rendida outra vez aqui, e o do
+concelho sem linhas com as oito peças vazias), os `data-slot`, o prefixo do
+distrito, `medidasSemLinha`, `primeiroSemPagina` e nove cadeias de `strings.mjs`
+nas duas edições, registadas em `CHAVES-EN.md`.
+
+**N2 · a vista de escolha sai: nem crescimento, nem lente, nem «fechar».** As
+nove regras de `[data-inicio][data-ambito='municipio']` do `@media (min-width:
+641px)` saem, e com elas `.mapa-fechar`. De `public/js/inicio.js` sai a lente
+inteira: `amp`, `amplia()`, `repoeAmpliacao()`, `prendeAmpliacao()`,
+`escreveAmpliacao()`, `paraTela()`, `podeAmpliar()`, `pontoEAlvo()`, os ouvintes
+`wheel`, `touchstart`, `touchmove`, `touchend` e `dblclick`, os 308 ouvintes de
+clique nas áreas de toque, `[data-trocar]` e a saída da vista (Escape e
+«fechar»). O ficheiro passa de **1 001 para 800 linhas** (781 no commit da
+retirada; as dezanove que voltaram são o comentário da correção do Enter, no
+commit das réguas). Medido a 1280, 1512 e
+2000, nas duas edições: o mapa mede **490 × 645,2 px** no país e os mesmos 490 ×
+645,2 com a pesquisa aberta, onde media **1 092 × 1 438**; cinco entalhes da roda
+com o cursor no meio do mapa **rolam a página** (`scrollY` 489 → 989 a 1280), e
+nenhum nó do mapa tem `transform`. As 308 áreas de toque saem do SVG, porque nada
+as ouvia, e o grupo que a lente movia sai com elas.
+
+**N3 · «Concelho» abre a pesquisa nas duas larguras.** O que o item A1 fez para o
+telemóvel passa a valer acima de 640. Medido nas duas larguras e nas duas
+edições: o clique leva o endereço a `?ambito=municipio`, põe `#pesquisa` dentro do
+ecrã, o foco em `#pesquisa-concelho` e o anúncio na região viva; a cabeça e o
+painel continuam a ser os do país; «País» fecha e volta a `/`. Sem script, os dois
+comandos continuam a ser ligações para `/` e `/municipios`. **O foco no
+computador já lá estava** e não foi preciso acrescentá-lo: `vai()` levava-o ao
+campo desde o item A1, e a régua de 25.08 só o media a 390. O que este item traz é
+a prova nas duas larguras.
+
+**N4 · o mapa é navegação, e o ponto passa a apanhar o clique.** Um ponto com
+página continua a ser uma ligação com o seu `<title>` (A5), o nome continua a
+ler-se ao passar o rato e pelo teclado para os 308, e as setas continuam a
+percorrer o mapa: é o «passar o rato» do teclado, e sobreviveu limpo sem a vista.
+O Enter num ponto com página abre a página dele, com o `href` que o servidor
+escreveu; num ponto sem página não faz nada. **Uma correção medida entrou por
+aqui:** um clique no CENTRO do ponto de Évora não abria nada, porque um
+`<circle>` com `fill: none` só recebe eventos onde está pintado, e o traço tem
+1,2 px; `.mun-porta .mun { pointer-events: all }` faz do disco inteiro o alvo sem
+pintar um pixel. O alvo mede **7,35 × 7,35 px** na coluna, e isso fica registado
+em vez de arredondado: é o tamanho do ponto, e a Emenda 19e diz que o caminho das
+zonas densas é a pesquisa (ISSUES I70).
+
+**N5 · a régua do inventário.** `INVENTARIO-FRASES.md` perde 25 das 65 linhas da
+rota `home`: dez deixaram de ser rendidas em rota nenhuma, quinze mudaram para a
+tabela de `/municipios/evora`, e duas mudaram de texto (a descrição acessível do
+mapa perdeu a terceira frase). `node scripts/medir-defeitos.mjs` lê **16 blocos
+distintos, autorreferência 0** nas duas edições da rota `home`, e **zero blocos
+por classificar em rota nenhuma**.
+
+**N6 · as réguas.** `tests/inicio/mapa-navegacao.mjs` é nova, com onze réguas e
+código de saída. `tests/inicio/matriz.mjs` desce de 92 para **86 células**: as da
+vista e dos estados de concelho saem ou mudam de superfície (o anel e a postura
+de localizador passam a medir-se em `/municipios/evora`, o rótulo do distrito na
+leitura em voz alta do mapa), e entra uma que mede a densidade que a Emenda 19e
+nomeia. `tests/inicio/capturas.mjs` fica com cinco estados;
+`tests/inicio/correcoes-a.mjs` continua **32 de 32** com uma linha mudada (o
+estado de concelho saiu da lista da célula C1, porque um reencaminhamento a meio
+de um `evaluate` destrói o contexto de execução). `scripts/gate-html.mjs` não
+mudou: **não tem conferência nenhuma presa aos blocos da primeira página**
+(medido: `grep -n "data-cabeca\|data-painel" scripts/gate-html.mjs` não dá
+nenhuma linha), e as **41 chaves da prova** continuam todas contadas.
+
+**O que fica, e é o que a decisão 5B vai preencher:** as páginas dos 308, que são
+o destino que o mapa passa a ter para cada ponto, e o mapa por distritos (decisão
+1B), que é o que resolve as zonas densas nos dois aparelhos. Até lá, o caminho
+para um concelho que não seja Évora é a pesquisa, nas duas larguras, e o índice
+dos 308.
+
+
 ## 4. O registo dos defeitos e dos adiamentos
 
 **Defeito registado 2026-08-16 (00:10), encontrado pela direcção no sítio no ar — RESOLVIDO na mesma noite (§1.37, no ar em `4217232`):** os selos acrescentados a 15.08 aos valores do cabeçalho da primeira página (308 · 11 · 15) rendem no cabeçalho com o rótulo inteiro do estudo («O Estado do País — apuramento próprio») e, no caso da contagem CAOP, com o marcador «[a verificar]» ao lado. Certo pela regra (todo o valor tem selo, para a sua linha), errado naquele sítio: no cabeçalho o selo deve ser só o glifo, com o rótulo apenas para leitores de ecrã. **Primeiro item do bloco V**, junto com a saída de «Edição de …», da introdução justificativa da primeira página e de «Estes indicadores não são escolha nossa…» (voz). Sem alteração ao portão: o selo continua ao pé do valor e a apontar para a linha própria.
