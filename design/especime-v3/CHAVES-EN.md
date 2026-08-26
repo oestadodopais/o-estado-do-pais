@@ -651,3 +651,29 @@ yet.») perdeu a superfície a 26.08, quando a página do conjunto passou a ser 
 a rende. Uma cadeia sem superfície é uma promessa que ninguém pode ler, e sai em
 vez de receber texto novo. As duas declarações dela saem também do inventário,
 pela regra escrita ali: uma frase corrigida não continua declarada.
+
+## Bloco «A grelha da voz» · G5, a voz de Évora e o rótulo da camada, 26.08.2026
+
+**Nenhuma chave nova, e uma que sai.** O G5 tirou orações a cadeias que já
+existiam, nas duas edições, pela decisão do diretor de 26.08: as frases em que a
+página fala de si saem, a ressalva factual fica, e as citações do trabalho 06
+ficam como citações.
+
+| onde | pt | en |
+|---|---|---|
+| `municipio.contasDivergenciaV` | A Direção-Geral das Autarquias Locais e o município publicam a dívida do mesmo ano com uma diferença. A diferença é pequena. | The local-government directorate and the municipality publish the same year’s debt with a difference between them. The difference is small. |
+| `municipio.excessoV` | …que já não são excesso mas capacidade de endividamento. | …and a negative there is no longer excess but borrowing capacity. |
+| `metodo` de Évora · «Não existe PIB municipal» | Nenhuma fonte publica um produto interno bruto para um concelho. O que existe é o registo empresarial… | No source publishes a gross domestic product for a municipality. What does exist is the business register… |
+| `metodo` de Évora · «Duas das oito medidas…» | A execução da receita e o prazo médio de pagamento são lidos da prestação de contas do próprio município. As duas vozes de fora sobre estas contas são a opinião assinada do auditor e a série anual da Direção-Geral das Autarquias Locais. | Revenue execution and the average payment time are read from the municipality’s own accounts. The two outside voices on these accounts are the auditor’s signed opinion and the local-government directorate’s annual series. |
+| `metodo` de Évora · «Duas vozes de fora, não uma» | …o mesmo conceito legal de dívida que o relatório usa, compilada do lado de fora. | …the same legal debt concept the report uses, compiled from outside. |
+| `metodo` de Évora · «Nenhuma fonte publica dinheiro por pelouro» | As contagens de pelouros são designações, não despesa. A correspondência… é declarada por ele como sua e não como oficial. | The portfolio counts are designations, not spending. The mapping… is declared by it as its own and not as official. |
+| `reguladorNota` do mandato de 2009–2013 | A série anual da Direção-Geral das Autarquias Locais começa depois deste mandato. | The local-government directorate’s annual series begins after this term. |
+
+**Uma chave sai, nas duas edições.** `estudos.leituraBreveRotulo` («Leitura breve ·
+prosa da casa, assente numa frase do trabalho» / «Brief reading · house prose,
+resting on a sentence of the study») dizia de que género é o texto que a camada
+traz e em que é que ele assenta, que é a página a explicar-se. O gabarito passou
+a ler `estudos.leituraBreveK` («Leitura breve» / «Brief reading»), que já existia
+em `strings.mjs` e não se rendia em lado nenhum. Que a frase é da casa continua
+conferível onde é prova: cada número dela leva selo, e uma descrição transcrita
+leva `data-verbatim`.
