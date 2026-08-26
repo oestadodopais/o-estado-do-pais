@@ -113,7 +113,13 @@ const escolha = escolhido ? (concelhos.find((c) => c.slug === escolhido) ?? null
    `/municipios`, que é a página onde os 308 estão e onde se escolhe um. A porta
    só se rende no cartão localizador, que vive na página do concelho: trocar de
    concelho a partir de lá é ir à lista, e a lista é uma página inteira que
-   funciona sem script nenhum. */
+   funciona sem script nenhum.
+
+   `data-trocar` FICA, e deixou de ser o que era: era a marca por onde o script
+   da primeira página intercetava esta porta sem recarregar nada, e a primeira
+   página já não a rende nem a ouve. Fica a ser o que uma marca de dados também
+   pode ser, uma declaração: é por ela que a matriz encontra a porta e confere o
+   seu destino. */
 const rotaDaEscolha = routePath('municipios', lang);
 
 /* OS 308 PONTOS SÃO DO MESMO TAMANHO (Emenda 3), E TODOS VAZIOS (Emenda 10).

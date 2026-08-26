@@ -25,7 +25,8 @@ As capturas do antes e do depois estão em `../capturas/mapa-navegacao-2026-08-2
 |---|---|
 | `698c10f` | a vista sai inteira: o esquema, o mapa, a pesquisa, as cadeias, o inventário |
 | `d7df4da` | as réguas: a nova, a matriz reduzida, as capturas, a linha do C1 |
-| (o desta ficha) | a nota, a §1.67, o I51 fechado e o I70 aberto, e as dez capturas |
+| `eb01b93` | a §1.67, esta nota, o I51 fechado, o I70 aberto, e as dez capturas |
+| (o desta ficha) | o ramo morto da pesquisa, encontrado pela busca exaustiva da regra 16 |
 
 ## 2 · O que se mediu, antes e depois
 
@@ -80,6 +81,7 @@ Entra uma, de duas linhas: `.mun-porta .mun { pointer-events: all }`.
 * `MapaRespira.astro`: saem «fechar», o grupo `<g data-campo>` que a lente movia, o grupo `<g data-alvos>` com os 308 rectângulos, a porta `[data-so-evora]`, a dica de escolher e o `data-slot` do nome. `rotaDaEscolha` deixa de ser `/?ambito=municipio` e passa a ser o índice dos 308. O texto do cartão passa a construir-se só na postura de localizador, que é onde ele se vê.
 * `Cabeca.astro`: saem os blocos `evora` e `vazio`. Ficam seis, o país e as cinco regiões.
 * `HomeView.astro`: saem os dois painéis de concelho, `pecasDeEvora`, `medidasSemLinha`, `primeiroSemPagina` e `chaveDoConcelho`. Entra `destinoDoConcelho()`, que dá à pesquisa a mesma forma que `/municipios` já lhe dá.
+* `Pesquisa.astro`: o ramo do `<button data-escolher>` sai, e `destino` passa a ser obrigatória. Com as duas vistas a passarem `destino`, o botão era um segundo feitio sem quem o rendesse. Foi a busca exaustiva da regra 16 que o encontrou, depois de o resto do bloco estar feito: o `grep` por `data-escolher` deu uma linha de código a sério no meio de comentários. O documento construído não muda um byte, porque a primeira página já não tomava esse ramo.
 * `MunicipiosView.astro`: a nota sobre `/?ambito=municipio` passa a contar as três respostas que a porta teve, e por que razão a âncora `/#mapa` é a certa.
 
 ### As cadeias
