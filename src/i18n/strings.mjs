@@ -1019,7 +1019,7 @@ export const STRINGS = {
          duas primeiras orações; a terceira, que explica o índice, é a que já
          estava, palavra por palavra. */
       distanciaLegenda:
-        'O traço fino é a dívida total que o regulador publica para o concelho; a barra é a distância até ao limite legal do mesmo ano, que é o fio da direita. O índice mede uma contra o outro numa escala em que o teto é o valor permitido.',
+        'O traço fino é a dívida total que a Direção-Geral das Autarquias Locais publica para o concelho; a barra é a distância até ao limite legal do mesmo ano, que é o fio da direita. O índice mede uma contra o outro numa escala em que o teto é o valor permitido.',
       /* Pedaços de uma frase que o gabarito monta com as afirmações DESTE
          município. Nenhum id de afirmação se escreve aqui: isto é a língua,
          não os dados. */
@@ -1027,8 +1027,15 @@ export const STRINGS = {
       distanciaIndiceB: ' em ',
       distanciaIndiceC: ', contra um teto legal de ',
       distanciaIndiceD: '.',
+      /* A ÚLTIMA ORAÇÃO SAIU (item E10, P2). Dizia «É a lei que o define, não
+         este sítio.»: é o sítio a falar de si, que é a classe que a Emenda 15
+         tira da página do leitor, e rendia-se nas 616 páginas de concelho. O que
+         fica nomeia o que a coisa é: a lei, o artigo e a conta que ele manda
+         fazer. A frase que saiu fica declarada como autorreferência no
+         `INVENTARIO-FRASES.md`, para que a régua a apanhe pelo nome se alguém a
+         repuser. */
       distanciaLei:
-        'O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores. É a lei que o define, não este sítio.',
+        'O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores.',
       distanciaDivida: 'dívida',
       distanciaTecto: 'limite legal',
 
@@ -1052,8 +1059,8 @@ export const STRINGS = {
       contasPrazoMedioUnidade: 'dias',
       contasDivergenciaK: 'A diferença entre as duas contas da mesma dívida',
       contasDivergenciaV:
-        'O regulador e o município publicam a dívida do mesmo ano com uma diferença. A diferença é pequena, e mostra-se porque é o único sítio onde uma voz de fora e a voz do próprio medem a mesma coisa.',
-      contasDivergenciaRegulador: 'O regulador publica',
+        'A Direção-Geral das Autarquias Locais e o município publicam a dívida do mesmo ano com uma diferença. A diferença é pequena, e mostra-se porque é o único sítio onde uma voz de fora e a voz do próprio medem a mesma coisa.',
+      contasDivergenciaRegulador: 'A Direção-Geral publica',
       contasDivergenciaMunicipio: 'O município publica',
       contasDivergenciaDiferenca: 'Diferença',
 
@@ -1061,7 +1068,7 @@ export const STRINGS = {
       contasDivergenciaArredondada: '· a diferença é publicada arredondada ao euro; os dois valores acima diferem em cêntimos.',
       /* A frase da camada 2 do instrumento. Só os anos que a página publica:
          dizer «todos os anos» seria dizer mais do que se mostra. */
-      tempoSerieA: 'O índice de dívida do regulador desceu de ',
+      tempoSerieA: 'O índice de dívida da Direção-Geral desceu de ',
       tempoSerieB: ' em ',
       tempoSerieC: ' para ',
       tempoSerieD: ' em ',
@@ -1078,7 +1085,7 @@ export const STRINGS = {
       tempoHerdou: 'Herdou',
       tempoDecidiu: 'Decidiu',
       tempoDeixou: 'Deixou',
-      tempoRegulador: 'O regulador',
+      tempoRegulador: 'A Direção-Geral',
       tempoPelouros: 'Pelouros',
       tempoExecutivo: 'Executivo instalado',
       tempoContas: 'Contas do penúltimo ano',
@@ -1813,13 +1820,13 @@ export const STRINGS = {
 
       distanciaK: 'The debt against the legal ceiling',
       distanciaLegenda:
-        'The thin line is the total debt the regulator publishes for the municipality; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value.',
+        'The thin line is the total debt the local-government directorate publishes for the municipality; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value.',
       distanciaIndiceA: 'The index is ',
       distanciaIndiceB: ' in ',
       distanciaIndiceC: ', against a legal cap of ',
       distanciaIndiceD: '.',
       distanciaLei:
-        'The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue. The law defines it, not this site.',
+        'The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue.',
       distanciaDivida: 'debt',
       distanciaTecto: 'legal limit',
 
@@ -1839,14 +1846,14 @@ export const STRINGS = {
       contasPrazoMedioUnidade: 'days',
       contasDivergenciaK: 'The gap between the two accounts of the same debt',
       contasDivergenciaV:
-        'The regulator and the municipality publish the same year’s debt with a difference between them. The difference is small, and it is shown because it is the only place where an outside voice and the municipality’s own voice measure the same thing.',
-      contasDivergenciaRegulador: 'The regulator publishes',
+        'The local-government directorate and the municipality publish the same year’s debt with a difference between them. The difference is small, and it is shown because it is the only place where an outside voice and the municipality’s own voice measure the same thing.',
+      contasDivergenciaRegulador: 'The directorate-general publishes',
       contasDivergenciaMunicipio: 'The municipality publishes',
       contasDivergenciaDiferenca: 'Difference',
 
       tempoIndice: 'index',
       contasDivergenciaArredondada: '· the difference is published rounded to the euro; the two figures above differ by cents.',
-      tempoSerieA: 'The regulator’s debt index fell from ',
+      tempoSerieA: 'The directorate-general’s debt index fell from ',
       tempoSerieB: ' in ',
       tempoSerieC: ' to ',
       tempoSerieD: ' in ',
@@ -1860,7 +1867,7 @@ export const STRINGS = {
       tempoHerdou: 'Inherited',
       tempoDecidiu: 'Decided',
       tempoDeixou: 'Left',
-      tempoRegulador: 'The regulator',
+      tempoRegulador: 'The directorate-general',
       tempoPelouros: 'Portfolios',
       tempoExecutivo: 'Executive installed',
       tempoContas: 'Accounts of the year before last',
