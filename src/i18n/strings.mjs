@@ -606,13 +606,11 @@ export const STRINGS = {
       coberturaB: ' concelhos · ',
       fonteK: 'De onde vem a lista',
       mapaLink: 'O mapa dos concelhos',
-      /* O TÍTULO DA PRIMEIRA SECÇÃO DA LISTA (passo C, item C4; decisão 5 do
-         diretor). Os concelhos com página vêm primeiro, debaixo de um nome que
-         diz o que a secção tem; a lista inteira por distritos fica por baixo,
-         como está. As duas palavras do estado, «tem página» e «sem página
-         ainda», não mudam e continuam a ser as de `s.cobertura`: esta é o nome
-         de uma secção, e é por isso que é uma cadeia própria. */
-      comPaginaK: 'Com página',
+      /* A CHAVE `comPaginaK` SAIU (bloco dos 308, P2). Era o título da secção
+         que listava os concelhos com página antes da lista por distritos, e
+         existia porque um em 308 a tinha. Com os 308 construídos, essa secção
+         era a lista inteira repetida por cima da lista inteira, e saiu com o
+         seu título. As duas palavras do estado ficam em `s.cobertura`. */
       /* A CONTAGEM POR PARCELAS (Emenda 17; decisão 4 da direção, 21.08.2026;
          ISSUES I33). Vivia na ficha do mapa da primeira página, com o rótulo
          «Contagem verificada nos ficheiros», que é a casa a falar de si (Emenda
@@ -804,6 +802,27 @@ export const STRINGS = {
       caixaAssunto: 'Correção',
     },
 
+    /**
+     * O LIVRO-RAZÃO DO CONJUNTO DOS CONCELHOS (decisão D6 do diretor,
+     * 26.08.2026). O título da página é o nome do estudo, e vem de
+     * `src/data/studies.mjs`: escrevê-lo aqui outra vez seriam dois nomes para a
+     * mesma coisa. O que vive aqui são as palavras à volta das contagens e as
+     * portas de saída.
+     */
+    livroConcelhos: {
+      metaTitle: 'Concelhos · Livro-razão · O Estado do País',
+      metaDescription:
+        'As linhas do livro-razão com as medidas que as fontes centrais publicam para cada concelho, uma linha cada.',
+      lede: 'Uma linha por medida e por concelho, com o valor tal como a fonte o publicou, a unidade, quem o produziu e a data em que foi lido.',
+      contaLinhas: 'linhas',
+      contaConcelhos: 'concelhos',
+      contaCompletas: 'com proveniência completa',
+      vazioV: 'Ainda não há linhas deste estudo no livro-razão.',
+      naoDeclaradasK: 'Linhas sem concelho declarado',
+      voltarLivro: 'O livro-razão inteiro',
+      indiceLink: 'O índice dos concelhos',
+    },
+
     livro: {
       metaTitle: 'Livro-razão · O Estado do País',
       metaDescription:
@@ -838,6 +857,10 @@ export const STRINGS = {
          leva a sua porta. As palavras ao lado nomeiam o que é contado. */
       contaAfirmacoes: 'afirmações',
       contaDerivadas: 'calculadas',
+      /* A porta da página do conjunto dos concelhos, no índice. Nomeia o que
+         está do outro lado, e mais nada. */
+      contaConcelhos: 'linhas de concelhos',
+      concelhosPorta: 'Concelhos',
       /* A LEGENDA DO SELO PASSA A NOMEAR OS ESTADOS (direção, 21.08.2026).
          Dizia «Quadrado cheio: a proveniência está completa.» e «Quadrado a
          tracejado: falta pelo menos um campo, e a linha di-lo.» — duas frases a
@@ -1010,6 +1033,13 @@ export const STRINGS = {
       contasDivida: 'Dívida total',
       contasLimite: 'Limite de dívida',
       contasMargem: 'Margem de endividamento',
+      /* AS DUAS MEDIDAS QUE DESCERAM DAS PEÇAS (decisão D2 do diretor,
+         26.08.2026). Os rótulos são os nomes das duas medidas, sem uma palavra
+         nova: o que muda é o sítio onde se leem. A unidade dos dias fica ao pé
+         do valor, como o «€» dos campos de cima. */
+      contasExecucao: 'Execução da receita',
+      contasPrazoMedio: 'Prazo médio de pagamento',
+      contasPrazoMedioUnidade: 'dias',
       contasDivergenciaK: 'A diferença entre as duas contas da mesma dívida',
       contasDivergenciaV:
         'O regulador e o município publicam a dívida do mesmo ano com uma diferença. A diferença é pequena, e mostra-se porque é o único sítio onde uma voz de fora e a voz do próprio medem a mesma coisa.',
@@ -1506,7 +1536,6 @@ export const STRINGS = {
       coberturaB: ' municipalities · ',
       fonteK: 'Where the list comes from',
       mapaLink: 'The map of municipalities',
-      comPaginaK: 'With a page',
       parcelaContinente: 'Mainland',
       parcelaAcores: 'Azores',
       parcelaMadeira: 'Madeira',
@@ -1650,6 +1679,20 @@ export const STRINGS = {
       caixaAssunto: 'Correction',
     },
 
+    livroConcelhos: {
+      metaTitle: 'Municipalities · Ledger · O Estado do País',
+      metaDescription:
+        'The ledger rows with the measures central sources publish for each municipality, one row each.',
+      lede: 'One row per measure and per municipality, with the value as the source published it, the unit, who produced it and the date it was read.',
+      contaLinhas: 'rows',
+      contaConcelhos: 'municipalities',
+      contaCompletas: 'with complete provenance',
+      vazioV: 'There are no rows of this study in the ledger yet.',
+      naoDeclaradasK: 'Rows with no municipality declared',
+      voltarLivro: 'The whole ledger',
+      indiceLink: 'The index of municipalities',
+    },
+
     livro: {
       metaTitle: 'Ledger · O Estado do País',
       metaDescription:
@@ -1666,6 +1709,8 @@ export const STRINGS = {
       colunaSelo: 'Provenance',
       contaAfirmacoes: 'claims',
       contaDerivadas: 'calculated',
+      contaConcelhos: 'municipality rows',
+      concelhosPorta: 'Municipalities',
       seloK: 'The two states of the seal',
       seloCheio: 'provenance complete',
       seloTracejado: 'one field unconfirmed',
@@ -1772,6 +1817,9 @@ export const STRINGS = {
       contasDivida: 'Total debt',
       contasLimite: 'Debt limit',
       contasMargem: 'Borrowing margin',
+      contasExecucao: 'Revenue execution',
+      contasPrazoMedio: 'Average payment time',
+      contasPrazoMedioUnidade: 'days',
       contasDivergenciaK: 'The gap between the two accounts of the same debt',
       contasDivergenciaV:
         'The regulator and the municipality publish the same year’s debt with a difference between them. The difference is small, and it is shown because it is the only place where an outside voice and the municipality’s own voice measure the same thing.',

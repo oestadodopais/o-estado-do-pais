@@ -66,25 +66,37 @@ const nome = m.nome[lang] ?? m.nome.pt;
 /* --- a distância desenhada: a dívida contra o tecto legal ------------------
    A geometria sai dos dois valores do livro-razão. Nenhum número é escrito à
    mão aqui, nem sequer o comprimento da barra: se a linha for corrigida, o
-   desenho muda com ela. */
-const D = m.distancia;
-const divida = parsePtNumber(getClaim(D.valor).value);
-const limite = parsePtNumber(getClaim(D.limite).value);
+   desenho muda com ela.
+
+   SÓ COM AS DUAS LINHAS (bloco dos 308, P2). O desenho é uma distância entre
+   dois valores; com um deles em falta não há distância nenhuma para desenhar, e
+   uma barra contra uma referência que não existe seria uma medição inventada. O
+   concelho que não tenha as duas linhas não rende este bloco: as duas medidas
+   continuam a dizer-se nas suas peças, cheias ou vazias. */
+const D = m.distancia ?? {};
+const temDistancia = Boolean(D.valor && D.limite);
 const G = { W: 720, L: 10, R: 710, barY: 12, barH: 18 };
-const xDivida = G.L + Math.max(0, Math.min(1, divida / limite)) * (G.R - G.L);
+const divida = temDistancia ? parsePtNumber(getClaim(D.valor).value) : null;
+const limite = temDistancia ? parsePtNumber(getClaim(D.limite).value) : null;
+const xDivida = temDistancia
+  ? G.L + Math.max(0, Math.min(1, divida / limite)) * (G.R - G.L)
+  : null;
 
 /* A frase do índice: as palavras vêm da língua, as afirmações vêm deste
    município. Um id de afirmação escrito em `strings.mjs` prendia a edição
    inglesa a Évora — e o tipo de página é para os 308. */
-const indicePartes = [
-  s.municipio.distanciaIndiceA,
-  { claim: D.indice, sufixo: '%' },
-  s.municipio.distanciaIndiceB,
-  { ref: D.ref },
-  s.municipio.distanciaIndiceC,
-  { claim: D.tecto, sufixo: '%' },
-  s.municipio.distanciaIndiceD,
-];
+const temIndice = Boolean(D.indice && D.tecto);
+const indicePartes = temIndice
+  ? [
+      s.municipio.distanciaIndiceA,
+      { claim: D.indice, sufixo: '%' },
+      s.municipio.distanciaIndiceB,
+      { ref: D.ref },
+      s.municipio.distanciaIndiceC,
+      { claim: D.tecto, sufixo: '%' },
+      s.municipio.distanciaIndiceD,
+    ]
+  : null;
 
 /**
  * ---------------------------------------------------------------------------
@@ -108,16 +120,22 @@ const indicePartes = [
  * chamam agora a mesma função, e ela lê a medida que o concelho declara em
  * `distancia.indice` em vez de comparar com uma cadeia de Évora escrita à mão.
  */
+/**
+ * AS OITO, SEMPRE AS OITO, E PELA MESMA ORDEM (Emenda 14; bloco dos 308, P2).
+ *
+ * As medidas sem linha rendem a mesma peça, vazia: sem número, sem selo, e o
+ * que falta dito em duas palavras. Rendiam-se todas a seguir às cheias, e por
+ * isso a ordem das oito mudava de concelho para concelho — a disposição-padrão
+ * da Emenda 14 é uma ordem fixa, e é ela que faz da página de um concelho a
+ * mesma página que a de outro com dados diferentes. `pecasDoConcelho()` devolve
+ * agora as oito, pela ordem declarada, cada uma a dizer se tem linha.
+ */
 const pecas = pecasDoConcelho(m);
 
-/* As medidas que nenhuma fonte publica para este concelho: a mesma peça, vazia
-   (Emenda 14). Sem número e sem selo, e o que falta diz-se em duas palavras. */
-const pecasVazias = m.relance
-  .filter((tile) => !tile.claim)
-  .map((tile) => ({ nome: tile.nome[lang] ?? tile.nome.pt, unidade: tile.unidade[lang] ?? tile.unidade.pt }));
-
-/* --- os trabalhos sobre o concelho --------------------------------------- */
-const estudos = m.estudos.map((id) => {
+/* --- os trabalhos sobre o concelho ---------------------------------------
+   Um concelho sem trabalho publicado não declara `estudos`, e a secção inteira
+   não se rende: nem título, nem caixa vazia. */
+const estudos = (m.estudos ?? []).map((id) => {
   const w = workById(id);
   if (!w) throw new Error(`municípios: o trabalho "${id}" não está no arquivo`);
   const leitura = leituraDe(id);
@@ -146,19 +164,32 @@ const jsonld = {
   publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
 };
 
+/**
+ * A LINHA DO TEMPO DAS ADMINISTRAÇÕES É DE QUEM A TEM (bloco dos 308, P2).
+ *
+ * O instrumento inteiro — a série do índice, a banda dos mandatos, os campos de
+ * cada mandato e a camada de fundo — sai de `m.tempo`, que é uma transcrição do
+ * trabalho «Quinze Anos, Cinco Mandatos». Nenhum outro concelho tem esse
+ * trabalho, e nenhum outro tem `m.tempo`: a secção não se rende, e a geometria
+ * não se calcula. Um instrumento vazio com o seu título por cima seria a página
+ * a fingir corpo, que é o que a IDENTIDADE §7 recusa.
+ */
+const temTempo = Boolean(m.tempo);
+
 /* A série do índice contra o tecto legal, desenhada. Só os quatro anos que
    esta página publica — não «todos os anos», que seria dizer mais do que se
    mostra. A altura de cada barra sai do valor da linha; o tecto sai da linha
    do limite legal. Nada é escrito à mão. */
 const SERIE = { W: 720, H: 132, L: 10, R: 710, base: 104, topo: 16 };
-const tectoIndice = parsePtNumber(getClaim(D.tecto).value);
-const serieAnos = m.tempo.mandatos
-  .flatMap((mandato) => mandato.regulador ?? [])
-  .map((r) => ({ indice: r.indice, ref: r.ref }));
-const maxIndice = Math.max(
-  tectoIndice,
-  ...serieAnos.map((r) => parsePtNumber(getClaim(r.indice).value)),
-);
+const tectoIndice = temTempo ? parsePtNumber(getClaim(D.tecto).value) : null;
+const serieAnos = temTempo
+  ? m.tempo.mandatos
+      .flatMap((mandato) => mandato.regulador ?? [])
+      .map((r) => ({ indice: r.indice, ref: r.ref }))
+  : [];
+const maxIndice = temTempo
+  ? Math.max(tectoIndice, ...serieAnos.map((r) => parsePtNumber(getClaim(r.indice).value)))
+  : null;
 const alturaDe = (v) => SERIE.base - (v / maxIndice) * (SERIE.base - SERIE.topo);
 
 /**
@@ -190,22 +221,24 @@ const pontosDaSerie = serieAnos.map((r, i) => ({
   x: SERIE.L + ((i + 0.5) / serieAnos.length) * (SERIE.R - SERIE.L),
   y: alturaDe(parsePtNumber(getClaim(r.indice).value)),
 }));
-SERIE.yTecto = alturaDe(tectoIndice);
+if (temTempo) SERIE.yTecto = alturaDe(tectoIndice);
 
 /* A frase da camada 2 do instrumento: o que a série mede, e nada mais. */
 const primeiro = serieAnos[0];
 const ultimo = serieAnos[serieAnos.length - 1];
-const indiceSeriePartes = [
-  s.municipio.tempoSerieA,
-  { claim: primeiro.indice, sufixo: '%' },
-  s.municipio.tempoSerieB,
-  { ref: primeiro.ref },
-  s.municipio.tempoSerieC,
-  { claim: ultimo.indice, sufixo: '%' },
-  s.municipio.tempoSerieD,
-  { ref: ultimo.ref },
-  s.municipio.tempoSerieE,
-];
+const indiceSeriePartes = temTempo
+  ? [
+      s.municipio.tempoSerieA,
+      { claim: primeiro.indice, sufixo: '%' },
+      s.municipio.tempoSerieB,
+      { ref: primeiro.ref },
+      s.municipio.tempoSerieC,
+      { claim: ultimo.indice, sufixo: '%' },
+      s.municipio.tempoSerieD,
+      { ref: ultimo.ref },
+      s.municipio.tempoSerieE,
+    ]
+  : null;
 
 /**
  * A BANDA DOS MANDATOS (v2, IDENTIDADE.md §11; `design/DECISAO.md`, «Município»).
@@ -235,16 +268,16 @@ const anosDoPeriodo = (periodo) => {
   const [de, ate] = String(periodo).split(/[–-]/);
   return { de: Number(de), ate: ate ? Number(ate) : null };
 };
-const periodos = m.tempo.mandatos.map((mandato) => anosDoPeriodo(mandato.periodo));
-const anoMin = Math.min(...periodos.map((p) => p.de));
-const anoMax = Math.max(...periodos.map((p) => p.ate ?? p.de));
+const periodos = temTempo ? m.tempo.mandatos.map((mandato) => anosDoPeriodo(mandato.periodo)) : [];
+const anoMin = temTempo ? Math.min(...periodos.map((p) => p.de)) : null;
+const anoMax = temTempo ? Math.max(...periodos.map((p) => p.ate ?? p.de)) : null;
 /* O eixo do tempo vive entre a esquerda e o início da cauda; a cauda é do
    mandato sem fim, e não representa anos nenhuns. */
 const xDoAno = (ano) =>
   BANDA.L + ((ano - anoMin) / (anoMax - anoMin)) * (BANDA.R - BANDA.L - BANDA.cauda);
 /** A âncora de um mandato: o seu período, e mais nada. */
 const ancoraDoMandato = (periodo) => `mandato-${String(periodo).replace(/[–-]+$/, '').replace(/[–-]/g, '-')}`;
-const banda = m.tempo.mandatos.map((mandato, i) => {
+const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
   const { de, ate } = periodos[i];
   const x = xDoAno(de);
   return {
@@ -255,6 +288,14 @@ const banda = m.tempo.mandatos.map((mandato, i) => {
     largura: (ate === null ? BANDA.R : xDoAno(ate)) - x,
   };
 });
+
+/* Há corpo? É a pergunta que decide se a disposição B desenha as duas colunas.
+   Cada parcela é uma secção do corpo, e nenhuma delas existe num concelho sem
+   trabalho publicado: a leitura breve, a distância desenhada, as contas do
+   município, a linha do tempo, o método e os trabalhos. */
+const temCorpo = Boolean(
+  m.leitura || temDistancia || m.contas || temTempo || m.metodo || estudos.length > 0,
+);
 
 const metodoPath = routePath('metodo', lang);
 ---
@@ -269,8 +310,21 @@ const metodoPath = routePath('metodo', lang);
 >
   <div class="municipio-cabeca">
     <span class="eyebrow">{s.municipio.eyebrow}</span>
-    <h1>{nome}</h1>
-    <p class="municipio-sub">{m.distrito[lang] ?? m.distrito.pt} · {m.regiao[lang] ?? m.regiao.pt}</p>
+    {/* O NOME DO CONCELHO E A ETIQUETA DA CARTA VÃO DECLARADOS (bloco dos 308,
+        P2). Não são prosa da casa: são o nome da coisa de que a página trata e o
+        campo que a Carta Administrativa lhe dá. Sem a declaração, o inventário
+        de frases da casa passava a ter 924 entradas — o nome, a etiqueta e a
+        descrição de cada um dos 308 —, que é a lista dos concelhos escrita outra
+        vez, e é a mesma razão pela qual `data-cobertura` já está declarado. */}
+    <h1 data-lugar>{nome}</h1>
+    {/* A REGIÃO É DE QUEM A TEM (bloco dos 308, P2). «Alentejo Central» é uma
+        NUTS III, e a Carta Administrativa não a guarda: o que ela dá a cada
+        concelho é o distrito ou a ilha. Um concelho sem região declarada rende
+        só a etiqueta que a Carta lhe dá, e não um separador seguido de nada. */}
+    <p class="municipio-sub" data-lugar>
+      {m.distrito[lang] ?? m.distrito.pt}
+      {m.regiao ? ` · ${m.regiao[lang] ?? m.regiao.pt}` : ''}
+    </p>
     {/* A ABERTURA SAIU (direção, 21.08.2026, tarde; Emenda 15). Dizia «Esta
         página mede o município de Évora e mostra de onde vem cada medida. Não
         interpreta: onde uma fonte não estabelece uma coisa, a página di-lo em
@@ -320,29 +374,52 @@ const metodoPath = routePath('metodo', lang);
         --------------------------------------------------------------------- */}
     <div class="painel">
       {
-        pecas.map((tile) => (
-          <Peca
-            s={s}
-            lang={lang}
-            id={tile.claim}
-            nome={tile.nome[lang]}
-            medida={tile.medida[lang]}
-            frase={tile.derivada ? null : tile.nota[lang]}
-            estado={tile.estado}
-            colore={tile.colore}
-            regua={tile.regua}
-            selosNaMedida={true}
-          />
-        ))
+        pecas.map((tile) =>
+          tile.vazia ? (
+            <Peca
+              s={s}
+              vazio={true}
+              nome={tile.nome[lang] ?? tile.nome.pt}
+              unidade={tile.unidade[lang] ?? tile.unidade.pt}
+            />
+          ) : (
+            <Peca
+              s={s}
+              lang={lang}
+              id={tile.claim}
+              nome={tile.nome[lang]}
+              medida={tile.medida[lang]}
+              frase={tile.derivada || !tile.nota ? null : tile.nota[lang]}
+              estado={tile.estado}
+              colore={tile.colore}
+              regua={tile.regua}
+              selosNaMedida={true}
+            />
+          ),
+        )
       }
-      {pecasVazias.map((tile) => <Peca s={s} vazio={true} nome={tile.nome} unidade={tile.unidade} />)}
     </div>
   </section>
 
   <!-- ================================================ disposição B: corpo + aparelho -->
-  <div class="municipio">
+  {/* A DISPOSIÇÃO B PRECISA DE CORPO (bloco dos 308, P2). «Corpo e aparelho»
+      são duas colunas, e num concelho sem leitura, sem contas, sem linha do
+      tempo, sem método e sem trabalhos a primeira fica vazia: 68ch de nada ao
+      lado de um cartão de 300px, que é uma célula vazia numa grelha e é o que a
+      IDENTIDADE §7 recusa. Sem corpo, a página não pede duas colunas: o
+      aparelho segue as oito peças, com a sua largura, e a disposição continua a
+      ser a B — o que muda é que ela não desenha uma coluna que não tem nada. */}
+  <div class:list={['municipio', !temCorpo && 'municipio-so-aparelho']}>
+    {temCorpo && (
     <div class="municipio-corpo">
       <!-- ============================================ CAMADA 2 — LEITURA BREVE -->
+      {/* A CAMADA RENDE-SE SE TIVER CORPO (bloco dos 308, P2). São duas coisas
+          diferentes: as frases da leitura breve, que só existem onde alguém as
+          escreveu, e a distância desenhada, que existe onde há as duas linhas
+          da dívida e do limite. Sem nenhuma das duas, a secção não se rende —
+          nem título, nem caixa vazia (IDENTIDADE §7: uma página por escrever
+          declara o que lhe falta, e o que lhe falta está dito nas oito peças). */}
+      {(m.leitura || temDistancia) && (
       <section class="linha-bloco" aria-labelledby="breve">
         <h2 class="linha-bloco-titulo" id="breve">{s.municipio.breveK}</h2>
         {/* A SUB-LINHA DA LEITURA BREVE SAIU (Emenda 15; mesma decisão de
@@ -351,12 +428,13 @@ const metodoPath = routePath('metodo', lang);
             trabalho do selo, dito outra vez em prosa, e a primeira descreve a
             forma da secção em vez de dizer o que ela mede. */}
         {
-          m.leitura.map((frase) => (
+          (m.leitura ?? []).map((frase) => (
             <p class="deep-v"><Frase partes={frase[lang]} lang={lang} selos={true} /></p>
           ))
         }
 
         <!-- a distância desenhada -->
+        {temDistancia && (
         <div class="mun-distancia">
           <p class="layer-tag">{s.municipio.distanciaK}</p>
           <svg
@@ -408,14 +486,25 @@ const metodoPath = routePath('metodo', lang);
             <Provenance id={D.limite} lang={lang} />
           </p>
           <p class="mun-distancia-legenda">{s.municipio.distanciaLegenda}</p>
-          <p class="mun-distancia-legenda">
-            <Frase partes={indicePartes} lang={lang} selos={true} />
-          </p>
+          {/* A frase do índice precisa da linha do índice e da do teto legal:
+              onde uma delas falta, a frase não se compõe. */}
+          {indicePartes && (
+            <p class="mun-distancia-legenda">
+              <Frase partes={indicePartes} lang={lang} selos={true} />
+            </p>
+          )}
           <p class="mun-distancia-legenda">{s.municipio.distanciaLei}</p>
         </div>
+        )}
       </section>
+      )}
 
       <!-- ================================================== CAMADA 3 — FUNDO -->
+      {/* AS CONTAS DO PRÓPRIO MUNICÍPIO SÃO DE QUEM AS TEM (bloco dos 308, P2).
+          São lidas da prestação de contas de um município, documento a
+          documento; nenhum agregador central as publica para os 308. Onde não
+          foram lidas, a secção não se rende. */}
+      {m.contas && (
       <section class="linha-bloco" aria-labelledby="contas">
         <h2 class="linha-bloco-titulo" id="contas">{s.municipio.fundoK}</h2>
         <h3 class="figura-nome">{s.municipio.contasK}</h3>
@@ -435,6 +524,30 @@ const metodoPath = routePath('metodo', lang);
           <dt>{s.municipio.contasMargem}</dt>
           <dd><Claim id={m.contas.margem} lang={lang} chip={true} /> €</dd>
         </dl>
+
+        {/* ------------------------------------------------------------------
+            AS DUAS MEDIDAS QUE DESCERAM DAS PEÇAS (decisão D2, 26.08.2026)
+            ------------------------------------------------------------------
+            A execução da receita e o prazo médio de pagamento eram as peças 7 e
+            8 do relance. A peça-padrão de 308 páginas tem de medir a mesma coisa
+            em todas, e estas duas são o município a ler-se a si próprio: a
+            execução da receita não tem fonte central desde 2019, e o prazo médio
+            que o regulador publica é outra contagem. Aqui, na camada onde esta
+            página já publica o que o município diz de si, dizem o que são; lá em
+            cima, a peça diz «sem linha ainda», que é o estado da fonte central.
+            Nenhum valor mudou, e as duas linhas continuam a ser rendidas com o
+            seu selo. */}
+        {m.contas.execucaoDaReceita && m.contas.prazoMedioDePagamento && (
+          <dl class="mun-campos">
+            <dt>{s.municipio.contasExecucao}</dt>
+            <dd><Claim id={m.contas.execucaoDaReceita} lang={lang} chip={true} sufixo="%" /></dd>
+            <dt>{s.municipio.contasPrazoMedio}</dt>
+            <dd>
+              <Claim id={m.contas.prazoMedioDePagamento} lang={lang} chip={true} />{' '}
+              {s.municipio.contasPrazoMedioUnidade}
+            </dd>
+          </dl>
+        )}
 
         <h3 class="figura-nome" style="margin-top:10px">{s.municipio.contasDivergenciaK}</h3>
         <p class="linha-nota">{s.municipio.contasDivergenciaV}</p>
@@ -456,8 +569,10 @@ const metodoPath = routePath('metodo', lang);
           </dd>
         </dl>
       </section>
+      )}
 
       <!-- ====================== o instrumento: a linha do tempo das administrações -->
+      {temTempo && (
       <section class="linha-bloco" aria-labelledby="tempo">
         <h2 class="linha-bloco-titulo" id="tempo">{s.municipio.tempoK}</h2>
 
@@ -839,8 +954,13 @@ const metodoPath = routePath('metodo', lang);
           </details>
         </div>
       </section>
+      )}
 
       <!-- ===================================================== método e ressalvas -->
+      {/* As ressalvas são as que os trabalhos sobre ESTE concelho imprimem nos
+          seus próprios limites (DECISIONS §1.34). Um concelho sem trabalhos não
+          tem ressalvas para transcrever, e a casa não escreve as suas. */}
+      {m.metodo && (
       <section class="linha-bloco" aria-labelledby="metodo">
         <h2 class="linha-bloco-titulo" id="metodo">{s.municipio.metodoK}</h2>
         <div class="deep-body" style="border-top:0;padding:0">
@@ -854,8 +974,10 @@ const metodoPath = routePath('metodo', lang);
           }
         </div>
       </section>
+      )}
 
       <!-- ================================================ os trabalhos do concelho -->
+      {estudos.length > 0 && (
       <section class="linha-bloco" aria-labelledby="trabalhos">
         <h2 class="linha-bloco-titulo" id="trabalhos">{s.municipio.estudosK}</h2>
         {/* A NOTA DOS TRABALHOS SAIU (Emenda 15). Dizia «Cada um tem a sua
@@ -885,7 +1007,9 @@ const metodoPath = routePath('metodo', lang);
           }
         </div>
       </section>
+      )}
     </div>
+    )}
 
     <!-- ============================================== aparelho: o que a página sabe de si -->
     <aside class="aparelho" aria-labelledby="aparelho">
@@ -919,6 +1043,12 @@ const metodoPath = routePath('metodo', lang);
 
       <h2 class="aparelho-titulo" id="aparelho">{s.municipio.provenienciaK}</h2>
 
+      {/* «O QUE ESTA PÁGINA NÃO SABE» É DE QUEM O SABE (bloco dos 308, P2). São
+          ressalvas lidas nos trabalhos sobre este concelho; num concelho sem
+          trabalhos não há nenhuma para transcrever, e o que lhe falta já está
+          dito nas peças vazias, em duas palavras (Emenda 15). A porta para o
+          método desce com o bloco, porque é a porta da secção que ele nomeia. */}
+      {m.naoSabe && (
       <div class="aparelho-estado">
         <span class="linha-campo-k">{s.municipio.naoSabeK}</span>
         <ul class="mun-nao-sabe">
@@ -930,6 +1060,7 @@ const metodoPath = routePath('metodo', lang);
         </ul>
         <p class="rodape-nav"><a href="#metodo">{s.municipio.metodoK} →</a></p>
       </div>
+      )}
 
       <PortaDeCorreccoes lang={lang} class="aparelho-bloco" />
 

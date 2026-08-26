@@ -61,8 +61,15 @@ export function slugDeConcelho(nome) {
  * o distrito ou a ilha que a própria Carta lhe dá («lagoa-faro»,
  * «lagoa-ilha-de-sao-miguel»). Só os nomes repetidos pagam o preço, e a
  * desambiguação sai do registo, não de uma escolha nossa.
+ *
+ * EXPORTADA DESDE O BLOCO DOS 308 (P2). O motor reproduz esta função para
+ * escrever o slug de cada uma das 308 entradas, e a régua confere os 308 slugs
+ * do ficheiro gerado contra os que esta função dá: duas implementações da mesma
+ * regra, uma de cada lado da fronteira, que têm de bater certo. Sem a exportar,
+ * a comparação teria de recopiar a função — e uma cópia é uma régua que mede o
+ * que ela própria escreveu.
  */
-function slugsDaCarta() {
+export function slugsDaCarta() {
   const vezes = new Map();
   for (const m of MUNICIPIOS) {
     const s = slugDeConcelho(m[0]);
@@ -90,21 +97,20 @@ function slugsDaCarta() {
 /**
  * A CARTA ESCREVE DUAS COISAS NO MESMO CAMPO, E A ETIQUETA TEM DE AS DISTINGUIR.
  *
- * ISSUES I18, fechado na subetapa 2g. O campo que a CAOP dá a cada concelho é
- * um distrito («Beja», «Viana do Castelo») ou uma ilha («Ilha do Faial», «Ilha
- * de São Miguel»), e as duas coisas não se leem da mesma maneira: «distrito de
- * Beja» é o que se diz, e «distrito de Ilha do Faial» não é português nenhum.
+ * ISSUES I18, fechado na subetapa 2g. A regra é a da prancha, e é uma só para os
+ * 308: prefixo «distrito de» quando o campo é um distrito, nome de ilha nu
+ * quando começa por «Ilha». Fica decidida na construção, e não no cliente: o que
+ * o script faz com ela é trocar `hidden` a um prefixo que já está escrito na
+ * página, nas duas edições.
  *
- * A regra é a da prancha, e é uma só para os 308: prefixo «distrito de» quando
- * o campo é um distrito, nome de ilha nu quando começa por «Ilha». Fica
- * decidida AQUI, na construção, e não no cliente: o que o script faz com ela é
- * trocar `hidden` a um prefixo que já está escrito na página, nas duas edições.
- *
- * A comparação é sobre a primeira palavra do campo, e não sobre uma lista de
- * nomes: a lista de ilhas de `caop-centroids.mjs` é derivada do mesmo campo, e
- * conferir uma lista contra a outra seria conferir a Carta contra ela própria.
+ * A DEFINIÇÃO DESCEU PARA `src/data/caop-centroids.mjs` no bloco dos 308 (P2),
+ * e a razão está escrita lá: a entrada de um concelho gerado precisa dela, e o
+ * ficheiro que a produz não pode importar deste. Reexporta-se aqui porque é
+ * daqui que a primeira página e o mapa a leem desde a 2g, e mudar-lhes o
+ * endereço seria uma alteração sem trabalho nenhum por baixo.
  */
-export const eIlha = (distrito) => /^Ilha\b/.test(String(distrito));
+export { eIlha } from '../data/caop-centroids.mjs';
+import { eIlha } from '../data/caop-centroids.mjs';
 
 export function concelhos() {
   const paginaPorIndice = new Map(MUNICIPIOS_COM_PAGINA.map((m) => [m.caopIndex, m]));
@@ -157,13 +163,22 @@ export function concelhos() {
  * limiar publicado por lei, e por isso a peça do índice colore; tudo o resto do
  * concelho fica a tinta.
  *
+ * AS OITO RENDEM-SE SEMPRE, E PELA MESMA ORDEM (Emenda 14; bloco dos 308, P2).
+ * A função filtrava as medidas sem linha e devolvia só as cheias; a vista
+ * rendia as vazias a seguir, e a ordem das oito passava a depender de quantas
+ * linhas o concelho tinha — «população, dívida, índice» num concelho e
+ * «população, poder de compra, dívida» noutro, com as vazias todas no fim. A
+ * disposição-padrão da Emenda 14 é uma ordem fixa: passa a devolver as oito,
+ * cada uma com `vazia` a dizer se tem linha. Quem rende decide o que fazer com
+ * isso, e é uma peça só nos dois casos.
+ *
  * @param {object} municipio  o registo de `municipios.mjs`
  */
 export function pecasDoConcelho(municipio) {
-  const alvo = municipio.distancia;
+  const alvo = municipio.distancia ?? {};
   return municipio.relance
-    .filter((medida) => medida.claim)
     .map((medida) => {
+      if (!medida.claim) return { ...medida, vazia: true, linha: null, derivada: false, estado: 'sem', colore: false, regua: null };
       const linha = getClaim(medida.claim);
       /* A NOTA DE UMA MEDIDA CALCULADA LÊ-SE DA LINHA (Emenda 15, commit 3-0), e
          nunca de uma lista escrita à mão: amanhã uma medida deixa de ser
@@ -172,12 +187,13 @@ export function pecasDoConcelho(municipio) {
          derivada, a página do concelho também não. */
       const derivada = eDerivada(linha);
       if (medida.claim !== alvo.indice) {
-        return { ...medida, linha, derivada, estado: 'sem', colore: false, regua: null };
+        return { ...medida, vazia: false, linha, derivada, estado: 'sem', colore: false, regua: null };
       }
       const tecto = getClaim(alvo.tecto);
       const r = estadoDaRegua(linha, { valor: tecto.value, lado: 'superior', colore: true });
       return {
         ...medida,
+        vazia: false,
         linha,
         derivada,
         estado: r.estado ?? 'sem',
