@@ -558,3 +558,53 @@ do concelho, e o seu destino passa de `/?ambito=municipio` para o índice dos 30
 fica: era o rótulo do comando de sair da vista, que saiu, mas a peça do painel
 rende-a desde a etapa 2. `inicio.cabeca.distritoDe` fica: é o prefixo do distrito
 na leitura em voz alta do mapa.
+
+
+## Bloco dos 308 concelhos · P2 (a estrutura), 26.08.2026
+
+**As chaves novas.** Duas famílias: os dois rótulos das medidas que desceram das
+peças para a camada das contas de Évora (decisão D2 do diretor), e a página do
+conjunto do livro-razão (decisão D6), que é uma página nova e traz o seu bloco.
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `municipio.contasExecucao` | Execução da receita | Revenue execution | o nome da medida, sem uma palavra nova: o que muda é o sítio onde se lê |
+| `municipio.contasPrazoMedio` | Prazo médio de pagamento | Average payment time | idem |
+| `municipio.contasPrazoMedioUnidade` | dias | days | a unidade ao pé do valor, como o «€» dos campos de cima |
+| `livro.contaConcelhos` | linhas de concelhos | municipality rows | a terceira parcela da linha de contagens do índice do livro-razão |
+| `livro.concelhosPorta` | Concelhos | Municipalities | a porta da página do conjunto, no índice. «Municipalities» e não «Concelhos»: a interface inglesa não usa a palavra portuguesa (item B6 de 25.08) |
+| `livroConcelhos.metaTitle` | Concelhos · Livro-razão · O Estado do País | Municipalities · Ledger · O Estado do País | |
+| `livroConcelhos.metaDescription` | As linhas do livro-razão com as medidas que as fontes centrais publicam para cada concelho, uma linha cada. | The ledger rows with the measures central sources publish for each municipality, one row each. | |
+| `livroConcelhos.lede` | Uma linha por medida e por concelho, com o valor tal como a fonte o publicou, a unidade, quem o produziu e a data em que foi lido. | One row per measure and per municipality, with the value as the source published it, the unit, who produced it and the date it was read. | a lede nomeia o que uma linha guarda, como a do índice |
+| `livroConcelhos.contaLinhas` | linhas | rows | |
+| `livroConcelhos.contaConcelhos` | concelhos | municipalities | |
+| `livroConcelhos.contaCompletas` | com proveniência completa | with complete provenance | as mesmas palavras do índice, sem uma mudada |
+| `livroConcelhos.vazioV` | Ainda não há linhas deste estudo no livro-razão. | There are no rows of this study in the ledger yet. | o estado vazio desenhado (IDENTIDADE §7): diz o que não há, e não pede desculpa |
+| `livroConcelhos.naoDeclaradasK` | Linhas sem concelho declarado | Rows with no municipality declared | o grupo das linhas do estudo que nenhuma entrada de concelho declara |
+| `livroConcelhos.voltarLivro` | O livro-razão inteiro | The whole ledger | |
+| `livroConcelhos.indiceLink` | O índice dos concelhos | The index of municipalities | |
+
+**O título da página não é uma chave**, e é decisão: é o nome do estudo, e vem de
+`src/data/studies.mjs` («Concelhos: as medidas centrais» / «Municipalities: the
+central measures»). Escrevê-lo aqui outra vez seriam dois nomes para a mesma
+coisa, e o mesmo nome já rende dentro de cada selo das linhas deste estudo.
+
+**Uma chave sai, nas duas edições.**
+
+| chave | pt | en | porquê sai |
+|---|---|---|---|
+| `municipios.comPaginaK` | Com página | With a page | era o título da secção que listava os concelhos com página antes da lista por distritos, e existia porque um em 308 a tinha. Com os 308, a secção era a lista inteira repetida por cima da lista inteira |
+
+**As que ficam, e a razão.** «sem linha ainda» / «no row yet» (`cobertura.semLinhaAinda`)
+passa a render-se muito mais: era o estado de uma medida sem linha e passa a ser
+o de 2 464 peças com o ficheiro de teste. Nem uma palavra muda: é a mesma
+ausência dita nas mesmas duas palavras. E a prosa nova de `src/data/` (a nota da
+dívida com a coluna que usa, e a do prazo médio lido do regulador) vai nas duas
+línguas ao lado dos ids, como o resto daquele ficheiro:
+
+| onde | pt | en |
+|---|---|---|
+| nota da medida 5 | Série anual da Direção-Geral das Autarquias Locais, o regulador das contas municipais. Exclui dívidas não orçamentais e exceções legais. | The annual series of the local-government directorate, the regulator of municipal accounts. Excludes non-budgetary debt and legal exceptions. |
+| nota da medida 8 | Lista anual da Direção-Geral das Autarquias Locais, o regulador das contas municipais. | The annual list of the local-government directorate, the regulator of municipal accounts. |
+| nome da medida 4 | Empresas não financeiras | Non-financial enterprises |
+| etiqueta de um concelho gerado | distrito de \<nome\> | district of \<nome\> |
