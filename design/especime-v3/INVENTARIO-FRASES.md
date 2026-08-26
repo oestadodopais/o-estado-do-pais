@@ -831,6 +831,10 @@ exclusão que a subetapa 3c escreveu para a lista por distritos.
 | conteudo | 8 de 2552 linhas com campos por confirmar |
 | conteudo | 8 of 2552 rows with fields to confirm |
 | conteudo | 2416 linhas · 308 concelhos · 2416 com proveniência completa |
+| conteudo | Uma linha por medida, com o valor tal como a fonte o publicou, a unidade, quem o produziu e a data em que foi lido. |
+| conteudo | One row per measure, with the value as the source published it, the unit, who produced it and the date it was read. |
+| conteudo | As linhas do livro-razão com as medidas que as fontes centrais publicam para o concelho de <lugar>. |
+| conteudo | The ledger rows with the measures central sources publish for the municipality of <lugar>. |
 | conteudo | 2416 rows · 308 municipalities · 2416 with complete provenance |
 | conteudo | Uma linha por medida e por concelho, com o valor tal como a fonte o publicou, a unidade, quem o produziu e a data em que foi lido. |
 | conteudo | One row per measure and per municipality, with the value as the source published it, the unit, who produced it and the date it was read. |

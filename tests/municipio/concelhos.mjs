@@ -454,7 +454,9 @@ console.log('');
         m.cartao === 1 &&
         m.portas.length === 3 &&
         m.portas[0] === '/municipios' &&
-        m.portas[1] === '/livro-razao/concelhos';
+        /* A segunda porta abre a página de livro-razão DESTE concelho, e não o
+           índice: a porta de uma página é para a coisa dela. */
+        m.portas[1] === `/livro-razao/concelhos/${rota.split('/').pop()}`;
       if (!bem) {
         maus.push(
           `${rota}: ${m.pecas} peças (${m.vazias} vazias, sem-linha limpo ${m.semLinha}) · ` +
@@ -512,8 +514,25 @@ console.log('');
   );
 }
 
-/* 9 · O LIVRO-RAZÃO DO CONJUNTO (E4). As três contagens com porta, a pesquisa
-   com os 308 resultados, e as linhas do estudo fora do índice principal. */
+/* 9 · O LIVRO-RAZÃO DOS CONCELHOS: O ÍNDICE E AS 308 PÁGINAS.
+
+   ERA UMA PÁGINA COM TUDO (P2, os dados; diretor de 26.08.2026). A página do
+   conjunto ficou com 2 416 linhas e 227 008 px de altura a 1280, que é o
+   problema que a decisão D6 resolveu no índice principal, reaparecido dentro da
+   página que existia para o resolver. Passa a haver uma página de livro-razão
+   por concelho, e a do conjunto é o índice delas.
+
+   O que a célula mede:
+     · o índice tem as três contagens com porta, a pesquisa dos 308, e a lista
+       por distrito com os 29 grupos da Carta e uma linha por concelho;
+     · uma linha do índice é porta se e só se o concelho tem linhas, e a porta
+       abre a página de livro-razão dele, que foi construída;
+     · TODA a linha do estudo está numa página de concelho: a soma das linhas
+       das 308 páginas é a contagem que o índice publica.
+
+   A terceira faz-se sobre os ficheiros construídos e não no navegador: são 308
+   páginas, e abrir 308 no Chromium para contar `<div>` é meia hora para uma
+   soma que o disco dá em milissegundos. */
 {
   const p = await pagina();
   await p.goto(base + '/livro-razao/concelhos', { waitUntil: 'networkidle' });
@@ -523,51 +542,67 @@ console.log('');
       e.textContent.trim(),
       e.getAttribute('href'),
     ]),
-    grupos: document.querySelectorAll('[data-concelho-grupo]').length,
+    grupos: document.querySelectorAll('.concelhos-grupo').length,
+    linhas: document.querySelectorAll('.concelho').length,
+    portas: [...document.querySelectorAll('.concelho a[href]')].map((a) => a.getAttribute('href')),
+    semLinhas: document.querySelectorAll('.concelho [data-cobertura="sem-linha"]').length,
     resultados: document.querySelectorAll('.pesquisa-item').length,
-    vazio: document.querySelectorAll('.log-vazio-v').length,
-    /* Cada linha do estudo tem de estar DENTRO do grupo de um concelho. Uma que
-       nenhuma entrada declare fica no grupo dos não declarados, que é um estado
-       desenhado para o leitor e um defeito para nós: é uma linha que o sítio
-       guarda e que nenhuma página de concelho mostra. Depois de o exportador
-       correr, a conta certa é zero. */
-    emGrupos: document.querySelectorAll('[data-concelho-grupo] .livro-item').length,
-    naoDeclaradas: document.querySelectorAll('#nao-declaradas .livro-item').length,
+    destinos: [...new Set(
+      [...document.querySelectorAll('.pesquisa-item a[href]')].map((a) =>
+        a.getAttribute('href').replace(/[^/]+$/, '<slug>'),
+      ),
+    )],
   }));
   await p.goto(base + '/livro-razao', { waitUntil: 'networkidle' });
   const indice = await p.evaluate(() => {
     const paraCa = [...document.querySelectorAll('a[href="/livro-razao/concelhos"]')];
     return {
-      /* A PORTA é a que leva palavras; o valor da prova ao lado dela é uma
-         segunda ligação para a mesma página, e é assim que a casa rende um
-         número seu (IDENTIDADE §10). O que a régua exige é que sejam DUAS
-         ligações irmãs e não uma dentro da outra: uma âncora dentro de outra
-         abre a de fora, e a Emenda 2 proíbe-o. */
       porta: paraCa.filter((a) => !a.classList.contains('prova-valor')).length,
       valor: paraCa.filter((a) => a.classList.contains('prova-valor')).length,
       aninhadas: paraCa.filter((a) => a.closest('a') !== a).length,
       linhasDoIndice: document.querySelectorAll('.livro-item').length,
     };
   });
+
+  /* As páginas de concelho construídas, e as linhas que cada uma lista. */
+  const dir = path.join(DIST, 'livro-razao', 'concelhos');
+  const construidas = new Map();
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (!e.isDirectory()) continue;
+    const f = path.join(dir, e.name, 'index.html');
+    if (!fs.existsSync(f)) continue;
+    const html = fs.readFileSync(f, 'utf8');
+    construidas.set(`/livro-razao/concelhos/${e.name}`, (html.match(/class="livro-item"/g) ?? []).length);
+  }
+  const somaDasLinhas = [...construidas.values()].reduce((a, b) => a + b, 0);
   const chaves = ['concelhos_linhas', 'concelhos_no_livro', 'concelhos_linhas_completas'];
   const dasChaves = m.provas.filter(([k]) => chaves.includes(k));
+  const declaradas = Number(dasChaves.find(([k]) => k === 'concelhos_linhas')?.[1]);
+  const comLinhas = Number(dasChaves.find(([k]) => k === 'concelhos_no_livro')?.[1]);
+  const semPagina = m.portas.filter((h) => !construidas.has(h));
   conta(
-    'P2 · a página do conjunto: três contagens com porta, a pesquisa dos 308, e a porta no índice',
+    'P2 · o índice dos concelhos no livro-razão, e as 308 páginas por baixo dele',
     dasChaves.length === 3 &&
       dasChaves.every(([, , href]) => href === '/livro-razao/concelhos') &&
+      m.linhas === 308 &&
+      m.grupos === 29 &&
       m.resultados === 308 &&
-      m.grupos === Number(dasChaves.find(([k]) => k === 'concelhos_no_livro')?.[1]) &&
-      (m.grupos === 0) === (m.vazio === 1) &&
-      m.naoDeclaradas === 0 &&
-      m.emGrupos === Number(dasChaves.find(([k]) => k === 'concelhos_linhas')?.[1]) &&
+      m.destinos.length === 1 &&
+      m.destinos[0] === '/livro-razao/concelhos/<slug>' &&
+      m.portas.length === comLinhas &&
+      m.portas.length + m.semLinhas === 308 &&
+      semPagina.length === 0 &&
+      somaDasLinhas === declaradas &&
       indice.porta === 1 &&
       indice.valor === 1 &&
       indice.aninhadas === 0,
-    `${dasChaves.map(([k, v]) => `${k}=${v}`).join(' · ')} · ${m.grupos} grupo(s) com ` +
-      `${m.emGrupos} linha(s), ${m.naoDeclaradas} sem concelho declarado · ` +
-      `${m.resultados} resultados na pesquisa · estado vazio ${m.vazio} · ` +
-      `no índice: ${indice.porta} porta + ${indice.valor} valor da prova, ` +
-      `${indice.aninhadas} aninhada(s) · o índice lista ${indice.linhasDoIndice} linhas`,
+    `${dasChaves.map(([k, v]) => `${k}=${v}`).join(' · ')} · ${m.linhas} concelhos em ${m.grupos} ` +
+      `grupos, ${m.portas.length} com porta e ${m.semLinhas} sem linhas · ` +
+      `${construidas.size} página(s) de concelho construída(s) com ${somaDasLinhas} linha(s) ao todo` +
+      `${semPagina.length ? `, ${semPagina.length} porta(s) sem página: ${semPagina.slice(0, 3).join(', ')}` : ''} · ` +
+      `${m.resultados} resultados na pesquisa, destino ${m.destinos.join(' / ')} · ` +
+      `no índice do livro-razão: ${indice.porta} porta + ${indice.valor} valor da prova, ` +
+      `${indice.aninhadas} aninhada(s), ${indice.linhasDoIndice} linhas listadas`,
   );
   await p.__contexto.close();
 }
