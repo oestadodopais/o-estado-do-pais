@@ -279,9 +279,7 @@ quem escreveu a página.*
 | conteudo | A dívida contra o teto legal |
 | conteudo | A última prestação de contas do município |
 | conteudo | Accounts of the year before last |
-| conteudo | Antes do primeiro ano de contas legível nesta janela. |
 | navegacao | Background |
-| conteudo | Before the first year of accounts readable in this window. |
 | conteudo | Borrowing margin |
 | conteudo | Contas do penúltimo ano |
 | conteudo | Corrected budget |
@@ -515,8 +513,6 @@ e por isso conteúdo.*
 
 | classe | texto |
 | --- | --- |
-| conteudo | % de índice de dívida no primeiro ano legível da série do regulador |
-| conteudo | % debt index in the first readable year of the regulator’s series |
 | conteudo | % desse valor está nas quatro maiores empresas |
 | conteudo | % dez anos depois |
 | conteudo | % do orçamento foi de facto cobrado no último ano de contas |
@@ -535,7 +531,6 @@ e por isso conteúdo.*
 | conteudo | As contagens de financiamento são um limite superior: o filtro lê programas, não o corpo dos avisos. E a secção de oportunidades é inferência assinada pelo autor do trabalho, ancorada nos factos com fonte, não aconselhamento. |
 | conteudo | As contas do penúltimo ano foram rejeitadas em votação e nunca foram certificadas. |
 | conteudo | As decisões vão atribuídas a quem as tomou, com o rótulo da lista; os índices são mostrados contra as fronteiras dos mandatos e não são atribuídos a ninguém. Nada do que o trabalho leu fornece o contrafactual que recortaria a parte de um executivo neles. |
-| conteudo | As medidas deste trabalho vêm da prestação de contas do próprio município: o relato da gestão sobre o seu próprio ano. As duas vozes de fora são a opinião assinada do auditor independente e a série anual do regulador, que publica por município e por ano o mesmo conceito legal de dívida, compilado do lado de fora. As duas estão nesta página. |
 | conteudo | Avaliação económica das regiões de Portugal. |
 | conteudo | Datas de publicação por confirmar. |
 | conteudo | Decisions are attributed to whoever took them, with the list label; indices are displayed against the mandate boundaries and are attributed to nobody. Nothing the work read provides the counterfactual that would carve out an executive’s share of them. |
@@ -608,7 +603,6 @@ e por isso conteúdo.*
 | conteudo | The yardstick these accounts are compared against is one year behind, and the full study that publishes it is not public. |
 | conteudo | There is no GDP figure for the city, and the work invents none. What exists at concelho level is the business register: the accounts of enterprises headquartered in the concelho, which credit a firm’s whole activity to its head-office concelho. It is not municipal GDP, and the study itself writes why in its own limits: «it misses public administration, most of the university and the hospital». |
 | conteudo | These two values are sums over the whole public register of the recovery plan, not a line in a document. There is no sentence to transcribe, so the row’s excerpt reads [a verificar] (to verify) and the seal shows dashed. |
-| conteudo | This work’s measures come from the municipality’s own accounts: management reporting on its own year. The two outside voices are the independent auditor’s signed opinion and the regulator’s annual series, which publishes per municipality and per year the same legal debt concept, compiled from outside. Both are on this page. |
 | conteudo | Uma leitura transversal de um município português: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado, recolhidos em direto a 2026-08-04, e o registo do plano de recuperação relido a 2026-08-20. |
 | conteudo | Água não faturada nos sistemas de abastecimento em Portugal. |
 | conteudo | € actually paid |
@@ -908,3 +902,21 @@ página.*
 | conteudo | The local-government directorate and the municipality publish the same year’s debt with a difference between them. The difference is small. |
 | conteudo | The local-government directorate’s annual series begins after this term. |
 | conteudo | The portfolio counts are designations, not spending. The mapping between the accounts and the portfolios exists in one of the works, and is declared by it as its own and not as official. That work also sets the rule: description, never scores. |
+
+### A DGAL pelo nome, e a leitura da casa fora do rótulo
+
+*O item E11 do bloco dos 308 tirou «o regulador» das notas das medidas e da
+legenda da dívida, e não chegou a `src/data/leituras.mjs` nem ao rótulo do
+relance da linha do tempo: a busca dele foi pelas notas das oito peças e pelas
+cadeias de `strings.mjs` da página do concelho. Saem agora as três que ficaram. E
+sai «legível», que é o sítio a descrever os limites da sua própria leitura: o
+rótulo passa a nomear de que série são os dois números.*
+
+| classe | texto |
+| --- | --- |
+| conteudo | % de índice de dívida no primeiro ano da série da Direção-Geral das Autarquias Locais |
+| conteudo | % debt index in the first year of the local-government directorate’s series |
+| conteudo | Antes do primeiro ano da série da Direção-Geral das Autarquias Locais. |
+| conteudo | Before the first year of the local-government directorate’s series. |
+| conteudo | As medidas deste trabalho vêm da prestação de contas do próprio município: o relato da gestão sobre o seu próprio ano. As duas vozes de fora são a opinião assinada do auditor independente e a série anual da Direção-Geral das Autarquias Locais, que publica por município e por ano o mesmo conceito legal de dívida, compilada do lado de fora. As duas estão nesta página. |
+| conteudo | This work’s measures come from the municipality’s own accounts: management reporting on its own year. The two outside voices are the independent auditor’s signed opinion and the local-government directorate’s annual series, which publishes per municipality and per year the same legal debt concept, compiled from outside. Both are on this page. |

@@ -253,8 +253,8 @@ export const LEITURAS = {
       {
         k: { pt: 'De onde vêm as medidas, e as duas vozes de fora', en: 'Where the measures come from, and the two outside voices' },
         v: {
-          pt: ['As medidas deste trabalho vêm da prestação de contas do próprio município: o relato da gestão sobre o seu próprio ano. As duas vozes de fora são a opinião assinada do auditor independente e a série anual do regulador, que publica por município e por ano o mesmo conceito legal de dívida, compilado do lado de fora. As duas estão nesta página.'],
-          en: ['This work’s measures come from the municipality’s own accounts: management reporting on its own year. The two outside voices are the independent auditor’s signed opinion and the regulator’s annual series, which publishes per municipality and per year the same legal debt concept, compiled from outside. Both are on this page.'],
+          pt: ['As medidas deste trabalho vêm da prestação de contas do próprio município: o relato da gestão sobre o seu próprio ano. As duas vozes de fora são a opinião assinada do auditor independente e a série anual da Direção-Geral das Autarquias Locais, que publica por município e por ano o mesmo conceito legal de dívida, compilada do lado de fora. As duas estão nesta página.'],
+          en: ['This work’s measures come from the municipality’s own accounts: management reporting on its own year. The two outside voices are the independent auditor’s signed opinion and the local-government directorate’s annual series, which publishes per municipality and per year the same legal debt concept, compiled from outside. Both are on this page.'],
         },
         valores: [],
       },
@@ -291,8 +291,8 @@ export const LEITURAS = {
       {
         claim: 'evora-indice-de-divida-2014',
         nome: {
-          pt: ['% de índice de dívida no primeiro ano legível da série do regulador'],
-          en: ['% debt index in the first readable year of the regulator’s series'],
+          pt: ['% de índice de dívida no primeiro ano da série da Direção-Geral das Autarquias Locais'],
+          en: ['% debt index in the first year of the local-government directorate’s series'],
         },
       },
       {
