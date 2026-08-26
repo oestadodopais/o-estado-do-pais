@@ -37,6 +37,7 @@
  */
 
 import fs from 'node:fs';
+import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { MUNICIPIOS, DISTRITOS, eIlha } from './caop-centroids.mjs';
 
@@ -223,9 +224,50 @@ export function rotuloDoDistrito(distritoOuIlha) {
  * constroem as 308 páginas com o ficheiro de teste.
  */
 export function caminhoDoFicheiroGerado() {
-  return process.env.CONCELHOS_GERADO
-    ? process.env.CONCELHOS_GERADO
-    : fileURLToPath(new URL('./concelhos.gerado.json', import.meta.url));
+  if (process.env.CONCELHOS_GERADO) return process.env.CONCELHOS_GERADO;
+  return path.join(encontraRaiz(), 'src', 'data', 'concelhos.gerado.json');
+}
+
+/**
+ * A RAIZ DO REPOSITÓRIO, PROCURADA A SUBIR, E NUNCA RELATIVA A ESTE FICHEIRO.
+ *
+ * A primeira redação escrevia `new URL('./concelhos.gerado.json', import.meta.url)`,
+ * e isso está errado pela mesma razão que `src/lib/prova.mjs` tem escrita no seu
+ * cabeçalho desde a primeira corrida dele: **na construção, este módulo é
+ * empacotado**, e um caminho relativo ao módulo passa a apontar para o pacote e
+ * não para `src/data/`. O ficheiro existia e a construção não o via.
+ *
+ * O modo de falhar era silencioso, e é o pior que há: `entradasGeradas()`
+ * devolvia lista vazia, o `getStaticPaths` construía UMA página de concelho, e
+ * nada fechava a construção do lado do Astro. Quem o apanhou foi o portão, com
+ * duas contas do mesmo número feitas de sítios diferentes: a prova, que corre em
+ * Node e via o ficheiro, dizia 308 concelhos com página e 307 no livro-razão; a
+ * vista `dist`, que conta o que foi construído, dizia 1 e 0. É exactamente para
+ * isto que as chaves da prova têm duas contas.
+ *
+ * **Não foi apanhado no P2 (estrutura) porque a cobertura dos 308 foi sempre
+ * construída com `CONCELHOS_GERADO`,** que é um caminho absoluto e não passa por
+ * aqui: o caminho por omissão nunca foi exercido com um ficheiro a existir. A
+ * régua `tests/municipio/concelhos.mjs` passa a exercê-lo.
+ *
+ * A procura é a de `encontraLivroRazao()` e a de `prova.mjs`: do directório de
+ * trabalho primeiro, do próprio ficheiro depois, a subir até encontrar
+ * `ledger/claims`.
+ */
+function encontraRaiz() {
+  const subir = (inicio) => {
+    let dir = inicio;
+    for (let i = 0; i < 8; i++) {
+      if (fs.existsSync(path.join(dir, 'ledger', 'claims'))) return dir;
+      const acima = path.dirname(dir);
+      if (acima === dir) break;
+      dir = acima;
+    }
+    return null;
+  };
+  return (
+    subir(process.cwd()) ?? subir(path.dirname(fileURLToPath(import.meta.url))) ?? process.cwd()
+  );
 }
 
 function carregaGerados() {

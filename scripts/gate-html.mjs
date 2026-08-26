@@ -2294,7 +2294,7 @@ function numeroDoSimbolo(token) {
  * («2.º», «1.ª»), e um número que não coincida com nenhum valor publicado. Ver
  * DECISIONS §1.41 e §1.42.
  */
-function valoresDoLivroEmProsa(texto, chave) {
+function valoresDoLivroEmProsa(texto, chave, idsDaPagina) {
   if (CAMPOS_TRANSCRITOS_DA_AGENDA.some((c) => chave.endsWith(c))) return [];
   const achados = [];
   const limpo = String(texto).replace(ISO_NA_PROSA, ' ');
@@ -2307,8 +2307,31 @@ function valoresDoLivroEmProsa(texto, chave) {
     const numero = numeroDoSimbolo(token);
     if (!numero) continue;
     const d = digitsOf(numero);
+    /**
+     * A COMPARAÇÃO É COM AS LINHAS QUE ESTA PÁGINA RENDE, E NÃO COM O LIVRO INTEIRO.
+     *
+     * A regra está escrita acima e é sobre a mesma página: «um valor que tem
+     * linha e selo NOUTRO SÍTIO DA MESMA PÁGINA». Comparada com o livro-razão
+     * inteiro, ela era mais larga do que a regra que serve, e com 2 552 linhas
+     * deixou de distinguir coisa nenhuma: o espaço dos valores passou a cobrir
+     * quase todos os inteiros pequenos, e a agenda fechou a construção doze
+     * vezes por coincidência. As doze foram lidas uma a uma, e nenhuma era uma
+     * medição sem selo: «9» é o limiar de preços da habitação que a Comissão
+     * publica, com o seu excerto e o seu endereço, e é o prazo de pagamento de
+     * Alijó; «222» é o número do documento SWD(2026) 222, e é o índice de dívida
+     * de Salvaterra de Magos; «2022» é um ano numa lista de datas, e é o número
+     * de empresas de Coruche; «76» é o artigo 76.º da lei, e é o desemprego
+     * registado de Barrancos; «20» é um dia, e é o prazo de pagamento de Cascais.
+     *
+     * O que a regra existe para apanhar continua apanhado, e com a mesma força:
+     * a agenda rende as linhas dos seus critérios com selo, e uma nota que
+     * repita o valor de uma dessas linhas continua a fechar a construção. O que
+     * deixa de fechar é a coincidência com uma linha que a página não mostra e
+     * que o leitor não tem como confundir com aquele número.
+     */
     const id = VALORES_DO_LIVRO.get(d);
     if (!id || vistos.has(d)) continue;
+    if (idsDaPagina && !idsDaPagina.has(id)) continue;
     vistos.add(d);
     achados.push({ token, id });
   }
@@ -3144,8 +3167,35 @@ for (const file of ficheirosHtml(DIST)) {
     verificaTexto({ rota, root, err });
   }
 
-  /* As páginas do próprio livro-razão: o índice e a página de cada linha. */
-  const paginaDoLivro = rota?.key === 'linha' || rota?.key === 'livro';
+  /**
+   * As páginas do próprio livro-razão: os índices e a página de cada linha.
+   *
+   * SÃO TRÊS ROTAS E NÃO DUAS desde a decisão D6 (26.08.2026). A página do
+   * conjunto dos concelhos, `/livro-razao/concelhos` · `/en/ledger/municipalities`,
+   * É um índice do livro-razão: é para lá que as linhas do estudo dos concelhos
+   * saíram do índice principal, e ela lista-as com a mesma linha-espécime, os
+   * mesmos campos marcados `data-linha-*` e o selo da própria linha em cada uma.
+   * Sem esta rota na lista, o portão recusava 4 832 marcas legítimas («numa
+   * página que não é do livro-razão») e, do outro lado, exigia-lhes um selo de
+   * auditoria que na página de um índice não faz sentido, porque cada linha já
+   * traz o seu.
+   *
+   * O que a guarda protege continua protegido: `data-linha-*` continua a ser
+   * proibido em qualquer página que não seja do livro-razão, que é o que a
+   * impede de ser uma segunda porta para meter texto do livro-razão em prosa.
+   * O que muda é a lista das páginas do livro-razão, que cresceu com a página
+   * que a direção mandou criar.
+   *
+   * `paginasDoLivro`, que exige um índice por edição, continua a contar só a
+   * rota `livro`: é o índice principal que tem de existir nas duas edições, e
+   * a contagem da página do conjunto vive nas suas três chaves da prova.
+   */
+  const paginaDoLivro =
+    rota?.key === 'linha' || rota?.key === 'livro' || rota?.key === 'livroConcelhos';
+  /* As linhas que ESTA página cita com <Claim/>, para a conferência da prosa da
+     agenda: é contra elas, e não contra o livro-razão inteiro, que se recusa um
+     valor repetido em prosa. Ver `valoresDoLivroEmProsa()`. */
+  const claimsDaPagina = new Set();
   let claimDaPagina = null;
   if (rota?.key === 'livro') paginasDoLivro++;
   if (rota) {
@@ -3611,6 +3661,7 @@ for (const file of ficheirosHtml(DIST)) {
 
   for (const el of body.querySelectorAll('[data-claim]')) {
     const id = el.getAttribute('data-claim');
+    claimsDaPagina.add(id);
     if (!paginaDoLivro) idsUsados.add(id);
     const claim = claims.get(id);
     if (!claim) {
@@ -4445,7 +4496,7 @@ for (const file of ficheirosHtml(DIST)) {
      * mesma coisa dos dois lados.
      */
     if (!('data-claim' in (el.attributes ?? {}))) {
-      for (const achado of valoresDoLivroEmProsa(renderizado, chave)) {
+      for (const achado of valoresDoLivroEmProsa(renderizado, chave, claimsDaPagina)) {
         err(
           `a prosa da agenda repete um valor do livro-razão: "${achado.token}" é o valor da ` +
             `linha "${achado.id}".\n      campo: ${chave}\n` +
