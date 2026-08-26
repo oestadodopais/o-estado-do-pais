@@ -13,13 +13,16 @@
  *   **O CÓDIGO DE EXECUÇÃO ESCOLHE CADEIAS JÁ VALIDADAS E NUNCA COMPÕE UM
  *   NÚMERO.** Tudo o que a página pode mostrar em qualquer estado saiu deste
  *   ficheiro, foi construído pelo servidor e passou pelo portão de HTML. O
- *   script troca `hidden`, `open`, `aria-pressed` e `aria-current`, e escreve o
- *   `textContent` de dois `<span data-slot>` — o nome e o distrito do concelho
- *   escolhido, copiados do nó daquele concelho na ilha da CAOP que o mapa
- *   desenhou. Não há `innerHTML`, não há cadeia montada, não há aritmética que
- *   produza um algarismo à vista.
+ *   script troca `hidden`, `open`, `aria-pressed` e `aria-current`, e mais nada.
+ *   Não há `innerHTML`, não há cadeia montada, não há aritmética que produza um
+ *   algarismo à vista.
  *
- * O que isto custa é peso: nove blocos de cabeça, os 308 resultados da pesquisa
+ * DESDE A EMENDA 19a O SCRIPT JÁ NEM ESCREVE `textContent` (26.08.2026). Escrevia
+ * o nome e o distrito do concelho escolhido em dois `<span data-slot>`, copiados
+ * do nó daquele concelho na ilha da CAOP; um concelho já não se escolhe aqui, e
+ * os dois blocos que tinham texto por preencher saíram com o estado.
+ *
+ * O que isto custa é peso: seis blocos de cabeça, os 308 resultados da pesquisa
  * e os 308 pontos do mapa saem todos do servidor. O que isto compra é que o
  * portão vê tudo o que o leitor pode ver — que é a única maneira de a promessa
  * do sítio continuar de pé quando a página ganha estado.
@@ -44,9 +47,7 @@ import { estadoDaMedida } from '../lib/estado.mjs';
 import {
   concelhos,
   chaveDaRegiao,
-  chaveDoConcelho,
   ledeDoPainel,
-  pecasDoConcelho,
   REGIOES_DE_AMBITO,
 } from '../lib/inicio.mjs';
 import { estadoDaVerificacao, prova } from '../lib/prova.mjs';
@@ -109,10 +110,22 @@ const lede = ledeDoPainel(medidas, s.inicio.cabeca.ledePais, lang);
 /* O Painel Social Europeu: a lista da Emenda 16, com a linha de cada medida. */
 const sociais = FIGURAS_SOCIAL.map((f) => ({ ...f, linha: getClaim(f.claim) }));
 
-/* -------------------------------------------------------------- os concelhos */
+/* -------------------------------------------------------------- os concelhos
+ *
+ * `primeiroSemPagina` SAIU COM O BLOCO VAZIO (Emenda 19a). Era o concelho com
+ * que o servidor construía o bloco «Ainda sem linhas para <nome>», para que ele
+ * tivesse texto antes de o script lhe trocar o nome. Sem bloco, era uma escolha
+ * de um concelho entre 307 sem nenhuma razão para ser aquele. */
 const cs = concelhos();
-const evora = cs.find((c) => c.pagina) ?? null;
-const primeiroSemPagina = cs.find((c) => !c.pagina) ?? null;
+
+/* O DESTINO DE UM RESULTADO DA PESQUISA (Emenda 19a). Era um `<button
+   data-escolher>` que escolhia um âmbito dentro desta página; com um concelho a
+   viver só na sua página, é a mesma porta que `/municipios` já dá: uma ligação
+   para quem tem página, e o nome com as duas palavras de estado para quem não
+   tem. A função é a que a peça da pesquisa espera, e é a mesma que o índice dos
+   308 lhe passa. */
+const destinoDoConcelho = (c) =>
+  c.pagina ? routePath('municipio', lang, { slug: c.pagina.slug }) : null;
 
 /* ------------------------------------------------------- as seis leituras da régua
  *
@@ -136,14 +149,13 @@ const leitura = (r) => ({
    endereço `?ambito=regiao:<slug>` continua a resolver. */
 const regioesDeAmbito = REGIOES_DE_AMBITO.map(leitura);
 
-/* AS PEÇAS DE ÉVORA SAEM DE UMA CONTA SÓ (ISSUES I44, fechado na etapa 2m).
-   A conta estava escrita aqui e outra vez em `MunicipioView.astro`, e as duas
-   podiam divergir. Passa a viver em `src/lib/inicio.mjs`, que é a canalização
-   desta página, e as duas vistas chamam-na. O que ela decide — a nota de uma
-   medida derivada, a cor do índice de dívida contra o tecto legal — está lá
-   escrito, e a comparação deixou de ser com uma cadeia de Évora escrita à mão
-   para passar a ser com a medida que o concelho declara. */
-const pecasDeEvora = evora ? pecasDoConcelho(evora.pagina) : [];
+/* AS PEÇAS DE ÉVORA SAÍRAM DA PRIMEIRA PÁGINA (Emenda 19a, 26.08.2026). Eram as
+   oito medidas do concelho, rendidas aqui para o painel do estado
+   `?ambito=municipio:evora`: o que o diretor viu a 26.08 e chamou «uma cópia do
+   bloco de /municipios/evora dentro da primeira página». O estado saiu, e um
+   painel que nenhum estado acende é peso no documento e uma segunda casa para o
+   mesmo conteúdo. `pecasDoConcelho()` fica onde vive, em `src/lib/inicio.mjs`, e
+   `MunicipioView` continua a chamá-la: a conta é uma só, como o I44 pediu. */
 
 /* OS BLOCOS DA CABEÇA JÁ NÃO LEVAM ESTADOS (Emenda 13, 21.08.2026).
    Cada bloco trazia a lista dos estados das medidas do seu âmbito, e era ela que
@@ -151,6 +163,8 @@ const pecasDeEvora = evora ? pecasDoConcelho(evora.pagina) : [];
    diz-se na peça dessa medida, ao lado do valor a que se refere. Com a fila, o
    campo; sem a fila, nada o lê, e um campo que ninguém lê é um cálculo a fingir
    que ainda serve. */
+/* OS DOIS BLOCOS DE CONCELHO SAÍRAM (Emenda 19a). Ficam o país e as cinco
+   regiões, que são os estados que o esquema do endereço ainda tem. */
 const blocos = [
   { chave: 'pais', tipo: 'pais' },
   ...regioesDeAmbito.map((r) => ({
@@ -159,47 +173,14 @@ const blocos = [
     nome: r.nome,
     frase: r.frase,
   })),
-  ...(evora
-    ? [
-        {
-          chave: chaveDoConcelho(evora.slug),
-          tipo: 'evora',
-          nome: evora.pagina.nome[lang] ?? evora.pagina.nome.pt,
-          distrito: evora.pagina.distrito[lang] ?? evora.pagina.distrito.pt,
-        },
-      ]
-    : []),
-  {
-    chave: 'vazio',
-    tipo: 'vazio',
-    nome: primeiroSemPagina?.nome ?? '',
-    distrito: primeiroSemPagina?.distrito ?? '',
-    /* ISSUES I18: o prefixo «distrito de» rende-se, ou não, conforme o campo
-       da Carta seja um distrito ou uma ilha. O servidor decide-o para o
-       concelho com que a página é construída; o script troca o `hidden` do
-       prefixo quando o leitor escolhe outro. */
-    ilha: primeiroSemPagina?.ilha ?? false,
-  },
 ];
 
-/* ---------------------------------------------- as oito medidas, sem linha
- *
- * A DISPOSIÇÃO-PADRÃO MUNICIPAL PARA UM CONCELHO SEM PÁGINA (Emenda 14).
- * As mesmas oito medidas da página de concelho, pela mesma ordem, cada uma como
- * uma peça vazia: o nome, a unidade declarada e as palavras «sem linha ainda».
- * Sem valor, sem selo, sem marcador, e sem um único algarismo.
- *
- * A lista é a de `municipios.mjs`, e é a mesma que Évora rende — não uma segunda
- * lista escrita à mão, que divergiria da primeira no dia em que uma medida
- * entrasse ou saísse. O que a página diz de um concelho sem página é, medida a
- * medida, o que ela dirá dele quando houver linhas.
- */
-const medidasSemLinha = evora
-  ? evora.pagina.relance.map((m) => ({
-      nome: m.nome[lang] ?? m.nome.pt,
-      unidade: m.unidade[lang] ?? m.unidade.pt,
-    }))
-  : [];
+/* AS OITO MEDIDAS SEM LINHA SAÍRAM (Emenda 19a). `medidasSemLinha` era a
+   disposição-padrão municipal da Emenda 14: as mesmas oito medidas da página de
+   concelho, cada uma como peça vazia com «sem linha ainda», para o painel do
+   concelho sem página. A Emenda 19a fechou o estado que as mostrava. A
+   disposição-padrão continua inteira onde ela é verdadeira, na página de um
+   concelho (`MunicipioView`), e é lá que a Emenda 14 se prova. */
 ---
 
 <Base
@@ -235,13 +216,13 @@ const medidasSemLinha = evora
         região, que é o que a Emenda 7 promete a um endereço partilhado.
         ---------------------------------------------------------------------- */}
     <div class="pesquisa-bloco" data-pesquisa-bloco>
-      <Pesquisa s={s} lang={lang} p={p} concelhos={cs} />
+      <Pesquisa s={s} lang={lang} p={p} concelhos={cs} destino={destinoDoConcelho} />
     </div>
 
     <div class="cabeca-grelha" data-grelha>
       <Cabeca s={s} lang={lang} p={p} blocos={blocos} ambito="pais" lede={lede} />
       <div class="cabeca-inst" data-coluna-instrumento>
-        <MapaRespira s={s} lang={lang} p={p} concelhos={cs} evora={evora} />
+        <MapaRespira s={s} lang={lang} p={p} concelhos={cs} />
 
         {/* ----------------------------------------------------------------
             OS DOIS DESTINOS DO TELEMÓVEL SAÍRAM (bloco A, itens A2 e A4)
@@ -334,49 +315,13 @@ const medidasSemLinha = evora
       ))
     }
 
-    {
-      evora && (
-        <div class="painel" data-painel={chaveDoConcelho(evora.slug)} hidden>
-          {pecasDeEvora.map((m) => (
-            <Peca
-              s={s}
-              lang={lang}
-              id={m.claim}
-              nome={m.nome[lang]}
-              medida={m.medida[lang]}
-              frase={m.derivada ? null : m.nota[lang]}
-              estado={m.estado}
-              colore={m.colore}
-              regua={m.regua}
-              ambito={`${evora.pagina.nome[lang] ?? evora.pagina.nome.pt}${s.inicio.cabeca.municipioSufixo}`}
-              selosNaMedida={true}
-            />
-          ))}
-        </div>
-      )
-    }
-
-    {/* ------------------------------------------------------------------
-        UM CONCELHO SEM PÁGINA RENDE A DISPOSIÇÃO-PADRÃO (Emenda 14)
-        ------------------------------------------------------------------
-        Era uma caixa de estado vazio. Passa a ser a frase que explica o estado,
-        de largura inteira, e por baixo dela as oito medidas do concelho como
-        peças vazias — a mesma grelha, as mesmas células, os mesmos fios. É o que
-        a `IDENTIDADE.md` §7 pede a uma página por escrever: declarar o que lhe
-        falta em vez de fingir corpo. O que falta são oito medidas, e vêem-se as
-        oito.
-        ------------------------------------------------------------------ */}
-    {/* A FRASE QUE EXPLICAVA O ESTADO VAZIO SAIU (Emenda 15). Dizia «Nenhuma
-        medida foi lida para <nome>. As fontes que publicam para todos os
-        concelhos do país permitem que as mesmas medidas existam aqui, com a
-        mesma prova, no dia em que forem lidas.» — um parágrafo sobre as
-        intenções do sítio, por cima de oito peças que já dizem, cada uma em duas
-        palavras, o que falta. «A ausência diz-se em duas palavras ("sem linha"),
-        não num parágrafo.» `EstadoVazio.astro` era o único sítio que a rendia, e
-        sai do repositório com ela. */}
-    <div class="painel" data-painel="vazio" hidden>
-      {medidasSemLinha.map((m) => <Peca s={s} vazio={true} nome={m.nome} unidade={m.unidade} />)}
-    </div>
+    {/* OS DOIS PAINÉIS DE CONCELHO SAÍRAM (Emenda 19a, 26.08.2026). Um era o de
+        Évora, com as suas oito medidas; o outro era o do concelho sem página,
+        com as oito peças vazias da Emenda 14. Os dois pertenciam a estados
+        `?ambito=municipio:<slug>` que deixaram de existir, e um painel que
+        nenhum estado acende é uma segunda casa para o que já tem casa. O painel
+        de Évora vive em `/municipios/evora`; a disposição-padrão vazia vive na
+        página de cada concelho que venha a ter uma. */}
 
     {/* ------------------------------------------------------------------
         O PAINEL SOCIAL EUROPEU (Emenda 16), e a porta para o resto

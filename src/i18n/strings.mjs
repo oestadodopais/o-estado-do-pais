@@ -407,8 +407,6 @@ export const STRINGS = {
            estão na manchete, e são as duas que a Emenda 16 escreve. */
         paisA: 'Portugal · país',
         regiaoSufixo: ' · região',
-        municipioSufixo: ' · município',
-        municipioPalavra: ' · município · ',
         /* A MANCHETE DA EMENDA 16, palavra por palavra do lugar de direção:
            «Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios
            Macroeconómicos e cumpre 9.» As duas contagens são chaves da prova, e
@@ -419,9 +417,13 @@ export const STRINGS = {
         tituloPaisUm: ' limiar do Procedimento dos Desequilíbrios Macroeconómicos e cumpre ',
         tituloPaisMuitos: ' limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre ',
         tituloPaisFim: '.',
-        tituloEvora: 'As medidas do concelho, cada uma com a sua linha.',
-        tituloVazioA: 'Ainda sem linhas para ',
-        tituloVazioB: '.',
+        /* AS CADEIAS DOS DOIS BLOCOS DE CONCELHO SAÍRAM (Emenda 19a, 26.08.2026).
+           Eram `municipioSufixo`, `municipioPalavra`, `tituloEvora`,
+           `tituloVazioA`, `tituloVazioB`, `ledeVazioA` e `ledeVazioB`: o rótulo,
+           a manchete e a lede do bloco de Évora e do bloco do concelho sem
+           linhas. Os dois blocos pertenciam a estados `?ambito=municipio:<slug>`
+           que deixaram de existir, e uma cadeia sem superfície é uma promessa que
+           ninguém pode ler. Cada uma está registada em `CHAVES-EN.md`. */
         /* A LEDE DA EMENDA 16, palavra por palavra. Nomeia as quatro medidas que
            estão fora do limiar, e o ano é o `reference_date` das quatro linhas,
            marcado como data de referência e não escrito como prosa. */
@@ -450,8 +452,6 @@ export const STRINGS = {
           { nl: '100', motivo: 'escala-de-instrumento' },
           '.',
         ],
-        ledeVazioA: 'O ponto marca a posição do concelho na Carta Administrativa, e não cobertura. Quando houver linhas para ',
-        ledeVazioB: ', entram aqui com a sua fonte e a sua data de leitura.',
         /* O prefixo do distrito (ISSUES I18, subetapa 2g). A Carta escreve
            «Beja» e «Ilha do Faial»; a etiqueta de Évora, que vem de
            `municipios.mjs`, escreve «distrito de Évora». A regra é uma só para
@@ -493,7 +493,6 @@ export const STRINGS = {
         linha: ' concelhos · CAOP ',
         acores: 'Açores',
         madeira: 'Madeira',
-        escolher: 'Toque num ponto para escolher o concelho.',
         readoutHint: 'Passe o cursor sobre um ponto para ler o município.',
         tecladoHint:
           'Teclado: Tab até ao mapa, setas para percorrer os municípios vizinhos, Home para voltar a Évora.',
@@ -507,8 +506,13 @@ export const STRINGS = {
            uma vez só, em `tecladoHint`, que vive dentro de `#mapa-descricao` e
            só se constrói na postura inteira. */
         svgLabel: 'Mapa de pontos dos municípios de Portugal.',
+        /* «trocar de concelho» rende-se no cartão localizador, que vive na
+           página do concelho, e leva ao índice dos 308. `paginaInteira` («a
+           página inteira, com quem governou») saiu com a Emenda 19a: era a
+           segunda porta desse cartão, escondida do servidor e acesa pelo script
+           quando o concelho escolhido tinha página, e onde o cartão se rende ela
+           apontava para a página em que já se está. */
         trocar: 'trocar de concelho',
-        paginaInteira: 'a página inteira, com quem governou',
       },
 
       banda: {
@@ -1412,15 +1416,12 @@ export const STRINGS = {
       cabeca: {
         paisA: 'Portugal · country',
         regiaoSufixo: ' · region',
-        municipioSufixo: ' · municipality',
-        municipioPalavra: ' · municipality · ',
         tituloPaisA: 'Portugal breaches ',
         tituloPaisUm: ' threshold of the Macroeconomic Imbalance Procedure and meets ',
         tituloPaisMuitos: ' thresholds of the Macroeconomic Imbalance Procedure and meets ',
         tituloPaisFim: '.',
-        tituloEvora: 'The measures of the municipality, each with its own row.',
-        tituloVazioA: 'Still no rows for ',
-        tituloVazioB: '.',
+        /* As cadeias dos dois blocos de concelho saíram (Emenda 19a). Ver a
+           razão na edição portuguesa, e o registo em `CHAVES-EN.md`. */
         ledePais: {
           abre: 'Outside the threshold: ',
           separador: ', ',
@@ -1433,8 +1434,6 @@ export const STRINGS = {
           { nl: '100', motivo: 'escala-de-instrumento' },
           '.',
         ],
-        ledeVazioA: 'The point marks where the municipality sits on the official administrative map, and not coverage. When there are rows for ',
-        ledeVazioB: ', they will appear here with their source and their reading date.',
         /* «district of », com o espaço final, como o par português. Os nomes de
            ilha da Carta ficam em português nas duas edições: são nomes
            próprios. A palavra «concelho» deixou de ser um deles na interface
@@ -1463,13 +1462,11 @@ export const STRINGS = {
         linha: ' municipalities · CAOP ',
         acores: 'Azores',
         madeira: 'Madeira',
-        escolher: 'Tap a point to choose the municipality.',
         readoutHint: 'Hover over a point to read the municipality.',
         tecladoHint:
           'Keyboard: Tab to the map, arrow keys to move between neighbouring municipalities, Home to return to Évora.',
         svgLabel: 'Point map of the municipalities of Portugal.',
         trocar: 'change municipality',
-        paginaInteira: 'the whole page, with who governed it',
       },
 
       banda: {

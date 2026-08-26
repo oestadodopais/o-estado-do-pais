@@ -36,9 +36,10 @@
  * UM SÓ INSTRUMENTO, TRÊS POSTURAS. O mapa não se desenha três vezes: desenha-se
  * uma, e a folha muda-lhe o tamanho e o que está à volta.
  *
- *   inteiro      o mapa com a sua ficha (âmbito País, e a escolha de concelho)
- *   localizador  o cartão pequeno, quando um concelho está escolhido e a leitura
- *                aprofunda
+ *   inteiro      o mapa com a sua ficha, na primeira página e em qualquer estado
+ *                dela (Emenda 19d)
+ *   localizador  o cartão pequeno, na página do concelho, com o ponto dele em
+ *                anel
  *   selo         no telemóvel, ~84px, e o selo inteiro é o alvo: nenhum ponto é
  *                alvo (Emenda 3)
  *
@@ -48,34 +49,32 @@
  * um ponto que se pode escolher e um ponto que é textura.
  *
  * ---------------------------------------------------------------------------
- * AS ÁREAS DE TOQUE, E O QUE A GEOMETRIA NÃO DEIXA FAZER
+ * AS 308 ÁREAS DE TOQUE SAÍRAM, E O MAPA É NAVEGAÇÃO (Emenda 19b, 26.08.2026)
  * ---------------------------------------------------------------------------
- * Cada ponto leva uma área invisível maior do que o quadrado. O tamanho de cada
- * uma é METADE da distância ao vizinho mais próximo, com um tecto: mais do que
- * isso e duas áreas encostam, e uma área sobreposta não é um alvo maior — é uma
- * porta que abre o concelho do lado. É a mesma medição que a etapa 1d fez aos
- * selos empilhados (ISSUES I13), aplicada a um mapa.
+ * Cada ponto levava uma área invisível maior do que ele, com meia largura igual
+ * a metade da distância ao vizinho mais próximo, entre um piso de 6,5 e um tecto
+ * de 25,6 unidades de campo. Existiam para uma coisa só: escolher um concelho
+ * dentro da primeira página, tocando no mapa. Com a Emenda 19 essa escolha
+ * acabou (um concelho vive na sua página, e só lá) e nada mais as ouvia: um
+ * rectângulo invisível que nenhum ouvinte lê é uma porta por cima de papel.
  *
- * **OS 24×24 CSS px PASSAM A SER ALCANÇÁVEIS NA VISTA DE ESCOLHA, E A RAZÃO É O
- * TAMANHO DO CAMPO** (etapa 2m). O alvo mede-se em unidades do campo, e o que
- * muda com a postura é quantos píxeis vale uma unidade. Enquanto o mapa se
- * desenhava a 281px fixos, uma unidade valia 0,468px e o piso de 6,5 dava um
- * alvo de 6,1px; com o mapa a encher a largura do conteúdo na vista de escolha
- * (1092px a 1280), a mesma unidade vale 1,82px e o mesmo piso dá 23,7px. Nada na
- * geometria mudou: mudou a escala a que ela se lê.
+ * O QUE APANHA O CLIQUE PASSA A SER O PRÓPRIO PONTO, dentro da sua ligação. Isso
+ * pede uma linha na folha e não uma área nova: um círculo com `fill: none` só
+ * recebe eventos no traço, e o traço tem 1,2 px. Medido a 26.08 sobre a
+ * construção de `main`: um clique no CENTRO do ponto de Évora não abria nada (o
+ * evento atravessava o miolo do círculo e caía no `svg`), e só um clique na
+ * borda abria `/municipios/evora`. `.mun-porta .mun { pointer-events: all }` faz
+ * do disco inteiro o alvo sem pintar um pixel, que é o que a Emenda 10 exige.
  *
- * A DISTÂNCIA MÍNIMA ENTRE DOIS CENTRÓIDES É 2,816 UNIDADES, e não 1,41 como
- * este comentário dizia até à 2m: 1,41 é a METADE dessa distância, que é o
- * `alvo` de cada um dos dois pontos, e o par não é «a área de Lisboa» — são
- * Lajes das Flores e Santa Cruz das Flores, nos Açores. Medido:
- * `node design/especime-v3/medicoes/2026-08-21-etapa-2m-distancias.mjs`. O erro
- * não mudava desenho nenhum (a conta sempre foi feita sobre os centróides, em
- * `src/lib/inicio.mjs`), mas um comentário que nomeia o sítio errado manda quem
- * o ler procurar o defeito em Lisboa.
+ * O ALVO ASSIM MEDE 7,35 × 7,35 px na coluna, e isso está registado em vez de
+ * arredondado: é o tamanho do ponto, e não 44. A Emenda 19e escreve o porquê e o
+ * caminho: nas zonas densas (44 dos 308 têm um vizinho a menos de um diâmetro) a
+ * ligação num ponto não chega, e o caminho é a pesquisa até haver o mapa por
+ * distritos (ISSUES I70).
  *
- * O caminho fiável para escolher um concelho continua a ser a pesquisa, e é essa
- * a razão pela qual a Emenda 3 já a nomeia como caminho principal no telemóvel;
- * o mapa grande e o zoom são o segundo caminho, não o primeiro.
+ * A DISTÂNCIA MÍNIMA ENTRE DOIS CENTRÓIDES É 2,816 UNIDADES (Lajes das Flores e
+ * Santa Cruz das Flores, nos Açores), medida em
+ * `node design/especime-v3/medicoes/2026-08-21-etapa-2m-distancias.mjs`.
  */
 import Claim from '../Claim.astro';
 import Provenance from '../Provenance.astro';
@@ -97,56 +96,38 @@ import { routePath } from '../../lib/routes.mjs';
  * `inteiro` sem `escolhido`, e continua a ser o script a trocar a postura e o
  * anel enquanto o leitor navega. O que elas acrescentam é a mesma coisa dita
  * pelo servidor, para quem não tem script nenhum. */
-const { s, lang, p, concelhos, evora, postura = 'inteiro', escolhido = null } = Astro.props;
+/* `evora` SAIU DAS PROPRIEDADES (Emenda 19a). Era o concelho com página, e servia
+   duas coisas: o nome de defeito do cartão, quando nenhum estava escolhido, e a
+   porta «a página inteira, com quem governou». As duas eram da vista de escolha.
+   O cartão rende-se agora só onde há um concelho escolhido, e o nome vem dele. */
+const { s, lang, p, concelhos, postura = 'inteiro', escolhido = null } = Astro.props;
 
 /* O concelho do anel, quando o servidor o declara. É lido da mesma lista que o
    mapa desenha, e não de uma segunda: um slug que não exista não põe anel
    nenhum, e o cartão fica com o nome que já tinha. */
 const escolha = escolhido ? (concelhos.find((c) => c.slug === escolhido) ?? null) : null;
 
-/* A PORTA «TROCAR DE CONCELHO» PASSA A TER ENDEREÇO (ISSUES I42, etapa 2m).
-   Era `#pesquisa`, que só é um destino na primeira página e só com script: numa
-   página de concelho apontaria para um elemento que ali não existe. Com a vista
-   de escolha a ser um estado do esquema (`?ambito=municipio`), a porta é o
-   endereço dessa vista — verdadeiro nas duas superfícies, e na primeira página o
-   script continua a intercetá-la por `data-trocar` sem recarregar nada. */
-const rotaDaEscolha = `${routePath('home', lang)}?ambito=municipio`;
+/* A PORTA «TROCAR DE CONCELHO» LEVA AO ÍNDICE DOS 308 (Emenda 19a, 26.08.2026).
+   Foi `#pesquisa`, que só era um destino na primeira página e só com script;
+   passou a `/?ambito=municipio`, que era a vista de escolha; e é agora
+   `/municipios`, que é a página onde os 308 estão e onde se escolhe um. A porta
+   só se rende no cartão localizador, que vive na página do concelho: trocar de
+   concelho a partir de lá é ir à lista, e a lista é uma página inteira que
+   funciona sem script nenhum. */
+const rotaDaEscolha = routePath('municipios', lang);
 
 /* OS 308 PONTOS SÃO DO MESMO TAMANHO (Emenda 3), E TODOS VAZIOS (Emenda 10).
    O raio é um só para os 308, e o diâmetro é o mesmo lado de 9 unidades que o
    quadrado tinha: o que muda é a forma do glifo e o enchimento, não a área que
    ele ocupa no campo. A cobertura saiu do ponto e ficou nas palavras.
 
-   Os ALVOS continuam a ser rectângulos, e isso não é uma incoerência de glifo:
-   um alvo não se vê, não pinta nada e não diz nada — é uma área, e uma área
-   quadrada cobre a vizinhança de um ponto melhor do que um círculo do mesmo
-   raio.
-
-   A geometria dos alvos, em unidades do campo, e é POR ISSO que ela não muda
-   com a postura: o que muda é quantos píxeis vale uma unidade. O tecto de 25,6
-   de meia-largura foi escrito quando o mapa media 281px fixos (0,468px por
-   unidade, logo 51,25 unidades por 24 CSS px); com o mapa a encher a coluna e,
-   na vista de escolha, a largura do conteúdo, a mesma declaração dá alvos
-   maiores sem uma linha nova. O tecto fica onde está porque continua a ser o
-   que impede um alvo de engolir a vizinhança de um ponto isolado, e o PISO fica
-   em 6,5 pela razão de sempre: é o alvo que ele governa, não o ponto. */
+   O TECTO E O PISO DO ALVO SAÍRAM COM AS ÁREAS DE TOQUE (Emenda 19b): eram a
+   meia largura de cada rectângulo invisível, e não há rectângulos. O que ficou
+   da geometria é o que o leitor vê, que é o ponto. */
 const LADO = 9;
 const RAIO = LADO / 2;
-const TECTO_DO_ALVO = 25.6;
-const PISO_DO_ALVO = 6.5;
 
-const pontos = concelhos.map((c) => {
-  const meio = Math.max(PISO_DO_ALVO, Math.min(TECTO_DO_ALVO, c.alvo));
-  return {
-    ...c,
-    r: RAIO,
-    ax: c.x - meio,
-    ay: c.y - meio,
-    aLado: meio * 2,
-  };
-});
-
-const rotaDeEvora = evora?.pagina ? routePath('municipio', lang, { slug: evora.pagina.slug }) : null;
+const pontos = concelhos.map((c) => ({ ...c, r: RAIO }));
 
 /* ---------------------------------------------------------------------------
  * A LINHA DA EMENDA 17: «308 concelhos · CAOP 2025 ■ fonte»
@@ -167,17 +148,12 @@ const caop = getClaim('municipios-portugal-caop-2025');
   data-mapa-raiz
   data-postura={postura}
 >
-  {/* «FECHAR» — a saída da vista de escolha (etapa 2m, brief §1).
-      Só se vê quando o mapa está aberto à largura do conteúdo, e a folha
-      decide-o pelo âmbito; sem script a vista de escolha não existe e o
-      controlo não é desenhado. O rótulo é a cadeia que já existe
-      (`densidade.fechar`, PT «fechar» / EN «close»), e por isso esta ronda não
-      escreve texto novo nenhum. O `href` é o endereço do estado a que ele
-      volta, como todos os comandos desta página: sem script, uma ligação que
-      abre; com script, o mesmo caminho de `vai()`, com o foco devolvido. */}
-  {postura === 'inteiro' && (
-    <a class="mapa-fechar" href={routePath('home', lang)} data-fechar-mapa>{s.densidade.fechar}</a>
-  )}
+  {/* «FECHAR» SAIU COM A VISTA DE ESCOLHA (Emenda 19b, 26.08.2026).
+      Era o comando que devolvia o mapa à coluna, no canto superior direito do
+      campo, e só se via quando o mapa estava aberto à largura do conteúdo. O
+      mapa deixou de crescer, e um comando de sair de uma vista que não existe
+      não sai de lado nenhum. A cadeia (`densidade.fechar`) fica onde vive, na
+      peça, que é quem a rende desde a etapa 2. */}
   {/* ------------------------------------------------------------------------
       O CARTÃO LOCALIZADOR TEM O MAPA DENTRO, E NÃO AO LADO (Emenda 3, 2g·6)
       ------------------------------------------------------------------------
@@ -216,145 +192,133 @@ const caop = getClaim('municipios-portugal-caop-2025');
       {...(postura === 'inteiro' ? { 'aria-describedby': 'mapa-descricao' } : {})}
       data-mapa
     >
-    {/* ------------------------------------------------------------------
-        O GRUPO QUE O ZOOM MOVE (etapa 2m, brief §1)
-        ------------------------------------------------------------------
-        A ampliação é uma transformação num nó só — molduras, pontos e alvos
-        juntos —, e não uma segunda cópia do campo nem uma lupa que desenha
-        outra coisa por cima. O script escreve-lhe `transform`, limitado entre
-        1× e 4×, e mais nada muda: os pontos são os mesmos nós, os alvos são os
-        mesmos rectângulos, o teclado percorre a mesma lista pela mesma ordem e
-        a leitura em voz alta diz o mesmo nome. Sem script o atributo não
-        existe, e o grupo é um grupo.
-        ------------------------------------------------------------------ */}
-    <g data-campo>
-      <g class="mapa-molduras">
-        <rect
-          class="mapa-moldura"
-          x={FRAMES.mad[0]}
-          y={FRAMES.mad[1]}
-          width={FRAMES.mad[2]}
-          height={FRAMES.mad[3]}
-        />
-        <rect
-          class="mapa-moldura"
-          x={FRAMES.aco[0]}
-          y={FRAMES.aco[1]}
-          width={FRAMES.aco[2]}
-          height={FRAMES.aco[3]}
-        />
-        <text class="mapa-arq" x={FRAMES.mad[0] + 2} y={FRAMES.mad[1] - 6}>
-          {s.inicio.mapa.madeira}
-        </text>
-        <text class="mapa-arq" x={FRAMES.aco[0] + 2} y={FRAMES.aco[1] - 6}>
-          {s.inicio.mapa.acores}
-        </text>
-      </g>
-
-      {/* A ilha da CAOP: um nó por concelho, com o nome e o distrito ou ilha que
-          a própria Carta lhe dá. É daqui que os dois `data-slot` da cabeça e do
-          estado vazio recebem o seu texto, por `textContent` e mais nada. */}
-      <g class="mapa-pontos" data-pontos>
-        {
-          /* `data-pagina` E NÃO UMA CLASSE. A cobertura era o enchimento, e o
-             script lia-a pela classe que o pintava (`mun-com-pagina`); sem
-             enchimento, uma classe que não pinta nada seria um nome a mentir
-             sobre o que a folha desenha. Passa a ser um atributo de dados, que é
-             o que ela sempre foi: um facto sobre o concelho, que a página diz
-             por palavras e o script usa para saber se há uma página para abrir. */
-          pontos.map((c) => {
-            const ponto = (
-              <circle
-                class={c.slug === escolhido ? 'mun mun-escolhido' : 'mun'}
-                cx={c.x}
-                cy={c.y}
-                r={c.r}
-                data-m={c.nome}
-                data-d={c.distrito}
-                data-ilha={c.ilha ? 'sim' : null}
-                data-pagina={c.pagina ? 'sim' : null}
-                data-caop={c.slug}
-              />
-            );
-            /* ----------------------------------------------------------------
-               UM PONTO COM PÁGINA É UMA LIGAÇÃO (bloco A, item A5)
-               ----------------------------------------------------------------
-               O mapa sabia o destino e não o oferecia: os círculos traziam
-               `data-caop` e o de Évora `data-pagina="sim"`, e o `svg` não tinha
-               uma única ligação, o cursor sobre ele era `auto` e o clique não
-               mudava endereço nem conteúdo (achado B3). Cada ponto que tenha
-               página passa a render dentro de um `<a href>` para a sua página,
-               com um `<title>` que diz o nome — que é o que dá o cursor, o
-               destino na barra do navegador e a paragem do Tab.
-
-               A EMENDA 10 CONTINUA INTEIRA: o desenho do ponto não muda. O
-               raio, o glifo, o traço e o enchimento são os dos outros 307; o
-               que a ligação acrescenta não se vê, e a cobertura continua a
-               dizer-se por palavras ao lado do mapa. Um ponto maior, ou cheio,
-               por ter página, seria a distinção que a emenda proíbe.
-
-               O `<title>` é o NOME DA CARTA, que já está no `data-m` do mesmo
-               ponto: não há aqui uma segunda lista de nomes. */
-            return c.pagina ? (
-              <a
-                class="mun-porta"
-                href={routePath('municipio', lang, { slug: c.pagina.slug })}
-                data-mun-porta={c.slug}
-              >
-                <title>{c.nome}</title>
-                {ponto}
-              </a>
-            ) : (
-              ponto
-            );
-          })
-        }
-      </g>
-
-      {/* As áreas de toque. Sem pintura, sem tamanho na composição, e só
-          activas quando a página está a escolher um concelho. */}
-      <g class="mapa-alvos" data-alvos>
-        {
-          pontos.map((c) => (
-            <rect
-              class="mun-alvo"
-              x={c.ax}
-              y={c.ay}
-              width={c.aLado}
-              height={c.aLado}
-              data-caop={c.slug}
-              data-alvo-de={c.nome}
-            />
-          ))
-        }
-      </g>
+    {/* O GRUPO QUE O ZOOM MOVIA SAIU COM O ZOOM (Emenda 19b). Era um `<g
+        data-campo>` a envolver as molduras, os pontos e os alvos, e o script
+        escrevia-lhe um `transform` de 1× a 4×. Sem lente, um grupo que não
+        agrupa nada é um nó a dizer que ainda há uma transformação. */}
+    <g class="mapa-molduras">
+      <rect
+        class="mapa-moldura"
+        x={FRAMES.mad[0]}
+        y={FRAMES.mad[1]}
+        width={FRAMES.mad[2]}
+        height={FRAMES.mad[3]}
+      />
+      <rect
+        class="mapa-moldura"
+        x={FRAMES.aco[0]}
+        y={FRAMES.aco[1]}
+        width={FRAMES.aco[2]}
+        height={FRAMES.aco[3]}
+      />
+      <text class="mapa-arq" x={FRAMES.mad[0] + 2} y={FRAMES.mad[1] - 6}>
+        {s.inicio.mapa.madeira}
+      </text>
+      <text class="mapa-arq" x={FRAMES.aco[0] + 2} y={FRAMES.aco[1] - 6}>
+        {s.inicio.mapa.acores}
+      </text>
     </g>
+
+    {/* A ilha da CAOP: um nó por concelho, com o nome e o distrito ou ilha que
+        a própria Carta lhe dá. Era daqui que os dois `data-slot` da cabeça
+        recebiam o seu texto; os dois saíram com o concelho escolhido (Emenda
+        19a), e o que a página lê destes nós é a leitura em voz alta do mapa. */}
+    <g class="mapa-pontos" data-pontos>
+      {
+        /* `data-pagina` E NÃO UMA CLASSE. A cobertura era o enchimento, e o
+           script lia-a pela classe que o pintava (`mun-com-pagina`); sem
+           enchimento, uma classe que não pinta nada seria um nome a mentir
+           sobre o que a folha desenha. Passa a ser um atributo de dados, que é
+           o que ela sempre foi: um facto sobre o concelho, que a página diz
+           por palavras e o script usa para saber se há uma página para abrir. */
+        pontos.map((c) => {
+          const ponto = (
+            <circle
+              class={c.slug === escolhido ? 'mun mun-escolhido' : 'mun'}
+              cx={c.x}
+              cy={c.y}
+              r={c.r}
+              data-m={c.nome}
+              data-d={c.distrito}
+              data-ilha={c.ilha ? 'sim' : null}
+              data-pagina={c.pagina ? 'sim' : null}
+              data-caop={c.slug}
+            />
+          );
+          /* ----------------------------------------------------------------
+             UM PONTO COM PÁGINA É UMA LIGAÇÃO (bloco A, item A5)
+             ----------------------------------------------------------------
+             O mapa sabia o destino e não o oferecia: os círculos traziam
+             `data-caop` e o de Évora `data-pagina="sim"`, e o `svg` não tinha
+             uma única ligação, o cursor sobre ele era `auto` e o clique não
+             mudava endereço nem conteúdo (achado B3). Cada ponto que tenha
+             página passa a render dentro de um `<a href>` para a sua página,
+             com um `<title>` que diz o nome — que é o que dá o cursor, o
+             destino na barra do navegador e a paragem do Tab.
+
+             A EMENDA 10 CONTINUA INTEIRA: o desenho do ponto não muda. O
+             raio, o glifo, o traço e o enchimento são os dos outros 307; o
+             que a ligação acrescenta não se vê, e a cobertura continua a
+             dizer-se por palavras ao lado do mapa. Um ponto maior, ou cheio,
+             por ter página, seria a distinção que a emenda proíbe.
+
+             O `<title>` é o NOME DA CARTA, que já está no `data-m` do mesmo
+             ponto: não há aqui uma segunda lista de nomes. */
+          return c.pagina ? (
+            <a
+              class="mun-porta"
+              href={routePath('municipio', lang, { slug: c.pagina.slug })}
+              data-mun-porta={c.slug}
+            >
+              <title>{c.nome}</title>
+              {ponto}
+            </a>
+          ) : (
+            ponto
+          );
+        })
+      }
+    </g>
+
+    {/* AS 308 ÁREAS DE TOQUE SAÍRAM (Emenda 19b). A razão está na cabeça
+        deste ficheiro: existiam para escolher um concelho no mapa, nada mais
+        as ouvia depois de a escolha sair, e o que apanha o clique passou a ser
+        o próprio ponto dentro da sua ligação. */}
     </svg>
   </div>
 
+    {/* O TEXTO DO CARTÃO SÓ SE CONSTRÓI ONDE ELE SE VÊ (Emenda 19a, 26.08.2026).
+        A folha escondia-o na postura inteira (`[data-postura='inteiro']
+        .mapa-cartao-texto { display: none }`), e escondido continuava a ser
+        bytes: a primeira página levava o nome de um concelho que ninguém
+        escolheu, uma segunda rendição do selo da Carta e a porta «trocar de
+        concelho» dentro de um bloco que nunca se abre. É a mesma disciplina que
+        a legenda e a leitura já seguem por baixo. */}
+    {postura !== 'inteiro' && (
     <div class="mapa-cartao-texto">
-      <p class="mapa-cartao-nome">
-        <span data-slot="nome">{escolha?.nome ?? evora?.nome}</span>
-      </p>
+      {/* O `data-slot` SAIU DO NOME (Emenda 19a). Era a marca por onde o script
+          da primeira página escrevia o nome do concelho escolhido, e não há
+          concelho escolhido na primeira página: quem rende este cartão é a
+          página do concelho, e o nome vem do servidor, como o resto dela. */}
+      <p class="mapa-cartao-nome">{escolha?.nome}</p>
       {/* A COBERTURA E A NEUTRALIDADE SAÍRAM (Emenda 15). A primeira era uma
           frase sobre a cobertura do próprio sítio, que a emenda nomeia; a
           segunda dizia o que a casa NÃO afirma, que a emenda nomeia também
           («nunca o que não afirmamos»). O cartão fica com o nome do concelho, o
-          selo da Carta e as duas portas. */}
+          selo da Carta e a porta. */}
       <p class="mapa-cartao-selo">
         <Claim id="municipios-portugal-caop-2025" lang={lang} chip={true} />
       </p>
+      {/* A PORTA «A PÁGINA INTEIRA, COM QUEM GOVERNOU» SAIU (Emenda 19a). Era a
+          segunda porta deste cartão, escondida do servidor e acesa pelo script
+          quando o concelho escolhido tinha página. Sem concelho escolhido nunca
+          acendia; e onde o cartão se rende, na página do concelho, ela apontava
+          para a página em que já se está. Fica a porta que leva a algum lado. */}
       <p class="mapa-cartao-portas">
         <a class="lig" href={rotaDaEscolha} data-trocar>{s.inicio.mapa.trocar} →</a>
-        {
-          rotaDeEvora && (
-            <a class="lig" href={rotaDeEvora} data-so-evora hidden>
-              {s.inicio.mapa.paginaInteira} →
-            </a>
-          )
-        }
       </p>
     </div>
+    )}
   </div>
 
   {/* ------------------------------------------------------------------------
@@ -433,6 +397,11 @@ const caop = getClaim('municipios-portugal-caop-2025');
         dele, por `aria-describedby`. Quem vê o mapa vê o mapa; quem o ouve
         continua a saber como o percorrer.
 
+        SÃO DUAS DESDE A EMENDA 19b. A terceira era «Toque num ponto para
+        escolher o concelho», e descrevia a escolha que saiu: o que um ponto faz
+        agora é abrir a página do concelho, quando ela existe, e isso diz-se onde
+        se diz um destino, que é a ligação e o seu `<title>`.
+
         A disciplina do `hidden` é a mesma de antes (ISSUES I21), e é por isso
         que elas continuam a entrar escondidas: descrevem o que só é verdade com
         script, e um elemento `hidden` não entra na árvore nem é anunciado. O
@@ -440,8 +409,7 @@ const caop = getClaim('municipios-portugal-caop-2025');
         -------------------------------------------------------------------- */}
     <p class="vh mapa-descricao" id="mapa-descricao">
       <span class="mapa-hint" data-dica-cursor hidden>{s.inicio.mapa.readoutHint}</span>{' '}
-      <span class="mapa-hint" data-teclado hidden>{s.inicio.mapa.tecladoHint}</span>{' '}
-      <span class="mapa-hint" data-hint-escolher hidden>{s.inicio.mapa.escolher}</span>
+      <span class="mapa-hint" data-teclado hidden>{s.inicio.mapa.tecladoHint}</span>
     </p>
 
     {/* --------------------------------------------------------------------
