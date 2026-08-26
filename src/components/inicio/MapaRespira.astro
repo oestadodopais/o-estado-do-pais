@@ -193,7 +193,22 @@ const caop = getClaim('municipios-portugal-caop-2025');
     <svg
       class="mapa-svg"
       viewBox={`0 0 ${FIELD_W} ${FIELD_H}`}
-      role="img"
+      {/* --------------------------------------------------------------------
+          O PAPEL DO SVG SEGUE O QUE ESTÁ LÁ DENTRO (item E12, P2)
+          --------------------------------------------------------------------
+          `role="img"` diz «isto é uma imagem», e a tecnologia de apoio pode
+          achatar o que está dentro de uma imagem: os descendentes deixam de ser
+          alcançáveis um a um. Enquanto o mapa era só desenho, o papel estava
+          certo. Com a regra N4, na primeira página, os pontos com página são
+          LIGAÇÕES, e uma ligação dentro de uma imagem é uma porta que pode
+          desaparecer para quem não a vê.
+
+          Na postura «inteiro», que é a da primeira página e a única com
+          ligações, o papel passa a `group`: um grupo leva nome acessível e não
+          esconde o que tem dentro. Nas outras posturas o mapa não tem ligação
+          nenhuma e continua a ser o que é: uma imagem, com o seu nome.
+          -------------------------------------------------------------------- */}
+      role={postura === 'inteiro' ? 'group' : 'img'}
       aria-label={s.inicio.mapa.svgLabel}
       {...(postura === 'inteiro' ? { 'aria-describedby': 'mapa-descricao' } : {})}
       data-mapa
@@ -270,7 +285,19 @@ const caop = getClaim('municipios-portugal-caop-2025');
 
              O `<title>` é o NOME DA CARTA, que já está no `data-m` do mesmo
              ponto: não há aqui uma segunda lista de nomes. */
-          return c.pagina ? (
+          /* --------------------------------------------------------------
+             O CARTÃO LOCALIZADOR LOCALIZA, E NÃO NAVEGA (item E12, P2)
+             --------------------------------------------------------------
+             A regra N4 é da PRIMEIRA PÁGINA: ali o mapa é navegação, e um ponto
+             com página é uma ligação. O cartão da página do concelho é outra
+             coisa: mostra onde fica o concelho de que a página trata, com o anel
+             no ponto dele. Ali as 308 ligações não levavam a lado nenhum que a
+             página não tivesse já (o índice e a pesquisa são a navegação), eram
+             alvos de 4,5px de raio no telemóvel, e punham 308 âncoras dentro de
+             um `role="img"` em cada uma das 616 páginas de concelho.
+
+             As ligações ficam onde a regra as pede, e mais lado nenhum. */
+          return c.pagina && postura === 'inteiro' ? (
             <a
               class="mun-porta"
               href={routePath('municipio', lang, { slug: c.pagina.slug })}
