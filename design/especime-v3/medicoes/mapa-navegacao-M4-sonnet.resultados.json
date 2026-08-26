@@ -1,0 +1,1299 @@
+{
+  "meta": {
+    "geradoEm": "2026-08-26T12:50:59.182Z",
+    "portoDepois": 4611,
+    "portoAntes": 4612
+  },
+  "items": {
+    "1": {
+      "titulo": "O mapa não cresce",
+      "tabela": [
+        {
+          "viewport": "1280",
+          "estado": "A_pais",
+          "estadoDesc": "em / (país)",
+          "antes": {
+            "url": "http://localhost:4612/",
+            "svgCount": 1,
+            "svgBox": {
+              "w": 490,
+              "h": 645
+            },
+            "docSize": {
+              "w": 1280,
+              "h": 3890
+            },
+            "transformsDentroDoSvg": 0,
+            "transformsAmostra": [],
+            "mapaFecharCount": 1,
+            "dataCampoCount": 1,
+            "cabecaVisivel": {
+              "fallback": false,
+              "count": 1,
+              "dataCabeca": [
+                "pais"
+              ],
+              "texto": [
+                "Portugal · país"
+              ]
+            },
+            "pesquisaVisivel": false,
+            "pesquisaBox": null,
+            "foco": {
+              "tag": "BODY",
+              "id": null,
+              "cls": null,
+              "href": null
+            }
+          },
+          "depois": {
+            "url": "http://localhost:4611/",
+            "svgCount": 1,
+            "svgBox": {
+              "w": 490,
+              "h": 645
+            },
+            "docSize": {
+              "w": 1280,
+              "h": 3890
+            },
+            "transformsDentroDoSvg": 0,
+            "transformsAmostra": [],
+            "mapaFecharCount": 0,
+            "dataCampoCount": 0,
+            "cabecaVisivel": {
+              "fallback": false,
+              "count": 1,
+              "dataCabeca": [
+                "pais"
+              ],
+              "texto": [
+                "Portugal · país"
+              ]
+            },
+            "pesquisaVisivel": false,
+            "pesquisaBox": null,
+            "foco": {
+              "tag": "BODY",
+              "id": null,
+              "cls": null,
+              "href": null
+            }
+          }
+        },
+        {
+          "viewport": "1280",
+          "estado": "B_municipio_url",
+          "estadoDesc": "em /?ambito=municipio (navegação direta)",
+          "antes": {
+            "url": "http://localhost:4612/?ambito=municipio",
+            "svgCount": 1,
+            "svgBox": {
+              "w": 1092,
+              "h": 1438
+            },
+            "docSize": {
+              "w": 1280,
+              "h": 5066
+            },
+            "transformsDentroDoSvg": 0,
+            "transformsAmostra": [],
+            "mapaFecharCount": 1,
+            "dataCampoCount": 1,
+            "cabecaVisivel": {
+              "fallback": false,
+              "count": 1,
+              "dataCabeca": [
+                "pais"
+              ],
+              "texto": [
+                "Portugal · país"
+              ]
+            },
+            "pesquisaVisivel": true,
+            "pesquisaBox": {
+              "x": 94,
+              "y": 445,
+              "w": 340,
+              "h": 44
+            },
+            "foco": {
+              "tag": "BODY",
+              "id": null,
+              "cls": null,
+              "href": null
+            }
+          },
+          "depois": {
+            "url": "http://localhost:4611/?ambito=municipio",
+            "svgCount": 1,
+            "svgBox": {
+              "w": 490,
+              "h": 645
+            },
+            "docSize": {
+              "w": 1280,
+              "h": 4033
+            },
+            "transformsDentroDoSvg": 0,
+            "transformsAmostra": [],
+            "mapaFecharCount": 0,
+            "dataCampoCount": 0,
+            "cabecaVisivel": {
+              "fallback": false,
+              "count": 1,
+              "dataCabeca": [
+                "pais"
+              ],
+              "texto": [
+                "Portugal · país"
+              ]
+            },
+            "pesquisaVisivel": true,
+            "pesquisaBox": {
+              "x": 94,
+              "y": 445,
+              "w": 340,
+              "h": 44
+            },
+            "foco": {
+              "tag": "BODY",
+              "id": null,
+              "cls": null,
+              "href": null
+            }
+          }
+        },
+        {
+          "viewport": "1280",
+          "estado": "C_concelho_clique",
+          "estadoDesc": "depois de clique real em «Concelho»",
+          "antes": {
+            "url": "http://localhost:4612/?ambito=municipio",
+            "svgCount": 1,
+            "svgBox": {
+              "w": 1092,
+              "h": 1438
+            },
+            "docSize": {
+              "w": 1280,
+              "h": 5066
+            },
+            "transformsDentroDoSvg": 0,
+            "transformsAmostra": [],
+            "mapaFecharCount": 1,
+            "dataCampoCount": 1,
+            "cabecaVisivel": {
+              "fallback": false,
+              "count": 1,
+              "dataCabeca": [
+                "pais"
+              ],
+              "texto": [
+                "Portugal · país"
+              ]
+            },
+            "pesquisaVisivel": true,
+            "pesquisaBox": {
+              "x": 94,
+              "y": 445,
+              "w": 340,
+              "h": 44
+            },
+            "foco": {
+              "tag": "INPUT",
+              "id": "pesquisa-concelho",
+              "cls": "pesquisa-campo",
+              "href": null
+            }
+          },
+          "depois": {
+            "url": "http://localhost:4611/?ambito=municipio",
+            "svgCount": 1,
+            "svgBox": {
+              "w": 490,
+              "h": 645
+            },
+            "docSize": {
+              "w": 1280,
+              "h": 4033
+            },
+            "transformsDentroDoSvg": 0,
+            "transformsAmostra": [],
+            "mapaFecharCount": 0,
+            "dataCampoCount": 0,
+            "cabecaVisivel": {
+              "fallback": false,
+              "count": 1,
+              "dataCabeca": [
+                "pais"
+              ],
+              "texto": [
+                "Portugal · país"
+              ]
+            },
+            "pesquisaVisivel": true,
+            "pesquisaBox": {
+              "x": 94,
+              "y": 445,
+              "w": 340,
+              "h": 44
+            },
+            "foco": {
+              "tag": "INPUT",
+              "id": "pesquisa-concelho",
+              "cls": "pesquisa-campo",
+              "href": null
+            }
+          }
+        },
+        {
+          "viewport": "2000",
+          "estado": "A_pais",
+          "estadoDesc": "em / (país)",
+          "antes": {
+            "url": "http://localhost:4612/",
+            "svgCount": 1,
+            "svgBox": {
+              "w": 490,
+              "h": 645
+            },
+            "docSize": {
+              "w": 2000,
+              "h": 3900
+            },
+            "transformsDentroDoSvg": 0,
+            "transformsAmostra": [],
+            "mapaFecharCount": 1,
+            "dataCampoCount": 1,
+            "cabecaVisivel": {
+              "fallback": false,
+              "count": 1,
+              "dataCabeca": [
+                "pais"
+              ],
+              "texto": [
+                "Portugal · país"
+              ]
+            },
+            "pesquisaVisivel": false,
+            "pesquisaBox": null,
+            "foco": {
+              "tag": "BODY",
+              "id": null,
+              "cls": null,
+              "href": null
+            }
+          },
+          "depois": {
+            "url": "http://localhost:4611/",
+            "svgCount": 1,
+            "svgBox": {
+              "w": 490,
+              "h": 645
+            },
+            "docSize": {
+              "w": 2000,
+              "h": 3900
+            },
+            "transformsDentroDoSvg": 0,
+            "transformsAmostra": [],
+            "mapaFecharCount": 0,
+            "dataCampoCount": 0,
+            "cabecaVisivel": {
+              "fallback": false,
+              "count": 1,
+              "dataCabeca": [
+                "pais"
+              ],
+              "texto": [
+                "Portugal · país"
+              ]
+            },
+            "pesquisaVisivel": false,
+            "pesquisaBox": null,
+            "foco": {
+              "tag": "BODY",
+              "id": null,
+              "cls": null,
+              "href": null
+            }
+          }
+        },
+        {
+          "viewport": "2000",
+          "estado": "B_municipio_url",
+          "estadoDesc": "em /?ambito=municipio (navegação direta)",
+          "antes": {
+            "url": "http://localhost:4612/?ambito=municipio",
+            "svgCount": 1,
+            "svgBox": {
+              "w": 1092,
+              "h": 1438
+            },
+            "docSize": {
+              "w": 2000,
+              "h": 5077
+            },
+            "transformsDentroDoSvg": 0,
+            "transformsAmostra": [],
+            "mapaFecharCount": 1,
+            "dataCampoCount": 1,
+            "cabecaVisivel": {
+              "fallback": false,
+              "count": 1,
+              "dataCabeca": [
+                "pais"
+              ],
+              "texto": [
+                "Portugal · país"
+              ]
+            },
+            "pesquisaVisivel": true,
+            "pesquisaBox": {
+              "x": 454,
+              "y": 446,
+              "w": 340,
+              "h": 44
+            },
+            "foco": {
+              "tag": "BODY",
+              "id": null,
+              "cls": null,
+              "href": null
+            }
+          },
+          "depois": {
+            "url": "http://localhost:4611/?ambito=municipio",
+            "svgCount": 1,
+            "svgBox": {
+              "w": 490,
+              "h": 645
+            },
+            "docSize": {
+              "w": 2000,
+              "h": 4043
+            },
+            "transformsDentroDoSvg": 0,
+            "transformsAmostra": [],
+            "mapaFecharCount": 0,
+            "dataCampoCount": 0,
+            "cabecaVisivel": {
+              "fallback": false,
+              "count": 1,
+              "dataCabeca": [
+                "pais"
+              ],
+              "texto": [
+                "Portugal · país"
+              ]
+            },
+            "pesquisaVisivel": true,
+            "pesquisaBox": {
+              "x": 454,
+              "y": 446,
+              "w": 340,
+              "h": 44
+            },
+            "foco": {
+              "tag": "BODY",
+              "id": null,
+              "cls": null,
+              "href": null
+            }
+          }
+        },
+        {
+          "viewport": "2000",
+          "estado": "C_concelho_clique",
+          "estadoDesc": "depois de clique real em «Concelho»",
+          "antes": {
+            "url": "http://localhost:4612/?ambito=municipio",
+            "svgCount": 1,
+            "svgBox": {
+              "w": 1092,
+              "h": 1438
+            },
+            "docSize": {
+              "w": 2000,
+              "h": 5077
+            },
+            "transformsDentroDoSvg": 0,
+            "transformsAmostra": [],
+            "mapaFecharCount": 1,
+            "dataCampoCount": 1,
+            "cabecaVisivel": {
+              "fallback": false,
+              "count": 1,
+              "dataCabeca": [
+                "pais"
+              ],
+              "texto": [
+                "Portugal · país"
+              ]
+            },
+            "pesquisaVisivel": true,
+            "pesquisaBox": {
+              "x": 454,
+              "y": 446,
+              "w": 340,
+              "h": 44
+            },
+            "foco": {
+              "tag": "INPUT",
+              "id": "pesquisa-concelho",
+              "cls": "pesquisa-campo",
+              "href": null
+            }
+          },
+          "depois": {
+            "url": "http://localhost:4611/?ambito=municipio",
+            "svgCount": 1,
+            "svgBox": {
+              "w": 490,
+              "h": 645
+            },
+            "docSize": {
+              "w": 2000,
+              "h": 4043
+            },
+            "transformsDentroDoSvg": 0,
+            "transformsAmostra": [],
+            "mapaFecharCount": 0,
+            "dataCampoCount": 0,
+            "cabecaVisivel": {
+              "fallback": false,
+              "count": 1,
+              "dataCabeca": [
+                "pais"
+              ],
+              "texto": [
+                "Portugal · país"
+              ]
+            },
+            "pesquisaVisivel": true,
+            "pesquisaBox": {
+              "x": 454,
+              "y": 446,
+              "w": 340,
+              "h": 44
+            },
+            "foco": {
+              "tag": "INPUT",
+              "id": "pesquisa-concelho",
+              "cls": "pesquisa-campo",
+              "href": null
+            }
+          }
+        }
+      ]
+    },
+    "2": {
+      "titulo": "A roda é da página",
+      "tabela": [
+        {
+          "viewport": "1280",
+          "antes": {
+            "svgExists": true,
+            "scrollY": {
+              "antes": 1126,
+              "aposDescer5": 1126,
+              "aposSubir5": 1126
+            },
+            "paginaMoveuAoDescer": false,
+            "transformsDentroSvgAposDescer": 0,
+            "transformsDentroSvgAposSubir": 1,
+            "amostraTransformAposSubir": [
+              {
+                "tag": "g",
+                "cls": null,
+                "computed": "matrix(1.46933, 0, 0, 1.46933, -140.798, -185.435)",
+                "attr": "translate(-140.79842304000005 -185.4349561817321) scale(1.4693280768000003)"
+              }
+            ]
+          },
+          "depois": {
+            "svgExists": true,
+            "scrollY": {
+              "antes": 411,
+              "aposDescer5": 1011,
+              "aposSubir5": 0
+            },
+            "paginaMoveuAoDescer": true,
+            "transformsDentroSvgAposDescer": 0,
+            "transformsDentroSvgAposSubir": 0,
+            "amostraTransformAposSubir": []
+          }
+        },
+        {
+          "viewport": "2000",
+          "antes": {
+            "svgExists": true,
+            "scrollY": {
+              "antes": 808,
+              "aposDescer5": 808,
+              "aposSubir5": 808
+            },
+            "paginaMoveuAoDescer": false,
+            "transformsDentroSvgAposDescer": 0,
+            "transformsDentroSvgAposSubir": 1,
+            "amostraTransformAposSubir": [
+              {
+                "tag": "g",
+                "cls": null,
+                "computed": "matrix(1.46933, 0, 0, 1.46933, -140.798, -152.669)",
+                "attr": "translate(-140.79842304000005 -152.66895158241329) scale(1.4693280768000003)"
+              }
+            ]
+          },
+          "depois": {
+            "svgExists": true,
+            "scrollY": {
+              "antes": 28,
+              "aposDescer5": 628,
+              "aposSubir5": 0
+            },
+            "paginaMoveuAoDescer": true,
+            "transformsDentroSvgAposDescer": 0,
+            "transformsDentroSvgAposSubir": 0,
+            "amostraTransformAposSubir": []
+          }
+        }
+      ]
+    },
+    "3": {
+      "titulo": "Os endereços antigos",
+      "tabela": [
+        {
+          "path": "/?ambito=municipio:evora",
+          "esperadoDepois": "/municipios/evora",
+          "antes": {
+            "urlFinal": "/?ambito=municipio%3Aevora",
+            "dataAmbito": "municipio:evora",
+            "cabecaTexto": [
+              "Évora · município · distrito de Évora"
+            ]
+          },
+          "depois": {
+            "urlFinal": "/municipios/evora/",
+            "dataAmbito": null,
+            "cabecaTexto": "Évora"
+          }
+        },
+        {
+          "path": "/?ambito=municipio:braganca",
+          "esperadoDepois": "/municipios",
+          "antes": {
+            "urlFinal": "/?ambito=municipio%3Abraganca",
+            "dataAmbito": "municipio:braganca",
+            "cabecaTexto": [
+              "Bragança · município · distrito de Bragança"
+            ]
+          },
+          "depois": {
+            "urlFinal": "/municipios/",
+            "dataAmbito": null,
+            "cabecaTexto": "Os concelhos de Portugal"
+          }
+        },
+        {
+          "path": "/?ambito=regiao:alentejo",
+          "esperadoDepois": null,
+          "antes": {
+            "urlFinal": "/?ambito=regiao%3Aalentejo",
+            "dataAmbito": "regiao:alentejo",
+            "cabecaTexto": [
+              "Alentejo · região"
+            ]
+          },
+          "depois": {
+            "urlFinal": "/?ambito=regiao%3Aalentejo",
+            "dataAmbito": "regiao:alentejo",
+            "cabecaTexto": [
+              "Alentejo · região"
+            ]
+          }
+        },
+        {
+          "path": "/?ambito=lixo",
+          "esperadoDepois": null,
+          "antes": {
+            "urlFinal": "/",
+            "dataAmbito": "pais",
+            "cabecaTexto": [
+              "Portugal · país"
+            ]
+          },
+          "depois": {
+            "urlFinal": "/",
+            "dataAmbito": "pais",
+            "cabecaTexto": [
+              "Portugal · país"
+            ]
+          }
+        }
+      ]
+    },
+    "4": {
+      "titulo": "Os pontos",
+      "tabela": {
+        "cliqueEvora_partindoDePais_antes": {
+          "arranque": "/",
+          "existeElemento": true,
+          "urlAntes": "/",
+          "urlDepois": "/",
+          "urlMudou": false,
+          "ambitoAntes": "pais",
+          "ambitoDepois": "pais",
+          "ambitoMudou": false,
+          "cabecaTextoAntes": [
+            "Portugal · país"
+          ],
+          "cabecaTextoDepois": [
+            "Portugal · país"
+          ]
+        },
+        "cliqueEvora_partindoDePais_depois": {
+          "arranque": "/",
+          "existeElemento": true,
+          "urlAntes": "/",
+          "urlDepois": "/municipios/evora/",
+          "urlMudou": true,
+          "ambitoAntes": "pais",
+          "ambitoDepois": null,
+          "ambitoMudou": true,
+          "cabecaTextoAntes": [
+            "Portugal · país"
+          ],
+          "cabecaTextoDepois": "Évora"
+        },
+        "cliqueBraganca_partindoDePais_antes": {
+          "arranque": "/",
+          "existeElemento": true,
+          "urlAntes": "/",
+          "urlDepois": "/",
+          "urlMudou": false,
+          "ambitoAntes": "pais",
+          "ambitoDepois": "pais",
+          "ambitoMudou": false,
+          "cabecaTextoAntes": [
+            "Portugal · país"
+          ],
+          "cabecaTextoDepois": [
+            "Portugal · país"
+          ]
+        },
+        "cliqueBraganca_partindoDePais_depois": {
+          "arranque": "/",
+          "existeElemento": true,
+          "urlAntes": "/",
+          "urlDepois": "/",
+          "urlMudou": false,
+          "ambitoAntes": "pais",
+          "ambitoDepois": "pais",
+          "ambitoMudou": false,
+          "cabecaTextoAntes": [
+            "Portugal · país"
+          ],
+          "cabecaTextoDepois": [
+            "Portugal · país"
+          ]
+        },
+        "cliqueEvora_partindoDoEstadoExpandido_antes": {
+          "arranque": "/?ambito=municipio",
+          "existeElemento": true,
+          "urlAntes": "/?ambito=municipio",
+          "urlDepois": "/?ambito=municipio%3Aevora",
+          "urlMudou": true,
+          "ambitoAntes": "municipio",
+          "ambitoDepois": "municipio:evora",
+          "ambitoMudou": true,
+          "cabecaTextoAntes": [
+            "Portugal · país"
+          ],
+          "cabecaTextoDepois": [
+            "Évora · município · distrito de Évora"
+          ]
+        },
+        "cliqueBraganca_partindoDoEstadoExpandido_antes": {
+          "arranque": "/?ambito=municipio",
+          "existeElemento": true,
+          "urlAntes": "/?ambito=municipio",
+          "urlDepois": "/?ambito=municipio%3Abraganca",
+          "urlMudou": true,
+          "ambitoAntes": "municipio",
+          "ambitoDepois": "municipio:braganca",
+          "ambitoMudou": true,
+          "cabecaTextoAntes": [
+            "Portugal · país"
+          ],
+          "cabecaTextoDepois": [
+            "Bragança · município · distrito de Bragança"
+          ]
+        },
+        "contagemPontos_antes": {
+          "pontosComPagina": 1,
+          "circulosDentroDeA": 1,
+          "totalCirculos": 616
+        },
+        "contagemPontos_depois": {
+          "pontosComPagina": 1,
+          "circulosDentroDeA": 1,
+          "totalCirculos": 308
+        },
+        "hoverBraganca_antes": {
+          "readoutAntes": " · distrito de ",
+          "readoutDepois": "Bragança · distrito de Bragança",
+          "readoutVisivel": true,
+          "contemNomeVisivel": true
+        },
+        "hoverBraganca_depois": {
+          "readoutAntes": " · distrito de ",
+          "readoutDepois": "Bragança · distrito de Bragança",
+          "readoutVisivel": true,
+          "contemNomeVisivel": true
+        },
+        "zonasDensas_Emenda19e": {
+          "totalPontos": 308,
+          "raioUnico": [
+            4.5
+          ],
+          "pontosComVizinhoAMenosDeUmDiametro": 44,
+          "exemplosDaEmenda19PresentesNoConjunto": true,
+          "nomesDoConjunto": [
+            "Aveiro",
+            "Ílhavo",
+            "Oliveira de Azeméis",
+            "São João da Madeira",
+            "Alcobaça",
+            "Nazaré",
+            "Arruda dos Vinhos",
+            "Lisboa",
+            "Oeiras",
+            "Sobral de Monte Agraço",
+            "Amadora",
+            "Odivelas",
+            "Maia",
+            "Matosinhos",
+            "Paços de Ferreira",
+            "Porto",
+            "Santo Tirso",
+            "Entroncamento",
+            "Torres Novas",
+            "Vila Nova da Barquinha",
+            "Almada",
+            "Barreiro",
+            "Moita",
+            "Seixal",
+            "Peso da Régua",
+            "Santa Marta de Penaguião",
+            "Calheta",
+            "Câmara de Lobos",
+            "Ponta do Sol",
+            "Porto Moniz",
+            "Ribeira Brava",
+            "Lagoa",
+            "Nordeste",
+            "Ponta Delgada",
+            "Povoação",
+            "Ribeira Grande",
+            "Vila Franca do Campo",
+            "Angra do Heroísmo",
+            "Praia da Vitória",
+            "Lajes do Pico",
+            "Madalena",
+            "São Roque do Pico",
+            "Lajes das Flores",
+            "Santa Cruz das Flores"
+          ]
+        }
+      }
+    },
+    "5": {
+      "titulo": "O teclado",
+      "tabela": {
+        "tab_semAtivar_antes": {
+          "stops": 6,
+          "found": true,
+          "elemento": {
+            "tag": "a",
+            "id": null,
+            "cls": "mun-porta",
+            "href": "/municipios/evora"
+          },
+          "readoutAoChegarPeloTeclado": "Évora · distrito de Évora"
+        },
+        "tab_aposAtivar_antes": {
+          "stops": 6,
+          "found": true,
+          "elemento": {
+            "tag": "a",
+            "id": null,
+            "cls": "mun-porta",
+            "href": "/municipios/evora"
+          },
+          "readoutAoChegarPeloTeclado": "Évora · distrito de Évora"
+        },
+        "enterNaLigacaoEvora_antes": {
+          "urlFinal": "/municipios/evora/"
+        },
+        "tab_semAtivar_depois": {
+          "stops": 6,
+          "found": true,
+          "elemento": {
+            "tag": "a",
+            "id": null,
+            "cls": "mun-porta",
+            "href": "/municipios/evora"
+          },
+          "readoutAoChegarPeloTeclado": "Évora · distrito de Évora"
+        },
+        "tab_aposAtivar_depois": {
+          "stops": 1,
+          "found": true,
+          "elemento": {
+            "tag": "A",
+            "id": null,
+            "cls": "chipb",
+            "href": "/municipios/evora"
+          },
+          "readoutAoChegarPeloTeclado": " · distrito de "
+        },
+        "enterNaLigacaoEvora_depois": {
+          "urlFinal": "/municipios/evora/"
+        },
+        "setasNoMapa_antes": {
+          "existeAlvoFocavel": true,
+          "focoAntes": {
+            "tag": "a",
+            "id": null,
+            "cls": "mun-porta",
+            "href": "/municipios/evora"
+          },
+          "focoAposArrowRight": {
+            "tag": "a",
+            "id": null,
+            "cls": "mun-porta",
+            "href": "/municipios/evora"
+          },
+          "focoMoveu": false,
+          "readoutAntes": " · distrito de ",
+          "readoutDepoisArrowRight": "Évora · distrito de Évora"
+        },
+        "setasNoMapa_depois": {
+          "existeAlvoFocavel": true,
+          "focoAntes": {
+            "tag": "a",
+            "id": null,
+            "cls": "mun-porta",
+            "href": "/municipios/evora"
+          },
+          "focoAposArrowRight": {
+            "tag": "a",
+            "id": null,
+            "cls": "mun-porta",
+            "href": "/municipios/evora"
+          },
+          "focoMoveu": false,
+          "readoutAntes": " · distrito de ",
+          "readoutDepoisArrowRight": "Évora · distrito de Évora"
+        }
+      }
+    },
+    "6": {
+      "titulo": "O telemóvel",
+      "tabela": {
+        "antes": {
+          "svgCountDOM": 1,
+          "svgDetalhe": [
+            {
+              "display": "block",
+              "w": 0,
+              "h": 0,
+              "hiddenAncestor": "DIV.mapa-tela"
+            }
+          ],
+          "svgRenderizado": false,
+          "aposTapConcelho": {
+            "foco": {
+              "tag": "INPUT",
+              "id": "pesquisa-concelho",
+              "cls": "pesquisa-campo",
+              "href": null
+            },
+            "box": {
+              "x": 18,
+              "y": 310,
+              "w": 340,
+              "h": 44
+            },
+            "viewport": {
+              "width": 390,
+              "height": 664
+            },
+            "dentroDoEcra": true,
+            "focoNoCampo": true
+          }
+        },
+        "depois": {
+          "svgCountDOM": 1,
+          "svgDetalhe": [
+            {
+              "display": "block",
+              "w": 0,
+              "h": 0,
+              "hiddenAncestor": "DIV.mapa-tela"
+            }
+          ],
+          "svgRenderizado": false,
+          "aposTapConcelho": {
+            "foco": {
+              "tag": "INPUT",
+              "id": "pesquisa-concelho",
+              "cls": "pesquisa-campo",
+              "href": null
+            },
+            "box": {
+              "x": 18,
+              "y": 310,
+              "w": 340,
+              "h": 44
+            },
+            "viewport": {
+              "width": 390,
+              "height": 664
+            },
+            "dentroDoEcra": true,
+            "focoNoCampo": true
+          }
+        }
+      }
+    },
+    "7": {
+      "titulo": "As cadeias",
+      "tabela": [
+        {
+          "rota": "index.html",
+          "antes": {
+            "class=\"mapa-fechar\"": 1,
+            "fechar-comando (>fechar< fora do peca-abrir-f)": 1,
+            "fechar-total-bruto (inclui peca-abrir-f, informativo)": 27,
+            "fechar-em-peca-abrir-f (esperado, não é o alvo do teste)": 26,
+            "close-comando (>close< fora do peca-abrir-f)": 0,
+            "close-total-bruto (inclui peca-abrir-f, informativo)": 0,
+            "close-em-peca-abrir-f (esperado, não é o alvo do teste)": 0,
+            "\"trocar de concelho\"": 1,
+            "\"change municipality\"": 0,
+            "\"Ainda sem linhas\"": 1,
+            "\"Still no rows for\"": 0,
+            "\"sem linha ainda\"": 8,
+            "\"no row yet\"": 0,
+            "data-cabeca=\"vazio\"": 1,
+            "data-painel=\"vazio\"": 1,
+            "data-slot": 4,
+            "mapa-fechar (substring, qualquer contexto)": 1
+          },
+          "depois": {
+            "class=\"mapa-fechar\"": 0,
+            "fechar-comando (>fechar< fora do peca-abrir-f)": 0,
+            "fechar-total-bruto (inclui peca-abrir-f, informativo)": 18,
+            "fechar-em-peca-abrir-f (esperado, não é o alvo do teste)": 18,
+            "close-comando (>close< fora do peca-abrir-f)": 0,
+            "close-total-bruto (inclui peca-abrir-f, informativo)": 0,
+            "close-em-peca-abrir-f (esperado, não é o alvo do teste)": 0,
+            "\"trocar de concelho\"": 0,
+            "\"change municipality\"": 0,
+            "\"Ainda sem linhas\"": 0,
+            "\"Still no rows for\"": 0,
+            "\"sem linha ainda\"": 0,
+            "\"no row yet\"": 0,
+            "data-cabeca=\"vazio\"": 0,
+            "data-painel=\"vazio\"": 0,
+            "data-slot": 0,
+            "mapa-fechar (substring, qualquer contexto)": 0
+          }
+        },
+        {
+          "rota": "en/index.html",
+          "antes": {
+            "class=\"mapa-fechar\"": 1,
+            "fechar-comando (>fechar< fora do peca-abrir-f)": 0,
+            "fechar-total-bruto (inclui peca-abrir-f, informativo)": 0,
+            "fechar-em-peca-abrir-f (esperado, não é o alvo do teste)": 0,
+            "close-comando (>close< fora do peca-abrir-f)": 1,
+            "close-total-bruto (inclui peca-abrir-f, informativo)": 27,
+            "close-em-peca-abrir-f (esperado, não é o alvo do teste)": 26,
+            "\"trocar de concelho\"": 0,
+            "\"change municipality\"": 1,
+            "\"Ainda sem linhas\"": 0,
+            "\"Still no rows for\"": 1,
+            "\"sem linha ainda\"": 0,
+            "\"no row yet\"": 8,
+            "data-cabeca=\"vazio\"": 1,
+            "data-painel=\"vazio\"": 1,
+            "data-slot": 4,
+            "mapa-fechar (substring, qualquer contexto)": 1
+          },
+          "depois": {
+            "class=\"mapa-fechar\"": 0,
+            "fechar-comando (>fechar< fora do peca-abrir-f)": 0,
+            "fechar-total-bruto (inclui peca-abrir-f, informativo)": 0,
+            "fechar-em-peca-abrir-f (esperado, não é o alvo do teste)": 0,
+            "close-comando (>close< fora do peca-abrir-f)": 0,
+            "close-total-bruto (inclui peca-abrir-f, informativo)": 18,
+            "close-em-peca-abrir-f (esperado, não é o alvo do teste)": 18,
+            "\"trocar de concelho\"": 0,
+            "\"change municipality\"": 0,
+            "\"Ainda sem linhas\"": 0,
+            "\"Still no rows for\"": 0,
+            "\"sem linha ainda\"": 0,
+            "\"no row yet\"": 0,
+            "data-cabeca=\"vazio\"": 0,
+            "data-painel=\"vazio\"": 0,
+            "data-slot": 0,
+            "mapa-fechar (substring, qualquer contexto)": 0
+          }
+        }
+      ]
+    },
+    "8": {
+      "titulo": "O que mais mudou",
+      "ficheirosComuns": 1627,
+      "soEmAntes": [
+        "_astro/inicio.BqPeczyd.css"
+      ],
+      "soEmDepois": [
+        "_astro/inicio.CYmXWYkV.css"
+      ],
+      "todasAsDiferencas": [
+        {
+          "file": "en/index.html",
+          "sizeA": 219246,
+          "sizeB": 171769
+        },
+        {
+          "file": "en/municipalities/evora/index.html",
+          "sizeA": 165546,
+          "sizeB": 118490
+        },
+        {
+          "file": "index.html",
+          "sizeA": 219404,
+          "sizeB": 173613
+        },
+        {
+          "file": "js/inicio.js",
+          "sizeA": 43360,
+          "sizeB": 36640
+        },
+        {
+          "file": "municipios/evora/index.html",
+          "sizeA": 166782,
+          "sizeB": 119721
+        },
+        {
+          "file": "prova.json",
+          "sizeA": 4060,
+          "sizeB": 4060
+        },
+        {
+          "file": "version.json",
+          "sizeA": 199,
+          "sizeB": 199
+        }
+      ],
+      "paginasHtmlDiferentes": [
+        "en/index.html",
+        "en/municipalities/evora/index.html",
+        "index.html",
+        "municipios/evora/index.html"
+      ],
+      "ficheirosNaoHtmlDiferentes": [
+        "js/inicio.js",
+        "prova.json"
+      ],
+      "notaDeMunicipiosTocada": false,
+      "paginasEsperadas": [
+        "index.html",
+        "en/index.html"
+      ],
+      "achadosForaDoEsperado": [
+        "en/municipalities/evora/index.html",
+        "municipios/evora/index.html"
+      ]
+    },
+    "9": {
+      "titulo": "A página do concelho",
+      "tabela": [
+        {
+          "ficheiro": "municipios/evora/index.html",
+          "identicoByteAByte": false,
+          "preAparelhoIdentico": true,
+          "pecasDeMedidaCount": {
+            "antes": 8,
+            "depois": 8,
+            "iguais": true
+          },
+          "localizador": {
+            "existeDataPosturaLocalizador_depois": true
+          },
+          "portaDoCartao": {
+            "antesTemHref": "/?ambito=municipio",
+            "antesExiste": true,
+            "depoisTemHref": "/municipios",
+            "depoisExiste": true
+          },
+          "tamanhoBytes": {
+            "antes": 166782,
+            "depois": 119721,
+            "diferenca": -47061
+          }
+        },
+        {
+          "ficheiro": "en/municipalities/evora/index.html",
+          "identicoByteAByte": false,
+          "preAparelhoIdentico": true,
+          "pecasDeMedidaCount": {
+            "antes": 8,
+            "depois": 8,
+            "iguais": true
+          },
+          "localizador": {
+            "existeDataPosturaLocalizador_depois": true
+          },
+          "portaDoCartao": {
+            "antesTemHref": "/en?ambito=municipio",
+            "antesExiste": true,
+            "depoisTemHref": "/en/municipalities",
+            "depoisExiste": true
+          },
+          "tamanhoBytes": {
+            "antes": 165546,
+            "depois": 118490,
+            "diferenca": -47056
+          }
+        }
+      ]
+    },
+    "10": {
+      "titulo": "A régua do inventário",
+      "comando": "node scripts/medir-defeitos.mjs",
+      "rotaHome": {
+        "linhaBruta": "frases da casa · / ... 16 distinta(s) · conteúdo 11 · navegação 5 · autorreferência 0  ✓",
+        "distintas": 16,
+        "conteudo": 11,
+        "navegacao": 5,
+        "autorreferencia": 0,
+        "classificadas": 16,
+        "blocosPorClassificar": 0
+      },
+      "saidaCompleta": "\n  medição · 326 páginas construídas (sem os documentos de estudo)\n\n  porta de correcções ....... 326/326 páginas  ✓\n  primeira página ........... 0 valores sem selo · 0 selos para outra linha\n  primeira página (distintas) 0 sem selo · 0 para outra linha\n  frases de moldura ......... 214 distintas · 2868 ocorrências (326 são a porta de correcções; sem ela, 2542)\n  [descrição em preparação] . 0 ocorrências em 0 páginas\n  linhas com #page= ......... 27 de 136\n  linhas com recorte ........ 22 de 136\n  localizadores internos .... 0\n\n  frases de cobertura · en · com-pagina ... 1 distinta(s) em 5 ocorrência(s)  ✓\n  frases de cobertura · en · sem-pagina ... 1 distinta(s) em 921 ocorrência(s)  ✓\n  frases de cobertura · pt-PT · com-pagina ... 1 distinta(s) em 5 ocorrência(s)  ✓\n  frases de cobertura · pt-PT · sem-pagina ... 1 distinta(s) em 921 ocorrência(s)  ✓\n\n  frases da casa · lista declarada com 449 entrada(s)\n  frases da casa · / ... 16 distinta(s) · conteúdo 11 · navegação 5 · autorreferência 0  ✓\n  frases da casa · /agenda ... 21 distinta(s) · conteúdo 31 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /correcoes ... 21 distinta(s) · conteúdo 18 · navegação 3 · autorreferência 0  ✓\n  frases da casa · /en ... 16 distinta(s) · conteúdo 11 · navegação 5 · autorreferência 0  ✓\n  frases da casa · /en/agenda ... 21 distinta(s) · conteúdo 31 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /en/corrections ... 21 distinta(s) · conteúdo 18 · navegação 3 · autorreferência 0  ✓\n  frases da casa · /en/ledger ... 14 distinta(s) · conteúdo 12 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /en/municipalities ... 35 distinta(s) · conteúdo 33 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /en/municipalities/evora ... 63 distinta(s) · conteúdo 85 · navegação 6 · autorreferência 0  ✓\n  frases da casa · /en/studies ... 16 distinta(s) · conteúdo 20 · navegação 1 · autorreferência 0  ✓\n  frases da casa · /en/studies/agua-nao-faturada ... 7 distinta(s) · conteúdo 7 · navegação 1 · autorreferência 0  ✓\n  frases da casa · /en/studies/alentejo-algarve ... 7 distinta(s) · conteúdo 7 · navegação 1 · autorreferência 0  ✓\n  frases da casa · /en/studies/avaliacao-economica-regional-de-portugal-2026 ... 7 distinta(s) · conteúdo 7 · navegação 1 · autorreferência 0  ✓\n  frases da casa · /en/studies/evolucao-de-portugal-desde-1981 ... 7 distinta(s) · conteúdo 7 · navegação 1 · autorreferência 0  ✓\n  frases da casa · /en/studies/evora-economia-investidores-portas-abertas-2026 ... 16 distinta(s) · conteúdo 16 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /en/studies/evora-orcamentado-pago-devido-2025 ... 16 distinta(s) · conteúdo 16 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /en/studies/evora-orcamentado-pago-devido-2025/text ... 10 distinta(s) · conteúdo 616 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /en/studies/evora-os-pelouros-quem-os-teve-o-que-fizeram ... 12 distinta(s) · conteúdo 11 · navegação 3 · autorreferência 0  ✓\n  frases da casa · /en/studies/evora-prometido-pago-auditado-2026 ... 14 distinta(s) · conteúdo 13 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /en/studies/evora-prometido-pago-auditado-2026/text ... 10 distinta(s) · conteúdo 876 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /en/studies/evora-quinze-anos-cinco-mandatos ... 14 distinta(s) · conteúdo 14 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /en/studies/onde-esta-a-agua ... 7 distinta(s) · conteúdo 6 · navegação 1 · autorreferência 0  ✓\n  frases da casa · /en/studies/penalizacoes-por-reforma-antecipada-2026 ... 13 distinta(s) · conteúdo 12 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /en/studies/which-door-is-yours ... 7 distinta(s) · conteúdo 7 · navegação 1 · autorreferência 0  ✓\n  frases da casa · /estudos ... 15 distinta(s) · conteúdo 19 · navegação 1 · autorreferência 0  ✓\n  frases da casa · /estudos/agua-nao-faturada ... 7 distinta(s) · conteúdo 7 · navegação 1 · autorreferência 0  ✓\n  frases da casa · /estudos/alentejo-algarve ... 7 distinta(s) · conteúdo 7 · navegação 1 · autorreferência 0  ✓\n  frases da casa · /estudos/avaliacao-economica-regional-de-portugal-2026 ... 7 distinta(s) · conteúdo 7 · navegação 1 · autorreferência 0  ✓\n  frases da casa · /estudos/avaliacao-economica-regional-de-portugal-2026/texto ... 10 distinta(s) · conteúdo 988 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /estudos/evolucao-de-portugal-desde-1981 ... 7 distinta(s) · conteúdo 7 · navegação 1 · autorreferência 0  ✓\n  frases da casa · /estudos/evora-economia-investidores-portas-abertas-2026 ... 16 distinta(s) · conteúdo 16 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /estudos/evora-economia-investidores-portas-abertas-2026/texto ... 10 distinta(s) · conteúdo 532 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /estudos/evora-orcamentado-pago-devido-2025 ... 16 distinta(s) · conteúdo 16 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /estudos/evora-orcamentado-pago-devido-2025/texto ... 10 distinta(s) · conteúdo 616 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram ... 12 distinta(s) · conteúdo 10 · navegação 3 · autorreferência 0  ✓\n  frases da casa · /estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/texto ... 10 distinta(s) · conteúdo 1016 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /estudos/evora-prometido-pago-auditado-2026 ... 14 distinta(s) · conteúdo 13 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /estudos/evora-prometido-pago-auditado-2026/texto ... 10 distinta(s) · conteúdo 852 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /estudos/evora-quinze-anos-cinco-mandatos ... 14 distinta(s) · conteúdo 14 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /estudos/evora-quinze-anos-cinco-mandatos/texto ... 10 distinta(s) · conteúdo 2088 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /estudos/onde-esta-a-agua ... 7 distinta(s) · conteúdo 6 · navegação 1 · autorreferência 0  ✓\n  frases da casa · /estudos/penalizacoes-por-reforma-antecipada-2026 ... 13 distinta(s) · conteúdo 12 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /estudos/which-door-is-yours ... 7 distinta(s) · conteúdo 7 · navegação 1 · autorreferência 0  ✓\n  frases da casa · /livro-razao ... 13 distinta(s) · conteúdo 11 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /municipios ... 35 distinta(s) · conteúdo 33 · navegação 2 · autorreferência 0  ✓\n  frases da casa · /municipios/evora ... 62 distinta(s) · conteúdo 84 · navegação 6 · autorreferência 0  ✓\n\n"
+    }
+  },
+  "knownCases": [
+    {
+      "detector": "item1.mapaCresce (svg box + .mapa-fechar em /?ambito=municipio, 1280, antes)",
+      "expected": "svg ≈ 1092×1438 px e .mapa-fechar existe",
+      "observed": {
+        "svgBox": {
+          "w": 1092,
+          "h": 1438
+        },
+        "mapaFecharCount": 1
+      },
+      "passedRed": true,
+      "method": "goto(antes, /?ambito=municipio) @1280 -> boundingBox do svg.mapa-svg + count(.mapa-fechar)"
+    },
+    {
+      "detector": "item2.rodaMapa (scrollY + transform em [data-campo], antes, 1280, após Concelho)",
+      "expected": "scrollY inalterado ao descer 5x; scale(1.47…) escrito em [data-campo] ao subir 5x",
+      "observed": {
+        "paginaMoveuAoDescer": false,
+        "amostraTransformAposSubir": [
+          {
+            "tag": "g",
+            "cls": null,
+            "computed": "matrix(1.46933, 0, 0, 1.46933, -140.798, -185.435)",
+            "attr": "translate(-140.79842304000005 -185.4349561817321) scale(1.4693280768000003)"
+          }
+        ]
+      },
+      "passedRed": true,
+      "method": "scrollIntoViewIfNeeded + hover no centro visível do svg + mouse.wheel(0,±120)×5, medindo window.scrollY e getComputedStyle/getAttribute(transform) de todos os nós dentro do svg"
+    },
+    {
+      "detector": "item4.cliqueBraganca (deteção de mudança de endereço ao clicar num ponto sem página, antes, a partir de /?ambito=municipio)",
+      "expected": "clicar em Bragança muda o endereço para .../?ambito=municipio:braganca",
+      "observed": {
+        "urlDepois": "/?ambito=municipio%3Abraganca",
+        "urlMudou": true
+      },
+      "passedRed": true,
+      "method": "goto(antes,/?ambito=municipio) -> click(circle.mun[data-caop=braganca], force) -> comparar page.url() antes/depois"
+    },
+    {
+      "detector": "item7.stringBans (contagem de substrings em dist/index.html, antes)",
+      "expected": "data-painel=\"vazio\" ocorre pelo menos 1 vez em index.html (antes)",
+      "observed": {
+        "data-painel=\"vazio\"": 1
+      },
+      "passedRed": true,
+      "method": "leitura direta de dist-antes-mapa/index.html + contagem de substring"
+    },
+    {
+      "detector": "item8.marcaDeVersaoDentroDasPaginas (ausência)",
+      "expected": "version.json difere sempre (instrução do brief) -- confirmado abaixo",
+      "observed": {
+        "version.json difere": true
+      },
+      "passedRed": true,
+      "method": "compareTrees(antes,depois) e procurar version.json na lista de diferentes"
+    }
+  ],
+  "falseAlarms": [
+    {
+      "detector": "primeira tentativa do caso conhecido do item 2 (antes)",
+      "cause": "usar o centro do boundingBox do svg (sem o levar antes para dentro do ecrã) dá um ponto fora do viewport quando o mapa cresce para 1438px de altura num ecrã de 800px (y≈1525 quando o viewport só tem 800px); document.elementFromPoint nesse ponto devolve null, a roda não acerta em nada, e 5x para baixo faziam scroll normal (parecendo que a página \"não estava presa\") e 5x para cima não escreviam nenhum transform (parecendo que não havia zoom) -- as DUAS metades do caso conhecido liam falso, não porque o mapa antigo não prendesse a roda, mas porque o rato nunca esteve sobre o mapa. Corrigido com scrollIntoViewIfNeeded() + um ponto dentro do elemento E do viewport (ver safeHoverPoint); confirmado com o site no ar e com o motor webkit também, antes de aceitar a correção."
+    },
+    {
+      "detector": "primeira tentativa do caso conhecido do item 4 (clique em Bragança, antes)",
+      "cause": "clicar no ponto de Bragança a partir de / simples (sem passar por «Concelho» / /?ambito=municipio primeiro) não muda nada em \"antes\" -- não porque o clique não funcione, mas porque a mesma pequena vista de / não responde a cliques em nenhum ponto (nem Évora, que também não navegou). A frase do brief para este caso conhecido situa-o explicitamente em \"/?ambito=municipio\"; corrigido para arrancar desse estado, o que fez o endereço mudar como esperado. A leitura a partir de / simples ficou no relatório como achado sobre o \"antes\", não como falha do detetor."
+    },
+    {
+      "detector": "primeira tentativa da exploração por setas (item 5, depois)",
+      "cause": "o seletor 'a.mun-porta[href*=\"evora\"], a[href*=\"/municipios/evora\"]' apanha também a ligação homónima da lista de pesquisa (a.chipb[href=\"/municipios/evora\"]), que existe no DOM mas está escondida até o comando «Concelho» ser ativado; em \"depois\" essa ligação vem primeiro na ordem do DOM, .first() ficava com ela, e scrollIntoViewIfNeeded esgotava os 30s à espera que um elemento escondido ficasse visível. Não aconteceu em \"antes\" só porque aí não há lista de pesquisa equivalente em /. Corrigido para o seletor específico do ponto do mapa (a.mun-porta), sem ambiguidade com a pesquisa."
+    },
+    {
+      "detector": "busca ingénua por substring \"fechar\" em index.html (depois)",
+      "cause": "uma busca literal por \">fechar<\" encontra 18 ocorrências em \"depois\", todas dentro de <span class=\"peca-abrir-f\">fechar</span> (o alternador abrir/fechar de cada peça de medida, não tocado por esta emenda); confirmado por contagem isolada de \"peca-abrir-f\\\">fechar<\" = 18; o rótulo de comando \".mapa-fechar\" está mesmo a 0."
+    }
+  ],
+  "disagreements": [
+    {
+      "ref": "Emenda 19(c) · \"não muda o mapa, a cabeça nem o painel; a página continua a ser a do país\"",
+      "coord": "/ (depois de clicar em «Concelho», 1280px, depois)",
+      "evidence": "mapa/cabeça/painel confirmados inalterados (ver tabela do item 1), mas o endereço muda de \"/\" para \"/?ambito=municipio\" e a raiz passa a ter data-ambito=\"municipio\" (era \"pais\") -- não se decide aqui se isto viola \"a página continua a ser a do país\"; regista-se com os dois valores para o lugar de direção julgar."
+    },
+    {
+      "ref": "Emenda 19(c) · \"não muda o mapa, a cabeça nem o painel; a página continua a ser a do país\"",
+      "coord": "/ (depois de clicar em «Concelho», 2000px, depois)",
+      "evidence": "mapa/cabeça/painel confirmados inalterados (ver tabela do item 1), mas o endereço muda de \"/\" para \"/?ambito=municipio\" e a raiz passa a ter data-ambito=\"municipio\" (era \"pais\") -- não se decide aqui se isto viola \"a página continua a ser a do país\"; regista-se com os dois valores para o lugar de direção julgar."
+    },
+    {
+      "ref": "item 8 (§1.8 do brief) · \"o esperado é /, /en/ e, se o construtor mexeu na nota, /municipios e /en/municipalities\"",
+      "coord": "en/municipalities/evora/index.html",
+      "evidence": "bytes diferentes entre antes e depois (antes 165546B, depois 118490B) e não está na lista de páginas esperadas [\"index.html\",\"en/index.html\"]"
+    },
+    {
+      "ref": "item 8 (§1.8 do brief) · \"o esperado é /, /en/ e, se o construtor mexeu na nota, /municipios e /en/municipalities\"",
+      "coord": "municipios/evora/index.html",
+      "evidence": "bytes diferentes entre antes e depois (antes 166782B, depois 119721B) e não está na lista de páginas esperadas [\"index.html\",\"en/index.html\"]"
+    },
+    {
+      "ref": "item 9 (§1.9 do brief) · \"a porta do cartão... é a única diferença esperada fora da marca de versão\"",
+      "coord": "municipios/evora/index.html, dentro de <aside class=\"aparelho\">",
+      "evidence": "medido: 308 <rect class=\"mun-alvo\"> + 1 grupo(s) <g data-campo> desaparecem de \"antes\"; \"depois\" tem 307 <circle class=\"mun\"> onde \"antes\" não tinha nenhum; data-slot=\"nome\" (1× em antes) desaparece. A parte anterior ao aparelho (as oito peças de medida) é byte a byte idêntica (confirmado acima), mas a secção do mapa localizador muda muito mais do que só a porta do cartão."
+    }
+  ],
+  "notas": []
+}

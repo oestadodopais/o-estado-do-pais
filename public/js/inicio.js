@@ -76,10 +76,6 @@
   var AMBITO_PESQUISA = 'municipio';
   var DENSIDADE_DEFEITO = 'relance';
 
-  /* As notas que explicam o que não funciona sem script saem quando há script. */
-  var notas = document.querySelectorAll('[data-sem-js]');
-  for (var n = 0; n < notas.length; n++) notas[n].hidden = true;
-
   /* ---------------------------------------------------------------- listas */
 
   var blocos = document.querySelectorAll('[data-cabeca]');
