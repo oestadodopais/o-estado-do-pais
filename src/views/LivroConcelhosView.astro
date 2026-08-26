@@ -35,7 +35,7 @@ import Base from '../layouts/Base.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
 import Pesquisa from '../components/inicio/Pesquisa.astro';
 import { linhasDosConcelhos, ESTUDO_DOS_CONCELHOS } from '../lib/livro-concelhos.mjs';
-import { concelhos as concelhosDaCarta } from '../lib/inicio.mjs';
+import { concelhos as concelhosDaCarta, coberturaDistingue } from '../lib/inicio.mjs';
 import { MUNICIPIOS, DISTRITOS } from '../data/caop-centroids.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
 import { studyLabel } from '../data/studies.mjs';
@@ -77,6 +77,11 @@ const resultados = concelhosDaCarta().map((c) => ({
 }));
 const destinoDoConcelho = (c) =>
   comLinhas.has(c.slug) ? routePath('livroConcelho', lang, { slug: c.slug }) : null;
+
+/* A etiqueta de estado de cada linha, pela mesma regra do índice dos 308 (item
+   E8): com todos os concelhos a terem linhas, «tem página» dizia o mesmo 616
+   vezes, e as três contagens em cima já dizem o estado do todo. */
+const distingue = coberturaDistingue(resultados);
 ---
 
 <Base
@@ -121,17 +126,22 @@ const destinoDoConcelho = (c) =>
             {d.entradas.map((e) =>
               e.temLinhas ? (
                 <li class="concelho concelho-com-pagina">
-                  <a href={routePath('livroConcelho', lang, { slug: e.slug })}>{e.nome}</a>
-                  <span class="concelho-estado">
-                    <span data-cobertura="com-pagina">{s.cobertura.temPagina}</span> →
-                  </span>
+                  {/* A seta entra na porta, pela mesma razão do índice dos 308. */}
+                  <a href={routePath('livroConcelho', lang, { slug: e.slug })}>{e.nome} →</a>
+                  {distingue && (
+                    <span class="concelho-estado">
+                      <span data-cobertura="com-pagina">{s.cobertura.temPagina}</span>
+                    </span>
+                  )}
                 </li>
               ) : (
                 <li class="concelho">
                   <span class="concelho-nome">{e.nome}</span>
-                  <span class="concelho-estado" data-cobertura="sem-linha">
-                    {s.cobertura.semLinhaAinda}
-                  </span>
+                  {distingue && (
+                    <span class="concelho-estado" data-cobertura="sem-linha">
+                      {s.cobertura.semLinhaAinda}
+                    </span>
+                  )}
                 </li>
               ),
             )}
