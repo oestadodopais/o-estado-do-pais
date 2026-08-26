@@ -41,13 +41,19 @@
  * uma página mas sobre a imagem que ela oferece a quem a partilha:
  *
  *   9. os CARTÕES DE PARTILHA. Cada página tem de nomear, em `og:image` e em
- *      `twitter:image`, o cartão da SUA rota e da SUA edição; cada cartão
- *      escreveu um registo em `dist/cartoes/` com a cópia visível e a origem de
- *      cada valor; e o portão relê esse registo, recalcula cada valor do
- *      livro-razão ou da prova, compara-o como CADEIA pela regra do `data-claim`,
- *      confere que a cópia visível não tem um algarismo que não seja um desses
- *      valores, e mede as dimensões do PNG no próprio ficheiro. Não é um portão
- *      novo: é este, a olhar para outra superfície do mesmo sítio.
+ *      `twitter:image`, o cartão que lhe toca: o da SUA rota e da SUA edição,
+ *      ou, se for uma página de linha de um ESTUDO DE DADOS, o do seu estudo
+ *      (DECISIONS §1.68). A regra da escolha é uma só, e é a função que o
+ *      `Base.astro` chama para escrever a etiqueta e que este portão chama para
+ *      a conferir. Cada cartão escreveu um registo em `dist/cartoes/` com a
+ *      cópia visível e a origem de cada valor; e o portão relê esse registo,
+ *      recalcula cada valor do livro-razão ou da prova, compara-o como CADEIA
+ *      pela regra do `data-claim`, confere que a cópia visível não tem um
+ *      algarismo que não seja um desses valores, e mede as dimensões do PNG no
+ *      próprio ficheiro. A conferência dos valores é dos cartões que TRAZEM
+ *      valores; a dos algarismos é de todos, e um cartão sem valores só a passa
+ *      se não tiver algarismo nenhum. Não é um portão novo: é este, a olhar para
+ *      outra superfície do mesmo sítio.
  */
 
 import crypto from 'node:crypto';
@@ -3409,6 +3415,13 @@ for (const file of ficheirosHtml(DIST)) {
      que o resumo do PNG bate certo com o que o registo diz. Um cartão da
      edição errada tem, no seu registo, a edição errada escrita, e é aí que
      ele cai — mesmo que a função de escolha esteja plantada.
+
+     A REGRA, desde 27.08.2026 (DECISIONS §1.68): uma página nomeia o cartão da
+     sua rota e da sua edição, OU, sendo uma página de linha de um estudo de
+     dados, o cartão do seu estudo. A regra vive inteira em `cartaoDaPagina()`,
+     que é o que faz esta conferência morder as duas: uma página de linha dos
+     concelhos que nomeasse um cartão por linha nomeia um ficheiro que já não
+     existe, e é aqui que ela cai.
      -------------------------------------------------------------------- */
   if (rota?.key !== 'documento') {
     const linguaDoCartao = linguaPagina ?? rota?.lang ?? PRIMARY_LANG;

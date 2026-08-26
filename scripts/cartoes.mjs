@@ -5,8 +5,10 @@
  * Corre DEPOIS do `astro build` e ANTES do `gate:html`, e a ordem é a razão de
  * ser deste passo: os cartões precisam das linhas e da prova, que só existem
  * depois de a construção resolver os dados, e o portão precisa dos cartões,
- * porque é ele que confere que cada página nomeia o cartão da sua própria rota
- * e da sua própria edição, e que cada número do cartão é o da sua linha.
+ * porque é ele que confere que cada página nomeia o cartão que lhe toca — o da
+ * sua própria rota e da sua própria edição, ou, se for uma página de linha de um
+ * estudo de dados, o do seu estudo — e que cada número de um cartão que traga
+ * números é o da sua linha.
  *
  * ---------------------------------------------------------------------------
  * O QUE ESTE FICHEIRO PODE E O QUE NÃO PODE FAZER
@@ -454,6 +456,41 @@ function desenha(modelo, dim) {
       topoDesenhado = y - corpo;
       y -= entrelinha;
     }
+  } else if (modelo.tipo === 'estudo') {
+    /* ------------------------------------------------------------------
+       O CARTÃO DE UM ESTUDO DE DADOS: o título do estudo, e mais nada.
+       ------------------------------------------------------------------
+       Sem fila de quadrados (a fila é do painel da primeira página), sem
+       quadrado de estado (um estudo não tem limiar) e sem aparelho (o aparelho
+       é o id e o período de uma linha, e este cartão não é de uma linha). O
+       bloco do meio é só o título, na letra de prosa da casa e encostado ao fio
+       do pé como todos os outros, para que a folha seja a mesma folha.
+       ------------------------------------------------------------------ */
+    const { corpo, linhas } = ajusta(modelo.manchete, {
+      familia: TIPO.prosa,
+      peso: 500,
+      espacamento: -0.3,
+      corpoMax: 68,
+      corpoMin: 34,
+      largura: util,
+      linhas: Math.max(2, Math.floor(alturaDoMeio / 74)),
+    });
+    const entrelinha = Math.round(corpo * 1.1);
+    for (let i = linhas.length - 1; i >= 0; i--) {
+      partes.push(
+        texto(linhas[i], {
+          x: MARGEM,
+          y,
+          familia: TIPO.prosa,
+          corpo,
+          peso: 500,
+          cor: COR['--ink'],
+          espacamento: -0.3,
+        }),
+      );
+      topoDesenhado = y - corpo;
+      y -= entrelinha;
+    }
   } else {
     /* O aparelho da linha: o id e o período, em baixo. */
     partes.push(
@@ -645,7 +682,13 @@ for (const cartao of cartoes) {
       rota: cartao.rota,
       edicao: cartao.lang,
       tipo: modelo.tipo,
-      linha: modelo.id ?? null,
+      /* `linha` é o id de uma LINHA do livro-razão, e por isso só o cartão de
+         uma linha o traz. O cartão de um estudo de dados também tem um `id` no
+         seu modelo — o do estudo —, e escrevê-lo aqui era pôr um identificador
+         de estudo num campo que se chama «linha». Quem quiser saber de que
+         estudo é o cartão lê o `tipo` e a `rota`, que é a da página de conjunto
+         do estudo. */
+      linha: modelo.tipo === 'linha' ? modelo.id : null,
       dimensoes: { largura: dim.largura, altura: dim.altura, papel: dim.papel },
       ficheiro: `/${PASTA}/${nomePng}`,
       resumo: `sha256:${crypto.createHash('sha256').update(png).digest('hex')}`,

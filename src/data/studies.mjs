@@ -345,6 +345,17 @@ export const INTERNAL_SOURCES = [
       pt: 'Concelhos: as medidas centrais',
       en: 'Municipalities: the central measures',
     },
+    /**
+     * A PÁGINA DE CONJUNTO DESTE ESTUDO, pela chave da tabela de rotas.
+     *
+     * Declará-la é declarar que este é um ESTUDO DE DADOS: um estudo cujas
+     * linhas são muitas e medem todas a mesma coisa em lugares diferentes, e que
+     * por isso tem uma superfície própria onde se leem em conjunto. É a única
+     * coisa que distingue este estudo dos outros, e vive aqui em vez de numa
+     * lista à parte porque uma lista à parte era o mesmo facto escrito duas
+     * vezes. Ver `ESTUDOS_DE_DADOS`, abaixo, e DECISIONS §1.68.
+     */
+    conjunto: 'livroConcelhos',
   },
 ];
 
@@ -362,6 +373,25 @@ export const EDITIONS = WORKS.flatMap((w) =>
     descricaoDoDocumento: w.descricaoDoDocumento ?? null,
     verbatimDaAbertura: w.verbatimDaAbertura ?? null,
   })),
+);
+
+/**
+ * OS ESTUDOS DE DADOS, e a chave da rota da página de conjunto de cada um.
+ *
+ * Um estudo de dados tem centenas ou milhares de linhas que medem a mesma coisa
+ * em lugares diferentes, e uma página onde se leem em conjunto. Entra nesta
+ * tabela declarando `conjunto` na sua entrada, e mais nada.
+ *
+ * O QUE ISTO DECIDE, hoje, é o CARTÃO DE PARTILHA das páginas de linha do
+ * estudo: elas nomeiam o cartão do estudo em vez de cada uma ter o seu. A razão
+ * é medida e está em DECISIONS §1.68 — 2 417 linhas × duas edições × duas
+ * medidas são 9 668 dos 10 212 cartões da construção, e foi a rasterizar esses
+ * que a máquina de construção da Vercel ficou sem memória.
+ */
+export const ESTUDOS_DE_DADOS = new Map(
+  [...WORKS, ...INTERNAL_SOURCES]
+    .filter((e) => e.conjunto)
+    .map((e) => [e.id, e.conjunto]),
 );
 
 /** Ids aceites no campo `study` de uma linha do livro-razão. */
