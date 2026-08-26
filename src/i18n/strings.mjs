@@ -1173,7 +1173,6 @@ export const STRINGS = {
          o gabarito passou a ler esta chave, que já existia e não se rendia. */
       leituraBreveK: 'Leitura breve',
       leituraFundoK: 'Método e ressalvas',
-      leituraOutraLingua: 'A mesma frase na outra edição',
       municipioK: 'O concelho de que trata',
       municipioLink: 'A página do município',
 
@@ -1926,7 +1925,6 @@ export const STRINGS = {
       leituraRelanceK: 'At a glance',
       leituraBreveK: 'Brief reading',
       leituraFundoK: 'Method and caveats',
-      leituraOutraLingua: 'The same sentence in the other edition',
       municipioK: 'The municipality it is about',
       municipioLink: 'The municipality page',
 
