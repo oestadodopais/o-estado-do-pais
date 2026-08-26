@@ -253,6 +253,10 @@ const ROTAS_DO_INVENTARIO = new Set([
      vai a zero. Sem esta entrada, uma página nova do sítio ficava fora do
      inventário — e o inventário existe para que nenhuma volte a ficar. */
   'livroConcelhos',
+  /* E a página de livro-razão de cada concelho, que veio com ela a 26.08: é uma
+     página do leitor, o seu `<h1>` é o nome do concelho (declarado `data-lugar`)
+     e a sua descrição é composta com esse nome, como a da página do concelho. */
+  'livroConcelho',
   /* `/correcoes` entra na subetapa 4a, que é a que reconstrói a forma do
      registo. A rota não é a casa do método (Emenda 15 isenta o Método, o Sobre e
      o recibo), e por isso a sua autorreferência conta e vai a zero. */
