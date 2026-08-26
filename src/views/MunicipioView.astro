@@ -1064,14 +1064,14 @@ const metodoPath = routePath('metodo', lang);
 
       <PortaDeCorreccoes lang={lang} class="aparelho-bloco" />
 
-      {/* AS SAÍDAS (E1 do bloco dos 308). A segunda passa a abrir a página do
-          CONJUNTO dos concelhos, e não o índice do livro-razão inteiro: é lá que
-          estão as linhas de que esta página é feita, com a pesquisa por concelho
-          e a lista por concelho. Quem quiser o livro-razão inteiro chega lá dessa
-          página, que é a primeira saída dela. */}
+      {/* AS SAÍDAS (E1 do bloco dos 308). A segunda abre a página de livro-razão
+          DESTE concelho: é lá que estão as linhas de que esta página é feita,
+          cada uma com o seu selo e a sua porta. Apontava para a página do
+          conjunto, que a 26.08 passou a ser o índice dos 308; a porta de uma
+          página é para a coisa dela, e o índice está a uma saída de distância. */}
       <p class="rodape-nav aparelho-saidas">
         <a href={routePath('municipios', lang)}>{s.municipio.voltarMapa}</a>
-        <a href={routePath('livroConcelhos', lang)}>{s.livro.eyebrow}</a>
+        <a href={routePath('livroConcelho', lang, { slug: m.slug })}>{s.livro.eyebrow}</a>
         <a href={`${metodoPath}#livro-razao`}>{s.livro.metodoLink}</a>
       </p>
     </aside>

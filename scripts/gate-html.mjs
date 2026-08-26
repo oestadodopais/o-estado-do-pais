@@ -2793,11 +2793,20 @@ function contasDoPortao(claims) {
      agrupada por nenhum concelho não aparece na segunda conta, e é isso que a
      comparação com `concelhos_no_livro` da prova apanha. */
   const linhasDosConcelhos = linhas.filter((c) => c.study === 'concelhos-2026');
+  /* A CONTA MUDOU DE SÍTIO COM A FORMA (26.08.2026). Os grupos viviam todos na
+     página do conjunto; com uma página de livro-razão por concelho, cada um leva
+     o seu, e a marca só se rende onde há linhas. Conta-se quantas páginas de
+     concelho a construção escreveu com um grupo dentro. */
   let gruposDeConcelho = null;
-  const paginaDosConcelhos = path.join(DIST, 'livro-razao', 'concelhos', 'index.html');
-  if (fs.existsSync(paginaDosConcelhos)) {
-    const html = fs.readFileSync(paginaDosConcelhos, 'utf8');
-    gruposDeConcelho = (html.match(/data-concelho-grupo=/g) ?? []).length;
+  const dirDosConcelhos = path.join(DIST, 'livro-razao', 'concelhos');
+  if (fs.existsSync(dirDosConcelhos)) {
+    gruposDeConcelho = 0;
+    for (const entrada of fs.readdirSync(dirDosConcelhos, { withFileTypes: true })) {
+      if (!entrada.isDirectory()) continue;
+      const f = path.join(dirDosConcelhos, entrada.name, 'index.html');
+      if (!fs.existsSync(f)) continue;
+      if (/data-concelho-grupo=/.test(fs.readFileSync(f, 'utf8'))) gruposDeConcelho += 1;
+    }
   }
 
   /* Os trabalhos com leitura escrita: são os únicos `estudo` que entram no mapa
@@ -3186,12 +3195,21 @@ for (const file of ficheirosHtml(DIST)) {
    * O que muda é a lista das páginas do livro-razão, que cresceu com a página
    * que a direção mandou criar.
    *
+   * SÃO QUATRO desde 26.08.2026: a página do conjunto passou a ser o ÍNDICE dos
+   * 308 (`livroConcelhos`) e cada concelho ganhou a sua página de livro-razão
+   * (`livroConcelho`), porque a do conjunto media 227 008 px de altura e o
+   * problema que a decisão D6 resolveu no índice principal tinha reaparecido lá
+   * dentro. As duas são páginas do livro-razão pela mesma razão.
+   *
    * `paginasDoLivro`, que exige um índice por edição, continua a contar só a
    * rota `livro`: é o índice principal que tem de existir nas duas edições, e
    * a contagem da página do conjunto vive nas suas três chaves da prova.
    */
   const paginaDoLivro =
-    rota?.key === 'linha' || rota?.key === 'livro' || rota?.key === 'livroConcelhos';
+    rota?.key === 'linha' ||
+    rota?.key === 'livro' ||
+    rota?.key === 'livroConcelhos' ||
+    rota?.key === 'livroConcelho';
   /* As linhas que ESTA página cita com <Claim/>, para a conferência da prosa da
      agenda: é contra elas, e não contra o livro-razão inteiro, que se recusa um
      valor repetido em prosa. Ver `valoresDoLivroEmProsa()`. */

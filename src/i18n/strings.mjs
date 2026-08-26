@@ -821,6 +821,16 @@ export const STRINGS = {
       naoDeclaradasK: 'Linhas sem concelho declarado',
       voltarLivro: 'O livro-razão inteiro',
       indiceLink: 'O índice dos concelhos',
+      /* A PÁGINA DE UM CONCELHO NO LIVRO-RAZÃO (diretor, 26.08.2026). O título é
+         o nome do concelho; estas são as palavras à volta. A cauda do `<head>`
+         não pode ter algarismos, e não tem. */
+      metaCaudaDoConcelho: 'as linhas do livro-razão · O Estado do País',
+      metaDescricaoDoConcelhoA: 'As linhas do livro-razão com as medidas que as fontes centrais publicam para o concelho de ',
+      metaDescricaoDoConcelhoB: '.',
+      ledeDoConcelho: 'Uma linha por medida, com o valor tal como a fonte o publicou, a unidade, quem o produziu e a data em que foi lido.',
+      vazioDoConcelho: 'Ainda não há linhas deste estudo para este concelho.',
+      paginaDoConcelho: 'A página do concelho',
+      voltarAoIndice: 'Os concelhos no livro-razão',
     },
 
     livro: {
@@ -1691,6 +1701,13 @@ export const STRINGS = {
       naoDeclaradasK: 'Rows with no municipality declared',
       voltarLivro: 'The whole ledger',
       indiceLink: 'The index of municipalities',
+      metaCaudaDoConcelho: 'the ledger rows · O Estado do País',
+      metaDescricaoDoConcelhoA: 'The ledger rows with the measures central sources publish for the municipality of ',
+      metaDescricaoDoConcelhoB: '.',
+      ledeDoConcelho: 'One row per measure, with the value as the source published it, the unit, who produced it and the date it was read.',
+      vazioDoConcelho: 'There are no rows of this study for this municipality yet.',
+      paginaDoConcelho: 'The municipality page',
+      voltarAoIndice: 'The municipalities in the ledger',
     },
 
     livro: {

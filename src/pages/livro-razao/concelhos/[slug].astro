@@ -1,0 +1,10 @@
+---
+import LivroConcelhoView from '../../../views/LivroConcelhoView.astro';
+import { MUNICIPIOS_COM_PAGINA } from '../../../data/municipios.mjs';
+
+export function getStaticPaths() {
+  return MUNICIPIOS_COM_PAGINA.map((m) => ({ params: { slug: m.slug } }));
+}
+const { slug } = Astro.params;
+---
+<LivroConcelhoView lang="pt" slug={slug} />

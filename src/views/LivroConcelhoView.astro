@@ -1,0 +1,150 @@
+---
+/**
+ * O LIVRO-RAZÃO DE UM CONCELHO — `/livro-razao/concelhos/<slug>`.
+ *
+ * ---------------------------------------------------------------------------
+ * PORQUE É UMA PÁGINA POR CONCELHO (decisão do diretor, 26.08.2026)
+ * ---------------------------------------------------------------------------
+ * A decisão D6 tirou as linhas dos concelhos do índice principal do livro-razão
+ * porque 2 500 linhas numa página não se leem. Com os dados do motor, a página
+ * do conjunto ficou com 2 416 linhas e **227 008 px de altura a 1280**: o mesmo
+ * problema, dentro da página que existia para o resolver. Passa a haver uma
+ * página por concelho, com as linhas desse concelho e mais nada, e a página do
+ * conjunto passa a ser o índice dos 308.
+ *
+ * ---------------------------------------------------------------------------
+ * A LINHA-ESPÉCIME É A DO ÍNDICE, SEM UMA MUDANÇA
+ * ---------------------------------------------------------------------------
+ * Os mesmos cinco campos, sempre pela mesma ordem e sempre nas mesmas posições:
+ * id · valor com selo · unidade · fonte · lido a. Um campo que a linha não tem
+ * não se rende, nem vazio nem com um traço. É a mesma disposição de
+ * `LivroView.astro`, e é de propósito: uma segunda forma para a mesma coisa era
+ * uma segunda coisa para o portão conferir.
+ *
+ * ---------------------------------------------------------------------------
+ * SEM CONTAGEM ESCRITA, E A RAZÃO É A REGRA DA CASA
+ * ---------------------------------------------------------------------------
+ * «Oito linhas» seria um número do próprio sítio, e a `IDENTIDADE.md` §10 exige
+ * que um número do próprio sítio entre por `data-prova`, com a sua porta e com
+ * o portão a recontá-lo. Uma chave por concelho seriam 308 chaves na tabela da
+ * prova, e nenhum dos motivos de `data-nonledger` descreve uma contagem. O que
+ * a página tem para dizer é quantas linhas mostra, e mostra-as: quem as conta,
+ * conta-as. As três contagens do conjunto ficam onde têm porta, no índice.
+ *
+ * SEM MAPA. Esta página é do livro-razão e não do concelho: o cartão
+ * localizador vive na página do concelho, e rendê-lo aqui era pôr os 308 pontos
+ * e as suas 308 âncoras em mais 616 páginas, sem nada a fazer.
+ */
+import Base from '../layouts/Base.astro';
+import Claim from '../components/Claim.astro';
+import CampoDaLinha from '../components/CampoDaLinha.astro';
+import { linhasDeUmConcelho, ESTUDO_DOS_CONCELHOS } from '../lib/livro-concelhos.mjs';
+import { municipioPorSlug } from '../data/municipios.mjs';
+import { provenienciaIncompleta } from '../lib/ledger.mjs';
+import { studyLabel } from '../data/studies.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+import '../styles/linha.css';
+
+const { lang = 'pt', slug } = Astro.props;
+const s = t(lang);
+const m = municipioPorSlug(slug);
+if (!m) throw new Error(`livro-razão dos concelhos: concelho desconhecido "${slug}"`);
+
+const nome = m.nome[lang] ?? m.nome.pt;
+const linhas = linhasDeUmConcelho(m);
+const path = routePath('livroConcelho', lang, { slug });
+---
+
+<Base
+  lang={lang}
+  path={path}
+  title={`${nome} · ${s.livroConcelhos.metaCaudaDoConcelho}`}
+  description={`${s.livroConcelhos.metaDescricaoDoConcelhoA}${nome}${s.livroConcelhos.metaDescricaoDoConcelhoB}`}
+>
+  <div class="linha-cabeca">
+    <span class="eyebrow">{s.livro.eyebrow}</span>
+    <h1 data-lugar>{nome}</h1>
+    <p class="lede" style="margin-top:16px">{s.livroConcelhos.ledeDoConcelho}</p>
+  </div>
+
+  <div class="linha">
+    <div class="linha-corpo">
+      <section class="linha-bloco" aria-labelledby="linhas">
+        <h2 class="linha-bloco-titulo livro-grupo-k" id="linhas">
+          {studyLabel(ESTUDO_DOS_CONCELHOS, lang)}
+        </h2>
+        {
+          linhas.length === 0 ? (
+            <p class="log-vazio-v">{s.livroConcelhos.vazioDoConcelho}</p>
+          ) : (
+            <div class="livro-lista" data-concelho-grupo={m.slug}>
+              {linhas.map((c) => (
+                <div
+                  class="livro-item"
+                  data-estado={provenienciaIncompleta(c) ? 'por-confirmar' : 'completa'}
+                >
+                  <span class="livro-item-valor">
+                    <Claim id={c.id} lang={lang} as="span" class="livro-item-num" chip={true} />
+                  </span>
+                  <div class="livro-item-corpo">
+                    <code class="livro-item-id" data-linha-claim={c.id} data-linha-campo="id">
+                      {c.id}
+                    </code>
+                    <div class="livro-item-meta">
+                      <CampoDaLinha
+                        id={c.id}
+                        campo="unit"
+                        valor={c.unit}
+                        lang={lang}
+                        class="livro-item-unidade"
+                        originalPt={true}
+                      />
+                      {c.source !== null && c.source !== undefined && (
+                        <span class="livro-item-campo">
+                          <span class="livro-item-k">{s.prov.fonte}</span>{' '}
+                          <CampoDaLinha id={c.id} campo="source" valor={c.source} lang={lang} />
+                        </span>
+                      )}
+                      {c.access_date !== null && c.access_date !== undefined && (
+                        <span class="livro-item-campo">
+                          <span class="livro-item-k">{s.prov.lido}</span>{' '}
+                          <CampoDaLinha
+                            id={c.id}
+                            campo="access_date"
+                            valor={c.access_date}
+                            lang={lang}
+                          />
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )
+        }
+      </section>
+    </div>
+
+    <aside class="aparelho" aria-labelledby="aparelho">
+      <h2 class="aparelho-titulo" id="aparelho">{s.livro.seloK}</h2>
+      <ul class="aparelho-selos">
+        <li>
+          <span class="src-chip src-chip-amostra" aria-hidden="true"></span>
+          <span>{s.livro.seloCheio}</span>
+        </li>
+        <li>
+          <span class="src-chip src-chip-amostra is-unverified" aria-hidden="true"></span>
+          <span>{s.livro.seloTracejado}</span>
+        </li>
+      </ul>
+
+      <p class="rodape-nav aparelho-saidas">
+        <a href={routePath('municipio', lang, { slug: m.slug })}>{s.livroConcelhos.paginaDoConcelho}</a>
+        <a href={routePath('livroConcelhos', lang)}>{s.livroConcelhos.voltarAoIndice}</a>
+        <a href={routePath('livro', lang)}>{s.livroConcelhos.voltarLivro}</a>
+      </p>
+    </aside>
+  </div>
+</Base>
