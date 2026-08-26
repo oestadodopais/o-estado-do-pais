@@ -817,7 +817,6 @@ export const STRINGS = {
       contaLinhas: 'linhas',
       contaConcelhos: 'concelhos',
       contaCompletas: 'com proveniência completa',
-      vazioV: 'Ainda não há linhas deste estudo no livro-razão.',
       naoDeclaradasK: 'Linhas sem concelho declarado',
       voltarLivro: 'O livro-razão inteiro',
       indiceLink: 'O índice dos concelhos',
@@ -828,7 +827,11 @@ export const STRINGS = {
       metaDescricaoDoConcelhoA: 'As linhas do livro-razão com as medidas que as fontes centrais publicam para o concelho de ',
       metaDescricaoDoConcelhoB: '.',
       ledeDoConcelho: 'Uma linha por medida, com o valor tal como a fonte o publicou, a unidade, quem o produziu e a data em que foi lido.',
-      vazioDoConcelho: 'Ainda não há linhas deste estudo para este concelho.',
+      /* A AUSÊNCIA EM DUAS PALAVRAS (Emenda 15; item E13). Dizia «Ainda não há
+         linhas deste estudo para este concelho.», que é uma frase a explicar uma
+         ausência que a casa já diz em duas palavras: «sem linha ainda», «sem
+         página ainda». Aqui são linhas, e por isso o plural. */
+      vazioDoConcelho: 'Sem linhas ainda.',
       /* O NOME DA SECÇÃO DA LINHA QUE NÃO É DE NENHUM CONCELHO. O teto legal é
          uma constante da lei, e é contra ela que os índices de dívida se
          calculam: é a referência do estudo, e não a medida de um concelho. */
@@ -1708,7 +1711,6 @@ export const STRINGS = {
       contaLinhas: 'rows',
       contaConcelhos: 'municipalities',
       contaCompletas: 'with complete provenance',
-      vazioV: 'There are no rows of this study in the ledger yet.',
       naoDeclaradasK: 'Rows with no municipality declared',
       voltarLivro: 'The whole ledger',
       indiceLink: 'The index of municipalities',
@@ -1716,7 +1718,7 @@ export const STRINGS = {
       metaDescricaoDoConcelhoA: 'The ledger rows with the measures central sources publish for the municipality of ',
       metaDescricaoDoConcelhoB: '.',
       ledeDoConcelho: 'One row per measure, with the value as the source published it, the unit, who produced it and the date it was read.',
-      vazioDoConcelho: 'There are no rows of this study for this municipality yet.',
+      vazioDoConcelho: 'No rows yet.',
       referenciaK: 'The study’s reference',
       paginaDoConcelho: 'The municipality page',
       voltarAoIndice: 'The municipalities in the ledger',

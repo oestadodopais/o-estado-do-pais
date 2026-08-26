@@ -632,3 +632,22 @@ lado a lado, que é para o que este ficheiro serve.
 **A que saiu**, e fica declarada como autorreferência no `INVENTARIO-FRASES.md`
 para que repô-la feche a construção: «É a lei que o define, não este sítio.» /
 «The law defines it, not this site.»
+
+## Bloco dos 308 concelhos · E13, a ausência em duas palavras, 26.08.2026
+
+A leitura de voz sobre o diff do inventário apanhou os dois estados vazios que o
+E4 acrescentou: diziam a ausência numa frase, e a Emenda 15 di-la em duas
+palavras. A forma é a que a casa já usa, «sem linha ainda» e «sem página ainda»,
+no plural porque aqui são linhas.
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `livroConcelhos.vazioDoConcelho` | Sem linhas ainda. | No rows yet. | era «Ainda não há linhas deste estudo para este concelho.» / «There are no rows of this study for this municipality yet.» |
+
+**Uma chave sai, nas duas edições.** `livroConcelhos.vazioV` («Ainda não há linhas
+deste estudo no livro-razão.» / «There are no rows of this study in the ledger
+yet.») perdeu a superfície a 26.08, quando a página do conjunto passou a ser o
+índice dos 308 e as linhas desceram para a página de cada concelho: nenhuma vista
+a rende. Uma cadeia sem superfície é uma promessa que ninguém pode ler, e sai em
+vez de receber texto novo. As duas declarações dela saem também do inventário,
+pela regra escrita ali: uma frase corrigida não continua declarada.
