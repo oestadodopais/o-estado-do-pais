@@ -25,7 +25,7 @@ import { chromium } from 'playwright';
    centróides que a página desenha: uma célula que perguntasse à página se ela
    concorda com ela própria não media nada (subetapa 2h). */
 import { concelhos } from '../../src/lib/inicio.mjs';
-import { FIELD_W, FIELD_H } from '../../src/data/caop-centroids.mjs';
+import { FIELD_W } from '../../src/data/caop-centroids.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -137,11 +137,14 @@ const estadoDaPagina = (p) =>
         (d) => d.open,
       ).length,
       pecas: document.querySelectorAll('[data-painel]:not([hidden]) .peca').length,
+      /* `data-escolher` saiu desta lista com os botões da pesquisa (Emenda 19a):
+         um resultado é hoje uma ligação para a página do concelho, e o foco lê-se
+         pelo elemento. */
       focado: document.activeElement
         ? document.activeElement.getAttribute('data-modo') ??
           document.activeElement.getAttribute('data-densidade') ??
           document.activeElement.getAttribute('data-regiao') ??
-          document.activeElement.getAttribute('data-escolher') ??
+          document.activeElement.id ??
           document.activeElement.tagName
         : null,
       transbordo: document.documentElement.scrollWidth - document.documentElement.clientWidth,
@@ -213,10 +216,14 @@ const estadoDaPagina = (p) =>
      O foco no comando de «Concelho» passou a ir para o CAMPO da pesquisa (item
      A1), e a célula do foco mede o que ela sempre mediu: que ele não se perde no
      corpo do documento. */
+  /* O TERCEIRO PASSO SAIU COM A ESCOLHA (Emenda 19a, 26.08.2026). Era
+     `[data-escolher="evora"]`, o botão da pesquisa que escolhia o âmbito de um
+     concelho dentro desta página; um resultado é hoje uma ligação para
+     `/municipios/evora`, e uma mudança de página não é uma mudança de estado. O
+     que ela fazia é medido em `tests/inicio/mapa-navegacao.mjs`. */
   const passos = [
     ['[data-densidade="leitura"]', 'densidade → leitura'],
     ['[data-modo="municipio"]', 'âmbito → modo concelho'],
-    ['[data-escolher="evora"]', 'concelho → Évora'],
   ];
   const historia = [];
   for (const [sel, nome] of passos) {
@@ -229,9 +236,11 @@ const estadoDaPagina = (p) =>
     despejos[`estado:${e.url}`] = e.texto;
   }
 
-  conta('âmbito Évora · painel de oito peças', historia[2].painel === 'municipio:evora' && historia[2].pecas === 8, `${historia[2].painel} · ${historia[2].pecas} peças`);
+  /* O PAINEL DE ÉVORA SAIU DA PRIMEIRA PÁGINA (Emenda 19a). A célula media que o
+     âmbito de um concelho abria as suas oito peças aqui; as oito peças vivem em
+     `/municipios/evora`, e `tests/municipio/concelhos.mjs` mede-as lá. */
 
-  /* Andar para trás cinco vezes e para a frente outra vez. */
+  /* Andar para trás e para a frente na história dos estados que ficaram. */
   let ok = true;
   for (let i = historia.length - 2; i >= 0; i--) {
     await p.goBack();
@@ -475,11 +484,13 @@ const estadoDaPagina = (p) =>
   for (const q of [
     '/',
     '/?ambito=regiao:alentejo',
+    /* Um endereço ANTIGO, dos que a Emenda 19a tirou do esquema. Com script ele
+       reencaminha para a página do concelho ou para o índice dos 308; sem script
+       não há para onde reencaminhar, e a página faz o que faz com qualquer valor
+       que não conhece: mostra o país, inteiro e correcto. */
     '/?ambito=municipio:beja',
-    /* O estado novo da etapa 2m entra nesta lista pela mesma razão dos outros:
-       sem script ele mostra o defeito, com os comandos como ligações que abrem.
-       A vista de escolha é uma vista com script, e a página di-lo por não a
-       abrir em vez de a prometer. */
+    /* E o estado que ficou, com o significado que lhe resta: sem script a
+       pesquisa não pesquisa, e os comandos são ligações que abrem. */
     '/?ambito=municipio',
     '/?densidade=leitura',
   ]) {
@@ -585,9 +596,14 @@ const estadoDaPagina = (p) =>
       /CAOP/.test(f.linha ?? ''),
     `«${f.linha}» · ficha ${f.alturaDaFicha}px · camada de aparelho ${f.aparelho} · citação na página ${f.citacaoNaPagina} · CSV ${f.csv}`,
   );
+  /* ERAM TRÊS DICAS, E SÃO DUAS (Emenda 19b, 26.08.2026). A terceira era «Toque
+     num ponto para escolher o concelho.», e descrevia a escolha que saiu: o que
+     um ponto faz é abrir a página do concelho, quando ela existe, e um destino
+     diz-se na ligação e no seu `<title>`. As duas que ficam continuam a ser
+     descrição acessível e não legenda, que é o que esta célula mede. */
   conta(
     '2l · Emenda 15 · as dicas do mapa são descrição acessível e não legenda',
-    f.dicasVisiveis === 0 && f.dicasNaDescricao === 3 && f.descricaoOculta,
+    f.dicasVisiveis === 0 && f.dicasNaDescricao === 2 && f.descricaoOculta,
     `${f.dicasVisiveis} visíveis · ${f.dicasNaDescricao} na descrição · oculta ${f.descricaoOculta}`,
   );
   await p.__contexto.close();
@@ -635,13 +651,14 @@ for (const largura of [768, 1280]) {
  * primeira página. As chaves da prova continuam reconferidas pelo portão a cada
  * construção, e `tests/inicio/correcoes-a.mjs` mede que elas não saíram. */
 
-/* (5) A vista de escolha com a caixa vazia: Évora, e o escolhido se houver um.
+/* (5) A pesquisa com a caixa vazia: os concelhos que têm página, hoje um.
  *
- * O segundo caso NÃO leva toque, e a razão entrou na 2h: em `?ambito=
- * municipio:beja` a página já está na vista de escolha, e a 390 o
- * `[data-modo="municipio"]` à vista é o selo do país — tocar-lhe ali seria o
- * gesto da proximidade e não a porta. O que esta célula mede é a lista com que a
- * vista se apresenta, e essa lê-se sem lhe tocar. */
+ * O SEGUNDO CASO SAIU COM A ESCOLHA (Emenda 19a, 26.08.2026). Era «e o concelho
+ * escolhido, se houver um», que a caixa vazia mostrava ao lado dos que têm
+ * página; não há concelho escolhido na primeira página, e o que um resultado faz
+ * é abrir a página do concelho ou dizer que ela ainda não existe, como em
+ * `/municipios`. A célula mede a lista com que a pesquisa se apresenta, e o que
+ * um resultado é. */
 for (const largura of [1280, 390]) {
   const p = await pagina({ largura });
   await p.goto(base + '/', { waitUntil: 'networkidle' });
@@ -649,31 +666,87 @@ for (const largura of [1280, 390]) {
   const vazio = await p.evaluate(() =>
     [...document.querySelectorAll('.pesquisa-item')]
       .filter((e) => e.getClientRects().length)
-      .map((e) => e.querySelector('[data-escolher]').getAttribute('data-escolher')),
+      .map((e) => {
+        const a = e.querySelector('a[href]');
+        return {
+          nome: e.querySelector('.pesquisa-nome')?.textContent.trim() ?? null,
+          href: a ? a.getAttribute('href') : null,
+        };
+      }),
   );
-  await p.goto(base + '/?ambito=municipio:beja', { waitUntil: 'networkidle' });
-  const comEscolhido = await p.evaluate(() =>
+  /* E o que a caixa escrita devolve: um concelho sem página é um nome com as
+     duas palavras do estado, e não uma porta. */
+  await p.locator('[data-pesquisa]').fill('beja');
+  await p.waitForTimeout(80);
+  const escrito = await p.evaluate(() =>
     [...document.querySelectorAll('.pesquisa-item')]
       .filter((e) => e.getClientRects().length)
-      .map((e) => e.querySelector('[data-escolher]').getAttribute('data-escolher')),
+      .map((e) => ({
+        nome: e.querySelector('.pesquisa-nome')?.textContent.trim() ?? null,
+        porta: !!e.querySelector('a[href]'),
+        estado: e.querySelector('[data-cobertura]')?.textContent.trim() ?? null,
+      })),
   );
   conta(
-    `largura ${largura} · vista de escolha, caixa vazia`,
+    `largura ${largura} · a pesquisa com a caixa vazia, e um resultado sem página`,
     vazio.length === 1 &&
-      vazio[0] === 'evora' &&
-      comEscolhido.length === 2 &&
-      comEscolhido.indexOf('evora') >= 0 &&
-      comEscolhido.indexOf('beja') >= 0,
-    `sem escolha: ${vazio.join(' · ')} · com Beja escolhida: ${comEscolhido.join(' · ')}`,
+      vazio[0].nome === 'Évora' &&
+      vazio[0].href === '/municipios/evora' &&
+      escrito.length === 1 &&
+      escrito[0].nome === 'Beja' &&
+      escrito[0].porta === false &&
+      (escrito[0].estado ?? '').length > 0,
+    `caixa vazia: ${vazio.map((r) => `${r.nome} → ${r.href}`).join(' · ')} · com «beja» escrito: ${escrito
+      .map((r) => `${r.nome} (porta ${r.porta}, «${r.estado}»)`)
+      .join(' · ')}`,
   );
   await p.__contexto.close();
 }
 
-/* (6) Évora na leitura breve: o mapa pequeno DENTRO do cartão, e um só mapa. */
+/* (6) A POSTURA DA PRIMEIRA PÁGINA É UMA SÓ, E O CARTÃO LOCALIZADOR VIVE NA
+ * PÁGINA DO CONCELHO (Emenda 19d, 26.08.2026).
+ *
+ * A célula media o cartão localizador na primeira página, no estado
+ * `?ambito=municipio:evora&densidade=leitura`: o mapa pequeno dentro do cartão,
+ * com moldura, e um só mapa no documento. Esse estado não existe. O que ela mede
+ * agora são as duas metades da emenda: em `/`, e em qualquer estado dela, a
+ * figura é `inteiro` e a tela enche a coluna; em `/municipios/evora`, que é onde
+ * o cartão vive, a postura é `localizador`, a tela tem 170px e está dentro da
+ * moldura. */
 {
-  const p = await pagina();
-  await p.goto(base + '/?ambito=municipio:evora&densidade=leitura', { waitUntil: 'networkidle' });
-  const c = await p.evaluate(() => {
+  const linhas = [];
+  let bem = true;
+  for (const [rota, nome] of [
+    ['/', 'país'],
+    ['/?densidade=leitura', 'país · leitura'],
+    ['/?ambito=municipio', 'pesquisa aberta'],
+    ['/?ambito=regiao:alentejo', 'região'],
+  ]) {
+    const p = await pagina();
+    await p.goto(base + rota, { waitUntil: 'networkidle' });
+    const r = await p.evaluate(() => ({
+      postura: document.querySelector('[data-mapa-raiz]').getAttribute('data-postura'),
+      largura: Math.round(document.querySelector('.mapa-tela').getBoundingClientRect().width),
+      coluna: Math.round(document.querySelector('.cabeca-inst').getBoundingClientRect().width),
+      mapas: document.querySelectorAll('[data-mapa]').length,
+      fichaVisivel: document.querySelector('[data-mapa-ficha]').getClientRects().length > 0,
+      cartaoTexto: document.querySelectorAll('.mapa-cartao-texto').length,
+    }));
+    const ok =
+      r.postura === 'inteiro' &&
+      r.largura === r.coluna &&
+      r.mapas === 1 &&
+      r.fichaVisivel &&
+      r.cartaoTexto === 0;
+    if (!ok) bem = false;
+    linhas.push(
+      `${nome}: ${r.postura}, ${r.largura}px numa coluna de ${r.coluna}px, ${r.mapas} mapa, ficha ${r.fichaVisivel}, texto de cartão ${r.cartaoTexto}`,
+    );
+    await p.__contexto.close();
+  }
+  const pe = await pagina();
+  await pe.goto(base + '/municipios/evora', { waitUntil: 'networkidle' });
+  const c = await pe.evaluate(() => {
     const tela = document.querySelector('.mapa-tela');
     const cartao = document.querySelector('[data-mapa-cartao]');
     return {
@@ -682,77 +755,78 @@ for (const largura of [1280, 390]) {
       largura: Math.round(tela.getBoundingClientRect().width),
       mapas: document.querySelectorAll('[data-mapa]').length,
       moldura: getComputedStyle(cartao).borderTopWidth,
-      fichaVisivel: document.querySelector('[data-mapa-ficha]').getClientRects().length > 0,
+      ficha: document.querySelectorAll('[data-mapa-ficha]').length,
+      porta: document.querySelector('[data-trocar]')?.getAttribute('href') ?? null,
     };
   });
-  const relance = await pagina();
-  await relance.goto(base + '/?ambito=municipio:evora', { waitUntil: 'networkidle' });
-  /* O MAPA INTEIRO DEIXOU DE TER LARGURA PRÓPRIA (etapa 2m): enche a coluna da
-     cabeça. A célula deixa de comparar com 281 — que era a largura escrita na
-     folha — e passa a comparar com a COLUNA, que é a promessa nova: se um dia a
-     mancha de texto mudar, a célula acompanha em vez de mentir. */
-  const r = await relance.evaluate(() => ({
-    postura: document.querySelector('[data-mapa-raiz]').getAttribute('data-postura'),
-    largura: Math.round(document.querySelector('.mapa-tela').getBoundingClientRect().width),
-    coluna: Math.round(document.querySelector('.cabeca-inst').getBoundingClientRect().width),
-    fichaVisivel: document.querySelector('[data-mapa-ficha]').getClientRects().length > 0,
-  }));
-  conta(
-    'Évora · o mapa do localizador está dentro do cartão, e o mapa inteiro enche a coluna no Relance',
-    c.postura === 'localizador' &&
+  if (
+    !(
+      c.postura === 'localizador' &&
       c.dentro &&
       c.largura === 170 &&
       c.mapas === 1 &&
       parseFloat(c.moldura) > 0 &&
-      !c.fichaVisivel &&
-      r.postura === 'inteiro' &&
-      r.largura === r.coluna &&
-      r.fichaVisivel,
-    `leitura: ${c.postura} ${c.largura}px dentro do cartão (moldura ${c.moldura}) · relance: ${r.postura} ${r.largura}px numa coluna de ${r.coluna}px, com ficha · ${c.mapas} mapa no documento`,
+      c.ficha === 0 &&
+      c.porta === '/municipios'
+    )
+  ) {
+    bem = false;
+  }
+  linhas.push(
+    `/municipios/evora: ${c.postura} ${c.largura}px dentro do cartão (moldura ${c.moldura}), ${c.ficha} fichas, «trocar de concelho» → ${c.porta}`,
   );
-  await p.__contexto.close();
-  await relance.__contexto.close();
+  await pe.__contexto.close();
+  conta(
+    '2m · a primeira página é sempre `inteiro`, e o cartão localizador vive na página do concelho',
+    bem,
+    linhas.join(' · '),
+  );
 }
 
-/* (7) O rótulo do distrito: uma regra para os 308 (ISSUES I18). */
+/* (7) O rótulo do distrito: uma regra para os 308 (ISSUES I18).
+ *
+ * A CÉLULA MUDA DE SUPERFÍCIE COM A EMENDA 19a. Lia o rótulo do bloco de cabeça
+ * de um concelho escolhido, e não há concelho escolhido na primeira página. A
+ * regra continua inteira, e continua a ver-se: é a leitura em voz alta do mapa
+ * que a rende, com `[data-readout-pre]` a acender-se ou a apagar-se conforme o
+ * campo da Carta seja um distrito ou uma ilha. O que se lê é o que o leitor vê
+ * quando passa o cursor pelo ponto, e não o que está escrito no documento. */
 {
   const p = await pagina();
+  await p.goto(base + '/', { waitUntil: 'networkidle' });
   const lidos = {};
-  for (const [slug, q] of [
-    ['evora', '/?ambito=municipio:evora'],
-    ['beja', '/?ambito=municipio:beja'],
-    ['horta', '/?ambito=municipio:horta'],
-    ['lagoa-ilha-de-sao-miguel', '/?ambito=municipio:lagoa-ilha-de-sao-miguel'],
-  ]) {
-    await p.goto(base + q, { waitUntil: 'networkidle' });
-    lidos[slug] = await p.evaluate(() => {
-      const b = [...document.querySelectorAll('.cabeca-bloco')].find(
-        (e) => e.getClientRects().length,
-      );
-      const r = b.querySelector('.cabeca-rotulo');
-      /* O que se LÊ do prefixo e do distrito, e não o que está escrito:
-         `textContent` traz também o prefixo escondido, e é exactamente isso que
-         esta célula tem de distinguir. */
-      return [...r.querySelectorAll('[data-prefixo-distrito], [data-slot="distrito"]')]
+  for (const slug of ['evora', 'beja', 'horta', 'lagoa-ilha-de-sao-miguel']) {
+    const sitio = await p.evaluate((s) => {
+      const c = document.querySelector(`[data-pontos] [data-caop="${s}"]`);
+      c.scrollIntoView({ block: 'center' });
+      const r = c.getBoundingClientRect();
+      return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+    }, slug);
+    await p.mouse.move(sitio.x - 25, sitio.y - 25);
+    await p.mouse.move(sitio.x, sitio.y);
+    await p.waitForTimeout(80);
+    lidos[slug] = await p.evaluate(() =>
+      [...document.querySelectorAll('[data-readout-pre], [data-readout-sub]')]
         .filter((e) => !e.hidden)
         .map((e) => e.textContent)
         .join('')
         .replace(/\s+/g, ' ')
-        .trim();
-    });
+        .trim(),
+    );
   }
   conta(
     'o rótulo do distrito segue uma regra só nos 308 (ISSUES I18)',
     lidos.beja === 'distrito de Beja' &&
       lidos.horta === 'Ilha do Faial' &&
       lidos['lagoa-ilha-de-sao-miguel'] === 'Ilha de São Miguel' &&
-      lidos.evora === '',
-    `Beja «${lidos.beja}» · Horta «${lidos.horta}» · Lagoa «${lidos['lagoa-ilha-de-sao-miguel']}» · Évora traz a sua etiqueta de municipios.mjs`,
+      lidos.evora === 'distrito de Évora',
+    `Beja «${lidos.beja}» · Horta «${lidos.horta}» · Lagoa «${lidos['lagoa-ilha-de-sao-miguel']}» · Évora «${lidos.evora}»`,
   );
   await p.__contexto.close();
 }
 
 /* ===========================================================================
+ * SUBETAPA 2h · a proximidade, e duas arestas/* ===========================================================================
  * SUBETAPA 2h · a proximidade, e duas arestas
  * ======================================================================== */
 
@@ -788,9 +862,11 @@ for (const largura of [1280, 390]) {
     ['pais-relance', '/'],
     ['pais-leitura', '/?densidade=leitura'],
     ['regiao-alentejo-leitura', '/?ambito=regiao:alentejo&densidade=leitura'],
-    ['evora-relance', '/?ambito=municipio:evora'],
-    ['evora-leitura', '/?ambito=municipio:evora&densidade=leitura'],
-    ['beja-vazio', '/?ambito=municipio:beja'],
+    /* OS TRÊS ESTADOS DE CONCELHO SAÍRAM (Emenda 19a) e o da pesquisa entrou no
+       lugar deles: eram `municipio:evora` em relance e em leitura e
+       `municipio:beja`, e nenhum é um estado desta página. */
+    ['pesquisa-aberta', '/?ambito=municipio'],
+    ['pesquisa-aberta-leitura', '/?ambito=municipio&densidade=leitura'],
   ];
   const linhas = [];
   let piores = 0;
@@ -825,41 +901,17 @@ for (const largura of [1280, 390]) {
   );
 }
 
-/* (2h·3) ISSUES I21 · a dica de escolha segue a regra das outras duas. */
-{
-  const lidas = {};
-  for (const largura of [390, 1280]) {
-    const p = await pagina({ largura });
-    await p.goto(base + '/?ambito=municipio:evora', { waitUntil: 'networkidle' });
-    lidas[largura] = await p.evaluate(
-      () => document.querySelector('[data-hint-escolher]').getClientRects().length > 0,
-    );
-    await p.__contexto.close();
-    const semJs = await pagina({ largura, js: false });
-    await semJs.goto(base + '/', { waitUntil: 'networkidle' });
-    lidas[`${largura}-sem-js`] = await semJs.evaluate(
-      () => document.querySelector('[data-hint-escolher]').getClientRects().length > 0,
-    );
-    await semJs.__contexto.close();
-  }
-  const p2 = await pagina({ largura: 1280 });
-  await p2.goto(base + '/', { waitUntil: 'networkidle' });
-  const noPais = await p2.evaluate(
-    () => document.querySelector('[data-hint-escolher]').getClientRects().length > 0,
-  );
-  await p2.__contexto.close();
-  conta(
-    'ISSUES I21 · «Toque num ponto» só onde o mapa escolhe pontos',
-    lidas[1280] === true &&
-      lidas[390] === false &&
-      lidas['1280-sem-js'] === false &&
-      lidas['390-sem-js'] === false &&
-      noPais === false,
-    `1280 no âmbito Município ${lidas[1280]} · 390 ${lidas[390]} · sem script 1280 ${lidas['1280-sem-js']} e 390 ${lidas['390-sem-js']} · 1280 no âmbito País ${noPais}`,
-  );
-}
+/* (2h·3) SAIU COM A DICA (Emenda 19b, 26.08.2026). A célula media que «Toque num
+ * ponto para escolher o concelho.» só se lia onde o mapa escolhia pontos: no
+ * computador, no âmbito de um concelho, e em mais lado nenhum (ISSUES I21). A
+ * dica descrevia a escolha, a escolha saiu, e a cadeia saiu com ela de
+ * `strings.mjs` nas duas edições. As outras duas dicas continuam medidas na
+ * célula (2) das sete da 2g, que conta as que estão na descrição acessível do
+ * mapa: eram três, são duas.
+ */
 
 /* =============================================================================
+ * ETAPA 2i · as células da leitura cruzada/* =============================================================================
  * ETAPA 2i · as células da leitura cruzada
  * ========================================================================== */
 
@@ -1011,45 +1063,48 @@ for (const largura of [1280, 390]) {
 
   const linhas = [];
   let bem = true;
-  for (const [rota, largura, nome] of [
-    ['/?ambito=municipio:beja', 1280, 'Beja · 1280 · relance'],
-    ['/?ambito=municipio:beja&densidade=leitura', 1280, 'Beja · 1280 · leitura (localizador)'],
-    ['/?ambito=municipio:beja', 390, 'Beja · 390'],
+  /* O CONCELHO ESCOLHIDO PASSOU A VIVER NA PÁGINA DELE (Emenda 19d). A célula
+     media o anel nos estados `?ambito=municipio:beja` da primeira página, que
+     saíram; mede-o agora onde o servidor rende um concelho escolhido, que é
+     `/municipios/evora`, e nas duas larguras. Na primeira página mede o
+     contrário, que é a outra metade da emenda: nenhum ponto leva o anel. */
+  for (const [rota, largura, slug, nome] of [
+    ['/municipios/evora', 1280, 'evora', 'Évora · 1280 · localizador'],
+    ['/municipios/evora', 390, 'evora', 'Évora · 390'],
+    ['/en/municipalities/evora', 1280, 'evora', 'Évora · 1280 · en'],
   ]) {
     const p = await pagina({ largura });
     await p.goto(base + rota, { waitUntil: 'networkidle' });
-    const r = await leituraDoPonto(p, 'beja');
+    const r = await leituraDoPonto(p, slug);
     const ok =
       r.temClasse &&
       r.escolhido.fill === 'none' &&
       r.papel.fill === 'none' &&
-      r.tinta.fill === 'none' &&
       r.escolhido.raio === r.papel.raio &&
       r.escolhido.largura > r.papel.largura;
     if (!ok) bem = false;
     linhas.push(
-      `${nome}: enchimento ${r.escolhido.fill} (todos ${r.papel.fill}/${r.tinta.fill}) · raio ${r.escolhido.raio} = ${r.papel.raio} · anel ${r.escolhido.largura} contra ${r.papel.largura}`,
+      `${nome}: enchimento ${r.escolhido.fill} (os outros ${r.papel.fill}) · raio ${r.escolhido.raio} = ${r.papel.raio} · anel ${r.escolhido.largura} contra ${r.papel.largura}`,
     );
     await p.__contexto.close();
   }
-  /* E Évora, que é o único concelho com página: escolhida ou não, o ponto é o
-     mesmo dos outros 307. O enchimento deixou de dizer cobertura (Emenda 10). */
-  const pe = await pagina();
-  await pe.goto(`${base}/?ambito=municipio:evora`, { waitUntil: 'networkidle' });
-  const ev = await leituraDoPonto(pe, 'evora');
-  const evoraOk = ev.temClasse && ev.escolhido.fill === 'none' && ev.papel.fill === 'none';
-  if (!evoraOk) bem = false;
-  linhas.push(`Évora escolhida: enchimento ${ev.escolhido.fill}, como os outros 307`);
-  await pe.__contexto.close();
+  const pi = await pagina();
+  await pi.goto(`${base}/`, { waitUntil: 'networkidle' });
+  const naPrimeira = await pi.evaluate(
+    () => document.querySelectorAll('[data-pontos] .mun-escolhido').length,
+  );
+  if (naPrimeira !== 0) bem = false;
+  linhas.push(`primeira página: ${naPrimeira} pontos com anel`);
+  await pi.__contexto.close();
 
   conta(
-    '2j·a · o ponto escolhido é um anel, e nenhum ponto é um enchimento',
+    '2j·a · o ponto escolhido é um anel na página do concelho, e a primeira página não escolhe nenhum',
     bem,
     linhas.join(' · '),
   );
 }
 
-/* (2i·3c) A frase de neutralidade fica ao pé do mapa em todas as posturas. */
+/* (2i·3c) A frase de neutralidade fica ao pé do mapa em todas as posturas. *//* (2i·3c) A frase de neutralidade fica ao pé do mapa em todas as posturas. */
 {
   /* A CÉLULA 2i·3c MUDA DE PERGUNTA COM A EMENDA 15. Media que a frase de
      neutralidade («os pontos são todos iguais e marcam a posição…, não marcam
@@ -1059,11 +1114,14 @@ for (const largura of [1280, 390]) {
      cinco posturas, e que a linha da Emenda 17 está lá em vez dela. */
   const linhas = [];
   let bem = true;
+  /* AS TRÊS ROTAS DE CONCELHO PASSARAM A SER A PÁGINA DO CONCELHO (Emenda 19).
+     Eram estados da primeira página; as posturas continuam a ser as mesmas duas,
+     e é onde elas vivem que se medem. */
   for (const [rota, largura, nome] of [
     ['/', 1280, 'País · inteiro'],
-    ['/?ambito=municipio:beja', 1280, 'escolha · inteiro'],
-    ['/?ambito=municipio:evora&densidade=leitura', 1280, 'Évora · localizador'],
-    ['/?ambito=municipio:evora&densidade=leitura', 390, 'Évora · localizador · 390'],
+    ['/?ambito=municipio', 1280, 'pesquisa aberta · inteiro'],
+    ['/municipios/evora', 1280, 'Évora · localizador'],
+    ['/municipios/evora', 390, 'Évora · localizador · 390'],
     ['/', 390, 'País · 390'],
   ]) {
     const p = await pagina({ largura });
@@ -1088,49 +1146,61 @@ for (const largura of [1280, 390]) {
   );
 }
 
-/* (2i·3d) Abaixo de 640 nenhum ponto é activável, por nenhum meio. */
+/* (2i·3d) Abaixo de 640 nenhum ponto é activável, por nenhum meio.
+ *
+ * A PERGUNTA MUDA DE OBJECTO COM A EMENDA 19b, e continua a ser a mesma pergunta.
+ * A célula lia `pointer-events` numa das 308 áreas de toque; as áreas saíram do
+ * SVG, e o que apanha o clique é o ponto dentro da sua ligação. Abaixo de 640 o
+ * mapa inteiro não se rende (item A4), e por isso nem o dedo nem o teclado
+ * chegam a ele: a tela não tem caixa, não recebe foco, e as setas não percorrem
+ * nada. A 1280 o mesmo mapa lê, e o Enter num ponto com página abre a página
+ * dele, que é o que a emenda promete. */
 {
   const sonda = async (largura) => {
     const p = await pagina({ largura });
-    await p.goto(`${base}/?ambito=municipio:beja`, { waitUntil: 'networkidle' });
-    const alvos = await p.evaluate(
-      () =>
-        getComputedStyle(document.querySelector('[data-alvos] [data-caop]')).pointerEvents,
-    );
-    await p.focus('[data-mapa-wrap]');
+    await p.goto(`${base}/`, { waitUntil: 'networkidle' });
+    const caixa = await p.evaluate(() => {
+      const t = document.querySelector('.mapa-tela').getBoundingClientRect();
+      const porta = document.querySelector('.mun-porta');
+      const r = porta ? porta.getBoundingClientRect() : null;
+      return {
+        tela: +t.width.toFixed(1),
+        porta: r ? +r.width.toFixed(2) : 0,
+        pontosComCaixa: [...document.querySelectorAll('[data-pontos] .mun')].filter(
+          (c) => c.getBoundingClientRect().width > 0,
+        ).length,
+      };
+    });
+    await p.evaluate(() => document.querySelector('[data-mapa-wrap]').focus());
     await p.keyboard.press('ArrowRight');
+    await p.waitForTimeout(80);
     const leitura = await p.evaluate(
       () => document.querySelector('[data-readout-nome]')?.textContent.trim() ?? '',
     );
     await p.keyboard.press('Enter');
-    const depoisDoEnter = (await estadoDaPagina(p)).ambito;
-    await p.keyboard.press('Space');
-    const depoisDoEspaco = (await estadoDaPagina(p)).ambito;
+    await p.waitForTimeout(250);
+    const depoisDoEnter = await p.evaluate(() => location.pathname + location.search);
     await p.__contexto.close();
-    return { alvos, leitura, depoisDoEnter, depoisDoEspaco };
+    return { ...caixa, leitura, depoisDoEnter };
   };
   const estreito = await sonda(390);
   const largo = await sonda(1280);
-  /* A LEITURA POR TECLADO DEIXOU DE EXISTIR A 390, E É O QUE SE ESPERA (bloco A,
-     item A4): abaixo de 640 o mapa não se rende, e um mapa que não se desenha
-     não tem ponto nenhum para as setas percorrerem. A célula continua a medir o
-     que a Emenda 3 promete e o que o achado 8d fechou — que nenhum ponto é
-     activável a 390, nem pelo dedo nem pelo Enter nem pelo espaço — e passa a
-     medir também que a leitura por teclado é EXACTAMENTE do computador. */
   conta(
-    '2i·3d · abaixo de 640 nenhum ponto é activável, e a leitura é do computador',
-    estreito.alvos === 'none' &&
-      estreito.depoisDoEnter === 'municipio:beja' &&
-      estreito.depoisDoEspaco === 'municipio:beja' &&
+    '2i·3d · abaixo de 640 nenhum ponto é alcançável, e a leitura é do computador',
+    estreito.tela === 0 &&
+      estreito.porta === 0 &&
+      estreito.pontosComCaixa === 0 &&
       estreito.leitura.length === 0 &&
-      largo.alvos !== 'none' &&
-      largo.leitura.length > 0 &&
-      largo.depoisDoEnter !== 'municipio:beja',
-    `390: alvos «${estreito.alvos}», mapa não rendido e a seta lê «${estreito.leitura}», Enter → ${estreito.depoisDoEnter}, espaço → ${estreito.depoisDoEspaco} · 1280: alvos «${largo.alvos}», seta lê «${largo.leitura}», Enter → ${largo.depoisDoEnter}`,
+      estreito.depoisDoEnter === '/' &&
+      largo.tela > 0 &&
+      largo.porta > 0 &&
+      largo.pontosComCaixa === 308 &&
+      largo.leitura.length > 0,
+    `390: tela ${estreito.tela}px, ${estreito.pontosComCaixa} pontos com caixa, a ligação mede ${estreito.porta}px, a seta lê «${estreito.leitura}», o Enter deixa o endereço em «${estreito.depoisDoEnter}» · 1280: tela ${largo.tela}px, ${largo.pontosComCaixa} pontos, a ligação mede ${largo.porta}px, a seta lê «${largo.leitura}»`,
   );
 }
 
-/* (2i·5) O espaço activa os comandos, como o Enter, e não rola a página. */
+/* (2i·5) O espaço activa os comandos, como o Enter, e não rola a página. *//* (2i·5) O espaço activa os comandos, como o Enter, e não rola a página. */
 {
   const p = await pagina();
   await p.goto(`${base}/`, { waitUntil: 'networkidle' });
@@ -1436,64 +1506,23 @@ for (const largura of [1280, 390]) {
   );
 }
 
-/* (2j) EMENDA 14 · UM CONCELHO SEM PÁGINA RENDE AS OITO MEDIDAS COMO PEÇAS
- * VAZIAS. Oito peças, cada uma com o nome e a unidade, as palavras «sem linha
- * ainda», e NENHUM algarismo, NENHUM selo e NENHUM marcador — que é o que a
- * emenda pede e o que o portão não pode conferir sozinho, porque um algarismo
- * numa peça vazia seria um algarismo legítimo em qualquer outro sítio. Nas duas
- * edições. */
-{
-  const linhas = [];
-  let bem = true;
-  for (const [edicao, rota, palavra] of [
-    ['pt', '/?ambito=municipio:beja', 'sem linha ainda'],
-    ['en', '/en?ambito=municipio:beja', 'no row yet'],
-  ]) {
-    const p = await pagina();
-    await p.goto(base + rota, { waitUntil: 'networkidle' });
-    const m = await p.evaluate(() => {
-      const painel = document.querySelector('[data-painel="vazio"]');
-      const vazias = [...painel.querySelectorAll('.peca-vazia')];
-      const texto = vazias.map((e) => e.textContent.replace(/\s+/g, ' ').trim());
-      return {
-        visivel: !painel.hasAttribute('hidden'),
-        n: vazias.length,
-        algarismos: texto.filter((t) => /[0-9]/.test(t)).length,
-        selos: painel.querySelectorAll('a.src-chip').length,
-        marcadores: painel.querySelectorAll('.sq').length,
-        valores: painel.querySelectorAll('[data-claim]').length,
-        palavras: [...new Set(vazias.map((e) => e.querySelector('[data-cobertura]')?.textContent.trim()))],
-        nomes: vazias.map((e) => e.querySelector('.peca-nome')?.textContent.trim()).filter(Boolean).length,
-        unidades: vazias.map((e) => e.querySelector('.peca-unidade')?.textContent.trim()).filter(Boolean).length,
-        /* A frase que explicava o estado vazio saiu com a Emenda 15: as oito
-           peças dizem-no, cada uma em duas palavras. */
-        fraseAcima: !!painel.querySelector('.vazio-texto'),
-        ordem: !!painel.firstElementChild && painel.firstElementChild.classList.contains('peca-vazia'),
-      };
-    });
-    const ok =
-      m.visivel &&
-      m.n === 8 &&
-      m.algarismos === 0 &&
-      m.selos === 0 &&
-      m.marcadores === 0 &&
-      m.valores === 0 &&
-      m.nomes === 8 &&
-      m.unidades === 8 &&
-      m.palavras.length === 1 &&
-      m.palavras[0] === palavra &&
-      m.fraseAcima === false &&
-      m.ordem;
-    if (!ok) bem = false;
-    linhas.push(
-      `${edicao}: ${m.n} peças vazias · ${m.algarismos} com algarismo · ${m.selos} selos · ${m.marcadores} marcadores · ${m.nomes} nomes · ${m.unidades} unidades · «${m.palavras.join('|')}» · frase por cima ${m.fraseAcima} · primeira célula é peça ${m.ordem}`,
-    );
-    await p.__contexto.close();
-  }
-  conta('2j · Emenda 14 · Beja rende as oito medidas como peças vazias', bem, linhas.join(' · '));
-}
+/* (2j) EMENDA 14 · SAIU DA PRIMEIRA PÁGINA COM O PAINEL VAZIO (Emenda 19a,
+ * 26.08.2026).
+ *
+ * A célula media, nas duas edições, que `?ambito=municipio:beja` rendia as oito
+ * medidas do concelho como peças vazias: oito peças, nenhum algarismo, nenhum
+ * selo, nenhum marcador, e as duas palavras «sem linha ainda» em cada uma. O
+ * estado saiu do esquema e o painel saiu do documento: um concelho vive na sua
+ * página, e é lá que a disposição-padrão da Emenda 14 se rende no dia em que
+ * houver uma página sem linhas (decisão 5B de 25.08, os 308).
+ *
+ * A EMENDA 14 CONTINUA MEDIDA ONDE ELA TEM OBJECTO: `Peca.astro` mantém a peça
+ * vazia com a sua palavra de estado, `MunicipioView` continua a chamá-la, e
+ * `tests/municipio/concelhos.mjs` mede a página do concelho. A célula volta com
+ * a primeira página de concelho sem linhas.
+ */
 
-/* (2j) SAIU COM O INSTRUMENTO N.º 1 (correções de UX, bloco A, item A3,
+/* (2j) SAIU COM O INSTRUMENTO N.º 1 (correções de UX, bloco A, item A3,/* (2j) SAIU COM O INSTRUMENTO N.º 1 (correções de UX, bloco A, item A3,
  * 25.08.2026). Media a altura da régua da convergência e os pares de rótulos
  * cruzados em cinco larguras, com a porta do telemóvel aberta. O instrumento
  * deixou de ser rendido em `/`, e a célula volta com ele, na matriz da página
@@ -1785,7 +1814,10 @@ for (const largura of [1280, 390]) {
 }
 
 /* ============================================================================
- * (f) A ETAPA 2M · o mapa que enche a coluna e cresce para se escolher nele
+ * (f) O MAPA QUE ENCHE A COLUNA, E QUE NÃO CRESCE MAIS DO QUE ELA
+ * ============================================================================
+ * Era «o mapa que enche a coluna e cresce para se escolher nele» (etapa 2m). A
+ * segunda metade saiu com a Emenda 19b: o mapa enche a coluna, e mais nada.
  * ========================================================================== */
 
 /* A distância mínima entre dois centróides, calculada AQUI a partir dos mesmos
@@ -1860,8 +1892,13 @@ const minimaNoDesenho = () => {
   conta('2m · o mapa enche a coluna da cabeça, e a legenda vai para o canto das ilhas', bem, linhas.join(' · '));
 }
 
-/* (f2) A vista de escolha: endereço próprio, largura do conteúdo, vizinhos mais
-   separados e alvos maiores. */
+/* (f2) A PESQUISA ABERTA NÃO MUDA O MAPA (Emenda 19b, 26.08.2026).
+ *
+ * A célula media a vista de escolha: o mapa à largura do conteúdo, os vizinhos
+ * mais separados, os alvos acima de 24px e o «fechar» com 44px de altura. A
+ * vista saiu. O que ela mede agora é o contrário, e com os mesmos números: em
+ * `?ambito=municipio` o mapa fica na coluna, do tamanho que tem no país, a
+ * pesquisa abre ACIMA dele, e a cabeça e o painel continuam a ser os do país. */
 {
   const linhas = [];
   let bem = true;
@@ -1870,36 +1907,26 @@ const minimaNoDesenho = () => {
       const p = await pagina({ largura });
       await p.goto(base + rota, { waitUntil: 'networkidle' });
       const antes = await p.evaluate(minimaNoDesenho);
+      const noPais = await p.evaluate(
+        () => +document.querySelector('.mapa-tela').getBoundingClientRect().width.toFixed(1),
+      );
       await p.goto(base + rota + '?ambito=municipio', { waitUntil: 'networkidle' });
       const m = await p.evaluate(() => {
         const raiz = document.querySelector('[data-inicio]');
-        const conteudo = document.querySelector('[data-grelha]').getBoundingClientRect();
         const tela = document.querySelector('.mapa-tela').getBoundingClientRect();
-        const alvos = [...document.querySelectorAll('[data-alvos] [data-caop]')].map(
-          (n) => n.getBoundingClientRect().width,
-        );
-        alvos.sort((a, b) => a - b);
+        const coluna = document.querySelector('.cabeca-inst').getBoundingClientRect();
         return {
           ambito: raiz.getAttribute('data-ambito'),
           url: location.pathname + location.search,
           cabeca: document.querySelector('[data-cabeca]:not([hidden])')?.getAttribute('data-cabeca'),
           painel: document.querySelector('[data-painel]:not([hidden])')?.getAttribute('data-painel'),
-          /* A pesquisa deixou de ser um `[data-sub]` que o script acendia: é um
-             bloco governado pela folha pelo `data-modo` da raiz (bloco A, itens
-             A1 e A4). O que se mede continua a ser o mesmo — que ela abre ACIMA
-             do mapa na vista de escolha. */
+          /* A pesquisa é um bloco governado pela folha pelo `data-modo` da raiz
+             (bloco A, itens A1 e A4), e continua a abrir ACIMA do mapa. */
           pesquisaAcima:
             document.querySelector('[data-pesquisa-bloco]').getBoundingClientRect().bottom <=
             tela.top + 1,
-          conteudo: +conteudo.width.toFixed(1),
           mapa: +tela.width.toFixed(1),
-          alvoMin: +alvos[0].toFixed(1),
-          alvo24: alvos.filter((a) => a >= 24).length,
-          fechar: (() => {
-            const e = document.querySelector('[data-fechar-mapa]');
-            const r = e.getBoundingClientRect();
-            return { visivel: e.getClientRects().length > 0, w: Math.round(r.width), h: Math.round(r.height) };
-          })(),
+          coluna: +coluna.width.toFixed(1),
           transbordo: document.documentElement.scrollWidth - document.documentElement.clientWidth,
         };
       });
@@ -1910,140 +1937,109 @@ const minimaNoDesenho = () => {
         m.cabeca === 'pais' &&
         m.painel === 'pais' &&
         m.pesquisaAcima &&
-        Math.abs(m.mapa - m.conteudo) < 1 &&
-        depois > antes &&
-        m.alvoMin >= 20 &&
-        m.fechar.visivel &&
-        m.fechar.h >= 44 &&
+        Math.abs(m.mapa - m.coluna) < 1 &&
+        Math.abs(m.mapa - noPais) < 1 &&
+        Math.abs(depois - antes) < 0.05 &&
         m.transbordo <= 0;
       if (!ok) bem = false;
       linhas.push(
-        `${largura}${rota === '/' ? ' pt' : ' en'}: ${m.url} · mapa ${m.mapa} de ${m.conteudo} · mínimo entre pontos ${antes.toFixed(2)}px → ${depois.toFixed(2)}px · alvo mínimo ${m.alvoMin}px, ${m.alvo24} de 308 acima de 24px · fechar ${m.fechar.w}×${m.fechar.h} · transbordo ${m.transbordo}`,
+        `${largura}${rota === '/' ? ' pt' : ' en'}: ${m.url} · mapa ${m.mapa} na coluna de ${m.coluna} (no país ${noPais}) · mínimo entre pontos ${antes.toFixed(2)}px → ${depois.toFixed(2)}px · transbordo ${m.transbordo}`,
       );
       await p.__contexto.close();
     }
   }
   conta(
-    `2m · a vista de escolha abre à largura do conteúdo, e os vizinhos separam-se (mínimo ${MINIMA_EM_UNIDADES.toFixed(3)} unidades de campo)`,
+    '2m · a pesquisa abre acima do mapa, e o mapa fica onde estava',
     bem,
     linhas.join(' · '),
   );
 }
 
-/* (f3) A lente: 1× a 4×, o toque duplo repõe, e fora da vista de escolha a roda
-   é da página. */
+/* (f3) A LENTE SAIU (Emenda 19b, 26.08.2026). A célula media a ampliação de 1× a
+ * 4× por quarenta entalhes da roda, o toque duplo a repor, a leitura a dizer o
+ * nome certo debaixo da lente, e que fora da vista de escolha a roda era da
+ * página. A lente saiu inteira, e a roda é da página em qualquer estado: é o que
+ * `tests/inicio/mapa-navegacao.mjs` mede, com o cursor dentro da caixa do mapa e
+ * o `scrollY` antes e depois.
+ *
+ * O QUE FICA AQUI É A DENSIDADE, MEDIDA E NÃO CONTADA (Emenda 19e, ISSUES I70).
+ * A conta que a lente existia para resolver continua verdadeira, e a página não
+ * a resolve: na coluna, 44 dos 308 pontos têm um vizinho a menos de um diâmetro.
+ * A célula mede-a no desenho construído e imprime-a, para que o número não
+ * desapareça de vista enquanto o mapa por distritos não chega. */
 {
   const p = await pagina({ largura: 1280 });
-  await p.goto(base + '/?ambito=municipio', { waitUntil: 'networkidle' });
-  const transforma = () => p.evaluate(() => document.querySelector('[data-campo]').getAttribute('transform'));
-  const escala = async () => {
-    const t = await transforma();
-    const m = /scale\(([\d.]+)\)/.exec(t ?? '');
-    return m ? +(+m[1]).toFixed(3) : 1;
-  };
-  await p.evaluate(() => document.querySelector('.mapa-tela').scrollIntoView({ block: 'start' }));
-  await p.waitForTimeout(80);
-  const sitio = await p.evaluate(() => {
-    const r = document.querySelector('.mapa-tela').getBoundingClientRect();
-    return { x: r.left + r.width / 2, y: Math.max(20, r.top) + 300 };
-  });
-  await p.mouse.move(sitio.x, sitio.y);
-  const partida = await escala();
-  const minimaAntes = await p.evaluate(minimaNoDesenho);
-  for (let i = 0; i < 40; i++) await p.mouse.wheel(0, -100);
-  const tecto = await escala();
-  const minimaNoTecto = await p.evaluate(minimaNoDesenho);
-  /* A LEITURA CONTINUA A DIZER O NOME CERTO DEBAIXO DA LENTE, e é a prova de que
-     a conversão de coordenadas passou a atravessar a transformação em vez de
-     ler o rectângulo cru. Mede-se sobre um concelho concreto: onde é que o
-     desenho o pôs AGORA (o rectângulo do próprio nó já traz a lente aplicada), e
-     o que a página lê quando o cursor lá está. Um sítio escolhido em píxeis do
-     ecrã cairia no mar, que é onde o mapa não tem nada a dizer. */
-  const alvoVisivel = await p.evaluate(() => {
-    for (const n of document.querySelectorAll('[data-pontos] [data-caop]')) {
-      const b = n.getBoundingClientRect();
-      const x = b.left + b.width / 2;
-      const y = b.top + b.height / 2;
-      if (x > 8 && x < innerWidth - 8 && y > 8 && y < innerHeight - 8) {
-        return { x: x, y: y, nome: n.getAttribute('data-m') };
+  await p.goto(base + '/', { waitUntil: 'networkidle' });
+  const d = await p.evaluate(() => {
+    const nos = [...document.querySelectorAll('[data-pontos] [data-caop]')].map((n) => {
+      const r = n.getBoundingClientRect();
+      return { x: r.left + r.width / 2, y: r.top + r.height / 2, d: r.width, nome: n.getAttribute('data-m') };
+    });
+    const diametro = nos[0].d;
+    let juntos = 0;
+    for (let i = 0; i < nos.length; i++) {
+      let perto = false;
+      for (let j = 0; j < nos.length && !perto; j++) {
+        if (i === j) continue;
+        if (Math.hypot(nos[i].x - nos[j].x, nos[i].y - nos[j].y) < diametro) perto = true;
+      }
+      if (perto) juntos++;
+    }
+    let minima = Infinity;
+    for (let i = 0; i < nos.length; i++) {
+      for (let j = i + 1; j < nos.length; j++) {
+        const e = Math.hypot(nos[i].x - nos[j].x, nos[i].y - nos[j].y);
+        if (e < minima) minima = e;
       }
     }
-    return null;
+    return {
+      n: nos.length,
+      diametro: +diametro.toFixed(2),
+      juntos,
+      minima: +minima.toFixed(2),
+      largura: +document.querySelector('.mapa-tela').getBoundingClientRect().width.toFixed(1),
+    };
   });
-  await p.mouse.move(alvoVisivel.x, alvoVisivel.y);
-  const leAmpliado = await p.evaluate(() =>
-    document.querySelector('[data-readout-nome]').textContent.trim(),
-  );
-  for (let i = 0; i < 60; i++) await p.mouse.wheel(0, 100);
-  const piso = await escala();
-  for (let i = 0; i < 15; i++) await p.mouse.wheel(0, -100);
-  const meio = await escala();
-  await p.mouse.dblclick(sitio.x, sitio.y);
-  const reposta = await escala();
-  /* Fora da vista de escolha a roda não é apanhada: rola a página. */
-  await p.goto(base + '/', { waitUntil: 'networkidle' });
-  await p.mouse.move(sitio.x, 400);
-  for (let i = 0; i < 5; i++) await p.mouse.wheel(0, 200);
-  await p.waitForTimeout(120);
-  const rolou = await p.evaluate(() => window.scrollY);
-  const semLente = await transforma();
+  /* E a conta do lado de cá, sobre os mesmos centróides: o par mais próximo da
+     Carta, em unidades de campo, convertido à escala a que a página o desenhou.
+     A matriz não pergunta à página se ela concorda com ela própria. */
+  const esperada = (MINIMA_EM_UNIDADES * d.largura) / FIELD_W;
   conta(
-    '2m · a lente do mapa vai de 1× a 4×, o toque duplo repõe, e no âmbito País a roda é da página',
-    partida === 1 &&
-      tecto === 4 &&
-      piso === 1 &&
-      meio > 1 &&
-      meio < 4 &&
-      reposta === 1 &&
-      minimaNoTecto > minimaAntes * 3.9 &&
-      leAmpliado === alvoVisivel.nome &&
-      rolou > 0 &&
-      semLente === null,
-    `1× → 40 entalhes ${tecto}× (mínimo entre pontos ${minimaAntes.toFixed(2)}px → ${minimaNoTecto.toFixed(2)}px) → 60 para baixo ${piso}× → 15 para cima ${meio}× → toque duplo ${reposta}× · com a lente no tecto, o cursor sobre o ponto de ${alvoVisivel.nome} lê «${leAmpliado}» · no País a roda rolou ${rolou}px e o campo não tem transformação`,
+    'Emenda 19e · a densidade do mapa, medida no desenho (ISSUES I70)',
+    d.n === 308 &&
+      d.juntos === 44 &&
+      d.diametro > 7 &&
+      d.diametro < 8 &&
+      Math.abs(d.minima - esperada) < 0.05,
+    `${d.juntos} dos ${d.n} pontos têm um vizinho a menos de um diâmetro (${d.diametro}px) na coluna, a 1280 · o par mais próximo mede ${d.minima}px no desenho e ${esperada.toFixed(2)}px na conta (${MINIMA_EM_UNIDADES.toFixed(3)} unidades num campo de ${FIELD_W} a ${d.largura}px). O caminho das zonas densas é a pesquisa, até haver o mapa por distritos.`,
   );
   await p.__contexto.close();
 }
 
-/* (f4) A saída da vista de escolha: «fechar», Escape, e o Escape da pesquisa que
-   continua a ser o da pesquisa. */
+/* (f4) A SAÍDA DA VISTA SAIU COM A VISTA (Emenda 19b). Eram «fechar» e Escape, e
+ * os dois devolviam o mapa à coluna; o mapa nunca sai da coluna. O terceiro
+ * caso fica, e é o único Escape que esta página tem: o da caixa de pesquisa,
+ * que limpa a caixa e não fecha nada. */
 {
-  const linhas = [];
-  let bem = true;
-  for (const via of ['fechar', 'escape']) {
-    const p = await pagina({ largura: 1280 });
-    await p.goto(base + '/?ambito=municipio', { waitUntil: 'networkidle' });
-    if (via === 'fechar') await p.locator('[data-fechar-mapa]').click();
-    else await p.keyboard.press('Escape');
-    const e = await p.evaluate(() => ({
-      ambito: document.querySelector('[data-inicio]').getAttribute('data-ambito'),
-      url: location.pathname + location.search,
-      foco: document.activeElement?.getAttribute('data-modo') ?? document.activeElement?.tagName,
-      mapa: Math.round(document.querySelector('.mapa-tela').getBoundingClientRect().width),
-      coluna: Math.round(document.querySelector('.cabeca-inst').getBoundingClientRect().width),
-    }));
-    const ok = e.ambito === 'pais' && e.url === '/' && e.foco === 'municipio' && e.mapa === e.coluna;
-    if (!ok) bem = false;
-    linhas.push(`${via}: ${e.ambito} · «${e.url}» · foco no comando «${e.foco}» · mapa ${e.mapa}px na coluna de ${e.coluna}px`);
-    await p.__contexto.close();
-  }
-  {
-    const p = await pagina({ largura: 1280 });
-    await p.goto(base + '/?ambito=municipio', { waitUntil: 'networkidle' });
-    await p.locator('[data-pesquisa]').fill('beja');
-    await p.locator('[data-pesquisa]').press('Escape');
-    const e = await p.evaluate(() => ({
-      campo: document.querySelector('[data-pesquisa]').value,
-      ambito: document.querySelector('[data-inicio]').getAttribute('data-ambito'),
-    }));
-    const ok = e.campo === '' && e.ambito === 'municipio';
-    if (!ok) bem = false;
-    linhas.push(`Escape na pesquisa: caixa «${e.campo}» e a vista continua em ${e.ambito}`);
-    await p.__contexto.close();
-  }
-  conta('2m · «fechar» e Escape devolvem o mapa à coluna, e o Escape da pesquisa continua a ser o da pesquisa', bem, linhas.join(' · '));
+  const p = await pagina({ largura: 1280 });
+  await p.goto(base + '/?ambito=municipio', { waitUntil: 'networkidle' });
+  await p.locator('[data-pesquisa]').fill('beja');
+  await p.locator('[data-pesquisa]').press('Escape');
+  const e = await p.evaluate(() => ({
+    campo: document.querySelector('[data-pesquisa]').value,
+    ambito: document.querySelector('[data-inicio]').getAttribute('data-ambito'),
+    url: location.pathname + location.search,
+    fechar: document.querySelectorAll('[data-fechar-mapa]').length,
+  }));
+  conta(
+    '2m · o Escape da pesquisa limpa a caixa, e não há mais nenhum Escape na página',
+    e.campo === '' && e.ambito === 'municipio' && e.url === '/?ambito=municipio' && e.fechar === 0,
+    `caixa «${e.campo}» · âmbito ${e.ambito} · endereço «${e.url}» · ${e.fechar} comandos de fechar no documento`,
+  );
+  await p.__contexto.close();
 }
 
-/* (f5) O anel de leitura é um anel, e não um disco (achado da 2m). */
+/* (f5) O anel de leitura é um anel, e não um disco (achado da 2m). *//* (f5) O anel de leitura é um anel, e não um disco (achado da 2m). */
 {
   const p = await pagina({ largura: 1280 });
   await p.goto(base + '/', { waitUntil: 'networkidle' });
@@ -2060,14 +2056,16 @@ const minimaNoDesenho = () => {
       fill: cs.fill,
       stroke: cs.stroke,
       tinta: getComputedStyle(document.documentElement).getPropertyValue('--ink').trim(),
-      dentroDoCampo: !!anel.closest('[data-campo]'),
+      /* O grupo da lente saiu com ela (Emenda 19b): o anel vive no `svg`, ao
+         lado dos pontos, e é isso que se mede. */
+      dentroDoMapa: !!anel.closest('[data-mapa]'),
       leitura: document.querySelector('[data-readout-nome]').textContent.trim(),
     };
   });
   conta(
     '2m · o anel de leitura do mapa é um anel e não um disco (Emenda 10)',
-    !!a && a.fill === 'none' && a.dentroDoCampo && a.leitura.length > 0,
-    a ? `enchimento ${a.fill} · contorno ${a.stroke} · dentro do grupo da lente ${a.dentroDoCampo} · lê «${a.leitura}»` : 'sem anel',
+    !!a && a.fill === 'none' && a.dentroDoMapa && a.leitura.length > 0,
+    a ? `enchimento ${a.fill} · contorno ${a.stroke} · dentro do mapa ${a.dentroDoMapa} · lê «${a.leitura}»` : 'sem anel',
   );
   await p.__contexto.close();
 }

@@ -633,7 +633,14 @@ for (const edicao of ['pt', 'en']) {
   const c1 = await p.evaluate(async () => {
     const antes = getComputedStyle(document.querySelector('#mapa')).display;
     const estados = [];
-    for (const q of ['?ambito=municipio', '?ambito=regiao:algarve', '?ambito=municipio:evora', '']) {
+    /* `?ambito=municipio:evora` SAIU DESTA LISTA (Emenda 19a, 26.08.2026). Era o
+       quarto estado, e deixou de ser um estado: um endereço antigo com um
+       concelho reencaminha para a página dele, e uma navegação a meio deste
+       `evaluate` destruía o contexto de execução em vez de medir alguma coisa.
+       O reencaminhamento é medido onde ele vive, em
+       `tests/inicio/mapa-navegacao.mjs`; o que esta célula continua a medir é o
+       que o achado C1 fechou, nos estados que ficaram. */
+    for (const q of ['?ambito=municipio', '?ambito=regiao:algarve', '']) {
       history.pushState({}, '', location.pathname + q);
       window.dispatchEvent(new PopStateEvent('popstate'));
       await new Promise((r) => setTimeout(r, 60));
