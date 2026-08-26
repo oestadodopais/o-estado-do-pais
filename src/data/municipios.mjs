@@ -98,14 +98,25 @@ const EVORA = {
       {
         populacao: 'evora-populacao-2025',
         poderDeCompra: 'evora-poder-de-compra-2023',
-        desempregoRegistado: 'evora-desemprego-registado-2024',
+        /* A LINHA DO DESEMPREGO PASSA A SER A DA FONTE CENTRAL (P2, os dados).
+           Évora lia `evora-desemprego-registado-2024`, que é dezembro de 2024, e
+           o exportador do motor escreveu `evora-desemprego-registado-2025-12`
+           com os outros 277 do continente. Manter o de 2024 punha a mesma peça a
+           medir dezembro de 2024 em Évora e dezembro de 2025 nos outros, que é
+           exactamente o que a decisão D2 recusa; e deixava a linha nova sem
+           concelho que a declarasse, órfã na página do conjunto. A linha de 2024
+           não desaparece: continua citada na leitura breve desta página, que é a
+           frase que mede a queda de 2013 para 2024. */
+        desempregoRegistado: 'evora-desemprego-registado-2025-12',
         empresas: 'evora-empresas-2024',
         divida: 'evora-divida-dgal-2024',
         indice: 'evora-indice-de-divida-2024',
         execucaoDaReceita: null,
         pmp: null,
       },
-      { desempregoRegistado: '2024' },
+      /* Sem data de referência própria: Évora passa a medir o mesmo período que
+         os outros 307, que é o que a declaração das oito medidas já diz. */
+      {},
     ),
 
     /* ---------------------------------------------- camada 2 — leitura breve */
