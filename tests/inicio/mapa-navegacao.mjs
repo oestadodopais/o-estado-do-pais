@@ -113,6 +113,34 @@ async function pagina({ largura = 1280, js = true } = {}) {
   return p;
 }
 
+/**
+ * A COBERTURA LÊ-SE DO `dist/`, E NÃO SE ASSUME (bloco dos 308, P2).
+ *
+ * Cinco células desta régua estavam escritas contra o estado do dia em que
+ * nasceram — um concelho com página e 307 sem —, e mediam Bragança como «o que
+ * não tem página». Isso não é uma invariante da Emenda 19: é a cobertura de uma
+ * tarde. O que a emenda fixa é a REGRA — um ponto com página é ligação, um ponto
+ * sem página não responde a nada, e um endereço antigo abre a página quando ela
+ * existe e o índice quando não existe —, e uma régua que meça a regra tem de
+ * saber, primeiro, quem tem página. Sabe-o lendo as páginas construídas.
+ */
+const COM_PAGINA = fs.existsSync(path.join(DIST, 'municipios'))
+  ? fs
+      .readdirSync(path.join(DIST, 'municipios'))
+      .filter((d) => fs.existsSync(path.join(DIST, 'municipios', d, 'index.html')))
+  : [];
+const TODOS_OS_PONTOS = [
+  ...fs.readFileSync(path.join(DIST, 'index.html'), 'utf8').matchAll(/data-caop="([^"]+)"/g),
+].map((m) => m[1]);
+const SEM_PAGINA = TODOS_OS_PONTOS.filter((slug) => !COM_PAGINA.includes(slug));
+/** O nome de cada ponto, pela mesma ordem: é o que a leitura em voz alta diz. */
+const NOMES_DOS_PONTOS = [
+  ...fs.readFileSync(path.join(DIST, 'index.html'), 'utf8').matchAll(/data-m="([^"]+)"/g),
+].map((m) => m[1]);
+/** Um concelho com página, e um sem — quando ainda há algum sem. */
+const UM_COM_PAGINA = COM_PAGINA.includes('evora') ? 'evora' : COM_PAGINA[0];
+const UM_SEM_PAGINA = SEM_PAGINA[0] ?? null;
+
 /* As duas edições, com os destinos de cada uma: a régua mede as duas, porque o
    reencaminhamento lê o `href` que o servidor escreveu e esse muda com a rota. */
 const EDICOES = [
@@ -137,17 +165,23 @@ for (const { edicao, rota, evora, indice } of EDICOES) {
       .catch(() => {});
     return p.evaluate(() => location.pathname + location.search);
   };
-  const comPagina = await foi('?ambito=municipio:evora');
-  const semPagina = await foi('?ambito=municipio:braganca');
+  const comPagina = await foi(`?ambito=municipio:${UM_COM_PAGINA}`);
+  const semPagina = UM_SEM_PAGINA ? await foi(`?ambito=municipio:${UM_SEM_PAGINA}`) : null;
   const inexistente = await foi('?ambito=municipio:atlantida');
   const prefixoNu = await foi('?ambito=municipio:');
+  const destinoComPagina =
+    edicao === 'pt' ? `/municipios/${UM_COM_PAGINA}` : `/en/municipalities/${UM_COM_PAGINA}`;
   conta(
     `N1 · um endereço antigo abre a página do concelho, ou o índice dos 308 · ${edicao}`,
-    comPagina === evora &&
-      semPagina === indice &&
+    comPagina === destinoComPagina &&
+      (UM_SEM_PAGINA === null || semPagina === indice) &&
       inexistente === rota &&
       prefixoNu === rota,
-    `municipio:evora → «${comPagina}» · municipio:braganca → «${semPagina}» · um slug que não existe → «${inexistente}» · o prefixo nu → «${prefixoNu}»`,
+    `municipio:${UM_COM_PAGINA} → «${comPagina}» · ` +
+      (UM_SEM_PAGINA
+        ? `municipio:${UM_SEM_PAGINA} (sem página) → «${semPagina}»`
+        : `sem concelho sem página construído: os ${COM_PAGINA.length} têm-na`) +
+      ` · um slug que não existe → «${inexistente}» · o prefixo nu → «${prefixoNu}»`,
   );
   if (edicao === 'pt') medidas.n1 = { comPagina, semPagina, inexistente, prefixoNu };
   await p.__ctx.close();
@@ -385,29 +419,41 @@ for (const { edicao, rota, evora } of EDICOES) {
       return { x: r.left + r.width / 2, y: r.top + r.height / 2, w: +r.width.toFixed(2) };
     }, slug);
 
-  const semPagina = await sitioDe('braganca');
-  await p.mouse.click(semPagina.x, semPagina.y);
-  await p.waitForTimeout(300);
-  const depoisDeBraganca = await p.evaluate(() => ({
-    url: location.pathname + location.search,
-    ambito: document.querySelector('[data-inicio]')?.getAttribute('data-ambito'),
-  }));
+  /* O ponto SEM página só se mede onde ainda há algum: com os 308 construídos
+     não há nenhum, e a metade negativa da célula fica sem objecto — o que se
+     diz, em vez de se dar por passada. */
+  let depoisDoSemPagina = null;
+  if (UM_SEM_PAGINA) {
+    const semPagina = await sitioDe(UM_SEM_PAGINA);
+    await p.mouse.click(semPagina.x, semPagina.y);
+    await p.waitForTimeout(300);
+    depoisDoSemPagina = await p.evaluate(() => ({
+      url: location.pathname + location.search,
+      ambito: document.querySelector('[data-inicio]')?.getAttribute('data-ambito'),
+    }));
+  }
 
-  const comPagina = await sitioDe('evora');
+  const destino =
+    edicao === 'pt' ? `/municipios/${UM_COM_PAGINA}` : `/en/municipalities/${UM_COM_PAGINA}`;
+  const comPagina = await sitioDe(UM_COM_PAGINA);
   await p.mouse.click(comPagina.x, comPagina.y);
-  await p.waitForURL(`**${evora}`, { timeout: 3000 }).catch(() => {});
-  const depoisDeEvora = await p.evaluate(() => location.pathname + location.search);
+  await p.waitForURL(`**${destino}`, { timeout: 3000 }).catch(() => {});
+  const depoisDoComPagina = await p.evaluate(() => location.pathname + location.search);
 
   conta(
-    `N4 · o clique no meio do ponto de Évora abre a página, e o de Bragança não faz nada · ${edicao}`,
-    depoisDeEvora === evora &&
-      depoisDeBraganca.url === rota &&
-      depoisDeBraganca.ambito === 'pais' &&
+    `N4 · o clique no meio de um ponto com página abre-a, e um sem página não faz nada · ${edicao}`,
+    depoisDoComPagina === destino &&
+      (depoisDoSemPagina === null ||
+        (depoisDoSemPagina.url === rota && depoisDoSemPagina.ambito === 'pais')) &&
       contagem.total === 308 &&
       contagem.declarados === contagem.ligacoes &&
       contagem.semPaginaEmLigacao === 0 &&
       contagem.titulos === contagem.ligacoes,
-    `Évora → «${depoisDeEvora}» (alvo de ${comPagina.w}px) · Bragança → «${depoisDeBraganca.url}», âmbito ${depoisDeBraganca.ambito} · ${contagem.ligacoes} de ${contagem.total} pontos são ligação, ${contagem.declarados} declarados com página, ${contagem.titulos} com nome, ${contagem.semPaginaEmLigacao} dos 307 dentro de uma ligação`,
+    `${UM_COM_PAGINA} → «${depoisDoComPagina}» (alvo de ${comPagina.w}px) · ` +
+      (depoisDoSemPagina
+        ? `${UM_SEM_PAGINA} → «${depoisDoSemPagina.url}», âmbito ${depoisDoSemPagina.ambito}`
+        : `sem ponto sem página: os ${COM_PAGINA.length} têm-na`) +
+      ` · ${contagem.ligacoes} de ${contagem.total} pontos são ligação, ${contagem.declarados} declarados com página, ${contagem.titulos} com nome, ${contagem.semPaginaEmLigacao} sem página dentro de uma ligação`,
   );
   if (edicao === 'pt') medidas.n4 = { contagem, alvo: comPagina.w };
   await p.__ctx.close();
@@ -416,7 +462,7 @@ for (const { edicao, rota, evora } of EDICOES) {
 {
   const p = await pagina();
   await p.goto(`${base}/`, { waitUntil: 'networkidle' });
-  /* O nome ao passar o rato, num ponto qualquer dos 308 que não é o de Évora. */
+  /* O nome ao passar o rato, num ponto qualquer dos 308. */
   const sitio = await p.evaluate(() => {
     const c = document.querySelector('[data-pontos] [data-caop="braganca"]');
     c.scrollIntoView({ block: 'center' });
@@ -430,7 +476,15 @@ for (const { edicao, rota, evora } of EDICOES) {
     () => document.querySelector('[data-readout-nome]')?.textContent.trim() ?? '',
   );
 
-  /* E o teclado: as setas percorrem, o Enter num ponto com página abre-a. */
+  /* E O TECLADO. O foco no mapa começa no PRIMEIRO ponto com página, e o `Home`
+     volta a ele: qual é esse ponto é cobertura, não regra, e a régua lê-o do
+     `dist/` em vez de o escrever. O que ela mede é a regra: o foco arranca num
+     ponto com página, a seta muda de ponto, o `Home` volta ao arranque, e o
+     `Enter` abre a página do ponto onde está — e só abre onde há página. */
+  const abreOPonto = (nome) => {
+    const slug = TODOS_OS_PONTOS.find((sl, i) => NOMES_DOS_PONTOS[i] === nome);
+    return slug && COM_PAGINA.includes(slug) ? `/municipios/${slug}` : '/';
+  };
   await p.goto(`${base}/`, { waitUntil: 'networkidle' });
   await p.focus('[data-mapa-wrap]');
   const noArranque = await p.evaluate(
@@ -441,9 +495,11 @@ for (const { edicao, rota, evora } of EDICOES) {
   const depoisDaSeta = await p.evaluate(
     () => document.querySelector('[data-readout-nome]')?.textContent.trim() ?? '',
   );
+  const alvoDaSeta = abreOPonto(depoisDaSeta);
   await p.keyboard.press('Enter');
+  await p.waitForURL(`**${alvoDaSeta}`, { timeout: 3000 }).catch(() => {});
   await p.waitForTimeout(300);
-  const semPaginaNoEnter = await p.evaluate(() => location.pathname + location.search);
+  const naSeta = await p.evaluate(() => location.pathname + location.search);
 
   await p.goto(`${base}/`, { waitUntil: 'networkidle' });
   await p.focus('[data-mapa-wrap]');
@@ -452,22 +508,23 @@ for (const { edicao, rota, evora } of EDICOES) {
   const noHome = await p.evaluate(
     () => document.querySelector('[data-readout-nome]')?.textContent.trim() ?? '',
   );
+  const alvoDoHome = abreOPonto(noHome);
   await p.keyboard.press('Enter');
-  await p.waitForURL('**/municipios/evora', { timeout: 3000 }).catch(() => {});
-  const comPaginaNoEnter = await p.evaluate(() => location.pathname + location.search);
+  await p.waitForURL(`**${alvoDoHome}`, { timeout: 3000 }).catch(() => {});
+  const noInicio = await p.evaluate(() => location.pathname + location.search);
 
   conta(
     'N4 · o rato lê o nome, as setas percorrem, e o Enter abre só o ponto que tem página',
     rato === sitio.nome &&
-      noArranque === 'Évora' &&
+      noArranque === noHome &&
+      COM_PAGINA.includes(TODOS_OS_PONTOS[NOMES_DOS_PONTOS.indexOf(noArranque)]) &&
       depoisDaSeta.length > 0 &&
-      depoisDaSeta !== 'Évora' &&
-      semPaginaNoEnter === '/' &&
-      noHome === 'Évora' &&
-      comPaginaNoEnter === '/municipios/evora',
-    `rato sobre Bragança lê «${rato}» · o foco no mapa lê «${noArranque}», a seta leva a «${depoisDaSeta}», e o Enter aí deixa o endereço em «${semPaginaNoEnter}» · Home volta a «${noHome}», e o Enter abre «${comPaginaNoEnter}»`,
+      depoisDaSeta !== noArranque &&
+      naSeta === alvoDaSeta &&
+      noInicio === alvoDoHome,
+    `rato sobre Bragança lê «${rato}» · o foco no mapa lê «${noArranque}», a seta leva a «${depoisDaSeta}», e o Enter aí deixa o endereço em «${naSeta}» (esperado «${alvoDaSeta}») · Home volta a «${noHome}», e o Enter abre «${noInicio}» (esperado «${alvoDoHome}»)`,
   );
-  medidas.n4Teclado = { rato, noArranque, depoisDaSeta, semPaginaNoEnter, noHome, comPaginaNoEnter };
+  medidas.n4Teclado = { rato, noArranque, depoisDaSeta, naSeta, noHome, noInicio };
   await p.__ctx.close();
 }
 

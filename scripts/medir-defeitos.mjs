@@ -247,6 +247,12 @@ const ROTAS_DO_INVENTARIO = new Set([
      medida é a única maneira de isso não voltar. `municipio` é a rota de um
      concelho com página, e hoje há uma. */
   'municipio',
+  /* `/livro-razao/concelhos` entra no bloco dos 308 (P2). É a página do conjunto
+     das linhas dos concelhos, e é uma página do leitor como o índice do
+     livro-razão de que ela sai: a Emenda 15 governa-a, e a sua autorreferência
+     vai a zero. Sem esta entrada, uma página nova do sítio ficava fora do
+     inventário — e o inventário existe para que nenhuma volte a ficar. */
+  'livroConcelhos',
   /* `/correcoes` entra na subetapa 4a, que é a que reconstrói a forma do
      registo. A rota não é a casa do método (Emenda 15 isenta o Método, o Sobre e
      o recibo), e por isso a sua autorreferência conta e vai a zero. */
@@ -283,6 +289,26 @@ const ROTAS_DO_INVENTARIO = new Set([
  * assunto.
  */
 const COBERTURA_DECLARADA = '[data-cobertura]';
+
+/**
+ * O NOME DE UM LUGAR NÃO É UMA FRASE DA CASA (bloco dos 308, P2).
+ *
+ * `data-lugar` marca o nome de um concelho e a etiqueta que a Carta
+ * Administrativa lhe dá («distrito de Bragança», «Ilha do Faial»). São o nome da
+ * coisa de que a página trata, transcrito de um registo, e não a casa a
+ * escrever. Sem esta exclusão o inventário passava a ter, com as 308 páginas,
+ * mais 924 entradas — o nome, a etiqueta e a descrição de cada concelho —, que é
+ * a lista dos concelhos escrita outra vez. É a mesma razão, e a mesma forma, da
+ * exclusão de `data-cobertura` acima.
+ *
+ * A DESCRIÇÃO DO `<head>` É COMPOSTA COM ESSE NOME, e por isso não se conta 308
+ * vezes: conta-se uma, com o nome substituído pelo lugar que ele ocupa. O que
+ * fica declarado no inventário é a frase que a casa escreveu — «O que as fontes
+ * publicam sobre o município de <lugar>: …» —, que é o que ela é. É a mesma
+ * regra que já governa a página de uma linha, cujo `<head>` é composto da linha
+ * e por isso fica fora da lista de rotas.
+ */
+const LUGAR_DECLARADO = '[data-lugar]';
 
 /** A lista declarada: texto normalizado → classe. */
 function leInventario() {
@@ -322,7 +348,8 @@ function textoForaDeComandos(no) {
 function frasesDaCasa(root) {
   const out = [];
   const marcados = new Set();
-  const DECLARADO = ORIGEM_DECLARADA + ',' + MEDIDA_DECLARADA + ',' + COBERTURA_DECLARADA;
+  const DECLARADO =
+    ORIGEM_DECLARADA + ',' + MEDIDA_DECLARADA + ',' + COBERTURA_DECLARADA + ',' + LUGAR_DECLARADO;
   for (const el of root.querySelectorAll(DECLARADO)) {
     marcados.add(el);
     for (const d of el.querySelectorAll('*')) marcados.add(d);
@@ -388,9 +415,15 @@ for (const file of ficheiros) {
     const chave = caminho || '/';
     const conta = frasesPorRota.get(chave) ?? new Map();
     for (const f of frasesDaCasa(root)) conta.set(f, (conta.get(f) ?? 0) + 1);
-    const descricao = norm(
+    let descricao = norm(
       root.querySelector('head meta[name="description"]')?.getAttribute('content') ?? '',
     );
+    /* O nome do lugar sai da descrição e deixa no seu lugar a marca: uma frase
+       composta conta-se uma vez, e não uma por concelho. */
+    for (const el of root.querySelectorAll(LUGAR_DECLARADO)) {
+      const nome = norm(texto(el));
+      if (nome) descricao = norm(descricao.split(nome).join('<lugar>'));
+    }
     if (descricao) conta.set(descricao, (conta.get(descricao) ?? 0) + 1);
     frasesPorRota.set(chave, conta);
   }
@@ -540,13 +573,33 @@ const medicao = {
 };
 
 if (process.argv.includes('--json')) {
-  console.log(JSON.stringify({ ...medicao, detalhe: {
-    sem_porta: semPorta,
-    front_sem_selo: frontSemSelo,
-    front_selo_errado: frontSeloErrado,
-    localizadores_internos: localizadoresInternos,
-    molduras: molduras.map(([b, n]) => ({ n, paginas: paginasPorBloco.get(b), texto: b.slice(0, 150) })),
-  } }, null, 2));
+  /* ESCRITO EM SÍNCRONO, E A RAZÃO ESTÁ MEDIDA (bloco dos 308, P2). Um
+     `console.log` para um cano é assíncrono, e `process.exit()` a seguir corta o
+     que ainda não saiu: com os 308 construídos a medição passou de dezenas de
+     kB para centenas, e a matriz, que a lê por `execFileSync`, recebia-a cortada
+     ao byte 65 534 — o tamanho do cano — e fechava com «Unterminated string in
+     JSON». `fs.writeSync` escreve tudo antes de a linha seguinte correr. */
+  fs.writeSync(
+    1,
+    JSON.stringify(
+      {
+        ...medicao,
+        detalhe: {
+          sem_porta: semPorta,
+          front_sem_selo: frontSemSelo,
+          front_selo_errado: frontSeloErrado,
+          localizadores_internos: localizadoresInternos,
+          molduras: molduras.map(([b, n]) => ({
+            n,
+            paginas: paginasPorBloco.get(b),
+            texto: b.slice(0, 150),
+          })),
+        },
+      },
+      null,
+      2,
+    ) + '\n',
+  );
   process.exit(0);
 }
 

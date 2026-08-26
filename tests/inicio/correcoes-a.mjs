@@ -562,16 +562,27 @@ for (const edicao of ['pt', 'en']) {
     };
   }, destino);
   conta(
-    `A5 · o ponto com página é uma ligação com nome, e os outros 307 não · 1280 ${edicao}`,
-    a5.comPagina === 1 &&
-      a5.dentroDeA === 1 &&
+    /* A COBERTURA NÃO SE FIXA (bloco dos 308, P2). A célula pedia «um com página
+       e 307 sem», que era a cobertura da tarde em que nasceu. O item A5 é uma
+       regra: um ponto com página é uma ligação com nome e cursor de ponteiro, um
+       ponto sem página não está dentro de ligação nenhuma, e a Emenda 10 fica
+       inteira — um só raio e um só enchimento para os 308. As contagens
+       imprimem-se; o que se julga é a regra. */
+    `A5 · um ponto com página é uma ligação com nome, e um sem página não é · 1280 ${edicao}`,
+    a5.total === 308 &&
+      a5.comPagina >= 1 &&
+      a5.dentroDeA === a5.comPagina &&
       a5.semPaginaDentroDeA === 0 &&
-      a5.certo &&
+      /* O DESTINO É UMA PÁGINA DE CONCELHO DESTA EDIÇÃO, e não o de Évora
+         escrito à mão: qual é o primeiro ponto com página é cobertura. */
+      new RegExp(`^${edicao === 'pt' ? '/municipios/' : '/en/municipalities/'}[a-z0-9-]+$`).test(
+        String(a5.href),
+      ) &&
       !!a5.titulo &&
       a5.cursorDaPorta === 'pointer' &&
       a5.raiosDistintos.length === 1 &&
       a5.enchimentosDistintos.length === 1,
-    `${a5.total} pontos · ${a5.comPagina} com página, ${a5.dentroDeA} dentro de <a> → «${a5.href}» · title «${a5.titulo}» · cursor ${a5.cursorDaPorta} · ${a5.semPaginaDentroDeA} dos 307 dentro de <a> · raio(s) ${a5.raiosDistintos.join('/')} · enchimento(s) ${a5.enchimentosDistintos.join('/')}`,
+    `${a5.total} pontos · ${a5.comPagina} com página, ${a5.dentroDeA} dentro de <a>, o primeiro → «${a5.href}» · title «${a5.titulo}» · cursor ${a5.cursorDaPorta} · ${a5.total - a5.comPagina} sem página dentro de <a>: ${a5.semPaginaDentroDeA} · raio(s) ${a5.raiosDistintos.join('/')} · enchimento(s) ${a5.enchimentosDistintos.join('/')}`,
   );
 
   /* O teclado chega lá. A ligação é o único `<a>` dentro do `svg`, e o Tab
@@ -598,7 +609,15 @@ for (const edicao of ['pt', 'en']) {
   });
   conta(
     `A5 · o leitor de teclado chega ao ponto com página · 1280 ${edicao}`,
-    tab.indice >= 0 && focado.classe === 'mun-porta' && focado.href === destino,
+    tab.indice >= 0 &&
+      focado.classe === 'mun-porta' &&
+      /* O DESTINO É O DA PORTA QUE O FOCO APANHOU, e não o de Évora escrito à
+         mão: a primeira porta do mapa é a do primeiro ponto com página na ordem
+         da Carta, e qual é ele é cobertura. O que se mede é que ela é uma porta
+         de concelho da edição certa. */
+      new RegExp(`^${edicao === 'pt' ? '/municipios/' : '/en/municipalities/'}[a-z0-9-]+$`).test(
+        String(focado.href),
+      ),
     `posição ${tab.indice} de ${tab.total} alvos focáveis · foco em «${focado.classe}» → ${focado.href}`,
   );
 
@@ -622,11 +641,19 @@ for (const edicao of ['pt', 'en']) {
       partes: visivel.map((c) => c.className),
     };
   });
-  const esperadoA6 = edicao === 'pt' ? 'Évora · distrito de Évora' : 'Évora · district of Évora';
+  /* O ACHADO C3 ERA UM SEPARADOR EM FALTA («Évoradistrito de Évora»), e é isso
+     que esta célula mede: o nome, o separador da casa e a etiqueta da Carta, com
+     as três partes rendidas. QUAL o concelho é cobertura — o rato foi ao
+     primeiro ponto com página —, e por isso a célula compara a FORMA e não a
+     cadeia: nome · «distrito de …» ou o nome de uma ilha, na língua da edição. */
+  const formaA6 =
+    edicao === 'pt'
+      ? /^.+ · (distrito de .+|Ilha .+)$/
+      : /^.+ · (district of .+|Ilha .+)$/;
   conta(
     `A6 · o nome e o distrito com o separador da casa · 1280 ${edicao}`,
-    a6.lido === esperadoA6,
-    `lê «${a6.lido}» (esperado «${esperadoA6}») · partes: ${a6.partes.join(' + ')}`,
+    formaA6.test(a6.lido) && a6.partes.length >= 3,
+    `lê «${a6.lido}» · partes: ${a6.partes.join(' + ')}`,
   );
 
   /* ------------------------------------------------------------- C1 · o mapa não some */

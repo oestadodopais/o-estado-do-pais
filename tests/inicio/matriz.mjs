@@ -651,14 +651,32 @@ for (const largura of [768, 1280]) {
  * primeira página. As chaves da prova continuam reconferidas pelo portão a cada
  * construção, e `tests/inicio/correcoes-a.mjs` mede que elas não saíram. */
 
-/* (5) A pesquisa com a caixa vazia: os concelhos que têm página, hoje um.
+/* (5) A pesquisa com a caixa vazia: os concelhos que têm página.
  *
  * O SEGUNDO CASO SAIU COM A ESCOLHA (Emenda 19a, 26.08.2026). Era «e o concelho
  * escolhido, se houver um», que a caixa vazia mostrava ao lado dos que têm
  * página; não há concelho escolhido na primeira página, e o que um resultado faz
  * é abrir a página do concelho ou dizer que ela ainda não existe, como em
  * `/municipios`. A célula mede a lista com que a pesquisa se apresenta, e o que
- * um resultado é. */
+ * um resultado é.
+ *
+ * A CÉLULA DEIXA DE ASSUMIR A COBERTURA (bloco dos 308, P2). Media «um
+ * resultado, Évora» e «Beja não tem página»: as duas eram a cobertura da tarde
+ * em que a célula nasceu, e não a regra. A regra é que a caixa vazia mostra
+ * concelhos COM página, cada um com a porta da sua, e que um resultado
+ * pesquisado é porta quando há página e nome com o estado quando não há. Quem
+ * tem página lê-se do `dist/`. */
+const COM_PAGINA_NO_DIST = fs.existsSync(path.join(DIST, 'municipios'))
+  ? new Set(
+      fs
+        .readdirSync(path.join(DIST, 'municipios'))
+        .filter((d) => fs.existsSync(path.join(DIST, 'municipios', d, 'index.html'))),
+    )
+  : new Set();
+/** Um concelho para escrever na caixa, e se ele tem página ou não. */
+const PROCURADO = COM_PAGINA_NO_DIST.has('beja')
+  ? { termo: 'beja', nome: 'Beja', temPagina: true }
+  : { termo: 'beja', nome: 'Beja', temPagina: false };
 for (const largura of [1280, 390]) {
   const p = await pagina({ largura });
   await p.goto(base + '/', { waitUntil: 'networkidle' });
@@ -688,15 +706,17 @@ for (const largura of [1280, 390]) {
       })),
   );
   conta(
-    `largura ${largura} · a pesquisa com a caixa vazia, e um resultado sem página`,
-    vazio.length === 1 &&
-      vazio[0].nome === 'Évora' &&
-      vazio[0].href === '/municipios/evora' &&
+    `largura ${largura} · a pesquisa com a caixa vazia, e um resultado com e sem página`,
+    vazio.length > 0 &&
+      vazio.every((r) => r.href && COM_PAGINA_NO_DIST.has(r.href.split('/').pop())) &&
       escrito.length === 1 &&
-      escrito[0].nome === 'Beja' &&
-      escrito[0].porta === false &&
+      escrito[0].nome === PROCURADO.nome &&
+      escrito[0].porta === PROCURADO.temPagina &&
       (escrito[0].estado ?? '').length > 0,
-    `caixa vazia: ${vazio.map((r) => `${r.nome} → ${r.href}`).join(' · ')} · com «beja» escrito: ${escrito
+    `caixa vazia: ${vazio.length} resultado(s), todos com página — ${vazio
+      .slice(0, 3)
+      .map((r) => `${r.nome} → ${r.href}`)
+      .join(' · ')}${vazio.length > 3 ? ' …' : ''} · com «${PROCURADO.termo}» escrito: ${escrito
       .map((r) => `${r.nome} (porta ${r.porta}, «${r.estado}»)`)
       .join(' · ')}`,
   );
@@ -1023,8 +1043,14 @@ for (const largura of [1280, 390]) {
       m.raios.length === 1 &&
       m.enchimentos.length === 1 &&
       m.enchimentos[0] === 'none' &&
-      m.comPagina === 1,
-    `${m.n} <${m.etiquetas.join('/')}> · 1 raio: ${m.raios.join(', ')} · enchimento ${m.enchimentos.join(', ')} · ${m.comPagina} declarado com página`,
+      /* QUANTOS têm página é cobertura, e a Emenda 10 não fala de cobertura:
+         fala de um só raio e um só enchimento para os 308. A célula media
+         `comPagina === 1`, que era a cobertura da tarde em que nasceu, e ficava
+         vermelha no dia em que o sítio crescesse — por ter acertado. Mede-se o
+         que é regra: pelo menos um ponto declarado com página, e nenhum ponto a
+         distinguir-se dos outros pelo raio ou pelo enchimento. */
+      m.comPagina >= 1,
+    `${m.n} <${m.etiquetas.join('/')}> · 1 raio: ${m.raios.join(', ')} · enchimento ${m.enchimentos.join(', ')} · ${m.comPagina} declarado(s) com página`,
   );
   await p.__contexto.close();
 }
@@ -1040,9 +1066,16 @@ for (const largura of [1280, 390]) {
   const leituraDoPonto = (p, slug) =>
     p.evaluate((s) => {
       const escolhido = document.querySelector(`[data-pontos] [data-caop="${s}"]`);
-      const outroSemPagina = [...document.querySelectorAll('[data-pontos] .mun')].find(
-        (x) => x !== escolhido && x.getAttribute('data-pagina') !== 'sim',
+      /* O ponto de comparação é OUTRO PONTO, e prefere-se um sem página quando
+         ainda há algum: com os 308 construídos não há, e a célula compararia o
+         escolhido com nada. A regra que ela mede não é sobre a cobertura — é
+         que o escolhido se distingue dos outros pelo contorno e por mais nada
+         (Emenda 10). */
+      const outros = [...document.querySelectorAll('[data-pontos] .mun')].filter(
+        (x) => x !== escolhido,
       );
+      const outroSemPagina =
+        outros.find((x) => x.getAttribute('data-pagina') !== 'sim') ?? outros[0];
       const comPagina = document.querySelector('[data-pontos] [data-pagina="sim"]');
       const est = (el) => {
         const cs = getComputedStyle(el);

@@ -136,19 +136,32 @@ for (const edicao of ['pt', 'en']) {
   const script = html.includes('/js/municipios.js');
   const secoes = root.querySelectorAll('.concelhos-grupo-k').map((el) => el.textContent.trim());
   conta(
+    /* A COBERTURA NÃO SE FIXA (bloco dos 308, P2). A célula pedia «um com página
+       e 307 escondidos», que era a cobertura da tarde em que nasceu. A regra é
+       outra: são 308 resultados, um por concelho da Carta; os que TÊM página
+       vêm à vista e são porta, e os que não têm vêm escondidos. As duas
+       parcelas somam 308, e é isso que se mede. */
     `C4 · sem script a pesquisa não aparece, e os 308 resultados vêm do servidor · ${edicao}`,
     Boolean(bloco) &&
       bloco.hasAttribute('hidden') &&
       itens.length === 308 &&
-      comPagina.length === 1 &&
-      escondidos.length === 307 &&
+      comPagina.length + escondidos.length === 308 &&
+      escondidos.every((el) => !el.hasAttribute('data-tem-pagina')) &&
       script,
-    `bloco com hidden: ${bloco ? bloco.hasAttribute('hidden') : 'não há bloco'} · ${itens.length} resultados, ${comPagina.length} com página, ${escondidos.length} escondidos · a página cita /js/municipios.js: ${script} · primeira secção da lista: «${secoes[0] ?? '(nenhuma)'}»`,
+    `bloco com hidden: ${bloco ? bloco.hasAttribute('hidden') : 'não há bloco'} · ${itens.length} resultados, ${comPagina.length} com página, ${escondidos.length} escondidos · a página cita /js/municipios.js: ${script} · ${secoes.length} secções, a primeira «${secoes[0] ?? '(nenhuma)'}»`,
   );
+  /* A CÉLULA DA SECÇÃO «COM PÁGINA» PERDEU O OBJECTO (bloco dos 308, P2). Media
+     que os concelhos com página vinham numa secção antes da lista por distritos,
+     e essa secção existia porque um em 308 tinha página: chegar a esse um era
+     varrer 308 nomes. Com os 308 construídos, a secção era a lista inteira
+     repetida por cima da lista inteira, e saiu. O que fica medido é o que passou
+     a ser o índice: a pesquisa em cima, a cobertura pelas duas chaves da prova,
+     e a lista por distrito — as três na régua `tests/municipio/concelhos.mjs`,
+     que conta os 29 grupos da Carta e mais nenhum. */
   conta(
-    `C4 · a secção «Com página» vem antes da lista por distritos · ${edicao}`,
-    secoes.length > 1 && secoes[0] === (edicao === 'pt' ? 'Com página' : 'With a page'),
-    `${secoes.length} secções · a primeira é «${secoes[0] ?? '(nenhuma)'}», a segunda «${secoes[1] ?? '(nenhuma)'}»`,
+    `C4 · a lista é a dos distritos da Carta, sem secção repetida por cima · ${edicao}`,
+    secoes.length === 29 && !secoes.includes(edicao === 'pt' ? 'Com página' : 'With a page'),
+    `${secoes.length} secções · a primeira é «${secoes[0] ?? '(nenhuma)'}», a última «${secoes[secoes.length - 1] ?? '(nenhuma)'}»`,
   );
   if (edicao === 'pt') {
     medidas.c4_html = { itens: itens.length, comPagina: comPagina.length, escondidos: escondidos.length, secoes: secoes.slice(0, 3) };
@@ -324,14 +337,22 @@ for (const edicao of ['pt', 'en']) {
   const evora = escritos.evora;
   const beja = escritos.beja;
   const destino = edicao === 'pt' ? '/municipios/evora' : '/en/municipalities/evora';
+  /* A COBERTURA NÃO SE FIXA (bloco dos 308, P2). A célula pedia «Beja não tem
+     página», que era a cobertura da tarde em que nasceu. A regra é a
+     equivalência: um resultado é porta SE E SÓ SE o seu estado diz «com-pagina»,
+     e o destino é a página do seu concelho. Vale nos dois casos escritos e vale
+     para qualquer cobertura. */
+  const coerente = (r, slug) =>
+    r.estado === 'com-pagina'
+      ? r.porta === (edicao === 'pt' ? `/municipios/${slug}` : `/en/municipalities/${slug}`)
+      : r.estado === 'sem-pagina' && r.porta === null;
   conta(
-    `C4 · escrever um nome acende o concelho, e só quem tem página é porta · 390 ${edicao}`,
+    `C4 · escrever um nome acende o concelho, e é porta se e só se tem página · 390 ${edicao}`,
     evora.length === 1 &&
       evora[0].estado === 'com-pagina' &&
       evora[0].porta === destino &&
       beja.length === 1 &&
-      beja[0].estado === 'sem-pagina' &&
-      beja[0].porta === null,
+      coerente(beja[0], 'beja'),
     `«evora» → ${evora.length} resultado(s): ${evora.map((r) => `${r.nome} [${r.estado}] → ${r.porta ?? 'sem porta'}`).join(', ')} · «beja» → ${beja.length} resultado(s): ${beja.map((r) => `${r.nome} [${r.estado}] → ${r.porta ?? 'sem porta'}`).join(', ')}`,
   );
   if (edicao === 'pt') medidas.c4_escritos = escritos;
