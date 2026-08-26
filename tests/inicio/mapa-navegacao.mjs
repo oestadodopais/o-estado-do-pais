@@ -1,0 +1,498 @@
+#!/usr/bin/env node
+/**
+ * =============================================================================
+ * A RÉGUA DA EMENDA 19 · o mapa da primeira página é navegação
+ * =============================================================================
+ *
+ * Uma régua por item do `design/especime-v3/briefs/BRIEF-mapa-navegacao.md` §3,
+ * com a prova que o brief escreve para cada um. NÃO é um portão: não entra no
+ * `npm run build` e não constrói nada. Corre sobre `dist/`, imprime uma linha por
+ * régua e SAI COM 0 quando todas passam e com 1 quando alguma falha, como
+ * `tests/inicio/correcoes-a.mjs` e ao contrário de `matriz.mjs`, que só imprime.
+ * O código de saída é o que faz um estrago plantado ser visível (regra 14).
+ *
+ *   node tests/inicio/mapa-navegacao.mjs
+ *   node tests/inicio/mapa-navegacao.mjs --json <ficheiro>
+ *
+ * ---------------------------------------------------------------------------
+ * O QUE CADA RÉGUA MEDE, E PORQUE É ASSIM QUE SE MEDE
+ * ---------------------------------------------------------------------------
+ * N1 · os endereços antigos. `?ambito=municipio:<slug>` era um estado
+ * partilhável, e a Emenda 7 diz que o que era partilhável continua a abrir
+ * alguma coisa. Mede-se o ENDEREÇO onde a página acaba, e não o que o script
+ * escreveu: `location.replace` muda de página, e é isso que se lê.
+ *
+ * N2 · o mapa não cresce, e a roda é da página. As duas medem-se com números e
+ * não com uma captura: a largura da tela nos dois estados, e o `scrollY` depois
+ * de cinco entalhes da roda com o cursor DENTRO do mapa. A segunda parte da
+ * prova é que nenhum nó do mapa tem `transform`, que é o que a lente escrevia.
+ *
+ * N3 · «Concelho» abre a pesquisa nas duas larguras. O que se mede é o que o
+ * leitor recebe: o bloco da pesquisa dentro do ecrã, o foco no campo, o anúncio
+ * na região viva e o endereço. E o que ele recebe sem script: duas ligações para
+ * duas páginas que existem.
+ *
+ * N4 · o mapa é navegação. Clica-se no CENTRO do ponto, que é onde a mão vai:
+ * um `<circle>` com `fill: none` só recebe eventos onde está pintado, e sem a
+ * regra da folha o clique atravessava o miolo e não abria nada. Clica-se também
+ * num ponto sem página, para provar que nada acontece, e conta-se quantos pontos
+ * são ligação contra quantos o servidor declara com página.
+ */
+import fs from 'node:fs';
+import http from 'node:http';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { chromium } from 'playwright';
+
+const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
+const DIST = path.join(RAIZ, 'dist');
+
+const MIME = {
+  '.html': 'text/html; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.js': 'text/javascript; charset=utf-8',
+  '.json': 'application/json',
+  '.woff2': 'font/woff2',
+  '.svg': 'image/svg+xml',
+  '.png': 'image/png',
+  '.webp': 'image/webp',
+  '.csv': 'text/csv',
+  '.xml': 'application/xml',
+  '.txt': 'text/plain',
+  '.pdf': 'application/pdf',
+  '.zip': 'application/zip',
+};
+
+const verde = (s) => `\x1b[32m${s}\x1b[0m`;
+const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
+const cinza = (s) => `\x1b[90m${s}\x1b[0m`;
+
+const argv = process.argv.slice(2);
+const opcao = (nome) => {
+  const i = argv.indexOf(nome);
+  return i >= 0 ? (argv[i + 1] ?? true) : null;
+};
+const FICHEIRO_JSON = opcao('--json');
+
+if (!fs.existsSync(DIST)) {
+  console.error('não existe dist/. Corra o build primeiro.');
+  process.exit(2);
+}
+
+const servidor = http.createServer((req, res) => {
+  const semQuery = req.url.split('?')[0];
+  let ficheiro;
+  try {
+    ficheiro = path.resolve(DIST, '.' + decodeURIComponent(semQuery));
+  } catch {
+    ficheiro = path.resolve(DIST, '.' + semQuery);
+  }
+  if (!ficheiro.startsWith(DIST)) return void res.writeHead(403).end();
+  if (fs.existsSync(ficheiro) && fs.statSync(ficheiro).isDirectory()) {
+    ficheiro = path.join(ficheiro, 'index.html');
+  }
+  if (!fs.existsSync(ficheiro)) return void res.writeHead(404).end('404');
+  res.writeHead(200, { 'content-type': MIME[path.extname(ficheiro)] ?? 'application/octet-stream' });
+  fs.createReadStream(ficheiro).pipe(res);
+});
+await new Promise((r) => servidor.listen(0, '127.0.0.1', r));
+const base = `http://127.0.0.1:${servidor.address().port}`;
+
+const reguas = [];
+const medidas = {};
+const conta = (nome, passa, prova) => reguas.push({ nome, passa: !!passa, prova: String(prova) });
+
+const nav = await chromium.launch({ headless: true });
+async function pagina({ largura = 1280, js = true } = {}) {
+  const ctx = await nav.newContext({
+    viewport: { width: largura, height: 800 },
+    javaScriptEnabled: js,
+  });
+  const p = await ctx.newPage();
+  p.__ctx = ctx;
+  return p;
+}
+
+/* As duas edições, com os destinos de cada uma: a régua mede as duas, porque o
+   reencaminhamento lê o `href` que o servidor escreveu e esse muda com a rota. */
+const EDICOES = [
+  { edicao: 'pt', rota: '/', evora: '/municipios/evora', indice: '/municipios' },
+  { edicao: 'en', rota: '/en', evora: '/en/municipalities/evora', indice: '/en/municipalities' },
+];
+
+/* ========================================================================== */
+/* N1 · os estados `municipio:<slug>` saem do esquema                         */
+/* ========================================================================== */
+
+for (const { edicao, rota, evora, indice } of EDICOES) {
+  const p = await pagina();
+  const foi = async (q) => {
+    await p.goto(`${base}${rota}${q}`, { waitUntil: 'networkidle' });
+    /* O reencaminhamento é uma navegação, e uma navegação leva tempo: espera-se
+       por ela em vez de se dormir um número inventado de milissegundos. */
+    await p
+      .waitForURL((u) => !u.search.includes('municipio%3A') && !u.search.includes('municipio:'), {
+        timeout: 3000,
+      })
+      .catch(() => {});
+    return p.evaluate(() => location.pathname + location.search);
+  };
+  const comPagina = await foi('?ambito=municipio:evora');
+  const semPagina = await foi('?ambito=municipio:braganca');
+  const inexistente = await foi('?ambito=municipio:atlantida');
+  const prefixoNu = await foi('?ambito=municipio:');
+  conta(
+    `N1 · um endereço antigo abre a página do concelho, ou o índice dos 308 · ${edicao}`,
+    comPagina === evora &&
+      semPagina === indice &&
+      inexistente === rota &&
+      prefixoNu === rota,
+    `municipio:evora → «${comPagina}» · municipio:braganca → «${semPagina}» · um slug que não existe → «${inexistente}» · o prefixo nu → «${prefixoNu}»`,
+  );
+  if (edicao === 'pt') medidas.n1 = { comPagina, semPagina, inexistente, prefixoNu };
+  await p.__ctx.close();
+}
+
+{
+  const html = {
+    pt: fs.readFileSync(path.join(DIST, 'index.html'), 'utf8'),
+    en: fs.readFileSync(path.join(DIST, 'en', 'index.html'), 'utf8'),
+  };
+  const MARCAS = [
+    'data-cabeca="vazio"',
+    'data-painel="vazio"',
+    'data-slot',
+    'data-escolher',
+    'data-trocar',
+    'data-fechar-mapa',
+    'mapa-fechar',
+    'data-alvos',
+    'mun-alvo',
+    'data-campo',
+    'data-hint-escolher',
+    'data-so-evora',
+  ];
+  const achadas = [];
+  for (const [edicao, s] of Object.entries(html)) {
+    for (const m of MARCAS) if (s.includes(m)) achadas.push(`${edicao}:${m}`);
+  }
+  conta(
+    'N1 · a primeira página construída não tem uma marca da vista de escolha',
+    achadas.length === 0,
+    achadas.length === 0
+      ? `nenhuma das ${MARCAS.length} marcas em nenhuma das duas edições: ${MARCAS.join(', ')}`
+      : `ainda presentes: ${achadas.join(' · ')}`,
+  );
+}
+
+/* ========================================================================== */
+/* N2 · nem crescimento, nem lente, nem «fechar»                              */
+/* ========================================================================== */
+
+{
+  const linhas = [];
+  let bem = true;
+  for (const largura of [1280, 1512, 2000]) {
+    for (const { edicao, rota } of EDICOES) {
+      const p = await pagina({ largura });
+      const mede = async (q) => {
+        await p.goto(`${base}${rota}${q}`, { waitUntil: 'networkidle' });
+        return p.evaluate(() => {
+          const t = document.querySelector('.mapa-tela').getBoundingClientRect();
+          return {
+            w: +t.width.toFixed(1),
+            h: +t.height.toFixed(1),
+            ambito: document.querySelector('[data-inicio]').getAttribute('data-ambito'),
+            /* Nenhum nó do mapa pode ter uma transformação: era o que a lente
+               escrevia, e é a marca que ela deixava. */
+            transformados: [...document.querySelectorAll('[data-mapa] *')].filter((e) =>
+              e.hasAttribute('transform'),
+            ).length,
+          };
+        });
+      };
+      const pais = await mede('');
+      const pesquisa = await mede('?ambito=municipio');
+      const ok =
+        Math.abs(pais.w - pesquisa.w) < 0.5 &&
+        Math.abs(pais.h - pesquisa.h) < 0.5 &&
+        pesquisa.ambito === 'municipio' &&
+        pais.transformados === 0 &&
+        pesquisa.transformados === 0;
+      if (!ok) bem = false;
+      linhas.push(
+        `${largura} ${edicao}: país ${pais.w}×${pais.h} · pesquisa aberta ${pesquisa.w}×${pesquisa.h} (${pesquisa.ambito}) · nós com transform ${pais.transformados}/${pesquisa.transformados}`,
+      );
+      if (largura === 1280 && edicao === 'pt') medidas.n2Tamanho = { pais, pesquisa };
+      await p.__ctx.close();
+    }
+  }
+  conta(
+    'N2 · o mapa mede o mesmo no país e com a pesquisa aberta, em três larguras',
+    bem,
+    linhas.join(' · '),
+  );
+}
+
+{
+  const linhas = [];
+  let bem = true;
+  for (const q of ['', '?ambito=municipio']) {
+    const p = await pagina({ largura: 1280 });
+    await p.goto(`${base}/${q}`, { waitUntil: 'networkidle' });
+    /* O cursor tem de estar DENTRO da caixa do mapa: era ali que a lente
+       apanhava a roda, e uma medição com o cursor ao lado não media nada. */
+    const sitio = await p.evaluate(() => {
+      document.querySelector('.mapa-tela').scrollIntoView({ block: 'center' });
+      const r = document.querySelector('.mapa-tela').getBoundingClientRect();
+      return { x: r.left + r.width / 2, y: r.top + r.height / 2, dentro: r.height > 0 };
+    });
+    await p.mouse.move(sitio.x, sitio.y);
+    const antes = await p.evaluate(() => window.scrollY);
+    for (let i = 0; i < 5; i++) await p.mouse.wheel(0, 100);
+    await p.waitForTimeout(150);
+    const depois = await p.evaluate(() => window.scrollY);
+    const t = await p.evaluate(
+      () =>
+        [...document.querySelectorAll('[data-mapa] *')].filter((e) => e.hasAttribute('transform'))
+          .length,
+    );
+    const ok = sitio.dentro && depois > antes && t === 0;
+    if (!ok) bem = false;
+    linhas.push(
+      `«/${q}»: o cursor no meio do mapa, cinco entalhes para baixo, scrollY ${antes} → ${depois}, ${t} nós com transform`,
+    );
+    if (q === '?ambito=municipio') medidas.n2Roda = { antes, depois, transformados: t };
+    await p.__ctx.close();
+  }
+  conta('N2 · a roda do rato sobre o mapa rola a página, nos dois estados', bem, linhas.join(' · '));
+}
+
+/* ========================================================================== */
+/* N3 · «Concelho» abre a pesquisa nas duas larguras                          */
+/* ========================================================================== */
+
+for (const largura of [1280, 390]) {
+  const linhas = [];
+  let bem = true;
+  for (const { edicao, rota } of EDICOES) {
+    const p = await pagina({ largura });
+    await p.goto(`${base}${rota}`, { waitUntil: 'networkidle' });
+    await p.locator('[data-comando] [data-modo="municipio"]:visible').first().click();
+    await p.waitForTimeout(200);
+    const abriu = await p.evaluate(() => {
+      const bloco = document.querySelector('#pesquisa');
+      const r = bloco.getBoundingClientRect();
+      return {
+        visivel: r.width > 0 && r.height > 0,
+        dentro: r.top >= 0 && r.top < innerHeight,
+        foco: document.activeElement ? document.activeElement.id : null,
+        anuncio: (document.querySelector('[data-anuncio]')?.textContent ?? '').trim(),
+        url: location.pathname + location.search,
+        cabeca: document.querySelector('[data-cabeca]:not([hidden])')?.getAttribute('data-cabeca'),
+        painel: document.querySelector('[data-painel]:not([hidden])')?.getAttribute('data-painel'),
+      };
+    });
+    await p.locator('[data-comando] [data-modo="pais"]:visible').first().click();
+    await p.waitForTimeout(200);
+    const fechou = await p.evaluate(() => {
+      const r = document.querySelector('#pesquisa').getBoundingClientRect();
+      return {
+        url: location.pathname + location.search,
+        /* Abaixo de 640 a pesquisa fica À VISTA em qualquer estado (item A4), e
+           acima de 640 só com a pesquisa aberta. A régua pergunta o que a folha
+           responde para esta largura, em vez de escrever o 640 outra vez. */
+        visivel: r.width > 0 && r.height > 0,
+      };
+    });
+    const ok =
+      abriu.visivel &&
+      abriu.dentro &&
+      abriu.foco === 'pesquisa-concelho' &&
+      abriu.anuncio.length > 0 &&
+      /\?ambito=municipio$/.test(abriu.url) &&
+      abriu.cabeca === 'pais' &&
+      abriu.painel === 'pais' &&
+      fechou.url === rota &&
+      fechou.visivel === (largura <= 640);
+    if (!ok) bem = false;
+    linhas.push(
+      `${edicao}: «${abriu.url}» · pesquisa à vista ${abriu.visivel}, dentro do ecrã ${abriu.dentro} · foco «${abriu.foco}» · anúncio «${abriu.anuncio}» · cabeça ${abriu.cabeca}, painel ${abriu.painel} · «País» → «${fechou.url}», pesquisa à vista ${fechou.visivel}`,
+    );
+    if (edicao === 'pt') medidas[`n3_${largura}`] = { abriu, fechou };
+    await p.__ctx.close();
+  }
+  conta(
+    `N3 · «Concelho» abre a pesquisa com o foco no campo, e «País» fecha-a · ${largura}`,
+    bem,
+    linhas.join(' · '),
+  );
+}
+
+{
+  const linhas = [];
+  let bem = true;
+  for (const { edicao, rota, indice } of EDICOES) {
+    const p = await pagina({ js: false });
+    await p.goto(`${base}${rota}`, { waitUntil: 'load' });
+    const hrefs = await p.evaluate(() =>
+      [...document.querySelectorAll('[data-comando] [data-modo]')].map((a) => [
+        a.getAttribute('data-modo'),
+        a.getAttribute('href'),
+        a.tagName.toLowerCase(),
+      ]),
+    );
+    const mapa = Object.fromEntries(hrefs.map(([m, h]) => [m, h]));
+    const ok =
+      hrefs.every(([, , t]) => t === 'a') &&
+      mapa.pais === rota &&
+      mapa.municipio === indice;
+    if (!ok) bem = false;
+    linhas.push(`${edicao}: ${hrefs.map(([m, h, t]) => `${m}=<${t}> ${h}`).join(' · ')}`);
+    await p.__ctx.close();
+  }
+  conta('N3 · sem script os dois comandos são ligações para páginas que existem', bem, linhas.join(' · '));
+}
+
+/* ========================================================================== */
+/* N4 · o mapa é navegação                                                    */
+/* ========================================================================== */
+
+for (const { edicao, rota, evora } of EDICOES) {
+  const p = await pagina();
+  await p.goto(`${base}${rota}`, { waitUntil: 'networkidle' });
+
+  const contagem = await p.evaluate(() => {
+    const pontos = [...document.querySelectorAll('[data-pontos] [data-caop]')];
+    return {
+      total: pontos.length,
+      declarados: pontos.filter((c) => c.getAttribute('data-pagina') === 'sim').length,
+      ligacoes: pontos.filter((c) => c.closest('a[href]')).length,
+      semPaginaEmLigacao: pontos.filter(
+        (c) => c.getAttribute('data-pagina') !== 'sim' && c.closest('a[href]'),
+      ).length,
+      titulos: pontos.filter((c) => c.closest('a[href]')?.querySelector('title')).length,
+    };
+  });
+
+  /* O clique no CENTRO do ponto, que é onde a mão vai. */
+  const sitioDe = (slug) =>
+    p.evaluate((s) => {
+      const c = document.querySelector(`[data-pontos] [data-caop="${s}"]`);
+      if (!c) return null;
+      c.scrollIntoView({ block: 'center' });
+      const r = c.getBoundingClientRect();
+      return { x: r.left + r.width / 2, y: r.top + r.height / 2, w: +r.width.toFixed(2) };
+    }, slug);
+
+  const semPagina = await sitioDe('braganca');
+  await p.mouse.click(semPagina.x, semPagina.y);
+  await p.waitForTimeout(300);
+  const depoisDeBraganca = await p.evaluate(() => ({
+    url: location.pathname + location.search,
+    ambito: document.querySelector('[data-inicio]')?.getAttribute('data-ambito'),
+  }));
+
+  const comPagina = await sitioDe('evora');
+  await p.mouse.click(comPagina.x, comPagina.y);
+  await p.waitForURL(`**${evora}`, { timeout: 3000 }).catch(() => {});
+  const depoisDeEvora = await p.evaluate(() => location.pathname + location.search);
+
+  conta(
+    `N4 · o clique no meio do ponto de Évora abre a página, e o de Bragança não faz nada · ${edicao}`,
+    depoisDeEvora === evora &&
+      depoisDeBraganca.url === rota &&
+      depoisDeBraganca.ambito === 'pais' &&
+      contagem.total === 308 &&
+      contagem.declarados === contagem.ligacoes &&
+      contagem.semPaginaEmLigacao === 0 &&
+      contagem.titulos === contagem.ligacoes,
+    `Évora → «${depoisDeEvora}» (alvo de ${comPagina.w}px) · Bragança → «${depoisDeBraganca.url}», âmbito ${depoisDeBraganca.ambito} · ${contagem.ligacoes} de ${contagem.total} pontos são ligação, ${contagem.declarados} declarados com página, ${contagem.titulos} com nome, ${contagem.semPaginaEmLigacao} dos 307 dentro de uma ligação`,
+  );
+  if (edicao === 'pt') medidas.n4 = { contagem, alvo: comPagina.w };
+  await p.__ctx.close();
+}
+
+{
+  const p = await pagina();
+  await p.goto(`${base}/`, { waitUntil: 'networkidle' });
+  /* O nome ao passar o rato, num ponto qualquer dos 308 que não é o de Évora. */
+  const sitio = await p.evaluate(() => {
+    const c = document.querySelector('[data-pontos] [data-caop="braganca"]');
+    c.scrollIntoView({ block: 'center' });
+    const r = c.getBoundingClientRect();
+    return { x: r.left + r.width / 2, y: r.top + r.height / 2, nome: c.getAttribute('data-m') };
+  });
+  await p.mouse.move(sitio.x - 30, sitio.y - 30);
+  await p.mouse.move(sitio.x, sitio.y);
+  await p.waitForTimeout(150);
+  const rato = await p.evaluate(
+    () => document.querySelector('[data-readout-nome]')?.textContent.trim() ?? '',
+  );
+
+  /* E o teclado: as setas percorrem, o Enter num ponto com página abre-a. */
+  await p.goto(`${base}/`, { waitUntil: 'networkidle' });
+  await p.focus('[data-mapa-wrap]');
+  const noArranque = await p.evaluate(
+    () => document.querySelector('[data-readout-nome]')?.textContent.trim() ?? '',
+  );
+  await p.keyboard.press('ArrowRight');
+  await p.waitForTimeout(80);
+  const depoisDaSeta = await p.evaluate(
+    () => document.querySelector('[data-readout-nome]')?.textContent.trim() ?? '',
+  );
+  await p.keyboard.press('Enter');
+  await p.waitForTimeout(300);
+  const semPaginaNoEnter = await p.evaluate(() => location.pathname + location.search);
+
+  await p.goto(`${base}/`, { waitUntil: 'networkidle' });
+  await p.focus('[data-mapa-wrap]');
+  await p.keyboard.press('Home');
+  await p.waitForTimeout(80);
+  const noHome = await p.evaluate(
+    () => document.querySelector('[data-readout-nome]')?.textContent.trim() ?? '',
+  );
+  await p.keyboard.press('Enter');
+  await p.waitForURL('**/municipios/evora', { timeout: 3000 }).catch(() => {});
+  const comPaginaNoEnter = await p.evaluate(() => location.pathname + location.search);
+
+  conta(
+    'N4 · o rato lê o nome, as setas percorrem, e o Enter abre só o ponto que tem página',
+    rato === sitio.nome &&
+      noArranque === 'Évora' &&
+      depoisDaSeta.length > 0 &&
+      depoisDaSeta !== 'Évora' &&
+      semPaginaNoEnter === '/' &&
+      noHome === 'Évora' &&
+      comPaginaNoEnter === '/municipios/evora',
+    `rato sobre Bragança lê «${rato}» · o foco no mapa lê «${noArranque}», a seta leva a «${depoisDaSeta}», e o Enter aí deixa o endereço em «${semPaginaNoEnter}» · Home volta a «${noHome}», e o Enter abre «${comPaginaNoEnter}»`,
+  );
+  medidas.n4Teclado = { rato, noArranque, depoisDaSeta, semPaginaNoEnter, noHome, comPaginaNoEnter };
+  await p.__ctx.close();
+}
+
+/* --------------------------------------------------------------- o relatório */
+await nav.close();
+servidor.close();
+
+if (FICHEIRO_JSON && typeof FICHEIRO_JSON === 'string') {
+  fs.writeFileSync(FICHEIRO_JSON, JSON.stringify({ reguas, medidas }, null, 2));
+}
+
+console.log('');
+console.log(cinza(`  Emenda 19 · o mapa é navegação · ${reguas.length} réguas`));
+console.log('');
+let falhas = 0;
+for (const r of reguas) {
+  if (!r.passa) falhas++;
+  console.log(`  ${r.passa ? verde('passa') : vermelho('falha')}  ${r.nome}`);
+  console.log(cinza(`         ${r.prova}`));
+}
+console.log('');
+console.log(
+  falhas === 0
+    ? verde(`  ${reguas.length} de ${reguas.length} réguas passam.`)
+    : vermelho(`  ${falhas} de ${reguas.length} réguas falham.`),
+);
+console.log('');
+process.exit(falhas === 0 ? 0 : 1);

@@ -5,11 +5,18 @@
  * direcção à crítica cruzada, 20.08.2026):
  *
  *   · trocar `hidden`, `open`, `aria-pressed` e `aria-current`;
- *   · escrever o `textContent` de dois `<span data-slot>` marcados, com texto
- *     COPIADO de um nó que o servidor já escreveu (o nome e o distrito do
- *     concelho, lidos da ilha da CAOP dentro do mapa), e o da região viva, que
- *     junta duas cadeias que já estão na página;
- *   · mexer no endereço com `history.pushState` e `history.replaceState`.
+ *   · escrever o `textContent` da região viva, que junta duas cadeias que já
+ *     estão na página, e o do nome que o mapa lê ao passar o cursor, COPIADO do
+ *     nó que o servidor desenhou;
+ *   · mexer no endereço com `history.pushState` e `history.replaceState`, e
+ *     mudar de página com `location.assign` e `location.replace` para um destino
+ *     LIDO do documento (a Emenda 19 traz os dois: a ligação de um ponto do
+ *     mapa, e o índice dos 308 para onde um endereço antigo vai).
+ *
+ * OS DOIS `data-slot` SAÍRAM (Emenda 19a, 26.08.2026). Eram o nome e o distrito
+ * do concelho escolhido, escritos nos blocos de cabeça do concelho; os blocos
+ * saíram com o estado que os acendia, e com eles o único texto por preencher que
+ * esta página tinha.
  *
  * O QUE NÃO PODE FAZER, nunca: `innerHTML`, criar texto visível, formatar um
  * número, escrever um algarismo. Tudo o que a página mostra em qualquer estado
@@ -107,8 +114,9 @@
         /* A cobertura vinha da classe que a pintava. Com a Emenda 10 nenhum
            ponto vem cheio, e uma classe que não pinta nada seria um nome a
            mentir: o servidor declara-a num atributo de dados, e é ele que se lê.
-           O que isto governa não é desenho nenhum — é a porta «a página inteira,
-           com quem governou», que só existe onde há página. */
+           O que isto governa não é desenho nenhum: é se há uma página para
+           abrir, no Enter do teclado e no reencaminhamento de um endereço
+           antigo (Emenda 19). */
         comPagina: el.getAttribute('data-pagina') === 'sim',
       };
       pontos.push(pt);
@@ -718,15 +726,18 @@
            concelho dentro desta página, e passa a abrir a página dele. Num ponto
            sem página não faz nada, que é o que o mapa promete.
 
-           A PORTA É A QUE O SERVIDOR RENDEU, e não um endereço montado aqui:
-           `porta.click()` segue a mesma ligação que o rato segue, com o mesmo
-           destino e a mesma edição. O espaço vale como o Enter, que é a promessa
+           O DESTINO É O QUE O SERVIDOR ESCREVEU, e não um endereço montado
+           aqui: lê-se o `href` da ligação daquele ponto, que já traz a rota da
+           edição certa. O caminho é `location.assign` e não um clique sintético
+           na ligação, e a razão é medida: um `<a>` dentro de um `svg` é um
+           `SVGAElement`, que não tem `click()` (Chromium, 26.08.2026), e chamá-lo
+           atirava em vez de navegar. O espaço vale como o Enter, que é a promessa
            do papel de aplicação da tela (etapa 2i, achado 16). */
         if (sel < 0 || !pontos[sel].comPagina) return;
-        var porta = mapa.querySelector('[data-mun-porta="' + pontos[sel].slug + '"]');
-        if (!porta) return;
+        var destinoDoPonto = portaDoPonto(pontos[sel].slug);
+        if (!destinoDoPonto) return;
         ev.preventDefault();
-        porta.click();
+        location.assign(destinoDoPonto);
         return;
       }
       if (ev.key === 'Home') {

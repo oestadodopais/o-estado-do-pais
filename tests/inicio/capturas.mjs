@@ -2,7 +2,7 @@
 /**
  * AS CAPTURAS DA PRIMEIRA PÁGINA, estado a estado.
  *
- * Não mede nada: fotografa. Nove estados × duas larguras × duas edições × dois
+ * Não mede nada: fotografa. Cinco estados × duas larguras × duas edições × dois
  * temas, sobre `dist/`, em Chromium sem cabeça e depois de `document.fonts.ready`.
  * O escuro entra pela escolha guardada no aparelho, que é o único caminho para o
  * escuro desde a Emenda 12.
@@ -118,29 +118,24 @@ const servidor = http.createServer((req, res) => {
 await new Promise((r) => servidor.listen(0, '127.0.0.1', r));
 const base = `http://127.0.0.1:${servidor.address().port}`;
 
-/* Os nove estados. A VISTA DE ESCOLHA JÁ TEM ENDEREÇO (etapa 2m, ISSUES I42):
-   era um modo que só se abria por um toque no comando «Município», e passa a ser
-   `?ambito=municipio`. A captura entra por lá, como as outras, e o gesto deixa
-   de ser preciso — o que sobra do toque é o estado da proximidade, que continua
-   a ser um gesto e por isso continua a ter o seu. */
+/* OS CINCO ESTADOS QUE A PRIMEIRA PÁGINA TEM (Emenda 19, 26.08.2026).
+   Eram nove. Os quatro que saíram eram os do concelho e o da vista de escolha:
+   `evora-relance`, `evora-leitura`, `beja-vazio` (os estados
+   `?ambito=municipio:<slug>`, que a Emenda 19a tirou do esquema; um concelho é
+   fotografado na página dele, no segundo modo, com `--etapa-3`) e
+   `escolha-proxima` (a vista de escolha depois do gesto do selo do telemóvel,
+   que saiu com o selo no item A4).
+
+   `escolha` fica com outro nome, porque é outra coisa: `?ambito=municipio` é a
+   PESQUISA ABERTA, e já não muda o mapa. As quatro larguras ficam, e a razão é a
+   mesma que a 2m escreveu para elas ao contrário: é onde se vê que o mapa NÃO
+   muda com a largura da vista. */
 const ESTADOS = [
-  /* O País nas quatro larguras do brief da 2m: é o mapa que muda com elas. */
+  /* O País nas quatro larguras: é o mapa que muda com elas. */
   { nome: 'pais-relance', q: '', larguras: [1440, 1280, 1024, 390] },
   { nome: 'pais-leitura', q: '?densidade=leitura' },
   { nome: 'regiao-alentejo', q: '?ambito=regiao:alentejo' },
-  { nome: 'evora-relance', q: '?ambito=municipio:evora' },
-  { nome: 'evora-leitura', q: '?ambito=municipio:evora&densidade=leitura' },
-  { nome: 'beja-vazio', q: '?ambito=municipio:beja' },
-  /* A vista de escolha a 1024 e a 1440 além das duas de sempre: é a largura que
-     manda no mapa desta vista (etapa 2m), e uma captura só a 1280 não mostrava
-     nem o mínimo nem o máximo do que ele faz. */
-  { nome: 'escolha', q: '?ambito=municipio', larguras: [1440, 1280, 1024, 390] },
-  /* A vista de escolha DEPOIS do gesto da Emenda 3 (subetapa 2h): um toque no
-     selo abre a vista, um segundo toque, num sítio concreto do mapa, troca os
-     botões pelos concelhos mais próximos desse sítio. Só existe no telemóvel,
-     porque só lá o selo é o alvo — a 1280 os pontos são alvos e o gesto é
-     outro —, e por isso este estado declara a sua largura. */
-  { nome: 'escolha-proxima', q: '?ambito=municipio', tocarNoSelo: true, larguras: [390] },
+  { nome: 'pesquisa-aberta', q: '?ambito=municipio', larguras: [1440, 1280, 1024, 390] },
   { nome: 'pais-sem-js', q: '', js: false },
 ];
 
@@ -222,17 +217,11 @@ for (const estado of ESTADOS) {
            de comando (escondido) e a linha de destino do telemóvel. Clica-se no
            que está à vista, que é o que o leitor tem. */
         if (estado.clicar) await p.locator(`${estado.clicar}:visible`).first().click();
-        /* O gesto: o sítio tocado lê-se do rectângulo do mapa, que o selo cobre
-           exactamente. É preciso trazer o selo à janela antes, porque um toque
-           fora da janela não é um toque em sítio nenhum. */
-        if (estado.tocarNoSelo) {
-          await p.locator('.movel-selo').scrollIntoViewIfNeeded();
-          const r = await p.evaluate(() => {
-            const b = document.querySelector('[data-mapa]').getBoundingClientRect();
-            return { left: b.left, top: b.top, w: b.width, h: b.height };
-          });
-          await p.mouse.click(r.left + r.w * 0.75, r.top + r.h * 0.66);
-        }
+        /* O SEGUNDO GESTO SAIU COM O SELO DO TELEMÓVEL (item A4) e com a vista
+           de escolha (Emenda 19b): era um toque num sítio concreto do mapa, que
+           trocava os resultados da pesquisa pelos concelhos mais próximos desse
+           sítio. Nenhuma superfície o alcança, e por isso nenhuma captura o
+           mostra. */
         await p.evaluate(() => document.fonts.ready);
         await p.screenshot({
           path: path.join(DESTINO, `${estado.nome}-${largura}-${edicao}-${tema}.png`),
