@@ -11109,3 +11109,95 @@ rotas passam a ler **0**.
   Évora. A edição inglesa do estudo dos mandatos **não está alojada** neste
   sítio, e por isso a citação inglesa daquela nota não tem porta: a porta que
   existe abre a edição portuguesa do mesmo trabalho.
+
+### 1.68 As páginas dos 308 concelhos
+
+**Afecta:** nenhum
+
+Decisão do diretor a **26.08.2026** («let's do it») sobre o
+`design/especime-v3/PLANO-CONCELHOS-2026-08-26.md`, com as recomendações D1 a D7
+adotadas. O bloco corre em dois lugares ao mesmo tempo e os dois repositórios não
+partilham ficheiros: o motor produz as linhas, o sítio fica pronto para as
+receber. Ramo `concelhos-2026-08-26`, a partir de `main` em `992a3c9`.
+
+#### P2, a estrutura
+
+O contrato com o motor está na §1 do `briefs/BRIEF-concelhos-P2-estrutura.md` e
+não mudou: o estudo `concelhos-2026`, os ids das linhas por concelho e por
+medida, o ficheiro `src/data/concelhos.gerado.json` com os 308, o cruzamento em
+`ledger/cruzamentos/concelhos.json`, e as seis linhas de Évora que já existem a
+ficarem como estão. A medida a que este passo se obrigou, e cumpriu: **nenhum
+número entra no repositório que não venha de uma linha do livro-razão**, e o
+ficheiro dos 308 com que se construiu e mediu tem todas as linhas a `null` e vive
+fora do repositório.
+
+**A vista rende só o que existe.** Um concelho sem trabalho publicado não tem
+leitura breve, contas do município, linha do tempo das administrações, método,
+ressalvas nem trabalhos, e nenhuma dessas secções se rende: nem título, nem caixa
+vazia. As oito peças rendem-se sempre as oito e **pela ordem da Emenda 14**, com
+«sem linha ainda» onde o id é `null`; a distância desenhada só existe com as duas
+linhas que a fazem. E a disposição B deixa de desenhar a coluna do corpo quando
+não há corpo: 68ch de nada ao lado de um cartão de 300px é a célula vazia numa
+grelha que a `IDENTIDADE.md` §7 recusa.
+
+**Os rótulos das oito medidas passam a estar escritos uma vez**, em
+`src/data/concelhos.mjs`, e valem para os 308 e para Évora. `MUNICIPIOS_COM_PAGINA`
+compõe-se: a entrada escrita à mão, mais uma por objeto do ficheiro que o motor
+escreve. Enquanto ele não existir, a lista tem uma entrada, e isso é o estado
+honesto: **o repositório não leva um ficheiro gerado sem dados.**
+
+**O índice dos 308 perde a secção «Com página»**, que existia porque um concelho
+em 308 a tinha; com os 308, era a lista inteira repetida por cima da lista
+inteira. O mapa não precisou de nada: os pontos com página já eram ligações
+desde a §1.67, e com 308 medem-se 308 de 308 dentro de uma ligação.
+
+**O livro-razão ganha a página do conjunto** (decisão D6): `/livro-razao/concelhos`
+· `/en/ledger/municipalities`, com a pesquisa da casa e a lista por concelho, e
+três contagens que são chaves da prova recontadas pelo portão. As linhas do
+estudo saem da LISTA do índice principal, e não do livro-razão: as páginas de
+linha, o CSV e o JSON continuam a incluir tudo, e a porta e a contagem ficam no
+índice para que a diferença esteja dita. O estudo entra em `INTERNAL_SOURCES` e
+não em `WORKS`, porque não tem documento nenhum, e **o seu título perdeu a
+contagem**: «Concelhos: as medidas centrais dos 308» fechava a construção nas duas
+edições, porque o «308» é um algarismo do próprio sítio sem porta
+(`IDENTIDADE.md` §10).
+
+**As três correções de Évora** (decisões D5, D2 e D3): a peça 4 passa a «Empresas
+não financeiras», que é o termo do INE; as peças 7 e 8 passam a ler a fonte
+central e ficam as duas vazias, com as duas linhas municipais a descerem para a
+camada das contas com os seus selos; e a nota da dívida diz a coluna que usa.
+
+**O registo de correções não recebeu as três entradas, e a razão está medida.**
+As oito linhas de Évora são linhas cruzadas, e o mecanismo da casa escreve uma
+correção dentro da própria linha. Plantada a entrada, `check-cruzamento` fecha a
+construção, e a porta que existe para isso, `--accept-correction`, recusa por
+escrito: exige que o `value` publicado seja o `new_value` da correção. Uma
+correção de **rótulo de página** não muda valor nenhum, e por isso não cabe em
+nenhuma das três naturezas do registo. O §4 do brief pede «nenhum byte de
+`ledger/claims/`» e o E5 pede três entradas: as duas coisas não se podem ter com
+o mecanismo que existe. **Fica para decisão da direção**, e é decisão de forma.
+
+**A escala, medida com o ficheiro de teste** (as duas construções do zero, na
+mesma máquina): a cobertura de hoje dá **344 páginas, 29 MB e 14,55 s**; a dos
+308 dá **958 páginas, 83 MB e 22,92 s**. As 616 páginas de concelho custam 8,4 s
+e 54 MB. O que cresce não é a prosa: as ligações internas conferidas passam de
+15 154 para **225 756**, porque o cartão localizador rende os 308 pontos em cada
+página e cada ponto com página é uma âncora. É essa conta, e não os bytes, que
+decide o tempo do `gate:html` quando as ≈4 870 páginas de linha chegarem.
+
+**Nove células de régua assumiam a cobertura de uma tarde** («um concelho com
+página, 307 sem») e ficavam vermelhas por o sítio ter crescido. Passam a ler a
+cobertura do `dist/` e a julgar a regra. Duas falhas anteriores registadas na
+§1.66 ficam corrigidas de passagem: a `3b` de `recibo.mjs`, que pedia 132 linhas
+a um livro-razão de 136, e a `3c` de `concelhos.mjs`.
+
+**Três coisas que a construção com 308 mostrou, e que não estavam pedidas:** uma
+âncora dentro de outra no índice do livro-razão (a porta e o valor da prova), um
+par de alvos de toque sobrepostos por 1,0 px na fila da pesquisa a 390 (a fila
+passa de um resultado a oito), e a saída em JSON de `medir-defeitos.mjs` cortada
+ao byte 65 534 porque era escrita com `console.log` antes de `process.exit()`. As
+três estão corrigidas e medidas.
+
+Os números, os comandos que os deram e os estragos plantados estão em
+`design/especime-v3/notas/concelhos.md`, §P2; as capturas do antes e do depois em
+`design/especime-v3/capturas/concelhos-2026-08-26/`.
