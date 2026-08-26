@@ -1,0 +1,33 @@
+{
+ "registado_em": "2026-08-26",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "depois/index.html",
+   "descricao": "a remnant of the old empty-state panel (data-painel=\"vazio\") left in the front page",
+   "sha256_antes": "0972b7cb2550636fbe619107db7b9e16b1708ce944e005cd9ac500b45c333e3c",
+   "sha256_depois": "81055efacb217d1a51cf64541d5725f3ccc46a680a1f8f8cdf847b9fca6ddfe3"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "depois/js/inicio.js",
+   "descricao": "a wheel listener on the map box that prevents the page from scrolling",
+   "sha256_antes": "ffc51f6583d40eefd158a1dbfe368af25a4a1c89df1ed80e0947c386229899c2",
+   "sha256_depois": "f6f0ba6bcdf10d07f8326901051197fc415f4ef11e42b21fd9edf7c666dd78df"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "depois/_astro/inicio.CYmXWYkV.css",
+   "descricao": "the growth rule of the choosing view back in the stylesheet",
+   "sha256_antes": "315ded185abb88769f20f0d06b0c597a72ac25e10011948f3ef1ca781823177c",
+   "sha256_depois": "55ca5efb27a1b0aa5d9c3be9cba34ca2cf17e92eaaa1340018c7f33015c8240b"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "depois/en/index.html",
+   "descricao": "a Portuguese string leaked into the English search label",
+   "sha256_antes": "332a533524b60015c6d9c2cbe0ad00c974c33f5d9245f6a3302d00d4e8326286",
+   "sha256_depois": "5baba0db49868228cf835087770bd48181ca7414d4fb18e812b92069314e3e3e"
+  }
+ ]
+}
