@@ -1,0 +1,17 @@
+{
+ "registado_em": "2026-08-26",
+ "plantas": [
+  {
+   "id": "P1",
+   "descricao": "a self-justifying phrase added to the inventory and classified as conteudo",
+   "linha": "+| `Todos os valores foram reconferidos pela equipa antes de serem publicados.` | Execução da receita |"
+  },
+  {
+   "id": "P2",
+   "descricao": "a second diligence phrase declared as conteudo on the municipio route",
+   "linha": "+| `Cada número desta página foi verificado contra a fonte oficial.` | municipio | conteudo | — |"
+  }
+ ],
+ "sha256_antes": "d2728f924d1a10c21d9da58a4806d655e0439c71349a96751a13c248b2bf0478",
+ "sha256_depois": "eb9bb186fbb2a9bb40b5edb22eb673c7604d83fdef78eb72138fa13475c32f36"
+}

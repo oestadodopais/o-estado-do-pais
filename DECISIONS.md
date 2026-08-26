@@ -10764,6 +10764,328 @@ dos 308.
 
 **O custo.** Construtor (Opus) ≈485k símbolos em quatro commits, dentro da estimativa de 0,4 a 0,7M; medidor (Sonnet) ≈391k; leitor (Codex) 192 985; total ≈1,07M, mais o lugar de direção. **O que fica:** I70 (as zonas densas, para o mapa por distritos), I71 (a pesquisa sem script), e o plano das páginas dos 308 (`design/especime-v3/PLANO-CONCELHOS-2026-08-26.md`), à espera das decisões do diretor.
 
+### 1.68 As páginas dos 308 concelhos
+
+**Afecta:** nenhum
+
+Decisão do diretor a **26.08.2026** («let's do it») sobre o
+`design/especime-v3/PLANO-CONCELHOS-2026-08-26.md`, com as recomendações D1 a D7
+adotadas. O bloco corre em dois lugares ao mesmo tempo e os dois repositórios não
+partilham ficheiros: o motor produz as linhas, o sítio fica pronto para as
+receber. Ramo `concelhos-2026-08-26`, a partir de `main` em `992a3c9`.
+
+#### P2, a estrutura
+
+O contrato com o motor está na §1 do `briefs/BRIEF-concelhos-P2-estrutura.md` e
+não mudou: o estudo `concelhos-2026`, os ids das linhas por concelho e por
+medida, o ficheiro `src/data/concelhos.gerado.json` com os 308, o cruzamento em
+`ledger/cruzamentos/concelhos.json`, e as seis linhas de Évora que já existem a
+ficarem como estão. A medida a que este passo se obrigou, e cumpriu: **nenhum
+número entra no repositório que não venha de uma linha do livro-razão**, e o
+ficheiro dos 308 com que se construiu e mediu tem todas as linhas a `null` e vive
+fora do repositório.
+
+**A vista rende só o que existe.** Um concelho sem trabalho publicado não tem
+leitura breve, contas do município, linha do tempo das administrações, método,
+ressalvas nem trabalhos, e nenhuma dessas secções se rende: nem título, nem caixa
+vazia. As oito peças rendem-se sempre as oito e **pela ordem da Emenda 14**, com
+«sem linha ainda» onde o id é `null`; a distância desenhada só existe com as duas
+linhas que a fazem. E a disposição B deixa de desenhar a coluna do corpo quando
+não há corpo: 68ch de nada ao lado de um cartão de 300px é a célula vazia numa
+grelha que a `IDENTIDADE.md` §7 recusa.
+
+**Os rótulos das oito medidas passam a estar escritos uma vez**, em
+`src/data/concelhos.mjs`, e valem para os 308 e para Évora. `MUNICIPIOS_COM_PAGINA`
+compõe-se: a entrada escrita à mão, mais uma por objeto do ficheiro que o motor
+escreve. Enquanto ele não existir, a lista tem uma entrada, e isso é o estado
+honesto: **o repositório não leva um ficheiro gerado sem dados.**
+
+**O índice dos 308 perde a secção «Com página»**, que existia porque um concelho
+em 308 a tinha; com os 308, era a lista inteira repetida por cima da lista
+inteira. O mapa não precisou de nada: os pontos com página já eram ligações
+desde a §1.67, e com 308 medem-se 308 de 308 dentro de uma ligação.
+
+**O livro-razão ganha a página do conjunto** (decisão D6): `/livro-razao/concelhos`
+· `/en/ledger/municipalities`, com a pesquisa da casa e a lista por concelho, e
+três contagens que são chaves da prova recontadas pelo portão. As linhas do
+estudo saem da LISTA do índice principal, e não do livro-razão: as páginas de
+linha, o CSV e o JSON continuam a incluir tudo, e a porta e a contagem ficam no
+índice para que a diferença esteja dita. O estudo entra em `INTERNAL_SOURCES` e
+não em `WORKS`, porque não tem documento nenhum, e **o seu título perdeu a
+contagem**: «Concelhos: as medidas centrais dos 308» fechava a construção nas duas
+edições, porque o «308» é um algarismo do próprio sítio sem porta
+(`IDENTIDADE.md` §10).
+
+**As três correções de Évora** (decisões D5, D2 e D3): a peça 4 passa a «Empresas
+não financeiras», que é o termo do INE; as peças 7 e 8 passam a ler a fonte
+central e ficam as duas vazias, com as duas linhas municipais a descerem para a
+camada das contas com os seus selos; e a nota da dívida diz a coluna que usa.
+
+**O registo de correções não recebeu as três entradas, e a razão está medida.**
+As oito linhas de Évora são linhas cruzadas, e o mecanismo da casa escreve uma
+correção dentro da própria linha. Plantada a entrada, `check-cruzamento` fecha a
+construção, e a porta que existe para isso, `--accept-correction`, recusa por
+escrito: exige que o `value` publicado seja o `new_value` da correção. Uma
+correção de **rótulo de página** não muda valor nenhum, e por isso não cabe em
+nenhuma das três naturezas do registo. O §4 do brief pede «nenhum byte de
+`ledger/claims/`» e o E5 pede três entradas: as duas coisas não se podem ter com
+o mecanismo que existe. **Fica para decisão da direção**, e é decisão de forma.
+
+**A escala, medida com o ficheiro de teste** (as duas construções do zero, na
+mesma máquina): a cobertura de hoje dá **344 páginas, 29 MB e 14,55 s**; a dos
+308 dá **958 páginas, 83 MB e 22,92 s**. As 616 páginas de concelho custam 8,4 s
+e 54 MB. O que cresce não é a prosa: as ligações internas conferidas passam de
+15 154 para **225 756**, porque o cartão localizador rende os 308 pontos em cada
+página e cada ponto com página é uma âncora. É essa conta, e não os bytes, que
+decide o tempo do `gate:html` quando as ≈4 870 páginas de linha chegarem.
+
+**Nove células de régua assumiam a cobertura de uma tarde** («um concelho com
+página, 307 sem») e ficavam vermelhas por o sítio ter crescido. Passam a ler a
+cobertura do `dist/` e a julgar a regra. Duas falhas anteriores registadas na
+§1.66 ficam corrigidas de passagem: a `3b` de `recibo.mjs`, que pedia 132 linhas
+a um livro-razão de 136, e a `3c` de `concelhos.mjs`.
+
+**Três coisas que a construção com 308 mostrou, e que não estavam pedidas:** uma
+âncora dentro de outra no índice do livro-razão (a porta e o valor da prova), um
+par de alvos de toque sobrepostos por 1,0 px na fila da pesquisa a 390 (a fila
+passa de um resultado a oito), e a saída em JSON de `medir-defeitos.mjs` cortada
+ao byte 65 534 porque era escrita com `console.log` antes de `process.exit()`. As
+três estão corrigidas e medidas.
+
+Os números, os comandos que os deram e os estragos plantados estão em
+`design/especime-v3/notas/concelhos.md`, §P2; as capturas do antes e do depois em
+`design/especime-v3/capturas/concelhos-2026-08-26/`.
+
+#### P2, os dados
+
+O exportador do motor escreveu 2 416 linhas em `ledger/claims/`, o registo da
+travessia em `ledger/cruzamentos/concelhos.json` e o ficheiro dos 308 em
+`src/data/concelhos.gerado.json`. Com eles presentes, a construção fechou com
+4 846 erros, e por baixo deles havia **um** defeito.
+
+**O ficheiro existia e a construção não o via.** `src/data/concelhos.mjs`
+procurava-o por um caminho relativo ao próprio módulo, e na construção o módulo é
+empacotado: o caminho passava a apontar para o pacote. `getStaticPaths` escrevia
+uma página de concelho e nada do lado do Astro fechava a construção. A regra
+está escrita, com todas as letras, no cabeçalho de `src/lib/prova.mjs` desde a
+primeira corrida dele, e o construtor não a seguiu. **Não apareceu no P2
+(estrutura) porque a cobertura dos 308 foi sempre construída com
+`CONCELHOS_GERADO`, um caminho absoluto que não passa por ali:** o caminho por
+omissão nunca foi exercido com um ficheiro a existir. Quem o apanhou foi o
+portão, com as duas contas de uma chave da prova, que é para o que elas existem:
+a prova, que corre em Node, dizia 308 e 307; a vista `dist`, que conta o que foi
+construído, dizia 1 e 0. Os outros 4 832 erros eram consequência.
+
+**Três decisões mais, cada uma com a sua medição.**
+
+(a) **A página do conjunto é uma página do livro-razão**, e o portão passa a
+sabê-lo. `data-linha-*` é a marca de um campo do livro-razão e valia em duas
+rotas; a página do conjunto lista as linhas do estudo com a mesma
+linha-espécime, os mesmos campos e o selo da própria linha em cada uma, e é para
+lá que essas linhas saíram do índice principal. A rota entra na lista. O que a
+guarda protege continua protegido.
+
+(b) **A prosa da agenda passa a comparar-se com as linhas que a própria página
+cita.** A regra recusa um número da prosa cuja sequência de algarismos seja a de
+um valor do livro-razão, e a regra escrita no portão é sobre a MESMA página. A
+implementação comparava com o livro-razão inteiro, e com 2 552 linhas deixou de
+distinguir coisa nenhuma: doze paragens, todas lidas uma a uma, nenhuma uma
+medição. «9» é o limiar de preços da habitação que a Comissão publica e é o
+prazo de pagamento de Alijó; «222» é o número do documento SWD(2026) 222 e é o
+índice de dívida de Salvaterra de Magos; «2022» é um ano e é o número de
+empresas de Coruche; «76» é o artigo 76.º e é o desemprego de Barrancos. Com o
+estreitamento, a regra continua a morder onde foi escrita para morder, e isso foi
+medido: metido na prosa o valor de uma linha que a agenda rende com selo, o
+portão fecha a construção.
+
+(c) **Évora lê a linha do desemprego que o motor escreveu.** A entrada à mão
+apontava para dezembro de 2024 e o exportador escreveu dezembro de 2025 com os
+outros 277 do continente: a mesma peça media dois períodos diferentes, que é o
+que a decisão D2 recusa, e a linha nova ficava sem concelho que a declarasse. A
+de 2024 continua citada na leitura breve, que é a frase que mede a queda desde
+2013.
+
+**A escala, com os dados e na forma final, do zero:** **269,84 s**, **6 406
+páginas**, **406 MB**, 29 436 ficheiros, 427 298 ligações internas conferidas. Metade do tempo e
+mais de metade do disco são os **cartões de partilha**: 10 212 PNG, 224 MB,
+102,6 s do passo `cartoes`, um por página de linha vezes duas medidas. Não é a
+página do concelho nem a do livro-razão que faz a escala; é o cartão.
+
+**A página do conjunto tinha 227 008 px de altura a 1280** (352 735 px a 390),
+com 308 grupos e 2 416 linhas: o motor de captura não a fotografava inteira. A
+decisão D6 tirou essas linhas do índice principal porque 2 500 numa página não se
+leem, e a página do conjunto reproduzia o mesmo problema dentro de si.
+
+**Decidido pelo diretor no mesmo dia: uma página de livro-razão por concelho.**
+`/livro-razao/concelhos/<slug>` · `/en/ledger/municipalities/<slug>`, com as
+linhas desse concelho na linha-espécime da casa, cada uma com o seu selo e a
+porta para a sua página de linha, o nome do concelho como título e sem mapa (um
+cartão localizador aqui punha os 308 pontos e as suas âncoras em mais 616 páginas
+sem nada a fazer). `/livro-razao/concelhos` passa a ser o ÍNDICE dos 308: a
+pesquisa, com destino na página de livro-razão do concelho; as três contagens do
+conjunto, que continuam a ser chaves da prova; e a lista por distrito, uma linha
+por concelho, na ordem da Carta. A porta da página do concelho para o livro-razão
+aponta para a página de livro-razão dele. Medido depois: o índice mede 10 751 px
+a 1280 e a página de Bragança 1 449 px, com as suas oito linhas.
+
+**A linha de um concelho não leva a sua contagem**, e a razão é a regra da casa.
+«Bragança · 8 linhas» é um número do próprio sítio, e a `IDENTIDADE.md` §10 exige
+que ele entre por `data-prova`, com porta e com o portão a recontá-lo: seriam 308
+chaves na tabela da prova ou 308 algarismos sem porta, e nenhum motivo de
+`data-nonledger` descreve uma contagem. A lista dá o nome, a porta e o estado em
+duas palavras; quantas linhas cada concelho tem lê-se na página dele.
+
+**Os cartões de partilha ficam em todas as páginas, páginas de linha incluídas**
+(diretor, contra a página de limites da Vercel lida no dia): o passo de construção
+pode levar 45 minutos em qualquer plano e não há limite superior para os ficheiros
+de saída criados durante uma construção; os limites de 100 MB / 1 GB e de 15 000
+ficheiros são das cargas de código pela linha de comandos e não de uma construção
+disparada pelo Git. **224 MB e 102,6 s são o custo medido da regra**, e ficam
+escritos como isso.
+
+**As três correções de Évora não geram entradas no registo de correções**
+(diretor, mesmo dia). O registo é dos VALORES e da PROVENIÊNCIA de uma linha, e é
+isso que as suas três naturezas sabem escrever: `correcao` e `atualizacao` movem o
+número, `proveniencia` move um dos sete campos de proveniência. Nas três
+correções, o valor e a proveniência estavam certos e não mudaram: o que mudou foi
+o rótulo que o sítio dá à medida e a disposição da página. Ficam registadas aqui,
+que é onde uma decisão de forma se regista, e a porta estreita que as recusava
+estava certa.
+
+A régua ganha a célula que faltava, e é a que teria apanhado o defeito de cima:
+**as entradas que o módulo dá e as páginas que a construção escreveu, contadas
+dos dois lados**. A matriz ganha a célula «concelho sem estudos» que o plano §3.5
+nomeia. A célula do concelho sem estudos deixou de estar «sem objecto» e foi
+reescrita para medir a regra e não a forma do ficheiro de teste: varre as 307
+páginas. Os seis estragos plantados, as medidas e os códigos de saída estão em
+`design/especime-v3/notas/concelhos.md` §P2 dados; as capturas com dados em
+`design/especime-v3/capturas/concelhos-2026-08-26/dados/`.
+
+#### P2, a leitura de fora
+
+Seis itens da leitura de olhos frescos, decididos pelo diretor a 26.08.2026.
+**A nota das empresas deixa de afirmar o que a verificação das fontes não
+confirmou:** o INE não diz «sede», diz «Localização geográfica», e o que está
+provado é que cada empresa é imputada a um único concelho. As outras duas
+superfícies vivas da mesma afirmação, as duas na página de Évora, foram
+corrigidas; ficaram por tocar as que relatam o que o trabalho 06 escreve, porque
+são leituras dele e não afirmações da casa sobre a série do INE.
+
+**A etiqueta de cobertura só se rende se houver outro estado de que se
+distinga.** Eram 617 «tem página» iguais no índice dos 308 e 616 no do
+livro-razão dos concelhos, com a linha de cobertura em cima já a dizer o estado
+do todo. As cadeias e a marca ficam, e voltam sozinhas no dia em que um concelho
+não tiver página: medido nos dois estados.
+
+**A legenda da dívida nomeia a lei e pára.** «É a lei que o define, não este
+sítio.» rendia-se em 616 páginas; é o sítio a falar de si. **E a Direção-Geral
+das Autarquias Locais deixa de ser chamada «o regulador»**: é a direção-geral que
+publica os dados das contas dos municípios.
+
+**O cartão localizador localiza e não navega.** Rendia 308 ligações dentro de um
+SVG com `role="img"`, em cada uma das 616 páginas de concelho, com alvos de
+4,5px de raio: a tecnologia de apoio pode achatar o que está dentro de uma
+imagem. A regra N4 fica onde ela é, na primeira página, cujo SVG passa a
+`role="group"`. Medido no `dist/` inteiro: zero ligações dentro de um
+`role="img"`, e as ligações internas conferidas a caírem de 427 298 para
+237 570.
+
+**Duas coisas que a régua não apanhava, e apanha agora.** A célula da
+autorreferência pedia zero na PRIMEIRA PÁGINA e «nada por classificar» em rota
+nenhuma: uma frase de autorreferência DECLARADA numa página de concelho passava
+pelas duas peneiras, e foi assim que a frase da legenda viveu em 616 páginas.
+Passa a exigir zero nas 1 278 rotas medidas. E uma frase CORRIGIDA não pode
+continuar declarada no inventário: plantadas de volta, a nota da sede e a que
+chamava «regulador» à DGAL não fecharam coisa nenhuma, porque estavam
+declaradas. As treze entradas saíram da lista.
+
+**A escala depois destes seis:** 268,08 s, 6 406 páginas, 386 MB.
+
+**Uma colisão de duas mãos na mesma árvore.** Com os seis itens construídos e
+ainda por cometer, outro agente correu `git checkout` sobre doze ficheiros que
+julgava serem de um script seu, e eram estes. Custou uma construção e cerca de
+vinte minutos; o trabalho foi refeito do relatório, cadeia a cadeia. Cada item
+passa a ser cometido assim que fica verde.
+
+#### P2, o fecho do construtor
+
+O que os itens E7 a E12 mudaram, construído e medido. A leitura de olhos frescos
+apanhou seis coisas; cinco resolveram-se no sítio, e a sexta voltou ao motor.
+
+**E7 · a nota das empresas deixa de afirmar o que a verificação não confirmou.**
+Dizia «por concelho da sede». A verificação das fontes mediu o contrário: a
+palavra «sede» não ocorre em nenhum dos 13 084 indicadores do catálogo do INE, o
+INE diz «Localização geográfica», e a única ocorrência de «Morada da sede da
+empresa» na nota metodológica está numa lista de variáveis de um serviço de
+listagens de sociedades, de janeiro de 2014. O que está provado é que cada
+empresa é imputada a um único concelho: os 308 somam exactamente o total
+nacional. A busca em todo o repositório deu mais duas superfícies vivas da mesma
+afirmação, as duas na página de Évora, e as duas foram corrigidas. Ficaram por
+tocar as que relatam o que o TRABALHO 06 escreve, porque são leituras dele e não
+afirmações da casa sobre a série do INE.
+
+**E8 · uma palavra de estado só se rende se houver outro estado de que se
+distinga.** Eram 617 «tem página» iguais no índice dos 308 e 616 no do
+livro-razão dos concelhos, com a linha de cobertura em cima já a dizer o estado
+do todo. As cadeias e a marca ficam, e voltam sozinhas no dia em que um concelho
+não tiver página: medido nos dois estados.
+
+**E9 · a referência do estudo.** O teto legal de endividamento é uma constante da
+lei, e o seu selo dizia, nas 308 páginas, o nome do estudo de Évora, onde tinha
+sido estabelecida. Das duas formas possíveis, a que deixa o livro-razão honesto é
+mudar o `study` no manifesto do motor, e não dar ao sítio uma noção nova de
+«constante da casa» que precisaria de uma lista escrita à mão ou de um campo
+novo. O diretor executou-a: `publisher/manifest.evora.json`, `rows[10]`, uma
+linha. O selo passa a ler «Concelhos: as medidas centrais» em Bragança e em
+Évora, medido nas duas. O estudo passa a ter 2 417 linhas, e a que não é de
+concelho nenhum ganha secção com nome no índice, «A referência do estudo», com o
+seu selo e a sua porta: uma linha do estudo que não apareça em página nenhuma é
+uma linha que o sítio guarda e não mostra.
+
+**E10 · a legenda da dívida nomeia a lei e pára.** «É a lei que o define, não
+este sítio.» rendia-se em 616 páginas. **E11 · a Direção-Geral das Autarquias
+Locais deixa de ser chamada «o regulador»**: é a direção-geral que publica os
+dados das contas dos municípios. **E12 · o cartão localizador localiza e não
+navega**: rendia 308 ligações dentro de um SVG com `role="img"` em cada uma das
+616 páginas de concelho, com alvos de 4,5px de raio. A regra N4 fica onde ela é,
+na primeira página, cujo SVG passa a `role="group"`.
+
+**Três coisas que a régua não apanhava, e apanha agora.** A célula da
+autorreferência pedia zero na PRIMEIRA PÁGINA e «nada por classificar» em rota
+nenhuma: uma frase de autorreferência DECLARADA numa página de concelho passava
+pelas duas peneiras, e foi assim que a frase do E10 viveu em 616 páginas; passa a
+exigir zero nas 1 278 rotas medidas. Uma frase CORRIGIDA não podia continuar
+declarada no inventário: plantadas de volta, a nota da sede e a que chamava
+«regulador» à DGAL não fecharam coisa nenhuma, e as treze entradas saíram da
+lista. E nenhuma ligação pode viver dentro de um `role="img"`, medido sobre o
+`dist/` inteiro.
+
+**A corrida completa, com os dados:** `npm run build` **267,04 s**, **6 406
+páginas**, **386 MB**, 29 436 ficheiros, 237 570 ligações internas conferidas, 44
+chaves da prova; `verify`, `typecheck`, `provar-eyetext`, `check-cadeia` e
+`medir-defeitos` a zero, com zero blocos por classificar; as dez réguas a sair
+com zero (concelhos 12/12, correcoes-c 12/12, matriz 87/87, mapa-navegacao 11/11,
+correcoes-a 32/32, recibo 13/13, correcoes-b 32/32, texto 19/19, 9/9 e 51/51).
+
+**Uma colisão de duas mãos na mesma árvore.** Com os itens E7, E8, E10, E11 e E12
+construídos e ainda por cometer, outro agente correu `git checkout` sobre doze
+ficheiros que julgava serem de um script seu, e eram estes. Custou uma construção
+e cerca de vinte e cinco minutos; o trabalho foi refeito do relatório, cadeia a
+cadeia, e nada se perdeu. Desde então cada item é cometido assim que fica verde,
+e há cópia de salvaguarda de cada ficheiro editado no rascunho.
+
+#### O fecho do bloco: as três verificações, a triagem, a colisão e o custo
+
+**A medição cega (Sonnet, M5, `medicoes/concelhos-M5-sonnet.md`, ≈470k símbolos).** Código próprio sobre a construção congelada e sobre os ficheiros das fontes alojados no motor: 40 concelhos tirados ao acaso (semente 20260826) mais os oito casos fixos, × 8 medidas = **320 comparações fonte, linha e página, zero discordâncias**; as somas de controlo exatas (população 11 424 031, empresas 1 576 606, desemprego do continente 289 539); a dívida e o limite iguais à leitura independente dos PDF em 307 de 307 e diferentes da linha TOTAL do próprio ficheiro por 8 e 4 euros (o arredondamento da DGAL célula a célula, provado a partir do ficheiro); as ausências as certas (as quatro peças vazias de Penedono, o desemprego vazio do Corvo); Évora a única página com secções além das peças, medido nas 308; dez cliques reais no mapa a abrir a página certa; a pesquisa a isolar Bragança; autorreferência 0. Os casos conhecidos vistos vermelhos. Duas discordâncias suas eram do texto e não da construção: a tabela-resumo do relatório das fontes cita a coluna (2) da DGAL e as linhas usam a (5) por decisão D3 (nota escrita no relatório); o brief esperava as 2 416 linhas na página do conjunto, que passou a índice. O seu «achado metodológico» (a régua do inventário a modificar doze ficheiros) estava errado e leva nota do lugar de direção: eram as edições por commitar do construtor, e é a colisão de baixo.
+
+**A leitura das páginas (Codex, `critica/2026-08-26-codex-leitura-concelhos.md`, 218 571 símbolos).** Dez concelhos ao acaso com as suas linhas e os ficheiros das fontes; **4 de 5 plantas** (a população de Chaves alterada, o excerto de Tabuaço partido, «1 234» numa peça vazia, o rótulo português na página inglesa de Beja); a falhada foi uma frase de autojustificação numa página só, a segunda vez que o Codex falha essa classe (a P5 da segunda leitura da parte 3 foi a mesma). Fora das plantas, quatro achados reais, corrigidos antes da fusão (E9 a E12: o selo do limite legal a nomear o estudo de Évora em 307 páginas, «É a lei que o define, não este sítio.» em 616 páginas, a DGAL chamada «regulador», 308 ligações dentro de um `svg` com `role="img"`), e dois do lugar de direção na pré-visualização (E7, a nota «da sede»; E8, as 617 fichas «tem página» iguais).
+
+**A leitura focada do inventário (Codex, `critica/2026-08-26-codex-leitura-voz-inventario.md`, 37 083 símbolos).** A forma nova para a classe que a leitura de páginas falha: o `diff` do inventário deste bloco, com duas plantas dentro; **2 de 2**. A leitura estrita reclassificaria trinta frases: os dois estados vazios de E4 corrigiram-se para duas palavras (E13); as contagens do livro-razão são chaves da prova e ficam; os parágrafos de método e ressalvas de Évora e as ledes do livro-razão são anteriores a este bloco e vão à decisão do diretor no bloco da grelha da voz (`briefs/BRIEF-grelha-da-voz.md`, G5).
+
+**A colisão.** Às 19:20 o medidor, a trabalhar na mesma árvore que o construtor contra a instrução de não correr comandos git que mudassem alguma coisa, tomou as edições por commitar do construtor por efeito secundário de uma régua e reverteu doze ficheiros com `git checkout`; o construtor refez o trabalho a partir do seu relatório em cerca de vinte e cinco minutos e passou a cometer cada item assim que fica verde. A culpa é do lugar de direção, que pôs dois agentes numa árvore; a regra a partir daqui: quem mede trabalha numa cópia, nunca na árvore do construtor.
+
+**O custo.** Reconhecimento (Sonnet) ≈240k; verificação das fontes (Opus) ≈285k; P1 no motor (Opus) ≈494k; P2 no sítio (Opus) ≈787k, colisão incluída; M5 (Sonnet) ≈470k; Codex 218 571 mais 37 083; total ≈2,53M símbolos, mais o lugar de direção; a estimativa do plano era 2,5 a 3,5M. **O que fica:** I70 (as zonas densas), I71 (a pesquisa sem script), I72 (o desemprego das ilhas), I73 (a releitura periódica), as decisões G5 e o bloco da grelha da voz.
+
 ## 4. O registo dos defeitos e dos adiamentos
 
 **Defeito registado 2026-08-16 (00:10), encontrado pela direcção no sítio no ar — RESOLVIDO na mesma noite (§1.37, no ar em `4217232`):** os selos acrescentados a 15.08 aos valores do cabeçalho da primeira página (308 · 11 · 15) rendem no cabeçalho com o rótulo inteiro do estudo («O Estado do País — apuramento próprio») e, no caso da contagem CAOP, com o marcador «[a verificar]» ao lado. Certo pela regra (todo o valor tem selo, para a sua linha), errado naquele sítio: no cabeçalho o selo deve ser só o glifo, com o rótulo apenas para leitores de ecrã. **Primeiro item do bloco V**, junto com a saída de «Edição de …», da introdução justificativa da primeira página e de «Estes indicadores não são escolha nossa…» (voz). Sem alteração ao portão: o selo continua ao pé do valor e a apontar para a linha própria.
@@ -11109,313 +11431,3 @@ rotas passam a ler **0**.
   Évora. A edição inglesa do estudo dos mandatos **não está alojada** neste
   sítio, e por isso a citação inglesa daquela nota não tem porta: a porta que
   existe abre a edição portuguesa do mesmo trabalho.
-
-### 1.68 As páginas dos 308 concelhos
-
-**Afecta:** nenhum
-
-Decisão do diretor a **26.08.2026** («let's do it») sobre o
-`design/especime-v3/PLANO-CONCELHOS-2026-08-26.md`, com as recomendações D1 a D7
-adotadas. O bloco corre em dois lugares ao mesmo tempo e os dois repositórios não
-partilham ficheiros: o motor produz as linhas, o sítio fica pronto para as
-receber. Ramo `concelhos-2026-08-26`, a partir de `main` em `992a3c9`.
-
-#### P2, a estrutura
-
-O contrato com o motor está na §1 do `briefs/BRIEF-concelhos-P2-estrutura.md` e
-não mudou: o estudo `concelhos-2026`, os ids das linhas por concelho e por
-medida, o ficheiro `src/data/concelhos.gerado.json` com os 308, o cruzamento em
-`ledger/cruzamentos/concelhos.json`, e as seis linhas de Évora que já existem a
-ficarem como estão. A medida a que este passo se obrigou, e cumpriu: **nenhum
-número entra no repositório que não venha de uma linha do livro-razão**, e o
-ficheiro dos 308 com que se construiu e mediu tem todas as linhas a `null` e vive
-fora do repositório.
-
-**A vista rende só o que existe.** Um concelho sem trabalho publicado não tem
-leitura breve, contas do município, linha do tempo das administrações, método,
-ressalvas nem trabalhos, e nenhuma dessas secções se rende: nem título, nem caixa
-vazia. As oito peças rendem-se sempre as oito e **pela ordem da Emenda 14**, com
-«sem linha ainda» onde o id é `null`; a distância desenhada só existe com as duas
-linhas que a fazem. E a disposição B deixa de desenhar a coluna do corpo quando
-não há corpo: 68ch de nada ao lado de um cartão de 300px é a célula vazia numa
-grelha que a `IDENTIDADE.md` §7 recusa.
-
-**Os rótulos das oito medidas passam a estar escritos uma vez**, em
-`src/data/concelhos.mjs`, e valem para os 308 e para Évora. `MUNICIPIOS_COM_PAGINA`
-compõe-se: a entrada escrita à mão, mais uma por objeto do ficheiro que o motor
-escreve. Enquanto ele não existir, a lista tem uma entrada, e isso é o estado
-honesto: **o repositório não leva um ficheiro gerado sem dados.**
-
-**O índice dos 308 perde a secção «Com página»**, que existia porque um concelho
-em 308 a tinha; com os 308, era a lista inteira repetida por cima da lista
-inteira. O mapa não precisou de nada: os pontos com página já eram ligações
-desde a §1.67, e com 308 medem-se 308 de 308 dentro de uma ligação.
-
-**O livro-razão ganha a página do conjunto** (decisão D6): `/livro-razao/concelhos`
-· `/en/ledger/municipalities`, com a pesquisa da casa e a lista por concelho, e
-três contagens que são chaves da prova recontadas pelo portão. As linhas do
-estudo saem da LISTA do índice principal, e não do livro-razão: as páginas de
-linha, o CSV e o JSON continuam a incluir tudo, e a porta e a contagem ficam no
-índice para que a diferença esteja dita. O estudo entra em `INTERNAL_SOURCES` e
-não em `WORKS`, porque não tem documento nenhum, e **o seu título perdeu a
-contagem**: «Concelhos: as medidas centrais dos 308» fechava a construção nas duas
-edições, porque o «308» é um algarismo do próprio sítio sem porta
-(`IDENTIDADE.md` §10).
-
-**As três correções de Évora** (decisões D5, D2 e D3): a peça 4 passa a «Empresas
-não financeiras», que é o termo do INE; as peças 7 e 8 passam a ler a fonte
-central e ficam as duas vazias, com as duas linhas municipais a descerem para a
-camada das contas com os seus selos; e a nota da dívida diz a coluna que usa.
-
-**O registo de correções não recebeu as três entradas, e a razão está medida.**
-As oito linhas de Évora são linhas cruzadas, e o mecanismo da casa escreve uma
-correção dentro da própria linha. Plantada a entrada, `check-cruzamento` fecha a
-construção, e a porta que existe para isso, `--accept-correction`, recusa por
-escrito: exige que o `value` publicado seja o `new_value` da correção. Uma
-correção de **rótulo de página** não muda valor nenhum, e por isso não cabe em
-nenhuma das três naturezas do registo. O §4 do brief pede «nenhum byte de
-`ledger/claims/`» e o E5 pede três entradas: as duas coisas não se podem ter com
-o mecanismo que existe. **Fica para decisão da direção**, e é decisão de forma.
-
-**A escala, medida com o ficheiro de teste** (as duas construções do zero, na
-mesma máquina): a cobertura de hoje dá **344 páginas, 29 MB e 14,55 s**; a dos
-308 dá **958 páginas, 83 MB e 22,92 s**. As 616 páginas de concelho custam 8,4 s
-e 54 MB. O que cresce não é a prosa: as ligações internas conferidas passam de
-15 154 para **225 756**, porque o cartão localizador rende os 308 pontos em cada
-página e cada ponto com página é uma âncora. É essa conta, e não os bytes, que
-decide o tempo do `gate:html` quando as ≈4 870 páginas de linha chegarem.
-
-**Nove células de régua assumiam a cobertura de uma tarde** («um concelho com
-página, 307 sem») e ficavam vermelhas por o sítio ter crescido. Passam a ler a
-cobertura do `dist/` e a julgar a regra. Duas falhas anteriores registadas na
-§1.66 ficam corrigidas de passagem: a `3b` de `recibo.mjs`, que pedia 132 linhas
-a um livro-razão de 136, e a `3c` de `concelhos.mjs`.
-
-**Três coisas que a construção com 308 mostrou, e que não estavam pedidas:** uma
-âncora dentro de outra no índice do livro-razão (a porta e o valor da prova), um
-par de alvos de toque sobrepostos por 1,0 px na fila da pesquisa a 390 (a fila
-passa de um resultado a oito), e a saída em JSON de `medir-defeitos.mjs` cortada
-ao byte 65 534 porque era escrita com `console.log` antes de `process.exit()`. As
-três estão corrigidas e medidas.
-
-Os números, os comandos que os deram e os estragos plantados estão em
-`design/especime-v3/notas/concelhos.md`, §P2; as capturas do antes e do depois em
-`design/especime-v3/capturas/concelhos-2026-08-26/`.
-
-#### P2, os dados
-
-O exportador do motor escreveu 2 416 linhas em `ledger/claims/`, o registo da
-travessia em `ledger/cruzamentos/concelhos.json` e o ficheiro dos 308 em
-`src/data/concelhos.gerado.json`. Com eles presentes, a construção fechou com
-4 846 erros, e por baixo deles havia **um** defeito.
-
-**O ficheiro existia e a construção não o via.** `src/data/concelhos.mjs`
-procurava-o por um caminho relativo ao próprio módulo, e na construção o módulo é
-empacotado: o caminho passava a apontar para o pacote. `getStaticPaths` escrevia
-uma página de concelho e nada do lado do Astro fechava a construção. A regra
-está escrita, com todas as letras, no cabeçalho de `src/lib/prova.mjs` desde a
-primeira corrida dele, e o construtor não a seguiu. **Não apareceu no P2
-(estrutura) porque a cobertura dos 308 foi sempre construída com
-`CONCELHOS_GERADO`, um caminho absoluto que não passa por ali:** o caminho por
-omissão nunca foi exercido com um ficheiro a existir. Quem o apanhou foi o
-portão, com as duas contas de uma chave da prova, que é para o que elas existem:
-a prova, que corre em Node, dizia 308 e 307; a vista `dist`, que conta o que foi
-construído, dizia 1 e 0. Os outros 4 832 erros eram consequência.
-
-**Três decisões mais, cada uma com a sua medição.**
-
-(a) **A página do conjunto é uma página do livro-razão**, e o portão passa a
-sabê-lo. `data-linha-*` é a marca de um campo do livro-razão e valia em duas
-rotas; a página do conjunto lista as linhas do estudo com a mesma
-linha-espécime, os mesmos campos e o selo da própria linha em cada uma, e é para
-lá que essas linhas saíram do índice principal. A rota entra na lista. O que a
-guarda protege continua protegido.
-
-(b) **A prosa da agenda passa a comparar-se com as linhas que a própria página
-cita.** A regra recusa um número da prosa cuja sequência de algarismos seja a de
-um valor do livro-razão, e a regra escrita no portão é sobre a MESMA página. A
-implementação comparava com o livro-razão inteiro, e com 2 552 linhas deixou de
-distinguir coisa nenhuma: doze paragens, todas lidas uma a uma, nenhuma uma
-medição. «9» é o limiar de preços da habitação que a Comissão publica e é o
-prazo de pagamento de Alijó; «222» é o número do documento SWD(2026) 222 e é o
-índice de dívida de Salvaterra de Magos; «2022» é um ano e é o número de
-empresas de Coruche; «76» é o artigo 76.º e é o desemprego de Barrancos. Com o
-estreitamento, a regra continua a morder onde foi escrita para morder, e isso foi
-medido: metido na prosa o valor de uma linha que a agenda rende com selo, o
-portão fecha a construção.
-
-(c) **Évora lê a linha do desemprego que o motor escreveu.** A entrada à mão
-apontava para dezembro de 2024 e o exportador escreveu dezembro de 2025 com os
-outros 277 do continente: a mesma peça media dois períodos diferentes, que é o
-que a decisão D2 recusa, e a linha nova ficava sem concelho que a declarasse. A
-de 2024 continua citada na leitura breve, que é a frase que mede a queda desde
-2013.
-
-**A escala, com os dados e na forma final, do zero:** **269,84 s**, **6 406
-páginas**, **406 MB**, 29 436 ficheiros, 427 298 ligações internas conferidas. Metade do tempo e
-mais de metade do disco são os **cartões de partilha**: 10 212 PNG, 224 MB,
-102,6 s do passo `cartoes`, um por página de linha vezes duas medidas. Não é a
-página do concelho nem a do livro-razão que faz a escala; é o cartão.
-
-**A página do conjunto tinha 227 008 px de altura a 1280** (352 735 px a 390),
-com 308 grupos e 2 416 linhas: o motor de captura não a fotografava inteira. A
-decisão D6 tirou essas linhas do índice principal porque 2 500 numa página não se
-leem, e a página do conjunto reproduzia o mesmo problema dentro de si.
-
-**Decidido pelo diretor no mesmo dia: uma página de livro-razão por concelho.**
-`/livro-razao/concelhos/<slug>` · `/en/ledger/municipalities/<slug>`, com as
-linhas desse concelho na linha-espécime da casa, cada uma com o seu selo e a
-porta para a sua página de linha, o nome do concelho como título e sem mapa (um
-cartão localizador aqui punha os 308 pontos e as suas âncoras em mais 616 páginas
-sem nada a fazer). `/livro-razao/concelhos` passa a ser o ÍNDICE dos 308: a
-pesquisa, com destino na página de livro-razão do concelho; as três contagens do
-conjunto, que continuam a ser chaves da prova; e a lista por distrito, uma linha
-por concelho, na ordem da Carta. A porta da página do concelho para o livro-razão
-aponta para a página de livro-razão dele. Medido depois: o índice mede 10 751 px
-a 1280 e a página de Bragança 1 449 px, com as suas oito linhas.
-
-**A linha de um concelho não leva a sua contagem**, e a razão é a regra da casa.
-«Bragança · 8 linhas» é um número do próprio sítio, e a `IDENTIDADE.md` §10 exige
-que ele entre por `data-prova`, com porta e com o portão a recontá-lo: seriam 308
-chaves na tabela da prova ou 308 algarismos sem porta, e nenhum motivo de
-`data-nonledger` descreve uma contagem. A lista dá o nome, a porta e o estado em
-duas palavras; quantas linhas cada concelho tem lê-se na página dele.
-
-**Os cartões de partilha ficam em todas as páginas, páginas de linha incluídas**
-(diretor, contra a página de limites da Vercel lida no dia): o passo de construção
-pode levar 45 minutos em qualquer plano e não há limite superior para os ficheiros
-de saída criados durante uma construção; os limites de 100 MB / 1 GB e de 15 000
-ficheiros são das cargas de código pela linha de comandos e não de uma construção
-disparada pelo Git. **224 MB e 102,6 s são o custo medido da regra**, e ficam
-escritos como isso.
-
-**As três correções de Évora não geram entradas no registo de correções**
-(diretor, mesmo dia). O registo é dos VALORES e da PROVENIÊNCIA de uma linha, e é
-isso que as suas três naturezas sabem escrever: `correcao` e `atualizacao` movem o
-número, `proveniencia` move um dos sete campos de proveniência. Nas três
-correções, o valor e a proveniência estavam certos e não mudaram: o que mudou foi
-o rótulo que o sítio dá à medida e a disposição da página. Ficam registadas aqui,
-que é onde uma decisão de forma se regista, e a porta estreita que as recusava
-estava certa.
-
-A régua ganha a célula que faltava, e é a que teria apanhado o defeito de cima:
-**as entradas que o módulo dá e as páginas que a construção escreveu, contadas
-dos dois lados**. A matriz ganha a célula «concelho sem estudos» que o plano §3.5
-nomeia. A célula do concelho sem estudos deixou de estar «sem objecto» e foi
-reescrita para medir a regra e não a forma do ficheiro de teste: varre as 307
-páginas. Os seis estragos plantados, as medidas e os códigos de saída estão em
-`design/especime-v3/notas/concelhos.md` §P2 dados; as capturas com dados em
-`design/especime-v3/capturas/concelhos-2026-08-26/dados/`.
-
-#### P2, a leitura de fora
-
-Seis itens da leitura de olhos frescos, decididos pelo diretor a 26.08.2026.
-**A nota das empresas deixa de afirmar o que a verificação das fontes não
-confirmou:** o INE não diz «sede», diz «Localização geográfica», e o que está
-provado é que cada empresa é imputada a um único concelho. As outras duas
-superfícies vivas da mesma afirmação, as duas na página de Évora, foram
-corrigidas; ficaram por tocar as que relatam o que o trabalho 06 escreve, porque
-são leituras dele e não afirmações da casa sobre a série do INE.
-
-**A etiqueta de cobertura só se rende se houver outro estado de que se
-distinga.** Eram 617 «tem página» iguais no índice dos 308 e 616 no do
-livro-razão dos concelhos, com a linha de cobertura em cima já a dizer o estado
-do todo. As cadeias e a marca ficam, e voltam sozinhas no dia em que um concelho
-não tiver página: medido nos dois estados.
-
-**A legenda da dívida nomeia a lei e pára.** «É a lei que o define, não este
-sítio.» rendia-se em 616 páginas; é o sítio a falar de si. **E a Direção-Geral
-das Autarquias Locais deixa de ser chamada «o regulador»**: é a direção-geral que
-publica os dados das contas dos municípios.
-
-**O cartão localizador localiza e não navega.** Rendia 308 ligações dentro de um
-SVG com `role="img"`, em cada uma das 616 páginas de concelho, com alvos de
-4,5px de raio: a tecnologia de apoio pode achatar o que está dentro de uma
-imagem. A regra N4 fica onde ela é, na primeira página, cujo SVG passa a
-`role="group"`. Medido no `dist/` inteiro: zero ligações dentro de um
-`role="img"`, e as ligações internas conferidas a caírem de 427 298 para
-237 570.
-
-**Duas coisas que a régua não apanhava, e apanha agora.** A célula da
-autorreferência pedia zero na PRIMEIRA PÁGINA e «nada por classificar» em rota
-nenhuma: uma frase de autorreferência DECLARADA numa página de concelho passava
-pelas duas peneiras, e foi assim que a frase da legenda viveu em 616 páginas.
-Passa a exigir zero nas 1 278 rotas medidas. E uma frase CORRIGIDA não pode
-continuar declarada no inventário: plantadas de volta, a nota da sede e a que
-chamava «regulador» à DGAL não fecharam coisa nenhuma, porque estavam
-declaradas. As treze entradas saíram da lista.
-
-**A escala depois destes seis:** 268,08 s, 6 406 páginas, 386 MB.
-
-**Uma colisão de duas mãos na mesma árvore.** Com os seis itens construídos e
-ainda por cometer, outro agente correu `git checkout` sobre doze ficheiros que
-julgava serem de um script seu, e eram estes. Custou uma construção e cerca de
-vinte minutos; o trabalho foi refeito do relatório, cadeia a cadeia. Cada item
-passa a ser cometido assim que fica verde.
-
-#### P2, o fecho do construtor
-
-O que os itens E7 a E12 mudaram, construído e medido. A leitura de olhos frescos
-apanhou seis coisas; cinco resolveram-se no sítio, e a sexta voltou ao motor.
-
-**E7 · a nota das empresas deixa de afirmar o que a verificação não confirmou.**
-Dizia «por concelho da sede». A verificação das fontes mediu o contrário: a
-palavra «sede» não ocorre em nenhum dos 13 084 indicadores do catálogo do INE, o
-INE diz «Localização geográfica», e a única ocorrência de «Morada da sede da
-empresa» na nota metodológica está numa lista de variáveis de um serviço de
-listagens de sociedades, de janeiro de 2014. O que está provado é que cada
-empresa é imputada a um único concelho: os 308 somam exactamente o total
-nacional. A busca em todo o repositório deu mais duas superfícies vivas da mesma
-afirmação, as duas na página de Évora, e as duas foram corrigidas. Ficaram por
-tocar as que relatam o que o TRABALHO 06 escreve, porque são leituras dele e não
-afirmações da casa sobre a série do INE.
-
-**E8 · uma palavra de estado só se rende se houver outro estado de que se
-distinga.** Eram 617 «tem página» iguais no índice dos 308 e 616 no do
-livro-razão dos concelhos, com a linha de cobertura em cima já a dizer o estado
-do todo. As cadeias e a marca ficam, e voltam sozinhas no dia em que um concelho
-não tiver página: medido nos dois estados.
-
-**E9 · a referência do estudo.** O teto legal de endividamento é uma constante da
-lei, e o seu selo dizia, nas 308 páginas, o nome do estudo de Évora, onde tinha
-sido estabelecida. Das duas formas possíveis, a que deixa o livro-razão honesto é
-mudar o `study` no manifesto do motor, e não dar ao sítio uma noção nova de
-«constante da casa» que precisaria de uma lista escrita à mão ou de um campo
-novo. O diretor executou-a: `publisher/manifest.evora.json`, `rows[10]`, uma
-linha. O selo passa a ler «Concelhos: as medidas centrais» em Bragança e em
-Évora, medido nas duas. O estudo passa a ter 2 417 linhas, e a que não é de
-concelho nenhum ganha secção com nome no índice, «A referência do estudo», com o
-seu selo e a sua porta: uma linha do estudo que não apareça em página nenhuma é
-uma linha que o sítio guarda e não mostra.
-
-**E10 · a legenda da dívida nomeia a lei e pára.** «É a lei que o define, não
-este sítio.» rendia-se em 616 páginas. **E11 · a Direção-Geral das Autarquias
-Locais deixa de ser chamada «o regulador»**: é a direção-geral que publica os
-dados das contas dos municípios. **E12 · o cartão localizador localiza e não
-navega**: rendia 308 ligações dentro de um SVG com `role="img"` em cada uma das
-616 páginas de concelho, com alvos de 4,5px de raio. A regra N4 fica onde ela é,
-na primeira página, cujo SVG passa a `role="group"`.
-
-**Três coisas que a régua não apanhava, e apanha agora.** A célula da
-autorreferência pedia zero na PRIMEIRA PÁGINA e «nada por classificar» em rota
-nenhuma: uma frase de autorreferência DECLARADA numa página de concelho passava
-pelas duas peneiras, e foi assim que a frase do E10 viveu em 616 páginas; passa a
-exigir zero nas 1 278 rotas medidas. Uma frase CORRIGIDA não podia continuar
-declarada no inventário: plantadas de volta, a nota da sede e a que chamava
-«regulador» à DGAL não fecharam coisa nenhuma, e as treze entradas saíram da
-lista. E nenhuma ligação pode viver dentro de um `role="img"`, medido sobre o
-`dist/` inteiro.
-
-**A corrida completa, com os dados:** `npm run build` **267,04 s**, **6 406
-páginas**, **386 MB**, 29 436 ficheiros, 237 570 ligações internas conferidas, 44
-chaves da prova; `verify`, `typecheck`, `provar-eyetext`, `check-cadeia` e
-`medir-defeitos` a zero, com zero blocos por classificar; as dez réguas a sair
-com zero (concelhos 12/12, correcoes-c 12/12, matriz 87/87, mapa-navegacao 11/11,
-correcoes-a 32/32, recibo 13/13, correcoes-b 32/32, texto 19/19, 9/9 e 51/51).
-
-**Uma colisão de duas mãos na mesma árvore.** Com os itens E7, E8, E10, E11 e E12
-construídos e ainda por cometer, outro agente correu `git checkout` sobre doze
-ficheiros que julgava serem de um script seu, e eram estes. Custou uma construção
-e cerca de vinte e cinco minutos; o trabalho foi refeito do relatório, cadeia a
-cadeia, e nada se perdeu. Desde então cada item é cometido assim que fica verde,
-e há cópia de salvaguarda de cada ficheiro editado no rascunho.
