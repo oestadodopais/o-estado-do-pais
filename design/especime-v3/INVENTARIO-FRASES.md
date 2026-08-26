@@ -278,8 +278,6 @@ quem escreveu a página.*
 | conteudo | A diferença entre as duas contas da mesma dívida |
 | conteudo | A dívida contra o teto legal |
 | conteudo | A execução da receita e o prazo médio de pagamento são lidos da prestação de contas do próprio município: a sua linha no livro-razão nomeia esse documento e a página onde estão. As duas vozes de fora sobre estas contas são a opinião assinada do auditor e a série anual do regulador, e as duas estão nesta página. |
-| conteudo | A série anual do regulador ainda não chegou a este mandato. |
-| conteudo | A série anual do regulador usada nesta página começa depois deste mandato. |
 | conteudo | A última prestação de contas do município |
 | conteudo | Accounts of the year before last |
 | conteudo | Antes do primeiro ano de contas legível nesta janela. |
@@ -313,7 +311,6 @@ quem escreveu a página.*
 | conteudo | In office. |
 | conteudo | Inherited |
 | conteudo | Inscritos no fim do mês nos serviços de emprego, ficheiro mensal por concelho. |
-| conteudo | Integrated business accounts, by municipality of the registered office. |
 | conteudo | Left |
 | conteudo | Limite de dívida |
 | conteudo | Lugares |
@@ -333,7 +330,6 @@ quem escreveu a página.*
 | conteudo | O que foi orçamentado, o que foi pago e o que ficou em dívida no município de Évora. |
 | conteudo | O que o município orçamentou, o que cobrou, o que pagou, e o que dizia dever no fim do ano. São números do próprio município sobre si mesmo: a prestação de contas é dele. |
 | conteudo | O regulador |
-| conteudo | O regulador e o município publicam a dívida do mesmo ano com uma diferença. A diferença é pequena, e mostra-se porque é o único sítio onde uma voz de fora e a voz do próprio medem a mesma coisa. |
 | conteudo | O regulador publica |
 | conteudo | O traço fino é a dívida total que o regulador publica para o concelho; a barra é a distância até ao limite legal do mesmo ano, que é o fio da direita. O índice mede uma contra o outro numa escala em que o teto é o valor permitido. |
 | conteudo | On the recovery plan: the work reads the state auditor’s catalogue, not its audits; the contracts window is an upper bound on a truncated period; and no European Union figure exists for a municipality. |
@@ -359,11 +355,8 @@ quem escreveu a página.*
 | conteudo | Revenue collected |
 | conteudo | Revenue execution and the average payment time are read from the municipality’s own accounts: their ledger rows name that document and the page they sit on. The two outside voices on these accounts are the auditor’s signed opinion and the regulator’s annual series, and both are on this page. |
 | conteudo | Seats |
-| conteudo | Sistema de contas integradas das empresas, por concelho da sede. |
 | conteudo | Sobre as contas deste município existem duas vozes que não são a dele: a opinião assinada do auditor independente, e a série anual do regulador, que publica por município e por ano o mesmo conceito legal de dívida que o relatório usa, compilado do lado de fora. As duas estão nesta página. |
 | conteudo | Sobre o plano de recuperação: o trabalho lê o catálogo do tribunal de contas, não as suas auditorias; a janela de contratos é um limite superior sobre um período truncado; e não existe um valor da União Europeia para um município. |
-| conteudo | Série anual da Direção-Geral das Autarquias Locais, o regulador das contas municipais. |
-| conteudo | The annual series of the local-government directorate, the regulator of municipal accounts. |
 | conteudo | The debt against the legal ceiling |
 | conteudo | The gap between the two accounts of the same debt |
 | conteudo | The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue. The law defines it, not this site. |
@@ -374,8 +367,6 @@ quem escreveu a página.*
 | conteudo | The regulator |
 | conteudo | The regulator and the municipality publish the same year’s debt with a difference between them. The difference is small, and it is shown because it is the only place where an outside voice and the municipality’s own voice measure the same thing. |
 | conteudo | The regulator publishes |
-| conteudo | The regulator’s annual series has not yet reached this term. |
-| conteudo | The regulator’s annual series used on this page begins after this term. |
 | conteudo | The statistics institute’s annual estimate for the municipality. |
 | conteudo | The thin line is the total debt the regulator publishes for the concelho; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. |
 | conteudo | The works about this concelho |
@@ -818,10 +809,6 @@ exclusão que a subetapa 3c escreveu para a lista por distritos.
 | conteudo | Prazo médio de pagamento |
 | conteudo | Revenue execution |
 | conteudo | Average payment time |
-| conteudo | Série anual da Direção-Geral das Autarquias Locais, o regulador das contas municipais. Exclui dívidas não orçamentais e exceções legais. |
-| conteudo | The annual series of the local-government directorate, the regulator of municipal accounts. Excludes non-budgetary debt and legal exceptions. |
-| conteudo | Lista anual da Direção-Geral das Autarquias Locais, o regulador das contas municipais. |
-| conteudo | The annual list of the local-government directorate, the regulator of municipal accounts. |
 | conteudo | 136 afirmações · 19 calculadas · 0 linhas de concelhos |
 | conteudo | 136 claims · 19 calculated · 0 municipality rows |
 | conteudo | 2552 afirmações · 325 calculadas · 2416 linhas de concelhos |
@@ -856,6 +843,8 @@ exclusão que a subetapa 3c escreveu para a lista por distritos.
 | conteudo | 0 rows · 0 municipalities · 0 with complete provenance |
 
 ## Bloco dos 308 concelhos · P2 (os dados), 26.08.2026
+
+**UMA FRASE CORRIGIDA SAI DESTA LISTA.** O ficheiro guardava as duas leituras de uma contagem lado a lado, porque uma contagem volta a ser o que era no dia em que o livro-razão encolher. Uma frase que foi CORRIGIDA é outra coisa: se continuar declarada, repô-la passa em silêncio, e foi isso que se mediu ao plantar de volta a nota da sede e a que chamava «regulador» à DGAL — nenhuma das duas fechou nada. As entradas das frases que os itens E7 e E11 corrigiram saíram desta lista; repor uma delas passa a ser um bloco por classificar, e a régua fecha.
 
 *As frases que os itens E7 a E12 mudaram: a nota das empresas, que deixou de afirmar o que a verificação das fontes não confirmou; a legenda da dívida, sem a oração em que o sítio falava de si; e as que chamavam «regulador» à Direção-Geral das Autarquias Locais. As duas últimas linhas da tabela são a frase que SAIU, declarada pelo que ela era: autorreferência. Fica declarada para que a régua a apanhe pelo nome se alguém a repuser, em vez de a apanhar como bloco por classificar.*
 
