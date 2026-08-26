@@ -11352,3 +11352,70 @@ ainda por cometer, outro agente correu `git checkout` sobre doze ficheiros que
 julgava serem de um script seu, e eram estes. Custou uma construção e cerca de
 vinte minutos; o trabalho foi refeito do relatório, cadeia a cadeia. Cada item
 passa a ser cometido assim que fica verde.
+
+#### P2, o fecho do construtor
+
+O que os itens E7 a E12 mudaram, construído e medido. A leitura de olhos frescos
+apanhou seis coisas; cinco resolveram-se no sítio, e a sexta voltou ao motor.
+
+**E7 · a nota das empresas deixa de afirmar o que a verificação não confirmou.**
+Dizia «por concelho da sede». A verificação das fontes mediu o contrário: a
+palavra «sede» não ocorre em nenhum dos 13 084 indicadores do catálogo do INE, o
+INE diz «Localização geográfica», e a única ocorrência de «Morada da sede da
+empresa» na nota metodológica está numa lista de variáveis de um serviço de
+listagens de sociedades, de janeiro de 2014. O que está provado é que cada
+empresa é imputada a um único concelho: os 308 somam exactamente o total
+nacional. A busca em todo o repositório deu mais duas superfícies vivas da mesma
+afirmação, as duas na página de Évora, e as duas foram corrigidas. Ficaram por
+tocar as que relatam o que o TRABALHO 06 escreve, porque são leituras dele e não
+afirmações da casa sobre a série do INE.
+
+**E8 · uma palavra de estado só se rende se houver outro estado de que se
+distinga.** Eram 617 «tem página» iguais no índice dos 308 e 616 no do
+livro-razão dos concelhos, com a linha de cobertura em cima já a dizer o estado
+do todo. As cadeias e a marca ficam, e voltam sozinhas no dia em que um concelho
+não tiver página: medido nos dois estados.
+
+**E9 · a referência do estudo.** O teto legal de endividamento é uma constante da
+lei, e o seu selo dizia, nas 308 páginas, o nome do estudo de Évora, onde tinha
+sido estabelecida. Das duas formas possíveis, a que deixa o livro-razão honesto é
+mudar o `study` no manifesto do motor, e não dar ao sítio uma noção nova de
+«constante da casa» que precisaria de uma lista escrita à mão ou de um campo
+novo. O diretor executou-a: `publisher/manifest.evora.json`, `rows[10]`, uma
+linha. O selo passa a ler «Concelhos: as medidas centrais» em Bragança e em
+Évora, medido nas duas. O estudo passa a ter 2 417 linhas, e a que não é de
+concelho nenhum ganha secção com nome no índice, «A referência do estudo», com o
+seu selo e a sua porta: uma linha do estudo que não apareça em página nenhuma é
+uma linha que o sítio guarda e não mostra.
+
+**E10 · a legenda da dívida nomeia a lei e pára.** «É a lei que o define, não
+este sítio.» rendia-se em 616 páginas. **E11 · a Direção-Geral das Autarquias
+Locais deixa de ser chamada «o regulador»**: é a direção-geral que publica os
+dados das contas dos municípios. **E12 · o cartão localizador localiza e não
+navega**: rendia 308 ligações dentro de um SVG com `role="img"` em cada uma das
+616 páginas de concelho, com alvos de 4,5px de raio. A regra N4 fica onde ela é,
+na primeira página, cujo SVG passa a `role="group"`.
+
+**Três coisas que a régua não apanhava, e apanha agora.** A célula da
+autorreferência pedia zero na PRIMEIRA PÁGINA e «nada por classificar» em rota
+nenhuma: uma frase de autorreferência DECLARADA numa página de concelho passava
+pelas duas peneiras, e foi assim que a frase do E10 viveu em 616 páginas; passa a
+exigir zero nas 1 278 rotas medidas. Uma frase CORRIGIDA não podia continuar
+declarada no inventário: plantadas de volta, a nota da sede e a que chamava
+«regulador» à DGAL não fecharam coisa nenhuma, e as treze entradas saíram da
+lista. E nenhuma ligação pode viver dentro de um `role="img"`, medido sobre o
+`dist/` inteiro.
+
+**A corrida completa, com os dados:** `npm run build` **267,04 s**, **6 406
+páginas**, **386 MB**, 29 436 ficheiros, 237 570 ligações internas conferidas, 44
+chaves da prova; `verify`, `typecheck`, `provar-eyetext`, `check-cadeia` e
+`medir-defeitos` a zero, com zero blocos por classificar; as dez réguas a sair
+com zero (concelhos 12/12, correcoes-c 12/12, matriz 87/87, mapa-navegacao 11/11,
+correcoes-a 32/32, recibo 13/13, correcoes-b 32/32, texto 19/19, 9/9 e 51/51).
+
+**Uma colisão de duas mãos na mesma árvore.** Com os itens E7, E8, E10, E11 e E12
+construídos e ainda por cometer, outro agente correu `git checkout` sobre doze
+ficheiros que julgava serem de um script seu, e eram estes. Custou uma construção
+e cerca de vinte e cinco minutos; o trabalho foi refeito do relatório, cadeia a
+cadeia, e nada se perdeu. Desde então cada item é cometido assim que fica verde,
+e há cópia de salvaguarda de cada ficheiro editado no rascunho.

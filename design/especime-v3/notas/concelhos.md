@@ -337,3 +337,55 @@ Os quatro últimos são plantados no `dist/`, que é o que o portão e as régua
 ### 19 · Uma colisão de duas mãos na mesma árvore
 
 Às 19:20, com os itens E7 a E12 construídos e ainda por cometer, outro agente correu `git checkout` sobre doze ficheiros que julgava serem de um script seu. Eram as alterações destes seis itens: `INVENTARIO-FRASES.md`, `MapaRespira.astro`, `Pesquisa.astro`, `concelhos.mjs`, `municipios.mjs`, `strings.mjs`, `inicio.mjs`, `LivroConcelhosView.astro`, `MunicipiosView.astro`, e as três réguas. Os ficheiros novos, por indexar, não foram tocados. **Custou uma construção e cerca de vinte minutos**, porque o trabalho estava escrito e foi refeito do próprio relatório, cadeia a cadeia. Desde então cada item é cometido assim que fica verde, e há cópia de salvaguarda de cada ficheiro editado no rascunho, para que um repetir custe um item e não seis.
+
+### 20 · O fecho: a referência do estudo, e a corrida final
+
+O diretor executou a decisão (a) do item E9 no motor: `publisher/manifest.evora.json`,
+`rows[10]`, o `study` do teto legal passa de `evora-orcamentado-pago-devido-2025`
+para `concelhos-2026`, e a exportação de Évora correu outra vez. Do lado do
+sítio, três consequências, todas medidas.
+
+**O selo.** Em Bragança e em Évora, o selo do teto legal lê agora «Concelhos: as
+medidas centrais». Era, nas 308 páginas, o nome do estudo de Évora.
+
+**A contagem.** O estudo passa de 2 416 para **2 417** linhas, e as três chaves
+da prova recontam nas duas vistas, com a construção a fechar verde:
+`concelhos_linhas` 2 417, `concelhos_no_livro` 308, `concelhos_linhas_completas`
+2 417.
+
+**A página.** A linha nova não é de concelho nenhum, e por isso caía no estado
+das «linhas sem concelho declarado». Passa a ter secção com nome no índice dos
+concelhos, **«A referência do estudo»**, na mesma linha-espécime das outras: o
+teto legal é uma constante da lei (artigo 52.º da Lei n.º 73/2013, lida no
+Anuário Financeiro dos Municípios Portugueses), é contra ela que os 307 índices
+se calculam, e é a referência do estudo inteiro.
+
+**A régua deixa de somar só as 308 páginas.** Passa a exigir que as linhas das
+páginas de concelho MAIS as da referência dêem a contagem declarada. Vista
+vermelha com a secção da referência retirada do índice: «308 páginas com 2 416
+linhas ao todo, mais 0 de referência (soma 2 416 para 2 417 declaradas)».
+
+**A corrida final, com os dados:**
+
+| comando | saída | o que diz |
+|---|---|---|
+| `npm run build` | 0 | **267,04 s** · **6 406 páginas** · **386 MB** · 29 436 ficheiros · 237 570 ligações internas · 44 chaves da prova |
+| `npm run verify` | 0 | |
+| `npm run typecheck` | 0 | |
+| `node scripts/provar-eyetext.mjs` | 0 | |
+| `node scripts/check-cadeia.mjs` | 0 | |
+| `node scripts/medir-defeitos.mjs` | 0 | 0 blocos por classificar |
+| `tests/municipio/concelhos.mjs` | 0 | 12 de 12 |
+| `tests/municipio/correcoes-c.mjs` | 0 | 12 de 12 |
+| `tests/inicio/matriz.mjs` | 0 | 87 de 87 |
+| `tests/inicio/mapa-navegacao.mjs` | 0 | 11 de 11 |
+| `tests/inicio/correcoes-a.mjs` | 0 | 32 de 32 |
+| `tests/linha/recibo.mjs` | 0 | 13 de 13 |
+| `tests/linha/correcoes-b.mjs` | 0 | 32 de 32 |
+| `tests/texto/correcoes-b.mjs` | 0 | 19 de 19 |
+| `tests/texto/correcoes-c.mjs` | 0 | 9 de 9 |
+| `tests/texto/leitura.mjs` | 0 | 51/51 |
+
+Os dois ficheiros que o exportador reescreveu (`ledger/claims/indice-de-divida-limite-legal.yml`
+e `ledger/cruzamentos/evora.json`) ficam por indexar, como o resto dos dados: quem
+os comete é o lugar de direção.
