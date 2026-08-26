@@ -677,6 +677,8 @@ const COM_PAGINA_NO_DIST = fs.existsSync(path.join(DIST, 'municipios'))
 const PROCURADO = COM_PAGINA_NO_DIST.has('beja')
   ? { termo: 'beja', nome: 'Beja', temPagina: true }
   : { termo: 'beja', nome: 'Beja', temPagina: false };
+/** Há dois estados de cobertura na Carta? É o que decide se a etiqueta se rende. */
+const COBERTURA_DISTINGUE = COM_PAGINA_NO_DIST.size > 0 && COM_PAGINA_NO_DIST.size < 308;
 for (const largura of [1280, 390]) {
   const p = await pagina({ largura });
   await p.goto(base + '/', { waitUntil: 'networkidle' });
@@ -712,11 +714,12 @@ for (const largura of [1280, 390]) {
       escrito.length === 1 &&
       escrito[0].nome === PROCURADO.nome &&
       escrito[0].porta === PROCURADO.temPagina &&
-      (escrito[0].estado ?? '').length > 0,
+      /* A ETIQUETA DE ESTADO SÓ SE RENDE SE A LISTA DISTINGUIR (item E8, P2). */
+      Boolean(escrito[0].estado) === COBERTURA_DISTINGUE,
     `caixa vazia: ${vazio.length} resultado(s), todos com página — ${vazio
       .slice(0, 3)
       .map((r) => `${r.nome} → ${r.href}`)
-      .join(' · ')}${vazio.length > 3 ? ' …' : ''} · com «${PROCURADO.termo}» escrito: ${escrito
+      .join(' · ')}${vazio.length > 3 ? ' …' : ''} · a lista distingue: ${COBERTURA_DISTINGUE} · com «${PROCURADO.termo}» escrito: ${escrito
       .map((r) => `${r.nome} (porta ${r.porta}, «${r.estado}»)`)
       .join(' · ')}`,
   );
@@ -1896,15 +1899,28 @@ for (const largura of [1280, 390]) {
      obriga alguém a decidir. As outras rotas continuam impressas na prova, para
      que o número não desapareça de vista. */
   const daPrimeira = rotas.filter(([rota]) => rota === '/' || rota === '/en');
+  /* A CÉLULA APERTA (item E10, P2). Pedia autorreferência 0 na PRIMEIRA PÁGINA e
+     «nada por classificar» em rota nenhuma, e a segunda metade era a única que
+     olhava para as outras rotas. Uma frase de autorreferência DECLARADA numa
+     página de concelho passava por isso mesmo: declarada, e por isso não «por
+     classificar»; e fora da primeira página, e por isso não contada. Foi assim
+     que «É a lei que o define, não este sítio.» viveu em 616 páginas.
+     Autorreferência é zero em TODAS as rotas medidas, que é o que a Emenda 15
+     diz. */
+  const comAutorreferencia = rotas.filter(([, r]) => r.por_classe.autorreferencia > 0);
   conta(
-    '2l · Emenda 15 · zero frases de autorreferência na primeira página, nas duas edições',
+    '2l · Emenda 15 · zero frases de autorreferência em todas as rotas medidas',
     m.inventario_existe &&
+      comAutorreferencia.length === 0 &&
       daPrimeira.length === 2 &&
       daPrimeira.every(([, r]) => r.por_classe.autorreferencia === 0) &&
       rotas.every(([, r]) => r.nao_classificados.length === 0),
-    rotas
-      .map(([rota, r]) => `${rota}: conteúdo ${r.por_classe.conteudo} · navegação ${r.por_classe.navegacao} · autorreferência ${r.por_classe.autorreferencia} · por classificar ${r.nao_classificados.length}`)
-      .join(' · '),
+    `${rotas.length} rotas medidas · autorreferência > 0 em ${comAutorreferencia.length}` +
+      `${comAutorreferencia.length ? `: ${comAutorreferencia.slice(0, 5).map(([r, v]) => `${r}=${v.por_classe.autorreferencia}`).join(', ')}` : ''} · ` +
+      `por classificar em ${rotas.filter(([, r]) => r.nao_classificados.length).length} rota(s) · ` +
+      daPrimeira
+        .map(([rota, r]) => `${rota}: conteúdo ${r.por_classe.conteudo} · navegação ${r.por_classe.navegacao} · autorreferência ${r.por_classe.autorreferencia}`)
+        .join(' · '),
   );
 }
 

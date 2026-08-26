@@ -835,6 +835,10 @@ exclusão que a subetapa 3c escreveu para a lista por distritos.
 | conteudo | One row per measure, with the value as the source published it, the unit, who produced it and the date it was read. |
 | conteudo | As linhas do livro-razão com as medidas que as fontes centrais publicam para o concelho de <lugar>. |
 | conteudo | The ledger rows with the measures central sources publish for the municipality of <lugar>. |
+| conteudo | Sistema de contas integradas das empresas; cada empresa conta num único concelho. |
+| conteudo | Integrated business accounts; each enterprise counts in a single municipality. |
+| conteudo | Nenhuma fonte publica um produto interno bruto para um concelho, e esta página não fabrica nenhum. O que existe é o registo empresarial: as contas das empresas do concelho, que creditam toda a atividade de uma empresa a um único concelho. Não é PIB municipal, e o trabalho sobre a economia escreve porquê nos seus limites: «não capta a administração pública, a maior parte da universidade e do hospital». |
+| conteudo | No source publishes a gross domestic product for a municipality, and this page manufactures none. What does exist is the business register: the accounts of the municipality’s enterprises, which credit a firm’s whole activity to a single municipality. It is not municipal GDP, and the work on the economy writes why in its own limits: «it misses public administration, most of the university and the hospital». |
 | conteudo | 2416 rows · 308 municipalities · 2416 with complete provenance |
 | conteudo | Uma linha por medida e por concelho, com o valor tal como a fonte o publicou, a unidade, quem o produziu e a data em que foi lido. |
 | conteudo | One row per measure and per municipality, with the value as the source published it, the unit, who produced it and the date it was read. |
@@ -850,3 +854,34 @@ exclusão que a subetapa 3c escreveu para a lista por distritos.
 | conteudo | Municipalities: the central measures |
 | conteudo | 0 linhas · 0 concelhos · 0 com proveniência completa |
 | conteudo | 0 rows · 0 municipalities · 0 with complete provenance |
+
+## Bloco dos 308 concelhos · P2 (os dados), 26.08.2026
+
+*As frases que os itens E7 a E12 mudaram: a nota das empresas, que deixou de afirmar o que a verificação das fontes não confirmou; a legenda da dívida, sem a oração em que o sítio falava de si; e as que chamavam «regulador» à Direção-Geral das Autarquias Locais. As duas últimas linhas da tabela são a frase que SAIU, declarada pelo que ela era: autorreferência. Fica declarada para que a régua a apanhe pelo nome se alguém a repuser, em vez de a apanhar como bloco por classificar.*
+
+| classe | texto |
+| --- | --- |
+| conteudo | A Direção-Geral |
+| conteudo | A Direção-Geral das Autarquias Locais e o município publicam a dívida do mesmo ano com uma diferença. A diferença é pequena, e mostra-se porque é o único sítio onde uma voz de fora e a voz do próprio medem a mesma coisa. |
+| conteudo | A Direção-Geral publica |
+| conteudo | A execução da receita e o prazo médio de pagamento são lidos da prestação de contas do próprio município: a sua linha no livro-razão nomeia esse documento e a página onde estão. As duas vozes de fora sobre estas contas são a opinião assinada do auditor e a série anual da Direção-Geral das Autarquias Locais, e as duas estão nesta página. |
+| conteudo | A série anual da Direção-Geral das Autarquias Locais ainda não chegou a este mandato. |
+| conteudo | A série anual da Direção-Geral das Autarquias Locais usada nesta página começa depois deste mandato. |
+| conteudo | Lista anual da Direção-Geral das Autarquias Locais, que publica os dados das contas dos municípios. |
+| conteudo | O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores. |
+| conteudo | O traço fino é a dívida total que a Direção-Geral das Autarquias Locais publica para o concelho; a barra é a distância até ao limite legal do mesmo ano, que é o fio da direita. O índice mede uma contra o outro numa escala em que o teto é o valor permitido. |
+| conteudo | On this municipality’s accounts there are two voices that are not its own: the independent auditor’s signed opinion, and the local-government directorate’s annual series, which publishes per municipality and per year the same legal debt concept the report uses, compiled from outside. Both are on this page. |
+| conteudo | Revenue execution and the average payment time are read from the municipality’s own accounts: their ledger rows name that document and the page they sit on. The two outside voices on these accounts are the auditor’s signed opinion and the local-government directorate’s annual series, and both are on this page. |
+| conteudo | Sobre as contas deste município existem duas vozes que não são a dele: a opinião assinada do auditor independente, e a série anual da Direção-Geral das Autarquias Locais, que publica por município e por ano o mesmo conceito legal de dívida que o relatório usa, compilada do lado de fora. As duas estão nesta página. |
+| conteudo | Série anual da Direção-Geral das Autarquias Locais, que publica os dados das contas dos municípios. Exclui dívidas não orçamentais e exceções legais. |
+| conteudo | The annual list of the local-government directorate, which publishes the municipalities’ accounts data. |
+| conteudo | The annual series of the local-government directorate, which publishes the municipalities’ accounts data. Excludes non-budgetary debt and legal exceptions. |
+| conteudo | The directorate-general |
+| conteudo | The directorate-general publishes |
+| conteudo | The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue. |
+| conteudo | The local-government directorate and the municipality publish the same year’s debt with a difference between them. The difference is small, and it is shown because it is the only place where an outside voice and the municipality’s own voice measure the same thing. |
+| conteudo | The local-government directorate’s annual series has not yet reached this term. |
+| conteudo | The local-government directorate’s annual series used on this page begins after this term. |
+| conteudo | The thin line is the total debt the local-government directorate publishes for the municipality; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. |
+| autorreferencia | O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores. É a lei que o define, não este sítio. |
+| autorreferencia | The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue. The law defines it, not this site. |
