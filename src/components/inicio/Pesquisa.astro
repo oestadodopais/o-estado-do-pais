@@ -26,18 +26,16 @@
  * uma que começa com os oito primeiros nomes da Carta diz que aqueles oito são
  * especiais, o que não é verdade.
  *
- * E HÁ UM TERCEIRO ESTADO, QUE É UM GESTO (subetapa 2h, Emenda 3): no telemóvel,
- * já dentro da vista de escolha, um toque no selo do país troca estes botões
- * pelos concelhos mais próximos do sítio tocado — os mesmos botões, os mesmos
- * nomes, o mesmo `hidden` a trocar de sítio. Nenhuma distância se escreve: a
- * ordenação decide quem se acende e mais nada. **A frase que o explicava saiu
- * com a Emenda 15**: era uma instrução de uso, e o nome acessível do selo já diz
- * o que ele faz.
+ * O TERCEIRO ESTADO ERA UM GESTO, e saiu com o selo do mapa no telemóvel (bloco
+ * A, item A4): um toque no selo do país trocava os resultados pelos concelhos
+ * mais próximos do sítio tocado. Volta com o mapa por distritos, que é a forma
+ * do telemóvel que a Emenda 3 desenha.
  *
- * SEM JAVASCRIPT NÃO SE VÊ NADA DISTO, e é de propósito: o âmbito «Município»
- * só se atinge com script, e o comando dele leva, sem script, ao índice dos 308
- * (`/municipios`), que é uma página inteira com a mesma lista e a mesma
- * cobertura. Uma caixa de pesquisa que não pesquisa é pior do que nenhuma.
+ * SEM JAVASCRIPT NÃO SE VÊ NADA DISTO, e é de propósito: os resultados entram
+ * escondidos e é o script que os acende. O comando «Concelho» leva, sem script,
+ * ao índice dos 308 (`/municipios`), que é uma página inteira com a mesma lista e
+ * a mesma cobertura. Uma caixa de pesquisa que não pesquisa é pior do que
+ * nenhuma.
  *
  * ---------------------------------------------------------------------------
  * A MESMA PEÇA SERVE O ÍNDICE DOS 308 (passo C, item C4; decisão 5 do diretor)
@@ -47,20 +45,23 @@
  * mesmo `data-normal`. Uma segunda pesquisa, escrita ao lado desta, seria uma
  * segunda lista de nomes para o portão conferir e duas peças para divergirem.
  *
- * O QUE MUDA É O QUE UM RESULTADO FAZ, e muda porque as duas páginas fazem
- * coisas diferentes: na primeira página um resultado ESCOLHE um âmbito, e por
- * isso é um botão que o script apanha; no índice um resultado ABRE a página do
- * concelho, e por isso é uma ligação, que funciona sem script nenhum.
+ * UM RESULTADO FAZ A MESMA COISA NAS DUAS PÁGINAS (Emenda 19a, 26.08.2026): abre
+ * a página do concelho. Fazia duas: no índice era uma ligação, e na primeira
+ * página era um `<button data-escolher>` que o script apanhava para escolher um
+ * âmbito dentro dela. Com um concelho a viver só na sua página, o âmbito deixou
+ * de existir e o botão deixou de ter para onde levar; das duas formas fica a que
+ * funciona sem script nenhum.
  *
  * OS 307 SEM PÁGINA NÃO SÃO PORTAS, e essa é a parte honesta: um resultado sem
  * página é o nome e as duas palavras do estado, como a linha que a lista por
  * distritos já lhe dá. Escondê-los da pesquisa era pior: quem escrevesse
  * «Beja» leria «Nenhum concelho com esse nome.», que é falso.
  *
- * `destino` é a função que decide, e vem de quem chama: sem ela, a peça é a da
- * primeira página, botão a botão, sem uma diferença.
+ * `destino` é a função que decide, e vem de quem chama. É obrigatória: uma peça
+ * que aceitasse não a receber voltaria a ter dois feitios, e o segundo não teria
+ * quem o rendesse.
  */
-const { s, concelhos, destino = null } = Astro.props;
+const { s, concelhos, destino } = Astro.props;
 ---
 
 <div class="pesquisa" id="pesquisa">
@@ -82,31 +83,20 @@ const { s, concelhos, destino = null } = Astro.props;
           data-tem-pagina={c.pagina ? 'sim' : null}
           hidden={!c.pagina}
         >
-          {destino ? (
-            destino(c) ? (
-              <a class="chipb" href={destino(c)}>
-                <span class="pesquisa-nome">{c.nome}</span>
-                <span class="pesquisa-cobertura" data-cobertura="com-pagina">
-                  {s.cobertura.temPagina}
-                </span>
-              </a>
-            ) : (
-              <span class="chipb chipb-inerte">
-                <span class="pesquisa-nome">{c.nome}</span>
-                <span class="pesquisa-cobertura" data-cobertura="sem-pagina">
-                  {s.cobertura.semPaginaAinda}
-                </span>
-              </span>
-            )
-          ) : (
-            <button type="button" class="chipb" data-escolher={c.slug}>
+          {destino(c) ? (
+            <a class="chipb" href={destino(c)}>
               <span class="pesquisa-nome">{c.nome}</span>
-              {c.pagina && (
-                <span class="pesquisa-cobertura" data-cobertura="com-pagina">
-                  {s.cobertura.temPagina}
-                </span>
-              )}
-            </button>
+              <span class="pesquisa-cobertura" data-cobertura="com-pagina">
+                {s.cobertura.temPagina}
+              </span>
+            </a>
+          ) : (
+            <span class="chipb chipb-inerte">
+              <span class="pesquisa-nome">{c.nome}</span>
+              <span class="pesquisa-cobertura" data-cobertura="sem-pagina">
+                {s.cobertura.semPaginaAinda}
+              </span>
+            </span>
           )}
         </li>
       ))
