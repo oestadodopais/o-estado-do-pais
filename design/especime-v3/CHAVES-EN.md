@@ -677,3 +677,16 @@ a ler `estudos.leituraBreveK` («Leitura breve» / «Brief reading»), que já e
 em `strings.mjs` e não se rendia em lado nenhum. Que a frase é da casa continua
 conferível onde é prova: cada número dela leva selo, e uma descrição transcrita
 leva `data-verbatim`.
+
+## Bloco «A grelha da voz» · G5, a frase da outra edição, 26.08.2026
+
+**Uma chave sai, nas duas edições.** `estudos.leituraOutraLingua` («A mesma frase
+na outra edição» / «The same sentence in the other edition») rotulava um bloco
+que imprimia, na página do trabalho, a mesma frase na outra língua. Era o sítio a
+provar ao leitor que as duas edições dizem o mesmo, e a Emenda 15 tira isso da
+página do leitor.
+
+A prova mudou de sítio: `scripts/gate-html.mjs` confere agora que as duas edições
+de cada peça da página de leitura citam as mesmas afirmações pela mesma ordem, e
+fecha a construção quando não citam. Nenhuma cadeia nova entrou, nas duas
+edições.

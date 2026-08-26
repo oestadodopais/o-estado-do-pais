@@ -72,7 +72,7 @@ import {
 import { VERBATIM, normalizeWhitespace } from '../src/data/verbatim.mjs';
 import { FIGURAS_PDM, FIGURAS_SOCIAL } from '../src/data/figuras.mjs';
 import { EDITIONS, workById, studyLabel } from '../src/data/studies.mjs';
-import { temLeitura } from '../src/data/leituras.mjs';
+import { temLeitura, LEITURAS } from '../src/data/leituras.mjs';
 import { tituloDaLinha, descricaoDaLinha } from '../src/lib/livro.mjs';
 import { matchPath, routePath, HREFLANG, LANGS, PRIMARY_LANG } from '../src/lib/routes.mjs';
 import {
@@ -2484,12 +2484,14 @@ function temChipPara(no, alvos) {
 }
 
 function auditaSelo(el, id, lang, err) {
-  /* A linha daquele id, em qualquer das duas edições. Quase sempre é a da
-     página; o bloco «a mesma frase na outra edição», nas páginas de leitura,
-     é escrito na outra língua de propósito e o seu selo leva à linha na outra
-     edição — o que continua a ser a porta para a linha DAQUELE valor. */
-  const alvos = LANGS.map((l) => routePath('linha', l, { slug: id }));
-  const alvo = routePath('linha', lang, { slug: id });
+  /* A LINHA DAQUELE ID, NA EDIÇÃO DA PÁGINA, E SÓ NELA (bloco «A grelha da
+     voz», 26.08.2026). A folga existia por uma razão só: o bloco «a mesma frase
+     na outra edição», nas páginas de leitura, era escrito na outra língua de
+     propósito e o seu selo levava à linha na outra edição. Esse bloco saiu com a
+     Emenda 15, e a folga saiu com ele: um selo que abra a linha na outra edição
+     manda o leitor para fora da sua edição, e agora fecha a construção. */
+  const alvos = [routePath('linha', lang, { slug: id })];
+  const alvo = alvos[0];
 
   if (dentroDeSvg(el)) {
     /* Um <a> dentro de um desenho não se lê como porta: o selo de um valor
@@ -5656,6 +5658,74 @@ console.log(
       ` · ${excluidasPorCitacao} dispensada(s) por estarem entre «…»`,
   ),
 );
+
+/* =============================================================================
+ * AS DUAS EDIÇÕES DA MESMA FRASE (bloco «A grelha da voz», 26.08.2026)
+ * =============================================================================
+ * Até hoje a página do trabalho IMPRIMIA a frase da outra edição por baixo da
+ * sua, com o rótulo «A mesma frase na outra edição». Era o sítio a provar ao
+ * leitor que as duas edições dizem o mesmo, numa página do leitor, que é a
+ * classe que a Emenda 15 tira de lá. A prova não se perde: muda de sítio, de uma
+ * página para um portão.
+ *
+ * O que se pode conferir por máquina é a ESPINHA da frase: as afirmações que ela
+ * cita, e a ordem por que as cita. Duas edições que citem os mesmos ids na mesma
+ * ordem dizem a mesma coisa sobre os mesmos números; uma tradução que perca um
+ * valor, que troque dois, ou que cite outro, fecha a construção aqui. O que um
+ * portão não pode conferir é se a tradução está bem escrita, e isso continua a
+ * ser trabalho de quem lê, como sempre foi.
+ *
+ * Vale para as três coisas da página de leitura que existem nas duas edições: a
+ * frase da leitura breve, o nome de cada medida do relance, e a nota das
+ * medidas.
+ * ========================================================================== */
+function idsDaFrase(partes) {
+  const ids = [];
+  for (const parte of partes ?? []) {
+    if (parte && typeof parte === 'object' && typeof parte.claim === 'string') ids.push(parte.claim);
+  }
+  return ids;
+}
+
+{
+  let paresConferidos = 0;
+  const rel = 'src/data/leituras.mjs';
+  for (const [slug, leitura] of Object.entries(LEITURAS)) {
+    const pecas = [['frase', leitura.frase]];
+    if (leitura.medidasNota) pecas.push(['medidasNota', leitura.medidasNota]);
+    for (const [i, med] of (leitura.medidas ?? []).entries()) {
+      pecas.push([`medidas[${i}].nome`, med.nome]);
+    }
+    for (const [i, r] of (leitura.metodo ?? []).entries()) {
+      if (r?.v) pecas.push([`metodo[${i}].v`, r.v]);
+    }
+    for (const [onde, peca] of pecas) {
+      if (!peca) continue;
+      for (const l of LANGS) {
+        if (!Array.isArray(peca[l])) {
+          erros.push({ rel, msg: `${slug} · ${onde}: falta a edição "${l}".` });
+        }
+      }
+      if (!Array.isArray(peca.pt) || !Array.isArray(peca.en)) continue;
+      const pt = idsDaFrase(peca.pt);
+      const en = idsDaFrase(peca.en);
+      paresConferidos++;
+      if (pt.join('|') === en.join('|')) continue;
+      erros.push({
+        rel,
+        msg:
+          `${slug} · ${onde}: as duas edições não citam as mesmas afirmações pela mesma ordem.\n` +
+          `      pt: ${pt.join(' · ') || '(nenhuma)'}\n` +
+          `      en: ${en.join(' · ') || '(nenhuma)'}\n` +
+          `      A página do trabalho deixou de imprimir a frase da outra edição por baixo da sua ` +
+          `(Emenda 15): a conferência é aqui.`,
+      });
+    }
+  }
+  console.log(
+    cinza(`  as duas edições · ${paresConferidos} peça(s) de página de leitura com os mesmos ids pela mesma ordem`),
+  );
+}
 
 if (avisos.length) {
   console.log('');

@@ -529,7 +529,6 @@ e por isso conteúdo.*
 | conteudo | A cross-vertical reading of one Portuguese municipality: the recovery-plan project register, the public-contracts register and the state auditor's catalogue, all fetched live on 2026-08-04, and the recovery-plan register read again on 2026-08-20. |
 | conteudo | A frase acima diz que a dívida total ficou abaixo do limite. São estes os dois valores: a dívida total no fim do ano, e o limite legal do mesmo ano, ambos da prestação de contas do município. |
 | navegacao | A ligação sai deste domínio. |
-| conteudo | A mesma frase na outra edição |
 | conteudo | A mesma medida de concentração, para Portugal inteiro, é a que dá escala à do concelho. |
 | conteudo | A secção de auditoria lê o catálogo do tribunal de contas, não as suas auditorias. A secção de contratos é um limite superior sobre uma janela truncada. E não existe um valor da União Europeia para um município: não é que não se tenha encontrado; a granularidade não existe na fonte. |
 | conteudo | A universidade tem mais dinheiro contratado neste concelho do que o município, e a camada que administra o dinheiro é feita de organismos nacionais. O trabalho conclui daí que «o endereço da responsabilização, na maior parte dos casos, não são os paços do concelho», é a leitura dele, assinada, e não uma contagem: um leitor que queira este total explicado deve dirigir as perguntas aos organismos nacionais e à universidade mais vezes do que à câmara. |
@@ -602,7 +601,6 @@ e por isso conteúdo.*
 | conteudo | The mapping between the accounts and the portfolios is this work’s own, declared by it as its own and not as official, and the work itself says which of its lines refuse it. None of those lines crossed into the ledger, so this page does not count them. The rule the work sets is: description, never scores. |
 | conteudo | The observatory’s archive: every published study, with its editions, dates and migration state. What does not live here yet is linked where it lives. |
 | conteudo | The same concentration measure, for Portugal as a whole, is what gives the concelho figure its scale. |
-| conteudo | The same sentence in the other edition |
 | conteudo | The sentence above says total debt stayed below the limit. These are the two values: total debt at year end, and the legal limit for the same year, both from the municipality’s own accounts. |
 | conteudo | The statistics institute’s purchasing-power index is the one indicator that exists for a concelho, and it is what carries the first half of the sentence above: the concelho on one side of the national average, its region on the other. The national average is the base of the index. |
 | conteudo | The university holds more contracted money in this concelho than the municipality, and the layer that administers the money is made of national bodies. The work concludes from that that «the accountability address is mostly not the town hall», its own signed reading, not a count: a reader who wants this total explained should put questions to national bodies and to the university more often than to the council. |
@@ -888,6 +886,22 @@ E7, E10 e E11 daquele bloco corrigiram e deixaram para trás.
 | conteudo | Nenhuma fonte publica um produto interno bruto para um concelho. O que existe é o registo empresarial: as contas das empresas do concelho, que creditam toda a atividade de uma empresa a um único concelho. Não é PIB municipal, e o trabalho sobre a economia escreve porquê nos seus limites: «não capta a administração pública, a maior parte da universidade e do hospital». |
 | conteudo | No source publishes a gross domestic product for a municipality. What does exist is the business register: the accounts of the municipality’s enterprises, which credit a firm’s whole activity to a single municipality. It is not municipal GDP, and the work on the economy writes why in its own limits: «it misses public administration, most of the university and the hospital». |
 | conteudo | O que a dívida excedia o limite legal, no primeiro e no último ano em que o relatório o publica como um valor positivo. Depois disso o quadro passa a números negativos, que já não são excesso mas capacidade de endividamento. |
+
+### A frase da outra edição sai da página do trabalho
+
+*A página de um trabalho imprimia, por baixo da leitura breve, a MESMA frase na
+outra edição, com o rótulo «A mesma frase na outra edição». Era o sítio a provar
+ao leitor que as duas edições dizem o mesmo, numa página do leitor: a classe que
+a Emenda 15 tira de lá. As duas declarações do rótulo saem desta lista; a frase
+da outra edição nunca esteve aqui, porque leva afirmações e a régua já a excluía
+como origem declarada.*
+
+*A prova muda de sítio e não se perde. `scripts/gate-html.mjs` passou a conferir,
+em 39 peças das páginas de leitura, que as duas edições citam as mesmas
+afirmações pela mesma ordem, e fecha a construção quando não citam. E a folga que
+existia por causa daquele bloco saiu com ele: o selo de um valor tinha de abrir a
+linha em QUALQUER uma das duas edições, e passa a ter de abrir a da própria
+página.*
 | conteudo | On this municipality’s accounts there are two voices that are not its own: the independent auditor’s signed opinion, and the local-government directorate’s annual series, which publishes per municipality and per year the same legal debt concept the report uses, compiled from outside. |
 | conteudo | Revenue execution and the average payment time are read from the municipality’s own accounts. The two outside voices on these accounts are the auditor’s signed opinion and the local-government directorate’s annual series. |
 | conteudo | Sobre as contas deste município existem duas vozes que não são a dele: a opinião assinada do auditor independente, e a série anual da Direção-Geral das Autarquias Locais, que publica por município e por ano o mesmo conceito legal de dívida que o relatório usa, compilada do lado de fora. |

@@ -3207,12 +3207,6 @@ a.badge-porta:hover {
   letter-spacing: -0.008em;
   max-width: 60ch;
 }
-.leitura-frase-outra {
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--muted);
-  max-width: 60ch;
-}
 
 /* Os selos dos valores desenhados dentro de um SVG. Um <a> dentro de um SVG
    não se lê como porta; o selo fica ao lado do desenho, como no instrumento
@@ -3259,8 +3253,7 @@ a.badge-porta:hover {
 /* Um valor sem selo dentro de uma frase corrida ficaria colado ao seguinte. */
 .deep-v .claim-com-chip,
 .figura-medida .claim-com-chip,
-.leitura-frase .claim-com-chip,
-.leitura-frase-outra .claim-com-chip {
+.leitura-frase .claim-com-chip {
   white-space: nowrap;
 }
 
@@ -4369,7 +4362,6 @@ a.prova-valor::after {
   }
 }
 .leitura-frase a.src-chip::after,
-.leitura-frase-outra a.src-chip::after,
 .deep-v a.src-chip::after,
 .texto-artigo a.src-chip::after,
 .mun-distancia-legenda a.src-chip::after,
