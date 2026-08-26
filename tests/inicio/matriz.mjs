@@ -1752,6 +1752,68 @@ for (const largura of [1280, 390]) {
   await p.__contexto.close();
 }
 
+/* (b·308) A CÉLULA «CONCELHO SEM ESTUDOS» (plano §3.5 do bloco dos 308).
+ *
+ * O plano nomeia-a nesta matriz, e é aqui que ela fica: a matriz é a régua que
+ * corre em cada bloco e que impede que uma forma decidida volte atrás sem que
+ * alguém dê por isso. Mede UMA página de concelho sem entrada escrita à mão, e
+ * a regra é a da Emenda 14 e da E1: as oito peças rendem-se sempre, uma peça
+ * vazia diz «sem linha ainda» e não traz um algarismo, as secções de um concelho
+ * COM trabalho publicado não se rendem, e a coluna do corpo só existe se houver
+ * corpo. A varredura dos 307 é da régua dos concelhos; esta célula é a sentinela.
+ *
+ * Sem um segundo concelho construído a célula não tem objecto, e di-lo. */
+{
+  const p = await pagina();
+  await p.goto(base + '/municipios', { waitUntil: 'networkidle' });
+  const outro = await p.evaluate(
+    () =>
+      [...document.querySelectorAll('.concelho a[href]')]
+        .map((a) => a.getAttribute('href'))
+        .filter((h) => h !== '/municipios/evora')[0] ?? null,
+  );
+  if (!outro) {
+    conta(
+      'Emenda 14 · um concelho sem estudos rende as oito peças e mais nada',
+      false,
+      'sem objecto: só há uma página de concelho construída. Corra com o ficheiro dos 308 ' +
+        '(src/data/concelhos.gerado.json, ou CONCELHOS_GERADO=<ficheiro>).',
+    );
+  } else {
+    await p.goto(base + outro, { waitUntil: 'networkidle' });
+    const m = await p.evaluate(() => ({
+      pecas: document.querySelectorAll('.peca').length,
+      vazias: document.querySelectorAll('.peca-vazia').length,
+      vaziasLimpas: [...document.querySelectorAll('.peca-vazia')].every(
+        (e) => e.querySelector('[data-cobertura="sem-linha"]') && !/[0-9]/.test(e.textContent ?? ''),
+      ),
+      doTrabalho:
+        document.querySelectorAll('#contas').length +
+        document.querySelectorAll('#tempo').length +
+        document.querySelectorAll('#metodo').length +
+        document.querySelectorAll('#trabalhos').length +
+        document.querySelectorAll('.aparelho-estado').length,
+      breve: document.querySelectorAll('#breve').length,
+      distancia: document.querySelectorAll('.mun-distancia').length,
+      corpo: document.querySelectorAll('.municipio-corpo').length,
+      cartao: document.querySelectorAll('[data-mapa-cartao]').length,
+    }));
+    conta(
+      'Emenda 14 · um concelho sem estudos rende as oito peças e mais nada',
+      m.pecas === 8 &&
+        m.vaziasLimpas &&
+        m.doTrabalho === 0 &&
+        m.breve === m.distancia &&
+        m.corpo === (m.breve > 0 ? 1 : 0) &&
+        m.cartao === 1,
+      `${outro}: ${m.pecas} peças (${m.vazias} vazias, sem algarismo ${m.vaziasLimpas}) · ` +
+        `secções de trabalho ${m.doTrabalho} · leitura breve ${m.breve} / distância ${m.distancia} · ` +
+        `colunas de corpo ${m.corpo} · cartão ${m.cartao}`,
+    );
+  }
+  await p.__contexto.close();
+}
+
 /* (c) Emenda 17: a cabeça em duas colunas a partir de 1024, sem transbordo. */
 {
   const linhas = [];

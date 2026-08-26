@@ -13,6 +13,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 
+import { MUNICIPIOS_COM_PAGINA } from '../../src/data/municipios.mjs';
+import { caminhoDoFicheiroGerado } from '../../src/data/concelhos.mjs';
+
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = path.join(RAIZ, 'dist');
 
@@ -374,20 +377,37 @@ console.log('');
 }
 
 /* 8 · UM CONCELHO SEM ESTUDOS RENDE SÓ O QUE EXISTE (E1).
-   A régua só corre onde há um segundo concelho construído: com o ficheiro do
-   motor ausente, o sítio tem uma página de concelho e esta célula não tem
-   objecto. Diz isso em vez de passar por omissão — uma célula que passa quando
-   não mediu nada é pior do que uma célula que falta. */
+
+   A CÉLULA MEDE A REGRA, E NÃO A FORMA DE UM FICHEIRO DE TESTE (P2, os dados).
+   Escrita contra o ficheiro de teste, pedia «oito peças, oito vazias, nenhum
+   algarismo no painel, nenhuma secção de fundo, nenhuma coluna de corpo»: era a
+   página de um concelho SEM LINHA NENHUMA, que é um caso do ficheiro de teste e
+   não a regra. Com os dados do motor, um concelho tem entre quatro e sete peças
+   cheias, e a leitura breve rende-se onde a dívida e o limite existem, que é o
+   que a vista promete.
+
+   O que é regra, e vale nas duas coberturas:
+     · as oito peças rendem-se sempre, e cada peça vazia diz «sem linha ainda» e
+       não traz um único algarismo;
+     · as secções de um concelho COM trabalho publicado não se rendem: as contas
+       do município, a linha do tempo, o método, os trabalhos e «o que esta
+       página não sabe»;
+     · a camada da leitura breve rende-se se e só se a distância desenhada
+       existe, que é o que a vista faz quando um concelho não tem frases;
+     · a coluna do corpo rende-se se e só se há corpo;
+     · o cartão localizador e as três portas rendem-se sempre.
+
+   Mede-se em TODOS os concelhos sem entrada escrita à mão que a construção
+   tiver, e não num só: com o ficheiro de teste é um caso, com os dados são 307,
+   e é a mesma regra. */
 {
   const p = await pagina();
-  const outros = await (async () => {
-    await p.goto(base + INDICE, { waitUntil: 'networkidle' });
-    return p.evaluate(() =>
-      [...document.querySelectorAll('.concelho a[href]')]
-        .map((a) => a.getAttribute('href'))
-        .filter((h) => h !== '/municipios/evora'),
-    );
-  })();
+  await p.goto(base + INDICE, { waitUntil: 'networkidle' });
+  const outros = await p.evaluate(() =>
+    [...document.querySelectorAll('.concelho a[href]')]
+      .map((a) => a.getAttribute('href'))
+      .filter((h) => h !== '/municipios/evora'),
+  );
   if (outros.length === 0) {
     salta(
       'P2 · um concelho sem estudos rende só o que existe',
@@ -395,48 +415,101 @@ console.log('');
         'node tests/municipio/gerar-teste-308.mjs <ficheiro> && CONCELHOS_GERADO=<ficheiro> npm run build',
     );
   } else {
-    await p.goto(base + outros[0], { waitUntil: 'networkidle' });
-    const m = await p.evaluate(() => ({
-      pecas: document.querySelectorAll('.peca').length,
-      vazias: document.querySelectorAll('.peca-vazia').length,
-      algarismos: /[0-9]/.test(
-        [...document.querySelectorAll('.painel')].map((e) => e.textContent).join(' '),
-      ),
-      /* As secções do fundo, uma a uma: nenhuma se rende, nem título nem caixa. */
-      leitura: document.querySelectorAll('#breve').length,
-      contas: document.querySelectorAll('#contas').length,
-      tempo: document.querySelectorAll('#tempo').length,
-      metodo: document.querySelectorAll('#metodo').length,
-      estudos: document.querySelectorAll('#trabalhos').length,
-      naoSabe: document.querySelectorAll('.aparelho-estado').length,
-      distancia: document.querySelectorAll('.mun-distancia').length,
-      /* A COLUNA DO CORPO NÃO SE DESENHA VAZIA. A disposição B é «corpo e
-         aparelho»; sem corpo, uma pista de 68ch de nada ao lado do cartão é uma
-         célula vazia numa grelha (IDENTIDADE §7). */
-      corpo: document.querySelectorAll('.municipio-corpo').length,
-      /* O cartão localizador e as três portas rendem-se sempre. */
-      cartao: document.querySelectorAll('[data-mapa-cartao]').length,
-      portas: [...document.querySelectorAll('.aparelho-saidas a')].map((a) =>
-        a.getAttribute('href'),
-      ),
-    }));
-    conta(
-      'P2 · um concelho sem estudos rende só o que existe',
-      m.pecas === 8 &&
-        m.vazias === 8 &&
-        m.algarismos === false &&
-        m.leitura + m.contas + m.tempo + m.metodo + m.estudos + m.naoSabe + m.distancia === 0 &&
-        m.corpo === 0 &&
+    const maus = [];
+    let vaziasVistas = 0;
+    let comDistancia = 0;
+    for (const rota of outros) {
+      await p.goto(base + rota, { waitUntil: 'networkidle' });
+      const m = await p.evaluate(() => ({
+        pecas: document.querySelectorAll('.peca').length,
+        vazias: document.querySelectorAll('.peca-vazia').length,
+        semLinha: [...document.querySelectorAll('.peca-vazia')].every(
+          (e) =>
+            e.querySelector('[data-cobertura="sem-linha"]') &&
+            !/[0-9]/.test(e.textContent ?? ''),
+        ),
+        breve: document.querySelectorAll('#breve').length,
+        distancia: document.querySelectorAll('.mun-distancia').length,
+        /* As secções de um concelho com trabalho publicado. */
+        doTrabalho:
+          document.querySelectorAll('#contas').length +
+          document.querySelectorAll('#tempo').length +
+          document.querySelectorAll('#metodo').length +
+          document.querySelectorAll('#trabalhos').length +
+          document.querySelectorAll('.aparelho-estado').length,
+        corpo: document.querySelectorAll('.municipio-corpo').length,
+        cartao: document.querySelectorAll('[data-mapa-cartao]').length,
+        portas: [...document.querySelectorAll('.aparelho-saidas a')].map((a) =>
+          a.getAttribute('href'),
+        ),
+      }));
+      vaziasVistas += m.vazias;
+      comDistancia += m.distancia;
+      const bem =
+        m.pecas === 8 &&
+        m.semLinha &&
+        m.doTrabalho === 0 &&
+        m.breve === m.distancia &&
+        m.corpo === (m.breve > 0 ? 1 : 0) &&
         m.cartao === 1 &&
         m.portas.length === 3 &&
         m.portas[0] === '/municipios' &&
-        m.portas[1] === '/livro-razao/concelhos',
-      `${outros[0]}: ${m.pecas} peças (${m.vazias} vazias, algarismos no painel: ${m.algarismos}) · ` +
-        `secções do fundo rendidas: ${m.leitura + m.contas + m.tempo + m.metodo + m.estudos + m.naoSabe + m.distancia} · ` +
-        `colunas de corpo ${m.corpo} · cartão ${m.cartao} · portas ${m.portas.join(', ')}`,
+        m.portas[1] === '/livro-razao/concelhos';
+      if (!bem) {
+        maus.push(
+          `${rota}: ${m.pecas} peças (${m.vazias} vazias, sem-linha limpo ${m.semLinha}) · ` +
+            `secções de trabalho ${m.doTrabalho} · breve ${m.breve} / distância ${m.distancia} · ` +
+            `corpo ${m.corpo} · cartão ${m.cartao} · portas ${m.portas.join(', ')}`,
+        );
+      }
+    }
+    conta(
+      'P2 · um concelho sem estudos rende só o que existe',
+      maus.length === 0,
+      maus.length === 0
+        ? `${outros.length} página(s) de concelho sem entrada escrita à mão · 8 peças em todas, ` +
+          `${vaziasVistas} peça(s) vazia(s) ao todo, ${comDistancia} com a dívida desenhada · ` +
+          `nenhuma secção de trabalho, nenhuma coluna de corpo sem corpo`
+        : `${maus.length} de ${outros.length}: ${maus.slice(0, 3).join(' | ')}`,
     );
   }
   await p.__contexto.close();
+}
+
+/* 8b · AS ENTRADAS QUE O MÓDULO DÁ E AS PÁGINAS QUE A CONSTRUÇÃO FEZ, CONTADAS
+   DOS DOIS LADOS (P2, os dados).
+
+   Esta célula existe por causa de um defeito que ninguém viu durante o P2
+   (estrutura), e que só apareceu quando o exportador escreveu o ficheiro a
+   sério: `src/data/concelhos.mjs` procurava `concelhos.gerado.json` por um
+   caminho relativo ao próprio módulo, e na construção o módulo é EMPACOTADO, por
+   isso o caminho passava a apontar para o pacote. O ficheiro existia e o Astro
+   não o via: `getStaticPaths` construía uma página de concelho e nada fechava a
+   construção do lado do Astro. Quem o apanhou foi o portão, com as duas contas
+   das chaves da prova; o que faltava era uma régua que o dissesse pelo nome.
+
+   Duas contas do mesmo número, de sítios diferentes: quantas entradas o módulo
+   dá quando corre em Node, e quantas páginas de concelho a construção escreveu.
+   Se divergirem, alguma coisa entre o módulo e a construção perdeu entradas pelo
+   caminho. E o ficheiro por omissão tem de ser o de `src/data/`: um caminho que
+   aponte para outro sítio é o mesmo defeito com outra cara. */
+{
+  const doModulo = MUNICIPIOS_COM_PAGINA.length;
+  const caminho = caminhoDoFicheiroGerado();
+  const dentroDeSrcData = /\/src\/data\/concelhos\.gerado\.json$/.test(caminho);
+  const noAmbiente = Boolean(process.env.CONCELHOS_GERADO);
+  const construidas = fs.existsSync(path.join(DIST, 'municipios'))
+    ? fs
+        .readdirSync(path.join(DIST, 'municipios'))
+        .filter((d) => fs.existsSync(path.join(DIST, 'municipios', d, 'index.html'))).length
+    : 0;
+  conta(
+    'P2 · as entradas do módulo e as páginas construídas são o mesmo número',
+    doModulo === construidas && (noAmbiente || dentroDeSrcData),
+    `o módulo dá ${doModulo} entrada(s), a construção escreveu ${construidas} página(s) · ` +
+      `ficheiro por omissão: ${noAmbiente ? `CONCELHOS_GERADO=${caminho}` : caminho}` +
+      `${noAmbiente || dentroDeSrcData ? '' : ' (fora de src/data/)'}`,
+  );
 }
 
 /* 9 · O LIVRO-RAZÃO DO CONJUNTO (E4). As três contagens com porta, a pesquisa
@@ -453,6 +526,13 @@ console.log('');
     grupos: document.querySelectorAll('[data-concelho-grupo]').length,
     resultados: document.querySelectorAll('.pesquisa-item').length,
     vazio: document.querySelectorAll('.log-vazio-v').length,
+    /* Cada linha do estudo tem de estar DENTRO do grupo de um concelho. Uma que
+       nenhuma entrada declare fica no grupo dos não declarados, que é um estado
+       desenhado para o leitor e um defeito para nós: é uma linha que o sítio
+       guarda e que nenhuma página de concelho mostra. Depois de o exportador
+       correr, a conta certa é zero. */
+    emGrupos: document.querySelectorAll('[data-concelho-grupo] .livro-item').length,
+    naoDeclaradas: document.querySelectorAll('#nao-declaradas .livro-item').length,
   }));
   await p.goto(base + '/livro-razao', { waitUntil: 'networkidle' });
   const indice = await p.evaluate(() => {
@@ -478,10 +558,13 @@ console.log('');
       m.resultados === 308 &&
       m.grupos === Number(dasChaves.find(([k]) => k === 'concelhos_no_livro')?.[1]) &&
       (m.grupos === 0) === (m.vazio === 1) &&
+      m.naoDeclaradas === 0 &&
+      m.emGrupos === Number(dasChaves.find(([k]) => k === 'concelhos_linhas')?.[1]) &&
       indice.porta === 1 &&
       indice.valor === 1 &&
       indice.aninhadas === 0,
-    `${dasChaves.map(([k, v]) => `${k}=${v}`).join(' · ')} · ${m.grupos} grupo(s) · ` +
+    `${dasChaves.map(([k, v]) => `${k}=${v}`).join(' · ')} · ${m.grupos} grupo(s) com ` +
+      `${m.emGrupos} linha(s), ${m.naoDeclaradas} sem concelho declarado · ` +
       `${m.resultados} resultados na pesquisa · estado vazio ${m.vazio} · ` +
       `no índice: ${indice.porta} porta + ${indice.valor} valor da prova, ` +
       `${indice.aninhadas} aninhada(s) · o índice lista ${indice.linhasDoIndice} linhas`,

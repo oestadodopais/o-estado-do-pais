@@ -810,7 +810,7 @@ exclusão que a subetapa 3c escreveu para a lista por distritos.
 
 ## Bloco dos 308 concelhos (P2, 26.08.2026)
 
-*As entradas que este bloco acrescenta: os dois rótulos das medidas que desceram das peças para a camada das contas de Évora (decisão D2), a nota da dívida com a coluna que usa (D3), a nota do prazo médio lido do regulador, e a página do conjunto do livro-razão (D6) com a sua porta no índice. As duas linhas com contagem levam o número de hoje, como as outras deste ficheiro: quando as linhas dos concelhos chegarem, mudam com elas.*
+*As linhas com contagem levam o número de HOJE, e o ficheiro guarda as duas leituras, como já guardava «132 afirmações» ao lado de «136»: a de antes das linhas dos concelhos e a de depois. As entradas que este bloco acrescenta: os dois rótulos das medidas que desceram das peças para a camada das contas de Évora (decisão D2), a nota da dívida com a coluna que usa (D3), a nota do prazo médio lido do regulador, e a página do conjunto do livro-razão (D6) com a sua porta no índice. As duas linhas com contagem levam o número de hoje, como as outras deste ficheiro: quando as linhas dos concelhos chegarem, mudam com elas.*
 
 | classe | texto |
 | --- | --- |
@@ -824,6 +824,14 @@ exclusão que a subetapa 3c escreveu para a lista por distritos.
 | conteudo | The annual list of the local-government directorate, the regulator of municipal accounts. |
 | conteudo | 136 afirmações · 19 calculadas · 0 linhas de concelhos |
 | conteudo | 136 claims · 19 calculated · 0 municipality rows |
+| conteudo | 2552 afirmações · 325 calculadas · 2416 linhas de concelhos |
+| conteudo | 2552 claims · 325 calculated · 2416 municipality rows |
+| conteudo | 2544 de 2552 linhas com proveniência completa |
+| conteudo | 2544 of 2552 rows with complete provenance |
+| conteudo | 8 de 2552 linhas com campos por confirmar |
+| conteudo | 8 of 2552 rows with fields to confirm |
+| conteudo | 2416 linhas · 308 concelhos · 2416 com proveniência completa |
+| conteudo | 2416 rows · 308 municipalities · 2416 with complete provenance |
 | conteudo | Uma linha por medida e por concelho, com o valor tal como a fonte o publicou, a unidade, quem o produziu e a data em que foi lido. |
 | conteudo | One row per measure and per municipality, with the value as the source published it, the unit, who produced it and the date it was read. |
 | conteudo | As linhas do livro-razão com as medidas que as fontes centrais publicam para cada concelho, uma linha cada. |
