@@ -556,6 +556,13 @@ console.log('');
     portas: [...document.querySelectorAll('.concelho a[href]')].map((a) => a.getAttribute('href')),
     semLinhas: document.querySelectorAll('.concelho [data-cobertura="sem-linha"]').length,
     resultados: document.querySelectorAll('.pesquisa-item').length,
+    /* A REFERÊNCIA DO ESTUDO: a linha que não é de nenhum concelho. O teto legal
+       é uma constante da lei, e é contra ela que os índices se calculam; desde
+       que o manifesto do motor lhe mudou o `study` para `concelhos-2026`, ela é
+       uma linha DESTE estudo que não pertence a concelho nenhum. Tem secção com
+       nome no índice, e entra na conta: nenhuma linha do estudo pode ficar fora
+       de uma página. */
+    referencia: document.querySelectorAll('[data-concelho-referencia] .livro-item').length,
     destinos: [...new Set(
       [...document.querySelectorAll('.pesquisa-item a[href]')].map((a) =>
         a.getAttribute('href').replace(/[^/]+$/, '<slug>'),
@@ -601,13 +608,14 @@ console.log('');
       m.portas.length === comLinhas &&
       m.portas.length + m.semLinhas === 308 &&
       semPagina.length === 0 &&
-      somaDasLinhas === declaradas &&
+      somaDasLinhas + m.referencia === declaradas &&
       indice.porta === 1 &&
       indice.valor === 1 &&
       indice.aninhadas === 0,
     `${dasChaves.map(([k, v]) => `${k}=${v}`).join(' · ')} · ${m.linhas} concelhos em ${m.grupos} ` +
       `grupos, ${m.portas.length} com porta e ${m.semLinhas} sem linhas · ` +
-      `${construidas.size} página(s) de concelho construída(s) com ${somaDasLinhas} linha(s) ao todo` +
+      `${construidas.size} página(s) de concelho construída(s) com ${somaDasLinhas} linha(s) ao todo, ` +
+      `mais ${m.referencia} de referência no índice (soma ${somaDasLinhas + m.referencia} para ${declaradas} declaradas)` +
       `${semPagina.length ? `, ${semPagina.length} porta(s) sem página: ${semPagina.slice(0, 3).join(', ')}` : ''} · ` +
       `${m.resultados} resultados na pesquisa, destino ${m.destinos.join(' / ')} · ` +
       `no índice do livro-razão: ${indice.porta} porta + ${indice.valor} valor da prova, ` +

@@ -34,7 +34,10 @@
 import Base from '../layouts/Base.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
 import Pesquisa from '../components/inicio/Pesquisa.astro';
+import Claim from '../components/Claim.astro';
+import CampoDaLinha from '../components/CampoDaLinha.astro';
 import { linhasDosConcelhos, ESTUDO_DOS_CONCELHOS } from '../lib/livro-concelhos.mjs';
+import { provenienciaIncompleta } from '../lib/ledger.mjs';
 import { concelhos as concelhosDaCarta, coberturaDistingue } from '../lib/inicio.mjs';
 import { MUNICIPIOS, DISTRITOS } from '../data/caop-centroids.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
@@ -52,8 +55,27 @@ const path = routePath('livroConcelhos', lang);
 
 /* Que concelhos têm linhas deste estudo. É a mesma conta da página de cada um, e
    é dela que sai o estado de cada linha da lista. */
-const { grupos } = linhasDosConcelhos();
+const { grupos, naoDeclaradas } = linhasDosConcelhos();
 const comLinhas = new Map(grupos.map((g) => [g.slug, g]));
+
+/**
+ * A REFERÊNCIA DO ESTUDO: A LINHA QUE NÃO É DE NENHUM CONCELHO.
+ *
+ * O teto legal de endividamento é uma constante da lei (artigo 52.º da Lei n.º
+ * 73/2013), lida no Anuário Financeiro dos Municípios Portugueses, e é contra
+ * ela que os 307 índices de dívida se calculam. Não é uma medida de um concelho:
+ * é a referência do estudo inteiro. Atravessou como linha do estudo dos
+ * concelhos a 26.08.2026, quando o manifesto do motor lhe mudou o `study` para
+ * `concelhos-2026` — até então o seu selo dizia, nas 308 páginas, o nome do
+ * estudo de Évora, que é onde ela tinha sido estabelecida.
+ *
+ * Fica aqui, no índice, com nome e por extenso: uma linha do estudo que não
+ * apareça em página nenhuma é uma linha que o sítio guarda e não mostra, e a
+ * contagem do topo conta-a. `naoDeclaradas` é a lista das linhas do estudo que
+ * nenhuma entrada de concelho declara, e é esse o estado desenhado (IDENTIDADE
+ * §7): hoje é uma, amanhã é a que o exportador escrever.
+ */
+const referencia = naoDeclaradas;
 
 /* A lista por distrito, na ordem da Carta, como o índice dos 308. Nada é
    reordenado à mão: o grupo é o campo que a Carta dá ao concelho. */
@@ -150,6 +172,62 @@ const distingue = coberturaDistingue(resultados);
       ))
     }
   </div>
+
+  {referencia.length > 0 && (
+    <div class="linha" style="margin-top:clamp(26px,3.4vw,40px)">
+      <div class="linha-corpo">
+        <section class="linha-bloco" aria-labelledby="referencia" data-concelho-referencia>
+          <h2 class="linha-bloco-titulo livro-grupo-k" id="referencia">
+            {s.livroConcelhos.referenciaK}
+          </h2>
+          <div class="livro-lista">
+            {referencia.map((c) => (
+              <div
+                class="livro-item"
+                data-estado={provenienciaIncompleta(c) ? 'por-confirmar' : 'completa'}
+              >
+                <span class="livro-item-valor">
+                  <Claim id={c.id} lang={lang} as="span" class="livro-item-num" chip={true} />
+                </span>
+                <div class="livro-item-corpo">
+                  <code class="livro-item-id" data-linha-claim={c.id} data-linha-campo="id">
+                    {c.id}
+                  </code>
+                  <div class="livro-item-meta">
+                    <CampoDaLinha
+                      id={c.id}
+                      campo="unit"
+                      valor={c.unit}
+                      lang={lang}
+                      class="livro-item-unidade"
+                      originalPt={true}
+                    />
+                    {c.source !== null && c.source !== undefined && (
+                      <span class="livro-item-campo">
+                        <span class="livro-item-k">{s.prov.fonte}</span>{' '}
+                        <CampoDaLinha id={c.id} campo="source" valor={c.source} lang={lang} />
+                      </span>
+                    )}
+                    {c.access_date !== null && c.access_date !== undefined && (
+                      <span class="livro-item-campo">
+                        <span class="livro-item-k">{s.prov.lido}</span>{' '}
+                        <CampoDaLinha
+                          id={c.id}
+                          campo="access_date"
+                          valor={c.access_date}
+                          lang={lang}
+                        />
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+    </div>
+  )}
 
   <div class="prov" style="margin-top:clamp(30px,4vw,44px)">
     <div class="prov-row">

@@ -872,5 +872,11 @@ exclusão que a subetapa 3c escreveu para a lista por distritos.
 | conteudo | The local-government directorate’s annual series has not yet reached this term. |
 | conteudo | The local-government directorate’s annual series used on this page begins after this term. |
 | conteudo | The thin line is the total debt the local-government directorate publishes for the municipality; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. |
+| conteudo | A referência do estudo |
+| conteudo | The study’s reference |
+| conteudo | 2552 afirmações · 325 calculadas · 2417 linhas de concelhos |
+| conteudo | 2552 claims · 325 calculated · 2417 municipality rows |
+| conteudo | 2417 linhas · 308 concelhos · 2417 com proveniência completa |
+| conteudo | 2417 rows · 308 municipalities · 2417 with complete provenance |
 | autorreferencia | O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores. É a lei que o define, não este sítio. |
 | autorreferencia | The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue. The law defines it, not this site. |

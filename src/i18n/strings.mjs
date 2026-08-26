@@ -829,6 +829,10 @@ export const STRINGS = {
       metaDescricaoDoConcelhoB: '.',
       ledeDoConcelho: 'Uma linha por medida, com o valor tal como a fonte o publicou, a unidade, quem o produziu e a data em que foi lido.',
       vazioDoConcelho: 'Ainda não há linhas deste estudo para este concelho.',
+      /* O NOME DA SECÇÃO DA LINHA QUE NÃO É DE NENHUM CONCELHO. O teto legal é
+         uma constante da lei, e é contra ela que os índices de dívida se
+         calculam: é a referência do estudo, e não a medida de um concelho. */
+      referenciaK: 'A referência do estudo',
       paginaDoConcelho: 'A página do concelho',
       voltarAoIndice: 'Os concelhos no livro-razão',
     },
@@ -1713,6 +1717,7 @@ export const STRINGS = {
       metaDescricaoDoConcelhoB: '.',
       ledeDoConcelho: 'One row per measure, with the value as the source published it, the unit, who produced it and the date it was read.',
       vazioDoConcelho: 'There are no rows of this study for this municipality yet.',
+      referenciaK: 'The study’s reference',
       paginaDoConcelho: 'The municipality page',
       voltarAoIndice: 'The municipalities in the ledger',
     },
