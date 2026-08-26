@@ -690,3 +690,24 @@ A prova mudou de sítio: `scripts/gate-html.mjs` confere agora que as duas ediç
 de cada peça da página de leitura citam as mesmas afirmações pela mesma ordem, e
 fecha a construção quando não citam. Nenhuma cadeia nova entrou, nas duas
 edições.
+
+## Bloco «A grelha da voz» · G5, a DGAL pelo nome e a leitura da casa fora do rótulo, 26.08.2026
+
+**Nenhuma chave nova.** Três cadeias que o item E11 do bloco dos 308 não alcançou
+passam a dizer «Direção-Geral das Autarquias Locais» em vez de «o regulador», e
+duas perdem «legível», que é o sítio a descrever os limites da sua própria
+leitura.
+
+| onde | pt | en |
+|---|---|---|
+| `municipio.tempoRelanceK` | Índice de dívida, do primeiro ao último ano da série da Direção-Geral das Autarquias Locais | Debt index, from the first to the last year of the local-government directorate’s series |
+| `herdouNota` do mandato de 2009–2013 | Antes do primeiro ano da série da Direção-Geral das Autarquias Locais. | Before the first year of the local-government directorate’s series. |
+| `leituras.mjs` · 03 · nome da medida do índice | % de índice de dívida no primeiro ano da série da Direção-Geral das Autarquias Locais | % debt index in the first year of the local-government directorate’s series |
+| `leituras.mjs` · 03 · ressalva «De onde vêm as medidas» | …e a série anual da Direção-Geral das Autarquias Locais, que publica por município e por ano o mesmo conceito legal de dívida, compilada do lado de fora. | …and the local-government directorate’s annual series, which publishes per municipality and per year the same legal debt concept, compiled from outside. |
+
+**O que fica, e porquê.** `src/data/metodo.mjs` diz «institutos de estatística,
+reguladores, tribunais…» na página do Método: é o nome de um TIPO de fonte entre
+sete, e não a Direção-Geral das Autarquias Locais chamada por outro nome. E os
+campos `regulador`, `reguladorNota` e `reguladorAnterior` de
+`src/data/municipios.mjs` são identificadores de dados, que não se rendem em
+lado nenhum.

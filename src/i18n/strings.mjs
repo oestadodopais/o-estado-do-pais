@@ -1086,7 +1086,13 @@ export const STRINGS = {
          os que a página já publica; a banda não escreve nenhum número novo. */
       tempoBandaK: 'Mandatos, no tempo',
       tempoBandaLegendaK: 'Abrir cada mandato',
-      tempoRelanceK: 'Índice de dívida, do primeiro ano legível ao último',
+      /* O RÓTULO NOMEIA A SÉRIE, E NÃO A LEITURA DA CASA (decisão do diretor,
+         26.08.2026). Dizia «do primeiro ano legível ao último»: «legível» é o
+         sítio a descrever os limites da sua própria leitura, e a Emenda 15 tira
+         isso da página do leitor. O que fica nomeia de que série são os dois
+         números. E a Direção-Geral das Autarquias Locais diz-se pelo nome, nunca
+         «o regulador» (item E11 do bloco dos 308, que não chegou aqui). */
+      tempoRelanceK: 'Índice de dívida, do primeiro ao último ano da série da Direção-Geral das Autarquias Locais',
       tempoInstalado: 'instalado a',
       tempoLugares: 'Lugares',
       tempoHerdou: 'Herdou',
@@ -1873,7 +1879,7 @@ export const STRINGS = {
       tempoK: 'Who governed, and what the accounts recorded',
       tempoBandaK: 'Terms, in time',
       tempoBandaLegendaK: 'Open each term',
-      tempoRelanceK: 'Debt index, from the first readable year to the last',
+      tempoRelanceK: 'Debt index, from the first to the last year of the local-government directorate’s series',
       tempoInstalado: 'installed on',
       tempoLugares: 'Seats',
       tempoHerdou: 'Inherited',

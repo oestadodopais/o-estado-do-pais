@@ -308,8 +308,8 @@ const EVORA = {
           lugares: 'evora-camara-mandatos-ps-2009',
           herdou: null,
           herdouNota: {
-            pt: 'Antes do primeiro ano de contas legível nesta janela.',
-            en: 'Before the first year of accounts readable in this window.',
+            pt: 'Antes do primeiro ano da série da Direção-Geral das Autarquias Locais.',
+            en: 'Before the first year of the local-government directorate’s series.',
           },
           decidiu: [
             {
