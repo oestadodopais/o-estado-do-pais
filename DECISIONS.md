@@ -11438,6 +11438,16 @@ que a correção I77 pôs no nome do presidente interino, e por um rótulo a 11,
 na nota do excesso sobre o teto legal, que ficou à vista quando o G6 tirou a
 dobra que o escondia.
 
+#### O fecho do bloco: a leitura cruzada, a última passagem e o custo
+
+**A leitura cruzada (Codex, `critica/2026-08-27-codex-leitura-voz-livro.md`, 97 930 símbolos).** Sobre o diff do inventário deste bloco, os marcadores e as duas páginas de índice do livro-razão construídas no ramo, com duas plantas (uma frase de diligência declarada como conteúdo; uma exceção duplicada com razão trocada): **2 de 2**. Fora das plantas, cinco achados reais, todos feitos na última passagem (L1 a L5): as dicas e os rótulos das páginas do livro-razão que descreviam a maquinaria («atravessados do motor», «leitura direta da fonte»…) passaram a nomear a coisa; a descrição do `<head>` do livro-razão dos concelhos passou à forma que nomeia a página; a exceção «o trabalho conseguiu ler» saiu com a frase reescrita ao facto da fonte; o tripwire ganhou a família da cobertura («atravess», «cobert», «coverage», «complet»: 62 → 65 marcadores, 7 exceções); os títulos ingleses dentro das páginas portuguesas levam `lang="en"`, decidido pelo texto e não pela edição, num componente só, com a célula da matriz a contar 5 200 títulos citados. A dispensa de `/correcoes` fica (Emenda 17).
+
+**As duas células vermelhas de fora do bloco.** Medidas pelo construtor em `main` (vinham do bloco da grelha da voz, cuja corrida final não incluiu `tests/linha/correcoes-b.mjs`): o marcador «[a verificar]» no nome do presidente interino com 82,5 × 18,4 px de alvo, e um rótulo a 11,5 px. Corrigidas aqui: a área de toque de 44 px pelo `::after` posicionado, e o chão de 12 px passou a ser regra sobre o que está declarado e não sobre as classes medidas num dia (duas classes tinham escapado por terem nascido depois ou por renderem em rotas que a régua não abria). `correcoes-b` de 30 para 32 de 32.
+
+**O que ficou medido e por fazer (I79):** a régua da voz lê os blocos de texto e a descrição do `<head>`, não os `title` nem os `aria-label`; a planta de uma dica antiga não fica vermelha em lado nenhum. É a próxima passagem da grelha.
+
+**O custo.** Construtor (Opus) ≈364k símbolos em oito commits (a última passagem e as duas células incluídas); leitor (Codex) 97 930; total ≈0,46M, mais o lugar de direção.
+
 ## 4. O registo dos defeitos e dos adiamentos
 
 **Defeito registado 2026-08-16 (00:10), encontrado pela direcção no sítio no ar — RESOLVIDO na mesma noite (§1.37, no ar em `4217232`):** os selos acrescentados a 15.08 aos valores do cabeçalho da primeira página (308 · 11 · 15) rendem no cabeçalho com o rótulo inteiro do estudo («O Estado do País — apuramento próprio») e, no caso da contagem CAOP, com o marcador «[a verificar]» ao lado. Certo pela regra (todo o valor tem selo, para a sua linha), errado naquele sítio: no cabeçalho o selo deve ser só o glifo, com o rótulo apenas para leitores de ecrã. **Primeiro item do bloco V**, junto com a saída de «Edição de …», da introdução justificativa da primeira página e de «Estes indicadores não são escolha nossa…» (voz). Sem alteração ao portão: o selo continua ao pé do valor e a apontar para a linha própria.

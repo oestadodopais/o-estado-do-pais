@@ -1,0 +1,19 @@
+{
+ "registado_em": "2026-08-27",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "INVENTARIO.diff",
+   "descricao": "an added inventory row declaring a diligence sentence about the ledger as conteudo",
+   "sha256_antes": "d22ffb8b6aff7007f2aa82a6a7ecfdfcd97077f4b779f7226d64e05295dedead",
+   "sha256_depois": "4aced49493575b3de06dfd8f100480bfdaa26d14497b1c122cdcc199ab1868c4"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "MARCADORES.md",
+   "descricao": "a row duplicated from the last exception (its phrase kept) with the reason replaced by «conteúdo: diz o que o livro-razão contém», a reason that does not hold for that phrase (the seat meant to plant a diligence sentence; the column pick overwrote it)",
+   "sha256_antes": "cd2f3051958aaf69ddc161b00dfc79a2476a9705a7405a39db7add02df9c6a44",
+   "sha256_depois": "7a18ebc2911574e03f866d9d484d1398ff2a2054d827f7ad5f481b71205e8425"
+  }
+ ]
+}
