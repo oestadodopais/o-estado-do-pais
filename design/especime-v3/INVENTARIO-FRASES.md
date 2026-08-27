@@ -795,8 +795,8 @@ exclusão que a subetapa 3c escreveu para a lista por distritos.
 | conteudo | No rows yet. | grelha-2 | retirada | a ausência passou a dizer-se em duas palavras, «Sem linha ainda.», e a forma longa saiu (item E4 do bloco dos 308, `8b2a260`) |
 | conteudo | A referência do estudo | até 2026-08-26 | viva | — |
 | conteudo | The study’s reference | até 2026-08-26 | viva | — |
-| conteudo | 2552 afirmações · 325 calculadas · 2417 linhas de concelhos | até 2026-08-26 | viva | — |
-| conteudo | 2552 claims · 325 calculated · 2417 municipality rows | até 2026-08-26 | viva | — |
+| conteudo | 2560 afirmações · 329 calculadas · 2417 linhas de concelhos | regioes | viva | — |
+| conteudo | 2560 claims · 329 calculated · 2417 municipality rows | regioes | viva | — |
 | autorreferencia | O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores. É a lei que o define, não este sítio. | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
 | autorreferencia | The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue. The law defines it, not this site. | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
 
@@ -1176,6 +1176,20 @@ concelhos: é o nome da coisa de que a página trata, transcrito da lista, e nã
 prosa da casa. Por isso a descrição do `<head>` de uma região conta-se UMA vez,
 com o `<lugar>` no lugar do nome, e não uma por região.*
 
+*Segunda passagem, 28.08.2026, com as quatro regiões que o motor trouxe e com a
+leitura cruzada do Codex. A contagem passa de cinco a nove e a frase deixa de
+falar da cobertura: «5 regiões com linhas publicadas.» era a casa a dizer o
+estado da sua própria publicação, e o que fica é «9 regiões», o número e o que
+ele conta. As duas dicas das chaves da prova mudam pela mesma razão. As quatro
+linhas velhas ficam `retirada`, com o motivo escrito, para que a forma não volte.*
+
+*E duas linhas de contagem mudam de número sem mudar de forma: o índice do
+livro-razão diz «2 560 afirmações · 329 calculadas», porque as oito linhas das
+quatro regiões entraram no livro-razão. É o caso que a I74 descreve — «uma frase
+com um número que se move volta com outro número» —, e a escolha da casa para
+estas duas foi mantê-las declaradas: mudam de bloco, para que o rasto diga quem
+lhes mexeu no número.*
+
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
 | conteudo | As regiões de Portugal | regioes | viva | — |
@@ -1184,13 +1198,17 @@ com o `<lugar>` no lugar do nome, e não uma por região.*
 | conteudo | Each region’s GDP per capita index, in purchasing power standards, against the EU-27 average. | regioes | viva | — |
 | conteudo | As regiões NUTS II de <lugar>, e a distância de cada uma à média da UE-27. | regioes | viva | — |
 | conteudo | The NUTS II regions of <lugar>, and how far each one is from the EU-27 average. | regioes | viva | — |
-| conteudo | 5 regiões com linhas publicadas. | regioes | viva | — |
-| conteudo | 5 regions with published rows. | regioes | viva | — |
+| conteudo | 5 regiões com linhas publicadas. | regioes | retirada | a frase falava da cobertura da casa e não do que conta («com linhas publicadas», «no livro-razão»), e a Emenda 15 manda a autorreferência a zero numa página do leitor; fica o número e o que ele conta (leitura cruzada do Codex, 28.08.2026) |
+| conteudo | 5 regions with published rows. | regioes | retirada | a frase falava da cobertura da casa e não do que conta («com linhas publicadas», «no livro-razão»), e a Emenda 15 manda a autorreferência a zero numa página do leitor; fica o número e o que ele conta (leitura cruzada do Codex, 28.08.2026) |
 | conteudo | O índice de PIB per capita de <lugar>, em paridades de poder de compra, contra a média da UE-27. | regioes | viva | — |
 | conteudo | The GDP per capita index of <lugar>, in purchasing power standards, against the EU-27 average. | regioes | viva | — |
 | conteudo | região NUTS II | regioes | viva | — |
 | conteudo | NUTS II region | regioes | viva | — |
 | conteudo | As medidas | regioes | viva | — |
 | conteudo | The measures | regioes | viva | — |
-| conteudo | regiões com linhas publicadas no livro-razão | regioes | viva | — |
-| conteudo | regions with rows published in the ledger | regioes | viva | — |
+| conteudo | regiões com linhas publicadas no livro-razão | regioes | retirada | a frase falava da cobertura da casa e não do que conta («com linhas publicadas», «no livro-razão»), e a Emenda 15 manda a autorreferência a zero numa página do leitor; fica o número e o que ele conta (leitura cruzada do Codex, 28.08.2026) |
+| conteudo | regions with rows published in the ledger | regioes | retirada | a frase falava da cobertura da casa e não do que conta («com linhas publicadas», «no livro-razão»), e a Emenda 15 manda a autorreferência a zero numa página do leitor; fica o número e o que ele conta (leitura cruzada do Codex, 28.08.2026) |
+| conteudo | 9 regiões | regioes | viva | — |
+| conteudo | 9 regions | regioes | viva | — |
+| conteudo | regiões desenhadas na régua da convergência | regioes | viva | — |
+| conteudo | regions drawn on the convergence rule | regioes | viva | — |

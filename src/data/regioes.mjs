@@ -42,6 +42,39 @@
  * primeira alteração.
  */
 
+/**
+ * ---------------------------------------------------------------------------
+ * O `codigo`: A CHAVE DA REGIÃO NA CLASSIFICAÇÃO, LIDA DA FONTE (Emenda 21e)
+ * ---------------------------------------------------------------------------
+ * Cada região traz o seu código NUTS II, e ao lado dele, em comentário, o nome
+ * OFICIAL tal como a classificação o escreve. Nenhum dos dois é escrito de
+ * memória: os nove códigos e os nove nomes saem da nota que o motor alojou,
+ * `content/03 Regional Economy/Technical Source/NUTS-2024.md`, que por sua vez
+ * os lê de três ficheiros guardados com o seu resumo — `nuts_datasets.json`
+ * (qual é a versão em vigor: NUTS 2024), `nuts2024_at.csv` (que unidades ela tem
+ * e como se chamam) e `nuts_geo_codelist.xml` (o nível de cada código). É a
+ * mesma disciplina do `slug`: o que se traduz é o rótulo, nunca a chave.
+ *
+ * O CÓDIGO NÃO SE RENDE em página nenhuma, e não é para render: é a chave que
+ * liga esta entrada à classificação e à linha do livro-razão, e o que o leitor
+ * vê é o nome. Está aqui para que a próxima região que entre traga a sua origem
+ * consigo, e para que uma trocada se veja ao lado do nome.
+ *
+ * A REFERÊNCIA NÃO TEM CÓDIGO NUTS II, e é a mesma razão de sempre: `PT` é o
+ * país, nível 0, e não é uma região NUTS II. A nota do motor di-lo com estas
+ * palavras: «(`pib-pc-portugal-2024` é o país, `PT`, que é nível 0 e não é uma
+ * região NUTS II.)»
+ *
+ * ---------------------------------------------------------------------------
+ * A ORDEM DESTA LISTA É A ORDEM EM QUE AS ENTRADAS CHEGARAM
+ * ---------------------------------------------------------------------------
+ * As seis primeiras são as da etapa 2, e as quatro últimas entraram a 28.08.2026
+ * pela ordem em que a tabela da nota do motor as escreve (`PT11`, `PT19`,
+ * `PT1D`, `PT20`). Nada se reordena: a lista da régua rende-se por esta ordem e o
+ * eixo arruma-se pelo VALOR, que é uma ordem geométrica e não editorial. Uma
+ * reordenação é uma decisão de desenho, e não um efeito secundário de acrescentar
+ * quatro linhas.
+ */
 export const REGIOES = [
   {
     id: 'pt',
@@ -60,6 +93,8 @@ export const REGIOES = [
   {
     id: 'gl',
     slug: 'grande-lisboa',
+    /** `PT1A` · «Grande Lisboa» na NUTS 2024. */
+    codigo: 'PT1A',
     nome: { pt: 'Grande Lisboa', en: 'Greater Lisbon' },
     valor: 'pib-pc-grande-lisboa-2024',
     distancia: 'distancia-grande-lisboa-ue27-2024',
@@ -72,6 +107,8 @@ export const REGIOES = [
   {
     id: 'ps',
     slug: 'peninsula-de-setubal',
+    /** `PT1B` · «Península de Setúbal» na NUTS 2024. */
+    codigo: 'PT1B',
     nome: { pt: 'Península de Setúbal', en: 'Setúbal Peninsula' },
     valor: 'pib-pc-peninsula-de-setubal-2024',
     distancia: 'distancia-peninsula-de-setubal-ue27-2024',
@@ -96,6 +133,8 @@ export const REGIOES = [
   {
     id: 'alg',
     slug: 'algarve',
+    /** `PT15` · «Algarve» na NUTS 2024. */
+    codigo: 'PT15',
     nome: { pt: 'Algarve', en: 'Algarve' },
     valor: 'pib-pc-algarve-2024',
     distancia: 'distancia-algarve-ue27-2024',
@@ -108,6 +147,8 @@ export const REGIOES = [
   {
     id: 'mad',
     slug: 'madeira',
+    /** `PT30` · «Região Autónoma da Madeira» na NUTS 2024. */
+    codigo: 'PT30',
     nome: { pt: 'Madeira', en: 'Madeira' },
     valor: 'pib-pc-madeira-2024',
     distancia: 'distancia-madeira-ue27-2024',
@@ -120,6 +161,8 @@ export const REGIOES = [
   {
     id: 'ale',
     slug: 'alentejo',
+    /** `PT1C` · «Alentejo» na NUTS 2024. */
+    codigo: 'PT1C',
     nome: { pt: 'Alentejo', en: 'Alentejo' },
     valor: 'pib-pc-alentejo-2024',
     valorHistorico: 'pib-pc-alentejo-2000',
@@ -146,6 +189,92 @@ export const REGIOES = [
         { claim: 'distancia-alentejo-ue27-2000' },
         ' points away: the gap has widened.',
       ],
+    },
+  },
+  /* -------------------------------------------------------------------------
+     AS QUATRO QUE FALTAVAM (Emenda 21e, 28.08.2026)
+     -------------------------------------------------------------------------
+     O motor confirmou na fonte o conjunto NUTS II em vigor — nove regiões — e
+     atravessou as linhas das quatro que o sítio não tinha. Entram aqui pela
+     mesma via que as outras seis: uma entrada com as suas duas afirmações, e
+     `src/lib/regioes.mjs` faz o resto (barra, página, endereço, contagem).
+
+     OS NOMES SEGUEM A CONVENÇÃO DA CASA, e a convenção é esta: o nome oficial
+     encurta-se onde o uso corrente o encurta («Região Autónoma da Madeira» já era
+     «Madeira» desde a etapa 2), e só se traduz onde existe um nome inglês
+     estabelecido («Greater Lisbon», «Setúbal Peninsula»). O Eurostat não traduz
+     nenhum destes nomes — a nota do motor mede-o: «`NAME_LATN` e `NUTS_NAME` são
+     iguais nas nove linhas, e o nome inglês da lista de códigos `GEO` é o mesmo:
+     o Eurostat não traduz estes nomes» —, e por isso «Norte», «Centro» e «Oeste e
+     Vale do Tejo» ficam em português nas duas edições. «Açores» tem nome inglês
+     estabelecido, «Azores», e traduz-se.
+
+     O «(PT)» DE «Centro (PT)» NÃO ENTRA: é o desambiguador da classificação, que
+     tem um «Centro» em mais de um país, e não faz parte do nome da região. Fica
+     escrito no comentário do código, que é onde o nome oficial vive.
+     ------------------------------------------------------------------------- */
+  {
+    id: 'nor',
+    /** `PT11` · «Norte» na NUTS 2024. */
+    codigo: 'PT11',
+    slug: 'norte',
+    nome: { pt: 'Norte', en: 'Norte' },
+    valor: 'pib-pc-norte-2024',
+    distancia: 'distancia-norte-ue27-2024',
+    sinal: '−',
+    frase: {
+      pt: ['O Norte está ', { claim: 'distancia-norte-ue27-2024' }, ' pontos abaixo da média da UE-27.'],
+      en: ['Norte is ', { claim: 'distancia-norte-ue27-2024' }, ' points below the EU-27 average.'],
+    },
+  },
+  {
+    id: 'cen',
+    /** `PT19` · «Centro (PT)» na NUTS 2024. */
+    codigo: 'PT19',
+    slug: 'centro',
+    nome: { pt: 'Centro', en: 'Centro' },
+    valor: 'pib-pc-centro-2024',
+    distancia: 'distancia-centro-ue27-2024',
+    sinal: '−',
+    frase: {
+      pt: ['O Centro está ', { claim: 'distancia-centro-ue27-2024' }, ' pontos abaixo da média da UE-27.'],
+      en: ['Centro is ', { claim: 'distancia-centro-ue27-2024' }, ' points below the EU-27 average.'],
+    },
+  },
+  {
+    id: 'ovt',
+    /** `PT1D` · «Oeste e Vale do Tejo» na NUTS 2024. */
+    codigo: 'PT1D',
+    slug: 'oeste-e-vale-do-tejo',
+    nome: { pt: 'Oeste e Vale do Tejo', en: 'Oeste e Vale do Tejo' },
+    valor: 'pib-pc-oeste-e-vale-do-tejo-2024',
+    distancia: 'distancia-oeste-e-vale-do-tejo-ue27-2024',
+    sinal: '−',
+    frase: {
+      pt: [
+        'O Oeste e Vale do Tejo está ',
+        { claim: 'distancia-oeste-e-vale-do-tejo-ue27-2024' },
+        ' pontos abaixo da média da UE-27.',
+      ],
+      en: [
+        'Oeste e Vale do Tejo is ',
+        { claim: 'distancia-oeste-e-vale-do-tejo-ue27-2024' },
+        ' points below the EU-27 average.',
+      ],
+    },
+  },
+  {
+    id: 'aco',
+    /** `PT20` · «Região Autónoma dos Açores» na NUTS 2024. */
+    codigo: 'PT20',
+    slug: 'acores',
+    nome: { pt: 'Açores', en: 'Azores' },
+    valor: 'pib-pc-acores-2024',
+    distancia: 'distancia-acores-ue27-2024',
+    sinal: '−',
+    frase: {
+      pt: ['Os Açores estão ', { claim: 'distancia-acores-ue27-2024' }, ' pontos abaixo da média da UE-27.'],
+      en: ['The Azores are ', { claim: 'distancia-acores-ue27-2024' }, ' points below the EU-27 average.'],
     },
   },
 ];
@@ -206,12 +335,39 @@ export const ESCALA = {
  * da distância, que era o que vivia lá em baixo, saiu com a barra do eixo
  * (Emenda 21c: a barra é da lista, uma por leitura).
  *
- * SÃO QUATRO PATAMARES, E COM SEIS LEITURAS ISSO CHEGA — mas não chega por
- * definição. O empacotador põe no ÚLTIMO patamar o que já não cabe em nenhum, e
- * com regiões a mais na mesma vizinhança da escala dois rótulos voltariam a
- * cruzar-se. Quem o vê é a célula M1b da régua, e a resposta desse dia é um
- * patamar a mais aqui e mais 42 unidades de caixa. Fica escrito para que a
- * resposta não seja procurada outra vez.
+ * SÃO QUATRO PATAMARES, E COM DEZ LEITURAS CONTINUAM A CHEGAR (I85, medida e
+ * fechada a 28.08.2026). A nota de 27.08 previa o contrário: «com seis leituras
+ * isso chega — mas não chega por definição … a resposta desse dia é um patamar a
+ * mais aqui e mais 42 unidades de caixa». O motor trouxe as quatro regiões que
+ * faltavam, as leituras passaram de seis a dez, e a previsão foi posta à prova
+ * em vez de aplicada de cor.
+ *
+ * O QUE A RÉGUA MEDIU, com as duas geometrias construídas e fotografadas:
+ *
+ *   cinco patamares    10 marcas · 0 rótulos cruzados · 0 tapados · 4 patamares
+ *                      usados (1, 1, 3, 5), o quinto VAZIO
+ *   quatro patamares   10 marcas · 0 rótulos cruzados · 0 tapados · 4 patamares
+ *                      usados (1, 1, 3, 5)
+ *
+ * O empacotador nunca precisou do quinto: percorre a régua da esquerda para a
+ * direita e só sobe de patamar quando o rótulo não cabe, e com estes dez valores
+ * o mais alto de que precisa é o quarto. O quinto patamar seria 42 unidades de
+ * papel no cimo do desenho, e a leitura da pré-visualização n.º 1 encolheu esta
+ * caixa precisamente por isso: «os 38 pontos de baixo eram papel».
+ *
+ * E NÃO HÁ CRESCIMENTO POR QUE ESPERAR: o conjunto NUTS II em vigor tem NOVE
+ * regiões, confirmado na fonte pelo motor (`nuts_datasets.json` diz que a versão
+ * em vigor é a NUTS 2024, `nuts2024_at.csv` diz que unidades ela tem), e as nove
+ * têm linha. A régua está no seu tamanho final até a classificação mudar; nesse
+ * dia, a M1b vê-o e a resposta continua escrita aqui.
+ *
+ * O QUE FICA DE PÉ DA NOTA DE 27.08: os quatro patamares estão TODOS ocupados
+ * (1, 1, 3 e 5 marcas), e por isso não há folga nenhuma. Uma décima primeira
+ * leitura na vizinhança densa da escala iria para o último patamar por não caber
+ * em nenhum, e dois rótulos cruzar-se-iam. Quem o vê é a M1b, que imprime quantos
+ * patamares o empacotador usou; a resposta desse dia é o patamar a mais e as 42
+ * unidades de caixa, e a conta está escrita aqui: o patamar novo entra por cima
+ * (`262`), `eixoY` passa de 248 para 290 e `altura` de 290 para 332.
  *
  * A MEDIÇÃO DA SUBETAPA 2g FICA INTACTA: o que ela mediu foi a distância entre o
  * nome e o valor DENTRO de uma chapa (24 unidades, `y-24` e `y-1`), e essa não

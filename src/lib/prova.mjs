@@ -480,14 +480,20 @@ const FRASES = {
   },
   /* AS DUAS CONTAGENS DAS REGIÕES (Emenda 21, 27.08.2026). Hoje são iguais, e é
      por isso que são duas: no dia em que o motor declarar uma região antes de a
-     linha atravessar, a diferença entre elas é a resposta certa e vê-se. */
+     linha atravessar, a diferença entre elas é a resposta certa e vê-se.
+
+     AS DUAS FRASES NOMEIAM O QUE SE CONTA, e não a cobertura da casa (leitura
+     cruzada do Codex, 28.08.2026): uma dica que diz «com linhas publicadas no
+     livro-razão» é a casa a falar do seu próprio estado de publicação, que é o
+     que a Emenda 15 manda sair de uma página do leitor. Uma conta as regiões da
+     classificação, a outra as que a régua desenha. */
   regioes_total: {
-    pt: 'regiões declaradas na lista das regiões',
-    en: 'regions declared in the regions list',
+    pt: 'regiões NUTS II de Portugal',
+    en: 'NUTS II regions of Portugal',
   },
   regioes_com_linha: {
-    pt: 'regiões com linhas publicadas no livro-razão',
-    en: 'regions with rows published in the ledger',
+    pt: 'regiões desenhadas na régua da convergência',
+    en: 'regions drawn on the convergence rule',
   },
 };
 

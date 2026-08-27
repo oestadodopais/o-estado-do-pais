@@ -366,19 +366,22 @@ const ESTRAGOS = {
     return `o selo de "${e.distancia}" retirado de ${lang}:${slug}`;
   },
   R3: (m) => {
-    /* Uma região a mais na régua do índice, sem linha nenhuma por baixo. */
+    /* Uma região a mais na régua do índice, sem linha nenhuma por baixo. O
+       identificador é de propósito um que não existe: as nove regiões NUTS II em
+       vigor têm todas linha desde 28.08, e um estrago que usasse o `id` de uma
+       delas não plantava nada. */
     const p = m.indices.pt;
     m.indices.pt = {
       ...p,
       html: p.html.replace(
         '<ul class="conv-lista"',
-        '<ul class="conv-lista"><li class="conv-linha" data-conv-linha="nor"></li>'.replace(
+        '<ul class="conv-lista"><li class="conv-linha" data-conv-linha="atl"></li>'.replace(
           '<ul class="conv-lista">',
           '<ul class="conv-lista"',
         ),
       ),
     };
-    return 'uma linha "nor" (o Norte, sem linhas) acrescentada à régua do índice';
+    return 'uma linha "atl" (uma região que não existe) acrescentada à régua do índice';
   },
   R4: (m) => {
     /* Uma barra com cor de estatuto, que é a planta que o brief nomeia. */
@@ -387,9 +390,10 @@ const ESTRAGOS = {
     return 'uma barra do índice com a classe de estado "barra-fora"';
   },
   R5: (m) => {
-    /* Uma região sem linhas com página construída: as contagens divergem. */
-    m.pastas.pt = [...m.pastas.pt, 'norte'];
-    return 'uma pasta "norte" no índice português, sem linhas por baixo';
+    /* Uma região sem linhas com página construída: as contagens divergem. O nome
+       é de uma região que não existe, pela razão do estrago da R3. */
+    m.pastas.pt = [...m.pastas.pt, 'atlantida'];
+    return 'uma pasta "atlantida" no índice português, sem linhas por baixo';
   },
 };
 

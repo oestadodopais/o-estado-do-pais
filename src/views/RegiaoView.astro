@@ -54,6 +54,23 @@ if (!regiao) throw new Error(`regioes: região desconhecida ou sem linhas "${slu
 const path = routePath('regiao', lang, { slug });
 const nome = regiao.nome[lang];
 const indice = getClaim(regiao.valor);
+const distancia = getClaim(regiao.distancia);
+
+/* ---------------------------------------------------------------------------
+ * UM SEPARADOR SÓ EXISTE ENTRE DUAS COISAS (leitura cruzada do Codex, 28.08.2026)
+ * ---------------------------------------------------------------------------
+ * A medida da peça da distância era `[unidade, ' · ', { ref: reference_date }]`,
+ * e a linha da distância é DERIVADA: não tem `reference_date`, porque a
+ * proveniência de uma linha derivada é a das suas origens. O `{ ref: null }`
+ * rendia um `<span>` vazio, e a peça lia-se «pontos do índice ·», com o
+ * separador a apontar para nada.
+ *
+ * O período entra quando a linha o tem, e não entra quando não tem. A conta é
+ * feita aqui, na construção, e não por uma regra de folha que esconda um espaço:
+ * o que não existe não se rende.
+ */
+const medidaDeUmaLinha = (unidade, linha) =>
+  linha.reference_date ? [unidade, ' · ', { ref: linha.reference_date }] : [unidade];
 ---
 
 <Base
@@ -93,11 +110,10 @@ const indice = getClaim(regiao.valor);
         lang={lang}
         id={regiao.valor}
         nome={s.regioes.indiceK}
-        medida={[
+        medida={medidaDeUmaLinha(
           { nl: s.home.instr1.glanceUnidade, motivo: 'escala-de-instrumento' },
-          ' · ',
-          { ref: indice.reference_date },
-        ]}
+          indice,
+        )}
         estado="sem"
       />
       <Peca
@@ -105,11 +121,7 @@ const indice = getClaim(regiao.valor);
         lang={lang}
         id={regiao.distancia}
         nome={s.regioes.distanciaK}
-        medida={[
-          s.regioes.distanciaUnidade,
-          ' · ',
-          { ref: getClaim(regiao.distancia).reference_date },
-        ]}
+        medida={medidaDeUmaLinha(s.regioes.distanciaUnidade, distancia)}
         estado="sem"
       />
     </div>
