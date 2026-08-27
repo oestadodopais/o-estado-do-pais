@@ -23,7 +23,12 @@
  *      escrita, ou um modo ou tipo que não existe;
  *   5. **o rasto da revisão** · um bloco declarado no inventário sem entrada em
  *      `design/especime-v3/critica/REVISOES-DO-INVENTARIO.md`, ou uma entrada
- *      que nomeia um ficheiro que não existe.
+ *      que nomeia um ficheiro que não existe;
+ *   6. **o gatilho da regra** · uma emenda da voz em `direcao.md` com número
+ *      acima do `lida-contra` da cabeça do inventário. A regra mudou e o
+ *      inventário não foi relido contra ela: foi o que aconteceu com a Emenda 18
+ *      de 25.08.2026, e é o que este passo impede que volte a acontecer em
+ *      silêncio.
  *
  * A varredura não é feita aqui: é a da régua, corrida com `--json`, que é a
  * mesma que a matriz já usa. Duas implementações da mesma definição diriam a
@@ -103,6 +108,18 @@ if (!casa.inventario_existe) erros.push(`não existe ${casa.inventario}`);
  * entrada sai na saída para que ninguém a esqueça. O que fecha a construção é um
  * bloco SEM entrada, ou uma entrada que nomeia um ficheiro que não existe. */
 const REVISOES = path.join('design', 'especime-v3', 'critica', 'REVISOES-DO-INVENTARIO.md');
+/* A CONSTITUIÇÃO LÊ-SE DE ONDE ESTA VARIÁVEL DISSER, E A RAZÃO É A REGRA 14. Uma
+   régua só conta depois de apanhar um estrago plantado, e o estrago desta é uma
+   emenda da voz que ainda não existe. Plantá-la no ficheiro da direção seria
+   escrever na constituição, que só muda pela mão do diretor: planta-se numa
+   CÓPIA, e o portão lê-a por aqui. É a mesma forma de `OEDP_REGISTOS_DIR` no
+   portão de HTML, e pela mesma razão. */
+const CAMINHO_DA_DIRECAO =
+  process.env.OEDP_DIRECAO ?? path.join(RAIZ, 'design', 'especime-v3', 'direcao.md');
+/* A cadeia que marca uma emenda da voz. As Emendas 15 e 18 já a levam, e é dela
+   que o inventário depende: quando aparecer a 20 com esta cadeia, este passo
+   fecha a construção até alguém reler o inventário. */
+const CADEIA_DA_VOZ = '§5 «Voz» emendado';
 const inventario = leInventario(RAIZ);
 const blocosPorLer = [];
 {
@@ -154,6 +171,47 @@ const blocosPorLer = [];
   }
 }
 
+/* 6 · o gatilho da regra (G3). */
+let lidaContra = null;
+let emendaMaisAlta = null;
+{
+  const lida = (inventario.cabeca['lida-contra'] ?? '').match(/(\d+)/);
+  if (!lida) {
+    erros.push(
+      `${FICHEIRO_DO_INVENTARIO}: a cabeça não diz «lida-contra: Emenda N». ` +
+        `Sem ela não há maneira de saber se a regra da voz mudou por baixo do inventário.`,
+    );
+  } else {
+    lidaContra = Number(lida[1]);
+  }
+  if (!fs.existsSync(CAMINHO_DA_DIRECAO)) {
+    erros.push(`não existe ${path.relative(RAIZ, CAMINHO_DA_DIRECAO)}, e é onde vivem as emendas da voz.`);
+  } else {
+    const cru = fs.readFileSync(CAMINHO_DA_DIRECAO, 'utf8');
+    for (const linha of cru.split('\n')) {
+      if (!linha.includes(CADEIA_DA_VOZ)) continue;
+      const n = linha.match(/^(\d+)\.\s/);
+      if (!n) continue;
+      const numero = Number(n[1]);
+      if (emendaMaisAlta === null || numero > emendaMaisAlta) emendaMaisAlta = numero;
+    }
+    if (emendaMaisAlta === null) {
+      erros.push(
+        `nenhuma emenda de ${path.relative(RAIZ, CAMINHO_DA_DIRECAO)} leva a cadeia «${CADEIA_DA_VOZ}». ` +
+          `Ou a cadeia mudou, ou o ficheiro não é o que se pensa: nos dois casos o gatilho da regra ` +
+          `deixou de poder disparar, e isso é pior do que uma emenda por ler.`,
+      );
+    } else if (lidaContra !== null && emendaMaisAlta > lidaContra) {
+      erros.push(
+        `o inventário foi lido contra a Emenda ${lidaContra} e a Emenda ${emendaMaisAlta} mudou a ` +
+          `regra da voz: relê e atualiza.\n` +
+          `      A releitura é um trabalho de outra família sobre o inventário inteiro, e o campo ` +
+          `«lida-contra» só sobe com uma entrada nova em ${REVISOES}.`,
+      );
+    }
+  }
+}
+
 console.log('');
 if (erros.length) {
   console.error(vermelho(`  PORTÃO DA VOZ · ${erros.length} problema(s)\n`));
@@ -167,7 +225,7 @@ console.log(
   verde('  voz ✓ ') +
     `${voz.marcadores} marcadores · ${voz.excecoes} exceções (${voz.excecoes_de_registo} de registo) · ` +
     `${voz.frases_varridas} frases distintas, ${voz.ocorrencias_varridas} ocorrências em ${rotas.length} rotas · ` +
-    `autorreferência 0 · nada por classificar · ${inventario.linhas.length} linhas do inventário com bloco`,
+    `autorreferência 0 · nada por classificar · ${inventario.linhas.length} linhas do inventário com bloco · lida contra a Emenda ${lidaContra} (a mais alta da voz é a ${emendaMaisAlta})`,
 );
 if (blocosPorLer.length) {
   console.log(cinza(`        ${blocosPorLer.length} bloco(s) do inventário por ler, e o registo di-lo:`));

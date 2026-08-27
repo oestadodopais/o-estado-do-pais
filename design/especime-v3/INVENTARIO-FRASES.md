@@ -1,5 +1,18 @@
 # Inventário das frases da casa · rota a rota
 
+```
+lida-contra: Emenda 18
+```
+
+*A cabeça do ficheiro, e é uma só linha: contra que emenda da voz é que esta
+tabela foi lida. As emendas que mexem no §5 «Voz» de `direcao.md` marcam-se com a
+cadeia «§5 «Voz» emendado», e `npm run check:voz` procura a mais alta que a leve.
+Quando aparecer uma emenda da voz acima desta, a construção fecha e diz-se: o
+inventário foi lido contra uma regra que já mudou. **O campo só sobe com uma
+entrada nova em `critica/REVISOES-DO-INVENTARIO.md`**, porque a releitura é
+trabalho de outra família sobre o inventário inteiro, e não um número que se
+escreve aqui.*
+
 *Etapa 2l, 21.08.2026. A Emenda 15 («a página do leitor não se explica») traz a
 sua própria medida: «o inventário de todas as frases da casa na superfície
 pública, classificadas em conteúdo, navegação e autorreferência; a terceira
