@@ -255,13 +255,27 @@ function r5(m) {
   return erros;
 }
 
-/** R6 · a atribuição da DGT onde o mapa está. */
+/** R6 · a atribuição da DGT onde o mapa está.
+ *
+ * ---------------------------------------------------------------------------
+ * A MENÇÃO É ESCRITA, E NÃO APENAS ALCANÇÁVEL (Emenda 20e, 27.08.2026)
+ * ---------------------------------------------------------------------------
+ * A primeira forma desta regra pedia duas coisas: um selo na figura do mapa, e a
+ * linha do livro-razão que ele abre a nomear a entidade proprietária. A cadeia
+ * fechava, mas a menção ficava a um clique do mapa mais visto do sítio, e uma
+ * obrigação de licença não se cumpre por hiperligação: a Emenda 20e diz que a
+ * atribuição é escrita, e que é escrita onde o mapa está.
+ *
+ * São por isso três conferências, e a do meio é a nova: onde há um mapa há um
+ * bloco de fonte com as três cadeias do manifesto (a entidade proprietária, o
+ * nome e a edição da Carta, e a licença), palavra por palavra. A da licença é a
+ * forma exacta do manifesto, «CC BY 4.0» e não «CC-BY»: uma licença
+ * identifica-se pela versão. */
 function r6(m) {
   const erros = [];
-  const atribuicao = m.manifesto.fonte.atribuicao;
+  const { atribuicao, carta, licenca } = m.manifesto.fonte;
   const portaDaLinha = (lang) => routePath('linha', lang, { slug: LINHA_DA_CARTA });
 
-  /* Onde há um mapa há um selo, e o selo abre a linha da Carta. */
   for (const pg of m.paginas.filter((p) => p.tipo === 'inicio' || p.tipo === 'distrito')) {
     const figura = pg.root.querySelector('[data-mapa-areas]')
       ? pg.root.querySelector('[data-mapa-raiz]')
@@ -270,18 +284,43 @@ function r6(m) {
       erros.push(`${pg.rota}: a página não tem a figura do mapa.`);
       continue;
     }
+
+    /* (a) o selo, que abre a linha da Carta. */
     const selos = figura
       .querySelectorAll('a.src-chip')
       .map((a) => (a.getAttribute('href') ?? '').split('#')[0]);
     if (!selos.includes(portaDaLinha(pg.lang))) {
       erros.push(
-        `${pg.rota}: o mapa não tem, na sua figura, o selo que abre ${portaDaLinha(pg.lang)}. ` +
-          `A menção da entidade proprietária é a única obrigação da licença da Carta.`,
+        `${pg.rota}: o mapa não tem, na sua figura, o selo que abre ${portaDaLinha(pg.lang)}.`,
       );
+    }
+
+    /* (b) a menção escrita, com as três cadeias do manifesto. */
+    const blocos = pg.root.querySelectorAll('[data-fonte-da-carta]');
+    if (blocos.length === 0) {
+      erros.push(
+        `${pg.rota}: a página desenha um mapa e não escreve a menção da fonte. ` +
+          `A menção de que a entidade proprietária é «${atribuicao}» é a única ` +
+          `obrigação da licença da Carta, e a Emenda 20e põe-na onde o mapa está.`,
+      );
+      continue;
+    }
+    const texto = blocos.map((b) => b.text.replace(/\s+/g, ' ').trim()).join(' | ');
+    for (const [nome, cadeia] of [
+      ['a entidade proprietária', atribuicao],
+      ['o nome e a edição da Carta', carta],
+      ['a licença', licenca],
+    ]) {
+      if (!texto.includes(cadeia)) {
+        erros.push(
+          `${pg.rota}: a menção da fonte não escreve ${nome}, «${cadeia}», ` +
+            `tal como o manifesto do motor a traz. Está lá: «${texto}».`,
+        );
+      }
     }
   }
 
-  /* E a linha que o selo abre nomeia a entidade proprietária. */
+  /* (c) e a linha que o selo abre nomeia a entidade proprietária. */
   for (const pg of m.paginas.filter((p) => p.tipo === 'linha')) {
     if (!pg.root.text.includes(atribuicao)) {
       erros.push(
@@ -358,10 +397,21 @@ const ESTRAGOS = {
     }
     return 'o selo da Carta retirado da figura do mapa da primeira página';
   },
-  /* A R6 TEM DUAS METADES E POR ISSO TEM DOIS ESTRAGOS: o selo que abre a linha,
-     e a linha que nomeia a entidade proprietária. Um estrago só provava metade
-     da regra, e a metade que ficasse por provar era exactamente a que a licença
-     obriga. */
+  /* A MENÇÃO ESCRITA NA PRIMEIRA PÁGINA (Emenda 20e). É a metade nova da regra e
+     é a que a licença obriga: o nome da entidade proprietária, ao pé do mapa
+     mais visto do sítio. Retira-se do bloco da fonte e mais nada, para que o que
+     apanhe o estrago seja a conferência da menção e não a do selo. */
+  'R6 (a menção)': (m) => {
+    const pg = m.paginas.find((p) => p.tipo === 'inicio');
+    const nome = m.manifesto.fonte.atribuicao;
+    const bloco = pg.root.querySelector('[data-fonte-da-carta]');
+    bloco.set_content(bloco.innerHTML.split(nome).join(''));
+    return 'o nome da entidade proprietária retirado da menção da primeira página';
+  },
+  /* A R6 TEM TRÊS METADES E POR ISSO TEM TRÊS ESTRAGOS: o selo que abre a linha,
+     a menção escrita ao pé do mapa, e a linha que nomeia a entidade
+     proprietária. Um estrago só provava um terço da regra, e o que ficasse por
+     provar era exactamente o que a licença obriga. */
   'R6 (a linha)': (m) => {
     const pg = m.paginas.find((p) => p.tipo === 'linha');
     const nome = m.manifesto.fonte.atribuicao;

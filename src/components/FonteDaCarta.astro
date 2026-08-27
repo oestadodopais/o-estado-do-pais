@@ -1,0 +1,37 @@
+---
+/**
+ * A MENÇÃO DA FONTE DO DESENHO (Emenda 20e, 27.08.2026).
+ *
+ * ---------------------------------------------------------------------------
+ * PORQUE EXISTE, E PORQUE É UM COMPONENTE E NÃO DUAS FRASES
+ * ---------------------------------------------------------------------------
+ * A licença da CAOP tem uma obrigação só, e a DGT escreve-a: «a menção de que a
+ * entidade proprietária da informação é a Direção-Geral do Território». A Emenda
+ * 20e diz onde ela vive: onde o mapa está. São duas superfícies, a primeira
+ * página e as 29 páginas de unidade, e a menção tem de ser a mesma nas duas:
+ * escrita duas vezes, divergia à primeira alteração.
+ *
+ * NADA AQUI É ESCRITO À MÃO. As três cadeias saem de `mapa/manifest.json`, que o
+ * motor escreveu a partir das constantes onde a frase da DGT foi transcrita da
+ * página da fonte. É por isso que a licença se lê «CC BY 4.0», que é a forma
+ * exacta do manifesto, e não «CC-BY», que era a forma abreviada do colofão da v2
+ * que a página de unidade transcrevia antes.
+ *
+ * O `data-nonledger` COBRE O BLOCO INTEIRO, com o motivo `fonte-da-carta`
+ * declarado em `ledger/allowlist.yml`: os algarismos que aqui há são a edição da
+ * Carta, que faz parte do nome dela, e a versão da licença, sem a qual «CC BY»
+ * não são termos. Nenhum é uma medição de Portugal nem um número deste sítio.
+ */
+import { atribuicaoDoMapa } from '../lib/mapa.mjs';
+
+const { classe = null } = Astro.props;
+const f = atribuicaoDoMapa();
+---
+
+<span
+  class:list={['fonte-da-carta', classe]}
+  data-fonte-da-carta
+  data-nonledger="fonte-da-carta"
+>
+  {f.entidade} · {f.carta} · {f.licenca}
+</span>

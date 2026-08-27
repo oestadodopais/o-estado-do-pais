@@ -44,9 +44,9 @@
  */
 import Base from '../layouts/Base.astro';
 import Provenance from '../components/Provenance.astro';
+import FonteDaCarta from '../components/FonteDaCarta.astro';
 import { distritoDoMapa, unidadeDoMapa } from '../lib/mapa.mjs';
 import { getClaim } from '../lib/ledger.mjs';
-import { VERBATIM } from '../data/verbatim.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import '../styles/distrito.css';
@@ -175,16 +175,19 @@ const tipo = unidade.tipo === 'ilha' ? s.distritos.tipoIlha : s.distritos.tipoDi
     </ul>
   </section>
 
-  {/* DE ONDE VEM O DESENHO. A transcrição que `/municipios` já publica, com a
-      publicação, a distribuição, a licença e os ficheiros: é a menção que a
-      licença CC BY da CAOP obriga a fazer, e vive onde o desenho está. Não é
-      prosa da casa: é uma citação registada, comparada carácter a carácter pelo
-      portão contra `src/data/verbatim.mjs`. */}
+  {/* DE ONDE VEM O DESENHO (Emenda 20e).
+      Era a transcrição do colofão da v2 que `/municipios` publica, e ela diz
+      «licença CC-BY», sem versão: uma licença identifica-se pela versão, e a
+      forma exacta da fonte, que o manifesto do motor guarda, é «CC BY 4.0». A
+      menção passa a sair do manifesto, como a entidade proprietária e o nome da
+      edição da Carta, e é o MESMO bloco que a primeira página rende ao pé do
+      selo do mapa. A transcrição do colofão fica onde ela é o objecto, que é o
+      índice dos concelhos. */}
   <div class="prov distrito-prov">
     <div class="prov-row">
-      <span class="prov-study">{s.municipios.fonteK}</span>
-      <span class="prov-vals verbatim" data-verbatim="caop-fonte" lang="pt-PT">
-        {VERBATIM['caop-fonte'].text}
+      <span class="prov-study">{s.distritos.fonteK}</span>
+      <span class="prov-vals">
+        <FonteDaCarta />
       </span>
     </div>
   </div>

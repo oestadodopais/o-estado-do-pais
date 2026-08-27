@@ -47,3 +47,18 @@
 .uni-porta:focus-visible {
   outline: none;
 }
+
+/* ---------------------------------------------------------------------------
+ * A MENÇÃO DA FONTE (Emenda 20e)
+ * ---------------------------------------------------------------------------
+ * O mesmo bloco nas duas superfícies, e por isso a mesma regra: letra de
+ * instrumento, corpo pequeno, tinta apagada. Não é uma legenda nem uma porta: é
+ * a menção que a licença da Carta obriga a fazer ao pé do desenho, e compõe-se
+ * como o resto da mobília de proveniência do sítio.
+ */
+.fonte-da-carta {
+  font-family: var(--f-instr);
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--muted);
+}

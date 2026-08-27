@@ -886,3 +886,32 @@ não são chaves: vêm da Carta e atravessam no artefacto do motor.
 («` concelhos`» / «` municipalities`»). Era as palavras ao lado da contagem de
 concelhos na página de uma unidade, e a contagem saiu: a lista está na página
 inteira, e a Ilha da Graciosa fazia a linha sair «1 concelhos».
+
+### A menção da fonte, ao pé do mapa (Emenda 20e, 27.08.2026)
+
+**Uma chave nova por edição, e uma menção que não é uma chave.** A Emenda 20e diz
+que a atribuição da CAOP é escrita onde o mapa está. A menção passou a sair de
+`mapa/manifest.json` e a ser o mesmo bloco nas duas superfícies (a primeira
+página, por baixo da linha da Emenda 17, e a página de cada unidade): «Direção-Geral
+do Território · Carta Administrativa Oficial de Portugal (CAOP) 2025 · CC BY 4.0».
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `distritos.fonteK` | De onde vem o desenho | Where the drawing comes from | o rótulo do bloco da fonte na página de uma unidade. Era o de `/municipios` («De onde vem a lista» / «Where the list comes from»), e ali o objecto é a lista; aqui o objecto é o desenho |
+
+**A menção em si não é uma cadeia da casa nas duas edições, e é a mesma nas
+duas.** As três partes saem do manifesto que o motor escreveu das constantes onde
+a frase da DGT foi transcrita da fonte: o nome da entidade proprietária, o nome e
+a edição da Carta, e a licença. Nenhuma se traduz, pela mesma razão por que a lede
+de `/municipios` não traduz o nome da Carta: são o nome próprio de uma entidade,
+de um registo e de uma licença. A licença escreve-se **«CC BY 4.0»**, que é a
+forma exacta do manifesto, e não «CC-BY», que era a forma abreviada do colofão da
+v2 que a página de unidade transcrevia até aqui.
+
+**Nenhuma das duas entra no `INVENTARIO-FRASES.md`**, e a régua di-lo: a menção
+leva `data-nonledger="fonte-da-carta"` (motivo declarado em
+`ledger/allowlist.yml`) e o rótulo é irmão dela dentro do mesmo bloco, que a
+`medir-defeitos.mjs` deixa de fora por conter uma origem declarada. É a mesma
+disciplina, e o mesmo resultado, do «De onde vem a lista» de `/municipios`, que
+também não está na tabela. `npm run check:voz` continua a dizer «nada por
+classificar».

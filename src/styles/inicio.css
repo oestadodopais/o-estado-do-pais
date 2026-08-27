@@ -417,6 +417,14 @@
   outline-offset: 2px;
 }
 
+/* A MENÇÃO DA FONTE TEM FILA PRÓPRIA, POR BAIXO DO MAPA (Emenda 20e).
+   Não vai para o canto das ilhas com a legenda: ali a coluna tem 55% da largura
+   do mapa, e a menção, que é longa, empurrava a legenda para cima do continente
+   (medido na matriz: a legenda a começar em y=6799 do campo, e o canto a começar
+   em y=6973). Aqui tem a largura toda e não mexe em nada. */
+.mapa-fonte {
+  margin: 8px 0 0;
+}
 .mapa-linha,
 .mapa-rodape {
   min-width: 0;
