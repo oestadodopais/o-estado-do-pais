@@ -932,3 +932,49 @@ de nomes por baixo do mapa ganhou um terceiro cabeçalho, e é ele a cadeia nova
 `medir-defeitos.mjs` deixa de fora os blocos com lugar declarado. É o nome de um
 lugar da Carta, não prosa da casa. `npm run check:voz` continua a dizer «nada por
 classificar».
+
+
+### Bloco «As regiões» · Emenda 21 (27.08.2026)
+
+**Dezasseis chaves novas, num bloco só,** `regioes`, com a cabeça e as peças das
+duas páginas novas. Nenhuma traz um algarismo: as contagens entram por
+`data-prova` e os valores por `<Claim/>`.
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `regioes.metaTitle` | Regiões · O Estado do País | Regions · O Estado do País | |
+| `regioes.metaDescription` | As regiões NUTS II de Portugal, e a distância de cada uma à média da UE-27. | The NUTS II regions of Portugal, and how far each one is from the EU-27 average. | |
+| `regioes.eyebrow` | Regiões | Regions | |
+| `regioes.h1` | As regiões de Portugal | The regions of Portugal | |
+| `regioes.lede` | O índice de PIB per capita de cada região, em paridades de poder de compra, contra a média da UE-27. | Each region’s GDP per capita index, in purchasing power standards, against the EU-27 average. | nomeia o que a régua compara, e não o que fizemos com ela (Emenda 18b) |
+| `regioes.contaUma` · `regioes.contaMuitas` | região com linhas publicadas. · regiões com linhas publicadas. | region with published rows. · regions with published rows. | duas formas, e o SERVIDOR escolhe a certa com a contagem que o portão reconta. Hoje só se lê a segunda; no dia em que o motor declarar uma região antes de a linha atravessar, a página não diz «1 regiões» |
+| `regioes.metaCauda` | região · O Estado do País | region · O Estado do País | a cauda do `<head>` de uma região, composta com o nome dela, como a de um concelho e a de uma unidade da Carta |
+| `regioes.metaDescricaoA` · `metaDescricaoB` | O índice de PIB per capita de · , em paridades de poder de compra, contra a média da UE-27. | The GDP per capita index of · , in purchasing power standards, against the EU-27 average. | o nome vai pelo meio, declarado `data-lugar`, e por isso a descrição conta-se uma vez e não uma por região |
+| `regioes.tipo` | região NUTS II | NUTS II region | **«NUTS II» e não «NUTS 2» na edição inglesa**, e a razão é do portão: «NUTS 2» parte-se em dois tokens e o «2» fica um algarismo solto, que teria de entrar na lista de excepções como o algarismo que é. O numeral romano é a mesma nomenclatura, escreve-se em inglês, e não pede excepção nenhuma |
+| `regioes.pecasK` | As medidas | The measures | o cabeçalho das duas peças de uma região |
+| `regioes.indiceK` | Índice de PIB per capita | GDP per capita index | o nome da peça do índice |
+| `regioes.distanciaK` | Distância à média da UE-27 | Distance from the EU-27 average | o nome da peça da distância. A distância é uma linha derivada do livro-razão, com a sua conta e o seu selo, e não uma subtracção feita na página |
+| `regioes.distanciaUnidade` | pontos do índice | index points | a unidade da peça da distância. O índice traz a sua de `home.instr1.glanceUnidade`, que é a mesma do instrumento |
+| `regioes.voltarIndice` | As regiões de Portugal | The regions of Portugal | a porta do índice, na página de uma região |
+| `regioes.voltarPais` | Portugal | Portugal | a porta da primeira página |
+
+**Uma chave volta à superfície:** `ambito.regiao` («Região» / «Region»), que
+saiu do comando a 25.08 com a terceira posição do âmbito e ficou escrita com a
+razão ao lado — «volta ao comando com a página das regiões». Volta, e volta como
+LIGAÇÃO para `/regioes`, não como estado.
+
+**Três chaves ficam sem superfície, e saem:**
+
+| chave | pt | en | porquê |
+|---|---|---|---|
+| `ambito.regioesMeta` | As regiões publicadas na régua da convergência. | The regions published on the convergence rule. | era a meta da FILA das regiões, o painel que o comando «Região» abria. A fila saiu a 25.08 e o comando voltou a 27.08 sem painel nenhum por baixo: a fila foi substituída pela régua completa da página das regiões, e não volta. As duas linhas do inventário ficam `retirada`, como já estavam |
+| `inicio.cabeca.regiaoSufixo` | · região | · region | era o rótulo do bloco de cabeça de cada região («Alentejo · região»). Os blocos saíram com os estados que os acendiam (Emenda 21b); a página de uma região diz o nome como lugar e o tipo, «região NUTS II». As dez linhas do inventário (cinco nomes × duas edições) passam a `retirada`, com a razão escrita |
+| `inicio.cabeca.ledeRegiaoPartes` | PIB per capita em paridades de poder de compra, com a média da UE-27 fixada em 100. | GDP per capita in purchasing power standards, with the EU-27 average fixed at 100. | era a lede dos mesmos cinco blocos. A mesma coisa, dita melhor, está na página das regiões por baixo do instrumento (`home.instr1.significadoV`), uma vez e não cinco |
+
+**Quatro linhas do inventário voltam à vida**, e não são chaves novas: «A régua
+da convergência», «The convergence rule» e as duas frases do que o índice
+compara (`home.instr1.h2` e `home.instr1.significadoV`) estavam declaradas
+`retirada` desde a segunda passagem da grelha, porque a régua tinha saído da
+primeira página «até haver a página das regiões». A página existe. O texto delas
+não muda uma letra: muda o estado e o bloco, que é o que a coluna do estado serve
+para deixar ver.
