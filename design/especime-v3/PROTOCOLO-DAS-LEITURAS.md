@@ -69,38 +69,54 @@ leituras da parte 3 plantaram sempre número, proveniência e voz, e nunca ausê
 nem língua; a leitura do mapa plantou só língua. A regra 1 não descreve o que se
 fazia: descreve o que passa a fazer-se.
 
-## As duas linhas que ficam à decisão do diretor
+## As duas linhas do diretor, decididas a 27.08.2026
 
-*O G5 deste bloco decidiu a voz da página de Évora. Duas linhas ficaram por
-decidir, e ficam escritas aqui com as três opções, porque uma decisão adiada sem
-opções escritas volta como uma discussão do princípio.*
+*O G5 do bloco «A grelha da voz» decidiu a voz da página de Évora. Duas linhas
+ficaram por decidir, com as três opções escritas, e a decisão veio a 27.08.2026.
+**As duas seguiram a opção 2: saem.** Ficam aqui como estavam, com o que se
+decidiu por baixo, porque uma decisão sem a pergunta que a motivou volta como uma
+discussão do princípio.*
 
-**(b) As ledes do livro-razão.** «Uma linha por número publicado. Cada linha
-guarda o valor tal como a fonte o publicou…» e a descrição do `<head>` do índice,
-«Todas as afirmações publicadas neste sítio, uma linha cada…». A leitura estrita
-chama-lhes o método do sítio explicado numa página do leitor; a casa chama-lhes o
-conteúdo do índice, pela mesma leitura com que a Emenda 17 pôs a política de
-correções em `/correcoes`.
+**(b) As ledes do livro-razão.** Eram «Uma linha por número publicado. Cada linha
+guarda o valor tal como a fonte o publicou…», a descrição do `<head>` do índice,
+«Todas as afirmações publicadas neste sítio, uma linha cada…», e as duas dos
+concelhos, «Uma linha por medida e por concelho…» e «Uma linha por medida…». A
+leitura estrita chamava-lhes o método do sítio explicado numa página do leitor; a
+casa chamava-lhes o conteúdo do índice, pela mesma leitura com que a Emenda 17
+pôs a política de correções em `/correcoes`.
 
-**(c) As contagens do livro-razão.** «2 552 afirmações · 325 calculadas · 2 417
-linhas de concelhos», «2 544 de 2 552 linhas com proveniência completa», «2 417
-linhas · 308 concelhos · 2 417 com proveniência completa». São chaves da prova,
-recontadas pelo portão nas duas vistas, e a `IDENTIDADE.md` §10 obriga-as a
-entrar por `data-prova` com porta. A leitura estrita chamou-lhes «contagens de
-diligência».
+**Decidido: saem, nas duas edições.** Uma página do livro-razão leva o seu
+título, as suas contagens, a sua pesquisa onde a tem e as suas linhas. Nenhuma
+frase sobre o que uma linha é ou sobre como o sítio lê: isso vive no Método e no
+recibo de cada linha, que são os dois sítios que a Emenda 15 isenta. **A
+descrição do `<head>`, quando o gabarito a exige, nomeia a página**, na forma
+«Livro-razão · O Estado do País», e nunca o método.
 
-As três opções, iguais para as duas:
+**(c) As contagens do livro-razão.** Eram «2 552 afirmações · 325 calculadas ·
+2 417 linhas de concelhos», «2 544 de 2 552 linhas com proveniência completa»,
+«8 de 2 552 linhas com campos por confirmar» e «2 417 linhas · 308 concelhos ·
+2 417 com proveniência completa». São chaves da prova, recontadas pelo portão nas
+duas vistas, e a `IDENTIDADE.md` §10 obriga-as a entrar por `data-prova` com
+porta. A leitura estrita chamou-lhes «contagens de diligência».
 
-1. **Ficam como conteúdo**, com a razão escrita no inventário: numa página cujo
-   objecto é o livro-razão, dizer o que o livro-razão contém é conteúdo, como a
-   política de correções é o conteúdo de `/correcoes`.
-2. **Saem.** O índice fica com o título, a lista e as portas; quem quiser saber o
-   que uma linha guarda abre uma linha.
-3. **Vão para o Método ou para o recibo da linha**, que são os dois sítios que a
-   Emenda 15 isenta. O índice fica com uma porta para lá.
+**Decidido: a contagem do que a página tem fica; a da proveniência sai.** «N
+linhas · M calculadas» é o conteúdo de um índice, e fica nos dois; «N de M linhas
+com proveniência completa» e «N de M linhas com campos por confirmar» saem, e com
+elas os dois grupos que as levavam por título; o índice dos concelhos fica com «N
+linhas · 308 concelhos» e perde «N com proveniência completa». A razão é a que a
+Emenda 18e escreve: as contagens de proveniência são a escrituração da casa, e o
+que o leitor precisa de saber sobre uma linha por confirmar está na linha, no seu
+marcador, e em `/a-verificar`, que é a página que existe para isso.
 
-Até haver decisão, as duas linhas estão na lista de exceções de
-`VOZ-MARCADORES.md` com a razão «à decisão do diretor, 26.08». As ledes levam
-marcador e por isso a exceção dispensa-as; as contagens **não levam marcador
-nenhum**, e a sua entrada é um registo e não uma dispensa: fica escrita para que
-a decisão não se perca, e o portão imprime quantas entradas de registo existem.
+**As chaves da prova continuam a contar.** `indexaveis`, `divida` e
+`concelhos_linhas_completas` ficam na tabela de `src/lib/prova.mjs` e continuam
+recontadas a cada construção: `scripts/gate-html.mjs` percorre
+`Object.entries(PROVA)` e exige que ele saiba CONTAR cada chave, não que alguma
+página a renda. Foi lido no portão e não assumido, como a §1.66 A3 fez quando a
+régua da convergência saiu da primeira página.
+
+**A lista de exceções de `VOZ-MARCADORES.md` passa de oito para cinco.** Saíram
+as duas ledes e o registo das contagens, que eram as três entradas com a razão «à
+decisão do diretor, 26.08». Uma frase que já não se rende não precisa de
+dispensa, e uma dispensa que sobrevive à frase é uma porta aberta para ela voltar
+em silêncio. O registo está na `DECISIONS.md` §1.70.

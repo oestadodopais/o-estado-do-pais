@@ -11267,6 +11267,127 @@ construção: o registo das revisões marca `grelha-da-voz` como `por ler`.
 
 **O custo.** Construtor (Opus) ≈595k símbolos em catorze commits e nove horas (nove construções completas de 4,5 min); leitor (Codex) 151 198; total ≈0,75M, mais o lugar de direção; a estimativa do brief era «bem abaixo de 300k» e falhou por dois e meio, porque o bloco cresceu de quatro mecanismos para a limpeza da voz de sete páginas e dos rótulos, por decisão do diretor a partir das capturas de 26.08. **O que fica:** as duas linhas do diretor no `PROTOCOLO-DAS-LEITURAS.md`; I74 a I78; I69 no motor (as ledes dos trabalhos).
 
+### 1.70 A voz do livro-razão
+
+**Afecta:** nenhum
+
+Decisão do diretor a **27.08.2026**, que fecha as duas linhas deixadas «à decisão
+do diretor» no `design/especime-v3/PROTOCOLO-DAS-LEITURAS.md` e nas exceções do
+`design/especime-v3/VOZ-MARCADORES.md` pelo bloco «A grelha da voz». As três
+opções estavam escritas; as duas linhas seguiram a segunda, e a decisão diz por
+extenso o que fica:
+
+> «Uma página do livro-razão leva o seu título, as suas contagens, a sua pesquisa
+> onde a tem e as suas linhas; nenhuma frase sobre o que uma linha é ou sobre
+> como o sítio lê (a página do Método e os recibos das linhas são onde isso
+> vive). Se o gabarito exigir descrição do `<head>`, ela nomeia a página, na
+> forma «Livro-razão · O Estado do País», e nunca o método. «N linhas · M
+> calculadas» fica nos índices, que é o conteúdo; «N de M linhas com proveniência
+> completa» e «N de M linhas com campos por confirmar» saem, que é a escrituração
+> da casa, e as linhas por confirmar levam o seu marcador e estão listadas em
+> `/a-verificar`. O índice dos concelhos fica com «N linhas · 308 concelhos» e
+> perde «N com proveniência completa».»
+
+Ramo `voz-do-livro-razao-2026-08-27`, a partir de `main` em `ef46826`. A nota do
+construtor está em `design/especime-v3/notas/voz-do-livro-razao.md`.
+
+#### As cadeias que saíram
+
+Quatro ledes, nas duas edições, e mais nada de prosa: `livro.lede1` («Uma linha
+por número publicado. Cada linha guarda o valor tal como a fonte o publicou…»),
+`livroConcelhos.lede` («Uma linha por medida e por concelho…»),
+`livroConcelhos.ledeDoConcelho` («Uma linha por medida…») e a descrição do
+`<head>` do índice, `livro.metaDescription` («Todas as afirmações publicadas
+neste sítio, uma linha cada…»), que **não saiu: mudou de forma**, e passa a
+nomear a página, «Livro-razão · O Estado do País» e «Ledger · O Estado do País».
+As duas descrições do `<head>` das páginas dos concelhos ficam como estavam:
+nomeiam o que a página tem, como o título faz.
+
+Com as contagens saíram quatro chaves de rótulo: `livro.contaDe`,
+`livro.grupoCompletasFrase`, `livro.grupoPorConfirmarFrase` e
+`livroConcelhos.contaCompletas`. O `CHAVES-EN.md` tem a tabela das doze cadeias,
+com a razão de cada uma.
+
+#### As contagens que ficam, e as que saem
+
+**Ficam** «N afirmações · M calculadas · K linhas de concelhos» no índice do
+livro-razão e «N linhas · 308 concelhos» no dos concelhos. **Saem** os dois
+grupos por estado da proveniência do índice principal, com os títulos «2544 de
+2552 linhas com proveniência completa» e «8 de 2552 linhas com campos por
+confirmar», e a terceira parcela do índice dos concelhos, «2417 com proveniência
+completa». A lista do índice passa a ser uma só, pela ordem do livro-razão.
+
+**Os dois estados do selo continuam os dois na mesma página**, que é o que a
+`IDENTIDADE.md` §5.2 exige: cada linha leva o seu, cheio ou a tracejado, e a
+legenda do aparelho nomeia-os lado a lado. O que se perdeu foi o agrupamento, e
+não a distinção.
+
+**As três chaves da prova continuam contadas, e isto foi lido no portão e não
+assumido.** `indexaveis`, `divida` e `concelhos_linhas_completas` ficam na tabela
+de `src/lib/prova.mjs`; `scripts/gate-html.mjs` percorre `Object.entries(PROVA)`
+e exige que ele saiba CONTAR cada chave, não que alguma página a renda, e a
+construção continua a dizer «prova · 44 chaves reconferidas pelo portão». É a
+mesma leitura da §1.66 A3, quando a régua da convergência saiu da primeira
+página.
+
+#### O que os ficheiros da voz passaram a dizer
+
+**`VOZ-MARCADORES.md`: as exceções passam de 8 para 5, e as de registo de 1 para
+0.** Saíram as duas entradas do tipo `frase` que dispensavam as ledes e a entrada
+do tipo `registo` que listava as contagens. O tipo `registo` fica escrito, porque
+`scripts/voz.mjs` continua a lê-lo, e o ficheiro diz que hoje não tem nenhuma. Os
+62 marcadores não mudaram.
+
+**`PROTOCOLO-DAS-LEITURAS.md`: as duas linhas passam de pendentes a decididas,**
+com a data e com a pergunta que as motivou por cima da decisão.
+
+**`INVENTARIO-FRASES.md`: menos dezoito declarações, mais seis, com o bloco
+`voz-do-livro-razao`.** As dezoito são as das frases que saíram, pela regra que o
+bloco dos 308 escreveu: uma frase corrigida que continue declarada volta em
+silêncio. As seis são as cadeias novas, a descrição do `<head>` do índice nas
+duas edições e a linha de contagens do índice dos concelhos sem a terceira
+parcela, com a leitura de hoje e a leitura de zero.
+`critica/REVISOES-DO-INVENTARIO.md` ganhou a linha do bloco, marcada `por ler`.
+
+#### O que este bloco mediu
+
+As frases distintas da casa passam de **577 para 567**; as declarações do
+inventário de **453 para 437**; as exceções de **8 para 5**; as chaves da prova
+rendidas em `/livro-razao` de **5 para 3** e em `/livro-razao/concelhos` de **3
+para 2**. Os marcadores ficam nos 62 e a autorreferência fica em 0.
+
+#### As provas: dois estragos plantados, vermelhos e depois verdes
+
+**A lede reposta.** `livro.lede1` de volta às duas edições e rendido no índice.
+`npm run check:voz` saiu a 1 com quatro problemas: o tripwire, com o marcador
+«nós» em `/livro-razao` e «we · us» em `/en/ledger`, e o nome, com os dois blocos
+por classificar. Retirada, verde. A planta deu de graça uma terceira régua: posta
+só na edição portuguesa, a construção fecha antes de chegar à voz, no guarda de
+paridade de chaves do i18n.
+
+**A contagem de proveniência reposta.** A terceira parcela do índice dos
+concelhos de volta, com `contaCompletas` nas duas edições. `npm run check:voz`
+saiu a 1 com dois problemas, os dois pelo inventário: «bloco por classificar em
+/livro-razao/concelhos» e o seu gémeo em `/en/ledger/municipalities`. Retirada,
+verde.
+
+**Uma leitura falsa, encontrada pela primeira planta e registada aqui.** Corrido
+à mão sobre um `dist/` que uma construção falhada deixou vazio,
+`scripts/check-voz.mjs` sai **verde com zero rotas medidas**. Na cadeia do
+`build` não acontece, porque o `astro build` falha antes e o passo nunca corre;
+corrido à mão, é uma leitura falsa. Fica registado e não corrigido neste bloco.
+
+#### O que fica
+
+A leitura cruzada do diff está por fazer, e o portão di-lo a cada construção:
+`voz-do-livro-razao` está `por ler` no registo das revisões. E duas células de
+`tests/linha/correcoes-b.mjs` já estavam vermelhas em `main` e continuam, as duas
+sobre a página de Évora, que este bloco não toca: a B10 de `municipio pt` e a de
+`municipio en`, por um alvo de 82,5 × 18,4 px, que é o marcador `[a verificar]`
+que a correção I77 pôs no nome do presidente interino, e por um rótulo a 11,5 px
+na nota do excesso sobre o teto legal, que ficou à vista quando o G6 tirou a
+dobra que o escondia.
+
 ## 4. O registo dos defeitos e dos adiamentos
 
 **Defeito registado 2026-08-16 (00:10), encontrado pela direcção no sítio no ar — RESOLVIDO na mesma noite (§1.37, no ar em `4217232`):** os selos acrescentados a 15.08 aos valores do cabeçalho da primeira página (308 · 11 · 15) rendem no cabeçalho com o rótulo inteiro do estudo («O Estado do País — apuramento próprio») e, no caso da contagem CAOP, com o marcador «[a verificar]» ao lado. Certo pela regra (todo o valor tem selo, para a sua linha), errado naquele sítio: no cabeçalho o selo deve ser só o glifo, com o rótulo apenas para leitores de ecrã. **Primeiro item do bloco V**, junto com a saída de «Edição de …», da introdução justificativa da primeira página e de «Estes indicadores não são escolha nossa…» (voz). Sem alteração ao portão: o selo continua ao pé do valor e a apontar para a linha própria.

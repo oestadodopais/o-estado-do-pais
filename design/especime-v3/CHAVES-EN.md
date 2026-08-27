@@ -819,3 +819,40 @@ conferida carácter a carácter contra `src/data/verbatim.mjs`. É o documento a
 falar, não a casa, e vai para a segunda passagem de voz do motor (ISSUES I69). Os
 rótulos «tradução da casa» e «reformulação do título» já não se rendem desde o
 item B1 de 25.08: o que resta deles são comentários no código.
+
+## A voz do livro-razão · 27.08.2026
+
+**Nenhuma chave nova. Uma com forma nova, e sete retiradas nas duas edições.**
+
+A decisão do diretor de 27.08.2026 tirou as ledes do livro-razão e as contagens
+de proveniência dos seus índices. O que fica de chaves é a linha de contagens do
+conteúdo e a legenda do selo.
+
+| chave | pt, agora | en, agora | nota |
+|---|---|---|---|
+| `livro.metaDescription` | Livro-razão · O Estado do País | Ledger · O Estado do País | **forma nova**: dizia «Todas as afirmações publicadas neste sítio, uma linha cada…» / «Every claim published on this site, one row each…», que é o método do sítio na superfície pública. O gabarito pede uma descrição, e a decisão diz de que feitio ela é: nomeia a página, e nunca o método. É a mesma leitura da correção de `home.metaDescription` de 21.08 |
+
+**Chaves retiradas, nas duas edições.**
+
+| chave | pt, antes | porquê sai |
+|---|---|---|
+| `livro.lede1` | Uma linha por número publicado. Cada linha guarda o valor tal como a fonte o publicou… | a lede do índice do livro-razão. É o que uma linha guarda, e uma linha guarda-o à vista de quem a abre |
+| `livroConcelhos.lede` | Uma linha por medida e por concelho, com o valor tal como a fonte o publicou… | a mesma frase no índice dos concelhos |
+| `livroConcelhos.ledeDoConcelho` | Uma linha por medida, com o valor tal como a fonte o publicou… | a mesma frase na página de cada concelho |
+| `livro.contaDe` | de | a preposição do denominador das contagens de proveniência, que saíram com os dois grupos |
+| `livro.grupoCompletasFrase` | linhas com proveniência completa | o título do primeiro grupo do índice, com a sua contagem |
+| `livro.grupoPorConfirmarFrase` | linhas com campos por confirmar | o título do segundo grupo, com a sua contagem |
+| `livroConcelhos.contaCompletas` | com proveniência completa | a terceira parcela da linha de contagens do índice dos concelhos |
+
+**As que ficam, e a razão.** `livro.contaAfirmacoes`, `livro.contaDerivadas` e
+`livro.contaConcelhos` no índice principal; `livroConcelhos.contaLinhas` e
+`livroConcelhos.contaConcelhos` no dos concelhos. Nomeiam o que a página tem, que
+é o conteúdo de um índice. Ficam também as duas descrições do `<head>` das
+páginas dos concelhos, «As linhas do livro-razão com as medidas que as fontes
+centrais publicam para cada concelho, uma linha cada.» e a sua gémea composta com
+o nome do concelho: nomeiam o que a página tem, como o título faz, e não o método
+do sítio.
+
+**As chaves da prova não são cadeias, e não saíram.** `indexaveis`, `divida` e
+`concelhos_linhas_completas` ficam em `src/lib/prova.mjs` com as suas frases de
+origem nas duas edições, e continuam recontadas pelo portão.
