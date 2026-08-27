@@ -332,7 +332,7 @@ export const LEITURAS = {
     },
     frase: {
       pt: [
-        'Os pelouros de Évora ficam, em todos os mandatos que o trabalho conseguiu ler, com a lista do presidente, e as contas do município não são cortadas de maneira que permita dizer quanto gastou cada vereador: no mandato de ',
+        'Os pelouros de Évora ficam com a lista do presidente nos mandatos em que a câmara publica a repartição, e as contas do município não são cortadas de maneira que permita dizer quanto gastou cada vereador: no mandato de ',
         { ref: '2021–2025' },
         ', ',
         { claim: 'evora-pelouros-2021-presidente' },
@@ -345,7 +345,7 @@ export const LEITURAS = {
         ' lugares.',
       ],
       en: [
-        'Évora’s portfolios sit, in every term the study could read, with the president’s own list, and the municipality’s accounts are not cut in a way that lets anyone say what each councillor spent: in the ',
+        'Évora’s portfolios sit with the president’s own list in the terms for which the council publishes the split, and the municipality’s accounts are not cut in a way that lets anyone say what each councillor spent: in the ',
         { ref: '2021–2025' },
         ' term, ',
         { claim: 'evora-pelouros-2021-presidente' },
