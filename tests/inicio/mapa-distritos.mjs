@@ -31,7 +31,7 @@
  * A primeira forma desta régua media `getBoundingClientRect`, e a medição cega M3
  * mostrou porque é que isso sobrestima: o centro da caixa da Ilha da Madeira cai
  * fora do polígono da Ilha da Madeira. Uma caixa é o rectângulo que envolve a
- * forma, e numa forma côncava — que é o que uma costa é — quase nada da caixa é
+ * forma, e numa forma côncava, que é o que uma costa é, quase nada da caixa é
  * a forma. A régua passa a medir o MAIOR QUADRADO INSCRITO À VOLTA DO PONTO
  * REPRESENTATIVO: rasteriza-se a área a 2 px com `isPointInFill`, faz-se a
  * programação dinâmica do quadrado máximo sobre essa grelha, e o alvo é o maior
@@ -878,7 +878,7 @@ const PLANTAS = [
     /* O ESTRAGO DA I82, e é o caso conhecido da medição cega M3. A Ilha da
        Madeira tem uma CAIXA de 186 px a 390 e um quadrado inscrito de 8: pela
        caixa é um alvo folgado, pela área inscrita não é alvo nenhum. Tirar-lhe o
-       nome da lista era invisível para a régua antiga e é vermelho para esta —
+       nome da lista era invisível para a régua antiga e é vermelho para esta,
        que é exactamente a diferença entre as duas medidas. */
     nome: 'o nome da Ilha da Madeira retirado da lista da sua parcela',
     celulas: ['M1b', 'M2·390b'],

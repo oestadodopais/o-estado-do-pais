@@ -110,7 +110,7 @@ if (!casa.inventario_existe) erros.push(`não existe ${casa.inventario}`);
  * Os dois sentidos, e nenhum deles é o mesmo defeito visto duas vezes. Uma linha
  * `viva` que não se rende é uma lista a mentir sobre o sítio: ou a frase mudou e
  * a linha ficou para trás, ou a rota saiu. Uma linha `retirada` que se rende é
- * uma frase que a casa tirou e que voltou — e voltar em silêncio era exactamente
+ * uma frase que a casa tirou e que voltou, e voltar em silêncio era exactamente
  * o que a I74 escreveu que podia acontecer.
  *
  * O QUE SE MEDE É A UNIÃO DAS DUAS VARREDURAS, e é a régua que a calcula: a da

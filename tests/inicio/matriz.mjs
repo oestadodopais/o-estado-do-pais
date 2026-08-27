@@ -1323,7 +1323,7 @@ for (const largura of [1280, 390]) {
       largo.tela > estreito.tela &&
       largo.areasComCaixa === 29 &&
       largo.pontos === 0,
-    `${telemoveis.map((t) => `${t.janela}: tela ${t.tela}px`).join(' · ')} — ${naJanela.length}/${telemoveis.length} à largura da janela · ${estreito.areasComCaixa} áreas com caixa, ${estreito.pontos} pontos, ${estreito.leitura} leituras, ${estreito.naLista} nomes nas listas · 1280: tela ${largo.tela}px, ${largo.areasComCaixa} áreas · os alvos das 29 passaram a mapa-distritos.mjs M1 e M2, medidos pela área inscrita`,
+    `${telemoveis.map((t) => `${t.janela}: tela ${t.tela}px`).join(' · ')} · ${naJanela.length}/${telemoveis.length} à largura da janela · ${estreito.areasComCaixa} áreas com caixa, ${estreito.pontos} pontos, ${estreito.leitura} leituras, ${estreito.naLista} nomes nas listas · 1280: tela ${largo.tela}px, ${largo.areasComCaixa} áreas · os alvos das 29 passaram a mapa-distritos.mjs M1 e M2, medidos pela área inscrita`,
   );
 }
 

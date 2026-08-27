@@ -160,7 +160,7 @@ export function atribuicaoDoMapa() {
  * Até 27.08.2026 este objecto dizia `{ larga: 490, estreita: 354 }`, e as duas
  * eram medidas de uma janela só cada: 490 é a coluna a 1280 e 354 era a coluna a
  * 390. A folha dá ao mapa quatro larguras e não duas, e as duas que faltavam são
- * as mais estreitas de todas — que é precisamente onde a pergunta dos 44 px se
+ * as mais estreitas de todas, que é precisamente onde a pergunta dos 44 px se
  * decide. Medidas no navegador a 27.08, sobre a construção deste ramo:
  *
  *   `estreita` 320 · abaixo de 640 o mapa toma a LARGURA DA JANELA (Emenda 20c
@@ -253,7 +253,7 @@ export function unidadesDaMoldura(moldura, unidades) {
  * A Emenda 20c escreve a rede por baixo do mapa na forma em que ela primeiro fez
  * falta: «onde uma ilha não chegar aos 44 px na moldura, os nomes das ilhas
  * dessa moldura ficam por baixo dela como ligações, uma por linha». O continente
- * não tem moldura, e por isso não tinha rede nenhuma — e a I81 mediu o que isso
+ * não tem moldura, e por isso não tinha rede nenhuma, e a I81 mediu o que isso
  * custa: Viana do Castelo chega aos 44 px por 0,5 px numa janela de 390, e
  * abaixo de 386 deixa de ser alvo. Uma regra que só protege as ilhas protege o
  * caso que foi visto primeiro, e não o caso.
