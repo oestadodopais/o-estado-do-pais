@@ -158,3 +158,47 @@ export function analisa(texto, rota, { marcadores, excecoes }) {
   }
   return mordeu;
 }
+
+/* =============================================================================
+ * O INVENTÁRIO, LIDO NUM SÍTIO SÓ
+ * =============================================================================
+ * A régua (`medir-defeitos.mjs`, medida 8) e o portão (`check-voz.mjs`, o rasto
+ * da revisão) leem o mesmo ficheiro, e por isso leem-no pela mesma função. Duas
+ * implementações da mesma tabela divergiriam na primeira linha estranha.
+ *
+ * A TERCEIRA COLUNA, «bloco», entrou a 26.08.2026 com o G2 deste bloco: é o
+ * identificador do bloco de trabalho que acrescentou ou reclassificou a linha.
+ * As linhas anteriores levam `até 2026-08-26`, que é o que elas são: um estado
+ * herdado, sem o rasto de quem o pôs lá. Uma linha com duas células continua a
+ * ler-se, e fica sem bloco, porque um ficheiro de dados a meio de uma migração
+ * não deve mentir sobre o que tem.
+ * ========================================================================== */
+export const FICHEIRO_DO_INVENTARIO = path.join(
+  'design',
+  'especime-v3',
+  'INVENTARIO-FRASES.md',
+);
+
+const CLASSES_DO_INVENTARIO = new Set(['conteudo', 'navegacao', 'autorreferencia']);
+
+export function leInventario(raiz) {
+  const ficheiro = path.join(raiz, FICHEIRO_DO_INVENTARIO);
+  const mapa = new Map();
+  const linhas = [];
+  if (!fs.existsSync(ficheiro)) return { mapa, linhas, ficheiro, existe: false, cabeca: {} };
+  const cru = fs.readFileSync(ficheiro, 'utf8').split('\n');
+  const cabeca = {};
+  for (let i = 0; i < cru.length; i++) {
+    /* A cabeça do ficheiro: `campo: valor`, numa linha só, antes da primeira
+       tabela. É onde vive `lida-contra`, o gatilho da regra (G3). */
+    const c = cru[i].match(/^([a-zà-ÿ-]+):\s*(.+?)\s*$/i);
+    if (c && !cru[i].startsWith('|')) cabeca[c[1]] = c[2];
+    const cel = celulas(cru[i]);
+    if (!cel || cel.length < 2 || !CLASSES_DO_INVENTARIO.has(cel[0])) continue;
+    const [classe, texto] = cel;
+    const bloco = cel.length >= 3 ? cel[2] : null;
+    mapa.set(texto, classe);
+    linhas.push({ n: i + 1, classe, texto, bloco });
+  }
+  return { mapa, linhas, ficheiro, existe: true, cabeca };
+}

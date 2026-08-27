@@ -15,6 +15,14 @@ declarada em `medir-defeitos.mjs` (`ROTAS_DO_INVENTARIO`), e crescem com as
 etapas: uma rota entra no commit em que a sua página é reconstruída e as suas
 frases são classificadas.*
 
+**A tabela tem três colunas desde 26.08.2026** (G2 do bloco «A grelha da voz»):
+a classe, o texto e o **bloco** que acrescentou ou reclassificou a linha. As
+linhas anteriores a esse dia levam `até 2026-08-26`, que é o que elas são: um
+estado herdado, sem o rasto de quem o pôs lá. Cada bloco tem de ter uma entrada
+em `critica/REVISOES-DO-INVENTARIO.md`, com a leitura cruzada do seu diff, e
+`npm run check:voz` fecha a construção quando não tem, ou quando a entrada nomeia
+um ficheiro que não existe.
+
 Esta lista é lida por `scripts/medir-defeitos.mjs` (medida 8). O que a régua
 recolhe é mecânico e está escrito lá: todo o bloco de texto de uma rota
 inventariada, nas duas edições, mais a descrição do seu `<head>`, que não seja
@@ -95,83 +103,83 @@ da casa (`textoForaDeComandos` em `scripts/medir-defeitos.mjs`), e nunca entrou
 nesta tabela. «fechar» deixou de se render; «trocar de concelho» rende-se onde o
 cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 
-| classe | texto |
-| --- | --- |
-| conteudo | A régua da convergência |
-| navegacao | An observatory of Portugal. |
-| conteudo | Alentejo · region |
-| conteudo | Alentejo · região |
-| conteudo | Algarve · region |
-| conteudo | Algarve · região |
-| navegacao | As regiões publicadas na régua da convergência. |
-| navegacao | At a glance |
-| navegacao | Brief reading |
-| conteudo | Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu, e a descer. |
-| navegacao | Encontrou um erro? correcoes@oestadodopais.pt · O registo de correções → |
-| conteudo | European Social Scoreboard |
-| navegacao | Found an error? correcoes@oestadodopais.pt · The corrections log → |
-| conteudo | General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold, and falling. |
-| conteudo | Grande Lisboa · região |
-| conteudo | Greater Lisbon · region |
-| navegacao | Hover over a point to read the municipality. Keyboard: Tab to the map, arrow keys to move between neighbouring municipalities, Home to return to Évora. |
-| navegacao | Leitura breve |
-| conteudo | Madeira · region |
-| conteudo | Madeira · região |
-| navegacao | Nenhum concelho com esse nome. |
-| navegacao | No municipality by that name. |
-| navegacao | O Estado do País |
-| conteudo | O que o país tem a haver do exterior menos o que lhe deve: negativo quando deve mais do que tem a haver. |
-| conteudo | O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27. Um valor abaixo da média significa menos poder de compra por pessoa; um valor acima, mais. |
-| conteudo | Painel Social Europeu |
-| navegacao | Passe o cursor sobre um ponto para ler o município. Teclado: Tab até ao mapa, setas para percorrer os municípios vizinhos, Home para voltar a Évora. |
-| conteudo | Península de Setúbal · região |
-| conteudo | Portugal breaches 4 thresholds of the Macroeconomic Imbalance Procedure and meets 9 . |
-| conteudo | Portugal nos painéis europeus: os indicadores, os limiares e as fontes. |
-| conteudo | Portugal on the European scoreboards: the indicators, the thresholds and the sources. |
-| conteudo | Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9 . |
-| conteudo | Portugal · country |
-| conteudo | Portugal · país |
-| navegacao | Relance |
-| conteudo | Setúbal Peninsula · region |
-| conteudo | The convergence rule |
-| conteudo | The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 average. A value below the average means less purchasing power per person; a value above it, more. |
-| navegacao | The regions published on the convergence rule. |
-| conteudo | What the country is owed from abroad minus what it owes abroad: negative when it owes more than it is owed. |
+| classe | texto | bloco |
+| --- | --- | --- |
+| conteudo | A régua da convergência | até 2026-08-26 |
+| navegacao | An observatory of Portugal. | até 2026-08-26 |
+| conteudo | Alentejo · region | até 2026-08-26 |
+| conteudo | Alentejo · região | até 2026-08-26 |
+| conteudo | Algarve · region | até 2026-08-26 |
+| conteudo | Algarve · região | até 2026-08-26 |
+| navegacao | As regiões publicadas na régua da convergência. | até 2026-08-26 |
+| navegacao | At a glance | até 2026-08-26 |
+| navegacao | Brief reading | até 2026-08-26 |
+| conteudo | Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu, e a descer. | até 2026-08-26 |
+| navegacao | Encontrou um erro? correcoes@oestadodopais.pt · O registo de correções → | até 2026-08-26 |
+| conteudo | European Social Scoreboard | até 2026-08-26 |
+| navegacao | Found an error? correcoes@oestadodopais.pt · The corrections log → | até 2026-08-26 |
+| conteudo | General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold, and falling. | até 2026-08-26 |
+| conteudo | Grande Lisboa · região | até 2026-08-26 |
+| conteudo | Greater Lisbon · region | até 2026-08-26 |
+| navegacao | Hover over a point to read the municipality. Keyboard: Tab to the map, arrow keys to move between neighbouring municipalities, Home to return to Évora. | até 2026-08-26 |
+| navegacao | Leitura breve | até 2026-08-26 |
+| conteudo | Madeira · region | até 2026-08-26 |
+| conteudo | Madeira · região | até 2026-08-26 |
+| navegacao | Nenhum concelho com esse nome. | até 2026-08-26 |
+| navegacao | No municipality by that name. | até 2026-08-26 |
+| navegacao | O Estado do País | até 2026-08-26 |
+| conteudo | O que o país tem a haver do exterior menos o que lhe deve: negativo quando deve mais do que tem a haver. | até 2026-08-26 |
+| conteudo | O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27. Um valor abaixo da média significa menos poder de compra por pessoa; um valor acima, mais. | até 2026-08-26 |
+| conteudo | Painel Social Europeu | até 2026-08-26 |
+| navegacao | Passe o cursor sobre um ponto para ler o município. Teclado: Tab até ao mapa, setas para percorrer os municípios vizinhos, Home para voltar a Évora. | até 2026-08-26 |
+| conteudo | Península de Setúbal · região | até 2026-08-26 |
+| conteudo | Portugal breaches 4 thresholds of the Macroeconomic Imbalance Procedure and meets 9 . | até 2026-08-26 |
+| conteudo | Portugal nos painéis europeus: os indicadores, os limiares e as fontes. | até 2026-08-26 |
+| conteudo | Portugal on the European scoreboards: the indicators, the thresholds and the sources. | até 2026-08-26 |
+| conteudo | Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9 . | até 2026-08-26 |
+| conteudo | Portugal · country | até 2026-08-26 |
+| conteudo | Portugal · país | até 2026-08-26 |
+| navegacao | Relance | até 2026-08-26 |
+| conteudo | Setúbal Peninsula · region | até 2026-08-26 |
+| conteudo | The convergence rule | até 2026-08-26 |
+| conteudo | The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 average. A value below the average means less purchasing power per person; a value above it, more. | até 2026-08-26 |
+| navegacao | The regions published on the convergence rule. | até 2026-08-26 |
+| conteudo | What the country is owed from abroad minus what it owes abroad: negative when it owes more than it is owed. | até 2026-08-26 |
 
 ## `/livro-razao` · `/en/ledger` (etapa 3, subetapa 3b)
 
 *As duas edições partilham a tabela, como acima: uma frase entra uma vez, na
 língua em que é rendida.*
 
-| classe | texto |
-| --- | --- |
-| conteudo | 132 afirmações · 19 calculadas |
-| conteudo | 132 claims · 19 calculated |
-| conteudo | A licença cobre o conjunto: a estrutura, os valores da casa, as derivações e as descrições. Os excertos transcritos das fontes continuam sob os termos de quem os publicou. |
-| conteudo | Com campos por confirmar |
-| conteudo | Complete provenance |
-| navegacao | Descarregar o livro-razão: CSV · JSON |
-| navegacao | Download the ledger: CSV · JSON |
-| conteudo | Every claim published on this site, one row each: the value exactly as published, the source, the document, the address, the access date and the excerpt. |
-| conteudo | Every row, with every published field. |
-| conteudo | O livro-razão |
-| conteudo | one field unconfirmed |
-| conteudo | provenance complete |
-| conteudo | proveniência completa |
-| conteudo | um campo por confirmar |
-| conteudo | Os dois estados do selo |
-| conteudo | One row per published figure. Each row holds the value exactly as the source published it, who produced it, the document and edition, the address, the date we read it and a textual excerpt (and, when the figure is calculated by us, the sum spelled out and re-evaluated at every build). |
-| conteudo | Proveniência completa |
-| conteudo | The ledger |
-| conteudo | The licence covers the dataset: its structure, the house values, the derivations and the descriptions. Excerpts transcribed from sources remain under their publishers’ terms. |
-| conteudo | The two states of the seal |
-| conteudo | Todas as afirmações publicadas neste sítio, uma linha cada: o valor tal como foi publicado, a fonte, o documento, o endereço, a data de acesso e o excerto. |
-| conteudo | Todas as linhas, com todos os campos publicados. |
-| navegacao | Um observatório de Portugal. |
-| conteudo | Uma linha por número publicado. Cada linha guarda o valor tal como a fonte o publicou, quem o produziu, o documento e a edição, o endereço, a data em que o lemos e um excerto textual (e, quando o número é calculado por nós, a conta explicada e reavaliada a cada construção). |
-| conteudo | With fields to confirm |
-| conteudo | [a verificar] |
-| conteudo | [a verificar] (to verify) |
+| classe | texto | bloco |
+| --- | --- | --- |
+| conteudo | 132 afirmações · 19 calculadas | até 2026-08-26 |
+| conteudo | 132 claims · 19 calculated | até 2026-08-26 |
+| conteudo | A licença cobre o conjunto: a estrutura, os valores da casa, as derivações e as descrições. Os excertos transcritos das fontes continuam sob os termos de quem os publicou. | até 2026-08-26 |
+| conteudo | Com campos por confirmar | até 2026-08-26 |
+| conteudo | Complete provenance | até 2026-08-26 |
+| navegacao | Descarregar o livro-razão: CSV · JSON | até 2026-08-26 |
+| navegacao | Download the ledger: CSV · JSON | até 2026-08-26 |
+| conteudo | Every claim published on this site, one row each: the value exactly as published, the source, the document, the address, the access date and the excerpt. | até 2026-08-26 |
+| conteudo | Every row, with every published field. | até 2026-08-26 |
+| conteudo | O livro-razão | até 2026-08-26 |
+| conteudo | one field unconfirmed | até 2026-08-26 |
+| conteudo | provenance complete | até 2026-08-26 |
+| conteudo | proveniência completa | até 2026-08-26 |
+| conteudo | um campo por confirmar | até 2026-08-26 |
+| conteudo | Os dois estados do selo | até 2026-08-26 |
+| conteudo | One row per published figure. Each row holds the value exactly as the source published it, who produced it, the document and edition, the address, the date we read it and a textual excerpt (and, when the figure is calculated by us, the sum spelled out and re-evaluated at every build). | até 2026-08-26 |
+| conteudo | Proveniência completa | até 2026-08-26 |
+| conteudo | The ledger | até 2026-08-26 |
+| conteudo | The licence covers the dataset: its structure, the house values, the derivations and the descriptions. Excerpts transcribed from sources remain under their publishers’ terms. | até 2026-08-26 |
+| conteudo | The two states of the seal | até 2026-08-26 |
+| conteudo | Todas as afirmações publicadas neste sítio, uma linha cada: o valor tal como foi publicado, a fonte, o documento, o endereço, a data de acesso e o excerto. | até 2026-08-26 |
+| conteudo | Todas as linhas, com todos os campos publicados. | até 2026-08-26 |
+| navegacao | Um observatório de Portugal. | até 2026-08-26 |
+| conteudo | Uma linha por número publicado. Cada linha guarda o valor tal como a fonte o publicou, quem o produziu, o documento e a edição, o endereço, a data em que o lemos e um excerto textual (e, quando o número é calculado por nós, a conta explicada e reavaliada a cada construção). | até 2026-08-26 |
+| conteudo | With fields to confirm | até 2026-08-26 |
+| conteudo | [a verificar] | até 2026-08-26 |
+| conteudo | [a verificar] (to verify) | até 2026-08-26 |
 
 ### As quatro que ficam em autorreferência, e porquê
 
@@ -211,42 +219,42 @@ concelho e as suas duas palavras de estado **não entram aqui**: levam
 tabela teria 307 linhas do feitio «Abrantes sem página ainda», que é a lista dos
 concelhos escrita outra vez e não um inventário de frases.*
 
-| classe | texto |
-| --- | --- |
-| conteudo | Aveiro |
-| conteudo | Beja |
-| conteudo | Braga |
-| conteudo | Bragança |
-| conteudo | Castelo Branco |
-| conteudo | Coimbra |
-| conteudo | Every municipality in Portugal, from the official administrative map. |
-| conteudo | Every municipality, from the Carta Administrativa Oficial de Portugal. |
-| conteudo | Faro |
-| conteudo | Guarda |
-| conteudo | Ilha Terceira |
-| conteudo | Ilha da Graciosa |
-| conteudo | Ilha da Madeira |
-| conteudo | Ilha das Flores |
-| conteudo | Ilha de Porto Santo |
-| conteudo | Ilha de Santa Maria |
-| conteudo | Ilha de São Jorge |
-| conteudo | Ilha de São Miguel |
-| conteudo | Ilha do Corvo |
-| conteudo | Ilha do Faial |
-| conteudo | Ilha do Pico |
-| conteudo | Leiria |
-| conteudo | Lisboa |
-| conteudo | Os concelhos de Portugal |
-| conteudo | Portalegre |
-| conteudo | Porto |
-| conteudo | Santarém |
-| conteudo | Setúbal |
-| conteudo | The municipalities of Portugal |
-| conteudo | Todos os concelhos de Portugal, pela Carta Administrativa Oficial. |
-| conteudo | Todos os concelhos, pela Carta Administrativa Oficial de Portugal. |
-| conteudo | Viana do Castelo |
-| conteudo | Vila Real |
-| conteudo | Viseu |
+| classe | texto | bloco |
+| --- | --- | --- |
+| conteudo | Aveiro | até 2026-08-26 |
+| conteudo | Beja | até 2026-08-26 |
+| conteudo | Braga | até 2026-08-26 |
+| conteudo | Bragança | até 2026-08-26 |
+| conteudo | Castelo Branco | até 2026-08-26 |
+| conteudo | Coimbra | até 2026-08-26 |
+| conteudo | Every municipality in Portugal, from the official administrative map. | até 2026-08-26 |
+| conteudo | Every municipality, from the Carta Administrativa Oficial de Portugal. | até 2026-08-26 |
+| conteudo | Faro | até 2026-08-26 |
+| conteudo | Guarda | até 2026-08-26 |
+| conteudo | Ilha Terceira | até 2026-08-26 |
+| conteudo | Ilha da Graciosa | até 2026-08-26 |
+| conteudo | Ilha da Madeira | até 2026-08-26 |
+| conteudo | Ilha das Flores | até 2026-08-26 |
+| conteudo | Ilha de Porto Santo | até 2026-08-26 |
+| conteudo | Ilha de Santa Maria | até 2026-08-26 |
+| conteudo | Ilha de São Jorge | até 2026-08-26 |
+| conteudo | Ilha de São Miguel | até 2026-08-26 |
+| conteudo | Ilha do Corvo | até 2026-08-26 |
+| conteudo | Ilha do Faial | até 2026-08-26 |
+| conteudo | Ilha do Pico | até 2026-08-26 |
+| conteudo | Leiria | até 2026-08-26 |
+| conteudo | Lisboa | até 2026-08-26 |
+| conteudo | Os concelhos de Portugal | até 2026-08-26 |
+| conteudo | Portalegre | até 2026-08-26 |
+| conteudo | Porto | até 2026-08-26 |
+| conteudo | Santarém | até 2026-08-26 |
+| conteudo | Setúbal | até 2026-08-26 |
+| conteudo | The municipalities of Portugal | até 2026-08-26 |
+| conteudo | Todos os concelhos de Portugal, pela Carta Administrativa Oficial. | até 2026-08-26 |
+| conteudo | Todos os concelhos, pela Carta Administrativa Oficial de Portugal. | até 2026-08-26 |
+| conteudo | Viana do Castelo | até 2026-08-26 |
+| conteudo | Vila Real | até 2026-08-26 |
+| conteudo | Viseu | até 2026-08-26 |
 
 **Autorreferência: 0 nas duas edições.** Saíram, nesta subetapa, «O que este
 índice não diz» e «Nada sobre o concelho. É uma lista de nomes e de estados…»,
@@ -273,92 +281,92 @@ são conteúdo editorial da etapa 3 e não estão entre os itens que a decisão 
 `ISSUES.md` (I52): são uma chamada de conteúdo, não de forma, e pedem a palavra de
 quem escreveu a página.*
 
-| classe | texto |
-| --- | --- |
-| conteudo | A diferença entre as duas contas da mesma dívida |
-| conteudo | A dívida contra o teto legal |
-| conteudo | A última prestação de contas do município |
-| conteudo | Accounts of the year before last |
-| navegacao | Background |
-| conteudo | Borrowing margin |
-| conteudo | Contas do penúltimo ano |
-| conteudo | Corrected budget |
-| conteudo | Debt limit |
-| conteudo | Decided |
-| conteudo | Decidiu |
-| conteudo | Deixou |
-| conteudo | Despesa paga |
-| conteudo | Diferença |
-| conteudo | Difference |
-| conteudo | Dívida total |
-| conteudo | Economia, investidores e portas abertas no município de Évora. |
-| conteudo | Economy, investors and open doors in the municipality of Évora. |
-| conteudo | Em funções. |
-| conteudo | Estimativa anual do INE para o concelho. |
-| conteudo | Executive installed |
-| conteudo | Executivo instalado |
-| conteudo | Expenditure paid |
-| conteudo | Fifteen years of municipal government in Évora, across five terms. |
-| conteudo | Fora do que foi lido. |
-| conteudo | Fora do que foi lido: as capturas que sustentam a repartição de pelouros começam no mandato seguinte. |
-| navegacao | Fundo |
-| conteudo | Herdou |
-| conteudo | In office. |
-| conteudo | Inherited |
-| conteudo | Inscritos no fim do mês nos serviços de emprego, ficheiro mensal por concelho. |
-| conteudo | Left |
-| conteudo | Limite de dívida |
-| conteudo | Lugares |
-| conteudo | Margem de endividamento |
-| conteudo | O município publica |
-| conteudo | O que as fontes publicam sobre o município de Évora: população, poder de compra, emprego, empresas, dívida e execução orçamental. |
-| conteudo | O que foi orçamentado, o que foi pago e o que ficou em dívida no município de Évora. |
-| conteudo | O que o município orçamentou, o que cobrou, o que pagou, e o que dizia dever no fim do ano. São números do próprio município sobre si mesmo: a prestação de contas é dele. |
-| conteudo | O regulador |
-| conteudo | O regulador publica |
-| conteudo | O traço fino é a dívida total que o regulador publica para o concelho; a barra é a distância até ao limite legal do mesmo ano, que é o fio da direita. O índice mede uma contra o outro numa escala em que o teto é o valor permitido. |
-| conteudo | Orçamento corrigido |
-| conteudo | Os trabalhos sobre este concelho |
-| conteudo | Outside what was read. |
-| conteudo | Outside what was read: the captures behind the portfolio split begin with the next term. |
-| conteudo | Pelouros |
-| conteudo | Poder de compra per capita, publicado pelo INE para todos os concelhos. |
-| conteudo | Portfolios |
-| conteudo | Provenance |
-| conteudo | Proveniência |
-| conteudo | Purchasing power per capita, published for every municipality. |
-| conteudo | Quem administrou, e o que as contas registaram |
-| conteudo | Quem responde pelo quê |
-| conteudo | Quinze anos de governo municipal em Évora, ao longo de cinco mandatos. |
-| conteudo | Receita cobrada |
-| conteudo | Registered with the employment service at month end, monthly file by municipality. |
-| conteudo | Reportado pelo município: sai da prestação de contas do próprio, não de um agregador central. |
-| conteudo | Reported by the municipality: it comes from its own accounts, not from a central aggregator. |
-| conteudo | Revenue collected |
-| conteudo | Seats |
-| conteudo | The debt against the legal ceiling |
-| conteudo | The gap between the two accounts of the same debt |
-| conteudo | The municipality publishes |
-| conteudo | The municipality’s latest accounts |
-| conteudo | The recovery-plan totals that appear in that work’s reading are sums over the public register, attributed to the concelho by that register. Of the money contracted in the concelho, the university holds more than the municipality, and the layer that administers the money is made of national bodies. That this makes the accountability address something other than the town hall is that work’s own signed conclusion, and it sits on its page. |
-| conteudo | The regulator |
-| conteudo | The regulator and the municipality publish the same year’s debt with a difference between them. The difference is small, and it is shown because it is the only place where an outside voice and the municipality’s own voice measure the same thing. |
-| conteudo | The regulator publishes |
-| conteudo | The statistics institute’s annual estimate for the municipality. |
-| conteudo | The thin line is the total debt the regulator publishes for the concelho; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. |
-| conteudo | The works about this concelho |
-| conteudo | Total debt |
-| conteudo | What the municipality budgeted, what it collected, what it paid, and what it said it owed at year end. These are the municipality’s own figures about itself: the accounts are its own. |
-| conteudo | What the sources publish about the municipality of Évora: population, purchasing power, employment, enterprises, debt and budget execution. |
-| conteudo | What was budgeted, what was paid and what was left owing in the municipality of Évora. |
-| conteudo | Who answers for what |
-| conteudo | Who governed, and what the accounts recorded |
-| conteudo | Who held each portfolio of the Câmara Municipal de Évora across five terms, how much the municipality’s own accounts spent in the areas those portfolios cover, and what the reports say those areas did. |
-| conteudo | district of Évora · Alentejo Central |
-| conteudo | distrito de Évora · Alentejo Central |
-| conteudo | no row yet |
-| conteudo | sem linha ainda |
-| conteudo | Évora |
+| classe | texto | bloco |
+| --- | --- | --- |
+| conteudo | A diferença entre as duas contas da mesma dívida | até 2026-08-26 |
+| conteudo | A dívida contra o teto legal | até 2026-08-26 |
+| conteudo | A última prestação de contas do município | até 2026-08-26 |
+| conteudo | Accounts of the year before last | até 2026-08-26 |
+| navegacao | Background | até 2026-08-26 |
+| conteudo | Borrowing margin | até 2026-08-26 |
+| conteudo | Contas do penúltimo ano | até 2026-08-26 |
+| conteudo | Corrected budget | até 2026-08-26 |
+| conteudo | Debt limit | até 2026-08-26 |
+| conteudo | Decided | até 2026-08-26 |
+| conteudo | Decidiu | até 2026-08-26 |
+| conteudo | Deixou | até 2026-08-26 |
+| conteudo | Despesa paga | até 2026-08-26 |
+| conteudo | Diferença | até 2026-08-26 |
+| conteudo | Difference | até 2026-08-26 |
+| conteudo | Dívida total | até 2026-08-26 |
+| conteudo | Economia, investidores e portas abertas no município de Évora. | até 2026-08-26 |
+| conteudo | Economy, investors and open doors in the municipality of Évora. | até 2026-08-26 |
+| conteudo | Em funções. | até 2026-08-26 |
+| conteudo | Estimativa anual do INE para o concelho. | até 2026-08-26 |
+| conteudo | Executive installed | até 2026-08-26 |
+| conteudo | Executivo instalado | até 2026-08-26 |
+| conteudo | Expenditure paid | até 2026-08-26 |
+| conteudo | Fifteen years of municipal government in Évora, across five terms. | até 2026-08-26 |
+| conteudo | Fora do que foi lido. | até 2026-08-26 |
+| conteudo | Fora do que foi lido: as capturas que sustentam a repartição de pelouros começam no mandato seguinte. | até 2026-08-26 |
+| navegacao | Fundo | até 2026-08-26 |
+| conteudo | Herdou | até 2026-08-26 |
+| conteudo | In office. | até 2026-08-26 |
+| conteudo | Inherited | até 2026-08-26 |
+| conteudo | Inscritos no fim do mês nos serviços de emprego, ficheiro mensal por concelho. | até 2026-08-26 |
+| conteudo | Left | até 2026-08-26 |
+| conteudo | Limite de dívida | até 2026-08-26 |
+| conteudo | Lugares | até 2026-08-26 |
+| conteudo | Margem de endividamento | até 2026-08-26 |
+| conteudo | O município publica | até 2026-08-26 |
+| conteudo | O que as fontes publicam sobre o município de Évora: população, poder de compra, emprego, empresas, dívida e execução orçamental. | até 2026-08-26 |
+| conteudo | O que foi orçamentado, o que foi pago e o que ficou em dívida no município de Évora. | até 2026-08-26 |
+| conteudo | O que o município orçamentou, o que cobrou, o que pagou, e o que dizia dever no fim do ano. São números do próprio município sobre si mesmo: a prestação de contas é dele. | até 2026-08-26 |
+| conteudo | O regulador | até 2026-08-26 |
+| conteudo | O regulador publica | até 2026-08-26 |
+| conteudo | O traço fino é a dívida total que o regulador publica para o concelho; a barra é a distância até ao limite legal do mesmo ano, que é o fio da direita. O índice mede uma contra o outro numa escala em que o teto é o valor permitido. | até 2026-08-26 |
+| conteudo | Orçamento corrigido | até 2026-08-26 |
+| conteudo | Os trabalhos sobre este concelho | até 2026-08-26 |
+| conteudo | Outside what was read. | até 2026-08-26 |
+| conteudo | Outside what was read: the captures behind the portfolio split begin with the next term. | até 2026-08-26 |
+| conteudo | Pelouros | até 2026-08-26 |
+| conteudo | Poder de compra per capita, publicado pelo INE para todos os concelhos. | até 2026-08-26 |
+| conteudo | Portfolios | até 2026-08-26 |
+| conteudo | Provenance | até 2026-08-26 |
+| conteudo | Proveniência | até 2026-08-26 |
+| conteudo | Purchasing power per capita, published for every municipality. | até 2026-08-26 |
+| conteudo | Quem administrou, e o que as contas registaram | até 2026-08-26 |
+| conteudo | Quem responde pelo quê | até 2026-08-26 |
+| conteudo | Quinze anos de governo municipal em Évora, ao longo de cinco mandatos. | até 2026-08-26 |
+| conteudo | Receita cobrada | até 2026-08-26 |
+| conteudo | Registered with the employment service at month end, monthly file by municipality. | até 2026-08-26 |
+| conteudo | Reportado pelo município: sai da prestação de contas do próprio, não de um agregador central. | até 2026-08-26 |
+| conteudo | Reported by the municipality: it comes from its own accounts, not from a central aggregator. | até 2026-08-26 |
+| conteudo | Revenue collected | até 2026-08-26 |
+| conteudo | Seats | até 2026-08-26 |
+| conteudo | The debt against the legal ceiling | até 2026-08-26 |
+| conteudo | The gap between the two accounts of the same debt | até 2026-08-26 |
+| conteudo | The municipality publishes | até 2026-08-26 |
+| conteudo | The municipality’s latest accounts | até 2026-08-26 |
+| conteudo | The recovery-plan totals that appear in that work’s reading are sums over the public register, attributed to the concelho by that register. Of the money contracted in the concelho, the university holds more than the municipality, and the layer that administers the money is made of national bodies. That this makes the accountability address something other than the town hall is that work’s own signed conclusion, and it sits on its page. | até 2026-08-26 |
+| conteudo | The regulator | até 2026-08-26 |
+| conteudo | The regulator and the municipality publish the same year’s debt with a difference between them. The difference is small, and it is shown because it is the only place where an outside voice and the municipality’s own voice measure the same thing. | até 2026-08-26 |
+| conteudo | The regulator publishes | até 2026-08-26 |
+| conteudo | The statistics institute’s annual estimate for the municipality. | até 2026-08-26 |
+| conteudo | The thin line is the total debt the regulator publishes for the concelho; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. | até 2026-08-26 |
+| conteudo | The works about this concelho | até 2026-08-26 |
+| conteudo | Total debt | até 2026-08-26 |
+| conteudo | What the municipality budgeted, what it collected, what it paid, and what it said it owed at year end. These are the municipality’s own figures about itself: the accounts are its own. | até 2026-08-26 |
+| conteudo | What the sources publish about the municipality of Évora: population, purchasing power, employment, enterprises, debt and budget execution. | até 2026-08-26 |
+| conteudo | What was budgeted, what was paid and what was left owing in the municipality of Évora. | até 2026-08-26 |
+| conteudo | Who answers for what | até 2026-08-26 |
+| conteudo | Who governed, and what the accounts recorded | até 2026-08-26 |
+| conteudo | Who held each portfolio of the Câmara Municipal de Évora across five terms, how much the municipality’s own accounts spent in the areas those portfolios cover, and what the reports say those areas did. | até 2026-08-26 |
+| conteudo | district of Évora · Alentejo Central | até 2026-08-26 |
+| conteudo | distrito de Évora · Alentejo Central | até 2026-08-26 |
+| conteudo | no row yet | até 2026-08-26 |
+| conteudo | sem linha ainda | até 2026-08-26 |
+| conteudo | Évora | até 2026-08-26 |
 
 ## `/correcoes` · `/en/corrections` (etapa 4, subetapa 4a)
 
@@ -376,48 +384,48 @@ o selo, a cobertura, a verificação de uma linha — e não existe nenhuma. As 
 frases da caixa de correções são **navegação**: dizem como se usa um comando, que
 é o que a lista declarada chama navegação.*
 
-| classe | texto |
-| --- | --- |
-| conteudo | 26 provenance revisions |
-| conteudo | 26 revisões de proveniência |
-| conteudo | A política |
-| conteudo | A política de correções deste sítio e o registo de todas: o valor anterior à vista, datado, com o motivo, e nada apagado. |
-| conteudo | An entry in the register holds the previous value, the new value, the date, the reason and the ledger row that changed. Nothing is removed: a corrected entry is added to that row’s history, it does not replace it. There are three kinds, and they are not mixed: |
-| conteudo | Anyone who finds an error writes to correcoes@oestadodopais.pt . A confirmed error enters the register with credit to whoever found it, if they wish. |
-| conteudo | Atualização. O valor estava certo e deixou de estar, porque aquilo que mede mudou. Não é um erro. |
-| conteudo | Atualizações |
-| conteudo | Correcting in silence is the cheapest way of lying. |
-| conteudo | Correction. The published value was wrong. It is a confession, and it is the reason the register exists. |
-| conteudo | Corrections |
-| conteudo | Correção. O valor publicado estava errado. É uma confissão, e é a razão de o registo existir. |
-| conteudo | Correções |
-| conteudo | Corrigir em silêncio é a forma mais barata de mentir. |
-| navegacao | Escreva aqui e o botão abre o seu programa de correio com o texto já dentro. Nada é enviado deste sítio: a mensagem sai de si, para si ficar com uma cópia. |
-| conteudo | Escrever uma correção |
-| navegacao | If the button opens nothing, your computer has no mail program set up. In that case copy the address above and write from wherever you normally write. |
-| conteudo | O que foi corrigido, e o que mudou |
-| conteudo | O registo |
-| conteudo | O valor não mudou; mudou a maneira de lá chegar: uma fonte que muda de endereço, por exemplo. Não são erros nem atualizações, e não se listam aqui uma a uma: são muitas de cada vez e afogariam as correções. Cada linha abaixo leva à sua própria história, onde a revisão está escrita por extenso. |
-| conteudo | Provenance revision. The value did not change; the route to the source did, an address for example. It is neither an error nor an update. |
-| conteudo | Provenance revisions |
-| conteudo | Quem encontrar um erro escreve para correcoes@oestadodopais.pt . Um erro confirmado entra no registo com crédito a quem o encontrou, se o desejar. |
-| conteudo | Revisão de proveniência. O valor não mudou; mudou o caminho até à fonte, um endereço por exemplo. Não é erro nem atualização. |
-| conteudo | Revisões de proveniência |
-| navegacao | Se o botão não abrir nada, o seu computador não tem programa de correio configurado. Nesse caso copie o endereço acima e escreva de onde costuma escrever. |
-| conteudo | The corrections policy of this site and the register of them all: the previous value in plain sight, dated, with the reason, and nothing deleted. |
-| conteudo | The policy |
-| conteudo | The register |
-| conteudo | The value did not change; the way to find it did: a source that moves address, for example. They are neither errors nor updates, and they are not listed one by one here: they come many at a time and would drown the corrections. Each row below leads to its own history, where the revision is written out in full. |
-| conteudo | Uma entrada do registo guarda o valor anterior, o valor novo, a data, o motivo e a linha do livro-razão que mudou. Nada é removido: uma entrada corrigida acresce à história daquela linha, não a substitui. São três naturezas, e não se misturam: |
-| conteudo | Update. The value was right and stopped being so, because what it measures changed. It is not an error. |
-| conteudo | Updates |
-| conteudo | Valores que estavam certos e deixaram de estar, porque aquilo que medem mudou. Não são erros, e não contam para o número acima. |
-| conteudo | Valores que estavam errados. Cada um fica com o valor anterior à vista, datado, e nenhum é removido. |
-| conteudo | Values that were right and stopped being so, because what they measure changed. They are not errors, and they do not count towards the number above. |
-| conteudo | Values that were wrong. Each keeps its previous value in plain sight, dated, and none is removed. |
-| conteudo | What was corrected, and what changed |
-| conteudo | Write a correction |
-| navegacao | Write here and the button opens your own mail program with the text already in it. Nothing is sent from this site: the message leaves from you, so you keep a copy of it. |
+| classe | texto | bloco |
+| --- | --- | --- |
+| conteudo | 26 provenance revisions | até 2026-08-26 |
+| conteudo | 26 revisões de proveniência | até 2026-08-26 |
+| conteudo | A política | até 2026-08-26 |
+| conteudo | A política de correções deste sítio e o registo de todas: o valor anterior à vista, datado, com o motivo, e nada apagado. | até 2026-08-26 |
+| conteudo | An entry in the register holds the previous value, the new value, the date, the reason and the ledger row that changed. Nothing is removed: a corrected entry is added to that row’s history, it does not replace it. There are three kinds, and they are not mixed: | até 2026-08-26 |
+| conteudo | Anyone who finds an error writes to correcoes@oestadodopais.pt . A confirmed error enters the register with credit to whoever found it, if they wish. | até 2026-08-26 |
+| conteudo | Atualização. O valor estava certo e deixou de estar, porque aquilo que mede mudou. Não é um erro. | até 2026-08-26 |
+| conteudo | Atualizações | até 2026-08-26 |
+| conteudo | Correcting in silence is the cheapest way of lying. | até 2026-08-26 |
+| conteudo | Correction. The published value was wrong. It is a confession, and it is the reason the register exists. | até 2026-08-26 |
+| conteudo | Corrections | até 2026-08-26 |
+| conteudo | Correção. O valor publicado estava errado. É uma confissão, e é a razão de o registo existir. | até 2026-08-26 |
+| conteudo | Correções | até 2026-08-26 |
+| conteudo | Corrigir em silêncio é a forma mais barata de mentir. | até 2026-08-26 |
+| navegacao | Escreva aqui e o botão abre o seu programa de correio com o texto já dentro. Nada é enviado deste sítio: a mensagem sai de si, para si ficar com uma cópia. | até 2026-08-26 |
+| conteudo | Escrever uma correção | até 2026-08-26 |
+| navegacao | If the button opens nothing, your computer has no mail program set up. In that case copy the address above and write from wherever you normally write. | até 2026-08-26 |
+| conteudo | O que foi corrigido, e o que mudou | até 2026-08-26 |
+| conteudo | O registo | até 2026-08-26 |
+| conteudo | O valor não mudou; mudou a maneira de lá chegar: uma fonte que muda de endereço, por exemplo. Não são erros nem atualizações, e não se listam aqui uma a uma: são muitas de cada vez e afogariam as correções. Cada linha abaixo leva à sua própria história, onde a revisão está escrita por extenso. | até 2026-08-26 |
+| conteudo | Provenance revision. The value did not change; the route to the source did, an address for example. It is neither an error nor an update. | até 2026-08-26 |
+| conteudo | Provenance revisions | até 2026-08-26 |
+| conteudo | Quem encontrar um erro escreve para correcoes@oestadodopais.pt . Um erro confirmado entra no registo com crédito a quem o encontrou, se o desejar. | até 2026-08-26 |
+| conteudo | Revisão de proveniência. O valor não mudou; mudou o caminho até à fonte, um endereço por exemplo. Não é erro nem atualização. | até 2026-08-26 |
+| conteudo | Revisões de proveniência | até 2026-08-26 |
+| navegacao | Se o botão não abrir nada, o seu computador não tem programa de correio configurado. Nesse caso copie o endereço acima e escreva de onde costuma escrever. | até 2026-08-26 |
+| conteudo | The corrections policy of this site and the register of them all: the previous value in plain sight, dated, with the reason, and nothing deleted. | até 2026-08-26 |
+| conteudo | The policy | até 2026-08-26 |
+| conteudo | The register | até 2026-08-26 |
+| conteudo | The value did not change; the way to find it did: a source that moves address, for example. They are neither errors nor updates, and they are not listed one by one here: they come many at a time and would drown the corrections. Each row below leads to its own history, where the revision is written out in full. | até 2026-08-26 |
+| conteudo | Uma entrada do registo guarda o valor anterior, o valor novo, a data, o motivo e a linha do livro-razão que mudou. Nada é removido: uma entrada corrigida acresce à história daquela linha, não a substitui. São três naturezas, e não se misturam: | até 2026-08-26 |
+| conteudo | Update. The value was right and stopped being so, because what it measures changed. It is not an error. | até 2026-08-26 |
+| conteudo | Updates | até 2026-08-26 |
+| conteudo | Valores que estavam certos e deixaram de estar, porque aquilo que medem mudou. Não são erros, e não contam para o número acima. | até 2026-08-26 |
+| conteudo | Valores que estavam errados. Cada um fica com o valor anterior à vista, datado, e nenhum é removido. | até 2026-08-26 |
+| conteudo | Values that were right and stopped being so, because what they measure changed. They are not errors, and they do not count towards the number above. | até 2026-08-26 |
+| conteudo | Values that were wrong. Each keeps its previous value in plain sight, dated, and none is removed. | até 2026-08-26 |
+| conteudo | What was corrected, and what changed | até 2026-08-26 |
+| conteudo | Write a correction | até 2026-08-26 |
+| navegacao | Write here and the button opens your own mail program with the text already in it. Nothing is sent from this site: the message leaves from you, so you keep a copy of it. | até 2026-08-26 |
 
 ## `/agenda` · `/en/agenda` (etapa 4, subetapa 4c)
 
@@ -435,48 +443,48 @@ regra da direção chama ler mal. As duas palavras dos estados vazios («Nenhum 
 hoje.», «Sem critério.») são a ausência dita como a Emenda 15 manda. «Nesta
 página» é o rótulo do sumário, e é navegação: leva a outro sítio da página.*
 
-| classe | texto |
-| --- | --- |
-| conteudo | A pergunta |
-| conteudo | A seguir |
-| conteudo | Com data publicada pela fonte |
-| conteudo | Concluded |
-| conteudo | Concluído |
-| conteudo | Criteria |
-| conteudo | Critérios |
-| conteudo | Em curso |
-| conteudo | Nenhum até hoje. |
-| navegacao | Nesta página |
-| conteudo | Next |
-| conteudo | No criterion. |
-| conteudo | None to date. |
-| conteudo | O calendário das fontes |
-| conteudo | O calendário, no tempo |
-| conteudo | O que as fontes que este sítio cita publicam a seguir. |
-| conteudo | O que este observatório está a medir, o que se segue, e o critério que pôs lá cada coisa. Com o calendário do que as fontes publicam a seguir. |
-| conteudo | O que está em cada estado |
-| conteudo | O que mudou |
-| conteudo | O que se mede a seguir |
-| conteudo | O registo do motor escreve-se em inglês: o inglês é a forma registada, palavra por palavra, e o português acima é a edição portuguesa dessa mesma pergunta. |
-| navegacao | On this page |
-| conteudo | Porquê |
-| conteudo | Retirado |
-| conteudo | Sem critério. |
-| conteudo | Sem data, porque a fonte não publica nenhuma |
-| conteudo | The calendar, in time |
-| conteudo | The engine’s record is written in English: the English is the registered form, word for word, and the Portuguese edition renders that same question. |
-| conteudo | The question |
-| conteudo | The source calendar |
-| conteudo | Under way |
-| conteudo | What changed |
-| conteudo | What gets measured next |
-| conteudo | What is in each state |
-| conteudo | What the sources this site cites publish next. |
-| conteudo | What this observatory is measuring, what comes next, and the criterion that put each thing there. With the calendar of what the sources publish next. |
-| conteudo | Why |
-| conteudo | With a date the source publishes |
-| conteudo | With no date, because the source publishes none |
-| conteudo | Withdrawn |
+| classe | texto | bloco |
+| --- | --- | --- |
+| conteudo | A pergunta | até 2026-08-26 |
+| conteudo | A seguir | até 2026-08-26 |
+| conteudo | Com data publicada pela fonte | até 2026-08-26 |
+| conteudo | Concluded | até 2026-08-26 |
+| conteudo | Concluído | até 2026-08-26 |
+| conteudo | Criteria | até 2026-08-26 |
+| conteudo | Critérios | até 2026-08-26 |
+| conteudo | Em curso | até 2026-08-26 |
+| conteudo | Nenhum até hoje. | até 2026-08-26 |
+| navegacao | Nesta página | até 2026-08-26 |
+| conteudo | Next | até 2026-08-26 |
+| conteudo | No criterion. | até 2026-08-26 |
+| conteudo | None to date. | até 2026-08-26 |
+| conteudo | O calendário das fontes | até 2026-08-26 |
+| conteudo | O calendário, no tempo | até 2026-08-26 |
+| conteudo | O que as fontes que este sítio cita publicam a seguir. | até 2026-08-26 |
+| conteudo | O que este observatório está a medir, o que se segue, e o critério que pôs lá cada coisa. Com o calendário do que as fontes publicam a seguir. | até 2026-08-26 |
+| conteudo | O que está em cada estado | até 2026-08-26 |
+| conteudo | O que mudou | até 2026-08-26 |
+| conteudo | O que se mede a seguir | até 2026-08-26 |
+| conteudo | O registo do motor escreve-se em inglês: o inglês é a forma registada, palavra por palavra, e o português acima é a edição portuguesa dessa mesma pergunta. | até 2026-08-26 |
+| navegacao | On this page | até 2026-08-26 |
+| conteudo | Porquê | até 2026-08-26 |
+| conteudo | Retirado | até 2026-08-26 |
+| conteudo | Sem critério. | até 2026-08-26 |
+| conteudo | Sem data, porque a fonte não publica nenhuma | até 2026-08-26 |
+| conteudo | The calendar, in time | até 2026-08-26 |
+| conteudo | The engine’s record is written in English: the English is the registered form, word for word, and the Portuguese edition renders that same question. | até 2026-08-26 |
+| conteudo | The question | até 2026-08-26 |
+| conteudo | The source calendar | até 2026-08-26 |
+| conteudo | Under way | até 2026-08-26 |
+| conteudo | What changed | até 2026-08-26 |
+| conteudo | What gets measured next | até 2026-08-26 |
+| conteudo | What is in each state | até 2026-08-26 |
+| conteudo | What the sources this site cites publish next. | até 2026-08-26 |
+| conteudo | What this observatory is measuring, what comes next, and the criterion that put each thing there. With the calendar of what the sources publish next. | até 2026-08-26 |
+| conteudo | Why | até 2026-08-26 |
+| conteudo | With a date the source publishes | até 2026-08-26 |
+| conteudo | With no date, because the source publishes none | até 2026-08-26 |
+| conteudo | Withdrawn | até 2026-08-26 |
 
 ## `/estudos` · `/en/studies` e as páginas de trabalho (etapa 4, subetapa 4e)
 
@@ -500,80 +508,80 @@ o leitor para fora do sítio. Os dois rótulos de estado que ficam («Rascunho �
 conteúdo», «Documento alojado · página por escrever») são a ausência declarada,
 e por isso conteúdo.*
 
-| classe | texto |
-| --- | --- |
-| conteudo | % desse valor está nas quatro maiores empresas |
-| conteudo | % dez anos depois |
-| conteudo | % do orçamento foi de facto cobrado no último ano de contas |
-| conteudo | % four years earlier |
-| conteudo | % of that value sits with the four largest enterprises |
-| conteudo | % of the budget was actually collected in the latest year of accounts |
-| conteudo | % quatro anos antes |
-| conteudo | % ten years later |
-| conteudo | A cross-vertical reading of one Portuguese municipality: the recovery-plan project register, the public-contracts register and the state auditor's catalogue, all fetched live on 2026-08-04, and the recovery-plan register read again on 2026-08-20. |
-| navegacao | A ligação sai deste domínio. |
-| conteudo | As contas do penúltimo ano foram rejeitadas em votação e nunca foram certificadas. |
-| conteudo | Avaliação económica das regiões de Portugal. |
-| conteudo | Datas de publicação por confirmar. |
-| conteudo | Description: house translation of the document’s opening sentence |
-| conteudo | Description: opening sentence of the document |
-| conteudo | Description: restatement of the title |
-| conteudo | Descrição: frase de abertura do documento |
-| conteudo | Descrição: reformulação do título |
-| conteudo | Descrição: tradução da casa da frase de abertura do documento |
-| conteudo | designations, over three people, in the next executive |
-| conteudo | designações, por três pessoas, no executivo seguinte |
-| conteudo | Document hosted · page not yet written |
-| conteudo | Documento alojado · página por escrever |
-| conteudo | Economia, sociedade e estratégia no Alentejo e no Algarve. |
-| conteudo | Economic assessment of Portugal’s regions. |
-| conteudo | Economy, society and strategy in the Alentejo and the Algarve. |
-| conteudo | EN [a verificar] |
-| conteudo | EN Economic assessment of Portugal’s regions. |
-| conteudo | EN Economy, investors and open doors in the municipality of Évora. |
-| conteudo | EN Economy, society and strategy in the Alentejo and the Algarve. |
-| conteudo | EN Fifteen years of municipal government in Évora, across five terms. |
-| conteudo | EN Long series on the country’s evolution. |
-| conteudo | EN Non-revenue water in Portugal’s public supply systems. |
-| conteudo | EN Public funding in Portugal. |
-| conteudo | EN What was budgeted, what was paid and what was left owing in the municipality of Évora. |
-| conteudo | EN Who held each portfolio of the Câmara Municipal de Évora across five terms, how much the municipality’s own accounts spent in the areas those portfolios cover, and what the reports say those areas did. |
-| conteudo | Estudos |
-| conteudo | Financiamento público em Portugal. |
-| conteudo | Long series on the country’s evolution. |
-| conteudo | No files to download. |
-| conteudo | No subject assigned |
-| conteudo | Non-revenue water in Portugal’s public supply systems. |
-| conteudo | O arquivo de estudos publicados, com as suas edições em português e em inglês. |
-| conteudo | O arquivo do observatório: cada estudo publicado, com as suas edições, datas e estado de migração. O que ainda não vive aqui está ligado onde vive. |
-| conteudo | PT [a verificar] |
-| conteudo | PT Avaliação económica das regiões de Portugal. |
-| conteudo | PT Economia, investidores e portas abertas no município de Évora. |
-| conteudo | PT Economia, sociedade e estratégia no Alentejo e no Algarve. |
-| conteudo | PT Financiamento público em Portugal. |
-| conteudo | PT O que foi orçamentado, o que foi pago e o que ficou em dívida no município de Évora. |
-| conteudo | PT Quinze anos de governo municipal em Évora, ao longo de cinco mandatos. |
-| conteudo | PT Séries longas sobre a evolução do país. |
-| conteudo | PT Água não faturada nos sistemas de abastecimento em Portugal. |
-| conteudo | Public funding in Portugal. |
-| conteudo | Publication dates not yet confirmed. |
-| conteudo | Quem teve cada pelouro da Câmara Municipal de Évora ao longo de cinco mandatos, quanto gastaram as contas do próprio município nas áreas que esses pelouros cobrem, e o que os relatórios dizem que essas áreas fizeram. |
-| conteudo | Sem ficheiros para descarregar. |
-| conteudo | Sem tema atribuído |
-| conteudo | Studies |
-| conteudo | Séries longas sobre a evolução do país. |
-| conteudo | The accounts of the second-to-last year were rejected in a vote and were never certified. |
-| conteudo | The archive of published studies, with their Portuguese and English editions. |
-| navegacao | The link leaves this domain. |
-| conteudo | The observatory’s archive: every published study, with its editions, dates and migration state. What does not live here yet is linked where it lives. |
-| conteudo | Uma leitura transversal de um município português: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado, recolhidos em direto a 2026-08-04, e o registo do plano de recuperação relido a 2026-08-20. |
-| conteudo | Água não faturada nos sistemas de abastecimento em Portugal. |
-| conteudo | € actually paid |
-| conteudo | € approved and attributed to the concelho by the recovery-plan register |
-| conteudo | € aprovados e atribuídos ao concelho pelo registo do plano de recuperação |
-| conteudo | € de valor acrescentado bruto das empresas sediadas no concelho |
-| conteudo | € efetivamente pagos |
-| conteudo | € of gross value added by enterprises headquartered in the concelho |
+| classe | texto | bloco |
+| --- | --- | --- |
+| conteudo | % desse valor está nas quatro maiores empresas | até 2026-08-26 |
+| conteudo | % dez anos depois | até 2026-08-26 |
+| conteudo | % do orçamento foi de facto cobrado no último ano de contas | até 2026-08-26 |
+| conteudo | % four years earlier | até 2026-08-26 |
+| conteudo | % of that value sits with the four largest enterprises | até 2026-08-26 |
+| conteudo | % of the budget was actually collected in the latest year of accounts | até 2026-08-26 |
+| conteudo | % quatro anos antes | até 2026-08-26 |
+| conteudo | % ten years later | até 2026-08-26 |
+| conteudo | A cross-vertical reading of one Portuguese municipality: the recovery-plan project register, the public-contracts register and the state auditor's catalogue, all fetched live on 2026-08-04, and the recovery-plan register read again on 2026-08-20. | até 2026-08-26 |
+| navegacao | A ligação sai deste domínio. | até 2026-08-26 |
+| conteudo | As contas do penúltimo ano foram rejeitadas em votação e nunca foram certificadas. | até 2026-08-26 |
+| conteudo | Avaliação económica das regiões de Portugal. | até 2026-08-26 |
+| conteudo | Datas de publicação por confirmar. | até 2026-08-26 |
+| conteudo | Description: house translation of the document’s opening sentence | até 2026-08-26 |
+| conteudo | Description: opening sentence of the document | até 2026-08-26 |
+| conteudo | Description: restatement of the title | até 2026-08-26 |
+| conteudo | Descrição: frase de abertura do documento | até 2026-08-26 |
+| conteudo | Descrição: reformulação do título | até 2026-08-26 |
+| conteudo | Descrição: tradução da casa da frase de abertura do documento | até 2026-08-26 |
+| conteudo | designations, over three people, in the next executive | até 2026-08-26 |
+| conteudo | designações, por três pessoas, no executivo seguinte | até 2026-08-26 |
+| conteudo | Document hosted · page not yet written | até 2026-08-26 |
+| conteudo | Documento alojado · página por escrever | até 2026-08-26 |
+| conteudo | Economia, sociedade e estratégia no Alentejo e no Algarve. | até 2026-08-26 |
+| conteudo | Economic assessment of Portugal’s regions. | até 2026-08-26 |
+| conteudo | Economy, society and strategy in the Alentejo and the Algarve. | até 2026-08-26 |
+| conteudo | EN [a verificar] | até 2026-08-26 |
+| conteudo | EN Economic assessment of Portugal’s regions. | até 2026-08-26 |
+| conteudo | EN Economy, investors and open doors in the municipality of Évora. | até 2026-08-26 |
+| conteudo | EN Economy, society and strategy in the Alentejo and the Algarve. | até 2026-08-26 |
+| conteudo | EN Fifteen years of municipal government in Évora, across five terms. | até 2026-08-26 |
+| conteudo | EN Long series on the country’s evolution. | até 2026-08-26 |
+| conteudo | EN Non-revenue water in Portugal’s public supply systems. | até 2026-08-26 |
+| conteudo | EN Public funding in Portugal. | até 2026-08-26 |
+| conteudo | EN What was budgeted, what was paid and what was left owing in the municipality of Évora. | até 2026-08-26 |
+| conteudo | EN Who held each portfolio of the Câmara Municipal de Évora across five terms, how much the municipality’s own accounts spent in the areas those portfolios cover, and what the reports say those areas did. | até 2026-08-26 |
+| conteudo | Estudos | até 2026-08-26 |
+| conteudo | Financiamento público em Portugal. | até 2026-08-26 |
+| conteudo | Long series on the country’s evolution. | até 2026-08-26 |
+| conteudo | No files to download. | até 2026-08-26 |
+| conteudo | No subject assigned | até 2026-08-26 |
+| conteudo | Non-revenue water in Portugal’s public supply systems. | até 2026-08-26 |
+| conteudo | O arquivo de estudos publicados, com as suas edições em português e em inglês. | até 2026-08-26 |
+| conteudo | O arquivo do observatório: cada estudo publicado, com as suas edições, datas e estado de migração. O que ainda não vive aqui está ligado onde vive. | até 2026-08-26 |
+| conteudo | PT [a verificar] | até 2026-08-26 |
+| conteudo | PT Avaliação económica das regiões de Portugal. | até 2026-08-26 |
+| conteudo | PT Economia, investidores e portas abertas no município de Évora. | até 2026-08-26 |
+| conteudo | PT Economia, sociedade e estratégia no Alentejo e no Algarve. | até 2026-08-26 |
+| conteudo | PT Financiamento público em Portugal. | até 2026-08-26 |
+| conteudo | PT O que foi orçamentado, o que foi pago e o que ficou em dívida no município de Évora. | até 2026-08-26 |
+| conteudo | PT Quinze anos de governo municipal em Évora, ao longo de cinco mandatos. | até 2026-08-26 |
+| conteudo | PT Séries longas sobre a evolução do país. | até 2026-08-26 |
+| conteudo | PT Água não faturada nos sistemas de abastecimento em Portugal. | até 2026-08-26 |
+| conteudo | Public funding in Portugal. | até 2026-08-26 |
+| conteudo | Publication dates not yet confirmed. | até 2026-08-26 |
+| conteudo | Quem teve cada pelouro da Câmara Municipal de Évora ao longo de cinco mandatos, quanto gastaram as contas do próprio município nas áreas que esses pelouros cobrem, e o que os relatórios dizem que essas áreas fizeram. | até 2026-08-26 |
+| conteudo | Sem ficheiros para descarregar. | até 2026-08-26 |
+| conteudo | Sem tema atribuído | até 2026-08-26 |
+| conteudo | Studies | até 2026-08-26 |
+| conteudo | Séries longas sobre a evolução do país. | até 2026-08-26 |
+| conteudo | The accounts of the second-to-last year were rejected in a vote and were never certified. | até 2026-08-26 |
+| conteudo | The archive of published studies, with their Portuguese and English editions. | até 2026-08-26 |
+| navegacao | The link leaves this domain. | até 2026-08-26 |
+| conteudo | The observatory’s archive: every published study, with its editions, dates and migration state. What does not live here yet is linked where it lives. | até 2026-08-26 |
+| conteudo | Uma leitura transversal de um município português: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado, recolhidos em direto a 2026-08-04, e o registo do plano de recuperação relido a 2026-08-20. | até 2026-08-26 |
+| conteudo | Água não faturada nos sistemas de abastecimento em Portugal. | até 2026-08-26 |
+| conteudo | € actually paid | até 2026-08-26 |
+| conteudo | € approved and attributed to the concelho by the recovery-plan register | até 2026-08-26 |
+| conteudo | € aprovados e atribuídos ao concelho pelo registo do plano de recuperação | até 2026-08-26 |
+| conteudo | € de valor acrescentado bruto das empresas sediadas no concelho | até 2026-08-26 |
+| conteudo | € efetivamente pagos | até 2026-08-26 |
+| conteudo | € of gross value added by enterprises headquartered in the concelho | até 2026-08-26 |
 
 ## `/estudos/<slug>/texto` · `/en/studies/<slug>/text` (parte 3, P2)
 
@@ -598,22 +606,22 @@ nas oito páginas e nas duas edições. As palavras da faixa das contagens («bl
 das outras origens declaradas: a faixa está dentro de `data-registo-conta`, que o
 portão reconta do registo em disco.*
 
-| classe | texto |
-| --- | --- |
-| conteudo | As linhas deste documento |
-| conteudo | O documento original |
-| conteudo | O registo de conteúdo |
-| conteudo | The content record |
-| conteudo | The original document |
-| conteudo | The rows of this document |
-| conteudo | as this document prints it |
-| conteudo | como este documento o imprime |
-| conteudo | engine row |
-| conteudo | linha do motor |
-| conteudo | o valor como a linha o guarda |
-| conteudo | resumo de origem |
-| conteudo | source digest |
-| conteudo | the value as the row keeps it |
+| classe | texto | bloco |
+| --- | --- | --- |
+| conteudo | As linhas deste documento | até 2026-08-26 |
+| conteudo | O documento original | até 2026-08-26 |
+| conteudo | O registo de conteúdo | até 2026-08-26 |
+| conteudo | The content record | até 2026-08-26 |
+| conteudo | The original document | até 2026-08-26 |
+| conteudo | The rows of this document | até 2026-08-26 |
+| conteudo | as this document prints it | até 2026-08-26 |
+| conteudo | como este documento o imprime | até 2026-08-26 |
+| conteudo | engine row | até 2026-08-26 |
+| conteudo | linha do motor | até 2026-08-26 |
+| conteudo | o valor como a linha o guarda | até 2026-08-26 |
+| conteudo | resumo de origem | até 2026-08-26 |
+| conteudo | source digest | até 2026-08-26 |
+| conteudo | the value as the row keeps it | até 2026-08-26 |
 
 ## A reclassificação de 21.08.2026 (direção): **limite dos dados**
 
@@ -670,34 +678,34 @@ traduzido, e foram alteradas na tabela da sua rota, em vez de duplicadas aqui.*
 nomeia-as): a contagem do índice do livro-razão, e as duas frases da leitura do
 trabalho das penalizações. Entram aqui, que é o bloco a que pertencem.
 
-| classe | frase |
-|---|---|
-| conteudo | 136 afirmações · 19 calculadas |
-| conteudo | 136 claims · 19 calculated |
-| conteudo | 128 de 136 linhas com proveniência completa |
-| conteudo | 128 of 136 rows with complete provenance |
-| conteudo | 8 de 136 linhas com campos por confirmar |
-| conteudo | 8 of 136 rows with fields to confirm |
-| conteudo | O que a lei cobra por antecipar a reforma, e o que seria atuarialmente neutro. |
-| conteudo | What the law charges for retiring early, and what would be actuarially neutral. |
-| conteudo | PT O que a lei cobra por antecipar a reforma, e o que seria atuarialmente neutro. |
-| conteudo | EN What the law charges for retiring early, and what would be actuarially neutral. |
-| conteudo | A quem cabe numa das exceções que afastam o fator de sustentabilidade, a lei corta menos do que o valor neutro. As duas medidas acima são os dois extremos da mesma decisão. |
-| conteudo | For those who fall within one of the exceptions that set the sustainability factor aside, the law cuts less than the neutral figure. The two measures above are the two ends of the same decision. |
-| conteudo | é o que a lei corta a quem não cabe numa das exceções |
-| conteudo | is what the law cuts from those who fall outside the exceptions |
-| conteudo | de redução da pensão seria atuarialmente neutro, por um ano de antecipação |
-| conteudo | pension reduction would be actuarially neutral, for one year of anticipation |
+| classe | frase | bloco |
+| --- | --- | --- |
+| conteudo | 136 afirmações · 19 calculadas | até 2026-08-26 |
+| conteudo | 136 claims · 19 calculated | até 2026-08-26 |
+| conteudo | 128 de 136 linhas com proveniência completa | até 2026-08-26 |
+| conteudo | 128 of 136 rows with complete provenance | até 2026-08-26 |
+| conteudo | 8 de 136 linhas com campos por confirmar | até 2026-08-26 |
+| conteudo | 8 of 136 rows with fields to confirm | até 2026-08-26 |
+| conteudo | O que a lei cobra por antecipar a reforma, e o que seria atuarialmente neutro. | até 2026-08-26 |
+| conteudo | What the law charges for retiring early, and what would be actuarially neutral. | até 2026-08-26 |
+| conteudo | PT O que a lei cobra por antecipar a reforma, e o que seria atuarialmente neutro. | até 2026-08-26 |
+| conteudo | EN What the law charges for retiring early, and what would be actuarially neutral. | até 2026-08-26 |
+| conteudo | A quem cabe numa das exceções que afastam o fator de sustentabilidade, a lei corta menos do que o valor neutro. As duas medidas acima são os dois extremos da mesma decisão. | até 2026-08-26 |
+| conteudo | For those who fall within one of the exceptions that set the sustainability factor aside, the law cuts less than the neutral figure. The two measures above are the two ends of the same decision. | até 2026-08-26 |
+| conteudo | é o que a lei corta a quem não cabe numa das exceções | até 2026-08-26 |
+| conteudo | is what the law cuts from those who fall outside the exceptions | até 2026-08-26 |
+| conteudo | de redução da pensão seria atuarialmente neutro, por um ano de antecipação | até 2026-08-26 |
+| conteudo | pension reduction would be actuarially neutral, for one year of anticipation | até 2026-08-26 |
 
 **As frases inglesas da página de um concelho e das leituras que o item B6
 mudou**, e que a régua lê como blocos novos porque o texto mudou:
 
-| classe | frase |
-|---|---|
-| conteudo | € approved and attributed to the municipality by the recovery-plan register |
-| conteudo | € of gross value added by enterprises headquartered in the municipality |
-| conteudo | The works about this municipality |
-| conteudo | The thin line is the total debt the regulator publishes for the municipality; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. |
+| classe | frase | bloco |
+| --- | --- | --- |
+| conteudo | € approved and attributed to the municipality by the recovery-plan register | até 2026-08-26 |
+| conteudo | € of gross value added by enterprises headquartered in the municipality | até 2026-08-26 |
+| conteudo | The works about this municipality | até 2026-08-26 |
+| conteudo | The thin line is the total debt the regulator publishes for the municipality; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. | até 2026-08-26 |
 
 **O que este bloco NÃO acrescentou ao inventário, e é uma leitura e não um
 esquecimento:** o índice «Nesta página» da página de leitura não entra, porque
@@ -713,10 +721,10 @@ do passo não acrescentaram nenhuma: o item C1 moveu um índice que já estava
 inventariado, o C2 mexeu numa folha de estilos, e o C3 trocou o ponto de código
 de um separador dentro de um valor do livro-razão, que não é prosa da casa.*
 
-| classe | frase |
-|---|---|
-| conteudo | Com página |
-| conteudo | With a page |
+| classe | frase | bloco |
+| --- | --- | --- |
+| conteudo | Com página | até 2026-08-26 |
+| conteudo | With a page | até 2026-08-26 |
 
 **Porque é conteúdo.** É o nome do grupo de uma lista, como «Beja» ou «Ilha do
 Faial» são o nome dos outros grupos da mesma página: diz por que critério
@@ -736,40 +744,40 @@ exclusão que a subetapa 3c escreveu para a lista por distritos.
 
 *As linhas com contagem levam o número de HOJE, e o ficheiro guarda as duas leituras, como já guardava «132 afirmações» ao lado de «136»: a de antes das linhas dos concelhos e a de depois. As entradas que este bloco acrescenta: os dois rótulos das medidas que desceram das peças para a camada das contas de Évora (decisão D2), a nota da dívida com a coluna que usa (D3), a nota do prazo médio lido do regulador, e a página do conjunto do livro-razão (D6) com a sua porta no índice. As duas linhas com contagem levam o número de hoje, como as outras deste ficheiro: quando as linhas dos concelhos chegarem, mudam com elas.*
 
-| classe | texto |
-| --- | --- |
-| conteudo | Execução da receita |
-| conteudo | Prazo médio de pagamento |
-| conteudo | Revenue execution |
-| conteudo | Average payment time |
-| conteudo | 136 afirmações · 19 calculadas · 0 linhas de concelhos |
-| conteudo | 136 claims · 19 calculated · 0 municipality rows |
-| conteudo | 2552 afirmações · 325 calculadas · 2416 linhas de concelhos |
-| conteudo | 2552 claims · 325 calculated · 2416 municipality rows |
-| conteudo | 2544 de 2552 linhas com proveniência completa |
-| conteudo | 2544 of 2552 rows with complete provenance |
-| conteudo | 8 de 2552 linhas com campos por confirmar |
-| conteudo | 8 of 2552 rows with fields to confirm |
-| conteudo | 2416 linhas · 308 concelhos · 2416 com proveniência completa |
-| conteudo | Uma linha por medida, com o valor tal como a fonte o publicou, a unidade, quem o produziu e a data em que foi lido. |
-| conteudo | One row per measure, with the value as the source published it, the unit, who produced it and the date it was read. |
-| conteudo | As linhas do livro-razão com as medidas que as fontes centrais publicam para o concelho de <lugar>. |
-| conteudo | The ledger rows with the measures central sources publish for the municipality of <lugar>. |
-| conteudo | Sistema de contas integradas das empresas; cada empresa conta num único concelho. |
-| conteudo | Integrated business accounts; each enterprise counts in a single municipality. |
-| conteudo | 2416 rows · 308 municipalities · 2416 with complete provenance |
-| conteudo | Uma linha por medida e por concelho, com o valor tal como a fonte o publicou, a unidade, quem o produziu e a data em que foi lido. |
-| conteudo | One row per measure and per municipality, with the value as the source published it, the unit, who produced it and the date it was read. |
-| conteudo | As linhas do livro-razão com as medidas que as fontes centrais publicam para cada concelho, uma linha cada. |
-| conteudo | The ledger rows with the measures central sources publish for each municipality, one row each. |
-| conteudo | Linhas sem concelho declarado |
-| conteudo | Rows with no municipality declared |
-| conteudo | O que as fontes publicam sobre o município de <lugar>: população, poder de compra, emprego, empresas, dívida e execução orçamental. |
-| conteudo | What the sources publish about the municipality of <lugar>: population, purchasing power, employment, enterprises, debt and budget execution. |
-| conteudo | Concelhos: as medidas centrais |
-| conteudo | Municipalities: the central measures |
-| conteudo | 0 linhas · 0 concelhos · 0 com proveniência completa |
-| conteudo | 0 rows · 0 municipalities · 0 with complete provenance |
+| classe | texto | bloco |
+| --- | --- | --- |
+| conteudo | Execução da receita | até 2026-08-26 |
+| conteudo | Prazo médio de pagamento | até 2026-08-26 |
+| conteudo | Revenue execution | até 2026-08-26 |
+| conteudo | Average payment time | até 2026-08-26 |
+| conteudo | 136 afirmações · 19 calculadas · 0 linhas de concelhos | até 2026-08-26 |
+| conteudo | 136 claims · 19 calculated · 0 municipality rows | até 2026-08-26 |
+| conteudo | 2552 afirmações · 325 calculadas · 2416 linhas de concelhos | até 2026-08-26 |
+| conteudo | 2552 claims · 325 calculated · 2416 municipality rows | até 2026-08-26 |
+| conteudo | 2544 de 2552 linhas com proveniência completa | até 2026-08-26 |
+| conteudo | 2544 of 2552 rows with complete provenance | até 2026-08-26 |
+| conteudo | 8 de 2552 linhas com campos por confirmar | até 2026-08-26 |
+| conteudo | 8 of 2552 rows with fields to confirm | até 2026-08-26 |
+| conteudo | 2416 linhas · 308 concelhos · 2416 com proveniência completa | até 2026-08-26 |
+| conteudo | Uma linha por medida, com o valor tal como a fonte o publicou, a unidade, quem o produziu e a data em que foi lido. | até 2026-08-26 |
+| conteudo | One row per measure, with the value as the source published it, the unit, who produced it and the date it was read. | até 2026-08-26 |
+| conteudo | As linhas do livro-razão com as medidas que as fontes centrais publicam para o concelho de <lugar>. | até 2026-08-26 |
+| conteudo | The ledger rows with the measures central sources publish for the municipality of <lugar>. | até 2026-08-26 |
+| conteudo | Sistema de contas integradas das empresas; cada empresa conta num único concelho. | até 2026-08-26 |
+| conteudo | Integrated business accounts; each enterprise counts in a single municipality. | até 2026-08-26 |
+| conteudo | 2416 rows · 308 municipalities · 2416 with complete provenance | até 2026-08-26 |
+| conteudo | Uma linha por medida e por concelho, com o valor tal como a fonte o publicou, a unidade, quem o produziu e a data em que foi lido. | até 2026-08-26 |
+| conteudo | One row per measure and per municipality, with the value as the source published it, the unit, who produced it and the date it was read. | até 2026-08-26 |
+| conteudo | As linhas do livro-razão com as medidas que as fontes centrais publicam para cada concelho, uma linha cada. | até 2026-08-26 |
+| conteudo | The ledger rows with the measures central sources publish for each municipality, one row each. | até 2026-08-26 |
+| conteudo | Linhas sem concelho declarado | até 2026-08-26 |
+| conteudo | Rows with no municipality declared | até 2026-08-26 |
+| conteudo | O que as fontes publicam sobre o município de <lugar>: população, poder de compra, emprego, empresas, dívida e execução orçamental. | até 2026-08-26 |
+| conteudo | What the sources publish about the municipality of <lugar>: population, purchasing power, employment, enterprises, debt and budget execution. | até 2026-08-26 |
+| conteudo | Concelhos: as medidas centrais | até 2026-08-26 |
+| conteudo | Municipalities: the central measures | até 2026-08-26 |
+| conteudo | 0 linhas · 0 concelhos · 0 com proveniência completa | até 2026-08-26 |
+| conteudo | 0 rows · 0 municipalities · 0 with complete provenance | até 2026-08-26 |
 
 ## Bloco dos 308 concelhos · P2 (os dados), 26.08.2026
 
@@ -777,32 +785,32 @@ exclusão que a subetapa 3c escreveu para a lista por distritos.
 
 *As frases que os itens E7 a E12 mudaram: a nota das empresas, que deixou de afirmar o que a verificação das fontes não confirmou; a legenda da dívida, sem a oração em que o sítio falava de si; e as que chamavam «regulador» à Direção-Geral das Autarquias Locais. As duas últimas linhas da tabela são a frase que SAIU, declarada pelo que ela era: autorreferência. Fica declarada para que a régua a apanhe pelo nome se alguém a repuser, em vez de a apanhar como bloco por classificar.*
 
-| classe | texto |
-| --- | --- |
-| conteudo | A Direção-Geral |
-| conteudo | A Direção-Geral publica |
-| conteudo | A série anual da Direção-Geral das Autarquias Locais ainda não chegou a este mandato. |
-| conteudo | Lista anual da Direção-Geral das Autarquias Locais, que publica os dados das contas dos municípios. |
-| conteudo | O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores. |
-| conteudo | O traço fino é a dívida total que a Direção-Geral das Autarquias Locais publica para o concelho; a barra é a distância até ao limite legal do mesmo ano, que é o fio da direita. O índice mede uma contra o outro numa escala em que o teto é o valor permitido. |
-| conteudo | Série anual da Direção-Geral das Autarquias Locais, que publica os dados das contas dos municípios. Exclui dívidas não orçamentais e exceções legais. |
-| conteudo | The annual list of the local-government directorate, which publishes the municipalities’ accounts data. |
-| conteudo | The annual series of the local-government directorate, which publishes the municipalities’ accounts data. Excludes non-budgetary debt and legal exceptions. |
-| conteudo | The directorate-general |
-| conteudo | The directorate-general publishes |
-| conteudo | The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue. |
-| conteudo | The local-government directorate’s annual series has not yet reached this term. |
-| conteudo | The thin line is the total debt the local-government directorate publishes for the municipality; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. |
-| conteudo | Sem linhas ainda. |
-| conteudo | No rows yet. |
-| conteudo | A referência do estudo |
-| conteudo | The study’s reference |
-| conteudo | 2552 afirmações · 325 calculadas · 2417 linhas de concelhos |
-| conteudo | 2552 claims · 325 calculated · 2417 municipality rows |
-| conteudo | 2417 linhas · 308 concelhos · 2417 com proveniência completa |
-| conteudo | 2417 rows · 308 municipalities · 2417 with complete provenance |
-| autorreferencia | O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores. É a lei que o define, não este sítio. |
-| autorreferencia | The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue. The law defines it, not this site. |
+| classe | texto | bloco |
+| --- | --- | --- |
+| conteudo | A Direção-Geral | até 2026-08-26 |
+| conteudo | A Direção-Geral publica | até 2026-08-26 |
+| conteudo | A série anual da Direção-Geral das Autarquias Locais ainda não chegou a este mandato. | até 2026-08-26 |
+| conteudo | Lista anual da Direção-Geral das Autarquias Locais, que publica os dados das contas dos municípios. | até 2026-08-26 |
+| conteudo | O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores. | até 2026-08-26 |
+| conteudo | O traço fino é a dívida total que a Direção-Geral das Autarquias Locais publica para o concelho; a barra é a distância até ao limite legal do mesmo ano, que é o fio da direita. O índice mede uma contra o outro numa escala em que o teto é o valor permitido. | até 2026-08-26 |
+| conteudo | Série anual da Direção-Geral das Autarquias Locais, que publica os dados das contas dos municípios. Exclui dívidas não orçamentais e exceções legais. | até 2026-08-26 |
+| conteudo | The annual list of the local-government directorate, which publishes the municipalities’ accounts data. | até 2026-08-26 |
+| conteudo | The annual series of the local-government directorate, which publishes the municipalities’ accounts data. Excludes non-budgetary debt and legal exceptions. | até 2026-08-26 |
+| conteudo | The directorate-general | até 2026-08-26 |
+| conteudo | The directorate-general publishes | até 2026-08-26 |
+| conteudo | The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue. | até 2026-08-26 |
+| conteudo | The local-government directorate’s annual series has not yet reached this term. | até 2026-08-26 |
+| conteudo | The thin line is the total debt the local-government directorate publishes for the municipality; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. | até 2026-08-26 |
+| conteudo | Sem linhas ainda. | até 2026-08-26 |
+| conteudo | No rows yet. | até 2026-08-26 |
+| conteudo | A referência do estudo | até 2026-08-26 |
+| conteudo | The study’s reference | até 2026-08-26 |
+| conteudo | 2552 afirmações · 325 calculadas · 2417 linhas de concelhos | até 2026-08-26 |
+| conteudo | 2552 claims · 325 calculated · 2417 municipality rows | até 2026-08-26 |
+| conteudo | 2417 linhas · 308 concelhos · 2417 com proveniência completa | até 2026-08-26 |
+| conteudo | 2417 rows · 308 municipalities · 2417 with complete provenance | até 2026-08-26 |
+| autorreferencia | O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores. É a lei que o define, não este sítio. | até 2026-08-26 |
+| autorreferencia | The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue. The law defines it, not this site. | até 2026-08-26 |
 
 ## Bloco «A grelha da voz» · 26.08.2026
 
@@ -826,12 +834,12 @@ bloco dos 308 escreveu: uma frase CORRIGIDA que continue declarada volta em
 silêncio. Saíram com elas nove entradas mais velhas das MESMAS frases, que os itens
 E7, E10 e E11 daquele bloco corrigiram e deixaram para trás.
 
-| classe | texto |
-| --- | --- |
-| conteudo | A Direção-Geral das Autarquias Locais e o município publicam a dívida do mesmo ano com uma diferença. A diferença é pequena. |
-| conteudo | A série anual da Direção-Geral das Autarquias Locais começa depois deste mandato. |
-| conteudo | How far the debt exceeded the legal limit, in the first and the last year in which the report publishes it as a positive figure. After that the table turns negative, and a negative there is no longer excess but borrowing capacity. |
-| conteudo | O que a dívida excedia o limite legal, no primeiro e no último ano em que o relatório o publica como um valor positivo. Depois disso o quadro passa a números negativos, que já não são excesso mas capacidade de endividamento. |
+| classe | texto | bloco |
+| --- | --- | --- |
+| conteudo | A Direção-Geral das Autarquias Locais e o município publicam a dívida do mesmo ano com uma diferença. A diferença é pequena. | grelha-da-voz |
+| conteudo | A série anual da Direção-Geral das Autarquias Locais começa depois deste mandato. | grelha-da-voz |
+| conteudo | How far the debt exceeded the legal limit, in the first and the last year in which the report publishes it as a positive figure. After that the table turns negative, and a negative there is no longer excess but borrowing capacity. | grelha-da-voz |
+| conteudo | O que a dívida excedia o limite legal, no primeiro e no último ano em que o relatório o publica como um valor positivo. Depois disso o quadro passa a números negativos, que já não são excesso mas capacidade de endividamento. | grelha-da-voz |
 
 ### A frase da outra edição sai da página do trabalho
 
@@ -848,8 +856,8 @@ afirmações pela mesma ordem, e fecha a construção quando não citam. E a fol
 existia por causa daquele bloco saiu com ele: o selo de um valor tinha de abrir a
 linha em QUALQUER uma das duas edições, e passa a ter de abrir a da própria
 página.*
-| conteudo | The local-government directorate and the municipality publish the same year’s debt with a difference between them. The difference is small. |
-| conteudo | The local-government directorate’s annual series begins after this term. |
+| conteudo | The local-government directorate and the municipality publish the same year’s debt with a difference between them. The difference is small. | grelha-da-voz |
+| conteudo | The local-government directorate’s annual series begins after this term. | grelha-da-voz |
 
 ### A DGAL pelo nome, e a leitura da casa fora do rótulo
 
@@ -860,12 +868,12 @@ cadeias de `strings.mjs` da página do concelho. Saem agora as três que ficaram
 sai «legível», que é o sítio a descrever os limites da sua própria leitura: o
 rótulo passa a nomear de que série são os dois números.*
 
-| classe | texto |
-| --- | --- |
-| conteudo | % de índice de dívida no primeiro ano da série da Direção-Geral das Autarquias Locais |
-| conteudo | % debt index in the first year of the local-government directorate’s series |
-| conteudo | Antes do primeiro ano da série da Direção-Geral das Autarquias Locais. |
-| conteudo | Before the first year of the local-government directorate’s series. |
+| classe | texto | bloco |
+| --- | --- | --- |
+| conteudo | % de índice de dívida no primeiro ano da série da Direção-Geral das Autarquias Locais | grelha-da-voz |
+| conteudo | % debt index in the first year of the local-government directorate’s series | grelha-da-voz |
+| conteudo | Antes do primeiro ano da série da Direção-Geral das Autarquias Locais. | grelha-da-voz |
+| conteudo | Before the first year of the local-government directorate’s series. | grelha-da-voz |
 
 ## Bloco «A grelha da voz» · G6, o método sai das páginas de trabalho · 26.08.2026
 
@@ -883,16 +891,16 @@ texto, nas duas edições, e as suas variantes mais velhas de «concelho» e
 parênteses nunca estiveram aqui, porque um `{ref}` rende um
 `data-nonledger` e a régua já as excluía como origem declarada.*
 
-| classe | texto |
-| --- | --- |
-| conteudo | As contas das empresas do concelho creditam toda a atividade de uma empresa a um único concelho, e não são um produto interno bruto municipal. A média nacional é a base do índice de poder de compra. |
-| conteudo | The accounts of the municipality’s enterprises credit a firm’s whole activity to a single municipality, and are not a municipal gross domestic product. The national average is the base of the purchasing-power index. |
-| conteudo | Cada contagem é a lista de pelouros que a página da câmara atribui a essa pessoa. |
-| conteudo | Each count is the list of portfolios the council’s page attributes to that person. |
-| conteudo | Estes dois valores são somas sobre o registo público inteiro do plano de recuperação, e não uma linha de um documento. Vencido é o valor aprovado em localizações cuja data prevista de conclusão já passou sem conclusão registada. |
-| conteudo | These two values are sums over the whole public register of the recovery plan, and not a line in a document. Overdue is the value approved at locations whose planned completion date has passed with no completion recorded. |
-| conteudo | O sistema contabilístico mudou por baixo da série, um ano de contas foi publicado em digitalizações e outro não foi publicado de todo. |
-| conteudo | The accounting system changed underneath the series, one year of accounts was published as scans and another was not published at all. |
+| classe | texto | bloco |
+| --- | --- | --- |
+| conteudo | As contas das empresas do concelho creditam toda a atividade de uma empresa a um único concelho, e não são um produto interno bruto municipal. A média nacional é a base do índice de poder de compra. | grelha-da-voz |
+| conteudo | The accounts of the municipality’s enterprises credit a firm’s whole activity to a single municipality, and are not a municipal gross domestic product. The national average is the base of the purchasing-power index. | grelha-da-voz |
+| conteudo | Cada contagem é a lista de pelouros que a página da câmara atribui a essa pessoa. | grelha-da-voz |
+| conteudo | Each count is the list of portfolios the council’s page attributes to that person. | grelha-da-voz |
+| conteudo | Estes dois valores são somas sobre o registo público inteiro do plano de recuperação, e não uma linha de um documento. Vencido é o valor aprovado em localizações cuja data prevista de conclusão já passou sem conclusão registada. | grelha-da-voz |
+| conteudo | These two values are sums over the whole public register of the recovery plan, and not a line in a document. Overdue is the value approved at locations whose planned completion date has passed with no completion recorded. | grelha-da-voz |
+| conteudo | O sistema contabilístico mudou por baixo da série, um ano de contas foi publicado em digitalizações e outro não foi publicado de todo. | grelha-da-voz |
+| conteudo | The accounting system changed underneath the series, one year of accounts was published as scans and another was not published at all. | grelha-da-voz |
 
 ### E o método sai também da página do concelho
 
@@ -908,12 +916,12 @@ diz porque é que a série pára ali, fora da dobra que os escondia.*
 *Saíram 18 declarações. A dobra e o seu parágrafo nunca estiveram aqui, pela
 mesma razão das ressalvas de trabalho com um período entre parênteses.*
 
-| classe | texto |
-| --- | --- |
-| conteudo | As contagens de pelouros são designações, não despesa. |
-| conteudo | The portfolio counts are designations, not spending. |
-| conteudo | Não existe contrafactual para nenhum índice, e a parte de um executivo neles não é separável. |
-| conteudo | There is no counterfactual for any index, and an executive’s share of them is not separable. |
+| classe | texto | bloco |
+| --- | --- | --- |
+| conteudo | As contagens de pelouros são designações, não despesa. | grelha-da-voz |
+| conteudo | The portfolio counts are designations, not spending. | grelha-da-voz |
+| conteudo | Não existe contrafactual para nenhum índice, e a parte de um executivo neles não é separável. | grelha-da-voz |
+| conteudo | There is no counterfactual for any index, and an executive’s share of them is not separable. | grelha-da-voz |
 
 ### E a ressalva diz o facto, não quem o leu
 
@@ -924,7 +932,7 @@ que um deles ainda mordia era a nota do mandato sem repartição de pelouros, cu
 sujeito era o trabalho e cuja frase era a citação dele sobre os seus próprios
 limites. Passa a dizer o facto.*
 
-| classe | texto |
-| --- | --- |
-| conteudo | Não estabelecido: o presidente desse mandato, e todos os outros membros dele, não foram identificados. |
-| conteudo | Not established: the president of that mandate, and every other member of it, were not identified. |
+| classe | texto | bloco |
+| --- | --- | --- |
+| conteudo | Não estabelecido: o presidente desse mandato, e todos os outros membros dele, não foram identificados. | grelha-da-voz |
+| conteudo | Not established: the president of that mandate, and every other member of it, were not identified. | grelha-da-voz |

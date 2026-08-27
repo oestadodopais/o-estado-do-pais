@@ -20,7 +20,10 @@
  *   3. **o por classificar** · um bloco de texto de uma rota inventariada que
  *      não está no `INVENTARIO-FRASES.md`;
  *   4. **o ficheiro dos marcadores** · um marcador ou uma exceção sem razão
- *      escrita, ou um modo ou tipo que não existe.
+ *      escrita, ou um modo ou tipo que não existe;
+ *   5. **o rasto da revisão** · um bloco declarado no inventário sem entrada em
+ *      `design/especime-v3/critica/REVISOES-DO-INVENTARIO.md`, ou uma entrada
+ *      que nomeia um ficheiro que não existe.
  *
  * A varredura não é feita aqui: é a da régua, corrida com `--json`, que é a
  * mesma que a matriz já usa. Duas implementações da mesma definição diriam a
@@ -33,6 +36,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+
+import { leInventario, FICHEIRO_DO_INVENTARIO } from './voz.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -89,6 +94,66 @@ for (const [rota, r] of rotas) {
 
 if (!casa.inventario_existe) erros.push(`não existe ${casa.inventario}`);
 
+/* 5 · o rasto da revisão (G2).
+ *
+ * Cada linha do inventário declara o bloco que a acrescentou ou a reclassificou,
+ * e cada bloco tem de ter uma entrada no registo das revisões, com a leitura
+ * cruzada do seu diff. Uma entrada pode dizer `por ler` enquanto o bloco está em
+ * construção — a leitura faz-se antes da fusão, não antes do commit —, e essa
+ * entrada sai na saída para que ninguém a esqueça. O que fecha a construção é um
+ * bloco SEM entrada, ou uma entrada que nomeia um ficheiro que não existe. */
+const REVISOES = path.join('design', 'especime-v3', 'critica', 'REVISOES-DO-INVENTARIO.md');
+const inventario = leInventario(RAIZ);
+const blocosPorLer = [];
+{
+  const blocos = new Set();
+  let semBloco = 0;
+  for (const l of inventario.linhas) {
+    if (l.bloco) blocos.add(l.bloco);
+    else semBloco++;
+  }
+  if (semBloco) {
+    erros.push(
+      `${FICHEIRO_DO_INVENTARIO}: ${semBloco} linha(s) sem a coluna «bloco». ` +
+        `Cada linha diz que bloco a acrescentou ou a reclassificou.`,
+    );
+  }
+  const caminhoDoRegisto = path.join(RAIZ, REVISOES);
+  if (!fs.existsSync(caminhoDoRegisto)) {
+    erros.push(`não existe ${REVISOES}, e o inventário declara ${blocos.size} bloco(s).`);
+  } else {
+    const cru = fs.readFileSync(caminhoDoRegisto, 'utf8');
+    const entradas = new Map();
+    for (const linha of cru.split('\n')) {
+      const t = linha.trim();
+      if (!t.startsWith('|') || !t.endsWith('|')) continue;
+      const c = t.slice(1, -1).split('|').map((x) => x.trim());
+      if (c.length < 4 || c[0] === 'bloco' || /^-+$/.test(c[0])) continue;
+      entradas.set(c[0], c[2]);
+    }
+    for (const b of [...blocos].sort()) {
+      if (!entradas.has(b)) {
+        erros.push(
+          `o bloco «${b}» tem linhas no inventário e não tem entrada em ${REVISOES}. ` +
+            `Uma linha nova do inventário pede a leitura cruzada do seu diff.`,
+        );
+        continue;
+      }
+      const leitura = entradas.get(b);
+      const ficheiros = [...leitura.matchAll(/`([^`]+\.md)`/g)].map((m) => m[1]);
+      if (!ficheiros.length) {
+        blocosPorLer.push(`${b} · ${leitura}`);
+        continue;
+      }
+      for (const f of ficheiros) {
+        if (!fs.existsSync(path.join(RAIZ, f))) {
+          erros.push(`a entrada do bloco «${b}» em ${REVISOES} nomeia ${f}, que não existe.`);
+        }
+      }
+    }
+  }
+}
+
 console.log('');
 if (erros.length) {
   console.error(vermelho(`  PORTÃO DA VOZ · ${erros.length} problema(s)\n`));
@@ -102,8 +167,12 @@ console.log(
   verde('  voz ✓ ') +
     `${voz.marcadores} marcadores · ${voz.excecoes} exceções (${voz.excecoes_de_registo} de registo) · ` +
     `${voz.frases_varridas} frases distintas, ${voz.ocorrencias_varridas} ocorrências em ${rotas.length} rotas · ` +
-    `autorreferência 0 · nada por classificar`,
+    `autorreferência 0 · nada por classificar · ${inventario.linhas.length} linhas do inventário com bloco`,
 );
+if (blocosPorLer.length) {
+  console.log(cinza(`        ${blocosPorLer.length} bloco(s) do inventário por ler, e o registo di-lo:`));
+  for (const b of blocosPorLer) console.log(cinza(`        · ${b}`));
+}
 if (voz.excecoes_por_usar.length) {
   console.log(cinza(`        ${voz.excecoes_por_usar.length} exceção(ões) por exercer, e o ficheiro di-lo:`));
   for (const e of voz.excecoes_por_usar) console.log(cinza(`        · «${e.slice(0, 90)}»`));
