@@ -15,20 +15,20 @@
      "start": 0
     },
     {
-     "end": 54,
+     "end": 30,
      "kind": "strong",
-     "start": 46
+     "start": 22
     },
     {
-     "end": 69,
+     "end": 45,
      "kind": "strong",
-     "start": 62
+     "start": 38
     }
    ],
    "figures": [],
    "i": 1,
    "kind": "paragraph",
-   "text": "Data: Agosto de 2026 (recolhas a 2026-08-03). Regiões: NUTS2. Fontes: apenas INE (API JSON) e Eurostat."
+   "text": "Data: Agosto de 2026. Regiões: NUTS2. Fontes: apenas INE (API JSON) e Eurostat."
   },
   {
    "i": 2,
@@ -76,7 +76,7 @@
        "value": "7"
       }
      ],
-     "text": "Versões NUTS. Tanto o Eurostat como o INE servem Portugal na classificação NUTS 2024 (9 regiões NUTS2). Uma tabela (a série longa de ganhos) existe apenas em NUTS 2013 (7 regiões) e é mantida separada; as duas não podem ser comparadas região a região."
+     "text": "Versões NUTS. Tanto o Eurostat como o INE servem Portugal na classificação NUTS 2024 (9 regiões NUTS2). Uma tabela (a série longa de ganhos) existe apenas em NUTS 2013 (7 regiões); as duas não podem ser comparadas região a região."
     },
     {
      "emphasis": [
@@ -2009,7 +2009,7 @@
    "figures": [],
    "i": 17,
    "kind": "paragraph",
-   "text": "NUTS 2024. Quotas do valor acrescentado bruto a preços correntes, %; calculadas a partir dos valores em milhões de euros do Eurostat (derivações no registo de afirmações)."
+   "text": "NUTS 2024. Quotas do valor acrescentado bruto a preços correntes, %; calculadas a partir dos valores em milhões de euros do Eurostat."
   },
   {
    "i": 18,
@@ -3959,7 +3959,7 @@
    ],
    "i": 23,
    "kind": "paragraph",
-   "text": "NUTS 2024. Taxa de emprego 20–64 anos (%), taxa de desemprego 15–74 anos (%). As séries regionais das cinco regiões com limites alterados começam em 2019 (ver Limitações); a visão da década existe apenas para as quatro regiões sem alteração e para os agregados nacional/UE."
+   "text": "NUTS 2024. Taxa de emprego 20–64 anos (%), taxa de desemprego 15–74 anos (%). As séries regionais das cinco regiões com limites alterados começam em 2019; a visão da década existe apenas para as quatro regiões sem alteração e para os agregados nacional/UE."
   },
   {
    "figures": [],
@@ -6693,7 +6693,7 @@
    "i": 41,
    "kind": "heading",
    "level": 3,
-   "text": "Contexto da década — limites NUTS 2013, tabela separada, não misturar"
+   "text": "Contexto da década — limites NUTS 2013"
   },
   {
    "i": 42,
@@ -7072,15 +7072,15 @@
      "start": 0
     },
     {
-     "end": 363,
+     "end": 328,
      "kind": "em",
-     "start": 287
+     "start": 252
     }
    ],
    "figures": [],
    "i": 45,
    "kind": "paragraph",
-   "text": "Direção. Os ganhos subiram fortemente em termos nominais em todas as regiões, em ambas as séries. São valores nominais: nenhum deflator é aplicado aqui, e a janela 2021–2024 contém o surto inflacionista, pelo que o crescimento real é materialmente inferior ao que o salto nominal sugere (inferência; não existe deflator regional em nenhuma das fontes a este grão)."
+   "text": "Direção. Os ganhos subiram fortemente em termos nominais em todas as regiões, em ambas as séries. São valores nominais: a janela 2021–2024 contém o surto inflacionista, pelo que o crescimento real é materialmente inferior ao que o salto nominal sugere (inferência; não existe deflator regional em nenhuma das fontes a este grão)."
   },
   {
    "figures": [],
@@ -7489,18 +7489,11 @@
    "text": "Nível e amplitude. A Grande Lisboa (127,58) é de novo a única região acima da linha nacional, e as ilhas são o piso (Açores 87,62, Madeira 88,12). Mas a amplitude — cerca de 40 pontos — é muito mais estreita do que os 74 pontos do PIB, e a ordenação muda: a Península de Setúbal está quase na média nacional (99,35) apesar de produzir a 55 % da média da UE. (inferência: o poder de compra segue onde as pessoas vivem e ganham, o PIB segue onde trabalham; a península de Setúbal é a cunha pendular mais nítida do país. A posição das ilhas também se inverte — meio da tabela em PIB por habitante, fundo em poder de compra.)"
   },
   {
-   "emphasis": [
-    {
-     "end": 67,
-     "kind": "em",
-     "start": 23
-    }
-   ],
    "figures": [],
    "i": 51,
    "kind": "heading",
    "level": 2,
-   "text": "Lendo tudo em conjunto (avaliação — inferência do princípio ao fim)"
+   "text": "Avaliação — inferência do princípio ao fim"
   },
   {
    "emphasis": [

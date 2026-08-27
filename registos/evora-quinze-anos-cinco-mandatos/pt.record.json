@@ -15,15 +15,15 @@
      "start": 0
     },
     {
-     "end": 571,
+     "end": 548,
      "kind": "em",
-     "start": 533
+     "start": 510
     }
    ],
    "figures": [],
    "i": 1,
    "kind": "paragraph",
-   "text": "Quinze anos de contas da Câmara Municipal de Évora — 2010 a 2024 — organizados por mandato: o que cada executivo herdou, o que decidiu, o que deixou atrás de si, e o que os índices económicos e sociais fizeram à sua volta. As contas de 2025 também aqui estão, como o ano que fica a cavalo da última mudança de executivo. As contas vêm dos relatórios publicados pelo próprio município para 2010 a 2024, lidos página a página; os valores de 2025 e a série independente de dívida do regulador são transportados do documento companheiro Évora — Orçamentado, Pago, Devido 2025 com a sua proveniência original; os resultados eleitorais vêm do portal oficial de resultados e dos mapas do Diário da República; as séries socioeconómicas vêm do INE, do IEFP e do inquérito de ganhos do ministério."
+   "text": "Quinze anos de contas da Câmara Municipal de Évora — 2010 a 2024 — organizados por mandato: o que cada executivo herdou, o que decidiu, o que deixou atrás de si, e o que os índices económicos e sociais fizeram à sua volta. As contas de 2025 também aqui estão, como o ano que fica a cavalo da última mudança de executivo. As contas vêm dos relatórios publicados pelo próprio município para 2010 a 2024; os valores de 2025 e a série independente de dívida do regulador são transportados do documento companheiro Évora — Orçamentado, Pago, Devido 2025; os resultados eleitorais vêm do portal oficial de resultados e dos mapas do Diário da República; as séries socioeconómicas vêm do INE, do IEFP e do inquérito de ganhos do ministério."
   },
   {
    "i": 2,
@@ -114,43 +114,22 @@
    "text": "Um ano de contas foi publicado em digitalizações, e outro não foi publicado de todo. Cada valor de 2020 e de 2024 abaixo vem, por isso, da coluna comparativa de um relatório posterior."
   },
   {
-   "emphasis": [
-    {
-     "end": 146,
-     "kind": "strong",
-     "start": 0
-    }
-   ],
    "figures": [],
    "i": 8,
    "kind": "paragraph",
-   "text": "Um asterisco nas tabelas significa que o valor foi lido da coluna comparativa de um relatório posterior, e não de um documento do seu próprio ano. É o mesmo município a reportar, mas um ano depois, num relatório escrito pelo mesmo executivo sobre um ano cujas contas próprias nunca foram aprovadas — no caso de 2024, foram rejeitadas. Cinco anos levam-no, no todo ou em parte."
+   "text": "Um asterisco nas tabelas significa que o valor vem da coluna comparativa de um relatório posterior, e não de um documento do seu próprio ano. É o mesmo município a reportar, mas um ano depois, num relatório escrito pelo mesmo executivo sobre um ano cujas contas próprias nunca foram aprovadas — no caso de 2024, foram rejeitadas. Cinco anos levam-no, no todo ou em parte."
   },
   {
-   "emphasis": [
-    {
-     "end": 78,
-     "kind": "strong",
-     "start": 0
-    }
-   ],
    "figures": [],
    "i": 9,
    "kind": "paragraph",
-   "text": "Uma adaga significa que o valor foi recuperado de uma digitalização degradada. Aparece na secção sobre o plano de 2026; fora daí, não aparece. É um marcador da mesma família do asterisco. O corpo do relatório do plano extrai com limpeza; os seus anexos — o plano plurianual de investimentos e o plano de atividades, onde vivem as linhas dos projetos — são uma camada digitalizada em que dígitos e designações são frequentemente ilegíveis. Cada valor tirado dessa camada leva uma adaga. As linhas que não foi possível recuperar ficaram de fora; são lacunas, e não zeros."
+   "text": "Uma adaga significa que o valor vem de uma digitalização degradada. Aparece na secção sobre o plano de 2026; fora daí, não aparece. É um marcador da mesma família do asterisco. O corpo do relatório do plano extrai com limpeza; os seus anexos — o plano plurianual de investimentos e o plano de atividades, onde vivem as linhas dos projetos — são uma camada digitalizada em que dígitos e designações são frequentemente ilegíveis. Cada valor tirado dessa camada leva uma adaga. As linhas que não foi possível recuperar ficaram de fora; são lacunas, e não zeros."
   },
   {
-   "emphasis": [
-    {
-     "end": 51,
-     "kind": "strong",
-     "start": 0
-    }
-   ],
    "figures": [],
    "i": 10,
    "kind": "paragraph",
-   "text": "O mandato que começou em 2025 não é avaliável aqui. Tomou posse a 2025-10-31. As suas primeiras contas serão as de 2026, devidas por volta da primavera de 2027."
+   "text": "O mandato que começou em 2025 não é avaliável. Tomou posse a 2025-10-31. As suas primeiras contas serão as de 2026, devidas por volta da primavera de 2027."
   },
   {
    "i": 11,
@@ -1738,7 +1717,7 @@
    "figures": [],
    "i": 26,
    "kind": "paragraph",
-   "text": "Cada valor desta secção é a votação para a câmara municipal no concelho de Évora, do portal de resultados da secretaria-geral do ministério da administração interna, cruzada com os mapas definitivos publicados no Diário da República. A votação para a assembleia municipal é outra eleição e não está aqui."
+   "text": "Cada valor desta secção é a votação para a câmara municipal no concelho de Évora, do portal de resultados da secretaria-geral do ministério da administração interna e dos mapas definitivos publicados no Diário da República. A votação para a assembleia municipal é outra eleição."
   },
   {
    "figures": [],
@@ -2836,7 +2815,7 @@
    ],
    "i": 35,
    "kind": "paragraph",
-   "text": "Participação de 48,90%, 23 234 votantes. A contagem de mandatos não muda face a 2013, embora a percentagem vencedora desça. Estas duas eleições produziram as únicas maiorias absolutas das cinco aqui avaliadas."
+   "text": "Participação de 48,90%, 23 234 votantes. A contagem de mandatos não muda face a 2013, embora a percentagem vencedora desça. Estas duas eleições produziram as únicas maiorias absolutas das cinco."
   },
   {
    "figures": [],
@@ -3305,7 +3284,7 @@
    ],
    "i": 39,
    "kind": "paragraph",
-   "text": "É esta a aritmética que decide os quatro anos seguintes: a lista vencedora tem 2 dos 7 mandatos. O seu presidente mantém a presidência; o seu executivo não mantém a maioria. Quatro anos depois, essa aritmética produz a rejeição de um ano de contas, que a secção de mandato abaixo expõe."
+   "text": "É esta a aritmética que decide os quatro anos seguintes: a lista vencedora tem 2 dos 7 mandatos. O seu presidente mantém a presidência; o seu executivo não mantém a maioria. Quatro anos depois, essa aritmética produz a rejeição de um ano de contas."
   },
   {
    "figures": [],
@@ -4006,41 +3985,41 @@
    "figures": [],
    "i": 46,
    "kind": "paragraph",
-   "text": "O resultado da assembleia de 2021 está no mesmo ficheiro de evidência, mas é a contagem provisória do portal de resultados para esse órgão e nunca foi confrontado com um mapa definitivo, como aconteceu com os valores da câmara, pelo que não é impresso aqui."
+   "text": "O resultado da assembleia de 2021 é a contagem provisória do portal de resultados para esse órgão, sem mapa definitivo."
   },
   {
    "figures": [
     {
-     "end": 125,
+     "end": 104,
      "printed": "156",
      "row": "margem-ps-ad-2025",
      "source_digest_kind": "portal-estatico",
      "source_sha256": null,
-     "start": 122,
+     "start": 101,
      "value": "156"
     },
     {
-     "end": 264,
+     "end": 243,
      "printed": "49,84",
      "row": "el2021-turnout-pct",
      "source_digest_kind": "portal-estatico",
      "source_sha256": null,
-     "start": 259,
+     "start": 238,
      "value": "49.84"
     },
     {
-     "end": 276,
+     "end": 255,
      "printed": "59,41",
      "row": "el2025-turnout-pct",
      "source_digest_kind": "portal-estatico",
      "source_sha256": null,
-     "start": 271,
+     "start": 250,
      "value": "59.41"
     }
    ],
    "i": 47,
    "kind": "paragraph",
-   "text": "Duas coisas sobre a votação para a câmara merecem a aritmética. A primeira é quão renhida foi: a lista vencedora terminou 156 votos à frente da coligação que ficou atrás dela. A segunda é a participação, que subiu quase dez pontos entre as duas eleições — de 49,84% para 59,41%."
+   "text": "Duas coisas sobre a votação para a câmara. A primeira é quão renhida foi: a lista vencedora terminou 156 votos à frente da coligação que ficou atrás dela. A segunda é a participação, que subiu quase dez pontos entre as duas eleições — de 49,84% para 59,41%."
   },
   {
    "figures": [
@@ -4823,15 +4802,15 @@
      "start": 53
     },
     {
-     "end": 163,
+     "end": 138,
      "kind": "em",
-     "start": 157
+     "start": 132
     }
    ],
    "figures": [],
    "i": 62,
    "kind": "paragraph",
-   "text": "Herdou é o estado dos indicadores no ano de entrada. Decidiu contém atos desse executivo, cada um sustentado por uma linha citada de um documento municipal. Deixou é o estado dos indicadores no ano de saída. Os indicadores não são um veredicto sobre o executivo; são as condições que o seguinte herdou."
+   "text": "Herdou é o estado dos indicadores no ano de entrada. Decidiu contém atos desse executivo, cada um citado de um documento municipal. Deixou é o estado dos indicadores no ano de saída. Os indicadores não são um veredicto sobre o executivo; são as condições que o seguinte herdou."
   },
   {
    "figures": [],
@@ -4851,7 +4830,7 @@
    "figures": [],
    "i": 64,
    "kind": "paragraph",
-   "text": "O que herdou. Nada de mensurável a partir desta evidência. Os relatórios de gestão de 2010 a 2014 têm todos camadas de texto corrompidas — as fontes não trazem mapa de carateres, pelo que uma extração de texto devolve glifos ilegíveis — e esta extração não correu OCR, por regra. O que sobrevive dos primeiros anos são as demonstrações de fluxos de caixa e de resultados publicadas em separado, e é por isso que os três primeiros anos da tabela das finanças têm três colunas preenchidas e cinco vazias."
+   "text": "O que herdou. Nada de mensurável. Os relatórios de gestão de 2010 a 2014 têm todos camadas de texto corrompidas — as fontes não trazem mapa de carateres, pelo que uma extração de texto devolve glifos ilegíveis. O que sobrevive dos primeiros anos são as demonstrações de fluxos de caixa e de resultados publicadas em separado, e é por isso que os três primeiros anos da tabela das finanças têm três colunas preenchidas e cinco vazias."
   },
   {
    "emphasis": [
@@ -4901,7 +4880,7 @@
    "figures": [],
    "i": 66,
    "kind": "paragraph",
-   "text": "Uma cautela que pertence a esta secção e não às tabelas: cada frase do parágrafo acima tem por fonte relatórios escritos pelo executivo que se seguiu. Os relatórios da era PS são precisamente os ilegíveis. Os valores são o relato do sucessor sobre a decisão do antecessor, e devem ser lidos como tal."
+   "text": "Os valores acima têm por fonte relatórios escritos pelo executivo que se seguiu. Os relatórios da era PS são precisamente os ilegíveis. Os valores são o relato do sucessor sobre a decisão do antecessor, e devem ser lidos como tal."
   },
   {
    "emphasis": [
@@ -5583,7 +5562,7 @@
    ],
    "i": 79,
    "kind": "paragraph",
-   "text": "Um número deste mandato precisa de levar a sua nota de rodapé ao lado. O resultado de 2016, de menos €3 337 288, inclui, como custo de 2016, IVA referente aos anos de 2009 a 2011 — €1 712 963. O relatório faz a subtração e apresenta o valor corrigido como um prejuízo de €1 984 259. Os dois números são do próprio município; este documento imprime ambos e não escolhe entre eles."
+   "text": "Um número deste mandato precisa de levar a sua nota de rodapé ao lado. O resultado de 2016, de menos €3 337 288, inclui, como custo de 2016, IVA referente aos anos de 2009 a 2011 — €1 712 963. O relatório faz a subtração e apresenta o valor corrigido como um prejuízo de €1 984 259. Os dois números são do próprio município."
   },
   {
    "figures": [],
@@ -6010,7 +5989,7 @@
    "figures": [],
    "i": 87,
    "kind": "paragraph",
-   "text": "Dois anos dos quatro deste mandato são os da pandemia, e os valores de 2020 na tabela das finanças levam todos o asterisco comparativo, porque o dossiê de 2020 publicado não tem texto. Ler os números de investimento e de receita de 2020 e 2021 como um veredicto sobre o executivo seria um erro de categoria do tipo que a secção de abertura avisa."
+   "text": "Dois anos dos quatro deste mandato são os da pandemia, e os valores de 2020 na tabela das finanças levam todos o asterisco comparativo, porque o dossiê de 2020 publicado não tem texto. Ler os números de investimento e de receita de 2020 e 2021 como um veredicto sobre o executivo seria um erro de categoria."
   },
   {
    "figures": [],
@@ -6193,7 +6172,7 @@
    ],
    "i": 92,
    "kind": "paragraph",
-   "text": "O que aconteceu às suas contas. A aritmética da minoria produziu a sua consequência no último ano do mandato. A opinião do auditor sobre as contas de 2025 regista que a proposta de prestação de contas de 2024 foi rejeitada pela própria Câmara na reunião de 2025-05-28 — 2 votos a favor, 5 contra — e que daí resultou a emissão de uma Declaração de Impossibilidade de Certificação Legal das Contas para 2024. Esses dois números são a divisão de mandatos de 2021 lida em voz alta. Nunca foi publicado nenhum documento de contas de 2024, e cada valor de 2024 neste documento é uma coluna comparativa do relatório de 2025."
+   "text": "O que aconteceu às suas contas. A aritmética da minoria produziu a sua consequência no último ano do mandato. A opinião do auditor sobre as contas de 2025 regista que a proposta de prestação de contas de 2024 foi rejeitada pela própria Câmara na reunião de 2025-05-28 — 2 votos a favor, 5 contra — e que daí resultou a emissão de uma Declaração de Impossibilidade de Certificação Legal das Contas para 2024. Esses dois números são a divisão de mandatos de 2021 lida em voz alta. Nunca foi publicado nenhum documento de contas de 2024, e cada valor de 2024 é uma coluna comparativa do relatório de 2025."
   },
   {
    "emphasis": [
@@ -6396,7 +6375,7 @@
    ],
    "i": 96,
    "kind": "paragraph",
-   "text": "Não avaliável. O executivo tomou posse a 2025-10-31 com 3 dos 7 mandatos, frente a 2 da coligação em segundo lugar, 1 da CDU e 1 do CH. O seu primeiro ano financeiro completo é 2026 e as suas primeiras contas são devidas por volta da primavera de 2027. Qualquer avaliação dele antes de essas contas existirem seria uma previsão, e este documento não faz previsões."
+   "text": "Não avaliável. O executivo tomou posse a 2025-10-31 com 3 dos 7 mandatos, frente a 2 da coligação em segundo lugar, 1 da CDU e 1 do CH. O seu primeiro ano financeiro completo é 2026 e as suas primeiras contas são devidas por volta da primavera de 2027. Qualquer avaliação dele antes de essas contas existirem seria uma previsão."
   },
   {
    "emphasis": [
@@ -6404,16 +6383,11 @@
      "end": 42,
      "kind": "strong",
      "start": 0
-    },
-    {
-     "end": 852,
-     "kind": "strong",
-     "start": 700
     }
    ],
    "figures": [
     {
-     "end": 180,
+     "end": 149,
      "others": [
       "el2009-ps-seats",
       "el2009-pcp-pev-seats",
@@ -6429,11 +6403,11 @@
      "row": "freg2025-ad-lead",
      "source_digest_kind": "portal-estatico",
      "source_sha256": null,
-     "start": 179,
+     "start": 148,
      "value": "3"
     },
     {
-     "end": 186,
+     "end": 155,
      "others": [
       "el2009-seats-total",
       "el2013-seats-total",
@@ -6448,11 +6422,11 @@
      "row": "el2005-seats-total",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 185,
+     "start": 154,
      "value": "7"
     },
     {
-     "end": 241,
+     "end": 210,
      "others": [
       "el2009-seats-total",
       "el2013-seats-total",
@@ -6467,11 +6441,11 @@
      "row": "el2005-seats-total",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 240,
+     "start": 209,
      "value": "7"
     },
     {
-     "end": 248,
+     "end": 217,
      "others": [
       "wf-2023-dirigente"
      ],
@@ -6479,13 +6453,13 @@
      "row": "am2025-seats-total",
      "source_digest_kind": "portal-estatico",
      "source_sha256": null,
-     "start": 246,
+     "start": 215,
      "value": "21"
     }
    ],
    "i": 97,
    "kind": "paragraph",
-   "text": "Duas câmaras, e em ambas aquém da maioria. A aritmética com que este executivo governa atravessa os dois órgãos eleitos, e vale a pena dizê-lo uma vez. Na câmara, a sua lista tem 3 dos 7 mandatos. Na assembleia municipal, a mesma lista tem 7 dos 21 mandatos de eleição direta, a par da coligação que ficou atrás dela. Que os dois órgãos atuam sobre os mesmos processos não é aqui uma suposição: as secções acima registam um acordo de pagamento com a empresa regional da água aprovado pela câmara na reunião de 2016-12-28 e pela assembleia municipal na sessão de 2017-02-17, e registam a própria câmara a rejeitar um ano de contas em 2025. As contas anuais e o endividamento seguem esse mesmo caminho (inferência; os números de mandatos são registo oficial, o caminho é lido dos atos que este documento já imprimiu e não de qualquer diploma aqui citado)."
+   "text": "Duas câmaras, e em ambas aquém da maioria. A aritmética com que este executivo governa atravessa os dois órgãos eleitos. Na câmara, a sua lista tem 3 dos 7 mandatos. Na assembleia municipal, a mesma lista tem 7 dos 21 mandatos de eleição direta, a par da coligação que ficou atrás dela. Os dois órgãos atuam sobre os mesmos processos: um acordo de pagamento com a empresa regional da água aprovado pela câmara na reunião de 2016-12-28 e pela assembleia municipal na sessão de 2017-02-17, e a própria câmara a rejeitar um ano de contas em 2025. As contas anuais e o endividamento seguem esse mesmo caminho (inferência; os números de mandatos são registo oficial, o caminho é lido dos atos e não de qualquer diploma citado)."
   },
   {
    "i": 98,
@@ -6509,7 +6483,7 @@
    "figures": [],
    "i": 101,
    "kind": "paragraph",
-   "text": "As fronteiras de mandato estão marcadas na tabela. Os valores marcados com asterisco foram lidos da coluna comparativa de um relatório posterior. Um travessão significa que o valor não está disponível em documento legível algum desse ano, e não que seja zero. Os resultados estão impressos como prejuízos, salvo quando levam sinal positivo."
+   "text": "As fronteiras de mandato estão marcadas na tabela. Os valores marcados com asterisco vêm da coluna comparativa de um relatório posterior. Um travessão significa que o valor não está disponível em documento legível algum desse ano, e não que seja zero. Os resultados estão impressos como prejuízos, salvo quando levam sinal positivo."
   },
   {
    "i": 102,
@@ -9816,7 +9790,7 @@
    "figures": [],
    "i": 125,
    "kind": "paragraph",
-   "text": "Leia a coluna do índice de cima a baixo: só a partir de 2020 fica abaixo do teto legal, e todos os anos da série do regulador estão acima da média de receita. O índice desce em cada ano da tabela, ao longo de três mandatos — todos do mesmo partido."
+   "text": "Só a partir de 2020 o índice fica abaixo do teto legal, e todos os anos da série do regulador estão acima da média de receita. O índice desce em cada ano da tabela, ao longo de três mandatos — todos do mesmo partido."
   },
   {
    "figures": [],
@@ -12312,7 +12286,7 @@
    "figures": [],
    "i": 144,
    "kind": "paragraph",
-   "text": "A despesa municipal em cultura anterior a 2013 existe nas tabelas do instituto de estatística apenas sob um conceito mais antigo e não comparável, que não foi recolhido."
+   "text": "A despesa municipal em cultura anterior a 2013 existe nas tabelas do instituto de estatística apenas sob um conceito mais antigo e não comparável."
   },
   {
    "i": 145,
@@ -12336,7 +12310,7 @@
    "figures": [],
    "i": 147,
    "kind": "paragraph",
-   "text": "O mandato instalado em 2025 ainda não pode ser avaliado por contas. O seu primeiro orçamento, porém, existe e é público: as Grandes Opções do Plano e Orçamento para 2026, publicadas pelo município. O que se segue é o que esse documento diz, e não o que aconteceu. Nada dele foi executado, e as contas que o irão testar são as de 2026."
+   "text": "O mandato instalado em 2025 ainda não pode ser avaliado por contas. O seu primeiro orçamento, porém, existe e é público: as Grandes Opções do Plano e Orçamento para 2026, publicadas pelo município. Nada dele foi executado, e as contas que o irão testar são as de 2026."
   },
   {
    "figures": [],
@@ -12652,7 +12626,7 @@
    ],
    "i": 152,
    "kind": "paragraph",
-   "text": "O ano da Capital da Cultura, declarado duas vezes. O plano afirma que €7 470 000 de aquisição de bens de capital estão alocados aos investimentos da iniciativa Capital Europeia da Cultura. O seu próprio anexo de investimentos diz outra coisa. O objetivo que carrega a iniciativa inscreve €14 798 219† para 2026 — dos quais €7 648 219† têm financiamento definido e €7 150 000† não têm. Retirem-se da parte definida as duas linhas desse objetivo que não são aquisição de bens de capital — uma quota de associação e um valor simbólico para um monumento megalítico — e restam €7 647 119†, que ficam €177 119† acima do valor que o relatório declara. Nada do que aqui foi lido explica a diferença."
+   "text": "O ano da Capital da Cultura, declarado duas vezes. O plano afirma que €7 470 000 de aquisição de bens de capital estão alocados aos investimentos da iniciativa Capital Europeia da Cultura. O seu próprio anexo de investimentos diz outra coisa. O objetivo que carrega a iniciativa inscreve €14 798 219† para 2026 — dos quais €7 648 219† têm financiamento definido e €7 150 000† não têm. Retirem-se da parte definida as duas linhas desse objetivo que não são aquisição de bens de capital — uma quota de associação e um valor simbólico para um monumento megalítico — e restam €7 647 119†, que ficam €177 119† acima do valor que o relatório declara. O plano não explica a diferença."
   },
   {
    "emphasis": [
@@ -12665,7 +12639,7 @@
    "figures": [],
    "i": 153,
    "kind": "paragraph",
-   "text": "Onde está o dinheiro. Estas são as maiores dotações de 2026 dos anexos do plano. As linhas dos projetos da Capital da Cultura não estão repetidas aqui — pertencem ao parágrafo acima — e, fundido nesta lista, o Rossio de São Brás ficaria no topo dela."
+   "text": "Onde está o dinheiro. Estas são as maiores dotações de 2026 dos anexos do plano. As linhas dos projetos da Capital da Cultura pertencem ao parágrafo acima e, fundido nesta lista, o Rossio de São Brás ficaria no topo dela."
   },
   {
    "i": 154,
@@ -12899,7 +12873,7 @@
    "figures": [],
    "i": 155,
    "kind": "paragraph",
-   "text": "A primeira linha desse quadro não é investimento de todo. É serviço da dívida — a amortização dos empréstimos bancários que este documento seguiu durante quinze anos — inscrito dentro do plano de investimentos, e é a maior linha do quadro."
+   "text": "A primeira linha desse quadro não é investimento de todo. É serviço da dívida — a amortização dos empréstimos bancários — inscrito dentro do plano de investimentos, e é a maior linha do quadro."
   },
   {
    "emphasis": [
@@ -13139,11 +13113,6 @@
      "end": 29,
      "kind": "strong",
      "start": 0
-    },
-    {
-     "end": 788,
-     "kind": "strong",
-     "start": 731
     }
    ],
    "figures": [
@@ -13231,7 +13200,7 @@
    ],
    "i": 163,
    "kind": "paragraph",
-   "text": "Uma história, três capítulos. O registo lê-se como um arco contínuo: um município que entrou no período a pagar aos seus fornecedores em dois anos (755* dias), cuja verdadeira dívida herdada ainda estava a ser descoberta anos depois — €82 871 523 medidos duas semanas após a mudança de executivo de 2013 e €95 082 510 na reexpressão final — e que depois passou uma década a desbastar a montanha, com o excesso sobre o teto legal a cair de €32 559 910 para nada até 2020. No último mandato o desbaste parou e a fila voltou a alongar-se: 22 dias em 2023 e depois 137 em 2025, com pagamentos em atraso de €4 976 172. A mudança de executivo de 2025 entrega um município que é legal, apertado de tesouraria, e com €54 379 035 de dívida (inferência; cada valor está na sua própria secção acima)."
+   "text": "Uma história, três capítulos. O registo lê-se como um arco contínuo: um município que entrou no período a pagar aos seus fornecedores em dois anos (755* dias), cuja verdadeira dívida herdada ainda estava a ser descoberta anos depois — €82 871 523 medidos duas semanas após a mudança de executivo de 2013 e €95 082 510 na reexpressão final — e que depois passou uma década a desbastar a montanha, com o excesso sobre o teto legal a cair de €32 559 910 para nada até 2020. No último mandato o desbaste parou e a fila voltou a alongar-se: 22 dias em 2023 e depois 137 em 2025, com pagamentos em atraso de €4 976 172. A mudança de executivo de 2025 entrega um município que é legal, apertado de tesouraria, e com €54 379 035 de dívida (inferência)."
   },
   {
    "emphasis": [
@@ -13241,14 +13210,14 @@
      "start": 0
     },
     {
-     "end": 391,
+     "end": 375,
      "kind": "strong",
-     "start": 379
+     "start": 363
     },
     {
-     "end": 1208,
+     "end": 1151,
      "kind": "strong",
-     "start": 1196
+     "start": 1139
     }
    ],
    "figures": [
@@ -13263,57 +13232,57 @@
      "value": "32 166 372"
     },
     {
-     "end": 496,
+     "end": 480,
      "printed": "32 500 000",
      "row": "saneamento-2016",
      "source_digest_em": "08 Évora Mandates/Technical Source/raw/pdfs/2016_relatorio_gestao.pdf",
      "source_sha256": "3f193caed76483c02108abd38760fa376fb53819ae13d10f77309ee797d02303",
      "source_sha256_prefix": "3f193caed76483c0",
-     "start": 486,
+     "start": 470,
      "value": "32 500 000"
     },
     {
-     "end": 603,
+     "end": 587,
      "printed": "242,6",
      "row": "dgal-indice-2014",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 598,
+     "start": 582,
      "value": "242.6"
     },
     {
-     "end": 615,
+     "end": 599,
      "printed": "105,5",
      "row": "dgal-indice-2024",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 610,
+     "start": 594,
      "value": "105.5"
     },
     {
-     "end": 748,
+     "end": 732,
      "printed": "2 255 111",
      "row": "ind-investimento-pago-2017",
      "source_digest_em": "08 Évora Mandates/Technical Source/raw/pdfs/2017_relatorio_gestao.pdf",
      "source_sha256": "075f405d67386045ac987868e3e6e7ed46a053188ef0336be14b6428cdc16e9c",
      "source_sha256_prefix": "075f405d67386045",
-     "start": 739,
+     "start": 723,
      "value": "2 255 111"
     },
     {
-     "end": 789,
+     "end": 773,
      "printed": "7 537 452",
      "row": "ind-investimento-pago-2021",
      "source_digest_em": "08 Évora Mandates/Technical Source/raw/pdfs/2021_relatorio_gestao.pdf",
      "source_sha256": "be0c8f8228552a27e48de3cbd2ea3a994d9020d1f2385ef6103f69afd282964a",
      "source_sha256_prefix": "be0c8f8228552a27",
-     "start": 780,
+     "start": 764,
      "value": "7 537 452"
     }
    ],
    "i": 164,
    "kind": "paragraph",
-   "text": "O que cada partido pode de facto reclamar. O mandato do PS de 2009–2013 é dono da maior decisão do período — a entrada no PAEL, €32 166 372 — e os seus próprios anos são os que menos registo deixaram neste documento: os relatórios que contariam o seu lado são os ilegíveis. Isso é, em si, um facto de governação — os anos que mais precisam de explicação são os pior documentados (inferência). Os anos de maioria da CDU são donos do saneamento: o empréstimo de saneamento financeiro de €32 500 000, os acordos da água, e uma disciplina verificada de fora do município — o índice do regulador cai de 242,6% para 105,5% sem uma interrupção na tabela. O custo ficou onde o amortecedor fica sempre: o investimento tocou o mínimo da sua série (€2 255 111 em 2017) antes do seu máximo (€7 537 452 em 2021). O mandato da CDU em minoria é dono do título de Capital da Cultura, converteu a dívida antiga da água em dívida bancária, e para lá disso pouco conseguiu fazer passar; os sinais de aperto voltaram e um ano de contas ficou por assinar. Se esse capítulo se lê como pior governação ou como governar sem votos é uma distinção que o registo não consegue fazer, e este documento não finge que consegue (inferência)."
+   "text": "O que cada partido pode de facto reclamar. O mandato do PS de 2009–2013 é dono da maior decisão do período — a entrada no PAEL, €32 166 372 — e os seus próprios anos são os que menos registo deixaram: os relatórios que contariam o seu lado são os ilegíveis. Isso é, em si, um facto de governação — os anos que mais precisam de explicação são os pior documentados (inferência). Os anos de maioria da CDU são donos do saneamento: o empréstimo de saneamento financeiro de €32 500 000, os acordos da água, e uma disciplina verificada de fora do município — o índice do regulador cai de 242,6% para 105,5% sem uma interrupção na tabela. O custo ficou onde o amortecedor fica sempre: o investimento tocou o mínimo da sua série (€2 255 111 em 2017) antes do seu máximo (€7 537 452 em 2021). O mandato da CDU em minoria é dono do título de Capital da Cultura, converteu a dívida antiga da água em dívida bancária, e para lá disso pouco conseguiu fazer passar; os sinais de aperto voltaram e um ano de contas ficou por assinar. Se esse capítulo se lê como pior governação ou como governar sem votos é uma distinção que o registo não consegue fazer (inferência)."
   },
   {
    "emphasis": [
@@ -13323,14 +13292,14 @@
      "start": 0
     },
     {
-     "end": 416,
+     "end": 393,
      "kind": "strong",
-     "start": 404
+     "start": 381
     },
     {
-     "end": 660,
+     "end": 637,
      "kind": "strong",
-     "start": 648
+     "start": 625
     }
    ],
    "figures": [
@@ -13389,27 +13358,27 @@
      "value": "1 484"
     },
     {
-     "end": 494,
+     "end": 471,
      "printed": "118,65",
      "row": "socio-purchasing-power-pc-2009",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 488,
+     "start": 465,
      "value": "118.65"
     },
     {
-     "end": 531,
+     "end": 508,
      "printed": "111,47",
      "row": "socio-purchasing-power-pc-2023",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 525,
+     "start": 502,
      "value": "111.47"
     }
    ],
    "i": 165,
    "kind": "paragraph",
-   "text": "Os índices recusam a pergunta partidária. O stock de desemprego de dezembro caiu de 3 720 para 1 596 ao longo do período; as dormidas passaram de 312 696 para 709 328; o ganho médio de €940 para €1 484. Os três moveram-se com as marés nacionais — o boom do turismo, a subida em escada do salário mínimo — e nada do que aqui foi lido fornece o contrafactual que recortaria a parte de cada executivo neles (inferência). Uma série acaba abaixo de onde começou: o poder de compra per capita, 118,65 na primeira edição da janela, 111,47 na última, atravessando executivos de várias cores. Se há um índice que merece a atenção do próximo mandato, é esse (inferência)."
+   "text": "Os índices recusam a pergunta partidária. O stock de desemprego de dezembro caiu de 3 720 para 1 596 ao longo do período; as dormidas passaram de 312 696 para 709 328; o ganho médio de €940 para €1 484. Os três moveram-se com as marés nacionais — o boom do turismo, a subida em escada do salário mínimo — e não existe o contrafactual que recortaria a parte de cada executivo neles (inferência). Uma série acaba abaixo de onde começou: o poder de compra per capita, 118,65 na primeira edição da janela, 111,47 na última, atravessando executivos de várias cores. Se há um índice que merece a atenção do próximo mandato, é esse (inferência)."
   },
   {
    "emphasis": [
@@ -13417,62 +13386,52 @@
      "end": 54,
      "kind": "strong",
      "start": 0
-    },
-    {
-     "end": 412,
-     "kind": "strong",
-     "start": 338
     }
    ],
    "figures": [],
    "i": 166,
    "kind": "paragraph",
-   "text": "A lição mais afiada é institucional, e não partidária. A aritmética de mandatos que deixou um executivo de dois mandatos governar quatro anos é a mesma aritmética que deixou cinco votos rejeitar um ano de contas. Neste registo, as maiorias produziram um saneamento sem recuos; a minoria produziu um saneamento parado e um ano por assinar (inferência; as secções de mandato acima têm a evidência das duas metades). O executivo instalado em 2025 tem três mandatos em sete."
+   "text": "A lição mais afiada é institucional, e não partidária. A aritmética de mandatos que deixou um executivo de dois mandatos governar quatro anos é a mesma aritmética que deixou cinco votos rejeitar um ano de contas. Neste registo, as maiorias produziram um saneamento sem recuos; a minoria produziu um saneamento parado e um ano por assinar (inferência). O executivo instalado em 2025 tem três mandatos em sete."
   },
   {
    "emphasis": [
     {
-     "end": 682,
+     "end": 656,
      "kind": "strong",
-     "start": 670
+     "start": 644
     }
    ],
    "figures": [
     {
-     "end": 603,
+     "end": 577,
      "printed": "105,5",
      "row": "dgal-indice-2024",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 598,
+     "start": 572,
      "value": "105.5"
     }
    ],
    "i": 167,
    "kind": "paragraph",
-   "text": "O que verificar a seguir. A taxa de execução de 2026, contra a série descendente que o documento companheiro tabela. Se a fila dos fornecedores vira antes de tudo o resto. Se o ano da Capital da Cultura aparece nas tabelas de cultura acima ou nos livros de outras entidades. As taxas de execução do Rossio de São Brás e da via de acesso ao hospital quando as contas de 2026 aparecerem, contra as dotações que a secção do plano imprime para ambos. Como vota a assembleia municipal essas mesmas contas de 2026, dada a repartição de mandatos acima. E o próximo ficheiro do regulador: o índice está em 105,5%, e descer abaixo de cem seria o verdadeiro fim da era do resgate (inferência)."
+   "text": "A taxa de execução de 2026, contra a série descendente que o documento companheiro tabela. Se a fila dos fornecedores vira antes de tudo o resto. Se o ano da Capital da Cultura aparece nas tabelas de cultura acima ou nos livros de outras entidades. As taxas de execução do Rossio de São Brás e da via de acesso ao hospital quando as contas de 2026 aparecerem, contra as dotações que a secção do plano imprime para ambos. Como vota a assembleia municipal essas mesmas contas de 2026, dada a repartição de mandatos acima. E o próximo ficheiro do regulador: o índice está em 105,5%, e descer abaixo de cem seria o verdadeiro fim da era do resgate (inferência)."
   },
   {
    "emphasis": [
     {
-     "end": 299,
-     "kind": "strong",
-     "start": 252
-    },
-    {
-     "end": 405,
+     "end": 370,
      "kind": "em",
-     "start": 399
+     "start": 364
     },
     {
-     "end": 706,
+     "end": 671,
      "kind": "strong",
-     "start": 694
+     "start": 659
     },
     {
-     "end": 1295,
+     "end": 1260,
      "kind": "strong",
-     "start": 1283
+     "start": 1248
     }
    ],
    "figures": [
@@ -13520,49 +13479,49 @@
      "value": "137"
     },
     {
-     "end": 830,
+     "end": 795,
      "markers": "†",
      "printed": "9 500 000",
      "row": "gop26-rossio-total",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 821,
+     "start": 786,
      "value": "9 500 000†"
     },
     {
-     "end": 846,
+     "end": 811,
      "markers": "†",
      "printed": "2 350 000",
      "row": "gop26-rossio-definido",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 837,
+     "start": 802,
      "value": "2 350 000†"
     },
     {
-     "end": 1105,
+     "end": 1070,
      "markers": "†",
      "printed": "34 515 587",
      "row": "gop26-plh-plurianual",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 1095,
+     "start": 1060,
      "value": "34 515 587†"
     },
     {
-     "end": 1138,
+     "end": 1103,
      "markers": "†",
      "printed": "256 407",
      "row": "gop26-plh-definido",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 1131,
+     "start": 1096,
      "value": "256 407†"
     }
    ],
    "i": 168,
    "kind": "paragraph",
-   "text": "A fila de pagamentos segue os empréstimos: colapsou depois de cada consolidação — 755* dias antes do empréstimo de 2016 e 89 depois dele, 22 em 2023 — e o seu atual regresso a 137 está a acontecer sem empréstimo de consolidação algum que compre alívio (inferência; cada valor está nas tabelas acima). As pessoas do município e a sua despesa com pessoal contam duas histórias diferentes: os efetivos caíram durante uma década enquanto a remuneração subia, e depois um ano — 2022 — acrescentou trezentos e seis trabalhadores com as escolas transferidas, pelo que o degrau da despesa com pessoal na tabela das finanças é sobretudo gente a chegar, e não o efeito isolado das atualizações salariais (inferência). E o primeiro plano do executivo que entrou repete o mecanismo mais antigo deste registo: a sua maior linha leva €9 500 000† com €2 350 000† de financiamento efetivamente definido; o dinheiro do acesso ao hospital regressa depois de um ano cujas contas registam o protocolo que o sustenta a receber nada, e depois de um ano que nunca chegou a ter contas; e o plano de habitação inscreve €34 515 587† ao longo dos anos, com €256 407† definidos para 2026. A distância entre orçamento e dinheiro não é um hábito do passado; está agendada para as primeiras contas do novo mandato (inferência)."
+   "text": "A fila de pagamentos segue os empréstimos: colapsou depois de cada consolidação — 755* dias antes do empréstimo de 2016 e 89 depois dele, 22 em 2023 — e o seu atual regresso a 137 está a acontecer sem empréstimo de consolidação algum que compre alívio (inferência). As pessoas do município e a sua despesa com pessoal contam duas histórias diferentes: os efetivos caíram durante uma década enquanto a remuneração subia, e depois um ano — 2022 — acrescentou trezentos e seis trabalhadores com as escolas transferidas, pelo que o degrau da despesa com pessoal na tabela das finanças é sobretudo gente a chegar, e não o efeito isolado das atualizações salariais (inferência). E o primeiro plano do executivo que entrou repete o mecanismo mais antigo deste registo: a sua maior linha leva €9 500 000† com €2 350 000† de financiamento efetivamente definido; o dinheiro do acesso ao hospital regressa depois de um ano cujas contas registam o protocolo que o sustenta a receber nada, e depois de um ano que nunca chegou a ter contas; e o plano de habitação inscreve €34 515 587† ao longo dos anos, com €256 407† definidos para 2026. A distância entre orçamento e dinheiro não é um hábito do passado; está agendada para as primeiras contas do novo mandato (inferência)."
   },
   {
    "i": 169,
@@ -13613,7 +13572,7 @@
       }
      ],
      "figures": [],
-     "text": "Resultados eleitorais oficiais — os pontos de acesso estáticos de resultados da secretaria-geral do ministério da administração interna para cada eleição, e os mapas definitivos publicados no Diário da República, obtidos para o cruzamento."
+     "text": "Resultados eleitorais oficiais — os pontos de acesso estáticos de resultados da secretaria-geral do ministério da administração interna para cada eleição, e os mapas definitivos publicados no Diário da República."
     },
     {
      "emphasis": [
@@ -13628,7 +13587,7 @@
     },
     {
      "figures": [],
-     "text": "**Quadros de pessoal dos relatórios de gestão de 2022 e 2023** — a série de efetivos, a desagregação por grupo profissional e as admissões e saídas desses dois anos, lidas dos mesmos PDF fixados que o resto das contas."
+     "text": "**Quadros de pessoal dos relatórios de gestão de 2022 e 2023** — a série de efetivos, a desagregação por grupo profissional e as admissões e saídas desses dois anos."
     },
     {
      "figures": [],
@@ -13636,7 +13595,7 @@
     },
     {
      "figures": [],
-     "text": "**Grandes Opções do Plano e Orçamento 2026** — o plano e orçamento que o município publicou para 2026, o mesmo ficheiro que o documento companheiro fixa por SHA-256. O corpo do relatório extrai com limpeza; os anexos de investimentos são uma digitalização degradada, e cada valor deles recuperado leva aqui uma adaga."
+     "text": "**Grandes Opções do Plano e Orçamento 2026** — o plano e orçamento que o município publicou para 2026. O corpo do relatório extrai com limpeza; os anexos de investimentos são uma digitalização degradada, e cada valor deles recuperado leva aqui uma adaga."
     }
    ],
    "kind": "list",
@@ -13646,7 +13605,7 @@
    "figures": [],
    "i": 172,
    "kind": "paragraph",
-   "text": "Lacunas. Os relatórios de 2010 a 2014 e o dossiê de 2020 são ilegíveis, pelo que cinco indicadores faltam para 2010 e 2011 e vários faltam ou são comparativos para 2012 e 2013, para 2014 e para 2020. Não existe nenhum documento de contas de 2024. As séries municipais de população e de dormidas não existem antes de 2011, e a despesa municipal em cultura não existe no conceito atual do instituto de estatística antes de 2013. O nome legal completo do presidente interino é [verify]. A data exata da instalação do mandato de 2009 não foi fixada a partir de uma fonte oficial. A série de efetivos começa em 2012, porque é aí que começa o quadro dos próprios relatórios. O resultado da assembleia de 2021 assenta somente no portal de resultados, que publica contagens provisórias, pelo que não é impresso. A maior parte das linhas dos anexos de investimentos do plano de 2026 não foi recuperável da digitalização, e as que foram estão marcadas."
+   "text": "Lacunas. Os relatórios de 2010 a 2014 e o dossiê de 2020 são ilegíveis, pelo que cinco indicadores faltam para 2010 e 2011 e vários faltam ou são comparativos para 2012 e 2013, para 2014 e para 2020. Não existe nenhum documento de contas de 2024. As séries municipais de população e de dormidas não existem antes de 2011, e a despesa municipal em cultura não existe no conceito atual do instituto de estatística antes de 2013. O nome legal completo do presidente interino é [verify]. A data exata da instalação do mandato de 2009 não foi fixada a partir de uma fonte oficial. A série de efetivos começa em 2012, porque é aí que começa o quadro dos próprios relatórios. O resultado da assembleia de 2021 assenta somente no portal de resultados, que publica contagens provisórias. A maior parte das linhas dos anexos de investimentos do plano de 2026 não foi recuperável da digitalização, e as que foram estão marcadas."
   }
  ],
  "edition": "Évora — Quinze Anos, Cinco Mandatos (pt-PT)",
