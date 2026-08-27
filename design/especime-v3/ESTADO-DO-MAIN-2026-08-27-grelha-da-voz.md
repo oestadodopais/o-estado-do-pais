@@ -1,6 +1,6 @@
 # O estado de `main` depois do bloco da grelha da voz (madrugada de 27.08.2026)
 
-*Escrito pelo lugar de direção (Claude Fable 5). O ramo `grelha-da-voz-2026-08-27` saiu de `main` `cfa288b` e está verde: construção (6 390 páginas), `verify`, `typecheck`, `check:voz` na cadeia, a matriz (87 de 87, com a célula da autorreferência em todas as rotas). Lido de olhos frescos pelo Codex sobre o diff do inventário, os marcadores, as exceções e a página de Évora, com duas plantas (2 de 2), e corrigido numa segunda passagem a partir dessa leitura (V1 a V4). A §1.69 do `DECISIONS.md` é o registo; `PROTOCOLO-DAS-LEITURAS.md` é a regra das leituras; `VOZ-MARCADORES.md` é a lista dos marcadores e das exceções; `critica/REVISOES-DO-INVENTARIO.md` é o rasto das revisões.*
+*Escrito pelo lugar de direção (Claude Fable 5). O ramo `grelha-da-voz-2026-08-27` saiu de `main` `cfa288b` e está verde: construção (6 390 páginas), `verify`, `typecheck`, `check:voz` na cadeia, a matriz (87 de 87, com a célula da autorreferência em todas as rotas). Lido de olhos frescos pelo Codex sobre o diff do inventário, os marcadores, as exceções e a página de Évora, com duas plantas (2 de 2), e corrigido numa segunda passagem a partir dessa leitura (V1 a V4). A §1.69 do `DECISIONS.md` é o registo; `PROTOCOLO-DAS-LEITURAS.md` é a regra das leituras; `VOZ-MARCADORES.md` é a lista dos marcadores e das exceções; `critica/REVISOES-DO-INVENTARIO.md` é o rasto das revisões. **Fundido em `main` `fe3725a` a 27.08 de manhã, no ar às 09:35, `verify:deploy` ✓.***
 
 ## O que muda no ar
 
