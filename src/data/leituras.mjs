@@ -54,10 +54,14 @@ export const LEITURAS = {
        cinco: ver a tabela de `design/especime-v3/notas/grelha-da-voz.md`. */
     medidasNota: {
       pt: [
-        'Estes dois valores são somas sobre o registo público inteiro do plano de recuperação, e não uma linha de um documento. Vencido é o valor aprovado em localizações cuja data prevista de conclusão já passou sem conclusão registada.',
+        [
+          'Estes dois valores são somas sobre o registo público inteiro do plano de recuperação, e não uma linha de um documento. Vencido é o valor aprovado em localizações cuja data prevista de conclusão já passou sem conclusão registada.',
+        ],
       ],
       en: [
-        'These two values are sums over the whole public register of the recovery plan, and not a line in a document. Overdue is the value approved at locations whose planned completion date has passed with no completion recorded.',
+        [
+          'These two values are sums over the whole public register of the recovery plan, and not a line in a document. Overdue is the value approved at locations whose planned completion date has passed with no completion recorded.',
+        ],
       ],
     },
     /* Reescrita a 15.08.2026, segunda revisão cruzada. Dizia «a maior parte do
@@ -123,10 +127,14 @@ export const LEITURAS = {
        `design/especime-v3/notas/grelha-da-voz.md`, uma a uma, com a razão. */
     medidasNota: {
       pt: [
-        'As contas das empresas do concelho creditam toda a atividade de uma empresa a um único concelho, e não são um produto interno bruto municipal. A média nacional é a base do índice de poder de compra.',
+        [
+          'As contas das empresas do concelho creditam toda a atividade de uma empresa a um único concelho, e não são um produto interno bruto municipal. A média nacional é a base do índice de poder de compra.',
+        ],
       ],
       en: [
-        'The accounts of the municipality’s enterprises credit a firm’s whole activity to a single municipality, and are not a municipal gross domestic product. The national average is the base of the purchasing-power index.',
+        [
+          'The accounts of the municipality’s enterprises credit a firm’s whole activity to a single municipality, and are not a municipal gross domestic product. The national average is the base of the purchasing-power index.',
+        ],
       ],
     },
     frase: {
@@ -183,10 +191,14 @@ export const LEITURAS = {
        `design/especime-v3/notas/grelha-da-voz.md`, uma a uma, com a razão. */
     medidasNota: {
       pt: [
-        'As contas do penúltimo ano foram rejeitadas em votação e nunca foram certificadas.',
+        [
+          'As contas do penúltimo ano foram rejeitadas em votação e nunca foram certificadas.',
+        ],
       ],
       en: [
-        'The accounts of the second-to-last year were rejected in a vote and were never certified.',
+        [
+          'The accounts of the second-to-last year were rejected in a vote and were never certified.',
+        ],
       ],
     },
     frase: {
@@ -235,10 +247,14 @@ export const LEITURAS = {
        `design/especime-v3/notas/grelha-da-voz.md`, uma a uma, com a razão. */
     medidasNota: {
       pt: [
-        'O sistema contabilístico mudou por baixo da série, um ano de contas foi publicado em digitalizações e outro não foi publicado de todo.',
+        [
+          'O sistema contabilístico mudou por baixo da série, um ano de contas foi publicado em digitalizações e outro não foi publicado de todo.',
+        ],
       ],
       en: [
-        'The accounting system changed underneath the series, one year of accounts was published as scans and another was not published at all.',
+        [
+          'The accounting system changed underneath the series, one year of accounts was published as scans and another was not published at all.',
+        ],
       ],
     },
     /* A frase do último mandato foi reescrita a 15.08.2026 depois da revisão
@@ -304,10 +320,14 @@ export const LEITURAS = {
        `design/especime-v3/notas/grelha-da-voz.md`, uma a uma, com a razão. */
     medidasNota: {
       pt: [
-        'Cada contagem é a lista de pelouros que a página da câmara atribui a essa pessoa.',
+        [
+          'Cada contagem é a lista de pelouros que a página da câmara atribui a essa pessoa.',
+        ],
       ],
       en: [
-        'Each count is the list of portfolios the council’s page attributes to that person.',
+        [
+          'Each count is the list of portfolios the council’s page attributes to that person.',
+        ],
       ],
     },
     frase: {
@@ -365,10 +385,36 @@ export const LEITURAS = {
     ],
     medidasNota: {
       pt: [
-        'A quem cabe numa das exceções que afastam o fator de sustentabilidade, a lei corta menos do que o valor neutro. As duas medidas acima são os dois extremos da mesma decisão.',
+        [
+          'A quem cabe numa das exceções que afastam o fator de sustentabilidade, a lei corta menos do que o valor neutro. As duas medidas acima são os dois extremos da mesma decisão.',
+        ],
+        /* O FATOR VOLTA À PÁGINA, COM O SEU SELO (I75, 27.08.2026). O valor só
+           se rendia na ressalva «A comparação junta duas figuras do relatório»,
+           que o G6 retirou por ser proveniência e derivação; com ela saiu da
+           superfície pública uma linha do livro-razão, e uma linha com um número
+           é conteúdo. Volta como UMA frase, com o facto por sujeito, e leva as
+           palavras da ressalva que saiu e mais nenhumas: o que saiu foi a metade
+           da diligência («A aritmética foi reproduzida antes de ser citada») e o
+           nome das duas figuras do relatório, que é proveniência e vive na linha.
+           A conta foi conferida antes de a frase ficar: a regra do relatório,
+           escrita na p. 234 e citada na nota da linha da penalização com fator, é
+           F = FS (1 − 0,005 M); com FS = 0,8237 e M = 12, dá 0,774278, isto é uma
+           redução de 22,57 %, e a linha publica 22,6 %. */
+        [
+          'O corte de um ano sai do fator de sustentabilidade, ',
+          { claim: 'factor-sustentabilidade-2026' },
+          ', multiplicado pela penalização mensal.',
+        ],
       ],
       en: [
-        'For those who fall within one of the exceptions that set the sustainability factor aside, the law cuts less than the neutral figure. The two measures above are the two ends of the same decision.',
+        [
+          'For those who fall within one of the exceptions that set the sustainability factor aside, the law cuts less than the neutral figure. The two measures above are the two ends of the same decision.',
+        ],
+        [
+          'The one-year cut follows from the sustainability factor, ',
+          { claim: 'factor-sustentabilidade-2026' },
+          ', multiplied by the monthly penalty.',
+        ],
       ],
     },
     frase: {

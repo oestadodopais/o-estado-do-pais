@@ -778,3 +778,17 @@ da página dele em cada edição.
 O marcador fica em português nas duas edições, como a página dele manda, e leva a
 glosa na edição inglesa. A porta é `/a-verificar` na edição portuguesa e
 `/en/to-verify` na inglesa, e o portão de HTML confere as duas.
+
+## I75 · o fator de sustentabilidade volta à página, com o seu selo, 27.08.2026
+
+**Nenhuma chave nova, e um parágrafo novo na nota das medidas do trabalho das
+pensões.** O valor só se rendia na ressalva que o G6 retirou, e uma linha do
+livro-razão com um número é conteúdo.
+
+| onde | pt | en |
+|---|---|---|
+| `medidasNota` de `penalizacoes-por-reforma-antecipada-2026` | O corte de um ano sai do fator de sustentabilidade, 0,8237 ■ fonte, multiplicado pela penalização mensal. | The one-year cut follows from the sustainability factor, 0,8237 ■ source, multiplied by the monthly penalty. |
+
+As palavras são as da ressalva que saiu, e mais nenhumas: saiu a metade da
+diligência («A aritmética foi reproduzida antes de ser citada») e o nome das duas
+figuras do relatório, que é proveniência e vive na linha.
