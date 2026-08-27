@@ -817,8 +817,13 @@ export const STRINGS = {
      */
     livroConcelhos: {
       metaTitle: 'Concelhos · Livro-razão · O Estado do País',
-      metaDescription:
-        'As linhas do livro-razão com as medidas que as fontes centrais publicam para cada concelho, uma linha cada.',
+      /* A DESCRIÇÃO NOMEIA A PÁGINA (27.08.2026), como a do índice do
+         livro-razão. Dizia «As linhas do livro-razão com as medidas que as
+         fontes centrais publicam para cada concelho, uma linha cada.», que
+         explica a cobertura da página em vez de a nomear, e o `<head>` é
+         superfície pública como o corpo. Sai também no Open Graph, que é a
+         mesma cadeia. */
+      metaDescription: 'Livro-razão dos concelhos · O Estado do País',
       /* A LEDE SAIU (decisão do diretor, 27.08.2026). Dizia «Uma linha por
          medida e por concelho, com o valor tal como a fonte o publicou, a
          unidade, quem o produziu e a data em que foi lido.»: é o que uma linha
@@ -929,7 +934,10 @@ export const STRINGS = {
       convergenciaK: 'A régua da convergência, em ficheiro',
       conjuntoK: 'O livro-razão como conjunto de dados',
       conjuntoEstado: 'Conjunto de dados preparado; a licença aguarda decisão da direção.',
-      conjuntoV: 'Todas as linhas, com todos os campos publicados.',
+      /* NOMEIA O QUE SE DESCARREGA, E NÃO O QUE ESTÁ COMPLETO (27.08.2026).
+         Dizia «Todas as linhas, com todos os campos publicados.», que é uma
+         afirmação de cobertura da casa sobre o seu próprio ficheiro. */
+      conjuntoV: 'Todas as linhas.',
       conjuntoDescarregar: 'Descarregar o livro-razão',
       conjuntoLicenca: 'Publicado sob',
       conjuntoAtribuicao: 'Atribuição',
@@ -1757,8 +1765,8 @@ export const STRINGS = {
 
     livroConcelhos: {
       metaTitle: 'Municipalities · Ledger · O Estado do País',
-      metaDescription:
-        'The ledger rows with the measures central sources publish for each municipality, one row each.',
+      /* A gémea da portuguesa (27.08.2026). */
+      metaDescription: 'Municipalities ledger · O Estado do País',
       /* A gémea da lede portuguesa, e sai com ela (27.08.2026). */
       contaLinhas: 'rows',
       contaConcelhos: 'municipalities',
@@ -1801,7 +1809,7 @@ export const STRINGS = {
       convergenciaK: 'The convergence rule, as a file',
       conjuntoK: 'The ledger as a dataset',
       conjuntoEstado: 'Dataset prepared; the licence awaits the director’s decision.',
-      conjuntoV: 'Every row, with every published field.',
+      conjuntoV: 'Every row.',
       conjuntoDescarregar: 'Download the ledger',
       conjuntoLicenca: 'Published under',
       conjuntoAtribuicao: 'Attribution',
