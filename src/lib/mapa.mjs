@@ -270,6 +270,25 @@ export function unidadesDaMoldura(moldura, unidades) {
  * dezoito deixa o leitor a adivinhar quais são os dois que faltam.
  *
  * O CONTINENTE VEM PRIMEIRO, que é a ordem do desenho e a ordem da Carta.
+ *
+ * ---------------------------------------------------------------------------
+ * A LISTA É ALFABÉTICA, E A ORDEM DO ARTEFACTO NÃO ERA (X2, 27.08.2026)
+ * ---------------------------------------------------------------------------
+ * A leitura de fora achou «Évora» no fim da lista das duas edições, depois de
+ * Viseu. Não era uma ordenação por cobertura nem pelo `caopIndex`: é a ordem em
+ * que as unidades vêm no artefacto, que é a ordem dos pontos de código. «Évora»
+ * começa por É e cai depois de Z; pela mesma razão «Ilha Terceira» vinha antes
+ * de «Ilha da Graciosa», porque T maiúsculo vem antes de d minúsculo.
+ *
+ * A LISTA ORDENA-SE COM A COLAÇÃO DA LÍNGUA, e não com a comparação de cadeias:
+ * `localeCompare` em português põe É onde um leitor a procura, entre Estremoz e
+ * Faro, e resolve maiúsculas e minúsculas como uma pessoa as lê. É a mesma
+ * função que o sítio já usa para ordenar as linhas do livro-razão e os
+ * documentos; o que faltava era chamá-la aqui.
+ *
+ * O DESENHO NÃO SE REORDENA. A ordem dos caminhos dentro do `<svg>` é a do
+ * artefacto, e a fronteira diz que aqui não se mexe no que o motor escreveu: o
+ * que este ficheiro compõe é a lista, e é a lista que se ordena.
  */
 export function parcelasDoMapa() {
   const pais = paisDoMapa();
@@ -280,8 +299,9 @@ export function parcelasDoMapa() {
   const chaves = [...new Set(pais.unidades.map((u) => u.parcela))];
   const semMoldura = chaves.filter((c) => !molduraDe.has(c));
   const ordem = [...semMoldura, ...pais.molduras.map((m) => parcelaDaMoldura(m, pais.unidades))];
+  const alfabetica = (a, b) => a.nome.localeCompare(b.nome, 'pt');
   return ordem.map((chave) => {
-    const unidades = pais.unidades.filter((u) => u.parcela === chave);
+    const unidades = pais.unidades.filter((u) => u.parcela === chave).sort(alfabetica);
     const menor = Math.min(
       ...unidades.flatMap((u) => larguras.map((l) => ladoEmPixeis(u, l, pais.campo))),
     );

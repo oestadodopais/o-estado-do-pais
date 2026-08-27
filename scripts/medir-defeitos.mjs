@@ -500,6 +500,10 @@ function dicasDaCasa(root) {
 
 const frasesPorRota = new Map(); // rota → Map(texto → ocorrências)
 const frasesDaVozPorRota = new Map(); // rota → Set(texto), a varredura do tripwire
+/* A CHAVE DA ROTA DE CADA CAMINHO, para as dispensas com rotas (X3). Uma família
+   de páginas tem uma chave e seiscentos caminhos, e é pela chave que uma
+   dispensa se escreve. */
+const chaveDaRotaPorCaminho = new Map(); // caminho → chave da rota
 
 const coberturaPorEdicao = new Map(); // edição → estado → Map(cadeia → ocorrências)
 function registaCobertura(edicao, estado, cadeia) {
@@ -559,6 +563,7 @@ for (const file of ficheiros) {
     for (const f of dicasDaCasa(root)) daVoz.add(f);
     if (descricao) daVoz.add(descricao);
     frasesDaVozPorRota.set(chave, daVoz);
+    chaveDaRotaPorCaminho.set(chave, rota.key);
   }
 
   /* 7 — as frases de cobertura */
@@ -705,7 +710,7 @@ for (const [rota, frases] of [...frasesDaVozPorRota.entries()].sort()) {
     frasesVarridas.add(t);
     ocorrenciasVarridas++;
     if (INVENTARIO.mapa.get(t) === 'autorreferencia') continue;
-    const mordeu = analisa(t, rota, VOZ);
+    const mordeu = analisa(t, rota, VOZ, chaveDaRotaPorCaminho.get(rota) ?? null);
     if (mordeu.length) {
       achadosDaVoz.push({ rota, marcadores: mordeu, classe: INVENTARIO.mapa.get(t) ?? null, texto: t });
     }
@@ -758,6 +763,28 @@ const rendidas = new Set();
 for (const conta of frasesPorRota.values()) for (const t of conta.keys()) rendidas.add(t);
 for (const frases of frasesDaVozPorRota.values()) for (const t of frases) rendidas.add(t);
 
+/**
+ * UMA SENTINELA APANHA A FRASE DENTRO DE OUTRA FRASE (X1 da leitura do Codex).
+ *
+ * A primeira forma desta medida comparava cadeias inteiras, e uma frase retirada
+ * voltava à mesma desde que viesse acompanhada. Foi o que a leitura de fora
+ * achou: «Com página» saiu da página dos 308 e continuava viva dentro da dica
+ * «concelhos com página», que a varredura das dicas (I79) acabara de recolher. A
+ * cadeia estava lá inteira, e a régua não a via porque olhava para o igual.
+ *
+ * A procura é por PALAVRA INTEIRA e sem sensibilidade a maiúsculas, que é o modo
+ * dos marcadores da voz e pela mesma razão: «Com página» tem de morder «concelhos
+ * com página» e não pode morder uma palavra que apenas a contenha por dentro. É a
+ * mesma expressão do modo `palavra` de `voz.mjs`, com a frase inteira no lugar do
+ * marcador.
+ */
+const escapaParaRe = (x) => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+function ondeVolta(frase) {
+  const re = new RegExp(`(?<![\\p{L}\\p{N}])${escapaParaRe(frase)}(?![\\p{L}\\p{N}])`, 'iu');
+  for (const t of rendidas) if (re.test(t)) return t;
+  return null;
+}
+
 const declaracoes = {
   total: INVENTARIO.linhas.length,
   vivas: INVENTARIO.linhas.filter((l) => l.estado === 'viva').length,
@@ -776,8 +803,16 @@ const declaracoes = {
     .filter((l) => l.estado !== 'retirada' && !rendidas.has(l.texto))
     .map((l) => ({ n: l.n, classe: l.classe, bloco: l.bloco, texto: l.texto })),
   retiradas_que_rendem: INVENTARIO.linhas
-    .filter((l) => l.estado === 'retirada' && rendidas.has(l.texto))
-    .map((l) => ({ n: l.n, bloco: l.bloco, razao: l.razao, texto: l.texto })),
+    .filter((l) => l.estado === 'retirada')
+    .map((l) => ({ l, onde: ondeVolta(l.texto) }))
+    .filter((x) => x.onde)
+    .map(({ l, onde }) => ({
+      n: l.n,
+      bloco: l.bloco,
+      razao: l.razao,
+      texto: l.texto,
+      dentro: onde === l.texto ? null : onde,
+    })),
 };
 
 const medicao = {

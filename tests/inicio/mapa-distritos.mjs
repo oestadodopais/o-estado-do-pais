@@ -796,6 +796,48 @@ function repeticoesNosMapas(paginas) {
   );
 }
 
+/* ---------------------------------------------------------------------- M10 */
+/* ---------------------------------------------------------------------------
+ * A LISTA POR BAIXO DO MAPA ESTÁ POR ORDEM ALFABÉTICA, DENTRO DE CADA PARCELA
+ * ---------------------------------------------------------------------------
+ * A leitura de fora achou «Évora» no fim da lista das duas edições, depois de
+ * Viseu, e a causa não era uma ordenação por cobertura: era a ordem em que as
+ * unidades vêm no artefacto, que é a dos pontos de código, onde É cai depois de
+ * Z e um T maiúsculo antes de um d minúsculo.
+ *
+ * A CÉLULA COMPARA COM A COLAÇÃO DA LÍNGUA, que é a mesma que a lista usa para
+ * se ordenar. Não é uma tautologia: o que ela mede é a ORDEM RENDIDA, lida do
+ * HTML construído, contra a ordem que a colação dá aos mesmos nomes. Entre as
+ * duas está o componente, e é lá que a ordem se pode perder outra vez.
+ * --------------------------------------------------------------------------- */
+async function mediuAOrdemDaLista(rota, id) {
+  const p = await pagina(rota, 1280);
+  const grupos = await p.evaluate(() =>
+    [...document.querySelectorAll('[data-parcela-lista]')].map((g) => ({
+      parcela: g.getAttribute('data-parcela-lista'),
+      nomes: [...g.querySelectorAll('[data-lista-porta]')].map((a) => a.textContent.trim()),
+    })),
+  );
+  await p.__ctx.close();
+  const foraDeOrdem = grupos.filter((g) => {
+    const ordenada = [...g.nomes].sort((x, y) => x.localeCompare(y, 'pt'));
+    return g.nomes.join('|') !== ordenada.join('|');
+  });
+  conta(
+    `${id} · em ${rota}, a lista de cada parcela está por ordem alfabética`,
+    grupos.length > 0 && foraDeOrdem.length === 0,
+    foraDeOrdem.length === 0
+      ? `${grupos.length} parcelas, ${grupos.reduce((n, g) => n + g.nomes.length, 0)} nomes · ${grupos
+          .map((g) => `${g.parcela}: ${g.nomes[0]} … ${g.nomes[g.nomes.length - 1]}`)
+          .join(' · ')}`
+      : foraDeOrdem
+          .map((g) => `${g.parcela} fora de ordem: ${g.nomes.join(', ')}`)
+          .join(' | '),
+  );
+}
+await mediuAOrdemDaLista('/', 'M10a');
+await mediuAOrdemDaLista('/en', 'M10b');
+
 /* ------------------------------------------------------------------ M7 e M8 */
 function corre(guiao, args = []) {
   try {
@@ -927,6 +969,21 @@ const PLANTAS = [
     },
   },
   {
+    /* O ESTRAGO DA X2. Um nome muda de sítio na lista do continente, e é o
+       defeito que a leitura de fora achou: «Évora» no fim, depois de Viseu. O
+       estrago tira-o de onde ele agora está e volta a pô-lo no fim. */
+    nome: 'um nome movido para o fim da lista do continente',
+    celulas: ['M10a'],
+    estrago: (html, rota) => {
+      if (rota !== '/' && rota !== '/index.html') return html;
+      const item = '<li><a href="/distritos/evora" data-lista-porta="evora">Évora</a></li>';
+      if (!html.includes(item)) return html;
+      const sem = html.replace(item, '');
+      const fim = sem.indexOf('</ul>', sem.indexOf('data-parcela-lista="continente"'));
+      return sem.slice(0, fim) + item + sem.slice(fim);
+    },
+  },
+  {
     nome: 'o destino de uma área trocado pelo de outra',
     celulas: ['M6a'],
     estrago: (html, rota) =>
@@ -994,6 +1051,7 @@ if (VERMELHOS) {
       const colisao = r.usadas.filter((u) => r.cores.includes(u));
       conta('M5c · nenhuma cor de estatuto', colisao.length === 0, `${colisao.length} colisões`);
     }
+    if (planta.celulas.includes('M10a')) await mediuAOrdemDaLista('/', 'M10a');
     if (planta.celulas.includes('M6a')) {
       const p = await pagina('/', 1280);
       const pais = JSON.parse(fs.readFileSync(path.join(RAIZ, 'mapa', 'pais.json'), 'utf8'));
