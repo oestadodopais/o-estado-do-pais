@@ -10,7 +10,7 @@
   {
    "emphasis": [
     {
-     "end": 267,
+     "end": 171,
      "kind": "em",
      "start": 0
     }
@@ -18,7 +18,7 @@
    "figures": [],
    "i": 1,
    "kind": "paragraph",
-   "text": "Uma leitura transversal de um município português: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado, recolhidos em direto a 2026-08-04, e o registo do plano de recuperação relido a 2026-08-20."
+   "text": "Uma leitura transversal do município de Évora: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado."
   },
   {
    "i": 2,
@@ -29,35 +29,12 @@
    "i": 3,
    "kind": "heading",
    "level": 2,
-   "text": "Ler esta parte primeiro"
+   "text": "Três limites"
   },
   {
-   "figures": [],
-   "i": 4,
-   "kind": "paragraph",
-   "text": "Três limites governam tudo o que se segue."
-  },
-  {
-   "emphasis": [
-    {
-     "end": 72,
-     "kind": "strong",
-     "start": 0
-    },
-    {
-     "end": 206,
-     "kind": "em",
-     "start": 166
-    },
-    {
-     "end": 254,
-     "kind": "strong",
-     "start": 229
-    }
-   ],
    "figures": [
     {
-     "end": 375,
+     "end": 11,
      "others": [
       "comp-c08-locations"
      ],
@@ -65,13 +42,13 @@
      "row": "tc-families",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 374,
+     "start": 10,
      "value": "4"
     }
    ],
-   "i": 5,
+   "i": 4,
    "kind": "paragraph",
-   "text": "A secção de auditoria lê o catálogo do Tribunal, não as suas auditorias. O que foi recolhido é o título e o resumo de cada documento publicado. Isso chega para dizer o que foi auditado, quando, e onde o ler. Não chega para dizer o que o Tribunal concluiu — as constatações, as recomendações e os montantes em euros estão dentro dos PDF, e nada aqui abre um deles. Lê também 4 das famílias de produtos do Tribunal, e não a totalidade delas, o que acaba por importar o suficiente para que a secção meça o custo em vez de o mencionar."
+   "text": "Lê também 4 das famílias de produtos do Tribunal, e não a totalidade delas, o que acaba por importar o suficiente para que a secção meça o custo em vez de o mencionar."
   },
   {
    "emphasis": [
@@ -101,7 +78,7 @@
      "value": "600"
     }
    ],
-   "i": 6,
+   "i": 5,
    "kind": "paragraph",
    "text": "A secção de contratos é um limite superior sobre uma janela truncada. O Portal BASE tem 24 436 contratos para o concelho de Évora. Este documento leu 600 deles — os publicados mais recentemente, entre 2026-05-08 e 2026-08-04. Os restantes não foram lidos. Um contrato executado em vários municípios é devolvido pelo filtro de cada um deles pelo seu valor integral, pelo que um total de contratos por concelho é um limite superior e os totais por concelho nunca podem ser somados entre si."
   },
@@ -132,47 +109,29 @@
      "value": "3"
     }
    ],
-   "i": 7,
+   "i": 6,
    "kind": "paragraph",
    "text": "Não existe um valor da UE para um município, e este documento não o fabrica. A geografia mais fina a que os dados da UE ao nível de projeto chegam para Portugal é a região NUTS3. Isso é um nulo, estabelecido por sondagem e não por afirmação."
   },
   {
-   "emphasis": [
-    {
-     "end": 37,
-     "kind": "em",
-     "start": 29
-    },
-    {
-     "end": 242,
-     "kind": "strong",
-     "start": 230
-    }
-   ],
-   "figures": [],
-   "i": 8,
-   "kind": "paragraph",
-   "text": "Uma coisa que este documento consegue fazer e que uma fonte isolada não consegue: põe lado a lado a promessa, o pagamento e o registo de auditoria de um mesmo sítio. Quando raciocina para além do que uma fonte afirma, a frase diz (inferência)."
-  },
-  {
-   "i": 9,
+   "i": 7,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 10,
+   "i": 8,
    "kind": "heading",
    "level": 2,
    "text": "O que foi prometido e o que foi pago"
   },
   {
    "figures": [],
-   "i": 11,
+   "i": 9,
    "kind": "paragraph",
    "text": "O Plano de Recuperação e Resiliência publica um instantâneo com atualização integral a cada dia, sem histórico de versões: o ficheiro do dia anterior desaparece pura e simplesmente da fonte. O instantâneo aqui lido tem a data de referência 2026-08-19."
   },
   {
-   "i": 12,
+   "i": 10,
    "kind": "table",
    "rows": [
     [
@@ -345,7 +304,7 @@
      "value": "398 747"
     }
    ],
-   "i": 13,
+   "i": 11,
    "kind": "paragraph",
    "text": "Ambos os valores são factos com fonte, não estimativas. Vêm da camada de gestores do ficheiro de beneficiários — as linhas Beneficiário Intermediário e Beneficiário Direto —, que dá exatamente uma linha por localização de projeto e transporta tanto o montante aprovado como o montante pago dessa localização. A contagem dessas linhas, 398 747, é exatamente igual à contagem de linhas do ficheiro de distribuição geográfica, que é a verificação estrutural de que a camada decompõe o dinheiro uma vez e uma só vez."
   },
@@ -368,7 +327,7 @@
      "value": "1 169"
     }
    ],
-   "i": 14,
+   "i": 12,
    "kind": "paragraph",
    "text": "Um caminho independente para o mesmo valor aprovado — reconstruí-lo a partir da coluna de quota percentual do ficheiro de localizações — fica a €1 169 de distância, o que é arredondamento à quarta casa decimal na quota publicada e mais nada. A outra coluna de quota desse mesmo ficheiro, a que parece ser uma quota de pagamento por localização, não é usada: repete em cada linha o rácio de pagamento de todo o projeto, e lê-la como quota inflaciona o valor pago de Évora numa ordem de grandeza."
   },
@@ -450,13 +409,13 @@
      "value": "14.93"
     }
    ],
-   "i": 15,
+   "i": 13,
    "kind": "paragraph",
    "text": "A nível nacional, o mesmo critério dá €24 491 396 628 aprovados e €14 299 597 753 pagos em 397 030 projetos, uma taxa de execução de 58,39 %. Évora detém 0,68 % do total nacional aprovado e executa-o abaixo da taxa nacional. Uma coisa a saber sobre esse denominador: €3 655 353 461 do total nacional — 14,93 % dele — ficam fora de qualquer concelho, registados como nacionais ou sem localização, pelo que a quota de dinheiro atribuível a um lugar é ligeiramente maior do que o valor acima."
   },
   {
    "figures": [],
-   "i": 16,
+   "i": 14,
    "kind": "heading",
    "level": 3,
    "text": "Onde assenta a promessa"
@@ -490,12 +449,12 @@
      "value": "21"
     }
    ],
-   "i": 17,
+   "i": 15,
    "kind": "paragraph",
    "text": "Não existe uma coluna de componente no ficheiro de projetos; o componente é o prefixo do código de investimento, e é a única chave disponível. As localizações de projeto de Évora caem em 13 dos 21 componentes do programa."
   },
   {
-   "i": 18,
+   "i": 16,
    "kind": "table",
    "rows": [
     [
@@ -1701,31 +1660,31 @@
   },
   {
    "figures": [],
-   "i": 19,
+   "i": 17,
    "kind": "paragraph",
-   "text": "Os nomes dos componentes vêm do próprio ficheiro de investimentos de quem publica os dados, não de memória."
+   "text": "Os nomes dos componentes vêm do próprio ficheiro de investimentos de quem publica os dados."
   },
   {
    "emphasis": [
     {
-     "end": 74,
+     "end": 23,
      "kind": "strong",
-     "start": 51
+     "start": 0
     },
     {
-     "end": 175,
+     "end": 124,
      "kind": "strong",
-     "start": 160
+     "start": 109
     },
     {
-     "end": 521,
+     "end": 470,
      "kind": "strong",
-     "start": 487
+     "start": 436
     }
    ],
    "figures": [
     {
-     "end": 344,
+     "end": 293,
      "others": [
       "comp-c07-paid",
       "proj-ip-c07-paid",
@@ -1735,59 +1694,59 @@
      "row": "mgrallpaid-00",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 334,
+     "start": 283,
      "value": "29 061 019"
     },
     {
-     "end": 421,
+     "end": 370,
      "printed": "17 860 225",
      "row": "comp-health-housing-culture-paid",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 411,
+     "start": 360,
      "value": "17 860 225"
     },
     {
-     "end": 531,
+     "end": 480,
      "printed": "1 009",
      "row": "comp-c13-locations",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 526,
+     "start": 475,
      "value": "1 009"
     },
     {
-     "end": 553,
+     "end": 502,
      "printed": "2 631 788",
      "row": "comp-c13-approved",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 544,
+     "start": 493,
      "value": "2 631 788"
     },
     {
-     "end": 584,
+     "end": 533,
      "printed": "2 608",
      "row": "comp-c13-avg",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 579,
+     "start": 528,
      "value": "2 608"
     }
    ],
-   "i": 20,
+   "i": 18,
    "kind": "paragraph",
-   "text": "Há três coisas nessa tabela que merecem uma pausa. Investimento e inovação é o maior bloco isolado de dinheiro aprovado em Évora, e pagou menos de metade dele. Infraestruturas chega ao concelho através de uma localização de projeto isolada e é, ainda assim, onde está o maior montante efetivamente pago: um programa rodoviário moveu €29 061 019 através de Évora, mais do que saúde, habitação e cultura juntas (€17 860 225). E uma contagem de localizações não é uma medida de dimensão. A Eficiência energética em edifícios tem 1 009 delas para €2 631 788 aprovados, uma média de €2 608 por localização."
+   "text": "Investimento e inovação é o maior bloco isolado de dinheiro aprovado em Évora, e pagou menos de metade dele. Infraestruturas chega ao concelho através de uma localização de projeto isolada e é, ainda assim, onde está o maior montante efetivamente pago: um programa rodoviário moveu €29 061 019 através de Évora, mais do que saúde, habitação e cultura juntas (€17 860 225). E uma contagem de localizações não é uma medida de dimensão. A Eficiência energética em edifícios tem 1 009 delas para €2 631 788 aprovados, uma média de €2 608 por localização."
   },
   {
    "figures": [],
-   "i": 21,
+   "i": 19,
    "kind": "heading",
    "level": 3,
    "text": "As cinco maiores localizações de projeto"
   },
   {
-   "i": 22,
+   "i": 20,
    "kind": "table",
    "rows": [
     [
@@ -2428,29 +2387,29 @@
      "value": "19"
     }
    ],
-   "i": 23,
+   "i": 21,
    "kind": "paragraph",
    "text": "A coluna «concelhos» é a razão pela qual um valor municipal exige cuidado: o programa rodoviário no topo dessa tabela está espalhado por 17 municípios e a aliança de investigação por 19. O que aparece no total de Évora é a parcela de Évora de cada um, retirada do ficheiro de beneficiários e não repartida por rateio."
   },
   {
-   "i": 24,
+   "i": 22,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 25,
+   "i": 23,
    "kind": "heading",
    "level": 2,
    "text": "Quem detém o dinheiro e quem o recebe"
   },
   {
    "figures": [],
-   "i": 26,
+   "i": 24,
    "kind": "paragraph",
-   "text": "Os mesmos euros podem ser contados através de duas camadas diferentes, e as duas nunca podem ser somadas: a camada de beneficiários é uma segunda vista do mesmo dinheiro, não uma parcela dele. Também não é uma vista completa, e a diferença é explicada a seguir."
+   "text": "Os mesmos euros podem ser contados através de duas camadas diferentes, e as duas nunca podem ser somadas: a camada de beneficiários é uma segunda vista do mesmo dinheiro, não uma parcela dele. Também não é uma vista completa."
   },
   {
-   "i": 27,
+   "i": 25,
    "kind": "table",
    "rows": [
     [
@@ -2599,7 +2558,7 @@
      "value": "29 061 019"
     }
    ],
-   "i": 28,
+   "i": 26,
    "kind": "paragraph",
    "text": "A camada de beneficiários fica €30 759 762 aquém da camada de gestores no dinheiro pago. Essa diferença não é fuga: é dinheiro em projetos contratados diretamente, que não têm qualquer linha de beneficiário final. A maior parte dela é uma rubrica isolada — os €29 061 019 do programa rodoviário, cujo gestor não aparece em linha alguma de beneficiário final."
   },
@@ -2611,9 +2570,9 @@
      "start": 2
     },
     {
-     "end": 314,
+     "end": 281,
      "kind": "strong",
-     "start": 281
+     "start": 248
     }
    ],
    "figures": [
@@ -2642,7 +2601,7 @@
      "value": "21 784 396"
     },
     {
-     "end": 332,
+     "end": 299,
      "others": [
       "comp-c07-approved",
       "proj-ip-c07-approved",
@@ -2652,11 +2611,11 @@
      "row": "mgr-ip-contracted",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 322,
+     "start": 289,
      "value": "29 684 101"
     },
     {
-     "end": 354,
+     "end": 321,
      "others": [
       "comp-c07-paid",
       "proj-ip-c07-paid",
@@ -2666,16 +2625,16 @@
      "row": "mgrallpaid-00",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 344,
+     "start": 311,
      "value": "29 061 019"
     }
    ],
-   "i": 29,
+   "i": 27,
    "kind": "paragraph",
-   "text": "O IAPMEI - AGÊNCIA PARA A COMPETITIVIDADE E INOVAÇÃO, I.P. é o maior detentor isolado do dinheiro do PRR aprovado para Évora, com €39 036 811 contratados e €21 784 396 pagos — e é uma agência nacional que encaminha dinheiro, não um beneficiário. Reportá-lo como tal seria falso. A INFRAESTRUTURAS DE PORTUGAL, S.A. detém €29 684 101 e recebeu €29 061 019, o maior desembolso isolado do concelho."
+   "text": "O IAPMEI - AGÊNCIA PARA A COMPETITIVIDADE E INOVAÇÃO, I.P. é o maior detentor isolado do dinheiro do PRR aprovado para Évora, com €39 036 811 contratados e €21 784 396 pagos — e é uma agência nacional que encaminha dinheiro, não um beneficiário. A INFRAESTRUTURAS DE PORTUGAL, S.A. detém €29 684 101 e recebeu €29 061 019, o maior desembolso isolado do concelho."
   },
   {
-   "i": 30,
+   "i": 28,
    "kind": "table",
    "rows": [
     [
@@ -2988,7 +2947,7 @@
      "value": "22"
     }
    ],
-   "i": 31,
+   "i": 29,
    "kind": "paragraph",
    "text": "Os seis acima são os maiores de 22 organismos da camada de gestores; os outros 16 são agências e fundos nacionais que detêm montantes menores. A fonte devolve 23 linhas e não 22, porque um organismo detém dinheiro de Évora sob dois papéis diferentes — uma contagem de linhas aqui não é uma contagem de organismos."
   },
@@ -3004,12 +2963,12 @@
      "value": "1 823"
     }
    ],
-   "i": 32,
+   "i": 30,
    "kind": "paragraph",
    "text": "Entre os 1 823 beneficiários finais, a universidade é o maior beneficiário final nas duas medidas — contratado e pago. Os sete maiores por montante contratado:"
   },
   {
-   "i": 33,
+   "i": 31,
    "kind": "table",
    "rows": [
     [
@@ -3417,7 +3376,7 @@
     }
    ],
    "figures": [],
-   "i": 34,
+   "i": 32,
    "kind": "paragraph",
    "text": "O próprio município não é o canal principal do dinheiro do PRR no seu território (inferência, a partir das duas tabelas acima: a câmara aparece na camada de beneficiários com menos contratado do que a universidade, e não aparece de todo na camada de gestores). Um leitor à procura de «o que a câmara fez com o dinheiro» estaria a olhar para o ator errado na maior parte deste total."
   },
@@ -3437,23 +3396,23 @@
      "value": "6"
     }
    ],
-   "i": 35,
+   "i": 33,
    "kind": "paragraph",
-   "text": "Existe uma terceira camada, a de fornecedores, com 6 entidades. Não reconcilia com os totais dos projetos e a sua coluna de localização significa outra coisa, pelo que não é usada aqui."
+   "text": "Existe uma terceira camada, a de fornecedores, com 6 entidades. Não reconcilia com os totais dos projetos e a sua coluna de localização significa outra coisa."
   },
   {
-   "i": 36,
+   "i": 34,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 37,
+   "i": 35,
    "kind": "heading",
    "level": 2,
    "text": "O que significa «dentro do prazo» nestes dados, e o que está vencido"
   },
   {
-   "i": 38,
+   "i": 36,
    "kind": "table",
    "rows": [
     [
@@ -3572,64 +3531,64 @@
   },
   {
    "figures": [],
-   "i": 39,
+   "i": 37,
    "kind": "paragraph",
    "text": "O estado é julgado contra a data de referência do próprio instantâneo, e não contra a de hoje, porque é essa a data por que a fonte fala."
   },
   {
    "emphasis": [
     {
-     "end": 186,
+     "end": 116,
      "kind": "strong",
-     "start": 176
+     "start": 106
     },
     {
-     "end": 377,
+     "end": 307,
      "kind": "em",
-     "start": 365
+     "start": 295
     }
    ],
    "figures": [
     {
-     "end": 75,
+     "end": 5,
      "printed": "1 011",
      "row": "prr-ontime-exactdate",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 70,
+     "start": 0,
      "value": "1 011"
     },
     {
-     "end": 85,
+     "end": 15,
      "printed": "1 445",
      "row": "prr-ontime-evora",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 80,
+     "start": 10,
      "value": "1 445"
     },
     {
-     "end": 211,
+     "end": 141,
      "printed": "69,97",
      "row": "prr-exactdate-share",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 206,
+     "start": 136,
      "value": "69.97"
     },
     {
-     "end": 395,
+     "end": 325,
      "printed": "434",
      "row": "prr-ontime-early",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 392,
+     "start": 322,
      "value": "434"
     }
    ],
-   "i": 40,
+   "i": 38,
    "kind": "paragraph",
-   "text": "Agora a ressalva que tem de viajar com a primeira linha dessa tabela. 1 011 das 1 445 localizações contadas como dentro do prazo registam uma data de conclusão efetiva que cai exatamente na data prevista — 69,97 % delas. Uma diferença modal de zero a essa escala é mais consistente com um campo fechado administrativamente do que com uma entrega observada e datada (inferência). As restantes 434 localizações registam uma data efetiva anterior à prevista, e a mesma dúvida sobre a forma como estes campos são preenchidos aplica-se também a elas."
+   "text": "1 011 das 1 445 localizações contadas como dentro do prazo registam uma data de conclusão efetiva que cai exatamente na data prevista — 69,97 % delas. Uma diferença modal de zero a essa escala é mais consistente com um campo fechado administrativamente do que com uma entrega observada e datada (inferência). As restantes 434 localizações registam uma data efetiva anterior à prevista, e a mesma dúvida sobre a forma como estes campos são preenchidos aplica-se também a elas."
   },
   {
    "emphasis": [
@@ -3682,7 +3641,7 @@
      "value": "71.89"
     }
    ],
-   "i": 41,
+   "i": 39,
    "kind": "paragraph",
    "text": "Duas coisas afinam essa leitura, e uma delas impede que seja uma crítica a Évora. Primeiro, 470 dessas coincidências exatas são linhas em que a data de início, a data prevista de conclusão e a data efetiva de conclusão são o mesmo dia. Não é possível observar um projeto a começar e a terminar no mesmo dia a essa escala, pelo que essas linhas registam uma convenção de preenchimento e não uma data observada (inferência). Estão reunidas numa linha de investimento isolada. Segundo, o padrão é nacional e não local: em todo o país, 177 241 de 246 545 localizações dentro do prazo têm o mesmo carimbo de data exata, 71,89 %, ligeiramente acima do valor de Évora. Nada aqui diz que Évora reporta de forma diferente de qualquer outro sítio; diz que as datas de conclusão do registo não podem ser lidas como entrega observada em sítio algum. Portanto, a contagem de localizações dentro do prazo é prova fraca, e citá-la em bruto exageraria a pontualidade por uma margem larga."
   },
@@ -3725,7 +3684,7 @@
      "value": "41 693 864"
     }
    ],
-   "i": 42,
+   "i": 40,
    "kind": "paragraph",
    "text": "O grupo dos vencidos é o que se lê como promessa quebrada: uma data prevista de conclusão já passada à data do instantâneo, sem data efetiva de conclusão registada. Em Évora são 608 localizações de projeto que transportam €102 624 704 de dinheiro aprovado — 61,32 % de tudo o que foi aprovado para o concelho —, dos quais €41 693 864 foram pagos."
   },
@@ -3820,42 +3779,42 @@
      "value": "0"
     }
    ],
-   "i": 43,
+   "i": 41,
    "kind": "paragraph",
    "text": "Está concentrado. A Habitação tem 39 localizações de projeto em Évora, com a data prevista já passada e sem nada registado como entregue: todas as que existem estão vencidas. Duas localizações entre as cinco maiores do concelho estão nesse estado e não receberam absolutamente nada — a residência de estudantes, com €7 483 162 aprovados e €0 pagos, e a aquisição de equipamento hospitalar, com €5 314 868 aprovados e €0 pagos."
   },
   {
    "emphasis": [
     {
-     "end": 311,
+     "end": 217,
      "kind": "em",
-     "start": 230
+     "start": 136
     }
    ],
    "figures": [],
-   "i": 44,
+   "i": 42,
    "kind": "paragraph",
-   "text": "Vale a pena nomear esta última com clareza, porque atravessa as duas metades deste documento. O equipamento destina-se ao novo hospital central do Alentejo; o dinheiro está aprovado, a data prevista passou e nada foi desembolsado (inferência: a fonte regista a aprovação, a data e o pagamento, e não diz porquê)."
+   "text": "O equipamento destina-se ao novo hospital central do Alentejo; o dinheiro está aprovado, a data prevista passou e nada foi desembolsado (inferência: a fonte regista a aprovação, a data e o pagamento, e não diz porquê)."
   },
   {
-   "i": 45,
+   "i": 43,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 46,
+   "i": 44,
    "kind": "heading",
    "level": 2,
-   "text": "Contratos públicos, como contexto"
+   "text": "Contratos públicos"
   },
   {
    "figures": [],
-   "i": 47,
+   "i": 45,
    "kind": "paragraph",
-   "text": "O Portal BASE é o registo de contratos públicos de Portugal. Está aqui como contexto sobre o mesmo território, não como uma segunda medida do mesmo dinheiro: os apoios do plano de recuperação e os preços de contratos são quantidades diferentes, e este documento nunca as soma."
+   "text": "O Portal BASE é o registo de contratos públicos de Portugal. Os apoios do plano de recuperação e os preços de contratos são quantidades diferentes."
   },
   {
-   "i": 48,
+   "i": 46,
    "kind": "table",
    "rows": [
     [
@@ -3942,32 +3901,32 @@
      "value": "600"
     }
    ],
-   "i": 49,
+   "i": 47,
    "kind": "paragraph",
-   "text": "Essa soma é um limite superior sobre uma janela truncada, e nada além disso. A recolha parou aos 600 registos porque o registo tem uma barreira não documentada que bloqueia endereços IP por volume, e o servidor limita uma página a muito menos linhas do que lhe são pedidas; ler o histórico completo do concelho exigiria da ordem de mil pedidos e desencadearia o bloqueio muito antes de terminar."
+   "text": "Essa soma é um limite superior sobre uma janela truncada, e nada além disso. A recolha parou aos 600 registos porque o registo tem uma barreira não documentada que bloqueia endereços IP por volume, e o servidor limita uma página a muito menos linhas do que lhe são pedidas."
   },
   {
    "figures": [
     {
-     "end": 72,
+     "end": 34,
      "printed": "2 390 229",
      "row": "base-national-total",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 63,
+     "start": 25,
      "value": "2 390 229"
     },
     {
-     "end": 120,
+     "end": 82,
      "printed": "24 436",
      "row": "base-alltime-evora",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 114,
+     "start": 76,
      "value": "24 436"
     },
     {
-     "end": 205,
+     "end": 167,
      "others": [
       "comp-c07-overdue",
       "proj-malagueira-paid",
@@ -3985,11 +3944,11 @@
      "row": "tc-evora-freguesia-match",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 204,
+     "start": 166,
      "value": "0"
     },
     {
-     "end": 250,
+     "end": 212,
      "others": [
       "comp-c11-locations",
       "comp-c11-overdue",
@@ -4002,22 +3961,22 @@
      "row": "base-ulsac-spellings",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 249,
+     "start": 211,
      "value": "3"
     }
    ],
-   "i": 50,
+   "i": 48,
    "kind": "paragraph",
-   "text": "O filtro foi provado e não presumido. O total nacional está em 2 390 229 contratos e o filtro do concelho devolve 24 436, portanto restringe; um identificador de concelho deliberadamente inválido devolve 0 linhas, portanto não falha em aberto; e os 3 maiores contratos lidos foram confrontados com o seu próprio campo de local de execução, que existe apenas no ponto final por contrato. Os três leem «Portugal, Évora, Évora»."
+   "text": "O total nacional está em 2 390 229 contratos e o filtro do concelho devolve 24 436, portanto restringe; um identificador de concelho deliberadamente inválido devolve 0 linhas, portanto não falha em aberto; e os 3 maiores contratos lidos foram confrontados com o seu próprio campo de local de execução, que existe apenas no ponto final por contrato. Os três leem «Portugal, Évora, Évora»."
   },
   {
    "figures": [],
-   "i": 51,
+   "i": 49,
    "kind": "paragraph",
    "text": "Os maiores contratos da janela lida:"
   },
   {
-   "i": 52,
+   "i": 50,
    "kind": "table",
    "rows": [
     [
@@ -4137,12 +4096,12 @@
     }
    ],
    "figures": [],
-   "i": 53,
+   "i": 51,
    "kind": "paragraph",
-   "text": "E as entidades que contratam. Cada linha abaixo é uma grafia, não um organismo — essa distinção acaba por importar mais do que qualquer outra coisa nesta secção:"
+   "text": "E as entidades que contratam. Cada linha abaixo é uma grafia, não um organismo:"
   },
   {
-   "i": 54,
+   "i": 52,
    "kind": "table",
    "rows": [
     [
@@ -4577,18 +4536,11 @@
      "value": "39"
     }
    ],
-   "i": 55,
+   "i": 53,
    "kind": "paragraph",
    "text": "As duas primeiras linhas são o mesmo grupo hospitalar sob duas grafias — e há uma terceira na mesma janela que a tabela acima não mostra. Agrupar os 600 registos por organismo em vez de por cadeia de carateres dá 56 organismos adjudicantes, dos quais 5 registam sob mais do que um nome. O hospital responde por 3 dessas grafias e, no conjunto, por 282 contratos no valor de €29 580 141 — o que faz da saúde a mais ativa entidade adjudicante da janela lida. A empresa de resíduos regista sob 3 grafias, para 23 contratos. O município regista sob 2, o que dá 45 contratos no valor de €1 975 150 e não os 39 que a sua grafia principal mostra."
   },
   {
-   "emphasis": [
-    {
-     "end": 817,
-     "kind": "strong",
-     "start": 698
-    }
-   ],
    "figures": [
     {
      "end": 397,
@@ -4626,20 +4578,11 @@
      "source_sha256": null,
      "start": 607,
      "value": "5"
-    },
-    {
-     "end": 806,
-     "printed": "270",
-     "row": "base-ulsac-combined-contracts",
-     "source_digest_kind": "derivado",
-     "source_sha256": null,
-     "start": 803,
-     "value": "270"
     }
    ],
-   "i": 56,
+   "i": 54,
    "kind": "paragraph",
-   "text": "A regra de agrupamento é nossa, não do registo: dobrar acentos, retirar pontuação, retirar a abreviatura final da forma jurídica. É também deliberadamente conservadora e funde a menos do que devia — a comunidade intermunicipal da tabela acima regista sob o seu acrónimo e, duas vezes, sob o mesmo nome sem ele, o que a regra não junta porque o acrónimo sobrevive à normalização. Em conjunto são 14 contratos no valor de €735 681. Essa forma fica reportada em vez de fundida, porque nada do que aqui está disponível consegue distinguir um prefixo de acrónimo de um organismo genuinamente diferente. Portanto 5 é um piso sobre quantos organismos registam sob mais do que um nome, e não uma contagem. Um rascunho anterior desta secção fundiu apenas as duas grafias do hospital que conseguia ver e reportou 270 contratos. É essa a forma honesta deste registo inteiro: uma contagem por cadeia de carateres parece uma contagem por entidade e não o é."
+   "text": "A regra de agrupamento é nossa, não do registo: dobrar acentos, retirar pontuação, retirar a abreviatura final da forma jurídica. É também deliberadamente conservadora e funde a menos do que devia — a comunidade intermunicipal da tabela acima regista sob o seu acrónimo e, duas vezes, sob o mesmo nome sem ele, o que a regra não junta porque o acrónimo sobrevive à normalização. Em conjunto são 14 contratos no valor de €735 681. Essa forma fica reportada em vez de fundida, porque nada do que aqui está disponível consegue distinguir um prefixo de acrónimo de um organismo genuinamente diferente. Portanto 5 é um piso sobre quantos organismos registam sob mais do que um nome, e não uma contagem. É essa a forma deste registo inteiro: uma contagem por cadeia de carateres parece uma contagem por entidade e não o é."
   },
   {
    "emphasis": [
@@ -4674,41 +4617,34 @@
      "value": "563 527"
     }
    ],
-   "i": 57,
+   "i": 55,
    "kind": "paragraph",
    "text": "Lidas em conjunto, as duas fontes fazem recorrer as mesmas instituições por ordem diferente, e uma delas é fácil de perder. O hospital é a maior entidade adjudicante da janela acima; nos dados do plano de recuperação aparece sob um nome diferente, HOSPITAL DO ESPÍRITO SANTO DE ÉVORA, E.P.E., com €7 746 863 contratados e €563 527 pagos. Uma junção por nomes de entidade entre os dois registos tê-lo-ia perdido (inferência — os dois registos usam nomes diferentes para aquilo que os próprios objetos dos contratos confirmam ser o mesmo organismo; nada em qualquer das fontes afirma que são a mesma entidade)."
   },
   {
-   "i": 58,
+   "i": 56,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 59,
+   "i": 57,
    "kind": "heading",
    "level": 2,
    "text": "O que foi auditado"
   },
   {
-   "emphasis": [
-    {
-     "end": 79,
-     "kind": "strong",
-     "start": 0
-    }
-   ],
    "figures": [
     {
-     "end": 249,
+     "end": 169,
      "printed": "2 206",
      "row": "tc-corpus-documents",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 244,
+     "start": 164,
      "value": "2 206"
     },
     {
-     "end": 265,
+     "end": 185,
      "others": [
       "tc-families"
      ],
@@ -4716,29 +4652,29 @@
      "row": "comp-c08-locations",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 264,
+     "start": 184,
      "value": "4"
     },
     {
-     "end": 295,
+     "end": 215,
      "printed": "1997",
      "row": "tc-year-min",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 291,
+     "start": 211,
      "value": "1997"
     },
     {
-     "end": 302,
+     "end": 222,
      "printed": "2026",
      "row": "tc-year-max",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 298,
+     "start": 218,
      "value": "2026"
     },
     {
-     "end": 311,
+     "end": 231,
      "others": [
       "tc-families"
      ],
@@ -4746,25 +4682,25 @@
      "row": "comp-c08-locations",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 310,
+     "start": 230,
      "value": "4"
     }
    ],
-   "i": 60,
+   "i": 58,
    "kind": "paragraph",
-   "text": "Esta secção diz o que foi auditado e quando. Não diz o que o Tribunal concluiu. O Tribunal de Contas publica um catálogo — o título e o resumo de cada relatório — e, em separado, os próprios relatórios em PDF. O que foi recolhido é o catálogo: 2 206 documentos em 4 famílias de produtos, de 1997 a 2026. Essas 4 não são tudo o que o Tribunal publica — um limite que este documento mede em vez de mencionar, abaixo. As conclusões estão nos PDF e não foram lidas."
+   "text": "O Tribunal de Contas publica um catálogo — o título e o resumo de cada relatório — e, em separado, os próprios relatórios em PDF. O que foi recolhido é o catálogo: 2 206 documentos em 4 famílias de produtos, de 1997 a 2026. Essas 4 não são tudo o que o Tribunal publica."
   },
   {
    "emphasis": [
     {
-     "end": 453,
+     "end": 319,
      "kind": "strong",
-     "start": 420
+     "start": 286
     }
    ],
    "figures": [
     {
-     "end": 379,
+     "end": 245,
      "others": [
       "comp-c08-locations"
      ],
@@ -4772,11 +4708,11 @@
      "row": "tc-families",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 378,
+     "start": 244,
      "value": "4"
     },
     {
-     "end": 391,
+     "end": 257,
      "others": [
       "prr-suppliers-count",
       "tcq-alentejo"
@@ -4785,16 +4721,16 @@
      "row": "tc-evora-matches",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 390,
+     "start": 256,
      "value": "6"
     }
    ],
-   "i": 61,
+   "i": 59,
    "kind": "paragraph",
-   "text": "O lugar, nesta fonte, é texto livre. Não há campo de entidade, nem campo de concelho, nem campo NUTS: um município chega a uma auditoria apenas como palavras numa frase. Logo, a correspondência é correspondência de cadeias de carateres, e cada correspondência abaixo traz um nível de confiança e as palavras da própria fonte, porque a contagem em bruto seria enganadora. Nestas 4 famílias, 6 documentos nomeiam Évora, e só um é sobre o próprio município — uma contagem que o fim desta secção mostra ser um piso e não um total."
+   "text": "O lugar, nesta fonte, é texto livre. Não há campo de entidade, nem campo de concelho, nem campo NUTS: um município chega a uma auditoria apenas como palavras numa frase. Logo, a correspondência é correspondência de cadeias de carateres. Nestas 4 famílias, 6 documentos nomeiam Évora, e só um é sobre o próprio município — uma contagem que o fim desta secção mostra ser um piso e não um total."
   },
   {
-   "i": 62,
+   "i": 60,
    "kind": "table",
    "rows": [
     [
@@ -5302,19 +5238,19 @@
   {
    "emphasis": [
     {
-     "end": 136,
+     "end": 66,
      "kind": "strong",
-     "start": 93
+     "start": 23
     },
     {
-     "end": 220,
+     "end": 150,
      "kind": "em",
-     "start": 208
+     "start": 138
     }
    ],
    "figures": [
     {
-     "end": 139,
+     "end": 69,
      "others": [
       "comp-c07-locations",
       "comp-c21-overdue",
@@ -5333,11 +5269,11 @@
      "row": "tcq-universidade-do-evora",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 138,
+     "start": 68,
      "value": "1"
     },
     {
-     "end": 225,
+     "end": 155,
      "others": [
       "comp-c04-overdue",
       "fin-patrimonio-projects",
@@ -5347,11 +5283,11 @@
      "row": "tc-evora-name-mention",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 224,
+     "start": 154,
      "value": "5"
     },
     {
-     "end": 284,
+     "end": 214,
      "others": [
       "comp-c07-overdue",
       "proj-malagueira-paid",
@@ -5369,11 +5305,11 @@
      "row": "tc-evora-freguesia-match",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 283,
+     "start": 213,
      "value": "0"
     },
     {
-     "end": 391,
+     "end": 321,
      "others": [
       "prr-suppliers-count",
       "tcq-alentejo"
@@ -5382,11 +5318,11 @@
      "row": "tc-evora-matches",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 390,
+     "start": 320,
      "value": "6"
     },
     {
-     "end": 431,
+     "end": 361,
      "others": [
       "prr-suppliers-count",
       "tcq-alentejo"
@@ -5395,11 +5331,11 @@
      "row": "tc-evora-matches",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 430,
+     "start": 360,
      "value": "6"
     },
     {
-     "end": 460,
+     "end": 390,
      "others": [
       "comp-c04-overdue",
       "fin-patrimonio-projects",
@@ -5409,13 +5345,13 @@
      "row": "tc-evora-name-mention",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 459,
+     "start": 389,
      "value": "5"
     }
    ],
-   "i": 63,
+   "i": 61,
    "kind": "paragraph",
-   "text": "Os níveis não são decoração. O emparelhador distingue quatro deles, e estas correspondências caem em dois dos quatro níveis de confiança: 1 documento em que o nome vem a seguir a um designador municipal como Município de, e 5 em que é uma menção simples. O nível de freguesia contém 0 delas, e o mesmo acontece com o nível dos nomes que pertencem a um município mais longo. Reportada como «6 auditorias a Évora», a contagem seria 6 vezes a verdade: as outras 5 são a universidade por sua própria conta duas vezes, um relatório setorial que cobre quatro universidades, o hospital e um contrato de empreitada num museu."
+   "text": "Estas correspondências caem em dois dos quatro níveis de confiança: 1 documento em que o nome vem a seguir a um designador municipal como Município de, e 5 em que é uma menção simples. O nível de freguesia contém 0 delas, e o mesmo acontece com o nível dos nomes que pertencem a um município mais longo. Reportada como «6 auditorias a Évora», a contagem seria 6 vezes a verdade: as outras 5 são a universidade por sua própria conta duas vezes, um relatório setorial que cobre quatro universidades, o hospital e um contrato de empreitada num museu."
   },
   {
    "emphasis": [
@@ -5426,9 +5362,9 @@
     }
    ],
    "figures": [],
-   "i": 64,
+   "i": 62,
    "kind": "paragraph",
-   "text": "O documento municipal não está sequer arquivado entre os relatórios de auditoria do Tribunal: a sua família de produto é Relatórios de Verificação Interna de Contas, a verificação interna das contas de um organismo relativas a um ano económico. O seu assunto é «Município de Évora - Gerência de 2016». O que esse instrumento conclui, e em que medida difere em profundidade de uma auditoria, não é algo que este documento lhe possa dizer — o catálogo regista a família e o título, e nada além disso."
+   "text": "O documento municipal não está sequer arquivado entre os relatórios de auditoria do Tribunal: a sua família de produto é Relatórios de Verificação Interna de Contas, a verificação interna das contas de um organismo relativas a um ano económico. O seu assunto é «Município de Évora - Gerência de 2016». O catálogo regista a família e o título, e nada além disso."
   },
   {
    "emphasis": [
@@ -5436,11 +5372,6 @@
      "end": 17,
      "kind": "strong",
      "start": 7
-    },
-    {
-     "end": 348,
-     "kind": "strong",
-     "start": 260
     }
    ],
    "figures": [
@@ -5454,22 +5385,22 @@
      "value": "2019"
     }
    ],
-   "i": 65,
+   "i": 63,
    "kind": "paragraph",
-   "text": "Não há nada desde o relatório de 2019 nestas quatro famílias que nomeie Évora — uma pesquisa sobre o corpus inteiro, para lá das seis linhas acima. É tentador ler isso como um registo do auditor que não cobre os anos em que o dinheiro da recuperação se moveu. Essa leitura está errada, e são as sondagens deste próprio documento que mostram porquê. Ficam expostas na secção seguinte, porque são a parte mais importante dela."
+   "text": "Não há nada desde o relatório de 2019 nestas quatro famílias que nomeie Évora. É tentador ler isso como um registo do auditor que não cobre os anos em que o dinheiro da recuperação se moveu. Essa leitura está errada."
   },
   {
    "figures": [],
-   "i": 66,
+   "i": 64,
    "kind": "heading",
    "level": 3,
    "text": "Porque é que um silêncio aqui não é um silêncio"
   },
   {
    "figures": [],
-   "i": 67,
+   "i": 65,
    "kind": "paragraph",
-   "text": "Dois pontos cegos, ambos medidos e não presumidos."
+   "text": "Dois pontos cegos."
   },
   {
    "emphasis": [
@@ -5512,12 +5443,12 @@
      "value": "2"
     }
    ],
-   "i": 68,
+   "i": 66,
    "kind": "paragraph",
    "text": "As quatro famílias não são a produção do Tribunal. São quatro das famílias de produtos que ele publica. Uma quinta — Relatórios de Apuramento de Responsabilidades, 192 documentos — contém 2 relatórios cujo assunto é o próprio Município de Évora:"
   },
   {
-   "i": 69,
+   "i": 67,
    "items": [
     {
      "figures": [
@@ -5630,7 +5561,7 @@
   },
   {
    "figures": [],
-   "i": 70,
+   "i": 68,
    "kind": "paragraph",
    "text": "Portanto, a verdadeira contagem de documentos catalogados do Tribunal sobre este município é de pelo menos três, e não de um, e a pesquisa por quatro famílias não consegue ver dois deles."
   },
@@ -5640,11 +5571,6 @@
      "end": 56,
      "kind": "strong",
      "start": 0
-    },
-    {
-     "end": 361,
-     "kind": "em",
-     "start": 355
     }
    ],
    "figures": [
@@ -5662,7 +5588,7 @@
      "value": "13"
     }
    ],
-   "i": 71,
+   "i": 69,
    "kind": "paragraph",
    "links": [
     {
@@ -5671,30 +5597,23 @@
      "start": 247
     }
    ],
-   "text": "O catálogo indexa resumos, não os corpos dos relatórios. Uma auditoria temática sobre a forma como os municípios do continente financiam os seus corpos de bombeiros não traz qualquer menção a Évora na sua entrada de catálogo — e nomeia o concelho 13 vezes no seu próprio texto, incluindo a sua posição nas tabelas do próprio Tribunal. Esse relatório está dentro de uma família que este documento pesquisou. Ainda assim, a pesquisa não o conseguiu encontrar."
+   "text": "O catálogo indexa resumos, não os corpos dos relatórios. Uma auditoria temática sobre a forma como os municípios do continente financiam os seus corpos de bombeiros não traz qualquer menção a Évora na sua entrada de catálogo — e nomeia o concelho 13 vezes no seu próprio texto, incluindo a sua posição nas tabelas do próprio Tribunal."
   },
   {
-   "emphasis": [
-    {
-     "end": 152,
-     "kind": "strong",
-     "start": 43
-    }
-   ],
    "figures": [
     {
-     "end": 115,
+     "end": 56,
      "printed": "2019",
      "row": "tc-year-21-2019",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 111,
+     "start": 52,
      "value": "2019"
     }
    ],
-   "i": 72,
+   "i": 70,
    "kind": "paragraph",
-   "text": "A afirmação honesta é, por isso, estreita: nas quatro famílias que este documento lê, nada publicado depois de 2019 nomeia Évora no título ou no resumo. Qualquer coisa mais forte — que Évora não foi examinada, que os anos da recuperação ficaram por auditar — é refutada pelas duas sondagens acima."
+   "text": "Nas quatro famílias lidas, nada publicado depois de 2019 nomeia Évora no título ou no resumo. Qualquer coisa mais forte — que Évora não foi examinada, que os anos da recuperação ficaram por auditar — é refutada pelas duas sondagens acima."
   },
   {
    "emphasis": [
@@ -5740,25 +5659,25 @@
      "value": "308"
     }
    ],
-   "i": 73,
+   "i": 71,
    "kind": "paragraph",
    "text": "Évora é um nome invulgarmente limpo para pesquisar: o emparelhador levanta 0 riscos estruturais contra ele, isto é, sem risco estrutural de sobre-correspondência. Não é um dos dois nomes de município portugueses que pertencem a dois lugares ao mesmo tempo, e não é uma palavra inteira dentro do nome de um município mais longo. O repertório usado para o estabelecer é a lista viva do próprio INE, com 308 municípios. Nomes que falham esses testes comportam-se de forma muito diferente — uma pesquisa por «Guarda» neste catálogo devolve a guarda nacional, e não a cidade."
   },
   {
    "figures": [],
-   "i": 74,
+   "i": 72,
    "kind": "heading",
    "level": 3,
    "text": "Os nomes do lado do dinheiro, no catálogo de auditorias"
   },
   {
    "figures": [],
-   "i": 75,
+   "i": 73,
    "kind": "paragraph",
-   "text": "Os organismos que detêm o dinheiro do PRR de Évora e assinam os seus contratos foram pesquisados pelo nome no mesmo catálogo. Esta é a única junção que a fonte permite, e é uma junção sobre palavras."
+   "text": "A única junção que a fonte permite é uma junção sobre palavras."
   },
   {
-   "i": 76,
+   "i": 74,
    "kind": "table",
    "rows": [
     [
@@ -6048,14 +5967,14 @@
   {
    "emphasis": [
     {
-     "end": 284,
+     "end": 239,
      "kind": "em",
-     "start": 240
+     "start": 195
     }
    ],
    "figures": [
     {
-     "end": 177,
+     "end": 132,
      "others": [
       "comp-c07-overdue",
       "proj-malagueira-paid",
@@ -6073,11 +5992,11 @@
      "row": "tcq-instituto-da-habitacao-e-da-reabilitacao-urbana",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 176,
+     "start": 131,
      "value": "0"
     },
     {
-     "end": 218,
+     "end": 173,
      "others": [
       "comp-c08-overdue",
       "base-municipio-spellings",
@@ -6090,11 +6009,11 @@
      "row": "tcq-universidade-de-evora",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 217,
+     "start": 172,
      "value": "2"
     },
     {
-     "end": 521,
+     "end": 476,
      "others": [
       "tc-year-1-2008"
      ],
@@ -6102,11 +6021,11 @@
      "row": "tc-year-20-2008",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 517,
+     "start": 472,
      "value": "2008"
     },
     {
-     "end": 656,
+     "end": 611,
      "others": [
       "comp-c08-overdue",
       "base-municipio-spellings",
@@ -6119,13 +6038,13 @@
      "row": "tcq-universidade-de-evora",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 655,
+     "start": 610,
      "value": "2"
     }
    ],
-   "i": 77,
+   "i": 75,
    "kind": "paragraph",
-   "text": "O instituto da habitação está duas vezes nessa tabela, e é a linha mais instrutiva deste documento. Pesquisado sob o nome que o registo do plano de recuperação lhe dá, devolve 0. Pesquisado sob o seu acrónimo devolve 2 — o Tribunal escreve Instituto de Habitação e Reabilitação Urbana, sem os dois «da» que o outro registo usa, pelo que uma correspondência exata de símbolos vê dois organismos diferentes. O primeiro número é um zero falso. A mesma fragilidade corre em sentido contrário na tabela acima: o resumo de 2008 do próprio Tribunal escreve «Universidade do Évora», que o nome correto da universidade não faz corresponder, pelo que a contagem de 2 da universidade fica ela própria uma unidade abaixo dos documentos que a nomeiam."
+   "text": "O instituto da habitação está duas vezes nessa tabela. Pesquisado sob o nome que o registo do plano de recuperação lhe dá, devolve 0. Pesquisado sob o seu acrónimo devolve 2 — o Tribunal escreve Instituto de Habitação e Reabilitação Urbana, sem os dois «da» que o outro registo usa, pelo que uma correspondência exata de símbolos vê dois organismos diferentes. O primeiro número é um zero falso. A mesma fragilidade corre em sentido contrário na tabela acima: o resumo de 2008 do próprio Tribunal escreve «Universidade do Évora», que o nome correto da universidade não faz corresponder, pelo que a contagem de 2 da universidade fica ela própria uma unidade abaixo dos documentos que a nomeiam."
   },
   {
    "figures": [
@@ -6191,21 +6110,21 @@
      "value": "1"
     }
    ],
-   "i": 78,
+   "i": 76,
    "kind": "paragraph",
    "text": "Um zero nessa tabela é, por isso, um sinal fraco, e por três razões. Um nome pode estar escrito de outra forma, como aqui. O resumo pode simplesmente não nomear o organismo mesmo quando o relatório é sobre ele, e as próprias bibliotecas reportam ter mais itens do que a interface devolve — 10 linhas ao todo: 2 na biblioteca de relatórios de auditoria, 7 na verificação externa de contas e 1 na verificação interna, sem causa estabelecida e com a paginação a não as recuperar. Um resultado nulo aqui significa «não encontrado no catálogo por este método», nunca «não auditado»."
   },
   {
    "emphasis": [
     {
-     "end": 242,
+     "end": 150,
      "kind": "strong",
-     "start": 195
+     "start": 103
     }
    ],
    "figures": [
     {
-     "end": 160,
+     "end": 68,
      "others": [
       "fin-habevora-projects"
      ],
@@ -6213,11 +6132,11 @@
      "row": "tcq-espirito-santo",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 159,
+     "start": 67,
      "value": "8"
     },
     {
-     "end": 184,
+     "end": 92,
      "others": [
       "tc-gap-vec"
      ],
@@ -6225,35 +6144,35 @@
      "row": "tcq-divino-espirito-santo",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 183,
+     "start": 91,
      "value": "7"
     }
    ],
-   "i": 79,
+   "i": 77,
    "kind": "paragraph",
-   "text": "Vale a pena mostrar uma sobre-correspondência, porque é o mesmo modo de falha ao contrário. Pesquisar o fragmento de nome do hospital «Espírito Santo» devolve 8 documentos, dos quais 7 nomeiam o Hospital Divino Espírito Santo de Ponta Delgada — um hospital diferente, nos Açores. As palavras corresponderam; o assunto não. Só um dos oito é o hospital de Évora."
+   "text": "Pesquisar o fragmento de nome do hospital «Espírito Santo» devolve 8 documentos, dos quais 7 nomeiam o Hospital Divino Espírito Santo de Ponta Delgada — um hospital diferente, nos Açores. As palavras corresponderam; o assunto não. Só um dos oito é o hospital de Évora."
   },
   {
-   "i": 80,
+   "i": 78,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 81,
+   "i": 79,
    "kind": "heading",
    "level": 2,
    "text": "O que os dados da UE não conseguem dizer"
   },
   {
    "figures": [],
-   "i": 82,
+   "i": 80,
    "kind": "paragraph",
-   "text": "Não existe um valor da UE para o concelho de Évora. Não é «não o conseguimos encontrar» — a granularidade não existe na fonte."
+   "text": "Não existe um valor da UE para o concelho de Évora. A granularidade não existe na fonte."
   },
   {
    "figures": [
     {
-     "end": 86,
+     "end": 58,
      "others": [
       "eu-kohesio-projects"
      ],
@@ -6261,11 +6180,11 @@
      "row": "eu-kohesio-period-rows",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 81,
+     "start": 53,
      "value": "2 569"
     },
     {
-     "end": 111,
+     "end": 83,
      "others": [
       "comp-c11-locations",
       "comp-c11-overdue",
@@ -6278,11 +6197,11 @@
      "row": "tcq-administracao-central-do-sistema-de-saude",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 110,
+     "start": 82,
      "value": "3"
     },
     {
-     "end": 169,
+     "end": 141,
      "others": [
       "eu-kohesio-projects"
      ],
@@ -6290,13 +6209,13 @@
      "row": "eu-kohesio-period-rows",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 164,
+     "start": 136,
      "value": "2 569"
     }
    ],
-   "i": 83,
+   "i": 81,
    "kind": "paragraph",
-   "text": "As sondagens, para registo. O conjunto de dados da UE ao nível de projeto coloca 2 569 projetos na região NUTS3 que contém Évora, à qual chama Alentejo Central. Os 2 569 carregam, sem exceção, o período de programação 2014-2020 — um ciclo de financiamento anterior, e um instrumento diferente do plano de recuperação cujos valores abrem este documento. Pôr os dois lado a lado seria comparar coisas diferentes. O conjunto de dados não tem campo de concelho e, para Portugal, o código postal está vazio em cada linha."
+   "text": "O conjunto de dados da UE ao nível de projeto coloca 2 569 projetos na região NUTS3 que contém Évora, à qual chama Alentejo Central. Os 2 569 carregam, sem exceção, o período de programação 2014-2020 — um ciclo de financiamento anterior, e um instrumento diferente do plano de recuperação cujos valores abrem este documento. Pôr os dois lado a lado seria comparar coisas diferentes. O conjunto de dados não tem campo de concelho e, para Portugal, o código postal está vazio em cada linha."
   },
   {
    "figures": [
@@ -6315,23 +6234,23 @@
      "value": "14"
     }
    ],
-   "i": 84,
+   "i": 82,
    "kind": "paragraph",
    "text": "O tamanho do problema de agregação é o que está em causa. O Alentejo Central contém 14 municípios, segundo a própria dimensão geográfica do INE: Alandroal, Arraiolos, Borba, Estremoz, Montemor-o-Novo, Mora, Mourão, Portel, Redondo, Reguengos de Monsaraz, Vendas Novas, Viana do Alentejo, Vila Viçosa, Évora. Um valor para essa região é um valor para todos eles."
   },
   {
    "figures": [
     {
-     "end": 103,
+     "end": 69,
      "printed": "25",
      "row": "ine-nuts3-entries",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 101,
+     "start": 67,
      "value": "25"
     },
     {
-     "end": 118,
+     "end": 84,
      "others": [
       "comp-c11-locations",
       "comp-c11-overdue",
@@ -6344,21 +6263,21 @@
      "row": "tcq-administracao-central-do-sistema-de-saude",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 117,
+     "start": 83,
      "value": "3"
     }
    ],
-   "i": 85,
+   "i": 83,
    "kind": "paragraph",
-   "text": "Uma nota de rodapé sobre códigos: o PRR publica a versão mais antiga da NUTS — a mesma dimensão traz 25 entradas NUTS3 — enquanto os dados de projetos da UE usam uma versão mais recente. Ambos chamam à região Alentejo Central; os códigos não são intermutáveis, e passar um ao outro devolve zero linhas com um estado HTTP perfeitamente saudável."
+   "text": "O PRR publica a versão mais antiga da NUTS — a mesma dimensão traz 25 entradas NUTS3 — enquanto os dados de projetos da UE usam uma versão mais recente. Ambos chamam à região Alentejo Central; os códigos não são intermutáveis, e passar um ao outro devolve zero linhas com um estado HTTP perfeitamente saudável."
   },
   {
-   "i": 86,
+   "i": 84,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 87,
+   "i": 85,
    "kind": "heading",
    "level": 2,
    "text": "O que concluir disto"
@@ -6366,61 +6285,43 @@
   {
    "emphasis": [
     {
-     "end": 403,
+     "end": 413,
      "kind": "em",
-     "start": 391
-    }
-   ],
-   "figures": [],
-   "i": 88,
-   "kind": "paragraph",
-   "text": "Tudo o que está acima é o registo; esta secção é uma leitura dele, acrescentada a pedido do dono e assinada pelo seu autor: foi escrita pelo modelo que montou o documento, e é a parte que vai além do que as fontes afirmam. Cada valor nela repete uma linha do registo de afirmações já impressa acima; as ligações e a ênfase são interpretação, e as frases que interpretam levam o mesmo rótulo (inferência) que o resto do documento usa. Fica do lado de cá da linha que a primeira secção traça — onde assentam o dinheiro e o risco é uma leitura de registos; se alguém geriu bem ou mal exigiria as auditorias que este documento não abre."
-  },
-  {
-   "emphasis": [
-    {
-     "end": 76,
-     "kind": "strong",
-     "start": 0
-    },
-    {
-     "end": 490,
-     "kind": "em",
-     "start": 478
+     "start": 401
     }
    ],
    "figures": [
     {
-     "end": 130,
+     "end": 53,
      "printed": "61,32",
      "row": "prr-overdue-approved-share",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 125,
+     "start": 48,
      "value": "61.32"
     },
     {
-     "end": 271,
+     "end": 194,
      "printed": "1 011",
      "row": "prr-ontime-exactdate",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 266,
+     "start": 189,
      "value": "1 011"
     },
     {
-     "end": 281,
+     "end": 204,
      "printed": "1 445",
      "row": "prr-ontime-evora",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 276,
+     "start": 199,
      "value": "1 445"
     }
    ],
-   "i": 89,
+   "i": 86,
    "kind": "paragraph",
-   "text": "Começar pela fatia que está atrasada, e depois decidir o que valem as datas. As localizações de projeto vencidas transportam 61,32 % de tudo o que foi aprovado para o concelho, e as datas de conclusão que suavizariam essa leitura são o campo mais frágil do registo: 1 011 das 1 445 localizações dentro do prazo caem exatamente na data prevista. Uma data destas é um toque de teclado; um desembolso é uma transação. Onde os dois tipos de campo discordam, acredite nos pagamentos (inferência)."
+   "text": "As localizações de projeto vencidas transportam 61,32 % de tudo o que foi aprovado para o concelho, e as datas de conclusão que suavizariam essa leitura são o campo mais frágil do registo: 1 011 das 1 445 localizações dentro do prazo caem exatamente na data prevista. Uma data destas é um toque de teclado; um desembolso é uma transação. Onde os dois tipos de campo discordam, acredite nos pagamentos (inferência)."
   },
   {
    "emphasis": [
@@ -6430,9 +6331,9 @@
      "start": 0
     },
     {
-     "end": 452,
+     "end": 434,
      "kind": "em",
-     "start": 440
+     "start": 422
     }
    ],
    "figures": [
@@ -6477,9 +6378,9 @@
      "value": "5 314 868"
     }
    ],
-   "i": 90,
+   "i": 87,
    "kind": "paragraph",
-   "text": "Duas promessas em particular têm a forma de um problema. A residência de estudantes e a aquisição de equipamento hospitalar estão entre as cinco maiores localizações de projeto do concelho, ambas com a data prevista já passada, e ambas paradas em €0 pagos contra €7 483 162 e €5 314 868 aprovados. Na leitura acima, são estes os sinais de alarme credíveis, porque a coluna dos pagamentos — o campo mais duro — é a que diz que nada se moveu (inferência)."
+   "text": "Duas promessas em particular têm a forma de um problema. A residência de estudantes e a aquisição de equipamento hospitalar estão entre as cinco maiores localizações de projeto do concelho, ambas com a data prevista já passada, e ambas paradas em €0 pagos contra €7 483 162 e €5 314 868 aprovados. São estes os sinais de alarme credíveis, porque a coluna dos pagamentos — o campo mais duro — é a que diz que nada se moveu (inferência)."
   },
   {
    "emphasis": [
@@ -6517,26 +6418,21 @@
      "value": "12 069 013"
     }
    ],
-   "i": 91,
+   "i": 88,
    "kind": "paragraph",
    "text": "O endereço da responsabilização, na maior parte dos casos, não são os paços do concelho. As tabelas de beneficiários acima já o dizem: a universidade detém €38 596 976 contratados contra €12 069 013 do município, e a camada que administra o dinheiro é feita de agências nacionais. Um leitor que queira ver este total explicado deve dirigir as suas perguntas aos organismos nacionais e à universidade mais vezes do que à câmara (inferência)."
   },
   {
    "emphasis": [
     {
-     "end": 128,
-     "kind": "strong",
-     "start": 0
-    },
-    {
-     "end": 903,
+     "end": 809,
      "kind": "em",
-     "start": 891
+     "start": 797
     }
    ],
    "figures": [
     {
-     "end": 184,
+     "end": 134,
      "others": [
       "comp-c11-overdue",
       "base-place-checks",
@@ -6549,31 +6445,31 @@
      "row": "comp-c11-locations",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 183,
+     "start": 133,
      "value": "3"
     },
     {
-     "end": 228,
+     "end": 178,
      "printed": "282",
      "row": "base-ulsac-group-contracts",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 225,
+     "start": 175,
      "value": "282"
     },
     {
-     "end": 262,
+     "end": 212,
      "printed": "29 580 141",
      "row": "base-ulsac-group-sum",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 252,
+     "start": 202,
      "value": "29 580 141"
     }
    ],
-   "i": 92,
+   "i": 89,
    "kind": "paragraph",
-   "text": "Os registos são individualmente abertos e coletivamente impossíveis de juntar, e isso é uma constatação, não uma nota de rodapé. Dentro de um registo, um grupo hospitalar precisou de 3 grafias fundidas antes de aparecer como 282 contratos no valor de €29 580 141; entre registos, o mesmo organismo surge sob nomes que uma junção perderia, e uma pesquisa pelo instituto da habitação devolveu um zero que um verificador teve de expor como falso. A culpa não está em identificadores em falta — o registo da recuperação transporta um número fiscal nas suas linhas de entidades, e o registo de contratos entrega um contrato a contrato — mas em onde eles estão: a pesquisa de contratos devolve nomes sem o número, e o catálogo de auditorias não tem campo de entidade de todo. O trabalho de seguir o dinheiro falha por isso nas costuras entre as fontes antes de falhar dentro de qualquer uma delas (inferência)."
+   "text": "Os registos são individualmente abertos e coletivamente impossíveis de juntar. Dentro de um registo, um grupo hospitalar precisou de 3 grafias fundidas antes de aparecer como 282 contratos no valor de €29 580 141; entre registos, o mesmo organismo surge sob nomes que uma junção perderia, e uma pesquisa pelo instituto da habitação devolveu um zero. A culpa não está em identificadores em falta — o registo da recuperação transporta um número fiscal nas suas linhas de entidades, e o registo de contratos entrega um contrato a contrato — mas em onde eles estão: a pesquisa de contratos devolve nomes sem o número, e o catálogo de auditorias não tem campo de entidade de todo. O trabalho de seguir o dinheiro falha por isso nas costuras entre as fontes antes de falhar dentro de qualquer uma delas (inferência)."
   },
   {
    "emphasis": [
@@ -6616,7 +6512,7 @@
      "value": "2"
     }
    ],
-   "i": 93,
+   "i": 90,
    "kind": "paragraph",
    "text": "O rasto de auditoria pesquisável é mais fino exatamente onde o dinheiro é mais espesso. Nas quatro famílias lidas, nada publicado depois de 2019 nomeia Évora no título ou no resumo — e esses são os anos em que o dinheiro da recuperação se moveu. As sondagens do próprio documento proíbem a leitura forte: o catálogo não vê o interior dos relatórios, e uma quinta família guarda 2 relatórios sobre o município que a pesquisa por quatro famílias não consegue alcançar. O que sobrevive é o ponto prático: um cidadão que vá à procura de um exame desses anos não o encontrará pela pesquisa deste catálogo, o que quer que de facto tenha sido examinado (inferência)."
   },
@@ -6644,134 +6540,23 @@
      "value": "2019"
     }
    ],
-   "i": 94,
+   "i": 91,
    "kind": "paragraph",
    "text": "Se este documento merecer uma sequela, os dados dizem para a apontar à saúde. O equipamento para o novo hospital central do Alentejo está aprovado e por desembolsar, com a data já passada. Na janela de contratos, o grupo da saúde fica como a mais ativa entidade adjudicante da janela lida depois de fundidas as suas grafias. Na tabela de auditorias acima, os cuidados hospitalares do concelho aparecem pela última vez através de um relatório de 2019 sobre remunerações de dirigentes. Dinheiro, risco de entrega e um rasto pesquisável fino concentram-se no mesmo canto da mesma cidade (inferência)."
   },
   {
-   "emphasis": [
-    {
-     "end": 68,
-     "kind": "strong",
-     "start": 0
-    },
-    {
-     "end": 574,
-     "kind": "em",
-     "start": 562
-    }
-   ],
-   "figures": [],
-   "i": 95,
-   "kind": "paragraph",
-   "text": "O que transformaria esta leitura em conhecimento é curto e concreto. Ler os PDF do Tribunal que este documento liga, que é onde as conclusões realmente vivem; pôr as contas da própria câmara contra os dados de finanças municipais da DGAL, que a secção seguinte nomeia como a fonte em falta; e guardar os instantâneos diários, porque o registo apaga a sua própria história e uma tendência existirá onde estas observações se acumularem. Até lá, a aterragem honesta é a que esta secção tentou dar: não um veredicto, mas um mapa de onde procurar veredictos primeiro (inferência)."
-  },
-  {
-   "i": 96,
+   "i": 92,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 97,
+   "i": 93,
    "kind": "heading",
    "level": 2,
-   "text": "O que este documento não responde"
+   "text": "Fontes"
   },
   {
-   "i": 98,
-   "items": [
-    {
-     "emphasis": [
-      {
-       "end": 45,
-       "kind": "strong",
-       "start": 0
-      }
-     ],
-     "figures": [],
-     "text": "Se o dinheiro público de Évora foi bem gasto. Nada aqui lê as constatações de uma auditoria. As conclusões do Tribunal existem; não foram recolhidas."
-    },
-    {
-     "emphasis": [
-      {
-       "end": 42,
-       "kind": "strong",
-       "start": 0
-      }
-     ],
-     "figures": [],
-     "text": "Quanto é que o Tribunal já examinou Évora. Este documento pesquisou quatro famílias de produtos por título e resumo, e consegue nomear um piso, não um total. Duas das suas próprias sondagens mostram que o piso está bem abaixo da verdade."
-    },
-    {
-     "emphasis": [
-      {
-       "end": 53,
-       "kind": "strong",
-       "start": 0
-      }
-     ],
-     "figures": [],
-     "text": "Porque estão vencidos os projetos que estão vencidos. A fonte regista a aprovação, as datas e o pagamento. Não regista razões."
-    },
-    {
-     "emphasis": [
-      {
-       "end": 27,
-       "kind": "strong",
-       "start": 0
-      }
-     ],
-     "figures": [],
-     "text": "O que a própria câmara fez. A maior parte deste dinheiro move-se através de agências nacionais e de outros organismos públicos. Uma pergunta de contabilidade ao nível da câmara precisa dos dados de finanças municipais da DGAL, que este documento não usa."
-    },
-    {
-     "emphasis": [
-      {
-       "end": 50,
-       "kind": "strong",
-       "start": 0
-      }
-     ],
-     "figures": [],
-     "text": "Como se compara Évora com um município semelhante. Os totais de contratos não podem ser comparados entre concelhos sem contar duas vezes os contratos executados em vários lugares, e a comparação do PRR seria um exercício à parte."
-    },
-    {
-     "emphasis": [
-      {
-       "end": 30,
-       "kind": "strong",
-       "start": 0
-      }
-     ],
-     "figures": [
-      {
-       "end": 160,
-       "printed": "2026",
-       "row": "tc-year-max",
-       "source_digest_kind": "api-viva",
-       "source_sha256": null,
-       "start": 156,
-       "value": "2026"
-      }
-     ],
-     "text": "O que mudou ao longo do tempo. O plano de recuperação sobrepõe-se ao seu próprio instantâneo a cada dia. As observações aqui registadas começam em julho de 2026, pelo que ainda não existe uma tendência — apenas o começo de uma."
-    }
-   ],
-   "kind": "list",
-   "ordered": false
-  },
-  {
-   "i": 99,
-   "kind": "rule"
-  },
-  {
-   "figures": [],
-   "i": 100,
-   "kind": "paragraph",
-   "text": "Tudo foi recolhido em direto para este documento."
-  },
-  {
-   "i": 101,
+   "i": 94,
    "kind": "table",
    "rows": [
     [

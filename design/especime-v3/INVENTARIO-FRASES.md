@@ -515,7 +515,7 @@ e por isso conteúdo.*
 | conteudo | % of the budget was actually collected in the latest year of accounts | até 2026-08-26 |
 | conteudo | % quatro anos antes | até 2026-08-26 |
 | conteudo | % ten years later | até 2026-08-26 |
-| conteudo | A cross-vertical reading of one Portuguese municipality: the recovery-plan project register, the public-contracts register and the state auditor's catalogue, all fetched live on 2026-08-04, and the recovery-plan register read again on 2026-08-20. | até 2026-08-26 |
+| conteudo | A cross-cutting reading of the municipality of Évora: the recovery-plan project register, the public-contracts register and the state auditor's catalogue. | voz-dos-documentos |
 | navegacao | A ligação sai deste domínio. | até 2026-08-26 |
 | conteudo | As contas do penúltimo ano foram rejeitadas em votação e nunca foram certificadas. | até 2026-08-26 |
 | conteudo | Avaliação económica das regiões de Portugal. | até 2026-08-26 |
@@ -565,14 +565,13 @@ e por isso conteúdo.*
 | conteudo | The accounts of the second-to-last year were rejected in a vote and were never certified. | até 2026-08-26 |
 | conteudo | The archive of published studies, with their Portuguese and English editions. | até 2026-08-26 |
 | navegacao | The link leaves this domain. | até 2026-08-26 |
-| conteudo | Uma leitura transversal de um município português: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado, recolhidos em direto a 2026-08-04, e o registo do plano de recuperação relido a 2026-08-20. | até 2026-08-26 |
+| conteudo | Uma leitura transversal do município de Évora: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado. | voz-dos-documentos |
 | conteudo | Água não faturada nos sistemas de abastecimento em Portugal. | até 2026-08-26 |
 | conteudo | € actually paid | até 2026-08-26 |
 | conteudo | € approved and attributed to the concelho by the recovery-plan register | até 2026-08-26 |
 | conteudo | € aprovados e atribuídos ao concelho pelo registo do plano de recuperação | até 2026-08-26 |
-| conteudo | € de valor acrescentado bruto das empresas sediadas no concelho | até 2026-08-26 |
+| conteudo | € de valor acrescentado bruto das empresas do concelho | voz-dos-documentos |
 | conteudo | € efetivamente pagos | até 2026-08-26 |
-| conteudo | € of gross value added by enterprises headquartered in the concelho | até 2026-08-26 |
 
 ## `/estudos/<slug>/texto` · `/en/studies/<slug>/text` (parte 3, P2)
 
@@ -694,7 +693,7 @@ mudou**, e que a régua lê como blocos novos porque o texto mudou:
 | classe | frase | bloco |
 | --- | --- | --- |
 | conteudo | € approved and attributed to the municipality by the recovery-plan register | até 2026-08-26 |
-| conteudo | € of gross value added by enterprises headquartered in the municipality | até 2026-08-26 |
+| conteudo | € of gross value added by enterprises in the municipality | voz-dos-documentos |
 | conteudo | The works about this municipality | até 2026-08-26 |
 | conteudo | The thin line is the total debt the regulator publishes for the municipality; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. | até 2026-08-26 |
 
