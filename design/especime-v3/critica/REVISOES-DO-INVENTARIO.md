@@ -35,9 +35,9 @@ leu **só o diff do inventário**. É essa a leitura que esta tabela regista.
 ## As duas colunas novas de 27.08.2026 (I74)
 
 A tabela do inventário passou de três colunas a cinco: **estado** e **razão**.
-Uma linha declara-se `viva` — rende-se em pelo menos uma rota inventariada — ou
-`retirada` — a casa tirou aquela frase de propósito, ela não pode voltar a
-render-se, e a razão da coluna a seguir diz que bloco a tirou. `npm run
+Uma linha declara-se `viva`, e então rende-se em pelo menos uma rota
+inventariada, ou `retirada`, e então a casa tirou aquela frase de propósito, ela
+não pode voltar a render-se, e a razão da coluna a seguir diz que bloco a tirou. `npm run
 check:voz` fecha a construção nos dois sentidos: uma linha `viva` que não se
 rende em rota nenhuma, e uma linha `retirada` que voltou.
 

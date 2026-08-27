@@ -742,10 +742,10 @@ const excecoesPorUsar = VOZ.excecoes
  * que repô-la passava em silêncio. Cada linha declara agora o seu estado, e esta
  * medida confere os dois sentidos:
  *
- *   · uma linha `viva` que não se rende em rota nenhuma — ou a frase mudou e a
+ *   · uma linha `viva` que não se rende em rota nenhuma: ou a frase mudou e a
  *     linha ficou para trás, ou a rota saiu; nos dois casos a lista está a
  *     mentir sobre o sítio;
- *   · uma linha `retirada` que se rende — a frase que a casa tirou voltou.
+ *   · uma linha `retirada` que se rende, que é a frase que a casa tirou a voltar.
  *
  * O QUE CONTA COMO «RENDER-SE» É A UNIÃO DAS DUAS VARREDURAS, a da medida 8 (os
  * blocos de texto da casa) e a da medida 9 (o texto fora das origens
