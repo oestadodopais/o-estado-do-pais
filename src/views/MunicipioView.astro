@@ -292,9 +292,10 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
 /* Há corpo? É a pergunta que decide se a disposição B desenha as duas colunas.
    Cada parcela é uma secção do corpo, e nenhuma delas existe num concelho sem
    trabalho publicado: a leitura breve, a distância desenhada, as contas do
-   município, a linha do tempo, o método e os trabalhos. */
+   município, a linha do tempo e os trabalhos. A secção do método saiu com o G6
+   de 26.08.2026, e saiu daqui também. */
 const temCorpo = Boolean(
-  m.leitura || temDistancia || m.contas || temTempo || m.metodo || estudos.length > 0,
+  m.leitura || temDistancia || m.contas || temTempo || estudos.length > 0,
 );
 
 const metodoPath = routePath('metodo', lang);
@@ -509,6 +510,10 @@ const metodoPath = routePath('metodo', lang);
         <h2 class="linha-bloco-titulo" id="contas">{s.municipio.fundoK}</h2>
         <h3 class="figura-nome">{s.municipio.contasK}</h3>
         <p class="linha-nota">{s.municipio.contasV}</p>
+        {/* A RESSALVA QUE SOBREVIVEU À SECÇÃO DO MÉTODO (G6). Uma frase, com o
+            facto por sujeito, ao pé dos números a que ela muda a leitura. É
+            deste concelho e por isso vive nos dados dele, não na língua. */}
+        {m.contas.nota && <p class="linha-nota">{m.contas.nota[lang]}</p>}
 
         <dl class="mun-campos">
           <dt>{s.municipio.contasOrcamento}</dt>
@@ -915,66 +920,46 @@ const metodoPath = routePath('metodo', lang);
             </div>
           </div>
 
-          <!-- CAMADA 3 do instrumento -->
-          <details class="deep">
-            <summary>{s.municipio.tempoFundoK}</summary>
-            <div class="deep-body">
-              <div class="deep-item">
-                <div class="deep-k">{s.municipio.tempoFundoK}</div>
-                <p class="deep-v"><Frase partes={s.municipio.tempoFundoPartes} lang={lang} /></p>
-              </div>
-              <div class="deep-item">
-                <div class="deep-k">{s.municipio.tempoExcessoK}</div>
-                <p class="deep-v">
-                  <Claim id={m.tempo.excesso.de} lang={lang} chip={true} /> €{' '}
-                  <span data-nonledger="data-de-referencia">
-                    {lang === 'pt' ? m.tempo.excesso.deRef : m.tempo.excesso.deRefEn}
-                  </span>{' → '}
-                  <Claim id={m.tempo.excesso.ate} lang={lang} chip={true} /> €{' '}
-                  <span data-nonledger="data-de-referencia">
-                    {lang === 'pt' ? m.tempo.excesso.ateRef : m.tempo.excesso.ateRefEn}
-                  </span>.
-                </p>
-                <p class="deep-v">{s.municipio.tempoExcessoV}</p>
-              </div>
-              {/* A ENTRADA «QUEM RESPONDE PELO QUÊ» SAIU DA CAMADA DE FUNDO
-                  (direção, 21.08.2026, tarde; Emenda 15). Levava dois parágrafos
-                  e os dois eram a casa a falar de si: «Cinco administrações,
-                  contadas como foram instaladas e não como foram eleitas. As
-                  decisões vão atribuídas a quem as tomou…» e «Uma administração
-                  responde pelas decisões que tomou. Não responde por um índice:
-                  nada do que foi lido permite separar a parte de um executivo…
-                  Não há aqui nenhuma tabela classificativa de partidos, e não vai
-                  haver.» O que os dois prometiam está feito no desenho: as
-                  decisões levam nome e lista na banda, os índices não levam
-                  nenhum, e não há tabela nenhuma que os ordene. O nome subiu para
-                  cima da banda; um rótulo sem corpo não é um estado desenhado
-                  (IDENTIDADE.md §7), e por isso a entrada não fica vazia: sai. */}
-            </div>
-          </details>
+          {/* A NOTA DO INSTRUMENTO, SEM DOBRA (G6, decisão do diretor de
+              26.08.2026). Aqui estava uma camada «Como esta linha do tempo é
+              feita», e o nome dizia o que ela era: a página a explicar como foi
+              feita. Saiu, e com ela o parágrafo dos períodos e das duas dívidas
+              de 2013, que já está dito ao pé de cada um dos dois valores.
+
+              Fica o que muda a leitura de um número: os dois valores do excesso,
+              com a frase que diz porque é que a série pára ali, e duas frases de
+              uma linha que vieram do «Método e ressalvas» e do «O que esta
+              página não sabe», ambos retirados. Cada uma tem o facto por
+              sujeito. */}
+          <div class="mun-tempo-notas">
+            <p class="mun-distancia-legenda">
+              <span class="mun-tempo-nota-k">{s.municipio.tempoExcessoK}</span>{' · '}
+              <Claim id={m.tempo.excesso.de} lang={lang} chip={true} /> €{' '}
+              <span data-nonledger="data-de-referencia">
+                {lang === 'pt' ? m.tempo.excesso.deRef : m.tempo.excesso.deRefEn}
+              </span>{' → '}
+              <Claim id={m.tempo.excesso.ate} lang={lang} chip={true} /> €{' '}
+              <span data-nonledger="data-de-referencia">
+                {lang === 'pt' ? m.tempo.excesso.ateRef : m.tempo.excesso.ateRefEn}
+              </span>.
+            </p>
+            <p class="mun-distancia-legenda">{s.municipio.tempoExcessoV}</p>
+            <p class="mun-distancia-legenda">{s.municipio.tempoPelourosNota}</p>
+            <p class="mun-distancia-legenda">{s.municipio.tempoContrafactualNota}</p>
+          </div>
         </div>
       </section>
       )}
 
-      <!-- ===================================================== método e ressalvas -->
-      {/* As ressalvas são as que os trabalhos sobre ESTE concelho imprimem nos
-          seus próprios limites (DECISIONS §1.34). Um concelho sem trabalhos não
-          tem ressalvas para transcrever, e a casa não escreve as suas. */}
-      {m.metodo && (
-      <section class="linha-bloco" aria-labelledby="metodo">
-        <h2 class="linha-bloco-titulo" id="metodo">{s.municipio.metodoK}</h2>
-        <div class="deep-body" style="border-top:0;padding:0">
-          {
-            m.metodo.map((r) => (
-              <div class="deep-item">
-                <div class="deep-k">{r.k[lang]}</div>
-                <p class="deep-v"><Frase partes={r.v[lang]} lang={lang} /></p>
-              </div>
-            ))
-          }
-        </div>
-      </section>
-      )}
+      {/* A SECÇÃO «MÉTODO E RESSALVAS» SAIU (G6, decisão do diretor de
+          26.08.2026): esta classe de texto não é útil nem simples, e o método
+          vive no Método e no recibo de cada linha, onde cada uma leva o
+          documento, o localizador, o excerto e a derivação. Das seis ressalvas,
+          duas ficaram, cada uma como UMA frase com o facto por sujeito, no sítio
+          onde muda a leitura de um número: a das contagens de pelouros na nota
+          do instrumento dos mandatos, e a do ano de contas sem certificação na
+          nota da camada das contas. As outras quatro estão na tabela de
+          `design/especime-v3/notas/grelha-da-voz.md`, com a razão de cada uma. */}
 
       <!-- ================================================ os trabalhos do concelho -->
       {estudos.length > 0 && (
@@ -1043,24 +1028,12 @@ const metodoPath = routePath('metodo', lang);
 
       <h2 class="aparelho-titulo" id="aparelho">{s.municipio.provenienciaK}</h2>
 
-      {/* «O QUE ESTA PÁGINA NÃO SABE» É DE QUEM O SABE (bloco dos 308, P2). São
-          ressalvas lidas nos trabalhos sobre este concelho; num concelho sem
-          trabalhos não há nenhuma para transcrever, e o que lhe falta já está
-          dito nas peças vazias, em duas palavras (Emenda 15). A porta para o
-          método desce com o bloco, porque é a porta da secção que ele nomeia. */}
-      {m.naoSabe && (
-      <div class="aparelho-estado">
-        <span class="linha-campo-k">{s.municipio.naoSabeK}</span>
-        <ul class="mun-nao-sabe">
-          {
-            m.naoSabe.map((item) => (
-              <li><Frase partes={item[lang]} lang={lang} /></li>
-            ))
-          }
-        </ul>
-        <p class="rodape-nav"><a href="#metodo">{s.municipio.metodoK} →</a></p>
-      </div>
-      )}
+      {/* A LISTA «O QUE ESTA PÁGINA NÃO SABE» SAIU (G6, decisão do diretor de
+          26.08.2026), com a secção do método a que ela levava. Das seis
+          entradas, uma ficou, como UMA frase na nota do instrumento dos
+          mandatos: a de que não existe contrafactual para nenhum índice, que é a
+          que impede a banda ao lado de uma curva de dívida de se ler como uma
+          atribuição. As outras cinco estão na tabela da nota deste bloco. */}
 
       <PortaDeCorreccoes lang={lang} class="aparelho-bloco" />
 

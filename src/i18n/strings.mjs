@@ -1106,19 +1106,24 @@ export const STRINGS = {
       tempoExcessoK: 'O excesso sobre o teto legal',
       tempoExcessoV:
         'O que a dívida excedia o limite legal, no primeiro e no último ano em que o relatório o publica como um valor positivo. Depois disso o quadro passa a números negativos, que já não são excesso mas capacidade de endividamento.',
-      tempoFundoK: 'Como esta linha do tempo é feita',
-      tempoFundoPartes: [
-        'Os períodos são os das administrações tal como foram instaladas, e as datas de instalação vêm do trabalho sobre os quinze anos. Cada valor tem linha no livro-razão. As duas dívidas herdadas em ',
-        { ref: '2013' },
-        ' aparecem as duas: a que foi reportada no fim do mandato e a que um relatório posterior reexpressou. Escolher uma em silêncio seria esconder que a diferença existe.',
-      ],
+      /* AS DUAS FRASES QUE SOBREVIVERAM ÀS SECÇÕES RETIRADAS (G6, decisão do
+         diretor de 26.08.2026). A primeira vinha do «Método e ressalvas» e a
+         segunda do «O que esta página não sabe»; as duas mudam a leitura de um
+         número desenhado ao lado, e por isso ficam, cada uma como UMA frase com
+         o facto por sujeito, na nota do instrumento.
+
+         `tempoFundoK` e `tempoFundoPartes` saíram: o nome dizia o que a camada
+         era, «Como esta linha do tempo é feita», e o parágrafo explicava a
+         composição da página. O que ele dizia sobre as duas dívidas de 2013 já
+         está escrito ao pé de cada um dos dois valores. */
+      tempoPelourosNota: 'As contagens de pelouros são designações, não despesa.',
+      tempoContrafactualNota:
+        'Não existe contrafactual para nenhum índice, e a parte de um executivo neles não é separável.',
       /* Fica só como nome da secção, por cima da banda dos mandatos (direção,
          21.08.2026, tarde). O parágrafo que levava por baixo saiu com a Emenda
          15. */
       tempoAtribuicaoK: 'Quem responde pelo quê',
 
-      metodoK: 'Método e ressalvas',
-      naoSabeK: 'O que esta página não sabe',
       provenienciaK: 'Proveniência',
       estudosK: 'Os trabalhos sobre este concelho',
       estudoLink: 'Abrir a leitura',
@@ -1892,16 +1897,11 @@ export const STRINGS = {
       tempoExcessoK: 'The excess over the legal ceiling',
       tempoExcessoV:
         'How far the debt exceeded the legal limit, in the first and the last year in which the report publishes it as a positive figure. After that the table turns negative, and a negative there is no longer excess but borrowing capacity.',
-      tempoFundoK: 'How this timeline is made',
-      tempoFundoPartes: [
-        'The periods are those of the administrations as they were installed, and the installation dates come from the study of the fifteen years. Every value has a ledger row. The two debts inherited in ',
-        { ref: '2013' },
-        ' both appear: the one reported at the end of the term and the one a later report restated. Choosing one silently would hide that the difference exists.',
-      ],
+      tempoPelourosNota: 'The portfolio counts are designations, not spending.',
+      tempoContrafactualNota:
+        'There is no counterfactual for any index, and an executive’s share of them is not separable.',
       tempoAtribuicaoK: 'Who answers for what',
 
-      metodoK: 'Method and caveats',
-      naoSabeK: 'What this page does not know',
       provenienciaK: 'Provenance',
       estudosK: 'The works about this municipality',
       estudoLink: 'Open the reading',

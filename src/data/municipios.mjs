@@ -281,6 +281,18 @@ const EVORA = {
          com os seus selos e sem um valor mudado. */
       execucaoDaReceita: 'evora-execucao-da-receita-2025',
       prazoMedioDePagamento: 'evora-prazo-medio-de-pagamento-2025',
+      /* A RESSALVA QUE SOBREVIVEU À SECÇÃO DO MÉTODO (G6, decisão do diretor de
+         26.08.2026). A secção «Método e ressalvas» saiu da página; esta frase
+         fica porque muda a leitura destes números, e fica onde eles estão, com o
+         facto por sujeito e numa linha só. Vinha da entrada «Um ano de contas
+         existe sem assinatura de fora», que dizia também que o auditor emitiu
+         uma declaração de impossibilidade de certificação legal: esse é o
+         caminho até ao facto, e o facto é que as contas nunca foram
+         certificadas. */
+      nota: {
+        pt: 'As contas do penúltimo ano foram rejeitadas em votação e nunca foram certificadas.',
+        en: 'The accounts of the second-to-last year were rejected in a vote and were never certified.',
+      },
     },
 
     /* -------------------------------- a linha do tempo das administrações §1.3
@@ -531,141 +543,20 @@ const EVORA = {
       },
     },
 
-    /* ---------------------------------------------- método e ressalvas (§1.3)
-       Cada uma é a mesma coisa que um dos cinco trabalhos imprime nos seus
-       próprios limites. A frase de origem de cada uma está registada em
-       DECISIONS §1.34 com ficheiro e linha. Nenhuma vai além dela. */
-    metodo: [
-      {
-        k: { pt: 'Não existe PIB municipal', en: 'There is no municipal GDP' },
-        v: {
-          pt: ['Nenhuma fonte publica um produto interno bruto para um concelho. O que existe é o registo empresarial: as contas das empresas do concelho, que creditam toda a atividade de uma empresa a um único concelho. Não é PIB municipal, e o trabalho sobre a economia escreve porquê nos seus limites: «não capta a administração pública, a maior parte da universidade e do hospital».'],
-          en: ['No source publishes a gross domestic product for a municipality. What does exist is the business register: the accounts of the municipality’s enterprises, which credit a firm’s whole activity to a single municipality. It is not municipal GDP, and the work on the economy writes why in its own limits: «it misses public administration, most of the university and the hospital».'],
-        },
-      },
-      {
-        k: { pt: 'Duas das oito medidas são o município a falar de si', en: 'Two of the eight measures are the municipality speaking about itself' },
-        v: {
-          pt: ['A execução da receita e o prazo médio de pagamento são lidos da prestação de contas do próprio município. As duas vozes de fora sobre estas contas são a opinião assinada do auditor e a série anual da Direção-Geral das Autarquias Locais.'],
-          en: ['Revenue execution and the average payment time are read from the municipality’s own accounts. The two outside voices on these accounts are the auditor’s signed opinion and the local-government directorate’s annual series.'],
-        },
-      },
-      {
-        k: { pt: 'Um ano de contas existe sem assinatura de fora', en: 'One year of accounts exists without an outside signature' },
-        v: {
-          pt: [
-            'As contas do penúltimo ano do mandato de ',
-            { ref: '2021–2025' },
-            ' foram rejeitadas em votação e nunca foram certificadas: o auditor emitiu uma declaração de impossibilidade de certificação legal das contas.',
-          ],
-          en: [
-            'The accounts of the second-to-last year of the ',
-            { ref: '2021–2025' },
-            ' term were rejected in a vote and were never certified: the auditor issued a declaration that the accounts could not be legally certified.',
-          ],
-        },
-      },
-      {
-        k: { pt: 'Duas vozes de fora, não uma', en: 'Two outside voices, not one' },
-        v: {
-          pt: ['Sobre as contas deste município existem duas vozes que não são a dele: a opinião assinada do auditor independente, e a série anual da Direção-Geral das Autarquias Locais, que publica por município e por ano o mesmo conceito legal de dívida que o relatório usa, compilada do lado de fora.'],
-          en: ['On this municipality’s accounts there are two voices that are not its own: the independent auditor’s signed opinion, and the local-government directorate’s annual series, which publishes per municipality and per year the same legal debt concept the report uses, compiled from outside.'],
-        },
-      },
-      {
-        k: { pt: 'Nenhuma fonte publica dinheiro por pelouro', en: 'No source publishes money per portfolio' },
-        v: {
-          pt: ['As contagens de pelouros são designações, não despesa. A correspondência entre as contas e os pelouros existe num dos trabalhos, e é declarada por ele como sua e não como oficial. Esse trabalho fixa também a regra: descrição, nunca classificações.'],
-          en: ['The portfolio counts are designations, not spending. The mapping between the accounts and the portfolios exists in one of the works, and is declared by it as its own and not as official. That work also sets the rule: description, never scores.'],
-        },
-      },
-      {
-        k: { pt: 'O dinheiro do plano de recuperação é atribuído pelo registo, não pela câmara', en: 'Recovery-plan money is attributed by the register, not by the council' },
-        v: {
-          pt: ['Os totais do plano de recuperação que aparecem na leitura desse trabalho são somas sobre o registo público, atribuídas ao concelho por esse registo. Do dinheiro contratado no concelho, a universidade tem mais do que o município, e a camada que administra o dinheiro é feita de organismos nacionais. Que daí resulte que o endereço da responsabilização não são os paços do concelho é a conclusão assinada desse trabalho, e está na página dele.'],
-          en: ['The recovery-plan totals that appear in that work’s reading are sums over the public register, attributed to the municipality by that register. Of the money contracted in the municipality, the university holds more than the council, and the layer that administers the money is made of national bodies. That this makes the accountability address something other than the town hall is that work’s own signed conclusion, and it sits on its page.'],
-        },
-      },
-    ],
+    /* AS SECÇÕES «MÉTODO E RESSALVAS» E «O QUE ESTA PÁGINA NÃO SABE» SAÍRAM
+       (G6, decisão do diretor de 26.08.2026). Doze parágrafos, seis de cada,
+       que eram o método e a cobertura da própria página. O método vive no
+       Método e no recibo de cada linha, onde cada uma leva o documento, o
+       localizador, o excerto e a derivação.
 
-    /* -------------------------------- o que esta página não sabe (aparelho)
-     *
-     * UMA RESSALVA, UMA CASA (16.08.2026, DECISIONS §1.40). Quatro destes itens
-     * repetiam, em versão curta, uma ressalva que «Método e ressalvas» já diz
-     * por inteiro e com a frase do trabalho que a sustenta: não existe PIB
-     * municipal; duas das oito medidas são o município a falar de si; um ano de
-     * contas existe sem assinatura de fora; nenhuma fonte publica dinheiro por
-     * pelouro. Saíram daqui e ficaram lá, que é onde estão ditas com a sua
-     * prova; o aparelho ganhou a porta para a secção, com o rótulo dela e sem
-     * uma palavra nova. Nenhum valor, nenhum selo e nenhuma frase de trabalho
-     * mudou.
-     */
-    naoSabe: [
-      {
-        pt: ['Não existe medida de desempenho por pessoa. As contas públicas não são cortadas dessa maneira.'],
-        en: ['There is no per-person performance measure. Public accounts are not cut that way.'],
-      },
-      {
-        pt: [
-          'A repartição de pelouros do mandato de ',
-          { ref: '2009–2013' },
-          ' não foi estabelecida: o presidente desse mandato, e todos os outros membros dele, não foram identificados.',
-        ],
-        en: [
-          'The portfolio split of the ',
-          { ref: '2009–2013' },
-          ' term was not established: the president of that mandate, and every other member of it, were not identified.',
-        ],
-      },
-      {
-        pt: [
-          'O nome legal completo do presidente interino de ',
-          { ref: '2013' },
-          ' é ',
-          { marcador: 'a verificar', gloss: 'to verify' },
-          ' nas palavras do próprio trabalho: duas fontes oficiais dão nomes completos diferentes para o mesmo homem. «Manuel Melgão» é a forma que o próprio município usa.',
-        ],
-        en: [
-          'The full legal name of the interim president of ',
-          { ref: '2013' },
-          ' is ',
-          { marcador: 'a verificar', gloss: 'to verify' },
-          ' in the work’s own words: two official sources give different full names for the same man. «Manuel Melgão» is the form the municipality itself uses.',
-        ],
-      },
-      {
-        pt: ['Não existe contrafactual para nenhum índice. Nada do que foi lido permite separar a parte de um executivo neles.'],
-        en: ['There is no counterfactual for any index. Nothing that was read allows an executive’s share of them to be separated out.'],
-      },
-      {
-        pt: [
-          'Os valores da Direção-Geral das Autarquias Locais para ',
-          { ref: '2017' },
-          ' e ',
-          { ref: '2021' },
-          ' trazem ressalvas do próprio ficheiro (uma nota de rodapé em ',
-          { ref: '2017' },
-          ', «dados provisórios» em ',
-          { ref: '2021' },
-          '), ditas na linha de cada um.',
-        ],
-        en: [
-          'The local-government directorate’s values for ',
-          { ref: '2017' },
-          ' and ',
-          { ref: '2021' },
-          ' carry caveats written into the file itself (a footnote in ',
-          { ref: '2017' },
-          ', «dados provisórios» in ',
-          { ref: '2021' },
-          '), said on each row.',
-        ],
-      },
-      {
-        pt: ['Sobre o plano de recuperação: o trabalho lê o catálogo do tribunal de contas, não as suas auditorias; a janela de contratos é um limite superior sobre um período truncado; e não existe um valor da União Europeia para um município.'],
-        en: ['On the recovery plan: the work reads the state auditor’s catalogue, not its audits; the contracts window is an upper bound on a truncated period; and no European Union figure exists for a municipality.'],
-      },
-    ],
+       Três ressalvas sobreviveram, cada uma como UMA frase com o facto por
+       sujeito, no sítio onde muda a leitura de um número: o ano de contas sem
+       certificação, em `contas.nota` aqui em cima; as contagens de pelouros que
+       são designações e o contrafactual que não existe, nas duas notas do
+       instrumento dos mandatos (`municipio.tempoPelourosNota` e
+       `municipio.tempoContrafactualNota`). As outras nove estão na tabela de
+       `design/especime-v3/notas/grelha-da-voz.md`, com a razão de cada uma. */
+
 
     /* ------------------------------------------ os trabalhos sobre o concelho */
     estudos: [
