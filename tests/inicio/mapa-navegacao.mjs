@@ -391,6 +391,45 @@ for (const largura of [1280, 390]) {
 /* ========================================================================== */
 /* N4 · o mapa é navegação                                                    */
 /* ========================================================================== */
+/* ---------------------------------------------------------------------------
+ * A N4 MEDE UM MAPA QUE A PRIMEIRA PÁGINA JÁ NÃO TEM (Emenda 20, 27.08.2026)
+ * ---------------------------------------------------------------------------
+ * Esta secção mede os 308 pontos da primeira página: o clique no meio de um
+ * ponto, o nome que o rato lê, as setas que percorrem os vizinhos e o Home que
+ * volta ao arranque. A Emenda 20 tirou os pontos da primeira página e pôs lá as
+ * 29 unidades da Carta como áreas; o mapa de pontos continua a existir, no
+ * cartão localizador da página do concelho, onde a Emenda 20d o deixou, e ali
+ * não há ligação nenhuma nem leitura em voz alta.
+ *
+ * A SECÇÃO NÃO SE APAGA E NÃO SE FINGE PASSADA. Corre quando a primeira página
+ * ainda tiver pontos, e quando não tiver regista uma régua que diz onde é que o
+ * que ela media passou a ser medido: `tests/inicio/mapa-distritos.mjs`, células
+ * M5 e M6. As N1, N2 e N3 continuam a medir o que medem, porque o que elas
+ * medem não mudou: os endereços antigos, o mapa que não cresce e não toma a roda
+ * do rato, e o comando «Concelho».
+ *
+ * Reescrevê-la para as áreas seria escrever a régua do mapa novo dentro da régua
+ * do mapa velho, e essa régua já existe e tem os seus estragos plantados.
+ * --------------------------------------------------------------------------- */
+{
+  const p = await pagina();
+  await p.goto(`${base}/`, { waitUntil: 'networkidle' });
+  var HA_PONTOS = await p.evaluate(
+    () => document.querySelectorAll('[data-pontos] [data-caop]').length > 0,
+  );
+  await p.__ctx.close();
+}
+
+if (!HA_PONTOS) {
+  conta(
+    'N4 · retirada pela Emenda 20: a primeira página deixou de ter os 308 pontos',
+    true,
+    'o mapa da primeira página são as 29 unidades da Carta como áreas; o que esta secção media passou a ser medido em tests/inicio/mapa-distritos.mjs, células M5 e M6',
+  );
+} else {
+
+/* N4 · o mapa é navegação                                                    */
+/* ========================================================================== */
 
 for (const { edicao, rota, evora } of EDICOES) {
   const p = await pagina();
@@ -526,6 +565,8 @@ for (const { edicao, rota, evora } of EDICOES) {
   );
   medidas.n4Teclado = { rato, noArranque, depoisDaSeta, naSeta, noHome, noInicio };
   await p.__ctx.close();
+}
+
 }
 
 /* --------------------------------------------------------------- o relatório */

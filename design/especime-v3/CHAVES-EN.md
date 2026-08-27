@@ -856,3 +856,33 @@ do sítio.
 **As chaves da prova não são cadeias, e não saíram.** `indexaveis`, `divida` e
 `concelhos_linhas_completas` ficam em `src/lib/prova.mjs` com as suas frases de
 origem nas duas edições, e continuam recontadas pelo portão.
+
+## O mapa por distritos · Emenda 20 · 27.08.2026
+
+**Um grupo novo, `distritos`, e uma chave dentro de `inicio.mapa`.** As páginas
+das 29 unidades da Carta e o índice delas. Os nomes das unidades e dos concelhos
+não são chaves: vêm da Carta e atravessam no artefacto do motor.
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `inicio.mapa.distritosLabel` | Mapa dos distritos e das ilhas de Portugal, com uma área por unidade. | Map of the districts and islands of Portugal, one area per unit. | o nome acessível do mapa da primeira página, que mudou de desenho. O `svgLabel` do mapa de pontos fica, e continua a ser o nome do cartão localizador da página do concelho |
+| `distritos.metaTitle` | Distritos e ilhas · O Estado do País | Districts and islands · O Estado do País | «districts and islands» e não «districts»: nove das 29 são ilhas dos Açores e duas da Madeira, e é assim que a Carta lhes chama |
+| `distritos.metaDescription` | Os distritos e as ilhas de Portugal, pela Carta Administrativa Oficial. | The districts and islands of Portugal, from the official administrative map. | a descrição nomeia a página, como a de `/municipios` |
+| `distritos.eyebrow` | Distritos e ilhas | Districts and islands | |
+| `distritos.h1` | Os distritos e as ilhas de Portugal | The districts and islands of Portugal | |
+| `distritos.lede` | As unidades da Carta Administrativa Oficial de Portugal, e os concelhos de cada uma. | The units of the Carta Administrativa Oficial de Portugal, and the municipalities of each. | o nome da Carta não se traduz nas duas edições, como já não se traduz na lede de `/municipios` |
+| `distritos.metaCauda` | os concelhos · O Estado do País | the municipalities · O Estado do País | a cauda do `<head>` de uma unidade, composta com o nome dela; sem algarismos, como a das páginas de concelho |
+| `distritos.metaDescricaoA` · `distritos.metaDescricaoB` | Os concelhos de … , pela Carta Administrativa Oficial de Portugal. | The municipalities of … , from the Carta Administrativa Oficial de Portugal. | a descrição composta com o nome da unidade |
+| `distritos.tipoDistrito` | distrito | district | uma das duas naturezas das 29; o servidor escolhe pelo campo `tipo` do artefacto e nunca por uma leitura do nome |
+| `distritos.tipoIlha` | ilha da Região Autónoma | island of the Autonomous Region | a outra. «Autonomous Region» é o nome que a Constituição dá em inglês às duas regiões, e não «autonomous region of the Azores/Madeira»: a etiqueta é da natureza da unidade e não da região que a contém |
+| `distritos.concelhosK` | Os concelhos | The municipalities | o título da lista, na página de uma unidade |
+| `distritos.contaUnidades` | ` distritos e ilhas` | ` districts and islands` | as palavras ao lado da contagem das 29, no índice. A contagem de cada unidade não se rende, e por isso não tem cadeia |
+| `distritos.mapaLabel` | Mapa dos concelhos, com uma área por concelho. | Map of the municipalities, one area per municipality. | o nome acessível do mapa de uma unidade |
+| `distritos.legendaCarta` | Carta Administrativa Oficial de Portugal ·  | Carta Administrativa Oficial de Portugal ·  | **a mesma cadeia nas duas edições, e de propósito**: é o nome oficial do registo, e a edição inglesa já o escreve assim na lede de `/municipios`. Substitui, na página de uma unidade, a legenda «308 concelhos · CAOP 2025» da primeira página, que por baixo de dezasseis áreas se lia como a contagem do que está desenhado |
+| `distritos.voltarIndice` | Os distritos e as ilhas | The districts and islands | a porta para o índice |
+| `distritos.voltarConcelhos` | Os concelhos de Portugal | The municipalities of Portugal | a porta para `/municipios` |
+
+**Uma chave retirada antes de chegar a existir no ar:** `distritos.contaConcelhos`
+(«` concelhos`» / «` municipalities`»). Era as palavras ao lado da contagem de
+concelhos na página de uma unidade, e a contagem saiu: a lista está na página
+inteira, e a Ilha da Graciosa fazia a linha sair «1 concelhos».

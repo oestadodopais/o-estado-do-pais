@@ -15,6 +15,28 @@
  *
  * O servidor é o mesmo padrão de `scripts/medir-tipos.mjs`: um servidor de
  * ficheiros estáticos sobre `dist/`, na porta que o sistema der.
+ *
+ * ---------------------------------------------------------------------------
+ * ESTA MATRIZ PÁRA NA PRIMEIRA CÉLULA DO MAPA DE PONTOS (Emenda 20, 27.08.2026)
+ * ---------------------------------------------------------------------------
+ * A Emenda 20 tirou os 308 pontos da primeira página e pôs lá as 29 unidades da
+ * Carta como áreas. Uma dúzia de células desta matriz procuram
+ * `[data-pontos] [data-caop]`, e a primeira delas morre num `null` (2g·5, a
+ * lista de proximidade). O mapa de pontos continua a existir, no cartão
+ * localizador da página do concelho, onde a Emenda 20d o deixou.
+ *
+ * NÃO FOI REESCRITA NESTE BLOCO, E A RAZÃO ESTÁ ESCRITA PARA QUEM A REESCREVER.
+ * São células espalhadas por 2 300 linhas, e uma reescrita à pressa transforma
+ * células que passavam em células que passam por não medirem nada, que é o
+ * defeito que esta casa mais teme. O que o mapa da primeira página faz passou a
+ * ser medido em `tests/inicio/mapa-distritos.mjs`, com 22 células e quatro
+ * estragos plantados, e a régua da Emenda 19
+ * (`tests/inicio/mapa-navegacao.mjs`) foi acertada no mesmo dia: as suas N1, N2
+ * e N3 continuam a medir o que mediam e a sua N4 declara-se retirada.
+ *
+ * O que fica por fazer é decidir, célula a célula, quais destas mudam de objecto
+ * (as do mapa como instrumento: a coluna, a legenda no canto das ilhas, a
+ * postura) e quais saem com os pontos. É trabalho de quem for dono desta régua.
  */
 import fs from 'node:fs';
 import http from 'node:http';
