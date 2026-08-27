@@ -215,27 +215,6 @@ const jsonld = {
           <p class="leitura-frase"><Frase partes={leitura.frase[lang]} lang={lang} selos={true} /></p>
         </div>
 
-        <details class="deep">
-          <summary>{s.estudos.leituraFundoK}</summary>
-          <div class="deep-body">
-            {leitura.metodo.map((r) => (
-              <div class="deep-item">
-                <div class="deep-k">{r.k[lang]}</div>
-                <p class="deep-v"><Frase partes={r.v[lang]} lang={lang} /></p>
-                {r.valores.length > 0 && (
-                  <p class="deep-v">
-                    {r.valores.map((v, i) => (
-                      <>
-                        {i > 0 ? ' · ' : ''}
-                        <Claim id={v} lang={lang} chip={true} />
-                      </>
-                    ))}
-                  </p>
-                )}
-              </div>
-            ))}
-          </div>
-        </details>
       </div>
     )
   }
@@ -273,11 +252,6 @@ const jsonld = {
                   </a>
                 ))}
             </p>
-            {/* O rótulo NOMEIA a coisa e não a justifica (Emenda 15: «uma
-                legenda nomeia o que a coisa é»). */}
-            {documentos.length > 0 && (
-              <p class="estudo-accao-nota">{s.estudos.documentoNota}</p>
-            )}
           </>
         ) : (
           <p class="log-vazio-v">{s.estudos.documentoVazio}</p>

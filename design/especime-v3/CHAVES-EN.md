@@ -711,3 +711,27 @@ sete, e não a Direção-Geral das Autarquias Locais chamada por outro nome. E o
 campos `regulador`, `reguladorNota` e `reguladorAnterior` de
 `src/data/municipios.mjs` são identificadores de dados, que não se rendem em
 lado nenhum.
+
+## Bloco «A grelha da voz» · G6, o método sai das páginas de trabalho, 26.08.2026
+
+**Duas chaves saem, nas duas edições, e nenhuma entra.**
+
+| chave | pt | en | porquê |
+|---|---|---|---|
+| `estudos.leituraFundoK` | Método e ressalvas | Method and caveats | era o nome da camada que guardava as dezanove ressalvas das páginas de trabalho. A camada saiu inteira: o método vive no Método e no recibo de cada linha |
+| `estudos.documentoNota` | A edição de registo, tal como foi publicada. | The record edition, as it was published. | era o sítio a explicar o que uma das suas edições é. A porta chega, e o documento diz-se a si próprio na faixa que leva no topo |
+
+**As ressalvas que sobreviveram**, cada uma como UMA frase na nota das medidas do
+seu trabalho, com o facto por sujeito:
+
+| trabalho | pt | en |
+|---|---|---|
+| 04 · plano de recuperação | Estes dois valores são somas sobre o registo público inteiro do plano de recuperação, e não uma linha de um documento. Vencido é o valor aprovado em localizações cuja data prevista de conclusão já passou sem conclusão registada. | These two values are sums over the whole public register of the recovery plan, and not a line in a document. Overdue is the value approved at locations whose planned completion date has passed with no completion recorded. |
+| 05 · economia | As contas das empresas do concelho creditam toda a atividade de uma empresa a um único concelho, e não são um produto interno bruto municipal. A média nacional é a base do índice de poder de compra. | The accounts of the municipality’s enterprises credit a firm’s whole activity to a single municipality, and are not a municipal gross domestic product. The national average is the base of the purchasing-power index. |
+| 03 · contas | As contas do penúltimo ano foram rejeitadas em votação e nunca foram certificadas. | The accounts of the second-to-last year were rejected in a vote and were never certified. |
+| 08 · quinze anos | O sistema contabilístico mudou por baixo da série, um ano de contas foi publicado em digitalizações e outro não foi publicado de todo. | The accounting system changed underneath the series, one year of accounts was published as scans and another was not published at all. |
+| 06 · pelouros | Cada contagem é a lista de pelouros que a página da câmara atribui a essa pessoa. | Each count is the list of portfolios the council’s page attributes to that person. |
+
+Nenhuma delas escreve uma palavra que não estivesse no parágrafo que saiu. A de
+05 perde «sediadas» e «sede», que a verificação das fontes de 26.08 não
+confirmou, e fica com o que está provado: cada empresa conta num único concelho.

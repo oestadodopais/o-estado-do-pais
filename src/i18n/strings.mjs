@@ -1178,7 +1178,6 @@ export const STRINGS = {
          que ela leva e na linha a que o selo abre. `leituraBreveRotulo` saiu, e
          o gabarito passou a ler esta chave, que já existia e não se rendia. */
       leituraBreveK: 'Leitura breve',
-      leituraFundoK: 'Método e ressalvas',
       municipioK: 'O concelho de que trata',
       municipioLink: 'A página do município',
 
@@ -1188,11 +1187,11 @@ export const STRINGS = {
          documento leva no topo vê-se quando ele abre. */
       documentoVazio: 'O documento deste estudo ainda não foi alojado aqui.',
       documentoLink: 'Ler o documento',
-      /* O RÓTULO DA EDIÇÃO ARQUIVADA (bloco B, item B2). Nomeia o que a coisa
-         é, e não porque se deve confiar nela: a Emenda 15 permite uma legenda
-         que nomeia («Concelhos, CAOP 2025») e proíbe uma que se justifica. Vai
-         por baixo das duas portas, porque é a segunda que ele descreve. */
-      documentoNota: 'A edição de registo, tal como foi publicada.',
+      /* O RÓTULO DA EDIÇÃO ARQUIVADA SAIU (G6, decisão do diretor de
+         26.08.2026). Dizia «A edição de registo, tal como foi publicada.», por
+         baixo das duas portas: era o sítio a explicar o que uma das suas
+         edições é. A porta chega, e o documento diz-se a si próprio na faixa
+         que leva no topo. `documentoNota` saiu nas duas edições. */
       /* Vai dentro da faixa, no topo do documento. Sem algarismos: é regra do
          portão, e a razão dela está em src/lib/documentos.mjs. */
       documentoFaixa: 'Documento do estudo · edição de registo',
@@ -1930,14 +1929,12 @@ export const STRINGS = {
 
       leituraRelanceK: 'At a glance',
       leituraBreveK: 'Brief reading',
-      leituraFundoK: 'Method and caveats',
       municipioK: 'The municipality it is about',
       municipioLink: 'The municipality page',
 
       documentoK: 'The original document',
       documentoVazio: 'The document for this study has not been hosted here yet.',
       documentoLink: 'Read the document',
-      documentoNota: 'The record edition, as it was published.',
       documentoFaixa: 'Study document · edition of record',
       documentoVoltar: 'Back to the study page',
 

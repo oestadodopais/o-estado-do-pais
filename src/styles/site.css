@@ -1763,17 +1763,6 @@ a.badge-porta:hover {
 .estudo-accao-principal {
   font-weight: 600;
 }
-/* O rótulo da edição arquivada: nomeia o que a coisa é, na letra do
-   instrumento, por baixo das portas. */
-.estudo-accao-nota {
-  font-family: var(--f-instr);
-  font-variant-numeric: tabular-nums lining-nums;
-  font-size: 12px;
-  line-height: 1.4;
-  color: var(--muted);
-  margin-top: 6px;
-  max-width: 62ch;
-}
 .edicao {
   border-top: 1px solid var(--rule);
   padding-top: 12px;
