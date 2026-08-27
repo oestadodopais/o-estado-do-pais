@@ -21,13 +21,32 @@
  * ---------------------------------------------------------------------------
  * O QUE CADA CÉLULA MEDE, E PORQUE É ASSIM QUE SE MEDE
  * ---------------------------------------------------------------------------
- * M1 e M2 · os alvos das 29, a 1280 e a 390. Mede-se a caixa de cada área NO
- * NAVEGADOR (`getBoundingClientRect` do `<path>`), e não a caixa do artefacto
- * multiplicada por uma escala: o que interessa é o que o dedo encontra, e entre
- * o artefacto e o dedo estão a folha, o `viewBox` e a largura da coluna. Para
- * cada unidade abaixo dos 44 px, exige-se o seu nome numa lista por baixo da
- * moldura (Emenda 20c). Uma unidade abaixo dos 44 e FORA de uma moldura é uma
- * falha: a emenda escreve que cada distrito é alvo.
+ * M1 e M2 · os alvos das 29, a 1280 e nas quatro larguras de telemóvel que a
+ * casa serve (320, 360, 390 e 430). Mede-se NO NAVEGADOR, e não sobre a caixa do
+ * artefacto multiplicada por uma escala: o que interessa é o que o dedo
+ * encontra, e entre o artefacto e o dedo estão a folha, o `viewBox` e a largura
+ * da coluna.
+ *
+ * O ALVO DE UMA ÁREA É A SUA ÁREA INSCRITA, E NÃO A SUA CAIXA (I82, 27.08.2026).
+ * A primeira forma desta régua media `getBoundingClientRect`, e a medição cega M3
+ * mostrou porque é que isso sobrestima: o centro da caixa da Ilha da Madeira cai
+ * fora do polígono da Ilha da Madeira. Uma caixa é o rectângulo que envolve a
+ * forma, e numa forma côncava — que é o que uma costa é — quase nada da caixa é
+ * a forma. A régua passa a medir o MAIOR QUADRADO INSCRITO À VOLTA DO PONTO
+ * REPRESENTATIVO: rasteriza-se a área a 2 px com `isPointInFill`, faz-se a
+ * programação dinâmica do quadrado máximo sobre essa grelha, e o alvo é o maior
+ * quadrado que cabe dentro da área e contém o ponto onde a régua clica.
+ *
+ * A MEDIDA MUDA A RESPOSTA, E MUITO. Pela caixa, 19 das 29 chegavam aos 44 px a
+ * 1280 e 19 a 390; pela área inscrita chegam 5 a 1280 e nenhuma a 390. A rede da
+ * Emenda 20c é o que sustenta a diferença: para cada unidade abaixo dos 44 px
+ * exige-se o seu nome numa lista por baixo do mapa, e a lista é por PARCELA e
+ * não por moldura (I81), porque o continente não tem moldura.
+ *
+ * O QUADRADO CENTRADO NO PONTO fica medido ao lado e não decide nada: nenhuma das
+ * 29 o cumpre a nenhuma largura, e uma medida que nunca separa nada não separa
+ * um alvo de um não-alvo. Fica na saída porque é a leitura estrita do alvo, e
+ * porque quem ler estes números tem de ver as duas.
  *
  * M3 · uma página de distrito. As mesmas duas perguntas para os concelhos, e a
  * lista da página é a resposta para os que não chegam. Mede-se em três: Lisboa
@@ -146,6 +165,22 @@ async function pagina(rota, largura) {
 
 const ALVO = 44;
 
+/* Os pontos representativos, lidos do artefacto uma vez. É o mesmo ficheiro em
+   que a célula M6 vai buscar o alvo dos seus cliques, e o mesmo ponto: o que a
+   régua mede é o alvo à volta do sítio onde ela clica. */
+const PONTOS_DAS_UNIDADES = Object.fromEntries(
+  JSON.parse(fs.readFileSync(path.join(RAIZ, 'mapa', 'pais.json'), 'utf8')).unidades.map((u) => [
+    u.slug,
+    u.ponto,
+  ]),
+);
+
+/* AS LARGURAS DE TELEMÓVEL QUE A CASA SERVE, do iPhone SE aos telefones largos.
+   A folha dá ao mapa a largura da JANELA abaixo de 640 (I81), e por isso cada
+   uma destas é ao mesmo tempo a janela e a largura do desenho. */
+const TELEMOVEIS = [320, 360, 390, 430];
+const LIMIAR_DA_JANELA = 640;
+
 /* UM CLIQUE QUE MUDA DE PÁGINA ESPERA-SE ANTES DE SE DAR, E NÃO DEPOIS.
    `waitForLoadState('load')` a seguir a um clique devolve na hora: a página
    ACTUAL já está carregada, e a viagem ainda nem começou. Medido na primeira
@@ -158,13 +193,97 @@ async function clica(p, ponto) {
   await viagem;
 }
 
+/* ---------------------------------------------------------------------------
+ * O QUADRADO INSCRITO, MEDIDO NO NAVEGADOR (I82)
+ * ---------------------------------------------------------------------------
+ * Corre dentro da página porque `isPointInFill` é do elemento e não do ficheiro:
+ * o que se pergunta é se um ponto do ECRÃ cai dentro da forma tal como o
+ * navegador a desenha, com a folha, o `viewBox` e a escala pelo meio. O ponto
+ * chega em unidades do campo (é o ponto representativo do artefacto) e a escala
+ * lê-se da matriz do próprio `svg`, que é a mesma conversão que a célula M6 usa
+ * para clicar.
+ *
+ * A GRELHA TEM 2 px DE PASSO, e é uma escolha com custo escrito: um passo maior
+ * deixaria passar um entalhe estreito, e um passo menor multiplica as chamadas
+ * sem mudar a resposta a esta escala (o traço do desenho tem 1 px). O lado que
+ * se devolve é múltiplo do passo, e por isso a régua arredonda PARA BAIXO: um
+ * alvo de 44 px medido assim tem pelo menos 44 px.
+ * ------------------------------------------------------------------------- */
+const QUADRADO_INSCRITO = ({ pontos, PASSO }) => {
+  const svg = document.querySelector('[data-mapa-areas]');
+  const inv = svg.getScreenCTM().inverse();
+  const p0 = new DOMPoint(0, 0).matrixTransform(inv);
+  const p1 = new DOMPoint(1, 0).matrixTransform(inv);
+  const u = Math.hypot(p1.x - p0.x, p1.y - p0.y); // unidades do campo por px de ecrã
+  const passo = PASSO * u;
+  return Object.fromEntries(
+    [...document.querySelectorAll('[data-areas] .uni')].map((el) => {
+      const slug = el.getAttribute('data-unidade');
+      const bb = el.getBBox();
+      const [px, py] = pontos[slug];
+      /* A grelha alinha-se ao ponto representativo, para que ele seja um nó dela
+         e não um sítio entre dois nós. */
+      const x0 = px - Math.ceil((px - bb.x) / passo) * passo;
+      const y0 = py - Math.ceil((py - bb.y) / passo) * passo;
+      const cols = Math.ceil((bb.x + bb.width - x0) / passo) + 1;
+      const rows = Math.ceil((bb.y + bb.height - y0) / passo) + 1;
+      const dentro = [];
+      for (let r = 0; r < rows; r++) {
+        const linha = new Uint8Array(cols);
+        for (let c = 0; c < cols; c++) {
+          linha[c] = el.isPointInFill(new DOMPoint(x0 + c * passo, y0 + r * passo)) ? 1 : 0;
+        }
+        dentro.push(linha);
+      }
+      const ic = Math.round((px - x0) / passo);
+      const ir = Math.round((py - y0) / passo);
+      /* O quadrado máximo com canto inferior direito em cada nó. */
+      const dp = dentro.map((l) => new Int32Array(l.length));
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          if (!dentro[r][c]) { dp[r][c] = 0; continue; }
+          dp[r][c] = r === 0 || c === 0 ? 1 : 1 + Math.min(dp[r - 1][c], dp[r][c - 1], dp[r - 1][c - 1]);
+        }
+      }
+      let contem = 0;
+      for (let r = ir; r < rows; r++) {
+        for (let c = ic; c < cols; c++) {
+          const k = dp[r][c];
+          if (k <= contem) continue;
+          if (r - k + 1 <= ir && c - k + 1 <= ic) contem = k;
+        }
+      }
+      let centrado = 0;
+      for (let k = 1; ; k++) {
+        let ok = true;
+        for (let r = ir - k; r <= ir + k && ok; r++) {
+          for (let c = ic - k; c <= ic + k && ok; c++) {
+            if (r < 0 || c < 0 || r >= rows || c >= cols || !dentro[r][c]) ok = false;
+          }
+        }
+        if (!ok) break;
+        centrado = 2 * k;
+      }
+      return [
+        slug,
+        {
+          dentro: !!dentro[ir][ic],
+          inscrito: Math.max(0, (contem - 1) * PASSO),
+          centrado: centrado * PASSO,
+        },
+      ];
+    }),
+  );
+};
+
 /** O que o navegador vê do mapa das 29, a uma largura. */
 async function mapaDoPais(largura) {
   const p = await pagina('/', largura);
-  const r = await p.evaluate((alvo) => {
+  const r = await p.evaluate(() => {
     const svg = document.querySelector('[data-mapa-areas]');
     if (!svg) return { erro: 'a primeira página não tem o mapa das áreas' };
     const caixa = svg.getBoundingClientRect();
+    const tela = document.querySelector('.mapa-tela').getBoundingClientRect();
     const areas = [...document.querySelectorAll('[data-areas] .uni')].map((el) => {
       const b = el.getBoundingClientRect();
       return {
@@ -174,25 +293,24 @@ async function mapaDoPais(largura) {
         lado: Math.max(b.width, b.height),
       };
     });
-    const naLista = new Set(
-      [...document.querySelectorAll('[data-mapa-ilhas] [data-ilha-porta]')].map((a) =>
-        a.getAttribute('data-ilha-porta'),
-      ),
-    );
-    const alvosDaLista = [...document.querySelectorAll('[data-mapa-ilhas] [data-ilha-porta]')].map(
-      (a) => {
-        const b = a.getBoundingClientRect();
-        return { slug: a.getAttribute('data-ilha-porta'), h: b.height, w: b.width };
-      },
-    );
+    const daLista = [...document.querySelectorAll('[data-mapa-ilhas] [data-lista-porta]')];
     return {
       caixa: { w: caixa.width, h: caixa.height },
+      tela: tela.width,
+      janela: window.innerWidth,
       areas,
-      naLista: [...naLista],
-      alvosDaLista,
+      naLista: [...new Set(daLista.map((a) => a.getAttribute('data-lista-porta')))],
+      alvosDaLista: daLista.map((a) => {
+        const b = a.getBoundingClientRect();
+        return { slug: a.getAttribute('data-lista-porta'), h: b.height, w: b.width };
+      }),
       ligacoes: document.querySelectorAll('[data-areas] a.uni-porta').length,
     };
-  }, ALVO);
+  });
+  if (!r.erro) {
+    const inscritos = await p.evaluate(QUADRADO_INSCRITO, { pontos: PONTOS_DAS_UNIDADES, PASSO: 2 });
+    for (const a of r.areas) Object.assign(a, inscritos[a.slug]);
+  }
   await p.__ctx.close();
   return r;
 }
@@ -201,32 +319,48 @@ async function mediuOPais(largura, id) {
   const r = await mapaDoPais(largura);
   if (r.erro) return void conta(`${id} · o mapa das 29 a ${largura}`, false, r.erro);
 
-  const chegam = r.areas.filter((a) => a.lado >= ALVO);
-  const naoChegam = r.areas.filter((a) => a.lado < ALVO);
+  /* O ALVO É O QUADRADO INSCRITO (I82), e a caixa fica ao lado para que a
+     diferença entre as duas medidas se veja em números e não em prosa. */
+  const chegam = r.areas.filter((a) => a.inscrito >= ALVO);
+  const naoChegam = r.areas.filter((a) => a.inscrito < ALVO);
   const semRede = naoChegam.filter((a) => !r.naLista.includes(a.slug));
   const listaCurta = r.alvosDaLista.filter((a) => a.h < ALVO);
+  const porCaixa = r.areas.filter((a) => a.lado >= ALVO);
+  const foraDoPonto = r.areas.filter((a) => !a.dentro);
 
   medidas[`pais_${largura}`] = {
+    janela: r.janela,
+    tela: Number(r.tela.toFixed(2)),
     caixa: [Number(r.caixa.w.toFixed(2)), Number(r.caixa.h.toFixed(2))],
     areas: r.areas.length,
     ligacoes: r.ligacoes,
-    chegam: chegam.length,
-    naoChegam: naoChegam.map((a) => `${a.nome} ${a.lado.toFixed(1)}px`),
-    menorQueChega: chegam.sort((x, y) => x.lado - y.lado)[0],
+    chegamPorAreaInscrita: chegam.length,
+    chegamPorCaixa: porCaixa.length,
     naLista: r.naLista.length,
+    unidades: r.areas
+      .slice()
+      .sort((x, y) => y.inscrito - x.inscrito)
+      .map((a) => ({
+        nome: a.nome,
+        parcela: a.parcela,
+        caixa: Number(a.lado.toFixed(1)),
+        inscrito: a.inscrito,
+        centrado: a.centrado,
+        naLista: r.naLista.includes(a.slug),
+      })),
   };
 
   conta(
-    `${id}a · a ${largura}, o mapa mede a coluna e tem as 29 ligações`,
+    `${id}a · a ${largura}, o mapa tem as 29 áreas e as 29 ligações`,
     r.areas.length === 29 && r.ligacoes === 29,
-    `caixa ${r.caixa.w.toFixed(1)} × ${r.caixa.h.toFixed(1)} px · ${r.areas.length} áreas · ${r.ligacoes} ligações`,
+    `janela ${r.janela} · tela ${r.tela.toFixed(1)} px · desenho ${r.caixa.w.toFixed(1)} × ${r.caixa.h.toFixed(1)} px · ${r.areas.length} áreas · ${r.ligacoes} ligações`,
   );
   conta(
-    `${id}b · a ${largura}, cada unidade abaixo de ${ALVO} px tem o nome na lista da sua moldura`,
+    `${id}b · a ${largura}, cada unidade abaixo de ${ALVO} px de área inscrita tem o nome numa lista`,
     semRede.length === 0,
     semRede.length === 0
-      ? `${chegam.length}/29 chegam aos ${ALVO} px (a menor: ${medidas[`pais_${largura}`].menorQueChega.nome} ${medidas[`pais_${largura}`].menorQueChega.lado.toFixed(2)} px) · ${naoChegam.length} não chegam e as ${r.naLista.length} da lista cobrem-nas`
-      : `sem rede: ${semRede.map((a) => a.nome).join(', ')}`,
+      ? `${chegam.length}/29 chegam aos ${ALVO} px de quadrado inscrito (pela caixa seriam ${porCaixa.length}) · ${naoChegam.length} não chegam e as ${r.naLista.length} da lista cobrem-nas`
+      : `sem rede: ${semRede.map((a) => `${a.nome} ${a.inscrito}px`).join(', ')}`,
   );
   conta(
     `${id}c · a ${largura}, cada nome da lista é um alvo de ${ALVO} px`,
@@ -235,11 +369,29 @@ async function mediuOPais(largura, id) {
       ? `${r.alvosDaLista.length} nomes, o mais baixo ${Math.min(...r.alvosDaLista.map((a) => a.h)).toFixed(0)} px de altura`
       : `${listaCurta.length} abaixo de ${ALVO}`,
   );
+  conta(
+    `${id}d · a ${largura}, o ponto representativo cai dentro da sua área`,
+    foraDoPonto.length === 0,
+    foraDoPonto.length === 0
+      ? `29/29 pontos dentro da própria área · o maior quadrado inscrito vai de ${Math.min(...r.areas.map((a) => a.inscrito))} a ${Math.max(...r.areas.map((a) => a.inscrito))} px`
+      : `fora: ${foraDoPonto.map((a) => a.nome).join(', ')}`,
+  );
+  /* ABAIXO DE 640 O MAPA MEDE A JANELA (I81). É a decisão desta passagem, e é
+     medível: a tela toma a largura da janela em vez da coluna, que é a janela
+     menos duas goteiras. Acima do limiar a célula não corre, porque ali a folha
+     manda outra coisa e essa outra coisa está medida nas células a, b e c. */
+  if (largura < LIMIAR_DA_JANELA) {
+    conta(
+      `${id}e · a ${largura}, a tela do mapa mede a janela e não a coluna`,
+      Math.abs(r.tela - r.janela) < 0.5,
+      `tela ${r.tela.toFixed(1)} px numa janela de ${r.janela} px (a coluna mede ${(r.janela - r.tela).toFixed(1)} px menos)`,
+    );
+  }
 }
 
 /* ------------------------------------------------------------------ M1 e M2 */
 await mediuOPais(1280, 'M1');
-await mediuOPais(390, 'M2');
+for (const w of TELEMOVEIS) await mediuOPais(w, `M2·${w}`);
 
 /* ---------------------------------------------------------------------- M3 */
 const DISTRITOS_MEDIDOS = ['lisboa', 'aveiro', 'ilha-de-sao-miguel'];
@@ -690,19 +842,50 @@ function corre(guiao, args = []) {
 const PLANTAS = [
   {
     nome: 'o mapa encolhido para 200 px na primeira página',
-    celulas: ['M1b', 'M2b'],
+    celulas: ['M1b', 'M2·320e'],
     estrago: (html, rota) =>
       rota === '/' || rota === '/index.html'
-        ? html.replace('</head>', '<style>.mapa-tela{width:200px !important}</style></head>')
+        ? html.replace('</head>', '<style>.mapa-tela{width:200px !important;margin-inline:0 !important}</style></head>')
         : html,
   },
   {
-    nome: 'os nomes das ilhas retirados das listas por baixo das molduras',
-    celulas: ['M1b', 'M2b'],
+    nome: 'os nomes retirados das listas por baixo do mapa',
+    celulas: ['M1b', 'M2·320b'],
     estrago: (html, rota) =>
       rota === '/' || rota === '/index.html'
         ? html.replace(
-            /<li><a href="\/distritos\/[^"]*" data-ilha-porta="[^"]*">[^<]*<\/a><\/li>/g,
+            /<li><a href="\/distritos\/[^"]*" data-lista-porta="[^"]*">[^<]*<\/a><\/li>/g,
+            '',
+          )
+        : html,
+  },
+  {
+    /* O ESTRAGO DA I81. A folha volta a dar ao mapa a largura da COLUNA abaixo
+       de 640, que é o que ela dizia até esta passagem: a margem negativa que o
+       leva às bordas da caixa de conteúdo é anulada. Numa janela de 320 a tela
+       cai de 320 para 284 px, e a célula que mede a decisão sai vermelha. */
+    nome: 'o mapa do telemóvel de volta à largura da coluna',
+    celulas: ['M2·320e'],
+    estrago: (html, rota) =>
+      rota === '/' || rota === '/index.html'
+        ? html.replace(
+            '</head>',
+            '<style>@media (max-width:640px){[data-inicio] .mapa-tela{margin-inline:0 !important}}</style></head>',
+          )
+        : html,
+  },
+  {
+    /* O ESTRAGO DA I82, e é o caso conhecido da medição cega M3. A Ilha da
+       Madeira tem uma CAIXA de 186 px a 390 e um quadrado inscrito de 8: pela
+       caixa é um alvo folgado, pela área inscrita não é alvo nenhum. Tirar-lhe o
+       nome da lista era invisível para a régua antiga e é vermelho para esta —
+       que é exactamente a diferença entre as duas medidas. */
+    nome: 'o nome da Ilha da Madeira retirado da lista da sua parcela',
+    celulas: ['M1b', 'M2·390b'],
+    estrago: (html, rota) =>
+      rota === '/' || rota === '/index.html'
+        ? html.replace(
+            /<li><a href="\/distritos\/ilha-da-madeira" data-lista-porta="ilha-da-madeira">[^<]*<\/a><\/li>/g,
             '',
           )
         : html,
@@ -764,7 +947,9 @@ if (VERMELHOS) {
     /* Só se voltam a correr as células que a planta toca: uma régua inteira por
        planta seria quatro corridas de tudo para provar quatro linhas. */
     if (planta.celulas.some((c) => c.startsWith('M1'))) await mediuOPais(1280, 'M1');
-    if (planta.celulas.some((c) => c.startsWith('M2'))) await mediuOPais(390, 'M2');
+    for (const w of TELEMOVEIS) {
+      if (planta.celulas.some((c) => c.startsWith(`M2·${w}`))) await mediuOPais(w, `M2·${w}`);
+    }
     if (planta.celulas.some((c) => c.startsWith('M5'))) {
       const p = await pagina('/', 1280);
       const r = await p.evaluate(() => {

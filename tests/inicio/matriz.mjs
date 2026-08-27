@@ -1285,35 +1285,45 @@ for (const largura of [1280, 390]) {
  * 1280 e a 390, quantas das 29 chegam aos 44 px e onde estão os nomes das que
  * não chegam).
  *
- * O QUE FICA AQUI É O FACTO QUE A RETIROU: a 390 a tela tem caixa e as 29 áreas
- * também, e não sobrou um ponto na primeira página. */
+ * O QUE FICA AQUI É O FACTO QUE A RETIROU: nas larguras de telemóvel a tela tem
+ * caixa e as 29 áreas também, e não sobrou um ponto na primeira página.
+ *
+ * E A TELA MEDE A JANELA ABAIXO DE 640 (I81, 27.08.2026). Media a coluna, que é
+ * a janela menos duas goteiras: numa janela de 320 dava 284 px, e Viana do
+ * Castelo media 35,3 px onde a Emenda 20c exige 44. A célula mede as três
+ * larguras de telemóvel que a casa serve e exige que a tela seja a janela em
+ * todas; quantas unidades chegam aos 44 px, e por que medida, é
+ * `tests/inicio/mapa-distritos.mjs` M1 e M2, com a área inscrita da I82. */
 {
   const sonda = async (largura) => {
     const p = await pagina({ largura });
     await p.goto(`${base}/`, { waitUntil: 'networkidle' });
     const r = await p.evaluate(() => ({
+      janela: window.innerWidth,
       tela: +document.querySelector('.mapa-tela').getBoundingClientRect().width.toFixed(1),
       areasComCaixa: [...document.querySelectorAll('[data-areas] .uni')].filter(
         (e) => e.getBoundingClientRect().width > 0,
       ).length,
       pontos: document.querySelectorAll('[data-pontos] .mun').length,
       leitura: document.querySelectorAll('[data-readout-nome]').length,
+      naLista: document.querySelectorAll('[data-mapa-ilhas] [data-lista-porta]').length,
     }));
     await p.__contexto.close();
     return r;
   };
-  const estreito = await sonda(390);
+  const telemoveis = [];
+  for (const w of [320, 390, 430]) telemoveis.push(await sonda(w));
   const largo = await sonda(1280);
+  const estreito = telemoveis[0];
+  const naJanela = telemoveis.filter((t) => Math.abs(t.tela - t.janela) < 0.5);
   conta(
-    '2i·3d · RETIRADA (Emenda 20c) · o mapa rende-se nas duas larguras, e não tem pontos',
-    estreito.tela > 0 &&
-      estreito.areasComCaixa === 29 &&
-      estreito.pontos === 0 &&
-      estreito.leitura === 0 &&
+    '2i·3d · RETIRADA (Emenda 20c) · o mapa rende-se nas duas larguras, toma a janela no telemóvel (I81), e não tem pontos',
+    naJanela.length === telemoveis.length &&
+      telemoveis.every((t) => t.areasComCaixa === 29 && t.pontos === 0 && t.leitura === 0) &&
       largo.tela > estreito.tela &&
       largo.areasComCaixa === 29 &&
       largo.pontos === 0,
-    `390: tela ${estreito.tela}px, ${estreito.areasComCaixa} áreas com caixa, ${estreito.pontos} pontos, ${estreito.leitura} leituras · 1280: tela ${largo.tela}px, ${largo.areasComCaixa} áreas · os alvos das 29 passaram a mapa-distritos.mjs M1 e M2`,
+    `${telemoveis.map((t) => `${t.janela}: tela ${t.tela}px`).join(' · ')} — ${naJanela.length}/${telemoveis.length} à largura da janela · ${estreito.areasComCaixa} áreas com caixa, ${estreito.pontos} pontos, ${estreito.leitura} leituras, ${estreito.naLista} nomes nas listas · 1280: tela ${largo.tela}px, ${largo.areasComCaixa} áreas · os alvos das 29 passaram a mapa-distritos.mjs M1 e M2, medidos pela área inscrita`,
   );
 }
 
@@ -2217,7 +2227,7 @@ const CANTO_DAS_ILHAS = (() => {
   conta(
     'Emenda 19e · RETIRADA (Emenda 20a, ISSUES I70 fechada) · a densidade dos pontos deixou de ser uma pergunta desta página',
     d.pontos === 0 && d.areas === 29 && d.ligacoes === 29,
-    `${d.pontos} pontos e ${d.areas} áreas na coluna de ${d.largura}px, ${d.ligacoes} ligações · o maior lado das áreas vai de ${d.menor}px a ${d.maior}px, e quantas chegam aos 44 é mapa-distritos.mjs M1 e M2`,
+    `${d.pontos} pontos e ${d.areas} áreas na coluna de ${d.largura}px, ${d.ligacoes} ligações · o maior lado da CAIXA das áreas vai de ${d.menor}px a ${d.maior}px, e o alvo já não se mede pela caixa: quantas chegam aos 44 px de área inscrita é mapa-distritos.mjs M1 e M2 (I82)`,
   );
   await p.__contexto.close();
 }

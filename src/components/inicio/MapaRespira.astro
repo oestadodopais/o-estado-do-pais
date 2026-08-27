@@ -82,7 +82,7 @@ import FonteDaCarta from '../FonteDaCarta.astro';
 import { FRAMES, FIELD_W, FIELD_H } from '../../data/caop-centroids.mjs';
 import { getClaim } from '../../lib/ledger.mjs';
 import { routePath } from '../../lib/routes.mjs';
-import { paisDoMapa, moldurasDoMapa } from '../../lib/mapa.mjs';
+import { paisDoMapa, parcelasDoMapa } from '../../lib/mapa.mjs';
 
 /* AS DUAS PROPRIEDADES QUE A PÁGINA DE CONCELHO PEDIU (ISSUES I45, etapa 2m).
  *
@@ -167,7 +167,7 @@ const caop = getClaim('municipios-portugal-caop-2025');
  * `viewBox` é o campo desse ficheiro e mais nada. Ver `src/lib/mapa.mjs`.
  */
 const doPais = postura === 'inteiro' ? paisDoMapa() : null;
-const molduras = postura === 'inteiro' ? moldurasDoMapa() : [];
+const parcelas = postura === 'inteiro' ? parcelasDoMapa() : [];
 
 /* A ESCALA ENTRE OS DOIS CAMPOS, para que o rótulo de uma moldura se leia do
    mesmo tamanho nos dois desenhos à mesma largura. O rótulo do mapa de pontos
@@ -180,6 +180,10 @@ const CORPO_DO_ARQ = Math.round(13 * uDoCampo);
 /* O nome de cada moldura na língua da edição. A caixa e a escala são do
    artefacto; o nome é uma cadeia da casa, e as duas já existem. */
 const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.mapa.acores };
+/* O nome de uma parcela sem moldura. A Carta chama-lhe «continente», e é o nome
+   de um lugar como os dois de cima: entra pela chave da parcela e não por uma
+   segunda lista de nomes. */
+const NOME_DA_PARCELA = { continente: s.inicio.mapa.continente };
 ---
 
 <figure
@@ -467,38 +471,48 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
   </div>
 
   {/* --------------------------------------------------------------------------
-      OS NOMES DAS ILHAS POR BAIXO DA SUA MOLDURA (Emenda 20c, 27.08.2026)
+      OS NOMES DE UMA PARCELA POR BAIXO DO MAPA (Emenda 20c, alargada pela I81)
       --------------------------------------------------------------------------
       «Onde uma ilha não chegar aos 44 px na moldura, os nomes das ilhas dessa
       moldura ficam por baixo dela como ligações, uma por linha.»
 
-      A CONDIÇÃO É MEDIDA NA CONSTRUÇÃO E NÃO ADIVINHADA. `moldurasDoMapa()`
-      calcula, para cada moldura, o maior lado da caixa de cada ilha em píxeis
-      nas duas larguras que a folha dá ao mapa, e responde à pergunta dos 44. É a
-      única maneira: uma construção estática serve o mesmo HTML às duas larguras,
-      e nenhuma largura é conhecida quando ele se escreve.
+      A REGRA PASSA DA MOLDURA PARA A PARCELA (27.08.2026, I81). A emenda escreve
+      a rede na forma em que ela primeiro fez falta, a das ilhas; o continente não
+      tem moldura, e por isso não tinha rede. Medido: Viana do Castelo chega aos
+      44 px por 0,5 px numa janela de 390, e numa janela de 320 nenhuma unidade do
+      continente ficava protegida por regra nenhuma. A condição é agora da
+      parcela, e a forma é a mesma.
 
-      A LISTA É DAS ILHAS DA MOLDURA, e não só das que não chegam. É o que a
-      emenda escreve, e é o que se lê melhor: uma lista com sete nomes de nove
-      deixa o leitor a adivinhar quais são os dois que faltam.
+      A CONDIÇÃO É MEDIDA NA CONSTRUÇÃO E NÃO ADIVINHADA. `parcelasDoMapa()`
+      calcula, para cada parcela, o maior lado da caixa de cada unidade em píxeis
+      nas quatro larguras que a folha dá ao mapa, e responde à pergunta dos 44. É
+      a única maneira: uma construção estática serve o mesmo HTML a todas as
+      larguras, e nenhuma largura é conhecida quando ele se escreve.
 
-      A ÁREA DE CADA ILHA CONTINUA A SER UMA LIGAÇÃO, e por isso um nome desta
+      A LISTA É DAS UNIDADES DA PARCELA, e não só das que não chegam. É o que a
+      emenda escreve para as ilhas, e é o que se lê melhor: uma lista com
+      dezasseis nomes de dezoito deixa o leitor a adivinhar quais são os dois que
+      faltam.
+
+      A ÁREA DE CADA UNIDADE CONTINUA A SER UMA LIGAÇÃO, e por isso um nome desta
       lista não é uma segunda porta para um sítio que não tinha nenhuma: é a
       porta que se pode tocar, para a mesma página. */}
   {postura === 'inteiro' &&
-    molduras.some((m) => m.precisaDaLista) && (
+    parcelas.some((p) => p.precisaDaLista) && (
       <div class="mapa-ilhas" data-mapa-ilhas>
-        {molduras
-          .filter((m) => m.precisaDaLista)
-          .map((m) => (
-            <div class="mapa-ilhas-grupo" data-moldura-lista={m.nome}>
-              {/* O nome do arquipélago é o de um lugar e não uma frase da casa:
-                  leva `data-lugar`, como o nome de um concelho leva. */}
-              <p class="mapa-ilhas-k" data-lugar>{NOME_DA_MOLDURA[m.nome] ?? m.nome}</p>
+        {parcelas
+          .filter((p) => p.precisaDaLista)
+          .map((p) => (
+            <div class="mapa-ilhas-grupo" data-parcela-lista={p.chave}>
+              {/* O nome da parcela é o de um lugar e não uma frase da casa: leva
+                  `data-lugar`, como o nome de um concelho leva. */}
+              <p class="mapa-ilhas-k" data-lugar>
+                {NOME_DA_PARCELA[p.chave] ?? NOME_DA_MOLDURA[p.nome] ?? p.nome ?? p.chave}
+              </p>
               <ul class="mapa-ilhas-lista">
-                {m.unidades.map((u) => (
+                {p.unidades.map((u) => (
                   <li>
-                    <a href={routePath('distrito', lang, { slug: u.slug })} data-ilha-porta={u.slug}>
+                    <a href={routePath('distrito', lang, { slug: u.slug })} data-lista-porta={u.slug}>
                       {u.nome}
                     </a>
                   </li>

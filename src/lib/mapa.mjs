@@ -138,11 +138,12 @@ export function atribuicaoDoMapa() {
  * mapa. Com as duas, o alvo de cada unidade em píxeis é uma regra de três, e a
  * pergunta «chega aos 44?» tem resposta antes de a página existir.
  *
- * A CONDIÇÃO É POR MOLDURA E A LISTA É DAS ILHAS DELA, tal como a emenda a
- * escreve: basta uma ilha não chegar para que os nomes daquela moldura fiquem
- * por baixo dela. Não é o contrário (listar só as que não chegam), porque uma
- * lista com sete nomes de nove é uma lista que deixa o leitor a adivinhar quais
- * são os dois que faltam.
+ * A CONDIÇÃO É POR PARCELA E A LISTA É DAS UNIDADES DELA (I81, 27.08.2026).
+ * Era por moldura, que é a forma em que a emenda a escreve, e o continente não
+ * tem moldura: basta uma unidade da parcela não chegar para que os nomes daquela
+ * parcela fiquem por baixo do mapa. Não é o contrário (listar só as que não
+ * chegam), porque uma lista com sete nomes de nove é uma lista que deixa o
+ * leitor a adivinhar quais são os dois que faltam.
  */
 
 /**
@@ -150,19 +151,34 @@ export function atribuicaoDoMapa() {
  *
  * Declaradas aqui porque a construção precisa delas e a folha não se lê de
  * JavaScript na construção. Cada uma está escrita em `src/styles/inicio.css`, e
- * a régua `tests/inicio/mapa-distritos.mjs` mede as duas no navegador contra
- * estes números: se a folha mudar e este ficheiro não, a régua sai a vermelho.
+ * a régua `tests/inicio/mapa-distritos.mjs` mede-as no navegador contra estes
+ * números: se a folha mudar e este ficheiro não, a régua sai a vermelho.
  *
- *   `larga`   a coluna do instrumento a 1280, com `.mapa-tela { width: 100% }`
- *             a partir de 1024. Medida a 1280 e não escrita à mão.
- *   `estreita` a coluna do telemóvel a 390, que é a largura da mancha menos as
- *             duas goteiras (`--gutter` a 18px nessa largura).
+ * ---------------------------------------------------------------------------
+ * ERAM DUAS E SÃO QUATRO, E AS DUAS QUE FALTAVAM NÃO ERAM UM DETALHE (I81)
+ * ---------------------------------------------------------------------------
+ * Até 27.08.2026 este objecto dizia `{ larga: 490, estreita: 354 }`, e as duas
+ * eram medidas de uma janela só cada: 490 é a coluna a 1280 e 354 era a coluna a
+ * 390. A folha dá ao mapa quatro larguras e não duas, e as duas que faltavam são
+ * as mais estreitas de todas — que é precisamente onde a pergunta dos 44 px se
+ * decide. Medidas no navegador a 27.08, sobre a construção deste ramo:
+ *
+ *   `estreita` 320 · abaixo de 640 o mapa toma a LARGURA DA JANELA (Emenda 20c
+ *             lida com a I81), e a janela mais estreita que a casa serve é a do
+ *             iPhone SE, 320 px. Era 354, que é a coluna a 390: uma janela de
+ *             320 dava 284, e o número declarado dizia o contrário.
+ *   `media`   281 · entre 640 e 1024 a folha fixa `.mapa-tela { width: 281px }`,
+ *             que é a largura que o mapa tinha quando a ficha lhe ficava ao
+ *             lado. Nenhuma linha deste ficheiro a conhecia.
+ *   `larga_minima` 340 · a coluna do instrumento a 1024, medida, que é onde a
+ *             regra `width: 100%` começa e onde ela dá o seu valor mais baixo.
+ *   `larga`   490 · a mesma coluna a 1280. Medida e não escrita à mão.
  *
  * A MAIS PEQUENA É A QUE MANDA na pergunta dos 44 px: uma unidade que não chega
- * na coluna estreita precisa da lista, mesmo que chegue na larga, porque a
- * página é a mesma nas duas.
+ * na largura mais estreita precisa da lista, mesmo que chegue nas outras, porque
+ * a página é a mesma em todas.
  */
-export const LARGURAS_DO_MAPA = { larga: 490, estreita: 354 };
+export const LARGURAS_DO_MAPA = { larga: 490, larga_minima: 340, media: 281, estreita: 320 };
 
 /** O maior lado da caixa de uma unidade, em píxeis, a uma largura de mapa. */
 export function ladoEmPixeis(unidade, larguraDoMapa, campo) {
@@ -204,7 +220,7 @@ function caixaDe(unidades) {
  * dela e não na dos Açores (começa em y 4527, e a dos Açores em 6096). A
  * correspondência é única, e a função morre se deixar de o ser.
  */
-export function unidadesDaMoldura(moldura, unidades) {
+export function parcelaDaMoldura(moldura, unidades) {
   const [mx, my, mw, mh] = moldura.caixa;
   const cabe = ([x, y, w, h]) => x >= mx && y >= my && x + w <= mx + mw && y + h <= my + mh;
 
@@ -218,21 +234,65 @@ export function unidadesDaMoldura(moldura, unidades) {
         `(${candidatas.join(', ') || 'nenhuma'}), e uma moldura é de uma parcela só.`,
     );
   }
-  return unidades.filter((u) => u.parcela === candidatas[0]);
+  return candidatas[0];
+}
+
+/** As unidades da parcela que uma moldura enquadra. */
+export function unidadesDaMoldura(moldura, unidades) {
+  const parcela = parcelaDaMoldura(moldura, unidades);
+  return unidades.filter((u) => u.parcela === parcela);
 }
 
 /**
- * As molduras do país, cada uma com as suas unidades e com a resposta à
- * pergunta da Emenda 20c.
+ * AS PARCELAS DO PAÍS, cada uma com as suas unidades e com a resposta à pergunta
+ * dos 44 px.
+ *
+ * ---------------------------------------------------------------------------
+ * A LISTA ERA DA MOLDURA E PASSA A SER DA PARCELA (I81, 27.08.2026)
+ * ---------------------------------------------------------------------------
+ * A Emenda 20c escreve a rede por baixo do mapa na forma em que ela primeiro fez
+ * falta: «onde uma ilha não chegar aos 44 px na moldura, os nomes das ilhas
+ * dessa moldura ficam por baixo dela como ligações, uma por linha». O continente
+ * não tem moldura, e por isso não tinha rede nenhuma — e a I81 mediu o que isso
+ * custa: Viana do Castelo chega aos 44 px por 0,5 px numa janela de 390, e
+ * abaixo de 386 deixa de ser alvo. Uma regra que só protege as ilhas protege o
+ * caso que foi visto primeiro, e não o caso.
+ *
+ * A REGRA PASSA A SER A DA PARCELA, e a forma é a mesma: a parcela em que uma
+ * unidade não chega aos 44 px na largura mais estreita da folha leva os nomes
+ * das suas unidades por baixo do mapa, como ligações, uma por linha. As três
+ * parcelas da Carta são o continente, a Madeira e os Açores; as duas últimas têm
+ * moldura e a primeira não, e o que decide a lista é a parcela e nunca a
+ * moldura.
+ *
+ * A LISTA É DE TODAS AS UNIDADES DA PARCELA, e não só das que não chegam, pela
+ * razão que já estava escrita para as ilhas: uma lista com dezasseis nomes de
+ * dezoito deixa o leitor a adivinhar quais são os dois que faltam.
+ *
+ * O CONTINENTE VEM PRIMEIRO, que é a ordem do desenho e a ordem da Carta.
  */
-export function moldurasDoMapa() {
+export function parcelasDoMapa() {
   const pais = paisDoMapa();
   const larguras = Object.values(LARGURAS_DO_MAPA);
-  return pais.molduras.map((moldura) => {
-    const unidades = unidadesDaMoldura(moldura, pais.unidades);
+  const molduraDe = new Map(
+    pais.molduras.map((m) => [parcelaDaMoldura(m, pais.unidades), m]),
+  );
+  const chaves = [...new Set(pais.unidades.map((u) => u.parcela))];
+  const semMoldura = chaves.filter((c) => !molduraDe.has(c));
+  const ordem = [...semMoldura, ...pais.molduras.map((m) => parcelaDaMoldura(m, pais.unidades))];
+  return ordem.map((chave) => {
+    const unidades = pais.unidades.filter((u) => u.parcela === chave);
     const menor = Math.min(
       ...unidades.flatMap((u) => larguras.map((l) => ladoEmPixeis(u, l, pais.campo))),
     );
-    return { ...moldura, unidades, menorAlvoPx: menor, precisaDaLista: menor < ALVO_PX };
+    const moldura = molduraDe.get(chave) ?? null;
+    return {
+      chave,
+      moldura,
+      nome: moldura?.nome ?? null,
+      unidades,
+      menorAlvoPx: menor,
+      precisaDaLista: menor < ALVO_PX,
+    };
   });
 }

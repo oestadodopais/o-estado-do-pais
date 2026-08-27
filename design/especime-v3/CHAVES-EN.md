@@ -915,3 +915,20 @@ leva `data-nonledger="fonte-da-carta"` (motivo declarado em
 disciplina, e o mesmo resultado, do «De onde vem a lista» de `/municipios`, que
 também não está na tabela. `npm run check:voz` continua a dizer «nada por
 classificar».
+
+### Bloco «A grelha, segunda passagem» (27.08.2026)
+
+**Uma chave nova, e só uma.** A I81 tirou o mapa do telemóvel da coluna e pô-lo à
+largura da janela, e a rede da Emenda 20c passou de ser por moldura a ser por
+parcela: o continente não tem moldura, e por isso não tinha rede nenhuma. A lista
+de nomes por baixo do mapa ganhou um terceiro cabeçalho, e é ele a cadeia nova.
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `inicio.mapa.continente` | Continente | Mainland | o cabeçalho da lista de nomes da parcela continental, por baixo do mapa da primeira página. As irmãs `inicio.mapa.madeira` e `inicio.mapa.acores` já existiam porque as duas parcelas insulares têm moldura no desenho e o seu nome está escrito por cima dela; esta parcela não tem moldura, e o nome só aparece à frente da lista. «Mainland» e não «Continent»: o que a palavra nomeia aqui é a parte continental do território de um país que também tem ilhas, e não o continente europeu, que é o que «Continent» diria |
+
+**Não entra no `INVENTARIO-FRASES.md`**, e a régua di-lo: o cabeçalho leva
+`data-lugar`, como o nome de um concelho e como os dois cabeçalhos das ilhas, e
+`medir-defeitos.mjs` deixa de fora os blocos com lugar declarado. É o nome de um
+lugar da Carta, não prosa da casa. `npm run check:voz` continua a dizer «nada por
+classificar».
