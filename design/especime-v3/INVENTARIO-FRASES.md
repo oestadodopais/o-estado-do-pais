@@ -521,19 +521,11 @@ e por isso conteúdo.*
 | conteudo | % of the budget was actually collected in the latest year of accounts |
 | conteudo | % quatro anos antes |
 | conteudo | % ten years later |
-| conteudo | A correspondência entre as contas e os pelouros é deste trabalho, declarada por ele como sua e não como oficial, e o próprio trabalho diz quais das suas linhas a recusam. Nenhuma dessas linhas atravessou para o livro-razão, e por isso esta página não conta quantas são. A regra que o trabalho fixa é: descrição, nunca classificações. |
 | conteudo | A cross-vertical reading of one Portuguese municipality: the recovery-plan project register, the public-contracts register and the state auditor's catalogue, all fetched live on 2026-08-04, and the recovery-plan register read again on 2026-08-20. |
-| conteudo | A frase acima diz que a dívida total ficou abaixo do limite. São estes os dois valores: a dívida total no fim do ano, e o limite legal do mesmo ano, ambos da prestação de contas do município. |
 | navegacao | A ligação sai deste domínio. |
-| conteudo | A mesma medida de concentração, para Portugal inteiro, é a que dá escala à do concelho. |
-| conteudo | A secção de auditoria lê o catálogo do tribunal de contas, não as suas auditorias. A secção de contratos é um limite superior sobre uma janela truncada. E não existe um valor da União Europeia para um município: não é que não se tenha encontrado; a granularidade não existe na fonte. |
-| conteudo | A universidade tem mais dinheiro contratado neste concelho do que o município, e a camada que administra o dinheiro é feita de organismos nacionais. O trabalho conclui daí que «o endereço da responsabilização, na maior parte dos casos, não são os paços do concelho», é a leitura dele, assinada, e não uma contagem: um leitor que queira este total explicado deve dirigir as perguntas aos organismos nacionais e à universidade mais vezes do que à câmara. |
-| conteudo | As contagens de financiamento são um limite superior: o filtro lê programas, não o corpo dos avisos. E a secção de oportunidades é inferência assinada pelo autor do trabalho, ancorada nos factos com fonte, não aconselhamento. |
 | conteudo | As contas do penúltimo ano foram rejeitadas em votação e nunca foram certificadas. |
-| conteudo | As decisões vão atribuídas a quem as tomou, com o rótulo da lista; os índices são mostrados contra as fronteiras dos mandatos e não são atribuídos a ninguém. Nada do que o trabalho leu fornece o contrafactual que recortaria a parte de um executivo neles. |
 | conteudo | Avaliação económica das regiões de Portugal. |
 | conteudo | Datas de publicação por confirmar. |
-| conteudo | Decisions are attributed to whoever took them, with the list label; indices are displayed against the mandate boundaries and are attributed to nobody. Nothing the work read provides the counterfactual that would carve out an executive’s share of them. |
 | conteudo | Description: house translation of the document’s opening sentence |
 | conteudo | Description: opening sentence of the document |
 | conteudo | Description: restatement of the title |
@@ -557,20 +549,14 @@ e por isso conteúdo.*
 | conteudo | EN Public funding in Portugal. |
 | conteudo | EN What was budgeted, what was paid and what was left owing in the municipality of Évora. |
 | conteudo | EN Who held each portfolio of the Câmara Municipal de Évora across five terms, how much the municipality’s own accounts spent in the areas those portfolios cover, and what the reports say those areas did. |
-| conteudo | Estes dois valores são somas sobre o registo público inteiro do plano de recuperação, não uma linha de um documento. Não há nenhuma frase para transcrever, e por isso o excerto da linha está [a verificar] e o selo aparece a tracejado. |
 | conteudo | Estudos |
 | conteudo | Financiamento público em Portugal. |
 | conteudo | Long series on the country’s evolution. |
 | conteudo | No files to download. |
 | conteudo | No subject assigned |
 | conteudo | Non-revenue water in Portugal’s public supply systems. |
-| conteudo | Não existe PIB da cidade, e o trabalho não inventa nenhum. O que existe ao nível do concelho é o registo empresarial: as contas das empresas sediadas no concelho, que creditam toda a atividade de uma empresa ao concelho da sua sede. Não é PIB municipal, e o próprio trabalho escreve porquê nos seus limites: «não capta a administração pública, a maior parte da universidade e do hospital». |
 | conteudo | O arquivo de estudos publicados, com as suas edições em português e em inglês. |
 | conteudo | O arquivo do observatório: cada estudo publicado, com as suas edições, datas e estado de migração. O que ainda não vive aqui está ligado onde vive. |
-| conteudo | O padrão contra o qual estas contas se comparam está um ano atrás, e o estudo completo que o publica não é público. |
-| conteudo | O sistema contabilístico mudou por baixo da série, um ano de contas foi publicado em digitalizações e outro não foi publicado de todo. O trabalho marca com um asterisco os valores lidos da coluna comparativa de um relatório posterior, e com uma adaga os recuperados de uma digitalização degradada; nenhum valor marcado assim atravessou para este livro-razão. |
-| conteudo | O valor aprovado em localizações cuja data prevista de conclusão já passou sem conclusão registada. |
-| conteudo | O índice de poder de compra do INE é o único indicador que existe para um concelho, e é o que sustenta a primeira metade da frase acima: o concelho de um lado da média nacional, a sua região do outro. A média nacional é a base do índice. |
 | conteudo | PT [a verificar] |
 | conteudo | PT Avaliação económica das regiões de Portugal. |
 | conteudo | PT Economia, investidores e portas abertas no município de Évora. |
@@ -587,22 +573,10 @@ e por isso conteúdo.*
 | conteudo | Sem tema atribuído |
 | conteudo | Studies |
 | conteudo | Séries longas sobre a evolução do país. |
-| conteudo | The accounting system changed underneath the series, one year of accounts was published as scans and another was not published at all. The work marks with an asterisk the figures read from a later report’s comparative column, and with a dagger those recovered from a degraded scan; no figure marked either way crossed into this ledger. |
 | conteudo | The accounts of the second-to-last year were rejected in a vote and were never certified. |
 | conteudo | The archive of published studies, with their Portuguese and English editions. |
-| conteudo | The audit section reads the state auditor’s catalogue, not its audits. The contracts section is an upper bound on a truncated window. And there is no European Union figure for a municipality: it is not that none was found; the granularity does not exist in the source. |
-| conteudo | The funding counts are an upper bound: the filter reads programmes, not the bodies of the calls. And the opportunity section is inference signed by the work’s author, grounded in sourced facts, not advice. |
 | navegacao | The link leaves this domain. |
-| conteudo | The mapping between the accounts and the portfolios is this work’s own, declared by it as its own and not as official, and the work itself says which of its lines refuse it. None of those lines crossed into the ledger, so this page does not count them. The rule the work sets is: description, never scores. |
 | conteudo | The observatory’s archive: every published study, with its editions, dates and migration state. What does not live here yet is linked where it lives. |
-| conteudo | The same concentration measure, for Portugal as a whole, is what gives the concelho figure its scale. |
-| conteudo | The sentence above says total debt stayed below the limit. These are the two values: total debt at year end, and the legal limit for the same year, both from the municipality’s own accounts. |
-| conteudo | The statistics institute’s purchasing-power index is the one indicator that exists for a concelho, and it is what carries the first half of the sentence above: the concelho on one side of the national average, its region on the other. The national average is the base of the index. |
-| conteudo | The university holds more contracted money in this concelho than the municipality, and the layer that administers the money is made of national bodies. The work concludes from that that «the accountability address is mostly not the town hall», its own signed reading, not a count: a reader who wants this total explained should put questions to national bodies and to the university more often than to the council. |
-| conteudo | The value approved at locations whose planned completion date has passed with no completion recorded. |
-| conteudo | The yardstick these accounts are compared against is one year behind, and the full study that publishes it is not public. |
-| conteudo | There is no GDP figure for the city, and the work invents none. What exists at concelho level is the business register: the accounts of enterprises headquartered in the concelho, which credit a firm’s whole activity to its head-office concelho. It is not municipal GDP, and the study itself writes why in its own limits: «it misses public administration, most of the university and the hospital». |
-| conteudo | These two values are sums over the whole public register of the recovery plan, not a line in a document. There is no sentence to transcribe, so the row’s excerpt reads [a verificar] (to verify) and the seal shows dashed. |
 | conteudo | Uma leitura transversal de um município português: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado, recolhidos em direto a 2026-08-04, e o registo do plano de recuperação relido a 2026-08-20. |
 | conteudo | Água não faturada nos sistemas de abastecimento em Portugal. |
 | conteudo | € actually paid |
@@ -715,8 +689,6 @@ trabalho das penalizações. Entram aqui, que é o bloco a que pertencem.
 | conteudo | 128 of 136 rows with complete provenance |
 | conteudo | 8 de 136 linhas com campos por confirmar |
 | conteudo | 8 of 136 rows with fields to confirm |
-| conteudo | A edição de registo, tal como foi publicada. |
-| conteudo | The record edition, as it was published. |
 | conteudo | O que a lei cobra por antecipar a reforma, e o que seria atuarialmente neutro. |
 | conteudo | What the law charges for retiring early, and what would be actuarially neutral. |
 | conteudo | PT O que a lei cobra por antecipar a reforma, e o que seria atuarialmente neutro. |
@@ -736,12 +708,8 @@ mudou**, e que a régua lê como blocos novos porque o texto mudou:
 | conteudo | € approved and attributed to the municipality by the recovery-plan register |
 | conteudo | € of gross value added by enterprises headquartered in the municipality |
 | conteudo | The works about this municipality |
-| conteudo | The same concentration measure, for Portugal as a whole, is what gives the municipality figure its scale. |
 | conteudo | The thin line is the total debt the regulator publishes for the municipality; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. |
-| conteudo | There is no GDP figure for the city, and the work invents none. What exists at municipality level is the business register: the accounts of enterprises headquartered in the municipality, which credit a firm’s whole activity to its head-office municipality. It is not municipal GDP, and the study itself writes why in its own limits: «it misses public administration, most of the university and the hospital». |
 | conteudo | The recovery-plan totals that appear in that work’s reading are sums over the public register, attributed to the municipality by that register. Of the money contracted in the municipality, the university holds more than the council, and the layer that administers the money is made of national bodies. That this makes the accountability address something other than the town hall is that work’s own signed conclusion, and it sits on its page. |
-| conteudo | The university holds more contracted money in this municipality than the council, and the layer that administers the money is made of national bodies. The work concludes from that that «the accountability address is mostly not the town hall», its own signed reading, not a count: a reader who wants this total explained should put questions to national bodies and to the university more often than to the council. |
-| conteudo | The statistics institute’s purchasing-power index is the one indicator that exists for a municipality, and it is what carries the first half of the sentence above: the municipality on one side of the national average, its region on the other. The national average is the base of the index. |
 
 **O que este bloco NÃO acrescentou ao inventário, e é uma leitura e não um
 esquecimento:** o índice «Nesta página» da página de leitura não entra, porque
@@ -918,5 +886,30 @@ rótulo passa a nomear de que série são os dois números.*
 | conteudo | % debt index in the first year of the local-government directorate’s series |
 | conteudo | Antes do primeiro ano da série da Direção-Geral das Autarquias Locais. |
 | conteudo | Before the first year of the local-government directorate’s series. |
-| conteudo | As medidas deste trabalho vêm da prestação de contas do próprio município: o relato da gestão sobre o seu próprio ano. As duas vozes de fora são a opinião assinada do auditor independente e a série anual da Direção-Geral das Autarquias Locais, que publica por município e por ano o mesmo conceito legal de dívida, compilada do lado de fora. As duas estão nesta página. |
-| conteudo | This work’s measures come from the municipality’s own accounts: management reporting on its own year. The two outside voices are the independent auditor’s signed opinion and the local-government directorate’s annual series, which publishes per municipality and per year the same legal debt concept, compiled from outside. Both are on this page. |
+
+## Bloco «A grelha da voz» · G6, o método sai das páginas de trabalho · 26.08.2026
+
+*A camada «Método e ressalvas» saiu das seis páginas de trabalho, com as suas
+dezanove ressalvas, e com ela o rótulo da porta que explicava o que uma edição
+de registo é. Decisão do diretor de 26.08: esta classe de texto não é útil nem
+simples, o método vive no Método e no recibo de cada linha, e uma ressalva só
+sobrevive quando muda a leitura de um número, e então é UMA frase, com o facto
+por sujeito, na nota das medidas. A tabela de todas as dezanove, com a razão de
+cada uma, está em `design/especime-v3/notas/grelha-da-voz.md`.*
+
+*Saíram do ficheiro 34 declarações: as ressalvas que se rendiam como blocos de
+texto, nas duas edições, e as suas variantes mais velhas de «concelho» e
+«municipality» que o item B6 corrigiu. As ressalvas com um período entre
+parênteses nunca estiveram aqui, porque um `{ref}` rende um
+`data-nonledger` e a régua já as excluía como origem declarada.*
+
+| classe | texto |
+| --- | --- |
+| conteudo | As contas das empresas do concelho creditam toda a atividade de uma empresa a um único concelho, e não são um produto interno bruto municipal. A média nacional é a base do índice de poder de compra. |
+| conteudo | The accounts of the municipality’s enterprises credit a firm’s whole activity to a single municipality, and are not a municipal gross domestic product. The national average is the base of the purchasing-power index. |
+| conteudo | Cada contagem é a lista de pelouros que a página da câmara atribui a essa pessoa. |
+| conteudo | Each count is the list of portfolios the council’s page attributes to that person. |
+| conteudo | Estes dois valores são somas sobre o registo público inteiro do plano de recuperação, e não uma linha de um documento. Vencido é o valor aprovado em localizações cuja data prevista de conclusão já passou sem conclusão registada. |
+| conteudo | These two values are sums over the whole public register of the recovery plan, and not a line in a document. Overdue is the value approved at locations whose planned completion date has passed with no completion recorded. |
+| conteudo | O sistema contabilístico mudou por baixo da série, um ano de contas foi publicado em digitalizações e outro não foi publicado de todo. |
+| conteudo | The accounting system changed underneath the series, one year of accounts was published as scans and another was not published at all. |
