@@ -1,0 +1,26 @@
+{
+ "registado_em": "2026-08-27",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "paginas/regioes.html",
+   "descricao": "the Algarve value on the index changed from 89 to 98 (no longer the row)",
+   "sha256_antes": "95902c0b7e6083bb879aac3dd89d73258b6a2424944fe167a49552fa140b94be",
+   "sha256_depois": "a50e98375a4b32e35f20776c917ce2a409c240ec38a85ed7aaf7c6883799751f"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "paginas/regioes.html",
+   "descricao": "the Madeira value label on the ruler painted with a status colour",
+   "sha256_antes": "a50e98375a4b32e35f20776c917ce2a409c240ec38a85ed7aaf7c6883799751f",
+   "sha256_depois": "3f10e98ab1a20a8c7f5960eba976f44fd6835f4365cfd2cd12bf477b5f35e35b"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "paginas/regioes-alentejo.html",
+   "descricao": "a diligence sentence inserted on the Alentejo page",
+   "sha256_antes": "7ca8120d002cb6bbd7e0ec5c325e3d9916e232aa4c0c9a99a322a4d07481eaef",
+   "sha256_depois": "8f20fe5260a5ea397cb987237e69919cdd4cf0772f031f88a005890fff8420fa"
+  }
+ ]
+}
