@@ -11086,6 +11086,125 @@ e há cópia de salvaguarda de cada ficheiro editado no rascunho.
 
 **O custo.** Reconhecimento (Sonnet) ≈240k; verificação das fontes (Opus) ≈285k; P1 no motor (Opus) ≈494k; P2 no sítio (Opus) ≈787k, colisão incluída; M5 (Sonnet) ≈470k; Codex 218 571 mais 37 083; total ≈2,53M símbolos, mais o lugar de direção; a estimativa do plano era 2,5 a 3,5M. **O que fica:** I70 (as zonas densas), I71 (a pesquisa sem script), I72 (o desemprego das ilhas), I73 (a releitura periódica), as decisões G5 e o bloco da grelha da voz.
 
+### 1.69 A grelha da voz
+
+**Afecta:** nenhum
+
+Decisão do diretor a **26.08.2026**, à noite, depois de ler o parágrafo «Não
+existe PIB municipal» na página de Évora, o rótulo da camada da leitura breve na
+página de um trabalho e a dobra «Método e ressalvas» de
+`/estudos/evora-quinze-anos-cinco-mandatos`: **esta classe de texto não é útil
+nem simples, e está por todo o sítio.** O bloco constrói a rede mecânica que
+faltava e aplica a decisão às páginas.
+
+Ramo `grelha-da-voz-2026-08-27`, a partir de `main` em `cfa288b`. Os números, os
+comandos e os estragos plantados estão em
+`design/especime-v3/notas/grelha-da-voz.md`.
+
+#### Porque é que a régua não chegava
+
+A régua do inventário (`scripts/medir-defeitos.mjs`) não julga: a classe de cada
+frase era uma declaração à mão, feita por quem escreveu a frase. «É a lei que o
+define, não este sítio.» esteve declarada como conteúdo em 616 páginas até à
+leitura do Codex de 26.08. Nada reexaminava uma declaração quando a regra mudava:
+a Emenda 18 apertou a regra da voz a 25.08 e o inventário não foi relido contra
+ela. E um leitor de olhos frescos de um pacote de páginas não repara numa frase
+só: a leitura do Codex falhou a planta desta classe **duas vezes seguidas** e
+apanhou as duas plantas quando leu só o diff do inventário.
+
+#### O que passou a existir
+
+**G1 · o tripwire lexical.** `design/especime-v3/VOZ-MARCADORES.md` com **52
+marcadores**, cada um com a razão escrita, e **8 exceções**, cada uma com a sua.
+`scripts/voz.mjs` lê o ficheiro; a medida 9 da régua aplica os marcadores a TODAS
+as frases da casa das rotas inventariadas, declaradas ou não; e `npm run
+check:voz` entra na cadeia do `build` e do `verify` e fecha a construção em seis
+casos: a frase com marcador, a autorreferência acima de zero em qualquer rota
+medida, o bloco por classificar, o marcador ou a exceção sem razão, o bloco do
+inventário sem entrada no registo das revisões, e a emenda da voz acima do
+`lida-contra`. **A régua continua a não fechar nada**, que é o que o seu cabeçalho
+promete: quem fecha é o portão, e a varredura é uma só.
+
+A primeira corrida foi vermelha em **dezasseis frases reais**, e não plantadas.
+Os quatro casos conhecidos do brief foram vistos vermelhos, um a um, e o quarto
+(«Ainda não há linhas deste estudo no livro-razão.») não levava marcador nenhum
+até este bloco lhe dar um.
+
+**G2 · o rasto da revisão.** As **453** linhas do inventário ganham a coluna
+«bloco»: 429 com `até 2026-08-26`, que é o que elas são, um estado herdado, e 24
+com `grelha-da-voz`. `design/especime-v3/critica/REVISOES-DO-INVENTARIO.md` diz,
+por bloco, quem leu o diff. A entrada de «até 2026-08-26» escreve o que não
+cobre, e não finge.
+
+**G3 · o gatilho da regra.** `lida-contra: Emenda 18` na cabeça do inventário. O
+portão procura em `direcao.md` a emenda mais alta com a cadeia «§5 «Voz»
+emendado» e fecha a construção quando ela é maior; fecha também quando nenhuma
+emenda leva a cadeia, porque um gatilho que deixou de poder disparar é pior do
+que uma emenda por ler. O campo só sobe com uma entrada nova no registo das
+revisões. **A constituição não foi tocada**: a planta da Emenda 99 correu sobre
+uma cópia, lida por `OEDP_DIRECAO`, e o sha256 de `direcao.md` é o mesmo antes e
+depois.
+
+**G4 · o protocolo das leituras.** `design/especime-v3/PROTOCOLO-DAS-LEITURAS.md`:
+uma planta por classe em toda a leitura cruzada, registada com sha256 antes; a
+planta da voz no diff do inventário e não numa página; a tabela por classe no
+registo de cada leitura; e uma classe falhada duas vezes seguidas passa da
+leitura para a construção. A tabela das sete leituras de 24 a 26.08 mostra que
+**uma só plantou as cinco classes e duas não plantaram nenhuma**.
+
+#### O que mudou nas páginas
+
+**G5 · a voz de Évora, decidida pelo diretor.** Saem as orações em que a página
+fala de si; a ressalva factual fica, curta; as citações do trabalho ficam como
+citações. Saem também o rótulo «Leitura breve · prosa da casa, assente numa frase
+do trabalho», a frase da outra edição impressa por baixo da sua, «legível» nos
+dois rótulos que o traziam, e «o regulador» nas três cadeias que o item E11 do
+bloco dos 308 não alcançou. **A §1.68 dizia que a Direção-Geral das Autarquias
+Locais deixava de ser chamada «o regulador»; a busca daquele item foi pelas notas
+das oito peças e pelas cadeias da página do concelho, e não passou por
+`src/data/leituras.mjs` nem pelo rótulo do relance da linha do tempo.** Fica
+corrigido aqui, com o `dist/` varrido e o que sobra contado.
+
+**A prova da frase da outra edição mudou de sítio e não se perdeu.**
+`scripts/gate-html.mjs` confere, em 24 peças das páginas de leitura, que as duas
+edições citam as mesmas afirmações pela mesma ordem. E a folga que existia por
+causa daquele bloco saiu com ele: o selo de um valor tinha de abrir a linha em
+qualquer uma das duas edições, e passa a ter de abrir a da própria página.
+
+**G6 · o método sai das páginas do leitor.** Saem as dezanove ressalvas das seis
+páginas de trabalho com a camada que as guardava, as doze da página do concelho
+com as duas secções que as guardavam, a dobra «Como esta linha do tempo é feita»,
+e a descrição de porta «A edição de registo, tal como foi publicada.». **Nove
+ressalvas sobreviveram**, cada uma como UMA frase com o facto por sujeito, na
+nota da peça ou do instrumento onde ela muda a leitura de um número; e os dois
+valores do excesso sobre o teto legal ficaram, fora da dobra que os escondia. A
+tabela de tudo o que foi tocado, trinta e seis linhas com a razão de cada uma,
+está na nota do bloco.
+
+#### O que este bloco mediu e não arredondou
+
+As frases da casa distintas passam de **435 para 395**; as declarações do
+inventário de 506 para 453; os avisos do portão de 19 para 20. **Uma afirmação
+perdeu a única página que a citava** (`factor-sustentabilidade-2026`), e está em
+`ISSUES` I75. **58 das 453 declarações do inventário já não se rendem em página
+nenhuma**, e nada impede que uma frase corrigida volte em silêncio por continuar
+declarada: I74. Duas coisas saíram das páginas e são decisões de conteúdo que este
+bloco não tomou: a incerteza sobre o nome legal de um presidente interino (I77) e
+a única menção ao auditor independente (I78). E o nome de uma medida do trabalho
+05 ainda diz «sediadas», que a verificação das fontes de 26.08 não confirmou
+(I76).
+
+A leitura cruzada do diff deste bloco está por fazer, e o portão di-lo a cada
+construção: o registo das revisões marca `grelha-da-voz` como `por ler`.
+
+#### O fecho do bloco: a leitura cruzada, a segunda passagem, a triagem e o custo
+
+**A leitura cruzada (Codex, `critica/2026-08-27-codex-leitura-grelha-da-voz.md`, 151 198 símbolos).** Sobre o diff do inventário (576 linhas acrescentadas, 532 retiradas), os marcadores e as exceções, e a página de Évora construída no ramo, com duas plantas (uma frase de diligência declarada como conteúdo no diff; uma exceção a dispensar outra com a razão «descreve o que o sítio faz»): **2 de 2**, as duas apanhadas também por terem chegado malformadas pelo empacotamento do lugar de direção. Fora das plantas, cinco achados reais que fizeram a segunda passagem (V1 a V4): a página de Évora ainda falava de si em quatro frases ao lado de um número, que o tripwire não via (o varrimento passou a incluir o texto ao lado das origens declaradas: 395 → 577 frases, 52 → 62 marcadores, entre eles «a página», «publicamos», «selecionámos», «nosso», «este observatório»); «Painel europeu reconferido a ‹data›» no cabeçalho de todas as páginas passou a «Painel europeu · ‹data›»; a agenda, o índice dos estudos e os dois estados vazios deixaram de descrever o processo do sítio; a dispensa de rota para `/estudos` saiu (a frase que a pedia saiu antes) e a nota do marcador «independ» deixou de prometer uma exceção que já não existe. O que a leitura pediu e o lugar de direção não seguiu, com a razão: os marcadores «ruidosos» ficam (só obrigam a uma razão escrita; a medida do ruído são 8 exceções em 577 frases); a dispensa de `/correcoes` fica (Emenda 17); as ledes e as contagens do livro-razão ficam à decisão do diretor; a lede do trabalho 04 é o texto do documento (I69). Duas frases de arredondamento ficam sem marcador porque o único que as apanharia («acima», «abaixo») morde 40 frases legítimas: apanhou-as a leitura, e é à leitura que se credita.
+
+**As duas correções antes da fusão.** I77: o nome do presidente interino de 2013 rende com «[a verificar]» e a sua porta nas duas edições, e o portão ganhou a régua que faltava (um campo declarado por verificar tem de render o marcador na sua página, nas duas edições, lido das páginas construídas). I75: o fator de sustentabilidade de 2026 (0,8237, Portaria n.º 476/2025/1) volta à nota da medida do estudo das pensões como uma frase com o facto por sujeito, com o seu selo, depois de conferida a aritmética (0,8237 × (1 − 0,005 × 12) = 0,774278, uma redução de 22,57 %, contra os 22,6 % que a linha publica).
+
+**O custo.** Construtor (Opus) ≈595k símbolos em catorze commits e nove horas (nove construções completas de 4,5 min); leitor (Codex) 151 198; total ≈0,75M, mais o lugar de direção; a estimativa do brief era «bem abaixo de 300k» e falhou por dois e meio, porque o bloco cresceu de quatro mecanismos para a limpeza da voz de sete páginas e dos rótulos, por decisão do diretor a partir das capturas de 26.08. **O que fica:** as duas linhas do diretor no `PROTOCOLO-DAS-LEITURAS.md`; I74 a I78; I69 no motor (as ledes dos trabalhos).
+
 ## 4. O registo dos defeitos e dos adiamentos
 
 **Defeito registado 2026-08-16 (00:10), encontrado pela direcção no sítio no ar — RESOLVIDO na mesma noite (§1.37, no ar em `4217232`):** os selos acrescentados a 15.08 aos valores do cabeçalho da primeira página (308 · 11 · 15) rendem no cabeçalho com o rótulo inteiro do estudo («O Estado do País — apuramento próprio») e, no caso da contagem CAOP, com o marcador «[a verificar]» ao lado. Certo pela regra (todo o valor tem selo, para a sua linha), errado naquele sítio: no cabeçalho o selo deve ser só o glifo, com o rótulo apenas para leitores de ecrã. **Primeiro item do bloco V**, junto com a saída de «Edição de …», da introdução justificativa da primeira página e de «Estes indicadores não são escolha nossa…» (voz). Sem alteração ao portão: o selo continua ao pé do valor e a apontar para a linha própria.
@@ -11431,114 +11550,3 @@ rotas passam a ler **0**.
   Évora. A edição inglesa do estudo dos mandatos **não está alojada** neste
   sítio, e por isso a citação inglesa daquela nota não tem porta: a porta que
   existe abre a edição portuguesa do mesmo trabalho.
-
-### 1.69 A grelha da voz
-
-**Afecta:** nenhum
-
-Decisão do diretor a **26.08.2026**, à noite, depois de ler o parágrafo «Não
-existe PIB municipal» na página de Évora, o rótulo da camada da leitura breve na
-página de um trabalho e a dobra «Método e ressalvas» de
-`/estudos/evora-quinze-anos-cinco-mandatos`: **esta classe de texto não é útil
-nem simples, e está por todo o sítio.** O bloco constrói a rede mecânica que
-faltava e aplica a decisão às páginas.
-
-Ramo `grelha-da-voz-2026-08-27`, a partir de `main` em `cfa288b`. Os números, os
-comandos e os estragos plantados estão em
-`design/especime-v3/notas/grelha-da-voz.md`.
-
-#### Porque é que a régua não chegava
-
-A régua do inventário (`scripts/medir-defeitos.mjs`) não julga: a classe de cada
-frase era uma declaração à mão, feita por quem escreveu a frase. «É a lei que o
-define, não este sítio.» esteve declarada como conteúdo em 616 páginas até à
-leitura do Codex de 26.08. Nada reexaminava uma declaração quando a regra mudava:
-a Emenda 18 apertou a regra da voz a 25.08 e o inventário não foi relido contra
-ela. E um leitor de olhos frescos de um pacote de páginas não repara numa frase
-só: a leitura do Codex falhou a planta desta classe **duas vezes seguidas** e
-apanhou as duas plantas quando leu só o diff do inventário.
-
-#### O que passou a existir
-
-**G1 · o tripwire lexical.** `design/especime-v3/VOZ-MARCADORES.md` com **52
-marcadores**, cada um com a razão escrita, e **8 exceções**, cada uma com a sua.
-`scripts/voz.mjs` lê o ficheiro; a medida 9 da régua aplica os marcadores a TODAS
-as frases da casa das rotas inventariadas, declaradas ou não; e `npm run
-check:voz` entra na cadeia do `build` e do `verify` e fecha a construção em seis
-casos: a frase com marcador, a autorreferência acima de zero em qualquer rota
-medida, o bloco por classificar, o marcador ou a exceção sem razão, o bloco do
-inventário sem entrada no registo das revisões, e a emenda da voz acima do
-`lida-contra`. **A régua continua a não fechar nada**, que é o que o seu cabeçalho
-promete: quem fecha é o portão, e a varredura é uma só.
-
-A primeira corrida foi vermelha em **dezasseis frases reais**, e não plantadas.
-Os quatro casos conhecidos do brief foram vistos vermelhos, um a um, e o quarto
-(«Ainda não há linhas deste estudo no livro-razão.») não levava marcador nenhum
-até este bloco lhe dar um.
-
-**G2 · o rasto da revisão.** As **453** linhas do inventário ganham a coluna
-«bloco»: 429 com `até 2026-08-26`, que é o que elas são, um estado herdado, e 24
-com `grelha-da-voz`. `design/especime-v3/critica/REVISOES-DO-INVENTARIO.md` diz,
-por bloco, quem leu o diff. A entrada de «até 2026-08-26» escreve o que não
-cobre, e não finge.
-
-**G3 · o gatilho da regra.** `lida-contra: Emenda 18` na cabeça do inventário. O
-portão procura em `direcao.md` a emenda mais alta com a cadeia «§5 «Voz»
-emendado» e fecha a construção quando ela é maior; fecha também quando nenhuma
-emenda leva a cadeia, porque um gatilho que deixou de poder disparar é pior do
-que uma emenda por ler. O campo só sobe com uma entrada nova no registo das
-revisões. **A constituição não foi tocada**: a planta da Emenda 99 correu sobre
-uma cópia, lida por `OEDP_DIRECAO`, e o sha256 de `direcao.md` é o mesmo antes e
-depois.
-
-**G4 · o protocolo das leituras.** `design/especime-v3/PROTOCOLO-DAS-LEITURAS.md`:
-uma planta por classe em toda a leitura cruzada, registada com sha256 antes; a
-planta da voz no diff do inventário e não numa página; a tabela por classe no
-registo de cada leitura; e uma classe falhada duas vezes seguidas passa da
-leitura para a construção. A tabela das sete leituras de 24 a 26.08 mostra que
-**uma só plantou as cinco classes e duas não plantaram nenhuma**.
-
-#### O que mudou nas páginas
-
-**G5 · a voz de Évora, decidida pelo diretor.** Saem as orações em que a página
-fala de si; a ressalva factual fica, curta; as citações do trabalho ficam como
-citações. Saem também o rótulo «Leitura breve · prosa da casa, assente numa frase
-do trabalho», a frase da outra edição impressa por baixo da sua, «legível» nos
-dois rótulos que o traziam, e «o regulador» nas três cadeias que o item E11 do
-bloco dos 308 não alcançou. **A §1.68 dizia que a Direção-Geral das Autarquias
-Locais deixava de ser chamada «o regulador»; a busca daquele item foi pelas notas
-das oito peças e pelas cadeias da página do concelho, e não passou por
-`src/data/leituras.mjs` nem pelo rótulo do relance da linha do tempo.** Fica
-corrigido aqui, com o `dist/` varrido e o que sobra contado.
-
-**A prova da frase da outra edição mudou de sítio e não se perdeu.**
-`scripts/gate-html.mjs` confere, em 24 peças das páginas de leitura, que as duas
-edições citam as mesmas afirmações pela mesma ordem. E a folga que existia por
-causa daquele bloco saiu com ele: o selo de um valor tinha de abrir a linha em
-qualquer uma das duas edições, e passa a ter de abrir a da própria página.
-
-**G6 · o método sai das páginas do leitor.** Saem as dezanove ressalvas das seis
-páginas de trabalho com a camada que as guardava, as doze da página do concelho
-com as duas secções que as guardavam, a dobra «Como esta linha do tempo é feita»,
-e a descrição de porta «A edição de registo, tal como foi publicada.». **Nove
-ressalvas sobreviveram**, cada uma como UMA frase com o facto por sujeito, na
-nota da peça ou do instrumento onde ela muda a leitura de um número; e os dois
-valores do excesso sobre o teto legal ficaram, fora da dobra que os escondia. A
-tabela de tudo o que foi tocado, trinta e seis linhas com a razão de cada uma,
-está na nota do bloco.
-
-#### O que este bloco mediu e não arredondou
-
-As frases da casa distintas passam de **435 para 395**; as declarações do
-inventário de 506 para 453; os avisos do portão de 19 para 20. **Uma afirmação
-perdeu a única página que a citava** (`factor-sustentabilidade-2026`), e está em
-`ISSUES` I75. **58 das 453 declarações do inventário já não se rendem em página
-nenhuma**, e nada impede que uma frase corrigida volte em silêncio por continuar
-declarada: I74. Duas coisas saíram das páginas e são decisões de conteúdo que este
-bloco não tomou: a incerteza sobre o nome legal de um presidente interino (I77) e
-a única menção ao auditor independente (I78). E o nome de uma medida do trabalho
-05 ainda diz «sediadas», que a verificação das fontes de 26.08 não confirmou
-(I76).
-
-A leitura cruzada do diff deste bloco está por fazer, e o portão di-lo a cada
-construção: o registo das revisões marca `grelha-da-voz` como `por ler`.

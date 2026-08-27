@@ -1,0 +1,19 @@
+{
+ "registado_em": "2026-08-27",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "INVENTARIO.diff",
+   "descricao": "an added inventory row declaring a diligence sentence as conteudo",
+   "sha256_antes": "f4aec87fb2683d06206f6ff3bdfe09e587dd238576e583829f3b2f3b005e0a5e",
+   "sha256_depois": "f8c4341aff154134201a238c9f3bdbb3d79041bccc67ee821d2092fed08c990d"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "EXCECOES.md",
+   "descricao": "an exception waiving a diligence sentence with the reason «descreve o que o sítio faz»",
+   "sha256_antes": "e0b63ca9d51ebd9856e824236e6572bfe364a79ea14d29910bafca876c2231f5",
+   "sha256_depois": "ed435c672c4696660b6bfc5a9f8f8a5861642a116181897f1d85bd9ba83f93fe"
+  }
+ ]
+}
