@@ -764,3 +764,17 @@ limites.
 | onde | pt | en |
 |---|---|---|
 | `pelourosNota` do mandato de 2009–2013 | Não estabelecido: o presidente desse mandato, e todos os outros membros dele, não foram identificados. | Not established: the president of that mandate, and every other member of it, were not identified. |
+
+## I77 · o nome por verificar leva o marcador onde se rende, 27.08.2026
+
+**Nenhuma chave nova.** O nome do presidente interino de 2013, na linha do tempo
+da página de Évora, passa a levar o marcador `[a verificar]` ao lado, com a porta
+da página dele em cada edição.
+
+| onde | pt | en |
+|---|---|---|
+| `quem` do mandato de 2009–2013 | José Ernesto d’Oliveira, depois Manuel Melgão [a verificar] a partir de 2013-05-01 | José Ernesto d’Oliveira, then Manuel Melgão [a verificar] (to verify) from 2013-05-01 |
+
+O marcador fica em português nas duas edições, como a página dele manda, e leva a
+glosa na edição inglesa. A porta é `/a-verificar` na edição portuguesa e
+`/en/to-verify` na inglesa, e o portão de HTML confere as duas.

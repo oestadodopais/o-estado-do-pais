@@ -73,6 +73,7 @@ import { VERBATIM, normalizeWhitespace } from '../src/data/verbatim.mjs';
 import { FIGURAS_PDM, FIGURAS_SOCIAL } from '../src/data/figuras.mjs';
 import { EDITIONS, workById, studyLabel } from '../src/data/studies.mjs';
 import { temLeitura, LEITURAS } from '../src/data/leituras.mjs';
+import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { tituloDaLinha, descricaoDaLinha } from '../src/lib/livro.mjs';
 import { matchPath, routePath, HREFLANG, LANGS, PRIMARY_LANG } from '../src/lib/routes.mjs';
 import {
@@ -5658,6 +5659,84 @@ console.log(
       ` · ${excluidasPorCitacao} dispensada(s) por estarem entre «…»`,
   ),
 );
+
+/* =============================================================================
+ * UM FACTO POR VERIFICAR LEVA O MARCADOR ONDE ELE SE RENDE (I77, 27.08.2026)
+ * =============================================================================
+ * A `IDENTIDADE.md` §6 fixa o marcador `[a verificar]` como a única língua
+ * pública para «isto não está confirmado», e a Emenda 15 tirou da página do
+ * leitor o parágrafo que o explicava. As duas regras juntas só se sustentam se o
+ * marcador estiver ONDE o facto se rende: uma incerteza dita num parágrafo à
+ * parte sai com o parágrafo, e foi o que aconteceu ao nome legal do presidente
+ * interino de 2013, cujas duas fontes oficiais dão formas diferentes.
+ *
+ * Um campo dos dados de um concelho declarado `<campo>PorVerificar` tem de
+ * render, na sua página e nas duas edições, o marcador com a porta da página
+ * dele. Quem tirar o marcador fecha a construção; quem quiser tirar a incerteza
+ * tira a declaração, e aí o portão deixa de a exigir.
+ *
+ * A conferência lê as páginas construídas, e não a árvore de dados: é o que o
+ * leitor recebe que tem de levar o marcador.
+ * ========================================================================== */
+/** A âncora de um mandato. O portão tem a sua própria cópia, como do separador. */
+const ancoraDoMandatoNoPortao = (periodo) =>
+  `mandato-${String(periodo).replace(/[–-]+$/, '').replace(/[–-]/g, '-')}`;
+
+{
+  let camposConferidos = 0;
+  for (const m of MUNICIPIOS_COM_PAGINA) {
+    for (const mandato of m.tempo?.mandatos ?? []) {
+      if (!mandato.quemPorVerificar) continue;
+      for (const l of LANGS) {
+        const rota = routePath('municipio', l, { slug: m.slug });
+        const rel = path.join(rota.replace(/^\//, ''), 'index.html');
+        const ficheiro = path.join(DIST, rel);
+        if (!fs.existsSync(ficheiro)) {
+          erros.push({ rel, msg: `não existe a página do concelho "${m.slug}" na edição "${l}".` });
+          continue;
+        }
+        const raiz = parse(fs.readFileSync(ficheiro, 'utf8'), { comment: false });
+        const bloco = raiz.querySelector(`#${ancoraDoMandatoNoPortao(mandato.periodo)}`);
+        const quem = bloco?.querySelector('.mun-mandato-quem');
+        const marca = quem?.querySelector('a.marcador');
+        const porta = routePath('marcador', l);
+        camposConferidos++;
+        if (!quem) {
+          erros.push({
+            rel,
+            msg:
+              `o mandato "${mandato.periodo}" declara o nome por verificar e a página não tem o ` +
+              `campo onde ele se rende (.mun-mandato-quem dentro de #${ancoraDoMandatoNoPortao(mandato.periodo)}).`,
+          });
+          continue;
+        }
+        if (!marca) {
+          erros.push({
+            rel,
+            msg:
+              `o nome do mandato "${mandato.periodo}" está declarado por verificar e rende-se SEM o ` +
+              `marcador.\n` +
+              `      esperava-se <a class="marcador" href="${porta}"> ao pé do nome, dentro de ` +
+              `.mun-mandato-quem.\n` +
+              `      É a regra da IDENTIDADE §6: a única língua pública para «isto não está ` +
+              `confirmado» é o marcador, e ele vive onde o facto se rende, não num parágrafo à parte.`,
+          });
+          continue;
+        }
+        const href = decodeEntities(marca.getAttribute('href') ?? '');
+        if (href !== porta) {
+          erros.push({
+            rel,
+            msg: `o marcador do mandato "${mandato.periodo}" abre "${href}" e devia abrir "${porta}", a página do marcador nesta edição.`,
+          });
+        }
+      }
+    }
+  }
+  console.log(
+    cinza(`  factos por verificar · ${camposConferidos} campo(s) declarados, com o marcador na página e a porta da edição certa`),
+  );
+}
 
 /* =============================================================================
  * AS DUAS EDIÇÕES DA MESMA FRASE (bloco «A grelha da voz», 26.08.2026)
