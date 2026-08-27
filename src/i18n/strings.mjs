@@ -715,8 +715,13 @@ export const STRINGS = {
       eyebrow: 'Regiões',
       h1: 'As regiões de Portugal',
       lede: 'O índice de PIB per capita de cada região, em paridades de poder de compra, contra a média da UE-27.',
-      contaUma: ' região com linhas publicadas.',
-      contaMuitas: ' regiões com linhas publicadas.',
+      /* A CONTAGEM NOMEIA AS REGIÕES E NÃO A PUBLICAÇÃO (leitura cruzada do
+         Codex, 28.08.2026). Dizia «5 regiões com linhas publicadas.», e «com
+         linhas publicadas» é a casa a falar da sua própria cobertura, que é o
+         que a Emenda 15 manda sair de uma página do leitor. O que fica é o
+         número e o que ele conta. */
+      contaUma: ' região',
+      contaMuitas: ' regiões',
       /* A cauda do `<head>` de uma região, composta com o nome dela, como a das
          páginas de concelho e de distrito. */
       metaCauda: 'região · O Estado do País',
@@ -1758,8 +1763,8 @@ export const STRINGS = {
       eyebrow: 'Regions',
       h1: 'The regions of Portugal',
       lede: 'Each region’s GDP per capita index, in purchasing power standards, against the EU-27 average.',
-      contaUma: ' region with published rows.',
-      contaMuitas: ' regions with published rows.',
+      contaUma: ' region',
+      contaMuitas: ' regions',
       metaCauda: 'region · O Estado do País',
       metaDescricaoA: 'The GDP per capita index of ',
       metaDescricaoB: ', in purchasing power standards, against the EU-27 average.',

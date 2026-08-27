@@ -136,6 +136,12 @@ const LEITURAS = (() => {
   const html = fs.readFileSync(path.join(DIST, 'regioes', 'index.html'), 'utf8');
   return [...html.matchAll(/data-conv-linha="([^"]+)"/g)].map((m) => m[1]);
 })();
+/* As regiões com página, lidas das pastas construídas e não de uma lista escrita
+   aqui: uma lista escrita divergia do `dist/` na primeira região que entrasse. */
+const SLUGS = fs
+  .readdirSync(path.join(DIST, 'regioes'))
+  .filter((n) => fs.existsSync(path.join(DIST, 'regioes', n, 'index.html')))
+  .sort();
 
 /** As caixas que interessam de uma página com régua, medidas no navegador. */
 async function leAsCaixas(p) {
@@ -164,6 +170,12 @@ async function leAsCaixas(p) {
          página (achado B4). São essas duas as medições. */
       marcasCaixas: [...document.querySelectorAll('svg.rule-svg [data-mk]')].map((g) => ({
         id: g.getAttribute('data-mk'),
+        /* O patamar em que a marca ficou, lido do `y` da sua chapa: é o que diz
+           se o patamar que se acrescentou está a fazer trabalho ou a fazer
+           companhia (I85). */
+        patamar: g.querySelector('.mk-chapa')
+          ? Math.round(parseFloat(g.querySelector('.mk-chapa').getAttribute('y')))
+          : null,
         chapa: g.querySelector('.mk-chapa') ? caixa(g.querySelector('.mk-chapa')) : null,
         nome: g.querySelector('.mk-name') ? caixa(g.querySelector('.mk-name')) : null,
         valor: g.querySelector('.mk-val') ? caixa(g.querySelector('.mk-val')) : null,
@@ -224,7 +236,23 @@ async function mediuOComputador(marca = 'M1') {
       }
     }
   }
-  medidas[marca] = { eixo: r.eixoCaixa, linhas: r.linhas.length, sobrepostas, tapados };
+  /* QUANTOS PATAMARES O EMPACOTADOR USOU. Com dez leituras e cinco patamares, o
+     que esta contagem responde é se o patamar acrescentado a 28.08 (I85) está a
+     ser usado: se ele estivesse vazio, quatro teriam chegado e a caixa cresceu
+     por nada; se estiver cheio, a caixa cresceu porque tinha de crescer. */
+  const patamares = [...new Set(ms.map((m) => m.patamar).filter((y) => y !== null))].sort(
+    (a, b) => a - b,
+  );
+  const porPatamar = patamares.map(
+    (y) => `${ms.filter((m) => m.patamar === y).length}@${y}`,
+  );
+  medidas[marca] = {
+    eixo: r.eixoCaixa,
+    linhas: r.linhas.length,
+    sobrepostas,
+    tapados,
+    patamares: porPatamar,
+  };
   conta(
     `${marca}a · 1280 · o eixo está à vista, com uma marca por leitura`,
     r.eixoVisivel && r.marcas === LEITURAS.length && r.rotulosDoEixo > 0,
@@ -233,7 +261,7 @@ async function mediuOComputador(marca = 'M1') {
   conta(
     `${marca}b · 1280 · nenhum rótulo cruza outro nem é tapado por uma chapa`,
     sobrepostas === 0 && tapados === 0 && ms.length === LEITURAS.length,
-    `${ms.length} marcas · ${sobrepostas} par(es) de rótulos cruzados · ${tapados} rótulo(s) tapado(s)${quem.length ? ' · ' + quem.join(', ') : ''}`,
+    `${ms.length} marcas · ${sobrepostas} par(es) de rótulos cruzados · ${tapados} rótulo(s) tapado(s)${quem.length ? ' · ' + quem.join(', ') : ''} · ${patamares.length} patamar(es) usado(s): ${porPatamar.join(', ')}`,
   );
   conta(
     `${marca}c · 1280 · a lista tem uma linha por leitura, e a página não transborda`,
@@ -380,6 +408,55 @@ async function mediuSemJs(marca = 'M6') {
 }
 
 /* ===========================================================================
+ * M7 · a unidade de uma peça não acaba num separador
+ * ===========================================================================
+ * A leitura cruzada do Codex de 28.08 apanhou-o na peça da distância: a linha é
+ * DERIVADA e não tem `reference_date`, o gabarito escrevia sempre «unidade · ‹o
+ * período›», e o que saía era «pontos do índice ·» com um `<span>` vazio a
+ * seguir. Um separador só existe entre duas coisas.
+ *
+ * A célula varre TODAS as unidades de TODAS as páginas de região, nas duas
+ * edições, e recusa quatro formas: um separador no fim, um separador no início,
+ * dois separadores seguidos, e um elemento vazio lá dentro. As três primeiras são
+ * o que se vê; a quarta é o que o produz.
+ */
+async function mediuAsUnidades(marca = 'M7') {
+  const maus = [];
+  let unidades = 0;
+  for (const [lang, pagina0] of [
+    ['pt', '/regioes/'],
+    ['en', '/en/regions/'],
+  ]) {
+    for (const slug of SLUGS) {
+      const p = await pagina(pagina0 + slug, 1280);
+      const r = await p.evaluate(() =>
+        [...document.querySelectorAll('[data-medida-unidade]')].map((el) => ({
+          texto: el.textContent.replace(/\s+/g, ' ').trim(),
+          vazios: [...el.querySelectorAll('*')].filter(
+            (x) => !x.textContent.replace(/\s+/g, '').length,
+          ).length,
+        })),
+      );
+      for (const u of r) {
+        unidades++;
+        const mau =
+          /·\s*$/.test(u.texto) || /^\s*·/.test(u.texto) || /·\s*·/.test(u.texto) || u.vazios > 0;
+        if (mau) maus.push(`${lang}:${slug} «${u.texto}» (${u.vazios} vazio(s))`);
+      }
+      await p.__ctx.close();
+    }
+  }
+  medidas[marca] = { unidades, maus };
+  conta(
+    `${marca} · nenhuma unidade de peça acaba num separador, nas duas edições`,
+    unidades > 0 && maus.length === 0,
+    `${unidades} unidades medidas · ${maus.length} com separador solto ou elemento vazio${
+      maus.length ? ': ' + maus.slice(0, 4).join(' · ') : ''
+    }`,
+  );
+}
+
+/* ===========================================================================
  * OS ESTRAGOS PLANTADOS (regra 14)
  * ========================================================================== */
 const PLANTAS = [
@@ -414,6 +491,20 @@ const PLANTAS = [
         : html,
   },
   {
+    /* O DEFEITO QUE O CODEX APANHOU, reposto: o gabarito volta a escrever o
+       separador e um elemento vazio a seguir, que é exactamente o que a linha
+       derivada produzia. */
+    nome: 'a unidade de uma peça com o separador e um elemento vazio a seguir',
+    celulas: ['M7'],
+    estrago: (html, rota) =>
+      /^\/(regioes|en\/regions)\/[a-z-]+$/.test(rota.replace(/\/index\.html$/, ''))
+        ? html.replace(
+            /(<p class="peca-unidade" data-medida-unidade>)([\s\S]*?)(<\/p>)/g,
+            '$1$2 · <span data-nonledger="data-de-referencia"></span>$3',
+          )
+        : html,
+  },
+  {
     nome: 'o destino de um endereço antigo trocado pelo índice',
     celulas: ['M5'],
     estrago: (html, rota) =>
@@ -429,6 +520,7 @@ async function corridaInteira() {
   await mediuOComputador();
   for (const w of TELEMOVEL) await mediuOTelemovel(w, `M2·${w}`);
   await mediuANeutralidade();
+  await mediuAsUnidades();
   await mediuOsEnderecosAntigos();
   await mediuSemJs();
 }
@@ -461,6 +553,7 @@ for (const planta of PLANTAS) {
     if (planta.celulas.includes(`M2·${w}`)) await mediuOTelemovel(w, `M2·${w}`);
   }
   if (planta.celulas.includes('M4')) await mediuANeutralidade();
+  if (planta.celulas.includes('M7')) await mediuAsUnidades();
   if (planta.celulas.includes('M5')) await mediuOsEnderecosAntigos();
   const tocadas = celulas.filter((c) => planta.celulas.some((n) => c.nome.startsWith(n)));
   const apanhou = tocadas.some((c) => !c.passa);
