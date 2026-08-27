@@ -111,12 +111,19 @@
   font-size: 16px;
 }
 .conv-nome a {
-  /* Uma porta com 44px de altura de alvo, como as ligações das listas do mapa.
-     O nome é a porta: separá-lo do valor punha a porta longe do número que ela
-     abre, que é o que a §11 proíbe. */
-  display: inline-block;
-  padding: 10px 0;
-  margin: -10px 0;
+  /* Uma porta com 44px de alvo, como as ligações das listas do mapa. O nome é a
+     porta: separá-lo do valor punha a porta longe do número que ela abre, que é
+     o que a §11 proíbe.
+
+     `min-height` E NÃO PADDING SOZINHO, e foi a régua que o ensinou: com
+     `padding: 10px 0` a caixa media 39 px, e 39 não são 44. O alvo é declarado
+     em vez de calculado a partir da entrelinha do tipo, que muda com o tipo. A
+     margem negativa devolve o espaço à linha, para que a porta cresça sem
+     empurrar a lista. */
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin: -11px 0;
 }
 .conv-valor {
   font-family: var(--f-instr);

@@ -48,6 +48,20 @@ const ETAPA_4 = argv.includes('--etapa-4');
    ainda não existe sai da lista pelo `--so=`. */
 const MAPA_DISTRITOS = argv.includes('--mapa-distritos');
 const PARA = (argv.find((a) => a.startsWith('--para=')) ?? '').slice(7);
+/* AS ROTAS DAS REGIÕES (Emenda 21, 27.08.2026). O índice com a régua completa, e
+   duas páginas de região: a que está acima do 100 e a que está mais abaixo — as
+   duas pontas da escala, que é onde um desenho de régua se parte se se partir. */
+const REGIOES = argv.includes('--regioes');
+const ROTAS_DAS_REGIOES = [
+  { nome: 'regioes-indice', pt: '/regioes', en: '/en/regions', larguras: [1280, 430, 390, 360, 320] },
+  { nome: 'regiao-grande-lisboa', pt: '/regioes/grande-lisboa', en: '/en/regions/grande-lisboa' },
+  {
+    nome: 'regiao-peninsula-de-setubal',
+    pt: '/regioes/peninsula-de-setubal',
+    en: '/en/regions/peninsula-de-setubal',
+  },
+];
+
 const ROTAS_DO_MAPA = [
   { nome: 'inicio', pt: '/', en: '/en' },
   { nome: 'distrito-lisboa', pt: '/distritos/lisboa', en: '/en/districts/lisboa' },
@@ -98,7 +112,9 @@ const ROTAS_DA_ETAPA_4 = [
   { nome: 'nao-encontrado', pt: '/404.html', edicoes: ['pt'] },
 ];
 
-const DESTINO = MAPA_DISTRITOS
+const DESTINO = REGIOES
+  ? path.resolve(RAIZ, PARA || path.join('design', 'especime-v3', 'capturas', 'regioes-2026-08-27'))
+  : MAPA_DISTRITOS
   ? path.resolve(RAIZ, PARA || path.join('design', 'especime-v3', 'capturas', 'mapa-distritos-2026-08-27'))
   : ETAPA_4
     ? path.join(RAIZ, 'design', 'especime-v3', 'capturas', 'etapa-4')
@@ -137,7 +153,11 @@ const servidor = http.createServer((req, res) => {
 await new Promise((r) => servidor.listen(0, '127.0.0.1', r));
 const base = `http://127.0.0.1:${servidor.address().port}`;
 
-/* OS CINCO ESTADOS QUE A PRIMEIRA PÁGINA TEM (Emenda 19, 26.08.2026).
+/* OS QUATRO ESTADOS QUE A PRIMEIRA PÁGINA TEM (Emendas 19 e 21).
+   `regiao-alentejo` saiu a 27.08 com a Emenda 21b: uma região vive na sua
+   página, e é lá que é fotografada (`--regioes`, mais abaixo).
+
+   (a nota de 26.08, que continua a valer para os outros quatro:)
    Eram nove. Os quatro que saíram eram os do concelho e o da vista de escolha:
    `evora-relance`, `evora-leitura`, `beja-vazio` (os estados
    `?ambito=municipio:<slug>`, que a Emenda 19a tirou do esquema; um concelho é
@@ -153,7 +173,6 @@ const ESTADOS = [
   /* O País nas quatro larguras: é o mapa que muda com elas. */
   { nome: 'pais-relance', q: '', larguras: [1440, 1280, 1024, 390] },
   { nome: 'pais-leitura', q: '?densidade=leitura' },
-  { nome: 'regiao-alentejo', q: '?ambito=regiao:alentejo' },
   { nome: 'pesquisa-aberta', q: '?ambito=municipio', larguras: [1440, 1280, 1024, 390] },
   { nome: 'pais-sem-js', q: '', js: false },
 ];
@@ -162,9 +181,15 @@ fs.mkdirSync(DESTINO, { recursive: true });
 const navegador = await chromium.launch({ headless: true });
 let feitas = 0;
 
-if (ETAPA_3 || ETAPA_4 || MAPA_DISTRITOS) {
+if (ETAPA_3 || ETAPA_4 || MAPA_DISTRITOS || REGIOES) {
   const lista = (
-    MAPA_DISTRITOS ? ROTAS_DO_MAPA : ETAPA_4 ? ROTAS_DA_ETAPA_4 : ROTAS_DA_ETAPA_3
+    REGIOES
+      ? ROTAS_DAS_REGIOES
+      : MAPA_DISTRITOS
+        ? ROTAS_DO_MAPA
+        : ETAPA_4
+          ? ROTAS_DA_ETAPA_4
+          : ROTAS_DA_ETAPA_3
   ).filter((r) => SO.length === 0 || SO.includes(r.nome));
   if (SO.length > 0 && lista.length === 0) {
     console.error(`\n  nenhuma rota chamada ${SO.join(', ')} neste modo.\n`);

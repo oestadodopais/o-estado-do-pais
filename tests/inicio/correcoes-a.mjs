@@ -667,7 +667,12 @@ for (const edicao of ['pt', 'en']) {
        O reencaminhamento é medido onde ele vive, em
        `tests/inicio/mapa-navegacao.mjs`; o que esta célula continua a medir é o
        que o achado C1 fechou, nos estados que ficaram. */
-    for (const q of ['?ambito=municipio', '?ambito=regiao:algarve', '']) {
+    /* `?ambito=regiao:algarve` SAIU DESTA LISTA (Emenda 21b, 27.08.2026), pela
+       mesma razão que o concelho saiu a 26.08: deixou de ser um estado, e um
+       endereço antigo com uma região reencaminha para a página dela — uma
+       navegação a meio deste `evaluate` destrói o contexto de execução em vez de
+       medir alguma coisa. Ficam os dois estados que a página tem. */
+    for (const q of ['?ambito=municipio', '']) {
       history.pushState({}, '', location.pathname + q);
       window.dispatchEvent(new PopStateEvent('popstate'));
       await new Promise((r) => setTimeout(r, 60));

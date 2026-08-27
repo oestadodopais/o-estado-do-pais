@@ -239,11 +239,13 @@ const estadoDaPagina = (p) =>
 
   /* AS MUDANÇAS DE ESTADO PASSAM DE CINCO A TRÊS (correções de UX, bloco A,
      itens A2 e A3, 25.08.2026). Os dois passos que saíram — «âmbito → modo
-     região» e «região → Alentejo» — pediam um comando que já não existe: a
-     terceira posição do comando de âmbito saiu com a régua da convergência, e
-     volta quando houver a página das regiões. O ESTADO fica, e é medido mais
-     abaixo, onde a matriz lê `?ambito=regiao:alentejo` do endereço: é isso que a
-     Emenda 7 promete a um endereço partilhado, e é isso que continua verdadeiro.
+     região» e «região → Alentejo» — pediam um comando que já não existe.
+
+     O COMANDO «REGIÃO» VOLTOU E OS PASSOS NÃO (Emenda 21b, 27.08.2026): ele é
+     uma PORTA para `/regioes` e não um estado desta página, e uma mudança de
+     página não é uma mudança de estado. O estado `?ambito=regiao:<slug>` deixou
+     de existir, e o que a Emenda 7 promete a um endereço partilhado passa a ser
+     o reencaminhamento, medido na célula 2i·1 e em `tests/inicio/regioes.mjs`.
      O foco no comando de «Concelho» passou a ir para o CAMPO da pesquisa (item
      A1), e a célula do foco mede o que ela sempre mediu: que ele não se perde no
      corpo do documento. */
@@ -320,7 +322,12 @@ const estadoDaPagina = (p) =>
     ['?ambito=municipios', 'o plural de um valor válido'],
     ['?ambito=municipio:', 'o prefixo sem concelho'],
     [`?ambito=${'a'.repeat(2000)}`, 'ambito de 2 000 caracteres'],
-    ['?ambito=regiao:atlantida', 'região que não existe'],
+    /* `?ambito=regiao:atlantida` SAIU DESTA LISTA (Emenda 21b, 27.08.2026). Era
+       um valor que caía no defeito; passou a ser um endereço antigo, e um
+       endereço antigo REENCAMINHA — uma região que não existe leva ao índice das
+       regiões, como um concelho sem página leva ao índice dos 308. Uma célula
+       que espera `url === '/'` mediria o contrário do que a emenda manda. O
+       reencaminhamento é medido na célula 2i·1 e em `tests/inicio/regioes.mjs`. */
   ];
   for (const [q, nome] of maus) {
     await p.goto(`${base}/${q}`, { waitUntil: 'networkidle' });
@@ -352,13 +359,19 @@ const estadoDaPagina = (p) =>
 {
   for (const [rota, edicao] of [['/', 'pt'], ['/en', 'en']]) {
     const p = await pagina();
-    await p.goto(`${base}${rota}?ambito=regiao:alentejo&densidade=leitura`, { waitUntil: 'networkidle' });
+    /* O ESTADO MEDIDO PASSA A SER A PESQUISA ABERTA E A DENSIDADE (Emenda 21b).
+       Era `?ambito=regiao:alentejo&densidade=leitura`, e o âmbito região deixou
+       de ser um estado desta página: um endereço com ele reencaminha, e uma
+       célula que o lê do endereço mediria uma página que já lá não está. Os dois
+       estados que ficam são os dois que o esquema tem, e a pergunta é a mesma —
+       o estado sobrevive à troca de edição. */
+    await p.goto(`${base}${rota}?ambito=municipio&densidade=leitura`, { waitUntil: 'networkidle' });
     const e = await estadoDaPagina(p);
-    conta(`edição ${edicao} · estado do endereço`, e.ambito === 'regiao:alentejo' && e.densidade === 'leitura', `${e.ambito} · ${e.densidade}`);
+    conta(`edição ${edicao} · estado do endereço`, e.ambito === 'municipio' && e.densidade === 'leitura', `${e.ambito} · ${e.densidade}`);
     const href = await p.evaluate(() => document.querySelector('a.lang')?.getAttribute('href') ?? '');
     conta(
       `edição ${edicao} · a ligação de idioma leva o estado`,
-      href.includes('ambito=regiao%3Aalentejo') || href.includes('ambito=regiao:alentejo'),
+      href.includes('ambito=municipio') && href.includes('densidade=leitura'),
       href,
     );
     despejos[`edicao:${edicao}`] = e.texto;
@@ -514,11 +527,12 @@ const estadoDaPagina = (p) =>
 {
   for (const q of [
     '/',
+    /* Dois endereços ANTIGOS, um de cada emenda que tirou um lugar do esquema
+       (19a os concelhos, 21b as regiões). Com script reencaminham para a página
+       do lugar, ou para o índice quando ela não existe; sem script não há para
+       onde reencaminhar, e a página faz o que faz com qualquer valor que não
+       conhece: mostra o país, inteiro e correcto. */
     '/?ambito=regiao:alentejo',
-    /* Um endereço ANTIGO, dos que a Emenda 19a tirou do esquema. Com script ele
-       reencaminha para a página do concelho ou para o índice dos 308; sem script
-       não há para onde reencaminhar, e a página faz o que faz com qualquer valor
-       que não conhece: mostra o país, inteiro e correcto. */
     '/?ambito=municipio:beja',
     /* E o estado que ficou, com o significado que lhe resta: sem script a
        pesquisa não pesquisa, e os comandos são ligações que abrem. */
@@ -697,18 +711,22 @@ for (const largura of [768, 1280]) {
 }
 
 /* (4) e (4b) SAÍRAM COM A RÉGUA DA CONVERGÊNCIA (correções de UX, bloco A, item
- * A3, 25.08.2026). Mediam a porta do telemóvel do Instrumento n.º 1 — que ela é
- * de palavras, que abre o instrumento, que os rótulos não se sobrepõem lá dentro
- * e que na secretária a porta não existe. O instrumento deixou de ser rendido em
- * `/` por decisão do diretor (Emenda 18: «a régua da convergência sai da primeira
- * página até haver a página das regiões»), e uma célula sem objecto não mede
- * nada: passa por acidente ou falha por acidente.
+ * A3, 25.08.2026) E VOLTARAM PARA `/regioes` (Emenda 21, 27.08.2026).
  *
- * O componente, a folha e as chaves da prova ficam no repositório. Quando a
- * página das regiões o render, estas duas células voltam com ela, e voltam para
- * lá — a matriz da primeira página não é o sítio de uma coisa que já não está na
- * primeira página. As chaves da prova continuam reconferidas pelo portão a cada
- * construção, e `tests/inicio/correcoes-a.mjs` mede que elas não saíram. */
+ * Mediam a porta do telemóvel do Instrumento n.º 1 — que ela é de palavras, que
+ * abre o instrumento, que os rótulos não se sobrepõem lá dentro e que na
+ * secretária a porta não existe. Esta nota dizia, a 25.08, que «quando a página
+ * das regiões o render, estas duas células voltam com ela, e voltam para lá — a
+ * matriz da primeira página não é o sítio de uma coisa que já não está na
+ * primeira página». É o que acontece: as duas voltam em
+ * `tests/inicio/regioes.mjs`, nas células M2 e M3, e voltam mudadas, porque o
+ * objecto delas mudou — a porta do telemóvel deixou de existir e o que o
+ * telemóvel tem é a LISTA com barras, uma linha por região, sem rótulos no eixo
+ * (Emenda 21a). O que elas mediam continua medido: que a régua se lê num
+ * telemóvel e que nada se sobrepõe lá dentro, a 320, 360, 390 e 430.
+ *
+ * As chaves da prova continuam reconferidas pelo portão a cada construção, e
+ * `tests/inicio/correcoes-a.mjs` mede que a régua continua fora de `/`. */
 
 /* (5) A pesquisa com a caixa vazia: os concelhos que têm página.
  *
@@ -802,7 +820,9 @@ for (const largura of [1280, 390]) {
     ['/', 'país'],
     ['/?densidade=leitura', 'país · leitura'],
     ['/?ambito=municipio', 'pesquisa aberta'],
-    ['/?ambito=regiao:alentejo', 'região'],
+    /* O estado «região» saiu da lista com a Emenda 21b: um endereço de região
+       reencaminha, e o que esta célula mediria era a página de destino. Os três
+       estados que ficam são os três que a primeira página tem. */
   ]) {
     const p = await pagina();
     await p.goto(base + rota, { waitUntil: 'networkidle' });
@@ -944,7 +964,9 @@ for (const largura of [1280, 390]) {
   const ESTADOS_DE_TRANSBORDO = [
     ['pais-relance', '/'],
     ['pais-leitura', '/?densidade=leitura'],
-    ['regiao-alentejo-leitura', '/?ambito=regiao:alentejo&densidade=leitura'],
+    /* `regiao-alentejo-leitura` SAIU (Emenda 21b): não é um estado desta página.
+       O transbordo da régua nas quatro larguras mede-se onde ela vive, em
+       `tests/inicio/regioes.mjs` (M2 e M3). */
     /* OS TRÊS ESTADOS DE CONCELHO SAÍRAM (Emenda 19a) e o da pesquisa entrou no
        lugar deles: eram `municipio:evora` em relance e em leitura e
        `municipio:beja`, e nenhum é um estado desta página. */
@@ -998,18 +1020,25 @@ for (const largura of [1280, 390]) {
  * ETAPA 2i · as células da leitura cruzada
  * ========================================================================== */
 
-/* (2i·1) Portugal não é uma região, e o endereço de uma região continua a
- * resolver (correções de UX, bloco A, itens A2 e A3: a régua saiu da página, o
- * ESTADO ficou, porque é endereço partilhável — Emenda 7).
+/* (2i·1) Portugal não é uma região, e um endereço antigo de região leva à página
+ * dela (Emenda 21b, 27.08.2026).
  *
- * O que a célula media da banda — seis pontos, cinco barras, Portugal como
- * referência — não tem objecto em `/` desde 25.08. O que ela continua a medir é
- * o que continua verdadeiro: `?ambito=regiao:portugal` cai no defeito, e as
- * cinco regiões que são âmbito têm bloco de cabeça e painel próprios. */
+ * A célula nasceu a medir a banda (seis pontos, cinco barras, Portugal como
+ * referência), passou a medir os blocos e os painéis de região quando a banda
+ * saiu de `/` a 25.08, e mede agora o que a Emenda 21b deixou: a primeira página
+ * não tem cabeça nem painel de região nenhum, e os três endereços antigos vão aos
+ * três destinos certos.
+ *
+ *   `regiao:alentejo`   → `/regioes/alentejo`, porque a região tem linhas;
+ *   `regiao:portugal`   → `/regioes`, porque a referência não é uma região;
+ *   `regiao:atlantida`  → `/regioes`, porque não existe.
+ *
+ * As duas últimas são a queda que a Emenda 19a escreveu para os concelhos sem
+ * página, aplicada às regiões. O que continua verdadeiro de 20.08: Portugal não
+ * é uma região, e não tem página de região nenhuma. */
 {
   const p = await pagina();
-  await p.goto(`${base}/?ambito=regiao:portugal`, { waitUntil: 'networkidle' });
-  const e = await estadoDaPagina(p);
+  await p.goto(`${base}/`, { waitUntil: 'networkidle' });
   const c = await p.evaluate(() => {
     const chaves = (sel, attr) =>
       [...document.querySelectorAll(sel)]
@@ -1020,37 +1049,51 @@ for (const largura of [1280, 390]) {
       paineis: chaves('[data-painel]', 'data-painel'),
       banda: document.querySelectorAll('[data-banda-ponto]').length,
       pastilhas: document.querySelectorAll('[data-regiao]').length,
+      comando: document.querySelector('[data-modo="regiao"]')?.getAttribute('href') ?? null,
     };
   });
-  const alentejo = await pagina();
-  await alentejo.goto(`${base}/?ambito=regiao:alentejo`, { waitUntil: 'networkidle' });
-  const eA = await estadoDaPagina(alentejo);
+  const destinos = [];
+  for (const antigo of ['regiao:alentejo', 'regiao:portugal', 'regiao:atlantida']) {
+    const q = await pagina();
+    await q.goto(`${base}/?ambito=${antigo}`, { waitUntil: 'networkidle' });
+    destinos.push(new URL(q.url()).pathname.replace(/\/$/, '') || '/');
+    await q.__contexto.close();
+  }
+  const esperados = ['/regioes/alentejo', '/regioes', '/regioes'];
   conta(
-    '2i·1 · Portugal não é uma região, e o endereço de uma região continua a resolver',
-    e.ambito === 'pais' &&
-      e.url === '/' &&
-      c.cabecas.length === 5 &&
-      c.paineis.length === 5 &&
+    '2i·1 · a primeira página não tem região, e um endereço antigo leva à página dela',
+    c.cabecas.length === 0 &&
+      c.paineis.length === 0 &&
       c.banda === 0 &&
       c.pastilhas === 0 &&
-      eA.ambito === 'regiao:alentejo' &&
-      eA.painel === 'regiao:alentejo' &&
-      eA.pecas === 1,
-    `?ambito=regiao:portugal → ${e.ambito}, endereço «${e.url}» · ${c.cabecas.length} cabeças e ${c.paineis.length} painéis de região · banda e pastilhas fora da página (${c.banda} pontos, ${c.pastilhas} pastilhas) · ?ambito=regiao:alentejo → ${eA.painel} com ${eA.pecas} peça`,
+      c.comando === '/regioes' &&
+      destinos.join(' ') === esperados.join(' '),
+    `${c.cabecas.length} cabeças e ${c.paineis.length} painéis de região · comando «Região» → ${c.comando} · banda e pastilhas fora da página (${c.banda} pontos, ${c.pastilhas} pastilhas) · destinos ${destinos.join(', ')}`,
   );
-  await alentejo.__contexto.close();
   await p.__contexto.close();
 }
 
 /* (2i·2) A palavra da ressalva segue a edição, e não a língua por defeito de
    `Claim.astro`. Contam-se TODAS, inclusive as dos blocos escondidos: um estado
-   que o leitor pode acender é um estado que o portão e a matriz têm de ver. */
+   que o leitor pode acender é um estado que o portão e a matriz têm de ver.
+
+   A ROTA MEDIDA PASSA A SER A DAS REGIÕES (Emenda 21b, 27.08.2026). As linhas
+   que a fonte marca `p` são hoje as seis do PIB per capita, e as seis viviam nos
+   painéis de região da primeira página. Os painéis saíram, e com eles saíram
+   todas as ressalvas de `/`: a célula media dois objectos vazios e passava a
+   dizer que a palavra estava certa nas duas edições sem haver palavra nenhuma. É
+   o defeito que a própria célula existe para não ter — e apanhou-se a si mesma,
+   vermelha, na construção em que o painel saiu.
+
+   As seis ressalvas estão agora em `/regioes` e em `/en/regions`, uma por linha
+   da lista da régua, que é onde o valor vive. A pergunta não muda: a palavra
+   segue a EDIÇÃO e não a língua por defeito do componente. */
 {
   const p = await pagina();
   const lidas = {};
   for (const [rota, edicao] of [
-    ['/', 'pt'],
-    ['/en/', 'en'],
+    ['/regioes/', 'pt'],
+    ['/en/regions/', 'en'],
   ]) {
     await p.goto(base + rota, { waitUntil: 'networkidle' });
     lidas[edicao] = await p.evaluate(() => {
@@ -1337,7 +1380,14 @@ for (const largura of [1280, 390]) {
   const rolou = await p.evaluate(() => window.scrollY);
   /* O comando que se prova aqui passou a ser o de «Concelho»: a terceira posição
      do âmbito saiu com a régua (bloco A, itens A2 e A3), e o que a célula mede é
-     que o espaço activa um comando de âmbito, seja ele qual for. */
+     que o espaço activa um comando de âmbito, seja ele qual for.
+
+     «REGIÃO» VOLTOU E NÃO É UM BOTÃO (Emenda 21b, 27.08.2026): é uma LIGAÇÃO
+     para `/regioes`, e uma ligação activa-se com Enter e não com espaço, que é a
+     promessa certa para o que ela é. Por isso a contagem dos papéis passa a
+     excluí-lo: o que a célula mede é que todo o comando que É estado tem papel de
+     botão e a tecla que esse papel promete. Contar o «Região» aqui era pedir a
+     uma porta que se comportasse como um interruptor. */
   await p.focus('[data-modo="municipio"]');
   await p.keyboard.press('Space');
   const b = await estadoDaPagina(p);
@@ -1350,7 +1400,15 @@ for (const largura of [1280, 390]) {
       const es = [...raiz.querySelectorAll(sel)];
       return `${es.filter((e) => e.getAttribute('role') === 'button').length}/${es.length}`;
     };
-    return { ambito: papel('[data-modo]'), densidade: papel('[data-densidade]') };
+    return {
+      ambito: papel('[data-modo]:not([data-modo="regiao"])'),
+      densidade: papel('[data-densidade]'),
+      /* E a porta continua a ser uma porta: sem papel de botão, com `href`. */
+      porta: (() => {
+        const a = raiz.querySelector('[data-modo="regiao"]');
+        return a ? `${a.tagName.toLowerCase()} role=${a.getAttribute('role')} href=${a.getAttribute('href')}` : 'sem comando';
+      })(),
+    };
   });
   const todosBotoes = (r) => r.split('/')[0] === r.split('/')[1] && r.split('/')[1] !== '0';
   conta(
@@ -1359,8 +1417,9 @@ for (const largura of [1280, 390]) {
       b.modo === 'municipio' &&
       rolou === 0 &&
       todosBotoes(papeis.ambito) &&
-      todosBotoes(papeis.densidade),
-    `espaço na densidade → ${a.densidade} (rolagem ${rolou}) · espaço no âmbito → modo ${b.modo} · com role="button": âmbito ${papeis.ambito}, densidade ${papeis.densidade}`,
+      todosBotoes(papeis.densidade) &&
+      papeis.porta === 'a role=null href=/regioes',
+    `espaço na densidade → ${a.densidade} (rolagem ${rolou}) · espaço no âmbito → modo ${b.modo} · com role="button": âmbito ${papeis.ambito}, densidade ${papeis.densidade} · a porta das regiões: ${papeis.porta}`,
   );
   await p.__contexto.close();
 }
