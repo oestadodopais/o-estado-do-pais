@@ -1,0 +1,35 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "distancia-norte-ue27-2024"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "29"
+unit: "pontos de índice"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: null
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "100 − 71 = 29. Distância abaixo da média da UE-27, em pontos de índice."
+derivation_en: "100 − 71 = 29. Distance below the EU-27 average, in index points."
+derived_from:
+  - "pib-pc-norte-2024"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "100 - pib-pc-norte-2024"
+
+study: "avaliacao-economica-regional-de-portugal-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "Aritmética sobre valores publicados. Não é um valor publicado: a proveniência é a das linhas de origem. · [derivation do motor] 100 − 71 = 29. Distância abaixo da média da UE-27, em pontos de índice. · Cruzado de ResearchHub content/03 Regional Economy/Travessia das Regioes · gdp-dist-ue27-PT11-2024-2026-08-27."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []
