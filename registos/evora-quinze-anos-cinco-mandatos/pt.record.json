@@ -34,13 +34,7 @@
    "i": 3,
    "kind": "heading",
    "level": 2,
-   "text": "Leia esta parte primeiro"
-  },
-  {
-   "figures": [],
-   "i": 4,
-   "kind": "paragraph",
-   "text": "Sete limites governam tudo o que se segue. Nenhum deles é um detalhe."
+   "text": "Sete limites"
   },
   {
    "emphasis": [
@@ -51,9 +45,9 @@
     }
    ],
    "figures": [],
-   "i": 5,
+   "i": 4,
    "kind": "paragraph",
-   "text": "Um partido é dono das suas decisões, não de uma curva. Este documento separa dois tipos de afirmação e nunca os mistura. As decisões — entrar num programa de apoio do Estado, contratar um empréstimo, assinar um acordo de pagamento de dívida, fixar uma taxa de imposto — são atos de um executivo com nome, registados nas atas e nas contas, e aqui levam rótulo partidário. Os índices — dívida, taxas de execução, desemprego, empresas, turismo, ganhos, poder de compra — são mostrados por mandato e não são atribuídos a ninguém. O programa da troika, a pandemia, a transferência de novas competências para os municípios — a educação chegou a Évora em 2022 — e o ciclo económico nacional mexem cada um desses ponteiros independentemente de quem ocupa a câmara. Um partido é dono das suas decisões, não de uma curva, e herda as dos outros. Por isso nenhum dos mandatos abaixo é classificado."
+   "text": "Um partido é dono das suas decisões, não de uma curva. As decisões — entrar num programa de apoio do Estado, contratar um empréstimo, assinar um acordo de pagamento de dívida, fixar uma taxa de imposto — são atos de um executivo com nome, registados nas atas e nas contas, e aqui levam rótulo partidário. Os índices — dívida, taxas de execução, desemprego, empresas, turismo, ganhos, poder de compra — são mostrados por mandato e não são atribuídos a ninguém. O programa da troika, a pandemia, a transferência de novas competências para os municípios — a educação chegou a Évora em 2022 — e o ciclo económico nacional mexem cada um desses ponteiros independentemente de quem ocupa a câmara. Um partido é dono das suas decisões, não de uma curva, e herda as dos outros."
   },
   {
    "emphasis": [
@@ -84,9 +78,9 @@
     }
    ],
    "figures": [],
-   "i": 6,
+   "i": 5,
    "kind": "paragraph",
-   "text": "«Dívida» não quer dizer a mesma coisa em cada ano da tabela. Antes da lei das finanças locais de 2013, o conceito legal era o endividamento líquido, calculado no relatório de gestão de cada ano; depois dela, a medida reportada é a dívida total de operações orçamentais, que inclui a quota-parte do município nas entidades em que participa. O município publica ainda um terceiro valor, a dívida global apurada, e um quarto, a dívida orçamental sem as entidades participadas. Durante vários anos, dois ou três destes conceitos coexistem no mesmo relatório com valores diferentes. Este documento imprime o conceito ao lado do valor da dívida de cada ano, imprime os valores rivais onde existem, e nunca escolhe um em silêncio."
+   "text": "«Dívida» não quer dizer a mesma coisa em cada ano da tabela. Antes da lei das finanças locais de 2013, o conceito legal era o endividamento líquido, calculado no relatório de gestão de cada ano; depois dela, a medida reportada é a dívida total de operações orçamentais, que inclui a quota-parte do município nas entidades em que participa. O município publica ainda um terceiro valor, a dívida global apurada, e um quarto, a dívida orçamental sem as entidades participadas. Durante vários anos, dois ou três destes conceitos coexistem no mesmo relatório com valores diferentes."
   },
   {
    "emphasis": [
@@ -102,7 +96,7 @@
     }
    ],
    "figures": [],
-   "i": 7,
+   "i": 6,
    "kind": "paragraph",
    "text": "O sistema contabilístico mudou por baixo da série. O município manteve as suas contas em POCAL na primeira parte do período e em SNC-AP na parte final. O relatório de 2021 diz, pelas suas próprias palavras, que o novo sistema faz os resultados parecerem piores do que o antigo, por causa da forma como trata as depreciações e amortizações. Os resultados antes e depois da transição não formam, por isso, uma série contínua, e a coluna do resultado da tabela das finanças deve ser lida como duas."
   },
@@ -115,7 +109,7 @@
     }
    ],
    "figures": [],
-   "i": 8,
+   "i": 7,
    "kind": "paragraph",
    "text": "Um ano de contas foi publicado em digitalizações, e outro não foi publicado de todo. Cada valor de 2020 e de 2024 abaixo vem, por isso, da coluna comparativa de um relatório posterior."
   },
@@ -128,7 +122,7 @@
     }
    ],
    "figures": [],
-   "i": 9,
+   "i": 8,
    "kind": "paragraph",
    "text": "Um asterisco nas tabelas significa que o valor foi lido da coluna comparativa de um relatório posterior, e não de um documento do seu próprio ano. É o mesmo município a reportar, mas um ano depois, num relatório escrito pelo mesmo executivo sobre um ano cujas contas próprias nunca foram aprovadas — no caso de 2024, foram rejeitadas. Cinco anos levam-no, no todo ou em parte."
   },
@@ -141,9 +135,9 @@
     }
    ],
    "figures": [],
-   "i": 10,
+   "i": 9,
    "kind": "paragraph",
-   "text": "Uma adaga significa que o valor foi recuperado de uma digitalização degradada. Aparece na secção sobre o plano de 2026; fora daí, não aparece. É um marcador da mesma família do asterisco. O corpo do relatório do plano extrai com limpeza; os seus anexos — o plano plurianual de investimentos e o plano de atividades, onde vivem as linhas dos projetos — são uma camada digitalizada em que dígitos e designações são frequentemente ilegíveis. Cada valor tirado dessa camada leva uma adaga. As linhas que não foi possível recuperar honestamente ficaram de fora; são lacunas, e não zeros."
+   "text": "Uma adaga significa que o valor foi recuperado de uma digitalização degradada. Aparece na secção sobre o plano de 2026; fora daí, não aparece. É um marcador da mesma família do asterisco. O corpo do relatório do plano extrai com limpeza; os seus anexos — o plano plurianual de investimentos e o plano de atividades, onde vivem as linhas dos projetos — são uma camada digitalizada em que dígitos e designações são frequentemente ilegíveis. Cada valor tirado dessa camada leva uma adaga. As linhas que não foi possível recuperar ficaram de fora; são lacunas, e não zeros."
   },
   {
    "emphasis": [
@@ -154,42 +148,23 @@
     }
    ],
    "figures": [],
+   "i": 10,
+   "kind": "paragraph",
+   "text": "O mandato que começou em 2025 não é avaliável aqui. Tomou posse a 2025-10-31. As suas primeiras contas serão as de 2026, devidas por volta da primavera de 2027."
+  },
+  {
    "i": 11,
-   "kind": "paragraph",
-   "text": "O mandato que começou em 2025 não é avaliável aqui. Tomou posse a 2025-10-31. As suas primeiras contas serão as de 2026, devidas por volta da primavera de 2027. Aparece na secção das eleições, na lista de mandatos e na secção sobre o orçamento que escreveu para 2026 — que é um plano, e não um resultado; fora daí, não aparece."
-  },
-  {
-   "emphasis": [
-    {
-     "end": 81,
-     "kind": "strong",
-     "start": 69
-    }
-   ],
-   "figures": [],
-   "i": 12,
-   "kind": "paragraph",
-   "text": "Onde uma frase abaixo raciocina para lá do que uma fonte afirma, diz (inferência)."
-  },
-  {
-   "i": 13,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 14,
+   "i": 12,
    "kind": "heading",
    "level": 2,
    "text": "O essencial"
   },
   {
-   "figures": [],
-   "i": 15,
-   "kind": "paragraph",
-   "text": "Para quem levar daqui uma secção, é esta — cada valor tem o seu contexto completo mais abaixo."
-  },
-  {
-   "i": 16,
+   "i": 13,
    "kind": "table",
    "rows": [
     [
@@ -498,23 +473,23 @@
   },
   {
    "figures": [],
-   "i": 17,
+   "i": 14,
    "kind": "paragraph",
-   "text": "Três frases de orientação. Os quinze anos leem-se como um longo esforço de saneamento a partir de uma montanha de dívida cujo tamanho verdadeiro levou anos a apurar, conduzido ao longo de três mandatos da CDU depois de uma década do PS que acabou no resgate — e o último troço desse esforço, sob uma minoria de dois mandatos, parou em prazos de pagamento a alongar-se e num ano de contas que ninguém assinou. A cidade por baixo saiu-se bem na quase totalidade dos índices nacionais enquanto a sua câmara se desalavancava — e quanto disso pertence a cada executivo é exatamente o que este documento se recusa a afirmar. O raciocínio completo, e os limites que o governam, são as secções que se seguem."
+   "text": "Os quinze anos leem-se como um longo esforço de saneamento a partir de uma montanha de dívida cujo tamanho verdadeiro levou anos a apurar, conduzido ao longo de três mandatos da CDU depois de uma década do PS que acabou no resgate — e o último troço desse esforço, sob uma minoria de dois mandatos, parou em prazos de pagamento a alongar-se e num ano de contas que ninguém assinou. A cidade por baixo saiu-se bem na quase totalidade dos índices nacionais enquanto a sua câmara se desalavancava."
   },
   {
-   "i": 18,
+   "i": 15,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 19,
+   "i": 16,
    "kind": "heading",
    "level": 2,
    "text": "Os cinco mandatos, e os dois anteriores"
   },
   {
-   "i": 20,
+   "i": 17,
    "kind": "table",
    "rows": [
     [
@@ -833,18 +808,18 @@
      "value": "7"
     }
    ],
-   "i": 21,
+   "i": 18,
    "kind": "paragraph",
-   "text": "A câmara tem 7 mandatos. Antes de 2001 a câmara era do PCP/CDU, cujo presidente de 1976 a 2001 foi Abílio Dias Fernandes, segundo a lista de presidentes da associação nacional de municípios. As duas primeiras linhas acima são contexto: este documento avalia os quinze anos a partir de 2010, que é onde começam as contas legíveis."
+   "text": "A câmara tem 7 mandatos. Antes de 2001 a câmara era do PCP/CDU, cujo presidente de 1976 a 2001 foi Abílio Dias Fernandes, segundo a lista de presidentes da associação nacional de municípios."
   },
   {
    "figures": [],
-   "i": 22,
+   "i": 19,
    "kind": "paragraph",
-   "text": "As duas eleições de contexto, dos arquivos oficiais e dos mapas definitivos, porque a afirmação «o PS detinha Évora desde 2001» merece ficar registada e não ficar por ouvir dizer:"
+   "text": "As duas eleições de contexto, dos arquivos oficiais e dos mapas definitivos:"
   },
   {
-   "i": 23,
+   "i": 20,
    "kind": "table",
    "rows": [
     [
@@ -1293,12 +1268,12 @@
      "value": "7"
     }
    ],
-   "i": 24,
+   "i": 21,
    "kind": "paragraph",
    "text": "Participação de 61,39%, 28 110 votantes, para 7 mandatos."
   },
   {
-   "i": 25,
+   "i": 22,
    "kind": "table",
    "rows": [
     [
@@ -1744,36 +1719,36 @@
      "value": "7"
     }
    ],
-   "i": 26,
+   "i": 23,
    "kind": "paragraph",
    "text": "Participação de 55,06%, 25 469 votantes, para 7 mandatos. A vitória de 2001 foi maioria absoluta; a de 2005 não foi."
   },
   {
-   "i": 27,
+   "i": 24,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 28,
+   "i": 25,
    "kind": "heading",
    "level": 2,
    "text": "Cinco eleições, contadas oficialmente"
   },
   {
    "figures": [],
-   "i": 29,
+   "i": 26,
    "kind": "paragraph",
    "text": "Cada valor desta secção é a votação para a câmara municipal no concelho de Évora, do portal de resultados da secretaria-geral do ministério da administração interna, cruzada com os mapas definitivos publicados no Diário da República. A votação para a assembleia municipal é outra eleição e não está aqui."
   },
   {
    "figures": [],
-   "i": 30,
+   "i": 27,
    "kind": "heading",
    "level": 3,
    "text": "2009 — o PS mantém uma câmara dividida"
   },
   {
-   "i": 31,
+   "i": 28,
    "kind": "table",
    "rows": [
     [
@@ -2133,19 +2108,19 @@
      "value": "26 236"
     }
    ],
-   "i": 32,
+   "i": 29,
    "kind": "paragraph",
    "text": "Participação de 54,52%, 26 236 votantes. O vencedor levou a presidência sem maioria absoluta e com o mesmo número de mandatos do segundo classificado."
   },
   {
    "figures": [],
-   "i": 33,
+   "i": 30,
    "kind": "heading",
    "level": 3,
    "text": "2013 — a câmara muda de mãos"
   },
   {
-   "i": 34,
+   "i": 31,
    "kind": "table",
    "rows": [
     [
@@ -2429,19 +2404,19 @@
      "value": "23 885"
     }
    ],
-   "i": 35,
+   "i": 32,
    "kind": "paragraph",
    "text": "Participação de 49,69%, 23 885 votantes. Realizada a 2013-09-29, a meio do programa de ajustamento, esta é a maior viragem isolada do período."
   },
   {
    "figures": [],
-   "i": 36,
+   "i": 33,
    "kind": "heading",
    "level": 3,
    "text": "2017 — a maioria é renovada"
   },
   {
-   "i": 37,
+   "i": 34,
    "kind": "table",
    "rows": [
     [
@@ -2859,19 +2834,19 @@
      "value": "23 234"
     }
    ],
-   "i": 38,
+   "i": 35,
    "kind": "paragraph",
-   "text": "Participação de 48,90%, 23 234 votantes. A contagem de mandatos não muda face a 2013, embora a percentagem vencedora desça. Estas duas eleições produziram as únicas maiorias absolutas das cinco aqui avaliadas — um facto retirado de um campo booleano dos ficheiros oficiais de resultados, e não calculado a partir de qualquer valor deste documento, e declarado como tal no ledger."
+   "text": "Participação de 48,90%, 23 234 votantes. A contagem de mandatos não muda face a 2013, embora a percentagem vencedora desça. Estas duas eleições produziram as únicas maiorias absolutas das cinco aqui avaliadas."
   },
   {
    "figures": [],
-   "i": 39,
+   "i": 36,
    "kind": "heading",
    "level": 3,
    "text": "2021 — a maioria passa a minoria"
   },
   {
-   "i": 40,
+   "i": 37,
    "kind": "table",
    "rows": [
     [
@@ -3284,14 +3259,14 @@
      "value": "23 374"
     }
    ],
-   "i": 41,
+   "i": 38,
    "kind": "paragraph",
    "text": "Participação de 49,84%, 23 374 votantes. O próprio município refere-se ao vereador eleito pela lista NC/RIR como pertencendo ao Movimento Cuidar de Évora."
   },
   {
    "figures": [
     {
-     "end": 115,
+     "end": 80,
      "others": [
       "el2013-ps-seats",
       "el2017-ps-seats",
@@ -3305,11 +3280,11 @@
      "row": "clc24-favor",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 114,
+     "start": 79,
      "value": "2"
     },
     {
-     "end": 121,
+     "end": 86,
      "others": [
       "el2013-seats-total",
       "el2017-seats-total",
@@ -3324,23 +3299,23 @@
      "row": "el2009-seats-total",
      "source_digest_kind": "portal-estatico",
      "source_sha256": null,
-     "start": 120,
+     "start": 85,
      "value": "7"
     }
    ],
-   "i": 42,
+   "i": 39,
    "kind": "paragraph",
-   "text": "É esta a aritmética que decide os quatro anos seguintes, e vale a pena dizê-la com clareza: a lista vencedora tem 2 dos 7 mandatos. O seu presidente mantém a presidência; o seu executivo não mantém a maioria. Quatro anos depois, essa aritmética produz a rejeição de um ano de contas, que a secção de mandato abaixo expõe."
+   "text": "É esta a aritmética que decide os quatro anos seguintes: a lista vencedora tem 2 dos 7 mandatos. O seu presidente mantém a presidência; o seu executivo não mantém a maioria. Quatro anos depois, essa aritmética produz a rejeição de um ano de contas, que a secção de mandato abaixo expõe."
   },
   {
    "figures": [],
-   "i": 43,
+   "i": 40,
    "kind": "heading",
    "level": 3,
    "text": "2025 — a câmara muda outra vez de mãos"
   },
   {
-   "i": 44,
+   "i": 41,
    "kind": "table",
    "rows": [
     [
@@ -3825,13 +3800,13 @@
      "value": "27 383"
     }
    ],
-   "i": 45,
+   "i": 42,
    "kind": "paragraph",
    "text": "Participação de 59,41%, 27 383 votantes — a participação mais alta das cinco, e a primeira eleição do período em que o presidente cessante não se candidatou."
   },
   {
    "figures": [],
-   "i": 46,
+   "i": 43,
    "kind": "heading",
    "level": 3,
    "text": "A outra câmara, e o mapa"
@@ -3851,12 +3826,12 @@
      "value": "21"
     }
    ],
-   "i": 47,
+   "i": 44,
    "kind": "paragraph",
-   "text": "A câmara não foi o órgão isolado eleito nesse dia. A assembleia municipal é um boletim de voto separado e, em 2025, devolveu 21 mandatos de eleição direta. A tabela abaixo são esses mandatos de eleição direta, e nada mais: este documento não faz afirmação alguma sobre a composição total da assembleia, porque a evidência lida para ela cobre a votação nas listas e não cobre quem mais lá tem assento."
+   "text": "A câmara não foi o órgão isolado eleito nesse dia. A assembleia municipal é um boletim de voto separado e, em 2025, devolveu 21 mandatos de eleição direta. A tabela abaixo são esses mandatos de eleição direta, e nada mais."
   },
   {
-   "i": 48,
+   "i": 45,
    "kind": "table",
    "rows": [
     [
@@ -4029,7 +4004,7 @@
   },
   {
    "figures": [],
-   "i": 49,
+   "i": 46,
    "kind": "paragraph",
    "text": "O resultado da assembleia de 2021 está no mesmo ficheiro de evidência, mas é a contagem provisória do portal de resultados para esse órgão e nunca foi confrontado com um mapa definitivo, como aconteceu com os valores da câmara, pelo que não é impresso aqui."
   },
@@ -4045,41 +4020,41 @@
      "value": "156"
     },
     {
-     "end": 339,
+     "end": 264,
      "printed": "49,84",
      "row": "el2021-turnout-pct",
      "source_digest_kind": "portal-estatico",
      "source_sha256": null,
-     "start": 334,
+     "start": 259,
      "value": "49.84"
     },
     {
-     "end": 351,
+     "end": 276,
      "printed": "59,41",
      "row": "el2025-turnout-pct",
      "source_digest_kind": "portal-estatico",
      "source_sha256": null,
-     "start": 346,
+     "start": 271,
      "value": "59.41"
     }
    ],
-   "i": 50,
+   "i": 47,
    "kind": "paragraph",
-   "text": "Duas coisas sobre a votação para a câmara merecem a aritmética. A primeira é quão renhida foi: a lista vencedora terminou 156 votos à frente da coligação que ficou atrás dela, valor calculado aqui a partir das duas linhas de votos já impressas acima. A segunda é a participação, que subiu quase dez pontos entre as duas eleições — de 49,84% para 59,41%."
+   "text": "Duas coisas sobre a votação para a câmara merecem a aritmética. A primeira é quão renhida foi: a lista vencedora terminou 156 votos à frente da coligação que ficou atrás dela. A segunda é a participação, que subiu quase dez pontos entre as duas eleições — de 49,84% para 59,41%."
   },
   {
    "figures": [
     {
-     "end": 315,
+     "end": 137,
      "printed": "8",
      "row": "freg2025-ps-lead",
      "source_digest_kind": "portal-estatico",
      "source_sha256": null,
-     "start": 314,
+     "start": 136,
      "value": "8"
     },
     {
-     "end": 372,
+     "end": 194,
      "others": [
       "el2009-ps-seats",
       "el2009-pcp-pev-seats",
@@ -4095,11 +4070,11 @@
      "row": "el2005-pcp-pev-seats",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 371,
+     "start": 193,
      "value": "3"
     },
     {
-     "end": 399,
+     "end": 221,
      "others": [
       "el2009-ppdpsd-seats",
       "el2013-ppdpsd-cds-pp-seats",
@@ -4116,22 +4091,15 @@
      "row": "el2025-pcp-pev-seats",
      "source_digest_kind": "portal-estatico",
      "source_sha256": null,
-     "start": 398,
+     "start": 220,
      "value": "1"
     }
    ],
-   "i": 51,
+   "i": 48,
    "kind": "paragraph",
-   "text": "O concelho vota como doze freguesias, e elas não votam da mesma maneira. Somados pelas doze, os votos das listas e a participação reconciliam exatamente com os totais do concelho impressos acima — nada se perde nem se acrescenta entre os dois níveis. Dentro delas, a lista do PS liderou a votação para a câmara em 8 das doze freguesias, a coligação PPD/PSD–CDS-PP–PPM em 3, e a lista do PCP-PEV em 1 — Nossa Senhora da Graça do Divor."
+   "text": "O concelho vota como doze freguesias, e elas não votam da mesma maneira. Dentro delas, a lista do PS liderou a votação para a câmara em 8 das doze freguesias, a coligação PPD/PSD–CDS-PP–PPM em 3, e a lista do PCP-PEV em 1 — Nossa Senhora da Graça do Divor."
   },
   {
-   "emphasis": [
-    {
-     "end": 368,
-     "kind": "strong",
-     "start": 229
-    }
-   ],
    "figures": [
     {
      "end": 95,
@@ -4170,19 +4138,19 @@
      "value": "156"
     }
    ],
-   "i": 52,
+   "i": 49,
    "kind": "paragraph",
-   "text": "O mapa é mais largo do que a margem. Na Malagueira e Horta das Figueiras a coligação teve 3 183 votos contra os 2 783 da lista vencedora — uma diferença de 400 nessa freguesia sozinha, contra uma margem de 156 em todo o concelho (inferência; os dois valores são linhas do ledger e ambos são diferenças de votos impressos, mas a comparação entre eles é deste documento)."
+   "text": "O mapa é mais largo do que a margem. Na Malagueira e Horta das Figueiras a coligação teve 3 183 votos contra os 2 783 da lista vencedora — uma diferença de 400 nessa freguesia sozinha, contra uma margem de 156 em todo o concelho (inferência)."
   },
   {
    "figures": [],
-   "i": 53,
+   "i": 50,
    "kind": "heading",
    "level": 3,
    "text": "Como a presidência mudou de mãos, na prática"
   },
   {
-   "i": 54,
+   "i": 51,
    "kind": "table",
    "rows": [
     [
@@ -4283,31 +4251,31 @@
   },
   {
    "figures": [],
-   "i": 55,
+   "i": 52,
    "kind": "paragraph",
    "text": "Duas coisas que esta tabela regista e uma tabela de eleições não consegue. Em primeiro lugar, o mandato de 2013 não correu até ao fim com o presidente eleito em 2009: renunciou com efeitos a 2013-05-01, cerca de cinco meses antes do fim do mandato, e o vice-presidente assumiu como presidente interino até o novo executivo ser instalado a 2013-10-18 — a mesma pessoa encabeçou depois a lista do PS na eleição de setembro. Em segundo lugar, são as datas de instalação, e não as das eleições, que marcam o início efetivo dos mandatos: 2013-10-18, 2017-10-20, 2021-10-15 e 2025-10-31."
   },
   {
    "figures": [],
-   "i": 56,
+   "i": 53,
    "kind": "paragraph",
    "text": "O nome legal completo do presidente interino é uma pequena questão em aberto. A lista de presidentes da associação de municípios e o ficheiro de candidatos do ministério dão dois nomes completos diferentes para o mesmo homem; o relatório do próprio município chama-lhe Manuel Melgão, que é a forma usada aqui. O nome legal completo é [verify]; a identidade — o vice-presidente que assumiu a presidência e depois encabeçou a lista — é consistente nas três fontes oficiais."
   },
   {
    "figures": [],
-   "i": 57,
+   "i": 54,
    "kind": "heading",
    "level": 3,
    "text": "Onde as contagens oficiais discordam entre si"
   },
   {
    "figures": [],
-   "i": 58,
+   "i": 55,
    "kind": "paragraph",
    "text": "O portal de resultados publica contagens provisórias; o Diário da República publica os mapas definitivos meses depois. Em três eleições das cinco, os dois divergem ligeiramente. A atribuição de mandatos e a lista vencedora são idênticas em cada fonte e em cada ano; só os totais de votos se movem."
   },
   {
-   "i": 59,
+   "i": 56,
    "kind": "table",
    "rows": [
     [
@@ -4677,27 +4645,20 @@
    ]
   },
   {
-   "emphasis": [
-    {
-     "end": 390,
-     "kind": "strong",
-     "start": 345
-    }
-   ],
    "figures": [],
-   "i": 60,
+   "i": 57,
    "kind": "paragraph",
-   "text": "O mapa de 2013 coincide com o portal em cada campo extraído. A célula de eleitores inscritos do próprio mapa de 2021 extraiu corrompida e a atribuição das duas colunas partidárias mais próximas foi inferida por consistência de percentagens, em vez de lida de um cabeçalho intacto, pelo que a linha de 2021 desta tabela é a menos sólida das três (inferência, e o ficheiro de evidência di-lo). O mapa definitivo de 2025 é uma imagem digitalizada e não foi extraído por máquina de todo; os valores de 2025 assentam no portal de resultados e nas páginas do próprio município, ambos oficiais."
+   "text": "O mapa de 2013 coincide com o portal em cada campo extraído. A célula de eleitores inscritos do próprio mapa de 2021 extraiu corrompida e a atribuição das duas colunas partidárias mais próximas foi inferida por consistência de percentagens, em vez de lida de um cabeçalho intacto, pelo que a linha de 2021 desta tabela é a menos sólida das três (inferência). O mapa definitivo de 2025 é uma imagem digitalizada e não foi extraído por máquina de todo; os valores de 2025 assentam no portal de resultados e nas páginas do próprio município, ambos oficiais."
   },
   {
    "figures": [],
-   "i": 61,
+   "i": 58,
    "kind": "heading",
    "level": 3,
    "text": "O executivo instalado em 2025"
   },
   {
-   "i": 62,
+   "i": 59,
    "kind": "table",
    "rows": [
     [
@@ -4839,12 +4800,12 @@
    ]
   },
   {
-   "i": 63,
+   "i": 60,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 64,
+   "i": 61,
    "kind": "heading",
    "level": 2,
    "text": "Mandato a mandato"
@@ -4852,29 +4813,29 @@
   {
    "emphasis": [
     {
-     "end": 53,
+     "end": 6,
      "kind": "em",
-     "start": 47
+     "start": 0
     },
     {
-     "end": 107,
+     "end": 60,
      "kind": "em",
-     "start": 100
+     "start": 53
     },
     {
-     "end": 210,
+     "end": 163,
      "kind": "em",
-     "start": 204
+     "start": 157
     }
    ],
    "figures": [],
-   "i": 65,
+   "i": 62,
    "kind": "paragraph",
-   "text": "Cada mandato abaixo tem as mesmas três partes. Herdou é o estado dos indicadores no ano de entrada. Decidiu contém atos desse executivo, cada um sustentado por uma linha citada de um documento municipal. Deixou é o estado dos indicadores no ano de saída. Os indicadores não são um veredicto sobre o executivo; são as condições que o seguinte herdou."
+   "text": "Herdou é o estado dos indicadores no ano de entrada. Decidiu contém atos desse executivo, cada um sustentado por uma linha citada de um documento municipal. Deixou é o estado dos indicadores no ano de saída. Os indicadores não são um veredicto sobre o executivo; são as condições que o seguinte herdou."
   },
   {
    "figures": [],
-   "i": 66,
+   "i": 63,
    "kind": "heading",
    "level": 3,
    "text": "2009–2013 — PS"
@@ -4888,7 +4849,7 @@
     }
    ],
    "figures": [],
-   "i": 67,
+   "i": 64,
    "kind": "paragraph",
    "text": "O que herdou. Nada de mensurável a partir desta evidência. Os relatórios de gestão de 2010 a 2014 têm todos camadas de texto corrompidas — as fontes não trazem mapa de carateres, pelo que uma extração de texto devolve glifos ilegíveis — e esta extração não correu OCR, por regra. O que sobrevive dos primeiros anos são as demonstrações de fluxos de caixa e de resultados publicadas em separado, e é por isso que os três primeiros anos da tabela das finanças têm três colunas preenchidas e cinco vazias."
   },
@@ -4932,13 +4893,13 @@
      "value": "60"
     }
    ],
-   "i": 68,
+   "i": 65,
    "kind": "paragraph",
    "text": "O que decidiu. Uma decisão deste mandato domina tudo o que vem depois dela: a entrada no Programa de Apoio à Economia Local, cujo empréstimo está registado nas contas em €32 166 372. As duas primeiras tranches foram reconhecidas em 2013 e a última em 2014. O relatório de 2016 diz o que o dinheiro fez: €19 032 188 dele, ou 60%, serviram para pagar faturas devidas à Águas do Centro Alentejo."
   },
   {
    "figures": [],
-   "i": 69,
+   "i": 66,
    "kind": "paragraph",
    "text": "Uma cautela que pertence a esta secção e não às tabelas: cada frase do parágrafo acima tem por fonte relatórios escritos pelo executivo que se seguiu. Os relatórios da era PS são precisamente os ilegíveis. Os valores são o relato do sucessor sobre a decisão do antecessor, e devem ser lidos como tal."
   },
@@ -4962,12 +4923,12 @@
      "value": "82 871 523"
     }
    ],
-   "i": 70,
+   "i": 67,
    "kind": "paragraph",
    "text": "O que deixou. O executivo que entrou apurou a dívida global do município a 2013-10-31 — a data de referência que a sua própria tabela usa, duas semanas depois de tomar posse — em €82 871 523. Esse valor não ficou quieto. À medida que passivos anteriores a outubro de 2013 foram aparecendo em anos posteriores e sendo aceites como legítimos, o mesmo executivo reexpressou três vezes a dívida que herdara:"
   },
   {
-   "i": 71,
+   "i": 68,
    "kind": "table",
    "rows": [
     [
@@ -5049,12 +5010,12 @@
   },
   {
    "figures": [],
-   "i": 72,
+   "i": 69,
    "kind": "paragraph",
    "text": "As parcelas que compuseram essa reexpressão foram registadas ano a ano:"
   },
   {
-   "i": 73,
+   "i": 70,
    "kind": "table",
    "rows": [
     [
@@ -5241,13 +5202,13 @@
      "value": "1 680 443"
     }
    ],
-   "i": 74,
+   "i": 71,
    "kind": "paragraph",
    "text": "A maior parcela isolada dessa sequência é a de 2017, e quase tudo — €3 281 097 — são juros de mora devidos à empresa regional de águas em processo judicial. Outros €1 680 443 da mesma natureza, devidos ao instituto nacional da habitação por cinquenta e quatro fogos comprados em 2004, estão na empresa municipal de habitação e aparecem apenas nas contas consolidadas."
   },
   {
    "figures": [],
-   "i": 75,
+   "i": 72,
    "kind": "heading",
    "level": 3,
    "text": "2013–2017 — CDU"
@@ -5314,7 +5275,7 @@
      "value": "12 706 874"
     }
    ],
-   "i": 76,
+   "i": 73,
    "kind": "paragraph",
    "text": "O que herdou. Receita cobrada em 2013 de €64 651 456 — inflacionada pela chegada das tranches do empréstimo do programa de apoio — contra uma despesa paga de €60 553 851. Dívida, no conceito que o seu próprio relatório usava, de €82 415 794*. Um prazo médio de pagamento a fornecedores de 755* dias, o mais alto de toda a série. Um resultado líquido de menos €12 706 874."
   },
@@ -5327,12 +5288,12 @@
     }
    ],
    "figures": [],
-   "i": 77,
+   "i": 74,
    "kind": "paragraph",
    "text": "O que decidiu."
   },
   {
-   "i": 78,
+   "i": 75,
    "items": [
     {
      "figures": [
@@ -5380,7 +5341,7 @@
    "ordered": false
   },
   {
-   "i": 79,
+   "i": 76,
    "kind": "table",
    "rows": [
     [
@@ -5482,7 +5443,7 @@
    ]
   },
   {
-   "i": 80,
+   "i": 77,
    "items": [
     {
      "figures": [],
@@ -5583,7 +5544,7 @@
      "value": "32 559 910"
     }
    ],
-   "i": 81,
+   "i": 78,
    "kind": "paragraph",
    "text": "O que deixou. Receita cobrada em 2017 de €48 002 980, despesa paga de €44 772 391, investimento de €2 255 111 — o ano de investimento mais baixo de toda a série legível. Dívida de €69 532 414. Um prazo médio de pagamento descido para 89 dias, vindo de 755*. O incumprimento do teto legal da dívida estreitou-se mas não fechou: o excesso estava em €12 263 435 no fim de 2017, contra €32 559 910 no início do mandato."
   },
@@ -5620,13 +5581,13 @@
      "value": "1 984 259"
     }
    ],
-   "i": 82,
+   "i": 79,
    "kind": "paragraph",
    "text": "Um número deste mandato precisa de levar a sua nota de rodapé ao lado. O resultado de 2016, de menos €3 337 288, inclui, como custo de 2016, IVA referente aos anos de 2009 a 2011 — €1 712 963. O relatório faz a subtração e apresenta o valor corrigido como um prejuízo de €1 984 259. Os dois números são do próprio município; este documento imprime ambos e não escolhe entre eles."
   },
   {
    "figures": [],
-   "i": 83,
+   "i": 80,
    "kind": "heading",
    "level": 3,
    "text": "2017–2021 — CDU"
@@ -5640,7 +5601,7 @@
     }
    ],
    "figures": [],
-   "i": 84,
+   "i": 81,
    "kind": "paragraph",
    "text": "O que herdou. Os indicadores de 2017 acima, e uma dívida ainda acima do teto legal."
   },
@@ -5653,12 +5614,12 @@
     }
    ],
    "figures": [],
-   "i": 85,
+   "i": 82,
    "kind": "paragraph",
    "text": "O que decidiu."
   },
   {
-   "i": 86,
+   "i": 83,
    "items": [
     {
      "figures": [
@@ -5817,12 +5778,12 @@
      "value": "49"
     }
    ],
-   "i": 87,
+   "i": 84,
    "kind": "paragraph",
    "text": "O que deixou. Receita cobrada em 2021 de €57 113 925, despesa paga de €52 290 432, investimento de €7 537 452 — o ano de investimento mais alto da série legível. Dívida de €57 293 550. Um prazo médio de pagamento de 49 dias. E o limiar em que todo este período assenta: o excesso sobre o teto legal da dívida desaparece. A série do próprio relatório para o montante em excesso corre assim, em que um valor negativo é capacidade de endividamento e não excesso:"
   },
   {
-   "i": 88,
+   "i": 85,
    "kind": "table",
    "rows": [
     [
@@ -6041,19 +6002,19 @@
      "value": "4 877 620"
     }
    ],
-   "i": 89,
+   "i": 86,
    "kind": "paragraph",
    "text": "Servir os empréstimos de médio e longo prazo custou €4 877 620 só em 2021."
   },
   {
    "figures": [],
-   "i": 90,
+   "i": 87,
    "kind": "paragraph",
    "text": "Dois anos dos quatro deste mandato são os da pandemia, e os valores de 2020 na tabela das finanças levam todos o asterisco comparativo, porque o dossiê de 2020 publicado não tem texto. Ler os números de investimento e de receita de 2020 e 2021 como um veredicto sobre o executivo seria um erro de categoria do tipo que a secção de abertura avisa."
   },
   {
    "figures": [],
-   "i": 91,
+   "i": 88,
    "kind": "heading",
    "level": 3,
    "text": "2021–2025 — CDU, em minoria"
@@ -6105,7 +6066,7 @@
      "value": "7"
     }
    ],
-   "i": 92,
+   "i": 89,
    "kind": "paragraph",
    "text": "O que herdou. Os indicadores de 2021 acima — aquele pico de investimento, o prazo médio de pagamento mais curto desde o início do período, e os primeiros anos com capacidade de endividamento. Herdou também uma aritmética: a lista do presidente tinha 2 dos 7 mandatos."
   },
@@ -6118,12 +6079,12 @@
     }
    ],
    "figures": [],
-   "i": 93,
+   "i": 90,
    "kind": "paragraph",
    "text": "O que decidiu."
   },
   {
-   "i": 94,
+   "i": 91,
    "items": [
     {
      "figures": [
@@ -6230,7 +6191,7 @@
      "value": "5"
     }
    ],
-   "i": 95,
+   "i": 92,
    "kind": "paragraph",
    "text": "O que aconteceu às suas contas. A aritmética da minoria produziu a sua consequência no último ano do mandato. A opinião do auditor sobre as contas de 2025 regista que a proposta de prestação de contas de 2024 foi rejeitada pela própria Câmara na reunião de 2025-05-28 — 2 votos a favor, 5 contra — e que daí resultou a emissão de uma Declaração de Impossibilidade de Certificação Legal das Contas para 2024. Esses dois números são a divisão de mandatos de 2021 lida em voz alta. Nunca foi publicado nenhum documento de contas de 2024, e cada valor de 2024 neste documento é uma coluna comparativa do relatório de 2025."
   },
@@ -6307,19 +6268,19 @@
      "value": "4 976 172"
     }
    ],
-   "i": 96,
+   "i": 93,
    "kind": "paragraph",
    "text": "O que deixou. A dívida subiu em 2024, de €50 432 431 para €54 680 636*, depois de ter caído em cada um dos nove anos anteriores, medida no conceito que os relatórios usam a partir de 2014. O prazo médio de pagamento, que tinha atingido os 22 dias em 2023 — o mais baixo de toda a série — voltou aos 104* dias em 2024 e aos 137 dias em 2025. As contas fecharam 2025 com pagamentos em atraso de €4 976 172, pelo segundo ano consecutivo."
   },
   {
    "figures": [],
-   "i": 97,
+   "i": 94,
    "kind": "paragraph",
    "text": "As contas de 2025 ficam a cavalo da mudança de executivo: cobrem um ano em que este executivo governou até 2025-10-31 e o seguinte a partir dessa data. Estão impressas na tabela das finanças como um ano inteiro, porque é assim que existem, e não são atribuídas nem a um mandato nem ao outro."
   },
   {
    "figures": [],
-   "i": 98,
+   "i": 95,
    "kind": "heading",
    "level": 3,
    "text": "2025– — PS"
@@ -6433,7 +6394,7 @@
      "value": "1"
     }
    ],
-   "i": 99,
+   "i": 96,
    "kind": "paragraph",
    "text": "Não avaliável. O executivo tomou posse a 2025-10-31 com 3 dos 7 mandatos, frente a 2 da coligação em segundo lugar, 1 da CDU e 1 do CH. O seu primeiro ano financeiro completo é 2026 e as suas primeiras contas são devidas por volta da primavera de 2027. Qualquer avaliação dele antes de essas contas existirem seria uma previsão, e este documento não faz previsões."
   },
@@ -6522,36 +6483,36 @@
      "value": "21"
     }
    ],
-   "i": 100,
+   "i": 97,
    "kind": "paragraph",
    "text": "Duas câmaras, e em ambas aquém da maioria. A aritmética com que este executivo governa atravessa os dois órgãos eleitos, e vale a pena dizê-lo uma vez. Na câmara, a sua lista tem 3 dos 7 mandatos. Na assembleia municipal, a mesma lista tem 7 dos 21 mandatos de eleição direta, a par da coligação que ficou atrás dela. Que os dois órgãos atuam sobre os mesmos processos não é aqui uma suposição: as secções acima registam um acordo de pagamento com a empresa regional da água aprovado pela câmara na reunião de 2016-12-28 e pela assembleia municipal na sessão de 2017-02-17, e registam a própria câmara a rejeitar um ano de contas em 2025. As contas anuais e o endividamento seguem esse mesmo caminho (inferência; os números de mandatos são registo oficial, o caminho é lido dos atos que este documento já imprimiu e não de qualquer diploma aqui citado)."
   },
   {
-   "i": 101,
+   "i": 98,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 102,
+   "i": 99,
    "kind": "heading",
    "level": 2,
    "text": "Os índices ao longo dos mandatos"
   },
   {
    "figures": [],
-   "i": 103,
+   "i": 100,
    "kind": "heading",
    "level": 3,
    "text": "As finanças municipais, 2010 a 2025"
   },
   {
    "figures": [],
-   "i": 104,
+   "i": 101,
    "kind": "paragraph",
    "text": "As fronteiras de mandato estão marcadas na tabela. Os valores marcados com asterisco foram lidos da coluna comparativa de um relatório posterior. Um travessão significa que o valor não está disponível em documento legível algum desse ano, e não que seja zero. Os resultados estão impressos como prejuízos, salvo quando levam sinal positivo."
   },
   {
-   "i": 105,
+   "i": 102,
    "kind": "table",
    "rows": [
     [
@@ -8332,13 +8293,7 @@
   },
   {
    "figures": [],
-   "i": 106,
-   "kind": "paragraph",
-   "text": "Quatro coisas sobre esta tabela, antes que alguém lhe leia uma tendência."
-  },
-  {
-   "figures": [],
-   "i": 107,
+   "i": 103,
    "kind": "paragraph",
    "text": "A coluna da receita não tem o mesmo conceito ao longo de todo o período. Para 2010 a 2014 é a receita orçamental recebida tal como a demonstração de fluxos de caixa a imprime; a partir de 2015 é o total do quadro de execução orçamental, que na maioria desses anos inclui explicitamente o saldo de gerência transitado do ano anterior. Os dois estão próximos mas não são idênticos, e a diferença é o saldo que transita."
   },
@@ -8351,7 +8306,7 @@
     }
    ],
    "figures": [],
-   "i": 108,
+   "i": 104,
    "kind": "paragraph",
    "text": "Três dos anos da coluna da receita são anos de empréstimo. Os valores de 2013 levam as tranches do programa de apoio, os de 2016 o empréstimo de saneamento financeiro, os de 2019 o empréstimo de substituição. Em cada um desses três anos a coluna da receita dá um degrau para cima e o ano seguinte devolve o degrau, que é o que um empréstimo parece numa tabela de caixa e não o que parece um bom ano (inferência; os relatórios afirmam cada empréstimo e cada total, não o padrão)."
   },
@@ -8368,31 +8323,31 @@
      "value": "3 856 585"
     }
    ],
-   "i": 109,
+   "i": 105,
    "kind": "paragraph",
-   "text": "A coluna do pessoal dá um degrau acentuado entre 2021 e 2023, e o relatório de 2023 dá a razão e data-a. Foram transferidas para o município competências na educação, na saúde e na ação social, com a educação a produzir efeitos em abril de 2022; a transferência da educação acrescentou, sozinha, €3 856 585 de transferências correntes em 2022 face a 2021, e o relatório diz com clareza que receita vinda de competências transferidas implica um aumento correspondente de despesa. Este documento não tenta repartir o degrau do pessoal entre essa transferência e tudo o resto, porque nada do que aqui foi lido o reparte."
+   "text": "A coluna do pessoal dá um degrau acentuado entre 2021 e 2023, e o relatório de 2023 dá a razão e data-a. Foram transferidas para o município competências na educação, na saúde e na ação social, com a educação a produzir efeitos em abril de 2022; a transferência da educação acrescentou, sozinha, €3 856 585 de transferências correntes em 2022 face a 2021, e o relatório diz com clareza que receita vinda de competências transferidas implica um aumento correspondente de despesa."
   },
   {
    "figures": [],
-   "i": 110,
+   "i": 106,
    "kind": "paragraph",
    "text": "A coluna do resultado são duas séries, e não uma, por causa da transição de POCAL para SNC-AP, e nela aparece apenas um ano positivo."
   },
   {
    "figures": [],
-   "i": 111,
+   "i": 107,
    "kind": "heading",
    "level": 3,
    "text": "O pessoal, contado"
   },
   {
    "figures": [],
-   "i": 112,
+   "i": 108,
    "kind": "paragraph",
    "text": "A coluna do pessoal acima é dinheiro. Esta é gente. Os relatórios de gestão de 2022 e de 2023 imprimem cada um uma série de efetivos, e o de 2023 prolonga-a por mais um ano; a tabela abaixo é a versão do relatório de 2023, que reimprime sem alteração cada ano anterior da tabela do relatório de 2022. A coluna da variação é a do próprio relatório, e o seu sinal está escrito aqui como um glifo ao lado do valor."
   },
   {
-   "i": 113,
+   "i": 109,
    "kind": "table",
    "rows": [
     [
@@ -8994,67 +8949,67 @@
      "value": "19"
     }
    ],
-   "i": 114,
+   "i": 110,
    "kind": "paragraph",
    "text": "Os mesmos relatórios desagregam o total por grupo profissional. No final de 2022: 22 dirigentes, 142 técnicos superiores, 243 assistentes técnicos, 819 assistentes operacionais, 9 na informática e 94 noutras situações. No final de 2023: 21 dirigentes, 215 técnicos superiores, 261 assistentes técnicos, 812 assistentes operacionais, 10 na informática e 19 noutras situações."
   },
   {
    "figures": [
     {
-     "end": 99,
+     "end": 43,
      "printed": "1 088",
      "row": "wf-headcount-2012",
      "source_digest_em": "08 Évora Mandates/Technical Source/raw/pdfs/2023_relatorio_gestao.pdf",
      "source_sha256": "abd6e32e6fea211af76706ec00331e24d3c79f1f79087fc547b16a5fd9af09a1",
      "source_sha256_prefix": "abd6e32e6fea211a",
-     "start": 94,
+     "start": 38,
      "value": "1 088"
     },
     {
-     "end": 110,
+     "end": 54,
      "printed": "1 023",
      "row": "wf-headcount-2021",
      "source_digest_em": "08 Évora Mandates/Technical Source/raw/pdfs/2023_relatorio_gestao.pdf",
      "source_sha256": "abd6e32e6fea211af76706ec00331e24d3c79f1f79087fc547b16a5fd9af09a1",
      "source_sha256_prefix": "abd6e32e6fea211a",
-     "start": 105,
+     "start": 49,
      "value": "1 023"
     },
     {
-     "end": 258,
+     "end": 202,
      "markers": "*",
      "printed": "16 879 562",
      "row": "ind-despesas-pessoal-2012",
      "source_digest_em": "08 Évora Mandates/Technical Source/raw/pdfs/2015_relatorio_gestao.pdf",
      "source_sha256": "2bb3773629c22b801d8d7a2fc53c1b7766428c9fab28f791e005f8f72ac898c3",
      "source_sha256_prefix": "2bb3773629c22b80",
-     "start": 248,
+     "start": 192,
      "value": "16 879 562*"
     },
     {
-     "end": 276,
+     "end": 220,
      "printed": "19 100 045",
      "row": "ind-despesas-pessoal-2021",
      "source_digest_em": "08 Évora Mandates/Technical Source/raw/pdfs/2021_relatorio_gestao.pdf",
      "source_sha256": "be0c8f8228552a27e48de3cbd2ea3a994d9020d1f2385ef6103f69afd282964a",
      "source_sha256_prefix": "be0c8f8228552a27",
-     "start": 266,
+     "start": 210,
      "value": "19 100 045"
     },
     {
-     "end": 316,
+     "end": 260,
      "printed": "306",
      "row": "wf-change-2022",
      "source_digest_em": "08 Évora Mandates/Technical Source/raw/pdfs/2023_relatorio_gestao.pdf",
      "source_sha256": "abd6e32e6fea211af76706ec00331e24d3c79f1f79087fc547b16a5fd9af09a1",
      "source_sha256_prefix": "abd6e32e6fea211a",
-     "start": 313,
+     "start": 257,
      "value": "306"
     }
    ],
-   "i": 115,
+   "i": 111,
    "kind": "paragraph",
-   "text": "Leiam-se as duas colunas em conjunto e a forma é clara. Entre 2012 e 2021 o pessoal passou de 1 088 para 1 023 — uma década de efetivos estáveis ou em queda, enquanto a despesa com pessoal da tabela das finanças acima subia no mesmo intervalo, de €16 879 562* para €19 100 045. Depois um ano muda o patamar: mais 306 trabalhadores em 2022."
+   "text": "Entre 2012 e 2021 o pessoal passou de 1 088 para 1 023 — uma década de efetivos estáveis ou em queda, enquanto a despesa com pessoal da tabela das finanças acima subia no mesmo intervalo, de €16 879 562* para €19 100 045. Depois um ano muda o patamar: mais 306 trabalhadores em 2022."
   },
   {
    "figures": [
@@ -9069,57 +9024,57 @@
      "value": "309"
     }
    ],
-   "i": 116,
+   "i": 112,
    "kind": "paragraph",
    "text": "O relatório de 2022 explica ele próprio esse degrau, no parágrafo imediatamente acima da sua tabela. O acréscimo face ao ano anterior é ali atribuído, maioritariamente e pelas palavras do relatório, à integração do pessoal não docente efetuada no âmbito da transferência de competências na área da educação — num total de 309 trabalhadores, aos quais, diz, acrescem os trabalhadores admitidos ou regressados e as saídas efetivas durante o ano, e é por isso que a variação líquida na tabela não é o mesmo valor. O degrau do pessoal na tabela das finanças e o degrau dos efetivos aqui são, portanto, o mesmo acontecimento, e são os relatórios do próprio município que fazem a ligação, do lado da despesa como do lado dos quadros."
   },
   {
    "figures": [
     {
-     "end": 172,
+     "end": 90,
      "printed": "203",
      "row": "wf-saidas-2022-total",
      "source_digest_em": "08 Évora Mandates/Technical Source/raw/pdfs/2022_relatorio_gestao.pdf",
      "source_sha256": "20490a35dc792a2d1076421b9e930122c44f1bba44955d7c231bebfebc9fedc1",
      "source_sha256_prefix": "20490a35dc792a2d",
-     "start": 169,
+     "start": 87,
      "value": "203"
     },
     {
-     "end": 277,
+     "end": 195,
      "printed": "201",
      "row": "wf-saidas-2022-soma",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 274,
+     "start": 192,
      "value": "201"
     }
    ],
-   "i": 117,
+   "i": 113,
    "kind": "paragraph",
-   "text": "As mesmas páginas discordam de si próprias uma vez, e isso está impresso aqui como este documento imprime cada discordância de fonte. O relatório de 2022 diz que saíram 203 trabalhadores nesse ano e, na mesma página, lista as saídas por carreira; essas cinco parcelas somam 201. A diferença de dois trabalhadores não é explicada em parte alguma do relatório nem reconciliada em qualquer outro ponto dele. Nem um nem outro foi ajustado aqui. A lista equivalente do relatório de 2023 soma o total que declara."
+   "text": "As mesmas páginas discordam de si próprias uma vez. O relatório de 2022 diz que saíram 203 trabalhadores nesse ano e, na mesma página, lista as saídas por carreira; essas cinco parcelas somam 201. A diferença de dois trabalhadores não é explicada em parte alguma do relatório nem reconciliada em qualquer outro ponto dele. A lista equivalente do relatório de 2023 soma o total que declara."
   },
   {
    "figures": [],
-   "i": 118,
+   "i": 114,
    "kind": "paragraph",
    "text": "Há ainda uma diferença entre os dois relatórios de natureza puramente tipográfica: o relatório de 2022 imprime a sua própria célula de efetivos de 2022 sem o espaço de milhar que usa nas restantes linhas do mesmo quadro, e a reimpressão do relatório de 2023 repõe-no. O valor é idêntico nos dois, e não houve reexpressão de ano algum da série entre eles."
   },
   {
    "figures": [],
-   "i": 119,
+   "i": 115,
    "kind": "heading",
    "level": 3,
    "text": "O que «dívida» quer dizer em cada ano"
   },
   {
    "figures": [],
-   "i": 120,
+   "i": 116,
    "kind": "paragraph",
-   "text": "O conceito não é constante, por isso é impresso. Estas são as designações da própria fonte, nas palavras da própria fonte."
+   "text": "Estas são as designações da própria fonte, nas palavras da própria fonte."
   },
   {
-   "i": 121,
+   "i": 117,
    "kind": "table",
    "rows": [
     [
@@ -9206,12 +9161,12 @@
   },
   {
    "figures": [],
-   "i": 122,
+   "i": 118,
    "kind": "paragraph",
    "text": "E onde o mesmo ano tem mais do que um valor, estão aqui impressos todos. Para 2014, três:"
   },
   {
-   "i": 123,
+   "i": 119,
    "kind": "table",
    "rows": [
     [
@@ -9385,7 +9340,7 @@
      "value": "69"
     }
    ],
-   "i": 124,
+   "i": 120,
    "kind": "paragraph",
    "text": "Para 2015 o mesmo relatório imprime €77 198 306 no conceito da lei das finanças e €74 882 512 como dívida apurada — uma diferença da quota-parte das entidades participadas. Para 2020 o relatório imprime o total em €60 481 588* e a componente do próprio município em dois sítios que não coincidem: €60 282 480,32 num quadro e €60 282 480,38 noutro, a seis cêntimos de distância. E a série do prazo de pagamento tem o mesmo problema: o relatório de 2022 regista 64 dias para 2022, e a série do próprio relatório de 2025 dá 69 dias para o mesmo ano e para o mesmo indicador do regulador. Os dois registos ficam de pé."
   },
@@ -9422,13 +9377,13 @@
      "value": "29.3"
     }
    ],
-   "i": 125,
+   "i": 121,
    "kind": "paragraph",
    "text": "A comparação que as contas fazem com a lei é a do teto. No fim de 2015 o município estava em incumprimento em €26 117 439. No seu relatório de 2018 o executivo declara a sua própria redução da dívida global, medida de outubro de 2013 ao fim de 2018, em €27 278 505, ou 29,3%."
   },
   {
    "figures": [],
-   "i": 126,
+   "i": 122,
    "kind": "heading",
    "level": 3,
    "text": "A dívida vista de fora"
@@ -9436,21 +9391,21 @@
   {
    "figures": [
     {
-     "end": 329,
+     "end": 259,
      "printed": "150",
      "row": "divida-indice-limite",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 326,
+     "start": 256,
      "value": "150"
     }
    ],
-   "i": 127,
+   "i": 123,
    "kind": "paragraph",
-   "text": "O regulador publica o mesmo total de dívida da lei das finanças por município, a partir da sua própria recolha, pelo que a série abaixo não é o município a relatar sobre si próprio. Ao lado de cada valor está o índice de dívida — a dívida em percentagem da média de receita de três anos que define o limite legal, cujo teto é 150%. As duas colunas são transportadas do documento companheiro com a sua proveniência original."
+   "text": "O regulador publica o mesmo total de dívida da lei das finanças por município, a partir da sua própria recolha. Ao lado de cada valor está o índice de dívida — a dívida em percentagem da média de receita de três anos que define o limite legal, cujo teto é 150%."
   },
   {
-   "i": 128,
+   "i": 124,
    "kind": "table",
    "rows": [
     [
@@ -9859,18 +9814,18 @@
   },
   {
    "figures": [],
-   "i": 129,
+   "i": 125,
    "kind": "paragraph",
-   "text": "Leia a coluna do índice de cima a baixo: só a partir de 2020 fica abaixo do teto legal, e todos os anos da série do regulador estão acima da média de receita. O índice desce em cada ano da tabela, ao longo de três mandatos — todos do mesmo partido, e é exatamente por isso que a secção de abertura se recusa a classificar curvas."
+   "text": "Leia a coluna do índice de cima a baixo: só a partir de 2020 fica abaixo do teto legal, e todos os anos da série do regulador estão acima da média de receita. O índice desce em cada ano da tabela, ao longo de três mandatos — todos do mesmo partido."
   },
   {
    "figures": [],
-   "i": 130,
+   "i": 126,
    "kind": "paragraph",
-   "text": "Dois relatos de um mesmo conceito legal nem sempre concordam, e a diferença merece ser impressa em vez de alisada. A coluna da esquerda abaixo é o valor que o relatório de cada ano imprime; a coluna do meio é a do regulador; a coluna da direita é a aritmética entre elas, calculada aqui a partir dessas duas linhas do ledger."
+   "text": "Dois relatos de um mesmo conceito legal nem sempre concordam. A coluna da esquerda abaixo é o valor que o relatório de cada ano imprime; a coluna do meio é a do regulador; a coluna da direita é a aritmética entre elas."
   },
   {
-   "i": 131,
+   "i": 127,
    "kind": "table",
    "rows": [
     [
@@ -10401,25 +10356,25 @@
   },
   {
    "figures": [],
-   "i": 132,
+   "i": 128,
    "kind": "paragraph",
-   "text": "Os dois ficam a menos de mil euros um do outro em 2024 e a algumas centenas de milhares nos anos até 2019, com 2018 como exceção em sentido contrário. De 2020 a 2023 ficam a quatro ou cinco milhões de euros de distância. Nada do que foi lido para este documento explica essas diferenças; não houve ajuste de uma série para caber na outra, e cada valor de dívida citado neste documento diz de qual das duas veio."
+   "text": "Os dois ficam a menos de mil euros um do outro em 2024 e a algumas centenas de milhares nos anos até 2019, com 2018 como exceção em sentido contrário. De 2020 a 2023 ficam a quatro ou cinco milhões de euros de distância."
   },
   {
    "figures": [],
-   "i": 133,
+   "i": 129,
    "kind": "heading",
    "level": 3,
    "text": "População, trabalho, empresas e visitantes"
   },
   {
    "figures": [],
-   "i": 134,
+   "i": 130,
    "kind": "paragraph",
-   "text": "Estas séries são estatística nacional, não contas municipais. Estão impressas por fronteira de mandato e não são atribuídas a ninguém, pelas razões da secção de abertura. O desemprego registado é o stock de dezembro publicado pelo instituto do emprego, não uma média anual. O ganho médio mensal é o inquérito de ganhos do ministério, publicado através do instituto de estatística."
+   "text": "Estas séries são estatística nacional, não contas municipais. Estão impressas por fronteira de mandato e não são atribuídas a ninguém. O desemprego registado é o stock de dezembro publicado pelo instituto do emprego, não uma média anual. O ganho médio mensal é o inquérito de ganhos do ministério, publicado através do instituto de estatística."
   },
   {
-   "i": 135,
+   "i": 131,
    "kind": "table",
    "rows": [
     [
@@ -11658,42 +11613,42 @@
   },
   {
    "figures": [],
-   "i": 136,
+   "i": 132,
    "kind": "paragraph",
-   "text": "Quatro cautelas, todas elas do próprio ficheiro de evidência."
+   "text": "Quatro cautelas."
   },
   {
    "figures": [],
-   "i": 137,
+   "i": 133,
    "kind": "paragraph",
-   "text": "A série da população dá um degrau entre 2020 e 2021 e continua a subir depois disso. O ficheiro de evidência não regista qualquer nota que explique esse degrau, e este documento não o lê como migração de um ano; imprime a série tal como publicada. As estimativas municipais de população anteriores a 2011 existem apenas sobre uma base geográfica ultrapassada e não são comparáveis, e é por isso que 2009 e 2010 estão vazios."
+   "text": "A série da população dá um degrau entre 2020 e 2021 e continua a subir depois disso. As estimativas municipais de população anteriores a 2011 existem apenas sobre uma base geográfica ultrapassada e não são comparáveis, e é por isso que 2009 e 2010 estão vazios."
   },
   {
    "figures": [],
-   "i": 138,
+   "i": 134,
    "kind": "paragraph",
    "text": "A contagem de empresas muda de versão estatística entre 2022 e 2023, quando mudou a classificação territorial, e não há ano de sobreposição publicado a nível municipal para medir a quebra."
   },
   {
    "figures": [],
-   "i": 139,
+   "i": 135,
    "kind": "paragraph",
    "text": "A série das dormidas cobre um universo de estabelecimentos que se alargou no início da década de 2010, quando o alojamento rural e local passou a ser incluído, pelo que os primeiros valores não são estritamente comparáveis com os últimos. Não existem valores municipais anteriores a 2011 em qualquer indicador publicado."
   },
   {
    "figures": [],
-   "i": 140,
+   "i": 136,
    "kind": "paragraph",
    "text": "O ganho médio mensal vem de três versões sucessivas do indicador, que concordam até ao arredondamento nos anos de sobreposição."
   },
   {
    "figures": [],
-   "i": 141,
+   "i": 137,
    "kind": "paragraph",
    "text": "O poder de compra per capita é publicado de dois em dois anos, pelo que tem a sua própria tabela curta. É um índice com a média nacional em cem."
   },
   {
-   "i": 142,
+   "i": 138,
    "kind": "table",
    "rows": [
     [
@@ -11872,19 +11827,19 @@
   },
   {
    "figures": [],
-   "i": 143,
+   "i": 139,
    "kind": "heading",
    "level": 3,
    "text": "A cultura, nos dois sítios onde pode ser contada"
   },
   {
    "figures": [],
-   "i": 144,
+   "i": 140,
    "kind": "paragraph",
    "text": "As contas trazem uma série de despesa em cultura para os anos legíveis, e os buracos nela são os já conhecidos: os relatórios de 2012 a 2014 são os ilegíveis, pelo que a série não pode começar antes de 2015; o dossiê de 2020 é digitalizado; 2024 não tem dossiê nenhum."
   },
   {
-   "i": 145,
+   "i": 141,
    "kind": "table",
    "rows": [
     [
@@ -12091,12 +12046,12 @@
   },
   {
    "figures": [],
-   "i": 146,
+   "i": 142,
    "kind": "paragraph",
    "text": "O outro sítio onde a cultura pode ser contada é o inquérito do instituto de estatística ao que as câmaras municipais gastam em atividades culturais e criativas. É um conceito diferente, recolhido por outra entidade sobre outra definição, e as duas tabelas não podem ser lidas como uma série. Começa em 2013."
   },
   {
-   "i": 147,
+   "i": 143,
    "kind": "table",
    "rows": [
     [
@@ -12355,17 +12310,17 @@
   },
   {
    "figures": [],
-   "i": 148,
+   "i": 144,
    "kind": "paragraph",
    "text": "A despesa municipal em cultura anterior a 2013 existe nas tabelas do instituto de estatística apenas sob um conceito mais antigo e não comparável, que não foi recolhido."
   },
   {
-   "i": 149,
+   "i": 145,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 150,
+   "i": 146,
    "kind": "heading",
    "level": 2,
    "text": "O que o plano de 2026 diz"
@@ -12379,15 +12334,15 @@
     }
    ],
    "figures": [],
-   "i": 151,
+   "i": 147,
    "kind": "paragraph",
-   "text": "O mandato instalado em 2025 ainda não pode ser avaliado por contas. O seu primeiro orçamento, porém, existe e é público: as Grandes Opções do Plano e Orçamento para 2026, publicadas pelo município. O que se segue é o que esse documento diz, e não o que aconteceu. Nada dele foi executado à data em que isto se escreve, e as contas que o irão testar são as de 2026."
+   "text": "O mandato instalado em 2025 ainda não pode ser avaliado por contas. O seu primeiro orçamento, porém, existe e é público: as Grandes Opções do Plano e Orçamento para 2026, publicadas pelo município. O que se segue é o que esse documento diz, e não o que aconteceu. Nada dele foi executado, e as contas que o irão testar são as de 2026."
   },
   {
    "figures": [],
-   "i": 152,
+   "i": 148,
    "kind": "paragraph",
-   "text": "Os seus anexos — o plano plurianual de investimentos e o plano de atividades, onde vivem as linhas dos projetos — são uma camada digitalizada em que dígitos e designações são frequentemente ilegíveis. Cada valor abaixo que saiu dessa camada vai marcado com †. As linhas que não foi possível recuperar honestamente estão ausentes, em vez de adivinhadas."
+   "text": "Os seus anexos — o plano plurianual de investimentos e o plano de atividades, onde vivem as linhas dos projetos — são uma camada digitalizada em que dígitos e designações são frequentemente ilegíveis. Cada valor abaixo que saiu dessa camada vai marcado com †. As linhas que não foi possível recuperar estão ausentes, em vez de adivinhadas."
   },
   {
    "emphasis": [
@@ -12491,7 +12446,7 @@
      "value": "30"
     }
    ],
-   "i": 153,
+   "i": 149,
    "kind": "paragraph",
    "text": "O tamanho disto. O plano fixa a receita e a despesa em €110 840 577 para 2026, um acréscimo de €6 840 577 face ao valor estimado de 2025, que o próprio documento imprime como 6,58%. A despesa com pessoal é €33 344 550 desse total. As transferências para as doze freguesias são €1 531 067, ou 19,01% do conjunto das transferências que o município prevê conceder. E a taxa de IMI que este documento seguiu de 0,45% até 0,43% mantém-se em 0,37% no plano, com uma minoração de 30% para as freguesias rurais."
   },
@@ -12504,12 +12459,12 @@
     }
    ],
    "figures": [],
-   "i": 154,
+   "i": 150,
    "kind": "paragraph",
    "text": "Os quatro eixos. O plano organiza as suas opções em quatro eixos estratégicos e imprime um envelope para cada um. As designações são as do próprio plano."
   },
   {
-   "i": 155,
+   "i": 151,
    "kind": "table",
    "rows": [
     [
@@ -12695,9 +12650,9 @@
      "value": "177 119†"
     }
    ],
-   "i": 156,
+   "i": 152,
    "kind": "paragraph",
-   "text": "O ano da Capital da Cultura, declarado duas vezes. O plano afirma que €7 470 000 de aquisição de bens de capital estão alocados aos investimentos da iniciativa Capital Europeia da Cultura. O seu próprio anexo de investimentos diz outra coisa. O objetivo que carrega a iniciativa inscreve €14 798 219† para 2026 — dos quais €7 648 219† têm financiamento definido e €7 150 000† não têm. Retirem-se da parte definida as duas linhas desse objetivo que não são aquisição de bens de capital — uma quota de associação e um valor simbólico para um monumento megalítico — e restam €7 647 119†, que ficam €177 119† acima do valor que o relatório declara. Nada do que aqui foi lido explica a diferença. Não foi alisada: os dois valores estão impressos, e a aritmética entre eles está escrita na linha do ledger."
+   "text": "O ano da Capital da Cultura, declarado duas vezes. O plano afirma que €7 470 000 de aquisição de bens de capital estão alocados aos investimentos da iniciativa Capital Europeia da Cultura. O seu próprio anexo de investimentos diz outra coisa. O objetivo que carrega a iniciativa inscreve €14 798 219† para 2026 — dos quais €7 648 219† têm financiamento definido e €7 150 000† não têm. Retirem-se da parte definida as duas linhas desse objetivo que não são aquisição de bens de capital — uma quota de associação e um valor simbólico para um monumento megalítico — e restam €7 647 119†, que ficam €177 119† acima do valor que o relatório declara. Nada do que aqui foi lido explica a diferença."
   },
   {
    "emphasis": [
@@ -12708,12 +12663,12 @@
     }
    ],
    "figures": [],
-   "i": 157,
+   "i": 153,
    "kind": "paragraph",
-   "text": "Onde está o dinheiro. Estas são as maiores dotações de 2026 que esta leitura conseguiu recuperar dos anexos do plano. Cada linha leva a adaga, porque cada linha desses anexos teve de ser recuperada. As linhas dos projetos da Capital da Cultura não estão repetidas aqui — pertencem ao parágrafo acima — e, fundido nesta lista, o Rossio de São Brás ficaria no topo dela."
+   "text": "Onde está o dinheiro. Estas são as maiores dotações de 2026 dos anexos do plano. As linhas dos projetos da Capital da Cultura não estão repetidas aqui — pertencem ao parágrafo acima — e, fundido nesta lista, o Rossio de São Brás ficaria no topo dela."
   },
   {
-   "i": 158,
+   "i": 154,
    "kind": "table",
    "rows": [
     [
@@ -12942,7 +12897,7 @@
   },
   {
    "figures": [],
-   "i": 159,
+   "i": 155,
    "kind": "paragraph",
    "text": "A primeira linha desse quadro não é investimento de todo. É serviço da dívida — a amortização dos empréstimos bancários que este documento seguiu durante quinze anos — inscrito dentro do plano de investimentos, e é a maior linha do quadro."
   },
@@ -12955,12 +12910,12 @@
     }
    ],
    "figures": [],
-   "i": 160,
+   "i": 156,
    "kind": "paragraph",
-   "text": "O plano discorda de si próprio em três sítios. Estão impressos porque um documento que não consegue somar os seus próprios totais é, ele mesmo, um facto sobre o documento, e porque quem for conferir estes valores contra a fonte vai encontrar os três."
+   "text": "O plano discorda de si próprio em três sítios."
   },
   {
-   "i": 161,
+   "i": 157,
    "items": [
     {
      "figures": [
@@ -13047,12 +13002,12 @@
     }
    ],
    "figures": [],
-   "i": 162,
+   "i": 158,
    "kind": "paragraph",
    "text": "Orçamentado e financiado não são a mesma coisa. O anexo de investimentos separa, linha a linha, a parte de 2026 cujo financiamento está definido da parte cujo financiamento não está. Três linhas carregam quase todo o significado."
   },
   {
-   "i": 163,
+   "i": 159,
    "items": [
     {
      "emphasis": [
@@ -13163,17 +13118,17 @@
     }
    ],
    "figures": [],
-   "i": 164,
+   "i": 160,
    "kind": "paragraph",
    "text": "Orçamentar dinheiro que entidades de fora ainda não comprometeram, e depois não o receber, é o mecanismo que o documento companheiro Évora — Orçamentado, Pago, Devido 2025 aponta para as taxas de execução em queda dos últimos anos. O plano de 2026 inscreve-o outra vez (inferência; o plano afirma cada linha e cada repartição de financiamento, e não afirma padrão algum)."
   },
   {
-   "i": 165,
+   "i": 161,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 166,
+   "i": 162,
    "kind": "heading",
    "level": 2,
    "text": "O que concluir disto"
@@ -13274,7 +13229,7 @@
      "value": "54 379 035"
     }
    ],
-   "i": 167,
+   "i": 163,
    "kind": "paragraph",
    "text": "Uma história, três capítulos. O registo lê-se como um arco contínuo: um município que entrou no período a pagar aos seus fornecedores em dois anos (755* dias), cuja verdadeira dívida herdada ainda estava a ser descoberta anos depois — €82 871 523 medidos duas semanas após a mudança de executivo de 2013 e €95 082 510 na reexpressão final — e que depois passou uma década a desbastar a montanha, com o excesso sobre o teto legal a cair de €32 559 910 para nada até 2020. No último mandato o desbaste parou e a fila voltou a alongar-se: 22 dias em 2023 e depois 137 em 2025, com pagamentos em atraso de €4 976 172. A mudança de executivo de 2025 entrega um município que é legal, apertado de tesouraria, e com €54 379 035 de dívida (inferência; cada valor está na sua própria secção acima)."
   },
@@ -13356,7 +13311,7 @@
      "value": "7 537 452"
     }
    ],
-   "i": 168,
+   "i": 164,
    "kind": "paragraph",
    "text": "O que cada partido pode de facto reclamar. O mandato do PS de 2009–2013 é dono da maior decisão do período — a entrada no PAEL, €32 166 372 — e os seus próprios anos são os que menos registo deixaram neste documento: os relatórios que contariam o seu lado são os ilegíveis. Isso é, em si, um facto de governação — os anos que mais precisam de explicação são os pior documentados (inferência). Os anos de maioria da CDU são donos do saneamento: o empréstimo de saneamento financeiro de €32 500 000, os acordos da água, e uma disciplina verificada de fora do município — o índice do regulador cai de 242,6% para 105,5% sem uma interrupção na tabela. O custo ficou onde o amortecedor fica sempre: o investimento tocou o mínimo da sua série (€2 255 111 em 2017) antes do seu máximo (€7 537 452 em 2021). O mandato da CDU em minoria é dono do título de Capital da Cultura, converteu a dívida antiga da água em dívida bancária, e para lá disso pouco conseguiu fazer passar; os sinais de aperto voltaram e um ano de contas ficou por assinar. Se esse capítulo se lê como pior governação ou como governar sem votos é uma distinção que o registo não consegue fazer, e este documento não finge que consegue (inferência)."
   },
@@ -13452,7 +13407,7 @@
      "value": "111.47"
     }
    ],
-   "i": 169,
+   "i": 165,
    "kind": "paragraph",
    "text": "Os índices recusam a pergunta partidária. O stock de desemprego de dezembro caiu de 3 720 para 1 596 ao longo do período; as dormidas passaram de 312 696 para 709 328; o ganho médio de €940 para €1 484. Os três moveram-se com as marés nacionais — o boom do turismo, a subida em escada do salário mínimo — e nada do que aqui foi lido fornece o contrafactual que recortaria a parte de cada executivo neles (inferência). Uma série acaba abaixo de onde começou: o poder de compra per capita, 118,65 na primeira edição da janela, 111,47 na última, atravessando executivos de várias cores. Se há um índice que merece a atenção do próximo mandato, é esse (inferência)."
   },
@@ -13470,90 +13425,80 @@
     }
    ],
    "figures": [],
-   "i": 170,
+   "i": 166,
    "kind": "paragraph",
    "text": "A lição mais afiada é institucional, e não partidária. A aritmética de mandatos que deixou um executivo de dois mandatos governar quatro anos é a mesma aritmética que deixou cinco votos rejeitar um ano de contas. Neste registo, as maiorias produziram um saneamento sem recuos; a minoria produziu um saneamento parado e um ano por assinar (inferência; as secções de mandato acima têm a evidência das duas metades). O executivo instalado em 2025 tem três mandatos em sete."
   },
   {
    "emphasis": [
     {
-     "end": 46,
+     "end": 682,
      "kind": "strong",
-     "start": 0
-    },
-    {
-     "end": 703,
-     "kind": "strong",
-     "start": 691
+     "start": 670
     }
    ],
    "figures": [
     {
-     "end": 624,
+     "end": 603,
      "printed": "105,5",
      "row": "dgal-indice-2024",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 619,
+     "start": 598,
      "value": "105.5"
     }
    ],
-   "i": 171,
+   "i": 167,
    "kind": "paragraph",
-   "text": "O que verificar a seguir, uma linha para cada. A taxa de execução de 2026, contra a série descendente que o documento companheiro tabela. Se a fila dos fornecedores vira antes de tudo o resto. Se o ano da Capital da Cultura aparece nas tabelas de cultura acima ou nos livros de outras entidades. As taxas de execução do Rossio de São Brás e da via de acesso ao hospital quando as contas de 2026 aparecerem, contra as dotações que a secção do plano imprime para ambos. Como vota a assembleia municipal essas mesmas contas de 2026, dada a repartição de mandatos acima. E o próximo ficheiro do regulador: o índice está em 105,5%, e descer abaixo de cem seria o verdadeiro fim da era do resgate (inferência)."
+   "text": "O que verificar a seguir. A taxa de execução de 2026, contra a série descendente que o documento companheiro tabela. Se a fila dos fornecedores vira antes de tudo o resto. Se o ano da Capital da Cultura aparece nas tabelas de cultura acima ou nos livros de outras entidades. As taxas de execução do Rossio de São Brás e da via de acesso ao hospital quando as contas de 2026 aparecerem, contra as dotações que a secção do plano imprime para ambos. Como vota a assembleia municipal essas mesmas contas de 2026, dada a repartição de mandatos acima. E o próximo ficheiro do regulador: o índice está em 105,5%, e descer abaixo de cem seria o verdadeiro fim da era do resgate (inferência)."
   },
   {
    "emphasis": [
     {
-     "end": 59,
+     "end": 299,
      "kind": "strong",
-     "start": 0
+     "start": 252
     },
     {
-     "end": 425,
-     "kind": "strong",
-     "start": 378
-    },
-    {
-     "end": 531,
+     "end": 405,
      "kind": "em",
-     "start": 525
+     "start": 399
     },
     {
-     "end": 832,
+     "end": 706,
      "kind": "strong",
-     "start": 820
+     "start": 694
     },
     {
-     "end": 1421,
+     "end": 1295,
      "kind": "strong",
-     "start": 1409
+     "start": 1283
     }
    ],
    "figures": [
     {
-     "end": 211,
+     "end": 85,
      "markers": "*",
      "printed": "755",
      "row": "ind-pmp-dias-2013",
      "source_digest_em": "08 Évora Mandates/Technical Source/raw/pdfs/2015_relatorio_gestao.pdf",
      "source_sha256": "2bb3773629c22b801d8d7a2fc53c1b7766428c9fab28f791e005f8f72ac898c3",
      "source_sha256_prefix": "2bb3773629c22b80",
-     "start": 208,
+     "start": 82,
      "value": "755*"
     },
     {
-     "end": 250,
+     "end": 124,
      "printed": "89",
      "row": "ind-pmp-dias-2017",
      "source_digest_em": "08 Évora Mandates/Technical Source/raw/pdfs/2017_relatorio_gestao.pdf",
      "source_sha256": "075f405d67386045ac987868e3e6e7ed46a053188ef0336be14b6428cdc16e9c",
      "source_sha256_prefix": "075f405d67386045",
-     "start": 248,
+     "start": 122,
      "value": "89"
     },
     {
-     "end": 266,
+     "end": 140,
      "others": [
       "wf-2022-dirigente"
      ],
@@ -13562,86 +13507,80 @@
      "source_digest_em": "08 Évora Mandates/Technical Source/raw/pdfs/2023_relatorio_gestao.pdf",
      "source_sha256": "abd6e32e6fea211af76706ec00331e24d3c79f1f79087fc547b16a5fd9af09a1",
      "source_sha256_prefix": "abd6e32e6fea211a",
-     "start": 264,
+     "start": 138,
      "value": "22"
     },
     {
-     "end": 305,
+     "end": 179,
      "printed": "137",
      "row": "pc25-pmp",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 302,
+     "start": 176,
      "value": "137"
     },
     {
-     "end": 956,
+     "end": 830,
      "markers": "†",
      "printed": "9 500 000",
      "row": "gop26-rossio-total",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 947,
+     "start": 821,
      "value": "9 500 000†"
     },
     {
-     "end": 972,
+     "end": 846,
      "markers": "†",
      "printed": "2 350 000",
      "row": "gop26-rossio-definido",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 963,
+     "start": 837,
      "value": "2 350 000†"
     },
     {
-     "end": 1231,
+     "end": 1105,
      "markers": "†",
      "printed": "34 515 587",
      "row": "gop26-plh-plurianual",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 1221,
+     "start": 1095,
      "value": "34 515 587†"
     },
     {
-     "end": 1264,
+     "end": 1138,
      "markers": "†",
      "printed": "256 407",
      "row": "gop26-plh-definido",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 1257,
+     "start": 1131,
      "value": "256 407†"
     }
    ],
-   "i": 172,
+   "i": 168,
    "kind": "paragraph",
-   "text": "Acrescentado no mesmo dia, depois de uma segunda escavação. Três ligações ficaram mais afiadas depois da primeira publicação. A fila de pagamentos segue os empréstimos: colapsou depois de cada consolidação — 755* dias antes do empréstimo de 2016 e 89 depois dele, 22 em 2023 — e o seu atual regresso a 137 está a acontecer sem empréstimo de consolidação algum que compre alívio (inferência; cada valor está nas tabelas acima). As pessoas do município e a sua despesa com pessoal contam duas histórias diferentes: os efetivos caíram durante uma década enquanto a remuneração subia, e depois um ano — 2022 — acrescentou trezentos e seis trabalhadores com as escolas transferidas, pelo que o degrau da despesa com pessoal na tabela das finanças é sobretudo gente a chegar, e não o efeito isolado das atualizações salariais (inferência). E o primeiro plano do executivo que entrou repete o mecanismo mais antigo deste registo: a sua maior linha leva €9 500 000† com €2 350 000† de financiamento efetivamente definido; o dinheiro do acesso ao hospital regressa depois de um ano cujas contas registam o protocolo que o sustenta a receber nada, e depois de um ano que nunca chegou a ter contas; e o plano de habitação inscreve €34 515 587† ao longo dos anos, com €256 407† definidos para 2026. A distância entre orçamento e dinheiro não é um hábito do passado; está agendada para as primeiras contas do novo mandato (inferência)."
+   "text": "A fila de pagamentos segue os empréstimos: colapsou depois de cada consolidação — 755* dias antes do empréstimo de 2016 e 89 depois dele, 22 em 2023 — e o seu atual regresso a 137 está a acontecer sem empréstimo de consolidação algum que compre alívio (inferência; cada valor está nas tabelas acima). As pessoas do município e a sua despesa com pessoal contam duas histórias diferentes: os efetivos caíram durante uma década enquanto a remuneração subia, e depois um ano — 2022 — acrescentou trezentos e seis trabalhadores com as escolas transferidas, pelo que o degrau da despesa com pessoal na tabela das finanças é sobretudo gente a chegar, e não o efeito isolado das atualizações salariais (inferência). E o primeiro plano do executivo que entrou repete o mecanismo mais antigo deste registo: a sua maior linha leva €9 500 000† com €2 350 000† de financiamento efetivamente definido; o dinheiro do acesso ao hospital regressa depois de um ano cujas contas registam o protocolo que o sustenta a receber nada, e depois de um ano que nunca chegou a ter contas; e o plano de habitação inscreve €34 515 587† ao longo dos anos, com €256 407† definidos para 2026. A distância entre orçamento e dinheiro não é um hábito do passado; está agendada para as primeiras contas do novo mandato (inferência)."
   },
   {
-   "i": 173,
+   "i": 169,
    "kind": "rule"
   },
   {
-   "emphasis": [
-    {
-     "end": 7,
-     "kind": "strong",
-     "start": 0
-    }
-   ],
    "figures": [],
-   "i": 174,
-   "kind": "paragraph",
-   "text": "Fontes."
+   "i": 170,
+   "kind": "heading",
+   "level": 2,
+   "text": "Fontes"
   },
   {
-   "i": 175,
+   "i": 171,
    "items": [
     {
      "figures": [],
-     "text": "Os relatórios de 2010 a 2014 e todo o dossiê de 2020 não têm camada de texto utilizável; não se correu OCR, por regra, e os buracos que daí resultam aparecem como lacunas em vez de preenchidos."
+     "text": "Os relatórios de 2010 a 2014 e todo o dossiê de 2020 não têm camada de texto utilizável."
     },
     {
      "emphasis": [
@@ -13652,7 +13591,7 @@
       }
      ],
      "figures": [],
-     "text": "Prestação de contas 2025 e a opinião do auditor sobre ela — transportadas do documento companheiro *Évora — Orçamentado, Pago, Devido 2025*, com os seus URL de origem e carimbos temporais de recolha."
+     "text": "Prestação de contas 2025 e a opinião do auditor sobre ela — transportadas do documento companheiro *Évora — Orçamentado, Pago, Devido 2025*."
     },
     {
      "emphasis": [
@@ -13663,7 +13602,7 @@
       }
      ],
      "figures": [],
-     "text": "Evolução do endividamento total por município, DGAL — a série independente de dívida do regulador e os índices de dívida dela derivados, também transportados do documento companheiro com a sua proveniência e derivações originais."
+     "text": "Evolução do endividamento total por município, DGAL — a série independente de dívida do regulador e os índices de dívida dela derivados."
     },
     {
      "emphasis": [
@@ -13705,21 +13644,9 @@
   },
   {
    "figures": [],
-   "i": 176,
-   "kind": "paragraph",
-   "text": "Três ficheiros de evidência foram acrescentados depois de este documento ter sido publicado pela primeira vez — os quadros de pessoal, os resultados da assembleia e das freguesias, e o plano de 2026 — e correm sob as mesmas disciplinas, com uma extensão. As contagens por freguesia são calculadas a partir dos doze ficheiros oficiais. Um valor do plano de 2026 que a digitalização do anexo destruiu foi recuperado e imprime-se com uma adaga, tal como um valor comparativo se imprime com um asterisco."
-  },
-  {
-   "figures": [],
-   "i": 177,
+   "i": 172,
    "kind": "paragraph",
    "text": "Lacunas. Os relatórios de 2010 a 2014 e o dossiê de 2020 são ilegíveis, pelo que cinco indicadores faltam para 2010 e 2011 e vários faltam ou são comparativos para 2012 e 2013, para 2014 e para 2020. Não existe nenhum documento de contas de 2024. As séries municipais de população e de dormidas não existem antes de 2011, e a despesa municipal em cultura não existe no conceito atual do instituto de estatística antes de 2013. O nome legal completo do presidente interino é [verify]. A data exata da instalação do mandato de 2009 não foi fixada a partir de uma fonte oficial. A série de efetivos começa em 2012, porque é aí que começa o quadro dos próprios relatórios. O resultado da assembleia de 2021 assenta somente no portal de resultados, que publica contagens provisórias, pelo que não é impresso. A maior parte das linhas dos anexos de investimentos do plano de 2026 não foi recuperável da digitalização, e as que foram estão marcadas."
-  },
-  {
-   "figures": [],
-   "i": 178,
-   "kind": "paragraph",
-   "text": "Cada linha do ledger leva o URL da sua fonte, o carimbo temporal da recolha, o texto exato correspondido ou o caminho JSON, a sua banda de sanidade, as entidades a que pode ser creditada e — quando é transportada do documento companheiro ou lida de uma coluna comparativa — uma nota que o diz."
   }
  ],
  "edition": "Évora — Quinze Anos, Cinco Mandatos (pt-PT)",
