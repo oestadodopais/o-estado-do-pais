@@ -104,7 +104,7 @@ if (!casa.inventario_existe) erros.push(`não existe ${casa.inventario}`);
  * Cada linha do inventário declara o bloco que a acrescentou ou a reclassificou,
  * e cada bloco tem de ter uma entrada no registo das revisões, com a leitura
  * cruzada do seu diff. Uma entrada pode dizer `por ler` enquanto o bloco está em
- * construção — a leitura faz-se antes da fusão, não antes do commit —, e essa
+ * construção (a leitura faz-se antes da fusão, não antes do commit), e essa
  * entrada sai na saída para que ninguém a esqueça. O que fecha a construção é um
  * bloco SEM entrada, ou uma entrada que nomeia um ficheiro que não existe. */
 const REVISOES = path.join('design', 'especime-v3', 'critica', 'REVISOES-DO-INVENTARIO.md');
