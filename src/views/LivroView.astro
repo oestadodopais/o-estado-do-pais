@@ -11,9 +11,12 @@
  * com o que se lê à margem: os dois estados do selo, o marcador de incerteza e
  * o que este índice não contém.
  *
- * As entradas vão em DOIS GRUPOS, por estado da proveniência. É também assim
- * que os dois estados do selo passam a existir lado a lado na mesma página, que
- * é o que a regra 5.2 exige e nenhuma página cumpria.
+ * AS ENTRADAS VÃO NUMA LISTA SÓ, pela ordem do livro-razão. Iam em dois grupos
+ * por estado da proveniência, com a contagem de cada grupo por título, e os dois
+ * grupos saíram por decisão do diretor de 27.08.2026: a contagem era a
+ * escrituração da casa. Os dois estados do selo continuam os dois na página, que
+ * é o que a regra 5.2 exige: cada linha leva o seu, e a legenda do aparelho
+ * nomeia-os lado a lado.
  */
 import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
@@ -48,54 +51,47 @@ const path = caminhoDoLivro(lang);
  * página própria, com pesquisa por concelho, e a porta para ela está mais abaixo.
  */
 const todas = allClaims();
-const dosConcelhos = todas.filter((c) => c.study === ESTUDO_DOS_CONCELHOS);
 const listadas = todas.filter((c) => c.study !== ESTUDO_DOS_CONCELHOS);
-const completas = listadas.filter((c) => !provenienciaIncompleta(c));
-const porConfirmar = listadas.filter((c) => provenienciaIncompleta(c));
 
 /**
  * AS CONTAGENS DESTE ÍNDICE (IDENTIDADE.md §10; `src/lib/prova.mjs`).
  *
  * Três chaves que já existem e cuja porta é esta página: quantas afirmações o
- * livro-razão guarda, quantas são calculadas por esta casa, e quantas têm um
- * campo por confirmar (que é o tamanho do segundo grupo). Nenhuma é escrita: o
- * portão reconta-as por conta própria e compara com o que a página escreve.
+ * livro-razão guarda, quantas são calculadas por esta casa, e quantas linhas são
+ * do estudo dos concelhos. Nenhuma é escrita: o portão reconta-as por conta
+ * própria e compara com o que a página escreve.
  *
- * As outras dez chaves cuja porta é esta página contam a RELEITURA e o cruzamento
+ * As outras chaves cuja porta é esta página contam a RELEITURA e o cruzamento
  * — o registo do que a casa fez — e vivem no Método, que é onde o método vive
- * (Emenda 15). Aqui ficam as três que nomeiam o que este índice tem.
+ * (Emenda 15); `indexaveis` e `divida` deixaram de se render aqui a 27.08.2026 e
+ * continuam contadas pelo portão. Aqui ficam as três que nomeiam o que este
+ * índice tem.
  */
 const p = prova(lang);
 
 /**
- * OS DOIS GRUPOS, E O NÚMERO COM DENOMINADOR (bloco B, item B7; achado C13).
+ * OS DOIS GRUPOS SAÍRAM, E COM ELES AS DUAS CONTAGENS DE PROVENIÊNCIA
+ * (decisão do diretor, 27.08.2026).
  *
- * O título dizia «Proveniência completa» e por baixo dele estava «128», sem
- * unidade e sem denominador: 128 de quê, e em quantas? As duas leituras
- * apanharam o mesmo. O título do grupo passa a ser a frase inteira — «128 de
- * 136 linhas com proveniência completa» —, e é uma frase e não duas: o nome do
- * estado dito por cima de um número solto era a mesma coisa escrita em dois
- * sítios, e nenhuma das duas metades se lia sozinha.
+ * O índice mostrava as linhas em dois grupos, por estado da proveniência, e
+ * cada grupo levava a sua contagem por título: «2544 de 2552 linhas com
+ * proveniência completa» e «8 de 2552 linhas com campos por confirmar». As duas
+ * são a escrituração da casa, e não o conteúdo do índice: uma linha por
+ * confirmar leva o seu marcador ao lado do campo que falta, e todas juntas estão
+ * listadas em `/a-verificar`, que é a página que existe para isso.
  *
- * NENHUM ALGARISMO ESCRITO À MÃO. As duas contagens são chaves da prova
- * (`indexaveis` e `divida` para o numerador, `afirmacoes` para o denominador),
- * que o portão reconta por conta própria a cada construção; o que é novo é o
- * rótulo, que é palavras (`IDENTIDADE.md` §10).
+ * A lista passa a ser uma só, pela ordem do livro-razão. Os dois estados do selo
+ * continuam os dois na página, que é o que a `IDENTIDADE.md` §5.2 exige: cada
+ * linha leva o seu (cheio ou a tracejado), e a legenda do aparelho nomeia-os
+ * lado a lado.
+ *
+ * AS DUAS CHAVES DA PROVA NÃO SAÍRAM DA PROVA. `indexaveis` e `divida`
+ * continuam na tabela de `src/lib/prova.mjs` e continuam recontadas a cada
+ * construção: `scripts/gate-html.mjs` percorre `Object.entries(PROVA)` e exige
+ * que ele saiba CONTAR cada chave, e não que alguma página a renda. É a mesma
+ * leitura que a §1.66 A3 fez quando a régua da convergência saiu da primeira
+ * página, e foi lida no portão e não assumida.
  */
-const grupos = [
-  {
-    id: 'completas',
-    frase: s.livro.grupoCompletasFrase,
-    chave: 'indexaveis',
-    linhas: completas,
-  },
-  {
-    id: 'por-confirmar',
-    frase: s.livro.grupoPorConfirmarFrase,
-    chave: 'divida',
-    linhas: porConfirmar,
-  },
-].filter((g) => g.linhas.length > 0);
 
 /**
  * ---------------------------------------------------------------------------
@@ -116,11 +112,11 @@ const grupos = [
  * campo que a linha não guarda. A posição fica, e é o que faz a coluna alinhar.
  *
  * O ESTADO É O SELO. O sexto campo que o brief da etapa nomeia é o estado da
- * proveniência, e ele já está desenhado duas vezes nesta página: no quadrado do
- * selo de cada linha (cheio ou a tracejado) e no grupo onde a linha está, com o
- * seu rótulo. Uma terceira rendição, palavra a palavra em 132 linhas, seria a
- * mesma coisa dita três vezes. Cada linha leva `data-estado`, que é o que uma
- * máquina lê, e a nota da etapa regista a chamada.
+ * proveniência, e ele está desenhado no quadrado do selo de cada linha, cheio ou
+ * a tracejado. Uma segunda rendição, palavra a palavra em cada linha, seria a
+ * mesma coisa dita duas vezes. Cada linha leva `data-estado`, que é o que uma
+ * máquina lê, e a nota da etapa regista a chamada. (Havia uma terceira, o título
+ * do grupo onde a linha estava; saiu com os grupos a 27.08.2026.)
  */
 ---
 
@@ -128,12 +124,13 @@ const grupos = [
   <div class="linha-cabeca">
     <span class="eyebrow">{s.livro.eyebrow}</span>
     <h1>{s.livro.h1}</h1>
-    {/* A SEGUNDA LEDE SAIU (Emenda 15, 21.08.2026). Dizia «O selo de proveniência
-        junto a cada número é a porta para a sua linha. É este o índice dessas
-        portas.»: é o sítio a explicar ao leitor o que o seu próprio selo faz, e
-        «o selo é toda a prova que a página mostra». A primeira lede fica, porque
-        nomeia o que uma linha guarda, que é o conteúdo desta página. */}
-    <p class="lede" style="margin-top:16px">{s.livro.lede1}</p>
+    {/* AS DUAS LEDES SAÍRAM. A segunda saiu com a Emenda 15 a 21.08.2026, e
+        dizia «O selo de proveniência junto a cada número é a porta para a sua
+        linha. É este o índice dessas portas.», que é o sítio a explicar ao
+        leitor o que o seu próprio selo faz. A primeira saiu por decisão do
+        diretor a 27.08.2026: dizia o que uma linha guarda, e uma linha guarda-o
+        à vista de quem a abre. O índice fica com o título, as contagens e as
+        suas linhas. */}
     {/* As contagens, numa linha só e fora da prosa: são números do próprio
         sítio, com a sua porta, e não uma frase da casa. */}
     <p class="livro-contas">
@@ -147,7 +144,7 @@ const grupos = [
       {' '}{s.livro.contaConcelhos}
     </p>
     {/* A PORTA DA PÁGINA DO CONJUNTO DOS CONCELHOS (decisão D6, 26.08.2026).
-        Fica aqui, por baixo das contagens do índice e por cima dos grupos,
+        Fica aqui, por baixo das contagens do índice e por cima da lista,
         porque é ela que explica a diferença entre o que o livro-razão guarda e o
         que esta lista mostra: as linhas dos concelhos existem, têm página de
         linha, entram no CSV e no JSON, e estão listadas na página que esta porta
@@ -169,69 +166,54 @@ const grupos = [
   <div class="linha">
     <!-- ============================================== corpo: as linhas -->
     <div class="linha-corpo">
-      {
-        grupos.map((g) => (
-          <section class="linha-bloco" aria-labelledby={`grupo-${g.id}`}>
-            <h2 class="linha-bloco-titulo livro-grupo-k" id={`grupo-${g.id}`}>
-              <ValorDaProva chave={g.chave} item={p[g.chave]} lang={lang} />
-              {' '}{s.livro.contaDe}{' '}
-              <ValorDaProva chave="afirmacoes" item={p.afirmacoes} lang={lang} />
-              {' '}{g.frase}
-            </h2>
-            {/* A NOTA DO GRUPO SAIU (direção, 21.08.2026, tarde). Eram as duas
-                frases de autorreferência que esta rota ainda contava: a casa a
-                dizer que conferiu campo a campo, e a explicar o seu próprio
-                selo. O nome do grupo é o estado, e a contagem por baixo dele diz
-                quantas linhas o têm. */}
-
-            <div class="livro-lista">
-              {g.linhas.map((c) => (
-                <div
-                  class="livro-item"
-                  data-estado={provenienciaIncompleta(c) ? 'por-confirmar' : 'completa'}
-                >
-                  {/* o valor, com o selo da sua própria linha ao lado */}
-                  <span class="livro-item-valor">
-                    <Claim id={c.id} lang={lang} as="span" class="livro-item-num" chip={true} />
+      {/* UMA LISTA SÓ, PELA ORDEM DO LIVRO-RAZÃO (27.08.2026). Os dois grupos
+          por estado da proveniência saíram com as suas contagens; o estado de
+          cada linha continua no seu selo e em `data-estado`. */}
+      <div class="livro-lista">
+        {listadas.map((c) => (
+          <div
+            class="livro-item"
+            data-estado={provenienciaIncompleta(c) ? 'por-confirmar' : 'completa'}
+          >
+            {/* o valor, com o selo da sua própria linha ao lado */}
+            <span class="livro-item-valor">
+              <Claim id={c.id} lang={lang} as="span" class="livro-item-num" chip={true} />
+            </span>
+            <div class="livro-item-corpo">
+              <code class="livro-item-id" data-linha-claim={c.id} data-linha-campo="id">
+                {c.id}
+              </code>
+              <div class="livro-item-meta">
+                <CampoDaLinha
+                  id={c.id}
+                  campo="unit"
+                  valor={c.unit}
+                  lang={lang}
+                  class="livro-item-unidade"
+                  originalPt={true}
+                />
+                {c.source !== null && c.source !== undefined && (
+                  <span class="livro-item-campo">
+                    <span class="livro-item-k">{s.prov.fonte}</span>{' '}
+                    <CampoDaLinha id={c.id} campo="source" valor={c.source} lang={lang} />
                   </span>
-                  <div class="livro-item-corpo">
-                    <code class="livro-item-id" data-linha-claim={c.id} data-linha-campo="id">
-                      {c.id}
-                    </code>
-                    <div class="livro-item-meta">
-                      <CampoDaLinha
-                        id={c.id}
-                        campo="unit"
-                        valor={c.unit}
-                        lang={lang}
-                        class="livro-item-unidade"
-                        originalPt={true}
-                      />
-                      {c.source !== null && c.source !== undefined && (
-                        <span class="livro-item-campo">
-                          <span class="livro-item-k">{s.prov.fonte}</span>{' '}
-                          <CampoDaLinha id={c.id} campo="source" valor={c.source} lang={lang} />
-                        </span>
-                      )}
-                      {c.access_date !== null && c.access_date !== undefined && (
-                        <span class="livro-item-campo">
-                          <span class="livro-item-k">{s.prov.lido}</span>{' '}
-                          <CampoDaLinha
-                            id={c.id}
-                            campo="access_date"
-                            valor={c.access_date}
-                            lang={lang}
-                          />
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              ))}
+                )}
+                {c.access_date !== null && c.access_date !== undefined && (
+                  <span class="livro-item-campo">
+                    <span class="livro-item-k">{s.prov.lido}</span>{' '}
+                    <CampoDaLinha
+                      id={c.id}
+                      campo="access_date"
+                      valor={c.access_date}
+                      lang={lang}
+                    />
+                  </span>
+                )}
+              </div>
             </div>
-          </section>
-        ))
-      }
+          </div>
+        ))}
+      </div>
     </div>
 
     <!-- ========================================== aparelho: como se lê -->

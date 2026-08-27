@@ -819,10 +819,18 @@ export const STRINGS = {
       metaTitle: 'Concelhos · Livro-razão · O Estado do País',
       metaDescription:
         'As linhas do livro-razão com as medidas que as fontes centrais publicam para cada concelho, uma linha cada.',
-      lede: 'Uma linha por medida e por concelho, com o valor tal como a fonte o publicou, a unidade, quem o produziu e a data em que foi lido.',
+      /* A LEDE SAIU (decisão do diretor, 27.08.2026). Dizia «Uma linha por
+         medida e por concelho, com o valor tal como a fonte o publicou, a
+         unidade, quem o produziu e a data em que foi lido.»: é o que uma linha
+         guarda, dito numa página do leitor. O que uma linha guarda lê-se na
+         linha, e o método vive no Método (Emenda 15). A página fica com o
+         título, as contagens, a pesquisa e as linhas.
+         A `contaCompletas` saiu com ela: «com proveniência completa» é a
+         escrituração da casa, e as linhas por confirmar levam o seu marcador e
+         estão listadas em `/a-verificar`. As duas contagens que ficam nomeiam o
+         que a página tem. */
       contaLinhas: 'linhas',
       contaConcelhos: 'concelhos',
-      contaCompletas: 'com proveniência completa',
       naoDeclaradasK: 'Linhas sem concelho declarado',
       voltarLivro: 'O livro-razão inteiro',
       indiceLink: 'O índice dos concelhos',
@@ -832,7 +840,10 @@ export const STRINGS = {
       metaCaudaDoConcelho: 'as linhas do livro-razão · O Estado do País',
       metaDescricaoDoConcelhoA: 'As linhas do livro-razão com as medidas que as fontes centrais publicam para o concelho de ',
       metaDescricaoDoConcelhoB: '.',
-      ledeDoConcelho: 'Uma linha por medida, com o valor tal como a fonte o publicou, a unidade, quem o produziu e a data em que foi lido.',
+      /* A LEDE DA PÁGINA DE UM CONCELHO SAIU, PELA MESMA DECISÃO. Dizia «Uma
+         linha por medida, com o valor tal como a fonte o publicou, a unidade,
+         quem o produziu e a data em que foi lido.» A página fica com o nome do
+         concelho, o nome do estudo e as suas linhas. */
       /* A AUSÊNCIA EM DUAS PALAVRAS (Emenda 15; item E13). Dizia «Ainda não há
          linhas deste estudo para este concelho.», que é uma frase a explicar uma
          ausência que a casa já diz em duas palavras: «sem linha ainda», «sem
@@ -848,12 +859,23 @@ export const STRINGS = {
 
     livro: {
       metaTitle: 'Livro-razão · O Estado do País',
-      metaDescription:
-        'Todas as afirmações publicadas neste sítio, uma linha cada: o valor tal como foi publicado, a fonte, o documento, o endereço, a data de acesso e o excerto.',
+      /* A DESCRIÇÃO DO `<head>` NOMEIA A PÁGINA (decisão do diretor,
+         27.08.2026). Dizia «Todas as afirmações publicadas neste sítio, uma
+         linha cada: o valor tal como foi publicado, a fonte, o documento, o
+         endereço, a data de acesso e o excerto.», que é o método do sítio na
+         superfície pública, e o `<head>` é superfície pública como o corpo. O
+         gabarito pede uma descrição, e a decisão diz de que feitio ela é: o nome
+         da página, e nunca o método. */
+      metaDescription: 'Livro-razão · O Estado do País',
       eyebrow: 'Livro-razão',
       h1: 'O livro-razão',
-      lede1:
-        'Uma linha por número publicado. Cada linha guarda o valor tal como a fonte o publicou, quem o produziu, o documento e a edição, o endereço, a data em que o lemos e um excerto textual (e, quando o número é calculado por nós, a conta explicada e reavaliada a cada construção).',
+      /* A LEDE SAIU, COM A MESMA DECISÃO. Dizia «Uma linha por número publicado.
+         Cada linha guarda o valor tal como a fonte o publicou, quem o produziu,
+         o documento e a edição, o endereço, a data em que o lemos e um excerto
+         textual (e, quando o número é calculado por nós, a conta explicada e
+         reavaliada a cada construção).» É o que uma linha guarda, e uma linha
+         guarda-o à vista de quem a abre: o índice fica com o título, as
+         contagens e as suas linhas. */
       /* AS DUAS NOTAS DE GRUPO SAÍRAM (decisão da direção, 21.08.2026, tarde).
          Diziam «Todos os campos preenchidos e conferidos contra a fonte. O selo
          é um quadrado cheio.» e «Falta pelo menos um campo de proveniência. O
@@ -862,15 +884,17 @@ export const STRINGS = {
          autorreferência que o inventário contava nesta rota: a casa a dizer o
          que fez e a explicar o seu próprio selo. O nome do grupo diz o estado, e
          o estado é o que a página tem para dizer. */
-      /* O TÍTULO DE CADA GRUPO É A FRASE INTEIRA (bloco B, item B7; achado
-         C13). Era o nome do estado com um número solto por baixo, «Proveniência
-         completa · 128»; passa a «128 de 136 linhas com proveniência completa»,
-         com as duas contagens a virem de chaves da prova. As duas chaves
-         antigas, `grupoCompletasK` e `grupoPorConfirmarK`, saíram com a forma
-         que as pedia. */
-      contaDe: 'de',
-      grupoCompletasFrase: 'linhas com proveniência completa',
-      grupoPorConfirmarFrase: 'linhas com campos por confirmar',
+      /* OS DOIS TÍTULOS DE GRUPO SAÍRAM, E OS GRUPOS COM ELES (decisão do
+         diretor, 27.08.2026). Diziam «2544 de 2552 linhas com proveniência
+         completa» e «8 de 2552 linhas com campos por confirmar»: é a
+         escrituração da casa, e não o conteúdo do índice. As linhas por
+         confirmar levam o seu marcador, e estão listadas em `/a-verificar`. As
+         chaves `contaDe`, `grupoCompletasFrase` e `grupoPorConfirmarFrase`
+         saíram com a forma que as pedia, como `grupoCompletasK` e
+         `grupoPorConfirmarK` tinham saído no item B7. As duas chaves da prova
+         que as contavam, `indexaveis` e `divida`, continuam na tabela da prova e
+         continuam recontadas pelo portão: o portão exige saber CONTAR cada
+         chave, e não que alguma página a renda. */
       colunaValor: 'Valor',
       colunaAfirmacao: 'Afirmação',
       colunaSelo: 'Proveniência',
@@ -1735,17 +1759,16 @@ export const STRINGS = {
       metaTitle: 'Municipalities · Ledger · O Estado do País',
       metaDescription:
         'The ledger rows with the measures central sources publish for each municipality, one row each.',
-      lede: 'One row per measure and per municipality, with the value as the source published it, the unit, who produced it and the date it was read.',
+      /* A gémea da lede portuguesa, e sai com ela (27.08.2026). */
       contaLinhas: 'rows',
       contaConcelhos: 'municipalities',
-      contaCompletas: 'with complete provenance',
       naoDeclaradasK: 'Rows with no municipality declared',
       voltarLivro: 'The whole ledger',
       indiceLink: 'The index of municipalities',
       metaCaudaDoConcelho: 'the ledger rows · O Estado do País',
       metaDescricaoDoConcelhoA: 'The ledger rows with the measures central sources publish for the municipality of ',
       metaDescricaoDoConcelhoB: '.',
-      ledeDoConcelho: 'One row per measure, with the value as the source published it, the unit, who produced it and the date it was read.',
+      /* A gémea da lede da página de um concelho, e sai com ela (27.08.2026). */
       vazioDoConcelho: 'No rows yet.',
       referenciaK: 'The study’s reference',
       paginaDoConcelho: 'The municipality page',
@@ -1754,15 +1777,13 @@ export const STRINGS = {
 
     livro: {
       metaTitle: 'Ledger · O Estado do País',
-      metaDescription:
-        'Every claim published on this site, one row each: the value exactly as published, the source, the document, the address, the access date and the excerpt.',
+      /* A descrição nomeia a página, e é a gémea da portuguesa (27.08.2026). */
+      metaDescription: 'Ledger · O Estado do País',
       eyebrow: 'Ledger',
       h1: 'The ledger',
-      lede1:
-        'One row per published figure. Each row holds the value exactly as the source published it, who produced it, the document and edition, the address, the date we read it and a textual excerpt (and, when the figure is calculated by us, the sum spelled out and re-evaluated at every build).',
-      contaDe: 'of',
-      grupoCompletasFrase: 'rows with complete provenance',
-      grupoPorConfirmarFrase: 'rows with fields to confirm',
+      /* A lede e os dois títulos de grupo saíram com as gémeas portuguesas
+         (27.08.2026): `lede1`, `contaDe`, `grupoCompletasFrase` e
+         `grupoPorConfirmarFrase`. */
       colunaValor: 'Value',
       colunaAfirmacao: 'Claim',
       colunaSelo: 'Provenance',

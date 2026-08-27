@@ -455,20 +455,25 @@ const INDICE = '/livro-razao';
   });
   conta(
     '3b · os dois estados do selo lado a lado, o conjunto com a sua licença, e as contagens com porta',
-    /* AS CHAVES DISTINTAS, E NÃO O NÚMERO DE MARCAS (bloco B, item B7). Eram
-       quatro marcas para quatro chaves; com o denominador do título de cada
-       grupo — «128 de 136 linhas com proveniência completa» — a chave
-       `afirmacoes` passa a render-se três vezes na mesma página, e é a mesma
-       contagem. O que esta célula julga é o que sempre julgou: que as chaves
-       são estas quatro e que toda a marca tem porta. */
+    /* AS CHAVES DISTINTAS, E NÃO O NÚMERO DE MARCAS (bloco B, item B7). O que
+       esta célula julga é que as chaves rendidas são as que a página tem para
+       dizer, e que toda a marca tem porta.
+
+       ERAM CINCO E PASSAM A TRÊS (diretor, 27.08.2026; DECISIONS §1.70). Os dois
+       grupos por estado da proveniência saíram do índice com as suas contagens,
+       e com eles `indexaveis` e `divida`: são a escrituração da casa, e as
+       linhas por confirmar levam o seu marcador e estão listadas em
+       `/a-verificar`. As duas chaves ficam na tabela da prova e continuam
+       recontadas pelo portão, que exige saber contar cada chave e não que alguma
+       página a renda. */
     m.cheio === 1 && m.tracejado === 1 && m.csv && m.json && m.licenca &&
       /* A CHAVE `concelhos_linhas` ENTRA COM A DECISÃO D6 (26.08.2026): é a
          contagem das linhas que saíram desta lista para a página do conjunto, e
          é ela que explica a diferença entre o que o livro-razão guarda e o que
-         este índice mostra. Como as outras quatro, tem porta e é recontada
-         pelo portão. */
+         este índice mostra. Como as outras, tem porta e é recontada pelo
+         portão. */
       [...new Set(m.provas.map(([k]) => k))].sort().join(',') ===
-        'afirmacoes,concelhos_linhas,derivadas,divida,indexaveis' &&
+        'afirmacoes,concelhos_linhas,derivadas' &&
       m.provas.every(([, , href]) => href),
     `amostras cheio ${m.cheio} · tracejado ${m.tracejado} · CSV ${m.csv} · JSON ${m.json} · ` +
       `licença ${m.licenca} · ${m.provas.length} marcas de ${new Set(m.provas.map(([k]) => k)).size} chaves ` +
