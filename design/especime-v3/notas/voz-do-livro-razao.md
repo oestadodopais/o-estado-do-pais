@@ -63,6 +63,23 @@ dos concelhos de volta, com `contaCompletas` nas duas edições.
 por classificar em /livro-razao/concelhos» e o seu gémeo em
 `/en/ledger/municipalities`. Retirada, verde.
 
+## A leitura de fora, L1 a L5
+
+Cinco itens, todos seguidos no mesmo dia: as dicas e os rótulos das duas páginas
+do livro-razão passam a nomear a coisa em vez da maquinaria (L1); a descrição do
+`<head>` do índice dos concelhos nomeia a página (L2); a frase dos pelouros diz o
+facto da fonte em vez do alcance da leitura da casa, e a sua exceção sai (L3); o
+tripwire ganha a família da cobertura, «atravess», «cobert», «coverage» e
+«complet», com três exceções escritas (L4); e o título citado de um trabalho leva
+a língua em que está escrito, por uma peça só, com régua na matriz (L5).
+
+**Contas depois da leitura:** marcadores 62 → 65, exceções 8 → 7, matriz 87 → 88
+células.
+
+**Uma régua que falta, e foi medida.** O estrago plantado do L1 não sai vermelho
+em lado nenhum: a régua da voz recolhe blocos de texto e a descrição do `<head>`,
+e não lê `title` nem `aria-label`. Os do L2, L3 e L5 saem vermelhos.
+
 ## O que fica
 
 A leitura cruzada do diff deste bloco está por fazer, e o portão di-lo a cada

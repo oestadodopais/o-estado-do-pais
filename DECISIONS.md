@@ -11377,10 +11377,58 @@ verde.
 `build` não acontece, porque o `astro build` falha antes e o passo nunca corre;
 corrido à mão, é uma leitura falsa. Fica registado e não corrigido neste bloco.
 
+#### A leitura de fora, L1 a L5, no mesmo dia
+
+A leitura cruzada leu as páginas construídas e não só o diff, e trouxe cinco
+itens, todos seguidos.
+
+**L1 · as dicas e os rótulos.** Seis cadeias diziam a maquinaria em vez da coisa,
+e saíam num atributo `title`, que é texto do leitor como outro qualquer: «itens
+da agenda atravessados do motor», «ficheiros do livro-razão, um por número
+publicado», «linhas cujo valor é calculado a partir de outras linhas»,
+«concelhos com página do observatório construída», «edições no arquivo, contadas
+por língua» e o rótulo do estudo interno «Quadro institucional de indicadores,
+leitura direta da fonte». Passam a nomear. Com elas saiu «Todas as linhas, com
+todos os campos publicados.», que era uma afirmação de cobertura sobre o próprio
+ficheiro. A varredura foi de todos os `title=` e `aria-label` das páginas do
+leitor; as frases que só se rendem no Método ficaram, porque o Método é onde o
+método vive, e são 26 das 34 chaves rendidas.
+
+**L2 · a descrição do índice dos concelhos**, que sai também no Open Graph, passa
+à forma que nomeia a página.
+
+**L3 · a frase dos pelouros** dizia «em todos os mandatos que o trabalho
+conseguiu ler», que é cobertura, e passa a dizer o facto da fonte: «nos mandatos
+em que a câmara publica a repartição». A exceção que a dispensava saiu com ela.
+
+**L4 · a família da cobertura no tripwire.** «atravessou» encurta para
+«atravess», porque a forma que se rendia era «atravessados»; entram «cobert»,
+«coverage» e «complet». Marcadores 62 → 65, exceções 8 → 7: a raiz «complet»
+mordeu três frases reais que não são cobertura do sítio, e as três levam exceção
+escrita (o nome do estado do selo, o secundário incompleto de uma pessoa, e a
+data de conclusão de um local do plano de recuperação na edição inglesa).
+
+**L5 · a língua de um título citado.** Um trabalho só com edição inglesa rende o
+título inglês dentro das páginas portuguesas, e quem ouve a página ouvia-o com a
+fonética do português. Passa a haver uma peça só, `TituloDeTrabalho.astro`, nos
+cinco sítios onde um título se rende, com a língua decidida por uma função só, e
+a porta da outra edição no rodapé ganha a mesma marca. A régua entra na matriz e
+lê os ficheiros construídos: 5 200 títulos citados, 91 com `lang`, zero em falta
+e zero a repetir a língua da página.
+
+**Uma régua que falta, medida e não suposta.** O estrago plantado do L1, a dica
+antiga reposta, **não sai vermelho em lado nenhum**: a régua do inventário
+recolhe os blocos de texto e a descrição do `<head>`, e não lê os atributos
+`title` nem `aria-label`. Os do L2 e do L3 saem vermelhos (o inventário e o
+tripwire, cada um com a rota e o marcador nomeados) e o do L5 também (a célula
+nova da matriz). Fica escrito porque uma correção sem régua é uma correção que
+volta em silêncio.
+
 #### O que fica
 
 A leitura cruzada do diff está por fazer, e o portão di-lo a cada construção:
-`voz-do-livro-razao` está `por ler` no registo das revisões. E duas células de
+`voz-do-livro-razao` está `por ler` no registo das revisões. E os atributos
+`title` e `aria-label` continuam fora da varredura da régua da voz. E duas células de
 `tests/linha/correcoes-b.mjs` já estavam vermelhas em `main` e continuam, as duas
 sobre a página de Évora, que este bloco não toca. **Foi medido e não deduzido:**
 com os cinco ficheiros deste bloco repostos aos de `ef46826` e a árvore
