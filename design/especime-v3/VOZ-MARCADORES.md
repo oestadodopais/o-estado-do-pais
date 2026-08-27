@@ -90,8 +90,11 @@ Três modos de correspondência, todos sem sensibilidade a maiúsculas:
 | palavra | the work | A mesma, na edição inglesa, e pela mesma razão: «the works» é o nome da secção. |
 | raiz | este livro-razão | «nenhum valor marcado assim atravessou para este livro-razão»: o sítio a contar o que deixou entrar em si. |
 | raiz | this ledger | A mesma, na edição inglesa. |
-| raiz | atravessou | A palavra da travessia do motor para o livro-razão, que é maquinaria da casa e não um facto do que se mede. |
+| raiz | atravess | A palavra da travessia do motor para o livro-razão, que é maquinaria da casa e não um facto do que se mede. Era «atravessou», e a raiz curta entrou a 27.08.2026: a forma que se rendia era «itens da agenda atravessados do motor», num `title`, e o passado do verbo não lhe tocava. |
 | raiz | crossed into | A mesma, na edição inglesa. |
+| raiz | cobert | A cobertura do sítio dita por extenso: quanto do assunto é que ele tem. É a palavra que a Emenda 15 nomeia ao lado do método e da verificação. |
+| raiz | coverage | A mesma, na edição inglesa. |
+| raiz | complet | Uma afirmação de que nada falta é uma afirmação de cobertura, e serve as duas edições («completo», «completa», «complete», «completeness»). O nome do estado de proveniência de uma linha não é isso, e tem exceção escrita. |
 | raiz | mostra-o | «A página do município mostra-o como está»: a página a dizer o que mostra. |
 | raiz | shows it | A mesma, na edição inglesa. |
 | raiz | avaliáve | «O mandato mais recente não é avaliável» era o título de uma ressalva retirada: é um juízo sobre o que a casa consegue fazer, e não sobre o que a fonte publica. |
@@ -120,17 +123,27 @@ Quatro tipos:
   única que existiu eram as contagens do livro-razão, e saiu com a decisão do
   diretor de 27.08.2026 que as tirou das páginas.
 
-**São cinco, e eram oito até 27.08.2026.** As três que saíram eram as duas ledes
-do livro-razão e o registo das suas contagens, todas com a razão «à decisão do
-diretor, 26.08». A decisão de 27.08 tirou as ledes das páginas e as contagens de
-proveniência dos índices: uma frase que já não se rende não precisa de dispensa,
-e uma dispensa que sobrevive à frase é uma porta aberta para ela voltar em
-silêncio. O `PROTOCOLO-DAS-LEITURAS.md` guarda a decisão por extenso.
+**São sete, e eram oito de manhã.** Três saíram e uma entrou duas vezes, no mesmo
+dia. As três que saíram: as duas ledes do livro-razão e o registo das suas
+contagens, todas com a razão «à decisão do diretor, 26.08», e a decisão de 27.08
+tirou as ledes das páginas e as contagens de proveniência dos índices, porque uma
+frase que já não se rende não precisa de dispensa; e a de «o trabalho conseguiu
+ler», que era uma afirmação de cobertura disfarçada de limite dos dados: a frase
+foi reescrita para dizer o facto da fonte («nos mandatos em que a câmara publica
+a repartição») e a dispensa saiu com ela. **Ficam quatro do dia anterior**, e
+entram três que a raiz «complet» passou a morder: o nome do estado do selo e os
+dois campos das fontes, o secundário incompleto de uma pessoa e a data de
+conclusão de um local do plano de recuperação. Nenhuma exceção foi escrita para
+uma frase que a varredura não alcança: uma dispensa que nunca se exerce é uma
+lista a engordar em silêncio, e a régua imprime-a. O
+`PROTOCOLO-DAS-LEITURAS.md` guarda a decisão por extenso.
 
 | tipo | marcador | pt | en | razão |
 | --- | --- | --- | --- | --- |
 | contexto | verific · verif | a verificar | to verify | `[a verificar]` é o marcador de incerteza do sítio, com página própria em `/a-verificar`: diz que falta um campo de proveniência, e é a ausência declarada que a Emenda 15 manda dizer. A raiz «verific» está dentro do nome do marcador, e não numa afirmação da casa. |
 | contexto | a página · the page | a página da câmara | the council’s page | É a página da CÂMARA MUNICIPAL, e não a deste sítio: nomeia a fonte de onde as designações de pelouro são lidas. A raiz apanha-a porque as duas se escrevem com as mesmas palavras. |
-| contexto | o trabalho · the work | o trabalho conseguiu ler | the work could read | Nomeia o alcance do TRABALHO, que é um limite dos dados: a frase só vale para os mandatos que ele leu. Não é a casa a falar do seu próprio cuidado. |
 | rota | ste sítio · this site | /correcoes | /en/corrections | A política de correções é o CONTEÚDO desta página, e é a Emenda 17 que o escreve: «a frase da política vive em `/correcoes`.» A cabeça do inventário já o diz por extenso: «Nenhum bloco desta página é autorreferência, e a razão não é indulgência: é o objecto da página.» Só este marcador é dispensado; todos os outros continuam a morder aqui. |
+| contexto | complet | secundário incompleto | without completing secondary education | É a DEFINIÇÃO da medida dos jovens que saem cedo da escola: o adjetivo é do percurso escolar de uma pessoa, e o que ele qualifica é o que a fonte mede. Nada tem que ver com o que o sítio cobre. |
+| contexto | complet | (nenhum) | planned completion date has passed with no completion recorded | É um CAMPO do registo público do plano de recuperação, na edição inglesa: a data prevista de conclusão de um local e o facto de não haver conclusão registada. O português da mesma frase diz «conclusão», que a raiz não morde, e por isso esta linha só nomeia a cadeia inglesa. |
+| contexto | complet | proveniência completa | provenance complete | É o NOME de um dos dois estados do selo de uma linha, e o estado é do CAMPO: diz que nenhum campo de proveniência daquela linha ficou por confirmar. Não é uma afirmação sobre o que o sítio cobre. O outro estado chama-se «um campo por confirmar», e as duas palavras estão desenhadas lado a lado na legenda do aparelho. |
 | frase | sta página · this page | Nesta página | On this page | O rótulo do sumário de uma página, já declarado navegação no inventário: leva a outro sítio da mesma página, e é isso que a lista chama navegação. |
