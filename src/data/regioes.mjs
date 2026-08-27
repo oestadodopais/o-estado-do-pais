@@ -180,11 +180,48 @@ export const ESCALA = {
  *     da subetapa 2g, que foi a que separou o nome da região do seu valor; mexer
  *     neles era desfazer uma correção já medida.
  */
+/**
+ * OS PATAMARES PASSAM A ESTAR A 42 UNIDADES, E A CAIXA CRESCE COM ELES
+ * (Emenda 21, 27.08.2026; medido pela régua de `tests/inicio/regioes.mjs`, M1b).
+ *
+ * A chapa de papel de um rótulo vai de `y-37` a `y+4`: são 41 unidades de altura.
+ * Os patamares estavam a 30, e por isso duas chapas de patamares vizinhos
+ * cruzavam-se SEMPRE em 11 unidades. Enquanto a régua desenhava uma leitura isso
+ * não tinha consequência; com a régua completa tem, e a régua mediu-a a 1280: a
+ * chapa de Portugal tapava o rótulo do Alentejo e a do Algarve tapava o da
+ * Madeira, porque uma chapa é desenhada depois do rótulo do vizinho.
+ *
+ * O empacotador separa os rótulos EM X dentro de um patamar; nada os separava em
+ * Y entre patamares. Com 42 unidades de intervalo, duas chapas de patamares
+ * vizinhos deixam de se tocar (`y+4` de um fica uma unidade abaixo de `y-37` do
+ * de cima), e a garantia passa a ser das duas dimensões:
+ *
+ *   · dentro de um patamar, o empacotador;
+ *   · entre patamares, a geometria.
+ *
+ * `eixoY` desce 42 e `altura` cresce 28. O que estava escrito EM RELAÇÃO a
+ * `eixoY` — os traços da escala, os rótulos da escala — desce com ele sem mudar
+ * uma distância entre si, e o que se ganhou em altura é o que os patamares
+ * pediram. A altura da caixa é agora `eixoY + 42`, e não `eixoY + 56`: o rótulo
+ * da distância, que era o que vivia lá em baixo, saiu com a barra do eixo
+ * (Emenda 21c: a barra é da lista, uma por leitura).
+ *
+ * SÃO QUATRO PATAMARES, E COM SEIS LEITURAS ISSO CHEGA — mas não chega por
+ * definição. O empacotador põe no ÚLTIMO patamar o que já não cabe em nenhum, e
+ * com regiões a mais na mesma vizinhança da escala dois rótulos voltariam a
+ * cruzar-se. Quem o vê é a célula M1b da régua, e a resposta desse dia é um
+ * patamar a mais aqui e mais 42 unidades de caixa. Fica escrito para que a
+ * resposta não seja procurada outra vez.
+ *
+ * A MEDIÇÃO DA SUBETAPA 2g FICA INTACTA: o que ela mediu foi a distância entre o
+ * nome e o valor DENTRO de uma chapa (24 unidades, `y-24` e `y-1`), e essa não
+ * muda. O que muda é a distância entre chapas.
+ */
 export const GEOMETRIA = {
   largura: 980,
-  altura: 262,
+  altura: 290,
   esquerda: 64,
   direita: 916,
-  eixoY: 206,
-  patamares: [178, 148, 118, 88],
+  eixoY: 248,
+  patamares: [220, 178, 136, 94],
 };
