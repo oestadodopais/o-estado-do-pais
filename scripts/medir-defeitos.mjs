@@ -37,7 +37,7 @@ import { parse, NodeType } from 'node-html-parser';
 
 import { loadClaims } from '../src/lib/ledger.mjs';
 import { matchPath, routePath } from '../src/lib/routes.mjs';
-import { leMarcadores, analisa, FICHEIRO_DOS_MARCADORES } from './voz.mjs';
+import { leMarcadores, analisa, leInventario, FICHEIRO_DOS_MARCADORES } from './voz.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -318,20 +318,9 @@ const COBERTURA_DECLARADA = '[data-cobertura]';
  */
 const LUGAR_DECLARADO = '[data-lugar]';
 
-/** A lista declarada: texto normalizado → classe. */
-function leInventario() {
-  const ficheiro = path.join(RAIZ, 'design', 'especime-v3', 'INVENTARIO-FRASES.md');
-  const mapa = new Map();
-  if (!fs.existsSync(ficheiro)) return { mapa, ficheiro, existe: false };
-  for (const linha of fs.readFileSync(ficheiro, 'utf8').split('\n')) {
-    const m = linha.match(/^\|\s*(conteudo|navegacao|autorreferencia)\s*\|(.*)\|\s*$/);
-    if (!m) continue;
-    mapa.set(norm(m[2]), m[1]);
-  }
-  return { mapa, ficheiro, existe: true };
-}
-
-const INVENTARIO = leInventario();
+/** A lista declarada: texto normalizado → classe. A leitura vive em `voz.mjs`,
+    porque o portão da voz lê a mesma tabela e a terceira coluna dela. */
+const INVENTARIO = leInventario(RAIZ);
 
 /**
  * Os blocos de prosa da casa de uma página.
