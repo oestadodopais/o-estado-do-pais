@@ -5,10 +5,9 @@
  * ---------------------------------------------------------------------------
  * O QUE MUDOU, E A REGRA QUE GOVERNA TUDO O QUE SE SEGUE
  * ---------------------------------------------------------------------------
- * A página passou a ter estado: um âmbito (País, uma região, um concelho) e uma
- * densidade (Relance, Leitura breve), codificados no endereço, porque é o
- * endereço que se partilha (Emenda 7). E a regra que isso obriga é a resposta 3
- * da direcção à crítica cruzada:
+ * A página passou a ter estado: um âmbito e uma densidade, codificados no
+ * endereço, porque é o endereço que se partilha (Emenda 7). E a regra que isso
+ * obriga é a resposta 3 da direcção à crítica cruzada:
  *
  *   **O CÓDIGO DE EXECUÇÃO ESCOLHE CADEIAS JÁ VALIDADAS E NUNCA COMPÕE UM
  *   NÚMERO.** Tudo o que a página pode mostrar em qualquer estado saiu deste
@@ -22,14 +21,19 @@
  * do nó daquele concelho na ilha da CAOP; um concelho já não se escolhe aqui, e
  * os dois blocos que tinham texto por preencher saíram com o estado.
  *
- * O que isto custa é peso: seis blocos de cabeça, os 308 resultados da pesquisa
- * e os 308 pontos do mapa saem todos do servidor. O que isto compra é que o
- * portão vê tudo o que o leitor pode ver — que é a única maneira de a promessa
- * do sítio continuar de pé quando a página ganha estado.
+ * O ÂMBITO PASSOU A TER UM VALOR SÓ (Emenda 21b, 27.08.2026). Um concelho vive
+ * na sua página desde a Emenda 19a, e uma região passa a viver na dela: os cinco
+ * estados `?ambito=regiao:<slug>` saem, e com eles os cinco blocos de cabeça e os
+ * cinco painéis de região. O que fica é o país, que é do que esta página trata.
  *
- * SEM JAVASCRIPT a página é o âmbito País em Relance, completa e correcta, e os
- * comandos são ligações para sítios que existem: `/` para o país e
- * `/municipios` para os 308.
+ * O que isto custa é peso: os 308 resultados da pesquisa e as 29 áreas do mapa
+ * saem todos do servidor. O que isto compra é que o portão vê tudo o que o leitor
+ * pode ver — que é a única maneira de a promessa do sítio continuar de pé quando
+ * a página ganha estado.
+ *
+ * SEM JAVASCRIPT a página é o País em Relance, completa e correcta, e os comandos
+ * são ligações para sítios que existem: `/` para o país, `/regioes` para as
+ * regiões e `/municipios` para os 308.
  */
 import Base from '../layouts/Base.astro';
 import Masthead from '../components/Masthead.astro';
@@ -41,15 +45,10 @@ import Pesquisa from '../components/inicio/Pesquisa.astro';
 import MapaRespira from '../components/inicio/MapaRespira.astro';
 import ListaSocial from '../components/inicio/ListaSocial.astro';
 import { FIGURAS_PDM, FIGURAS_SOCIAL, comparacaoComOLimiar, ladosDoLimiar } from '../data/figuras.mjs';
-import { ESCALA } from '../data/regioes.mjs';
 import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
-import {
-  concelhos,
-  chaveDaRegiao,
-  ledeDoPainel,
-  REGIOES_DE_AMBITO,
-} from '../lib/inicio.mjs';
+import { concelhos, ledeDoPainel } from '../lib/inicio.mjs';
+import { slugsDasRegioes } from '../lib/regioes.mjs';
 import { estadoDaVerificacao, prova } from '../lib/prova.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -62,15 +61,32 @@ const p = prova(lang);
 const verificacao = estadoDaVerificacao();
 
 const home = routePath('home', lang);
-/* Os destinos sem script. `regiao` saiu com a terceira posição do comando (item
-   A2): o seu destino era `#convergencia`, que é a âncora da secção que saiu da
-   página, e um comando cujo destino não existe é pior do que nenhum. */
+/* Os destinos sem script. `regiao` VOLTOU (Emenda 21b): o seu destino era
+   `#convergencia`, a âncora da secção que saiu da página a 25.08, e passa a ser
+   `/regioes`, que é uma página que existe. Não é um estado desta página — é uma
+   porta —, e por isso continua a ser uma ligação mesmo com script. */
 const hrefs = {
   pais: home,
+  regiao: routePath('regioes', lang),
   municipio: routePath('municipios', lang),
   relance: home,
   leitura: `${home}?densidade=leitura`,
 };
+
+/* ---------------------------------------------------------------------------
+ * O REENCAMINHAMENTO DOS ENDEREÇOS ANTIGOS DAS REGIÕES (Emenda 21b)
+ * ---------------------------------------------------------------------------
+ * «Um endereço antigo leva à página da região.» O gabarito da rota e a lista
+ * fechada das regiões com página descem para o comando «Região», e é de lá que o
+ * script os lê. O cliente não conhece a tabela de rotas nem a lista das regiões:
+ * põe um slug da lista no lugar que o gabarito marca, e um slug fora da lista
+ * cai no índice, que é o `href` do próprio comando.
+ *
+ * `:slug` é o marcador da própria tabela de rotas (`src/lib/routes.mjs`), e não
+ * uma convenção inventada aqui: é a mesma cadeia que `routePath()` substitui.
+ */
+const portaDaRegiao = routePath('regiao', lang, { slug: ':slug' });
+const regioesComPorta = slugsDasRegioes().join(' ');
 
 /* ------------------------------------------------------------------ o painel */
 /* A comparação com o limiar continua a ser calculada aqui, uma vez, como na v2:
@@ -127,27 +143,17 @@ const cs = concelhos();
 const destinoDoConcelho = (c) =>
   c.pagina ? routePath('municipio', lang, { slug: c.pagina.slug }) : null;
 
-/* ------------------------------------------------------- as seis leituras da régua
- *
- * A RÉGUA TEM SEIS LEITURAS; O ÂMBITO TEM CINCO REGIÕES (etapa 2i, achado 5).
- * Portugal está na régua — é a marca contra a qual as regiões se leem, e sai da
- * mesma lista publicada — mas não é uma região e não tem estado: não tem ficha
- * na cabeça, não tem painel, não tem pastilha, e `?ambito=regiao:portugal` cai
- * no defeito como qualquer valor desconhecido. Quem separa as duas listas é o
- * campo `referencia` de `regioes.mjs`, lido em `src/lib/inicio.mjs`.
- */
-const leitura = (r) => ({
-  slug: r.slug,
-  nome: r.nome[lang],
-  valor: r.valor,
-  linha: getClaim(r.valor),
-  frase: r.frase[lang],
-});
-/* A lista das SEIS leituras saiu com a banda (item A3): quem a desenhava era
-   `BandaDaRegiao`, e a régua já não se rende aqui. Fica a lista do ÂMBITO, que
-   é a das cinco regiões com bloco de cabeça e painel próprios — o que um
-   endereço `?ambito=regiao:<slug>` continua a resolver. */
-const regioesDeAmbito = REGIOES_DE_AMBITO.map(leitura);
+/* AS LEITURAS DA RÉGUA SAÍRAM DAQUI (Emenda 21b, 27.08.2026). Eram as cinco
+   regiões de âmbito, cada uma com a sua linha e a sua frase, para os blocos de
+   cabeça e para os painéis de região. A régua completa vive em `/regioes`, e a
+   leitura de cada região vive na página dela: o que esta página tinha era uma
+   segunda casa para o mesmo conteúdo, acesa por um estado do endereço. A lista
+   que fica é a das regiões COM PÁGINA, e serve uma coisa só — dizer ao script
+   para onde vai um endereço antigo.
+
+   Quem separa a referência das regiões continua a ser o campo `referencia` de
+   `regioes.mjs`, agora lido em `src/lib/regioes.mjs`: Portugal está na régua
+   porque é a marca contra a qual as regiões se leem, e não tem página. */
 
 /* AS PEÇAS DE ÉVORA SAÍRAM DA PRIMEIRA PÁGINA (Emenda 19a, 26.08.2026). Eram as
    oito medidas do concelho, rendidas aqui para o painel do estado
@@ -163,17 +169,10 @@ const regioesDeAmbito = REGIOES_DE_AMBITO.map(leitura);
    diz-se na peça dessa medida, ao lado do valor a que se refere. Com a fila, o
    campo; sem a fila, nada o lê, e um campo que ninguém lê é um cálculo a fingir
    que ainda serve. */
-/* OS DOIS BLOCOS DE CONCELHO SAÍRAM (Emenda 19a). Ficam o país e as cinco
-   regiões, que são os estados que o esquema do endereço ainda tem. */
-const blocos = [
-  { chave: 'pais', tipo: 'pais' },
-  ...regioesDeAmbito.map((r) => ({
-    chave: chaveDaRegiao(r.slug),
-    tipo: 'regiao',
-    nome: r.nome,
-    frase: r.frase,
-  })),
-];
+/* OS DOIS BLOCOS DE CONCELHO SAÍRAM (Emenda 19a) E OS CINCO DAS REGIÕES SAÍRAM
+   (Emenda 21b). Fica o país, que é o único âmbito que o esquema do endereço tem
+   — a densidade continua a ser estado, e o âmbito passa a ter um valor só. */
+const blocos = [{ chave: 'pais', tipo: 'pais' }];
 
 /* AS OITO MEDIDAS SEM LINHA SAÍRAM (Emenda 19a). `medidasSemLinha` era a
    disposição-padrão municipal da Emenda 14: as mesmas oito medidas da página de
@@ -192,7 +191,7 @@ const blocos = [
   <Masthead slot="masthead" lang={lang} path={path} compact={false} furniture={true} />
 
   <div class="inicio" data-inicio data-ambito="pais" data-densidade="relance">
-    <Comando s={s} hrefs={hrefs} />
+    <Comando s={s} hrefs={hrefs} portaDaRegiao={portaDaRegiao} slugsDasRegioes={regioesComPorta} />
 
     {/* ----------------------------------------------------------------------
         A PESQUISA DEIXA DE SER UM PAINEL QUE ABRE (bloco A, itens A1, A2 e A4)
@@ -210,10 +209,11 @@ const blocos = [
         uma regra de largura, e uma segunda cópia do 640 dentro do script
         divergiria da primeira no dia em que a folha mudasse.
 
-        A FILA DAS REGIÕES SAIU COM O COMANDO «REGIÃO» (item A2). Era o painel
-        que esse comando abria; sem comando, era um painel sem porta. O estado
-        `?ambito=regiao:<slug>` continua a resolver e a render a leitura da
-        região, que é o que a Emenda 7 promete a um endereço partilhado.
+        A FILA DAS REGIÕES SAIU COM O COMANDO «REGIÃO» (item A2), e o comando
+        voltou sem ela (Emenda 21b): «Região» é agora uma ligação para `/regioes`,
+        e não um painel que abre. Um endereço `?ambito=regiao:<slug>` deixou de
+        ser um estado desta página e leva à página daquela região, que é o que a
+        Emenda 7 promete a um endereço partilhado.
         ---------------------------------------------------------------------- */}
     <div class="pesquisa-bloco" data-pesquisa-bloco>
       <Pesquisa s={s} lang={lang} p={p} concelhos={cs} destino={destinoDoConcelho} />
@@ -256,8 +256,10 @@ const blocos = [
   </div>
 
   <!-- ============================ O painel -->
-  {/* Os quatro painéis estão todos no HTML, e o script acende um. É a mesma
-      regra da cabeça: o portão vê tudo o que o leitor pode ver. */}
+  {/* Um painel, porque há um âmbito. Era quatro em 21.08, seis em 25.08 e um
+      desde a Emenda 21b: cada subtracção pôs o conteúdo de um lugar na página
+      desse lugar. A regra da cabeça continua de pé — o portão vê tudo o que o
+      leitor pode ver —, e o que ela governa agora é a densidade. */}
   <section id="painel">
     <div class="painel" data-painel="pais">
       {
@@ -286,34 +288,13 @@ const blocos = [
       }
     </div>
 
-    {/* A FRASE DA REGIÃO NÃO SE REPETE AQUI (etapa 2i, achado 6, R4). A frase de
-        cada região era a manchete deste âmbito E o texto da sua peça, uma por
-        cima da outra no mesmo ecrã, com o mesmo valor e o mesmo selo duas vezes.
-        A manchete é o sítio onde ela se lê; a peça leva o valor, a sua régua e o
-        seu selo. O registo passa de três ocorrências por região a duas. */}
-    {
-      regioesDeAmbito.map((r) => (
-        <div class="painel painel-um" data-painel={chaveDaRegiao(r.slug)} hidden>
-          <Peca
-            s={s}
-            lang={lang}
-            id={r.valor}
-            nome={r.nome}
-            medida={[
-              { nl: s.home.instr1.glanceUnidade, motivo: 'escala-de-instrumento' },
-              ' · ',
-              { ref: '2024' },
-            ]}
-            estado="sem"
-            regua={{
-              valor: parsePtNumber(r.linha.value),
-              referencia: ESCALA.datum,
-              rotulo: 'datum',
-            }}
-          />
-        </div>
-      ))
-    }
+    {/* OS CINCO PAINÉIS DE REGIÃO SAÍRAM (Emenda 21b, 27.08.2026). Cada um era
+        uma peça com o índice daquela região e a sua régua contra o 100, acesa
+        pelo estado `?ambito=regiao:<slug>`. O estado saiu, e a peça está onde ela
+        é do lugar de que trata: em `/regioes/<slug>`, ao pé da régua inteira e
+        das outras regiões. Um painel que nenhum estado acende é peso no documento
+        e uma segunda casa para o mesmo conteúdo — é a mesma razão que tirou os
+        dois painéis de concelho a 26.08. */}
 
     {/* OS DOIS PAINÉIS DE CONCELHO SAÍRAM (Emenda 19a, 26.08.2026). Um era o de
         Évora, com as suas oito medidas; o outro era o do concelho sem página,
@@ -331,9 +312,13 @@ const blocos = [
         outro. `data-so-pais` é a mesma marca que o instrumento e as portas já
         usam, e o script trata dela.
         ------------------------------------------------------------------ */}
-    <div data-so-pais>
-      <ListaSocial s={s} lang={lang} medidas={sociais} porta={routePath('livro', lang)} />
-    </div>
+    {/* `data-so-pais` SAIU (Emenda 21b, 27.08.2026). Era a marca que escondia
+        este bloco quando o âmbito não era o país, e o comentário acima dizia
+        porquê: «os dois painéis são de Portugal, e uma região ou um concelho não
+        têm nem um nem outro». Não há outro âmbito: o painel social é sempre do
+        país, e uma marca que nunca esconde nada é um mecanismo a fingir que ainda
+        serve. O script deixou de a procurar no mesmo commit. */}
+    <ListaSocial s={s} lang={lang} medidas={sociais} porta={routePath('livro', lang)} />
 
     {/* ------------------------------------------------------------------
         A LINHA DA RECONFERÊNCIA SAIU DA PRIMEIRA PÁGINA (Emenda 15)
@@ -376,19 +361,18 @@ const blocos = [
       não bata certo com a conta dele.
       ---------------------------------------------------------------------- */}
 
-  <!-- ============================ As portas · só no âmbito País -->
-  <div data-so-pais>
-    <Portas
-      s={s}
-      lang={lang}
-      p={p}
-      rotas={{
-        municipios: routePath('municipios', lang),
-        estudos: routePath('estudos', lang),
-        agenda: routePath('agenda', lang),
-      }}
-    />
-  </div>
+  <!-- ============================ As portas -->
+  {/* Sem `data-so-pais`, e pela razão da lista social: não há outro âmbito. */}
+  <Portas
+    s={s}
+    lang={lang}
+    p={p}
+    rotas={{
+      municipios: routePath('municipios', lang),
+      estudos: routePath('estudos', lang),
+      agenda: routePath('agenda', lang),
+    }}
+  />
 
   {/* ----------------------------------------------------------------------
       O SCRIPT DENTRO DO DOCUMENTO (etapa 2i, achado 18)

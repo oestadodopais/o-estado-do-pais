@@ -33,7 +33,7 @@
  * ---------------------------------------------------------------------------
  * O ESQUEMA DO ENDEREÇO É FECHADO, E RESOLVE-SE CONTRA O QUE ESTÁ NA PÁGINA
  * ---------------------------------------------------------------------------
- *   ?ambito=pais | municipio | regiao:<slug>            (por defeito: pais)
+ *   ?ambito=pais | municipio                            (por defeito: pais)
  *   ?densidade=relance | leitura                        (por defeito: relance)
  *
  * `municipio` TEM UM SÓ SIGNIFICADO: A PESQUISA ESTÁ ABERTA (Emenda 19, 26.08).
@@ -44,12 +44,20 @@
  * A vista sai inteira; o estado fica, com o significado que lhe resta, que é o
  * do comando «Concelho»: a pesquisa aberta por baixo dele, nas duas larguras.
  *
- * OS ESTADOS `municipio:<slug>` DEIXARAM DE EXISTIR (Emenda 19a). Um endereço
- * antigo continua a abrir alguma coisa, que é o que a Emenda 7 promete: o script
- * reencaminha-o para a página do concelho quando ela existe, e para o índice dos
- * 308 quando não existe. Os dois destinos são LIDOS do documento, e não montados
- * aqui: a página do concelho é o `href` da ligação daquele ponto, o índice é o
- * `href` do comando «Concelho».
+ * OS ESTADOS `municipio:<slug>` DEIXARAM DE EXISTIR (Emenda 19a), E OS
+ * `regiao:<slug>` TAMBÉM (Emenda 21b, 27.08.2026). Um endereço antigo continua a
+ * abrir alguma coisa, que é o que a Emenda 7 promete: o script reencaminha um
+ * concelho para a sua página quando ela existe e para o índice dos 308 quando não
+ * existe, e uma região para a sua página quando ela tem linhas e para o índice
+ * das regiões quando não tem. Nenhum destino é montado aqui: os do concelho são
+ * `href` que o servidor escreveu (a ligação da pesquisa, o comando «Concelho»), e
+ * os da região são o gabarito da rota e a lista fechada dos slugs, escritos pelo
+ * servidor no comando «Região» — o cliente põe um slug da lista no lugar que o
+ * gabarito marca, e não sabe a rota de nenhuma edição.
+ *
+ * «REGIÃO» É UMA PORTA E NÃO UM ESTADO. O comando existe outra vez na fila do
+ * âmbito, mas leva a `/regioes`: este ficheiro não lhe põe `role="button"` nem
+ * `aria-pressed`, e não lhe intercepta o clique.
  *
  * O QUE O ESTADO `municipio` MOSTRA É O PAÍS: a cabeça, o painel, o instrumento
  * e as portas são os do país, porque ninguém escolheu nada. O que muda é a
@@ -202,9 +210,40 @@
     return seg ? seg.getAttribute('href') : null;
   }
 
+  /* ------------------------------------------ o comando «Região», e o que ele traz
+   *
+   * O servidor escreveu-lhe dois campos (Emenda 21b): `data-porta-regiao`, o
+   * gabarito da rota de uma região naquela edição, e `data-regioes`, a lista
+   * fechada das regiões com página, separada por espaços. O `href` dele é o
+   * índice. Nenhum dos três é montado aqui. */
+  function comandoDaRegiao() {
+    return raiz.querySelector('[data-modo="regiao"]');
+  }
+
+  function portaDaRegiao(slug) {
+    var cmd = comandoDaRegiao();
+    if (!cmd) return null;
+    var gabarito = cmd.getAttribute('data-porta-regiao');
+    var lista = (cmd.getAttribute('data-regioes') || '').split(/\s+/);
+    var indice = cmd.getAttribute('href');
+    for (var i = 0; i < lista.length; i++) {
+      if (lista[i] && lista[i] === slug && gabarito) return gabarito.replace(':slug', slug);
+    }
+    /* Uma região sem página cai no índice, que é a mesma queda que um concelho
+       sem página tem desde a Emenda 19a. */
+    return indice;
+  }
+
   function reencaminhaEstadoAntigo() {
     var bruto = new URLSearchParams(location.search).get('ambito');
-    if (!bruto || bruto.indexOf('municipio:') !== 0) return false;
+    if (!bruto) return false;
+    if (bruto.indexOf('regiao:') === 0) {
+      var destinoDaRegiao = portaDaRegiao(bruto.slice('regiao:'.length));
+      if (!destinoDaRegiao) return false;
+      location.replace(destinoDaRegiao);
+      return true;
+    }
+    if (bruto.indexOf('municipio:') !== 0) return false;
     var pt = porSlug[bruto.slice('municipio:'.length)];
     if (!pt) return false;
     var destino = pt.comPagina ? portaDoPonto(pt.slug) : indiceDosConcelhos();
@@ -220,7 +259,10 @@
        por isso não se resolve contra `comBloco`: é um valor do esquema, escrito
        aqui como `pais` é. */
     if (bruto === AMBITO_PESQUISA) return AMBITO_PESQUISA;
-    if (bruto.indexOf('regiao:') === 0) return comBloco[bruto] ? bruto : AMBITO_DEFEITO;
+    /* `regiao:<slug>` deixou de ser um valor do esquema (Emenda 21b): quem o
+       trata é `reencaminhaRegiaoAntiga()`, antes de a página se aplicar. Se ele
+       chegar aqui — porque não havia comando de onde ler o destino —, cai no
+       defeito em silêncio, como qualquer outro valor desconhecido. */
     return AMBITO_DEFEITO;
   }
 
@@ -228,18 +270,18 @@
     return bruto === 'leitura' ? 'leitura' : DENSIDADE_DEFEITO;
   }
 
+  /* `regiao` SAIU DOS MODOS (Emenda 21b): era o modo dos cinco estados de região,
+     e não há estado de região. O comando «Região» tem `data-modo="regiao"` porque
+     é a fila do âmbito e a folha é a mesma, mas nunca é um modo desta página: é
+     uma ligação, e este ficheiro deixa-a passar. */
   function modoDe(ambito) {
-    if (ambito.indexOf('regiao:') === 0) return 'regiao';
     if (ambito === AMBITO_PESQUISA) return 'municipio';
     return 'pais';
   }
 
-  /* Com a pesquisa aberta a página continua a ser a do país: o que ela tem de
-     seu é a pesquisa. A pergunta está escrita uma vez, e não espalhada por cinco
-     condições. */
-  function eDoPais(ambito) {
-    return ambito === AMBITO_DEFEITO || ambito === AMBITO_PESQUISA;
-  }
+  /* `eDoPais()` SAIU COM O `data-so-pais` (Emenda 21b). Respondia a «este âmbito
+     é o do país?» para esconder a lista social e as portas nos outros; não há
+     outros, e a pergunta deixou de separar alguma coisa. */
 
   /* --------------------------------------------------------------- endereço */
 
@@ -275,10 +317,13 @@
      nada), `[data-so-evora]` e `[data-trocar]` (as duas portas do cartão
      localizador, que vive na página do concelho), `[data-hint-escolher]` (a dica
      de escolher um ponto) e `[data-fechar-mapa]`. */
-  var segsAmbito = raiz.querySelectorAll('[data-modo]');
+  /* OS COMANDOS QUE SÃO ESTADO. «Região» tem `data-modo` porque é da mesma fila e
+     da mesma folha, mas é uma PORTA para outra página (Emenda 21b): não vira
+     botão, não ganha `aria-pressed` e não lhe é interceptado o clique. Ficar de
+     fora desta lista é o que o faz continuar a ser uma ligação. */
+  var segsAmbito = raiz.querySelectorAll('[data-modo]:not([data-modo="regiao"])');
   var segsDensidade = raiz.querySelectorAll('[data-densidade]');
   var anuncio = raiz.querySelector('[data-anuncio]');
-  var soPais = document.querySelectorAll('[data-so-pais]');
   var pecas = document.querySelectorAll('.peca-mais');
   var campo = raiz.querySelector('[data-pesquisa]');
   var semResultado = raiz.querySelector('[data-sem-resultado]');
@@ -395,7 +440,10 @@
       figura.setAttribute('data-postura', 'inteiro');
     }
 
-    for (var i9 = 0; i9 < soPais.length; i9++) soPais[i9].hidden = !eDoPais(ambito);
+    /* `data-so-pais` SAIU (Emenda 21b). Era a marca da lista social e das portas,
+       escondidas quando o âmbito não era o país; não há outro âmbito, e uma marca
+       que nunca esconde nada é um mecanismo a fingir que ainda serve. Saiu do
+       documento e daqui no mesmo commit. */
 
     /* A densidade: o comando global abre ou fecha todas as peças. Um toque numa
        peça muda só a dela, e não mexe nas outras — é a regra da prancha. */

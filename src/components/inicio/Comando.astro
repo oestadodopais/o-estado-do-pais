@@ -5,20 +5,22 @@
  * ---------------------------------------------------------------------------
  * SÃO LIGAÇÕES, E NÃO BOTÕES, ATÉ HAVER JAVASCRIPT
  * ---------------------------------------------------------------------------
- * Um botão sem JavaScript é um comando que não atende. Estes quatro comandos
+ * Um botão sem JavaScript é um comando que não atende. Estes cinco comandos
  * saem do servidor como `<a href>` para um destino que existe e que faz sentido
  * sem script nenhum:
  *
  *   País        →  `/`                a própria primeira página, no seu defeito
+ *   Região      →  `/regioes`         o índice das regiões, com a régua completa
  *   Concelho    →  `/municipios`      o índice dos 308, com a sua cobertura
  *   Relance     →  `/`                o defeito
  *   Leitura breve → `/?densidade=leitura`
  *
  * Quando o script assume, reescreve o `href` para a forma do estado
  * (`/?ambito=…`), acrescenta `role="button"` e `aria-pressed`, e passa a mudar a
- * página sem a recarregar. Até lá, e para quem nunca tiver script, os quatro
+ * página sem a recarregar. Até lá, e para quem nunca tiver script, os cinco
  * levam a alguma parte: é a diferença entre um comando degradado e um comando
- * partido.
+ * partido. «Região» é a excepção, e é de propósito: é uma porta para outra
+ * página, e continua a ser uma ligação mesmo com script.
  *
  * A densidade é o único dos dois que, sem script, não muda nada à vista: o
  * endereço `?densidade=leitura` é servido pela construção estática como o
@@ -26,9 +28,26 @@
  * fingir. Cada medida continua a abrir-se sozinha, porque a peça é um
  * `<details>` nativo.
  *
- * NENHUM ALGARISMO PASSA POR AQUI. Os rótulos são cinco palavras.
+ * NENHUM ALGARISMO PASSA POR AQUI. Os rótulos são palavras, e nenhuma traz um
+ * algarismo.
  */
-const { s, hrefs } = Astro.props;
+/* ---------------------------------------------------------------------------
+ * OS DOIS CAMPOS DO REENCAMINHAMENTO DAS REGIÕES (Emenda 21b)
+ * ---------------------------------------------------------------------------
+ * `portaDaRegiao` é o GABARITO da rota de uma região, escrito pelo servidor a
+ * partir da tabela de rotas da casa (`/regioes/:slug`, `/en/regions/:slug`), e
+ * `slugsDasRegioes` é a lista fechada das regiões com página, separada por
+ * espaços. Os dois vivem no comando «Região» porque é o comando que trata do
+ * âmbito região, e é ali que o script os vai buscar.
+ *
+ * É a disciplina da Emenda 19a com a mesma razão e outra forma: o cliente NÃO
+ * pode saber a rota de cada edição, senão diverge dela no dia em que ela mudar.
+ * Aqui ele não sabe: recebe o gabarito e a lista, e o que faz é pôr um slug da
+ * lista no lugar que o gabarito marca. Um slug fora da lista leva ao índice, que
+ * é o `href` do próprio comando — a mesma queda que um concelho sem página tem
+ * desde a Emenda 19a.
+ */
+const { s, hrefs, portaDaRegiao = null, slugsDasRegioes = null } = Astro.props;
 
 /* ---------------------------------------------------------------------------
  * UM COMANDO, NAS DUAS LARGURAS, COM DUAS POSIÇÕES (bloco A, itens A2 e A3)
@@ -39,17 +58,26 @@ const { s, hrefs } = Astro.props;
  * estado (achado C5 da auditoria de 25.08). Passa a ser este, e só este, nas
  * duas larguras; a folha muda-lhe o lugar na coluna e mais nada.
  *
- * «REGIÃO» SAI POR AGORA, e sai por uma razão de conteúdo e não de desenho: a
- * leitura regional desta página era a régua da convergência, que sai da primeira
- * página até haver a página das regiões (item A3). O estado continua a resolver
- * — `?ambito=regiao:<slug>` é endereço partilhável (Emenda 7) e rende a leitura
- * da região que já existe —, e a posição volta ao comando com essa página.
+ * «REGIÃO» VOLTOU, E É UMA LIGAÇÃO E NÃO UM ESTADO (Emenda 21b, 27.08.2026).
+ * Saiu a 25.08 por uma razão de conteúdo: a leitura regional desta página era a
+ * régua da convergência, que saiu «até haver a página das regiões» (item A3). A
+ * página existe, e a posição volta ao comando nas duas larguras — mas volta como
+ * PORTA e não como estado. Um endereço `?ambito=regiao:<slug>` deixou de existir
+ * (a região vive na sua página, como o concelho desde a Emenda 19a), e por isso
+ * este comando não tem estado premido para acender: leva o leitor a `/regioes`,
+ * com ou sem script, como «Concelho» sempre levou a `/municipios` sem script.
  *
- * Sem script as duas escolhas continuam a ser ligações para sítios que existem:
- * `/` para o país e `/municipios` para os 308.
+ * É POR ISSO QUE O `data-modo` DELE É `regiao` E O SCRIPT NÃO LHE MEXE: os três
+ * comandos são a mesma fila e a mesma folha, e o que os separa é o que acontece
+ * ao carregar. `País` e `Concelho` são estados do endereço; `Região` é uma porta
+ * para outra página, e o script deixa-a passar.
+ *
+ * Sem script as três escolhas continuam a ser ligações para sítios que existem:
+ * `/` para o país, `/regioes` para as regiões e `/municipios` para os 308.
  */
 const AMBITOS = [
   { chave: 'pais', rotulo: s.ambito.pais, href: hrefs.pais },
+  { chave: 'regiao', rotulo: s.ambito.regiao, href: hrefs.regiao },
   { chave: 'municipio', rotulo: s.ambito.municipio, href: hrefs.municipio },
 ];
 const DENSIDADES = [
@@ -68,6 +96,8 @@ const DENSIDADES = [
             class="seg"
             href={a.href}
             data-modo={a.chave}
+            data-porta-regiao={a.chave === 'regiao' ? portaDaRegiao : undefined}
+            data-regioes={a.chave === 'regiao' ? slugsDasRegioes : undefined}
             aria-current={a.chave === 'pais' ? 'true' : undefined}
           >
             {a.rotulo}
