@@ -1,0 +1,1125 @@
+{
+  "_": [
+    "O mapa por distritos: o que atravessa para o sítio, e a prova de que atravessa inteiro.",
+    "FICHEIRO GERADO. Escrito por ResearchHub/publisher/mapa_distritos.py.",
+    "Cada ficheiro com o resumo dos seus bytes; a origem com os três GeoPackage da CAOP 2025, os seus resumos e a licença; a tolerância e o erro no ecrã que a fixou; e a prova de junção que o sítio reconfere.",
+    "As coordenadas de mapa/pais.json estão no campo do desenho multiplicado por dez; as de cada distrito na grelha local desse distrito. Em cada ficheiro, o campo, as caixas, os pontos e os caminhos vivem todos no mesmo espaço, que é o do viewBox."
+  ],
+  "areas": {
+    "antes": 113320.91045523953,
+    "depois": 113347.08450422832,
+    "diferenca_simetrica_maxima_u2": 0.0,
+    "diferenca_simetrica_maxima_unidade": "",
+    "guardada_pct": 100.02309728088456,
+    "sobreposicao_na_geometria_pares": [
+      {
+        "a": "Odemira",
+        "area": 0.0032203806979804435,
+        "b": "Monchique"
+      },
+      {
+        "a": "Odemira",
+        "area": 0.0032203806979804427,
+        "b": "Aljezur"
+      },
+      {
+        "a": "Aljezur",
+        "area": 0.0032203806979804427,
+        "b": "Monchique"
+      }
+    ],
+    "sobreposicao_na_geometria_u2": 0.009661142093941328,
+    "sobreposicao_no_desenho": 0.0,
+    "soma_menos_uniao_pct": 5.6823355741287036e-06,
+    "uniao": 113347.07806346698,
+    "unidade": "u², no campo do desenho"
+  },
+  "campo": {
+    "campo_dos_pontos": {
+      "altura": 790,
+      "largura": 600
+    },
+    "do_desenho": {
+      "altura": 803,
+      "largura": 609
+    },
+    "do_ficheiro": {
+      "altura": 8030,
+      "largura": 6090
+    },
+    "escala": 10,
+    "fonte_dos_pontos": {
+      "ficheiro": "src/data/caop-centroids.mjs",
+      "sha256": "9aa767356fd1d4cccd9ff4e207a607c4dac522c772e1e5054ce36cdbb0fd3f8b"
+    },
+    "parcelas": {
+      "acores": {
+        "escala": 0.00032615311051842344,
+        "pontos_ajustados": 19,
+        "residuo_maximo_u": 0.06643048480134761,
+        "residuo_mediano_u": 0.03676971132538334,
+        "tx": 1161.2995493063795,
+        "ty": 2183.703170379771
+      },
+      "continente": {
+        "escala": 0.0008621886578048548,
+        "pontos_ajustados": 278,
+        "residuo_maximo_u": 0.07433937303250467,
+        "residuo_mediano_u": 0.03953830040606236,
+        "tx": 1202.2888155259188,
+        "ty": 4520.100782299831
+      },
+      "madeira": {
+        "escala": 0.0008634069245091716,
+        "pontos_ajustados": 11,
+        "residuo_maximo_u": 0.5893703016640176,
+        "residuo_mediano_u": 0.08135195852498853,
+        "tx": 1812.2126289822686,
+        "ty": 3830.453146236939
+      }
+    }
+  },
+  "codificacao": {
+    "caixa": "[x, y, largura, altura], nas unidades do caminho",
+    "caminho": "M x y l dx dy,… Z, inteiros, l relativo",
+    "ponto": "[x, y], dentro da área tal como está codificada",
+    "regra_de_preenchimento": "nonzero, com os anéis orientados: exterior no sentido directo, buracos no inverso"
+  },
+  "concelhos": {
+    "n": 308,
+    "slugs": [
+      "abrantes",
+      "agueda",
+      "aguiar-da-beira",
+      "alandroal",
+      "albergaria-a-velha",
+      "albufeira",
+      "alcacer-do-sal",
+      "alcanena",
+      "alcobaca",
+      "alcochete",
+      "alcoutim",
+      "alenquer",
+      "alfandega-da-fe",
+      "alijo",
+      "aljezur",
+      "aljustrel",
+      "almada",
+      "almeida",
+      "almeirim",
+      "almodovar",
+      "alpiarca",
+      "alter-do-chao",
+      "alvaiazere",
+      "alvito",
+      "amadora",
+      "amarante",
+      "amares",
+      "anadia",
+      "angra-do-heroismo",
+      "ansiao",
+      "arcos-de-valdevez",
+      "arganil",
+      "armamar",
+      "arouca",
+      "arraiolos",
+      "arronches",
+      "arruda-dos-vinhos",
+      "aveiro",
+      "avis",
+      "azambuja",
+      "baiao",
+      "barcelos",
+      "barrancos",
+      "barreiro",
+      "batalha",
+      "beja",
+      "belmonte",
+      "benavente",
+      "bombarral",
+      "borba",
+      "boticas",
+      "braga",
+      "braganca",
+      "cabeceiras-de-basto",
+      "cadaval",
+      "caldas-da-rainha",
+      "calheta",
+      "calheta-de-sao-jorge",
+      "camara-de-lobos",
+      "caminha",
+      "campo-maior",
+      "cantanhede",
+      "carrazeda-de-ansiaes",
+      "carregal-do-sal",
+      "cartaxo",
+      "cascais",
+      "castanheira-de-pera",
+      "castelo-branco",
+      "castelo-de-paiva",
+      "castelo-de-vide",
+      "castro-daire",
+      "castro-marim",
+      "castro-verde",
+      "celorico-da-beira",
+      "celorico-de-basto",
+      "chamusca",
+      "chaves",
+      "cinfaes",
+      "coimbra",
+      "condeixa-a-nova",
+      "constancia",
+      "coruche",
+      "corvo",
+      "covilha",
+      "crato",
+      "cuba",
+      "elvas",
+      "entroncamento",
+      "espinho",
+      "esposende",
+      "estarreja",
+      "estremoz",
+      "evora",
+      "fafe",
+      "faro",
+      "felgueiras",
+      "ferreira-do-alentejo",
+      "ferreira-do-zezere",
+      "figueira-da-foz",
+      "figueira-de-castelo-rodrigo",
+      "figueiro-dos-vinhos",
+      "fornos-de-algodres",
+      "freixo-de-espada-a-cinta",
+      "fronteira",
+      "funchal",
+      "fundao",
+      "gaviao",
+      "gois",
+      "golega",
+      "gondomar",
+      "gouveia",
+      "grandola",
+      "guarda",
+      "guimaraes",
+      "horta",
+      "idanha-a-nova",
+      "ilhavo",
+      "lagoa-faro",
+      "lagoa-ilha-de-sao-miguel",
+      "lagos",
+      "lajes-das-flores",
+      "lajes-do-pico",
+      "lamego",
+      "leiria",
+      "lisboa",
+      "loule",
+      "loures",
+      "lourinha",
+      "lousa",
+      "lousada",
+      "macao",
+      "macedo-de-cavaleiros",
+      "machico",
+      "madalena",
+      "mafra",
+      "maia",
+      "mangualde",
+      "manteigas",
+      "marco-de-canaveses",
+      "marinha-grande",
+      "marvao",
+      "matosinhos",
+      "mealhada",
+      "meda",
+      "melgaco",
+      "mertola",
+      "mesao-frio",
+      "mira",
+      "miranda-do-corvo",
+      "miranda-do-douro",
+      "mirandela",
+      "mogadouro",
+      "moimenta-da-beira",
+      "moita",
+      "moncao",
+      "monchique",
+      "mondim-de-basto",
+      "monforte",
+      "montalegre",
+      "montemor-o-novo",
+      "montemor-o-velho",
+      "montijo",
+      "mora",
+      "mortagua",
+      "moura",
+      "mourao",
+      "murca",
+      "murtosa",
+      "nazare",
+      "nelas",
+      "nisa",
+      "nordeste",
+      "obidos",
+      "odemira",
+      "odivelas",
+      "oeiras",
+      "oleiros",
+      "olhao",
+      "oliveira-de-azemeis",
+      "oliveira-de-frades",
+      "oliveira-do-bairro",
+      "oliveira-do-hospital",
+      "ourem",
+      "ourique",
+      "ovar",
+      "pacos-de-ferreira",
+      "palmela",
+      "pampilhosa-da-serra",
+      "paredes",
+      "paredes-de-coura",
+      "pedrogao-grande",
+      "penacova",
+      "penafiel",
+      "penalva-do-castelo",
+      "penamacor",
+      "penedono",
+      "penela",
+      "peniche",
+      "peso-da-regua",
+      "pinhel",
+      "pombal",
+      "ponta-delgada",
+      "ponta-do-sol",
+      "ponte-da-barca",
+      "ponte-de-lima",
+      "ponte-de-sor",
+      "portalegre",
+      "portel",
+      "portimao",
+      "porto",
+      "porto-de-mos",
+      "porto-moniz",
+      "porto-santo",
+      "povoa-de-lanhoso",
+      "povoa-de-varzim",
+      "povoacao",
+      "praia-da-vitoria",
+      "proenca-a-nova",
+      "redondo",
+      "reguengos-de-monsaraz",
+      "resende",
+      "ribeira-brava",
+      "ribeira-de-pena",
+      "ribeira-grande",
+      "rio-maior",
+      "sabrosa",
+      "sabugal",
+      "salvaterra-de-magos",
+      "santa-comba-dao",
+      "santa-cruz",
+      "santa-cruz-da-graciosa",
+      "santa-cruz-das-flores",
+      "santa-maria-da-feira",
+      "santa-marta-de-penaguiao",
+      "santana",
+      "santarem",
+      "santiago-do-cacem",
+      "santo-tirso",
+      "sao-bras-de-alportel",
+      "sao-joao-da-madeira",
+      "sao-joao-da-pesqueira",
+      "sao-pedro-do-sul",
+      "sao-roque-do-pico",
+      "sao-vicente",
+      "sardoal",
+      "satao",
+      "seia",
+      "seixal",
+      "sernancelhe",
+      "serpa",
+      "serta",
+      "sesimbra",
+      "setubal",
+      "sever-do-vouga",
+      "silves",
+      "sines",
+      "sintra",
+      "sobral-de-monte-agraco",
+      "soure",
+      "sousel",
+      "tabua",
+      "tabuaco",
+      "tarouca",
+      "tavira",
+      "terras-de-bouro",
+      "tomar",
+      "tondela",
+      "torre-de-moncorvo",
+      "torres-novas",
+      "torres-vedras",
+      "trancoso",
+      "trofa",
+      "vagos",
+      "vale-de-cambra",
+      "valenca",
+      "valongo",
+      "valpacos",
+      "velas",
+      "vendas-novas",
+      "viana-do-alentejo",
+      "viana-do-castelo",
+      "vidigueira",
+      "vieira-do-minho",
+      "vila-de-rei",
+      "vila-do-bispo",
+      "vila-do-conde",
+      "vila-do-porto",
+      "vila-flor",
+      "vila-franca-de-xira",
+      "vila-franca-do-campo",
+      "vila-nova-da-barquinha",
+      "vila-nova-de-cerveira",
+      "vila-nova-de-famalicao",
+      "vila-nova-de-foz-coa",
+      "vila-nova-de-gaia",
+      "vila-nova-de-paiva",
+      "vila-nova-de-poiares",
+      "vila-pouca-de-aguiar",
+      "vila-real",
+      "vila-real-de-santo-antonio",
+      "vila-velha-de-rodao",
+      "vila-verde",
+      "vila-vicosa",
+      "vimioso",
+      "vinhais",
+      "viseu",
+      "vizela",
+      "vouzela"
+    ]
+  },
+  "ficheiros": {
+    "mapa/distritos/aveiro.json": {
+      "bytes": 16749,
+      "sha256": "00ed55b1bf9510a211dcd2699bc7e206f49349a6b5188536385257bab84b4277"
+    },
+    "mapa/distritos/beja.json": {
+      "bytes": 19002,
+      "sha256": "14cdb02b4bdd166e0db43ea77d1ab54675cd67ebc2c134e9141788ea2f87d989"
+    },
+    "mapa/distritos/braga.json": {
+      "bytes": 14265,
+      "sha256": "bd04a0595a8f24ff74cbb2c9d0eeb255b91a3ee8e62fc5b4664db55ed3478302"
+    },
+    "mapa/distritos/braganca.json": {
+      "bytes": 17620,
+      "sha256": "4f863b5501b648f300c2299642c37571904405050911467a6b0a6f37c3f777b9"
+    },
+    "mapa/distritos/castelo-branco.json": {
+      "bytes": 17199,
+      "sha256": "9260e84f517d4bac8bad4915108c4503e6f00ea502c78880d501f90b5950dfcc"
+    },
+    "mapa/distritos/coimbra.json": {
+      "bytes": 18394,
+      "sha256": "417f90b8edd2e887c4159ab23f584db5dbb19b5546c04e3901fddf3bf3aab79f"
+    },
+    "mapa/distritos/evora.json": {
+      "bytes": 18204,
+      "sha256": "448d5c3892ae1df5509f1a3d0362712c3344e6204f0a33fa3c74bd3826f62ba4"
+    },
+    "mapa/distritos/faro.json": {
+      "bytes": 20231,
+      "sha256": "5906c816ebbaa08753c7bd7b9e9a9d39142772080989da9e0c973b9cb724735e"
+    },
+    "mapa/distritos/guarda.json": {
+      "bytes": 17014,
+      "sha256": "4ebda3a6ec888fba114786041180ef795710fdf2fd3702f1cfd3e70bd62d4ba0"
+    },
+    "mapa/distritos/ilha-da-graciosa.json": {
+      "bytes": 4323,
+      "sha256": "72794a3cee560d5d003a583db1dc596f9d650451daadbcde834efce441cfa0eb"
+    },
+    "mapa/distritos/ilha-da-madeira.json": {
+      "bytes": 4150,
+      "sha256": "f847f1d1bbecc345141db7b7807eb8d24042b39d16aa9792e1fa582912e51819"
+    },
+    "mapa/distritos/ilha-das-flores.json": {
+      "bytes": 6558,
+      "sha256": "ee55cc802050691804bf3fe6b849bb6306cd5e31fbc5b9c9b6966d1aa672e2d6"
+    },
+    "mapa/distritos/ilha-de-porto-santo.json": {
+      "bytes": 13121,
+      "sha256": "a80b5a1ca7e76022ee23d040fd62120e42eb10f2f7749e9f544a599aa08762af"
+    },
+    "mapa/distritos/ilha-de-santa-maria.json": {
+      "bytes": 7346,
+      "sha256": "01eed9db69ca9f8f83e12ddbf7d606f300ddadb7685d9f564c694a7701c73ed2"
+    },
+    "mapa/distritos/ilha-de-sao-jorge.json": {
+      "bytes": 3691,
+      "sha256": "9c9678abf5e763ac9bfb3f315bd7ac83dc11a7c8abe7e78c756d9b63193fd49f"
+    },
+    "mapa/distritos/ilha-de-sao-miguel.json": {
+      "bytes": 9596,
+      "sha256": "e31a8f21097c385036102545df2d552c44db929158f4f064fec0addbf86f3d15"
+    },
+    "mapa/distritos/ilha-do-corvo.json": {
+      "bytes": 3694,
+      "sha256": "c90cb596554e766b4e5a32960f41855238090e21db7cc8abf0800bb93ba80f85"
+    },
+    "mapa/distritos/ilha-do-faial.json": {
+      "bytes": 4398,
+      "sha256": "33579ed1377a96b3ef6c2ed04cb1b7f7f648d80103834235e7890ec475dbe678"
+    },
+    "mapa/distritos/ilha-do-pico.json": {
+      "bytes": 6028,
+      "sha256": "446b2a31e7517b40561c53a8ec47edeb765c94f6a7a838e3bdbcc71c23b35bc4"
+    },
+    "mapa/distritos/ilha-terceira.json": {
+      "bytes": 7432,
+      "sha256": "f11cc069ce7d60a93c97cfb02f8862a3d2362027f5ecc1baa517bcf6def096bd"
+    },
+    "mapa/distritos/leiria.json": {
+      "bytes": 14784,
+      "sha256": "ce750a190ee8fa5fa1551b0afe05e5f1af435a87c795c9655017bfcd0a6e2afd"
+    },
+    "mapa/distritos/lisboa.json": {
+      "bytes": 23659,
+      "sha256": "e2e9456c2c7694fe1fd752a842f9f664aec39b70e827147eba3e51f097f9c4e3"
+    },
+    "mapa/distritos/portalegre.json": {
+      "bytes": 17647,
+      "sha256": "5c278f91e2864f7f0bdc9412ea818ff20f06569e2d618bc98b7a38fbd69a7218"
+    },
+    "mapa/distritos/porto.json": {
+      "bytes": 18380,
+      "sha256": "8527e68bdff455c83cfa87a12d96b34419c84c3afc8712a6b811381317f3cddd"
+    },
+    "mapa/distritos/santarem.json": {
+      "bytes": 22145,
+      "sha256": "fd24998e4c0f78e18fd2fc4567aec3ca94d8842452b349444ec7738152d10bb5"
+    },
+    "mapa/distritos/setubal.json": {
+      "bytes": 14542,
+      "sha256": "5a4b84b23f4cd3f2449831d0351736f598bfbb3e42f8bf74f275de0d715e276d"
+    },
+    "mapa/distritos/viana-do-castelo.json": {
+      "bytes": 10969,
+      "sha256": "3c9dd7ce1a2e2ee5537bfc91a3c391970898eafee08a1fc92727a7f5d9a908d7"
+    },
+    "mapa/distritos/vila-real.json": {
+      "bytes": 19228,
+      "sha256": "4c6b37574c6c80bfb37b003be5e339b4313d139ed1628a8fcc3f487d09dc2915"
+    },
+    "mapa/distritos/viseu.json": {
+      "bytes": 24245,
+      "sha256": "99e84d09c0266cbf25542cbe953206b0f95373507debaf1d5c7f96b879829c61"
+    },
+    "mapa/pais.json": {
+      "bytes": 34806,
+      "sha256": "6287ed971fcbc5b96ab63ee607663c55026a50b1752a4999fffefcd72fb9fc45"
+    }
+  },
+  "fonte": {
+    "atribuicao": "Direção-Geral do Território",
+    "carta": "Carta Administrativa Oficial de Portugal (CAOP) 2025",
+    "ficheiros": [
+      {
+        "bytes": 111647845,
+        "dados_gov": "https://dados.gov.pt/datasets/carta-administrativa-oficial-de-portugal-caop2025-continente",
+        "gpkg": [
+          {
+            "bytes": 188329984,
+            "ficheiro": "Continente_CAOP2025.gpkg",
+            "sha256": "7849fb97c77cac65b54d5047b47ecbce8cdfe7e20118dfae794c45f61158211c"
+          }
+        ],
+        "last_modified": "Mon, 02 Feb 2026 14:26:40 GMT",
+        "parcela": "continente",
+        "sha256": "87cd67f4b1fbadf23d9324e6fb231ff05531e4db347af36ccc7c6cbabe3ecd1d",
+        "url": "https://geo2.dgterritorio.gov.pt/caop/CAOP_Continente_2025-gpkg.zip",
+        "zip": "CAOP_Continente_2025-gpkg.zip"
+      },
+      {
+        "bytes": 15909724,
+        "dados_gov": "https://dados.gov.pt/datasets/carta-administrativa-oficial-de-portugal-caop2025-raa",
+        "gpkg": [
+          {
+            "bytes": 27951104,
+            "ficheiro": "ArqAcores_GCentral_GOriental_CAOP2025.gpkg",
+            "sha256": "9e6d19cef1b471feb7e3689c25d47549237dfb08031738d7c336218cb32c5265"
+          },
+          {
+            "bytes": 5320704,
+            "ficheiro": "ArqAcores_GOcidental_CAOP2025.gpkg",
+            "sha256": "246f47f7dae78ea3d6bcc3fe90226afbb0fc453807859540741783894631ba44"
+          }
+        ],
+        "last_modified": "Mon, 02 Feb 2026 14:29:12 GMT",
+        "parcela": "acores",
+        "sha256": "b0e3b4fe5544647eb4593e0222c6430fae7e50c97f953d8ceae10707c4df9dcf",
+        "url": "https://geo2.dgterritorio.gov.pt/caop/CAOP_RAA_2025-gpkg.zip",
+        "zip": "CAOP_RAA_2025-gpkg.zip"
+      },
+      {
+        "bytes": 15235290,
+        "dados_gov": "https://dados.gov.pt/datasets/carta-administrativa-oficial-de-portugal-caop2025-ram",
+        "gpkg": [
+          {
+            "bytes": 28512256,
+            "ficheiro": "ArqMadeira_CAOP2025.gpkg",
+            "sha256": "07373ad53a96505f62e93ce15cbbe5897ff2b6cd11fc181b8be54994901edea4"
+          }
+        ],
+        "last_modified": "Mon, 02 Feb 2026 14:27:46 GMT",
+        "parcela": "madeira",
+        "sha256": "ae568ca2006e91205601309ff46bc8ae0cc73236165f095f8aa99a5b9a17e5d6",
+        "url": "https://geo2.dgterritorio.gov.pt/caop/CAOP_RAM_2025-gpkg.zip",
+        "zip": "CAOP_RAM_2025-gpkg.zip"
+      }
+    ],
+    "licenca": "CC BY 4.0",
+    "licenca_evidencia": "A informação geográfica descarregada do Centro de Dados está sujeita a uma licença de utilização CC-BY 4.0, que permite a utilização livre e gratuita dos dados tendo apenas como obrigação a menção de que a entidade proprietária da informação é a Direção-Geral do Território.",
+    "licenca_evidencia_data": "2026-08-18",
+    "licenca_evidencia_url": "https://www.dgterritorio.gov.pt/dados-abertos",
+    "licenca_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "juncao": {
+    "centroide_publicado_fora_da_area": [
+      {
+        "distancia_u": 6.3336,
+        "nome": "Funchal",
+        "unidade": "Ilha da Madeira"
+      },
+      {
+        "distancia_u": 2.2101,
+        "nome": "Santa Cruz",
+        "unidade": "Ilha da Madeira"
+      },
+      {
+        "distancia_u": 0.8281,
+        "nome": "Peso da Régua",
+        "unidade": "Vila Real"
+      },
+      {
+        "distancia_u": 0.4178,
+        "nome": "Vila Real de Santo António",
+        "unidade": "Faro"
+      }
+    ],
+    "concelhos": 308,
+    "concelhos_por_unidade": {
+      "aveiro": 19,
+      "beja": 14,
+      "braga": 14,
+      "braganca": 12,
+      "castelo-branco": 11,
+      "coimbra": 17,
+      "evora": 14,
+      "faro": 16,
+      "guarda": 14,
+      "ilha-da-graciosa": 1,
+      "ilha-da-madeira": 10,
+      "ilha-das-flores": 2,
+      "ilha-de-porto-santo": 1,
+      "ilha-de-santa-maria": 1,
+      "ilha-de-sao-jorge": 2,
+      "ilha-de-sao-miguel": 6,
+      "ilha-do-corvo": 1,
+      "ilha-do-faial": 1,
+      "ilha-do-pico": 3,
+      "ilha-terceira": 2,
+      "leiria": 16,
+      "lisboa": 16,
+      "portalegre": 15,
+      "porto": 18,
+      "santarem": 21,
+      "setubal": 13,
+      "viana-do-castelo": 10,
+      "vila-real": 14,
+      "viseu": 24
+    },
+    "prova_dos_slugs": "308 slugs, equal to the site's own slugsDaCarta()",
+    "unidades": 29
+  },
+  "origem": "ResearchHub",
+  "produtor": "ResearchHub/publisher/mapa_distritos.py",
+  "tolerancia": {
+    "coluna_px": 490,
+    "erro_px": 0.25,
+    "grelha_local": 2000,
+    "pagina_do_distrito_px": {
+      "altura": 560,
+      "largura": 490
+    },
+    "pais": 0.3107142857142857,
+    "por_distrito": {
+      "aveiro": {
+        "campo": {
+          "altura": 2000,
+          "largura": 1315
+        },
+        "px_por_unidade": 5.521612267117684,
+        "tolerancia": 0.0452766307929299
+      },
+      "beja": {
+        "campo": {
+          "altura": 1357,
+          "largura": 2000
+        },
+        "px_por_unidade": 2.7040369007067335,
+        "tolerancia": 0.09245435960384246
+      },
+      "braga": {
+        "campo": {
+          "altura": 1340,
+          "largura": 2000
+        },
+        "px_por_unidade": 5.100736176202186,
+        "tolerancia": 0.04901253296855288
+      },
+      "braganca": {
+        "campo": {
+          "altura": 2000,
+          "largura": 1923
+        },
+        "px_por_unidade": 4.108136036810423,
+        "tolerancia": 0.06085484944021017
+      },
+      "castelo-branco": {
+        "campo": {
+          "altura": 1605,
+          "largura": 2000
+        },
+        "px_por_unidade": 3.571803100256045,
+        "tolerancia": 0.06999266000471267
+      },
+      "coimbra": {
+        "campo": {
+          "altura": 1327,
+          "largura": 2000
+        },
+        "px_por_unidade": 4.3357676400414125,
+        "tolerancia": 0.057659916479659915
+      },
+      "evora": {
+        "campo": {
+          "altura": 1439,
+          "largura": 2000
+        },
+        "px_por_unidade": 3.290160465847151,
+        "tolerancia": 0.07598413590919796
+      },
+      "faro": {
+        "campo": {
+          "altura": 888,
+          "largura": 2000
+        },
+        "px_por_unidade": 3.1823883514204168,
+        "tolerancia": 0.07855735139566351
+      },
+      "guarda": {
+        "campo": {
+          "altura": 2000,
+          "largura": 1706
+        },
+        "px_por_unidade": 4.658582935784028,
+        "tolerancia": 0.05366438752859202
+      },
+      "ilha-da-graciosa": {
+        "campo": {
+          "altura": 1834,
+          "largura": 2000
+        },
+        "px_por_unidade": 108.44421075787051,
+        "tolerancia": 0.0023053328366065486
+      },
+      "ilha-da-madeira": {
+        "campo": {
+          "altura": 2000,
+          "largura": 848
+        },
+        "px_por_unidade": 1.748724190038724,
+        "tolerancia": 0.14296136659175737
+      },
+      "ilha-das-flores": {
+        "campo": {
+          "altura": 2000,
+          "largura": 1453
+        },
+        "px_por_unidade": 77.56769938973443,
+        "tolerancia": 0.0032229910383688117
+      },
+      "ilha-de-porto-santo": {
+        "campo": {
+          "altura": 2000,
+          "largura": 1693
+        },
+        "px_por_unidade": 36.980627053758646,
+        "tolerancia": 0.006760296401588205
+      },
+      "ilha-de-santa-maria": {
+        "campo": {
+          "altura": 1307,
+          "largura": 2000
+        },
+        "px_por_unidade": 78.29123056544786,
+        "tolerancia": 0.00319320565272009
+      },
+      "ilha-de-sao-jorge": {
+        "campo": {
+          "altura": 1012,
+          "largura": 2000
+        },
+        "px_por_unidade": 23.878764522612016,
+        "tolerancia": 0.010469553387624484
+      },
+      "ilha-de-sao-miguel": {
+        "campo": {
+          "altura": 726,
+          "largura": 2000
+        },
+        "px_por_unidade": 18.727256149991515,
+        "tolerancia": 0.013349526380035831
+      },
+      "ilha-do-corvo": {
+        "campo": {
+          "altura": 2000,
+          "largura": 1261
+        },
+        "px_por_unidade": 208.36507024874388,
+        "tolerancia": 0.0011998172232109384
+      },
+      "ilha-do-faial": {
+        "campo": {
+          "altura": 1394,
+          "largura": 2000
+        },
+        "px_por_unidade": 57.020235600827164,
+        "tolerancia": 0.004384408401083025
+      },
+      "ilha-do-pico": {
+        "campo": {
+          "altura": 892,
+          "largura": 2000
+        },
+        "px_por_unidade": 26.271654321705494,
+        "tolerancia": 0.009515959556206988
+      },
+      "ilha-terceira": {
+        "campo": {
+          "altura": 1246,
+          "largura": 2000
+        },
+        "px_por_unidade": 39.8997559853179,
+        "tolerancia": 0.006265702479283173
+      },
+      "leiria": {
+        "campo": {
+          "altura": 1619,
+          "largura": 2000
+        },
+        "px_por_unidade": 3.62338310763545,
+        "tolerancia": 0.06899629229743393
+      },
+      "lisboa": {
+        "campo": {
+          "altura": 2000,
+          "largura": 1733
+        },
+        "px_por_unidade": 7.03496277223467,
+        "tolerancia": 0.03553679075413031
+      },
+      "portalegre": {
+        "campo": {
+          "altura": 1691,
+          "largura": 2000
+        },
+        "px_por_unidade": 3.66566383187846,
+        "tolerancia": 0.06820047103770784
+      },
+      "porto": {
+        "campo": {
+          "altura": 1370,
+          "largura": 2000
+        },
+        "px_por_unidade": 5.588843069033496,
+        "tolerancia": 0.04473197706788243
+      },
+      "santarem": {
+        "campo": {
+          "altura": 2000,
+          "largura": 1667
+        },
+        "px_por_unidade": 4.078505605471113,
+        "tolerancia": 0.06129696123615409
+      },
+      "setubal": {
+        "campo": {
+          "altura": 2000,
+          "largura": 1623
+        },
+        "px_por_unidade": 4.177713814716306,
+        "tolerancia": 0.05984134172124393
+      },
+      "viana-do-castelo": {
+        "campo": {
+          "altura": 1844,
+          "largura": 2000
+        },
+        "px_por_unidade": 6.395288883171772,
+        "tolerancia": 0.03909127555720538
+      },
+      "vila-real": {
+        "campo": {
+          "altura": 2000,
+          "largura": 1758
+        },
+        "px_por_unidade": 5.380671990767231,
+        "tolerancia": 0.04646259806005243
+      },
+      "viseu": {
+        "campo": {
+          "altura": 2000,
+          "largura": 1791
+        },
+        "px_por_unidade": 4.839737244633468,
+        "tolerancia": 0.051655696861893065
+      }
+    }
+  },
+  "unidades": [
+    {
+      "concelhos": 19,
+      "ficheiro": "mapa/distritos/aveiro.json",
+      "nome": "Aveiro",
+      "parcela": "continente",
+      "slug": "aveiro",
+      "tipo": "distrito"
+    },
+    {
+      "concelhos": 14,
+      "ficheiro": "mapa/distritos/beja.json",
+      "nome": "Beja",
+      "parcela": "continente",
+      "slug": "beja",
+      "tipo": "distrito"
+    },
+    {
+      "concelhos": 14,
+      "ficheiro": "mapa/distritos/braga.json",
+      "nome": "Braga",
+      "parcela": "continente",
+      "slug": "braga",
+      "tipo": "distrito"
+    },
+    {
+      "concelhos": 12,
+      "ficheiro": "mapa/distritos/braganca.json",
+      "nome": "Bragança",
+      "parcela": "continente",
+      "slug": "braganca",
+      "tipo": "distrito"
+    },
+    {
+      "concelhos": 11,
+      "ficheiro": "mapa/distritos/castelo-branco.json",
+      "nome": "Castelo Branco",
+      "parcela": "continente",
+      "slug": "castelo-branco",
+      "tipo": "distrito"
+    },
+    {
+      "concelhos": 17,
+      "ficheiro": "mapa/distritos/coimbra.json",
+      "nome": "Coimbra",
+      "parcela": "continente",
+      "slug": "coimbra",
+      "tipo": "distrito"
+    },
+    {
+      "concelhos": 16,
+      "ficheiro": "mapa/distritos/faro.json",
+      "nome": "Faro",
+      "parcela": "continente",
+      "slug": "faro",
+      "tipo": "distrito"
+    },
+    {
+      "concelhos": 14,
+      "ficheiro": "mapa/distritos/guarda.json",
+      "nome": "Guarda",
+      "parcela": "continente",
+      "slug": "guarda",
+      "tipo": "distrito"
+    },
+    {
+      "concelhos": 2,
+      "ficheiro": "mapa/distritos/ilha-terceira.json",
+      "nome": "Ilha Terceira",
+      "parcela": "acores",
+      "slug": "ilha-terceira",
+      "tipo": "ilha"
+    },
+    {
+      "concelhos": 1,
+      "ficheiro": "mapa/distritos/ilha-da-graciosa.json",
+      "nome": "Ilha da Graciosa",
+      "parcela": "acores",
+      "slug": "ilha-da-graciosa",
+      "tipo": "ilha"
+    },
+    {
+      "concelhos": 10,
+      "ficheiro": "mapa/distritos/ilha-da-madeira.json",
+      "nome": "Ilha da Madeira",
+      "parcela": "madeira",
+      "slug": "ilha-da-madeira",
+      "tipo": "ilha"
+    },
+    {
+      "concelhos": 2,
+      "ficheiro": "mapa/distritos/ilha-das-flores.json",
+      "nome": "Ilha das Flores",
+      "parcela": "acores",
+      "slug": "ilha-das-flores",
+      "tipo": "ilha"
+    },
+    {
+      "concelhos": 1,
+      "ficheiro": "mapa/distritos/ilha-de-porto-santo.json",
+      "nome": "Ilha de Porto Santo",
+      "parcela": "madeira",
+      "slug": "ilha-de-porto-santo",
+      "tipo": "ilha"
+    },
+    {
+      "concelhos": 1,
+      "ficheiro": "mapa/distritos/ilha-de-santa-maria.json",
+      "nome": "Ilha de Santa Maria",
+      "parcela": "acores",
+      "slug": "ilha-de-santa-maria",
+      "tipo": "ilha"
+    },
+    {
+      "concelhos": 2,
+      "ficheiro": "mapa/distritos/ilha-de-sao-jorge.json",
+      "nome": "Ilha de São Jorge",
+      "parcela": "acores",
+      "slug": "ilha-de-sao-jorge",
+      "tipo": "ilha"
+    },
+    {
+      "concelhos": 6,
+      "ficheiro": "mapa/distritos/ilha-de-sao-miguel.json",
+      "nome": "Ilha de São Miguel",
+      "parcela": "acores",
+      "slug": "ilha-de-sao-miguel",
+      "tipo": "ilha"
+    },
+    {
+      "concelhos": 1,
+      "ficheiro": "mapa/distritos/ilha-do-corvo.json",
+      "nome": "Ilha do Corvo",
+      "parcela": "acores",
+      "slug": "ilha-do-corvo",
+      "tipo": "ilha"
+    },
+    {
+      "concelhos": 1,
+      "ficheiro": "mapa/distritos/ilha-do-faial.json",
+      "nome": "Ilha do Faial",
+      "parcela": "acores",
+      "slug": "ilha-do-faial",
+      "tipo": "ilha"
+    },
+    {
+      "concelhos": 3,
+      "ficheiro": "mapa/distritos/ilha-do-pico.json",
+      "nome": "Ilha do Pico",
+      "parcela": "acores",
+      "slug": "ilha-do-pico",
+      "tipo": "ilha"
+    },
+    {
+      "concelhos": 16,
+      "ficheiro": "mapa/distritos/leiria.json",
+      "nome": "Leiria",
+      "parcela": "continente",
+      "slug": "leiria",
+      "tipo": "distrito"
+    },
+    {
+      "concelhos": 16,
+      "ficheiro": "mapa/distritos/lisboa.json",
+      "nome": "Lisboa",
+      "parcela": "continente",
+      "slug": "lisboa",
+      "tipo": "distrito"
+    },
+    {
+      "concelhos": 15,
+      "ficheiro": "mapa/distritos/portalegre.json",
+      "nome": "Portalegre",
+      "parcela": "continente",
+      "slug": "portalegre",
+      "tipo": "distrito"
+    },
+    {
+      "concelhos": 18,
+      "ficheiro": "mapa/distritos/porto.json",
+      "nome": "Porto",
+      "parcela": "continente",
+      "slug": "porto",
+      "tipo": "distrito"
+    },
+    {
+      "concelhos": 21,
+      "ficheiro": "mapa/distritos/santarem.json",
+      "nome": "Santarém",
+      "parcela": "continente",
+      "slug": "santarem",
+      "tipo": "distrito"
+    },
+    {
+      "concelhos": 13,
+      "ficheiro": "mapa/distritos/setubal.json",
+      "nome": "Setúbal",
+      "parcela": "continente",
+      "slug": "setubal",
+      "tipo": "distrito"
+    },
+    {
+      "concelhos": 10,
+      "ficheiro": "mapa/distritos/viana-do-castelo.json",
+      "nome": "Viana do Castelo",
+      "parcela": "continente",
+      "slug": "viana-do-castelo",
+      "tipo": "distrito"
+    },
+    {
+      "concelhos": 14,
+      "ficheiro": "mapa/distritos/vila-real.json",
+      "nome": "Vila Real",
+      "parcela": "continente",
+      "slug": "vila-real",
+      "tipo": "distrito"
+    },
+    {
+      "concelhos": 24,
+      "ficheiro": "mapa/distritos/viseu.json",
+      "nome": "Viseu",
+      "parcela": "continente",
+      "slug": "viseu",
+      "tipo": "distrito"
+    },
+    {
+      "concelhos": 14,
+      "ficheiro": "mapa/distritos/evora.json",
+      "nome": "Évora",
+      "parcela": "continente",
+      "slug": "evora",
+      "tipo": "distrito"
+    }
+  ]
+}
