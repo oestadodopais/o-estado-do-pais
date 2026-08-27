@@ -1333,19 +1333,32 @@ a.porta:hover .porta-abrir {
 
      O QUE MUDOU FOI O DESENHO, E NÃO A REGRA. A Emenda 20c di-lo por extenso:
      «a razão daquela forma era um mapa em que nada se tocava; neste, cada
-     distrito é alvo». Medido nesta largura sobre o campo do artefacto, com a
-     tela a tomar a coluna inteira (354 px a 390): as 19 unidades que não estão
-     dentro de uma moldura chegam todas aos 44 px, a menor sendo Viana do Castelo
-     com 44,5; as dez que não chegam estão dentro das duas molduras e têm os seus
-     nomes por baixo delas, que é o que a emenda manda.
+     distrito é alvo».
 
-     A TELA TOMA A COLUNA, como o resto da cabeça. Os 281px eram a largura que o
-     mapa tinha quando a ficha lhe ficava ao lado, e abaixo de 640 não fica: a
-     coluna é dele. Sem esta linha o mapa desenhava-se a 281 px numa coluna de
-     354, e Viana do Castelo media 35,3 px.
+     A TELA TOMA A JANELA, E NÃO A COLUNA (I81, 27.08.2026). Tomava a coluna, e a
+     coluna é a janela menos duas goteiras: a 390 dava 354 px, e nessa largura
+     Viana do Castelo media 44,5 px, isto é, cumpria a emenda por meio píxel.
+     Abaixo de uma janela de 386 px deixava de cumprir, e a janela mais estreita
+     que a casa serve tem 320: ali a coluna dava 284 px e Viana media 35,3.
+
+     A TÉCNICA É A GOTEIRA DEVOLVIDA, E NÃO `100vw`. `width: 100vw` conta a barra
+     de deslocamento onde ela ocupa lugar, e o que sobra é um deslocamento
+     horizontal na primeira página. Uma margem negativa de uma goteira de cada
+     lado leva a tela às bordas da caixa de conteúdo do seu envelope, que é
+     exactamente a largura da janela sem a barra: a 320 mede 320, a 390 mede 390.
+     A goteira é a mesma variável que o envelope usa, e por isso as duas não
+     podem divergir.
+
+     A MARGEM É DA TELA E NÃO DA FIGURA. A figura leva também a linha da fonte,
+     a lista dos nomes e a descrição, que são texto: um texto encostado à borda
+     do ecrã não se lê, e a goteira existe para isso. O que sai da coluna é o
+     desenho, que é a coisa que precisa dos píxeis; as molduras e as suas listas
+     seguem-no porque as molduras estão dentro do desenho e a lista está debaixo
+     dele, na coluna, onde os nomes se leem.
      ------------------------------------------------------------------------- */
   [data-inicio] .mapa-tela {
-    width: 100%;
+    width: auto;
+    margin-inline: calc(-1 * var(--gutter));
   }
   [data-inicio] .cabeca-inst {
     display: block;

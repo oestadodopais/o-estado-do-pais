@@ -499,6 +499,10 @@ export const STRINGS = {
         linha: ' concelhos · CAOP ',
         acores: 'Açores',
         madeira: 'Madeira',
+        /* O nome da terceira parcela da Carta, para o cabeçalho da lista de
+           nomes por baixo do mapa (I81, 27.08.2026). As outras duas já existiam
+           porque têm moldura; esta não tem, e a lista passou a ser por parcela. */
+        continente: 'Continente',
         readoutHint: 'Passe o cursor sobre um ponto para ler o município.',
         tecladoHint:
           'Teclado: Tab até ao mapa, setas para percorrer os municípios vizinhos, Home para voltar a Évora.',
@@ -1630,6 +1634,7 @@ export const STRINGS = {
         linha: ' municipalities · CAOP ',
         acores: 'Azores',
         madeira: 'Madeira',
+        continente: 'Mainland',
         readoutHint: 'Hover over a point to read the municipality.',
         tecladoHint:
           'Keyboard: Tab to the map, arrow keys to move between neighbouring municipalities, Home to return to Évora.',
