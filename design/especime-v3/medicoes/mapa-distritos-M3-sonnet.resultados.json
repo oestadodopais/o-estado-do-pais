@@ -1,0 +1,2342 @@
+{
+  "meta": {
+    "geradoEm": "2026-08-27T18:10:47.702Z",
+    "AFTER_BASE": "http://127.0.0.1:4771",
+    "BEFORE_BASE": "https://xn--oestadodopas-2fb.pt"
+  },
+  "autoTestes": [
+    {
+      "nome": "descodificador do caminho + ray casting (quadrado sintético)",
+      "passou": true,
+      "detalhe": "rings=[[[0,0],[10,0],[10,10],[0,10]]] · dentro(5,5)=true (esperado true) · fora(100,100)=false (esperado false) · quase-borda(0.001,5)=true (esperado true)"
+    },
+    {
+      "nome": "regra nonzero com buraco (anel interior invertido fura o preenchimento)",
+      "passou": true,
+      "detalhe": "dentroDoBuraco(10,10)=false (esperado false) · dentroDaArea(2,2)=true (esperado true)"
+    },
+    {
+      "nome": "junção: troca de slug numa cópia do JSON (caso vermelho pedido no brief)",
+      "passou": true,
+      "detalhe": "dados reais: ok=true (esperado true) · depois de trocar slug entre \"agueda\" e \"vale-de-cambra\": discrepâncias de nome encontradas=[{\"slug\":\"vale-de-cambra\",\"nomeJSON\":\"Águeda\",\"nomeConstruido\":\"Vale de Cambra\"},{\"slug\":\"agueda\",\"nomeJSON\":\"Vale de Cambra\",\"nomeConstruido\":\"Águeda\"}]"
+    },
+    {
+      "nome": "junção: duplicado injectado noutra unidade (caso vermelho)",
+      "passou": true,
+      "detalhe": "slug duplicado \"agueda\" detectado=true · total=309 (esperado 309)"
+    },
+    {
+      "nome": "junção: slug inventado sem página construída (caso vermelho)",
+      "passou": true,
+      "detalhe": "emJSONnaoConstruidas inclui o inventado=true · construidasNaoEmJSON=[\"agueda\"]"
+    },
+    {
+      "nome": "ray casting: controlo negativo cruzado dentro de \"Aveiro\" (caso vermelho)",
+      "passou": true,
+      "detalhe": "caixas de \"Vagos\" e \"Arouca\" sem sobreposição=true · ponto de \"Vagos\" dentro do caminho de \"Arouca\"=false (esperado false)"
+    },
+    {
+      "nome": "caso conhecido: no ar (main), a primeira página mostra o mapa de pontos e nenhuma área por distrito",
+      "passou": true,
+      "detalhe": "círculos no mapa-svg=309 (>0 esperado) · <path> no mapa-svg=0 (esperado 0, não há áreas poligonais) · <a> dentro do mapa-svg=308 (são ligações por ponto a /municipios/, não áreas) · ligações a /distritos/ na página=0 (esperado 0)"
+    },
+    {
+      "nome": "centro da caixa fora da forma: caso vermelho conhecido (Ilha da Madeira, achado ao vivo num clique real da medição 3)",
+      "passou": true,
+      "detalhe": "Ilha da Madeira centroClicavel=false (esperado false) · Aveiro centroClicavel=true (esperado true, controlo positivo)"
+    }
+  ],
+  "m1_juncao": {
+    "join": {
+      "total": 308,
+      "unidades": 29,
+      "duplicados": [],
+      "emJSONnaoConstruidas": [],
+      "construidasNaoEmJSON": [],
+      "ok": true
+    },
+    "soPT": [],
+    "soEN": [],
+    "manifestVsMeus_soManifest": [],
+    "manifestVsMeus_soMeus": [],
+    "discrepanciasNomes": [],
+    "foraDoCaminho": [],
+    "casosMarResultado": [
+      {
+        "slug": "funchal",
+        "encontrado": true,
+        "dentro": true
+      },
+      {
+        "slug": "santa-cruz",
+        "encontrado": true,
+        "dentro": true
+      },
+      {
+        "slug": "peso-da-regua",
+        "encontrado": true,
+        "dentro": true
+      },
+      {
+        "slug": "vila-real-de-santo-antonio",
+        "encontrado": true,
+        "dentro": true
+      }
+    ],
+    "foraDoCaminhoPais": [],
+    "builtSlugsCount": 308,
+    "builtSlugsENCount": 308
+  },
+  "m2_primeiraPagina": {
+    "casoConhecido": {
+      "svgCount": 19,
+      "mapaSvgClass": "mapa-svg",
+      "circlesInMapaSvg": 309,
+      "pathsInMapaSvg": 0,
+      "areaLinksInMapaSvg": 308,
+      "distritosLinksOnPage": 0
+    },
+    "porViewport": {
+      "390": {
+        "svgExists": true,
+        "svgRole": "group",
+        "areasCount": 29,
+        "ariaLinksCount": 29,
+        "semNomeAcessivel": [],
+        "naoSaoLink": [],
+        "abaixo44": [
+          {
+            "nome": "Aveiro",
+            "href": "/distritos/aveiro",
+            "box": {
+              "x": 226.79586791992188,
+              "y": 1008.3607788085938,
+              "width": 38.771209716796875,
+              "height": 58.94146728515625
+            }
+          },
+          {
+            "nome": "Braga",
+            "href": "/distritos/braga",
+            "box": {
+              "x": 225.2845458984375,
+              "y": 953.3137817382812,
+              "width": 55.8026123046875,
+              "height": 37.3179931640625
+            }
+          },
+          {
+            "nome": "Coimbra",
+            "href": "/distritos/coimbra",
+            "box": {
+              "x": 219.82054138183594,
+              "y": 1049.6314697265625,
+              "width": 65.68431091308594,
+              "height": 43.5958251953125
+            }
+          },
+          {
+            "nome": "Faro",
+            "href": "/distritos/faro",
+            "box": {
+              "x": 214.93780517578125,
+              "y": 1264.471435546875,
+              "width": 89.45855712890625,
+              "height": 39.7593994140625
+            }
+          },
+          {
+            "nome": "Ilha Terceira",
+            "href": "/distritos/ilha-terceira",
+            "box": {
+              "x": 115.24876403808594,
+              "y": 1278.480224609375,
+              "width": 7.091583251953125,
+              "height": 4.359619140625
+            }
+          },
+          {
+            "nome": "Ilha da Graciosa",
+            "href": "/distritos/ilha-da-graciosa",
+            "box": {
+              "x": 100.60057830810547,
+              "y": 1270.574951171875,
+              "width": 2.6157455444335938,
+              "height": 2.2669677734375
+            }
+          },
+          {
+            "nome": "Ilha das Flores",
+            "href": "/distritos/ilha-das-flores",
+            "box": {
+              "x": 33.114288330078125,
+              "y": 1258.7750244140625,
+              "width": 3.080768585205078,
+              "height": 4.0689697265625
+            }
+          },
+          {
+            "nome": "Ilha de Porto Santo",
+            "href": "/distritos/ilha-de-porto-santo",
+            "box": {
+              "x": 154.54310607910156,
+              "y": 1162.0504150390625,
+              "width": 7.4403533935546875,
+              "height": 8.71923828125
+            }
+          },
+          {
+            "nome": "Ilha de Santa Maria",
+            "href": "/distritos/ilha-de-santa-maria",
+            "box": {
+              "x": 161.5184326171875,
+              "y": 1326.203125,
+              "width": 3.603912353515625,
+              "height": 2.38330078125
+            }
+          },
+          {
+            "nome": "Ilha de São Jorge",
+            "href": "/distritos/ilha-de-sao-jorge",
+            "box": {
+              "x": 95.42720794677734,
+              "y": 1279.700927734375,
+              "width": 11.916183471679688,
+              "height": 5.9871826171875
+            }
+          },
+          {
+            "nome": "Ilha de São Miguel",
+            "href": "/distritos/ilha-de-sao-miguel",
+            "box": {
+              "x": 147.3933868408203,
+              "y": 1302.428955078125,
+              "width": 15.171340942382812,
+              "height": 5.4639892578125
+            }
+          },
+          {
+            "nome": "Ilha do Corvo",
+            "href": "/distritos/ilha-do-corvo",
+            "box": {
+              "x": 36.07880401611328,
+              "y": 1253.2529296875,
+              "width": 0.9881668090820312,
+              "height": 1.5693359375
+            }
+          },
+          {
+            "nome": "Ilha do Faial",
+            "href": "/distritos/ilha-do-faial",
+            "box": {
+              "x": 84.49919891357422,
+              "y": 1282.7236328125,
+              "width": 4.998985290527344,
+              "height": 3.429443359375
+            }
+          },
+          {
+            "nome": "Ilha do Pico",
+            "href": "/distritos/ilha-do-pico",
+            "box": {
+              "x": 90.71886444091797,
+              "y": 1284.9906005859375,
+              "width": 10.811752319335938,
+              "height": 4.8245849609375
+            }
+          },
+          {
+            "nome": "Lisboa",
+            "href": "/distritos/lisboa",
+            "box": {
+              "x": 186.80398559570312,
+              "y": 1137.1136474609375,
+              "width": 40.10813903808594,
+              "height": 46.1534423828125
+            }
+          },
+          {
+            "nome": "Porto",
+            "href": "/distritos/porto",
+            "box": {
+              "x": 226.50523376464844,
+              "y": 979.296875,
+              "width": 50.97801208496094,
+              "height": 34.87664794921875
+            }
+          },
+          {
+            "nome": "Viana do Castelo",
+            "href": "/distritos/viana-do-castelo",
+            "box": {
+              "x": 221.38998413085938,
+              "y": 928.20263671875,
+              "width": 44.46771240234375,
+              "height": 41.03814697265625
+            }
+          }
+        ],
+        "abaixo44Count": 17,
+        "centroForaDaForma": [
+          {
+            "nome": "Ilha da Madeira",
+            "href": "/distritos/ilha-da-madeira",
+            "box": {
+              "x": 106.76211547851562,
+              "y": 1179.1400146484375,
+              "width": 78.82119750976562,
+              "height": 186.0667724609375
+            },
+            "chega44": true
+          }
+        ],
+        "centroForaDaFormaCount": 1,
+        "fillsDistintosCount": 1,
+        "fillsDistintos": [
+          "none"
+        ],
+        "strokesDistintosCount": 1,
+        "strokesDistintos": [
+          "rgb(23, 25, 27)"
+        ],
+        "listaIlhasInfo": {
+          "Madeira": {
+            "ilhasNestaMoldura": [
+              "Ilha da Madeira",
+              "Ilha de Porto Santo"
+            ],
+            "ilhasAbaixo44": [
+              "Ilha de Porto Santo"
+            ],
+            "linksNaListaForaDoSvg": [
+              "Ilha da Madeira",
+              "Ilha de Porto Santo"
+            ],
+            "todosOsLinksEstaoAbaixoDoCluster": true,
+            "umPorLinha": null,
+            "numeroDeItens": 2,
+            "linhasDistintas": 2,
+            "umaPorLinha": true,
+            "cadaItemEhLink": true,
+            "itens": [
+              "Ilha da Madeira",
+              "Ilha de Porto Santo"
+            ]
+          },
+          "Açores": {
+            "ilhasNestaMoldura": [
+              "Ilha Terceira",
+              "Ilha da Graciosa",
+              "Ilha das Flores",
+              "Ilha de Santa Maria",
+              "Ilha de São Jorge",
+              "Ilha de São Miguel",
+              "Ilha do Corvo",
+              "Ilha do Faial",
+              "Ilha do Pico"
+            ],
+            "ilhasAbaixo44": [
+              "Ilha Terceira",
+              "Ilha da Graciosa",
+              "Ilha das Flores",
+              "Ilha de Santa Maria",
+              "Ilha de São Jorge",
+              "Ilha de São Miguel",
+              "Ilha do Corvo",
+              "Ilha do Faial",
+              "Ilha do Pico"
+            ],
+            "linksNaListaForaDoSvg": [
+              "Ilha Terceira",
+              "Ilha da Graciosa",
+              "Ilha das Flores",
+              "Ilha de Santa Maria",
+              "Ilha de São Jorge",
+              "Ilha de São Miguel",
+              "Ilha do Corvo",
+              "Ilha do Faial",
+              "Ilha do Pico"
+            ],
+            "todosOsLinksEstaoAbaixoDoCluster": true,
+            "umPorLinha": null,
+            "numeroDeItens": 9,
+            "linhasDistintas": 9,
+            "umaPorLinha": true,
+            "cadaItemEhLink": true,
+            "itens": [
+              "Ilha Terceira",
+              "Ilha da Graciosa",
+              "Ilha das Flores",
+              "Ilha de Santa Maria",
+              "Ilha de São Jorge",
+              "Ilha de São Miguel",
+              "Ilha do Corvo",
+              "Ilha do Faial",
+              "Ilha do Pico"
+            ]
+          }
+        },
+        "caixasCompletas": [
+          {
+            "href": "/distritos/aveiro",
+            "nome": "Aveiro",
+            "box": {
+              "x": 226.79586791992188,
+              "y": 1008.3607788085938,
+              "width": 38.771209716796875,
+              "height": 58.94146728515625
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/beja",
+            "nome": "Beja",
+            "box": {
+              "x": 224.81951904296875,
+              "y": 1207.8551025390625,
+              "width": 105.32745361328125,
+              "height": 71.380859375
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/braga",
+            "nome": "Braga",
+            "box": {
+              "x": 225.2845458984375,
+              "y": 953.3137817382812,
+              "width": 55.8026123046875,
+              "height": 37.3179931640625
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/braganca",
+            "nome": "Bragança",
+            "box": {
+              "x": 302.2456359863281,
+              "y": 940.351318359375,
+              "width": 69.34640502929688,
+              "height": 72.078369140625
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/castelo-branco",
+            "nome": "Castelo Branco",
+            "box": {
+              "x": 254.1740264892578,
+              "y": 1057.2462158203125,
+              "width": 79.75123596191406,
+              "height": 63.99853515625
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/coimbra",
+            "nome": "Coimbra",
+            "box": {
+              "x": 219.82054138183594,
+              "y": 1049.6314697265625,
+              "width": 65.68431091308594,
+              "height": 43.5958251953125
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/faro",
+            "nome": "Faro",
+            "box": {
+              "x": 214.93780517578125,
+              "y": 1264.471435546875,
+              "width": 89.45855712890625,
+              "height": 39.7593994140625
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/guarda",
+            "nome": "Guarda",
+            "box": {
+              "x": 278.99456787109375,
+              "y": 1001.0366821289062,
+              "width": 59.522796630859375,
+              "height": 69.86956787109375
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/ilha-terceira",
+            "nome": "Ilha Terceira",
+            "box": {
+              "x": 115.24876403808594,
+              "y": 1278.480224609375,
+              "width": 7.091583251953125,
+              "height": 4.359619140625
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/ilha-da-graciosa",
+            "nome": "Ilha da Graciosa",
+            "box": {
+              "x": 100.60057830810547,
+              "y": 1270.574951171875,
+              "width": 2.6157455444335938,
+              "height": 2.2669677734375
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/ilha-da-madeira",
+            "nome": "Ilha da Madeira",
+            "box": {
+              "x": 106.76211547851562,
+              "y": 1179.1400146484375,
+              "width": 78.82119750976562,
+              "height": 186.0667724609375
+            },
+            "chega44": true,
+            "centroClicavel": false
+          },
+          {
+            "href": "/distritos/ilha-das-flores",
+            "nome": "Ilha das Flores",
+            "box": {
+              "x": 33.114288330078125,
+              "y": 1258.7750244140625,
+              "width": 3.080768585205078,
+              "height": 4.0689697265625
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/ilha-de-porto-santo",
+            "nome": "Ilha de Porto Santo",
+            "box": {
+              "x": 154.54310607910156,
+              "y": 1162.0504150390625,
+              "width": 7.4403533935546875,
+              "height": 8.71923828125
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/ilha-de-santa-maria",
+            "nome": "Ilha de Santa Maria",
+            "box": {
+              "x": 161.5184326171875,
+              "y": 1326.203125,
+              "width": 3.603912353515625,
+              "height": 2.38330078125
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/ilha-de-sao-jorge",
+            "nome": "Ilha de São Jorge",
+            "box": {
+              "x": 95.42720794677734,
+              "y": 1279.700927734375,
+              "width": 11.916183471679688,
+              "height": 5.9871826171875
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/ilha-de-sao-miguel",
+            "nome": "Ilha de São Miguel",
+            "box": {
+              "x": 147.3933868408203,
+              "y": 1302.428955078125,
+              "width": 15.171340942382812,
+              "height": 5.4639892578125
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/ilha-do-corvo",
+            "nome": "Ilha do Corvo",
+            "box": {
+              "x": 36.07880401611328,
+              "y": 1253.2529296875,
+              "width": 0.9881668090820312,
+              "height": 1.5693359375
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/ilha-do-faial",
+            "nome": "Ilha do Faial",
+            "box": {
+              "x": 84.49919891357422,
+              "y": 1282.7236328125,
+              "width": 4.998985290527344,
+              "height": 3.429443359375
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/ilha-do-pico",
+            "nome": "Ilha do Pico",
+            "box": {
+              "x": 90.71886444091797,
+              "y": 1284.9906005859375,
+              "width": 10.811752319335938,
+              "height": 4.8245849609375
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/leiria",
+            "nome": "Leiria",
+            "box": {
+              "x": 185.93206787109375,
+              "y": 1081.13671875,
+              "width": 78.58868408203125,
+              "height": 63.6497802734375
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/lisboa",
+            "nome": "Lisboa",
+            "box": {
+              "x": 186.80398559570312,
+              "y": 1137.1136474609375,
+              "width": 40.10813903808594,
+              "height": 46.1534423828125
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/portalegre",
+            "nome": "Portalegre",
+            "box": {
+              "x": 251.38389587402344,
+              "y": 1112.1187744140625,
+              "width": 77.65864562988281,
+              "height": 65.684326171875
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/porto",
+            "nome": "Porto",
+            "box": {
+              "x": 226.50523376464844,
+              "y": 979.296875,
+              "width": 50.97801208496094,
+              "height": 34.87664794921875
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/santarem",
+            "nome": "Santarém",
+            "box": {
+              "x": 214.6471710205078,
+              "y": 1099.3887939453125,
+              "width": 66.55625915527344,
+              "height": 79.809326171875
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/setubal",
+            "nome": "Setúbal",
+            "box": {
+              "x": 200.05711364746094,
+              "y": 1171.060302734375,
+              "width": 63.24296569824219,
+              "height": 77.89111328125
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/viana-do-castelo",
+            "nome": "Viana do Castelo",
+            "box": {
+              "x": 221.38998413085938,
+              "y": 928.20263671875,
+              "width": 44.46771240234375,
+              "height": 41.03814697265625
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/vila-real",
+            "nome": "Vila Real",
+            "box": {
+              "x": 263.88134765625,
+              "y": 945.2921752929688,
+              "width": 52.954376220703125,
+              "height": 60.16217041015625
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/viseu",
+            "nome": "Viseu",
+            "box": {
+              "x": 250.51197814941406,
+              "y": 998.4208984375,
+              "width": 58.82524108886719,
+              "height": 65.684326171875
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/evora",
+            "nome": "Évora",
+            "box": {
+              "x": 233.82931518554688,
+              "y": 1158.0396728515625,
+              "width": 86.49404907226562,
+              "height": 62.2547607421875
+            },
+            "chega44": true,
+            "centroClicavel": true
+          }
+        ]
+      },
+      "1280": {
+        "svgExists": true,
+        "svgRole": "group",
+        "areasCount": 29,
+        "ariaLinksCount": 29,
+        "semNomeAcessivel": [],
+        "naoSaoLink": [],
+        "abaixo44": [
+          {
+            "nome": "Ilha Terceira",
+            "href": "/distritos/ilha-terceira",
+            "box": {
+              "x": 830.611572265625,
+              "y": 948.6879272460938,
+              "width": 9.81585693359375,
+              "height": 6.03436279296875
+            }
+          },
+          {
+            "nome": "Ilha da Graciosa",
+            "href": "/distritos/ilha-da-graciosa",
+            "box": {
+              "x": 810.3361206054688,
+              "y": 937.74560546875,
+              "width": 3.62060546875,
+              "height": 3.13787841796875
+            }
+          },
+          {
+            "nome": "Ilha das Flores",
+            "href": "/distritos/ilha-das-flores",
+            "box": {
+              "x": 716.92431640625,
+              "y": 921.4126586914062,
+              "width": 4.2642822265625,
+              "height": 5.63201904296875
+            }
+          },
+          {
+            "nome": "Ilha de Porto Santo",
+            "href": "/distritos/ilha-de-porto-santo",
+            "box": {
+              "x": 885.001220703125,
+              "y": 787.5304565429688,
+              "width": 10.298583984375,
+              "height": 12.06866455078125
+            }
+          },
+          {
+            "nome": "Ilha de Santa Maria",
+            "href": "/distritos/ilha-de-santa-maria",
+            "box": {
+              "x": 894.6561279296875,
+              "y": 1014.7439575195312,
+              "width": 4.9884033203125,
+              "height": 3.298828125
+            }
+          },
+          {
+            "nome": "Ilha de São Jorge",
+            "href": "/distritos/ilha-de-sao-jorge",
+            "box": {
+              "x": 803.1753540039062,
+              "y": 950.3775634765625,
+              "width": 16.493896484375,
+              "height": 8.28717041015625
+            }
+          },
+          {
+            "nome": "Ilha de São Miguel",
+            "href": "/distritos/ilha-de-sao-miguel",
+            "box": {
+              "x": 875.1048583984375,
+              "y": 981.836669921875,
+              "width": 20.99957275390625,
+              "height": 7.56304931640625
+            }
+          },
+          {
+            "nome": "Ilha do Corvo",
+            "href": "/distritos/ilha-do-corvo",
+            "box": {
+              "x": 721.0277099609375,
+              "y": 913.7691650390625,
+              "width": 1.3677978515625,
+              "height": 2.17236328125
+            }
+          },
+          {
+            "nome": "Ilha do Faial",
+            "href": "/distritos/ilha-do-faial",
+            "box": {
+              "x": 788.0492553710938,
+              "y": 954.5613403320312,
+              "width": 6.91937255859375,
+              "height": 4.7470703125
+            }
+          },
+          {
+            "nome": "Ilha do Pico",
+            "href": "/distritos/ilha-do-pico",
+            "box": {
+              "x": 796.6582641601562,
+              "y": 957.69921875,
+              "width": 14.9652099609375,
+              "height": 6.67803955078125
+            }
+          }
+        ],
+        "abaixo44Count": 10,
+        "centroForaDaForma": [
+          {
+            "nome": "Ilha da Madeira",
+            "href": "/distritos/ilha-da-madeira",
+            "box": {
+              "x": 818.8646850585938,
+              "y": 811.1851196289062,
+              "width": 109.10113525390625,
+              "height": 257.54620361328125
+            },
+            "chega44": true
+          }
+        ],
+        "centroForaDaFormaCount": 1,
+        "fillsDistintosCount": 1,
+        "fillsDistintos": [
+          "none"
+        ],
+        "strokesDistintosCount": 1,
+        "strokesDistintos": [
+          "rgb(23, 25, 27)"
+        ],
+        "listaIlhasInfo": {
+          "Madeira": {
+            "ilhasNestaMoldura": [
+              "Ilha da Madeira",
+              "Ilha de Porto Santo"
+            ],
+            "ilhasAbaixo44": [
+              "Ilha de Porto Santo"
+            ],
+            "linksNaListaForaDoSvg": [
+              "Ilha da Madeira",
+              "Ilha de Porto Santo"
+            ],
+            "todosOsLinksEstaoAbaixoDoCluster": true,
+            "umPorLinha": null,
+            "numeroDeItens": 2,
+            "linhasDistintas": 2,
+            "umaPorLinha": true,
+            "cadaItemEhLink": true,
+            "itens": [
+              "Ilha da Madeira",
+              "Ilha de Porto Santo"
+            ]
+          },
+          "Açores": {
+            "ilhasNestaMoldura": [
+              "Ilha Terceira",
+              "Ilha da Graciosa",
+              "Ilha das Flores",
+              "Ilha de Santa Maria",
+              "Ilha de São Jorge",
+              "Ilha de São Miguel",
+              "Ilha do Corvo",
+              "Ilha do Faial",
+              "Ilha do Pico"
+            ],
+            "ilhasAbaixo44": [
+              "Ilha Terceira",
+              "Ilha da Graciosa",
+              "Ilha das Flores",
+              "Ilha de Santa Maria",
+              "Ilha de São Jorge",
+              "Ilha de São Miguel",
+              "Ilha do Corvo",
+              "Ilha do Faial",
+              "Ilha do Pico"
+            ],
+            "linksNaListaForaDoSvg": [
+              "Ilha Terceira",
+              "Ilha da Graciosa",
+              "Ilha das Flores",
+              "Ilha de Santa Maria",
+              "Ilha de São Jorge",
+              "Ilha de São Miguel",
+              "Ilha do Corvo",
+              "Ilha do Faial",
+              "Ilha do Pico"
+            ],
+            "todosOsLinksEstaoAbaixoDoCluster": true,
+            "umPorLinha": null,
+            "numeroDeItens": 9,
+            "linhasDistintas": 9,
+            "umaPorLinha": true,
+            "cadaItemEhLink": true,
+            "itens": [
+              "Ilha Terceira",
+              "Ilha da Graciosa",
+              "Ilha das Flores",
+              "Ilha de Santa Maria",
+              "Ilha de São Jorge",
+              "Ilha de São Miguel",
+              "Ilha do Corvo",
+              "Ilha do Faial",
+              "Ilha do Pico"
+            ]
+          }
+        },
+        "caixasCompletas": [
+          {
+            "href": "/distritos/aveiro",
+            "nome": "Aveiro",
+            "box": {
+              "x": 985.0105590820312,
+              "y": 574.7993774414062,
+              "width": 53.66546630859375,
+              "height": 81.58447265625
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/beja",
+            "nome": "Beja",
+            "box": {
+              "x": 982.2749633789062,
+              "y": 850.931396484375,
+              "width": 145.78997802734375,
+              "height": 98.802490234375
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/braga",
+            "nome": "Braga",
+            "box": {
+              "x": 982.9186401367188,
+              "y": 498.6055908203125,
+              "width": 77.23968505859375,
+              "height": 51.654052734375
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/braganca",
+            "nome": "Bragança",
+            "box": {
+              "x": 1089.445068359375,
+              "y": 480.6634521484375,
+              "width": 95.9864501953125,
+              "height": 99.76800537109375
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/castelo-branco",
+            "nome": "Castelo Branco",
+            "box": {
+              "x": 1022.90625,
+              "y": 642.464599609375,
+              "width": 110.388427734375,
+              "height": 88.5843505859375
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/coimbra",
+            "nome": "Coimbra",
+            "box": {
+              "x": 975.3555908203125,
+              "y": 631.924560546875,
+              "width": 90.9176025390625,
+              "height": 60.34356689453125
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/faro",
+            "nome": "Faro",
+            "box": {
+              "x": 968.5971069335938,
+              "y": 929.2975463867188,
+              "width": 123.82501220703125,
+              "height": 55.0333251953125
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/guarda",
+            "nome": "Guarda",
+            "box": {
+              "x": 1057.2618408203125,
+              "y": 564.6616821289062,
+              "width": 82.3890380859375,
+              "height": 96.7105712890625
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/ilha-terceira",
+            "nome": "Ilha Terceira",
+            "box": {
+              "x": 830.611572265625,
+              "y": 948.6879272460938,
+              "width": 9.81585693359375,
+              "height": 6.03436279296875
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/ilha-da-graciosa",
+            "nome": "Ilha da Graciosa",
+            "box": {
+              "x": 810.3361206054688,
+              "y": 937.74560546875,
+              "width": 3.62060546875,
+              "height": 3.13787841796875
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/ilha-da-madeira",
+            "nome": "Ilha da Madeira",
+            "box": {
+              "x": 818.8646850585938,
+              "y": 811.1851196289062,
+              "width": 109.10113525390625,
+              "height": 257.54620361328125
+            },
+            "chega44": true,
+            "centroClicavel": false
+          },
+          {
+            "href": "/distritos/ilha-das-flores",
+            "nome": "Ilha das Flores",
+            "box": {
+              "x": 716.92431640625,
+              "y": 921.4126586914062,
+              "width": 4.2642822265625,
+              "height": 5.63201904296875
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/ilha-de-porto-santo",
+            "nome": "Ilha de Porto Santo",
+            "box": {
+              "x": 885.001220703125,
+              "y": 787.5304565429688,
+              "width": 10.298583984375,
+              "height": 12.06866455078125
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/ilha-de-santa-maria",
+            "nome": "Ilha de Santa Maria",
+            "box": {
+              "x": 894.6561279296875,
+              "y": 1014.7439575195312,
+              "width": 4.9884033203125,
+              "height": 3.298828125
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/ilha-de-sao-jorge",
+            "nome": "Ilha de São Jorge",
+            "box": {
+              "x": 803.1753540039062,
+              "y": 950.3775634765625,
+              "width": 16.493896484375,
+              "height": 8.28717041015625
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/ilha-de-sao-miguel",
+            "nome": "Ilha de São Miguel",
+            "box": {
+              "x": 875.1048583984375,
+              "y": 981.836669921875,
+              "width": 20.99957275390625,
+              "height": 7.56304931640625
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/ilha-do-corvo",
+            "nome": "Ilha do Corvo",
+            "box": {
+              "x": 721.0277099609375,
+              "y": 913.7691650390625,
+              "width": 1.3677978515625,
+              "height": 2.17236328125
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/ilha-do-faial",
+            "nome": "Ilha do Faial",
+            "box": {
+              "x": 788.0492553710938,
+              "y": 954.5613403320312,
+              "width": 6.91937255859375,
+              "height": 4.7470703125
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/ilha-do-pico",
+            "nome": "Ilha do Pico",
+            "box": {
+              "x": 796.6582641601562,
+              "y": 957.69921875,
+              "width": 14.9652099609375,
+              "height": 6.67803955078125
+            },
+            "chega44": false,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/leiria",
+            "nome": "Leiria",
+            "box": {
+              "x": 928.4485473632812,
+              "y": 675.5328369140625,
+              "width": 108.77923583984375,
+              "height": 88.1015625
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/lisboa",
+            "nome": "Lisboa",
+            "box": {
+              "x": 929.6553955078125,
+              "y": 753.013916015625,
+              "width": 55.51611328125,
+              "height": 63.88372802734375
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/portalegre",
+            "nome": "Portalegre",
+            "box": {
+              "x": 1019.0443115234375,
+              "y": 718.4169921875,
+              "width": 107.491943359375,
+              "height": 90.9176025390625
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/porto",
+            "nome": "Porto",
+            "box": {
+              "x": 984.6082763671875,
+              "y": 534.5703735351562,
+              "width": 70.5616455078125,
+              "height": 48.27484130859375
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/santarem",
+            "nome": "Santarém",
+            "box": {
+              "x": 968.19482421875,
+              "y": 700.7966918945312,
+              "width": 92.12451171875,
+              "height": 110.46893310546875
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/setubal",
+            "nome": "Setúbal",
+            "box": {
+              "x": 947.9998779296875,
+              "y": 800.00146484375,
+              "width": 87.538330078125,
+              "height": 107.81378173828125
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/viana-do-castelo",
+            "nome": "Viana do Castelo",
+            "box": {
+              "x": 977.5279541015625,
+              "y": 463.84771728515625,
+              "width": 61.5504150390625,
+              "height": 56.80340576171875
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/vila-real",
+            "nome": "Vila Real",
+            "box": {
+              "x": 1036.3427734375,
+              "y": 487.50238037109375,
+              "width": 73.29736328125,
+              "height": 83.27410888671875
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/viseu",
+            "nome": "Viseu",
+            "box": {
+              "x": 1017.83740234375,
+              "y": 561.041015625,
+              "width": 81.423583984375,
+              "height": 90.9176025390625
+            },
+            "chega44": true,
+            "centroClicavel": true
+          },
+          {
+            "href": "/distritos/evora",
+            "nome": "Évora",
+            "box": {
+              "x": 994.7459716796875,
+              "y": 781.9788818359375,
+              "width": 119.7215576171875,
+              "height": 86.1705322265625
+            },
+            "chega44": true,
+            "centroClicavel": true
+          }
+        ]
+      }
+    }
+  },
+  "m3_cliques": {
+    "390": {
+      "cliques": [
+        {
+          "indice": 6,
+          "nome": "Faro",
+          "hrefEsperado": "/distritos/faro",
+          "urlFinal": "http://127.0.0.1:4771/distritos/faro/",
+          "bateCerto": true,
+          "erro": null
+        },
+        {
+          "indice": 0,
+          "nome": "Aveiro",
+          "hrefEsperado": "/distritos/aveiro",
+          "urlFinal": "http://127.0.0.1:4771/distritos/aveiro/",
+          "bateCerto": true,
+          "erro": null
+        },
+        {
+          "indice": 27,
+          "nome": "Viseu",
+          "hrefEsperado": "/distritos/viseu",
+          "urlFinal": "http://127.0.0.1:4771/distritos/viseu/",
+          "bateCerto": true,
+          "erro": null
+        },
+        {
+          "indice": 12,
+          "nome": "Ilha de Porto Santo",
+          "hrefEsperado": "/distritos/ilha-de-porto-santo",
+          "urlFinal": "http://127.0.0.1:4771/distritos/ilha-de-porto-santo/",
+          "bateCerto": true,
+          "erro": null
+        },
+        {
+          "indice": 27,
+          "nome": "Viseu",
+          "hrefEsperado": "/distritos/viseu",
+          "urlFinal": "http://127.0.0.1:4771/distritos/viseu/",
+          "bateCerto": true,
+          "erro": null
+        },
+        {
+          "indice": 22,
+          "nome": "Porto",
+          "hrefEsperado": "/distritos/porto",
+          "urlFinal": "http://127.0.0.1:4771/distritos/porto/",
+          "bateCerto": true,
+          "erro": null
+        },
+        {
+          "indice": 25,
+          "nome": "Viana do Castelo",
+          "hrefEsperado": "/distritos/viana-do-castelo",
+          "urlFinal": "http://127.0.0.1:4771/distritos/viana-do-castelo/",
+          "bateCerto": true,
+          "erro": null
+        },
+        {
+          "indice": 26,
+          "nome": "Vila Real",
+          "hrefEsperado": "/distritos/vila-real",
+          "urlFinal": "http://127.0.0.1:4771/distritos/vila-real/",
+          "bateCerto": true,
+          "erro": null
+        },
+        {
+          "indice": 27,
+          "nome": "Viseu",
+          "hrefEsperado": "/distritos/viseu",
+          "urlFinal": "http://127.0.0.1:4771/distritos/viseu/",
+          "bateCerto": true,
+          "erro": null
+        },
+        {
+          "indice": 1,
+          "nome": "Beja",
+          "hrefEsperado": "/distritos/beja",
+          "urlFinal": "http://127.0.0.1:4771/distritos/beja/",
+          "bateCerto": true,
+          "erro": null
+        }
+      ],
+      "falhas": 0
+    },
+    "1280": {
+      "cliques": [
+        {
+          "indice": 22,
+          "nome": "Porto",
+          "hrefEsperado": "/distritos/porto",
+          "urlFinal": "http://127.0.0.1:4771/distritos/porto/",
+          "bateCerto": true,
+          "erro": null
+        },
+        {
+          "indice": 21,
+          "nome": "Portalegre",
+          "hrefEsperado": "/distritos/portalegre",
+          "urlFinal": "http://127.0.0.1:4771/distritos/portalegre/",
+          "bateCerto": true,
+          "erro": null
+        },
+        {
+          "indice": 11,
+          "nome": "Ilha das Flores",
+          "hrefEsperado": "/distritos/ilha-das-flores",
+          "urlFinal": "http://127.0.0.1:4771/distritos/ilha-das-flores/",
+          "bateCerto": true,
+          "erro": null
+        },
+        {
+          "indice": 24,
+          "nome": "Setúbal",
+          "hrefEsperado": "/distritos/setubal",
+          "urlFinal": "http://127.0.0.1:4771/distritos/setubal/",
+          "bateCerto": true,
+          "erro": null
+        },
+        {
+          "indice": 4,
+          "nome": "Castelo Branco",
+          "hrefEsperado": "/distritos/castelo-branco",
+          "urlFinal": "http://127.0.0.1:4771/distritos/castelo-branco/",
+          "bateCerto": true,
+          "erro": null
+        },
+        {
+          "indice": 20,
+          "nome": "Lisboa",
+          "hrefEsperado": "/distritos/lisboa",
+          "urlFinal": "http://127.0.0.1:4771/distritos/lisboa/",
+          "bateCerto": true,
+          "erro": null
+        },
+        {
+          "indice": 28,
+          "nome": "Évora",
+          "hrefEsperado": "/distritos/evora",
+          "urlFinal": "http://127.0.0.1:4771/distritos/evora/",
+          "bateCerto": true,
+          "erro": null
+        },
+        {
+          "indice": 19,
+          "nome": "Leiria",
+          "hrefEsperado": "/distritos/leiria",
+          "urlFinal": "http://127.0.0.1:4771/distritos/leiria/",
+          "bateCerto": true,
+          "erro": null
+        },
+        {
+          "indice": 9,
+          "nome": "Ilha da Graciosa",
+          "hrefEsperado": "/distritos/ilha-da-graciosa",
+          "urlFinal": "http://127.0.0.1:4771/distritos/ilha-da-graciosa/",
+          "bateCerto": true,
+          "erro": null
+        },
+        {
+          "indice": 22,
+          "nome": "Porto",
+          "hrefEsperado": "/distritos/porto",
+          "urlFinal": "http://127.0.0.1:4771/distritos/porto/",
+          "bateCerto": true,
+          "erro": null
+        }
+      ],
+      "falhas": 0
+    }
+  },
+  "m4_distritos": {
+    "porAlvo": {
+      "Lisboa": {
+        "pt": {
+          "390": {
+            "areasCount": 16,
+            "esperadoConcelhos": 16,
+            "areasHrefOk": true,
+            "ariaLinksSemNome": 0,
+            "ariaLinksNaoLink": 0,
+            "listaCount": 16,
+            "listaMesmoConjunto": true,
+            "listaMesmaOrdemQueJSON": true,
+            "listaMesmaOrdemQueSVG": true,
+            "abaixo44Count": 1,
+            "abaixo44": [
+              {
+                "nome": "Amadora",
+                "href": "/municipios/amadora",
+                "box": {
+                  "x": 133.82244873046875,
+                  "y": 637.0162353515625,
+                  "width": 33.091033935546875,
+                  "height": 47.3896484375
+                }
+              }
+            ],
+            "centroForaDaFormaCount": 0,
+            "centroForaDaForma": [],
+            "svgRole": "group"
+          },
+          "1280": {
+            "areasCount": 16,
+            "esperadoConcelhos": 16,
+            "areasHrefOk": true,
+            "ariaLinksSemNome": 0,
+            "ariaLinksNaoLink": 0,
+            "listaCount": 16,
+            "listaMesmoConjunto": true,
+            "listaMesmaOrdemQueJSON": true,
+            "listaMesmaOrdemQueSVG": true,
+            "abaixo44Count": 0,
+            "abaixo44": [],
+            "centroForaDaFormaCount": 0,
+            "centroForaDaForma": [],
+            "svgRole": "group",
+            "listaOrdem": [
+              "Alenquer →",
+              "Arruda dos Vinhos →",
+              "Azambuja →",
+              "Cadaval →",
+              "Cascais →",
+              "Lisboa →",
+              "Loures →",
+              "Lourinhã →",
+              "Mafra →",
+              "Oeiras →",
+              "Sintra →",
+              "Sobral de Monte Agraço →",
+              "Torres Vedras →",
+              "Vila Franca de Xira →",
+              "Amadora →",
+              "Odivelas →"
+            ],
+            "jsonOrdem": [
+              "Alenquer",
+              "Arruda dos Vinhos",
+              "Azambuja",
+              "Cadaval",
+              "Cascais",
+              "Lisboa",
+              "Loures",
+              "Lourinhã",
+              "Mafra",
+              "Oeiras",
+              "Sintra",
+              "Sobral de Monte Agraço",
+              "Torres Vedras",
+              "Vila Franca de Xira",
+              "Amadora",
+              "Odivelas"
+            ]
+          }
+        },
+        "en": {
+          "390": {
+            "areasCount": 16,
+            "esperadoConcelhos": 16,
+            "areasHrefOk": true,
+            "ariaLinksSemNome": 0,
+            "ariaLinksNaoLink": 0,
+            "listaCount": 16,
+            "listaMesmoConjunto": true,
+            "listaMesmaOrdemQueJSON": true,
+            "listaMesmaOrdemQueSVG": true,
+            "abaixo44Count": 1,
+            "abaixo44": [
+              {
+                "nome": "Amadora",
+                "href": "/en/municipalities/amadora",
+                "box": {
+                  "x": 133.82244873046875,
+                  "y": 637.0162353515625,
+                  "width": 33.091033935546875,
+                  "height": 47.3896484375
+                }
+              }
+            ],
+            "centroForaDaFormaCount": 0,
+            "centroForaDaForma": [],
+            "svgRole": "group"
+          },
+          "1280": {
+            "areasCount": 16,
+            "esperadoConcelhos": 16,
+            "areasHrefOk": true,
+            "ariaLinksSemNome": 0,
+            "ariaLinksNaoLink": 0,
+            "listaCount": 16,
+            "listaMesmoConjunto": true,
+            "listaMesmaOrdemQueJSON": true,
+            "listaMesmaOrdemQueSVG": true,
+            "abaixo44Count": 0,
+            "abaixo44": [],
+            "centroForaDaFormaCount": 0,
+            "centroForaDaForma": [],
+            "svgRole": "group",
+            "listaOrdem": [
+              "Alenquer →",
+              "Arruda dos Vinhos →",
+              "Azambuja →",
+              "Cadaval →",
+              "Cascais →",
+              "Lisboa →",
+              "Loures →",
+              "Lourinhã →",
+              "Mafra →",
+              "Oeiras →",
+              "Sintra →",
+              "Sobral de Monte Agraço →",
+              "Torres Vedras →",
+              "Vila Franca de Xira →",
+              "Amadora →",
+              "Odivelas →"
+            ],
+            "jsonOrdem": [
+              "Alenquer",
+              "Arruda dos Vinhos",
+              "Azambuja",
+              "Cadaval",
+              "Cascais",
+              "Lisboa",
+              "Loures",
+              "Lourinhã",
+              "Mafra",
+              "Oeiras",
+              "Sintra",
+              "Sobral de Monte Agraço",
+              "Torres Vedras",
+              "Vila Franca de Xira",
+              "Amadora",
+              "Odivelas"
+            ]
+          }
+        }
+      },
+      "Ilha de São Miguel": {
+        "pt": {
+          "390": {
+            "areasCount": 6,
+            "esperadoConcelhos": 6,
+            "areasHrefOk": true,
+            "ariaLinksSemNome": 0,
+            "ariaLinksNaoLink": 0,
+            "listaCount": 6,
+            "listaMesmoConjunto": true,
+            "listaMesmaOrdemQueJSON": true,
+            "listaMesmaOrdemQueSVG": true,
+            "abaixo44Count": 0,
+            "abaixo44": [],
+            "centroForaDaFormaCount": 0,
+            "centroForaDaForma": [],
+            "svgRole": "group"
+          },
+          "1280": {
+            "areasCount": 6,
+            "esperadoConcelhos": 6,
+            "areasHrefOk": true,
+            "ariaLinksSemNome": 0,
+            "ariaLinksNaoLink": 0,
+            "listaCount": 6,
+            "listaMesmoConjunto": true,
+            "listaMesmaOrdemQueJSON": true,
+            "listaMesmaOrdemQueSVG": true,
+            "abaixo44Count": 0,
+            "abaixo44": [],
+            "centroForaDaFormaCount": 0,
+            "centroForaDaForma": [],
+            "svgRole": "group",
+            "listaOrdem": [
+              "Lagoa →",
+              "Nordeste →",
+              "Ponta Delgada →",
+              "Povoação →",
+              "Ribeira Grande →",
+              "Vila Franca do Campo →"
+            ],
+            "jsonOrdem": [
+              "Lagoa",
+              "Nordeste",
+              "Ponta Delgada",
+              "Povoação",
+              "Ribeira Grande",
+              "Vila Franca do Campo"
+            ]
+          }
+        },
+        "en": {
+          "390": {
+            "areasCount": 6,
+            "esperadoConcelhos": 6,
+            "areasHrefOk": true,
+            "ariaLinksSemNome": 0,
+            "ariaLinksNaoLink": 0,
+            "listaCount": 6,
+            "listaMesmoConjunto": true,
+            "listaMesmaOrdemQueJSON": true,
+            "listaMesmaOrdemQueSVG": true,
+            "abaixo44Count": 0,
+            "abaixo44": [],
+            "centroForaDaFormaCount": 0,
+            "centroForaDaForma": [],
+            "svgRole": "group"
+          },
+          "1280": {
+            "areasCount": 6,
+            "esperadoConcelhos": 6,
+            "areasHrefOk": true,
+            "ariaLinksSemNome": 0,
+            "ariaLinksNaoLink": 0,
+            "listaCount": 6,
+            "listaMesmoConjunto": true,
+            "listaMesmaOrdemQueJSON": true,
+            "listaMesmaOrdemQueSVG": true,
+            "abaixo44Count": 0,
+            "abaixo44": [],
+            "centroForaDaFormaCount": 0,
+            "centroForaDaForma": [],
+            "svgRole": "group",
+            "listaOrdem": [
+              "Lagoa →",
+              "Nordeste →",
+              "Ponta Delgada →",
+              "Povoação →",
+              "Ribeira Grande →",
+              "Vila Franca do Campo →"
+            ],
+            "jsonOrdem": [
+              "Lagoa",
+              "Nordeste",
+              "Ponta Delgada",
+              "Povoação",
+              "Ribeira Grande",
+              "Vila Franca do Campo"
+            ]
+          }
+        }
+      }
+    },
+    "cliques": [
+      {
+        "distrito": "Lisboa",
+        "viewport": "1280",
+        "nome": "Sintra",
+        "hrefEsperado": "/municipios/sintra",
+        "urlFinal": "http://127.0.0.1:4771/municipios/sintra/",
+        "bateCerto": true,
+        "erro": null
+      },
+      {
+        "distrito": "Ilha de São Miguel",
+        "viewport": "1280",
+        "nome": "Ribeira Grande",
+        "hrefEsperado": "/municipios/ribeira-grande",
+        "urlFinal": "http://127.0.0.1:4771/municipios/ribeira-grande/",
+        "bateCerto": true,
+        "erro": null
+      },
+      {
+        "distrito": "Lisboa",
+        "viewport": "390",
+        "nome": "Azambuja",
+        "hrefEsperado": "/municipios/azambuja",
+        "urlFinal": "http://127.0.0.1:4771/municipios/azambuja/",
+        "bateCerto": true,
+        "erro": null
+      },
+      {
+        "distrito": "Ilha de São Miguel",
+        "viewport": "390",
+        "nome": "Lagoa",
+        "hrefEsperado": "/municipios/lagoa-ilha-de-sao-miguel",
+        "urlFinal": "http://127.0.0.1:4771/municipios/lagoa-ilha-de-sao-miguel/",
+        "bateCerto": true,
+        "erro": null
+      },
+      {
+        "distrito": "Lisboa",
+        "viewport": "1280",
+        "nome": "Sobral de Monte Agraço",
+        "hrefEsperado": "/municipios/sobral-de-monte-agraco",
+        "urlFinal": "http://127.0.0.1:4771/municipios/sobral-de-monte-agraco/",
+        "bateCerto": true,
+        "erro": null
+      },
+      {
+        "distrito": "Ilha de São Miguel",
+        "viewport": "1280",
+        "nome": "Vila Franca do Campo",
+        "hrefEsperado": "/municipios/vila-franca-do-campo",
+        "urlFinal": "http://127.0.0.1:4771/municipios/vila-franca-do-campo/",
+        "bateCerto": true,
+        "erro": null
+      },
+      {
+        "distrito": "Lisboa",
+        "viewport": "390",
+        "nome": "Lisboa",
+        "hrefEsperado": "/municipios/lisboa",
+        "urlFinal": "http://127.0.0.1:4771/municipios/lisboa/",
+        "bateCerto": true,
+        "erro": null
+      },
+      {
+        "distrito": "Ilha de São Miguel",
+        "viewport": "390",
+        "nome": "Ribeira Grande",
+        "hrefEsperado": "/municipios/ribeira-grande",
+        "urlFinal": "http://127.0.0.1:4771/municipios/ribeira-grande/",
+        "bateCerto": true,
+        "erro": null
+      },
+      {
+        "distrito": "Lisboa",
+        "viewport": "1280",
+        "nome": "Mafra",
+        "hrefEsperado": "/municipios/mafra",
+        "urlFinal": "http://127.0.0.1:4771/municipios/mafra/",
+        "bateCerto": true,
+        "erro": null
+      },
+      {
+        "distrito": "Ilha de São Miguel",
+        "viewport": "1280",
+        "nome": "Nordeste",
+        "hrefEsperado": "/municipios/nordeste",
+        "urlFinal": "http://127.0.0.1:4771/municipios/nordeste/",
+        "bateCerto": true,
+        "erro": null
+      }
+    ],
+    "falhasCliques": 0
+  },
+  "m5_pesos": {
+    "primeiraPagina": {
+      "antesBytes": 193014,
+      "antesStatus": 200,
+      "depoisBytes": 161460,
+      "depoisStatus": 200
+    },
+    "paginaDistrito": {
+      "antesBytes": null,
+      "antesStatus": 404,
+      "depoisBytes": 34654,
+      "depoisStatus": 200
+    },
+    "paisJsonBytes": 34806,
+    "maiorPorBytes": {
+      "slug": "viseu",
+      "nome": "Viseu",
+      "concelhos": 24,
+      "bytes": 24245
+    },
+    "maiorPorConcelhos": {
+      "slug": "viseu",
+      "nome": "Viseu",
+      "concelhos": 24,
+      "bytes": 24245
+    },
+    "todos": [
+      {
+        "slug": "viseu",
+        "nome": "Viseu",
+        "concelhos": 24,
+        "bytes": 24245
+      },
+      {
+        "slug": "lisboa",
+        "nome": "Lisboa",
+        "concelhos": 16,
+        "bytes": 23659
+      },
+      {
+        "slug": "santarem",
+        "nome": "Santarém",
+        "concelhos": 21,
+        "bytes": 22145
+      },
+      {
+        "slug": "faro",
+        "nome": "Faro",
+        "concelhos": 16,
+        "bytes": 20231
+      },
+      {
+        "slug": "vila-real",
+        "nome": "Vila Real",
+        "concelhos": 14,
+        "bytes": 19228
+      },
+      {
+        "slug": "beja",
+        "nome": "Beja",
+        "concelhos": 14,
+        "bytes": 19002
+      },
+      {
+        "slug": "coimbra",
+        "nome": "Coimbra",
+        "concelhos": 17,
+        "bytes": 18394
+      },
+      {
+        "slug": "porto",
+        "nome": "Porto",
+        "concelhos": 18,
+        "bytes": 18380
+      },
+      {
+        "slug": "evora",
+        "nome": "Évora",
+        "concelhos": 14,
+        "bytes": 18204
+      },
+      {
+        "slug": "portalegre",
+        "nome": "Portalegre",
+        "concelhos": 15,
+        "bytes": 17647
+      },
+      {
+        "slug": "braganca",
+        "nome": "Bragança",
+        "concelhos": 12,
+        "bytes": 17620
+      },
+      {
+        "slug": "castelo-branco",
+        "nome": "Castelo Branco",
+        "concelhos": 11,
+        "bytes": 17199
+      },
+      {
+        "slug": "guarda",
+        "nome": "Guarda",
+        "concelhos": 14,
+        "bytes": 17014
+      },
+      {
+        "slug": "aveiro",
+        "nome": "Aveiro",
+        "concelhos": 19,
+        "bytes": 16749
+      },
+      {
+        "slug": "leiria",
+        "nome": "Leiria",
+        "concelhos": 16,
+        "bytes": 14784
+      },
+      {
+        "slug": "setubal",
+        "nome": "Setúbal",
+        "concelhos": 13,
+        "bytes": 14542
+      },
+      {
+        "slug": "braga",
+        "nome": "Braga",
+        "concelhos": 14,
+        "bytes": 14265
+      },
+      {
+        "slug": "ilha-de-porto-santo",
+        "nome": "Ilha de Porto Santo",
+        "concelhos": 1,
+        "bytes": 13121
+      },
+      {
+        "slug": "viana-do-castelo",
+        "nome": "Viana do Castelo",
+        "concelhos": 10,
+        "bytes": 10969
+      },
+      {
+        "slug": "ilha-de-sao-miguel",
+        "nome": "Ilha de São Miguel",
+        "concelhos": 6,
+        "bytes": 9596
+      },
+      {
+        "slug": "ilha-terceira",
+        "nome": "Ilha Terceira",
+        "concelhos": 2,
+        "bytes": 7432
+      },
+      {
+        "slug": "ilha-de-santa-maria",
+        "nome": "Ilha de Santa Maria",
+        "concelhos": 1,
+        "bytes": 7346
+      },
+      {
+        "slug": "ilha-das-flores",
+        "nome": "Ilha das Flores",
+        "concelhos": 2,
+        "bytes": 6558
+      },
+      {
+        "slug": "ilha-do-pico",
+        "nome": "Ilha do Pico",
+        "concelhos": 3,
+        "bytes": 6028
+      },
+      {
+        "slug": "ilha-do-faial",
+        "nome": "Ilha do Faial",
+        "concelhos": 1,
+        "bytes": 4398
+      },
+      {
+        "slug": "ilha-da-graciosa",
+        "nome": "Ilha da Graciosa",
+        "concelhos": 1,
+        "bytes": 4323
+      },
+      {
+        "slug": "ilha-da-madeira",
+        "nome": "Ilha da Madeira",
+        "concelhos": 10,
+        "bytes": 4150
+      },
+      {
+        "slug": "ilha-do-corvo",
+        "nome": "Ilha do Corvo",
+        "concelhos": 1,
+        "bytes": 3694
+      },
+      {
+        "slug": "ilha-de-sao-jorge",
+        "nome": "Ilha de São Jorge",
+        "concelhos": 2,
+        "bytes": 3691
+      }
+    ]
+  },
+  "m6_neutralidade": {
+    "Aveiro": {
+      "totalPropriedades": 478,
+      "diffHoverA": [
+        [
+          "text-decoration",
+          "rgb(127, 134, 129)",
+          "none"
+        ],
+        [
+          "text-decoration-color",
+          "rgb(127, 134, 129)",
+          "rgb(23, 25, 27)"
+        ]
+      ],
+      "diffHoverPath": [
+        [
+          "stroke-width",
+          "1px",
+          "3px"
+        ]
+      ],
+      "diffFocusA": [
+        [
+          "border-bottom-left-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "border-bottom-right-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "border-end-end-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "border-end-start-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "border-start-end-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "border-start-start-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "border-top-left-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "border-top-right-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "outline-offset",
+          "0px",
+          "3px"
+        ]
+      ],
+      "diffFocusPath": [
+        [
+          "stroke-width",
+          "1px",
+          "3px"
+        ]
+      ],
+      "hoverSoContorno": false,
+      "focusSoContorno": false
+    },
+    "Ilha de São Jorge": {
+      "totalPropriedades": 478,
+      "diffHoverA": [
+        [
+          "text-decoration",
+          "rgb(127, 134, 129)",
+          "none"
+        ],
+        [
+          "text-decoration-color",
+          "rgb(127, 134, 129)",
+          "rgb(23, 25, 27)"
+        ]
+      ],
+      "diffHoverPath": [
+        [
+          "stroke-width",
+          "1px",
+          "3px"
+        ]
+      ],
+      "diffFocusA": [
+        [
+          "border-bottom-left-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "border-bottom-right-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "border-end-end-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "border-end-start-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "border-start-end-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "border-start-start-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "border-top-left-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "border-top-right-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "outline-offset",
+          "0px",
+          "3px"
+        ]
+      ],
+      "diffFocusPath": [
+        [
+          "stroke-width",
+          "1px",
+          "3px"
+        ]
+      ],
+      "hoverSoContorno": false,
+      "focusSoContorno": false
+    },
+    "Évora": {
+      "totalPropriedades": 478,
+      "diffHoverA": [
+        [
+          "text-decoration",
+          "rgb(127, 134, 129)",
+          "none"
+        ],
+        [
+          "text-decoration-color",
+          "rgb(127, 134, 129)",
+          "rgb(23, 25, 27)"
+        ]
+      ],
+      "diffHoverPath": [
+        [
+          "stroke-width",
+          "1px",
+          "3px"
+        ]
+      ],
+      "diffFocusA": [
+        [
+          "border-bottom-left-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "border-bottom-right-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "border-end-end-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "border-end-start-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "border-start-end-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "border-start-start-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "border-top-left-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "border-top-right-radius",
+          "0px",
+          "2px"
+        ],
+        [
+          "outline-offset",
+          "0px",
+          "3px"
+        ]
+      ],
+      "diffFocusPath": [
+        [
+          "stroke-width",
+          "1px",
+          "3px"
+        ]
+      ],
+      "hoverSoContorno": false,
+      "focusSoContorno": false
+    }
+  },
+  "m7_municipios": {
+    "antesBytes": 98241,
+    "depoisBytes": 106634,
+    "diferenca": 8393,
+    "totalHunks": 337,
+    "padroes": [
+      {
+        "padrao": "<li class=\"X\" data-normal=\"X\" data-tem-pagina=\"X\"> => <li class=\"X\" data-normal=\"X\" data-caop=\"X\" data-tem-pagina=\"X\">",
+        "ocorrencias": 308,
+        "exemploAntes": [
+          "<li class=\"pesquisa-item\" data-normal=\"agueda\" data-tem-pagina=\"sim\">"
+        ],
+        "exemploDepois": [
+          "<li class=\"pesquisa-item\" data-normal=\"agueda\" data-caop=\"agueda\" data-tem-pagina=\"sim\">"
+        ]
+      },
+      {
+        "padrao": "<h2 class=\"X\">X</h2> => <h2 class=\"X\">\\n<a href=\"X\">X</a>\\n</h2>",
+        "ocorrencias": 29,
+        "exemploAntes": [
+          "<h2 class=\"concelhos-grupo-k\">Aveiro</h2>"
+        ],
+        "exemploDepois": [
+          "<h2 class=\"concelhos-grupo-k\">",
+          "<a href=\"/distritos/aveiro\">Aveiro →</a>",
+          "</h2>"
+        ]
+      }
+    ],
+    "padraoLigacaoHeaderOcorrencias": 29,
+    "padraoDataCaopOcorrencias": 308,
+    "outrosPadroes": []
+  },
+  "m8_localizador": {
+    "antesBytes": 119151,
+    "depoisBytes": 119190,
+    "diferenca": 39,
+    "hunks": [
+      {
+        "header": "29c29",
+        "before": [
+          "<link rel=\"stylesheet\" href=\"/_astro/inicio.CYmXWYkV.css\">"
+        ],
+        "after": [
+          "<link rel=\"stylesheet\" href=\"/_astro/inicio.8F06KnSY.css\">"
+        ]
+      },
+      {
+        "header": "1227c1227",
+        "before": [
+          "<svg class=\"mapa-svg\" viewBox=\"0 0 600 790\" role=\"img\" aria-label=\"Mapa de pontos dos municípios de Portugal.\" data-mapa>"
+        ],
+        "after": [
+          "<svg class=\"mapa-svg\" viewBox=\"0 0 600 790\" class=\"mapa-svg\" viewBox=\"0 0 600 790\" role=\"img\" aria-label=\"Mapa de pontos dos municípios de Portugal.\" data-mapa>"
+        ]
+      }
+    ],
+    "defeitoAtributoDuplicado": {
+      "totalPaginasAfectadas": 616,
+      "amostra": [
+        "dist/municipios/abrantes/index.html",
+        "dist/municipios/agueda/index.html",
+        "dist/municipios/aguiar-da-beira/index.html",
+        "dist/municipios/alandroal/index.html",
+        "dist/municipios/albergaria-a-velha/index.html"
+      ]
+    }
+  },
+  "m9_regua": {
+    "exitCode": 0,
+    "totalLinhasRotasNovas": 60,
+    "semClassificar": [],
+    "comAutorreferencia": [],
+    "semMarcadoresDeFalha": true,
+    "outputBytes": 186097
+  }
+}

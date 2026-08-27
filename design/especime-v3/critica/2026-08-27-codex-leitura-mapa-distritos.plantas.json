@@ -1,0 +1,33 @@
+{
+ "registado_em": "2026-08-27",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "paginas/distritos-aveiro.html",
+   "descricao": "Águeda removed from Aveiro's district page (its area and its list entry)",
+   "sha256_antes": "095946ae2cad2f2576e87ea3094627074142ecd773fce75a11a2c42d8044482f",
+   "sha256_depois": "3b8ca77714aac1414229bc811c7cb5d37afd8c1929d611b1175ec38eb0a65ee5"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "paginas/inicio.html",
+   "descricao": "one area of the front-page map painted with a status colour (fill #e0a21a)",
+   "sha256_antes": "721447b961fdfcb944352cab0399826cfff83fa5b68d237f696da8bcc5b41548",
+   "sha256_depois": "9642f354c99ef9070d45559e286e442353e29d664454988e3c8bd763035b35d6"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "paginas/distritos-lisboa.html",
+   "descricao": "a diligence sentence inserted on Lisboa's district page",
+   "sha256_antes": "50ce0c6402527dd0b5b1459cbdce48d044e27d827ef2bbe0c59ea540c9ddff3f",
+   "sha256_depois": "e908f750e744e8d54b88f255fa7a4a9ef183a0700b554b5b6af9760dcf15b3c9"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "mapa/distritos/aveiro.json",
+   "descricao": "a municipality name misspelled in Aveiro's JSON (Ílhavo → Ílhava)",
+   "sha256_antes": "00ed55b1bf9510a211dcd2699bc7e206f49349a6b5188536385257bab84b4277",
+   "sha256_depois": "5897762fa434da0a315900238c92ea0390aafcc99e7f0daac5dea2d78e9535d7"
+  }
+ ]
+}
