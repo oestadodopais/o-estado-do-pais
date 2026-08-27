@@ -591,14 +591,20 @@ console.log('');
     construidas.set(`/livro-razao/concelhos/${e.name}`, (html.match(/class="livro-item"/g) ?? []).length);
   }
   const somaDasLinhas = [...construidas.values()].reduce((a, b) => a + b, 0);
-  const chaves = ['concelhos_linhas', 'concelhos_no_livro', 'concelhos_linhas_completas'];
+  /* DUAS CHAVES, E ERAM TRÊS (diretor, 27.08.2026; DECISIONS §1.70).
+     «2417 com proveniência completa» saiu da linha de contagens: é a
+     escrituração da casa, e as linhas por confirmar levam o seu marcador e estão
+     listadas em `/a-verificar`. A chave `concelhos_linhas_completas` fica na
+     tabela da prova e continua recontada pelo portão, que exige saber contar
+     cada chave e não que alguma página a renda. */
+  const chaves = ['concelhos_linhas', 'concelhos_no_livro'];
   const dasChaves = m.provas.filter(([k]) => chaves.includes(k));
   const declaradas = Number(dasChaves.find(([k]) => k === 'concelhos_linhas')?.[1]);
   const comLinhas = Number(dasChaves.find(([k]) => k === 'concelhos_no_livro')?.[1]);
   const semPagina = m.portas.filter((h) => !construidas.has(h));
   conta(
     'P2 · o índice dos concelhos no livro-razão, e as 308 páginas por baixo dele',
-    dasChaves.length === 3 &&
+    dasChaves.length === 2 &&
       dasChaves.every(([, , href]) => href === '/livro-razao/concelhos') &&
       m.linhas === 308 &&
       m.grupos === 29 &&

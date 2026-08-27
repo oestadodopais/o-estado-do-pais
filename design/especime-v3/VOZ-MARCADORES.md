@@ -115,7 +115,17 @@ Quatro tipos:
 * **frase** · uma frase inteira, com o marcador a que a exceção responde.
 * **registo** · uma frase que a direção quer ver listada e que **não leva
   marcador nenhum**: fica escrita para que a decisão não se perca, e a régua
-  imprime quantas são para que a lista não engorde em silêncio.
+  imprime quantas são para que a lista não engorde em silêncio. **Hoje não há
+  nenhuma**, e o tipo fica escrito porque `scripts/voz.mjs` continua a lê-lo: a
+  única que existiu eram as contagens do livro-razão, e saiu com a decisão do
+  diretor de 27.08.2026 que as tirou das páginas.
+
+**São cinco, e eram oito até 27.08.2026.** As três que saíram eram as duas ledes
+do livro-razão e o registo das suas contagens, todas com a razão «à decisão do
+diretor, 26.08». A decisão de 27.08 tirou as ledes das páginas e as contagens de
+proveniência dos índices: uma frase que já não se rende não precisa de dispensa,
+e uma dispensa que sobrevive à frase é uma porta aberta para ela voltar em
+silêncio. O `PROTOCOLO-DAS-LEITURAS.md` guarda a decisão por extenso.
 
 | tipo | marcador | pt | en | razão |
 | --- | --- | --- | --- | --- |
@@ -124,6 +134,3 @@ Quatro tipos:
 | contexto | o trabalho · the work | o trabalho conseguiu ler | the work could read | Nomeia o alcance do TRABALHO, que é um limite dos dados: a frase só vale para os mandatos que ele leu. Não é a casa a falar do seu próprio cuidado. |
 | rota | ste sítio · this site | /correcoes | /en/corrections | A política de correções é o CONTEÚDO desta página, e é a Emenda 17 que o escreve: «a frase da política vive em `/correcoes`.» A cabeça do inventário já o diz por extenso: «Nenhum bloco desta página é autorreferência, e a razão não é indulgência: é o objecto da página.» Só este marcador é dispensado; todos os outros continuam a morder aqui. |
 | frase | sta página · this page | Nesta página | On this page | O rótulo do sumário de uma página, já declarado navegação no inventário: leva a outro sítio da mesma página, e é isso que a lista chama navegação. |
-| frase | nós · we · us | Uma linha por número publicado. Cada linha guarda o valor tal como a fonte o publicou, quem o produziu, o documento e a edição, o endereço, a data em que o lemos e um excerto textual (e, quando o número é calculado por nós, a conta explicada e reavaliada a cada construção). | One row per published figure. Each row holds the value exactly as the source published it, who produced it, the document and edition, the address, the date we read it and a textual excerpt (and, when the figure is calculated by us, the sum spelled out and re-evaluated at every build). | **À decisão do diretor, 26.08.** É a lede do índice do livro-razão. A leitura estrita chama-lhe o método do sítio explicado; a casa chama-lhe o conteúdo do índice, pela mesma leitura com que a Emenda 17 pôs a política de correções em `/correcoes`. O `PROTOCOLO-DAS-LEITURAS.md` lista as três opções. |
-| frase | ste sítio · this site | Todas as afirmações publicadas neste sítio, uma linha cada: o valor tal como foi publicado, a fonte, o documento, o endereço, a data de acesso e o excerto. | Every claim published on this site, one row each: the value exactly as published, the source, the document, the address, the access date and the excerpt. | **À decisão do diretor, 26.08.** É a descrição do `<head>` do índice do livro-razão, e é a mesma frase da lede noutra forma. Decide-se com ela. |
-| registo | (nenhum) | 2552 afirmações · 325 calculadas · 2417 linhas de concelhos · 2544 de 2552 linhas com proveniência completa · 8 de 2552 linhas com campos por confirmar · 2417 linhas · 308 concelhos · 2417 com proveniência completa · 0 linhas · 0 concelhos · 0 com proveniência completa | 2552 claims · 325 calculated · 2417 municipality rows · 2544 of 2552 rows with complete provenance · 8 of 2552 rows with fields to confirm · 2417 rows · 308 municipalities · 2417 with complete provenance · 0 rows · 0 municipalities · 0 with complete provenance | **À decisão do diretor, 26.08 · sem marcador.** As contagens do livro-razão são chaves da prova, recontadas pelo portão nas duas vistas, e a `IDENTIDADE.md` §10 obriga-as a entrar por `data-prova` com porta. A leitura estrita do Codex de 26.08 chamou-lhes «contagens de diligência». **Nenhuma leva marcador da lista de cima**, e por isso esta linha não dispensa nada: fica escrita para que a decisão não se perca. |

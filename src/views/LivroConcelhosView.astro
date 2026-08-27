@@ -13,9 +13,10 @@
  *
  * Passa a haver uma página de livro-razão por concelho, e esta é o índice delas:
  * a pesquisa em cima, com o destino a ser a página de livro-razão do concelho;
- * as três contagens do conjunto, que são chaves da prova; e a lista por
- * distrito, uma linha por concelho, com a mesma ordem da Carta que o índice dos
- * 308 usa.
+ * as contagens do conjunto, que são chaves da prova; e a lista por distrito, uma
+ * linha por concelho, com a mesma ordem da Carta que o índice dos 308 usa. Eram
+ * três contagens e passam a duas a 27.08.2026: «com proveniência completa» é a
+ * escrituração da casa, e saiu com a lede.
  *
  * ---------------------------------------------------------------------------
  * A LINHA DE UM CONCELHO NÃO LEVA A SUA CONTAGEM, E A RAZÃO É A REGRA DA CASA
@@ -28,8 +29,8 @@
  * deste estudo). Nenhum dos motivos de `data-nonledger` descreve uma contagem.
  *
  * O que a lista dá é o nome e a porta; quantas linhas cada concelho tem lê-se na
- * página dele, contando-as. As três contagens do CONJUNTO ficam onde têm porta,
- * aqui em cima.
+ * página dele, contando-as. As contagens do CONJUNTO ficam onde têm porta, aqui
+ * em cima.
  */
 import Base from '../layouts/Base.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
@@ -102,7 +103,7 @@ const destinoDoConcelho = (c) =>
 
 /* A etiqueta de estado de cada linha, pela mesma regra do índice dos 308 (item
    E8): com todos os concelhos a terem linhas, «tem página» dizia o mesmo 616
-   vezes, e as três contagens em cima já dizem o estado do todo. */
+   vezes, e as contagens em cima já dizem o estado do todo. */
 const distingue = coberturaDistingue(resultados);
 ---
 
@@ -115,20 +116,19 @@ const distingue = coberturaDistingue(resultados);
   <div class="linha-cabeca">
     <span class="eyebrow">{s.livro.eyebrow}</span>
     <h1>{studyLabel(ESTUDO_DOS_CONCELHOS, lang)}</h1>
-    <p class="lede" style="margin-top:16px">{s.livroConcelhos.lede}</p>
+    {/* A LEDE SAIU, E A TERCEIRA CONTAGEM COM ELA (decisão do diretor,
+        27.08.2026). A lede dizia o que uma linha guarda, que se lê na linha; a
+        contagem dizia «2417 com proveniência completa», que é a escrituração da
+        casa. Ficam as duas que nomeiam o que a página tem: quantas linhas e
+        quantos concelhos. A chave `concelhos_linhas_completas` fica na tabela da
+        prova e continua recontada pelo portão, que exige saber contar cada chave
+        e não que alguma página a renda (§1.66 A3). */}
     <p class="livro-contas">
       <ValorDaProva chave="concelhos_linhas" item={p.concelhos_linhas} lang={lang} />
       {' '}{s.livroConcelhos.contaLinhas}
       {' · '}
       <ValorDaProva chave="concelhos_no_livro" item={p.concelhos_no_livro} lang={lang} />
       {' '}{s.livroConcelhos.contaConcelhos}
-      {' · '}
-      <ValorDaProva
-        chave="concelhos_linhas_completas"
-        item={p.concelhos_linhas_completas}
-        lang={lang}
-      />
-      {' '}{s.livroConcelhos.contaCompletas}
     </p>
 
     {/* A CAIXA CHEGA COM O SCRIPT, E SÓ COM ELE: os resultados saem do servidor

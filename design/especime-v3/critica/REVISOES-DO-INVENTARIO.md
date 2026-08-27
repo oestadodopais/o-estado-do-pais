@@ -27,6 +27,7 @@ leu **só o diff do inventário**. É essa a leitura que esta tabela regista.
 | --- | --- | --- | --- |
 | até 2026-08-26 | 429 | `design/especime-v3/critica/2026-08-26-codex-leitura-voz-inventario.md` | Codex `gpt-5.6-sol`, 26.08.2026, sobre o diff do bloco dos 308 |
 | grelha-da-voz | 36 | `design/especime-v3/critica/2026-08-27-codex-leitura-grelha-da-voz.md` | Codex `gpt-5.6-sol`, 27.08.2026, sobre o diff do bloco, os marcadores, as exceções e a página de Évora, com duas plantas (2 de 2); a segunda passagem V1 a V4 saiu dela |
+| voz-do-livro-razao | 6 | por ler | a leitura cruzada do diff faz-se antes da fusão |
 
 ## O que a entrada de «até 2026-08-26» cobre, e o que não cobre
 

@@ -185,7 +185,7 @@ const SONDA = () => {
     '.linha-excerto',
     '.linha-pedido',
     '.livro-conjunto-portas',
-    '.livro-grupo-k', /* «128 de 136 linhas com proveniência completa» é uma frase */
+    '.livro-grupo-k', /* o título de um bloco do livro-razão é uma frase */
     '.regra-prova',
     '.edicao-meta',
   ];
@@ -523,20 +523,51 @@ for (const [nome, rota] of [
 for (const edicao of ['pt', 'en']) {
   const p = await ctxM.newPage();
   await p.goto(base + ROTAS.livro[edicao], { waitUntil: 'networkidle' });
-  const livro = await p.evaluate(() => ({
-    grupos: [...document.querySelectorAll('.livro-grupo-k')].map((h) => ({
-      texto: h.textContent.replace(/\s+/g, ' ').trim(),
-      chaves: [...h.querySelectorAll('[data-prova]')].map((a) => a.getAttribute('data-prova')),
-      escritos: [...h.childNodes]
-        .filter((n) => n.nodeType === 3 && /\d/.test(n.textContent))
-        .map((n) => n.textContent.trim()),
-    })),
-  }));
+  /* AS CONTAGENS DE PROVENIÊNCIA SAÍRAM DO ÍNDICE (diretor, 27.08.2026;
+     DECISIONS §1.70). Esta célula pedia dois títulos de grupo, «2544 de 2552
+     linhas com proveniência completa» e «8 de 2552 linhas com campos por
+     confirmar», cada um com as suas duas chaves da prova. Os dois grupos saíram
+     com as suas contagens: são a escrituração da casa, e as linhas por confirmar
+     levam o seu marcador e estão listadas em `/a-verificar`.
+
+     O que a célula julga passa a ser o que ficou decidido: a linha de contagens
+     do índice é a do conteúdo (quantas afirmações, quantas calculadas, quantas
+     linhas de concelhos), sem um algarismo escrito à mão; e nenhuma contagem de
+     proveniência se rende na página, em sítio nenhum. As duas chaves que as
+     contavam, `indexaveis` e `divida`, continuam na tabela da prova e continuam
+     recontadas pelo portão, que exige saber contar cada chave e não que alguma
+     página a renda. */
+  const livro = await p.evaluate(() => {
+    const contas = document.querySelector('.livro-contas');
+    return {
+      texto: contas ? contas.textContent.replace(/\s+/g, ' ').trim() : null,
+      chaves: contas
+        ? [...contas.querySelectorAll('[data-prova]')].map((a) => a.getAttribute('data-prova'))
+        : [],
+      escritos: contas
+        ? [...contas.childNodes]
+            .filter((n) => n.nodeType === 3 && /\d/.test(n.textContent))
+            .map((n) => n.textContent.trim())
+        : [],
+      /* a página inteira, e não só a linha das contagens */
+      proveniencia: [...document.querySelectorAll('[data-prova]')]
+        .map((a) => a.getAttribute('data-prova'))
+        .filter((k) => k === 'indexaveis' || k === 'divida'),
+      grupos: [...document.querySelectorAll('.livro-grupo-k')].map((h) =>
+        h.textContent.replace(/\s+/g, ' ').trim(),
+      ),
+    };
+  });
   conta(
-    `B7 · a contagem do livro-razão tem denominador e unidade, sem um algarismo escrito à mão · ${edicao}`,
-    livro.grupos.length === 2 &&
-      livro.grupos.every((g) => g.chaves.length === 2 && g.chaves[1] === 'afirmacoes' && g.escritos.length === 0),
-    livro.grupos.map((g) => `«${g.texto}» ← ${g.chaves.join(' + ')}${g.escritos.length ? ` · ALGARISMO ESCRITO: ${g.escritos.join('|')}` : ''}`).join(' · '),
+    `B7 · o índice conta o que tem, sem um algarismo escrito à mão e sem contagem de proveniência · ${edicao}`,
+    livro.chaves.join(',') === 'afirmacoes,derivadas,concelhos_linhas' &&
+      livro.escritos.length === 0 &&
+      livro.proveniencia.length === 0 &&
+      livro.grupos.length === 0,
+    `«${livro.texto}» ← ${livro.chaves.join(' + ')}` +
+      `${livro.escritos.length ? ` · ALGARISMO ESCRITO: ${livro.escritos.join('|')}` : ''}` +
+      ` · ${livro.proveniencia.length} chave(s) de proveniência rendida(s)` +
+      ` · ${livro.grupos.length} título(s) de grupo`,
   );
   await p.close();
 
