@@ -4083,6 +4083,56 @@ a.prova-valor::after {
   min-width: 44px;
   height: 44px;
 }
+/* O MARCADOR TAMBÉM É UMA PORTA, e faltava-lhe a área (27.08.2026).
+   `[a verificar]` passou a ser `<a class="marcador">` na correção I77 de 26.08,
+   e nasceu com a caixa do seu texto: 82,5 × 18,4px no nome do presidente
+   interino de Évora, que é o alvo que a régua B10 apanhou. A técnica é a mesma
+   do selo e do valor da prova, e pela mesma razão: a caixa não cresce, o alvo
+   cresce. */
+a.marcador {
+  position: relative;
+}
+a.marcador::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  min-width: 44px;
+  height: 44px;
+}
+
+/* E DENTRO DE PROSA CORRIDA, A ÁREA É A DA PRÓPRIA LINHA, que é a mesma
+   exceção que o selo já tem: uma área de 44px numa frase passa por cima da
+   porta da linha de cima, e uma área sobreposta é pior do que um alvo pequeno.
+   Medido em `/estudos`: com os 44px, o marcador da descrição de um trabalho
+   cruzava o título do trabalho de cima por 81 × 4px. A lista é a dos blocos de
+   texto corrido onde um marcador se rende, e é a mesma que a régua B10 usa. */
+.arquivo-desc a.marcador::after,
+.arquivo-meta a.marcador::after,
+.edicao-meta a.marcador::after,
+.aparelho-nota a.marcador::after,
+.metodo-p a.marcador::after,
+.deep-v a.marcador::after,
+.leitura-frase a.marcador::after,
+.texto-artigo a.marcador::after,
+.linha-excerto a.marcador::after,
+.linha-pedido a.marcador::after,
+.linha-derivacao a.marcador::after,
+.livro-item-meta a.marcador::after,
+.log-afirmacao a.marcador::after,
+.mun-campos a.marcador::after,
+.mun-distancia-legenda a.marcador::after,
+.registo-proveniencia-linhas a.marcador::after,
+.regra-v a.marcador::after,
+.agenda-nota a.marcador::after,
+.agenda-criterio a.marcador::after {
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* A MOBÍLIA DO CABEÇALHO É A EXCEÇÃO MEDIDA, e é escrita como a do `.brief-text`
    foi: as duas leituras e as duas contagens da agenda vivem em duas linhas de
    19px, a 25px de distância uma da outra, e as áreas de 44px cruzam-se por 19px
@@ -4148,6 +4198,16 @@ a.prova-valor::after {
  * zero e as outras não: `.masthead-compact .masthead-furniture` baixa a
  * mobília para 9,5px nas páginas interiores, e a A9 não lhe tocou porque na
  * primeira página ela não existe. São 54 ocorrências, 6 por rota.
+ *
+ * A REGRA, ESCRITA A 27.08.2026, PORQUE A LISTA TINHA UM BURACO. Ela era o que
+ * fora MEDIDO naquele dia, nas rotas medidas naquele dia, e uma lista assim
+ * envelhece por dois caminhos: uma classe nova escrita depois, e uma classe
+ * antiga que só se rende numa rota que a régua não abre. Aconteceram os dois, e
+ * estão nomeados por baixo. **A lista deixa de ser o que foi medido e passa a
+ * ser o que está declarado: toda a classe destas folhas que declare corpo
+ * abaixo de 12px, e que não seja texto de desenho, tem companhia aqui.** Quem
+ * escrever a próxima declaração pequena escreve a sua linha ao lado, e a régua
+ * B10 de `tests/linha/correcoes-b.mjs` continua a ser quem apanha o esquecimento.
  *
  * O QUE NÃO ENTRA, e está medido em vez de esquecido: o texto DENTRO dos
  * desenhos (`<text>` e `<tspan>` de um `<svg>` com `viewBox`). Ali o corpo
@@ -4217,6 +4277,17 @@ a.prova-valor::after {
   .mecanismo-legenda a,
   .regra-portas,
   .regra-portas a {
+    font-size: 12px;
+  }
+  /* AS TRÊS QUE ESCAPARAM À MEDIÇÃO, e entram a 27.08.2026 pela regra escrita
+     acima. `.mun-tempo-nota-k` nasceu com o G6 de 26.08, quando os três
+     parágrafos da nota do instrumento dos mandatos saíram da dobra que os
+     escondia: a 25.08 aquele texto não se rendia, e por isso não podia ter sido
+     medido. `.prov-study` e `.prov-vals` rendem-se em `/municipios` e em
+     `/livro-razao/concelhos`, que não são nenhuma das nove rotas desta lista. */
+  .mun-tempo-nota-k,
+  .prov-study,
+  .prov-vals {
     font-size: 12px;
   }
   /* as correções */
