@@ -1,0 +1,122 @@
+---
+/**
+ * A PÁGINA DE UMA REGIÃO: `/regioes/<slug>` e `/en/regions/<slug>`.
+ *
+ * ---------------------------------------------------------------------------
+ * O QUE A EMENDA 21 PEDE, E ONDE CADA COISA ESTÁ
+ * ---------------------------------------------------------------------------
+ * «(d) Uma região não tem mapa de pontos nem de áreas; tem a régua, os seus
+ * valores com os selos, e a leitura do trabalho regional onde existe.»
+ *
+ *   · a cabeça — o nome (declarado como lugar) e o tipo, «região NUTS II», que é
+ *     o que a coisa é e não o que fizemos com ela (Emenda 18b);
+ *   · a régua completa, com esta região distinguida SÓ pelo contorno (Emendas 10
+ *     e 21c). É a mesma régua do índice, com a mesma lista e as mesmas barras: o
+ *     que muda é um atributo, e o instrumento é um só;
+ *   · as peças da região — o índice e a distância, cada uma com o seu selo;
+ *   · a leitura do trabalho regional, que é a frase da região, dentro da camada
+ *     de leitura breve do instrumento (é lá que ela vive, ao pé do valor que
+ *     cita);
+ *   · as portas.
+ *
+ * ---------------------------------------------------------------------------
+ * A DISPOSIÇÃO É A C · INSTRUMENTO (IDENTIDADE §3), COMO A DO ÍNDICE
+ * ---------------------------------------------------------------------------
+ * A página é a régua e a sua cabeça; o aparelho de cada valor é o seu selo, e
+ * não uma segunda coluna. Nenhuma quarta disposição.
+ *
+ * ---------------------------------------------------------------------------
+ * NENHUMA DISTÂNCIA NOVA NAS PEÇAS (IDENTIDADE §11)
+ * ---------------------------------------------------------------------------
+ * «Nenhuma distância nova. O desenho de distância vive no instrumento, onde há
+ * uma escala partilhada, e não nas células.» As duas peças desta página levam o
+ * valor, a unidade e o selo, e nenhuma leva régua: a distância desta região está
+ * desenhada na sua linha da régua, à escala que todas as regiões partilham.
+ *
+ * A DISTÂNCIA É UMA LINHA DERIVADA, e não uma subtracção feita aqui: tem id,
+ * conta registada e selo, como qualquer outro valor do livro-razão.
+ */
+import Base from '../layouts/Base.astro';
+import InstrumentoConvergencia from '../components/InstrumentoConvergencia.astro';
+import Peca from '../components/inicio/Peca.astro';
+import { regiaoDoSlug } from '../lib/regioes.mjs';
+import { getClaim } from '../lib/ledger.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+import '../styles/regiao.css';
+
+const { lang = 'pt', slug } = Astro.props;
+const s = t(lang);
+
+const regiao = regiaoDoSlug(slug);
+if (!regiao) throw new Error(`regioes: região desconhecida ou sem linhas "${slug}"`);
+
+const path = routePath('regiao', lang, { slug });
+const nome = regiao.nome[lang];
+const indice = getClaim(regiao.valor);
+---
+
+<Base
+  lang={lang}
+  path={path}
+  title={`${nome} · ${s.regioes.metaCauda}`}
+  description={`${s.regioes.metaDescricaoA}${nome}${s.regioes.metaDescricaoB}`}
+>
+  <div class="regiao-cabeca">
+    <span class="eyebrow">{s.regioes.eyebrow}</span>
+    {/* O nome vai declarado como lugar, pela mesma razão das 29 unidades e dos
+        308 concelhos: é o nome da coisa de que a página trata, transcrito, e não
+        prosa da casa. Sem isto o inventário ganhava uma entrada por região. */}
+    <h1 data-lugar>{nome}</h1>
+    <p class="regiao-tipo">{s.regioes.tipo}</p>
+  </div>
+
+  <section class="regiao-instr" id="regua" aria-labelledby="regua-k">
+    <h2 class="regiao-instr-k" id="regua-k">{s.home.instr1.h2}</h2>
+    <InstrumentoConvergencia lang={lang} distinguida={slug} />
+  </section>
+
+  {/* ------------------------------------------------------------------------
+      AS PEÇAS DA REGIÃO · as que a região tiver
+      ------------------------------------------------------------------------
+      Hoje são duas, e as duas saem da entrada da região no ficheiro de dados: o
+      índice e a distância. Uma região que traga mais linhas traz mais peças pelo
+      mesmo caminho, porque a lista sai da entrada e não de um gabarito escrito à
+      mão. Nenhuma leva estado nem cor: não há limiar publicado numa média
+      (Emenda 1), e o que a régua desenha é a posição, não um juízo.
+      ---------------------------------------------------------------------- */}
+  <section class="regiao-pecas" id="pecas" aria-labelledby="pecas-k">
+    <h2 class="regiao-instr-k" id="pecas-k">{s.regioes.pecasK}</h2>
+    <div class="painel">
+      <Peca
+        s={s}
+        lang={lang}
+        id={regiao.valor}
+        nome={s.regioes.indiceK}
+        medida={[
+          { nl: s.home.instr1.glanceUnidade, motivo: 'escala-de-instrumento' },
+          ' · ',
+          { ref: indice.reference_date },
+        ]}
+        estado="sem"
+      />
+      <Peca
+        s={s}
+        lang={lang}
+        id={regiao.distancia}
+        nome={s.regioes.distanciaK}
+        medida={[
+          s.regioes.distanciaUnidade,
+          ' · ',
+          { ref: getClaim(regiao.distancia).reference_date },
+        ]}
+        estado="sem"
+      />
+    </div>
+  </section>
+
+  <p class="rodape-nav regiao-portas">
+    <a href={routePath('regioes', lang)}>{s.regioes.voltarIndice}</a>
+    <a href={routePath('home', lang)}>{s.regioes.voltarPais}</a>
+  </p>
+</Base>

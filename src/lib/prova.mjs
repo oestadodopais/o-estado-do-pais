@@ -60,6 +60,7 @@ import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
 import { contagensDosConcelhos } from './livro-concelhos.mjs';
 import { MUNICIPIOS } from '../data/caop-centroids.mjs';
 import { unidadesDoMapa, distritoDoMapa } from './mapa.mjs';
+import { contagensDasRegioes } from './regioes.mjs';
 import { VERIFICACAO } from '../data/verificacao.mjs';
 import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
 
@@ -477,6 +478,17 @@ const FRASES = {
     pt: 'unidades da Carta Administrativa: os distritos e as ilhas',
     en: 'units of the official administrative map: the districts and the islands',
   },
+  /* AS DUAS CONTAGENS DAS REGIÕES (Emenda 21, 27.08.2026). Hoje são iguais, e é
+     por isso que são duas: no dia em que o motor declarar uma região antes de a
+     linha atravessar, a diferença entre elas é a resposta certa e vê-se. */
+  regioes_total: {
+    pt: 'regiões declaradas na lista das regiões',
+    en: 'regions declared in the regions list',
+  },
+  regioes_com_linha: {
+    pt: 'regiões com linhas publicadas no livro-razão',
+    en: 'regions with rows published in the ledger',
+  },
 };
 
 /* ---------------------------------------------------------------------------
@@ -653,6 +665,22 @@ export function prova(lang = 'pt') {
        IDENTIDADE §10 permite e o que a agenda já faz: quando o que o número
        conta se vê ali mesmo, o destino é a secção que o mostra. */
     mapa_unidades: k('mapa_unidades', unidadesDoMapa().length, `${routePath('distritos', lang)}#unidades`),
+
+    /* ---- as regiões (Emenda 21, 27.08.2026) ----
+       `declaradas` conta as entradas da lista de dados que não são a referência;
+       `comLinha` conta as que têm as duas afirmações publicadas. O portão reconta
+       a segunda pelas PÁGINAS construídas, que é o outro ponto de observação:
+       uma região sem linhas que ganhasse página, ou uma região com linhas que a
+       perdesse, dá dois números diferentes e a construção fecha.
+
+       A PORTA DAS DUAS É A RÉGUA, na própria página do índice: o que elas contam
+       vê-se ali mesmo, linha a linha, e é o que a IDENTIDADE §10 permite. */
+    regioes_total: k('regioes_total', contagensDasRegioes().declaradas, `${routePath('regioes', lang)}#regua`),
+    regioes_com_linha: k(
+      'regioes_com_linha',
+      contagensDasRegioes().comLinha,
+      `${routePath('regioes', lang)}#regua`,
+    ),
     ...Object.fromEntries(
       unidadesDoMapa().map((u) => [
         CHAVE_DOS_CONCELHOS(u.slug),

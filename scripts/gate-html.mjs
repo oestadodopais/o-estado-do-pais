@@ -85,6 +85,11 @@ import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
    pares (concelho, unidade) que o sítio já tem em `caop-centroids.mjs`, e a
    função de slug da casa. Duas contas da mesma coisa, cada uma de um sítio. */
 import { MUNICIPIOS, DISTRITOS } from '../src/data/caop-centroids.mjs';
+/* A lista das regiões, para a recontagem de `regioes_total`. O portão lê a lista
+   DECLARADA e conta as páginas construídas; a prova lê a lista e o livro-razão.
+   São duas contas de coisas diferentes sobre a mesma afirmação, que é o que faz
+   a comparação valer alguma coisa (a disciplina da §1.24). */
+import { REGIOES } from '../src/data/regioes.mjs';
 import { slugDeConcelho } from '../src/lib/inicio.mjs';
 import { tituloDaLinha, descricaoDaLinha } from '../src/lib/livro.mjs';
 import { matchPath, routePath, HREFLANG, LANGS, PRIMARY_LANG } from '../src/lib/routes.mjs';
@@ -2965,6 +2970,14 @@ function contasDoPortao(claims) {
        dois números diferentes e a construção fecha. A vista é `modulo` porque
        nenhuma das duas é o `dist/`: são duas leituras de dois registos. */
     conta('mapa_unidades', DISTRITOS.length, 'modulo'),
+    /* AS DUAS CHAVES DAS REGIÕES (Emenda 21, 27.08.2026). A prova conta-as na
+       lista de dados e no livro-razão; o portão conta-as noutro sítio, que é o
+       ponto todo: `regioes_total` na lista de dados menos a referência, e
+       `regioes_com_linha` nas PÁGINAS construídas. Uma região sem linhas que
+       ganhasse página, ou uma com linhas que a perdesse, dá dois números
+       diferentes e a construção fecha. */
+    conta('regioes_total', REGIOES.filter((r) => !r.referencia).length, 'modulo'),
+    conta('regioes_com_linha', (paginasPorRota.get('pt:regiao') ?? 0), 'dist'),
     ...DISTRITOS.map((nome, i) =>
       conta(
         `mapa_concelhos_${slugDeConcelho(nome)}`,

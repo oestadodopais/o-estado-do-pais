@@ -110,6 +110,31 @@ export const ROUTES = {
   distritos: { pt: '/distritos', en: '/en/districts' },
   distrito: { pt: '/distritos/:slug', en: '/en/districts/:slug' },
   /**
+   * AS REGIÕES NUTS II, E A PÁGINA DE CADA UMA (Emenda 21, 27.08.2026).
+   *
+   * «Cada região NUTS II em vigor tem a sua página, `/regioes/<slug>` na edição
+   * portuguesa e `/en/regions/<slug>` na inglesa, e `/regioes` é o índice com a
+   * régua da convergência completa.»
+   *
+   * O `:slug` é o mesmo campo que `?ambito=regiao:<slug>` usava na primeira
+   * página até esta emenda: é o `slug` de `src/data/regioes.mjs`, e continua a
+   * ser igual nas duas edições, porque o que se traduz é o rótulo e nunca a
+   * chave. Um endereço antigo com aquele estado leva a esta rota (Emenda 21b),
+   * e por isso o nome no endereço não podia mudar.
+   *
+   * SÓ EXISTEM AS PÁGINAS DAS REGIÕES COM LINHAS: o `getStaticPaths()` sai de
+   * `slugsDasRegioes()`, que lê a lista de dados e o livro-razão. Uma região que
+   * o motor declare antes de a linha atravessar não ganha endereço — «a régua
+   * nunca se completa com um número escrito à mão» (Emenda 21e), e uma página
+   * sem valores seria a mesma promessa por outra forma.
+   *
+   * PORTUGAL NÃO TEM PÁGINA AQUI. Está na régua porque é a marca contra a qual
+   * as regiões se leem, e não é uma região: `referencia: true` em
+   * `regioes.mjs`, o mesmo campo desde a etapa 2i. A página do país é `/`.
+   */
+  regioes: { pt: '/regioes', en: '/en/regions' },
+  regiao: { pt: '/regioes/:slug', en: '/en/regions/:slug' },
+  /**
    * A agenda: o que se mede agora, o que se segue, e o calendário das fontes.
    *
    * Os dois registos vêm do motor (`src/data/agenda.json` e

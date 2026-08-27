@@ -693,6 +693,52 @@ export const STRINGS = {
     },
 
     /**
+     * ------------------------------------------------------------------
+     * AS REGIÕES (Emenda 21, 27.08.2026)
+     * ------------------------------------------------------------------
+     * O índice `/regioes` e a página de cada região. Nenhuma destas cadeias
+     * traz um algarismo: a contagem entra por `data-prova` e os valores por
+     * `<Claim/>`, como em todas as outras páginas do sítio.
+     *
+     * «UE-27» ESCREVE-SE NA PROSA e não vai debaixo de `data-nonledger`: é o
+     * nome do agregado, como «CAOP 2025» é o nome de uma edição da Carta, e
+     * `significadoV` já o escreve assim desde a etapa 2.
+     *
+     * A CONTAGEM TEM DUAS FORMAS, uma e muitas, e o SERVIDOR escolhe a certa
+     * com a chave que o portão reconta. Enquanto as regiões forem as cinco de
+     * hoje só se lê a segunda; no dia em que o motor trouxer a primeira sozinha,
+     * a página não diz «1 regiões».
+     */
+    regioes: {
+      metaTitle: 'Regiões · O Estado do País',
+      metaDescription:
+        'As regiões NUTS II de Portugal, e a distância de cada uma à média da UE-27.',
+      eyebrow: 'Regiões',
+      h1: 'As regiões de Portugal',
+      lede: 'O índice de PIB per capita de cada região, em paridades de poder de compra, contra a média da UE-27.',
+      contaUma: ' região com linhas publicadas.',
+      contaMuitas: ' regiões com linhas publicadas.',
+      /* A cauda do `<head>` de uma região, composta com o nome dela, como a das
+         páginas de concelho e de distrito. */
+      metaCauda: 'região · O Estado do País',
+      metaDescricaoA: 'O índice de PIB per capita de ',
+      metaDescricaoB: ', em paridades de poder de compra, contra a média da UE-27.',
+      /* O tipo da coisa, e não o que fizemos com ela (Emenda 18b). «NUTS II» é a
+         nomenclatura da fonte, escrita como a fonte a escreve. */
+      tipo: 'região NUTS II',
+      /* Os nomes das duas peças. A distância é uma linha derivada do livro-razão,
+         com a sua conta e o seu selo, e não uma subtracção feita na página. */
+      pecasK: 'As medidas',
+      indiceK: 'Índice de PIB per capita',
+      distanciaK: 'Distância à média da UE-27',
+      /* A unidade da peça da distância. O índice traz a sua de
+         `home.instr1.glanceUnidade`, que é a mesma do instrumento. */
+      distanciaUnidade: 'pontos do índice',
+      voltarIndice: 'As regiões de Portugal',
+      voltarPais: 'Portugal',
+    },
+
+    /**
      * A primeira página não se explica antes de mostrar.
      *
      * Saíram, a 16.08.2026 (§1.39): a introdução (dizia por outras palavras o
@@ -1710,6 +1756,28 @@ export const STRINGS = {
       legendaCarta: 'Carta Administrativa Oficial de Portugal · ',
       voltarIndice: 'The districts and islands',
       voltarConcelhos: 'The municipalities of Portugal',
+    },
+
+    /** As regiões (Emenda 21). Ver a nota da edição portuguesa. */
+    regioes: {
+      metaTitle: 'Regions · O Estado do País',
+      metaDescription:
+        'The NUTS II regions of Portugal, and how far each one is from the EU-27 average.',
+      eyebrow: 'Regions',
+      h1: 'The regions of Portugal',
+      lede: 'Each region’s GDP per capita index, in purchasing power standards, against the EU-27 average.',
+      contaUma: ' region with published rows.',
+      contaMuitas: ' regions with published rows.',
+      metaCauda: 'region · O Estado do País',
+      metaDescricaoA: 'The GDP per capita index of ',
+      metaDescricaoB: ', in purchasing power standards, against the EU-27 average.',
+      tipo: 'NUTS II region',
+      pecasK: 'The measures',
+      indiceK: 'GDP per capita index',
+      distanciaK: 'Distance from the EU-27 average',
+      distanciaUnidade: 'index points',
+      voltarIndice: 'The regions of Portugal',
+      voltarPais: 'Portugal',
     },
 
     home: {

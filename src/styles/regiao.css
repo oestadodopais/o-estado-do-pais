@@ -1,0 +1,210 @@
+/* ============================================================================
+ * AS REGIÕES: O ÍNDICE, A PÁGINA DE CADA UMA, E A LISTA DA RÉGUA
+ * ============================================================================
+ * Emenda 21, 27.08.2026.
+ *
+ * A folha do INSTRUMENTO (`.instr`, `.rule-svg`, `.glance`, `.brief-text`) vive
+ * em `site.css` e entra em todas as páginas: é a mesma régua, e uma segunda
+ * cópia das suas regras aqui divergiria da primeira. O que está nesta folha é o
+ * que é destas duas páginas: a cabeça, as peças, as portas, e a LISTA da régua,
+ * que nasceu com esta emenda e não existia em lado nenhum.
+ *
+ * A lição está escrita em `distrito.css` e é a regra 15 da casa: uma folha que
+ * dá por herdadas regras que não importa desenha a preto sólido. Aqui as regras
+ * herdadas vêm todas de `site.css`, que `Base.astro` importa antes de tudo.
+ */
+
+/* ---------------------------------------------------------------- a cabeça */
+
+.regiao-cabeca {
+  padding-top: clamp(20px, 3vw, 34px);
+}
+.regiao-cabeca h1 {
+  margin-top: 12px;
+}
+.regiao-cabeca .lede {
+  margin-top: 16px;
+}
+/* A palavra que diz de que natureza é a coisa, na gramática de `.distrito-tipo`:
+   uma etiqueta, na letra de instrumento, e não uma lede. */
+.regiao-tipo {
+  margin: 8px 0 0;
+  font-family: var(--f-instr);
+  font-size: 14px;
+  color: var(--muted);
+}
+.regiao-conta {
+  margin: 10px 0 0;
+  font-family: var(--f-instr);
+  font-size: 15px;
+}
+
+/* ------------------------------------------------------------ o instrumento */
+
+.regiao-instr {
+  margin: clamp(24px, 3.4vw, 38px) 0 0;
+}
+.regiao-instr-k {
+  margin: 0 0 6px;
+  font-size: clamp(19px, 2vw, 23px);
+}
+
+/* ----------------------------------------------------------------------------
+ * O EIXO SAI NO TELEMÓVEL (Emenda 21a)
+ * ----------------------------------------------------------------------------
+ * «no computador com o eixo e no telemóvel como lista com barras … sem rótulos
+ * no eixo». Quem decide é a FOLHA, pela largura, como decide a pesquisa da
+ * primeira página: o eixo continua no documento acima de 640 e sai abaixo dele.
+ *
+ * A razão é medida e não estética: a 390 os rótulos do eixo sobrepunham-se uns
+ * aos outros no único estado em que a primeira página os mostrava (auditoria de
+ * 25.08, achado B4), e foi essa medição que tirou a régua da primeira página. A
+ * lista não tem esse problema porque não tem rótulos no eixo: tem uma linha por
+ * região, e o 100 marcado a tinta em cada uma.
+ */
+@media (max-width: 639.98px) {
+  .instr-conv .conv-eixo {
+    display: none;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * A LISTA COM BARRAS · a régua, uma linha por região
+ * ----------------------------------------------------------------------------
+ * IDENTIDADE §11, móvel: «Uma coisa por linha. O valor, o título e o selo ficam
+ * num só grupo visível, para que a porta nunca se separe do número que abre.»
+ * `.conv-cabeca` é esse grupo, e a barra fica por baixo dele, à largura toda da
+ * linha.
+ *
+ * As linhas separam-se por FIOS e não por caixas: é a forma decidida na leitura
+ * da pré-visualização n.º 1 («as peças sem caixas, separadas por fios»).
+ */
+.conv-lista-caixa {
+  margin-top: clamp(14px, 2vw, 20px);
+}
+.conv-lista-ref {
+  margin: 10px 0 6px;
+  font-family: var(--f-instr);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+.conv-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+.conv-linha {
+  padding: 12px 0 14px;
+  border-bottom: 1px solid var(--rule);
+}
+.conv-cabeca {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 14px;
+}
+.conv-nome {
+  font-family: var(--f-instr);
+  font-size: 16px;
+}
+.conv-nome a {
+  /* Uma porta com 44px de altura de alvo, como as ligações das listas do mapa.
+     O nome é a porta: separá-lo do valor punha a porta longe do número que ela
+     abre, que é o que a §11 proíbe. */
+  display: inline-block;
+  padding: 10px 0;
+  margin: -10px 0;
+}
+.conv-valor {
+  font-family: var(--f-instr);
+  font-size: 16px;
+}
+
+/* ----------------------------------------------------------------------------
+ * A BARRA · a gramática da Emenda 4, à escala de uma linha
+ * ----------------------------------------------------------------------------
+ *   · a calha, que é a escala inteira, em cinzento de fio;
+ *   · a REFERÊNCIA a tinta, à altura toda da linha, no 100;
+ *   · a BARRA, do 100 ao valor;
+ *   · o TRAÇO FINO no valor.
+ *
+ * `preserveAspectRatio="none"` estica o desenho à largura da linha e nunca à
+ * altura: o `viewBox` tem 24 unidades de alto e a caixa tem 24px, e por isso as
+ * espessuras verticais saem como estão escritas.
+ *
+ * UM SÓ ESTILO DE BARRA (Emenda 21c). Não há aqui uma variante por estatuto, por
+ * sinal, nem por região: uma barra acima do 100 e uma barra abaixo do 100 são a
+ * mesma barra, e o que as separa é de que lado da referência estão. As cores de
+ * estado da casa não entram, porque uma média não é um limiar publicado
+ * (Emenda 1).
+ */
+.conv-barra {
+  display: block;
+  width: 100%;
+  height: 24px;
+  margin-top: 8px;
+  overflow: visible;
+}
+.conv-calha {
+  stroke: var(--rule);
+  stroke-width: 1;
+}
+.conv-b {
+  fill: var(--ink);
+}
+.conv-ref {
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+.conv-v {
+  stroke: var(--ink);
+  stroke-width: 1;
+}
+
+/* ----------------------------------------------------------------------------
+ * O CONTORNO, E SÓ ELE (Emendas 10 e 21c)
+ * ----------------------------------------------------------------------------
+ * «Na página de uma região o que a distingue na régua é o contorno, e só ele.»
+ * Nem enchimento, nem cor, nem corpo maior, nem uma barra de outra espessura: um
+ * contorno à volta da linha da lista e à volta da chapa do rótulo no eixo. É a
+ * mesma decisão da Emenda 10 para os lugares escolhidos — um anel, nunca um
+ * preenchimento —, escrita para uma régua.
+ */
+.conv-linha[data-contorno='sim'] {
+  outline: 1.5px solid var(--ink);
+  outline-offset: 2px;
+}
+.rule-svg .mk[data-contorno='sim'] .mk-chapa {
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+
+/* ------------------------------------------------------------------ as peças */
+
+.regiao-pecas {
+  margin: clamp(24px, 3.4vw, 38px) 0 0;
+}
+/* A grelha do painel vive em `inicio.css`, que estas páginas não importam: as
+   duas peças de uma região arrumam-se aqui, na mesma língua de duas colunas
+   acima de 640 e uma abaixo. */
+.regiao-pecas .painel {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 1px solid var(--rule);
+}
+@media (min-width: 640px) {
+  .regiao-pecas .painel {
+    grid-template-columns: 1fr 1fr;
+    column-gap: clamp(20px, 3vw, 34px);
+  }
+}
+
+/* ----------------------------------------------------------------- as portas */
+
+.regiao-portas {
+  margin-top: clamp(22px, 3vw, 32px);
+}

@@ -1,78 +1,115 @@
 ---
 /**
- * Instrumento n.º 1 — a régua da convergência.
- *
- * Duas densidades no mesmo gráfico — Relance e Leitura breve —, e por baixo
- * delas o APARELHO: método, ressalvas e proveniência. O aparelho não é uma
- * terceira densidade, e a distinção não é de palavras: as densidades são um
- * comando com dois estados no cimo da página, e o aparelho é o que qualquer
- * instrumento leva por baixo para se poder conferir. A profundidade abre-se
- * dentro do instrumento, nunca noutra página.
- *
- * Sem JavaScript, a régua já está desenhada com Portugal em cima dela: o SVG
- * é construído no servidor. O JavaScript só acrescenta a possibilidade de pôr
- * mais regiões na mesma régua — é enriquecimento, não a condição de funcionar.
- *
- * Todos os números — o valor no relance, o valor no marcador, a distância
- * anotada — são citações do livro-razão. Os números do eixo são a régua, não
- * uma medição, e vão marcados como tal.
+ * Instrumento n.º 1 — a régua da convergência, completa.
  *
  * ---------------------------------------------------------------------------
- * V3 (etapa 2c): A TINTA, E COM O ESTADO DITO POR PALAVRAS
+ * O QUE MUDOU COM A EMENDA 21 (27.08.2026)
  * ---------------------------------------------------------------------------
- * Três literais de ficha morta saíram deste gabarito e três do seu par em
- * `public/js/convergencia.js` (ISSUES I12): a barra da distância era
- * `var(--yellow)`, que a etapa 1c aposentou, e as chapas dos rótulos eram
- * `var(--paper-2)`, que a v3 não tem. A barra passa a TINTA, que é o que a
- * Emenda 4 manda («barra = distância à referência»), e as chapas passam a
- * papel. Até aqui o desenho era salvo por seis regras de remapeamento em
- * `site.css`, escritas na etapa 1c precisamente porque esta etapa ainda não
- * tinha aberto o ficheiro; essas regras podem agora sair, e isso é um pedido ao
- * dono da folha.
+ * «`/regioes` é o índice com a régua da convergência completa: todas as regiões
+ * em vigor, o país e a referência (UE-27 = 100), no computador com o eixo e no
+ * telemóvel como lista com barras, uma linha por região, o 100 marcado, sem
+ * rótulos no eixo.»
+ *
+ * Três coisas mudam, e as três são a mesma decisão:
+ *
+ *   1. **A régua vem completa do servidor.** Até aqui o servidor desenhava uma
+ *      leitura (Portugal) e o JavaScript acrescentava as outras a pedido. Uma
+ *      régua que só está completa com script não é a régua da página das
+ *      regiões: a página tem de responder à pergunta sem script nenhum.
+ *   2. **Não há região destacada** (Emenda 21c). Saíram as pastilhas de
+ *      selecção, o estado «lida», o esbatimento das outras e a barra de
+ *      distância da leitura corrente sobre o eixo. Um só estilo de marca, um só
+ *      estilo de barra. Na página de uma região, o que a distingue é o
+ *      CONTORNO, e só ele.
+ *   3. **A barra desceu para a lista.** A gramática da Emenda 4 quer uma barra
+ *      por leitura («barra = distância à referência»), e seis barras sobre o
+ *      mesmo eixo sobrepõem-se todas, porque todas partem do 100. Cada leitura
+ *      passa a ter a sua linha, com a sua barra: no telemóvel é a régua inteira
+ *      (o eixo sai, e com ele os rótulos da escala), no computador é a lista das
+ *      portas por baixo do eixo. É a mesma lista, e não duas.
+ *
+ * A GRAMÁTICA DA EMENDA 4, ONDE ELA SE LÊ:
+ *   · referência a tinta à altura toda — a linha do 100, no eixo e em cada
+ *     linha da lista;
+ *   · barra = distância à referência — a barra de cada linha da lista;
+ *   · traço fino = valor — a haste no eixo, o traço no fim da barra;
+ *   · nenhuma barra sem referência publicada — uma região sem linhas não entra
+ *     na lista de `src/lib/regioes.mjs` e por isso não tem linha nem barra.
+ *
+ * ---------------------------------------------------------------------------
+ * AS TRÊS CAMADAS, E A QUE FALTA NO ÍNDICE (IDENTIDADE §4)
+ * ---------------------------------------------------------------------------
+ * «Todo o instrumento leva as três. … Ou ganha uma leitura breve, ou declara por
+ * escrito porque não a tem.» Aqui declara-se o contrário, e por uma razão da
+ * constituição:
+ *
+ *   · com `distinguida` (a página de uma região) o instrumento leva as duas
+ *     camadas inteiras: **Relance** é o índice daquela região, sozinho, e
+ *     **Leitura breve** é a frase daquela região com os seus selos;
+ *   · sem `distinguida` (o índice, `/regioes`) **não há Relance**. Um número
+ *     grande no cimo de uma régua completa seria uma das leituras posta acima
+ *     das outras, que é exactamente o que a Emenda 21c proíbe. A camada de
+ *     leitura breve fica, e é a lista: uma linha por região, com o seu valor,
+ *     o seu selo e a sua distância desenhada.
+ *
+ * ---------------------------------------------------------------------------
+ * TODOS OS NÚMEROS SÃO CITAÇÕES
+ * ---------------------------------------------------------------------------
+ * O valor desenhado, o valor da lista e a distância da frase são `<Claim/>`. Os
+ * números do eixo são a régua, não uma medição, e vão marcados como tal. A lista
+ * é a legenda de selos do instrumento (`data-legenda-selos`): é lá que o valor
+ * desenhado dentro do `<svg>` tem a sua porta, pela convenção do §1.34.
  */
 import { getClaim, parsePtNumber } from '../lib/ledger.mjs';
-import { REGIOES, ESCALA, GEOMETRIA } from '../data/regioes.mjs';
-import { studyLabel } from '../data/studies.mjs';
+import { ESCALA, GEOMETRIA } from '../data/regioes.mjs';
+import { leiturasDaRegua } from '../lib/regioes.mjs';
+import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import Claim from './Claim.astro';
 import Provenance from './Provenance.astro';
 import Frase from './Frase.astro';
 
-const { lang = 'pt' } = Astro.props;
+const { lang = 'pt', distinguida = null } = Astro.props;
 const s = t(lang);
 
 const { min, max, passo, rotuloAte, datum } = ESCALA;
 const { largura, altura, esquerda: RL, direita: RR, eixoY: RY, patamares } = GEOMETRIA;
 
 const X = (v) => RL + ((v - min) / (max - min)) * (RR - RL);
+/* A escala da linha da lista, no seu próprio referencial de 600 unidades. É a
+   MESMA escala do eixo (as mesmas pontas), noutra caixa: uma barra da lista e um
+   marcador do eixo dizem a mesma distância. */
+const LARGURA_BARRA = 600;
+const P = (v) => ((v - min) / (max - min)) * LARGURA_BARRA;
 
-/* --- valores, sempre a partir do livro-razão --- */
-const dados = REGIOES.map((r) => {
+/* --- as leituras, sempre a partir do livro-razão --- */
+const leituras = leiturasDaRegua();
+const dados = leituras.map((r) => {
   const valor = getClaim(r.valor);
   const distancia = getClaim(r.distancia);
-  const linha = {
+  return {
     id: r.id,
+    slug: r.slug,
+    referencia: Boolean(r.referencia),
     nome: r.nome[lang],
     sinal: r.sinal,
     valor: parsePtNumber(valor.value),
     valor_claim: r.valor,
     valor_texto: valor.value,
-    distancia: parsePtNumber(distancia.value),
+    provisorio: valor.source_flag === 'p',
     distancia_claim: r.distancia,
     distancia_texto: distancia.value,
+    frase: r.frase[lang],
+    /* A porta de uma linha da lista. A referência não tem página (Portugal não é
+       uma região), e a região da própria página não se liga a si mesma. */
+    porta:
+      r.referencia || r.slug === distinguida
+        ? null
+        : routePath('regiao', lang, { slug: r.slug }),
   };
-  if (r.valorHistorico) {
-    const hist = getClaim(r.valorHistorico);
-    linha.historico = parsePtNumber(hist.value);
-    linha.historico_claim = r.valorHistorico;
-    linha.historico_texto = hist.value;
-    linha.historico_ref = hist.reference_date;
-  }
-  return linha;
 });
 
-const predefinida = REGIOES.find((r) => r.predefinida) ?? REGIOES[0];
-const inicial = dados.find((d) => d.id === predefinida.id);
+const aDistinguir = dados.find((d) => d.slug === distinguida) ?? null;
 
 /* --- marcas do eixo --- */
 const ticks = [];
@@ -80,84 +117,77 @@ for (let v = min; v <= max; v += passo) {
   ticks.push({ v, maior: v % 10 === 0, x: X(v), rotulo: v % 10 === 0 && v <= rotuloAte });
 }
 
-/* --- a barra da distância entre o marcador e a linha da UE-27 --- */
-const x0 = Math.min(X(datum), X(inicial.valor));
-const x1 = Math.max(X(datum), X(inicial.valor));
-const yPatamar = patamares[0];
-const larguraRotulo = Math.max(inicial.nome.length * 6.8, 34) + 18;
+/* ---------------------------------------------------------------------------
+ * A DISTRIBUIÇÃO POR PATAMARES, FEITA NO SERVIDOR
+ * ---------------------------------------------------------------------------
+ * Era a conta do cliente («construir os rótulos, medi-los, e só depois
+ * distribuí-los»), e com a régua completa passa a ser a conta da construção: sem
+ * ela, o servidor desenhava seis rótulos uns por cima dos outros e o script
+ * arrumava-os depois — a página estaria errada até o script correr.
+ *
+ * A LARGURA É ESTIMADA AQUI E MEDIDA NO CLIENTE, e é essa a única coisa que o
+ * `convergencia.js` ainda faz: a estimativa `nome.length * 6.8` é a mesma que o
+ * cliente já usava quando `getComputedTextLength()` falhava, e o script repõe as
+ * caixas com as métricas reais do tipo quando ele estiver carregado. A página
+ * está correcta sem o script; com ele, os rótulos ficam mais justos.
+ *
+ * A ordem é a do VALOR, e não a do ficheiro: a arrumação é geométrica, e um
+ * empacotador que percorre a régua da esquerda para a direita nunca deixa um
+ * rótulo para trás.
+ */
+const porValor = [...dados].sort((a, b) => a.valor - b.valor);
+const fim = [];
+const marcas = porValor.map((d) => {
+  const w = Math.max(d.nome.length * 6.8, 34) + 18;
+  const x = X(d.valor);
+  let patamar = 0;
+  while (patamar < patamares.length - 1 && fim[patamar] !== undefined && x - w / 2 < fim[patamar]) {
+    patamar++;
+  }
+  fim[patamar] = x + w / 2;
+  return { ...d, w, x, y: patamares[patamar] };
+});
 
 /* --- a ilha de dados que o cliente lê --- */
 const ilha = {
   estrutura_motivo: 'escala-de-instrumento',
   estrutura: { min, max, passo, rotuloAte, datum, largura, altura, RL, RR, RY, patamares },
-  // Palavras soltas de que o cliente precisa. Sem algarismos: os números
-  // chegam sempre pelas afirmações.
-  palavras: {
-    pontos: lang === 'pt' ? 'pontos' : 'points',
-    em: lang === 'pt' ? 'em' : 'in',
-  },
-  afirmacoes: dados,
 };
 const ilhaJson = JSON.stringify(ilha).replace(/</g, '\\u003c');
-
-/* --- proveniência agrupada por estudo, para a camada do aparelho --- */
-const porEstudo = new Map();
-for (const r of REGIOES) {
-  const claim = getClaim(r.valor);
-  if (!porEstudo.has(claim.study)) porEstudo.set(claim.study, []);
-  porEstudo.get(claim.study).push({ nome: r.nome[lang], claimId: r.valor, historico: r.valorHistorico });
-}
 ---
 
-<div class="instr" data-instrumento="convergencia">
-  <div class="instr-top">
-    <!-- CAMADA 1 — RELANCE -->
-    <p class="layer-tag">{lang === 'pt' ? 'Relance' : 'At a glance'}</p>
-    <div class="glance">
-      {/* `lang` é obrigatório aqui pela mesma razão que na peça (etapa 2i,
-          achado 7): a palavra «provisório» vem de `Claim.astro`, que assume
-          português quando a língua não chega. Era o sétimo caso. */}
-      <Claim id={inicial.valor_claim} lang={lang} class="glance-num" as="div" data-glance-num />
-      {/* O selo do valor em relance. Um por região, e o JavaScript mostra o da
-          região que está a ser lida — a mesma mecânica dos selos da leitura
-          breve, para que a porta acompanhe o número em vez de ficar presa à
-          região com que a página foi construída. */}
-      {REGIOES.map((r) => (
-        <span data-brief-chip={r.id} hidden={r.id !== inicial.id}>
-          <Provenance id={r.valor} lang={lang} />
-        </span>
-      ))}
-      <div class="glance-meta">
-        <div class="glance-name" data-glance-nome>{inicial.nome}</div>
-        <div class="glance-unit">
-          <span data-nonledger="escala-de-instrumento">{s.home.instr1.glanceUnidade}</span> ·
-          <span data-nonledger="data-de-referencia">2024</span>
+<div class="instr instr-conv" data-instrumento="convergencia">
+  {/* CAMADA 1 — RELANCE. Só na página de uma região: ver a nota da cabeça. */}
+  {aDistinguir && (
+    <div class="instr-top">
+      <p class="layer-tag">{lang === 'pt' ? 'Relance' : 'At a glance'}</p>
+      <div class="glance">
+        <Claim id={aDistinguir.valor_claim} lang={lang} class="glance-num" as="div" />
+        <span><Provenance id={aDistinguir.valor_claim} lang={lang} /></span>
+        <div class="glance-meta">
+          <div class="glance-name" data-lugar>{aDistinguir.nome}</div>
+          <div class="glance-unit">
+            <span data-nonledger="escala-de-instrumento">{s.home.instr1.glanceUnidade}</span> ·
+            <span data-nonledger="data-de-referencia">{getClaim(aDistinguir.valor_claim).reference_date}</span>
+          </div>
         </div>
       </div>
     </div>
+  )}
 
-    <!-- COMANDOS (só com JavaScript: sem ele não fariam nada) -->
-    <div class="controls" id="controls" role="group" aria-label={s.home.instr1.controlsLabel} hidden data-controls>
-      <span class="controls-label" aria-hidden="true">{s.home.instr1.controlsLabel}</span>
-      {
-        dados.map((d) => (
-          <button
-            type="button"
-            class:list={['chip', d.id === inicial.id && 'is-read']}
-            data-regiao-chip={d.id}
-            aria-pressed={d.id === inicial.id ? 'true' : 'false'}
-          >
-            {d.nome}
-          </button>
-        ))
-      }
-      <button type="button" class="chip chip-plain" data-accao="todas">{s.home.instr1.todas}</button>
-      <button type="button" class="chip chip-plain" data-accao="repor">{s.home.instr1.repor}</button>
-    </div>
-  </div>
+  {/* ----------------------------------------------------------------------
+      O EIXO · a forma do computador (Emenda 21a)
+      ----------------------------------------------------------------------
+      Sai abaixo de 640, e o que fica é a lista: a folha decide, como decide a
+      pesquisa da primeira página. Os rótulos da escala são o que não cabe num
+      telemóvel — foi a medição de 25.08 (achado B4) que o mostrou —, e a lista
+      não os tem por isso mesmo.
 
-  <!-- A RÉGUA -->
-  <div class="svg-scroll">
+      UM SÓ ESTILO DE MARCA. Nenhuma leitura vem acesa, esbatida ou maior;
+      `data-contorno` é o único atributo que separa uma marca das outras, e ele
+      só existe na página daquela região.
+      ---------------------------------------------------------------------- */}
+  <div class="svg-scroll conv-eixo">
     <svg
       class="rule-svg"
       viewBox={`0 0 ${largura} ${altura}`}
@@ -196,157 +226,127 @@ for (const r of REGIOES) {
               </text>
             ))
         }
+        {/* A REFERÊNCIA A TINTA, À ALTURA TODA (Emenda 4). */}
         <line x1={X(datum)} y1="42" x2={X(datum)} y2={RY + 8} stroke="var(--ink)" stroke-width="1.5" />
         <text x={X(datum)} y="30" text-anchor="middle" class="datum-label">
           {lang === 'pt' ? 'UE-27 = 100' : 'EU-27 = 100'}
         </text>
       </g>
 
-      <g data-gap>
-        <rect x={x0} y={RY - 4.5} width={Math.max(x1 - x0, 1)} height="9" fill="var(--ink)" />
-        <text x={(x0 + x1) / 2} y={RY + 42} text-anchor="middle" class="gap-label">
-          {inicial.sinal}<Claim id={inicial.distancia_claim} lang={lang} as="tspan" /> {lang === 'pt' ? 'pontos' : 'points'}
-        </text>
-      </g>
-
+      {/* As hastes vivem na sua própria camada, por baixo de todos os rótulos. */}
       <g data-stems>
-        <line x1={X(inicial.valor)} y1={RY - 6} x2={X(inicial.valor)} y2={yPatamar + 4} stroke="var(--ink)" stroke-width="1.5" />
+        {
+          marcas.map((m) => (
+            <line
+              data-stem={m.id}
+              x1={m.x}
+              y1={RY - 6}
+              x2={m.x}
+              y2={m.y + 4}
+              stroke="var(--ink)"
+              stroke-width="1.5"
+            />
+          ))
+        }
       </g>
 
       <g data-marks>
-        <g class="mk is-on" data-mk={inicial.id}>
-          <rect x={X(inicial.valor) - larguraRotulo / 2} y={yPatamar - 37} width={larguraRotulo} height="41" fill="var(--paper)" />
-          {/* O nome sobe seis unidades (2g, ponto 4). Medidas as caixas dos
-              rótulos do instrumento a 320 e a 390, o único par que se tocava era
-              o nome da região e o seu valor, encostados por 18 unidades de
-              patamar com 12,5px e 16px de corpo. Medido a 390: as caixas
-              cruzavam-se, e com 24 unidades de patamar ficam a 2,5px uma da
-              outra. A chapa de papel por baixo sobe as mesmas seis unidades
-              para não cortar o topo do nome. */}
-          <text x={X(inicial.valor)} y={yPatamar - 24} text-anchor="middle" class="mk-name">{inicial.nome}</text>
-          <Claim id={inicial.valor_claim} lang={lang} as="text" class="mk-val" x={X(inicial.valor)} y={yPatamar - 1} text-anchor="middle" />
-          <circle cx={X(inicial.valor)} cy={RY} r="5.5" fill="var(--ink)" stroke="var(--paper)" stroke-width="1.5" />
-        </g>
+        {
+          marcas.map((m) => (
+            <g class="mk" data-mk={m.id} data-contorno={m.slug === distinguida ? 'sim' : undefined}>
+              <rect
+                class="mk-chapa"
+                x={m.x - m.w / 2}
+                y={m.y - 37}
+                width={m.w}
+                height="41"
+                fill="var(--paper)"
+              />
+              {/* O nome sobe seis unidades (2g, ponto 4): medidas as caixas dos
+                  rótulos a 320 e a 390, o nome e o valor cruzavam-se com 18
+                  unidades de patamar e ficam a 2,5px com 24. */}
+              <text x={m.x} y={m.y - 24} text-anchor="middle" class="mk-name">{m.nome}</text>
+              <Claim
+                id={m.valor_claim}
+                lang={lang}
+                as="text"
+                class="mk-val"
+                x={m.x}
+                y={m.y - 1}
+                text-anchor="middle"
+              />
+              <circle cx={m.x} cy={RY} r="5" fill="var(--ink)" stroke="var(--paper)" stroke-width="1.5" />
+            </g>
+          ))
+        }
       </g>
     </svg>
   </div>
 
-  <!-- CAMADA 2 — LEITURA BREVE. É esta a legenda de selos do instrumento:
-       os valores desenhados dentro do SVG têm aqui a sua porta. -->
-  {/* ------------------------------------------------------------------------
-      A REGIÃO VIVA É O CONTENTOR, E NÃO A FRASE QUE CALHA ESTAR À VISTA
-      ------------------------------------------------------------------------
-      `DECISIONS.md` §4, item P: o estado lido dos chips não tinha equivalente
-      não-visual. O `aria-live` estava na frase da região com que a página foi
-      construída; ao trocar de região o script mostrava OUTRA frase, que não
-      tinha marca nenhuma, e quem ouve a página não recebia nada. A marca sobe
-      para o contentor, que é o que muda, e o que se anuncia são as palavras da
-      região que passou a estar lida — palavras que já estavam na página.
+  {/* ----------------------------------------------------------------------
+      A LISTA · a forma do telemóvel, e as portas do computador
+      ----------------------------------------------------------------------
+      Uma linha por leitura (IDENTIDADE §11, móvel: «uma coisa por linha»), e em
+      cada linha o nome, o valor e o selo num só grupo visível, «para que a porta
+      nunca se separe do número que abre». A barra é a régua da Emenda 4 àquela
+      escala: a calha, a referência a tinta à altura toda no 100, a barra da
+      distância e o traço fino do valor. Sem rótulos no eixo: o 100 marca-se com
+      a linha e diz-se uma vez, em cima.
+
+      É ESTA A LEGENDA DE SELOS DO INSTRUMENTO (`data-legenda-selos`). O valor de
+      cada leitura está desenhado dentro do `<svg>` do eixo, e um `<a>` dentro de
+      um desenho não é uma porta que se veja: a porta daquele valor é o selo
+      desta linha, pela convenção do §1.34. Nenhuma entrada está escondida.
       ---------------------------------------------------------------------- */}
-  <div class="brief" data-legenda-selos aria-live="polite">
+  <div class="conv-lista-caixa">
     <p class="layer-tag">{lang === 'pt' ? 'Leitura breve' : 'Brief reading'}</p>
-    {
-      REGIOES.map((r) => (
-        <p
-          class="brief-text"
-          data-brief={r.id}
-          hidden={r.id !== inicial.id}
-        >
-          <Frase partes={r.frase[lang]} lang={lang} selos={true} />
-        </p>
-      ))
-    }
-    {/* --------------------------------------------------------------------
-        A PALAVRA «PROVISÓRIO» AO PÉ DO SELO DO VALOR DESENHADO (2k, achado 13
-        da segunda leitura cruzada; decisão (d) da direção)
-        --------------------------------------------------------------------
-        `Claim.astro` escreve a palavra ao pé do número em todo o lado MENOS
-        dentro de um `<svg>`, onde um `<span>` não é filho legítimo de um
-        `<text>` — está lá dito, e é verdade. O valor desta régua é desenhado
-        (`as="text"`, a marca `mk-val`), e por isso a cópia desenhada saía sem a
-        ressalva que a linha manda viajar com o número.
-
-        A direção decidiu onde ela entra: NA LEGENDA DE SELOS, que é onde o selo
-        do valor desenhado já vive pela convenção do §1.34. A banda da região já
-        o fazia sem ninguém reparar — a entrada da sua legenda é um `<Claim …
-        chip>`, e um `<Claim>` fora de um SVG traz a palavra —; aqui a entrada é
-        só o selo, e é a ela que a palavra se junta.
-
-        A CONDIÇÃO LÊ-SE DA LINHA, como em `Claim.astro`: `source_flag === 'p'`,
-        do `getClaim()` que o portão confere, e nunca de uma lista escrita à mão.
-        Hoje são as seis do PIB per capita; amanhã são as que a fonte marcar.
-
-        FORA DO SELO e fora de qualquer `[data-claim]`: `seloDaLinha()` compara o
-        texto visível do `.src-chip` carácter a carácter, e `formaDoValor()`
-        compara a cadeia dentro do `[data-claim]` com o valor publicado. A ordem é
-        a mesma da casa — palavra, depois selo.
-
-        O SCRIPT NÃO A COMPÕE. `convergencia.js` não reconstrói esta legenda:
-        `desenhaLeitura()` só troca o `hidden` de cada `[data-brief-chip]`. As
-        seis entradas saem do servidor prontas, com a palavra dentro, e a palavra
-        acompanha o selo pela mesma mecânica que já os mostrava e escondia.
-        -------------------------------------------------------------------- */}
-    {
-      REGIOES.map((r) => (
-        <span data-brief-chip={r.id} hidden={r.id !== inicial.id}>
-          {getClaim(r.valor).source_flag === 'p' && (
-            <span class="claim-provisorio">{s.prov.provisorio}</span>
-          )}
-          <Provenance id={r.valor} lang={lang} />
-        </span>
-      ))
-    }
+    {aDistinguir && (
+      <p class="brief-text">
+        <Frase partes={aDistinguir.frase} lang={lang} selos={true} />
+      </p>
+    )}
+    <p class="conv-lista-ref">
+      <span data-nonledger="escala-de-instrumento">{lang === 'pt' ? 'UE-27 = 100' : 'EU-27 = 100'}</span>
+    </p>
+    <ul class="conv-lista" data-legenda-selos data-conv-lista>
+      {
+        dados.map((d) => (
+          <li
+            class="conv-linha"
+            data-conv-linha={d.id}
+            data-contorno={d.slug === distinguida ? 'sim' : undefined}
+          >
+            <span class="conv-cabeca">
+              <span class="conv-nome">
+                {d.porta ? <a href={d.porta}>{d.nome}</a> : <span data-lugar>{d.nome}</span>}
+              </span>
+              <span class="conv-valor">
+                <Claim id={d.valor_claim} lang={lang} chip={true} />
+              </span>
+            </span>
+            <svg
+              class="conv-barra"
+              viewBox={`0 0 ${LARGURA_BARRA} 24`}
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <line class="conv-calha" x1="0" y1="12" x2={LARGURA_BARRA} y2="12" />
+              <rect
+                class="conv-b"
+                x={Math.min(P(datum), P(d.valor))}
+                y="8"
+                width={Math.max(Math.abs(P(d.valor) - P(datum)), 1)}
+                height="8"
+              />
+              <line class="conv-ref" x1={P(datum)} y1="0" x2={P(datum)} y2="24" />
+              <line class="conv-v" x1={P(d.valor)} y1="2" x2={P(d.valor)} y2="22" />
+            </svg>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 
-  {/* --------------------------------------------------------------------
-      O APARELHO DO INSTRUMENTO (etapa 2i, achado 9)
-      --------------------------------------------------------------------
-      Esta dobra tinha o nome da terceira densidade da v2, que a Emenda 2
-      aposentou, e um comentário de camada por cima. O que está aqui dentro
-      nunca foi uma densidade: é o aparelho do instrumento, «Método, ressalvas e
-      proveniência», o mesmo que o mapa leva por baixo e com o mesmo rótulo.
-      Mudou o nome e saiu o comentário; não mudou uma palavra do que se lê. A
-      história inteira está na nota da etapa.
-
-      As regras da folha para esta dobra vivem em `src/styles/inicio.css` e não
-      em `site.css`: `.deep` continua a governar as dobras de `EstudoView` e
-      `MunicipioView`, que são das etapas 3 e 4 e não são deste construtor. As
-      classes de dentro (`deep-body`, `deep-k`, `deep-v`) ficam como estão
-      precisamente por isso — renomeá-las aqui daria três nomes à mesma coisa em
-      três vistas, e o nome a mudar era o da dobra.
-      -------------------------------------------------------------------- */}
-  {/* ------------------------------------------------------------------------
-      A CAMADA DE APARELHO SAIU (Emenda 15, 21.08.2026)
-      ------------------------------------------------------------------------
-      «Revoga … as legendas de aparelho nas páginas de leitura.» A dobra
-      chamava-se «Método, ressalvas e proveniência» e levava cinco itens. Três
-      eram a casa a falar de si: «Distâncias» («as diferenças que a régua desenha
-      são calculadas a partir dos valores publicados…»), «Os dados desta régua»
-      («o ficheiro é gerado do livro-razão a cada construção; não é uma cópia
-      mantida à parte») e a linha «Sem JavaScript, a régua mostra Portugal». O
-      método vive no Método; o recibo de cada valor vive na sua linha, e o selo
-      é a porta.
-
-      O que fica é o que a régua É: a frase que diz o que o índice compara. A
-      ressalva do valor provisório não se perde — desde a 2k a palavra
-      «provisório» viaja ao lado de cada valor marcado pela fonte, na entrada de
-      legenda daquele valor. A legenda de proveniência da dobra também não faz
-      falta: os selos dos valores desenhados vivem em `.brief`
-      (`data-legenda-selos`), que é onde o portão os procura.
-
-      A PORTA DO CSV DESCE PARA O LIVRO-RAZÃO (21.08.2026, relocação R13).
-      Ficava aqui porque `scripts/check-dados.mjs` exigia que as duas edições da
-      PRIMEIRA PÁGINA ligassem os dois ficheiros. O commit 3-0 mudou essa
-      conferência de objecto — a rota de cada ficheiro passou a ser uma
-      declaração —, e o registo de relocações já dizia que o aparelho deste
-      instrumento tinha saído daqui enquanto a porta continuava a render
-      (leitura cruzada do Codex de 21.08, achado 7). A direção decidiu qual dos
-      dois se corrige: a porta desce para `/livro-razao`, ao pé do bloco do
-      conjunto de dados, e a declaração de rota desce no mesmo commit.
-
-      O QUE FICA É A FRASE QUE DIZ O QUE O ÍNDICE É. Não é aparelho: nomeia a
-      coisa que a régua desenha, e sem ela a régua é uma barra sem grandeza.
-      ---------------------------------------------------------------------- */}
   <p class="conv-significado">{s.home.instr1.significadoV}</p>
 
   <script type="application/json" data-ledger-json data-dados="convergencia" set:html={ilhaJson} />

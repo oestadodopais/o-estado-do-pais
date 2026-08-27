@@ -289,6 +289,14 @@ const ROTAS_DO_INVENTARIO = new Set([
      conta-se uma vez e não 29. */
   'distritos',
   'distrito',
+  /* O ÍNDICE DAS REGIÕES E A PÁGINA DE CADA UMA (Emenda 21, 27.08.2026).
+     Entram no commit em que são construídas, que é a regra desta lista. São
+     páginas do leitor como o índice dos distritos e a página de uma unidade: a
+     Emenda 15 governa-as, e a sua autorreferência vai a zero. O `<h1>` de uma
+     região é o nome dela (declarado `data-lugar`) e a sua descrição é composta
+     com esse nome, e por isso conta-se uma vez e não uma por região. */
+  'regioes',
+  'regiao',
 ]);
 
 /**
