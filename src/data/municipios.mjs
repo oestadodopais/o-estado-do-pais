@@ -354,9 +354,15 @@ const EVORA = {
             en: 'The local-government directorate’s annual series begins after this term.',
           },
           pelouros: null,
+/* A RESSALVA DIZ O FACTO, E NÃO QUEM O LEU (G6, decisão do diretor de
+             26.08.2026). Dizia «O trabalho sobre os pelouros diz que este
+             mandato «é uma linha de um mapa, não um mapa»…»: o sujeito era o
+             trabalho e a frase era a sua citação sobre os seus próprios limites.
+             O facto é que a repartição não foi estabelecida, e é ele que muda a
+             leitura do campo vazio ao lado. */
           pelourosNota: {
-            pt: 'Não estabelecido. O trabalho sobre os pelouros diz que este mandato «é uma linha de um mapa, não um mapa»: o presidente desse mandato, e todos os outros membros dele, não foram identificados.',
-            en: 'Not established. The work on the portfolios says this term «is one line of a map, not a map»: the president of that mandate, and every other member of it, were not identified.',
+            pt: 'Não estabelecido: o presidente desse mandato, e todos os outros membros dele, não foram identificados.',
+            en: 'Not established: the president of that mandate, and every other member of it, were not identified.',
           },
         },
         {

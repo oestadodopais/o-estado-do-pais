@@ -76,6 +76,16 @@ Três modos de correspondência, todos sem sensibilidade a maiúsculas:
 | raiz | resting on | A mesma, na edição inglesa. |
 | raiz | ainda não há | A ausência dita numa frase e não em duas palavras (Emenda 15). É o caso conhecido «Ainda não há linhas deste estudo no livro-razão.», que o item E4 do bloco dos 308 corrigiu para «Sem linhas ainda.»; o marcador existe para que a forma longa não volte. |
 | raiz | there are no | A mesma, na edição inglesa. «There is no…» fica de fora de propósito: «There is no counterfactual for any index.» é o limite dos dados, e não a cobertura do sítio. |
+| palavra | o trabalho | Quem leu não é sujeito de uma ressalva: o facto é (G6, 26.08.2026). Palavra inteira, para não apanhar «os trabalhos», que é o nome da secção que dá as portas das páginas de trabalho. |
+| palavra | the work | A mesma, na edição inglesa, e pela mesma razão: «the works» é o nome da secção. |
+| raiz | este livro-razão | «nenhum valor marcado assim atravessou para este livro-razão»: o sítio a contar o que deixou entrar em si. |
+| raiz | this ledger | A mesma, na edição inglesa. |
+| raiz | atravessou | A palavra da travessia do motor para o livro-razão, que é maquinaria da casa e não um facto do que se mede. |
+| raiz | crossed into | A mesma, na edição inglesa. |
+| raiz | mostra-o | «A página do município mostra-o como está»: a página a dizer o que mostra. |
+| raiz | shows it | A mesma, na edição inglesa. |
+| raiz | avaliáve | «O mandato mais recente não é avaliável» era o título de uma ressalva retirada: é um juízo sobre o que a casa consegue fazer, e não sobre o que a fonte publica. |
+| raiz | assessable | A mesma, na edição inglesa. |
 
 ## As exceções
 

@@ -754,3 +754,13 @@ sobreviveu à secção do método e que é deste concelho e não da língua: «A
 do penúltimo ano foram rejeitadas em votação e nunca foram certificadas.» /
 «The accounts of the second-to-last year were rejected in a vote and were never
 certified.»
+
+## Bloco «A grelha da voz» · G6, a ressalva diz o facto e não quem o leu, 26.08.2026
+
+**Nenhuma chave nova.** Uma nota de mandato da página de Évora muda de texto: o
+sujeito era o trabalho e a frase era a citação dele sobre os seus próprios
+limites.
+
+| onde | pt | en |
+|---|---|---|
+| `pelourosNota` do mandato de 2009–2013 | Não estabelecido: o presidente desse mandato, e todos os outros membros dele, não foram identificados. | Not established: the president of that mandate, and every other member of it, were not identified. |
