@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "pib-pc-centro-2024"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "71"
+unit: "índice (UE-27 = 100)"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Eurostat"
+document:
+  title: "Gross domestic product (GDP) at current market prices by NUTS 2 region"
+  edition: "nama_10r_2gdp, atualizado 2026-02-10"
+  locator: null
+  kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/nama_10r_2gdp/default/table?lang=en"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10r_2gdp?format=JSON&lang=EN&unit=PPS_EU27_2020_HAB&unit=PPS_HAB_EU27_2020&geo=PT&geo=PT11&geo=PT15&geo=PT19&geo=PT1A&geo=PT1B&geo=PT1C&geo=PT1D&geo=PT20&geo=PT30&geo=EU27_2020&sinceTimePeriod=2000"
+access_date: "2026-08-27"
+reference_date: "2024"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "nama_10r_2gdp — unit PPS_HAB_EU27_2020 — geo PT19 (Centro (PT)) — 2024: 71 p"
+
+# A bandeira tal como a fonte a escreve, e o que ela quer dizer.
+source_flag: "p"
+source_flag_note: "O Eurostat marca este valor como provisório. Os dados regionais de 2024 são a primeira publicação do ano de referência, e o Eurostat reajusta os valores regionais ao PIB nacional uma vez por ano, enquanto o nacional é revisto ao longo do ano, pelo que se espera que este número mude na divulgação de fevereiro de 2027."
+source_flag_note_en: "Eurostat marks this value as provisional. The 2024 regional data is the first release of the reference year, and Eurostat re-benchmarks regional values to national GDP once a year, while the national figures are revised throughout the year, so this number is expected to change at the February 2027 release."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "avaliacao-economica-regional-de-portugal-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "Índice do PIB per capita em PPS, UE-27 = 100, tal como o Eurostat o publica (arredondado à unidade). Código NUTS confirmado contra a classificação NUTS 2024 alojada no motor, nuts2024_at.csv (sha256 d54c09a22656cff1b9a752fc40356a9d28e176b2a3bc716275a37fe5512a0c8f), que dá PT19 = Centro (PT), e contra a etiqueta da própria resposta do Eurostat. Leitura de 2026-08-27 da fonte primária, alojada em gdp_2026-08-27.json (sha256 f80ea78f38c499edcac0e2cb6dd4088c216b40481815080714d5c6f5a15fb0d1). O Eurostat marca este valor como provisório (bandeira «p»). A mesma leitura devolveu, para as seis linhas de 2024 que o sítio já publica, exactamente os valores publicados, e a mesma data de actualização do conjunto (2026-02-10). · Cruzado de ResearchHub content/03 Regional Economy/Travessia das Regioes · gdp-idx-PT19-2024-2026-08-27."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

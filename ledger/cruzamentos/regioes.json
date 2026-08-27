@@ -1,0 +1,101 @@
+{
+  "_": [
+    "Registo de travessia — Évora. Uma entrada por linha do livro-razão que veio do",
+    "motor de investigação (ResearchHub), com o resumo criptográfico da linha de",
+    "origem e o dos bytes que aqui foram escritos.",
+    "FICHEIRO GERADO. Escrito por ResearchHub/publisher/export_site_rows.py.",
+    "Conferido a cada build por scripts/check-cruzamento.mjs — ver ledger/README.md."
+  ],
+  "exporter": "ResearchHub/publisher/export_site_rows.py",
+  "origin": "ResearchHub",
+  "rows": {
+    "distancia-acores-ue27-2024": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-08-27",
+      "exported_row_sha256": "8db42700030a248037f4ba7d09456e78f308fb2e84df1d184c21cf698dc98f98",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "4f05eef94b1b5ab755ee1f418a002613f2fb2a938daa3021d672c7a6bb08bcc8",
+      "rh_id": "gdp-dist-ue27-PT20-2024-2026-08-27",
+      "rh_ledger_sha256": "75ee608b3f10d6b01466e13fd3f12f9a130ab5a8d10b4e333216d8f60e69ebda",
+      "rh_study": "03 Regional Economy/Travessia das Regioes",
+      "verifications_at_export": 0
+    },
+    "distancia-centro-ue27-2024": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-08-27",
+      "exported_row_sha256": "fd7bdd50223e553eccc776941badf7d0ce466435bc48fe7189438b7222bf55a6",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "1f42eb1da9192f3bf164c5ef059b9542c03cd24665d946e1161293824a2eccf1",
+      "rh_id": "gdp-dist-ue27-PT19-2024-2026-08-27",
+      "rh_ledger_sha256": "75ee608b3f10d6b01466e13fd3f12f9a130ab5a8d10b4e333216d8f60e69ebda",
+      "rh_study": "03 Regional Economy/Travessia das Regioes",
+      "verifications_at_export": 0
+    },
+    "distancia-norte-ue27-2024": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-08-27",
+      "exported_row_sha256": "2abd45cf2653459fa5731dee708ee55d9c8492c1d589ec74bef02a8d41e0ed39",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "e55eec0f6160efd825c8921ae1c332c592e659225679ff694205d8ff0063d55f",
+      "rh_id": "gdp-dist-ue27-PT11-2024-2026-08-27",
+      "rh_ledger_sha256": "75ee608b3f10d6b01466e13fd3f12f9a130ab5a8d10b4e333216d8f60e69ebda",
+      "rh_study": "03 Regional Economy/Travessia das Regioes",
+      "verifications_at_export": 0
+    },
+    "distancia-oeste-e-vale-do-tejo-ue27-2024": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-08-27",
+      "exported_row_sha256": "b252b48d35690b1211cc9670ea1cda01c1aed3d1246d90ed074b27e4c6f6775b",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "cc9736582334528d069222292f31ca1cbc0b1044c1a6789762e8b140bc91c1ce",
+      "rh_id": "gdp-dist-ue27-PT1D-2024-2026-08-27",
+      "rh_ledger_sha256": "75ee608b3f10d6b01466e13fd3f12f9a130ab5a8d10b4e333216d8f60e69ebda",
+      "rh_study": "03 Regional Economy/Travessia das Regioes",
+      "verifications_at_export": 0
+    },
+    "pib-pc-acores-2024": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-08-27",
+      "exported_row_sha256": "7d9d7d6f0d955d3b8fcaf308754d8d8e585f0a27f685c7ad1e1df318d1f0fb24",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "4941b3ff54c53fc30873620de49fe346503acf5d52a20d0eb172dc2770047acd",
+      "rh_id": "gdp-idx-PT20-2024-2026-08-27",
+      "rh_ledger_sha256": "75ee608b3f10d6b01466e13fd3f12f9a130ab5a8d10b4e333216d8f60e69ebda",
+      "rh_study": "03 Regional Economy/Travessia das Regioes",
+      "verifications_at_export": 0
+    },
+    "pib-pc-centro-2024": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-08-27",
+      "exported_row_sha256": "b32b29932cfbb3a868bf3ad8d075bed37f093a41b2c72c64209248ca75a92da5",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "62647d042d437fc5dc7a5d43c9718810090bee7ddd10ce721a64ca9d559cc3d7",
+      "rh_id": "gdp-idx-PT19-2024-2026-08-27",
+      "rh_ledger_sha256": "75ee608b3f10d6b01466e13fd3f12f9a130ab5a8d10b4e333216d8f60e69ebda",
+      "rh_study": "03 Regional Economy/Travessia das Regioes",
+      "verifications_at_export": 0
+    },
+    "pib-pc-norte-2024": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-08-27",
+      "exported_row_sha256": "4a52c31db52b4c0dc4cf2d5d2ad17c393e9d4b0ef5d109ed7efbc99412fc16cd",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "7c1ae17dc31f3d1ec56171314975717c378d0c295d35c13a6fa3929856d35b95",
+      "rh_id": "gdp-idx-PT11-2024-2026-08-27",
+      "rh_ledger_sha256": "75ee608b3f10d6b01466e13fd3f12f9a130ab5a8d10b4e333216d8f60e69ebda",
+      "rh_study": "03 Regional Economy/Travessia das Regioes",
+      "verifications_at_export": 0
+    },
+    "pib-pc-oeste-e-vale-do-tejo-2024": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-08-27",
+      "exported_row_sha256": "554415e3a38ef87c0029f7e5f333bea28666d72db247275d8d30d572f61d9ac3",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "6bd5d31b92dfa078ce5d2a0eddaf11946e7819cd8dcb88311f1c50edb1876578",
+      "rh_id": "gdp-idx-PT1D-2024-2026-08-27",
+      "rh_ledger_sha256": "75ee608b3f10d6b01466e13fd3f12f9a130ab5a8d10b4e333216d8f60e69ebda",
+      "rh_study": "03 Regional Economy/Travessia das Regioes",
+      "verifications_at_export": 0
+    }
+  }
+}
