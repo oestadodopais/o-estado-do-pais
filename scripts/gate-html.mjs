@@ -80,6 +80,12 @@ import { FIGURAS_PDM, FIGURAS_SOCIAL } from '../src/data/figuras.mjs';
 import { EDITIONS, workById, studyLabel } from '../src/data/studies.mjs';
 import { temLeitura, LEITURAS } from '../src/data/leituras.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
+/* A LISTA DA CARTA, PARA RECONTAR AS 29 UNIDADES E OS SEUS CONCELHOS (Emenda 20).
+   O ponto de observação do portão não é o artefacto do mapa: é a lista de 308
+   pares (concelho, unidade) que o sítio já tem em `caop-centroids.mjs`, e a
+   função de slug da casa. Duas contas da mesma coisa, cada uma de um sítio. */
+import { MUNICIPIOS, DISTRITOS } from '../src/data/caop-centroids.mjs';
+import { slugDeConcelho } from '../src/lib/inicio.mjs';
 import { tituloDaLinha, descricaoDaLinha } from '../src/lib/livro.mjs';
 import { matchPath, routePath, HREFLANG, LANGS, PRIMARY_LANG } from '../src/lib/routes.mjs';
 import {
@@ -2952,6 +2958,20 @@ function contasDoPortao(claims) {
     conta('leituras', leiturasNoMapa, 'dist'),
     conta('municipios_com_pagina', (paginasPorRota.get('pt:municipio') ?? 0), 'dist'),
     conta('municipios_total', municipiosNoCsv, 'dist'),
+    /* AS 30 CHAVES DO MAPA POR DISTRITOS (Emenda 20, 27.08.2026). A prova conta-as
+       no artefacto que o motor atravessou (`mapa/`); o portão conta-as na lista
+       da Carta que o sítio guarda em `caop-centroids.mjs`, que é o outro lado.
+       Um concelho a menos num ficheiro de distrito, ou uma unidade a mais, dá
+       dois números diferentes e a construção fecha. A vista é `modulo` porque
+       nenhuma das duas é o `dist/`: são duas leituras de dois registos. */
+    conta('mapa_unidades', DISTRITOS.length, 'modulo'),
+    ...DISTRITOS.map((nome, i) =>
+      conta(
+        `mapa_concelhos_${slugDeConcelho(nome)}`,
+        MUNICIPIOS.filter((m) => m[1] === i).length,
+        'modulo',
+      ),
+    ),
     /* AS TRÊS CHAVES DA PÁGINA DO CONJUNTO DOS CONCELHOS (decisão D6,
        26.08.2026). Duas contam-se no livro-razão que este portão leu por conta
        própria; a dos concelhos conta-se na página construída, que é o outro

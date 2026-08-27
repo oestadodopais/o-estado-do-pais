@@ -1,0 +1,15 @@
+---
+/**
+ * A página de uma unidade da Carta, nas duas edições, da mesma construção.
+ * Os caminhos saem do artefacto do mapa: não há lista escrita à mão.
+ */
+import DistritoView from '../../views/DistritoView.astro';
+import { slugsDasUnidades } from '../../lib/mapa.mjs';
+
+export function getStaticPaths() {
+  return slugsDasUnidades().map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+---
+<DistritoView lang="pt" slug={slug} />

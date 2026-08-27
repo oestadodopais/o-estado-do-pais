@@ -170,9 +170,31 @@
    *
    * `location.replace` e não `assign`: o estado antigo não fica na história, para
    * que o botão de voltar não devolva o leitor a um endereço que já não existe. */
+  /* A LISTA DOS 308 PASSOU DO MAPA PARA A PESQUISA (Emenda 20, 27.08.2026).
+   *
+   * O mapa da primeira página deixou de ser 308 pontos e passou a ser as 29
+   * unidades da Carta: `porSlug` fica vazio, e com ele ficava vazio o único
+   * caminho que este ficheiro tinha para saber o destino de um endereço antigo.
+   * A fila de resultados da pesquisa tem os mesmos 308 concelhos, com o mesmo
+   * slug e com a porta de cada um, e é ela que se lê. É a mesma disciplina de
+   * sempre: os dois destinos são LIDOS DO DOCUMENTO, e nenhum é montado aqui. */
+  var itensDaPesquisa = document.querySelectorAll('[data-resultados] [data-caop]');
+  for (var ip = 0; ip < itensDaPesquisa.length; ip++) {
+    var li = itensDaPesquisa[ip];
+    var slugDoItem = li.getAttribute('data-caop');
+    if (porSlug[slugDoItem]) continue;
+    var lig = li.querySelector('a[href]');
+    porSlug[slugDoItem] = {
+      slug: slugDoItem,
+      comPagina: li.getAttribute('data-tem-pagina') === 'sim',
+      porta: lig ? lig.getAttribute('href') : null,
+    };
+  }
+
   function portaDoPonto(slug) {
     var a = mapa ? mapa.querySelector('[data-mun-porta="' + slug + '"]') : null;
-    return a ? a.getAttribute('href') : null;
+    if (a) return a.getAttribute('href');
+    return porSlug[slug] && porSlug[slug].porta ? porSlug[slug].porta : null;
   }
 
   function indiceDosConcelhos() {

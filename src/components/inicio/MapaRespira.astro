@@ -81,6 +81,7 @@ import Provenance from '../Provenance.astro';
 import { FRAMES, FIELD_W, FIELD_H } from '../../data/caop-centroids.mjs';
 import { getClaim } from '../../lib/ledger.mjs';
 import { routePath } from '../../lib/routes.mjs';
+import { paisDoMapa, moldurasDoMapa } from '../../lib/mapa.mjs';
 
 /* AS DUAS PROPRIEDADES QUE A PÁGINA DE CONCELHO PEDIU (ISSUES I45, etapa 2m).
  *
@@ -145,6 +146,39 @@ const pontos = concelhos.map((c) => ({ ...c, r: RAIO }));
  * marcado com o motivo que já existe.
  */
 const caop = getClaim('municipios-portugal-caop-2025');
+
+/* ---------------------------------------------------------------------------
+ * A POSTURA INTEIRA PASSA A DESENHAR AS 29 UNIDADES (Emenda 20, 27.08.2026)
+ * ---------------------------------------------------------------------------
+ * «A primeira página deixa de mostrar os 308 pontos e passa a mostrar as 29
+ * unidades da Carta como áreas, cada uma uma ligação para a sua página.»
+ *
+ * O INSTRUMENTO CONTINUA A SER UM SÓ, com as suas posturas, e é por isso que
+ * isto vive aqui e não num componente novo: o cartão localizador da página do
+ * concelho é o mapa de pontos e a Emenda 20d deixa-o exactamente como está, a
+ * legenda é a mesma, a moldura é a mesma, e o que muda é o desenho de dentro. O
+ * que a postura decide deixa de ser só o tamanho: passa a decidir qual dos dois
+ * campos se desenha, porque os dois campos são diferentes e a Emenda 20d
+ * escreve-o («o campo dos pontos não guarda os polígonos»).
+ *
+ * NENHUM NÚMERO DA GEOMETRIA É ESCRITO AQUI. O campo, as caixas das molduras e
+ * o caminho de cada unidade vêm de `mapa/pais.json`, que o motor escreveu; o
+ * `viewBox` é o campo desse ficheiro e mais nada. Ver `src/lib/mapa.mjs`.
+ */
+const doPais = postura === 'inteiro' ? paisDoMapa() : null;
+const molduras = postura === 'inteiro' ? moldurasDoMapa() : [];
+
+/* A ESCALA ENTRE OS DOIS CAMPOS, para que o rótulo de uma moldura se leia do
+   mesmo tamanho nos dois desenhos à mesma largura. O rótulo do mapa de pontos
+   mede 13 unidades num campo de 600; o mesmo rótulo no campo do desenho mede a
+   mesma fracção dele. Sem esta conta, um `font-size: 13px` dentro de um campo
+   dez vezes maior sairia dez vezes mais pequeno na página. */
+const uDoCampo = doPais ? doPais.campo.largura / FIELD_W : 1;
+const CORPO_DO_ARQ = Math.round(13 * uDoCampo);
+
+/* O nome de cada moldura na língua da edição. A caixa e a escala são do
+   artefacto; o nome é uma cadeia da casa, e as duas já existem. */
+const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.mapa.acores };
 ---
 
 <figure
@@ -190,7 +224,112 @@ const caop = getClaim('municipios-portugal-caop-2025');
       -------------------------------------------------------------------------- */}
   <div class="mapa-cartao" data-mapa-cartao>
   <div class="mapa-tela" data-mapa-wrap>
+    {/* ----------------------------------------------------------------------
+        DOIS DESENHOS, UM INSTRUMENTO (Emenda 20, 27.08.2026)
+        ----------------------------------------------------------------------
+        Na postura inteira, que é a da primeira página, o mapa são as 29
+        unidades da Carta como áreas, cada uma a porta da sua página. Nas outras
+        duas posturas, que vivem na página do concelho, o mapa são os 308 pontos
+        da Emenda 3, que a Emenda 20d deixa onde estão.
+
+        SÃO DOIS `<svg>` E NÃO UM, porque os dois campos são diferentes: o dos
+        pontos tem 600 por 790 e não guarda os polígonos (Miranda do Douro sai a
+        leste e as Selvagens ao sul), e o do desenho tem o campo que o motor
+        escreveu no artefacto. Um `viewBox` só para os dois seria um dos dois
+        desenhos fora do sítio.
+        ---------------------------------------------------------------------- */}
+    {postura === 'inteiro' ? (
     <svg
+      class="mapa-svg mapa-svg-areas"
+      viewBox={`0 0 ${doPais.campo.largura} ${doPais.campo.altura}`}
+      {/* --------------------------------------------------------------------
+          O `svg` EXPÕE AS SUAS LIGAÇÕES, E POR ISSO NÃO É UMA IMAGEM
+          --------------------------------------------------------------------
+          `role="img"` diz «isto é uma imagem», e a tecnologia de apoio pode
+          achatar o que está dentro de uma imagem: os descendentes deixam de ser
+          alcançáveis um a um. Aqui as 29 áreas SÃO ligações, e uma ligação
+          dentro de uma imagem é uma porta que pode desaparecer para quem não a
+          vê. O papel é `group`, que leva nome acessível e não esconde o que
+          tem dentro. É a mesma leitura do item E12 e a régua do brief mede-a:
+          nenhum `<a>` debaixo de `role="img"`.
+          -------------------------------------------------------------------- */}
+      role="group"
+      aria-label={s.inicio.mapa.distritosLabel}
+      data-mapa
+      data-mapa-areas
+    >
+      {/* AS DUAS MOLDURAS VÊM DO ARTEFACTO, com a sua caixa e a sua escala. A
+          quebra de escala é para declarar e não para esconder (MAPA.md §7): a
+          moldura desenha-se, e o nome do arquipélago fica por cima dela. */}
+      <g class="mapa-molduras">
+        {doPais.molduras.map((m) => (
+          <rect
+            class="mapa-moldura"
+            x={m.caixa[0]}
+            y={m.caixa[1]}
+            width={m.caixa[2]}
+            height={m.caixa[3]}
+            data-moldura={m.nome}
+          />
+        ))}
+        {doPais.molduras.map((m) => (
+          <text
+            class="mapa-arq"
+            x={m.caixa[0] + Math.round(2 * uDoCampo)}
+            y={m.caixa[1] - Math.round(6 * uDoCampo)}
+            {/* O CORPO VAI EM ESTILO E NÃO EM ATRIBUTO, porque `.mapa-arq` já
+                declara um `font-size` na folha e uma regra de classe ganha
+                sempre a um atributo de apresentação. O que este estilo diz não é
+                um tamanho novo: é o mesmo tamanho, contado no campo em que este
+                desenho vive. */}
+            style={`font-size:${CORPO_DO_ARQ}px`}
+          >
+            {NOME_DA_MOLDURA[m.nome] ?? m.nome}
+          </text>
+        ))}
+      </g>
+
+      {/* ----------------------------------------------------------------------
+          AS 29 ÁREAS SÃO IGUAIS, E CADA UMA É UMA LIGAÇÃO (Emendas 10 e 20b)
+          ----------------------------------------------------------------------
+          «Todas iguais, nenhuma destacada por estatuto ou por cobertura; o que
+          muda ao passar o rato ou ao chegar pelo teclado é o contorno, e só
+          ele.» O desenho de uma área não sabe se a unidade é a capital, se é
+          ilha ou se tem concelhos com página: leva a mesma classe, o mesmo
+          traço e o mesmo enchimento que as outras 28.
+
+          O `<title>` dá o nome acessível da ligação e o nome que o navegador
+          mostra ao parar o cursor. É o nome da Carta, que já está no `data-u`
+          do mesmo caminho: não há aqui uma segunda lista de nomes.
+
+          `fill-rule` NÃO SE ESCREVE (MAPA.md §1): os anéis vêm orientados do
+          motor, o exterior no sentido directo e os buracos no inverso, e a
+          regra por omissão deixa um buraco vazio.
+          ---------------------------------------------------------------------- */}
+      <g class="mapa-areas" data-areas>
+        {doPais.unidades.map((u) => (
+          <a
+            class="uni-porta"
+            href={routePath('distrito', lang, { slug: u.slug })}
+            data-uni-porta={u.slug}
+          >
+            <title>{u.nome}</title>
+            <path
+              class="uni"
+              d={u.d}
+              data-u={u.nome}
+              data-tipo={u.tipo}
+              data-parcela={u.parcela}
+              data-unidade={u.slug}
+            />
+          </a>
+        ))}
+      </g>
+    </svg>
+    ) : (
+    <svg
+      class="mapa-svg"
+      viewBox={`0 0 ${FIELD_W} ${FIELD_H}`}
       class="mapa-svg"
       viewBox={`0 0 ${FIELD_W} ${FIELD_H}`}
       {/* --------------------------------------------------------------------
@@ -318,7 +457,51 @@ const caop = getClaim('municipios-portugal-caop-2025');
         as ouvia depois de a escolha sair, e o que apanha o clique passou a ser
         o próprio ponto dentro da sua ligação. */}
     </svg>
+    )}
   </div>
+
+  {/* --------------------------------------------------------------------------
+      OS NOMES DAS ILHAS POR BAIXO DA SUA MOLDURA (Emenda 20c, 27.08.2026)
+      --------------------------------------------------------------------------
+      «Onde uma ilha não chegar aos 44 px na moldura, os nomes das ilhas dessa
+      moldura ficam por baixo dela como ligações, uma por linha.»
+
+      A CONDIÇÃO É MEDIDA NA CONSTRUÇÃO E NÃO ADIVINHADA. `moldurasDoMapa()`
+      calcula, para cada moldura, o maior lado da caixa de cada ilha em píxeis
+      nas duas larguras que a folha dá ao mapa, e responde à pergunta dos 44. É a
+      única maneira: uma construção estática serve o mesmo HTML às duas larguras,
+      e nenhuma largura é conhecida quando ele se escreve.
+
+      A LISTA É DAS ILHAS DA MOLDURA, e não só das que não chegam. É o que a
+      emenda escreve, e é o que se lê melhor: uma lista com sete nomes de nove
+      deixa o leitor a adivinhar quais são os dois que faltam.
+
+      A ÁREA DE CADA ILHA CONTINUA A SER UMA LIGAÇÃO, e por isso um nome desta
+      lista não é uma segunda porta para um sítio que não tinha nenhuma: é a
+      porta que se pode tocar, para a mesma página. */}
+  {postura === 'inteiro' &&
+    molduras.some((m) => m.precisaDaLista) && (
+      <div class="mapa-ilhas" data-mapa-ilhas>
+        {molduras
+          .filter((m) => m.precisaDaLista)
+          .map((m) => (
+            <div class="mapa-ilhas-grupo" data-moldura-lista={m.nome}>
+              {/* O nome do arquipélago é o de um lugar e não uma frase da casa:
+                  leva `data-lugar`, como o nome de um concelho leva. */}
+              <p class="mapa-ilhas-k" data-lugar>{NOME_DA_MOLDURA[m.nome] ?? m.nome}</p>
+              <ul class="mapa-ilhas-lista">
+                {m.unidades.map((u) => (
+                  <li>
+                    <a href={routePath('distrito', lang, { slug: u.slug })} data-ilha-porta={u.slug}>
+                      {u.nome}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+      </div>
+    )}
 
     {/* O TEXTO DO CARTÃO SÓ SE CONSTRÓI ONDE ELE SE VÊ (Emenda 19a, 26.08.2026).
         A folha escondia-o na postura inteira (`[data-postura='inteiro']
@@ -422,51 +605,22 @@ const caop = getClaim('municipios-portugal-caop-2025');
   </figcaption>
   )}
 
-  {postura === 'inteiro' && (
-  <div class="mapa-rodape" data-mapa-rodape>
-    {/* --------------------------------------------------------------------
-        AS DICAS PASSAM A DESCRIÇÃO DO MAPA, E DEIXAM DE SER LEGENDA
-        --------------------------------------------------------------------
-        Emenda 15: uma legenda nomeia o que a coisa é, e não como se usa. As
-        três frases que descreviam o gesto — o cursor, o teclado, o toque —
-        deixam de se ler ao lado do mapa e passam a ser a DESCRIÇÃO acessível
-        dele, por `aria-describedby`. Quem vê o mapa vê o mapa; quem o ouve
-        continua a saber como o percorrer.
+  {/* ------------------------------------------------------------------------
+      O RODAPÉ DO MAPA SAIU DA PRIMEIRA PÁGINA (Emenda 20, 27.08.2026)
+      ------------------------------------------------------------------------
+      Eram duas coisas, e as duas descreviam o mapa de pontos: a DESCRIÇÃO
+      acessível («passe o cursor sobre um ponto para ler o município», «Tab até
+      ao mapa, setas para percorrer os municípios vizinhos») e a LEITURA em voz
+      alta, a caixa onde o nome do concelho por baixo do cursor aparecia. O mapa
+      da primeira página deixou de ter pontos e deixou de ter setas: o que ele
+      tem são 29 áreas, cada uma uma ligação com o seu nome, e o que uma ligação
+      faz diz-se onde se diz um destino, que é o `<title>` dela e a barra do
+      navegador.
 
-        SÃO DUAS DESDE A EMENDA 19b. A terceira era «Toque num ponto para
-        escolher o concelho», e descrevia a escolha que saiu: o que um ponto faz
-        agora é abrir a página do concelho, quando ela existe, e isso diz-se onde
-        se diz um destino, que é a ligação e o seu `<title>`.
-
-        A disciplina do `hidden` é a mesma de antes (ISSUES I21), e é por isso
-        que elas continuam a entrar escondidas: descrevem o que só é verdade com
-        script, e um elemento `hidden` não entra na árvore nem é anunciado. O
-        script acende-as, como já acendia.
-        -------------------------------------------------------------------- */}
-    <p class="vh mapa-descricao" id="mapa-descricao">
-      <span class="mapa-hint" data-dica-cursor hidden>{s.inicio.mapa.readoutHint}</span>{' '}
-      <span class="mapa-hint" data-teclado hidden>{s.inicio.mapa.tecladoHint}</span>
-    </p>
-
-    {/* --------------------------------------------------------------------
-        O NOME GANHA O ESPAÇO QUE LHE FALTAVA (bloco A, item A6)
-        --------------------------------------------------------------------
-        A leitura do mapa saía «Évoradistrito de Évora»: os três `span` são
-        `display: inline` e entre o nome e o resto não havia nem um espaço nem
-        um separador (achado C3). Passa a levar o separador da casa, o ponto
-        médio, entre o nome e o que vem a seguir — «Évora · distrito de Évora».
-
-        O separador é `aria-hidden` e tem o `hidden` do nome: entra e sai com
-        ele, porque um ponto médio sozinho, sem nome de um lado, não separa
-        nada. Quem ouve a página ouve o nome e o distrito, com a pausa que o
-        `<span>` já lhe dava.
-        -------------------------------------------------------------------- */}
-    <div class="mapa-leitura" data-readout aria-live="polite">
-      <span class="readout-name" data-readout-nome hidden></span>
-      <span class="readout-sep" data-readout-sep aria-hidden="true" hidden> · </span>
-      <span class="readout-pre" data-readout-pre hidden>{s.inicio.cabeca.distritoDe}</span>
-      <span class="readout-sub" data-readout-sub hidden></span>
-    </div>
-  </div>
-  )}
+      Uma descrição que promete um gesto que a página não faz é pior do que
+      nenhuma (a mesma leitura do achado 13 da quarta leitura do Codex, que
+      tirou o `aria-describedby` do cartão localizador). As duas cadeias ficam em
+      `strings.mjs` com o mapa de pontos, que continua a viver no cartão da
+      página do concelho, e o `aria-describedby` não se escreve em lado nenhum.
+      ---------------------------------------------------------------------- */}
 </figure>

@@ -1,0 +1,104 @@
+/* ============================================================================
+ * A PÁGINA DE UMA UNIDADE DA CARTA, E O SEU ÍNDICE (Emenda 20, 27.08.2026)
+ * ============================================================================
+ *
+ * A folha das áreas (`.uni`, `.uni-porta`, `.mapa-svg-areas`) vive em
+ * `inicio.css`, porque é a mesma língua do mapa da primeira página e o desenho
+ * de uma área não muda de escala para escala. O que está aqui é a página: a
+ * caixa do mapa, a lista e as portas.
+ */
+
+.distrito-cabeca {
+  padding-top: clamp(20px, 3vw, 34px);
+}
+.distrito-cabeca h1 {
+  margin-top: 12px;
+}
+/* A palavra que diz de que natureza é a unidade. É uma etiqueta e não uma lede:
+   compõe-se como as outras etiquetas do sítio, na letra de instrumento. */
+.distrito-tipo {
+  margin: 8px 0 0;
+  font-family: var(--f-instr);
+  font-size: 14px;
+  color: var(--muted);
+}
+.distrito-conta {
+  margin: 10px 0 0;
+  font-family: var(--f-instr);
+  font-size: 15px;
+}
+
+/* ----------------------------------------------------------------------------
+ * A CAIXA DO MAPA É 490 × 560 (o pressuposto do motor, feito folha)
+ * ----------------------------------------------------------------------------
+ * O motor derivou a tolerância de cada um dos 29 ficheiros de um erro de 0,25 px
+ * numa página de 490 × 560 px, e escreveu que a altura é um pressuposto seu.
+ * Esta folha dá-lhe a caixa que ele pressupôs, e por isso não há tolerância
+ * nenhuma para rederivar.
+ *
+ * `max-height` COM `width: 100%` É O «CONTÉM» DO SVG. Um distrito ao alto
+ * desenhado a 490 px de largura pediria 745 px de altura; o tecto trá-lo aos
+ * 560, e o `preserveAspectRatio` por omissão (`xMidYMid meet`) encaixa o desenho
+ * no meio da caixa sem o deformar. É exactamente a conta que o motor fez,
+ * `min(490/largura, 560/altura)`, escrita em CSS.
+ *
+ * ABAIXO DE 530 A COLUNA MANDA, e o mapa desenha-se mais pequeno. O erro no ecrã
+ * desce com ele: uma tolerância derivada para 490 px vale menos de 0,25 px em
+ * qualquer largura menor, e nunca mais.
+ */
+.distrito-mapa {
+  margin: clamp(22px, 3vw, 30px) 0 0;
+}
+.distrito-tela {
+  width: 100%;
+  max-width: 490px;
+}
+.distrito-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 560px;
+  overflow: visible;
+}
+.distrito-legenda {
+  margin-top: 10px;
+  font-family: var(--f-instr);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.distrito-lista {
+  margin-top: clamp(26px, 3.4vw, 38px);
+}
+.distrito-lista-k {
+  font-family: var(--f-versal);
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  margin: 0 0 10px;
+}
+
+/* O índice das 29: a mesma fila de nomes do índice dos concelhos, com a altura
+   de alvo da casa em cada linha. */
+.distritos-lista {
+  list-style: none;
+  margin: clamp(22px, 3vw, 30px) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0 clamp(18px, 2.4vw, 30px);
+}
+.distritos-item a {
+  display: block;
+  min-height: 44px;
+  line-height: 44px;
+}
+
+.distrito-prov {
+  margin-top: clamp(30px, 4vw, 44px);
+}
+.distrito-portas {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px clamp(16px, 2.2vw, 26px);
+}

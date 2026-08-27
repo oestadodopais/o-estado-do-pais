@@ -88,6 +88,28 @@ export const ROUTES = {
   municipios: { pt: '/municipios', en: '/en/municipalities' },
   municipio: { pt: '/municipios/:slug', en: '/en/municipalities/:slug' },
   /**
+   * AS 29 UNIDADES DA CARTA, E A PÁGINA DE CADA UMA (Emenda 20, 27.08.2026).
+   *
+   * O mapa da primeira página deixou de ser 308 pontos e passou a ser as 29
+   * unidades da Carta como áreas: os 18 distritos, as duas ilhas da Madeira e as
+   * nove dos Açores. Cada área é a porta da sua página, e a página mostra os
+   * concelhos daquela unidade como áreas e como lista.
+   *
+   * `/distritos/<slug>` E NUNCA `/municipios/<slug>`, e a razão é uma colisão
+   * medida: `lisboa` é o slug de um distrito e o slug de um concelho, e um
+   * endereço não pode abrir os dois. As 29 unidades têm por isso uma família de
+   * endereços própria. O slug de cada uma é o `slugDeConcelho()` da casa sobre o
+   * nome que a Carta lhe dá, e a lista está escrita no manifesto do motor, que o
+   * `check:mapa` reconfere contra a função do sítio.
+   *
+   * O ÍNDICE EXISTE PELA MESMA RAZÃO QUE O DOS CONCELHOS (§1.36, item 9): sem
+   * ele, `/distritos` devolvia 404 por baixo de 29 páginas que existem, e o
+   * cabeçalho de grupo de `/municipios` levaria a uma família de páginas sem
+   * porta comum. É uma lista, e não leva mapa: o mapa é a primeira página.
+   */
+  distritos: { pt: '/distritos', en: '/en/districts' },
+  distrito: { pt: '/distritos/:slug', en: '/en/districts/:slug' },
+  /**
    * A agenda: o que se mede agora, o que se segue, e o calendário das fontes.
    *
    * Os dois registos vêm do motor (`src/data/agenda.json` e
