@@ -1,0 +1,49 @@
+/* ============================================================================
+ * A LÍNGUA DAS ÁREAS DO MAPA (Emendas 10 e 20b, 27.08.2026)
+ * ============================================================================
+ *
+ * O mapa das 29 unidades da primeira página e o mapa dos concelhos de uma página
+ * de distrito são o mesmo desenho a duas escalas, e por isso são a mesma folha.
+ * Vive num ficheiro próprio, e não dentro de `inicio.css`, porque as duas
+ * famílias de página que a usam importam folhas diferentes: escrevê-la numa
+ * delas seria a outra a desenhar sem regra nenhuma, que é exactamente o defeito
+ * que a captura da página de Lisboa apanhou (16 concelhos a preto sólido, o
+ * enchimento por omissão de um `<path>`).
+ */
+
+/* ---------------------------------------------------------------------------
+ * AS 29 ÁREAS SÃO IGUAIS (Emendas 10 e 20b)
+ * ---------------------------------------------------------------------------
+ * Uma classe só para as 29, sem excepção nenhuma: nenhuma área é destacada por
+ * estatuto (nem a capital, nem a sede de distrito) nem por cobertura. Não há
+ * aqui uma segunda regra para «tem página», porque não há uma segunda: o que a
+ * folha desenha é território, e o território não tem estado.
+ *
+ * `fill: none` COM `pointer-events: all` É O ALVO INTEIRO SEM UM PIXEL PINTADO.
+ * Um `<path>` com `fill: none` só recebe eventos onde está pintado, que é o
+ * traço; foi a lição medida a 26.08 no ponto de Évora, e vale aqui com mais
+ * força, porque o miolo de um distrito é quase toda a área dele. `all` faz do
+ * interior o alvo sem lhe dar cor, que é o que a Emenda 10 exige.
+ */
+.uni {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  pointer-events: all;
+}
+/* O QUE MUDA AO PASSAR O RATO OU AO CHEGAR PELO TECLADO É O CONTORNO, E SÓ ELE
+   (Emenda 20b). Nem enchimento, nem cor, nem tamanho: o mesmo traço, mais
+   grosso, que é a distinção que a Emenda 10 já usava para o concelho escolhido.
+   O anel de foco do navegador desenharia o rectângulo da caixa da área, que num
+   distrito côncavo é papel a mais: o foco diz-se no próprio contorno. */
+.uni-porta {
+  cursor: pointer;
+}
+.uni-porta:hover .uni,
+.uni-porta:focus-visible .uni {
+  stroke-width: 3;
+}
+.uni-porta:focus-visible {
+  outline: none;
+}

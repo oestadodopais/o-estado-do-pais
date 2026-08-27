@@ -1,3 +1,5 @@
+@import './mapa.css';
+
 /* =============================================================================
  * A PRIMEIRA PÁGINA v3 — a folha da vista, e de mais nada.
  *
@@ -300,42 +302,14 @@
 .mapa-svg-areas .mapa-moldura {
   vector-effect: non-scaling-stroke;
 }
-/* ---------------------------------------------------------------------------
- * AS 29 ÁREAS SÃO IGUAIS (Emendas 10 e 20b)
- * ---------------------------------------------------------------------------
- * Uma classe só para as 29, sem excepção nenhuma: nenhuma área é destacada por
- * estatuto (nem a capital, nem a sede de distrito) nem por cobertura. Não há
- * aqui uma segunda regra para «tem página», porque não há uma segunda: o que a
- * folha desenha é território, e o território não tem estado.
- *
- * `fill: none` COM `pointer-events: all` É O ALVO INTEIRO SEM UM PIXEL PINTADO.
- * Um `<path>` com `fill: none` só recebe eventos onde está pintado, que é o
- * traço; foi a lição medida a 26.08 no ponto de Évora, e vale aqui com mais
- * força, porque o miolo de um distrito é quase toda a área dele. `all` faz do
- * interior o alvo sem lhe dar cor, que é o que a Emenda 10 exige.
- */
-.uni {
-  fill: none;
-  stroke: var(--ink);
-  stroke-width: 1;
-  vector-effect: non-scaling-stroke;
-  pointer-events: all;
-}
-/* O QUE MUDA AO PASSAR O RATO OU AO CHEGAR PELO TECLADO É O CONTORNO, E SÓ ELE
-   (Emenda 20b). Nem enchimento, nem cor, nem tamanho: o mesmo traço, mais
-   grosso, que é a distinção que a Emenda 10 já usava para o concelho escolhido.
-   O anel de foco do navegador desenharia o rectângulo da caixa da área, que num
-   distrito côncavo é papel a mais: o foco diz-se no próprio contorno. */
-.uni-porta {
-  cursor: pointer;
-}
-.uni-porta:hover .uni,
-.uni-porta:focus-visible .uni {
-  stroke-width: 3;
-}
-.uni-porta:focus-visible {
-  outline: none;
-}
+/* A LÍNGUA DAS ÁREAS VIVE EM `mapa.css`, e é importada no topo desta folha.
+   Saiu daqui quando a página de um distrito passou a desenhar as mesmas áreas:
+   ficara escrito num comentário que ela vivia em `inicio.css` e que a página do
+   distrito a herdava, e não herdava nada — a folha do distrito não importa esta.
+   A captura mostrou 16 concelhos pintados de preto sólido, que é o enchimento
+   por omissão de um `<path>` sem regra nenhuma. A regra 15 da casa: o nome não é
+   o conteúdo, e um comentário a dizer onde uma regra vive não a põe lá. */
+
 /* ---------------------------------------------------------------------------
  * OS NOMES DAS ILHAS POR BAIXO DA SUA MOLDURA (Emenda 20c)
  * ---------------------------------------------------------------------------

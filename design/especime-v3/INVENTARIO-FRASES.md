@@ -1011,3 +1011,42 @@ frase corrigida que continue declarada volta em silêncio.*
 | conteudo | Every row. | voz-do-livro-razao |
 | conteudo | Livro-razão dos concelhos · O Estado do País | voz-do-livro-razao |
 | conteudo | Municipalities ledger · O Estado do País | voz-do-livro-razao |
+
+## Bloco «O mapa por distritos» · Emenda 20 · 27.08.2026
+
+*As páginas novas do bloco: o índice das 29 unidades da Carta (`/distritos`,
+`/en/districts`) e a página de cada uma (`/distritos/<slug>`,
+`/en/districts/<slug>`). As duas rotas entram em `ROTAS_DO_INVENTARIO` no mesmo
+commit em que são construídas, que é a regra desta tabela.*
+
+*Dezasseis cadeias, oito por edição, e nenhuma é autorreferência: o título, a
+lede e a descrição do `<head>` nomeiam o que a página tem; «distrito» e «ilha da
+Região Autónoma» são as duas naturezas que a Carta e a Constituição dão às 29
+unidades, escolhidas pelo campo `tipo` do artefacto e nunca por uma leitura do
+nome; «Os concelhos» é o título da lista. A contagem das 29 leva o número de
+hoje, como as outras linhas com contagem deste ficheiro.*
+
+*O nome de cada unidade e o de cada concelho NÃO entram aqui: vão declarados
+como lugar (`data-lugar`) ou dentro da sua ligação, e por isso a tabela não ganha
+337 entradas com a lista da Carta escrita outra vez. A contagem de concelhos de
+cada unidade não se rende (a razão está em `src/views/DistritoView.astro`), e por
+isso também não tem cadeia.*
+
+| classe | texto | bloco |
+| --- | --- | --- |
+| conteudo | Os distritos e as ilhas de Portugal | mapa-distritos |
+| conteudo | The districts and islands of Portugal | mapa-distritos |
+| conteudo | Os distritos e as ilhas de Portugal, pela Carta Administrativa Oficial. | mapa-distritos |
+| conteudo | The districts and islands of Portugal, from the official administrative map. | mapa-distritos |
+| conteudo | As unidades da Carta Administrativa Oficial de Portugal, e os concelhos de cada uma. | mapa-distritos |
+| conteudo | The units of the Carta Administrativa Oficial de Portugal, and the municipalities of each. | mapa-distritos |
+| conteudo | 29 distritos e ilhas | mapa-distritos |
+| conteudo | 29 districts and islands | mapa-distritos |
+| conteudo | Os concelhos de <lugar>, pela Carta Administrativa Oficial de Portugal. | mapa-distritos |
+| conteudo | The municipalities of <lugar>, from the Carta Administrativa Oficial de Portugal. | mapa-distritos |
+| conteudo | Os concelhos | mapa-distritos |
+| conteudo | The municipalities | mapa-distritos |
+| conteudo | distrito | mapa-distritos |
+| conteudo | district | mapa-distritos |
+| conteudo | ilha da Região Autónoma | mapa-distritos |
+| conteudo | island of the Autonomous Region | mapa-distritos |

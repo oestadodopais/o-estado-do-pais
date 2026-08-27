@@ -664,13 +664,21 @@ export const STRINGS = {
       tipoDistrito: 'distrito',
       tipoIlha: 'ilha da Região Autónoma',
       concelhosK: 'Os concelhos',
-      /* A contagem de cada unidade é uma chave da prova, e estas são as palavras
-         ao lado dela. O portão reconta a contagem da lista da Carta. */
-      contaConcelhos: ' concelhos',
+      /* A contagem das 29, no índice, com a chave da prova ao lado. A contagem
+         de cada unidade NÃO se rende (a razão está em `DistritoView.astro`), e
+         por isso não há aqui uma cadeia para ela. */
       contaUnidades: ' distritos e ilhas',
       /* O nome acessível do desenho de uma unidade. Nomeia o que a coisa é, e
          não como se usa: as portas estão nas áreas e na lista. */
       mapaLabel: 'Mapa dos concelhos, com uma área por concelho.',
+      /* A LEGENDA DO MAPA DE UMA UNIDADE NÃO É A DA PRIMEIRA PÁGINA. Ali a
+         legenda é «308 concelhos · CAOP 2025 ■ fonte», que a Emenda 17 fixa;
+         aqui, por baixo de um mapa com dezasseis áreas, a contagem dos 308 lia-se
+         como a contagem do que está desenhado. Fica o que a legenda tem de ter: o
+         nome da Carta, o ano da edição e o selo que abre a linha. O nome é o
+         oficial e não se traduz, como a lede de `/municipios` já faz nas duas
+         edições. */
+      legendaCarta: 'Carta Administrativa Oficial de Portugal · ',
       voltarIndice: 'Os distritos e as ilhas',
       voltarConcelhos: 'Os concelhos de Portugal',
     },
@@ -1686,9 +1694,9 @@ export const STRINGS = {
       tipoDistrito: 'district',
       tipoIlha: 'island of the Autonomous Region',
       concelhosK: 'The municipalities',
-      contaConcelhos: ' municipalities',
       contaUnidades: ' districts and islands',
       mapaLabel: 'Map of the municipalities, one area per municipality.',
+      legendaCarta: 'Carta Administrativa Oficial de Portugal · ',
       voltarIndice: 'The districts and islands',
       voltarConcelhos: 'The municipalities of Portugal',
     },
