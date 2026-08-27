@@ -36,11 +36,12 @@ import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
 import Provenance from '../components/Provenance.astro';
 import Frase from '../components/Frase.astro';
+import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import Peca from '../components/inicio/Peca.astro';
 import MapaRespira from '../components/inicio/MapaRespira.astro';
 import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import { municipioPorSlug } from '../data/municipios.mjs';
-import { workById, studyLabel } from '../data/studies.mjs';
+import { workById, studyTitle } from '../data/studies.mjs';
 import { leituraDe } from '../data/leituras.mjs';
 import { getClaim, parsePtNumber, POR_VERIFICAR } from '../lib/ledger.mjs';
 import { concelhos, pecasDoConcelho } from '../lib/inicio.mjs';
@@ -141,7 +142,7 @@ const estudos = (m.estudos ?? []).map((id) => {
   const leitura = leituraDe(id);
   return {
     id,
-    titulo: studyLabel(id, lang),
+    titulo: studyTitle(id, lang).titulo,
     descricao: w.description[lang],
     /* Onde a descrição É a frase de abertura do documento, a página não a
        escreve: transcreve-a, e o portão compara-a com o registo. */
@@ -974,7 +975,7 @@ const metodoPath = routePath('metodo', lang);
           {
             estudos.map((e) => (
               <article class="mun-estudo">
-                <h3 class="mun-estudo-titulo" data-nonledger="titulo-de-estudo">{e.titulo}</h3>
+                <TituloDeTrabalho as="h3" class="mun-estudo-titulo" titulo={e.titulo} lang={lang} />
                 <p class="mun-estudo-frase">
                   {e.verbatimDaAbertura ? (
                     <span data-verbatim={e.verbatimDaAbertura}>{e.descricao}</span>

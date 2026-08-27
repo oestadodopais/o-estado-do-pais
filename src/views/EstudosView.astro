@@ -23,6 +23,7 @@
 import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
 import Marcador from '../components/Marcador.astro';
+import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import { WORKS, POR_VERIFICAR } from '../data/studies.mjs';
 import { leituraDe } from '../data/leituras.mjs';
 import { documentosDoEstudo } from '../lib/documentos.mjs';
@@ -100,11 +101,8 @@ const trabalhos = WORKS.map((w) => {
           <article class="arquivo-item">
             <div>
               <h2 class="arquivo-titulo">
-                <a
-                  href={routePath('estudo', lang, { slug: tr.work.slug })}
-                  data-nonledger="titulo-de-estudo"
-                >
-                  {tr.titulo}
+                <a href={routePath('estudo', lang, { slug: tr.work.slug })}>
+                  <TituloDeTrabalho titulo={tr.titulo} lang={lang} />
                 </a>
               </h2>
               <p class="arquivo-desc">

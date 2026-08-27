@@ -47,10 +47,11 @@
  */
 import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
+import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import '../styles/leitura.css';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
-import { studyLabel } from '../data/studies.mjs';
+import { studyTitle } from '../data/studies.mjs';
 import { prova, ancoraDoEstadoDaAgenda } from '../lib/prova.mjs';
 import {
   ESTADOS,
@@ -453,9 +454,10 @@ const rotuloDoCriterio = (tipo) =>
                                 <>
                                   {i > 0 ? ' · ' : ''}
                                   <a href={routePath('documento', doc.edicao, { slug: doc.slug })}>
-                                    <span data-nonledger="titulo-de-estudo">
-                                      {studyLabel(doc.slug, doc.edicao)}
-                                    </span>
+                                    <TituloDeTrabalho
+                                      titulo={studyTitle(doc.slug, doc.edicao).titulo}
+                                      lang={lang}
+                                    />
                                     {' ('}
                                     {s.agenda.edicoesDoDocumento[doc.edicao]}
                                     {')'}

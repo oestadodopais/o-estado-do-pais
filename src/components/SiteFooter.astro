@@ -56,6 +56,14 @@ const secoes = [
 <footer class="rodape">
   <nav class="rodape-nav" aria-label={s.nav.rotuloRodape}>
     {secoes.map(([rota, rotulo]) => <a href={routePath(rota, lang)}>{rotulo}</a>)}
-    <a href={outra} hreflang={lang === 'pt' ? 'en' : 'pt-PT'}>{s.outraLingua}</a>
+    {/* O NOME DA OUTRA EDIÇÃO ESTÁ NA OUTRA LÍNGUA, e o atributo di-lo
+        (27.08.2026). «English» dentro de uma página portuguesa lia-se com a
+        fonética do português para quem ouve; o comando do cabeçalho já levava a
+        marca, e este não. */}
+    <a
+      href={outra}
+      hreflang={lang === 'pt' ? 'en' : 'pt-PT'}
+      lang={lang === 'pt' ? 'en' : 'pt-PT'}
+    >{s.outraLingua}</a>
   </nav>
 </footer>
