@@ -87,6 +87,16 @@ const distingue = coberturaDistingue(concelhos);
         <li
           class="pesquisa-item"
           data-normal={c.normal}
+          {/* O SLUG DA CARTA, DECLARADO (Emenda 20, 27.08.2026).
+              O mapa da primeira página deixou de ser 308 pontos, e com eles saiu
+              a lista de onde `public/js/inicio.js` lia o destino de um endereço
+              antigo (`?ambito=municipio:<slug>`, que a Emenda 7 obriga a abrir
+              alguma coisa). Esta lista tem os mesmos 308 concelhos, com o mesmo
+              slug e com a porta de cada um: o script passa a lê-la aqui. Não
+              muda nada do que se vê, e é a declaração que já lá estava em falta:
+              a fila de resultados sabia comparar por `data-normal` e não sabia
+              dizer de que concelho era cada linha. */}
+          data-caop={c.slug}
           data-tem-pagina={c.pagina ? 'sim' : null}
           hidden={!c.pagina}
         >

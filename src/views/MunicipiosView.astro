@@ -34,7 +34,7 @@ import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
 import Pesquisa from '../components/inicio/Pesquisa.astro';
-import { concelhos as concelhosDaCarta, coberturaDistingue } from '../lib/inicio.mjs';
+import { concelhos as concelhosDaCarta, coberturaDistingue, slugDeConcelho } from '../lib/inicio.mjs';
 import { MUNICIPIOS, DISTRITOS, regiaoDe } from '../data/caop-centroids.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
 import { VERBATIM } from '../data/verbatim.mjs';
@@ -56,6 +56,11 @@ const paginaPorIndice = new Map(MUNICIPIOS_COM_PAGINA.map((m) => [m.caopIndex, m
    ordem alfabética da carta. Nada é reordenado à mão. */
 const grupos = DISTRITOS.map((nome, i) => ({
   nome,
+  /* O SLUG DA UNIDADE, PARA A PORTA DO CABEÇALHO DE GRUPO (Emenda 20, D3).
+     É a mesma função que dá o slug de um concelho, aplicada ao nome da Carta
+     que este grupo já tem: é assim que o motor os escreveu e é assim que o
+     `check:mapa` os reconfere. Não há aqui uma segunda lista de slugs. */
+  slug: slugDeConcelho(nome),
   regiao: null,
   entradas: [],
 })).filter(Boolean);
@@ -217,7 +222,15 @@ const distingue = coberturaDistingue(resultados);
     {
       comEntradas.map((g) => (
         <section class="concelhos-grupo">
-          <h2 class="concelhos-grupo-k">{g.nome}</h2>
+          {/* O CABEÇALHO DE GRUPO PASSA A SER UMA PORTA (Emenda 20, D3).
+              Era o nome da unidade e mais nada, e agora há uma página por
+              unidade: a lista dos concelhos daquele distrito, com o mapa deles.
+              Nada mais muda nesta página. A seta entra dentro da ligação, como o
+              item E8 fixou para a linha de cada concelho: uma seta fora da porta
+              seria um bloco de texto novo no inventário, 29 vezes. */}
+          <h2 class="concelhos-grupo-k">
+            <a href={routePath('distrito', lang, { slug: g.slug })}>{g.nome} →</a>
+          </h2>
           <ul class="concelhos-lista">
             {g.entradas.map((e) =>
               e.pagina ? (

@@ -1,0 +1,181 @@
+---
+/**
+ * A PÁGINA DE UMA UNIDADE DA CARTA: `/distritos/<slug>` e `/en/districts/<slug>`.
+ *
+ * ---------------------------------------------------------------------------
+ * PORQUE EXISTE
+ * ---------------------------------------------------------------------------
+ * Emenda 20a: «a página de um distrito mostra os seus concelhos como áreas, cada
+ * uma uma ligação para a página do concelho, e a lista deles». É o outro lado do
+ * mapa da primeira página: ali as 29 unidades são áreas, e cada uma abre isto.
+ *
+ * A razão medida está na Emenda 19e e no reconhecimento: à escala do país nenhum
+ * concelho é alvo (305 dos 308 abaixo de 44 px na coluna do computador), e a
+ * resposta não é aumentar o ponto, é aumentar o mapa. Com o distrito aberto, o
+ * menor concelho de cada unidade mede entre 129 e 1707 px², e os concelhos que
+ * mesmo assim não chegam aos 44 px têm a lista por baixo, que é uma porta que se
+ * toca.
+ *
+ * ---------------------------------------------------------------------------
+ * A CAIXA DO MAPA É 490 × 560, E NÃO É UMA ESCOLHA DE GOSTO
+ * ---------------------------------------------------------------------------
+ * A tolerância de cada um dos 29 ficheiros foi derivada pelo motor de um erro de
+ * 0,25 px numa página de 490 × 560 px (`tolerancia.pagina_do_distrito_px` no
+ * manifesto), e o motor escreve que essa altura é um pressuposto: «se a página
+ * der outra altura, as tolerâncias são rederivadas». Esta página dá-lhe
+ * exactamente a caixa que ele pressupôs, e por isso nada há para rederivar: o
+ * erro no ecrã é o que o manifesto diz que é.
+ *
+ * A CAIXA CONTÉM, e não corta. Um distrito ao alto (Aveiro, 1315 × 2000 no seu
+ * campo local) desenhado a 490 px de largura teria 745 px de altura; o
+ * `max-height` da folha trá-lo aos 560, e o `preserveAspectRatio` por omissão
+ * encaixa o desenho no meio da caixa sem o deformar. É a mesma conta que o motor
+ * fez para derivar a tolerância dele (`min(490/largura, 560/altura)`), e é por
+ * isso que as duas batem certo.
+ *
+ * ---------------------------------------------------------------------------
+ * NENHUM NÚMERO INVENTADO
+ * ---------------------------------------------------------------------------
+ * O único algarismo desta página é quantos concelhos a unidade tem, e é uma
+ * chave da prova: entra por `data-prova`, o portão reconta-a da lista da Carta
+ * (`caop-centroids.mjs`) e fecha a construção se as duas contas discordarem. A
+ * geometria toda vem de `mapa/distritos/<slug>.json`, e o `viewBox` é o campo
+ * desse ficheiro.
+ */
+import Base from '../layouts/Base.astro';
+import Claim from '../components/Claim.astro';
+import Provenance from '../components/Provenance.astro';
+import ValorDaProva from '../components/ValorDaProva.astro';
+import { distritoDoMapa, unidadeDoMapa } from '../lib/mapa.mjs';
+import { prova, CHAVE_DOS_CONCELHOS } from '../lib/prova.mjs';
+import { getClaim } from '../lib/ledger.mjs';
+import { VERBATIM } from '../data/verbatim.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+import '../styles/distrito.css';
+
+const { lang = 'pt', slug } = Astro.props;
+const s = t(lang);
+
+const unidade = unidadeDoMapa(slug);
+if (!unidade) throw new Error(`distritos: unidade desconhecida "${slug}"`);
+const distrito = distritoDoMapa(slug);
+
+const p = prova(lang);
+const chave = CHAVE_DOS_CONCELHOS(slug);
+const path = routePath('distrito', lang, { slug });
+const caop = getClaim('municipios-portugal-caop-2025');
+
+/* A DUAS PALAVRAS DE TIPO SÃO DO ARTEFACTO E NÃO DE UMA LEITURA DO NOME. O campo
+   `tipo` vale `distrito` ou `ilha`, e o motor escreveu-o da camada da Carta.
+   Adivinhá-lo do nome («começa por Ilha») seria a regra escrita duas vezes. */
+const tipo = unidade.tipo === 'ilha' ? s.distritos.tipoIlha : s.distritos.tipoDistrito;
+---
+
+<Base
+  lang={lang}
+  path={path}
+  title={`${unidade.nome} · ${s.distritos.metaCauda}`}
+  description={`${s.distritos.metaDescricaoA}${unidade.nome}${s.distritos.metaDescricaoB}`}
+>
+  <div class="distrito-cabeca">
+    <span class="eyebrow">{s.distritos.eyebrow}</span>
+    {/* O nome é o da Carta, transcrito: vai declarado como lugar, para que o
+        inventário de frases não ganhe 29 entradas com os nomes das unidades. */}
+    <h1 data-lugar>{unidade.nome}</h1>
+    <p class="distrito-tipo">{tipo}</p>
+    <p class="distrito-conta">
+      <ValorDaProva chave={chave} item={p[chave]} lang={lang} />
+      {s.distritos.contaConcelhos}
+    </p>
+  </div>
+
+  {/* ------------------------------------------------------------------------
+      O MAPA DA UNIDADE: UMA ÁREA POR CONCELHO, CADA UMA UMA LIGAÇÃO
+      ------------------------------------------------------------------------
+      As áreas são todas iguais (Emendas 10 e 20b): nenhuma é destacada por
+      estatuto, nem a sede do distrito, e o que muda ao passar o rato ou ao
+      chegar pelo teclado é o contorno e só ele. As classes são as mesmas do mapa
+      da primeira página, porque o desenho é o mesmo desenho a outra escala.
+
+      O `svg` NÃO É UMA IMAGEM: tem ligações lá dentro, e `role="img"` pode
+      achatar o que uma imagem contém. O papel é `group`, que leva nome acessível
+      e deixa as portas alcançáveis uma a uma.
+      ---------------------------------------------------------------------- */}
+  <figure class="distrito-mapa" data-instrumento="mapa-do-distrito">
+    <div class="distrito-tela">
+      <svg
+        class="mapa-svg mapa-svg-areas distrito-svg"
+        viewBox={`0 0 ${distrito.campo.largura} ${distrito.campo.altura}`}
+        role="group"
+        aria-label={s.distritos.mapaLabel}
+        data-mapa-concelhos
+      >
+        <g class="mapa-areas" data-areas>
+          {distrito.concelhos.map((c) => (
+            <a
+              class="uni-porta"
+              href={routePath('municipio', lang, { slug: c.slug })}
+              data-concelho-porta={c.slug}
+            >
+              <title>{c.nome}</title>
+              <path class="uni" d={c.d} data-m={c.nome} data-caop={c.slug} />
+            </a>
+          ))}
+        </g>
+      </svg>
+    </div>
+    {/* A legenda do mapa da primeira página, com a mesma composição e as mesmas
+        palavras: a contagem da Carta, o nome dela, o ano da edição e o selo que
+        abre a linha. */}
+    <figcaption class="distrito-legenda">
+      <Claim id="municipios-portugal-caop-2025" lang={lang} />
+      {s.inicio.mapa.linha}
+      <span data-nonledger="data-de-referencia">{caop.reference_date}</span>{' '}
+      <Provenance id="municipios-portugal-caop-2025" lang={lang} />
+    </figcaption>
+  </figure>
+
+  {/* ------------------------------------------------------------------------
+      A LISTA DOS CONCELHOS, QUE É A OUTRA PORTA
+      ------------------------------------------------------------------------
+      A forma é a do grupo por distrito de `/municipios`, com os nomes na ordem
+      da Carta, que é a ordem em que o artefacto os traz. É por aqui que se chega
+      aos concelhos que, mesmo com o distrito aberto, não chegam aos 44 px: a
+      lista é uma porta que se toca, e não depende da escala de nada.
+
+      A ETIQUETA DE ESTADO NÃO ENTRA. Os 308 têm página, e 308 «tem página» numa
+      lista é a mesma palavra repetida a dizer o que a existência da porta já
+      diz. É a regra do item E8, aplicada aqui de origem.
+      ---------------------------------------------------------------------- */}
+  <section class="distrito-lista" id="concelhos" aria-labelledby="concelhos-k">
+    <h2 class="distrito-lista-k" id="concelhos-k">{s.distritos.concelhosK}</h2>
+    <ul class="concelhos-lista">
+      {distrito.concelhos.map((c) => (
+        <li class="concelho concelho-com-pagina">
+          <a href={routePath('municipio', lang, { slug: c.slug })}>{c.nome} →</a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  {/* DE ONDE VEM O DESENHO. A transcrição que `/municipios` já publica, com a
+      publicação, a distribuição, a licença e os ficheiros: é a menção que a
+      licença CC BY da CAOP obriga a fazer, e vive onde o desenho está. Não é
+      prosa da casa: é uma citação registada, comparada carácter a carácter pelo
+      portão contra `src/data/verbatim.mjs`. */}
+  <div class="prov distrito-prov">
+    <div class="prov-row">
+      <span class="prov-study">{s.municipios.fonteK}</span>
+      <span class="prov-vals verbatim" data-verbatim="caop-fonte" lang="pt-PT">
+        {VERBATIM['caop-fonte'].text}
+      </span>
+    </div>
+  </div>
+
+  <p class="rodape-nav distrito-portas">
+    <a href={routePath('distritos', lang)}>{s.distritos.voltarIndice}</a>
+    <a href={routePath('municipios', lang)}>{s.distritos.voltarConcelhos}</a>
+    <a href={`${routePath('home', lang)}#mapa`}>{s.municipios.mapaLink}</a>
+  </p>
+</Base>

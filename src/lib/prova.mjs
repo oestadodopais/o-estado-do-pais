@@ -59,6 +59,7 @@ import { temLeitura } from '../data/leituras.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
 import { contagensDosConcelhos } from './livro-concelhos.mjs';
 import { MUNICIPIOS } from '../data/caop-centroids.mjs';
+import { unidadesDoMapa, distritoDoMapa } from './mapa.mjs';
 import { VERIFICACAO } from '../data/verificacao.mjs';
 import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
 
@@ -466,7 +467,32 @@ const FRASES = {
     pt: 'figuras cuja linha traz, em vez do resumo, um motivo da lista fechada do motor',
     en: 'figures whose row carries, instead of the digest, a reason from the engine closed list',
   },
+  mapa_unidades: {
+    pt: 'unidades da Carta Administrativa: os distritos e as ilhas',
+    en: 'units of the official administrative map: the districts and the islands',
+  },
 };
+
+/* ---------------------------------------------------------------------------
+ * AS 29 CHAVES DA CONTAGEM DE CADA UNIDADE (Emenda 20, 27.08.2026)
+ * ---------------------------------------------------------------------------
+ * Cada página de distrito diz quantos concelhos tem, e essa contagem é um número
+ * do sítio sobre si próprio: entra por `data-prova` e o portão reconta-a por
+ * conta própria. As 29 frases de origem escrevem-se num laço e não à mão, pela
+ * razão de sempre: 29 linhas copiadas divergem à primeira, e a única coisa que
+ * muda de uma para a outra é o nome da unidade, que vem do artefacto.
+ *
+ * A CHAVE LEVA O SLUG e não um número de ordem, para que a mensagem do portão
+ * nomeie a página em que o desacordo está.
+ */
+export const CHAVE_DOS_CONCELHOS = (slug) => `mapa_concelhos_${slug}`;
+
+for (const u of unidadesDoMapa()) {
+  FRASES[CHAVE_DOS_CONCELHOS(u.slug)] = {
+    pt: `concelhos da Carta Administrativa em ${u.nome}`,
+    en: `municipalities of the official administrative map in ${u.nome}`,
+  };
+}
 
 /**
  * Todos os números que o sítio diz sobre si próprio, na língua de uma edição.
@@ -610,6 +636,27 @@ export function prova(lang = 'pt') {
       routePath('municipios', lang),
     ),
     municipios_total: k('municipios_total', MUNICIPIOS.length, routePath('municipios', lang)),
+
+    /* ---- as 29 unidades da Carta, e os concelhos de cada uma (Emenda 20) ----
+       A contagem do índice, e uma por página de distrito. As 30 saem do
+       artefacto que o motor atravessou, e o portão reconta-as da lista da Carta
+       que o sítio já tem (`caop-centroids.mjs`): dois pontos de observação, e
+       um desacordo entre eles fecha a construção.
+
+       A PORTA DE CADA UMA É A LISTA QUE ELA CONTA, na própria página. É o que a
+       IDENTIDADE §10 permite e o que a agenda já faz: quando o que o número
+       conta se vê ali mesmo, o destino é a secção que o mostra. */
+    mapa_unidades: k('mapa_unidades', unidadesDoMapa().length, `${routePath('distritos', lang)}#unidades`),
+    ...Object.fromEntries(
+      unidadesDoMapa().map((u) => [
+        CHAVE_DOS_CONCELHOS(u.slug),
+        k(
+          CHAVE_DOS_CONCELHOS(u.slug),
+          distritoDoMapa(u.slug).concelhos.length,
+          `${routePath('distrito', lang, { slug: u.slug })}#concelhos`,
+        ),
+      ]),
+    ),
 
     /* ---- o livro-razão do conjunto dos concelhos (decisão D6, 26.08.2026) ----
        As três contagens que a página do conjunto escreve. Nenhuma é um número

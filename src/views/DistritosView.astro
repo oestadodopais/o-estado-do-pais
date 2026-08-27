@@ -1,0 +1,67 @@
+---
+/**
+ * O ÍNDICE DAS 29 UNIDADES: `/distritos` e `/en/districts`.
+ *
+ * É uma lista, e não leva mapa. O brief do bloco deixa-o opcional e escreve a
+ * forma: «um índice `/distritos` com as 29 é opcional; se existir, é a lista,
+ * sem mapa». Existe pela mesma razão que o índice dos concelhos existe (§1.36,
+ * item 9): sem ele, `/distritos` devolvia 404 por baixo de 29 páginas que
+ * existem, e o cabeçalho de grupo de `/municipios`, que passou a ser a porta da
+ * página do distrito, ficava a apontar para uma família sem entrada.
+ *
+ * O mapa é a primeira página, e desenhá-lo aqui outra vez seria a mesma
+ * geometria em mais duas páginas para dizer o que a lista já diz.
+ */
+import Base from '../layouts/Base.astro';
+import ValorDaProva from '../components/ValorDaProva.astro';
+import { unidadesDoMapa, distritoDoMapa } from '../lib/mapa.mjs';
+import { prova } from '../lib/prova.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+import '../styles/distrito.css';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+const p = prova(lang);
+const path = routePath('distritos', lang);
+
+/* As 29, na ordem em que o artefacto as traz, que é a de `DISTRITOS`. Nada é
+   reordenado aqui, como nada é reordenado em `/municipios`. */
+const unidades = unidadesDoMapa().map((u) => ({
+  ...u,
+  concelhos: distritoDoMapa(u.slug).concelhos.length,
+}));
+---
+
+<Base
+  lang={lang}
+  path={path}
+  title={s.distritos.metaTitle}
+  description={s.distritos.metaDescription}
+>
+  <div style="padding-top:clamp(20px,3vw,34px)">
+    <span class="eyebrow">{s.distritos.eyebrow}</span>
+    <h1 style="margin-top:12px">{s.distritos.h1}</h1>
+    <p class="lede" style="margin-top:16px">{s.distritos.lede}</p>
+    <p class="distrito-conta">
+      <ValorDaProva chave="mapa_unidades" item={p.mapa_unidades} lang={lang} />
+      {s.distritos.contaUnidades}
+    </p>
+  </div>
+
+  {/* A contagem de cada unidade não se rende aqui: cada uma tem a sua chave da
+      prova, e a porta dessa chave é a lista da página da unidade. Repeti-las
+      neste índice seria 29 números com a porta noutra página. */}
+  <ul class="distritos-lista" id="unidades">
+    {unidades.map((u) => (
+      <li class="distritos-item">
+        <a href={routePath('distrito', lang, { slug: u.slug })}>{u.nome} →</a>
+      </li>
+    ))}
+  </ul>
+
+  <p class="rodape-nav" style="margin-top:14px">
+    <a href={routePath('municipios', lang)}>{s.distritos.voltarConcelhos}</a>
+    <a href={`${routePath('home', lang)}#mapa`}>{s.municipios.mapaLink}</a>
+  </p>
+</Base>

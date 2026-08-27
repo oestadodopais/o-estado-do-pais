@@ -512,6 +512,12 @@ export const STRINGS = {
            uma vez só, em `tecladoHint`, que vive dentro de `#mapa-descricao` e
            só se constrói na postura inteira. */
         svgLabel: 'Mapa de pontos dos municípios de Portugal.',
+        /* O NOME DO MAPA DA PRIMEIRA PÁGINA, QUE MUDOU DE DESENHO (Emenda 20).
+           O mapa de pontos fica onde a Emenda 20d o deixa, no cartão localizador
+           da página do concelho, e continua com o `svgLabel` acima. O da
+           primeira página passa a ser as 29 unidades da Carta como áreas, e o
+           seu nome diz isso: o que a coisa é, e não como se usa. */
+        distritosLabel: 'Mapa dos distritos e das ilhas de Portugal, com uma área por unidade.',
         /* «trocar de concelho» rende-se no cartão localizador, que vive na
            página do concelho, e leva ao índice dos 308. `paginaInteira` («a
            página inteira, com quem governou») saiu com a Emenda 19a: era a
@@ -632,6 +638,41 @@ export const STRINGS = {
          o que a casa fez com ela (Emenda 15). */
       dadosK: 'A lista em ficheiro',
       dadosLink: 'descarregar os dados (CSV)',
+    },
+
+    /**
+     * AS 29 UNIDADES DA CARTA (Emenda 20, 27.08.2026).
+     *
+     * O índice e a página de cada uma. Os nomes das unidades e dos concelhos são
+     * da Carta e nunca destas cadeias: o que está aqui é a mobília à volta
+     * deles. As duas palavras de tipo («distrito», «ilha da Região Autónoma»)
+     * são as que a Carta e a Constituição dão às duas naturezas que a lista tem,
+     * e o servidor escolhe entre elas pelo campo `tipo` do artefacto, nunca por
+     * uma leitura do nome.
+     */
+    distritos: {
+      metaTitle: 'Distritos e ilhas · O Estado do País',
+      metaDescription: 'Os distritos e as ilhas de Portugal, pela Carta Administrativa Oficial.',
+      eyebrow: 'Distritos e ilhas',
+      h1: 'Os distritos e as ilhas de Portugal',
+      lede: 'As unidades da Carta Administrativa Oficial de Portugal, e os concelhos de cada uma.',
+      /* A cauda do `<head>` de uma unidade, composta com o nome dela. Sem
+         algarismos, como a das páginas de concelho. */
+      metaCauda: 'os concelhos · O Estado do País',
+      metaDescricaoA: 'Os concelhos de ',
+      metaDescricaoB: ', pela Carta Administrativa Oficial de Portugal.',
+      tipoDistrito: 'distrito',
+      tipoIlha: 'ilha da Região Autónoma',
+      concelhosK: 'Os concelhos',
+      /* A contagem de cada unidade é uma chave da prova, e estas são as palavras
+         ao lado dela. O portão reconta a contagem da lista da Carta. */
+      contaConcelhos: ' concelhos',
+      contaUnidades: ' distritos e ilhas',
+      /* O nome acessível do desenho de uma unidade. Nomeia o que a coisa é, e
+         não como se usa: as portas estão nas áreas e na lista. */
+      mapaLabel: 'Mapa dos concelhos, com uma área por concelho.',
+      voltarIndice: 'Os distritos e as ilhas',
+      voltarConcelhos: 'Os concelhos de Portugal',
     },
 
     /**
@@ -1580,6 +1621,7 @@ export const STRINGS = {
         tecladoHint:
           'Keyboard: Tab to the map, arrow keys to move between neighbouring municipalities, Home to return to Évora.',
         svgLabel: 'Point map of the municipalities of Portugal.',
+        distritosLabel: 'Map of the districts and islands of Portugal, one area per unit.',
         trocar: 'change municipality',
       },
 
@@ -1626,6 +1668,29 @@ export const STRINGS = {
       parcelaTotal: 'Total',
       dadosK: 'The list as a file',
       dadosLink: 'download the data (CSV)',
+    },
+
+    /* A gémea inglesa das 29 unidades (Emenda 20, 27.08.2026). «districts and
+       islands» e não «districts»: nove das 29 são ilhas dos Açores e duas da
+       Madeira, e a Carta chama-lhes ilhas. */
+    distritos: {
+      metaTitle: 'Districts and islands · O Estado do País',
+      metaDescription:
+        'The districts and islands of Portugal, from the official administrative map.',
+      eyebrow: 'Districts and islands',
+      h1: 'The districts and islands of Portugal',
+      lede: 'The units of the Carta Administrativa Oficial de Portugal, and the municipalities of each.',
+      metaCauda: 'the municipalities · O Estado do País',
+      metaDescricaoA: 'The municipalities of ',
+      metaDescricaoB: ', from the Carta Administrativa Oficial de Portugal.',
+      tipoDistrito: 'district',
+      tipoIlha: 'island of the Autonomous Region',
+      concelhosK: 'The municipalities',
+      contaConcelhos: ' municipalities',
+      contaUnidades: ' districts and islands',
+      mapaLabel: 'Map of the municipalities, one area per municipality.',
+      voltarIndice: 'The districts and islands',
+      voltarConcelhos: 'The municipalities of Portugal',
     },
 
     home: {

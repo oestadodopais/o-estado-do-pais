@@ -1,0 +1,11 @@
+---
+import DistritoView from '../../../views/DistritoView.astro';
+import { slugsDasUnidades } from '../../../lib/mapa.mjs';
+
+export function getStaticPaths() {
+  return slugsDasUnidades().map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+---
+<DistritoView lang="en" slug={slug} />
