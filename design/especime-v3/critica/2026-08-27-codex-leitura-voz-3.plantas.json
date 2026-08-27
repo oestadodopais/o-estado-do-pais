@@ -1,0 +1,19 @@
+{
+ "registado_em": "2026-08-27",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "diffs/08-pt.diff",
+   "descricao": "a removed line carrying a figure (61 240 118) that appears nowhere else in the edition (a fact lost, and a twin mismatch)",
+   "sha256_antes": "85054f41831343480da7110e562ccddd3e8de8beb7b6e401ff6ef6b1bb6f24dc",
+   "sha256_depois": "c519acc34c4b31971ed1d9979e1103346ca265477fb75429145b155a5dccfe7b"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "paginas/leitura-04-pt.html",
+   "descricao": "a procedural sentence («Este documento comparou cada valor…») left on the built 04 page",
+   "sha256_antes": "89442cc6327299e0b3e2dcc07e9654e0b121949cc316dfb4ba019de7cbc4b709",
+   "sha256_depois": "6841138b3eab87756cd6d43f6954234a4d54c33a24dbd91e2573863e80549254"
+  }
+ ]
+}
