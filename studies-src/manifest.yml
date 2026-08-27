@@ -224,24 +224,24 @@ edicoes:
     lang: pt
     title: "Évora — Prometido, Pago, Auditado 2026"
     origin: researchhub
-    origin_ref: "content/04 Évora Public Money/Évora — Prometido, Pago, Auditado 2026 (pt-PT).html @ addeb8483e97a126f37be2f21ec29b1a0ac21303"
+    origin_ref: "content/04 Évora Public Money/Évora — Prometido, Pago, Auditado 2026 (pt-PT).html @ 530e380f8db07eda5b611cee0dc573b0ed908d84"
     raw_file: _raw/evora-prometido-pago-auditado-2026.pt.html
-    fetched_utc: 2026-08-20T12:07:44Z
-    bytes_raw: 71869
-    bytes_normalized: 71869
-    sha256_raw: 515c231fcf54827f9595435d61db9b60e5f6dca716c3401d4c25aa7b111b374d
-    sha256_normalized: 515c231fcf54827f9595435d61db9b60e5f6dca716c3401d4c25aa7b111b374d
+    fetched_utc: 2026-08-27T14:04:40Z
+    bytes_raw: 71771
+    bytes_normalized: 71771
+    sha256_raw: ca5841258e2e9d630f0f2ffb1e737f2a611f38db540947675d2531bdc937f5cd
+    sha256_normalized: ca5841258e2e9d630f0f2ffb1e737f2a611f38db540947675d2531bdc937f5cd
   - slug: evora-prometido-pago-auditado-2026
     lang: en
     title: "Évora — Promised, Paid, Audited 2026"
     origin: researchhub
-    origin_ref: "content/04 Évora Public Money/Évora — Promised, Paid, Audited 2026.html @ addeb8483e97a126f37be2f21ec29b1a0ac21303"
+    origin_ref: "content/04 Évora Public Money/Évora — Promised, Paid, Audited 2026.html @ 530e380f8db07eda5b611cee0dc573b0ed908d84"
     raw_file: _raw/evora-prometido-pago-auditado-2026.en.html
-    fetched_utc: 2026-08-20T12:07:44Z
-    bytes_raw: 68463
-    bytes_normalized: 68463
-    sha256_raw: 931da10a0d623085937c0d0d3b7ee1c8eb734486ae09747b8a554816275a41b0
-    sha256_normalized: 931da10a0d623085937c0d0d3b7ee1c8eb734486ae09747b8a554816275a41b0
+    fetched_utc: 2026-08-27T14:04:40Z
+    bytes_raw: 68372
+    bytes_normalized: 68372
+    sha256_raw: 6315e7b2e3b9da32cfcdc69b92ab7d1877fd63b1d800483190ba1da0c250dfc8
+    sha256_normalized: 6315e7b2e3b9da32cfcdc69b92ab7d1877fd63b1d800483190ba1da0c250dfc8
   - slug: penalizacoes-por-reforma-antecipada-2026
     lang: pt
     title: "Penalizações por Reforma Antecipada em Portugal"

@@ -312,8 +312,8 @@ for (const edicao of ['pt', 'en']) {
       (hs) => hs.length < 2 || /\/(texto|text)$/.test(hs[0]),
     );
     conta(
-      `B2 · «Ler no sítio →» é a porta principal, e a edição de registo vem a seguir com o seu rótulo · 390 ${edicao}`,
-      primeiroETexto && fichasEmOrdem && Boolean(m.nota),
+      `B2 · «Ler no sítio →» é a porta principal, e a edição de registo vem a seguir sem legenda (a legenda saiu no G6 da grelha da voz, 27.08) · 390 ${edicao}`,
+      primeiroETexto && fichasEmOrdem && m.nota === null,
       `${m.rotulos.join(' | ')} → ${m.accoes.join(' ')} · nota «${m.nota}» · fichas ${JSON.stringify(m.fichas)}`,
     );
     await p.close();

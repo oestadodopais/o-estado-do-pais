@@ -15,20 +15,20 @@
      "start": 0
     },
     {
-     "end": 85,
+     "end": 54,
      "kind": "strong",
-     "start": 77
+     "start": 46
     },
     {
-     "end": 100,
+     "end": 69,
      "kind": "strong",
-     "start": 93
+     "start": 62
     }
    ],
    "figures": [],
    "i": 1,
    "kind": "paragraph",
-   "text": "Data: Agosto de 2026 (recolhas a 2026-08-03, carimbos temporais no registo). Regiões: NUTS2. Fontes: apenas INE (API JSON) e Eurostat."
+   "text": "Data: Agosto de 2026 (recolhas a 2026-08-03). Regiões: NUTS2. Fontes: apenas INE (API JSON) e Eurostat."
   },
   {
    "i": 2,
@@ -39,7 +39,7 @@
    "i": 3,
    "kind": "heading",
    "level": 2,
-   "text": "Limitações e estado de verificação — ler primeiro"
+   "text": "Limitações"
   },
   {
    "i": 4,
@@ -57,14 +57,14 @@
        "start": 75
       },
       {
-       "end": 200,
+       "end": 167,
        "kind": "strong",
-       "start": 191
+       "start": 158
       }
      ],
      "figures": [
       {
-       "end": 203,
+       "end": 170,
        "others": [
         "unemp-PT15-2019"
        ],
@@ -72,11 +72,11 @@
        "row": "gdp-idx-delta-PT11",
        "source_digest_kind": "derivado",
        "source_sha256": null,
-       "start": 202,
+       "start": 169,
        "value": "7"
       }
      ],
-     "text": "Versões NUTS. Tanto o Eurostat como o INE servem Portugal na classificação NUTS 2024 (9 regiões NUTS2). Cada tabela indica a sua versão. Uma tabela (a série longa de ganhos) existe apenas em NUTS 2013 (7 regiões) e é mantida separada; as duas não podem ser comparadas região a região."
+     "text": "Versões NUTS. Tanto o Eurostat como o INE servem Portugal na classificação NUTS 2024 (9 regiões NUTS2). Uma tabela (a série longa de ganhos) existe apenas em NUTS 2013 (7 regiões) e é mantida separada; as duas não podem ser comparadas região a região."
     },
     {
      "emphasis": [
@@ -102,23 +102,23 @@
        "start": 0
       },
       {
-       "end": 228,
+       "end": 179,
        "kind": "strong",
-       "start": 138
+       "start": 89
       },
       {
-       "end": 357,
+       "end": 308,
        "kind": "strong",
-       "start": 353
+       "start": 304
       },
       {
-       "end": 488,
+       "end": 439,
        "kind": "strong",
-       "start": 466
+       "start": 417
       }
      ],
      "figures": [],
-     "text": "O que não existe ao nível NUTS2 (ausências verificadas, não lacunas a preencher): as séries regionais do inquérito ao emprego do Eurostat não têm valores anteriores a 2019 para as cinco regiões cujos limites mudaram na NUTS 2024 (Centro, Oeste e Vale do Tejo, Grande Lisboa, Península de Setúbal, Alentejo); o indicador de ganhos em NUTS-2024 começa em 2021 (os seus próprios metadados: primeiro período 2021); o indicador de poder de compra do INE em NUTS 2024 tem uma única edição, 2023 (primeiro período = último período = 2023). Nenhuma estimativa é usada em parte alguma para preencher estas lacunas."
+     "text": "O que não existe ao nível NUTS2: as séries regionais do inquérito ao emprego do Eurostat não têm valores anteriores a 2019 para as cinco regiões cujos limites mudaram na NUTS 2024 (Centro, Oeste e Vale do Tejo, Grande Lisboa, Península de Setúbal, Alentejo); o indicador de ganhos em NUTS-2024 começa em 2021 (os seus próprios metadados: primeiro período 2021); o indicador de poder de compra do INE em NUTS 2024 tem uma única edição, 2023 (primeiro período = último período = 2023)."
     }
    ],
    "kind": "list",
@@ -3594,11 +3594,6 @@
        "end": 347,
        "kind": "strong",
        "start": 343
-      },
-      {
-       "end": 592,
-       "kind": "em",
-       "start": 405
       }
      ],
      "figures": [
@@ -3695,7 +3690,7 @@
        "value": "16.6"
       }
      ],
-     "text": "Norte e centro industriais. O Centro é a região mais industrial de Portugal (27,0 % de indústria, da qual 23,5 de transformadora) e o Norte vem logo atrás (24,1 / 20,6) — ambos acima da quota industrial da UE-27 (20,2 %), como também estão, por margem estreita, o Alentejo (21,0 %) e o Oeste e Vale do Tejo (20,8 %). Portugal no seu conjunto (16,6 %) é marcadamente menos industrial do que a média da UE. (Corrigido a 2026-08-03, em auditoria pós-publicação: o texto anterior dizia «mais nada no país está» — as próprias linhas do Alentejo e do Oeste e Vale do Tejo na tabela contradizem-no.)"
+     "text": "Norte e centro industriais. O Centro é a região mais industrial de Portugal (27,0 % de indústria, da qual 23,5 de transformadora) e o Norte vem logo atrás (24,1 / 20,6) — ambos acima da quota industrial da UE-27 (20,2 %), como também estão, por margem estreita, o Alentejo (21,0 %) e o Oeste e Vale do Tejo (20,8 %). Portugal no seu conjunto (16,6 %) é marcadamente menos industrial do que a média da UE."
     },
     {
      "emphasis": [
@@ -7548,11 +7543,6 @@
      "end": 678,
      "kind": "strong",
      "start": 672
-    },
-    {
-     "end": 1422,
-     "kind": "em",
-     "start": 1191
     }
    ],
    "figures": [
@@ -7627,24 +7617,7 @@
    ],
    "i": 52,
    "kind": "paragraph",
-   "text": "O problema regional de Portugal em 2026 não é o emprego — todas as regiões batem a média da UE — e é só em parte a clássica divisão litoral/interior. É que apenas uma região gera produto e salários ao nível da média europeia, e a mudança de classificação torna-o visível: a Grande Lisboa em 129 contra um país que, de resto, se estende entre 55–89. A convergência com a UE está a acontecer (+5 pontos nacionais em onze anos) mas está a ser desproporcionadamente puxada pelo ressalto das regiões de turismo, as mesmas regiões com os salários mais baixos — o Algarve combina um índice de PIB de 89 com uma taxa de emprego de 80,6 % e os ganhos mais baixos das nove regiões (1320,2 €). O norte e o centro industriais convergem com constância mas de níveis baixos; a coroa em torno de Lisboa (Oeste e Vale do Tejo, Península de Setúbal) é a parte estagnada do mapa do lado da produção, ainda que o poder de compra do lado do consumo aí esteja perto da média nacional. Se a pergunta é «onde é que os fossos estão a fechar», a resposta honesta destes cinco indicadores é: com a UE, devagar; entre regiões portuguesas, quase nada no produto — a composição da amplitude muda, mas a sua largura não. (Corrigido a 2026-08-03, por indicação do leitor: «os ganhos mais baixos do país» sobreavaliava o âmbito da afirmação — este relatório mede as nove regiões — e a sequência de vírgulas tornava a frase fácil de ler mal; reformulada.)"
-  },
-  {
-   "i": 53,
-   "kind": "rule"
-  },
-  {
-   "emphasis": [
-    {
-     "end": 86,
-     "kind": "em",
-     "start": 0
-    }
-   ],
-   "figures": [],
-   "i": 54,
-   "kind": "paragraph",
-   "text": "Fontes não governamentais são rotuladas em cada tabela (Eurostat: intergovernamental)."
+   "text": "O problema regional de Portugal em 2026 não é o emprego — todas as regiões batem a média da UE — e é só em parte a clássica divisão litoral/interior. É que apenas uma região gera produto e salários ao nível da média europeia, e a mudança de classificação torna-o visível: a Grande Lisboa em 129 contra um país que, de resto, se estende entre 55–89. A convergência com a UE está a acontecer (+5 pontos nacionais em onze anos) mas está a ser desproporcionadamente puxada pelo ressalto das regiões de turismo, as mesmas regiões com os salários mais baixos — o Algarve combina um índice de PIB de 89 com uma taxa de emprego de 80,6 % e os ganhos mais baixos das nove regiões (1320,2 €). O norte e o centro industriais convergem com constância mas de níveis baixos; a coroa em torno de Lisboa (Oeste e Vale do Tejo, Península de Setúbal) é a parte estagnada do mapa do lado da produção, ainda que o poder de compra do lado do consumo aí esteja perto da média nacional. Se a pergunta é «onde é que os fossos estão a fechar», a resposta destes cinco indicadores é: com a UE, devagar; entre regiões portuguesas, quase nada no produto — a composição da amplitude muda, mas a sua largura não."
   }
  ],
  "edition": "Avaliação Económica Regional de Portugal 2026 (pt-PT)",

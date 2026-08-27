@@ -107,8 +107,8 @@ export const LEITURAS = {
       {
         claim: 'evora-vab-empresarial-2024',
         nome: {
-          pt: ['€ de valor acrescentado bruto das empresas sediadas no concelho'],
-          en: ['€ of gross value added by enterprises headquartered in the municipality'],
+          pt: ['€ de valor acrescentado bruto das empresas do concelho'],
+          en: ['€ of gross value added by enterprises in the municipality'],
         },
       },
       {
