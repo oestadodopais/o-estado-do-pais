@@ -11382,7 +11382,9 @@ corrido à mão, é uma leitura falsa. Fica registado e não corrigido neste blo
 A leitura cruzada do diff está por fazer, e o portão di-lo a cada construção:
 `voz-do-livro-razao` está `por ler` no registo das revisões. E duas células de
 `tests/linha/correcoes-b.mjs` já estavam vermelhas em `main` e continuam, as duas
-sobre a página de Évora, que este bloco não toca: a B10 de `municipio pt` e a de
+sobre a página de Évora, que este bloco não toca. **Foi medido e não deduzido:**
+com os cinco ficheiros deste bloco repostos aos de `ef46826` e a árvore
+reconstruída, a régua sai a 1 com as mesmas duas células, 2 de 32. São: a B10 de `municipio pt` e a de
 `municipio en`, por um alvo de 82,5 × 18,4 px, que é o marcador `[a verificar]`
 que a correção I77 pôs no nome do presidente interino, e por um rótulo a 11,5 px
 na nota do excesso sobre o teto legal, que ficou à vista quando o G6 tirou a
