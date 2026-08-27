@@ -779,7 +779,7 @@ const metodoPath = routePath('metodo', lang);
                         {mandato.periodo}
                       </span>
                       <span class="mun-mandato-quem">
-                        {mandato.quem[lang]}
+                        <Frase partes={mandato.quem[lang]} lang={lang} />
                         {mandato.quemData && (
                           <span data-nonledger="data-de-referencia">{mandato.quemData}</span>
                         )}

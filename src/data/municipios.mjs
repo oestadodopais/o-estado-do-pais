@@ -314,7 +314,29 @@ const EVORA = {
         {
           periodo: '2009–2013',
           instalado: null,
-          quem: { pt: 'José Ernesto d’Oliveira, depois Manuel Melgão a partir de ', en: 'José Ernesto d’Oliveira, then Manuel Melgão from ' },
+          /* O NOME LEVA O MARCADOR ONDE ELE SE RENDE (I77, 27.08.2026). Duas
+             fontes oficiais dão nomes completos diferentes para o mesmo homem,
+             e «Manuel Melgão» é a forma que o próprio município usa. Isso era
+             dito num parágrafo da lista «O que esta página não sabe», que o G6
+             retirou por ser a página a falar de si; o facto continua por
+             verificar, e a regra da casa é que um facto por verificar leva o
+             marcador ONDE ele se rende, com a porta para `/a-verificar`. A
+             razão vive lá e na linha, e não num parágrafo ao lado.
+             `quemPorVerificar` declara-o, e o portão de HTML confere que o
+             marcador está na página, nas duas edições. */
+          quem: {
+            pt: [
+              'José Ernesto d’Oliveira, depois Manuel Melgão ',
+              { marcador: 'a verificar', gloss: 'to verify' },
+              ' a partir de ',
+            ],
+            en: [
+              'José Ernesto d’Oliveira, then Manuel Melgão ',
+              { marcador: 'a verificar', gloss: 'to verify' },
+              ' from ',
+            ],
+          },
+          quemPorVerificar: true,
           quemData: '2013-05-01',
           lista: 'PS',
           lugares: 'evora-camara-mandatos-ps-2009',
@@ -368,7 +390,7 @@ const EVORA = {
         {
           periodo: '2013–2017',
           instalado: '2013-10-18',
-          quem: { pt: 'Carlos Pinto de Sá', en: 'Carlos Pinto de Sá' },
+          quem: { pt: ['Carlos Pinto de Sá'], en: ['Carlos Pinto de Sá'] },
           quemData: null,
           lista: 'CDU',
           lugares: 'evora-camara-mandatos-cdu-2013',
@@ -411,7 +433,7 @@ const EVORA = {
         {
           periodo: '2017–2021',
           instalado: '2017-10-20',
-          quem: { pt: 'Carlos Pinto de Sá', en: 'Carlos Pinto de Sá' },
+          quem: { pt: ['Carlos Pinto de Sá'], en: ['Carlos Pinto de Sá'] },
           quemData: null,
           lista: 'CDU',
           lugares: 'evora-camara-mandatos-cdu-2017',
@@ -442,7 +464,7 @@ const EVORA = {
         {
           periodo: '2021–2025',
           instalado: '2021-10-15',
-          quem: { pt: 'Carlos Pinto de Sá', en: 'Carlos Pinto de Sá' },
+          quem: { pt: ['Carlos Pinto de Sá'], en: ['Carlos Pinto de Sá'] },
           quemData: null,
           lista: 'CDU',
           listaNota: { pt: 'em minoria', en: 'in minority' },
@@ -491,7 +513,7 @@ const EVORA = {
         {
           periodo: '2025–',
           instalado: '2025-10-31',
-          quem: { pt: 'Carlos Zorrinho', en: 'Carlos Zorrinho' },
+          quem: { pt: ['Carlos Zorrinho'], en: ['Carlos Zorrinho'] },
           quemData: null,
           lista: 'PS',
           lugares: 'evora-camara-mandatos-ps-2025',
