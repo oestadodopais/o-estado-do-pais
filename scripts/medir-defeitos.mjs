@@ -276,6 +276,15 @@ const ROTAS_DO_INVENTARIO = new Set([
      autorreferência vai a zero: o que ela mostra é um documento, e a mobília à
      volta dele nomeia o que a coisa é. */
   'texto',
+  /* O ÍNDICE DAS 29 UNIDADES E A PÁGINA DE CADA UMA (Emenda 20, 27.08.2026).
+     Entram no commit em que são construídas, que é a regra desta lista. São
+     páginas do leitor como o índice dos concelhos e a página de um concelho: a
+     Emenda 15 governa-as, e a sua autorreferência vai a zero. O `<h1>` de uma
+     unidade é o nome que a Carta lhe dá (declarado `data-lugar`) e a sua
+     descrição é composta com esse nome, como a da página do concelho, e por isso
+     conta-se uma vez e não 29. */
+  'distritos',
+  'distrito',
 ]);
 
 /**

@@ -36,18 +36,15 @@
  * ---------------------------------------------------------------------------
  * NENHUM NÚMERO INVENTADO
  * ---------------------------------------------------------------------------
- * O único algarismo desta página é quantos concelhos a unidade tem, e é uma
- * chave da prova: entra por `data-prova`, o portão reconta-a da lista da Carta
- * (`caop-centroids.mjs`) e fecha a construção se as duas contas discordarem. A
- * geometria toda vem de `mapa/distritos/<slug>.json`, e o `viewBox` é o campo
- * desse ficheiro.
+ * Esta página não escreve um único algarismo da casa. A contagem dos concelhos
+ * é uma chave da prova que o portão reconfere e que a página não rende (a razão
+ * está mais abaixo, no lugar onde ela chegou a estar); a contagem dos 308 é uma
+ * linha do livro-razão, com o seu selo; e a geometria toda vem de
+ * `mapa/distritos/<slug>.json`, com o `viewBox` a ser o campo desse ficheiro.
  */
 import Base from '../layouts/Base.astro';
-import Claim from '../components/Claim.astro';
 import Provenance from '../components/Provenance.astro';
-import ValorDaProva from '../components/ValorDaProva.astro';
 import { distritoDoMapa, unidadeDoMapa } from '../lib/mapa.mjs';
-import { prova, CHAVE_DOS_CONCELHOS } from '../lib/prova.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import { VERBATIM } from '../data/verbatim.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -61,8 +58,6 @@ const unidade = unidadeDoMapa(slug);
 if (!unidade) throw new Error(`distritos: unidade desconhecida "${slug}"`);
 const distrito = distritoDoMapa(slug);
 
-const p = prova(lang);
-const chave = CHAVE_DOS_CONCELHOS(slug);
 const path = routePath('distrito', lang, { slug });
 const caop = getClaim('municipios-portugal-caop-2025');
 
@@ -84,10 +79,29 @@ const tipo = unidade.tipo === 'ilha' ? s.distritos.tipoIlha : s.distritos.tipoDi
         inventário de frases não ganhe 29 entradas com os nomes das unidades. */}
     <h1 data-lugar>{unidade.nome}</h1>
     <p class="distrito-tipo">{tipo}</p>
-    <p class="distrito-conta">
-      <ValorDaProva chave={chave} item={p[chave]} lang={lang} />
-      {s.distritos.contaConcelhos}
-    </p>
+    {/* ------------------------------------------------------------------------
+        A CONTAGEM NÃO SE RENDE AQUI, E A CHAVE DA PROVA FICA
+        ------------------------------------------------------------------------
+        A primeira construção desta página escrevia «19 concelhos» por baixo do
+        tipo. Duas coisas a mandaram sair, e as duas foram medidas e não
+        opinadas:
+
+        · a lista está aqui em baixo, inteira, e quem a conta conta-a. É a mesma
+          leitura que tirou as contagens da página de um concelho no livro-razão
+          a 27.08: «o que a página tem para dizer é quantas linhas mostra, e
+          mostra-as»;
+        · a Ilha da Graciosa tem um concelho, e a linha saía «1 concelhos». Uma
+          concordância de número escrita à mão em duas edições é uma frase nova
+          por cada forma, e o inventário ganhava 58 entradas (uma por unidade e
+          por edição) para dizer o que a lista diz sozinha.
+
+        A CHAVE DA PROVA FICA, e continua reconferida pelo portão: `prova()`
+        conta os concelhos desta unidade no artefacto do motor e o portão
+        conta-os na lista da Carta de `caop-centroids.mjs`. Uma chave sem
+        `data-prova` na página é a forma que as oito chaves dos registos de
+        conteúdo já têm (parte 3, P3): a comparação A continua a fechar a
+        construção quando as duas contas discordam, e é ela que aqui interessa.
+        ---------------------------------------------------------------------- */}
   </div>
 
   {/* ------------------------------------------------------------------------
@@ -125,12 +139,14 @@ const tipo = unidade.tipo === 'ilha' ? s.distritos.tipoIlha : s.distritos.tipoDi
         </g>
       </svg>
     </div>
-    {/* A legenda do mapa da primeira página, com a mesma composição e as mesmas
-        palavras: a contagem da Carta, o nome dela, o ano da edição e o selo que
-        abre a linha. */}
+    {/* A legenda: o nome da Carta, o ano da edição e o selo que abre a linha.
+        SEM A CONTAGEM DOS 308, e a razão está na chave: a legenda da primeira
+        página é «308 concelhos · CAOP 2025 ■ fonte», que a Emenda 17 fixa para um
+        mapa do país; por baixo de um mapa com os concelhos de uma unidade, a
+        mesma contagem lia-se como a contagem do que está desenhado. O ano é o
+        `reference_date` da própria linha, com o motivo que já existe. */}
     <figcaption class="distrito-legenda">
-      <Claim id="municipios-portugal-caop-2025" lang={lang} />
-      {s.inicio.mapa.linha}
+      {s.distritos.legendaCarta}
       <span data-nonledger="data-de-referencia">{caop.reference_date}</span>{' '}
       <Provenance id="municipios-portugal-caop-2025" lang={lang} />
     </figcaption>

@@ -1,11 +1,20 @@
+@import './mapa.css';
+
 /* ============================================================================
  * A PÁGINA DE UMA UNIDADE DA CARTA, E O SEU ÍNDICE (Emenda 20, 27.08.2026)
  * ============================================================================
  *
- * A folha das áreas (`.uni`, `.uni-porta`, `.mapa-svg-areas`) vive em
- * `inicio.css`, porque é a mesma língua do mapa da primeira página e o desenho
- * de uma área não muda de escala para escala. O que está aqui é a página: a
- * caixa do mapa, a lista e as portas.
+ * A folha das áreas (`.uni`, `.uni-porta`) vive em `mapa.css` e entra por cima,
+ * na primeira linha: é a mesma língua do mapa da primeira página, e o desenho de
+ * uma área não muda de escala para escala. O que está aqui é a página: a caixa
+ * do mapa, a lista e as portas.
+ *
+ * O `@import` não é decoração. A primeira versão desta folha dizia num
+ * comentário que as regras das áreas viviam em `inicio.css` e dava-as por
+ * herdadas; esta página não importa `inicio.css`, e a captura de Lisboa saiu com
+ * os 16 concelhos pintados de preto sólido, que é o enchimento por omissão de um
+ * `<path>` sem regra. Foi a fotografia que o apanhou, e é a regra 15 da casa: o
+ * nome não é o conteúdo.
  */
 
 .distrito-cabeca {
