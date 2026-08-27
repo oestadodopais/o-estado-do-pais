@@ -41,13 +41,13 @@ export const VERBATIM = {
   'estudo-prometido-abertura-pt': {
     lang: 'pt',
     origem: 'Frase de abertura de studies-src/evora-prometido-pago-auditado-2026/pt.html.',
-    text: `Uma leitura transversal de um município português: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado, recolhidos em direto a 2026-08-04, e o registo do plano de recuperação relido a 2026-08-20.`,
+    text: `Uma leitura transversal do município de Évora: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado.`,
   },
 
   'estudo-prometido-abertura-en': {
     lang: 'en',
     origem: 'Opening sentence of studies-src/evora-prometido-pago-auditado-2026/en.html.',
-    text: `A cross-vertical reading of one Portuguese municipality: the recovery-plan project register, the public-contracts register and the state auditor's catalogue, all fetched live on 2026-08-04, and the recovery-plan register read again on 2026-08-20.`,
+    text: `A cross-cutting reading of the municipality of Évora: the recovery-plan project register, the public-contracts register and the state auditor's catalogue.`,
   },
 
   'caop-fonte': {

@@ -25,28 +25,17 @@
    "i": 2,
    "kind": "heading",
    "level": 2,
-   "text": "O que este documento pode e não pode dizer"
+   "text": "Os limites"
   },
   {
-   "figures": [],
    "i": 3,
-   "kind": "paragraph",
-   "text": "Leia primeiro estes limites; dois deles decidem se uma frase é verdadeira."
-  },
-  {
-   "i": 4,
    "items": [
     {
      "emphasis": [
       {
-       "end": 55,
+       "end": 209,
        "kind": "strong",
-       "start": 3
-      },
-      {
-       "end": 236,
-       "kind": "strong",
-       "start": 228
+       "start": 201
       }
      ],
      "figures": [
@@ -60,16 +49,16 @@
        "value": "1"
       },
       {
-       "end": 115,
+       "end": 88,
        "printed": "14",
        "row": "ac-municipalities",
        "source_digest_kind": "derivado",
        "source_sha256": null,
-       "start": 113,
+       "start": 86,
        "value": "14"
       }
      ],
-     "text": "1. Não existe PIB da cidade, e nenhum é inventado aqui. As contas nacionais param na NUTS3 — o Alentejo Central, 14 municípios de que Évora é um. O que existe ao nível do concelho é o registo empresarial: as contas das empresas sediadas no concelho (o SCIE do INE). O VAB empresarial não é PIB municipal: não capta a administração pública, a maior parte da universidade e do hospital, e credita toda a atividade de uma empresa ao concelho da sua sede."
+     "text": "1. Não existe PIB da cidade. As contas nacionais param na NUTS3 — o Alentejo Central, 14 municípios de que Évora é um. O que existe ao nível do concelho é o registo empresarial: as contas das empresas sediadas no concelho (o SCIE do INE). O VAB empresarial não é PIB municipal: não capta a administração pública, a maior parte da universidade e do hospital, e credita toda a atividade de uma empresa ao concelho da sua sede."
     },
     {
      "emphasis": [
@@ -85,7 +74,7 @@
       }
      ],
      "figures": [],
-     "text": "2. O filtro de financiamento lê programas, não o corpo dos avisos. Um concurso conta como alcançável quando o seu programa é o programa regional do Alentejo ou um nacional. Avisos nacionais podem ainda restringir o território dentro do PDF; a contagem é por isso um teto sobre aquilo a que um ator de Évora se pode candidatar. As classes de quem-pode-candidatar-se vêm das secções de elegibilidade verbatim extraídas em 2026-08-08 pelo Registo de Acesso a Fundos ao lado desta pasta."
+     "text": "2. O filtro de financiamento lê programas, não o corpo dos avisos. Um concurso conta como alcançável quando o seu programa é o programa regional do Alentejo ou um nacional. Avisos nacionais podem ainda restringir o território dentro do PDF; a contagem é por isso um teto sobre aquilo a que um ator de Évora se pode candidatar. As classes de quem-pode-candidatar-se vêm das secções de elegibilidade verbatim extraídas em 2026-08-08 pelo Registo de Acesso a Fundos."
     },
     {
      "emphasis": [
@@ -128,7 +117,7 @@
        "value": "5"
       }
      ],
-     "text": "5. A secção de oportunidades é inferência assinada. Tudo antes dela é facto com fonte; essa secção é uma leitura de onde estão as lacunas, ancorada nos factos do livro-razão que cita, e di-lo no seu cabeçalho."
+     "text": "5. A secção de oportunidades é inferência assinada. Tudo antes dela é facto com fonte; essa secção é uma leitura de onde estão as lacunas, ancorada nos factos do livro-razão que cita."
     },
     {
      "emphasis": [
@@ -157,7 +146,7 @@
   },
   {
    "figures": [],
-   "i": 5,
+   "i": 4,
    "kind": "heading",
    "level": 2,
    "text": "O enquadramento: uma cidade acima da sua região"
@@ -237,7 +226,7 @@
      "value": "70.5"
     }
    ],
-   "i": 6,
+   "i": 5,
    "kind": "paragraph",
    "text": "58 567 pessoas viviam no concelho em 2025 (contra 55 711 em 2021). A região NUTS3 envolvente, o Alentejo Central, produziu um PIB de 3554,5 milhões de euros em 2024 (provisório), ou seja 1,2% da produção do país — 23 164 euros por habitante contra 27 063 euros a nível nacional, 85,6 numa escala em que Portugal é 100, e 70,5 face à média da UE-27 em paridades de poder de compra."
   },
@@ -269,13 +258,13 @@
      "value": "93.9"
     }
    ],
-   "i": 7,
+   "i": 6,
    "kind": "paragraph",
    "text": "A própria cidade está acima da média nacional no único indicador que existe ao nível do concelho: o índice de poder de compra do INE de 2023 põe Évora em 111,5 (Portugal = 100), com a sua região em 93,9. Évora é uma cidade relativamente próspera dentro de uma região pobre — o padrão a que o resto deste documento volta sempre."
   },
   {
    "figures": [],
-   "i": 8,
+   "i": 7,
    "kind": "heading",
    "level": 2,
    "text": "O que as empresas de Évora geram"
@@ -340,7 +329,7 @@
      "value": "521 625 136"
     }
    ],
-   "i": 9,
+   "i": 8,
    "kind": "paragraph",
    "text": "As 7 907 empresas sediadas no concelho empregavam 25 061 pessoas em 2024, faturaram 1 833 280 534 euros e geraram 576 491 544 euros de valor acrescentado bruto — 10,5% acima de 2023 em termos nominais (2023: 521 625 136 euros)."
   },
@@ -383,7 +372,7 @@
      "value": "1 362"
     }
    ],
-   "i": 10,
+   "i": 9,
    "kind": "paragraph",
    "text": "O VAB por pessoa ao serviço foi de 23 004 euros, contra 31 900 euros para o conjunto de Portugal — o défice de produtividade que um ganho médio mensal de 1 282 euros (2022, média nacional: 1 362 euros) já sugeria."
   },
@@ -399,12 +388,12 @@
      "value": "15"
     }
    ],
-   "i": 11,
+   "i": 10,
    "kind": "paragraph",
    "text": "Por secção da CAE, de 15 secções com valores publicados:"
   },
   {
-   "i": 12,
+   "i": 11,
    "kind": "table",
    "rows": [
     [
@@ -888,7 +877,7 @@
      "value": "1"
     }
    ],
-   "i": 13,
+   "i": 12,
    "kind": "paragraph",
    "text": "A indústria transformadora é o maior bloco isolado de valor acrescentado empresarial no concelho. Dentro dela, a divisão 30 da CAE — fabricação de outro equipamento de transporte, a divisão das próprias fábricas aeronáuticas — mostra 24 573 447 euros de VAB e 914 pessoas ao serviço em 2024. Leia-se ao lado do limite 1: o SCIE atribui pela sede e pela atividade principal da empresa, e um retrato ao nível da fábrica é exatamente o que um registo empresarial municipal não pode prometer."
   },
@@ -1013,13 +1002,13 @@
      "value": "79"
     }
    ],
-   "i": 14,
+   "i": 13,
    "kind": "paragraph",
    "text": "A concentração é o facto estrutural. As quatro maiores empresas detêm 21,5% de todo o VAB empresarial do concelho, 23,4% do volume de negócios e 21,0% do emprego — a mesma medida de VAB das quatro maiores, para Portugal inteiro, é 2,6%. A estrutura de dimensão por trás disto: 7 605 microempresas, 255 pequenas, 39 médias e 8 grandes. Em 2025 o concelho registou 259 novas constituições contra 67 dissoluções (236 e 79 em 2024)."
   },
   {
    "figures": [],
-   "i": 15,
+   "i": 14,
    "kind": "heading",
    "level": 2,
    "text": "Comércio: uma cidade exportadora"
@@ -1063,12 +1052,12 @@
      "value": "68.0"
     }
    ],
-   "i": 16,
+   "i": 15,
    "kind": "paragraph",
    "text": "As exportações de bens do concelho atingiram 598 367 742 euros em 2025 — 6,7% acima de 2022 — contra 320 553 925 euros de importações. Dois capítulos da nomenclatura transportam, em conjunto, 68,0% de tudo o que o concelho vende ao estrangeiro:"
   },
   {
-   "i": 17,
+   "i": 16,
    "kind": "table",
    "rows": [
     [
@@ -1204,13 +1193,13 @@
      "value": "199 951 040"
     }
    ],
-   "i": 18,
+   "i": 17,
    "kind": "paragraph",
    "text": "O capítulo 88 — aeronaves e suas partes — com 199 951 040 euros é a assinatura exportadora do polo aeroespacial; o capítulo 85 é a indústria elétrica e eletrónica. O terceiro capítulo são os animais vivos, o comércio mais antigo do Alentejo."
   },
   {
    "figures": [],
-   "i": 19,
+   "i": 18,
    "kind": "heading",
    "level": 2,
    "text": "Turismo: recuperado para lá de 2019, e prestes a ser testado"
@@ -1308,13 +1297,13 @@
      "value": "1.7"
     }
    ],
-   "i": 20,
+   "i": 19,
    "kind": "paragraph",
    "text": "Registaram-se 739 187 dormidas no alojamento turístico do concelho em 2025 — 12,1% acima do valor pré-pandemia de 2019 registado em 659 561 — por 440 694 hóspedes, 46,1% deles não residentes. Os proveitos totais do alojamento foram 53 779 000 euros em 2025 (2023: 47 593 000 euros). A intensidade turística, com 1261,1 dormidas por cem residentes, está bem acima da nacional, de 719 — mas a estadia é curta: 1,7 noites por hóspede, em média. As pessoas vêm, e passam. O ano de Capital Europeia da Cultura, 2027, é o teste de esforço que aí vem."
   },
   {
    "figures": [],
-   "i": 21,
+   "i": 20,
    "kind": "heading",
    "level": 2,
    "text": "Quem meteu dinheiro a sério"
@@ -1410,7 +1399,7 @@
      "value": "10 924 905"
     }
    ],
-   "i": 22,
+   "i": 21,
    "kind": "paragraph",
    "text": "Aeronáutica. O polo começou como decisão de Estado: a 23 de setembro de 2008 o Estado Português assinou com a Embraer dois contratos de investimento para duas fábricas em Évora — 117 143 105 euros para estruturas metálicas e 52 281 430 euros para compósitos, 169 424 535 euros somados, os valores impressos na Resolução do Conselho de Ministros n.º 69/2010. Em maio de 2022 a Aernnova concluiu a aquisição das duas fábricas, que o seu próprio anúncio situa em 500 trabalhadores. A Mecachrome seguiu a âncora: um contrato de investimento com o Estado assinado a 3 de fevereiro de 2016 para uma fábrica de cerca de 30 milhões de euros a produzir peças de titânio para motores de avião, financiada em parte por um empréstimo de 40 milhões de euros do Banco Europeu de Investimento ao abrigo do Plano de Investimento para a Europa. O ciclo europeu de 2014-2020 apoiou a expansão das três fábricas: 11 847 881 euros de FEDER para o projeto DESIAM da fábrica de metálicas, 11 125 982 euros para o DESi2COMP da de compósitos, e 10 924 905 euros para a unidade de produção da Mecachrome (valores do registo da UE, localizados à NUTS3, não ao concelho)."
   },
@@ -1433,7 +1422,7 @@
      "value": "40 000 000"
     }
    ],
-   "i": 23,
+   "i": 22,
    "kind": "paragraph",
    "text": "Saúde. O novo hospital central — o Hospital Central do Alentejo — levou 40 000 000 euros de FEDER para o seu bloco de consultas externas no ciclo 2014-2020 (registo da UE, NUTS3), com dinheiro do PRR a comprar-lhe agora o equipamento médico pesado."
   },
@@ -1483,7 +1472,7 @@
      "value": "9 792 916"
     }
    ],
-   "i": 24,
+   "i": 23,
    "kind": "paragraph",
    "text": "Conhecimento. A Universidade de Évora reporta 9 106 estudantes e 311 projetos de investigação em execução na sua própria página de números; o PACT, parque de ciência e tecnologia, teve um projeto FEDER de 4 355 421 euros no ciclo 2014-2020. No PRR, a agenda mobilizadora New Space Portugal tem 9 792 916 euros do seu valor aprovado atribuídos a localizações em Évora."
   },
@@ -1538,7 +1527,7 @@
      "value": "25"
     }
    ],
-   "i": 25,
+   "i": 24,
    "kind": "paragraph",
    "text": "Cultura. Évora foi recomendada Capital Europeia da Cultura 2027 a 7 de dezembro de 2022. O Decreto-Lei n.º 124/2023 criou a Associação Évora 2027 com uma contribuição inicial do Estado de 2 000 000 euros; o programa Alentejo 2030 abriu um aviso exclusivamente destinado à associação com uma dotação indicativa de 1 750 000 euros; o comunicado do Governo na fase de candidatura situou o envelope para a cidade vencedora em 25 milhões de euros. Não existe nenhum orçamento consolidado oficial da Évora 2027 — circulam totais maiores na imprensa, e deliberadamente não são impressos aqui."
   },
@@ -1570,7 +1559,7 @@
      "value": "500 000"
     }
    ],
-   "i": 26,
+   "i": 25,
    "kind": "paragraph",
    "text": "O município. O orçamento do Município de Évora para 2026 é de 110 840 577 euros, aprovado a 22 de janeiro de 2026. A oferta de solo industrial, o PITE, estende-se por 500 000 m² brutos; as páginas municipais publicam a sua estrutura de lotes mas nenhuma taxa de ocupação."
   },
@@ -1638,32 +1627,32 @@
      "value": "102 678 704"
     }
    ],
-   "i": 27,
+   "i": 26,
    "kind": "paragraph",
    "text": "Dinheiro público em execução. À data do retrato de 2026-08-07 do registo do PRR, 167 337 246 euros de PRR estão atribuídos ao concelho, dos quais 84 368 019 euros pagos (execução de 50,42%) em 2 304 localizações de projeto; 603 localizações com 102 678 704 euros de valor aprovado passaram a data prevista de conclusão sem conclusão registada."
   },
   {
    "figures": [],
-   "i": 28,
+   "i": 27,
    "kind": "paragraph",
    "text": "Nenhuma resolução do Conselho de Ministros de 2023-2026 aprova um novo investimento de regime contratual localizado em Évora — os lotes recentes de contratos AICEP nomeiam Sines, Estarreja, Boticas, Portalegre e Rio Maior, não Évora. Uma fábrica da Lauak em Évora, amplamente noticiada, não é rastreável a nenhuma fonte primária, e as suas fábricas portuguesas ficam noutros concelhos; um projeto noticiado de hidrogénio verde e uma fábrica de aviões ligeiros continuam a existir apenas na imprensa. A última âncora industrial contratada pelo Estado tem uma década."
   },
   {
    "figures": [],
-   "i": 29,
+   "i": 28,
    "kind": "heading",
    "level": 2,
    "text": "As portas abertas hoje"
   },
   {
    "figures": [],
-   "i": 30,
+   "i": 29,
    "kind": "paragraph",
-   "text": "Lido ao vivo a 2026-08-10, em todos os sistemas ao alcance de um ator de Évora."
+   "text": "Lido a 2026-08-10, em todos os sistemas ao alcance de um ator de Évora."
   },
   {
    "figures": [],
-   "i": 31,
+   "i": 30,
    "kind": "heading",
    "level": 3,
    "text": "Portugal 2030"
@@ -1820,13 +1809,13 @@
      "value": "5"
     }
    ],
-   "i": 32,
+   "i": 31,
    "kind": "paragraph",
    "text": "204 avisos estavam abertos a nível nacional; 72 deles — com 1 156 524 348 euros de dotação, contando nos concursos multirregião apenas as fatias que os seus programas alcançáveis reservam — pertencem a programas ao alcance de um ator de Évora (limite 2: um teto). 28 são avisos próprios do programa regional do Alentejo, com 186 749 100 euros; concursos nacionais multirregião reservam fatias alentejanas adicionais. Desde o retrato do registo de 2026-08-08, 7 dos seus concursos já não estão abertos — 5 deles removidos da listagem do portal antes das datas de fecho publicadas — e 0 abriram. Por classe de quem-pode-candidatar-se, dos avisos alcançáveis: municípios e autarquias podem candidatar-se a 32, associações e entidades sem fins lucrativos a 39, empresas a 16, universidades e entidades de I&D a 13 — e pessoas singulares a 1. Os prazos mais próximos entre os avisos alcançáveis: «Capacitação de Atores e Redes – Parcerias para a Coesão não Urbanas - Alentejo» fecha a 2026-08-14, «RAM - Medidas de adaptação às alterações climáticas - 5.º Aviso» a 2026-08-19, «Reabilitação da aerogare do aeródromo de São Jorge» a 2026-08-20."
   },
   {
    "figures": [],
-   "i": 33,
+   "i": 32,
    "kind": "heading",
    "level": 3,
    "text": "Os sistemas que o Portugal 2030 não cobre"
@@ -1843,18 +1832,18 @@
      "value": "60"
     },
     {
-     "end": 155,
+     "end": 137,
      "printed": "44",
      "row": "doors-open-now",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 153,
+     "start": 135,
      "value": "44"
     }
    ],
-   "i": 34,
+   "i": 33,
    "kind": "paragraph",
-   "text": "60 instrumentos foram verificados no PEPAC/IFAP, PRR, IEFP, Turismo de Portugal, Banco Português de Fomento, FCT, DGArtes e nos programas diretos da UE; 44 estavam abertos ou em contínuo à data da leitura. O que sobressai, por ator:"
+   "text": "60 instrumentos no PEPAC/IFAP, PRR, IEFP, Turismo de Portugal, Banco Português de Fomento, FCT, DGArtes e nos programas diretos da UE; 44 estavam abertos ou em contínuo à data da leitura. O que sobressai, por ator:"
   },
   {
    "emphasis": [
@@ -1875,7 +1864,7 @@
      "value": "6"
     }
    ],
-   "i": 35,
+   "i": 34,
    "kind": "paragraph",
    "text": "Para um agricultor ou proprietário — as janelas do PEPAC atualmente abertas são todas de florestas, organizações de produtores ou fitossanidade (6 a atravessar a data da leitura); nenhuma janela de investimento produtivo agrícola estava aberta, e o período dos jovens agricultores fechou em dezembro de 2025. O Pedido Único anual de pagamentos diretos corre no seu próprio calendário, e o dinheiro LEADER flui através do GAL de cada território."
   },
@@ -1901,7 +1890,7 @@
      "value": "0"
     }
    ],
-   "i": 36,
+   "i": 35,
    "kind": "paragraph",
    "text": "Para uma empresa — as janelas concorrenciais do PRR estão na prática encerradas: 0 avisos comprovadamente abertos a novas candidaturas, segundo o próprio plano de avisos de 2026 do programa. O que as substitui é crédito e garantias: as linhas em contínuo do Banco Português de Fomento (garantias InvestEU, crédito de resiliência energética até 2026-12-31, descarbonização, e a linha de garantias PT2030 que antecipa parte de um incentivo aprovado), mais os avisos para empresas do Portugal 2030 acima."
   },
@@ -1951,9 +1940,9 @@
      "value": "30 000"
     }
    ],
-   "i": 37,
+   "i": 36,
    "kind": "paragraph",
-   "text": "Para uma empresa de turismo — o Turismo de Portugal mantém três portas em contínuo ou até ao fim do ano: a Linha de Apoio à Qualificação da Oferta (até 80% do investimento elegível, teto de 3 000 000 euros por projeto), o programa Crescer com o Turismo (dotação de 30 000 000 euros, aberto até 2026-12-31, também aberto ao município e a entidades sem fins lucrativos), e um microcrédito sem juros de 30 000 euros para territórios de baixa densidade — se uma dada freguesia de Évora qualifica como baixa densidade tem de ser verificado na lista oficial, e não é afirmado aqui."
+   "text": "Para uma empresa de turismo — o Turismo de Portugal mantém três portas em contínuo ou até ao fim do ano: a Linha de Apoio à Qualificação da Oferta (até 80% do investimento elegível, teto de 3 000 000 euros por projeto), o programa Crescer com o Turismo (dotação de 30 000 000 euros, aberto até 2026-12-31, também aberto ao município e a entidades sem fins lucrativos), e um microcrédito sem juros de 30 000 euros para territórios de baixa densidade — se uma dada freguesia de Évora qualifica como baixa densidade tem de ser verificado na lista oficial."
   },
   {
    "emphasis": [
@@ -1983,7 +1972,7 @@
      "value": "537.13"
     }
    ],
-   "i": 38,
+   "i": 37,
    "kind": "paragraph",
    "text": "Para um empregador — a medida +Emprego do IEFP paga 12 vezes o IAS (2026: 537,13 euros) com majorações por contratações sem termo de desempregados inscritos; as candidaturas correm até 2026-12-15, e a própria oferta de emprego tem de ser comunicada ao IEFP até 2026-12-02. As janelas de estágios de 2026 (INICIAR, +Talento) fecharam em julho e reabrem no calendário do próximo ano; os estágios de inserção para pessoas com deficiência e o apoio à mobilidade geográfica estão abertos todo o ano."
   },
@@ -2033,7 +2022,7 @@
      "value": "12 500 000"
     }
    ],
-   "i": 39,
+   "i": 38,
    "kind": "paragraph",
    "text": "Para quem começa sozinho — a quase-ausência de pessoas singulares do Portugal 2030 (1 aviso alcançável) é estrutural, não um lapso. As portas do indivíduo são as medidas de criação do próprio emprego do IEFP apoiadas na linha Fomento MicroInvest (crédito até 20 000 euros, Invest+ até 100 000 euros) e, para entidades da economia social, a linha Social Investe de 12 500 000 euros."
   },
@@ -2065,7 +2054,7 @@
      "value": "399"
     }
    ],
-   "i": 40,
+   "i": 39,
    "kind": "paragraph",
    "text": "Para a universidade e investigadores — a FCT tinha seis concursos abertos à data da leitura (mobilidade bilateral com a Alemanha e a França, computação avançada, um prémio de saúde, colocações em Berkeley) com as grandes portas anuais (bolsas de doutoramento, emprego científico, projetos IC&DT) em calendários publicados de 2026-2027; a ERC Starting Grant 2027 fecha a 2026-10-14 (até 1,5 milhões de euros); o concurso de pós-doutoramento MSCA (399 milhões de euros) fecha a 2026-09-09."
   },
@@ -2093,7 +2082,7 @@
      "value": "1 620 000"
     }
    ],
-   "i": 41,
+   "i": 40,
    "kind": "paragraph",
    "text": "Para a cultura — o ecossistema Évora 2027 — a DGArtes tem um concurso aberto até 2026-09-09 para criar e fazer funcionar a Orquestra Regional do Alentejo: 1 620 000 euros ao longo de dois anos, restrito a associações culturais sem fins lucrativos com sede no Alentejo. O Europa Criativa e os avisos de cultura do ALT2030 são as portas contínuas."
   },
@@ -2106,29 +2095,16 @@
     }
    ],
    "figures": [],
-   "i": 42,
+   "i": 41,
    "kind": "paragraph",
    "text": "UE direta — os cut-offs restantes de 2026 do EIC Accelerator (setembro e novembro), os concursos abertos do Interreg Sudoe sobre fogos rurais e envelhecimento, os concursos LIFE de 2026, o Erasmus+, e a rede de incubação da ESA para start-ups de tecnologia espacial — um encaixe natural para uma cidade cujas exportações são um terço peças de aeronaves — são todas portas vivas; o detalhe por concurso vive nos portais da UE."
   },
   {
    "figures": [],
-   "i": 43,
+   "i": 42,
    "kind": "heading",
    "level": 2,
-   "text": "Onde está a margem por explorar — uma leitura assinada"
-  },
-  {
-   "emphasis": [
-    {
-     "end": 258,
-     "kind": "em",
-     "start": 0
-    }
-   ],
-   "figures": [],
-   "i": 44,
-   "kind": "paragraph",
-   "text": "Tudo acima é facto com fonte. Esta secção é inferência do autor desta página, ancorada nesses factos; cada parágrafo nomeia os números em que se apoia. É uma leitura de lacunas, não aconselhamento, e outro leitor pode pesar os mesmos factos de outra maneira."
+   "text": "Onde está a margem por explorar"
   },
   {
    "emphasis": [
@@ -2194,7 +2170,7 @@
      "value": "21.5"
     }
    ],
-   "i": 45,
+   "i": 43,
    "kind": "paragraph",
    "text": "1. O polo aeroespacial exporta muito mais do que alimenta localmente. Só o capítulo 88 exporta 199 951 040 euros, mas a divisão 30 mostra 24 573 447 euros de VAB e 914 postos de trabalho, e quatro empresas detêm 21,5% de todo o VAB empresarial. A distância entre um número de exportação à escala mundial e um valor acrescentado local modesto é o retrato de uma base de fornecedores fina: maquinação, tratamento, ferramentas, logística e serviços de certificação em torno de três fábricas-âncora são os pontos de entrada clássicos, e a geometria do financiamento encaixa — as linhas de garantia do BPF estão em contínuo, os avisos para empresas do PT2030 estão abertos, e a incubação ESA BIC existe exatamente para essa adjacência. A última âncora contratada pelo Estado tem uma década; a segunda linha de fornecedores nunca foi contratada."
   },
@@ -2235,7 +2211,7 @@
      "value": "3 000 000"
     }
    ],
-   "i": 46,
+   "i": 44,
    "kind": "paragraph",
    "text": "2. O estrangulamento do turismo é a estadia curta, e o ano de Capital da Cultura vai testar capacidade que o setor não construiu. A intensidade já corre bem acima da média nacional, mas o hóspede médio fica 1,7 noites e os proveitos totais do alojamento são 53 779 000 euros — um perfil de passagem, com 2027 prestes a multiplicar procura em cima dele. As portas estão abertas agora — Qualificação da Oferta até 3 000 000 euros por projeto, Crescer com o Turismo até ao fim de 2026 — e fecham antes de o pico de procura chegar. O investimento em capacidade e em alongamento da estadia feito em 2026 chega ao teste de 2027; o decidido em 2027 não."
   },
@@ -2285,7 +2261,7 @@
      "value": "1 620 000"
     }
    ],
-   "i": 47,
+   "i": 45,
    "kind": "paragraph",
    "text": "3. Ninguém consolidou o dinheiro da Évora 2027, o que normalmente significa que ninguém consolidou também a sua contratação. As peças oficiais em registo — 2 000 000 euros de semente do Estado, 1 750 000 euros do ALT2030, um envelope de candidatura de 25 milhões de euros — não somam um orçamento de programa, e os contratos da associação correm pelo Portal BASE, onde o documento companheiro já acompanha o concelho. Para empresas locais (palcos, produção, obras de acessibilidade, hotelaria), as necessidades de fornecimento da CEC são um fluxo de receita de 2026-2027 que as portas publicadas mal descrevem. O concurso da orquestra da DGArtes (1 620 000 euros, prazo 2026-09-09) é o exemplo concreto e datado."
   },
@@ -2317,7 +2293,7 @@
      "value": "65 103 634"
     }
    ],
-   "i": 48,
+   "i": 46,
    "kind": "paragraph",
    "text": "4. A porta do campo não está onde está o seu dinheiro. A agricultura gera 45 228 740 euros de VAB empresarial e 65 103 634 euros de exportações de animais vivos, mas as janelas abertas do PEPAC são só de florestas e o Portugal 2030 exclui estruturalmente os agricultores. As aberturas de curto prazo de um proprietário de Évora são os seis concursos florestais e de ecossistemas que fecham entre agosto e setembro de 2026 — dinheiro para o montado, não para o efetivo. Quem espera pela próxima janela de investimento produtivo ou de jovens agricultores espera pelo calendário do IFAP, não pelo do Portugal 2030."
   },
@@ -2367,7 +2343,7 @@
      "value": "2 106"
     }
    ],
-   "i": 49,
+   "i": 47,
    "kind": "paragraph",
    "text": "5. A execução da própria cidade é o estrangulamento silencioso. 102 678 704 euros de PRR atribuídos a Évora estão em localizações fora de prazo enquanto a secção da construção já gera 49 641 927 euros de VAB com 2 106 trabalhadores. Os prazos (o PRR fecha em 2026) transformam aprovações por construir em dinheiro perdido; a capacidade de execução — gestão de projeto, empreiteiros licenciados, fiscalização de obra — é ela própria um mercado em Évora exatamente enquanto o atraso existir."
   },
@@ -2453,22 +2429,9 @@
      "value": "9 106"
     }
    ],
-   "i": 50,
+   "i": 48,
    "kind": "paragraph",
-   "text": "6. O défice de produtividade é a conclusão composta. VAB por trabalhador de 23 004 euros contra 31 900 euros a nível nacional, salários de 1 282 euros contra 1 362 euros (2022), uma base de 7 605 microempresas — e, ao mesmo tempo, um índice de poder de compra acima da média, de 111,5. Évora consome melhor do que produz; a diferença são salários públicos e pensões. As portas que atuam do lado da produção — avisos de inovação e qualificação, dinheiro de investigação através de uma universidade com 9 106 estudantes, crédito de investimento com garantia — são as que esta página lista como abertas."
-  },
-  {
-   "figures": [],
-   "i": 51,
-   "kind": "heading",
-   "level": 2,
-   "text": "Fontes e método"
-  },
-  {
-   "figures": [],
-   "i": 52,
-   "kind": "paragraph",
-   "text": "Fontes não governamentais são rotuladas onde citadas (autodescrição institucional em páginas de empresas e da universidade)."
+   "text": "6. O défice de produtividade é a conclusão composta. VAB por trabalhador de 23 004 euros contra 31 900 euros a nível nacional, salários de 1 282 euros contra 1 362 euros (2022), uma base de 7 605 microempresas — e, ao mesmo tempo, um índice de poder de compra acima da média, de 111,5. Évora consome melhor do que produz; a diferença são salários públicos e pensões. As portas que atuam do lado da produção — avisos de inovação e qualificação, dinheiro de investigação através de uma universidade com 9 106 estudantes, crédito de investimento com garantia — são as que estão abertas."
   }
  ],
  "edition": "Évora — Economia, Investidores, Portas Abertas 2026 (pt-PT)",
