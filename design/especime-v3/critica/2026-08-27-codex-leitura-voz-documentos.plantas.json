@@ -1,0 +1,26 @@
+{
+ "registado_em": "2026-08-27",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "diffs/07-en.diff",
+   "descricao": "a removed line carrying a figure (63 418 907) that appears nowhere else in the edition",
+   "sha256_antes": "22dfb1acfd654839c81313f36418275a3e9ca3cffbe5a49a321bfbb96bd4ac54",
+   "sha256_depois": "fb2daf394affe68244d68b4c4f47313c31de5f6386b890bb466980c3f607e0c3"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "paginas/leitura-09-pt.html",
+   "descricao": "a self-referential sentence («Este documento foi reconciliado…») left on the built 09 reading page",
+   "sha256_antes": "fc93048732f2b4b3dc5759f987e6c043c04a1962938f1500f62e21dc22b5c483",
+   "sha256_depois": "294f104fc9f2f79bd31f05598f08bc0b26234ef45eec3d8a38e2801b09f01b19"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "DISPOSICAO.md",
+   "descricao": "a FICA verdict with reason «facto» on a diligence sentence",
+   "sha256_antes": "3da824449363b878d87b1e7587fa0d30dff8efd8e95042cb38555c619ab8d30f",
+   "sha256_depois": "4e9e32a2f2cb36c11809f2fe320c396b5bc4f3bd0b750ec216192c7fa77a4e37"
+  }
+ ]
+}
