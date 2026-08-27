@@ -17,37 +17,46 @@
  * ficheiros estáticos sobre `dist/`, na porta que o sistema der.
  *
  * ---------------------------------------------------------------------------
- * ESTA MATRIZ PÁRA NA PRIMEIRA CÉLULA DO MAPA DE PONTOS (Emenda 20, 27.08.2026)
+ * AS CÉLULAS DO MAPA DE PONTOS, DECIDIDAS UMA A UMA (Emenda 20, 27.08.2026)
  * ---------------------------------------------------------------------------
- * A Emenda 20 tirou os 308 pontos da primeira página e pôs lá as 29 unidades da
- * Carta como áreas. Uma dúzia de células desta matriz procuram
- * `[data-pontos] [data-caop]`, e a primeira delas morre num `null` (2g·5, a
- * lista de proximidade). O mapa de pontos continua a existir, no cartão
- * localizador da página do concelho, onde a Emenda 20d o deixou.
+ * A Emenda 20a tirou os 308 pontos da primeira página e pôs lá as 29 unidades da
+ * Carta como áreas; a 20c fez o mapa render-se também no telemóvel; a 20d deixou
+ * os pontos exactamente onde estavam, no cartão localizador da página do
+ * concelho. Uma dúzia de células desta matriz media o mapa de pontos na primeira
+ * página, e a primeira delas morria num `null`.
  *
- * NÃO FOI REESCRITA NESTE BLOCO, E A RAZÃO ESTÁ ESCRITA PARA QUEM A REESCREVER.
- * São células espalhadas por 2 300 linhas, e uma reescrita à pressa transforma
- * células que passavam em células que passam por não medirem nada, que é o
- * defeito que esta casa mais teme. O que o mapa da primeira página faz passou a
- * ser medido em `tests/inicio/mapa-distritos.mjs`, com 22 células e quatro
- * estragos plantados, e a régua da Emenda 19
- * (`tests/inicio/mapa-navegacao.mjs`) foi acertada no mesmo dia: as suas N1, N2
- * e N3 continuam a medir o que mediam e a sua N4 declara-se retirada.
+ * A REGRA QUE AS DECIDIU, E NENHUMA FICOU A PASSAR POR NÃO MEDIR NADA:
  *
- * O que fica por fazer é decidir, célula a célula, quais destas mudam de objecto
- * (as do mapa como instrumento: a coluna, a legenda no canto das ilhas, a
- * postura) e quais saem com os pontos. É trabalho de quem for dono desta régua.
+ *   · uma célula cujo OBJECTO NÃO MUDOU continua a medir o que media (a postura
+ *     nas duas superfícies, o cartão na página do concelho, a cabeça em duas
+ *     colunas, a ficha do mapa numa linha);
+ *   · uma célula cujo objecto MUDOU DE SUPERFÍCIE muda de porta e mantém a
+ *     pergunta: a neutralidade dos 308 pontos e o anel do concelho escolhido
+ *     medem-se em `/municipios/evora`, que é onde os pontos vivem; o rótulo do
+ *     distrito mede-se na página do concelho, que é onde ele se lê; e a metade
+ *     da primeira página passa a medir as 29 áreas, que é o que lá está;
+ *   · uma célula cujo objecto DEIXOU DE EXISTIR é retirada com a razão escrita no
+ *     lugar dela, e o que ela passa a medir é o FACTO QUE A RETIROU, nunca um sim
+ *     vazio: as dicas do mapa, a inalcançabilidade abaixo de 640, a densidade dos
+ *     pontos e o anel de leitura. Cada uma nomeia onde é que o que ela media
+ *     passou a ser medido.
+ *
+ * O que o mapa da primeira página faz é medido em
+ * `tests/inicio/mapa-distritos.mjs`, com as suas células e os seus estragos
+ * plantados; a régua da Emenda 19 (`tests/inicio/mapa-navegacao.mjs`) foi
+ * acertada no mesmo dia, com as N1, N2 e N3 a medir o que mediam e a N4
+ * declarada retirada.
  */
 import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
-/* A matriz calcula a lista de proximidade do seu lado, a partir dos mesmos
-   centróides que a página desenha: uma célula que perguntasse à página se ela
-   concorda com ela própria não media nada (subetapa 2h). */
-import { concelhos } from '../../src/lib/inicio.mjs';
-import { FIELD_W } from '../../src/data/caop-centroids.mjs';
+/* A MATRIZ LÊ UMA COISA DE FORA DO `dist/`, e é o artefacto do mapa: os limites
+   do canto que as ilhas deixam (o lado direito da moldura dos Açores e o fundo
+   da caixa do continente) saem de `mapa/pais.json` e não de dois números
+   escritos aqui. Uma célula que perguntasse à página se ela concorda com ela
+   própria não media nada. */
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -607,6 +616,12 @@ const estadoDaPagina = (p) =>
       dicasVisiveis: [...ficha.querySelectorAll('.mapa-hint')].filter((e) => !e.closest('.vh')).length,
       dicasNaDescricao: desc ? desc.querySelectorAll('.mapa-hint').length : 0,
       descricaoOculta: desc ? getComputedStyle(desc).position === 'absolute' : false,
+      /* O que a Emenda 20a deixou no lugar das dicas: nenhuma dica em parte
+         nenhuma do documento, nenhuma descrição apontada, e o mapa das áreas. */
+      dicasNoDocumento: document.querySelectorAll('.mapa-hint').length,
+      descrito,
+      areas: document.querySelectorAll('[data-areas] a.uni-porta').length,
+      pontos: document.querySelectorAll('[data-pontos] .mun').length,
     };
   });
   conta(
@@ -618,15 +633,37 @@ const estadoDaPagina = (p) =>
       /CAOP/.test(f.linha ?? ''),
     `«${f.linha}» · ficha ${f.alturaDaFicha}px · camada de aparelho ${f.aparelho} · citação na página ${f.citacaoNaPagina} · CSV ${f.csv}`,
   );
-  /* ERAM TRÊS DICAS, E SÃO DUAS (Emenda 19b, 26.08.2026). A terceira era «Toque
-     num ponto para escolher o concelho.», e descrevia a escolha que saiu: o que
-     um ponto faz é abrir a página do concelho, quando ela existe, e um destino
-     diz-se na ligação e no seu `<title>`. As duas que ficam continuam a ser
-     descrição acessível e não legenda, que é o que esta célula mede. */
+  /* ----------------------------------------------------------------------
+     RETIRADA PELA EMENDA 20a · as duas dicas descreviam o mapa de pontos
+     ----------------------------------------------------------------------
+     Media que as duas dicas do mapa («passe o cursor sobre um ponto para ler o
+     município», «Tab até ao mapa, setas para percorrer os municípios vizinhos»)
+     eram descrição acessível e não legenda. As duas descreviam gestos sobre os
+     308 pontos, e a primeira página deixou de os ter: desenha as 29 unidades da
+     Carta como áreas, cada uma uma ligação com o seu nome no `<title>`. O rodapé
+     do mapa saiu inteiro com elas, e com ele o `aria-describedby`.
+
+     A REGRA NÃO SE MOVE, porque o seu objecto não existe em superfície nenhuma:
+     o cartão localizador da página do concelho nunca teve dicas nem descrição (é
+     uma imagem com o seu nome, e não navegação). Uma descrição que prometesse um
+     gesto que a página não faz é o defeito que o achado 13 da quarta leitura do
+     Codex fechou, e o que fica é a ausência.
+
+     O QUE ESTA CÉLULA MEDE AGORA é o facto que a retirou, e não um sim vazio:
+     que não sobrou uma dica no documento nem uma descrição pendurada, e que o
+     mapa que está lá é o das áreas. O que a primeira página promete a quem a
+     ouve passou a ser medido em `tests/inicio/mapa-distritos.mjs`, célula M6c (o
+     foco pousa numa área e o Enter abre a página dela).
+     ---------------------------------------------------------------------- */
   conta(
-    '2l · Emenda 15 · as dicas do mapa são descrição acessível e não legenda',
-    f.dicasVisiveis === 0 && f.dicasNaDescricao === 2 && f.descricaoOculta,
-    `${f.dicasVisiveis} visíveis · ${f.dicasNaDescricao} na descrição · oculta ${f.descricaoOculta}`,
+    '2l · RETIRADA (Emenda 20a) · as dicas descreviam o mapa de pontos, que saiu da primeira página',
+    f.dicasVisiveis === 0 &&
+      f.dicasNaDescricao === 0 &&
+      f.dicasNoDocumento === 0 &&
+      f.descrito === null &&
+      f.areas === 29 &&
+      f.pontos === 0,
+    `${f.dicasNoDocumento} dicas no documento · aria-describedby ${f.descrito} · ${f.areas} áreas e ${f.pontos} pontos no mapa da primeira página · a leitura pelo teclado passou a mapa-distritos.mjs M6c`,
   );
   await p.__contexto.close();
 }
@@ -830,44 +867,41 @@ for (const largura of [1280, 390]) {
 
 /* (7) O rótulo do distrito: uma regra para os 308 (ISSUES I18).
  *
- * A CÉLULA MUDA DE SUPERFÍCIE COM A EMENDA 19a. Lia o rótulo do bloco de cabeça
- * de um concelho escolhido, e não há concelho escolhido na primeira página. A
- * regra continua inteira, e continua a ver-se: é a leitura em voz alta do mapa
- * que a rende, com `[data-readout-pre]` a acender-se ou a apagar-se conforme o
- * campo da Carta seja um distrito ou uma ilha. O que se lê é o que o leitor vê
- * quando passa o cursor pelo ponto, e não o que está escrito no documento. */
+ * A CÉLULA MUDA DE SUPERFÍCIE PELA SEGUNDA VEZ (Emenda 20a, 27.08.2026), E A
+ * REGRA É A MESMA. Nasceu no bloco de cabeça de um concelho escolhido na
+ * primeira página; a Emenda 19a fechou esse estado e ela passou a ler a leitura
+ * em voz alta do mapa de pontos, com `[data-readout-pre]` a acender-se ou a
+ * apagar-se conforme o campo da Carta fosse um distrito ou uma ilha. A Emenda
+ * 20a tirou os pontos da primeira página, e com eles a leitura em voz alta.
+ *
+ * O RÓTULO CONTINUA A VER-SE, e vive agora onde o concelho vive: por baixo do
+ * nome dele, na sua página (`.municipio-sub`). É a mesma regra medida nos mesmos
+ * quatro concelhos, e continua a ser o que o leitor VÊ e não o que uma função
+ * compôs: lê-se do documento construído.
+ *
+ * ÉVORA LÊ-SE PELO PREFIXO e os outros três por igualdade, porque a etiqueta de
+ * Évora vem de `municipios.mjs` e traz a sub-região a seguir («distrito de Évora
+ * · Alentejo Central»). O que a I18 fixa é o prefixo, e é o prefixo que se mede.
+ */
 {
-  const p = await pagina();
-  await p.goto(base + '/', { waitUntil: 'networkidle' });
   const lidos = {};
   for (const slug of ['evora', 'beja', 'horta', 'lagoa-ilha-de-sao-miguel']) {
-    const sitio = await p.evaluate((s) => {
-      const c = document.querySelector(`[data-pontos] [data-caop="${s}"]`);
-      c.scrollIntoView({ block: 'center' });
-      const r = c.getBoundingClientRect();
-      return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
-    }, slug);
-    await p.mouse.move(sitio.x - 25, sitio.y - 25);
-    await p.mouse.move(sitio.x, sitio.y);
-    await p.waitForTimeout(80);
-    lidos[slug] = await p.evaluate(() =>
-      [...document.querySelectorAll('[data-readout-pre], [data-readout-sub]')]
-        .filter((e) => !e.hidden)
-        .map((e) => e.textContent)
-        .join('')
-        .replace(/\s+/g, ' ')
-        .trim(),
+    const p = await pagina();
+    await p.goto(`${base}/municipios/${slug}`, { waitUntil: 'networkidle' });
+    lidos[slug] = await p.evaluate(
+      () =>
+        document.querySelector('.municipio-sub')?.textContent.replace(/\s+/g, ' ').trim() ?? '',
     );
+    await p.__contexto.close();
   }
   conta(
     'o rótulo do distrito segue uma regra só nos 308 (ISSUES I18)',
     lidos.beja === 'distrito de Beja' &&
       lidos.horta === 'Ilha do Faial' &&
       lidos['lagoa-ilha-de-sao-miguel'] === 'Ilha de São Miguel' &&
-      lidos.evora === 'distrito de Évora',
+      lidos.evora.startsWith('distrito de Évora'),
     `Beja «${lidos.beja}» · Horta «${lidos.horta}» · Lagoa «${lidos['lagoa-ilha-de-sao-miguel']}» · Évora «${lidos.evora}»`,
   );
-  await p.__contexto.close();
 }
 
 /* ===========================================================================
@@ -894,8 +928,12 @@ for (const largura of [1280, 390]) {
  * o foco no campo. A lista de proximidade volta com o mapa por distritos, que é
  * a forma do telemóvel que a Emenda 3 desenha, e a célula volta com ela.
  *
- * A importação de `concelhos()` e do campo da CAOP fica no topo deste ficheiro:
- * é dela que a célula (2m) da vista de escolha continua a viver. */
+ * A IMPORTAÇÃO DE `concelhos()` E DO CAMPO DA CAOP SAIU COM A CONTA QUE A USAVA
+ * (Emenda 20a): a distância mínima entre dois centróides servia a célula da
+ * densidade (f3), que foi retirada com a ISSUES I70, e a da pesquisa aberta
+ * (f2), que passou a medir a caixa das 29 áreas. O que a matriz lê de fora do
+ * `dist/` passa a ser uma coisa só, `mapa/pais.json`, e é para saber onde acaba
+ * a moldura dos Açores. */
 
 /* (2h·2) ISSUES I20 · o rótulo da referência da régua fica dentro da caixa.
  *
@@ -1044,8 +1082,13 @@ for (const largura of [1280, 390]) {
  * A célula lê o `fill` CALCULADO e não a classe: uma classe que já não pinta
  * nada não prova nada. */
 {
+  /* A SUPERFÍCIE PASSOU A SER O CARTÃO LOCALIZADOR (Emenda 20a e 20d,
+     27.08.2026). Os 308 pontos saíram da primeira página, que desenha agora as
+     29 unidades da Carta como áreas; a Emenda 20d deixa-os exactamente onde
+     estavam, no cartão da página do concelho, e é lá que a regra da Emenda 10
+     tem objecto. A célula não muda de pergunta: muda de porta. */
   const p = await pagina();
-  await p.goto(`${base}/`, { waitUntil: 'networkidle' });
+  await p.goto(`${base}/municipios/evora`, { waitUntil: 'networkidle' });
   const m = await p.evaluate(() => {
     const pontos = [...document.querySelectorAll('[data-pontos] .mun')];
     const etiquetas = new Set(pontos.map((x) => x.tagName.toLowerCase()));
@@ -1075,7 +1118,7 @@ for (const largura of [1280, 390]) {
          que é regra: pelo menos um ponto declarado com página, e nenhum ponto a
          distinguir-se dos outros pelo raio ou pelo enchimento. */
       m.comPagina >= 1,
-    `${m.n} <${m.etiquetas.join('/')}> · 1 raio: ${m.raios.join(', ')} · enchimento ${m.enchimentos.join(', ')} · ${m.comPagina} declarado(s) com página`,
+    `no cartão localizador de /municipios/evora: ${m.n} <${m.etiquetas.join('/')}> · 1 raio: ${m.raios.join(', ')} · enchimento ${m.enchimentos.join(', ')} · ${m.comPagina} declarado(s) com página`,
   );
   await p.__contexto.close();
 }
@@ -1146,17 +1189,39 @@ for (const largura of [1280, 390]) {
     );
     await p.__contexto.close();
   }
+  /* A OUTRA METADE MUDA DE OBJECTO, E NÃO SE ESVAZIA (Emenda 20a). Media que a
+     primeira página não punha o anel em ponto nenhum; sem pontos, contar zero
+     anéis passava a ser verdade por não haver o que contar, que é uma célula a
+     passar por não medir nada. O que a primeira página tem agora são 29 áreas, e
+     a regra é a mesma: nenhuma se distingue das outras. Mede-se o estilo
+     calculado das 29 e exige-se um só, mais a ausência dos pontos, que é o facto
+     que fez a metade mudar de objecto. */
   const pi = await pagina();
   await pi.goto(`${base}/`, { waitUntil: 'networkidle' });
-  const naPrimeira = await pi.evaluate(
-    () => document.querySelectorAll('[data-pontos] .mun-escolhido').length,
+  const naPrimeira = await pi.evaluate(() => {
+    const areas = [...document.querySelectorAll('[data-areas] .uni')];
+    const estilos = new Set(
+      areas.map((el) => {
+        const cs = getComputedStyle(el);
+        return [cs.fill, cs.stroke, cs.strokeWidth].join('|');
+      }),
+    );
+    return {
+      pontos: document.querySelectorAll('[data-pontos] .mun').length,
+      areas: areas.length,
+      estilos: [...estilos],
+    };
+  });
+  if (naPrimeira.pontos !== 0 || naPrimeira.areas !== 29 || naPrimeira.estilos.length !== 1) {
+    bem = false;
+  }
+  linhas.push(
+    `primeira página: ${naPrimeira.pontos} pontos, ${naPrimeira.areas} áreas com ${naPrimeira.estilos.length} estilo (${naPrimeira.estilos.join(' ; ')})`,
   );
-  if (naPrimeira !== 0) bem = false;
-  linhas.push(`primeira página: ${naPrimeira} pontos com anel`);
   await pi.__contexto.close();
 
   conta(
-    '2j·a · o ponto escolhido é um anel na página do concelho, e a primeira página não escolhe nenhum',
+    '2j·a · o ponto escolhido é um anel na página do concelho, e na primeira página as 29 áreas são uma só',
     bem,
     linhas.join(' · '),
   );
@@ -1204,57 +1269,51 @@ for (const largura of [1280, 390]) {
   );
 }
 
-/* (2i·3d) Abaixo de 640 nenhum ponto é activável, por nenhum meio.
+/* (2i·3d) RETIRADA PELA EMENDA 20c · abaixo de 640 o mapa voltou a render-se.
  *
- * A PERGUNTA MUDA DE OBJECTO COM A EMENDA 19b, e continua a ser a mesma pergunta.
- * A célula lia `pointer-events` numa das 308 áreas de toque; as áreas saíram do
- * SVG, e o que apanha o clique é o ponto dentro da sua ligação. Abaixo de 640 o
- * mapa inteiro não se rende (item A4), e por isso nem o dedo nem o teclado
- * chegam a ele: a tela não tem caixa, não recebe foco, e as setas não percorrem
- * nada. A 1280 o mesmo mapa lê, e o Enter num ponto com página abre a página
- * dele, que é o que a emenda promete. */
+ * A célula media a premissa da Emenda 18: abaixo de 640 o mapa inteiro não se
+ * rendia, e por isso nem o dedo nem o teclado chegavam a ele (a tela não tinha
+ * caixa, não recebia foco, e as setas não percorriam nada); a 1280 o mesmo mapa
+ * lia, e o Enter num ponto com página abria a página dele.
+ *
+ * A EMENDA 20c INVERTEU A PREMISSA, e escreve porquê: «a razão daquela forma era
+ * um mapa em que nada se tocava; neste, cada distrito é alvo». O mapa rende-se
+ * nas duas larguras, os pontos saíram da primeira página, e a leitura em voz
+ * alta saiu com eles. Não há aqui uma regra para mover: a regra que a célula
+ * media era «onde nada se toca, nada é alcançável», e o que a substitui é o
+ * contrário, medido em `tests/inicio/mapa-distritos.mjs`, células M1 e M2 (a
+ * 1280 e a 390, quantas das 29 chegam aos 44 px e onde estão os nomes das que
+ * não chegam).
+ *
+ * O QUE FICA AQUI É O FACTO QUE A RETIROU: a 390 a tela tem caixa e as 29 áreas
+ * também, e não sobrou um ponto na primeira página. */
 {
   const sonda = async (largura) => {
     const p = await pagina({ largura });
     await p.goto(`${base}/`, { waitUntil: 'networkidle' });
-    const caixa = await p.evaluate(() => {
-      const t = document.querySelector('.mapa-tela').getBoundingClientRect();
-      const porta = document.querySelector('.mun-porta');
-      const r = porta ? porta.getBoundingClientRect() : null;
-      return {
-        tela: +t.width.toFixed(1),
-        porta: r ? +r.width.toFixed(2) : 0,
-        pontosComCaixa: [...document.querySelectorAll('[data-pontos] .mun')].filter(
-          (c) => c.getBoundingClientRect().width > 0,
-        ).length,
-      };
-    });
-    await p.evaluate(() => document.querySelector('[data-mapa-wrap]').focus());
-    await p.keyboard.press('ArrowRight');
-    await p.waitForTimeout(80);
-    const leitura = await p.evaluate(
-      () => document.querySelector('[data-readout-nome]')?.textContent.trim() ?? '',
-    );
-    await p.keyboard.press('Enter');
-    await p.waitForTimeout(250);
-    const depoisDoEnter = await p.evaluate(() => location.pathname + location.search);
+    const r = await p.evaluate(() => ({
+      tela: +document.querySelector('.mapa-tela').getBoundingClientRect().width.toFixed(1),
+      areasComCaixa: [...document.querySelectorAll('[data-areas] .uni')].filter(
+        (e) => e.getBoundingClientRect().width > 0,
+      ).length,
+      pontos: document.querySelectorAll('[data-pontos] .mun').length,
+      leitura: document.querySelectorAll('[data-readout-nome]').length,
+    }));
     await p.__contexto.close();
-    return { ...caixa, leitura, depoisDoEnter };
+    return r;
   };
   const estreito = await sonda(390);
   const largo = await sonda(1280);
   conta(
-    '2i·3d · abaixo de 640 nenhum ponto é alcançável, e a leitura é do computador',
-    estreito.tela === 0 &&
-      estreito.porta === 0 &&
-      estreito.pontosComCaixa === 0 &&
-      estreito.leitura.length === 0 &&
-      estreito.depoisDoEnter === '/' &&
-      largo.tela > 0 &&
-      largo.porta > 0 &&
-      largo.pontosComCaixa === 308 &&
-      largo.leitura.length > 0,
-    `390: tela ${estreito.tela}px, ${estreito.pontosComCaixa} pontos com caixa, a ligação mede ${estreito.porta}px, a seta lê «${estreito.leitura}», o Enter deixa o endereço em «${estreito.depoisDoEnter}» · 1280: tela ${largo.tela}px, ${largo.pontosComCaixa} pontos, a ligação mede ${largo.porta}px, a seta lê «${largo.leitura}»`,
+    '2i·3d · RETIRADA (Emenda 20c) · o mapa rende-se nas duas larguras, e não tem pontos',
+    estreito.tela > 0 &&
+      estreito.areasComCaixa === 29 &&
+      estreito.pontos === 0 &&
+      estreito.leitura === 0 &&
+      largo.tela > estreito.tela &&
+      largo.areasComCaixa === 29 &&
+      largo.pontos === 0,
+    `390: tela ${estreito.tela}px, ${estreito.areasComCaixa} áreas com caixa, ${estreito.pontos} pontos, ${estreito.leitura} leituras · 1280: tela ${largo.tela}px, ${largo.areasComCaixa} áreas · os alvos das 29 passaram a mapa-distritos.mjs M1 e M2`,
   );
 }
 
@@ -1953,37 +2012,61 @@ for (const largura of [1280, 390]) {
  * segunda metade saiu com a Emenda 19b: o mapa enche a coluna, e mais nada.
  * ========================================================================== */
 
-/* A distância mínima entre dois centróides, calculada AQUI a partir dos mesmos
-   dados que a página desenha — 2,816 unidades de campo, Lajes das Flores e Santa
-   Cruz das Flores. A matriz não pergunta à página se ela concorda com ela
-   própria: lê o desenho construído e compara com esta conta. */
-const MINIMA_EM_UNIDADES = (() => {
-  const cs = concelhos();
-  let d = Infinity;
-  for (let i = 0; i < cs.length; i++) {
-    for (let j = i + 1; j < cs.length; j++) {
-      const e = Math.hypot(cs[i].x - cs[j].x, cs[i].y - cs[j].y);
-      if (e < d) d = e;
-    }
-  }
-  return d;
-})();
+/* A DISTÂNCIA MÍNIMA ENTRE DOIS CENTRÓIDES SAIU COM A CÉLULA QUE A USAVA
+   (Emenda 20a). Era 2,816 unidades de campo, Lajes das Flores e Santa Cruz das
+   Flores, calculada aqui a partir dos mesmos dados que a página desenhava, para
+   a célula da densidade (f3) e para a da pesquisa aberta (f2). A primeira foi
+   retirada com a I70; a segunda passou a medir a caixa das 29 áreas. Uma conta
+   que nenhuma célula lê é uma conta a dizer que ainda há uma pergunta. */
 
-/** O par mais próximo do desenho real, em CSS px. */
-const minimaNoDesenho = () => {
-  const nos = [...document.querySelectorAll('[data-pontos] [data-caop]')].map((n) => {
+/** A caixa do desenho das 29 unidades, em CSS px, arredondada a um décimo.
+ *
+ * SUBSTITUI O PAR MAIS PRÓXIMO ENTRE PONTOS (Emenda 20a). A função media a
+ * distância mínima entre dois dos 308 pontos, e servia para provar que a
+ * pesquisa aberta não mexia no desenho; sem pontos ela devolvia `Infinity` e a
+ * comparação dava `NaN`, que é uma célula a passar ou a falhar por acidente. O
+ * que prova a mesma coisa no desenho novo é a caixa das 29 áreas: se o mapa
+ * mudasse de escala ou de sítio, ela mudava. */
+const caixaDasAreas = () => {
+  const nos = [...document.querySelectorAll('[data-areas] .uni')];
+  if (nos.length === 0) return null;
+  let x0 = Infinity;
+  let y0 = Infinity;
+  let x1 = -Infinity;
+  let y1 = -Infinity;
+  for (const n of nos) {
     const r = n.getBoundingClientRect();
-    return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
-  });
-  let d = Infinity;
-  for (let i = 0; i < nos.length; i++) {
-    for (let j = i + 1; j < nos.length; j++) {
-      const e = Math.hypot(nos[i].x - nos[j].x, nos[i].y - nos[j].y);
-      if (e < d) d = e;
-    }
+    x0 = Math.min(x0, r.left);
+    y0 = Math.min(y0, r.top);
+    x1 = Math.max(x1, r.right);
+    y1 = Math.max(y1, r.bottom);
   }
-  return d;
+  return { n: nos.length, largura: +(x1 - x0).toFixed(1), altura: +(y1 - y0).toFixed(1) };
 };
+
+/* ---------------------------------------------------------------------------
+ * O CANTO QUE AS ILHAS DEIXAM, LIDO DO ARTEFACTO E NÃO ESCRITO À MÃO
+ * ---------------------------------------------------------------------------
+ * A instrução da etapa 2m dizia «à direita da moldura dos Açores, que acaba em
+ * x=264, e por baixo do ponto mais a sul à direita dela, Faro em y=686,1», e os
+ * dois números eram do campo dos pontos, 600 × 790. Com a Emenda 20a o mapa da
+ * primeira página passou a ser o das 29 unidades, e o campo passou a ser o do
+ * desenho, que guarda os polígonos. Os dois limites são os mesmos DOIS FACTOS
+ * naquele campo, e leem-se dele: o lado direito da moldura dos Açores, e o fundo
+ * da caixa das unidades do continente. Nenhum é escrito aqui.
+ * --------------------------------------------------------------------------- */
+const CANTO_DAS_ILHAS = (() => {
+  const pais = JSON.parse(
+    fs.readFileSync(path.join(RAIZ, 'mapa', 'pais.json'), 'utf8'),
+  );
+  const acores = pais.molduras.find((m) => m.nome === 'Açores');
+  const continente = pais.unidades.filter((u) => u.parcela === 'continente');
+  return {
+    campo: pais.campo,
+    x: acores.caixa[0] + acores.caixa[2],
+    y: Math.max(...continente.map((u) => u.caixa[1] + u.caixa[3])),
+  };
+})();
 
 /* (f1) O mapa enche a coluna, e a legenda vai para o canto que as ilhas deixam. */
 {
@@ -1993,7 +2076,7 @@ const minimaNoDesenho = () => {
     for (const rota of ['/', '/en/']) {
       const p = await pagina({ largura });
       await p.goto(base + rota, { waitUntil: 'networkidle' });
-      const m = await p.evaluate(() => {
+      const m = await p.evaluate((campo) => {
         const coluna = document.querySelector('.cabeca-inst').getBoundingClientRect();
         const tela = document.querySelector('.mapa-tela').getBoundingClientRect();
         const legenda = document.querySelector('.mapa-linha-fonte').getBoundingClientRect();
@@ -2002,22 +2085,26 @@ const minimaNoDesenho = () => {
           mapa: +tela.width.toFixed(1),
           altura: +tela.height.toFixed(1),
           /* A legenda, em UNIDADES DO CAMPO: é assim que a instrução está
-             escrita («à direita da moldura dos Açores, que acaba em x=264; por
-             baixo do ponto mais a sul à direita dela, y=686,1»), e é assim que
-             ela se confere sem depender da largura da página. */
-          legX: +(((legenda.left - tela.left) / tela.width) * 600).toFixed(1),
-          legY: +(((legenda.top - tela.top) / tela.height) * 790).toFixed(1),
+             escrita («à direita da moldura dos Açores; por baixo do ponto mais a
+             sul à direita dela»), e é assim que ela se confere sem depender da
+             largura da página.
+             O CAMPO É O DO ARTEFACTO E NÃO 600 × 790 (Emenda 20a): o mapa da
+             primeira página passou a ser o das 29 unidades, cujo campo guarda os
+             polígonos e não só os pontos. As duas medidas vêm de fora, em
+             `CANTO_DAS_ILHAS`, lidas de `mapa/pais.json`. */
+          legX: +(((legenda.left - tela.left) / tela.width) * campo.largura).toFixed(1),
+          legY: +(((legenda.top - tela.top) / tela.height) * campo.altura).toFixed(1),
           transbordo: document.documentElement.scrollWidth - document.documentElement.clientWidth,
         };
-      });
+      }, CANTO_DAS_ILHAS.campo);
       const ok =
         Math.abs(m.mapa - m.coluna) < 1 &&
-        m.legX >= 264 &&
-        m.legY >= 690.6 &&
+        m.legX >= CANTO_DAS_ILHAS.x &&
+        m.legY >= CANTO_DAS_ILHAS.y &&
         m.transbordo <= 0;
       if (!ok) bem = false;
       linhas.push(
-        `${largura}${rota === '/' ? ' pt' : ' en'}: coluna ${m.coluna} · mapa ${m.mapa}×${m.altura} · legenda em x=${m.legX} y=${m.legY} do campo · transbordo ${m.transbordo}`,
+        `${largura}${rota === '/' ? ' pt' : ' en'}: coluna ${m.coluna} · mapa ${m.mapa}×${m.altura} · legenda em x=${m.legX} y=${m.legY} do campo (o canto começa em x=${CANTO_DAS_ILHAS.x} y=${CANTO_DAS_ILHAS.y}) · transbordo ${m.transbordo}`,
       );
       await p.__contexto.close();
     }
@@ -2039,7 +2126,7 @@ const minimaNoDesenho = () => {
     for (const rota of ['/', '/en/']) {
       const p = await pagina({ largura });
       await p.goto(base + rota, { waitUntil: 'networkidle' });
-      const antes = await p.evaluate(minimaNoDesenho);
+      const antes = await p.evaluate(caixaDasAreas);
       const noPais = await p.evaluate(
         () => +document.querySelector('.mapa-tela').getBoundingClientRect().width.toFixed(1),
       );
@@ -2063,7 +2150,7 @@ const minimaNoDesenho = () => {
           transbordo: document.documentElement.scrollWidth - document.documentElement.clientWidth,
         };
       });
-      const depois = await p.evaluate(minimaNoDesenho);
+      const depois = await p.evaluate(caixaDasAreas);
       const ok =
         m.ambito === 'municipio' &&
         /\?ambito=municipio$/.test(m.url) &&
@@ -2072,11 +2159,16 @@ const minimaNoDesenho = () => {
         m.pesquisaAcima &&
         Math.abs(m.mapa - m.coluna) < 1 &&
         Math.abs(m.mapa - noPais) < 1 &&
-        Math.abs(depois - antes) < 0.05 &&
+        antes !== null &&
+        depois !== null &&
+        antes.n === 29 &&
+        depois.n === 29 &&
+        Math.abs(depois.largura - antes.largura) < 0.05 &&
+        Math.abs(depois.altura - antes.altura) < 0.05 &&
         m.transbordo <= 0;
       if (!ok) bem = false;
       linhas.push(
-        `${largura}${rota === '/' ? ' pt' : ' en'}: ${m.url} · mapa ${m.mapa} na coluna de ${m.coluna} (no país ${noPais}) · mínimo entre pontos ${antes.toFixed(2)}px → ${depois.toFixed(2)}px · transbordo ${m.transbordo}`,
+        `${largura}${rota === '/' ? ' pt' : ' en'}: ${m.url} · mapa ${m.mapa} na coluna de ${m.coluna} (no país ${noPais}) · caixa das ${antes?.n} áreas ${antes?.largura}×${antes?.altura} → ${depois?.largura}×${depois?.altura} · transbordo ${m.transbordo}`,
       );
       await p.__contexto.close();
     }
@@ -2088,63 +2180,44 @@ const minimaNoDesenho = () => {
   );
 }
 
-/* (f3) A LENTE SAIU (Emenda 19b, 26.08.2026). A célula media a ampliação de 1× a
- * 4× por quarenta entalhes da roda, o toque duplo a repor, a leitura a dizer o
- * nome certo debaixo da lente, e que fora da vista de escolha a roda era da
- * página. A lente saiu inteira, e a roda é da página em qualquer estado: é o que
- * `tests/inicio/mapa-navegacao.mjs` mede, com o cursor dentro da caixa do mapa e
- * o `scrollY` antes e depois.
+/* (f3) RETIRADA PELA EMENDA 20 · a densidade era a pergunta, e a ISSUES I70 é a
+ * resposta.
  *
- * O QUE FICA AQUI É A DENSIDADE, MEDIDA E NÃO CONTADA (Emenda 19e, ISSUES I70).
- * A conta que a lente existia para resolver continua verdadeira, e a página não
- * a resolve: na coluna, 44 dos 308 pontos têm um vizinho a menos de um diâmetro.
- * A célula mede-a no desenho construído e imprime-a, para que o número não
- * desapareça de vista enquanto o mapa por distritos não chega. */
+ * A célula media, no desenho construído, a conta que a Emenda 19e escreveu: na
+ * coluna do computador, 44 dos 308 pontos têm um vizinho a menos de um diâmetro
+ * (7,35 px), e o par mais próximo da Carta mede 2,30 px. Existia «para que o
+ * número não desapareça de vista enquanto o mapa por distritos não chega».
+ * Chegou: a Emenda 20a fecha a I70, a primeira página desenha as 29 unidades
+ * como áreas, e nenhuma delas tem um vizinho por cima. A densidade dos pontos
+ * deixou de ser uma pergunta desta página.
+ *
+ * O QUE A SUBSTITUI é a medida dos alvos das 29, em
+ * `tests/inicio/mapa-distritos.mjs`, células M1 e M2: quantas chegam aos 44 px a
+ * 1280 e a 390, e onde estão os nomes das que não chegam. O que fica aqui é o
+ * facto que retirou a célula: nenhum ponto na primeira página, 29 áreas e 29
+ * ligações, uma por unidade. */
 {
   const p = await pagina({ largura: 1280 });
   await p.goto(base + '/', { waitUntil: 'networkidle' });
   const d = await p.evaluate(() => {
-    const nos = [...document.querySelectorAll('[data-pontos] [data-caop]')].map((n) => {
-      const r = n.getBoundingClientRect();
-      return { x: r.left + r.width / 2, y: r.top + r.height / 2, d: r.width, nome: n.getAttribute('data-m') };
+    const areas = [...document.querySelectorAll('[data-areas] .uni')];
+    const lados = areas.map((el) => {
+      const r = el.getBoundingClientRect();
+      return Math.max(r.width, r.height);
     });
-    const diametro = nos[0].d;
-    let juntos = 0;
-    for (let i = 0; i < nos.length; i++) {
-      let perto = false;
-      for (let j = 0; j < nos.length && !perto; j++) {
-        if (i === j) continue;
-        if (Math.hypot(nos[i].x - nos[j].x, nos[i].y - nos[j].y) < diametro) perto = true;
-      }
-      if (perto) juntos++;
-    }
-    let minima = Infinity;
-    for (let i = 0; i < nos.length; i++) {
-      for (let j = i + 1; j < nos.length; j++) {
-        const e = Math.hypot(nos[i].x - nos[j].x, nos[i].y - nos[j].y);
-        if (e < minima) minima = e;
-      }
-    }
     return {
-      n: nos.length,
-      diametro: +diametro.toFixed(2),
-      juntos,
-      minima: +minima.toFixed(2),
+      pontos: document.querySelectorAll('[data-pontos] [data-caop]').length,
+      areas: areas.length,
+      ligacoes: document.querySelectorAll('[data-areas] a.uni-porta').length,
+      menor: +Math.min(...lados).toFixed(2),
+      maior: +Math.max(...lados).toFixed(2),
       largura: +document.querySelector('.mapa-tela').getBoundingClientRect().width.toFixed(1),
     };
   });
-  /* E a conta do lado de cá, sobre os mesmos centróides: o par mais próximo da
-     Carta, em unidades de campo, convertido à escala a que a página o desenhou.
-     A matriz não pergunta à página se ela concorda com ela própria. */
-  const esperada = (MINIMA_EM_UNIDADES * d.largura) / FIELD_W;
   conta(
-    'Emenda 19e · a densidade do mapa, medida no desenho (ISSUES I70)',
-    d.n === 308 &&
-      d.juntos === 44 &&
-      d.diametro > 7 &&
-      d.diametro < 8 &&
-      Math.abs(d.minima - esperada) < 0.05,
-    `${d.juntos} dos ${d.n} pontos têm um vizinho a menos de um diâmetro (${d.diametro}px) na coluna, a 1280 · o par mais próximo mede ${d.minima}px no desenho e ${esperada.toFixed(2)}px na conta (${MINIMA_EM_UNIDADES.toFixed(3)} unidades num campo de ${FIELD_W} a ${d.largura}px). O caminho das zonas densas é a pesquisa, até haver o mapa por distritos.`,
+    'Emenda 19e · RETIRADA (Emenda 20a, ISSUES I70 fechada) · a densidade dos pontos deixou de ser uma pergunta desta página',
+    d.pontos === 0 && d.areas === 29 && d.ligacoes === 29,
+    `${d.pontos} pontos e ${d.areas} áreas na coluna de ${d.largura}px, ${d.ligacoes} ligações · o maior lado das áreas vai de ${d.menor}px a ${d.maior}px, e quantas chegam aos 44 é mapa-distritos.mjs M1 e M2`,
   );
   await p.__contexto.close();
 }
@@ -2172,7 +2245,27 @@ const minimaNoDesenho = () => {
   await p.__contexto.close();
 }
 
-/* (f5) O anel de leitura é um anel, e não um disco (achado da 2m). *//* (f5) O anel de leitura é um anel, e não um disco (achado da 2m). */
+/* (f5) RETIRADA PELA EMENDA 20a · o anel de leitura era do mapa de pontos.
+ *
+ * A célula media o marcador que `public/js/inicio.js` desenhava por baixo do
+ * cursor sobre um dos 308 pontos: que ele era um anel e não um disco (Emenda
+ * 10), que vivia dentro do `svg`, e que a leitura em voz alta dizia o nome do
+ * concelho. Foi um achado real da etapa 2m, e a regra que ele defendia continua
+ * inteira: um lugar lido ou escolhido é um anel, nunca um preenchimento.
+ *
+ * O ANEL NÃO TEM SUPERFÍCIE ONDE VIVER. O script só o cria onde há pontos, e a
+ * primeira página deixou de os ter; o cartão localizador da página do concelho,
+ * onde a Emenda 20d deixou os pontos, não carrega este script e nunca teve
+ * leitura em voz alta. A regra continua medida onde ela tem objecto: o anel do
+ * concelho ESCOLHIDO está na célula «2j·a · o ponto escolhido é um anel na
+ * página do concelho», que mede o enchimento, o raio e o contorno em
+ * `/municipios/evora`; e a neutralidade das áreas da primeira página está em
+ * `tests/inicio/mapa-distritos.mjs`, células M5a a M5c, com o seu estrago
+ * plantado.
+ *
+ * O QUE FICA AQUI É O FACTO QUE A RETIROU: passar o cursor pelo mapa da primeira
+ * página não cria anel nenhum, não há caixa de leitura no documento, e as áreas
+ * por baixo do cursor continuam sem enchimento. */
 {
   const p = await pagina({ largura: 1280 });
   await p.goto(base + '/', { waitUntil: 'networkidle' });
@@ -2181,24 +2274,24 @@ const minimaNoDesenho = () => {
     return { x: b.left + b.width * 0.74, y: b.top + b.height * 0.64 };
   });
   await p.mouse.move(sitio.x, sitio.y);
+  await p.waitForTimeout(80);
   const a = await p.evaluate(() => {
-    const anel = document.querySelector('.cursor-ring');
-    if (!anel) return null;
-    const cs = getComputedStyle(anel);
+    const areas = [...document.querySelectorAll('[data-areas] .uni')];
     return {
-      fill: cs.fill,
-      stroke: cs.stroke,
-      tinta: getComputedStyle(document.documentElement).getPropertyValue('--ink').trim(),
-      /* O grupo da lente saiu com ela (Emenda 19b): o anel vive no `svg`, ao
-         lado dos pontos, e é isso que se mede. */
-      dentroDoMapa: !!anel.closest('[data-mapa]'),
-      leitura: document.querySelector('[data-readout-nome]').textContent.trim(),
+      aneis: document.querySelectorAll('.cursor-ring').length,
+      leitura: document.querySelectorAll('[data-readout-nome]').length,
+      pontos: document.querySelectorAll('[data-pontos] .mun').length,
+      enchimentos: [...new Set(areas.map((el) => getComputedStyle(el).fill))],
     };
   });
   conta(
-    '2m · o anel de leitura do mapa é um anel e não um disco (Emenda 10)',
-    !!a && a.fill === 'none' && a.dentroDoMapa && a.leitura.length > 0,
-    a ? `enchimento ${a.fill} · contorno ${a.stroke} · dentro do mapa ${a.dentroDoMapa} · lê «${a.leitura}»` : 'sem anel',
+    '2m · RETIRADA (Emenda 20a) · o anel de leitura era do mapa de pontos, que saiu da primeira página',
+    a.aneis === 0 &&
+      a.leitura === 0 &&
+      a.pontos === 0 &&
+      a.enchimentos.length === 1 &&
+      a.enchimentos[0] === 'none',
+    `${a.aneis} anéis e ${a.leitura} caixas de leitura no documento · ${a.pontos} pontos · o enchimento das 29 áreas é ${a.enchimentos.join(', ')} · o anel do concelho escolhido continua medido em /municipios/evora`,
   );
   await p.__contexto.close();
 }
