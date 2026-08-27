@@ -1,0 +1,36 @@
+---
+/**
+ * O TÍTULO DE UM TRABALHO, COM A LÍNGUA EM QUE ELE ESTÁ ESCRITO.
+ *
+ * ---------------------------------------------------------------------------
+ * Porque é um componente e não um atributo escrito cinco vezes
+ * ---------------------------------------------------------------------------
+ * O título de um trabalho é uma CITAÇÃO: não se traduz, não se normaliza, não
+ * se corrige (`src/data/studies.mjs`). Um trabalho que só tem edição inglesa
+ * rende o seu título inglês dentro das páginas portuguesas, como «Which Door Is
+ * Yours — public funding in Portugal, August 2026» e «Alentejo & Algarve —
+ * Economy, Society, Strategy», e quem ouve a página ouvia-os com a fonética do
+ * português. O que faltava era o atributo `lang`, e ele tem de estar em
+ * TODOS os sítios onde um título se rende: o arquivo, a página de um trabalho e
+ * a sua lista de edições, o cartão do trabalho na página do concelho, os
+ * documentos de um critério da agenda e o campo do estudo no recibo de uma
+ * linha. Um atributo escrito à mão em cinco vistas falha na sexta; por isso a
+ * marca e a língua vivem aqui, numa peça só.
+ *
+ * A MARCA `data-nonledger="titulo-de-estudo"` VEM COM ELE, e é a mesma desde o
+ * primeiro dia: um título é texto de terceiros, e o portão precisa de o saber.
+ *
+ * A LÍNGUA DECIDE-SE AQUI, e por uma função só: `linguaDoTitulo()` devolve a
+ * marca quando o título é de uma edição de outra língua, e nada quando é o da
+ * página ou quando a mesma cadeia é título das duas edições. Um `lang` que
+ * repete o da página é ruído para quem ouve; um `lang="en"` num título
+ * português é pior do que nenhum.
+ */
+import { linguaDoTitulo } from '../data/studies.mjs';
+
+const { titulo, lang = 'pt', as: Tag = 'span', class: classe = null, ...resto } = Astro.props;
+
+const marca = linguaDoTitulo(titulo, lang);
+---
+
+<Tag class={classe} data-nonledger="titulo-de-estudo" lang={marca} {...resto}>{titulo}</Tag>

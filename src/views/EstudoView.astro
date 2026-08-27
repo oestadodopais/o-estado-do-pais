@@ -35,6 +35,7 @@ import Claim from '../components/Claim.astro';
 import Provenance from '../components/Provenance.astro';
 import Marcador from '../components/Marcador.astro';
 import Frase from '../components/Frase.astro';
+import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import { workById, POR_VERIFICAR, subjectLabel } from '../data/studies.mjs';
 import { leituraDe } from '../data/leituras.mjs';
@@ -160,7 +161,7 @@ const jsonld = {
       declaradas, que é o que a Emenda 15 manda dizer. */}
   <div style="padding-top:clamp(20px,3vw,34px)">
     {estado && <span class="eyebrow">{estado}</span>}
-    <h1 style="margin-top:12px" data-nonledger="titulo-de-estudo">{principal.title}</h1>
+    <TituloDeTrabalho as="h1" style="margin-top:12px" titulo={principal.title} lang={lang} />
     <p class="lede" style="margin-top:16px">
       {
         descricaoAqui === POR_VERIFICAR ? (
@@ -304,7 +305,7 @@ const jsonld = {
           <div class="edicao">
             <div class="edicao-cabeca">
               <span class="badge">{e.lang.toUpperCase()}</span>
-              <span class="edicao-titulo" data-nonledger="titulo-de-estudo">{e.title}</span>
+              <TituloDeTrabalho class="edicao-titulo" titulo={e.title} lang={lang} />
             </div>
             <div class="edicao-meta">
               {/* Um marcador de incerteza usa sempre a mesma classe: é a única

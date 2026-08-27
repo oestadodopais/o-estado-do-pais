@@ -2246,6 +2246,106 @@ const minimaNoDesenho = () => {
  * voltar a render a frase.
  * ========================================================================= */
 
+/* ============================================================================
+ * (z) A LÍNGUA DE UM TÍTULO CITADO, EM TODAS AS PÁGINAS CONSTRUÍDAS
+ * ============================================================================
+ * O título de um trabalho é uma citação e não se traduz: um trabalho que só tem
+ * edição inglesa rende o seu título inglês dentro das páginas portuguesas. Quem
+ * ouve a página ouvia «Which Door Is Yours» e «Alentejo & Algarve — Economy,
+ * Society, Strategy» com a fonética do português. Desde 27.08.2026 o título sai
+ * de `TituloDeTrabalho.astro`, que escreve `lang` quando a língua do título não
+ * é a da página, e não escreve nada quando é. Um `lang` que repete o da página
+ * é ruído para quem ouve.
+ *
+ * A célula lê os ficheiros construídos e não o navegador: são milhares de
+ * páginas, e o que se julga é markup. Julga as duas metades, o que tem de levar
+ * a marca e o que não pode levá-la, e a porta da outra edição no rodapé, que
+ * era o outro sítio onde uma palavra inglesa se rendia sem língua.
+ * ========================================================================= */
+{
+  const { WORKS } = await import('../../src/data/studies.mjs');
+  /* Cada título, e as línguas em que ele existe no arquivo. */
+  const linguasDoTitulo = new Map();
+  for (const w of WORKS) {
+    for (const e of w.editions) {
+      const marca = e.lang === 'pt' ? 'pt-PT' : e.lang;
+      if (!linguasDoTitulo.has(e.title)) linguasDoTitulo.set(e.title, new Set());
+      linguasDoTitulo.get(e.title).add(marca);
+    }
+  }
+  const decodifica = (t) =>
+    t
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'");
+  const ficheiros = [];
+  const anda = (dir) => {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const f = path.join(dir, e.name);
+      if (e.isDirectory()) anda(f);
+      else if (e.name.endsWith('.html')) ficheiros.push(f);
+    }
+  };
+  anda(DIST);
+
+  const semMarca = [];
+  const comMarcaARepetir = [];
+  const rodapeSemLingua = [];
+  let titulos = 0;
+  let marcados = 0;
+  let rodapes = 0;
+  const TITULO = /<(\w+)([^>]*\bdata-nonledger="titulo-de-estudo"[^>]*)>([^<]*)</g;
+  const RODAPE = /<nav class="rodape-nav"[^>]*>([\s\S]*?)<\/nav>/;
+  for (const f of ficheiros) {
+    const html = fs.readFileSync(f, 'utf8');
+    const rel = '/' + path.relative(DIST, f).replace(/\/?index\.html$/, '');
+    const daPagina = /^\/en(\/|$)/.test(rel) ? 'en' : 'pt-PT';
+    for (const m of html.matchAll(TITULO)) {
+      const atributos = m[2];
+      const texto = decodifica(m[3]).trim();
+      if (!texto) continue;
+      titulos++;
+      const marca = /\blang="([^"]+)"/.exec(atributos)?.[1] ?? null;
+      if (marca) marcados++;
+      const linguas = linguasDoTitulo.get(texto);
+      /* Um nome que não é título de edição nenhuma (uma origem interna, como
+         «Concelhos: as medidas centrais») existe nas duas edições: não leva
+         marca, e não é aqui que se julga. */
+      if (!linguas) continue;
+      /* A MESMA CADEIA PODE SER O TÍTULO DE DUAS EDIÇÕES. «Água Não Faturada» e
+         «Onde está a água?» têm edição inglesa cujo título inglês não é
+         conhecido: fica o original. Uma cadeia que também é título português não
+         está em inglês, e não leva marca nenhuma. */
+      if (linguas.has(daPagina)) {
+        if (marca) comMarcaARepetir.push(`${rel} «${texto.slice(0, 40)}» lang=${marca}`);
+      } else {
+        const esperada = [...linguas][0];
+        if (marca !== esperada) semMarca.push(`${rel} «${texto.slice(0, 40)}» lang=${marca ?? '(nenhum)'} esperava ${esperada}`);
+      }
+    }
+    const rodape = RODAPE.exec(html)?.[1];
+    if (rodape) {
+      const porta = [...rodape.matchAll(/<a\b([^>]*\bhreflang="[^"]+"[^>]*)>/g)];
+      for (const p of porta) {
+        rodapes++;
+        if (!/\blang="[^"]+"/.test(p[1])) rodapeSemLingua.push(rel);
+      }
+    }
+  }
+  conta(
+    'a língua de um título citado, e a porta da outra edição no rodapé',
+    semMarca.length === 0 && comMarcaARepetir.length === 0 && rodapeSemLingua.length === 0,
+    `${ficheiros.length} páginas · ${titulos} títulos citados, ${marcados} com lang · ` +
+      `${semMarca.length} sem a marca que precisam` +
+      `${semMarca.length ? `: ${semMarca.slice(0, 3).join(' | ')}` : ''} · ` +
+      `${comMarcaARepetir.length} a repetir a língua da página` +
+      `${comMarcaARepetir.length ? `: ${comMarcaARepetir.slice(0, 3).join(' | ')}` : ''} · ` +
+      `${rodapes} portas de rodapé, ${rodapeSemLingua.length} sem língua`,
+  );
+}
+
 await navegador.close();
 servidor.close();
 

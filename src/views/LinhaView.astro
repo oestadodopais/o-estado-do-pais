@@ -47,6 +47,7 @@ import Claim from '../components/Claim.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
 import Provenance from '../components/Provenance.astro';
 import Marcador from '../components/Marcador.astro';
+import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import HistoricoDaLinha from '../components/HistoricoDaLinha.astro';
 import PortaDeCorreccoes from '../components/PortaDeCorreccoes.astro';
 import {
@@ -63,7 +64,7 @@ import {
   POR_VERIFICAR,
 } from '../lib/ledger.mjs';
 import { caminhoDaLinha, caminhoDoLivro, tituloDaLinha, descricaoDaLinha } from '../lib/livro.mjs';
-import { studyLabel } from '../data/studies.mjs';
+import { studyTitle } from '../data/studies.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import { LICENCA } from '../data/licenca.mjs';
@@ -275,7 +276,7 @@ const ficha = [
  * que é — uma citação de um título — e não como um campo transcrito, que seria
  * o portão a conferir uma função contra ela própria.
  */
-const estudo = studyLabel(claim.study, lang);
+const estudo = studyTitle(claim.study, lang).titulo;
 
 /**
  * A FRASE DE ATRIBUIÇÃO (v2, §11 iii da ordem do recibo).
@@ -911,7 +912,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
         }
 
         <dt>{s.prov.estudo}</dt>
-        <dd data-nonledger="titulo-de-estudo">{estudo}</dd>
+        <TituloDeTrabalho as="dd" titulo={estudo} lang={lang} />
 
         {/* O endereço saiu daqui e vive no corpo: é prova, e não ficha. Vai
             no bloco da prova quando fixa a página do documento, e no bloco do
