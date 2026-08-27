@@ -310,8 +310,6 @@ quem escreveu a página.*
 | conteudo | Limite de dívida |
 | conteudo | Lugares |
 | conteudo | Margem de endividamento |
-| conteudo | Not established. The work on the portfolios says this term «is one line of a map, not a map»: the president of that mandate, and every other member of it, were not identified. |
-| conteudo | Não estabelecido. O trabalho sobre os pelouros diz que este mandato «é uma linha de um mapa, não um mapa»: o presidente desse mandato, e todos os outros membros dele, não foram identificados. |
 | conteudo | O município publica |
 | conteudo | O que as fontes publicam sobre o município de Évora: população, poder de compra, emprego, empresas, dívida e execução orçamental. |
 | conteudo | O que foi orçamentado, o que foi pago e o que ficou em dívida no município de Évora. |
@@ -916,3 +914,17 @@ mesma razão das ressalvas de trabalho com um período entre parênteses.*
 | conteudo | The portfolio counts are designations, not spending. |
 | conteudo | Não existe contrafactual para nenhum índice, e a parte de um executivo neles não é separável. |
 | conteudo | There is no counterfactual for any index, and an executive’s share of them is not separable. |
+
+### E a ressalva diz o facto, não quem o leu
+
+*Os marcadores deste bloco ganharam dez entradas, tiradas dos parágrafos que o
+G6 retirou: «o trabalho», «este livro-razão», «atravessou», «mostra-o» e
+«avaliável», com as suas gémeas inglesas. O único sítio da superfície pública em
+que um deles ainda mordia era a nota do mandato sem repartição de pelouros, cujo
+sujeito era o trabalho e cuja frase era a citação dele sobre os seus próprios
+limites. Passa a dizer o facto.*
+
+| classe | texto |
+| --- | --- |
+| conteudo | Não estabelecido: o presidente desse mandato, e todos os outros membros dele, não foram identificados. |
+| conteudo | Not established: the president of that mandate, and every other member of it, were not identified. |
