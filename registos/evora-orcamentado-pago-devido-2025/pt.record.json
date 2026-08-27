@@ -28,7 +28,7 @@
    "figures": [],
    "i": 4,
    "kind": "paragraph",
-   "text": "A Prestação de Contas é o relato da gestão sobre o seu próprio ano. É detalhada, internamente consistente e auditada externamente — mas é uma só voz. Existem duas vozes de fora, e ambas estão aqui: a opinião assinada do auditor independente (a Certificação Legal das Contas), e a DGAL — a Direção-Geral das Autarquias Locais — que publica, por município e por ano, o mesmo conceito legal de dívida que o relatório usa, compilado do lado do regulador."
+   "text": "A Prestação de Contas é o relato da gestão sobre o seu próprio ano. É detalhada, internamente consistente e auditada externamente — mas é uma só voz. Existem duas vozes de fora: a opinião assinada do auditor independente (a Certificação Legal das Contas), e a DGAL — a Direção-Geral das Autarquias Locais — que publica, por município e por ano, o mesmo conceito legal de dívida que o relatório usa, compilado do lado do regulador."
   },
   {
    "emphasis": [
@@ -95,7 +95,7 @@
    ],
    "i": 6,
    "kind": "paragraph",
-   "text": "As contas de 2024 nunca foram certificadas. A opinião do auditor sobre 2025 regista que as contas do ano anterior foram rejeitadas pela própria Câmara — 2 votos a favor, 5 contra, na reunião de 2025-05-28 — o que forçou uma Declaração de Impossibilidade de Certificação Legal das Contas para 2024. Os comparativos de 2024 citados abaixo são, por isso, os impressos no relatório de 2025, e carregam essa história. A votação ocorre meses antes das eleições autárquicas de outubro de 2025."
+   "text": "As contas de 2024 nunca foram certificadas. A opinião do auditor sobre 2025 regista que as contas do ano anterior foram rejeitadas pela própria Câmara — 2 votos a favor, 5 contra, na reunião de 2025-05-28 — o que forçou uma Declaração de Impossibilidade de Certificação Legal das Contas para 2024. Os comparativos de 2024 são, por isso, os impressos no relatório de 2025, e carregam essa história. A votação ocorre meses antes das eleições autárquicas de outubro de 2025."
   },
   {
    "emphasis": [
@@ -538,13 +538,6 @@
    ]
   },
   {
-   "emphasis": [
-    {
-     "end": 747,
-     "kind": "strong",
-     "start": 659
-    }
-   ],
    "figures": [
     {
      "end": 106,
@@ -588,30 +581,23 @@
    ],
    "i": 16,
    "kind": "paragraph",
-   "text": "Duas ausências explicam boa parte do desvio de 2025, e o relatório nomeia ambas. Uma linha de receita de 5 milhões de euros para o «Évora 2027» não teve execução nenhuma no ano. Uma linha de cooperação técnica de €5 013 000 — cinco milhões de euros dela o protocolo das acessibilidades ao novo hospital central do Alentejo — também não teve nenhuma. As transferências de projetos cofinanciados foram orçamentadas em muitas vezes o que chegou: entraram €1 087 287, uma execução de 11,58% nessa linha. Orçamentar dinheiro que entidades externas ainda não comprometeram, e depois não o receber, é o mecanismo recorrente por trás da série descendente de execução (inferência a partir das três linhas acima; o relatório afirma cada linha, não o padrão)."
+   "text": "Duas ausências explicam boa parte do desvio de 2025, e o relatório nomeia ambas. Uma linha de receita de 5 milhões de euros para o «Évora 2027» não teve execução nenhuma no ano. Uma linha de cooperação técnica de €5 013 000 — cinco milhões de euros dela o protocolo das acessibilidades ao novo hospital central do Alentejo — também não teve nenhuma. As transferências de projetos cofinanciados foram orçamentadas em muitas vezes o que chegou: entraram €1 087 287, uma execução de 11,58% nessa linha. Orçamentar dinheiro que entidades externas ainda não comprometeram, e depois não o receber, é o mecanismo recorrente por trás da série descendente de execução (inferência; o relatório afirma cada linha, não o padrão)."
   },
   {
-   "emphasis": [
-    {
-     "end": 282,
-     "kind": "strong",
-     "start": 230
-    }
-   ],
    "figures": [
     {
-     "end": 84,
+     "end": 68,
      "printed": "48,1",
      "row": "exec-2015-pct-companion",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 80,
+     "start": 64,
      "value": "48.1"
     }
    ],
    "i": 17,
    "kind": "paragraph",
-   "text": "A janela deste historial abre em 2018. O companheiro chega a 2015 e encontra aí 48,1% — um fundo mais fundo, no ano a seguir às tranches do resgate — pelo que os colapsos de execução já seguiram as crises de dívida de Évora antes (inferência; o valor é do próprio relatório de 2015)."
+   "text": "A janela deste historial abre em 2018. O relatório de 2015 traz 48,1% — um fundo mais fundo, no ano a seguir às tranches do resgate — pelo que os colapsos de execução já seguiram as crises de dívida de Évora antes (inferência)."
   },
   {
    "figures": [
@@ -944,27 +930,27 @@
   {
    "figures": [
     {
-     "end": 159,
+     "end": 124,
      "printed": "19 427 778",
      "row": "outras-rec-correntes-orc",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 149,
+     "start": 114,
      "value": "19 427 778"
     },
     {
-     "end": 179,
+     "end": 144,
      "printed": "155 573",
      "row": "outras-rec-correntes-exec",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 172,
+     "start": 137,
      "value": "155 573"
     }
    ],
    "i": 26,
    "kind": "paragraph",
-   "text": "A linha «outras receitas correntes» merece a sua própria frase, porque é onde o fosso entre orçamento e dinheiro é mais extremo: orçamentaram-se aí €19 427 778 e chegaram €155 573 — o relatório explica a linha como o lugar onde a dívida herdada teve de ser acomodada na aritmética do orçamento."
+   "text": "A linha «outras receitas correntes» é onde o fosso entre orçamento e dinheiro é mais extremo: orçamentaram-se aí €19 427 778 e chegaram €155 573 — o relatório explica a linha como o lugar onde a dívida herdada teve de ser acomodada na aritmética do orçamento."
   },
   {
    "figures": [
@@ -1215,7 +1201,7 @@
    ],
    "i": 32,
    "kind": "paragraph",
-   "text": "O pessoal executa a 96,55% porque os salários pagam-se aconteça ou não o resto do orçamento; é o núcleo incompressível das contas. A linha de bens e serviços é onde vivem os grandes contratos de funcionamento — água em alta, saneamento, resíduos, iluminação pública — e é também onde as faturas por pagar se acumulam, assunto a que a secção da dívida volta."
+   "text": "O pessoal executa a 96,55% porque os salários pagam-se aconteça ou não o resto do orçamento; é o núcleo incompressível das contas. A linha de bens e serviços é onde vivem os grandes contratos de funcionamento — água em alta, saneamento, resíduos, iluminação pública — e é também onde as faturas por pagar se acumulam."
   },
   {
    "emphasis": [
@@ -1704,7 +1690,7 @@
    ],
    "i": 44,
    "kind": "paragraph",
-   "text": "Dois números duros medem o aperto. O tempo médio que Évora leva a pagar a um fornecedor chegou aos 137 dias — mais 33 dias num ano, e a série merece ser impressa inteira:"
+   "text": "Dois números duros medem o aperto. O tempo médio que Évora leva a pagar a um fornecedor chegou aos 137 dias — mais 33 dias num ano:"
   },
   {
    "i": 45,
@@ -2528,49 +2514,49 @@
   {
    "figures": [
     {
-     "end": 129,
+     "end": 88,
      "printed": "242,6",
      "row": "evora-indice-2014",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 124,
+     "start": 83,
      "value": "242.6"
     }
    ],
    "i": 57,
    "kind": "paragraph",
-   "text": "Leia a coluna do índice de cima a baixo: Évora passou o meio da década passada muito acima do teto legal — o índice abre em 242,6% — e só voltou a ficar abaixo dele em 2020. O índice desce em todos os anos da tabela, mesmo em 2020, quando o valor em euros até subiu — a receita cresceu mais depressa."
+   "text": "Évora passou o meio da década passada muito acima do teto legal — o índice abre em 242,6% — e só voltou a ficar abaixo dele em 2020. O índice desce em todos os anos da tabela, mesmo em 2020, quando o valor em euros até subiu — a receita cresceu mais depressa."
   },
   {
    "figures": [
     {
-     "end": 123,
+     "end": 107,
      "printed": "21,13",
      "row": "invest-exec-pct",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 118,
+     "start": 102,
      "value": "21.13"
     },
     {
-     "end": 208,
+     "end": 192,
      "printed": "28 192 653",
      "row": "margem-endividamento-2025",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 198,
+     "start": 182,
      "value": "28 192 653"
     }
    ],
    "i": 58,
    "kind": "paragraph",
-   "text": "Dez anos a pagar a dívida do resgate são o contexto de todos os números deste documento: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína e não uma delicadeza contabilística (inferência)."
+   "text": "Dez anos a pagar a dívida do resgate são o contexto de todos os números: do investimento a executar a 21,13%, do dinheiro do plano a ir para operações da dívida, e de uma margem de €28 192 653 ser uma conquista genuína e não uma delicadeza contabilística (inferência)."
   },
   {
    "figures": [],
    "i": 59,
    "kind": "paragraph",
-   "text": "Mais duas coisas que o ficheiro do regulador sustenta, ambas calculadas sobre as suas próprias linhas:"
+   "text": "Mais duas coisas que o ficheiro do regulador sustenta:"
   },
   {
    "i": 60,
@@ -2685,7 +2671,7 @@
    ],
    "i": 64,
    "kind": "paragraph",
-   "text": "A Certificação Legal das Contas de 2025, assinada a 2026-04-17 pela Marques, Cruz & Associados, SROC, é uma opinião limpa: as demonstrações financeiras apresentam de forma verdadeira e apropriada a posição do município, e as demonstrações orçamentais cumprem as normas de contabilidade pública. Traz ênfases — matérias assinaladas sem modificar a opinião: uma limpeza das reconciliações bancárias começada em 2025 e com fim previsto em 2026; o desreconhecimento dos ativos da concessão da rede elétrica de baixa tensão ao abrigo de uma orientação contabilística de 2025; cerca de 2,8 milhões de euros de saldos credores que são, em substância, não correntes; e a existência dos pagamentos em atraso que a secção da dívida já quantificou."
+   "text": "A Certificação Legal das Contas de 2025, assinada a 2026-04-17 pela Marques, Cruz & Associados, SROC, é uma opinião limpa: as demonstrações financeiras apresentam de forma verdadeira e apropriada a posição do município, e as demonstrações orçamentais cumprem as normas de contabilidade pública. Traz ênfases — matérias assinaladas sem modificar a opinião: uma limpeza das reconciliações bancárias começada em 2025 e com fim previsto em 2026; o desreconhecimento dos ativos da concessão da rede elétrica de baixa tensão ao abrigo de uma orientação contabilística de 2025; cerca de 2,8 milhões de euros de saldos credores que são, em substância, não correntes; e a existência dos pagamentos em atraso."
   },
   {
    "figures": [
@@ -2713,7 +2699,7 @@
    ],
    "i": 65,
    "kind": "paragraph",
-   "text": "Em «outras matérias» está a frase com a sombra mais comprida: a proposta de Prestação de Contas de 2024 foi rejeitada na reunião de Câmara de 2025-05-28 — 2 votos a favor, 5 contra — e o auditor emitiu por isso uma Declaração de Impossibilidade de Certificação Legal das Contas para 2024. Um ano das contas deste município existe sem assinatura externa. A opinião limpa de 2025 significa que os livros recuperaram a sua testemunha externa; não certifica 2024 retroativamente, e nada neste documento trata os comparativos de 2024 como se certificasse."
+   "text": "Em «outras matérias» está a frase com a sombra mais comprida: a proposta de Prestação de Contas de 2024 foi rejeitada na reunião de Câmara de 2025-05-28 — 2 votos a favor, 5 contra — e o auditor emitiu por isso uma Declaração de Impossibilidade de Certificação Legal das Contas para 2024. Um ano das contas deste município existe sem assinatura externa. A opinião limpa de 2025 significa que os livros recuperaram a sua testemunha externa; não certifica 2024 retroativamente."
   },
   {
    "i": 66,
@@ -2840,45 +2826,31 @@
    "text": "O dinheiro prometido de fora"
   },
   {
-   "emphasis": [
-    {
-     "end": 64,
-     "kind": "em",
-     "start": 26
-    }
-   ],
    "figures": [
     {
-     "end": 181,
+     "end": 116,
      "printed": "167 372 756",
      "row": "prr-approved-evora-0804",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 170,
+     "start": 105,
      "value": "167 372 756"
     },
     {
-     "end": 200,
+     "end": 135,
      "printed": "86 944 669",
      "row": "prr-paid-evora-0804",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 190,
+     "start": 125,
      "value": "86 944 669"
     }
    ],
    "i": 72,
    "kind": "paragraph",
-   "text": "O documento companheiro — Évora — Prometido, Pago, Auditado 2026 — leu o registo do plano de recuperação a 2026-08-04: dinheiro aprovado atribuído ao concelho de Évora, €167 372 756; pago, €86 944 669. Esse registo republica-se diariamente sem histórico, pelo que aqueles valores são os desse retrato."
+   "text": "O registo do plano de recuperação, a 2026-08-04, diz: dinheiro aprovado atribuído ao concelho de Évora, €167 372 756; pago, €86 944 669. Esse registo republica-se diariamente sem histórico, pelo que aqueles valores são os desse retrato."
   },
   {
-   "emphasis": [
-    {
-     "end": 458,
-     "kind": "strong",
-     "start": 392
-    }
-   ],
    "figures": [
     {
      "end": 66,
@@ -2892,7 +2864,7 @@
    ],
    "i": 73,
    "kind": "paragraph",
-   "text": "Contra eles, destas contas: o próprio município recebeu €1 087 287 de transferências de capital cofinanciadas em todo o ano de 2025. O dinheiro do PRR atribuído a Évora flui esmagadoramente através de entidades que não o município — a universidade, o serviço de saúde, organismos de habitação, agências nacionais — e a parte que cabe à Câmara gastar, até agora, na sua maior parte não chegou (inferência; cada valor está fundamentado acima, a junção é nossa)."
+   "text": "Contra eles, destas contas: o próprio município recebeu €1 087 287 de transferências de capital cofinanciadas em todo o ano de 2025. O dinheiro do PRR atribuído a Évora flui esmagadoramente através de entidades que não o município — a universidade, o serviço de saúde, organismos de habitação, agências nacionais — e a parte que cabe à Câmara gastar, até agora, na sua maior parte não chegou (inferência)."
   },
   {
    "i": 74,
@@ -3205,23 +3177,10 @@
    ],
    "i": 83,
    "kind": "paragraph",
-   "text": "O ano por assinar é o facto de governação a reter. As contas de 2024 foram rejeitadas por 2 contra 5 e existem sem certificação externa. A opinião limpa de 2025 devolve a testemunha externa daqui para a frente; não a devolve para trás, e cada tabela plurianual deste documento herda esse asterisco na coluna de 2024."
+   "text": "O ano por assinar é o facto de governação a reter. As contas de 2024 foram rejeitadas por 2 contra 5 e existem sem certificação externa. A opinião limpa de 2025 devolve a testemunha externa daqui para a frente; não a devolve para trás, e cada tabela plurianual herda esse asterisco na coluna de 2024."
   },
   {
-   "emphasis": [
-    {
-     "end": 22,
-     "kind": "strong",
-     "start": 0
-    }
-   ],
-   "figures": [],
    "i": 84,
-   "kind": "paragraph",
-   "text": "O que vigiar a seguir."
-  },
-  {
-   "i": 85,
    "items": [
     {
      "figures": [],
@@ -3271,18 +3230,18 @@
    "ordered": false
   },
   {
-   "i": 86,
+   "i": 85,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 87,
+   "i": 86,
    "kind": "heading",
    "level": 2,
    "text": "Fontes"
   },
   {
-   "i": 88,
+   "i": 87,
    "items": [
     {
      "emphasis": [

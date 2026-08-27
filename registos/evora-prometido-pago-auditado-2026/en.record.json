@@ -34,7 +34,7 @@
   {
    "figures": [
     {
-     "end": 15,
+     "end": 10,
      "others": [
       "comp-c08-locations"
      ],
@@ -42,13 +42,13 @@
      "row": "tc-families",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 14,
+     "start": 9,
      "value": "4"
     }
    ],
    "i": 4,
    "kind": "paragraph",
-   "text": "It also reads 4 of the Tribunal's product families rather than all of them, which turns out to matter enough that the section measures the cost instead of mentioning it."
+   "text": "They are 4 of the Tribunal's product families rather than all of them."
   },
   {
    "emphasis": [
@@ -69,30 +69,23 @@
      "value": "24 436"
     },
     {
-     "end": 147,
+     "end": 128,
      "printed": "600",
      "row": "base-returned",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 144,
+     "start": 125,
      "value": "600"
     }
    ],
    "i": 5,
    "kind": "paragraph",
-   "text": "The contracts section is an upper bound on a truncated window. Portal BASE holds 24 436 contracts for the concelho of Évora. This document read 600 of them — the most recently published ones, spanning 2026-05-08 to 2026-08-04. The rest were not read. A contract carried out across several municipalities is returned by each of their filters at its full value, so a concelho contract total is an upper bound and concelho totals must never be added together."
+   "text": "The contracts section is an upper bound on a truncated window. Portal BASE holds 24 436 contracts for the concelho of Évora. 600 of them are the most recently published ones, spanning 2026-05-08 to 2026-08-04. A contract carried out across several municipalities is returned by each of their filters at its full value, so a concelho contract total is an upper bound and concelho totals must never be added together."
   },
   {
-   "emphasis": [
-    {
-     "end": 85,
-     "kind": "strong",
-     "start": 0
-    }
-   ],
    "figures": [
     {
-     "end": 168,
+     "end": 124,
      "others": [
       "comp-c11-overdue",
       "base-place-checks",
@@ -105,13 +98,13 @@
      "row": "comp-c11-locations",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 167,
+     "start": 123,
      "value": "3"
     }
    ],
    "i": 6,
    "kind": "paragraph",
-   "text": "There is no EU figure for a municipality, and this document does not manufacture one. The finest geography the EU's project-level data reaches for Portugal is the NUTS3 region. That is a null, established by probe rather than asserted."
+   "text": "There is no EU figure for a municipality. The finest geography the EU's project-level data reaches for Portugal is the NUTS3 region. That is a null."
   },
   {
    "i": 7,
@@ -128,7 +121,7 @@
    "figures": [],
    "i": 9,
    "kind": "paragraph",
-   "text": "The Plano de Recuperação e Resiliência publishes a full-refresh snapshot every day, with no version history: yesterday's file is simply gone from the source. The snapshot read here carries the reference date 2026-08-19."
+   "text": "The Plano de Recuperação e Resiliência publishes a full-refresh snapshot every day, with no version history: yesterday's file is simply gone from the source. The snapshot carries the reference date 2026-08-19."
   },
   {
    "i": 10,
@@ -280,19 +273,19 @@
   {
    "emphasis": [
     {
-     "end": 138,
+     "end": 91,
      "kind": "em",
-     "start": 112
+     "start": 65
     },
     {
-     "end": 162,
+     "end": 115,
      "kind": "em",
-     "start": 143
+     "start": 96
     }
    ],
    "figures": [
     {
-     "end": 320,
+     "end": 273,
      "others": [
       "prr-location-rows"
      ],
@@ -300,36 +293,29 @@
      "row": "prr-manager-rows",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 313,
+     "start": 266,
      "value": "398 747"
     }
    ],
    "i": 11,
    "kind": "paragraph",
-   "text": "Both figures are sourced facts, not estimates. They come from the manager layer of the beneficiaries file — the Beneficiário Intermediário and Beneficiário Direto rows — which gives exactly one row per project-location and carries both the approved and the paid amount for that location. The count of those rows, 398 747, equals the row count of the geographic distribution file exactly, which is the structural check that the layer decomposes the money once and only once."
+   "text": "They come from the manager layer of the beneficiaries file — the Beneficiário Intermediário and Beneficiário Direto rows — which gives exactly one row per project-location and carries both the approved and the paid amount for that location. The count of those rows, 398 747, equals the row count of the geographic distribution file exactly: the layer decomposes the money once and only once."
   },
   {
-   "emphasis": [
-    {
-     "end": 315,
-     "kind": "strong",
-     "start": 312
-    }
-   ],
    "figures": [
     {
-     "end": 134,
+     "end": 62,
      "printed": "1 169",
      "row": "prr-crosscheck-delta",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 129,
+     "start": 57,
      "value": "1 169"
     }
    ],
    "i": 12,
    "kind": "paragraph",
-   "text": "An independent route to the same approved figure — rebuilding it from the percentage share column in the locations file — lands €1 169 away, which is four-decimal rounding in the published share and nothing else. The other share column in that same file, the one that looks like a per-location payment share, is not used: it repeats the project-wide payment ratio on every row, and reading it as a share inflates Évora's paid figure by an order of magnitude."
+   "text": "The percentage share column in the locations file lands €1 169 from the same approved figure, which is four-decimal rounding in the published share and nothing else. The other share column in that same file, the one that looks like a per-location payment share, repeats the project-wide payment ratio on every row, and reading it as a share inflates Évora's paid figure by an order of magnitude."
   },
   {
    "emphasis": [
@@ -2389,7 +2375,7 @@
    ],
    "i": 21,
    "kind": "paragraph",
-   "text": "The \"concelhos\" column is the reason a municipal figure needs care: the road programme at the top of that table is spread across 17 municipalities and the research alliance across 19. What appears in Évora's total is the Évora share of each, taken from the beneficiaries file rather than apportioned."
+   "text": "The \"concelhos\" column is the reason a municipal figure needs care: the road programme at the top of that table is spread across 17 municipalities and the research alliance across 19. What appears in Évora's total is the Évora share of each, from the beneficiaries file rather than apportioned."
   },
   {
    "i": 22,
@@ -3533,7 +3519,7 @@
    "figures": [],
    "i": 37,
    "kind": "paragraph",
-   "text": "Status is judged against the snapshot's own reference date, not today's, because that is the date the source speaks for."
+   "text": "Status stands at the snapshot's own reference date, not today's, because that is the date the source speaks for."
   },
   {
    "emphasis": [
@@ -3643,7 +3629,7 @@
    ],
    "i": 39,
    "kind": "paragraph",
-   "text": "Two things sharpen that reading, and one of them stops it being a criticism of Évora. First, 470 of those exact matches are rows where the start date, the planned completion date and the actual completion date are all the same day. A project cannot be observed to begin and finish on one date at that scale, so those rows record a filing convention rather than an observed date (inference). All of them sit in a single investment line. Second, the pattern is national, not local: across the country 177 241 of 246 545 on-time locations carry the same exact-date stamp, 71.89%, which is slightly higher than Évora's. Nothing here says Évora reports differently from anywhere else; it says the register's completion dates cannot be read as observed delivery anywhere. So the on-time count is soft evidence, and quoting it bare would overstate punctuality by a wide margin."
+   "text": "Two things sharpen that reading, and one of them stops it being a criticism of Évora. First, 470 of those exact matches are rows where the start date, the planned completion date and the actual completion date are all the same day. A project cannot be observed to begin and finish on one date at that scale, so those rows record a filing convention rather than an observed date (inference). All of them sit in a single investment line. Second, the pattern is national, not local: across the country 177 241 of 246 545 on-time locations carry the same exact-date stamp, 71.89%, which is slightly higher than Évora's. The register's completion dates cannot be read as observed delivery anywhere. So the on-time count is soft evidence, and quoting it bare would overstate punctuality by a wide margin."
   },
   {
    "figures": [
@@ -3892,18 +3878,18 @@
   {
    "figures": [
     {
-     "end": 94,
+     "end": 79,
      "printed": "600",
      "row": "base-returned",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 91,
+     "start": 76,
      "value": "600"
     }
    ],
    "i": 47,
    "kind": "paragraph",
-   "text": "That sum is an upper bound on a truncated window and nothing more. The fetch stopped after 600 records because the register has an undocumented firewall that IP-bans on volume, and the server caps a page at far fewer rows than it is asked for."
+   "text": "That sum is an upper bound on a truncated window and nothing more. They are 600 because the register has an undocumented firewall that IP-bans on volume, and the server caps a page at far fewer rows than it is asked for."
   },
   {
    "figures": [
@@ -3973,7 +3959,7 @@
    "figures": [],
    "i": 49,
    "kind": "paragraph",
-   "text": "The largest contracts in the window read:"
+   "text": "The largest contracts in the window:"
   },
   {
    "i": 50,
@@ -4378,37 +4364,32 @@
   {
    "emphasis": [
     {
-     "end": 370,
+     "end": 335,
      "kind": "strong",
-     "start": 339
-    },
-    {
-     "end": 445,
-     "kind": "strong",
-     "start": 392
+     "start": 304
     }
    ],
    "figures": [
     {
-     "end": 161,
+     "end": 126,
      "printed": "600",
      "row": "base-returned",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 158,
+     "start": 123,
      "value": "600"
     },
     {
-     "end": 208,
+     "end": 173,
      "printed": "56",
      "row": "base-entities-in-window",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 206,
+     "start": 171,
      "value": "56"
     },
     {
-     "end": 239,
+     "end": 204,
      "others": [
       "comp-c04-overdue",
       "fin-patrimonio-projects",
@@ -4418,11 +4399,11 @@
      "row": "base-multi-spelling-entities",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 238,
+     "start": 203,
      "value": "5"
     },
     {
-     "end": 298,
+     "end": 263,
      "others": [
       "comp-c11-locations",
       "comp-c11-overdue",
@@ -4435,29 +4416,29 @@
      "row": "base-ulsac-spellings",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 297,
+     "start": 262,
      "value": "3"
     },
     {
-     "end": 342,
+     "end": 307,
      "printed": "282",
      "row": "base-ulsac-group-contracts",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 339,
+     "start": 304,
      "value": "282"
     },
     {
-     "end": 370,
+     "end": 335,
      "printed": "29 580 141",
      "row": "base-ulsac-group-sum",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 360,
+     "start": 325,
      "value": "29 580 141"
     },
     {
-     "end": 478,
+     "end": 438,
      "others": [
       "comp-c11-locations",
       "comp-c11-overdue",
@@ -4470,11 +4451,11 @@
      "row": "base-ulsac-spellings",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 477,
+     "start": 437,
      "value": "3"
     },
     {
-     "end": 495,
+     "end": 455,
      "others": [
       "comp-c01-locations",
       "prr-managers-count"
@@ -4483,11 +4464,11 @@
      "row": "base-gesamb-group-contracts",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 493,
+     "start": 453,
      "value": "23"
     },
     {
-     "end": 537,
+     "end": 497,
      "others": [
       "comp-c08-overdue",
       "tc-gap-auditoria",
@@ -4500,29 +4481,29 @@
      "row": "base-municipio-spellings",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 536,
+     "start": 496,
      "value": "2"
     },
     {
-     "end": 548,
+     "end": 508,
      "printed": "45",
      "row": "base-municipio-group-contracts",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 546,
+     "start": 506,
      "value": "45"
     },
     {
-     "end": 575,
+     "end": 535,
      "printed": "1 975 150",
      "row": "base-municipio-group-sum",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 566,
+     "start": 526,
      "value": "1 975 150"
     },
     {
-     "end": 594,
+     "end": 554,
      "others": [
       "comp-c02-locations",
       "comp-c02-overdue",
@@ -4532,18 +4513,18 @@
      "row": "base-municipio-contracts",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 592,
+     "start": 552,
      "value": "39"
     }
    ],
    "i": 53,
    "kind": "paragraph",
-   "text": "The first two rows are the same hospital group under two spellings — and there is a third in the same window that the table above does not show. Grouping the 600 records by body rather than by string gives 56 contracting bodies, of which 5 file under more than one name. The hospital accounts for 3 of those spellings and, taken together, 282 contracts worth €29 580 141 — which makes health the most active contracting entity in the window read. The waste utility files under 3 spellings for 23 contracts. The municipality files under 2, giving 45 contracts worth €1 975 150 rather than the 39 its main spelling shows."
+   "text": "The first two rows are the same hospital group under two spellings — and there is a third in the same window. Grouping the 600 records by body rather than by string gives 56 contracting bodies, of which 5 file under more than one name. The hospital accounts for 3 of those spellings and, taken together, 282 contracts worth €29 580 141 — which makes health the most active contracting entity in the window. The waste utility files under 3 spellings for 23 contracts. The municipality files under 2, giving 45 contracts worth €1 975 150 rather than the 39 its main spelling shows."
   },
   {
    "figures": [
     {
-     "end": 392,
+     "end": 350,
      "others": [
       "comp-c19-overdue",
       "tc-report-14-2018",
@@ -4553,20 +4534,20 @@
      "row": "base-undermerge-contracts",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 390,
+     "start": 348,
      "value": "14"
     },
     {
-     "end": 417,
+     "end": 375,
      "printed": "735 681",
      "row": "base-undermerge-sum",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 410,
+     "start": 368,
      "value": "735 681"
     },
     {
-     "end": 564,
+     "end": 466,
      "others": [
       "comp-c04-overdue",
       "fin-patrimonio-projects",
@@ -4576,50 +4557,50 @@
      "row": "base-multi-spelling-entities",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 563,
+     "start": 465,
      "value": "5"
     }
    ],
    "i": 54,
    "kind": "paragraph",
-   "text": "The grouping rule is ours, not the register's: fold accents, drop punctuation, drop the trailing legal-form abbreviation. It is also deliberately conservative, and it under-merges — the intermunicipal community in the table above files under its acronym and, twice, under the same name without it, which the rule does not join because the acronym survives normalisation. Together those are 14 contracts worth €735 681. That shape is reported rather than merged, because nothing available here can distinguish an acronym prefix from a genuinely different body. So 5 is a floor on how many bodies file under more than one name, not a count. That is the shape of this whole register: a per-string count looks like a per-entity count and is not one."
+   "text": "The grouping rule is not the register's: fold accents, drop punctuation, drop the trailing legal-form abbreviation. The rule under-merges — the intermunicipal community in the table above files under its acronym and, twice, under the same name without it, which the rule does not join because the acronym survives normalisation. Together those are 14 contracts worth €735 681. Nothing available can distinguish an acronym prefix from a genuinely different body. So 5 is a floor on how many bodies file under more than one name, not a count. That is the shape of this whole register: a per-string count looks like a per-entity count and is not one."
   },
   {
    "emphasis": [
     {
-     "end": 284,
+     "end": 279,
      "kind": "strong",
-     "start": 241
+     "start": 236
     },
     {
-     "end": 576,
+     "end": 571,
      "kind": "em",
-     "start": 401
+     "start": 396
     }
    ],
    "figures": [
     {
-     "end": 301,
+     "end": 296,
      "printed": "7 746 863",
      "row": "fin-hospital-contracted",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 292,
+     "start": 287,
      "value": "7 746 863"
     },
     {
-     "end": 325,
+     "end": 320,
      "printed": "563 527",
      "row": "fin-hospital-paid",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 318,
+     "start": 313,
      "value": "563 527"
     }
    ],
    "i": 55,
    "kind": "paragraph",
-   "text": "Read across the two sources, the same institutions recur in a different order, and one of them is easy to lose. The hospital is the largest contracting entity in the window above; in the recovery-plan data it appears under a different name, HOSPITAL DO ESPÍRITO SANTO DE ÉVORA, E.P.E., with €7 746 863 contracted and €563 527 paid. A join on entity names across the two registers would have missed it (inference — the two registers use different names for what the contract objects themselves confirm is one body; nothing in either source states that they are the same entity)."
+   "text": "Across the two sources, the same institutions recur in a different order, and one of them is easy to lose. The hospital is the largest contracting entity in the window above; in the recovery-plan data it appears under a different name, HOSPITAL DO ESPÍRITO SANTO DE ÉVORA, E.P.E., with €7 746 863 contracted and €563 527 paid. A join on entity names across the two registers would have missed it (inference — the two registers use different names for what the contract objects themselves confirm is one body; nothing in either source states that they are the same entity)."
   },
   {
    "i": 56,
@@ -4635,16 +4616,16 @@
   {
    "figures": [
     {
-     "end": 174,
+     "end": 161,
      "printed": "2 206",
      "row": "tc-corpus-documents",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 169,
+     "start": 156,
      "value": "2 206"
     },
     {
-     "end": 193,
+     "end": 180,
      "others": [
       "comp-c08-locations"
      ],
@@ -4652,29 +4633,29 @@
      "row": "tc-families",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 192,
+     "start": 179,
      "value": "4"
     },
     {
-     "end": 225,
+     "end": 212,
      "printed": "1997",
      "row": "tc-year-min",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 221,
+     "start": 208,
      "value": "1997"
     },
     {
-     "end": 233,
+     "end": 220,
      "printed": "2026",
      "row": "tc-year-max",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 229,
+     "start": 216,
      "value": "2026"
     },
     {
-     "end": 242,
+     "end": 229,
      "others": [
       "comp-c08-locations"
      ],
@@ -4682,13 +4663,13 @@
      "row": "tc-families",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 241,
+     "start": 228,
      "value": "4"
     }
    ],
    "i": 58,
    "kind": "paragraph",
-   "text": "The Tribunal de Contas publishes a catalogue — the title and abstract of each report — and separately the reports themselves as PDFs. What was fetched is the catalogue: 2 206 documents across 4 product families, spanning 1997 to 2026. Those 4 are not everything the Tribunal publishes."
+   "text": "The Tribunal de Contas publishes a catalogue — the title and abstract of each report — and separately the reports themselves as PDFs. The catalogue carries 2 206 documents across 4 product families, spanning 1997 to 2026. Those 4 are not everything the Tribunal publishes."
   },
   {
    "emphasis": [
@@ -4727,7 +4708,7 @@
    ],
    "i": 59,
    "kind": "paragraph",
-   "text": "Place, in this source, is free text. There is no entity field, no concelho field, no NUTS field: a municipality reaches an audit only as words in a sentence. So matching is string matching. Across these 4 families, 6 documents name Évora, and only one is about the municipality itself — a count that the end of this section shows to be a floor, not a total."
+   "text": "Place, in this source, is free text. There is no entity field, no concelho field, no NUTS field: a municipality reaches an audit only as words in a sentence. So matching is string matching. Across these 4 families, 6 documents name Évora, and only one is about the municipality itself — a count that is a floor, not a total."
   },
   {
    "i": 60,
@@ -5387,7 +5368,7 @@
    ],
    "i": 63,
    "kind": "paragraph",
-   "text": "There is nothing since the 2019 report in these four families that names Évora. It is tempting to read that as the auditor's record not covering the years in which the recovery money moved. That reading is wrong."
+   "text": "There is nothing since the 2019 report in these four families that names Évora."
   },
   {
    "figures": [],
@@ -5602,30 +5583,30 @@
   {
    "figures": [
     {
-     "end": 55,
+     "end": 50,
      "printed": "2019",
      "row": "tc-year-21-2019",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 51,
+     "start": 46,
      "value": "2019"
     }
    ],
    "i": 70,
    "kind": "paragraph",
-   "text": "In the four families read, nothing published after 2019 names Évora in its title or abstract. Anything stronger — that Évora has not been examined, that the recovery years went unaudited — is refuted by the two probes above."
+   "text": "In the four families, nothing published after 2019 names Évora in its title or abstract."
   },
   {
    "emphasis": [
     {
-     "end": 136,
+     "end": 117,
      "kind": "strong",
-     "start": 107
+     "start": 88
     }
    ],
    "figures": [
     {
-     "end": 68,
+     "end": 49,
      "others": [
       "comp-c07-overdue",
       "proj-malagueira-paid",
@@ -5643,11 +5624,11 @@
      "row": "tc-evora-longer-municipality-only",
      "source_digest_kind": "api-viva",
      "source_sha256": null,
-     "start": 67,
+     "start": 48,
      "value": "0"
     },
     {
-     "end": 358,
+     "end": 316,
      "others": [
       "comp-c21-locations"
      ],
@@ -5655,13 +5636,13 @@
      "row": "tc-gazetteer-municipalities",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 355,
+     "start": 313,
      "value": "308"
     }
    ],
    "i": 71,
    "kind": "paragraph",
-   "text": "Évora is an unusually clean name to search for: the matcher raises 0 structural risks against it, that is, no structural over-match risk. It is not one of the two Portuguese municipality names that belong to two places at once, and it is not a whole word inside a longer municipality's name. The gazetteer used to establish that is INE's own live list of 308 municipalities. Names that fail those tests behave very differently — a search for \"Guarda\" in this catalogue returns the national guard, not the city."
+   "text": "Évora is an unusually clean name to search for: 0 structural risks against it, that is, no structural over-match risk. It is not one of the two Portuguese municipality names that belong to two places at once, and it is not a whole word inside a longer municipality's name. The gazetteer is INE's own live list of 308 municipalities. Names that fail those tests behave very differently — a search for \"Guarda\" in this catalogue returns the national guard, not the city."
   },
   {
    "figures": [],
@@ -5967,14 +5948,14 @@
   {
    "emphasis": [
     {
-     "end": 227,
+     "end": 231,
      "kind": "em",
-     "start": 183
+     "start": 187
     }
    ],
    "figures": [
     {
-     "end": 119,
+     "end": 121,
      "others": [
       "comp-c07-overdue",
       "proj-malagueira-paid",
@@ -5992,11 +5973,11 @@
      "row": "tcq-instituto-da-habitacao-e-da-reabilitacao-urbana",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 118,
+     "start": 120,
      "value": "0"
     },
     {
-     "end": 160,
+     "end": 164,
      "others": [
       "comp-c08-overdue",
       "base-municipio-spellings",
@@ -6009,11 +5990,11 @@
      "row": "tcq-universidade-de-evora",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 159,
+     "start": 163,
      "value": "2"
     },
     {
-     "end": 442,
+     "end": 446,
      "others": [
       "tc-year-1-2008"
      ],
@@ -6021,11 +6002,11 @@
      "row": "tc-year-20-2008",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 438,
+     "start": 442,
      "value": "2008"
     },
     {
-     "end": 566,
+     "end": 570,
      "others": [
       "comp-c08-overdue",
       "base-municipio-spellings",
@@ -6038,13 +6019,13 @@
      "row": "tcq-universidade-de-evora",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 565,
+     "start": 569,
      "value": "2"
     }
    ],
    "i": 75,
    "kind": "paragraph",
-   "text": "The housing institute is in that table twice. Searched under the name the recovery-plan register gives it, it returns 0. Searched under its acronym it returns 2 — the Tribunal writes Instituto de Habitação e Reabilitação Urbana, without the two «da»s the other register uses, so an exact-token match sees two different bodies. The first number is a false zero. The same fragility runs the other way in the table above: the Tribunal's own 2008 abstract writes «Universidade do Évora», which the university's correct name does not match, so the university's count of 2 is itself one short of the documents that name it."
+   "text": "The housing institute is in that table twice. Under the name the recovery-plan register gives it, the catalogue returns 0. Under its acronym the catalogue returns 2 — the Tribunal writes Instituto de Habitação e Reabilitação Urbana, without the two «da»s the other register uses, so an exact-token match sees two different bodies. The first number is a false zero. The same fragility runs the other way in the table above: the Tribunal's own 2008 abstract writes «Universidade do Évora», which the university's correct name does not match, so the university's count of 2 is itself one short of the documents that name it."
   },
   {
    "figures": [
@@ -6112,19 +6093,19 @@
    ],
    "i": 76,
    "kind": "paragraph",
-   "text": "A zero in that table is therefore a weak signal, three times over. A name may be spelled differently, as here. The abstract may simply not name the body even when the report is about it, and the libraries themselves report holding more items than the interface hands back — 10 rows in total: 2 in the audit-reports library, 7 in external verification of accounts and 1 in internal verification, with the cause not established and paging failing to recover them. A nil result here means \"not found in the catalogue by this method\", never \"not audited\"."
+   "text": "A zero in that table is therefore a weak signal, three times over. A name may be spelled differently, as here. The abstract may simply not name the body even when the report is about it, and the libraries themselves report holding more items than the interface hands back — 10 rows in total: 2 in the audit-reports library, 7 in external verification of accounts and 1 in internal verification, with the cause not established and paging failing to recover them. A nil result means \"not found in the catalogue\", never \"not audited\"."
   },
   {
    "emphasis": [
     {
-     "end": 144,
+     "end": 134,
      "kind": "strong",
-     "start": 97
+     "start": 87
     }
    ],
    "figures": [
     {
-     "end": 65,
+     "end": 55,
      "others": [
       "fin-habevora-projects"
      ],
@@ -6132,11 +6113,11 @@
      "row": "tcq-espirito-santo",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 64,
+     "start": 54,
      "value": "8"
     },
     {
-     "end": 87,
+     "end": 77,
      "others": [
       "tc-gap-vec"
      ],
@@ -6144,13 +6125,13 @@
      "row": "tcq-divino-espirito-santo",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 86,
+     "start": 76,
      "value": "7"
     }
    ],
    "i": 77,
    "kind": "paragraph",
-   "text": "Searching the hospital's name fragment \"Espírito Santo\" returns 8 documents, of which 7 name the Hospital Divino Espírito Santo de Ponta Delgada — a different hospital, in the Azores. The words matched; the subject did not. Only one of the eight is the Évora hospital."
+   "text": "The hospital's name fragment \"Espírito Santo\" returns 8 documents, of which 7 name the Hospital Divino Espírito Santo de Ponta Delgada — a different hospital, in the Azores. The words matched; the subject did not. Only one of the eight is the Évora hospital."
   },
   {
    "i": 78,
@@ -6215,7 +6196,7 @@
    ],
    "i": 81,
    "kind": "paragraph",
-   "text": "The EU's project-level dataset places 2 569 projects in the NUTS3 region containing Évora, which it names Alentejo Central. All 2 569 of them carry the programming period 2014-2020 — an earlier funding cycle, and a different instrument from the recovery plan whose figures open this document. Putting the two side by side would be comparing different things. The dataset has no concelho field, and for Portugal the postal code is empty on every row."
+   "text": "The EU's project-level dataset places 2 569 projects in the NUTS3 region containing Évora, which it names Alentejo Central. All 2 569 of them carry the programming period 2014-2020 — an earlier funding cycle, and a different instrument from the recovery plan. Putting the two side by side would be comparing different things. The dataset has no concelho field, and for Portugal the postal code is empty on every row."
   },
   {
    "figures": [
@@ -6283,13 +6264,6 @@
    "text": "What to make of it"
   },
   {
-   "emphasis": [
-    {
-     "end": 380,
-     "kind": "em",
-     "start": 369
-    }
-   ],
    "figures": [
     {
      "end": 37,
@@ -6321,7 +6295,7 @@
    ],
    "i": 86,
    "kind": "paragraph",
-   "text": "Overdue project-locations carry 61.32% of everything approved for the concelho, and the completion dates that would soften that reading are the register's weakest field: 1 011 of the 1 445 on-time locations land exactly on their planned date. A date like that is a keystroke; a disbursement is a transaction. Where the two kinds of field disagree, believe the payments (inference)."
+   "text": "Overdue project-locations carry 61.32% of everything approved for the concelho, and the completion dates that would soften that reading are the register's weakest field: 1 011 of the 1 445 on-time locations land exactly on their planned date. A date like that is a keystroke; a disbursement is a transaction."
   },
   {
    "emphasis": [
@@ -6479,23 +6453,23 @@
      "start": 0
     },
     {
-     "end": 619,
+     "end": 561,
      "kind": "em",
-     "start": 608
+     "start": 550
     }
    ],
    "figures": [
     {
-     "end": 123,
+     "end": 118,
      "printed": "2019",
      "row": "tc-year-21-2019",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 119,
+     "start": 114,
      "value": "2019"
     },
     {
-     "end": 348,
+     "end": 290,
      "others": [
       "comp-c08-overdue",
       "base-municipio-spellings",
@@ -6508,41 +6482,36 @@
      "row": "tc-fifth-family-evora",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 347,
+     "start": 289,
      "value": "2"
     }
    ],
    "i": 90,
    "kind": "paragraph",
-   "text": "The searchable audit trail is thinnest where the money is thickest. In the four families read, nothing published after 2019 names Évora in its title or abstract — and those are the years in which the recovery money moved. The document's own probes forbid the strong reading: the catalogue cannot see inside report bodies, and a fifth family holds 2 reports on the municipality that the four-family search cannot reach. What survives is the practical point: a citizen who goes looking for an examination of those years will not find it through this catalogue's search, whatever may in fact have been examined (inference)."
+   "text": "The searchable audit trail is thinnest where the money is thickest. In the four families, nothing published after 2019 names Évora in its title or abstract — and those are the years in which the recovery money moved. The catalogue cannot see inside report bodies, and a fifth family holds 2 reports on the municipality that the four-family search cannot reach. What survives is the practical point: a citizen who goes looking for an examination of those years will not find it through this catalogue's search, whatever may in fact have been examined (inference)."
   },
   {
    "emphasis": [
     {
-     "end": 66,
-     "kind": "strong",
-     "start": 0
-    },
-    {
-     "end": 534,
+     "end": 489,
      "kind": "em",
-     "start": 523
+     "start": 478
     }
    ],
    "figures": [
     {
-     "end": 400,
+     "end": 355,
      "printed": "2019",
      "row": "tc-year-21-2019",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 396,
+     "start": 351,
      "value": "2019"
     }
    ],
    "i": 91,
    "kind": "paragraph",
-   "text": "If this document earns a sequel, the data says point it at health. The equipment for the new central hospital of the Alentejo sits approved and undisbursed past its date. In the contracts window, the health group stands as the most active contracting entity in the window read once its spellings are folded together. In the audit table above, hospital care in the concelho last appears through a 2019 report on managers' pay. Money, delivery risk and a thin searchable trail concentrate in the same corner of the same town (inference)."
+   "text": "The data points at health. The equipment for the new central hospital of the Alentejo sits approved and undisbursed past its date. In the contracts window, the health group stands as the most active contracting entity in the window once its spellings are folded together. In the audit table above, hospital care in the concelho last appears through a 2019 report on managers' pay. Money, delivery risk and a thin searchable trail concentrate in the same corner of the same town (inference)."
   },
   {
    "i": 92,

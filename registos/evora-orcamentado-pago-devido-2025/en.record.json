@@ -28,7 +28,7 @@
    "figures": [],
    "i": 4,
    "kind": "paragraph",
-   "text": "The Prestação de Contas is management's account of the year. It is detailed, internally consistent and externally audited — but it is one voice. Two outside voices exist and both are here: the independent auditor's signed opinion (the Certificação Legal das Contas), and DGAL — the Direção-Geral das Autarquias Locais — which publishes, per municipality and per year, the same legal debt concept the report uses, compiled on the regulator's side."
+   "text": "The Prestação de Contas is management's account of the year. It is detailed, internally consistent and externally audited — but it is one voice. Two outside voices exist: the independent auditor's signed opinion (the Certificação Legal das Contas), and DGAL — the Direção-Geral das Autarquias Locais — which publishes, per municipality and per year, the same legal debt concept the report uses, compiled on the regulator's side."
   },
   {
    "emphasis": [
@@ -95,7 +95,7 @@
    ],
    "i": 6,
    "kind": "paragraph",
-   "text": "The 2024 accounts were never certified. The auditor's 2025 opinion records that the previous year's accounts were rejected by the Câmara itself — 2 votes in favour, 5 against, in the meeting of 2025-05-28 — which forced a Declaration of Impossibility of Legal Certification for 2024. The 2024 comparatives quoted below are therefore the ones printed in the 2025 report, and they carry that history. The vote sits months before the October 2025 local elections."
+   "text": "The 2024 accounts were never certified. The auditor's 2025 opinion records that the previous year's accounts were rejected by the Câmara itself — 2 votes in favour, 5 against, in the meeting of 2025-05-28 — which forced a Declaration of Impossibility of Legal Certification for 2024. The 2024 comparatives are therefore the ones printed in the 2025 report, and they carry that history. The vote sits months before the October 2025 local elections."
   },
   {
    "emphasis": [
@@ -538,13 +538,6 @@
    ]
   },
   {
-   "emphasis": [
-    {
-     "end": 673,
-     "kind": "strong",
-     "start": 589
-    }
-   ],
    "figures": [
     {
      "end": 89,
@@ -588,30 +581,23 @@
    ],
    "i": 16,
    "kind": "paragraph",
-   "text": "Two absences explain much of the 2025 gap, and the report names both. A revenue line of 5 million euros for \"Évora 2027\" saw no execution in the year. A technical-cooperation line of €5 013 000 — five million euros of it the protocol for road access to the new central Alentejo hospital — also saw none. Transfers from co-financed projects were budgeted at many times what arrived: €1 087 287 came in, an execution of 11.58% on that line. Budgeting money that outside bodies have not yet committed, and then not receiving it, is the recurring mechanism behind the falling execution series (inference from the three lines above; the report states each line, not the pattern)."
+   "text": "Two absences explain much of the 2025 gap, and the report names both. A revenue line of 5 million euros for \"Évora 2027\" saw no execution in the year. A technical-cooperation line of €5 013 000 — five million euros of it the protocol for road access to the new central Alentejo hospital — also saw none. Transfers from co-financed projects were budgeted at many times what arrived: €1 087 287 came in, an execution of 11.58% on that line. Budgeting money that outside bodies have not yet committed, and then not receiving it, is the recurring mechanism behind the falling execution series (inference; the report states each line, not the pattern)."
   },
   {
-   "emphasis": [
-    {
-     "end": 269,
-     "kind": "strong",
-     "start": 221
-    }
-   ],
    "figures": [
     {
-     "end": 86,
+     "end": 65,
      "printed": "48.1",
      "row": "exec-2015-pct-companion",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 82,
+     "start": 61,
      "value": "48.1"
     }
    ],
    "i": 17,
    "kind": "paragraph",
-   "text": "This recital's window opens in 2018. The companion reaches back to 2015 and finds 48.1% there — a deeper trough, in the year after the bailout instalments — so execution collapses have followed Évora's debt crises before (inference; the figure is the 2015 report's own)."
+   "text": "This recital's window opens in 2018. The 2015 report carries 48.1% — a deeper trough, in the year after the bailout instalments — so execution collapses have followed Évora's debt crises before (inference)."
   },
   {
    "figures": [
@@ -944,27 +930,27 @@
   {
    "figures": [
     {
-     "end": 136,
+     "end": 98,
      "printed": "19 427 778",
      "row": "outras-rec-correntes-orc",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 126,
+     "start": 88,
      "value": "19 427 778"
     },
     {
-     "end": 168,
+     "end": 130,
      "printed": "155 573",
      "row": "outras-rec-correntes-exec",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 161,
+     "start": 123,
      "value": "155 573"
     }
    ],
    "i": 26,
    "kind": "paragraph",
-   "text": "The \"other current revenue\" line deserves its own sentence, because it is where the budget-versus-money gap is most extreme: €19 427 778 was budgeted there and €155 573 arrived — the report explains the line as the place where inherited debt had to be accommodated in the budget's arithmetic."
+   "text": "The \"other current revenue\" line is where the budget-versus-money gap is most extreme: €19 427 778 was budgeted there and €155 573 arrived — the report explains the line as the place where inherited debt had to be accommodated in the budget's arithmetic."
   },
   {
    "figures": [
@@ -1215,7 +1201,7 @@
    ],
    "i": 32,
    "kind": "paragraph",
-   "text": "Personnel executes at 96.55% because salaries are paid whether or not the rest of the budget happens; it is the incompressible core of the accounts. The goods-and-services line is where the large running contracts live — bulk water, sanitation, waste, public lighting — and it is also where the unpaid bills accumulate, which the debt section returns to."
+   "text": "Personnel executes at 96.55% because salaries are paid whether or not the rest of the budget happens; it is the incompressible core of the accounts. The goods-and-services line is where the large running contracts live — bulk water, sanitation, waste, public lighting — and it is also where the unpaid bills accumulate."
   },
   {
    "emphasis": [
@@ -1704,7 +1690,7 @@
    ],
    "i": 44,
    "kind": "paragraph",
-   "text": "Two hard numbers measure the strain. The average time Évora takes to pay a supplier reached 137 days — up 33 days in a year, and the series is worth printing whole:"
+   "text": "Two hard numbers measure the strain. The average time Évora takes to pay a supplier reached 137 days — up 33 days in a year:"
   },
   {
    "i": 45,
@@ -2528,42 +2514,42 @@
   {
    "figures": [
     {
-     "end": 124,
+     "end": 96,
      "printed": "242.6",
      "row": "evora-indice-2014",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 119,
+     "start": 91,
      "value": "242.6"
     },
     {
-     "end": 413,
+     "end": 368,
      "printed": "21.13",
      "row": "invest-exec-pct",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 408,
+     "start": 363,
      "value": "21.13"
     },
     {
-     "end": 491,
+     "end": 446,
      "printed": "28 192 653",
      "row": "margem-endividamento-2025",
      "source_digest_kind": "pdf-sem-resumo",
      "source_sha256": null,
-     "start": 481,
+     "start": 436,
      "value": "28 192 653"
     }
    ],
    "i": 57,
    "kind": "paragraph",
-   "text": "Read down the index column: Évora spent the middle of the last decade far above the legal ceiling — the index opens at 242.6% — and crossed back under it only in 2020. The index falls in every year of the table, even in 2020 when the euro amount itself ticked up — revenue grew faster. Ten years of paying down the rescue debt is the context for every number in this document: for why investment executes at 21.13%, for why the plan's money goes to debt operations, and for why a €28 192 653 margin is a genuine achievement rather than an accounting nicety (inference)."
+   "text": "Évora spent the middle of the last decade far above the legal ceiling — the index opens at 242.6% — and crossed back under it only in 2020. The index falls in every year of the table, even in 2020 when the euro amount itself ticked up — revenue grew faster. Ten years of paying down the rescue debt is the context for every number: for why investment executes at 21.13%, for why the plan's money goes to debt operations, and for why a €28 192 653 margin is a genuine achievement rather than an accounting nicety (inference)."
   },
   {
    "figures": [],
    "i": 58,
    "kind": "paragraph",
-   "text": "Two more things the regulator's file supports, both computed over its own rows:"
+   "text": "Two more things the regulator's file supports:"
   },
   {
    "i": 59,
@@ -2678,7 +2664,7 @@
    ],
    "i": 63,
    "kind": "paragraph",
-   "text": "The Certificação Legal das Contas for 2025, signed 2026-04-17 by Marques, Cruz & Associados, SROC, is a clean opinion: the financial statements present the municipality's position truly and appropriately, and the budgetary statements comply with public-accounting norms. It carries emphases — matters flagged without qualifying the opinion: a bank reconciliation clean-up begun in 2025 and due to finish in 2026; the de-recognition of the low-voltage electricity-grid concession assets under a 2025 accounting instruction; some 2.8 million euros of creditor balances that are in substance non-current; and the existence of the arrears the debt section already quantified."
+   "text": "The Certificação Legal das Contas for 2025, signed 2026-04-17 by Marques, Cruz & Associados, SROC, is a clean opinion: the financial statements present the municipality's position truly and appropriately, and the budgetary statements comply with public-accounting norms. It carries emphases — matters flagged without qualifying the opinion: a bank reconciliation clean-up begun in 2025 and due to finish in 2026; the de-recognition of the low-voltage electricity-grid concession assets under a 2025 accounting instruction; some 2.8 million euros of creditor balances that are in substance non-current; and the existence of the arrears."
   },
   {
    "figures": [
@@ -2706,7 +2692,7 @@
    ],
    "i": 64,
    "kind": "paragraph",
-   "text": "Under \"other matters\" sits the sentence with the longest shadow: the proposal for the 2024 accounts was rejected in the Câmara meeting of 2025-05-28 — 2 votes in favour, 5 against — and the auditor therefore issued a Declaration of Impossibility of Legal Certification for 2024. A year of this municipality's accounts exists without an external signature. The 2025 opinion being clean means the books recovered their external witness; it does not certify 2024 retroactively, and nothing in this document treats the 2024 comparatives as if it did."
+   "text": "Under \"other matters\" sits the sentence with the longest shadow: the proposal for the 2024 accounts was rejected in the Câmara meeting of 2025-05-28 — 2 votes in favour, 5 against — and the auditor therefore issued a Declaration of Impossibility of Legal Certification for 2024. A year of this municipality's accounts exists without an external signature. The 2025 opinion being clean means the books recovered their external witness; it does not certify 2024 retroactively."
   },
   {
    "i": 65,
@@ -2833,45 +2819,31 @@
    "text": "The money promised from outside"
   },
   {
-   "emphasis": [
-    {
-     "end": 61,
-     "kind": "em",
-     "start": 25
-    }
-   ],
    "figures": [
     {
-     "end": 175,
+     "end": 113,
      "printed": "167 372 756",
      "row": "prr-approved-evora-0804",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 164,
+     "start": 102,
      "value": "167 372 756"
     },
     {
-     "end": 194,
+     "end": 132,
      "printed": "86 944 669",
      "row": "prr-paid-evora-0804",
      "source_digest_kind": "raw-sem-manifesto",
      "source_sha256": null,
-     "start": 184,
+     "start": 122,
      "value": "86 944 669"
     }
    ],
    "i": 71,
    "kind": "paragraph",
-   "text": "The companion document — Évora — Promised, Paid, Audited 2026 — read the recovery-plan register on 2026-08-04: approved money attributed to the concelho of Évora, €167 372 756; paid, €86 944 669. That register republishes daily with no history, so those figures are that snapshot's."
+   "text": "The recovery-plan register, on 2026-08-04, says: approved money attributed to the concelho of Évora, €167 372 756; paid, €86 944 669. That register republishes daily with no history, so those figures are that snapshot's."
   },
   {
-   "emphasis": [
-    {
-     "end": 440,
-     "kind": "strong",
-     "start": 381
-    }
-   ],
    "figures": [
     {
      "end": 82,
@@ -2885,7 +2857,7 @@
    ],
    "i": 72,
    "kind": "paragraph",
-   "text": "Set against them, from these accounts: the municipality itself received €1 087 287 in co-financed capital transfers in all of 2025. The PRR money attributed to Évora overwhelmingly flows through entities other than the municipality — the university, the health service, housing bodies, national agencies — and the part that is the Câmara's to spend has, so far, mostly not arrived (inference; each figure is sourced above, the join is ours)."
+   "text": "Set against them, from these accounts: the municipality itself received €1 087 287 in co-financed capital transfers in all of 2025. The PRR money attributed to Évora overwhelmingly flows through entities other than the municipality — the university, the health service, housing bodies, national agencies — and the part that is the Câmara's to spend has, so far, mostly not arrived (inference)."
   },
   {
    "i": 73,
@@ -3198,23 +3170,10 @@
    ],
    "i": 82,
    "kind": "paragraph",
-   "text": "The unsigned year is the governance fact to keep. The 2024 accounts were rejected 2 to 5 and exist without external certification. The clean 2025 opinion restores the external witness going forward; it cannot restore it backward, and every multi-year table in this document inherits that asterisk on its 2024 column."
+   "text": "The unsigned year is the governance fact to keep. The 2024 accounts were rejected 2 to 5 and exist without external certification. The clean 2025 opinion restores the external witness going forward; it cannot restore it backward, and every multi-year table inherits that asterisk on its 2024 column."
   },
   {
-   "emphasis": [
-    {
-     "end": 19,
-     "kind": "strong",
-     "start": 0
-    }
-   ],
-   "figures": [],
    "i": 83,
-   "kind": "paragraph",
-   "text": "What to watch next."
-  },
-  {
-   "i": 84,
    "items": [
     {
      "figures": [],
@@ -3264,18 +3223,18 @@
    "ordered": false
   },
   {
-   "i": 85,
+   "i": 84,
    "kind": "rule"
   },
   {
    "figures": [],
-   "i": 86,
+   "i": 85,
    "kind": "heading",
    "level": 2,
    "text": "Sources"
   },
   {
-   "i": 87,
+   "i": 86,
    "items": [
     {
      "emphasis": [

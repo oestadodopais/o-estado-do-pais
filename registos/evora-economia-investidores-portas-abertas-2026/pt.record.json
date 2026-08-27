@@ -18,7 +18,7 @@
    "figures": [],
    "i": 1,
    "kind": "paragraph",
-   "text": "2026-08-10. O que o concelho de Évora ganha e em que setores, quem lhe meteu dinheiro a sério, e que portas de financiamento estão hoje abertas a um ator de Évora. Estatística da API JSON do INE; valores de investimento do Diário da República, dos registos da UE e das páginas das próprias instituições; portas de financiamento lidas em direto nos portais das entidades gestoras."
+   "text": "2026-08-10. O que o concelho de Évora ganha e em que setores, quem lhe meteu dinheiro a sério, e que portas de financiamento estão hoje abertas a um ator de Évora. Estatística da API JSON do INE; valores de investimento do Diário da República, dos registos da UE e das páginas das próprias instituições; portas de financiamento dos portais em direto das entidades gestoras."
   },
   {
    "figures": [],
@@ -63,18 +63,13 @@
     {
      "emphasis": [
       {
-       "end": 66,
+       "end": 206,
        "kind": "strong",
-       "start": 3
-      },
-      {
-       "end": 270,
-       "kind": "strong",
-       "start": 266
+       "start": 202
       }
      ],
      "figures": [],
-     "text": "2. O filtro de financiamento lê programas, não o corpo dos avisos. Um concurso conta como alcançável quando o seu programa é o programa regional do Alentejo ou um nacional. Avisos nacionais podem ainda restringir o território dentro do PDF; a contagem é por isso um teto sobre aquilo a que um ator de Évora se pode candidatar. As classes de quem-pode-candidatar-se vêm das secções de elegibilidade verbatim extraídas em 2026-08-08 pelo Registo de Acesso a Fundos."
+     "text": "2. Um concurso conta como alcançável quando o seu programa é o programa regional do Alentejo ou um nacional. Avisos nacionais podem ainda restringir o território dentro do PDF; a contagem é por isso um teto sobre aquilo a que um ator de Évora se pode candidatar. As classes de quem-pode-candidatar-se vêm das secções de elegibilidade do Registo de Acesso a Fundos, de 2026-08-08."
     },
     {
      "emphasis": [
@@ -96,7 +91,7 @@
       }
      ],
      "figures": [],
-     "text": "4. Coexistem três datas. A estrutura empresarial é de 2024 (o ano SCIE mais recente do INE), o comércio e o turismo chegam a 2025, os ganhos param em 2022 (a série municipal dos Quadros de Pessoal), e as portas de financiamento foram lidas ao vivo em 2026-08-10. Cada número carrega o seu próprio ano no texto."
+     "text": "4. Coexistem três datas. A estrutura empresarial é de 2024 (o ano SCIE mais recente do INE), o comércio e o turismo chegam a 2025, os ganhos param em 2022 (a série municipal dos Quadros de Pessoal), e as portas de financiamento são de 2026-08-10."
     },
     {
      "emphasis": [
@@ -117,7 +112,7 @@
        "value": "5"
       }
      ],
-     "text": "5. A secção de oportunidades é inferência assinada. Tudo antes dela é facto com fonte; essa secção é uma leitura de onde estão as lacunas, ancorada nos factos do livro-razão que cita."
+     "text": "5. A secção de oportunidades é inferência assinada. Tudo antes dela é facto com fonte."
     },
     {
      "emphasis": [
@@ -138,7 +133,7 @@
        "value": "6"
       }
      ],
-     "text": "6. Um retrato de momento. Os concursos fecham continuamente — três das portas listadas estavam já dentro do seu último mês à data da leitura."
+     "text": "6. Um retrato de momento. Os concursos fecham continuamente — três das portas listadas estavam já dentro do seu último mês a 2026-08-10."
     }
    ],
    "kind": "list",
@@ -260,7 +255,7 @@
    ],
    "i": 6,
    "kind": "paragraph",
-   "text": "A própria cidade está acima da média nacional no único indicador que existe ao nível do concelho: o índice de poder de compra do INE de 2023 põe Évora em 111,5 (Portugal = 100), com a sua região em 93,9. Évora é uma cidade relativamente próspera dentro de uma região pobre — o padrão a que o resto deste documento volta sempre."
+   "text": "A própria cidade está acima da média nacional no único indicador que existe ao nível do concelho: o índice de poder de compra do INE de 2023 põe Évora em 111,5 (Portugal = 100), com a sua região em 93,9. Évora é uma cidade relativamente próspera dentro de uma região pobre."
   },
   {
    "figures": [],
@@ -868,18 +863,18 @@
      "value": "914"
     },
     {
-     "end": 319,
+     "end": 300,
      "printed": "1",
      "row": "p3-class-indiv",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 318,
+     "start": 299,
      "value": "1"
     }
    ],
    "i": 12,
    "kind": "paragraph",
-   "text": "A indústria transformadora é o maior bloco isolado de valor acrescentado empresarial no concelho. Dentro dela, a divisão 30 da CAE — fabricação de outro equipamento de transporte, a divisão das próprias fábricas aeronáuticas — mostra 24 573 447 euros de VAB e 914 pessoas ao serviço em 2024. Leia-se ao lado do limite 1: o SCIE atribui pela sede e pela atividade principal da empresa, e um retrato ao nível da fábrica é exatamente o que um registo empresarial municipal não pode prometer."
+   "text": "A indústria transformadora é o maior bloco isolado de valor acrescentado empresarial no concelho. Dentro dela, a divisão 30 da CAE — fabricação de outro equipamento de transporte, a divisão das próprias fábricas aeronáuticas — mostra 24 573 447 euros de VAB e 914 pessoas ao serviço em 2024. Limite 1: o SCIE atribui pela sede e pela atividade principal da empresa, e um retrato ao nível da fábrica é exatamente o que um registo empresarial municipal não pode prometer."
   },
   {
    "emphasis": [
@@ -1529,7 +1524,7 @@
    ],
    "i": 24,
    "kind": "paragraph",
-   "text": "Cultura. Évora foi recomendada Capital Europeia da Cultura 2027 a 7 de dezembro de 2022. O Decreto-Lei n.º 124/2023 criou a Associação Évora 2027 com uma contribuição inicial do Estado de 2 000 000 euros; o programa Alentejo 2030 abriu um aviso exclusivamente destinado à associação com uma dotação indicativa de 1 750 000 euros; o comunicado do Governo na fase de candidatura situou o envelope para a cidade vencedora em 25 milhões de euros. Não existe nenhum orçamento consolidado oficial da Évora 2027 — circulam totais maiores na imprensa, e deliberadamente não são impressos aqui."
+   "text": "Cultura. Évora foi recomendada Capital Europeia da Cultura 2027 a 7 de dezembro de 2022. O Decreto-Lei n.º 124/2023 criou a Associação Évora 2027 com uma contribuição inicial do Estado de 2 000 000 euros; o programa Alentejo 2030 abriu um aviso exclusivamente destinado à associação com uma dotação indicativa de 1 750 000 euros; o comunicado do Governo na fase de candidatura situou o envelope para a cidade vencedora em 25 milhões de euros. Não existe nenhum orçamento consolidado oficial da Évora 2027 — circulam totais maiores na imprensa."
   },
   {
    "emphasis": [
@@ -1648,7 +1643,7 @@
    "figures": [],
    "i": 29,
    "kind": "paragraph",
-   "text": "Lido a 2026-08-10, em todos os sistemas ao alcance de um ator de Évora."
+   "text": "Em todos os sistemas ao alcance de um ator de Évora, a 2026-08-10."
   },
   {
    "figures": [],
@@ -1843,7 +1838,7 @@
    ],
    "i": 33,
    "kind": "paragraph",
-   "text": "60 instrumentos no PEPAC/IFAP, PRR, IEFP, Turismo de Portugal, Banco Português de Fomento, FCT, DGArtes e nos programas diretos da UE; 44 estavam abertos ou em contínuo à data da leitura. O que sobressai, por ator:"
+   "text": "60 instrumentos no PEPAC/IFAP, PRR, IEFP, Turismo de Portugal, Banco Português de Fomento, FCT, DGArtes e nos programas diretos da UE; 44 estavam abertos ou em contínuo a 2026-08-10. O que sobressai, por ator:"
   },
   {
    "emphasis": [
@@ -1866,7 +1861,7 @@
    ],
    "i": 34,
    "kind": "paragraph",
-   "text": "Para um agricultor ou proprietário — as janelas do PEPAC atualmente abertas são todas de florestas, organizações de produtores ou fitossanidade (6 a atravessar a data da leitura); nenhuma janela de investimento produtivo agrícola estava aberta, e o período dos jovens agricultores fechou em dezembro de 2025. O Pedido Único anual de pagamentos diretos corre no seu próprio calendário, e o dinheiro LEADER flui através do GAL de cada território."
+   "text": "Para um agricultor ou proprietário — as janelas do PEPAC atualmente abertas são todas de florestas, organizações de produtores ou fitossanidade (6); nenhuma janela de investimento produtivo agrícola estava aberta, e o período dos jovens agricultores fechou em dezembro de 2025. O Pedido Único anual de pagamentos diretos corre no seu próprio calendário, e o dinheiro LEADER flui através do GAL de cada território."
   },
   {
    "emphasis": [
@@ -1942,7 +1937,7 @@
    ],
    "i": 36,
    "kind": "paragraph",
-   "text": "Para uma empresa de turismo — o Turismo de Portugal mantém três portas em contínuo ou até ao fim do ano: a Linha de Apoio à Qualificação da Oferta (até 80% do investimento elegível, teto de 3 000 000 euros por projeto), o programa Crescer com o Turismo (dotação de 30 000 000 euros, aberto até 2026-12-31, também aberto ao município e a entidades sem fins lucrativos), e um microcrédito sem juros de 30 000 euros para territórios de baixa densidade — se uma dada freguesia de Évora qualifica como baixa densidade tem de ser verificado na lista oficial."
+   "text": "Para uma empresa de turismo — o Turismo de Portugal mantém três portas em contínuo ou até ao fim do ano: a Linha de Apoio à Qualificação da Oferta (até 80% do investimento elegível, teto de 3 000 000 euros por projeto), o programa Crescer com o Turismo (dotação de 30 000 000 euros, aberto até 2026-12-31, também aberto ao município e a entidades sem fins lucrativos), e um microcrédito sem juros de 30 000 euros para territórios de baixa densidade."
   },
   {
    "emphasis": [
@@ -2036,27 +2031,27 @@
    ],
    "figures": [
     {
-     "end": 389,
+     "end": 384,
      "printed": "1,5",
      "row": "door-erc-max",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 386,
+     "start": 381,
      "value": "1.5"
     },
     {
-     "end": 449,
+     "end": 444,
      "printed": "399",
      "row": "door-msca-eur",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 446,
+     "start": 441,
      "value": "399"
     }
    ],
    "i": 39,
    "kind": "paragraph",
-   "text": "Para a universidade e investigadores — a FCT tinha seis concursos abertos à data da leitura (mobilidade bilateral com a Alemanha e a França, computação avançada, um prémio de saúde, colocações em Berkeley) com as grandes portas anuais (bolsas de doutoramento, emprego científico, projetos IC&DT) em calendários publicados de 2026-2027; a ERC Starting Grant 2027 fecha a 2026-10-14 (até 1,5 milhões de euros); o concurso de pós-doutoramento MSCA (399 milhões de euros) fecha a 2026-09-09."
+   "text": "Para a universidade e investigadores — a FCT tinha seis concursos abertos a 2026-08-10 (mobilidade bilateral com a Alemanha e a França, computação avançada, um prémio de saúde, colocações em Berkeley) com as grandes portas anuais (bolsas de doutoramento, emprego científico, projetos IC&DT) em calendários publicados de 2026-2027; a ERC Starting Grant 2027 fecha a 2026-10-14 (até 1,5 milhões de euros); o concurso de pós-doutoramento MSCA (399 milhões de euros) fecha a 2026-09-09."
   },
   {
    "emphasis": [
@@ -2252,18 +2247,18 @@
      "value": "25"
     },
     {
-     "end": 656,
+     "end": 602,
      "printed": "1 620 000",
      "row": "door-orquestra-eur",
      "source_digest_kind": "derivado",
      "source_sha256": null,
-     "start": 647,
+     "start": 593,
      "value": "1 620 000"
     }
    ],
    "i": 45,
    "kind": "paragraph",
-   "text": "3. Ninguém consolidou o dinheiro da Évora 2027, o que normalmente significa que ninguém consolidou também a sua contratação. As peças oficiais em registo — 2 000 000 euros de semente do Estado, 1 750 000 euros do ALT2030, um envelope de candidatura de 25 milhões de euros — não somam um orçamento de programa, e os contratos da associação correm pelo Portal BASE, onde o documento companheiro já acompanha o concelho. Para empresas locais (palcos, produção, obras de acessibilidade, hotelaria), as necessidades de fornecimento da CEC são um fluxo de receita de 2026-2027 que as portas publicadas mal descrevem. O concurso da orquestra da DGArtes (1 620 000 euros, prazo 2026-09-09) é o exemplo concreto e datado."
+   "text": "3. Ninguém consolidou o dinheiro da Évora 2027, o que normalmente significa que ninguém consolidou também a sua contratação. As peças oficiais em registo — 2 000 000 euros de semente do Estado, 1 750 000 euros do ALT2030, um envelope de candidatura de 25 milhões de euros — não somam um orçamento de programa, e os contratos da associação correm pelo Portal BASE. Para empresas locais (palcos, produção, obras de acessibilidade, hotelaria), as necessidades de fornecimento da CEC são um fluxo de receita de 2026-2027 que as portas publicadas mal descrevem. O concurso da orquestra da DGArtes (1 620 000 euros, prazo 2026-09-09) é o exemplo concreto e datado."
   },
   {
    "emphasis": [
