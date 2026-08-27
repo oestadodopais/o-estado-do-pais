@@ -167,6 +167,20 @@ const SONDA_ALVOS = () => {
       txt: (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 26),
       naMobilia: !!el.closest('header'),
       noMain: !!el.closest('main'),
+      /* O DESENHO DO MAPA É OUTRO OBJECTO, E MEDE-SE COM OUTRA RÉGUA (I82,
+         27.08.2026). Uma área da Carta é uma forma côncava dentro de um
+         rectângulo, e a sua caixa não é o seu alvo: a medição cega M3 achou que
+         o centro da caixa da Ilha da Madeira cai FORA da Ilha da Madeira, e a
+         casa decidiu que o alvo de uma área é o maior quadrado inscrito à volta
+         do seu ponto representativo. É `tests/inicio/mapa-distritos.mjs` M1 e M2
+         que o medem, e a rede da Emenda 20c — a lista dos nomes por baixo do
+         mapa, com 44 px de altura cada — que responde por quem não chega.
+
+         As caixas das áreas também se sobrepõem por natureza: a caixa de um
+         distrito de costa contém as dos vizinhos, e isso não é uma porta em cima
+         de outra, é o desenho de um território. Marcam-se aqui, e a célula A10
+         deixa-as de fora do juízo com a razão escrita. */
+      noMapa: !!el.closest('[data-areas]'),
       w: +a.w.toFixed(1),
       h: +a.h.toFixed(1),
       x1: a.x,
@@ -182,6 +196,9 @@ const SONDA_ALVOS = () => {
     for (let j = i + 1; j < alvos.length; j++) {
       const a = alvos[i];
       const b = alvos[j];
+      /* Um par em que entra uma área do mapa não é um par de portas sobrepostas:
+         ver a nota de `noMapa`, acima. */
+      if (a.noMapa || b.noMapa) continue;
       const ox = Math.min(a.x2, b.x2) - Math.max(a.x1, b.x1);
       const oy = Math.min(a.y2, b.y2) - Math.max(a.y1, b.y1);
       if (ox > 0.5 && oy > 0.5) pares.push(`${a.nome}«${a.txt}» × ${b.nome}«${b.txt}»`);
@@ -213,7 +230,26 @@ const SONDA_TEXTO = () => {
 
 /**
  * As bandas de cor uniforme, medidas nos pixéis da captura de página inteira.
- * Devolve, por banda, o topo, a altura e se ela cai dentro de `<main>`.
+ * Devolve, por banda, o topo, a altura, se ela cai dentro de `<main>` e se ela
+ * toca a caixa do desenho do mapa.
+ *
+ * ---------------------------------------------------------------------------
+ * A CAIXA DO MAPA MEDE-SE E IMPRIME-SE, E NÃO ENTRA NO JUÍZO (Emenda 20c)
+ * ---------------------------------------------------------------------------
+ * É a mesma decisão, e as mesmas palavras, que a cabeça deste ficheiro já
+ * escreve para a mobília e para o pé: «ficam medidas e impressas ao lado, sem
+ * entrar no juízo, para que a decisão de as mudar seja de quem tem de a tomar».
+ *
+ * A razão é que o detetor conta corridas de linhas de UMA cor, e um mapa é uma
+ * forma dentro de um rectângulo: o mar a norte de Portugal, dentro do `viewBox`,
+ * é uma corrida de linhas de uma cor com tinta acima e abaixo, e lê-se como uma
+ * banda de composição sem o ser. A 390, com o mapa que a Emenda 20c pôs no
+ * telemóvel, essa corrida mede 58 px e é a maior da página; fora da caixa do
+ * mapa, a maior banda de `<main>` mede 43 px, abaixo do limiar de 48.
+ *
+ * O que isto NÃO faz: dispensar a página do juízo onde o mapa não está. As 188
+ * bandas de fora da caixa continuam todas medidas e julgadas, e o vazio que o
+ * diretor fotografou a 25.08 — 97 px em y = 824 a 390 — cairia na mesma.
  */
 async function bandas(paginaEmBranco, buf, limites) {
   const dataUrl = 'data:image/png;base64,' + buf.toString('base64');
@@ -272,6 +308,13 @@ async function bandas(paginaEmBranco, buf, limites) {
             y: i,
             alt: j - i,
             noMain: i >= limites.topo && j <= limites.fundo,
+            /* Toca a caixa do desenho: basta cruzá-la, porque a corrida que
+               entra no mapa começa no ar que o precede e é a mesma corrida. */
+            noMapa:
+              limites.mapaTopo !== null &&
+              limites.mapaTopo !== undefined &&
+              j > limites.mapaTopo &&
+              i < limites.mapaFundo,
           });
         }
         i = j;
@@ -307,12 +350,28 @@ for (const edicao of ['pt', 'en']) {
       moveis: document.querySelectorAll('.movel-destino, .movel-selo').length,
     };
   });
+  /* «REGIÃO» VOLTOU AO COMANDO, E VOLTOU COMO PORTA (Emenda 21b, 27.08.2026).
+     Eram duas posições desde 25.08, quando a terceira saiu com a régua da
+     convergência «até haver a página das regiões»; a página existe, e a posição
+     voltou. O item A2 não muda: um comando SÓ, nas duas larguras, sem destinos de
+     telemóvel à parte. O que muda é quantas posições ele tem e o que cada uma é.
+
+     DUAS SÃO ESTADO E LEVAM PAPEL DE BOTÃO; a terceira é uma LIGAÇÃO para
+     `/regioes` e não leva papel nenhum, porque uma ligação activa-se com Enter e
+     um botão promete também o espaço. Exigir papel de botão às três era pedir a
+     uma porta que se comportasse como um interruptor — é a mesma correcção que a
+     célula 2i·5 da matriz levou no mesmo dia. */
   conta(
-    `A2 · um comando com «País» e «Concelho», com papel de botão · 390 ${edicao}`,
-    comando.modos.join(',') === 'pais,municipio' &&
-      comando.papeis.every((r) => r === 'button') &&
+    `A2 · um comando com «País», «Região» e «Concelho», e nenhum destino de telemóvel à parte · 390 ${edicao}`,
+    comando.modos.join(',') === 'pais,regiao,municipio' &&
+      comando.papeis.filter((r, i) => comando.modos[i] !== 'regiao').every((r) => r === 'button') &&
+      comando.papeis[comando.modos.indexOf('regiao')] === null &&
+      comando.hrefs[comando.modos.indexOf('regiao')] ===
+        (edicao === 'pt' ? '/regioes' : '/en/regions') &&
       comando.moveis === 0,
-    `${comando.rotulos.join(' · ')} → ${comando.hrefs.join(' ')} · ${comando.moveis} destino(s) do telemóvel`,
+    `${comando.rotulos.join(' · ')} → ${comando.hrefs.join(' ')} · papéis ${comando.papeis
+      .map((r) => r ?? 'ligação')
+      .join('/')} · ${comando.moveis} destino(s) do telemóvel`,
   );
 
   /* ---------------------------------------------------------------- A4 · o mapa */
@@ -337,14 +396,30 @@ for (const edicao of ['pt', 'en']) {
       distanciaDaLinha: rl && rp ? +(rl.top - rp.bottom).toFixed(1) : null,
     };
   });
+  /* METADE DESTA CÉLULA FOI REVOGADA POR UMA EMENDA POSTERIOR, E DIZ-SE AQUI.
+     O item A4 de 25.08 tirou o mapa do telemóvel, e a razão estava escrita na
+     Emenda 18: era um mapa em que nada se tocava, com os 308 pontos a servirem de
+     imagem da cobertura. A Emenda 20c reverteu-o com todas as letras — «o mapa
+     rende-se também no telemóvel, ao contrário da forma provisória da Emenda 18:
+     a razão daquela forma era um mapa em que nada se tocava; neste, cada distrito
+     é alvo» —, e desde então esta célula exigia a ausência de uma coisa que a
+     constituição manda estar lá.
+
+     A METADE QUE FICA é a que o item A4 tem de seu e nenhuma emenda tocou: a
+     pesquisa está à VISTA, em qualquer estado, logo por baixo da lede, porque é
+     o caminho para um concelho no telemóvel. Junta-se-lhe o que a Emenda 20c pôs
+     no lugar da metade revogada: o mapa rende-se e toma a largura da janela
+     (I81), que é a decisão medida de 27.08. Os alvos das 29 áreas não se medem
+     aqui — são `tests/inicio/mapa-distritos.mjs` M2, pela área inscrita. */
   conta(
-    `A4 · abaixo de 640 o mapa não se rende e a pesquisa fica à vista · 390 ${edicao}`,
-    mapa.svg === 0 &&
+    `A4 · REVOGADA em parte (Emenda 20c) · o mapa rende-se a 390 e a pesquisa fica à vista · 390 ${edicao}`,
+    mapa.svg !== null &&
+      mapa.svg >= 390 &&
       mapa.pontos === 0 &&
       mapa.pesquisaVisivel &&
       mapa.pesquisaDepoisDaLede &&
       mapa.linhaVisivel,
-    `svg ${mapa.svg}px · ${mapa.pontos} ponto(s) com caixa · pesquisa à vista ${mapa.pesquisaVisivel} · depois da lede ${mapa.pesquisaDepoisDaLede} · rótulo «${mapa.rotulo}» · linha dos 308 à vista ${mapa.linhaVisivel}, a ${mapa.distanciaDaLinha}px da pesquisa`,
+    `svg ${mapa.svg}px (a Emenda 20c manda rendê-lo; a 18 mandava-o fora) · ${mapa.pontos} ponto(s) com caixa, que é o que saiu com a Emenda 20a · pesquisa à vista ${mapa.pesquisaVisivel} · depois da lede ${mapa.pesquisaDepoisDaLede} · rótulo «${mapa.rotulo}» · linha dos 308 à vista ${mapa.linhaVisivel}, a ${mapa.distanciaDaLinha}px da pesquisa`,
   );
 
   /* -------------------------------------------------- A1 · o comando põe a pesquisa à vista */
@@ -391,7 +466,11 @@ for (const edicao of ['pt', 'en']) {
 
   const { alvos, pares } = await p.evaluate(SONDA_ALVOS);
   const pequenos = alvos.filter((a) => a.w < 44 || a.h < 44);
-  const pequenosNoCorpo = pequenos.filter((a) => !a.naMobilia);
+  /* As áreas do mapa saem do juízo e ficam contadas ao lado: a caixa de uma
+     forma côncava não é o seu alvo, e quem o mede é `mapa-distritos.mjs` M1 e M2,
+     pela área inscrita (I82). A nota inteira está em `SONDA_ALVOS`. */
+  const pequenosNoCorpo = pequenos.filter((a) => !a.naMobilia && !a.noMapa);
+  const pequenosDoMapa = pequenos.filter((a) => a.noMapa);
   const selos = alvos.filter((a) => a.nome.startsWith('a.src-chip'));
   conta(
     `A10 · a área efetiva do selo já é 44px, e não se mexeu · 390 ${edicao}`,
@@ -401,12 +480,12 @@ for (const edicao of ['pt', 'en']) {
     ).toFixed(1)} de área efetiva (a caixa do elemento mede 52×14)`,
   );
   conta(
-    `A10 · zero alvos efetivos abaixo de 44px fora da mobília, e zero áreas sobrepostas · 390 ${edicao}`,
+    `A10 · zero alvos efetivos abaixo de 44px fora da mobília e do mapa, e zero áreas sobrepostas · 390 ${edicao}`,
     pequenosNoCorpo.length === 0 && pares.length === 0,
-    `${alvos.length} alvos · ${pequenosNoCorpo.length} abaixo de 44 fora da mobília · ${pares.length} pares sobrepostos · exceção medida na mobília: ${pequenos
+    `${alvos.length} alvos · ${pequenosNoCorpo.length} abaixo de 44 fora da mobília e do mapa · ${pares.length} pares sobrepostos · exceção medida na mobília: ${pequenos
       .filter((a) => a.naMobilia)
       .map((a) => `${a.nome} ${a.w}×${a.h}`)
-      .join(', ') || 'nenhuma'}`,
+      .join(', ') || 'nenhuma'} · medidas ao lado, no mapa: ${pequenosDoMapa.length} de ${alvos.filter((a) => a.noMapa).length} áreas abaixo de 44 pela caixa, que é a medida errada para uma forma côncava (I82; os alvos das 29 são mapa-distritos.mjs M1 e M2)`,
   );
 
   /* ------------------------------------------------------------------- A7 · a cabeça */
@@ -478,20 +557,32 @@ for (const edicao of ['pt', 'en']) {
   /* ------------------------------------------------------------------- A8 · o vazio */
   const limites = await p.evaluate(() => {
     const m = document.querySelector('main').getBoundingClientRect();
-    return { topo: Math.round(m.top + scrollY), fundo: Math.round(m.bottom + scrollY) };
+    /* A caixa do desenho do mapa, quando a página tem um: ver a nota de
+       `bandas()`. Numa página sem mapa vem `null` e nada é dispensado. */
+    const f = document.querySelector('[data-mapa-raiz]');
+    const b = f ? f.getBoundingClientRect() : null;
+    return {
+      topo: Math.round(m.top + scrollY),
+      fundo: Math.round(m.bottom + scrollY),
+      mapaTopo: b ? Math.round(b.top + scrollY) : null,
+      mapaFundo: b ? Math.round(b.bottom + scrollY) : null,
+    };
   });
   const buf = await p.screenshot({ fullPage: true, type: 'png' });
   const branco = await ctx.newPage();
   await branco.goto('about:blank');
   const b390 = await bandas(branco, buf, limites);
-  const noMain390 = b390.bandas.filter((x) => x.noMain);
+  const noMain390 = b390.bandas.filter((x) => x.noMain && !x.noMapa);
+  const noMapa390 = b390.bandas.filter((x) => x.noMain && x.noMapa);
   const foraDoMain390 = b390.bandas.filter((x) => !x.noMain && x.alt > 48);
   conta(
-    `A8 · nenhuma banda de cor uniforme acima de 48px dentro do <main> · 390 ${edicao}`,
+    `A8 · nenhuma banda de cor uniforme acima de 48px dentro do <main>, fora do desenho do mapa · 390 ${edicao}`,
     !b390.telaVazia && noMain390.length > 0 && noMain390[0].alt <= 48,
     `maior banda no main: ${noMain390[0]?.alt ?? 0}px em y=${noMain390[0]?.y ?? '—'} (era 97px em y=824) · ${
       noMain390.length
-    } bandas medidas · fora do main, na composição da mobília e do pé: ${
+    } bandas julgadas · dentro da caixa do mapa, medida e não julgada (o mar dentro do viewBox): ${
+      noMapa390.slice(0, 2).map((x) => `${x.alt}px@${x.y}`).join(', ') || 'nenhuma'
+    } · fora do main, na composição da mobília e do pé: ${
       foraDoMain390.map((x) => `${x.alt}px@${x.y}`).join(', ') || 'nenhuma'
     } · página ${b390.altura}px`,
   );
@@ -538,67 +629,90 @@ for (const edicao of ['pt', 'en']) {
   await p.goto(`${base}${rota}`, { waitUntil: 'networkidle' });
   await p.evaluate(() => document.fonts.ready);
 
-  /* -------------------------------------------------- A5 · os pontos com página */
-  const a5 = await p.evaluate((destino) => {
-    const todos = [...document.querySelectorAll('circle.mun')];
-    const comPagina = todos.filter((c) => c.getAttribute('data-pagina') === 'sim');
-    const semPagina = todos.filter((c) => c.getAttribute('data-pagina') !== 'sim');
-    const dentroDeA = comPagina.filter((c) => c.closest('a'));
-    const raios = new Set(todos.map((c) => c.getAttribute('r')));
-    const enchimentos = new Set(todos.map((c) => getComputedStyle(c).fill));
-    const porta = comPagina[0] ? comPagina[0].closest('a') : null;
+  /* ------------------------------------- A5 · as portas do mapa da primeira página
+   *
+   * A CÉLULA MUDA DE OBJECTO E NÃO DE REGRA (Emenda 20a, 27.08.2026; ISSUES I86).
+   *
+   * O item A5 do bloco de 25.08 é uma regra sobre a NAVEGAÇÃO do mapa da
+   * primeira página: o que tem página é uma porta com nome, o que não tem não é
+   * porta nenhuma, e a neutralidade da Emenda 10 fica inteira. A célula media-a
+   * nos 308 pontos, porque eram eles o mapa; a Emenda 20a pôs no lugar deles as
+   * 29 unidades da Carta como áreas, e os pontos saíram de `/`. A célula procurava
+   * `circle.mun` e `.mun-porta`, encontrava zero, e falhava sem que nada estivesse
+   * mal na página: media um objecto que já não existe.
+   *
+   * A REGRA CONTINUA A APLICAR-SE, e aplica-se à mesma superfície: `/`. O que
+   * mudou foi o glifo. A célula passa a medi-la nas 29 áreas — cada uma dentro de
+   * uma `<a>` da família de endereços daquela edição, com nome acessível e cursor
+   * de ponteiro, e nenhuma área fora de uma porta.
+   *
+   * A METADE «SEM PÁGINA» DA REGRA DEIXOU DE SEPARAR ALGUMA COISA, e diz-se aqui
+   * em vez de se fingir que ainda se mede: as 29 unidades têm todas página, como
+   * os 308 concelhos têm todos página desde 26.08. É a regra do item E8 (uma
+   * palavra de estado só diz alguma coisa se houver outro estado), aplicada a uma
+   * régua: a célula conta as áreas que ficam fora de uma porta, que é o que
+   * continua a poder acontecer, e não pede um estado que a cobertura já não tem.
+   *
+   * O QUE NÃO SE MEDE AQUI, E ONDE SE MEDE: a neutralidade do desenho (um só
+   * traço, um só enchimento, e o contorno como única mudança ao passar o rato ou
+   * ao chegar pelo teclado) é `tests/inicio/mapa-distritos.mjs` M5; a contagem das
+   * 29 ligações é a regra R4 de `npm run check:mapa`, que corre na construção.
+   * Repeti-las aqui era a mesma conta em três sítios.
+   */
+  const familiaDoDistrito = edicao === 'pt' ? '/distritos/' : '/en/districts/';
+  const a5 = await p.evaluate((familia) => {
+    const areas = [...document.querySelectorAll('[data-areas] .uni')];
+    const portas = [...document.querySelectorAll('[data-areas] a.uni-porta')];
+    const nomes = portas.map((a) => (a.querySelector('title')?.textContent ?? '').trim());
+    const destinos = portas.map((a) => a.getAttribute('href'));
+    const padrao = new RegExp('^' + familia + '[a-z0-9-]+$');
     return {
-      total: todos.length,
-      comPagina: comPagina.length,
-      semPaginaDentroDeA: semPagina.filter((c) => c.closest('a')).length,
-      dentroDeA: dentroDeA.length,
-      href: porta ? porta.getAttribute('href') : null,
-      certo: porta ? porta.getAttribute('href') === destino : false,
-      titulo: porta ? (porta.querySelector('title')?.textContent ?? null) : null,
-      cursor: comPagina[0] ? getComputedStyle(comPagina[0]).cursor : null,
-      cursorDaPorta: porta ? getComputedStyle(porta).cursor : null,
-      raiosDistintos: [...raios],
-      enchimentosDistintos: [...enchimentos],
+      areas: areas.length,
+      portas: portas.length,
+      foraDePorta: areas.filter((a) => !a.closest('a')).length,
+      semNome: nomes.filter((n) => !n).length,
+      forasteiros: destinos.filter((h) => !padrao.test(String(h))).length,
+      primeiro: destinos[0] ?? null,
+      primeiroNome: nomes[0] ?? null,
+      cursorDaPorta: portas[0] ? getComputedStyle(portas[0]).cursor : null,
     };
-  }, destino);
+  }, familiaDoDistrito);
   conta(
-    /* A COBERTURA NÃO SE FIXA (bloco dos 308, P2). A célula pedia «um com página
-       e 307 sem», que era a cobertura da tarde em que nasceu. O item A5 é uma
-       regra: um ponto com página é uma ligação com nome e cursor de ponteiro, um
-       ponto sem página não está dentro de ligação nenhuma, e a Emenda 10 fica
-       inteira — um só raio e um só enchimento para os 308. As contagens
-       imprimem-se; o que se julga é a regra. */
-    `A5 · um ponto com página é uma ligação com nome, e um sem página não é · 1280 ${edicao}`,
-    a5.total === 308 &&
-      a5.comPagina >= 1 &&
-      a5.dentroDeA === a5.comPagina &&
-      a5.semPaginaDentroDeA === 0 &&
-      /* O DESTINO É UMA PÁGINA DE CONCELHO DESTA EDIÇÃO, e não o de Évora
-         escrito à mão: qual é o primeiro ponto com página é cobertura. */
-      new RegExp(`^${edicao === 'pt' ? '/municipios/' : '/en/municipalities/'}[a-z0-9-]+$`).test(
-        String(a5.href),
-      ) &&
-      !!a5.titulo &&
-      a5.cursorDaPorta === 'pointer' &&
-      a5.raiosDistintos.length === 1 &&
-      a5.enchimentosDistintos.length === 1,
-    `${a5.total} pontos · ${a5.comPagina} com página, ${a5.dentroDeA} dentro de <a>, o primeiro → «${a5.href}» · title «${a5.titulo}» · cursor ${a5.cursorDaPorta} · ${a5.total - a5.comPagina} sem página dentro de <a>: ${a5.semPaginaDentroDeA} · raio(s) ${a5.raiosDistintos.join('/')} · enchimento(s) ${a5.enchimentosDistintos.join('/')}`,
+    `A5 · uma unidade com página é uma porta com nome, e nenhuma área fica fora de uma porta · 1280 ${edicao}`,
+    a5.areas > 0 &&
+      a5.portas === a5.areas &&
+      a5.foraDePorta === 0 &&
+      a5.semNome === 0 &&
+      a5.forasteiros === 0 &&
+      a5.cursorDaPorta === 'pointer',
+    `${a5.areas} áreas · ${a5.portas} portas, ${a5.foraDePorta} área(s) fora de uma porta · ${a5.semNome} sem nome acessível · ${a5.forasteiros} destino(s) fora de «${familiaDoDistrito}» · a primeira: «${a5.primeiroNome}» → ${a5.primeiro} · cursor ${a5.cursorDaPorta}`,
   );
 
-  /* O teclado chega lá. A ligação é o único `<a>` dentro do `svg`, e o Tab
-     percorre-a como percorre qualquer outra: o que isto mede é que ela está na
-     ordem do documento e recebe foco. */
+  /* O teclado chega lá, e é a outra metade do item A5.
+   *
+   * MUDA O OBJECTO, PELA MESMA RAZÃO: era `.mun-porta`, o ponto do concelho, e é
+   * `a.uni-porta`, a área da unidade. O que a célula mede é o que sempre mediu —
+   * que a porta do mapa está na ORDEM DO DOCUMENTO e recebe foco, sem que ninguém
+   * tenha de a ir procurar —, e mede-o nas duas edições.
+   *
+   * NÃO É A M6c DE `mapa-distritos.mjs`, e a diferença é dita para que ninguém a
+   * apague por parecer repetida: aquela chama `focus()` numa área e carrega em
+   * Enter, e o que prova é que a porta abre a página certa; esta conta em que
+   * posição da fila de alvos focáveis a porta está, que é o que diz se o Tab lá
+   * chega. Uma porta que abre e que ninguém alcança pelo teclado passa a primeira
+   * e falha a segunda.
+   */
   const tab = await p.evaluate(() => {
     const foco = [...document.querySelectorAll('a[href], button, input, summary')].filter(
       (e) => !e.closest('[hidden]'),
     );
-    const porta = document.querySelector('.mun-porta');
+    const porta = document.querySelector('[data-areas] a.uni-porta');
     return { indice: porta ? foco.indexOf(porta) : -1, total: foco.length };
   });
   /* A porta pode não existir — é isso que um estrago plantado faz —, e a régua
      tem de dizer o que mediu em vez de rebentar. */
   const focado = await p.evaluate(() => {
-    const porta = document.querySelector('.mun-porta');
+    const porta = document.querySelector('[data-areas] a.uni-porta');
     if (!porta) return { classe: null, href: null, existe: false };
     porta.focus();
     return {
@@ -608,52 +722,59 @@ for (const edicao of ['pt', 'en']) {
     };
   });
   conta(
-    `A5 · o leitor de teclado chega ao ponto com página · 1280 ${edicao}`,
+    `A5 · o leitor de teclado chega à porta do mapa · 1280 ${edicao}`,
     tab.indice >= 0 &&
-      focado.classe === 'mun-porta' &&
-      /* O DESTINO É O DA PORTA QUE O FOCO APANHOU, e não o de Évora escrito à
-         mão: a primeira porta do mapa é a do primeiro ponto com página na ordem
-         da Carta, e qual é ele é cobertura. O que se mede é que ela é uma porta
-         de concelho da edição certa. */
-      new RegExp(`^${edicao === 'pt' ? '/municipios/' : '/en/municipalities/'}[a-z0-9-]+$`).test(
-        String(focado.href),
-      ),
+      focado.classe === 'uni-porta' &&
+      /* O DESTINO É O DA PORTA QUE O FOCO APANHOU, e não um slug escrito à mão: a
+         primeira porta do mapa é a da primeira unidade na ordem do artefacto, e
+         qual é ela é do desenho. O que se mede é que ela é uma porta de unidade
+         da edição certa. */
+      new RegExp(`^${familiaDoDistrito}[a-z0-9-]+$`).test(String(focado.href)),
     `posição ${tab.indice} de ${tab.total} alvos focáveis · foco em «${focado.classe}» → ${focado.href}`,
   );
 
-  /* -------------------------------------------------- A6 · o nome ao passar o rato */
-  const sitio = await p.evaluate(() => {
-    const c = document.querySelector('circle.mun[data-pagina="sim"]');
-    if (!c) return null;
-    const r = c.getBoundingClientRect();
-    return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
-  });
-  if (sitio) {
-    await p.mouse.move(sitio.x - 40, sitio.y - 40);
-    await p.mouse.move(sitio.x, sitio.y);
-    await p.waitForTimeout(200);
-  }
+  /* ------------------------------- A6 · RETIRADA (Emenda 20a) · o nome ao passar o rato
+   *
+   * A célula media o achado C3, que era um separador em falta: a leitura do mapa
+   * escrevia «Évoradistrito de Évora» num `[data-readout]` que se preenchia ao
+   * passar o rato por um ponto, e a célula exigia lá as três partes — o nome, o
+   * separador da casa e a etiqueta da Carta.
+   *
+   * O OBJECTO SAIU INTEIRO, e não mudou de sítio: com os 308 pontos saiu o
+   * `[data-readout]` (Emenda 20a), e a etiqueta composta saiu com ele — a cadeia
+   * `inicio.cabeca.distritoDe` não se rende em superfície nenhuma do sítio, e a
+   * forma «nome · distrito de X» não existe em página nenhuma. O cartão
+   * localizador de `/municipios/evora`, que é onde os 308 pontos foram viver
+   * (Emenda 20d), é um `role="img"` sem portas e sem leitura: os pontos guardam o
+   * nome e o distrito em `data-m` e `data-d`, e nada os compõe.
+   *
+   * NÃO HÁ SEPARADOR PARA PERDER ONDE NÃO HÁ COMPOSIÇÃO, e é isso que a célula
+   * passa a medir, em vez de medir um objecto que não existe: o nome de uma área
+   * do mapa é UMA cadeia transcrita da Carta, e as 29 têm-na. No dia em que uma
+   * leitura composta voltar ao mapa, volta com ela uma célula da forma da antiga
+   * — e volta para a superfície onde essa leitura viver.
+   */
   const a6 = await p.evaluate(() => {
-    const l = document.querySelector('[data-readout]');
-    const visivel = [...l.children].filter((c) => !c.hidden);
+    const titulos = [...document.querySelectorAll('[data-areas] a.uni-porta title')].map((t) =>
+      t.textContent.replace(/\s+/g, ' ').trim(),
+    );
     return {
-      lido: visivel.map((c) => c.textContent).join('').replace(/\s+/g, ' ').trim(),
-      partes: visivel.map((c) => c.className),
+      readouts: document.querySelectorAll('[data-readout]').length,
+      pontos: document.querySelectorAll('circle.mun').length,
+      titulos: titulos.length,
+      vazios: titulos.filter((t) => !t).length,
+      compostos: titulos.filter((t) => t.includes('·')).length,
+      exemplo: titulos[0] ?? null,
     };
   });
-  /* O ACHADO C3 ERA UM SEPARADOR EM FALTA («Évoradistrito de Évora»), e é isso
-     que esta célula mede: o nome, o separador da casa e a etiqueta da Carta, com
-     as três partes rendidas. QUAL o concelho é cobertura — o rato foi ao
-     primeiro ponto com página —, e por isso a célula compara a FORMA e não a
-     cadeia: nome · «distrito de …» ou o nome de uma ilha, na língua da edição. */
-  const formaA6 =
-    edicao === 'pt'
-      ? /^.+ · (distrito de .+|Ilha .+)$/
-      : /^.+ · (district of .+|Ilha .+)$/;
   conta(
-    `A6 · o nome e o distrito com o separador da casa · 1280 ${edicao}`,
-    formaA6.test(a6.lido) && a6.partes.length >= 3,
-    `lê «${a6.lido}» · partes: ${a6.partes.join(' + ')}`,
+    `A6 · RETIRADA (Emenda 20a) · o nome de uma área é uma cadeia da Carta, sem composição · 1280 ${edicao}`,
+    a6.readouts === 0 &&
+      a6.pontos === 0 &&
+      a6.titulos > 0 &&
+      a6.vazios === 0 &&
+      a6.compostos === 0,
+    `${a6.readouts} leituras e ${a6.pontos} pontos na primeira página · ${a6.titulos} nomes de área, ${a6.vazios} vazios, ${a6.compostos} compostos · o primeiro: «${a6.exemplo}»`,
   );
 
   /* ------------------------------------------------------------- C1 · o mapa não some */
@@ -712,16 +833,27 @@ for (const edicao of ['pt', 'en']) {
   /* ---------------------------------------------------------------- A8 · o vazio a 1280 */
   const limites = await p.evaluate(() => {
     const m = document.querySelector('main').getBoundingClientRect();
-    return { topo: Math.round(m.top + scrollY), fundo: Math.round(m.bottom + scrollY) };
+    /* A caixa do desenho do mapa, quando a página tem um: ver a nota de
+       `bandas()`. Numa página sem mapa vem `null` e nada é dispensado. */
+    const f = document.querySelector('[data-mapa-raiz]');
+    const b = f ? f.getBoundingClientRect() : null;
+    return {
+      topo: Math.round(m.top + scrollY),
+      fundo: Math.round(m.bottom + scrollY),
+      mapaTopo: b ? Math.round(b.top + scrollY) : null,
+      mapaFundo: b ? Math.round(b.bottom + scrollY) : null,
+    };
   });
   const buf = await p.screenshot({ fullPage: true, type: 'png' });
   const branco = await ctx.newPage();
   await branco.goto('about:blank');
   const b1280 = await bandas(branco, buf, limites);
-  const noMain = b1280.bandas.filter((x) => x.noMain);
+  /* A mesma dispensa do desenho do mapa que a 390, e pela mesma razão: a regra é
+     uma só, e não uma excepção de telemóvel. */
+  const noMain = b1280.bandas.filter((x) => x.noMain && !x.noMapa);
   const fora = b1280.bandas.filter((x) => !x.noMain && x.alt > 48);
   conta(
-    `A8 · nenhuma banda de cor uniforme acima de 48px dentro do <main> · 1280 ${edicao}`,
+    `A8 · nenhuma banda de cor uniforme acima de 48px dentro do <main>, fora do desenho do mapa · 1280 ${edicao}`,
     !b1280.telaVazia && noMain.length > 0 && noMain[0].alt <= 48,
     `maior banda no main: ${noMain[0]?.alt ?? 0}px em y=${noMain[0]?.y ?? '—'} (era 125px em y=1043) · fora do main: ${
       fora.map((x) => `${x.alt}px@${x.y}`).join(', ') || 'nenhuma'
@@ -735,7 +867,16 @@ for (const edicao of ['pt', 'en']) {
   await pe.evaluate(() => document.fonts.ready);
   const limitesE = await pe.evaluate(() => {
     const m = document.querySelector('main').getBoundingClientRect();
-    return { topo: Math.round(m.top + scrollY), fundo: Math.round(m.bottom + scrollY) };
+    /* A caixa do desenho do mapa, quando a página tem um: ver a nota de
+       `bandas()`. Numa página sem mapa vem `null` e nada é dispensado. */
+    const f = document.querySelector('[data-mapa-raiz]');
+    const b = f ? f.getBoundingClientRect() : null;
+    return {
+      topo: Math.round(m.top + scrollY),
+      fundo: Math.round(m.bottom + scrollY),
+      mapaTopo: b ? Math.round(b.top + scrollY) : null,
+      mapaFundo: b ? Math.round(b.bottom + scrollY) : null,
+    };
   });
   /* «Quatro valores cortados pela margem inferior depois de uma área vazia»: os
      quatro são os da PRIMEIRA fila do relance do concelho (a segunda fila fica
@@ -755,9 +896,9 @@ for (const edicao of ['pt', 'en']) {
   });
   const bufE = await pe.screenshot({ fullPage: true, type: 'png' });
   const bE = await bandas(branco, bufE, limitesE);
-  const noMainE = bE.bandas.filter((x) => x.noMain);
+  const noMainE = bE.bandas.filter((x) => x.noMain && !x.noMapa);
   conta(
-    `A8 · o mesmo no concelho, e os quatro valores dentro do primeiro ecrã · 1280 ${edicao}`,
+    `A8 · o mesmo no concelho, fora do desenho do cartão localizador, e os quatro valores dentro do primeiro ecrã · 1280 ${edicao}`,
     !bE.telaVazia &&
       noMainE.length > 0 &&
       noMainE[0].alt <= 48 &&
