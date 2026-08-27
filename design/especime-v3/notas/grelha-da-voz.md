@@ -251,17 +251,18 @@ saem; e nada de novo se escreve.*
 
 | medida | antes deste bloco | depois |
 | --- | --- | --- |
-| frases da casa distintas, nas rotas inventariadas | 435 | **395** |
+| frases varridas pelo tripwire (texto fora das origens declaradas) | não existia | **577** |
+| frases da casa distintas, contadas pela medida 8 | 435 | **395** |
 | ocorrências dessas frases | 21 228 | **21 160** |
 | rotas medidas | 1 278 | 1 278 |
 | linhas declaradas no inventário | 506 (504 textos distintos) | **453**, todas distintas |
 | autorreferência, em todas as rotas | 0 | 0 |
 | blocos por classificar | 0 | 0 |
-| marcadores da voz | não existiam | **52** |
+| marcadores da voz | não existiam | **62** |
 | exceções da voz | não existiam | **8** (1 de registo) |
 | passos na cadeia do `build` | 9 | **10** |
-| conferências do portão de HTML | as que havia | mais uma: as duas edições de cada peça de leitura, 24 peças |
-| avisos do portão («afirmação que nenhuma página cita») | 19 | **20** |
+| conferências do portão de HTML | as que havia | mais duas: as duas edições de cada peça de leitura (24 peças) e os factos declarados por verificar (2 campos) |
+| avisos do portão («afirmação que nenhuma página cita») | 19 | **19** (subiu a 20 com o G6 e voltou com o I75) |
 | páginas construídas | 6 390 | 6 390 |
 
 **A afirmação que perdeu a página que a citava** é
@@ -269,13 +270,115 @@ saem; e nada de novo se escreve.*
 pensões, e essa ressalva era proveniência. A linha continua no livro-razão, com a
 sua página e o seu selo, e o índice continua a listá-la.
 
-## 8 · O que fica aberto
+## 8 · A leitura de fora, e o que ela mudou (I77, I75, V1 a V5 · 27.08.2026)
+
+### O buraco que a leitura mediu
+
+**O tripwire não via uma frase que partilhasse o bloco com um valor.** A medida 8
+deixa cair um bloco inteiro que contenha uma origem declarada, e para contar
+frases da casa está certa; para procurar uma casa que fala de si, não. Três das
+quatro frases que a leitura apanhou na página de Évora viviam ao lado de um
+`<Claim>`, e por isso nunca chegaram ao tripwire. A varredura da medida 9 passa a
+ser o texto que fica FORA das origens declaradas e fora dos comandos: de **395
+para 577 frases distintas**, 16 847 ocorrências, nas mesmas 1 278 rotas.
+
+### V1 · as quatro frases de Évora, e dez marcadores novos
+
+| frase | o que ficou |
+| --- | --- |
+| «A página mostra as duas: escolher uma em silêncio esconderia que a diferença existe.» | saiu; fica o facto, «€ na reexpressão de um relatório posterior, para a mesma data de início de mandato.» |
+| «, nos quatro anos que esta página publica.» | saiu; os dois anos já estão na frase, ditos pelos dois `{ref}` que ela leva |
+| «· a diferença é publicada arredondada ao euro; os dois valores acima diferem em cêntimos.» | «· a Direção-Geral arredonda ao euro; os dois valores diferem em cêntimos.» |
+| «Fora do que foi lido: as capturas… começam no mandato seguinte.» e o rótulo nu «Fora do que foi lido.» | «As capturas da repartição de pelouros começam no mandato de 2021–2025.», nos dois mandatos. O «mandato seguinte» era o de 2017–2021, que também não tem pelouros lidos: o primeiro que os tem é o de 2021–2025 |
+
+Marcadores novos: `a página` · `the page` · `publicamos` · `selecionámos` ·
+`selecionamos` · `noss` · `este observatório` · `this observatory` ·
+`do que foi lido` · `what was read`. A lista fechada passa de 52 para 62.
+
+**Vermelho antes de verde, e o que não ficou vermelho.** Plantadas as oito
+cadeias originais no `dist/`, **cada uma num bloco que também leva um valor do
+livro-razão** (que é o buraco que se fechou), seis foram a vermelho e nomearam o
+marcador: `a página`, `the page`, `sta página`, `this page`, `do que foi lido`,
+`what was read`. **As duas da diferença arredondada não**, e diz-se: a sua classe
+é a página a descrever onde pôs as coisas («é publicada», «acima»), e o marcador
+que a apanharia seria `acima`/`abaixo`/`above`/`below`. **Medido antes de
+decidir: essas quatro raízes mordem 40 frases da superfície**, quase todas a
+posição de uma medida contra a sua referência («está acima do limiar», «pontos
+abaixo da média da UE-27»), que é conteúdo. Quarenta exceções para apanhar uma
+frase é a lista de marcadores a estar mal, e por isso não entram. Esta ficou para
+a leitura, que foi quem a apanhou.
+
+### V2 · a leitura do cabeçalho perde o verbo
+
+«Painel europeu reconferido a <data>» passa a «Painel europeu · <data>», em todas
+as páginas e no cartão de partilha; o estado de atraso passa a «Painel europeu em
+atraso · <data>». Nome e data ficam, o verbo da diligência sai. Nenhuma régua lê
+estas cadeias pelo texto: a matriz confere a chave da prova `painel_reconferido_em`
+e a sua porta, e continua verde.
+
+### V3 · cinco superfícies deixam de descrever o processo
+
+O calendário nomeia as fontes citadas; a lede da agenda diz o que está a ser
+medido em vez de quem o mede; a nota da pergunta diz que ela está registada em
+inglês em vez de nomear o registo do motor; o arquivo nomeia o que tem em vez do
+seu estado de migração; os dois estados vazios encolhem para a ausência em duas
+palavras. **A descrição do trabalho 04 fica**: é a frase de abertura do próprio
+documento, transcrita e conferida carácter a carácter, e vai para a segunda
+passagem de voz do motor (I69).
+
+**A lede da agenda foi apanhada pelo marcador `este observatório`, que é do V1.**
+Foi medido: com os marcadores do V1 e sem a correção do V3, a construção fecha nas
+duas edições dessa lede. É por isso que o V1 e o V3 entram no mesmo commit: um
+portão que fecha a construção não pode aterrar verde ao lado da frase que ele
+acabou de aprender a apanhar.
+
+### V4 · a dispensa por rota de `/estudos` desaparece
+
+Não passa a frase: **desaparece**. A frase que a pedia, «O arquivo do
+observatório…», mudou no V3, e a rota deixou de precisar de dispensa nenhuma. As
+dispensas por rota ficam em uma, a de `/correcoes`, que é a Emenda 17. E a razão
+do marcador `independ` deixou de dizer que «auditor independente» está nas
+exceções: esteve, e saiu com a frase no G6 (I78).
+
+### V5 · o que a leitura de fora chamou ruído, e não se mudou
+
+A leitura chama «demasiado ruidosos» `confer`, `garant`, `independ`, `método`,
+`prova`, `nós`/`we`/`us`, `o trabalho` e outros. **O que um marcador ruidoso faz
+é obrigar a escrever uma razão, e não apagar uma frase.** A medida está feita:
+**oito exceções para 577 frases distintas da superfície pública**, das quais uma é
+um registo sem marcador e duas são as linhas que esperam o diretor. Um marcador
+que hoje não morde em lado nenhum (como `independ`, depois do G6) custa zero e
+apanha a frase no dia em que ela voltar. Ficam todos.
+
+Ficam também, sem mudança e com a razão escrita: a dispensa de `/correcoes`
+(Emenda 17), as ledes e as contagens do livro-razão (à decisão do diretor), e «As
+regiões publicadas na régua da convergência.» como navegação, que é o que ela é,
+o nome de um destino.
+
+### I77 e I75
+
+**I77 · fechada.** O nome do presidente interino de 2013 leva o marcador
+`[a verificar]` ao lado, nas duas edições, com a porta da página do marcador.
+`quemPorVerificar` declara-o e o portão de HTML fecha a construção se o marcador
+não se render ou se abrir a porta da outra edição. Vermelho antes de verde nas
+duas metades.
+
+**I75 · fechada.** `factor-sustentabilidade-2026` volta à nota das medidas do
+trabalho das pensões, com o seu selo, como UMA frase com o facto por sujeito e
+com as palavras da ressalva que saiu. **A conta foi conferida antes de a frase
+ficar**: F = FS (1 − 0,005 M), com FS = 0,8237 e M = 12, dá 0,774278, uma redução
+de 22,57 %, e a linha publica 22,6 %. Os avisos do portão voltam de 20 para 19.
+Para o valor caber ali, a nota das medidas passou a ser uma lista de parágrafos e
+a render com selos: a prosa da casa continua a ser contada e varrida, e a frase
+que cita um valor é uma origem declarada, como qualquer outra.
+
+## 9 · O que fica aberto
 
 * **A leitura cruzada do diff deste bloco.** O registo diz `por ler`, e o portão
   imprime-o a cada construção. É trabalho do lugar de direção antes da fusão.
 * **As duas linhas à decisão do diretor**, com as três opções escritas em
   `PROTOCOLO-DAS-LEITURAS.md`.
-* **I74 a I78**, abertas neste bloco. A I74 mede o que sobra: **58 das 453
+* **I74 e I76**, abertas neste bloco e ainda abertas. A I75, a I77 e a I78 estão tratadas: as duas primeiras fechadas a 27.08, a I78 continua para o diretor. A I74 mede o que sobra: **58 das 453
   declarações do inventário não correspondem a nenhum bloco da construção**, e
   nada impede que uma frase corrigida volte em silêncio por continuar declarada.
   Este bloco tirou 79 dessas linhas, as que lhe diziam respeito, e não mexeu no

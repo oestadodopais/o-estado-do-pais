@@ -61,8 +61,14 @@ export const STRINGS = {
      * duas frases de moldura, e divergiriam à primeira alteração.
      */
     sinal: {
-      reconferido: 'Painel europeu reconferido a',
-      vencido: 'Verificação em atraso: o painel europeu não é reconferido contra a fonte desde',
+      /* A LEITURA FICA, O VERBO SAI (V2, decisão do lugar de direção, 27.08.2026).
+         Dizia «Painel europeu reconferido a <data>», em todas as páginas: o nome
+         da coisa e a data são o que o leitor precisa, e «reconferido» é a casa a
+         dizer que fez o seu trabalho. A Emenda 18 tira isso da página do leitor.
+         O estado de atraso continua a dizer-se, porque é o estado e não a
+         diligência. */
+      reconferido: 'Painel europeu ·',
+      vencido: 'Painel europeu em atraso ·',
       agenda: 'Agenda:',
       agendaEmCurso: 'em curso',
       agendaASeguir: 'a seguir',
@@ -215,7 +221,7 @@ export const STRINGS = {
     agenda: {
       metaTitle: 'Agenda · O Estado do País',
       metaDescription:
-        'O que este observatório está a medir, o que se segue, e o critério que pôs lá cada coisa. Com o calendário do que as fontes publicam a seguir.',
+        'O que está a ser medido, o que se segue, e o critério que pôs lá cada coisa. Com o calendário do que as fontes publicam a seguir.',
       eyebrow: 'Agenda',
       h1: 'O que se mede a seguir',
       /* A LEDE E A NOTA DE ORIGEM SAÍRAM (subetapa 4c, a regra da direção de
@@ -254,7 +260,7 @@ export const STRINGS = {
          textos é o registado. Tirá-la faria alguém tomar a edição portuguesa
          pelo registo, que é o teste da direção de 21.08.2026. */
       perguntaNota:
-        'O registo do motor escreve-se em inglês: o inglês é a forma registada, palavra por palavra, e o português acima é a edição portuguesa dessa mesma pergunta.',
+        'A pergunta está registada em inglês, palavra por palavra; o português é a edição portuguesa dessa mesma pergunta.',
       porqueK: 'Porquê',
       criteriosK: 'Critérios',
       quadroK: 'Quadro institucional',
@@ -302,7 +308,7 @@ export const STRINGS = {
       /* A segunda frase saiu (subetapa 4c): dizia o que cada acontecimento tem
          por baixo, e cada um tem-no com o seu rótulo à vista. A primeira fica,
          porque nomeia o que o calendário é. */
-      calendarioLede: 'O que as fontes que este sítio cita publicam a seguir.',
+      calendarioLede: 'O que as fontes citadas publicam a seguir.',
       /* O eixo do tempo do calendário (IDENTIDADE.md §11). As janelas a amarelo,
          porque são marcas de medição; os dias que uma fonte publica como marcas
          no eixo; e a legenda a levar as portas, porque uma âncora dentro de um
@@ -1072,14 +1078,22 @@ export const STRINGS = {
       contasDivergenciaDiferenca: 'Diferença',
 
       tempoIndice: 'índice',
-      contasDivergenciaArredondada: '· a diferença é publicada arredondada ao euro; os dois valores acima diferem em cêntimos.',
-      /* A frase da camada 2 do instrumento. Só os anos que a página publica:
-         dizer «todos os anos» seria dizer mais do que se mostra. */
+      /* O FACTO POR SUJEITO (V1, 27.08.2026). Dizia «· a diferença é publicada
+         arredondada ao euro; os dois valores acima diferem em cêntimos.»: «é
+         publicada» e «acima» são a página a descrever o que fez e onde pôs as
+         coisas. Quem arredonda é a Direção-Geral, e é isso que muda a leitura
+         dos cêntimos. */
+      contasDivergenciaArredondada: '· a Direção-Geral arredonda ao euro; os dois valores diferem em cêntimos.',
+      /* A frase da camada 2 do instrumento, e a sua cauda saiu (V1, 27.08.2026).
+         Dizia «, nos quatro anos que esta página publica.»: a página como sujeito,
+         e uma contagem por extenso que a `IDENTIDADE.md` §10 recusa. Os dois anos
+         que ela enquadrava já estão na frase, ditos pelos dois pedaços `{ref}`
+         que ela leva; repeti-los seria escrevê-los duas vezes. */
       tempoSerieA: 'O índice de dívida da Direção-Geral desceu de ',
       tempoSerieB: ' em ',
       tempoSerieC: ' para ',
       tempoSerieD: ' em ',
-      tempoSerieE: ', nos quatro anos que esta página publica.',
+      tempoSerieE: '.',
       tempoK: 'Quem administrou, e o que as contas registaram',
       /* A banda dos mandatos: o rótulo do desenho e o rótulo da legenda que
          leva as portas (IDENTIDADE.md §10). Os anos do eixo e os períodos são
@@ -1135,7 +1149,7 @@ export const STRINGS = {
       metaTitle: 'Estudos · O Estado do País',
       metaDescription: 'O arquivo de estudos publicados, com as suas edições em português e em inglês.',
       h1: 'Estudos',
-      lede: 'O arquivo do observatório: cada estudo publicado, com as suas edições, datas e estado de migração. O que ainda não vive aqui está ligado onde vive.',
+      lede: 'Cada estudo publicado, com as suas edições e datas. Os que estão alojados noutro sítio levam a ligação para lá.',
       aviso: 'Datas de publicação por confirmar.',
       /* AS TRÊS CHAVES DO RÓTULO DA DESCRIÇÃO SAÍRAM (bloco B, item B1;
          achado C9). `descricaoRotulo`, `descricaoDoDocumentoRotulo` e
@@ -1167,7 +1181,7 @@ export const STRINGS = {
 
       /* Estudo com o documento já alojado aqui, mas com a página do
          observatório ainda por escrever. É um estado a sério, e diz-se. */
-      migradoEstado: 'Documento alojado · página por escrever',
+      migradoEstado: 'Documento alojado',
 
       /* Trabalho com leitura do observatório escrita (src/data/leituras.mjs).
          É este o estado que levanta o noindex — ver DECISIONS §1.35. */
@@ -1240,7 +1254,7 @@ export const STRINGS = {
       temaNenhum: 'Sem tema atribuído',
       descricoesK: 'Descrições',
       descarregarK: 'Descarregar',
-      descarregarVazio: 'Sem ficheiros para descarregar.',
+      descarregarVazio: 'Sem ficheiros.',
     },
 
     erro404: {
@@ -1286,9 +1300,8 @@ export const STRINGS = {
     },
 
     sinal: {
-      reconferido: 'European panel re-checked on',
-      vencido:
-        'Verification overdue: the European panel has not been re-checked against the source since',
+      reconferido: 'European panel ·',
+      vencido: 'European panel overdue ·',
       agenda: 'Agenda:',
       agendaEmCurso: 'under way',
       agendaASeguir: 'next',
@@ -1362,7 +1375,7 @@ export const STRINGS = {
     agenda: {
       metaTitle: 'Agenda · O Estado do País',
       metaDescription:
-        'What this observatory is measuring, what comes next, and the criterion that put each thing there. With the calendar of what the sources publish next.',
+        'What is being measured, what comes next, and the criterion that put each thing there. With the calendar of what the sources publish next.',
       eyebrow: 'Agenda',
       h1: 'What gets measured next',
       estados: {
@@ -1381,7 +1394,7 @@ export const STRINGS = {
       },
       perguntaK: 'The question',
       perguntaNota:
-        'The engine’s record is written in English: the English is the registered form, word for word, and the Portuguese edition renders that same question.',
+        'The question is registered in English, word for word; the Portuguese is the Portuguese edition of that same question.',
       porqueK: 'Why',
       criteriosK: 'Criteria',
       quadroK: 'Institutional framework',
@@ -1417,7 +1430,7 @@ export const STRINGS = {
       historicoPara: 'moves to',
       historicoMantem: 'state unchanged:',
       calendarioH2: 'The source calendar',
-      calendarioLede: 'What the sources this site cites publish next.',
+      calendarioLede: 'What the cited sources publish next.',
       eixoK: 'The calendar, in time',
       eixoLegendaK: 'Open each event',
       datadosK: 'With a date the source publishes',
@@ -1874,12 +1887,12 @@ export const STRINGS = {
       contasDivergenciaDiferenca: 'Difference',
 
       tempoIndice: 'index',
-      contasDivergenciaArredondada: '· the difference is published rounded to the euro; the two figures above differ by cents.',
+      contasDivergenciaArredondada: '· the local-government directorate rounds to the euro; the two figures differ by cents.',
       tempoSerieA: 'The directorate-general’s debt index fell from ',
       tempoSerieB: ' in ',
       tempoSerieC: ' to ',
       tempoSerieD: ' in ',
-      tempoSerieE: ', across the four years this page publishes.',
+      tempoSerieE: '.',
       tempoK: 'Who governed, and what the accounts recorded',
       tempoBandaK: 'Terms, in time',
       tempoBandaLegendaK: 'Open each term',
@@ -1913,7 +1926,7 @@ export const STRINGS = {
       metaTitle: 'Studies · O Estado do País',
       metaDescription: 'The archive of published studies, with their Portuguese and English editions.',
       h1: 'Studies',
-      lede: 'The observatory’s archive: every published study, with its editions, dates and migration state. What does not live here yet is linked where it lives.',
+      lede: 'Every published study, with its editions and dates. Those hosted elsewhere carry the link to it.',
       aviso: 'Publication dates not yet confirmed.',
       dataLabel: 'Published',
       lingua: 'Language',
@@ -1925,7 +1938,7 @@ export const STRINGS = {
       stubForaV: 'The link leaves this domain.',
       stubForaLink: 'Open the study',
 
-      migradoEstado: 'Document hosted · page not yet written',
+      migradoEstado: 'Document hosted',
 
       leituraRelanceK: 'At a glance',
       leituraBreveK: 'Brief reading',
@@ -1959,7 +1972,7 @@ export const STRINGS = {
       temaNenhum: 'No subject assigned',
       descricoesK: 'Descriptions',
       descarregarK: 'Downloads',
-      descarregarVazio: 'No files to download.',
+      descarregarVazio: 'No files.',
     },
 
     erro404: {

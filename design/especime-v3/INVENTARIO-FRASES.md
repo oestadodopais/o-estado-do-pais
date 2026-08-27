@@ -320,8 +320,6 @@ quem escreveu a página.*
 | conteudo | Executivo instalado | até 2026-08-26 |
 | conteudo | Expenditure paid | até 2026-08-26 |
 | conteudo | Fifteen years of municipal government in Évora, across five terms. | até 2026-08-26 |
-| conteudo | Fora do que foi lido. | até 2026-08-26 |
-| conteudo | Fora do que foi lido: as capturas que sustentam a repartição de pelouros começam no mandato seguinte. | até 2026-08-26 |
 | navegacao | Fundo | até 2026-08-26 |
 | conteudo | Herdou | até 2026-08-26 |
 | conteudo | In office. | até 2026-08-26 |
@@ -340,8 +338,6 @@ quem escreveu a página.*
 | conteudo | O traço fino é a dívida total que o regulador publica para o concelho; a barra é a distância até ao limite legal do mesmo ano, que é o fio da direita. O índice mede uma contra o outro numa escala em que o teto é o valor permitido. | até 2026-08-26 |
 | conteudo | Orçamento corrigido | até 2026-08-26 |
 | conteudo | Os trabalhos sobre este concelho | até 2026-08-26 |
-| conteudo | Outside what was read. | até 2026-08-26 |
-| conteudo | Outside what was read: the captures behind the portfolio split begin with the next term. | até 2026-08-26 |
 | conteudo | Pelouros | até 2026-08-26 |
 | conteudo | Poder de compra per capita, publicado pelo INE para todos os concelhos. | até 2026-08-26 |
 | conteudo | Portfolios | até 2026-08-26 |
@@ -473,27 +469,21 @@ página» é o rótulo do sumário, e é navegação: leva a outro sítio da pá
 | conteudo | None to date. | até 2026-08-26 |
 | conteudo | O calendário das fontes | até 2026-08-26 |
 | conteudo | O calendário, no tempo | até 2026-08-26 |
-| conteudo | O que as fontes que este sítio cita publicam a seguir. | até 2026-08-26 |
-| conteudo | O que este observatório está a medir, o que se segue, e o critério que pôs lá cada coisa. Com o calendário do que as fontes publicam a seguir. | até 2026-08-26 |
 | conteudo | O que está em cada estado | até 2026-08-26 |
 | conteudo | O que mudou | até 2026-08-26 |
 | conteudo | O que se mede a seguir | até 2026-08-26 |
-| conteudo | O registo do motor escreve-se em inglês: o inglês é a forma registada, palavra por palavra, e o português acima é a edição portuguesa dessa mesma pergunta. | até 2026-08-26 |
 | navegacao | On this page | até 2026-08-26 |
 | conteudo | Porquê | até 2026-08-26 |
 | conteudo | Retirado | até 2026-08-26 |
 | conteudo | Sem critério. | até 2026-08-26 |
 | conteudo | Sem data, porque a fonte não publica nenhuma | até 2026-08-26 |
 | conteudo | The calendar, in time | até 2026-08-26 |
-| conteudo | The engine’s record is written in English: the English is the registered form, word for word, and the Portuguese edition renders that same question. | até 2026-08-26 |
 | conteudo | The question | até 2026-08-26 |
 | conteudo | The source calendar | até 2026-08-26 |
 | conteudo | Under way | até 2026-08-26 |
 | conteudo | What changed | até 2026-08-26 |
 | conteudo | What gets measured next | até 2026-08-26 |
 | conteudo | What is in each state | até 2026-08-26 |
-| conteudo | What the sources this site cites publish next. | até 2026-08-26 |
-| conteudo | What this observatory is measuring, what comes next, and the criterion that put each thing there. With the calendar of what the sources publish next. | até 2026-08-26 |
 | conteudo | Why | até 2026-08-26 |
 | conteudo | With a date the source publishes | até 2026-08-26 |
 | conteudo | With no date, because the source publishes none | até 2026-08-26 |
@@ -544,8 +534,6 @@ e por isso conteúdo.*
 | conteudo | Descrição: tradução da casa da frase de abertura do documento | até 2026-08-26 |
 | conteudo | designations, over three people, in the next executive | até 2026-08-26 |
 | conteudo | designações, por três pessoas, no executivo seguinte | até 2026-08-26 |
-| conteudo | Document hosted · page not yet written | até 2026-08-26 |
-| conteudo | Documento alojado · página por escrever | até 2026-08-26 |
 | conteudo | Economia, sociedade e estratégia no Alentejo e no Algarve. | até 2026-08-26 |
 | conteudo | Economic assessment of Portugal’s regions. | até 2026-08-26 |
 | conteudo | Economy, society and strategy in the Alentejo and the Algarve. | até 2026-08-26 |
@@ -562,11 +550,9 @@ e por isso conteúdo.*
 | conteudo | Estudos | até 2026-08-26 |
 | conteudo | Financiamento público em Portugal. | até 2026-08-26 |
 | conteudo | Long series on the country’s evolution. | até 2026-08-26 |
-| conteudo | No files to download. | até 2026-08-26 |
 | conteudo | No subject assigned | até 2026-08-26 |
 | conteudo | Non-revenue water in Portugal’s public supply systems. | até 2026-08-26 |
 | conteudo | O arquivo de estudos publicados, com as suas edições em português e em inglês. | até 2026-08-26 |
-| conteudo | O arquivo do observatório: cada estudo publicado, com as suas edições, datas e estado de migração. O que ainda não vive aqui está ligado onde vive. | até 2026-08-26 |
 | conteudo | PT [a verificar] | até 2026-08-26 |
 | conteudo | PT Avaliação económica das regiões de Portugal. | até 2026-08-26 |
 | conteudo | PT Economia, investidores e portas abertas no município de Évora. | até 2026-08-26 |
@@ -579,14 +565,12 @@ e por isso conteúdo.*
 | conteudo | Public funding in Portugal. | até 2026-08-26 |
 | conteudo | Publication dates not yet confirmed. | até 2026-08-26 |
 | conteudo | Quem teve cada pelouro da Câmara Municipal de Évora ao longo de cinco mandatos, quanto gastaram as contas do próprio município nas áreas que esses pelouros cobrem, e o que os relatórios dizem que essas áreas fizeram. | até 2026-08-26 |
-| conteudo | Sem ficheiros para descarregar. | até 2026-08-26 |
 | conteudo | Sem tema atribuído | até 2026-08-26 |
 | conteudo | Studies | até 2026-08-26 |
 | conteudo | Séries longas sobre a evolução do país. | até 2026-08-26 |
 | conteudo | The accounts of the second-to-last year were rejected in a vote and were never certified. | até 2026-08-26 |
 | conteudo | The archive of published studies, with their Portuguese and English editions. | até 2026-08-26 |
 | navegacao | The link leaves this domain. | até 2026-08-26 |
-| conteudo | The observatory’s archive: every published study, with its editions, dates and migration state. What does not live here yet is linked where it lives. | até 2026-08-26 |
 | conteudo | Uma leitura transversal de um município português: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado, recolhidos em direto a 2026-08-04, e o registo do plano de recuperação relido a 2026-08-20. | até 2026-08-26 |
 | conteudo | Água não faturada nos sistemas de abastecimento em Portugal. | até 2026-08-26 |
 | conteudo | € actually paid | até 2026-08-26 |
@@ -949,3 +933,43 @@ limites. Passa a dizer o facto.*
 | --- | --- | --- |
 | conteudo | Não estabelecido: o presidente desse mandato, e todos os outros membros dele, não foram identificados. | grelha-da-voz |
 | conteudo | Not established: the president of that mandate, and every other member of it, were not identified. | grelha-da-voz |
+
+## A leitura de fora do bloco · V1 a V4, 27.08.2026
+
+*A leitura cruzada deste bloco (Codex, 27.08) apanhou o que o tripwire não via e
+o que ele ainda não tinha marcador para ver. Três coisas mudaram.*
+
+*O TRIPWIRE PASSOU A VARRER O TEXTO FORA DAS ORIGENS DECLARADAS.* A medida 8
+deixa cair um bloco inteiro que contenha um valor do livro-razão, e está certa:
+o que ela conta são frases da casa. Mas três das quatro frases que a leitura
+apanhou na página de Évora partilhavam o bloco com um valor, e por isso nunca
+chegaram ao tripwire. A varredura da medida 9 passa a ser a do texto que fica
+fora das origens declaradas e fora dos comandos: de 395 para 579 frases
+distintas.
+
+*A LEITURA DO CABEÇALHO PERDEU O VERBO* (V2): «Painel europeu reconferido a
+<data>» passa a «Painel europeu · <data>», em todas as páginas e no cartão de
+partilha. Nomes e datas ficam; o verbo da diligência sai. Nenhuma das duas
+cadeias entrava nesta tabela, porque a leitura do cabeçalho vive num bloco com a
+data marcada.
+
+*E CINCO SUPERFÍCIES DEIXARAM DE DESCREVER O PROCESSO* (V3): o calendário nomeia
+as fontes citadas, a lede da agenda diz o que está a ser medido em vez de quem o
+mede, a nota da pergunta diz que ela está registada em inglês em vez de nomear o
+registo do motor, o arquivo nomeia o que tem em vez do seu estado de migração, e
+os dois estados vazios encolhem para a ausência em duas palavras.
+
+| classe | texto | bloco |
+| --- | --- | --- |
+| conteudo | A pergunta está registada em inglês, palavra por palavra; o português é a edição portuguesa dessa mesma pergunta. | grelha-da-voz |
+| conteudo | The question is registered in English, word for word; the Portuguese is the Portuguese edition of that same question. | grelha-da-voz |
+| conteudo | O que está a ser medido, o que se segue, e o critério que pôs lá cada coisa. Com o calendário do que as fontes publicam a seguir. | grelha-da-voz |
+| conteudo | What is being measured, what comes next, and the criterion that put each thing there. With the calendar of what the sources publish next. | grelha-da-voz |
+| conteudo | O que as fontes citadas publicam a seguir. | grelha-da-voz |
+| conteudo | What the cited sources publish next. | grelha-da-voz |
+| conteudo | Cada estudo publicado, com as suas edições e datas. Os que estão alojados noutro sítio levam a ligação para lá. | grelha-da-voz |
+| conteudo | Every published study, with its editions and dates. Those hosted elsewhere carry the link to it. | grelha-da-voz |
+| conteudo | Documento alojado | grelha-da-voz |
+| conteudo | Document hosted | grelha-da-voz |
+| conteudo | Sem ficheiros. | grelha-da-voz |
+| conteudo | No files. | grelha-da-voz |

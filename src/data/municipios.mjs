@@ -365,8 +365,13 @@ const EVORA = {
             {
               claim: 'evora-divida-inicio-mandato-reexpressa',
               texto: {
-                pt: '€ na reexpressão de um relatório posterior, para a mesma data de início de mandato. A página mostra as duas: escolher uma em silêncio esconderia que a diferença existe.',
-                en: '€ in a later report’s restatement, for the same start-of-term date. The page shows both: choosing one silently would hide that the difference exists.',
+                /* A JUSTIFICAÇÃO DA ESCOLHA SAIU (V1, 27.08.2026). Dizia «A página
+                   mostra as duas: escolher uma em silêncio esconderia que a
+                   diferença existe.»: a página como sujeito, a explicar porque é
+                   que fez o que fez. O facto fica, e é ele que muda a leitura dos
+                   dois valores: um relatório posterior reexpressa a mesma data. */
+                pt: '€ na reexpressão de um relatório posterior, para a mesma data de início de mandato.',
+                en: '€ in a later report’s restatement, for the same start-of-term date.',
               },
             },
           ],
@@ -383,8 +388,8 @@ const EVORA = {
              O facto é que a repartição não foi estabelecida, e é ele que muda a
              leitura do campo vazio ao lado. */
           pelourosNota: {
-            pt: 'Não estabelecido: o presidente desse mandato, e todos os outros membros dele, não foram identificados.',
-            en: 'Not established: the president of that mandate, and every other member of it, were not identified.',
+            pt: ['Não estabelecido: o presidente desse mandato, e todos os outros membros dele, não foram identificados.'],
+            en: ['Not established: the president of that mandate, and every other member of it, were not identified.'],
           },
         },
         {
@@ -425,9 +430,15 @@ const EVORA = {
           ],
           reguladorNota: null,
           pelouros: null,
+          /* O FACTO, COM O MANDATO EM QUE AS CAPTURAS COMEÇAM (V1, 27.08.2026).
+             Dizia «Fora do que foi lido: as capturas que sustentam a repartição de
+             pelouros começam no mandato seguinte.»: «fora do que foi lido» é o
+             alcance da leitura da casa, e «o mandato seguinte» era o de 2017–2021,
+             que também não tem pelouros lidos. O primeiro mandato com repartição
+             de pelouros nos dados é o de 2021–2025, e é esse que a frase nomeia. */
           pelourosNota: {
-            pt: 'Fora do que foi lido: as capturas que sustentam a repartição de pelouros começam no mandato seguinte.',
-            en: 'Outside what was read: the captures behind the portfolio split begin with the next term.',
+            pt: ['As capturas da repartição de pelouros começam no mandato de ', { ref: '2021–2025' }, '.'],
+            en: ['The captures behind the portfolio split begin with the ', { ref: '2021–2025' }, ' term.'],
           },
         },
         {
@@ -456,9 +467,13 @@ const EVORA = {
           ],
           reguladorNota: null,
           pelouros: null,
+          /* O RÓTULO NU SAIU (V1, 27.08.2026). «Fora do que foi lido.» diz o
+             alcance da leitura da casa e mais nada. Fica o mesmo facto do mandato
+             anterior, que é o que explica o campo vazio: as capturas começam
+             depois deste mandato. */
           pelourosNota: {
-            pt: 'Fora do que foi lido.',
-            en: 'Outside what was read.',
+            pt: ['As capturas da repartição de pelouros começam no mandato de ', { ref: '2021–2025' }, '.'],
+            en: ['The captures behind the portfolio split begin with the ', { ref: '2021–2025' }, ' term.'],
           },
         },
         {

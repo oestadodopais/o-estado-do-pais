@@ -792,3 +792,30 @@ livro-razão com um número é conteúdo.
 As palavras são as da ressalva que saiu, e mais nenhumas: saiu a metade da
 diligência («A aritmética foi reproduzida antes de ser citada») e o nome das duas
 figuras do relatório, que é proveniência e vive na linha.
+
+## V1 a V3 · a leitura de fora do bloco, 27.08.2026
+
+**Nenhuma chave nova. Catorze cadeias mudam, nas duas edições.**
+
+| item | onde | pt | en |
+|---|---|---|---|
+| V1 | `deixou` do mandato de 2009–2013 | € na reexpressão de um relatório posterior, para a mesma data de início de mandato. | € in a later report’s restatement, for the same start-of-term date. |
+| V1 | `municipio.tempoSerieE` | . | . |
+| V1 | `municipio.contasDivergenciaArredondada` | · a Direção-Geral arredonda ao euro; os dois valores diferem em cêntimos. | · the local-government directorate rounds to the euro; the two figures differ by cents. |
+| V1 | `pelourosNota` dos mandatos de 2013–2017 e 2017–2021 | As capturas da repartição de pelouros começam no mandato de 2021–2025. | The captures behind the portfolio split begin with the 2021–2025 term. |
+| V2 | `sinal.reconferido` | Painel europeu · | European panel · |
+| V2 | `sinal.vencido` | Painel europeu em atraso · | European panel overdue · |
+| V3 | `agenda.calendarioLede` | O que as fontes citadas publicam a seguir. | What the cited sources publish next. |
+| V3 | a lede da agenda | O que está a ser medido, o que se segue, e o critério que pôs lá cada coisa. Com o calendário do que as fontes publicam a seguir. | What is being measured, what comes next, and the criterion that put each thing there. With the calendar of what the sources publish next. |
+| V3 | a nota da pergunta | A pergunta está registada em inglês, palavra por palavra; o português é a edição portuguesa dessa mesma pergunta. | The question is registered in English, word for word; the Portuguese is the Portuguese edition of that same question. |
+| V3 | `estudos.lede` | Cada estudo publicado, com as suas edições e datas. Os que estão alojados noutro sítio levam a ligação para lá. | Every published study, with its editions and dates. Those hosted elsewhere carry the link to it. |
+| V3 | `estudos.migradoEstado` | Documento alojado | Document hosted |
+| V3 | `estudos.descarregarVazio` | Sem ficheiros. | No files. |
+
+**O que ficou, e porquê.** A descrição do trabalho 04 («…recolhidos em direto a
+2026-08-04, e o registo do plano de recuperação relido a 2026-08-20.») **fica**:
+é a frase de abertura do próprio documento, transcrita, marcada `data-verbatim` e
+conferida carácter a carácter contra `src/data/verbatim.mjs`. É o documento a
+falar, não a casa, e vai para a segunda passagem de voz do motor (ISSUES I69). Os
+rótulos «tradução da casa» e «reformulação do título» já não se rendem desde o
+item B1 de 25.08: o que resta deles são comentários no código.
