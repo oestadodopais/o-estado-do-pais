@@ -1,0 +1,26 @@
+{
+ "registado_em": "2026-08-27",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "INVENTARIO.diff",
+   "descricao": "an added row declaring a machinery tooltip («Contagem reconferida pelo motor a cada construção») as conteudo",
+   "sha256_antes": "b29162d658428434429e12efba22a665c9d84ad96e1fcb78e90e04fc75018580",
+   "sha256_depois": "e374e0468a8389750046fd362735562704b4a2daa786e101521e0a1cea9459ed"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "INVENTARIO.diff",
+   "descricao": "a retired sentence's row switched from retirada to viva (a sentinel disarmed)",
+   "sha256_antes": "e374e0468a8389750046fd362735562704b4a2daa786e101521e0a1cea9459ed",
+   "sha256_depois": "c46e5255386d2540445eec9d48ffe3bfe0aa08c858705d7819392b57262e0b0b"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "paginas/inicio.html",
+   "descricao": "Viana do Castelo removed from the list of unit names under the front-page map",
+   "sha256_antes": "a4cfc0a7eaeaf97917c0b7e0503deafd311b37c068288246a8f2293462694b55",
+   "sha256_depois": "75f53040c21dbdbcff31a330c56ac4af85dbf02efd0c52cc46310b97a30b44a4"
+  }
+ ]
+}

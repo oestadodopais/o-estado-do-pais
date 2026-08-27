@@ -30,7 +30,7 @@ leu **só o diff do inventário**. É essa a leitura que esta tabela regista.
 | voz-do-livro-razao | 10 | `design/especime-v3/critica/2026-08-27-codex-leitura-voz-livro.md` | Codex `gpt-5.6-sol`, 27.08.2026, sobre o diff do bloco, os marcadores e as duas páginas de índice do livro-razão, com duas plantas (2 de 2); a última passagem L1 a L5 saiu dela |
 | voz-dos-documentos | 2 | `design/especime-v3/critica/2026-08-27-codex-leitura-voz-documentos.md` | Codex `gpt-5.6-sol`, 27.08.2026, sobre os doze diffs da passagem, a disposição e três páginas de leitura construídas, com três plantas (2 de 3; a terceira mal empacotada) |
 | mapa-distritos | 16 | `design/especime-v3/critica/2026-08-27-codex-leitura-mapa-distritos.md` | Codex `gpt-5.6-sol`, 27.08.2026, sobre a primeira página, quatro páginas de distrito, os JSON do mapa e o diff do inventário, com quatro plantas (4 de 4) |
-| grelha-2 | 39 reclassificadas | **por ler** | o bloco «A grelha, segunda passagem», 27.08.2026: as 39 linhas que passaram a `retirada` com a razão de cada uma, mais as 18 que saíram do ficheiro. A leitura cruzada faz-se antes da fusão |
+| grelha-2 | 87 | `design/especime-v3/critica/2026-08-27-codex-leitura-grelha-2.md` | Codex `gpt-5.6-sol`, 27.08.2026, sobre o diff do inventário (estados, dicas), os marcadores e as primeiras páginas, com três plantas (2 de 3); X1 a X3 saíram dela |
 
 ## As duas colunas novas de 27.08.2026 (I74)
 
