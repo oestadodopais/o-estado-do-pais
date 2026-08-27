@@ -78,6 +78,7 @@
  */
 import Claim from '../Claim.astro';
 import Provenance from '../Provenance.astro';
+import FonteDaCarta from '../FonteDaCarta.astro';
 import { FRAMES, FIELD_W, FIELD_H } from '../../data/caop-centroids.mjs';
 import { getClaim } from '../../lib/ledger.mjs';
 import { routePath } from '../../lib/routes.mjs';
@@ -589,6 +590,7 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
       <Provenance id="municipios-portugal-caop-2025" lang={lang} />
     </p>
 
+
     {/* --------------------------------------------------------------------
         A PORTA DO CSV SAIU (Emenda 15; ISSUES I34, fechado)
         --------------------------------------------------------------------
@@ -603,6 +605,34 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
         (`npm run check:dados`).
         -------------------------------------------------------------------- */}
   </figcaption>
+  )}
+
+  {/* --------------------------------------------------------------------------
+      A MENÇÃO DA FONTE, POR BAIXO DO MAPA (Emenda 20e, 27.08.2026)
+      --------------------------------------------------------------------------
+      «A geometria é a da CAOP 2025 (DGT, CC BY 4.0, com a atribuição escrita)»,
+      e a atribuição é a única obrigação da licença. Até aqui a primeira página
+      dizia-a por dentro do selo, que abre a linha do livro-razão onde a DGT está
+      nomeada: a cadeia funcionava, mas a menção ficava a um clique do mapa mais
+      visto do sítio, e uma obrigação de licença não se cumpre por hiperligação.
+
+      FICA FORA DA LEGENDA, E É UMA MEDIÇÃO QUE O DECIDE. A legenda da Emenda 17
+      vive no canto que as ilhas deixam, encostada ao fundo do campo, e é uma
+      célula da matriz que confere que ela lá está («o mapa enche a coluna da
+      cabeça, e a legenda vai para o canto das ilhas»). Posta a menção DENTRO da
+      legenda, o bloco cresceu e empurrou a legenda para cima do continente: a
+      célula viu-a a começar em y=6799 do campo, quando o canto só começa em
+      y=6973. A menção passa a ser irmã da legenda, numa fila própria por baixo
+      do mapa, onde tem a largura da coluna inteira: a legenda não se move um
+      píxel e a menção lê-se sem se apertar.
+
+      É O MESMO BLOCO que a página de uma unidade rende, e o `check:mapa` confere
+      que as três cadeias do manifesto estão nas duas superfícies.
+      -------------------------------------------------------------------------- */}
+  {postura === 'inteiro' && (
+  <p class="mapa-fonte">
+    <FonteDaCarta />
+  </p>
   )}
 
   {/* ------------------------------------------------------------------------

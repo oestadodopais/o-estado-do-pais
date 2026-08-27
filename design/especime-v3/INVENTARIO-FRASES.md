@@ -1050,3 +1050,13 @@ isso também não tem cadeia.*
 | conteudo | district | mapa-distritos |
 | conteudo | ilha da Região Autónoma | mapa-distritos |
 | conteudo | island of the Autonomous Region | mapa-distritos |
+
+*Nota da Emenda 20e (27.08.2026), para que a ausência fique explicada: a menção
+da fonte da Carta que passou a viver ao pé dos dois mapas («Direção-Geral do
+Território · Carta Administrativa Oficial de Portugal (CAOP) 2025 · CC BY 4.0») e
+o rótulo do bloco que a leva na página de uma unidade («De onde vem o desenho» /
+«Where the drawing comes from») **não entram nesta tabela**. A menção leva
+`data-nonledger="fonte-da-carta"`, que é uma origem declarada, e o rótulo é irmão
+dela dentro do mesmo bloco: a régua deixa de fora todo o bloco que contenha uma
+origem declarada, e por isso não os recolhe. É a mesma disciplina, e o mesmo
+resultado, do «De onde vem a lista» de `/municipios`, que também não está aqui.*

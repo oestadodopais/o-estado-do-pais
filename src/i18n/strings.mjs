@@ -664,6 +664,11 @@ export const STRINGS = {
       tipoDistrito: 'distrito',
       tipoIlha: 'ilha da Região Autónoma',
       concelhosK: 'Os concelhos',
+      /* O rótulo do bloco da fonte, por baixo do mapa de uma unidade. Era o de
+         `/municipios` («De onde vem a lista»), e ali o objecto é a lista; aqui o
+         objecto é o desenho, e a Emenda 20e manda a menção da fonte para onde o
+         mapa está. */
+      fonteK: 'De onde vem o desenho',
       /* A contagem das 29, no índice, com a chave da prova ao lado. A contagem
          de cada unidade NÃO se rende (a razão está em `DistritoView.astro`), e
          por isso não há aqui uma cadeia para ela. */
@@ -1694,6 +1699,7 @@ export const STRINGS = {
       tipoDistrito: 'district',
       tipoIlha: 'island of the Autonomous Region',
       concelhosK: 'The municipalities',
+      fonteK: 'Where the drawing comes from',
       contaUnidades: ' districts and islands',
       mapaLabel: 'Map of the municipalities, one area per municipality.',
       legendaCarta: 'Carta Administrativa Oficial de Portugal · ',

@@ -76,6 +76,19 @@ contexts:
     why: >-
       Identificadores técnicos: códigos de cor, códigos de língua, versões,
       nomes de ficheiros.
+  - id: fonte-da-carta
+    why: >-
+      A menção da fonte do desenho do mapa: a entidade proprietária da
+      informação, o nome e a edição da Carta Administrativa Oficial de Portugal,
+      e a licença sob a qual a Direção-Geral do Território a publica. Traz
+      algarismos por duas razões, e as duas são identificação e não medição: a
+      edição da Carta faz parte do nome dela ("CAOP 2025"), e uma licença
+      identifica-se pela versão ("CC BY 4.0" e não "CC BY"). As três cadeias não
+      são escritas no gabarito: saem de `mapa/manifest.json`, que o motor
+      escreveu das constantes onde a frase da DGT foi transcrita da fonte, e o
+      `npm run check:mapa` confere que a menção está onde o mapa está. É a única
+      obrigação da licença da CAOP, e a Emenda 20e manda escrevê-la ao pé do
+      desenho.
   - id: licenca-do-conjunto
     why: >-
       O nome da licença sob a qual o conjunto de dados do livro-razão é
