@@ -11084,7 +11084,67 @@ e há cópia de salvaguarda de cada ficheiro editado no rascunho.
 
 **A colisão.** Às 19:20 o medidor, a trabalhar na mesma árvore que o construtor contra a instrução de não correr comandos git que mudassem alguma coisa, tomou as edições por commitar do construtor por efeito secundário de uma régua e reverteu doze ficheiros com `git checkout`; o construtor refez o trabalho a partir do seu relatório em cerca de vinte e cinco minutos e passou a cometer cada item assim que fica verde. A culpa é do lugar de direção, que pôs dois agentes numa árvore; a regra a partir daqui: quem mede trabalha numa cópia, nunca na árvore do construtor.
 
-**O custo.** Reconhecimento (Sonnet) ≈240k; verificação das fontes (Opus) ≈285k; P1 no motor (Opus) ≈494k; P2 no sítio (Opus) ≈787k, colisão incluída; M5 (Sonnet) ≈470k; Codex 218 571 mais 37 083; total ≈2,53M símbolos, mais o lugar de direção; a estimativa do plano era 2,5 a 3,5M. **O que fica:** I70 (as zonas densas), I71 (a pesquisa sem script), I72 (o desemprego das ilhas), I73 (a releitura periódica), as decisões G5 e o bloco da grelha da voz.
+**A fusão, e a correção que ela exigiu.** Fundido a 26.08.2026 à noite pela palavra do diretor («go, merge it»): `main` avançou em linha reta de `992a3c9` para `cfa288b` (26 commits) e foi empurrado; a Vercel construiu as 6 390 páginas em 5 min 41 s e **matou a construção no passo dos cartões** (saída 137, memória, aos 19 minutos de 10 212 PNG), o que o lugar de direção não tinha estabelecido antes de fundir: verificou os limites de ficheiros e de tempo da Vercel, e não a memória da máquina de construção. O ar continuou a servir a construção anterior. A correção (`cartoes-2026-08-27`, três commits, num worktree isolado enquanto o bloco da voz corria na árvore principal): as linhas de um estudo de dados levam o cartão do estudo e não um cartão cada (10 212 → 548 PNG, 224 → 12 MB, o passo de 104 s para 8 s; os 1 088 cartões anteriores iguais byte a byte; sem fuga de memória, medida de 500 em 500). `main` `bc91007`, empurrado; a Vercel construiu em 10 min, pronto às 22:36; o portão reconferiu 44 chaves e 12 904 algarismos marcados no ar. Durante a espera, a vigilância da versão no ar, de dez em dez segundos, fez a mitigação automática da Vercel desafiar o próprio endereço desta máquina (uma regra de sistema, 33 pedidos, 21:22); o diretor não conseguiu abrir o sítio durante esse tempo. Regra a partir daqui: o estado de uma construção lê-se em `vercel inspect`, nunca a bater no sítio mais do que uma vez por minuto.
+
+**O custo.** Reconhecimento (Sonnet) ≈240k; verificação das fontes (Opus) ≈285k; P1 no motor (Opus) ≈494k; P2 no sítio (Opus) ≈787k, colisão incluída; M5 (Sonnet) ≈470k; Codex 218 571 mais 37 083; a correção dos cartões (Opus) ≈244k; total ≈2,78M símbolos, mais o lugar de direção; a estimativa do plano era 2,5 a 3,5M. **O que fica:** I70 (as zonas densas), I71 (a pesquisa sem script), I72 (o desemprego das ilhas), I73 (a releitura periódica), as decisões G5 e o bloco da grelha da voz.
+
+#### A correção dos cartões: o limite era a memória da máquina de construção, não o número de ficheiros
+
+**Afecta:** os cartões de partilha das páginas de linha de um estudo de dados. Ramo `cartoes-2026-08-27`, a partir de `main` em `cfa288b`.
+
+**O facto.** A construção de produção da Vercel sobre `main` em `cfa288b` foi morta com o código de saída **137**, que é falta de memória, no passo `cartoes` (`node scripts/cartoes.mjs`, que corre depois do `astro build` e antes do `gate:html`, ver `package.json`), **dezanove minutos** dentro da rasterização de **10 212** PNG com o `@resvg/resvg-js`. O `astro build` tinha fechado nessa mesma máquina em **5m 41s**, com 6 390 páginas. Nesta máquina o mesmo passo leva 103,7 s. O sítio no ar continua a servir a entrega anterior, e o `main` não sobe enquanto isto não fechar. Dos 10 212 cartões, **9 668 eram das 2 417 páginas de linha do estudo `concelhos-2026`** (duas edições, duas medidas cada); os outros 544 são os das duas edições da primeira página e os das 135 linhas do livro-razão que não são do estudo.
+
+**A decisão** (lugar de direção, 27.08.2026). **As páginas de linha de um estudo de dados não levam cartão próprio.** Cada uma nomeia o cartão do seu estudo, um por edição e por medida, desenhado uma vez, na folha da casa, com o título do estudo por texto e sem número nenhum. A regra do portão passa a ser: **uma página nomeia o cartão da sua rota e da sua edição, ou, sendo uma página de linha de um estudo de dados, o do seu estudo**; e a conferência dos valores é dos cartões que trazem valores. É a decisão de 26.08 corrigida no ponto em que estava errada. O que foi pesado nesse dia, e está escrito acima em «P2, os dados», foram os limites de ficheiros da Vercel, que de facto não se aplicam a uma construção disparada pelo Git; o limite que existia era outro, e não estava naquela página.
+
+**Onde a decisão vive.** Um estudo declara-se de dados escrevendo `conjunto` na sua entrada de `src/data/studies.mjs`, com a chave da rota da sua página de conjunto; hoje é um, o `concelhos-2026`, com `livroConcelhos`. A rota do cartão do estudo é a dessa página, que é a superfície que o estudo tem neste sítio: um `rota` no registo de um cartão é um endereço que existe, ou não é nada. **A página de conjunto continua a levar o cartão da primeira página, como levava**: o que muda são as páginas de linha, e mais nada, e é por isso que todos os outros cartões saem da construção com os mesmos bytes. A regra da escolha continua a viver numa função só, `cartaoDaPagina()`, que é a que o `Base.astro` chama para escrever a etiqueta e a que o portão chama para a conferir; a pergunta faz-se ao campo `study` da linha, e não a um recorte do id, porque `vila-real-populacao-2025` e `vila-real-de-santo-antonio-populacao-2025` partilham o princípio.
+
+**A memória, medida, e o que a medição não prova.** `OEDP_CARTOES_MEMORIA=1 node scripts/cartoes.mjs` escreve o `rss` do processo a cada 500 PNG. Fora da variável, o passo escreve exactamente o que escrevia: medido, os 20 424 ficheiros de `dist/cartoes` saem com os mesmos resumos sha256, um a um.
+
+Antes da alteração, sobre os 10 212 cartões inteiros, em MB de `rss`:
+
+| PNG | 0 | 500 | 1 000 | 1 500 | 2 000 | 2 500 | 3 000 | 3 500 | 4 000 | 4 500 | 5 000 |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| `rss` | 115 | 1 202 | 1 460 | 1 022 | 1 406 | 1 242 | 1 123 | 1 021 | 1 260 | 1 050 | 1 206 |
+
+| PNG | 5 500 | 6 000 | 6 500 | 7 000 | 7 500 | 8 000 | 8 500 | 9 000 | 9 500 | 10 000 | 10 212 |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| `rss` | 912 | 1 069 | 1 352 | 653 | 712 | 1 069 | 1 031 | 980 | 1 110 | 927 | 1 003 |
+
+**A curva não sobe.** Mínimo 653 MB, máximo 1 460 MB, e a média das onze últimas amostras (984 MB) é MENOR do que a das dez primeiras (1 199 MB). O monte de JavaScript fica entre 21 e 27 MB do princípio ao fim, e a memória fora do monte entre 42 e 70 MB; o `rss` é a alocação nativa do rasterizador, que sobe e desce em dente de serra. As medições de texto memorizadas saturam em 6 462 entradas por volta do quinto milhar e não crescem mais. **Não há fuga para corrigir, e por isso não se corrigiu nenhuma**: um cartão não fica agarrado ao seguinte, nenhum PNG se acumula em memória antes de ser escrito, e nenhum registo se junta a um outro.
+
+Depois da alteração, com 548 PNG: 113 MB no princípio, 1 467 MB aos 500, 1 475 MB no fim. **O pico é o mesmo**, porque o pico é o custo de rasterizar UM cartão de 1200×630 e não o de rasterizar dez mil.
+
+Isto é o que a medição diz, e é preciso dizer também o que ela não diz: **nesta máquina o passo não cresce em memória, e portanto esta máquina não reproduz o 137**. O que a alteração remove com certeza medida são 9 664 PNG a menos, 212 MB de saída a menos e 95 s de um passo que na máquina da Vercel levava mais de dezanove minutos sem ter acabado. Se a memória da máquina de construção se foi na alocação nativa do rasterizador, no sistema de ficheiros da saída, ou nos dois, é coisa que daqui não se vê, e não se escreve aqui uma causa que não foi medida.
+
+**A escala, com a construção completa das duas vezes, na mesma máquina:**
+
+| | antes | depois |
+|---|---|---|
+| `npm run build` | 275,82 s | **202,92 s** |
+| o passo `cartoes` | 103,7 s | **8,4 s** |
+| páginas | 6 406 | **6 406** |
+| cartões | 10 212 PNG, 165,29 MB | **548 PNG, 8,70 MB** |
+| `dist/cartoes` | 224 MB, 20 424 ficheiros | **12 MB, 1 096 ficheiros** |
+| `dist/` | 386 MB (registado acima) | **174 MB** |
+
+**Os cartões dos outros não mexeram, byte a byte.** Dos 20 424 ficheiros de `dist/cartoes` da construção anterior, tiraram-se os 19 336 das páginas de linha do estudo (nomes compostos pelas mesmas funções do sítio, `routePath()` e `nomeDoCartao()`, e não por um recorte). Os **1 088 que sobram saem da construção nova com o mesmo resumo sha256, um a um**, e a única diferença na comparação são os **8 ficheiros novos** do cartão do estudo: duas edições, duas medidas, o PNG e o registo de cada.
+
+**O que se perde, dito por palavras.** Uma página de linha dos concelhos partilhada mostra o cartão do estudo em vez do seu valor. O valor continua no `<title>`, na descrição e na própria página. O que não se perde é a regra: o cartão que ela nomeia existe, foi desenhado pela casa, e não tem um algarismo que ninguém consiga reconduzir a uma origem, porque não tem algarismo nenhum. Um cartão de estudo com a contagem das linhas levaria um número do próprio sítio, que a `IDENTIDADE.md` §10 obriga a entrar por `data-prova` com quem o reconte; um cartão com o valor de uma das linhas estaria a escolher uma linha entre milhares para representar as outras.
+
+**Três estragos plantados, vistos vermelhos e depois verdes.** O cartão do estudo retirado de `dist/cartoes`, com as páginas a continuarem a nomeá-lo: **4 834 erros**, um por etiqueta das 2 417 páginas de linha portuguesas, «não há registo desse cartão em dist/cartoes/». Uma página de linha do estudo a nomear o seu antigo cartão por linha: **2 erros**, «não nomeia o cartão da sua rota e da sua edição», com o esperado e o construído lado a lado. E uma página de linha que NÃO é do estudo a perder o seu cartão: **2 erros**, a mesma mensagem do primeiro, que é a prova de que a regra nova não abriu um buraco na regra velha.
+
+**A corrida completa:**
+
+| comando | saída | o que diz |
+|---|---|---|
+| `npm run build` | 0 | **202,92 s** · **6 406 páginas** · **548 cartões** · `dist/cartoes` **12 MB** |
+| `npm run verify` | 0 | |
+| `npm run typecheck` | 0 | |
+| `node tests/linha/recibo.mjs` | 0 | 13 de 13 |
+| `node tests/linha/correcoes-b.mjs` | 0 | 32 de 32 |
+| `node tests/municipio/concelhos.mjs` | 0 | 12 de 12 |
+
+**O que fica.** A construção da Vercel só se pode dar por resolvida quando ela correr; o que está medido é desta máquina. E a Vercel contou 6 390 páginas onde esta máquina conta 6 406: a diferença não foi investigada e não se explica aqui.
 
 ### 1.69 A grelha da voz
 

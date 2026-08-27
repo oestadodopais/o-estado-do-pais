@@ -5,8 +5,10 @@
  * Corre DEPOIS do `astro build` e ANTES do `gate:html`, e a ordem é a razão de
  * ser deste passo: os cartões precisam das linhas e da prova, que só existem
  * depois de a construção resolver os dados, e o portão precisa dos cartões,
- * porque é ele que confere que cada página nomeia o cartão da sua própria rota
- * e da sua própria edição, e que cada número do cartão é o da sua linha.
+ * porque é ele que confere que cada página nomeia o cartão que lhe toca — o da
+ * sua própria rota e da sua própria edição, ou, se for uma página de linha de um
+ * estudo de dados, o do seu estudo — e que cada número de um cartão que traga
+ * números é o da sua linha.
  *
  * ---------------------------------------------------------------------------
  * O QUE ESTE FICHEIRO PODE E O QUE NÃO PODE FAZER
@@ -454,6 +456,41 @@ function desenha(modelo, dim) {
       topoDesenhado = y - corpo;
       y -= entrelinha;
     }
+  } else if (modelo.tipo === 'estudo') {
+    /* ------------------------------------------------------------------
+       O CARTÃO DE UM ESTUDO DE DADOS: o título do estudo, e mais nada.
+       ------------------------------------------------------------------
+       Sem fila de quadrados (a fila é do painel da primeira página), sem
+       quadrado de estado (um estudo não tem limiar) e sem aparelho (o aparelho
+       é o id e o período de uma linha, e este cartão não é de uma linha). O
+       bloco do meio é só o título, na letra de prosa da casa e encostado ao fio
+       do pé como todos os outros, para que a folha seja a mesma folha.
+       ------------------------------------------------------------------ */
+    const { corpo, linhas } = ajusta(modelo.manchete, {
+      familia: TIPO.prosa,
+      peso: 500,
+      espacamento: -0.3,
+      corpoMax: 68,
+      corpoMin: 34,
+      largura: util,
+      linhas: Math.max(2, Math.floor(alturaDoMeio / 74)),
+    });
+    const entrelinha = Math.round(corpo * 1.1);
+    for (let i = linhas.length - 1; i >= 0; i--) {
+      partes.push(
+        texto(linhas[i], {
+          x: MARGEM,
+          y,
+          familia: TIPO.prosa,
+          corpo,
+          peso: 500,
+          cor: COR['--ink'],
+          espacamento: -0.3,
+        }),
+      );
+      topoDesenhado = y - corpo;
+      y -= entrelinha;
+    }
   } else {
     /* O aparelho da linha: o id e o período, em baixo. */
     partes.push(
@@ -547,6 +584,39 @@ function desenha(modelo, dim) {
   return { svg, copia };
 }
 
+/* ------------------------------------------------------- a medida da memória */
+
+/**
+ * O `rss` do processo, de 500 em 500 cartões, atrás de uma variável de ambiente.
+ *
+ * NÃO é decoração. A construção da Vercel foi morta com o código 137 neste
+ * passo, e 137 é falta de memória: o que decide se um passo cabe numa máquina de
+ * construção não é o número de ficheiros que ele escreve, é a curva que ele
+ * desenha enquanto os escreve. Uma curva plana diz «cabe em qualquer máquina, a
+ * qualquer escala»; uma curva a subir diz «há aqui uma coisa que não se larga», e
+ * essa é um defeito mesmo que hoje ninguém a note.
+ *
+ * Fora da variável, este passo escreve exactamente o que escrevia. A medição
+ * corre-se com `OEDP_CARTOES_MEMORIA=1 node scripts/cartoes.mjs`, e as duas
+ * curvas medidas estão em `DECISIONS.md` §1.68, «A correção dos cartões».
+ */
+const MEDE_A_MEMORIA = process.env.OEDP_CARTOES_MEMORIA === '1';
+const CARTOES_POR_MEDIDA = 500;
+
+const emMb = (b) => (b / 1024 / 1024).toFixed(1).padStart(6);
+
+function medeAMemoria(quantos) {
+  if (!MEDE_A_MEMORIA) return;
+  const m = process.memoryUsage();
+  console.log(
+    cinza(
+      `    memória · ${String(quantos).padStart(5)} PNG · rss ${emMb(m.rss)} MB · ` +
+        `monte ${emMb(m.heapUsed)} MB · fora do monte ${emMb(m.external)} MB · ` +
+        `${medidas.size} medições de texto`,
+    ),
+  );
+}
+
 /* ------------------------------------------------------------------ a corrida */
 
 /** As rotas construídas, lidas de `dist/`: é o que decide que cartão cobre o quê. */
@@ -589,6 +659,7 @@ let emPaleta = 0;
 let maisCores = 0;
 let provados = 0;
 const recusas = [];
+medeAMemoria(0);
 for (const cartao of cartoes) {
   const modelo = modeloDoCartao(cartao);
   for (const dim of DIMENSOES) {
@@ -611,7 +682,13 @@ for (const cartao of cartoes) {
       rota: cartao.rota,
       edicao: cartao.lang,
       tipo: modelo.tipo,
-      linha: modelo.id ?? null,
+      /* `linha` é o id de uma LINHA do livro-razão, e por isso só o cartão de
+         uma linha o traz. O cartão de um estudo de dados também tem um `id` no
+         seu modelo — o do estudo —, e escrevê-lo aqui era pôr um identificador
+         de estudo num campo que se chama «linha». Quem quiser saber de que
+         estudo é o cartão lê o `tipo` e a `rota`, que é a da página de conjunto
+         do estudo. */
+      linha: modelo.tipo === 'linha' ? modelo.id : null,
       dimensoes: { largura: dim.largura, altura: dim.altura, papel: dim.papel },
       ficheiro: `/${PASTA}/${nomePng}`,
       resumo: `sha256:${crypto.createHash('sha256').update(png).digest('hex')}`,
@@ -625,6 +702,7 @@ for (const cartao of cartoes) {
     };
     fs.writeFileSync(path.join(destino, nomeJson), JSON.stringify(registo, null, 2) + '\n');
     escritos++;
+    if (escritos % CARTOES_POR_MEDIDA === 0) medeAMemoria(escritos);
     bytes += png.length;
     if (paleta.bytes) {
       emPaleta++;
@@ -647,6 +725,8 @@ for (const cartao of cartoes) {
     }
   }
 }
+
+medeAMemoria(escritos);
 
 const segundos = ((Date.now() - inicio) / 1000).toFixed(1);
 console.log(

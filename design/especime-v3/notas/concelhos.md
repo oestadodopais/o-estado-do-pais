@@ -389,3 +389,59 @@ linhas ao todo, mais 0 de referência (soma 2 416 para 2 417 declaradas)».
 Os dois ficheiros que o exportador reescreveu (`ledger/claims/indice-de-divida-limite-legal.yml`
 e `ledger/cruzamentos/evora.json`) ficam por indexar, como o resto dos dados: quem
 os comete é o lugar de direção.
+
+---
+
+## A correção dos cartões · 27.08.2026
+
+*Ramo `cartoes-2026-08-27`, a partir de `main` em `cfa288b`. A decisão, os factos e as duas curvas de memória estão em `DECISIONS.md` §1.68, «A correção dos cartões».*
+
+### 21 · O passo dos cartões matou a construção da Vercel, e não foi pelo número de ficheiros
+
+A construção de produção sobre `main` em `cfa288b` saiu com **137**, que é falta de memória, no passo `cartoes`, **dezanove minutos** dentro da rasterização dos 10 212 PNG. O `astro build` tinha fechado nessa máquina em 5m 41s. O item 10 desta nota escreveu, a 26.08, que «224 MB e 102,6 s são o custo medido da regra, e não um problema»: o custo estava certo e a conclusão estava errada, porque o que foi pesado nesse dia foram os limites de FICHEIROS da Vercel, e o limite que existia era o da memória.
+
+**A decisão do lugar de direção:** as páginas de linha de um estudo de dados não levam cartão próprio. Cada uma nomeia o cartão do seu estudo, um por edição e por medida, na folha da casa, com o título do estudo por texto e sem número nenhum. Um estudo declara-se de dados escrevendo `conjunto` na sua entrada de `src/data/studies.mjs`, com a chave da rota da sua página de conjunto; hoje é um, o `concelhos-2026`, com `livroConcelhos`. A página de conjunto continua a levar o cartão da primeira página.
+
+### 22 · A memória, medida antes e depois
+
+`OEDP_CARTOES_MEMORIA=1 node scripts/cartoes.mjs` escreve o `rss` a cada 500 PNG; sem a variável, o passo escreve o que escrevia, com os mesmos 20 424 resumos sha256.
+
+Antes, sobre os 10 212 inteiros, o `rss` **não sobe**: mínimo 653 MB, máximo 1 460 MB, e a média das onze últimas amostras (984 MB) é menor do que a das dez primeiras (1 199 MB). O monte fica entre 21 e 27 MB, a memória fora do monte entre 42 e 70 MB, e as medições de texto memorizadas saturam em 6 462 entradas. Depois, com 548 PNG: 113 MB, 1 467 MB aos 500, 1 475 MB no fim. O pico é o mesmo porque o pico é o custo de rasterizar UM cartão.
+
+**Não há fuga, e por isso não se corrigiu nenhuma.** Também é preciso dizer o que a medição não diz: nesta máquina o passo não cresce em memória, e portanto esta máquina não reproduz o 137. O que a alteração remove com certeza medida são 9 664 PNG, 212 MB de saída e 95 s de um passo que na Vercel passava dos dezanove minutos sem acabar.
+
+### 23 · A escala, e os cartões que não mexeram
+
+| | antes | depois |
+|---|---|---|
+| `npm run build` | 275,82 s | **202,92 s** |
+| o passo `cartoes` | 103,7 s | **8,4 s** |
+| páginas | 6 406 | **6 406** |
+| cartões | 10 212 PNG, 165,29 MB | **548 PNG, 8,70 MB** |
+| `dist/cartoes` | 224 MB, 20 424 ficheiros | **12 MB, 1 096 ficheiros** |
+| `dist/` | 386 MB (item 20) | **174 MB** |
+
+Dos 20 424 ficheiros de `dist/cartoes`, tirados os 19 336 das páginas de linha do estudo (nomes compostos por `routePath()` e `nomeDoCartao()`, não por um recorte), os **1 088 que sobram têm o mesmo resumo sha256, um a um**. A única diferença são os **8 ficheiros novos** do cartão do estudo.
+
+### 24 · Os estragos plantados, vistos vermelhos
+
+| o estrago | o que o portão disse | saída |
+|---|---|---|
+| o cartão do estudo retirado de `dist/cartoes` | «não há registo desse cartão em dist/cartoes/», **4 834 erros**, um por etiqueta das 2 417 páginas de linha portuguesas | 1 |
+| uma página de linha do estudo a nomear o seu antigo cartão por linha | «não nomeia o cartão da sua rota e da sua edição», com o esperado e o construído lado a lado, **2 erros** | 1 |
+| uma página de linha que NÃO é do estudo a perder o seu cartão | «não há registo desse cartão em dist/cartoes/», **2 erros** | 1 |
+
+Os três repostos, e o portão a sair a zero outra vez.
+
+### 25 · O que ficou verde, com os códigos de saída
+
+| comando | saída | o que diz |
+|---|---|---|
+| `npm run build` | 0 | **202,92 s** · **6 406 páginas** · **548 cartões** · `dist/cartoes` **12 MB** |
+| `npm run verify` | 0 | |
+| `npm run typecheck` | 0 | |
+| `node tests/linha/recibo.mjs` | 0 | 13 de 13 |
+| `node tests/linha/correcoes-b.mjs` | 0 | 32 de 32 |
+| `node tests/municipio/concelhos.mjs` | 0 | 12 de 12 |
+
+**O que fica:** a construção da Vercel só se dá por resolvida quando ela correr. E a Vercel contou 6 390 páginas onde esta máquina conta 6 406: a diferença não foi investigada.
