@@ -735,3 +735,22 @@ seu trabalho, com o facto por sujeito:
 Nenhuma delas escreve uma palavra que não estivesse no parágrafo que saiu. A de
 05 perde «sediadas» e «sede», que a verificação das fontes de 26.08 não
 confirmou, e fica com o que está provado: cada empresa conta num único concelho.
+
+## Bloco «A grelha da voz» · G6, o método sai também da página do concelho, 26.08.2026
+
+**Quatro chaves saem, duas entram.**
+
+| chave | pt | en | o que era |
+|---|---|---|---|
+| `municipio.metodoK` (sai) | Método e ressalvas | Method and caveats | o nome da secção que guardava seis ressalvas |
+| `municipio.naoSabeK` (sai) | O que esta página não sabe | What this page does not know | o nome da lista que guardava seis entradas |
+| `municipio.tempoFundoK` (sai) | Como esta linha do tempo é feita | How this timeline is made | o nome da dobra do instrumento dos mandatos, que dizia como a página foi feita |
+| `municipio.tempoFundoPartes` (sai) | Os períodos são os das administrações tal como foram instaladas… | The periods are those of the administrations as they were installed… | o parágrafo dessa dobra. O que ele dizia sobre as duas dívidas de 2013 já está escrito ao pé de cada um dos dois valores |
+| `municipio.tempoPelourosNota` (entra) | As contagens de pelouros são designações, não despesa. | The portfolio counts are designations, not spending. | vinha da ressalva «Nenhuma fonte publica dinheiro por pelouro» |
+| `municipio.tempoContrafactualNota` (entra) | Não existe contrafactual para nenhum índice, e a parte de um executivo neles não é separável. | There is no counterfactual for any index, and an executive’s share of them is not separable. | vinha da entrada do «O que esta página não sabe» que a reclassificação de 21.08.2026 chamou limite dos dados |
+
+**E um campo novo nos dados de Évora**, `contas.nota`, com a ressalva que
+sobreviveu à secção do método e que é deste concelho e não da língua: «As contas
+do penúltimo ano foram rejeitadas em votação e nunca foram certificadas.» /
+«The accounts of the second-to-last year were rejected in a vote and were never
+certified.»

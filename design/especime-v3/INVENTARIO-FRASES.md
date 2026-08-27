@@ -310,12 +310,8 @@ quem escreveu a página.*
 | conteudo | Limite de dívida |
 | conteudo | Lugares |
 | conteudo | Margem de endividamento |
-| conteudo | Method and caveats |
-| conteudo | Método e ressalvas |
 | conteudo | Not established. The work on the portfolios says this term «is one line of a map, not a map»: the president of that mandate, and every other member of it, were not identified. |
 | conteudo | Não estabelecido. O trabalho sobre os pelouros diz que este mandato «é uma linha de um mapa, não um mapa»: o presidente desse mandato, e todos os outros membros dele, não foram identificados. |
-| conteudo | Não existe contrafactual para nenhum índice. Nada do que foi lido permite separar a parte de um executivo neles. |
-| conteudo | Não existe medida de desempenho por pessoa. As contas públicas não são cortadas dessa maneira. |
 | conteudo | O município publica |
 | conteudo | O que as fontes publicam sobre o município de Évora: população, poder de compra, emprego, empresas, dívida e execução orçamental. |
 | conteudo | O que foi orçamentado, o que foi pago e o que ficou em dívida no município de Évora. |
@@ -323,9 +319,7 @@ quem escreveu a página.*
 | conteudo | O regulador |
 | conteudo | O regulador publica |
 | conteudo | O traço fino é a dívida total que o regulador publica para o concelho; a barra é a distância até ao limite legal do mesmo ano, que é o fio da direita. O índice mede uma contra o outro numa escala em que o teto é o valor permitido. |
-| conteudo | On the recovery plan: the work reads the state auditor’s catalogue, not its audits; the contracts window is an upper bound on a truncated period; and no European Union figure exists for a municipality. |
 | conteudo | Orçamento corrigido |
-| conteudo | Os totais do plano de recuperação que aparecem na leitura desse trabalho são somas sobre o registo público, atribuídas ao concelho por esse registo. Do dinheiro contratado no concelho, a universidade tem mais do que o município, e a camada que administra o dinheiro é feita de organismos nacionais. Que daí resulte que o endereço da responsabilização não são os paços do concelho é a conclusão assinada desse trabalho, e está na página dele. |
 | conteudo | Os trabalhos sobre este concelho |
 | conteudo | Outside what was read. |
 | conteudo | Outside what was read: the captures behind the portfolio split begin with the next term. |
@@ -344,7 +338,6 @@ quem escreveu a página.*
 | conteudo | Reported by the municipality: it comes from its own accounts, not from a central aggregator. |
 | conteudo | Revenue collected |
 | conteudo | Seats |
-| conteudo | Sobre o plano de recuperação: o trabalho lê o catálogo do tribunal de contas, não as suas auditorias; a janela de contratos é um limite superior sobre um período truncado; e não existe um valor da União Europeia para um município. |
 | conteudo | The debt against the legal ceiling |
 | conteudo | The gap between the two accounts of the same debt |
 | conteudo | The municipality publishes |
@@ -356,8 +349,6 @@ quem escreveu a página.*
 | conteudo | The statistics institute’s annual estimate for the municipality. |
 | conteudo | The thin line is the total debt the regulator publishes for the concelho; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. |
 | conteudo | The works about this concelho |
-| conteudo | There is no counterfactual for any index. Nothing that was read allows an executive’s share of them to be separated out. |
-| conteudo | There is no per-person performance measure. Public accounts are not cut that way. |
 | conteudo | Total debt |
 | conteudo | What the municipality budgeted, what it collected, what it paid, and what it said it owed at year end. These are the municipality’s own figures about itself: the accounts are its own. |
 | conteudo | What the sources publish about the municipality of Évora: population, purchasing power, employment, enterprises, debt and budget execution. |
@@ -709,7 +700,6 @@ mudou**, e que a régua lê como blocos novos porque o texto mudou:
 | conteudo | € of gross value added by enterprises headquartered in the municipality |
 | conteudo | The works about this municipality |
 | conteudo | The thin line is the total debt the regulator publishes for the municipality; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. |
-| conteudo | The recovery-plan totals that appear in that work’s reading are sums over the public register, attributed to the municipality by that register. Of the money contracted in the municipality, the university holds more than the council, and the layer that administers the money is made of national bodies. That this makes the accountability address something other than the town hall is that work’s own signed conclusion, and it sits on its page. |
 
 **O que este bloco NÃO acrescentou ao inventário, e é uma leitura e não um
 esquecimento:** o índice «Nesta página» da página de leitura não entra, porque
@@ -841,12 +831,8 @@ E7, E10 e E11 daquele bloco corrigiram e deixaram para trás.
 | classe | texto |
 | --- | --- |
 | conteudo | A Direção-Geral das Autarquias Locais e o município publicam a dívida do mesmo ano com uma diferença. A diferença é pequena. |
-| conteudo | A execução da receita e o prazo médio de pagamento são lidos da prestação de contas do próprio município. As duas vozes de fora sobre estas contas são a opinião assinada do auditor e a série anual da Direção-Geral das Autarquias Locais. |
 | conteudo | A série anual da Direção-Geral das Autarquias Locais começa depois deste mandato. |
-| conteudo | As contagens de pelouros são designações, não despesa. A correspondência entre as contas e os pelouros existe num dos trabalhos, e é declarada por ele como sua e não como oficial. Esse trabalho fixa também a regra: descrição, nunca classificações. |
 | conteudo | How far the debt exceeded the legal limit, in the first and the last year in which the report publishes it as a positive figure. After that the table turns negative, and a negative there is no longer excess but borrowing capacity. |
-| conteudo | Nenhuma fonte publica um produto interno bruto para um concelho. O que existe é o registo empresarial: as contas das empresas do concelho, que creditam toda a atividade de uma empresa a um único concelho. Não é PIB municipal, e o trabalho sobre a economia escreve porquê nos seus limites: «não capta a administração pública, a maior parte da universidade e do hospital». |
-| conteudo | No source publishes a gross domestic product for a municipality. What does exist is the business register: the accounts of the municipality’s enterprises, which credit a firm’s whole activity to a single municipality. It is not municipal GDP, and the work on the economy writes why in its own limits: «it misses public administration, most of the university and the hospital». |
 | conteudo | O que a dívida excedia o limite legal, no primeiro e no último ano em que o relatório o publica como um valor positivo. Depois disso o quadro passa a números negativos, que já não são excesso mas capacidade de endividamento. |
 
 ### A frase da outra edição sai da página do trabalho
@@ -864,12 +850,8 @@ afirmações pela mesma ordem, e fecha a construção quando não citam. E a fol
 existia por causa daquele bloco saiu com ele: o selo de um valor tinha de abrir a
 linha em QUALQUER uma das duas edições, e passa a ter de abrir a da própria
 página.*
-| conteudo | On this municipality’s accounts there are two voices that are not its own: the independent auditor’s signed opinion, and the local-government directorate’s annual series, which publishes per municipality and per year the same legal debt concept the report uses, compiled from outside. |
-| conteudo | Revenue execution and the average payment time are read from the municipality’s own accounts. The two outside voices on these accounts are the auditor’s signed opinion and the local-government directorate’s annual series. |
-| conteudo | Sobre as contas deste município existem duas vozes que não são a dele: a opinião assinada do auditor independente, e a série anual da Direção-Geral das Autarquias Locais, que publica por município e por ano o mesmo conceito legal de dívida que o relatório usa, compilada do lado de fora. |
 | conteudo | The local-government directorate and the municipality publish the same year’s debt with a difference between them. The difference is small. |
 | conteudo | The local-government directorate’s annual series begins after this term. |
-| conteudo | The portfolio counts are designations, not spending. The mapping between the accounts and the portfolios exists in one of the works, and is declared by it as its own and not as official. That work also sets the rule: description, never scores. |
 
 ### A DGAL pelo nome, e a leitura da casa fora do rótulo
 
@@ -913,3 +895,24 @@ parênteses nunca estiveram aqui, porque um `{ref}` rende um
 | conteudo | These two values are sums over the whole public register of the recovery plan, and not a line in a document. Overdue is the value approved at locations whose planned completion date has passed with no completion recorded. |
 | conteudo | O sistema contabilístico mudou por baixo da série, um ano de contas foi publicado em digitalizações e outro não foi publicado de todo. |
 | conteudo | The accounting system changed underneath the series, one year of accounts was published as scans and another was not published at all. |
+
+### E o método sai também da página do concelho
+
+*As secções «Método e ressalvas» e «O que esta página não sabe» saíram da página
+de Évora, com os seus doze parágrafos, e com elas a dobra «Como esta linha do
+tempo é feita». Três ressalvas ficaram, cada uma como UMA frase com o facto por
+sujeito e no sítio onde ela muda a leitura de um número: o ano de contas sem
+certificação, na nota da camada das contas; as contagens de pelouros que são
+designações e o contrafactual que não existe, nas duas notas do instrumento dos
+mandatos. Os dois valores do excesso sobre o teto legal ficaram, com a frase que
+diz porque é que a série pára ali, fora da dobra que os escondia.*
+
+*Saíram 18 declarações. A dobra e o seu parágrafo nunca estiveram aqui, pela
+mesma razão das ressalvas de trabalho com um período entre parênteses.*
+
+| classe | texto |
+| --- | --- |
+| conteudo | As contagens de pelouros são designações, não despesa. |
+| conteudo | The portfolio counts are designations, not spending. |
+| conteudo | Não existe contrafactual para nenhum índice, e a parte de um executivo neles não é separável. |
+| conteudo | There is no counterfactual for any index, and an executive’s share of them is not separable. |

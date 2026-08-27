@@ -2938,6 +2938,26 @@ a.badge-porta:hover {
   color: var(--muted);
 }
 
+/* A NOTA DO INSTRUMENTO DOS MANDATOS (G6, 26.08.2026). Onde estava uma dobra
+   «Como esta linha do tempo é feita» ficam três parágrafos à vista, na letra e
+   na cor da legenda de qualquer instrumento desta página: os dois valores do
+   excesso com a sua frase, e as duas ressalvas de uma linha que sobreviveram às
+   secções retiradas. Nada de novo na folha: só o espaçamento do bloco e a
+   versalete do rótulo, que é a mesma dos outros rótulos de campo. */
+.mun-tempo-notas {
+  display: grid;
+  gap: 7px;
+  margin-top: 16px;
+}
+.mun-tempo-nota-k {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 11.5px;
+  color: var(--ink);
+}
+
 /* A BANDA DOS MANDATOS (v2, IDENTIDADE.md §11).
 
    Cada mandato ocupa no desenho o tempo que ocupou. Sem acento novo: um
@@ -3095,30 +3115,6 @@ a.badge-porta:hover {
   font-size: 13.5px;
 }
 
-/* A lista do que a página não sabe, na coluna do aparelho. */
-.mun-nao-sabe {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 9px;
-}
-.mun-nao-sabe li {
-  font-size: 13px;
-  line-height: 1.5;
-  color: var(--muted);
-  padding-left: 14px;
-  position: relative;
-}
-.mun-nao-sabe li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 7px;
-  height: 1px;
-  background: var(--rule-strong);
-}
 
 /* Os trabalhos que tomaram o concelho por objecto. */
 .mun-estudos {
@@ -4322,7 +4318,6 @@ a.prova-valor::after {
   .estudo-blocos .log-vazio p > a,
   .linha-pagina-serie a,
   .metodo-sumario-lista a,
-  .mun-nao-sabe .marcador,
   .botao-correcao {
     display: inline-flex;
     align-items: center;
