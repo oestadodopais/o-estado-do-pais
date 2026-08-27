@@ -187,12 +187,22 @@ export function leInventario(raiz) {
   const linhas = [];
   if (!fs.existsSync(ficheiro)) return { mapa, linhas, ficheiro, existe: false, cabeca: {} };
   const cru = fs.readFileSync(ficheiro, 'utf8').split('\n');
+  /* A CABEÇA DO FICHEIRO É UM BLOCO DE CÓDIGO, E NÃO PROSA (G3, 26.08.2026).
+     `campo: valor` solto pela prosa apanhava meia dúzia de frases que por acaso
+     levam dois pontos («a razão é a definição: um bloco cujo texto…»). A cabeça
+     é o PRIMEIRO bloco cercado do ficheiro, e mais nenhum: um leitor vê que
+     aquilo são dados, e a máquina não tem de adivinhar. */
   const cabeca = {};
+  {
+    const abre = cru.findIndex((l) => l.trim() === '```');
+    if (abre >= 0) {
+      for (let i = abre + 1; i < cru.length && cru[i].trim() !== '```'; i++) {
+        const c = cru[i].match(/^([a-z][a-z0-9-]*):\s*(\S.*?)\s*$/i);
+        if (c) cabeca[c[1]] = c[2];
+      }
+    }
+  }
   for (let i = 0; i < cru.length; i++) {
-    /* A cabeça do ficheiro: `campo: valor`, numa linha só, antes da primeira
-       tabela. É onde vive `lida-contra`, o gatilho da regra (G3). */
-    const c = cru[i].match(/^([a-zà-ÿ-]+):\s*(.+?)\s*$/i);
-    if (c && !cru[i].startsWith('|')) cabeca[c[1]] = c[2];
     const cel = celulas(cru[i]);
     if (!cel || cel.length < 2 || !CLASSES_DO_INVENTARIO.has(cel[0])) continue;
     const [classe, texto] = cel;

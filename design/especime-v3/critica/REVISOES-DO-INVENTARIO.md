@@ -52,3 +52,18 @@ fechada de marcadores; o que sobrou está na lista de exceções de
 releitura humana do inventário inteiro contra a Emenda 18 continua a ser trabalho
 de outra família, e o campo `lida-contra` da cabeça do inventário só muda com uma
 entrada nova aqui.
+
+## O gatilho da regra
+
+A cabeça do `INVENTARIO-FRASES.md` diz `lida-contra: Emenda 18`, e
+`npm run check:voz` procura em `design/especime-v3/direcao.md` a emenda mais alta
+com a cadeia «§5 «Voz» emendado» (hoje as Emendas 15 e 18 levam-na). Quando
+aparecer uma emenda da voz acima da que está escrita, a construção fecha com «o
+inventário foi lido contra a Emenda N e a Emenda M mudou a regra da voz: relê e
+atualiza».
+
+**O campo não sobe sozinho.** Subir o número é dizer que alguém releu o
+inventário inteiro contra a regra nova, e isso é trabalho de outra família: a
+entrada dessa releitura escreve-se na tabela acima, com o ficheiro do registo, e
+só então o número muda. Foi a falta deste gatilho que deixou a Emenda 18, de
+25.08.2026, apertar a regra da voz sem que o inventário fosse relido contra ela.
