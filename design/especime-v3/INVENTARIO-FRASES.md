@@ -151,10 +151,10 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | --- | --- | --- | --- | --- |
 | conteudo | A régua da convergência | regioes | viva | — |
 | navegacao | An observatory of Portugal. | até 2026-08-26 | viva | — |
-| conteudo | Alentejo · region | até 2026-08-26 | viva | — |
-| conteudo | Alentejo · região | até 2026-08-26 | viva | — |
-| conteudo | Algarve · region | até 2026-08-26 | viva | — |
-| conteudo | Algarve · região | até 2026-08-26 | viva | — |
+| conteudo | Alentejo · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
+| conteudo | Alentejo · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
+| conteudo | Algarve · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
+| conteudo | Algarve · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | navegacao | As regiões publicadas na régua da convergência. | grelha-2 | retirada | a régua da convergência saiu da primeira página até haver a página das regiões (Emenda 18, consequência decidida a 25.08; bloco A da auditoria de UI e UX, `696b51a`) |
 | navegacao | At a glance | até 2026-08-26 | viva | — |
 | navegacao | Brief reading | até 2026-08-26 | viva | — |
@@ -163,12 +163,12 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | conteudo | European Social Scoreboard | até 2026-08-26 | viva | — |
 | navegacao | Found an error? correcoes@oestadodopais.pt · The corrections log → | até 2026-08-26 | viva | — |
 | conteudo | General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold, and falling. | até 2026-08-26 | viva | — |
-| conteudo | Grande Lisboa · região | até 2026-08-26 | viva | — |
-| conteudo | Greater Lisbon · region | até 2026-08-26 | viva | — |
+| conteudo | Grande Lisboa · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
+| conteudo | Greater Lisbon · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | navegacao | Hover over a point to read the municipality. Keyboard: Tab to the map, arrow keys to move between neighbouring municipalities, Home to return to Évora. | grelha-2 | retirada | a leitura em voz alta do mapa saiu com os pontos da primeira página (Emenda 20a e 20c; bloco do mapa por distritos) |
 | navegacao | Leitura breve | até 2026-08-26 | viva | — |
-| conteudo | Madeira · region | até 2026-08-26 | viva | — |
-| conteudo | Madeira · região | até 2026-08-26 | viva | — |
+| conteudo | Madeira · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
+| conteudo | Madeira · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | navegacao | Nenhum concelho com esse nome. | até 2026-08-26 | viva | — |
 | navegacao | No municipality by that name. | até 2026-08-26 | viva | — |
 | navegacao | O Estado do País | até 2026-08-26 | viva | — |
@@ -176,7 +176,7 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | conteudo | O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27. Um valor abaixo da média significa menos poder de compra por pessoa; um valor acima, mais. | regioes | viva | — |
 | conteudo | Painel Social Europeu | até 2026-08-26 | viva | — |
 | navegacao | Passe o cursor sobre um ponto para ler o município. Teclado: Tab até ao mapa, setas para percorrer os municípios vizinhos, Home para voltar a Évora. | grelha-2 | retirada | a leitura em voz alta do mapa saiu com os pontos da primeira página (Emenda 20a e 20c; bloco do mapa por distritos) |
-| conteudo | Península de Setúbal · região | até 2026-08-26 | viva | — |
+| conteudo | Península de Setúbal · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | conteudo | Portugal breaches 4 thresholds of the Macroeconomic Imbalance Procedure and meets 9 . | até 2026-08-26 | viva | — |
 | conteudo | Portugal nos painéis europeus: os indicadores, os limiares e as fontes. | até 2026-08-26 | viva | — |
 | conteudo | Portugal on the European scoreboards: the indicators, the thresholds and the sources. | até 2026-08-26 | viva | — |
@@ -184,7 +184,7 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | conteudo | Portugal · country | até 2026-08-26 | viva | — |
 | conteudo | Portugal · país | até 2026-08-26 | viva | — |
 | navegacao | Relance | até 2026-08-26 | viva | — |
-| conteudo | Setúbal Peninsula · region | até 2026-08-26 | viva | — |
+| conteudo | Setúbal Peninsula · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
 | conteudo | The convergence rule | regioes | viva | — |
 | conteudo | The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 average. A value below the average means less purchasing power per person; a value above it, more. | regioes | viva | — |
 | navegacao | The regions published on the convergence rule. | grelha-2 | retirada | a régua da convergência saiu da primeira página até haver a página das regiões (Emenda 18, consequência decidida a 25.08; bloco A da auditoria de UI e UX, `696b51a`) |

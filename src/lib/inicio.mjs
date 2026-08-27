@@ -6,9 +6,9 @@
  * ---------------------------------------------------------------------------
  * A primeira página da v3 tem âmbito e densidade codificados no endereço
  * (Emenda 7, plano §13), e três componentes mais a vista precisam das MESMAS
- * listas fechadas para os resolver: os seis âmbitos de região, os 308 âmbitos de
- * concelho, e o nome de cada um no endereço. Isto não são dados novos — é a
- * leitura dos dados que já existem (`caop-centroids.mjs`, `regioes.mjs`,
+ * listas fechadas para os resolver: os 308 âmbitos de concelho e o nome de cada
+ * um no endereço. Isto não são dados novos — é a
+ * leitura dos dados que já existem (`caop-centroids.mjs`,
  * `municipios.mjs`) na forma de que o endereço precisa. Por isso vive em
  * `src/lib/` e não em `src/data/`: não acrescenta um facto ao sítio.
  *
@@ -19,7 +19,6 @@
 
 import { MUNICIPIOS, DISTRITOS } from '../data/caop-centroids.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
-import { REGIOES } from '../data/regioes.mjs';
 import { getClaim, parsePtNumber, eDerivada } from './ledger.mjs';
 import { estadoDaRegua } from './estado.mjs';
 
@@ -344,8 +343,7 @@ export function ledeDoPainel(medidas, gramatica, lang) {
  * ---------------------------------------------------------------------------
  *
  *   ?ambito=pais                    (por defeito, e por isso omitido)
- *   ?ambito=regiao:<slug>           slug de `regioes.mjs`, MENOS a referência
- *   ?ambito=municipio:<slug>        slug da Carta Administrativa
+ *   ?ambito=municipio               a pesquisa aberta (Emenda 19c)
  *   ?densidade=relance              (por defeito, e por isso omitido)
  *   ?densidade=leitura
  *
@@ -353,28 +351,25 @@ export function ledeDoPainel(medidas, gramatica, lang) {
  * rótulo, nunca a chave. Qualquer outro valor resolve para o defeito, sem texto
  * de erro, e o endereço é reescrito para a forma normalizada.
  *
- * PORTUGAL NÃO É UMA REGIÃO, e por isso `regiao:portugal` não é um âmbito: cai
- * no defeito como qualquer outro valor desconhecido. O plano §13 fecha a lista
- * em cinco, e `regioes.mjs` declara qual das seis leituras da régua é a marca de
- * referência (`referencia: true`). A lista sai daquele campo, e não de uma
- * segunda lista escrita aqui, que divergiria à primeira alteração.
+ * OS DOIS ESQUEMAS DE LUGAR SAÍRAM, UM DE CADA VEZ, E PELA MESMA RAZÃO.
+ * `?ambito=municipio:<slug>` saiu a 26.08 (Emenda 19a) e `?ambito=regiao:<slug>`
+ * saiu a 27.08 (Emenda 21b): um lugar vive na sua página e só lá. O que fica de
+ * cada um é o reencaminhamento de um endereço antigo, que `public/js/inicio.js`
+ * faz com destinos escritos pelo servidor — a Emenda 7 promete que o que era
+ * partilhável continua a abrir alguma coisa.
+ *
+ * `chaveDoConcelho()` FICA, e não é um resto: é a forma do endereço antigo, e é
+ * ela que `ambitos()` enumera para as réguas que percorrem os estados que já
+ * existiram. `chaveDaRegiao()` saiu porque a régua da matriz passou a ler a lista
+ * das regiões de `src/lib/regioes.mjs`, que é onde ela vive.
  */
 export const AMBITO_POR_DEFEITO = 'pais';
 export const DENSIDADE_POR_DEFEITO = 'relance';
 export const DENSIDADES = ['relance', 'leitura'];
 
-/** As cinco regiões do esquema do endereço. A sexta leitura da régua é Portugal,
-    que é a referência contra a qual elas se leem, e não um âmbito. */
-export const REGIOES_DE_AMBITO = REGIOES.filter((r) => !r.referencia);
-
-export const chaveDaRegiao = (slug) => `regiao:${slug}`;
 export const chaveDoConcelho = (slug) => `municipio:${slug}`;
 
 /** A lista fechada dos âmbitos, na ordem em que a página os desenha. */
 export function ambitos() {
-  return [
-    AMBITO_POR_DEFEITO,
-    ...REGIOES_DE_AMBITO.map((r) => chaveDaRegiao(r.slug)),
-    ...concelhos().map((c) => chaveDoConcelho(c.slug)),
-  ];
+  return [AMBITO_POR_DEFEITO, ...concelhos().map((c) => chaveDoConcelho(c.slug))];
 }

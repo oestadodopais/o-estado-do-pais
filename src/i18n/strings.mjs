@@ -384,13 +384,12 @@ export const STRINGS = {
          fica «Municipality»: «concelho» por traduzir na interface inglesa é um
          defeito à parte (C12), e é do bloco B. */
       municipio: 'Concelho',
-      /* A meta da fila das regiões. Dizia «as seis leituras» porque a etapa 2
-         rendia seis pastilhas, com Portugal entre elas; a leitura cruzada de
-         20.08 mostrou que Portugal não é uma região, e a fila passou a cinco
-         (plano §13). A frase deixa de contar: as leituras que a régua publica
-         continuam a ser seis, e as regiões da fila são as que a fila mostra.
-         Contar aqui obrigaria a mudar a frase de cada vez que a lista mudasse. */
-      regioesMeta: 'As regiões publicadas na régua da convergência.',
+      /* `regioesMeta` SAIU (Emenda 21b, 27.08.2026). Era a meta da fila das
+         regiões, o painel que o comando «Região» abria; a fila saiu a 25.08 e o
+         comando voltou a 27.08 como LIGAÇÃO para `/regioes`, sem painel nenhum
+         por baixo. Uma cadeia sem superfície é uma promessa de que a coisa
+         volta, e esta não volta: a fila das regiões foi substituída pela régua
+         completa da página das regiões. Registada em `CHAVES-EN.md`. */
       pesquisaRotulo: 'Escreva o nome do concelho',
       pesquisaSemResultado: 'Nenhum concelho com esse nome.',
     },
@@ -412,7 +411,6 @@ export const STRINGS = {
            como se fosse o dos dois. As contagens que a página precisa de dizer
            estão na manchete, e são as duas que a Emenda 16 escreve. */
         paisA: 'Portugal · país',
-        regiaoSufixo: ' · região',
         /* A MANCHETE DA EMENDA 16, palavra por palavra do lugar de direção:
            «Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios
            Macroeconómicos e cumpre 9.» As duas contagens são chaves da prova, e
@@ -453,11 +451,12 @@ export const STRINGS = {
           ano: ', em ',
           fecha: '.',
         },
-        ledeRegiaoPartes: [
-          'PIB per capita em paridades de poder de compra, com a média da UE-27 fixada em ',
-          { nl: '100', motivo: 'escala-de-instrumento' },
-          '.',
-        ],
+        /* `ledeRegiaoPartes` SAIU (Emenda 21b, 27.08.2026). Era a lede dos
+           cinco blocos de cabeça das regiões, e dizia o que o índice compara. Os
+           blocos saíram com os estados que os acendiam, e a mesma coisa dita
+           melhor está na página das regiões, por baixo do instrumento
+           (`home.instr1.significadoV`), uma vez e não cinco. Registada em
+           `CHAVES-EN.md`. */
         /* O prefixo do distrito (ISSUES I18, subetapa 2g). A Carta escreve
            «Beja» e «Ilha do Faial»; a etiqueta de Évora, que vem de
            `municipios.mjs`, escreve «distrito de Évora». A regra é uma só para
@@ -1617,7 +1616,6 @@ export const STRINGS = {
       pais: 'Country',
       regiao: 'Region',
       municipio: 'Municipality',
-      regioesMeta: 'The regions published on the convergence rule.',
       pesquisaRotulo: 'Type the name of the municipality',
       pesquisaSemResultado: 'No municipality by that name.',
     },
@@ -1633,7 +1631,6 @@ export const STRINGS = {
     inicio: {
       cabeca: {
         paisA: 'Portugal · country',
-        regiaoSufixo: ' · region',
         tituloPaisA: 'Portugal breaches ',
         tituloPaisUm: ' threshold of the Macroeconomic Imbalance Procedure and meets ',
         tituloPaisMuitos: ' thresholds of the Macroeconomic Imbalance Procedure and meets ',
@@ -1647,11 +1644,6 @@ export const STRINGS = {
           ano: ', in ',
           fecha: '.',
         },
-        ledeRegiaoPartes: [
-          'GDP per capita in purchasing power standards, with the EU-27 average fixed at ',
-          { nl: '100', motivo: 'escala-de-instrumento' },
-          '.',
-        ],
         /* «district of », com o espaço final, como o par português. Os nomes de
            ilha da Carta ficam em português nas duas edições: são nomes
            próprios. A palavra «concelho» deixou de ser um deles na interface
