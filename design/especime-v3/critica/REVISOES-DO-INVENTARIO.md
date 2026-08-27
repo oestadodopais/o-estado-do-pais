@@ -30,6 +30,32 @@ leu **só o diff do inventário**. É essa a leitura que esta tabela regista.
 | voz-do-livro-razao | 10 | `design/especime-v3/critica/2026-08-27-codex-leitura-voz-livro.md` | Codex `gpt-5.6-sol`, 27.08.2026, sobre o diff do bloco, os marcadores e as duas páginas de índice do livro-razão, com duas plantas (2 de 2); a última passagem L1 a L5 saiu dela |
 | voz-dos-documentos | 2 | `design/especime-v3/critica/2026-08-27-codex-leitura-voz-documentos.md` | Codex `gpt-5.6-sol`, 27.08.2026, sobre os doze diffs da passagem, a disposição e três páginas de leitura construídas, com três plantas (2 de 3; a terceira mal empacotada) |
 | mapa-distritos | 16 | `design/especime-v3/critica/2026-08-27-codex-leitura-mapa-distritos.md` | Codex `gpt-5.6-sol`, 27.08.2026, sobre a primeira página, quatro páginas de distrito, os JSON do mapa e o diff do inventário, com quatro plantas (4 de 4) |
+| grelha-2 | 39 reclassificadas | **por ler** | o bloco «A grelha, segunda passagem», 27.08.2026: as 39 linhas que passaram a `retirada` com a razão de cada uma, mais as 18 que saíram do ficheiro. A leitura cruzada faz-se antes da fusão |
+
+## As duas colunas novas de 27.08.2026 (I74)
+
+A tabela do inventário passou de três colunas a cinco: **estado** e **razão**.
+Uma linha declara-se `viva` — rende-se em pelo menos uma rota inventariada — ou
+`retirada` — a casa tirou aquela frase de propósito, ela não pode voltar a
+render-se, e a razão da coluna a seguir diz que bloco a tirou. `npm run
+check:voz` fecha a construção nos dois sentidos: uma linha `viva` que não se
+rende em rota nenhuma, e uma linha `retirada` que voltou.
+
+**O que isto fecha.** A I74 contou 58 declarações que já não se rendiam em página
+nenhuma, e a razão de elas ficarem era boa: o ficheiro escreve, desde o bloco dos
+308, que «uma frase corrigida sai desta lista», porque repô-la passaria em
+silêncio. O que faltava era a régua. Uma linha que ficava sem se render não era
+uma sentinela: era uma linha morta, e a lista engordava.
+
+**O que saiu em vez de ficar.** Dezoito das 57 que este bloco encontrou não
+podiam ser sentinelas, e saíram do ficheiro: catorze levam uma contagem por
+dentro («132 afirmações · 19 calculadas», «128 de 136 linhas com proveniência
+completa»), e uma frase com um número que se move volta com outro número, pelo
+que a linha nunca voltaria a morder; e quatro deixaram de ser frases da casa
+porque o nome do lugar passou a declarar-se (`data-lugar`) ou a compor-se
+(`<lugar>`), e a régua deixou de as ler como prosa. As duas famílias estão
+contadas na nota do bloco, com o que as substitui: quando uma contagem voltar,
+volta como bloco **por classificar**, que é o portão que a apanha.
 
 ## O que a entrada de «até 2026-08-26» cobre, e o que não cobre
 

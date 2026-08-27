@@ -166,7 +166,7 @@ export function analisa(texto, rota, { marcadores, excecoes }) {
  * da revisão) leem o mesmo ficheiro, e por isso leem-no pela mesma função. Duas
  * implementações da mesma tabela divergiriam na primeira linha estranha.
  *
- * A TERCEIRA COLUNA, «bloco», entrou a 26.08.2026 com o G2 deste bloco: é o
+ * A TERCEIRA COLUNA, «bloco», entrou a 26.08.2026 com o G2 da grelha da voz: é o
  * identificador do bloco de trabalho que acrescentou ou reclassificou a linha.
  * As linhas anteriores levam `até 2026-08-26`, que é o que elas são: um estado
  * herdado, sem o rasto de quem o pôs lá. Uma linha com duas células continua a
@@ -180,6 +180,32 @@ export const FICHEIRO_DO_INVENTARIO = path.join(
 );
 
 const CLASSES_DO_INVENTARIO = new Set(['conteudo', 'navegacao', 'autorreferencia']);
+
+/**
+ * A QUARTA COLUNA, «estado», ENTROU A 27.08.2026 COM O G2 DESTE BLOCO (I74).
+ *
+ * O inventário tinha 58 linhas declaradas que já não se rendiam em página
+ * nenhuma, e nada o impedia. O ficheiro escreve, desde o bloco dos 308, que «uma
+ * frase corrigida sai desta lista», porque repô-la passaria em silêncio; mas
+ * nenhuma régua conferia isso, e a limpeza era à mão.
+ *
+ * Cada linha passa a dizer em que estado está:
+ *
+ *   `viva`     · rende-se em pelo menos uma rota inventariada. É o estado de
+ *               quase todas, e o que a construção confere: uma linha `viva` que
+ *               não se rende em lado nenhum fecha a construção, porque ou a
+ *               frase mudou e a linha ficou para trás, ou a rota saiu.
+ *   `retirada` · uma frase que a casa tirou de propósito. NÃO se pode render:
+ *               se voltar, a construção fecha e diz o nome dela. É a rede que
+ *               faltava, e é a razão de a linha ficar no ficheiro em vez de
+ *               sair: uma frase apagada volta em silêncio, uma frase declarada
+ *               `retirada` volta a vermelho.
+ *
+ * Uma linha `retirada` leva a QUINTA COLUNA, a razão: que bloco tirou a frase, e
+ * porquê. Sem ela a linha é uma proibição sem motivo escrito, e a construção
+ * fecha na mesma. As linhas `viva` levam `—`.
+ */
+const ESTADOS_DO_INVENTARIO = new Set(['viva', 'retirada']);
 
 export function leInventario(raiz) {
   const ficheiro = path.join(raiz, FICHEIRO_DO_INVENTARIO);
@@ -207,8 +233,20 @@ export function leInventario(raiz) {
     if (!cel || cel.length < 2 || !CLASSES_DO_INVENTARIO.has(cel[0])) continue;
     const [classe, texto] = cel;
     const bloco = cel.length >= 3 ? cel[2] : null;
-    mapa.set(texto, classe);
-    linhas.push({ n: i + 1, classe, texto, bloco });
+    /* O estado só se lê quando é um dos dois nomes: uma célula com outra coisa
+       lá dentro fica `null`, e o portão diz que a linha não tem estado. Adivinhar
+       o estado de uma linha mal escrita seria o contrário do que esta coluna
+       existe para fazer. */
+    const cru4 = cel.length >= 4 ? cel[3] : null;
+    const estado = cru4 && ESTADOS_DO_INVENTARIO.has(cru4) ? cru4 : null;
+    const razao = cel.length >= 5 && cel[4] && cel[4] !== '—' ? cel[4] : null;
+    /* UMA FRASE RETIRADA NÃO ENTRA NO MAPA DAS CLASSES. O mapa é o que responde
+       «esta frase está declarada, e com que classe»: uma frase retirada não está
+       declarada, está proibida, e se ela voltar a render tem de sair como bloco
+       POR CLASSIFICAR e não como conteúdo aprovado. Foi exactamente assim que
+       uma frase corrigida podia voltar em silêncio. */
+    if (estado !== 'retirada') mapa.set(texto, classe);
+    linhas.push({ n: i + 1, classe, texto, bloco, estado, razao, cru4 });
   }
   return { mapa, linhas, ficheiro, existe: true, cabeca };
 }

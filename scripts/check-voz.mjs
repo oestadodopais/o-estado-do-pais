@@ -28,7 +28,13 @@
  *      acima do `lida-contra` da cabeça do inventário. A regra mudou e o
  *      inventário não foi relido contra ela: foi o que aconteceu com a Emenda 18
  *      de 25.08.2026, e é o que este passo impede que volte a acontecer em
- *      silêncio.
+ *      silêncio;
+ *   7. **o estado de cada declaração** (I74, 27.08.2026) · uma linha sem estado,
+ *      uma linha `retirada` sem razão escrita, uma linha `viva` que não se rende
+ *      em rota nenhuma, ou uma linha `retirada` que voltou a render-se. É a rede
+ *      que faltava nos dois sentidos: o inventário tinha 58 linhas declaradas
+ *      que já não se rendiam em página nenhuma, e uma frase corrigida podia
+ *      voltar em silêncio por continuar declarada.
  *
  * A varredura não é feita aqui: é a da régua, corrida com `--json`, que é a
  * mesma que a matriz já usa. Duas implementações da mesma definição diriam a
@@ -98,6 +104,61 @@ for (const [rota, r] of rotas) {
 }
 
 if (!casa.inventario_existe) erros.push(`não existe ${casa.inventario}`);
+
+/* 7 · o estado de cada declaração (I74).
+ *
+ * Os dois sentidos, e nenhum deles é o mesmo defeito visto duas vezes. Uma linha
+ * `viva` que não se rende é uma lista a mentir sobre o sítio: ou a frase mudou e
+ * a linha ficou para trás, ou a rota saiu. Uma linha `retirada` que se rende é
+ * uma frase que a casa tirou e que voltou — e voltar em silêncio era exactamente
+ * o que a I74 escreveu que podia acontecer.
+ *
+ * O QUE SE MEDE É A UNIÃO DAS DUAS VARREDURAS, e é a régua que a calcula: a da
+ * medida 8 e a da medida 9. Para uma proibição, a peneira mais larga é a certa.
+ */
+{
+  const d = casa.declaracoes ?? null;
+  if (!d) {
+    erros.push(
+      `a régua não devolveu o estado das declarações do inventário, e é o que a I74 fecha.`,
+    );
+  } else {
+    for (const l of d.sem_estado) {
+      erros.push(
+        `${casa.inventario}:${l.n}: a linha não diz o seu estado` +
+          `${l.estado ? ` («${l.estado}» não é «viva» nem «retirada»)` : ''}. ` +
+          `Uma linha declara-se «viva» (rende-se algures) ou «retirada» (foi tirada de propósito e não pode voltar).
+` +
+          `      «${l.texto.slice(0, 110)}»`,
+      );
+    }
+    for (const l of d.retiradas_sem_razao) {
+      erros.push(
+        `${casa.inventario}:${l.n}: linha «retirada» sem razão escrita. Uma proibição sem motivo ` +
+          `é uma linha que ninguém sabe levantar.
+      «${l.texto.slice(0, 110)}»`,
+      );
+    }
+    for (const l of d.vivas_que_nao_rendem) {
+      erros.push(
+        `${casa.inventario}:${l.n}: linha «viva» que não se rende em rota nenhuma. ` +
+          `Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos ` +
+          `a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+` +
+          `      «${l.texto.slice(0, 110)}»`,
+      );
+    }
+    for (const l of d.retiradas_que_rendem) {
+      erros.push(
+        `${casa.inventario}:${l.n}: FRASE RETIRADA QUE VOLTOU A RENDER-SE.
+` +
+          `      razão da retirada: ${l.razao}
+` +
+          `      «${l.texto.slice(0, 110)}»`,
+      );
+    }
+  }
+}
 
 /* 5 · o rasto da revisão (G2).
  *
@@ -225,7 +286,9 @@ console.log(
   verde('  voz ✓ ') +
     `${voz.marcadores} marcadores · ${voz.excecoes} exceções (${voz.excecoes_de_registo} de registo) · ` +
     `${voz.frases_varridas} frases distintas, ${voz.ocorrencias_varridas} ocorrências em ${rotas.length} rotas · ` +
-    `autorreferência 0 · nada por classificar · ${inventario.linhas.length} linhas do inventário com bloco · lida contra a Emenda ${lidaContra} (a mais alta da voz é a ${emendaMaisAlta})`,
+    `autorreferência 0 · nada por classificar · ${inventario.linhas.length} linhas do inventário com bloco ` +
+    `(${casa.declaracoes?.vivas ?? '?'} vivas, todas rendidas; ${casa.declaracoes?.retiradas ?? '?'} retiradas, nenhuma rendida) · ` +
+    `lida contra a Emenda ${lidaContra} (a mais alta da voz é a ${emendaMaisAlta})`,
 );
 if (blocosPorLer.length) {
   console.log(cinza(`        ${blocosPorLer.length} bloco(s) do inventário por ler, e o registo di-lo:`));

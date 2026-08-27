@@ -19,12 +19,16 @@
  *   7. frases de cobertura — quantas cadeias visíveis DISTINTAS o sítio usa
  *      para cada estado de cobertura editorial, por edição (defeito 7);
  *   8. frases da casa — o inventário de todos os blocos de texto de uma rota
- *      inventariada que são prosa da casa, mais a DESCRIÇÃO do seu `<head>`,
+ *      inventariada que são prosa da casa, mais a DESCRIÇÃO do seu `<head>` e as
+ *      DICAS (`title`) e os RÓTULOS DE ACESSIBILIDADE (`aria-label`) dela,
  *      classificados em conteúdo, navegação e autorreferência pela lista
  *      declarada em `design/especime-v3/INVENTARIO-FRASES.md` (Emenda 15).
  *   9. o tripwire da voz · os mesmos blocos, passados pela lista fechada de
  *      marcadores de `design/especime-v3/VOZ-MARCADORES.md`, DECLARADOS OU NÃO.
  *      A medida 8 acredita em quem escreveu a frase; esta não.
+ *  10. o estado de cada declaração · cada linha do inventário diz-se `viva` (e
+ *      então tem de se render nalguma rota) ou `retirada` (e então não pode
+ *      render-se em nenhuma). Mede-se contra a união das duas varreduras.
  *
  * Uso:  node scripts/medir-defeitos.mjs            (imprime)
  *       node scripts/medir-defeitos.mjs --json     (para guardar uma medição)
@@ -426,6 +430,74 @@ function frasesDaCasa(root) {
   return out;
 }
 
+/**
+ * ---------------------------------------------------------------------------
+ * AS DICAS E OS RÓTULOS DE ACESSIBILIDADE SÃO TEXTO DO LEITOR (I79, 27.08.2026)
+ * ---------------------------------------------------------------------------
+ * A régua lia os blocos de texto e a descrição do `<head>`, e não lia os
+ * atributos. Um `title` é o que o navegador mostra quando o cursor pára em cima
+ * de um número, e um `aria-label` é o nome por que um leitor de ecrã chama um
+ * instrumento: as duas coisas são superfície pública, escritas pela casa, e a
+ * Emenda 15 não conhece a diferença entre uma frase no corpo e uma frase num
+ * atributo.
+ *
+ * O CASO QUE ABRIU A ISSUE. Cinco das dicas dos valores da prova diziam a
+ * maquinaria em vez da coisa, e a mais clara era «itens da agenda atravessados
+ * do motor». Foram corrigidas a 27.08 na mão, e a régua não as via: replantar
+ * aquela dica não ficava vermelho em lado nenhum. Passa a ficar, pelo nome e
+ * pelo marcador «atravess».
+ *
+ * AS DICAS ENTRAM PELAS DUAS MEDIDAS, e a razão é a mesma que vale para o corpo:
+ * a medida 8 exige que cada uma esteja declarada e classificada, e a medida 9
+ * passa-lhe os marcadores por cima, declarada ou não.
+ *
+ * UM ATRIBUTO NUM BLOCO COM ORIGEM DECLARADA CONTA. A medida 8 deixa cair um
+ * bloco inteiro que contenha um `data-claim` ou um `data-prova`, e está certa
+ * para o texto: aquele bloco é o livro-razão a falar. O `title` do mesmo
+ * elemento não é: o número vem do livro-razão e a frase que o nomeia é da casa.
+ * É exactamente o caso das dicas da prova, que vivem em `<span data-prova>`.
+ */
+/**
+ * DUAS NORMALIZAÇÕES, E AS DUAS SÃO A MESMA REGRA DO `<lugar>` DA DESCRIÇÃO.
+ *
+ *   1. **Uma dica que repete um `data-*` do próprio elemento não é uma frase
+ *      nova.** O selo de uma linha leva `data-selo-etiqueta="calculado · Évora —
+ *      Prometido, Pago, Auditado 2026"` e o mesmo texto no `title`: o que ali
+ *      está é o estado da linha e o NOME DO TRABALHO que a publica, composto
+ *      pelo livro-razão. Declarar as trinta seria pôr o arquivo dentro do
+ *      inventário, e o inventário passava a crescer com o livro-razão.
+ *   2. **Um identificador que o próprio elemento aponta sai da dica e deixa a
+ *      marca.** As portas das figuras de uma página de leitura levam
+ *      `href="#linha-tc-year-1-2008"` e `aria-label="linha do motor:
+ *      tc-year-1-2008"`: a frase da casa é «linha do motor», e o resto é a
+ *      chave da linha. Sem isto, o inventário ganhava uma linha por figura de
+ *      cada documento.
+ *
+ * O QUE ISTO NÃO FAZ é dispensar a dica de um elemento com origem declarada. A
+ * dica de um valor da prova vive num `<span data-prova>` e é prosa da casa a
+ * nomear o que se conta: é ela que a I79 existe para apanhar.
+ */
+const DICAS = ['title', 'aria-label'];
+function dicasDaCasa(root) {
+  const out = [];
+  for (const el of root.querySelectorAll('[title],[aria-label]')) {
+    const dados = Object.entries(el.attributes ?? {})
+      .filter(([k]) => k.startsWith('data-'))
+      .map(([, v]) => norm(v));
+    const href = el.getAttribute('href') ?? '';
+    const fragmento = href.startsWith('#') ? href.slice(1) : '';
+    const chaves = [fragmento, fragmento.replace(/^linha-/, '')].filter(Boolean);
+    for (const at of DICAS) {
+      let v = norm(el.getAttribute(at) ?? '');
+      if (!v) continue;
+      if (dados.includes(v)) continue;
+      for (const chave of chaves) if (v.includes(chave)) v = norm(v.split(chave).join('<linha>'));
+      if (v) out.push(v);
+    }
+  }
+  return out;
+}
+
 const frasesPorRota = new Map(); // rota → Map(texto → ocorrências)
 const frasesDaVozPorRota = new Map(); // rota → Set(texto), a varredura do tripwire
 
@@ -464,11 +536,13 @@ for (const file of ficheiros) {
     paginasPorBloco.set(b, (paginasPorBloco.get(b) ?? 0) + 1);
   }
 
-  /* 8 — as frases da casa, nas rotas inventariadas: o corpo e a descrição */
+  /* 8 — as frases da casa, nas rotas inventariadas: o corpo, a descrição e as
+     dicas (I79) */
   if (rota && ROTAS_DO_INVENTARIO.has(rota.key)) {
     const chave = caminho || '/';
     const conta = frasesPorRota.get(chave) ?? new Map();
     for (const f of frasesDaCasa(root)) conta.set(f, (conta.get(f) ?? 0) + 1);
+    for (const f of dicasDaCasa(root)) conta.set(f, (conta.get(f) ?? 0) + 1);
     let descricao = norm(
       root.querySelector('head meta[name="description"]')?.getAttribute('content') ?? '',
     );
@@ -482,6 +556,7 @@ for (const file of ficheiros) {
     frasesPorRota.set(chave, conta);
     const daVoz = frasesDaVozPorRota.get(chave) ?? new Set();
     for (const f of frasesDaVoz(root)) daVoz.add(f);
+    for (const f of dicasDaCasa(root)) daVoz.add(f);
     if (descricao) daVoz.add(descricao);
     frasesDaVozPorRota.set(chave, daVoz);
   }
@@ -659,6 +734,52 @@ const excecoesPorUsar = VOZ.excecoes
   .filter((e) => e.tipo !== 'registo' && e.usos === 0)
   .map((e) => e.alvos[0]);
 
+/* =============================================================================
+ * 10 · O ESTADO DE CADA DECLARAÇÃO (I74, 27.08.2026)
+ * =============================================================================
+ * O inventário tinha 58 linhas que já não se rendiam em página nenhuma, e nada o
+ * impedia: uma frase corrigida saía das páginas e a sua declaração ficava, pelo
+ * que repô-la passava em silêncio. Cada linha declara agora o seu estado, e esta
+ * medida confere os dois sentidos:
+ *
+ *   · uma linha `viva` que não se rende em rota nenhuma — ou a frase mudou e a
+ *     linha ficou para trás, ou a rota saiu; nos dois casos a lista está a
+ *     mentir sobre o sítio;
+ *   · uma linha `retirada` que se rende — a frase que a casa tirou voltou.
+ *
+ * O QUE CONTA COMO «RENDER-SE» É A UNIÃO DAS DUAS VARREDURAS, a da medida 8 (os
+ * blocos de texto da casa) e a da medida 9 (o texto fora das origens
+ * declaradas). Não é a mesma coisa e a diferença importa: uma frase reposta ao
+ * lado de um número vive num bloco com origem declarada, que a medida 8 deixa
+ * cair inteiro, e só a varredura da voz a vê. Para uma proibição, a peneira mais
+ * larga é a certa.
+ */
+const rendidas = new Set();
+for (const conta of frasesPorRota.values()) for (const t of conta.keys()) rendidas.add(t);
+for (const frases of frasesDaVozPorRota.values()) for (const t of frases) rendidas.add(t);
+
+const declaracoes = {
+  total: INVENTARIO.linhas.length,
+  vivas: INVENTARIO.linhas.filter((l) => l.estado === 'viva').length,
+  retiradas: INVENTARIO.linhas.filter((l) => l.estado === 'retirada').length,
+  rendidas: rendidas.size,
+  sem_estado: INVENTARIO.linhas
+    .filter((l) => !l.estado)
+    .map((l) => ({ n: l.n, estado: l.cru4, texto: l.texto })),
+  retiradas_sem_razao: INVENTARIO.linhas
+    .filter((l) => l.estado === 'retirada' && !l.razao)
+    .map((l) => ({ n: l.n, texto: l.texto })),
+  /* A pergunta é «esta linha rende-se?», e quem responde «não tem de se render»
+     é só o estado `retirada`. Uma linha sem estado nenhum entra aqui e sai
+     também em `sem_estado`: as duas coisas estão erradas, e as duas dizem-se. */
+  vivas_que_nao_rendem: INVENTARIO.linhas
+    .filter((l) => l.estado !== 'retirada' && !rendidas.has(l.texto))
+    .map((l) => ({ n: l.n, classe: l.classe, bloco: l.bloco, texto: l.texto })),
+  retiradas_que_rendem: INVENTARIO.linhas
+    .filter((l) => l.estado === 'retirada' && rendidas.has(l.texto))
+    .map((l) => ({ n: l.n, bloco: l.bloco, razao: l.razao, texto: l.texto })),
+};
+
 const medicao = {
   paginas,
   porta_correccoes: { com: comPorta, sem: semPorta.length },
@@ -683,6 +804,7 @@ const medicao = {
     inventario_existe: INVENTARIO.existe,
     entradas_declaradas: INVENTARIO.mapa.size,
     por_rota: frasesDaCasaPorRota,
+    declaracoes,
   },
   voz: {
     ficheiro: FICHEIRO_DOS_MARCADORES,
