@@ -5761,6 +5761,13 @@ const ancoraDoMandatoNoPortao = (periodo) =>
 function idsDaFrase(partes) {
   const ids = [];
   for (const parte of partes ?? []) {
+    /* A nota das medidas é uma LISTA DE PARÁGRAFOS desde o I75, e cada parágrafo
+       é uma lista de pedaços: desce-se um nível para que a conferência continue
+       a ver os ids que a peça cita, em vez de contar zero em silêncio. */
+    if (Array.isArray(parte)) {
+      ids.push(...idsDaFrase(parte));
+      continue;
+    }
     if (parte && typeof parte === 'object' && typeof parte.claim === 'string') ids.push(parte.claim);
   }
   return ids;

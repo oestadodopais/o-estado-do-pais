@@ -196,11 +196,20 @@ const jsonld = {
               </div>
             ))}
           </div>
-          {leitura.medidasNota && (
-            <p class="placeholder-nota">
-              <Frase partes={leitura.medidasNota[lang]} lang={lang} />
-            </p>
-          )}
+          {/* A NOTA DAS MEDIDAS É UMA LISTA DE PARÁGRAFOS, E LEVA SELOS (I75,
+              27.08.2026). Era um parágrafo só, sem selos, e por isso um valor do
+              livro-razão não podia viver aqui: um número sem o seu selo fecha o
+              portão, e com razão. Passa a lista para que a prosa da casa e a
+              frase que cita um valor sejam blocos diferentes: a primeira continua
+              a ser contada pela régua do inventário e varrida pelo tripwire da
+              voz, e a segunda é uma origem declarada, como qualquer frase que
+              cita o livro-razão. */}
+          {leitura.medidasNota &&
+            leitura.medidasNota[lang].map((paragrafo) => (
+              <p class="placeholder-nota">
+                <Frase partes={paragrafo} lang={lang} selos={true} />
+              </p>
+            ))}
         </div>
 
         <div class="leitura-breve">
