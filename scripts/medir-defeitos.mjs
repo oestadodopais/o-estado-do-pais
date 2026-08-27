@@ -342,6 +342,53 @@ function textoForaDeComandos(no) {
   return partes.join(' ');
 }
 
+/**
+ * O TEXTO DE UM BLOCO, SEM O QUE ESTÁ DENTRO DE UMA ORIGEM DECLARADA (V1,
+ * 27.08.2026).
+ *
+ * A medida 8 DEIXA CAIR um bloco inteiro que contenha uma origem declarada, e
+ * está certa: o que ela conta são as frases da casa, e um `<dd>` com um valor do
+ * livro-razão lá dentro não é uma frase de moldura. Mas o tripwire da voz não
+ * está a contar frases: está à procura de uma casa que fala de si, e essa fala
+ * mora muitas vezes ao lado de um número. Medido a 27.08 com a leitura de fora:
+ * três das quatro frases que ela apanhou na página de Évora («A página mostra as
+ * duas…», «nos quatro anos que esta página publica», «a diferença é publicada
+ * arredondada ao euro») partilhavam o bloco com um `<Claim>`, e por isso nunca
+ * chegaram à medida 8 nem ao tripwire.
+ *
+ * O tripwire passa a varrer o texto que fica FORA das origens declaradas, em
+ * todos os blocos de uma rota inventariada. Fora dos comandos também, pela razão
+ * que a medida 8 já escreve: um destino não é uma frase.
+ */
+function textoForaDasOrigens(no, marcados) {
+  const partes = [];
+  const anda = (n) => {
+    if (!n) return;
+    if (n.nodeType === NodeType.TEXT_NODE) return void partes.push(n.rawText);
+    const tag = String(n.rawTagName ?? '').toLowerCase();
+    if (tag === 'script' || tag === 'style' || tag === 'a' || tag === 'button') return;
+    if (marcados.has(n)) return;
+    for (const f of n.childNodes ?? []) anda(f);
+  };
+  anda(no);
+  return partes.join(' ');
+}
+
+function frasesDaVoz(root) {
+  const out = [];
+  const DECLARADO =
+    ORIGEM_DECLARADA + ',' + MEDIDA_DECLARADA + ',' + COBERTURA_DECLARADA + ',' + LUGAR_DECLARADO;
+  const marcados = new Set();
+  for (const el of root.querySelectorAll(DECLARADO)) marcados.add(el);
+  for (const el of root.querySelectorAll(BLOCOS)) {
+    if (el.querySelector(BLOCOS)) continue;
+    if (marcados.has(el)) continue;
+    const t = norm(textoForaDasOrigens(el, marcados));
+    if (t) out.push(t);
+  }
+  return out;
+}
+
 function frasesDaCasa(root) {
   const out = [];
   const marcados = new Set();
@@ -371,6 +418,7 @@ function frasesDaCasa(root) {
 }
 
 const frasesPorRota = new Map(); // rota → Map(texto → ocorrências)
+const frasesDaVozPorRota = new Map(); // rota → Set(texto), a varredura do tripwire
 
 const coberturaPorEdicao = new Map(); // edição → estado → Map(cadeia → ocorrências)
 function registaCobertura(edicao, estado, cadeia) {
@@ -423,6 +471,10 @@ for (const file of ficheiros) {
     }
     if (descricao) conta.set(descricao, (conta.get(descricao) ?? 0) + 1);
     frasesPorRota.set(chave, conta);
+    const daVoz = frasesDaVozPorRota.get(chave) ?? new Set();
+    for (const f of frasesDaVoz(root)) daVoz.add(f);
+    if (descricao) daVoz.add(descricao);
+    frasesDaVozPorRota.set(chave, daVoz);
   }
 
   /* 7 — as frases de cobertura */
@@ -554,11 +606,6 @@ for (const [rota, conta] of [...frasesPorRota.entries()].sort()) {
     const classe = INVENTARIO.mapa.get(t);
     if (classe) porClasse[classe] += n;
     else naoClassificados.push(t);
-    frasesVarridas.add(t);
-    ocorrenciasVarridas += n;
-    if (classe === 'autorreferencia') continue;
-    const mordeu = analisa(t, rota, VOZ);
-    if (mordeu.length) achadosDaVoz.push({ rota, marcadores: mordeu, classe: classe ?? null, texto: t });
   }
   frasesDaCasaPorRota[rota] = {
     total,
@@ -566,6 +613,19 @@ for (const [rota, conta] of [...frasesPorRota.entries()].sort()) {
     por_classe: porClasse,
     nao_classificados: naoClassificados.sort(),
   };
+}
+
+/* A varredura do tripwire, que é mais larga do que a da medida 8. */
+for (const [rota, frases] of [...frasesDaVozPorRota.entries()].sort()) {
+  for (const t of frases) {
+    frasesVarridas.add(t);
+    ocorrenciasVarridas++;
+    if (INVENTARIO.mapa.get(t) === 'autorreferencia') continue;
+    const mordeu = analisa(t, rota, VOZ);
+    if (mordeu.length) {
+      achadosDaVoz.push({ rota, marcadores: mordeu, classe: INVENTARIO.mapa.get(t) ?? null, texto: t });
+    }
+  }
 }
 
 /* Um achado é uma FRASE, e não uma frase vezes as rotas em que se rende: a
