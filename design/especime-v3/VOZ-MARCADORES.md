@@ -111,8 +111,14 @@ duas edições da mesma frase**, porque é assim que a casa decide e é assim qu
 Quatro tipos:
 
 * **contexto** · uma cadeia que, onde aparecer, não é a casa a falar de si. É
-  apagada da frase antes de os marcadores correrem, e por isso vale em qualquer
-  rota. É a forma dos `tokens` do `allowlist.yml`.
+  apagada da frase antes de os marcadores correrem. É a forma dos `tokens` do
+  `allowlist.yml`. **A coluna «rotas» limita a dispensa às rotas que ela nomear**
+  (X3 da leitura de fora, 27.08.2026): uma cadeia que é o nome de um campo no
+  recibo de uma linha é uma afirmação de cobertura em qualquer outra página, e a
+  régua tem de a apanhar lá. `(todas)` é o que a coluna diz quando a dispensa é
+  global, que é o que todas eram até aqui; as rotas nomeiam-se pela CHAVE da
+  rota, porque uma família de páginas tem uma chave e seiscentos caminhos, e uma
+  dispensa com rotas não se aplica onde a chave não for conhecida.
 * **rota** · um marcador que, numa rota nomeada, é o objecto da página. Todos os
   outros marcadores continuam a morder nessa rota.
 * **frase** · uma frase inteira, com o marcador a que a exceção responde.
@@ -138,12 +144,12 @@ uma frase que a varredura não alcança: uma dispensa que nunca se exerce é uma
 lista a engordar em silêncio, e a régua imprime-a. O
 `PROTOCOLO-DAS-LEITURAS.md` guarda a decisão por extenso.
 
-| tipo | marcador | pt | en | razão |
-| --- | --- | --- | --- | --- |
-| contexto | verific · verif | a verificar | to verify | `[a verificar]` é o marcador de incerteza do sítio, com página própria em `/a-verificar`: diz que falta um campo de proveniência, e é a ausência declarada que a Emenda 15 manda dizer. A raiz «verific» está dentro do nome do marcador, e não numa afirmação da casa. |
-| contexto | a página · the page | a página da câmara | the council’s page | É a página da CÂMARA MUNICIPAL, e não a deste sítio: nomeia a fonte de onde as designações de pelouro são lidas. A raiz apanha-a porque as duas se escrevem com as mesmas palavras. |
-| rota | ste sítio · this site | /correcoes | /en/corrections | A política de correções é o CONTEÚDO desta página, e é a Emenda 17 que o escreve: «a frase da política vive em `/correcoes`.» A cabeça do inventário já o diz por extenso: «Nenhum bloco desta página é autorreferência, e a razão não é indulgência: é o objecto da página.» Só este marcador é dispensado; todos os outros continuam a morder aqui. |
-| contexto | complet | secundário incompleto | without completing secondary education | É a DEFINIÇÃO da medida dos jovens que saem cedo da escola: o adjetivo é do percurso escolar de uma pessoa, e o que ele qualifica é o que a fonte mede. Nada tem que ver com o que o sítio cobre. |
-| contexto | complet | (nenhum) | planned completion date has passed with no completion recorded | É um CAMPO do registo público do plano de recuperação, na edição inglesa: a data prevista de conclusão de um local e o facto de não haver conclusão registada. O português da mesma frase diz «conclusão», que a raiz não morde, e por isso esta linha só nomeia a cadeia inglesa. |
-| contexto | complet | proveniência completa | provenance complete | É o NOME de um dos dois estados do selo de uma linha, e o estado é do CAMPO: diz que nenhum campo de proveniência daquela linha ficou por confirmar. Não é uma afirmação sobre o que o sítio cobre. O outro estado chama-se «um campo por confirmar», e as duas palavras estão desenhadas lado a lado na legenda do aparelho. |
-| frase | sta página · this page | Nesta página | On this page | O rótulo do sumário de uma página, já declarado navegação no inventário: leva a outro sítio da mesma página, e é isso que a lista chama navegação. |
+| tipo | marcador | pt | en | razão | rotas |
+| --- | --- | --- | --- | --- | --- |
+| contexto | verific · verif | a verificar | to verify | `[a verificar]` é o marcador de incerteza do sítio, com página própria em `/a-verificar`: diz que falta um campo de proveniência, e é a ausência declarada que a Emenda 15 manda dizer. A raiz «verific» está dentro do nome do marcador, e não numa afirmação da casa. | (todas) |
+| contexto | a página · the page | a página da câmara | the council’s page | É a página da CÂMARA MUNICIPAL, e não a deste sítio: nomeia a fonte de onde as designações de pelouro são lidas. A raiz apanha-a porque as duas se escrevem com as mesmas palavras. | (todas) |
+| rota | ste sítio · this site | /correcoes | /en/corrections | A política de correções é o CONTEÚDO desta página, e é a Emenda 17 que o escreve: «a frase da política vive em `/correcoes`.» A cabeça do inventário já o diz por extenso: «Nenhum bloco desta página é autorreferência, e a razão não é indulgência: é o objecto da página.» Só este marcador é dispensado; todos os outros continuam a morder aqui. | (todas) |
+| contexto | complet | secundário incompleto | without completing secondary education | É a DEFINIÇÃO da medida dos jovens que saem cedo da escola: o adjetivo é do percurso escolar de uma pessoa, e o que ele qualifica é o que a fonte mede. Nada tem que ver com o que o sítio cobre. | (todas) |
+| contexto | complet | (nenhum) | planned completion date has passed with no completion recorded | É um CAMPO do registo público do plano de recuperação, na edição inglesa: a data prevista de conclusão de um local e o facto de não haver conclusão registada. O português da mesma frase diz «conclusão», que a raiz não morde, e por isso esta linha só nomeia a cadeia inglesa. | (todas) |
+| contexto | complet | proveniência completa | provenance complete | É o NOME de um dos dois estados do selo de uma linha, e o estado é do CAMPO: diz que nenhum campo de proveniência daquela linha ficou por confirmar. Não é uma afirmação sobre o que o sítio cobre. O outro estado chama-se «um campo por confirmar», e as duas palavras estão desenhadas lado a lado na legenda do aparelho. | livro · livroConcelhos · livroConcelho |
+| frase | sta página · this page | Nesta página | On this page | O rótulo do sumário de uma página, já declarado navegação no inventário: leva a outro sítio da mesma página, e é isso que a lista chama navegação. | (todas) |

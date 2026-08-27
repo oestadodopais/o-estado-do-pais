@@ -399,9 +399,15 @@ const FRASES = {
     pt: 'medidas do Painel Social Europeu que o livro-razão guarda',
     en: 'European Social Scoreboard measures the ledger holds',
   },
+  /* A DICA NOMEIA O QUE SE CONTA E NÃO A COBERTURA (X1 da leitura do Codex,
+     27.08.2026). Dizia «concelhos com página», e a frase visível ao lado já diz
+     a cobertura por extenso: «308 de 308 concelhos · tem página». A palavra a
+     mais fazia duas coisas: repetia a etiqueta que está à vista, e ressuscitava
+     dentro de uma cadeia mais longa a frase «Com página» que a página dos 308
+     retirou. Com 308 de 308 o qualificativo não diz nada que a frase não diga. */
   municipios_com_pagina: {
-    pt: 'concelhos com página',
-    en: 'concelhos with a page',
+    pt: 'concelhos',
+    en: 'concelhos',
   },
   concelhos_linhas: {
     pt: 'linhas do livro-razão do estudo dos concelhos',

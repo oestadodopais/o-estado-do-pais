@@ -86,9 +86,19 @@ export function leMarcadores(raiz) {
       else marcadores.push({ modo, marcador, razao, re: expressaoDoMarcador(modo, marcador) });
       continue;
     }
-    /* A tabela das exceções: cinco células, a primeira um tipo. */
-    if (c.length === 5 && TIPOS.has(c[0])) {
+    /* A tabela das exceções: cinco células, a primeira um tipo, e uma sexta
+       opcional com as ROTAS em que a dispensa vale (X3, 27.08.2026). Sem ela a
+       dispensa é global, que é o que ela sempre foi; com ela, uma dispensa que
+       só faz sentido onde a cadeia é o nome de um campo deixa de valer nas
+       páginas onde a mesma cadeia seria a casa a gabar-se. As rotas nomeiam-se
+       pela CHAVE da rota e não pelo caminho, porque uma família de páginas tem
+       uma chave e seiscentos caminhos. */
+    if ((c.length === 5 || c.length === 6) && TIPOS.has(c[0])) {
       const [tipo, marcador, pt, en, razao] = c;
+      const rotas =
+        c.length === 6 && c[5] && c[5] !== '(todas)'
+          ? c[5].split(/\s*·\s*/).map((r) => r.trim()).filter(Boolean)
+          : null;
       if (!razao || razao === '(nenhum)') {
         erros.push(`linha ${i + 1}: a exceção «${(pt || en).slice(0, 60)}» não tem razão escrita`);
         continue;
@@ -104,7 +114,7 @@ export function leMarcadores(raiz) {
          é o separador da casa e não aparece dentro de nenhum marcador. */
       const marcadoresDaExcecao =
         marcador === '(nenhum)' ? null : marcador.split(' · ').map((m) => m.trim()).filter(Boolean);
-      excecoes.push({ tipo, marcador: marcadoresDaExcecao, alvos, razao, usos: 0 });
+      excecoes.push({ tipo, marcador: marcadoresDaExcecao, alvos, razao, rotas, usos: 0 });
       continue;
     }
   }
@@ -122,16 +132,22 @@ export function leMarcadores(raiz) {
  *   1. **contexto** · a cadeia é apagada da frase antes de os marcadores
  *      correrem. «[a verificar]» é o nome do marcador de incerteza do sítio e
  *      não uma afirmação da casa; apagá-lo é o que impede a raiz «verific» de
- *      morder o nome de uma ausência declarada.
+ *      morder o nome de uma ausência declarada. Uma dispensa de contexto pode
+ *      nomear as ROTAS em que vale, e então não vale em mais nenhuma.
  *   2. **rota** · um marcador que, naquela rota, é o objecto da página. Os
  *      outros continuam a morder lá.
  *   3. **frase** · a frase inteira, com o marcador a que responde.
  */
-export function analisa(texto, rota, { marcadores, excecoes }) {
+export function analisa(texto, rota, { marcadores, excecoes }, chaveDaRota = null) {
   const t = norm(texto);
   let varrida = t;
   for (const e of excecoes) {
     if (e.tipo !== 'contexto') continue;
+    /* A DISPENSA COM ROTAS SÓ VALE NELAS. Uma cadeia que é o nome de um campo no
+       recibo de uma linha é uma afirmação de cobertura em qualquer outra página,
+       e a régua tem de a apanhar lá. Sem a chave da rota, uma dispensa com rotas
+       não se aplica: o silêncio não é uma autorização. */
+    if (e.rotas && !(chaveDaRota && e.rotas.includes(chaveDaRota))) continue;
     for (const alvo of e.alvos) {
       const re = new RegExp(escapa(alvo), 'gi');
       if (re.test(varrida)) {

@@ -208,7 +208,6 @@ língua em que é rendida.*
 | conteudo | proveniência completa | até 2026-08-26 | viva | — |
 | conteudo | um campo por confirmar | até 2026-08-26 | viva | — |
 | conteudo | Os dois estados do selo | até 2026-08-26 | viva | — |
-| conteudo | Proveniência completa | grelha-2 | retirada | a legenda dos dois estados do selo de proveniência saiu das páginas do leitor (`46608f4`, 25.08, e a decisão do diretor de 27.08 que tirou as contagens de proveniência dos índices, `ef8a78e`) |
 | conteudo | The ledger | até 2026-08-26 | viva | — |
 | conteudo | The licence covers the dataset: its structure, the house values, the derivations and the descriptions. Excerpts transcribed from sources remain under their publishers’ terms. | até 2026-08-26 | viva | — |
 | conteudo | The two states of the seal | até 2026-08-26 | viva | — |
@@ -1129,10 +1128,9 @@ página do leitor.*
 | conteudo | agenda items | grelha-2 | viva | — |
 | conteudo | calculated rows | grelha-2 | viva | — |
 | conteudo | concelhos com pelo menos uma linha desse estudo | grelha-2 | viva | — |
-| conteudo | concelhos com página | grelha-2 | viva | — |
+| conteudo | concelhos | grelha-2 | viva | — |
 | conteudo | concelhos in the coordinates file of the official administrative map | grelha-2 | viva | — |
 | conteudo | concelhos no ficheiro de coordenadas da Carta Administrativa | grelha-2 | viva | — |
-| conteudo | concelhos with a page | grelha-2 | viva | — |
 | conteudo | editions in the archive | grelha-2 | viva | — |
 | conteudo | edições no arquivo | grelha-2 | viva | — |
 | conteudo | entradas de natureza revisão de proveniência no livro-razão | grelha-2 | viva | — |
