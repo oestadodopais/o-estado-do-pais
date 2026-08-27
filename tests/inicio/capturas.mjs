@@ -41,6 +41,23 @@ const argv = process.argv.slice(2);
  */
 const ETAPA_3 = argv.includes('--etapa-3');
 const ETAPA_4 = argv.includes('--etapa-4');
+/* O TERCEIRO USO DO SEGUNDO MODO: O MAPA POR DISTRITOS (Emenda 20, 27.08.2026).
+   As quatro rotas que o brief manda fotografar antes e depois. Duas delas não
+   existiam antes (`/distritos/<slug>`), e por isso o modo aceita `--para=<dir>`:
+   a fotografia de antes e a de depois vão para pastas diferentes, e uma rota que
+   ainda não existe sai da lista pelo `--so=`. */
+const MAPA_DISTRITOS = argv.includes('--mapa-distritos');
+const PARA = (argv.find((a) => a.startsWith('--para=')) ?? '').slice(7);
+const ROTAS_DO_MAPA = [
+  { nome: 'inicio', pt: '/', en: '/en' },
+  { nome: 'distrito-lisboa', pt: '/distritos/lisboa', en: '/en/districts/lisboa' },
+  {
+    nome: 'distrito-ilha-de-sao-miguel',
+    pt: '/distritos/ilha-de-sao-miguel',
+    en: '/en/districts/ilha-de-sao-miguel',
+  },
+  { nome: 'municipios-indice', pt: '/municipios', en: '/en/municipalities' },
+];
 /* `--so=<nome>[,<nome>]` corre só as rotas nomeadas do segundo modo. Serve para
    refotografar o que uma subetapa mexeu sem refotografar o que ela não mexeu:
    uma captura de uma página ainda por reconstruir é uma captura que vai mentir
@@ -81,11 +98,13 @@ const ROTAS_DA_ETAPA_4 = [
   { nome: 'nao-encontrado', pt: '/404.html', edicoes: ['pt'] },
 ];
 
-const DESTINO = ETAPA_4
-  ? path.join(RAIZ, 'design', 'especime-v3', 'capturas', 'etapa-4')
-  : ETAPA_3
-    ? path.join(RAIZ, 'design', 'especime-v3', 'capturas', 'etapa-3')
-    : (argv.find((a) => !a.startsWith('--')) ?? path.join(RAIZ, 'design', 'especime-v3', 'capturas', 'etapa-2'));
+const DESTINO = MAPA_DISTRITOS
+  ? path.resolve(RAIZ, PARA || path.join('design', 'especime-v3', 'capturas', 'mapa-distritos-2026-08-27'))
+  : ETAPA_4
+    ? path.join(RAIZ, 'design', 'especime-v3', 'capturas', 'etapa-4')
+    : ETAPA_3
+      ? path.join(RAIZ, 'design', 'especime-v3', 'capturas', 'etapa-3')
+      : (argv.find((a) => !a.startsWith('--')) ?? path.join(RAIZ, 'design', 'especime-v3', 'capturas', 'etapa-2'));
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -143,10 +162,10 @@ fs.mkdirSync(DESTINO, { recursive: true });
 const navegador = await chromium.launch({ headless: true });
 let feitas = 0;
 
-if (ETAPA_3 || ETAPA_4) {
-  const lista = (ETAPA_4 ? ROTAS_DA_ETAPA_4 : ROTAS_DA_ETAPA_3).filter(
-    (r) => SO.length === 0 || SO.includes(r.nome),
-  );
+if (ETAPA_3 || ETAPA_4 || MAPA_DISTRITOS) {
+  const lista = (
+    MAPA_DISTRITOS ? ROTAS_DO_MAPA : ETAPA_4 ? ROTAS_DA_ETAPA_4 : ROTAS_DA_ETAPA_3
+  ).filter((r) => SO.length === 0 || SO.includes(r.nome));
   if (SO.length > 0 && lista.length === 0) {
     console.error(`\n  nenhuma rota chamada ${SO.join(', ')} neste modo.\n`);
     process.exit(1);

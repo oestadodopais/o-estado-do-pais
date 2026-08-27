@@ -1,0 +1,308 @@
+{
+  "celulas": [
+    {
+      "nome": "M1a · a 1280, o mapa mede a coluna e tem as 29 ligações",
+      "passa": true,
+      "prova": "caixa 490.0 × 646.1 px · 29 áreas · 29 ligações"
+    },
+    {
+      "nome": "M1b · a 1280, cada unidade abaixo de 44 px tem o nome na lista da sua moldura",
+      "passa": true,
+      "prova": "19/29 chegam aos 44 px (a menor: Viana do Castelo 61.55 px) · 10 não chegam e as 11 da lista cobrem-nas"
+    },
+    {
+      "nome": "M1c · a 1280, cada nome da lista é um alvo de 44 px",
+      "passa": true,
+      "prova": "11 nomes, o mais baixo 44 px de altura"
+    },
+    {
+      "nome": "M2a · a 390, o mapa mede a coluna e tem as 29 ligações",
+      "passa": true,
+      "prova": "caixa 354.0 × 466.8 px · 29 áreas · 29 ligações"
+    },
+    {
+      "nome": "M2b · a 390, cada unidade abaixo de 44 px tem o nome na lista da sua moldura",
+      "passa": true,
+      "prova": "19/29 chegam aos 44 px (a menor: Viana do Castelo 44.47 px) · 10 não chegam e as 11 da lista cobrem-nas"
+    },
+    {
+      "nome": "M2c · a 390, cada nome da lista é um alvo de 44 px",
+      "passa": true,
+      "prova": "11 nomes, o mais baixo 44 px de altura"
+    },
+    {
+      "nome": "M3 · lisboa a 1280: a caixa do mapa, e a lista com todos os concelhos",
+      "passa": true,
+      "prova": "caixa 490.0 × 560.0 px · 16 áreas · 16 na lista · 0 abaixo de 44 px"
+    },
+    {
+      "nome": "M3 · lisboa a 390: a caixa do mapa, e a lista com todos os concelhos",
+      "passa": true,
+      "prova": "caixa 354.0 × 408.5 px · 16 áreas · 16 na lista · 0 abaixo de 44 px"
+    },
+    {
+      "nome": "M3 · aveiro a 1280: a caixa do mapa, e a lista com todos os concelhos",
+      "passa": true,
+      "prova": "caixa 490.0 × 560.0 px · 19 áreas · 19 na lista · 2 abaixo de 44 px (Espinho, São João da Madeira)"
+    },
+    {
+      "nome": "M3 · aveiro a 390: a caixa do mapa, e a lista com todos os concelhos",
+      "passa": true,
+      "prova": "caixa 354.0 × 538.4 px · 19 áreas · 19 na lista · 2 abaixo de 44 px (Espinho, São João da Madeira)"
+    },
+    {
+      "nome": "M3 · ilha-de-sao-miguel a 1280: a caixa do mapa, e a lista com todos os concelhos",
+      "passa": true,
+      "prova": "caixa 490.0 × 177.9 px · 6 áreas · 6 na lista · 0 abaixo de 44 px"
+    },
+    {
+      "nome": "M3 · ilha-de-sao-miguel a 390: a caixa do mapa, e a lista com todos os concelhos",
+      "passa": true,
+      "prova": "caixa 354.0 × 128.5 px · 6 áreas · 6 na lista · 0 abaixo de 44 px"
+    },
+    {
+      "nome": "M4a · a primeira página, com o desenho das 29 dentro",
+      "passa": true,
+      "prova": "157.7 KB de HTML, 29.9 KB de caminhos"
+    },
+    {
+      "nome": "M4b · a maior página de distrito, com no máximo 25 KB de caminhos",
+      "passa": true,
+      "prova": "lisboa: 21.5 KB de caminhos, 33.8 KB de HTML"
+    },
+    {
+      "nome": "M5a · as 29 áreas têm o mesmo desenho (Emenda 10)",
+      "passa": true,
+      "prova": "um estilo só para as 29: none|rgb(23, 25, 27)|1px|1"
+    },
+    {
+      "nome": "M5b · ao passar o rato muda o contorno, e só ele (Emenda 20b)",
+      "passa": true,
+      "prova": "traço 1px → 3px · enchimento none (igual) · cor rgb(23, 25, 27) (igual)"
+    },
+    {
+      "nome": "M5c · nenhuma cor de estatuto no desenho das áreas",
+      "passa": true,
+      "prova": "2 cores de estatuto declaradas, 0 usadas nas áreas"
+    },
+    {
+      "nome": "M6a · dez cliques no ponto representativo de dez áreas abrem dez páginas",
+      "passa": true,
+      "prova": "10/10 · lisboa→/distritos/lisboa · faro→/distritos/faro · braga→/distritos/braga · viseu→/distritos/viseu · ilha-da-madeira→/distritos/ilha-da-madeira · lisboa→/municipios/lisboa · sintra→/municipios/sintra · cascais→/municipios/cascais · loures→/municipios/loures · mafra→/municipios/mafra"
+    },
+    {
+      "nome": "M6b · e o ponto representativo cai dentro da área que o traz",
+      "passa": true,
+      "prova": "10/10 pontos caem na sua própria área"
+    },
+    {
+      "nome": "M6c · pelo teclado: o foco pousa numa área e o Enter abre a página dela",
+      "passa": true,
+      "prova": "foco em /distritos/aveiro (contorno 3px), Enter → /distritos/aveiro"
+    },
+    {
+      "nome": "M7 · medir-defeitos: nada por classificar, autorreferência 0",
+      "passa": true,
+      "prova": "1338 rotas · 0 por classificar · autorreferência 0"
+    },
+    {
+      "nome": "M8 · check:voz verde",
+      "passa": true,
+      "prova": "\u001b[32m  voz ✓ \u001b[0m65 marcadores · 7 exceções (0 de registo) · 582 frases distintas, 16523 ocorrências em 1338 rotas · autorreferência 0 · nada por classificar · 452 linhas do inventário com bloco · lida contra a Emenda 18 (a mais alta da voz é a 18) | \u001b[90m        1 bloco(s) do inventário por ler, e o registo di-lo:\u001b[0m | \u001b[90m        · mapa-distritos · `por ler`\u001b[0m"
+    }
+  ],
+  "medidas": {
+    "pais_1280": {
+      "caixa": [
+        490,
+        646.08
+      ],
+      "areas": 29,
+      "ligacoes": 29,
+      "chegam": 19,
+      "naoChegam": [
+        "Ilha Terceira 9.8px",
+        "Ilha da Graciosa 3.6px",
+        "Ilha das Flores 5.6px",
+        "Ilha de Porto Santo 12.1px",
+        "Ilha de Santa Maria 5.0px",
+        "Ilha de São Jorge 16.5px",
+        "Ilha de São Miguel 21.0px",
+        "Ilha do Corvo 2.2px",
+        "Ilha do Faial 6.9px",
+        "Ilha do Pico 15.0px"
+      ],
+      "menorQueChega": {
+        "slug": "viana-do-castelo",
+        "nome": "Viana do Castelo",
+        "parcela": "continente",
+        "lado": 61.5504150390625
+      },
+      "naLista": 11
+    },
+    "pais_390": {
+      "caixa": [
+        354,
+        466.77
+      ],
+      "areas": 29,
+      "ligacoes": 29,
+      "chegam": 19,
+      "naoChegam": [
+        "Ilha Terceira 7.1px",
+        "Ilha da Graciosa 2.6px",
+        "Ilha das Flores 4.1px",
+        "Ilha de Porto Santo 8.7px",
+        "Ilha de Santa Maria 3.6px",
+        "Ilha de São Jorge 11.9px",
+        "Ilha de São Miguel 15.2px",
+        "Ilha do Corvo 1.6px",
+        "Ilha do Faial 5.0px",
+        "Ilha do Pico 10.8px"
+      ],
+      "menorQueChega": {
+        "slug": "viana-do-castelo",
+        "nome": "Viana do Castelo",
+        "parcela": "continente",
+        "lado": 44.46771240234375
+      },
+      "naLista": 11
+    },
+    "distrito_lisboa_1280": {
+      "caixa": [
+        490,
+        560
+      ],
+      "concelhos": 16,
+      "naLista": 16,
+      "naoChegam": []
+    },
+    "distrito_lisboa_390": {
+      "caixa": [
+        354,
+        408.5
+      ],
+      "concelhos": 16,
+      "naLista": 16,
+      "naoChegam": []
+    },
+    "distrito_aveiro_1280": {
+      "caixa": [
+        490,
+        560
+      ],
+      "concelhos": 19,
+      "naLista": 19,
+      "naoChegam": [
+        "Espinho 42.8px",
+        "São João da Madeira 26.6px"
+      ]
+    },
+    "distrito_aveiro_390": {
+      "caixa": [
+        354,
+        538.4
+      ],
+      "concelhos": 19,
+      "naLista": 19,
+      "naoChegam": [
+        "Espinho 41.2px",
+        "São João da Madeira 25.6px"
+      ]
+    },
+    "distrito_ilha-de-sao-miguel_1280": {
+      "caixa": [
+        490,
+        177.9
+      ],
+      "concelhos": 6,
+      "naLista": 6,
+      "naoChegam": []
+    },
+    "distrito_ilha-de-sao-miguel_390": {
+      "caixa": [
+        354,
+        128.5
+      ],
+      "concelhos": 6,
+      "naLista": 6,
+      "naoChegam": []
+    },
+    "pesos": {
+      "inicio": 161460,
+      "inicio_caminhos": 30638,
+      "maior_distrito": {
+        "slug": "lisboa",
+        "caminhos": 22050,
+        "peso": 34654
+      }
+    },
+    "cliques": [
+      {
+        "slug": "lisboa",
+        "emCima": "lisboa",
+        "para": "/distritos/lisboa",
+        "esperado": "/distritos/lisboa"
+      },
+      {
+        "slug": "faro",
+        "emCima": "faro",
+        "para": "/distritos/faro",
+        "esperado": "/distritos/faro"
+      },
+      {
+        "slug": "braga",
+        "emCima": "braga",
+        "para": "/distritos/braga",
+        "esperado": "/distritos/braga"
+      },
+      {
+        "slug": "viseu",
+        "emCima": "viseu",
+        "para": "/distritos/viseu",
+        "esperado": "/distritos/viseu"
+      },
+      {
+        "slug": "ilha-da-madeira",
+        "emCima": "ilha-da-madeira",
+        "para": "/distritos/ilha-da-madeira",
+        "esperado": "/distritos/ilha-da-madeira"
+      },
+      {
+        "slug": "lisboa",
+        "emCima": "lisboa",
+        "para": "/municipios/lisboa",
+        "esperado": "/municipios/lisboa"
+      },
+      {
+        "slug": "sintra",
+        "emCima": "sintra",
+        "para": "/municipios/sintra",
+        "esperado": "/municipios/sintra"
+      },
+      {
+        "slug": "cascais",
+        "emCima": "cascais",
+        "para": "/municipios/cascais",
+        "esperado": "/municipios/cascais"
+      },
+      {
+        "slug": "loures",
+        "emCima": "loures",
+        "para": "/municipios/loures",
+        "esperado": "/municipios/loures"
+      },
+      {
+        "slug": "mafra",
+        "emCima": "mafra",
+        "para": "/municipios/mafra",
+        "esperado": "/municipios/mafra"
+      }
+    ],
+    "voz": {
+      "rotas": 1338,
+      "porClassificar": 0,
+      "autorreferencia": 0
+    }
+  }
+}
