@@ -1,13 +1,31 @@
 /* =============================================================================
  * A régua da convergência — enriquecimento progressivo.
  *
- * A régua já vem desenhada do servidor, com Portugal em cima dela. Este
- * ficheiro só acrescenta a possibilidade de pôr mais regiões na mesma régua.
- * Se não correr, a página continua correcta — só deixa de ser manejável.
+ * A RÉGUA VEM COMPLETA DO SERVIDOR (Emenda 21, 27.08.2026). Todas as regiões com
+ * linhas, o país e a referência estão desenhados no `dist/`, com as suas hastes,
+ * os seus rótulos e as suas barras. Até esta emenda o servidor desenhava UMA
+ * leitura e este ficheiro acrescentava as outras a pedido; a página das regiões
+ * não podia ficar à espera dele, e a selecção deixou de fazer sentido numa régua
+ * que é completa por definição.
  *
- * Nenhum número é inventado aqui. Todos os valores vêm da ilha de dados, que
- * o portão de build confere, valor a valor, contra o livro-razão. Este ficheiro
- * NUNCA formata nem calcula um número: usa as cadeias já publicadas.
+ * O QUE SOBRA PARA O CLIENTE, e é o que este ficheiro faz e mais nada: **medir
+ * os rótulos com a letra a sério e voltar a arrumá-los por patamares.** O
+ * servidor arruma-os com uma ESTIMATIVA da largura de cada nome
+ * (`nome.length * 6.8`, a mesma que este ficheiro já usava quando
+ * `getComputedTextLength()` falhava), porque no servidor não há tipo carregado
+ * nem caixa de texto para medir. Com a letra carregada as caixas reais são
+ * outras, e um patamar a mais ou a menos é a diferença entre dois rótulos
+ * encostados e dois rótulos sobrepostos.
+ *
+ * A PÁGINA ESTÁ CORRECTA SEM ESTE FICHEIRO. Sem ele a régua tem tudo o que tem
+ * de ter, arrumada pela estimativa; com ele fica mais justa. É essa a definição
+ * de melhoria progressiva, e é a razão de ele continuar a existir.
+ *
+ * O QUE ESTE FICHEIRO NÃO PODE FAZER, nunca: criar ou apagar um elemento, criar
+ * texto visível, formatar um número, escrever um algarismo, mudar uma cor ou uma
+ * espessura. Move o que o servidor desenhou, e só nos eixos Y. Nenhum número
+ * passa por aqui: as coordenadas em X são as que a ilha de dados traz, e a ilha
+ * é conferida pelo portão contra o livro-razão.
  * ========================================================================== */
 (function () {
   'use strict';
@@ -17,8 +35,7 @@
 
   var ilha = raiz.querySelector('script[data-dados="convergencia"]');
   var svg = raiz.querySelector('[data-regua]');
-  var controls = raiz.querySelector('[data-controls]');
-  if (!ilha || !svg || !controls) return;
+  if (!ilha || !svg) return;
 
   var dados;
   try {
@@ -28,346 +45,102 @@
   }
 
   var E = dados.estrutura;
-  var REGIOES = dados.afirmacoes;
-  var PALAVRAS = dados.palavras || {};
-  var SVGNS = 'http://www.w3.org/2000/svg';
+  if (!E || !E.patamares || !E.patamares.length) return;
 
-  var gGap = svg.querySelector('[data-gap]');
+  /* O X DE CADA LEITURA LÊ-SE DO DOCUMENTO, e não de uma lista escrita aqui nem
+     de um número na ilha de dados: é o `x1` da haste que o servidor desenhou
+     naquela leitura. É a disciplina da primeira página («os dois destinos são
+     LIDOS do documento») e é também o que o portão pede — um número numa ilha de
+     dados tem de declarar a linha do livro-razão de onde veio, e a posição de um
+     marcador não é uma medição: é a medição posta na escala do instrumento. Lida
+     do desenho, não há segunda conta para divergir. */
+
   var gStems = svg.querySelector('[data-stems]');
   var gMarks = svg.querySelector('[data-marks]');
-  var glanceNum = raiz.querySelector('[data-glance-num]');
-  var glanceNome = raiz.querySelector('[data-glance-nome]');
-  var semJs = raiz.querySelector('[data-sem-js]');
+  if (!gStems || !gMarks) return;
 
-  var porId = {};
-  REGIOES.forEach(function (r) {
-    porId[r.id] = r;
-  });
+  function arruma() {
+    var marcas = [];
+    var nos = gMarks.querySelectorAll('[data-mk]');
+    for (var i = 0; i < nos.length; i++) {
+      var g = nos[i];
+      var id = g.getAttribute('data-mk');
+      var haste = gStems.querySelector('[data-stem="' + id + '"]');
+      if (!haste) continue;
+      var x = parseFloat(haste.getAttribute('x1'));
+      if (!isFinite(x)) continue;
 
-  var predefinida = REGIOES[0].id;
-  var marcaSSR = svg.querySelector('[data-mk]');
-  if (marcaSSR) predefinida = marcaSSR.getAttribute('data-mk');
+      var chapa = g.querySelector('.mk-chapa');
+      var nome = g.querySelector('.mk-name');
+      var val = g.querySelector('.mk-val');
+      var ponto = g.querySelector('circle');
+      if (!chapa || !nome || !val) continue;
 
-  var activa = {};
-  activa[predefinida] = true;
-  var fixa = predefinida;
-  var sobre = null;
-
-  function X(v) {
-    return E.RL + ((v - E.min) / (E.max - E.min)) * (E.RR - E.RL);
-  }
-
-  function cria(tag, attrs) {
-    var el = document.createElementNS(SVGNS, tag);
-    for (var k in attrs) {
-      if (attrs[k] !== null && attrs[k] !== undefined) el.setAttribute(k, attrs[k]);
-    }
-    return el;
-  }
-
-  function limpa(g) {
-    while (g.firstChild) g.removeChild(g.firstChild);
-  }
-
-  function corrente() {
-    var id = sobre || fixa;
-    if (!activa[id]) id = fixa;
-    if (!activa[id]) {
-      for (var i = 0; i < REGIOES.length; i++) {
-        if (activa[REGIOES[i].id]) {
-          id = REGIOES[i].id;
-          break;
-        }
-      }
-    }
-    return porId[id] || REGIOES[0];
-  }
-
-  /* ------------------------------------------------------------ a régua */
-
-  function desenhaRegua() {
-    limpa(gGap);
-    limpa(gStems);
-    limpa(gMarks);
-
-    var lista = REGIOES.filter(function (r) {
-      return activa[r.id];
-    }).sort(function (a, b) {
-      return a.valor - b.valor;
-    });
-    var cur = corrente();
-
-    /* a barra da distância, só para a região que está a ser lida */
-    if (activa[cur.id]) {
-      var a = Math.min(X(E.datum), X(cur.valor));
-      var b = Math.max(X(E.datum), X(cur.valor));
-      gGap.appendChild(
-        cria('rect', { x: a, y: E.RY - 4.5, width: Math.max(b - a, 1), height: 9, fill: 'var(--ink)' }),
-      );
-      var rot = cria('text', {
-        x: (a + b) / 2,
-        y: E.RY + 42,
-        'text-anchor': 'middle',
-        class: 'gap-label',
-      });
-      rot.textContent = cur.sinal + cur.distancia_texto + ' ' + (PALAVRAS.pontos || '');
-      gGap.appendChild(rot);
-    }
-
-    /* construir os rótulos, medi-los, e só depois distribuí-los por patamares */
-    var feitos = lista.map(function (r) {
-      var g = cria('g', {
-        class: 'mk' + (r.id === cur.id ? ' is-on' : sobre ? ' is-dim' : ''),
-      });
-      g.setAttribute('data-mk', r.id);
-      var nome = cria('text', { 'text-anchor': 'middle', class: 'mk-name' });
-      nome.textContent = r.nome;
-      var val = cria('text', { 'text-anchor': 'middle', class: 'mk-val' });
-      val.textContent = r.valor_texto;
-      g.appendChild(nome);
-      g.appendChild(val);
-      gMarks.appendChild(g);
-      return { r: r, g: g, nome: nome, val: val, x: X(r.valor) };
-    });
-
-    feitos.forEach(function (f) {
-      var w = 0;
+      /* A LARGURA MEDIDA, com a mesma folga e o mesmo mínimo do servidor. Se o
+         motor não souber medir o texto, fica a estimativa que já lá está: o
+         elemento não se mexe, e a régua continua como veio. */
+      var w;
       try {
-        w = Math.max(f.nome.getComputedTextLength(), f.val.getComputedTextLength());
+        w = Math.max(nome.getComputedTextLength(), val.getComputedTextLength());
       } catch (e) {
-        w = f.r.nome.length * 6.8;
+        return;
       }
-      f.w = Math.max(w, 34) + 18;
+      if (!(w > 0)) return;
+      w = Math.max(w, 34) + 18;
+
+      marcas.push({
+        id: id,
+        x: x,
+        w: w,
+        chapa: chapa,
+        nome: nome,
+        val: val,
+        ponto: ponto,
+        haste: haste,
+      });
+    }
+    if (!marcas.length) return;
+
+    /* A ORDEM É A DA RÉGUA, da esquerda para a direita: um empacotador que
+       percorre a régua nessa ordem nunca deixa um rótulo para trás. É a mesma
+       ordem por valor que o servidor usa, lida das coordenadas. */
+    marcas.sort(function (a, b) {
+      return a.x - b.x;
     });
 
     var fim = [];
-    feitos.forEach(function (f) {
+    marcas.forEach(function (m) {
       var patamar = 0;
       while (
         patamar < E.patamares.length - 1 &&
         fim[patamar] !== undefined &&
-        f.x - f.w / 2 < fim[patamar]
+        m.x - m.w / 2 < fim[patamar]
       ) {
         patamar++;
       }
-      fim[patamar] = f.x + f.w / 2;
-      f.y = E.patamares[patamar];
+      fim[patamar] = m.x + m.w / 2;
+      m.y = E.patamares[patamar];
     });
 
-    feitos.forEach(function (f) {
-      /* as hastes vivem na sua própria camada, por baixo de todos os rótulos */
-      gStems.appendChild(
-        cria('line', {
-          x1: f.x,
-          y1: E.RY - 6,
-          x2: f.x,
-          y2: f.y + 4,
-          stroke: f.r.id === cur.id ? 'var(--ink)' : 'var(--axis)',
-          'stroke-width': f.r.id === cur.id ? 1.5 : 1,
-        }),
-      );
-
-      var chapa = cria('rect', {
-        x: f.x - f.w / 2,
-        y: f.y - 37,
-        width: f.w,
-        height: 41,
-        fill: 'var(--paper)',
-      });
-      f.g.insertBefore(chapa, f.g.firstChild);
-
-      f.nome.setAttribute('x', f.x);
-      f.nome.setAttribute('y', f.y - 24);
-      f.val.setAttribute('x', f.x);
-      f.val.setAttribute('y', f.y - 1);
-
-      f.g.appendChild(
-        cria('circle', {
-          cx: f.x,
-          cy: E.RY,
-          r: f.r.id === cur.id ? 5.5 : 4,
-          fill: 'var(--ink)',
-          stroke: 'var(--paper)',
-          'stroke-width': 1.5,
-        }),
-      );
-
-      /* a leitura histórica fica por baixo do eixo: o passado sob o presente */
-      if (f.r.historico !== undefined) {
-        var hx = X(f.r.historico);
-        f.g.appendChild(
-          cria('circle', { cx: hx, cy: E.RY, r: 4, fill: 'var(--paper)', stroke: 'var(--ink)', 'stroke-width': 1.5 }),
-        );
-        var ht = cria('text', { x: hx - 9, y: E.RY + 60, 'text-anchor': 'end', class: 'hist-label' });
-        ht.textContent = f.r.historico_texto + ' ' + (PALAVRAS.em || '') + ' ' + f.r.historico_ref;
-        f.g.appendChild(ht);
-        f.g.appendChild(
-          cria('line', {
-            x1: hx,
-            y1: E.RY + 6,
-            x2: hx,
-            y2: E.RY + 50,
-            stroke: 'var(--axis)',
-            'stroke-width': 1,
-            'stroke-dasharray': '2 2',
-          }),
-        );
-      }
-
-      var alvo = cria('rect', {
-        x: f.x - 22,
-        y: f.y - 34,
-        width: 44,
-        height: E.RY + 12 - (f.y - 34),
-        class: 'mk-hit',
-      });
-      f.g.appendChild(alvo);
-      f.g.addEventListener('mouseenter', function () {
-        sobre = f.r.id;
-        tudo();
-      });
-      f.g.addEventListener('mouseleave', function () {
-        sobre = null;
-        tudo();
-      });
-      f.g.addEventListener('click', function () {
-        fixa = f.r.id;
-        sobre = null;
-        tudo();
-      });
+    marcas.forEach(function (m) {
+      m.chapa.setAttribute('x', m.x - m.w / 2);
+      m.chapa.setAttribute('y', m.y - 37);
+      m.chapa.setAttribute('width', m.w);
+      m.nome.setAttribute('y', m.y - 24);
+      m.val.setAttribute('y', m.y - 1);
+      if (m.haste) m.haste.setAttribute('y2', m.y + 4);
+      /* O ponto no eixo não se mexe: a sua posição é o valor, e o valor não
+         depende de nenhuma medição de texto. Fica escrito para que ninguém o
+         acrescente por simetria. */
+      void m.ponto;
     });
   }
 
-  /* ------------------------------------------------------------ leitura */
+  arruma();
 
-  function desenhaLeitura() {
-    var cur = corrente();
-    if (glanceNum) {
-      glanceNum.textContent = cur.valor_texto;
-      glanceNum.setAttribute('data-claim', cur.valor_claim);
-    }
-    if (glanceNome) glanceNome.textContent = cur.nome;
-
-    var briefs = raiz.querySelectorAll('[data-brief]');
-    for (var i = 0; i < briefs.length; i++) {
-      briefs[i].hidden = briefs[i].getAttribute('data-brief') !== cur.id;
-    }
-    var chips = raiz.querySelectorAll('[data-brief-chip]');
-    for (var j = 0; j < chips.length; j++) {
-      chips[j].hidden = chips[j].getAttribute('data-brief-chip') !== cur.id;
-    }
-  }
-
-  function desenhaComandos() {
-    var cur = corrente();
-    var bs = controls.querySelectorAll('[data-regiao-chip]');
-    for (var i = 0; i < bs.length; i++) {
-      var id = bs[i].getAttribute('data-regiao-chip');
-      bs[i].setAttribute('aria-pressed', activa[id] ? 'true' : 'false');
-      if (id === cur.id && activa[cur.id]) bs[i].classList.add('is-read');
-      else bs[i].classList.remove('is-read');
-    }
-  }
-
-  function tudo() {
-    desenhaRegua();
-    desenhaLeitura();
-    desenhaComandos();
-  }
-
-  /* ------------------------------------------------------------ comandos */
-
-  controls.addEventListener('click', function (ev) {
-    var alvo = ev.target.closest('[data-regiao-chip], [data-accao]');
-    if (!alvo) return;
-
-    var accao = alvo.getAttribute('data-accao');
-    if (accao === 'todas') {
-      REGIOES.forEach(function (r) {
-        activa[r.id] = true;
-      });
-      sobre = null;
-      tudo();
-      return;
-    }
-    if (accao === 'repor') {
-      activa = {};
-      activa[predefinida] = true;
-      fixa = predefinida;
-      sobre = null;
-      tudo();
-      return;
-    }
-
-    var id = alvo.getAttribute('data-regiao-chip');
-    activa[id] = !activa[id];
-    if (activa[id]) {
-      fixa = id;
-    } else if (fixa === id) {
-      var proxima = REGIOES.filter(function (q) {
-        return activa[q.id];
-      })[0];
-      if (proxima) {
-        fixa = proxima.id;
-      } else {
-        activa[id] = true; // a régua nunca fica vazia
-      }
-    }
-    sobre = null;
-    tudo();
-  });
-
-  controls.addEventListener(
-    'mouseover',
-    function (ev) {
-      var alvo = ev.target.closest('[data-regiao-chip]');
-      if (!alvo) return;
-      var id = alvo.getAttribute('data-regiao-chip');
-      if (activa[id]) {
-        sobre = id;
-        tudo();
-      }
-    },
-    true,
-  );
-  controls.addEventListener(
-    'mouseout',
-    function () {
-      sobre = null;
-      tudo();
-    },
-    true,
-  );
-  controls.addEventListener(
-    'focus',
-    function (ev) {
-      var alvo = ev.target.closest('[data-regiao-chip]');
-      if (!alvo) return;
-      var id = alvo.getAttribute('data-regiao-chip');
-      if (activa[id]) {
-        sobre = id;
-        tudo();
-      }
-    },
-    true,
-  );
-  controls.addEventListener(
-    'blur',
-    function () {
-      sobre = null;
-      tudo();
-    },
-    true,
-  );
-
-  /* os comandos só existem quando há JavaScript para os fazer funcionar */
-  controls.hidden = false;
-  if (semJs) semJs.hidden = true;
-
-  tudo();
-
-  /* uma segunda passagem quando as métricas de texto já são reais */
+  /* Uma segunda passagem quando as métricas de texto já são as da letra
+     carregada: até lá o motor mede com a letra de recurso, e as caixas mudam. */
   if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(desenhaRegua);
+    document.fonts.ready.then(arruma);
   }
 })();

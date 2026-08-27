@@ -1,0 +1,80 @@
+---
+/**
+ * O ÍNDICE DAS REGIÕES: `/regioes` e `/en/regions`.
+ *
+ * ---------------------------------------------------------------------------
+ * PORQUE EXISTE
+ * ---------------------------------------------------------------------------
+ * Emenda 21a: «`/regioes` é o índice com a régua da convergência completa: todas
+ * as regiões em vigor, o país e a referência (UE-27 = 100)». É a casa que
+ * faltava a uma pergunta que o sítio já sabia responder e não tinha onde: a
+ * régua saiu da primeira página a 25.08 (§1.66, item A3) porque não estava
+ * completa e não respondia a uma pergunta da primeira página. A pergunta das
+ * regiões passa a ter página própria, como a dos concelhos e a dos distritos.
+ *
+ * ---------------------------------------------------------------------------
+ * A DISPOSIÇÃO É A C · INSTRUMENTO (IDENTIDADE §3), E É DITO AQUI
+ * ---------------------------------------------------------------------------
+ * «C · Instrumento, largura toda, o instrumento enche-a. Só para instrumentos.»
+ * Esta página é um instrumento e a sua cabeça: não tem coluna de rótulo (A) nem
+ * coluna de aparelho (B), porque o aparelho de uma régua é o selo de cada valor,
+ * e cada valor tem o seu na lista. Nenhuma quarta disposição é inventada.
+ *
+ * ---------------------------------------------------------------------------
+ * A LISTA DAS REGIÕES COMO PORTAS É A LISTA DA RÉGUA
+ * ---------------------------------------------------------------------------
+ * O brief pede a régua e, «por baixo, a lista das regiões como portas». São a
+ * mesma lista: cada linha da régua leva o nome da região como ligação para a sua
+ * página, o valor com o selo e a distância desenhada. Duas listas com os mesmos
+ * nomes seriam a mesma porta escrita duas vezes, e a segunda ficaria para trás
+ * no dia em que o motor trouxesse uma região nova.
+ *
+ * NENHUM NÚMERO ESCRITO À MÃO. A contagem é uma chave da prova que o portão
+ * reconta contra as páginas construídas; os valores são linhas do livro-razão
+ * com o seu selo; os números do eixo são a escala do instrumento, declarada.
+ */
+import Base from '../layouts/Base.astro';
+import InstrumentoConvergencia from '../components/InstrumentoConvergencia.astro';
+import ValorDaProva from '../components/ValorDaProva.astro';
+import { prova } from '../lib/prova.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+import '../styles/regiao.css';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+const p = prova(lang);
+const path = routePath('regioes', lang);
+
+/* Uma ou muitas: a frase certa escolhe-se na construção, com a contagem que o
+   portão vai reconferir. Sem plural inventado. */
+const conta = p.regioes_com_linha.valor === 1 ? s.regioes.contaUma : s.regioes.contaMuitas;
+---
+
+<Base
+  lang={lang}
+  path={path}
+  title={s.regioes.metaTitle}
+  description={s.regioes.metaDescription}
+>
+  <div class="regiao-cabeca">
+    <span class="eyebrow">{s.regioes.eyebrow}</span>
+    <h1>{s.regioes.h1}</h1>
+    <p class="lede">{s.regioes.lede}</p>
+    <p class="regiao-conta">
+      <ValorDaProva chave="regioes_com_linha" item={p.regioes_com_linha} lang={lang} />
+      {conta}
+    </p>
+  </div>
+
+  <section class="regiao-instr" id="regua" aria-labelledby="regua-k">
+    <h2 class="regiao-instr-k" id="regua-k">{s.home.instr1.h2}</h2>
+    <InstrumentoConvergencia lang={lang} />
+  </section>
+
+  <p class="rodape-nav regiao-portas">
+    <a href={routePath('home', lang)}>{s.regioes.voltarPais}</a>
+    <a href={routePath('distritos', lang)}>{s.distritos.voltarIndice}</a>
+    <a href={routePath('municipios', lang)}>{s.distritos.voltarConcelhos}</a>
+  </p>
+</Base>

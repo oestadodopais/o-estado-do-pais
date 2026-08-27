@@ -1,0 +1,11 @@
+---
+import RegiaoView from '../../../views/RegiaoView.astro';
+import { slugsDasRegioes } from '../../../lib/regioes.mjs';
+
+export function getStaticPaths() {
+  return slugsDasRegioes().map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+---
+<RegiaoView lang="en" slug={slug} />

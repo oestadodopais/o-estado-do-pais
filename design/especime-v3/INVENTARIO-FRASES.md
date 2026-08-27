@@ -149,7 +149,7 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | A régua da convergência | grelha-2 | retirada | a régua da convergência saiu da primeira página até haver a página das regiões (Emenda 18, consequência decidida a 25.08; bloco A da auditoria de UI e UX, `696b51a`) |
+| conteudo | A régua da convergência | regioes | viva | — |
 | navegacao | An observatory of Portugal. | até 2026-08-26 | viva | — |
 | conteudo | Alentejo · region | até 2026-08-26 | viva | — |
 | conteudo | Alentejo · região | até 2026-08-26 | viva | — |
@@ -173,7 +173,7 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | navegacao | No municipality by that name. | até 2026-08-26 | viva | — |
 | navegacao | O Estado do País | até 2026-08-26 | viva | — |
 | conteudo | O que o país tem a haver do exterior menos o que lhe deve: negativo quando deve mais do que tem a haver. | até 2026-08-26 | viva | — |
-| conteudo | O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27. Um valor abaixo da média significa menos poder de compra por pessoa; um valor acima, mais. | grelha-2 | retirada | a régua da convergência saiu da primeira página até haver a página das regiões (Emenda 18, consequência decidida a 25.08; bloco A da auditoria de UI e UX, `696b51a`) |
+| conteudo | O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27. Um valor abaixo da média significa menos poder de compra por pessoa; um valor acima, mais. | regioes | viva | — |
 | conteudo | Painel Social Europeu | até 2026-08-26 | viva | — |
 | navegacao | Passe o cursor sobre um ponto para ler o município. Teclado: Tab até ao mapa, setas para percorrer os municípios vizinhos, Home para voltar a Évora. | grelha-2 | retirada | a leitura em voz alta do mapa saiu com os pontos da primeira página (Emenda 20a e 20c; bloco do mapa por distritos) |
 | conteudo | Península de Setúbal · região | até 2026-08-26 | viva | — |
@@ -185,8 +185,8 @@ cartão localizador vive, na página do concelho, e leva ao índice dos 308.
 | conteudo | Portugal · país | até 2026-08-26 | viva | — |
 | navegacao | Relance | até 2026-08-26 | viva | — |
 | conteudo | Setúbal Peninsula · region | até 2026-08-26 | viva | — |
-| conteudo | The convergence rule | grelha-2 | retirada | a régua da convergência saiu da primeira página até haver a página das regiões (Emenda 18, consequência decidida a 25.08; bloco A da auditoria de UI e UX, `696b51a`) |
-| conteudo | The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 average. A value below the average means less purchasing power per person; a value above it, more. | grelha-2 | retirada | a régua da convergência saiu da primeira página até haver a página das regiões (Emenda 18, consequência decidida a 25.08; bloco A da auditoria de UI e UX, `696b51a`) |
+| conteudo | The convergence rule | regioes | viva | — |
+| conteudo | The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 average. A value below the average means less purchasing power per person; a value above it, more. | regioes | viva | — |
 | navegacao | The regions published on the convergence rule. | grelha-2 | retirada | a régua da convergência saiu da primeira página até haver a página das regiões (Emenda 18, consequência decidida a 25.08; bloco A da auditoria de UI e UX, `696b51a`) |
 | conteudo | What the country is owed from abroad minus what it owes abroad: negative when it owes more than it is owed. | até 2026-08-26 | viva | — |
 
@@ -1150,3 +1150,47 @@ página do leitor.*
 | conteudo | unidades da Carta Administrativa: os distritos e as ilhas | grelha-2 | viva | — |
 | conteudo | units of the official administrative map: the districts and the islands | grelha-2 | viva | — |
 | conteudo | works in the archive | grelha-2 | viva | — |
+
+## Bloco «As regiões» · Emenda 21 · 27.08.2026
+
+*As páginas novas do bloco: o índice das regiões (`/regioes`, `/en/regions`) e a
+página de cada região com linhas (`/regioes/<slug>`, `/en/regions/<slug>`). São
+páginas do leitor, e a Emenda 15 governa-as: a autorreferência delas é zero, e o
+que fica é o que a coisa é.*
+
+*Quatro linhas VOLTAM À VIDA e não são novas: «A régua da convergência», «The
+convergence rule» e as duas frases do que o índice compara estavam declaradas
+`retirada` desde a segunda passagem da grelha, porque a régua tinha saído da
+primeira página a 25.08 «até haver a página das regiões». A página existe, e a
+razão da retirada era esta. Mudam de estado e de bloco, e o texto delas não muda
+uma letra: é o que a coluna do estado serve para deixar ver.*
+
+*Duas continuam `retirada` de propósito, e não voltam com a régua: «As regiões
+publicadas na régua da convergência.» e a sua inglesa eram a meta da FILA das
+regiões da primeira página, o painel que o comando «Região» abria. A fila não
+volta — a Emenda 21b manda a região viver na sua página, e o comando é uma
+ligação para o índice.*
+
+*O nome de cada região é `data-lugar`, como o das 29 unidades e o dos 308
+concelhos: é o nome da coisa de que a página trata, transcrito da lista, e não
+prosa da casa. Por isso a descrição do `<head>` de uma região conta-se UMA vez,
+com o `<lugar>` no lugar do nome, e não uma por região.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | As regiões de Portugal | regioes | viva | — |
+| conteudo | The regions of Portugal | regioes | viva | — |
+| conteudo | O índice de PIB per capita de cada região, em paridades de poder de compra, contra a média da UE-27. | regioes | viva | — |
+| conteudo | Each region’s GDP per capita index, in purchasing power standards, against the EU-27 average. | regioes | viva | — |
+| conteudo | As regiões NUTS II de <lugar>, e a distância de cada uma à média da UE-27. | regioes | viva | — |
+| conteudo | The NUTS II regions of <lugar>, and how far each one is from the EU-27 average. | regioes | viva | — |
+| conteudo | 5 regiões com linhas publicadas. | regioes | viva | — |
+| conteudo | 5 regions with published rows. | regioes | viva | — |
+| conteudo | O índice de PIB per capita de <lugar>, em paridades de poder de compra, contra a média da UE-27. | regioes | viva | — |
+| conteudo | The GDP per capita index of <lugar>, in purchasing power standards, against the EU-27 average. | regioes | viva | — |
+| conteudo | região NUTS II | regioes | viva | — |
+| conteudo | NUTS II region | regioes | viva | — |
+| conteudo | As medidas | regioes | viva | — |
+| conteudo | The measures | regioes | viva | — |
+| conteudo | regiões com linhas publicadas no livro-razão | regioes | viva | — |
+| conteudo | regions with rows published in the ledger | regioes | viva | — |
