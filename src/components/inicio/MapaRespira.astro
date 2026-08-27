@@ -329,8 +329,13 @@ const NOME_DA_MOLDURA = { Madeira: s.inicio.mapa.madeira, 'Açores': s.inicio.ma
     </svg>
     ) : (
     <svg
-      class="mapa-svg"
-      viewBox={`0 0 ${FIELD_W} ${FIELD_H}`}
+      {/* O MAPA DE PONTOS, TAL E QUAL (Emenda 20d). O `class` e o `viewBox`
+          estavam aqui DUAS VEZES desde o commit que partiu este `<svg>` em dois:
+          o ramo novo trouxe as suas duas linhas e as antigas ficaram por baixo.
+          O analisador guarda a primeira e deita a segunda fora, e por isso nada
+          se via na página; mas as 616 páginas de concelho levavam bytes que a
+          Emenda 20d diz que não mudam. Uma repetição inerte é uma repetição na
+          mesma, e a régua do mapa passou a recusá-la (célula M9). */}
       class="mapa-svg"
       viewBox={`0 0 ${FIELD_W} ${FIELD_H}`}
       {/* --------------------------------------------------------------------

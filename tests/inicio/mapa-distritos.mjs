@@ -525,6 +525,125 @@ for (const slug of DISTRITOS_MEDIDOS) {
   );
 }
 
+/* ---------------------------------------------------------------------- M9 */
+/* ---------------------------------------------------------------------------
+ * NENHUM ATRIBUTO REPETIDO NUM DESENHO DE MAPA
+ * ---------------------------------------------------------------------------
+ * Achado pela medição cega: depois de o `<svg>` do mapa ter sido partido em dois
+ * ramos (as 29 áreas na primeira página, os 308 pontos no cartão localizador), o
+ * ramo dos pontos ficou com `class` e `viewBox` escritos DUAS VEZES. O
+ * analisador de HTML guarda a primeira ocorrência e deita a segunda fora, e por
+ * isso nada se via na página; mas as 616 páginas de concelho levavam bytes a
+ * mais, e a Emenda 20d diz que o cartão localizador não muda.
+ *
+ * UMA REPETIÇÃO INERTE É UMA REPETIÇÃO NA MESMA, e é o tipo de defeito que só
+ * uma leitura dos bytes apanha: nem o navegador se queixa, nem o portão de HTML,
+ * que lê a árvore e não a fonte. Esta célula lê a FONTE de cada `<svg>` de mapa
+ * do `dist/` e de cada etiqueta lá dentro, e conta os nomes de atributo.
+ *
+ * Lê o disco e não o navegador, e por isso o seu estrago plantado é aplicado à
+ * cadeia em memória, e não pelo servidor.
+ * --------------------------------------------------------------------------- */
+const MARCAS_DO_MAPA = ['data-mapa', 'data-mapa-areas', 'data-mapa-concelhos'];
+
+function paginasComMapa() {
+  const out = [];
+  const anda = (dir) => {
+    for (const nome of fs.readdirSync(dir).sort()) {
+      const abs = path.join(dir, nome);
+      if (fs.statSync(abs).isDirectory()) anda(abs);
+      else if (nome.endsWith('.html')) {
+        const html = fs.readFileSync(abs, 'utf8');
+        if (MARCAS_DO_MAPA.some((m) => html.includes(m))) {
+          out.push({ rel: path.relative(DIST, abs), html });
+        }
+      }
+    }
+  };
+  anda(DIST);
+  return out;
+}
+
+/**
+ * Os nomes de atributo de uma etiqueta de abertura, lidos da fonte.
+ *
+ * PERCORRE A ETIQUETA E SALTA OS VALORES ENTRE ASPAS, e não é um requinte: a
+ * primeira forma desta função era uma expressão regular sobre a etiqueta
+ * inteira, e apanhava as palavras de dentro dos valores. `aria-label="Point map
+ * of the municipalities of Portugal."` dava-lhe «of» duas vezes, e a célula
+ * saiu a vermelho em 4 929 etiquetas de páginas que não têm defeito nenhum. Um
+ * atributo é o que está FORA das aspas, e é isso que este ciclo lê.
+ */
+function nomesDeAtributo(etiqueta) {
+  const corpo = etiqueta
+    .replace(/^<[a-zA-Z][-a-zA-Z0-9:]*/, '')
+    .replace(/\/?>$/, '');
+  const nomes = [];
+  let i = 0;
+  const espaco = (c) => c === ' ' || c === '\n' || c === '\t' || c === '\r';
+  while (i < corpo.length) {
+    while (i < corpo.length && espaco(corpo[i])) i++;
+    const inicio = i;
+    while (i < corpo.length && !espaco(corpo[i]) && corpo[i] !== '=') i++;
+    const nome = corpo.slice(inicio, i);
+    if (nome) nomes.push(nome.toLowerCase());
+    while (i < corpo.length && espaco(corpo[i])) i++;
+    if (corpo[i] !== '=') continue;
+    i++;
+    while (i < corpo.length && espaco(corpo[i])) i++;
+    const aspa = corpo[i];
+    if (aspa === '"' || aspa === "'") {
+      i++;
+      while (i < corpo.length && corpo[i] !== aspa) i++;
+      i++;
+    } else {
+      while (i < corpo.length && !espaco(corpo[i])) i++;
+    }
+  }
+  return nomes;
+}
+
+/** Os nomes de atributo repetidos numa etiqueta de abertura. */
+function atributosRepetidos(etiqueta) {
+  const vezes = new Map();
+  for (const n of nomesDeAtributo(etiqueta)) vezes.set(n, (vezes.get(n) ?? 0) + 1);
+  return [...vezes.entries()].filter(([, n]) => n > 1).map(([n]) => n);
+}
+
+/** Todas as repetições dentro dos `<svg>` de mapa de uma lista de páginas. */
+function repeticoesNosMapas(paginas) {
+  const achados = [];
+  for (const pg of paginas) {
+    for (const bloco of pg.html.matchAll(/<svg\b[^>]*>[\s\S]*?<\/svg>/g)) {
+      const svg = bloco[0];
+      if (!MARCAS_DO_MAPA.some((m) => svg.includes(m))) continue;
+      for (const et of svg.matchAll(/<[a-zA-Z][^>]*>/g)) {
+        const repetidos = atributosRepetidos(et[0]);
+        if (repetidos.length) {
+          achados.push({ rel: pg.rel, etiqueta: et[0].slice(0, 90), repetidos });
+        }
+      }
+    }
+  }
+  return achados;
+}
+
+{
+  const paginas = paginasComMapa();
+  const achados = repeticoesNosMapas(paginas);
+  medidas.repeticoes = { paginas: paginas.length, achados: achados.length };
+  conta(
+    'M9 · nenhum atributo repetido num `<svg>` de mapa do dist/',
+    achados.length === 0,
+    achados.length === 0
+      ? `${paginas.length} páginas com mapa varridas, 0 etiquetas com um atributo escrito duas vezes`
+      : `${achados.length} etiqueta(s): ${achados
+          .slice(0, 3)
+          .map((a) => `${a.rel} <${a.repetidos.join(', ')}> «${a.etiqueta}»`)
+          .join(' · ')}`,
+  );
+}
+
 /* ------------------------------------------------------------------ M7 e M8 */
 function corre(guiao, args = []) {
   try {
@@ -600,6 +719,31 @@ const PLANTAS = [
         : html,
   },
   {
+    /* A ÚNICA PLANTA QUE NÃO PASSA PELO SERVIDOR, porque a célula que ela apanha
+       não passa pelo navegador: a M9 lê os bytes do `dist/`, e o estrago é a
+       repetição posta de volta na cadeia em memória. É exactamente o defeito que
+       a medição cega achou: `class` e `viewBox` escritos duas vezes no `<svg>`
+       do cartão localizador. */
+    nome: 'o `class` e o `viewBox` repetidos no `<svg>` do cartão localizador',
+    celulas: ['M9'],
+    emMemoria: () => {
+      const paginas = paginasComMapa().map((pg) => ({ ...pg }));
+      const alvo = paginas.find((pg) => pg.rel.startsWith('municipios/evora/'));
+      alvo.html = alvo.html.replace(
+        '<svg class="mapa-svg" viewBox="0 0 600 790"',
+        '<svg class="mapa-svg" viewBox="0 0 600 790" class="mapa-svg" viewBox="0 0 600 790"',
+      );
+      const achados = repeticoesNosMapas(paginas);
+      conta(
+        'M9 · nenhum atributo repetido num `<svg>` de mapa do dist/',
+        achados.length === 0,
+        `${achados.length} etiqueta(s): ${achados
+          .map((a) => `${a.rel} <${a.repetidos.join(', ')}>`)
+          .join(' · ')}`,
+      );
+    },
+  },
+  {
     nome: 'o destino de uma área trocado pelo de outra',
     celulas: ['M6a'],
     estrago: (html, rota) =>
@@ -615,7 +759,8 @@ if (VERMELHOS) {
   for (const planta of PLANTAS) {
     celulas = [];
     medidas = {};
-    ESTRAGO = planta.estrago;
+    ESTRAGO = planta.estrago ?? null;
+    if (planta.emMemoria) planta.emMemoria();
     /* Só se voltam a correr as células que a planta toca: uma régua inteira por
        planta seria quatro corridas de tudo para provar quatro linhas. */
     if (planta.celulas.some((c) => c.startsWith('M1'))) await mediuOPais(1280, 'M1');
