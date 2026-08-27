@@ -291,6 +291,20 @@ function portaDaAgenda(lang, estado = null) {
   return estado ? ancora(rota, ancoraDoEstadoDaAgenda(estado)) : rota;
 }
 
+/**
+ * O QUE UMA DESTAS FRASES É, DESDE 27.08.2026: O NOME DO QUE SE CONTA.
+ *
+ * Cada uma destas frases sai num atributo `title` ao lado do número, e um
+ * `title` é texto do leitor como qualquer outro. Cinco delas diziam a
+ * maquinaria em vez da coisa: «atravessados do motor», «um por número
+ * publicado», «cujo valor é calculado a partir de outras linhas», «do
+ * observatório construída», «contadas por língua». A Emenda 15 não conhece a
+ * diferença entre uma frase no corpo e uma frase num atributo. Passam a
+ * nomear: «itens da agenda», «linhas do livro-razão», «linhas calculadas»,
+ * «concelhos com página», «edições no arquivo». As que já nomeavam ficam como
+ * estavam, e as que só se rendem no Método ficam também, porque o Método é onde
+ * o método vive.
+ */
 const FRASES = {
   fontes: {
     pt: 'organismos distintos no campo da fonte das linhas do livro-razão',
@@ -313,8 +327,8 @@ const FRASES = {
     en: 'archive works with an observatory reading written',
   },
   afirmacoes: {
-    pt: 'ficheiros do livro-razão, um por número publicado',
-    en: 'ledger files, one per published figure',
+    pt: 'linhas do livro-razão',
+    en: 'ledger rows',
   },
   indexaveis: {
     pt: 'linhas sem nenhum campo de proveniência por confirmar',
@@ -325,8 +339,8 @@ const FRASES = {
     en: 'rows with at least one field marked [a verificar]',
   },
   derivadas: {
-    pt: 'linhas cujo valor é calculado a partir de outras linhas',
-    en: 'rows whose value is calculated from other rows',
+    pt: 'linhas calculadas',
+    en: 'calculated rows',
   },
   aritmetica_reavaliada: {
     pt: 'linhas com a conta escrita como expressão, refeita a cada construção',
@@ -385,8 +399,8 @@ const FRASES = {
     en: 'European Social Scoreboard measures the ledger holds',
   },
   municipios_com_pagina: {
-    pt: 'concelhos com página do observatório construída',
-    en: 'concelhos with an observatory page built',
+    pt: 'concelhos com página',
+    en: 'concelhos with a page',
   },
   concelhos_linhas: {
     pt: 'linhas do livro-razão do estudo dos concelhos',
@@ -409,12 +423,12 @@ const FRASES = {
     en: 'works in the archive',
   },
   edicoes: {
-    pt: 'edições no arquivo, contadas por língua',
-    en: 'editions in the archive, counted by language',
+    pt: 'edições no arquivo',
+    en: 'editions in the archive',
   },
   agenda: {
-    pt: 'itens da agenda atravessados do motor',
-    en: 'agenda items crossed from the engine',
+    pt: 'itens da agenda',
+    en: 'agenda items',
   },
   endereco_correcoes: {
     pt: 'o endereço para onde se escreve, numa origem só',

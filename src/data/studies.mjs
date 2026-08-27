@@ -314,8 +314,13 @@ export const INTERNAL_SOURCES = [
     // Escolha do conjunto: indicators/convergence.md no ResearchHub.
     id: 'quadro-institucional',
     label: {
-      pt: 'Quadro institucional de indicadores, leitura direta da fonte',
-      en: 'Institutional indicator framework, read directly from source',
+      /* O RÓTULO NOMEIA O QUADRO E NÃO COMO SE LÊ (27.08.2026). Dizia «Quadro
+         institucional de indicadores, leitura direta da fonte»: a segunda
+         metade é o método da casa, e este rótulo sai no `title` e no texto
+         oculto de cada selo, que é texto do leitor. A proveniência de cada
+         linha continua a dizer de onde o número vem. */
+      pt: 'Quadro institucional de indicadores',
+      en: 'Institutional indicator framework',
     },
   },
   {
@@ -406,14 +411,60 @@ export function workById(id) {
 
 /** Nome legível de um estudo, para a etiqueta de proveniência. */
 export function studyLabel(id, lang = 'pt') {
+  return studyTitle(id, lang).titulo;
+}
+
+/**
+ * O NOME DE UM ESTUDO E A LÍNGUA EM QUE ELE ESTÁ ESCRITO (27.08.2026).
+ *
+ * `studyLabel` devolve o título da edição da língua da página, e quando ela não
+ * existe devolve o da primeira edição, que é o título ORIGINAL, noutra língua.
+ * «Which Door Is Yours» e «Alentejo & Algarve — Economy, Society, Strategy»
+ * rendem-se assim dentro das páginas portuguesas, e um leitor de ecrã lia-os com
+ * a fonética do português. O título não se traduz (é o nome do documento); o que
+ * faltava era dizer em que língua ele está.
+ *
+ * Devolve `{ titulo, lingua }`, com `lingua` na forma do atributo `lang`
+ * (`pt-PT` ou `en`). Um nome de origem interna existe nas duas edições e por
+ * isso a sua língua é sempre a da página.
+ */
+/**
+ * A LÍNGUA DE UM TÍTULO, QUANDO ELA NÃO É A DA PÁGINA (27.08.2026).
+ *
+ * Devolve `pt-PT` ou `en` quando o título é de uma edição de OUTRA língua, e
+ * `null` quando não há nada a marcar. Há dois casos de `null`, e o segundo é o
+ * que obrigou a esta função em vez de um `e.lang` escrito em cada vista:
+ *
+ *  1. o título é o da edição da língua da página;
+ *  2. **o MESMO título é o de duas edições.** «Água Não Faturada» e «Onde está
+ *     a água?» têm edição inglesa, e o título inglês dessa edição não é
+ *     conhecido: fica o original, com o emblema EN. Marcar essa entrada com
+ *     `lang="en"` mandava um leitor de ecrã ler português com fonética inglesa,
+ *     que é exactamente o defeito que esta marca existe para corrigir.
+ *
+ * A decisão é do TEXTO e não da edição: o que a marca diz é em que língua está
+ * a cadeia, e uma cadeia que também é título português não está em inglês.
+ */
+export function linguaDoTitulo(titulo, lang = 'pt') {
+  const marca = (l) => (l === 'pt' ? 'pt-PT' : l);
+  const daPagina = marca(lang);
+  const linguas = new Set();
+  for (const w of WORKS) {
+    for (const e of w.editions) if (e.title === titulo) linguas.add(marca(e.lang));
+  }
+  if (!linguas.size || linguas.has(daPagina)) return null;
+  return [...linguas][0];
+}
+
+export function studyTitle(id, lang = 'pt') {
   const w = workById(id);
   if (w) {
     const preferred = w.editions.find((e) => e.lang === lang) ?? w.editions[0];
-    return preferred.title;
+    return { titulo: preferred.title, lingua: linguaDoTitulo(preferred.title, lang) };
   }
   const internal = INTERNAL_SOURCES.find((s) => s.id === id);
-  if (internal) return internal.label[lang] ?? internal.label.pt;
-  return id;
+  if (internal) return { titulo: internal.label[lang] ?? internal.label.pt, lingua: null };
+  return { titulo: id, lingua: null };
 }
 
 /** Contagens usadas pelas expressões `check:` do livro-razão. */

@@ -173,7 +173,6 @@ língua em que é rendida.*
 | conteudo | Complete provenance | até 2026-08-26 |
 | navegacao | Descarregar o livro-razão: CSV · JSON | até 2026-08-26 |
 | navegacao | Download the ledger: CSV · JSON | até 2026-08-26 |
-| conteudo | Every row, with every published field. | até 2026-08-26 |
 | conteudo | O livro-razão | até 2026-08-26 |
 | conteudo | one field unconfirmed | até 2026-08-26 |
 | conteudo | provenance complete | até 2026-08-26 |
@@ -184,7 +183,6 @@ língua em que é rendida.*
 | conteudo | The ledger | até 2026-08-26 |
 | conteudo | The licence covers the dataset: its structure, the house values, the derivations and the descriptions. Excerpts transcribed from sources remain under their publishers’ terms. | até 2026-08-26 |
 | conteudo | The two states of the seal | até 2026-08-26 |
-| conteudo | Todas as linhas, com todos os campos publicados. | até 2026-08-26 |
 | navegacao | Um observatório de Portugal. | até 2026-08-26 |
 | conteudo | With fields to confirm | até 2026-08-26 |
 | conteudo | [a verificar] | até 2026-08-26 |
@@ -751,8 +749,6 @@ exclusão que a subetapa 3c escreveu para a lista por distritos.
 | conteudo | The ledger rows with the measures central sources publish for the municipality of <lugar>. | até 2026-08-26 |
 | conteudo | Sistema de contas integradas das empresas; cada empresa conta num único concelho. | até 2026-08-26 |
 | conteudo | Integrated business accounts; each enterprise counts in a single municipality. | até 2026-08-26 |
-| conteudo | As linhas do livro-razão com as medidas que as fontes centrais publicam para cada concelho, uma linha cada. | até 2026-08-26 |
-| conteudo | The ledger rows with the measures central sources publish for each municipality, one row each. | até 2026-08-26 |
 | conteudo | Linhas sem concelho declarado | até 2026-08-26 |
 | conteudo | Rows with no municipality declared | até 2026-08-26 |
 | conteudo | O que as fontes publicam sobre o município de <lugar>: população, poder de compra, emprego, empresas, dívida e execução orçamental. | até 2026-08-26 |
@@ -994,3 +990,25 @@ estiver vazio.*
 | conteudo | 2417 rows · 308 municipalities | voz-do-livro-razao |
 | conteudo | 0 linhas · 0 concelhos | voz-do-livro-razao |
 | conteudo | 0 rows · 0 municipalities | voz-do-livro-razao |
+
+## Bloco «A voz do livro-razão» · a leitura de fora, L1 a L5 · 27.08.2026
+
+*A leitura de fora do bloco leu as páginas construídas e não só o diff, e trouxe
+cinco itens. Os que mudam cadeias desta tabela são dois. **L1:** os rótulos e as
+dicas de `title` das duas páginas do livro-razão diziam a maquinaria em vez da
+coisa, e um `title` é texto do leitor como outro qualquer; o bloco do conjunto de
+dados dizia «Todas as linhas, com todos os campos publicados.», que é uma
+afirmação de cobertura sobre o próprio ficheiro, e passa a nomear o que se
+descarrega. **L2:** a descrição do `<head>` do índice dos concelhos, que sai
+também no Open Graph, explicava a cobertura da página e passa a nomeá-la, como a
+do índice do livro-razão.*
+
+*As entradas antigas das quatro cadeias saíram, pela regra do bloco dos 308: uma
+frase corrigida que continue declarada volta em silêncio.*
+
+| classe | texto | bloco |
+| --- | --- | --- |
+| conteudo | Todas as linhas. | voz-do-livro-razao |
+| conteudo | Every row. | voz-do-livro-razao |
+| conteudo | Livro-razão dos concelhos · O Estado do País | voz-do-livro-razao |
+| conteudo | Municipalities ledger · O Estado do País | voz-do-livro-razao |
