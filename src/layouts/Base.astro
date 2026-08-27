@@ -90,7 +90,9 @@ const organizationJsonLd = {
  *
  * Uma rota sem cartão próprio (a fase 1 dá cartão próprio à primeira página e
  * às páginas de linha) leva o cartão da primeira página da sua edição, e o
- * registo desse cartão diz que rotas é que ele cobre.
+ * registo desse cartão diz que rotas é que ele cobre. Uma página de linha de um
+ * ESTUDO DE DADOS leva o cartão do seu estudo, um por edição, e a razão está
+ * medida em DECISIONS §1.68.
  */
 const cartao = cartaoDaPagina(path, lang);
 const [DIM_OG, DIM_TWITTER] = DIMENSOES;

@@ -52,9 +52,30 @@
  * (as duas edições). Todas as outras rotas levam o cartão da primeira página da
  * SUA edição, e o registo de cada cartão diz que é isso que está a acontecer
  * (`cobre`, a lista de rotas que aquele cartão serve).
+ *
+ * ---------------------------------------------------------------------------
+ * A EXCEPÇÃO DOS ESTUDOS DE DADOS, e porque ela é uma medida e não um gosto
+ * ---------------------------------------------------------------------------
+ * As linhas de um ESTUDO DE DADOS (`ESTUDOS_DE_DADOS`, em `src/data/studies.mjs`)
+ * não têm cartão próprio: cada página de linha do estudo nomeia o CARTÃO DO
+ * ESTUDO, um por edição, com o título do estudo por texto e sem número nenhum.
+ *
+ * A razão está medida em DECISIONS §1.68. Com as 2 417 linhas dos concelhos, as
+ * páginas de linha pediam 9 668 dos 10 212 cartões da construção, e foi a
+ * rasterizá-los que a máquina de construção da Vercel foi morta com o código 137,
+ * dezanove minutos dentro do passo. O que a decisão anterior pesou foram os
+ * limites de ficheiros da Vercel, que de facto não se aplicam a uma construção
+ * disparada pelo Git; o limite que existia era outro, e era a memória.
+ *
+ * O que se perde e o que não se perde: uma página de linha dos concelhos
+ * partilhada mostra o cartão do estudo em vez do seu valor. O valor continua no
+ * `<title>`, na descrição e na própria página. O que NÃO se perde é a regra: o
+ * cartão que ela nomeia existe, foi desenhado pela casa, e não tem um algarismo
+ * que ninguém consiga reconduzir a uma origem — porque não tem algarismo nenhum.
  */
 
 import { SITE_NAME, canonicalUrl } from '../../site.config.mjs';
+import { ESTUDOS_DE_DADOS, studyLabel } from '../data/studies.mjs';
 import { getClaim, loadClaims } from './ledger.mjs';
 import { valorComUnidade } from './livro.mjs';
 import { estadoDaMedida } from './estado.mjs';
@@ -107,19 +128,47 @@ export function urlDoCartao(args) {
 }
 
 /**
+ * O CARTÃO DE UM ESTUDO DE DADOS, ou `null` se o estudo não for um deles.
+ *
+ * A ROTA DO CARTÃO É A DA PÁGINA DE CONJUNTO DO ESTUDO, que é a superfície que o
+ * estudo tem neste sítio. Não se inventa aqui um caminho para dar nome ao
+ * ficheiro: um `rota` no registo de um cartão é um endereço que existe, ou não é
+ * nada. A página de conjunto continua a levar o cartão da primeira página, como
+ * levava — o que muda com esta decisão são as páginas de LINHA do estudo, e mais
+ * nada.
+ */
+function cartaoDoEstudo(study, lang) {
+  const conjunto = ESTUDOS_DE_DADOS.get(study);
+  if (!conjunto) return null;
+  return { tipo: 'estudo', id: study, rota: routePath(conjunto, lang), lang };
+}
+
+/**
  * QUE CARTÃO SERVE ESTA PÁGINA.
  *
  * Devolve sempre um cartão: uma rota sem cartão próprio leva o da primeira
  * página da sua edição. Nunca devolve `null`, porque uma página sem `og:image`
  * é uma página que qualquer sítio de partilha desenha à sua maneira, e o que
  * ele desenha não passou por portão nenhum.
+ *
+ * Uma página de linha de um ESTUDO DE DADOS leva o cartão do seu estudo. A
+ * pergunta faz-se à linha, no campo `study`, e não ao nome da rota: é a linha
+ * que declara de que estudo é, e um recorte do id daria a resposta errada em
+ * silêncio.
  */
 export function cartaoDaPagina(caminho, lang) {
   const rota = matchPath(caminho);
   if (rota?.key === 'linha' && rota.params?.slug) {
-    const linhas = loadClaims();
-    if (linhas.has(rota.params.slug)) {
-      return { tipo: 'linha', id: rota.params.slug, rota: caminho, lang: rota.lang };
+    const linha = loadClaims().get(rota.params.slug);
+    if (linha) {
+      return (
+        cartaoDoEstudo(linha.study, rota.lang) ?? {
+          tipo: 'linha',
+          id: rota.params.slug,
+          rota: caminho,
+          lang: rota.lang,
+        }
+      );
     }
   }
   return { tipo: 'inicio', id: null, rota: routePath('home', lang), lang };
@@ -141,9 +190,14 @@ export function cartoesAConstruir(rotasDoSitio) {
     cartoes.set(chave(c), c);
   }
   for (const lang of LANGS) {
-    for (const id of loadClaims().keys()) {
-      const c = { tipo: 'linha', id, rota: routePath('linha', lang, { slug: id }), lang, cobre: [] };
-      cartoes.set(chave(c), c);
+    for (const [id, linha] of loadClaims()) {
+      /* A linha de um estudo de dados não tem cartão próprio: tem o do estudo,
+         que se acrescenta abaixo e uma vez só. */
+      const doEstudo = cartaoDoEstudo(linha.study, lang);
+      const c = doEstudo
+        ? { ...doEstudo, cobre: [] }
+        : { tipo: 'linha', id, rota: routePath('linha', lang, { slug: id }), lang, cobre: [] };
+      if (!cartoes.has(chave(c))) cartoes.set(chave(c), c);
     }
   }
   for (const { caminho, lang } of rotasDoSitio ?? []) {
@@ -312,9 +366,49 @@ function modeloDaLinha(id, lang) {
   };
 }
 
+/**
+ * O MODELO DO CARTÃO DE UM ESTUDO DE DADOS.
+ *
+ * É a folha da casa com o título do estudo, e mais nada: a mesma sobrancelha e o
+ * mesmo título que a página de conjunto do estudo rende, pelas mesmas duas
+ * chamadas (`s.livro.eyebrow` e `studyLabel()`). Nenhuma cadeia nova nasceu para
+ * este cartão, como nenhuma nasceu para os outros dois.
+ *
+ * NÃO LEVA NÚMERO NENHUM, e é uma decisão e não uma falta. Um cartão que
+ * viajasse com a contagem das linhas do estudo levaria um número do próprio
+ * sítio, que a IDENTIDADE §10 obriga a entrar por `data-prova` com quem o
+ * reconte; e um cartão que levasse o valor de UMA das linhas estaria a escolher
+ * uma linha entre milhares para representar as outras. Sem valores, a lista
+ * `valores` fica vazia e a conferência dos algarismos do portão continua a
+ * morder: o que ela exige é que nenhum algarismo da cópia visível fique sem
+ * origem, e a maneira mais segura de o cumprir é não ter algarismo nenhum.
+ */
+function modeloDoEstudo(id, lang) {
+  const s = t(lang);
+  const conjunto = ESTUDOS_DE_DADOS.get(id);
+  if (!conjunto) throw new Error(`cartões: "${id}" não é um estudo de dados.`);
+  return {
+    tipo: 'estudo',
+    lang,
+    id,
+    rota: routePath(conjunto, lang),
+    marca: SITE_NAME,
+    sobrancelha: s.livro.eyebrow,
+    manchete: studyLabel(id, lang),
+    fila: null,
+    aparelho: null,
+    estado: null,
+    meta: [],
+    valores: [],
+    quadrados: null,
+  };
+}
+
 /** O modelo de um cartão, seja de que tipo for. */
 export function modeloDoCartao({ tipo, id, lang }) {
-  return tipo === 'linha' ? modeloDaLinha(id, lang) : modeloDoInicio(lang);
+  if (tipo === 'linha') return modeloDaLinha(id, lang);
+  if (tipo === 'estudo') return modeloDoEstudo(id, lang);
+  return modeloDoInicio(lang);
 }
 
 /**
