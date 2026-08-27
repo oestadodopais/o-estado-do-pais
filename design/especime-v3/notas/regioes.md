@@ -1,7 +1,8 @@
 # As regiões · a nota do construtor do sítio (R2)
 
 *Escrita a 27.08.2026 por Claude Opus 5, no ramo `regioes-2026-08-27`, a partir
-de `main` em `e41a557`. O brief é `design/especime-v3/briefs/BRIEF-regioes.md`
+de `main` em `e41a557`, e continuada a 28.08.2026 com as quatro regiões que o
+motor trouxe (§3b) e com as correcções da leitura cruzada do Codex. O brief é `design/especime-v3/briefs/BRIEF-regioes.md`
 §2 (R2), §3 e §4; a emenda que ele aplica é a 21 de `direcao.md`; os factos de
 partida estão em `medicoes/regioes-reconhecimento-2026-08-27.md`. Sem travessões
 na prosa deste ficheiro.*
@@ -81,24 +82,26 @@ inventário com o bloco `regioes`; o registo das revisões com `por ler`.
 
 ## 2 · Os números
 
-| o quê | quanto |
-|---|---|
-| regiões declaradas na lista de dados | 5 |
-| regiões com linhas publicadas | 5 |
-| leituras na régua (as cinco e o país) | 6 |
-| páginas construídas | 12 (2 índices, 10 de região) |
-| peso do índice, HTML servido | 22 328 B |
-| peso da página de uma região (Alentejo) | 26 650 B |
-| a caixa da régua a 1280 | 1090 × 323 px |
-| a caixa de uma linha da lista, a 320 · 360 · 390 · 430 | 282 · 322 · 352 · 392 px de largura, 85 px de altura |
-| a barra de uma linha, às mesmas larguras | 282 · 322 · 352 · 392 × 24 px |
-| transbordo, às cinco larguras | 0 px |
-| rótulos cruzados ou tapados no eixo, a 1280 | 0 |
-| portas da lista, altura de alvo | 44 px |
-| chaves da prova novas | 2 (`regioes_total`, `regioes_com_linha`) |
-| linhas do inventário no bloco `regioes` | 20 (16 novas, 4 que voltam à vida) |
-| linhas do inventário que passam a `retirada` | 10 |
-| capturas | 18 |
+| o quê | 27.08 | 28.08 |
+|---|---|---|
+| regiões declaradas na lista de dados | 5 | **9** |
+| regiões com linhas publicadas | 5 | **9** |
+| leituras na régua (as regiões e o país) | 6 | **10** |
+| páginas de região construídas | 10 | **18** |
+| peso do índice, HTML servido | 22 328 B | **29 317 B** |
+| peso da página de uma região | 26 650 B (Alentejo) | **32 935 B** (Norte) |
+| a caixa da régua a 1280 | 1090 × 323 px | 1090 × 323 px |
+| patamares usados, de quatro | 2 | **4** (1, 1, 3 e 5 marcas) |
+| a caixa de uma linha da lista, a 320 · 360 · 390 · 430 | 282 · 322 · 352 · 392 px de largura, 85 px de altura | igual |
+| a barra de uma linha, às mesmas larguras | 282 · 322 · 352 · 392 × 24 px | igual |
+| transbordo, às cinco larguras | 0 px | 0 px |
+| rótulos cruzados ou tapados no eixo, a 1280 | 0 | 0 |
+| portas da lista, altura de alvo | 44 px | 44 px |
+| unidades de peça com separador solto | — | **0 de 36** |
+| chaves da prova novas | 2 (`regioes_total`, `regioes_com_linha`) | 2 |
+| células da régua `tests/inicio/regioes.mjs` | 29, 4 estragos | **30, 5 estragos** |
+| linhas do inventário no bloco `regioes` | 20 | **36** |
+| capturas | 18 | 18 |
 
 ## 3 · Os dois defeitos do próprio bloco, apanhados pela sua régua
 
@@ -120,14 +123,47 @@ separava em Y entre patamares. Os patamares passam a 42 unidades, `eixoY` desce
 subetapa 2g fica intacta, porque ela mediu o nome contra o valor DENTRO de uma
 chapa, e essa distância não muda.
 
+## 3b · A segunda passagem, 28.08.2026: as nove regiões
+
+**O conjunto ficou completo.** O motor confirmou na fonte que a classificação em
+vigor é a NUTS 2024 e que ela tem nove regiões NUTS II para Portugal, e o lugar
+de direção escreveu as oito linhas das quatro que faltavam. As quatro entradas
+entraram em `src/data/regioes.mjs` pela via que já lá estava, e mais nada mudou
+para elas ganharem barra, página, endereço nas duas edições e contagem: é o que a
+Emenda 21e prometia.
+
+**Cada entrada traz o `codigo` e o nome oficial em comentário**, lidos da nota
+alojada no motor e nunca de memória. Os nomes seguem a convenção da casa:
+encurtar onde o uso corrente encurta («Açores»), traduzir só onde existe um nome
+inglês estabelecido («Azores» sim; «Norte», «Centro» e «Oeste e Vale do Tejo»
+não, porque o Eurostat também não os traduz). O «(PT)» de «Centro (PT)» é o
+desambiguador da classificação e fica no comentário.
+
+**A I85 fechou-se pela medição, e contra a previsão.** A nota de 27.08 escrevia
+que dez leituras pediriam um quinto patamar e mais 42 unidades de caixa. As duas
+geometrias foram construídas e medidas, e deram o mesmo: dez marcas, zero rótulos
+cruzados, zero tapados, quatro patamares usados — com cinco disponíveis, o quinto
+ficava vazio. A geometria fica nos quatro, e a caixa no tamanho que tinha. **A
+folga acabou:** os quatro patamares estão todos ocupados, e a M1b passa a
+imprimir quantos o empacotador usou, para que o dia em que faltar um se veja.
+
+**Duas correcções da leitura cruzada do Codex.** A contagem dizia «5 regiões com
+linhas publicadas.» e as duas dicas da prova diziam «com linhas publicadas no
+livro-razão»: é cobertura, e sai. Fica «9 regiões», e as dicas passam a nomear o
+que contam. E a peça da distância rendia «pontos do índice ·» com um `<span>`
+vazio a seguir, porque uma linha derivada não tem `reference_date` e o gabarito
+escrevia sempre o separador; o período entra quando a linha o tem, e a célula M7
+varre as 36 unidades das duas edições para que a forma não volte.
+
 ## 4 · O que fica
 
-**A régua tem quatro patamares, e com seis leituras isso chega.** Não chega por
-definição: o empacotador põe no último patamar o que já não cabe em nenhum, e com
-o Norte, o Centro e os Açores na régua dois rótulos podem voltar a cruzar-se. A
-célula M1b vê-o, e a resposta desse dia é um patamar a mais em `GEOMETRIA` e mais
-42 unidades de caixa. Está escrito no ficheiro para que a resposta não seja
-procurada outra vez.
+**A régua tem quatro patamares, e os quatro estão ocupados.** Com dez leituras —
+as nove regiões e o país — o empacotador usa os quatro (1, 1, 3 e 5 marcas), e
+não sobra nenhum. O conjunto NUTS II tem nove regiões e as nove têm linha, pelo
+que não há crescimento por que esperar: a régua está no seu tamanho final até a
+classificação mudar. Nesse dia a M1b fica vermelha, e a resposta está escrita ao
+lado da constante: um patamar a mais (`262`), `eixoY` de 248 para 290 e `altura`
+de 290 para 332.
 
 **`tests/inicio/correcoes-a.mjs` rebenta em A5 e A6, e não é deste bloco.**
 Procura `[data-readout]`, `.mun-porta` e `circle.mun` na primeira página, que
