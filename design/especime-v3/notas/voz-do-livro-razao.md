@@ -69,8 +69,10 @@ A leitura cruzada do diff deste bloco está por fazer, e o portão di-lo a cada
 construção: o registo das revisões marca `voz-do-livro-razao` como `por ler`.
 
 **Duas células de `tests/linha/correcoes-b.mjs` já estavam vermelhas em `main`**,
-e continuam: a B10 de `municipio pt` e a de `municipio en`. As duas apontam para
-a página de Évora, que este bloco não toca: um alvo de 82,5 × 18,4 px, que é o
+e continuam: a B10 de `municipio pt` e a de `municipio en`. **Foi medido e não
+deduzido:** com os cinco ficheiros deste bloco repostos aos de `ef46826` e a
+árvore reconstruída, a régua sai a 1 com as mesmas duas células, 2 de 32. As duas
+apontam para a página de Évora, que este bloco não toca: um alvo de 82,5 × 18,4 px, que é o
 marcador `[a verificar]` posto no nome do presidente interino pela correção I77
 do bloco anterior, e um rótulo a 11,5 px na nota do excesso sobre o teto legal,
 que ficou à vista quando o G6 tirou a dobra que o escondia. Ficam para quem
