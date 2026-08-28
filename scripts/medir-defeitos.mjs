@@ -466,20 +466,26 @@ function frasesDaCasa(root) {
  * É exactamente o caso das dicas da prova, que vivem em `<span data-prova>`.
  */
 /**
- * DUAS NORMALIZAÇÕES, E AS DUAS SÃO A MESMA REGRA DO `<lugar>` DA DESCRIÇÃO.
+ * UMA NORMALIZAÇÃO, E É A MESMA REGRA DO `<lugar>` DA DESCRIÇÃO.
  *
- *   1. **Uma dica que repete um `data-*` do próprio elemento não é uma frase
- *      nova.** O selo de uma linha leva `data-selo-etiqueta="calculado · Évora —
- *      Prometido, Pago, Auditado 2026"` e o mesmo texto no `title`: o que ali
- *      está é o estado da linha e o NOME DO TRABALHO que a publica, composto
- *      pelo livro-razão. Declarar as trinta seria pôr o arquivo dentro do
- *      inventário, e o inventário passava a crescer com o livro-razão.
- *   2. **Um identificador que o próprio elemento aponta sai da dica e deixa a
- *      marca.** As portas das figuras de uma página de leitura levam
- *      `href="#linha-tc-year-1-2008"` e `aria-label="linha do motor:
- *      tc-year-1-2008"`: a frase da casa é «linha do motor», e o resto é a
- *      chave da linha. Sem isto, o inventário ganhava uma linha por figura de
- *      cada documento.
+ * **Uma dica que repete um `data-*` do próprio elemento não é uma frase nova.**
+ * O selo de uma linha leva `data-selo-etiqueta="calculado · Évora —
+ * Prometido, Pago, Auditado 2026"` e o mesmo texto no `title`: o que ali está é
+ * o estado da linha e o NOME DO TRABALHO que a publica, composto pelo
+ * livro-razão. Declarar as trinta seria pôr o arquivo dentro do inventário, e o
+ * inventário passava a crescer com o livro-razão.
+ *
+ * ERAM DUAS ATÉ 28.08.2026, E A SEGUNDA SAIU COM A I83. Ela tirava da dica o
+ * identificador que o próprio elemento aponta e deixava `<linha>` no lugar
+ * dele: as portas das figuras de uma página de leitura levavam
+ * `href="#linha-tc-year-1-2008"` e `aria-label="linha do motor:
+ * tc-year-1-2008"`, e sem ela o inventário ganhava uma linha por figura de cada
+ * documento. As 34 cadeias eram um efeito do rótulo, e o rótulo mudou: a porta
+ * chama-se «a linha desta figura», a chave ficou só no `href`, e não há
+ * identificador nenhum para normalizar. Uma normalização sem matéria é uma
+ * peneira que só pode esconder o que ainda não existe, e por isso sai com o que
+ * a fez nascer. Uma dica composta com um identificador que volte volta ao
+ * inventário como bloco POR CLASSIFICAR, que é o portão que a apanha.
  *
  * O QUE ISTO NÃO FAZ é dispensar a dica de um elemento com origem declarada. A
  * dica de um valor da prova vive num `<span data-prova>` e é prosa da casa a
@@ -492,15 +498,11 @@ function dicasDaCasa(root) {
     const dados = Object.entries(el.attributes ?? {})
       .filter(([k]) => k.startsWith('data-'))
       .map(([, v]) => norm(v));
-    const href = el.getAttribute('href') ?? '';
-    const fragmento = href.startsWith('#') ? href.slice(1) : '';
-    const chaves = [fragmento, fragmento.replace(/^linha-/, '')].filter(Boolean);
     for (const at of DICAS) {
-      let v = norm(el.getAttribute(at) ?? '');
+      const v = norm(el.getAttribute(at) ?? '');
       if (!v) continue;
       if (dados.includes(v)) continue;
-      for (const chave of chaves) if (v.includes(chave)) v = norm(v.split(chave).join('<linha>'));
-      if (v) out.push(v);
+      out.push(v);
     }
   }
   return out;

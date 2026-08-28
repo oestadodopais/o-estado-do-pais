@@ -1124,8 +1124,8 @@ página do leitor.*
 | navegacao | Terms, in time | grelha-2 | viva | — |
 | navegacao | The pages | grelha-2 | viva | — |
 | navegacao | Theme | grelha-2 | viva | — |
-| navegacao | engine row: <linha> | grelha-2 | viva | — |
-| navegacao | linha do motor: <linha> | grelha-2 | viva | — |
+| navegacao | engine row: <linha> | pequenas-3 | retirada | o rótulo de acessibilidade da porta de uma figura nomeava a chave interna da linha do motor e não o que a porta abre (I83, 28.08.2026); a chave ficou só no `href`, o rótulo passou a «a linha desta figura» e «this figure’s row», e a normalização que punha `<linha>` no lugar do identificador saiu da régua com ela |
+| navegacao | linha do motor: <linha> | pequenas-3 | retirada | o rótulo de acessibilidade da porta de uma figura nomeava a chave interna da linha do motor e não o que a porta abre (I83, 28.08.2026); a chave ficou só no `href`, o rótulo passou a «a linha desta figura» e «this figure’s row», e a normalização que punha `<linha>` no lugar do identificador saiu da régua com ela |
 | navegacao | Índice de dívida, do primeiro ao último ano da série da Direção-Geral das Autarquias Locais | grelha-2 | viva | — |
 | conteudo | agenda items | grelha-2 | viva | — |
 | conteudo | calculated rows | grelha-2 | viva | — |
@@ -1214,3 +1214,29 @@ lhes mexeu no número.*
 | conteudo | 9 regions | regioes | viva | — |
 | conteudo | regiões desenhadas na régua da convergência | regioes | viva | — |
 | conteudo | regions drawn on the convergence rule | regioes | viva | — |
+
+## Bloco «Correções pequenas, terceira passagem» · I83 · 28.08.2026
+
+*Uma frase por edição, e é a mesma porta com outro nome. A porta que vai a
+seguir a uma ligação do documento numa página de leitura não tem texto: o que
+ela diz, di-lo em `aria-label`, e o que dizia era «linha do motor:
+tc-year-1-2008». Quem ouve a página ouvia o identificador de um artefacto do
+motor. O rótulo passa a nomear o que a porta abre, a chave fica só no `href`, e a
+classe é navegação porque é o que a porta é: uma saída para outro sítio da mesma
+página.*
+
+*As duas linhas antigas ficam `retirada` com o motivo escrito, e não saem do
+ficheiro: eram 34 cadeias distintas nas duas edições, arrumadas em duas linhas
+por uma normalização da régua que punha `<linha>` no lugar do identificador. A
+normalização sai com elas, porque já não há identificador nenhum na dica; se uma
+dica composta com uma chave voltar, volta como bloco POR CLASSIFICAR, que é o
+portão que a apanha.*
+
+*A frase de Évora da I88 não entra nesta tabela, e a razão é mecânica: o bloco
+que a leva tem um `data-claim` lá dentro, e a régua deixa cair um bloco com
+origem declarada. Nenhuma cadeia do inventário muda com ela.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | a linha desta figura | pequenas-3 | viva | — |
+| navegacao | this figure’s row | pequenas-3 | viva | — |

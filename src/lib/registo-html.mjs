@@ -280,11 +280,18 @@ function acumulador() {
  * unidade continua a ser, carácter a carácter, o do registo. O glifo é da folha
  * (`::after`), o nome acessível é o `aria-label`, e nenhum dos dois é texto do
  * documento.
+ *
+ * **O NOME ACESSÍVEL NÃO LEVA A CHAVE DA LINHA** (I83, 28.08.2026). Levou-a até
+ * hoje, a seguir ao rótulo: `aria-label="linha do motor: tc-year-1-2008"`. Quem
+ * ouve a página ouvia o identificador de um artefacto do motor, e um rótulo de
+ * acessibilidade existe para dizer o que a porta abre. A chave continua no
+ * `href`, que é onde ela é um endereço; o rótulo diz de que figura é a linha, e
+ * é isso que separa duas portas seguidas dentro da mesma ligação.
  */
 function portaAposALigacao(row, ctx) {
   return (
     `<a class="texto-figura-porta-apos" href="#linha-${escapaAtributo(row)}" ` +
-    `aria-label="${escapaAtributo(`${ctx.rotuloDaPorta}: ${row}`)}"></a>`
+    `aria-label="${escapaAtributo(ctx.rotuloDaPorta)}"></a>`
   );
 }
 
