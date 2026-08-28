@@ -1,0 +1,26 @@
+{
+ "registado_em": "2026-08-28",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "paginas/leitura-evora-prometido.html",
+   "descricao": "one figure door's aria-label reverted to the engine key («linha do motor: tc-year-1-2008»)",
+   "sha256_antes": "fcbd56c3b84baab70dd9dd33426ecfe01120c9c745f7d16028023fc38a7d3d96",
+   "sha256_depois": "c9bae4d046867934462ff325cb1a715a55fcd53ef11416a9c8b260103d6e81dd"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "paginas/en-municipality-evora.html",
+   "descricao": "the Évora EN sentence reverted to attribute the debt index to the directorate-general",
+   "sha256_antes": "22e7fde16a4e5faf29667da5759dbfee006ec65b3c637ee8dc8dd18efb1e0268",
+   "sha256_depois": "4a8fd71197db47ff051841808bc3d8997a8a3d3fd2fed611317852edbea8d700"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "paginas/municipios.html",
+   "descricao": "two district group headers swapped on /municipios (Évora and Faro), breaking the Portuguese order",
+   "sha256_antes": "e2b674bf1d217e52a4b305274e9498de9ff639ffd1b6defdeb387b897e38f610",
+   "sha256_depois": "a7ea53414fe31e64fa15129a89059a43c2cad01b4a30dda202a5c718994f54fd"
+  }
+ ]
+}
