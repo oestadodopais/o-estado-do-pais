@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Direção G · o selo dentro do O">
+  <title>Direção G · o selo dentro do O</title>
+  <desc>A inicial da casa com o quadrado da prova lá dentro.</desc>
+  <style>
+    .campo { fill: #f6f7f4; }
+    .tinta { fill: #17191b; }
+    .tinta-t { fill: none; stroke: #17191b; }
+    .acento { fill: #1f4e8c; }
+    .acento-t { fill: none; stroke: #1f4e8c; }
+    /* A costura: uma silhueta feita de distritos encostados fica com fios de
+       papel entre eles quando se enche sem traço. O traço da mesma cor fecha-os. */
+    .acento-costura { fill: #1f4e8c; stroke: #1f4e8c; stroke-width: 2; }
+    svg[data-tema="escuro"] .campo { fill: #15171a; }
+    svg[data-tema="escuro"] .tinta { fill: #eceeea; }
+    svg[data-tema="escuro"] .tinta-t { stroke: #eceeea; }
+    svg[data-tema="escuro"] .acento { fill: #7fa6dc; }
+    svg[data-tema="escuro"] .acento-t { stroke: #7fa6dc; }
+    svg[data-tema="escuro"] .acento-costura { fill: #7fa6dc; stroke: #7fa6dc; }
+    /* A simplificação de 32 e 16 px: a mesma forma, com o que morre tirado. */
+    .sinal-favicon { display: none; }
+    svg[data-forma="favicon"] .sinal { display: none; }
+    svg[data-forma="favicon"] .sinal-favicon { display: block; }
+    /* O `maskable` do Android: o campo fica, o sinal encolhe para dentro do
+       círculo seguro de raio 40 %. */
+    svg[data-forma="maskable"] .sinal,
+    svg[data-forma="maskable"] .sinal-favicon {
+      transform: scale(0.78);
+      transform-origin: 256.0px 256.0px;
+      transform-box: view-box;
+    }
+  </style>
+  <rect class="campo" x="0" y="0" width="512" height="512"/>
+  <g class="sinal" transform="translate(-51.2 -51.2) scale(1.2)">
+    <!-- O «O» da casa (H=300, haste=69.9, fino=30.0)
+         com o selo dentro: quadrado de 130, com 15 de
+         folga para a contraforma de 160 x 240. -->
+    <path class="tinta" fill-rule="evenodd" d="M106 256A150 150 0 1 1 406 256A150 150 0 1 1 106 256ZM205.9 136L306.1 136A30 30 0 0 1 336.1 166L336.1 346A30 30 0 0 1 306.1 376L205.9 376A30 30 0 0 1 175.9 346L175.9 166A30 30 0 0 1 205.9 136Z"/>
+    <rect class="acento" x="190.9" y="190.9" width="130.2" height="130.2"/>
+  </g>
+  <g class="sinal-favicon" transform="translate(-51.2 -51.2) scale(1.2)">
+    <!-- 32 e 16 px: o canto recto da contraforma não chega a um píxel e
+         a folga entre o selo e a letra fecha-se. A contraforma passa a
+         oval e o selo encolhe para 90, para o anel não colar. -->
+    <path class="tinta" fill-rule="evenodd" d="M106 256A150 150 0 1 1 406 256A150 150 0 1 1 106 256ZM175.9 256A80.1 120 0 1 1 336.1 256A80.1 120 0 1 1 175.9 256Z"/>
+    <rect class="acento" x="210.9" y="210.9" width="90.2" height="90.2"/>
+  </g>
+</svg>

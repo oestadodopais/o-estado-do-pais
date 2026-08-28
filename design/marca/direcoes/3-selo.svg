@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Direção C · o selo">
+  <title>Direção C · o selo</title>
+  <desc>Os dois estados da prova: o quadrado cheio e o quadrado a tracejado.</desc>
+  <style>
+    .campo { fill: #f6f7f4; }
+    .tinta { fill: #17191b; }
+    .tinta-t { fill: none; stroke: #17191b; }
+    .acento { fill: #1f4e8c; }
+    .acento-t { fill: none; stroke: #1f4e8c; }
+    /* A costura: uma silhueta feita de distritos encostados fica com fios de
+       papel entre eles quando se enche sem traço. O traço da mesma cor fecha-os. */
+    .acento-costura { fill: #1f4e8c; stroke: #1f4e8c; stroke-width: 2; }
+    svg[data-tema="escuro"] .campo { fill: #15171a; }
+    svg[data-tema="escuro"] .tinta { fill: #eceeea; }
+    svg[data-tema="escuro"] .tinta-t { stroke: #eceeea; }
+    svg[data-tema="escuro"] .acento { fill: #7fa6dc; }
+    svg[data-tema="escuro"] .acento-t { stroke: #7fa6dc; }
+    svg[data-tema="escuro"] .acento-costura { fill: #7fa6dc; stroke: #7fa6dc; }
+    /* A simplificação de 32 e 16 px: a mesma forma, com o que morre tirado. */
+    .sinal-favicon { display: none; }
+    svg[data-forma="favicon"] .sinal { display: none; }
+    svg[data-forma="favicon"] .sinal-favicon { display: block; }
+    /* O `maskable` do Android: o campo fica, o sinal encolhe para dentro do
+       círculo seguro de raio 40 %. */
+    svg[data-forma="maskable"] .sinal,
+    svg[data-forma="maskable"] .sinal-favicon {
+      transform: scale(0.78);
+      transform-origin: 256.0px 256.0px;
+      transform-box: view-box;
+    }
+  </style>
+  <rect class="campo" x="0" y="0" width="512" height="512"/>
+  <g class="sinal">
+    <!-- O quadrado cheio e o quadrado a tracejado, os dois estados do
+         selo. Lado 176, traço 26, três riscos por lado
+         (150 = 3 x (34 + 16)). -->
+    <rect class="acento" x="76" y="76" width="176" height="176"/>
+    <rect class="tinta-t" x="273" y="273" width="150" height="150" stroke-width="26" stroke-dasharray="34 16" stroke-dashoffset="17"/>
+  </g>
+  <g class="sinal-favicon">
+    <!-- 32 e 16 px: a 16 px um risco de 34 dá 1,06 px e o tracejado
+         fecha-se numa linha cinzenta. O segundo quadrado passa a
+         contorno inteiro: continua a ser o estado que falta, sem
+         fingir um tracejado que já não existe. -->
+    <rect class="acento" x="76" y="76" width="176" height="176"/>
+    <rect class="tinta-t" x="273" y="273" width="150" height="150" stroke-width="26"/>
+  </g>
+</svg>
