@@ -70,6 +70,45 @@ const TROCA_CEDO = {
 };
 
 /**
+ * AS SETE VOZES DA QUARTA ADENDA TROCAM MAIS CEDO AINDA: A PALAVRA SÓ AOS 512.
+ *
+ * A adenda diz o tamanho de cada sinal à letra: «a palavra "Estado" (para o
+ * cabeçalho e para o ícone de 512) e o "E" dela sozinho (para 180, 60, 32,
+ * 16)». É isso, e não uma interpretação: só o ficheiro de 512 leva a palavra;
+ * tudo o que é ícone de telemóvel leva a letra.
+ *
+ * E SÃO TRÊS DESENHOS, E NÃO DOIS. A palavra aos 512; a LETRA da voz, com os
+ * números da voz, dos 192 aos 60; e a simplificação aos 32 e 16. O terceiro
+ * grupo nasceu de um erro que só se viu ao olhar: com dois grupos, a cela de
+ * 180 px mostrava a letra ENGROSSADA do favicon, e a Didone chegava ao tamanho
+ * a que o diretor a julga com contraste 1,9 em vez de 6,55. A cela de 180 é a
+ * que decide, e tem de mostrar a letra tal como ela está dentro da palavra.
+ *
+ * O `maskable` leva a letra nos DOIS tamanhos, incluindo o de 512, e a razão
+ * está medida nas NOTAS: um ícone adaptável do Android desenha-se a 108 px, e a
+ * maiúscula da palavra lá dentro fica a 13,5 px. Um ficheiro de 512 que ninguém
+ * vê a 512 não é um argumento. Daí as formas compostas «maskable-letra» e
+ * «maskable-favicon», que o CSS dos SVG conhece: o sinal pequeno, dentro do
+ * círculo seguro.
+ *
+ * A 18 (o «e» minúsculo) não está aqui, e de propósito: o sinal dela é o mesmo
+ * em todos os tamanhos, porque não é uma palavra, é uma letra só.
+ */
+const VOZES = ['12-didone-estado', '13-inscricional-estado', '14-geometrica-ambar',
+  '14b-geometrica-cobalto', '15-laje-instrumento', '16-condensada-estado',
+  '17-caligrafica-estado'];
+const SO_A_PALAVRA = new Set(['512', '512-escuro']);
+const SIMPLIFICADO = new Set(['32', '16', '32-escuro']);
+for (const slug of VOZES) {
+  TROCA_CEDO[slug] = {};
+  for (const t of TAMANHOS) {
+    if (SO_A_PALAVRA.has(t.nome)) continue;
+    const sinal = SIMPLIFICADO.has(t.nome) ? 'favicon' : 'letra';
+    TROCA_CEDO[slug][t.nome] = t.forma === 'maskable' ? `maskable-${sinal}` : sinal;
+  }
+}
+
+/**
  * TAMANHOS A MAIS, SÓ PARA AS DIREÇÕES QUE TROCAM CEDO.
  *
  * As duas direções da palavra têm dois sinais, e a 180 px mostram o grande.
@@ -83,9 +122,18 @@ const TAMANHOS_EXTRA = {
   '11-estado-linha': ['180-letra', '180-letra-escuro'],
 };
 const EXTRA = {
+  // A letra da voz na cela de 180, para a maqueta e para a prancha (é a mesma
+  // que o `-180` já traz; fica com nome próprio para quem ler a pasta perceber).
   '180-letra': { px: 180, tema: 'claro', forma: 'favicon' },
   '180-letra-escuro': { px: 180, tema: 'escuro', forma: 'favicon' },
+  // O contrário, para as sete vozes: a cela de 180 px com a PALAVRA lá dentro.
+  // É o ficheiro que mostra, lado a lado com o da letra, porque é que o diretor
+  // tem razão quando diz que a palavra «pode não funcionar, por causa do
+  // tamanho»: a prancha põe os dois na mesma linha, à mesma escala.
+  '180-palavra': { px: 180, tema: 'claro', forma: 'normal' },
+  '180-palavra-escuro': { px: 180, tema: 'escuro', forma: 'normal' },
 };
+for (const slug of VOZES) TAMANHOS_EXTRA[slug] = ['180-palavra', '180-palavra-escuro'];
 
 /**
  * A página que o navegador vê: o SVG sozinho, do tamanho pedido, sem margem e

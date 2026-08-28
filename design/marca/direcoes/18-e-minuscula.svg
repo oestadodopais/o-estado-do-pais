@@ -1,21 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Direção G · o selo dentro do O">
-  <title>Direção G · o selo dentro do O</title>
-  <desc>A inicial da casa com o quadrado da prova lá dentro.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Voz 7 · o «e» minúsculo">
+  <title>Voz 7 · o «e» minúsculo</title>
+  <desc>Uma circunferência cortada e uma barra: o «O» e o «e» na mesma forma.</desc>
   <style>
-    .campo { fill: #f6f7f4; }
-    .tinta { fill: #17191b; }
-    .tinta-t { fill: none; stroke: #17191b; }
-    .acento { fill: #1f4e8c; }
-    .acento-t { fill: none; stroke: #1f4e8c; }
+    .campo { fill: #17191b; }
+    .tinta { fill: #e0a21a; }
+    .tinta-t { fill: none; stroke: #e0a21a; }
+    .acento { fill: #e0a21a; }
+    .acento-t { fill: none; stroke: #e0a21a; }
     /* A costura: uma silhueta feita de distritos encostados fica com fios de
        papel entre eles quando se enche sem traço. O traço da mesma cor fecha-os. */
-    .acento-costura { fill: #1f4e8c; stroke: #1f4e8c; stroke-width: 2; }
+    .acento-costura { fill: #e0a21a; stroke: #e0a21a; stroke-width: 2; }
     svg[data-tema="escuro"] .campo { fill: #15171a; }
-    svg[data-tema="escuro"] .tinta { fill: #eceeea; }
-    svg[data-tema="escuro"] .tinta-t { stroke: #eceeea; }
-    svg[data-tema="escuro"] .acento { fill: #7fa6dc; }
-    svg[data-tema="escuro"] .acento-t { stroke: #7fa6dc; }
-    svg[data-tema="escuro"] .acento-costura { fill: #7fa6dc; stroke: #7fa6dc; }
+    svg[data-tema="escuro"] .tinta { fill: #e0a21a; }
+    svg[data-tema="escuro"] .tinta-t { stroke: #e0a21a; }
+    svg[data-tema="escuro"] .acento { fill: #e0a21a; }
+    svg[data-tema="escuro"] .acento-t { stroke: #e0a21a; }
+    svg[data-tema="escuro"] .acento-costura { fill: #e0a21a; stroke: #e0a21a; }
     /* A simplificação de 32 e 16 px: a mesma forma, com o que morre tirado.
        O seletor é de FIM DE CADEIA e não de igualdade, porque a quarta adenda
        trouxe uma forma composta: «maskable-favicon», que é o sinal pequeno
@@ -56,19 +56,20 @@
   </style>
   <rect class="campo" x="0" y="0" width="512" height="512"/>
   <g class="reducao">
-    <g class="sinal" transform="translate(-51.2 -51.2) scale(1.2)">
-    <!-- O «O» da casa (H=300, haste=69.9, fino=30.0)
-         com o selo dentro: quadrado de 130, com 15 de
-         folga para a contraforma de 160 x 240. -->
-    <path class="tinta" fill-rule="evenodd" d="M106 256A150 150 0 1 1 406 256A150 150 0 1 1 106 256ZM205.9 136L306.1 136A30 30 0 0 1 336.1 166L336.1 346A30 30 0 0 1 306.1 376L205.9 376A30 30 0 0 1 175.9 346L175.9 166A30 30 0 0 1 205.9 136Z"/>
-    <rect class="acento" x="190.9" y="190.9" width="130.2" height="130.2"/>
+    <g class="sinal" transform="translate(19.57 19.19) scale(0.93)">
+    <!-- O «e»: banda de 46 num raio de 150 (grossura 0,31 do raio),
+         cortada entre -56 e -6 graus, e uma barra de
+         42 que sai 0.30 raios para fora de cada lado. Sem a barra é
+         um «O»; com ela é um «e», e o que sai para fora é a linha da régua. -->
+    <path class="tinta" d="M405.18 271.68A150 150 0 1 0 339.88 380.36L314.16 342.22A104 104 0 1 1 359.43 266.87Z"/>
+    <path class="tinta" d="M61 235L450.18 235L450.18 277L61 277Z"/>
     </g>
-    <g class="sinal-favicon" transform="translate(-51.2 -51.2) scale(1.2)">
-    <!-- 32 e 16 px: o canto recto da contraforma não chega a um píxel e
-         a folga entre o selo e a letra fecha-se. A contraforma passa a
-         oval e o selo encolhe para 90, para o anel não colar. -->
-    <path class="tinta" fill-rule="evenodd" d="M106 256A150 150 0 1 1 406 256A150 150 0 1 1 106 256ZM175.9 256A80.1 120 0 1 1 336.1 256A80.1 120 0 1 1 175.9 256Z"/>
-    <rect class="acento" x="210.9" y="210.9" width="90.2" height="90.2"/>
+    <g class="sinal-favicon" transform="translate(19.36 18.3) scale(0.93)">
+    <!-- 32 e 16 px: a mesma forma, com a banda e a barra 15 % mais grossas e a
+         abertura mais fechada, porque a 16 px a abertura de 50 graus dá 1,4 px e
+         some-se contra o campo. -->
+    <path class="tinta" d="M403.72 282.05A150 150 0 1 0 348.35 374.2L315.5 332.15A96.64 96.64 0 1 1 351.17 272.78Z"/>
+    <path class="tinta" d="M61 232.06L448.72 232.06L448.72 279.94L61 279.94Z"/>
     </g>
   </g>
 </svg>
