@@ -34,6 +34,13 @@ contexts:
       uma data editorial, como a de publicação, e é uma afirmação diferente
       dela: enquanto não se souber, aparece como "[a verificar]" e não se
       preenche com a data de publicação.
+  - id: referencia-legal
+    why: >-
+      A citação de um diploma e dos seus artigos: o número do decreto-lei, o ano
+      e os números do artigo. É a morada de um texto legal, como a página de um
+      documento na proveniência de uma linha, e não uma medição do país. Vive no
+      selo da porta legal de uma página de área de governo, com a ligação ao
+      ficheiro que o Diário da República serve.
   - id: titulo-de-estudo
     why: >-
       Título literal de um estudo publicado. Vários trazem o ano no próprio

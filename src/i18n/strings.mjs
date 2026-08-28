@@ -774,21 +774,23 @@ export const STRINGS = {
      */
     areas: {
       metaTitle: 'Áreas de governo · O Estado do País',
-      metaDescription:
-        'As áreas de governo de Portugal, e os trabalhos e as medidas cujo assunto é matéria de cada uma.',
       eyebrow: 'Áreas de governo',
-      h1: 'As áreas de governo',
-      lede:
-        'Uma área de governo é o conjunto de matérias de um ministério, tal como a lei orgânica do Governo o fixa.',
+      /* O TÍTULO É O EIXO E NÃO A LISTA (28.08.2026). Dizia «As áreas de
+         governo» sobre uma lista de nove das dezasseis, e um título assim
+         promete a lista oficial inteira; corrigi-lo com uma frase seria uma
+         frase de cobertura, que é o que não pode estar numa página do leitor.
+         «Por área de governo» é uma das entradas do sítio, como «por região».
+         A lede, que definia o que uma área é, saiu com ele. */
+      h1: 'Por área de governo',
       /* Uma ou muitas, escolhidas na construção com a contagem que o portão vai
          reconferir. Sem plural inventado. */
       contaUma: ' peça',
       contaMuitas: ' peças',
-      /* A cauda e a descrição do `<head>` de uma área, compostas com o nome
-         dela, como as das páginas de região e de concelho. */
+      /* A cauda do `<head>` de uma área, composta com o nome dela, como as das
+         páginas de região e de concelho. A DESCRIÇÃO DEIXOU DE SER UMA FRASE:
+         é o nome da área, e mais nada. As duas cadeias que a compunham saíram a
+         28.08.2026, porque diziam o método do sítio na superfície pública. */
       metaCauda: 'área de governo · O Estado do País',
-      metaDescricaoA: 'Os trabalhos e as medidas cujo assunto é matéria de ',
-      metaDescricaoB: ', área de governo.',
       /* O tipo da coisa, e não o que fizemos com ela (Emenda 18b). */
       tipo: 'área do XXV Governo Constitucional',
       trabalhosK: 'Os trabalhos',
@@ -1856,17 +1858,11 @@ export const STRINGS = {
 
     areas: {
       metaTitle: 'Government areas · O Estado do País',
-      metaDescription:
-        'The areas of government of Portugal, and the studies and measures whose subject is a matter of each one.',
       eyebrow: 'Government areas',
-      h1: 'The areas of government',
-      lede:
-        'An area of government is the set of matters of one ministry, as the Government’s organic law fixes it.',
+      h1: 'By area of government',
       contaUma: ' piece',
       contaMuitas: ' pieces',
       metaCauda: 'government area · O Estado do País',
-      metaDescricaoA: 'The studies and measures whose subject is a matter of ',
-      metaDescricaoB: ', an area of government.',
       tipo: 'area of the XXV Constitutional Government',
       trabalhosK: 'The studies',
       conjuntosK: 'The data studies',

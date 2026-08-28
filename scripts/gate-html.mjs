@@ -3344,11 +3344,31 @@ for (const file of ficheirosHtml(DIST)) {
    * rota `livro`: é o índice principal que tem de existir nas duas edições, e
    * a contagem da página do conjunto vive nas suas três chaves da prova.
    */
+  /**
+   * SÃO CINCO DESDE 28.08.2026, com a página de uma área de governo.
+   *
+   * A página de uma área LISTA linhas do livro-razão, com a linha-espécime
+   * inteira e o selo de cada uma, exatamente como o índice dos 308: usa o mesmo
+   * componente, `src/components/ItemDoLivro.astro`, que é literalmente a mesma
+   * forma e não uma cópia dela. Sem esta rota na lista, o portão recusava as
+   * marcas legítimas de 125 medidas e a página tinha de render de cada uma só o
+   * valor e o identificador, que foi o que a leitura cruzada do lugar de
+   * direção mediu: «um leitor não consegue dizer o que é 1 409».
+   *
+   * O que a guarda protege continua protegido, e é o mesmo argumento da decisão
+   * D6: `data-linha-*` continua proibido em qualquer página que não seja uma
+   * página do livro-razão, e o que a guarda impede é que uma página qualquer
+   * cite um campo de uma linha em prosa corrente. Uma lista de linhas com a
+   * linha-espécime não é prosa corrente, e o que a guarda dá em troca é mais
+   * conferência e não menos: cada campo rendido é comparado, carácter a
+   * carácter, com o campo da linha de que ele saiu.
+   */
   const paginaDoLivro =
     rota?.key === 'linha' ||
     rota?.key === 'livro' ||
     rota?.key === 'livroConcelhos' ||
-    rota?.key === 'livroConcelho';
+    rota?.key === 'livroConcelho' ||
+    rota?.key === 'area';
   /* As linhas que ESTA página cita com <Claim/>, para a conferência da prosa da
      agenda: é contra elas, e não contra o livro-razão inteiro, que se recusa um
      valor repetido em prosa. Ver `valoresDoLivroEmProsa()`. */

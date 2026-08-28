@@ -40,7 +40,41 @@
  *
  * NÃO HÁ CONTAGEM TOTAL, e a ausência é deliberada. «Nove áreas» seria um
  * número sobre a cobertura deste arquivo com a forma de um número sobre o
- * Governo, e um leitor lia-o como o segundo. O que a página tem para dizer é
+ * Governo, e um leitor lia-o como o segundo.
+ *
+ * ---------------------------------------------------------------------------
+ * O TÍTULO É UM EIXO DE NAVEGAÇÃO, E A LEDE SAIU (28.08.2026)
+ * ---------------------------------------------------------------------------
+ * Dizia «As áreas de governo», e a lede por baixo definia o que uma área é. As
+ * duas coisas foram tiradas pela mesma razão, que é a Emenda 15: um título que
+ * anuncia «as áreas de governo» sobre uma lista de nove promete a lista oficial
+ * inteira e entrega parte dela, e a única maneira de o corrigir seria uma frase
+ * sobre a cobertura, que é precisamente o que não pode estar aqui. «Por área de
+ * governo» é o que a página é: uma das entradas do sítio, ao lado de «por
+ * região» e «por concelho». A definição de área de governo era o sítio a
+ * explicar-se, e saiu com ela.
+ *
+ * A DESCRIÇÃO DO `<head>` É O MESMO TÍTULO, pela mesma razão e para que não haja
+ * uma segunda frase a dizer noutro sítio o que esta já diz.
+ *
+ * ---------------------------------------------------------------------------
+ * O RÓTULO É UM `<p>` E NÃO UM `<span>`, E A DIFERENÇA É A RÉGUA
+ * ---------------------------------------------------------------------------
+ * A medição cega de 28.08.2026 encontrou o rótulo destas páginas rendido em
+ * vinte sítios e declarado em nenhum, e a causa é a definição de «bloco» da
+ * régua da voz: ela mede elementos de bloco que não contêm outro bloco, e um
+ * `<span>` dentro de uma cabeça que também tem o `<h1>` não é nem uma coisa nem
+ * outra. O rótulo passava por baixo da régua sem ninguém o ver.
+ *
+ * A PROVA DE QUE É ISTO, e não uma suposição: `<h2 class="eyebrow">Relance</h2>`
+ * na página de um concelho É um bloco, e está declarado no inventário como
+ * `navegacao`. A classe é a mesma, o texto é da mesma família, e a única
+ * diferença é a etiqueta. `.eyebrow` já é `display: block` com `margin: 0`, e
+ * por isso a troca não muda um pixel.
+ *
+ * DEZASSEIS OUTRAS VISTAS TÊM O MESMO RÓTULO EM `<span>` e continuam por
+ * declarar. Não foram tocadas aqui: é um bloco do inventário e não deste, e o
+ * relatório nomeia-o. O que a página tem para dizer é
  * quais são e o que cada uma tem, e mostra-as.
  */
 import Base from '../layouts/Base.astro';
@@ -57,11 +91,10 @@ const path = routePath('areas', lang);
 const areas = areasComPagina();
 ---
 
-<Base lang={lang} path={path} title={s.areas.metaTitle} description={s.areas.metaDescription}>
+<Base lang={lang} path={path} title={s.areas.metaTitle} description={s.areas.h1}>
   <div class="area-cabeca">
-    <span class="eyebrow">{s.areas.eyebrow}</span>
+    <p class="eyebrow">{s.areas.eyebrow}</p>
     <h1>{s.areas.h1}</h1>
-    <p class="lede">{s.areas.lede}</p>
   </div>
 
   <ul class="areas-lista" id="areas">

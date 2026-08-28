@@ -37,6 +37,33 @@
  * uma, com o que ficou de fora dela.
  *
  * ---------------------------------------------------------------------------
+ * O PRINCÍPIO QUE DECIDE A FRONTEIRA, ESCRITO UMA VEZ (28.08.2026)
+ * ---------------------------------------------------------------------------
+ * Duas famílias de linhas ficavam de um lado e do outro da mesma fronteira sem
+ * uma razão escrita, e a leitura cruzada apanhou-o. O princípio é este, e é o
+ * único:
+ *
+ *   **uma medida do ESTADO ou do DESEMPENHO da economia é matéria da economia;
+ *   uma CONTAGEM de pessoas ou de empresas é uma estatística e fica de fora.**
+ *
+ * O que ele decidiu: a taxa de câmbio efetiva real entrou para
+ * «competitividade», ao lado do custo unitário do trabalho, porque as duas são
+ * medidas de competitividade e o painel europeu publica-as como tal; a
+ * população e o número de empresas de um concelho continuam fora, e o poder de
+ * compra e o valor acrescentado continuam dentro, porque os primeiros contam
+ * quem lá está e os segundos medem como está a economia.
+ *
+ * ---------------------------------------------------------------------------
+ * A MATÉRIA MAIS PRÓXIMA, QUANDO NÃO HÁ UMA QUE NOMEIE O ASSUNTO
+ * ---------------------------------------------------------------------------
+ * Algumas linhas não têm uma matéria que as nomeie, e a que as cobre cobre-as
+ * por vizinhança. Essas regras dizem-no na razão, pela fórmula «a matéria mais
+ * próxima; a lei não nomeia …», e o relatório do bloco lista-as todas. É a
+ * diferença entre «a lei chama a isto o que eu chamo» e «a lei não tem nome
+ * para isto e esta é a matéria mais perto», e um leitor que confira tem direito
+ * a saber qual das duas está a ler.
+ *
+ * ---------------------------------------------------------------------------
  * QUANDO A LEI CALA, A PEÇA FICA DE FORA
  * ---------------------------------------------------------------------------
  * Nenhuma matéria se inventa. Uma peça cujo assunto não esteja nas matérias de
@@ -122,6 +149,10 @@ export const FONTE_DOS_NOMES = {
  */
 export const LEI_ORGANICA = {
   diploma: 'Decreto-Lei n.º 87-A/2025, de 25 de julho',
+  /* A FORMA CURTA, para o selo da porta legal de uma página de área: o nome do
+     diploma sem a data, que é como a lei se cita ao lado de um artigo. A forma
+     longa fica, porque é a que uma citação inteira usa. */
+  diplomaCurto: 'Decreto-Lei n.º 87-A/2025',
   publicacao: 'Diário da República, 1.ª série, n.º 142, Suplemento, 25-07-2025',
   url: 'https://files.diariodarepublica.pt/1s/2025/07/14201/0000200027.pdf',
   lido: '2026-08-28',
@@ -257,13 +288,20 @@ export const AREAS = [
         regras: [
           {
             id: /^pib-real-per-capita-\d{4}$/,
-            razao: 'O produto interno bruto real por habitante é a medida do tamanho da economia por pessoa.',
+            razao:
+              'O produto interno bruto real por habitante é a medida do tamanho da economia por pessoa. A MATÉRIA MAIS PRÓXIMA; a lei não nomeia o produto interno bruto nem o nível da economia: nomeia as políticas dirigidas ao seu crescimento.',
           },
           {
             estudos: ['evora-economia-investidores-portas-abertas-2026'],
-            id: /^(evora-vab-empresarial-|evora-concentracao-vab4-|portugal-concentracao-vab4-)/,
+            id: /^evora-vab-empresarial-/,
             razao:
-              'O valor acrescentado bruto das empresas de um concelho é o tamanho da economia dele, e a parte dele que cabe às quatro maiores é o quanto essa economia depende de poucas. O assunto é a economia e a sua estrutura, e não a contagem das empresas, que fica de fora.',
+              'O valor acrescentado bruto das empresas de um concelho é o tamanho da economia dele. A MATÉRIA MAIS PRÓXIMA; a lei não nomeia o valor acrescentado nem o nível da economia de um território: nomeia as políticas dirigidas ao seu crescimento.',
+          },
+          {
+            estudos: ['evora-economia-investidores-portas-abertas-2026'],
+            id: /^(evora-concentracao-vab4-|portugal-concentracao-vab4-)/,
+            razao:
+              'A parte do valor acrescentado que cabe às quatro maiores empresas mede o quanto uma economia depende de poucas. A MATÉRIA MAIS PRÓXIMA; a lei não nomeia a concentração nem a estrutura de mercado, e «concorrência» não ocorre no diploma.',
           },
         ],
       },
@@ -277,6 +315,17 @@ export const AREAS = [
             id: /^custo-unitario-do-trabalho-\d{4}$/,
             razao:
               'O custo do trabalho por unidade produzida é um indicador de competitividade da economia, e é por isso que o painel europeu dos desequilíbrios o publica. Não é matéria de condições de trabalho: o que ele mede é o preço a que a economia produz.',
+          },
+          {
+            /* ENTROU A 28.08.2026, e a leitura cruzada tem razão: estava na
+               lista das que ficam fora, ao lado do saldo da balança corrente,
+               enquanto o custo unitário do trabalho estava aqui. As duas são
+               medidas de competitividade, e o painel europeu publica-as no
+               mesmo grupo. O princípio que o decidiu está no cabeçalho deste
+               ficheiro. */
+            id: /^taxa-de-cambio-efectiva-real-\d{4}$/,
+            razao:
+              'A taxa de câmbio efetiva real mede o preço a que a economia vende face aos seus parceiros, e é um indicador de competitividade do painel europeu dos desequilíbrios, ao lado do custo unitário do trabalho.',
           },
         ],
       },
@@ -528,9 +577,14 @@ export const AREAS = [
           'O Ministério do Trabalho, Solidariedade e Segurança Social é o departamento governamental que tem por missão formular, conduzir, executar e avaliar as políticas de emprego, de formação profissional, de relações laborais e condições de trabalho, solidariedade e segurança social, bem como a coordenação das políticas sociais de apoio à família, crianças e jovens em risco, idosos e natalidade, de inclusão das pessoas com deficiência, de combate à pobreza e de promoção da inclusão social, de fortalecimento do setor cooperativo, da economia social e do voluntariado.',
         regras: [
           {
-            id: /^(risco-de-pobreza-ou-exclusao|racio-s80-s20)-\d{4}$/,
+            id: /^risco-de-pobreza-ou-exclusao-\d{4}$/,
             razao:
-              'A parte da população em risco de pobreza ou exclusão social é o objeto da política de combate à pobreza, e a distância entre o quinto mais rico e o quinto mais pobre é a desigualdade de rendimento que a mesma matéria tem por objeto.',
+              'A parte da população em risco de pobreza ou exclusão social é o objeto da política de combate à pobreza, que a lei nomeia por esse nome.',
+          },
+          {
+            id: /^racio-s80-s20-\d{4}$/,
+            razao:
+              'A distância entre o rendimento do quinto mais rico e o do quinto mais pobre é a desigualdade de rendimento. A MATÉRIA MAIS PRÓXIMA; a lei não nomeia a desigualdade de rendimento nesta lista de matérias: nomeia o combate à pobreza e a promoção da inclusão social, e a desigualdade é o que os dois medem por dentro.',
           },
         ],
       },
@@ -616,10 +670,10 @@ export const SEM_AREA = [
       'A lei orgânica não lista o sistema financeiro, a banca nem o crédito como matéria de ministério nenhum: as três palavras não ocorrem no diploma. O que o artigo 12.º, n.º 1, dá às Finanças é a política financeira DO ESTADO e a gestão dos recursos públicos, e a dívida das famílias e das empresas não é nem uma coisa nem outra.',
   },
   {
-    assunto: 'As contas externas e a taxa de câmbio',
-    id: /^(saldo-da-balanca-corrente|posicao-de-investimento-internacional|taxa-de-cambio-efectiva-real)-\d{4}$/,
+    assunto: 'As contas externas',
+    id: /^(saldo-da-balanca-corrente|posicao-de-investimento-internacional)-\d{4}$/,
     motivo:
-      'Nem «balança», nem «cambial», nem «moeda» como matéria ocorrem no diploma. O saldo da balança corrente, a posição de investimento internacional e a taxa de câmbio efetiva real são o resultado agregado da economia com o exterior, e a lei não os põe debaixo de nenhum ministério.',
+      'Nem «balança» nem «moeda» como matéria ocorrem no diploma. O saldo da balança corrente e a posição de investimento internacional medem a posição do País perante o resto do mundo, e nenhuma das matérias do artigo 15.º, n.º 1, a nomeia: as matérias são o crescimento da economia, a competitividade, o investimento, a inovação e a internacionalização das empresas. A TAXA DE CÂMBIO EFETIVA REAL ESTAVA AQUI E SAIU a 28.08.2026: é um indicador de competitividade, e «competitividade» é matéria. A fronteira entre uma e as outras duas é o princípio escrito no cabeçalho deste ficheiro, e é a mais estreita deste bloco.',
   },
   {
     assunto: 'A perceção da corrupção',
