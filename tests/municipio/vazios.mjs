@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * A RÉGUA DOS VAZIOS — as três regras do diretor de 28.08.2026, medidas.
+ * A RÉGUA DOS VAZIOS · as três regras do diretor de 28.08.2026, medidas.
  *
  * ---------------------------------------------------------------------------
  * O QUE ELA MEDE
@@ -387,7 +387,7 @@ if (!fs.existsSync(DIST)) {
      das outras 299, e falsa: o que lhes falta não é o limiar, é o valor.
      O que a marca não pode produzir é uma COMPARAÇÃO: nunca «fora do limiar»,
      nunca «dentro do limiar», nunca um quadrado pintado, nunca uma barra. Onde
-     há limiar publicado e o valor é marca — o índice de dívida —, a peça fica
+     há limiar publicado e o valor é marca, que é o índice de dívida, a peça fica
      sem estado nenhum, e é a célula A5 que o mede. */
   {
     const comMarca = [];
