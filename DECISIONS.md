@@ -11613,6 +11613,14 @@ dobra que o escondia.
 **O custo do bloco:** motor ≈400k (Opus), construtor ≈391k (Opus), medição ≈443k (Sonnet), leitura 228k (Codex), o lugar de direção o resto.
 
 
+### 1.78 Correções pequenas, terceira passagem (I83, I84, I88; I89 aberta)
+
+**Afecta:** nenhum
+
+**O que fecha.** I83: a porta de uma figura numa página de leitura passa a dizer o que abre («a linha desta figura» / «this figure's row») e a chave do motor fica só no `href`; 34 cadeias saíram, duas entraram, a normalização da régua da voz que as escondia saiu com elas. I84: o motor escreve as 29 unidades e os concelhos de cada uma na colação portuguesa (`087fbcc`; só a ordem muda, os mesmos bytes por ficheiro, a topologia congelada na ordem do sítio porque o `topojson` depende da ordem e uma mudança ingénua da chave teria mudado a geometria), o sítio recebe-o pelo `--write` (seis ficheiros com o mesmo número de bytes), os cabeçalhos e os membros de `/municipios` ordenam-se com o `Intl.Collator('pt')`, e a regra R7 de `check:mapa` compara as ordens (vista vermelha sobre `main` antes do `--write`). I88: «O índice de dívida, calculado sobre os dados da Direção-Geral, desceu de …» nas duas edições. **O que abre.** I89: o verbo da frase da série está fixo («desceu»), verdadeiro hoje na única página que a rende e falso num concelho cuja série suba; a redação com o verbo decidido pelos dados é do diretor.
+
+**A leitura cruzada** (Codex, 109k símbolos): 2 de 3 plantas, a terceira mal plantada pelo lugar de direção (registado como falha das duas partes); achou os membros de quatro grupos ainda na ordem antiga e os decimais portugueses na frase inglesa, o primeiro corrigido antes da fusão (`df4a2a6`, 0 grupos fora da ordem, a R7 a medir as listas construídas) e o segundo medido e mantido (a vírgula decimal é a regra escrita das duas edições, `direcao.md`; I90 fechada sem alteração) (`critica/2026-08-28-codex-leitura-pequenas-3.md`). Construtor Opus ≈246k.
+
 ## 4. O registo dos defeitos e dos adiamentos
 
 **Defeito registado 2026-08-16 (00:10), encontrado pela direcção no sítio no ar — RESOLVIDO na mesma noite (§1.37, no ar em `4217232`):** os selos acrescentados a 15.08 aos valores do cabeçalho da primeira página (308 · 11 · 15) rendem no cabeçalho com o rótulo inteiro do estudo («O Estado do País — apuramento próprio») e, no caso da contagem CAOP, com o marcador «[a verificar]» ao lado. Certo pela regra (todo o valor tem selo, para a sua linha), errado naquele sítio: no cabeçalho o selo deve ser só o glifo, com o rótulo apenas para leitores de ecrã. **Primeiro item do bloco V**, junto com a saída de «Edição de …», da introdução justificativa da primeira página e de «Estes indicadores não são escolha nossa…» (voz). Sem alteração ao portão: o selo continua ao pé do valor e a apontar para a linha própria.
