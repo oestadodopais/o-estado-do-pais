@@ -656,8 +656,9 @@ def direcao_f():
 def direcao_g():
     """A letra da casa com a prova da casa lá dentro.
 
-    Das seis do brief, três são letra sem instrumento (A, B) e três são
-    instrumento sem letra (C, D, F). Esta é as duas coisas: o «O» de «O Estado do
+    Das seis do brief, duas são letra sem instrumento (A, B), três são
+    instrumento sem letra (C, D, F) e uma é território (E). Esta é as duas
+    coisas: o «O» de «O Estado do
     País», e dentro dele o quadrado cheio do selo, que é o que o sítio põe ao lado
     de cada número. A contraforma do «O» já era um rectângulo por construção; o
     selo é o quadrado que lá mora.
