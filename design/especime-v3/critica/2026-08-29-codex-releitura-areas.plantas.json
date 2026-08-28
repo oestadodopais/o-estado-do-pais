@@ -1,0 +1,27 @@
+{
+ "registado_em": "2026-08-29",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "paginas/area-financas.html",
+   "descricao": "the unit of the Finanças page's measure changed to «Percentagem do PIB» (the row says otherwise)",
+   "sha256_antes": "338e2fedc9ad92337ce1dcde14a93261c6914e3d9218e942082f5ac6985986e3",
+   "sha256_depois": "792d1b35ba872307ebbba7419edf57f3b0272ef6d2f8ed8b67e694f5f1838a26",
+   "original": "% do PIB"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "paginas/area-saude.html",
+   "descricao": "a method sentence re-inserted on the Saúde page («Esta área reúne as medidas cujo assunto é matéria …, conferidas pela casa.»)",
+   "sha256_antes": "7c66871b28e00dc8b910ddcb6ce552e77439b0b6d064d226b6e6664d75aec295",
+   "sha256_depois": "e24bf718cbde7e0cca9f0992a3fbf8bf4f9c5ff5d6f7ab3e8fcb9d2b8accdc6f"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "paginas/area-ambiente-e-energia.html",
+   "descricao": "the legal seal of the Ambiente e Energia page changed from Artigo 25.º to Artigo 26.º (a false door: art. 26.º is not the environment article)",
+   "sha256_antes": "0d9c8830a599b6f121619a8b362ec61109ab17143930f6fa4d369d78aa960c7a",
+   "sha256_depois": "5e6d80ae2c3ca8ef8c1575f0856c96536ee6ee3e211b2d534a93ffd8645ec2a0"
+  }
+ ]
+}
