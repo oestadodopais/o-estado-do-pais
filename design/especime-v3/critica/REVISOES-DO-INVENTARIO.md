@@ -33,6 +33,7 @@ leu **só o diff do inventário**. É essa a leitura que esta tabela regista.
 | grelha-2 | 87 | `design/especime-v3/critica/2026-08-27-codex-leitura-grelha-2.md` | Codex `gpt-5.6-sol`, 27.08.2026, sobre o diff do inventário (estados, dicas), os marcadores e as primeiras páginas, com três plantas (2 de 3); X1 a X3 saíram dela |
 | voz-3 | 0 | `design/especime-v3/critica/2026-08-27-codex-leitura-voz-3.md` | Codex `gpt-5.6-sol`, 27.08.2026, sobre os doze diffs da terceira passagem e três páginas construídas, com duas plantas (1 de 2); o inventário não mudou (o texto dos registos é origem declarada), a linha fica pelo rasto |
 | regioes | 36 | `design/especime-v3/critica/2026-08-28-codex-leitura-regioes.md` | Codex `gpt-5.6-sol`, 28.08.2026, sobre o índice, três páginas de região, a primeira página, as linhas da régua e o diff do inventário, com três plantas (3 de 3); Q3 saiu dela |
+| ilhas | 4 | por ler | o lugar de direção trata da leitura cruzada deste bloco (as 30 linhas das ilhas e a pertença no manifesto do mapa) antes da fusão |
 
 ## As duas colunas novas de 27.08.2026 (I74)
 

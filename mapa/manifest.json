@@ -891,6 +891,27 @@
   "unidades": [
     {
       "concelhos": 19,
+      "concelhos_slugs": [
+        "agueda",
+        "albergaria-a-velha",
+        "anadia",
+        "arouca",
+        "aveiro",
+        "castelo-de-paiva",
+        "espinho",
+        "estarreja",
+        "santa-maria-da-feira",
+        "ilhavo",
+        "mealhada",
+        "murtosa",
+        "oliveira-de-azemeis",
+        "oliveira-do-bairro",
+        "ovar",
+        "sao-joao-da-madeira",
+        "sever-do-vouga",
+        "vagos",
+        "vale-de-cambra"
+      ],
       "ficheiro": "mapa/distritos/aveiro.json",
       "nome": "Aveiro",
       "parcela": "continente",
@@ -899,6 +920,22 @@
     },
     {
       "concelhos": 14,
+      "concelhos_slugs": [
+        "aljustrel",
+        "almodovar",
+        "alvito",
+        "barrancos",
+        "beja",
+        "castro-verde",
+        "cuba",
+        "ferreira-do-alentejo",
+        "mertola",
+        "moura",
+        "odemira",
+        "ourique",
+        "serpa",
+        "vidigueira"
+      ],
       "ficheiro": "mapa/distritos/beja.json",
       "nome": "Beja",
       "parcela": "continente",
@@ -907,6 +944,22 @@
     },
     {
       "concelhos": 14,
+      "concelhos_slugs": [
+        "amares",
+        "barcelos",
+        "braga",
+        "cabeceiras-de-basto",
+        "celorico-de-basto",
+        "esposende",
+        "fafe",
+        "guimaraes",
+        "povoa-de-lanhoso",
+        "terras-de-bouro",
+        "vieira-do-minho",
+        "vila-nova-de-famalicao",
+        "vila-verde",
+        "vizela"
+      ],
       "ficheiro": "mapa/distritos/braga.json",
       "nome": "Braga",
       "parcela": "continente",
@@ -915,6 +968,20 @@
     },
     {
       "concelhos": 12,
+      "concelhos_slugs": [
+        "alfandega-da-fe",
+        "braganca",
+        "carrazeda-de-ansiaes",
+        "freixo-de-espada-a-cinta",
+        "macedo-de-cavaleiros",
+        "miranda-do-douro",
+        "mirandela",
+        "mogadouro",
+        "torre-de-moncorvo",
+        "vila-flor",
+        "vimioso",
+        "vinhais"
+      ],
       "ficheiro": "mapa/distritos/braganca.json",
       "nome": "Bragança",
       "parcela": "continente",
@@ -923,6 +990,19 @@
     },
     {
       "concelhos": 11,
+      "concelhos_slugs": [
+        "belmonte",
+        "castelo-branco",
+        "covilha",
+        "fundao",
+        "idanha-a-nova",
+        "oleiros",
+        "penamacor",
+        "proenca-a-nova",
+        "serta",
+        "vila-de-rei",
+        "vila-velha-de-rodao"
+      ],
       "ficheiro": "mapa/distritos/castelo-branco.json",
       "nome": "Castelo Branco",
       "parcela": "continente",
@@ -931,6 +1011,25 @@
     },
     {
       "concelhos": 17,
+      "concelhos_slugs": [
+        "arganil",
+        "cantanhede",
+        "coimbra",
+        "condeixa-a-nova",
+        "figueira-da-foz",
+        "gois",
+        "lousa",
+        "mira",
+        "miranda-do-corvo",
+        "montemor-o-velho",
+        "oliveira-do-hospital",
+        "pampilhosa-da-serra",
+        "penacova",
+        "penela",
+        "soure",
+        "tabua",
+        "vila-nova-de-poiares"
+      ],
       "ficheiro": "mapa/distritos/coimbra.json",
       "nome": "Coimbra",
       "parcela": "continente",
@@ -939,6 +1038,24 @@
     },
     {
       "concelhos": 16,
+      "concelhos_slugs": [
+        "albufeira",
+        "alcoutim",
+        "aljezur",
+        "castro-marim",
+        "faro",
+        "lagoa-faro",
+        "lagos",
+        "loule",
+        "monchique",
+        "olhao",
+        "portimao",
+        "sao-bras-de-alportel",
+        "silves",
+        "tavira",
+        "vila-do-bispo",
+        "vila-real-de-santo-antonio"
+      ],
       "ficheiro": "mapa/distritos/faro.json",
       "nome": "Faro",
       "parcela": "continente",
@@ -947,6 +1064,22 @@
     },
     {
       "concelhos": 14,
+      "concelhos_slugs": [
+        "aguiar-da-beira",
+        "almeida",
+        "celorico-da-beira",
+        "figueira-de-castelo-rodrigo",
+        "fornos-de-algodres",
+        "gouveia",
+        "guarda",
+        "manteigas",
+        "meda",
+        "pinhel",
+        "sabugal",
+        "seia",
+        "trancoso",
+        "vila-nova-de-foz-coa"
+      ],
       "ficheiro": "mapa/distritos/guarda.json",
       "nome": "Guarda",
       "parcela": "continente",
@@ -955,6 +1088,10 @@
     },
     {
       "concelhos": 2,
+      "concelhos_slugs": [
+        "angra-do-heroismo",
+        "praia-da-vitoria"
+      ],
       "ficheiro": "mapa/distritos/ilha-terceira.json",
       "nome": "Ilha Terceira",
       "parcela": "acores",
@@ -963,6 +1100,9 @@
     },
     {
       "concelhos": 1,
+      "concelhos_slugs": [
+        "santa-cruz-da-graciosa"
+      ],
       "ficheiro": "mapa/distritos/ilha-da-graciosa.json",
       "nome": "Ilha da Graciosa",
       "parcela": "acores",
@@ -971,6 +1111,18 @@
     },
     {
       "concelhos": 10,
+      "concelhos_slugs": [
+        "calheta",
+        "camara-de-lobos",
+        "funchal",
+        "machico",
+        "ponta-do-sol",
+        "porto-moniz",
+        "ribeira-brava",
+        "santa-cruz",
+        "santana",
+        "sao-vicente"
+      ],
       "ficheiro": "mapa/distritos/ilha-da-madeira.json",
       "nome": "Ilha da Madeira",
       "parcela": "madeira",
@@ -979,6 +1131,10 @@
     },
     {
       "concelhos": 2,
+      "concelhos_slugs": [
+        "lajes-das-flores",
+        "santa-cruz-das-flores"
+      ],
       "ficheiro": "mapa/distritos/ilha-das-flores.json",
       "nome": "Ilha das Flores",
       "parcela": "acores",
@@ -987,6 +1143,9 @@
     },
     {
       "concelhos": 1,
+      "concelhos_slugs": [
+        "porto-santo"
+      ],
       "ficheiro": "mapa/distritos/ilha-de-porto-santo.json",
       "nome": "Ilha de Porto Santo",
       "parcela": "madeira",
@@ -995,6 +1154,9 @@
     },
     {
       "concelhos": 1,
+      "concelhos_slugs": [
+        "vila-do-porto"
+      ],
       "ficheiro": "mapa/distritos/ilha-de-santa-maria.json",
       "nome": "Ilha de Santa Maria",
       "parcela": "acores",
@@ -1003,6 +1165,10 @@
     },
     {
       "concelhos": 2,
+      "concelhos_slugs": [
+        "calheta-de-sao-jorge",
+        "velas"
+      ],
       "ficheiro": "mapa/distritos/ilha-de-sao-jorge.json",
       "nome": "Ilha de São Jorge",
       "parcela": "acores",
@@ -1011,6 +1177,14 @@
     },
     {
       "concelhos": 6,
+      "concelhos_slugs": [
+        "lagoa-ilha-de-sao-miguel",
+        "nordeste",
+        "ponta-delgada",
+        "povoacao",
+        "ribeira-grande",
+        "vila-franca-do-campo"
+      ],
       "ficheiro": "mapa/distritos/ilha-de-sao-miguel.json",
       "nome": "Ilha de São Miguel",
       "parcela": "acores",
@@ -1019,6 +1193,9 @@
     },
     {
       "concelhos": 1,
+      "concelhos_slugs": [
+        "corvo"
+      ],
       "ficheiro": "mapa/distritos/ilha-do-corvo.json",
       "nome": "Ilha do Corvo",
       "parcela": "acores",
@@ -1027,6 +1204,9 @@
     },
     {
       "concelhos": 1,
+      "concelhos_slugs": [
+        "horta"
+      ],
       "ficheiro": "mapa/distritos/ilha-do-faial.json",
       "nome": "Ilha do Faial",
       "parcela": "acores",
@@ -1035,6 +1215,11 @@
     },
     {
       "concelhos": 3,
+      "concelhos_slugs": [
+        "lajes-do-pico",
+        "madalena",
+        "sao-roque-do-pico"
+      ],
       "ficheiro": "mapa/distritos/ilha-do-pico.json",
       "nome": "Ilha do Pico",
       "parcela": "acores",
@@ -1043,6 +1228,24 @@
     },
     {
       "concelhos": 16,
+      "concelhos_slugs": [
+        "alcobaca",
+        "alvaiazere",
+        "ansiao",
+        "batalha",
+        "bombarral",
+        "caldas-da-rainha",
+        "castanheira-de-pera",
+        "figueiro-dos-vinhos",
+        "leiria",
+        "marinha-grande",
+        "nazare",
+        "obidos",
+        "pedrogao-grande",
+        "peniche",
+        "pombal",
+        "porto-de-mos"
+      ],
       "ficheiro": "mapa/distritos/leiria.json",
       "nome": "Leiria",
       "parcela": "continente",
@@ -1051,6 +1254,24 @@
     },
     {
       "concelhos": 16,
+      "concelhos_slugs": [
+        "alenquer",
+        "arruda-dos-vinhos",
+        "azambuja",
+        "cadaval",
+        "cascais",
+        "lisboa",
+        "loures",
+        "lourinha",
+        "mafra",
+        "oeiras",
+        "sintra",
+        "sobral-de-monte-agraco",
+        "torres-vedras",
+        "vila-franca-de-xira",
+        "amadora",
+        "odivelas"
+      ],
       "ficheiro": "mapa/distritos/lisboa.json",
       "nome": "Lisboa",
       "parcela": "continente",
@@ -1059,6 +1280,23 @@
     },
     {
       "concelhos": 15,
+      "concelhos_slugs": [
+        "alter-do-chao",
+        "arronches",
+        "avis",
+        "campo-maior",
+        "castelo-de-vide",
+        "crato",
+        "elvas",
+        "fronteira",
+        "gaviao",
+        "marvao",
+        "monforte",
+        "nisa",
+        "ponte-de-sor",
+        "portalegre",
+        "sousel"
+      ],
       "ficheiro": "mapa/distritos/portalegre.json",
       "nome": "Portalegre",
       "parcela": "continente",
@@ -1067,6 +1305,26 @@
     },
     {
       "concelhos": 18,
+      "concelhos_slugs": [
+        "amarante",
+        "baiao",
+        "felgueiras",
+        "gondomar",
+        "lousada",
+        "maia",
+        "marco-de-canaveses",
+        "matosinhos",
+        "pacos-de-ferreira",
+        "paredes",
+        "penafiel",
+        "porto",
+        "povoa-de-varzim",
+        "santo-tirso",
+        "valongo",
+        "vila-do-conde",
+        "vila-nova-de-gaia",
+        "trofa"
+      ],
       "ficheiro": "mapa/distritos/porto.json",
       "nome": "Porto",
       "parcela": "continente",
@@ -1075,6 +1333,29 @@
     },
     {
       "concelhos": 21,
+      "concelhos_slugs": [
+        "abrantes",
+        "alcanena",
+        "almeirim",
+        "alpiarca",
+        "benavente",
+        "cartaxo",
+        "chamusca",
+        "constancia",
+        "coruche",
+        "entroncamento",
+        "ferreira-do-zezere",
+        "golega",
+        "macao",
+        "rio-maior",
+        "salvaterra-de-magos",
+        "santarem",
+        "sardoal",
+        "tomar",
+        "torres-novas",
+        "vila-nova-da-barquinha",
+        "ourem"
+      ],
       "ficheiro": "mapa/distritos/santarem.json",
       "nome": "Santarém",
       "parcela": "continente",
@@ -1083,6 +1364,21 @@
     },
     {
       "concelhos": 13,
+      "concelhos_slugs": [
+        "alcacer-do-sal",
+        "alcochete",
+        "almada",
+        "barreiro",
+        "grandola",
+        "moita",
+        "montijo",
+        "palmela",
+        "santiago-do-cacem",
+        "seixal",
+        "sesimbra",
+        "setubal",
+        "sines"
+      ],
       "ficheiro": "mapa/distritos/setubal.json",
       "nome": "Setúbal",
       "parcela": "continente",
@@ -1091,6 +1387,18 @@
     },
     {
       "concelhos": 10,
+      "concelhos_slugs": [
+        "arcos-de-valdevez",
+        "caminha",
+        "melgaco",
+        "moncao",
+        "paredes-de-coura",
+        "ponte-da-barca",
+        "ponte-de-lima",
+        "valenca",
+        "viana-do-castelo",
+        "vila-nova-de-cerveira"
+      ],
       "ficheiro": "mapa/distritos/viana-do-castelo.json",
       "nome": "Viana do Castelo",
       "parcela": "continente",
@@ -1099,6 +1407,22 @@
     },
     {
       "concelhos": 14,
+      "concelhos_slugs": [
+        "alijo",
+        "boticas",
+        "chaves",
+        "mesao-frio",
+        "mondim-de-basto",
+        "montalegre",
+        "murca",
+        "peso-da-regua",
+        "ribeira-de-pena",
+        "sabrosa",
+        "santa-marta-de-penaguiao",
+        "valpacos",
+        "vila-pouca-de-aguiar",
+        "vila-real"
+      ],
       "ficheiro": "mapa/distritos/vila-real.json",
       "nome": "Vila Real",
       "parcela": "continente",
@@ -1107,6 +1431,32 @@
     },
     {
       "concelhos": 24,
+      "concelhos_slugs": [
+        "armamar",
+        "carregal-do-sal",
+        "castro-daire",
+        "cinfaes",
+        "lamego",
+        "mangualde",
+        "moimenta-da-beira",
+        "mortagua",
+        "nelas",
+        "oliveira-de-frades",
+        "penalva-do-castelo",
+        "penedono",
+        "resende",
+        "santa-comba-dao",
+        "sao-joao-da-pesqueira",
+        "sao-pedro-do-sul",
+        "satao",
+        "sernancelhe",
+        "tabuaco",
+        "tarouca",
+        "tondela",
+        "vila-nova-de-paiva",
+        "viseu",
+        "vouzela"
+      ],
       "ficheiro": "mapa/distritos/viseu.json",
       "nome": "Viseu",
       "parcela": "continente",
@@ -1115,6 +1465,22 @@
     },
     {
       "concelhos": 14,
+      "concelhos_slugs": [
+        "alandroal",
+        "arraiolos",
+        "borba",
+        "estremoz",
+        "evora",
+        "montemor-o-novo",
+        "mora",
+        "mourao",
+        "portel",
+        "redondo",
+        "reguengos-de-monsaraz",
+        "vendas-novas",
+        "viana-do-alentejo",
+        "vila-vicosa"
+      ],
       "ficheiro": "mapa/distritos/evora.json",
       "nome": "Évora",
       "parcela": "continente",
