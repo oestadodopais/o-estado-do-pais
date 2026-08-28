@@ -1,0 +1,11 @@
+--- ADENDA 3 (from the seat, after the director saw the board, 28.08.2026) ---
+The director's words, in substance: within «O Estado do País», «Estado» is the most important word, because it carries two meanings at once: the State as the institution that governs, and the state (the condition) the country is in, or is being governed into. The seven directions built on the «O» (the article) or on «OE»; the word to build on is «Estado», and its letter is «E».
+
+Add, with the same deliverables as the seven (SVG source at 512, light and dark, maskable, 32 and 16, the horizontal wordmark, EXPORT PNGs at the same fourteen sizes, PRANCHA.html and PRANCHA.png regenerated with the new directions included, NOTAS.md extended, and the preference order redone across ALL directions):
+
+- H · the «E» of «Estado» as three ledger lines: a drawn «E» whose three arms are three horizontal bars (a value line, a source line, a date line: the shape of a ledger entry, and also of the ruler's levels), with or without a stem; it must read as «E» first and as a table second. The Marshall Project's bars forming an «M» are the nearest precedent on the sheet; Expresso's stock-type «E» and the Economist's «E» are what it must not resemble (different construction, different field: ink or cobalt on paper, never a white letter on a coloured box).
+- I · the seal inside the «E»: the idea of direction G (the proof mark inside the letter) transferred to the «E», if the letter's counters can hold it at 60 px; if they cannot, say so in NOTAS.md and stop that one.
+- J · the wordmark «Estado» as the mark: the whole word drawn (or the drawn «E» plus the house serif for «stado»), with «O» before and «do País» after set smaller, so the icon can carry «Estado» alone at 180 and the drawn «E» alone at 60 and 16. Say whether «Estado» alone at 180 reads as the site or as the State's own brand (that is the risk the double meaning brings; keep the reader on the condition, not on the institution: no heraldry, no green and red, no official typography).
+
+Also write in NOTAS.md, in one paragraph, how the double meaning could be carried by the mark itself rather than by the word (for instance the ruler's levels inside the «E»: the country's condition measured against a threshold), and whether any of the seven already does that.
+--- end of addendum ---
