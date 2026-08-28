@@ -115,6 +115,53 @@
   text-underline-offset: 3px;
 }
 
+/* ---------------------------------------------------------------------------
+ * A FILA DO ÂMBITO GANHOU UMA QUARTA POSIÇÃO, E NO TELEMÓVEL ELA NÃO CABIA
+ * ---------------------------------------------------------------------------
+ * «Áreas» entrou no comando com as páginas das áreas de governo (decisão 6 da
+ * auditoria de 25.08.2026). Abaixo de 640 as posições já repartem a fila entre
+ * si (`.cmd-segs { flex: 1 }`, `.seg { flex: 1 }`), mas nenhuma pode encolher
+ * abaixo do seu conteúdo: com três posições a fila pedia 235 px e cabia nos
+ * 284 px que o telemóvel de 320 dá; com quatro passou a pedir 304, e a primeira
+ * página transbordava 66 px a 320 e 26 px a 360. Medido pela célula «largura
+ * 320 · sem transbordo horizontal» da matriz, que ficou vermelha no primeiro
+ * build com o comando novo.
+ *
+ * DUAS REGRAS, E CADA UMA PAGA O QUE FALTA ONDE FALTA.
+ *
+ *   · até 480, o ENCHIMENTO de cada posição encolhe de 12 para 8 px de cada
+ *     lado. São 32 px de fila, e não custam o alvo: a altura continua nos 44 px
+ *     que `.seg { min-height: 44px }` fixa abaixo de 640, e a mais estreita das
+ *     quatro mede 61 px de largura a 320;
+ *   · até 380, o RÓTULO do grupo passa para cima das posições. A2 pôs o rótulo
+ *     em linha com elas de propósito, para devolver 24 px de altura por fila à
+ *     cabeça, e essa decisão fica de pé em todas as larguras em que ela cabe: a
+ *     390 e acima o rótulo continua onde estava. A 320 e a 360 os 63 px que ele
+ *     e a folga ocupam são exactamente o que falta à fila, e a fila é o comando.
+ *
+ * O QUE NÃO SE FEZ, e fica escrito porque foi medido e recusado: partir a fila
+ * em duas linhas. A junção das posições é feita com `.seg + .seg { border-left:
+ * none }`, e numa fila partida a primeira posição de cada linha ficava sem traço
+ * à esquerda; devolver-lho com uma margem negativa de um pixel resolve o desenho
+ * e faz duas caixas de alvo sobreporem-se, que é o que a célula A10 de
+ * `tests/inicio/correcoes-a.mjs` recusa, com a razão certa: «uma área sobreposta
+ * não é um alvo maior, é uma porta que abre a linha do vizinho». Foi construído,
+ * medido e desfeito.
+ */
+@media (max-width: 480px) {
+  .seg {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+@media (max-width: 380px) {
+  .cmd-grupo {
+    flex-wrap: wrap;
+    row-gap: 6px;
+  }
+}
+
 .cmd-nota {
   font-family: var(--f-instr);
   font-size: 12px;
