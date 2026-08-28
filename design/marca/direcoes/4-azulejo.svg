@@ -21,16 +21,25 @@
     svg[data-forma="favicon"] .sinal { display: none; }
     svg[data-forma="favicon"] .sinal-favicon { display: block; }
     /* O `maskable` do Android: o campo fica, o sinal encolhe para dentro do
-       círculo seguro de raio 40 %. */
-    svg[data-forma="maskable"] .sinal,
-    svg[data-forma="maskable"] .sinal-favicon {
+       círculo seguro de raio 40 %.
+
+       A REDUÇÃO TEM DE ESTAR NUM GRUPO SÓ SEU, e isto foi corrigido a 28.08
+       depois de se medir a caixa de tinta nos PNG: `transform` de CSS e
+       `transform` de atributo são a MESMA propriedade, e o CSS ganha. Enquanto
+       esta regra apanhava `.sinal` directamente, o `scale` substituía o
+       enquadramento de `enquadra()` em vez de se compor com ele, e as direções
+       enquadradas saíam com o sinal fora do sítio: a G dava 233 px de lado em
+       512 em vez de 281, e a I saía cortada em cima. Num grupo de fora, que não
+       tem atributo nenhum, as duas transformações compõem-se. */
+    svg[data-forma="maskable"] .reducao {
       transform: scale(0.78);
       transform-origin: 256.0px 256.0px;
       transform-box: view-box;
     }
   </style>
   <rect class="campo" x="0" y="0" width="512" height="512"/>
-  <g class="sinal">
+  <g class="reducao">
+    <g class="sinal">
     <!-- O azulejo: fio de 18 a toda a volta, quatro quadrados
          de 34 nos cantos, e a medida da peça no meio: a linha do
          valor (cheia) e a régua por baixo (fina). -->
@@ -41,11 +50,12 @@
     <rect class="acento" x="372" y="372" width="34" height="34"/>
     <rect class="acento" x="138" y="194" width="236" height="64"/>
     <rect class="tinta" x="138" y="284" width="236" height="20"/>
-  </g>
-  <g class="sinal-favicon">
+    </g>
+    <g class="sinal-favicon">
     <!-- 32 e 16 px: os quatro cantos e a régua fina desaparecem antes
          de se lerem. Fica o fio e a linha do valor. -->
     <rect class="acento-t" x="85" y="85" width="342" height="342" stroke-width="28.8"/>
     <rect class="acento" x="138" y="224" width="236" height="64"/>
+    </g>
   </g>
 </svg>

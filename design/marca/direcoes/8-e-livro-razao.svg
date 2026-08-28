@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Direção F · a régua">
-  <title>Direção F · a régua</title>
-  <desc>O instrumento de convergência reduzido a um sinal.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Direção H · o E do livro-razão">
+  <title>Direção H · o E do livro-razão</title>
+  <desc>O «E» de «Estado» com os três campos de uma linha do livro-razão.</desc>
   <style>
     .campo { fill: #f6f7f4; }
     .tinta { fill: #17191b; }
@@ -39,19 +39,26 @@
   </style>
   <rect class="campo" x="0" y="0" width="512" height="512"/>
   <g class="reducao">
-    <g class="sinal">
-    <!-- A referência em pé (64 x 300), a barra da
-         distância (68 de altura) e o selo do valor na ponta
-         (68 x 68). Três peças da casa, nenhuma inventada. -->
-    <rect class="tinta" x="76" y="222" width="68" height="68"/>
-    <rect class="acento" x="144" y="222" width="228" height="68"/>
-    <rect class="tinta" x="372" y="106" width="64" height="300"/>
+    <g class="sinal" transform="translate(112 76) scale(1.2)">
+    <!-- O «E» de três barras: barra 72, vão 42,
+         haste 30 (o FINO da casa: o contraste está
+         invertido). Braços 0.80 / 0.55 /
+         0.80 de H. Três barras e dois vãos enchem a
+         altura: 3 x 0.24 + 2 x 0.14 = 1. -->
+    <path class="tinta" d="M0 0L30 0L30 300L0 300Z"/>
+    <path class="tinta" d="M0 0L240 0L240 72L0 72Z"/>
+    <path class="acento" d="M0 114L165 114L165 186L0 186Z"/>
+    <path class="tinta" d="M0 228L240 228L240 300L0 300Z"/>
     </g>
-    <g class="sinal-favicon">
-    <!-- 32 e 16 px: o quadrado do selo e a barra colam-se num traço só.
-         Fica a barra a bater na referência, que é o que a régua diz. -->
-    <rect class="acento" x="76" y="210" width="296" height="92"/>
-    <rect class="tinta" x="372" y="106" width="64" height="300"/>
+    <g class="sinal-favicon" transform="translate(112 76) scale(1.2)">
+    <!-- 32 e 16 px: o vão de 42 dá 1,3 px a 16 e fecha-se.
+         Passa a 51 (1,6 px), a barra encolhe para
+         66 e a haste engrossa para 39, que é
+         o mínimo para ela ainda lá estar. -->
+    <path class="tinta" d="M0 0L39 0L39 300L0 300Z"/>
+    <path class="tinta" d="M0 0L240 0L240 66L0 66Z"/>
+    <path class="acento" d="M0 117L165 117L165 183L0 183Z"/>
+    <path class="tinta" d="M0 234L240 234L240 300L0 300Z"/>
     </g>
   </g>
 </svg>

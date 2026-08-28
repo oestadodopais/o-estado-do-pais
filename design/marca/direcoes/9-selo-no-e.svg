@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Direção F · a régua">
-  <title>Direção F · a régua</title>
-  <desc>O instrumento de convergência reduzido a um sinal.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Direção I · o selo dentro do E">
+  <title>Direção I · o selo dentro do E</title>
+  <desc>O «E» de «Estado» com o quadrado da prova no vão de cima.</desc>
   <style>
     .campo { fill: #f6f7f4; }
     .tinta { fill: #17191b; }
@@ -39,19 +39,19 @@
   </style>
   <rect class="campo" x="0" y="0" width="512" height="512"/>
   <g class="reducao">
-    <g class="sinal">
-    <!-- A referência em pé (64 x 300), a barra da
-         distância (68 de altura) e o selo do valor na ponta
-         (68 x 68). Três peças da casa, nenhuma inventada. -->
-    <rect class="tinta" x="76" y="222" width="68" height="68"/>
-    <rect class="acento" x="144" y="222" width="228" height="68"/>
-    <rect class="tinta" x="372" y="106" width="64" height="300"/>
+    <g class="sinal" transform="translate(112 256) scale(1.2)">
+    <!-- O «E» largo (braço 240, haste 69.9, braço
+         fino 25.8) e o selo no vão de cima: quadrado de
+         86, com 14 de ar em cima e em baixo. O vão inteiro
+         mede 113, que é 0,357 H. -->
+    <path class="tinta" d="M0 -150L69.9 -150L69.9 150L0 150ZM0 -150L240 -150L240 -124.2L0 -124.2ZM0 124.2L240 124.2L240 150L0 150ZM0 -11.09L165 -11.09L165 11.09L0 11.09ZM214.2 -150L240 -150L240 -93.24L214.2 -93.24ZM214.2 93.24L240 93.24L240 150L214.2 150ZM142.81 -31.06L165 -31.06L165 31.06L142.81 31.06Z"/>
+    <rect class="acento" x="83.4" y="-110.7" width="86.11" height="86.11"/>
     </g>
-    <g class="sinal-favicon">
-    <!-- 32 e 16 px: o quadrado do selo e a barra colam-se num traço só.
-         Fica a barra a bater na referência, que é o que a régua diz. -->
-    <rect class="acento" x="76" y="210" width="296" height="92"/>
-    <rect class="tinta" x="372" y="106" width="64" height="300"/>
+    <g class="sinal-favicon" transform="translate(112 256) scale(1.2)">
+    <!-- 32 e 16 px: braço a 0,110 H (1,24 px a 16), sem as lajes de
+         remate, e o selo a 85 com 9 de ar. -->
+    <path class="tinta" d="M0 -150L69.9 -150L69.9 150L0 150ZM0 -150L240 -150L240 -117L0 -117ZM0 117L240 117L240 150L0 150ZM0 -14.19L165 -14.19L165 14.19L0 14.19Z"/>
+    <rect class="acento" x="78.9" y="-108" width="84.81" height="84.81"/>
     </g>
   </g>
 </svg>

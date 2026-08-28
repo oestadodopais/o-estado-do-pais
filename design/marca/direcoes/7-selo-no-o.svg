@@ -21,27 +21,37 @@
     svg[data-forma="favicon"] .sinal { display: none; }
     svg[data-forma="favicon"] .sinal-favicon { display: block; }
     /* O `maskable` do Android: o campo fica, o sinal encolhe para dentro do
-       círculo seguro de raio 40 %. */
-    svg[data-forma="maskable"] .sinal,
-    svg[data-forma="maskable"] .sinal-favicon {
+       círculo seguro de raio 40 %.
+
+       A REDUÇÃO TEM DE ESTAR NUM GRUPO SÓ SEU, e isto foi corrigido a 28.08
+       depois de se medir a caixa de tinta nos PNG: `transform` de CSS e
+       `transform` de atributo são a MESMA propriedade, e o CSS ganha. Enquanto
+       esta regra apanhava `.sinal` directamente, o `scale` substituía o
+       enquadramento de `enquadra()` em vez de se compor com ele, e as direções
+       enquadradas saíam com o sinal fora do sítio: a G dava 233 px de lado em
+       512 em vez de 281, e a I saía cortada em cima. Num grupo de fora, que não
+       tem atributo nenhum, as duas transformações compõem-se. */
+    svg[data-forma="maskable"] .reducao {
       transform: scale(0.78);
       transform-origin: 256.0px 256.0px;
       transform-box: view-box;
     }
   </style>
   <rect class="campo" x="0" y="0" width="512" height="512"/>
-  <g class="sinal" transform="translate(-51.2 -51.2) scale(1.2)">
+  <g class="reducao">
+    <g class="sinal" transform="translate(-51.2 -51.2) scale(1.2)">
     <!-- O «O» da casa (H=300, haste=69.9, fino=30.0)
          com o selo dentro: quadrado de 130, com 15 de
          folga para a contraforma de 160 x 240. -->
     <path class="tinta" fill-rule="evenodd" d="M106 256A150 150 0 1 1 406 256A150 150 0 1 1 106 256ZM205.9 136L306.1 136A30 30 0 0 1 336.1 166L336.1 346A30 30 0 0 1 306.1 376L205.9 376A30 30 0 0 1 175.9 346L175.9 166A30 30 0 0 1 205.9 136Z"/>
     <rect class="acento" x="190.9" y="190.9" width="130.2" height="130.2"/>
-  </g>
-  <g class="sinal-favicon" transform="translate(-51.2 -51.2) scale(1.2)">
+    </g>
+    <g class="sinal-favicon" transform="translate(-51.2 -51.2) scale(1.2)">
     <!-- 32 e 16 px: o canto recto da contraforma não chega a um píxel e
          a folga entre o selo e a letra fecha-se. A contraforma passa a
          oval e o selo encolhe para 90, para o anel não colar. -->
     <path class="tinta" fill-rule="evenodd" d="M106 256A150 150 0 1 1 406 256A150 150 0 1 1 106 256ZM175.9 256A80.1 120 0 1 1 336.1 256A80.1 120 0 1 1 175.9 256Z"/>
     <rect class="acento" x="210.9" y="210.9" width="90.2" height="90.2"/>
+    </g>
   </g>
 </svg>

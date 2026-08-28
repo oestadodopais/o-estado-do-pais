@@ -55,6 +55,20 @@ const TAMANHOS = [
 ];
 
 /**
+ * QUANDO UMA DIREÇÃO TROCA DE DESENHO MAIS CEDO DO QUE AS OUTRAS.
+ *
+ * A regra da casa é: o desenho cheio até aos 60 px, e a simplificação a partir
+ * dos 32. A direção J não a cumpre, e não é um descuido: o sinal dela é a
+ * palavra «Estado», que a 60 px dá 10 px de altura de maiúscula e é uma mancha.
+ * A terceira adenda pede-o à letra («o ícone pode levar «Estado» a 180 e o «E»
+ * desenhado a 60 e a 16»), e é isto que o faz: a J passa ao segundo desenho já
+ * aos 60 px. Quem não estiver aqui nomeado segue a regra da casa.
+ */
+const TROCA_CEDO = {
+  '10-palavra-estado': { 60: 'favicon', '60-escuro': 'favicon' },
+};
+
+/**
  * A página que o navegador vê: o SVG sozinho, do tamanho pedido, sem margem e
  * sem nada por baixo. O `image-rendering` fica no defeito: o que se quer medir é
  * o que o telemóvel faz, e o telemóvel não pede nada de especial.
@@ -86,8 +100,9 @@ async function main() {
     const pasta = path.join(EXPORT, slug);
     await mkdir(pasta, { recursive: true });
     for (const t of TAMANHOS) {
+      const forma = TROCA_CEDO[slug]?.[t.nome] ?? t.forma;
       await pag.setViewportSize({ width: t.px, height: t.px });
-      await pag.setContent(pagina(svg, t.px, t.tema, t.forma));
+      await pag.setContent(pagina(svg, t.px, t.tema, forma));
       const destino = path.join(pasta, `${slug}-${t.nome}.png`);
       await pag.screenshot({ path: destino, omitBackground: false });
       contados += 1;
