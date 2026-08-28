@@ -51,10 +51,9 @@ const path = routePath('municipios', lang);
 /** Que concelhos já têm página, pela posição na CAOP — nunca por um slug escrito à mão. */
 const paginaPorIndice = new Map(MUNICIPIOS_COM_PAGINA.map((m) => [m.caopIndex, m]));
 
-/* Agrupados pelo distrito ou ilha que a própria CAOP lhes dá. Dentro de cada
-   grupo, a ordem em que os registos estão, que é a ordem alfabética da carta.
-   Nada é reordenado à mão: a ordem dos GRUPOS é a da colação portuguesa, e
-   compõe-se em `comEntradas`, mais abaixo. */
+/* Agrupados pelo distrito ou ilha que a própria CAOP lhes dá. A ordem, dos
+   grupos e dos concelhos de cada um, é a da colação portuguesa, e compõe-se em
+   `comEntradas`, mais abaixo. Nada é reordenado à mão. */
 const grupos = DISTRITOS.map((nome, i) => ({
   nome,
   /* O SLUG DA UNIDADE, PARA A PORTA DO CABEÇALHO DE GRUPO (Emenda 20, D3).
@@ -76,7 +75,7 @@ MUNICIPIOS.forEach((m, i) => {
 });
 
 /**
- * A ORDEM DOS CABEÇALHOS É A DA COLAÇÃO PORTUGUESA (I84, 28.08.2026)
+ * A ORDEM DESTA PÁGINA É A DA COLAÇÃO PORTUGUESA (I84, 28.08.2026)
  *
  * Era a de `DISTRITOS`, que é a ordem em que os nomes vêm no ficheiro de
  * coordenadas da Carta, e essa é a ordem dos pontos de código: «Évora» caía
@@ -93,11 +92,31 @@ MUNICIPIOS.forEach((m, i) => {
  * ORDENA-SE A LISTA DOS GRUPOS, E NÃO A DE `DISTRITOS`: o índice de cada grupo
  * naquela lista é o que liga um concelho ao seu distrito (`m[1]`), e mexer-lhe
  * trocava os 308 de sítio. O que se ordena é a lista já montada.
+ *
+ * E ORDENAM-SE OS CONCELHOS DE CADA GRUPO, que é a metade que a primeira volta
+ * desta correção falhou (leitura do Codex, 28.08.2026). Os cabeçalhos ficaram na
+ * ordem da língua e os nomes por baixo deles continuaram na do ficheiro de
+ * coordenadas, que é a ordem do código oficial de cada concelho. Quatro grupos
+ * mostravam-no, nas duas edições: «Santa Maria da Feira» antes de «Ílhavo» em
+ * Aveiro, «Arruda dos Vinhos» no lugar de «Amadora» em Lisboa, «Valongo» antes
+ * de «Trofa» no Porto, «Rio Maior» antes de «Ourém» em Santarém. Os outros 25
+ * estavam em ordem por acaso, que é o pior estado possível: a lista parecia
+ * alfabética e não era.
+ *
+ * A CHAVE DA ORDEM É O NOME QUE SE LÊ, e não o da Carta: um concelho com página
+ * mostra o nome da sua página na língua da edição, e é esse que o olho procura.
+ * Hoje os dois coincidem nos 308 (nenhuma página declara um nome inglês
+ * diferente do português), e a R7 do `check:mapa` mede o que a página imprime, e
+ * não o que este ficheiro tencionava imprimir.
  */
 const colacao = new Intl.Collator('pt');
+const nomeQueSeLe = (e) => (e.pagina ? (e.pagina.nome[lang] ?? e.pagina.nome.pt) : e.nome);
 const comEntradas = grupos
   .filter((g) => g.entradas.length > 0)
   .sort((a, b) => colacao.compare(a.nome, b.nome));
+for (const g of comEntradas) {
+  g.entradas.sort((a, b) => colacao.compare(nomeQueSeLe(a), nomeQueSeLe(b)));
+}
 
 /**
  * A COBERTURA, PELAS DUAS CHAVES DA PROVA (IDENTIDADE.md §10; relocação R11).

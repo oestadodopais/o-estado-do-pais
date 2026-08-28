@@ -18,8 +18,9 @@
  *   R4  a primeira página com 29 ligações de área, uma por unidade;
  *   R5  nenhum `<a>` debaixo de um `role="img"`;
  *   R6  a atribuição da DGT presente onde o mapa está;
- *   R7  a ordem dos caminhos de cada `svg` e a das unidades do manifesto na
- *       colação portuguesa (I84).
+ *   R7  a ordem dos caminhos de cada `svg`, a das unidades do manifesto, e a
+ *       das listas de `/municipios` e de cada página de distrito, na colação
+ *       portuguesa (I84).
  *
  * ---------------------------------------------------------------------------
  * O LEITOR É PRÓPRIO, E É POR ISSO QUE A CONFERÊNCIA VALE
@@ -131,6 +132,11 @@ function leMundo() {
     }
     const linha = lePagina(routePath('linha', lang, { slug: LINHA_DA_CARTA }));
     if (linha) paginas.push({ ...linha, lang, tipo: 'linha' });
+    /* O ÍNDICE DOS CONCELHOS ENTRA COM A R7 (28.08.2026). É a página onde os 29
+       nomes das unidades e os 308 dos concelhos aparecem todos seguidos, e por
+       isso é onde uma ordem errada se lê de uma vez. */
+    const indice = lePagina(routePath('municipios', lang));
+    if (indice) paginas.push({ ...indice, lang, tipo: 'municipios' });
   }
   return { ficheiros, manifesto, pais, distritos, paginas };
 }
@@ -355,8 +361,33 @@ function r6(m) {
  * O MANIFESTO ENTRA PELA MESMA RAZÃO: é ele que a primeira página lê para saber
  * que unidades existem, e uma ordem que divergisse do país seria a mesma lista
  * contada de duas maneiras.
+ *
+ * E AS PÁGINAS CONSTRUÍDAS ENTRAM PORQUE O ARTEFACTO CERTO NÃO CHEGA
+ * (28.08.2026, leitura do Codex sobre a primeira volta desta correção). A
+ * primeira forma desta regra media só os ficheiros de `mapa/`, e o índice dos
+ * concelhos compõe a sua lista de outra fonte, o ficheiro de coordenadas da
+ * Carta: os 29 cabeçalhos saíram na ordem da língua e os 308 nomes por baixo
+ * deles continuaram na ordem do código oficial de cada concelho, em quatro dos
+ * 29 grupos, nas duas edições. Os outros 25 estavam em ordem por acaso, e uma
+ * lista que parece alfabética em 25 casos de 29 é pior do que uma que não
+ * parece. O que a regra mede passa a ser o que a página IMPRIME.
  */
 const COLACAO = new Intl.Collator('pt');
+
+/**
+ * O NOME QUE A PÁGINA IMPRIME, e não o que o gabarito tencionava imprimir.
+ *
+ * Um nome de concelho vive numa ligação, quando o concelho tem página, ou num
+ * `span.concelho-nome`, quando não tem; e uma ligação leva a seta do destino
+ * dentro dela, que não é nome nenhum. A seta sai, e o resto lê-se como está.
+ */
+const semSeta = (t) => t.replace(/\s+/g, ' ').replace(/\s*→\s*$/, '').trim();
+const nomeDoGrupo = (sec) => semSeta(sec.querySelector('.concelhos-grupo-k a')?.text ?? '');
+const nomesDaLista = (raiz, seletor) =>
+  raiz.querySelectorAll(seletor).map((li) => {
+    const alvo = li.querySelector('a') ?? li.querySelector('.concelho-nome') ?? li;
+    return semSeta(alvo.text);
+  });
 
 /** O primeiro par fora da ordem da colação, ou `null` se a lista estiver ordenada. */
 function primeiroParForaDaOrdem(nomes) {
@@ -388,6 +419,17 @@ function r7(m) {
     );
   }
   confere('mapa/manifest.json, as unidades', m.manifesto.unidades.map((u) => u.nome));
+
+  for (const pg of m.paginas.filter((p) => p.tipo === 'municipios')) {
+    const grupos = pg.root.querySelectorAll('section.concelhos-grupo');
+    confere(`${pg.rota}, os cabeçalhos dos grupos`, grupos.map(nomeDoGrupo));
+    for (const g of grupos) {
+      confere(`${pg.rota}, os concelhos de «${nomeDoGrupo(g)}»`, nomesDaLista(g, 'ul.concelhos-lista li'));
+    }
+  }
+  for (const pg of m.paginas.filter((p) => p.tipo === 'distrito')) {
+    confere(`${pg.rota}, a lista dos concelhos`, nomesDaLista(pg.root, '#concelhos li'));
+  }
   return erros;
 }
 
@@ -398,7 +440,7 @@ const REGRAS = [
   { id: 'R4', nome: 'a primeira página com 29 ligações de área', fn: r4 },
   { id: 'R5', nome: 'nenhuma ligação debaixo de role="img"', fn: r5 },
   { id: 'R6', nome: 'a atribuição da DGT onde o mapa está', fn: r6 },
-  { id: 'R7', nome: 'a ordem dos caminhos e das unidades na colação portuguesa', fn: r7 },
+  { id: 'R7', nome: 'a colação portuguesa nos artefactos e nas listas construídas', fn: r7 },
 ];
 
 /* ===========================================================================
@@ -409,6 +451,19 @@ const REGRAS = [
  * um byte de um ficheiro e mais nada, o da R2 apaga um concelho de uma página
  * construída sem tocar no artefacto, e assim por diante.
  */
+/**
+ * Dois irmãos trocados de lugar dentro do pai, na cópia em memória de uma página.
+ *
+ * Faz-se sobre o HTML do pai e não com `exchangeChild`, porque o que se quer é
+ * uma TROCA: pôr um por cima do outro deixa duas entradas iguais, e duas
+ * entradas iguais estão em ordem para qualquer colação.
+ */
+function trocaIrmaos(pai, a, b) {
+  const marca = '\u0000@\u0000';
+  const html = pai.innerHTML.replace(a.outerHTML, marca).replace(b.outerHTML, a.outerHTML);
+  pai.set_content(html.replace(marca, b.outerHTML));
+}
+
 function copia(m) {
   return {
     ficheiros: Object.fromEntries(Object.entries(m.ficheiros).map(([k, v]) => [k, Buffer.from(v)])),
@@ -498,6 +553,39 @@ const ESTRAGOS = {
     const u = m.manifesto.unidades;
     [u[0], u[1]] = [u[1], u[0]];
     return `«${u[1].nome}» e «${u[0].nome}» trocadas nas unidades do manifesto`;
+  },
+  /* E TRÊS ESTRAGOS NAS PÁGINAS, porque foi ali que a primeira volta falhou: o
+     artefacto certo e a página com a sua própria ordem. Cada um troca dois
+     irmãos numa cópia em memória da página construída, e nenhum toca no
+     ficheiro que os outros leem.
+
+     TROCAM-SE OS DOIS, E NÃO SE COPIA UM POR CIMA DO OUTRO. A primeira forma
+     destes três punha o segundo irmão no lugar do primeiro, e a regra não os
+     apanhava: duas linhas iguais estão em ordem, porque a colação as compara a
+     zero. Um estrago que a regra não apanha é uma régua que se declara verde
+     sem ter olhado, e por isso ele foi corrido antes de ser dado como bom. */
+  'R7 (os cabeçalhos do índice)': (m) => {
+    const pg = m.paginas.find((p) => p.tipo === 'municipios');
+    const g = pg.root.querySelectorAll('section.concelhos-grupo');
+    const [a, b] = [nomeDoGrupo(g[0]), nomeDoGrupo(g[1])];
+    trocaIrmaos(g[0].parentNode, g[0], g[1]);
+    return `os grupos «${a}» e «${b}» trocados em ${pg.rota}`;
+  },
+  'R7 (os concelhos de um grupo)': (m) => {
+    const pg = m.paginas.find((p) => p.tipo === 'municipios');
+    const lista = pg.root.querySelector('section.concelhos-grupo ul.concelhos-lista');
+    const itens = lista.querySelectorAll('li');
+    const [a, b] = [semSeta(itens[0].text), semSeta(itens[1].text)];
+    trocaIrmaos(lista, itens[0], itens[1]);
+    return `«${a}» e «${b}» trocados no primeiro grupo de ${pg.rota}`;
+  },
+  'R7 (a lista de um distrito)': (m) => {
+    const pg = m.paginas.find((p) => p.tipo === 'distrito');
+    const lista = pg.root.querySelector('#concelhos');
+    const itens = lista.querySelectorAll('li');
+    const [a, b] = [semSeta(itens[0].text), semSeta(itens[1].text)];
+    trocaIrmaos(lista, itens[0], itens[1]);
+    return `«${a}» e «${b}» trocados na lista de ${pg.rota}`;
   },
 };
 

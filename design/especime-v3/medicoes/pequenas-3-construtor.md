@@ -11,8 +11,11 @@ Sem fusão e sem envio: o ramo fica para o lugar de direção.*
 | `a5d15b6` | I83 · a porta de uma figura diz o que abre, e a chave fica no `href` |
 | `9ddef92` | I84 · a colação portuguesa no artefacto, no índice dos concelhos e numa régua |
 | `68d1409` | I88 · o índice é da casa, e os dados é que são da Direção-Geral |
+| `9c7fce5` | as fichas de `ISSUES.md` e a primeira forma deste relatório |
+| `<a seguir>` | I84, segunda volta · os concelhos dentro de cada grupo, e a R7 a medir as listas construídas |
 
-Um quarto commit fecha as três fichas em `ISSUES.md` e traz este relatório.
+Os três primeiros fecham as fichas, o quarto traz este relatório, e o quinto é a
+segunda volta da I84, depois da leitura do Codex: ver a §2.4 e a §2-A.
 
 ---
 
@@ -171,8 +174,96 @@ de cada grupo nessa lista é o que liga cada um dos 308 concelhos ao seu distrit
 colação; com `--plantar` troca dois deles numa cópia em memória antes de medir.
 Com o estrago, sai a 1 e nomeia a posição («na posição 4 está “Castelo Branco” e
 a colação põe “Bragança”»), nas duas edições; sem o estrago, sai a 0 com os 29 na
-ordem. O detector não entra no repositório: é uma prova desta passagem, e o que
-fica a guardar a ordem do artefacto é a R7.
+ordem.
+
+### 2.4 · A segunda volta: os concelhos dentro de cada grupo
+
+**A primeira volta corrigiu os cabeçalhos e deixou os membros como estavam**, e
+foi a leitura do Codex que o apanhou. Os 308 nomes por baixo dos cabeçalhos
+continuavam na ordem do ficheiro de coordenadas, que é a ordem do código oficial
+de cada concelho. Quatro dos 29 grupos mostravam-no, nas duas edições:
+
+| grupo | índice | estava | a colação põe |
+| --- | --- | --- | --- |
+| Aveiro | 8 | Santa Maria da Feira | Ílhavo |
+| Lisboa | 1 | Arruda dos Vinhos | Amadora |
+| Porto | 14 | Valongo | Trofa |
+| Santarém | 13 | Rio Maior | Ourém |
+
+Os outros 25 estavam em ordem **por acaso**, porque nesses distritos o código
+oficial e o alfabeto coincidem. É o pior estado possível: a lista parecia
+alfabética em 25 casos de 29, e o detector que corri na primeira volta só olhava
+para os cabeçalhos, pelo que não tinha nada a dizer sobre isto.
+
+**A correção.** `MunicipiosView.astro` ordena também as entradas de cada grupo,
+com o mesmo `Intl.Collator('pt')`. A chave é o nome que a página IMPRIME, e não o
+da Carta: um concelho com página mostra o nome da sua página na língua da edição.
+Conferido que hoje os dois coincidem nos 308 (nenhuma página declara um nome
+inglês diferente do português), e por isso a ordem é a mesma nas duas edições.
+
+**A R7 passa a medir as listas construídas, e não só os ficheiros.** Era este o
+buraco: o artefacto ficou certo, e a página compõe a sua lista de outra fonte. A
+regra ganha `/municipios` e `/en/municipalities` ao mundo que lê, e confere três
+coisas mais: os cabeçalhos dos grupos, os concelhos de cada um dos 29 grupos, e a
+lista `#concelhos` de cada uma das 58 páginas de distrito. Esta última vai além
+do que a direção pediu, e digo-o: as páginas de distrito estavam todas em ordem
+hoje (0 de 58 fora), porque compõem a lista do artefacto, mas era a mesma classe
+de defeito sem régua nenhuma a guardá-la, e esta passagem mostrou o que vale «hoje
+está certo». Se a direção a quiser fora, sai numa linha.
+
+Corrida contra o `dist/` da primeira volta, a R7 alargada saiu **vermelha com
+oito queixas**, quatro por edição, com os nomes da tabela acima; depois da
+correção, verde.
+
+**Os estragos plantados passam de onze a catorze, e os três novos não
+funcionaram à primeira.** A primeira forma copiava o segundo irmão por cima do
+primeiro, e a R7 não os apanhava: duas entradas iguais estão em ordem, porque a
+colação as compara a zero. Corrigidos para uma troca a sério, os catorze são
+apanhados. Um estrago que não fica vermelho é uma régua a declarar-se verde sem
+ter olhado, e é por isso que se corre `--vermelhos` em vez de se confiar nele.
+
+**Medido no `dist/` final, com um detector à parte do `check:mapa`:** 29 grupos
+nas duas edições, cabeçalhos na ordem da colação, **0 grupos com membros fora da
+ordem**, 308 concelhos contados por edição. O zero foi lido com um positivo
+conhecido: uma troca plantada nos dois primeiros concelhos do primeiro grupo põe
+o primeiro desvio no índice 0.
+
+---
+
+## 2-A · A vírgula decimal da edição inglesa: fica
+
+A leitura do Codex assinalou que a frase inglesa de Évora imprime «242,6%» e
+«105,5%», com vírgula. Fui ver qual é a convenção da edição inglesa, e a resposta
+é que a vírgula É a convenção, em toda a parte.
+
+**A medição.** Varridas as 3 283 páginas da edição inglesa que têm valores, e
+lidos todos os elementos com `data-claim` ou `data-prova`:
+
+| na edição inglesa inteira | conta |
+| --- | --- |
+| valores com decimal por **vírgula** | **2 348** |
+| valores com decimal por **ponto** | **0** |
+
+O zero foi lido com um positivo conhecido: trocada uma vírgula por um ponto numa
+cópia em memória da página inglesa de Évora, o mesmo varrimento passa a contar
+1 ponto e 39 vírgulas, em vez de 0 e 40.
+
+**A razão é estrutural, e não um esquecimento nesta frase.** Não há formatador de
+números por língua em `src/` nem em `scripts/`: `grep` de `toLocaleString` e de
+`Intl.NumberFormat` não dá nada em nenhum dos dois, com controlo positivo na
+mesma corrida. `Claim.astro` imprime `String(claim.value)` tal como o livro-razão
+o guarda, e o livro-razão guarda-o na composição da casa. A frase de Évora não
+desvia de nada: usa o mesmo caminho que os outros 2 347 valores.
+
+**E é uma regra escrita**, não um acidente. `design/especime-v3/direcao.md`, nas
+«Regras de algarismos», fixa «espaço fino como separador de milhares
+(54 681 562), vírgula decimal, percentagem colada (89,7%)», sem distinguir
+edições. A única excepção documentada é a página de leitura, onde os algarismos
+são os que o DOCUMENTO imprime e não os que a casa formataria.
+
+**Veredicto: não mudo nada**, e não é por não conseguir. Pôr ponto decimal em
+inglês é uma regra nova de composição que muda 2 348 valores em 3 283 páginas, e
+não uma correção a uma frase: é decisão da direção, e mexe na `direcao.md`.
 
 ---
 
@@ -226,12 +317,23 @@ construtor.
 **Não conferi nada no sítio publicado.** Tudo o que está medido aqui é do `dist/`
 construído nesta máquina, ficheiro a ficheiro.
 
+**E o que fiz mal, dito por extenso.** A primeira volta da I84 corrigiu os
+cabeçalhos de `/municipios` e não os nomes por baixo deles, e o detector que
+escrevi para a provar mediu exactamente aquilo que eu tinha corrigido. É a falha
+que a régua 14 da casa existe para apanhar, e não a apanhou porque o detector foi
+desenhado a partir da correção e não a partir do defeito: a pergunta certa não
+era «os cabeçalhos estão em ordem?», era «alguma lista desta página está fora da
+ordem da língua?». A segunda volta responde à segunda pergunta, e responde-a
+dentro do `check:mapa`, para que a resposta valha depois de esta sessão fechar.
+Custou uma leitura de fora, que é o recurso mais caro que a casa tem.
+
 ---
 
 ## 5 · O custo
 
-Aproximadamente **215 mil símbolos** de contexto nesta sessão do construtor
-(Claude Opus 5), a esmagadora maioria de leitura: os ficheiros que o brief manda
-ler antes de tocar em nada, as réguas, e a saída de cinco corridas completas de
-`npm run build` mais três de `verify` e três de `typecheck`. O número sai do
+Aproximadamente **215 mil símbolos** na primeira volta e **mais 40 mil** na
+segunda, num total de cerca de **255 mil**, nesta sessão do construtor (Claude
+Opus 5). A esmagadora maioria é leitura: os ficheiros que o brief manda ler antes
+de tocar em nada, as réguas, e a saída de sete corridas completas de
+`npm run build` mais quatro de `verify` e quatro de `typecheck`. O número sai do
 contador da sessão e não de uma factura, e por isso é aproximado.
