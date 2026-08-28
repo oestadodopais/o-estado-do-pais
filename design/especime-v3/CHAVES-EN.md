@@ -427,7 +427,7 @@ ligação e não tem texto nenhum (o glifo é da folha), e por isso o nome dela 
 
 | chave | pt | en | nota |
 |---|---|---|---|
-| `estudos.textoPortaDaLinha` | linha do motor | engine row | As mesmas palavras de `estudos.textoLinhaK`, e é chave própria de propósito: aquela é o **rótulo de um campo** na secção «As linhas deste documento», e esta é o **nome de uma porta** que só quem ouve a página encontra. Uma revisão de voz pode querer mudar uma sem mudar a outra, e com uma chave só isso deixava de ser possível. O valor rende-se com o identificador da linha do motor a seguir, separado por dois pontos: `aria-label="linha do motor: tc-report-16-2018"` / `aria-label="engine row: tc-report-16-2018"`. O identificador **não se traduz**, pela mesma razão do valor do campo «resumo de origem»: é um identificador do formato do motor, e não prosa |
+| `estudos.textoPortaDaLinha` | a linha desta figura | this figure’s row | O **nome de uma porta** que só quem ouve a página encontra, e é chave própria de propósito: `estudos.textoLinhaK` é o **rótulo de um campo** na secção «As linhas deste documento», e uma revisão de voz pode querer mudar uma sem mudar a outra. Foi o que aconteceu a 28.08.2026 (I83): levava as mesmas palavras do rótulo do campo e o identificador da linha a seguir, `aria-label="linha do motor: tc-report-16-2018"`, e quem ouve a página ouvia o nome de um artefacto do motor. O rótulo passa a nomear o que a porta abre e não a chave; a chave fica só no `href`, que é onde ela é um endereço. O valor rende-se sozinho: `aria-label="a linha desta figura"` / `aria-label="this figure’s row"` |
 
 **Identidades: nenhuma.** As duas cadeias diferem entre as duas edições.
 

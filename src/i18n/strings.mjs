@@ -1374,11 +1374,20 @@ export const STRINGS = {
       textoLinhaDoLivro: 'linha do livro-razão',
       /* O nome acessível da porta que vai a seguir a uma ligação do documento,
          onde a figura não pode ser ela própria uma âncora. Rende-se em
-         `aria-label`, com o identificador da linha do motor a seguir: a porta
-         não tem texto, e sem nome nenhum um leitor de ecrã anunciava uma
-         ligação vazia. As mesmas palavras do rótulo do campo, porque é a mesma
-         coisa que a porta abre. */
-      textoPortaDaLinha: 'linha do motor',
+         `aria-label` e mais nada: a porta não tem texto, e sem nome nenhum um
+         leitor de ecrã anunciava uma ligação vazia.
+
+         O RÓTULO NOMEIA O QUE A PORTA ABRE, E NÃO A CHAVE (I83, 28.08.2026).
+         Levava as palavras do rótulo do campo mais o identificador da linha,
+         «linha do motor: tc-year-1-2008», e o que quem ouve a página ouvia era
+         o nome de um artefacto interno do motor: é a mesma classe que a medida
+         6 da régua nomeia nos localizadores das linhas, ouvida em voz alta. A
+         chave fica no `href`, onde ela é um endereço e não uma palavra; o
+         rótulo diz de que figura é a linha, que é o que decide entre duas
+         portas seguidas.
+         Deixa de ser as mesmas palavras de `textoLinhaK`, e é por isso que a
+         chave é própria desde que nasceu. */
+      textoPortaDaLinha: 'a linha desta figura',
       textoRegistoK: 'O registo de conteúdo',
       /* O comando fixo do telemóvel, no fim do ecrã (bloco B, item B4). Duas
          páginas de leitura medem 111 e 243 ecrãs a 390: sem ele, voltar ao
@@ -2137,7 +2146,9 @@ export const STRINGS = {
       textoImpressoK: 'as this document prints it',
       textoOrigemK: 'source digest',
       textoLinhaDoLivro: 'ledger row',
-      textoPortaDaLinha: 'engine row',
+      /* I83, 28.08.2026: dizia «engine row» mais o identificador. Ver a razão
+         escrita na chave portuguesa. */
+      textoPortaDaLinha: 'this figure’s row',
       textoRegistoK: 'The content record',
       textoSubir: 'Back to top',
       textoContaBlocos: 'blocks',
