@@ -1,0 +1,26 @@
+{
+ "registado_em": "2026-08-28",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "en-manifest.webmanifest",
+   "descricao": "the English manifest's start_url changed from /en/ to / (wrong edition)",
+   "sha256_antes": "45e6349f71706a222b77107f29c01167538e610237016235f08df226dab33f57",
+   "sha256_depois": "27a037a89be370c05041d56f9a81dfc6d3cac7b707f0796c47480a8e82e140d3"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "icones/icon-512-maskable.png",
+   "descricao": "a 20 px square of ink painted at the maskable icon's corner, outside the safe zone",
+   "sha256_antes": "4aab08bc7ca9bdb244e683c5535ef370aede8fc806d2513116662f89e2018b45",
+   "sha256_depois": "a0202eb1a7597b320ee2210017617ae2d1f58121355b03ee3dc04e5291d75b67"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "paginas/municipio-evora.html",
+   "descricao": "the deprecated apple-mobile-web-app-capable meta inserted in one page's head",
+   "sha256_antes": "f21e259342e222f9c6d9eaa8c2241a0a49155a2bdc23fbf68e40c490ee6b78d0",
+   "sha256_depois": "f84a52882770b10441b995449c91ba20c2c08ccead0dceac588afa194916aee9"
+  }
+ ]
+}

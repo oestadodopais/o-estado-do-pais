@@ -1279,4 +1279,4 @@ elas é da direção.
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | O Estado | app | viva | — |
+| navegacao | O Estado | app | viva | navegação como o nome da publicação (regra do inventário); o brief dizia conteúdo e o lugar de direção corrigiu no fecho |
