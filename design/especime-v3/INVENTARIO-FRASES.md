@@ -797,8 +797,8 @@ exclusão que a subetapa 3c escreveu para a lista por distritos.
 | conteudo | No rows yet. | grelha-2 | retirada | a ausência passou a dizer-se em três palavras, «Sem linha ainda.», e a forma longa saiu (item E4 do bloco dos 308, `8b2a260`) |
 | conteudo | A referência do estudo | até 2026-08-26 | viva | — |
 | conteudo | The study’s reference | até 2026-08-26 | viva | — |
-| conteudo | 2590 afirmações · 329 calculadas · 2447 linhas de concelhos | ilhas | viva | — |
-| conteudo | 2590 claims · 329 calculated · 2447 municipality rows | ilhas | viva | — |
+| conteudo | 2601 afirmações · 329 calculadas · 2458 linhas de concelhos | vazios | viva | — |
+| conteudo | 2601 claims · 329 calculated · 2458 municipality rows | vazios | viva | — |
 | autorreferencia | O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores. É a lei que o define, não este sítio. | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
 | autorreferencia | The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue. The law defines it, not this site. | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
 
@@ -1001,8 +1001,8 @@ estiver vazio.*
 | --- | --- | --- | --- | --- |
 | conteudo | Livro-razão · O Estado do País | voz-do-livro-razao | viva | — |
 | conteudo | Ledger · O Estado do País | voz-do-livro-razao | viva | — |
-| conteudo | 2447 linhas · 308 concelhos | ilhas | viva | — |
-| conteudo | 2447 rows · 308 municipalities | ilhas | viva | — |
+| conteudo | 2458 linhas · 308 concelhos | vazios | viva | — |
+| conteudo | 2458 rows · 308 municipalities | vazios | viva | — |
 
 ## Bloco «A voz do livro-razão» · a leitura de fora, L1 a L5 · 27.08.2026
 
