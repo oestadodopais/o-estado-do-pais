@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Direção J2 · «Estado» com a linha do valor">
+  <title>Direção J2 · «Estado» com a linha do valor</title>
+  <desc>A palavra, com a linha do valor dentro do «E».</desc>
+  <style>
+    .campo { fill: #f6f7f4; }
+    .tinta { fill: #17191b; }
+    .tinta-t { fill: none; stroke: #17191b; }
+    .acento { fill: #1f4e8c; }
+    .acento-t { fill: none; stroke: #1f4e8c; }
+    /* A costura: uma silhueta feita de distritos encostados fica com fios de
+       papel entre eles quando se enche sem traço. O traço da mesma cor fecha-os. */
+    .acento-costura { fill: #1f4e8c; stroke: #1f4e8c; stroke-width: 2; }
+    svg[data-tema="escuro"] .campo { fill: #15171a; }
+    svg[data-tema="escuro"] .tinta { fill: #eceeea; }
+    svg[data-tema="escuro"] .tinta-t { stroke: #eceeea; }
+    svg[data-tema="escuro"] .acento { fill: #7fa6dc; }
+    svg[data-tema="escuro"] .acento-t { stroke: #7fa6dc; }
+    svg[data-tema="escuro"] .acento-costura { fill: #7fa6dc; stroke: #7fa6dc; }
+    /* A simplificação de 32 e 16 px: a mesma forma, com o que morre tirado. */
+    .sinal-favicon { display: none; }
+    svg[data-forma="favicon"] .sinal { display: none; }
+    svg[data-forma="favicon"] .sinal-favicon { display: block; }
+    /* O `maskable` do Android: o campo fica, o sinal encolhe para dentro do
+       círculo seguro de raio 40 %.
+
+       A REDUÇÃO TEM DE ESTAR NUM GRUPO SÓ SEU, e isto foi corrigido a 28.08
+       depois de se medir a caixa de tinta nos PNG: `transform` de CSS e
+       `transform` de atributo são a MESMA propriedade, e o CSS ganha. Enquanto
+       esta regra apanhava `.sinal` directamente, o `scale` substituía o
+       enquadramento de `enquadra()` em vez de se compor com ele, e as direções
+       enquadradas saíam com o sinal fora do sítio: a G dava 233 px de lado em
+       512 em vez de 281, e a I saía cortada em cima. Num grupo de fora, que não
+       tem atributo nenhum, as duas transformações compõem-se. */
+    svg[data-forma="maskable"] .reducao {
+      transform: scale(0.78);
+      transform-origin: 256.0px 256.0px;
+      transform-box: view-box;
+    }
+  </style>
+  <rect class="campo" x="0" y="0" width="512" height="512"/>
+  <g class="reducao">
+    <g class="sinal" transform="translate(76 187.68) scale(0.27)">
+    <!-- «Estado» com a linha do valor: o «E» desenhado (H=300,
+         haste 69.9, braços 30.0, linha do
+         valor 60 em cobalto) e «stado» em Spectral
+         SemiBold do ficheiro da casa. A palavra mede 1317 x 300
+         = 4.39:1. -->
+    <path class="tinta" d="M0 100L69.9 100L69.9 400L0 400Z"/>
+    <path class="tinta" d="M0 100L186 100L186 130L0 130Z"/>
+    <path class="tinta" d="M0 370L186 370L186 400L0 400Z"/>
+    <path class="tinta" d="M156 100L186 100L186 166L156 166Z"/>
+    <path class="tinta" d="M156 334L186 334L186 400L156 400Z"/>
+    <path class="acento" d="M0 220L144 220L144 280L0 280Z"/>
+    <path class="acento" d="M118.2 205L144 205L144 295L118.2 295Z"/>
+    <path class="tinta" d="M311.91 404.55Q289.64 404.55 273.73 400.45Q257.82 396.36 241.91 388.64L241.91 336.36L248.27 336.36L263.73 360.91Q279.18 385.91 310.09 385.91Q327.82 385.91 337.36 378.41Q346.91 370.91 346.91 357.73Q346.91 346.82 341.45 340Q336 333.18 324.41 327.73Q312.82 322.27 295.09 314.55Q270.55 304.09 258.27 290.68Q246 277.27 246 255.91Q246 237.27 255.77 222.27Q265.55 207.27 282.14 198.18Q298.73 189.09 318.27 189.09Q349.64 189.09 377.82 203.64L377.82 255.91L371 255.91L356.45 233.64Q348.27 220.45 339.18 214.55Q330.09 208.64 318.27 208.64Q303.73 208.64 295.09 215.91Q286.45 223.18 286.45 235.91Q286.45 249.09 296.45 256.82Q306.45 264.55 331.45 275Q344.64 280.45 357.14 287.05Q369.64 293.64 378.05 305.45Q386.45 317.27 386.45 338.64Q386.45 359.55 375.32 374.32Q364.18 389.09 346.91 396.82Q329.64 404.55 311.91 404.55ZM509.18 404.55Q484.64 404.55 468.05 392.73Q451.45 380.91 451.45 359.55L451.45 214.55L416.91 214.55L416.91 210L457.82 193.64L497.82 143.64L504.18 143.64L504.18 193.64L566 193.64L566 214.55L504.18 214.55L504.18 349.55Q504.18 360.91 514.41 366.59Q524.64 372.27 538.27 372.27Q546.91 372.27 553.95 371.36Q561 370.45 566.91 369.09L568.27 369.55L568.27 375.91Q561.91 386.82 546.23 395.68Q530.55 404.55 509.18 404.55ZM650.09 404.55Q626.91 404.55 612.59 390.91Q598.27 377.27 598.27 354.55Q598.27 330.91 613.73 315.68Q629.18 300.45 670.09 290.45L714.18 279.55L714.18 249.55Q714.18 232.73 703.5 222.27Q692.82 211.82 676.91 211.82Q670.55 211.82 664.18 213.18Q657.82 214.55 650.09 218.18L650.09 262.73L616.91 262.73Q609.18 262.73 606.23 259.09Q603.27 255.45 603.27 246.36Q603.27 233.18 615.55 220Q627.82 206.82 648.05 197.95Q668.27 189.09 692.36 189.09Q727.82 189.09 747.36 203.41Q766.91 217.73 766.91 243.64L766.91 367.73Q770.09 370.91 775.77 372.95Q781.45 375 790.09 375L805.09 375L806.45 376.36L806.45 380.45Q801 389.55 789.64 397.05Q778.27 404.55 760.55 404.55Q743.73 404.55 733.05 396.59Q722.36 388.64 717.36 375L714.18 375Q701.91 388.64 685.32 396.59Q668.73 404.55 650.09 404.55ZM648.27 342.73Q648.27 356.82 656.68 364.09Q665.09 371.36 680.09 371.36Q696 371.36 714.18 363.64L714.18 296.82Q685.55 302.73 671.45 309.32Q657.36 315.91 652.82 324.09Q648.27 332.27 648.27 342.73ZM904.18 404.55Q882.82 404.55 865.09 393.18Q847.36 381.82 836.91 360.91Q826.45 340 826.45 311.82Q826.45 273.18 840.77 245.91Q855.09 218.64 879.64 203.86Q904.18 189.09 934.64 189.09Q956.45 189.09 972.82 193.18L972.82 110.91L942.36 88.18L942.36 84.09L1021 59.09L1025.55 59.09L1025.55 379.55L1057.36 392.73L1057.36 400L977.36 400L973.27 377.27L970.55 377.27Q953.27 391.36 937.59 397.95Q921.91 404.55 904.18 404.55ZM879.18 299.09Q879.18 335.45 896.45 352.5Q913.73 369.55 936.45 369.55Q954.64 369.55 972.82 358.64L972.82 228.64Q964.64 220.91 955.77 216.82Q946.91 212.73 936 212.73Q920.55 212.73 907.59 220.45Q894.64 228.18 886.91 247.05Q879.18 265.91 879.18 299.09ZM1193.73 404.55Q1162.36 404.55 1138.73 390.23Q1115.09 375.91 1101.91 351.36Q1088.73 326.82 1088.73 296.82Q1088.73 266.82 1101.91 242.5Q1115.09 218.18 1138.73 203.64Q1162.36 189.09 1193.73 189.09Q1225.09 189.09 1248.73 203.64Q1272.36 218.18 1285.55 242.5Q1298.73 266.82 1298.73 296.82Q1298.73 326.82 1285.55 351.36Q1272.36 375.91 1248.73 390.23Q1225.09 404.55 1193.73 404.55ZM1199.18 383.18Q1214.64 383.18 1224.41 372.27Q1234.18 361.36 1238.73 343.64Q1243.27 325.91 1243.27 305.91Q1243.27 281.36 1237.82 259.55Q1232.36 237.73 1220.32 223.86Q1208.27 210 1189.18 210Q1173.73 210 1163.73 220.91Q1153.73 231.82 1148.95 249.55Q1144.18 267.27 1144.18 287.27Q1144.18 311.82 1149.86 333.86Q1155.55 355.91 1167.82 369.55Q1180.09 383.18 1199.18 383.18Z"/>
+    </g>
+    <g class="sinal-favicon" transform="translate(144.4 256) scale(1.2)">
+    <!-- 60, 32 e 16 px: fica o «E» da palavra. Os braços engrossam de
+         0.100 para 0.130 H e a linha do valor de
+         0.20 para 0.22, porque a 16 px um braço
+         de 0,100 H dá 1,13 px e a linha tem de continuar a ler-se como
+         linha e não como sujidade. As lajes de remate saem. -->
+    <path class="tinta" d="M0 -150L69.9 -150L69.9 150L0 150Z"/>
+    <path class="tinta" d="M0 -150L186 -150L186 -111L0 -111Z"/>
+    <path class="tinta" d="M0 111L186 111L186 150L0 150Z"/>
+    <path class="acento" d="M0 -33L144 -33L144 33L0 33Z"/>
+    </g>
+  </g>
+</svg>
