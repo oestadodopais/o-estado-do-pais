@@ -75,19 +75,33 @@ const nome = m.nome[lang] ?? m.nome.pt;
    uma barra contra uma referência que não existe seria uma medição inventada. O
    concelho que não tenha as duas linhas não rende este bloco: as duas medidas
    continuam a dizer-se nas suas peças, cheias ou vazias. */
+/* DUAS LINHAS NÃO CHEGAM: TÊM DE TRAZER DOIS NÚMEROS (28.08.2026, regra 2).
+   Penedono tem as duas linhas, e as duas publicam a marca que a Direção-Geral
+   imprime («N.d.»): a dívida e o limite existem no livro-razão, com fonte,
+   documento e data de acesso, e nenhum dos dois é um número. Uma barra medida
+   sobre eles não seria uma medição inventada por descuido, seria `NaN` escrito
+   num atributo do desenho. O teste passa a ser sobre os VALORES, e não sobre a
+   existência dos ids: onde os dois não são números, o bloco não se rende, e as
+   duas medidas continuam a dizer-se nas suas peças, com o valor que a fonte
+   publicou. */
 const D = m.distancia ?? {};
-const temDistancia = Boolean(D.valor && D.limite);
 const G = { W: 720, L: 10, R: 710, barY: 12, barH: 18 };
-const divida = temDistancia ? parsePtNumber(getClaim(D.valor).value) : null;
-const limite = temDistancia ? parsePtNumber(getClaim(D.limite).value) : null;
+const divida = D.valor ? parsePtNumber(getClaim(D.valor).value) : null;
+const limite = D.limite ? parsePtNumber(getClaim(D.limite).value) : null;
+const temDistancia = divida !== null && limite !== null && limite !== 0;
 const xDivida = temDistancia
   ? G.L + Math.max(0, Math.min(1, divida / limite)) * (G.R - G.L)
   : null;
 
 /* A frase do índice: as palavras vêm da língua, as afirmações vêm deste
    município. Um id de afirmação escrito em `strings.mjs` prendia a edição
-   inglesa a Évora — e o tipo de página é para os 308. */
-const temIndice = Boolean(D.indice && D.tecto);
+   inglesa a Évora — e o tipo de página é para os 308.
+
+   A FRASE É UMA COMPARAÇÃO, e por isso pede um número dos dois lados: «o índice
+   de dívida é <valor>% do teto de <teto>%» com uma marca no lugar do valor
+   diria «N.d.%», que é a marca da fonte com um símbolo colado que ela não
+   imprimiu. Onde o índice não é número, a frase não se compõe. */
+const temIndice = Boolean(D.indice && D.tecto) && parsePtNumber(getClaim(D.indice).value) !== null;
 const indicePartes = temIndice
   ? [
       s.municipio.distanciaIndiceA,
@@ -825,22 +839,34 @@ const metodoPath = routePath('metodo', lang);
                         )}
                       </dd>
 
-                      <dt>{s.municipio.tempoDecidiu}</dt>
-                      <dd>
-                        {mandato.decidiu ? (
-                          mandato.decidiu.map((v) => (
-                            <>
-                              <Claim id={v.claim} lang={lang} chip={true} /> {v.texto[lang]}{' '}
-                            </>
-                          ))
-                        ) : (
-                          /* A ausência em duas palavras (Emenda 15, e a decisão
-                             da direção de 21.08.2026, tarde): sem nota própria,
-                             o campo diz «sem linha ainda», a mesma cadeia da
-                             casa que uma peça vazia usa. */
-                          <span class="mun-campo-vazio">{mandato.decidiuNota ? mandato.decidiuNota[lang] : s.cobertura.semLinhaAinda}</span>
-                        )}
-                      </dd>
+                      {/* O CAMPO SEM VALOR E SEM FACTO NÃO SE RENDE (28.08.2026,
+                          regra 3). O campo dizia «sem linha ainda» quando o
+                          mandato não declarava nem valores nem nota, e essa
+                          cadeia saiu do sítio inteiro. Um campo em branco no
+                          lugar dela seria uma célula vazia, que a IDENTIDADE §7
+                          recusa, e uma frase escrita aqui para o encher seria
+                          inventada: dos cinco campos de um mandato, quatro têm
+                          nota própria com o FACTO que os explica, e este não
+                          tem nenhum facto lido que o explique. Sem valores e
+                          sem nota, o par sai — como sai a secção de um concelho
+                          sem trabalho publicado. Quando o mandato de 2017 a 2021
+                          ganhar a sua nota, ela volta sozinha. */}
+                      {(mandato.decidiu || mandato.decidiuNota) && (
+                        <>
+                          <dt>{s.municipio.tempoDecidiu}</dt>
+                          <dd>
+                            {mandato.decidiu ? (
+                              mandato.decidiu.map((v) => (
+                                <>
+                                  <Claim id={v.claim} lang={lang} chip={true} /> {v.texto[lang]}{' '}
+                                </>
+                              ))
+                            ) : (
+                              <span class="mun-campo-vazio">{mandato.decidiuNota[lang]}</span>
+                            )}
+                          </dd>
+                        </>
+                      )}
 
                       <dt>{s.municipio.tempoDeixou}</dt>
                       <dd>

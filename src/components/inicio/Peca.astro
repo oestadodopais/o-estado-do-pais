@@ -151,13 +151,19 @@ const simbolo = limiar?.simbolo ?? '%';
       de compra contra «Portugal = 100», que é uma média e não um limiar
       (Emenda 1) — continua com o quadrado de contorno que sempre teve, porque
       ali há uma referência publicada e o estado diz de que lado dela o valor
-      está. O que sai é o quadrado das peças cujo estado É «sem limiar». */}
-  <div class="peca-topo">
-    {estado !== 'sem' && <span class={`sq sq-${marca}`} aria-hidden="true"></span>}
-    {palavra && (
+      está. O que sai é o quadrado das peças cujo estado É «sem limiar».
+
+      E O QUADRADO SAI TAMBÉM ONDE NÃO HÁ ESTADO NENHUM (28.08.2026, regra 2).
+      Uma peça cujo valor é uma marca da fonte («N.d.») não tem estado: o limiar
+      existe, o valor é que não. `estado` chega a nulo, `palavra` fica a nulo, e
+      o quadrado sai com ela — as duas condições são a mesma, e por isso a
+      segunda escreve-se aqui e não como um caso à parte. */}
+  {palavra && (
+    <div class="peca-topo">
+      {estado !== 'sem' && <span class={`sq sq-${marca}`} aria-hidden="true"></span>}
       <span class:list={['peca-palavra', pintado && `est-${estado}`]}>{palavra}</span>
-    )}
-  </div>
+    </div>
+  )}
   {
     limiar && (
       <p class="peca-limiar">

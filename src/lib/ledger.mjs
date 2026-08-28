@@ -639,13 +639,116 @@ export function digitsOf(s) {
   return String(s).replace(/\D+/g, '');
 }
 
+/* ------------------------------------------------- valores que não são números */
+
+/**
+ * ===========================================================================
+ * AS MARCAS QUE UMA FONTE IMPRIME NO LUGAR DE UM NÚMERO (28.08.2026, regra 2)
+ * ===========================================================================
+ *
+ * O diretor decidiu, a 28.08.2026: **quando a fonte imprime «N.d.», a página
+ * mostra «N.d.», com selo**. É o valor tal como a fonte o publicou, e não uma
+ * ausência da casa: a lista anual da Direção-Geral das Autarquias Locais tem,
+ * para nove concelhos, a célula do prazo médio de pagamento preenchida com essa
+ * marca, e para Penedono as duas colunas da dívida.
+ *
+ * ISTO É UMA LISTA FECHADA, E É A RAZÃO DE ELA EXISTIR. Sem lista, a regra
+ * seria «um valor sem algarismos é aceite», e uma linha com prosa no lugar do
+ * valor passava a ser legítima; era exactamente essa a regra que a conferência
+ * 3 do validador existia para impor («"value" não contém nenhum algarismo»). A
+ * porta que se abre tem a largura de uma marca, e a marca vai escrita, com a
+ * fonte que a imprime, como um marcador de `VOZ-MARCADORES.md` ou uma entrada
+ * do `ledger/allowlist.yml`. No dia em que outra fonte imprimir outra marca,
+ * alguém a escreve aqui de propósito, e a construção fecha até lá.
+ *
+ * O que a marca NÃO é: não é zero, não é «sem linha» e não se traduz. Não é
+ * zero porque a fonte não mediu zero; não é «sem linha» porque a linha existe e
+ * tem proveniência, documento e data de acesso como qualquer outra; e não se
+ * traduz porque é texto impresso pela fonte, e a edição inglesa cita o mesmo
+ * texto que a portuguesa.
+ */
+export const VALORES_NAO_NUMERICOS = [
+  {
+    marca: 'N.d.',
+    razao:
+      'A Direção-Geral das Autarquias Locais imprime «N.d.» na célula de um município ' +
+      'cujo valor não determina. É o que a lista publica, e é o que a página cita.',
+  },
+];
+
+const MARCAS = new Set(VALORES_NAO_NUMERICOS.map((m) => m.marca));
+
+/**
+ * A marca que este valor é, ou `null` quando o valor não é uma marca.
+ *
+ * Compara-se a cadeia INTEIRA, depois de aparadas as pontas, e não uma parte
+ * dela: «N.d. (2024)» não é a marca, é outra coisa, e adivinhar o que ela seria
+ * é o contrário do que esta lista existe para fazer.
+ */
+export function marcaDoValor(value) {
+  if (typeof value !== 'string') return null;
+  const s = value.trim();
+  return MARCAS.has(s) ? s : null;
+}
+
+/**
+ * Um valor que não é um número simples e é uma marca publicada.
+ *
+ * É a pergunta que uma vista faz antes de comparar, de desenhar uma barra ou de
+ * escrever uma palavra de estado: com uma marca não há comparação nenhuma para
+ * fazer, e a peça mostra o valor e mais nada.
+ */
+export function eValorTextual(value) {
+  return parsePtNumber(value) === null && marcaDoValor(value) !== null;
+}
+
 /* --------------------------------------------------- avaliação de `check:` */
+
+/**
+ * O RESULTADO DE UMA EXPRESSÃO QUE TOCOU NUMA MARCA (28.08.2026, regra 2).
+ *
+ * `evaluateCheck` devolvia sempre um número, e atirava quando uma das entradas
+ * não era um número simples. Com o índice de dívida de Penedono, calculado
+ * sobre duas entradas que a fonte imprime «N.d.», isso deixa de servir: a
+ * receita não falha, **dá «N.d.»**, e a linha calculada tem de o poder dizer no
+ * seu próprio `check`.
+ *
+ * A regra da propagação é a de uma calculadora e não uma escolha da casa: uma
+ * operação com uma marca dá a marca. E é uma marca SÓ: se duas entradas
+ * trouxerem marcas diferentes, a expressão atira, porque não há resposta que
+ * não seja uma escolha entre elas.
+ */
+export class MarcaDaExpressao {
+  constructor(marca) {
+    this.marca = marca;
+  }
+  toString() {
+    return this.marca;
+  }
+}
+
+/** Uma operação sobre dois operandos, com a marca a passar por cima do número. */
+function operaComMarca(a, b, fn) {
+  const ma = a instanceof MarcaDaExpressao ? a.marca : null;
+  const mb = b instanceof MarcaDaExpressao ? b.marca : null;
+  if (ma && mb && ma !== mb) {
+    throw new Error(
+      `a expressão check junta duas marcas diferentes ("${ma}" e "${mb}"), e não há resultado ` +
+        `que não seja uma escolha entre elas`,
+    );
+  }
+  if (ma || mb) return new MarcaDaExpressao(ma ?? mb);
+  return fn(a, b);
+}
 
 /**
  * Avalia uma expressão de verificação.
  * Aceita: números, ids de afirmações, nomes de contagens, + - * / e parênteses.
  * Os operadores e os parênteses TÊM de estar separados por espaços — os ids
  * contêm hífenes, e sem essa regra "a - b" seria ambíguo.
+ *
+ * Devolve um número, ou uma `MarcaDaExpressao` quando alguma das linhas citadas
+ * publica uma marca no lugar do número (ver `VALORES_NAO_NUMERICOS`).
  */
 export function evaluateCheck(expr, { claims, env = COUNTS, selfId = null } = {}) {
   const bruto = String(expr).replace(/([(),])/g, ' $1 ');
@@ -665,6 +768,11 @@ export function evaluateCheck(expr, { claims, env = COUNTS, selfId = null } = {}
     if (!claim) throw new Error(`a expressão check refere "${token}", que não existe no livro-razão`);
     const n = parsePtNumber(claim.value);
     if (n === null) {
+      /* UMA MARCA NÃO É UM ERRO DE ESCRITA. Quando o valor é uma das marcas
+         declaradas, a expressão continua e leva a marca consigo; qualquer outra
+         coisa continua a fechar a construção, que é o que sempre fez. */
+      const marca = marcaDoValor(claim.value);
+      if (marca) return new MarcaDaExpressao(marca);
       throw new Error(`a expressão check refere "${token}", cujo valor "${claim.value}" não é um número simples`);
     }
     return n;
@@ -678,7 +786,10 @@ export function evaluateCheck(expr, { claims, env = COUNTS, selfId = null } = {}
       if (next() !== ')') throw new Error('falta um ) na expressão check');
       return v;
     }
-    if (t === '-') return -primary();
+    if (t === '-') {
+      const v = primary();
+      return v instanceof MarcaDaExpressao ? v : -v;
+    }
     /* `round ( x , n )` — acrescentado a 2026-08-13. Sem isto, uma linha
        derivada publicada com menos casas do que a divisão produz não podia ser
        verificada de todo: 30 800 / 39 900 × 100 = 77,19298…, e o valor publicado
@@ -696,6 +807,9 @@ export function evaluateCheck(expr, { claims, env = COUNTS, selfId = null } = {}
         throw new Error(`round( … , n ) precisa de um número inteiro de casas, não "${casas}"`);
       }
       if (next() !== ')') throw new Error('falta um ) a fechar round na expressão check');
+      /* Arredondar uma marca dá a marca: não há casas decimais numa coisa que a
+         fonte não mediu. */
+      if (v instanceof MarcaDaExpressao) return v;
       const f = Math.pow(10, Number(casas));
       return Math.sign(v) * Math.round(Math.abs(v) * f) / f;
     }
@@ -707,7 +821,7 @@ export function evaluateCheck(expr, { claims, env = COUNTS, selfId = null } = {}
     while (peek() === '*' || peek() === '/') {
       const op = next();
       const r = primary();
-      v = op === '*' ? v * r : v / r;
+      v = operaComMarca(v, r, (a, b) => (op === '*' ? a * b : a / b));
     }
     return v;
   }
@@ -717,7 +831,7 @@ export function evaluateCheck(expr, { claims, env = COUNTS, selfId = null } = {}
     while (peek() === '+' || peek() === '-') {
       const op = next();
       const r = term();
-      v = op === '+' ? v + r : v - r;
+      v = operaComMarca(v, r, (a, b) => (op === '+' ? a + b : a - b));
     }
     return v;
   }
@@ -827,8 +941,18 @@ export function validateLedger() {
     // 3 — valor e unidade
     if (typeof c.value !== 'string' || c.value.trim() === '') {
       errors.push(`${onde} "value" tem de ser uma string não vazia, com o valor tal como publicado.`);
-    } else if (!/\d/.test(c.value)) {
-      errors.push(`${onde} "value" ("${c.value}") não contém nenhum algarismo.`);
+    } else if (!/\d/.test(c.value) && marcaDoValor(c.value) === null) {
+      /* A PORTA TEM A LARGURA DE UMA MARCA (28.08.2026, regra 2). A regra era
+         «um valor sem algarismos não é um valor», e existe para recusar prosa no
+         lugar de um número. Continua a valer para tudo o que não seja uma das
+         marcas declaradas em `VALORES_NAO_NUMERICOS`, com a fonte que a imprime
+         escrita ao lado: «N.d.» é o que a Direção-Geral publica na célula de um
+         município cujo valor não determina, e citá-lo é publicar o que a fonte
+         publica. */
+      errors.push(
+        `${onde} "value" ("${c.value}") não contém nenhum algarismo e não é uma das marcas ` +
+          `publicadas (${VALORES_NAO_NUMERICOS.map((m) => `"${m.marca}"`).join(', ')}).`,
+      );
     }
     if (ausente(c.unit)) errors.push(`${onde} falta "unit".`);
 
@@ -1758,12 +1882,38 @@ export function validateLedger() {
     // 8 — reavaliação da aritmética
     if (!ausente(c.check)) {
       const publicado = parsePtNumber(c.value);
-      if (publicado === null) {
+      const marcaPublicada = marcaDoValor(c.value);
+      if (publicado === null && marcaPublicada === null) {
         errors.push(`${onde} tem "check" mas "value" ("${c.value}") não é um número simples.`);
       } else {
         try {
           const calculado = evaluateCheck(c.check, { claims, env, selfId: id });
-          if (Math.abs(calculado - publicado) > 1e-9) {
+          /* A RECEITA DÁ A MARCA, E A LINHA TEM DE A PUBLICAR (28.08.2026,
+             regra 2). O índice de dívida de Penedono é calculado sobre duas
+             entradas que a Direção-Geral imprime «N.d.»: a expressão continua a
+             ser reavaliada na construção, e o que ela devolve é a marca. Uma
+             linha calculada sobre uma marca **não** pode publicar um número, e
+             uma linha calculada sobre números não pode publicar uma marca: as
+             duas coisas são a mesma conferência vista dos dois lados, e as duas
+             fecham a construção. */
+          if (calculado instanceof MarcaDaExpressao) {
+            if (marcaPublicada !== calculado.marca) {
+              errors.push(
+                `${onde} a receita dá a marca "${calculado.marca}" e a linha publica ` +
+                  `"${c.value}".\n` +
+                  `    check: ${c.check}\n` +
+                  `    Uma entrada que a fonte imprime como marca faz da conta uma marca: ` +
+                  `a linha calculada diz o que a receita dá.`,
+              );
+            } else {
+              verificadas++;
+            }
+          } else if (publicado === null) {
+            errors.push(
+              `${onde} publica a marca "${c.value}" e a receita dá o número ${calculado}.\n` +
+                `    check: ${c.check}`,
+            );
+          } else if (Math.abs(calculado - publicado) > 1e-9) {
             errors.push(
               `${onde} a aritmética não bate certo.\n` +
                 `    check: ${c.check}\n` +

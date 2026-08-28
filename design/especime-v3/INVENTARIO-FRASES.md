@@ -133,9 +133,11 @@ página deixou de ter blocos de concelho. Contam-se assim:
   painel;
 * **quinze mudaram de rota, e estão agora na tabela de `/municipios/evora`**: as
   notas das oito medidas do concelho nas duas edições, «Évora», e as duas
-  palavras da ausência («sem linha ainda» e «no row yet»). Não saíram do sítio:
-  saíram da PRIMEIRA PÁGINA, onde eram uma segunda rendição da página do
-  concelho, e continuam a ler-se na página dele;
+  palavras da ausência («sem linha ainda» e «no row yet»). Não saíram do sítio
+  nesse dia: saíram da PRIMEIRA PÁGINA, onde eram uma segunda rendição da página
+  do concelho, e passaram a ler-se na página dele. **As duas palavras da ausência
+  saíram do sítio inteiro a 28.08.2026** (bloco `vazios`, regra 3 do diretor), e
+  estão declaradas `retirada` mais abaixo, com a razão;
 * **duas mudaram de texto**, e são a descrição acessível do mapa nas duas
   edições: perderam a terceira frase, «Toque num ponto para escolher o
   concelho.», que descrevia um gesto que a página deixou de fazer. Um ponto com
@@ -391,8 +393,8 @@ quem escreveu a página.*
 | conteudo | Who answers for what | até 2026-08-26 | viva | — |
 | conteudo | Who governed, and what the accounts recorded | até 2026-08-26 | viva | — |
 | conteudo | Who held each portfolio of the Câmara Municipal de Évora across five terms, how much the municipality’s own accounts spent in the areas those portfolios cover, and what the reports say those areas did. | até 2026-08-26 | viva | — |
-| conteudo | no row yet | até 2026-08-26 | viva | — |
-| conteudo | sem linha ainda | até 2026-08-26 | viva | — |
+| conteudo | no row yet | vazios | retirada | as duas palavras da ausência saíram do sítio (diretor, 28.08.2026, regra 3): depois de a execução da receita perder a peça (regra 1) e de as onze linhas que a fonte imprime «N.d.» passarem a mostrar o valor publicado (regra 2), nenhuma peça de concelho fica sem linha; e o campo «Decidiu» do mandato de 2017 a 2021 de Évora, que não tem valores nem nota, deixou de se render em vez de dizer a cadeia. A FORMA fica no código, para uma falta futura genuína (Emenda 14): a peça vazia continua escrita em `Peca.astro` e as duas cadeias continuam em `strings.mjs` |
+| conteudo | sem linha ainda | vazios | retirada | as duas palavras da ausência saíram do sítio (diretor, 28.08.2026, regra 3): depois de a execução da receita perder a peça (regra 1) e de as onze linhas que a fonte imprime «N.d.» passarem a mostrar o valor publicado (regra 2), nenhuma peça de concelho fica sem linha; e o campo «Decidiu» do mandato de 2017 a 2021 de Évora, que não tem valores nem nota, deixou de se render em vez de dizer a cadeia. A FORMA fica no código, para uma falta futura genuína (Emenda 14): a peça vazia continua escrita em `Peca.astro` e as duas cadeias continuam em `strings.mjs` |
 | conteudo | Évora | até 2026-08-26 | viva | — |
 
 ## `/correcoes` · `/en/corrections` (etapa 4, subetapa 4a)
