@@ -446,13 +446,23 @@ def enquadra(caixa, alvo=SINAL):
 
 
 def svg(titulo, corpo, favicon, nota="", caixa=None, caixa_favicon=None, cores=None,
-        letra=None, caixa_letra=None):
+        letra=None, caixa_letra=None, com_campo=True):
+    """O esqueleto de um SVG de direção.
+
+    `com_campo` a falso tira o rectângulo de fundo, e existe por causa do
+    aditamento à quinta adenda: um ícone de telemóvel tem sempre campo, porque o
+    sistema lhe recorta um quadrado, mas no cabeçalho o sinal assenta no papel
+    do sítio e um campo ali é uma moldura. O ficheiro sem campo serve o
+    cabeçalho, e o `maskable` dele não quer dizer nada, o que fica dito aqui em
+    vez de se descobrir depois.
+    """
+    fundo = (f'\n  <rect class="campo" x="0" y="0" width="{CAMPO}" height="{CAMPO}"/>'
+             if com_campo else "")
     return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {CAMPO} {CAMPO}" \
 width="{CAMPO}" height="{CAMPO}" role="img" aria-label="{titulo}">
   <title>{titulo}</title>
   <desc>{nota}</desc>
-  <style>{estilo(cores)}  </style>
-  <rect class="campo" x="0" y="0" width="{CAMPO}" height="{CAMPO}"/>
+  <style>{estilo(cores)}  </style>{fundo}
   <g class="reducao">
     <g class="sinal"{enquadra(caixa) if caixa else ""}>
 {corpo}
@@ -1819,7 +1829,7 @@ def palavra_caligrafica(v, x, base):
 # abertura; tirar a barra dá um «o». É a única das sete em que as duas letras do
 # nome são a mesma forma.
 def e_minusculo(cx, cy, r, grossura, abertura=(-58.0, -8.0), barra=0.0,
-                sai=0.0, barra_classe="tinta"):
+                sai=0.0, barra_classe="tinta", sai_dir=None):
     """A banda, e a barra que faz dela um «e».
 
     `abertura` são os dois ângulos onde a circunferência está cortada (0 graus é
@@ -1827,11 +1837,20 @@ def e_minusculo(cx, cy, r, grossura, abertura=(-58.0, -8.0), barra=0.0,
     `sai` é o quanto ela passa para fora do anel, de cada lado, em raios: a 0
     fica dentro, como num «e» de tipo; acima de 0 atravessa, como a linha de uma
     régua.
+
+    `sai_dir` separa os dois lados, e foi a quinta adenda que o obrigou a
+    existir. A pergunta dela é a do «€», e o que faz um «€» não é uma barra a
+    sair: é uma barra a sair DOS DOIS LADOS de um bojo aberto, duas vezes. Com
+    os dois lados separados pode-se ter a linha da régua a sair só do lado
+    FECHADO, e aí a simetria que faz a leitura de moeda desaparece. A ausência
+    devolve o valor de `sai`, e por isso nada do que estava escrito muda.
     """
+    if sai_dir is None:
+        sai_dir = sai
     r_int = r - grossura
     d = banda_de_arco(cx, cy, r, r_int, abertura[1], abertura[0])
     x0 = cx - r - sai * r
-    x1 = cx + r * math.cos(math.radians(abertura[1])) + sai * r
+    x1 = cx + r * math.cos(math.radians(abertura[1])) + sai_dir * r
     barra_d = rect(x0, cy - barra / 2, x1, cy + barra / 2)
     return ([("nonzero", "tinta", d), ("nonzero", barra_classe, barra_d)],
             (min(x0, cx - r), cy - r, max(x1, cx + r), cy + r))
@@ -2155,6 +2174,308 @@ def direcao_18():
                caixa=caixa, caixa_favicon=cf, cores=PALETA_18)
 
 
+# ---------------------------------------------------------------------------
+# A QUINTA ADENDA · O «e», REFINADO
+# ---------------------------------------------------------------------------
+# A adenda faz três perguntas sobre o «e» do diretor, e cada uma é uma variante
+# desenhada e medida, e não uma opinião:
+#
+#   1 · A BARRA. A que atravessa e sai do anel (a linha da régua, que é o que a
+#       sétima voz tem hoje) e a que acaba no bojo (a travessa de um «e» de
+#       tipo). A pergunta é a do «€»: aquele sinal tem DUAS barras e o bojo
+#       ABERTO; o nosso tem uma barra e o bojo fechado, mas a associação é o
+#       risco, e o risco vê-se, não se argumenta.
+#   2 · O CORTE. Três frações tiradas ao anel, com a corrida mínima medida a 60
+#       e a 16 px em cada uma.
+#   3 · A COR. Âmbar em campo de tinta (o ícone escuro, que é o de hoje) e ocre
+#       em papel (o caso de campo claro, que é o que a marca horizontal já
+#       obriga a usar, porque o âmbar sobre papel mede 2,09:1).
+#
+# O CORTE CONTA-SE DA BARRA, E NÃO DO ÂNGULO DO FICHEIRO. A banda acaba a -6
+# graus, e a barra, que tem 42 de grossura num raio de 150, ocupa de -8,05 a
+# +8,05 graus no raio de fora: a barra COME a ponta de cima da banda. Quem olha
+# não vê os 50 graus que a constante diz: vê o canto de baixo da barra em cima e
+# a ponta da banda em baixo. Dizer «50 graus» seria dizer o número do ficheiro e
+# não o número que se vê, e por isso o que aqui se diz é a abertura à vista.
+ANG_BARRA_E = math.degrees(math.asin((BARRA_E / 2) / R_E))   # 8,05 graus
+
+# Os três cortes, dados pela ponta de BAIXO da banda. A de cima é sempre -6, e é
+# sempre a barra que a tapa.
+CORTES_E = {
+    "estreito": -40.0,
+    "medio": ABERTURA_E[0],     # -56, o de hoje
+    "largo": -70.0,
+}
+
+
+def abertura_vista(corte):
+    """Os graus de anel que faltam, contados da barra à ponta de baixo."""
+    return abs(corte) - ANG_BARRA_E
+
+
+PALETA_E_TINTA = PALETA_18                                    # âmbar em campo de tinta
+PALETA_E_PAPEL = paleta(PAPEL, OCRE, OCRE, campo_escuro=PAPEL_ESCURO,
+                        letra_escura=AMBAR, acento_escuro=AMBAR)
+# O ocre `#7a5300` sobre papel mede 6,37:1 e passa os dois limiares; sobre papel
+# ESCURO mede 2,62:1 e não passa nenhum. Por isso a variante de campo claro
+# troca para o âmbar no tema escuro, que é exatamente o que `tokens.css` faz com
+# a palavra do estado. Não é uma decisão nova: é a folha de estilos do sítio.
+
+
+# A paleta do ficheiro sem campo: o «campo» nunca se desenha, e por isso o que
+# ele diz é indiferente; o que conta é a letra, ocre em papel claro e âmbar em
+# papel escuro, que é o que `tokens.css` já manda.
+PALETA_E_PAPEL_SO_LETRA = PALETA_E_PAPEL
+
+
+def _e_direcao(titulo, nota, corte, sai, cores, alarga_favicon=6.0, sai_dir=None):
+    """Uma variante do «e»: o corte, a barra, e o par de cores.
+
+    O DESENHO DE 32 E 16 PX ALARGA O CORTE, E NÃO O FECHA, e isto é uma correção
+    ao que a sétima voz fazia. O ficheiro de 28.08 de manhã engrossava a banda
+    16 % e fechava a abertura de 50 para 42 graus. Engrossar a banda já fecha a
+    abertura por dentro (o raio de dentro cresce); fechar também o ângulo fecha-a
+    duas vezes, e o que morre a 16 px é justamente o buraco que distingue um «e»
+    de um «o». A regra passou a ser a contrária, e está medida na §6 bis: banda
+    16 % mais grossa, barra 14 % mais grossa, e o corte ALARGADO 6 graus.
+    """
+    partes, caixa = e_minusculo(CENTRO, CENTRO, R_E, G_E, abertura=(corte, ABERTURA_E[1]),
+                                barra=BARRA_E, sai=sai, sai_dir=sai_dir)
+    corpo = _com(
+        f"O «e»: banda de {G_E:.0f} num raio de {R_E:.0f} (grossura 0,31 do raio),\n"
+        f"cortada de {corte:.0f} a {ABERTURA_E[1]:.0f} graus, o que dá "
+        f"{abertura_vista(corte):.0f} graus\n"
+        f"de abertura à vista, porque a barra tapa {ANG_BARRA_E:.1f} graus da ponta de cima.\n"
+        f"A barra tem {BARRA_E:.0f} e "
+        + ("acaba no bojo dos dois lados: é a travessa de um «e» de tipo."
+           if not sai and not (sai_dir or 0)
+           else (f"sai {sai:.2f} raios só à ESQUERDA, do lado fechado, e à direita\n"
+                 "acaba no bojo: a linha da régua sem a simetria do «€»."
+                 if sai and sai_dir == 0.0
+                 else f"sai {sai:.2f} raios para fora de cada lado: é a linha da régua."))) \
+        + caminhos(partes)
+    pf, cf = e_minusculo(CENTRO, CENTRO, R_E, G_E * 1.16,
+                         abertura=(corte - alarga_favicon, ABERTURA_E[1]),
+                         barra=BARRA_E * 1.14, sai=sai, sai_dir=sai_dir)
+    favicon = _com(
+        "32 e 16 px: a mesma forma, com a banda 16 % e a barra 14 % mais grossas,\n"
+        f"e o corte ALARGADO {alarga_favicon:.0f} graus. Engrossar a banda já fecha a\n"
+        "abertura por dentro; fechar também o ângulo fechava-a duas vezes.") + caminhos(pf)
+    return svg(titulo, corpo, favicon, nota, caixa=caixa, caixa_favicon=cf, cores=cores)
+
+
+def direcao_18b():
+    """A barra a acabar no bojo: um «e» minúsculo de tipo, sem a linha da régua."""
+    return _e_direcao("Voz 7b · o «e», barra dentro do bojo",
+                      "A travessa acaba no bojo: é um «e» e nada mais.",
+                      CORTES_E["medio"], 0.0, PALETA_E_TINTA)
+
+
+def direcao_18c():
+    """O corte estreito, com a barra a atravessar."""
+    return _e_direcao("Voz 7c · o «e», corte estreito",
+                      "O mesmo «e» com 32 graus de abertura à vista.",
+                      CORTES_E["estreito"], SAI_E, PALETA_E_TINTA)
+
+
+def direcao_18d():
+    """O corte largo, com a barra a atravessar."""
+    return _e_direcao("Voz 7d · o «e», corte largo",
+                      "O mesmo «e» com 62 graus de abertura à vista.",
+                      CORTES_E["largo"], SAI_E, PALETA_E_TINTA)
+
+
+def direcao_18e():
+    """O corte estreito, com a barra dentro do bojo."""
+    return _e_direcao("Voz 7e · o «e», barra dentro e corte estreito",
+                      "A travessa no bojo, com 32 graus de abertura à vista.",
+                      CORTES_E["estreito"], 0.0, PALETA_E_TINTA)
+
+
+def direcao_18f():
+    """O corte largo, com a barra dentro do bojo."""
+    return _e_direcao("Voz 7f · o «e», barra dentro e corte largo",
+                      "A travessa no bojo, com 62 graus de abertura à vista.",
+                      CORTES_E["largo"], 0.0, PALETA_E_TINTA)
+
+
+def direcao_18i():
+    """A barra a sair só à esquerda: a linha da régua sem a simetria do «€».
+
+    É a variante que a folha obrigou a desenhar. As duas que a adenda nomeia
+    trocam uma coisa pela outra: a barra que atravessa é a única que diz «régua»
+    e é a que se parece com o «€»; a barra que fica no bojo lê-se sem hesitação
+    e não diz nada do sítio. O que faz a leitura de moeda não é uma barra a
+    sair: é uma barra a sair DOS DOIS LADOS, duas vezes, de um bojo aberto.
+    Tirando a saída do lado da abertura fica a linha a entrar na letra por um
+    lado só, e a forma deixa de ser simétrica na horizontal.
+    """
+    return _e_direcao("Voz 7i · o «e», barra só à esquerda",
+                      "A linha da régua entra na letra por um lado só.",
+                      CORTES_E["medio"], SAI_E, PALETA_E_TINTA, sai_dir=0.0)
+
+
+def direcao_18j():
+    """A mesma, em ocre sobre papel: o caso de campo claro."""
+    return _e_direcao("Voz 7j · o «e» ocre em papel, barra só à esquerda",
+                      "O caso de campo claro, com a linha por um lado só.",
+                      CORTES_E["medio"], SAI_E, PALETA_E_PAPEL, sai_dir=0.0)
+
+
+def direcao_18k():
+    """A 18i com a regra ANTIGA do favicon, e existe só para uma pergunta.
+
+    Não é uma variante a escolher: é o par de controlo. A sétima voz de 28.08 de
+    manhã FECHAVA o corte no desenho de 32 e 16 px (de -56 para -52 graus); esta
+    adenda passou a ALARGÁ-LO 6 graus, e a razão é que engrossar a banda já
+    fecha a abertura por dentro. Para que a comparação seja de uma coisa só, a
+    18k tem a geometria da 18i e a regra velha, e a diferença medida a 16 px é
+    da regra e de mais nada. É o mesmo papel que a 14b teve na ronda das vozes.
+    """
+    return _e_direcao("Voz 7k · a 7i com o favicon fechado (par de controlo)",
+                      "A mesma forma com a regra velha do favicon: o corte fechado.",
+                      CORTES_E["medio"], SAI_E, PALETA_E_TINTA,
+                      alarga_favicon=-4.0, sai_dir=0.0)
+
+
+def direcao_18g():
+    """O par de campo claro: «e» ocre em papel, com a barra a atravessar."""
+    return _e_direcao("Voz 7g · o «e» ocre em papel",
+                      "O caso de campo claro: ocre sobre papel, 6,37:1.",
+                      CORTES_E["medio"], SAI_E, PALETA_E_PAPEL)
+
+
+def direcao_18h():
+    """O par de campo claro, com a barra dentro do bojo."""
+    return _e_direcao("Voz 7h · o «e» ocre em papel, barra dentro",
+                      "O caso de campo claro, com a travessa no bojo.",
+                      CORTES_E["medio"], 0.0, PALETA_E_PAPEL)
+
+
+# ---------------------------------------------------------------------------
+# O «e» MÍNIMO (o aditamento à quinta adenda: «mais limpo, mais minimalista»)
+# ---------------------------------------------------------------------------
+# O gabinete voltou com as palavras do diretor: o sinal «devia ser muito mais
+# limpo, muito mais minimalista». O que isso quer dizer, dito em desenho e não
+# em adjetivos, e é isto que o `e_minimo` obedece:
+#
+#   · UMA FORMA E UMA GROSSURA SÓ. A circunferência, o corte, e a barra. A barra
+#     tem exatamente a grossura do anel, e não 0,91 dela como tinha.
+#   · A BARRA NÃO É UM SEGUNDO OBJETO. Não sai do anel de lado nenhum, e as
+#     quatro pontas dela pousam na própria circunferência: os remates são cordas
+#     do círculo. Assim a silhueta não tem saliência nenhuma, e não há a
+#     pergunta do «€», que era toda ela sobre uma barra a sair dos dois lados.
+#   · O CORTE COMEÇA ONDE A BARRA ACABA. O ângulo de cima da banda deixou de ser
+#     um número escolhido (-6 graus) e passou a ser calculado: é o ângulo onde a
+#     face de baixo da barra encontra a circunferência de fora. Antes a barra
+#     TAPAVA a ponta da banda, o que é uma junta escondida; agora não há junta,
+#     porque as duas peças acabam na mesma linha.
+#   · SEM CONTORNO, SEM SEGUNDA COR, SEM MOLDURA, E O MESMO DESENHO A TODOS OS
+#     TAMANHOS. As outras direções têm um segundo desenho para 32 e 16 px, com a
+#     banda engrossada. Estas não têm, de propósito: «uma forma, nada
+#     acrescentado» quer dizer que o favicon é o mesmo desenho, e a medição a 16
+#     px passa a responder à pergunta que o gabinete faz, que é qual é a
+#     grossura mais fina que sobrevive.
+#
+# A GROSSURA CONTA-SE EM DIÂMETROS, e é preciso dizer o que estava lá antes,
+# porque o aditamento diz que «a atual é mais pesada» do que 12 a 16 %: a banda
+# da sétima voz mede 46 num diâmetro de 300, ou seja 15,3 % do diâmetro. Já
+# estava dentro do intervalo pedido, no topo dele. Para o desenho ser de facto
+# mais leve, as grossuras aqui vão de 16 % a 10 %, e a mais fina está abaixo do
+# que o aditamento pede, para que o limite se veja e não se suponha.
+GROSSURAS_MINIMAS = [0.16, 0.14, 0.12, 0.10]
+G_MINIMO = 0.14       # a grossura recomendada: a mais fina que sobrevive aos 16 px
+CORTE_MINIMO = -56.0  # a mesma ponta de baixo de sempre
+
+
+def e_minimo(cx, cy, r, g_diametro, corte=CORTE_MINIMO, classe="tinta"):
+    """O «e» mínimo: a circunferência, o corte, a barra. Uma grossura só.
+
+    `g_diametro` é a grossura em fração do DIÂMETRO, que é como o aditamento a
+    pede e como se compara com a haste de um tipo. Devolve `(partes, caixa)`
+    como as outras peças deste ficheiro.
+    """
+    g = g_diametro * 2 * r
+    meia = g / 2
+    # a corda onde a face da barra encontra a circunferência de fora: é ela que
+    # dá o comprimento da barra E o ângulo onde a banda acaba, para não haver
+    # junta entre as duas peças.
+    dx = math.sqrt(max(r * r - meia * meia, 0.0))
+    topo = -math.degrees(math.asin(meia / r))
+    banda = banda_de_arco(cx, cy, r, r - g, topo, corte)
+    barra = rect(cx - dx, cy - meia, cx + dx, cy + meia)
+    return ([("nonzero", classe, banda), ("nonzero", classe, barra)],
+            (cx - r, cy - r, cx + r, cy + r))
+
+
+def abertura_minima(g_diametro, corte=CORTE_MINIMO):
+    """Os graus de anel que faltam, da face da barra à ponta de baixo."""
+    return abs(corte) - math.degrees(math.asin(g_diametro))
+
+
+def _e_minimo_direcao(titulo, nota, g, cores, com_campo=True, corte=CORTE_MINIMO):
+    partes, caixa = e_minimo(CENTRO, CENTRO, R_E, g, corte)
+    corpo = _com(
+        f"O «e» mínimo: uma grossura só, {g * 100:.0f} % do diâmetro\n"
+        f"({g * 2 * R_E:.1f} num diâmetro de {2 * R_E:.0f}). A barra tem a MESMA grossura do\n"
+        f"anel e acaba na circunferência: os remates são cordas do círculo, e por isso\n"
+        "a silhueta não tem saliência nenhuma. O corte começa onde a barra acaba\n"
+        f"({abertura_minima(g, corte):.0f} graus de abertura à vista), e não há junta escondida.\n"
+        "O mesmo desenho a todos os tamanhos: não há segundo desenho para o favicon.") \
+        + caminhos(partes)
+    return svg(titulo, corpo, corpo, nota, caixa=caixa, caixa_favicon=caixa,
+               cores=cores, com_campo=com_campo)
+
+
+def direcao_18m():
+    """O «e» mínimo, grossura 16 % do diâmetro."""
+    return _e_minimo_direcao("Voz 7m · o «e» mínimo, 16 %",
+                             "Uma grossura só, 16 % do diâmetro.",
+                             0.16, PALETA_E_TINTA)
+
+
+def direcao_18n():
+    """O «e» mínimo, grossura 14 % do diâmetro."""
+    return _e_minimo_direcao("Voz 7n · o «e» mínimo, 14 %",
+                             "Uma grossura só, 14 % do diâmetro.",
+                             0.14, PALETA_E_TINTA)
+
+
+def direcao_18o():
+    """O «e» mínimo, grossura 12 % do diâmetro."""
+    return _e_minimo_direcao("Voz 7o · o «e» mínimo, 12 %",
+                             "Uma grossura só, 12 % do diâmetro.",
+                             0.12, PALETA_E_TINTA)
+
+
+def direcao_18p():
+    """O «e» mínimo, grossura 10 % do diâmetro: abaixo do que o aditamento pede."""
+    return _e_minimo_direcao("Voz 7p · o «e» mínimo, 10 %",
+                             "Uma grossura só, 10 % do diâmetro.",
+                             0.10, PALETA_E_TINTA)
+
+
+def direcao_18q():
+    """O «e» mínimo em ocre sobre papel: o caso de campo claro."""
+    return _e_minimo_direcao("Voz 7q · o «e» mínimo, ocre em papel",
+                             "O caso de campo claro: ocre sobre papel, 6,37:1.",
+                             G_MINIMO, PALETA_E_PAPEL)
+
+
+def direcao_18r():
+    """O sinal sozinho, sem campo nenhum: é assim que ele entra no cabeçalho.
+
+    Um ícone de telemóvel tem sempre campo, porque o sistema lhe recorta um
+    quadrado. Um cabeçalho não: ali o sinal assenta no papel do sítio, e o campo
+    seria uma moldura, que é justamente o que o aditamento manda tirar. Este
+    ficheiro é o mesmo desenho sem o rectângulo de fundo, e serve o cabeçalho e
+    mais nada.
+    """
+    return _e_minimo_direcao("Voz 7r · o «e» mínimo, sem campo",
+                             "O sinal sozinho, para o cabeçalho: sem campo e sem moldura.",
+                             G_MINIMO, PALETA_E_PAPEL_SO_LETRA, com_campo=False)
+
+
 DIRECOES = [
     ("1-ligadura-oe", direcao_a),
     ("2-o-acento", direcao_b),
@@ -2176,6 +2497,24 @@ DIRECOES = [
     ("16-condensada-estado", direcao_16),
     ("17-caligrafica-estado", direcao_17),
     ("18-e-minuscula", direcao_18),
+    # a quinta adenda: as variantes do «e»
+    ("18b-e-barra-dentro", direcao_18b),
+    ("18c-e-corte-estreito", direcao_18c),
+    ("18d-e-corte-largo", direcao_18d),
+    ("18e-e-dentro-estreito", direcao_18e),
+    ("18f-e-dentro-largo", direcao_18f),
+    ("18g-e-ocre-papel", direcao_18g),
+    ("18h-e-ocre-dentro", direcao_18h),
+    ("18i-e-barra-esquerda", direcao_18i),
+    ("18j-e-ocre-esquerda", direcao_18j),
+    ("18k-e-favicon-fechado", direcao_18k),
+    # o aditamento: o «e» mínimo, uma grossura só
+    ("18m-e-minimo-16", direcao_18m),
+    ("18n-e-minimo-14", direcao_18n),
+    ("18o-e-minimo-12", direcao_18o),
+    ("18p-e-minimo-10", direcao_18p),
+    ("18q-e-minimo-ocre", direcao_18q),
+    ("18r-e-minimo-sem-campo", direcao_18r),
 ]
 
 
@@ -2631,27 +2970,52 @@ def lockup_da_voz(slug, classe, acento, altura=100.0, menor=0.66, espaco=0.26):
             + "\n".join(pecas) + "\n</svg>")
 
 
-def lockup_do_e(classe, acento, altura=100.0, minusculas=False):
-    """A marca horizontal da sétima voz: o «e» ao lado do nome.
+def lockup_do_e(classe, acento, altura=100.0, minusculas=False, corte=None,
+                sai=SAI_E, sai_dir=None, diam=1.24, espaco=0.42, minimo=None):
+    """A marca horizontal do «e»: o sinal ao lado do nome, o nome em Spectral.
 
-    Duas leituras, e a adenda pede as duas: o nome com as maiúsculas que a casa
-    lhe dá («O Estado do País»), e o nome todo em minúsculas («o estado do
-    país»), que é o que a forma do sinal sugere.
+    Duas leituras, e a adenda das vozes pede as duas: o nome com as maiúsculas
+    que a casa lhe dá («O Estado do País»), e o nome todo em minúsculas («o
+    estado do país»), que é o que a forma do sinal sugere.
+
+    O QUE A QUINTA ADENDA MUDOU AQUI, e são duas coisas medidas e não de gosto.
+
+    · O «e» ASSENTA NA LINHA DE BASE. Estava centrado a meia altura de
+      maiúscula com raio 0,62 dessa altura, o que o fazia descer 0,12 abaixo da
+      base: ao lado de um nome sem descendentes, o sinal ficava pendurado. Agora
+      o centro está a um raio da base, e o anel pousa nela.
+    · O NOME LEVA O ESPACEJAMENTO DO SÍTIO. Usava `contorno` directo, sem
+      aperto; passou a usar `caminho_do_nome`, que aplica o `letter-spacing:
+      -0.014em` de `.wordmark`. Um cabeçalho a 1:1 com outro espacejamento não é
+      um cabeçalho a 1:1.
+
+    `diam` é o diâmetro do anel em alturas de maiúscula do nome: a 1,24 (o valor
+    com que a sétima voz nasceu) o «e» passa das maiúsculas; a 1,00 fica à
+    altura delas, que é a âncora B das notas anteriores. `minimo`, se vier,
+    desenha o «e» mínimo do aditamento com essa grossura em frações do diâmetro,
+    em vez do «e» de banda e barra separadas.
+
+    O espaço entre o sinal e o nome subiu de 0,30 para 0,42 da altura de
+    maiúscula depois de se ver a marca a 1:1: com 0,30, o anel e o «O» ficavam
+    quase encostados, e duas formas redondas encostadas leem-se como uma só.
     """
-    sys.path.insert(0, AQUI)
-    from glifos import contorno
     texto = "o estado do país" if minusculas else "O Estado do País"
-    d, largura, _, _ = contorno(SPECTRAL_RG, texto, altura)
-    x0, y0, x1, y1 = caixa_do_caminho(d)
-    r = altura * 0.62
-    partes, cxe = e_minusculo(r, -altura * 0.5, r, r * (G_E / R_E),
-                              abertura=ABERTURA_E, barra=r * (BARRA_E / R_E), sai=SAI_E)
+    d, (x0, y0, x1, y1) = caminho_do_nome(texto, altura=altura)
+    r = altura * diam / 2
+    if minimo:
+        partes, cxe = e_minimo(r, -r, r, minimo,
+                               CORTE_MINIMO if corte is None else corte)
+    else:
+        partes, cxe = e_minusculo(r, -r, r, r * (G_E / R_E),
+                                  abertura=(ABERTURA_E[0] if corte is None else corte,
+                                            ABERTURA_E[1]),
+                                  barra=r * (BARRA_E / R_E), sai=sai, sai_dir=sai_dir)
     corpo = (caminhos(partes, indent="    ")
              .replace('class="tinta"', f'class="{acento}"'))
-    dx = cxe[2] - cxe[0] + altura * 0.30
-    vb = (f"{n(cxe[0])} {n(min(cxe[1], y0))} {n(dx + largura - cxe[0])} "
-          f"{n(max(cxe[3], y1) - min(cxe[1], y0))}")
-    return (f'<svg viewBox="{vb}" role="img" aria-label="O Estado do País">\n'
+    dx = cxe[2] + altura * espaco - x0
+    cima, baixo = min(cxe[1], y0), max(cxe[3], y1)
+    vb = (f"{n(cxe[0])} {n(cima)} {n(dx + x1 - cxe[0])} {n(baixo - cima)}")
+    return (f'<svg viewBox="{vb}" role="img" aria-label="{texto}">\n'
             + corpo + f'\n  <g transform="translate({n(dx)} 0)">'
             f'<path class="{classe}" d="{d}"/></g>\n</svg>')
 
@@ -2984,6 +3348,322 @@ em <code>design/marca/ECRA-VOZES.png</code>; aqui está reduzido para caber.</p>
 <img class="larga" src="{_b64_png(caminho)}" width="{w // 4}" height="{h // 4}" alt="">"""
 
 
+def _euro_b64(lado, campo=TINTA, letra=AMBAR):
+    import io
+    buf = io.BytesIO()
+    _euro_png(lado, campo, letra).save(buf, format="PNG")
+    return "data:image/png;base64," + base64.b64encode(buf.getvalue()).decode()
+
+
+# As variantes que a quinta adenda põe em cima da mesa, e o que cada uma é.
+ADENDA5_BARRAS = [
+    ("18-e-minuscula", "a barra ATRAVESSA", "os dois lados, como está hoje"),
+    ("18i-e-barra-esquerda", "a barra sai SÓ À ESQUERDA", "do lado fechado"),
+    ("18b-e-barra-dentro", "a barra fica DENTRO", "um «e» de tipo"),
+]
+ADENDA5_CORTES = [
+    ("18c-e-corte-estreito", "32 graus", "atravessa"),
+    ("18-e-minuscula", "48 graus", "atravessa"),
+    ("18d-e-corte-largo", "62 graus", "atravessa"),
+    ("18e-e-dentro-estreito", "32 graus", "dentro"),
+    ("18b-e-barra-dentro", "48 graus", "dentro"),
+    ("18f-e-dentro-largo", "62 graus", "dentro"),
+]
+ADENDA5_REGUA = ["18-e-minuscula", "18i-e-barra-esquerda", "18b-e-barra-dentro",
+                 "18c-e-corte-estreito", "18d-e-corte-largo",
+                 "18e-e-dentro-estreito", "18f-e-dentro-largo",
+                 "18k-e-favicon-fechado"]
+
+
+def _fila_de_medidas(slug):
+    ficha = {f[0]: f for f in FAMILIA_E}[slug]
+    _, corte, sai, corte_fav, sai_dir = ficha
+    return corte, corte_fav
+
+
+def _cel_e(slug, nome, px, legenda, escala=1, ampliado=False):
+    chao = "chao lupa" if ampliado else "chao"
+    px_classe = ' class="px"' if ampliado else ""
+    return (f'<figure><span class="{chao}"><img{px_classe} '
+            f'src="{_png(slug, nome)}" width="{px * escala}" height="{px * escala}" alt="">'
+            f'</span><figcaption>{legenda}</figcaption></figure>')
+
+
+ADENDA5_MINIMAS = [
+    ("18m-e-minimo-16", "16 %", "o topo do que o aditamento pede"),
+    ("18n-e-minimo-14", "14 %", "a mais fina que sobrevive aos 16 px"),
+    ("18o-e-minimo-12", "12 %", "o fundo do que o aditamento pede"),
+    ("18p-e-minimo-10", "10 %", "abaixo do pedido, para o limite se ver"),
+]
+
+# A haste do Spectral Regular, medida no ficheiro da casa e registada na §8 das
+# NOTAS: 68,9 em 1000 de em, com a altura de maiúscula a 660. Em frações da
+# altura de maiúscula, 0,104. É com este número que se responde ao «uma
+# espessura só» do aditamento quando o sinal está ao lado do nome.
+HASTE_SPECTRAL = 68.9 / 660.0
+
+
+def bloco_adenda5():
+    """A folha da quinta adenda e do aditamento: a barra, o corte, a grossura, a cor.
+
+    Cada número que aqui aparece foi lido do PNG por `_medida_e` no momento em
+    que a folha se escreveu. Não há aqui um número escrito à mão.
+    """
+    filas_barra = []
+    for slug, titulo, nota in ADENDA5_BARRAS:
+        filas_barra.append(f"""
+    <p class="fina" style="margin-top:18px"><strong>{titulo}</strong> · {nota}
+    · <code>{slug}</code></p>
+    <div class="fila">
+      {_cel_e(slug, "180", 180, "180")}
+      {_cel_e(slug, "60", 60, "60 · o juízo")}
+      {_cel_e(slug, "60", 60, "60, ampliado 4x", 4, True)}
+      {_cel_e(slug, "16", 16, "16")}
+      {_cel_e(slug, "16", 16, "16, ampliado 8x", 8, True)}
+    </div>""")
+
+    def _cel_euro(px, esc, leg):
+        px_classe = ' class="px"' if esc > 1 else ""
+        return (f'<figure><span class="chao"><img{px_classe} src="{_euro_b64(px // esc)}" '
+                f'width="{px}" height="{px}" alt=""></span>'
+                f'<figcaption>{leg}</figcaption></figure>')
+
+    euro = _cel_euro(60, 1, "60") + _cel_euro(480, 8, "60, ampliado 8x")
+    nosso = "".join(
+        f'<figure><span class="chao"><img src="{_png(slug, "60")}" width="480" '
+        f'height="480" class="px" alt=""></span><figcaption>{leg}<br>60, ampliado 8x'
+        f'</figcaption></figure>'
+        for slug, leg in (("18-e-minuscula", "a barra atravessa"),
+                          ("18i-e-barra-esquerda", "só à esquerda"),
+                          ("18n-e-minimo-14", "o «e» mínimo (a barra acaba no anel)")))
+
+    filas_corte = "".join(
+        f'<figure><span class="chao"><img src="{_png(slug, "60")}" width="240" '
+        f'height="240" class="px" alt=""></span><figcaption>{graus} · {barra}<br>'
+        f'60, ampliado 4x</figcaption></figure>'
+        for slug, graus, barra in ADENDA5_CORTES)
+    filas_corte_16 = "".join(
+        f'<figure><span class="chao lupa"><img src="{_png(slug, "16")}" width="128" '
+        f'height="128" class="px" alt=""></span><figcaption>{graus} · {barra}<br>'
+        f'16, ampliado 8x</figcaption></figure>'
+        for slug, graus, barra in ADENDA5_CORTES)
+
+    def _linha_regua(slug, rotulo):
+        corte, corte_fav = _fila_de_medidas(slug)
+        m180 = _medida_e(slug, corte, corte_fav, "180")
+        m60 = _medida_e(slug, corte, corte_fav, "60")
+        m16 = _medida_e(slug, corte, corte_fav, "16")
+        if not (m60 and m16 and m180):
+            return ""
+        return (f"<tr><td>{rotulo}</td>"
+                f"<td>{m180['diametro']}</td><td>{m180['banda']}</td>"
+                f"<td>{m60['sinal']:.1f} %</td>"
+                f"<td>{m60['min']} px, {m60['onde'].split(', ', 1)[1].split(', em')[0]}</td>"
+                f"<td><strong>{m60['ponta']:.1f}</strong></td><td>{m60['corda']:.1f}</td>"
+                f"<td>{m16['min']}</td><td><strong>{m16['ponta']:.1f}</strong></td>"
+                f"<td>{m16['corda']:.1f}</td>"
+                f"<td>{'aberto' if m16['aberto'] else 'FECHADO'}</td></tr>")
+
+    linhas = "".join(_linha_regua(s, f"<code>{s.split('-', 1)[0]}</code>")
+                     for s in ADENDA5_REGUA)
+    linhas_min = "".join(_linha_regua(s, f"<strong>{g}</strong> <code>{s.split('-', 1)[0]}</code>")
+                         for s, g, _ in ADENDA5_MINIMAS)
+
+    filas_minimas = []
+    for slug, g, nota in ADENDA5_MINIMAS:
+        filas_minimas.append(f"""
+    <p class="fina" style="margin-top:18px"><strong>{g} do diâmetro</strong> · {nota}
+    · <code>{slug}</code></p>
+    <div class="fila">
+      {_cel_e(slug, "180", 180, "180")}
+      {_cel_e(slug, "60", 60, "60 · o juízo")}
+      {_cel_e(slug, "60", 60, "60, ampliado 6x", 6, True)}
+      {_cel_e(slug, "16", 16, "16")}
+      {_cel_e(slug, "16", 16, "16, ampliado 12x", 12, True)}
+    </div>""")
+
+    cores = []
+    for slug, leg, par in (("18n-e-minimo-14", "âmbar em campo de tinta",
+                            f"{contraste(AMBAR, TINTA):.2f}:1"),
+                           ("18q-e-minimo-ocre", "ocre em papel",
+                            f"{contraste(OCRE, PAPEL):.2f}:1"),
+                           ("18r-e-minimo-sem-campo", "sem campo nenhum",
+                            "o sinal sozinho, para o cabeçalho")):
+        cores.append(f"""
+    <p class="fina" style="margin-top:18px"><strong>{leg}</strong> · {par} ·
+    <code>{slug}</code></p>
+    <div class="fila">
+      {_cel_e(slug, "180", 180, "180")}
+      {_cel_e(slug, "180-escuro", 180, "180 · tema escuro")}
+      {_cel_e(slug, "60", 60, "60")}
+      {_cel_e(slug, "60", 60, "60, ampliado 4x", 4, True)}
+      {_cel_e(slug, "16", 16, "16")}
+      {_cel_e(slug, "16", 16, "16, ampliado 8x", 8, True)}
+    </div>""")
+
+    cabecalhos = []
+    for corpo_px in (68, 34):
+        cap = 0.660 * corpo_px
+        linhas_cab = []
+        for diam, g, rot in (
+                (1.00, G_MINIMO, "o «e» à altura de maiúscula (âncora B), grossura do ícone"),
+                (1.24, G_MINIMO, "o «e» a 1,24 dessa altura, grossura do ícone"),
+                (1.00, HASTE_SPECTRAL, "o «e» à altura de maiúscula, grossura da HASTE do Spectral")):
+            lk = lockup_do_e("nome-claro", "ocre-claro", altura=cap, diam=diam, minimo=g)
+            _, h = caixa_do_lockup(lk)
+            lk = lk.replace("<svg ", f'<svg style="height:{n(h)}px" ')
+            lk_e = lockup_do_e("nome-escuro", "ocre-escuro", altura=cap, diam=diam, minimo=g)
+            lk_e = lk_e.replace("<svg ", f'<svg style="height:{n(h)}px" ')
+            linhas_cab.append(
+                f'<div class="cab-linha"><span class="cab-rot">{rot}</span>{lk}</div>'
+                f'<div class="lockup escuro" style="margin:0 0 16px">{lk_e}</div>')
+        cabecalhos.append(f"""
+    <div class="cab">
+      <p class="fina"><strong>Corpo de {corpo_px} px</strong>
+      ({"o máximo do cabeçalho" if corpo_px == 68 else "o mínimo do cabeçalho"}),
+      que dá {cap:.1f} px de altura de maiúscula.</p>
+      {"".join(linhas_cab)}
+    </div>""")
+
+    ecra = os.path.join(AQUI, "ECRA-E.png")
+    if os.path.exists(ecra):
+        from PIL import Image
+        w, h = Image.open(ecra).size
+        bloco_ecra = (f'<img class="larga" src="{_b64_png(ecra)}" width="{w // 4}" '
+                      f'height="{h // 4}" alt="">')
+    else:
+        bloco_ecra = ('<p class="fina">falta <code>ECRA-E.png</code>: corra '
+                      '<code>desenhar.py ecra-e</code></p>')
+
+    return f"""
+<hr class="fio">
+<h2>O «e», refinado (a quinta adenda e o aditamento)</h2>
+<p class="fina">O gabinete pôs o «e» do diretor à frente e mandou afinar a barra, o corte e a
+cor. A meio da ronda veio o aditamento, com as palavras dele: o sinal <strong>«devia ser muito
+mais limpo, muito mais minimalista»</strong>. Esta folha traz as duas coisas, por essa ordem,
+porque a segunda responde à primeira: a instrução de tirar a barra saliente resolve a pergunta
+do «€» tirando-lhe o objeto. Tudo o que se segue está medido nos PNG de <code>EXPORT/</code>
+no momento em que a folha se escreveu, com <code>desenhar.py medir-e</code>, e nenhum número
+aqui foi escrito à mão.</p>
+
+<h3>1 · A barra: a atravessar, só de um lado, ou dentro do bojo</h3>
+<p class="fina">A adenda pede duas versões. Foram três, e a terceira nasceu de olhar para as
+duas primeiras: a barra que sai <strong>só à esquerda</strong>, do lado fechado.</p>
+{"".join(filas_barra)}
+<p class="fina"><strong>O que a barra custa em diâmetro.</strong> O sinal de qualquer direção
+cabe num quadrado de 360 em 512, e a barra que sai tem de caber lá dentro com ele. Medido nos
+PNG de 180 px: o anel dá <strong>99 px</strong> com a barra a atravessar dos dois lados,
+<strong>111 px</strong> com ela a sair só à esquerda e <strong>128 px</strong> com ela a acabar
+no bojo. A linha da régua custa 23 % do diâmetro do anel; metade dela custa 13 %.</p>
+
+<h3>2 · O teste do «€», a 60 px</h3>
+<p class="fina">O sinal do euro tem uma construção fixada, e nem ela nem o glifo de tipo nenhum
+estão aqui: o que está desenhado é a <strong>anatomia</strong> que a adenda nomeia, para se
+poder ver ao lado da nossa. Bojo <strong>aberto</strong> (um «C» com 100 graus cortados à
+direita) e <strong>duas</strong> barras que saem dos dois lados. As proporções são as do nosso
+«e», para que o que se compare seja a construção e não o peso.</p>
+<div class="fila">{euro}{nosso}</div>
+<p class="fina">O que faz a leitura de moeda não é uma barra a sair: é uma barra a sair
+<strong>dos dois lados</strong> de um bojo redondo. É isso que o «€» e a primeira versão têm em
+comum, e das três é a única que o tem.</p>
+
+<h3>3 · O corte: 32, 48 e 62 graus, contados da barra</h3>
+<p class="fina">O corte conta-se <strong>da barra</strong> e não do ângulo do ficheiro: no
+desenho antigo a banda acabava a -6 graus e a barra, com 42 de grossura num raio de 150,
+tapava-lhe {ANG_BARRA_E:.1f} graus da ponta de cima. O que o olho vê é o canto de baixo da
+barra em cima e a ponta da banda em baixo.</p>
+<div class="fila">{filas_corte}</div>
+<div class="fila">{filas_corte_16}</div>
+
+<h3>A régua das variantes da adenda</h3>
+<p class="fina">A <strong>matéria na ponta</strong> é a tinta contada ao longo da face do
+corte, e é o número que a adenda quer acima de 2 px. A <strong>corrida mínima</strong> é outra
+coisa: é uma linha de píxeis a rasar um canto vivo, e mede o canto, não a matéria. A
+<strong>corda</strong> é a abertura à vista, medida sobre a circunferência do meio da banda. O
+<strong>bojo</strong> conta-se nas ilhas do fundo: aberto quando o vazio de dentro comunica com
+o campo de fora.</p>
+<table class="tabela">
+  <tr><th></th><th>anel a 180</th><th>banda a 180</th><th>sinal a 60</th>
+      <th>corrida mín. a 60</th><th>ponta a 60</th><th>corda a 60</th>
+      <th>corrida mín. a 16</th><th>ponta a 16</th><th>corda a 16</th><th>bojo a 16</th></tr>
+  {linhas}
+</table>
+<p class="fina"><strong>A 18k não é uma variante: é o par de controlo.</strong> Tem a geometria
+da 18i e a regra VELHA do desenho de 32 e 16 px, que fechava o corte em vez de o alargar. Com a
+mesma forma e a mesma cor, a diferença a 16 px é da regra e de mais nada: a corda passa de 2,2
+para 3,0 px e a matéria na ponta de 1,5 para 2,1. Engrossar a banda já fecha a abertura por
+dentro; fechar também o ângulo fechava-a duas vezes.</p>
+
+<hr class="fio">
+<h3>4 · O «e» mínimo: uma forma, uma grossura, nada acrescentado</h3>
+<p class="fina">O aditamento manda uma coisa só, dita de quatro maneiras: a circunferência, o
+corte e a barra, com <strong>uma grossura só</strong>, a barra a acabar no anel e não a sair
+dele, os remates cortados a direito, sem contorno, sem segunda cor e sem moldura. Isso mudou a
+construção em três sítios, e é preciso dizê-los.</p>
+<ul class="fina">
+  <li>A barra passou a ter <strong>exatamente</strong> a grossura do anel. Tinha 42 num anel de
+  46, ou seja 0,91 dele.</li>
+  <li>As quatro pontas da barra <strong>pousam na circunferência</strong>: os remates são cordas
+  do círculo, e a silhueta fica sem saliência nenhuma.</li>
+  <li>O corte de cima <strong>deixou de ser um ângulo escolhido</strong> e passa a ser aquele
+  onde a face de baixo da barra encontra a circunferência de fora. Antes a barra tapava a ponta
+  da banda, o que é uma junta escondida; agora as duas peças acabam na mesma linha.</li>
+  <li>Não há segundo desenho para 32 e 16 px: <strong>o mesmo desenho a todos os tamanhos</strong>,
+  que é o que «nada acrescentado» quer dizer, e é o que faz a medição a 16 px responder à
+  pergunta do aditamento em vez de a mascarar.</li>
+</ul>
+<p class="fina"><strong>Uma correção de facto, antes das grossuras.</strong> O aditamento diz
+«12 a 16 % do diâmetro» e acrescenta que «a atual é mais pesada». Medida, a banda da sétima voz
+tem 46 num diâmetro de 300, ou seja <strong>15,3 % do diâmetro</strong>: já estava dentro do
+intervalo, no topo dele. Para o desenho ser de facto mais leve, as grossuras aqui vão de 16 % a
+<strong>10 %</strong>, que está abaixo do pedido, para que o limite se veja em vez de se
+supor.</p>
+{"".join(filas_minimas)}
+<table class="tabela">
+  <tr><th>grossura</th><th>anel a 180</th><th>banda a 180</th><th>sinal a 60</th>
+      <th>corrida mín. a 60</th><th>ponta a 60</th><th>corda a 60</th>
+      <th>corrida mín. a 16</th><th>ponta a 16</th><th>corda a 16</th><th>bojo a 16</th></tr>
+  {linhas_min}
+</table>
+<p class="fina"><strong>Qual é a mais fina que sobrevive.</strong> Nenhuma fecha o bojo a 16 px,
+e por isso o teste topológico não separa as quatro. O que as separa é a matéria: a
+<strong>ponta do corte</strong> a 16 px mede 1,4 px a 16 %, 0,5 px a 14 % e a 12 %, e 0,2 px a
+10 %; e ao olhar, que é o que decide, a 12 % a coroa do anel já vem cinzenta e a 10 % o anel é
+um halo à volta da barra, com a forma a ler-se como uma mancha atravessada e não como um «e».
+A <strong>14 %</strong> o anel chega inteiro aos 16 px e o desenho é visivelmente mais leve do
+que o de hoje. É essa a resposta à pergunta do aditamento: a mais fina que sobrevive é a de
+14 %, e a de 16 % é a que sobra se a direção quiser folga.</p>
+
+<h3>5 · Os pares de cor, ao fim</h3>
+<p class="fina">O ícone leva âmbar <code>#e0a21a</code> em campo de tinta <code>#17191b</code>,
+que mede {contraste(AMBAR, TINTA):.2f}:1 e passa os dois limiares. Para o caso de campo claro o
+«e» não pode ser âmbar (2,09:1 sobre papel): é ocre <code>#7a5300</code>,
+{contraste(OCRE, PAPEL):.2f}:1. Em tema escuro a variante de papel troca o ocre pelo âmbar, que
+é o que <code>tokens.css</code> já faz com a palavra do estado. E há um terceiro ficheiro, sem
+campo nenhum: um ícone de telemóvel tem sempre campo, porque o sistema lhe recorta um quadrado,
+mas no cabeçalho o sinal assenta no papel do sítio e um campo ali seria a moldura que o
+aditamento manda tirar.</p>
+{"".join(cores)}
+
+<h3>6 · O cabeçalho a 1:1, com o «e» ao lado do nome</h3>
+<p class="fina">O cabeçalho do sítio é texto composto: <code>.wordmark</code>, Spectral 400,
+<code>font-size: clamp(34px, 7.4vw, 68px)</code>, <code>letter-spacing: -0.014em</code>
+(<code>src/styles/site.css</code>). Tudo o que está aqui está a 1:1, com o mesmo aperto de
+letras que o sítio aplica: uma linha, um peso, sem filete e sem frase por baixo. A terceira
+linha de cada corpo responde ao «uma espessura só» com um número: a haste do Spectral Regular
+mede 68,9 em 1000 de em com a maiúscula a 660, ou seja <strong>{HASTE_SPECTRAL * 100:.1f} %</strong>
+da altura de maiúscula (medida no ficheiro da casa, §8 das notas). Um «e» dessa grossura fica
+igual ao nome e desaparece dentro dele; a {G_MINIMO * 100:.0f} % lê-se como sinal ao lado da
+palavra, que é o que um sinal tem de fazer.</p>
+{"".join(cabecalhos)}
+
+<h3>7 · O ecrã principal, com as quatro grossuras</h3>
+<p class="fina">A mesma maqueta das rondas anteriores, com os mesmos oito ícones e a mesma cela
+de 180 px (60 pt a 3×), em ecrã claro <strong>e</strong> escuro, porque aqui a pergunta já não é
+a do campo: o que se compara é a grossura. A última fila é o par de campo claro.</p>
+{bloco_ecra}"""
+
+
 def prancha():
     tira, tira_tam = tira_de_vizinhanca()
     folha, folha_tam = folha_embebida()
@@ -3050,6 +3730,7 @@ cela do telemóvel. Cada voz mostra as duas coisas na primeira fila, lado a lado
 
 {bloco_ecra_vozes()}
 {bloco_voz7()}
+{bloco_adenda5()}
 
 <hr class="fio">
 <h3>As onze primeiras direções (as três primeiras adendas)</h3>
@@ -3266,6 +3947,175 @@ if len(sys.argv) > 1 and sys.argv[1] == "vozes":
     ecras_vozes()
 
 
+"""
+`python3 design/marca/desenhar.py ecra-e` escreve `design/marca/ECRA-E.png`.
+
+Duas variantes do «e» e o par de campo claro, cada um em ecrã claro e em ecrã
+escuro, entre os mesmos oito ícones das rondas anteriores. Seis painéis, para
+que a escolha entre a barra que sai e a barra que fica se faça onde o ícone vai
+viver e não numa folha branca.
+"""
+
+ECRA_E_VARIANTES = [
+    ("18m-e-minimo-16", "mínimo · 16 % do diâmetro", "âmbar em campo de tinta"),
+    ("18n-e-minimo-14", "mínimo · 14 %", "âmbar em campo de tinta"),
+    ("18o-e-minimo-12", "mínimo · 12 %", "âmbar em campo de tinta"),
+    ("18q-e-minimo-ocre", "mínimo · 14 %, campo claro", "ocre em papel"),
+]
+
+
+def ecras_e():
+    from PIL import Image, ImageDraw, ImageFont
+    grande = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 34)
+    pequena = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 27)
+    peles = []
+    for slug, titulo, nota in ECRA_E_VARIANTES:
+        for tema, sufixo in (("claro", "180"), ("escuro", "180-escuro")):
+            nosso = os.path.join(AQUI, "EXPORT", slug, f"{slug}-{sufixo}.png")
+            peles.append((compoe_ecra(nosso, tema), f"{titulo} · ecrã {tema}", nota))
+    lp, ap = peles[0][0].size
+    rodape, gap, colunas = 100, 46, 2
+    filas = (len(peles) + colunas - 1) // colunas
+    folha = Image.new("RGB", (colunas * lp + (colunas + 1) * gap,
+                              filas * (ap + rodape) + (filas + 1) * gap), (128, 133, 127))
+    d = ImageDraw.Draw(folha)
+    for i, (pele, titulo, nota) in enumerate(peles):
+        x = gap + (i % colunas) * (lp + gap)
+        y = gap + (i // colunas) * (ap + rodape + gap)
+        folha.paste(pele, (x, y))
+        d.text((x + 4, y + ap + 16), titulo, font=grande, fill=(16, 18, 16))
+        d.text((x + 4, y + ap + 60), nota, font=pequena, fill=(46, 50, 46))
+    saida = os.path.join(AQUI, "ECRA-E.png")
+    folha.save(saida, optimize=True)
+    print(f"escrito design/marca/ECRA-E.png  ({folha.size[0]} x {folha.size[1]})")
+
+
+if len(sys.argv) > 1 and sys.argv[1] == "ecra-e":
+    ecras_e()
+
+
+
+
+"""
+`python3 design/marca/desenhar.py folha-e` escreve `design/marca/FOLHA-E.png`.
+
+É a folha da quinta adenda: as variantes do «e» às três medidas que a adenda
+manda pôr lado a lado (180, 60 e 16 px), cada uma também ampliada, porque o que
+morre a 16 px não se vê a 16 px. Em cima, o teste do «€».
+
+O «€» QUE AQUI ESTÁ É UMA CONSTRUÇÃO, E NÃO O GLIFO OFICIAL, e a diferença
+importa: o sinal do euro tem um desenho fixado pela Comissão, e nem esse desenho
+nem o glifo de nenhum tipo estão aqui. O que está desenhado é a ANATOMIA que a
+adenda nomeia, para se poder ver ao lado da nossa: bojo ABERTO (um «C», com um
+corte de 100 graus à direita) e DUAS barras que atravessam. Serve para comparar
+construções, não para representar o sinal.
+"""
+
+EURO_CORTE = 100.0        # os graus abertos à direita, que fazem do anel um «C»
+EURO_BARRAS = 0.30        # a que altura, em raios, ficam as duas barras
+
+
+def _euro_png(lado, campo=TINTA, letra=AMBAR, k=8):
+    """A construção do «€», desenhada aqui, em PIL, e ampliada antes de reduzir.
+
+    As proporções são as do nosso «e» (banda 0,31 do raio, barra 0,28), para que
+    a comparação seja de ANATOMIA e não de peso: o que muda é o bojo estar
+    aberto e as barras serem duas.
+    """
+    from PIL import Image, ImageDraw
+    im = Image.new("RGB", (lado * k, lado * k), tuple(int(campo[i:i + 2], 16) for i in (1, 3, 5)))
+    d = ImageDraw.Draw(im)
+    cor = tuple(int(letra[i:i + 2], 16) for i in (1, 3, 5))
+    c = lado * k / 2
+    r = lado * k * (SINAL / CAMPO) / 2 * 0.86      # cabe na mesma janela que o nosso
+    g = r * (G_E / R_E)
+    b = r * (BARRA_E / R_E)
+    d.arc([c - r + g / 2, c - r + g / 2, c + r - g / 2, c + r - g / 2],
+          start=EURO_CORTE / 2, end=360 - EURO_CORTE / 2, fill=cor, width=int(g))
+    for s in (-1, 1):
+        y = c + s * r * EURO_BARRAS
+        d.rectangle([c - r * 1.30, y - b / 2, c + r * 0.80, y + b / 2], fill=cor)
+    return im.resize((lado, lado), Image.LANCZOS)
+
+
+FOLHA_E_LINHAS = [
+    ("18-e-minuscula", "a barra ATRAVESSA", "48 graus de corte · o desenho de hoje"),
+    ("18b-e-barra-dentro", "a barra fica DENTRO", "48 graus de corte · um «e» de tipo"),
+    ("18c-e-corte-estreito", "atravessa · corte estreito", "32 graus"),
+    ("18d-e-corte-largo", "atravessa · corte largo", "62 graus"),
+    ("18e-e-dentro-estreito", "dentro · corte estreito", "32 graus"),
+    ("18f-e-dentro-largo", "dentro · corte largo", "62 graus"),
+    ("18g-e-ocre-papel", "atravessa · ocre em papel", "48 graus · campo claro"),
+    ("18h-e-ocre-dentro", "dentro · ocre em papel", "48 graus · campo claro"),
+    ("18i-e-barra-esquerda", "a barra sai SÓ À ESQUERDA", "48 graus · a régua por um lado só"),
+    ("18j-e-ocre-esquerda", "só à esquerda · ocre em papel", "48 graus · campo claro"),
+    ("18m-e-minimo-16", "MÍNIMO · 16 % do diâmetro", "uma grossura só, barra igual ao anel"),
+    ("18n-e-minimo-14", "MÍNIMO · 14 %", "uma grossura só"),
+    ("18o-e-minimo-12", "MÍNIMO · 12 %", "uma grossura só"),
+    ("18p-e-minimo-10", "MÍNIMO · 10 %", "abaixo do que o aditamento pede"),
+    ("18q-e-minimo-ocre", "MÍNIMO · ocre em papel", f"{int(G_MINIMO * 100)} % · campo claro"),
+]
+
+
+def folha_e():
+    from PIL import Image, ImageDraw, ImageFont
+    grande = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 26)
+    pequena = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 20)
+    rot = 300
+    colunas = [("180", 180), ("60", 60), ("60", 240), ("16", 16), ("16", 128)]
+    legendas = ["180", "60", "60, ampliado 4x", "16", "16, ampliado 8x"]
+    gap = 26
+    passo = 200
+    larg = rot + sum(c[1] for c in colunas) + gap * (len(colunas) + 1)
+    alto = 150 + passo * (len(FOLHA_E_LINHAS) + 1) + 60
+    folha = Image.new("RGB", (larg, alto), (206, 210, 204))
+    d = ImageDraw.Draw(folha)
+    d.text((gap, 24), "O «e», refinado · a quinta adenda", font=grande, fill=(16, 18, 16))
+    d.text((gap, 58), "cada linha é a mesma forma às medidas que decidem; os ampliados "
+           "são os MESMOS píxeis, esticados", font=pequena, fill=(52, 56, 52))
+    x = rot + gap * 2
+    for (nome, px), leg in zip(colunas, legendas):
+        d.text((x, 100), leg, font=pequena, fill=(52, 56, 52))
+        x += px + gap
+
+    # a fila do «€», que é a pergunta da adenda
+    y = 130
+    d.text((gap, y + 60), "referência · a construção do «€»", font=grande, fill=(16, 18, 16))
+    d.text((gap, y + 94), "bojo ABERTO e DUAS barras. Desenhada aqui,",
+           font=pequena, fill=(52, 56, 52))
+    d.text((gap, y + 118), "não é o glifo oficial nem o de tipo nenhum.",
+           font=pequena, fill=(52, 56, 52))
+    x = rot + gap * 2
+    for (nome, px), leg in zip(colunas, legendas):
+        base = int(nome)
+        im = _euro_png(base)
+        if px != base:
+            im = im.resize((px, px), Image.NEAREST)
+        folha.paste(im, (x, y))
+        x += px + gap
+
+    for i, (slug, titulo, nota) in enumerate(FOLHA_E_LINHAS):
+        y = 130 + passo * (i + 1)
+        d.text((gap, y + 60), titulo, font=grande, fill=(16, 18, 16))
+        d.text((gap, y + 94), nota, font=pequena, fill=(52, 56, 52))
+        d.text((gap, y + 118), slug, font=pequena, fill=(90, 94, 90))
+        x = rot + gap * 2
+        for nome, px in colunas:
+            f = os.path.join(AQUI, "EXPORT", slug, f"{slug}-{nome}.png")
+            im = Image.open(f).convert("RGB")
+            if im.size[0] != px:
+                im = im.resize((px, px), Image.NEAREST)
+            folha.paste(im, (x, y))
+            x += px + gap
+    saida = os.path.join(AQUI, "FOLHA-E.png")
+    folha.save(saida, optimize=True)
+    print(f"escrito design/marca/FOLHA-E.png  ({folha.size[0]} x {folha.size[1]})")
+
+
+if len(sys.argv) > 1 and sys.argv[1] == "folha-e":
+    folha_e()
+
+
 # ===========================================================================
 # A MEDIÇÃO
 # ===========================================================================
@@ -3403,6 +4253,220 @@ def contraste(a, b):
     la, lb = _lum(a), _lum(b)
     hi, lo = max(la, lb), min(la, lb)
     return (hi + 0.05) / (lo + 0.05)
+
+
+# (slug, corte grande, saída à esquerda, corte de 32 e 16, saída à direita).
+# O quarto número existe porque o favicon é OUTRO desenho: o da sétima voz de
+# 28.08 de manhã FECHAVA o corte (de -56 para -52) e os desta adenda ALARGAM-no
+# 6 graus. Medir a ponta no ângulo errado dá a matéria de um sítio onde já não
+# há face nenhuma, e foi o que a primeira versão desta medição fez.
+FAMILIA_E = [
+    ("18-e-minuscula", CORTES_E["medio"], SAI_E, -52.0, SAI_E),
+    ("18b-e-barra-dentro", CORTES_E["medio"], 0.0, CORTES_E["medio"] - 6, 0.0),
+    ("18c-e-corte-estreito", CORTES_E["estreito"], SAI_E, CORTES_E["estreito"] - 6, SAI_E),
+    ("18d-e-corte-largo", CORTES_E["largo"], SAI_E, CORTES_E["largo"] - 6, SAI_E),
+    ("18e-e-dentro-estreito", CORTES_E["estreito"], 0.0, CORTES_E["estreito"] - 6, 0.0),
+    ("18f-e-dentro-largo", CORTES_E["largo"], 0.0, CORTES_E["largo"] - 6, 0.0),
+    ("18g-e-ocre-papel", CORTES_E["medio"], SAI_E, CORTES_E["medio"] - 6, SAI_E),
+    ("18h-e-ocre-dentro", CORTES_E["medio"], 0.0, CORTES_E["medio"] - 6, 0.0),
+    ("18i-e-barra-esquerda", CORTES_E["medio"], SAI_E, CORTES_E["medio"] - 6, 0.0),
+    ("18j-e-ocre-esquerda", CORTES_E["medio"], SAI_E, CORTES_E["medio"] - 6, 0.0),
+    ("18k-e-favicon-fechado", CORTES_E["medio"], SAI_E, -52.0, 0.0),
+    # as mínimas: o mesmo desenho a todos os tamanhos, e por isso o corte do
+    # favicon é o mesmo do sinal grande.
+    ("18m-e-minimo-16", CORTE_MINIMO, 0.0, CORTE_MINIMO, 0.0),
+    ("18n-e-minimo-14", CORTE_MINIMO, 0.0, CORTE_MINIMO, 0.0),
+    ("18o-e-minimo-12", CORTE_MINIMO, 0.0, CORTE_MINIMO, 0.0),
+    ("18p-e-minimo-10", CORTE_MINIMO, 0.0, CORTE_MINIMO, 0.0),
+    ("18q-e-minimo-ocre", CORTE_MINIMO, 0.0, CORTE_MINIMO, 0.0),
+]
+
+
+def _corridas_disco(mapa, centro=None, raio=None):
+    """(mínima, mediana, sítio da mínima) das corridas de linha e de coluna.
+
+    Com `centro` e `raio`, só contam as corridas cujo meio caia dentro desse
+    disco. É assim que se mede A PONTA DO CORTE e não outra coisa qualquer: a
+    ponta anda com o ângulo do corte, e uma janela rectangular fixa ora a apanha
+    ora a perde, o que já aconteceu à primeira tentativa desta medição.
+    """
+    h, w = len(mapa), len(mapa[0])
+    fora = []
+
+    def guarda(c, x, y, orient):
+        if centro is None or (x - centro[0]) ** 2 + (y - centro[1]) ** 2 <= raio ** 2:
+            fora.append((c, x, y, orient))
+
+    for y in range(h):
+        c = 0
+        for x in range(w):
+            if mapa[y][x]:
+                c += 1
+            elif c:
+                guarda(c, x - c / 2, y, "linha")
+                c = 0
+        if c:
+            guarda(c, w - c / 2, y, "linha")
+    for x in range(w):
+        c = 0
+        for y in range(h):
+            if mapa[y][x]:
+                c += 1
+            elif c:
+                guarda(c, x, y - c / 2, "coluna")
+                c = 0
+        if c:
+            guarda(c, x, h - c / 2, "coluna")
+    if not fora:
+        return 0, 0, None
+    fora.sort(key=lambda t: t[0])
+    return fora[0][0], fora[len(fora) // 2][0], fora[0]
+
+
+def _sitio(t, w, h):
+    """O sítio de uma corrida, dito em relógio e não em píxeis soltos."""
+    if t is None:
+        return "nenhuma"
+    c, x, y, orient = t
+    dx, dy = x - w / 2, y - h / 2
+    if abs(dy) > abs(dx) * 2:
+        onde = "coroa de cima" if dy < 0 else "coroa de baixo"
+    elif abs(dx) > abs(dy) * 2:
+        onde = "ponta esquerda" if dx < 0 else "ponta direita"
+    else:
+        onde = ("canto de cima " if dy < 0 else "canto de baixo ") + \
+               ("à esquerda" if dx < 0 else "à direita")
+    return f"{c} px, {onde}, em {orient}"
+
+
+def _ilhas_do_fundo(sinal):
+    return _ilhas([[not v for v in linha] for linha in sinal])
+
+
+def _amostra(sinal, x, y):
+    h, w = len(sinal), len(sinal[0])
+    xi, yi = int(round(x)), int(round(y))
+    return 0 <= xi < w and 0 <= yi < h and sinal[yi][xi]
+
+
+def _materia_na_ponta(sinal, cx, cy, r_ext, r_int, ang):
+    """Quanta tinta há na face do corte, contada píxel a píxel sobre ela.
+
+    É este o número que a adenda quer quando diz «a ponta do corte acima de 2 px»:
+    a face do corte é um segmento radial, e o que ela mede é a grossura da banda.
+    Conta-se aqui percorrendo o segmento na imagem, e não a partir do desenho.
+    """
+    passos = max(int((r_ext - r_int) * 8), 8)
+    a = math.radians(ang)
+    conta = 0
+    for i in range(passos + 1):
+        r = r_int + (r_ext - r_int) * i / passos
+        if _amostra(sinal, cx + r * math.cos(a), cy - r * math.sin(a)):
+            conta += 1
+    return conta / passos * (r_ext - r_int)
+
+
+def _abertura_medida(sinal, cx, cy, r_meio):
+    """A abertura à vista: o maior arco sem tinta sobre a circunferência do meio.
+
+    Devolve `(graus, corda em px)`. A corda é o que o olho lê como buraco.
+    """
+    passos = 2880
+    tem = [_amostra(sinal, cx + r_meio * math.cos(math.radians(i * 360 / passos)),
+                    cy - r_meio * math.sin(math.radians(i * 360 / passos)))
+           for i in range(passos)]
+    melhor = corrida = 0
+    for i in range(passos * 2):
+        if not tem[i % passos]:
+            corrida += 1
+            melhor = max(melhor, min(corrida, passos))
+        else:
+            corrida = 0
+    graus = melhor * 360 / passos
+    return graus, 2 * r_meio * math.sin(math.radians(min(graus, 180) / 2))
+
+
+def _medida_e(slug, corte, sai_dir_corte, t):
+    """Todos os números de uma variante do «e» a um tamanho, lidos do PNG.
+
+    Devolve um dicionário, para que a prancha, as notas e a linha de comando
+    digam o MESMO número: o que se escreveu à mão nas rondas anteriores foi o
+    que mais se desencontrou do que estava medido.
+    """
+    f = os.path.join(AQUI, "EXPORT", slug, f"{slug}-{t}.png")
+    if not os.path.exists(f):
+        return None
+    im = _le(f)
+    w, h = im.size
+    _, sinal = _mascaras(im)
+    linhas = [y for y in range(h) if any(sinal[y])]
+    diam = (linhas[-1] - linhas[0] + 1) if linhas else 0
+    banda = 0
+    for y in range(h):
+        if sinal[y][w // 2]:
+            banda += 1
+        elif banda:
+            break
+    cx, cy = w / 2, h / 2
+    r_ext, r_int = diam / 2, diam / 2 - banda
+    ang = sai_dir_corte if t in ("32", "16") else corte
+    mini, med, onde = _corridas_disco(sinal)
+    ponta = (cx + (r_ext + r_int) / 2 * math.cos(math.radians(ang)),
+             cy - (r_ext + r_int) / 2 * math.sin(math.radians(ang)))
+    pmin, _, _ = _corridas_disco(sinal, ponta, r_ext * 0.30)
+    graus, corda = _abertura_medida(sinal, cx, cy, (r_ext + r_int) / 2)
+    ilhas_f = _ilhas_do_fundo(sinal)
+    return {"sinal": sum(sum(l) for l in sinal) / (w * h) * 100,
+            "diametro": diam, "banda": banda, "min": mini, "mediana": med,
+            "onde": _sitio(onde, w, h), "ponta": _materia_na_ponta(sinal, cx, cy, r_ext, r_int, ang),
+            "min_ponta": pmin, "graus": graus, "corda": corda,
+            "ilhas_fundo": ilhas_f, "aberto": ilhas_f <= 2}
+
+
+def medir_e(tamanhos=("180", "60", "16")):
+    """A régua da quinta adenda: onde é que o «e» afina, e se o bojo abre.
+
+    QUATRO COISAS QUE A `medir` NÃO DIZ, e que a adenda pede.
+
+    · ONDE está a corrida mínima. A adenda diz que a ponta do corte «afina para
+      1 px» a 60. A corrida mínima é mesmo 1 px, e o sítio dela é mesmo o canto
+      de baixo à direita, ou seja o corte. Mas o que esse 1 px mede não é a
+      matéria da ponta: é uma LINHA A RASAR UM CANTO. A face do corte é radial e
+      encontra o arco de dentro num canto vivo; a linha de píxeis que passa
+      rente a esse canto apanha um píxel, e apanharia um píxel em qualquer canto
+      que não esteja alinhado com os eixos. É por isso que a geométrica da
+      terceira voz mede 12: não é mais grossa, é mais quadrada.
+    · A MATÉRIA NA PONTA, que é o que a adenda quer mesmo: a tinta contada ao
+      longo da face do corte. Aí a ponta mede a grossura da banda, e é esse o
+      número que tem de estar acima de 2 px.
+    · A ABERTURA À VISTA: o maior arco sem tinta sobre a circunferência do meio
+      da banda, em graus e em corda. É o buraco que separa um «e» de um «o».
+    · SE O BOJO ABRE, contado nas ilhas do FUNDO e não nas do sinal. Com o bojo
+      aberto, o vazio de dentro por baixo da barra comunica com o campo de fora
+      e o fundo tem DUAS ilhas: o campo, mais o olho fechado por cima da barra.
+      Com o bojo fechado tem TRÊS. É um inteiro, e não uma impressão.
+    """
+    for slug, corte, sai, corte_fav, sai_dir in FAMILIA_E:
+        if not os.path.isdir(os.path.join(AQUI, "EXPORT", slug)):
+            continue
+        print(slug + f"   (corte {abertura_vista(corte):.0f} graus à vista, barra "
+              + ("a atravessar dos dois lados)" if sai and sai_dir
+                 else "só à esquerda)" if sai else "dentro do bojo)"))
+        for t in tamanhos:
+            m = _medida_e(slug, corte, corte_fav, t)
+            if m is None:
+                continue
+            print(f"  {t}: sinal {m['sinal']:.1f} % · diâmetro {m['diametro']} px · "
+                  f"banda {m['banda']} px · fundo em {m['ilhas_fundo']} ilhas "
+                  f"({'bojo ABERTO' if m['aberto'] else 'bojo FECHADO'})\n"
+                  f"      corrida mínima: {m['onde']} · mediana {m['mediana']}\n"
+                  f"      matéria na ponta do corte: {m['ponta']:.1f} px · "
+                  f"corrida mínima à volta da ponta: {m['min_ponta']} px\n"
+                  f"      abertura à vista: {m['graus']:.0f} graus · corda {m['corda']:.1f} px")
+
+
+if len(sys.argv) > 1 and sys.argv[1] == "medir-e":
+    medir_e(tuple(sys.argv[2:]) or ("180", "60", "16"))
 
 
 if len(sys.argv) > 1 and sys.argv[1] == "medir":
