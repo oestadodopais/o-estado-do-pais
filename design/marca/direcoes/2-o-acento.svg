@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Direção B · o O com o acento do País">
+  <title>Direção B · o O com o acento do País</title>
+  <desc>A inicial única com o acento agudo do «í» fundido no ombro.</desc>
+  <style>
+    .campo { fill: #f6f7f4; }
+    .tinta { fill: #17191b; }
+    .tinta-t { fill: none; stroke: #17191b; }
+    .acento { fill: #1f4e8c; }
+    .acento-t { fill: none; stroke: #1f4e8c; }
+    /* A costura: uma silhueta feita de distritos encostados fica com fios de
+       papel entre eles quando se enche sem traço. O traço da mesma cor fecha-os. */
+    .acento-costura { fill: #1f4e8c; stroke: #1f4e8c; stroke-width: 2; }
+    svg[data-tema="escuro"] .campo { fill: #15171a; }
+    svg[data-tema="escuro"] .tinta { fill: #eceeea; }
+    svg[data-tema="escuro"] .tinta-t { stroke: #eceeea; }
+    svg[data-tema="escuro"] .acento { fill: #7fa6dc; }
+    svg[data-tema="escuro"] .acento-t { stroke: #7fa6dc; }
+    svg[data-tema="escuro"] .acento-costura { fill: #7fa6dc; stroke: #7fa6dc; }
+    /* A simplificação de 32 e 16 px: a mesma forma, com o que morre tirado. */
+    .sinal-favicon { display: none; }
+    svg[data-forma="favicon"] .sinal { display: none; }
+    svg[data-forma="favicon"] .sinal-favicon { display: block; }
+    /* O `maskable` do Android: o campo fica, o sinal encolhe para dentro do
+       círculo seguro de raio 40 %. */
+    svg[data-forma="maskable"] .sinal,
+    svg[data-forma="maskable"] .sinal-favicon {
+      transform: scale(0.78);
+      transform-origin: 256.0px 256.0px;
+      transform-box: view-box;
+    }
+  </style>
+  <rect class="campo" x="0" y="0" width="512" height="512"/>
+  <g class="sinal" transform="translate(29.41 45.97) scale(0.92)">
+    <!-- O «O» da casa: H=300, haste=69.9, fino=30.0,
+         contraste 2.33; contraforma recta de
+         160 x 240, canto 30.0.
+         O acento sai do ombro a 58 graus, com a
+         grossura da haste, e acaba num corte perpendicular. -->
+    <path class="tinta" fill-rule="evenodd" d="M90 276A150 150 0 1 1 390 276A150 150 0 1 1 90 276ZM189.9 156L290.1 156A30 30 0 0 1 320.1 186L320.1 366A30 30 0 0 1 290.1 396L189.9 396A30 30 0 0 1 159.9 366L159.9 186A30 30 0 0 1 189.9 156Z"/>
+    <path class="acento" d="M322.31 191.77L404.97 59.47L362.29 32.8L279.63 165.1Z"/>
+  </g>
+  <g class="sinal-favicon" transform="translate(24.8 30.21) scale(0.95)">
+    <!-- 32 e 16 px: o canto recto da contraforma não chega a um píxel,
+         e o acento encurta para não virar borrão. O que fica é o anel
+         com o traço, que é a ideia. -->
+    <path class="tinta" fill-rule="evenodd" d="M90 276A150 150 0 1 1 390 276A150 150 0 1 1 90 276ZM159.9 276A80.1 120 0 1 1 320.1 276A80.1 120 0 1 1 159.9 276Z"/>
+    <path class="acento" d="M322.31 191.77L395.44 74.74L352.76 48.07L279.63 165.1Z"/>
+  </g>
+</svg>
