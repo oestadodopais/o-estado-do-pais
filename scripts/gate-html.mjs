@@ -102,7 +102,14 @@ import {
 import { documentoDaEdicao, documentoServido } from '../src/lib/documentos.mjs';
 import { leBlocos, Texto } from '../src/lib/eyetext.mjs';
 import { renderizacoesAceites } from '../src/data/correcoes.mjs';
-import { SITE_HOST, SITE_NAME, canonicalUrl } from '../site.config.mjs';
+import {
+  SITE_HOST,
+  SITE_NAME,
+  SITE_SHORT_NAME,
+  PAPEL_CLARO,
+  PAPEL_ESCURO,
+  canonicalUrl,
+} from '../site.config.mjs';
 import { ENDERECO_CORRECOES } from '../src/data/metodo.mjs';
 import { SOBRE } from '../src/data/sobre.mjs';
 import { VERIFICACAO } from '../src/data/verificacao.mjs';
@@ -263,6 +270,70 @@ const CADEIAS_HEAD = [
   (a, b) => b.length - a.length,
 );
 
+/* ===========================================================================
+ * O SÍTIO NO ECRÃ PRINCIPAL (28.08.2026, `design/marca/BRIEF-app.md`)
+ * ===========================================================================
+ * O que o portão reconhece na cabeça de cada página, e o que ele confere uma
+ * vez no fim, sobre os dois manifestos construídos.
+ * ======================================================================== */
+
+/** O manifesto de cada edição. É por edição porque o `start_url` é por edição. */
+const MANIFESTO_DA_EDICAO = { pt: '/manifest.webmanifest', en: '/en/manifest.webmanifest' };
+
+/** As três ligações de ícone, com o ficheiro de cada uma. */
+const LIGACOES_DO_APP = [
+  {
+    selector: 'link[rel="icon"][href="/favicon.ico"]',
+    href: '/favicon.ico',
+    sizes: '32x32',
+    oQueE: 'favicon do cliente velho',
+  },
+  {
+    selector: 'link[rel="icon"][type="image/svg+xml"]',
+    href: '/favicon.svg',
+    sizes: null,
+    oQueE: 'favicon vetorial',
+  },
+  {
+    selector: 'link[rel="apple-touch-icon"]',
+    href: '/apple-touch-icon.png',
+    sizes: null,
+    oQueE: 'ícone do iPhone',
+  },
+];
+
+/**
+ * O QUE UM MANIFESTO TEM DE DIZER, campo a campo.
+ *
+ * Um manifesto é um ficheiro DATILOGRAFADO — não há gabarito que o componha, e
+ * não é uma página que este portão varra. É por isso que ele é conferido aqui
+ * contra a fonte de verdade de cada campo: o nome e o nome curto contra
+ * `site.config.mjs`, as duas cores contra o papel dos tokens, e cada ícone
+ * contra o ficheiro que está em `dist/` e o tamanho que a cabeça do PNG declara.
+ * A alternativa era um ficheiro que ninguém confere, e esses ficam errados no
+ * commit seguinte sem ninguém dar por isso (IDENTIDADE.md §10).
+ */
+const MANIFESTOS = [
+  { lang: 'pt', caminho: '/manifest.webmanifest', lingua: 'pt-PT', inicio: '/' },
+  { lang: 'en', caminho: '/en/manifest.webmanifest', lingua: 'en', inicio: '/en/' },
+];
+
+/** Os ícones que um manifesto declara, com o tamanho e o propósito de cada um. */
+const ICONES_DO_MANIFESTO = [
+  { src: '/icon-192.png', sizes: '192x192', px: 192, purpose: 'any' },
+  { src: '/icon-512.png', sizes: '512x512', px: 512, purpose: 'any' },
+  { src: '/icon-512-maskable.png', sizes: '512x512', px: 512, purpose: 'maskable' },
+];
+
+/**
+ * O TAMANHO DE UM ÍCONE LÊ-SE DA CABEÇA DO PNG, E NÃO DO NOME DELE.
+ *
+ * Quem o lê é `medidasDoPng()`, que já existe neste ficheiro para os cartões de
+ * partilha: um ficheiro chamado `icon-512.png` com 192 px lá dentro passaria em
+ * qualquer conferência que olhasse para o nome, e é a mesma pergunta nas duas
+ * superfícies. Fica dito aqui para quem ler esta secção primeiro.
+ */
+
 /** De <html lang="pt-PT"> para a língua da edição. Derivado da tabela de rotas. */
 const LINGUA_POR_HREFLANG = Object.fromEntries(
   Object.entries(HREFLANG).map(([lang, hreflang]) => [hreflang, lang]),
@@ -289,6 +360,8 @@ let valoresAuditados = 0;
 let valoresSemSelo = 0;
 /** Ligações internas conferidas contra os ficheiros construídos. */
 let ligacoesConferidas = 0;
+/** Manifestos e ícones conferidos campo a campo contra as fontes de verdade. */
+const manifestosConferidos = { ficheiros: 0, icones: 0 };
 /** Recortes conferidos: o ficheiro construído contra o resumo da linha. */
 let recortesConferidos = 0;
 /** Ficheiros alojados conferidos: a porta da página contra o campo da linha. */
@@ -3533,6 +3606,113 @@ for (const file of ficheirosHtml(DIST)) {
       err(`o canonical não está no domínio canónico: "${href}" (esperado https://${SITE_HOST}/…).`);
     }
   }
+
+  /**
+   * ---------------------------------------------------------------------
+   * O SÍTIO NO ECRÃ PRINCIPAL: AS LIGAÇÕES DA CABEÇA (28.08.2026)
+   * ---------------------------------------------------------------------
+   *
+   * O `BRIEF-app.md` §3 diz uma frase que é a razão deste bloco existir: «o
+   * portão de HTML e o `check:cadeia` aceitam as ligações novas porque as
+   * RECONHECEM, não porque se lhes abre uma exceção». Nenhuma destas etiquetas
+   * ia partir alguma coisa se ninguém lhes mexesse — a varredura dos algarismos
+   * do `<head>` lê o título e a descrição, e não atributos —, e é justamente por
+   * isso que valia a pena escrevê-lo: uma ligação que ninguém confere é uma
+   * ligação que fica partida no dia em que o ficheiro mudar de nome, e um
+   * manifesto ligado da edição errada põe o leitor inglês na primeira página
+   * portuguesa sempre que ele abrir o ícone que ele próprio instalou.
+   *
+   * O DESTINO ENTRA NA CONFERÊNCIA DAS LIGAÇÕES INTERNAS, que é a que já mede
+   * «uma porta que não abre é pior do que não haver porta»: até hoje ela só
+   * olhava para os `a[href]` do corpo. Um ícone que não existe em `dist/` é uma
+   * porta que não abre, com a diferença de ninguém a ver a abrir-se.
+   */
+  {
+    const manifesto = root.querySelector('head link[rel="manifest"]');
+    if (!manifesto) {
+      err(
+        `falta <link rel="manifest">.\n` +
+          `      É o que faz do sítio uma aplicação de ecrã principal, e é por edição.`,
+      );
+    } else if (rota) {
+      const esperado = MANIFESTO_DA_EDICAO[rota.lang];
+      const href = decodeEntities(manifesto.getAttribute('href') ?? '');
+      if (!esperado) {
+        err(`a edição "${rota.lang}" não tem manifesto declarado em MANIFESTO_DA_EDICAO.`);
+      } else if (href !== esperado) {
+        err(
+          `esta página é da edição "${rota.lang}" e liga o manifesto "${href}"; ` +
+            `o dela é "${esperado}".\n` +
+            `      Um manifesto da outra edição abre a aplicação na primeira página errada.`,
+        );
+      }
+      ligacoesInternas.push({ rel, base: baseDeResolucao(rel, caminho), href });
+    }
+
+    /* Os três ícones, cada um com o seu `rel` e o seu ficheiro. O `sizes` do ICO
+       fica na lista porque é o que diz ao cliente o que está lá dentro sem ele
+       ter de abrir o ficheiro, e um `sizes` que não bata com o ICO é pior do que
+       nenhum. `tests/inicio/app.mjs` abre o ICO e confere os dois tamanhos. */
+    for (const { selector, href: esperado, sizes, oQueE } of LIGACOES_DO_APP) {
+      const el = root.querySelector(`head ${selector}`);
+      if (!el) {
+        err(`falta <link ${selector.replace(/^link/, '').trim()}> (${oQueE}).`);
+        continue;
+      }
+      const href = decodeEntities(el.getAttribute('href') ?? '');
+      if (href !== esperado) {
+        err(`o ${oQueE} aponta para "${href}" e o ficheiro da casa é "${esperado}".`);
+        continue;
+      }
+      if (sizes && (el.getAttribute('sizes') ?? '') !== sizes) {
+        err(
+          `o ${oQueE} declara sizes="${el.getAttribute('sizes') ?? ''}" e o ficheiro tem ` +
+            `"${sizes}" lá dentro.`,
+        );
+      }
+      ligacoesInternas.push({ rel, base: baseDeResolucao(rel, caminho), href });
+    }
+
+    /* A cor da mobília do navegador é a do papel desta página, e é UMA só.
+       A razão de não serem duas com `media` está escrita em `Base.astro` e é a
+       Emenda 12: neste sítio a preferência do sistema não decide o tema, e uma
+       etiqueta que a lesse prometia uma barra escura por cima de uma página
+       clara. Quem troca a cor é `public/js/tema.js`, com a escolha do leitor. */
+    const cores = root.querySelectorAll('head meta[name="theme-color"]');
+    if (cores.length !== 1) {
+      err(
+        `o <head> tem ${cores.length} etiqueta(s) <meta name="theme-color"> e devia ter uma.\n` +
+          `      Uma por esquema do sistema mentiria: desde a Emenda 12 o escuro deste sítio é ` +
+          `uma escolha do leitor, não a preferência do aparelho dele.`,
+      );
+    } else if ((cores[0].getAttribute('content') ?? '').toLowerCase() !== PAPEL_CLARO) {
+      err(
+        `o <meta name="theme-color"> diz "${cores[0].getAttribute('content')}" e o papel claro ` +
+          `dos tokens é "${PAPEL_CLARO}".`,
+      );
+    }
+
+    const titulo = root.querySelector('head meta[name="apple-mobile-web-app-title"]');
+    if (!titulo) err('falta <meta name="apple-mobile-web-app-title">, que é o nome sob o ícone.');
+    else if (decodeEntities(titulo.getAttribute('content') ?? '') !== SITE_SHORT_NAME) {
+      err(
+        `o <meta name="apple-mobile-web-app-title"> diz ` +
+          `"${titulo.getAttribute('content')}" e o nome curto da casa é "${SITE_SHORT_NAME}".`,
+      );
+    }
+
+    /* E a etiqueta que NÃO pode estar. Está obsoleta desde que o WebKit lê o
+       manifesto (iOS 15.4), e o `BRIEF-app.md` §3 di-lo à letra. Uma proibição
+       sem quem a confira é uma frase num ficheiro de texto. */
+    if (root.querySelector('head meta[name="apple-mobile-web-app-capable"]')) {
+      err(
+        `o <head> traz <meta name="apple-mobile-web-app-capable">, que está obsoleta e que o ` +
+          `BRIEF-app.md exclui: quem faz este trabalho é o `.concat(
+            '`display: standalone` do manifesto.',
+          ),
+      );
+    }
+  }
   /**
    * ---------------------------------------------------------------------
    * A AUTORIA TEM CASA, E TODAS AS PÁGINAS TÊM A PORTA PARA LÁ
@@ -5232,6 +5412,174 @@ for (const { rel, base, href } of ligacoesInternas) {
 }
 
 /**
+ * ---------------------------------------------------------------------------
+ * OS DOIS MANIFESTOS, CONFERIDOS CAMPO A CAMPO (28.08.2026)
+ * ---------------------------------------------------------------------------
+ *
+ * Corre uma vez, sobre o que foi construído, e não por página. O que ele
+ * compara está escrito ao lado de `MANIFESTOS`, e a razão de existir é a mesma
+ * do bloco dos cartões de partilha: o manifesto é a superfície do sítio num
+ * sítio onde não há gabarito nem varrimento, e um ficheiro assim fica errado
+ * sem ninguém dar por isso.
+ *
+ * E COMEÇA PELO PAPEL, porque o resto depende dele. Duas cores do sítio saem
+ * hoje de `tokens.css` para dentro de ficheiros que o CSS não alcança — os
+ * manifestos e a etiqueta `theme-color` —, e `site.config.mjs` guarda-as em
+ * cadeia. Não é uma segunda fonte de verdade enquanto alguém confere que as
+ * duas dizem a mesma coisa; é o que esta primeira conferência faz.
+ */
+{
+  const rel = 'src/styles/tokens.css';
+  const cru = fs.readFileSync(path.join(ROOT, 'src', 'styles', 'tokens.css'), 'utf8');
+  const papel = (dentro) => {
+    const m = /--paper:\s*(#[0-9a-fA-F]{6})/.exec(dentro);
+    return m ? m[1].toLowerCase() : null;
+  };
+  const escuroBloco = /:root\[data-theme='dark'\]\s*\{([\s\S]*?)\}/.exec(cru);
+  const claro = papel(cru);
+  const escuro = escuroBloco ? papel(escuroBloco[1]) : null;
+  if (claro !== PAPEL_CLARO) {
+    erros.push({
+      rel,
+      msg:
+        `o papel claro dos tokens é "${claro}" e site.config.mjs diz "${PAPEL_CLARO}".\n` +
+        `      A cadeia de site.config.mjs é a que vai para os manifestos e para a etiqueta ` +
+        `theme-color, e o CSS não alcança nenhum dos dois.`,
+    });
+  }
+  if (escuro !== PAPEL_ESCURO) {
+    erros.push({
+      rel,
+      msg: `o papel escuro dos tokens é "${escuro}" e site.config.mjs diz "${PAPEL_ESCURO}".`,
+    });
+  }
+  /* E a terceira cópia: a que `public/js/tema.js` escreve na etiqueta quando o
+     leitor carrega no botão. É JavaScript servido tal e qual, e por isso lê-se
+     do ficheiro e não se importa. */
+  const relTema = 'public/js/tema.js';
+  const tema = fs.readFileSync(path.join(ROOT, 'public', 'js', 'tema.js'), 'utf8');
+  const naEscolha = /var PAPEL = \{\s*light:\s*'(#[0-9a-fA-F]{6})',\s*dark:\s*'(#[0-9a-fA-F]{6})'/.exec(
+    tema,
+  );
+  if (!naEscolha) {
+    erros.push({
+      rel: relTema,
+      msg:
+        `não encontrei os dois papéis (var PAPEL = { light: '…', dark: '…' }).\n` +
+        `      É o que troca a cor da mobília do navegador quando o leitor escolhe o escuro; ` +
+        `sem eles a barra fica a dizer o papel claro por cima de uma página escura.`,
+    });
+  } else if (naEscolha[1].toLowerCase() !== PAPEL_CLARO || naEscolha[2].toLowerCase() !== PAPEL_ESCURO) {
+    erros.push({
+      rel: relTema,
+      msg:
+        `os papéis do controlo do tema são "${naEscolha[1]}" e "${naEscolha[2]}", e os tokens ` +
+        `dizem "${PAPEL_CLARO}" e "${PAPEL_ESCURO}".`,
+    });
+  }
+}
+
+for (const m of MANIFESTOS) {
+  const rel = `dist${m.caminho}`;
+  const ficheiro = path.join(DIST, m.caminho.replace(/^\//, ''));
+  if (!fs.existsSync(ficheiro)) {
+    erros.push({ rel, msg: `o manifesto da edição "${m.lang}" não foi construído.` });
+    continue;
+  }
+  let doc;
+  try {
+    doc = JSON.parse(fs.readFileSync(ficheiro, 'utf8'));
+  } catch (e) {
+    erros.push({ rel, msg: `não é JSON legível: ${e.message}` });
+    continue;
+  }
+  const campo = (nome, esperado) => {
+    if (doc[nome] !== esperado) {
+      erros.push({ rel, msg: `"${nome}" é ${JSON.stringify(doc[nome])} e devia ser ${JSON.stringify(esperado)}.` });
+    }
+  };
+  campo('name', SITE_NAME);
+  campo('short_name', SITE_SHORT_NAME);
+  campo('lang', m.lingua);
+  campo('id', m.inicio);
+  campo('start_url', m.inicio);
+  campo('display', 'standalone');
+  campo('background_color', PAPEL_CLARO);
+  campo('theme_color', PAPEL_CLARO);
+  /* O `display` é `standalone` e não `fullscreen` nem `minimal-ui`: o BRIEF
+     escreve-o, e é a diferença entre uma aplicação sem a moldura do navegador e
+     uma aplicação sem a barra de estado do telemóvel. */
+
+  const icones = Array.isArray(doc.icons) ? doc.icons : [];
+  if (icones.length !== ICONES_DO_MANIFESTO.length) {
+    erros.push({
+      rel,
+      msg: `declara ${icones.length} ícone(s) e a casa tem ${ICONES_DO_MANIFESTO.length}.`,
+    });
+  }
+  for (const esperado of ICONES_DO_MANIFESTO) {
+    const declarado = icones.find((i) => i?.src === esperado.src);
+    if (!declarado) {
+      erros.push({ rel, msg: `não declara o ícone "${esperado.src}".` });
+      continue;
+    }
+    if (declarado.sizes !== esperado.sizes) {
+      erros.push({
+        rel,
+        msg: `o ícone "${esperado.src}" declara sizes "${declarado.sizes}" e devia declarar "${esperado.sizes}".`,
+      });
+    }
+    if (declarado.purpose !== esperado.purpose) {
+      erros.push({
+        rel,
+        msg: `o ícone "${esperado.src}" declara purpose "${declarado.purpose}" e devia declarar "${esperado.purpose}".`,
+      });
+    }
+    if (declarado.type !== 'image/png') {
+      erros.push({ rel, msg: `o ícone "${esperado.src}" declara type "${declarado.type}".` });
+    }
+    const noDisco = path.join(DIST, esperado.src.replace(/^\//, ''));
+    if (!fs.existsSync(noDisco)) {
+      erros.push({ rel, msg: `o ícone "${esperado.src}" não existe em dist/.` });
+      continue;
+    }
+    const medidas = medidasDoPng(fs.readFileSync(noDisco));
+    if (!medidas) {
+      erros.push({ rel, msg: `o ícone "${esperado.src}" não é um PNG legível.` });
+    } else if (medidas.largura !== esperado.px || medidas.altura !== esperado.px) {
+      erros.push({
+        rel,
+        msg:
+          `o ícone "${esperado.src}" declara ${esperado.sizes} e o ficheiro tem ` +
+          `${medidas.largura}×${medidas.altura} na cabeça do PNG.`,
+      });
+    }
+    manifestosConferidos.icones++;
+  }
+  manifestosConferidos.ficheiros++;
+}
+
+/* E os dois ficheiros que não estão em nenhum manifesto e a cabeça liga: o
+   ícone do iPhone (180, opaco) e os dois favicons. O tamanho lê-se aqui; a
+   opacidade e a zona segura medem-se em `tests/inicio/app.mjs`, que é onde a
+   régua tem os casos plantados. */
+for (const { caminho, px } of [{ caminho: '/apple-touch-icon.png', px: 180 }]) {
+  const rel = `dist${caminho}`;
+  const noDisco = path.join(DIST, caminho.replace(/^\//, ''));
+  if (!fs.existsSync(noDisco)) {
+    erros.push({ rel, msg: 'a cabeça de todas as páginas liga este ficheiro e ele não está em dist/.' });
+    continue;
+  }
+  const medidas = medidasDoPng(fs.readFileSync(noDisco));
+  if (!medidas || medidas.largura !== px || medidas.altura !== px) {
+    erros.push({
+      rel,
+      msg: `a cabeça do PNG diz ${medidas ? `${medidas.largura}×${medidas.altura}` : 'ilegível'} e o iOS quer ${px}×${px}.`,
+    });
+  } else manifestosConferidos.icones++;
+}
+
+/**
  * A ÂNCORA DA PORTA DE UM NÚMERO DO SÍTIO (v2, IDENTIDADE.md §10).
  *
  * Um `data-prova` pode ter como porta uma âncora na própria página, quando é
@@ -5927,6 +6275,8 @@ const documentoDaProva = {
     valores_auditados: valoresAuditados,
     valores_sem_selo: valoresSemSelo,
     ligacoes_internas_conferidas: ligacoesConferidas,
+    manifestos_conferidos: manifestosConferidos.ficheiros,
+    icones_conferidos: manifestosConferidos.icones,
     restantes_ortografia: ocorrenciasRestantes,
     afirmacoes_citadas_fora_do_livro: idsUsados.size,
     avisos: avisos.length,
@@ -6017,6 +6367,8 @@ console.log(
       `${paginasDeSerieConferidas} páginas de série · ` +
       `${cartoesConferidos} cartões de partilha (${valoresDeCartao} valores recalculados, ` +
       `${cartoesUsados.size} nomeados por páginas) · ` +
+      `${manifestosConferidos.ficheiros} manifestos (${manifestosConferidos.icones} ícones ` +
+      `medidos na cabeça do PNG) · ` +
       `escrito em ${CAMINHO_DA_PROVA}`,
   ),
 );
