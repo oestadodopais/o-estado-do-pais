@@ -8,3 +8,15 @@ The director's «e» is the seat's recommendation and the front-runner; one refi
 --- end ---
 
 Rules: drawn geometry, not a font glyph; judge by looking at your renders with the Read tool; no dashes in Portuguese prose (commas, colons, or the middle dot); commits in the worktree with explicit paths only, each green on `npm run typecheck`, with the two trailers `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>` and `Claude-Session: https://claude.ai/code/session_01BbaH3XteKcsmmN9VD6SGwU`; do not merge or push; never fetch from the network.
+
+--- ADDENDUM to ADENDA 5 (from the seat, mid round, 28.08.2026) ---
+The director's words just now: «the logo should be a lot cleaner, a lot more minimalistic». Apply it to this pass, on top of ADENDA 5:
+
+- One shape, one stroke weight, nothing added: the circle, its cut, the bar. No band thicker than the stroke, no bar protruding as a second object, no outline, no second colour inside the mark, no frame.
+- Thinner and airier than the current voice 7: try stroke weights around 12 to 16 % of the diameter (the current is heavier), with the bar the same weight as the ring, and the cut clean (straight-cut terminals, no tapering).
+- The field plain: ink or paper, the mark in one colour (amber on ink, ochre on paper). Show also a version with the mark alone on paper with no field at all, for the header.
+- Minimal also means the lockup: the «e» and the name in one line, one weight, no rule, no tagline.
+- Keep the measurements honest: minimum run at 60 and 16 for each weight; if the thin version breaks at 16, say so and give the thinnest weight that survives, that is the answer.
+
+Include these minimal variants in the board and in `ECRA-E.png`, and make your recommendation among them.
+--- end ---
