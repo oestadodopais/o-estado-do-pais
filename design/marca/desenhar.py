@@ -4493,3 +4493,636 @@ if len(sys.argv) > 1 and sys.argv[1] == "contrastes":
 
 if len(sys.argv) > 1 and sys.argv[1] == "prancha":
     prancha()
+
+
+# ===========================================================================
+# A SEXTA ADENDA · O «e», EXPLORADO
+# ===========================================================================
+"""
+`python3 design/marca/desenhar.py e2` escreve `design/marca/direcoes-e2/*.svg`.
+
+A adenda 6 (`ADENDA-6-e-explorar.md`) não pede uma variante: pede uma GRELHA. O
+diretor viu o «e» mínimo e disse que não está lá, que as cores não são
+agradáveis, e deixou duas pistas para explorar, não para obedecer: a barra podia
+parar antes de chegar ao círculo, a dois terços do caminho, a flutuar dentro do
+bojo; e o corte podia ser menor. Esta parte do ficheiro desenha os dois eixos
+cruzados, com uma grossura só (14 % do diâmetro, a `18n`), para que a folha
+mostre o que muda quando cada um deles anda.
+
+OS TRÊS EIXOS, E O QUE CADA UM MEDE
+
+  1 · A BARRA. Sete comprimentos, e são dois grupos, não sete pontos de uma
+      régua só. O grupo LIVRE tem a barra centrada e solta das duas pontas; o
+      grupo ESQUERDA prende-a ao anel do lado fechado e deixa a outra ponta no
+      ar. O comprimento conta-se em VÃO, que é a distância de parede a parede
+      por dentro do anel, medida sobre o eixo da barra: `vao = 2 (r - g)`. A
+      barra UNIDA é a de hoje e não cabe nesta conta, porque as pontas dela são
+      cordas do círculo de FORA e não do de dentro; fica como o 100 % do eixo,
+      dito assim e não em fração do vão.
+
+  2 · O CORTE. A abertura conta-se DA BARRA, como na ronda anterior: o topo da
+      banda fica onde a face de baixo da barra encontraria a circunferência de
+      fora (`-asin(g/2r)`), e o corte é o ângulo que falta a partir daí. Assim o
+      eixo do corte é INDEPENDENTE do eixo da barra: as trinta e cinco células
+      da folha têm a mesma banda com a mesma abertura em cada coluna, e o que
+      muda de linha para linha é só a barra. Uma tabela cruzada em que os dois
+      eixos se contaminam não é uma tabela cruzada.
+
+  3 · A COR. Pares de duas cores e mais nada, com o mesmo par nos dois temas.
+      Isto é de propósito e é diferente do que as direções anteriores fazem: ali
+      o tema escuro troca o ocre pelo âmbar, porque a folha de estilos manda; a
+      pergunta desta ronda é sobre O PAR, e um ficheiro que muda de cor conforme
+      o tema responde a outra pergunta.
+
+O QUE A TOPOLOGIA DIZ, E QUE É O NÚMERO QUE DECIDE O PRIMEIRO EIXO. Um «e»
+fechado tem UMA ilha de sinal (o anel e a barra são a mesma peça) e DUAS ilhas
+de fundo (o campo, que entra no bojo pelo corte, mais o olho fechado por cima da
+barra). Solte-se a barra de uma ponta e o olho deixa de estar fechado: passa a
+comunicar com o bojo pela folga, e o fundo fica com UMA ilha. Solte-se das duas
+e o sinal parte-se em DUAS ilhas. Os dois inteiros juntos dizem, sem opinião,
+qual das três coisas se está a ver:
+
+  sinal 1, fundo 2 · a barra é parte da letra e o olho está fechado: é um «e»;
+  sinal 1, fundo 1 · a barra é parte da letra e o olho está aberto;
+  sinal 2, fundo 1 · a barra é um traço solto dentro de um anel.
+
+Aos 16 px o suavizado pode voltar a colar o que o desenho separou, e é por isso
+que os mesmos inteiros se contam a 180, a 60 e a 16: o que decide não é o
+desenho, é o que fica no ficheiro.
+"""
+
+G_E2 = 0.14                  # a grossura, uma só: a `18n`
+ABERTURA_E2 = 48.0           # a abertura de hoje, o ponto de partida do eixo 2
+
+
+def e_explorado(cx, cy, r, g_diametro, comp=1.0, ancora="ambos",
+                abertura=ABERTURA_E2, classe="tinta"):
+    """O «e» mínimo com a barra e o corte como parâmetros.
+
+    `comp` é a fração do VÃO (de parede a parede por dentro do anel, sobre o
+    eixo da barra) que a barra ocupa; `ancora` diz onde ela se prende:
+
+      «ambos»    · as quatro pontas são cordas do círculo de fora (a de hoje);
+                   `comp` é ignorado, porque a barra vai de parede a parede por
+                   fora e não por dentro;
+      «esquerda» · a ponta esquerda é corda do círculo de fora, e a direita fica
+                   a `comp` do vão contado da parede esquerda;
+      «livre»    · a barra tem `comp` do vão, centrada no círculo, solta das
+                   duas pontas.
+
+    `abertura` são os graus de anel que faltam, contados DA BARRA.
+    """
+    g = g_diametro * 2 * r
+    meia = g / 2
+    r_int = r - g
+    topo = -math.degrees(math.asin(meia / r))
+    corte = topo - abertura
+    banda = banda_de_arco(cx, cy, r, r_int, topo, corte)
+    dx_fora = math.sqrt(max(r * r - meia * meia, 0.0))
+    vao = 2 * r_int
+    if ancora == "ambos":
+        x0, x1 = cx - dx_fora, cx + dx_fora
+    elif ancora == "esquerda":
+        x0, x1 = cx - dx_fora, cx - r_int + comp * vao
+    elif ancora == "direita":
+        x0, x1 = cx + r_int - comp * vao, cx + dx_fora
+    else:
+        x0, x1 = cx - comp * vao / 2, cx + comp * vao / 2
+    barra = rect(x0, cy - meia, x1, cy + meia)
+    return ([("nonzero", classe, banda), ("nonzero", classe, barra)],
+            (cx - r, cy - r, cx + r, cy + r))
+
+
+def folga_desenhada(r, g_diametro, comp, ancora):
+    """A folga entre a ponta livre da barra e a parede de dentro, em unidades.
+
+    Zero quando não há ponta livre. Mede-se sobre o eixo da barra, que é onde a
+    folga é maior: nos cantos, a parede está mais perto.
+    """
+    r_int = r - g_diametro * 2 * r
+    if ancora == "ambos":
+        return 0.0
+    if ancora in ("esquerda", "direita"):
+        return (1 - comp) * 2 * r_int
+    return (1 - comp) * r_int
+
+
+# (chave, rótulo, comp, âncora). Sete comprimentos, dois grupos.
+GEOMETRIAS_E2 = [
+    ("unida", "unida ao anel (a de hoje)", 1.0, "ambos"),
+    ("livre75", "livre · 3/4 do vão", 0.75, "livre"),
+    ("livre66", "livre · 2/3 do vão", 2 / 3, "livre"),
+    ("livre50", "livre · 1/2 do vão", 0.50, "livre"),
+    ("esq75", "presa à esquerda · 3/4", 0.75, "esquerda"),
+    ("esq66", "presa à esquerda · 2/3", 2 / 3, "esquerda"),
+    ("esq50", "presa à esquerda · 1/2", 0.50, "esquerda"),
+    # A OITAVA LINHA NÃO FOI PEDIDA, e nasceu de olhar para as sete de cima. Nas
+    # três de baixo, o entalhe da barra e o corte do anel ficam DO MESMO LADO, e
+    # o lado direito da letra fica comido duas vezes. Presa à direita, a barra
+    # deixa o entalhe do lado onde o anel está inteiro. É uma sonda com uma
+    # pergunta só, como a `14b` e a `18k` foram nas rondas anteriores, e por isso
+    # leva um comprimento só, o mesmo que o diretor nomeou.
+    ("dir66", "presa à direita · 2/3 (sonda)", 2 / 3, "direita"),
+]
+
+# Os cortes: o de hoje e quatro mais fechados. O último é o «fio de cabelo» que
+# a adenda pede, e está lá para o limite se ver e não se supor.
+CORTES_E2 = [48.0, 36.0, 28.0, 20.0, 6.0]
+
+BRANCO = "#ffffff"
+PRETO = "#000000"
+CINZENTO = "#585d5b"          # `--g1` de `tokens.css`: 6,24:1 sobre papel
+
+# (chave, rótulo, campo, letra). O mesmo par nos dois temas, de propósito.
+PARES_E2 = [
+    ("tinta-papel", "tinta em papel", PAPEL, TINTA),
+    ("papel-tinta", "papel em tinta", TINTA, PAPEL),
+    ("branco-preto", "branco puro em preto puro", PRETO, BRANCO),
+    ("cobalto-papel", "cobalto em papel", PAPEL, COBALTO),
+    ("cinzento-papel", "cinzento `--g1` em papel", PAPEL, CINZENTO),
+    ("ambar-tinta", "âmbar em tinta · a de hoje", TINTA, AMBAR),
+]
+PARES_E2_MAPA = {c: (campo, letra) for c, _, campo, letra in PARES_E2}
+
+
+def _e2_svg(chave, comp, ancora, abertura, campo, letra, titulo, nota):
+    partes, caixa = e_explorado(CENTRO, CENTRO, R_E, G_E2, comp, ancora, abertura)
+    folga = folga_desenhada(R_E, G_E2, comp, ancora)
+    corpo = _com(
+        f"O «e» explorado: uma grossura só, {G_E2 * 100:.0f} % do diâmetro "
+        f"({G_E2 * 2 * R_E:.0f} num diâmetro de {2 * R_E:.0f}).\n"
+        f"A barra: {'de parede a parede, unida ao anel' if ancora == 'ambos' else ''}"
+        f"{f'presa ao anel à esquerda e livre à direita, {comp:.3f} do vão' if ancora == 'esquerda' else ''}"
+        f"{f'presa ao anel à direita e livre à esquerda, {comp:.3f} do vão' if ancora == 'direita' else ''}"
+        f"{f'solta das duas pontas, {comp:.3f} do vão, centrada' if ancora == 'livre' else ''}"
+        f".\nA folga da ponta livre até à parede de dentro: {folga:.1f} "
+        f"({folga / (2 * R_E) * 100:.1f} % do diâmetro).\n"
+        f"O corte: {abertura:.0f} graus de abertura, contados da barra.\n"
+        f"O par: {letra} sobre {campo}, {contraste(letra, campo):.2f}:1, o mesmo nos dois temas.") \
+        + caminhos(partes)
+    return svg(titulo, corpo, corpo, nota, caixa=caixa, caixa_favicon=caixa,
+               cores=paleta(campo, letra, letra))
+
+
+def direcoes_e2():
+    """A grelha inteira: as trinta e cinco da folha, mais as das cores."""
+    fora = []
+    for chave, rotulo, comp, ancora in GEOMETRIAS_E2:
+        for ab in CORTES_E2:
+            slug = f"e2-{chave}-{ab:.0f}"
+            fora.append((slug, chave, comp, ancora, ab, "tinta-papel", rotulo))
+    for chave, rotulo, comp, ancora in GEOMETRIAS_E2:
+        for ab in CORTES_E2:
+            for par, _, _, _ in PARES_E2:
+                if par == "tinta-papel":
+                    continue
+                if (chave, ab) not in E2_CORES_ALVO:
+                    continue
+                slug = f"e2c-{chave}-{ab:.0f}-{par}"
+                fora.append((slug, chave, comp, ancora, ab, par, rotulo))
+    return fora
+
+
+# AS GEOMETRIAS QUE VÃO À FOLHA DAS CORES E AO ECRÃ, E PORQUE SÃO ESTAS TRÊS.
+# A escolha foi feita depois de `FOLHA-E2.png` existir, a olhar para ela, e não
+# antes; as razões estão medidas na §6 ter das NOTAS e resumem-se assim:
+#
+#   · `unida-48`  · a de hoje, e está aqui como referência fixa. Sem ela, a
+#                   comparação de cores não tem contra o quê se ler.
+#   · `unida-28`  · a segunda ideia do diretor (o corte mais pequeno) aplicada
+#                   até onde a medição a deixa ir: 2,1 px de corda aos 16 px,
+#                   que é a menor abertura que ainda acende dois píxeis.
+#   · `dir66-28`  · a primeira ideia do diretor (a barra a parar a dois terços)
+#                   na versão que continua a ser um «e». Solta das duas pontas,
+#                   a mesma barra dá um sinal de menos dentro de um anel; presa
+#                   à esquerda, o entalhe cai no lado que o corte já comeu.
+#                   Presa à direita, o entalhe fica no lado inteiro do anel.
+#
+# As três lêem-se por pares: a segunda contra a primeira isola O CORTE, e a
+# terceira contra a segunda isola A BARRA. Uma folha de cores com três
+# geometrias que difiram nas duas coisas ao mesmo tempo não serve para nada.
+E2_CORES_ALVO = {("unida", 48.0), ("unida", 28.0), ("dir66", 28.0)}
+E2_CORES_ORDEM = [
+    ("unida", 48.0, "unida ao anel · corte de 48", "a de hoje, a referência"),
+    ("unida", 28.0, "unida ao anel · corte de 28", "o corte mais pequeno"),
+    ("dir66", 28.0, "presa à direita · 2/3 · corte de 28", "a barra que para"),
+]
+
+
+def escreve_e2():
+    pasta = os.path.join(AQUI, "direcoes-e2")
+    os.makedirs(pasta, exist_ok=True)
+    antigos = {f for f in os.listdir(pasta) if f.endswith(".svg")}
+    escritos = set()
+    for slug, chave, comp, ancora, ab, par, rotulo in direcoes_e2():
+        campo, letra = PARES_E2_MAPA[par]
+        s = _e2_svg(chave, comp, ancora, ab,  campo, letra,
+                    f"e2 · {rotulo} · corte de {ab:.0f} graus · {par}",
+                    f"A barra {rotulo}, com {ab:.0f} graus de abertura, em {par}.")
+        with open(os.path.join(pasta, slug + ".svg"), "w") as f:
+            f.write(s)
+        escritos.add(slug + ".svg")
+    for f in sorted(antigos - escritos):
+        os.remove(os.path.join(pasta, f))
+        print(f"apagado design/marca/direcoes-e2/{f}")
+    print(f"escritos {len(escritos)} SVG em design/marca/direcoes-e2/")
+
+
+if len(sys.argv) > 1 and sys.argv[1] == "e2":
+    escreve_e2()
+
+
+# ---------------------------------------------------------------------------
+# A RÉGUA DA SEXTA ADENDA
+# ---------------------------------------------------------------------------
+"""
+`python3 design/marca/desenhar.py medir-e2 [tamanhos]` lê os PNG de `EXPORT-E2/`.
+
+TRÊS NÚMEROS QUE A `medir-e` NÃO TINHA, e que são os que este eixo obriga a ter.
+
+· AS ILHAS DO SINAL. A `medir-e` conta as ilhas do FUNDO, porque a pergunta da
+  ronda anterior era se o bojo abre. A pergunta desta é outra: se a barra ainda
+  é parte da letra. Uma barra solta das duas pontas faz do sinal duas peças, e
+  isso conta-se, não se acha.
+· A FOLGA DA BARRA, medida na linha do meio do ficheiro: os vazios entre a
+  primeira e a última tinta dessa linha. É a distância que o olho tem de saltar
+  para juntar o traço ao anel, dita em píxeis do ficheiro e não em unidades do
+  desenho.
+· A CORDA DA ABERTURA já lá estava, e é aqui que ela decide: a adenda pergunta a
+  que abertura é que o «e» passa a ser «um "o" com uma barra» aos 16 px, e a
+  resposta é uma medida de corda mais uma olhadela, não uma das duas sozinha.
+
+O que se lê da tabela, e é preciso dizê-lo antes de a ler: `sinal` e `fundo` são
+INTEIROS e valem mais do que as frações à volta deles. `sinal 1 · fundo 2` é um
+«e» fechado; `sinal 1 · fundo 1` é a mesma letra com o olho aberto; `sinal 2 ·
+fundo 1` é um anel com um traço lá dentro.
+"""
+
+
+def _abertura_no_sector(sinal, cx, cy, r, a0, a1, por_grau=8):
+    """O maior arco sem tinta entre `a0` e `a1`, em graus e em corda de píxeis.
+
+    Ao contrário da `_abertura_medida`, que varre a volta toda, esta varre um
+    sector. É a diferença entre medir O CORTE e medir o maior buraco que houver.
+    """
+    n = max(int(abs(a1 - a0) * por_grau), 8)
+    passo = (a1 - a0) / n
+    melhor = corrida = 0
+    for i in range(n + 1):
+        ang = math.radians(a0 + i * passo)
+        if _amostra(sinal, cx + r * math.cos(ang), cy - r * math.sin(ang)):
+            corrida = 0
+        else:
+            corrida += 1
+            melhor = max(melhor, corrida)
+    graus = melhor * abs(passo)
+    return graus, 2 * r * math.sin(math.radians(min(graus, 180) / 2))
+
+
+def corda_desenhada(abertura, px):
+    """A corda da abertura, TIRADA DO DESENHO e não da imagem, em píxeis de `px`.
+
+    Existe ao lado da medida porque aos 16 px a banda tem três píxeis contando o
+    suavizado, e uma circunferência de amostragem lá dentro anda meio píxel para
+    um lado ou para o outro conforme o arredondamento. A medida diz o que
+    SOBREVIVE no ficheiro; esta diz o que lá foi POSTO. As duas juntas dizem
+    quanto é que o suavizado comeu, e nenhuma delas sozinha diz isso.
+    """
+    r_meio = (R_E - G_E2 * R_E) * (SINAL / (2 * R_E)) * (px / CAMPO)
+    return 2 * r_meio * math.sin(math.radians(abertura / 2))
+
+
+def _folgas_na_linha(sinal, y):
+    """Os vazios entre a primeira e a última tinta da linha `y`, em píxeis."""
+    linha = sinal[y]
+    tem = [x for x, v in enumerate(linha) if v]
+    if not tem:
+        return []
+    fora, corrida = [], 0
+    for x in range(tem[0], tem[-1] + 1):
+        if not linha[x]:
+            corrida += 1
+        elif corrida:
+            fora.append(corrida)
+            corrida = 0
+    return fora
+
+
+def _medida_e2(slug, abertura, t):
+    """Os números de uma célula da grelha, a um tamanho, lidos do PNG."""
+    f = os.path.join(AQUI, "EXPORT-E2", slug, f"{slug}-{t}.png")
+    if not os.path.exists(f):
+        return None
+    im = _le(f)
+    w, h = im.size
+    _, sinal = _mascaras(im)
+    linhas = [y for y in range(h) if any(sinal[y])]
+    diam = (linhas[-1] - linhas[0] + 1) if linhas else 0
+    banda = 0
+    for y in range(h):
+        if sinal[y][w // 2]:
+            banda += 1
+        elif banda:
+            break
+    cx, cy = w / 2, h / 2
+    r_ext, r_int = diam / 2, diam / 2 - banda
+    corte = -math.degrees(math.asin(G_E2)) - abertura
+    mini, med, onde = _corridas_disco(sinal)
+    # A ABERTURA MEDE-SE NO SECTOR DO CORTE, E NÃO NA VOLTA TODA, e isto é uma
+    # correção que a sonda da direita obrigou a fazer. A `medir-e` procura o
+    # maior arco sem tinta em toda a circunferência do meio da banda, e isso
+    # chegava enquanto a barra ia de parede a parede, porque o único buraco
+    # sobre essa circunferência era o corte. Com uma barra que PARA, há um
+    # segundo buraco, o entalhe da ponta livre, e à primeira a régua devolveu
+    # 2,0 px de «corda» para a `dir66` com o corte de 6 graus, ou seja para um
+    # anel fechado: o que ela mediu foi o entalhe. O corte está num sítio
+    # conhecido, entre a face da barra e a ponta de baixo da banda, e é ali que
+    # se procura, com vinte graus de folga de cada lado.
+    graus, corda = _abertura_no_sector(sinal, cx, cy, (r_ext + r_int) / 2,
+                                       -math.degrees(math.asin(G_E2)) + 20.0,
+                                       corte - 20.0)
+    folgas = _folgas_na_linha(sinal, int(round(cy)))
+    return {"sinal": sum(sum(l) for l in sinal) / (w * h) * 100,
+            "diametro": diam, "banda": banda, "min": mini, "mediana": med,
+            "onde": _sitio(onde, w, h),
+            "ponta": _materia_na_ponta(sinal, cx, cy, r_ext, r_int, corte),
+            "graus": graus, "corda": corda,
+            "corda_desenhada": corda_desenhada(abertura, im.size[0]),
+            "ilhas_sinal": _ilhas(sinal), "ilhas_fundo": _ilhas_do_fundo(sinal),
+            "folga": max(folgas) if folgas else 0}
+
+
+def _lida_e2(slug, abertura, t, cache={}):
+    chave = (slug, t)
+    if chave not in cache:
+        cache[chave] = _medida_e2(slug, abertura, t)
+    return cache[chave]
+
+
+def _tipo_de_leitura(m):
+    """O que os dois inteiros dizem, sem adjetivo nenhum."""
+    if m["ilhas_sinal"] >= 2:
+        return "anel + traço solto"
+    return "«e» de olho fechado" if m["ilhas_fundo"] >= 2 else "olho aberto"
+
+
+def medir_e2(tamanhos=("180", "60", "16")):
+    for chave, rotulo, comp, ancora in GEOMETRIAS_E2:
+        for ab in CORTES_E2:
+            slug = f"e2-{chave}-{ab:.0f}"
+            if not os.path.isdir(os.path.join(AQUI, "EXPORT-E2", slug)):
+                continue
+            print(f"{slug}   ({rotulo}, folga desenhada "
+                  f"{folga_desenhada(R_E, G_E2, comp, ancora):.0f} unidades, "
+                  f"abertura {ab:.0f} graus)")
+            for t in tamanhos:
+                m = _lida_e2(slug, ab, t)
+                if m is None:
+                    continue
+                print(f"  {t}: sinal {m['sinal']:.1f} % · banda {m['banda']} px · "
+                      f"ilhas do sinal {m['ilhas_sinal']} · do fundo {m['ilhas_fundo']} "
+                      f"({_tipo_de_leitura(m)})\n"
+                      f"      corrida mínima: {m['onde']} · mediana {m['mediana']}\n"
+                      f"      folga da barra {m['folga']} px · matéria na ponta "
+                      f"{m['ponta']:.1f} px\n"
+                      f"      abertura à vista {m['graus']:.0f} graus · corda "
+                      f"{m['corda']:.1f} px medida, {m['corda_desenhada']:.1f} px desenhada")
+
+
+if len(sys.argv) > 1 and sys.argv[1] == "medir-e2":
+    medir_e2(tuple(sys.argv[2:]) or ("180", "60", "16"))
+
+
+# ---------------------------------------------------------------------------
+# A FOLHA CRUZADA: OS COMPRIMENTOS DE BARRA CONTRA OS CORTES
+# ---------------------------------------------------------------------------
+"""
+`python3 design/marca/desenhar.py folha-e2` escreve `design/marca/FOLHA-E2.png`.
+
+Uma tabela cruzada e não uma tira: sete comprimentos de barra em linha, cinco
+cortes em coluna, tudo à mesma grossura (14 %) e ao mesmo par de cores (tinta em
+papel), aos 180 px. É a folha que a adenda 6 pede para se ver de uma vez o que
+cada eixo faz sozinho, e a razão de ser cruzada é que os dois eixos podiam
+interferir: um corte pequeno com uma barra solta não é a soma do que cada um faz.
+
+EM BAIXO, UMA TIRA A MAIS, e é ela que responde à pergunta do segundo eixo. A
+adenda pergunta a que abertura é que o «e» passa a ser «um "o" com uma barra»
+aos 16 px, e isso não se vê numa folha de 180: vê-se aos 16, ampliados. A tira
+tem as cinco aberturas da mesma geometria (a unida), aos 16 px esticados oito
+vezes, com a corda medida por baixo de cada uma.
+"""
+
+
+def _corda16(slug, ab):
+    m = _lida_e2(slug, ab, "16")
+    return m["corda"] if m else 0.0
+
+
+def folha_e2():
+    from PIL import Image, ImageDraw, ImageFont
+    grande = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 27)
+    media = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 23)
+    pequena = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 20)
+    cel, gap, rot = 180, 30, 540
+    passo, cabeca = cel + 52, 200
+    tira = 128
+    larg = rot + len(CORTES_E2) * cel + (len(CORTES_E2) + 1) * gap
+    alto = cabeca + len(GEOMETRIAS_E2) * passo + 150 + tira + 96
+    folha = Image.new("RGB", (larg, alto), (206, 210, 204))
+    d = ImageDraw.Draw(folha)
+    d.text((gap, 24), "O «e», explorado · a sexta adenda", font=grande, fill=(16, 18, 16))
+    d.text((gap, 60), "linhas: o comprimento da barra · colunas: o corte. "
+           f"Uma grossura só ({G_E2 * 100:.0f} % do diâmetro), tinta em papel, 180 px.",
+           font=pequena, fill=(52, 56, 52))
+    d.text((gap, 86), "o «vão» é a distância de parede a parede por dentro do anel, "
+           "medida sobre o eixo da barra.", font=pequena, fill=(52, 56, 52))
+
+    for j, ab in enumerate(CORTES_E2):
+        x = rot + gap + j * (cel + gap)
+        d.text((x, 130), f"corte de {ab:.0f} graus", font=media, fill=(16, 18, 16))
+        d.text((x, 160), f"corda a 16 px: {corda_desenhada(ab, 16):.1f} px desenhados, "
+               f"{_corda16(f'e2-unida-{ab:.0f}', ab):.1f} medidos",
+               font=pequena, fill=(52, 56, 52))
+
+    for i, (chave, rotulo, comp, ancora) in enumerate(GEOMETRIAS_E2):
+        y = cabeca + i * passo
+        folga = folga_desenhada(R_E, G_E2, comp, ancora)
+        d.text((gap, y + cel / 2 - 46), rotulo, font=media, fill=(16, 18, 16))
+        d.text((gap, y + cel / 2 - 16),
+               "as quatro pontas são cordas do círculo de fora" if ancora == "ambos"
+               else f"folga da ponta livre: {folga:.0f} unidades, "
+                    f"{folga / (2 * R_E) * 100:.0f} % do diâmetro",
+               font=pequena, fill=(52, 56, 52))
+        m = _lida_e2(f"e2-{chave}-48", 48.0, "180")
+        if m:
+            d.text((gap, y + cel / 2 + 10),
+                   f"a 180 px: {_tipo_de_leitura(m)}", font=pequena, fill=(90, 94, 90))
+            d.text((gap, y + cel / 2 + 34),
+                   f"ilhas: sinal {m['ilhas_sinal']}, fundo {m['ilhas_fundo']} · "
+                   f"tinta {m['sinal']:.1f} %", font=pequena, fill=(90, 94, 90))
+        for j, ab in enumerate(CORTES_E2):
+            x = rot + gap + j * (cel + gap)
+            f = os.path.join(AQUI, "EXPORT-E2", f"e2-{chave}-{ab:.0f}",
+                             f"e2-{chave}-{ab:.0f}-180.png")
+            folha.paste(Image.open(f).convert("RGB"), (x, y))
+
+    y = cabeca + len(GEOMETRIAS_E2) * passo + 40
+    d.text((gap, y), "E a pergunta do segundo eixo, que só se vê aos 16 px: "
+           "as cinco aberturas da barra unida, aos 16, esticados oito vezes.",
+           font=media, fill=(16, 18, 16))
+    d.text((gap, y + 32), "os píxeis são os do ficheiro de 16; o que aqui se estica "
+           "é a leitura, não o desenho.", font=pequena, fill=(52, 56, 52))
+    for j, ab in enumerate(CORTES_E2):
+        x = rot + gap + j * (cel + gap) + (cel - tira) // 2
+        f = os.path.join(AQUI, "EXPORT-E2", f"e2-unida-{ab:.0f}", f"e2-unida-{ab:.0f}-16.png")
+        folha.paste(Image.open(f).convert("RGB").resize((tira, tira), Image.NEAREST),
+                    (x, y + 76))
+        d.text((x, y + 76 + tira + 10), f"{ab:.0f}g · corda {corda_desenhada(ab, 16):.1f} px",
+               font=pequena, fill=(52, 56, 52))
+    saida = os.path.join(AQUI, "FOLHA-E2.png")
+    folha.save(saida, optimize=True)
+    print(f"escrito design/marca/FOLHA-E2.png  ({folha.size[0]} x {folha.size[1]})")
+
+
+if len(sys.argv) > 1 and sys.argv[1] == "folha-e2":
+    folha_e2()
+
+
+# ---------------------------------------------------------------------------
+# A FOLHA DAS CORES
+# ---------------------------------------------------------------------------
+"""
+`python3 design/marca/desenhar.py folha-e2-cores` escreve `FOLHA-E2-cores.png`.
+
+Linhas: os pares de cor. Colunas: três geometrias, cada uma às três medidas que
+decidem (180, 60, 16) mais o 16 esticado seis vezes, porque o que morre aos 16
+px não se vê aos 16 px.
+
+A ORDEM DAS LINHAS É A DA ADENDA, e não a do contraste: primeiro o preto e o
+branco (tinta em papel, papel em tinta, e o par puro), depois os dois calados
+(cobalto e cinzento), e só no fim o âmbar de hoje, que está aqui como termo de
+comparação e não como proposta. O contraste de cada par vai escrito na linha,
+contado e não copiado.
+"""
+
+
+def _e2c_slug(chave, ab, par):
+    return f"e2-{chave}-{ab:.0f}" if par == "tinta-papel" else f"e2c-{chave}-{ab:.0f}-{par}"
+
+
+def folha_e2_cores():
+    from PIL import Image, ImageDraw, ImageFont
+    grande = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 27)
+    media = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 23)
+    pequena = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 20)
+    colunas = [("180", 180), ("60", 60), ("16", 16), ("16", 96)]
+    legendas = ["180", "60", "16", "16 esticado"]
+    gap, rot, cabeca = 22, 430, 230
+    bloco = sum(px for _, px in colunas) + gap * len(colunas) + 46
+    passo = 180 + 46
+    larg = rot + len(E2_CORES_ORDEM) * bloco + gap * 2
+    alto = cabeca + len(PARES_E2) * passo + 60
+    folha = Image.new("RGB", (larg, alto), (206, 210, 204))
+    d = ImageDraw.Draw(folha)
+    d.text((gap, 24), "O «e», explorado · as cores", font=grande, fill=(16, 18, 16))
+    d.text((gap, 60), "linhas: o par de cor · colunas: três geometrias, às medidas "
+           "que decidem. O mesmo par nos dois temas.", font=pequena, fill=(52, 56, 52))
+    d.text((gap, 86), "o contraste é contado pela fórmula da WCAG sobre as duas cores "
+           "do par, e não copiado de lado nenhum.", font=pequena, fill=(52, 56, 52))
+    for k, (chave, ab, titulo, nota) in enumerate(E2_CORES_ORDEM):
+        x0 = rot + k * bloco
+        d.text((x0, 136), titulo, font=media, fill=(16, 18, 16))
+        d.text((x0, 166), nota, font=pequena, fill=(52, 56, 52))
+        x = x0
+        for (_, px), leg in zip(colunas, legendas):
+            d.text((x, 198), leg, font=pequena, fill=(90, 94, 90))
+            x += px + gap
+    for i, (par, rotulo, campo, letra) in enumerate(PARES_E2):
+        y = cabeca + i * passo
+        d.text((gap, y + 62), rotulo, font=media, fill=(16, 18, 16))
+        d.text((gap, y + 92), f"{letra} sobre {campo}", font=pequena, fill=(52, 56, 52))
+        d.text((gap, y + 116), f"contraste {contraste(letra, campo):.2f}:1 · "
+               f"{'passa' if contraste(letra, campo) >= 4.5 else 'FALHA'} 4,5:1",
+               font=pequena, fill=(52, 56, 52))
+        for k, (chave, ab, _, _) in enumerate(E2_CORES_ORDEM):
+            slug = _e2c_slug(chave, ab, par)
+            x = rot + k * bloco
+            for nome, px in colunas:
+                f = os.path.join(AQUI, "EXPORT-E2", slug, f"{slug}-{nome}.png")
+                im = Image.open(f).convert("RGB")
+                if im.size[0] != px:
+                    im = im.resize((px, px), Image.NEAREST)
+                folha.paste(im, (x, y))
+                x += px + gap
+    saida = os.path.join(AQUI, "FOLHA-E2-cores.png")
+    folha.save(saida, optimize=True)
+    print(f"escrito design/marca/FOLHA-E2-cores.png  ({folha.size[0]} x {folha.size[1]})")
+
+
+if len(sys.argv) > 1 and sys.argv[1] == "folha-e2-cores":
+    folha_e2_cores()
+
+
+# ---------------------------------------------------------------------------
+# O ECRÃ PRINCIPAL DA SEXTA ADENDA
+# ---------------------------------------------------------------------------
+"""
+`python3 design/marca/desenhar.py ecra-e2` escreve `design/marca/ECRA-E2.png`.
+
+Quatro variantes, em ecrã claro e em ecrã escuro, entre os mesmos oito ícones
+das rondas anteriores. As quatro respondem às duas perguntas que a adenda 6 põe,
+e não a uma só: três são o mesmo desenho em três pares de cor (a pergunta do
+diretor, que é a das cores), e a quarta é a outra geometria no par que melhor
+mede (a pergunta da barra).
+
+O PAR PURO (branco em preto) NÃO ESTÁ AQUI, e é preciso dizer porquê em vez de
+se ficar sem saber: a diferença dele para «papel em tinta» é a do campo, `#000000`
+contra `#17191b`, e à escala de uma cela do ecrã principal é uma cela mais escura
+e mais nada, com o mesmo desenho e o mesmo sinal. Está na folha das cores aos 180
+px, que é onde essa diferença se vê; ocupar com ela um dos quatro lugares do ecrã
+seria gastá-lo a repetir uma linha.
+
+O ÍCONE NÃO MUDA COM O TEMA DO ECRÃ, e isto é diferente do que as direções fazem.
+Nas outras, o tema escuro troca o ocre pelo âmbar, porque a folha de estilos
+manda. Aqui a pergunta é sobre O PAR, e um ícone que se pintasse de outra cor no
+ecrã escuro respondia a outra pergunta. O que o ecrã escuro mostra, então, é o
+que acontece de verdade a uma cela de campo claro quando o ecrã à volta é preto.
+"""
+
+ECRA_E2_VARIANTES = [
+    ("unida", 28.0, "tinta-papel", "corte de 28 · tinta em papel", "campo claro, 16,39:1"),
+    ("unida", 28.0, "papel-tinta", "corte de 28 · papel em tinta", "campo de tinta, 16,39:1"),
+    ("unida", 28.0, "cobalto-papel", "corte de 28 · cobalto em papel", "campo claro, 7,73:1"),
+    ("dir66", 28.0, "papel-tinta", "barra a 2/3 · papel em tinta", "campo de tinta, 16,39:1"),
+]
+
+
+def ecras_e2():
+    from PIL import Image, ImageDraw, ImageFont
+    grande = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 34)
+    pequena = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 27)
+    peles = []
+    for chave, ab, par, titulo, nota in ECRA_E2_VARIANTES:
+        slug = _e2c_slug(chave, ab, par)
+        nosso = os.path.join(AQUI, "EXPORT-E2", slug, f"{slug}-180.png")
+        for tema in ("claro", "escuro"):
+            peles.append((compoe_ecra(nosso, tema), f"{titulo} · ecrã {tema}", nota))
+    lp, ap = peles[0][0].size
+    rodape, gap, colunas = 100, 46, 2
+    filas = (len(peles) + colunas - 1) // colunas
+    folha = Image.new("RGB", (colunas * lp + (colunas + 1) * gap,
+                              filas * (ap + rodape) + (filas + 1) * gap), (128, 133, 127))
+    d = ImageDraw.Draw(folha)
+    for i, (pele, titulo, nota) in enumerate(peles):
+        x = gap + (i % colunas) * (lp + gap)
+        y = gap + (i // colunas) * (ap + rodape + gap)
+        folha.paste(pele, (x, y))
+        d.text((x + 4, y + ap + 16), titulo, font=grande, fill=(16, 18, 16))
+        d.text((x + 4, y + ap + 60), nota, font=pequena, fill=(46, 50, 46))
+    saida = os.path.join(AQUI, "ECRA-E2.png")
+    folha.save(saida, optimize=True)
+    print(f"escrito design/marca/ECRA-E2.png  ({folha.size[0]} x {folha.size[1]})")
+
+
+if len(sys.argv) > 1 and sys.argv[1] == "ecra-e2":
+    ecras_e2()

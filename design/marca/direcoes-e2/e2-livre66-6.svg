@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="e2 · livre · 2/3 do vão · corte de 6 graus · tinta-papel">
+  <title>e2 · livre · 2/3 do vão · corte de 6 graus · tinta-papel</title>
+  <desc>A barra livre · 2/3 do vão, com 6 graus de abertura, em tinta-papel.</desc>
+  <style>
+    .campo { fill: #f6f7f4; }
+    .tinta { fill: #17191b; }
+    .tinta-t { fill: none; stroke: #17191b; }
+    .acento { fill: #17191b; }
+    .acento-t { fill: none; stroke: #17191b; }
+    /* A costura: uma silhueta feita de distritos encostados fica com fios de
+       papel entre eles quando se enche sem traço. O traço da mesma cor fecha-os. */
+    .acento-costura { fill: #17191b; stroke: #17191b; stroke-width: 2; }
+    svg[data-tema="escuro"] .campo { fill: #f6f7f4; }
+    svg[data-tema="escuro"] .tinta { fill: #17191b; }
+    svg[data-tema="escuro"] .tinta-t { stroke: #17191b; }
+    svg[data-tema="escuro"] .acento { fill: #17191b; }
+    svg[data-tema="escuro"] .acento-t { stroke: #17191b; }
+    svg[data-tema="escuro"] .acento-costura { fill: #17191b; stroke: #17191b; }
+    /* A simplificação de 32 e 16 px: a mesma forma, com o que morre tirado.
+       O seletor é de FIM DE CADEIA e não de igualdade, porque a quarta adenda
+       trouxe uma forma composta: «maskable-favicon», que é o sinal pequeno
+       dentro do círculo seguro. As sete vozes precisam dela, porque nelas o
+       sinal grande é a palavra e o `maskable` do Android desenha-se a 108 px. */
+    .sinal-favicon { display: none; }
+    svg[data-forma$="favicon"] .sinal { display: none; }
+    svg[data-forma$="favicon"] .sinal-favicon { display: block; }
+    /* E UM TERCEIRO DESENHO, QUE AS SETE VOZES OBRIGARAM A CRIAR.
+       Nas onze primeiras havia dois: o sinal, até aos 60 px, e a simplificação,
+       dos 32 para baixo. Nas sete vozes o sinal grande é a PALAVRA e o sinal do
+       telemóvel é a LETRA, e são coisas diferentes: com dois grupos só, a cela
+       de 180 px acabava a mostrar a letra engrossada do favicon, ou seja a voz
+       já sem a voz. A Didone dava contraste 1,9 aos 180 px, quando o desenho
+       dela é 6,55. Com três grupos, a cela de 180 mostra a letra tal como ela
+       está dentro da palavra, e a simplificação fica onde devia estar, aos 32.
+       O grupo está vazio nas direções que não o usam, e essas seguem a regra
+       da casa sem mudar nada. */
+    .sinal-letra { display: none; }
+    svg[data-forma*="letra"] .sinal { display: none; }
+    svg[data-forma*="letra"] .sinal-letra { display: block; }
+    /* O `maskable` do Android: o campo fica, o sinal encolhe para dentro do
+       círculo seguro de raio 40 %.
+
+       A REDUÇÃO TEM DE ESTAR NUM GRUPO SÓ SEU, e isto foi corrigido a 28.08
+       depois de se medir a caixa de tinta nos PNG: `transform` de CSS e
+       `transform` de atributo são a MESMA propriedade, e o CSS ganha. Enquanto
+       esta regra apanhava `.sinal` directamente, o `scale` substituía o
+       enquadramento de `enquadra()` em vez de se compor com ele, e as direções
+       enquadradas saíam com o sinal fora do sítio: a G dava 233 px de lado em
+       512 em vez de 281, e a I saía cortada em cima. Num grupo de fora, que não
+       tem atributo nenhum, as duas transformações compõem-se. */
+    svg[data-forma^="maskable"] .reducao {
+      transform: scale(0.78);
+      transform-origin: 256.0px 256.0px;
+      transform-box: view-box;
+    }
+  </style>
+  <rect class="campo" x="0" y="0" width="512" height="512"/>
+  <g class="reducao">
+    <g class="sinal" transform="translate(-51.2 -51.2) scale(1.2)">
+    <!-- O «e» explorado: uma grossura só, 14 % do diâmetro (42 num diâmetro de 300).
+         A barra: solta das duas pontas, 0.667 do vão, centrada.
+         A folga da ponta livre até à parede de dentro: 36.0 (12.0 % do diâmetro).
+         O corte: 6 graus de abertura, contados da barra.
+         O par: #17191b sobre #f6f7f4, 16.39:1, o mesmo nos dois temas. -->
+    <path class="tinta" d="M404.52 277A150 150 0 1 0 401.51 292.41L360.77 282.22A108 108 0 1 1 362.94 271.12Z"/>
+    <path class="tinta" d="M184 235L328 235L328 277L184 277Z"/>
+    </g>
+    <g class="sinal-favicon" transform="translate(-51.2 -51.2) scale(1.2)">
+    <!-- O «e» explorado: uma grossura só, 14 % do diâmetro (42 num diâmetro de 300).
+         A barra: solta das duas pontas, 0.667 do vão, centrada.
+         A folga da ponta livre até à parede de dentro: 36.0 (12.0 % do diâmetro).
+         O corte: 6 graus de abertura, contados da barra.
+         O par: #17191b sobre #f6f7f4, 16.39:1, o mesmo nos dois temas. -->
+    <path class="tinta" d="M404.52 277A150 150 0 1 0 401.51 292.41L360.77 282.22A108 108 0 1 1 362.94 271.12Z"/>
+    <path class="tinta" d="M184 235L328 235L328 277L184 277Z"/>
+    </g>
+  </g>
+</svg>
