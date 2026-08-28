@@ -1,0 +1,568 @@
+#!/usr/bin/env node
+/**
+ * =============================================================================
+ * A RÉGUA DAS ÁREAS DE GOVERNO · decisão 6 da auditoria de 25.08.2026, forma A
+ * =============================================================================
+ *
+ * Uma célula por alvo que o brief escreve, medida em Chromium sem cabeça sobre
+ * `dist/`. NÃO é um portão: não entra no `npm run build` e não constrói nada.
+ * Imprime uma linha por célula e SAI COM 0 quando todas passam e com 1 quando
+ * alguma falha, como `tests/inicio/regioes.mjs`. O código de saída é o que faz
+ * um estrago plantado ser visível (regra 14 da casa).
+ *
+ *   node tests/inicio/areas.mjs
+ *   node tests/inicio/areas.mjs --json <ficheiro>
+ *   node tests/inicio/areas.mjs --vermelhos
+ *
+ * O servidor toma uma porta livre (`listen(0)`), como as outras réguas da casa.
+ *
+ * ---------------------------------------------------------------------------
+ * O QUE CADA CÉLULA MEDE
+ * ---------------------------------------------------------------------------
+ * M1 · o índice, a 1280. Uma linha por área construída, cada uma com a sua
+ *      contagem marcada `data-prova` e com a porta a ter os 44 px de alvo da
+ *      casa. Zero transbordo.
+ *
+ * M2 · as peças de cada área. Cada peça rendida tem porta, e cada porta abre um
+ *      ficheiro que existe no `dist/`; cada medida tem selo. Uma página de área
+ *      sem peça nenhuma é uma página vazia, que é o que o brief proíbe.
+ *
+ * M3 · o nome. O `<h1>` de cada página de área é, carácter a carácter, o texto
+ *      da porta que leva a ela no índice. Um nome trocado numa das duas pontas
+ *      vê-se aqui.
+ *
+ * M4 · a voz. Nenhum bloco de prosa das duas rotas fora do
+ *      `INVENTARIO-FRASES.md`, e nenhum classificado como autorreferência. É a
+ *      segunda implementação da definição da medida 8 de `medir-defeitos.mjs`,
+ *      feita no navegador e sobre o que o leitor vê: duas contas da mesma coisa,
+ *      de sítios diferentes.
+ *
+ * M5 · o telemóvel, a 320, 360, 390 e 430, as quatro larguras que a casa serve.
+ *      Transbordo zero no índice e na maior página de área.
+ *
+ * M6 · a navegação. «Áreas» está no comando da primeira página e no rodapé, nas
+ *      duas edições, e leva ao índice das áreas. Dois cliques reais.
+ *
+ * M7 · sem JavaScript. As duas páginas estão completas no HTML servido.
+ */
+import fs from 'node:fs';
+import http from 'node:http';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { chromium } from 'playwright';
+
+import { leInventario } from '../../scripts/voz.mjs';
+
+const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
+const DIST = path.join(RAIZ, 'dist');
+
+const MIME = {
+  '.html': 'text/html; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.js': 'text/javascript; charset=utf-8',
+  '.json': 'application/json',
+  '.woff2': 'font/woff2',
+  '.svg': 'image/svg+xml',
+  '.png': 'image/png',
+  '.csv': 'text/csv; charset=utf-8',
+  '.txt': 'text/plain; charset=utf-8',
+  '.xml': 'application/xml',
+};
+
+const argv = process.argv.slice(2);
+const opcao = (nome) => {
+  const i = argv.indexOf(nome);
+  return i >= 0 ? (argv[i + 1] ?? true) : null;
+};
+const FICHEIRO_JSON = opcao('--json');
+const VERMELHOS = argv.includes('--vermelhos');
+
+const verde = (s) => `\x1b[32m${s}\x1b[0m`;
+const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
+const cinza = (s) => `\x1b[90m${s}\x1b[0m`;
+
+if (!fs.existsSync(DIST)) {
+  console.error('não existe dist/. Corra o build primeiro.');
+  process.exit(2);
+}
+
+/* O ESTRAGO NÃO TOCA EM DISCO: é uma transformação do HTML no caminho entre o
+   ficheiro e o navegador, como em `regioes.mjs` e em `mapa-distritos.mjs`. */
+let ESTRAGO = null;
+
+const servidor = http.createServer((req, res) => {
+  const semQuery = req.url.split('?')[0];
+  let ficheiro;
+  try {
+    ficheiro = path.resolve(DIST, '.' + decodeURIComponent(semQuery));
+  } catch {
+    ficheiro = path.resolve(DIST, '.' + semQuery);
+  }
+  if (!ficheiro.startsWith(DIST)) return void res.writeHead(403).end();
+  if (fs.existsSync(ficheiro) && fs.statSync(ficheiro).isDirectory()) {
+    ficheiro = path.join(ficheiro, 'index.html');
+  }
+  if (!fs.existsSync(ficheiro)) return void res.writeHead(404).end('404');
+  const tipo = MIME[path.extname(ficheiro)] ?? 'application/octet-stream';
+  if (ESTRAGO && path.extname(ficheiro) === '.html') {
+    res.writeHead(200, { 'content-type': tipo });
+    return void res.end(ESTRAGO(fs.readFileSync(ficheiro, 'utf8'), semQuery));
+  }
+  res.writeHead(200, { 'content-type': tipo });
+  fs.createReadStream(ficheiro).pipe(res);
+});
+await new Promise((r) => servidor.listen(0, '127.0.0.1', r));
+const base = `http://127.0.0.1:${servidor.address().port}`;
+
+let celulas = [];
+let medidas = {};
+const conta = (nome, passa, prova) => celulas.push({ nome, passa: !!passa, prova: String(prova) });
+
+const nav = await chromium.launch({ headless: true });
+async function pagina(rota, largura, comJs = true) {
+  const ctx = await nav.newContext({ viewport: { width: largura, height: 900 }, javaScriptEnabled: comJs });
+  const p = await ctx.newPage();
+  p.__ctx = ctx;
+  await p.goto(base + rota, { waitUntil: comJs ? 'networkidle' : 'load' });
+  if (comJs) await p.evaluate(() => document.fonts.ready);
+  return p;
+}
+
+const ALVO = 44;
+const TELEMOVEL = [320, 360, 390, 430];
+
+/* As áreas com página, lidas das pastas construídas e não de uma lista escrita
+   aqui: uma lista escrita divergia do `dist/` na primeira área que entrasse. */
+const SLUGS = fs
+  .readdirSync(path.join(DIST, 'areas'))
+  .filter((n) => fs.existsSync(path.join(DIST, 'areas', n, 'index.html')))
+  .sort();
+
+const EDICOES = [
+  { edicao: 'pt', home: '/', indice: '/areas', area: (s) => `/areas/${s}` },
+  { edicao: 'en', home: '/en', indice: '/en/areas', area: (s) => `/en/areas/${s}` },
+];
+
+/** O ficheiro construído de um caminho interno, ou `null` quando não existe. */
+function ficheiroDe(href) {
+  if (!href || !href.startsWith('/')) return null;
+  const limpo = href.split('#')[0].split('?')[0].replace(/\/$/, '');
+  const alvo = path.join(DIST, limpo.replace(/^\//, ''), 'index.html');
+  return fs.existsSync(alvo) ? alvo : null;
+}
+
+/* =========================================================================== */
+/* M1 · o índice a 1280                                                       */
+/* =========================================================================== */
+
+async function mediuOIndice() {
+  for (const { edicao, indice } of EDICOES) {
+    const p = await pagina(indice, 1280);
+    const lido = await p.evaluate((alvo) => {
+      const caixa = (el) => {
+        const r = el.getBoundingClientRect();
+        return { w: Math.round(r.width), h: Math.round(r.height) };
+      };
+      const itens = [...document.querySelectorAll('.areas-item')];
+      return {
+        itens: itens.length,
+        portas: itens.map((li) => {
+          const a = li.querySelector('a');
+          return { texto: (a?.textContent ?? '').replace(/\s+/g, ' ').trim(), h: a ? caixa(a).h : 0 };
+        }),
+        contagens: itens.map((li) => {
+          const el = li.querySelector('[data-prova]');
+          return el ? { chave: el.getAttribute('data-prova'), texto: el.textContent.trim() } : null;
+        }),
+        pequenas: itens.filter((li) => {
+          const a = li.querySelector('a');
+          return !a || caixa(a).h < alvo;
+        }).length,
+        transbordo: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      };
+    }, ALVO);
+    medidas[`M1·${edicao}`] = lido;
+    conta(
+      `M1 · o índice tem uma linha por área, com contagem e alvo de ${ALVO} px · 1280 ${edicao}`,
+      lido.itens === SLUGS.length &&
+        lido.pequenas === 0 &&
+        lido.contagens.every((c) => c && /^\d+$/.test(c.texto)) &&
+        lido.transbordo === 0,
+      `${lido.itens} linha(s) para ${SLUGS.length} área(s) construída(s) · ${lido.pequenas} abaixo do alvo · ` +
+        `contagens ${lido.contagens.map((c) => (c ? c.texto : 'sem')).join(', ')} · transbordo ${lido.transbordo}`,
+    );
+    await p.__ctx.close();
+  }
+}
+
+/* =========================================================================== */
+/* M2 · as peças de cada área, e as portas delas                              */
+/* =========================================================================== */
+
+async function mediuAsPecas() {
+  for (const { edicao, area } of EDICOES) {
+    let pecas = 0;
+    let semPorta = 0;
+    let medidasSemSelo = 0;
+    let vazias = 0;
+    const portasPartidas = [];
+    for (const slug of SLUGS) {
+      const p = await pagina(area(slug), 1280);
+      const lido = await p.evaluate(() => {
+        const itens = [...document.querySelectorAll('[data-area-peca]')];
+        return {
+          n: itens.length,
+          detalhe: itens.map((el) => ({
+            tipo: el.getAttribute('data-area-peca'),
+            hrefs: [...el.querySelectorAll('a[href]')].map((a) => a.getAttribute('href')),
+            selo: [...el.querySelectorAll('a.src-chip[href]')].map((a) => a.getAttribute('href')),
+          })),
+        };
+      });
+      if (lido.n === 0) vazias++;
+      pecas += lido.n;
+      for (const d of lido.detalhe) {
+        if (d.hrefs.length === 0) semPorta++;
+        if (d.tipo === 'medida' && d.selo.length === 0) medidasSemSelo++;
+        for (const h of d.hrefs) {
+          if (h.startsWith('/') && !ficheiroDe(h)) portasPartidas.push(`${slug}:${h}`);
+        }
+      }
+      await p.__ctx.close();
+    }
+    medidas[`M2·${edicao}`] = { pecas, semPorta, medidasSemSelo, vazias, portasPartidas };
+    conta(
+      `M2 · cada peça tem porta que abre, cada medida tem selo, nenhuma área vazia · ${edicao}`,
+      pecas > 0 && semPorta === 0 && medidasSemSelo === 0 && vazias === 0 && portasPartidas.length === 0,
+      `${pecas} peça(s) em ${SLUGS.length} área(s) · ${semPorta} sem porta · ${medidasSemSelo} medida(s) sem selo · ` +
+        `${vazias} área(s) vazia(s) · ${portasPartidas.length} porta(s) que não abrem` +
+        (portasPartidas.length ? ` (${portasPartidas.slice(0, 3).join(', ')})` : ''),
+    );
+  }
+}
+
+/* =========================================================================== */
+/* M3 · o nome, nas duas pontas                                               */
+/* =========================================================================== */
+
+async function mediuOsNomes() {
+  for (const { edicao, indice, area } of EDICOES) {
+    const p = await pagina(indice, 1280);
+    const doIndice = await p.evaluate(() =>
+      [...document.querySelectorAll('.areas-item')].map((li) => {
+        const a = li.querySelector('a[href]');
+        /* O NOME É O SEU PRÓPRIO ELEMENTO, e não o texto da ligação: a linha
+           inteira é uma ligação e leva também a contagem das peças. A seta é
+           mobília da porta e sai antes de comparar, como sai no índice das 29
+           unidades. */
+        const n = li.querySelector('.areas-nome');
+        return {
+          href: a?.getAttribute('href') ?? null,
+          nome: (n?.textContent ?? '').replace(/\s+/g, ' ').replace(/\s*→\s*$/, '').trim(),
+        };
+      }),
+    );
+    await p.__ctx.close();
+
+    const maus = [];
+    for (const slug of SLUGS) {
+      const q = await pagina(area(slug), 1280);
+      const h1 = await q.evaluate(
+        () => (document.querySelector('h1')?.textContent ?? '').replace(/\s+/g, ' ').trim(),
+      );
+      await q.__ctx.close();
+      const linha = doIndice.find((x) => x.href && x.href.replace(/\/$/, '').endsWith(`/${slug}`));
+      if (!linha) maus.push(`${slug}: sem porta no índice`);
+      else if (linha.nome !== h1) maus.push(`${slug}: índice «${linha.nome}» e página «${h1}»`);
+    }
+    medidas[`M3·${edicao}`] = { doIndice, maus };
+    conta(
+      `M3 · o nome de cada área é o mesmo no índice e na sua página · ${edicao}`,
+      maus.length === 0 && doIndice.length === SLUGS.length,
+      maus.length ? maus.join(' · ') : `${doIndice.length} nome(s), todos iguais nas duas pontas`,
+    );
+  }
+}
+
+/* =========================================================================== */
+/* M4 · a voz das duas rotas                                                  */
+/* =========================================================================== */
+
+/**
+ * A DEFINIÇÃO DE «BLOCO DE PROSA DA CASA», ESCRITA OUTRA VEZ E NO NAVEGADOR.
+ *
+ * É a da medida 8 de `scripts/medir-defeitos.mjs`, e está aqui de propósito: a
+ * régua da voz lê o `dist/` com um analisador de HTML, esta lê o DOM que o
+ * navegador construiu. Duas implementações da mesma definição, de dois sítios,
+ * que têm de dizer a mesma coisa. Um bloco é um elemento de bloco que não contém
+ * outro, que não é nem contém uma origem declarada, nem o nome ou a unidade de
+ * uma medida, nem uma marca de cobertura ou de lugar, e cujo texto não está todo
+ * dentro de um `<a>` ou de um `<button>`.
+ */
+const INVENTARIO = leInventario(RAIZ);
+
+async function mediuAVoz() {
+  for (const { edicao, indice, area } of EDICOES) {
+    const rotas = [indice, ...SLUGS.map((s) => area(s))];
+    const foraDoInventario = [];
+    const autorreferencia = [];
+    let blocos = 0;
+    for (const rota of rotas) {
+      const p = await pagina(rota, 1280);
+      const lidos = await p.evaluate(() => {
+        const BLOCOS = 'p,li,h1,h2,h3,h4,dt,dd,figcaption,caption,td,th,summary,blockquote,div';
+        /* A lista é a de `ORIGEM_DECLARADA` mais as três marcas que a régua junta
+           a ela, carácter a carácter, e `[data-prova]` NÃO está lá: um bloco com
+           um número da prova continua a ser prosa da casa, e a régua declara-o.
+           Uma lista mais larga aqui era uma peneira mais fina do que a que fecha
+           a construção, e mediria outra coisa. */
+        const ORIGEM =
+          '[data-claim],[data-linha-claim],[data-correcao-claim],[data-verbatim],' +
+          '[data-nonledger],[data-agenda],[data-registo],[data-registo-unidade],' +
+          '[data-registo-linha],[data-registo-conta],[data-medida-nome],[data-medida-unidade],' +
+          '[data-cobertura],[data-lugar]';
+        const marcados = new Set();
+        for (const el of document.querySelectorAll(ORIGEM)) {
+          marcados.add(el);
+          for (const d of el.querySelectorAll('*')) marcados.add(d);
+          for (let a = el.parentElement; a; a = a.parentElement) marcados.add(a);
+        }
+        const semComandos = (no) => {
+          const partes = [];
+          const anda = (n) => {
+            if (n.nodeType === Node.TEXT_NODE) return void partes.push(n.textContent);
+            if (n.nodeType !== Node.ELEMENT_NODE) return;
+            const tag = n.tagName.toLowerCase();
+            if (tag === 'script' || tag === 'style' || tag === 'a' || tag === 'button') return;
+            for (const f of n.childNodes) anda(f);
+          };
+          anda(no);
+          return partes.join(' ').replace(/\s+/g, ' ').trim();
+        };
+        /* A CADEIA QUE SE DECLARA É A INTEIRA, e o texto fora das ligações é só o
+           crivo. É assim na régua: `frasesDaCasa()` empurra `norm(texto(el))` e
+           usa `textoForaDeComandos(el)` para decidir se o bloco entra. Empurrar
+           a versão sem ligações mediria outra cadeia, e o inventário nunca
+           bateria certo. */
+        const inteiro = (el) => (el.textContent ?? '').replace(/\s+/g, ' ').trim();
+        const out = [];
+        for (const el of document.querySelectorAll(BLOCOS)) {
+          if (el.querySelector(BLOCOS)) continue;
+          if (marcados.has(el)) continue;
+          if (el.tagName.toLowerCase() === 'summary') continue;
+          if (!inteiro(el)) continue;
+          if (!semComandos(el)) continue;
+          out.push(inteiro(el));
+        }
+        const d = document.querySelector('head meta[name="description"]');
+        if (d) out.push((d.getAttribute('content') ?? '').replace(/\s+/g, ' ').trim());
+        return out;
+      });
+      await p.__ctx.close();
+      for (const texto of lidos) {
+        blocos++;
+        const classe = INVENTARIO.mapa.get(texto) ?? null;
+        if (classe === null) foraDoInventario.push(`${rota}: «${texto.slice(0, 80)}»`);
+        else if (classe === 'autorreferencia') autorreferencia.push(`${rota}: «${texto.slice(0, 80)}»`);
+      }
+    }
+    medidas[`M4·${edicao}`] = { blocos, foraDoInventario, autorreferencia };
+    conta(
+      `M4 · nenhum bloco fora do inventário e nenhum de autorreferência · ${edicao}`,
+      foraDoInventario.length === 0 && autorreferencia.length === 0,
+      `${blocos} bloco(s) medido(s) · ${foraDoInventario.length} por classificar · ` +
+        `${autorreferencia.length} de autorreferência` +
+        (foraDoInventario.length ? ` (${foraDoInventario.slice(0, 2).join(' · ')})` : '') +
+        (autorreferencia.length ? ` (${autorreferencia.slice(0, 2).join(' · ')})` : ''),
+    );
+  }
+}
+
+/* =========================================================================== */
+/* M5 · o telemóvel                                                           */
+/* =========================================================================== */
+
+async function mediuOTelemovel(largura) {
+  for (const { edicao, indice, area } of EDICOES) {
+    const rotas = [indice, area(SLUGS[0])];
+    const transbordos = [];
+    for (const rota of rotas) {
+      const p = await pagina(rota, largura);
+      transbordos.push(
+        await p.evaluate(
+          () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+        ),
+      );
+      await p.__ctx.close();
+    }
+    medidas[`M5·${largura}·${edicao}`] = transbordos;
+    conta(
+      `M5·${largura} · zero transbordo no índice e numa página de área · ${edicao}`,
+      transbordos.every((t) => t <= 0),
+      `transbordo ${transbordos.join(' e ')} px`,
+    );
+  }
+}
+
+/* =========================================================================== */
+/* M6 · a navegação                                                           */
+/* =========================================================================== */
+
+async function mediuANavegacao() {
+  for (const { edicao, home, indice } of EDICOES) {
+    const p = await pagina(home, 1280);
+    const lido = await p.evaluate(() => ({
+      comando: document.querySelector('[data-comando] [data-porta="area"]')?.getAttribute('href') ?? null,
+      rodape: [...document.querySelectorAll('footer.rodape a[href]')]
+        .map((a) => a.getAttribute('href'))
+        .filter((h) => /\/areas$/.test(h)),
+    }));
+    await p.locator('[data-comando] [data-porta="area"]:visible').first().click();
+    await p.waitForLoadState('networkidle');
+    const chegou = new URL(p.url()).pathname;
+    await p.__ctx.close();
+
+    const q = await pagina(home, 1280);
+    await q.locator('footer.rodape a[href$="/areas"], footer.rodape a[href="/areas"]').first().click();
+    await q.waitForLoadState('networkidle');
+    const chegouRodape = new URL(q.url()).pathname;
+    await q.__ctx.close();
+
+    medidas[`M6·${edicao}`] = { ...lido, chegou, chegouRodape };
+    conta(
+      `M6 · «Áreas» no comando e no rodapé leva ao índice das áreas · ${edicao}`,
+      lido.comando === indice &&
+        lido.rodape.length === 1 &&
+        chegou === indice &&
+        chegouRodape === indice,
+      `comando ${lido.comando} · rodapé ${lido.rodape.join(', ') || 'sem'} · ` +
+        `cliques → ${chegou} e ${chegouRodape}`,
+    );
+  }
+}
+
+/* =========================================================================== */
+/* M7 · sem JavaScript                                                        */
+/* =========================================================================== */
+
+async function mediuSemJs() {
+  for (const { edicao, indice, area } of EDICOES) {
+    const p = await pagina(indice, 1280, false);
+    const noIndice = await p.evaluate(() => document.querySelectorAll('.areas-item').length);
+    await p.__ctx.close();
+    const q = await pagina(area(SLUGS[0]), 1280, false);
+    const naArea = await q.evaluate(() => document.querySelectorAll('[data-area-peca]').length);
+    await q.__ctx.close();
+    medidas[`M7·${edicao}`] = { noIndice, naArea };
+    conta(
+      `M7 · sem script o índice e a página de uma área estão completos · ${edicao}`,
+      noIndice === SLUGS.length && naArea > 0,
+      `${noIndice} linha(s) no índice para ${SLUGS.length} área(s) · ${naArea} peça(s) em ${SLUGS[0]}`,
+    );
+  }
+}
+
+/* =========================================================================== */
+/* OS ESTRAGOS PLANTADOS                                                      */
+/* =========================================================================== */
+/* Os quatro que o brief nomeia: uma área sem peças, uma peça fantasma, um nome
+   trocado e uma frase de cobertura. Cada um é uma transformação do HTML no
+   caminho entre o ficheiro e o navegador, e nada é escrito em disco. */
+
+const PRIMEIRA = () => `/areas/${SLUGS[0]}`;
+
+const PLANTAS = [
+  {
+    nome: 'uma área sem peças',
+    celulas: ['M2'],
+    estrago: (html, rota) =>
+      rota.replace(/\/index\.html$/, '') === PRIMEIRA()
+        ? html.replace(/data-area-peca="[a-z]+"/g, 'data-peca-apagada="sim"')
+        : html,
+  },
+  {
+    nome: 'uma peça fantasma, com porta para uma página que não existe',
+    celulas: ['M2'],
+    estrago: (html, rota) =>
+      rota.replace(/\/index\.html$/, '') === PRIMEIRA()
+        ? html.replace(
+            '<div class="linha-corpo">',
+            '<div class="linha-corpo"><ul><li data-area-peca="trabalho">' +
+              '<a href="/estudos/atlantida">Atlântida</a></li></ul>',
+          )
+        : html,
+  },
+  {
+    nome: 'um nome trocado na página de uma área',
+    celulas: ['M3'],
+    estrago: (html, rota) =>
+      rota.replace(/\/index\.html$/, '') === PRIMEIRA()
+        ? html.replace(/<h1([^>]*)>[\s\S]*?<\/h1>/, '<h1$1>Atlântida</h1>')
+        : html,
+  },
+  {
+    nome: 'uma frase de cobertura no índice das áreas',
+    celulas: ['M4'],
+    estrago: (html, rota) =>
+      rota.replace(/\/index\.html$/, '') === '/areas'
+        ? html.replace(
+            '<ul class="areas-lista"',
+            '<p>Verificámos todas as fontes destas áreas, uma a uma.</p><ul class="areas-lista"',
+          )
+        : html,
+  },
+];
+
+/* =========================================================================== */
+
+async function corridaInteira() {
+  await mediuOIndice();
+  await mediuAsPecas();
+  await mediuOsNomes();
+  await mediuAVoz();
+  for (const w of TELEMOVEL) await mediuOTelemovel(w);
+  await mediuANavegacao();
+  await mediuSemJs();
+}
+
+if (!VERMELHOS) {
+  await corridaInteira();
+  const falhadas = celulas.filter((c) => !c.passa);
+  console.log('');
+  for (const c of celulas) {
+    console.log(`  ${c.passa ? verde('✓') : vermelho('✗')} ${c.nome}\n    ${cinza(c.prova)}`);
+  }
+  console.log(
+    `\n  ${
+      falhadas.length
+        ? vermelho(`${celulas.length - falhadas.length} de ${celulas.length}`)
+        : verde(`${celulas.length} de ${celulas.length}`)
+    } célula(s)\n`,
+  );
+  if (FICHEIRO_JSON && typeof FICHEIRO_JSON === 'string') {
+    fs.writeFileSync(FICHEIRO_JSON, JSON.stringify({ celulas, medidas }, null, 2));
+  }
+  await nav.close();
+  servidor.close();
+  process.exit(falhadas.length ? 1 : 0);
+}
+
+console.log('');
+let todosVermelhos = true;
+for (const planta of PLANTAS) {
+  celulas = [];
+  ESTRAGO = planta.estrago;
+  if (planta.celulas.includes('M2')) await mediuAsPecas();
+  if (planta.celulas.includes('M3')) await mediuOsNomes();
+  if (planta.celulas.includes('M4')) await mediuAVoz();
+  const tocadas = celulas.filter((c) => planta.celulas.some((n) => c.nome.startsWith(n)));
+  const apanhou = tocadas.some((c) => !c.passa);
+  if (!apanhou) todosVermelhos = false;
+  console.log(`  ${apanhou ? verde('vermelho ✓') : vermelho('NÃO APANHOU ✗')}  ${planta.nome}`);
+  for (const c of tocadas.filter((x) => !x.passa)) console.log(cinza(`      ${c.nome} · ${c.prova}`));
+}
+ESTRAGO = null;
+console.log('');
+await nav.close();
+servidor.close();
+process.exit(todosVermelhos ? 0 : 1);

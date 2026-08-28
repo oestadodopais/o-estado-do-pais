@@ -75,10 +75,25 @@ const { s, hrefs, portaDaRegiao = null, slugsDasRegioes = null } = Astro.props;
  * Sem script as três escolhas continuam a ser ligações para sítios que existem:
  * `/` para o país, `/regioes` para as regiões e `/municipios` para os 308.
  */
+/* ---------------------------------------------------------------------------
+ * «ÁREAS» É A QUARTA POSIÇÃO, E É UMA PORTA SEM `data-modo` (decisão 6 de 25.08)
+ * ---------------------------------------------------------------------------
+ * As três primeiras posições têm `data-modo` porque `data-modo` é a marca do
+ * ESTADO do endereço: o script lê `[data-modo]:not([data-modo="regiao"])` para
+ * saber quais são os interruptores, e três células de matriz medem que a fila
+ * tem exactamente «pais, regiao, municipio». «Região» tem a marca por ser da
+ * mesma fila desde a Emenda 21b, e o script excepciona-a por nome.
+ *
+ * Uma quarta marca obrigava a uma segunda excepção por nome no script e nas
+ * células, e o que ela ganhava era nada: «Áreas» é uma porta e mais nada, como
+ * «Região» é. Leva `data-porta="areas"`, que diz o que ela é, e a folha desenha-a
+ * pela classe `seg`, que é a mesma das outras.
+ */
 const AMBITOS = [
-  { chave: 'pais', rotulo: s.ambito.pais, href: hrefs.pais },
-  { chave: 'regiao', rotulo: s.ambito.regiao, href: hrefs.regiao },
-  { chave: 'municipio', rotulo: s.ambito.municipio, href: hrefs.municipio },
+  { chave: 'pais', rotulo: s.ambito.pais, href: hrefs.pais, modo: 'pais' },
+  { chave: 'regiao', rotulo: s.ambito.regiao, href: hrefs.regiao, modo: 'regiao' },
+  { chave: 'municipio', rotulo: s.ambito.municipio, href: hrefs.municipio, modo: 'municipio' },
+  { chave: 'area', rotulo: s.ambito.area, href: hrefs.area, modo: null },
 ];
 const DENSIDADES = [
   { chave: 'relance', rotulo: s.densidade.relance, href: hrefs.relance },
@@ -95,7 +110,8 @@ const DENSIDADES = [
           <a
             class="seg"
             href={a.href}
-            data-modo={a.chave}
+            data-modo={a.modo ?? undefined}
+            data-porta={a.modo === null ? a.chave : undefined}
             data-porta-regiao={a.chave === 'regiao' ? portaDaRegiao : undefined}
             data-regioes={a.chave === 'regiao' ? slugsDasRegioes : undefined}
             aria-current={a.chave === 'pais' ? 'true' : undefined}

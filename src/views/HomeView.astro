@@ -69,6 +69,10 @@ const hrefs = {
   pais: home,
   regiao: routePath('regioes', lang),
   municipio: routePath('municipios', lang),
+  /* «Áreas» entra no comando com as páginas das áreas (decisão 6 da auditoria de
+     25.08.2026). É uma porta, como «Região», e não um estado desta página:
+     `?ambito=area:<slug>` não existe e não vai existir. */
+  area: routePath('areas', lang),
   relance: home,
   leitura: `${home}?densidade=leitura`,
 };

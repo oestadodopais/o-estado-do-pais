@@ -1,0 +1,94 @@
+---
+/**
+ * O ÍNDICE DAS ÁREAS DE GOVERNO: `/areas` e `/en/areas`.
+ *
+ * ---------------------------------------------------------------------------
+ * PORQUE EXISTE
+ * ---------------------------------------------------------------------------
+ * Decisão 6 da auditoria de UX de 25.08.2026, forma A: uma página por área de
+ * governo, só para as áreas que já têm conteúdo. Este é o índice delas, e existe
+ * pela mesma razão que o índice dos concelhos e o das 29 unidades existem: sem
+ * ele, as páginas das áreas não têm porta comum e `/areas` devolvia 404 por
+ * baixo de páginas que existem.
+ *
+ * ---------------------------------------------------------------------------
+ * A DISPOSIÇÃO É A A · RÓTULO E CORPO (IDENTIDADE §3), COMO A DOS DISTRITOS
+ * ---------------------------------------------------------------------------
+ * É uma lista de portas, e não um instrumento: a C está reservada para
+ * instrumentos e não há nenhum aqui. Nenhuma quarta disposição é inventada.
+ *
+ * ---------------------------------------------------------------------------
+ * A CONTAGEM DE CADA ÁREA RENDE-SE AQUI, E A PORTA DELA É A PRÓPRIA LINHA
+ * ---------------------------------------------------------------------------
+ * O índice das 29 unidades escreve o contrário, e a diferença é a porta: ali a
+ * contagem de cada unidade tem por porta a lista da página da unidade, e
+ * repeti-la no índice seria 29 números com a porta noutra página. Aqui a porta de
+ * cada contagem é a página da própria área, que é o destino da linha em que ela
+ * está: o leitor carrega no número e chega às peças que ele conta.
+ *
+ * A LINHA INTEIRA É UMA LIGAÇÃO, E NÃO DUAS, e há duas razões e as duas contam.
+ * A do leitor: o alvo é a linha toda e não um nome de três palavras. A da voz: a
+ * régua do inventário deixa cair um bloco cujo texto está todo dentro de um
+ * `<a>`, e por isso «Presidência · 10 peças» não entra no inventário como uma
+ * frase com um número por dentro. Uma frase assim volta sempre com outro número
+ * e a linha do inventário nunca mais morde, que é o defeito que a I74 nomeia.
+ *
+ * `ValorDaProva` NÃO SE USA AQUI, e é por isso: ele rende a sua própria âncora,
+ * e uma âncora dentro de outra não é HTML. O que ele garante fica garantido do
+ * mesmo modo, e o portão confere-o: a marca `data-prova`, o número sozinho lá
+ * dentro, e a porta, que aqui é a ligação da linha e não uma segunda.
+ *
+ * NÃO HÁ CONTAGEM TOTAL, e a ausência é deliberada. «Quatro áreas» seria um
+ * número sobre a cobertura deste arquivo com a forma de um número sobre o
+ * Governo, e um leitor lia-o como o segundo. O que a página tem para dizer é
+ * quais são e o que cada uma tem, e mostra-as.
+ */
+import Base from '../layouts/Base.astro';
+import { areasComPagina } from '../lib/areas.mjs';
+import { prova, CHAVE_DAS_PECAS } from '../lib/prova.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+import '../styles/area.css';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+const p = prova(lang);
+const path = routePath('areas', lang);
+const areas = areasComPagina();
+---
+
+<Base lang={lang} path={path} title={s.areas.metaTitle} description={s.areas.metaDescription}>
+  <div class="area-cabeca">
+    <span class="eyebrow">{s.areas.eyebrow}</span>
+    <h1>{s.areas.h1}</h1>
+    <p class="lede">{s.areas.lede}</p>
+  </div>
+
+  <ul class="areas-lista" id="areas">
+    {
+      areas.map((a) => (
+        <li class="areas-item">
+          <a class="areas-porta" href={routePath('area', lang, { slug: a.slug })}>
+            <span class="areas-nome">{a.nome[lang] ?? a.nome.pt} →</span>
+            <span class="areas-conta">
+              <span
+                class="prova-valor"
+                data-prova={CHAVE_DAS_PECAS(a.slug)}
+                title={p[CHAVE_DAS_PECAS(a.slug)].origem}
+              >
+                {p[CHAVE_DAS_PECAS(a.slug)].valor}
+              </span>
+              {a.total === 1 ? s.areas.contaUma : s.areas.contaMuitas}
+            </span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <p class="rodape-nav area-portas">
+    <a href={routePath('livro', lang)}>{s.areas.voltarLivro}</a>
+    <a href={routePath('estudos', lang)}>{s.nav.estudos}</a>
+    <a href={routePath('municipios', lang)}>{s.areas.voltarConcelhos}</a>
+  </p>
+</Base>

@@ -61,6 +61,8 @@ import { contagensDosConcelhos } from './livro-concelhos.mjs';
 import { MUNICIPIOS } from '../data/caop-centroids.mjs';
 import { unidadesDoMapa, distritoDoMapa } from './mapa.mjs';
 import { contagensDasRegioes } from './regioes.mjs';
+import { areasComPecas } from './areas.mjs';
+import { AREAS } from '../data/areas.mjs';
 import { VERIFICACAO } from '../data/verificacao.mjs';
 import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
 
@@ -518,6 +520,34 @@ for (const u of unidadesDoMapa()) {
   };
 }
 
+/* ---------------------------------------------------------------------------
+ * A CONTAGEM DAS PEÇAS DE CADA ÁREA DE GOVERNO (decisão 6 de 25.08.2026)
+ * ---------------------------------------------------------------------------
+ * O índice das áreas diz quantas peças cada uma tem, e essa contagem é um número
+ * do sítio sobre si próprio: entra por `data-prova` e o portão reconta-a nas
+ * páginas construídas, contando as peças que cada página rendeu. As frases
+ * escrevem-se num laço, pela razão das 29 do mapa.
+ *
+ * A CHAVE LEVA O SLUG COM SUBLINHADOS. O `data-prova` de uma chave e o nome
+ * dela têm de ser a mesma cadeia, e os slugs das áreas levam hífenes; escrever
+ * `areas_pecas_economia-e-coesao-territorial` misturava dois separadores na
+ * mesma chave. O que a mensagem do portão precisa é de nomear a página em que o
+ * desacordo está, e o sublinhado nomeia-a na mesma.
+ */
+export const CHAVE_DAS_PECAS = (slug) => `areas_pecas_${slug.replace(/-/g, '_')}`;
+
+/* A FRASE É A MESMA PARA TODAS AS ÁREAS, e é uma escolha e não uma preguiça. A
+   dica de uma chave da prova é prosa da casa e entra no inventário; uma frase
+   composta com o nome de cada área punha lá dezasseis linhas que são a lista dos
+   ministérios escrita outra vez, e não diziam mais do que esta: o número conta as
+   peças da página que a linha abre, e o nome da área está na própria linha. */
+for (const a of AREAS) {
+  FRASES[CHAVE_DAS_PECAS(a.slug)] = {
+    pt: 'peças na página desta área de governo',
+    en: 'pieces on this area of government’s page',
+  };
+}
+
 /**
  * Todos os números que o sítio diz sobre si próprio, na língua de uma edição.
  * @param {'pt'|'en'} [lang]
@@ -695,6 +725,22 @@ export function prova(lang = 'pt') {
           distritoDoMapa(u.slug).concelhos.length,
           `${routePath('distrito', lang, { slug: u.slug })}#concelhos`,
         ),
+      ]),
+    ),
+
+    /* ---- as áreas de governo (decisão 6 de 25.08.2026) ----
+       Uma chave por área DECLARADA, e não por área com página: uma área que
+       perdesse a última peça deixaria de ter chave, e o índice deixaria de a
+       render sem que nada dissesse porquê. A chave existe sempre e vale zero;
+       quem decide se a área se rende é `areasComPagina()`, que é outra pergunta.
+
+       A PORTA É A PÁGINA DA ÁREA, que é onde as peças estão. É a mesma linha em
+       que o número se rende, e por isso o leitor carrega no número e chega ao
+       que ele conta. */
+    ...Object.fromEntries(
+      areasComPecas().map((a) => [
+        CHAVE_DAS_PECAS(a.slug),
+        k(CHAVE_DAS_PECAS(a.slug), a.total, routePath('area', lang, { slug: a.slug })),
       ]),
     ),
 
