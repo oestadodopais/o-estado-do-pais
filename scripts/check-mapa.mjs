@@ -6,7 +6,7 @@
  *
  * Corre na cadeia do `build`, depois do `gate:html`, sobre o `dist/` construído
  * e sobre os artefactos que o motor atravessou para `mapa/`. É o D5 do
- * `design/especime-v3/briefs/BRIEF-mapa-distritos.md`, e são seis regras:
+ * `design/especime-v3/briefs/BRIEF-mapa-distritos.md`, e são sete regras:
  *
  *   R1  os resumos dos ficheiros de `mapa/` iguais aos do manifesto, e nenhum
  *       ficheiro a mais nem a menos;
@@ -17,7 +17,9 @@
  *       seu ficheiro tem, e a lista com as mesmas;
  *   R4  a primeira página com 29 ligações de área, uma por unidade;
  *   R5  nenhum `<a>` debaixo de um `role="img"`;
- *   R6  a atribuição da DGT presente onde o mapa está.
+ *   R6  a atribuição da DGT presente onde o mapa está;
+ *   R7  a ordem dos caminhos de cada `svg` e a das unidades do manifesto na
+ *       colação portuguesa (I84).
  *
  * ---------------------------------------------------------------------------
  * O LEITOR É PRÓPRIO, E É POR ISSO QUE A CONFERÊNCIA VALE
@@ -38,7 +40,7 @@
  * do mundo que as regras leem, e exige que a regra correspondente falhe. Nada é
  * escrito em disco, e por isso o estrago não pode sobreviver à corrida:
  *
- *   node scripts/check-mapa.mjs                as seis regras
+ *   node scripts/check-mapa.mjs                as sete regras
  *   node scripts/check-mapa.mjs --vermelhos    e a linha de cada estrago
  *
  * Uso: `npm run check:mapa`, e é o que a cadeia do `build` corre.
@@ -134,7 +136,7 @@ function leMundo() {
 }
 
 /* ===========================================================================
- * AS SEIS REGRAS
+ * AS SETE REGRAS
  * ===========================================================================
  * Cada uma devolve uma lista de queixas. Uma lista vazia é uma regra verde.
  */
@@ -332,6 +334,63 @@ function r6(m) {
   return erros;
 }
 
+/* ---------------------------------------------------------------------------
+ * A COLAÇÃO PORTUGUESA, E O QUE ELA MEDE AQUI (R7, I84)
+ * ---------------------------------------------------------------------------
+ * `Intl.Collator('pt')` põe «Évora» entre «Coimbra» e «Faro», e «Ilha da
+ * Graciosa» antes de «Ilha Terceira». A comparação de cadeias põe a primeira
+ * depois de «Viseu», porque É cai depois de Z nos pontos de código, e a segunda
+ * depois da terceira, porque T maiúsculo vem antes de d minúsculo. A lista por
+ * baixo do mapa já se ordena assim desde o X2 de 27.08.2026; o que faltava era o
+ * ARTEFACTO, e é ele que esta regra mede.
+ *
+ * A ORDEM DOS CAMINHOS NÃO É UMA QUESTÃO DE ARRUMAÇÃO. Um caminho por unidade
+ * dentro do `svg` é uma ligação, e a ordem em que eles são escritos é a ordem em
+ * que o teclado os visita: quem navega o mapa por tabulação percorre as 29
+ * unidades ou os concelhos de um distrito pela ordem do ficheiro, e nenhuma
+ * folha de estilos a muda. O sítio não reordena o desenho, porque a fronteira
+ * diz que o artefacto do motor é do motor; o que este portão faz é recusar um
+ * artefacto que chegue fora da ordem da língua.
+ *
+ * O MANIFESTO ENTRA PELA MESMA RAZÃO: é ele que a primeira página lê para saber
+ * que unidades existem, e uma ordem que divergisse do país seria a mesma lista
+ * contada de duas maneiras.
+ */
+const COLACAO = new Intl.Collator('pt');
+
+/** O primeiro par fora da ordem da colação, ou `null` se a lista estiver ordenada. */
+function primeiroParForaDaOrdem(nomes) {
+  for (let i = 1; i < nomes.length; i++) {
+    if (COLACAO.compare(nomes[i - 1], nomes[i]) > 0) {
+      return { antes: nomes[i - 1], depois: nomes[i], posicao: i };
+    }
+  }
+  return null;
+}
+
+/** R7 · a ordem dos caminhos de cada `svg`, e a das unidades do manifesto. */
+function r7(m) {
+  const erros = [];
+  const confere = (onde, nomes) => {
+    const par = primeiroParForaDaOrdem(nomes);
+    if (!par) return;
+    erros.push(
+      `${onde}: «${par.antes}» está na posição ${par.posicao} e «${par.depois}» na ${par.posicao + 1}, ` +
+        `e a colação portuguesa põe-nos ao contrário.`,
+    );
+  };
+
+  confere('mapa/pais.json, os caminhos das unidades', m.pais.unidades.map((u) => u.nome));
+  for (const u of m.pais.unidades) {
+    confere(
+      `mapa/distritos/${u.slug}.json, os caminhos dos concelhos`,
+      m.distritos[u.slug].concelhos.map((c) => c.nome),
+    );
+  }
+  confere('mapa/manifest.json, as unidades', m.manifesto.unidades.map((u) => u.nome));
+  return erros;
+}
+
 const REGRAS = [
   { id: 'R1', nome: 'os resumos de mapa/ batem com o manifesto', fn: r1 },
   { id: 'R2', nome: 'a junção: 308 concelhos, uma vez cada, com os slugs da Carta', fn: r2 },
@@ -339,6 +398,7 @@ const REGRAS = [
   { id: 'R4', nome: 'a primeira página com 29 ligações de área', fn: r4 },
   { id: 'R5', nome: 'nenhuma ligação debaixo de role="img"', fn: r5 },
   { id: 'R6', nome: 'a atribuição da DGT onde o mapa está', fn: r6 },
+  { id: 'R7', nome: 'a ordem dos caminhos e das unidades na colação portuguesa', fn: r7 },
 ];
 
 /* ===========================================================================
@@ -417,6 +477,27 @@ const ESTRAGOS = {
     const nome = m.manifesto.fonte.atribuicao;
     pg.root = parse(pg.html.split(nome).join('Instituto Geográfico Nacional'));
     return 'a entidade proprietária trocada na página da linha da Carta';
+  },
+  /* A R7 LÊ TRÊS SÍTIOS E POR ISSO TEM TRÊS ESTRAGOS: os caminhos do país, os
+     caminhos de um distrito, e as unidades do manifesto. Trocar duas unidades
+     do país não desarruma o manifesto nem os distritos, e é essa a razão de os
+     estragos serem três: cada um prova sozinho a metade que lhe toca, e um
+     estrago só deixaria duas por provar. */
+  R7: (m) => {
+    const u = m.pais.unidades;
+    [u[0], u[1]] = [u[1], u[0]];
+    return `«${u[1].nome}» e «${u[0].nome}» trocadas nos caminhos de mapa/pais.json`;
+  },
+  'R7 (um distrito)': (m) => {
+    const slug = m.pais.unidades[0].slug;
+    const c = m.distritos[slug].concelhos;
+    [c[0], c[1]] = [c[1], c[0]];
+    return `«${c[1].nome}» e «${c[0].nome}» trocados nos caminhos de mapa/distritos/${slug}.json`;
+  },
+  'R7 (o manifesto)': (m) => {
+    const u = m.manifesto.unidades;
+    [u[0], u[1]] = [u[1], u[0]];
+    return `«${u[1].nome}» e «${u[0].nome}» trocadas nas unidades do manifesto`;
   },
 };
 

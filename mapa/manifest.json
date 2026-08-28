@@ -401,7 +401,7 @@
   "ficheiros": {
     "mapa/distritos/aveiro.json": {
       "bytes": 16749,
-      "sha256": "00ed55b1bf9510a211dcd2699bc7e206f49349a6b5188536385257bab84b4277"
+      "sha256": "bbb840bf2db96030d457c9973c2726cefafbbdc4e01ad57b42f4d40532aa535d"
     },
     "mapa/distritos/beja.json": {
       "bytes": 19002,
@@ -485,7 +485,7 @@
     },
     "mapa/distritos/lisboa.json": {
       "bytes": 23659,
-      "sha256": "e2e9456c2c7694fe1fd752a842f9f664aec39b70e827147eba3e51f097f9c4e3"
+      "sha256": "8d6a43f97fed8c801518ac90d81c2ea16048a88097ce998fa5f852e22fdfa4c7"
     },
     "mapa/distritos/portalegre.json": {
       "bytes": 17647,
@@ -493,11 +493,11 @@
     },
     "mapa/distritos/porto.json": {
       "bytes": 18380,
-      "sha256": "8527e68bdff455c83cfa87a12d96b34419c84c3afc8712a6b811381317f3cddd"
+      "sha256": "ba9006a9d1ade2746ff080b10cdb54fe68cb63ea68d4de7c5cf1c366287a646b"
     },
     "mapa/distritos/santarem.json": {
       "bytes": 22145,
-      "sha256": "fd24998e4c0f78e18fd2fc4567aec3ca94d8842452b349444ec7738152d10bb5"
+      "sha256": "9df60935819b77844bb007c46cb0a5d4bd15e096c1fddc973a3310c15903a255"
     },
     "mapa/distritos/setubal.json": {
       "bytes": 14542,
@@ -517,7 +517,7 @@
     },
     "mapa/pais.json": {
       "bytes": 34806,
-      "sha256": "6287ed971fcbc5b96ab63ee607663c55026a50b1752a4999fffefcd72fb9fc45"
+      "sha256": "9ed61a53f54257e7293be5010a32b0cc182863e899c82396506ea56a0f688004"
     }
   },
   "fonte": {
@@ -900,13 +900,13 @@
         "castelo-de-paiva",
         "espinho",
         "estarreja",
-        "santa-maria-da-feira",
         "ilhavo",
         "mealhada",
         "murtosa",
         "oliveira-de-azemeis",
         "oliveira-do-bairro",
         "ovar",
+        "santa-maria-da-feira",
         "sao-joao-da-madeira",
         "sever-do-vouga",
         "vagos",
@@ -1037,6 +1037,30 @@
       "tipo": "distrito"
     },
     {
+      "concelhos": 14,
+      "concelhos_slugs": [
+        "alandroal",
+        "arraiolos",
+        "borba",
+        "estremoz",
+        "evora",
+        "montemor-o-novo",
+        "mora",
+        "mourao",
+        "portel",
+        "redondo",
+        "reguengos-de-monsaraz",
+        "vendas-novas",
+        "viana-do-alentejo",
+        "vila-vicosa"
+      ],
+      "ficheiro": "mapa/distritos/evora.json",
+      "nome": "Évora",
+      "parcela": "continente",
+      "slug": "evora",
+      "tipo": "distrito"
+    },
+    {
       "concelhos": 16,
       "concelhos_slugs": [
         "albufeira",
@@ -1085,18 +1109,6 @@
       "parcela": "continente",
       "slug": "guarda",
       "tipo": "distrito"
-    },
-    {
-      "concelhos": 2,
-      "concelhos_slugs": [
-        "angra-do-heroismo",
-        "praia-da-vitoria"
-      ],
-      "ficheiro": "mapa/distritos/ilha-terceira.json",
-      "nome": "Ilha Terceira",
-      "parcela": "acores",
-      "slug": "ilha-terceira",
-      "tipo": "ilha"
     },
     {
       "concelhos": 1,
@@ -1227,6 +1239,18 @@
       "tipo": "ilha"
     },
     {
+      "concelhos": 2,
+      "concelhos_slugs": [
+        "angra-do-heroismo",
+        "praia-da-vitoria"
+      ],
+      "ficheiro": "mapa/distritos/ilha-terceira.json",
+      "nome": "Ilha Terceira",
+      "parcela": "acores",
+      "slug": "ilha-terceira",
+      "tipo": "ilha"
+    },
+    {
       "concelhos": 16,
       "concelhos_slugs": [
         "alcobaca",
@@ -1256,6 +1280,7 @@
       "concelhos": 16,
       "concelhos_slugs": [
         "alenquer",
+        "amadora",
         "arruda-dos-vinhos",
         "azambuja",
         "cadaval",
@@ -1264,13 +1289,12 @@
         "loures",
         "lourinha",
         "mafra",
+        "odivelas",
         "oeiras",
         "sintra",
         "sobral-de-monte-agraco",
         "torres-vedras",
-        "vila-franca-de-xira",
-        "amadora",
-        "odivelas"
+        "vila-franca-de-xira"
       ],
       "ficheiro": "mapa/distritos/lisboa.json",
       "nome": "Lisboa",
@@ -1320,10 +1344,10 @@
         "porto",
         "povoa-de-varzim",
         "santo-tirso",
+        "trofa",
         "valongo",
         "vila-do-conde",
-        "vila-nova-de-gaia",
-        "trofa"
+        "vila-nova-de-gaia"
       ],
       "ficheiro": "mapa/distritos/porto.json",
       "nome": "Porto",
@@ -1347,14 +1371,14 @@
         "ferreira-do-zezere",
         "golega",
         "macao",
+        "ourem",
         "rio-maior",
         "salvaterra-de-magos",
         "santarem",
         "sardoal",
         "tomar",
         "torres-novas",
-        "vila-nova-da-barquinha",
-        "ourem"
+        "vila-nova-da-barquinha"
       ],
       "ficheiro": "mapa/distritos/santarem.json",
       "nome": "Santarém",
@@ -1461,30 +1485,6 @@
       "nome": "Viseu",
       "parcela": "continente",
       "slug": "viseu",
-      "tipo": "distrito"
-    },
-    {
-      "concelhos": 14,
-      "concelhos_slugs": [
-        "alandroal",
-        "arraiolos",
-        "borba",
-        "estremoz",
-        "evora",
-        "montemor-o-novo",
-        "mora",
-        "mourao",
-        "portel",
-        "redondo",
-        "reguengos-de-monsaraz",
-        "vendas-novas",
-        "viana-do-alentejo",
-        "vila-vicosa"
-      ],
-      "ficheiro": "mapa/distritos/evora.json",
-      "nome": "Évora",
-      "parcela": "continente",
-      "slug": "evora",
       "tipo": "distrito"
     }
   ]

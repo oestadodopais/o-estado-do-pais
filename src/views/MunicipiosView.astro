@@ -51,9 +51,10 @@ const path = routePath('municipios', lang);
 /** Que concelhos já têm página, pela posição na CAOP — nunca por um slug escrito à mão. */
 const paginaPorIndice = new Map(MUNICIPIOS_COM_PAGINA.map((m) => [m.caopIndex, m]));
 
-/* Agrupados pelo distrito ou ilha que a própria CAOP lhes dá. Ordem: a de
-   DISTRITOS, e dentro de cada um a ordem em que os registos estão — que é a
-   ordem alfabética da carta. Nada é reordenado à mão. */
+/* Agrupados pelo distrito ou ilha que a própria CAOP lhes dá. Dentro de cada
+   grupo, a ordem em que os registos estão, que é a ordem alfabética da carta.
+   Nada é reordenado à mão: a ordem dos GRUPOS é a da colação portuguesa, e
+   compõe-se em `comEntradas`, mais abaixo. */
 const grupos = DISTRITOS.map((nome, i) => ({
   nome,
   /* O SLUG DA UNIDADE, PARA A PORTA DO CABEÇALHO DE GRUPO (Emenda 20, D3).
@@ -74,7 +75,29 @@ MUNICIPIOS.forEach((m, i) => {
   });
 });
 
-const comEntradas = grupos.filter((g) => g.entradas.length > 0);
+/**
+ * A ORDEM DOS CABEÇALHOS É A DA COLAÇÃO PORTUGUESA (I84, 28.08.2026)
+ *
+ * Era a de `DISTRITOS`, que é a ordem em que os nomes vêm no ficheiro de
+ * coordenadas da Carta, e essa é a ordem dos pontos de código: «Évora» caía
+ * depois de «Viseu», porque É vem depois de Z, e «Ilha Terceira» vinha antes de
+ * «Ilha da Graciosa», porque T maiúsculo vem antes de d minúsculo. Um leitor
+ * que percorre 29 cabeçalhos à procura de um nome procura-o onde a língua o
+ * põe.
+ *
+ * `Intl.Collator('pt')` é a mesma comparação que a lista por baixo do mapa da
+ * primeira página faz desde o X2 de 27.08.2026, e a mesma que o artefacto do
+ * motor traz desde a I84: os três sítios onde estes 29 nomes aparecem seguidos
+ * dizem-nos agora pela mesma ordem.
+ *
+ * ORDENA-SE A LISTA DOS GRUPOS, E NÃO A DE `DISTRITOS`: o índice de cada grupo
+ * naquela lista é o que liga um concelho ao seu distrito (`m[1]`), e mexer-lhe
+ * trocava os 308 de sítio. O que se ordena é a lista já montada.
+ */
+const colacao = new Intl.Collator('pt');
+const comEntradas = grupos
+  .filter((g) => g.entradas.length > 0)
+  .sort((a, b) => colacao.compare(a.nome, b.nome));
 
 /**
  * A COBERTURA, PELAS DUAS CHAVES DA PROVA (IDENTIDADE.md §10; relocação R11).
