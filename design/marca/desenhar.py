@@ -4639,7 +4639,7 @@ PARES_E2 = [
     ("papel-tinta", "papel em tinta", TINTA, PAPEL),
     ("branco-preto", "branco puro em preto puro", PRETO, BRANCO),
     ("cobalto-papel", "cobalto em papel", PAPEL, COBALTO),
-    ("cinzento-papel", "cinzento `--g1` em papel", PAPEL, CINZENTO),
+    ("cinzento-papel", "cinzento «--g1» em papel", PAPEL, CINZENTO),
     ("ambar-tinta", "âmbar em tinta · a de hoje", TINTA, AMBAR),
 ]
 PARES_E2_MAPA = {c: (campo, letra) for c, _, campo, letra in PARES_E2}
@@ -4918,6 +4918,11 @@ def _corda16(slug, ab):
     return m["corda"] if m else 0.0
 
 
+def _v(x, casas=1):
+    """Um número para uma folha que um português lê: vírgula decimal."""
+    return f"{x:.{casas}f}".replace(".", ",")
+
+
 def folha_e2():
     from PIL import Image, ImageDraw, ImageFont
     grande = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 27)
@@ -4935,13 +4940,15 @@ def folha_e2():
            f"Uma grossura só ({G_E2 * 100:.0f} % do diâmetro), tinta em papel, 180 px.",
            font=pequena, fill=(52, 56, 52))
     d.text((gap, 86), "o «vão» é a distância de parede a parede por dentro do anel, "
-           "medida sobre o eixo da barra.", font=pequena, fill=(52, 56, 52))
+           "medida sobre o eixo da barra. «des» é a corda que o desenho põe, "
+           "«med» a que sobra no ficheiro.", font=pequena, fill=(52, 56, 52))
 
     for j, ab in enumerate(CORTES_E2):
         x = rot + gap + j * (cel + gap)
-        d.text((x, 130), f"corte de {ab:.0f} graus", font=media, fill=(16, 18, 16))
-        d.text((x, 160), f"corda a 16 px: {corda_desenhada(ab, 16):.1f} px desenhados, "
-               f"{_corda16(f'e2-unida-{ab:.0f}', ab):.1f} medidos",
+        d.text((x, 126), f"corte de {ab:.0f} graus", font=media, fill=(16, 18, 16))
+        d.text((x, 156), "corda a 16 px", font=pequena, fill=(52, 56, 52))
+        d.text((x, 178), f"{_v(corda_desenhada(ab, 16), 2)} des · "
+               f"{_v(_corda16(f'e2-unida-{ab:.0f}', ab), 2)} med",
                font=pequena, fill=(52, 56, 52))
 
     for i, (chave, rotulo, comp, ancora) in enumerate(GEOMETRIAS_E2):
@@ -4959,7 +4966,7 @@ def folha_e2():
                    f"a 180 px: {_tipo_de_leitura(m)}", font=pequena, fill=(90, 94, 90))
             d.text((gap, y + cel / 2 + 34),
                    f"ilhas: sinal {m['ilhas_sinal']}, fundo {m['ilhas_fundo']} · "
-                   f"tinta {m['sinal']:.1f} %", font=pequena, fill=(90, 94, 90))
+                   f"sinal {_v(m['sinal'])} %", font=pequena, fill=(90, 94, 90))
         for j, ab in enumerate(CORTES_E2):
             x = rot + gap + j * (cel + gap)
             f = os.path.join(AQUI, "EXPORT-E2", f"e2-{chave}-{ab:.0f}",
@@ -4977,7 +4984,8 @@ def folha_e2():
         f = os.path.join(AQUI, "EXPORT-E2", f"e2-unida-{ab:.0f}", f"e2-unida-{ab:.0f}-16.png")
         folha.paste(Image.open(f).convert("RGB").resize((tira, tira), Image.NEAREST),
                     (x, y + 76))
-        d.text((x, y + 76 + tira + 10), f"{ab:.0f}g · corda {corda_desenhada(ab, 16):.1f} px",
+        d.text((x, y + 76 + tira + 10),
+               f"{ab:.0f}g · corda {_v(corda_desenhada(ab, 16), 2)} px",
                font=pequena, fill=(52, 56, 52))
     saida = os.path.join(AQUI, "FOLHA-E2.png")
     folha.save(saida, optimize=True)
@@ -5041,7 +5049,7 @@ def folha_e2_cores():
         y = cabeca + i * passo
         d.text((gap, y + 62), rotulo, font=media, fill=(16, 18, 16))
         d.text((gap, y + 92), f"{letra} sobre {campo}", font=pequena, fill=(52, 56, 52))
-        d.text((gap, y + 116), f"contraste {contraste(letra, campo):.2f}:1 · "
+        d.text((gap, y + 116), f"contraste {_v(contraste(letra, campo), 2)}:1 · "
                f"{'passa' if contraste(letra, campo) >= 4.5 else 'FALHA'} 4,5:1",
                font=pequena, fill=(52, 56, 52))
         for k, (chave, ab, _, _) in enumerate(E2_CORES_ORDEM):
