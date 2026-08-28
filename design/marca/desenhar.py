@@ -262,19 +262,67 @@ def letra_e_livro(x0, ytopo, H, barra=BARRA, vao=VAO, haste=RAZAO_FINO,
 SPECTRAL_SB = os.path.join(RAIZ, "public", "tipos", "spectral", "Spectral-SemiBold.woff2")
 
 
-def palavra_estado(x0, base, H, espaco=0.10, e_curto=0.48, e_largo=0.62):
+# A LINHA DO VALOR, que é o que a direção J2 acrescenta à J (quarta adenda).
+#
+# O braço do meio do «E» deixa de ser um braço e passa a ser uma linha: cobalto,
+# e mais grossa do que os outros dois. A grossura foi escolhida a olhar, e as
+# três que se viram estão na §5. A 0,086 H (que é a grossura própria do braço do
+# meio nesta grelha) o azul lê-se como uma cor pousada num traço, ou seja como
+# enfeite; a 0,20 H lê-se como uma linha metida dentro da letra, porque é mais
+# grossa do que os braços de tinta e por isso é outro objeto. É a segunda.
+LINHA_VALOR = 0.20            # o braço do meio, em cobalto
+LINHA_VALOR_16 = 0.22         # a mesma linha no desenho de 32 e 16
+BRACOS_16 = 0.130             # e os braços de tinta engrossam com ela
+
+
+def letra_e_linha(x0, cy, H, valor=LINHA_VALOR, fino=RAZAO_FINO,
+                  braco_longo=0.62, braco_curto=0.48, com_serifa=True):
+    """O «E» da casa com o braço do meio trocado por uma linha de valor.
+
+    Devolve [(regra, classe, «path»)] e as medidas. As partes vêm separadas
+    porque a linha leva outra cor, e um «path» só não chegava.
+    """
+    T = RAZAO_HASTE * H
+    t = fino * H
+    tm = valor * H
+    yc, yb = cy - H / 2.0, cy + H / 2.0
+    La, Lm = braco_longo * H, braco_curto * H
+    tinta = [rect(x0, yc, x0 + T, yb),
+             rect(x0, yc, x0 + La, yc + t),
+             rect(x0, yb - t, x0 + La, yb)]
+    azul = [rect(x0, cy - tm / 2, x0 + Lm, cy + tm / 2)]
+    if com_serifa:
+        hs = t * 2.2
+        tinta.append(rect(x0 + La - t, yc, x0 + La, yc + hs))
+        tinta.append(rect(x0 + La - t, yb - hs, x0 + La, yb))
+        azul.append(rect(x0 + Lm - t * 0.86, cy - tm / 2 - t * 0.5,
+                         x0 + Lm, cy + tm / 2 + t * 0.5))
+    partes = ([("nonzero", "tinta", d) for d in tinta]
+              + [("nonzero", "acento", d) for d in azul])
+    return partes, {"T": T, "t": t, "tm": tm, "La": La, "Lm": Lm, "yc": yc, "yb": yb}
+
+
+def palavra_estado(x0, base, H, espaco=0.10, e_curto=0.48, e_largo=0.62, valor=None):
     """«Estado»: o «E» desenhado da casa e «stado» em Spectral SemiBold.
+
+    `valor` a `None` dá o «E» de sempre (direção J); com um número, dá o «E» com
+    a linha do valor (direção J2), e o número é a grossura dela em altura de
+    maiúscula.
 
     Devolve [(regra de enchimento, classe, «path»)] e a largura da palavra.
     """
     sys.path.insert(0, AQUI)
     from glifos import contorno
-    de, me = letra_e(x0, base - H / 2.0, H, braco_curto=e_curto, braco_longo=e_largo)
+    if valor is None:
+        de, me = letra_e(x0, base - H / 2.0, H, braco_curto=e_curto, braco_longo=e_largo)
+        partes = [("nonzero", "tinta", de)]
+    else:
+        partes, me = letra_e_linha(x0, base - H / 2.0, H, valor=valor,
+                                   braco_curto=e_curto, braco_longo=e_largo)
     d_stado, larg, _, _ = contorno(SPECTRAL_SB, "stado", H)
     dx = x0 + me["La"] + espaco * H
-    return ([("nonzero", "tinta", de),
-             ("nonzero", "tinta", transforma(d_stado, 1.0, dx, base))],
-            me["La"] + espaco * H + larg)
+    partes = partes + [("nonzero", "tinta", transforma(d_stado, 1.0, dx, base))]
+    return partes, me["La"] + espaco * H + larg
 
 
 def caminhos(partes, indent="    "):
@@ -946,6 +994,49 @@ def direcao_j():
                caixa_favicon=(0.0, me["yc"], me["La"], me["yb"]))
 
 
+# ---------------------------------------------------------------------------
+# J2 · A PALAVRA «ESTADO» COM A LINHA DO VALOR NO «E» (a quarta adenda)
+# ---------------------------------------------------------------------------
+def direcao_j2():
+    """A J com a ideia da H metida dentro da construção serifada.
+
+    O diretor escolheu a palavra. Esta direção é a J com uma correção: o «E»
+    deixa de ser um «E» qualquer e passa a levar a linha do valor. Isso resolve
+    o que a §5 apontava à J, que era o sinal pequeno ser um «E» serifado como
+    tantos outros: com a linha, o «E» sozinho a 60 e a 16 px já não é o «E» do
+    Expresso nem o do Economist, é uma letra com uma linha lá dentro.
+
+    O SINAL GRANDE é a palavra; o SINAL PEQUENO é o «E» dela. A troca acontece
+    aos 60 px, e quem a faz é `exportar.mjs`, que sabe que esta direção troca
+    mais cedo do que as outras.
+    """
+    H = 300.0
+    base = 400.0
+    partes, largura = palavra_estado(0.0, base, H, valor=LINHA_VALOR)
+    corpo = (
+        f'    <!-- «Estado» com a linha do valor: o «E» desenhado (H={H:.0f},\n'
+        f'         haste {RAZAO_HASTE * H:.1f}, braços {RAZAO_FINO * H:.1f}, linha do\n'
+        f'         valor {LINHA_VALOR * H:.0f} em cobalto) e «stado» em Spectral\n'
+        f'         SemiBold do ficheiro da casa. A palavra mede {largura:.0f} x {H:.0f}\n'
+        f'         = {largura / H:.2f}:1. -->\n'
+        + caminhos(partes)
+    )
+    pf, mf = letra_e_linha(0.0, 0.0, H, valor=LINHA_VALOR_16, fino=BRACOS_16,
+                           com_serifa=False)
+    favicon = (
+        f'    <!-- 60, 32 e 16 px: fica o «E» da palavra. Os braços engrossam de\n'
+        f'         {RAZAO_FINO:.3f} para {BRACOS_16:.3f} H e a linha do valor de\n'
+        f'         {LINHA_VALOR:.2f} para {LINHA_VALOR_16:.2f}, porque a 16 px um braço\n'
+        f'         de 0,100 H dá 1,13 px e a linha tem de continuar a ler-se como\n'
+        f'         linha e não como sujidade. As lajes de remate saem. -->\n'
+        + caminhos(pf)
+    )
+    return svg("Direção J2 · «Estado» com a linha do valor", corpo, favicon,
+               "A palavra, com a linha do valor dentro do «E».",
+               caixa=(0.0, base - H, largura, base),
+               caixa_favicon=(0.0, mf["yc"], mf["La"], mf["yb"]))
+
+
 DIRECOES = [
     ("1-ligadura-oe", direcao_a),
     ("2-o-acento", direcao_b),
@@ -957,6 +1048,7 @@ DIRECOES = [
     ("8-e-livro-razao", direcao_h),
     ("9-selo-no-e", direcao_i),
     ("10-palavra-estado", direcao_j),
+    ("11-estado-linha", direcao_j2),
 ]
 
 
@@ -1099,11 +1191,24 @@ FICHA = {
                    "palavra num campo quadrado fica a um terço da altura de uma letra "
                    "sozinha.",
     },
+    "11-estado-linha": {
+        "letra": "J2",
+        "nome": "«Estado» com a linha do valor",
+        "tenta": "A J com a ideia da H metida dentro da letra serifada: o braço do meio "
+                 "do «E» deixa de ser um braço e passa a ser a linha do valor, em "
+                 "cobalto e mais grossa do que os braços de tinta. A palavra é o sinal "
+                 "grande; o «E» dela, sozinho, é o sinal de 60 px para baixo.",
+        "arrisca": "«Estado» sozinho continua a ler-se como a instituição, e é o artigo "
+                   "que traz o leitor de volta à condição: isso não muda com a linha. E "
+                   "uma linha azul dentro de um «E» pode ler-se como um texto "
+                   "sublinhado ou como um erro de impressão, se for fina de mais.",
+    },
 }
 
 ORDEM = ["1-ligadura-oe", "2-o-acento", "3-selo", "4-azulejo",
          "5-mapa", "6-regua", "7-selo-no-o",
-         "8-e-livro-razao", "9-selo-no-e", "10-palavra-estado"]
+         "8-e-livro-razao", "9-selo-no-e", "10-palavra-estado",
+         "11-estado-linha"]
 
 # As referências que mais perto passam de alguma destas direções.
 VIZINHOS = [
@@ -1136,7 +1241,7 @@ def _png(slug, nome):
 
 
 def tira_de_vizinhanca():
-    """As dez direções e dezasseis referências, todas a 60 px, na mesma tira.
+    """As onze direções e dezasseis referências, todas a 60 px, na mesma tira.
 
     É a comparação que o brief pede: à MESMA escala, e não cada uma na sua.
     """
@@ -1197,7 +1302,7 @@ SPECTRAL_RG = os.path.join(RAIZ, "public", "tipos", "spectral", "Spectral-Regula
 SPECTRAL_SC = os.path.join(RAIZ, "public", "tipos", "spectral-sc", "SpectralSC-Regular.woff2")
 
 
-def lockup_da_palavra(classe, altura=100.0, menor=0.66, espaco=0.26):
+def lockup_da_palavra(classe, acento, altura=100.0, menor=0.66, espaco=0.26, valor=None):
     """A marca horizontal da direção J: «O» pequeno, «Estado» desenhado, «do País».
 
     A palavra é a desenhada, letra a letra, na grelha da casa. O artigo e o
@@ -1213,16 +1318,27 @@ def lockup_da_palavra(classe, altura=100.0, menor=0.66, espaco=0.26):
     h2 = menor * altura
     d_o, larg_o, _, _ = contorno(SPECTRAL_RG, "O", h2)
     d_dp, larg_dp, _, _ = contorno(SPECTRAL_RG, "do País", h2)
-    partes, largura = palavra_estado(0.0, 0.0, altura)
+    partes, largura = palavra_estado(0.0, 0.0, altura, valor=valor)
     x1 = larg_o + espaco * altura
     x2 = x1 + largura + espaco * altura
     pecas = [f'  <g transform="translate(0 0)"><path class="{classe}" d="{d_o}"/></g>',
              f'  <g transform="translate({n(x1)} 0)">',
              caminhos(partes, indent="    ").replace('class="tinta"', f'class="{classe}"')
-                                            .replace('class="acento"', f'class="{classe}"'),
+                                            .replace('class="acento"', f'class="{acento}"'),
              '  </g>',
              f'  <g transform="translate({n(x2)} 0)"><path class="{classe}" d="{d_dp}"/></g>']
-    caixa = (0.0, -altura, x2 + larg_dp, 0.0)
+    # A CAIXA É A DA TINTA, E NÃO A DA ALTURA DE MAIÚSCULA. Estava a ser a
+    # segunda, e por isso o «d» de «Estado» saía cortado: a ascendente do
+    # Spectral sobe a 1,136 da maiúscula (113,6 numa maiúscula de 100), e o
+    # topo da caixa estava a -100. Aqui a caixa é medida nos contornos.
+    topos = [-altura]
+    for d, dx in ((d_o, 0.0), (d_dp, x2)):
+        topos.append(caixa_do_caminho(d)[1])
+    for regra, classe_, d in partes:
+        if "A" not in d:            # os contornos do tipo não trazem arcos
+            topos.append(caixa_do_caminho(d)[1])
+    topo = min(topos)
+    caixa = (0.0, topo, x2 + larg_dp, 0.0)
     vb = f"{n(caixa[0])} {n(caixa[1])} {n(caixa[2] - caixa[0])} {n(caixa[3] - caixa[1])}"
     return (f'<svg viewBox="{vb}" role="img" aria-label="O Estado do País">\n'
             + "\n".join(pecas) + "\n</svg>")
@@ -1268,6 +1384,8 @@ CSS_PRANCHA = f"""
   .lockup svg {{ height: 27px; }}
   .nome-claro {{ fill: {TINTA}; }}
   .nome-escuro {{ fill: {TINTA_ESCURA}; }}
+  .acento-claro {{ fill: {COBALTO}; }}
+  .acento-escuro {{ fill: {COBALTO_CLARO}; }}
   .risco {{ border-left: 3px solid {AMBAR}; padding-left: 12px; }}
   .tabela {{ border-collapse: collapse; font-size: 13px; }}
   .tabela td, .tabela th {{ border-bottom: 1px solid #d9ddd8; padding: 5px 14px 5px 0;
@@ -1275,16 +1393,22 @@ CSS_PRANCHA = f"""
   .amostra {{ display: inline-block; width: 26px; height: 13px; vertical-align: -1px;
              border: 1px solid #585d5b; }}
   .larga {{ max-width: 1188px; width: 100%; height: auto; border: 1px solid #d9ddd8; }}
+  .ecra {{ border: 1px solid #d9ddd8; display: block; }}
+  .cab {{ border-top: 1px solid #d9ddd8; padding: 14px 0 4px; }}
+  .cab-linha {{ display: flex; align-items: flex-end; gap: 16px; margin: 10px 0 16px; }}
+  .cab-rot {{ font-size: 11px; color: #585d5b; font-family: ui-monospace, Menlo, monospace;
+             width: 250px; flex: none; line-height: 1.3; }}
 """
 
 
 def bloco_direcao(slug):
     f = FICHA[slug]
     p = lambda nome: _png(slug, nome)  # noqa: E731
-    if slug == "10-palavra-estado":
-        # A J tem marca horizontal própria: a palavra é desenhada, e só o artigo
-        # e o «do País» é que são compostos.
-        lock = lockup_da_palavra("%s")
+    if slug in ("10-palavra-estado", "11-estado-linha"):
+        # A J e a J2 têm marca horizontal própria: a palavra é desenhada, e só o
+        # artigo e o «do País» é que são compostos.
+        lock = lockup_da_palavra("%s", "%a",
+                                 valor=LINHA_VALOR if slug == "11-estado-linha" else None)
     else:
         dn, (nx0, ny0, nx1, ny1) = caminho_do_nome(altura=100)
         vb = f"{n(nx0)} {n(ny0)} {n(nx1 - nx0)} {n(ny1 - ny0)}"
@@ -1318,11 +1442,96 @@ def bloco_direcao(slug):
       <figure><span class="chao lupa"><img class="px" src="{p('32-escuro')}" width="128" height="128" alt=""></span><figcaption>32 escuro, 4x</figcaption></figure>
     </div>
     <div class="fila">
-      <div class="lockup"><img src="{p('180')}" alt="">{lock.replace('%s', 'nome-claro')}</div>
-      <div class="lockup escuro"><img src="{p('180-escuro')}" alt="">{lock.replace('%s', 'nome-escuro')}</div>
+      <div class="lockup"><img src="{p('180')}" alt="">{lock.replace('%s', 'nome-claro').replace('%a', 'acento-claro')}</div>
+      <div class="lockup escuro"><img src="{p('180-escuro')}" alt="">{lock.replace('%s', 'nome-escuro').replace('%a', 'acento-escuro')}</div>
     </div>
     <p class="risco fina"><strong>O que arrisca.</strong> {f["arrisca"]}</p>
   </section>"""
+
+
+def caixa_do_lockup(svg_txt):
+    """A altura em unidades da caixa de um lockup já composto (lê-lhe o viewBox)."""
+    vb = re.search(r'viewBox="([-\d.]+) ([-\d.]+) ([-\d.]+) ([-\d.]+)"', svg_txt)
+    return float(vb.group(3)), float(vb.group(4))
+
+
+def bloco_cabecalho():
+    """A marca no cabeçalho do sítio, ao tamanho a que o cabeçalho vive hoje.
+
+    `src/styles/site.css`, `.wordmark`: Spectral 400, `font-size: clamp(34px,
+    7.4vw, 68px)`, `letter-spacing: -0.014em`; a versão compacta,
+    `clamp(24px, 3.4vw, 34px)`. A altura de maiúscula do Spectral é 0,660 da em
+    (`sCapHeight` 660 em 1000), e por isso um corpo de 68 px dá 44,9 px de
+    maiúscula. Tudo o que está aqui é desenhado a 1:1: a altura de cada SVG em
+    píxeis é a altura da caixa de tinta nas mesmas unidades.
+    """
+    linhas = []
+    for corpo_px in (68, 34):
+        cap = 0.660 * corpo_px
+        dn, (nx0, ny0, nx1, ny1) = caminho_do_nome(altura=cap)
+        vb = f"{n(nx0)} {n(ny0)} {n(nx1 - nx0)} {n(ny1 - ny0)}"
+        hoje = (f'<svg style="height:{n(ny1 - ny0)}px" viewBox="{vb}" role="img" '
+                f'aria-label="O Estado do País"><path class="nome-claro" d="{dn}"/></svg>')
+        # âncora A: as partes compostas ao corpo do cabeçalho
+        a = lockup_da_palavra("nome-claro", "acento-claro", altura=corpo_px,
+                              valor=LINHA_VALOR)
+        wa, ha = caixa_do_lockup(a)
+        a = a.replace("<svg ", f'<svg style="height:{n(ha)}px" ')
+        # âncora B: «Estado» à altura de maiúscula do cabeçalho
+        b = lockup_da_palavra("nome-claro", "acento-claro", altura=cap,
+                              valor=LINHA_VALOR)
+        wb, hb = caixa_do_lockup(b)
+        b = b.replace("<svg ", f'<svg style="height:{n(hb)}px" ')
+        linhas.append(f"""
+    <div class="cab">
+      <p class="fina"><strong>Corpo de {corpo_px} px</strong> ({"o máximo do cabeçalho" if corpo_px == 68 else "o mínimo do cabeçalho, e o máximo do compacto"}),
+      que dá {cap:.1f} px de altura de maiúscula.</p>
+      <div class="cab-linha"><span class="cab-rot">hoje, texto composto</span>{hoje}</div>
+      <div class="cab-linha"><span class="cab-rot">âncora A · o artigo e o «do País» ao corpo do cabeçalho</span>{a}</div>
+      <div class="cab-linha"><span class="cab-rot">âncora B · «Estado» à maiúscula do cabeçalho</span>{b}</div>
+      <p class="fina">Caixa de tinta: hoje {ny1 - ny0:.0f} px de alto; âncora A, {ha:.0f} px; âncora B, {hb:.0f} px.</p>
+    </div>""")
+    return f"""
+<hr class="fio">
+<h3>A marca no cabeçalho, ao tamanho a que o cabeçalho vive</h3>
+<p class="fina">O cabeçalho do sítio é texto composto: <code>.wordmark</code>, Spectral 400,
+<code>font-size: clamp(34px, 7.4vw, 68px)</code>, <code>letter-spacing: -0.014em</code>
+(<code>src/styles/site.css</code>). A marca da J2 põe «Estado» desenhado no meio do nome, e
+por isso há duas maneiras de a pôr «ao tamanho do cabeçalho», que não dão a mesma coisa.
+Estão as duas aqui, a 1:1.</p>
+{"".join(linhas)}"""
+
+
+def bloco_ecras():
+    """As maquetas do ecrã principal, mostradas a 1× (a terça parte de 3×)."""
+    def img(nome, letra, nota):
+        caminho = os.path.join(AQUI, f"ECRA-{nome}.png")
+        if not os.path.exists(caminho):
+            return f'<p class="fina">falta <code>ECRA-{nome}.png</code>: corra <code>desenhar.py ecras</code></p>'
+        from PIL import Image
+        w, h = Image.open(caminho).size
+        return (f'<figure><img class="ecra" src="{_b64_png(caminho)}" '
+                f'width="{w // 3}" height="{h // 3}" alt="">'
+                f'<figcaption>{letra} · {nota}</figcaption></figure>')
+    return f"""
+<hr class="fio">
+<h3>O ecrã principal, onde o ícone vai viver</h3>
+<p class="fina">Três maquetas, à escala verdadeira: cela de 180 px (60 pt a 3×), largura de
+1170 px (390 pt a 3×), arredondamento de 22,37 %, rótulo a 33 px (11 pt a 3×, <strong>inferência</strong>:
+não se conferiu contra a documentação da Apple, e o tipo é o Helvetica do sistema). O fundo é
+liso e cinzento médio de propósito: com um fundo claro de mais, o papel do nosso ícone
+confundia-se com o ecrã e a maqueta fabricava o problema em vez de o medir. Aqui em baixo estão
+a 1×, que é o tamanho a que a mão as vê; os ficheiros em <code>design/marca/ECRA-*.png</code>
+estão a 3×.</p>
+<p class="fina">Dois dos oito ícones de referência saem moles porque o servidor deles só
+devolveu ficheiros pequenos (Pordata, 48 px; Poder360, 57 px), e foram ampliados para 180.</p>
+<div class="fila">
+{img("J2", "J2 · a palavra a 180", "o que a adenda pediu para o <code>apple-touch-icon</code>")}
+{img("J2-letra", "J2 · a letra a 180", "a mesma direção com o sinal pequeno na cela grande")}
+</div>
+<div class="fila">
+{img("H", "H · a letra a 180", "para comparar")}
+</div>"""
 
 
 def prancha():
@@ -1333,7 +1542,7 @@ def prancha():
 <html lang="pt-PT">
 <head>
 <meta charset="utf-8">
-<title>A marca · dez direções · O Estado do País</title>
+<title>A marca · onze direções · O Estado do País</title>
 <style>{CSS_PRANCHA}</style>
 </head>
 <body>
@@ -1341,9 +1550,10 @@ def prancha():
   <h1>«O Estado do País» · a marca e o ícone do telemóvel</h1>
   <p class="fina">Prancha de exploração, 28.08.2026, ramo <code>marca-2026-08-28</code>.
   Nada disto está no sítio: não há ficheiro em <code>public/</code>, não há linha no
-  <code>&lt;head&gt;</code> e não há manifesto. São dez direções para a direção
-  escolher uma e iterá-la: as sete de 28.08 de manhã, e as três que a terceira
-  adenda pediu sobre a palavra «Estado» (H, I e J).</p>
+  <code>&lt;head&gt;</code> e não há manifesto. São onze direções para a direção
+  escolher uma e iterá-la: as sete de 28.08 de manhã, as três que a terceira adenda
+  pediu sobre a palavra «Estado» (H, I e J), e a J2, que é a J com a linha do valor
+  dentro do «E», depois de o diretor ter escolhido a palavra.</p>
   <p class="fina">Tudo o que se vê aqui está dentro deste ficheiro: as imagens são
   PNG embebidos, e o nome é contorno e não texto composto. A prancha abre sem rede.</p>
   <p class="fina"><strong>Como se lê.</strong> A coluna dos 60 px é a que decide, porque é a esse
@@ -1380,9 +1590,12 @@ def prancha():
 <hr class="fio">
 {blocos}
 
+{bloco_cabecalho()}
+{bloco_ecras()}
+
 <hr class="fio">
 <h3>A vizinhança a 60 px</h3>
-<p class="fina">As dez direções e dezasseis das referências, todas reduzidas ao mesmo
+<p class="fina">As onze direções e dezasseis das referências, todas reduzidas ao mesmo
 tamanho. É aqui que se vê o que cada uma tem de seu e onde é que já está alguém.</p>
 <img class="larga" src="{tira}" width="{tira_tam[0]}" height="{tira_tam[1]}" alt="">
 
@@ -1398,6 +1611,136 @@ reduzida a 256 cores para a prancha caber num ficheiro; o original está em
     with open(caminho, "w") as f:
         f.write(html)
     print(f"escrito design/marca/PRANCHA.html  ({len(html) / 1024:.0f} KiB)")
+
+
+# ===========================================================================
+# O ECRÃ PRINCIPAL, A 3×
+# ===========================================================================
+"""
+`python3 design/marca/desenhar.py ecras` escreve `design/marca/ECRA-J2.png` e
+`design/marca/ECRA-H.png`.
+
+PORQUE É QUE ISTO EXISTE. Um ícone não se julga sozinho num campo branco: julga-se
+onde vai viver, que é entre os ícones dos outros, ao tamanho a que o telemóvel os
+desenha. A quarta adenda pede-o à escala verdadeira: 3×, com a cela do ícone a 180
+px, que é o que um iPhone a 3× desenha para um ícone de 60 pt.
+
+O QUE É MEDIDO E O QUE É SUPOSTO, e convém não confundir as duas coisas:
+  · a cela de 180 px é 60 pt a 3×, e é o tamanho que o `apple-touch-icon` pede;
+  · o arredondamento de 22,37 % é o mesmo que a prancha já usa nas outras filas;
+  · a largura de 1170 px é 390 pt a 3×, que é a largura de um iPhone corrente;
+  · o rótulo a 33 px é 11 pt a 3× (INFERÊNCIA: não está conferido contra a
+    documentação da Apple, que não se pode consultar sem rede, e o tipo é o
+    Helvetica do sistema e não o do iPhone). O que importa aqui é a ORDEM DE
+    GRANDEZA do rótulo ao lado do ícone, e essa está certa.
+  · o fundo é liso, e num telemóvel é uma fotografia. É de propósito: uma
+    fotografia por baixo muda a leitura de cada ícone de maneira diferente, e o
+    que se quer comparar é o ícone. O cinzento médio também é escolhido: com um
+    fundo claro de mais, o papel do nosso ícone confunde-se com o ecrã e a
+    maqueta fabricava o problema que devia medir. Assim, o NYT e o Público, que
+    também têm campo claro, mostram a borda tal como o nosso.
+
+E UMA COISA QUE SE VÊ NA IMAGEM E QUE NÃO É NOSSA: dois dos oito ícones de
+referência (Pordata, 48 px, e Poder360, 57 px) foram ampliados para 180 e por
+isso saem moles. Num telemóvel a sério o sistema serve o ficheiro grande que o
+sítio declara; aqui só se tem o que o servidor devolveu.
+"""
+
+LARGURA_ECRA = 1170          # 390 pt a 3×
+CELA = 180                   # 60 pt a 3×
+RAIO_IOS = 0.2237
+COLUNAS = 4
+MARGEM = 90
+ROTULO_PX = 33               # 11 pt a 3× (inferência, ver acima)
+FUNDO_CLARO = (176, 182, 176)
+FUNDO_ESCURO = (16, 18, 20)
+
+ECRA_FILAS = [
+    ("expresso.pt.png", "Expresso"),
+    ("observador.pt.png", "Observador"),
+    ("publico.pt.png", "Público"),
+    ("economist.com.png", "Economist"),
+    ("nytimes.com.png", "NYTimes"),
+    (None, "Estado do País"),          # o nosso, a meio da segunda fila
+    ("ourworldindata.org.png", "Our World in Data"),
+    ("poder360.com.br.png", "Poder360"),
+    ("pordata.pt.png", "Pordata"),
+]
+
+
+def _mascara_ios(lado):
+    from PIL import Image, ImageDraw
+    m = Image.new("L", (lado * 4, lado * 4), 0)
+    ImageDraw.Draw(m).rounded_rectangle([0, 0, lado * 4 - 1, lado * 4 - 1],
+                                        radius=int(RAIO_IOS * lado * 4), fill=255)
+    return m.resize((lado, lado), Image.LANCZOS)
+
+
+def _icone(caminho, lado=CELA):
+    from PIL import Image
+    im = Image.open(caminho).convert("RGBA")
+    if im.size != (lado, lado):
+        im = im.resize((lado, lado), Image.LANCZOS)
+    fundo = Image.new("RGB", (lado, lado), (255, 255, 255))
+    fundo.paste(im, (0, 0), im)
+    return fundo
+
+
+def compoe_ecra(icone_nosso, tema):
+    """Um ecrã principal, com o nosso ícone entre oito dos outros."""
+    from PIL import Image, ImageDraw, ImageFont
+    escuro = tema == "escuro"
+    fonte = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", ROTULO_PX)
+    gap = (LARGURA_ECRA - 2 * MARGEM - COLUNAS * CELA) / (COLUNAS - 1)
+    passo = CELA + 12 + ROTULO_PX + 75
+    filas = (len(ECRA_FILAS) + COLUNAS - 1) // COLUNAS
+    alto = 120 + filas * passo + 40
+    im = Image.new("RGB", (LARGURA_ECRA, alto), FUNDO_ESCURO if escuro else FUNDO_CLARO)
+    d = ImageDraw.Draw(im)
+    mascara = _mascara_ios(CELA)
+    cor = (236, 238, 234) if escuro else (23, 25, 27)
+    for i, (ficheiro, rotulo) in enumerate(ECRA_FILAS):
+        cx = MARGEM + (i % COLUNAS) * (CELA + gap)
+        cy = 120 + (i // COLUNAS) * passo
+        caminho = icone_nosso if ficheiro is None else os.path.join(AQUI, "referencias", ficheiro)
+        im.paste(_icone(caminho), (int(cx), int(cy)), mascara)
+        texto = rotulo
+        while d.textlength(texto + "…", font=fonte) > CELA + 24 and len(texto) > 3:
+            texto = texto[:-1]
+        if texto != rotulo:
+            texto += "…"
+        larg = d.textlength(texto, font=fonte)
+        d.text((cx + CELA / 2 - larg / 2, cy + CELA + 12), texto, font=fonte, fill=cor)
+    return im
+
+
+def ecras():
+    from PIL import Image, ImageDraw, ImageFont
+    fonte = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 30)
+    for letra, slug, sufixos in (("J2", "11-estado-linha", ("180", "180-escuro")),
+                                 ("J2-letra", "11-estado-linha", ("180-letra", "180-letra-escuro")),
+                                 ("H", "8-e-livro-razao", ("180", "180-escuro"))):
+        peles = []
+        for tema, sufixo in zip(("claro", "escuro"), sufixos):
+            nosso = os.path.join(AQUI, "EXPORT", slug, f"{slug}-{sufixo}.png")
+            peles.append(compoe_ecra(nosso, tema))
+        larg = sum(p.size[0] for p in peles) + 60
+        alto = max(p.size[1] for p in peles) + 54
+        folha = Image.new("RGB", (larg, alto), (150, 154, 148))
+        x = 0
+        for p, nome in zip(peles, ("ecrã claro", "ecrã escuro")):
+            folha.paste(p, (x, 0))
+            ImageDraw.Draw(folha).text((x + 8, p.size[1] + 12),
+                                       f"{nome} · ícone da direção {letra} · 3×, cela de 180 px",
+                                       font=fonte, fill=(20, 22, 20))
+            x += p.size[0] + 60
+        saida = os.path.join(AQUI, f"ECRA-{letra}.png")
+        folha.save(saida, optimize=True)
+        print(f"escrito design/marca/ECRA-{letra}.png  ({folha.size[0]} x {folha.size[1]})")
+
+
+if len(sys.argv) > 1 and sys.argv[1] == "ecras":
+    ecras()
 
 
 if len(sys.argv) > 1 and sys.argv[1] == "prancha":

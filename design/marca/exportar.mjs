@@ -66,6 +66,25 @@ const TAMANHOS = [
  */
 const TROCA_CEDO = {
   '10-palavra-estado': { 60: 'favicon', '60-escuro': 'favicon' },
+  '11-estado-linha': { 60: 'favicon', '60-escuro': 'favicon' },
+};
+
+/**
+ * TAMANHOS A MAIS, SÓ PARA AS DIREÇÕES QUE TROCAM CEDO.
+ *
+ * As duas direções da palavra têm dois sinais, e a 180 px mostram o grande.
+ * Para a maqueta do ecrã principal (`desenhar.py ecras`) é preciso ver a MESMA
+ * cela de 180 px com o sinal pequeno, que é a pergunta que a maqueta responde:
+ * o que segura um lugar num ecrã principal, a palavra ou a letra? Só estas duas
+ * levam estes ficheiros a mais; as outras não têm duas leituras para comparar.
+ */
+const TAMANHOS_EXTRA = {
+  '10-palavra-estado': ['180-letra', '180-letra-escuro'],
+  '11-estado-linha': ['180-letra', '180-letra-escuro'],
+};
+const EXTRA = {
+  '180-letra': { px: 180, tema: 'claro', forma: 'favicon' },
+  '180-letra-escuro': { px: 180, tema: 'escuro', forma: 'favicon' },
 };
 
 /**
@@ -107,7 +126,14 @@ async function main() {
       await pag.screenshot({ path: destino, omitBackground: false });
       contados += 1;
     }
-    console.log(`${slug}: ${TAMANHOS.length} PNG`);
+    for (const nome of TAMANHOS_EXTRA[slug] ?? []) {
+      const t = EXTRA[nome];
+      await pag.setViewportSize({ width: t.px, height: t.px });
+      await pag.setContent(pagina(svg, t.px, t.tema, t.forma));
+      await pag.screenshot({ path: path.join(pasta, `${slug}-${nome}.png`) });
+      contados += 1;
+    }
+    console.log(`${slug}: ${TAMANHOS.length + (TAMANHOS_EXTRA[slug]?.length ?? 0)} PNG`);
   }
 
   /* A prancha inteira, à largura que o brief pede. */
