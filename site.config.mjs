@@ -21,6 +21,35 @@ export const SITE_HOST_UNACCENTED = 'oestadodopais.pt';
 export const SITE_NAME = 'O Estado do País';
 
 /**
+ * O NOME CURTO, QUE É O QUE CABE POR BAIXO DE UM ÍCONE (diretor, 28.08.2026).
+ *
+ * Um ecrã principal de telemóvel dá ao rótulo uma cela de cerca de 60 pt, e a
+ * maqueta da §5 das NOTAS da marca mediu o que isso faz ao nome inteiro: «O
+ * Estado do País» não cabe e sai «Estado do …». Quem escolhe o `short_name`
+ * escolhe o que fica visível, e o diretor escolheu «O Estado» — um nome que
+ * cabe inteiro em vez de um nome cortado.
+ *
+ * Vive aqui e não nos dois manifestos porque é o mesmo nome nas duas edições: é
+ * um nome próprio, e um nome próprio não se traduz. O portão de HTML lê os dois
+ * manifestos construídos e compara-os com esta cadeia e com `SITE_NAME`, campo a
+ * campo — um manifesto é um ficheiro datilografado, e um ficheiro datilografado
+ * que ninguém confere é um ficheiro que fica errado no commit seguinte.
+ */
+export const SITE_SHORT_NAME = 'O Estado';
+
+/**
+ * AS DUAS SUPERFÍCIES DO SÍTIO, tal como `src/styles/tokens.css` as declara.
+ *
+ * Estão aqui porque saem do sítio para dentro dos manifestos e da etiqueta
+ * `theme-color`, que são ficheiros e atributos que uma folha de estilos não
+ * alcança. Quem as muda muda-as em `tokens.css` e aqui, e o portão confere que
+ * as duas cópias dizem a mesma coisa — não é uma segunda fonte de verdade, é a
+ * mesma verdade num formato que o CSS não sabe escrever.
+ */
+export const PAPEL_CLARO = '#f6f7f4';
+export const PAPEL_ESCURO = '#15171a';
+
+/**
  * A LINHA DE MÉTODO SAIU DAQUI a 21.08.2026 (Emenda 11, DECISIONS §1.52).
  *
  * `METHOD_LINE` era uma frase de promessa (o texto está escrito na Emenda 11 da

@@ -6,7 +6,13 @@
  * pares hreflang PT<->EN a partir da tabela de rotas, e o JSON-LD da
  * organização em todas as páginas.
  */
-import { SITE_NAME, SITE_URL, canonicalUrl } from '../../site.config.mjs';
+import {
+  SITE_NAME,
+  SITE_SHORT_NAME,
+  SITE_URL,
+  PAPEL_CLARO,
+  canonicalUrl,
+} from '../../site.config.mjs';
 import { alternatesFor, normalizePath } from '../lib/routes.mjs';
 import { DIMENSOES, cartaoDaPagina, urlDoCartao } from '../lib/cartoes.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -96,6 +102,19 @@ const organizationJsonLd = {
  */
 const cartao = cartaoDaPagina(path, lang);
 const [DIM_OG, DIM_TWITTER] = DIMENSOES;
+
+/**
+ * ---------------------------------------------------------------------------
+ * O MANIFESTO DESTA EDIÇÃO (28.08.2026, `design/marca/BRIEF-app.md`)
+ * ---------------------------------------------------------------------------
+ * Cada edição liga o seu, porque o que muda entre eles é o sítio por onde a
+ * aplicação abre: a portuguesa em `/`, a inglesa em `/en/`. Um manifesto só,
+ * partilhado, punha o leitor inglês na primeira página portuguesa de cada vez
+ * que abrisse o ícone que ele próprio instalou.
+ *
+ * Os ícones são os mesmos nos dois: o sinal é um «e» e não uma palavra.
+ */
+const manifesto = lang === 'pt' ? '/manifest.webmanifest' : '/en/manifest.webmanifest';
 const cartaoOg = urlDoCartao({ ...cartao, ...DIM_OG });
 const cartaoTwitter = urlDoCartao({ ...cartao, ...DIM_TWITTER });
 
@@ -167,6 +186,63 @@ const cartaoTwitter = urlDoCartao({ ...cartao, ...DIM_TWITTER });
       is:inline
       set:html={`(function(){try{if(localStorage.getItem('tema')==='dark'){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})()`}
     />
+
+    {
+      /* ------------------------------------------------------------------
+         O SÍTIO NO ECRÃ PRINCIPAL DO TELEMÓVEL (28.08.2026)
+         ------------------------------------------------------------------
+         Cinco ligações e duas etiquetas, e nada mais: sem service worker, sem
+         cache própria e sem pedido de instalação. O Chrome só mostra o pedido a
+         quem tem um `fetch` handler, e não o queremos — quem quiser a aplicação
+         usa «adicionar ao ecrã principal», que é o gesto que já existe nos dois
+         sistemas. O que estas linhas fazem é dar-lhe um ícone e um nome.
+
+         A ORDEM DOS DOIS `rel="icon"` NÃO É INDIFERENTE, e é a razão de o ICO
+         vir primeiro. Um navegador que entenda SVG usa o SVG, porque é o mais
+         específico dos dois; um que não entenda cai no ICO, que é a razão de o
+         ICO existir. O `sizes="32x32"` no ICO é o que diz ao navegador o que
+         está lá dentro sem ele ter de abrir o ficheiro.
+
+         `apple-mobile-web-app-capable` NÃO ENTRA. Está obsoleta desde que o
+         WebKit passou a ler o manifesto (iOS 15.4), e o `display: standalone`
+         do manifesto faz o mesmo trabalho por escrito.
+
+         O `apple-touch-icon` TEM PRECEDÊNCIA sobre os ícones do manifesto no
+         iOS, e é por isso que existe ao lado deles: é um ficheiro opaco de
+         180 px, e a opacidade é medida no exportador e outra vez em
+         `tests/inicio/app.mjs`, porque o iOS compõe este ficheiro sobre preto.
+         ------------------------------------------------------------------ */
+    }
+    <link rel="manifest" href={manifesto} />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    {
+      /* ------------------------------------------------------------------
+         A COR DA MOBÍLIA DO NAVEGADOR É A DO PAPEL DESTA PÁGINA, E É UMA SÓ
+         ------------------------------------------------------------------
+         O `BRIEF-app.md` §3 pede duas etiquetas `theme-color` com `media`, uma
+         por esquema do sistema. **Não é o que este sítio pode dizer com
+         verdade**, e a razão está medida e decidida noutro sítio: desde a
+         Emenda 12 (21.08.2026, `DECISIONS.md` §1.52) o escuro DEIXOU de vir da
+         preferência do sistema e passou a ser um pedido do leitor, guardado no
+         aparelho dele. O sítio é claro para toda a gente até alguém carregar no
+         botão.
+
+         Uma etiqueta com `media="(prefers-color-scheme: dark)"` diria ao
+         navegador para pintar a barra de escuro a um leitor de sistema escuro
+         que NUNCA pediu o escuro — e a página dele é de papel claro. Seria uma
+         barra escura por cima de uma página clara, ou seja a etiqueta a mentir
+         sobre o papel que está por baixo dela.
+
+         Os dois papéis dos tokens estão os dois aqui, e é `public/js/tema.js`
+         que troca de um para o outro, porque é ele que sabe o que o leitor
+         escolheu. Uma cor no `<head>` e a outra à mão do mecanismo que manda:
+         é a mesma divisão de trabalho da guarda contra o pisca.
+         ------------------------------------------------------------------ */
+    }
+    <meta name="theme-color" content={PAPEL_CLARO} />
+    <meta name="apple-mobile-web-app-title" content={SITE_SHORT_NAME} />
 
     <link rel="canonical" href={canonical} />
     {

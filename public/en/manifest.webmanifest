@@ -1,0 +1,31 @@
+{
+  "_": [
+    "The English edition's manifest. See design/marca/BRIEF-app.md.",
+    "The name is the same in both editions because it is a proper noun:",
+    "«O Estado do País» is what this publication is called, in Portuguese",
+    "and in English. Only `lang`, `id` and `start_url` differ.",
+    "Every field is checked by scripts/gate-html.mjs against site.config.mjs,",
+    "against src/styles/tokens.css and against the files the icons name.",
+    "The icons are generated with `node design/marca/exportar.mjs app`."
+  ],
+  "name": "O Estado do País",
+  "short_name": "O Estado",
+  "lang": "en",
+  "dir": "ltr",
+  "id": "/en/",
+  "start_url": "/en/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f7f4",
+  "theme_color": "#f6f7f4",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    {
+      "src": "/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

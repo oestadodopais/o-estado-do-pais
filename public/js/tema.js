@@ -49,9 +49,22 @@
  *
  * O QUE ESTE FICHEIRO PODE FAZER, e é toda a lista: pôr ou tirar `data-theme` na
  * raiz do documento, escrever `aria-pressed` nos dois botões, tirar o `hidden` ao
- * grupo, e guardar uma de duas cadeias em `localStorage`. Não escreve texto, não
- * lê nem compõe um número, e não toca em mais nada da página. É a mesma regra da
+ * grupo, escrever a cor do papel do tema na etiqueta `theme-color` do `<head>`, e
+ * guardar uma de duas cadeias em `localStorage`. Não escreve texto, não lê nem
+ * compõe um número, e não toca em mais nada da página. É a mesma regra da
  * primeira página, aplicada à mobília partilhada.
+ *
+ * A QUINTA COISA ENTROU A 28.08.2026, COM O SÍTIO NO ECRÃ PRINCIPAL. A etiqueta
+ * `theme-color` pinta a mobília do navegador à volta da página — a barra de
+ * endereço no Android, a barra de estado de uma aplicação instalada — e o que
+ * ela deve dizer é a cor do PAPEL que está por baixo dela. O `<head>` escreve o
+ * papel claro, que é o do sítio para toda a gente; quem carrega no botão do
+ * escuro muda o papel, e esta linha é o que faz a barra mudar com ele.
+ *
+ * A ALTERNATIVA ERA `media="(prefers-color-scheme: dark)"` no `<head>`, e não
+ * serve: desde a Emenda 12 a preferência do sistema não decide nada neste sítio,
+ * e a etiqueta ficaria a prometer uma barra escura a um leitor de sistema escuro
+ * cuja página é de papel claro. A cor tem de vir de onde vem a escolha.
  *
  * DUAS CADEIAS, E MAIS NENHUMA. O valor guardado é `'dark'` ou `'light'`, e só o
  * primeiro produz um atributo. Um valor estranho na chave — escrito por outra
@@ -127,10 +140,18 @@
 
   var raiz = document.documentElement;
 
+  /* Os dois papéis de `src/styles/tokens.css`, e a etiqueta que os leva à
+     mobília do navegador. A etiqueta pode não existir — uma página servida de
+     outro gabarito, uma extensão que a tire —, e nesse caso não se cria nenhuma:
+     o que este ficheiro faz é acompanhar o que o `<head>` já disse. */
+  var PAPEL = { light: '#f6f7f4', dark: '#15171a' };
+  var etiquetaDaCor = document.querySelector('meta[name="theme-color"]');
+
   function aplica(tema, guardar) {
     var escuro = tema === ESCURO;
     if (escuro) raiz.setAttribute('data-theme', ESCURO);
     else raiz.removeAttribute('data-theme');
+    if (etiquetaDaCor) etiquetaDaCor.setAttribute('content', escuro ? PAPEL.dark : PAPEL.light);
     var botoes = document.querySelectorAll('[data-tema-controlo] [data-tema]');
     for (var i = 0; i < botoes.length; i++) {
       var qual = botoes[i].getAttribute('data-tema');
