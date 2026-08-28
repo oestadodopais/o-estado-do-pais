@@ -10,6 +10,6 @@
 ## O que fica
 
 1. A prova no telemóvel é do diretor: nenhum emulador a substitui.
-2. O tipo MIME do manifesto e a cache dos ícones no ar: [a medir depois da fusão].
+2. Medido no ar depois da fusão (`d6d7fce`, 28.08 às 22:54 UTC, um pedido a cada): o manifesto servido como `application/manifest+json; charset=utf-8`, o ícone de 180 como `image/png` com 4 494 bytes (o mesmo ficheiro), ambos com `cache-control: public, max-age=0, must-revalidate`, pelo que uma marca mudada chega aos telemóveis sem sufixo de versão.
 3. A marca pode mudar: os ficheiros regeneram-se de um SVG (`design/marca/direcoes-e2/`) com `node design/marca/exportar.mjs app`.
 4. As áreas de governo (terceira passagem em curso), a indexação quando o diretor disser.
