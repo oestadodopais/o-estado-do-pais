@@ -762,13 +762,20 @@ export const STRINGS = {
      * A LEDE DIZ O QUE UMA ÁREA É, e mais nada. Não diz quantas áreas o sítio
      * cobre nem porque é que estas e não outras: isso seria o sítio a falar da
      * sua própria cobertura, que é o que a Emenda 15 manda sair de uma página do
-     * leitor. Quem quiser saber por que via uma peça está numa área tem, em cada
-     * linha, o nome de quem a publica.
+     * leitor.
+     *
+     * A DESCRIÇÃO DO `<head>` MUDOU COM A REGRA (28.08.2026). Dizia «os
+     * trabalhos e as medidas publicados pelos ORGANISMOS de …», que era a regra
+     * antiga a falar: a área de uma peça era a de quem publicava o número. A
+     * regra passou a ser o assunto, e a frase diz o que a página tem. A razão
+     * pela qual cada peça está onde está deixou de precisar de ser dita ao
+     * leitor: é o assunto dela, e ele vê-o. Está escrita, matéria a matéria, em
+     * `src/data/areas.mjs`, com o número da lei transcrito ao lado.
      */
     areas: {
       metaTitle: 'Áreas de governo · O Estado do País',
       metaDescription:
-        'As áreas de governo de Portugal, e os trabalhos e as medidas publicados pelos organismos de cada uma.',
+        'As áreas de governo de Portugal, e os trabalhos e as medidas cujo assunto é matéria de cada uma.',
       eyebrow: 'Áreas de governo',
       h1: 'As áreas de governo',
       lede:
@@ -780,7 +787,7 @@ export const STRINGS = {
       /* A cauda e a descrição do `<head>` de uma área, compostas com o nome
          dela, como as das páginas de região e de concelho. */
       metaCauda: 'área de governo · O Estado do País',
-      metaDescricaoA: 'Os trabalhos e as medidas publicados pelos organismos de ',
+      metaDescricaoA: 'Os trabalhos e as medidas cujo assunto é matéria de ',
       metaDescricaoB: ', área de governo.',
       /* O tipo da coisa, e não o que fizemos com ela (Emenda 18b). */
       tipo: 'área do XXV Governo Constitucional',
@@ -1850,7 +1857,7 @@ export const STRINGS = {
     areas: {
       metaTitle: 'Government areas · O Estado do País',
       metaDescription:
-        'The areas of government of Portugal, and the studies and measures published by the bodies of each one.',
+        'The areas of government of Portugal, and the studies and measures whose subject is a matter of each one.',
       eyebrow: 'Government areas',
       h1: 'The areas of government',
       lede:
@@ -1858,7 +1865,7 @@ export const STRINGS = {
       contaUma: ' piece',
       contaMuitas: ' pieces',
       metaCauda: 'government area · O Estado do País',
-      metaDescricaoA: 'The studies and measures published by the bodies of ',
+      metaDescricaoA: 'The studies and measures whose subject is a matter of ',
       metaDescricaoB: ', an area of government.',
       tipo: 'area of the XXV Constitutional Government',
       trabalhosK: 'The studies',

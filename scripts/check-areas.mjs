@@ -15,13 +15,17 @@
  *       página;
  *   A3  cada área declarada tem pelo menos uma peça, e cada página construída
  *       rende pelo menos uma;
- *   A4  uma peça em duas áreas traz, em cada uma, o organismo por que lá entrou,
- *       e os organismos são diferentes: sem isso é uma arrumação e não uma razão;
- *   A5  o nome de cada área é o da lista verificada, cada organismo tem artigo
- *       escrito, e nenhuma fonte do livro-razão fica sem decisão: ou está numa
- *       área, ou está na lista das que não têm área, com a razão ao lado;
+ *   A4  uma peça em duas áreas traz, em cada uma, a matéria por que lá entrou,
+ *       e as matérias são diferentes: sem isso é uma arrumação e não uma razão;
+ *   A5  o nome de cada área é o da lista verificada, e cada matéria tem o artigo
+ *       da lei, a transcrição do número e pelo menos uma regra com a razão
+ *       escrita;
  *   A6  a contagem de cada área, recontada de três pontos de observação: o mapa,
- *       as peças que a página rendeu, e os algarismos do índice.
+ *       as peças que a página rendeu, e os algarismos do índice;
+ *   A7  a cobertura: cada uma das linhas do livro-razão é coberta por uma
+ *       matéria de uma área OU por uma entrada da lista das que ficam fora, e
+ *       nunca pelas duas. É a regra que faz a lista das exclusões valer alguma
+ *       coisa: uma linha nova sem assunto declarado fecha a construção.
  *
  * ---------------------------------------------------------------------------
  * O LEITOR É PRÓPRIO, E É POR ISSO QUE A CONFERÊNCIA VALE
@@ -29,9 +33,10 @@
  * Não importa `src/lib/areas.mjs`: é o leitor que as páginas usam, e uma
  * conferência que usasse o código das páginas confirmava-se a si própria. Lê a
  * lista de dados (`src/data/areas.mjs`), o livro-razão e o arquivo, e aplica
- * AQUI a regra do que é «ser peça de uma área», que é precisamente a regra que
- * se está a provar. `src/lib/routes.mjs` entra porque é a tabela de endereços da
- * casa, e não é a coisa que aqui se prova. É a mesma disciplina de
+ * AQUI a regra do que é «ser peça de uma área», que é a matéria da lei a cobrir
+ * o assunto da linha, e é precisamente a regra que se está a provar.
+ * `src/lib/routes.mjs` entra porque é a tabela de endereços da casa, e não é a
+ * coisa que aqui se prova. É a mesma disciplina de
  * `check-regioes.mjs`, de `check-mapa.mjs` e de `check-dados.mjs`.
  *
  * ---------------------------------------------------------------------------
@@ -42,7 +47,7 @@
  * do mundo que as regras leem, e exige que a regra correspondente falhe. Nada é
  * escrito em disco, e por isso o estrago não pode sobreviver à corrida:
  *
- *   node scripts/check-areas.mjs                as seis regras
+ *   node scripts/check-areas.mjs                as sete regras
  *   node scripts/check-areas.mjs --vermelhos    e a linha de cada estrago
  *
  * Uso: `npm run check:areas`, e é o que a cadeia do `build` corre.
@@ -55,7 +60,7 @@ import { parse } from 'node-html-parser';
 import { routePath, LANGS } from '../src/lib/routes.mjs';
 import { AREAS, SEM_AREA } from '../src/data/areas.mjs';
 import { WORKS, ESTUDOS_DE_DADOS, INTERNAL_SOURCES } from '../src/data/studies.mjs';
-import { loadClaims, POR_VERIFICAR } from '../src/lib/ledger.mjs';
+import { loadClaims } from '../src/lib/ledger.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -80,9 +85,22 @@ if (!fs.existsSync(DIST)) {
  * um estrago numa cópia sem tocar em disco.
  */
 
-/** A REGRA, escrita AQUI e não importada: a área de uma linha é a de quem a publica. */
-function organismoDaLinha(area, claim) {
-  return area.organismos.find((o) => o.fonte === claim.source) ?? null;
+/**
+ * A REGRA, escrita AQUI e não importada: a área de uma linha é a do ministério
+ * cujas matérias cobrem o assunto dela.
+ */
+function casaComARegra(regra, id, claim) {
+  if (regra.estudos && !regra.estudos.includes(claim.study)) return false;
+  return regra.id.test(id);
+}
+
+function materiaDaLinha(area, id, claim) {
+  for (const m of area.materias) {
+    for (const r of m.regras) {
+      if (casaComARegra(r, id, claim)) return { materia: m.materia, artigo: m.artigo };
+    }
+  }
+  return null;
 }
 
 function lePagina(rota) {
@@ -108,19 +126,19 @@ function pecasDaArea(area, claims) {
   const conjuntos = new Map();
   const medidas = [];
   for (const [id, c] of claims) {
-    const org = organismoDaLinha(area, c);
-    if (!org) continue;
+    const m = materiaDaLinha(area, id, c);
+    if (!m) continue;
     if (ESTUDOS_DE_DADOS.has(c.study)) {
-      const p = conjuntos.get(c.study) ?? { id: c.study, organismos: new Set() };
-      p.organismos.add(org.fonte);
+      const p = conjuntos.get(c.study) ?? { id: c.study, materias: new Set() };
+      p.materias.add(m.materia);
       conjuntos.set(c.study, p);
       continue;
     }
-    medidas.push({ id, organismo: org.fonte });
+    medidas.push({ id, materia: m.materia });
     const w = WORKS.find((x) => x.id === c.study);
     if (w) {
-      const p = trabalhos.get(w.id) ?? { id: w.id, slug: w.slug, organismos: new Set() };
-      p.organismos.add(org.fonte);
+      const p = trabalhos.get(w.id) ?? { id: w.id, slug: w.slug, materias: new Set() };
+      p.materias.add(m.materia);
       trabalhos.set(w.id, p);
     }
   }
@@ -138,7 +156,7 @@ function leMundo() {
     return {
       slug: a.slug,
       nome: { ...a.nome },
-      organismos: a.organismos.map((o) => ({ ...o })),
+      materias: a.materias.map((m) => ({ ...m, regras: m.regras.map((r) => ({ ...r })) })),
       pecas,
       total: pecas.trabalhos.length + pecas.conjuntos.length + pecas.medidas.length,
     };
@@ -156,20 +174,26 @@ function leMundo() {
     }
   }
 
-  /* As fontes que o livro-razão tem, para a A5. É a lista que obriga a decidir
-     sobre um organismo novo em vez de o deixar cair em silêncio.
+  /* O LIVRO-RAZÃO INTEIRO, para a A7. A cobertura mede-se sobre as linhas e não
+     sobre as fontes: a regra da matéria não olha para quem publica, e uma linha
+     nova de uma fonte já conhecida é tão capaz de ficar sem assunto declarado
+     como uma linha de uma fonte nova.
 
-     O MARCADOR NÃO É UM ORGANISMO, e por isso não entra. `[a verificar]` no campo
-     da fonte é a linguagem de incerteza do sítio a dizer que a fonte daquela
-     linha está por confirmar (IDENTIDADE §6), e uma coisa por confirmar não pode
-     ter área nem exclusão escrita: teria de ser um dos dois, e não se sabe qual.
-     O texto vem do módulo do marcador e nunca se escreve à mão (§1.40); é a mesma
-     regra que `contasDoPortao()` aplica à chave `fontes`. No dia em que a fonte
-     for confirmada, ela aparece nesta lista e a A5 obriga a decidir. */
-  const fontes = new Set();
-  for (const c of claims.values()) if (c.source && c.source !== POR_VERIFICAR) fontes.add(c.source);
+     A FONTE POR CONFIRMAR DEIXOU DE SER UM PROBLEMA, e é a diferença mais limpa
+     entre as duas regras. Com a regra antiga, uma linha cuja fonte é o marcador
+     `[a verificar]` não podia ter área nem exclusão escrita, porque as duas
+     dependiam de saber quem publicava; a régua tinha de a excluir da conta. Com
+     a regra da matéria o assunto da linha não depende de quem a publica, e as
+     três linhas do marcador entram na cobertura como todas as outras. */
+  const linhas = [...claims].map(([id, c]) => ({ id, study: c.study }));
 
-  return { entradas, paginas, indices, pastas, fontes, ids: new Set(claims.keys()) };
+  /* A LISTA DAS EXCLUSÕES ENTRA NO MUNDO, e não é preciosismo: é o que deixa
+     `--vermelhos` plantar nela uma entrada a mais sem escrever no ficheiro de
+     dados. Uma régua que lesse a constante do módulo não podia ser posta à
+     prova sem editar o módulo. */
+  const fora = SEM_AREA.map((x) => ({ ...x }));
+
+  return { entradas, paginas, indices, pastas, linhas, fora, ids: new Set(claims.keys()) };
 }
 
 /* ===========================================================================
@@ -257,7 +281,8 @@ function A3(m) {
     if (e.total === 0) {
       erros.push(
         `a área "${e.slug}" está declarada e não tem peça nenhuma. ` +
-          `Ou a lei lhe dá um organismo que publica alguma linha, ou ela não existe no sítio.`,
+          `Ou alguma linha do livro-razão tem por assunto uma matéria dela, ou ela não existe ` +
+          `no sítio.`,
       );
     }
   }
@@ -274,37 +299,37 @@ function A4(m) {
   const onde = new Map();
   for (const e of m.entradas) {
     const todas = [
-      ...e.pecas.trabalhos.map((p) => ['trabalho', p.id, p.organismos]),
-      ...e.pecas.conjuntos.map((p) => ['conjunto', p.id, p.organismos]),
-      ...e.pecas.medidas.map((p) => ['medida', p.id, new Set([p.organismo])]),
+      ...e.pecas.trabalhos.map((p) => ['trabalho', p.id, p.materias]),
+      ...e.pecas.conjuntos.map((p) => ['conjunto', p.id, p.materias]),
+      ...e.pecas.medidas.map((p) => ['medida', p.id, new Set([p.materia])]),
     ];
-    for (const [tipo, id, orgs] of todas) {
+    for (const [tipo, id, mats] of todas) {
       const chave = `${tipo}:${id}`;
       const lista = onde.get(chave) ?? [];
-      lista.push({ area: e.slug, organismos: [...orgs] });
+      lista.push({ area: e.slug, materias: [...mats] });
       onde.set(chave, lista);
     }
   }
   for (const [chave, lista] of onde) {
     if (lista.length < 2) continue;
     for (const x of lista) {
-      if (x.organismos.length === 0) {
-        erros.push(`a peça "${chave}" está na área "${x.area}" sem organismo escrito.`);
+      if (x.materias.length === 0) {
+        erros.push(`a peça "${chave}" está na área "${x.area}" sem matéria escrita.`);
       }
     }
-    const assinaturas = lista.map((x) => [...x.organismos].sort().join('|'));
+    const assinaturas = lista.map((x) => [...x.materias].sort().join('|'));
     if (new Set(assinaturas).size !== assinaturas.length) {
       erros.push(
         `a peça "${chave}" está em ${lista.length} áreas (${lista
           .map((x) => x.area)
-          .join(', ')}) e duas delas dão o mesmo organismo como razão.`,
+          .join(', ')}) e duas delas dão a mesma matéria como razão.`,
       );
     }
   }
   return erros;
 }
 
-/** A5 · os nomes e os artigos declarados, e nenhuma fonte por decidir. */
+/** A5 · os nomes, e cada matéria com o artigo, a transcrição e a razão. */
 function A5(m) {
   const erros = [];
   const slugs = new Set();
@@ -317,18 +342,45 @@ function A5(m) {
         erros.push(`a área "${e.slug}" não tem nome publicado na edição "${lang}".`);
       }
     }
-    if (e.organismos.length === 0) {
-      erros.push(`a área "${e.slug}" não declara organismo nenhum.`);
+    if (e.materias.length === 0) {
+      erros.push(`a área "${e.slug}" não declara matéria nenhuma.`);
     }
-    for (const o of e.organismos) {
-      if (!o.artigo || !/^Artigo \d+\.º/.test(o.artigo)) {
+    for (const x of e.materias) {
+      if (!x.materia || x.materia.trim() === '') {
+        erros.push(`a área "${e.slug}" tem uma matéria sem nome.`);
+      }
+      if (!x.artigo || !/^Artigo \d+\.º, n\.º \d+$/.test(x.artigo)) {
         erros.push(
-          `o organismo "${o.fonte}" da área "${e.slug}" não nomeia o artigo da lei orgânica ` +
-            `que o põe lá.`,
+          `a matéria "${x.materia}" da área "${e.slug}" não nomeia o artigo e o número da lei ` +
+            `orgânica que a listam.`,
         );
       }
-      if (!o.citacao || o.citacao.trim() === '') {
-        erros.push(`o organismo "${o.fonte}" da área "${e.slug}" não transcreve a frase da lei.`);
+      if (!x.citacao || x.citacao.trim() === '') {
+        erros.push(`a matéria "${x.materia}" da área "${e.slug}" não transcreve o número da lei.`);
+      }
+      /* A MATÉRIA TEM DE ESTAR NA TRANSCRIÇÃO, palavra por palavra. Sem isto, o
+         nome de uma matéria podia ser uma paráfrase nossa ao lado de uma citação
+         que diz outra coisa, e a citação deixava de a provar. */
+      if (x.citacao && x.materia && !x.citacao.includes(x.materia)) {
+        erros.push(
+          `a matéria "${x.materia}" da área "${e.slug}" não ocorre na transcrição do número ` +
+            `"${x.artigo}": ou a matéria não é a palavra da lei, ou a transcrição não é a do número.`,
+        );
+      }
+      if (!Array.isArray(x.regras) || x.regras.length === 0) {
+        erros.push(`a matéria "${x.materia}" da área "${e.slug}" não tem regra nenhuma.`);
+        continue;
+      }
+      for (const r of x.regras) {
+        if (!(r.id instanceof RegExp)) {
+          erros.push(`uma regra da matéria "${x.materia}" ("${e.slug}") não diz que linhas cobre.`);
+        }
+        if (!r.razao || r.razao.trim() === '') {
+          erros.push(
+            `uma regra da matéria "${x.materia}" ("${e.slug}") não escreve a razão: que assunto ` +
+              `é o das linhas dela, e porque é que esta matéria o cobre.`,
+          );
+        }
       }
     }
     /* E as páginas construídas rendem o nome declarado, e não outro. */
@@ -342,19 +394,12 @@ function A5(m) {
       }
     }
   }
-  /* Nenhuma fonte do livro-razão sem decisão escrita. */
-  const comArea = new Set(m.entradas.flatMap((e) => e.organismos.map((o) => o.fonte)));
-  const semArea = new Set(SEM_AREA.map((x) => x.fonte));
-  for (const f of m.fontes) {
-    if (comArea.has(f) || semArea.has(f)) continue;
-    erros.push(
-      `a fonte "${f}" tem linhas no livro-razão e não está nem numa área nem na lista das que ` +
-        `não têm área. Uma fonte nova precisa de uma decisão escrita, não de um silêncio.`,
-    );
-  }
-  for (const x of SEM_AREA) {
+  for (const x of m.fora) {
     if (!x.motivo || x.motivo.trim() === '') {
-      erros.push(`a fonte "${x.fonte}" está fora das áreas sem razão escrita.`);
+      erros.push(`o assunto "${x.assunto}" está fora das áreas sem razão escrita.`);
+    }
+    if (!x.assunto || x.assunto.trim() === '') {
+      erros.push('uma entrada da lista das que ficam fora não diz de que assunto se trata.');
     }
   }
   return erros;
@@ -391,13 +436,53 @@ function A6(m) {
   return erros;
 }
 
+/**
+ * A7 · a cobertura: cada linha do livro-razão coberta uma vez, e só uma.
+ *
+ * É a regra que substitui a antiga «nenhuma fonte por decidir», e mede mais do
+ * que ela: não são as fontes que precisam de decisão, são as LINHAS. Uma linha
+ * é coberta por uma matéria de uma área ou por uma entrada da lista das que
+ * ficam fora; se não for coberta por nenhuma, alguém acrescentou um assunto ao
+ * sítio sem dizer de quem ele é, e se for coberta por duas, duas declarações
+ * dizem coisas diferentes sobre a mesma linha.
+ */
+function A7(m) {
+  const erros = [];
+  const regras = [];
+  for (const e of m.entradas) {
+    for (const x of e.materias) {
+      for (const r of x.regras) regras.push({ onde: `${e.slug} · ${x.materia}`, regra: r });
+    }
+  }
+  for (const x of m.fora) regras.push({ onde: `fora · ${x.assunto}`, regra: x });
+
+  const semNada = [];
+  const duasVezes = [];
+  for (const l of m.linhas) {
+    const casadas = regras.filter((x) => casaComARegra(x.regra, l.id, l));
+    if (casadas.length === 0) semNada.push(`${l.id} (estudo "${l.study}")`);
+    else if (casadas.length > 1) duasVezes.push(`${l.id}: ${casadas.map((x) => x.onde).join(' | ')}`);
+  }
+  for (const x of semNada.slice(0, 8)) {
+    erros.push(
+      `a linha ${x} não é coberta por matéria nenhuma nem está na lista das que ficam fora. ` +
+        `Uma linha nova precisa de um assunto declarado, não de um silêncio.`,
+    );
+  }
+  if (semNada.length > 8) erros.push(`… e mais ${semNada.length - 8} linha(s) sem assunto declarado.`);
+  for (const x of duasVezes.slice(0, 8)) erros.push(`a linha ${x} está coberta duas vezes.`);
+  if (duasVezes.length > 8) erros.push(`… e mais ${duasVezes.length - 8} linha(s) cobertas duas vezes.`);
+  return erros;
+}
+
 const REGRAS = [
   ['A1', 'cada área com peças tem página, e nenhuma outra tem', A1],
   ['A2', 'a porta de cada peça abre, e cada medida vai com selo', A2],
   ['A3', 'nenhuma área vazia, no mapa nem na página', A3],
   ['A4', 'uma peça em duas áreas traz a razão de cada uma', A4],
-  ['A5', 'os nomes e os artigos, e nenhuma fonte por decidir', A5],
+  ['A5', 'os nomes, e cada matéria com artigo, transcrição e razão', A5],
   ['A6', 'a contagem de cada área, de três pontos de observação', A6],
+  ['A7', 'cada linha do livro-razão coberta uma vez, e só uma', A7],
 ];
 
 /* ===========================================================================
@@ -430,16 +515,16 @@ const ESTRAGOS = {
     return `o selo de "${e.pecas.medidas[0].id}" retirado de ${lang}:${slug}`;
   },
   A3: (m) => {
-    /* Uma área declarada sem organismo que publique linha nenhuma. */
+    /* Uma área declarada com uma matéria que não cobre linha nenhuma. */
     m.entradas.push({
       slug: 'atlantida',
       nome: { pt: 'Atlântida', en: 'Atlantis' },
-      organismos: [
+      materias: [
         {
-          fonte: 'Direção-Geral da Atlântida',
-          artigo: 'Artigo 99.º',
-          poder: 'direção',
-          citacao: 'não existe',
+          materia: 'as políticas do mar interior',
+          artigo: 'Artigo 99.º, n.º 1',
+          citacao: 'as políticas do mar interior',
+          regras: [{ id: /^nada-casa-com-isto$/, razao: 'não existe' }],
         },
       ],
       pecas: { trabalhos: [], conjuntos: [], medidas: [] },
@@ -448,17 +533,18 @@ const ESTRAGOS = {
     return 'uma área "atlantida" declarada, sem peça nenhuma por baixo';
   },
   A4: (m) => {
-    /* A mesma medida em duas áreas pelo mesmo organismo: uma arrumação. */
+    /* A mesma medida em duas áreas pela mesma matéria: uma arrumação. */
     const a = m.entradas.find((x) => x.pecas.medidas.length > 0);
     const b = m.entradas.find((x) => x !== a);
     b.pecas.medidas = [...b.pecas.medidas, { ...a.pecas.medidas[0] }];
     b.total += 1;
-    return `a medida "${a.pecas.medidas[0].id}" posta também em "${b.slug}", com o mesmo organismo`;
+    return `a medida "${a.pecas.medidas[0].id}" posta também em "${b.slug}", com a mesma matéria`;
   },
   A5: (m) => {
-    /* Uma fonte nova no livro-razão, sem decisão escrita em lado nenhum. */
-    m.fontes.add('Instituto Hidrográfico');
-    return 'uma linha da "Instituto Hidrográfico" no livro-razão, sem área e sem exclusão';
+    /* Uma regra sem a razão escrita: a matéria fica sem dizer que assunto cobre. */
+    const e = m.entradas.find((x) => x.materias.length > 0);
+    e.materias[0].regras[0].razao = '';
+    return `a razão da primeira regra de "${e.materias[0].materia}" ("${e.slug}") apagada`;
   },
   A6: (m) => {
     /* Uma peça a mais no mapa que a página não rende: as contas divergem. */
@@ -466,6 +552,26 @@ const ESTRAGOS = {
     e.total += 1;
     return `o mapa da área "${e.slug}" com uma peça a mais do que a página rende`;
   },
+  /* A A7 leva DOIS estragos, porque falha de duas maneiras e as duas contam. */
+  A7: [
+    (m) => {
+      /* Uma linha nova no livro-razão, sem assunto declarado em lado nenhum. */
+      m.linhas.push({ id: 'mares-territoriais-2026', study: 'quadro-institucional' });
+      return 'uma linha "mares-territoriais-2026" no livro-razão, sem matéria e sem exclusão';
+    },
+    (m) => {
+      /* Uma exclusão que cobre uma linha que já tem matéria: duas declarações
+         sobre a mesma linha, e a lista deixa de dizer uma coisa só. */
+      const e = m.entradas.find((x) => x.pecas.medidas.length > 0);
+      const id = e.pecas.medidas[0].id;
+      m.fora.push({
+        assunto: 'uma exclusão que se sobrepõe a uma matéria',
+        id: new RegExp(`^${id}$`),
+        motivo: 'plantado',
+      });
+      return `a linha "${id}" posta também na lista das que ficam fora`;
+    },
+  ],
 };
 
 /* =========================================================================== */
@@ -509,15 +615,20 @@ if (!VERMELHOS) {
 let todosVermelhos = true;
 const saida = [];
 for (const [nome, , fn] of REGRAS) {
-  const copia = leMundo();
-  const descricao = ESTRAGOS[nome](copia);
-  const erros = fn(copia);
-  const viu = erros.length > 0;
-  if (!viu) todosVermelhos = false;
-  saida.push(
-    `  ${viu ? verde('✓ vermelho') : vermelho('✗ passou')} ${nome} · ${descricao}` +
-      (viu ? cinza(`\n      ${erros[0]}`) : ''),
-  );
+  /* Uma regra pode ter mais do que um estrago: falha de mais do que uma
+     maneira, e cada maneira tem de ser vista. */
+  const plantas = Array.isArray(ESTRAGOS[nome]) ? ESTRAGOS[nome] : [ESTRAGOS[nome]];
+  for (const planta of plantas) {
+    const copia = leMundo();
+    const descricao = planta(copia);
+    const erros = fn(copia);
+    const viu = erros.length > 0;
+    if (!viu) todosVermelhos = false;
+    saida.push(
+      `  ${viu ? verde('✓ vermelho') : vermelho('✗ passou')} ${nome} · ${descricao}` +
+        (viu ? cinza(`\n      ${erros[0]}`) : ''),
+    );
+  }
 }
 console.log('\n' + saida.join('\n') + '\n');
 process.exit(todosVermelhos ? 0 : 1);

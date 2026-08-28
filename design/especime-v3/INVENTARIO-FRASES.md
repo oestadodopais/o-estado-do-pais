@@ -1287,28 +1287,51 @@ e a página de cada área com peças (`/areas/<slug>`, `/en/areas/<slug>`). São
 páginas do leitor, e a Emenda 15 governa-as: a autorreferência delas é zero, e o
 que fica é o que a coisa é.*
 
+*A REGRA MUDOU A 28.08.2026, E COM ELA DUAS FRASES E A LISTA DAS ÁREAS. A área de
+uma peça era a do organismo que publica o número dela; passou a ser a do
+ministério cujas matérias, tal como a lei orgânica as lista, cobrem o assunto
+dela. As duas descrições do `<head>` que diziam «publicados pelos organismos de»
+saíram, e as que entraram dizem «cujo assunto é matéria de». A Presidência saiu
+da lista de áreas com as suas quatro linhas: a população e as empresas de um
+concelho eram dela por o INE ser tutelado por aquele ministro, e pela regra do
+assunto ficam fora, porque «estatística» não é matéria de ministério nenhum
+neste diploma. Entraram seis áreas: Finanças, Infraestruturas e Habitação,
+Justiça, Educação, Ciência e Inovação, Saúde e Ambiente e Energia.*
+
 *O NOME DE CADA ÁREA ENTRA AQUI, uma linha por edição, e não é `data-lugar`: uma
 área de governo não é um lugar, e a marca dos lugares tem escrito o que marca (o
-nome de um concelho e a etiqueta que a Carta Administrativa lhe dá). São quatro
-áreas, e são oito linhas com o nome e oito com a descrição composta a partir
-dele. **Se a lista das áreas crescer, isto tem de mudar de forma**: com as
-dezasseis áreas do Governo seriam sessenta e quatro linhas, que é a lista dos
-ministérios escrita outra vez dentro do inventário. A saída está descrita e não
-foi tomada aqui, porque é uma alteração à régua da voz e não a estas páginas:
-uma marca irmã de `data-lugar` para o nome declarado de uma coisa que não é um
-lugar, com a mesma substituição na descrição do `<head>`.*
+nome de um concelho e a etiqueta que a Carta Administrativa lhe dá). São nove
+áreas, e são dezoito linhas com o nome e dezoito com a descrição composta a
+partir dele. **A dívida de forma que a lista de quatro já tinha ficou maior, e
+não foi paga aqui**: com as dezasseis áreas do Governo seriam sessenta e quatro
+linhas, que é a lista dos ministérios escrita outra vez dentro do inventário. A
+saída continua a ser a mesma e continua a ser uma alteração à régua da voz e não
+a estas páginas: uma marca irmã de `data-lugar` para o nome declarado de uma
+coisa que não é um lugar, com a mesma substituição na descrição do `<head>`. Não
+se tomou neste bloco porque a régua da voz é partilhada por todos os blocos e a
+decisão desta passagem era a regra das áreas.*
+
+*O NOME INGLÊS DE CINCO ÁREAS É TRADUÇÃO DA CASA, e fica dito aqui porque o brief
+manda dizê-lo: `Finance`, `Infrastructure and Housing`, `Education, Science and
+Innovation`, `Health`, `Justice` e `Environment and Energy` não foram lidos na
+página inglesa do Governo. Os quatro nomes de 28.08 pela manhã (`Presidency`,
+`Economy and of Territorial Cohesion`, `Home Affairs`, `Labour, Solidarity and
+Social Security`) foram lidos nela, no navegador; a página é construída por
+script e não se deixa ler por um leitor simples, e as áreas novas entraram sem
+essa leitura. `src/data/areas.mjs` diz, área a área, qual é qual, no campo
+`nomeEnFonte`.*
 
 *A CONTAGEM DE PEÇAS NÃO ENTRA NESTA TABELA, e é de propósito. No índice, a linha
 inteira de cada área é uma ligação, e a régua deixa cair um bloco cujo texto está
-todo dentro de um `<a>`: «Presidência · 10 peças» não se declara, e por isso não
-há aqui uma frase com um número por dentro. É o defeito que a I74 nomeia («uma
-frase com um número que se move volta com outro número, e a linha nunca voltaria
-a morder»), evitado na forma em vez de ser aceite na tabela.*
+todo dentro de um `<a>`: «Justiça · 1 peça» não se declara, e por isso não há aqui
+uma frase com um número por dentro. É o defeito que a I74 nomeia («uma frase com
+um número que se move volta com outro número, e a linha nunca voltaria a
+morder»), evitado na forma em vez de ser aceite na tabela.*
 
-*A DICA DA CHAVE DA PROVA É A MESMA PARA AS QUATRO ÁREAS, pela mesma razão: uma
-frase composta com o nome de cada área punha aqui quatro linhas por edição que
-não diziam mais do que uma. O nome da área está na própria linha do índice, ao
-lado do número.*
+*A DICA DA CHAVE DA PROVA É A MESMA PARA AS NOVE ÁREAS, pela mesma razão: uma
+frase composta com o nome de cada área punha aqui nove linhas por edição que não
+diziam mais do que uma. O nome da área está na própria linha do índice, ao lado
+do número.*
 
 *«As medidas» e «The measures» não entram: já estavam declaradas pelo bloco das
 regiões, e a mesma cadeia entra uma vez só.*
@@ -1325,26 +1348,46 @@ um CAMPO de uma linha, e não uma afirmação sobre o que este sítio cobre.*
 | conteudo | The areas of government | areas | viva | — |
 | conteudo | Uma área de governo é o conjunto de matérias de um ministério, tal como a lei orgânica do Governo o fixa. | areas | viva | — |
 | conteudo | An area of government is the set of matters of one ministry, as the Government’s organic law fixes it. | areas | viva | — |
-| conteudo | As áreas de governo de Portugal, e os trabalhos e as medidas publicados pelos organismos de cada uma. | areas | viva | — |
-| conteudo | The areas of government of Portugal, and the studies and measures published by the bodies of each one. | areas | viva | — |
+| conteudo | As áreas de governo de Portugal, e os trabalhos e as medidas cujo assunto é matéria de cada uma. | areas | viva | — |
+| conteudo | The areas of government of Portugal, and the studies and measures whose subject is a matter of each one. | areas | viva | — |
 | conteudo | peças na página desta área de governo | areas | viva | — |
 | conteudo | pieces on this area of government’s page | areas | viva | — |
-| conteudo | Presidência | areas | viva | — |
-| conteudo | Presidency | areas | viva | — |
+| conteudo | Finanças | areas | viva | — |
+| conteudo | Finance | areas | viva | — |
 | conteudo | Economia e Coesão Territorial | areas | viva | — |
 | conteudo | Economy and of Territorial Cohesion | areas | viva | — |
+| conteudo | Infraestruturas e Habitação | areas | viva | — |
+| conteudo | Infrastructure and Housing | areas | viva | — |
+| conteudo | Justiça | areas | viva | — |
+| conteudo | Justice | areas | viva | — |
 | conteudo | Administração Interna | areas | viva | — |
 | conteudo | Home Affairs | areas | viva | — |
+| conteudo | Educação, Ciência e Inovação | areas | viva | — |
+| conteudo | Education, Science and Innovation | areas | viva | — |
+| conteudo | Saúde | areas | viva | — |
+| conteudo | Health | areas | viva | — |
 | conteudo | Trabalho, Solidariedade e Segurança Social | areas | viva | — |
 | conteudo | Labour, Solidarity and Social Security | areas | viva | — |
-| conteudo | Os trabalhos e as medidas publicados pelos organismos de Presidência, área de governo. | areas | viva | — |
-| conteudo | The studies and measures published by the bodies of Presidency, an area of government. | areas | viva | — |
-| conteudo | Os trabalhos e as medidas publicados pelos organismos de Economia e Coesão Territorial, área de governo. | areas | viva | — |
-| conteudo | The studies and measures published by the bodies of Economy and of Territorial Cohesion, an area of government. | areas | viva | — |
-| conteudo | Os trabalhos e as medidas publicados pelos organismos de Administração Interna, área de governo. | areas | viva | — |
-| conteudo | The studies and measures published by the bodies of Home Affairs, an area of government. | areas | viva | — |
-| conteudo | Os trabalhos e as medidas publicados pelos organismos de Trabalho, Solidariedade e Segurança Social, área de governo. | areas | viva | — |
-| conteudo | The studies and measures published by the bodies of Labour, Solidarity and Social Security, an area of government. | areas | viva | — |
+| conteudo | Ambiente e Energia | areas | viva | — |
+| conteudo | Environment and Energy | areas | viva | — |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Finanças, área de governo. | areas | viva | — |
+| conteudo | The studies and measures whose subject is a matter of Finance, an area of government. | areas | viva | — |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Economia e Coesão Territorial, área de governo. | areas | viva | — |
+| conteudo | The studies and measures whose subject is a matter of Economy and of Territorial Cohesion, an area of government. | areas | viva | — |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Infraestruturas e Habitação, área de governo. | areas | viva | — |
+| conteudo | The studies and measures whose subject is a matter of Infrastructure and Housing, an area of government. | areas | viva | — |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Justiça, área de governo. | areas | viva | — |
+| conteudo | The studies and measures whose subject is a matter of Justice, an area of government. | areas | viva | — |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Administração Interna, área de governo. | areas | viva | — |
+| conteudo | The studies and measures whose subject is a matter of Home Affairs, an area of government. | areas | viva | — |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Educação, Ciência e Inovação, área de governo. | areas | viva | — |
+| conteudo | The studies and measures whose subject is a matter of Education, Science and Innovation, an area of government. | areas | viva | — |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Saúde, área de governo. | areas | viva | — |
+| conteudo | The studies and measures whose subject is a matter of Health, an area of government. | areas | viva | — |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Trabalho, Solidariedade e Segurança Social, área de governo. | areas | viva | — |
+| conteudo | The studies and measures whose subject is a matter of Labour, Solidarity and Social Security, an area of government. | areas | viva | — |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Ambiente e Energia, área de governo. | areas | viva | — |
+| conteudo | The studies and measures whose subject is a matter of Environment and Energy, an area of government. | areas | viva | — |
 | conteudo | área do XXV Governo Constitucional | areas | viva | — |
 | conteudo | area of the XXV Constitutional Government | areas | viva | — |
 | conteudo | Os trabalhos | areas | viva | — |
