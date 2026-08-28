@@ -34,7 +34,7 @@ leu **só o diff do inventário**. É essa a leitura que esta tabela regista.
 | voz-3 | 0 | `design/especime-v3/critica/2026-08-27-codex-leitura-voz-3.md` | Codex `gpt-5.6-sol`, 27.08.2026, sobre os doze diffs da terceira passagem e três páginas construídas, com duas plantas (1 de 2); o inventário não mudou (o texto dos registos é origem declarada), a linha fica pelo rasto |
 | regioes | 36 | `design/especime-v3/critica/2026-08-28-codex-leitura-regioes.md` | Codex `gpt-5.6-sol`, 28.08.2026, sobre o índice, três páginas de região, a primeira página, as linhas da régua e o diff do inventário, com três plantas (3 de 3); Q3 saiu dela |
 | ilhas | 4 | `design/especime-v3/critica/2026-08-28-codex-leitura-ilhas.md` | Codex `gpt-5.6-sol`, 28.08.2026, sobre oito páginas de concelho e de linha das ilhas e das colisões de nome, as linhas, o texto das fontes e o diff do inventário, com duas plantas (2 de 2); a nota «duas palavras» corrigida para três |
-| vazios | 6 | por ler | o bloco dos vazios (28.08.2026): as duas palavras da ausência passam a `retirada` e as quatro contagens do livro-razão mudam de número com as onze linhas «N.d.» do motor |
+| vazios | 6 | por ler | o bloco dos vazios (28.08.2026): as duas palavras da ausência passam a `retirada`, porque a execução da receita perdeu a peça e as doze linhas «N.d.» do motor passaram a mostrar o valor publicado; as quatro contagens do livro-razão mudam de número com elas (2 602 afirmações, 330 calculadas, 2 459 linhas de concelhos, 308 concelhos) |
 
 ## As duas colunas novas de 27.08.2026 (I74)
 
