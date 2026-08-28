@@ -6,19 +6,26 @@
 
 ## 0 · O que está aqui, e o que não está
 
-**Está:** onze direções em `direcoes/*.svg` (o campo é 512, o sinal cabe em 360), a prancha `PRANCHA.html` com a captura `PRANCHA.png`, os PNG de cada direção em `EXPORT/`, as três maquetas do ecrã principal em `ECRA-*.png`, e os dois programas que os fazem. As sete primeiras são de 28.08 de manhã; a H, a I e a J são a resposta à terceira adenda, que pediu a palavra «Estado»; a J2 é a quarta adenda, depois de o diretor ter escolhido a palavra.
+**Está:** dezanove desenhos em `direcoes/*.svg` (o campo é 512, o sinal cabe em 360), a prancha `PRANCHA.html` com a captura `PRANCHA.png`, os PNG de cada um em `EXPORT/`, as maquetas do ecrã principal em `ECRA-*.png`, e os dois programas que os fazem. As sete primeiras são de 28.08 de manhã; a H, a I e a J são a resposta à terceira adenda, que pediu a palavra «Estado»; a J2 é a quarta adenda, depois de o diretor ter escolhido a palavra; e as **sete vozes** (`12` a `18`, mais a `14b`, que é um campo alternativo e não uma voz) são a resposta à quinta, depois de o diretor ter dito que a palavra ao tamanho de um ícone pode não funcionar e que não encontrou nenhum desenho de que gostasse. As vozes estão na §6; as onze primeiras na §5.
 
 **Não está:** nenhum ficheiro em `public/`, nenhuma linha no `<head>` de `src/layouts/Base.astro`, nenhum manifesto, nenhuma dependência nova no `package.json`. O sítio no ar continua sem ícone, exatamente como estava. `npm run typecheck` passa, e passava antes: `tsconfig.check.json` não olha para `design/`.
 
 **A ordem em que isto se refaz**, e importa porque a prancha embebe os PNG:
 
 ```
-python3 design/marca/desenhar.py          # os onze SVG
-node   design/marca/exportar.mjs          # 14 PNG por direção (16 nas duas da palavra)
-python3 design/marca/desenhar.py ecras    # as três maquetas do ecrã principal
+python3 design/marca/desenhar.py          # os dezanove SVG
+node   design/marca/exportar.mjs          # 14 PNG por direção (16 nas que têm palavra)
+python3 design/marca/desenhar.py ecras    # as três maquetas da quarta adenda
+python3 design/marca/desenhar.py vozes    # ECRA-VOZES.png, a folha das sete vozes
 python3 design/marca/desenhar.py prancha  # a prancha, com os PNG e as maquetas lá dentro
 node   design/marca/exportar.mjs          # a captura PRANCHA.png
 ```
+
+E dois comandos que não escrevem desenho nenhum, e que existem para os números
+desta nota se poderem conferir: `desenhar.py medir [tamanhos]`, que lê os PNG de
+`EXPORT/` e conta a tinta, o sinal, as ilhas e as corridas; e
+`desenhar.py contrastes`, que calcula os pares de cor da sétima voz pela fórmula
+da WCAG.
 
 As maquetas precisam do `Pillow` e de um tipo do sistema para o rótulo (o Helvetica); como o resto de `desenhar.py`, não correm na construção do sítio.
 
@@ -197,7 +204,7 @@ Os números de legibilidade abaixo estão **medidos nas capturas de `EXPORT/`**,
 
 A mediana é o número que mais diz. Uma mediana de 2 px quer dizer que **metade do desenho é fio**, e um fio de 2 px a 60 desaparece com a primeira compressão ou com o primeiro fundo escuro.
 
-**A tabela foi refeita para as onze com o mesmo programa**, e por isso quatro números das sete primeiras mexeram: a corrida mínima da A e da B (de 2 para 1 px), as ilhas da E a 60 (de 10 para 8) e a 16 (de 3 para 2). O método está escrito na §7 e é agora um só para as onze; a leitura em prosa não muda com um píxel de corrida mínima. A coluna da tinta é nova e mede quanto do campo de 60 por 60 está pintado.
+**A tabela foi refeita para as onze com o mesmo programa**, e por isso quatro números das sete primeiras mexeram: a corrida mínima da A e da B (de 2 para 1 px), as ilhas da E a 60 (de 10 para 8) e a 16 (de 3 para 2). O método está escrito na §8 e é agora um só para as onze; a leitura em prosa não muda com um píxel de corrida mínima. A coluna da tinta é nova e mede quanto do campo de 60 por 60 está pintado.
 
 As linhas da J e da J2 são as do **«E» sozinho**, e não as da palavra: a 60 px as duas já mostram a letra. A palavra, a 60 px, dá 9,6 px de altura de maiúscula e não tem número que valha a pena medir.
 
@@ -380,7 +387,233 @@ A adenda pergunta como é que o duplo sentido podia estar na marca em vez de est
 
 ---
 
-## 6 · A ordem de preferência, refeita para as onze
+## 6 · As seis vozes, e a sétima que o diretor pediu
+
+*Uma nota de arrumação antes de tudo, porque os números colidem: o ficheiro desta adenda chama-se `ADENDA-4-vozes.md` e intitula-se «adenda 4», mas nas secções anteriores desta nota «a quarta adenda» é a que pediu a J2 e as maquetas do ecrã principal. Para não haver dúvida, daqui para baixo esta chama-se **a adenda das vozes**, e é a quinta pela ordem em que chegaram ao ramo.*
+
+*O diretor viu as onze e as maquetas, e disse duas coisas: a palavra ao tamanho de um ícone «pode não funcionar, por causa do tamanho», e não encontrou nenhum desenho de que gostasse. O conceito não mudou (a palavra «Estado», com os dois sentidos, e o «E» como sinal pequeno); mudou a voz. As onze anteriores partilhavam uma grelha só, uma serifada só e um campo só, e por isso não eram onze respostas: eram uma resposta com onze recortes. Estas sete são sete anatomias e sete decisões de campo. A adenda e o aditamento que trouxe a sétima voz estão no ramo, em `ADENDA-4-vozes.md`.*
+
+### O que é novo na ferramenta, e porque foi preciso
+
+As onze primeiras são feitas de rectângulos, circunferências e arcos, porque a regra da casa é o remate cortado a direito (§4). Um «s», um «a» de dois andares e um «E» de escrita não saem dessa gramática, e é por isso que a J e a J2 acabaram a compor «stado» em Spectral: o «s» não saía da grelha, ao fim de doze construções.
+
+O que estas sete trazem é **uma pena**, ou melhor, duas: um esqueleto amostrado ponto a ponto, e duas maneiras de lhe dar corpo.
+
+* **A pena de bico** (`pena_ponteada`): a grossura varia ao longo do traço, medida na normal ao esqueleto. É ela que dá a espinha de um «s», o arco de um «a» de dois andares e o remate em bico de uma Didone.
+* **A pena de aparo largo** (`pena_larga`, `pena_larga_fechada`): a grossura é fixa e o bico tem um ângulo fixo, e o traço fica grosso onde é perpendicular ao bico e fino onde lhe é paralelo. O contraste da sexta voz não é desenhado: é a consequência de um aparo a 32 graus.
+
+**Com isto, «Estado» está desenhado inteiro em todas as sete**, o «s» incluído, e nenhuma delas põe contorno de um tipo dentro do sinal. O que continua composto em Spectral é o artigo e o «do País» na marca horizontal, que é o que a §1 já cobre; a voz do cinzel usa Spectral SC nessas duas partes, porque a palavra dela é versal.
+
+**E há uma segunda coisa que o espacejamento obrigou a mudar.** As letras eram postas umas a seguir às outras pelo avanço de cada uma, e isso chega quando a letra cabe no avanço. Não chega quando uma serifa sai, quando o travessão de um «t» passa da haste ou quando o arco de um «a» começa à esquerda do bojo: na voz condensada, o «t» tinha um avanço de 86,8 e uma haste que acabava aos 93,5, e entrava no «a». Agora **cada letra é desenhada duas vezes**, a primeira na origem só para se lhe medir a caixa de tinta, e a segunda no sítio em que essa caixa fica à distância pedida da tinta da letra anterior. O espaço é medido na tinta, e não no avanço.
+
+### Três desenhos, e não dois, e o erro que obrigou a isso
+
+Nas onze primeiras havia dois desenhos por direção: o sinal, até aos 60 px, e a simplificação, dos 32 para baixo. Nas sete vozes o sinal grande é a **palavra** e o sinal do telemóvel é a **letra**, e são objetos diferentes. Com dois grupos só, a cela de 180 px acabava a mostrar a letra **engrossada** do favicon: a Didone chegava ao tamanho a que o diretor a julga com contraste 1,9, quando o desenho dela é 6,55. Isto não se via em número nenhum e não se via no SVG; viu-se ao pôr as capturas lado a lado.
+
+São agora três: a **palavra** aos 512, a **letra** da voz (com os números da voz) dos 192 aos 60, e a **simplificação** aos 32 e 16. O `maskable` leva a letra nos dois tamanhos, porque um ícone adaptável do Android desenha-se a 108 px.
+
+### O que é novo na medição, e é preciso dizê-lo antes dos números
+
+Até aqui, campo de papel em todas as direções, e por isso «tinta da cela» e «mancha do sinal» eram a mesma coisa. Deixaram de ser. Numa direção de campo de tinta com letra de papel, a cela está toda escura e o sinal é o que está claro lá dentro. São por isso duas colunas:
+
+* **tinta**: quanto da cela está abaixo do cinzento 200. É o número que diz se o ícone é uma mancha no ecrã principal ou um vazio, e é ele que compara com os **4,7 % da palavra da J2** e os **19,8 % da letra da J2**, que foi a medição que fez esta ronda existir.
+* **sinal**: quanto da cela é diferente do campo. É a letra.
+
+**Uma ressalva que o número exige:** o âmbar `#e0a21a` tem luminância 165 e cai abaixo do limiar de 200. Por isso a terceira e a sétima vozes aparecem com «tinta 100 %», e isso não quer dizer que a cela seja escura: quer dizer que é um bloco de cor cheio, sem papel nenhum à vista. Quem ler a coluna sem ler esta linha lê mal.
+
+### A régua das sete
+
+Tudo medido nas capturas de `EXPORT/`, com o programa da §8 (`desenhar.py medir`), e não estimado.
+
+| voz | campo | letra | contraste | tinta a 60 | sinal a 60 | ilhas a 60 | corrida min/med a 60 | sinal a 16 | min a 16 |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 · Didone | tinta | papel | 16,39:1 | 86,6 % | 18,6 % | 1 | 2 / 12 | 27,3 % | 2 |
+| 2 · cinzel | ocre | papel | 6,37:1 | 88,3 % | 14,3 % | 1 | 2 / 4 | 27,0 % | 1 |
+| 3 · geométrica | âmbar | tinta | 7,85:1 | 100 % | 31,0 % | 1 | **12 / 12** | 35,9 % | **4** |
+| 3b · a mesma | cobalto | papel | 7,73:1 | 71,0 % | 31,9 % | 1 | 12 / 13 | 38,3 % | 2 |
+| 4 · laje | papel | tinta | 16,39:1 | 24,8 % | 27,3 % | 1 | 6 / 12 | 38,3 % | 3 |
+| 5 · condensada | tinta | papel | 16,39:1 | 88,0 % | 19,8 % | 1 | 9 / 16 | 25,0 % | 3 |
+| 6 · caligráfica | papel | tinta | 16,39:1 | **8,0 %** | 8,8 % | **2** | 1 / 4 | 17,2 % | 1 |
+| 7 · o «e» | tinta | âmbar | 7,85:1 | 100 % | 17,4 % | 1 | 1 / 6 | 23,8 % | 1 |
+
+A maiúscula da letra na cela de 180 px é **126,6 px** em quatro das sete (a régua do enquadramento é a mesma), **118,4 px** na do cinzel e **115,4 px** na caligráfica, que são as duas cujo desenho é mais largo do que alto. A da sétima voz não tem maiúscula: o «e» dá **97,6 px de diâmetro** a 180.
+
+**E a coluna que responde ao diretor à letra.** A palavra na mesma cela de 180 px, medida no ficheiro `-180-palavra.png` de cada voz:
+
+| voz | palavra L:A | maiúsc. da palavra a 180 | sinal a 180 (a palavra) | sinal a 180 (a letra) |
+|---|---|---|---|---|
+| 1 · Didone | 3,81 | 30,7 px | 4,7 % | 16,2 % |
+| 2 · cinzel | 4,35 | 25,1 px | 3,9 % | 13,1 % |
+| 3 · geométrica | 4,55 | 24,9 px | 6,4 % | 30,4 % |
+| 4 · laje | 4,78 | 24,0 px | 5,2 % | 24,7 % |
+| 5 · condensada | **3,07** | **36,3 px** | **9,1 %** | 18,4 % |
+| 6 · caligráfica | 3,16 | 33,4 px | 4,4 % | 7,5 % |
+
+A palavra da J2 pintava 4,7 %, e foi por isso que a maqueta a reprovou. **Cinco das seis vozes com palavra estão no mesmo sítio ou pior. Uma não está**, e é a condensada, que pinta o dobro, porque a palavra dela mede 3,07 de largura por 1 de altura e as outras medem até 4,78. Num campo quadrado, quem é mais estreito é maior. **Mesmo assim, em todas as seis a letra pinta mais do que a palavra**, e na condensada pinta o dobro dela: a objeção do diretor está confirmada por medição, e o que a atenua não a anula.
+
+---
+
+### Voz 1 · editorial de contraste alto (`direcoes/12-didone-estado.svg`)
+
+**A 180 px.** Um «E» de papel em campo de tinta, com a maiúscula a 126,6 px, a haste a 33,2 px e o fino a 5,1 px: contraste 6,55, que é o maior das sete e quase o triplo do 2,33 da grelha da casa. A cela é uma mancha escura com uma letra clara e nada mais.
+
+**A 60 px.** Uma ilha, mediana de 12 px, **mínima de 2 px**, que é o fino do braço. O fino ainda se lê como fino, e é aos 60 px que esta voz ainda é ela própria.
+
+**A 16 px.** Aqui deixa de ser. O fino do desenho grande daria **0,45 px**, e por isso a simplificação sobe-o de 0,040 para 0,128 H, ou seja de 0,45 para 1,44 px, e tira as serifas. **O contraste cai de 6,55 para 1,9**: o que fica no favicon é um «E» pesado sem contraste, que é o contrário do que esta voz é. Uma voz que só existe acima dos 32 px não é uma voz de ícone.
+
+**A tinta da cela.** 86,6 % a 60 px; sinal 18,6 %.
+
+**A colisão mais próxima.** Duas, ambas na folha. Pela letra: o **Expresso** (campo azul-petróleo, «E» serifado branco) e o **Economist** (campo vermelho, «E» serifado branco). Este é a terceira ocorrência do mesmo objeto no mesmo ecrã, e a única distância é o campo ser preto. Pelo campo: o **Le Monde** (campo preto, letra clara desenhada).
+
+**O que a voz diz do sítio.** Editorial: diz «isto é um jornal». É a leitura mais confortável e a menos própria, porque o sítio não é um jornal, é um observatório com um livro-razão.
+
+### Voz 2 · inscricional (`direcoes/13-inscricional-estado.svg`)
+
+**A 180 px.** «ESTADO» em versais no ícone de 512; na cela, o «E» do cinzel, com a maiúscula a 118,4 px, a haste a 0,125 H e o fino a 9,7 px (contraste 1,52, o mais baixo depois da condensada) e remates em cunha que alargam para fora. O braço do meio é a **faixa incisa**: passa de 0,082 para 0,215 H (25,5 px) e leva um sulco de 7,3 px do próprio campo cortado a meio. É a única das sete em que a segunda leitura não gasta uma segunda cor: a linha do livro-razão está gravada, não pintada.
+
+**A 60 px.** Uma ilha, mediana de 4 px, mínima de 2 px. O sulco mede **2,45 px** e ainda se vê como cavidade.
+
+**A 16 px.** Uma ilha, mínima de 1 px. O sulco mede **0,63 px** e **fecha-se**: o que fica é um braço do meio mais grosso do que os outros, sem cavidade nenhuma. Metade da ideia não chega ao favicon, exatamente como aconteceu ao selo da direção I (§5).
+
+**A tinta da cela.** 88,3 % a 60 px; sinal **14,3 %**, que é o menor das cinco que se leem, porque uma versal romana é leve por definição.
+
+**A colisão mais próxima.** Pela cor, nenhuma: **ninguém nas 42 referências tem campo ocre nem castanho**. O mais próximo em matiz é o laranja do Poder360, que é outra família e é brasileiro. Pela letra, o Expresso e o Economist outra vez, com a distância a ser a construção (contraste 1,52 contra o deles) e o remate em cunha.
+
+**O que a voz diz do sítio.** Institucional: diz «isto está cortado em pedra». E é aí que está o problema, e não é de desenho: as versais romanas são a língua das fachadas do Estado tanto quanto a das escolas e dos pelourinhos, e num sítio chamado «O Estado do País» empurram a leitura para a instituição, que é o lado onde a terceira adenda pediu para o leitor **não** ficar. Não há aqui heráldica nenhuma, nem verde, nem vermelho, nem tipografia de nenhum órgão do Estado: o problema é o que a forma diz, e não o que ela cita.
+
+### Voz 3 · geométrica pesada, campo âmbar (`direcoes/14-geometrica-ambar.svg`) e a alternativa (`14b-geometrica-cobalto.svg`)
+
+**A 180 px.** Uma grossura só (0,275 H, ou 34,8 px), sem serifa, sem contraste, o braço a 0,70 H. O sinal ocupa 30,4 % da cela, o maior das sete.
+
+**A 60 px.** Uma ilha, **corrida mínima de 12 px e mediana de 12**, que são os melhores números destas sete e de todas as dezanove direções do ramo: a régua, que era a mais robusta das onze, tinha mínima de 8. Uma letra sem finos não tem onde partir.
+
+**A 16 px.** Uma ilha, **mínima de 4 px**, também a melhor das dezanove. É a única em que a simplificação quase não muda o desenho (a grossura sobe de 0,275 para 0,285 H), pela mesma razão: não há nada que morra.
+
+**A tinta da cela.** 100 % (o campo é um bloco de cor cheio, ver a ressalva acima); sinal 31,0 % a 60 px.
+
+**A resposta à pergunta da adenda: qual dos dois campos é ownable.** A maqueta responde sem margem.
+
+* **O cobalto não é.** Campo azul-escuro com letra branca **é o Expresso**, e a letra é a mesma. Na folha há ainda o azul da RTP, o disco azul da Pordata e o anel azul-claro do Observador. Na maqueta do ecrã principal a cela 3b e a do Expresso ficam a três celas de distância e leem-se como do mesmo dono.
+* **O âmbar é.** Nas 42 referências ninguém tem campo âmbar nem ocre. Os vizinhos de matiz são o laranja saturado do Poder360 e o disco preto com «P» amarelo da Agência Pública, que é letra amarela em campo escuro, ou seja o contrário deste. Entre os portugueses da folha não há nenhum.
+
+E a cor da letra não é escolha, está medida: **papel sobre âmbar dá 2,09:1** e não serve para objeto nenhum; **tinta sobre âmbar dá 7,85:1**. Por isso em campo âmbar a letra é de tinta, e a versão de letra de papel é a de campo cobalto.
+
+**O que a voz diz do sítio.** Instrumento de mercado: é o registo do «B» da Bloomberg, e diz «isto é uma marca de dados». **O que pesa contra, e é sério:** no sítio, o âmbar quer dizer **fora do limiar** (`tokens.css`, `--amber`; é a cor da palavra do estado quando o país está aquém). Uma marca âmbar diz ao leitor, antes de ele ler número nenhum, que o país está fora do limiar. Não é uma colisão de marca, é uma colisão de semântica com o próprio instrumento, e não se resolve com desenho.
+
+### Voz 4 · laje de instrumento (`direcoes/15-laje-instrumento.svg`)
+
+**A 180 px.** Um «E» de tinta em campo de papel, com a laje da Bitter engrossada (haste 0,255 H, fino 18,7 px, contraste 1,61) e o braço do meio trocado pela **linha do valor em cobalto a 0,21 H (26,6 px)**, que é a ideia da J2 nesta anatomia. A laje é um remate que desce para dentro da letra: pô-la a passar a linha de maiúscula foi o primeiro erro desta voz e fazia a letra crescer para fora do quadrado do sinal.
+
+**A 60 px.** Uma ilha, mediana de 12 px, mínima de 6 px. A linha do valor mede **8,9 px** e os braços de tinta 6,2 px: a linha é mais grossa do que os braços, e por isso lê-se como outro objeto dentro da letra e não como um braço pintado, que é a regra da §4.
+
+**A 16 px.** Uma ilha, mínima de 3 px. A linha do valor mede 2,4 px e os braços 1,9 px. **A linha sobrevive**, como já sobrevivia na H e na J2.
+
+**A tinta da cela.** 24,8 % a 60 px; sinal 27,3 %. É **mais pesada do que a letra da J2** (19,8 %) e é a única das sete com campo de papel e letra de tinta, ou seja a única que repete a receita que a maqueta anterior reprovou. Na folha do ecrã principal vê-se o que os 24,8 % compram: lê-se, e é, com a caligráfica, uma das duas celas mais claras do ecrã.
+
+**A colisão mais próxima.** O **Negócios** (campo branco, «n» de laje preto) é a mais próxima em construção e em campo. Na maqueta a mais próxima é o **NYTimes** (campo claro, letra desenhada preta), a uma cela de distância. A **Folha** (campo branco, «F») é a terceira.
+
+**O que a voz diz do sítio.** Instrumento: é a única das sete que fala a língua que o sítio já fala nos gráficos, porque a Bitter está lá dentro. Diz «isto é um aparelho de medida», que é a coisa mais verdadeira que qualquer uma destas sete diz.
+
+### Voz 5 · grotesca condensada (`direcoes/16-condensada-estado.svg`)
+
+**A 180 px.** Um «E» de papel em campo de tinta, estreito (braço a 0,45 H contra os 0,70 da geométrica), com o âmbar no braço do meio a 0,24 H (30,4 px). E é aqui que esta voz se separa das outras: a **palavra** na mesma cela dá 36,3 px de maiúscula contra 24 a 31 nas outras, e pinta 9,1 % contra 3,9 a 6,4 %.
+
+**A 60 px.** Uma ilha, mediana de 16 px (a segunda maior), mínima de 9 px. O braço mede 8,7 px e a barra âmbar 10,1 px.
+
+**A 16 px.** Uma ilha, mínima de 3 px, e a barra âmbar continua a ler-se a 2,7 px.
+
+**A tinta da cela.** 88,0 % a 60 px; sinal 19,8 %, que por acaso é o mesmo número da letra da J2, com a diferença de o campo aqui ser cheio.
+
+**A colisão mais próxima.** Pelo campo: **Le Monde** e **De Correspondent**, os dois com campo preto e letra clara, os dois estrangeiros. Entre os portugueses da folha, campo de tinta com letra de papel não é de ninguém. Pela letra, nenhuma: não há na folha uma grotesca condensada.
+
+**O que a voz diz do sítio.** Popular: é a voz do cartaz à porta do quiosque. Diz «isto é para ser lido de longe e depressa», que é verdade do ícone e é falso do conteúdo.
+
+### Voz 6 · caligráfica (`direcoes/17-caligrafica-estado.svg`)
+
+**A 180 px.** Um aparo largo a 32 graus, meia largura 0,062 H (7,2 px a 180), passado por cima de um esqueleto. O «E» é **um traço só**, sem levantar o aparo: entra em cima à direita, dá a volta por cima, desce, faz a cintura para a direita e volta, e sai em baixo à direita. **Já a 180 px são duas ilhas**: o fino do aparo, no sítio em que o traço corre paralelo ao bico, abre a letra.
+
+**A 60 px.** Duas ilhas outra vez, corrida mínima de 1 px, mediana de 4 px. É a única das sete que se parte, e parte-se nos dois tamanhos que contam.
+
+**A 16 px.** Uma ilha (a esta escala o suavizado volta a colar o que estava aberto), mínima de 1 px, mediana de 2 px. O que se lê é um risco.
+
+**A tinta da cela.** **8,0 % a 60 px**; sinal 8,8 %. Para comparar: a letra da J2 pintava 19,8 %, e a palavra da J2, que a maqueta reprovou por desaparecer, pintava 4,7 %. **Esta voz está entre as duas, e mais perto da que foi reprovada.**
+
+**A colisão mais próxima.** **De Correspondent** (campo preto, letra cursiva clara) é a mais próxima em anatomia, com o contraste de campo invertido. Na maqueta, a cela que se lê de maneira mais parecida é a do NYTimes, porque as duas são letra desenhada escura em campo claro.
+
+**O que a voz diz do sítio.** Pessoal: diz «isto foi escrito à mão por alguém». E há uma leitura pior, que é a primeira que aparece: **o «E» de escrita lê-se como «épsilon» antes de se ler como «E»**. Está assim nas capturas de 180, de 60 e de 16 px, e não é o desenho que falha, é a letra: um «E» de mão inglesa não tem haste vertical, e sem haste vertical, fora do contexto de uma palavra, é uma letra grega. Dentro da palavra «Estado» lê-se «E» sem esforço; sozinho, não.
+
+### Voz 7 · o «e» minúsculo (`direcoes/18-e-minuscula.svg`), a ideia do diretor
+
+**A 180 px.** Uma circunferência de grossura igual (banda de 15,0 px num diâmetro de 97,6 px, ou seja 0,31 do raio), com 52 graus cortados em baixo à direita, e uma barra de 13,7 px que atravessa e sai 0,30 raios para fora de cada lado. Nada mais. É a única das sete que não tem palavra: o sinal é o mesmo em todos os tamanhos.
+
+**A 60 px.** Uma ilha, mediana de 6 px, mínima de 1 px, e a mínima é a ponta da banda no corte, que acaba num canto agudo. A banda mede 5,0 px e a barra 4,6 px.
+
+**A 16 px.** Uma ilha, mediana de 3 px. A simplificação engrossa a banda e a barra 15 % e fecha a abertura de 52 para 42 graus, porque a 52 graus a abertura dá 1,4 px e some-se contra o campo. O que se lê continua a ser um «e».
+
+**A tinta da cela.** 100 % (campo de tinta cheio); sinal 17,4 % a 60 px.
+
+**«É o "O" de "O Estado" e o "E" de "Estado" na mesma forma?»** É, por construção: tirando a barra fica um anel, que é um «O»; pondo a barra fica um «e». Nenhuma das outras seis tem isto, porque em todas elas o «O» e o «E» são duas letras diferentes. **O leitor vê isso?** Não, e não é razoável esperar que veja: o que ele vê é um «e» minúsculo. A dupla leitura é uma razão de desenho, e serve para justificar a forma a quem a escolher, não para a explicar a quem a vir. O que o leitor pode ver, se lhe disserem, é a **barra a sair para fora do anel**, que já não é a travessa de nenhum «e» de tipo: essa é a linha da régua, e é o único sítio desta forma em que o sítio se declara.
+
+**As quatro cores, medidas** (fórmula da WCAG, contada em `desenhar.py contrastes`, não copiada; 3:1 para objeto gráfico, 4,5:1 para texto):
+
+| par | contraste | 3:1 | 4,5:1 |
+|---|---|---|---|
+| (a) «e» âmbar em campo de tinta | 7,85:1 | passa | passa |
+| (b) «e» de tinta em campo âmbar | 7,85:1 | passa | passa |
+| (c) «e» âmbar em papel | **2,09:1** | **falha** | **falha** |
+| (d) «e» ocre em papel | 6,37:1 | passa | passa |
+
+Só o (c) falha, e falha nos dois limiares. É por isso que `tokens.css` obriga o marcador âmbar a levar contorno de tinta sobre papel claro, e a amostra (c) da prancha traz esse contorno: o que segura a forma ali não é o âmbar, é o contorno, que mede 16,39:1. **O ícone leva o par (a)**, âmbar em campo de tinta, que passa e que dá mancha cheia na cela.
+
+**As três aberturas e as três barras estão desenhadas e vistas na prancha.** Com 100 graus cortados o anel abre e lê-se um «c» com uma barra; com 24 graus fecha e lê-se um «o» atravessado, que é a leitura de um símbolo de moeda. Os 52 graus são os que dão «e». Quanto à barra: dentro do anel dá a travessa de um «e» de tipo, e é a leitura mais neutra; a atravessar dá a linha de uma régua, e é a única que diz alguma coisa do sítio. **Ficou a que atravessa**, e a razão é essa.
+
+**As colisões, e uma que não se desenhou de propósito.**
+
+* **O «e» do navegador da Microsoft.** A adenda deixava desenhá-lo de memória, rotulado como tal. Não está desenhado, e é uma escolha: um desenho de memória de uma marca de outrem não é prova de nada, e sem rede não se confere no ficheiro deles. O que se pode dizer sem inventar é a diferença de construção: aquela marca é um «e» **inclinado**, com um anel ou faixa em órbita à volta, em azul; este é um «e» a prumo, de grossura igual, **sem órbita nenhuma**, com a abertura em baixo à direita e uma barra recta que atravessa. Pelo mesmo critério não se desenhou a marca da **Ecosia**: não se conferiu, e sem rede não se confere. Fica como pergunta em aberto, e não como resposta inventada.
+* **O Eco (SAPO)** está na folha e está visto, e está na prancha ao lado do nosso a 120 e a 60 px: é um «e» feito de **arcos concêntricos** num campo verde-vivo, e a 60 px lê-se como um alvo. O nosso é uma banda só num campo de tinta. A distância é de construção e de cor.
+* **A Agência Pública** (Brasil) é a colisão de cor mais próxima da folha: disco preto com «P» amarelo, ou seja letra amarela em campo escuro, que é a mesma receita. A distância é a letra e a forma do campo.
+* **O âmbar e a semântica da régua.** No sítio, âmbar quer dizer «fora do limiar». **Uma marca em âmbar mistura-se com isso, e a resposta honesta é que sim, mistura.** Não como na terceira voz, onde o âmbar é o campo inteiro e a afirmação é grande; aqui é a letra, e a letra vive dentro de um campo de tinta, o que a lê como marca e não como marcador. Mas a mistura existe, e quem escolher esta voz escolhe também: ou muda o que o âmbar quer dizer nos instrumentos, ou aceita que a marca use a cor do alarme.
+
+**A marca horizontal, nas duas leituras.** As duas estão na prancha. Com as maiúsculas da casa («O Estado do País») o sinal fica ao lado do nome como uma inicial que o nome não tem, e segura. Toda em minúsculas («o estado do país») a marca fica coerente com a forma do sinal, e **a escolha deixa de ser de desenho**: a maiúscula de «Estado» é justamente a marca ortográfica que faz a palavra ler-se como a instituição (§5, direção J). Escrever o nome em minúsculas é escolher a condição contra a instituição com ortografia, e é uma decisão de direção. **Na marca horizontal o «e» não é âmbar em papel claro**: é ocre `#7a5300` (6,37:1), e em papel escuro é o âmbar (8,00:1). Não é regra nova: é a que `tokens.css` já aplica à palavra do estado.
+
+---
+
+### O que a folha do ecrã principal respondeu
+
+`ECRA-VOZES.png` põe as sete vozes (mais o campo alternativo da terceira) no mesmo ecrã claro, na mesma cela de 180 px, entre os mesmos oito ícones. Só ecrã claro, e de propósito: a pergunta desta ronda é a do campo, e um ecrã escuro daria vantagem a quem já tem campo escuro. O que se vê, e que os números sozinhos não diziam:
+
+1. **O campo resolveu o problema que a ronda foi chamada a resolver.** Seis das oito celas são blocos de cor cheios e nenhuma delas obriga a aproximar os olhos. As duas de campo de papel (a laje e a caligráfica) são as mais claras do ecrã, e a caligráfica é a única que ainda obriga o leitor a chegar-se.
+2. **O ecrã já tem três «E» claros em campo de cor.** Expresso, Economist e o nosso, seja qual for a voz serifada que se escolha. A geométrica e a condensada saem dessa família pela anatomia; a Didone e o cinzel não saem.
+3. **O cobalto perde-se e o âmbar não.** A cela 3b e a do Expresso são a mesma coisa a três celas de distância. A cela âmbar é a única daquela cor no ecrã inteiro.
+4. **A palavra continua a não segurar a cela**, em seis vozes de seis, e por isso o `apple-touch-icon` de qualquer uma delas leva a letra. A condensada é a que chega mais perto, e mesmo essa pinta 9,1 % contra os 18,4 % da sua própria letra.
+
+---
+
+### A ordem de preferência, só sobre estas sete
+
+*Os critérios são os das rondas anteriores, e valem por esta ordem: diz o nome do sítio, diz o método, segura uma cela de 180 px entre os outros, lê-se a 60, sobrevive a 16, e não está em cima de ninguém. A adenda das vozes acrescentou um que não existia: **o que a voz diz do sítio antes de o leitor ler uma palavra**.*
+
+**1.º · Voz 5, a grotesca condensada.** É a única das sete que responde à objeção do diretor com desenho, e não com uma troca de sinal: a palavra na cela de 180 px dá 36,3 px de maiúscula e pinta 9,1 %, contra 24 a 31 px e 3,9 a 6,4 % em todas as outras, porque a palavra dela mede 3,07 por 1. A letra segura a cela (19,8 %, mediana de 16 px, mínima de 9), a barra âmbar sobrevive aos 16 px, e entre os portugueses da folha nem o campo de tinta com letra de papel nem uma condensada são de alguém. Contra ela pesa o que a voz diz: cartaz de quiosque, e o sítio não é um cartaz; e o âmbar volta a dizer «fora do limiar», ainda que só num traço.
+
+**2.º · Voz 3, a geométrica pesada em campo âmbar.** Mede melhor do que qualquer uma das dezanove direções deste ramo: mínima de 12 px a 60 e de 4 px a 16, contra os 8 e os 2 da régua, que era a mais robusta das onze. É a única cuja simplificação quase não muda o desenho, porque não tem finos que morram. E o âmbar é a única cor de campo que ninguém na folha ocupa, o que a maqueta confirma. Fica em segundo por uma razão que não é de desenho: **o âmbar, neste sítio, quer dizer «fora do limiar»**, e um campo inteiro dessa cor é a maior afirmação que qualquer destas sete faz sem pedir licença. Quem a escolher decide primeiro o que faz à semântica da régua.
+
+**3.º · Voz 7, o «e» minúsculo.** É a mais distinta das sete: a única minúscula, a única redonda, a única em que as duas letras do nome são a mesma forma, e a única em que a barra que atravessa é, sem esforço, a linha de uma régua. Segura a cela (campo cheio, sinal 17,4 %) e chega inteira aos 16 px. Fica em terceiro por três medidas: a corrida mínima é de 1 px a 60 e a 16, o que a torna a mais frágil das cinco que se leem; **larga a palavra**, e com ela o conceito que o diretor confirmou, que fica a viver só na marca horizontal; e tem os donos mais gastos de todas, com o navegador da Microsoft à cabeça e o Eco na própria folha.
+
+**4.º · Voz 4, a laje de instrumento.** É a que diz a coisa mais verdadeira sobre o sítio, e diz-a com o tipo que o sítio já usa nos gráficos: um aparelho de medida, com a linha do valor por dentro da letra e não pintada por cima. Mede bem (mediana de 12 px, mínima de 6) e a linha de cobalto é a última coisa a morrer aos 16 px. Fica em quarto porque é a única das sete que repete a receita que esta ronda foi chamada a corrigir: campo de papel com letra de tinta. Os 24,8 % de tinta são mais do que os 19,8 % da J2 e continuam a fazer dela uma das duas celas mais claras do ecrã.
+
+**5.º · Voz 1, a Didone.** Lê-se a 180 e a 60 px, a cela é uma mancha cheia, e o contraste de 6,55 é o maior das sete. Fica em quinto por duas coisas medidas: é o terceiro «E» serifado claro em campo de cor do mesmo ecrã, ao lado do Expresso e do Economist, e a única distância é o campo ser preto; e aos 16 px o contraste, que é a voz inteira, cai para 1,9. Uma marca que perde a sua ideia no favicon perde-a no sítio onde ela mais se repete.
+
+**6.º · Voz 2, o cinzel.** Tem a única cor de campo que ninguém ocupa, e o único sítio destas sete em que a segunda leitura não gasta uma segunda cor, que é a faixa incisa. Fica em sexto por duas razões: o sulco fecha-se abaixo dos 32 px (0,63 px aos 16), e por isso metade da ideia não chega ao favicon; e a voz empurra a leitura para a instituição, que é o lado do duplo sentido onde a terceira adenda pediu para o leitor não ficar. Some-se a isto o sinal mais leve das cinco que se leem, 14,3 %.
+
+**7.º · Voz 6, a caligráfica.** Sai por medição e não por opinião: 8,0 % de tinta na cela de 60 px, **duas ilhas a 180 e a 60 px** (é a única das sete que se parte, e parte-se nos dois tamanhos que contam), corrida mínima de 1 px, e um «E» que se lê como «épsilon» antes de se ler como «E». É a cela mais fraca do ecrã principal desta folha, e a única que ainda obriga um leitor a aproximar-se, que era exatamente o defeito que esta ronda foi chamada a corrigir.
+
+**E uma nota que não é preferência.** A **3b**, a geométrica em campo cobalto, não entra na ordem porque não é uma oitava voz: é a resposta desenhada à pergunta da adenda sobre qual dos dois campos é ownable. A resposta é que não é o cobalto, e a 3b fica no ramo para se poder ver que não é.
+
+---
+
+## 7 · A ordem de preferência, refeita para as onze
+
+*Esta é a ordem das ONZE primeiras direções, e ficou como estava. A ordem das sete vozes é outra lista e está no fim da §6, porque a adenda das vozes a pediu «só sobre estas», e porque comparar um campo de papel com um campo de cor a partir de números medidos em réguas diferentes daria uma ordem que não queria dizer nada. Quem quiser uma ordem só sobre as dezanove tem de decidir primeiro se o campo entra no critério, e essa é uma decisão de direção.*
 
 *Os critérios são os mesmos de sempre, e valem por esta ordem: **diz o nome do sítio, diz o método, lê-se a 60 px, sobrevive a 16, aguenta sem cor, e não está em cima de ninguém**. O que mudou no primeiro critério foi o gabinete a dizer qual é a palavra que conta: «Estado», e não o artigo. A esta lista juntou-se agora um critério que a maqueta do ecrã principal trouxe e que não se via em campo branco: **segura uma cela de 180 px entre os outros?***
 
@@ -410,7 +643,7 @@ A adenda pergunta como é que o duplo sentido podia estar na marca em vez de est
 
 ---
 
-## 7 · O que se mediu, e como
+## 8 · O que se mediu, e como
 
 * **A legibilidade** foi medida nas capturas de `EXPORT/`, e não estimada dos SVG: cada PNG foi lido píxel a píxel, contadas as componentes ligadas de tinta (vizinhança de 4, tinta é cinzento abaixo de 200) e as corridas de tinta em linha e em coluna. A tabela da §5 é essa leitura, refeita a 28.08 para as onze com o mesmo programa. O que está escrito em prosa («lê-se», «é poeira», «lê-se F e não E») é o que se viu ao abrir as capturas, ampliadas quatro e oito vezes, e não o que os números sugeriam.
 * **O «O» do Spectral** foi medido no ficheiro da casa, desenhado a 700 de altura e contado a píxeis, não tirado de uma tabela.
@@ -423,7 +656,7 @@ A adenda pergunta como é que o duplo sentido podia estar na marca em vez de est
 
 ---
 
-## 8 · O que não se fez, e devia ficar dito
+## 9 · O que não se fez, e devia ficar dito
 
 * **Não se experimentou o âmbar como acento na direção B.** Foi descartado por medição e não por gosto: o âmbar sobre papel claro mede 2,09:1, e um traço de 6 px a 60 nessa relação é uma mancha pálida. O cobalto mede 7,73:1. Está na §5.
 * **Não há versão em cinzento nem em uma cor só.** Um ícone de telemóvel não a pede; uma marca a sério acaba por pedir.
@@ -433,12 +666,31 @@ A adenda pergunta como é que o duplo sentido podia estar na marca em vez de est
 * **A maqueta não tem fotografia por baixo.** Um ecrã principal a sério tem, e há fotografias que engolem um campo de papel. Quem quiser essa prova tem de a fazer com a fotografia do próprio telefone.
 * **Não se experimentou o «E» de três barras com quatro linhas nem com duas.** Três é o número de campos que uma linha do livro-razão nunca tem em falta, e é também o número de braços de um «E». As duas coisas coincidirem é a razão de a H existir; se o livro-razão tivesse quatro campos obrigatórios, esta direção não existia.
 
+E o que ficou por fazer na ronda das vozes (§6):
+
+* **«do País» não está desenhado em voz nenhuma.** A marca horizontal das sete leva «Estado» desenhado e o artigo e o «do País» compostos em Spectral (ou em Spectral SC, no cinzel). Faltam o «P», o «í» com acento e um segundo «s» para que uma delas possa ter o nome inteiro desenhado, e isso é outro trabalho.
+* **Não se desenhou de memória a marca do navegador da Microsoft nem a da Ecosia.** A adenda deixava fazê-lo, rotulado como tal; não se fez, porque um desenho de memória de uma marca de outrem não é medição nenhuma, e sem rede não se confere no ficheiro deles. A comparação com o Eco, essa, está feita, porque o ficheiro dele está na folha. Fica como pergunta em aberto.
+* **Não se experimentou a sétima voz com a barra em cobalto.** O cobalto quer dizer «dentro do limiar» e o âmbar «fora»; a barra da sétima voz é a linha da régua, e uma linha de régua não devia estar de nenhum dos dois lados. Um cinzento seria a hipótese honesta, e não está desenhada.
+* **Não se experimentou campo ocre com letra de tinta**, nem campo cinzento em voz nenhuma. O ocre entrou só como campo escuro com letra de papel.
+* **A voz caligráfica não teve segunda construção.** O «E» de mão inglesa lê-se como «épsilon», e a saída óbvia seria um «E» uncial, com haste vertical e três braços de aparo. Não se desenhou porque a adenda pede **um traço só**, e uma haste vertical com três braços obriga a levantar o aparo pelo menos duas vezes. A escolha entre a legibilidade e a regra é de direção, e fica dita em vez de resolvida.
+* **A 14b não tem maqueta de ecrã escuro própria**, porque não é uma voz: é a resposta desenhada a uma pergunta sobre campo, e a pergunta era sobre o ecrã claro.
+* **Nenhuma das sete foi vista com fotografia por baixo**, como já acontecia às onze. Um ecrã principal a sério tem fotografia, e há fotografias que engolem um campo de papel e nenhuma que engula um campo de tinta ou de âmbar: essa medição, se for feita, só pode piorar a posição das duas vozes de campo claro.
+
 ---
 
-## 9 · O custo
+## 10 · O custo
 
 Cerca de **320 mil símbolos** na primeira sessão (as sete direções), cerca de **300 mil** na segunda (as três da terceira adenda) e cerca de **90 mil** na terceira (a J2, as maquetas e o cabeçalho), quase todos em ida e volta entre desenhar, exportar, **olhar as capturas** e corrigir.
 
 As correções que gastaram mais foram sempre as que só se viram olhando. Na segunda sessão foram três: o «E» com os braços a decrescer, que lia «F»; o «s» desenhado, que ao fim de doze construções continuava a ler-se como dois discos; e o `maskable`, que estava errado desde a primeira sessão em três direções e que nenhum SVG denunciava, porque o erro só existe depois de o navegador aplicar o CSS.
 
 Na terceira foram duas, e a segunda mudou uma recomendação: a caixa do lockup, que cortava a ascendente do «d»; e **a maqueta do ecrã principal, que mostrou que a palavra não segura uma cela de 180 px**. Essa não se via em campo branco, não se via na prancha, e não se via em número nenhum que estivesse a ser contado até aqui: só se viu ao pôr o ícone entre os outros, ao tamanho a que a mão o vê. É a razão de a maqueta existir, e o argumento para a fazer antes e não depois.
+
+Cerca de **340 mil símbolos** na quarta sessão, a das sete vozes. As correções que gastaram mais foram, outra vez, as que só se viram a olhar, e foram quatro:
+
+1. **Os `<style>` dos SVG numa folha de pré-visualização são todos do documento**, e o último ganha. A primeira folha saiu com as sete vozes todas em âmbar sobre tinta, e o desenho não tinha nada. Corrigiu-se a folha (cada SVG passou a ir por `data:`), e o que se aprendeu ficou dentro do programa: as amostras de cor da prancha levam as cores no atributo e não em classe.
+2. **A serifa em cunha e a laje saíram do tamanho errado à primeira**, e as duas pelo mesmo motivo: a medida estava presa ao fino em vez de estar presa à haste. A cunha dava um pé com 2,4 vezes a haste (numa versal romana é 1,84) e a letra lia-se como um laço; a laje descia 0,216 H numa barra de 0,148 H e a letra ficava com blocos soltos.
+3. **O espacejamento por avanço não chega**, e viu-se na voz condensada: o «t» tinha avanço de 86,8 e haste a acabar aos 93,5, e entrava no «a». Foi preciso passar a medir o espaço na caixa de tinta, com cada letra desenhada duas vezes.
+4. **A cela de 180 px estava a mostrar a letra do favicon**, e não a letra da voz. A Didone chegava ao tamanho a que é julgada com contraste 1,9 em vez de 6,55, e nenhum número o denunciava, porque todos os números estavam certos para o desenho errado. Obrigou a um terceiro grupo dentro de cada SVG.
+
+As quatro têm a mesma forma: **o programa estava certo e o que ele desenhava não era o que se pensava.** É o argumento para olhar as capturas a cada passo, e não no fim.
