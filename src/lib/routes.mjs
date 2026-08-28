@@ -135,6 +135,26 @@ export const ROUTES = {
   regioes: { pt: '/regioes', en: '/en/regions' },
   regiao: { pt: '/regioes/:slug', en: '/en/regions/:slug' },
   /**
+   * AS ÁREAS DE GOVERNO, E A PÁGINA DE CADA UMA (decisão 6 da auditoria de
+   * 25.08.2026, forma A, mandada pelo diretor a 27.08 e 28.08).
+   *
+   * Uma área de governo é o conjunto de matérias de um ministério, e o nome é o
+   * que o Governo publica: a secção portuguesa do sítio do Governo chama-se
+   * «área de governo», e é dela que estas páginas tomam o nome.
+   *
+   * O `:slug` é o nome da área sem acentos, escrito em `src/data/areas.mjs`, e é
+   * igual nas duas edições, porque o que se traduz é o rótulo e nunca a chave.
+   * A palavra do endereço é a mesma nas duas edições pela mesma razão por que
+   * `agenda` o é: «areas» é palavra das duas línguas, e o brief escreve-a assim.
+   *
+   * SÓ EXISTEM AS PÁGINAS DAS ÁREAS COM PEÇAS: o `getStaticPaths()` sai de
+   * `slugsDasAreas()`, que lê a lista de dados e o livro-razão. Uma área
+   * declarada sem uma linha por baixo não ganha endereço, porque uma página que
+   * só tivesse o nome de um ministério não é conteúdo.
+   */
+  areas: { pt: '/areas', en: '/en/areas' },
+  area: { pt: '/areas/:slug', en: '/en/areas/:slug' },
+  /**
    * A agenda: o que se mede agora, o que se segue, e o calendário das fontes.
    *
    * Os dois registos vêm do motor (`src/data/agenda.json` e

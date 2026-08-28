@@ -44,6 +44,11 @@ const outra = outraLingua ?? otherLanguagePath(aqui, lang);
 const secoes = [
   ['home', s.nav.inicio],
   ['municipios', s.nav.municipios],
+  /* «Áreas» entra com as páginas das áreas (decisão 6 da auditoria de 25.08.2026).
+     O rodapé é o índice do sítio, e uma família de páginas que existe e não está
+     nele é uma família sem porta comum: é a razão pela qual `/municipios` está
+     aqui desde §1.36, e é a mesma. */
+  ['areas', s.nav.areas],
   ['estudos', s.nav.estudos],
   ['livro', s.nav.livro],
   ['agenda', s.nav.agenda],

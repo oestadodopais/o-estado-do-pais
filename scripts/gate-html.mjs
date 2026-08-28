@@ -90,6 +90,12 @@ import { MUNICIPIOS, DISTRITOS } from '../src/data/caop-centroids.mjs';
    São duas contas de coisas diferentes sobre a mesma afirmação, que é o que faz
    a comparação valer alguma coisa (a disciplina da §1.24). */
 import { REGIOES } from '../src/data/regioes.mjs';
+/* A lista das áreas declaradas, para as chaves de `areas_pecas_*`. O portão lê a
+   lista DECLARADA e conta as peças que cada página construída rendeu; a prova lê
+   a lista e o livro-razão. Duas contas de sítios diferentes sobre a mesma
+   afirmação, que é a disciplina da §1.24. */
+import { AREAS } from '../src/data/areas.mjs';
+import { CHAVE_DAS_PECAS } from '../src/lib/prova.mjs';
 import { slugDeConcelho } from '../src/lib/inicio.mjs';
 import { tituloDaLinha, descricaoDaLinha } from '../src/lib/livro.mjs';
 import { matchPath, routePath, HREFLANG, LANGS, PRIMARY_LANG } from '../src/lib/routes.mjs';
@@ -447,6 +453,16 @@ const agendaRenderizada = new Map();
  * próprio ponto de observação — páginas, e não os módulos de onde elas saíram.
  */
 const paginasPorRota = new Map();
+/**
+ * AS PEÇAS QUE CADA PÁGINA DE ÁREA RENDEU, por «língua:slug».
+ *
+ * É o ponto de observação do portão para `areas_pecas_*`: a prova conta-as na
+ * lista de dados e no livro-razão, e o portão conta o que a PÁGINA CONSTRUÍDA
+ * tem marcado `data-area-peca`. Uma peça que o mapa dá e a página não rende, ou
+ * uma que a página rende e o mapa não dá, dá dois números diferentes e a
+ * construção fecha.
+ */
+const pecasDeArea = new Map();
 /** Páginas de linha construídas SEM `noindex`, por edição. */
 const linhasIndexaveis = new Set();
 
@@ -3051,6 +3067,14 @@ function contasDoPortao(claims) {
        diferentes e a construção fecha. */
     conta('regioes_total', REGIOES.filter((r) => !r.referencia).length, 'modulo'),
     conta('regioes_com_linha', (paginasPorRota.get('pt:regiao') ?? 0), 'dist'),
+    /* AS CHAVES DAS ÁREAS DE GOVERNO (decisão 6 de 25.08.2026). Uma por área
+       declarada, contada nas PEÇAS QUE A PÁGINA RENDEU. Uma área declarada sem
+       página construída conta zero, que é o que a prova também lhe dá quando não
+       tem peças: as duas contas encontram-se no zero, e é aí que uma área
+       declarada e nunca construída se vê. */
+    ...AREAS.map((a) =>
+      conta(CHAVE_DAS_PECAS(a.slug), pecasDeArea.get(`pt:${a.slug}`) ?? 0, 'dist'),
+    ),
     ...DISTRITOS.map((nome, i) =>
       conta(
         `mapa_concelhos_${slugDeConcelho(nome)}`,
@@ -3334,6 +3358,12 @@ for (const file of ficheirosHtml(DIST)) {
   if (rota) {
     const chaveDaRota = `${rota.lang}:${rota.key}`;
     paginasPorRota.set(chaveDaRota, (paginasPorRota.get(chaveDaRota) ?? 0) + 1);
+  }
+  if (rota?.key === 'area') {
+    pecasDeArea.set(
+      `${rota.lang}:${rota.params.slug}`,
+      root.querySelectorAll('[data-area-peca]').length,
+    );
   }
   if (rota?.key === 'linha') {
     /* Uma linha incompleta leva `noindex` e sai do mapa do sítio. É essa marca,

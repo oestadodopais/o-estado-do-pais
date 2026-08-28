@@ -1,0 +1,16 @@
+---
+/**
+ * A página de uma área de governo, nas duas edições, da mesma construção.
+ * Os caminhos saem da lista de dados e do livro-razão: uma área sem peças não
+ * tem página, e não há lista escrita à mão.
+ */
+import AreaView from '../../views/AreaView.astro';
+import { slugsDasAreas } from '../../lib/areas.mjs';
+
+export function getStaticPaths() {
+  return slugsDasAreas().map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+---
+<AreaView lang="pt" slug={slug} />

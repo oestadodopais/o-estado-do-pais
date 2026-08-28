@@ -35,6 +35,11 @@ export const STRINGS = {
     nav: {
       inicio: 'Início',
       municipios: 'Municípios',
+      /* «Áreas» entra no rodapé no commit em que as páginas das áreas são
+         construídas. O rodapé é o índice do sítio (ver `SiteFooter.astro`), e
+         uma família de páginas que existe e não está nele é uma família sem
+         porta comum. */
+      areas: 'Áreas',
       estudos: 'Estudos',
       livro: 'Livro-razão',
       agenda: 'Agenda',
@@ -377,6 +382,11 @@ export const STRINGS = {
          regiões. A cadeia fica aqui, com esta nota, porque volta ao comando no
          dia em que essa página existir. */
       regiao: 'Região',
+      /* «ÁREAS» É UMA PORTA, COMO «REGIÃO» (decisão 6 da auditoria de 25.08).
+         Não é um estado do endereço: não existe `?ambito=area:<slug>` e não vai
+         existir, porque uma área vive na sua página, como a região desde a
+         Emenda 21b e o concelho desde a Emenda 19a. */
+      area: 'Áreas',
       /* «CONCELHO» E NÃO «MUNICÍPIO» (bloco A, item A2). É a palavra que o resto
          da primeira página já usa — a pesquisa diz «Escreva o nome do concelho»,
          a legenda do mapa diz «308 concelhos» —, e um comando que chama à mesma
@@ -740,6 +750,48 @@ export const STRINGS = {
       distanciaUnidade: 'pontos do índice',
       voltarIndice: 'As regiões de Portugal',
       voltarPais: 'Portugal',
+    },
+
+    /**
+     * AS ÁREAS DE GOVERNO (decisão 6 da auditoria de 25.08.2026, forma A).
+     *
+     * O nome de cada área não está aqui: está em `src/data/areas.mjs`, tal como
+     * o Governo o publica nas duas edições, e é o mesmo caso do nome de uma
+     * região. O que está aqui é a mobília à volta dele.
+     *
+     * A LEDE DIZ O QUE UMA ÁREA É, e mais nada. Não diz quantas áreas o sítio
+     * cobre nem porque é que estas e não outras: isso seria o sítio a falar da
+     * sua própria cobertura, que é o que a Emenda 15 manda sair de uma página do
+     * leitor. Quem quiser saber por que via uma peça está numa área tem, em cada
+     * linha, o nome de quem a publica.
+     */
+    areas: {
+      metaTitle: 'Áreas de governo · O Estado do País',
+      metaDescription:
+        'As áreas de governo de Portugal, e os trabalhos e as medidas publicados pelos organismos de cada uma.',
+      eyebrow: 'Áreas de governo',
+      h1: 'As áreas de governo',
+      lede:
+        'Uma área de governo é o conjunto de matérias de um ministério, tal como a lei orgânica do Governo o fixa.',
+      /* Uma ou muitas, escolhidas na construção com a contagem que o portão vai
+         reconferir. Sem plural inventado. */
+      contaUma: ' peça',
+      contaMuitas: ' peças',
+      /* A cauda e a descrição do `<head>` de uma área, compostas com o nome
+         dela, como as das páginas de região e de concelho. */
+      metaCauda: 'área de governo · O Estado do País',
+      metaDescricaoA: 'Os trabalhos e as medidas publicados pelos organismos de ',
+      metaDescricaoB: ', área de governo.',
+      /* O tipo da coisa, e não o que fizemos com ela (Emenda 18b). */
+      tipo: 'área do XXV Governo Constitucional',
+      trabalhosK: 'Os trabalhos',
+      conjuntosK: 'Os estudos de dados',
+      medidasK: 'As medidas',
+      /* A porta do texto de um trabalho, quando ele existe nesta edição. */
+      textoDoTrabalho: 'O texto',
+      voltarIndice: 'As áreas de governo',
+      voltarLivro: 'O livro-razão',
+      voltarConcelhos: 'Os concelhos',
     },
 
     /**
@@ -1441,6 +1493,7 @@ export const STRINGS = {
     nav: {
       inicio: 'Home',
       municipios: 'Municipalities',
+      areas: 'Areas',
       estudos: 'Studies',
       livro: 'Ledger',
       agenda: 'Agenda',
@@ -1636,6 +1689,7 @@ export const STRINGS = {
       rotulo: 'Scope',
       pais: 'Country',
       regiao: 'Region',
+      area: 'Areas',
       municipio: 'Municipality',
       pesquisaRotulo: 'Type the name of the municipality',
       pesquisaSemResultado: 'No municipality by that name.',
@@ -1791,6 +1845,29 @@ export const STRINGS = {
       distanciaUnidade: 'index points',
       voltarIndice: 'The regions of Portugal',
       voltarPais: 'Portugal',
+    },
+
+    areas: {
+      metaTitle: 'Government areas · O Estado do País',
+      metaDescription:
+        'The areas of government of Portugal, and the studies and measures published by the bodies of each one.',
+      eyebrow: 'Government areas',
+      h1: 'The areas of government',
+      lede:
+        'An area of government is the set of matters of one ministry, as the Government’s organic law fixes it.',
+      contaUma: ' piece',
+      contaMuitas: ' pieces',
+      metaCauda: 'government area · O Estado do País',
+      metaDescricaoA: 'The studies and measures published by the bodies of ',
+      metaDescricaoB: ', an area of government.',
+      tipo: 'area of the XXV Constitutional Government',
+      trabalhosK: 'The studies',
+      conjuntosK: 'The data studies',
+      medidasK: 'The measures',
+      textoDoTrabalho: 'The text',
+      voltarIndice: 'The areas of government',
+      voltarLivro: 'The ledger',
+      voltarConcelhos: 'The municipalities',
     },
 
     home: {

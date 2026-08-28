@@ -1,0 +1,11 @@
+---
+import AreaView from '../../../views/AreaView.astro';
+import { slugsDasAreas } from '../../../lib/areas.mjs';
+
+export function getStaticPaths() {
+  return slugsDasAreas().map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+---
+<AreaView lang="en" slug={slug} />

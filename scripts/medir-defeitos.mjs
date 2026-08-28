@@ -298,6 +298,12 @@ const ROTAS_DO_INVENTARIO = new Set([
      com esse nome, e por isso conta-se uma vez e não uma por região. */
   'regioes',
   'regiao',
+  /* O ÍNDICE DAS ÁREAS DE GOVERNO E A PÁGINA DE CADA UMA (decisão 6 da auditoria
+     de 25.08.2026). Entram no commit em que são construídas, que é a regra desta
+     lista. São páginas do leitor como o índice das regiões e a página de uma
+     região: a Emenda 15 governa-as, e a sua autorreferência vai a zero. */
+  'areas',
+  'area',
 ]);
 
 /**

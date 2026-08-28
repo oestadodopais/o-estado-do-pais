@@ -1,0 +1,167 @@
+---
+/**
+ * A PÁGINA DE UMA ÁREA DE GOVERNO: `/areas/<slug>` e `/en/areas/<slug>`.
+ *
+ * ---------------------------------------------------------------------------
+ * O QUE ESTÁ AQUI, E PORQUE ESTÁ
+ * ---------------------------------------------------------------------------
+ *   · a cabeça, com o nome da área tal como o Governo o publica e o tipo da
+ *     coisa, «área do XXV Governo Constitucional», que é o que ela é e não o que
+ *     fizemos com ela (Emenda 18b);
+ *   · os trabalhos do arquivo cujas linhas esta área publica, cada um com a sua
+ *     porta e, quando existe nesta edição, a porta do seu texto;
+ *   · os estudos de dados, que entram como uma peça e não como novecentas;
+ *   · as medidas, cada uma com o valor, o selo que abre a sua linha e o
+ *     identificador dela. O brief pede «o valor e o selo», e são estes dois: os
+ *     outros campos da linha-espécime do livro-razão (unidade, fonte, lido a)
+ *     entram lá por `data-linha-*`, que é a marca de um campo do livro-razão NA
+ *     PÁGINA DO LIVRO-RAZÃO, e esta não é uma. A guarda do portão é boa e não se
+ *     contorna: quem a levantasse abria uma segunda porta para pôr texto do
+ *     livro-razão em prosa corrente, e de caminho tirava a esta página a
+ *     auditoria do selo, que o portão só faz fora das páginas do livro-razão.
+ *     Os cinco campos estão a um clique, na página da linha, que é a porta que o
+ *     selo abre;
+ *   · as portas.
+ *
+ * ---------------------------------------------------------------------------
+ * A DISPOSIÇÃO É A B · CORPO E APARELHO (IDENTIDADE §3)
+ * ---------------------------------------------------------------------------
+ * É a disposição das páginas de linha do livro-razão, e esta página é uma lista
+ * de linhas com as suas portas: o corpo tem as peças, a coluna tem a legenda dos
+ * selos e as saídas. A C está reservada para instrumentos e não há nenhum aqui.
+ *
+ * ---------------------------------------------------------------------------
+ * NENHUM NÚMERO É ESCRITO NESTA PÁGINA
+ * ---------------------------------------------------------------------------
+ * Os valores são linhas do livro-razão, citados por `<Claim>` e com o selo que
+ * leva à linha. A contagem das peças vive no índice, onde a sua porta é esta
+ * página. Não há aqui uma contagem de quantas linhas dos concelhos são desta
+ * área: seria um número do próprio sítio com a porta numa página que mostra
+ * outra coisa, e a lista da página do conjunto é quem as conta.
+ */
+import Base from '../layouts/Base.astro';
+import Claim from '../components/Claim.astro';
+import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
+import { areaDoSlug, nomeDoEstudo, temTexto } from '../lib/areas.mjs';
+import { getClaim, provenienciaIncompleta } from '../lib/ledger.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+import '../styles/linha.css';
+import '../styles/area.css';
+
+const { lang = 'pt', slug } = Astro.props;
+const s = t(lang);
+
+const area = areaDoSlug(slug);
+if (!area) throw new Error(`areas: área desconhecida ou sem peças "${slug}"`);
+
+const path = routePath('area', lang, { slug });
+const nome = area.nome[lang] ?? area.nome.pt;
+const medidas = area.pecas.medidas.map((m) => ({ ...m, linha: getClaim(m.id) }));
+---
+
+<Base
+  lang={lang}
+  path={path}
+  title={`${nome} · ${s.areas.metaCauda}`}
+  description={`${s.areas.metaDescricaoA}${nome}${s.areas.metaDescricaoB}`}
+>
+  <div class="linha-cabeca area-cabeca">
+    <span class="eyebrow">{s.areas.eyebrow}</span>
+    <h1>{nome}</h1>
+    <p class="area-tipo">{s.areas.tipo}</p>
+  </div>
+
+  <div class="linha">
+    <div class="linha-corpo">
+      {
+        area.pecas.trabalhos.length > 0 && (
+          <section class="linha-bloco" id="trabalhos" aria-labelledby="trabalhos-k">
+            <h2 class="linha-bloco-titulo livro-grupo-k" id="trabalhos-k">
+              {s.areas.trabalhosK}
+            </h2>
+            <ul class="areas-pecas">
+              {area.pecas.trabalhos.map((p) => (
+                <li class="areas-peca" data-area-peca="trabalho">
+                  <a href={routePath('estudo', lang, { slug: p.slug })}>
+                    <TituloDeTrabalho titulo={nomeDoEstudo(p.id, lang)} lang={lang} />
+                  </a>
+                  {temTexto(p.slug, lang) && (
+                    <a class="areas-peca-porta" href={routePath('texto', lang, { slug: p.slug })}>
+                      {s.areas.textoDoTrabalho}
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+
+      {
+        area.pecas.conjuntos.length > 0 && (
+          <section class="linha-bloco" id="conjuntos" aria-labelledby="conjuntos-k">
+            <h2 class="linha-bloco-titulo livro-grupo-k" id="conjuntos-k">
+              {s.areas.conjuntosK}
+            </h2>
+            <ul class="areas-pecas">
+              {area.pecas.conjuntos.map((p) => (
+                <li class="areas-peca" data-area-peca="conjunto">
+                  <a href={routePath(p.conjunto, lang)}>
+                    <TituloDeTrabalho titulo={nomeDoEstudo(p.id, lang)} lang={lang} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+
+      {
+        medidas.length > 0 && (
+          <section class="linha-bloco" id="medidas" aria-labelledby="medidas-k">
+            <h2 class="linha-bloco-titulo livro-grupo-k" id="medidas-k">
+              {s.areas.medidasK}
+            </h2>
+            <div class="livro-lista" data-area-grupo={area.slug}>
+              {medidas.map((m) => (
+                <div
+                  class="livro-item"
+                  data-area-peca="medida"
+                  data-estado={provenienciaIncompleta(m.linha) ? 'por-confirmar' : 'completa'}
+                >
+                  <span class="livro-item-valor">
+                    <Claim id={m.id} lang={lang} as="span" class="livro-item-num" chip={true} />
+                  </span>
+                  <code class="livro-item-id" data-nonledger="identificador-tecnico">
+                    {m.id}
+                  </code>
+                </div>
+              ))}
+            </div>
+          </section>
+        )
+      }
+    </div>
+
+    <aside class="aparelho" aria-labelledby="aparelho">
+      <h2 class="aparelho-titulo" id="aparelho">{s.livro.seloK}</h2>
+      <ul class="aparelho-selos">
+        <li>
+          <span class="src-chip src-chip-amostra" aria-hidden="true"></span>
+          <span>{s.livro.seloCheio}</span>
+        </li>
+        <li>
+          <span class="src-chip src-chip-amostra is-unverified" aria-hidden="true"></span>
+          <span>{s.livro.seloTracejado}</span>
+        </li>
+      </ul>
+
+      <p class="rodape-nav aparelho-saidas">
+        <a href={routePath('areas', lang)}>{s.areas.voltarIndice}</a>
+        <a href={routePath('livro', lang)}>{s.areas.voltarLivro}</a>
+        <a href={routePath('municipios', lang)}>{s.areas.voltarConcelhos}</a>
+      </p>
+    </aside>
+  </div>
+</Base>

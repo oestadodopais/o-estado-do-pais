@@ -1,0 +1,103 @@
+/* ============================================================================
+ * AS ÁREAS DE GOVERNO: O ÍNDICE E A PÁGINA DE CADA UMA
+ * ============================================================================
+ * Decisão 6 da auditoria de UX de 25.08.2026, forma A.
+ *
+ * O que NÃO está aqui: a linha-espécime do livro-razão (`.livro-lista`,
+ * `.livro-item` e o que ela leva dentro), a coluna do aparelho, a cabeça de uma
+ * página de linha e as saídas. Tudo isso vive em `site.css` e em `linha.css`,
+ * que a página das áreas importa, e uma segunda cópia dessas regras aqui
+ * divergiria da primeira à primeira correção. A lição está escrita em
+ * `distrito.css` e é a regra 15 da casa: uma folha que dá por herdadas regras
+ * que não importa desenha a preto sólido.
+ */
+
+/* ---------------------------------------------------------------- a cabeça */
+
+.area-cabeca {
+  padding-top: clamp(20px, 3vw, 34px);
+}
+.area-cabeca h1 {
+  margin-top: 12px;
+}
+.area-cabeca .lede {
+  margin-top: 16px;
+}
+/* A palavra que diz de que natureza é a coisa, na gramática de `.distrito-tipo`
+   e de `.regiao-tipo`: uma etiqueta, na letra de instrumento, e não uma lede. */
+.area-tipo {
+  margin: 8px 0 0;
+  font-family: var(--f-instr);
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------- o índice */
+
+/* A mesma fila de nomes do índice das 29 unidades, com a altura de alvo da casa
+   em cada linha. Uma coluna a mais do que ali porque cada linha leva também a
+   contagem das peças, e dois nomes longos lado a lado apertavam-na. */
+.areas-lista {
+  list-style: none;
+  margin: clamp(22px, 3vw, 30px) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0 clamp(18px, 2.4vw, 30px);
+}
+.areas-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 12px;
+  min-height: 44px;
+}
+.areas-item a {
+  display: block;
+  min-height: 44px;
+  line-height: 44px;
+}
+.areas-conta {
+  font-family: var(--f-instr);
+  font-size: 14px;
+  color: var(--muted);
+}
+.areas-conta a {
+  display: inline;
+  min-height: 0;
+  line-height: inherit;
+}
+
+.area-portas {
+  margin-top: clamp(30px, 4vw, 44px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px clamp(16px, 2.2vw, 26px);
+}
+
+/* ------------------------------------------------ as peças que são portas */
+
+/* Os trabalhos e os estudos de dados: uma lista de nomes com a sua porta, na
+   altura de alvo da casa. As medidas não estão aqui: são a linha-espécime do
+   livro-razão, e desenham-se com as regras dela. */
+.areas-pecas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.areas-peca {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 clamp(14px, 2vw, 22px);
+  padding: 4px 0;
+}
+.areas-peca > a {
+  display: block;
+  min-height: 44px;
+  line-height: 44px;
+}
+.areas-peca-porta {
+  font-family: var(--f-instr);
+  font-size: 14px;
+}
