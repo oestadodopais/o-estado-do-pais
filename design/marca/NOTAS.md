@@ -8,6 +8,8 @@
 
 **Está:** dezanove desenhos em `direcoes/*.svg` (o campo é 512, o sinal cabe em 360), a prancha `PRANCHA.html` com a captura `PRANCHA.png`, os PNG de cada um em `EXPORT/`, as maquetas do ecrã principal em `ECRA-*.png`, e os dois programas que os fazem. As sete primeiras são de 28.08 de manhã; a H, a I e a J são a resposta à terceira adenda, que pediu a palavra «Estado»; a J2 é a quarta adenda, depois de o diretor ter escolhido a palavra; e as **sete vozes** (`12` a `18`, mais a `14b`, que é um campo alternativo e não uma voz) são a resposta à quinta, depois de o diretor ter dito que a palavra ao tamanho de um ícone pode não funcionar e que não encontrou nenhum desenho de que gostasse. As vozes estão na §6; as onze primeiras na §5.
 
+**E está, ao lado e não no meio, uma exploração:** cinquenta e cinco desenhos em `direcoes-e2/*.svg`, os PNG deles em `EXPORT-E2/`, e as três folhas `FOLHA-E2.png`, `FOLHA-E2-cores.png` e `ECRA-E2.png`. É a resposta à sexta adenda, que não pede uma variante mas uma grelha: oito comprimentos de barra contra cinco cortes, e seis pares de cor. **Não são direções**, e por isso não estão em `direcoes/`, não entram na prancha e não entram na ordem da §7: são células de uma tabela, e uma célula de tabela não é uma proposta de marca. Estão na §6 ter.
+
 **Não está:** nenhum ficheiro em `public/`, nenhuma linha no `<head>` de `src/layouts/Base.astro`, nenhum manifesto, nenhuma dependência nova no `package.json`. O sítio no ar continua sem ícone, exatamente como estava. `npm run typecheck` passa, e passava antes: `tsconfig.check.json` não olha para `design/`.
 
 **A ordem em que isto se refaz**, e importa porque a prancha embebe os PNG:
@@ -21,11 +23,24 @@ python3 design/marca/desenhar.py prancha  # a prancha, com os PNG e as maquetas 
 node   design/marca/exportar.mjs          # a captura PRANCHA.png
 ```
 
+E a ronda de exploração da sexta adenda, que é outra corrente e não passa por
+`direcoes/` nem pela prancha:
+
+```
+python3 design/marca/desenhar.py e2               # os 55 SVG de direcoes-e2/
+node   design/marca/exportar.mjs e2               # 3 PNG por célula, para EXPORT-E2/
+python3 design/marca/desenhar.py folha-e2         # FOLHA-E2.png, a barra contra o corte
+python3 design/marca/desenhar.py folha-e2-cores   # FOLHA-E2-cores.png
+python3 design/marca/desenhar.py ecra-e2          # ECRA-E2.png
+```
+
 E dois comandos que não escrevem desenho nenhum, e que existem para os números
 desta nota se poderem conferir: `desenhar.py medir [tamanhos]`, que lê os PNG de
 `EXPORT/` e conta a tinta, o sinal, as ilhas e as corridas; e
 `desenhar.py contrastes`, que calcula os pares de cor da sétima voz pela fórmula
-da WCAG.
+da WCAG. A estes juntou-se `desenhar.py medir-e` (a régua do «e» refinado, §6 bis) e
+`desenhar.py medir-e2` (a da grelha, §6 ter), que lê `EXPORT-E2/` e conta também as
+ilhas do sinal, a folga da barra e a abertura procurada no sector do corte.
 
 As maquetas precisam do `Pillow` e de um tipo do sistema para o rótulo (o Helvetica); como o resto de `desenhar.py`, não correm na construção do sítio.
 
@@ -751,6 +766,143 @@ A razão, por ordem dos critérios da casa:
 
 ---
 
+## 6 ter · O «e», explorado
+
+*A sexta adenda (`ADENDA-6-e-explorar.md`) não pede uma variante, pede uma grelha. O diretor viu o «e» refinado e disse que não está lá, que as cores não são agradáveis, e que preto e branco talvez fossem melhores; e deixou duas pistas, ditas como pistas e não como regras: a barra podia parar antes de chegar ao círculo, a dois terços do caminho, a flutuar dentro do bojo; e o corte podia ser menor. Esta secção mede os dois eixos e a cor, e diz de cada célula o que ela ganha e o que ela perde. Tudo o que aqui tem número foi lido dos PNG de `EXPORT-E2/` com `desenhar.py medir-e2`, ou contado do desenho e dito como tal. As folhas são `FOLHA-E2.png` (a barra contra o corte), `FOLHA-E2-cores.png` (as cores) e `ECRA-E2.png` (o ecrã principal).*
+
+**A grelha é toda de uma grossura só, 14 % do diâmetro, que é a `18n`,** e todas as células têm o corte contado da barra, como na §6 bis. É por isso que a tabela é cruzada e não uma tira: com o corte contado do ângulo do ficheiro, encurtar a barra mudava a abertura à vista, e as duas colunas de cada linha não seriam comparáveis.
+
+### O que a régua passou a separar, e porquê
+
+A `medir-e` conta as ilhas do **fundo**, porque a pergunta da ronda anterior era se o bojo abre. A desta é outra, e obriga a três números novos.
+
+* **As ilhas do sinal.** Uma barra solta das duas pontas faz do sinal duas peças. Isso conta-se, não se acha, e os dois inteiros juntos dizem qual das três coisas se está a ver: `sinal 1, fundo 2` é um «e» de olho fechado; `sinal 1, fundo 1` é a mesma letra com o olho aberto; `sinal 2, fundo 1` é um anel com um traço solto lá dentro.
+* **A folga da barra**, medida na linha do meio do ficheiro: os vazios entre a primeira e a última tinta dessa linha. É a distância que o olho tem de saltar para juntar o traço ao anel, em píxeis do ficheiro e não em unidades do desenho.
+* **A abertura procurada no sector do corte** e não na volta toda. **E isto é uma correção que a própria grelha obrigou a fazer.** A `medir-e` procura o maior arco sem tinta sobre a circunferência do meio da banda, e isso chegava enquanto a barra ia de parede a parede, porque o único buraco sobre essa circunferência era o corte. Com uma barra que para há um segundo buraco, o entalhe da ponta livre, e à primeira a régua devolveu **2,0 px de «corda» para um anel fechado**: o que ela mediu foi o entalhe. O corte está num sítio conhecido, entre a face da barra e a ponta de baixo da banda, e é ali que se procura.
+
+**E a corda passou a ter dois números, o medido e o desenhado.** Aos 16 px a banda tem 3 px contando o suavizado, e a medida diz o que sobrevive no ficheiro enquanto a desenhada diz o que lá foi posto. A diferença entre as duas é quanto o suavizado comeu, e nenhuma delas sozinha diz isso.
+
+### 1 · A barra, e o que ela deixa de ser quando para
+
+O comprimento conta-se em **vão**, que é a distância de parede a parede por dentro do anel, medida sobre o eixo da barra: `2 (r − g)`, ou 216 unidades num anel de raio 150. A barra unida não cabe nesta conta, porque as pontas dela são cordas do círculo de **fora**, e fica como o topo do eixo.
+
+| a barra | folga desenhada | sinal a 60 | folga a 60 | folga a 16 | ilhas a 60 | ilhas a 16 | o que se vê a 60 |
+|---|---|---|---|---|---|---|---|
+| unida ao anel (a de hoje) | 0 | **23,4 %** | 0 px | 0 px | sinal 1, fundo 2 | sinal 1, fundo 2 | um «e» |
+| livre, 3/4 do vão | 27 u (9 % do diâmetro) | 22,5 % | 3 px | 1 px | sinal 2, fundo 1 | sinal 2, fundo 3 | anel com traço solto |
+| livre, 2/3 do vão | 36 u (12 %) | 22,1 % | 4 px | 1 px | sinal 2, fundo 1 | sinal 2, fundo 3 | anel com traço solto |
+| livre, 1/2 do vão | 54 u (18 %) | 21,1 % | 7 px | 2 px | sinal 2, fundo 1 | sinal 2, fundo 1 | um sinal de menos num anel |
+| presa à esquerda, 3/4 | 54 u (18 %) | 22,3 % | 7 px | 2 px | sinal 1, fundo 1 | sinal 1, fundo 1 | um «e» com o olho aberto |
+| presa à esquerda, 2/3 | 72 u (24 %) | 21,9 % | 9 px | 2 px | sinal 1, fundo 1 | sinal 1, fundo 1 | um «e» com o olho aberto |
+| presa à esquerda, 1/2 | 108 u (36 %) | 20,9 % | 15 px | 4 px | sinal 1, fundo 1 | sinal 1, fundo 1 | um «e» com a travessa curta |
+| **presa à direita, 2/3** (sonda) | 72 u (24 %) | 22,0 % | 9 px | 2 px | sinal 1, fundo 1 | sinal 1, fundo 1 | um «e» de estêncil |
+
+A corrida mínima não separa nenhuma delas: é 1 px a 180 e a 60 px em todas as oito, e 2 px a 16 em todas as oito. Quem quiser separar este eixo tem de o fazer pelas ilhas e pela folga, que é o que a tabela faz.
+
+**O que muda quando a barra para, dito de uma vez.** O olho fechado é a assinatura topológica do «e». Enquanto a barra vai de parede a parede, o vazio de cima está fechado e o de baixo abre para o campo pelo corte: fundo em duas ilhas. Assim que uma ponta se solta, os dois vazios passam a comunicar pela folga e o fundo fica com uma ilha só. **Nenhuma das sete variantes de barra encurtada tem o olho fechado, e isso não é uma questão de grau: é um inteiro que muda.** O que fica em jogo depois disso é se a letra ainda se lê apesar do olho aberto, e aí as duas famílias separam-se.
+
+E uma coisa que só a medição a 16 px mostra: nas duas livres mais compridas, o fundo passa de **1 ilha a 60 px para 3 ilhas a 16 px**. O suavizado cola a ponta da barra à parede nos cantos e deixa o meio da folga por encher, e o que fica são dois bolsos de luz de um píxel de cada lado. Aos 16 px essas duas leem-se melhor do que a 60, o que é o contrário do que este trabalho encontra em todo o resto.
+
+**Uma linha por variante.**
+
+* **Unida ao anel.** Melhor: é a única com o olho fechado, e portanto a única que é um «e» sem discussão; é também a que mais pinta a cela, 23,4 % a 60 px contra 20,9 % da mais curta. Pior: é a de hoje, e é exatamente aquilo de que o diretor disse não gostar.
+* **Livre, 3/4.** Melhor: das três livres é a que menos se afasta da letra, com 3 px de folga a 60. Pior: o sinal são duas peças, e a 60 px o que se vê é um anel com um traço lá dentro; a folga de 3 px é pequena de mais para se ler como decisão e grande de mais para se ler como junta.
+* **Livre, 2/3.** É a ideia do diretor à letra. Melhor: a barra fica claramente separada, o desenho é limpo e a folga é igual dos dois lados. Pior: **não é um «e»**, é um sinal de menos dentro de um anel, e num sítio de contas públicas essa leitura tem dono, porque um traço horizontal dentro de um círculo é o que se usa para «negativo» e para «proibido». Troca a colisão com o «€», que a ronda anterior resolveu, por outra do mesmo tipo.
+* **Livre, 1/2.** Melhor: é a mais limpa das oito, e a que menos matéria tem. Pior: é a que mais claramente não é uma letra, e é a mais leve da grelha, 21,1 % a 60 px.
+* **Presa à esquerda, 3/4.** Melhor: o sinal é uma peça só, a barra continua a ser parte da letra, e a folga de 7 px a 60 lê-se como corte deliberado. Pior: o entalhe fica do lado direito, que é o lado que o corte do anel já come, e o lado direito da letra fica interrompido duas vezes.
+* **Presa à esquerda, 2/3.** O mesmo, com 9 px de folga a 60. Melhor: a dupla interrupção é a mais visível das três, e portanto a mais legível como intenção. Pior: pela mesma razão, é a que mais desequilibra a letra para a esquerda.
+* **Presa à esquerda, 1/2.** Melhor: a travessa curta lê-se como estêncil e não como defeito. Pior: com 15 px de folga a 60 px, a letra começa a ler-se como «ɛ» com uma haste, e é a mais leve das presas, 20,9 %.
+* **Presa à direita, 2/3 (a sonda).** Não foi pedida, e nasceu de olhar para as três de cima. Melhor: com o entalhe à esquerda, o corte e o entalhe ficam em lados opostos, o remate de baixo do anel fica intacto, e a letra lê-se como um «e» de estêncil aos três tamanhos, com 22,0 % a 60 px, que é mais do que qualquer uma das presas à esquerda. Pior: o olho continua aberto, e a folga fica no lado por onde o olho entra na letra.
+
+### 2 · O corte, e onde é que ele deixa de existir
+
+| abertura | corda a 180 | corda a 60 | corda a 16, desenhada | corda a 16, medida | sinal a 60 | matéria na ponta a 60 | fundo a 16 (unida) |
+|---|---|---|---|---|---|---|---|
+| 48 graus (o de hoje) | 43,5 px | 14,2 px | 3,94 px | **3,8 px** | 23,4 % | 5,2 px | 2 ilhas |
+| 36 graus | 32,4 px | 10,3 px | 2,99 px | **2,5 px** | 24,2 % | 5,2 px | 2 ilhas |
+| **28 graus** | 24,9 px | 8,6 px | 2,34 px | **2,1 px** | 24,6 % | 5,1 px | 2 ilhas |
+| 20 graus | 17,2 px | 5,2 px | 1,68 px | **1,0 px** | 25,0 % | 6,0 px | 2 ilhas |
+| 6 graus (fio de cabelo) | 4,0 px | 1,0 px | 0,51 px | **0,0 px** | 26,1 % | 6,1 px | **3 ilhas** |
+
+**A que abertura é que o «e» passa a ser um «o» com uma barra aos 16 px.** A resposta tem duas partes, porque o desenho e o ficheiro não morrem ao mesmo tempo.
+
+1. **O ficheiro fecha aos 6 graus.** A corda medida cai a 0,0 px contra 0,51 px desenhados, o fundo passa de 2 para 3 ilhas, e o vazio do bojo deixa de comunicar com o campo. Já não é um «e»: é um «θ», e olhando a captura ampliada é isso mesmo que se vê.
+2. **A leitura fica em dúvida aos 20 graus**, antes de o ficheiro fechar. A corda desenhada é de 1,68 px e sobra 1,0 px: um píxel a meia luz. O fundo ainda tem 2 ilhas, ou seja tecnicamente o bojo abre, mas um píxel cinzento não é uma abertura para quem olha.
+3. **A menor que ainda se lê sem reservas aos 16 px é a de 28 graus**, com 2,1 px medidos de 2,34 desenhados, ou seja dois píxeis acesos. É o menor corte que o segundo eixo permite.
+
+E há um ganho no corte que fecha, que convém não esconder: **o sinal engorda**. De 48 para 28 graus a cela de 60 px passa de 23,4 % para 24,6 % de sinal, e a matéria na ponta do corte não piora (5,2 px contra 5,1 px). Um corte menor dá mais anel e mais peso pelo mesmo desenho, o que é o contrário do que se costuma pagar por fechar uma abertura.
+
+**Uma linha por abertura.**
+
+* **48 graus.** Melhor: a maior margem aos 16 px, 3,8 px de corda, e o remate de baixo fica longe do fundo do anel. Pior: é o de hoje, e a 180 px o rabo do «e» fica curto, o que faz a letra parecer um «c» com uma barra antes de parecer um «e».
+* **36 graus.** Melhor: o rabo desce e a forma fecha-se sobre si; ainda sobram 2,5 px aos 16 px. Pior: nada que se meça; é a escolha conservadora deste eixo.
+* **28 graus.** Melhor: é onde a letra fica mais resolvida a 180 e a 60 px, o rabo enrola e a abertura ainda acende dois píxeis aos 16; e pinta mais cela, 24,6 %. Pior: a margem aos 16 px passou a ser de dois píxeis, e qualquer engrossamento futuro do anel come um deles.
+* **20 graus.** Melhor: a 180 px é a mais fechada que ainda se lê, e a mais cheia. Pior: aos 16 px sobra um píxel a meia luz, e a abertura medida cai para 13 graus, ou seja o suavizado fecha o corte sozinho.
+* **6 graus.** Melhor: nada, para este uso. Pior: aos 16 px o anel fecha e o sinal passa a ser um «θ», que é a leitura que a adenda quer evitar. Fica na grelha porque um limite que se vê vale mais do que um limite que se supõe.
+
+### 3 · A cor
+
+Os seis pares, com o contraste contado pela fórmula da WCAG e a mancha lida na cela de 180 px da geometria de 28 graus. **A tinta da cela** é quanto dela está escuro, e é o número que diz se o ícone é uma mancha ou um vazio no ecrã principal; **o sinal** é quanto dela é diferente do campo, e é a letra.
+
+| par | contraste | tinta da cela a 180 | sinal a 180 |
+|---|---|---|---|
+| tinta `#17191b` em papel `#f6f7f4` | 16,39:1 | 22,8 % | 23,1 % |
+| papel `#f6f7f4` em tinta `#17191b` | 16,39:1 | **78,7 %** | 23,1 % |
+| branco `#ffffff` em preto `#000000` | **21,00:1** | 78,7 % | 23,2 % |
+| cobalto `#1f4e8c` em papel | 7,73:1 | 22,7 % | 23,1 % |
+| cinzento `#585d5b` (`--g1`) em papel | 6,24:1 | 22,6 % | 23,1 % |
+| âmbar `#e0a21a` em tinta (o de hoje) | 7,85:1 | 100 % | 23,0 % |
+
+**Uma linha por par.**
+
+* **Tinta em papel.** Melhor: 16,39:1, o segundo maior contraste da tabela, e a única cor da casa que não tem de ser escolhida, porque é a do texto. A cela clara põe o ícone ao lado do NYTimes e do Público, que também têm campo claro. Pior: num ecrã escuro é a coisa mais clara do ecrã, um quadrado branco entre nove; e 22,8 % de tinta faz dela uma das celas mais leves.
+* **Papel em tinta.** Melhor: o mesmo 16,39:1 com a cela cheia, 78,7 % de tinta, e é o par que melhor se lê aos 16 px de toda a folha. O sinal medido é o mesmo dos outros pares claros, 23,1 %, e o que muda é o que se vê: a banda branca sobre escuro parece mais grossa do que a preta sobre claro, com os mesmos píxeis. Pior: num ecrã escuro a moldura da cela desaparece contra o fundo e o sinal fica a flutuar sem quadrado; é uma leitura, não um defeito, mas é uma decisão que a direção tem de tomar de olhos abertos.
+* **Branco puro em preto puro.** Melhor: 21,00:1, o máximo possível, e a cela mais escura de todo o ecrã. Pior: o preto puro não existe em `tokens.css` e o sítio inteiro está construído sobre `#17191b`; a diferença medida na cela é nenhuma no sinal (23,2 % contra 23,1 %) e toda no campo, e ao pé do papel do NYTimes o preto puro lê-se mais duro do que a tinta da casa.
+* **Cobalto em papel.** Melhor: 7,73:1, passa os dois limiares, e é a única cor viva da tabela que não é quente; é a cor que o sítio já usa para «dentro do limiar». Pior: **o ecrã principal já tem quatro ícones azuis em oito** (Expresso, Observador, Our World in Data e Pordata), e um quinto azul entre nove é a definição de não se distinguir; e aos 16 px a diferença para o par de 16,39:1 vê-se, porque a letra amolece.
+* **Cinzento `--g1` em papel.** Melhor: 6,24:1, passa os dois limiares, e é o par mais calado dos seis, o que responde ao «as cores não são agradáveis» de forma literal. Pior: aos 16 px é o mais fraco da folha; e o cinzento no sítio quer dizer «texto secundário», ou seja um ícone cinzento diz que a coisa é secundária.
+* **Âmbar em tinta, o de hoje.** Melhor: 7,85:1 e a cela cheia, 100 % de tinta. Pior, e é a pergunta que a adenda faz: **o âmbar `#e0a21a` sobre tinta lê-se como ouro velho sobre preto**, latão, mostarda. É o par de um aviso e o par de uma aplicação financeira de gama alta, e é isso que ele diz antes de dizer o nome do sítio. Aos 16 px escurece para um borrão castanho esverdeado: a luminância simples que a régua usa para contar tinta dá-lhe 165 em 255, e é pouco recorte contra um campo escuro. E no ecrã principal fica na mesma fila do laranja do Poder360. **Isto é o que se vê; não é uma explicação do que o diretor sentiu, é a descrição do que está na imagem.**
+
+**E há uma coisa que a folha das cores mostra e que nenhum dos números diz:** a geometria não muda nada nesta tabela. O sinal fica em 23,0 a 23,2 % em todos os seis pares, porque é o mesmo desenho. Quem escolher a cor está a escolher só a cor, e pode fazê-lo depois de escolher a forma.
+
+### 4 · O que o ecrã principal respondeu
+
+`ECRA-E2.png` põe quatro variantes na cela de 180 px entre os mesmos oito ícones, em ecrã claro e escuro. Três são a mesma geometria (unida, corte de 28) em três pares, e a quarta é a sonda da direita no par que melhor mede.
+
+1. **A cela de tinta é a que segura o lugar no ecrã claro.** 78,7 % de tinta contra 22,8 % da cela clara. E a cela clara fica encostada ao NYTimes, que também tem campo claro e também tem uma letra escura lá dentro: na mesma fila, o que separa as duas passa a ser só o desenho.
+2. **No ecrã escuro trocam.** A cela clara passa a ser a coisa mais clara do ecrã, e a de tinta perde a borda contra o fundo `#101214`: o «e» branco fica a flutuar sem quadrado. Nenhuma das duas é neutra nos dois temas, e o par de cor não pode ser escolhido sem escolher também qual dos dois casos importa mais.
+3. **O cobalto lê-se, e é o quinto azul.** A cela é limpa e a letra é nítida a 180 px, mas na fila de cima já estão o Expresso e o Observador, e na de baixo o Our World in Data e o Pordata.
+4. **A sonda da direita aguenta a cela.** A 180 px o entalhe da barra lê-se como corte de estêncil e não como erro, e a letra continua a ser um «e». É a prova de que a ideia do diretor cabe num ícone, desde que a barra fique presa a uma ponta e essa ponta seja a direita.
+
+### 5 · A recomendação, e são duas
+
+**Primeira, e é a que este trabalho recomenda: `e2-unida-28`, em papel sobre tinta.** A barra como está, de parede a parede, e o corte fechado de 48 para 28 graus.
+
+* É a única geometria da grelha com **o olho fechado aos três tamanhos** (sinal 1 ilha, fundo 2), ou seja a única que é um «e» sem depender de o leitor completar a forma.
+* 28 graus é **a menor abertura que o segundo eixo permite**: 2,1 px de corda medidos aos 16 px, dois píxeis acesos, contra 1,0 px aos 20 graus e 0,0 px aos 6.
+* Fechar o corte **dá peso em vez de o tirar**: 24,6 % de sinal a 60 px contra 23,4 % aos 48 graus, com a matéria na ponta na mesma (5,1 px contra 5,2 px).
+* Responde à segunda pista do diretor até ao limite que a medição permite, e não sacrifica nada de medido para lá chegar.
+* O par de cor é preto e branco, que é o que ele pediu: 16,39:1, a cela cheia a 78,7 %, e a melhor leitura aos 16 px da folha inteira. Para o caso de campo claro, o mesmo desenho em tinta sobre papel, com o mesmo contraste.
+
+**Segunda, se a direção quiser a barra a parar: `e2-dir66-28`, no mesmo par.** A barra a dois terços do vão, presa ao anel **à direita** e livre à esquerda.
+
+* É a versão da primeira pista do diretor **que continua a ser um «e»**: o sinal é uma peça só (1 ilha), a barra continua a ser parte da letra, e o entalhe de 9 px a 60 px lê-se como corte de estêncil.
+* Presa à direita e não à esquerda, porque o corte do anel também está à direita: presa à esquerda, o entalhe e o corte comem o mesmo lado da letra e o lado direito fica interrompido duas vezes. Isto vê-se na `FOLHA-E2.png`, ao comparar as três linhas de «presa à esquerda» com a de baixo.
+* Custa 1,5 pontos de sinal a 60 px (23,1 % contra 24,6 %) e o olho fechado, que é o inteiro que a primeira tem e esta não.
+
+**E o que fica dito sobre a pista tal como o diretor a formulou.** A barra a flutuar dentro do bojo, solta das duas pontas, a dois terços do vão, **não dá um «e»**: dá um traço horizontal dentro de um anel, que é o sinal de menos e o de proibido. Está desenhada, medida e na folha (`e2-livre66-48` e a linha inteira), e sai por leitura e não por gosto: sinal em 2 ilhas a 180 e a 60 px, e a 60 px o que se vê não tem travessa, tem um traço. A parte da pista que sobrevive é a de a barra parar, e o que a salva é prendê-la a uma ponta.
+
+### 6 · O que esta ronda não fez
+
+* **Não mexeu na grossura.** Tudo o que aqui está tem 14 % do diâmetro, que é a recomendação da §6 bis, para que a grelha meça uma coisa de cada vez. Um corte de 28 graus com uma banda de 16 % fecha mais depressa aos 16 px do que este, e isso não está medido.
+* **Não desenhou a barra fora do meio.** Continua por fazer desde a §6 bis, e a sonda da direita torna a pergunta mais interessante, não menos: uma travessa acima do meio com o entalhe à esquerda é a construção de vários «e» de tipo.
+* **Não desenhou o corte não radial.** As faces do corte continuam a apontar ao centro. Um corte horizontal muda a leitura da abertura e não está na grelha.
+* **Não pôs a exploração no cabeçalho nem na prancha.** Estas cinquenta e cinco células vivem em `direcoes-e2/` e em `EXPORT-E2/`, e não entram em `direcoes/`, na `PRANCHA.html` nem na ordem da §7. Se a direção escolher uma, ela passa a direção e ganha lá um lugar; até lá é uma célula de grelha.
+* **Não mediu com fotografia por baixo**, como nas rondas anteriores. O ecrã continua a ter fundo liso.
+* **A colisão com o navegador da Microsoft continua por conferir**, e continua a ser a primeira coisa a fazer quando houver rede. O corte de 28 graus fecha mais o anel do que o de 48, o que aproxima a silhueta de um «o», e isso pode aproximar ou afastar; sem o ficheiro deles não se diz qual.
+* **O par de cor não foi visto na marca horizontal.** A §6 bis mediu o cabeçalho com o âmbar e o ocre; se a direção ficar com preto e branco, o cabeçalho tem de ser refeito, e a âncora B (o «e» à altura de maiúscula) não muda mas o par muda.
+
+---
+
 ## 7 · A ordem de preferência, refeita para as onze
 
 *Esta é a ordem das ONZE primeiras direções, e ficou como estava. A ordem das sete vozes é outra lista e está no fim da §6, porque a adenda das vozes a pediu «só sobre estas», e porque comparar um campo de papel com um campo de cor a partir de números medidos em réguas diferentes daria uma ordem que não queria dizer nada. Quem quiser uma ordem só sobre as dezanove tem de decidir primeiro se o campo entra no critério, e essa é uma decisão de direção.*
@@ -815,6 +967,11 @@ E o que ficou por fazer na ronda do «e» refinado (§6 bis):
 * **Não se desenhou o nome inteiro em contorno.** A marca horizontal leva o «e» desenhado e «O Estado do País» composto em Spectral, que é o que a §1 cobre. Continua a faltar o «P», o «í» e o «s» para o nome poder ser desenhado.
 * **O ficheiro sem campo (`18r`) tem `maskable` e não devia.** Sai do mesmo `exportar.mjs` que os outros, e um `maskable` sem campo não quer dizer nada. Fica assinalado em vez de corrigido, porque a exceção só vale a pena depois de a direção escolher.
 
+E o que ficou por fazer na ronda do «e» explorado (§6 ter) está escrito no fim dessa
+secção, e não se repete aqui: a grossura não se mexeu, a barra fora do meio e o corte
+não radial continuam por desenhar desde a §6 bis, e a colisão com o navegador da
+Microsoft continua a ser a primeira coisa a conferir quando houver rede.
+
 E o que ficou por fazer na ronda das vozes (§6):
 
 * **«do País» não está desenhado em voz nenhuma.** A marca horizontal das sete leva «Estado» desenhado e o artigo e o «do País» compostos em Spectral (ou em Spectral SC, no cinzel). Faltam o «P», o «í» com acento e um segundo «s» para que uma delas possa ter o nome inteiro desenhado, e isso é outro trabalho.
@@ -849,3 +1006,9 @@ Cerca de **250 mil símbolos** na quinta sessão, a do «e» refinado. As corre�
 1. **A premissa da adenda estava errada, e só a medição com sítio o mostrou.** «A ponta do corte afina para 1 px» é verdade quanto ao número e falso quanto ao que ele mede: é uma linha de píxeis a rasar um canto vivo. Sem saber o sítio da corrida mínima, a ronda teria começado por engrossar uma ponta que tem 3,9 px.
 2. **A janela da primeira medição da ponta era um rectângulo fixo**, e o corte anda com o ângulo: a variante de corte largo ficava com a ponta fora da janela e a medição dizia «15 px» onde devia dizer 5. Passou a ser um disco centrado na ponta, calculado a partir do raio e do ângulo lidos na própria imagem.
 3. **O lockup só se viu quando se rendeu a 1:1.** O «e» descia 0,12 da altura de maiúscula abaixo da linha de base e ficava pendurado, e o espaço entre o sinal e o nome deixava duas formas redondas quase encostadas. Nenhuma das duas coisas aparecia em número nenhum.
+
+Cerca de **270 mil símbolos** na sexta sessão, a do «e» explorado. Foram três correções, e as três vieram de olhar, mas de maneiras diferentes:
+
+1. **A régua mediu o entalhe e chamou-lhe corte.** A `medir-e` procura o maior arco sem tinta em toda a circunferência do meio da banda, e com uma barra que para há dois buracos em vez de um. Devolveu 2,0 px de «corda» a 16 px para um anel **fechado**, o que é uma impossibilidade, e foi essa impossibilidade que a denunciou: o número só se percebeu por estar ao lado da corda **desenhada**, que dava 0,51 px. Duas réguas independentes sobre a mesma coisa apanham o que uma sozinha não apanha, e é por isso que as duas ficaram no programa.
+2. **A ideia do diretor, desenhada à letra, não dá um «e».** Isso não se vê em números: as ilhas dizem «sinal em duas peças», e uma peça a mais podia ser só uma peça a mais. O que a captura de 60 px mostra é o que essas duas peças fazem juntas, que é um traço horizontal dentro de um anel, ou seja o sinal de menos. A medição diz o que mudou; olhar diz o que passou a estar lá.
+3. **A oitava linha da grelha não foi pedida, e é a melhor resposta à primeira pista.** Ao ver as três linhas de barra presa à esquerda ao lado das de barra unida, o que salta é que o entalhe e o corte comem o mesmo lado. A correção é uma linha de código e mudou a recomendação; sem a folha cruzada, as sete linhas pedidas tinham sido entregues e a oitava não existia.
