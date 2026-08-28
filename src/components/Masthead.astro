@@ -46,6 +46,7 @@
 import { SITE_NAME } from '../../site.config.mjs';
 import { routePath, otherLanguagePath, normalizePath } from '../lib/routes.mjs';
 import { estadoDaVerificacao, prova } from '../lib/prova.mjs';
+import { sinalDaMarca } from '../lib/marca.mjs';
 import ValorDaProva from './ValorDaProva.astro';
 import ControloDeTema from './ControloDeTema.astro';
 import { t } from '../i18n/strings.mjs';
@@ -127,6 +128,33 @@ const outra = `${outraLingua ?? otherLanguagePath(aqui, lang)}${naHome ? Astro.u
 
 const atual = (p) => (normalizePath(p) === aqui ? 'page' : undefined);
 const NomeTag = compact ? 'p' : 'h1';
+
+/**
+ * ---------------------------------------------------------------------------
+ * O SINAL AO LADO DO NOME (diretor, 28.08.2026; `design/marca/BRIEF-app.md`)
+ * ---------------------------------------------------------------------------
+ * Até hoje a marca deste sítio era texto composto e mais nada. Passa a ser o
+ * «e» minúsculo da casa ao lado do nome, na âncora B: o sinal à altura de
+ * MAIÚSCULA do cabeçalho, assente na linha de base, com 0,42 dessa altura de
+ * folga até ao «O». As três medidas estão em `design/marca/NOTAS.md` (§5, as
+ * duas âncoras; §6 bis item 6, o lockup a 1:1) e a folha aplica-as em `em`.
+ *
+ * A ÂNCORA B E NÃO A A, e a razão é medida: a âncora A põe o sinal ao corpo do
+ * cabeçalho e faz a caixa de tinta crescer de 26 px para 39 px, ou seja obriga
+ * o cabeçalho a crescer com ela. A B deixa a caixa de tinta exactamente onde
+ * está, e `tests/inicio/app.mjs` mede a altura do `<header>` às sete larguras da
+ * casa para o provar em vez de o afirmar.
+ *
+ * NÃO TEM NOME ACESSÍVEL, e é de propósito: o nome está escrito ao lado, em
+ * texto, e um sinal com etiqueta faria quem ouve a página ouvir a marca duas
+ * vezes. `aria-hidden` e `focusable="false"`, que é o par que o esconde da
+ * árvore e do tabulador.
+ *
+ * A COR É `currentColor`, herdada de `.wordmark`, que é `var(--ink)`: em claro o
+ * sinal é tinta, em escuro é o papel do tema. Uma cor própria aqui seria uma
+ * terceira decisão de cor num sítio que tem duas.
+ */
+const marca = sinalDaMarca();
 
 const verificacao = estadoDaVerificacao();
 const p = prova(lang);
@@ -218,7 +246,17 @@ const painel = `${home}#painel`;
 
   <div class:list={['masthead', compact && 'masthead-compact']}>
     <NomeTag class="wordmark">
-      {compact ? <a href={home}>{SITE_NAME}</a> : SITE_NAME}
+      <svg
+        class="wordmark-e"
+        viewBox={marca.viewBox}
+        aria-hidden="true"
+        focusable="false"
+        role="presentation"
+      >
+        <g transform={marca.transform} fill="currentColor">
+          {marca.caminhos.map((d) => <path d={d} />)}
+        </g>
+      </svg>{compact ? <a href={home}>{SITE_NAME}</a> : SITE_NAME}
     </NomeTag>
 
     {/* ------------------------------------------------------------------
