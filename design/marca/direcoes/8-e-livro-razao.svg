@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Direção H · o E do livro-razão">
+  <title>Direção H · o E do livro-razão</title>
+  <desc>O «E» de «Estado» com os três campos de uma linha do livro-razão.</desc>
+  <style>
+    .campo { fill: #f6f7f4; }
+    .tinta { fill: #17191b; }
+    .tinta-t { fill: none; stroke: #17191b; }
+    .acento { fill: #1f4e8c; }
+    .acento-t { fill: none; stroke: #1f4e8c; }
+    /* A costura: uma silhueta feita de distritos encostados fica com fios de
+       papel entre eles quando se enche sem traço. O traço da mesma cor fecha-os. */
+    .acento-costura { fill: #1f4e8c; stroke: #1f4e8c; stroke-width: 2; }
+    svg[data-tema="escuro"] .campo { fill: #15171a; }
+    svg[data-tema="escuro"] .tinta { fill: #eceeea; }
+    svg[data-tema="escuro"] .tinta-t { stroke: #eceeea; }
+    svg[data-tema="escuro"] .acento { fill: #7fa6dc; }
+    svg[data-tema="escuro"] .acento-t { stroke: #7fa6dc; }
+    svg[data-tema="escuro"] .acento-costura { fill: #7fa6dc; stroke: #7fa6dc; }
+    /* A simplificação de 32 e 16 px: a mesma forma, com o que morre tirado. */
+    .sinal-favicon { display: none; }
+    svg[data-forma="favicon"] .sinal { display: none; }
+    svg[data-forma="favicon"] .sinal-favicon { display: block; }
+    /* O `maskable` do Android: o campo fica, o sinal encolhe para dentro do
+       círculo seguro de raio 40 %.
+
+       A REDUÇÃO TEM DE ESTAR NUM GRUPO SÓ SEU, e isto foi corrigido a 28.08
+       depois de se medir a caixa de tinta nos PNG: `transform` de CSS e
+       `transform` de atributo são a MESMA propriedade, e o CSS ganha. Enquanto
+       esta regra apanhava `.sinal` directamente, o `scale` substituía o
+       enquadramento de `enquadra()` em vez de se compor com ele, e as direções
+       enquadradas saíam com o sinal fora do sítio: a G dava 233 px de lado em
+       512 em vez de 281, e a I saía cortada em cima. Num grupo de fora, que não
+       tem atributo nenhum, as duas transformações compõem-se. */
+    svg[data-forma="maskable"] .reducao {
+      transform: scale(0.78);
+      transform-origin: 256.0px 256.0px;
+      transform-box: view-box;
+    }
+  </style>
+  <rect class="campo" x="0" y="0" width="512" height="512"/>
+  <g class="reducao">
+    <g class="sinal" transform="translate(112 76) scale(1.2)">
+    <!-- O «E» de três barras: barra 72, vão 42,
+         haste 30 (o FINO da casa: o contraste está
+         invertido). Braços 0.80 / 0.55 /
+         0.80 de H. Três barras e dois vãos enchem a
+         altura: 3 x 0.24 + 2 x 0.14 = 1. -->
+    <path class="tinta" d="M0 0L30 0L30 300L0 300Z"/>
+    <path class="tinta" d="M0 0L240 0L240 72L0 72Z"/>
+    <path class="acento" d="M0 114L165 114L165 186L0 186Z"/>
+    <path class="tinta" d="M0 228L240 228L240 300L0 300Z"/>
+    </g>
+    <g class="sinal-favicon" transform="translate(112 76) scale(1.2)">
+    <!-- 32 e 16 px: o vão de 42 dá 1,3 px a 16 e fecha-se.
+         Passa a 51 (1,6 px), a barra encolhe para
+         66 e a haste engrossa para 39, que é
+         o mínimo para ela ainda lá estar. -->
+    <path class="tinta" d="M0 0L39 0L39 300L0 300Z"/>
+    <path class="tinta" d="M0 0L240 0L240 66L0 66Z"/>
+    <path class="acento" d="M0 117L165 117L165 183L0 183Z"/>
+    <path class="tinta" d="M0 234L240 234L240 300L0 300Z"/>
+    </g>
+  </g>
+</svg>

@@ -128,15 +128,19 @@ def letra_o(cx, cy, H, canto=None, contraforma="recta"):
     return fora + dentro, {"R": R, "T": T, "t": t, "a": a, "b": b, "r": r}
 
 
-def letra_e(x0, cy, H, braco_curto=0.48, braco_longo=0.62, com_serifa=True):
+def letra_e(x0, cy, H, braco_curto=0.48, braco_longo=0.62, com_serifa=True, fino=None):
     """O «E» da casa: haste, três braços, e o remate cortado a direito.
 
     As serifas são lajes sem colo (nem curva nem transição) da grossura do fino:
     uma serifa e um fino pesam o mesmo, e um remate acaba sempre num corte
     horizontal ou vertical. `x0` é a esquerda da haste.
+
+    `fino` afina a grossura dos braços sem mexer na haste, e existe por causa da
+    direção I: um braço mais fino dá um vão mais alto, e é o vão que tem de
+    segurar o selo.
     """
     T = RAZAO_HASTE * H
-    t = RAZAO_FINO * H
+    t = (RAZAO_FINO if fino is None else fino) * H
     yc, yb = cy - H / 2.0, cy + H / 2.0
     La, Lm = braco_longo * H, braco_curto * H
     ta, tm = t, t * 0.86
@@ -149,7 +153,8 @@ def letra_e(x0, cy, H, braco_curto=0.48, braco_longo=0.62, com_serifa=True):
         partes.append(rect(x0 + La - t, yc, x0 + La, yc + hs))
         partes.append(rect(x0 + La - t, yb - hs, x0 + La, yb))
         partes.append(rect(x0 + Lm - t * 0.86, cy - tm * 1.4, x0 + Lm, cy + tm * 1.4))
-    return "".join(partes), {"T": T, "t": t, "La": La, "Lm": Lm}
+    return "".join(partes), {"T": T, "t": t, "ta": ta, "tm": tm, "La": La, "Lm": Lm,
+                             "yc": yc, "yb": yb}
 
 
 def acento_fundido(cx, cy, H, angulo=58.0, comprimento=None, largura=0.72):
@@ -185,6 +190,103 @@ def acento_fundido(cx, cy, H, angulo=58.0, comprimento=None, largura=0.72):
 
 
 # ---------------------------------------------------------------------------
+# O «E» DO LIVRO-RAZÃO (a terceira adenda, direção H)
+# ---------------------------------------------------------------------------
+# A grelha do «E» de três barras, e a razão de cada número.
+#
+#   três barras e dois vãos enchem a altura:  3 b + 2 g = H
+#   barra   b = 0,24 H     vão  g = 0,14 H
+#   haste   0,100 H  ·  o FINO da casa, e não a haste: neste «E» o contraste
+#           está invertido, a haste é o fio e os braços são as barras. Nenhum
+#           tipo o faz, e é isso que separa esta letra do «E» composto.
+#   braços  0,80 H / 0,55 H / 0,80 H  ·  o de cima e o de baixo iguais, o do
+#           meio curto, que é o que faz um «E» ser lido como «E».
+#
+# As três barras são os três campos que uma linha do livro-razão nunca tem em
+# falta (`ledger/claims/*.yml`: `value`, `source`, `access_date`). A do meio, a
+# da fonte, leva o acento, e é também o braço curto: o sítio da letra onde a
+# cor cabe sem estragar o desenho.
+BARRA = 0.24
+VAO = 0.14
+BRACO_LONGO_H = 0.80
+BRACO_CURTO_H = 0.55
+
+
+def letra_e_livro(x0, ytopo, H, barra=BARRA, vao=VAO, haste=RAZAO_FINO,
+                  longo=BRACO_LONGO_H, curto=BRACO_CURTO_H):
+    """O «E» de três barras. Devolve [(classe, «path»)] e as medidas.
+
+    Devolve as partes separadas porque a barra do meio leva outra cor: um «path»
+    só não chegava.
+    """
+    b, g = barra * H, vao * H
+    partes = []
+    if haste:
+        partes.append(("tinta", rect(x0, ytopo, x0 + haste * H, ytopo + H)))
+    for i, L in enumerate((longo, curto, longo)):
+        y = ytopo + i * (b + g)
+        partes.append(("acento" if i == 1 else "tinta",
+                       rect(x0, y, x0 + L * H, y + b)))
+    return partes, {"b": b, "g": g, "largura": longo * H,
+                    "haste": haste * H, "La": longo * H, "Lm": curto * H}
+
+
+# ---------------------------------------------------------------------------
+# A PALAVRA «ESTADO» (a terceira adenda, direção J)
+# ---------------------------------------------------------------------------
+# O QUE FOI TENTADO E NÃO SAIU, porque é isto que decide o que está aqui.
+#
+# A palavra foi desenhada inteira, letra a letra, na grelha da casa, com uma
+# ideia só: TODAS AS REDONDAS SÃO O MESMO BOJO, e o que muda é onde está a
+# haste e até onde ela sobe (o «o» é o bojo; o «a» é o bojo com haste à altura
+# de x; o «d» é a mesma haste subida à maiúscula; o «t» é haste, travessão e um
+# pé cortado a direito). Os quatro saíram. O «s» não sai desta grelha, e a
+# razão é a regra da casa, não a falta de jeito: «remates cortados a direito,
+# no horizontal ou no vertical, nunca em ângulo». Um «s» é duas curvas cujos
+# remates não são horizontais nem verticais. Cortados no raio dão um bico;
+# cortados na horizontal fecham a abertura e o «s» vira dois discos. Doze
+# construções foram desenhadas e vistas a 180 px (bandas de arco com a elipse
+# de dentro rodada de 0 a 55 graus, lobos de 0,30 a 0,36 da altura de x,
+# grossura fixa, e dois anéis cortados a direito): nenhuma se lê como «s».
+#
+# O QUE ESTÁ AQUI, POR ISSO. A adenda deixou a porta aberta à letra: «a palavra
+# inteira desenhada (ou o «E» desenhado mais a serifada da casa para "stado")».
+# É a segunda. O «E» é desenhado; «stado» é Spectral SemiBold, do ficheiro da
+# casa. O SemiBold e não o Regular porque a haste do «d» do Regular mede 68,9
+# contra os 98,3 do SemiBold (medidos no ficheiro, à mesma escala), e ao lado de
+# um «E» de haste 0,233 H o Regular lê-se como duas letras de pesos diferentes.
+#
+# É O ÚNICO SÍTIO DE TODO ESTE TRABALHO onde um contorno do Spectral entra num
+# sinal, e não só na marca horizontal. Fica dito na §1 das NOTAS, e desfaz-se
+# tirando a palavra do ícone: a 60, 32 e 16 px a J já é só o «E» desenhado.
+SPECTRAL_SB = os.path.join(RAIZ, "public", "tipos", "spectral", "Spectral-SemiBold.woff2")
+
+
+def palavra_estado(x0, base, H, espaco=0.10, e_curto=0.48, e_largo=0.62):
+    """«Estado»: o «E» desenhado da casa e «stado» em Spectral SemiBold.
+
+    Devolve [(regra de enchimento, classe, «path»)] e a largura da palavra.
+    """
+    sys.path.insert(0, AQUI)
+    from glifos import contorno
+    de, me = letra_e(x0, base - H / 2.0, H, braco_curto=e_curto, braco_longo=e_largo)
+    d_stado, larg, _, _ = contorno(SPECTRAL_SB, "stado", H)
+    dx = x0 + me["La"] + espaco * H
+    return ([("nonzero", "tinta", de),
+             ("nonzero", "tinta", transforma(d_stado, 1.0, dx, base))],
+            me["La"] + espaco * H + larg)
+
+
+def caminhos(partes, indent="    "):
+    """[(regra, classe, «path»)] em elementos `<path>`."""
+    fora = []
+    for regra, classe, d in partes:
+        fr = ' fill-rule="evenodd"' if regra == "evenodd" else ""
+        fora.append(f'{indent}<path class="{classe}"{fr} d="{d}"/>')
+    return "\n".join(fora)
+
+
+# ---------------------------------------------------------------------------
 # O ESQUELETO DE UM SVG
 # ---------------------------------------------------------------------------
 ESTILO = f"""
@@ -207,9 +309,17 @@ ESTILO = f"""
     svg[data-forma="favicon"] .sinal {{ display: none; }}
     svg[data-forma="favicon"] .sinal-favicon {{ display: block; }}
     /* O `maskable` do Android: o campo fica, o sinal encolhe para dentro do
-       círculo seguro de raio 40 %. */
-    svg[data-forma="maskable"] .sinal,
-    svg[data-forma="maskable"] .sinal-favicon {{
+       círculo seguro de raio 40 %.
+
+       A REDUÇÃO TEM DE ESTAR NUM GRUPO SÓ SEU, e isto foi corrigido a 28.08
+       depois de se medir a caixa de tinta nos PNG: `transform` de CSS e
+       `transform` de atributo são a MESMA propriedade, e o CSS ganha. Enquanto
+       esta regra apanhava `.sinal` directamente, o `scale` substituía o
+       enquadramento de `enquadra()` em vez de se compor com ele, e as direções
+       enquadradas saíam com o sinal fora do sítio: a G dava 233 px de lado em
+       512 em vez de 281, e a I saía cortada em cima. Num grupo de fora, que não
+       tem atributo nenhum, as duas transformações compõem-se. */
+    svg[data-forma="maskable"] .reducao {{
       transform: scale({ESCALA_MASKABLE});
       transform-origin: {CENTRO}px {CENTRO}px;
       transform-box: view-box;
@@ -242,11 +352,13 @@ width="{CAMPO}" height="{CAMPO}" role="img" aria-label="{titulo}">
   <desc>{nota}</desc>
   <style>{ESTILO}  </style>
   <rect class="campo" x="0" y="0" width="{CAMPO}" height="{CAMPO}"/>
-  <g class="sinal"{enquadra(caixa) if caixa else ""}>
+  <g class="reducao">
+    <g class="sinal"{enquadra(caixa) if caixa else ""}>
 {corpo}
-  </g>
-  <g class="sinal-favicon"{enquadra(caixa_favicon) if caixa_favicon else ""}>
+    </g>
+    <g class="sinal-favicon"{enquadra(caixa_favicon) if caixa_favicon else ""}>
 {favicon}
+    </g>
   </g>
 </svg>
 """
@@ -692,6 +804,148 @@ def direcao_g():
                caixa=caixa, caixa_favicon=caixa)
 
 
+# ---------------------------------------------------------------------------
+# H · O «E» DO LIVRO-RAZÃO (a terceira adenda)
+# ---------------------------------------------------------------------------
+def direcao_h():
+    """Um «E» cujos três braços são as três linhas de um registo.
+
+    A palavra que conta em «O Estado do País» é «Estado», e a letra dela é o
+    «E». Este «E» é feito das três linhas que o sítio escreve em cada afirmação
+    do livro-razão (`ledger/claims/*.yml`): o valor, a fonte e a data. A do meio
+    leva o acento porque é a da fonte, que é a promessa do sítio, e porque é o
+    braço curto: o único sítio de um «E» onde a cor não estraga a letra.
+
+    O CONTRASTE ESTÁ INVERTIDO: a haste é o fio (0,100 H) e os braços são as
+    barras (0,24 H). Num tipo é ao contrário, sempre. É essa inversão que
+    afasta esta letra do «E» do Expresso e do Economist, que são a mesma
+    anatomia de sempre (haste grossa, braços finos) em branco sobre caixa de
+    cor. Aqui é tinta e cobalto sobre papel, e a letra é outra construção.
+    """
+    H = 300.0
+    x0, ytopo = 0.0, 0.0
+    partes, m = letra_e_livro(x0, ytopo, H)
+    corpo = (
+        f'    <!-- O «E» de três barras: barra {m["b"]:.0f}, vão {m["g"]:.0f},\n'
+        f'         haste {m["haste"]:.0f} (o FINO da casa: o contraste está\n'
+        f'         invertido). Braços {BRACO_LONGO_H:.2f} / {BRACO_CURTO_H:.2f} /\n'
+        f'         {BRACO_LONGO_H:.2f} de H. Três barras e dois vãos enchem a\n'
+        f'         altura: 3 x {BARRA} + 2 x {VAO} = 1. -->\n'
+        + caminhos([("nonzero", c, d) for c, d in partes])
+    )
+    # 32 e 16: o vão é que morre primeiro, e sem vão as três barras são uma
+    # mancha. A simplificação dá ar ao vão à custa da barra, e engrossa a haste
+    # para ela não desaparecer: 3 x 0,22 + 2 x 0,17 continua a dar 1.
+    partes2, m2 = letra_e_livro(x0, ytopo, H, barra=0.22, vao=0.17, haste=0.130)
+    favicon = (
+        f'    <!-- 32 e 16 px: o vão de {m["g"]:.0f} dá 1,3 px a 16 e fecha-se.\n'
+        f'         Passa a {m2["g"]:.0f} (1,6 px), a barra encolhe para\n'
+        f'         {m2["b"]:.0f} e a haste engrossa para {m2["haste"]:.0f}, que é\n'
+        f'         o mínimo para ela ainda lá estar. -->\n'
+        + caminhos([("nonzero", c, d) for c, d in partes2])
+    )
+    caixa = (x0, ytopo, x0 + m["largura"], ytopo + H)
+    return svg("Direção H · o E do livro-razão", corpo, favicon,
+               "O «E» de «Estado» com os três campos de uma linha do livro-razão.",
+               caixa=caixa, caixa_favicon=caixa)
+
+
+# ---------------------------------------------------------------------------
+# I · O SELO DENTRO DO «E»
+# ---------------------------------------------------------------------------
+FINO_I = 0.086      # o braço afina, para o vão subir e caber o selo
+FOLGA_I = 0.045     # o ar entre o selo e o braço
+
+
+def direcao_i():
+    """A ideia da direção G levada do «O» para o «E».
+
+    No «O» o selo mora na contraforma, que já era um rectângulo. No «E» a
+    contraforma é um vão aberto à direita, e o que decide não é o desenho, é a
+    medida: um vão de 0,357 H, com o braço a 0,086 H, dá um selo de 12,1 px a
+    60 px, com 1,9 px de ar de cada lado. A conta está feita em NOTAS.md §5, e
+    é ela que diz que esta direção existe.
+
+    O «E» é largo (braço de 0,80 H, e não de 0,62) por duas razões: enche o
+    campo quadrado, e dá ao selo largura de sobra para ele ser um quadrado e
+    não um rectângulo espremido.
+    """
+    H = 300.0
+    x0, cy = 0.0, 0.0
+    de, me = letra_e(x0, cy, H, braco_curto=0.55, braco_longo=0.80, fino=FINO_I)
+    f = FOLGA_I * H
+    ya, yb = me["yc"] + me["ta"], -me["tm"] / 2      # o vão de cima
+    lado = (yb - ya) - 2 * f
+    corpo = (
+        f'    <!-- O «E» largo (braço {me["La"]:.0f}, haste {me["T"]:.1f}, braço\n'
+        f'         fino {me["ta"]:.1f}) e o selo no vão de cima: quadrado de\n'
+        f'         {lado:.0f}, com {f:.0f} de ar em cima e em baixo. O vão inteiro\n'
+        f'         mede {yb - ya:.0f}, que é 0,357 H. -->\n'
+        f'    <path class="tinta" d="{de}"/>\n'
+        f'    <rect class="acento" x="{n(x0 + me["T"] + f)}" y="{n(ya + f)}" '
+        f'width="{n(lado)}" height="{n(lado)}"/>'
+    )
+    # 32 e 16: o braço fino de 0,086 H dá 0,97 px a 16 e desaparece antes do
+    # selo. Engrossa-se o braço, o que rouba altura ao vão, e o ar do selo
+    # encolhe para o mínimo. A 16 px isto já não é um selo dentro de um vão: é
+    # um vão cheio de cor, e está dito na §5.
+    de2, me2 = letra_e(x0, cy, H, braco_curto=0.55, braco_longo=0.80,
+                       com_serifa=False, fino=0.110)
+    f2 = 0.030 * H
+    ya2, yb2 = me2["yc"] + me2["ta"], -me2["tm"] / 2
+    lado2 = (yb2 - ya2) - 2 * f2
+    favicon = (
+        f'    <!-- 32 e 16 px: braço a 0,110 H (1,24 px a 16), sem as lajes de\n'
+        f'         remate, e o selo a {lado2:.0f} com {f2:.0f} de ar. -->\n'
+        f'    <path class="tinta" d="{de2}"/>\n'
+        f'    <rect class="acento" x="{n(x0 + me2["T"] + f2)}" y="{n(ya2 + f2)}" '
+        f'width="{n(lado2)}" height="{n(lado2)}"/>'
+    )
+    caixa = (x0, me["yc"], x0 + me["La"], me["yb"])
+    return svg("Direção I · o selo dentro do E", corpo, favicon,
+               "O «E» de «Estado» com o quadrado da prova no vão de cima.",
+               caixa=caixa, caixa_favicon=caixa)
+
+
+# ---------------------------------------------------------------------------
+# J · A PALAVRA «ESTADO» COMO MARCA
+# ---------------------------------------------------------------------------
+def direcao_j():
+    """A palavra inteira desenhada, e a letra sozinha quando a palavra não cabe.
+
+    O sinal grande é «Estado», as seis letras desenhadas na grelha da casa. O
+    sinal pequeno (60, 32 e 16 px) é o «E» dessa mesma palavra, sozinho: não é
+    outra forma, é a primeira letra da que lá estava.
+
+    O QUE ISTO CUSTA, E ESTÁ MEDIDO. A palavra tem 4,03 de largura por 1 de
+    altura, e o campo do ícone é quadrado: enquadrada a 360, a altura de
+    maiúscula fica em 89 unidades, contra 300 de uma letra sozinha. A 180 px
+    são 31 px de maiúscula contra 106. A palavra lê-se; é três vezes mais
+    pequena do que a letra.
+    """
+    H = 300.0
+    base = 400.0
+    partes, largura = palavra_estado(0.0, base, H)
+    corpo = (
+        f'    <!-- «Estado»: o «E» desenhado da casa (H={H:.0f}, haste\n'
+        f'         {RAZAO_HASTE * H:.1f}, fino {RAZAO_FINO * H:.1f}) e «stado» em\n'
+        f'         Spectral SemiBold do ficheiro da casa, à mesma altura de\n'
+        f'         maiúscula. A palavra mede {largura:.0f} x {H:.0f} = {largura / H:.2f}:1,\n'
+        f'         e é essa razão que a impede de encher um campo quadrado. -->\n'
+        + caminhos(partes)
+    )
+    de, me = letra_e(0.0, 0.0, H)
+    favicon = (
+        f'    <!-- 60, 32 e 16 px: a palavra a 60 dá 10 px de maiúscula e é uma\n'
+        f'         mancha. Fica o «E» da palavra, sozinho, à altura toda. -->\n'
+        f'    <path class="tinta" d="{de}"/>'
+    )
+    return svg("Direção J · a palavra «Estado»", corpo, favicon,
+               "A palavra desenhada; a letra sozinha quando a palavra não cabe.",
+               caixa=(0.0, base - H, largura, base),
+               caixa_favicon=(0.0, me["yc"], me["La"], me["yb"]))
+
+
 DIRECOES = [
     ("1-ligadura-oe", direcao_a),
     ("2-o-acento", direcao_b),
@@ -700,6 +954,9 @@ DIRECOES = [
     ("5-mapa", direcao_e),
     ("6-regua", direcao_f),
     ("7-selo-no-o", direcao_g),
+    ("8-e-livro-razao", direcao_h),
+    ("9-selo-no-e", direcao_i),
+    ("10-palavra-estado", direcao_j),
 ]
 
 
@@ -806,10 +1063,47 @@ FICHA = {
                    "Pordata. A distância está no campo (papel, e não azul) e na forma "
                    "de dentro (um quadrado cheio, e não um vazio).",
     },
+    "8-e-livro-razao": {
+        "letra": "H",
+        "nome": "o «E» do livro-razão",
+        "tenta": "O «E» de «Estado» feito das três linhas que uma afirmação do "
+                 "livro-razão nunca tem em falta: o valor, a fonte e a data "
+                 "(`ledger/claims/*.yml`). O contraste está invertido, a haste é o fio "
+                 "e os braços são as barras, e é isso que faz a letra ser desta casa.",
+        "arrisca": "Três barras horizontais são o botão de menu de qualquer aplicação, "
+                   "e a haste é a única coisa que separa uma coisa da outra. O «E» "
+                   "branco em caixa de cor é do Expresso e do Economist; este é tinta "
+                   "e cobalto sobre papel, que é o lado contrário do contraste.",
+    },
+    "9-selo-no-e": {
+        "letra": "I",
+        "nome": "o selo dentro do «E»",
+        "tenta": "A ideia da direção G levada do «O» para o «E»: o quadrado da prova "
+                 "dentro da letra. No «O» morava na contraforma; no «E» mora no vão de "
+                 "cima, que é a contraforma que um «E» tem.",
+        "arrisca": "O vão do «E» é um sexto do que a contraforma do «O» dá: o selo "
+                   "mede 12,1 px a 60 contra 18,3 px na G, e o ar de 1,9 px fecha-se "
+                   "abaixo dos 32. E um «E» serifado, mesmo com o selo, continua a ser "
+                   "a letra do Expresso e do Economist.",
+    },
+    "10-palavra-estado": {
+        "letra": "J",
+        "nome": "a palavra «Estado»",
+        "tenta": "A palavra como sinal grande, e o «E» dela sozinho quando a palavra "
+                 "deixa de caber (a 60, a 32 e a 16 px). O «E» é desenhado; «stado» é "
+                 "Spectral SemiBold do ficheiro da casa, porque o «s» não sai desta "
+                 "grelha e a adenda deixou essa porta aberta.",
+        "arrisca": "«Estado» sozinho, com maiúscula, é como se escreve a instituição em "
+                   "português. Sem o artigo à frente e sem «do País» atrás, o ícone diz "
+                   "o Estado que governa, e não o estado em que o país está. E a "
+                   "palavra num campo quadrado fica a um terço da altura de uma letra "
+                   "sozinha.",
+    },
 }
 
 ORDEM = ["1-ligadura-oe", "2-o-acento", "3-selo", "4-azulejo",
-         "5-mapa", "6-regua", "7-selo-no-o"]
+         "5-mapa", "6-regua", "7-selo-no-o",
+         "8-e-livro-razao", "9-selo-no-e", "10-palavra-estado"]
 
 # As referências que mais perto passam de alguma destas direções.
 VIZINHOS = [
@@ -842,7 +1136,7 @@ def _png(slug, nome):
 
 
 def tira_de_vizinhanca():
-    """As sete direções e dezasseis referências, todas a 60 px, na mesma tira.
+    """As dez direções e dezasseis referências, todas a 60 px, na mesma tira.
 
     É a comparação que o brief pede: à MESMA escala, e não cada uma na sua.
     """
@@ -903,6 +1197,37 @@ SPECTRAL_RG = os.path.join(RAIZ, "public", "tipos", "spectral", "Spectral-Regula
 SPECTRAL_SC = os.path.join(RAIZ, "public", "tipos", "spectral-sc", "SpectralSC-Regular.woff2")
 
 
+def lockup_da_palavra(classe, altura=100.0, menor=0.66, espaco=0.26):
+    """A marca horizontal da direção J: «O» pequeno, «Estado» desenhado, «do País».
+
+    A palavra é a desenhada, letra a letra, na grelha da casa. O artigo e o
+    resto do nome são compostos em Spectral, mais pequenos, e é aí (e só aí) que
+    entra contorno tirado do ficheiro do tipo: é o nome, e a licença descreve
+    isso como um documento feito com o tipo (§1 das NOTAS).
+
+    É esta a peça que responde à pergunta da adenda. «Estado» sozinho é a
+    instituição; «Estado» com o artigo à frente e «do País» atrás é a condição.
+    """
+    sys.path.insert(0, AQUI)
+    from glifos import contorno
+    h2 = menor * altura
+    d_o, larg_o, _, _ = contorno(SPECTRAL_RG, "O", h2)
+    d_dp, larg_dp, _, _ = contorno(SPECTRAL_RG, "do País", h2)
+    partes, largura = palavra_estado(0.0, 0.0, altura)
+    x1 = larg_o + espaco * altura
+    x2 = x1 + largura + espaco * altura
+    pecas = [f'  <g transform="translate(0 0)"><path class="{classe}" d="{d_o}"/></g>',
+             f'  <g transform="translate({n(x1)} 0)">',
+             caminhos(partes, indent="    ").replace('class="tinta"', f'class="{classe}"')
+                                            .replace('class="acento"', f'class="{classe}"'),
+             '  </g>',
+             f'  <g transform="translate({n(x2)} 0)"><path class="{classe}" d="{d_dp}"/></g>']
+    caixa = (0.0, -altura, x2 + larg_dp, 0.0)
+    vb = f"{n(caixa[0])} {n(caixa[1])} {n(caixa[2] - caixa[0])} {n(caixa[3] - caixa[1])}"
+    return (f'<svg viewBox="{vb}" role="img" aria-label="O Estado do País">\n'
+            + "\n".join(pecas) + "\n</svg>")
+
+
 CSS_PRANCHA = f"""
   :root {{ color-scheme: light; }}
   * {{ box-sizing: border-box; }}
@@ -956,10 +1281,15 @@ CSS_PRANCHA = f"""
 def bloco_direcao(slug):
     f = FICHA[slug]
     p = lambda nome: _png(slug, nome)  # noqa: E731
-    dn, (nx0, ny0, nx1, ny1) = caminho_do_nome(altura=100)
-    vb = f"{n(nx0)} {n(ny0)} {n(nx1 - nx0)} {n(ny1 - ny0)}"
-    lock = (f'<svg viewBox="{vb}" role="img" aria-label="O Estado do País">'
-            f'<path class="%s" d="{dn}"/></svg>')
+    if slug == "10-palavra-estado":
+        # A J tem marca horizontal própria: a palavra é desenhada, e só o artigo
+        # e o «do País» é que são compostos.
+        lock = lockup_da_palavra("%s")
+    else:
+        dn, (nx0, ny0, nx1, ny1) = caminho_do_nome(altura=100)
+        vb = f"{n(nx0)} {n(ny0)} {n(nx1 - nx0)} {n(ny1 - ny0)}"
+        lock = (f'<svg viewBox="{vb}" role="img" aria-label="O Estado do País">'
+                f'<path class="%s" d="{dn}"/></svg>')
     return f"""
   <section class="dir" id="{slug}">
     <p class="marca-letra">DIREÇÃO {f["letra"]}</p>
@@ -988,8 +1318,8 @@ def bloco_direcao(slug):
       <figure><span class="chao lupa"><img class="px" src="{p('32-escuro')}" width="128" height="128" alt=""></span><figcaption>32 escuro, 4x</figcaption></figure>
     </div>
     <div class="fila">
-      <div class="lockup"><img src="{p('180')}" alt="">{lock % 'nome-claro'}</div>
-      <div class="lockup escuro"><img src="{p('180-escuro')}" alt="">{lock % 'nome-escuro'}</div>
+      <div class="lockup"><img src="{p('180')}" alt="">{lock.replace('%s', 'nome-claro')}</div>
+      <div class="lockup escuro"><img src="{p('180-escuro')}" alt="">{lock.replace('%s', 'nome-escuro')}</div>
     </div>
     <p class="risco fina"><strong>O que arrisca.</strong> {f["arrisca"]}</p>
   </section>"""
@@ -1003,7 +1333,7 @@ def prancha():
 <html lang="pt-PT">
 <head>
 <meta charset="utf-8">
-<title>A marca · sete direções · O Estado do País</title>
+<title>A marca · dez direções · O Estado do País</title>
 <style>{CSS_PRANCHA}</style>
 </head>
 <body>
@@ -1011,8 +1341,9 @@ def prancha():
   <h1>«O Estado do País» · a marca e o ícone do telemóvel</h1>
   <p class="fina">Prancha de exploração, 28.08.2026, ramo <code>marca-2026-08-28</code>.
   Nada disto está no sítio: não há ficheiro em <code>public/</code>, não há linha no
-  <code>&lt;head&gt;</code> e não há manifesto. São sete direções para a direção
-  escolher uma e iterá-la.</p>
+  <code>&lt;head&gt;</code> e não há manifesto. São dez direções para a direção
+  escolher uma e iterá-la: as sete de 28.08 de manhã, e as três que a terceira
+  adenda pediu sobre a palavra «Estado» (H, I e J).</p>
   <p class="fina">Tudo o que se vê aqui está dentro deste ficheiro: as imagens são
   PNG embebidos, e o nome é contorno e não texto composto. A prancha abre sem rede.</p>
   <p class="fina"><strong>Como se lê.</strong> A coluna dos 60 px é a que decide, porque é a esse
@@ -1041,6 +1372,9 @@ def prancha():
   <tr><th>O 32 e o 16</th><td>Cada direção tem um segundo desenho para o favicon, com o
       que morre tirado em vez de deixado a sujar. É a mesma forma com menos, e nunca
       outra forma.</td></tr>
+  <tr><th>A troca da J</th><td>A direção J troca de desenho mais cedo do que as outras:
+      a partir dos 60 px deixa a palavra e fica com o «E» dela. A palavra a 60 px dá 10 px
+      de altura de maiúscula, e a terceira adenda pede-o à letra.</td></tr>
 </table>
 
 <hr class="fio">
@@ -1048,7 +1382,7 @@ def prancha():
 
 <hr class="fio">
 <h3>A vizinhança a 60 px</h3>
-<p class="fina">As sete direções e dezasseis das referências, todas reduzidas ao mesmo
+<p class="fina">As dez direções e dezasseis das referências, todas reduzidas ao mesmo
 tamanho. É aqui que se vê o que cada uma tem de seu e onde é que já está alguém.</p>
 <img class="larga" src="{tira}" width="{tira_tam[0]}" height="{tira_tam[1]}" alt="">
 

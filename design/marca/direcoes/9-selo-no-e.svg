@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Direção I · o selo dentro do E">
+  <title>Direção I · o selo dentro do E</title>
+  <desc>O «E» de «Estado» com o quadrado da prova no vão de cima.</desc>
+  <style>
+    .campo { fill: #f6f7f4; }
+    .tinta { fill: #17191b; }
+    .tinta-t { fill: none; stroke: #17191b; }
+    .acento { fill: #1f4e8c; }
+    .acento-t { fill: none; stroke: #1f4e8c; }
+    /* A costura: uma silhueta feita de distritos encostados fica com fios de
+       papel entre eles quando se enche sem traço. O traço da mesma cor fecha-os. */
+    .acento-costura { fill: #1f4e8c; stroke: #1f4e8c; stroke-width: 2; }
+    svg[data-tema="escuro"] .campo { fill: #15171a; }
+    svg[data-tema="escuro"] .tinta { fill: #eceeea; }
+    svg[data-tema="escuro"] .tinta-t { stroke: #eceeea; }
+    svg[data-tema="escuro"] .acento { fill: #7fa6dc; }
+    svg[data-tema="escuro"] .acento-t { stroke: #7fa6dc; }
+    svg[data-tema="escuro"] .acento-costura { fill: #7fa6dc; stroke: #7fa6dc; }
+    /* A simplificação de 32 e 16 px: a mesma forma, com o que morre tirado. */
+    .sinal-favicon { display: none; }
+    svg[data-forma="favicon"] .sinal { display: none; }
+    svg[data-forma="favicon"] .sinal-favicon { display: block; }
+    /* O `maskable` do Android: o campo fica, o sinal encolhe para dentro do
+       círculo seguro de raio 40 %.
+
+       A REDUÇÃO TEM DE ESTAR NUM GRUPO SÓ SEU, e isto foi corrigido a 28.08
+       depois de se medir a caixa de tinta nos PNG: `transform` de CSS e
+       `transform` de atributo são a MESMA propriedade, e o CSS ganha. Enquanto
+       esta regra apanhava `.sinal` directamente, o `scale` substituía o
+       enquadramento de `enquadra()` em vez de se compor com ele, e as direções
+       enquadradas saíam com o sinal fora do sítio: a G dava 233 px de lado em
+       512 em vez de 281, e a I saía cortada em cima. Num grupo de fora, que não
+       tem atributo nenhum, as duas transformações compõem-se. */
+    svg[data-forma="maskable"] .reducao {
+      transform: scale(0.78);
+      transform-origin: 256.0px 256.0px;
+      transform-box: view-box;
+    }
+  </style>
+  <rect class="campo" x="0" y="0" width="512" height="512"/>
+  <g class="reducao">
+    <g class="sinal" transform="translate(112 256) scale(1.2)">
+    <!-- O «E» largo (braço 240, haste 69.9, braço
+         fino 25.8) e o selo no vão de cima: quadrado de
+         86, com 14 de ar em cima e em baixo. O vão inteiro
+         mede 113, que é 0,357 H. -->
+    <path class="tinta" d="M0 -150L69.9 -150L69.9 150L0 150ZM0 -150L240 -150L240 -124.2L0 -124.2ZM0 124.2L240 124.2L240 150L0 150ZM0 -11.09L165 -11.09L165 11.09L0 11.09ZM214.2 -150L240 -150L240 -93.24L214.2 -93.24ZM214.2 93.24L240 93.24L240 150L214.2 150ZM142.81 -31.06L165 -31.06L165 31.06L142.81 31.06Z"/>
+    <rect class="acento" x="83.4" y="-110.7" width="86.11" height="86.11"/>
+    </g>
+    <g class="sinal-favicon" transform="translate(112 256) scale(1.2)">
+    <!-- 32 e 16 px: braço a 0,110 H (1,24 px a 16), sem as lajes de
+         remate, e o selo a 85 com 9 de ar. -->
+    <path class="tinta" d="M0 -150L69.9 -150L69.9 150L0 150ZM0 -150L240 -150L240 -117L0 -117ZM0 117L240 117L240 150L0 150ZM0 -14.19L165 -14.19L165 14.19L0 14.19Z"/>
+    <rect class="acento" x="78.9" y="-108" width="84.81" height="84.81"/>
+    </g>
+  </g>
+</svg>

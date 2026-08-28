@@ -21,16 +21,25 @@
     svg[data-forma="favicon"] .sinal { display: none; }
     svg[data-forma="favicon"] .sinal-favicon { display: block; }
     /* O `maskable` do Android: o campo fica, o sinal encolhe para dentro do
-       círculo seguro de raio 40 %. */
-    svg[data-forma="maskable"] .sinal,
-    svg[data-forma="maskable"] .sinal-favicon {
+       círculo seguro de raio 40 %.
+
+       A REDUÇÃO TEM DE ESTAR NUM GRUPO SÓ SEU, e isto foi corrigido a 28.08
+       depois de se medir a caixa de tinta nos PNG: `transform` de CSS e
+       `transform` de atributo são a MESMA propriedade, e o CSS ganha. Enquanto
+       esta regra apanhava `.sinal` directamente, o `scale` substituía o
+       enquadramento de `enquadra()` em vez de se compor com ele, e as direções
+       enquadradas saíam com o sinal fora do sítio: a G dava 233 px de lado em
+       512 em vez de 281, e a I saía cortada em cima. Num grupo de fora, que não
+       tem atributo nenhum, as duas transformações compõem-se. */
+    svg[data-forma="maskable"] .reducao {
       transform: scale(0.78);
       transform-origin: 256.0px 256.0px;
       transform-box: view-box;
     }
   </style>
   <rect class="campo" x="0" y="0" width="512" height="512"/>
-  <g class="sinal" transform="translate(-13.07 -43.3) scale(1.17)">
+  <g class="reducao">
+    <g class="sinal" transform="translate(-13.07 -43.3) scale(1.17)">
     <!-- A ligadura «OE»: H=222, haste=51.7, fino=22.2,
          contraste 2.33. A contraforma é um rectângulo de
          119 x 178 com o canto a 22.2.
@@ -38,12 +47,13 @@
          direita do «O»: as duas letras têm uma haste só. -->
     <path class="tinta" fill-rule="evenodd" d="M76.18 256A111 111 0 1 1 298.18 256A111 111 0 1 1 76.18 256ZM150.11 167.2L224.25 167.2A22.2 22.2 0 0 1 246.45 189.4L246.45 322.6A22.2 22.2 0 0 1 224.25 344.8L150.11 344.8A22.2 22.2 0 0 1 127.91 322.6L127.91 189.4A22.2 22.2 0 0 1 150.11 167.2Z"/>
     <path class="tinta" d="M246.45 145L298.18 145L298.18 367L246.45 367ZM246.45 145L384.09 145L384.09 167.2L246.45 167.2ZM246.45 344.8L384.09 344.8L384.09 367L246.45 367ZM246.45 246.45L353.01 246.45L353.01 265.55L246.45 265.55ZM361.89 145L384.09 145L384.09 193.84L361.89 193.84ZM361.89 318.16L384.09 318.16L384.09 367L361.89 367ZM333.92 229.27L353.01 229.27L353.01 282.73L333.92 282.73Z"/>
-  </g>
-  <g class="sinal-favicon" transform="translate(-13.07 -43.3) scale(1.17)">
+    </g>
+    <g class="sinal-favicon" transform="translate(-13.07 -43.3) scale(1.17)">
     <!-- 32 e 16 px: as lajes de remate somem antes de se verem, e o
          canto recto da contraforma não chega a um píxel. Fica a
          ligadura nua. -->
     <path class="tinta" fill-rule="evenodd" d="M76.18 256A111 111 0 1 1 298.18 256A111 111 0 1 1 76.18 256ZM127.91 256A59.27 88.8 0 1 1 246.45 256A59.27 88.8 0 1 1 127.91 256Z"/>
     <path class="tinta" d="M246.45 145L298.18 145L298.18 367L246.45 367ZM246.45 145L384.09 145L384.09 167.2L246.45 167.2ZM246.45 344.8L384.09 344.8L384.09 367L246.45 367ZM246.45 246.45L353.01 246.45L353.01 265.55L246.45 265.55Z"/>
+    </g>
   </g>
 </svg>

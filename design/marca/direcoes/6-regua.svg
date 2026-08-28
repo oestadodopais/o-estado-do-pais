@@ -21,27 +21,37 @@
     svg[data-forma="favicon"] .sinal { display: none; }
     svg[data-forma="favicon"] .sinal-favicon { display: block; }
     /* O `maskable` do Android: o campo fica, o sinal encolhe para dentro do
-       círculo seguro de raio 40 %. */
-    svg[data-forma="maskable"] .sinal,
-    svg[data-forma="maskable"] .sinal-favicon {
+       círculo seguro de raio 40 %.
+
+       A REDUÇÃO TEM DE ESTAR NUM GRUPO SÓ SEU, e isto foi corrigido a 28.08
+       depois de se medir a caixa de tinta nos PNG: `transform` de CSS e
+       `transform` de atributo são a MESMA propriedade, e o CSS ganha. Enquanto
+       esta regra apanhava `.sinal` directamente, o `scale` substituía o
+       enquadramento de `enquadra()` em vez de se compor com ele, e as direções
+       enquadradas saíam com o sinal fora do sítio: a G dava 233 px de lado em
+       512 em vez de 281, e a I saía cortada em cima. Num grupo de fora, que não
+       tem atributo nenhum, as duas transformações compõem-se. */
+    svg[data-forma="maskable"] .reducao {
       transform: scale(0.78);
       transform-origin: 256.0px 256.0px;
       transform-box: view-box;
     }
   </style>
   <rect class="campo" x="0" y="0" width="512" height="512"/>
-  <g class="sinal">
+  <g class="reducao">
+    <g class="sinal">
     <!-- A referência em pé (64 x 300), a barra da
          distância (68 de altura) e o selo do valor na ponta
          (68 x 68). Três peças da casa, nenhuma inventada. -->
     <rect class="tinta" x="76" y="222" width="68" height="68"/>
     <rect class="acento" x="144" y="222" width="228" height="68"/>
     <rect class="tinta" x="372" y="106" width="64" height="300"/>
-  </g>
-  <g class="sinal-favicon">
+    </g>
+    <g class="sinal-favicon">
     <!-- 32 e 16 px: o quadrado do selo e a barra colam-se num traço só.
          Fica a barra a bater na referência, que é o que a régua diz. -->
     <rect class="acento" x="76" y="210" width="296" height="92"/>
     <rect class="tinta" x="372" y="106" width="64" height="300"/>
+    </g>
   </g>
 </svg>
