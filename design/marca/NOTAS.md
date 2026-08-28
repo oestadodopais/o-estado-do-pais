@@ -611,6 +611,146 @@ Só o (c) falha, e falha nos dois limiares. É por isso que `tokens.css` obriga 
 
 ---
 
+## 6 bis · O «e», refinado
+
+*A quinta adenda (`ADENDA-5-e.md`) pôs o «e» do diretor à frente das sete vozes e mandou afinar três coisas antes de ele decidir: a barra, o corte e a cor. A meio da ronda chegou um aditamento com as palavras dele, o sinal «devia ser muito mais limpo, muito mais minimalista», e é ele que manda no fim, porque tira do desenho o objeto sobre o qual a primeira pergunta era feita. Esta secção traz as duas coisas por essa ordem. Tudo o que aqui tem número foi lido dos PNG de `EXPORT/` com `desenhar.py medir-e`, e não estimado.*
+
+### O que a medição passou a dizer, e que não dizia
+
+A adenda parte de uma observação: «a ponta do corte afina para 1 px» a 60 px. A corrida mínima é mesmo de 1 px e o sítio dela é mesmo o corte, mas **o que esse 1 px mede não é a matéria da ponta**. A face do corte é radial e encontra o arco de dentro num canto vivo; a linha de píxeis que passa rente a esse canto apanha um píxel, e apanharia um píxel em qualquer canto que não esteja alinhado com os eixos. É por isso que a geométrica da terceira voz mede 12: não é mais grossa, é mais quadrada.
+
+A `medir_e` acrescentou por isso quatro números que a `medir` não tinha:
+
+* **onde** está a corrida mínima, dito em relógio;
+* a **matéria na ponta**, contada ao longo da face do corte, que é o que a adenda quer acima de 2 px;
+* a **corda da abertura**, medida sobre a circunferência do meio da banda, que é o buraco que separa um «e» de um «o»;
+* as **ilhas do fundo**: com o bojo aberto o vazio de dentro comunica com o campo, e o fundo tem duas ilhas (o campo, mais o olho fechado por cima da barra); com o bojo fechado tem três. É um inteiro, e não uma impressão.
+
+Medida assim, **a ponta do corte do desenho de 28.08 de manhã tem 3,9 px a 60**, e não 1. Nenhuma das variantes desta ronda a tem abaixo de 3,1 px a 60. **A observação da adenda estava certa no número e errada no que ele media**, e a diferença muda o que há a corrigir: não era preciso engrossar a ponta.
+
+### 1 · A barra, e a pergunta do «€»
+
+Três versões, e a terceira nasceu de olhar para as duas primeiras.
+
+| | anel a 180 | sinal a 60 | ponta a 60 | corda a 60 | corda a 16 |
+|---|---|---|---|---|---|
+| a barra atravessa dos dois lados (`18`) | 99 px | 17,4 % | 3,9 | 10,7 | 2,2 |
+| a barra sai só à esquerda (`18i`) | **111 px** | 20,2 % | 6,1 | 10,1 | 3,0 |
+| a barra acaba no bojo (`18b`) | **128 px** | 24,2 % | 6,1 | 14,2 | 3,8 |
+
+**A barra que atravessa custa 23 % do diâmetro do anel**, e o motivo é a régua da casa: o sinal cabe num quadrado de 360 em 512, e a saliência tem de caber lá dentro com ele. Metade da saliência custa 13 %.
+
+**O veredito do «€», visto e não argumentado.** A prancha tem a construção do sinal do euro desenhada ao lado das três, à mesma escala e com as mesmas proporções (bojo aberto, um «C» com 100 graus cortados, e duas barras que saem dos dois lados). Não é o glifo oficial nem o de tipo nenhum: é a anatomia, para se poder comparar. Ao olhar as quatro a 60 px, ampliadas oito vezes: **o que faz a leitura de moeda não é uma barra a sair, é uma barra a sair dos dois lados de um bojo redondo**, e a simetria horizontal é o que o olho apanha antes de contar quantas barras são. Das três, **só a `18` tem essa simetria**, e é ela a que um leitor de um sítio de contas públicas pode tomar por um sinal de moeda. A `18i` quebra a simetria e a `18b` não tem saliência nenhuma; nenhuma das duas se parece com aquilo.
+
+**E a linha da régua.** É o contrário: só a barra que sai é que a diz. Com ela dentro do bojo o sinal é um «e» e mais nada, e o método do sítio deixa de estar no sinal. Era esta a troca que a adenda punha em cima da mesa, e é ela que o aditamento resolve por decreto, ao mandar que nada saia da forma. **Fica dito que a decisão de largar a linha da régua não foi de desenho: foi instrução.**
+
+### 2 · O corte, contado da barra
+
+O corte conta-se **da barra** e não do ângulo do ficheiro. No desenho antigo a banda acabava a menos 6 graus e a barra, com 42 de grossura num raio de 150, tapava-lhe **8,05 graus** da ponta de cima: dizer «50 graus cortados» era dizer o número do ficheiro e não o número que se vê. Três frações, com as duas barras:
+
+| abertura à vista | corda a 60 | ponta a 60 | corda a 16 | ponta a 16 |
+|---|---|---|---|---|
+| 32 graus (`18c`, `18e`) | 6,6 · 9,5 | 4,8 · 5,4 | 2,2 · 2,5 | 1,5 · 2,1 |
+| 48 graus (`18`, `18b`) | 10,7 · 14,2 | 3,9 · 6,1 | 2,2 · 3,8 | 1,4 · 1,4 |
+| 62 graus (`18d`, `18f`) | 14,2 · 18,1 | 3,8 · 3,2 | 4,2 · 5,6 | 0,1 · 1,0 |
+
+**Fica o de 48 graus**, que é o clássico e o que já lá estava. A 32 graus a abertura dá 6,6 px de corda a 60 e o sinal lê-se como um «o» atravessado, que é a leitura de um símbolo de moeda pela outra via. A 62 graus abre demais: a ponta de baixo vem para junto do fundo do anel, a matéria na ponta cai para 0,1 px a 16 px, e a abertura medida a 16 px sobe a 74 graus, ou seja o corte alarga sozinho com o suavizado e a forma escorrega para um «c».
+
+### 3 · A regra do favicon, corrigida, com par de controlo
+
+A sétima voz **fechava** o corte no desenho de 32 e 16 px, de menos 56 para menos 52 graus, e engrossava a banda 16 %. Engrossar a banda já fecha a abertura por dentro, porque o raio de dentro cresce; fechar também o ângulo fecha-a duas vezes, e o que morre a 16 px é justamente o buraco que distingue um «e» de um «o». A regra passou a ser a contrária: banda 16 % e barra 14 % mais grossas, e o corte **alargado** 6 graus.
+
+Para a comparação ser de uma coisa só, a `18k` existe: tem a geometria da `18i` e a regra velha. Mesma forma, mesma cor, mesmo tamanho.
+
+| a 16 px | corda | matéria na ponta | corrida mínima |
+|---|---|---|---|
+| corte alargado 6 graus (`18i`) | **3,0 px** | **2,1 px** | 2 px |
+| corte fechado 4 graus (`18k`) | 2,2 px | 1,5 px | 1 px |
+
+É o mesmo papel que a `14b` teve na ronda das vozes: não é uma variante, é a resposta desenhada a uma pergunta.
+
+### 4 · O «e» mínimo, que é o aditamento
+
+O aditamento manda uma coisa só, dita de quatro maneiras: a circunferência, o corte e a barra, com **uma grossura só**, a barra a acabar no anel e não a sair dele, os remates cortados a direito, sem contorno, sem segunda cor e sem moldura. Isso mudou a construção em quatro sítios, e convém dizê-los, porque nenhum deles é cosmético:
+
+1. **A barra passou a ter exatamente a grossura do anel.** Tinha 42 num anel de 46, ou seja 0,91 dele.
+2. **As quatro pontas da barra pousam na circunferência**: os remates são cordas do círculo, e a silhueta fica sem saliência nenhuma, nem sequer a de meio ponto que a versão anterior tinha nos cantos.
+3. **O corte de cima deixou de ser um ângulo escolhido.** É agora aquele onde a face de baixo da barra encontra a circunferência de fora. Antes a barra tapava a ponta da banda, o que é uma junta escondida; agora as duas peças acabam na mesma linha e não há junta.
+4. **Não há segundo desenho para 32 e 16 px.** As outras direções têm um, com a banda engrossada; estas não, e é isso que «nada acrescentado» quer dizer. É também o que faz a medição a 16 px responder à pergunta do aditamento em vez de a mascarar.
+
+**Uma correção de facto, antes das grossuras.** O aditamento pede «12 a 16 % do diâmetro» e acrescenta que «a atual é mais pesada». Medida, a banda da sétima voz tem 46 num diâmetro de 300, ou seja **15,3 % do diâmetro**: já estava dentro do intervalo pedido, no topo dele. Para o desenho ser de facto mais leve, as grossuras desenhadas vão de 16 % a **10 %**, e a de 10 % está abaixo do pedido de propósito, para que o limite se veja em vez de se supor.
+
+| grossura | banda a 180 | banda a 60 | sinal a 60 | ponta a 60 | corda a 60 | ponta a 16 | corda a 16 | bojo a 16 |
+|---|---|---|---|---|---|---|---|---|
+| 16 % (`18m`) | 21 px | 7 px | 26,2 % | 5,0 | 13,2 | 1,4 | 3,8 | aberto |
+| **14 % (`18n`)** | 19 px | 6 px | 23,1 % | 5,1 | 14,2 | 0,5 | 4,6 | aberto |
+| 12 % (`18o`) | 16 px | 5 px | 21,4 % | 4,1 | 14,9 | 0,5 | 4,6 | aberto |
+| 10 % (`18p`) | 14 px | 4 px | 17,6 % | 3,1 | 16,1 | 0,2 | 4,6 | aberto |
+
+**Qual é a mais fina que sobrevive, e é preciso dizer como se soube.** O teste topológico não separa as quatro: nenhuma fecha o bojo a 16 px. O que as separa é a matéria, e o que a decide é olhar. Nas capturas de 16 px ampliadas vinte e duas vezes:
+
+* a **16 %** o anel é cheio e da mesma cor em toda a volta, o contorno de dentro lê-se e a abertura também;
+* a **14 %** o anel é mais fino e continua cheio em toda a volta, com a abertura à vista. É aqui que acaba a leitura sem reservas;
+* a **12 %** o anel vem **manchado**: os píxeis do arco de cima e do lado esquerdo ficam a meia luz, porque 1,4 px de banda desenhada não enchem um píxel e o suavizado reparte-a por dois. Lê-se «e», mas o anel já não é uma linha, é uma sequência de manchas;
+* a **10 %** só a barra fica cheia. O anel é um halo mosqueado à volta dela, e o que se lê primeiro é uma barra, não uma letra.
+
+Os números acompanham o que se vê: a matéria na ponta do corte cai de 1,4 px a 16 % para 0,5 px a 14 % e a 12 %, e para 0,2 px a 10 %.
+
+**A resposta é 14 %.** É a mais fina cujo anel chega cheio aos 16 px, e é visivelmente mais leve do que os 15,3 % de hoje. A de 16 % é a que sobra se a direção quiser folga; a de 12 % serve o cabeçalho e o ícone grande, e não serve o favicon.
+
+### 5 · As cores, ao fim
+
+| par | contraste | 3:1 | 4,5:1 |
+|---|---|---|---|
+| «e» âmbar em campo de tinta (o ícone) | 7,85:1 | passa | passa |
+| «e» ocre em papel (o campo claro) | 6,37:1 | passa | passa |
+| «e» âmbar em papel claro | 2,09:1 | falha | falha |
+| «e» ocre em papel escuro | 2,62:1 | falha | falha |
+| «e» âmbar em papel escuro | 8,00:1 | passa | passa |
+
+Duas linhas falham, e são as duas que a marca não usa: em papel claro o sinal é ocre, em papel escuro é âmbar. Não é regra nova, é a que `tokens.css` já aplica à palavra do estado.
+
+**E há um terceiro ficheiro, sem campo nenhum** (`18r`). Um ícone de telemóvel tem sempre campo, porque o sistema lhe recorta um quadrado; um cabeçalho não tem, e ali o campo seria a moldura que o aditamento manda tirar. O `maskable` desse ficheiro não quer dizer nada, e fica dito aqui em vez de se descobrir depois.
+
+### 6 · O cabeçalho a 1:1
+
+A prancha põe a marca horizontal ao tamanho a que o cabeçalho vive, com o aperto de letras do sítio (`.wordmark`, Spectral 400, `clamp(34px, 7.4vw, 68px)`, `letter-spacing: -0.014em`). Uma linha, um peso, sem filete e sem frase por baixo, que é o que o aditamento pede da marca.
+
+Duas coisas mudaram no lockup, e as duas por se ter olhado a 1:1:
+
+* **O «e» assenta na linha de base.** Estava centrado a meia altura de maiúscula com raio 0,62 dessa altura, o que o fazia descer 0,12 abaixo da base: ao lado de um nome sem descendentes, o sinal ficava pendurado.
+* **O espaço entre o sinal e o nome subiu de 0,30 para 0,42** da altura de maiúscula. Com 0,30, o anel e o «O» de «O Estado» ficavam quase encostados, e duas formas redondas encostadas leem-se como uma só.
+
+**«Uma espessura só» tem um número.** A haste do Spectral Regular mede 68,9 em 1000 de em, com a maiúscula a 660, ou seja **10,4 % da altura de maiúscula** (medido no ficheiro da casa, §8). A prancha tem a linha desenhada a essa grossura, e o que ela mostra é que um «e» com a haste do nome **desaparece dentro do nome**: deixa de se ler como sinal e passa a ler-se como uma letra da mesma palavra, e a 34 px de corpo fica frágil. Com o anel à altura de maiúscula e a grossura do ícone (14 %), o sinal lê-se ao lado da palavra e não dentro dela. **Fica a âncora B, com o «e» à altura de maiúscula do cabeçalho.**
+
+### 7 · O que o ecrã principal respondeu
+
+`ECRA-E.png` põe as quatro grossuras na cela de 180 px entre os mesmos oito ícones, em ecrã claro e escuro, mais o par de campo claro. O que se vê e os números não diziam:
+
+1. **As celas de 16 % e de 14 % seguram o lugar** ao lado do Expresso e do Economist; a de 12 % é a coisa mais leve do ecrã inteiro, e lê-se, mas por pouco.
+2. **O campo claro recua num ecrã claro**, que era exatamente o defeito que a ronda das vozes foi chamada a corrigir. Num ecrã escuro passa ao contrário: fica um quadrado branco, o mais claro dos nove. O ícone do telemóvel é o de campo de tinta; o de campo claro serve o cabeçalho e os sítios onde o papel já lá está.
+3. **A forma mínima ganhou presença sem ganhar peso.** O anel passou de 99 px para 128 px na mesma cela de 180, porque a barra deixou de precisar de espaço fora do círculo, e isso vale mais do que qualquer engrossamento: a cela de 14 % pinta 23,1 % contra os 17,4 % da versão de hoje, com a banda mais fina.
+
+### 8 · A recomendação
+
+**`18n-e-minimo-14`**, ou seja: o «e» mínimo, uma grossura só a **14 % do diâmetro**, a barra com a grossura do anel e a acabar nele, o corte de **48 graus** contado da barra, âmbar `#e0a21a` em campo de tinta `#17191b` no ícone, ocre `#7a5300` em papel no campo claro (`18q`), e o mesmo desenho sem campo (`18r`) no cabeçalho, com o anel à altura de maiúscula do nome.
+
+A razão, por ordem dos critérios da casa:
+
+* É a mais fina cujo anel **chega cheio aos 16 px**, e portanto a mais leve que o aditamento permite sem perder o favicon.
+* Segura a cela de 180 px: 23,1 %, mais do que os 17,4 % da versão de hoje, com menos banda.
+* O bojo abre a todos os tamanhos, e a corda a 16 px é de 4,6 px, o dobro dos 2,2 px de hoje.
+* **Não tem a construção do «€»**, porque não tem barra a sair.
+* Um par de cores só, um campo só, uma grossura só, e nenhum segundo desenho.
+
+**A segunda, se a direção quiser folga: `18m`, a de 16 %.** Mede melhor a 16 px (1,4 px de matéria na ponta contra 0,5), e o que perde é a leveza que o aditamento pediu.
+
+**E o que esta escolha custa, dito sem rodeios.** Larga a linha da régua, e com ela a única coisa que este sinal dizia sobre o método do sítio. O que sobra é um «e» minúsculo, que diz o nome («o» e «e» na mesma forma) e não diz o que lá se faz. A `18i`, a barra só à esquerda, é a versão que ainda dizia as duas coisas, e sai por instrução e não por medição: mede 20,2 % de sinal a 60 px e 111 px de anel, entre as duas mínimas de 16 % e de 12 %. Fica no ramo para que a decisão possa ser revista sem se desenhar outra vez.
+
+**E uma colisão que continua por conferir.** O «e» minúsculo redondo tem donos, e o mais gasto deles é o navegador da Microsoft. Não está desenhado aqui, e é a mesma escolha da ronda anterior: um desenho de memória de uma marca de outrem não é medição nenhuma, e sem rede não se confere no ficheiro deles. O que se pode dizer sem inventar continua a ser a diferença de construção: aquela marca é um «e» inclinado com um anel em órbita, em azul; este é um «e» a prumo, de grossura igual, sem órbita, com uma barra recta que não sai do anel. **Fica como pergunta em aberto, e é a primeira coisa a conferir quando houver rede.**
+
+---
+
 ## 7 · A ordem de preferência, refeita para as onze
 
 *Esta é a ordem das ONZE primeiras direções, e ficou como estava. A ordem das sete vozes é outra lista e está no fim da §6, porque a adenda das vozes a pediu «só sobre estas», e porque comparar um campo de papel com um campo de cor a partir de números medidos em réguas diferentes daria uma ordem que não queria dizer nada. Quem quiser uma ordem só sobre as dezanove tem de decidir primeiro se o campo entra no critério, e essa é uma decisão de direção.*
@@ -666,6 +806,15 @@ Só o (c) falha, e falha nos dois limiares. É por isso que `tokens.css` obriga 
 * **A maqueta não tem fotografia por baixo.** Um ecrã principal a sério tem, e há fotografias que engolem um campo de papel. Quem quiser essa prova tem de a fazer com a fotografia do próprio telefone.
 * **Não se experimentou o «E» de três barras com quatro linhas nem com duas.** Três é o número de campos que uma linha do livro-razão nunca tem em falta, e é também o número de braços de um «E». As duas coisas coincidirem é a razão de a H existir; se o livro-razão tivesse quatro campos obrigatórios, esta direção não existia.
 
+E o que ficou por fazer na ronda do «e» refinado (§6 bis):
+
+* **Não se experimentou a barra fora do meio.** Num «e» de tipo a travessa costuma estar acima do meio da altura de x, e aqui está no meio, que é a posição da linha do livro-razão. Com a linha da régua largada, a razão para ela estar no meio deixou de existir, e a hipótese não está desenhada.
+* **Não se experimentou um corte que não seja radial.** As faces do corte apontam ao centro, que é a construção de uma geométrica monolinear. Um corte horizontal, paralelo à barra, é o que várias geométricas fazem, e mudaria a leitura da abertura; não se desenhou.
+* **A colisão com o navegador da Microsoft continua por conferir**, e é agora a primeira coisa a fazer quando houver rede, porque o desenho recomendado é um «e» minúsculo redondo e monolinear, que é a família daquela marca. A diferença de construção está dita na §6 bis e é real; o que não se pode dizer sem rede é o quanto ela chega.
+* **Não se viu a marca sobre fotografia**, como já acontecia às onze e às sete. Um campo de tinta aguenta o que um campo de papel não aguenta, e essa medição, se for feita, só pode piorar a posição do par de campo claro.
+* **Não se desenhou o nome inteiro em contorno.** A marca horizontal leva o «e» desenhado e «O Estado do País» composto em Spectral, que é o que a §1 cobre. Continua a faltar o «P», o «í» e o «s» para o nome poder ser desenhado.
+* **O ficheiro sem campo (`18r`) tem `maskable` e não devia.** Sai do mesmo `exportar.mjs` que os outros, e um `maskable` sem campo não quer dizer nada. Fica assinalado em vez de corrigido, porque a exceção só vale a pena depois de a direção escolher.
+
 E o que ficou por fazer na ronda das vozes (§6):
 
 * **«do País» não está desenhado em voz nenhuma.** A marca horizontal das sete leva «Estado» desenhado e o artigo e o «do País» compostos em Spectral (ou em Spectral SC, no cinzel). Faltam o «P», o «í» com acento e um segundo «s» para que uma delas possa ter o nome inteiro desenhado, e isso é outro trabalho.
@@ -694,3 +843,9 @@ Cerca de **340 mil símbolos** na quarta sessão, a das sete vozes. As correçõ
 4. **A cela de 180 px estava a mostrar a letra do favicon**, e não a letra da voz. A Didone chegava ao tamanho a que é julgada com contraste 1,9 em vez de 6,55, e nenhum número o denunciava, porque todos os números estavam certos para o desenho errado. Obrigou a um terceiro grupo dentro de cada SVG.
 
 As quatro têm a mesma forma: **o programa estava certo e o que ele desenhava não era o que se pensava.** É o argumento para olhar as capturas a cada passo, e não no fim.
+
+Cerca de **250 mil símbolos** na quinta sessão, a do «e» refinado. As correções que gastaram mais foram três, e as três vieram de olhar:
+
+1. **A premissa da adenda estava errada, e só a medição com sítio o mostrou.** «A ponta do corte afina para 1 px» é verdade quanto ao número e falso quanto ao que ele mede: é uma linha de píxeis a rasar um canto vivo. Sem saber o sítio da corrida mínima, a ronda teria começado por engrossar uma ponta que tem 3,9 px.
+2. **A janela da primeira medição da ponta era um rectângulo fixo**, e o corte anda com o ângulo: a variante de corte largo ficava com a ponta fora da janela e a medição dizia «15 px» onde devia dizer 5. Passou a ser um disco centrado na ponta, calculado a partir do raio e do ângulo lidos na própria imagem.
+3. **O lockup só se viu quando se rendeu a 1:1.** O «e» descia 0,12 da altura de maiúscula abaixo da linha de base e ficava pendurado, e o espaço entre o sinal e o nome deixava duas formas redondas quase encostadas. Nenhuma das duas coisas aparecia em número nenhum.
