@@ -12,7 +12,7 @@ Sem fusão e sem envio: o ramo fica para o lugar de direção.*
 | `9ddef92` | I84 · a colação portuguesa no artefacto, no índice dos concelhos e numa régua |
 | `68d1409` | I88 · o índice é da casa, e os dados é que são da Direção-Geral |
 | `9c7fce5` | as fichas de `ISSUES.md` e a primeira forma deste relatório |
-| `<a seguir>` | I84, segunda volta · os concelhos dentro de cada grupo, e a R7 a medir as listas construídas |
+| `df4a2a6` | I84, segunda volta · os concelhos dentro de cada grupo, e a R7 a medir as listas construídas |
 
 Os três primeiros fecham as fichas, o quarto traz este relatório, e o quinto é a
 segunda volta da I84, depois da leitura do Codex: ver a §2.4 e a §2-A.
