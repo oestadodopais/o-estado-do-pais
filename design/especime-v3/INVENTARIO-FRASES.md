@@ -1240,3 +1240,43 @@ origem declarada. Nenhuma cadeia do inventário muda com ela.*
 | --- | --- | --- | --- | --- |
 | navegacao | a linha desta figura | pequenas-3 | viva | — |
 | navegacao | this figure’s row | pequenas-3 | viva | — |
+
+## Bloco «app» · o sítio no ecrã principal · 28.08.2026
+
+*O sítio passou a poder ser posto no ecrã principal de um telemóvel, e isso
+abriu uma superfície pública que não existia: o NOME e o NOME CURTO da
+aplicação, que o leitor lê por baixo do ícone e na lista de aplicações
+instaladas, sem estar no sítio. O `BRIEF-app.md` §5 manda classificá-los, e é o
+que esta secção faz.*
+
+*A régua alcança-os desde este bloco, e é a mesma extensão que a descrição do
+`<head>` levou a 21.08.2026, pela mesma razão: são superfície pública, são
+escritas pela casa, e ficavam de fora só porque a varredura era sobre o
+`<body>`. A medida 8 lê agora, em cada rota inventariada, a etiqueta
+`apple-mobile-web-app-title` daquela página e o `name` e o `short_name` do
+manifesto que aquela página liga. Sem essa extensão, o BRIEF pedia frases
+«classificadas» e o inventário ficava com linhas que nenhuma régua alcança, ou
+seja declarações que ninguém confere, que é a coisa que a I74 fechou.*
+
+**Uma linha só, e não duas.** O `name` da aplicação é «O Estado do País», que já
+está declarado neste ficheiro (o nome da publicação, `navegacao`, bloco `até
+2026-08-26`), porque é a mesma cadeia que o cabeçalho compõe. Declará-la outra
+vez neste bloco não acrescentava nada e mudava a classe da que já existe, porque
+o mapa do inventário é `texto → classe` e a última linha ganharia: o nome da
+publicação passaria a `conteudo` sem ninguém decidir isso. O que é novo é o nome
+curto.
+
+**E uma tensão que fica dita, para quem ler o diff.** O BRIEF §5 escreve «classe
+conteúdo» para os dois, e é o que esta tabela faz. A régua das três classes deste
+ficheiro diz outra coisa sobre a mesma cadeia: «navegação — … o nome da
+publicação», e foi por essa régua que a Emenda 18 classificou a frase de
+identidade como navegação, «como o nome da publicação». «O Estado» é o nome da
+publicação encurtado para caber numa cela de 60 pt. **Segue-se o BRIEF, que é a
+instrução escrita da direção, e regista-se a divergência aqui em vez de a
+resolver sozinho**: nenhuma das duas classes muda a contagem que a construção
+fecha (a autorreferência continua a zero em todas as rotas), e a escolha entre
+elas é da direção.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | O Estado | app | viva | — |

@@ -19,8 +19,9 @@
  *   7. frases de cobertura — quantas cadeias visíveis DISTINTAS o sítio usa
  *      para cada estado de cobertura editorial, por edição (defeito 7);
  *   8. frases da casa — o inventário de todos os blocos de texto de uma rota
- *      inventariada que são prosa da casa, mais a DESCRIÇÃO do seu `<head>` e as
- *      DICAS (`title`) e os RÓTULOS DE ACESSIBILIDADE (`aria-label`) dela,
+ *      inventariada que são prosa da casa, mais a DESCRIÇÃO do seu `<head>`, as
+ *      DICAS (`title`) e os RÓTULOS DE ACESSIBILIDADE (`aria-label`) dela, e o
+ *      NOME e o NOME CURTO da aplicação de ecrã principal que ela oferece,
  *      classificados em conteúdo, navegação e autorreferência pela lista
  *      declarada em `design/especime-v3/INVENTARIO-FRASES.md` (Emenda 15).
  *   9. o tripwire da voz · os mesmos blocos, passados pela lista fechada de
@@ -508,6 +509,52 @@ function dicasDaCasa(root) {
   return out;
 }
 
+/**
+ * ---------------------------------------------------------------------------
+ * AS FRASES DA APLICAÇÃO DE ECRÃ PRINCIPAL (28.08.2026, `BRIEF-app.md` §5)
+ * ---------------------------------------------------------------------------
+ * O sítio ganhou uma superfície pública nova, e ela tem duas frases da casa: o
+ * NOME e o NOME CURTO da aplicação. Aparecem por baixo do ícone no ecrã
+ * principal de um telemóvel e na lista de aplicações instaladas, que é um sítio
+ * onde o leitor as lê sem estar no sítio.
+ *
+ * ENTRAM NESTA MEDIDA PELA MESMA RAZÃO DA DESCRIÇÃO DO `<head>`, e é a razão
+ * escrita lá em cima: são superfície pública, são escritas pela casa, e ficavam
+ * de fora só porque esta varredura era sobre o `<body>`. Se ficassem de fora, o
+ * BRIEF pedia frases «classificadas» e o inventário teria duas linhas que
+ * nenhuma régua alcança — ou seja, duas declarações que ninguém confere, que é
+ * a coisa que a I74 fechou.
+ *
+ * A SUPERFÍCIE É A DA EDIÇÃO DA PÁGINA. O nome curto vem da etiqueta
+ * `apple-mobile-web-app-title` daquela página, e o nome do MANIFESTO que aquela
+ * página liga: é o par que o telemóvel vai mostrar a quem instalar a partir
+ * dali, e é o que se quer medir. Ler os manifestos por conta própria mediria os
+ * ficheiros; ler o que a página liga mede o sítio.
+ */
+const MANIFESTOS_LIDOS = new Map();
+function frasesDaAplicacao(root) {
+  const out = [];
+  const curto = norm(root.querySelector('head meta[name="apple-mobile-web-app-title"]')?.getAttribute('content') ?? '');
+  if (curto) out.push(curto);
+  const href = root.querySelector('head link[rel="manifest"]')?.getAttribute('href') ?? '';
+  if (!href.startsWith('/')) return out;
+  if (!MANIFESTOS_LIDOS.has(href)) {
+    let doc = null;
+    try {
+      doc = JSON.parse(fs.readFileSync(path.join(DIST, href.replace(/^\//, '')), 'utf8'));
+    } catch {
+      doc = null;
+    }
+    MANIFESTOS_LIDOS.set(href, doc);
+  }
+  const doc = MANIFESTOS_LIDOS.get(href);
+  for (const campo of ['name', 'short_name']) {
+    const v = norm(doc?.[campo] ?? '');
+    if (v && !out.includes(v)) out.push(v);
+  }
+  return out;
+}
+
 const frasesPorRota = new Map(); // rota → Map(texto → ocorrências)
 const frasesDaVozPorRota = new Map(); // rota → Set(texto), a varredura do tripwire
 /* A CHAVE DA ROTA DE CADA CAMINHO, para as dispensas com rotas (X3). Uma família
@@ -557,6 +604,8 @@ for (const file of ficheiros) {
     const conta = frasesPorRota.get(chave) ?? new Map();
     for (const f of frasesDaCasa(root)) conta.set(f, (conta.get(f) ?? 0) + 1);
     for (const f of dicasDaCasa(root)) conta.set(f, (conta.get(f) ?? 0) + 1);
+    const daAplicacao = frasesDaAplicacao(root);
+    for (const f of daAplicacao) conta.set(f, (conta.get(f) ?? 0) + 1);
     let descricao = norm(
       root.querySelector('head meta[name="description"]')?.getAttribute('content') ?? '',
     );
@@ -571,6 +620,7 @@ for (const file of ficheiros) {
     const daVoz = frasesDaVozPorRota.get(chave) ?? new Set();
     for (const f of frasesDaVoz(root)) daVoz.add(f);
     for (const f of dicasDaCasa(root)) daVoz.add(f);
+    for (const f of daAplicacao) daVoz.add(f);
     if (descricao) daVoz.add(descricao);
     frasesDaVozPorRota.set(chave, daVoz);
     chaveDaRotaPorCaminho.set(chave, rota.key);

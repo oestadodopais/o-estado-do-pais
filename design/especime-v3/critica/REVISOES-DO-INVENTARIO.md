@@ -36,6 +36,7 @@ leu **só o diff do inventário**. É essa a leitura que esta tabela regista.
 | ilhas | 4 | `design/especime-v3/critica/2026-08-28-codex-leitura-ilhas.md` | Codex `gpt-5.6-sol`, 28.08.2026, sobre oito páginas de concelho e de linha das ilhas e das colisões de nome, as linhas, o texto das fontes e o diff do inventário, com duas plantas (2 de 2); a nota «duas palavras» corrigida para três |
 | vazios | 6 | `design/especime-v3/critica/2026-08-28-codex-leitura-vazios.md` | Codex `gpt-5.6-sol`, 28.08.2026, sobre cinco páginas de concelho nas duas edições, doze linhas e recibos, os dois ficheiros da DGAL e o diff do inventário, com três plantas (3 de 3); I88 saiu dela |
 | pequenas-3 | 4 | `design/especime-v3/critica/2026-08-28-codex-leitura-pequenas-3.md` | Codex `gpt-5.6-sol`, 28.08.2026, sobre o índice dos concelhos, a página de Évora, uma leitura longa, o manifesto e o diff do inventário, com três plantas (2 de 3; a terceira mal plantada); a ordem dos membros dos grupos saiu dela |
+| app | 1 | por ler | o bloco «app» (o sítio no ecrã principal), 28.08.2026, construtor Claude Opus 5; a leitura cruzada faz-se antes da fusão |
 
 ## As duas colunas novas de 27.08.2026 (I74)
 
