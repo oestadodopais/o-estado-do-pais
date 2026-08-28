@@ -20,7 +20,8 @@ ilegível, e a regra nova só se entende contra ela.*
 | `1a0267a` | o comando da primeira página com quatro posições cabe no telemóvel |
 | `dbeaf7a` | o relatório da primeira parte |
 | `3398144` | a regra do assunto: as nove áreas, as 21 matérias, as 31 regras, a A7 e o inventário |
-| (este) | a segunda parte do relatório |
+| `ed6fb4a` | a segunda parte do relatório |
+| (este) | os nomes ingleses verificados na fonte do Governo, e a ressalva que sai |
 
 ---
 
@@ -909,16 +910,11 @@ portuguesa.
 
 * **A leitura cruzada não foi feita.** O registo das revisões diz `por ler` para
   o bloco `areas`, com a nota de que a leitura tem de apanhar a mudança de regra.
-* **O nome inglês de cinco das nove áreas é tradução da casa**, e não o nome que
-  o Governo publica. A página inglesa da composição do Governo é construída por
-  script; um leitor simples devolve o cabeçalho e a navegação e não a lista, e foi
-  isso que devolveu nas duas tentativas (`/en/gc25/government/composition` e
-  `/en/gc25/ministries`). Os quatro nomes ingleses da manhã foram lidos no
-  navegador e ficam como estavam. `Finance`, `Infrastructure and Housing`,
-  `Justice`, `Education, Science and Innovation`, `Health` e `Environment and
-  Energy` são traduções literais nossas, ditas como tal no campo `nomeEnFonte` de
-  cada área, na prosa do bloco do inventário e aqui. **Não se afirma que sejam os
-  nomes oficiais.**
+* **Os nomes ingleses ficaram verificados, e o §20 diz como.** A minha primeira
+  volta deixou seis deles como tradução da casa, porque o leitor simples de
+  páginas devolveu a navegação e não a lista; o lugar de direção leu a lista no
+  navegador e os seis coincidiam palavra por palavra. Nenhum nome deste bloco é
+  tradução da casa.
 * **Nenhuma linha do livro-razão foi escrita**, e nenhuma foi tocada.
 * **`DECISIONS.md` não foi editado.**
 * **Sete das dezasseis áreas do Governo não estão declaradas** (Negócios
@@ -941,3 +937,46 @@ artigos de ministério da lei, a escrita das nove áreas com as vinte e uma
 matérias e as trinta e uma regras, a reescrita do portão e a corrida dos oito estragos
 plantados, as construções completas com a cadeia das réguas, as réguas do
 navegador e esta parte do relatório. Nenhum submodelo foi lançado.
+
+---
+
+## 20 · A correção dos nomes ingleses
+
+*Escrita depois de o lugar de direção ler, no navegador e a 28.08.2026, a página
+`https://www.portugal.gov.pt/en/gc25/ministries`, que lista os dezasseis nomes
+ingleses por ordem: Foreign Affairs; Finance; Presidency; Economy and of
+Territorial Cohesion; State Reform; Parliamentary Affairs; National Defence;
+Infrastructure and Housing; Justice; Home Affairs; Education, Science and
+Innovation; Health; Labour, Solidarity and Social Security; Environment and
+Energy; Culture, Youth and Sport; e Agriculture and Sea.*
+
+**O que eu tinha escrito estava certo como precaução e errado como facto.** As
+duas tentativas de ler a página com um leitor simples devolveram o cabeçalho e a
+navegação, e eu concluí o que podia concluir: que os seis nomes ingleses das
+áreas novas eram tradução da casa e que não se podia afirmar que fossem os
+oficiais. A conclusão certa a tirar de um leitor que falha é «não consegui ler»,
+e foi essa que ficou escrita; mas a forma como ficou («é tradução da casa») diz
+mais do que o que eu sabia, porque uma tradução da casa é uma coisa e um nome que
+não pude verificar é outra. **A precaução não custou nada e a leitura fechou-a:**
+os seis coincidem palavra por palavra com os que o Governo publica.
+
+**Um erro de contagem, que sai com o resto.** A minha prosa dizia «cinco» e
+listava seis: `Finance`, `Infrastructure and Housing`, `Justice`, `Education,
+Science and Innovation`, `Health` e `Environment and Energy`. São seis, e é o
+número que fecha com a conta das áreas: três nomes ingleses vieram da página da
+composição, na primeira volta, e seis da página das áreas de governo.
+
+**O que mudou.** `nomeEnFonte` vale `governo` nas nove áreas e `casa` em
+nenhuma; `FONTE_DOS_NOMES.en` passa a apontar para a página das áreas de governo,
+que é a que lista os nomes, e guarda a da composição ao lado, porque foi de lá
+que vieram três deles; a prosa do bloco `areas` do inventário e o §18 deste
+relatório deixam de trazer a ressalva. **Nenhuma cadeia rendida mudou**: os
+dezoito nomes das páginas construídas são os mesmos, e por isso o inventário
+continua com 554 linhas e nenhuma linha mudou de estado.
+
+**O campo `nomeEnFonte` fica, com um valor só.** Não é uma nota histórica: é a
+pergunta que uma área nova tem de responder antes de entrar, e a resposta `casa`
+obriga a dizê-lo na linha do inventário.
+
+**O custo desta correção:** ≈ 20 mil símbolos, contando a leitura dos ficheiros a
+corrigir, as três alterações, a cadeia inteira das réguas e esta secção.

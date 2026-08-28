@@ -73,13 +73,26 @@
  * da lei orgânica que fixa as matérias daquele ministério. Os dois estão
  * escritos por baixo de cada área.
  *
- * O NOME INGLÊS DE CINCO ÁREAS É TRADUÇÃO DA CASA, e está dito onde é: o campo
- * `nomeEnFonte` vale `governo` quando o nome foi lido na página inglesa do
- * Governo, e `casa` quando é uma tradução literal nossa. A página inglesa do
- * Governo é construída no navegador e não se deixa ler por um leitor simples;
- * as quatro que dizem `governo` foram lidas no navegador a 28.08.2026, e as
- * cinco áreas novas de 28.08 não puderam ser lidas do mesmo modo. Traduzir por
- * conta própria e não o dizer era inventar um nome oficial.
+ * O NOME INGLÊS DAS NOVE ÁREAS É O QUE O GOVERNO PUBLICA, e nenhum é tradução da
+ * casa. O campo `nomeEnFonte` diz de onde veio cada um, e hoje vale `governo`
+ * nos nove.
+ *
+ * FORAM DUAS LEITURAS, EM DUAS PÁGINAS, e ficam separadas porque foram: os
+ * nomes de Economia e Coesão Territorial, Administração Interna e Trabalho,
+ * Solidariedade e Segurança Social saíram da página da composição do Governo,
+ * lida no navegador a 28.08.2026; os de Finanças, Infraestruturas e Habitação,
+ * Justiça, Educação, Ciência e Inovação, Saúde e Ambiente e Energia saíram da
+ * página das áreas de governo (`/en/gc25/ministries`), lida no navegador no
+ * mesmo dia pelo lugar de direção. As duas páginas são construídas por script e
+ * não se deixam ler por um leitor simples, e é por isso que a leitura é sempre
+ * de navegador e a data fica escrita.
+ *
+ * O CAMPO FICA, mesmo com um valor só. Ele não é uma nota histórica: é a
+ * pergunta que uma área nova tem de responder antes de entrar. Uma área
+ * declarada com `nomeEnFonte: 'casa'` está a dizer que o nome inglês dela é uma
+ * tradução literal nossa e não o nome oficial, e isso tem de ficar dito na linha
+ * do inventário. Traduzir por conta própria e não o dizer era inventar um nome
+ * oficial.
  */
 export const FONTE_DOS_NOMES = {
   pt: {
@@ -88,7 +101,12 @@ export const FONTE_DOS_NOMES = {
     lido: '2026-08-28',
   },
   en: {
-    url: 'https://www.portugal.gov.pt/en/gc25/government/composition',
+    /* A página das áreas de governo é a que lista os dezasseis nomes ingleses, e
+       é dela que saem seis dos nove desta lista; a da composição do Governo é a
+       irmã inglesa da portuguesa, e é dela que saíram os outros três. As duas
+       foram lidas no navegador a 28.08.2026. */
+    url: 'https://www.portugal.gov.pt/en/gc25/ministries',
+    composicao: 'https://www.portugal.gov.pt/en/gc25/government/composition',
     seccao: '/en/gc25/ministries/',
     lido: '2026-08-28',
   },
@@ -136,7 +154,7 @@ export const AREAS = [
   {
     slug: 'financas',
     nome: { pt: 'Finanças', en: 'Finance' },
-    nomeEnFonte: 'casa',
+    nomeEnFonte: 'governo',
     artigo: 'Artigo 12.º',
     materias: [
       {
@@ -314,7 +332,7 @@ export const AREAS = [
   {
     slug: 'infraestruturas-e-habitacao',
     nome: { pt: 'Infraestruturas e Habitação', en: 'Infrastructure and Housing' },
-    nomeEnFonte: 'casa',
+    nomeEnFonte: 'governo',
     artigo: 'Artigo 19.º',
     materias: [
       {
@@ -349,7 +367,7 @@ export const AREAS = [
   {
     slug: 'justica',
     nome: { pt: 'Justiça', en: 'Justice' },
-    nomeEnFonte: 'casa',
+    nomeEnFonte: 'governo',
     artigo: 'Artigo 20.º',
     materias: [
       {
@@ -394,7 +412,7 @@ export const AREAS = [
   {
     slug: 'educacao-ciencia-e-inovacao',
     nome: { pt: 'Educação, Ciência e Inovação', en: 'Education, Science and Innovation' },
-    nomeEnFonte: 'casa',
+    nomeEnFonte: 'governo',
     artigo: 'Artigo 22.º',
     materias: [
       {
@@ -442,7 +460,7 @@ export const AREAS = [
   {
     slug: 'saude',
     nome: { pt: 'Saúde', en: 'Health' },
-    nomeEnFonte: 'casa',
+    nomeEnFonte: 'governo',
     artigo: 'Artigo 23.º',
     materias: [
       {
@@ -535,7 +553,7 @@ export const AREAS = [
   {
     slug: 'ambiente-e-energia',
     nome: { pt: 'Ambiente e Energia', en: 'Environment and Energy' },
-    nomeEnFonte: 'casa',
+    nomeEnFonte: 'governo',
     artigo: 'Artigo 25.º',
     materias: [
       {

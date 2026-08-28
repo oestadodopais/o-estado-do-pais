@@ -1311,15 +1311,13 @@ coisa que não é um lugar, com a mesma substituição na descrição do `<head>
 se tomou neste bloco porque a régua da voz é partilhada por todos os blocos e a
 decisão desta passagem era a regra das áreas.*
 
-*O NOME INGLÊS DE CINCO ÁREAS É TRADUÇÃO DA CASA, e fica dito aqui porque o brief
-manda dizê-lo: `Finance`, `Infrastructure and Housing`, `Education, Science and
-Innovation`, `Health`, `Justice` e `Environment and Energy` não foram lidos na
-página inglesa do Governo. Os quatro nomes de 28.08 pela manhã (`Presidency`,
-`Economy and of Territorial Cohesion`, `Home Affairs`, `Labour, Solidarity and
-Social Security`) foram lidos nela, no navegador; a página é construída por
-script e não se deixa ler por um leitor simples, e as áreas novas entraram sem
-essa leitura. `src/data/areas.mjs` diz, área a área, qual é qual, no campo
-`nomeEnFonte`.*
+*OS DEZOITO NOMES SÃO OS QUE O GOVERNO PUBLICA, e nenhum é tradução da casa. O
+brief manda dizer quando um nome inglês é nosso, e não há nenhum: os nove
+portugueses estão na lista da composição do Governo e nos títulos dos artigos da
+lei orgânica, e os nove ingleses foram lidos no navegador a 28.08.2026, três na
+página da composição e seis na página das áreas de governo
+(`/en/gc25/ministries`), esta pelo lugar de direção. `src/data/areas.mjs` diz, no
+campo `nomeEnFonte` de cada área, de onde veio o nome inglês dela.*
 
 *A CONTAGEM DE PEÇAS NÃO ENTRA NESTA TABELA, e é de propósito. No índice, a linha
 inteira de cada área é uma ligação, e a régua deixa cair um bloco cujo texto está
