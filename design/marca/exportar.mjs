@@ -149,12 +149,47 @@ function pagina(svg, px, tema, forma) {
 ${marcado}`;
 }
 
-async function main() {
-  if (!existsSync(DIRECOES)) throw new Error(`não há ${DIRECOES}`);
-  await mkdir(EXPORT, { recursive: true });
+/**
+ * AS RONDAS DE EXPLORAÇÃO, QUE NÃO SÃO DIREÇÕES.
+ *
+ * `node design/marca/exportar.mjs e2` lê `direcoes-e2/` e escreve `EXPORT-E2/`.
+ *
+ * Porque é que não vão para `direcoes/` com as outras: as trinta e cinco
+ * células de uma tabela cruzada não são trinta e cinco propostas de marca. Se
+ * fossem para lá, entravam na prancha, entravam no `medir` e entravam na lista
+ * que a §7 das NOTAS ordena, e nenhuma dessas coisas quer dizer alguma coisa
+ * sobre uma célula de grelha. Ficam num sítio só delas, com um `medir-e2` só
+ * delas, e o ramo continua a poder dizer quantas direções tem.
+ *
+ * E LEVAM TRÊS TAMANHOS EM VEZ DE CATORZE, porque a adenda 6 nomeia três (180,
+ * 60 e 16) e mais nenhum entra em decisão nenhuma desta ronda. O tema é sempre
+ * «claro» porque estes ficheiros têm o MESMO par de cores nos dois temas, de
+ * propósito: a pergunta é sobre o par, e um ficheiro que muda de cor conforme o
+ * tema responderia a outra.
+ */
+const RONDAS = {
+  e2: {
+    origem: 'direcoes-e2',
+    destino: 'EXPORT-E2',
+    tamanhos: [
+      { nome: '180', px: 180, tema: 'claro', forma: 'normal' },
+      { nome: '60', px: 60, tema: 'claro', forma: 'normal' },
+      { nome: '16', px: 16, tema: 'claro', forma: 'favicon' },
+    ],
+  },
+};
 
-  const ficheiros = (await readdir(DIRECOES)).filter((f) => f.endsWith('.svg')).sort();
-  if (ficheiros.length === 0) throw new Error('nenhum SVG em direcoes/');
+async function main() {
+  const ronda = RONDAS[process.argv[2] ?? ''] ?? null;
+  const origem = ronda ? path.join(AQUI, ronda.origem) : DIRECOES;
+  const destino = ronda ? path.join(AQUI, ronda.destino) : EXPORT;
+  const lista = ronda ? ronda.tamanhos : TAMANHOS;
+  if (process.argv[2] && !ronda) throw new Error(`ronda desconhecida: ${process.argv[2]}`);
+  if (!existsSync(origem)) throw new Error(`não há ${origem}`);
+  await mkdir(destino, { recursive: true });
+
+  const ficheiros = (await readdir(origem)).filter((f) => f.endsWith('.svg')).sort();
+  if (ficheiros.length === 0) throw new Error(`nenhum SVG em ${path.basename(origem)}/`);
 
   const navegador = await chromium.launch();
   const contexto = await navegador.newContext({ deviceScaleFactor: 1 });
@@ -163,17 +198,18 @@ async function main() {
   let contados = 0;
   for (const ficheiro of ficheiros) {
     const slug = ficheiro.replace(/\.svg$/, '');
-    const svg = await readFile(path.join(DIRECOES, ficheiro), 'utf8');
-    const pasta = path.join(EXPORT, slug);
+    const svg = await readFile(path.join(origem, ficheiro), 'utf8');
+    const pasta = path.join(destino, slug);
     await mkdir(pasta, { recursive: true });
-    for (const t of TAMANHOS) {
-      const forma = TROCA_CEDO[slug]?.[t.nome] ?? t.forma;
+    for (const t of lista) {
+      const forma = ronda ? t.forma : (TROCA_CEDO[slug]?.[t.nome] ?? t.forma);
       await pag.setViewportSize({ width: t.px, height: t.px });
       await pag.setContent(pagina(svg, t.px, t.tema, forma));
-      const destino = path.join(pasta, `${slug}-${t.nome}.png`);
-      await pag.screenshot({ path: destino, omitBackground: false });
+      const alvo = path.join(pasta, `${slug}-${t.nome}.png`);
+      await pag.screenshot({ path: alvo, omitBackground: false });
       contados += 1;
     }
+    if (ronda) continue;
     for (const nome of TAMANHOS_EXTRA[slug] ?? []) {
       const t = EXTRA[nome];
       await pag.setViewportSize({ width: t.px, height: t.px });
@@ -184,19 +220,20 @@ async function main() {
     console.log(`${slug}: ${TAMANHOS.length + (TAMANHOS_EXTRA[slug]?.length ?? 0)} PNG`);
   }
 
-  /* A prancha inteira, à largura que o brief pede. */
+  /* A prancha inteira, à largura que o brief pede. Só na ronda das direções: as
+     células de uma grelha de exploração não entram na prancha. */
   const prancha = path.join(AQUI, 'PRANCHA.html');
-  if (existsSync(prancha)) {
+  if (!ronda && existsSync(prancha)) {
     await pag.setViewportSize({ width: 1280, height: 1000 });
     await pag.goto(pathToFileURL(prancha).href, { waitUntil: 'load' });
     await pag.screenshot({ path: path.join(AQUI, 'PRANCHA.png'), fullPage: true });
     console.log('PRANCHA.png: 1280 de largura, página inteira');
-  } else {
+  } else if (!ronda) {
     console.log('sem PRANCHA.html: a captura não foi feita');
   }
 
   await navegador.close();
-  console.log(`${contados} PNG em ${path.relative(process.cwd(), EXPORT)}`);
+  console.log(`${contados} PNG em ${path.relative(process.cwd(), destino)}`);
 }
 
 main().catch((erro) => {
