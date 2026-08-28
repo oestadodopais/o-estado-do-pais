@@ -21,7 +21,9 @@ ilegível, e a regra nova só se entende contra ela.*
 | `dbeaf7a` | o relatório da primeira parte |
 | `3398144` | a regra do assunto: as nove áreas, as 21 matérias, as 31 regras, a A7 e o inventário |
 | `ed6fb4a` | a segunda parte do relatório |
-| (este) | os nomes ingleses verificados na fonte do Governo, e a ressalva que sai |
+| `bcd1fe5` | os nomes ingleses verificados na fonte do Governo, e a ressalva que sai |
+| `de1789a` | a leitura cruzada: a medida lê-se como uma medida, os grupos por matéria, a porta legal, as descrições que saem, o rótulo da cabeça declarado |
+| (este) | a terceira parte do relatório |
 
 ---
 
@@ -980,3 +982,300 @@ obriga a dizê-lo na linha do inventário.
 
 **O custo desta correção:** ≈ 20 mil símbolos, contando a leitura dos ficheiros a
 corrigir, as três alterações, a cadeia inteira das réguas e esta secção.
+
+---
+
+# Terceira parte · a leitura cruzada, e o que ela mudou
+
+*Escrita a 28.08.2026, depois de o Codex ler `bcd1fe5` (2 plantas em 3) e de o
+lugar de direção verificar as conclusões contra o pacote. Sete pedidos, e este é
+o que aconteceu a cada um.*
+
+## 21 · Uma medida passa a ler-se como uma medida
+
+**O achado, e tem razão.** A página de uma área rendia de cada medida o valor, o
+selo e o identificador, e mais nada. «Um leitor não consegue dizer o que é
+1 409.» A razão que a primeira volta escreveu era uma guarda do portão:
+`data-linha-*` é a marca de um campo do livro-razão **na página do livro-razão**,
+e uma página de área não é uma. A guarda era boa; a conclusão que se tirou dela
+era errada, e a prova é que a decisão D6 já a tinha aberto uma vez, para o índice
+dos 308, exatamente com o argumento que aqui se aplica: uma página que LISTA
+linhas com a linha-espécime inteira e o selo de cada uma não está a pôr texto do
+livro-razão em prosa corrente.
+
+**O que se fez, e é reutilização e não cópia.** A linha-espécime vivia escrita
+duas vezes, em `LivroConcelhosView` e em `LivroConcelhoView`, palavra por
+palavra. Saiu das duas para `src/components/ItemDoLivro.astro`, e as três
+páginas usam a mesma peça. **O HTML das páginas do livro-razão não mudou**: o
+corpo construído de `/livro-razao/concelhos`, de `/en/ledger/municipalities` e de
+`/livro-razao/concelhos/evora` é idêntico, byte a byte, antes e depois da
+extração, e foi medido assim. A única diferença em qualquer ficheiro do `dist/` é
+a ordem de dois `<link rel="stylesheet">` na página de Évora, que é o empacotador
+a reagir a um import novo.
+
+**O que uma medida rende agora:** o valor com o selo, o identificador, a unidade,
+a data de referência, a fonte, o documento e a data de leitura. Sete campos, cada
+um marcado `data-linha-*` e **conferido pelo portão, carácter a carácter, contra
+o campo da linha de que ele saiu**. A página passou a ter mais conferência do que
+tinha, e não menos.
+
+**A data de referência e o documento ficam atrás de uma opção do componente**,
+desligada por omissão: as duas vistas do livro-razão não os rendiam, e
+acrescentá-los ali mudava páginas de outro bloco sem que ninguém o tivesse
+pedido. A página de uma área liga-os, porque é ali que uma medida aparece longe
+do seu contexto.
+
+**NÃO HÁ NOME DE MEDIDA, e não é um esquecimento.** O pedido diz «o nome da
+medida, o valor, a unidade e o período». O livro-razão **não tem campo de nome**:
+uma linha tem valor, unidade, fonte, documento, datas e um identificador. O sítio
+declara nomes para 15 das 125 medidas destas páginas (as do painel europeu, em
+`src/data/figuras.mjs`) e para as sete medidas de um concelho, e para as outras
+110 não há nome em lado nenhum. Escrever 110 nomes à mão era inventar conteúdo
+que a fonte não publicou, e a regra da casa proíbe-o; escrever quinze e deixar
+110 sem nada era uma página com duas formas. O que nomeia uma linha é o seu
+identificador, que é o nome do assunto dela (`evora-pagamentos-em-atraso-2025`),
+mais o documento, que para as fontes estatísticas É o nome do indicador
+(«População residente (N.º) × sexo × grupo etário», «General government gross
+debt (EDP concept), consolidated - annual data»). **Fica dito como o que é: um
+por fazer que precisa de um campo novo no livro-razão, e não de prosa nossa.**
+
+## 22 · As medidas agrupam-se pela matéria
+
+Cada página agrupa as suas medidas pela matéria que as pôs ali, e o rótulo do
+grupo são **as palavras da lei**, sem uma palavra à volta. São 21 grupos nas nove
+páginas, sete deles na Economia e Coesão Territorial, que era onde o problema
+doía.
+
+O rótulo vai em **português nas duas edições, com `lang="pt-PT"`**, e é uma
+decisão e não um esquecimento: é uma citação de uma lei portuguesa, e traduzir
+uma matéria de um decreto-lei era escrever uma lei que não existe. O que a edição
+inglesa traduz é o nome da área, porque esse o Governo publica nas duas línguas.
+O portão confere as duas coisas: que o rótulo rendido é a matéria declarada,
+palavra por palavra, e que leva a marca da língua.
+
+## 23 · A porta legal, uma vez por página
+
+No fim do corpo de cada página de área, na forma do `.prov` que o índice dos 308
+usa para a legenda do selo: o nome da área como o Governo o publica, e a ligação
+com o diploma e os números do artigo em que **aquela** página assenta
+(«Decreto-Lei n.º 87-A/2025 · Artigo 15.º, n.º 1 · Artigo 15.º, n.º 2»). Nada
+mais sobre a regra.
+
+**A ligação abre o ficheiro que o Diário da República serve**, que é o que foi
+verificado byte a byte e citado neste relatório, e não a página de detalhe do
+portal do Diário: não sei o endereço dessa página e não o invento. Se o lugar de
+direção o quiser, é uma linha em `LEI_ORGANICA`.
+
+Os algarismos da citação legal («87-A/2025», «15.º», «1») precisaram de um motivo
+novo em `ledger/allowlist.yml`, `referencia-legal`, com a razão escrita: é a
+morada de um texto legal, como a página de um documento na proveniência de uma
+linha, e não uma medição do País.
+
+## 24 · As descrições saíram, e o título passou a ser um eixo
+
+As vinte descrições do `<head>` diziam «os trabalhos e as medidas cujo assunto é
+matéria de X, área de governo» e «whose subject is a matter of …»: é o sítio a
+explicar o seu próprio método na superfície pública, e a Emenda 15 tira isso de
+uma página do leitor. **A descrição de uma página de área passou a ser o nome da
+área**, e a do índice o seu título. Não leva a contagem das peças, e a razão é a
+regra da casa: um número do sítio sobre si próprio entra por `data-prova`, com
+quem o reconte, e no `<head>` não há markup onde pendurar a marca.
+
+**O título do índice passou a «Por área de governo» / «By area of government».**
+Dizia «As áreas de governo» sobre uma lista de nove das dezasseis, e um título
+assim promete a lista oficial inteira; a única maneira de o corrigir era uma
+frase sobre a cobertura, que é precisamente o que não pode estar ali. O eixo é o
+que a página é, ao lado de «por região» e «por concelho». **A lede saiu com ele**:
+definia o que uma área de governo é, e uma definição do vocabulário do sítio é o
+sítio a explicar-se.
+
+## 25 · As razões dizem o que são, e um princípio decide a fronteira
+
+**Quatro regras passaram a dizer que a matéria é a mais próxima e não a que
+nomeia o assunto**, pela fórmula «A MATÉRIA MAIS PRÓXIMA; a lei não nomeia …»:
+
+| regra | matéria | o que a lei não nomeia |
+| --- | --- | --- |
+| o PIB real per capita | crescimento da economia | o produto interno bruto, nem o nível da economia: nomeia as políticas dirigidas ao seu crescimento |
+| o VAB empresarial de um concelho | crescimento da economia | o valor acrescentado, nem o nível da economia de um território |
+| a concentração do VAB nas quatro maiores | crescimento da economia | a concentração nem a estrutura de mercado; «concorrência» não ocorre no diploma |
+| o rácio S80/S20 | combate à pobreza e de promoção da inclusão social | a desigualdade de rendimento; nomeia o combate à pobreza e a promoção da inclusão social |
+
+**E um princípio, escrito uma vez no cabeçalho de `src/data/areas.mjs`:**
+
+> uma medida do ESTADO ou do DESEMPENHO da economia é matéria da economia; uma
+> CONTAGEM de pessoas ou de empresas é uma estatística e fica de fora.
+
+**O que ele mudou:** a taxa de câmbio efetiva real saiu da lista das que ficam
+fora e entrou em «competitividade», ao lado do custo unitário do trabalho. As
+duas são indicadores de competitividade e o painel europeu dos desequilíbrios
+publica-as no mesmo grupo; tê-las de lados diferentes da fronteira era a
+incoerência que a leitura apanhou.
+
+**O que ele não mudou, e fica dito porque é a fronteira mais estreita deste
+bloco:** o saldo da balança corrente e a posição de investimento internacional
+continuam fora. Medem a posição do País perante o resto do mundo, e nenhuma
+matéria do artigo 15.º, n.º 1, a nomeia: as matérias são o crescimento da
+economia, a competitividade, o investimento, a inovação e a internacionalização
+das empresas. O que faz a taxa de câmbio entrar é ser uma medida de
+competitividade, e «competitividade» é matéria; o que deixa as outras duas fora é
+não haver matéria que as nomeie nem que lhes fique perto. **Se o lugar de direção
+ler o princípio mais largo do que eu o li, as duas entram em «competitividade»
+com a marca da matéria mais próxima, e é uma linha em cada regra.**
+
+## 26 · A peça inteira em várias áreas, e a razão de cada aparição
+
+«Évora, Quinze Anos, Cinco Mandatos» está em três áreas e o conjunto dos 308 está
+em duas, e é legítimo porque as linhas de cada uma são de matérias diferentes. A
+A4 do portão passou a exigir que **cada aparição diga que linhas do livro-razão a
+puseram ali**, e não só a matéria: uma peça inteira numa área sem as linhas que a
+justificam está lá por uma razão que ninguém consegue conferir. O estrago
+plantado é exatamente esse, e a régua vê-o.
+
+## 27 · O que ficou por fazer, e diz-se
+
+* **A marca de língua nos nomes das fontes não foi posta.** O pedido dizia que os
+  títulos portugueses de estudos e de fontes levassem `lang="pt-PT"` nas páginas
+  inglesas. Os títulos de estudo já levam, e sempre levaram: passam por
+  `TituloDeTrabalho`, que decide a língua do título e a marca. **Os nomes de
+  fonte não levam, em página nenhuma do sítio**, e verifiquei-o no `dist/`: as
+  páginas inglesas do livro-razão rendem «CICF/IPCA — Anuário Financeiro dos
+  Municípios Portugueses» sem marca. Pô-la só na página de uma área fazia a
+  página divergir da sua origem, que é o contrário do que o pedido 1 manda; e
+  pô-la em todas exige decidir, valor a valor, quais são portugueses, porque
+  «Eurostat», «PORDATA» e «INE» não são. **É um bloco do livro-razão e não deste,
+  e fica nomeado.**
+* **O marcador de incerteza já rende na forma da edição**, e veio de graça com a
+  reutilização: `CampoDaLinha` rende `[a verificar]` em português nas duas
+  edições, com glosa inglesa e com a porta para a página do marcador. É a razão
+  mais forte para ter reutilizado a peça em vez de copiar a forma.
+* **A linha do índice não entrou no inventário**, e o bloco do inventário explica
+  porquê: a régua deixa cair um bloco cujo texto está todo dentro de um `<a>`, e
+  a linha inteira de cada área é uma ligação. Declará-la punha lá uma linha
+  `viva` que não se rende, e a construção fecha nesse caso. Para a declarar era
+  preciso partir a linha em duas, e isso traz de volta os dois defeitos que a
+  forma evita: o alvo de 44 px passava a ser só o nome, e a tabela ganhava uma
+  frase com um número por dentro (I74).
+* **A leitura cruzada desta terceira passagem não está feita**, e o registo das
+  revisões continua a dizer `por ler`.
+
+## 28 · As contas, depois de tudo
+
+**9 áreas, 139 peças, 125 medidas, 21 matérias, 34 regras, 7 assuntos fora.** A
+Economia e Coesão Territorial passou de 96 para 97 peças (a taxa de câmbio), e as
+2 602 linhas do livro-razão continuam cobertas uma vez e uma só.
+
+**As páginas:** o índice com 9 154 B; a maior página de área é a da Economia, com
+156 510 B (pt) e 155 880 B (en), que são 88 medidas com a proveniência inteira; a
+menor é a das Finanças, com 12 312 B.
+
+**O portão** tem sete regras e **onze estragos plantados, onze vistos vermelhos**
+(a A2, a A4, a A5 e a A7 levam dois cada). **As réguas do navegador:** as áreas
+22 de 22 e 5 plantas em 5; matriz, correções, mapa de navegação e regiões no §29.
+
+**O inventário passa de 554 para 579 linhas**, o bloco `areas` de 50 para 75:
+saíram 22 para `retirada` (as vinte descrições do `<head>`, o título antigo do
+índice e a lede) e entraram 25 (o título novo nas duas edições, os 21 rótulos de
+matéria e o rótulo da cabeça, que o §31 explica). As vivas passam de 502 a 503 e
+as retiradas de 52 a 76.
+
+## 29 · As réguas vizinhas
+
+| régua | resultado |
+| --- | --- |
+| `tests/inicio/matriz.mjs` | 87 de 87 |
+| `tests/inicio/correcoes-a.mjs` | 32 de 32 |
+| `tests/inicio/mapa-navegacao.mjs` | 9 de 9 |
+| `tests/inicio/regioes.mjs` | 30 de 30 |
+| `tests/inicio/areas.mjs` | 22 de 22, e 5 estragos plantados em 5 |
+| `scripts/check-areas.mjs --vermelhos` | 11 estragos em 11 |
+
+## 30 · O custo desta passagem
+
+≈ 150 mil símbolos, contando a leitura das formas de origem no `dist/` e nas
+vistas, a extração do componente e a prova de que as páginas do livro-razão não
+mudaram, as sete alterações, a resposta à medição cega, as seis construções
+completas com a cadeia das réguas, os estragos plantados e esta parte do
+relatório. É menos de metade do que a segunda passagem custou, e a razão é que a
+regra já estava desenhada: esta passagem corrigiu formas.
+
+---
+
+## 31 · A medição cega, e as vinte e duas cadeias sem régua
+
+*O lugar de direção correu uma medição cega (Sonnet, programa M10) sobre
+`bcd1fe5` e mandou o resultado a meio desta terceira passagem. Tudo o que ela
+mediu bateu certo (os nove nomes nas duas línguas, as 21 citações da lei
+verbatim no artigo e número declarados, 138 peças por edição sem discrepância
+entre página, recibo e YAML, as 2 602 linhas cobertas uma vez, transbordo zero,
+`verify` e `typecheck` a zero) menos uma coisa: vinte e duas cadeias rendidas nas
+páginas novas sem linha `viva` no inventário.*
+
+**As vinte e duas são quatro cadeias distintas:** «Áreas de governo» no índice e
+nas nove páginas de área, «Government areas» nas dez gémeas inglesas, e
+«provisório» / «provisional» na página da Economia e na sua gémea. As duas
+famílias escaparam por razões diferentes, e as duas foram medidas e não supostas.
+
+### O rótulo da cabeça: a régua não vê um `<span>`
+
+**A causa.** A régua da voz mede **elementos de bloco que não contêm outro
+bloco**. O rótulo era `<span class="eyebrow">` dentro de `<div class="area-cabeca">`,
+que também tem o `<h1>`: o `<div>` é saltado porque contém um bloco, e o `<span>`
+não é um bloco. A cadeia passava por baixo da régua, e o `check:voz` não tinha
+como parar nela.
+
+**A prova de que é isto**, e é um positivo conhecido e não um raciocínio: o mesmo
+rótulo, com a mesma classe, escrito num `<h2>` na página de um concelho
+(«Relance» / «At a glance») **está declarado no inventário desde sempre**, como
+`navegacao`. A única diferença entre o que a régua vê e o que ela não vê é a
+etiqueta do elemento.
+
+**A correção.** Nestas duas vistas o `<span>` passou a `<p>`. `.eyebrow` já era
+`display: block` com `margin: 0`, e por isso não muda um pixel. As duas cadeias
+entraram no inventário como `navegacao`, que é a classe que o lugar de direção
+indicou e a mesma do positivo conhecido.
+
+**E o tripwire vê-as nos dois sentidos**, o que também foi medido nesta passagem:
+uma cadeia rendida e não declarada dá «bloco por classificar» (foi o que a
+construção disse dos 21 rótulos de matéria antes de eu os declarar), e uma linha
+`viva` que deixe de se render fecha a construção com «linha viva que não se rende
+em rota nenhuma» (foi o que ela disse das vinte descrições quando saíram).
+
+**DEZASSEIS OUTRAS VISTAS DO SÍTIO TÊM O MESMO DEFEITO**, e fica nomeado porque é
+maior do que este bloco: o livro-razão e a sua página de linha, o índice dos
+concelhos e o de um concelho, os distritos, as regiões, a agenda, as correções, o
+marcador, o texto de um estudo, o estudo. Todas rendem o rótulo da cabeça em
+`<span>` e nenhuma o tem declarado. **Não foram tocadas aqui**: são páginas de
+outros blocos, e mexer-lhes acrescenta linhas ao inventário de blocos cuja
+leitura cruzada já foi feita contra outra lista.
+
+### «provisório»: é a palavra da fonte, e fica
+
+**O que é.** `Claim.astro` rende-a quando a linha do livro-razão traz
+`source_flag: "p"`. Nas doze linhas do índice de PIB per capita das regiões a
+bandeira vem do Eurostat, e a própria linha explica-a: «O Eurostat marca este
+valor como provisório. Os dados regionais de 2024 são a primeira publicação do
+ano de referência…».
+
+**Logo, fica.** Pelo critério que o lugar de direção deu: não é o sítio a falar do
+estado dos seus próprios dados, que é o que a regra 15 manda sair; é a palavra da
+FONTE sobre o número dela, e vive ao lado do selo, que é onde ela pertence.
+
+**Porque é que a régua não parou nela.** O bloco que a contém contém também uma
+origem declarada (`[data-claim]`), e a régua deixa cair um bloco inteiro nesse
+caso. É a mesma razão por que o valor «73» também não está no inventário, e é a
+razão certa: nenhum dos dois é uma frase da casa.
+
+**Não entra no inventário**, e declará-la seria um erro de classificação: uma
+linha `viva` que a régua nunca mede fecha a construção, e classificá-la como
+prosa da casa dizia que a casa a escreveu, quando quem a escreveu foi o Eurostat.
+
+**O que a guarda passou a ser uma célula, a M8 de `tests/inicio/areas.mjs`**, com
+a definição da célula 2i·2 da matriz mais uma conta que aquela não faz: a palavra
+segue a EDIÇÃO («provisório» em pt, «provisional» em en) e o conjunto das medidas
+que a levam é **exactamente** o conjunto das linhas citadas na página cuja
+bandeira é `p`. Nem uma a mais nem uma a menos. O estrago plantado apaga a
+palavra de uma medida que a devia ter, e a célula vê-o.
+
+**As réguas do navegador deste bloco passam a 22 células e 5 estragos plantados**,
+todos vistos vermelhos.
