@@ -1298,6 +1298,56 @@ assunto ficam fora, porque «estatística» não é matéria de ministério nenh
 neste diploma. Entraram seis áreas: Finanças, Infraestruturas e Habitação,
 Justiça, Educação, Ciência e Inovação, Saúde e Ambiente e Energia.*
 
+*SEGUNDA LEITURA, 28.08.2026: O QUE ESTE BLOCO PASSOU A DECLARAR. A leitura
+cruzada do Codex e o lugar de direção mandaram sete alterações, e três mexem na
+voz. **Saíram vinte e duas linhas para `retirada`**: as duas descrições do
+índice, as dezoito descrições das páginas de área (todas diziam o método do sítio
+na superfície pública), o título antigo do índice nas duas edições e a lede que
+definia o que uma área é. **Entraram vinte e cinco**: o título novo nas duas
+edições, os vinte e um rótulos de matéria e o rótulo da cabeça nas duas edições,
+que estava rendido em vinte sítios e declarado em nenhum. A descrição do `<head>` de uma página
+de área passou a ser o NOME da área, que já estava declarado, e a do índice o seu
+título: por isso as vinte novas descrições não trazem linha nenhuma.*
+
+*OS RÓTULOS DE MATÉRIA SÃO UMA LINHA CADA E NÃO DUAS, e a razão é o que eles são:
+as palavras da lei orgânica, citadas. Uma citação de uma lei portuguesa não se
+traduz, e por isso o rótulo é o mesmo carácter a carácter nas duas edições, com
+`lang="pt-PT"` em ambas. Vinte e um rótulos, vinte e uma linhas. O portão das
+áreas confere que o rótulo rendido é a matéria declarada, palavra por palavra, e
+que leva a marca da língua: uma paráfrase da casa por cima de uma citação da lei
+fecha a construção.*
+
+*A LINHA DO ÍNDICE («Finanças · 1 peça») CONTINUA A NÃO ENTRAR NESTA TABELA, e
+não é um esquecimento: a régua do inventário deixa cair um bloco cujo texto está
+todo dentro de um `<a>`, e a linha inteira de cada área é uma ligação. Declará-la
+aqui punha na tabela uma linha `viva` que não se rende em rota nenhuma, e a
+construção fecha nesse caso. **Para a declarar era preciso partir a linha em duas**
+(o nome dentro da ligação e a contagem fora dela), e isso traz de volta os dois
+defeitos que a forma atual evita: o alvo de 44 px passava a ser só o nome, e a
+tabela ganhava uma frase com um número por dentro, que é a I74. O nome de cada
+área está declarado, e a contagem tem a sua chave da prova, com quem a reconte.*
+
+*O RÓTULO DA CABEÇA («Áreas de governo», «Government areas») ENTROU A 28.08.2026,
+e a medição cega é que o encontrou: estava rendido no índice e nas nove páginas
+de área, nas duas edições, e declarado em lado nenhum. **A causa não é deste
+bloco, e está medida**: a régua da voz mede elementos de bloco que não contêm
+outro bloco, e o rótulo era um `<span>` dentro de uma cabeça que também tem o
+`<h1>`, ou seja, nem uma coisa nem outra. A prova de que é isto e não uma
+suposição está no próprio inventário: «Relance» e «At a glance» são o mesmo
+rótulo, com a mesma classe, escritos num `<h2>`, e estão declarados desde sempre
+como `navegacao`. Nestas páginas o `<span>` passou a `<p>`, que é um bloco, e a
+classe já era `display: block` com `margin: 0`: não muda um pixel. **Dezasseis
+outras vistas do sítio têm o mesmo rótulo em `<span>` e continuam por declarar**,
+e isso é um bloco do inventário e não deste.*
+
+*A PALAVRA «provisório» NÃO ENTRA, e a razão é o que ela é: a bandeira
+`source_flag: "p"` de uma linha do livro-razão dita por palavras, que é a FONTE a
+dizer que o número dela é provisório (o Eurostat marca assim os valores regionais
+do primeiro ano de referência). Não é uma frase da casa: a régua deixa cair o
+bloco inteiro que a contém, porque ele contém uma origem declarada, que é a mesma
+razão por que o valor não entra. O que a guarda é uma célula da régua do
+navegador deste bloco, a M8, com o seu estrago plantado.*
+
 *O NOME DE CADA ÁREA ENTRA AQUI, uma linha por edição, e não é `data-lugar`: uma
 área de governo não é um lugar, e a marca dos lugares tem escrito o que marca (o
 nome de um concelho e a etiqueta que a Carta Administrativa lhe dá). São nove
@@ -1319,12 +1369,13 @@ página da composição e seis na página das áreas de governo
 (`/en/gc25/ministries`), esta pelo lugar de direção. `src/data/areas.mjs` diz, no
 campo `nomeEnFonte` de cada área, de onde veio o nome inglês dela.*
 
-*A CONTAGEM DE PEÇAS NÃO ENTRA NESTA TABELA, e é de propósito. No índice, a linha
-inteira de cada área é uma ligação, e a régua deixa cair um bloco cujo texto está
-todo dentro de um `<a>`: «Justiça · 1 peça» não se declara, e por isso não há aqui
-uma frase com um número por dentro. É o defeito que a I74 nomeia («uma frase com
-um número que se move volta com outro número, e a linha nunca voltaria a
-morder»), evitado na forma em vez de ser aceite na tabela.*
+*OS CAMPOS DAS MEDIDAS NÃO TRAZEM LINHAS NOVAS, e é a razão mais forte para
+reutilizar a forma da origem. Desde 28.08.2026 cada medida de uma página de área
+rende-se na linha-espécime do livro-razão, com a unidade, a data de referência, a
+fonte, o documento e a data de leitura. Nenhum desses campos é prosa da casa: são
+campos do livro-razão, marcados `data-linha-*`, e a régua deixa cair um bloco
+inteiro que contenha uma origem declarada. Os rótulos («Fonte», «Documento»,
+«Lido a», «Dados de») são os mesmos que o índice dos 308 já rendia.*
 
 *A DICA DA CHAVE DA PROVA É A MESMA PARA AS NOVE ÁREAS, pela mesma razão: uma
 frase composta com o nome de cada área punha aqui nove linhas por edição que não
@@ -1342,12 +1393,16 @@ um CAMPO de uma linha, e não uma afirmação sobre o que este sítio cobre.*
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| conteudo | As áreas de governo | areas | viva | — |
-| conteudo | The areas of government | areas | viva | — |
-| conteudo | Uma área de governo é o conjunto de matérias de um ministério, tal como a lei orgânica do Governo o fixa. | areas | viva | — |
-| conteudo | An area of government is the set of matters of one ministry, as the Government’s organic law fixes it. | areas | viva | — |
-| conteudo | As áreas de governo de Portugal, e os trabalhos e as medidas cujo assunto é matéria de cada uma. | areas | viva | — |
-| conteudo | The areas of government of Portugal, and the studies and measures whose subject is a matter of each one. | areas | viva | — |
+| conteudo | Por área de governo | areas | viva | — |
+| conteudo | By area of government | areas | viva | — |
+| navegacao | Áreas de governo | areas | viva | — |
+| navegacao | Government areas | areas | viva | — |
+| conteudo | As áreas de governo | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): um título que anuncia «as áreas de governo» sobre uma lista de nove das dezasseis promete a lista oficial inteira, e a única correção possível era uma frase de cobertura. O título passou a nomear o eixo de navegação, «Por área de governo» |
+| conteudo | The areas of government | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): um título que anuncia «as áreas de governo» sobre uma lista de nove das dezasseis promete a lista oficial inteira, e a única correção possível era uma frase de cobertura. O título passou a nomear o eixo de navegação, «Por área de governo» |
+| conteudo | Uma área de governo é o conjunto de matérias de um ministério, tal como a lei orgânica do Governo o fixa. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): definia o que uma área de governo é, e uma definição do vocabulário do sítio é o sítio a explicar-se (Emenda 15) |
+| conteudo | An area of government is the set of matters of one ministry, as the Government’s organic law fixes it. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): definia o que uma área de governo é, e uma definição do vocabulário do sítio é o sítio a explicar-se (Emenda 15) |
+| conteudo | As áreas de governo de Portugal, e os trabalhos e as medidas cujo assunto é matéria de cada uma. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | The areas of government of Portugal, and the studies and measures whose subject is a matter of each one. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
 | conteudo | peças na página desta área de governo | areas | viva | — |
 | conteudo | pieces on this area of government’s page | areas | viva | — |
 | conteudo | Finanças | areas | viva | — |
@@ -1368,27 +1423,48 @@ um CAMPO de uma linha, e não uma afirmação sobre o que este sítio cobre.*
 | conteudo | Labour, Solidarity and Social Security | areas | viva | — |
 | conteudo | Ambiente e Energia | areas | viva | — |
 | conteudo | Environment and Energy | areas | viva | — |
-| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Finanças, área de governo. | areas | viva | — |
-| conteudo | The studies and measures whose subject is a matter of Finance, an area of government. | areas | viva | — |
-| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Economia e Coesão Territorial, área de governo. | areas | viva | — |
-| conteudo | The studies and measures whose subject is a matter of Economy and of Territorial Cohesion, an area of government. | areas | viva | — |
-| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Infraestruturas e Habitação, área de governo. | areas | viva | — |
-| conteudo | The studies and measures whose subject is a matter of Infrastructure and Housing, an area of government. | areas | viva | — |
-| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Justiça, área de governo. | areas | viva | — |
-| conteudo | The studies and measures whose subject is a matter of Justice, an area of government. | areas | viva | — |
-| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Administração Interna, área de governo. | areas | viva | — |
-| conteudo | The studies and measures whose subject is a matter of Home Affairs, an area of government. | areas | viva | — |
-| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Educação, Ciência e Inovação, área de governo. | areas | viva | — |
-| conteudo | The studies and measures whose subject is a matter of Education, Science and Innovation, an area of government. | areas | viva | — |
-| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Saúde, área de governo. | areas | viva | — |
-| conteudo | The studies and measures whose subject is a matter of Health, an area of government. | areas | viva | — |
-| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Trabalho, Solidariedade e Segurança Social, área de governo. | areas | viva | — |
-| conteudo | The studies and measures whose subject is a matter of Labour, Solidarity and Social Security, an area of government. | areas | viva | — |
-| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Ambiente e Energia, área de governo. | areas | viva | — |
-| conteudo | The studies and measures whose subject is a matter of Environment and Energy, an area of government. | areas | viva | — |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Finanças, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | The studies and measures whose subject is a matter of Finance, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Economia e Coesão Territorial, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | The studies and measures whose subject is a matter of Economy and of Territorial Cohesion, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Infraestruturas e Habitação, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | The studies and measures whose subject is a matter of Infrastructure and Housing, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Justiça, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | The studies and measures whose subject is a matter of Justice, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Administração Interna, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | The studies and measures whose subject is a matter of Home Affairs, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Educação, Ciência e Inovação, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | The studies and measures whose subject is a matter of Education, Science and Innovation, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Saúde, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | The studies and measures whose subject is a matter of Health, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Trabalho, Solidariedade e Segurança Social, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | The studies and measures whose subject is a matter of Labour, Solidarity and Social Security, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Ambiente e Energia, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | The studies and measures whose subject is a matter of Environment and Energy, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
 | conteudo | área do XXV Governo Constitucional | areas | viva | — |
 | conteudo | area of the XXV Constitutional Government | areas | viva | — |
 | conteudo | Os trabalhos | areas | viva | — |
 | conteudo | The studies | areas | viva | — |
 | conteudo | Os estudos de dados | areas | viva | — |
 | conteudo | The data studies | areas | viva | — |
+| conteudo | a política financeira do Estado | areas | viva | — |
+| conteudo | administração local | areas | viva | — |
+| conteudo | coesão territorial | areas | viva | — |
+| conteudo | crescimento da economia | areas | viva | — |
+| conteudo | competitividade | areas | viva | — |
+| conteudo | investimento | areas | viva | — |
+| conteudo | internacionalização das empresas | areas | viva | — |
+| conteudo | os programas financiados por fundos europeus, nomeadamente no âmbito da política de coesão da União Europeia e do Plano de Recuperação e Resiliência (PRR) | areas | viva | — |
+| conteudo | habitação | areas | viva | — |
+| conteudo | construção | areas | viva | — |
+| conteudo | a política de justiça | areas | viva | — |
+| conteudo | administração eleitoral | areas | viva | — |
+| conteudo | o sistema educativo | areas | viva | — |
+| conteudo | a ciência | areas | viva | — |
+| conteudo | as orientações em matéria de competências digitais | areas | viva | — |
+| conteudo | a política nacional de saúde | areas | viva | — |
+| conteudo | emprego | areas | viva | — |
+| conteudo | segurança social | areas | viva | — |
+| conteudo | combate à pobreza e de promoção da inclusão social | areas | viva | — |
+| conteudo | apoio à família, crianças | areas | viva | — |
+| conteudo | água | areas | viva | — |

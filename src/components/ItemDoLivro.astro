@@ -1,0 +1,104 @@
+---
+/**
+ * UMA LINHA DO LIVRO-RAZÃO, NA FORMA EM QUE ELA SE LÊ NUMA LISTA.
+ *
+ * ---------------------------------------------------------------------------
+ * PORQUE É UM COMPONENTE, E DESDE 28.08.2026
+ * ---------------------------------------------------------------------------
+ * Esta forma nasceu no índice dos 308 (`LivroConcelhosView`) e foi copiada para
+ * a página de livro-razão de cada concelho (`LivroConcelhoView`). Duas cópias
+ * iguais aguentam-se; três não. A página de uma área de governo passou a
+ * precisar da mesma forma, e a decisão do lugar de direção diz porquê: uma
+ * medida numa página tem de se ler como uma medida, «exatamente como a peça se
+ * lê na sua página de origem, reutilizando a forma da origem e nunca uma frase
+ * nova». Reutilizar quer dizer isto: uma peça só, usada nos três sítios, e não
+ * uma quarta cópia que diverge na primeira alteração.
+ *
+ * A FORMA NÃO MUDOU AO SAIR DAQUELAS DUAS VISTAS. O HTML construído das páginas
+ * do livro-razão é o mesmo, byte a byte, antes e depois da extração, e isso foi
+ * medido.
+ *
+ * ---------------------------------------------------------------------------
+ * O QUE UMA LINHA RENDE, E O QUE ELA NÃO TEM
+ * ---------------------------------------------------------------------------
+ *   · o valor, por `<Claim/>`, com o selo que abre a página da linha;
+ *   · o identificador;
+ *   · a unidade, a fonte e a data de leitura, cada uma marcada `data-linha-*` e
+ *     conferida pelo portão contra o campo da própria linha;
+ *   · e, quando quem chama as pede, a data de referência e o documento.
+ *
+ * NÃO HÁ CAMPO «NOME» NO LIVRO-RAZÃO, e é por isso que ele não se rende. O que
+ * nomeia uma linha é o seu identificador, que é o nome do assunto dela
+ * («evora-pagamentos-em-atraso-2025»), mais os cinco campos de proveniência.
+ * Escrever um nome por cima de cada linha seria inventar conteúdo que a fonte
+ * não publicou, e a regra da casa proíbe-o.
+ *
+ * A DATA DE REFERÊNCIA E O DOCUMENTO ficam atrás de uma opção porque as duas
+ * vistas do livro-razão não os rendiam, e acrescentá-los ali mudaria páginas de
+ * outro bloco sem que ninguém o tivesse pedido. A página de uma área pede-os,
+ * porque é ali que uma medida aparece longe do seu contexto e «4 976 172,24»
+ * sem período e sem documento não se lê.
+ *
+ * O MARCADOR DE INCERTEZA VEM DE GRAÇA, e é a razão mais forte para reutilizar:
+ * `CampoDaLinha` rende `[a verificar]` na forma da casa nas duas edições (em
+ * português, com glosa inglesa e com a porta para a página do marcador), e uma
+ * quarta cópia escrita à mão teria de se lembrar disso.
+ */
+import Claim from './Claim.astro';
+import CampoDaLinha from './CampoDaLinha.astro';
+import { provenienciaIncompleta } from '../lib/ledger.mjs';
+import { t } from '../i18n/strings.mjs';
+
+/* `...resto` deixa quem chama pendurar as suas marcas no item sem que este
+   componente saiba o que elas são: é assim que a página de uma área lhe põe
+   `data-area-peca="medida"` sem que a linha-espécime passe a conhecer as áreas.
+   O item é filho direto de `.livro-lista`, que é uma grelha: um invólucro à
+   volta dele partia a grelha. */
+const { linha: c, lang = 'pt', referencia = false, documento = false, ...resto } = Astro.props;
+const s = t(lang);
+---
+
+<div class="livro-item" data-estado={provenienciaIncompleta(c) ? 'por-confirmar' : 'completa'} {...resto}>
+  <span class="livro-item-valor">
+    <Claim id={c.id} lang={lang} as="span" class="livro-item-num" chip={true} />
+  </span>
+  <div class="livro-item-corpo">
+    <code class="livro-item-id" data-linha-claim={c.id} data-linha-campo="id">
+      {c.id}
+    </code>
+    <div class="livro-item-meta">
+      <CampoDaLinha
+        id={c.id}
+        campo="unit"
+        valor={c.unit}
+        lang={lang}
+        class="livro-item-unidade"
+        originalPt={true}
+      />
+      {referencia && c.reference_date !== null && c.reference_date !== undefined && (
+        <span class="livro-item-campo">
+          <span class="livro-item-k">{s.prov.referencia}</span>{' '}
+          <CampoDaLinha id={c.id} campo="reference_date" valor={c.reference_date} lang={lang} />
+        </span>
+      )}
+      {c.source !== null && c.source !== undefined && (
+        <span class="livro-item-campo">
+          <span class="livro-item-k">{s.prov.fonte}</span>{' '}
+          <CampoDaLinha id={c.id} campo="source" valor={c.source} lang={lang} />
+        </span>
+      )}
+      {documento && c.document?.title !== null && c.document?.title !== undefined && (
+        <span class="livro-item-campo">
+          <span class="livro-item-k">{s.prov.documento}</span>{' '}
+          <CampoDaLinha id={c.id} campo="document.title" valor={c.document.title} lang={lang} />
+        </span>
+      )}
+      {c.access_date !== null && c.access_date !== undefined && (
+        <span class="livro-item-campo">
+          <span class="livro-item-k">{s.prov.lido}</span>{' '}
+          <CampoDaLinha id={c.id} campo="access_date" valor={c.access_date} lang={lang} />
+        </span>
+      )}
+    </div>
+  </div>
+</div>

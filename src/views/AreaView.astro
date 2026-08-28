@@ -12,26 +12,43 @@
  *     cada um com a sua porta e, quando existe nesta edição, a porta do seu
  *     texto;
  *   · os estudos de dados, que entram como uma peça e não como novecentas;
- *   · as medidas, cada uma com o valor, o selo que abre a sua linha e o
- *     identificador dela. O brief pede «o valor e o selo», e são estes dois: os
- *     outros campos da linha-espécime do livro-razão (unidade, fonte, lido a)
- *     entram lá por `data-linha-*`, que é a marca de um campo do livro-razão NA
- *     PÁGINA DO LIVRO-RAZÃO, e esta não é uma. A guarda do portão é boa e não se
- *     contorna: quem a levantasse abria uma segunda porta para pôr texto do
- *     livro-razão em prosa corrente, e de caminho tirava a esta página a
- *     auditoria do selo, que o portão só faz fora das páginas do livro-razão.
- *     Os cinco campos estão a um clique, na página da linha, que é a porta que o
- *     selo abre;
+ *   · as medidas, agrupadas pela MATÉRIA que as pôs aqui, e cada uma na
+ *     linha-espécime do livro-razão: o valor, o selo que abre a sua linha, o
+ *     identificador, a unidade, a data de referência, a fonte, o documento e a
+ *     data de leitura. É `ItemDoLivro`, a mesma peça que o índice dos 308 e a
+ *     página de livro-razão de um concelho usam, e não uma segunda forma;
+ *   · o selo da porta legal, uma vez por página;
  *   · as portas.
  *
- * A MATÉRIA POR QUE CADA PEÇA ESTÁ AQUI NÃO SE RENDE, e é uma escolha da regra
- * nova. Com a regra antiga (a área era a de quem publicava o número) uma nota
- * de razão fazia falta, porque a arrumação não se adivinhava: a população de um
- * concelho estava na Presidência. Com a regra do assunto a arrumação lê-se
- * sozinha, e uma linha a explicá-la seria a página a explicar-se, que é o que a
- * Emenda 15 tira de uma página do leitor. A razão de cada peça está escrita em
- * `src/data/areas.mjs`, com o número da lei transcrito, e o portão confere que
- * lá está.
+ * ---------------------------------------------------------------------------
+ * A GUARDA DO `data-linha-*` ABRIU-SE PARA ESTA ROTA, E FICA DITO PORQUÊ
+ * ---------------------------------------------------------------------------
+ * Até 28.08.2026 esta página rendia de cada medida só o valor, o selo e o
+ * identificador, e a razão escrita era a guarda do portão: `data-linha-*` é a
+ * marca de um campo do livro-razão NA PÁGINA DO LIVRO-RAZÃO. A leitura cruzada
+ * mediu o que isso custava ao leitor: «um leitor não consegue dizer o que é
+ * 1 409». O lugar de direção decidiu que uma medida numa página se tem de ler
+ * como uma medida, na forma da sua página de origem, e a guarda passou a
+ * incluir a rota `area`.
+ *
+ * O QUE A GUARDA PROTEGE CONTINUA PROTEGIDO, e é o mesmo argumento que a
+ * decisão D6 usou quando abriu a guarda ao índice dos 308: esta página LISTA
+ * linhas do livro-razão, com a linha-espécime inteira e o selo de cada uma, e
+ * não põe texto do livro-razão em prosa corrente. O portão confere, campo a
+ * campo e carácter a carácter, cada valor rendido contra a linha de que ele
+ * saiu, o que é mais do que a página fazia antes.
+ *
+ * A MATÉRIA É O RÓTULO DE UM GRUPO, E NÃO UMA FRASE (28.08.2026). As medidas de
+ * uma área agrupam-se pela matéria que as pôs aqui, e o rótulo do grupo são as
+ * PALAVRAS DA LEI, sem uma palavra à volta. É uma citação de uma lei
+ * portuguesa, e por isso vai em português nas duas edições, com `lang="pt-PT"`:
+ * traduzir uma matéria de um decreto-lei era escrever uma lei que não existe. O
+ * que a edição inglesa traduz é o nome da área, porque esse o Governo publica
+ * nas duas línguas.
+ *
+ * Nenhuma frase explica a regra ao leitor: o rótulo diz a matéria, o selo da
+ * porta legal diz o diploma e o número, e a razão de cada regra está escrita em
+ * `src/data/areas.mjs`, onde o portão a confere.
  *
  * ---------------------------------------------------------------------------
  * A DISPOSIÇÃO É A B · CORPO E APARELHO (IDENTIDADE §3)
@@ -50,10 +67,11 @@
  * outra coisa, e a lista da página do conjunto é quem as conta.
  */
 import Base from '../layouts/Base.astro';
-import Claim from '../components/Claim.astro';
+import ItemDoLivro from '../components/ItemDoLivro.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import { areaDoSlug, nomeDoEstudo, temTexto } from '../lib/areas.mjs';
-import { getClaim, provenienciaIncompleta } from '../lib/ledger.mjs';
+import { LEI_ORGANICA } from '../data/areas.mjs';
+import { getClaim } from '../lib/ledger.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import '../styles/linha.css';
@@ -67,17 +85,29 @@ if (!area) throw new Error(`areas: área desconhecida ou sem peças "${slug}"`);
 
 const path = routePath('area', lang, { slug });
 const nome = area.nome[lang] ?? area.nome.pt;
-const medidas = area.pecas.medidas.map((m) => ({ ...m, linha: getClaim(m.id) }));
+
+/* A DESCRIÇÃO DO `<head>` É O NOME DA ÁREA, E MAIS NADA (28.08.2026). Dizia «Os
+   trabalhos e as medidas cujo assunto é matéria de X, área de governo.», que é
+   o sítio a explicar o seu próprio método na superfície pública, e a Emenda 15
+   manda isso sair de uma página do leitor. O nome é o que a página é. Não leva
+   a contagem das peças: um número da casa entra por `data-prova`, com quem o
+   reconte, e no `<head>` não há markup onde pendurar a marca. */
+const descricao = nome;
+
+/* O SELO DA PORTA LEGAL, composto dos dados e não escrito: o diploma na sua
+   forma curta e os números do artigo em que ESTA página assenta, pela ordem em
+   que a lei os escreve. */
+const portaLegal = [LEI_ORGANICA.diplomaCurto, ...area.pecas.artigos].join(' · ');
 ---
 
 <Base
   lang={lang}
   path={path}
   title={`${nome} · ${s.areas.metaCauda}`}
-  description={`${s.areas.metaDescricaoA}${nome}${s.areas.metaDescricaoB}`}
+  description={descricao}
 >
   <div class="linha-cabeca area-cabeca">
-    <span class="eyebrow">{s.areas.eyebrow}</span>
+    <p class="eyebrow">{s.areas.eyebrow}</p>
     <h1>{nome}</h1>
     <p class="area-tipo">{s.areas.tipo}</p>
   </div>
@@ -128,30 +158,54 @@ const medidas = area.pecas.medidas.map((m) => ({ ...m, linha: getClaim(m.id) }))
       }
 
       {
-        medidas.length > 0 && (
+        area.pecas.gruposDeMedidas.length > 0 && (
           <section class="linha-bloco" id="medidas" aria-labelledby="medidas-k">
             <h2 class="linha-bloco-titulo livro-grupo-k" id="medidas-k">
               {s.areas.medidasK}
             </h2>
-            <div class="livro-lista" data-area-grupo={area.slug}>
-              {medidas.map((m) => (
-                <div
-                  class="livro-item"
-                  data-area-peca="medida"
-                  data-estado={provenienciaIncompleta(m.linha) ? 'por-confirmar' : 'completa'}
-                >
-                  <span class="livro-item-valor">
-                    <Claim id={m.id} lang={lang} as="span" class="livro-item-num" chip={true} />
-                  </span>
-                  <code class="livro-item-id" data-nonledger="identificador-tecnico">
-                    {m.id}
-                  </code>
+            {area.pecas.gruposDeMedidas.map((g) => (
+              <div class="areas-materia">
+                <h3 class="areas-materia-k" lang="pt-PT">
+                  {g.materia}
+                </h3>
+                <div class="livro-lista" data-area-grupo={area.slug}>
+                  {g.medidas.map((m) => (
+                    <ItemDoLivro
+                      linha={getClaim(m.id)}
+                      lang={lang}
+                      referencia={true}
+                      documento={true}
+                      data-area-peca="medida"
+                    />
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </section>
         )
       }
+
+      {/* A PORTA LEGAL, UMA VEZ POR PÁGINA E NA FORMA DE UM SELO. O nome da
+          área tal como o Governo o publica, e o diploma com os números do
+          artigo em que esta página assenta, com a ligação ao ficheiro que o
+          Diário da República serve. Nada mais sobre a regra: quem quiser o
+          texto do número abre o diploma. É a forma do `.prov` que o índice dos
+          308 usa para a legenda do selo. */}
+      <div class="prov area-lei">
+        <div class="prov-row">
+          <span class="prov-study">{nome}</span>
+          <span class="prov-vals">
+            <a
+              class="ligacao-externa"
+              href={LEI_ORGANICA.url}
+              rel="noopener noreferrer external"
+              data-nonledger="referencia-legal"
+            >
+              {portaLegal}
+            </a>
+          </span>
+        </div>
+      </div>
     </div>
 
     <aside class="aparelho" aria-labelledby="aparelho">

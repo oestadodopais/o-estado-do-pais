@@ -122,6 +122,31 @@ function pecasDaArea(area, claims) {
     }
   }
 
+  /* AS MEDIDAS AGRUPAM-SE PELA MATÉRIA QUE AS PÔS AQUI (decisão do lugar de
+     direção, 28.08.2026). A ordem dos grupos é a das matérias declaradas, e a
+     ordem dentro de cada grupo é a do livro-razão. Um grupo sem medidas não
+     aparece: a matéria pode ter posto aqui só linhas de um conjunto.
+
+     A LISTA PLANA CONTINUA A EXISTIR, e é ela que conta: as contagens, o portão
+     e as réguas leem `medidas`, e `gruposDeMedidas` é a mesma lista partida.
+     Duas listas que divergissem seriam dois números para a mesma coisa. */
+  const grupos = [];
+  for (const m of area.materias) {
+    const dentro = medidas.filter((x) => x.materia === m.materia);
+    if (dentro.length > 0) grupos.push({ materia: m.materia, artigo: m.artigo, medidas: dentro });
+  }
+
+  /* OS NÚMEROS DA LEI EM QUE ESTA PÁGINA ASSENTA, pela ordem das matérias e sem
+     repetir: é o que o selo da porta legal rende, uma vez por página. */
+  const artigos = [];
+  for (const m of area.materias) {
+    const tem =
+      medidas.some((x) => x.materia === m.materia) ||
+      [...trabalhos.values()].some((p) => p.materias.has(m.materia)) ||
+      [...conjuntos.values()].some((p) => p.materias.has(m.materia));
+    if (tem && !artigos.includes(m.artigo)) artigos.push(m.artigo);
+  }
+
   return {
     trabalhos: [...trabalhos.values()].map((p) => ({ ...p, materias: [...p.materias] })),
     conjuntos: [...conjuntos.values()].map((p) => ({
@@ -130,6 +155,8 @@ function pecasDaArea(area, claims) {
       conjunto: conjuntoInterno(p.id)?.conjunto ?? null,
     })),
     medidas,
+    gruposDeMedidas: grupos,
+    artigos,
   };
 }
 

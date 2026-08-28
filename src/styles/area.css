@@ -101,3 +101,28 @@
   font-family: var(--f-instr);
   font-size: 14px;
 }
+
+/* ------------------------------------------- os grupos de medidas por matéria */
+
+/* As medidas de uma área agrupam-se pela matéria da lei que as pôs ali, e o
+   rótulo do grupo são as palavras da lei. Não leva `text-transform`, e é de
+   propósito: o rótulo é uma CITAÇÃO, e «a política financeira do Estado» em
+   minúsculas passava a ser outra coisa. A letra é a dos rótulos de campo do
+   livro-razão (`.livro-item-k`), que é a família de instrumento da casa. */
+.areas-materia + .areas-materia {
+  margin-top: clamp(18px, 2.4vw, 26px);
+}
+.areas-materia-k {
+  margin: 0 0 6px;
+  font-family: var(--f-versal);
+  letter-spacing: 0.04em;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+/* O selo da porta legal: a mesma gramática do `.prov` do livro-razão, com o
+   afastamento que separa uma nota de aparelho do corpo que ela fecha. */
+.area-lei {
+  margin-top: clamp(26px, 3.4vw, 40px);
+}

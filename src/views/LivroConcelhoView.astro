@@ -37,6 +37,7 @@
  */
 import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
+import ItemDoLivro from '../components/ItemDoLivro.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
 import { linhasDeUmConcelho, ESTUDO_DOS_CONCELHOS } from '../lib/livro-concelhos.mjs';
 import { municipioPorSlug } from '../data/municipios.mjs';
@@ -82,46 +83,7 @@ const path = routePath('livroConcelho', lang, { slug });
           ) : (
             <div class="livro-lista" data-concelho-grupo={m.slug}>
               {linhas.map((c) => (
-                <div
-                  class="livro-item"
-                  data-estado={provenienciaIncompleta(c) ? 'por-confirmar' : 'completa'}
-                >
-                  <span class="livro-item-valor">
-                    <Claim id={c.id} lang={lang} as="span" class="livro-item-num" chip={true} />
-                  </span>
-                  <div class="livro-item-corpo">
-                    <code class="livro-item-id" data-linha-claim={c.id} data-linha-campo="id">
-                      {c.id}
-                    </code>
-                    <div class="livro-item-meta">
-                      <CampoDaLinha
-                        id={c.id}
-                        campo="unit"
-                        valor={c.unit}
-                        lang={lang}
-                        class="livro-item-unidade"
-                        originalPt={true}
-                      />
-                      {c.source !== null && c.source !== undefined && (
-                        <span class="livro-item-campo">
-                          <span class="livro-item-k">{s.prov.fonte}</span>{' '}
-                          <CampoDaLinha id={c.id} campo="source" valor={c.source} lang={lang} />
-                        </span>
-                      )}
-                      {c.access_date !== null && c.access_date !== undefined && (
-                        <span class="livro-item-campo">
-                          <span class="livro-item-k">{s.prov.lido}</span>{' '}
-                          <CampoDaLinha
-                            id={c.id}
-                            campo="access_date"
-                            valor={c.access_date}
-                            lang={lang}
-                          />
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </div>
+                <ItemDoLivro linha={c} lang={lang} />
               ))}
             </div>
           )

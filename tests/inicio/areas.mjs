@@ -44,6 +44,13 @@
  *      duas edições, e leva ao índice das áreas. Dois cliques reais.
  *
  * M7 · sem JavaScript. As duas páginas estão completas no HTML servido.
+ *
+ * M8 · a palavra do provisório. Onde a fonte marca um valor como provisório, a
+ *      página di-lo por palavras, na palavra da EDIÇÃO e não na do componente, e
+ *      di-lo exactamente nas medidas cuja linha traz a bandeira. É a mesma
+ *      definição da célula 2i·2 de `tests/inicio/matriz.mjs`, aplicada às
+ *      páginas das áreas, e existe porque a medição cega de 28.08.2026
+ *      encontrou a palavra rendida e sem régua nenhuma nesta rota.
  */
 import fs from 'node:fs';
 import http from 'node:http';
@@ -52,6 +59,7 @@ import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 
 import { leInventario } from '../../scripts/voz.mjs';
+import { loadClaims } from '../../src/lib/ledger.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -463,6 +471,79 @@ async function mediuSemJs() {
 }
 
 /* =========================================================================== */
+/* M8 · a palavra do provisório                                               */
+/* =========================================================================== */
+
+/**
+ * A PALAVRA VEM DA LINHA E NÃO DA PÁGINA, e por isso não está no inventário.
+ *
+ * `provisório` é a bandeira `source_flag: "p"` da linha do livro-razão dita por
+ * palavras: é a palavra da FONTE sobre o número dela (o Eurostat marca assim os
+ * valores regionais do primeiro ano), e não o sítio a falar do estado dos seus
+ * próprios dados. Por isso fica, e por isso não é uma frase da casa: a régua da
+ * voz deixa cair o bloco inteiro que a contém, porque ele contém uma origem
+ * declarada, que é a mesma razão por que o valor também não entra no inventário.
+ *
+ * O QUE A GUARDA, ENTÃO, É ESTA CÉLULA. Duas contas, e as duas contam: a palavra
+ * segue a edição, e o conjunto das medidas que a levam é exactamente o conjunto
+ * das linhas com a bandeira.
+ */
+const LINHAS = loadClaims();
+
+async function mediuOProvisorio() {
+  for (const { edicao, area } of EDICOES) {
+    const palavra = edicao === 'pt' ? 'provisório' : 'provisional';
+    const outras = new Set();
+    const comPalavra = new Set();
+    const daBandeira = new Set();
+    for (const slug of SLUGS) {
+      const p = await pagina(area(slug), 1280);
+      const lido = await p.evaluate(() => {
+        const marcados = [];
+        for (const el of document.querySelectorAll('.claim-provisorio')) {
+          const caixa = el.closest('.claim');
+          marcados.push({
+            texto: el.textContent.trim(),
+            id: caixa?.querySelector('[data-claim]')?.getAttribute('data-claim') ?? null,
+          });
+        }
+        return {
+          marcados,
+          citados: [...document.querySelectorAll('[data-claim]')].map((el) =>
+            el.getAttribute('data-claim'),
+          ),
+        };
+      });
+      await p.__ctx.close();
+      for (const m of lido.marcados) {
+        if (m.texto !== palavra) outras.add(m.texto);
+        if (m.id) comPalavra.add(m.id);
+      }
+      for (const id of lido.citados) {
+        if (LINHAS.get(id)?.source_flag === 'p') daBandeira.add(id);
+      }
+    }
+    const aMais = [...comPalavra].filter((id) => !daBandeira.has(id));
+    const aMenos = [...daBandeira].filter((id) => !comPalavra.has(id));
+    medidas[`M8·${edicao}`] = {
+      palavra,
+      comPalavra: comPalavra.size,
+      daBandeira: daBandeira.size,
+      outras: [...outras],
+      aMais,
+      aMenos,
+    };
+    conta(
+      `M8 · a palavra do provisório segue a edição e é a das linhas com bandeira · ${edicao}`,
+      outras.size === 0 && aMais.length === 0 && aMenos.length === 0 && daBandeira.size > 0,
+      `${comPalavra.size} medida(s) com «${palavra}» para ${daBandeira.size} linha(s) com bandeira · ` +
+        `${aMais.length} a mais · ${aMenos.length} a menos` +
+        (outras.size ? ` · outra(s) palavra(s): ${[...outras].join(', ')}` : ''),
+    );
+  }
+}
+
+/* =========================================================================== */
 /* OS ESTRAGOS PLANTADOS                                                      */
 /* =========================================================================== */
 /* Os quatro que o brief nomeia: uma área sem peças, uma peça fantasma, um nome
@@ -501,6 +582,14 @@ const PLANTAS = [
         : html,
   },
   {
+    nome: 'a palavra do provisório apagada de uma medida que a devia ter',
+    celulas: ['M8'],
+    estrago: (html, rota) =>
+      rota.startsWith('/areas/economia') || rota.startsWith('/en/areas/economia')
+        ? html.replace('<span class="claim-provisorio">', '<span class="claim-apagada">')
+        : html,
+  },
+  {
     nome: 'uma frase de cobertura no índice das áreas',
     celulas: ['M4'],
     estrago: (html, rota) =>
@@ -523,6 +612,7 @@ async function corridaInteira() {
   for (const w of TELEMOVEL) await mediuOTelemovel(w);
   await mediuANavegacao();
   await mediuSemJs();
+  await mediuOProvisorio();
 }
 
 if (!VERMELHOS) {
@@ -555,6 +645,7 @@ for (const planta of PLANTAS) {
   if (planta.celulas.includes('M2')) await mediuAsPecas();
   if (planta.celulas.includes('M3')) await mediuOsNomes();
   if (planta.celulas.includes('M4')) await mediuAVoz();
+  if (planta.celulas.includes('M8')) await mediuOProvisorio();
   const tocadas = celulas.filter((c) => planta.celulas.some((n) => c.nome.startsWith(n)));
   const apanhou = tocadas.some((c) => !c.passa);
   if (!apanhou) todosVermelhos = false;

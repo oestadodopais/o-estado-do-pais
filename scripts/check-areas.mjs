@@ -58,7 +58,7 @@ import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
 
 import { routePath, LANGS } from '../src/lib/routes.mjs';
-import { AREAS, SEM_AREA } from '../src/data/areas.mjs';
+import { AREAS, SEM_AREA, LEI_ORGANICA } from '../src/data/areas.mjs';
 import { WORKS, ESTUDOS_DE_DADOS, INTERNAL_SOURCES } from '../src/data/studies.mjs';
 import { loadClaims } from '../src/lib/ledger.mjs';
 
@@ -129,23 +129,41 @@ function pecasDaArea(area, claims) {
     const m = materiaDaLinha(area, id, c);
     if (!m) continue;
     if (ESTUDOS_DE_DADOS.has(c.study)) {
-      const p = conjuntos.get(c.study) ?? { id: c.study, materias: new Set() };
+      const p = conjuntos.get(c.study) ?? { id: c.study, materias: new Set(), linhas: [] };
       p.materias.add(m.materia);
+      p.linhas.push(id);
       conjuntos.set(c.study, p);
       continue;
     }
-    medidas.push({ id, materia: m.materia });
+    medidas.push({ id, materia: m.materia, linhas: [id] });
     const w = WORKS.find((x) => x.id === c.study);
     if (w) {
-      const p = trabalhos.get(w.id) ?? { id: w.id, slug: w.slug, materias: new Set() };
+      const p = trabalhos.get(w.id) ?? { id: w.id, slug: w.slug, materias: new Set(), linhas: [] };
       p.materias.add(m.materia);
+      p.linhas.push(id);
       trabalhos.set(w.id, p);
     }
+  }
+  /* Os números da lei em que esta página assenta, e as matérias que rendem
+     rótulo de grupo: recontados AQUI a partir das linhas, e não lidos do
+     leitor das páginas. */
+  const artigos = [];
+  const rotulos = [];
+  for (const m of area.materias) {
+    const temMedida = medidas.some((x) => x.materia === m.materia);
+    const tem =
+      temMedida ||
+      [...trabalhos.values()].some((p) => p.materias.has(m.materia)) ||
+      [...conjuntos.values()].some((p) => p.materias.has(m.materia));
+    if (tem && !artigos.includes(m.artigo)) artigos.push(m.artigo);
+    if (temMedida) rotulos.push(m.materia);
   }
   return {
     trabalhos: [...trabalhos.values()],
     conjuntos: [...conjuntos.values()],
     medidas,
+    artigos,
+    rotulos,
   };
 }
 
@@ -261,6 +279,31 @@ function A2(m) {
       if (!existe(porta)) erros.push(`${p.rota}: o conjunto "${c.id}" não tem página em ${porta}.`);
       if (!portas.has(porta)) erros.push(`${p.rota}: não abre a porta do conjunto "${c.id}".`);
     }
+    /* A PORTA LEGAL, uma vez por página: o nome da área e o diploma com os
+       números do artigo, com a ligação ao ficheiro do Diário da República. É a
+       única coisa que a página diz sobre a regra, e por isso tem de estar lá e
+       tem de nomear os números certos. */
+    const legais = raiz.querySelectorAll('a[data-nonledger="referencia-legal"]');
+    if (legais.length !== 1) {
+      erros.push(
+        `${p.rota}: tem ${legais.length} porta(s) legal(is) e devia ter uma. ` +
+          `O diploma e os números do artigo dizem-se uma vez por página.`,
+      );
+    } else {
+      const a = legais[0];
+      if (a.getAttribute('href') !== LEI_ORGANICA.url) {
+        erros.push(`${p.rota}: a porta legal não abre o ficheiro do diploma (${LEI_ORGANICA.url}).`);
+      }
+      const texto = a.text.replace(/\s+/g, ' ').trim();
+      if (!texto.includes(LEI_ORGANICA.diplomaCurto)) {
+        erros.push(`${p.rota}: a porta legal não nomeia "${LEI_ORGANICA.diplomaCurto}".`);
+      }
+      for (const art of e.pecas.artigos) {
+        if (!texto.includes(art)) {
+          erros.push(`${p.rota}: a porta legal não nomeia "${art}", em que esta página assenta.`);
+        }
+      }
+    }
     for (const md of e.pecas.medidas) {
       if (!m.ids.has(md.id)) {
         erros.push(`${p.rota}: a medida "${md.id}" não é uma afirmação do livro-razão.`);
@@ -299,14 +342,14 @@ function A4(m) {
   const onde = new Map();
   for (const e of m.entradas) {
     const todas = [
-      ...e.pecas.trabalhos.map((p) => ['trabalho', p.id, p.materias]),
-      ...e.pecas.conjuntos.map((p) => ['conjunto', p.id, p.materias]),
-      ...e.pecas.medidas.map((p) => ['medida', p.id, new Set([p.materia])]),
+      ...e.pecas.trabalhos.map((p) => ['trabalho', p.id, p.materias, p.linhas]),
+      ...e.pecas.conjuntos.map((p) => ['conjunto', p.id, p.materias, p.linhas]),
+      ...e.pecas.medidas.map((p) => ['medida', p.id, new Set([p.materia]), p.linhas]),
     ];
-    for (const [tipo, id, mats] of todas) {
+    for (const [tipo, id, mats, linhas] of todas) {
       const chave = `${tipo}:${id}`;
       const lista = onde.get(chave) ?? [];
-      lista.push({ area: e.slug, materias: [...mats] });
+      lista.push({ area: e.slug, materias: [...mats], linhas: [...(linhas ?? [])] });
       onde.set(chave, lista);
     }
   }
@@ -315,6 +358,17 @@ function A4(m) {
     for (const x of lista) {
       if (x.materias.length === 0) {
         erros.push(`a peça "${chave}" está na área "${x.area}" sem matéria escrita.`);
+      }
+      /* E DIZ QUE LINHAS A PUSERAM ALI. Um trabalho inteiro numa área é
+         legítimo porque ALGUMAS das suas linhas são daquela matéria, e a razão
+         da aparição são essas linhas. Sem elas, a peça está na área por uma
+         razão que ninguém consegue conferir. */
+      if (x.linhas.length === 0) {
+        erros.push(
+          `a peça "${chave}" está na área "${x.area}" sem dizer que linhas do livro-razão a ` +
+            `puseram ali. Uma peça inteira numa área só se justifica pelas linhas dela que são ` +
+            `daquela matéria.`,
+        );
       }
     }
     const assinaturas = lista.map((x) => [...x.materias].sort().join('|'));
@@ -383,14 +437,41 @@ function A5(m) {
         }
       }
     }
-    /* E as páginas construídas rendem o nome declarado, e não outro. */
+    /* E as páginas construídas rendem o nome declarado, e não outro; e o
+       rótulo de cada grupo de medidas é a MATÉRIA, palavra por palavra, em
+       português nas duas edições, porque é uma citação de uma lei portuguesa. */
     for (const lang of LANGS) {
       const p = m.paginas[`${lang}:${e.slug}`];
       if (!p) continue;
-      const h1 = parse(p.html).querySelector('h1');
+      const raiz = parse(p.html);
+      const h1 = raiz.querySelector('h1');
       const rendido = (h1?.text ?? '').replace(/\s+/g, ' ').trim();
       if (rendido !== e.nome[lang]) {
         erros.push(`${p.rota}: rende o nome "${rendido}" e a lista verificada diz "${e.nome[lang]}".`);
+      }
+      const rotulos = raiz
+        .querySelectorAll('.areas-materia-k')
+        .map((el) => ({ texto: el.text.replace(/\s+/g, ' ').trim(), lang: el.getAttribute('lang') }));
+      const esperados = e.pecas.rotulos;
+      if (rotulos.length !== esperados.length) {
+        erros.push(
+          `${p.rota}: rende ${rotulos.length} rótulo(s) de matéria e as medidas desta área ` +
+            `entram por ${esperados.length}.`,
+        );
+      }
+      for (let i = 0; i < Math.min(rotulos.length, esperados.length); i++) {
+        if (rotulos[i].texto !== esperados[i]) {
+          erros.push(
+            `${p.rota}: o rótulo "${rotulos[i].texto}" não é a matéria "${esperados[i]}". ` +
+              `O rótulo de um grupo são as palavras da lei, e não uma paráfrase.`,
+          );
+        }
+        if (rotulos[i].lang !== 'pt-PT') {
+          erros.push(
+            `${p.rota}: o rótulo "${rotulos[i].texto}" não vai marcado lang="pt-PT". ` +
+              `É uma citação de uma lei portuguesa, e nas duas edições.`,
+          );
+        }
       }
     }
   }
@@ -477,7 +558,7 @@ function A7(m) {
 
 const REGRAS = [
   ['A1', 'cada área com peças tem página, e nenhuma outra tem', A1],
-  ['A2', 'a porta de cada peça abre, e cada medida vai com selo', A2],
+  ['A2', 'a porta de cada peça abre, cada medida vai com selo, e a porta legal abre', A2],
   ['A3', 'nenhuma área vazia, no mapa nem na página', A3],
   ['A4', 'uma peça em duas áreas traz a razão de cada uma', A4],
   ['A5', 'os nomes, e cada matéria com artigo, transcrição e razão', A5],
@@ -499,21 +580,32 @@ const ESTRAGOS = {
     m.pastas[lang] = m.pastas[lang].filter((n) => n !== slug);
     return `a página ${lang}:${slug} apagada`;
   },
-  A2: (m) => {
-    /* O selo de uma medida retirado: o valor fica sem porta para a sua linha. */
-    const chave = Object.keys(m.paginas).find((k) => {
-      const e = m.entradas.find((x) => x.slug === k.split(':')[1]);
-      return e && e.pecas.medidas.length > 0;
-    });
-    const [lang, slug] = chave.split(':');
-    const e = m.entradas.find((x) => x.slug === slug);
-    const porta = routePath('linha', lang, { slug: e.pecas.medidas[0].id });
-    m.paginas[chave] = {
-      ...m.paginas[chave],
-      html: m.paginas[chave].html.split(`href="${porta}"`).join('href="#"'),
-    };
-    return `o selo de "${e.pecas.medidas[0].id}" retirado de ${lang}:${slug}`;
-  },
+  A2: [
+    (m) => {
+      /* O selo de uma medida retirado: o valor fica sem porta para a sua linha. */
+      const chave = Object.keys(m.paginas).find((k) => {
+        const e = m.entradas.find((x) => x.slug === k.split(':')[1]);
+        return e && e.pecas.medidas.length > 0;
+      });
+      const [lang, slug] = chave.split(':');
+      const e = m.entradas.find((x) => x.slug === slug);
+      const porta = routePath('linha', lang, { slug: e.pecas.medidas[0].id });
+      m.paginas[chave] = {
+        ...m.paginas[chave],
+        html: m.paginas[chave].html.split(`href="${porta}"`).join('href="#"'),
+      };
+      return `o selo de "${e.pecas.medidas[0].id}" retirado de ${lang}:${slug}`;
+    },
+    (m) => {
+      /* A porta legal apagada: a página deixa de dizer em que lei assenta. */
+      const chave = Object.keys(m.paginas)[0];
+      m.paginas[chave] = {
+        ...m.paginas[chave],
+        html: m.paginas[chave].html.split('data-nonledger="referencia-legal"').join('data-x="0"'),
+      };
+      return `a porta legal apagada de ${chave}`;
+    },
+  ],
   A3: (m) => {
     /* Uma área declarada com uma matéria que não cobre linha nenhuma. */
     m.entradas.push({
@@ -532,20 +624,55 @@ const ESTRAGOS = {
     });
     return 'uma área "atlantida" declarada, sem peça nenhuma por baixo';
   },
-  A4: (m) => {
-    /* A mesma medida em duas áreas pela mesma matéria: uma arrumação. */
-    const a = m.entradas.find((x) => x.pecas.medidas.length > 0);
-    const b = m.entradas.find((x) => x !== a);
-    b.pecas.medidas = [...b.pecas.medidas, { ...a.pecas.medidas[0] }];
-    b.total += 1;
-    return `a medida "${a.pecas.medidas[0].id}" posta também em "${b.slug}", com a mesma matéria`;
-  },
-  A5: (m) => {
-    /* Uma regra sem a razão escrita: a matéria fica sem dizer que assunto cobre. */
-    const e = m.entradas.find((x) => x.materias.length > 0);
-    e.materias[0].regras[0].razao = '';
-    return `a razão da primeira regra de "${e.materias[0].materia}" ("${e.slug}") apagada`;
-  },
+  A4: [
+    (m) => {
+      /* A mesma medida em duas áreas pela mesma matéria: uma arrumação. */
+      const a = m.entradas.find((x) => x.pecas.medidas.length > 0);
+      const b = m.entradas.find((x) => x !== a);
+      b.pecas.medidas = [...b.pecas.medidas, { ...a.pecas.medidas[0] }];
+      b.total += 1;
+      return `a medida "${a.pecas.medidas[0].id}" posta também em "${b.slug}", com a mesma matéria`;
+    },
+    (m) => {
+      /* Um trabalho que está em duas áreas e, numa delas, não diz que linhas o
+         puseram ali: a aparição fica sem razão conferível. */
+      const chave = new Map();
+      for (const e of m.entradas) {
+        for (const t of e.pecas.trabalhos) {
+          const lista = chave.get(t.id) ?? [];
+          lista.push({ e, t });
+          chave.set(t.id, lista);
+        }
+      }
+      const [id, lista] = [...chave].find(([, l]) => l.length > 1);
+      lista[0].t.linhas = [];
+      return `o trabalho "${id}" na área "${lista[0].e.slug}" sem as linhas que o puseram ali`;
+    },
+  ],
+  A5: [
+    (m) => {
+      /* Uma regra sem a razão escrita: a matéria fica sem dizer que assunto cobre. */
+      const e = m.entradas.find((x) => x.materias.length > 0);
+      e.materias[0].regras[0].razao = '';
+      return `a razão da primeira regra de "${e.materias[0].materia}" ("${e.slug}") apagada`;
+    },
+    (m) => {
+      /* O rótulo de um grupo trocado por uma paráfrase da casa: a citação da lei
+         deixa de ser uma citação. */
+      const chave = Object.keys(m.paginas).find((k) => {
+        const e = m.entradas.find((x) => x.slug === k.split(':')[1]);
+        return e && e.pecas.rotulos.length > 0;
+      });
+      const e = m.entradas.find((x) => x.slug === chave.split(':')[1]);
+      m.paginas[chave] = {
+        ...m.paginas[chave],
+        html: m.paginas[chave].html
+          .split(`>${e.pecas.rotulos[0]}<`)
+          .join('>as contas das autarquias<'),
+      };
+      return `o rótulo "${e.pecas.rotulos[0]}" trocado por uma paráfrase em ${chave}`;
+    },
+  ],
   A6: (m) => {
     /* Uma peça a mais no mapa que a página não rende: as contas divergem. */
     const e = m.entradas.find((x) => x.total > 0);
