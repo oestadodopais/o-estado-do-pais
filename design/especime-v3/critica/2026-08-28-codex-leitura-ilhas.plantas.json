@@ -1,0 +1,19 @@
+{
+ "registado_em": "2026-08-28",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "paginas/municipio-corvo.html",
+   "descricao": "Corvo's unemployment value on its page changed from 5 to 6",
+   "sha256_antes": "32af180bf5e360d73691ba25cbc9bf3957ae44b46886583287fc82111220b4a2",
+   "sha256_depois": "c5bffbcb2b1615227a75b79fcc3960a5cae7beb2b5dca04f91b705774221a26d"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "paginas/municipio-ponta-delgada.html",
+   "descricao": "a comparability claim inserted on Ponta Delgada's page",
+   "sha256_antes": "0cd17aa99b55731cf547d7acc73cb612f842ded9e5bb5d5f785fa991d87715c2",
+   "sha256_depois": "e579aa375e961c2f3f5ec467571a69ed1584dfefb586302f1cdfecf310ab9ea4"
+  }
+ ]
+}
