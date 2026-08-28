@@ -1,0 +1,812 @@
+{
+  "celulas": [
+    {
+      "nome": "A1·pt · o manifesto da edição",
+      "passa": true,
+      "prova": "name \"O Estado do País\" · short_name \"O Estado\" · lang \"pt-PT\" · id \"/\" · start_url \"/\" · display \"standalone\" · background_color \"#f6f7f4\" · theme_color \"#f6f7f4\""
+    },
+    {
+      "nome": "A2·pt · cada ícone declarado existe com o tamanho que a cabeça do PNG diz",
+      "passa": true,
+      "prova": "/icon-192.png 192×192 (any) · /icon-512.png 512×512 (any) · /icon-512-maskable.png 512×512 (maskable)"
+    },
+    {
+      "nome": "A1·en · o manifesto da edição",
+      "passa": true,
+      "prova": "name \"O Estado do País\" · short_name \"O Estado\" · lang \"en\" · id \"/en/\" · start_url \"/en/\" · display \"standalone\" · background_color \"#f6f7f4\" · theme_color \"#f6f7f4\""
+    },
+    {
+      "nome": "A2·en · cada ícone declarado existe com o tamanho que a cabeça do PNG diz",
+      "passa": true,
+      "prova": "/icon-192.png 192×192 (any) · /icon-512.png 512×512 (any) · /icon-512-maskable.png 512×512 (maskable)"
+    },
+    {
+      "nome": "A3 · toda a tinta do maskable dentro do círculo seguro",
+      "passa": true,
+      "prova": "36322 píxeis de sinal · o mais longe a 141.7px do centro (168,366) · círculo seguro 204.8px (40 % de 512) · folga 63.1px · 0 píxeis fora"
+    },
+    {
+      "nome": "A4 · o apple-touch-icon é opaco e mede 180",
+      "passa": true,
+      "prova": "180×180 · 32400 píxeis · alfa mínimo 255 · 0 abaixo de 255"
+    },
+    {
+      "nome": "A5a · o favicon.ico traz os dois tamanhos",
+      "passa": true,
+      "prova": "2 imagem(ns): 32×32 · 16×16 · 32 bits/px, 4264B · 32 bits/px, 1128B · todas cabem no ficheiro: true"
+    },
+    {
+      "nome": "A5b · o favicon.svg é o sinal, sem campo, com a regra do escuro",
+      "passa": true,
+      "prova": "2 caminho(s) · prefers-color-scheme: true · campo: false · iguais aos de e2-unida-28.svg: true"
+    },
+    {
+      "nome": "A6 · as cinco ligações na cabeça de todas as rotas construídas",
+      "passa": true,
+      "prova": "6570 rotas da casa · manifesto da edição certa, favicon.ico (32x32), favicon.svg, apple-touch-icon, uma theme-color \"#f6f7f4\", apple-mobile-web-app-title \"O Estado\" · 16 documentos alojados fora da conta, nenhum tocado"
+    },
+    {
+      "nome": "A10 · nada de service worker, de pedido de instalação, nem da etiqueta obsoleta",
+      "passa": true,
+      "prova": "6586 páginas (as da casa e as alojadas) e 5 ficheiros de JavaScript varridos"
+    },
+    {
+      "nome": "A7·320 pt · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 200.73px · sem 200.73px · diferença 0.00px · marca em 1 linha(s) · cabeçalho grande, corpo 34.00px"
+    },
+    {
+      "nome": "A8·320 pt · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 22.44px (medida no tipo) · tinta 22.44px (1.000 da maiúscula) · desvio da linha de base 0.00px · folga 9.42px (0.420 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·320 en · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 200.73px · sem 200.73px · diferença 0.00px · marca em 1 linha(s) · cabeçalho grande, corpo 34.00px"
+    },
+    {
+      "nome": "A8·320 en · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 22.44px (medida no tipo) · tinta 22.44px (1.000 da maiúscula) · desvio da linha de base 0.00px · folga 9.42px (0.420 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·320 pt-compacto · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 168.33px · sem 168.33px · diferença 0.00px · marca em 1 linha(s) · cabeçalho compacto, corpo 24.00px"
+    },
+    {
+      "nome": "A8·320 pt-compacto · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 15.84px (medida no tipo) · tinta 15.83px (0.999 da maiúscula) · desvio da linha de base 0.00px · folga 6.64px (0.419 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·320 en-compacto · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 168.33px · sem 168.33px · diferença 0.00px · marca em 1 linha(s) · cabeçalho compacto, corpo 24.00px"
+    },
+    {
+      "nome": "A8·320 en-compacto · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 15.84px (medida no tipo) · tinta 15.83px (0.999 da maiúscula) · desvio da linha de base 0.00px · folga 6.64px (0.419 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·360 pt · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 200.73px · sem 200.73px · diferença 0.00px · marca em 1 linha(s) · cabeçalho grande, corpo 34.00px"
+    },
+    {
+      "nome": "A8·360 pt · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 22.44px (medida no tipo) · tinta 22.44px (1.000 da maiúscula) · desvio da linha de base 0.00px · folga 9.42px (0.420 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·360 en · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 200.73px · sem 200.73px · diferença 0.00px · marca em 1 linha(s) · cabeçalho grande, corpo 34.00px"
+    },
+    {
+      "nome": "A8·360 en · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 22.44px (medida no tipo) · tinta 22.44px (1.000 da maiúscula) · desvio da linha de base 0.00px · folga 9.42px (0.420 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·360 pt-compacto · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 168.33px · sem 168.33px · diferença 0.00px · marca em 1 linha(s) · cabeçalho compacto, corpo 24.00px"
+    },
+    {
+      "nome": "A8·360 pt-compacto · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 15.84px (medida no tipo) · tinta 15.83px (0.999 da maiúscula) · desvio da linha de base 0.00px · folga 6.64px (0.419 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·360 en-compacto · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 168.33px · sem 168.33px · diferença 0.00px · marca em 1 linha(s) · cabeçalho compacto, corpo 24.00px"
+    },
+    {
+      "nome": "A8·360 en-compacto · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 15.84px (medida no tipo) · tinta 15.83px (0.999 da maiúscula) · desvio da linha de base 0.00px · folga 6.64px (0.419 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·390 pt · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 200.73px · sem 200.73px · diferença 0.00px · marca em 1 linha(s) · cabeçalho grande, corpo 34.00px"
+    },
+    {
+      "nome": "A8·390 pt · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 22.44px (medida no tipo) · tinta 22.44px (1.000 da maiúscula) · desvio da linha de base 0.00px · folga 9.42px (0.420 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·390 en · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 200.73px · sem 200.73px · diferença 0.00px · marca em 1 linha(s) · cabeçalho grande, corpo 34.00px"
+    },
+    {
+      "nome": "A8·390 en · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 22.44px (medida no tipo) · tinta 22.44px (1.000 da maiúscula) · desvio da linha de base 0.00px · folga 9.42px (0.420 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·390 pt-compacto · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 168.33px · sem 168.33px · diferença 0.00px · marca em 1 linha(s) · cabeçalho compacto, corpo 24.00px"
+    },
+    {
+      "nome": "A8·390 pt-compacto · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 15.84px (medida no tipo) · tinta 15.83px (0.999 da maiúscula) · desvio da linha de base 0.00px · folga 6.64px (0.419 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·390 en-compacto · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 168.33px · sem 168.33px · diferença 0.00px · marca em 1 linha(s) · cabeçalho compacto, corpo 24.00px"
+    },
+    {
+      "nome": "A8·390 en-compacto · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 15.84px (medida no tipo) · tinta 15.83px (0.999 da maiúscula) · desvio da linha de base 0.00px · folga 6.64px (0.419 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·430 pt · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 177.55px · sem 177.55px · diferença 0.00px · marca em 1 linha(s) · cabeçalho grande, corpo 34.00px"
+    },
+    {
+      "nome": "A8·430 pt · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 22.44px (medida no tipo) · tinta 22.44px (1.000 da maiúscula) · desvio da linha de base 0.00px · folga 9.42px (0.420 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·430 en · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 177.55px · sem 177.55px · diferença 0.00px · marca em 1 linha(s) · cabeçalho grande, corpo 34.00px"
+    },
+    {
+      "nome": "A8·430 en · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 22.44px (medida no tipo) · tinta 22.44px (1.000 da maiúscula) · desvio da linha de base 0.00px · folga 9.42px (0.420 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·430 pt-compacto · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 145.14px · sem 145.14px · diferença 0.00px · marca em 1 linha(s) · cabeçalho compacto, corpo 24.00px"
+    },
+    {
+      "nome": "A8·430 pt-compacto · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 15.84px (medida no tipo) · tinta 15.83px (0.999 da maiúscula) · desvio da linha de base 0.00px · folga 6.64px (0.419 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·430 en-compacto · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 145.14px · sem 145.14px · diferença 0.00px · marca em 1 linha(s) · cabeçalho compacto, corpo 24.00px"
+    },
+    {
+      "nome": "A8·430 en-compacto · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 15.84px (medida no tipo) · tinta 15.83px (0.999 da maiúscula) · desvio da linha de base 0.00px · folga 6.64px (0.419 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·768 pt · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 320.83px · sem 320.83px · diferença 0.00px · marca em 1 linha(s) · cabeçalho grande, corpo 56.83px"
+    },
+    {
+      "nome": "A8·768 pt · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 37.51px (medida no tipo) · tinta 37.50px (1.000 da maiúscula) · desvio da linha de base 0.00px · folga 15.75px (0.420 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·768 en · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 320.83px · sem 320.83px · diferença 0.00px · marca em 1 linha(s) · cabeçalho grande, corpo 56.83px"
+    },
+    {
+      "nome": "A8·768 en · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 37.51px (medida no tipo) · tinta 37.50px (1.000 da maiúscula) · desvio da linha de base 0.00px · folga 15.75px (0.420 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·768 pt-compacto · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 226.98px · sem 226.98px · diferença 0.00px · marca em 1 linha(s) · cabeçalho compacto, corpo 26.11px"
+    },
+    {
+      "nome": "A8·768 pt-compacto · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 17.23px (medida no tipo) · tinta 17.22px (0.999 da maiúscula) · desvio da linha de base 0.00px · folga 7.23px (0.420 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·768 en-compacto · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 226.98px · sem 226.98px · diferença 0.00px · marca em 1 linha(s) · cabeçalho compacto, corpo 26.11px"
+    },
+    {
+      "nome": "A8·768 en-compacto · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 17.23px (medida no tipo) · tinta 17.22px (0.999 da maiúscula) · desvio da linha de base 0.00px · folga 7.23px (0.420 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·1024 pt · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 316.38px · sem 316.38px · diferença 0.00px · marca em 1 linha(s) · cabeçalho grande, corpo 68.00px"
+    },
+    {
+      "nome": "A8·1024 pt · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 44.88px (medida no tipo) · tinta 44.88px (1.000 da maiúscula) · desvio da linha de base 0.00px · folga 18.84px (0.420 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·1024 en · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 316.38px · sem 316.38px · diferença 0.00px · marca em 1 linha(s) · cabeçalho grande, corpo 68.00px"
+    },
+    {
+      "nome": "A8·1024 en · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 44.88px (medida no tipo) · tinta 44.88px (1.000 da maiúscula) · desvio da linha de base 0.00px · folga 18.84px (0.420 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·1024 pt-compacto · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 208.34px · sem 208.34px · diferença 0.00px · marca em 1 linha(s) · cabeçalho compacto, corpo 34.00px"
+    },
+    {
+      "nome": "A8·1024 pt-compacto · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 22.44px (medida no tipo) · tinta 22.44px (1.000 da maiúscula) · desvio da linha de base 0.00px · folga 9.42px (0.420 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·1024 en-compacto · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 208.34px · sem 208.34px · diferença 0.00px · marca em 1 linha(s) · cabeçalho compacto, corpo 34.00px"
+    },
+    {
+      "nome": "A8·1024 en-compacto · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 22.44px (medida no tipo) · tinta 22.44px (1.000 da maiúscula) · desvio da linha de base 0.00px · folga 9.42px (0.420 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·1280 pt · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 323.11px · sem 323.11px · diferença 0.00px · marca em 1 linha(s) · cabeçalho grande, corpo 68.00px"
+    },
+    {
+      "nome": "A8·1280 pt · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 44.88px (medida no tipo) · tinta 44.88px (1.000 da maiúscula) · desvio da linha de base 0.00px · folga 18.84px (0.420 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·1280 en · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 323.11px · sem 323.11px · diferença 0.00px · marca em 1 linha(s) · cabeçalho grande, corpo 68.00px"
+    },
+    {
+      "nome": "A8·1280 en · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 44.88px (medida no tipo) · tinta 44.88px (1.000 da maiúscula) · desvio da linha de base 0.00px · folga 18.84px (0.420 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·1280 pt-compacto · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 208.75px · sem 208.75px · diferença 0.00px · marca em 1 linha(s) · cabeçalho compacto, corpo 34.00px"
+    },
+    {
+      "nome": "A8·1280 pt-compacto · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 22.44px (medida no tipo) · tinta 22.44px (1.000 da maiúscula) · desvio da linha de base 0.00px · folga 9.42px (0.420 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A7·1280 en-compacto · a altura do cabeçalho não muda com o sinal",
+      "passa": true,
+      "prova": "com 208.75px · sem 208.75px · diferença 0.00px · marca em 1 linha(s) · cabeçalho compacto, corpo 34.00px"
+    },
+    {
+      "nome": "A8·1280 en-compacto · o sinal está onde a âncora B o põe",
+      "passa": true,
+      "prova": "altura de maiúscula 22.44px (medida no tipo) · tinta 22.44px (1.000 da maiúscula) · desvio da linha de base 0.00px · folga 9.42px (0.420 da maiúscula, quer-se 0.42)"
+    },
+    {
+      "nome": "A9·claro · o «e» leva a tinta do tema",
+      "passa": true,
+      "prova": "desenhado com #17191b · tokens dizem #17191b · declarado \"currentColor\" · data-theme \"null\""
+    },
+    {
+      "nome": "A9·escuro · o «e» leva a tinta do tema",
+      "passa": true,
+      "prova": "desenhado com #eceeea · tokens dizem #eceeea · declarado \"currentColor\" · data-theme \"dark\""
+    }
+  ],
+  "medidas": {
+    "manifesto_pt": {
+      "_": [
+        "O manifesto da edição portuguesa. Ver design/marca/BRIEF-app.md.",
+        "Os campos são conferidos pelo portão de HTML (scripts/gate-html.mjs)",
+        "contra site.config.mjs, contra src/styles/tokens.css e contra os",
+        "ficheiros que os ícones nomeiam: um manifesto é datilografado, e um",
+        "ficheiro datilografado que ninguém confere fica errado em silêncio.",
+        "Os ícones geram-se com `node design/marca/exportar.mjs app`.",
+        "Sem service worker e sem pedido de instalação: quem quiser a aplicação",
+        "usa «adicionar ao ecrã principal», que é o que o BRIEF decide."
+      ],
+      "name": "O Estado do País",
+      "short_name": "O Estado",
+      "lang": "pt-PT",
+      "dir": "ltr",
+      "id": "/",
+      "start_url": "/",
+      "scope": "/",
+      "display": "standalone",
+      "background_color": "#f6f7f4",
+      "theme_color": "#f6f7f4",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "/icon-512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "/icon-512-maskable.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "maskable"
+        }
+      ]
+    },
+    "manifesto_en": {
+      "_": [
+        "The English edition's manifest. See design/marca/BRIEF-app.md.",
+        "The name is the same in both editions because it is a proper noun:",
+        "«O Estado do País» is what this publication is called, in Portuguese",
+        "and in English. Only `lang`, `id` and `start_url` differ.",
+        "Every field is checked by scripts/gate-html.mjs against site.config.mjs,",
+        "against src/styles/tokens.css and against the files the icons name.",
+        "The icons are generated with `node design/marca/exportar.mjs app`."
+      ],
+      "name": "O Estado do País",
+      "short_name": "O Estado",
+      "lang": "en",
+      "dir": "ltr",
+      "id": "/en/",
+      "start_url": "/en/",
+      "scope": "/",
+      "display": "standalone",
+      "background_color": "#f6f7f4",
+      "theme_color": "#f6f7f4",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "/icon-512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "/icon-512-maskable.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "maskable"
+        }
+      ]
+    },
+    "zona_segura": {
+      "ficheiro": "/icon-512-maskable.png",
+      "lado": 512,
+      "campo": "#17191b",
+      "raio_seguro": 204.8,
+      "distancia_maxima": 141.65,
+      "folga": 63.15,
+      "pixeis_de_sinal": 36322,
+      "pixeis_fora": 0,
+      "ponto_mais_longe": {
+        "x": 168,
+        "y": 366
+      }
+    },
+    "apple_touch_icon": {
+      "largura": 180,
+      "altura": 180,
+      "pixeis": 32400,
+      "pixeis_com_alfa_abaixo_de_255": 0,
+      "alfa_minimo": 255
+    },
+    "favicon_ico": [
+      {
+        "largura": 32,
+        "altura": 32,
+        "bits": 32,
+        "tamanho": 4264,
+        "deslocamento": 38,
+        "cabe": true
+      },
+      {
+        "largura": 16,
+        "altura": 16,
+        "bits": 32,
+        "tamanho": 1128,
+        "deslocamento": 4302,
+        "cabe": true
+      }
+    ],
+    "favicon_svg": {
+      "caminhos": 2,
+      "regra_do_escuro": true,
+      "campo": false
+    },
+    "cabecas": {
+      "rotas_da_casa": 6570,
+      "documentos_alojados": 16,
+      "alojados_com_ligacao": 0,
+      "faltas": {
+        "manifesto": 0,
+        "edicao": 0,
+        "ico": 0,
+        "svg": 0,
+        "apple": 0,
+        "cor": 0,
+        "titulo": 0
+      }
+    },
+    "proibidas": {
+      "capaz": 0,
+      "sw": 0,
+      "prompt": 0
+    },
+    "cabecalho": {
+      "320-pt": {
+        "com_sinal": 200.73,
+        "sem_sinal": 200.73,
+        "diferenca": 0,
+        "corpo": 34,
+        "altura_de_maiuscula": 22.44,
+        "tinta": 22.44,
+        "folga": 9.42,
+        "desvio_da_base": 0.001,
+        "linhas": 1
+      },
+      "320-en": {
+        "com_sinal": 200.73,
+        "sem_sinal": 200.73,
+        "diferenca": 0,
+        "corpo": 34,
+        "altura_de_maiuscula": 22.44,
+        "tinta": 22.44,
+        "folga": 9.42,
+        "desvio_da_base": 0.001,
+        "linhas": 1
+      },
+      "320-pt-compacto": {
+        "com_sinal": 168.33,
+        "sem_sinal": 168.33,
+        "diferenca": 0,
+        "corpo": 24,
+        "altura_de_maiuscula": 15.84,
+        "tinta": 15.83,
+        "folga": 6.64,
+        "desvio_da_base": 0,
+        "linhas": 1
+      },
+      "320-en-compacto": {
+        "com_sinal": 168.33,
+        "sem_sinal": 168.33,
+        "diferenca": 0,
+        "corpo": 24,
+        "altura_de_maiuscula": 15.84,
+        "tinta": 15.83,
+        "folga": 6.64,
+        "desvio_da_base": 0,
+        "linhas": 1
+      },
+      "360-pt": {
+        "com_sinal": 200.73,
+        "sem_sinal": 200.73,
+        "diferenca": 0,
+        "corpo": 34,
+        "altura_de_maiuscula": 22.44,
+        "tinta": 22.44,
+        "folga": 9.42,
+        "desvio_da_base": 0.001,
+        "linhas": 1
+      },
+      "360-en": {
+        "com_sinal": 200.73,
+        "sem_sinal": 200.73,
+        "diferenca": 0,
+        "corpo": 34,
+        "altura_de_maiuscula": 22.44,
+        "tinta": 22.44,
+        "folga": 9.42,
+        "desvio_da_base": 0.001,
+        "linhas": 1
+      },
+      "360-pt-compacto": {
+        "com_sinal": 168.33,
+        "sem_sinal": 168.33,
+        "diferenca": 0,
+        "corpo": 24,
+        "altura_de_maiuscula": 15.84,
+        "tinta": 15.83,
+        "folga": 6.64,
+        "desvio_da_base": 0,
+        "linhas": 1
+      },
+      "360-en-compacto": {
+        "com_sinal": 168.33,
+        "sem_sinal": 168.33,
+        "diferenca": 0,
+        "corpo": 24,
+        "altura_de_maiuscula": 15.84,
+        "tinta": 15.83,
+        "folga": 6.64,
+        "desvio_da_base": 0,
+        "linhas": 1
+      },
+      "390-pt": {
+        "com_sinal": 200.73,
+        "sem_sinal": 200.73,
+        "diferenca": 0,
+        "corpo": 34,
+        "altura_de_maiuscula": 22.44,
+        "tinta": 22.44,
+        "folga": 9.42,
+        "desvio_da_base": 0.001,
+        "linhas": 1
+      },
+      "390-en": {
+        "com_sinal": 200.73,
+        "sem_sinal": 200.73,
+        "diferenca": 0,
+        "corpo": 34,
+        "altura_de_maiuscula": 22.44,
+        "tinta": 22.44,
+        "folga": 9.42,
+        "desvio_da_base": 0.001,
+        "linhas": 1
+      },
+      "390-pt-compacto": {
+        "com_sinal": 168.33,
+        "sem_sinal": 168.33,
+        "diferenca": 0,
+        "corpo": 24,
+        "altura_de_maiuscula": 15.84,
+        "tinta": 15.83,
+        "folga": 6.64,
+        "desvio_da_base": 0,
+        "linhas": 1
+      },
+      "390-en-compacto": {
+        "com_sinal": 168.33,
+        "sem_sinal": 168.33,
+        "diferenca": 0,
+        "corpo": 24,
+        "altura_de_maiuscula": 15.84,
+        "tinta": 15.83,
+        "folga": 6.64,
+        "desvio_da_base": 0,
+        "linhas": 1
+      },
+      "430-pt": {
+        "com_sinal": 177.55,
+        "sem_sinal": 177.55,
+        "diferenca": 0,
+        "corpo": 34,
+        "altura_de_maiuscula": 22.44,
+        "tinta": 22.44,
+        "folga": 9.42,
+        "desvio_da_base": 0.001,
+        "linhas": 1
+      },
+      "430-en": {
+        "com_sinal": 177.55,
+        "sem_sinal": 177.55,
+        "diferenca": 0,
+        "corpo": 34,
+        "altura_de_maiuscula": 22.44,
+        "tinta": 22.44,
+        "folga": 9.42,
+        "desvio_da_base": 0.001,
+        "linhas": 1
+      },
+      "430-pt-compacto": {
+        "com_sinal": 145.14,
+        "sem_sinal": 145.14,
+        "diferenca": 0,
+        "corpo": 24,
+        "altura_de_maiuscula": 15.84,
+        "tinta": 15.83,
+        "folga": 6.64,
+        "desvio_da_base": 0,
+        "linhas": 1
+      },
+      "430-en-compacto": {
+        "com_sinal": 145.14,
+        "sem_sinal": 145.14,
+        "diferenca": 0,
+        "corpo": 24,
+        "altura_de_maiuscula": 15.84,
+        "tinta": 15.83,
+        "folga": 6.64,
+        "desvio_da_base": 0,
+        "linhas": 1
+      },
+      "768-pt": {
+        "com_sinal": 320.83,
+        "sem_sinal": 320.83,
+        "diferenca": 0,
+        "corpo": 56.832,
+        "altura_de_maiuscula": 37.508,
+        "tinta": 37.5,
+        "folga": 15.75,
+        "desvio_da_base": 0.001,
+        "linhas": 1
+      },
+      "768-en": {
+        "com_sinal": 320.83,
+        "sem_sinal": 320.83,
+        "diferenca": 0,
+        "corpo": 56.832,
+        "altura_de_maiuscula": 37.508,
+        "tinta": 37.5,
+        "folga": 15.75,
+        "desvio_da_base": 0.001,
+        "linhas": 1
+      },
+      "768-pt-compacto": {
+        "com_sinal": 226.98,
+        "sem_sinal": 226.98,
+        "diferenca": 0,
+        "corpo": 26.112,
+        "altura_de_maiuscula": 17.233,
+        "tinta": 17.22,
+        "folga": 7.23,
+        "desvio_da_base": 0,
+        "linhas": 1
+      },
+      "768-en-compacto": {
+        "com_sinal": 226.98,
+        "sem_sinal": 226.98,
+        "diferenca": 0,
+        "corpo": 26.112,
+        "altura_de_maiuscula": 17.233,
+        "tinta": 17.22,
+        "folga": 7.23,
+        "desvio_da_base": 0,
+        "linhas": 1
+      },
+      "1024-pt": {
+        "com_sinal": 316.38,
+        "sem_sinal": 316.38,
+        "diferenca": 0,
+        "corpo": 68,
+        "altura_de_maiuscula": 44.88,
+        "tinta": 44.88,
+        "folga": 18.84,
+        "desvio_da_base": 0.001,
+        "linhas": 1
+      },
+      "1024-en": {
+        "com_sinal": 316.38,
+        "sem_sinal": 316.38,
+        "diferenca": 0,
+        "corpo": 68,
+        "altura_de_maiuscula": 44.88,
+        "tinta": 44.88,
+        "folga": 18.84,
+        "desvio_da_base": 0.001,
+        "linhas": 1
+      },
+      "1024-pt-compacto": {
+        "com_sinal": 208.34,
+        "sem_sinal": 208.34,
+        "diferenca": 0,
+        "corpo": 34,
+        "altura_de_maiuscula": 22.44,
+        "tinta": 22.44,
+        "folga": 9.42,
+        "desvio_da_base": 0.001,
+        "linhas": 1
+      },
+      "1024-en-compacto": {
+        "com_sinal": 208.34,
+        "sem_sinal": 208.34,
+        "diferenca": 0,
+        "corpo": 34,
+        "altura_de_maiuscula": 22.44,
+        "tinta": 22.44,
+        "folga": 9.42,
+        "desvio_da_base": 0.001,
+        "linhas": 1
+      },
+      "1280-pt": {
+        "com_sinal": 323.11,
+        "sem_sinal": 323.11,
+        "diferenca": 0,
+        "corpo": 68,
+        "altura_de_maiuscula": 44.88,
+        "tinta": 44.88,
+        "folga": 18.84,
+        "desvio_da_base": 0.001,
+        "linhas": 1
+      },
+      "1280-en": {
+        "com_sinal": 323.11,
+        "sem_sinal": 323.11,
+        "diferenca": 0,
+        "corpo": 68,
+        "altura_de_maiuscula": 44.88,
+        "tinta": 44.88,
+        "folga": 18.84,
+        "desvio_da_base": 0.001,
+        "linhas": 1
+      },
+      "1280-pt-compacto": {
+        "com_sinal": 208.75,
+        "sem_sinal": 208.75,
+        "diferenca": 0,
+        "corpo": 34,
+        "altura_de_maiuscula": 22.44,
+        "tinta": 22.44,
+        "folga": 9.42,
+        "desvio_da_base": 0.001,
+        "linhas": 1
+      },
+      "1280-en-compacto": {
+        "com_sinal": 208.75,
+        "sem_sinal": 208.75,
+        "diferenca": 0,
+        "corpo": 34,
+        "altura_de_maiuscula": 22.44,
+        "tinta": 22.44,
+        "folga": 9.42,
+        "desvio_da_base": 0.001,
+        "linhas": 1
+      }
+    },
+    "tema": {
+      "claro": {
+        "desenhado": "#17191b",
+        "esperado": "#17191b"
+      },
+      "escuro": {
+        "desenhado": "#eceeea",
+        "esperado": "#eceeea"
+      }
+    }
+  }
+}
