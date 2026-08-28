@@ -791,8 +791,8 @@ exclusão que a subetapa 3c escreveu para a lista por distritos.
 | conteudo | The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue. | até 2026-08-26 | viva | — |
 | conteudo | The local-government directorate’s annual series has not yet reached this term. | até 2026-08-26 | viva | — |
 | conteudo | The thin line is the total debt the local-government directorate publishes for the municipality; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. | até 2026-08-26 | viva | — |
-| conteudo | Sem linhas ainda. | grelha-2 | retirada | a ausência passou a dizer-se em duas palavras, «Sem linha ainda.», e a forma longa saiu (item E4 do bloco dos 308, `8b2a260`) |
-| conteudo | No rows yet. | grelha-2 | retirada | a ausência passou a dizer-se em duas palavras, «Sem linha ainda.», e a forma longa saiu (item E4 do bloco dos 308, `8b2a260`) |
+| conteudo | Sem linhas ainda. | grelha-2 | retirada | a ausência passou a dizer-se em três palavras, «Sem linha ainda.», e a forma longa saiu (item E4 do bloco dos 308, `8b2a260`) |
+| conteudo | No rows yet. | grelha-2 | retirada | a ausência passou a dizer-se em três palavras, «Sem linha ainda.», e a forma longa saiu (item E4 do bloco dos 308, `8b2a260`) |
 | conteudo | A referência do estudo | até 2026-08-26 | viva | — |
 | conteudo | The study’s reference | até 2026-08-26 | viva | — |
 | conteudo | 2590 afirmações · 329 calculadas · 2447 linhas de concelhos | ilhas | viva | — |
