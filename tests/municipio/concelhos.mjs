@@ -227,7 +227,7 @@ console.log('');
   );
 }
 
-/* 5 · ÉVORA: as oito medidas pela peça da primeira página, e a única cor é a do
+/* 5 · ÉVORA: as sete medidas pela peça da primeira página, e a única cor é a do
    tecto legal (Emenda 1). */
 {
   const p = await pagina();
@@ -261,8 +261,8 @@ console.log('');
       /* Uma peça vazia não tem estado: não há linha para o ter. O conjunto é o
          dos estados das peças que TÊM linha. */
       estados: [...new Set(pecas.map((e) => e.getAttribute('data-estado')).filter(Boolean))].sort(),
-      /* A ORDEM DA EMENDA 14, lida da página e não recalculada. As oito medidas
-         rendem-se sempre as oito e sempre por esta ordem, cheias ou vazias. */
+      /* A ORDEM DA EMENDA 14, lida da página e não recalculada. As sete medidas
+         rendem-se sempre as sete e sempre por esta ordem, cheias ou vazias. */
       ordem: [...document.querySelectorAll('.painel .peca [data-medida-nome]')].map((e) =>
         e.textContent.trim(),
       ),
@@ -272,6 +272,10 @@ console.log('');
       coloridas: [...new Set(coloridas)],
     };
   });
+  /* A ORDEM PERDE A SÉTIMA (28.08.2026, regra 1 dos vazios). «Execução da
+     receita» era a peça 7 e saiu da disposição-padrão: nenhuma fonte a publica
+     por concelho desde 2019, e uma peça que nunca pode encher não é uma
+     ausência declarada. As outras seis não mudam de lugar. */
   const ORDEM_DA_EMENDA_14 = [
     'População residente',
     'Poder de compra por habitante',
@@ -279,21 +283,24 @@ console.log('');
     'Empresas não financeiras',
     'Dívida total do município',
     'Índice de dívida',
-    'Execução da receita',
     'Prazo médio de pagamento',
   ];
   conta(
-    'P2 · as oito peças pela ordem da Emenda 14, e as duas sem fonte central dizem-no',
+    'P2 · as sete peças pela ordem da Emenda 14, e uma peça vazia di-lo em três palavras',
     m.ordem.join(' | ') === ORDEM_DA_EMENDA_14.join(' | ') &&
-      m.semLinha.length === 2 &&
-      new Set(m.semLinha).size === 1 &&
-      m.semLinha[0] === 'sem linha ainda',
+      /* A CONTAGEM DAS VAZIAS NÃO SE ESCREVE AQUI. Quantas peças de Évora estão
+         vazias depende de quantas linhas o motor já escreveu, e essa é a conta
+         da célula 9, que a mede nas 308 páginas e nas duas edições. O que esta
+         célula prova é a ORDEM e a CADEIA: se houver peça vazia, ela diz a
+         cadeia da casa e mais nada. */
+      new Set(m.semLinha).size <= 1 &&
+      (m.semLinha.length === 0 || m.semLinha[0] === 'sem linha ainda'),
     `ordem: ${m.ordem.join(' · ')} · peças vazias: ${m.semLinha.length}, cadeia ` +
       `«${[...new Set(m.semLinha)].join('», «')}»`,
   );
   conta(
-    '3d · as oito medidas pela peça, e a cor só no tecto legal',
-    m.pecas === 8 && m.vazias === 2 && m.reguas === 1 &&
+    '3d · as sete medidas pela peça, e a cor só no tecto legal',
+    m.pecas === 7 && m.reguas === 1 &&
       m.estados.join(',') === 'dentro,sem' &&
       m.coloridas.length > 0 &&
       /* Os únicos objectos com cor de estado são os da peça do índice de dívida:
@@ -388,7 +395,7 @@ console.log('');
 /* 8 · UM CONCELHO SEM ESTUDOS RENDE SÓ O QUE EXISTE (E1).
 
    A CÉLULA MEDE A REGRA, E NÃO A FORMA DE UM FICHEIRO DE TESTE (P2, os dados).
-   Escrita contra o ficheiro de teste, pedia «oito peças, oito vazias, nenhum
+   Escrita contra o ficheiro de teste, pedia «uma peça vazia por medida, nenhum
    algarismo no painel, nenhuma secção de fundo, nenhuma coluna de corpo»: era a
    página de um concelho SEM LINHA NENHUMA, que é um caso do ficheiro de teste e
    não a regra. Com os dados do motor, um concelho tem entre quatro e sete peças
@@ -396,7 +403,7 @@ console.log('');
    que a vista promete.
 
    O que é regra, e vale nas duas coberturas:
-     · as oito peças rendem-se sempre, e cada peça vazia diz «sem linha ainda» e
+     · as sete peças rendem-se sempre, e cada peça vazia diz «sem linha ainda» e
        não traz um único algarismo;
      · as secções de um concelho COM trabalho publicado não se rendem: as contas
        do município, a linha do tempo, o método, os trabalhos e «o que esta
@@ -455,7 +462,7 @@ console.log('');
       vaziasVistas += m.vazias;
       comDistancia += m.distancia;
       const bem =
-        m.pecas === 8 &&
+        m.pecas === 7 &&
         m.semLinha &&
         m.doTrabalho === 0 &&
         m.breve === m.distancia &&
@@ -478,7 +485,7 @@ console.log('');
       'P2 · um concelho sem estudos rende só o que existe',
       maus.length === 0,
       maus.length === 0
-        ? `${outros.length} página(s) de concelho sem entrada escrita à mão · 8 peças em todas, ` +
+        ? `${outros.length} página(s) de concelho sem entrada escrita à mão · 7 peças em todas, ` +
           `${vaziasVistas} peça(s) vazia(s) ao todo, ${comDistancia} com a dívida desenhada · ` +
           `nenhuma secção de trabalho, nenhuma coluna de corpo sem corpo`
         : `${maus.length} de ${outros.length}: ${maus.slice(0, 3).join(' | ')}`,

@@ -14,7 +14,7 @@
  * O que este programa escreve é a ESTRUTURA sem os dados: os 308 concelhos da
  * Carta, com o slug que `slugsDaCarta()` lhes dá, o nome e o distrito ou ilha
  * que a Carta lhes dá, e **todas as `linhas` a `null`**. É o estado honesto da
- * Emenda 14 — cada uma das oito peças diz «sem linha ainda» — e não é dado
+ * Emenda 14 — cada uma das sete peças diz «sem linha ainda» — e não é dado
  * inventado: não há aqui um único algarismo que não venha da Carta.
  *
  * O `dico` fica a `null`, e é a mesma regra: o código do INE de cada concelho é

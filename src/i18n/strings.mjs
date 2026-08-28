@@ -594,7 +594,7 @@ export const STRINGS = {
       /* A terceira palavra da cobertura, e é de outra escala (Emenda 14,
          21.08.2026). «sem página ainda» é sobre o CONCELHO; esta é sobre uma
          MEDIDA daquele concelho: a medida existe, a página do concelho ainda
-         não tem uma linha para ela. É o que cada uma das oito peças vazias diz
+         não tem uma linha para ela. É o que cada peça vazia diz
          de si, no lugar onde uma peça com linha diz o valor. */
       semLinhaAinda: 'sem linha ainda',
     },

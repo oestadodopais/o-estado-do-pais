@@ -1,11 +1,11 @@
 /**
- * AS OITO MEDIDAS DE UM CONCELHO, ESCRITAS UMA VEZ, E AS 308 ENTRADAS.
+ * AS SETE MEDIDAS DE UM CONCELHO, ESCRITAS UMA VEZ, E AS 308 ENTRADAS.
  *
  * ---------------------------------------------------------------------------
  * PORQUE EXISTE
  * ---------------------------------------------------------------------------
  * `src/data/municipios.mjs` guardava a entrada de Évora inteira, com os rótulos,
- * as unidades e os períodos das oito medidas escritos dentro dela. Com 308
+ * as unidades e os períodos das medidas escritos dentro dela. Com 308
  * páginas, escrever esses rótulos 308 vezes seria 308 sítios para divergirem, e
  * corrigir o nome de uma medida passaria a ser uma operação de 308 linhas. Os
  * rótulos passam a estar aqui, num só sítio, e valem para os 308 e para Évora.
@@ -42,7 +42,20 @@ import { fileURLToPath } from 'node:url';
 import { MUNICIPIOS, DISTRITOS, eIlha } from './caop-centroids.mjs';
 
 /**
- * AS OITO MEDIDAS, PELA ORDEM DA EMENDA 14.
+ * AS SETE MEDIDAS, PELA ORDEM DA EMENDA 14.
+ *
+ * ERAM OITO ATÉ 28.08.2026, E A OITAVA SAIU POR DECISÃO DO DIRETOR. A regra é
+ * esta, e vale para qualquer medida futura: **uma medida que nenhuma fonte
+ * publica para ninguém não tem peça**. A execução da receita não tem fonte
+ * central desde 2019 (a Direção-Geral das Autarquias Locais deixou de publicar
+ * o lado do orçamento), e por isso a sua peça rendia-se vazia nas 308 páginas e
+ * nas duas edições: 616 peças que nunca poderiam encher, e uma disposição-padrão
+ * cuja oitava célula era, por construção, um vazio. A medida não desaparece do
+ * sítio: o que Évora lê da sua própria prestação de contas continua na camada
+ * das contas da página dela, com o seu selo, que é onde essa leitura é verdade.
+ *
+ * A ordem das sete é a que era, sem a sétima: a Emenda 14 fixa a ORDEM, e tirar
+ * uma célula do meio não a muda para as que ficam.
  *
  * `chave`   — o nome do campo em `linhas` do ficheiro do motor.
  * `nome`    — o nome da medida, nas duas línguas.
@@ -157,20 +170,14 @@ export const MEDIDAS_DO_CONCELHO = [
       en: ['Computed from two columns of the same local-government directorate file. The arithmetic is on the row.'],
     },
   },
-  {
-    /* A PEÇA SEM FONTE CENTRAL (decisão D2 do diretor, 26.08.2026). Nenhum
-       organismo publica a execução da receita por concelho desde 2019: a DGAL
-       deixou de publicar o lado do orçamento. A peça rende-se vazia nos 308,
-       Évora incluída, e o que Évora lê da sua própria prestação de contas está
-       na camada das contas da página dela, com o seu selo. Sem nota: uma peça
-       vazia não leva frase. */
-    chave: 'execucaoDaReceita',
-    nome: { pt: 'Execução da receita', en: 'Revenue execution' },
-    unidade: { pt: 'Percentagem do orçamento', en: 'Percentage of the budget' },
-    prefixo: { pt: '', en: '' },
-    ref: '2025',
-    nota: null,
-  },
+  /* AQUI ESTAVA A EXECUÇÃO DA RECEITA (decisão D2 do diretor, 26.08.2026;
+     revogada a 28.08.2026 pela regra 1 da decisão dos vazios). Era a sétima
+     peça, declarada com `nota: null` porque nenhum organismo publica a medida
+     por concelho desde 2019, e rendia-se vazia nas 308 páginas. Uma peça que
+     nenhuma fonte pode encher não é uma ausência declarada: é uma célula que a
+     disposição-padrão promete e que nunca cumpre. Sai da lista, e a medida
+     continua onde ela é verdade — na camada das contas de Évora, lida da
+     prestação de contas do próprio município. */
   {
     chave: 'pmp',
     nome: { pt: 'Prazo médio de pagamento', en: 'Average payment time' },
@@ -197,7 +204,7 @@ function linhaDaMedida(medida, ref) {
 }
 
 /**
- * O relance de um concelho: as oito medidas, sempre as oito e sempre pela mesma
+ * O relance de um concelho: as sete medidas, sempre as sete e sempre pela mesma
  * ordem, com o id da linha onde ela existe e `null` onde não existe.
  *
  * @param {Record<string, string|null>} linhas  o mapa `linhas` do ficheiro do motor
@@ -294,7 +301,7 @@ function carregaGerados() {
  *
  * Uma entrada gerada NÃO tem `leitura`, `contas`, `tempo`, `metodo`, `naoSabe`
  * nem `estudos`: um concelho sem trabalho publicado não tem nada disso, e a
- * vista rende só o que existe. O que ela tem são as oito peças, a distância
+ * vista rende só o que existe. O que ela tem são as sete peças, a distância
  * desenhada quando as duas linhas existem, e o cartão localizador.
  *
  * @param {string[]} excluir  slugs que já têm entrada escrita à mão

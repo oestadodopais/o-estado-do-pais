@@ -18,7 +18,7 @@
  * uma expressão. Seria fácil e errado: `vila-real-populacao-2025` e
  * `vila-real-de-santo-antonio-populacao-2025` partilham o princípio, e um
  * recorte guloso ou preguiçoso põe as linhas de um no outro, em silêncio. O
- * agrupamento faz-se pelos ids que cada entrada DECLARA — as oito medidas do
+ * agrupamento faz-se pelos ids que cada entrada DECLARA — as sete medidas do
  * relance e o limite da dívida —, que é a mesma declaração que a página do
  * concelho usa para os render.
  *
@@ -33,7 +33,7 @@ import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
 /** O identificador do estudo, tal como o contrato com o motor o fixa. */
 export const ESTUDO_DOS_CONCELHOS = 'concelhos-2026';
 
-/** As linhas que uma entrada de concelho declara: as oito peças e o limite. */
+/** As linhas que uma entrada de concelho declara: as sete peças e o limite. */
 export function idsDoConcelho(municipio) {
   const ids = municipio.relance.map((medida) => medida.claim);
   const d = municipio.distancia ?? {};
@@ -94,7 +94,7 @@ export function linhasDosConcelhos() {
 /**
  * As linhas de UM concelho, na ordem em que a entrada dele as declara.
  *
- * A ordem não é a alfabética do id: é a das oito medidas da Emenda 14, mais o
+ * A ordem não é a alfabética do id: é a das sete medidas da Emenda 14, mais o
  * limite da dívida no fim, que é a referência da peça do índice. A página do
  * concelho mostra as medidas por essa ordem, e a página do livro-razão dele
  * mostra as linhas pela mesma: são a mesma coisa vista de dois lados.

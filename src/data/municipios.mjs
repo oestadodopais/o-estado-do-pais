@@ -20,10 +20,10 @@
  * trabalhos) não existem em mais nenhum concelho, e não se geram de nada.
  *
  * As outras entradas vêm do ficheiro que o motor escreve, por
- * `src/data/concelhos.mjs`. Uma entrada gerada tem as oito peças, a distância
+ * `src/data/concelhos.mjs`. Uma entrada gerada tem as sete peças, a distância
  * desenhada quando as duas linhas existem, e mais nada — e a vista rende só o
  * que existe. Ninguém escreve 308 entradas à mão, e os rótulos, unidades e
- * períodos das oito medidas estão escritos uma vez, em `concelhos.mjs`, e valem
+ * períodos das sete medidas estão escritos uma vez, em `concelhos.mjs`, e valem
  * para os 308 e para Évora.
  *
  * NADA AQUI É UMA REESCRITA DE UM ESTUDO. As ressalvas do fundo são a mesma
@@ -76,7 +76,7 @@ const EVORA = {
 
     /* ---------------------------------------------------- camada 1 — relance
      *
-     * AS OITO MEDIDAS SÃO AS DA CASA, E ÉVORA LÊ-AS DA MESMA DECLARAÇÃO QUE OS
+     * AS SETE MEDIDAS SÃO AS DA CASA, E ÉVORA LÊ-AS DA MESMA DECLARAÇÃO QUE OS
      * OUTROS 307 (bloco dos 308, P2; decisões D2, D3 e D5 do diretor de
      * 26.08.2026). Os rótulos estavam escritos aqui, dentro da entrada de
      * Évora; passam a vir de `MEDIDAS_DO_CONCELHO`, porque a mesma peça em 308
@@ -86,13 +86,16 @@ const EVORA = {
      * referência do desemprego, que a sua linha mede em dezembro de 2024 e o
      * ficheiro do motor mede em dezembro de 2025.
      *
-     * DUAS PEÇAS FICAM VAZIAS, e é a decisão D2. A execução da receita não tem
-     * fonte central desde 2019; o prazo médio de pagamento tem a lista anual do
-     * regulador, e nela Évora está «N.d.» a 31 de dezembro de 2025. As duas
-     * linhas que Évora lia das suas próprias contas descem para a camada das
-     * contas desta página, com os seus selos: comparar 137 dias de Évora, lidos
-     * da prestação de contas dela, com 5 dias de Lisboa, lidos do regulador, é
-     * pôr duas definições debaixo do mesmo nome.
+     * ERAM OITO MEDIDAS E DUAS PEÇAS VAZIAS ATÉ 28.08.2026. A execução da
+     * receita saiu da disposição-padrão (regra 1 da decisão dos vazios): nenhuma
+     * fonte a publica para ninguém, e uma peça que nunca pode encher não é uma
+     * ausência declarada. O prazo médio de pagamento fica, e Évora tem linha
+     * para ele: a lista anual da Direção-Geral das Autarquias Locais imprime
+     * «N.d.» a 31 de dezembro de 2025, e é esse o valor que a peça mostra
+     * (regra 2). As duas linhas que Évora lê das suas próprias contas continuam
+     * na camada das contas desta página, com os seus selos: comparar 137 dias de
+     * Évora, lidos da prestação de contas dela, com 5 dias de Lisboa, lidos da
+     * Direção-Geral, é pôr duas definições debaixo do mesmo nome.
      */
     relance: relanceDoConcelho(
       {
@@ -111,11 +114,16 @@ const EVORA = {
         empresas: 'evora-empresas-2024',
         divida: 'evora-divida-dgal-2024',
         indice: 'evora-indice-de-divida-2024',
-        execucaoDaReceita: null,
+        /* SEM LINHA ENQUANTO O MOTOR NÃO A ESCREVER. A lista da Direção-Geral
+           imprime «N.d.» para Évora a 31 de dezembro de 2025, e «N.d.» é um
+           valor publicado: passa a ter linha própria, como nos outros oito
+           concelhos em que a lista imprime a mesma coisa.
+           Enquanto ela não existir no livro-razão, o campo fica a `null` e a
+           peça rende-se vazia, que é o estado honesto. */
         pmp: null,
       },
       /* Sem data de referência própria: Évora passa a medir o mesmo período que
-         os outros 307, que é o que a declaração das oito medidas já diz. */
+         os outros 307, que é o que a declaração das sete medidas já diz. */
       {},
     ),
 

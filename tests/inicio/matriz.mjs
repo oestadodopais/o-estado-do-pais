@@ -270,7 +270,7 @@ const estadoDaPagina = (p) =>
   }
 
   /* O PAINEL DE ÉVORA SAIU DA PRIMEIRA PÁGINA (Emenda 19a). A célula media que o
-     âmbito de um concelho abria as suas oito peças aqui; as oito peças vivem em
+     âmbito de um concelho abria as suas peças aqui; as peças do concelho vivem em
      `/municipios/evora`, e `tests/municipio/concelhos.mjs` mede-as lá. */
 
   /* Andar para trás e para a frente na história dos estados que ficaram. */
@@ -1695,8 +1695,8 @@ for (const largura of [1280, 390]) {
 /* (2j) EMENDA 14 · SAIU DA PRIMEIRA PÁGINA COM O PAINEL VAZIO (Emenda 19a,
  * 26.08.2026).
  *
- * A célula media, nas duas edições, que `?ambito=municipio:beja` rendia as oito
- * medidas do concelho como peças vazias: oito peças, nenhum algarismo, nenhum
+ * A célula media, nas duas edições, que `?ambito=municipio:beja` rendia as
+ * medidas do concelho como peças vazias: uma peça por medida, nenhum algarismo, nenhum
  * selo, nenhum marcador, e as duas palavras «sem linha ainda» em cada uma. O
  * estado saiu do esquema e o painel saiu do documento: um concelho vive na sua
  * página, e é lá que a disposição-padrão da Emenda 14 se rende no dia em que
@@ -1910,7 +1910,7 @@ for (const largura of [1280, 390]) {
  * O plano nomeia-a nesta matriz, e é aqui que ela fica: a matriz é a régua que
  * corre em cada bloco e que impede que uma forma decidida volte atrás sem que
  * alguém dê por isso. Mede UMA página de concelho sem entrada escrita à mão, e
- * a regra é a da Emenda 14 e da E1: as oito peças rendem-se sempre, uma peça
+ * a regra é a da Emenda 14 e da E1: as sete peças rendem-se sempre, uma peça
  * vazia diz «sem linha ainda» e não traz um algarismo, as secções de um concelho
  * COM trabalho publicado não se rendem, e a coluna do corpo só existe se houver
  * corpo. A varredura dos 307 é da régua dos concelhos; esta célula é a sentinela.
@@ -1927,7 +1927,7 @@ for (const largura of [1280, 390]) {
   );
   if (!outro) {
     conta(
-      'Emenda 14 · um concelho sem estudos rende as oito peças e mais nada',
+      'Emenda 14 · um concelho sem estudos rende as sete peças e mais nada',
       false,
       'sem objecto: só há uma página de concelho construída. Corra com o ficheiro dos 308 ' +
         '(src/data/concelhos.gerado.json, ou CONCELHOS_GERADO=<ficheiro>).',
@@ -1952,8 +1952,8 @@ for (const largura of [1280, 390]) {
       cartao: document.querySelectorAll('[data-mapa-cartao]').length,
     }));
     conta(
-      'Emenda 14 · um concelho sem estudos rende as oito peças e mais nada',
-      m.pecas === 8 &&
+      'Emenda 14 · um concelho sem estudos rende as sete peças e mais nada',
+      m.pecas === 7 &&
         m.vaziasLimpas &&
         m.doTrabalho === 0 &&
         m.breve === m.distancia &&

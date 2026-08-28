@@ -181,7 +181,7 @@ export function concelhos() {
  * ===========================================================================
  *
  * A mesma conta estava escrita duas vezes — em `HomeView.astro` e em
- * `MunicipioView.astro` —, e as duas cópias faziam o mesmo mapeamento dos oito
+ * `MunicipioView.astro` —, e as duas cópias faziam o mesmo mapeamento dos
  * registos de `municipios.mjs` para as propriedades da peça: ler a linha,
  * `eDerivada()` para decidir se a nota se rende, e, só para o índice de dívida,
  * `estadoDaRegua()` contra o tecto legal com `colore: true`. Duas cópias que
@@ -200,10 +200,10 @@ export function concelhos() {
  *
  * AS OITO RENDEM-SE SEMPRE, E PELA MESMA ORDEM (Emenda 14; bloco dos 308, P2).
  * A função filtrava as medidas sem linha e devolvia só as cheias; a vista
- * rendia as vazias a seguir, e a ordem das oito passava a depender de quantas
+ * rendia as vazias a seguir, e a ordem das medidas passava a depender de quantas
  * linhas o concelho tinha — «população, dívida, índice» num concelho e
  * «população, poder de compra, dívida» noutro, com as vazias todas no fim. A
- * disposição-padrão da Emenda 14 é uma ordem fixa: passa a devolver as oito,
+ * disposição-padrão da Emenda 14 é uma ordem fixa: passa a devolver as sete,
  * cada uma com `vazia` a dizer se tem linha. Quem rende decide o que fazer com
  * isso, e é uma peça só nos dois casos.
  *
