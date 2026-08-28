@@ -18,3 +18,7 @@ Lidos a 28.08.2026 em https://www.portugal.gov.pt/pt/gc25/governo/composicao (p�
 14. Ministra do Ambiente e Energia · Maria da Graça Carvalho
 15. Ministra da Cultura, Juventude e Desporto · Margarida Balseiro Lopes
 16. Ministro da Agricultura e Mar · José Manuel Fernandes
+
+## Os nomes em inglês, tal como o Governo os publica
+
+Lidos a 28.08.2026 em https://www.portugal.gov.pt/en/gc25/ministries (página renderizada no navegador), pela mesma ordem: Foreign Affairs · Finance · Presidency · Economy and of Territorial Cohesion · State Reform · Parliamentary Affairs · National Defence · Infrastructure and Housing · Justice · Home Affairs · Education, Science and Innovation · Health · Labour, Solidarity and Social Security · Environment and Energy · Culture, Youth and Sport · (Agriculture and Sea, abaixo do que a captura apanhou; a confirmar na página).
