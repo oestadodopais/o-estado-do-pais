@@ -19,7 +19,7 @@
 
 import { MUNICIPIOS, DISTRITOS } from '../data/caop-centroids.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
-import { getClaim, parsePtNumber, eDerivada } from './ledger.mjs';
+import { getClaim, parsePtNumber, eDerivada, eValorTextual } from './ledger.mjs';
 import { estadoDaRegua } from './estado.mjs';
 
 /**
@@ -223,6 +223,28 @@ export function pecasDoConcelho(municipio) {
       const derivada = eDerivada(linha);
       if (medida.claim !== alvo.indice) {
         return { ...medida, vazia: false, linha, derivada, estado: 'sem', colore: false, regua: null };
+      }
+      /* ----------------------------------------------------------------------
+         UM VALOR QUE NÃO É NÚMERO NÃO SE COMPARA COM NADA (28.08.2026, regra 2)
+         ----------------------------------------------------------------------
+         O índice de dívida de Penedono é «N.d.»: a Direção-Geral imprime a marca
+         nas duas colunas de que ele é calculado, e a receita dá a marca. A peça
+         mostra o valor com o seu selo, como qualquer outra, e mais nada.
+
+         O QUE SAI, E PORQUÊ CADA UM. A barra sai porque uma barra é uma
+         distância, e não há distância entre uma marca e um teto. A palavra de
+         estado sai porque as três palavras da casa são «fora do limiar»,
+         «dentro do limiar» e «sem limiar», e nenhuma é verdade aqui: o limiar
+         existe, está publicado por lei, e o que falta é o valor. Dizer «sem
+         limiar» ao lado de um teto legal seria a página a afirmar o contrário do
+         que a lei diz.
+
+         O TESTE É O VALOR E NÃO O CONCELHO. `estadoDaRegua()` já devolvia estado
+         nulo aqui, porque `parsePtNumber` recusa a marca; o que faltava era a
+         vista distinguir «não há referência publicada» de «não há valor para
+         comparar», e as duas caíam na mesma palavra. */
+      if (eValorTextual(linha.value)) {
+        return { ...medida, vazia: false, linha, derivada, estado: null, colore: false, regua: null };
       }
       const tecto = getClaim(alvo.tecto);
       const r = estadoDaRegua(linha, { valor: tecto.value, lado: 'superior', colore: true });
