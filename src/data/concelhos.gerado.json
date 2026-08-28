@@ -5009,7 +5009,7 @@
   "distritoOuIlha": "Ilha da Madeira",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "calheta-desemprego-registado-2025-12",
    "divida": "calheta-divida-dgal-2024",
    "empresas": "calheta-empresas-2024",
    "indice": "calheta-indice-de-divida-2024",
@@ -5027,7 +5027,7 @@
   "distritoOuIlha": "Ilha da Madeira",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "camara-de-lobos-desemprego-registado-2025-12",
    "divida": "camara-de-lobos-divida-dgal-2024",
    "empresas": "camara-de-lobos-empresas-2024",
    "indice": "camara-de-lobos-indice-de-divida-2024",
@@ -5045,7 +5045,7 @@
   "distritoOuIlha": "Ilha da Madeira",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "funchal-desemprego-registado-2025-12",
    "divida": "funchal-divida-dgal-2024",
    "empresas": "funchal-empresas-2024",
    "indice": "funchal-indice-de-divida-2024",
@@ -5063,7 +5063,7 @@
   "distritoOuIlha": "Ilha da Madeira",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "machico-desemprego-registado-2025-12",
    "divida": "machico-divida-dgal-2024",
    "empresas": "machico-empresas-2024",
    "indice": "machico-indice-de-divida-2024",
@@ -5081,7 +5081,7 @@
   "distritoOuIlha": "Ilha da Madeira",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "ponta-do-sol-desemprego-registado-2025-12",
    "divida": "ponta-do-sol-divida-dgal-2024",
    "empresas": "ponta-do-sol-empresas-2024",
    "indice": "ponta-do-sol-indice-de-divida-2024",
@@ -5099,7 +5099,7 @@
   "distritoOuIlha": "Ilha da Madeira",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "porto-moniz-desemprego-registado-2025-12",
    "divida": "porto-moniz-divida-dgal-2024",
    "empresas": "porto-moniz-empresas-2024",
    "indice": "porto-moniz-indice-de-divida-2024",
@@ -5117,7 +5117,7 @@
   "distritoOuIlha": "Ilha da Madeira",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "ribeira-brava-desemprego-registado-2025-12",
    "divida": "ribeira-brava-divida-dgal-2024",
    "empresas": "ribeira-brava-empresas-2024",
    "indice": "ribeira-brava-indice-de-divida-2024",
@@ -5135,7 +5135,7 @@
   "distritoOuIlha": "Ilha da Madeira",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "santa-cruz-desemprego-registado-2025-12",
    "divida": "santa-cruz-divida-dgal-2024",
    "empresas": "santa-cruz-empresas-2024",
    "indice": "santa-cruz-indice-de-divida-2024",
@@ -5153,7 +5153,7 @@
   "distritoOuIlha": "Ilha da Madeira",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "santana-desemprego-registado-2025-12",
    "divida": "santana-divida-dgal-2024",
    "empresas": "santana-empresas-2024",
    "indice": "santana-indice-de-divida-2024",
@@ -5171,7 +5171,7 @@
   "distritoOuIlha": "Ilha da Madeira",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "sao-vicente-desemprego-registado-2025-12",
    "divida": "sao-vicente-divida-dgal-2024",
    "empresas": "sao-vicente-empresas-2024",
    "indice": "sao-vicente-indice-de-divida-2024",
@@ -5189,7 +5189,7 @@
   "distritoOuIlha": "Ilha de Porto Santo",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "porto-santo-desemprego-registado-2025-12",
    "divida": "porto-santo-divida-dgal-2024",
    "empresas": "porto-santo-empresas-2024",
    "indice": "porto-santo-indice-de-divida-2024",
@@ -5207,7 +5207,7 @@
   "distritoOuIlha": "Ilha de Santa Maria",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "vila-do-porto-desemprego-registado-2025-12",
    "divida": "vila-do-porto-divida-dgal-2024",
    "empresas": "vila-do-porto-empresas-2024",
    "indice": "vila-do-porto-indice-de-divida-2024",
@@ -5225,7 +5225,7 @@
   "distritoOuIlha": "Ilha de São Miguel",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "lagoa-ilha-de-sao-miguel-desemprego-registado-2025-12",
    "divida": "lagoa-ilha-de-sao-miguel-divida-dgal-2024",
    "empresas": "lagoa-ilha-de-sao-miguel-empresas-2024",
    "indice": "lagoa-ilha-de-sao-miguel-indice-de-divida-2024",
@@ -5243,7 +5243,7 @@
   "distritoOuIlha": "Ilha de São Miguel",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "nordeste-desemprego-registado-2025-12",
    "divida": "nordeste-divida-dgal-2024",
    "empresas": "nordeste-empresas-2024",
    "indice": "nordeste-indice-de-divida-2024",
@@ -5261,7 +5261,7 @@
   "distritoOuIlha": "Ilha de São Miguel",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "ponta-delgada-desemprego-registado-2025-12",
    "divida": "ponta-delgada-divida-dgal-2024",
    "empresas": "ponta-delgada-empresas-2024",
    "indice": "ponta-delgada-indice-de-divida-2024",
@@ -5279,7 +5279,7 @@
   "distritoOuIlha": "Ilha de São Miguel",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "povoacao-desemprego-registado-2025-12",
    "divida": "povoacao-divida-dgal-2024",
    "empresas": "povoacao-empresas-2024",
    "indice": "povoacao-indice-de-divida-2024",
@@ -5297,7 +5297,7 @@
   "distritoOuIlha": "Ilha de São Miguel",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "ribeira-grande-desemprego-registado-2025-12",
    "divida": "ribeira-grande-divida-dgal-2024",
    "empresas": "ribeira-grande-empresas-2024",
    "indice": "ribeira-grande-indice-de-divida-2024",
@@ -5315,7 +5315,7 @@
   "distritoOuIlha": "Ilha de São Miguel",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "vila-franca-do-campo-desemprego-registado-2025-12",
    "divida": "vila-franca-do-campo-divida-dgal-2024",
    "empresas": "vila-franca-do-campo-empresas-2024",
    "indice": "vila-franca-do-campo-indice-de-divida-2024",
@@ -5333,7 +5333,7 @@
   "distritoOuIlha": "Ilha Terceira",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "angra-do-heroismo-desemprego-registado-2025-12",
    "divida": "angra-do-heroismo-divida-dgal-2024",
    "empresas": "angra-do-heroismo-empresas-2024",
    "indice": "angra-do-heroismo-indice-de-divida-2024",
@@ -5351,7 +5351,7 @@
   "distritoOuIlha": "Ilha Terceira",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "praia-da-vitoria-desemprego-registado-2025-12",
    "divida": "praia-da-vitoria-divida-dgal-2024",
    "empresas": "praia-da-vitoria-empresas-2024",
    "indice": "praia-da-vitoria-indice-de-divida-2024",
@@ -5369,7 +5369,7 @@
   "distritoOuIlha": "Ilha da Graciosa",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "santa-cruz-da-graciosa-desemprego-registado-2025-12",
    "divida": "santa-cruz-da-graciosa-divida-dgal-2024",
    "empresas": "santa-cruz-da-graciosa-empresas-2024",
    "indice": "santa-cruz-da-graciosa-indice-de-divida-2024",
@@ -5387,7 +5387,7 @@
   "distritoOuIlha": "Ilha de São Jorge",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "calheta-de-sao-jorge-desemprego-registado-2025-12",
    "divida": "calheta-de-sao-jorge-divida-dgal-2024",
    "empresas": "calheta-de-sao-jorge-empresas-2024",
    "indice": "calheta-de-sao-jorge-indice-de-divida-2024",
@@ -5405,7 +5405,7 @@
   "distritoOuIlha": "Ilha de São Jorge",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "velas-desemprego-registado-2025-12",
    "divida": "velas-divida-dgal-2024",
    "empresas": "velas-empresas-2024",
    "indice": "velas-indice-de-divida-2024",
@@ -5423,7 +5423,7 @@
   "distritoOuIlha": "Ilha do Pico",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "lajes-do-pico-desemprego-registado-2025-12",
    "divida": "lajes-do-pico-divida-dgal-2024",
    "empresas": "lajes-do-pico-empresas-2024",
    "indice": "lajes-do-pico-indice-de-divida-2024",
@@ -5441,7 +5441,7 @@
   "distritoOuIlha": "Ilha do Pico",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "madalena-desemprego-registado-2025-12",
    "divida": "madalena-divida-dgal-2024",
    "empresas": "madalena-empresas-2024",
    "indice": "madalena-indice-de-divida-2024",
@@ -5459,7 +5459,7 @@
   "distritoOuIlha": "Ilha do Pico",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "sao-roque-do-pico-desemprego-registado-2025-12",
    "divida": "sao-roque-do-pico-divida-dgal-2024",
    "empresas": "sao-roque-do-pico-empresas-2024",
    "indice": "sao-roque-do-pico-indice-de-divida-2024",
@@ -5477,7 +5477,7 @@
   "distritoOuIlha": "Ilha do Faial",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "horta-desemprego-registado-2025-12",
    "divida": "horta-divida-dgal-2024",
    "empresas": "horta-empresas-2024",
    "indice": "horta-indice-de-divida-2024",
@@ -5495,7 +5495,7 @@
   "distritoOuIlha": "Ilha das Flores",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "lajes-das-flores-desemprego-registado-2025-12",
    "divida": "lajes-das-flores-divida-dgal-2024",
    "empresas": "lajes-das-flores-empresas-2024",
    "indice": "lajes-das-flores-indice-de-divida-2024",
@@ -5513,7 +5513,7 @@
   "distritoOuIlha": "Ilha das Flores",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "santa-cruz-das-flores-desemprego-registado-2025-12",
    "divida": "santa-cruz-das-flores-divida-dgal-2024",
    "empresas": "santa-cruz-das-flores-empresas-2024",
    "indice": "santa-cruz-das-flores-indice-de-divida-2024",
@@ -5531,7 +5531,7 @@
   "distritoOuIlha": "Ilha do Corvo",
   "ilha": true,
   "linhas": {
-   "desempregoRegistado": null,
+   "desempregoRegistado": "corvo-desemprego-registado-2025-12",
    "divida": "corvo-divida-dgal-2024",
    "empresas": "corvo-empresas-2024",
    "indice": "corvo-indice-de-divida-2024",
