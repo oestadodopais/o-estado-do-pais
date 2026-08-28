@@ -1,0 +1,10 @@
+--- ADENDA 5 (from the seat, 28.08.2026) ---
+The director's «e» is the seat's recommendation and the front-runner; one refinement pass on it before he decides:
+1. The bar. Two versions side by side at 180, 60, 16: the bar crossing out of the circle (as now) and the bar stopping inside the bowl (a true lowercase «e»). Say, looking at them at 60 px, which one a reader of a public-finance site could mistake for the euro sign («€» has two bars and an open bowl; ours has one bar and a closed bowl, but the association is the risk), and which one keeps the «ruler line» idea.
+2. The cut. Two or three fractions of the circle removed (the classic lower-right opening; a narrower one; a wider one), with the tip of the cut kept above 2 px at 60 (today it thins to 1 px). Measure the minimum run at 60 and 16 for each.
+3. Colour pairs, final. The icon in amber `#e0a21a` on ink `#17191b` (as now) and a version in ochre `#7a5300` on paper `#f6f7f4` for the light-field case; the header lockup «O Estado do País» with the «e» in ochre on paper, at the header's cap height (the earlier notes' anchor B: `.wordmark` in `src/styles/`, Spectral 400 at its clamp), rendered at 1:1, so the director sees the mark beside the name.
+4. The home-screen cell for the best two variants, light and dark screens, among the same eight reference icons (`ECRA-E.png`); plus the three sizes (180, 60, 16) on the board.
+5. NOTAS.md: a short section «O «e», refinado» with the measurements and your recommendation between the variants (no praise words; describe what is seen); EXPORT for the final variant(s) (`direcoes/18b-…svg` etc.); `PRANCHA.html`/`PRANCHA.png` regenerated.
+--- end ---
+
+Rules: drawn geometry, not a font glyph; judge by looking at your renders with the Read tool; no dashes in Portuguese prose (commas, colons, or the middle dot); commits in the worktree with explicit paths only, each green on `npm run typecheck`, with the two trailers `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>` and `Claude-Session: https://claude.ai/code/session_01BbaH3XteKcsmmN9VD6SGwU`; do not merge or push; never fetch from the network.
