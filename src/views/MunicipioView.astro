@@ -8,13 +8,14 @@
  * a mesma das páginas de linha do livro-razão, e não uma quarta: partilha com
  * elas as regras da grelha em `site.css`. A coluna do aparelho tem trabalho a
  * fazer, e é ele que decide a disposição: esta página tem de dizer, na margem,
- * que não existe PIB municipal, que duas das oito medidas são o município a
- * relatar sobre si próprio, que um ano de contas nunca foi certificado e que
+ * que não existe PIB municipal, que as duas medidas que o município publica de
+ * si próprio vivem na camada das contas, que um ano de contas nunca foi
+ * certificado e que
  * ninguém publica dinheiro por pelouro. Com essas quatro ressalvas metidas no
  * corpo, ficavam enterradas.
  *
  * AS TRÊS CAMADAS (IDENTIDADE §4), e abrem-se todas aqui, nunca noutra página:
- *   Relance        oito medidas, cada uma com o seu selo
+ *   Relance        sete medidas, cada uma com o seu selo
  *   Leitura breve  uma frase por medida, e a distância desenhada
  *   Fundo          as contas do município, a linha do tempo das administrações,
  *                  o método, as ressalvas e os trabalhos
@@ -103,10 +104,10 @@ const indicePartes = temIndice
  * ---------------------------------------------------------------------------
  * AS OITO MEDIDAS, PELA PEÇA DA PRIMEIRA PÁGINA (R2, ao contrário)
  * ---------------------------------------------------------------------------
- * A relocação R2 levou estes oito registos daqui para a primeira página, e a
+ * A relocação R2 levou estes registos daqui para a primeira página, e a
  * peça (`src/components/inicio/Peca.astro`) foi escrita para eles. Voltam a ser
- * lidos aqui pela mesma peça: as mesmas oito medidas, com a mesma gramática, nas
- * duas superfícies. Um segundo desenho para os mesmos oito registos era uma
+ * lidos aqui pela mesma peça: as mesmas sete medidas, com a mesma gramática, nas
+ * duas superfícies. Um segundo desenho para os mesmos registos era uma
  * segunda língua para a mesma coisa, que é o que este redesenho existe para
  * acabar.
  *
@@ -126,10 +127,10 @@ const indicePartes = temIndice
  *
  * As medidas sem linha rendem a mesma peça, vazia: sem número, sem selo, e o
  * que falta dito em duas palavras. Rendiam-se todas a seguir às cheias, e por
- * isso a ordem das oito mudava de concelho para concelho — a disposição-padrão
+ * isso a ordem das medidas mudava de concelho para concelho — a disposição-padrão
  * da Emenda 14 é uma ordem fixa, e é ela que faz da página de um concelho a
  * mesma página que a de outro com dados diferentes. `pecasDoConcelho()` devolve
- * agora as oito, pela ordem declarada, cada uma a dizer se tem linha.
+ * agora as sete, pela ordem declarada, cada uma a dizer se tem linha.
  */
 const pecas = pecasDoConcelho(m);
 
@@ -333,13 +334,13 @@ const metodoPath = routePath('metodo', lang);
         vez de a supor.» — três orações sobre o método e as intenções do sítio,
         que é a classe que a emenda tira das páginas do leitor. Saiu da primeira
         página na etapa 2m; sai daqui agora, e a relocação R6 fecha a zero. O que
-        a página mede lê-se nas oito medidas. */}
+        a página mede lê-se nas sete medidas. */}
   </div>
 
   <!-- ===================================================== CAMADA 1 — RELANCE -->
   <section id="relance" aria-labelledby="relance-k">
     <div class="sec-head">
-      {/* «Relance» é o título desta secção, e não só uma sobrancelha: as oito
+      {/* «Relance» é o título desta secção, e não só uma sobrancelha: as sete
           medidas por baixo são `h3`, e sem um `h2` aqui o sumário de
           cabeçalhos saltava de h1 para h3. O nível passa a existir; o desenho
           é o mesmo, medido. */}
@@ -409,7 +410,7 @@ const metodoPath = routePath('metodo', lang);
       tempo, sem método e sem trabalhos a primeira fica vazia: 68ch de nada ao
       lado de um cartão de 300px, que é uma célula vazia numa grelha e é o que a
       IDENTIDADE §7 recusa. Sem corpo, a página não pede duas colunas: o
-      aparelho segue as oito peças, com a sua largura, e a disposição continua a
+      aparelho segue as sete peças, com a sua largura, e a disposição continua a
       ser a B — o que muda é que ela não desenha uma coluna que não tem nada. */}
   <div class:list={['municipio', !temCorpo && 'municipio-so-aparelho']}>
     {temCorpo && (
@@ -420,7 +421,7 @@ const metodoPath = routePath('metodo', lang);
           escreveu, e a distância desenhada, que existe onde há as duas linhas
           da dívida e do limite. Sem nenhuma das duas, a secção não se rende —
           nem título, nem caixa vazia (IDENTIDADE §7: uma página por escrever
-          declara o que lhe falta, e o que lhe falta está dito nas oito peças). */}
+          declara o que lhe falta, e o que lhe falta está dito nas sete peças). */}
       {(m.leitura || temDistancia) && (
       <section class="linha-bloco" aria-labelledby="breve">
         <h2 class="linha-bloco-titulo" id="breve">{s.municipio.breveK}</h2>
@@ -538,11 +539,13 @@ const metodoPath = routePath('metodo', lang);
             8 do relance. A peça-padrão de 308 páginas tem de medir a mesma coisa
             em todas, e estas duas são o município a ler-se a si próprio: a
             execução da receita não tem fonte central desde 2019, e o prazo médio
-            que o regulador publica é outra contagem. Aqui, na camada onde esta
-            página já publica o que o município diz de si, dizem o que são; lá em
-            cima, a peça diz «sem linha ainda», que é o estado da fonte central.
-            Nenhum valor mudou, e as duas linhas continuam a ser rendidas com o
-            seu selo. */}
+            que a Direção-Geral publica é outra contagem. Aqui, na camada onde
+            esta página já publica o que o município diz de si, dizem o que são.
+            Lá em cima, a execução da receita deixou de ter peça (28.08.2026, a
+            regra 1 dos vazios: uma medida que nenhuma fonte publica para
+            ninguém não tem peça), e a peça do prazo médio mostra o que a lista
+            da Direção-Geral imprime para este concelho. Nenhum valor mudou, e as
+            duas linhas continuam a ser rendidas com o seu selo. */}
         {m.contas.execucaoDaReceita && m.contas.prazoMedioDePagamento && (
           <dl class="mun-campos">
             <dt>{s.municipio.contasExecucao}</dt>
