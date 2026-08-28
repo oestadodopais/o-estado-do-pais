@@ -352,7 +352,7 @@
    "empresas": "aljustrel-empresas-2024",
    "indice": "aljustrel-indice-de-divida-2024",
    "limite": "aljustrel-limite-divida-dgal-2024",
-   "pmp": null,
+   "pmp": "aljustrel-prazo-medio-de-pagamento-2025-12",
    "poderDeCompra": "aljustrel-poder-de-compra-2023",
    "populacao": "aljustrel-populacao-2025"
   },
@@ -1648,7 +1648,7 @@
    "empresas": "evora-empresas-2024",
    "indice": "evora-indice-de-divida-2024",
    "limite": "evora-limite-divida-dgal-2024",
-   "pmp": null,
+   "pmp": "evora-prazo-medio-de-pagamento-2025-12",
    "poderDeCompra": "evora-poder-de-compra-2023",
    "populacao": "evora-populacao-2025"
   },
@@ -1864,7 +1864,7 @@
    "empresas": "aljezur-empresas-2024",
    "indice": "aljezur-indice-de-divida-2024",
    "limite": "aljezur-limite-divida-dgal-2024",
-   "pmp": null,
+   "pmp": "aljezur-prazo-medio-de-pagamento-2025-12",
    "poderDeCompra": "aljezur-poder-de-compra-2023",
    "populacao": "aljezur-populacao-2025"
   },
@@ -2332,7 +2332,7 @@
    "empresas": "trancoso-empresas-2024",
    "indice": "trancoso-indice-de-divida-2024",
    "limite": "trancoso-limite-divida-dgal-2024",
-   "pmp": null,
+   "pmp": "trancoso-prazo-medio-de-pagamento-2025-12",
    "poderDeCompra": "trancoso-poder-de-compra-2023",
    "populacao": "trancoso-populacao-2025"
   },
@@ -2422,7 +2422,7 @@
    "empresas": "batalha-empresas-2024",
    "indice": "batalha-indice-de-divida-2024",
    "limite": "batalha-limite-divida-dgal-2024",
-   "pmp": null,
+   "pmp": "batalha-prazo-medio-de-pagamento-2025-12",
    "poderDeCompra": "batalha-poder-de-compra-2023",
    "populacao": "batalha-populacao-2025"
   },
@@ -2584,7 +2584,7 @@
    "empresas": "pedrogao-grande-empresas-2024",
    "indice": "pedrogao-grande-indice-de-divida-2024",
    "limite": "pedrogao-grande-limite-divida-dgal-2024",
-   "pmp": null,
+   "pmp": "pedrogao-grande-prazo-medio-de-pagamento-2025-12",
    "poderDeCompra": "pedrogao-grande-poder-de-compra-2023",
    "populacao": "pedrogao-grande-populacao-2025"
   },
@@ -3952,7 +3952,7 @@
    "empresas": "almada-empresas-2024",
    "indice": "almada-indice-de-divida-2024",
    "limite": "almada-limite-divida-dgal-2024",
-   "pmp": null,
+   "pmp": "almada-prazo-medio-de-pagamento-2025-12",
    "poderDeCompra": "almada-poder-de-compra-2023",
    "populacao": "almada-populacao-2025"
   },
@@ -4690,7 +4690,7 @@
    "empresas": "moimenta-da-beira-empresas-2024",
    "indice": "moimenta-da-beira-indice-de-divida-2024",
    "limite": "moimenta-da-beira-limite-divida-dgal-2024",
-   "pmp": null,
+   "pmp": "moimenta-da-beira-prazo-medio-de-pagamento-2025-12",
    "poderDeCompra": "moimenta-da-beira-poder-de-compra-2023",
    "populacao": "moimenta-da-beira-populacao-2025"
   },
@@ -4776,11 +4776,11 @@
   "ilha": false,
   "linhas": {
    "desempregoRegistado": "penedono-desemprego-registado-2025-12",
-   "divida": null,
+   "divida": "penedono-divida-dgal-2024",
    "empresas": "penedono-empresas-2024",
    "indice": null,
-   "limite": null,
-   "pmp": null,
+   "limite": "penedono-limite-divida-dgal-2024",
+   "pmp": "penedono-prazo-medio-de-pagamento-2025-12",
    "poderDeCompra": "penedono-poder-de-compra-2023",
    "populacao": "penedono-populacao-2025"
   },

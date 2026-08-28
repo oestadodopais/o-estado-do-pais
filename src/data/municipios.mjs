@@ -114,13 +114,18 @@ const EVORA = {
         empresas: 'evora-empresas-2024',
         divida: 'evora-divida-dgal-2024',
         indice: 'evora-indice-de-divida-2024',
-        /* SEM LINHA ENQUANTO O MOTOR NÃO A ESCREVER. A lista da Direção-Geral
-           imprime «N.d.» para Évora a 31 de dezembro de 2025, e «N.d.» é um
-           valor publicado: passa a ter linha própria, como nos outros oito
-           concelhos em que a lista imprime a mesma coisa.
-           Enquanto ela não existir no livro-razão, o campo fica a `null` e a
-           peça rende-se vazia, que é o estado honesto. */
-        pmp: null,
+        /* A LINHA DO PRAZO MÉDIO, COM O VALOR QUE A FONTE IMPRIME (28.08.2026,
+           regra 2). A lista da Direção-Geral imprime «N.d.» para Évora a 31 de
+           dezembro de 2025, como para outros oito concelhos, e «N.d.» é um valor
+           publicado: tem linha própria, com fonte, documento, data de acesso e
+           excerto, como as outras. A peça mostra-o com o seu selo, sem
+           comparação e sem barra, porque não há nada com que o comparar.
+
+           NÃO É A LINHA DAS CONTAS. `contas.prazoMedioDePagamento` continua a
+           ser `evora-prazo-medio-de-pagamento-2025`, lida da prestação de contas
+           do próprio município: são duas contagens da mesma coisa por duas
+           definições, e é essa a razão de a camada das contas existir. */
+        pmp: 'evora-prazo-medio-de-pagamento-2025-12',
       },
       /* Sem data de referência própria: Évora passa a medir o mesmo período que
          os outros 307, que é o que a declaração das sete medidas já diz. */

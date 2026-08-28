@@ -376,7 +376,19 @@ if (!fs.existsSync(DIST)) {
   }
 
   /* B3 · a marca rendida: onde ela existe, aparece dentro do elemento da linha,
-     com selo ao lado, e sem palavra de estado na peça. */
+     com selo ao lado, e NUNCA com uma comparação.
+     ------------------------------------------------------------------------
+     A REGRA É «SEM COMPARAÇÃO», E NÃO «SEM PALAVRA». A primeira redação desta
+     célula pedia que uma peça com marca não tivesse palavra de estado nenhuma,
+     e as 20 peças construídas mostraram-lhe o erro: o prazo médio de pagamento
+     e a dívida total não têm limiar publicado NENHUM, e por isso dizem «sem
+     limiar» nas 308 páginas, com valor ou com marca. Tirar a palavra só às
+     nove com marca era dizer daquelas nove uma coisa diferente do que se diz
+     das outras 299, e falsa: o que lhes falta não é o limiar, é o valor.
+     O que a marca não pode produzir é uma COMPARAÇÃO: nunca «fora do limiar»,
+     nunca «dentro do limiar», nunca um quadrado pintado, nunca uma barra. Onde
+     há limiar publicado e o valor é marca — o índice de dívida —, a peça fica
+     sem estado nenhum, e é a célula A5 que o mede. */
   {
     const comMarca = [];
     for (const { chave, dir } of EDICOES) {
@@ -398,7 +410,11 @@ if (!fs.existsSync(DIST)) {
             /* O valor está DENTRO do elemento da linha, e não em prosa ao lado. */
             noElemento: new RegExp(`data-claim="${medida}"[^>]*>${MARCA.replace(/\./g, '\\.')}<`).test(corpo),
             comSelo: corpo.includes('class="src-chip'),
-            comPalavra: corpo.includes('peca-palavra'),
+            /* O estado da peça, tal como o atributo o declara: «sem» é «não há
+               limiar publicado para esta medida», e é o único que uma marca
+               pode ter. */
+            estado: corpo.match(/data-estado="([^"]*)"/)?.[1] ?? null,
+            comQuadrado: /class="sq sq-(fora|dentro)"/.test(corpo),
             comRegua: corpo.includes('class="regua"'),
           });
         }
@@ -412,23 +428,32 @@ if (!fs.existsSync(DIST)) {
       );
     } else {
       const maus = comMarca.filter(
-        (p) => !p.noElemento || !p.comSelo || p.comPalavra || p.comRegua,
+        (p) =>
+          !p.noElemento ||
+          !p.comSelo ||
+          p.estado === 'fora' ||
+          p.estado === 'dentro' ||
+          p.comQuadrado ||
+          p.comRegua,
       );
       const concelhos = new Set(comMarca.map((p) => p.concelho));
       const medidas = new Set(comMarca.map((p) => p.nome));
+      const estados = new Set(comMarca.map((p) => p.estado ?? '(nenhum)'));
       conta(
-        'B3 · a marca rendida com selo, sem estado e sem barra, nas duas edições',
+        'B3 · a marca rendida com selo, e sem comparação nenhuma, nas duas edições',
         maus.length === 0,
         maus.length === 0
           ? `${comMarca.length} peça(s) com «${MARCA}» em ${concelhos.size} concelho(s) ` +
-            `(${[...medidas].join(', ')}), todas dentro do elemento da linha e com selo`
+            `(${[...medidas].join(', ')}), todas dentro do elemento da linha e com selo · ` +
+            `estados: ${[...estados].join(', ')} · nenhum quadrado pintado, nenhuma barra`
           : `${maus.length} de ${comMarca.length}: ` +
             maus
               .slice(0, 4)
               .map(
                 (p) =>
                   `${p.edicao}/${p.concelho}/${p.medida} (no elemento ${p.noElemento}, ` +
-                  `selo ${p.comSelo}, palavra ${p.comPalavra}, barra ${p.comRegua})`,
+                  `selo ${p.comSelo}, estado ${p.estado}, quadrado ${p.comQuadrado}, ` +
+                  `barra ${p.comRegua})`,
               )
               .join(' | '),
       );
