@@ -7,11 +7,20 @@ em `45a9708`. Cada commit com `npm run build` (a cadeia inteira das réguas),
 `npm run verify` e `npm run typecheck` verdes antes de ser escrito. Sem fusão e
 sem envio: o ramo fica para o lugar de direção. Sem travessões na prosa.*
 
+*O FICHEIRO TEM DUAS PARTES, E A SEGUNDA REVOGA A REGRA DA PRIMEIRA. A primeira
+parte (§1 a §9) é a construção da manhã de 28.08, com a regra de quem publica o
+número. À tarde o diretor mudou a regra para o ASSUNTO, e a segunda parte (§10 e
+seguintes) é essa. A primeira fica escrita e não se apaga: é ela que diz o que
+foi verificado na lei orgânica e porque é que a regra antiga era rigorosa e
+ilegível, e a regra nova só se entende contra ela.*
+
 | commit | o quê |
 | --- | --- |
 | `7202c48` | as áreas de governo: o mapa, as dez páginas, a navegação, o portão, a régua e o inventário |
 | `1a0267a` | o comando da primeira página com quatro posições cabe no telemóvel |
-| (este) | o relatório |
+| `dbeaf7a` | o relatório da primeira parte |
+| `3398144` | a regra do assunto: as nove áreas, as 21 matérias, as 31 regras, a A7 e o inventário |
+| (este) | a segunda parte do relatório |
 
 ---
 
@@ -461,3 +470,474 @@ completas com a cadeia das réguas (seis, contando as duas que fecharam a
 vermelho e ensinaram alguma coisa), as corridas dos estragos plantados, as
 medições do comando às sete larguras e este relatório. Nenhum submodelo foi
 lançado.
+
+---
+
+# Segunda parte · a regra do assunto
+
+*Escrita pelo construtor (Claude Opus 5) a 28.08.2026, à tarde, contra a decisão
+do diretor do mesmo dia. Mesmo ramo, `areas-2026-08-28`, agora saído de `dbeaf7a`.
+O trabalho da manhã fica de pé em tudo menos na regra: a lei orgânica é a mesma,
+foi lida outra vez no mesmo ficheiro, e as páginas, o portão e a régua do
+navegador são os mesmos que a manhã construiu, com as regras adaptadas.*
+
+## 10 · O que o diretor mandou, e o que isso muda
+
+A regra da manhã era esta: **a área de uma peça é a do organismo que publica o
+seu número**. É rigorosa, confere-se contra um artigo e contra um campo, e o
+diretor manteve o juízo sobre ela: rigorosa e **ilegível**. A população de um
+concelho estava na Presidência, porque o INE é tutelado pelo Ministro da
+Presidência; um leitor que procura a população não pensa «Presidência», e uma
+arrumação que ele não consegue adivinhar não é navegação.
+
+A regra passa a ser:
+
+> **A área de uma peça é a do ministério cujas matérias, tal como a lei orgânica
+> as lista, cobrem o assunto da peça.**
+
+As matérias de um ministério estão no artigo dele, no número que diz «tem por
+missão formular, conduzir, executar e avaliar as políticas de …». Esse número
+está transcrito, inteiro, ao lado de cada matéria em `src/data/areas.mjs`, e
+cada regra diz que linhas cobre e porquê.
+
+**O que a mudança faz ao sítio, em três linhas:** a Presidência desaparece; seis
+áreas novas entram (Finanças, Infraestruturas e Habitação, Justiça, Educação,
+Ciência e Inovação, Saúde, Ambiente e Energia); as peças passam de 39 em quatro
+áreas para **138 em nove**.
+
+**E faz outra coisa, que é a mais importante e não estava no pedido:** três
+exclusões da manhã deixaram de existir sem que nada fosse investigado. A ERSAR
+não é nomeada em artigo nenhum da lei orgânica, a Estrutura de Missão Recuperar
+Portugal também não, e o Grupo de Trabalho para a Reforma da Segurança Social
+também não. Pela regra antiga, as suas linhas ficavam sem área e o relatório da
+manhã nomeava o que faltaria ler para as pôr numa (o diploma da ERSAR, a
+resolução da Estrutura de Missão, o despacho do grupo de trabalho). **Nenhum
+desses três documentos foi lido, e nenhum é preciso**: pela regra do assunto, a
+água não faturada é matéria de «água», o PRR de Évora é matéria do artigo 15.º,
+n.º 2, que nomeia o PRR pelo nome, e as penalizações por reforma antecipada são
+matéria de «segurança social». Quem publica deixou de decidir.
+
+O mesmo vale para o marcador `[a verificar]`. A régua da manhã teve de o excluir
+da conta da cobertura, porque uma linha sem fonte confirmada não podia ter área
+nem exclusão escrita. As duas linhas de `which-door-is-yours` e a de
+`agua-nao-faturada` que o levam entram agora na cobertura como todas as outras: o
+assunto de uma linha não depende de quem a publica.
+
+---
+
+## 11 · A lei, lida outra vez, e os números que se citam
+
+**O ficheiro é o mesmo da manhã**, e está em disco:
+`dre-87a-2025.pdf`, 836 420 bytes, SHA-256
+`1528497b468e39392b7e57d7bf83741a343e380e8a1680946a09b6763152d37a`, descarregado
+de `https://files.diariodarepublica.pt/1s/2025/07/14201/0000200027.pdf`. Decreto-Lei
+n.º 87-A/2025, de 25 de julho, *Diário da República*, 1.ª série, n.º 142,
+Suplemento. O texto foi extraído com `pdftotext -layout` e lidos, um a um, os
+números de missão de todos os dezasseis artigos de ministério, e não só os nove
+que dão área a alguma coisa.
+
+Os números citados, e as matérias que cada um lista (as reticências marcam o que
+não foi preciso para nenhuma peça):
+
+**Artigo 12.º, n.º 1 · Finanças**
+
+> O Ministério das Finanças é o departamento governamental que tem por missão
+> formular, conduzir, executar e avaliar **a política financeira do Estado**,
+> promovendo a gestão racional dos recursos públicos, o aumento da eficiência e
+> a equidade na sua obtenção e gestão, bem como políticas para a Administração
+> Pública e o emprego público.
+
+**Artigo 15.º, n.º 1 · Economia e Coesão Territorial**
+
+> O Ministério da Economia e da Coesão Territorial é o departamento governamental
+> que tem por missão formular, conduzir, executar e avaliar as políticas de
+> desenvolvimento dirigidas ao **crescimento da economia**, da
+> **competitividade**, do **investimento** e da inovação, à
+> **internacionalização das empresas**, à promoção da indústria, do comércio,
+> dos serviços e do turismo, à defesa dos consumidores, bem como, participar na
+> coordenação interministerial das políticas de desenvolvimento económico e
+> social e formular, conduzir, executar e avaliar as políticas de **coesão
+> territorial**, de **administração local**, do ordenamento do território, de
+> cooperação territorial europeia, de desenvolvimento regional, de cidades e de
+> valorização do interior, tendo em vista a redução das desigualdades
+> territoriais e o desenvolvimento equilibrado do território, atendendo às
+> especificidades das áreas do País com baixa densidade populacional e aos
+> territórios transfronteiriços.
+
+**Artigo 15.º, n.º 2 · Economia e Coesão Territorial**
+
+> O Ministério da Economia e da Coesão Territorial tem ainda por missão formular,
+> conduzir e avaliar as estratégias de desenvolvimento económico e social
+> relacionadas com os objetivos da convergência e da coesão, assim como definir e
+> executar a estratégia, as prioridades, as orientações, a monitorização, a
+> avaliação e a gestão global **dos programas financiados por fundos europeus,
+> nomeadamente no âmbito da política de coesão da União Europeia e do Plano de
+> Recuperação e Resiliência (PRR)**.
+
+**Artigo 19.º, n.º 1 · Infraestruturas e Habitação**
+
+> O Ministro das Infraestruturas e Habitação formula, conduz, executa e avalia as
+> políticas de infraestruturas nas áreas da mobilidade, transportes terrestres e
+> aéreos e respetivas infraestruturas, incluindo a segurança dos mesmos, e das
+> comunicações, bem como as políticas dos transportes fluviais, marítimos e dos
+> portos, incluindo a segurança dos mesmos, e as políticas de **habitação**, de
+> reabilitação urbana, da **construção** e de imobiliário, incluindo a regulação
+> dos contratos públicos.
+
+**Artigo 20.º, n.º 1 · Justiça**
+
+> O Ministério da Justiça é o departamento governamental que tem por missão
+> formular, conduzir, executar e avaliar **a política de justiça** definida pela
+> Assembleia da República e pelo Governo.
+
+**Artigo 21.º, n.º 1 · Administração Interna**
+
+> O Ministério da Administração Interna é o departamento governamental que tem
+> por missão formular, conduzir, executar e avaliar as políticas de segurança
+> interna, do controlo de fronteiras, de proteção e socorro, de planeamento civil
+> de emergência, de segurança rodoviária e de **administração eleitoral**.
+
+**Artigo 22.º, n.º 1 e n.º 2 · Educação, Ciência e Inovação**
+
+> 1 — O Ministério da Educação, Ciência e Inovação é o departamento governamental
+> que tem por missão formular, conduzir, executar e avaliar a política nacional
+> relativa ao **sistema educativo**, e articular as políticas nacionais de
+> qualificação e de formação profissional.
+>
+> 2 — O Ministério da Educação, Ciência e Inovação tem, ainda, por missão
+> formular, conduzir, executar e avaliar a política nacional para **a ciência** e
+> o ensino superior, compreendendo a inovação de base científica e tecnológica, o
+> espaço, **as orientações em matéria de competências digitais**, a computação
+> científica, a difusão da cultura científica e tecnológica e a cooperação
+> científica e tecnológica internacional, nomeadamente com os países de língua
+> oficial portuguesa.
+
+**Artigo 23.º, n.º 1 · Saúde**
+
+> O Ministério da Saúde é o departamento governamental que tem por missão
+> formular, conduzir, executar e avaliar **a política nacional de saúde** e, em
+> especial, do Serviço Nacional de Saúde, garantindo uma aplicação e utilização
+> sustentáveis de recursos e a avaliação dos seus resultados.
+
+**Artigo 24.º, n.º 1 · Trabalho, Solidariedade e Segurança Social**
+
+> O Ministério do Trabalho, Solidariedade e Segurança Social é o departamento
+> governamental que tem por missão formular, conduzir, executar e avaliar as
+> políticas de **emprego**, de formação profissional, de relações laborais e
+> condições de trabalho, solidariedade e **segurança social**, bem como a
+> coordenação das políticas sociais de **apoio à família, crianças** e jovens em
+> risco, idosos e natalidade, de inclusão das pessoas com deficiência, de
+> **combate à pobreza e de promoção da inclusão social**, de fortalecimento do
+> setor cooperativo, da economia social e do voluntariado.
+
+**Artigo 25.º, n.º 1 · Ambiente e Energia**
+
+> O Ministério do Ambiente e Energia é o departamento governamental que tem por
+> missão formular, conduzir, executar e avaliar as políticas de ambiente,
+> **água**, resíduos, clima, proteção do litoral, conservação da natureza,
+> biodiversidade, energia e geologia, numa perspetiva de desenvolvimento
+> sustentável e de coesão social e territorial, bem como do ordenamento em
+> matérias da sua competência, incluindo da orla costeira e do espaço rústico.
+
+**O nome português de cada área tem duas fontes que dizem o mesmo:** a lista
+publicada da composição do Governo (`briefs/ministerios-xxv-2026-08-28.md`, lida
+no navegador a 28.08) e o título do artigo da lei que lhe fixa as matérias. Os
+títulos dos artigos 12.º, 15.º, 20.º, 21.º, 22.º, 23.º, 24.º e 25.º são,
+literalmente, «Finanças», «Economia e Coesão Territorial», «Justiça»,
+«Administração Interna», «Educação, Ciência e Inovação», «Saúde», «Trabalho,
+Solidariedade e Segurança Social» e «Ambiente e Energia». O do artigo 19.º é
+«Ministro das Infraestruturas e Habitação», e o nome da área é o que a lista do
+Governo dá, sem o «Ministro das».
+
+---
+
+## 12 · As nove áreas, as peças e a matéria de cada uma
+
+138 peças. A contagem de peças não é a contagem de linhas: um trabalho do
+arquivo entra como UMA peça (e traz consigo as linhas por que lá entrou), um
+estudo de dados também, e cada linha solta é uma medida.
+
+| área · endereço | peças | as matérias, e o número da lei |
+| --- | --- | --- |
+| Finanças · `/areas/financas` | 1 | «a política financeira do Estado» (art. 12.º, n.º 1) |
+| Economia e Coesão Territorial · `/areas/economia-e-coesao-territorial` | 96 | «administração local», «coesão territorial», «crescimento da economia», «competitividade», «investimento», «internacionalização das empresas» (art. 15.º, n.º 1) e «os programas financiados por fundos europeus … e do Plano de Recuperação e Resiliência (PRR)» (art. 15.º, n.º 2) |
+| Infraestruturas e Habitação · `/areas/infraestruturas-e-habitacao` | 3 | «habitação» e «construção» (art. 19.º, n.º 1) |
+| Justiça · `/areas/justica` | 1 | «a política de justiça» (art. 20.º, n.º 1) |
+| Administração Interna · `/areas/administracao-interna` | 11 | «administração eleitoral» (art. 21.º, n.º 1) |
+| Educação, Ciência e Inovação · `/areas/educacao-ciencia-e-inovacao` | 3 | «o sistema educativo» (art. 22.º, n.º 1), «a ciência» e «as orientações em matéria de competências digitais» (art. 22.º, n.º 2) |
+| Saúde · `/areas/saude` | 1 | «a política nacional de saúde» (art. 23.º, n.º 1) |
+| Trabalho, Solidariedade e Segurança Social · `/areas/trabalho-solidariedade-e-seguranca-social` | 19 | «emprego», «segurança social», «combate à pobreza e de promoção da inclusão social», «apoio à família, crianças» (art. 24.º, n.º 1) |
+| Ambiente e Energia · `/areas/ambiente-e-energia` | 3 | «água» (art. 25.º, n.º 1) |
+
+**E as linhas do livro-razão por matéria**, que é a conta que o portão fecha. São
+2 602 linhas, 1 969 com matéria e 633 fora:
+
+| matéria | linhas | o que são |
+| --- | --- | --- |
+| administração local | 1 276 | a dívida, o limite legal, o índice e o prazo de pagamento dos 308; as contas e os pelouros de Évora; as quatro contagens de municípios da Carta Administrativa |
+| coesão territorial | 332 | o poder de compra dos 307 concelhos e de Évora e do Alentejo Central; o índice de PIB per capita das regiões e as distâncias à UE-27 |
+| emprego | 317 | o desemprego registado dos 308 concelhos, o de Évora em 2013 e 2024, e sete indicadores do painel europeu |
+| administração eleitoral | 10 | os lugares da câmara, os mandatos de 2009 a 2025 e o executivo de 2025 |
+| os programas financiados por fundos europeus … (PRR) | 9 | as sete linhas do PRR de Évora e os dois avisos do PT2030 |
+| crescimento da economia | 4 | o PIB real per capita, o VAB empresarial de Évora e as duas concentrações do VAB |
+| segurança social | 4 | o fator de sustentabilidade e as três penalizações por reforma antecipada |
+| combate à pobreza e de promoção da inclusão social | 2 | o risco de pobreza ou exclusão e o rácio S80/S20 |
+| habitação | 2 | os preços da habitação e a sobrecarga do custo |
+| água | 2 | a água não faturada e o ciclo de substituição das condutas |
+| competitividade | 1 | o custo unitário do trabalho |
+| investimento | 1 | a formação bruta de capital fixo |
+| internacionalização das empresas | 1 | o desempenho das exportações |
+| construção | 1 | as licenças de construção |
+| o sistema educativo | 1 | o abandono escolar precoce |
+| a ciência | 1 | a despesa em I&D |
+| as orientações em matéria de competências digitais | 1 | as competências digitais |
+| apoio à família, crianças | 1 | as crianças em creche |
+| a política financeira do Estado | 1 | a dívida pública |
+| a política de justiça | 1 | a independência da justiça |
+| a política nacional de saúde | 1 | as necessidades médicas não satisfeitas |
+
+---
+
+## 13 · O que ficou de fora, e o que a lei diz sobre cada um
+
+633 linhas. Sete assuntos, cada um com a razão em `SEM_AREA`, e a razão é sempre
+a mesma espécie de razão: **a lei não lista a matéria**, e isso foi verificado
+com uma busca no texto do diploma e não de memória.
+
+| assunto | linhas | o que a busca no diploma diz |
+| --- | --- | --- |
+| A população residente de um concelho | 309 | «população» **não ocorre uma única vez**. «Estatístic-» ocorre duas vezes, e as duas no nome de um organismo: o Instituto Nacional de Estatística (art. 14.º, n.º 5) e a Direção-Geral de Estatísticas da Educação e Ciência (art. 22.º). Não é matéria de ministério nenhum. |
+| O número de empresas de um concelho | 308 | as matérias vizinhas são «a internacionalização das empresas» e «a promoção da indústria, do comércio, dos serviços e do turismo» (art. 15.º, n.º 1); nenhuma tem por objeto quantas empresas existem num sítio. |
+| As contagens deste arquivo sobre si próprio | 6 | não é matéria de governo nenhum: é este sítio a contar-se. |
+| A dívida e o crédito de quem não é o Estado | 5 | «sistema financeiro», «banca» e «crédito» **não ocorrem no diploma**. O que o art. 12.º, n.º 1, dá às Finanças é a política financeira DO ESTADO. |
+| As contas externas e a taxa de câmbio | 3 | «balança», «cambial» e «moeda» como matéria **não ocorrem**. |
+| A perceção da corrupção | 1 | «corrup-» **não ocorre uma única vez**. |
+| O saldo natural do País | 1 | a mesma espécie de número que a população. «Natalidade» é matéria do art. 24.º, n.º 1, e é o apoio a quem tem filhos, não a contagem do que a demografia fez. |
+
+**O mais perto que a lei chega da demografia**, e fica escrito porque foi
+procurado: o artigo 24.º, n.º 10, e o artigo 26.º, n.º 7, dão à Ministra do
+Trabalho e à Ministra da Cultura, Juventude e Desporto, em conjunto, a
+superintendência do Conselho Nacional para as Políticas de Solidariedade,
+Voluntariado, Família, Reabilitação e Segurança Social «no que diz respeito às
+**matérias de demografia e desigualdade**». É o alcance de um poder sobre um
+conselho consultivo, e não uma matéria do ministério: não está no número da
+missão, que é onde o diretor manda ler as matérias. Não foi usado, e por isso a
+população fica fora.
+
+---
+
+## 14 · As sete decisões que a regra não decide sozinha
+
+A regra do assunto tem uma zona onde o assunto é claro e a matéria é discutível,
+e a honestidade deste bloco está em nomeá-la. Sete casos, cada um com o que foi
+escolhido e o que foi recusado. Nenhum deles precisou do desempate que a decisão
+prevê (a área do organismo que publica), e a razão é que o desempate não funciona
+para nada disto: as linhas em causa são do Eurostat ou são derivadas, e o
+Eurostat não tem ministério.
+
+**1 · A população e as empresas ficam fora; o poder de compra e o VAB ficam
+dentro.** O diretor decidiu as duas primeiras («são estatísticas, não uma matéria
+de política»), e as outras três são leitura minha da mesma regra. A linha que
+tracei é esta: **uma medida de como um território está em relação aos outros é o
+objeto da política de coesão; uma contagem das pessoas ou das empresas que lá
+estão não é.** O índice de poder de compra concelhio, com Portugal em 100, é a
+medida canónica da desigualdade territorial em Portugal, e o artigo 15.º, n.º 1,
+tem por objeto «a redução das desigualdades territoriais». O VAB empresarial de
+um concelho é o tamanho da economia dele, e «crescimento da economia» é matéria.
+**É a aresta mais macia da regra, e o diretor pode movê-la num sítio só:** as
+três regras estão em `src/data/areas.mjs`, na área da Economia, e movê-las é
+mudá-las de matéria ou passá-las para `SEM_AREA`.
+
+**2 · `which-door-is-yours` foi para a Economia, e a decisão dizia Finanças.**
+A decisão lista, entre os exemplos, «public debt, budget execution and public
+funding → Finanças». As duas linhas daquele trabalho contam os avisos abertos do
+Portugal 2030 e quantos deles aceitam pessoas singulares. **O assunto é fundos
+europeus**, e o artigo 15.º, n.º 2, nomeia-os: «os programas financiados por
+fundos europeus, nomeadamente no âmbito da política de coesão da União Europeia».
+O artigo 12.º, n.º 1, não lista «financiamento público» como matéria. Segui o
+texto da lei e não o exemplo, porque a regra 3 da decisão diz «do not invent a
+matter the law does not list» e o exemplo pedia uma matéria que a lei não lista.
+**Se o diretor quiser Finanças, o que falta é dizer qual das matérias do artigo
+12.º cobre um aviso de um programa de fundos europeus.**
+
+**3 · Os trinta concelhos das ilhas entraram no emprego.** Pela regra antiga
+ficavam de fora, porque quem publica o desemprego dos Açores e da Madeira são
+duas direções regionais dos governos regionais. Pela regra do assunto não há como
+os separar: o desemprego registado de um concelho é o mesmo assunto onde quer que
+ele seja medido, e o artigo 24.º, n.º 1, lista «emprego» sem recorte geográfico.
+**A tensão fica escrita e é real:** o Ministério da República não conduz a
+política de emprego nas regiões autónomas, e a página da área não o diz. O que a
+página é, é uma porta por assunto; o que a linha diz, na sua página, continua a
+ser quem a publicou.
+
+**4 · Os jovens que não estudam nem trabalham foram para «emprego» e não para «o
+sistema educativo».** O indicador conta jovens que não estão nem numa coisa nem
+noutra, e as duas matérias tocam-no. Escolhi a que o número mede primeiro (a
+situação perante o emprego) e não pus a linha nas duas áreas, porque uma medida
+em duas áreas é uma arrumação e não uma razão.
+
+**5 · O custo unitário do trabalho foi para «competitividade» e não para
+«relações laborais e condições de trabalho».** O que ele mede é o preço a que a
+economia produz, e é por isso que o painel europeu dos desequilíbrios o publica.
+«Condições de trabalho» é segurança, horários e contrato.
+
+**6 · As competências digitais foram para o artigo 22.º, n.º 2, e não para o
+artigo 16.º, n.º 2.** O Ministro Adjunto e da Reforma do Estado tem «as políticas
+de digitalização, inovação e transição digital da economia, sociedade e
+Administração Pública»; o artigo 22.º, n.º 2, tem «as orientações em matéria de
+competências digitais», que nomeia o assunto da linha por esse nome. Escolhi a
+que nomeia.
+
+**7 · O rácio S80/S20 foi para «combate à pobreza e de promoção da inclusão
+social».** É desigualdade de rendimento e não pobreza, e a matéria que a lei tem
+mais perto é essa. É uma leitura, e está dita como tal.
+
+**Duas coisas que a regra decide sozinha e vale a pena ver:** a certificação
+legal das contas de Évora, publicada por uma sociedade de revisores, e o limite
+de 150 % do índice de dívida, publicado por um centro de investigação de um
+politécnico. Pela regra antiga eram exclusões (nem uma nem outro são organismos
+do Governo); pela regra do assunto são administração local, como as linhas que
+elas certificam e limitam.
+
+---
+
+## 15 · O portão, com uma regra a mais
+
+`npm run check:areas` continua na cadeia do `build` e do `verify`, agora com
+**sete regras**. As seis da manhã ficaram, com o que mudou nelas escrito ao lado.
+
+| regra | o que mede | o que mudou | estrago plantado | viu |
+| --- | --- | --- | --- | --- |
+| A1 | cada área com peças tem página nas duas edições, e nenhuma outra tem | nada | a página `pt:financas` apagada | ✓ |
+| A2 | a porta de cada peça abre, e cada medida vai com selo | nada | o selo de `divida-publica-2025` retirado | ✓ |
+| A3 | nenhuma área vazia, no mapa nem na página | a mensagem, que falava de organismos | uma área «atlantida» com uma matéria que não cobre linha nenhuma | ✓ |
+| A4 | uma peça em duas áreas traz a razão de cada uma, e as razões diferem | a razão é a MATÉRIA e não o organismo | a mesma medida em duas áreas com a mesma matéria | ✓ |
+| A5 | os nomes; e cada matéria com artigo, transcrição do número e regras com razão | reescrita; e uma regra nova por dentro | a razão da primeira regra apagada | ✓ |
+| A6 | a contagem de cada área, de três pontos de observação | nada | o mapa com uma peça a mais do que a página rende | ✓ |
+| A7 | **cada linha do livro-razão coberta uma vez, e só uma** | regra nova | uma linha nova sem assunto declarado | ✓ |
+| A7 | (a mesma) | | uma exclusão a sobrepor-se a uma matéria | ✓ |
+
+**Oito estragos plantados, oito vistos vermelhos.** A A7 leva dois porque falha
+de duas maneiras e as duas contam, e o corredor de `--vermelhos` passou a aceitar
+uma lista de estragos por regra.
+
+**Dentro da A5 há uma regra que não estava no pedido e que vale a pena:** a
+matéria tem de ocorrer, palavra por palavra, dentro da transcrição do número que
+a declara. Sem ela, o nome de uma matéria podia ser uma paráfrase nossa ao lado
+de uma citação que diz outra coisa, e a citação deixava de a provar. É o que
+impede a regra de derivar para «a matéria é o que nós dissermos que é».
+
+**A A7 é a regra que substitui a antiga «nenhuma fonte por decidir», e mede
+mais:** não são as fontes que precisam de decisão, são as LINHAS. Uma fonte já
+conhecida pode trazer uma linha de um assunto novo, e a régua antiga não a via.
+
+**`node tests/inicio/areas.mjs`**: 20 células, **20 verdes**, e os quatro
+estragos plantados do brief vistos vermelhos. A régua não precisou de mudar: ela
+lê as áreas construídas do `dist/` e não de uma lista escrita, e por isso passou
+de quatro para nove sem uma linha de alteração. As contagens que ela imprime
+são 9 linhas no índice, 138 peças, 0 sem porta, 0 medidas sem selo, 0 áreas
+vazias, 0 portas que não abrem, 82 blocos de voz medidos e 0 por classificar.
+
+**As réguas vizinhas, depois da mudança:** `matriz`, `correcoes-a`,
+`mapa-navegacao` e `regioes` correram e estão no §17.
+
+---
+
+## 16 · A voz, e a dívida de forma que ficou maior
+
+**O inventário passa de 534 para 554 linhas**, e o bloco `areas` de 30 para 50.
+As vivas passam de 482 a 502 e as retiradas ficam nas 52. `npm run check:voz` diz
+autorreferência 0, nada por classificar, e nomeia o bloco `areas` como `por ler`.
+
+**Duas frases saíram porque a regra mudou.** As descrições do `<head>` diziam «os
+trabalhos e as medidas **publicados pelos organismos** de …», que era a regra
+antiga a falar na superfície pública. Dizem agora «cujo **assunto é matéria** de
+…». Saíram também as quatro linhas da Presidência (o nome nas duas edições e a
+descrição nas duas), porque a área deixou de existir, e entraram doze linhas de
+nome e doze de descrição das seis áreas novas.
+
+**A dívida de forma que a manhã nomeou ficou maior, e não foi paga.** Com quatro
+áreas eram dezasseis linhas de inventário que são a lista dos ministérios escrita
+outra vez; com nove são trinta e seis. A saída continua a ser a mesma que a manhã
+descreveu (uma marca irmã de `data-lugar` para o nome declarado de uma coisa que
+não é um lugar, com a mesma substituição na descrição do `<head>`), e continua a
+ser uma alteração à **régua da voz**, que é partilhada por todos os blocos do
+sítio. Não a tomei aqui de propósito: a decisão desta passagem era a regra das
+áreas, e mexer na régua que mede a voz de 1 378 rotas para poupar trinta e seis
+linhas de tabela era arriscar o que não estava em causa.
+
+**A razão de cada peça NÃO se rende na página, e é uma escolha da regra nova.**
+Com a regra antiga uma nota de razão fazia falta, porque a arrumação não se
+adivinhava. Com a regra do assunto a arrumação lê-se sozinha: quem abre
+`/areas/saude` percebe porque é que as necessidades médicas não satisfeitas estão
+lá. Uma linha a explicá-lo seria a página a explicar-se, que é o que a Emenda 15
+tira de uma página do leitor. A razão está escrita, matéria a matéria e regra a
+regra, em `src/data/areas.mjs`, e o portão confere que lá está.
+
+---
+
+## 17 · As medidas da construção
+
+**As páginas:** 18 páginas de área (nove por edição) mais os dois índices. O
+índice tem 9 203 B (pt) e 9 268 B (en). A maior página de área é a de Economia e
+Coesão Territorial, com 75 270 B (pt) e 74 291 B (en), que são as 96 peças; a
+menor é a de Finanças, com 10 711 B, que é uma medida.
+
+**A página de 96 peças é a única coisa desta passagem que pode não estar certa**,
+e fica dita: 87 medidas numa lista é uma lista comprida. Não é um transbordo (a
+régua mediu 0 às quatro larguras do telemóvel) nem uma página lenta, mas é a
+Economia e Coesão Territorial a acumular a administração local dos 308 concelhos,
+a coesão territorial das regiões e a economia de Évora na mesma página. Se o
+diretor quiser agrupar as medidas por matéria dentro da página, é uma passagem
+pequena; e traz consigo uma pergunta de voz que esta não teve de responder, que é
+em que língua se rende, na edição inglesa, uma matéria transcrita de uma lei
+portuguesa.
+
+**As réguas do navegador, depois da mudança:**
+
+| régua | resultado |
+| --- | --- |
+| `tests/inicio/matriz.mjs` | 87 de 87 |
+| `tests/inicio/correcoes-a.mjs` | 32 de 32 |
+| `tests/inicio/mapa-navegacao.mjs` | 9 de 9 |
+| `tests/inicio/regioes.mjs` | 30 de 30 |
+| `tests/inicio/areas.mjs` | 20 de 20, e 4 estragos plantados em 4 |
+
+---
+
+## 18 · O que não foi feito, e diz-se
+
+* **A leitura cruzada não foi feita.** O registo das revisões diz `por ler` para
+  o bloco `areas`, com a nota de que a leitura tem de apanhar a mudança de regra.
+* **O nome inglês de cinco das nove áreas é tradução da casa**, e não o nome que
+  o Governo publica. A página inglesa da composição do Governo é construída por
+  script; um leitor simples devolve o cabeçalho e a navegação e não a lista, e foi
+  isso que devolveu nas duas tentativas (`/en/gc25/government/composition` e
+  `/en/gc25/ministries`). Os quatro nomes ingleses da manhã foram lidos no
+  navegador e ficam como estavam. `Finance`, `Infrastructure and Housing`,
+  `Justice`, `Education, Science and Innovation`, `Health` e `Environment and
+  Energy` são traduções literais nossas, ditas como tal no campo `nomeEnFonte` de
+  cada área, na prosa do bloco do inventário e aqui. **Não se afirma que sejam os
+  nomes oficiais.**
+* **Nenhuma linha do livro-razão foi escrita**, e nenhuma foi tocada.
+* **`DECISIONS.md` não foi editado.**
+* **Sete das dezasseis áreas do Governo não estão declaradas** (Negócios
+  Estrangeiros, Presidência, Adjunto e Reforma do Estado, Assuntos Parlamentares,
+  Defesa Nacional, Cultura, Juventude e Desporto, e Agricultura e Mar). Nenhuma
+  linha do livro-razão tem por assunto uma matéria delas: os números de missão das
+  sete foram lidos, e a busca foi feita nos dois sentidos.
+* **A Presidência saiu, e é a prova de que a regra mudou mesmo.** Tinha dez peças
+  de manhã e tem zero à tarde. Nenhuma das matérias do artigo 14.º (migrações,
+  comunicação social, Objetivos de Desenvolvimento Sustentável, Administração
+  Pública) toca uma linha deste livro-razão.
+
+---
+
+## 19 · O custo
+
+Construtor (Claude Opus 5), esta segunda passagem: **≈ 300 mil símbolos**,
+contando a leitura do que a manhã construiu, a extração e a leitura dos dezasseis
+artigos de ministério da lei, a escrita das nove áreas com as vinte e uma
+matérias e as trinta e uma regras, a reescrita do portão e a corrida dos oito estragos
+plantados, as construções completas com a cadeia das réguas, as réguas do
+navegador e esta parte do relatório. Nenhum submodelo foi lançado.
