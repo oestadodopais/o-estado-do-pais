@@ -176,7 +176,7 @@ export const MEDIDAS_DO_CONCELHO = [
      por concelho desde 2019, e rendia-se vazia nas 308 páginas. Uma peça que
      nenhuma fonte pode encher não é uma ausência declarada: é uma célula que a
      disposição-padrão promete e que nunca cumpre. Sai da lista, e a medida
-     continua onde ela é verdade — na camada das contas de Évora, lida da
+     continua onde ela é verdade, na camada das contas de Évora, lida da
      prestação de contas do próprio município. */
   {
     chave: 'pmp',

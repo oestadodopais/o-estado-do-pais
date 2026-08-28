@@ -13,10 +13,17 @@ qualquer ficheiro `.html`.
 
 | o que se conta | antes (`35313eb`) | com as sete medidas | com a regra 3 | com as onze linhas |
 | --- | --- | --- | --- | --- |
-| «sem linha ainda» em `dist/` | 320 | 12 | 11 | *(por medir)* |
-| «no row yet» em `dist/` | 320 | 12 | 11 | *(por medir)* |
+| «sem linha ainda» em `dist/` | 320 | 12 | 11 | **1** |
+| «no row yet» em `dist/` | 320 | 12 | 11 | **1** |
 | peças por página de concelho, edição portuguesa | 8 × 308 | 7 × 308 | 7 × 308 | 7 × 308 |
 | peças por página de concelho, edição inglesa | 8 × 308 | 7 × 308 | 7 × 308 | 7 × 308 |
+| peças a mostrar «N.d.», com selo | 0 | 0 | 0 | 20, em 9 concelhos, nas duas edições |
+| vazios em `src/data/concelhos.gerado.json` | 12 | 12 | 12 | 1 |
+
+**A ocorrência que fica, e é uma só em cada edição**, está na peça do índice de
+dívida de Penedono, em `/municipios/penedono` e em `/en/municipalities/penedono`.
+O motor não escreveu a linha `penedono-indice-de-divida-2024`, e sem linha não há
+valor nem selo: a peça rende-se vazia. Ver o §5.
 
 **De onde vinham as 320.** 308 da execução da receita, uma por página; 9 do
 prazo médio de pagamento, que a Direção-Geral imprime «N.d.» em nove concelhos;
@@ -26,9 +33,36 @@ famílias fecham por regras diferentes: a primeira pela regra 1, as três do mei
 pela regra 2, e a última pela regra 3.
 
 **As quatro contagens do livro-razão** (as quatro linhas do inventário que levam
-um número por dentro): estão em `2590 afirmações · 329 calculadas · 2447 linhas
-de concelhos` e `2447 linhas · 308 concelhos`, nas duas edições. *(Mudam com as
-onze linhas do motor; por medir enquanto elas não chegarem.)*
+um número por dentro), lidas da construção e declaradas em `bloco vazios`:
+
+| linha do inventário | antes | depois |
+| --- | --- | --- |
+| índice do livro-razão, edição portuguesa | `2590 afirmações · 329 calculadas · 2447 linhas de concelhos` | `2601 afirmações · 329 calculadas · 2458 linhas de concelhos` |
+| índice do livro-razão, edição inglesa | `2590 claims · 329 calculated · 2447 municipality rows` | `2601 claims · 329 calculated · 2458 municipality rows` |
+| índice dos concelhos, edição portuguesa | `2447 linhas · 308 concelhos` | `2458 linhas · 308 concelhos` |
+| índice dos concelhos, edição inglesa | `2447 rows · 308 municipalities` | `2458 rows · 308 municipalities` |
+
+**As calculadas não sobem, e é a medida de que falta uma linha.** Onze linhas
+novas, onze publicadas, zero calculadas: 329 antes e 329 depois. Se o índice de
+Penedono tivesse sido escrito, esta contagem estaria em 330, e é ela que o diz
+sem ninguém ter de o ir procurar.
+
+**A saída do exportador**, corrido de `~/Instruments/ResearchHub` (motor em
+`41ce466`), com o comando que o brief fixa e mais nada tocado no motor:
+
+```
+11 nova(s) · 0 alterada(s) · 2446 inalterada(s) · registo a escrever
+dívida de proveniência que atravessa: 0 linha(s) com excerto "[a verificar]"
+pending_page: 0 linha(s) sem sítio desenhado onde ser impressa
+src/data/concelhos.gerado.json: 308 object(s), 2463 row id(s) named, 1 null
+Escritas 2457 linhas em .../ledger/claims
+```
+
+Os onze valores são os quatro bytes `N.d.`, conferidos ficheiro a ficheiro. O
+registo da travessia ganha onze entradas e não perde nenhuma; nos 2 446 antigos
+muda um campo só, `rh_ledger_sha256`, que é o resumo do livro-razão do motor e
+muda porque ele cresceu. `exported_row_sha256` e `origin_row_sha256` estão iguais
+nos 2 446, e é isso que diz que nenhuma linha publicada se mexeu.
 
 ## 1 · O que assumia oito, e mudou
 
@@ -69,7 +103,7 @@ seria reescrever o passado).
   medida de execução do orçamento publicada na mesma série da Direção-Geral.
   Mudá-la seria uma frase nova, uma linha nova do inventário e uma linha
   `retirada`, e o brief não a pede. **Se o lugar de direção ler a frase como a
-  lista das peças, ela está errada e tem de mudar** — fica assinalado em vez de
+  lista das peças, ela está errada e tem de mudar**, e fica assinalado em vez de
   decidido por mim.
 * **A camada das contas de Évora ficou como estava**, com os dois valores e os
   dois selos, tal como o brief manda.
@@ -132,77 +166,119 @@ injectadas depois de o mapa estar carregado e saem dele no fim de cada bloco.
 | A5 | a peça da marca não tem estado nem barra | a mesma peça com `7,5` volta a ter estado `dentro` e régua |
 | B1 | «sem linha ainda» e «no row yet» a zero em `dist/` | a frase plantada numa cópia em memória de uma página construída, que o detector tem de ver antes de poder contar zero |
 | B2 | as 308 páginas com sete peças, nas duas edições | (contagem directa, não é uma prova de ausência) |
-| B3 | a marca rendida dentro do elemento da linha, com selo, sem palavra de estado e sem barra | *(salta enquanto não houver nenhuma peça com marca)* |
+| B3 | a marca rendida dentro do elemento da linha, com selo, e sem comparação nenhuma | as 20 peças construídas, que corrigiram a própria célula (ver abaixo) |
+
+**A célula B3 foi corrigida pelo que ela mediu, e a correção é do assunto.** A
+primeira redação pedia que uma peça com marca não tivesse palavra de estado
+nenhuma. As 20 peças construídas mostraram que isso está errado: o prazo médio de
+pagamento e a dívida total do município não têm limiar publicado, e por isso
+dizem «sem limiar» nas 308 páginas, com valor ou com marca. Tirar a palavra só às
+nove com marca seria dizer daquelas nove uma coisa diferente do que se diz das
+outras 299, e falsa: o que lhes falta não é o limiar, é o valor. A regra que a
+célula passa a medir é a que a decisão quer dizer: **uma marca nunca produz uma
+comparação**, nunca «fora do limiar», nunca «dentro do limiar», nunca um quadrado
+pintado, nunca uma barra. Onde há limiar publicado e o valor é marca, que é o
+índice de dívida, a peça fica sem estado nenhum, e isso mede-se na célula A5.
+
+O estado das oito células, na construção com as onze linhas: **7 de 8**. A que
+falha é a B1, e falha por uma ocorrência em cada edição, as duas na peça do
+índice de dívida de Penedono.
 
 ## 4 · Os commits
 
 | commit | o que faz | o que ficou verde |
 | --- | --- | --- |
-| `9ab6ec8` | as sete medidas: `execucaoDaReceita` sai de `MEDIDAS_DO_CONCELHO`, e tudo o que assumia oito passa a sete | `npm run build` inteiro, `verify`, `typecheck` |
-| `782d759` | a marca como valor: a lista fechada, a propagação na receita, os dois sentidos da conferência 8, a peça sem estado, a distância que exige números, o campo «Decidiu» sem valores nem nota, o inventário e a régua nova | `npm run build` inteiro, `verify`, `typecheck`; `tests/municipio/vazios.mjs` 6 de 7 (a que falta espera as linhas), `tests/municipio/concelhos.mjs` 12 de 12, `tests/inicio/matriz.mjs` 87 de 87 |
+| `9ab6ec8` | **as sete medidas**: `execucaoDaReceita` sai de `MEDIDAS_DO_CONCELHO`, e os onze ficheiros que assumiam oito passam a sete | `npm run build` inteiro, `verify`, `typecheck` |
+| `782d759` | **a marca como valor**: a lista fechada, a propagação na receita, os dois sentidos da conferência 8, a peça sem estado, a distância que exige números, o campo «Decidiu» sem valores nem nota, o inventário e a régua nova | `build`, `verify`, `typecheck`; `vazios` 6 de 7, `concelhos` 12 de 12, `matriz` 87 de 87 |
+| `220bb46` | **o relatório**, na primeira redação | (documento) |
+| `7ac6dd4` | **as onze linhas do motor**, o id do prazo médio de Évora, as quatro contagens declaradas em `bloco vazios`, a linha do registo das revisões, e a célula B3 corrigida pelo que mediu | `build`, `verify`, `typecheck`; `vazios` 7 de 8, `concelhos` 12 de 12 |
 
 Cada commit foi feito com caminhos explícitos, nunca `git add -A` nem
-`git add .`, e leva os dois trailers. `DECISIONS.md` não foi tocado. O ramo não
-foi fundido nem empurrado.
+`git add .`, e leva os dois trailers. `DECISIONS.md` não foi tocado. Do motor
+correu-se um comando só, o do brief. O ramo não foi fundido nem empurrado.
+
+Fica por cometer, de propósito, um ficheiro que apareceu na árvore e não é meu:
+`design/especime-v3/briefs/BRIEF-vazios-M8.md`.
 
 ## 5 · O que não consegui fazer com honestidade
 
-**1. As onze linhas do motor não chegaram, e nada foi escrito no lugar delas.**
-Três dos critérios de «feito» do brief ficam por medir, e ficam ditos por medir e
-não aproximados: `dist/` sem uma ocorrência das duas cadeias (estão em 11 e 11);
-Penedono e os nove com «N.d.» na página, com selo; e
-`src/data/concelhos.gerado.json` sem um vazio (tem 12). A regra 2 está provada
-onde podia ser provada sem inventar uma linha: em memória, sobre linhas de
-ensaio, com estragos plantados (§3, células A2 a A5). A célula B3, que mede a
-marca numa página construída, **salta** e diz porquê, em vez de passar por não
-ter encontrado nada.
+### 5.1 · Falta uma linha do livro-razão, e ela não se escreve aqui
 
-**2. A regra 3 tinha um terceiro sítio que a decisão não previa, e a saída dele é
-uma escolha minha.** «Depois de 1 e 2, «sem linha ainda» e «no row yet» não
-rendem em lado nenhum» conta com duas famílias. Havia uma terceira: o campo
-«Decidiu» do mandato de 2017 a 2021 na página de Évora, que não tem valores nem
-nota própria e dizia a cadeia da casa. Das três saídas possíveis, duas eram
-inaceitáveis: deixar o campo em branco é a célula vazia que a `IDENTIDADE.md` §7
-recusa, e escrever ali uma frase seria inventá-la, porque dos cinco campos de um
-mandato quatro têm uma nota com o FACTO que os explica e este não tem nenhum
-facto lido. **Fica sem se render o par inteiro**, como não se rende a secção de
-um concelho sem trabalho publicado, e volta no dia em que o mandato tiver a sua
-nota. **É matéria do lugar de direção**, e o que está feito é reversível numa
-linha.
+**O motor não escreveu `penedono-indice-de-divida-2024`.** O exportador nomeia
+2 463 ids em `src/data/concelhos.gerado.json` e deixa **um** a nulo, que é
+`penedono.indice`; a página de Penedono rende, por isso, seis peças com valor e
+uma vazia, e é dela que vem a única ocorrência de «sem linha ainda» e de «no row
+yet» que resta em cada edição.
 
-**3. A descrição do `<head>` de uma página de concelho continua a nomear
-«execução orçamental».** Está lida como a lista das FAMÍLIAS de medidas e não das
-peças, e sob essa leitura continua verdadeira porque o prazo médio de pagamento
-fica. Se o lugar de direção a ler como a lista das peças, ela está errada desde
-o `9ab6ec8`, e a correção é uma frase nova com a sua linha do inventário.
+**Três critérios de «feito» do brief ficam por cumprir por causa desta linha, e
+não por causa de nada que eu pudesse fazer:**
 
-**4. A marca é aceite com uma escrita só, `N.d.`, e é de propósito.** A cadeia
-vem do brief e do que a casa já tinha escrito sobre Évora em
-`src/data/municipios.mjs`. Se o exportador escrever outra («N.D.», «n.d.»,
-«N.d»), `ledger:check` fecha a construção e diz o valor que encontrou. É o modo
-de falhar que se quer: alto, e não uma marca a mais que passa em silêncio.
+* `dist/` sem uma ocorrência das duas cadeias: está em **1 e 1**;
+* «Penedono com «N.d.» na dívida total e no índice de dívida, com selo»: a dívida
+  total mostra `N.d.` com selo; **o índice não mostra nada**;
+* «`src/data/concelhos.gerado.json` sem um vazio»: tem **um**.
 
-**5. O `check:voz` verde NÃO prova que a cadeia saiu de `dist/`, e isso tem de
-ficar dito.** A varredura da voz salta os blocos com `data-cobertura`, e a peça
-vazia leva essa marca: as duas linhas do inventário eram mantidas vivas pelo
-campo do mandato de Évora, e mais nada. O que prova a ausência em `dist/` inteiro
-é a célula B1 da régua nova, que conta todas as ocorrências em todos os ficheiros
-`.html` e que vê primeiro a frase plantada numa cópia. Ler o `check:voz` verde
-como prova de que a frase não rende seria ler uma régua pelo nome.
+**Porque é que não a escrevo.** Um selo é a porta para `/livro-razao/<id>`, e sem
+linha não há porta: render `N.d.` naquela peça sem linha seria pôr um valor numa
+página do leitor fora do livro-razão, que é a única coisa que a casa nunca faz
+(`Claim.astro`: «a ÚNICA maneira de pôr um número numa página»), e o portão
+fechava a construção por isso mesmo. Escrever a linha à mão está proibido pelo
+brief, duas vezes, e com razão: uma linha do livro-razão nasce de uma leitura de
+uma fonte, e eu não li nenhuma.
 
-**6. Não corri nada do motor.** O repositório `ResearchHub` não foi tocado, e o
-exportador não foi corrido: espera o aviso do lugar de direção, tal como o brief
-manda.
+**O aparelho para a receber está construído, provado, e vazio à espera dela.** A
+regra 2 do brief diz que «a receita do índice de dívida dá «N.d.» quando uma
+entrada é «N.d.», e a linha calculada di-lo no seu `check`»: é exactamente o que
+o `evaluateCheck` faz desde o `782d759`, e o que a célula A4 mede sobre uma linha
+de ensaio com a receita real, `round ( … / … * 150 , 1 )`. Uma linha
+`penedono-indice-de-divida-2024` com `value: "N.d."`, `derived_from` as duas
+entradas e o `check` do costume passa hoje, sem uma linha de código a mudar, e
+fecha as três contagens acima de uma vez. **É trabalho do motor, e é o que fica a
+pedir-se.**
+
+### 5.2 · O terceiro sítio da regra 3, confirmado pelo lugar de direção
+
+«Depois de 1 e 2, «sem linha ainda» e «no row yet» não rendem em lado nenhum»
+contava com duas famílias de peças. Havia uma terceira: o campo «Decidiu» do
+mandato de 2017 a 2021 na página de Évora, que não tem valores nem nota própria e
+dizia a cadeia da casa. Deixar o campo em branco é a célula vazia que a
+`IDENTIDADE.md` §7 recusa; escrever ali uma frase seria inventá-la, porque dos
+cinco campos de um mandato quatro têm uma nota com o FACTO que os explica e este
+não tem nenhum facto lido. **O par inteiro deixa de se render**, e volta no dia em
+que o mandato tiver a sua nota. O lugar de direção confirmou a escolha a
+28.08.2026, e ela fica registada aqui como o terceiro sítio da regra 3.
+
+### 5.3 · O `check:voz` verde não prova que a cadeia saiu do `dist/`
+
+A varredura da voz salta os blocos com `data-cobertura`, e a peça vazia leva essa
+marca: as duas linhas do inventário eram mantidas vivas pelo campo do mandato de
+Évora, e mais nada. Prova disso: o `check:voz` ficou vermelho nas duas linhas no
+minuto em que aquele campo saiu, com onze ocorrências ainda em `dist/`. O que
+prova a ausência em `dist/` inteiro é a célula B1 da régua nova, que conta todas
+as ocorrências em todos os ficheiros `.html` e que vê primeiro a frase plantada
+numa cópia. **Ler o `check:voz` verde como prova de que a frase não rende seria
+ler uma régua pelo nome.**
+
+### 5.4 · A descrição do `<head>` que diz «execução orçamental»
+
+Fica como está, por decisão do lugar de direção de 28.08.2026. Está lida como a
+lista das FAMÍLIAS de medidas e não das peças, e sob essa leitura continua
+verdadeira porque o prazo médio de pagamento fica.
+
+### 5.5 · A escrita da marca é uma só, e foi conferida nos bytes
+
+`N.d.`, quatro bytes, nas onze linhas, lidas ficheiro a ficheiro depois de o
+exportador correr. Se um dia outra fonte imprimir outra escrita, o
+`ledger:check` fecha a construção e diz o valor que encontrou: é o modo de falhar
+que se quer, alto, e não uma marca a mais a passar em silêncio.
 
 ## 6 · O custo
 
-**Aproximadamente 400 mil símbolos** até ao ponto em que este relatório é escrito
-(ler a casa, a construção repetida quatro vezes, as três réguas de navegador e a
-escrita). O número é aproximado e vai dito como tal: não tenho como o medir ao
-símbolo de dentro da sessão.
-
-**Quatro construções inteiras** (`npm run build`, cerca de 2m20 cada, 6 546
-páginas): a de base em `35313eb` para fixar as contagens de partida, a das sete
-medidas, a da regra 2, e a que ficou. Mais três corridas de `verify` e três de
-`typecheck`, e as três réguas de navegador (`concelhos` 12 de 12, `matriz` 87 de
-87, `vazios` 6 de 7).
+**Aproximadamente 480 mil símbolos**, e aproximado vai dito como tal: não tenho
+como o medir ao símbolo de dentro da sessão. O que se pode contar é o trabalho:
+ler a casa antes de lhe tocar, **cinco construções inteiras** (`npm run build`,
+cerca de 2m20 cada, 6 546 páginas: a de base em `35313eb` para fixar as contagens
+de partida, a das sete medidas, a da regra 2, a das onze linhas, e as
+reconferências), quatro corridas de `verify`, quatro de `typecheck`, e as réguas
+de navegador duas vezes (`concelhos` 12 de 12, `matriz` 87 de 87) mais a régua
+nova quatro vezes.
