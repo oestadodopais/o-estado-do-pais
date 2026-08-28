@@ -1300,7 +1300,7 @@ Justiça, Educação, Ciência e Inovação, Saúde e Ambiente e Energia.*
 
 *SEGUNDA LEITURA, 28.08.2026: O QUE ESTE BLOCO PASSOU A DECLARAR. A leitura
 cruzada do Codex e o lugar de direção mandaram sete alterações, e três mexem na
-voz. **Saíram vinte e duas linhas para `retirada`**: as duas descrições do
+voz. **Saíram vinte e quatro linhas para `retirada`**: as duas descrições do
 índice, as dezoito descrições das páginas de área (todas diziam o método do sítio
 na superfície pública), o título antigo do índice nas duas edições e a lede que
 definia o que uma área é. **Entraram vinte e cinco**: o título novo nas duas

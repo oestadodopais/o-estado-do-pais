@@ -1,0 +1,927 @@
+{
+  "m1": {
+    "linhas": [
+      {
+        "slug": "financas",
+        "nomePt": "Finanças",
+        "ptOk": true,
+        "ptVia": "curto",
+        "ptLinhaGoverno": 2,
+        "nomeEn": "Finance",
+        "enOk": true,
+        "enLinhaGoverno": 2,
+        "ordemNoMapa": 1
+      },
+      {
+        "slug": "economia-e-coesao-territorial",
+        "nomePt": "Economia e Coesão Territorial",
+        "ptOk": true,
+        "ptVia": "colapsado (preposição interna dupla)",
+        "ptLinhaGoverno": 4,
+        "nomeEn": "Economy and of Territorial Cohesion",
+        "enOk": true,
+        "enLinhaGoverno": 4,
+        "ordemNoMapa": 2
+      },
+      {
+        "slug": "infraestruturas-e-habitacao",
+        "nomePt": "Infraestruturas e Habitação",
+        "ptOk": true,
+        "ptVia": "curto",
+        "ptLinhaGoverno": 8,
+        "nomeEn": "Infrastructure and Housing",
+        "enOk": true,
+        "enLinhaGoverno": 8,
+        "ordemNoMapa": 3
+      },
+      {
+        "slug": "justica",
+        "nomePt": "Justiça",
+        "ptOk": true,
+        "ptVia": "curto",
+        "ptLinhaGoverno": 9,
+        "nomeEn": "Justice",
+        "enOk": true,
+        "enLinhaGoverno": 9,
+        "ordemNoMapa": 4
+      },
+      {
+        "slug": "administracao-interna",
+        "nomePt": "Administração Interna",
+        "ptOk": true,
+        "ptVia": "curto",
+        "ptLinhaGoverno": 10,
+        "nomeEn": "Home Affairs",
+        "enOk": true,
+        "enLinhaGoverno": 10,
+        "ordemNoMapa": 5
+      },
+      {
+        "slug": "educacao-ciencia-e-inovacao",
+        "nomePt": "Educação, Ciência e Inovação",
+        "ptOk": true,
+        "ptVia": "curto",
+        "ptLinhaGoverno": 11,
+        "nomeEn": "Education, Science and Innovation",
+        "enOk": true,
+        "enLinhaGoverno": 11,
+        "ordemNoMapa": 6
+      },
+      {
+        "slug": "saude",
+        "nomePt": "Saúde",
+        "ptOk": true,
+        "ptVia": "curto",
+        "ptLinhaGoverno": 12,
+        "nomeEn": "Health",
+        "enOk": true,
+        "enLinhaGoverno": 12,
+        "ordemNoMapa": 7
+      },
+      {
+        "slug": "trabalho-solidariedade-e-seguranca-social",
+        "nomePt": "Trabalho, Solidariedade e Segurança Social",
+        "ptOk": true,
+        "ptVia": "curto",
+        "ptLinhaGoverno": 13,
+        "nomeEn": "Labour, Solidarity and Social Security",
+        "enOk": true,
+        "enLinhaGoverno": 13,
+        "ordemNoMapa": 8
+      },
+      {
+        "slug": "ambiente-e-energia",
+        "nomePt": "Ambiente e Energia",
+        "ptOk": true,
+        "ptVia": "curto",
+        "ptLinhaGoverno": 14,
+        "nomeEn": "Environment and Energy",
+        "enOk": true,
+        "enLinhaGoverno": 14,
+        "ordemNoMapa": 9
+      }
+    ],
+    "okPt": 9,
+    "okEn": 9,
+    "total": 9,
+    "ordemCrescente": true,
+    "ordemGoverno": [
+      2,
+      4,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "m2": {
+    "totalMaterias": 21,
+    "materiasOk": 21,
+    "citacoesExatas": 21,
+    "citacoesContidas": 0,
+    "falhas": [],
+    "linhas": [
+      {
+        "area": "financas",
+        "artigo": "Artigo 12.º, n.º 1",
+        "materia": "a política financeira do Estado",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "economia-e-coesao-territorial",
+        "artigo": "Artigo 15.º, n.º 1",
+        "materia": "administração local",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "economia-e-coesao-territorial",
+        "artigo": "Artigo 15.º, n.º 1",
+        "materia": "coesão territorial",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "economia-e-coesao-territorial",
+        "artigo": "Artigo 15.º, n.º 1",
+        "materia": "crescimento da economia",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "economia-e-coesao-territorial",
+        "artigo": "Artigo 15.º, n.º 1",
+        "materia": "competitividade",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "economia-e-coesao-territorial",
+        "artigo": "Artigo 15.º, n.º 1",
+        "materia": "investimento",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "economia-e-coesao-territorial",
+        "artigo": "Artigo 15.º, n.º 1",
+        "materia": "internacionalização das empresas",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "economia-e-coesao-territorial",
+        "artigo": "Artigo 15.º, n.º 2",
+        "materia": "os programas financiados por fundos europeus, nomeadamente no âmbito da política de coesão da União Europeia e do Plano de Recuperação e Resiliência (PRR)",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "infraestruturas-e-habitacao",
+        "artigo": "Artigo 19.º, n.º 1",
+        "materia": "habitação",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "infraestruturas-e-habitacao",
+        "artigo": "Artigo 19.º, n.º 1",
+        "materia": "construção",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "justica",
+        "artigo": "Artigo 20.º, n.º 1",
+        "materia": "a política de justiça",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "administracao-interna",
+        "artigo": "Artigo 21.º, n.º 1",
+        "materia": "administração eleitoral",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "educacao-ciencia-e-inovacao",
+        "artigo": "Artigo 22.º, n.º 1",
+        "materia": "o sistema educativo",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "educacao-ciencia-e-inovacao",
+        "artigo": "Artigo 22.º, n.º 2",
+        "materia": "a ciência",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "educacao-ciencia-e-inovacao",
+        "artigo": "Artigo 22.º, n.º 2",
+        "materia": "as orientações em matéria de competências digitais",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "saude",
+        "artigo": "Artigo 23.º, n.º 1",
+        "materia": "a política nacional de saúde",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "trabalho-solidariedade-e-seguranca-social",
+        "artigo": "Artigo 24.º, n.º 1",
+        "materia": "emprego",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "trabalho-solidariedade-e-seguranca-social",
+        "artigo": "Artigo 24.º, n.º 1",
+        "materia": "segurança social",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "trabalho-solidariedade-e-seguranca-social",
+        "artigo": "Artigo 24.º, n.º 1",
+        "materia": "combate à pobreza e de promoção da inclusão social",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "trabalho-solidariedade-e-seguranca-social",
+        "artigo": "Artigo 24.º, n.º 1",
+        "materia": "apoio à família, crianças",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "ambiente-e-energia",
+        "artigo": "Artigo 25.º, n.º 1",
+        "materia": "água",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      }
+    ]
+  },
+  "m3": {
+    "porArea": [
+      {
+        "slug": "financas",
+        "pt": {
+          "trabalhos": 0,
+          "trabalhosOk": 0,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 1,
+          "medidasOk": 1,
+          "total": 1
+        },
+        "en": {
+          "trabalhos": 0,
+          "trabalhosOk": 0,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 1,
+          "medidasOk": 1,
+          "total": 1
+        }
+      },
+      {
+        "slug": "economia-e-coesao-territorial",
+        "pt": {
+          "trabalhos": 8,
+          "trabalhosOk": 8,
+          "conjuntos": 1,
+          "conjuntosOk": 1,
+          "medidas": 87,
+          "medidasOk": 87,
+          "total": 96
+        },
+        "en": {
+          "trabalhos": 8,
+          "trabalhosOk": 8,
+          "conjuntos": 1,
+          "conjuntosOk": 1,
+          "medidas": 87,
+          "medidasOk": 87,
+          "total": 96
+        }
+      },
+      {
+        "slug": "infraestruturas-e-habitacao",
+        "pt": {
+          "trabalhos": 0,
+          "trabalhosOk": 0,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 3,
+          "medidasOk": 3,
+          "total": 3
+        },
+        "en": {
+          "trabalhos": 0,
+          "trabalhosOk": 0,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 3,
+          "medidasOk": 3,
+          "total": 3
+        }
+      },
+      {
+        "slug": "justica",
+        "pt": {
+          "trabalhos": 0,
+          "trabalhosOk": 0,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 1,
+          "medidasOk": 1,
+          "total": 1
+        },
+        "en": {
+          "trabalhos": 0,
+          "trabalhosOk": 0,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 1,
+          "medidasOk": 1,
+          "total": 1
+        }
+      },
+      {
+        "slug": "administracao-interna",
+        "pt": {
+          "trabalhos": 1,
+          "trabalhosOk": 1,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 10,
+          "medidasOk": 10,
+          "total": 11
+        },
+        "en": {
+          "trabalhos": 1,
+          "trabalhosOk": 1,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 10,
+          "medidasOk": 10,
+          "total": 11
+        }
+      },
+      {
+        "slug": "educacao-ciencia-e-inovacao",
+        "pt": {
+          "trabalhos": 0,
+          "trabalhosOk": 0,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 3,
+          "medidasOk": 3,
+          "total": 3
+        },
+        "en": {
+          "trabalhos": 0,
+          "trabalhosOk": 0,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 3,
+          "medidasOk": 3,
+          "total": 3
+        }
+      },
+      {
+        "slug": "saude",
+        "pt": {
+          "trabalhos": 0,
+          "trabalhosOk": 0,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 1,
+          "medidasOk": 1,
+          "total": 1
+        },
+        "en": {
+          "trabalhos": 0,
+          "trabalhosOk": 0,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 1,
+          "medidasOk": 1,
+          "total": 1
+        }
+      },
+      {
+        "slug": "trabalho-solidariedade-e-seguranca-social",
+        "pt": {
+          "trabalhos": 2,
+          "trabalhosOk": 2,
+          "conjuntos": 1,
+          "conjuntosOk": 1,
+          "medidas": 16,
+          "medidasOk": 16,
+          "total": 19
+        },
+        "en": {
+          "trabalhos": 2,
+          "trabalhosOk": 2,
+          "conjuntos": 1,
+          "conjuntosOk": 1,
+          "medidas": 16,
+          "medidasOk": 16,
+          "total": 19
+        }
+      },
+      {
+        "slug": "ambiente-e-energia",
+        "pt": {
+          "trabalhos": 1,
+          "trabalhosOk": 1,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 2,
+          "medidasOk": 2,
+          "total": 3
+        },
+        "en": {
+          "trabalhos": 1,
+          "trabalhosOk": 1,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 2,
+          "medidasOk": 2,
+          "total": 3
+        }
+      }
+    ],
+    "totalPecasPt": 138,
+    "totalPecasEn": 138,
+    "discordancias": []
+  },
+  "m4": {
+    "totalLinhas": 2602,
+    "emArea": 1969,
+    "foraDeArea": 633,
+    "semDecisao": 0,
+    "duplaCobertura": 0,
+    "problemas": []
+  },
+  "m5": {
+    "problemas": []
+  },
+  "m6": {
+    "totalPaginasVarridas": 20,
+    "achadosDeMarcadores": [],
+    "achadosAmplos": [
+      {
+        "rota": "/areas",
+        "achados": [
+          {
+            "marcador": "método",
+            "modo": "raiz",
+            "n": 2,
+            "exemplo": "Método"
+          }
+        ]
+      },
+      {
+        "rota": "/areas/financas",
+        "achados": [
+          {
+            "marcador": "método",
+            "modo": "raiz",
+            "n": 2,
+            "exemplo": "Método"
+          }
+        ]
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "achados": [
+          {
+            "marcador": "método",
+            "modo": "raiz",
+            "n": 2,
+            "exemplo": "Método"
+          }
+        ]
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "achados": [
+          {
+            "marcador": "método",
+            "modo": "raiz",
+            "n": 2,
+            "exemplo": "Método"
+          }
+        ]
+      },
+      {
+        "rota": "/areas/justica",
+        "achados": [
+          {
+            "marcador": "método",
+            "modo": "raiz",
+            "n": 2,
+            "exemplo": "Método"
+          }
+        ]
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "achados": [
+          {
+            "marcador": "método",
+            "modo": "raiz",
+            "n": 2,
+            "exemplo": "Método"
+          }
+        ]
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "achados": [
+          {
+            "marcador": "método",
+            "modo": "raiz",
+            "n": 2,
+            "exemplo": "Método"
+          }
+        ]
+      },
+      {
+        "rota": "/areas/saude",
+        "achados": [
+          {
+            "marcador": "método",
+            "modo": "raiz",
+            "n": 2,
+            "exemplo": "Método"
+          }
+        ]
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "achados": [
+          {
+            "marcador": "método",
+            "modo": "raiz",
+            "n": 2,
+            "exemplo": "Método"
+          }
+        ]
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "achados": [
+          {
+            "marcador": "método",
+            "modo": "raiz",
+            "n": 2,
+            "exemplo": "Método"
+          }
+        ]
+      }
+    ],
+    "totalFragmentos": 150,
+    "naoDeclaradosCorpo": [
+      {
+        "rota": "/areas",
+        "texto": "Áreas de governo",
+        "fonte": "<span.eyebrow>"
+      },
+      {
+        "rota": "/en/areas",
+        "texto": "Government areas",
+        "fonte": "<span.eyebrow>"
+      },
+      {
+        "rota": "/areas/financas",
+        "texto": "Áreas de governo",
+        "fonte": "<span.eyebrow>"
+      },
+      {
+        "rota": "/en/areas/financas",
+        "texto": "Government areas",
+        "fonte": "<span.eyebrow>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Áreas de governo",
+        "fonte": "<span.eyebrow>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "provisório",
+        "fonte": "<span.livro-item-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Government areas",
+        "fonte": "<span.eyebrow>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "provisional",
+        "fonte": "<span.livro-item-valor>"
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "texto": "Áreas de governo",
+        "fonte": "<span.eyebrow>"
+      },
+      {
+        "rota": "/en/areas/infraestruturas-e-habitacao",
+        "texto": "Government areas",
+        "fonte": "<span.eyebrow>"
+      },
+      {
+        "rota": "/areas/justica",
+        "texto": "Áreas de governo",
+        "fonte": "<span.eyebrow>"
+      },
+      {
+        "rota": "/en/areas/justica",
+        "texto": "Government areas",
+        "fonte": "<span.eyebrow>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Áreas de governo",
+        "fonte": "<span.eyebrow>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Government areas",
+        "fonte": "<span.eyebrow>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "Áreas de governo",
+        "fonte": "<span.eyebrow>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "Government areas",
+        "fonte": "<span.eyebrow>"
+      },
+      {
+        "rota": "/areas/saude",
+        "texto": "Áreas de governo",
+        "fonte": "<span.eyebrow>"
+      },
+      {
+        "rota": "/en/areas/saude",
+        "texto": "Government areas",
+        "fonte": "<span.eyebrow>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Áreas de governo",
+        "fonte": "<span.eyebrow>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Government areas",
+        "fonte": "<span.eyebrow>"
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "texto": "Áreas de governo",
+        "fonte": "<span.eyebrow>"
+      },
+      {
+        "rota": "/en/areas/ambiente-e-energia",
+        "texto": "Government areas",
+        "fonte": "<span.eyebrow>"
+      }
+    ],
+    "naoDeclaradosTitulo": [
+      {
+        "rota": "/areas",
+        "texto": "Áreas de governo · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/en/areas",
+        "texto": "Government areas · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/areas/financas",
+        "texto": "Finanças · área de governo · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/en/areas/financas",
+        "texto": "Finance · government area · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Economia e Coesão Territorial · área de governo · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Economy and of Territorial Cohesion · government area · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "texto": "Infraestruturas e Habitação · área de governo · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/en/areas/infraestruturas-e-habitacao",
+        "texto": "Infrastructure and Housing · government area · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/areas/justica",
+        "texto": "Justiça · área de governo · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/en/areas/justica",
+        "texto": "Justice · government area · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Administração Interna · área de governo · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Home Affairs · government area · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "Educação, Ciência e Inovação · área de governo · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "Education, Science and Innovation · government area · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/areas/saude",
+        "texto": "Saúde · área de governo · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/en/areas/saude",
+        "texto": "Health · government area · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Trabalho, Solidariedade e Segurança Social · área de governo · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Labour, Solidarity and Social Security · government area · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "texto": "Ambiente e Energia · área de governo · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/en/areas/ambiente-e-energia",
+        "texto": "Environment and Energy · government area · O Estado do País",
+        "fonte": "<title>"
+      }
+    ],
+    "retiradosMasRenderizados": [],
+    "totalMarcadores": 65,
+    "totalExcecoes": 7
+  },
+  "m7": {
+    "transbordos": [],
+    "combinacoesVerificadas": 80,
+    "areaComMaisPecas": "economia-e-coesao-territorial",
+    "capacidade": {
+      "pt": {
+        "totalPecasNaPagina": 96,
+        "visiveisInteiras": 4,
+        "visiveisParciais": 5,
+        "alturaJanela": 844
+      },
+      "en": {
+        "totalPecasNaPagina": 96,
+        "visiveisInteiras": 6,
+        "visiveisParciais": 7,
+        "alturaJanela": 844
+      }
+    },
+    "alturaDeTeste": 844,
+    "larguras": [
+      320,
+      360,
+      390,
+      430
+    ],
+    "temposDeConstrucao": {
+      "area": {
+        "pt": 119,
+        "en": 117
+      },
+      "duracaoTotalMs": 216041,
+      "codigoDeSaida": 0,
+      "totalPaginasComTempo": 6606
+    }
+  },
+  "m8": {
+    "verify": {
+      "codigoDeSaida": 0,
+      "duracaoMs": 42145,
+      "caudaStdout": "      justica · 1 peça(s): 0 trabalho(s), 0 conjunto(s), 1 medida(s)\n      administracao-interna · 11 peça(s): 1 trabalho(s), 0 conjunto(s), 10 medida(s)\n      educacao-ciencia-e-inovacao · 3 peça(s): 0 trabalho(s), 0 conjunto(s), 3 medida(s)\n      saude · 1 peça(s): 0 trabalho(s), 0 conjunto(s), 1 medida(s)\n      trabalho-solidariedade-e-seguranca-social · 19 peça(s): 2 trabalho(s), 1 conjunto(s), 16 medida(s)\n      ambiente-e-energia · 3 peça(s): 1 trabalho(s), 0 conjunto(s), 2 medida(s)\n\u001b[0m\n\n> o-estado-do-pais@0.1.0 check:voz\n> node scripts/check-voz.mjs\n\n\n\u001b[32m  voz ✓ \u001b[0m65 marcadores · 7 exceções (0 de registo) · 697 frases distintas, 25983 ocorrências em 1378 rotas · autorreferência 0 · nada por classificar · 554 linhas do inventário com bloco (502 vivas, todas rendidas; 52 retiradas, nenhuma rendida) · lida contra a Emenda 18 (a mais alta da voz é a 18)\n\u001b[90m        1 bloco(s) do inventário por ler, e o registo di-lo:\u001b[0m\n\u001b[90m        · areas · `por ler`\u001b[0m"
+    },
+    "typecheck": {
+      "codigoDeSaida": 0,
+      "duracaoMs": 218,
+      "caudaStdout": "> o-estado-do-pais@0.1.0 typecheck\n> tsc -p tsconfig.check.json"
+    }
+  }
+}

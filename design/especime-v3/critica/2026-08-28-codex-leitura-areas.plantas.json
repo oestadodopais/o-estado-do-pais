@@ -1,0 +1,26 @@
+{
+ "registado_em": "2026-08-28",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "paginas/area-saude.html",
+   "descricao": "an unemployment piece planted on the Saúde page with a false reason (art. 23.º «política nacional de saúde»)",
+   "sha256_antes": "3943c959218425201302f16c2ca1d6005a33769ae8cd890fec532e4237d32d42",
+   "sha256_depois": "ebb9bb251f5e35b4182177bf98373c4f5b9f4fcb9e191012acd236df164b9eb0"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "paginas/areas.html",
+   "descricao": "a coverage sentence planted on the areas index («Nove áreas com conteúdo; as outras sete ainda sem linhas, por agora.»)",
+   "sha256_antes": "90d69846b4113f329209d1ea4ba7311e5340c4bb61ce2d29842d93062ec825c9",
+   "sha256_depois": "2d2f3618b52096938976fe1d16d8c567653faa041a8fb1984745d5ce543ebcff"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "paginas/en-areas.html",
+   "descricao": "the English name of one area on the index changed from the Government's «Home Affairs» to «Internal Administration»",
+   "sha256_antes": "e06ebeee6ba27169eeec387861b0d8d1cfb16169b64cd62a0d73bbda2c1b5f0c",
+   "sha256_depois": "1ce7d8787b1a7ebf9318ea614e7195a6692ccdc0ca6feaffabe187156a4dbd57"
+  }
+ ]
+}

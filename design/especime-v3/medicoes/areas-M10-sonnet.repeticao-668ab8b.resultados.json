@@ -1,0 +1,3887 @@
+{
+  "m1": {
+    "linhas": [
+      {
+        "slug": "financas",
+        "nomePt": "Finanças",
+        "ptOk": true,
+        "ptVia": "curto",
+        "ptLinhaGoverno": 2,
+        "nomeEn": "Finance",
+        "enOk": true,
+        "enLinhaGoverno": 2,
+        "ordemNoMapa": 1
+      },
+      {
+        "slug": "economia-e-coesao-territorial",
+        "nomePt": "Economia e Coesão Territorial",
+        "ptOk": true,
+        "ptVia": "colapsado (preposição interna dupla)",
+        "ptLinhaGoverno": 4,
+        "nomeEn": "Economy and of Territorial Cohesion",
+        "enOk": true,
+        "enLinhaGoverno": 4,
+        "ordemNoMapa": 2
+      },
+      {
+        "slug": "infraestruturas-e-habitacao",
+        "nomePt": "Infraestruturas e Habitação",
+        "ptOk": true,
+        "ptVia": "curto",
+        "ptLinhaGoverno": 8,
+        "nomeEn": "Infrastructure and Housing",
+        "enOk": true,
+        "enLinhaGoverno": 8,
+        "ordemNoMapa": 3
+      },
+      {
+        "slug": "justica",
+        "nomePt": "Justiça",
+        "ptOk": true,
+        "ptVia": "curto",
+        "ptLinhaGoverno": 9,
+        "nomeEn": "Justice",
+        "enOk": true,
+        "enLinhaGoverno": 9,
+        "ordemNoMapa": 4
+      },
+      {
+        "slug": "administracao-interna",
+        "nomePt": "Administração Interna",
+        "ptOk": true,
+        "ptVia": "curto",
+        "ptLinhaGoverno": 10,
+        "nomeEn": "Home Affairs",
+        "enOk": true,
+        "enLinhaGoverno": 10,
+        "ordemNoMapa": 5
+      },
+      {
+        "slug": "educacao-ciencia-e-inovacao",
+        "nomePt": "Educação, Ciência e Inovação",
+        "ptOk": true,
+        "ptVia": "curto",
+        "ptLinhaGoverno": 11,
+        "nomeEn": "Education, Science and Innovation",
+        "enOk": true,
+        "enLinhaGoverno": 11,
+        "ordemNoMapa": 6
+      },
+      {
+        "slug": "saude",
+        "nomePt": "Saúde",
+        "ptOk": true,
+        "ptVia": "curto",
+        "ptLinhaGoverno": 12,
+        "nomeEn": "Health",
+        "enOk": true,
+        "enLinhaGoverno": 12,
+        "ordemNoMapa": 7
+      },
+      {
+        "slug": "trabalho-solidariedade-e-seguranca-social",
+        "nomePt": "Trabalho, Solidariedade e Segurança Social",
+        "ptOk": true,
+        "ptVia": "curto",
+        "ptLinhaGoverno": 13,
+        "nomeEn": "Labour, Solidarity and Social Security",
+        "enOk": true,
+        "enLinhaGoverno": 13,
+        "ordemNoMapa": 8
+      },
+      {
+        "slug": "ambiente-e-energia",
+        "nomePt": "Ambiente e Energia",
+        "ptOk": true,
+        "ptVia": "curto",
+        "ptLinhaGoverno": 14,
+        "nomeEn": "Environment and Energy",
+        "enOk": true,
+        "enLinhaGoverno": 14,
+        "ordemNoMapa": 9
+      }
+    ],
+    "okPt": 9,
+    "okEn": 9,
+    "total": 9,
+    "ordemCrescente": true,
+    "ordemGoverno": [
+      2,
+      4,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "m2": {
+    "totalMaterias": 21,
+    "materiasOk": 21,
+    "citacoesExatas": 21,
+    "citacoesContidas": 0,
+    "falhas": [],
+    "linhas": [
+      {
+        "area": "financas",
+        "artigo": "Artigo 12.º, n.º 1",
+        "materia": "a política financeira do Estado",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "economia-e-coesao-territorial",
+        "artigo": "Artigo 15.º, n.º 1",
+        "materia": "administração local",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "economia-e-coesao-territorial",
+        "artigo": "Artigo 15.º, n.º 1",
+        "materia": "coesão territorial",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "economia-e-coesao-territorial",
+        "artigo": "Artigo 15.º, n.º 1",
+        "materia": "crescimento da economia",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "economia-e-coesao-territorial",
+        "artigo": "Artigo 15.º, n.º 1",
+        "materia": "competitividade",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "economia-e-coesao-territorial",
+        "artigo": "Artigo 15.º, n.º 1",
+        "materia": "investimento",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "economia-e-coesao-territorial",
+        "artigo": "Artigo 15.º, n.º 1",
+        "materia": "internacionalização das empresas",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "economia-e-coesao-territorial",
+        "artigo": "Artigo 15.º, n.º 2",
+        "materia": "os programas financiados por fundos europeus, nomeadamente no âmbito da política de coesão da União Europeia e do Plano de Recuperação e Resiliência (PRR)",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "infraestruturas-e-habitacao",
+        "artigo": "Artigo 19.º, n.º 1",
+        "materia": "habitação",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "infraestruturas-e-habitacao",
+        "artigo": "Artigo 19.º, n.º 1",
+        "materia": "construção",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "justica",
+        "artigo": "Artigo 20.º, n.º 1",
+        "materia": "a política de justiça",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "administracao-interna",
+        "artigo": "Artigo 21.º, n.º 1",
+        "materia": "administração eleitoral",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "educacao-ciencia-e-inovacao",
+        "artigo": "Artigo 22.º, n.º 1",
+        "materia": "o sistema educativo",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "educacao-ciencia-e-inovacao",
+        "artigo": "Artigo 22.º, n.º 2",
+        "materia": "a ciência",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "educacao-ciencia-e-inovacao",
+        "artigo": "Artigo 22.º, n.º 2",
+        "materia": "as orientações em matéria de competências digitais",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "saude",
+        "artigo": "Artigo 23.º, n.º 1",
+        "materia": "a política nacional de saúde",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "trabalho-solidariedade-e-seguranca-social",
+        "artigo": "Artigo 24.º, n.º 1",
+        "materia": "emprego",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "trabalho-solidariedade-e-seguranca-social",
+        "artigo": "Artigo 24.º, n.º 1",
+        "materia": "segurança social",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "trabalho-solidariedade-e-seguranca-social",
+        "artigo": "Artigo 24.º, n.º 1",
+        "materia": "combate à pobreza e de promoção da inclusão social",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "trabalho-solidariedade-e-seguranca-social",
+        "artigo": "Artigo 24.º, n.º 1",
+        "materia": "apoio à família, crianças",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      },
+      {
+        "area": "ambiente-e-energia",
+        "artigo": "Artigo 25.º, n.º 1",
+        "materia": "água",
+        "erro": null,
+        "materiaEncontrada": true,
+        "materiaEncontradaSemCaso": false,
+        "citacaoExata": true,
+        "citacaoContida": false
+      }
+    ]
+  },
+  "m3": {
+    "porArea": [
+      {
+        "slug": "financas",
+        "pt": {
+          "trabalhos": 0,
+          "trabalhosOk": 0,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 1,
+          "medidasOk": 1,
+          "total": 1
+        },
+        "en": {
+          "trabalhos": 0,
+          "trabalhosOk": 0,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 1,
+          "medidasOk": 1,
+          "total": 1
+        }
+      },
+      {
+        "slug": "economia-e-coesao-territorial",
+        "pt": {
+          "trabalhos": 8,
+          "trabalhosOk": 8,
+          "conjuntos": 1,
+          "conjuntosOk": 1,
+          "medidas": 88,
+          "medidasOk": 88,
+          "total": 97
+        },
+        "en": {
+          "trabalhos": 8,
+          "trabalhosOk": 8,
+          "conjuntos": 1,
+          "conjuntosOk": 1,
+          "medidas": 88,
+          "medidasOk": 88,
+          "total": 97
+        }
+      },
+      {
+        "slug": "infraestruturas-e-habitacao",
+        "pt": {
+          "trabalhos": 0,
+          "trabalhosOk": 0,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 3,
+          "medidasOk": 3,
+          "total": 3
+        },
+        "en": {
+          "trabalhos": 0,
+          "trabalhosOk": 0,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 3,
+          "medidasOk": 3,
+          "total": 3
+        }
+      },
+      {
+        "slug": "justica",
+        "pt": {
+          "trabalhos": 0,
+          "trabalhosOk": 0,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 1,
+          "medidasOk": 1,
+          "total": 1
+        },
+        "en": {
+          "trabalhos": 0,
+          "trabalhosOk": 0,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 1,
+          "medidasOk": 1,
+          "total": 1
+        }
+      },
+      {
+        "slug": "administracao-interna",
+        "pt": {
+          "trabalhos": 1,
+          "trabalhosOk": 1,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 10,
+          "medidasOk": 10,
+          "total": 11
+        },
+        "en": {
+          "trabalhos": 1,
+          "trabalhosOk": 1,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 10,
+          "medidasOk": 10,
+          "total": 11
+        }
+      },
+      {
+        "slug": "educacao-ciencia-e-inovacao",
+        "pt": {
+          "trabalhos": 0,
+          "trabalhosOk": 0,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 3,
+          "medidasOk": 3,
+          "total": 3
+        },
+        "en": {
+          "trabalhos": 0,
+          "trabalhosOk": 0,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 3,
+          "medidasOk": 3,
+          "total": 3
+        }
+      },
+      {
+        "slug": "saude",
+        "pt": {
+          "trabalhos": 0,
+          "trabalhosOk": 0,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 1,
+          "medidasOk": 1,
+          "total": 1
+        },
+        "en": {
+          "trabalhos": 0,
+          "trabalhosOk": 0,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 1,
+          "medidasOk": 1,
+          "total": 1
+        }
+      },
+      {
+        "slug": "trabalho-solidariedade-e-seguranca-social",
+        "pt": {
+          "trabalhos": 2,
+          "trabalhosOk": 2,
+          "conjuntos": 1,
+          "conjuntosOk": 1,
+          "medidas": 16,
+          "medidasOk": 16,
+          "total": 19
+        },
+        "en": {
+          "trabalhos": 2,
+          "trabalhosOk": 2,
+          "conjuntos": 1,
+          "conjuntosOk": 1,
+          "medidas": 16,
+          "medidasOk": 16,
+          "total": 19
+        }
+      },
+      {
+        "slug": "ambiente-e-energia",
+        "pt": {
+          "trabalhos": 1,
+          "trabalhosOk": 1,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 2,
+          "medidasOk": 2,
+          "total": 3
+        },
+        "en": {
+          "trabalhos": 1,
+          "trabalhosOk": 1,
+          "conjuntos": 0,
+          "conjuntosOk": 0,
+          "medidas": 2,
+          "medidasOk": 2,
+          "total": 3
+        }
+      }
+    ],
+    "totalPecasPt": 139,
+    "totalPecasEn": 139,
+    "discordancias": []
+  },
+  "m4": {
+    "totalLinhas": 2602,
+    "emArea": 1970,
+    "foraDeArea": 632,
+    "semDecisao": 0,
+    "duplaCobertura": 0,
+    "problemas": []
+  },
+  "m5": {
+    "problemas": []
+  },
+  "m6": {
+    "totalPaginasVarridas": 20,
+    "achadosDeMarcadores": [
+      {
+        "rota": "/areas/justica",
+        "achados": [
+          {
+            "marcador": "independ",
+            "modo": "raiz",
+            "n": 1,
+            "exemplo": "independ"
+          }
+        ]
+      },
+      {
+        "rota": "/en/areas/justica",
+        "achados": [
+          {
+            "marcador": "independ",
+            "modo": "raiz",
+            "n": 1,
+            "exemplo": "independ"
+          }
+        ]
+      }
+    ],
+    "achadosAmplos": [
+      {
+        "rota": "/areas",
+        "achados": [
+          {
+            "marcador": "método",
+            "modo": "raiz",
+            "n": 2,
+            "exemplo": "Método"
+          }
+        ]
+      },
+      {
+        "rota": "/areas/financas",
+        "achados": [
+          {
+            "marcador": "método",
+            "modo": "raiz",
+            "n": 2,
+            "exemplo": "Método"
+          }
+        ]
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "achados": [
+          {
+            "marcador": "método",
+            "modo": "raiz",
+            "n": 2,
+            "exemplo": "Método"
+          }
+        ]
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "achados": [
+          {
+            "marcador": "método",
+            "modo": "raiz",
+            "n": 2,
+            "exemplo": "Método"
+          }
+        ]
+      },
+      {
+        "rota": "/areas/justica",
+        "achados": [
+          {
+            "marcador": "independ",
+            "modo": "raiz",
+            "n": 1,
+            "exemplo": "independ"
+          },
+          {
+            "marcador": "método",
+            "modo": "raiz",
+            "n": 2,
+            "exemplo": "Método"
+          }
+        ]
+      },
+      {
+        "rota": "/en/areas/justica",
+        "achados": [
+          {
+            "marcador": "independ",
+            "modo": "raiz",
+            "n": 1,
+            "exemplo": "independ"
+          }
+        ]
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "achados": [
+          {
+            "marcador": "método",
+            "modo": "raiz",
+            "n": 2,
+            "exemplo": "Método"
+          }
+        ]
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "achados": [
+          {
+            "marcador": "método",
+            "modo": "raiz",
+            "n": 2,
+            "exemplo": "Método"
+          }
+        ]
+      },
+      {
+        "rota": "/areas/saude",
+        "achados": [
+          {
+            "marcador": "método",
+            "modo": "raiz",
+            "n": 2,
+            "exemplo": "Método"
+          }
+        ]
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "achados": [
+          {
+            "marcador": "método",
+            "modo": "raiz",
+            "n": 2,
+            "exemplo": "Método"
+          }
+        ]
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "achados": [
+          {
+            "marcador": "método",
+            "modo": "raiz",
+            "n": 2,
+            "exemplo": "Método"
+          }
+        ]
+      }
+    ],
+    "totalFragmentos": 776,
+    "naoDeclaradosCorpo": [
+      {
+        "rota": "/areas/financas",
+        "texto": "% do PIB",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/financas",
+        "texto": "Dados de 2025",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/financas",
+        "texto": "Dados de",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/financas",
+        "texto": "2025",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/financas",
+        "texto": "Fonte Eurostat",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/financas",
+        "texto": "Fonte",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/financas",
+        "texto": "Eurostat",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/financas",
+        "texto": "Documento General government gross debt (EDP concept), consolidated - annual data",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/financas",
+        "texto": "Documento",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/financas",
+        "texto": "General government gross debt (EDP concept), consolidated - annual data",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/financas",
+        "texto": "Lido a 2026-08-12",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/financas",
+        "texto": "Lido a",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/financas",
+        "texto": "2026-08-12",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/financas",
+        "texto": "% do PIB",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/financas",
+        "texto": "Data for 2025",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/financas",
+        "texto": "Data for",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/financas",
+        "texto": "2025",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/financas",
+        "texto": "Source Eurostat",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/financas",
+        "texto": "Source",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/financas",
+        "texto": "Eurostat",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/financas",
+        "texto": "Document General government gross debt (EDP concept), consolidated - annual data",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/financas",
+        "texto": "Document",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/financas",
+        "texto": "General government gross debt (EDP concept), consolidated - annual data",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/financas",
+        "texto": "Read on 2026-08-12",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/financas",
+        "texto": "Read on",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/financas",
+        "texto": "2026-08-12",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "votos",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Dados de 2024",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Dados de",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "2024",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Fonte Marques, Cruz & Associados",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Fonte",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Marques, Cruz & Associados",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Documento Certificação Legal das Contas",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Documento",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Certificação Legal das Contas",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Lido a 2026-08-10",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Lido a",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "2026-08-10",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "euros",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Dados de 2025",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "2025",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Fonte Município de Évora",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Município de Évora",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Documento Prestação de Contas 2025",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Prestação de Contas 2025",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Dados de 2013-10-31",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "2013-10-31",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Documento Relatório de Gestão 2015",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Relatório de Gestão 2015",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Dados de 2014",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "2014",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Fonte Direção-Geral das Autarquias Locais (DGAL)",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Direção-Geral das Autarquias Locais (DGAL)",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Documento Evolução endividamento total",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Evolução endividamento total",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Dados de 2017",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "2017",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Dados de 2021",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "2021",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Dados de 2013-10",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "2013-10",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Documento Relatório de Gestão 2021",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Relatório de Gestão 2021",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Documento Relatório de Gestão 2017",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Relatório de Gestão 2017",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Dados de 2014-01",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "2014-01",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Dados de 2019-12",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "2019-12",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "% do orçamento",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "% (limite legal = 150)",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Dados de 2013",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "2013",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Documento Relatório de Gestão 2016",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Relatório de Gestão 2016",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "pelouros",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Dados de 2021-12",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "2021-12",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Documento Executivo — Câmara Municipal de Évora",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Executivo — Câmara Municipal de Évora",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Lido a 2026-08-12",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "2026-08-12",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Dados de 2026-08",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "2026-08",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "dias",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Dados de 2023",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "2023",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Dados de 2016",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "2016",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "municípios",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Fonte Direção-Geral do Território (DGT)",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Direção-Geral do Território (DGT)",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Documento Carta Administrativa Oficial de Portugal (CAOP)",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Carta Administrativa Oficial de Portugal (CAOP)",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "índice (Portugal = 100)",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Fonte INE",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "INE",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Documento Poder de compra per capita (PT=100)",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Poder de compra per capita (PT=100)",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "pontos de índice",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "provisório",
+        "fonte": "<span.livro-item-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "índice (UE-27 = 100)",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Fonte Eurostat",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Eurostat",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Documento Gross domestic product (GDP) at current market prices by NUTS 2 region",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Gross domestic product (GDP) at current market prices by NUTS 2 region",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Lido a 2026-08-27",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "2026-08-27",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Dados de 2000",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "2000",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Lido a 2026-08-13",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "2026-08-13",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "% do VAB empresarial",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Documento Concentração do VAB nas 4 maiores (%)",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Concentração do VAB nas 4 maiores (%)",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Documento VAB (€) das empresas × CAE divisão",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "VAB (€) das empresas × CAE divisão",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "euros por habitante · volumes encadeados (2015)",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Documento Real GDP per capita",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Real GDP per capita",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "variação em três anos, %",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Documento Nominal unit labour cost per hour worked",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Nominal unit labour cost per hour worked",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Documento Real effective exchange rate - percentage changes, 42 trading partners",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Real effective exchange rate - percentage changes, 42 trading partners",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "% do PIB",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Documento Gross fixed capital formation at current prices",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Gross fixed capital formation at current prices",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "% do total OCDE e UE não-OCDE, variação em três anos",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Documento Share of exports of advanced economies",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Share of exports of advanced economies",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "avisos",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Dados de 2026-08-08",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "2026-08-08",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Fonte [a verificar]",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Documento [a verificar]",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Lido a [a verificar]",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Dados de 2026-08-19",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "2026-08-19",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Fonte Estrutura de Missão Recuperar Portugal",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Estrutura de Missão Recuperar Portugal",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Documento Listagem de entidades PRR",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Listagem de entidades PRR",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Lido a 2026-08-20",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "2026-08-20",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "% do valor aprovado",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "votos",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Data for 2024",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Data for",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "2024",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Source Marques, Cruz & Associados",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Source",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Marques, Cruz & Associados",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Document Certificação Legal das Contas",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Document",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Certificação Legal das Contas",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Read on 2026-08-10",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Read on",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "2026-08-10",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "euros",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Data for 2025",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "2025",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Source Município de Évora",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Município de Évora",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Document Prestação de Contas 2025",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Prestação de Contas 2025",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Data for 2013-10-31",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "2013-10-31",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Document Relatório de Gestão 2015",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Relatório de Gestão 2015",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Data for 2014",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "2014",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Source Direção-Geral das Autarquias Locais (DGAL)",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Direção-Geral das Autarquias Locais (DGAL)",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Document Evolução endividamento total",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Evolução endividamento total",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Data for 2017",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "2017",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Data for 2021",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "2021",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Data for 2013-10",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "2013-10",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Document Relatório de Gestão 2021",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Relatório de Gestão 2021",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Document Relatório de Gestão 2017",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Relatório de Gestão 2017",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Data for 2014-01",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "2014-01",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Data for 2019-12",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "2019-12",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "% do orçamento",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "% (limite legal = 150)",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Data for 2013",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "2013",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Document Relatório de Gestão 2016",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Relatório de Gestão 2016",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "pelouros",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Data for 2021-12",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "2021-12",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Document Executivo — Câmara Municipal de Évora",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Executivo — Câmara Municipal de Évora",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Read on 2026-08-12",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "2026-08-12",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Data for 2026-08",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "2026-08",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "dias",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Data for 2023",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "2023",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Data for 2016",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "2016",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "municípios",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Source Direção-Geral do Território (DGT)",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Direção-Geral do Território (DGT)",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Document Carta Administrativa Oficial de Portugal (CAOP)",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Carta Administrativa Oficial de Portugal (CAOP)",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "índice (Portugal = 100)",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Source INE",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "INE",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Document Poder de compra per capita (PT=100)",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Poder de compra per capita (PT=100)",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "pontos de índice",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "provisional",
+        "fonte": "<span.livro-item-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "índice (UE-27 = 100)",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Source Eurostat",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Eurostat",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Document Gross domestic product (GDP) at current market prices by NUTS 2 region",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Gross domestic product (GDP) at current market prices by NUTS 2 region",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Read on 2026-08-27",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "2026-08-27",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Data for 2000",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "2000",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Read on 2026-08-13",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "2026-08-13",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "% do VAB empresarial",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Document Concentração do VAB nas 4 maiores (%)",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Concentração do VAB nas 4 maiores (%)",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Document VAB (€) das empresas × CAE divisão",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "VAB (€) das empresas × CAE divisão",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "euros por habitante · volumes encadeados (2015)",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Document Real GDP per capita",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Real GDP per capita",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "variação em três anos, %",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Document Nominal unit labour cost per hour worked",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Nominal unit labour cost per hour worked",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Document Real effective exchange rate - percentage changes, 42 trading partners",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Real effective exchange rate - percentage changes, 42 trading partners",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "% do PIB",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Document Gross fixed capital formation at current prices",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Gross fixed capital formation at current prices",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "% do total OCDE e UE não-OCDE, variação em três anos",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Document Share of exports of advanced economies",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Share of exports of advanced economies",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "avisos",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Data for 2026-08-08",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "2026-08-08",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Source [a verificar] (to verify)",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "(to verify)",
+        "fonte": "<span.marcador-gloss>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Document [a verificar] (to verify)",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Read on [a verificar] (to verify)",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Data for 2026-08-19",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "2026-08-19",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Source Estrutura de Missão Recuperar Portugal",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Estrutura de Missão Recuperar Portugal",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Document Listagem de entidades PRR",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Listagem de entidades PRR",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Read on 2026-08-20",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "2026-08-20",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "% do valor aprovado",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "texto": "variação anual média, %",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "texto": "Dados de 2025",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "texto": "Dados de",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "texto": "2025",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "texto": "Fonte Eurostat",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "texto": "Fonte",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "texto": "Eurostat",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "texto": "Documento House price index, nominal - annual data",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "texto": "Documento",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "texto": "House price index, nominal - annual data",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "texto": "Lido a 2026-08-12",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "texto": "Lido a",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "texto": "2026-08-12",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "texto": "%",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "texto": "Documento Housing cost overburden rate",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "texto": "Housing cost overburden rate",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "texto": "m² por 1000 habitantes",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "texto": "Documento Residential building permits - annual data",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "texto": "Residential building permits - annual data",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/infraestruturas-e-habitacao",
+        "texto": "variação anual média, %",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/infraestruturas-e-habitacao",
+        "texto": "Data for 2025",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/infraestruturas-e-habitacao",
+        "texto": "Data for",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/infraestruturas-e-habitacao",
+        "texto": "2025",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/infraestruturas-e-habitacao",
+        "texto": "Source Eurostat",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/infraestruturas-e-habitacao",
+        "texto": "Source",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/infraestruturas-e-habitacao",
+        "texto": "Eurostat",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/infraestruturas-e-habitacao",
+        "texto": "Document House price index, nominal - annual data",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/infraestruturas-e-habitacao",
+        "texto": "Document",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/infraestruturas-e-habitacao",
+        "texto": "House price index, nominal - annual data",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/infraestruturas-e-habitacao",
+        "texto": "Read on 2026-08-12",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/infraestruturas-e-habitacao",
+        "texto": "Read on",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/infraestruturas-e-habitacao",
+        "texto": "2026-08-12",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/infraestruturas-e-habitacao",
+        "texto": "%",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/infraestruturas-e-habitacao",
+        "texto": "Document Housing cost overburden rate",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/infraestruturas-e-habitacao",
+        "texto": "Housing cost overburden rate",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/infraestruturas-e-habitacao",
+        "texto": "m² por 1000 habitantes",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/infraestruturas-e-habitacao",
+        "texto": "Document Residential building permits - annual data",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/infraestruturas-e-habitacao",
+        "texto": "Residential building permits - annual data",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/justica",
+        "texto": "%",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/justica",
+        "texto": "Dados de 2025",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/justica",
+        "texto": "Dados de",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/justica",
+        "texto": "2025",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/justica",
+        "texto": "Fonte Eurostat",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/justica",
+        "texto": "Fonte",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/justica",
+        "texto": "Eurostat",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/justica",
+        "texto": "Documento Perceived independence of the justice system",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/justica",
+        "texto": "Documento",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/justica",
+        "texto": "Perceived independence of the justice system",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/justica",
+        "texto": "Lido a 2026-08-12",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/justica",
+        "texto": "Lido a",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/justica",
+        "texto": "2026-08-12",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/justica",
+        "texto": "%",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/justica",
+        "texto": "Data for 2025",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/justica",
+        "texto": "Data for",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/justica",
+        "texto": "2025",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/justica",
+        "texto": "Source Eurostat",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/justica",
+        "texto": "Source",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/justica",
+        "texto": "Eurostat",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/justica",
+        "texto": "Document Perceived independence of the justice system",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/justica",
+        "texto": "Document",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/justica",
+        "texto": "Perceived independence of the justice system",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/justica",
+        "texto": "Read on 2026-08-12",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/justica",
+        "texto": "Read on",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/justica",
+        "texto": "2026-08-12",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "lugares",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Dados de 2025",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Dados de",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "2025",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Fonte Secretaria-Geral do Ministério da Administração Interna (SGMAI)",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Fonte",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Secretaria-Geral do Ministério da Administração Interna (SGMAI)",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Documento Autárquicas 2025 — resultados oficiais por território",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Documento",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Autárquicas 2025 — resultados oficiais por território",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Lido a 2026-08-10",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Lido a",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "2026-08-10",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Dados de 2013",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "2013",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Documento Autárquicas 2013 — resultados oficiais por território",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Autárquicas 2013 — resultados oficiais por território",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Dados de 2017",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "2017",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Documento Autárquicas 2017 — resultados oficiais por território",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Autárquicas 2017 — resultados oficiais por território",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Dados de 2021",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "2021",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Documento Autárquicas 2021 — resultados oficiais por território",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Autárquicas 2021 — resultados oficiais por território",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Dados de 2009",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "2009",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Documento Autárquicas 2009 — resultados oficiais por território",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Autárquicas 2009 — resultados oficiais por território",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "lugares",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Data for 2025",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Data for",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "2025",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Source Secretaria-Geral do Ministério da Administração Interna (SGMAI)",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Source",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Secretaria-Geral do Ministério da Administração Interna (SGMAI)",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Document Autárquicas 2025 — resultados oficiais por território",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Document",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Autárquicas 2025 — resultados oficiais por território",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Read on 2026-08-10",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Read on",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "2026-08-10",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Data for 2013",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "2013",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Document Autárquicas 2013 — resultados oficiais por território",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Autárquicas 2013 — resultados oficiais por território",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Data for 2017",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "2017",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Document Autárquicas 2017 — resultados oficiais por território",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Autárquicas 2017 — resultados oficiais por território",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Data for 2021",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "2021",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Document Autárquicas 2021 — resultados oficiais por território",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Autárquicas 2021 — resultados oficiais por território",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Data for 2009",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "2009",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Document Autárquicas 2009 — resultados oficiais por território",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Autárquicas 2009 — resultados oficiais por território",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "%",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "Dados de 2025",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "Dados de",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "2025",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "Fonte Eurostat",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "Fonte",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "Eurostat",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "Documento Early leavers from education and training by labour status",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "Documento",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "Early leavers from education and training by labour status",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "Lido a 2026-08-12",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "Lido a",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "2026-08-12",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "% do PIB",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "Dados de 2024",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "2024",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "Documento Gross domestic expenditure on research and development (R&D)",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "Gross domestic expenditure on research and development (R&D)",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "% dos indivíduos",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "Documento Individuals who have basic or above basic overall digital skills by sex",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "Individuals who have basic or above basic overall digital skills by sex",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "%",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "Data for 2025",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "Data for",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "2025",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "Source Eurostat",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "Source",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "Eurostat",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "Document Early leavers from education and training by labour status",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "Document",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "Early leavers from education and training by labour status",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "Read on 2026-08-12",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "Read on",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "2026-08-12",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "% do PIB",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "Data for 2024",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "2024",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "Document Gross domestic expenditure on research and development (R&D)",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "Gross domestic expenditure on research and development (R&D)",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "% dos indivíduos",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "Document Individuals who have basic or above basic overall digital skills by sex",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "Individuals who have basic or above basic overall digital skills by sex",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/saude",
+        "texto": "%",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/saude",
+        "texto": "Dados de 2025",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/saude",
+        "texto": "Dados de",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/saude",
+        "texto": "2025",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/saude",
+        "texto": "Fonte Eurostat",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/saude",
+        "texto": "Fonte",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/saude",
+        "texto": "Eurostat",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/saude",
+        "texto": "Documento Self-reported unmet need for medical care by sex",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/saude",
+        "texto": "Documento",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/saude",
+        "texto": "Self-reported unmet need for medical care by sex",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/saude",
+        "texto": "Lido a 2026-08-12",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/saude",
+        "texto": "Lido a",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/saude",
+        "texto": "2026-08-12",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/saude",
+        "texto": "%",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/saude",
+        "texto": "Data for 2025",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/saude",
+        "texto": "Data for",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/saude",
+        "texto": "2025",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/saude",
+        "texto": "Source Eurostat",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/saude",
+        "texto": "Source",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/saude",
+        "texto": "Eurostat",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/saude",
+        "texto": "Document Self-reported unmet need for medical care by sex",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/saude",
+        "texto": "Document",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/saude",
+        "texto": "Self-reported unmet need for medical care by sex",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/saude",
+        "texto": "Read on 2026-08-12",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/saude",
+        "texto": "Read on",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/saude",
+        "texto": "2026-08-12",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "% da população ativa",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Dados de 2025",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Dados de",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "2025",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Fonte Eurostat",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Fonte",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Eurostat",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Documento Long-term unemployment rate by sex",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Documento",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Long-term unemployment rate by sex",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Lido a 2026-08-12",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Lido a",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "2026-08-12",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "% da população",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Documento Gender employment gap",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Gender employment gap",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "pessoas",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Dados de 2013-12",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "2013-12",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Fonte Instituto do Emprego e Formação Profissional (IEFP)",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Instituto do Emprego e Formação Profissional (IEFP)",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Documento SIE - Desemprego registado por concelhos",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "SIE - Desemprego registado por concelhos",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Lido a 2026-08-10",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "2026-08-10",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Dados de 2024-12",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "2024-12",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Documento Young persons (aged 15-24) neither in employment nor in education and training - % of total population in private households in the same age group",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Young persons (aged 15-24) neither in employment nor in education and training - % of total population in private households in the same age group",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "variação em três anos, pontos percentuais",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Documento Labour force participation rate",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Labour force participation rate",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Documento Unemployment by sex and age - annual data",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Unemployment by sex and age - annual data",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Documento Unemployment rate - annual data",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Unemployment rate - annual data",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Documento Employment and labour force by sex and age - annual data",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Employment and labour force by sex and age - annual data",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "factor",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Dados de 2026",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "2026",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Fonte Grupo de Trabalho para a Reforma da Segurança Social",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Grupo de Trabalho para a Reforma da Segurança Social",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Documento Reformar as Pensões em Portugal: Por um Sistema Sustentável, Adequado e Justo — um Contrato entre Gerações",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Reformar as Pensões em Portugal: Por um Sistema Sustentável, Adequado e Justo — um Contrato entre Gerações",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Lido a 2026-08-24",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "2026-08-24",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "%",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "rácio",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Documento Income quintile share ratio (S80/S20) by sex",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Income quintile share ratio (S80/S20) by sex",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Documento People at risk of poverty or social exclusion",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "People at risk of poverty or social exclusion",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Documento Children aged less than 3 years in formal childcare",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Children aged less than 3 years in formal childcare",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "% da população ativa",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Data for 2025",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Data for",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "2025",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Source Eurostat",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Source",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Eurostat",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Document Long-term unemployment rate by sex",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Document",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Long-term unemployment rate by sex",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Read on 2026-08-12",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Read on",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "2026-08-12",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "% da população",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Document Gender employment gap",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Gender employment gap",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "pessoas",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Data for 2013-12",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "2013-12",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Source Instituto do Emprego e Formação Profissional (IEFP)",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Instituto do Emprego e Formação Profissional (IEFP)",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Document SIE - Desemprego registado por concelhos",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "SIE - Desemprego registado por concelhos",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Read on 2026-08-10",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "2026-08-10",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Data for 2024-12",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "2024-12",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Document Young persons (aged 15-24) neither in employment nor in education and training - % of total population in private households in the same age group",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Young persons (aged 15-24) neither in employment nor in education and training - % of total population in private households in the same age group",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "variação em três anos, pontos percentuais",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Document Labour force participation rate",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Labour force participation rate",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Document Unemployment by sex and age - annual data",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Unemployment by sex and age - annual data",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Document Unemployment rate - annual data",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Unemployment rate - annual data",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Document Employment and labour force by sex and age - annual data",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Employment and labour force by sex and age - annual data",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "factor",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Data for 2026",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "2026",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Source Grupo de Trabalho para a Reforma da Segurança Social",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Grupo de Trabalho para a Reforma da Segurança Social",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Document Reformar as Pensões em Portugal: Por um Sistema Sustentável, Adequado e Justo — um Contrato entre Gerações",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Reformar as Pensões em Portugal: Por um Sistema Sustentável, Adequado e Justo — um Contrato entre Gerações",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Read on 2026-08-24",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "2026-08-24",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "%",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "rácio",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Document Income quintile share ratio (S80/S20) by sex",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Income quintile share ratio (S80/S20) by sex",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Document People at risk of poverty or social exclusion",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "People at risk of poverty or social exclusion",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Document Children aged less than 3 years in formal childcare",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Children aged less than 3 years in formal childcare",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "texto": "%",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "texto": "Dados de 2024",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "texto": "Dados de",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "texto": "2024",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "texto": "Fonte ERSAR",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "texto": "Fonte",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "texto": "ERSAR",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "texto": "Documento RASARP — Relatório Anual dos Serviços de Águas e Resíduos em Portugal",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "texto": "Documento",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "texto": "RASARP — Relatório Anual dos Serviços de Águas e Resíduos em Portugal",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "texto": "Lido a 2026-07-28",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "texto": "Lido a",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "texto": "2026-07-28",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "texto": "anos",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "texto": "Dados de [a verificar]",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "texto": "Fonte [a verificar]",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "texto": "Documento [a verificar]",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "texto": "Lido a [a verificar]",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/ambiente-e-energia",
+        "texto": "%",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/ambiente-e-energia",
+        "texto": "Data for 2024",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/ambiente-e-energia",
+        "texto": "Data for",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/ambiente-e-energia",
+        "texto": "2024",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/ambiente-e-energia",
+        "texto": "Source ERSAR",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/ambiente-e-energia",
+        "texto": "Source",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/ambiente-e-energia",
+        "texto": "ERSAR",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/ambiente-e-energia",
+        "texto": "Document RASARP — Relatório Anual dos Serviços de Águas e Resíduos em Portugal",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/ambiente-e-energia",
+        "texto": "Document",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/ambiente-e-energia",
+        "texto": "RASARP — Relatório Anual dos Serviços de Águas e Resíduos em Portugal",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/ambiente-e-energia",
+        "texto": "Read on 2026-07-28",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/ambiente-e-energia",
+        "texto": "Read on",
+        "fonte": "<span.livro-item-k>"
+      },
+      {
+        "rota": "/en/areas/ambiente-e-energia",
+        "texto": "2026-07-28",
+        "fonte": "<span.campo-valor>"
+      },
+      {
+        "rota": "/en/areas/ambiente-e-energia",
+        "texto": "anos",
+        "fonte": "<span.campo-valor.livro-item-unidade>"
+      },
+      {
+        "rota": "/en/areas/ambiente-e-energia",
+        "texto": "Data for [a verificar] (to verify)",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/ambiente-e-energia",
+        "texto": "(to verify)",
+        "fonte": "<span.marcador-gloss>"
+      },
+      {
+        "rota": "/en/areas/ambiente-e-energia",
+        "texto": "Source [a verificar] (to verify)",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/ambiente-e-energia",
+        "texto": "Document [a verificar] (to verify)",
+        "fonte": "<span.livro-item-campo>"
+      },
+      {
+        "rota": "/en/areas/ambiente-e-energia",
+        "texto": "Read on [a verificar] (to verify)",
+        "fonte": "<span.livro-item-campo>"
+      }
+    ],
+    "naoDeclaradosTitulo": [
+      {
+        "rota": "/areas",
+        "texto": "Áreas de governo · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/en/areas",
+        "texto": "Government areas · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/areas/financas",
+        "texto": "Finanças · área de governo · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/en/areas/financas",
+        "texto": "Finance · government area · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/areas/economia-e-coesao-territorial",
+        "texto": "Economia e Coesão Territorial · área de governo · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/en/areas/economia-e-coesao-territorial",
+        "texto": "Economy and of Territorial Cohesion · government area · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/areas/infraestruturas-e-habitacao",
+        "texto": "Infraestruturas e Habitação · área de governo · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/en/areas/infraestruturas-e-habitacao",
+        "texto": "Infrastructure and Housing · government area · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/areas/justica",
+        "texto": "Justiça · área de governo · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/en/areas/justica",
+        "texto": "Justice · government area · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/areas/administracao-interna",
+        "texto": "Administração Interna · área de governo · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/en/areas/administracao-interna",
+        "texto": "Home Affairs · government area · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/areas/educacao-ciencia-e-inovacao",
+        "texto": "Educação, Ciência e Inovação · área de governo · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/en/areas/educacao-ciencia-e-inovacao",
+        "texto": "Education, Science and Innovation · government area · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/areas/saude",
+        "texto": "Saúde · área de governo · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/en/areas/saude",
+        "texto": "Health · government area · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Trabalho, Solidariedade e Segurança Social · área de governo · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social",
+        "texto": "Labour, Solidarity and Social Security · government area · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/areas/ambiente-e-energia",
+        "texto": "Ambiente e Energia · área de governo · O Estado do País",
+        "fonte": "<title>"
+      },
+      {
+        "rota": "/en/areas/ambiente-e-energia",
+        "texto": "Environment and Energy · government area · O Estado do País",
+        "fonte": "<title>"
+      }
+    ],
+    "retiradosMasRenderizados": [],
+    "totalMarcadores": 65,
+    "totalExcecoes": 7
+  },
+  "m7": {
+    "transbordos": [],
+    "combinacoesVerificadas": 80,
+    "areaComMaisPecas": "economia-e-coesao-territorial",
+    "capacidade": {
+      "pt": {
+        "totalPecasNaPagina": 97,
+        "visiveisInteiras": 4,
+        "visiveisParciais": 5,
+        "alturaJanela": 844
+      },
+      "en": {
+        "totalPecasNaPagina": 97,
+        "visiveisInteiras": 6,
+        "visiveisParciais": 7,
+        "alturaJanela": 844
+      }
+    },
+    "alturaDeTeste": 844,
+    "larguras": [
+      320,
+      360,
+      390,
+      430
+    ],
+    "temposDeConstrucao": {
+      "area": {
+        "pt": 367,
+        "en": 364
+      },
+      "duracaoTotalMs": 202114,
+      "codigoDeSaida": 0,
+      "totalPaginasComTempo": 6606
+    }
+  },
+  "m8": {
+    "verify": {
+      "codigoDeSaida": 0,
+      "duracaoMs": 37338,
+      "caudaStdout": "      justica · 1 peça(s): 0 trabalho(s), 0 conjunto(s), 1 medida(s)\n      administracao-interna · 11 peça(s): 1 trabalho(s), 0 conjunto(s), 10 medida(s)\n      educacao-ciencia-e-inovacao · 3 peça(s): 0 trabalho(s), 0 conjunto(s), 3 medida(s)\n      saude · 1 peça(s): 0 trabalho(s), 0 conjunto(s), 1 medida(s)\n      trabalho-solidariedade-e-seguranca-social · 19 peça(s): 2 trabalho(s), 1 conjunto(s), 16 medida(s)\n      ambiente-e-energia · 3 peça(s): 1 trabalho(s), 0 conjunto(s), 2 medida(s)\n\u001b[0m\n\n> o-estado-do-pais@0.1.0 check:voz\n> node scripts/check-voz.mjs\n\n\n\u001b[32m  voz ✓ \u001b[0m65 marcadores · 7 exceções (0 de registo) · 698 frases distintas, 26023 ocorrências em 1378 rotas · autorreferência 0 · nada por classificar · 579 linhas do inventário com bloco (503 vivas, todas rendidas; 76 retiradas, nenhuma rendida) · lida contra a Emenda 18 (a mais alta da voz é a 18)\n\u001b[90m        1 bloco(s) do inventário por ler, e o registo di-lo:\u001b[0m\n\u001b[90m        · areas · `por ler`\u001b[0m"
+    },
+    "typecheck": {
+      "codigoDeSaida": 0,
+      "duracaoMs": 766,
+      "caudaStdout": "> o-estado-do-pais@0.1.0 typecheck\n> tsc -p tsconfig.check.json"
+    }
+  }
+}
